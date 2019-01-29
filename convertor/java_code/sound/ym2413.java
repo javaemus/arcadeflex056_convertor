@@ -178,7 +178,14 @@ public class ym2413
 	} ;
 	
 	/* Definition of envelope mode */
-	enum { SETTLE,ATTACK,DECAY,SUSHOLD,SUSTINE,RELEASE,FINISH } ;
+	public static final int SETTLE = 0;
+	public static final int ATTACK = 1;
+	public static final int DECAY = 2;
+	public static final int SUSHOLD = 3;
+	public static final int SUSTINE = 4;
+	public static final int RELEASE = 5;
+	public static final int FINISH = 6;
+	
 	
 	#ifdef USE_SPEC_ENV_SPEED
 	static double attacktime[16][4] = {

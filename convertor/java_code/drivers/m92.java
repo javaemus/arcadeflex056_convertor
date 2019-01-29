@@ -177,7 +177,12 @@ public class m92
 	
 	/*****************************************************************************/
 	
-	enum { VECTOR_INIT, YM2151_ASSERT, YM2151_CLEAR, V30_ASSERT, V30_CLEAR };
+	public static final int VECTOR_INIT = 0;
+	public static final int YM2151_ASSERT = 1;
+	public static final int YM2151_CLEAR = 2;
+	public static final int V30_ASSERT = 3;
+	public static final int V30_CLEAR = 4;
+	
 	
 	static void setvector_callback(int param)
 	{

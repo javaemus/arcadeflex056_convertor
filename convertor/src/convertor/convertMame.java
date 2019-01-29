@@ -5,6 +5,14 @@
  */
 package convertor;
 
+import static convertor.Convertor.inpos;
+import static convertor.Convertor.token;
+import static convertor.sUtil.getToken;
+import static convertor.sUtil.parseChar;
+import static convertor.sUtil.parseToken;
+import static convertor.sUtil.skipLine;
+import static convertor.sUtil.skipSpace;
+
 /**
  * @author shadow
  */
@@ -75,6 +83,42 @@ public class convertMame {
                 {
                     Convertor.outbuf[Convertor.outpos++] = Convertor.inbuf[Convertor.inpos++];
                     line_change_flag = true;
+                    continue;
+                }
+                case 'e': {
+                    int j1 = inpos;
+                    if (getToken("enum")) {
+                        skipSpace();
+                        
+                        if (parseChar() != '{') {
+                            inpos = j1;
+                            break;
+                        }
+                        skipSpace();
+                        int i5 = 0;
+                        char c2;
+                        do {
+                            token[i5++] = parseToken();
+                            skipSpace();
+                            c2 = parseChar();
+                            if (c2 != '}' && c2 != ',') {
+                                inpos = j1;
+                                break;
+                            }
+                            skipSpace();
+                        } while (c2 == ',');
+                        if (parseChar() != ';') {
+                            inpos = j1;
+                            break;
+                        }
+                        int k5 = 0;
+                        while (k5 < i5) {
+                            sUtil.putString((new StringBuilder()).append("public static final int ").append(token[k5]).append(" = ").append(k5).append(";\n\t").toString());
+                            k5++;
+                        }
+                    } else {
+                        break;
+                    }
                     continue;
                 }
             }

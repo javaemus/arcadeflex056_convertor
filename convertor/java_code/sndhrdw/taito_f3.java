@@ -20,7 +20,9 @@ public class taito_f3
 	#define M68000_CLOCK	16000000
 	#define M68681_CLOCK	2000000 /* Actually X1, not the main clock */
 	
-	enum { TIMER_SINGLESHOT, TIMER_PULSE };
+	public static final int TIMER_SINGLESHOT = 0;
+	public static final int TIMER_PULSE = 1;
+	
 	
 	READ16_HANDLER(f3_68000_share_r)
 	{

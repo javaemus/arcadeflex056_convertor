@@ -1,5 +1,4 @@
-19/11/2018
+29/01/2019
 ==========
--Intial convertor based arcadeflex 0.37b7
--Support for more ROM_ macros
--Fix vh_screenrefresh for 0.56
+-Intial convertor
+-Partial support for enums conversion
