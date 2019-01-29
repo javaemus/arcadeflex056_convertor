@@ -347,7 +347,7 @@ public class video
 		int x, y;
 	
 		// don't bother if we're not handling dirty marking
-		if (!use_dirty)
+		if (use_dirty == 0)
 			return;
 	
 		// adjust for top/left
@@ -735,7 +735,7 @@ public class video
 				frameskip++;
 	
 			// display the FPS counter for 2 seconds
-			if (!showfps)
+			if (showfps == 0)
 				showfpstemp = (int)(2.0 * video_fps);
 	
 			// reset the frame counter so we'll measure the average FPS on a consistent status
@@ -761,7 +761,7 @@ public class video
 				frameskip--;
 	
 			// display the FPS counter for 2 seconds
-			if (!showfps)
+			if (showfps == 0)
 				showfpstemp = (int)(2.0 * video_fps);
 	
 			// reset the frame counter so we'll measure the average FPS on a consistent status
@@ -791,7 +791,7 @@ public class video
 			else
 			{
 				showfps ^= 1;
-				if (!showfps)
+				if (showfps == 0)
 					schedule_full_refresh();
 			}
 		}
@@ -800,7 +800,7 @@ public class video
 		if (code_pressed(KEYCODE_ENTER) &&
 			(code_pressed(KEYCODE_LALT) || code_pressed(KEYCODE_RALT)))
 		{
-			if (!alt_enter_pressed)
+			if (alt_enter_pressed == 0)
 				win_toggle_full_screen();
 			alt_enter_pressed = 1;
 		}

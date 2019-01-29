@@ -236,7 +236,7 @@ public class ui_text
 	
 		memset(&lang, 0, sizeof(lang));
 	
-		if (!langfile) return 0;
+		if (langfile == 0) return 0;
 	
 		while (osd_fgets (curline, 255, langfile) != NULL)
 		{

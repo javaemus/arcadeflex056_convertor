@@ -111,7 +111,7 @@ public class _34010dsm
 	static void print_constant_1_32(void)
 	{
 		UINT8 constant = (op >> 5) & 0x1f;
-		if (!constant) constant = 0x20;
+		if (constant == 0) constant = 0x20;
 	
 		sprintf(temp, "%Xh", constant);
 		strcat(buffer, temp);

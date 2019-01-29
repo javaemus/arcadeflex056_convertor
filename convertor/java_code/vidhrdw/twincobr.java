@@ -288,7 +288,7 @@ public class twincobr
 		static int offs,code,tile,color;
 	
 	
-		if (!twincobr_display_on)
+		if (twincobr_display_on == 0)
 		{
 			fillbitmap(bitmap,Machine->pens[0],&Machine->visible_area);
 			return;

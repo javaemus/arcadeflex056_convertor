@@ -667,7 +667,7 @@ public class window
 	{
 		struct sWindow *pwin = &p_windows[idx];
 	
-		if( !p_windows )
+		if (p_windows == 0)
 			return FALSE;
 	
 	    if( idx >= MAX_WINDOWS )

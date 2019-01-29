@@ -150,7 +150,7 @@ public class sbasketb
 		{
 			int scroll[32];
 	
-			if (!flip_screen)
+			if (flip_screen == 0)
 			{
 				for (i = 0;i < 6;i++)
 					scroll[i] = 0;

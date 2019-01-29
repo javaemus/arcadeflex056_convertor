@@ -179,7 +179,7 @@ public class darkseal
 			int x,y,sprite,colour,multi,fx,fy,inc,flash,mult;
 	
 			sprite = buffered_spriteram16[offs+1] & 0x1fff;
-			if (!sprite) continue;
+			if (sprite == 0) continue;
 	
 			y = buffered_spriteram16[offs];
 			x = buffered_spriteram16[offs+2];

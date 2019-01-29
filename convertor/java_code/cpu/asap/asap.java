@@ -454,7 +454,7 @@ public class asap
 	static void init_tables(void)
 	{
 		/* allocate opcode table */
-		if (!opcode)
+		if (opcode == 0)
 			opcode = malloc(32 * 32 * 2 * sizeof(void *));
 	
 		/* fill opcode table */
@@ -478,7 +478,7 @@ public class asap
 		}
 	
 		/* allocate src2 table */
-		if (!src2val)
+		if (src2val == 0)
 			src2val = malloc(65536 * sizeof(UINT32));
 	
 		/* fill scr2 table */
@@ -731,7 +731,7 @@ public class asap
 		which = (which+1) % 16;
 	    buffer[which][0] = '\0';
 	
-		if (!context)
+		if (context == 0)
 		{
 			r = &asap;
 			regbase = &src2val[REGBASE];

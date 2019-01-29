@@ -323,7 +323,7 @@ public class upd7759
 	
 	#if OVERSAMPLING
 		oversampling = (Machine->sample_rate / base_rate);
-		if (!oversampling) oversampling = 1;
+		if (oversampling == 0) oversampling = 1;
 		emulation_rate = base_rate * oversampling;
 	#else
 		emulation_rate = base_rate;

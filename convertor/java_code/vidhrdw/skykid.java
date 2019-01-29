@@ -104,7 +104,7 @@ public class skykid
 	{
 		background = tilemap_create(get_tile_info_bg,tilemap_scan_rows,TILEMAP_OPAQUE,8,8,64,32);
 	
-		if (!background)
+		if (background == 0)
 			return 1;
 	
 		{

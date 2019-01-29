@@ -360,7 +360,7 @@ public class cem3394
 	
 		/* allocate memory for a mixer buffer and external buffer (1 second should do it!) */
 		mixer_buffer = malloc(2 * sample_rate * sizeof(INT16));
-		if (!mixer_buffer)
+		if (mixer_buffer == 0)
 			return 1;
 		external_buffer = mixer_buffer + sample_rate;
 	

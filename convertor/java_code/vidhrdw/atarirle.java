@@ -546,7 +546,7 @@ public class atarirle
 	
 		/* allocate all 5 tables */
 		base = malloc(0x500 * sizeof(UINT16));
-		if (!base)
+		if (base == 0)
 			return 0;
 	
 		/* assign the tables */
@@ -736,7 +736,7 @@ public class atarirle
 		/* 16-bit case */
 		if (bitmap->depth == 16)
 		{
-			if (!hflip)
+			if (hflip == 0)
 				draw_rle_zoom_16(bitmap, info, palettebase, vflip, x, y, xscale << 4, yscale << 4, clip);
 			else
 				draw_rle_zoom_hflip_16(bitmap, info, palettebase, vflip, x, y, xscale << 4, yscale << 4, clip);
@@ -745,7 +745,7 @@ public class atarirle
 		/* 8-bit case */
 		else
 		{
-			if (!hflip)
+			if (hflip == 0)
 				draw_rle_zoom(bitmap, info, palettebase, vflip, x, y, xscale << 4, yscale << 4, clip);
 			else
 				draw_rle_zoom_hflip(bitmap, info, palettebase, vflip, x, y, xscale << 4, yscale << 4, clip);
@@ -828,7 +828,7 @@ public class atarirle
 			entry_count = *base++;
 	
 			/* non-clipped case */
-			if (!xclipped)
+			if (xclipped == 0)
 			{
 				/* decode the pixels */
 				for (j = 0; j < entry_count; j++)
@@ -1017,7 +1017,7 @@ public class atarirle
 			entry_count = *base++;
 	
 			/* non-clipped case */
-			if (!xclipped)
+			if (xclipped == 0)
 			{
 				/* decode the pixels */
 				for (j = 0; j < entry_count; j++)
@@ -1205,7 +1205,7 @@ public class atarirle
 			entry_count = *base++;
 	
 			/* non-clipped case */
-			if (!xclipped)
+			if (xclipped == 0)
 			{
 				/* decode the pixels */
 				for (j = 0; j < entry_count; j++)
@@ -1393,7 +1393,7 @@ public class atarirle
 			entry_count = *base++;
 	
 			/* non-clipped case */
-			if (!xclipped)
+			if (xclipped == 0)
 			{
 				/* decode the pixels */
 				for (j = 0; j < entry_count; j++)

@@ -699,7 +699,7 @@ public class fm
 	{
 		SLOT->TL = (v&0x7f)<<(ENV_BITS-7); /*7bit TL*/
 		/* if it is not a CSM channel , latch the total level */
-		if( !csmflag )
+		if (csmflag == 0)
 			SLOT->TLL = SLOT->TL;
 	}
 	
@@ -1788,7 +1788,7 @@ public class fm
 	/* ---------- shut down emulator ----------- */
 	void YM2203Shutdown(void)
 	{
-	    if (!FM2203) return;
+	    if (FM2203 == 0) return;
 	
 		FMCloseTable();
 		free(FM2203);
@@ -2298,7 +2298,7 @@ public class fm
 	
 			LFOCnt  = OPN->LFOCnt;
 			LFOIncr = OPN->LFOIncr;
-			if( !LFOIncr ) lfo_amd = lfo_pmd = 0;
+			if (LFOIncr == 0) lfo_amd = lfo_pmd = 0;
 		}
 		/* update frequency counter */
 		OPN_CALC_FCOUNT( cch[0] );
@@ -2544,7 +2544,7 @@ public class fm
 	/* ---------- shut down emulator ----------- */
 	void YM2608Shutdown()
 	{
-	    if (!FM2608) return;
+	    if (FM2608 == 0) return;
 	
 		FMCloseTable();
 		free(FM2608);
@@ -2794,7 +2794,7 @@ public class fm
 	
 			LFOCnt  = OPN->LFOCnt;
 			LFOIncr = OPN->LFOIncr;
-			if( !LFOIncr ) lfo_amd = lfo_pmd = 0;
+			if (LFOIncr == 0) lfo_amd = lfo_pmd = 0;
 		}
 	#ifdef YM2610B_WARNING
 	#define FM_KEY_IS(SLOT) ((SLOT)->key)
@@ -2932,7 +2932,7 @@ public class fm
 	
 			LFOCnt  = OPN->LFOCnt;
 			LFOIncr = OPN->LFOIncr;
-			if( !LFOIncr ) lfo_amd = lfo_pmd = 0;
+			if (LFOIncr == 0) lfo_amd = lfo_pmd = 0;
 		}
 	
 		/* update frequency counter */
@@ -3169,7 +3169,7 @@ public class fm
 	/* ---------- shut down emulator ----------- */
 	void YM2610Shutdown()
 	{
-	    if (!FM2610) return;
+	    if (FM2610 == 0) return;
 	
 		FMCloseTable();
 		free(FM2610);
@@ -3413,7 +3413,7 @@ public class fm
 	
 			LFOCnt  = OPN->LFOCnt;
 			LFOIncr = OPN->LFOIncr;
-			if( !LFOIncr ) lfo_amd = lfo_pmd = 0;
+			if (LFOIncr == 0) lfo_amd = lfo_pmd = 0;
 		}
 		/* update frequency counter */
 		OPN_CALC_FCOUNT( cch[0] );
@@ -3601,7 +3601,7 @@ public class fm
 	/* ---------- shut down emulator ----------- */
 	void YM2612Shutdown()
 	{
-	    if (!FM2612) return;
+	    if (FM2612 == 0) return;
 	
 		FMCloseTable();
 		free(FM2612);
@@ -4243,7 +4243,7 @@ public class fm
 	/* ---------- shut down emulator ----------- */
 	void OPMShutdown()
 	{
-	    if (!FMOPM) return;
+	    if (FMOPM == 0) return;
 	
 		FMCloseTable();
 		free(FMOPM);
@@ -4288,7 +4288,7 @@ public class fm
 			/* LFO */
 			LFOCnt  = OPM->LFOCnt;
 			/*LFOIncr = OPM->LFOIncr;*/
-			if( !LFOIncr ) lfo_amd = lfo_pmd = 0;
+			if (LFOIncr == 0) lfo_amd = lfo_pmd = 0;
 			OPM_LFO_wave = OPM->wavetype;
 		}
 		amd = OPM->amd;

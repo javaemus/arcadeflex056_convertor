@@ -204,7 +204,7 @@ public class itech32
 	
 		/* allocate memory */
 		videoram16 = malloc(VRAM_WIDTH * (itech32_vram_height + 16) * 2 * 2);
-		if (!videoram16)
+		if (videoram16 == 0)
 			return 1;
 		memset(videoram16, 0xff, VRAM_WIDTH * (itech32_vram_height + 16) * 2 * 2);
 	
@@ -400,7 +400,7 @@ public class itech32
 	{
 		static FILE *blitlog;
 	
-		if (!blitlog) blitlog = fopen("blitter.log", "w");
+		if (blitlog == 0) blitlog = fopen("blitter.log", "w");
 		if (itech32_video[0x16/2] == 0x100 && itech32_video[0x18/2] == 0x100 &&
 			itech32_video[0x1a/2] == 0x000 && itech32_video[0x1c/2] == 0x100 &&
 			itech32_video[0x1e/2] == 0x000 && itech32_video[0x20/2] == 0x000)
@@ -594,7 +594,7 @@ public class itech32
 	#define GET_NEXT_RUN(xleft, count, innercount, src)	\
 	do {												\
 		/* load next RLE chunk if needed */				\
-		if (!count)										\
+		if (count == 0)										\
 		{												\
 			count = *src++;								\
 			val = (count & 0x80) ? -1 : *src++;			\

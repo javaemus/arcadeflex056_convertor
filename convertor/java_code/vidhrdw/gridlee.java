@@ -86,7 +86,7 @@ public class gridlee
 	{
 		/* allocate a local copy of video RAM */
 		local_videoram = malloc(256 * 256);
-		if (!local_videoram)
+		if (local_videoram == 0)
 		{
 			gridlee_vh_stop();
 			return 1;
@@ -94,7 +94,7 @@ public class gridlee
 	
 		/* allocate a scanline dirty array */
 		scanline_dirty = malloc(256);
-		if (!scanline_dirty)
+		if (scanline_dirty == 0)
 		{
 			gridlee_vh_stop();
 			return 1;
@@ -102,7 +102,7 @@ public class gridlee
 	
 		/* allocate a scanline palette array */
 		scanline_palette = malloc(256);
-		if (!scanline_palette)
+		if (scanline_palette == 0)
 		{
 			gridlee_vh_stop();
 			return 1;
@@ -262,7 +262,7 @@ public class gridlee
 				pen_t *pens = &Machine->pens[scanline_palette[y] * 32 + 16];
 	
 				/* non-flipped: draw directly from the bitmap */
-				if (!gridlee_cocktail_flip)
+				if (gridlee_cocktail_flip == 0)
 					draw_scanline8(bitmap, 0, y, 256, &local_videoram[y * 256], pens, -1);
 	
 				/* flipped: x-flip the scanline into a temp buffer and draw that */

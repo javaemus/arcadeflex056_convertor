@@ -57,7 +57,7 @@ public class cadash
 	int cadash_core_vh_start (void)
 	{
 		spritelist = malloc(0x100 * sizeof(*spritelist));
-		if (!spritelist)
+		if (spritelist == 0)
 			return 1;
 	
 		if (TC0100SCN_vh_start(1,TC0100SCN_GFX_NUM,taito_hide_pixels,0,0,0,0,0,0))
@@ -182,7 +182,7 @@ public class cadash
 			data = buffered_spriteram16[offs+3];
 			x = data & 0x1ff;   // correct mask?
 	
-			if (!tilenum) continue;
+			if (tilenum == 0) continue;
 	
 			y += y_offs;
 	

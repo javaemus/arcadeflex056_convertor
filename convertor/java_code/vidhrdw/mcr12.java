@@ -47,7 +47,7 @@ public class mcr12
 		spritebitmap_width = Machine->drv->screen_width + 2 * 32;
 		spritebitmap_height = Machine->drv->screen_height + 2 * 32;
 		spritebitmap = malloc(spritebitmap_width * spritebitmap_height);
-		if (!spritebitmap)
+		if (spritebitmap == 0)
 			return 1;
 		memset(spritebitmap, 0, spritebitmap_width * spritebitmap_height);
 	
@@ -295,7 +295,7 @@ public class mcr12
 			UINT8 *dst = spritebitmap + spritebitmap_width * sy + sx;
 	
 			/* redraw the line */
-			if (!hflip)
+			if (hflip == 0)
 			{
 				for (x = 0; x < 32; x++)
 					*dst++ |= *src++;
@@ -404,7 +404,7 @@ public class mcr12
 					if (xtile >= 0 && xtile < xtiles && ytile >= 0 && ytile < ytiles)
 					{
 						int off;
-						if (!mcr_cocktail_flip)
+						if (mcr_cocktail_flip == 0)
 							off = 32 * ytile + xtile;
 						else
 							off = 32 * (ytiles - 1 - ytile) + (xtiles - 1 - xtile);

@@ -4,7 +4,7 @@
 #define ENTER_HALT {											\
 	_PC--;														\
 	_HALT = 1;													\
-	if( !after_EI ) 											\
+	if (after_EI == 0) 											\
 		z180_burn( z180_icount );								\
 }
 
@@ -167,7 +167,7 @@ void cpu_setOPbasez180(int pc)
 	/* speed up busy loop */									\
 	if( _PCD == oldpc ) 										\
 	{															\
-		if( !after_EI ) 										\
+		if (after_EI == 0) 										\
 			BURNODD( z180_icount, 1, cc[Z180_TABLE_op][0xc3] ); \
 	}															\
 	else														\
@@ -178,7 +178,7 @@ void cpu_setOPbasez180(int pc)
 			/* NOP - JP $-1 or EI - JP $-1 */					\
 			if ( op == 0x00 || op == 0xfb ) 					\
 			{													\
-				if( !after_EI ) 								\
+				if (after_EI == 0) 								\
 					BURNODD( z180_icount-cc[Z180_TABLE_op][0x00],\
 						2, cc[Z180_TABLE_op][0x00]+cc[Z180_TABLE_op][0xc3]); \
 			}													\
@@ -187,7 +187,7 @@ void cpu_setOPbasez180(int pc)
 		/* LD SP,#xxxx - JP $-3 (Galaga) */ 					\
 		if( _PCD == oldpc-3 && op == 0x31 ) 					\
 		{														\
-			if( !after_EI ) 									\
+			if (after_EI == 0) 									\
 				BURNODD( z180_icount-cc[Z180_TABLE_op][0x31],	\
 					2, cc[Z180_TABLE_op][0x31]+cc[Z180_TABLE_op][0xc3]); \
 		}														\
@@ -227,7 +227,7 @@ void cpu_setOPbasez180(int pc)
 	/* speed up busy loop */									\
 	if( _PCD == oldpc ) 										\
 	{															\
-		if( !after_EI ) 										\
+		if (after_EI == 0) 										\
 			BURNODD( z180_icount, 1, cc[Z180_TABLE_op][0x18] ); \
 	}															\
 	else														\
@@ -238,7 +238,7 @@ void cpu_setOPbasez180(int pc)
 			/* NOP - JR $-1 or EI - JR $-1 */					\
 			if ( op == 0x00 || op == 0xfb ) 					\
 			{													\
-				if( !after_EI ) 								\
+				if (after_EI == 0) 								\
 				   BURNODD( z180_icount-cc[Z180_TABLE_op][0x00],\
 					   2, cc[Z180_TABLE_op][0x00]+cc[Z180_TABLE_op][0x18]); \
 			}													\
@@ -247,7 +247,7 @@ void cpu_setOPbasez180(int pc)
 		/* LD SP,#xxxx - JR $-3 */								\
 		if( _PCD == oldpc-3 && op == 0x31 ) 					\
 		{														\
-			if( !after_EI ) 									\
+			if (after_EI == 0) 									\
 			   BURNODD( z180_icount-cc[Z180_TABLE_op][0x31],	\
 				   2, cc[Z180_TABLE_op][0x31]+cc[Z180_TABLE_op][0x18]); \
 		}														\

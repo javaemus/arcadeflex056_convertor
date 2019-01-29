@@ -521,7 +521,7 @@ public class wmstunit
 					d++, sx++;														\
 																					\
 				/* advance to the next pixel */										\
-				if (!scale)															\
+				if (scale == 0)															\
 				{																	\
 					ix += 0x100;													\
 					o += bpp;														\
@@ -538,7 +538,7 @@ public class wmstunit
 		clipy:																		\
 			/* advance to the next row */											\
 			dma_state.yflip ? sy-- : sy++;											\
-			if (!scale)																\
+			if (scale == 0)																\
 			{																		\
 				iy += 0x100;														\
 				width = dma_state.width;											\
@@ -556,7 +556,7 @@ public class wmstunit
 				ty = iy >> 8;														\
 				iy += dma_state.ystep;												\
 				ty = (iy >> 8) - ty;												\
-				if (!skip)															\
+				if (skip == 0)															\
 					offset += ty * dma_state.width * bpp;							\
 				else if (ty--)														\
 				{																	\

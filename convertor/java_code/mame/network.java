@@ -84,7 +84,7 @@ public class network
 	     dprintf(("net_exit() called\n"))
 	
 		/* guard to make sure we're still active */
-		if (!is_active)
+		if (is_active == 0)
 			return 0;
 	
 		/* what kind of exit are we experiencing */

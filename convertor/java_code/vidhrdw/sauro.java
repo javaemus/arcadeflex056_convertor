@@ -87,7 +87,7 @@ public class sauro
 					0,TRANSPARENCY_NONE,0);
 		}
 	
-		if (!flip_screen)
+		if (flip_screen == 0)
 		{
 			int scroll = -scroll1;
 			copyscrollbitmap(bitmap,tmpbitmap,1,&scroll ,0,0,&Machine->visible_area,TRANSPARENCY_NONE,0);

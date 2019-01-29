@@ -165,7 +165,7 @@ public class dynduke
 	{
 		int offs,fx,fy,x,y,color,sprite;
 	
-		if (!sprite_enable) return;
+		if (sprite_enable == 0) return;
 	
 		for (offs = 0x1000-8;offs >= 0;offs -= 8)
 		{

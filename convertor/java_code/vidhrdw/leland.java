@@ -117,7 +117,7 @@ public class leland
 		ataxx_qram = malloc(QRAM_SIZE);
 	
 		/* error cases */
-	    if (!ataxx_qram)
+	    if (ataxx_qram == 0)
 	    {
 	    	ataxx_vh_stop();
 			return 1;
@@ -222,7 +222,7 @@ public class leland
 	{
 		struct vram_state_data *state = vram_state + num;
 	
-		if (!offset)
+		if (offset == 0)
 			state->addr = (state->addr & 0xfe00) | ((data << 1) & 0x01fe);
 		else
 			state->addr = ((data << 9) & 0xfe00) | (state->addr & 0x01fe);

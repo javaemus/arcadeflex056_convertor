@@ -353,7 +353,7 @@ public class neogeo
 			if (line == irq2start)
 			{
 	//logerror("trigger IRQ2 at raster line %d (screen line %d)\n",line,current_scanline);
-				if (!busy)
+				if (busy == 0)
 				{
 					if (neogeo_raster_enable)
 						do_refresh = 1;

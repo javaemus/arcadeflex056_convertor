@@ -330,7 +330,7 @@ public class grchamp
 		int y0 = 240-grchamp_player_ypos-64;
 		const UINT8 *source = memory_region( REGION_GFX4 );
 		int x,y,bit;
-		if( !bFog ) source += 0x400;
+		if (bFog == 0) source += 0x400;
 		for( y=0; y<128; y++ )
 		{
 			for( x=0; x<64; x+=8 )

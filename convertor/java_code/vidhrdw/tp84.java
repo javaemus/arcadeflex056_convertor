@@ -169,7 +169,7 @@ public class tp84
 	
 		sprite_mux_buffer = malloc(256 * spriteram_size);
 	
-		if (!sprite_mux_buffer)
+		if (sprite_mux_buffer == 0)
 		{
 			free(dirtybuffer2);
 			bitmap_free(tmpbitmap2);

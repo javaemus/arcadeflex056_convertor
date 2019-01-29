@@ -389,7 +389,7 @@ public class dec0
 			case 0x75b: i8751_return=0x70f; break;
 		}
 	
-		if (!i8751_return) logerror("%04x: warning - write unknown command %02x to 8571\n",cpu_get_pc(),data);
+		if (i8751_return == 0) logerror("%04x: warning - write unknown command %02x to 8571\n",cpu_get_pc(),data);
 	}
 	
 	static void birdtry_i8751_write(int data)
@@ -424,7 +424,7 @@ public class dec0
 			case 0x75b: i8751_return=0x70f; break;
 		}
 	
-		if (!i8751_return) logerror("%04x: warning - write unknown command %02x to 8571\n",cpu_get_pc(),data);
+		if (i8751_return == 0) logerror("%04x: warning - write unknown command %02x to 8571\n",cpu_get_pc(),data);
 	*/
 	}
 	

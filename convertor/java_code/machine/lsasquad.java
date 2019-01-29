@@ -175,8 +175,8 @@ public class lsasquad
 		/* bit 0 = when 1, mcu is ready to receive data from main cpu */
 		/* bit 1 = when 0, mcu has sent data to the main cpu */
 	//logerror("%04x: mcu_status_r\n",cpu_get_pc());
-		if (!main_sent) res |= 0x01;
-		if (!mcu_sent) res |= 0x02;
+		if (main_sent == 0) res |= 0x01;
+		if (mcu_sent == 0) res |= 0x02;
 	
 		return res ^ lsasquad_invertcoin;
 	}

@@ -123,7 +123,7 @@ public class misc
 	              to_print--;
 	           
 	           /* if it didn't work, just print the columnwidth */
-	           if(!to_print)
+	           if (to_print == 0)
 	              to_print = width[i]-1;
 	         }
 	         fprintf(f, "%-*.*s", width[i], to_print, text[i]);

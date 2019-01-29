@@ -137,7 +137,7 @@ public class thunderj
 	
 		/* allocate temp memory */
 		start_end = malloc(sizeof(UINT32) * 512);
-		if (!start_end)
+		if (start_end == 0)
 			goto cant_allocate_startend;
 	
 		/* initialize the playfield */

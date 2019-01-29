@@ -130,7 +130,7 @@ public class exerion
 	
 		/* allocate memory to track the background latches */
 		background_latches = malloc(Machine->drv->screen_height * 16);
-		if (!background_latches)
+		if (background_latches == 0)
 			return 1;
 	
 		/* allocate memory for the decoded background graphics */
@@ -324,7 +324,7 @@ public class exerion
 			pen_t *pens;
 	
 			/* the cocktail flip flag controls whether we count up or down in X */
-			if (!exerion_cocktail_flip)
+			if (exerion_cocktail_flip == 0)
 			{
 				/* skip processing anything that's not visible */
 				for (x = BACKGROUND_X_START; x < VISIBLE_X_MIN; x++)

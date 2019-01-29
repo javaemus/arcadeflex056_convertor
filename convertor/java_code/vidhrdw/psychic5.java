@@ -178,7 +178,7 @@ public class psychic5
 	{
 		int val;
 	
-		if (!ps5_vram_page)
+		if (ps5_vram_page == 0)
 		{
 	
 			if (offset < 0x1000)
@@ -227,7 +227,7 @@ public class psychic5
 	
 	WRITE_HANDLER( psychic5_paged_ram_w )
 	{
-		if (!ps5_vram_page)
+		if (ps5_vram_page == 0)
 		{
 			if (offset < 0x1000)
 				psychic5_bgvideoram_w(offset,data);

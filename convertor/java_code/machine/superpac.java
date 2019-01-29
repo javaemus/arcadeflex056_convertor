@@ -54,13 +54,13 @@ public class superpac
 		int val = readinputport (3) & 0x0f, temp;
 		if (val & 1)
 		{
-			if (!coin1) credits++, coin1++;
+			if (coin1 == 0) credits++, coin1++;
 		}
 		else coin1 = 0;
 	
 		if (val & 2)
 		{
-			if (!coin2) credits++, coin2++;
+			if (coin2 == 0) credits++, coin2++;
 		}
 		else coin2 = 0;
 	

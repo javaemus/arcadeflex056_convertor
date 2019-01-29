@@ -135,7 +135,7 @@ public class config
 		if (errorlog && !logfile)
 		{
 			logfile = fopen("error.log","wa");
-			if (!logfile)
+			if (logfile == 0)
 			{
 				perror("unable to open log file\n");
 				exit (1);
@@ -234,7 +234,7 @@ public class config
 			if (match != last)
 			{
 				last = match;
-				if (!match)
+				if (match == 0)
 					gaps++;
 			}
 		}
@@ -303,7 +303,7 @@ public class config
 		char buffer[128];
 		int retval = 0;
 	
-		if (!readconfig) return 0;
+		if (readconfig == 0) return 0;
 	
 		if (gamedrv)
 		{
@@ -387,7 +387,7 @@ public class config
 	
 		/* determine global configfile name */
 		cmd_name = osd_strip_extension(osd_basename(argv[0]));
-		if (!cmd_name)
+		if (cmd_name == 0)
 		{
 			fprintf (stderr, "who am I? cannot determine the name I was called with\n");
 			exit(1);
@@ -568,7 +568,7 @@ public class config
 			options.debug_height = 480;
 	
 		/* no sound is indicated by a 0 samplerate */
-		if (!enable_sound)
+		if (enable_sound == 0)
 			options.samplerate = 0;
 	
 		return game_index;

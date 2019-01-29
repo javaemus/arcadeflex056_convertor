@@ -229,7 +229,7 @@ public class config
 	
 		res = def;
 	
-		if (!ignorecfg)
+		if (ignorecfg == 0)
 		{
 			/* if the option does not exist, create it */
 			if (get_config_int (section, option, -777) == -777)
@@ -264,7 +264,7 @@ public class config
 	
 		res = def;
 	
-		if (!ignorecfg)
+		if (ignorecfg == 0)
 		{
 			/* if the option does not exist, create it */
 			if (get_config_float (section, option, 9999.0) == 9999.0)
@@ -299,7 +299,7 @@ public class config
 	
 		res = def;
 	
-		if (!ignorecfg)
+		if (ignorecfg == 0)
 		{
 			/* if the option does not exist, create it */
 			if (get_config_string (section, option, "#") == "#" )

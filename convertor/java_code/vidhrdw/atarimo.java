@@ -904,7 +904,7 @@ public class atarimo
 		}
 	
 		/* if we didn't match the last set of entries, update the counters */
-		if (!match)
+		if (match == 0)
 		{
 			mo->prevcache = new_previous;
 			mo->curcache = current;

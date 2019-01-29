@@ -138,10 +138,10 @@ public class sega
 	
 		/* allocate memory for the sine and cosine lookup tables ASG 080697 */
 		sinTable = malloc (0x400 * sizeof (long));
-		if (!sinTable)
+		if (sinTable == 0)
 			return 1;
 		cosTable = malloc (0x400 * sizeof (long));
-		if (!cosTable)
+		if (cosTable == 0)
 		{
 			free (sinTable);
 			return 1;

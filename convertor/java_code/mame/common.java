@@ -263,7 +263,7 @@ public class common
 		i = 0;
 		while (samplenames[i+skipfirst] != 0) i++;
 	
-		if (!i) return 0;
+		if (i == 0) return 0;
 	
 		if ((samples = malloc(sizeof(struct GameSamples) + (i-1)*sizeof(struct GameSample))) == 0)
 			return 0;
@@ -741,7 +741,7 @@ public class common
 	void bitmap_free(struct mame_bitmap *bitmap)
 	{
 		/* skip if NULL */
-		if (!bitmap)
+		if (bitmap == 0)
 			return;
 	
 		/* unadjust for the safety rows */
@@ -1309,7 +1309,7 @@ public class common
 						*base = *bufptr++;
 	
 				/* grouped data -- non-reversed case */
-				else if (!reversed)
+				else if (reversed == 0)
 					while (bytesleft)
 					{
 						for (i = 0; i < groupsize && bytesleft; i++, bytesleft--)
@@ -1336,7 +1336,7 @@ public class common
 						*base = (*base & ~datamask) | ((*bufptr++ << datashift) & datamask);
 	
 				/* grouped data -- non-reversed case */
-				else if (!reversed)
+				else if (reversed == 0)
 					while (bytesleft)
 					{
 						for (i = 0; i < groupsize && bytesleft; i++, bytesleft--)
@@ -1416,7 +1416,7 @@ public class common
 	
 		/* make sure the source was valid */
 		srcbase = memory_region(srcregion);
-		if (!srcbase)
+		if (srcbase == 0)
 		{
 			printf("Error in RomModule definition: COPY from an invalid region\n");
 			return 0;
@@ -1652,7 +1652,7 @@ public class common
 	{
 		const struct RomModule *region, *rom, *chunk;
 	
-		if (!romp) return;
+		if (romp == 0) return;
 	
 	#ifdef MESS
 		if (!strcmp(basename,"nes")) return;

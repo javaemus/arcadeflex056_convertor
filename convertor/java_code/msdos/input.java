@@ -169,7 +169,7 @@ public class input
 		}
 	
 		/* if keyboard state is stable, copy it over */
-		if (!changed)
+		if (changed == 0)
 		{
 			for (i = 0;i < KEY_MAX;i++)
 				currkey[i] = key[i];

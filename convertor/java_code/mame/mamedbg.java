@@ -1601,7 +1601,7 @@ public class mamedbg
 	 **************************************************************************/
 	void trace_done(void)
 	{
-		if( !trace_on )
+		if (trace_on == 0)
 			return;
 	
 		for( tracecpu = 0; tracecpu < total_cpu; tracecpu++ )
@@ -3428,7 +3428,7 @@ public class mamedbg
 		int cmd = INVALID;
 		int i, k, l, top, lines;
 	
-		if( !help )
+		if (help == 0)
 		{
 			win_msgbox( cur_col[E_ERROR],
 				"Memory problem!", "Couldn't allocate help text buffer" );
@@ -3639,7 +3639,7 @@ public class mamedbg
 			if( length )
 			{
 				bg = get_option_or_value( &cmd, &length, COLOR_NAMES );
-				if( !length ) bg = 0;	/* BLACK is default background */
+				if (length == 0) bg = 0;	/* BLACK is default background */
 			}
 			else
 			{
@@ -3875,7 +3875,7 @@ public class mamedbg
 		unsigned i, pc, size, start, end, width, opcodes;
 	
 		filename = get_file_name( &cmd, &length );
-		if( !length )
+		if (length == 0)
 		{
 			win_msgbox( cur_col[E_ERROR], "DASM arguments",
 				"Filename missing");
@@ -3883,7 +3883,7 @@ public class mamedbg
 			return;
 		}
 		start = get_register_or_value( &cmd, &length );
-		if( !length )
+		if (length == 0)
 		{
 			win_msgbox( cur_col[E_ERROR], "DASM arguments",
 				"Start address missing");
@@ -3891,7 +3891,7 @@ public class mamedbg
 			return;
 		}
 		end = get_register_or_value( &cmd, &length );
-		if( !length )
+		if (length == 0)
 		{
 			win_msgbox( cur_col[E_ERROR], "DASM arguments",
 				"End address missing");
@@ -3899,10 +3899,10 @@ public class mamedbg
 			return;
 		}
 		opcodes = get_boolean( &cmd, &length );
-		if( !length ) opcodes = 1;	/* default to display opcodes */
+		if (length == 0) opcodes = 1;	/* default to display opcodes */
 	
 		file = fopen(filename, "w");
-		if( !file )
+		if (file == 0)
 		{
 			win_msgbox( cur_col[E_ERROR], "DASM to file",
 				"Could not create %s", filename);
@@ -3978,7 +3978,7 @@ public class mamedbg
 		unsigned datasize, asciimode, pgm_memory_base;
 	
 		filename = get_file_name( &cmd, &length );
-		if( !length )
+		if (length == 0)
 		{
 			win_msgbox( cur_col[E_ERROR], "DUMP arguments",
 				"<filename> missing");
@@ -3986,7 +3986,7 @@ public class mamedbg
 			return;
 		}
 		start = get_register_or_value( &cmd, &length );
-		if( !length )
+		if (length == 0)
 		{
 			win_msgbox( cur_col[E_ERROR], "DUMP arguments",
 				"<start> address missing");
@@ -3995,7 +3995,7 @@ public class mamedbg
 		}
 		start = rshift(start);
 		end = get_register_or_value( &cmd, &length );
-		if( !length )
+		if (length == 0)
 		{
 			win_msgbox( cur_col[E_ERROR], "DUMP arguments",
 				"<end> address missing");
@@ -4046,7 +4046,7 @@ public class mamedbg
 			pgm_memory_base = PGM_MEMORY;
 	
 		file = fopen(filename, "w");
-		if( !file )
+		if (file == 0)
 		{
 			win_msgbox( cur_col[E_ERROR], "DUMP to file",
 				"Could not create %s", filename);
@@ -4119,7 +4119,7 @@ public class mamedbg
 		unsigned save_what;
 	
 		filename = get_file_name( &cmd, &length );
-		if( !length )
+		if (length == 0)
 		{
 			win_msgbox( cur_col[E_ERROR], "SAVE arguments",
 				"<filename> missing");
@@ -4127,7 +4127,7 @@ public class mamedbg
 			return;
 		}
 		start = get_register_or_value( &cmd, &length );
-		if( !length )
+		if (length == 0)
 		{
 			win_msgbox( cur_col[E_ERROR], "SAVE arguments",
 				"<start> address missing");
@@ -4135,7 +4135,7 @@ public class mamedbg
 			return;
 		}
 		end = get_register_or_value( &cmd, &length );
-		if( !length )
+		if (length == 0)
 		{
 			win_msgbox( cur_col[E_ERROR], "SAVE arguments",
 				"<end> address missing");
@@ -4144,10 +4144,10 @@ public class mamedbg
 		}
 	
 		save_what = get_option_or_value( &cmd, &length, "OPCODES\0DATA\0");
-		if( !length ) save_what = 0;	/* default to OP_ROM */
+		if (length == 0) save_what = 0;	/* default to OP_ROM */
 	
 		file = fopen(filename, "wb");
-		if( !file )
+		if (file == 0)
 		{
 			win_msgbox( cur_col[E_ERROR], "SAVE to file",
 				"Could not create %s", filename);
@@ -4568,7 +4568,7 @@ public class mamedbg
 		{
 			which = (which - 1) % 2;
 			mode = get_option_or_value( &cmd, &length, "BYTE\0WORD\0DWORD\0" );
-			if( !length ) mode = 0; /* default to BYTE */
+			if (length == 0) mode = 0; /* default to BYTE */
 			DBGMEM[which].mode = mode;
 		}
 		else
@@ -5289,7 +5289,7 @@ public class mamedbg
 	
 		if( dbg_fast )
 		{
-			if( !debug_key_pressed ) return;
+			if (debug_key_pressed == 0) return;
 			dbg_fast = 0;
 		}
 	
@@ -5329,7 +5329,7 @@ public class mamedbg
 		{
 			debug_key_pressed = 0;
 	
-			if( !first_time )
+			if (first_time == 0)
 			{
 				osd_sound_enable(0);
 			}
@@ -5414,7 +5414,7 @@ public class mamedbg
 				dbg_update = 0;
 			}
 	
-			if( !dbg_trace )
+			if (dbg_trace == 0)
 			{
 				switch( DBG.window )
 				{

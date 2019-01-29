@@ -90,13 +90,13 @@ public class dismips
 			}
 		}
 	
-		if (!filename)
+		if (filename == 0)
 		{
 			usage();
 			return 1;
 		}
 		f=fopen (filename,"rb");
-		if (!f)
+		if (f == 0)
 		{
 			printf ("Unable to open %s\n",filename);
 			return 2;
@@ -106,7 +106,7 @@ public class dismips
 		fseek (f,begin,SEEK_SET);
 		len=(filelen>end)? (end-begin+1):(filelen-begin);
 		filebuf=malloc(len+16);
-		if (!filebuf)
+		if (filebuf == 0)
 		{
 			printf ("Memory allocation error\n");
 			fclose (f);

@@ -222,7 +222,7 @@ public class ccpu
 	
 		which = (which+1) % 16;
 	    buffer[which][0] = '\0';
-		if( !context )
+		if (context == 0)
 		{
 	        static CONTEXTCCPU tmp;
 			cGetContext(&tmp);
@@ -631,7 +631,7 @@ public class ccpu
 		{
 			vgColour = FromX & 0x0F;
 	
-			if (!vgColour)
+			if (vgColour == 0)
 				vgColour = 1;
 		}
 	
@@ -651,7 +651,7 @@ public class ccpu
 		if ((register_A & 0x1) == 1)
 		{
 			CINEWORD temp_word = ~FromX & 0x0FFF;
-			if (!temp_word)   /* black */
+			if (temp_word == 0)   /* black */
 				vgColour = 0;
 			else
 			{   /* non-black */
@@ -695,7 +695,7 @@ public class ccpu
 		{
 			vgColour = FromX & 0x0F;
 	
-			if (!vgColour)
+			if (vgColour == 0)
 				vgColour = 1;
 		}
 	
@@ -2014,7 +2014,7 @@ public class ccpu
 			register_B <<= 1;                    /* shift regB */
 	
 			temp_byte ++;
-			if (!temp_byte)
+			if (temp_byte == 0)
 				return state_AA;
 	        /* try again */
 		}

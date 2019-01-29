@@ -3803,7 +3803,7 @@ public class tmnt
 		}
 	
 		temp = malloc(len);
-		if (!temp) return;	/* bad thing! */
+		if (temp == 0) return;	/* bad thing! */
 		memcpy(temp,gfxdata,len);
 		for (A = 0;A < len/4;A++)
 		{
@@ -3899,7 +3899,7 @@ public class tmnt
 		}
 	
 		temp = malloc(len);
-		if (!temp) return;	/* bad thing! */
+		if (temp == 0) return;	/* bad thing! */
 		memcpy(temp,gfxdata,len);
 		for (A = 0;A < len/4;A++)
 		{

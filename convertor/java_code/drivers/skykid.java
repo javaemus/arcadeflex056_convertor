@@ -36,7 +36,7 @@ public class skykid
 	
 	static int skykid_interrupt( void )
 	{
-		if (!irq_disabled)
+		if (irq_disabled == 0)
 			return M6809_INT_IRQ;
 		else
 			return ignore_interrupt();

@@ -1170,7 +1170,7 @@ public class video
 				}
 			}
 			/* explicitly asked for an 15.75KHz mode which doesn't exist , so inform and exit */
-			if (!found)
+			if (found == 0)
 			{
 				printf ("\nNo %dx%d 15.75KHz mode available.\n", gfx_width, gfx_height);
 				return 0;
@@ -1641,7 +1641,7 @@ public class video
 			int dbl;
 			dbl = (ymultiply >= 2);
 			/* check that we found a driver */
-			if (!SVGA15KHzdriver)
+			if (SVGA15KHzdriver == 0)
 			{
 				printf ("\nUnable to find 15.75KHz SVGA driver for %dx%d\n", gfx_width, gfx_height);
 				return 1;
@@ -1705,7 +1705,7 @@ public class video
 				dirtycolor[i] = 1;
 			dirtypalette = 1;
 	
-			if (!show_debugger)
+			if (show_debugger == 0)
 			{
 				/* silly way to clear the screen */
 				struct mame_bitmap *clrbitmap;
@@ -1807,7 +1807,7 @@ public class video
 			if (use_mmx == -1) /* mmx=auto: can new mmx blitters be applied? */
 			{
 				/* impossible cases follow */
-				if (!cpu_mmx)
+				if (cpu_mmx == 0)
 					mmxlfb = 0;
 				else if ((gfx_mode != GFX_VESA2L) && (gfx_mode != GFX_VESA3))
 					mmxlfb = 0;
@@ -1867,7 +1867,7 @@ public class video
 			if (use_mmx == -1) /* mmx=auto: can new mmx blitters be applied? */
 			{
 				/* impossible cases follow */
-				if (!cpu_mmx)
+				if (cpu_mmx == 0)
 					mmxlfb = 0;
 				else if ((gfx_mode != GFX_VESA2L) && (gfx_mode != GFX_VESA3))
 					mmxlfb = 0;
@@ -1987,7 +1987,7 @@ public class video
 			if (use_mmx == -1) /* mmx=auto: can new mmx blitters be applied? */
 			{
 				/* impossible cases follow */
-				if (!cpu_mmx)
+				if (cpu_mmx == 0)
 					mmxlfb = 0;
 				else if ((gfx_mode != GFX_VESA2L) && (gfx_mode != GFX_VESA3))
 					mmxlfb = 0;
@@ -2727,7 +2727,7 @@ public class video
 		int hrt_start, hrt_end, hrt, hblnk_start, hblnk_end;
 		int vrt_start, vrt_end, vert_total, vert_display, vblnk_start, vrt, vblnk_end;
 	/* check for empty array */
-		if (!pReg)
+		if (pReg == 0)
 			return;
 	/* vertical retrace width */
 		vrt = 2;

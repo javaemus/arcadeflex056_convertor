@@ -61,7 +61,7 @@ public class m90
 		{
 			data8_t *rom = memory_region(REGION_USER1);
 	
-			if (!rom)
+			if (rom == 0)
 				usrintf_showmessage("bankswitch with no banked ROM!");
 			else
 				cpu_setbank(1,rom + 0x10000 * (data & 0x0f));

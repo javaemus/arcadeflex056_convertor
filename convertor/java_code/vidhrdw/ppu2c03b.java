@@ -842,7 +842,7 @@ public class ppu2c03b
 			ppu_regs[PPU_STATUS] &= ~( PPU_STATUS_VBLANK | PPU_STATUS_SPRITE0_HIT );
 	
 			/* if background or sprites are enabled, copy the ppu address latch */
-			if ( !blanked )
+			if (blanked == 0)
 				chips[num].refresh_data = chips[num].refresh_latch;
 	
 			/* reset the scanline count */

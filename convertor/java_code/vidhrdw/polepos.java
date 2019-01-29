@@ -157,12 +157,12 @@ public class polepos
 	{
 		/* allocate view bitmap */
 		view_bitmap = bitmap_alloc(64*8, 16*8);
-		if (!view_bitmap)
+		if (view_bitmap == 0)
 			return 1;
 	
 		/* allocate view dirty buffer */
 		view_dirty = malloc(64*16);
-		if (!view_dirty)
+		if (view_dirty == 0)
 		{
 			bitmap_free(view_bitmap);
 			return 1;

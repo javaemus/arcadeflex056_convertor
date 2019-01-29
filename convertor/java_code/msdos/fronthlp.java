@@ -93,7 +93,7 @@ public class fronthlp
 				break;
 			}
 		}
-		if (!silentident)
+		if (silentident == 0)
 			printf("%-12s ",&name[i]);
 	
 		for (i = 0; drivers[i]; i++)
@@ -105,7 +105,7 @@ public class fronthlp
 				{
 					if (checksum == ROM_GETCRC(rom))
 					{
-						if (!silentident)
+						if (silentident == 0)
 						{
 							if (found != 0)
 								printf("             ");
@@ -115,7 +115,7 @@ public class fronthlp
 					}
 					if (BADCRC(checksum) == ROM_GETCRC(rom))
 					{
-						if (!silentident)
+						if (silentident == 0)
 						{
 							if (found != 0)
 								printf("             ");
@@ -131,12 +131,12 @@ public class fronthlp
 			while (size && (size & 1) == 0) size >>= 1;
 			if (size & ~1)
 			{
-				if (!silentident)
+				if (silentident == 0)
 					printf("NOT A ROM\n");
 			}
 			else
 			{
-				if (!silentident)
+				if (silentident == 0)
 					printf("NO MATCH\n");
 				if (knownstatus == KNOWN_START)
 					knownstatus = KNOWN_NONE;
@@ -181,7 +181,7 @@ public class fronthlp
 		char* data;
 	
 		f = fopen(name,"rb");
-		if (!f) {
+		if (f == 0) {
 			return;
 		}
 	
@@ -198,14 +198,14 @@ public class fronthlp
 		}
 	
 		/* empty file */
-		if (!length) {
+		if (length == 0) {
 			fclose(f);
 			return;
 		}
 	
 		/* allocate space for entire file */
 		data = (char*)malloc(length);
-		if (!data) {
+		if (data == 0) {
 			fclose(f);
 			return;
 		}
@@ -234,7 +234,7 @@ public class fronthlp
 		struct zipent* ent;
 	
 		ZIP* zip = openzip( zipname );
-		if (!zip)
+		if (zip == 0)
 			return;
 	
 		while ((ent = readzip(zip))) {
@@ -258,7 +258,7 @@ public class fronthlp
 		struct dirent *ent;
 	
 		dir = opendir(dirname);
-		if (!dir) {
+		if (dir == 0) {
 			return;
 		}
 	
@@ -722,7 +722,7 @@ public class fronthlp
 	
 			case LIST_GAMELIST: /* GAMELIST.TXT */
 				printf("This is the complete list of games supported by MAME %s.\n",build_version);
-				if (!listclones)
+				if (listclones == 0)
 					printf("Variants of the same game are not included, you can use the -listclones command\n"
 						"to get a list of the alternate versions of a given game.\n");
 				printf("\n"

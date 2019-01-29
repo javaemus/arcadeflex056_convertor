@@ -369,7 +369,7 @@ public class m6509
 	
 		which = (which+1) % 16;
 		buffer[which][0] = '\0';
-		if( !context )
+		if (context == 0)
 			r = &m6509;
 	
 		switch( regnum )

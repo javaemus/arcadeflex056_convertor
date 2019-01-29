@@ -216,7 +216,7 @@ public class baraduke
 					if( sx > 512 - 32 ) sx -= 512;
 	
 					if( flipx && !wide ) sx -= 16;
-					if( !tall ) sy += 16;
+					if (tall == 0) sy += 16;
 					if( !tall && (attr2 & 0x10) && flipy ) sy -= 16;
 	
 					sx += sprite_xoffs;

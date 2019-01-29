@@ -132,13 +132,13 @@ public class turbo
 		sprite_length = memory_region_length(REGION_GFX1);
 		sprite_bank_size = sprite_length / 8;
 		sprite_expanded_data = malloc(sprite_length * 2 * sizeof(UINT32));
-		if (!sprite_expanded_data)
+		if (sprite_expanded_data == 0)
 			return 1;
 	
 		/* allocate the expanded background data */
 		back_length = memory_region_length(REGION_GFX3);
 		back_expanded_data = malloc(back_length);
-		if (!back_expanded_data)
+		if (back_expanded_data == 0)
 		{
 			free(sprite_expanded_data);
 			return 1;
@@ -146,7 +146,7 @@ public class turbo
 	
 		/* allocate the expanded road palette */
 		road_expanded_palette = malloc(0x40 * sizeof(UINT16));
-		if (!road_expanded_palette)
+		if (road_expanded_palette == 0)
 		{
 			free(back_expanded_data);
 			free(sprite_expanded_data);
@@ -578,7 +578,7 @@ public class turbo
 	void turbo_vh_eof(void)
 	{
 		/* only do collision checking if we didn't draw */
-		if (!drew_frame)
+		if (drew_frame == 0)
 		{
 			update_sprite_info();
 			draw_everything(NULL, 0);

@@ -337,7 +337,7 @@ public class blit
 				planeval <<= 1;
 			}
 			/* 'bank switch' our unchained output on the first loop */
-			if(!page)
+			if (page == 0)
 				unchained_flip();
 			/* move onto next 'page' */
 			dirty_page += (no_xpages - 1);

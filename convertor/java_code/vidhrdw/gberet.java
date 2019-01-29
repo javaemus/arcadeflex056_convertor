@@ -115,7 +115,7 @@ public class gberet
 	{
 		bg_tilemap = tilemap_create(get_tile_info,tilemap_scan_rows,TILEMAP_TRANSPARENT_COLOR,8,8,64,32);
 	
-		if (!bg_tilemap)
+		if (bg_tilemap == 0)
 			return 0;
 	
 		tilemap_set_transparent_pen(bg_tilemap,0x10);

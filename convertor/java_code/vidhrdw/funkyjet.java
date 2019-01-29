@@ -35,7 +35,7 @@ public class funkyjet
 			int x,y,sprite,colour,multi,fx,fy,inc,flash,mult;
 	
 			sprite = spriteram16[offs+1] & 0x3fff;
-			if (!sprite) continue;
+			if (sprite == 0) continue;
 	
 			y = spriteram16[offs];
 			flash=y&0x1000;

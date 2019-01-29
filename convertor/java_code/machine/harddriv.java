@@ -463,7 +463,7 @@ public class harddriv
 		if (m68k_adsp_buffer_bank != data && keyboard_pressed(KEYCODE_L))
 		{
 			static FILE *commands;
-			if (!commands) commands = fopen("commands.log", "w");
+			if (commands == 0) commands = fopen("commands.log", "w");
 			if (commands)
 			{
 				INT16 *base = (INT16 *)&som_memory[data * 0x2000];
@@ -629,7 +629,7 @@ public class harddriv
 		if (ds3_g68flag) result ^= 0x8000;
 		if (ds3_gflag) result ^= 0x4000;
 		if (ds3_g68irqs) result ^= 0x2000;
-		if (!adsp_irq_state) result ^= 0x1000;
+		if (adsp_irq_state == 0) result ^= 0x1000;
 		return result;
 	}
 	
@@ -1184,7 +1184,7 @@ public class harddriv
 	
 	WRITE16_HANDLER( racedriv_asic65_w )
 	{
-		if (!asic65_log) asic65_log = fopen("asic65.log", "w");
+		if (asic65_log == 0) asic65_log = fopen("asic65.log", "w");
 	
 		if (!ACCESSING_LSB || !ACCESSING_MSB)
 			return;
@@ -1288,7 +1288,7 @@ public class harddriv
 	{
 		int result;
 	
-		if (!asic65_log) asic65_log = fopen("asic65.log", "w");
+		if (asic65_log == 0) asic65_log = fopen("asic65.log", "w");
 		if (asic65_log) fprintf(asic65_log, " (R=%04X)", asic65_result[asic65_result_index]);
 	
 		/* return the next result */
@@ -1326,7 +1326,7 @@ public class harddriv
 	
 	static WRITE16_HANDLER( asic61_w )
 	{
-		if (!asic61_ram_low)
+		if (asic61_ram_low == 0)
 		{
 			asic61_ram_low = malloc(2 * 0x1000);
 			asic61_ram_mid = malloc(2 * 0x20000);
@@ -1347,7 +1347,7 @@ public class harddriv
 	
 	static READ16_HANDLER( asic61_r )
 	{
-		if (!asic61_ram_low)
+		if (asic61_ram_low == 0)
 		{
 			asic61_ram_low = malloc(2 * 0x1000);
 			asic61_ram_mid = malloc(2 * 0x20000);
@@ -1372,7 +1372,7 @@ public class harddriv
 	
 	WRITE16_HANDLER( racedriv_asic61_w )
 	{
-		if (!asic61_log) asic61_log = fopen("asic61.log", "w");
+		if (asic61_log == 0) asic61_log = fopen("asic61.log", "w");
 	
 		switch (offset)
 		{
@@ -1403,7 +1403,7 @@ public class harddriv
 	{
 		UINT32 orig_addr = asic61_addr;
 	
-		if (!asic61_log) asic61_log = fopen("asic61.log", "w");
+		if (asic61_log == 0) asic61_log = fopen("asic61.log", "w");
 	
 		switch (offset)
 		{

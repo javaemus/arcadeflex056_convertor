@@ -317,7 +317,7 @@ public class tms34010
 	INLINE tms34010_regs *FINDCONTEXT(int cpu)
 	{
 		tms34010_regs *context = cpunum_get_context_ptr(cpu);
-		if (!context)
+		if (context == 0)
 			context = &state;
 		return context;
 	}
@@ -744,7 +744,7 @@ public class tms34010
 	
 		/* early out if no interrupts pending */
 		irq = IOREG(REG_INTPEND);
-		if (!irq)
+		if (irq == 0)
 			return;
 	
 		/* check for NMI first */
@@ -1237,7 +1237,7 @@ public class tms34010
 	
 		which = (which+1) % 40;
 		buffer[which][0] = '\0';
-		if (!context)
+		if (context == 0)
 			r = &state;
 	
 		switch (regnum)
@@ -1699,7 +1699,7 @@ public class tms34010
 	
 	WRITE16_HANDLER( tms34010_io_register_w )
 	{
-		if (!host_interface_context)
+		if (host_interface_context == 0)
 			common_io_register_w(cpu_getactivecpu(), &state, offset, data);
 		else
 			common_io_register_w(host_interface_cpu, host_interface_context, offset, data);
@@ -1804,7 +1804,7 @@ public class tms34010
 	
 	WRITE16_HANDLER( tms34020_io_register_w )
 	{
-		if (!host_interface_context)
+		if (host_interface_context == 0)
 			common_020_io_register_w(cpu_getactivecpu(), &state, offset, data);
 		else
 			common_020_io_register_w(host_interface_cpu, host_interface_context, offset, data);
@@ -1854,7 +1854,7 @@ public class tms34010
 	
 	READ16_HANDLER( tms34010_io_register_r )
 	{
-		if (!host_interface_context)
+		if (host_interface_context == 0)
 			return common_io_register_r(cpu_getactivecpu(), &state, offset);
 		else
 			return common_io_register_r(host_interface_cpu, host_interface_context, offset);
@@ -1870,7 +1870,7 @@ public class tms34010
 	
 	READ16_HANDLER( tms34020_io_register_r )
 	{
-		if (!host_interface_context)
+		if (host_interface_context == 0)
 			return common_020_io_register_r(cpu_getactivecpu(), &state, offset);
 		else
 			return common_020_io_register_r(host_interface_cpu, host_interface_context, offset);

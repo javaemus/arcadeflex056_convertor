@@ -175,7 +175,7 @@ public class atarifb
 		else
 			DAC_data_w(2,0);
 	
-		if (!noise_timer_set)
+		if (noise_timer_set == 0)
 			timer_set (TIME_IN_NSEC(TIME_256H), 0, atarifb_noise_256H);
 		noise_timer_set=1;
 	
@@ -192,7 +192,7 @@ public class atarifb
 		else
 			DAC_data_w(2,0);
 	
-		if (!noise_timer_set)
+		if (noise_timer_set == 0)
 			timer_set (TIME_IN_NSEC(TIME_256H), 0, atarifb_noise_256H);
 		noise_timer_set=1;
 	

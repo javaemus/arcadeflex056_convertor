@@ -57,11 +57,11 @@ public class darius
 	int darius_vh_start (void)
 	{
 		fg_tilemap = tilemap_create(darius_fg_get_tile_info[0],tilemap_scan_rows,TILEMAP_TRANSPARENT,8,8,128,64);
-		if (!fg_tilemap)
+		if (fg_tilemap == 0)
 			return 1;
 	
 		spritelist = malloc(0x800 * sizeof(*spritelist));
-		if (!spritelist)
+		if (spritelist == 0)
 			return 1;
 	
 		/* (chips, gfxnum, x_offs, y_offs, y_invert, opaque, dblwidth) */

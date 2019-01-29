@@ -326,12 +326,12 @@ public class route16
 		video_remap_2 = 0;
 	
 	
-		if (!video_disable_2)
+		if (video_disable_2 == 0)
 		{
 			copybitmap(bitmap,tmpbitmap2,0,0,0,0,&Machine->visible_area,TRANSPARENCY_NONE,0);
 		}
 	
-		if (!video_disable_1)
+		if (video_disable_1 == 0)
 		{
 			if (video_disable_2)
 				copybitmap(bitmap,tmpbitmap1,0,0,0,0,&Machine->visible_area,TRANSPARENCY_NONE,0);

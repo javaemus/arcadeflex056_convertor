@@ -153,7 +153,7 @@ public class timer
 		timer_entry *timer;
 	
 		/* remove an empty entry */
-		if (!timer_free_head)
+		if (timer_free_head == 0)
 			return NULL;
 		timer = timer_free_head;
 		timer_free_head = timer->next;
@@ -302,7 +302,7 @@ public class timer
 	
 		/* allocate a new entry */
 		timer = timer_new();
-		if (!timer)
+		if (timer == 0)
 			return NULL;
 	
 		/* fill in the record */
@@ -339,7 +339,7 @@ public class timer
 	
 		/* allocate a new entry */
 		timer = timer_new();
-		if (!timer)
+		if (timer == 0)
 			return NULL;
 	
 		/* fill in the record */
@@ -534,7 +534,7 @@ public class timer
 			callback_timer = NULL;
 	
 			/* reset or remove the timer, but only if it wasn't modified during the callback */
-			if (!callback_timer_modified)
+			if (callback_timer_modified == 0)
 			{
 				if (timer->period)
 				{

@@ -73,7 +73,7 @@ public class arkanoid
 		if (z80write) res |= 0x01;
 	
 		/* bit 1 is high if the previous write has been read */
-		if (!m68705write) res |= 0x02;
+		if (m68705write == 0) res |= 0x02;
 	
 		return (portC_out & ddrC) | (res & ~ddrC);
 	}
@@ -111,10 +111,10 @@ public class arkanoid
 		int res = input_port_0_r(offset) & 0x3f;
 	
 		/* bit 0x40 comes from the sticky bit */
-		if (!z80write) res |= 0x40;
+		if (z80write == 0) res |= 0x40;
 	
 		/* bit 0x80 comes from a write latch */
-		if (!m68705write) res |= 0x80;
+		if (m68705write == 0) res |= 0x80;
 	
 		return res;
 	}

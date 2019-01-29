@@ -357,7 +357,7 @@ public class winddraw
 		// first compute a score based on size
 	
 		// if not stretching, we need to keep minx and miny scale equal
-		if (!win_hw_stretch)
+		if (win_hw_stretch == 0)
 		{
 			if (effect_min_yscale > effect_min_xscale)
 				effect_min_xscale = effect_min_yscale;
@@ -453,12 +453,12 @@ public class winddraw
 				}
 	
 				// force to the current width/height
-				if (!win_switch_res)
+				if (win_switch_res == 0)
 				{
 					win_gfx_width = currmode.dwWidth;
 					win_gfx_height = currmode.dwHeight;
 				}
-				if (!win_switch_bpp)
+				if (win_switch_bpp == 0)
 					win_gfx_depth = currmode.ddpfPixelFormat.DUMMYUNIONNAMEN(1).dwRGBBitCount;
 			}
 	
@@ -792,7 +792,7 @@ public class winddraw
 			result = IDirectDrawSurface_Blt(blit_surface, NULL, NULL, NULL, DDBLT_COLORFILL | DDBLT_WAIT, &blitfx);
 	
 		// loop through enough to get all the back buffers
-		if (!win_window_mode)
+		if (win_window_mode == 0)
 		{
 			if (back_surface)
 				for (i = 0; i < 5; i++)
@@ -1071,7 +1071,7 @@ public class winddraw
 			profiler_mark(PROFILER_IDLE);
 	
 			result = IDirectDraw_GetVerticalBlankStatus(ddraw, &is_vblank);
-			if (!is_vblank)
+			if (is_vblank == 0)
 				result = IDirectDraw_WaitForVerticalBlank(ddraw, DDWAITVB_BLOCKBEGIN, 0);
 	
 			// idle time done

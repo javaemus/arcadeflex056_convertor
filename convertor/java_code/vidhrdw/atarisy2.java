@@ -121,7 +121,7 @@ public class atarisy2
 	
 		/* allocate banked memory */
 		vram = calloc(0x8000, 1);
-		if (!vram)
+		if (vram == 0)
 			goto cant_allocate_ram;
 		atarian_0_base = &vram[0x0000];
 		atarimo_0_spriteram = &vram[0x0c00];

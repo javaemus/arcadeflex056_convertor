@@ -208,7 +208,7 @@ public class lasso
 		background = tilemap_create(	get_bg_tile_info, tilemap_scan_rows,
 										TILEMAP_OPAQUE,		8,8,	32,32);
 	
-		if (!background)
+		if (background == 0)
 			return 1;
 	
 		return 0;

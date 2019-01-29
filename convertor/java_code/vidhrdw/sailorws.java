@@ -180,7 +180,7 @@ public class sailorws
 	{
 		sailorws_radr_tmp[vram][offset] = data;
 	
-		if (!offset)
+		if (offset == 0)
 		{
 			sailorws_radr[vram] = (sailorws_radr_tmp[vram][0] + (sailorws_radr_tmp[vram][1] << 8) + (sailorws_radr_tmp[vram][2] << 16));
 		}
@@ -396,7 +396,7 @@ public class sailorws
 					color2 = (color & 0xf0) >> 4;
 				}
 	
-				if (!vram)
+				if (vram == 0)
 				{
 					drawcolor1 = sailorws_paltbl0[(sailorws_paltblnum * 0x10) + color1];
 					drawcolor2 = sailorws_paltbl0[(sailorws_paltblnum * 0x10) + color2];
@@ -418,7 +418,7 @@ public class sailorws
 					tflag2 = 1;
 				}
 	
-				if (!vram)
+				if (vram == 0)
 				{
 					if (tflag1)
 					{
@@ -553,7 +553,7 @@ public class sailorws
 						drawcolor1 = ((color1 & 0x0f) << 0);
 						drawcolor2 = ((color2 & 0x0f) << 0);
 	
-						if (!vram)
+						if (vram == 0)
 						{
 							sailorws_videoworkram0[(dy * Machine->drv->screen_width) + dx1] = drawcolor1;
 							sailorws_videoworkram0[(dy * Machine->drv->screen_width) + dx2] = drawcolor2;
@@ -572,7 +572,7 @@ public class sailorws
 						drawcolor1 = ((color1 & 0x0f) << 4);
 						drawcolor2 = ((color2 & 0x0f) << 4);
 	
-						if (!vram)
+						if (vram == 0)
 						{
 							drawcolor1 |= sailorws_videoworkram0[(dy * Machine->drv->screen_width) + dx1];
 							drawcolor2 |= sailorws_videoworkram0[(dy * Machine->drv->screen_width) + dx2];
@@ -594,7 +594,7 @@ public class sailorws
 				{
 					// normal color mode
 	
-					if (!vram)
+					if (vram == 0)
 					{
 						drawcolor1 = sailorws_paltbl0[(sailorws_paltblnum * 0x10) + color1];
 						drawcolor2 = sailorws_paltbl0[(sailorws_paltblnum * 0x10) + color2];
@@ -620,7 +620,7 @@ public class sailorws
 				drawcolor1 |= (0x100 * vram);
 				drawcolor2 |= (0x100 * vram);
 	
-				if (!vram)
+				if (vram == 0)
 				{
 					if (tflag1)
 					{

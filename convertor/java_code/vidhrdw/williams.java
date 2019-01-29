@@ -163,7 +163,7 @@ public class williams
 			}
 	
 			/* handle general case */
-			if (!williams_blitter_remap)
+			if (williams_blitter_remap == 0)
 				draw_scanline8(bitmap, xoffset, y, pairs * 2, scanline, Machine->pens, transparent_pen);
 	
 			/* handle Blaster special case */
@@ -201,7 +201,7 @@ public class williams
 	{
 		/* allocate space for video RAM and dirty scanlines */
 		williams_videoram = malloc(2 * VIDEORAM_SIZE + 256);
-		if (!williams_videoram)
+		if (williams_videoram == 0)
 			return 1;
 		williams_videoram_copy = williams_videoram + VIDEORAM_SIZE;
 		scanline_dirty = williams_videoram_copy + VIDEORAM_SIZE;
@@ -336,7 +336,7 @@ public class williams
 	
 		/* allocate a buffer for palette RAM */
 		williams2_paletteram = malloc(4 * 1024 * 4 / 8);
-		if (!williams2_paletteram)
+		if (williams2_paletteram == 0)
 		{
 			williams2_vh_stop();
 			return 1;
@@ -451,7 +451,7 @@ public class williams
 		unsigned int page_offset = williams2_bg_color * 16;
 	
 		/* non-Mystic Marathon variant */
-		if (!williams2_special_bg_color)
+		if (williams2_special_bg_color == 0)
 		{
 			/* only modify the palette if we're talking to the current page */
 			if (offset >= page_offset && offset < page_offset + Machine->drv->total_colors - 16)
@@ -499,7 +499,7 @@ public class williams
 		williams2_bg_color = data & 0x3f;
 	
 		/* non-Mystic Marathon variant */
-		if (!williams2_special_bg_color)
+		if (williams2_special_bg_color == 0)
 		{
 			/* remap the background colors */
 			palindex = williams2_bg_color * 16;

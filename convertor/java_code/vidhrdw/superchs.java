@@ -31,7 +31,7 @@ public class superchs
 	int superchs_vh_start (void)
 	{
 		spritelist = malloc(0x4000 * sizeof(*spritelist));
-		if (!spritelist)
+		if (spritelist == 0)
 			return 1;
 	
 		if (TC0480SCP_vh_start(TC0480SCP_GFX_NUM,0,0x20,0x08,-1,0,0,0,0))
@@ -120,7 +120,7 @@ public class superchs
 	
 			color |= 0x100;
 	
-			if (!tilenum) continue;
+			if (tilenum == 0) continue;
 	
 			flipy = !flipy;
 			zoomx += 1;

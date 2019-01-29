@@ -419,7 +419,7 @@ public class exidy440
 				result ^= port_3_xor;
 	
 				/* sound command acknowledgements come on bit 3 here */
-				if (!exidy440_sound_command_ack)
+				if (exidy440_sound_command_ack == 0)
 					result ^= 0x08;
 	
 				/* I/O1 accesses clear the CIRQ flip/flop */

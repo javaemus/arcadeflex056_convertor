@@ -531,7 +531,7 @@ public class phoenix
 			polyoffs = (polyoffs + n) & 0x3ffff;
 			polybit = (poly18[polyoffs>>5] >> (polyoffs & 31)) & 1;
 		}
-		if (!polybit)
+		if (polybit == 0)
 			sum += vc24;
 	
 		/* 400Hz crude low pass filter: this is only a guess!! */
@@ -541,7 +541,7 @@ public class phoenix
 			lowpass_counter += samplerate;
 			lowpass_polybit = polybit;
 		}
-		if (!lowpass_polybit)
+		if (lowpass_polybit == 0)
 			sum += vc25;
 	
 		return sum;
@@ -598,7 +598,7 @@ public class phoenix
 	
 		poly18 = (UINT32 *)malloc((1ul << (18-5)) * sizeof(UINT32));
 	
-		if( !poly18 )
+		if (poly18 == 0)
 			return 1;
 	
 	    shiftreg = 0;

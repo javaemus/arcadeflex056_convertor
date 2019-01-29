@@ -6811,7 +6811,7 @@ public class m68k_in
 					if(CPU_TYPE_IS_EC020_PLUS(CPU_TYPE))
 					{
 						/* we are in supervisor mode so just check for M flag */
-						if(!FLAG_M)
+						if (FLAG_M == 0)
 						{
 							REG_MSP = REG_DA[(word2 >> 12) & 15];
 							return;
@@ -6824,7 +6824,7 @@ public class m68k_in
 				case 0x804:			   /* ISP */
 					if(CPU_TYPE_IS_EC020_PLUS(CPU_TYPE))
 					{
-						if(!FLAG_M)
+						if (FLAG_M == 0)
 						{
 							REG_SP = REG_DA[(word2 >> 12) & 15];
 							return;

@@ -83,7 +83,7 @@ public class namcos1
 		int neg_y[] = {0x1e8,0x1e8,0x1e8,0x0e8};
 	
 		flipscreen = flip;
-		if(!flip)
+		if (flip == 0)
 		{
 			for ( i = 0; i < 4; i++ ) {
 				scrolloffsX[i] = pos_x[i];

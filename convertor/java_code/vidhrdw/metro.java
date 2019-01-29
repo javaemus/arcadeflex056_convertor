@@ -428,7 +428,7 @@ public class metro
 		int code,i;
 	
 		empty_tiles = malloc(16*16*16);
-		if (!empty_tiles) return;
+		if (empty_tiles == 0) return;
 	
 		for (code = 0;code < 0x10;code++)
 			for (i = 0;i < 16*16;i++)
@@ -544,7 +544,7 @@ public class metro
 		metro_K053936_tilemap = tilemap_create(metro_K053936_get_tile_info, tilemap_scan_rows,
 									TILEMAP_OPAQUE, 8,8, 256, 512 );
 	
-		if (!metro_K053936_tilemap)
+		if (metro_K053936_tilemap == 0)
 			return 1;
 	
 		tilemap_set_scrolldx(tilemap[0], 8, -8);

@@ -2,3 +2,4 @@
 ==========
 -Intial convertor
 -Partial support for enums conversion
+-Convert if(!variable) to if(variable==0)

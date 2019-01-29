@@ -147,7 +147,7 @@ public class marvins
 	/* this input port has one of its bits mapped to sound CPU status */
 	static READ_HANDLER( marvins_port_0_r ){
 		int result = input_port_0_r( 0 );
-		if( !sound_cpu_ready ) result |= sound_cpu_busy_bit;
+		if (sound_cpu_ready == 0) result |= sound_cpu_busy_bit;
 		return result;
 	}
 	

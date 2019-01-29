@@ -104,7 +104,7 @@ public class aerofgt
 		bg1_tilemap = tilemap_create(get_pspikes_tile_info,tilemap_scan_rows,TILEMAP_OPAQUE,8,8,64,32);
 		/* no bg2 in this game */
 	
-		if (!bg1_tilemap)
+		if (bg1_tilemap == 0)
 			return 1;
 	
 		sprite_gfx = 1;

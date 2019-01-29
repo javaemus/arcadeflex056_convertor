@@ -210,7 +210,7 @@ public class meadows
 		sense_state ^= 1;
 		cpu_set_irq_line( 0, 1, (sense_state) ? ASSERT_LINE : CLEAR_LINE);
 		if( input_port_3_r(0) & 0x01 ) {
-			if( !coin1_state ) {
+			if (coin1_state == 0) {
 				coin1_state = 1;
 				/* S2650 interrupt vector */
 				cpu_irq_line_vector_w(0,0,0x82);

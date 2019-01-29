@@ -90,7 +90,7 @@ public class rockola
 	
 		/* play musical tones according to tunes stored in ROM */
 	
-		if (!NoSound0)
+		if (NoSound0 == 0)
 		{
 	 		if (memory_region(REGION_SOUND1)[Sound0Base+Sound0Offset]!=0xff)
 			{
@@ -106,7 +106,7 @@ public class rockola
 		else
 			mixer_set_volume(tonechannels+0,0);
 	
-		if (!NoSound1)
+		if (NoSound1 == 0)
 		{
 			if (memory_region(REGION_SOUND1)[Sound1Base+Sound1Offset]!=0xff)
 			{
@@ -120,7 +120,7 @@ public class rockola
 		else
 			mixer_set_volume(tonechannels+1,0);
 	
-		if (!NoSound2)
+		if (NoSound2 == 0)
 		{
 			if (memory_region(REGION_SOUND1)[Sound2Base+Sound2Offset]!=0xff)
 			{

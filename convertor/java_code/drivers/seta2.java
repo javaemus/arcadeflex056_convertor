@@ -193,7 +193,7 @@ public class seta2
 	{
 		COMBINE_DATA(&tmp68301_regs[offset]);
 	
-		if (!ACCESSING_LSB)	return;
+		if (ACCESSING_LSB == 0)	return;
 	
 	//	logerror("CPU #0 PC %06X: TMP68301 Reg %04X<-%04X & %04X\n",cpu_get_pc(),offset*2,data,mem_mask^0xffff);
 	

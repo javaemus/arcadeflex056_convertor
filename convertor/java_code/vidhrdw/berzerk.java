@@ -128,7 +128,7 @@ public class berzerk
 		magicram_latch = data;
 	
 		/* Check for collision */
-		if (!collision)
+		if (collision == 0)
 		{
 			collision = (data2 & videoram[offset]);
 		}

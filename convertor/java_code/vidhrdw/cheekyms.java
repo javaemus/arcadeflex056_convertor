@@ -153,7 +153,7 @@ public class cheekyms
 	
 			if (v1 & 0x80)
 			{
-				if (!flip_screen)
+				if (flip_screen == 0)
 				{
 					code++;
 				}

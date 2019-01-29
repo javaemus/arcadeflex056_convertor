@@ -105,7 +105,7 @@ public class crbaloon
 	
 				sx = offs % 32;
 				sy = offs / 32;
-				if (!flip_screen)
+				if (flip_screen == 0)
 				{
 					sx = 31 - sx;
 					sy = 31 - sy;

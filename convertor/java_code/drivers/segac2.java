@@ -383,7 +383,7 @@ public class segac2
 	static WRITE16_HANDLER( upd7759_w )
 	{
 		/* make sure we have a UPD chip */
-		if (!sound_banks)
+		if (sound_banks == 0)
 			return;
 	
 		/* only works if we're accessing the low byte */
@@ -498,7 +498,7 @@ public class segac2
 		int newbank;
 	
 		/* only LSB matters */
-		if (!ACCESSING_LSB)
+		if (ACCESSING_LSB == 0)
 			return;
 	
 		/* track what was written */
@@ -562,7 +562,7 @@ public class segac2
 	static WRITE16_HANDLER( control_w )
 	{
 		/* skip if not LSB */
-		if (!ACCESSING_LSB)
+		if (ACCESSING_LSB == 0)
 			return;
 		data &= 0xff;
 	
@@ -605,7 +605,7 @@ public class segac2
 		int table_index;
 	
 		/* only works for the LSB */
-		if (!ACCESSING_LSB)
+		if (ACCESSING_LSB == 0)
 			return;
 	
 		/* keep track of the last few writes */

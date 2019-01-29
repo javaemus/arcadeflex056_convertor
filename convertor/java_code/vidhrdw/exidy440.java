@@ -77,7 +77,7 @@ public class exidy440
 	
 		/* allocate a buffer for VRAM */
 		local_videoram = malloc(256 * 256 * 2);
-		if (!local_videoram)
+		if (local_videoram == 0)
 		{
 			exidy440_vh_stop();
 			return 1;
@@ -88,7 +88,7 @@ public class exidy440
 	
 		/* allocate a buffer for palette RAM */
 		local_paletteram = malloc(512 * 2);
-		if (!local_paletteram)
+		if (local_paletteram == 0)
 		{
 			exidy440_vh_stop();
 			return 1;
@@ -99,7 +99,7 @@ public class exidy440
 	
 		/* allocate a scanline dirty array */
 		scanline_dirty = malloc(256);
-		if (!scanline_dirty)
+		if (scanline_dirty == 0)
 		{
 			exidy440_vh_stop();
 			return 1;
@@ -110,7 +110,7 @@ public class exidy440
 	
 		/* allocate a sprite cache */
 		spriteram_buffer = malloc(SPRITERAM_SIZE * TOTAL_CHUNKS);
-		if (!spriteram_buffer)
+		if (spriteram_buffer == 0)
 		{
 			exidy440_vh_stop();
 			return 1;
@@ -340,7 +340,7 @@ public class exidy440
 		exidy440_update_firq();
 	
 		/* allocate a timer to go off just before the refresh (but not for Top Secret */
-		if (!exidy440_topsecret)
+		if (exidy440_topsecret == 0)
 			timer_set(TIME_IN_USEC(Machine->drv->vblank_duration - 50), 0, exidy440_update_callback);
 	
 		return ignore_interrupt();
@@ -542,7 +542,7 @@ public class exidy440
 		draw_sprites(bitmap, scroll_offset);
 	
 		/* draw the crosshair (but not for topsecret) */
-		if(!exidy440_topsecret)
+		if (exidy440_topsecret == 0)
 		{
 			beamx = ((input_port_4_r(0) & 0xff) * 320) >> 8;
 			beamy = ((input_port_5_r(0) & 0xff) * 240) >> 8;

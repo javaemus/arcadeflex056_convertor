@@ -210,7 +210,7 @@ public class wwfwfest
 	
 				for (count=0;count<chain;count++) {
 					if (flip_screen) {
-						if (!flipy) {
+						if (flipy == 0) {
 							drawgfx(bitmap,gfx,number+count,colourbank,flipx,flipy,xpos,ypos+(16*(chain-1))-(16*count),clip,TRANSPARENCY_PEN,0);
 						} else {
 							drawgfx(bitmap,gfx,number+count,colourbank,flipx,flipy,xpos,ypos+16*count,clip,TRANSPARENCY_PEN,0);

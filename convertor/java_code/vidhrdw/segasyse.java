@@ -67,7 +67,7 @@ public class segasyse
 	
 		cache_bitmap = malloc( (16+256+16) * 192); /* 16 pixels either side to simplify drawing */
 	
-		if (!cache_bitmap) return 1;
+		if (cache_bitmap == 0) return 1;
 	
 		return 0;
 	}
@@ -549,7 +549,7 @@ public class segasyse
 		UINT32 pix8 = *(UINT32 *)&segae_vdp_vram[chip][(32)*tile + (4)*line + (0x4000) * segae_vdp_vrambank[chip]];
 		UINT8  pix, coladd;
 	
-		if (!pix8) return;
+		if (pix8 == 0) return;
 	
 		coladd = 16*col+32*chip;
 	
@@ -580,7 +580,7 @@ public class segasyse
 		UINT32 pix8 = *(UINT32 *)&segae_vdp_vram[chip][(32)*tile + (4)*line + (0x4000) * segae_vdp_vrambank[chip]];
 		UINT8  pix;
 	
-		if (!pix8) return; /*note only the colour 0 of each vdp is transparent NOT colour 16, fixes sky in HangonJr */
+		if (pix8 == 0) return; /*note only the colour 0 of each vdp is transparent NOT colour 16, fixes sky in HangonJr */
 	
 		pix = ((pix8 >> 7) & 0x01) | ((pix8 >>14) & 0x02) | ((pix8 >> 21) & 0x04) | ((pix8 >> 28) & 0x08) ; if (pix) dest[0] = pix+16+32*chip;
 		pix = ((pix8 >> 6) & 0x01) | ((pix8 >>13) & 0x02) | ((pix8 >> 20) & 0x04) | ((pix8 >> 27) & 0x08) ; if (pix) dest[1] = pix+16+32*chip;

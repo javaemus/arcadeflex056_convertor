@@ -173,17 +173,17 @@ public class atarisy1
 	
 		/* allocate the temp bitmap #1 */
 		trans_bitmap_pf = bitmap_alloc_depth(Machine->drv->screen_width, Machine->drv->screen_height, 8);
-		if (!trans_bitmap_pf)
+		if (trans_bitmap_pf == 0)
 			goto cant_alloc_bitmap_pf;
 	
 		/* allocate the temp bitmap #2 */
 		trans_bitmap_mo = bitmap_alloc_depth(Machine->drv->screen_width, Machine->drv->screen_height, 8);
-		if (!trans_bitmap_mo)
+		if (trans_bitmap_mo == 0)
 			goto cant_alloc_bitmap_mo;
 	
 		/* allocate the priority copy bitmap */
 		priority_copy = bitmap_alloc_depth(Machine->drv->screen_width, Machine->drv->screen_height, 8);
-		if (!priority_copy)
+		if (priority_copy == 0)
 			goto cant_alloc_bitmap_copy;
 	
 		/* first decode the graphics */
@@ -480,7 +480,7 @@ public class atarisy1
 		}
 	
 		/* if nothing was found, use scanline -1 */
-		if (!found)
+		if (found == 0)
 			best = -1;
 	
 		/* update the timer */
@@ -532,7 +532,7 @@ public class atarisy1
 			if (!data->mopriority)
 			{
 				/* if there are no priority pens, do nothing */
-				if (!priority_pens)
+				if (priority_pens == 0)
 					return OVERRENDER_NONE;
 	
 				/* otherwise, we need to handle it tile-by-tile */

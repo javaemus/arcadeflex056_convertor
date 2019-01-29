@@ -3238,7 +3238,7 @@ public class m68kdasm
 	/* Disasemble one instruction at pc and store in str_buff */
 	unsigned int m68k_disassemble(char* str_buff, unsigned int pc, unsigned int cpu_type)
 	{
-		if(!g_initialized)
+		if (g_initialized == 0)
 		{
 			build_opcode_table();
 			g_initialized = 1;
@@ -3292,7 +3292,7 @@ public class m68kdasm
 	/* Check if the instruction is a valid one */
 	unsigned int m68k_is_valid_instruction(unsigned int instruction, unsigned int cpu_type)
 	{
-		if(!g_initialized)
+		if (g_initialized == 0)
 		{
 			build_opcode_table();
 			g_initialized = 1;

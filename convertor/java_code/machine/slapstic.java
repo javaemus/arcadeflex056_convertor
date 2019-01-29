@@ -1011,7 +1011,7 @@ public class slapstic
 	{
 		static double last_time;
 	
-		if (!slapsticlog)
+		if (slapsticlog == 0)
 			slapsticlog = fopen("slapstic.log", "w");
 		if (slapsticlog)
 		{

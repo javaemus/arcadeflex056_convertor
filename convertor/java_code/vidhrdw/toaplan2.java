@@ -1390,7 +1390,7 @@ public class toaplan2
 	
 			if ((priority == priority_to_display) && (attrib & 0x8000))
 			{
-				if (!bank_sel)	/* No Sprite select bank switching needed */
+				if (bank_sel == 0)	/* No Sprite select bank switching needed */
 				{
 					sprite = ((attrib & 3) << 16) | source[offs + 1];	/* 18 bit */
 				}

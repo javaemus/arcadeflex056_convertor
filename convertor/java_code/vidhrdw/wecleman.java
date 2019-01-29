@@ -120,7 +120,7 @@ public class wecleman
 			mask_buffer = realloc( mask_buffer, req_size );
 			mask_buffer_size = req_size;
 			logerror("increased sprite mask buffer size to %d bytes.\n", mask_buffer_size );
-			if( !mask_buffer ) logerror("Error! insufficient memory for mask_buffer_alloc\n" );
+			if (mask_buffer == 0) logerror("Error! insufficient memory for mask_buffer_alloc\n" );
 		}
 		mask_buffer_used = req_size;
 		memset( &mask_buffer[result], 0x00, size ); /* clear it */

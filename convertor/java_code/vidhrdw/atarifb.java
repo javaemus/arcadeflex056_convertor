@@ -147,7 +147,7 @@ public class atarifb
 				flipbit = (atarifb_alphap1_vram[offs] & 0x40) >> 6;
 				disable = (atarifb_alphap1_vram[offs] & 0x80) >> 7;
 	
-				if (!disable)
+				if (disable == 0)
 				{
 					drawgfx(bitmap,Machine->gfx[0],
 						charcode, 0,
@@ -177,7 +177,7 @@ public class atarifb
 				flipbit = (atarifb_alphap2_vram[offs] & 0x40) >> 6;
 				disable = (atarifb_alphap2_vram[offs] & 0x80) >> 7;
 	
-				if (!disable)
+				if (disable == 0)
 				{
 					drawgfx(bitmap,Machine->gfx[0],
 						charcode, 0,

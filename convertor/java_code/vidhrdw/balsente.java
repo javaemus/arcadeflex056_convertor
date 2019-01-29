@@ -68,7 +68,7 @@ public class balsente
 	
 		/* allocate a local copy of video RAM */
 		local_videoram = malloc(256 * 256);
-		if (!local_videoram)
+		if (local_videoram == 0)
 		{
 			balsente_vh_stop();
 			return 1;
@@ -76,7 +76,7 @@ public class balsente
 	
 		/* allocate a scanline dirty array */
 		scanline_dirty = malloc(256);
-		if (!scanline_dirty)
+		if (scanline_dirty == 0)
 		{
 			balsente_vh_stop();
 			return 1;
@@ -84,7 +84,7 @@ public class balsente
 	
 		/* allocate a scanline palette array */
 		scanline_palette = malloc(256);
-		if (!scanline_palette)
+		if (scanline_palette == 0)
 		{
 			balsente_vh_stop();
 			return 1;

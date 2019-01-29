@@ -755,7 +755,7 @@ public class system1
 					priority = code & 0x800;
 					code = ((code >> 4) & 0x800) | (code & 0x7ff);
 	
-					if (!trasp)
+					if (trasp == 0)
 						drawgfx(bitmap,Machine->gfx[0],
 								code,
 								((code >> 5) & 0x3f) + 64,

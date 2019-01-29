@@ -210,7 +210,7 @@ public class galaga
 			cpu_set_reset_line(1,CLEAR_LINE);
 			cpu_set_reset_line(2,CLEAR_LINE);
 		}
-		else if (!data)
+		else if (data == 0)
 		{
 			cpu_set_reset_line(1,ASSERT_LINE);
 			cpu_set_reset_line(2,ASSERT_LINE);

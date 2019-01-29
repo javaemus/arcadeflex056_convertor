@@ -536,7 +536,7 @@ public class m92
 			for (j=0; j<x_multi; j++)
 			{
 				s_ptr=8 * j;
-				if (!fy) s_ptr+=y_multi-1;
+				if (fy == 0) s_ptr+=y_multi-1;
 	
 				for (i=0; i<y_multi; i++)
 				{

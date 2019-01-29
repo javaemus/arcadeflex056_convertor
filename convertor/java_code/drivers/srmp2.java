@@ -349,7 +349,7 @@ public class srmp2
 		--x- ---- : Player 1 and 2 side flag
 	*/
 	
-		if (!ACCESSING_LSB)
+		if (ACCESSING_LSB == 0)
 		{
 			return 0xffff;
 		}
@@ -382,7 +382,7 @@ public class srmp2
 	
 	static READ16_HANDLER( srmp2_input_2_r )
 	{
-		if (!ACCESSING_LSB)
+		if (ACCESSING_LSB == 0)
 		{
 			return 0x0001;
 		}

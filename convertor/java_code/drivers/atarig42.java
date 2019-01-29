@@ -183,7 +183,7 @@ public class atarig42
 	
 	static WRITE16_HANDLER( asic65_w )
 	{
-	//	if (!asic65_log) asic65_log = fopen("asic65.log", "w");
+	//	if (asic65_log == 0) asic65_log = fopen("asic65.log", "w");
 	
 		/* parameters go to offset 0 */
 		if (offset == 0)
@@ -299,7 +299,7 @@ public class atarig42
 	{
 		int result;
 	
-		if (!asic65_log) asic65_log = fopen("asic65.log", "w");
+		if (asic65_log == 0) asic65_log = fopen("asic65.log", "w");
 		if (asic65_log) fprintf(asic65_log, " (R=%04X)", asic65_result[asic65_result_index]);
 	
 		/* return the next result */

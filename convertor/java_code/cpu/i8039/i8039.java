@@ -828,7 +828,7 @@ public class i8039
 	
 		which = (which+1) % 8;
 		buffer[which][0] = '\0';
-		if( !context )
+		if (context == 0)
 			r = &R;
 	
 		switch( regnum )

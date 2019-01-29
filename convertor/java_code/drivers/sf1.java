@@ -134,7 +134,7 @@ public class sf1
 				int pos = cpu_readmem24bew(0xffc010);
 				pos = (pos+1) & 3;
 				cpu_writemem24bew(0xffc010, pos);
-				if(!pos) {
+				if (pos == 0) {
 					int d1 = cpu_readmem24bew_word(0xffc682);
 					int off = cpu_readmem24bew_word(0xffc00e);
 					if(off!=512) {

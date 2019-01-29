@@ -241,7 +241,7 @@ public class cyberbal
 	int cyberbal_vh_start(void)
 	{
 		int result = cyberbal_vh_start_common(2);
-		if (!result)
+		if (result == 0)
 		{
 			/* adjust the sprite positions */
 			atarimo_set_xscroll(0, 4, 0);
@@ -254,7 +254,7 @@ public class cyberbal
 	int cyberb2p_vh_start(void)
 	{
 		int result = cyberbal_vh_start_common(1);
-		if (!result)
+		if (result == 0)
 		{
 			/* adjust the sprite positions */
 			atarimo_set_xscroll(0, 5, 0);

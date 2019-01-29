@@ -135,7 +135,7 @@ public class senjyo
 	int senjyo_vh_start(void)
 	{
 		bgbitmap = bitmap_alloc(256,256);
-		if (!bgbitmap)
+		if (bgbitmap == 0)
 			return 1;
 	
 		fg_tilemap = tilemap_create(get_fg_tile_info,tilemap_scan_rows,TILEMAP_TRANSPARENT,8,8,32,32);

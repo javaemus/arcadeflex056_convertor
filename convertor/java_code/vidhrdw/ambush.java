@@ -139,7 +139,7 @@ public class ambush
 				/* 16x16 sprites */
 				gfx = 1;
 	
-				if (!flip_screen)
+				if (flip_screen == 0)
 				{
 					sy = 240 - sy;
 				}
@@ -154,7 +154,7 @@ public class ambush
 				gfx = 0;
 				code <<= 2;
 	
-				if (!flip_screen)
+				if (flip_screen == 0)
 				{
 					sy = 248 - sy;
 				}

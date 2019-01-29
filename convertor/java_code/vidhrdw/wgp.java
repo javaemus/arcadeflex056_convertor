@@ -635,7 +635,7 @@ public class wgp
 		/* This calculation may be wrong, the y_index one too */
 		zoomy = 0x10000 - (((wgp_piv_ctrlram[0x08 + layer] &0xff) - 0x7f) * 512);
 	
-		if (!flipscreen)
+		if (flipscreen == 0)
 		{
 			sx = ((wgp_piv_scrollx[layer]) << 16);
 			sx += (wgp_piv_xoffs) * zoomx;		// may be imperfect
@@ -649,7 +649,7 @@ public class wgp
 			y_index = 0;
 		}
 	
-		if (!machine_flip) y=0; else y=255;
+		if (machine_flip == 0) y=0; else y=255;
 	
 		do
 		{
@@ -711,7 +711,7 @@ public class wgp
 				bryan2_drawscanline(bitmap,0,y,screen_width,scanline,1,rot,priority);
 	
 			y_index += zoomy;
-			if (!machine_flip) y++; else y--;
+			if (machine_flip == 0) y++; else y--;
 		}
 		while ( (!machine_flip && y<256) || (machine_flip && y>=0) );
 	

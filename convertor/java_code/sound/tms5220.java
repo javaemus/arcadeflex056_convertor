@@ -237,11 +237,11 @@ public class tms5220
 	        process_command();
 	
 	    /* if we're empty and still not speaking, fill with nothingness */
-	    if (!speak_external)
+	    if (speak_external == 0)
 	        goto empty;
 	
 	    /* if we're to speak, but haven't started, wait for the 9th byte */
-	    if (!talk_status)
+	    if (talk_status == 0)
 	    {
 	        if (fifo_count < 9)
 	           goto empty;
@@ -464,7 +464,7 @@ public class tms5220
 	            speak_delay_frames = 10;
 	
 	            /* according to the datasheet, this will cause an interrupt due to a BE condition */
-	            if (!buffer_empty)
+	            if (buffer_empty == 0)
 	            {
 	                buffer_empty = 1;
 	                set_interrupt_state(1);
@@ -624,7 +624,7 @@ public class tms5220
 	    if (DEBUG_5220) logerror("Parsed a frame successfully - %d bits remaining\n", bits);
 	
 	    /* if we're not to remove this one, restore the FIFO */
-	    if (!removeit)
+	    if (removeit == 0)
 	    {
 	        fifo_count = old_count;
 	        fifo_head = old_head;
@@ -663,7 +663,7 @@ public class tms5220
 	    if (fifo_count <= 8)
 	    {
 	        /* generate an interrupt if necessary */
-	        if (!buffer_low)
+	        if (buffer_low == 0)
 	            set_interrupt_state(1);
 	        buffer_low = 1;
 	

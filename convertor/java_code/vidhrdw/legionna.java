@@ -131,7 +131,7 @@ public class legionna
 	
 		legionna_scrollram16 = malloc(0x60);
 	
-		if (!legionna_scrollram16)	return 1;
+		if (legionna_scrollram16 == 0)	return 1;
 	
 		tilemap_set_transparent_pen(background_layer,15);
 		tilemap_set_transparent_pen(midground_layer,15);
@@ -200,7 +200,7 @@ public class legionna
 			dy = ((data &0x0380) >> 7)  + 1;
 			dx = ((data &0x1c00) >> 10) + 1;
 	
-			if (!fx)
+			if (fx == 0)
 			{
 				for (ax=0; ax<dx; ax++)
 					for (ay=0; ay<dy; ay++)

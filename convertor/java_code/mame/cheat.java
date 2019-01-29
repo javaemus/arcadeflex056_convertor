@@ -1039,7 +1039,7 @@ public class cheat
 	{
 		int type, id;
 	
-		if(!crc)
+		if (crc == 0)
 			return 1;
 	
 		for(type = 0; type < IO_COUNT; type++)
@@ -2011,7 +2011,7 @@ public class cheat
 	
 		theFile = osd_fopen(NULL, database, OSD_FILETYPE_CHEAT, 1);
 	
-		if(!theFile)
+		if (theFile == 0)
 			return;
 	
 		for(i = 0; i <= CheatTable[cheat_num].num_sub; i++)
@@ -2202,10 +2202,10 @@ public class cheat
 	
 		f = osd_fopen (NULL, filename, OSD_FILETYPE_CHEAT, 0);
 	
-		if(!f)
+		if (f == 0)
 			return;
 	
-		if(!merge)
+		if (merge == 0)
 		{
 			ActiveCheatTotal = 0;
 			LoadedCheatTotal = 0;
@@ -2250,13 +2250,13 @@ public class cheat
 			/* Extract the fields from the line */
 			/* Skip the driver name */
 			ptr = strtok(curline, ":");
-			if(!ptr)
+			if (ptr == 0)
 				continue;
 	
 	#ifdef MESS
 			/* CRC */
 			ptr = strtok(NULL, ":");
-			if(!ptr)
+			if (ptr == 0)
 				continue;
 	
 			sscanf(ptr, "%x", &temp_crc);
@@ -2266,7 +2266,7 @@ public class cheat
 	
 			/* CPU number */
 			ptr = strtok(NULL, ":");
-			if(!ptr)
+			if (ptr == 0)
 				continue;
 	
 			sscanf(ptr, "%d", &temp_cpu);
@@ -2279,7 +2279,7 @@ public class cheat
 	
 			/* Address */
 			ptr = strtok(NULL, ":");
-			if(!ptr)
+			if (ptr == 0)
 				continue;
 	
 			sscanf(ptr, "%X", &temp_address);
@@ -2287,7 +2287,7 @@ public class cheat
 	
 			/* data byte */
 			ptr = strtok(NULL, ":");
-			if(!ptr)
+			if (ptr == 0)
 				continue;
 	
 			sscanf(ptr,"%x", &temp);
@@ -2297,7 +2297,7 @@ public class cheat
 	
 			/* special code */
 			ptr = strtok(NULL, ":");
-			if(!ptr)
+			if (ptr == 0)
 				continue;
 	
 			sscanf(ptr, "%d", &temp_code);
@@ -2372,7 +2372,7 @@ public class cheat
 			/* cheat name */
 			CheatTable[LoadedCheatTotal].name = NULL;
 			ptr = strtok(NULL, ":");
-			if(!ptr)
+			if (ptr == 0)
 				continue;
 	
 			/* Allocate storage and copy the name */
@@ -2421,7 +2421,7 @@ public class cheat
 		LoadedCheatTotal = 0;
 	
 		// fix for machines with nothing like rc.c
-		if(!cheatfile)
+		if (cheatfile == 0)
 			cheatfile = "cheat.dat";
 	
 		/* start off with the default cheat file, cheat.dat */
@@ -3630,7 +3630,7 @@ public class cheat
 				}
 				else
 				{
-					if(!activateKeyPressed)
+					if (activateKeyPressed == 0)
 					{
 						code = code_read_async();
 	
@@ -3820,7 +3820,7 @@ public class cheat
 	
 		/* free memory that was previously allocated if no error occured */
 		/* it must also be there because mwa varies from one CPU to another */
-		if(!bail)
+		if (bail == 0)
 		{
 			reset_table(StartRam);
 			reset_table(BackupRam);
@@ -3877,7 +3877,7 @@ public class cheat
 				MemoryNeeded += size;
 			}
 	
-			if(!bail)
+			if (bail == 0)
 			{
 				ext_sr->start =		ext_br->start =		ext_ft->start =		0;
 				ext_sr->end =		ext_br->end =		ext_ft->end =		size - 1;
@@ -3921,7 +3921,7 @@ public class cheat
 				}
 	
 				/* time to allocate */
-				if(!bail)
+				if (bail == 0)
 				{
 					ext_sr->data =	malloc (size);
 					ext_br->data =	malloc (size);
@@ -3965,7 +3965,7 @@ public class cheat
 						MemoryNeeded += size;
 					}
 	
-					if(!bail)
+					if (bail == 0)
 					{
 						ext_sr->start =		ext_br->start =		ext_ft->start =		mwa->start;
 						ext_sr->end =		ext_br->end =		ext_ft->end =		mwa->end;
@@ -5050,12 +5050,12 @@ public class cheat
 		if(idx >= MAX_WATCHES)
 			return;
 	
-		if(!cheatfile)
+		if (cheatfile == 0)
 			cheatfile = "cheat.dat";
 	
 		theFile = osd_fopen(NULL, cheatfile, OSD_FILETYPE_CHEAT, 1);
 	
-		if(!theFile)
+		if (theFile == 0)
 			return;
 	
 		sprintf(name, "%s - %.*X (%d)", ui_getstring(UI_watch), CPUAddressWidth(watches[idx].cpu), watches[idx].address, watches[idx].cpu);

@@ -706,7 +706,7 @@ public class i8x41
 	{
 		UINT8 adr = ROP_ARG(PC);
 		PC += 1;
-		if( !A )
+		if (A == 0)
 			PC = (PC & 0x700) | adr;
 	}
 	
@@ -1942,7 +1942,7 @@ public class i8x41
 	
 		which = (which+1) % 8;
 		buffer[which][0] = '\0';
-		if( !context )
+		if (context == 0)
 			r = &i8x41;
 	
 		switch( regnum )

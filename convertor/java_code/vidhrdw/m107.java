@@ -309,7 +309,7 @@ public class m107
 				y_multi=1 << y_multi; /* 1, 2, 4 or 8 */
 	
 				s_ptr = 0;
-				if (!fy) s_ptr+=y_multi-1;
+				if (fy == 0) s_ptr+=y_multi-1;
 	
 				for (i=0; i<y_multi; i++)
 				{
@@ -339,7 +339,7 @@ public class m107
 						y_multi=1<<((rom[rom_offs+3]>>1)&0x3);
 						if (fx) xdisp = -xdisp;
 						if (fy) ydisp = -ydisp - (16*y_multi-1);
-						if (!ffy) sprite+=y_multi-1;
+						if (ffy == 0) sprite+=y_multi-1;
 						for (i=0; i<y_multi; i++)
 						{
 							drawgfx(bitmap,Machine->gfx[1],

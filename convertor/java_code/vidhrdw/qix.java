@@ -43,12 +43,12 @@ public class qix
 	{
 		/* allocate memory for the full video RAM */
 		videoram = malloc(256 * 256);
-		if (!videoram)
+		if (videoram == 0)
 			return 1;
 	
 		/* allocate memory for the cached video RAM */
 		videoram_cache = malloc(256 * 256);
-		if (!videoram_cache)
+		if (videoram_cache == 0)
 		{
 			free(videoram);
 			videoram = NULL;
@@ -57,7 +57,7 @@ public class qix
 	
 		/* allocate memory for the cached palette banks */
 		palette_cache = malloc(256 * sizeof(palette_cache[0]));
-		if (!palette_cache)
+		if (palette_cache == 0)
 		{
 			free(videoram_cache);
 			free(videoram);
@@ -108,7 +108,7 @@ public class qix
 			UINT8 *src, *dst = &videoram_cache[offset];
 	
 			/* copy the data forwards or backwards, based on the cocktail flip */
-			if (!qix_cocktail_flip)
+			if (qix_cocktail_flip == 0)
 			{
 				src = &videoram[offset];
 				memcpy(dst, src, count);

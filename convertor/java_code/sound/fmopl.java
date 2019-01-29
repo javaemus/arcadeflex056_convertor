@@ -1219,7 +1219,7 @@ public class fmopl
 		/* reset chip */
 		OPLResetChip(OPL);
 	#ifdef OPL_OUTPUT_LOG
-		if(!opl_dbg_fp)
+		if (opl_dbg_fp == 0)
 		{
 			opl_dbg_fp = fopen("opllog.opl","wb");
 			opl_dbg_maxchip = 0;

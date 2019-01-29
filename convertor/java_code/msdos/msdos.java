@@ -98,7 +98,7 @@ public class msdos
 			if (match != last)
 			{
 				last = match;
-				if (!match)
+				if (match == 0)
 					gaps++;
 			}
 		}

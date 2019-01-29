@@ -1591,7 +1591,7 @@ public class wecleman
 	
 		base = memory_region(REGION_GFX1);	// sprites
 		temp = malloc( bank_size );
-		if( !temp ) return;
+		if (temp == 0) return;
 	
 		for( i = num16_banks; i >0; i-- ){
 			unsigned char *finish	= base + 2*bank_size*i;

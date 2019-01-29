@@ -84,7 +84,7 @@ public class berzerk
 	
 	READ_HANDLER( berzerk_voiceboard_r )
 	{
-	   if (!berzerkplayvoice)
+	   if (berzerkplayvoice == 0)
 	      return 0;
 	   else
 	      return 0x40;

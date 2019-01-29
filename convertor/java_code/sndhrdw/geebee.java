@@ -125,7 +125,7 @@ public class geebee
 		int i;
 	
 		decay = (UINT16 *)malloc(32768 * sizeof(INT16));
-		if( !decay )
+		if (decay == 0)
 			return 1;
 	
 	    for( i = 0; i < 0x8000; i++ )

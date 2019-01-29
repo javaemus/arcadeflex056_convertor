@@ -70,7 +70,7 @@ public class bsktball
 		noise_b10=0;
 		DAC_data_w(2,0);
 	
-		if (!noise_timer_set)
+		if (noise_timer_set == 0)
 			timer_set (TIME_IN_NSEC(TIME_256H), 0, bsktball_noise_256H);
 		noise_timer_set=1;
 	}

@@ -1023,7 +1023,7 @@ public class drawgfx
 	{
 		struct rectangle myclip;
 	
-		if (!gfx)
+		if (gfx == 0)
 		{
 			usrintf_showmessage("drawgfx() gfx == 0");
 			return;

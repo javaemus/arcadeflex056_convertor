@@ -1538,7 +1538,7 @@ public class upd7810
 	
 		which = (which+1) % 8;
 		buffer[which][0] = '\0';
-		if( !context )
+		if (context == 0)
 			r = &upd7810;
 	
 		switch( regnum )

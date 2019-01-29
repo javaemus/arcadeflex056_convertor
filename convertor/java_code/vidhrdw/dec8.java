@@ -427,7 +427,7 @@ public class dec8
 		for (offs = 0x800 - 2;offs >= 0;offs -= 2) {
 			tile=videoram[offs+1]+((videoram[offs]&0xf)<<8);
 	
-			if (!tile) continue;
+			if (tile == 0) continue;
 	
 			color=(videoram[offs]&mask)>>shift;
 			mx = (offs/2) % 32;

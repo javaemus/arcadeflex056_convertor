@@ -98,7 +98,7 @@ public class warriorb
 	{
 	
 		spritelist = malloc(0x800 * sizeof(*spritelist));
-		if (!spritelist)
+		if (spritelist == 0)
 			return 1;
 	
 		if (TC0100SCN_vh_start(has_two_TC0100SCN() ? 2 : 1,TC0100SCN_GFX_NUM,x_offs,0,0,0,0,0,
@@ -176,7 +176,7 @@ public class warriorb
 			data = spriteram16[offs+1];
 			tilenum = data & 0x7fff;
 	
-			if (!tilenum) continue;
+			if (tilenum == 0) continue;
 	
 			data = spriteram16[offs+0];
 			y = (-(data &0x1ff) - 24) & 0x1ff;	/* (inverted y adjusted for vis area) */

@@ -575,7 +575,7 @@ public class vsnes
 					{
 						int bank = ( drmario_shiftreg & 0x03 ) * 0x4000;
 	
-						if ( !size16k )
+						if (size16k == 0)
 						{
 							/* switch 32k */
 							memcpy( &memory_region( REGION_CPU1 )[0x08000], &memory_region( REGION_CPU1 )[0x010000+bank], 0x8000 );

@@ -212,7 +212,7 @@ public class victory
 	WRITE_HANDLER( victory_sound_irq_clear_w )
 	{
 		if (LOG_SOUND) logerror("%04X:!!!! Sound IRQ clear = %02X\n", cpu_getpreviouspc(), data);
-		if (!data) pia_0_ca1_w(0, 1);
+		if (data == 0) pia_0_ca1_w(0, 1);
 	}
 	
 	

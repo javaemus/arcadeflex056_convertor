@@ -84,7 +84,7 @@ public class slapfght
 	{
 		pf1_tilemap = tilemap_create(get_pf_tile_info,tilemap_scan_rows,TILEMAP_TRANSPARENT,8,8,64,32);
 	
-		if (!pf1_tilemap)
+		if (pf1_tilemap == 0)
 			return 1;
 	
 		tilemap_set_transparent_pen(pf1_tilemap,0);

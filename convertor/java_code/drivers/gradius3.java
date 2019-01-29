@@ -51,7 +51,7 @@ public class gradius3
 			K052109_w(offset,data & 0xff);
 	
 		/* is this a bug in the game or something else? */
-		if (!ACCESSING_LSB)
+		if (ACCESSING_LSB == 0)
 			K052109_w(offset,(data >> 8) & 0xff);
 	//		logerror("%06x half %04x = %04x\n",cpu_get_pc(),offset,data);
 	}

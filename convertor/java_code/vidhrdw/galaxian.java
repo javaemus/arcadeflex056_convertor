@@ -731,7 +731,7 @@ public class galaxian
 	{
 		galaxian_stars_on = data & 0x01;
 	
-		if (!galaxian_stars_on)
+		if (galaxian_stars_on == 0)
 		{
 			stars_scrollpos = 0;
 		}

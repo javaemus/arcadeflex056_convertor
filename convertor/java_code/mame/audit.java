@@ -69,7 +69,7 @@ public class audit
 		tAuditRecord *aud;
 		int	err;
 	
-		if (!gAudits)
+		if (gAudits == 0)
 			gAudits = (tAuditRecord *)malloc (AUD_MAX_ROMS * sizeof (tAuditRecord));
 	
 		if (gAudits)
@@ -145,7 +145,7 @@ public class audit
 			}
 	
 	        #ifdef MESS
-	        if (!count)
+	        if (count == 0)
 	                return -1;
 	        else
 	        #endif
@@ -317,11 +317,11 @@ public class audit
 			exist = osd_faccess (sharedname, OSD_FILETYPE_SAMPLE);
 	
 		/* if still not found, we're done */
-		if (!exist)
+		if (exist == 0)
 			return -1;
 	
 		/* allocate missing samples list (if necessary) */
-		if (!gMissingSamples)
+		if (gMissingSamples == 0)
 			gMissingSamples = (tMissingSample *)malloc (AUD_MAX_SAMPLES * sizeof (tMissingSample));
 	
 		if (gMissingSamples)

@@ -687,7 +687,7 @@ public class input
 		win_process_events_periodic();
 	
 		// if we don't have focus, turn off all keys
-		if (!focus)
+		if (focus == 0)
 		{
 			memset(&keyboard_state[0][0], 0, sizeof(keyboard_state[i]));
 			updatekeyboard();
@@ -825,7 +825,7 @@ public class input
 			}
 	
 		// if keyboard state is stable, copy it over
-		if (!changed)
+		if (changed == 0)
 			memcpy(currkey, &keyboard_state[0][0], sizeof(currkey));
 	
 		// remember the previous state
@@ -1176,7 +1176,7 @@ public class input
 		LONG top, bottom, middle;
 	
 		// if the mouse isn't yet active, make it so
-		if (!mouse_active)
+		if (mouse_active == 0)
 		{
 			mouse_active = 1;
 			win_pause_input(0);
@@ -1215,7 +1215,7 @@ public class input
 	void osd_trak_read(int player, int *deltax, int *deltay)
 	{
 		// if the mouse isn't yet active, make it so
-		if (!mouse_active)
+		if (mouse_active == 0)
 		{
 			mouse_active = 1;
 			win_pause_input(0);

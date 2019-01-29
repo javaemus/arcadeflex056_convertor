@@ -499,7 +499,7 @@ public class usrintrf
 					}
 				}
 	
-				if (!wrapped)
+				if (wrapped == 0)
 				{
 					drawgfx(bitmap,Machine->uifont,*c,dt->color,0,0,x+Machine->uixmin,y+Machine->uiymin,0,TRANSPARENCY_NONE,0);
 					x += Machine->uifontwidth;
@@ -2498,7 +2498,7 @@ public class usrintrf
 		maxcols -= 2;
 		maxrows -= 8;
 	
-		if (!buf)
+		if (buf == 0)
 		{
 			/* allocate a buffer for the text */
 			#ifndef MESS
@@ -3042,7 +3042,7 @@ public class usrintrf
 					}
 				}
 	
-				if (!overflow)
+				if (overflow == 0)
 				{
 					for (ch = 0; ch < MIXER_MAX_CHANNELS; ch++)
 					{
@@ -3363,7 +3363,7 @@ public class usrintrf
 	
 		if( input_ui_pressed(IPT_UI_TOGGLE_UI) )
 		{
-			if( !ui_toggle_key )
+			if (ui_toggle_key == 0)
 			{
 				ui_toggle_key = 1;
 				ui_active = !ui_active;

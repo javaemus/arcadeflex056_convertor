@@ -883,7 +883,7 @@ public class memory
 		UINT8 idx;
 	
 		/* translate ROM and RAMROM to RAM here for read cases */
-		if (!iswrite)
+		if (iswrite == 0)
 			if (HANDLER_IS_ROM(handler) || HANDLER_IS_RAMROM(handler))
 				handler = (void *)MRA_RAM;
 	
@@ -1589,7 +1589,7 @@ public class memory
 				{
 					if(e && (e->flags & (RG_SAVE_READ|RG_SAVE_WRITE)))
 					{
-						if (!active)
+						if (active == 0)
 						{
 							active = 1;
 							start = e->start;
@@ -2662,7 +2662,7 @@ public class memory
 		int cpunum;
 	
 		/* skip if we can't open the file */
-		if (!file)
+		if (file == 0)
 			return;
 	
 		/* loop over CPUs */

@@ -175,7 +175,7 @@ public class taitosj
 	static WRITE_HANDLER( taitosj_soundcommand_w )
 	{
 		soundlatch_w(offset,data);
-		if (!sndnmi_disable) cpu_cause_interrupt(1,Z80_NMI_INT);
+		if (sndnmi_disable == 0) cpu_cause_interrupt(1,Z80_NMI_INT);
 	}
 	
 	

@@ -463,7 +463,7 @@ public class pleiads
 	
 		poly18 = (UINT32 *)malloc((1ul << (18-5)) * sizeof(UINT32));
 	
-		if( !poly18 )
+		if (poly18 == 0)
 			return 1;
 	
 		shiftreg = 0;

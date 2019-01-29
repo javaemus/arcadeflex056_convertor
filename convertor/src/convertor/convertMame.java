@@ -85,11 +85,39 @@ public class convertMame {
                     line_change_flag = true;
                     continue;
                 }
+                case 'i': {
+                    int l1 = inpos;
+                    if (getToken("if")) {
+                        skipSpace();
+                        if (parseChar() != '(') {
+                            inpos = l1;
+                            break;
+                        }
+                        skipSpace();
+                        char c2 = parseChar();
+                        if (c2 == '!') {
+                            skipSpace();
+                            token[0] = parseToken();
+                            skipSpace();
+                            if (parseChar() != ')') {
+                                inpos = l1;
+                                break;
+                            }
+                            sUtil.putString((new StringBuilder()).append("if (").append(token[0]).append(" == 0)").toString());
+                        } else {
+                            inpos = l1;
+                            break;
+                        }
+                    } else {
+                        break;
+                    }
+                    continue;
+                }
                 case 'e': {
                     int j1 = inpos;
                     if (getToken("enum")) {
                         skipSpace();
-                        
+
                         if (parseChar() != '{') {
                             inpos = j1;
                             break;

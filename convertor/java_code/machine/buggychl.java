@@ -108,7 +108,7 @@ public class buggychl
 	{
 		portC_in = 0;
 		if (main_sent) portC_in |= 0x01;
-		if (!mcu_sent) portC_in |= 0x02;
+		if (mcu_sent == 0) portC_in |= 0x02;
 	logerror("%04x: 68705 port C read %02x\n",cpu_get_pc(),portC_in);
 		return (portC_out & ddrC) | (portC_in & ~ddrC);
 	}
@@ -147,7 +147,7 @@ public class buggychl
 		/* bit 0 = when 1, mcu is ready to receive data from main cpu */
 		/* bit 1 = when 1, mcu has sent data to the main cpu */
 	//logerror("%04x: mcu_status_r\n",cpu_get_pc());
-		if (!main_sent) res |= 0x01;
+		if (main_sent == 0) res |= 0x01;
 		if (mcu_sent) res |= 0x02;
 	
 		return res;

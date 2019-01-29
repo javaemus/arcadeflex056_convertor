@@ -190,7 +190,7 @@ public class exidy440
 		/* allocate the sample cache */
 		length = memory_region_length(REGION_SOUND1) * 16 + MAX_CACHE_ENTRIES * sizeof(sound_cache_entry);
 		sound_cache = malloc(length);
-		if (!sound_cache)
+		if (sound_cache == 0)
 			return 1;
 	
 		/* determine the hard end of the cache and reset */
@@ -199,7 +199,7 @@ public class exidy440
 	
 		/* allocate the mixer buffer */
 		mixer_buffer_left = malloc(2 * SAMPLE_RATE_FAST * sizeof(INT32));
-		if (!mixer_buffer_left)
+		if (mixer_buffer_left == 0)
 		{
 			free(sound_cache);
 			sound_cache = NULL;
@@ -734,7 +734,7 @@ public class exidy440
 	
 		/* compute the base address in the converted samples array */
 		base = find_or_add_to_sound_cache(address, length, channel_bits[ch], channel_frequency[ch]);
-		if (!base)
+		if (base == 0)
 			return;
 	
 		/* if the length is 0 or 1, just do an immediate end */

@@ -40,7 +40,7 @@ public class zerozone
 	{
 		video_dirty = malloc(videoram_size/2);
 	
-		if (!video_dirty)
+		if (video_dirty == 0)
 		{
 			zerozone_vh_stop();
 			return 1;

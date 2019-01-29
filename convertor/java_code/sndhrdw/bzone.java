@@ -276,7 +276,7 @@ public class bzone
 	    int i;
 	
 		discharge = (INT16 *)malloc(32768 * sizeof(INT16));
-		if( !discharge )
+		if (discharge == 0)
 	        return 1;
 	
 	    for( i = 0; i < 0x8000; i++ )

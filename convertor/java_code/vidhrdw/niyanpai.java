@@ -123,7 +123,7 @@ public class niyanpai
 	{
 		niyanpai_radr_tmp[vram][offset] = data;
 	
-		if (!offset)
+		if (offset == 0)
 		{
 			niyanpai_radr[vram] = (niyanpai_radr_tmp[vram][0] + (niyanpai_radr_tmp[vram][1] << 8) + (niyanpai_radr_tmp[vram][2] << 16));
 		}

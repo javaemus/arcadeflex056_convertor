@@ -155,7 +155,7 @@ public class rollrace
 			scroll = ( 8 * sy + colorram[2 * sx] ) % 256;
 			col = colorram[ sx * 2 + 1 ]&0x1f;
 	
-			if (!ra_flipy)
+			if (ra_flipy == 0)
 			{
 			   scroll = (248 - scroll) % 256;
 			}

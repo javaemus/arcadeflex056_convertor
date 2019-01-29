@@ -107,7 +107,7 @@ public class playch10
 		/* if the bit is not set, then we should display		*/
 		/* the PPU portion.										*/
 	
-		if ( !pc10_dispmask )
+		if (pc10_dispmask == 0)
 		{
 			/* render the ppu */
 			ppu2c03b_render( 0, bitmap, 0, 0, 0, 30*8 );

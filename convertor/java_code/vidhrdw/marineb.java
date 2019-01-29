@@ -175,7 +175,7 @@ public class marineb
 				code >>= 2;
 			}
 	
-			if (!flip_screen_y)
+			if (flip_screen_y == 0)
 			{
 				sy = 256 - Machine->gfx[gfx]->width - sy;
 				flipy = !flipy;
@@ -219,7 +219,7 @@ public class marineb
 			flipx =   code & 0x02;
 			flipy = !(code & 0x01);
 	
-			if (!flip_screen_y)
+			if (flip_screen_y == 0)
 			{
 				sy = 256 - Machine->gfx[1]->width - sy;
 				flipy = !flipy;
@@ -247,7 +247,7 @@ public class marineb
 		flipx =   code & 0x02;
 		flipy = !(code & 0x01);
 	
-		if (!flip_screen_y)
+		if (flip_screen_y == 0)
 		{
 			sy = 256 - Machine->gfx[2]->width - sy;
 			flipy = !flipy;
@@ -319,13 +319,13 @@ public class marineb
 				code >>= 2;
 			}
 	
-			if (!flip_screen_y)
+			if (flip_screen_y == 0)
 			{
 				sy = 256 - Machine->gfx[gfx]->width - sy;
 				flipy = !flipy;
 			}
 	
-			if (!flip_screen_x)
+			if (flip_screen_x == 0)
 			{
 				sx--;
 			}
@@ -364,7 +364,7 @@ public class marineb
 			flipx =   code & 0x02;
 			flipy = !(code & 0x01);
 	
-			if (!flip_screen_y)
+			if (flip_screen_y == 0)
 			{
 				sy = 256 - Machine->gfx[1]->width - sy;
 				flipy = !flipy;
@@ -426,13 +426,13 @@ public class marineb
 				code >>= 2;
 			}
 	
-			if (!flip_screen_y)
+			if (flip_screen_y == 0)
 			{
 				sy = 256 - Machine->gfx[gfx]->width - sy;
 				flipy = !flipy;
 			}
 	
-			if (!flip_screen_x)
+			if (flip_screen_x == 0)
 			{
 				sx--;
 			}

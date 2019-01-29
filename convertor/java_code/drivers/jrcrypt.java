@@ -310,7 +310,7 @@ public class jrcrypt
 			}
 	
 			/* latch new flip flops on rising edge of pcbe */
-			if (!pcbe)
+			if (pcbe == 0)
 			{
 				s0 = ns0;
 				s1 = ns1;
@@ -495,7 +495,7 @@ public class jrcrypt
 	void Load(char *name,byte *buffer,int from, int length)
 	{
 		void *file = osd_fopen(Machine->gamedrv->name,0,OSD_FILETYPE_HIGHSCORE,0);
-		if (!file)
+		if (file == 0)
 			return;
 		while (length--)
 			buffer[from++]=fgetc(file);

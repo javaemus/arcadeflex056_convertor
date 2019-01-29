@@ -91,7 +91,7 @@ public class hiscore
 				{
 					/* not a hexadecimal digit */
 					/* safety check for premature EOL */
-					if (!c) string = NULL;
+					if (c == 0) string = NULL;
 					break;
 				}
 				result = result*16 + digit;

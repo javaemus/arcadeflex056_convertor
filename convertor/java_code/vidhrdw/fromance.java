@@ -328,7 +328,7 @@ public class fromance
 				{
 					for (yt = 0; yt < ytiles; yt++)
 						for (xt = 0; xt < xtiles; xt++, code++)
-							if (!zoomed)
+							if (zoomed == 0)
 								drawgfx(bitmap, Machine->gfx[2], code, color, 0, 0,
 										x + xt * 16, y + yt * 16, 0, TRANSPARENCY_PEN, 15);
 							else
@@ -342,7 +342,7 @@ public class fromance
 				{
 					for (yt = 0; yt < ytiles; yt++)
 						for (xt = 0; xt < xtiles; xt++, code++)
-							if (!zoomed)
+							if (zoomed == 0)
 								drawgfx(bitmap, Machine->gfx[2], code, color, 1, 0,
 										x + (xtiles - 1 - xt) * 16, y + yt * 16, 0, TRANSPARENCY_PEN, 15);
 							else
@@ -356,7 +356,7 @@ public class fromance
 				{
 					for (yt = 0; yt < ytiles; yt++)
 						for (xt = 0; xt < xtiles; xt++, code++)
-							if (!zoomed)
+							if (zoomed == 0)
 								drawgfx(bitmap, Machine->gfx[2], code, color, 0, 1,
 										x + xt * 16, y + (ytiles - 1 - yt) * 16, 0, TRANSPARENCY_PEN, 15);
 							else
@@ -370,7 +370,7 @@ public class fromance
 				{
 					for (yt = 0; yt < ytiles; yt++)
 						for (xt = 0; xt < xtiles; xt++, code++)
-							if (!zoomed)
+							if (zoomed == 0)
 								drawgfx(bitmap, Machine->gfx[2], code, color, 1, 1,
 										x + (xtiles - 1 - xt) * 16, y + (ytiles - 1 - yt) * 16, 0, TRANSPARENCY_PEN, 15);
 							else

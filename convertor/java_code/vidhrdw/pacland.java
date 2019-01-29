@@ -224,7 +224,7 @@ public class pacland
 	
 				case 4:		/* 2x horizontal */
 					sprite &= ~1;
-					if (!flipx)
+					if (flipx == 0)
 					{
 						DRAW_SPRITE( sprite, x, y )
 						DRAW_SPRITE( 1+sprite, x+16, y )
@@ -236,7 +236,7 @@ public class pacland
 	
 				case 8:		/* 2x vertical */
 					sprite &= ~2;
-					if (!flipy)
+					if (flipy == 0)
 					{
 						DRAW_SPRITE( sprite, x, y-16 )
 						DRAW_SPRITE( 2+sprite, x, y )

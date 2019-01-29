@@ -41,7 +41,7 @@ public class undrfire
 		int i;
 	
 		spritelist = malloc(0x4000 * sizeof(*spritelist));
-		if (!spritelist)
+		if (spritelist == 0)
 			return 1;
 	
 		if (TC0100SCN_vh_start(1,TC0100SCN_GFX_NUM,50,8,0,0,0,0,0))
@@ -145,7 +145,7 @@ public class undrfire
 			flipy = !flipy;
 			y = (-y &0x3ff);
 	
-			if (!tilenum) continue;
+			if (tilenum == 0) continue;
 	
 			flipy = !flipy;
 			zoomx += 1;

@@ -630,7 +630,7 @@ public class m68kcpu
 	int m68k_execute(int num_cycles)
 	{
 		/* Make sure we're not stopped */
-		if(!CPU_STOPPED)
+		if (CPU_STOPPED == 0)
 		{
 			/* Set our pool of clock cycles available */
 			SET_CYCLES(num_cycles);
@@ -733,7 +733,7 @@ public class m68kcpu
 		static uint emulation_initialized = 0;
 	
 		/* The first call to this function initializes the opcode handler jump table */
-		if(!emulation_initialized)
+		if (emulation_initialized == 0)
 			{
 			m68ki_build_opcode_table();
 			emulation_initialized = 1;

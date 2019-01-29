@@ -65,7 +65,7 @@ public class taito_x
 	
 					x = ((x1 + ((j &0x1) << 4)) + 16) &0x1ff;
 	
-					if ( !cocktail )
+					if (cocktail == 0)
 						y = (265 - (y1 - ((j &0x1e) << 3))) &0xff;
 					else
 						y = ((y1 - ((j &0x1e) << 3)) - 7) &0xff;
@@ -110,7 +110,7 @@ public class taito_x
 			{
 				x = (supes_videoram [0x400/2 + bankbase + i] + 16) &0x1ff;
 	
-				if (!cocktail)
+				if (cocktail == 0)
 					y = (250 - supes_attribram[i]) &0xff;
 				else
 					y = (10  + supes_attribram[i]) &0xff;

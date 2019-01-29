@@ -104,7 +104,7 @@ public class fromance
 		/* set a timer to force synchronization after the read */
 		timer_set(TIME_NOW, 0, NULL);
 	
-		if (!fromance_directionflag) return 0x00;		// standby
+		if (fromance_directionflag == 0) return 0x00;		// standby
 		else return 0xff;								// busy
 	}
 	
@@ -163,7 +163,7 @@ public class fromance
 	static void fromance_adpcm_int(int irq)
 	{
 		/* skip if we're reset */
-		if (!fromance_adpcm_reset)
+		if (fromance_adpcm_reset == 0)
 			return;
 	
 		/* clock the data through */
@@ -175,7 +175,7 @@ public class fromance
 		}
 	
 		/* generate an NMI if we're out of data */
-		if (!fromance_vclk_left)
+		if (fromance_vclk_left == 0)
 			cpu_set_nmi_line(1, PULSE_LINE);
 	}
 	

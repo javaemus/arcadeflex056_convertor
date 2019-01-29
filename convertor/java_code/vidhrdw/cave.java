@@ -273,7 +273,7 @@ public class cave
 	{
 		if (dim0){	tilemap_0 = tilemap_create(	get_tile_info_0, tilemap_scan_rows,
 												TILEMAP_TRANSPARENT, dim0,dim0, 512/dim0,512/dim0 );
-					if (!tilemap_0)	return 1;
+					if (tilemap_0 == 0)	return 1;
 					tilemap_set_transparent_pen(tilemap_0, 0);
 					tilemap_set_scroll_rows(tilemap_0, 1);
 					tilemap_set_scroll_cols(tilemap_0, 1);	}
@@ -281,7 +281,7 @@ public class cave
 	
 		if (dim1){	tilemap_1 = tilemap_create(	get_tile_info_1, tilemap_scan_rows,
 												TILEMAP_TRANSPARENT, dim1,dim1, 512/dim1,512/dim1 );
-					if (!tilemap_1)	return 1;
+					if (tilemap_1 == 0)	return 1;
 					tilemap_set_transparent_pen(tilemap_1, 0);
 					tilemap_set_scroll_rows(tilemap_1, 1);
 					tilemap_set_scroll_cols(tilemap_1, 1);	}
@@ -289,7 +289,7 @@ public class cave
 	
 		if (dim2){	tilemap_2 = tilemap_create(	get_tile_info_2, tilemap_scan_rows,
 												TILEMAP_TRANSPARENT, dim2,dim2, 512/dim2,512/dim2 );
-					if (!tilemap_2)	return 1;
+					if (tilemap_2 == 0)	return 1;
 					tilemap_set_transparent_pen(tilemap_2, 0);
 					tilemap_set_scroll_rows(tilemap_2, 1);
 					tilemap_set_scroll_cols(tilemap_2, 1);	}
@@ -322,7 +322,7 @@ public class cave
 		/* Layer 2 (8x8) needs to be handled differently */
 		tilemap_2 = tilemap_create(	sailormn_get_tile_info_2, tilemap_scan_rows,
 									TILEMAP_TRANSPARENT, 8,8, 512/8,512/8 );
-		if (!tilemap_2)	return 1;
+		if (tilemap_2 == 0)	return 1;
 		tilemap_set_transparent_pen(tilemap_2, 0);
 		tilemap_set_scroll_rows(tilemap_2, 1);
 		tilemap_set_scroll_cols(tilemap_2, 1);

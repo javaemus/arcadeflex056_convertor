@@ -124,7 +124,7 @@ public class mcr3
 				int color = ((attr & 0x30) >> 4) ^ color_xor;
 				int code = videoram[offs] | ((attr & 0x03) << 8) | ((attr & 0x40) << 4);
 	
-				if (!mcr_cocktail_flip)
+				if (mcr_cocktail_flip == 0)
 					drawgfx(bitmap, Machine->gfx[0], code, color, attr & 0x04, attr & 0x08,
 							16 * mx, 16 * my, &Machine->visible_area, TRANSPARENCY_NONE, 0);
 				else
@@ -174,7 +174,7 @@ public class mcr3
 	
 			/* sprites use color 0 for background pen and 8 for the 'under tile' pen.
 				The color 8 is used to cover over other sprites. */
-			if (!mcr_cocktail_flip)
+			if (mcr_cocktail_flip == 0)
 			{
 				/* first draw the sprite, visible */
 				pdrawgfx(bitmap, Machine->gfx[1], code, color, flipx, flipy, sx, sy,
@@ -284,13 +284,13 @@ public class mcr3
 	{
 		/* allocate our own dirty buffer */
 		dirtybuffer = malloc(videoram_size);
-		if (!dirtybuffer)
+		if (dirtybuffer == 0)
 			return 1;
 		memset(dirtybuffer, 1, videoram_size);
 	
 		/* allocate a bitmap for the background */
 		spyhunt_backbitmap = bitmap_alloc(64*64, 32*32);
-		if (!spyhunt_backbitmap)
+		if (spyhunt_backbitmap == 0)
 		{
 			free(dirtybuffer);
 			return 1;
@@ -407,7 +407,7 @@ public class mcr3
 		/* need to clear the border outside the game display */
 		fillbitmap(tmpbitmap,Machine->pens[64],&Machine->visible_area);	/* artwork's black */
 	
-		if (!artwork_backdrop)
+		if (artwork_backdrop == 0)
 		{
 			/* if no artwork available, reduce visible area to the game display */
 			set_visible_area(DOTRON_X_START,DOTRON_X_START + 32*16-1,DOTRON_Y_START,DOTRON_Y_START + 30*16-1);

@@ -239,11 +239,11 @@ public class tms5110
 	/* tryagain: */
 	
 	    /* if we're not speaking, fill with nothingness */
-	    if (!speaking_now)
+	    if (speaking_now == 0)
 	        goto empty;
 	
 	    /* if we're to speak, but haven't started */
-	    if (!talk_status)
+	    if (talk_status == 0)
 	    {
 	
 	/*"perform dummy read" is not mentioned in the datasheet */
@@ -621,7 +621,7 @@ public class tms5110
 	
 	#if 0
 	    /* if we're not to remove this one, restore the FIFO */
-	    if (!removeit)
+	    if (removeit == 0)
 	    {
 	        fifo_count = old_count;
 	        fifo_head = old_head;

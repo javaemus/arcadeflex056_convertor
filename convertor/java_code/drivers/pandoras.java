@@ -80,7 +80,7 @@ public class pandoras
 			other bytes unknown */
 	
 		switch (offset){
-			case 0x00:	if (!data) cpu_set_irq_line(0, M6809_IRQ_LINE, CLEAR_LINE);
+			case 0x00:	if (data == 0) cpu_set_irq_line(0, M6809_IRQ_LINE, CLEAR_LINE);
 						irq_enable_a = data;
 						break;
 			case 0x02:	coin_counter_w(0,data & 0x01);
@@ -89,7 +89,7 @@ public class pandoras
 						break;
 			case 0x05:	pandoras_flipscreen_w(0, data);
 						break;
-			case 0x06:	if (!data) cpu_set_irq_line(1, M6809_IRQ_LINE, CLEAR_LINE);
+			case 0x06:	if (data == 0) cpu_set_irq_line(1, M6809_IRQ_LINE, CLEAR_LINE);
 						irq_enable_b = data;
 						break;
 			case 0x07:	cpu_cause_interrupt(1,M6809_INT_NMI);

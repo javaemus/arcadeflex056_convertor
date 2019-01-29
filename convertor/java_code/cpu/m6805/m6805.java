@@ -136,7 +136,7 @@ public class m6805
 	#define CLR_ZC	  CC&=~(ZFLAG|CFLAG)
 	
 	/* macros for CC -- CC bits affected should be reset before calling */
-	#define SET_Z(a)       if(!a)SEZ
+	#define SET_Z(a)       if (a == 0)SEZ
 	#define SET_Z8(a)	   SET_Z((UINT8)a)
 	#define SET_N8(a)	   CC|=((a&0x80)>>5)
 	#define SET_H(a,b,r)   CC|=((a^b^r)&0x10)
@@ -822,7 +822,7 @@ public class m6805
 		which = (which+1) % 8;
 	    buffer[which][0] = '\0';
 	
-	    if( !context )
+	    if (context == 0)
 			r = &m6805;
 	
 		switch( regnum )
@@ -1013,7 +1013,7 @@ public class m6805
 		which = (which+1) % 8;
 	    buffer[which][0] = '\0';
 	
-	    if( !context )
+	    if (context == 0)
 			r = &m6805;
 	
 		switch( regnum )

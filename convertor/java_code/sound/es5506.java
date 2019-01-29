@@ -200,9 +200,9 @@ public class es5506
 		int i;
 	
 		/* allocate ulaw lookup table */
-		if (!ulaw_lookup)
+		if (ulaw_lookup == 0)
 			ulaw_lookup = malloc(sizeof(ulaw_lookup[0]) << ULAW_MAXBITS);
-		if (!ulaw_lookup)
+		if (ulaw_lookup == 0)
 			return 0;
 	
 		/* generate ulaw lookup table */
@@ -222,9 +222,9 @@ public class es5506
 		}
 	
 		/* allocate volume lookup table */
-		if (!volume_lookup)
+		if (volume_lookup == 0)
 			volume_lookup = malloc(sizeof(volume_lookup[0]) * 4096);
-		if (!volume_lookup)
+		if (volume_lookup == 0)
 			return 0;
 	
 		/* generate ulaw lookup table */
@@ -744,7 +744,7 @@ public class es5506
 		int v;
 	
 		/* skip if nothing to do */
-		if (!samples)
+		if (samples == 0)
 			return;
 	
 		/* clear out the accumulator */
@@ -762,7 +762,7 @@ public class es5506
 				voice->control |= CONTROL_STOP0;
 	
 			/* generate from the appropriate source */
-			if (!base)
+			if (base == 0)
 				generate_dummy(voice, base, left, right, samples);
 			else if (voice->control & 0x2000)
 				generate_ulaw(voice, base, left, right, samples);

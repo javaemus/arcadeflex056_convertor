@@ -166,7 +166,7 @@ public class neogeo
 	
 		/* 0x20000 bytes even though only 0x10c00 is used */
 		neogeo_vidram16 = malloc(0x20000);
-		if (!neogeo_vidram16)
+		if (neogeo_vidram16 == 0)
 		{
 			neogeo_vh_stop();
 			return 1;

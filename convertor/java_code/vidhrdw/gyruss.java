@@ -99,7 +99,7 @@ public class gyruss
 	{
 		sprite_mux_buffer = malloc(256 * spriteram_size);
 	
-		if (!sprite_mux_buffer)
+		if (sprite_mux_buffer == 0)
 		{
 			gyruss_vh_stop();
 			return 1;

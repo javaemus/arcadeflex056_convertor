@@ -93,7 +93,7 @@ public class asapdasm
 			case 0x07:	sprintf(buffer, "xorn%s %s,%s,%s", setcond[cond], reg[rsrc1], src2(op,0), reg[rdst]);	break;
 			case 0x08:	if (!rsrc1 && !rdst && rsrc2_iszero)
 						sprintf(buffer, "nop");	
-						else if (!rsrc1)
+						else if (rsrc1 == 0)
 						sprintf(buffer, "mov%s  %s,%s", setcond[cond], src2(op,0), reg[rdst]);
 						else if (rsrc2_iszero)
 						sprintf(buffer, "mov%s  %s,%s", setcond[cond], reg[rsrc1], reg[rdst]);
@@ -106,7 +106,7 @@ public class asapdasm
 			case 0x0d:	sprintf(buffer, "andn%s %s,%s,%s", setcond[cond], reg[rsrc1], src2(op,0), reg[rdst]);	break;
 			case 0x0e:	if (!rsrc1 && !rdst && rsrc2_iszero)
 						sprintf(buffer, "nop");
-						else if (!rsrc1)
+						else if (rsrc1 == 0)
 						sprintf(buffer, "mov%s  %s,%s", setcond[cond], src2(op,0), reg[rdst]);
 						else if (rsrc2_iszero)
 						sprintf(buffer, "mov%s  %s,%s", setcond[cond], reg[rsrc1], reg[rdst]);

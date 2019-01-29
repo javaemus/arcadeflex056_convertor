@@ -68,7 +68,7 @@ public class namcond1
 	    UINT8   current, pressed;
 	
 	    // the H8 IRQ5 does polling of inputs and writes to shared RAM
-	    if( !namcond1_h8_irq5_enabled )
+	    if (namcond1_h8_irq5_enabled == 0)
 	        return( namcond1_shared_ram[offset] );
 	
 	    switch( offset )

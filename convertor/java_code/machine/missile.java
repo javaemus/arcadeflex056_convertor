@@ -31,7 +31,7 @@ public class missile
 	{
 		if (ctrld)	/* trackball */
 		{
-			if (!flip_screen)
+			if (flip_screen == 0)
 		  	    return ((readinputport(5) << 4) & 0xf0) | (readinputport(4) & 0x0f);
 			else
 		  	    return ((readinputport(7) << 4) & 0xf0) | (readinputport(6) & 0x0f);

@@ -1525,7 +1525,7 @@ public class konamiic
 		K007420_gfx = Machine->gfx[gfxnum];
 		K007420_callback = callback;
 		K007420_ram = malloc(0x200);
-		if (!K007420_ram) return 1;
+		if (K007420_ram == 0) return 1;
 	
 		memset(K007420_ram,0,0x200);
 	
@@ -1594,7 +1594,7 @@ public class konamiic
 	
 			/* 0x080 = normal scale, 0x040 = double size, 0x100 half size */
 			zoom = K007420_ram[offs+5] | ((K007420_ram[offs+4] & 0x03) << 8);
-			if (!zoom) continue;
+			if (zoom == 0) continue;
 			zoom = 0x10000 * 128 / zoom;
 	
 			switch (K007420_ram[offs+4] & 0x70)
@@ -2330,7 +2330,7 @@ public class konamiic
 		K051960_gfx = Machine->gfx[gfx_index];
 		K051960_callback = callback;
 		K051960_ram = malloc(0x400);
-		if (!K051960_ram) return 1;
+		if (K051960_ram == 0) return 1;
 		memset(K051960_ram,0,0x400);
 	
 		return 0;
@@ -2794,10 +2794,10 @@ public class konamiic
 		K053244_rombank = 0;
 		K053245_ramsize = 0x800;
 		K053245_ram = malloc(K053245_ramsize);
-		if (!K053245_ram) return 1;
+		if (K053245_ram == 0) return 1;
 	
 		K053245_buffer = malloc(K053245_ramsize);
-		if (!K053245_buffer) {
+		if (K053245_buffer == 0) {
 			free(K053245_ram);
 			K053245_ram = 0;
 			return 1;
@@ -3060,12 +3060,12 @@ public class konamiic
 			if (flipscreenX)
 			{
 				ox = 512 - ox;
-				if (!mirrorx) flipx = !flipx;
+				if (mirrorx == 0) flipx = !flipx;
 			}
 			if (flipscreenY)
 			{
 				oy = -oy;
-				if (!mirrory) flipy = !flipy;
+				if (mirrory == 0) flipy = !flipy;
 			}
 	
 			ox = (ox + 0x5d) & 0x3ff;
@@ -3251,7 +3251,7 @@ public class konamiic
 		K053247_callback = callback;
 		K053246_OBJCHA_line = CLEAR_LINE;
 		K053247_ram = malloc(0x1000);
-		if (!K053247_ram) return 1;
+		if (K053247_ram == 0) return 1;
 	
 		memset(K053247_ram,  0, 0x1000);
 		memset(K053246_regs, 0, 8);
@@ -3501,12 +3501,12 @@ public class konamiic
 			if (flipscreenx)
 			{
 				ox = -ox;
-				if (!mirrorx) flipx = !flipx;
+				if (mirrorx == 0) flipx = !flipx;
 			}
 			if (flipscreeny)
 			{
 				oy = -oy;
-				if (!mirrory) flipy = !flipy;
+				if (mirrory == 0) flipy = !flipy;
 			}
 	
 	#if 0	// fixes overdriv, but breaks everything else

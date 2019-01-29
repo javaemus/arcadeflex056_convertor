@@ -161,7 +161,7 @@ public class mcr2
 	
 	static READ_HANDLER( wacko_trackball_r )
 	{
-		if (!wacko_mux_select)
+		if (wacko_mux_select == 0)
 			return readinputport(1 + offset);
 		else
 			return readinputport(6 + offset);

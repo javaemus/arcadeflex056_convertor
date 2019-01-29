@@ -99,7 +99,7 @@ public class mcr68
 				int color = (attr & 0x30) >> 4;
 				int code = LOW_BYTE(videoram16[offs]) + 256 * (attr & 0x03) + 1024 * ((attr >> 6) & 0x03);
 	
-				if (!overrender)
+				if (overrender == 0)
 					drawgfx(bitmap, Machine->gfx[0], code, color ^ 3, attr & 0x04, attr & 0x08,
 							16 * mx, 16 * my, &Machine->visible_area, TRANSPARENCY_NONE, 0);
 				else if (Machine->gfx[0]->total_elements < 0x1000 && (attr & 0x80))
@@ -359,7 +359,7 @@ public class mcr68
 				int code = data & 0x3ff;
 	
 				/* standard case: draw with no transparency */
-				if (!overrender)
+				if (overrender == 0)
 					drawgfx(bitmap, Machine->gfx[0], code, color, data & 0x0800, data & 0x1000,
 							16 * mx, 16 * my, &Machine->visible_area, TRANSPARENCY_NONE, 0);
 	
@@ -405,7 +405,7 @@ public class mcr68
 			color = ((~flags >> 2) & 0x0f) | ((flags & 0x02) << 3);
 	
 			/* for low priority, draw everything but color 7 */
-			if (!priority)
+			if (priority == 0)
 			{
 				if (color == 7)
 					continue;

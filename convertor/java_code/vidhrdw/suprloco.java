@@ -106,7 +106,7 @@ public class suprloco
 	{
 		bg_tilemap = tilemap_create(get_tile_info,tilemap_scan_rows,TILEMAP_OPAQUE,8,8,32,32);
 	
-		if (!bg_tilemap)
+		if (bg_tilemap == 0)
 			return 1;
 	
 		tilemap_set_scroll_rows(bg_tilemap,32);
@@ -224,7 +224,7 @@ public class suprloco
 		sx = spr_reg[SPR_X];
 		sy = spr_reg[SPR_Y_TOP] + 1;
 	
-		if (!flip_screen)
+		if (flip_screen == 0)
 		{
 			adjy = sy;
 			dy = 1;

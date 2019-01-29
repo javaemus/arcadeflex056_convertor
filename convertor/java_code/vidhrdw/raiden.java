@@ -171,7 +171,7 @@ public class raiden
 	void raiden_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
 	{
 		/* Setup the tilemaps, alternate version has different scroll positions */
-		if (!ALTERNATE) {
+		if (ALTERNATE == 0) {
 			tilemap_set_scrollx( bg_layer,0, ((raiden_scroll_ram[1]<<8)+raiden_scroll_ram[0]) );
 			tilemap_set_scrolly( bg_layer,0, ((raiden_scroll_ram[3]<<8)+raiden_scroll_ram[2]) );
 			tilemap_set_scrollx( fg_layer,0, ((raiden_scroll_ram[5]<<8)+raiden_scroll_ram[4]) );

@@ -1008,7 +1008,7 @@ public class taito_f3
 			if (flipscreen) pivot_base-=2; else pivot_base+=2;
 		}
 	
-		if (!flipscreen)
+		if (flipscreen == 0)
 			tilemap_set_clip(pixel_layer,&pivot_clip);
 	
 		/* Decode chars & mark tilemap dirty */
@@ -1049,7 +1049,7 @@ public class taito_f3
 			fy = tile&0x8000;
 	
 	        tile&=0xff;
-	        if (!tile) continue;
+	        if (tile == 0) continue;
 	
 			/* Graphics flip */
 			if (flipscreen) {
@@ -1275,7 +1275,7 @@ public class taito_f3
 			last_y=y;
 			if (block_zoom_x) x_addition=(0x110 - block_zoom_x) / 16; else x_addition=16;
 			if (block_zoom_y) y_addition=(0x110 - block_zoom_y) / 16; else y_addition=16;
-			if (!sprite) continue;
+			if (sprite == 0) continue;
 	
 			if (flipscreen) {
 				sprite_ptr->x = 512-16-x;

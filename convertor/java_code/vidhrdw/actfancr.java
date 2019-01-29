@@ -92,7 +92,7 @@ public class actfancr
 	{
 		pf1_tilemap = tilemap_create(get_trio_tile_info,triothep_scan,TILEMAP_OPAQUE,16,16,32,32);
 	
-		if (!pf1_tilemap)
+		if (pf1_tilemap == 0)
 			return 1;
 	
 		pf1_alt_tilemap=NULL;
@@ -218,7 +218,7 @@ public class actfancr
 		/* Draw character tiles */
 		for (offs = 0x800 - 2;offs >= 0;offs -= 2) {
 			tile=actfancr_pf2_data[offs]+(actfancr_pf2_data[offs+1]<<8);
-			if (!tile) continue;
+			if (tile == 0) continue;
 			color=tile>>12;
 			tile=tile&0xfff;
 			mx = (offs/2) % 32;
@@ -314,7 +314,7 @@ public class actfancr
 		/* Draw character tiles */
 		for (offs = 0x800 - 2;offs >= 0;offs -= 2) {
 			tile=actfancr_pf2_data[offs]+(actfancr_pf2_data[offs+1]<<8);
-			if (!tile) continue;
+			if (tile == 0) continue;
 			color=tile>>12;
 			tile=tile&0xfff;
 			mx = (offs/2) % 32;

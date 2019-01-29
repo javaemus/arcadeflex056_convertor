@@ -770,7 +770,7 @@ public class ati15khz
 		}
 		else
 		{
-			if (!io_base)
+			if (io_base == 0)
 				io_base = 0x2EC;
 			return (io_sel << 10) + io_base;
 		}

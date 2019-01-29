@@ -221,7 +221,7 @@ public class sound
 		static int consecutive_highs = 0;
 	
 		// if we're not throttled don't bother
-		if (!throttle)
+		if (throttle == 0)
 		{
 			consecutive_lows = 0;
 			consecutive_mids = 0;

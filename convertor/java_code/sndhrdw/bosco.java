@@ -25,7 +25,7 @@ public class bosco
 		mixer_set_name(channel,"Samples");
 	
 		speech = malloc(2*memory_region_length(REGION_SOUND2));
-		if (!speech)
+		if (speech == 0)
 			return 1;
 	
 		/* decode the rom samples */

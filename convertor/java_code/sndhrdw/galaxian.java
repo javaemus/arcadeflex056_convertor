@@ -482,14 +482,14 @@ public class galaxian
 		tone_stream = stream_init("Tone",TOOTHSAW_VOLUME,SOUND_CLOCK/STEPS,0,tone_update);
 	
 	#if SAMPLES
-		if (!deathsampleloaded)
+		if (deathsampleloaded == 0)
 	#endif
 		{
 			mixer_set_volume(channelnoise,0);
 			mixer_play_sample_16(channelnoise,noisewave,NOISE_LENGTH,NOISE_RATE,1);
 		}
 	#if SAMPLES
-		if (!shootsampleloaded)
+		if (shootsampleloaded == 0)
 	#endif
 		{
 			mixer_set_volume(channelshoot,0);

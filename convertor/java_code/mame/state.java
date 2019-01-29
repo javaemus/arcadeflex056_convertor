@@ -192,7 +192,7 @@ public class state
 		ss_module *m;
 		while((m = *mp) != 0) {
 			int pos = strcmp(m->name, name);
-			if(!pos)
+			if (pos == 0)
 				return m;
 			if(pos>0)
 				break;
@@ -216,7 +216,7 @@ public class state
 		ss_entry *e = *ep;
 		while((e = *ep) != 0) {
 			int pos = strcmp(e->name, name);
-			if(!pos) {
+			if (pos == 0) {
 				logerror("Duplicate save state registration entry (%s, %d, %s)\n", module, instance, name);
 				return NULL;
 			}

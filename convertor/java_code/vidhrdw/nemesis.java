@@ -261,56 +261,56 @@ public class nemesis
 		tilemap_set_scroll_rows( foreground, 256 );
 	
 		char_dirty = malloc(2048);
-		if (!char_dirty) {
+		if (char_dirty == 0) {
 			nemesis_vh_stop();
 			return 1;
 		}
 		memset(char_dirty,1,2048);
 	
 		sprite_dirty = malloc(512);
-		if (!sprite_dirty) {
+		if (sprite_dirty == 0) {
 			nemesis_vh_stop();
 			return 1;
 		}
 		memset(sprite_dirty,1,512);
 	
 		sprite3216_dirty = malloc(256);
-		if (!sprite3216_dirty) {
+		if (sprite3216_dirty == 0) {
 			nemesis_vh_stop();
 			return 1;
 		}
 		memset(sprite3216_dirty,1,256);
 	
 		sprite1632_dirty = malloc(256);
-		if (!sprite1632_dirty) {
+		if (sprite1632_dirty == 0) {
 			nemesis_vh_stop();
 			return 1;
 		}
 		memset(sprite1632_dirty,1,256);
 	
 		sprite3232_dirty = malloc(128);
-		if (!sprite3232_dirty) {
+		if (sprite3232_dirty == 0) {
 			nemesis_vh_stop();
 			return 1;
 		}
 		memset(sprite3232_dirty,1,128);
 	
 		sprite168_dirty = malloc(1024);
-		if (!sprite168_dirty) {
+		if (sprite168_dirty == 0) {
 			nemesis_vh_stop();
 			return 1;
 		}
 		memset(sprite168_dirty,1,1024);
 	
 		sprite816_dirty = malloc(1024);
-		if (!sprite816_dirty) {
+		if (sprite816_dirty == 0) {
 			nemesis_vh_stop();
 			return 1;
 		}
 		memset(sprite816_dirty,1,32);
 	
 		sprite6464_dirty = malloc(32);
-		if (!sprite6464_dirty) {
+		if (sprite6464_dirty == 0) {
 			nemesis_vh_stop();
 			return 1;
 		}

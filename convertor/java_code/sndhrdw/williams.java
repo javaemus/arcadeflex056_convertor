@@ -1305,7 +1305,7 @@ public class williams
 		}
 		else
 		{
-			if (!DISABLE_FIRQ_SPEEDUP)
+			if (DISABLE_FIRQ_SPEEDUP == 0)
 				ym2151.current_register = data;
 	
 			/* only pass through register writes for non-timer registers */

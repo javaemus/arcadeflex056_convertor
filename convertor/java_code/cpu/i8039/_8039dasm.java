@@ -203,7 +203,7 @@ public class _8039dasm
 	    int code, bit;
 	    char *cp;
 	
-	    if (!OpInizialized) InitDasm8039();
+	    if (OpInizialized == 0) InitDasm8039();
 	
 		code = cpu_readop(pc);
 	    op = -1;    /* no matching opcode */

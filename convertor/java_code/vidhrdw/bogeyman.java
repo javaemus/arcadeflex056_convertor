@@ -148,12 +148,12 @@ public class bogeyman
 			if (flipscreen) {mx=31-mx; my=31-my;}
 			tile=videoram[offs] | ((videoram[offs+0x400]&3)<<8);
 			bank=tile/0x200;
-			if (!tile) continue;
+			if (tile == 0) continue;
 	#if 0
 			color=0;//(videoram[offs+0x400]&2)>>1;	// Modified by T.Nogi 1999/10/26
 	#else
 			color = 0;
-			if (!bank)
+			if (bank == 0)
 			{
 				if ((tile >= 0x002) && (tile < 0x036)) color = 1;
 				if ((tile >= 0x10b) && (tile < 0x15b)) color = 1;

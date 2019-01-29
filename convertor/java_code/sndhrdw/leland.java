@@ -174,7 +174,7 @@ public class leland
 		int bufin = dac_bufin[dacnum];
 	
 		/* skip if nothing */
-		if (!buffer)
+		if (buffer == 0)
 			return;
 	
 		/* copy data from VRAM */
@@ -337,7 +337,7 @@ public class leland
 		memset(buffer, 0, length * sizeof(INT16));
 	
 		/* if we're redline racer, we have more DACs */
-		if (!is_redline)
+		if (is_redline == 0)
 			start = 2, stop = 7;
 		else
 			start = 0, stop = 8;
@@ -431,7 +431,7 @@ public class leland
 					int which, frac, step, volume;
 	
 					/* adjust for redline racer */
-					if (!is_redline)
+					if (is_redline == 0)
 						which = (d->dest & 0x3f) / 2;
 					else
 						which = (d->dest >> 9) & 7;
@@ -1069,7 +1069,7 @@ public class leland
 				int dacnum;
 	
 				/* adjust for redline racer */
-				if (!is_redline)
+				if (is_redline == 0)
 					dacnum = (d->dest & 0x3f) / 2;
 				else
 				{
@@ -1639,7 +1639,7 @@ public class leland
 					if (LOG_PIT) logerror("PIT counter %d set to %d (%d Hz)\n", which, ctr->count, 4000000 / ctr->count);
 	
 					/* set the frequency of the associated DAC */
-					if (!is_redline)
+					if (is_redline == 0)
 						set_dac_frequency(which, 4000000 / ctr->count);
 					else
 					{
@@ -1679,7 +1679,7 @@ public class leland
 	{
 		/* see if anything changed */
 		int diff = (last_control ^ data) & 0xf8;
-		if (!diff)
+		if (diff == 0)
 			return;
 		last_control = data;
 	
@@ -1707,7 +1707,7 @@ public class leland
 		/* INT0 */
 		if (data & 0x20)
 		{
-			if (!LATCH_INTS) i186.intr.request &= ~0x10;
+			if (LATCH_INTS == 0) i186.intr.request &= ~0x10;
 		}
 		else if (i186.intr.ext[0] & 0x10)
 			i186.intr.request |= 0x10;
@@ -1717,7 +1717,7 @@ public class leland
 		/* INT1 */
 		if (data & 0x08)
 		{
-			if (!LATCH_INTS) i186.intr.request &= ~0x20;
+			if (LATCH_INTS == 0) i186.intr.request &= ~0x20;
 		}
 		else if (i186.intr.ext[1] & 0x10)
 			i186.intr.request |= 0x20;
@@ -2065,7 +2065,7 @@ public class leland
 				{
 					UINT8 result;
 	
-					if (!is_redline)
+					if (is_redline == 0)
 						result = ((clock_active >> 1) & 0x3e);
 					else
 						result = ((clock_active << 1) & 0x7e);
@@ -2091,7 +2091,7 @@ public class leland
 				return pit8254_r(offset);
 	
 			case 3:
-				if (!has_ym2151)
+				if (has_ym2151 == 0)
 					return pit8254_r(offset | 0x80);
 				else
 					return (offset & 1) ? 0 : YM2151_status_port_0_r(offset);
@@ -2127,7 +2127,7 @@ public class leland
 				break;
 	
 			case 3:
-				if (!has_ym2151)
+				if (has_ym2151 == 0)
 					pit8254_w(offset | 0x80, data);
 				else if (offset == 0)
 					YM2151_register_port_0_w(offset, data);

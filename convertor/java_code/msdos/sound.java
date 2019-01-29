@@ -461,7 +461,7 @@ public class sound
 		int buflen;
 		int start,end;
 	
-		if (!stream_playing) return;	/* error */
+		if (stream_playing == 0) return;	/* error */
 	
 		buflen = audio_buffer_length;
 		start = voice_pos;

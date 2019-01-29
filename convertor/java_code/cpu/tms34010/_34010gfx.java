@@ -20,7 +20,7 @@
 
 static void line(void)
 {
-	if (!P_FLAG)
+	if (P_FLAG == 0)
 	{
 		if (state.window_checking != 0 && state.window_checking != 3)
 			logerror("LINE XY  %08X - Window Checking Mode %d not supported\n", PC, state.window_checking);
@@ -892,7 +892,7 @@ public class _34010gfx
 		int trans = (IOREG(REG_CONTROL) & 0x20) >> 5;
 		int rop = (IOREG(REG_CONTROL) >> 10) & 0x1f;
 		int ix = trans | (rop << 1) | (psize << 6);
-		if (!P_FLAG) LOGGFX(("%08X:PIXBLT B,L (%dx%d)\n", PC, DYDX_X, DYDX_Y));
+		if (P_FLAG == 0) LOGGFX(("%08X:PIXBLT B,L (%dx%d)\n", PC, DYDX_X, DYDX_Y));
 		pixel_op = pixel_op_table[rop];
 		pixel_op_timing = pixel_op_timing_table[rop];
 		(*pixblt_b_op_table[ix])(1);
@@ -904,7 +904,7 @@ public class _34010gfx
 		int trans = (IOREG(REG_CONTROL) & 0x20) >> 5;
 		int rop = (IOREG(REG_CONTROL) >> 10) & 0x1f;
 		int ix = trans | (rop << 1) | (psize << 6);
-		if (!P_FLAG) LOGGFX(("%08X:PIXBLT B,XY (%d,%d) (%dx%d)\n", PC, DADDR_X, DADDR_Y, DYDX_X, DYDX_Y));
+		if (P_FLAG == 0) LOGGFX(("%08X:PIXBLT B,XY (%d,%d) (%dx%d)\n", PC, DADDR_X, DADDR_Y, DYDX_X, DYDX_Y));
 		pixel_op = pixel_op_table[rop];
 		pixel_op_timing = pixel_op_timing_table[rop];
 		(*pixblt_b_op_table[ix])(0);
@@ -917,10 +917,10 @@ public class _34010gfx
 		int rop = (IOREG(REG_CONTROL) >> 10) & 0x1f;
 		int pbh = (IOREG(REG_CONTROL) >> 8) & 1;
 		int ix = trans | (rop << 1) | (psize << 6);
-		if (!P_FLAG) LOGGFX(("%08X:PIXBLT L,L (%dx%d)\n", PC, DYDX_X, DYDX_Y));
+		if (P_FLAG == 0) LOGGFX(("%08X:PIXBLT L,L (%dx%d)\n", PC, DYDX_X, DYDX_Y));
 		pixel_op = pixel_op_table[rop];
 		pixel_op_timing = pixel_op_timing_table[rop];
-		if (!pbh)
+		if (pbh == 0)
 			(*pixblt_op_table[ix])(1, 1);
 		else
 			(*pixblt_r_op_table[ix])(1, 1);
@@ -933,10 +933,10 @@ public class _34010gfx
 		int rop = (IOREG(REG_CONTROL) >> 10) & 0x1f;
 		int pbh = (IOREG(REG_CONTROL) >> 8) & 1;
 		int ix = trans | (rop << 1) | (psize << 6);
-		if (!P_FLAG) LOGGFX(("%08X:PIXBLT L,XY (%d,%d) (%dx%d)\n", PC, DADDR_X, DADDR_Y, DYDX_X, DYDX_Y));
+		if (P_FLAG == 0) LOGGFX(("%08X:PIXBLT L,XY (%d,%d) (%dx%d)\n", PC, DADDR_X, DADDR_Y, DYDX_X, DYDX_Y));
 		pixel_op = pixel_op_table[rop];
 		pixel_op_timing = pixel_op_timing_table[rop];
-		if (!pbh)
+		if (pbh == 0)
 			(*pixblt_op_table[ix])(1, 0);
 		else
 			(*pixblt_r_op_table[ix])(1, 0);
@@ -949,10 +949,10 @@ public class _34010gfx
 		int rop = (IOREG(REG_CONTROL) >> 10) & 0x1f;
 		int pbh = (IOREG(REG_CONTROL) >> 8) & 1;
 		int ix = trans | (rop << 1) | (psize << 6);
-		if (!P_FLAG) LOGGFX(("%08X:PIXBLT XY,L (%dx%d)\n", PC, DYDX_X, DYDX_Y));
+		if (P_FLAG == 0) LOGGFX(("%08X:PIXBLT XY,L (%dx%d)\n", PC, DYDX_X, DYDX_Y));
 		pixel_op = pixel_op_table[rop];
 		pixel_op_timing = pixel_op_timing_table[rop];
-		if (!pbh)
+		if (pbh == 0)
 			(*pixblt_op_table[ix])(0, 1);
 		else
 			(*pixblt_r_op_table[ix])(0, 1);
@@ -965,10 +965,10 @@ public class _34010gfx
 		int rop = (IOREG(REG_CONTROL) >> 10) & 0x1f;
 		int pbh = (IOREG(REG_CONTROL) >> 8) & 1;
 		int ix = trans | (rop << 1) | (psize << 6);
-		if (!P_FLAG) LOGGFX(("%08X:PIXBLT XY,XY (%dx%d)\n", PC, DYDX_X, DYDX_Y));
+		if (P_FLAG == 0) LOGGFX(("%08X:PIXBLT XY,XY (%dx%d)\n", PC, DYDX_X, DYDX_Y));
 		pixel_op = pixel_op_table[rop];
 		pixel_op_timing = pixel_op_timing_table[rop];
-		if (!pbh)
+		if (pbh == 0)
 			(*pixblt_op_table[ix])(0, 0);
 		else
 			(*pixblt_r_op_table[ix])(0, 0);
@@ -980,7 +980,7 @@ public class _34010gfx
 		int trans = (IOREG(REG_CONTROL) & 0x20) >> 5;
 		int rop = (IOREG(REG_CONTROL) >> 10) & 0x1f;
 		int ix = trans | (rop << 1) | (psize << 6);
-		if (!P_FLAG) LOGGFX(("%08X:FILL L (%dx%d)\n", PC, DYDX_X, DYDX_Y));
+		if (P_FLAG == 0) LOGGFX(("%08X:FILL L (%dx%d)\n", PC, DYDX_X, DYDX_Y));
 		pixel_op = pixel_op_table[rop];
 		pixel_op_timing = pixel_op_timing_table[rop];
 		(*fill_op_table[ix])(1);
@@ -992,7 +992,7 @@ public class _34010gfx
 		int trans = (IOREG(REG_CONTROL) & 0x20) >> 5;
 		int rop = (IOREG(REG_CONTROL) >> 10) & 0x1f;
 		int ix = trans | (rop << 1) | (psize << 6);
-		if (!P_FLAG) LOGGFX(("%08X:FILL XY (%d,%d) (%dx%d)\n", PC, DADDR_X, DADDR_Y, DYDX_X, DYDX_Y));
+		if (P_FLAG == 0) LOGGFX(("%08X:FILL XY (%d,%d) (%dx%d)\n", PC, DADDR_X, DADDR_Y, DYDX_X, DYDX_Y));
 		pixel_op = pixel_op_table[rop];
 		pixel_op_timing = pixel_op_timing_table[rop];
 		(*fill_op_table[ix])(0);
@@ -1015,7 +1015,7 @@ public class _34010gfx
 	static void FUNCTION_NAME(pixblt)(int src_is_linear, int dst_is_linear)
 	{
 		/* if this is the first time through, perform the operation */
-		if (!P_FLAG)
+		if (P_FLAG == 0)
 		{
 			int dx, dy, x, y, words, left_partials, right_partials, full_words, bitshift, bitshift_alt, yreverse;
 			void (*word_write)(offs_t address,data16_t data);
@@ -1044,7 +1044,7 @@ public class _34010gfx
 	
 			/* apply the window for non-linear destinations */
 			state.gfxcycles = 7 + (src_is_linear ? 0 : 2);
-			if (!dst_is_linear)
+			if (dst_is_linear == 0)
 			{
 				XY temp = DADDR_XY;
 				state.gfxcycles += 2 + (!src_is_linear) + apply_window(BITS_PER_PIXEL, &saddr, &temp, &dx, &dy);
@@ -1210,7 +1210,7 @@ public class _34010gfx
 				}
 	
 				/* update for next row */
-				if (!yreverse)
+				if (yreverse == 0)
 				{
 					saddr += SPTCH;
 					daddr += DPTCH;
@@ -1248,7 +1248,7 @@ public class _34010gfx
 	static void FUNCTION_NAME(pixblt_r)(int src_is_linear, int dst_is_linear)
 	{
 		/* if this is the first time through, perform the operation */
-		if (!P_FLAG)
+		if (P_FLAG == 0)
 		{
 			int dx, dy, x, y, words, left_partials, right_partials, full_words, bitshift, bitshift_alt, yreverse;
 			void (*word_write)(offs_t address,data16_t data);
@@ -1277,7 +1277,7 @@ public class _34010gfx
 	
 			/* apply the window for non-linear destinations */
 			state.gfxcycles = 7 + (src_is_linear ? 0 : 2);
-			if (!dst_is_linear)
+			if (dst_is_linear == 0)
 			{
 				XY temp = DADDR_XY;
 				state.gfxcycles += 2 + (!src_is_linear) + apply_window(BITS_PER_PIXEL, &saddr, &temp, &dx, &dy);
@@ -1448,7 +1448,7 @@ public class _34010gfx
 				}
 	
 				/* update for next row */
-				if (!yreverse)
+				if (yreverse == 0)
 				{
 					saddr += SPTCH;
 					daddr += DPTCH;
@@ -1490,7 +1490,7 @@ public class _34010gfx
 	static void FUNCTION_NAME(pixblt_b)(int dst_is_linear)
 	{
 		/* if this is the first time through, perform the operation */
-		if (!P_FLAG)
+		if (P_FLAG == 0)
 		{
 			int dx, dy, x, y, words, left_partials, right_partials, full_words;
 			void (*word_write)(offs_t address,data16_t data);
@@ -1518,7 +1518,7 @@ public class _34010gfx
 	
 			/* apply the window for non-linear destinations */
 			state.gfxcycles = 4;
-			if (!dst_is_linear)
+			if (dst_is_linear == 0)
 			{
 				XY temp = DADDR_XY;
 				state.gfxcycles += 2 + apply_window(1, &saddr, &temp, &dx, &dy);
@@ -1689,7 +1689,7 @@ public class _34010gfx
 	static void FUNCTION_NAME(fill)(int dst_is_linear)
 	{
 		/* if this is the first time through, perform the operation */
-		if (!P_FLAG)
+		if (P_FLAG == 0)
 		{
 			int dx, dy, x, y, words, left_partials, right_partials, full_words;
 			void (*word_write)(offs_t address,data16_t data);
@@ -1714,7 +1714,7 @@ public class _34010gfx
 	
 			/* apply the window for non-linear destinations */
 			state.gfxcycles = 4;
-			if (!dst_is_linear)
+			if (dst_is_linear == 0)
 			{
 				XY temp = DADDR_XY;
 				state.gfxcycles += 2 + apply_window(0, NULL, &temp, &dx, &dy);

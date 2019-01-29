@@ -114,7 +114,7 @@ public class slikshot
 		*beams = 0;
 	
 		/* if sensor 1 fired first, set bit 0 */
-		if (!sens0)
+		if (sens0 == 0)
 			*beams |= 1;
 	
 		/* if sensor 3 has the larger value, set bit 1 */
@@ -226,7 +226,7 @@ public class slikshot
 	
 		/* put the sign back in Vx */
 		vx &= 0xff;
-		if (!vxsgn)
+		if (vxsgn == 0)
 			vx = -vx;
 	
 		/* clamp VY */

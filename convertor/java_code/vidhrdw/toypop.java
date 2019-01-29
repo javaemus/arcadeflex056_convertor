@@ -194,7 +194,7 @@ public class toypop
 						break;
 					case 4:		/* 2x horizontal */
 						sprite &= ~1;
-						if (!flipx) {
+						if (flipx == 0) {
 							toypop_draw_sprite(bitmap,1+sprite,color,0,flipy,x+16,y);
 							toypop_draw_sprite(bitmap,sprite,color,0,flipy,x,y);
 						} else {
@@ -204,7 +204,7 @@ public class toypop
 						break;
 					case 8:		/* 2x vertical */
 						sprite &= ~2;
-						if (!flipy) {
+						if (flipy == 0) {
 							toypop_draw_sprite(bitmap,sprite,color,flipx,0,x,y-16);
 							toypop_draw_sprite(bitmap,2+sprite,color,flipx,0,x,y);
 						} else {

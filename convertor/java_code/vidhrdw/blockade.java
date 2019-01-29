@@ -35,7 +35,7 @@ public class blockade
 						8*sx,8*sy,
 						&Machine->visible_area,TRANSPARENCY_NONE,0);
 	
-				if (!full_refresh)
+				if (full_refresh == 0)
 					drawgfx(bitmap,Machine->gfx[0],
 						charcode,
 						0,

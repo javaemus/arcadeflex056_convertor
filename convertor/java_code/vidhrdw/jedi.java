@@ -42,13 +42,13 @@ public class jedi
 	{
 		/* allocate dirty buffer for the foreground characters */
 		fgdirty = dirtybuffer = malloc(videoram_size);
-		if (!fgdirty)
+		if (fgdirty == 0)
 			return 1;
 		memset(fgdirty, 1, videoram_size);
 	
 		/* allocate an 8bpp bitmap for the raw foreground characters */
 		fgbitmap = bitmap_alloc(Machine->drv->screen_width, Machine->drv->screen_height);
-		if (!fgbitmap)
+		if (fgbitmap == 0)
 		{
 			free(fgdirty);
 			return 1;
@@ -56,7 +56,7 @@ public class jedi
 	
 		/* allocate an 8bpp bitmap for the motion objects */
 		mobitmap = bitmap_alloc(Machine->drv->screen_width, Machine->drv->screen_height);
-		if (!mobitmap)
+		if (mobitmap == 0)
 		{
 			bitmap_free(fgbitmap);
 			free(fgdirty);
@@ -66,7 +66,7 @@ public class jedi
 	
 		/* allocate dirty buffer for the background characters */
 		bgdirty = malloc(jedi_backgroundram_size);
-		if (!bgdirty)
+		if (bgdirty == 0)
 		{
 			bitmap_free(mobitmap);
 			bitmap_free(fgbitmap);
@@ -77,7 +77,7 @@ public class jedi
 	
 		/* the background area is 256x256, doubled by the hardware*/
 		bgbitmap = bitmap_alloc(256, 256);
-		if (!bgbitmap)
+		if (bgbitmap == 0)
 		{
 			bitmap_free(fgbitmap);
 			bitmap_free(mobitmap);
@@ -88,7 +88,7 @@ public class jedi
 	
 		/* the expanded background area is 512x512 */
 		bgexbitmap = bitmap_alloc(512, 512);
-		if (!bgexbitmap)
+		if (bgexbitmap == 0)
 		{
 			bitmap_free(fgbitmap);
 			bitmap_free(mobitmap);

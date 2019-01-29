@@ -60,7 +60,7 @@ public class aliens
 	int aliens_vh_start( void )
 	{
 		paletteram = malloc(0x400);
-		if (!paletteram) return 1;
+		if (paletteram == 0) return 1;
 	
 		layer_colorbase[0] = 0;
 		layer_colorbase[1] = 4;

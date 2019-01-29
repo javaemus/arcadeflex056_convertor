@@ -30,7 +30,7 @@ public class wavwrite
 	
 		/* allocate memory for the wav struct */
 		wav = malloc(sizeof(struct wav_data));
-		if (!wav)
+		if (wav == 0)
 			return NULL;
 	
 		/* create the file */
@@ -137,7 +137,7 @@ public class wavwrite
 	
 		/* allocate temp memory */
 		temp = malloc(samples * sizeof(temp[0]));
-		if (!temp)
+		if (temp == 0)
 			return;
 	
 		/* clamp */
@@ -164,7 +164,7 @@ public class wavwrite
 	
 		/* allocate temp memory */
 		temp = malloc(samples * 2 * sizeof(temp[0]));
-		if (!temp)
+		if (temp == 0)
 			return;
 	
 		/* interleave */
@@ -188,7 +188,7 @@ public class wavwrite
 	
 		/* allocate temp memory */
 		temp = malloc(samples * 2 * sizeof(temp[0]));
-		if (!temp)
+		if (temp == 0)
 			return;
 	
 		/* interleave */

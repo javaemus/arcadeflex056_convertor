@@ -156,7 +156,7 @@ public class prehisle
 	{
 		pf1_bitmap = bitmap_alloc(256+16,512);
 	
-		if (!pf1_bitmap)
+		if (pf1_bitmap == 0)
 			return 1;
 	
 		return 0;

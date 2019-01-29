@@ -298,7 +298,7 @@ public class qsound
 										  (float) Machine->sample_rate)*256.0;
 	
 	#endif
-				if (!value)
+				if (value == 0)
 				{
 					/* Key off */
 					qsound_channel[ch].key=0;

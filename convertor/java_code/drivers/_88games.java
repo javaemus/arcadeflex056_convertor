@@ -123,7 +123,7 @@ public class _88games
 	
 		UPD7759_reset_w( speech_chip, reset );
 	
-		if (!invalid_code)
+		if (invalid_code == 0)
 			UPD7759_start_w( speech_chip, start );
 	}
 	

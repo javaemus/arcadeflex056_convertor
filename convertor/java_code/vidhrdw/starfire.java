@@ -37,12 +37,12 @@ public class starfire
 	{
 		/* make a temporary bitmap */
 		tmpbitmap = bitmap_alloc(Machine->drv->screen_width, Machine->drv->screen_height);
-		if (!tmpbitmap)
+		if (tmpbitmap == 0)
 			return 1;
 	
 		/* make a dirty array */
 		scanline_dirty = malloc(256);
-		if (!scanline_dirty)
+		if (scanline_dirty == 0)
 		{
 			bitmap_free(tmpbitmap);
 			return 1;

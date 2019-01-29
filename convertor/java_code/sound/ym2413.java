@@ -1021,7 +1021,7 @@ public class ym2413
 	
 	  int i ;
 	
-	  if(!opll) return ;
+	  if (opll == 0) return ;
 	
 	  opll->output[0] = 0 ;
 	  opll->output[1] = 0 ;

@@ -1476,7 +1476,7 @@ public class s2650
 		which = (which+1) % 16;
 		buffer[which][0] = '\0';
 	
-	    if( !context )
+	    if (context == 0)
 			r = &S;
 	
 	    switch( regnum )

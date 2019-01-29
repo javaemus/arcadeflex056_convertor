@@ -407,7 +407,7 @@ public class arabian
 		for (y = 0; y < BITMAP_HEIGHT; y++)
 		{
 			/* non-flipped case */
-			if (!arabian_flip_screen)
+			if (arabian_flip_screen == 0)
 				draw_scanline8(bitmap, 0, y, BITMAP_WIDTH, &main_bitmap[y * BITMAP_WIDTH], colortable, -1);
 	
 			/* flipped case */

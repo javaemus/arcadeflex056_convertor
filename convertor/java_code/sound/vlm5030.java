@@ -503,7 +503,7 @@ public class vlm5030
 	/* realtime update */
 	static void VLM5030_update(void)
 	{
-		if( !sampling_mode )
+		if (sampling_mode == 0)
 		{
 			/* docode mode */
 			stream_update(channel,0);
@@ -543,7 +543,7 @@ public class vlm5030
 	{
 		if( pin_RST )
 		{
-			if( !pin )
+			if (pin == 0)
 			{	/* H -> L : latch parameters */
 				pin_RST = 0;
 				VLM5030_param_bps = latch_data & 3;
@@ -585,7 +585,7 @@ public class vlm5030
 		if( pin_ST != pin )
 		{
 			/* pin level is change */
-			if( !pin )
+			if (pin == 0)
 			{	/* H -> L */
 				pin_ST = 0;
 	
@@ -620,7 +620,7 @@ public class vlm5030
 					}
 	
 					/* set play mode samplingfile or emulate */
-					if( !sampling_mode )
+					if (sampling_mode == 0)
 					{
 						VLM5030_update();
 	

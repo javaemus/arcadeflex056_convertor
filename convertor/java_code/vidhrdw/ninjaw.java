@@ -164,7 +164,7 @@ public class ninjaw
 		int chips;
 	
 		spritelist = malloc(0x1000 * sizeof(*spritelist));
-		if (!spritelist)
+		if (spritelist == 0)
 			return 1;
 	
 		chips = number_of_TC0100SCN();
@@ -254,7 +254,7 @@ public class ninjaw
 			data = spriteram16[offs+2];
 			tilenum = data & 0x7fff;
 	
-			if (!tilenum) continue;
+			if (tilenum == 0) continue;
 	
 			data = spriteram16[offs+0];
 	//		x = (data - 8) & 0x3ff;

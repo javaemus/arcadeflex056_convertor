@@ -356,14 +356,14 @@ public class discrete
 		discrete_log("discrete_sh_start() - Audio Stream Initialised", node_count);
 	
 		/* Report success or fail */
-		if(!failed) init_ok=1;
+		if (failed == 0) init_ok=1;
 		return failed;
 	}
 	
 	void discrete_sh_stop (void)
 	{
 		int loop=0;
-		if(!init_ok) return;
+		if (init_ok == 0) return;
 	
 		for(loop=0;loop<node_count;loop++)
 		{
@@ -383,7 +383,7 @@ public class discrete
 		/* Reset all of the objects */
 		int loop=0;
 	
-		if(!init_ok) return;
+		if (init_ok == 0) return;
 	
 		for(loop=0;loop<node_count;loop++)
 		{
@@ -394,7 +394,7 @@ public class discrete
 	
 	void discrete_sh_update(void)
 	{
-		if(!init_ok) return;
+		if (init_ok == 0) return;
 		/* Bring stream upto the present time */
 		stream_update(discrete_stream, 0);
 	}

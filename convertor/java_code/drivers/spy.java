@@ -40,13 +40,13 @@ public class spy
 	
 	static READ_HANDLER( spy_bankedram1_r )
 	{
-		if (!rambank) return ram[offset];
+		if (rambank == 0) return ram[offset];
 		else return paletteram_r(offset);
 	}
 	
 	static WRITE_HANDLER( spy_bankedram1_w )
 	{
-		if (!rambank) ram[offset] = data;
+		if (rambank == 0) ram[offset] = data;
 		else paletteram_xBBBBBGGGGGRRRRR_swap_w(offset,data);
 	}
 	

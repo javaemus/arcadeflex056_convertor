@@ -320,7 +320,7 @@ public class namcos86
 				if (sy < -209-32) sy += 256;
 	
 				if (flipx && !wide) sx-=16;
-				if (!tall) sy+=16;
+				if (tall == 0) sy+=16;
 	//			if (flipy && !tall) sy+=16;
 	
 				sx += sprite_xoffs;

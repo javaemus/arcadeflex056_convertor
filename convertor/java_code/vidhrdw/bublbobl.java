@@ -43,7 +43,7 @@ public class bublbobl
 		/* This clears & redraws the entire screen each pass */
 		fillbitmap(bitmap,Machine->pens[255],&Machine->visible_area);
 	
-		if (!bublbobl_video_enable) return;
+		if (bublbobl_video_enable == 0) return;
 	
 		sx = 0;
 	

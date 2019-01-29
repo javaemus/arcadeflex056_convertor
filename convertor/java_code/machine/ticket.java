@@ -73,7 +73,7 @@ public class ticket
 		/* On an activate signal, start dispensing! */
 		if ((data & active_bit) == motoron)
 		{
-			if (!power)
+			if (power == 0)
 			{
 	#ifdef DEBUG_TICKET
 				logerror("PC: %04X  Ticket Power On\n", cpu_get_pc());

@@ -312,7 +312,7 @@ public class cninja
 		{
 			int x,y,sprite,colour,multi,fx,fy,inc,flash,mult;
 			sprite = buffered_spriteram16[offs+1];
-			if (!sprite) continue;
+			if (sprite == 0) continue;
 	
 			x = buffered_spriteram16[offs+2];
 	
@@ -378,7 +378,7 @@ public class cninja
 		{
 			int x,y,sprite,colour,multi,fx,fy,inc,flash,mult;
 			sprite = buffered_spriteram16[offs+1];
-			if (!sprite) continue;
+			if (sprite == 0) continue;
 	
 			x = buffered_spriteram16[offs+2];
 	

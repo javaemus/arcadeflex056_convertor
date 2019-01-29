@@ -326,7 +326,7 @@ public class wmsyunit
 			/* handle autoerase enable (bit 4)  */
 			else
 			{
-				if (!autoerase_enable)
+				if (autoerase_enable == 0)
 					update_partial(cpu_getscanline());
 				autoerase_enable = 1;
 			}
@@ -738,7 +738,7 @@ public class wmsyunit
 			/* if we're not page flipping, do autoerase immediately behind us */
 			if (autoerase_enable)
 			{
-				if (!page_flipping)
+				if (page_flipping == 0)
 					memcpy(&local_videoram[offset], &local_videoram[510 * 512], width * sizeof(UINT16));
 				else
 					autoerase_list[autoerase_count++] = offset;

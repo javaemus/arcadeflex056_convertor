@@ -487,7 +487,7 @@ public class leland
 	
 		battery_ram_enable = (top_board_bank & 0x80);
 	
-		if (!battery_ram_enable)
+		if (battery_ram_enable == 0)
 			address = (!(sound_port_bank & 0x04)) ? &master_base[0x10000] : &master_base[0x1c000];
 		else
 			address = (!(top_board_bank & 0x40)) ? &master_base[0x28000] : &master_base[0x30000];

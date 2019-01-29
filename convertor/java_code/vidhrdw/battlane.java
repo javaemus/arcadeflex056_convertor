@@ -170,13 +170,13 @@ public class battlane
 	int battlane_vh_start(void)
 	{
 		screen_bitmap = bitmap_alloc(0x20*8, 0x20*8);
-		if (!screen_bitmap)
+		if (screen_bitmap == 0)
 		{
 			return 1;
 		}
 	
 		battlane_bitmap=malloc(battlane_bitmap_size);
-		if (!battlane_bitmap)
+		if (battlane_bitmap == 0)
 		{
 			return 1;
 		}
@@ -185,7 +185,7 @@ public class battlane
 	    memset(battlane_tileram,255, battlane_tileram_size);
 	
 	    bkgnd_bitmap = bitmap_alloc(0x0200, 0x0200);
-	    if (!bkgnd_bitmap)
+	    if (bkgnd_bitmap == 0)
 		{
 			return 1;
 		}
@@ -285,7 +285,7 @@ public class battlane
 	               int sy=battlane_spriteram[offs];
 	               int flipx=attr&0x04;
 	               int flipy=attr&0x02;
-	               if (!flipscreen)
+	               if (flipscreen == 0)
 	               {
 	                    sx=240-sx;
 	                    sy=240-sy;

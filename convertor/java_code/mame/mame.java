@@ -603,7 +603,7 @@ public class mame
 			{
 				if (run_machine() == 0)
 					err = 0;
-				else if (!bailing)
+				else if (bailing == 0)
 				{
 					bailing = 1;
 					printf("Unable to start machine emulation\n");
@@ -611,7 +611,7 @@ public class mame
 	
 				shutdown_machine();
 			}
-			else if (!bailing)
+			else if (bailing == 0)
 			{
 				bailing = 1;
 				printf("Unable to initialize machine emulation\n");
@@ -620,7 +620,7 @@ public class mame
 			auto_malloc_stop();
 			osd_exit();
 		}
-		else if (!bailing)
+		else if (bailing == 0)
 		{
 			bailing = 1;
 			printf ("Unable to initialize system\n");
@@ -978,7 +978,7 @@ public class mame
 			if (spriteram_size)
 			{
 				buffered_spriteram = malloc(spriteram_size);
-				if (!buffered_spriteram)
+				if (buffered_spriteram == 0)
 				{
 					vh_close();
 					return 1;
@@ -989,7 +989,7 @@ public class mame
 				if (spriteram_2_size)
 				{
 					buffered_spriteram_2 = malloc(spriteram_2_size);
-					if (!buffered_spriteram_2)
+					if (buffered_spriteram_2 == 0)
 					{
 						vh_close();
 						return 1;
@@ -1215,13 +1215,13 @@ public class mame
 	
 					res = 0;
 				}
-				else if (!bailing)
+				else if (bailing == 0)
 				{
 					bailing = 1;
 					printf("Unable to start audio emulation\n");
 				}
 			}
-			else if (!bailing)
+			else if (bailing == 0)
 			{
 				bailing = 1;
 				printf("Unable to start video emulation\n");
@@ -1230,7 +1230,7 @@ public class mame
 			tilemap_close();
 			vh_close();
 		}
-		else if (!bailing)
+		else if (bailing == 0)
 		{
 			bailing = 1;
 			printf("Unable to start video emulation\n");
@@ -1279,7 +1279,7 @@ public class mame
 	
 		/* allocate reqested memory plus a link and a cookie */
 		result = malloc(size + sizeof(*result));
-		if (!result)
+		if (result == 0)
 			return NULL;
 	
 		/* fill in the link */

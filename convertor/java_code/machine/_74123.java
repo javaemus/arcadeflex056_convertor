@@ -145,7 +145,7 @@ public class _74123
 		struct TTL74123 *c = chip + which;
 	
 		/* trigger=hi and falling edge on trigger_comp (while reset_comp is hi) */
-		if (!data)
+		if (data == 0)
 			CHECK_TRIGGER(c->trigger && c->trigger_comp && c->reset_comp)
 		else
 			RESET

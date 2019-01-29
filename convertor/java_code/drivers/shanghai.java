@@ -83,7 +83,7 @@ public class shanghai
 	{
 		fifo_counter = 0;
 		HD63484_ram = malloc(HD63484_RAM_SIZE);
-		if (!HD63484_ram) return 1;
+		if (HD63484_ram == 0) return 1;
 		memset(HD63484_ram,0,HD63484_RAM_SIZE);
 		return 0;
 	}

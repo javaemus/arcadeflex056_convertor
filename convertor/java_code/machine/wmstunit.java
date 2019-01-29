@@ -383,7 +383,7 @@ public class wmstunit
 		init_tunit_generic(SOUND_ADPCM_LARGE);
 	
 		/* protection */
-		if (!te_protection)
+		if (te_protection == 0)
 		{
 			nbajam_prot_table = nbajam_prot_values;
 			install_mem_read16_handler (0, TOBYTE(0x1b14020), TOBYTE(0x1b2503f), nbajam_prot_r);
@@ -399,7 +399,7 @@ public class wmstunit
 		}
 	
 		/* sound chip protection (hidden RAM) */
-		if (!te_protection)
+		if (te_protection == 0)
 			install_mem_write_handler(1, 0xfbaa, 0xfbd4, MWA_RAM);
 		else
 			install_mem_write_handler(1, 0xfbec, 0xfc16, MWA_RAM);
@@ -521,7 +521,7 @@ public class wmstunit
 	WRITE16_HANDLER( wms_tunit_sound_w )
 	{
 		/* check for out-of-bounds accesses */
-		if (!offset)
+		if (offset == 0)
 		{
 			logerror("%08X:Unexpected write to sound (lo) = %04X\n", cpu_get_pc(), data);
 			return;

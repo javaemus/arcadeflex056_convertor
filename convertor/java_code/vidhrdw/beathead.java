@@ -54,7 +54,7 @@ public class beathead
 	int beathead_vh_start(void)
 	{
 		hsyncram = malloc(0x800);
-		if (!hsyncram)
+		if (hsyncram == 0)
 			return 1;
 		return 0;
 	}

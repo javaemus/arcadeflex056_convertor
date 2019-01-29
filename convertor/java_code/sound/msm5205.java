@@ -244,7 +244,7 @@ public class msm5205
 			if( msm5205[num].vclk != vclk)
 			{
 				msm5205[num].vclk = vclk;
-				if( !vclk ) MSM5205_vclk_callback(num);
+				if (vclk == 0) MSM5205_vclk_callback(num);
 			}
 		}
 	}

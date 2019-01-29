@@ -62,7 +62,7 @@ public class k051649
 	
 		/* allocate memory */
 		mixer_table = malloc(512 * voices * sizeof(INT16));
-		if (!mixer_table)
+		if (mixer_table == 0)
 			return 1;
 	
 		/* find the middle of the table */

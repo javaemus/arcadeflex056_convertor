@@ -36,7 +36,7 @@ public class system32
 		if(ACCESSING_MSB) {
 			irq_status &= data >> 8;
 			logerror("irq: clearing %02x -> %02x\n", data >> 8, irq_status);
-			if(!irq_status)
+			if (irq_status == 0)
 				cpu_set_irq_line(0, 0, CLEAR_LINE);
 		}
 	}

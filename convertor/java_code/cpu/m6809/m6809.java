@@ -271,7 +271,7 @@ public class m6809
 	#define CLR_ZC		CC&=~(CC_Z|CC_C)
 	
 	/* macros for CC -- CC bits affected should be reset before calling */
-	#define SET_Z(a)		if(!a)SEZ
+	#define SET_Z(a)		if (a == 0)SEZ
 	#define SET_Z8(a)		SET_Z((UINT8)a)
 	#define SET_Z16(a)		SET_Z((UINT16)a)
 	#define SET_N8(a)		CC|=((a&0x80)>>4)
@@ -618,7 +618,7 @@ public class m6809
 	
 		which = (which+1) % 16;
 	    buffer[which][0] = '\0';
-		if( !context )
+		if (context == 0)
 			r = &m6809;
 	
 		switch( regnum )

@@ -730,7 +730,7 @@ public class _8080bw
 		x = 8 * (offset % 32);
 	
 		/* 32 x 32 colormap */
-		if (!screen_red)
+		if (screen_red == 0)
 		{
 			UINT16 colbase;
 	
@@ -753,7 +753,7 @@ public class _8080bw
 		x = 8 * (offset % 32);
 	
 		/* 16 x 32 colormap */
-		if (!screen_red)
+		if (screen_red == 0)
 		{
 			UINT16 colbase;
 	
@@ -781,7 +781,7 @@ public class _8080bw
 		y = offset / 32;
 		x = 8 * (offset % 32);
 	
-		if (!screen_red)
+		if (screen_red == 0)
 		{
 			if (flip_screen)
 				col = memory_region(REGION_PROMS)[((y+32)/8)*32 + (x/8)] >> 4;

@@ -215,7 +215,7 @@ public class lastduel
 	{
 		int offs;
 	
-		if (!sprite_pri_mask)
+		if (sprite_pri_mask == 0)
 			if (pri == 1) return;	/* only low priority sprites in lastduel */
 	
 		for(offs=0x400-4;offs>=0;offs-=4)

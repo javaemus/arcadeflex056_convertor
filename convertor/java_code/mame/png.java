@@ -61,7 +61,7 @@ public class png
 		for (i=0; i<p->height; i++)
 		{
 			filter = *src++;
-			if (!filter)
+			if (filter == 0)
 			{
 				memcpy (dst, src, p->rowbytes);
 				src += p->rowbytes;

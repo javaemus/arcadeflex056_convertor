@@ -247,7 +247,7 @@ public class gridlee
 	
 		/* allocate memory */
 		p = poly17 = malloc(2 * (POLY17_SIZE + 1));
-		if (!poly17)
+		if (poly17 == 0)
 			return;
 		r = rand17 = poly17 + POLY17_SIZE + 1;
 	

@@ -766,7 +766,7 @@ public class mixer
 		}
 	
 		/* copy the mono 32-bit data to a 16-bit buffer, clipping along the way */
-		if (!is_stereo)
+		if (is_stereo == 0)
 		{
 			mix = mix_buffer;
 			for (i = 0; i < samples_this_frame; i++)
@@ -882,7 +882,7 @@ public class mixer
 	
 			/* attempt to load in the configuration data for this channel */
 			channel->mixing_level = channel->default_mixing_level;
-			if (!is_config_invalid)
+			if (is_config_invalid == 0)
 			{
 				/* if the defaults match, set the mixing level from the config */
 				if (channel->default_mixing_level == channel->config_default_mixing_level)

@@ -602,14 +602,14 @@ public class z80
 	#define ENTER_HALT {											\
 		_PC--;														\
 		_HALT = 1;													\
-		if( !after_EI ) 											\
+		if (after_EI == 0) 											\
 			z80_msx_burn( Z80_ICOUNT ); 							\
 	}
 	#else
 	#define ENTER_HALT {											\
 		_PC--;														\
 		_HALT = 1;													\
-		if( !after_EI ) 											\
+		if (after_EI == 0) 											\
 			z80_burn( Z80_ICOUNT ); 								\
 	}
 	#endif
@@ -734,7 +734,7 @@ public class z80
 		/* speed up busy loop */									\
 		if( _PCD == oldpc ) 										\
 		{															\
-			if( !after_EI ) 										\
+			if (after_EI == 0) 										\
 				BURNODD( Z80_ICOUNT, 1, cc[Z80_TABLE_op][0xc3] );	\
 		}															\
 		else														\
@@ -745,7 +745,7 @@ public class z80
 				/* NOP - JP $-1 or EI - JP $-1 */					\
 				if ( op == 0x00 || op == 0xfb ) 					\
 				{													\
-					if( !after_EI ) 								\
+					if (after_EI == 0) 								\
 						BURNODD( Z80_ICOUNT-cc[Z80_TABLE_op][0x00], \
 							2, cc[Z80_TABLE_op][0x00]+cc[Z80_TABLE_op][0xc3]); \
 				}													\
@@ -754,7 +754,7 @@ public class z80
 			/* LD SP,#xxxx - JP $-3 (Galaga) */ 					\
 			if( _PCD == oldpc-3 && op == 0x31 ) 					\
 			{														\
-				if( !after_EI ) 									\
+				if (after_EI == 0) 									\
 					BURNODD( Z80_ICOUNT-cc[Z80_TABLE_op][0x31], 	\
 						2, cc[Z80_TABLE_op][0x31]+cc[Z80_TABLE_op][0xc3]); \
 			}														\
@@ -794,7 +794,7 @@ public class z80
 		/* speed up busy loop */									\
 		if( _PCD == oldpc ) 										\
 		{															\
-			if( !after_EI ) 										\
+			if (after_EI == 0) 										\
 				BURNODD( Z80_ICOUNT, 1, cc[Z80_TABLE_op][0x18] );	\
 		}															\
 		else														\
@@ -805,7 +805,7 @@ public class z80
 				/* NOP - JR $-1 or EI - JR $-1 */					\
 				if ( op == 0x00 || op == 0xfb ) 					\
 				{													\
-					if( !after_EI ) 								\
+					if (after_EI == 0) 								\
 					   BURNODD( Z80_ICOUNT-cc[Z80_TABLE_op][0x00],	\
 						   2, cc[Z80_TABLE_op][0x00]+cc[Z80_TABLE_op][0x18]); \
 				}													\
@@ -814,7 +814,7 @@ public class z80
 			/* LD SP,#xxxx - JR $-3 */								\
 			if( _PCD == oldpc-3 && op == 0x31 ) 					\
 			{														\
-				if( !after_EI ) 									\
+				if (after_EI == 0) 									\
 				   BURNODD( Z80_ICOUNT-cc[Z80_TABLE_op][0x31],		\
 					   2, cc[Z80_TABLE_op][0x31]+cc[Z80_TABLE_op][0x18]); \
 			}														\
@@ -4511,7 +4511,7 @@ public class z80
 	
 		which = (which+1) % 32;
 		buffer[which][0] = '\0';
-		if( !context )
+		if (context == 0)
 			r = &Z80;
 	
 		switch( regnum )

@@ -830,7 +830,7 @@ public class _99xxcoreH
 				}
 				/* all TMS9900 chips I know do not honor interrupts after XOP, BLWP or MID (after any
 				  interrupt-like instruction, actually) */
-				else if (! disable_interrupt_recognition)
+				else if (disable_interrupt_recognition == 0)
 				{
 					if (level <= IMASK)
 					{	/* a maskable interrupt is honored only if its level isn't greater than IMASK */
@@ -1324,7 +1324,7 @@ public class _99xxcoreH
 		which = (which+1) % 32;
 		buffer[which][0] = '\0';
 	
-		if( !context )
+		if (context == 0)
 			r = &I;
 	
 		switch( regnum )

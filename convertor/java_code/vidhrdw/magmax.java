@@ -322,7 +322,7 @@ public class magmax
 	
 				pen_t *pens = &Machine->pens[2*16 + (map_v_scr_100>>1)];
 	
-				if (!map_v_scr_100)
+				if (map_v_scr_100 == 0)
 				{
 					/* we are drawing surface */
 					for (h = 0; h < 0x80; h++)

@@ -1383,7 +1383,7 @@ public class ym2151
 	
 	void YM2151Shutdown()
 	{
-		if (!YMPSG)
+		if (YMPSG == 0)
 			return;
 	
 		free (YMPSG);

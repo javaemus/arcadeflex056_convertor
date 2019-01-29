@@ -79,7 +79,7 @@ public class polepos
 		mixer_set_name(channel,"Speech");
 	
 		speech = malloc(16*SAMPLE_SIZE);
-		if (!speech)
+		if (speech == 0)
 			return 1;
 	
 		/* decode the rom samples, interpolating to make it sound a little better */

@@ -690,7 +690,7 @@ public class btime
 	
 	        /* copy the background bitmap to the screen */
 	        scroll = (bnj_scroll1 & 0x02) * 128 + 511 - bnj_scroll2;
-	        if (!flip_screen)
+	        if (flip_screen == 0)
 	            scroll = 767-scroll;
 	        copyscrollbitmap (bitmap, background_bitmap, 1, &scroll, 0, 0, &Machine->visible_area,TRANSPARENCY_NONE, 0);
 	

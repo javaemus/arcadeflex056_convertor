@@ -166,7 +166,7 @@ public class vastar
 	
 			if (spriteram_2[offs] & 0x08)	/* double width */
 			{
-				if (!flip_screen)
+				if (flip_screen == 0)
 					sy = 224 - sy;
 	
 				drawgfx(bitmap,Machine->gfx[2],
@@ -185,7 +185,7 @@ public class vastar
 			}
 			else
 			{
-				if (!flip_screen)
+				if (flip_screen == 0)
 					sy = 240 - sy;
 	
 				drawgfx(bitmap,Machine->gfx[1],

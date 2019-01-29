@@ -406,7 +406,7 @@ public class wmsyunit
 	
 				b1 = 0;			 									/* CLR    B1 */
 				b2 = (INT32)(READ_INT16(0x100F640));				/* MOVE   @100F640h,B2,0 */
-				if (!b2)											/* JREQ   FFC029F0h */
+				if (b2 == 0)											/* JREQ   FFC029F0h */
 				{
 					cpu_spinuntil_int();
 					return value1;

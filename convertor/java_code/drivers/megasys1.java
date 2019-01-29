@@ -3319,7 +3319,7 @@ public class megasys1
 					| ((rom[i] & 0x10) << 2);
 	
 		buffer = malloc(size);
-		if (!buffer) return;
+		if (buffer == 0) return;
 	
 		memcpy(buffer,rom,size);
 	
@@ -3349,7 +3349,7 @@ public class megasys1
 			rom[i] =   BITSWAP8(rom[i],0x4,0x3,0x5,0x7,0x6,0x2,0x1,0x0);
 	
 		buffer = malloc(size);
-		if (!buffer) return;
+		if (buffer == 0) return;
 	
 		memcpy(buffer,rom,size);
 	

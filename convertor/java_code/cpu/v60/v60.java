@@ -314,7 +314,7 @@ public class v60
 	void v60_init(void)
 	{
 		static int opt_init = 0;
-		if(!opt_init) {
+		if (opt_init == 0) {
 			InitTables();	// set up opcode tables
 	#ifdef MAME_DEBUG
 			v60_dasm_init();

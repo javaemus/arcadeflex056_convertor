@@ -269,7 +269,7 @@ public class taito_b
 	
 		pixel_bitmap = bitmap_alloc(1024,512);
 	
-		if (!pixel_bitmap)
+		if (pixel_bitmap == 0)
 		{
 			taitob_vh_stop();
 			return 1;
@@ -406,7 +406,7 @@ public class taito_b
 			data = taitob_spriteram[offs+5];
 			if (data)
 			{
-				if (!big_sprite)
+				if (big_sprite == 0)
 				{
 					x_num = (data>>8) & 0xff;
 					y_num = (data) & 0xff;

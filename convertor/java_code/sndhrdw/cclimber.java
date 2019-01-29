@@ -28,7 +28,7 @@ public class cclimber
 		if (memory_region(REGION_SOUND1))
 		{
 			samplebuf = malloc(2*memory_region_length(REGION_SOUND1));
-			if (!samplebuf)
+			if (samplebuf == 0)
 				return 1;
 		}
 	
@@ -50,7 +50,7 @@ public class cclimber
 		const UINT8 *rom = memory_region(REGION_SOUND1);
 	
 	
-		if (!rom) return;
+		if (rom == 0) return;
 	
 		/* decode the rom samples */
 		len = 0;
