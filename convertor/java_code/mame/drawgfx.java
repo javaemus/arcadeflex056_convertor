@@ -3621,32 +3621,32 @@ public class drawgfx
 	public static plot_pixel_procPtr pp_32_d_fxy_s  = new plot_pixel_procPtr() { public void handler(mame_bitmap b,int x,int y,/*UINT32*/int p)   { x = b->height-1-x; y = b->width-1-y; ((UINT32 *)b->line[x])[y] = p; osd_mark_dirty(y,x,y,x); } };
 	
 	
-	static int rp_8(struct mame_bitmap *b,int x,int y)  { return ((UINT8 *)b->line[y])[x]; }
-	static int rp_8_fx(struct mame_bitmap *b,int x,int y)  { return ((UINT8 *)b->line[y])[b->width-1-x]; }
-	static int rp_8_fy(struct mame_bitmap *b,int x,int y)  { return ((UINT8 *)b->line[b->height-1-y])[x]; }
-	static int rp_8_fxy(struct mame_bitmap *b,int x,int y)  { return ((UINT8 *)b->line[b->height-1-y])[b->width-1-x]; }
-	static int rp_8_s(struct mame_bitmap *b,int x,int y)  { return ((UINT8 *)b->line[x])[y]; }
-	static int rp_8_fx_s(struct mame_bitmap *b,int x,int y)  { return ((UINT8 *)b->line[x])[b->width-1-y]; }
-	static int rp_8_fy_s(struct mame_bitmap *b,int x,int y)  { return ((UINT8 *)b->line[b->height-1-x])[y]; }
-	static int rp_8_fxy_s(struct mame_bitmap *b,int x,int y)  { return ((UINT8 *)b->line[b->height-1-x])[b->width-1-y]; }
+	public static read_pixel_procPtr rp_8  = new read_pixel_procPtr() { public int handler(mame_bitmap bitmap, int x, int y)   { return ((UINT8 *)b->line[y])[x]; } };
+	public static read_pixel_procPtr rp_8_fx  = new read_pixel_procPtr() { public int handler(mame_bitmap bitmap, int x, int y)   { return ((UINT8 *)b->line[y])[b->width-1-x]; } };
+	public static read_pixel_procPtr rp_8_fy  = new read_pixel_procPtr() { public int handler(mame_bitmap bitmap, int x, int y)   { return ((UINT8 *)b->line[b->height-1-y])[x]; } };
+	public static read_pixel_procPtr rp_8_fxy  = new read_pixel_procPtr() { public int handler(mame_bitmap bitmap, int x, int y)   { return ((UINT8 *)b->line[b->height-1-y])[b->width-1-x]; } };
+	public static read_pixel_procPtr rp_8_s  = new read_pixel_procPtr() { public int handler(mame_bitmap bitmap, int x, int y)   { return ((UINT8 *)b->line[x])[y]; } };
+	public static read_pixel_procPtr rp_8_fx_s  = new read_pixel_procPtr() { public int handler(mame_bitmap bitmap, int x, int y)   { return ((UINT8 *)b->line[x])[b->width-1-y]; } };
+	public static read_pixel_procPtr rp_8_fy_s  = new read_pixel_procPtr() { public int handler(mame_bitmap bitmap, int x, int y)   { return ((UINT8 *)b->line[b->height-1-x])[y]; } };
+	public static read_pixel_procPtr rp_8_fxy_s  = new read_pixel_procPtr() { public int handler(mame_bitmap bitmap, int x, int y)   { return ((UINT8 *)b->line[b->height-1-x])[b->width-1-y]; } };
 	
-	static int rp_16(struct mame_bitmap *b,int x,int y)  { return ((UINT16 *)b->line[y])[x]; }
-	static int rp_16_fx(struct mame_bitmap *b,int x,int y)  { return ((UINT16 *)b->line[y])[b->width-1-x]; }
-	static int rp_16_fy(struct mame_bitmap *b,int x,int y)  { return ((UINT16 *)b->line[b->height-1-y])[x]; }
-	static int rp_16_fxy(struct mame_bitmap *b,int x,int y)  { return ((UINT16 *)b->line[b->height-1-y])[b->width-1-x]; }
-	static int rp_16_s(struct mame_bitmap *b,int x,int y)  { return ((UINT16 *)b->line[x])[y]; }
-	static int rp_16_fx_s(struct mame_bitmap *b,int x,int y)  { return ((UINT16 *)b->line[x])[b->width-1-y]; }
-	static int rp_16_fy_s(struct mame_bitmap *b,int x,int y)  { return ((UINT16 *)b->line[b->height-1-x])[y]; }
-	static int rp_16_fxy_s(struct mame_bitmap *b,int x,int y)  { return ((UINT16 *)b->line[b->height-1-x])[b->width-1-y]; }
+	public static read_pixel_procPtr rp_16  = new read_pixel_procPtr() { public int handler(mame_bitmap bitmap, int x, int y)   { return ((UINT16 *)b->line[y])[x]; } };
+	public static read_pixel_procPtr rp_16_fx  = new read_pixel_procPtr() { public int handler(mame_bitmap bitmap, int x, int y)   { return ((UINT16 *)b->line[y])[b->width-1-x]; } };
+	public static read_pixel_procPtr rp_16_fy  = new read_pixel_procPtr() { public int handler(mame_bitmap bitmap, int x, int y)   { return ((UINT16 *)b->line[b->height-1-y])[x]; } };
+	public static read_pixel_procPtr rp_16_fxy  = new read_pixel_procPtr() { public int handler(mame_bitmap bitmap, int x, int y)   { return ((UINT16 *)b->line[b->height-1-y])[b->width-1-x]; } };
+	public static read_pixel_procPtr rp_16_s  = new read_pixel_procPtr() { public int handler(mame_bitmap bitmap, int x, int y)   { return ((UINT16 *)b->line[x])[y]; } };
+	public static read_pixel_procPtr rp_16_fx_s  = new read_pixel_procPtr() { public int handler(mame_bitmap bitmap, int x, int y)   { return ((UINT16 *)b->line[x])[b->width-1-y]; } };
+	public static read_pixel_procPtr rp_16_fy_s  = new read_pixel_procPtr() { public int handler(mame_bitmap bitmap, int x, int y)   { return ((UINT16 *)b->line[b->height-1-x])[y]; } };
+	public static read_pixel_procPtr rp_16_fxy_s  = new read_pixel_procPtr() { public int handler(mame_bitmap bitmap, int x, int y)   { return ((UINT16 *)b->line[b->height-1-x])[b->width-1-y]; } };
 	
-	static int rp_32(struct mame_bitmap *b,int x,int y)  { return ((UINT32 *)b->line[y])[x]; }
-	static int rp_32_fx(struct mame_bitmap *b,int x,int y)  { return ((UINT32 *)b->line[y])[b->width-1-x]; }
-	static int rp_32_fy(struct mame_bitmap *b,int x,int y)  { return ((UINT32 *)b->line[b->height-1-y])[x]; }
-	static int rp_32_fxy(struct mame_bitmap *b,int x,int y)  { return ((UINT32 *)b->line[b->height-1-y])[b->width-1-x]; }
-	static int rp_32_s(struct mame_bitmap *b,int x,int y)  { return ((UINT32 *)b->line[x])[y]; }
-	static int rp_32_fx_s(struct mame_bitmap *b,int x,int y)  { return ((UINT32 *)b->line[x])[b->width-1-y]; }
-	static int rp_32_fy_s(struct mame_bitmap *b,int x,int y)  { return ((UINT32 *)b->line[b->height-1-x])[y]; }
-	static int rp_32_fxy_s(struct mame_bitmap *b,int x,int y)  { return ((UINT32 *)b->line[b->height-1-x])[b->width-1-y]; }
+	public static read_pixel_procPtr rp_32  = new read_pixel_procPtr() { public int handler(mame_bitmap bitmap, int x, int y)   { return ((UINT32 *)b->line[y])[x]; } };
+	public static read_pixel_procPtr rp_32_fx  = new read_pixel_procPtr() { public int handler(mame_bitmap bitmap, int x, int y)   { return ((UINT32 *)b->line[y])[b->width-1-x]; } };
+	public static read_pixel_procPtr rp_32_fy  = new read_pixel_procPtr() { public int handler(mame_bitmap bitmap, int x, int y)   { return ((UINT32 *)b->line[b->height-1-y])[x]; } };
+	public static read_pixel_procPtr rp_32_fxy  = new read_pixel_procPtr() { public int handler(mame_bitmap bitmap, int x, int y)   { return ((UINT32 *)b->line[b->height-1-y])[b->width-1-x]; } };
+	public static read_pixel_procPtr rp_32_s  = new read_pixel_procPtr() { public int handler(mame_bitmap bitmap, int x, int y)   { return ((UINT32 *)b->line[x])[y]; } };
+	public static read_pixel_procPtr rp_32_fx_s  = new read_pixel_procPtr() { public int handler(mame_bitmap bitmap, int x, int y)   { return ((UINT32 *)b->line[x])[b->width-1-y]; } };
+	public static read_pixel_procPtr rp_32_fy_s  = new read_pixel_procPtr() { public int handler(mame_bitmap bitmap, int x, int y)   { return ((UINT32 *)b->line[b->height-1-x])[y]; } };
+	public static read_pixel_procPtr rp_32_fxy_s  = new read_pixel_procPtr() { public int handler(mame_bitmap bitmap, int x, int y)   { return ((UINT32 *)b->line[b->height-1-x])[b->width-1-y]; } };
 	
 	
 	public static plot_box_procPtr pb_8_nd  = new plot_box_procPtr() { public void handler(mame_bitmap b, int x, int y, int w, int h, /*UINT32*/int p)   { int t=x; while(h-->0){ int c=w; x=t; while(c-->0){ ((UINT8 *)b->line[y])[x] = p; x++; } y++; } } };

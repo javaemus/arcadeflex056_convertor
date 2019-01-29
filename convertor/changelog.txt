@@ -4,3 +4,4 @@
 -Partial support for enums conversion
 -Convert if(!variable) to if(variable==0)
 -plot_box , mark_dirty,plot_pixel support for drawgfx file
+-read_pixel support for drawgfx file

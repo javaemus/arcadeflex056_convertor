@@ -29,6 +29,7 @@ public class convertMame {
     static final int PLOT_BOX = 1;
     static final int PLOT_PIXEL = 2;
     static final int MARK_DIRTY = 3;
+    static final int READ_PIXEL=4;
 
     public static void Convert() {
         Convertor.inpos = 0;//position of pointer inside the buffers
@@ -222,6 +223,33 @@ public class convertMame {
                                 }
 
                             }
+                        } else if (sUtil.getToken("int")) {
+                            sUtil.skipSpace();
+                            Convertor.token[0] = sUtil.parseToken();
+                            sUtil.skipSpace();
+                            if (sUtil.parseChar() != '(') {
+                                Convertor.inpos = i;
+                                break;
+                            }
+                            sUtil.skipSpace();
+                            if (sUtil.getToken("struct mame_bitmap *b,int x,int y")) {
+                                sUtil.skipSpace();
+                                if (sUtil.parseChar() != ')') {
+                                    Convertor.inpos = i;
+                                    break;
+                                }
+                                if (sUtil.getChar() == ';') {
+                                    sUtil.skipLine();
+                                    continue;
+                                }
+                                if (Convertor.token[0].contains("rp_")) {
+                                    sUtil.putString((new StringBuilder()).append("public static read_pixel_procPtr ").append(Convertor.token[0]).append("  = new read_pixel_procPtr() { public int handler(mame_bitmap bitmap, int x, int y) ").toString());
+                                    type = READ_PIXEL;
+                                    i3 = -1;
+                                    continue;
+                                }
+
+                            }
                         }
                         Convertor.inpos = i;
                         break;
@@ -231,14 +259,13 @@ public class convertMame {
                     }
                 }
                 case '{': {
-                    if (type == PLOT_PIXEL || type == MARK_DIRTY
-                            || type == PLOT_BOX) {
+                    if (type == PLOT_PIXEL || type == MARK_DIRTY|| type == PLOT_BOX || type == READ_PIXEL) {
                         i3++;
                     }
                 }
                 break;
                 case '}': {
-                    if (type == PLOT_PIXEL || type == MARK_DIRTY || type == PLOT_BOX) {
+                    if (type == PLOT_PIXEL || type == MARK_DIRTY || type == PLOT_BOX || type == READ_PIXEL) {
                         i3--;
                         if (i3 == -1) {
                             sUtil.putString("} };");
