@@ -515,38 +515,38 @@ public class lasso
 	
 	***************************************************************************/
 	
-	static struct GfxLayout layout_8x8x2 =
-	{
+	static GfxLayout layout_8x8x2 = new GfxLayout
+	(
 		8,8,
 		RGN_FRAC(1,4),
 		2,
-		{ RGN_FRAC(0,4), RGN_FRAC(2,4) },
-		{ STEP8(0,1) },
-		{ STEP8(0,8) },
+		new int[] { RGN_FRAC(0,4), RGN_FRAC(2,4) },
+		new int[] { STEP8(0,1) },
+		new int[] { STEP8(0,8) },
 		8*8
-	};
+	);
 	
-	static struct GfxLayout layout_16x16x2 =
-	{
+	static GfxLayout layout_16x16x2 = new GfxLayout
+	(
 		16,16,
 		RGN_FRAC(1,4),
 		2,
-		{ RGN_FRAC(1,4), RGN_FRAC(3,4) },
-		{ STEP8(0,1), STEP8(8*8*1,1) },
-		{ STEP8(0,8), STEP8(8*8*2,8) },
+		new int[] { RGN_FRAC(1,4), RGN_FRAC(3,4) },
+		new int[] { STEP8(0,1), STEP8(8*8*1,1) },
+		new int[] { STEP8(0,8), STEP8(8*8*2,8) },
 		16*16
-	};
+	);
 	
-	static struct GfxLayout layout_16x16x4 =
-	{
+	static GfxLayout layout_16x16x4 = new GfxLayout
+	(
 		16,16,
 		RGN_FRAC(1,4),
 		4,
-		{	RGN_FRAC(1,4),RGN_FRAC(3,4),RGN_FRAC(0,4),RGN_FRAC(2,4)	},
-		{	STEP8(0,1), STEP8(8*8*1,1)	},
-		{	STEP8(0,8), STEP8(8*8*2,8)	},
+		new int[] {	RGN_FRAC(1,4),RGN_FRAC(3,4),RGN_FRAC(0,4),RGN_FRAC(2,4)	},
+		new int[] {	STEP8(0,1), STEP8(8*8*1,1)	},
+		new int[] {	STEP8(0,8), STEP8(8*8*2,8)	},
 		16*16
-	};
+	);
 	
 	static struct GfxDecodeInfo gfxdecodeinfo[] =
 	{

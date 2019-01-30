@@ -342,68 +342,68 @@ public class taito_f3
 	
 	/******************************************************************************/
 	
-	static struct GfxLayout charlayout =
-	{
+	static GfxLayout charlayout = new GfxLayout
+	(
 		8,8,
 		256,
 		4,
-		{ 0,1,2,3 },
+		new int[] { 0,1,2,3 },
 	#ifdef LSB_FIRST
-	    { 1*4, 0*4, 3*4, 2*4, 5*4, 4*4, 7*4, 6*4 },
+	    new int[] { 1*4, 0*4, 3*4, 2*4, 5*4, 4*4, 7*4, 6*4 },
 	#else
-	    { 7*4, 6*4, 5*4, 4*4, 3*4, 2*4, 1*4, 0*4 },
+	    new int[] { 7*4, 6*4, 5*4, 4*4, 3*4, 2*4, 1*4, 0*4 },
 	#endif
-		{ 0*32, 1*32, 2*32, 3*32, 4*32, 5*32, 6*32, 7*32 },
+		new int[] { 0*32, 1*32, 2*32, 3*32, 4*32, 5*32, 6*32, 7*32 },
 		32*8
-	};
+	);
 	
-	static struct GfxLayout pivotlayout =
-	{
+	static GfxLayout pivotlayout = new GfxLayout
+	(
 		8,8,
 		2048,
 		4,
-		{ 0,1,2,3 },
+		new int[] { 0,1,2,3 },
 	#ifdef LSB_FIRST
-	    { 1*4, 0*4, 3*4, 2*4, 5*4, 4*4, 7*4, 6*4 },
+	    new int[] { 1*4, 0*4, 3*4, 2*4, 5*4, 4*4, 7*4, 6*4 },
 	#else
-	    { 7*4, 6*4, 5*4, 4*4, 3*4, 2*4, 1*4, 0*4 },
+	    new int[] { 7*4, 6*4, 5*4, 4*4, 3*4, 2*4, 1*4, 0*4 },
 	#endif
-		{ 0*32, 1*32, 2*32, 3*32, 4*32, 5*32, 6*32, 7*32 },
+		new int[] { 0*32, 1*32, 2*32, 3*32, 4*32, 5*32, 6*32, 7*32 },
 		32*8
-	};
+	);
 	
-	static struct GfxLayout spriteram_layout =
-	{
+	static GfxLayout spriteram_layout = new GfxLayout
+	(
 		16,16,
 		RGN_FRAC(1,2),
 		6,
-		{ RGN_FRAC(1,2)+0, RGN_FRAC(1,2)+1, 0, 1, 2, 3 },
-		{
+		new int[] { RGN_FRAC(1,2)+0, RGN_FRAC(1,2)+1, 0, 1, 2, 3 },
+		new int[] {
 		4, 0, 12, 8,
 		16+4, 16+0, 16+12, 16+8,
 		32+4, 32+0, 32+12, 32+8,
 		48+4, 48+0, 48+12, 48+8 },
-		{ 0*64, 1*64, 2*64, 3*64, 4*64, 5*64, 6*64, 7*64,
+		new int[] { 0*64, 1*64, 2*64, 3*64, 4*64, 5*64, 6*64, 7*64,
 				8*64, 9*64, 10*64, 11*64, 12*64, 13*64, 14*64, 15*64 },
 		128*8	/* every sprite takes 128 consecutive bytes */
-	};
+	);
 	
-	static struct GfxLayout tile_layout =
-	{
+	static GfxLayout tile_layout = new GfxLayout
+	(
 		16,16,
 		RGN_FRAC(1,2),
 		6,
-		{ RGN_FRAC(1,2)+2, RGN_FRAC(1,2)+3, 0, 1, 2, 3 },
-		{
+		new int[] { RGN_FRAC(1,2)+2, RGN_FRAC(1,2)+3, 0, 1, 2, 3 },
+		new int[] {
 		4, 0, 16+4, 16+0,
 	    8+4, 8+0, 24+4, 24+0,
 		32+4, 32+0, 48+4, 48+0,
 	    40+4, 40+0, 56+4, 56+0,
 	   	},
-		{ 0*64, 1*64, 2*64, 3*64, 4*64, 5*64, 6*64, 7*64,
+		new int[] { 0*64, 1*64, 2*64, 3*64, 4*64, 5*64, 6*64, 7*64,
 				8*64, 9*64, 10*64, 11*64, 12*64, 13*64, 14*64, 15*64 },
 		128*8	/* every sprite takes 128 consecutive bytes */
-	};
+	);
 	
 	static struct GfxDecodeInfo gfxdecodeinfo[] =
 	{

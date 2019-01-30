@@ -366,28 +366,28 @@ public class namcos21
 		new Memory_WriteAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static struct GfxLayout tile_layout =
-	{
+	static GfxLayout tile_layout = new GfxLayout
+	(
 		16,16,
 		RGN_FRAC(1,4),	/* number of tiles */
 		8,		/* bits per pixel */
-		{		/* plane offsets */
+		new int[] {		/* plane offsets */
 			0,1,2,3,4,5,6,7
 		},
-		{ /* x offsets */
+		new int[] { /* x offsets */
 			0*8,RGN_FRAC(1,4)+0*8,RGN_FRAC(2,4)+0*8,RGN_FRAC(3,4)+0*8,
 			1*8,RGN_FRAC(1,4)+1*8,RGN_FRAC(2,4)+1*8,RGN_FRAC(3,4)+1*8,
 			2*8,RGN_FRAC(1,4)+2*8,RGN_FRAC(2,4)+2*8,RGN_FRAC(3,4)+2*8,
 			3*8,RGN_FRAC(1,4)+3*8,RGN_FRAC(2,4)+3*8,RGN_FRAC(3,4)+3*8
 		},
-		{ /* y offsets */
+		new int[] { /* y offsets */
 			0*32,1*32,2*32,3*32,
 			4*32,5*32,6*32,7*32,
 			8*32,9*32,10*32,11*32,
 			12*32,13*32,14*32,15*32
 		},
 		8*64 /* sprite offset */
-	};
+	);
 	
 	static struct GfxDecodeInfo gfxdecodeinfo[] =
 	{

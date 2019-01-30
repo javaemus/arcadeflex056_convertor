@@ -1831,101 +1831,101 @@ public class dec8
 	
 	/******************************************************************************/
 	
-	static struct GfxLayout charlayout_32k =
-	{
+	static GfxLayout charlayout_32k = new GfxLayout
+	(
 		8,8,
 		1024,
 		2,
-		{ 0x4000*8,0x0000*8 },
-		{ 0, 1, 2, 3, 4, 5, 6, 7 },
-		{ 0*8, 1*8, 2*8, 3*8, 4*8, 5*8, 6*8, 7*8 },
+		new int[] { 0x4000*8,0x0000*8 },
+		new int[] { 0, 1, 2, 3, 4, 5, 6, 7 },
+		new int[] { 0*8, 1*8, 2*8, 3*8, 4*8, 5*8, 6*8, 7*8 },
 		8*8	/* every sprite takes 8 consecutive bytes */
-	};
+	);
 	
-	static struct GfxLayout chars_3bpp =
-	{
+	static GfxLayout chars_3bpp = new GfxLayout
+	(
 		8,8,
 		1024,
 		3,
-		{ 0x6000*8,0x4000*8,0x2000*8 },
-		{ 0, 1, 2, 3, 4, 5, 6, 7 },
-		{ 0*8, 1*8, 2*8, 3*8, 4*8, 5*8, 6*8, 7*8 },
+		new int[] { 0x6000*8,0x4000*8,0x2000*8 },
+		new int[] { 0, 1, 2, 3, 4, 5, 6, 7 },
+		new int[] { 0*8, 1*8, 2*8, 3*8, 4*8, 5*8, 6*8, 7*8 },
 		8*8	/* every sprite takes 8 consecutive bytes */
-	};
+	);
 	
 	/* SRDarwin characters - very unusual layout for Data East */
-	static struct GfxLayout charlayout_16k =
-	{
+	static GfxLayout charlayout_16k = new GfxLayout
+	(
 		8,8,	/* 8*8 characters */
 		1024,
 		2,	/* 2 bits per pixel */
-		{ 0, 4 },	/* the two bitplanes for 4 pixels are packed into one byte */
-		{ 0x2000*8+0, 0x2000*8+1, 0x2000*8+2, 0x2000*8+3, 0, 1, 2, 3 },
-		{ 0*8, 1*8, 2*8, 3*8, 4*8, 5*8, 6*8, 7*8 },
+		new int[] { 0, 4 },	/* the two bitplanes for 4 pixels are packed into one byte */
+		new int[] { 0x2000*8+0, 0x2000*8+1, 0x2000*8+2, 0x2000*8+3, 0, 1, 2, 3 },
+		new int[] { 0*8, 1*8, 2*8, 3*8, 4*8, 5*8, 6*8, 7*8 },
 		8*8	/* every char takes 8 consecutive bytes */
-	};
+	);
 	
-	static struct GfxLayout oscar_charlayout =
-	{
+	static GfxLayout oscar_charlayout = new GfxLayout
+	(
 		8,8,
 		1024,
 		3,
-		{ 0x3000*8,0x2000*8,0x1000*8 },
-		{ 0, 1, 2, 3, 4, 5, 6, 7 },
-		{ 0*8, 1*8, 2*8, 3*8, 4*8, 5*8, 6*8, 7*8 },
+		new int[] { 0x3000*8,0x2000*8,0x1000*8 },
+		new int[] { 0, 1, 2, 3, 4, 5, 6, 7 },
+		new int[] { 0*8, 1*8, 2*8, 3*8, 4*8, 5*8, 6*8, 7*8 },
 		8*8	/* every sprite takes 8 consecutive bytes */
-	};
+	);
 	
 	/* Darwin sprites - only 3bpp */
-	static struct GfxLayout sr_sprites =
-	{
+	static GfxLayout sr_sprites = new GfxLayout
+	(
 		16,16,
 		2048,
 		3,
-	 	{ 0x10000*8,0x20000*8,0x00000*8 },
-		{ 16*8, 1+(16*8), 2+(16*8), 3+(16*8), 4+(16*8), 5+(16*8), 6+(16*8), 7+(16*8),
+	 	new int[] { 0x10000*8,0x20000*8,0x00000*8 },
+		new int[] { 16*8, 1+(16*8), 2+(16*8), 3+(16*8), 4+(16*8), 5+(16*8), 6+(16*8), 7+(16*8),
 			0,1,2,3,4,5,6,7 },
-		{ 0*8, 1*8, 2*8, 3*8, 4*8, 5*8, 6*8, 7*8 ,8*8,9*8,10*8,11*8,12*8,13*8,14*8,15*8 },
+		new int[] { 0*8, 1*8, 2*8, 3*8, 4*8, 5*8, 6*8, 7*8 ,8*8,9*8,10*8,11*8,12*8,13*8,14*8,15*8 },
 		16*16
-	};
+	);
 	
-	static struct GfxLayout srdarwin_tiles =
-	{
+	static GfxLayout srdarwin_tiles = new GfxLayout
+	(
 		16,16,
 		256,
 		4,
-		{ 0x8000*8, 0x8000*8+4, 0, 4 },
-		{ 0, 1, 2, 3, 1024*8*8+0, 1024*8*8+1, 1024*8*8+2, 1024*8*8+3,
+		new int[] { 0x8000*8, 0x8000*8+4, 0, 4 },
+		new int[] { 0, 1, 2, 3, 1024*8*8+0, 1024*8*8+1, 1024*8*8+2, 1024*8*8+3,
 				16*8+0, 16*8+1, 16*8+2, 16*8+3, 16*8+1024*8*8+0, 16*8+1024*8*8+1, 16*8+1024*8*8+2, 16*8+1024*8*8+3 },
-		{ 0*8, 1*8, 2*8, 3*8, 4*8, 5*8, 6*8, 7*8,
+		new int[] { 0*8, 1*8, 2*8, 3*8, 4*8, 5*8, 6*8, 7*8,
 				8*8, 9*8, 10*8, 11*8, 12*8, 13*8, 14*8, 15*8 },
 		32*8	/* every tile takes 32 consecutive bytes */
-	};
+	);
 	
-	static struct GfxLayout tiles =
-	{
+	static GfxLayout tiles = new GfxLayout
+	(
 		16,16,
 		4096,
 		4,
-	 	{ 0x60000*8,0x40000*8,0x20000*8,0x00000*8 },
-		{ 16*8, 1+(16*8), 2+(16*8), 3+(16*8), 4+(16*8), 5+(16*8), 6+(16*8), 7+(16*8),
+	 	new int[] { 0x60000*8,0x40000*8,0x20000*8,0x00000*8 },
+		new int[] { 16*8, 1+(16*8), 2+(16*8), 3+(16*8), 4+(16*8), 5+(16*8), 6+(16*8), 7+(16*8),
 			0,1,2,3,4,5,6,7 },
-		{ 0*8, 1*8, 2*8, 3*8, 4*8, 5*8, 6*8, 7*8 ,8*8,9*8,10*8,11*8,12*8,13*8,14*8,15*8},
+		new int[] { 0*8, 1*8, 2*8, 3*8, 4*8, 5*8, 6*8, 7*8 ,8*8,9*8,10*8,11*8,12*8,13*8,14*8,15*8},
 		16*16
-	};
+	);
 	
 	/* X flipped on Ghostbusters tiles */
-	static struct GfxLayout tiles_r =
-	{
+	static GfxLayout tiles_r = new GfxLayout
+	(
 		16,16,
 		2048,
 		4,
-	 	{ 0x20000*8,0x00000*8,0x30000*8,0x10000*8 },
-		{ 7,6,5,4,3,2,1,0,
+	 	new int[] { 0x20000*8,0x00000*8,0x30000*8,0x10000*8 },
+		new int[] { 7,6,5,4,3,2,1,0,
 			7+(16*8), 6+(16*8), 5+(16*8), 4+(16*8), 3+(16*8), 2+(16*8), 1+(16*8), 0+(16*8) },
-		{ 0*8, 1*8, 2*8, 3*8, 4*8, 5*8, 6*8, 7*8 ,8*8,9*8,10*8,11*8,12*8,13*8,14*8,15*8},
+		new int[] { 0*8, 1*8, 2*8, 3*8, 4*8, 5*8, 6*8, 7*8 ,8*8,9*8,10*8,11*8,12*8,13*8,14*8,15*8},
 		16*16
-	};
+	);
 	
 	static struct GfxDecodeInfo cobracom_gfxdecodeinfo[] =
 	{

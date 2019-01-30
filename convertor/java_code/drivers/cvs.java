@@ -418,29 +418,29 @@ public class cvs
 	
 	INPUT_PORTS_END
 	
-	static struct GfxLayout charlayout8colour =
-	{
+	static GfxLayout charlayout8colour = new GfxLayout
+	(
 		8,8,	/* 8*8 characters */
 		256,	/* 256 characters */
 		3,		/* 3 bits per pixel */
-		{ 0, 0x800*8, 0x1000*8 },	/* the bitplanes are separated */
-		{ 0, 1, 2, 3, 4, 5, 6, 7 },
-		{ 0*8, 1*8, 2*8, 3*8, 4*8, 5*8, 6*8, 7*8 },
+		new int[] { 0, 0x800*8, 0x1000*8 },	/* the bitplanes are separated */
+		new int[] { 0, 1, 2, 3, 4, 5, 6, 7 },
+		new int[] { 0*8, 1*8, 2*8, 3*8, 4*8, 5*8, 6*8, 7*8 },
 		8*8	/* every char takes 8 consecutive bytes */
-	};
+	);
 	
 	/* S2636 Mappings */
 	
-	static struct GfxLayout s2636_character10 =
-	{
+	static GfxLayout s2636_character10 = new GfxLayout
+	(
 		8,10,
 		5,
 		1,
-		{ 0 },
-		{ 0,1,2,3,4,5,6,7 },
-	   	{ 0*8, 1*8, 2*8, 3*8, 4*8, 5*8, 6*8, 7*8, 8*8, 9*8 },
+		new int[] { 0 },
+		new int[] { 0,1,2,3,4,5,6,7 },
+	   	new int[] { 0*8, 1*8, 2*8, 3*8, 4*8, 5*8, 6*8, 7*8, 8*8, 9*8 },
 		8*16
-	};
+	);
 	
 	static struct GfxDecodeInfo cvs_gfxdecodeinfo[] =
 	{

@@ -275,33 +275,33 @@ public class rastan
 	
 	
 	
-	static struct GfxLayout spritelayout1 =
-	{
+	static GfxLayout spritelayout1 = new GfxLayout
+	(
 		8,8,	/* 8*8 sprites */
 		0x4000,	/* 16384 sprites */
 		4,	/* 4 bits per pixel */
-		{ 0, 1, 2, 3 },
-		{ 0, 4, 0x40000*8+0 ,0x40000*8+4, 8+0, 8+4, 0x40000*8+8+0, 0x40000*8+8+4 },
-		{ 0*16, 1*16, 2*16, 3*16, 4*16, 5*16, 6*16, 7*16 },
+		new int[] { 0, 1, 2, 3 },
+		new int[] { 0, 4, 0x40000*8+0 ,0x40000*8+4, 8+0, 8+4, 0x40000*8+8+0, 0x40000*8+8+4 },
+		new int[] { 0*16, 1*16, 2*16, 3*16, 4*16, 5*16, 6*16, 7*16 },
 		16*8	/* every sprite takes 16 consecutive bytes */
-	};
+	);
 	
-	static struct GfxLayout spritelayout2 =
-	{
+	static GfxLayout spritelayout2 = new GfxLayout
+	(
 		16,16,	/* 16*16 sprites */
 		4096,	/* 4096 sprites */
 		4,	/* 4 bits per pixel */
-		{ 0, 1, 2, 3 },
-		{
+		new int[] { 0, 1, 2, 3 },
+		new int[] {
 		0, 4, 0x40000*8+0 ,0x40000*8+4,
 		8+0, 8+4, 0x40000*8+8+0, 0x40000*8+8+4,
 		16+0, 16+4, 0x40000*8+16+0, 0x40000*8+16+4,
 		24+0, 24+4, 0x40000*8+24+0, 0x40000*8+24+4
 		},
-		{ 0*32, 1*32, 2*32, 3*32, 4*32, 5*32, 6*32, 7*32,
+		new int[] { 0*32, 1*32, 2*32, 3*32, 4*32, 5*32, 6*32, 7*32,
 				8*32, 9*32, 10*32, 11*32, 12*32, 13*32, 14*32, 15*32 },
 		64*8	/* every sprite takes 64 consecutive bytes */
-	};
+	);
 	
 	static struct GfxDecodeInfo gfxdecodeinfo[] =
 	{

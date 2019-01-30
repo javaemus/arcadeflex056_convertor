@@ -315,52 +315,52 @@ public class decocass
 		PORT_DIPSETTING(	0x80, DEF_STR( On ) )
 	INPUT_PORTS_END
 	
-	static struct GfxLayout charlayout =
-	new IO_WritePort(
+	static GfxLayout charlayout = new GfxLayout
+	(
 		8,8,	/* 8*8 characters */
 		1024,	/* 1024 characters */
 		3,		/* 3 bits per pixel */
-		{ 2*1024*8*8, 1024*8*8, 0 },	/* the bitplanes are separated */
-		{ 0, 1, 2, 3, 4, 5, 6, 7 },
-		{ 0*8, 1*8, 2*8, 3*8, 4*8, 5*8, 6*8, 7*8 },
+		new int[] { 2*1024*8*8, 1024*8*8, 0 },	/* the bitplanes are separated */
+		new int[] { 0, 1, 2, 3, 4, 5, 6, 7 },
+		new int[] { 0*8, 1*8, 2*8, 3*8, 4*8, 5*8, 6*8, 7*8 },
 		8*8 	/* every char takes 8 consecutive bytes */
 	);
 	
-	static struct GfxLayout spritelayout =
-	new IO_WritePort(
+	static GfxLayout spritelayout = new GfxLayout
+	(
 		16,16,	/* 16*16 sprites */
 		256,	/* 256 sprites */
 		3,		/* 3 bits per pixel */
-		{ 2*256*16*16, 256*16*16, 0 },	/* the bitplanes are separated */
-		{ 16*8+0, 16*8+1, 16*8+2, 16*8+3, 16*8+4, 16*8+5, 16*8+6, 16*8+7,
+		new int[] { 2*256*16*16, 256*16*16, 0 },	/* the bitplanes are separated */
+		new int[] { 16*8+0, 16*8+1, 16*8+2, 16*8+3, 16*8+4, 16*8+5, 16*8+6, 16*8+7,
 		  0, 1, 2, 3, 4, 5, 6, 7 },
-		{ 0*8, 1*8, 2*8, 3*8, 4*8, 5*8, 6*8, 7*8,
+		new int[] { 0*8, 1*8, 2*8, 3*8, 4*8, 5*8, 6*8, 7*8,
 		  8*8, 9*8, 10*8, 11*8, 12*8, 13*8, 14*8, 15*8 },
 		32*8	/* every sprite takes 32 consecutive bytes */
 	);
 	
-	static struct GfxLayout tilelayout =
-	new IO_WritePort(
+	static GfxLayout tilelayout = new GfxLayout
+	(
 		16,16,	/* 16*16 characters */
 		16+1,	/* 16 tiles (+1 empty tile used in the half-width bg tilemaps) */
 		3,	/* 3 bits per pixel */
-		{ 2*16*16*16+4, 2*16*16*16+0, 4 },
-		{ 3*16*8+0, 3*16*8+1, 3*16*8+2, 3*16*8+3,
+		new int[] { 2*16*16*16+4, 2*16*16*16+0, 4 },
+		new int[] { 3*16*8+0, 3*16*8+1, 3*16*8+2, 3*16*8+3,
 		  2*16*8+0, 2*16*8+1, 2*16*8+2, 2*16*8+3,
 		  16*8+0, 16*8+1, 16*8+2, 16*8+3,
 		  0, 1, 2, 3 },
-		{ 0*8, 1*8, 2*8, 3*8, 4*8, 5*8, 6*8, 7*8,
+		new int[] { 0*8, 1*8, 2*8, 3*8, 4*8, 5*8, 6*8, 7*8,
 		  8*8, 9*8,10*8,11*8,12*8,13*8,14*8,15*8 },
 		2*16*16 /* every tile takes 64 consecutive bytes */
 	);
 	
-	static struct GfxLayout objlayout =
-	new IO_WritePort(
+	static GfxLayout objlayout = new GfxLayout
+	(
 		64,64,	/* 64x64 object */
 		2,		/* 2 objects */
 		1,		/* 1 bits per pixel */
-		{ 0 },
-		{
+		new int[] { 0 },
+		new int[] {
 			7*8+0,7*8+1,7*8+2,7*8+3,7*8+4,7*8+5,7*8+6,7*8+7,
 			6*8+0,6*8+1,6*8+2,6*8+3,6*8+4,6*8+5,6*8+6,6*8+7,
 			5*8+0,5*8+1,5*8+2,5*8+3,5*8+4,5*8+5,5*8+6,5*8+7,
@@ -370,7 +370,7 @@ public class decocass
 			1*8+0,1*8+1,1*8+2,1*8+3,1*8+4,1*8+5,1*8+6,1*8+7,
 			0*8+0,0*8+1,0*8+2,0*8+3,0*8+4,0*8+5,0*8+6,0*8+7
 		},
-		{
+		new int[] {
 			63*2*64,62*2*64,61*2*64,60*2*64,59*2*64,58*2*64,57*2*64,56*2*64,
 			55*2*64,54*2*64,53*2*64,52*2*64,51*2*64,50*2*64,49*2*64,48*2*64,
 			47*2*64,46*2*64,45*2*64,44*2*64,43*2*64,42*2*64,41*2*64,40*2*64,
@@ -383,29 +383,29 @@ public class decocass
 		8*8 /* object takes 8 consecutive bytes */
 	);
 	
-	static struct GfxLayout missilelayout =
-	new IO_WritePort(
+	static GfxLayout missilelayout = new GfxLayout
+	(
 		4,1,	/* 4x1 object ?? */
 		1,		/* 1 object */
 		1,		/* 1 bits per pixel */
-		{ 0 },
-		{ 0, 0, 0, 0, 0, 0, 0, 0 },
-		{ 0, 0, 0, 0, 0, 0, 0, 0 },
+		new int[] { 0 },
+		new int[] { 0, 0, 0, 0, 0, 0, 0, 0 },
+		new int[] { 0, 0, 0, 0, 0, 0, 0, 0 },
 		8	/* object takes a 1 bit from somewhere */
 	);
 	
 	static struct GfxDecodeInfo decocass_gfxdecodeinfo[] =
-	new IO_WritePort(
-		{ 0, 0x6000, charlayout,		 0, 4 },  /* char set #1 */
-		{ 0, 0x6000, spritelayout, 	 0, 4 },  /* sprites */
-		{ 0, 0xd000, tilelayout,		32, 2 },  /* background tiles */
-		{ 0, 0xd800, objlayout,		48, 4 },  /* object */
-		{ 0, 0xffff, missilelayout,	 0, 8 },
+	{
+		{ 0, 0x6000, &charlayout,		 0, 4 },  /* char set #1 */
+		{ 0, 0x6000, &spritelayout, 	 0, 4 },  /* sprites */
+		{ 0, 0xd000, &tilelayout,		32, 2 },  /* background tiles */
+		{ 0, 0xd800, &objlayout,		48, 4 },  /* object */
+		{ 0, 0xffff, &missilelayout,	 0, 8 },
 		{ -1 } /* end of array */
-	);
+	};
 	
 	static struct AY8910interface ay8910_interface =
-	new IO_WritePort(
+	{
 		2,		/* 2 chips */
 		1500000,		/* 1.5 MHz ? (hand tuned) */
 		{ 40, 40 },
@@ -413,10 +413,10 @@ public class decocass
 		{ 0 },
 		{ 0 },
 		{ 0 }
-	);
+	};
 	
 	static void decocass_init_palette(unsigned char *sys_palette, unsigned short *sys_colortable,const unsigned char *color_prom)
-	new IO_WritePort(
+	{
 		int i;
 		/* set up 32 colors 1:1 pens */
 		for (i = 0; i < 32; i++)
@@ -426,7 +426,7 @@ public class decocass
 		for (i = 0; i < 8; i++)
 		{
 			sys_colortable[32+i] = 3*8+i;
-			sys_colortable[40+i] = 3*8+((i << 1)  0x04) + ((i >> 1)  0x02) + (i  0x01);
+			sys_colortable[40+i] = 3*8+((i << 1) & 0x04) + ((i >> 1) & 0x02) + (i & 0x01);
 		}
 	
 		/* setup 4 colors for 1bpp object */
@@ -438,11 +438,11 @@ public class decocass
 		sys_colortable[48+2*2+1] = 26;	/* testtape green from 4th palette section? */
 		sys_colortable[48+3*2+0] = 0;
 		sys_colortable[48+3*2+1] = 23;	/* ???? */
-	)
+	}
 	
 	#define MACHINE_DRIVER_DECOCASS(GAMENAME)	\
 	static const struct MachineDriver machine_driver_##GAMENAME = \
-	new IO_WritePort( \
+	{ \
 		/* basic machine hardware */ \
 		{ \
 			{ \
@@ -486,10 +486,10 @@ public class decocass
 		{ \
 			{ \
 				SOUND_AY8910, \
-				ay8910_interface \
+				&ay8910_interface \
 			} \
 		}, \
-	)
+	}
 	
 	MACHINE_DRIVER_DECOCASS( decocass );	/* parent driver */
 	MACHINE_DRIVER_DECOCASS( ctsttape );
@@ -929,17 +929,17 @@ public class decocass
 	
 	
 	static void init_decocass(void)
-	new IO_WritePort(
+	{
 		int A;
 		unsigned char *rom = memory_region(REGION_CPU1);
 		int diff = memory_region_length(REGION_CPU1) / 2;
 	
 		memory_set_opcode_base(0,rom+diff);
 	
-		/* Swap bits 5  6 for opcodes */
+		/* Swap bits 5 & 6 for opcodes */
 		for (A = 0;A < diff;A++)
 			rom[A+diff] = swap_bits_5_6(rom[A]);
-	)
+	}
 	
 	GAMEX( 1981, decocass, 0,		 decocass, decocass, decocass, ROT270, "DECO", "Cassette System", NOT_A_DRIVER )
 	GAME ( 1981, ctsttape, decocass, ctsttape, decocass, decocass, ROT270, "DECO", "Cassette: Test Tape" )

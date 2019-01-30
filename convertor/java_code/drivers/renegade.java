@@ -505,96 +505,96 @@ public class renegade
 	
 	
 	
-	static struct GfxLayout charlayout =
-	{
+	static GfxLayout charlayout = new GfxLayout
+	(
 		8,8, /* 8x8 characters */
 		1024, /* 1024 characters */
 		3, /* bits per pixel */
-		{ 2, 4, 6 },	/* plane offsets; bit 0 is always clear */
-		{ 1, 0, 65, 64, 129, 128, 193, 192 }, /* x offsets */
-		{ 0*8, 1*8, 2*8, 3*8, 4*8, 5*8, 6*8, 7*8 }, /* y offsets */
+		new int[] { 2, 4, 6 },	/* plane offsets; bit 0 is always clear */
+		new int[] { 1, 0, 65, 64, 129, 128, 193, 192 }, /* x offsets */
+		new int[] { 0*8, 1*8, 2*8, 3*8, 4*8, 5*8, 6*8, 7*8 }, /* y offsets */
 		32*8 /* offset to next character */
-	};
+	);
 	
-	static struct GfxLayout tileslayout1 =
-	{
+	static GfxLayout tileslayout1 = new GfxLayout
+	(
 		16,16, /* tile size */
 		256, /* number of tiles */
 		3, /* bits per pixel */
 	
 		/* plane offsets */
-		{ 4, 0x8000*8+0, 0x8000*8+4 },
+		new int[] { 4, 0x8000*8+0, 0x8000*8+4 },
 	
 		/* x offsets */
-		{ 3, 2, 1, 0, 16*8+3, 16*8+2, 16*8+1, 16*8+0,
+		new int[] { 3, 2, 1, 0, 16*8+3, 16*8+2, 16*8+1, 16*8+0,
 			32*8+3,32*8+2 ,32*8+1 ,32*8+0 ,48*8+3 ,48*8+2 ,48*8+1 ,48*8+0 },
 	
 		/* y offsets */
-		{ 0*8, 1*8, 2*8, 3*8, 4*8, 5*8, 6*8, 7*8,
+		new int[] { 0*8, 1*8, 2*8, 3*8, 4*8, 5*8, 6*8, 7*8,
 			8*8, 9*8, 10*8, 11*8, 12*8, 13*8, 14*8, 15*8 },
 	
 		64*8 /* offset to next tile */
-	};
+	);
 	
-	static struct GfxLayout tileslayout2 =
-	{
+	static GfxLayout tileslayout2 = new GfxLayout
+	(
 		16,16, /* tile size */
 		256, /* number of tiles */
 		3, /* bits per pixel */
 	
 		/* plane offsets */
-		{ 0, 0xC000*8+0, 0xC000*8+4 },
+		new int[] { 0, 0xC000*8+0, 0xC000*8+4 },
 	
 		/* x offsets */
-		{ 3, 2, 1, 0, 16*8+3, 16*8+2, 16*8+1, 16*8+0,
+		new int[] { 3, 2, 1, 0, 16*8+3, 16*8+2, 16*8+1, 16*8+0,
 			32*8+3,32*8+2 ,32*8+1 ,32*8+0 ,48*8+3 ,48*8+2 ,48*8+1 ,48*8+0 },
 	
 		/* y offsets */
-		{ 0*8, 1*8, 2*8, 3*8, 4*8, 5*8, 6*8, 7*8,
+		new int[] { 0*8, 1*8, 2*8, 3*8, 4*8, 5*8, 6*8, 7*8,
 			8*8, 9*8, 10*8, 11*8, 12*8, 13*8, 14*8, 15*8 },
 	
 		64*8 /* offset to next tile */
-	};
+	);
 	
-	static struct GfxLayout tileslayout3 =
-	{
+	static GfxLayout tileslayout3 = new GfxLayout
+	(
 		16,16, /* tile size */
 		256, /* number of tiles */
 		3, /* bits per pixel */
 	
 		/* plane offsets */
-		{ 0x4000*8+4, 0x10000*8+0, 0x10000*8+4 },
+		new int[] { 0x4000*8+4, 0x10000*8+0, 0x10000*8+4 },
 	
 		/* x offsets */
-		{ 3, 2, 1, 0, 16*8+3, 16*8+2, 16*8+1, 16*8+0,
+		new int[] { 3, 2, 1, 0, 16*8+3, 16*8+2, 16*8+1, 16*8+0,
 			32*8+3,32*8+2 ,32*8+1 ,32*8+0 ,48*8+3 ,48*8+2 ,48*8+1 ,48*8+0 },
 	
 		/* y offsets */
-		{ 0*8, 1*8, 2*8, 3*8, 4*8, 5*8, 6*8, 7*8,
+		new int[] { 0*8, 1*8, 2*8, 3*8, 4*8, 5*8, 6*8, 7*8,
 			8*8, 9*8, 10*8, 11*8, 12*8, 13*8, 14*8, 15*8 },
 	
 		64*8 /* offset to next tile */
-	};
+	);
 	
-	static struct GfxLayout tileslayout4 =
-	{
+	static GfxLayout tileslayout4 = new GfxLayout
+	(
 		16,16, /* tile size */
 		256, /* number of tiles */
 		3, /* bits per pixel */
 	
 		/* plane offsets */
-		{ 0x4000*8+0, 0x14000*8+0, 0x14000*8+4 },
+		new int[] { 0x4000*8+0, 0x14000*8+0, 0x14000*8+4 },
 	
 		/* x offsets */
-		{ 3, 2, 1, 0, 16*8+3, 16*8+2, 16*8+1, 16*8+0,
+		new int[] { 3, 2, 1, 0, 16*8+3, 16*8+2, 16*8+1, 16*8+0,
 			32*8+3,32*8+2 ,32*8+1 ,32*8+0 ,48*8+3 ,48*8+2 ,48*8+1 ,48*8+0 },
 	
 		/* y offsets */
-		{ 0*8, 1*8, 2*8, 3*8, 4*8, 5*8, 6*8, 7*8,
+		new int[] { 0*8, 1*8, 2*8, 3*8, 4*8, 5*8, 6*8, 7*8,
 			8*8, 9*8, 10*8, 11*8, 12*8, 13*8, 14*8, 15*8 },
 	
 		64*8 /* offset to next tile */
-	};
+	);
 	
 	static struct GfxDecodeInfo gfxdecodeinfo[] =
 	{

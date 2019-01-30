@@ -131,27 +131,27 @@ public class kopunch
 	
 	
 	
-	static struct GfxLayout charlayout =
-	{
+	static GfxLayout charlayout = new GfxLayout
+	(
 		8,8,
 		256,
 		3,
-		{ 2*256*8*8, 1*256*8*8, 0*256*8*8 },
-		{ 7, 6, 5, 4, 3, 2, 1, 0 },
-		{ 0*8, 1*8, 2*8, 3*8, 4*8, 5*8, 6*8, 7*8 },
+		new int[] { 2*256*8*8, 1*256*8*8, 0*256*8*8 },
+		new int[] { 7, 6, 5, 4, 3, 2, 1, 0 },
+		new int[] { 0*8, 1*8, 2*8, 3*8, 4*8, 5*8, 6*8, 7*8 },
 		8*8
-	};
+	);
 	
-	static struct GfxLayout charlayout2 =
-	{
+	static GfxLayout charlayout2 = new GfxLayout
+	(
 		8,8,
 		1024,
 		3,
-		{ 2*1024*8*8, 1*1024*8*8, 0*1024*8*8 },
-		{ 7, 6, 5, 4, 3, 2, 1, 0 },
-		{ 0*8, 1*8, 2*8, 3*8, 4*8, 5*8, 6*8, 7*8 },
+		new int[] { 2*1024*8*8, 1*1024*8*8, 0*1024*8*8 },
+		new int[] { 7, 6, 5, 4, 3, 2, 1, 0 },
+		new int[] { 0*8, 1*8, 2*8, 3*8, 4*8, 5*8, 6*8, 7*8 },
 		8*8
-	};
+	);
 	
 	static struct GfxDecodeInfo gfxdecodeinfo[] =
 	{

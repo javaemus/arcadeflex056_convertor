@@ -345,16 +345,16 @@ public class arcadecl
 	 *
 	 *************************************/
 	
-	static struct GfxLayout molayout =
-	{
+	static GfxLayout molayout = new GfxLayout
+	(
 		8,8,
 		RGN_FRAC(1,1),
 		4,
-		{ 0, 1, 2, 3 },
-		{ 0, 4, 8, 12, 16, 20, 24, 28 },
-		{ 0*8, 4*8, 8*8, 12*8, 16*8, 20*8, 24*8, 28*8 },
+		new int[] { 0, 1, 2, 3 },
+		new int[] { 0, 4, 8, 12, 16, 20, 24, 28 },
+		new int[] { 0*8, 4*8, 8*8, 12*8, 16*8, 20*8, 24*8, 28*8 },
 		32*8
-	};
+	);
 	
 	
 	static struct GfxDecodeInfo gfxdecodeinfo[] =

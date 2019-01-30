@@ -292,27 +292,27 @@ public class blueprnt
 	
 	
 	
-	static struct GfxLayout charlayout =
-	{
+	static GfxLayout charlayout = new GfxLayout
+	(
 		8,8,	/* 8*8 characters */
 		512,	/* 512 characters */
 		2,	/* 2 bits per pixel */
-		{ 512*8*8, 0 },	/* the bitplanes are separated */
-		{ 0, 1, 2, 3, 4, 5, 6, 7 },
-		{ 0*8, 1*8, 2*8, 3*8, 4*8, 5*8, 6*8, 7*8 },
+		new int[] { 512*8*8, 0 },	/* the bitplanes are separated */
+		new int[] { 0, 1, 2, 3, 4, 5, 6, 7 },
+		new int[] { 0*8, 1*8, 2*8, 3*8, 4*8, 5*8, 6*8, 7*8 },
 		8*8	/* every char takes 8 consecutive bytes */
-	};
-	static struct GfxLayout spritelayout =
-	{
+	);
+	static GfxLayout spritelayout = new GfxLayout
+	(
 		8,16,	/* 8*16 sprites */
 		256,	/* 256 sprites */
 		3,	/* 3 bits per pixel */
-		{ 2*128*16*16, 128*16*16, 0 },	/* the bitplanes are separated */
-		{ 0, 1, 2, 3, 4, 5, 6, 7 },
-		{ 0*8, 1*8, 2*8, 3*8, 4*8, 5*8, 6*8, 7*8,
+		new int[] { 2*128*16*16, 128*16*16, 0 },	/* the bitplanes are separated */
+		new int[] { 0, 1, 2, 3, 4, 5, 6, 7 },
+		new int[] { 0*8, 1*8, 2*8, 3*8, 4*8, 5*8, 6*8, 7*8,
 				8*8, 9*8, 10*8, 11*8, 12*8, 13*8, 14*8, 15*8 },
 		16*8	/* every sprite takes 16 consecutive bytes */
-	};
+	);
 	
 	
 	static struct GfxDecodeInfo gfxdecodeinfo[] =

@@ -694,64 +694,64 @@ public class slapfght
 	INPUT_PORTS_END
 	
 	
-	static struct GfxLayout charlayout =
-	{
+	static GfxLayout charlayout = new GfxLayout
+	(
 		8,8,			/* 8*8 characters */
 		RGN_FRAC(1,2),	/* 1024 characters */
 		2,				/* 2 bits per pixel */
-		{ RGN_FRAC(0,2), RGN_FRAC(1,2) },
-		{ 0, 1, 2, 3, 4, 5, 6, 7 },
-		{ 0*8, 1*8, 2*8, 3*8, 4*8, 5*8, 6*8, 7*8 },
+		new int[] { RGN_FRAC(0,2), RGN_FRAC(1,2) },
+		new int[] { 0, 1, 2, 3, 4, 5, 6, 7 },
+		new int[] { 0*8, 1*8, 2*8, 3*8, 4*8, 5*8, 6*8, 7*8 },
 		8*8     /* every char takes 8 consecutive bytes */
-	};
+	);
 	
-	static struct GfxLayout tilelayout =
-	{
+	static GfxLayout tilelayout = new GfxLayout
+	(
 		8,8,			/* 8*8 tiles */
 		RGN_FRAC(1,4),	/* 2048/4096 tiles */
 		4,				/* 4 bits per pixel */
-		{ RGN_FRAC(0,4), RGN_FRAC(1,4), RGN_FRAC(2,4), RGN_FRAC(3,4) },
-		{ 0, 1, 2, 3, 4, 5, 6, 7 },
-		{ 0*8, 1*8, 2*8, 3*8, 4*8, 5*8, 6*8, 7*8 },
+		new int[] { RGN_FRAC(0,4), RGN_FRAC(1,4), RGN_FRAC(2,4), RGN_FRAC(3,4) },
+		new int[] { 0, 1, 2, 3, 4, 5, 6, 7 },
+		new int[] { 0*8, 1*8, 2*8, 3*8, 4*8, 5*8, 6*8, 7*8 },
 		8*8    /* every tile takes 8 consecutive bytes */
-	};
+	);
 	
-	static struct GfxLayout spritelayout =
-	{
+	static GfxLayout spritelayout = new GfxLayout
+	(
 		16,16,			/* 16*16 sprites */
 		RGN_FRAC(1,4),	/* 512/1024 sprites */
 		4,				/* 4 bits per pixel */
-		{ RGN_FRAC(0,4), RGN_FRAC(1,4), RGN_FRAC(2,4), RGN_FRAC(3,4) },
-		{ 0, 1, 2, 3, 4, 5, 6, 7, 8,
+		new int[] { RGN_FRAC(0,4), RGN_FRAC(1,4), RGN_FRAC(2,4), RGN_FRAC(3,4) },
+		new int[] { 0, 1, 2, 3, 4, 5, 6, 7, 8,
 				9, 10 ,11, 12, 13, 14, 15 },
-		{ 0*16, 1*16, 2*16, 3*16, 4*16, 5*16, 6*16, 7*16,
+		new int[] { 0*16, 1*16, 2*16, 3*16, 4*16, 5*16, 6*16, 7*16,
 				8*16, 9*16, 10*16, 11*16, 12*16, 13*16, 14*16, 15*16 },
 		32*8    /* every sprite takes 64 consecutive bytes */
-	};
+	);
 	
-	static struct GfxLayout perfrman_charlayout =
-	{
+	static GfxLayout perfrman_charlayout = new GfxLayout
+	(
 		8,8,			/* 8*8 characters */
 		RGN_FRAC(1,3),	/* 1024 characters */
 		3,				/* 3 bits per pixel */
-		{ RGN_FRAC(0,3), RGN_FRAC(1,3), RGN_FRAC(2,3) },
-		{ 0, 1, 2, 3, 4, 5, 6, 7 },
-		{ 0*8, 1*8, 2*8, 3*8, 4*8, 5*8, 6*8, 7*8 },
+		new int[] { RGN_FRAC(0,3), RGN_FRAC(1,3), RGN_FRAC(2,3) },
+		new int[] { 0, 1, 2, 3, 4, 5, 6, 7 },
+		new int[] { 0*8, 1*8, 2*8, 3*8, 4*8, 5*8, 6*8, 7*8 },
 		8*8     /* every char takes 8 consecutive bytes */
-	};
+	);
 	
-	static struct GfxLayout perfrman_spritelayout =
-	{
+	static GfxLayout perfrman_spritelayout = new GfxLayout
+	(
 		16,16,			/* 16*16 sprites */
 		RGN_FRAC(1,3),	/* 256 sprites */
 		3,				/* 3 bits per pixel */
-		{ RGN_FRAC(0,3), RGN_FRAC(1,3), RGN_FRAC(2,3) },
-		{ 0, 1, 2, 3, 4, 5, 6, 7, 8,
+		new int[] { RGN_FRAC(0,3), RGN_FRAC(1,3), RGN_FRAC(2,3) },
+		new int[] { 0, 1, 2, 3, 4, 5, 6, 7, 8,
 				9, 10 ,11, 12, 13, 14, 15 },
-		{ 0*16, 1*16, 2*16, 3*16, 4*16, 5*16, 6*16, 7*16,
+		new int[] { 0*16, 1*16, 2*16, 3*16, 4*16, 5*16, 6*16, 7*16,
 				8*16, 9*16, 10*16, 11*16, 12*16, 13*16, 14*16, 15*16 },
 		32*8
-	};
+	);
 	
 	
 	static struct GfxDecodeInfo perfrman_gfxdecodeinfo[] =

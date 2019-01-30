@@ -99,29 +99,29 @@ public class mcr
 	 *
 	 *************************************/
 	
-	struct GfxLayout mcr_bg_layout =
-	{
+	static GfxLayout mcr_bg_layout = new GfxLayout
+	(
 		16,16,
 		RGN_FRAC(1,2),
 		4,
-		{ RGN_FRAC(1,2)+0, RGN_FRAC(1,2)+1, 0, 1 },
-		{  0,  0,  2,  2,  4,  4,  6,  6,
+		new int[] { RGN_FRAC(1,2)+0, RGN_FRAC(1,2)+1, 0, 1 },
+		new int[] {  0,  0,  2,  2,  4,  4,  6,  6,
 		   8,  8, 10, 10, 12, 12, 14, 14 },
-		{ 0*8,  0*8,  2*8,  2*8,
+		new int[] { 0*8,  0*8,  2*8,  2*8,
 		  4*8,  4*8,  6*8,  6*8,
 		  8*8,  8*8, 10*8, 10*8,
 		 12*8, 12*8, 14*8, 14*8 },
 		16*8
-	};
+	);
 	
 	
-	struct GfxLayout mcr_sprite_layout =
-	{
+	static GfxLayout mcr_sprite_layout = new GfxLayout
+	(
 		32,32,
 		RGN_FRAC(1,4),
 		4,
-		{ 0, 1, 2, 3 },
-		{ 0, 4,
+		new int[] { 0, 1, 2, 3 },
+		new int[] { 0, 4,
 		  RGN_FRAC(1,4)+0, RGN_FRAC(1,4)+4,
 		  RGN_FRAC(2,4)+0, RGN_FRAC(2,4)+4,
 		  RGN_FRAC(3,4)+0, RGN_FRAC(3,4)+4,
@@ -137,7 +137,7 @@ public class mcr
 		  RGN_FRAC(1,4)+24, RGN_FRAC(1,4)+28,
 		  RGN_FRAC(2,4)+24, RGN_FRAC(2,4)+28,
 		  RGN_FRAC(3,4)+24, RGN_FRAC(3,4)+28 },
-		{ 32*0,  32*1,  32*2,  32*3,
+		new int[] { 32*0,  32*1,  32*2,  32*3,
 		  32*4,  32*5,  32*6,  32*7,
 		  32*8,  32*9,  32*10, 32*11,
 		  32*12, 32*13, 32*14, 32*15,
@@ -146,7 +146,7 @@ public class mcr
 		  32*24, 32*25, 32*26, 32*27,
 		  32*28, 32*29, 32*30, 32*31 },
 		32*32
-	};
+	);
 	
 	
 	

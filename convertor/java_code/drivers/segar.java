@@ -1098,38 +1098,38 @@ public class segar
 	
 	
 	
-	static struct GfxLayout charlayout =
-	{
+	static GfxLayout charlayout = new GfxLayout
+	(
 		8,8,    /* 8*8 characters */
 		256,    /* 256 characters? */
 		2,      /* 2 bits per pixel */
-		{ 0x1000*8, 0 },    /* separated by 0x1000 bytes */
-		{ 0, 1, 2, 3, 4, 5, 6, 7 },     /* pretty straightforward layout */
-		{ 0*8, 1*8, 2*8, 3*8, 4*8, 5*8, 6*8, 7*8 },
+		new int[] { 0x1000*8, 0 },    /* separated by 0x1000 bytes */
+		new int[] { 0, 1, 2, 3, 4, 5, 6, 7 },     /* pretty straightforward layout */
+		new int[] { 0*8, 1*8, 2*8, 3*8, 4*8, 5*8, 6*8, 7*8 },
 		8*8     /* every char takes 8 consecutive bytes */
-	};
+	);
 	
-	static struct GfxLayout backlayout =
-	{
+	static GfxLayout backlayout = new GfxLayout
+	(
 		8,8,    /* 8*8 characters */
 		256,  /* 256 characters per scene, 4 scenes */
 		2,      /* 2 bits per pixel */
-		{ 0x2000*8, 0 },    /* separated by 0x2000 bytes */
-		{ 0, 1, 2, 3, 4, 5, 6, 7 },     /* pretty straightforward layout */
-		{ 0*8, 1*8, 2*8, 3*8, 4*8, 5*8, 6*8, 7*8 },
+		new int[] { 0x2000*8, 0 },    /* separated by 0x2000 bytes */
+		new int[] { 0, 1, 2, 3, 4, 5, 6, 7 },     /* pretty straightforward layout */
+		new int[] { 0*8, 1*8, 2*8, 3*8, 4*8, 5*8, 6*8, 7*8 },
 		8*8     /* every char takes 8 consecutive bytes */
-	};
+	);
 	
-	static struct GfxLayout spaceod_layout =
-	{
+	static GfxLayout spaceod_layout = new GfxLayout
+	(
 		8,8,   /* 16*8 characters */
 		256,    /* 256 characters */
 		6,      /* 6 bits per pixel */
-		{ 0, 0x1000*8, 0x2000*8, 0x3000*8, 0x4000*8, 0x5000*8 },    /* separated by 0x1000 bytes (1 EPROM per bit) */
-		{ 0, 1, 2, 3, 4, 5, 6, 7 },     /* pretty straightforward layout */
-		{ 0*8, 1*8, 2*8, 3*8, 4*8, 5*8, 6*8, 7*8 },
+		new int[] { 0, 0x1000*8, 0x2000*8, 0x3000*8, 0x4000*8, 0x5000*8 },    /* separated by 0x1000 bytes (1 EPROM per bit) */
+		new int[] { 0, 1, 2, 3, 4, 5, 6, 7 },     /* pretty straightforward layout */
+		new int[] { 0*8, 1*8, 2*8, 3*8, 4*8, 5*8, 6*8, 7*8 },
 		8*8     /* every char takes 16 consecutive bytes */
-	};
+	);
 	
 	
 	static struct GfxDecodeInfo gfxdecodeinfo[] =

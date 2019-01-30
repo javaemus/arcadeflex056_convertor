@@ -408,28 +408,28 @@ public class tetrisp2
 	
 	
 	/* 8x8x8 tiles */
-	static struct GfxLayout layout_8x8x8 =
-	{
+	static GfxLayout layout_8x8x8 = new GfxLayout
+	(
 		8,8,
 		RGN_FRAC(1,1),
 		8,
-		{ STEP8(0,1) },
-		{ STEP8(0,8) },
-		{ STEP8(0,8*8) },
+		new int[] { STEP8(0,1) },
+		new int[] { STEP8(0,8) },
+		new int[] { STEP8(0,8*8) },
 		8*8*8
-	};
+	);
 	
 	/* 16x16x8 tiles */
-	static struct GfxLayout layout_16x16x8 =
-	{
+	static GfxLayout layout_16x16x8 = new GfxLayout
+	(
 		16,16,
 		RGN_FRAC(1,1),
 		8,
-		{ STEP8(0,1) },
-		{ STEP16(0,8) },
-		{ STEP16(0,16*8) },
+		new int[] { STEP8(0,1) },
+		new int[] { STEP16(0,8) },
+		new int[] { STEP16(0,16*8) },
 		16*16*8
-	};
+	);
 	
 	
 	static struct GfxDecodeInfo tetrisp2_gfxdecodeinfo[] =

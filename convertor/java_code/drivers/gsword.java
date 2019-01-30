@@ -537,46 +537,46 @@ public class gsword
 		PORT_DIPSETTING(    0x80, DEF_STR( On ) )
 	INPUT_PORTS_END
 	
-	static struct GfxLayout gsword_text =
-	{
+	static GfxLayout gsword_text = new GfxLayout
+	(
 		8,8,    /* 8x8 characters */
 		1024,	/* 1024 characters */
 		2,      /* 2 bits per pixel */
-		{ 0, 4 },	/* the two bitplanes for 4 pixels are packed into one byte */
-		{ 0, 1, 2, 3, 8*8+0, 8*8+1, 8*8+2, 8*8+3 },
-		{ 0*8, 1*8, 2*8, 3*8, 4*8, 5*8, 6*8, 7*8 },
+		new int[] { 0, 4 },	/* the two bitplanes for 4 pixels are packed into one byte */
+		new int[] { 0, 1, 2, 3, 8*8+0, 8*8+1, 8*8+2, 8*8+3 },
+		new int[] { 0*8, 1*8, 2*8, 3*8, 4*8, 5*8, 6*8, 7*8 },
 		16*8    /* every char takes 16 bytes */
-	};
+	);
 	
-	static struct GfxLayout gsword_sprites1 =
-	{
+	static GfxLayout gsword_sprites1 = new GfxLayout
+	(
 		16,16,   /* 16x16 sprites */
 		64*2,    /* 128 sprites */
 		2,       /* 2 bits per pixel */
-		{ 0, 4 },	/* the two bitplanes for 4 pixels are packed into one byte */
-		{ 0, 1, 2, 3, 8*8+0, 8*8+1, 8*8+2, 8*8+3,
+		new int[] { 0, 4 },	/* the two bitplanes for 4 pixels are packed into one byte */
+		new int[] { 0, 1, 2, 3, 8*8+0, 8*8+1, 8*8+2, 8*8+3,
 				16*8+0, 16*8+1, 16*8+2, 16*8+3, 24*8+0, 24*8+1, 24*8+2, 24*8+3},
-		{ 0*8, 1*8, 2*8, 3*8, 4*8, 5*8, 6*8, 7*8,
+		new int[] { 0*8, 1*8, 2*8, 3*8, 4*8, 5*8, 6*8, 7*8,
 				32*8, 33*8, 34*8, 35*8, 36*8, 37*8, 38*8, 39*8 },
 		64*8     /* every sprite takes 64 bytes */
-	};
+	);
 	
-	static struct GfxLayout gsword_sprites2 =
-	{
+	static GfxLayout gsword_sprites2 = new GfxLayout
+	(
 		32,32,    /* 32x32 sprites */
 		64,       /* 64 sprites */
 		2,       /* 2 bits per pixel */
-		{ 0, 4 }, /* the two bitplanes for 4 pixels are packed into one byte */
-		{ 0, 1, 2, 3, 8*8+0, 8*8+1, 8*8+2, 8*8+3,
+		new int[] { 0, 4 }, /* the two bitplanes for 4 pixels are packed into one byte */
+		new int[] { 0, 1, 2, 3, 8*8+0, 8*8+1, 8*8+2, 8*8+3,
 				16*8+0, 16*8+1, 16*8+2, 16*8+3, 24*8+0, 24*8+1, 24*8+2, 24*8+3,
 				64*8+0, 64*8+1, 64*8+2, 64*8+3, 72*8+0, 72*8+1, 72*8+2, 72*8+3,
 				80*8+0, 80*8+1, 80*8+2, 80*8+3, 88*8+0, 88*8+1, 88*8+2, 88*8+3},
-		{ 0*8, 1*8, 2*8, 3*8, 4*8, 5*8, 6*8, 7*8,
+		new int[] { 0*8, 1*8, 2*8, 3*8, 4*8, 5*8, 6*8, 7*8,
 				32*8, 33*8, 34*8, 35*8, 36*8, 37*8, 38*8, 39*8,
 				128*8, 129*8, 130*8, 131*8, 132*8, 133*8, 134*8, 135*8,
 				160*8, 161*8, 162*8, 163*8, 164*8, 165*8, 166*8, 167*8 },
 		64*8*4    /* every sprite takes (64*8=16x6)*4) bytes */
-	};
+	);
 	
 	static struct GfxDecodeInfo gfxdecodeinfo[] =
 	{

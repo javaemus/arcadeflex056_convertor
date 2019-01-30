@@ -109,16 +109,16 @@ public class hexa
 	
 	
 	
-	static struct GfxLayout charlayout =
-	{
+	static GfxLayout charlayout = new GfxLayout
+	(
 		8,8,    /* 8 by 8 */
 		4096,   /* 4096 characters */
 		3,		/* 3 bits per pixel */
-		{ 2*4096*8*8, 4096*8*8, 0 },	/* plane */
-		{ 0, 1, 2, 3, 4, 5, 6, 7 },		/* x bit */
-		{ 8*0, 8*1, 8*2, 8*3, 8*4, 8*5, 8*6, 8*7 }, 	/* y bit */
+		new int[] { 2*4096*8*8, 4096*8*8, 0 },	/* plane */
+		new int[] { 0, 1, 2, 3, 4, 5, 6, 7 },		/* x bit */
+		new int[] { 8*0, 8*1, 8*2, 8*3, 8*4, 8*5, 8*6, 8*7 }, 	/* y bit */
 		8*8
-	};
+	);
 	
 	
 	

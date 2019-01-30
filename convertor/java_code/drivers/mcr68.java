@@ -884,18 +884,18 @@ public class mcr68
 	 *
 	 *************************************/
 	
-	static struct GfxLayout zwackery_layout =
-	{
+	static GfxLayout zwackery_layout = new GfxLayout
+	(
 		16,16,
 		RGN_FRAC(1,2),
 		8,
-		{ 0, 0, 0, 0, 0, 0, 0, 0 },
-		{  3,  2,  1,  0, 11, 10,  9,  8,
+		new int[] { 0, 0, 0, 0, 0, 0, 0, 0 },
+		new int[] {  3,  2,  1,  0, 11, 10,  9,  8,
 		  19, 18, 17, 16, 27, 26, 25, 24 },
-		{ 4, RGN_FRAC(1,2)+4, 0, RGN_FRAC(1,2)+0, 36, RGN_FRAC(1,2)+36, 32, RGN_FRAC(1,2)+32,
+		new int[] { 4, RGN_FRAC(1,2)+4, 0, RGN_FRAC(1,2)+0, 36, RGN_FRAC(1,2)+36, 32, RGN_FRAC(1,2)+32,
 		  68, RGN_FRAC(1,2)+68, 64, RGN_FRAC(1,2)+64, 100, RGN_FRAC(1,2)+100, 96, RGN_FRAC(1,2)+96 },
 		128
-	};
+	);
 	
 	static struct GfxDecodeInfo gfxdecodeinfo[] =
 	{

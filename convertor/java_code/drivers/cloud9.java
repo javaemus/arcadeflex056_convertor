@@ -190,28 +190,28 @@ public class cloud9
 		PORT_DIPSETTING (	0x00, "None" )
 	INPUT_PORTS_END
 	
-	static struct GfxLayout charlayout =
-	{
+	static GfxLayout charlayout = new GfxLayout
+	(
 		8,8,	/* 8*8 characters */
 		128,	/* 128 characters */
 		4,	/* 4 bits per pixel */
-		{ 0x3000*8, 0x2000*8, 0x1000*8, 0 },	/* the four bitplanes are separated */
-		{ 0, 1, 2, 3, 4, 5, 6, 7 },
-		{ 0*8, 1*8, 2*8, 3*8, 4*8, 5*8, 6*8, 7*8 },
+		new int[] { 0x3000*8, 0x2000*8, 0x1000*8, 0 },	/* the four bitplanes are separated */
+		new int[] { 0, 1, 2, 3, 4, 5, 6, 7 },
+		new int[] { 0*8, 1*8, 2*8, 3*8, 4*8, 5*8, 6*8, 7*8 },
 		16*8	/* every char takes 8 consecutive bytes, then skip 8 */
-	};
+	);
 	
-	static struct GfxLayout spritelayout =
-	{
+	static GfxLayout spritelayout = new GfxLayout
+	(
 		16,16,	/* 16*16 sprites */
 		64, /* 64 sprites */
 		4,	/* 4 bits per pixel */
-		{ 0x3000*8, 0x2000*8, 0x1000*8, 0x0000*8 }, /* the four bitplanes are separated */
-		{ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15 },
-		{ 0*8, 2*8, 4*8, 6*8, 8*8, 10*8, 12*8, 14*8,
+		new int[] { 0x3000*8, 0x2000*8, 0x1000*8, 0x0000*8 }, /* the four bitplanes are separated */
+		new int[] { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15 },
+		new int[] { 0*8, 2*8, 4*8, 6*8, 8*8, 10*8, 12*8, 14*8,
 				16*8, 18*8, 20*8, 22*8, 24*8, 26*8, 28*8, 30*8 },
 		32*8	/* every sprite takes 32 consecutive bytes */
-	};
+	);
 	
 	
 	static struct GfxDecodeInfo gfxdecodeinfo[] =

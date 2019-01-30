@@ -574,27 +574,27 @@ public class megasys1
 	
 	
 	
-	static struct GfxLayout tilelayout =
-	{
+	static GfxLayout tilelayout = new GfxLayout
+	(
 		8,8,
 		RGN_FRAC(1,1),
 		4,
-		{ STEP4(0,1)   },
-		{ STEP8(0,4)   },
-		{ STEP8(0,4*8) },
+		new int[] { STEP4(0,1)   },
+		new int[] { STEP8(0,4)   },
+		new int[] { STEP8(0,4*8) },
 		8*8*4
-	};
+	);
 	
-	static struct GfxLayout spritelayout =
-	{
+	static GfxLayout spritelayout = new GfxLayout
+	(
 		16,16,
 		RGN_FRAC(1,1),
 		4,
-		{ STEP4(0,1)   },
-		{ STEP8(8*8*4*0,4), STEP8(8*8*4*2,4) },
-		{ STEP16(0,4*8) },
+		new int[] { STEP4(0,1)   },
+		new int[] { STEP8(8*8*4*0,4), STEP8(8*8*4*2,4) },
+		new int[] { STEP16(0,4*8) },
 		16*16*4
-	};
+	);
 	
 	static struct GfxDecodeInfo gfxdecodeinfo_Z[] =
 	{

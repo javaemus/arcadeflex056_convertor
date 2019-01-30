@@ -62,16 +62,16 @@ public class atarisy1
 	static UINT8 bank_gfx[3][8];
 	
 	/* basic form of a graphics bank */
-	static struct GfxLayout objlayout =
-	{
+	static GfxLayout objlayout = new GfxLayout
+	(
 		8,8,	/* 8*8 sprites */
 		4096,	/* 4096 of them */
 		6,		/* 6 bits per pixel */
-		{ 5*8*0x08000, 4*8*0x08000, 3*8*0x08000, 2*8*0x08000, 1*8*0x08000, 0*8*0x08000 },
-		{ 0, 1, 2, 3, 4, 5, 6, 7 },
-		{ 0*8, 1*8, 2*8, 3*8, 4*8, 5*8, 6*8, 7*8 },
+		new int[] { 5*8*0x08000, 4*8*0x08000, 3*8*0x08000, 2*8*0x08000, 1*8*0x08000, 0*8*0x08000 },
+		new int[] { 0, 1, 2, 3, 4, 5, 6, 7 },
+		new int[] { 0*8, 1*8, 2*8, 3*8, 4*8, 5*8, 6*8, 7*8 },
 		8*8		/* every sprite takes 8 consecutive bytes */
-	};
+	);
 	
 	
 	

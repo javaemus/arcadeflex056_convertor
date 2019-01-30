@@ -284,29 +284,29 @@ public class xain
 	
 	
 	
-	static struct GfxLayout charlayout =
-	{
+	static GfxLayout charlayout = new GfxLayout
+	(
 		8,8,	/* 8*8 chars */
 		1024,	/* 1024 characters */
 		4,	/* 4 bits per pixel */
-		{ 0, 2, 4, 6 },	/* plane offset */
-		{ 1, 0, 8*8+1, 8*8+0, 16*8+1, 16*8+0, 24*8+1, 24*8+0 },
-		{ 0*8, 1*8, 2*8, 3*8, 4*8, 5*8, 6*8, 7*8 },
+		new int[] { 0, 2, 4, 6 },	/* plane offset */
+		new int[] { 1, 0, 8*8+1, 8*8+0, 16*8+1, 16*8+0, 24*8+1, 24*8+0 },
+		new int[] { 0*8, 1*8, 2*8, 3*8, 4*8, 5*8, 6*8, 7*8 },
 		32*8	/* every char takes 32 consecutive bytes */
-	};
+	);
 	
-	static struct GfxLayout tilelayout =
-	{
+	static GfxLayout tilelayout = new GfxLayout
+	(
 		16,16,	/* 8*8 chars */
 		4*512,	/* 512 characters */
 		4,	/* 4 bits per pixel */
-		{ 0x8000*4*8+0, 0x8000*4*8+4, 0, 4 },	/* plane offset */
-		{ 3, 2, 1, 0, 16*8+3, 16*8+2, 16*8+1, 16*8+0,
+		new int[] { 0x8000*4*8+0, 0x8000*4*8+4, 0, 4 },	/* plane offset */
+		new int[] { 3, 2, 1, 0, 16*8+3, 16*8+2, 16*8+1, 16*8+0,
 		  32*8+3,32*8+2 ,32*8+1 ,32*8+0 ,48*8+3 ,48*8+2 ,48*8+1 ,48*8+0 },
-		{ 0*8, 1*8, 2*8, 3*8, 4*8, 5*8, 6*8, 7*8,
+		new int[] { 0*8, 1*8, 2*8, 3*8, 4*8, 5*8, 6*8, 7*8,
 		  8*8, 9*8, 10*8, 11*8, 12*8, 13*8, 14*8, 15*8 },
 		64*8	/* every char takes 64 consecutive bytes */
-	};
+	);
 	
 	static struct GfxDecodeInfo gfxdecodeinfo[] =
 	{

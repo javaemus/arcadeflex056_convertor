@@ -225,53 +225,53 @@ public class exprraid
 	
 	
 	
-	static struct GfxLayout charlayout =
-	{
+	static GfxLayout charlayout = new GfxLayout
+	(
 		8,8,	/* 8*8 characters */
 		1024,	/* 1024 characters */
 		2,	/* 2 bits per pixel */
-		{ 0, 4 },	/* the bitplanes are packed in the same byte */
-		{ (0x2000*8)+0, (0x2000*8)+1, (0x2000*8)+2, (0x2000*8)+3, 0, 1, 2, 3 },
-		{ 0*8, 1*8, 2*8, 3*8, 4*8, 5*8, 6*8, 7*8 },
+		new int[] { 0, 4 },	/* the bitplanes are packed in the same byte */
+		new int[] { (0x2000*8)+0, (0x2000*8)+1, (0x2000*8)+2, (0x2000*8)+3, 0, 1, 2, 3 },
+		new int[] { 0*8, 1*8, 2*8, 3*8, 4*8, 5*8, 6*8, 7*8 },
 		8*8	/* every char takes 8 consecutive bytes */
-	};
+	);
 	
-	static struct GfxLayout spritelayout =
-	{
+	static GfxLayout spritelayout = new GfxLayout
+	(
 		16,16,	/* 16*16 sprites */
 		2048,	/* 2048 sprites */
 		3,	/* 3 bits per pixel */
-		{ 2*2048*32*8, 2048*32*8, 0 },	/* the bitplanes are separated */
-		{ 128+0, 128+1, 128+2, 128+3, 128+4, 128+5, 128+6, 128+7, 0, 1, 2, 3, 4, 5, 6, 7 },
-		{ 0*8, 1*8, 2*8, 3*8, 4*8, 5*8, 6*8, 7*8, 8*8, 9*8, 10*8, 11*8, 12*8, 13*8, 14*8, 15*8 },
+		new int[] { 2*2048*32*8, 2048*32*8, 0 },	/* the bitplanes are separated */
+		new int[] { 128+0, 128+1, 128+2, 128+3, 128+4, 128+5, 128+6, 128+7, 0, 1, 2, 3, 4, 5, 6, 7 },
+		new int[] { 0*8, 1*8, 2*8, 3*8, 4*8, 5*8, 6*8, 7*8, 8*8, 9*8, 10*8, 11*8, 12*8, 13*8, 14*8, 15*8 },
 		32*8	/* every char takes 32 consecutive bytes */
-	};
+	);
 	
-	static struct GfxLayout tile1 =
-	{
+	static GfxLayout tile1 = new GfxLayout
+	(
 		16,16,	/* 16*16 tiles */
 		128,	/* 128 tiles */
 		3,	/* 3 bits per pixel */
-		{ 4, 0x10000*8+0, 0x10000*8+4 },
-		{ 0, 1, 2, 3, 1024*32*2,1024*32*2+1,1024*32*2+2,1024*32*2+3,
+		new int[] { 4, 0x10000*8+0, 0x10000*8+4 },
+		new int[] { 0, 1, 2, 3, 1024*32*2,1024*32*2+1,1024*32*2+2,1024*32*2+3,
 			128+0,128+1,128+2,128+3,128+1024*32*2,128+1024*32*2+1,128+1024*32*2+2,128+1024*32*2+3 }, /* BOGUS */
-		{ 0*8,1*8,2*8,3*8,4*8,5*8,6*8,7*8,
+		new int[] { 0*8,1*8,2*8,3*8,4*8,5*8,6*8,7*8,
 			64+0*8,64+1*8,64+2*8,64+3*8,64+4*8,64+5*8,64+6*8,64+7*8 },
 		32*8
-	};
+	);
 	
-	static struct GfxLayout tile2 =
-	{
+	static GfxLayout tile2 = new GfxLayout
+	(
 		16,16,	/* 16*16 tiles */
 		128,	/* 128 tiles */
 		3,	/* 3 bits per pixel */
-		{ 0, 0x11000*8+0, 0x11000*8+4  },
-		{ 0, 1, 2, 3, 1024*32*2,1024*32*2+1,1024*32*2+2,1024*32*2+3,
+		new int[] { 0, 0x11000*8+0, 0x11000*8+4  },
+		new int[] { 0, 1, 2, 3, 1024*32*2,1024*32*2+1,1024*32*2+2,1024*32*2+3,
 			128+0,128+1,128+2,128+3,128+1024*32*2,128+1024*32*2+1,128+1024*32*2+2,128+1024*32*2+3 }, /* BOGUS */
-		{ 0*8,1*8,2*8,3*8,4*8,5*8,6*8,7*8,
+		new int[] { 0*8,1*8,2*8,3*8,4*8,5*8,6*8,7*8,
 			64+0*8,64+1*8,64+2*8,64+3*8,64+4*8,64+5*8,64+6*8,64+7*8 },
 		32*8
-	};
+	);
 	
 	
 	static struct GfxDecodeInfo gfxdecodeinfo[] =

@@ -317,40 +317,40 @@ public class mpatrol
 	
 	
 	
-	static struct GfxLayout charlayout =
-	{
+	static GfxLayout charlayout = new GfxLayout
+	(
 		8,8,    /* 8*8 characters */
 		512,    /* 512 characters */
 		2,      /* 2 bits per pixel */
-		{ 0, 512*8*8 }, /* the two bitplanes are separated */
-		{ 0, 1, 2, 3, 4, 5, 6, 7 },
-		{ 0*8, 1*8, 2*8, 3*8, 4*8, 5*8, 6*8, 7*8 },
+		new int[] { 0, 512*8*8 }, /* the two bitplanes are separated */
+		new int[] { 0, 1, 2, 3, 4, 5, 6, 7 },
+		new int[] { 0*8, 1*8, 2*8, 3*8, 4*8, 5*8, 6*8, 7*8 },
 		8*8     /* every char takes 8 consecutive bytes */
-	};
-	static struct GfxLayout spritelayout =
-	{
+	);
+	static GfxLayout spritelayout = new GfxLayout
+	(
 		16,16,  /* 16*16 sprites */
 		128,    /* 128 sprites */
 		2,      /* 2 bits per pixel */
-		{ 0, 128*16*16 },       /* the two bitplanes are separated */
-		{ 0, 1, 2, 3, 4, 5, 6, 7,
+		new int[] { 0, 128*16*16 },       /* the two bitplanes are separated */
+		new int[] { 0, 1, 2, 3, 4, 5, 6, 7,
 				16*8+0, 16*8+1, 16*8+2, 16*8+3, 16*8+4, 16*8+5, 16*8+6, 16*8+7 },
-		{ 0*8, 1*8, 2*8, 3*8, 4*8, 5*8, 6*8, 7*8,
+		new int[] { 0*8, 1*8, 2*8, 3*8, 4*8, 5*8, 6*8, 7*8,
 				8*8, 9*8, 10*8, 11*8, 12*8, 13*8, 14*8, 15*8 },
 		32*8    /* every sprite takes 32 consecutive bytes */
-	};
-	static struct GfxLayout bgcharlayout =
-	{
+	);
+	static GfxLayout bgcharlayout = new GfxLayout
+	(
 		32,32,  /* 32*32 characters (actually, it is just 1 big 256x64 image) */
 		8,      /* 8 characters */
 		2,      /* 2 bits per pixel */
-		{ 4, 0 },       /* the two bitplanes for 4 pixels are packed into one byte */
-		{ 0, 1, 2, 3, 8+0, 8+1, 8+2, 8+3, 2*8+0, 2*8+1, 2*8+2, 2*8+3, 3*8+0, 3*8+1, 3*8+2, 3*8+3,
+		new int[] { 4, 0 },       /* the two bitplanes for 4 pixels are packed into one byte */
+		new int[] { 0, 1, 2, 3, 8+0, 8+1, 8+2, 8+3, 2*8+0, 2*8+1, 2*8+2, 2*8+3, 3*8+0, 3*8+1, 3*8+2, 3*8+3,
 				4*8+0, 4*8+1, 4*8+2, 4*8+3, 5*8+0, 5*8+1, 5*8+2, 5*8+3, 6*8+0, 6*8+1, 6*8+2, 6*8+3, 7*8+0, 7*8+1, 7*8+2, 7*8+3 },
-		{ 0*512, 1*512, 2*512, 3*512, 4*512, 5*512, 6*512, 7*512, 8*512, 9*512, 10*512, 11*512, 12*512, 13*512, 14*512, 15*512,
+		new int[] { 0*512, 1*512, 2*512, 3*512, 4*512, 5*512, 6*512, 7*512, 8*512, 9*512, 10*512, 11*512, 12*512, 13*512, 14*512, 15*512,
 				16*512, 17*512, 18*512, 19*512, 20*512, 21*512, 22*512, 23*512, 24*512, 25*512, 26*512, 27*512, 28*512, 29*512, 30*512, 31*512 },
 		8*8
-	};
+	);
 	
 	
 	

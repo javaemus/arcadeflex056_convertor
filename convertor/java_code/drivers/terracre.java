@@ -216,42 +216,42 @@ public class terracre
 	
 	
 	
-	static struct GfxLayout charlayout =
-	{
+	static GfxLayout charlayout = new GfxLayout
+	(
 		8,8,	/* 8*8 characters */
 		256,	/* 256 characters */
 		4,	/* 4 bits per pixel */
-		{ 0, 1, 2, 3 },
-		{ 4, 0, 12, 8, 20, 16, 28, 24},
-		{ 0*32, 1*32, 2*32, 3*32, 4*32, 5*32, 6*32, 7*32 },
+		new int[] { 0, 1, 2, 3 },
+		new int[] { 4, 0, 12, 8, 20, 16, 28, 24},
+		new int[] { 0*32, 1*32, 2*32, 3*32, 4*32, 5*32, 6*32, 7*32 },
 		32*8	/* every char takes 32 consecutive bytes */
-	};
+	);
 	
-	static struct GfxLayout backlayout =
-	{
+	static GfxLayout backlayout = new GfxLayout
+	(
 		16,16,	/* 16*16 chars */
 		512,	/* 512 characters */
 		4,		/* 4 bits per pixel */
-		{ 0, 1, 2, 3 }, /* plane offset */
-		{ 4, 0, 12, 8, 20, 16, 28, 24,
+		new int[] { 0, 1, 2, 3 }, /* plane offset */
+		new int[] { 4, 0, 12, 8, 20, 16, 28, 24,
 			32+4, 32+0, 32+12, 32+8, 32+20, 32+16, 32+28, 32+24, },
-		{ 0*64, 1*64, 2*64, 3*64, 4*64, 5*64, 6*64, 7*64,
+		new int[] { 0*64, 1*64, 2*64, 3*64, 4*64, 5*64, 6*64, 7*64,
 			8*64, 9*64, 10*64, 11*64, 12*64, 13*64, 14*64, 15*64 },
 		128*8   /* every char takes 128 consecutive bytes  */
-	};
+	);
 	
-	static struct GfxLayout spritelayout =
-	{
+	static GfxLayout spritelayout = new GfxLayout
+	(
 		16,16,	/* 16*16 characters */
 		512,	/* 512 sprites */
 		4,	/* 4 bits per pixel */
-		{ 0, 1, 2, 3 },
-		{ 4, 0, 4+0x8000*8, 0+0x8000*8, 12, 8, 12+0x8000*8, 8+0x8000*8,
+		new int[] { 0, 1, 2, 3 },
+		new int[] { 4, 0, 4+0x8000*8, 0+0x8000*8, 12, 8, 12+0x8000*8, 8+0x8000*8,
 			20, 16, 20+0x8000*8, 16+0x8000*8, 28, 24, 28+0x8000*8, 24+0x8000*8 },
-		{ 0*32, 1*32, 2*32, 3*32, 4*32, 5*32, 6*32, 7*32,
+		new int[] { 0*32, 1*32, 2*32, 3*32, 4*32, 5*32, 6*32, 7*32,
 	          8*32, 9*32, 10*32, 11*32, 12*32, 13*32, 14*32, 15*32 },
 		64*8	/* every char takes 64 consecutive bytes  */
-	};
+	);
 	
 	
 	static struct GfxDecodeInfo gfxdecodeinfo[] =

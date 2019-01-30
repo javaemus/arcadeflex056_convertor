@@ -356,73 +356,73 @@ public class baraduke
 	
 	
 	
-	static struct GfxLayout text_layout =
-	{
+	static GfxLayout text_layout = new GfxLayout
+	(
 		8,8,		/* 8*8 characters */
 		512,		/* 512 characters */
 		2,			/* 2 bits per pixel */
-		{ 0, 4 },	/* the bitplanes are packed in the same byte */
-		{ 8*8, 8*8+1, 8*8+2, 8*8+3, 0, 1, 2, 3 },
-		{ 0*8, 1*8, 2*8, 3*8, 4*8, 5*8, 6*8, 7*8 },
+		new int[] { 0, 4 },	/* the bitplanes are packed in the same byte */
+		new int[] { 8*8, 8*8+1, 8*8+2, 8*8+3, 0, 1, 2, 3 },
+		new int[] { 0*8, 1*8, 2*8, 3*8, 4*8, 5*8, 6*8, 7*8 },
 		16*8		/* every char takes 16 consecutive bytes */
-	};
+	);
 	
-	static struct GfxLayout tile_layout1 =
-	{
+	static GfxLayout tile_layout1 = new GfxLayout
+	(
 		8,8,		/* 8*8 characters */
 		512,		/* 512 characters */
 		3,			/* 3 bits per pixel */
-		{ 0x8000*8, 0, 4 },
-		{ 0, 1, 2, 3, 8+0, 8+1, 8+2, 8+3 },
-		{ 0*8, 2*8, 4*8, 6*8, 8*8, 10*8, 12*8, 14*8 },
+		new int[] { 0x8000*8, 0, 4 },
+		new int[] { 0, 1, 2, 3, 8+0, 8+1, 8+2, 8+3 },
+		new int[] { 0*8, 2*8, 4*8, 6*8, 8*8, 10*8, 12*8, 14*8 },
 		16*8		/* every char takes 16 consecutive bytes */
-	};
+	);
 	
-	static struct GfxLayout tile_layout2 =
-	{
+	static GfxLayout tile_layout2 = new GfxLayout
+	(
 		8,8,		/* 8*8 characters */
 		512,		/* 512 characters */
 		3,			/* 3 bits per pixel */
-		{ 0x8000*8+4, 0x2000*8, 0x2000*8+4 },
-		{ 0, 1, 2, 3, 8+0, 8+1, 8+2, 8+3 },
-		{ 0*8, 2*8, 4*8, 6*8, 8*8, 10*8, 12*8, 14*8 },
+		new int[] { 0x8000*8+4, 0x2000*8, 0x2000*8+4 },
+		new int[] { 0, 1, 2, 3, 8+0, 8+1, 8+2, 8+3 },
+		new int[] { 0*8, 2*8, 4*8, 6*8, 8*8, 10*8, 12*8, 14*8 },
 		16*8		/* every char takes 16 consecutive bytes */
-	};
+	);
 	
-	static struct GfxLayout tile_layout3 =
-	{
+	static GfxLayout tile_layout3 = new GfxLayout
+	(
 		8,8,		/* 8*8 characters */
 		512,		/* 512 characters */
 		3,			/* 3 bits per pixel */
-		{ 0xa000*8, 0x4000*8, 0x4000*8+4 },
-		{ 0, 1, 2, 3, 8+0, 8+1, 8+2, 8+3 },
-		{ 0*8, 2*8, 4*8, 6*8, 8*8, 10*8, 12*8, 14*8 },
+		new int[] { 0xa000*8, 0x4000*8, 0x4000*8+4 },
+		new int[] { 0, 1, 2, 3, 8+0, 8+1, 8+2, 8+3 },
+		new int[] { 0*8, 2*8, 4*8, 6*8, 8*8, 10*8, 12*8, 14*8 },
 		16*8		/* every char takes 16 consecutive bytes */
-	};
+	);
 	
-	static struct GfxLayout tile_layout4 =
-	{
+	static GfxLayout tile_layout4 = new GfxLayout
+	(
 		8,8,		/* 8*8 characters */
 		512,		/* 512 characters */
 		3,			/* 3 bits per pixel */
-		{ 0xa000*8+4, 0x6000*8, 0x6000*8+4 },
-		{ 0, 1, 2, 3, 8+0, 8+1, 8+2, 8+3 },
-		{ 0*8, 2*8, 4*8, 6*8, 8*8, 10*8, 12*8, 14*8 },
+		new int[] { 0xa000*8+4, 0x6000*8, 0x6000*8+4 },
+		new int[] { 0, 1, 2, 3, 8+0, 8+1, 8+2, 8+3 },
+		new int[] { 0*8, 2*8, 4*8, 6*8, 8*8, 10*8, 12*8, 14*8 },
 		16*8		/* every char takes 16 consecutive bytes */
-	};
+	);
 	
-	static struct GfxLayout spritelayout =
-	{
+	static GfxLayout spritelayout = new GfxLayout
+	(
 		16,16,		/* 16*16 sprites */
 		512,		/* 512 sprites */
 		4,			/* 4 bits per pixel */
-		{ 0, 1, 2, 3 },
-		{ 0*4, 1*4, 2*4, 3*4, 4*4, 5*4, 6*4, 7*4,
+		new int[] { 0, 1, 2, 3 },
+		new int[] { 0*4, 1*4, 2*4, 3*4, 4*4, 5*4, 6*4, 7*4,
 			8*4, 9*4, 10*4, 11*4, 12*4, 13*4, 14*4, 15*4 },
-	    { 8*8*0, 8*8*1, 8*8*2, 8*8*3, 8*8*4, 8*8*5, 8*8*6, 8*8*7,
+	    new int[] { 8*8*0, 8*8*1, 8*8*2, 8*8*3, 8*8*4, 8*8*5, 8*8*6, 8*8*7,
 		8*8*8, 8*8*9, 8*8*10, 8*8*11, 8*8*12, 8*8*13, 8*8*14, 8*8*15 },
 		128*8		/* every sprite takes 128 consecutive bytes */
-	};
+	);
 	
 	static struct GfxDecodeInfo gfxdecodeinfo[] =
 	{

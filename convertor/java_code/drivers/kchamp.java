@@ -385,30 +385,30 @@ public class kchamp
 		PORT_DIPSETTING(    0x80, DEF_STR( Cocktail ) )
 	INPUT_PORTS_END
 	
-	static struct GfxLayout tilelayout =
-	{
+	static GfxLayout tilelayout = new GfxLayout
+	(
 		8,8,	/* tile size */
 		256*8,	/* number of tiles */
 		2,	/* bits per pixel */
-		{ 0x4000*8, 0 }, /* plane offsets */
-		{ 0,1,2,3,4,5,6,7 }, /* x offsets */
-		{ 0*8,1*8,2*8,3*8,4*8,5*8,6*8,7*8 }, /* y offsets */
+		new int[] { 0x4000*8, 0 }, /* plane offsets */
+		new int[] { 0,1,2,3,4,5,6,7 }, /* x offsets */
+		new int[] { 0*8,1*8,2*8,3*8,4*8,5*8,6*8,7*8 }, /* y offsets */
 		8*8	/* offset to next tile */
-	};
+	);
 	
-	static struct GfxLayout spritelayout =
-	{
+	static GfxLayout spritelayout = new GfxLayout
+	(
 		16,16,	/* tile size */
 		512,	/* number of tiles */
 		2,	/* bits per pixel */
-		{ 0xC000*8, 0 }, /* plane offsets */
-		{ 0,1,2,3,4,5,6,7,
+		new int[] { 0xC000*8, 0 }, /* plane offsets */
+		new int[] { 0,1,2,3,4,5,6,7,
 			0x2000*8+0,0x2000*8+1,0x2000*8+2,0x2000*8+3,
 			0x2000*8+4,0x2000*8+5,0x2000*8+6,0x2000*8+7 }, /* x offsets */
-		{ 0*8,1*8,2*8,3*8,4*8,5*8,6*8,7*8,
+		new int[] { 0*8,1*8,2*8,3*8,4*8,5*8,6*8,7*8,
 		8*8,9*8,10*8,11*8,12*8,13*8,14*8, 15*8 }, /* y offsets */
 		16*8	/* ofset to next tile */
-	};
+	);
 	
 	static struct GfxDecodeInfo gfxdecodeinfo[] =
 	{

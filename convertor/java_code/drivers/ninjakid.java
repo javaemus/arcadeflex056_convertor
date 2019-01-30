@@ -147,33 +147,33 @@ public class ninjakid
 	 GFX Decoding Information
 	*******************************************************************************/
 	
-	static struct GfxLayout tile_layout =
-	{
+	static GfxLayout tile_layout = new GfxLayout
+	(
 		8,8,	/* tile size */
 		0x400,	/* number of tiles */
 		4,		/* bits per pixel */
-		{ 0, 1, 2, 3 }, /* plane offsets */
-		{ 0*4, 1*4, 2*4, 3*4, 4*4, 5*4, 6*4, 7*4 }, /* x offsets */
-		{ 0*32, 1*32, 2*32, 3*32, 4*32, 5*32, 6*32, 7*32 }, /* y offsets */
+		new int[] { 0, 1, 2, 3 }, /* plane offsets */
+		new int[] { 0*4, 1*4, 2*4, 3*4, 4*4, 5*4, 6*4, 7*4 }, /* x offsets */
+		new int[] { 0*32, 1*32, 2*32, 3*32, 4*32, 5*32, 6*32, 7*32 }, /* y offsets */
 		256
-	};
+	);
 	
-	static struct GfxLayout sprite_layout =
-	{
+	static GfxLayout sprite_layout = new GfxLayout
+	(
 		16,16,	/* tile size */
 		0x100,	/* number of tiles */
 		4,		/* bits per pixel */
-		{ 0, 1, 2, 3 }, /* plane offsets */
-		{
+		new int[] { 0, 1, 2, 3 }, /* plane offsets */
+		new int[] {
 			0*4, 1*4, 2*4, 3*4, 4*4, 5*4, 6*4, 7*4,
 			256+0*4, 256+1*4, 256+2*4, 256+3*4, 256+4*4, 256+5*4, 256+6*4, 256+7*4,
 		}, /* x offsets */
-		{
+		new int[] {
 			0*32, 1*32, 2*32, 3*32, 4*32, 5*32, 6*32, 7*32,
 			512+0*32, 512+1*32, 512+2*32, 512+3*32, 512+4*32, 512+5*32, 512+6*32, 512+7*32
 		}, /* y offsets */
 		1024
-	};
+	);
 	
 	static struct GfxDecodeInfo ninjakid_gfxdecodeinfo[] =
 	{

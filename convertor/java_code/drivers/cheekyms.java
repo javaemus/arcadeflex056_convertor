@@ -111,28 +111,28 @@ public class cheekyms
 	
 	
 	
-	static struct GfxLayout charlayout =
-	{
+	static GfxLayout charlayout = new GfxLayout
+	(
 		8,8,	/* 16*16 sprites */
 		256,	/* 64 sprites */
 		2,	/* 2 bits per pixel */
-		{ 0, 256*8*8 },	/* the two bitplanes are separated */
-		{ 0, 1, 2, 3, 4, 5, 6, 7 },
-		{ 0*8, 1*8, 2*8, 3*8, 4*8, 5*8, 6*8, 7*8 },
+		new int[] { 0, 256*8*8 },	/* the two bitplanes are separated */
+		new int[] { 0, 1, 2, 3, 4, 5, 6, 7 },
+		new int[] { 0*8, 1*8, 2*8, 3*8, 4*8, 5*8, 6*8, 7*8 },
 		8*8	/* every sprite takes 8 consecutive bytes */
-	};
+	);
 	
-	static struct GfxLayout spritelayout =
-	{
+	static GfxLayout spritelayout = new GfxLayout
+	(
 		16,16,	/* 16*16 sprites */
 		64,	/* 64 sprites */
 		2,	/* 2 bits per pixel */
-		{ 64*32*8, 0 },	/* the two bitplanes are separated */
-		{ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15 },
-		{ 0*16, 1*16,  2*16,  3*16,  4*16,  5*16,  6*16,  7*16,
+		new int[] { 64*32*8, 0 },	/* the two bitplanes are separated */
+		new int[] { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15 },
+		new int[] { 0*16, 1*16,  2*16,  3*16,  4*16,  5*16,  6*16,  7*16,
 				8*16, 9*16, 10*16, 11*16, 12*16, 13*16, 14*16, 15*16 },
 		32*8	/* every sprite takes 32 consecutive bytes */
-	};
+	);
 	
 	
 	

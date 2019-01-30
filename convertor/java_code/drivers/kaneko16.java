@@ -2039,31 +2039,31 @@ public class kaneko16
 		16x16x4 made of 4 8x8x4 blocks arrenged like:		 	01
 	 	(nibbles are swapped for tiles, not for sprites)		23
 	*/
-	static struct GfxLayout layout_16x16x4 =
-	{
+	static GfxLayout layout_16x16x4 = new GfxLayout
+	(
 		16,16,
 		RGN_FRAC(1,1),
 		4,
-		{ STEP4(0,1) },
-		{ STEP8(8*8*4*0,4),   STEP8(8*8*4*1,4)   },
-		{ STEP8(8*8*4*0,8*4), STEP8(8*8*4*2,8*4) },
+		new int[] { STEP4(0,1) },
+		new int[] { STEP8(8*8*4*0,4),   STEP8(8*8*4*1,4)   },
+		new int[] { STEP8(8*8*4*0,8*4), STEP8(8*8*4*2,8*4) },
 		16*16*4
-	};
+	);
 	
 	/*
 		16x16x8 made of 4 8x8x8 blocks arrenged like:	01
 														23
 	*/
-	static struct GfxLayout layout_16x16x8 =
-	{
+	static GfxLayout layout_16x16x8 = new GfxLayout
+	(
 		16,16,
 		RGN_FRAC(1,1),
 		8,
-		{ STEP8(0,1) },
-		{ STEP8(0,8),   STEP8(8*8*8*1,8)   },
-		{ STEP8(0,8*8), STEP8(8*8*8*2,8*8) },
+		new int[] { STEP8(0,1) },
+		new int[] { STEP8(0,8),   STEP8(8*8*8*1,8)   },
+		new int[] { STEP8(0,8*8), STEP8(8*8*8*2,8*8) },
 		16*16*8
-	};
+	);
 	
 	static struct GfxDecodeInfo kaneko16_gfx_1x4bit_1x4bit[] =
 	{
@@ -2087,17 +2087,17 @@ public class kaneko16
 	};
 	
 	/* 16x16x4 tiles (made of four 8x8 tiles) */
-	static struct GfxLayout layout_16x16x4_2 =
-	{
+	static GfxLayout layout_16x16x4_2 = new GfxLayout
+	(
 		16,16,
 		RGN_FRAC(1,1),
 		4,
-		{ STEP4(0,1) },
-		{ STEP4(8*8*4*0 + 3*4, -4), STEP4(8*8*4*0 + 7*4, -4),
+		new int[] { STEP4(0,1) },
+		new int[] { STEP4(8*8*4*0 + 3*4, -4), STEP4(8*8*4*0 + 7*4, -4),
 		  STEP4(8*8*4*1 + 3*4, -4), STEP4(8*8*4*1 + 7*4, -4) },
-		{ STEP8(8*8*4*0, 8*4),     STEP8(8*8*4*2, 8*4) },
+		new int[] { STEP8(8*8*4*0, 8*4),     STEP8(8*8*4*2, 8*4) },
 		16*16*4
-	};
+	);
 	static struct GfxDecodeInfo sandscrp_gfxdecodeinfo[] =
 	{
 		{ REGION_GFX1, 0, &layout_16x16x4,   0x000, 0x10 }, // [0] Sprites

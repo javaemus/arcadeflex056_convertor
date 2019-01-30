@@ -1230,38 +1230,38 @@ public class atarigx2
 	 *
 	 *************************************/
 	
-	static struct GfxLayout pflayout =
-	{
+	static GfxLayout pflayout = new GfxLayout
+	(
 		8,8,
 		RGN_FRAC(1,3),
 		5,
-		{ 0, 0, 1, 2, 3 },
-		{ RGN_FRAC(1,3)+0, RGN_FRAC(1,3)+4, 0, 4, RGN_FRAC(1,3)+8, RGN_FRAC(1,3)+12, 8, 12 },
-		{ 0*8, 2*8, 4*8, 6*8, 8*8, 10*8, 12*8, 14*8 },
+		new int[] { 0, 0, 1, 2, 3 },
+		new int[] { RGN_FRAC(1,3)+0, RGN_FRAC(1,3)+4, 0, 4, RGN_FRAC(1,3)+8, RGN_FRAC(1,3)+12, 8, 12 },
+		new int[] { 0*8, 2*8, 4*8, 6*8, 8*8, 10*8, 12*8, 14*8 },
 		16*8
-	};
+	);
 	
-	static struct GfxLayout pftoplayout =
-	{
+	static GfxLayout pftoplayout = new GfxLayout
+	(
 		8,8,
 		RGN_FRAC(1,3),
 		6,
-		{ RGN_FRAC(2,3)+0, RGN_FRAC(2,3)+4, 0, 0, 0, 0 },
-		{ 3, 2, 1, 0, 11, 10, 9, 8 },
-		{ 0*8, 2*8, 4*8, 6*8, 8*8, 10*8, 12*8, 14*8 },
+		new int[] { RGN_FRAC(2,3)+0, RGN_FRAC(2,3)+4, 0, 0, 0, 0 },
+		new int[] { 3, 2, 1, 0, 11, 10, 9, 8 },
+		new int[] { 0*8, 2*8, 4*8, 6*8, 8*8, 10*8, 12*8, 14*8 },
 		16*8
-	};
+	);
 	
-	static struct GfxLayout anlayout =
-	{
+	static GfxLayout anlayout = new GfxLayout
+	(
 		8,8,
 		RGN_FRAC(1,1),
 		4,
-		{ 0, 1, 2, 3 },
-		{ 0, 4, 8, 12, 16, 20, 24, 28 },
-		{ 0*8, 4*8, 8*8, 12*8, 16*8, 20*8, 24*8, 28*8 },
+		new int[] { 0, 1, 2, 3 },
+		new int[] { 0, 4, 8, 12, 16, 20, 24, 28 },
+		new int[] { 0*8, 4*8, 8*8, 12*8, 16*8, 20*8, 24*8, 28*8 },
 		32*8
-	};
+	);
 	
 	static struct GfxDecodeInfo gfxdecodeinfo[] =
 	{

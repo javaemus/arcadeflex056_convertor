@@ -403,29 +403,29 @@ public class hyperspt
 	
 	
 	
-	static struct GfxLayout hyperspt_charlayout =
-	{
+	static GfxLayout hyperspt_charlayout = new GfxLayout
+	(
 		8,8,	/* 8*8 sprites */
 		1024,	/* 1024 characters */
 		4,	/* 4 bits per pixel */
-		{ 0x4000*8+4, 0x4000*8+0, 4, 0	},
-		{ 0, 1, 2, 3, 8*8+0, 8*8+1, 8*8+2, 8*8+3 },
-		{ 0*8, 1*8, 2*8, 3*8, 4*8, 5*8, 6*8, 7*8 },
+		new int[] { 0x4000*8+4, 0x4000*8+0, 4, 0	},
+		new int[] { 0, 1, 2, 3, 8*8+0, 8*8+1, 8*8+2, 8*8+3 },
+		new int[] { 0*8, 1*8, 2*8, 3*8, 4*8, 5*8, 6*8, 7*8 },
 		16*8	/* every sprite takes 64 consecutive bytes */
-	};
+	);
 	
-	static struct GfxLayout hyperspt_spritelayout =
-	{
+	static GfxLayout hyperspt_spritelayout = new GfxLayout
+	(
 		16,16,	/* 16*16 sprites */
 		512,	/* 512 sprites */
 		4,	/* 4 bits per pixel */
-		{ 0x8000*8+4, 0x8000*8+0, 4, 0 },
-		{ 0, 1, 2, 3, 8*8+0, 8*8+1, 8*8+2, 8*8+3,
+		new int[] { 0x8000*8+4, 0x8000*8+0, 4, 0 },
+		new int[] { 0, 1, 2, 3, 8*8+0, 8*8+1, 8*8+2, 8*8+3,
 				16*8+0, 16*8+1, 16*8+2, 16*8+3, 24*8+0, 24*8+1, 24*8+2, 24*8+3 },
-		{ 0*8, 1*8, 2*8, 3*8, 4*8, 5*8, 6*8, 7*8 ,
+		new int[] { 0*8, 1*8, 2*8, 3*8, 4*8, 5*8, 6*8, 7*8 ,
 			32*8, 33*8, 34*8, 35*8, 36*8, 37*8, 38*8, 39*8, },
 		64*8	/* every sprite takes 64 consecutive bytes */
-	};
+	);
 	
 	static struct GfxDecodeInfo hyperspt_gfxdecodeinfo[] =
 	{
@@ -435,29 +435,29 @@ public class hyperspt
 	};
 	
 	
-	static struct GfxLayout roadf_charlayout =
-	{
+	static GfxLayout roadf_charlayout = new GfxLayout
+	(
 		8,8,	/* 8*8 sprites */
 		1536,	/* 1536 characters */
 		4,	/* 4 bits per pixel */
-		{ 0x6000*8+4, 0x6000*8+0, 4, 0	},
-		{ 0, 1, 2, 3, 8*8+0, 8*8+1, 8*8+2, 8*8+3 },
-		{ 0*8, 1*8, 2*8, 3*8, 4*8, 5*8, 6*8, 7*8 },
+		new int[] { 0x6000*8+4, 0x6000*8+0, 4, 0	},
+		new int[] { 0, 1, 2, 3, 8*8+0, 8*8+1, 8*8+2, 8*8+3 },
+		new int[] { 0*8, 1*8, 2*8, 3*8, 4*8, 5*8, 6*8, 7*8 },
 		16*8	/* every sprite takes 64 consecutive bytes */
-	};
+	);
 	
-	static struct GfxLayout roadf_spritelayout =
-	{
+	static GfxLayout roadf_spritelayout = new GfxLayout
+	(
 		16,16,	/* 16*16 sprites */
 		256,	/* 256 sprites */
 		4,	/* 4 bits per pixel */
-		{ 0x4000*8+4, 0x4000*8+0, 4, 0 },
-		{ 0, 1, 2, 3, 8*8+0, 8*8+1, 8*8+2, 8*8+3,
+		new int[] { 0x4000*8+4, 0x4000*8+0, 4, 0 },
+		new int[] { 0, 1, 2, 3, 8*8+0, 8*8+1, 8*8+2, 8*8+3,
 				16*8+0, 16*8+1, 16*8+2, 16*8+3, 24*8+0, 24*8+1, 24*8+2, 24*8+3 },
-		{ 0*8, 1*8, 2*8, 3*8, 4*8, 5*8, 6*8, 7*8 ,
+		new int[] { 0*8, 1*8, 2*8, 3*8, 4*8, 5*8, 6*8, 7*8 ,
 			32*8, 33*8, 34*8, 35*8, 36*8, 37*8, 38*8, 39*8, },
 		64*8	/* every sprite takes 64 consecutive bytes */
-	};
+	);
 	
 	static struct GfxDecodeInfo roadf_gfxdecodeinfo[] =
 	{

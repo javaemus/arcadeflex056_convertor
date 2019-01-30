@@ -1226,29 +1226,29 @@ public class taitoic
 	
 	/* Is this endian-correct ??? */
 	
-	static struct GfxLayout TC0080VCO_charlayout =
-	{
+	static GfxLayout TC0080VCO_charlayout = new GfxLayout
+	(
 		8, 8,	/* 8x8 pixels */
 		256,	/* 256 chars */
 	
 	// can't be 4bpp as it becomes opaque in Ainferno...
 	//	4,		/* 4 bits per pixel */
 	//#ifdef LSB_FIRST
-	//	{ 0x10000*8 + 8, 0x10000*8, 8, 0 },
+	//	new int[] { 0x10000*8 + 8, 0x10000*8, 8, 0 },
 	//#else
-	//	{ 0x10000*8, 0x10000*8 + 8, 0, 8 },
+	//	new int[] { 0x10000*8, 0x10000*8 + 8, 0, 8 },
 	//#endif
 	
 		3,		/* 3 bits per pixel */
 	#ifdef LSB_FIRST
-		{ 0x10000*8, 8, 0 },
+		new int[] { 0x10000*8, 8, 0 },
 	#else
 		{ 0x10000*8 + 8, 0, 8 },
 	#endif
 		{ 0, 1, 2, 3, 4, 5, 6, 7 },
 		{ 16*0, 16*1, 16*2, 16*3, 16*4, 16*5, 16*6, 16*7 },
 		16*8
-	};
+	);
 	
 	
 	void TC0080VCO_set_layer_ptrs(void)
@@ -1991,20 +1991,20 @@ public class taitoic
 	};
 	
 	
-	static struct GfxLayout TC0100SCN_charlayout =
-	{
+	static GfxLayout TC0100SCN_charlayout = new GfxLayout
+	(
 		8,8,	/* 8*8 characters */
 		256,	/* 256 characters */
 		2,	/* 2 bits per pixel */
 	#ifdef LSB_FIRST
-		{ 8, 0 },
+		new int[] { 8, 0 },
 	#else
-		{ 0, 8 },
+		new int[] { 0, 8 },
 	#endif
-		{ 0, 1, 2, 3, 4, 5, 6, 7 },
-		{ 0*16, 1*16, 2*16, 3*16, 4*16, 5*16, 6*16, 7*16 },
+		new int[] { 0, 1, 2, 3, 4, 5, 6, 7 },
+		new int[] { 0*16, 1*16, 2*16, 3*16, 4*16, 5*16, 6*16, 7*16 },
 		16*8	/* every sprite takes 16 consecutive bytes */
-	};
+	);
 	
 	
 	void TC0100SCN_set_chip_colbanks(int chip0,int chip1,int chip2)
@@ -2956,20 +2956,20 @@ public class taitoic
 	};
 	
 	
-	static struct GfxLayout TC0480SCP_charlayout =
-	{
+	static GfxLayout TC0480SCP_charlayout = new GfxLayout
+	(
 		8,8,	/* 8*8 characters */
 		256,	/* 256 characters */
 		4,	/* 4 bits per pixel */
-		{ 0, 1, 2, 3 },
+		new int[] { 0, 1, 2, 3 },
 	#ifdef LSB_FIRST
-		{ 1*4, 0*4, 3*4, 2*4, 5*4, 4*4, 7*4, 6*4 },
+		new int[] { 1*4, 0*4, 3*4, 2*4, 5*4, 4*4, 7*4, 6*4 },
 	#else
-		{ 3*4, 2*4, 1*4, 0*4, 7*4, 6*4, 5*4, 4*4 },
+		new int[] { 3*4, 2*4, 1*4, 0*4, 7*4, 6*4, 5*4, 4*4 },
 	#endif
-		{ 0*32, 1*32, 2*32, 3*32, 4*32, 5*32, 6*32, 7*32 },
+		new int[] { 0*32, 1*32, 2*32, 3*32, 4*32, 5*32, 6*32, 7*32 },
 		32*8	/* every sprite takes 32 consecutive bytes */
-	};
+	);
 	
 	void TC0480SCP_set_layer_ptrs(void)
 	{

@@ -180,49 +180,49 @@ public class pcktgal
 	
 	/***************************************************************************/
 	
-	static struct GfxLayout charlayout =
-	{
+	static GfxLayout charlayout = new GfxLayout
+	(
 		8,8,	/* 8*8 characters */
 		4096,
 		4,
-		{ 0x10000*8, 0, 0x18000*8, 0x8000*8 },
-		{ 0, 1, 2, 3, 4, 5, 6, 7 },
-		{ 0*8, 1*8, 2*8, 3*8, 4*8, 5*8, 6*8, 7*8 },
+		new int[] { 0x10000*8, 0, 0x18000*8, 0x8000*8 },
+		new int[] { 0, 1, 2, 3, 4, 5, 6, 7 },
+		new int[] { 0*8, 1*8, 2*8, 3*8, 4*8, 5*8, 6*8, 7*8 },
 		8*8	 /* every char takes 8 consecutive bytes */
-	};
+	);
 	
-	static struct GfxLayout bootleg_charlayout =
-	{
+	static GfxLayout bootleg_charlayout = new GfxLayout
+	(
 		8,8,	/* 8*8 characters */
 		4096,
 		4,
-		{ 0x18000*8, 0x8000*8, 0x10000*8, 0 },
-		{ 0, 1, 2, 3, 4, 5, 6, 7 },
-		{ 0*8, 1*8, 2*8, 3*8, 4*8, 5*8, 6*8, 7*8 },
+		new int[] { 0x18000*8, 0x8000*8, 0x10000*8, 0 },
+		new int[] { 0, 1, 2, 3, 4, 5, 6, 7 },
+		new int[] { 0*8, 1*8, 2*8, 3*8, 4*8, 5*8, 6*8, 7*8 },
 		8*8	 /* every char takes 8 consecutive bytes */
-	};
+	);
 	
-	static struct GfxLayout spritelayout =
-	{
+	static GfxLayout spritelayout = new GfxLayout
+	(
 		16,16,  /* 16*16 sprites */
 		1024,   /* 1024 sprites */
 		2,	  /* 2 bits per pixel */
-		{ 0x8000*8, 0 },
-		{ 128+0, 128+1, 128+2, 128+3, 128+4, 128+5, 128+6, 128+7, 0, 1, 2, 3, 4, 5, 6, 7 },
-		{ 0*8, 1*8, 2*8, 3*8, 4*8, 5*8, 6*8, 7*8, 8*8, 9*8, 10*8, 11*8, 12*8, 13*8, 14*8, 15*8 },
+		new int[] { 0x8000*8, 0 },
+		new int[] { 128+0, 128+1, 128+2, 128+3, 128+4, 128+5, 128+6, 128+7, 0, 1, 2, 3, 4, 5, 6, 7 },
+		new int[] { 0*8, 1*8, 2*8, 3*8, 4*8, 5*8, 6*8, 7*8, 8*8, 9*8, 10*8, 11*8, 12*8, 13*8, 14*8, 15*8 },
 		32*8	/* every char takes 8 consecutive bytes */
-	};
+	);
 	
-	static struct GfxLayout bootleg_spritelayout =
-	{
+	static GfxLayout bootleg_spritelayout = new GfxLayout
+	(
 		16,16,  /* 16*16 sprites */
 		1024,   /* 1024 sprites */
 		2,	  /* 2 bits per pixel */
-		{ 0x8000*8, 0 },
-		{ 128+7, 128+6, 128+5, 128+4, 128+3, 128+2, 128+1, 128+0, 7, 6, 5, 4, 3, 2, 1, 0,  },
-		{ 0*8, 1*8, 2*8, 3*8, 4*8, 5*8, 6*8, 7*8, 8*8, 9*8, 10*8, 11*8, 12*8, 13*8, 14*8, 15*8 },
+		new int[] { 0x8000*8, 0 },
+		new int[] { 128+7, 128+6, 128+5, 128+4, 128+3, 128+2, 128+1, 128+0, 7, 6, 5, 4, 3, 2, 1, 0,  },
+		new int[] { 0*8, 1*8, 2*8, 3*8, 4*8, 5*8, 6*8, 7*8, 8*8, 9*8, 10*8, 11*8, 12*8, 13*8, 14*8, 15*8 },
 		32*8	/* every char takes 8 consecutive bytes */
-	};
+	);
 	
 	static struct GfxDecodeInfo gfxdecodeinfo[] =
 	{

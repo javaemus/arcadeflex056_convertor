@@ -232,16 +232,16 @@ public class spcforce
 	INPUT_PORTS_END
 	
 	
-	static struct GfxLayout charlayout =
-	{
+	static GfxLayout charlayout = new GfxLayout
+	(
 		8,8,    /* 8*8 chars */
 		512,    /* 512 characters */
 		3,      /* 3 bits per pixel */
-		{ 2*512*8*8, 512*8*8, 0 },  /* The bitplanes are seperate */
-		{ 0, 1, 2, 3, 4, 5, 6, 7},
-		{ 0*8, 1*8, 2*8, 3*8, 4*8, 5*8, 6*8, 7*8},
+		new int[] { 2*512*8*8, 512*8*8, 0 },  /* The bitplanes are seperate */
+		new int[] { 0, 1, 2, 3, 4, 5, 6, 7},
+		new int[] { 0*8, 1*8, 2*8, 3*8, 4*8, 5*8, 6*8, 7*8},
 		8*8     /* every char takes 8 consecutive bytes */
-	};
+	);
 	
 	
 	static struct GfxDecodeInfo gfxdecodeinfo[] =

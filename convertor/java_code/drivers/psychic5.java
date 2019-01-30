@@ -503,27 +503,27 @@ public class psychic5
 	
 	
 	
-	static struct GfxLayout charlayout =
-	{
+	static GfxLayout charlayout = new GfxLayout
+	(
 		8,8,    /* 8x8 characters */
 		1024,	/* 1024 characters */
 		4,      /* 4 bits per pixel */
-		{ 0, 1, 2, 3 }, /* the four bitplanes for pixel are packed into one nibble */
-		{ 0, 4, 8, 12, 16, 20, 24, 28 },
-		{ 0*8, 4*8, 8*8, 12*8, 16*8, 20*8, 24*8, 28*8 },
+		new int[] { 0, 1, 2, 3 }, /* the four bitplanes for pixel are packed into one nibble */
+		new int[] { 0, 4, 8, 12, 16, 20, 24, 28 },
+		new int[] { 0*8, 4*8, 8*8, 12*8, 16*8, 20*8, 24*8, 28*8 },
 		32*8   	/* every char takes 32 consecutive bytes */
-	};
+	);
 	
-	static struct GfxLayout spritelayout =
-	{
+	static GfxLayout spritelayout = new GfxLayout
+	(
 		16,16,  /* 16x16 characters */
 		1024,	/* 1024 characters */
 		4,      /* 4 bits per pixel */
-		{ 0, 1, 2, 3 },	/* the four bitplanes for pixel are packed into one nibble */
-		{ 0, 4, 8, 12, 16, 20, 24, 28, 64*8, 64*8+4, 64*8+8, 64*8+12, 64*8+16, 64*8+20, 64*8+24, 64*8+28 },
-		{ 0*8, 4*8, 8*8, 12*8, 16*8, 20*8, 24*8, 28*8, 32*8, 36*8, 40*8, 44*8, 48*8, 52*8, 56*8, 60*8 },
+		new int[] { 0, 1, 2, 3 },	/* the four bitplanes for pixel are packed into one nibble */
+		new int[] { 0, 4, 8, 12, 16, 20, 24, 28, 64*8, 64*8+4, 64*8+8, 64*8+12, 64*8+16, 64*8+20, 64*8+24, 64*8+28 },
+		new int[] { 0*8, 4*8, 8*8, 12*8, 16*8, 20*8, 24*8, 28*8, 32*8, 36*8, 40*8, 44*8, 48*8, 52*8, 56*8, 60*8 },
 		128*8	/* every char takes 128 consecutive bytes */
-	};
+	);
 	
 	static struct GfxDecodeInfo gfxdecodeinfo[] =
 	{

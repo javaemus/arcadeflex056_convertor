@@ -280,27 +280,27 @@ public class polyplay
 	}
 	
 	/* graphic sturctures */
-	static struct GfxLayout charlayout_1_bit =
-	{
+	static GfxLayout charlayout_1_bit = new GfxLayout
+	(
 		8,8,	/* 8*8 characters */
 		128,	/* 128 characters */
 		1,	    /* 1 bit per pixel */
-		{ 0 },
-		{ 0, 1, 2, 3, 4, 5, 6, 7 },	/* pretty straightforward layout */
-		{ 0*8, 1*8, 2*8, 3*8, 4*8, 5*8, 6*8, 7*8 },
+		new int[] { 0 },
+		new int[] { 0, 1, 2, 3, 4, 5, 6, 7 },	/* pretty straightforward layout */
+		new int[] { 0*8, 1*8, 2*8, 3*8, 4*8, 5*8, 6*8, 7*8 },
 		8*8	/* every char takes 8 consecutive bytes */
-	};
+	);
 	
-	static struct GfxLayout charlayout_3_bit =
-	{
+	static GfxLayout charlayout_3_bit = new GfxLayout
+	(
 		8,8,	/* 8*8 characters */
 		128,	/* 128 characters */
 		3,	    /* 3 bit per pixel */
-		{ 0, 128*8*8, 128*8*8 + 128*8*8 },    /* offset for each bitplane */
-		{ 0, 1, 2, 3, 4, 5, 6, 7 },	/* pretty straightforward layout */
-		{ 0*8, 1*8, 2*8, 3*8, 4*8, 5*8, 6*8, 7*8 },
+		new int[] { 0, 128*8*8, 128*8*8 + 128*8*8 },    /* offset for each bitplane */
+		new int[] { 0, 1, 2, 3, 4, 5, 6, 7 },	/* pretty straightforward layout */
+		new int[] { 0*8, 1*8, 2*8, 3*8, 4*8, 5*8, 6*8, 7*8 },
 		8*8	/* every char takes 8 consecutive bytes */
-	};
+	);
 	
 	static struct GfxDecodeInfo gfxdecodeinfo[] =
 	{

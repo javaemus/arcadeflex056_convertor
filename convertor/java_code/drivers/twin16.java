@@ -1038,16 +1038,16 @@ public class twin16
 	
 	
 	
-	static struct GfxLayout alpha_layout =
-	{
+	static GfxLayout alpha_layout = new GfxLayout
+	(
 		8,8,
 		0x200,
 		4,
-		{ 0,1,2,3 },
-		{ 0*4,1*4,2*4,3*4,4*4,5*4,6*4,7*4 },
-		{ 0*32,1*32,2*32,3*32,4*32,5*32,6*32,7*32 },
+		new int[] { 0,1,2,3 },
+		new int[] { 0*4,1*4,2*4,3*4,4*4,5*4,6*4,7*4 },
+		new int[] { 0*32,1*32,2*32,3*32,4*32,5*32,6*32,7*32 },
 		8*32
-	};
+	);
 	
 	static struct GfxDecodeInfo gfxdecodeinfo[] =
 	{

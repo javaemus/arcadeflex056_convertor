@@ -36,6 +36,7 @@ public class convertMame {
     static final int PORT_WRITE8 = 8;
     static final int READ_HANDLER8 = 9;
     static final int WRITE_HANDLER8 = 10;
+    static final int GFXLAYOUT = 11;
 
     public static void Convert() {
         Convertor.inpos = 0;//position of pointer inside the buffers
@@ -334,6 +335,21 @@ public class convertMame {
                         Convertor.inpos = i;
                         break;
                     } else {
+                        sUtil.skipSpace();
+                        if (sUtil.getToken("GfxLayout")) {
+                            sUtil.skipSpace();
+                            Convertor.token[0] = sUtil.parseToken();
+                            sUtil.skipSpace();
+                            if (sUtil.parseChar() != '=') {
+                                Convertor.inpos = i;
+                            } else {
+                                sUtil.skipSpace();
+                                sUtil.putString("static GfxLayout " + Convertor.token[0] + " = new GfxLayout");
+                                type = GFXLAYOUT;
+                                i3 = -1;
+                                continue;
+                            }
+                        }
                         Convertor.inpos = i;
                         break;
                     }
@@ -375,6 +391,21 @@ public class convertMame {
                             continue;
                         }
                     }
+                    if (type == GFXLAYOUT) {
+                        i3++;
+                        insideagk[i3] = 0;
+                        if (i3 == 0) {
+                            Convertor.outbuf[(Convertor.outpos++)] = '(';
+                            Convertor.inpos += 1;
+                            continue;
+                        }
+                        if ((i3 == 1) && ((insideagk[0] == 4) || (insideagk[0] == 5) || (insideagk[0] == 6) || (insideagk[0] == 7))) {
+                            sUtil.putString("new int[] {");
+                            Convertor.inpos += 1;
+                            continue;
+                        }
+                    }
+
                     if (type == PLOT_PIXEL || type == MARK_DIRTY || type == PLOT_BOX || type == READ_PIXEL || type == READ_HANDLER8 || type == WRITE_HANDLER8) {
                         i3++;
                     }
@@ -400,6 +431,16 @@ public class convertMame {
                             continue;
                         }
                     }
+                    if (type == GFXLAYOUT) {
+                        i3--;
+                        if (i3 == -1) {
+                            Convertor.outbuf[(Convertor.outpos++)] = 41;
+                            Convertor.inpos += 1;
+                            type = -1;
+                            continue;
+                        }
+                    }
+                    break;
                 }
                 case 'M': {
                     i = Convertor.inpos;
@@ -449,6 +490,13 @@ public class convertMame {
                     }
                     break;
                 }
+                case ',':
+                    if ((type != -1)) {
+                        if (i3 != -1) {
+                            insideagk[i3] += 1;
+                        }
+                    }
+                    break;
 
             }
             Convertor.outbuf[Convertor.outpos++] = Convertor.inbuf[Convertor.inpos++];//grapse to inputbuffer sto output

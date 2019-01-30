@@ -311,30 +311,30 @@ public class popeye
 	INPUT_PORTS_END
 	
 	
-	static struct GfxLayout charlayout =
-	{
+	static GfxLayout charlayout = new GfxLayout
+	(
 		16,16,	/* 16*16 characters (8*8 doubled) */
 		256,	/* 256 characters */
 		1,	/* 1 bit per pixel (there are two bitplanes in the ROM, but only one is used) */
-		{ 0 },
-		{ 7,7, 6,6, 5,5, 4,4, 3,3, 2,2, 1,1, 0,0 },	/* pretty straightforward layout */
-		{ 0*8,0*8, 1*8,1*8, 2*8,2*8, 3*8,3*8, 4*8,4*8, 5*8,5*8, 6*8,6*8, 7*8,7*8 },
+		new int[] { 0 },
+		new int[] { 7,7, 6,6, 5,5, 4,4, 3,3, 2,2, 1,1, 0,0 },	/* pretty straightforward layout */
+		new int[] { 0*8,0*8, 1*8,1*8, 2*8,2*8, 3*8,3*8, 4*8,4*8, 5*8,5*8, 6*8,6*8, 7*8,7*8 },
 		8*8	/* every char takes 8 consecutive bytes */
-	};
+	);
 	
-	static struct GfxLayout spritelayout =
-	{
+	static GfxLayout spritelayout = new GfxLayout
+	(
 		16,16,	/* 16*16 sprites */
 		512,	/* 512 sprites */
 		2,	/* 2 bits per pixel */
-		{ 0, 0x4000*8 },	/* the two bitplanes are separated in different files */
-		{7+(0x2000*8),6+(0x2000*8),5+(0x2000*8),4+(0x2000*8),
+		new int[] { 0, 0x4000*8 },	/* the two bitplanes are separated in different files */
+		new int[] {7+(0x2000*8),6+(0x2000*8),5+(0x2000*8),4+(0x2000*8),
 		 3+(0x2000*8),2+(0x2000*8),1+(0x2000*8),0+(0x2000*8),
 		 7,6,5,4,3,2,1,0 },
-		{ 15*8, 14*8, 13*8, 12*8, 11*8, 10*8, 9*8, 8*8,
+		new int[] { 15*8, 14*8, 13*8, 12*8, 11*8, 10*8, 9*8, 8*8,
 		  7*8, 6*8, 5*8, 4*8, 3*8, 2*8, 1*8, 0*8, },
 		16*8	/* every sprite takes 16 consecutive bytes */
-	};
+	);
 	
 	static struct GfxDecodeInfo gfxdecodeinfo[] =
 	{

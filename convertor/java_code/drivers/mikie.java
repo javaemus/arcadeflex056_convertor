@@ -225,29 +225,29 @@ public class mikie
 	
 	
 	
-	static struct GfxLayout charlayout =
-	{
+	static GfxLayout charlayout = new GfxLayout
+	(
 		8,8,    /* 8*8 characters */
 		512,    /* 512 characters */
 		4,      /* 4 bits per pixel */
-		{ 0, 1, 2, 3 }, /* the bitplanes are packed */
-		{ 0*4, 1*4, 2*4, 3*4, 4*4, 5*4, 6*4, 7*4 },
-		{ 0*4*8, 1*4*8, 2*4*8, 3*4*8, 4*4*8, 5*4*8, 6*4*8, 7*4*8 },
+		new int[] { 0, 1, 2, 3 }, /* the bitplanes are packed */
+		new int[] { 0*4, 1*4, 2*4, 3*4, 4*4, 5*4, 6*4, 7*4 },
+		new int[] { 0*4*8, 1*4*8, 2*4*8, 3*4*8, 4*4*8, 5*4*8, 6*4*8, 7*4*8 },
 		8*4*8     /* every char takes 32 consecutive bytes */
-	};
+	);
 	
-	static struct GfxLayout spritelayout =
-	{
+	static GfxLayout spritelayout = new GfxLayout
+	(
 		16,16,	     /* 16*16 sprites */
 		256,	        /* 256 sprites */
 		4,	           /* 4 bits per pixel */
-		{ 0, 4, 256*128*8+0, 256*128*8+4 },
-		{ 32*8+0, 32*8+1, 32*8+2, 32*8+3, 16*8+0, 16*8+1, 16*8+2, 16*8+3,
+		new int[] { 0, 4, 256*128*8+0, 256*128*8+4 },
+		new int[] { 32*8+0, 32*8+1, 32*8+2, 32*8+3, 16*8+0, 16*8+1, 16*8+2, 16*8+3,
 				0, 1, 2, 3, 48*8+0, 48*8+1, 48*8+2, 48*8+3 },
-		{ 0*16, 1*16, 2*16, 3*16, 4*16, 5*16, 6*16, 7*16,
+		new int[] { 0*16, 1*16, 2*16, 3*16, 4*16, 5*16, 6*16, 7*16,
 				32*16, 33*16, 34*16, 35*16, 36*16, 37*16, 38*16, 39*16 },
 		128*8	/* every sprite takes 64 bytes */
-	};
+	);
 	
 	
 	static struct GfxDecodeInfo gfxdecodeinfo[] =

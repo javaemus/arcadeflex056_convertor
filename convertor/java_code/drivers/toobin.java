@@ -207,40 +207,40 @@ public class toobin
 	 *
 	 *************************************/
 	
-	static struct GfxLayout anlayout =
-	{
+	static GfxLayout anlayout = new GfxLayout
+	(
 		8,8,
 		RGN_FRAC(1,1),
 		2,
-		{ 0, 4 },
-		{ 0, 1, 2, 3, 8, 9, 10, 11 },
-		{ 0*16, 1*16, 2*16, 3*16, 4*16, 5*16, 6*16, 7*16 },
+		new int[] { 0, 4 },
+		new int[] { 0, 1, 2, 3, 8, 9, 10, 11 },
+		new int[] { 0*16, 1*16, 2*16, 3*16, 4*16, 5*16, 6*16, 7*16 },
 		8*16
-	};
+	);
 	
 	
-	static struct GfxLayout pflayout =
-	{
+	static GfxLayout pflayout = new GfxLayout
+	(
 		8,8,
 		RGN_FRAC(1,2),
 		4,
-		{ RGN_FRAC(1,2)+0, RGN_FRAC(1,2)+4, 0, 4 },
-		{ 0, 1, 2, 3, 8, 9, 10, 11 },
-		{ 0*16, 1*16, 2*16, 3*16, 4*16, 5*16, 6*16, 7*16 },
+		new int[] { RGN_FRAC(1,2)+0, RGN_FRAC(1,2)+4, 0, 4 },
+		new int[] { 0, 1, 2, 3, 8, 9, 10, 11 },
+		new int[] { 0*16, 1*16, 2*16, 3*16, 4*16, 5*16, 6*16, 7*16 },
 		8*16
-	};
+	);
 	
 	
-	static struct GfxLayout molayout =
-	{
+	static GfxLayout molayout = new GfxLayout
+	(
 		16,16,
 		RGN_FRAC(1,2),
 		4,
-		{ RGN_FRAC(1,2)+0, RGN_FRAC(1,2)+4, 0, 4 },
-		{ 0, 1, 2, 3, 8, 9, 10, 11, 16, 17, 18, 19, 24, 25, 26, 27 },
-		{ 0*32, 1*32, 2*32, 3*32, 4*32, 5*32, 6*32, 7*32, 8*32, 9*32, 10*32, 11*32, 12*32, 13*32, 14*32, 15*32 },
+		new int[] { RGN_FRAC(1,2)+0, RGN_FRAC(1,2)+4, 0, 4 },
+		new int[] { 0, 1, 2, 3, 8, 9, 10, 11, 16, 17, 18, 19, 24, 25, 26, 27 },
+		new int[] { 0*32, 1*32, 2*32, 3*32, 4*32, 5*32, 6*32, 7*32, 8*32, 9*32, 10*32, 11*32, 12*32, 13*32, 14*32, 15*32 },
 		8*64
-	};
+	);
 	
 	
 	static struct GfxDecodeInfo gfxdecodeinfo[] =

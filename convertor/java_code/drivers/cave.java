@@ -1301,94 +1301,94 @@ public class cave
 	***************************************************************************/
 	
 	/* 8x8x4 tiles */
-	static struct GfxLayout layout_8x8x4 =
-	{
+	static GfxLayout layout_8x8x4 = new GfxLayout
+	(
 		8,8,
 		RGN_FRAC(1,1),
 		4,
-		{STEP4(0,1)},
-		{STEP8(0,4)},
-		{STEP8(0,4*8)},
+		new int[] {STEP4(0,1)},
+		new int[] {STEP8(0,4)},
+		new int[] {STEP8(0,4*8)},
 		8*8*4
-	};
+	);
 	
 	/* 8x8x6 tiles (in a 8x8x8 layout) */
-	static struct GfxLayout layout_8x8x6 =
-	{
+	static GfxLayout layout_8x8x6 = new GfxLayout
+	(
 		8,8,
 		RGN_FRAC(1,1),
 		6,
-		{8,9, 0,1,2,3},
-		{0*4,1*4,4*4,5*4,8*4,9*4,12*4,13*4},
-		{0*64,1*64,2*64,3*64,4*64,5*64,6*64,7*64},
+		new int[] {8,9, 0,1,2,3},
+		new int[] {0*4,1*4,4*4,5*4,8*4,9*4,12*4,13*4},
+		new int[] {0*64,1*64,2*64,3*64,4*64,5*64,6*64,7*64},
 		8*8*8
-	};
+	);
 	
 	/* 8x8x6 tiles (4 bits in one rom, 2 bits in the other,
 	   unpacked in 2 pages of 4 bits) */
-	static struct GfxLayout layout_8x8x6_2 =
-	{
+	static GfxLayout layout_8x8x6_2 = new GfxLayout
+	(
 		8,8,
 		RGN_FRAC(1,2),
 		6,
-		{RGN_FRAC(1,2)+2,RGN_FRAC(1,2)+3, STEP4(0,1)},
-		{STEP8(0,4)},
-		{STEP8(0,4*8)},
+		new int[] {RGN_FRAC(1,2)+2,RGN_FRAC(1,2)+3, STEP4(0,1)},
+		new int[] {STEP8(0,4)},
+		new int[] {STEP8(0,4*8)},
 		8*8*4
-	};
+	);
 	
 	/* 8x8x8 tiles */
-	static struct GfxLayout layout_8x8x8 =
-	{
+	static GfxLayout layout_8x8x8 = new GfxLayout
+	(
 		8,8,
 		RGN_FRAC(1,1),
 		8,
-		{8,9,10,11, 0,1,2,3},
-		{0*4,1*4,4*4,5*4,8*4,9*4,12*4,13*4},
-		{0*64,1*64,2*64,3*64,4*64,5*64,6*64,7*64},
+		new int[] {8,9,10,11, 0,1,2,3},
+		new int[] {0*4,1*4,4*4,5*4,8*4,9*4,12*4,13*4},
+		new int[] {0*64,1*64,2*64,3*64,4*64,5*64,6*64,7*64},
 		8*8*8
-	};
+	);
 	
 	/* 16x16x4 tiles */
-	static struct GfxLayout layout_16x16x4 =
-	{
+	static GfxLayout layout_16x16x4 = new GfxLayout
+	(
 		16,16,
 		RGN_FRAC(1,1),
 		4,
-		{0,1,2,3},
-		{0*4,1*4,2*4,3*4,4*4,5*4,6*4,7*4,
+		new int[] {0,1,2,3},
+		new int[] {0*4,1*4,2*4,3*4,4*4,5*4,6*4,7*4,
 		 64*4,65*4,66*4,67*4,68*4,69*4,70*4,71*4},
-		{0*32,1*32,2*32,3*32,4*32,5*32,6*32,7*32,
+		new int[] {0*32,1*32,2*32,3*32,4*32,5*32,6*32,7*32,
 		 16*32,17*32,18*32,19*32,20*32,21*32,22*32,23*32},
 		16*16*4
-	};
+	);
 	
 	/* 16x16x8 tiles */
-	static struct GfxLayout layout_16x16x8 =
-	{
+	static GfxLayout layout_16x16x8 = new GfxLayout
+	(
 		16,16,
 		RGN_FRAC(1,1),
 		8,
-		{8,9,10,11, 0,1,2,3},
-		{0*4,1*4,4*4,5*4,8*4,9*4,12*4,13*4,
+		new int[] {8,9,10,11, 0,1,2,3},
+		new int[] {0*4,1*4,4*4,5*4,8*4,9*4,12*4,13*4,
 		 128*4,129*4,132*4,133*4,136*4,137*4,140*4,141*4},
-		{0*64,1*64,2*64,3*64,4*64,5*64,6*64,7*64,
+		new int[] {0*64,1*64,2*64,3*64,4*64,5*64,6*64,7*64,
 		 16*64,17*64,18*64,19*64,20*64,21*64,22*64,23*64},
 		16*16*8
-	};
+	);
 	
 	#if 0
 	/* 16x16x8 Zooming Sprites - No need to decode them */
-	static struct GfxLayout layout_sprites =
-	{
+	static GfxLayout layout_sprites = new GfxLayout
+	(
 		16,16,
 		RGN_FRAC(1,1),
 		8,
-		{STEP8(0,1)},
-		{STEP16(0,8)},
-		{STEP16(0,16*8)},
+		new int[] {STEP8(0,1)},
+		new int[] {STEP16(0,8)},
+		new int[] {STEP16(0,16*8)},
 		16*16*8
-	};
+	);
 	#endif
 	
 	/***************************************************************************

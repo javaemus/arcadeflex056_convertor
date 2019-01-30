@@ -213,29 +213,29 @@ public class circusc
 	
 	
 	
-	static struct GfxLayout charlayout =
-	{
+	static GfxLayout charlayout = new GfxLayout
+	(
 		8,8,    /* 8*8 characters */
 		512,    /* 512 characters */
 		4,      /* 4 bits per pixel */
-		{ 0, 1, 2, 3 }, /* the four bitplanes are packed in one nibble */
-		{ 0*4, 1*4, 2*4, 3*4, 4*4, 5*4, 6*4, 7*4 },
-		{ 0*32, 1*32, 2*32, 3*32, 4*32, 5*32, 6*32, 7*32 },
+		new int[] { 0, 1, 2, 3 }, /* the four bitplanes are packed in one nibble */
+		new int[] { 0*4, 1*4, 2*4, 3*4, 4*4, 5*4, 6*4, 7*4 },
+		new int[] { 0*32, 1*32, 2*32, 3*32, 4*32, 5*32, 6*32, 7*32 },
 		32*8    /* every char takes 8 consecutive bytes */
-	};
+	);
 	
-	static struct GfxLayout spritelayout =
-	{
+	static GfxLayout spritelayout = new GfxLayout
+	(
 		16,16,  /* 16*16 sprites */
 		384,    /* 384 sprites */
 		4,      /* 4 bits per pixel */
-		{ 0, 1, 2, 3 },        /* the bitplanes are packed */
-		{ 0*4, 1*4, 2*4, 3*4, 4*4, 5*4, 6*4, 7*4,
+		new int[] { 0, 1, 2, 3 },        /* the bitplanes are packed */
+		new int[] { 0*4, 1*4, 2*4, 3*4, 4*4, 5*4, 6*4, 7*4,
 				8*4, 9*4, 10*4, 11*4, 12*4, 13*4, 14*4, 15*4 },
-		{ 0*4*16, 1*4*16, 2*4*16, 3*4*16, 4*4*16, 5*4*16, 6*4*16, 7*4*16,
+		new int[] { 0*4*16, 1*4*16, 2*4*16, 3*4*16, 4*4*16, 5*4*16, 6*4*16, 7*4*16,
 				8*4*16, 9*4*16, 10*4*16, 11*4*16, 12*4*16, 13*4*16, 14*4*16, 15*4*16 },
 		32*4*8    /* every sprite takes 128 consecutive bytes */
-	};
+	);
 	
 	static struct GfxDecodeInfo gfxdecodeinfo[] =
 	{

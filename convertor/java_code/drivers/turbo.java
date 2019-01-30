@@ -280,38 +280,38 @@ public class turbo
 	 * Graphics layouts
 	 *********************************************************************/
 	
-	static struct GfxLayout numlayout =
-	{
+	static GfxLayout numlayout = new GfxLayout
+	(
 		10,8,	/* 10*8 characters */
 		16,		/* 16 characters */
 		1,		/* 1 bit per pixel */
-		{ 0 },	/* bitplane offsets */
-		{ 9*8, 8*8, 7*8, 6*8, 5*8, 4*8, 3*8, 2*8, 1*8, 0*8 },
-		{ 0, 1, 2, 3, 4, 5, 6, 7 },
+		new int[] { 0 },	/* bitplane offsets */
+		new int[] { 9*8, 8*8, 7*8, 6*8, 5*8, 4*8, 3*8, 2*8, 1*8, 0*8 },
+		new int[] { 0, 1, 2, 3, 4, 5, 6, 7 },
 		10*8	/* every character uses 10 consecutive bytes */
-	};
+	);
 	
-	static struct GfxLayout tachlayout =
-	{
+	static GfxLayout tachlayout = new GfxLayout
+	(
 		16,1,	/* 16*1 characters */
 		2,		/* 2 characters */
 		1,		/* 1 bit per pixel */
-		{ 0 },	/* bitplane offsets */
-		{ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
-		{ 0 },
+		new int[] { 0 },	/* bitplane offsets */
+		new int[] { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
+		new int[] { 0 },
 		1*8		/* every character uses 1 consecutive byte */
-	};
+	);
 	
-	static struct GfxLayout charlayout =
-	{
+	static GfxLayout charlayout = new GfxLayout
+	(
 		8,8,	/* 8*8 characters */
 		256,	/* 256 characters */
 		2,		/* 2 bits per pixel */
-		{ 256*8*8, 0 },	/* bitplane offsets */
-		{ 0, 1, 2, 3, 4, 5, 6, 7 },
-		{ 0*8, 1*8, 2*8, 3*8, 4*8, 5*8, 6*8, 7*8 },
+		new int[] { 256*8*8, 0 },	/* bitplane offsets */
+		new int[] { 0, 1, 2, 3, 4, 5, 6, 7 },
+		new int[] { 0*8, 1*8, 2*8, 3*8, 4*8, 5*8, 6*8, 7*8 },
 		8*8		/* every character uses 8 consecutive bytes */
-	};
+	);
 	
 	static struct GfxDecodeInfo gfxdecodeinfo[] =
 	{

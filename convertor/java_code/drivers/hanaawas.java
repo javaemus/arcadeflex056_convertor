@@ -152,16 +152,16 @@ public class hanaawas
 	
 	
 	#define GFX(name, offs1, offs2, offs3)				\
-	static struct GfxLayout name =						\
-	{													\
+	static GfxLayout name = new GfxLayout\
+	(													\
 		8,8,    /* 8*8 chars */							\
 		512,    /* 512 characters */					\
 		3,      /* 3 bits per pixel */					\
-		{ offs1, offs2, offs3 },  /* bitplanes */		\
-		{ 8*8+0, 8*8+1, 8*8+2, 8*8+3, 0, 1, 2, 3 },		\
-		{ 0*8, 1*8, 2*8, 3*8, 4*8, 5*8, 6*8, 7*8 },		\
+		new int[] { offs1, offs2, offs3 },  /* bitplanes */		\
+		new int[] { 8*8+0, 8*8+1, 8*8+2, 8*8+3, 0, 1, 2, 3 },		\
+		new int[] { 0*8, 1*8, 2*8, 3*8, 4*8, 5*8, 6*8, 7*8 },		\
 		8*16     /* every char takes 16 consecutive bytes */	\
-	};
+	);
 	
 	GFX( charlayout_1bpp, 0x2000*8+4, 0x2000*8+4, 0x2000*8+4 )
 	GFX( charlayout_3bpp, 0x2000*8,   0,          4          )

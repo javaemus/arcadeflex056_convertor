@@ -154,39 +154,39 @@ public class citycon
 	
 	
 	
-	static struct GfxLayout charlayout =
-	{
+	static GfxLayout charlayout = new GfxLayout
+	(
 		8,8,
 		RGN_FRAC(1,2),
 		5,
-		{ 16, 12, 8, 4, 0 },
-		{ 0, 1, 2, 3, RGN_FRAC(1,2)+0, RGN_FRAC(1,2)+1, RGN_FRAC(1,2)+2, RGN_FRAC(1,2)+3 },
-		{ 0*24, 1*24, 2*24, 3*24, 4*24, 5*24, 6*24, 7*24 },
+		new int[] { 16, 12, 8, 4, 0 },
+		new int[] { 0, 1, 2, 3, RGN_FRAC(1,2)+0, RGN_FRAC(1,2)+1, RGN_FRAC(1,2)+2, RGN_FRAC(1,2)+3 },
+		new int[] { 0*24, 1*24, 2*24, 3*24, 4*24, 5*24, 6*24, 7*24 },
 		24*8
-	};
+	);
 	
-	static struct GfxLayout tilelayout =
-	{
+	static GfxLayout tilelayout = new GfxLayout
+	(
 		8,8,	/* 8*8 characters */
 		256,	/* 256 characters */
 		4,	/* 4 bits per pixel */
-		{ 4, 0, 0xc000*8+4, 0xc000*8+0 },
-		{ 0, 1, 2, 3, 256*8*8+0, 256*8*8+1, 256*8*8+2, 256*8*8+3 },
-		{ 0*8, 1*8, 2*8, 3*8, 4*8, 5*8, 6*8, 7*8 },
+		new int[] { 4, 0, 0xc000*8+4, 0xc000*8+0 },
+		new int[] { 0, 1, 2, 3, 256*8*8+0, 256*8*8+1, 256*8*8+2, 256*8*8+3 },
+		new int[] { 0*8, 1*8, 2*8, 3*8, 4*8, 5*8, 6*8, 7*8 },
 		8*8	/* every char takes 8 consecutive bytes */
-	};
+	);
 	
-	static struct GfxLayout spritelayout =
-	{
+	static GfxLayout spritelayout = new GfxLayout
+	(
 		8,16,	/* 8*16 sprites */
 		128,	/* 128 sprites */
 		4,	/* 4 bits per pixel */
-		{ 4, 0, 0x2000*8+4, 0x2000*8+0 },
-		{ 0, 1, 2, 3, 128*16*8+0, 128*16*8+1, 128*16*8+2, 128*16*8+3 },
-		{ 0*8, 1*8, 2*8, 3*8, 4*8, 5*8, 6*8, 7*8,
+		new int[] { 4, 0, 0x2000*8+4, 0x2000*8+0 },
+		new int[] { 0, 1, 2, 3, 128*16*8+0, 128*16*8+1, 128*16*8+2, 128*16*8+3 },
+		new int[] { 0*8, 1*8, 2*8, 3*8, 4*8, 5*8, 6*8, 7*8,
 	            8*8, 9*8, 10*8, 11*8, 12*8, 13*8, 14*8, 15*8 },
 		16*8	/* every sprite takes 16 consecutive bytes */
-	};
+	);
 	
 	
 	static struct GfxDecodeInfo gfxdecodeinfo[] =

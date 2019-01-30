@@ -218,42 +218,42 @@ public class speedbal
 	
 	
 	
-	static struct GfxLayout charlayout =
-	{
+	static GfxLayout charlayout = new GfxLayout
+	(
 		8,8,    /* 8*8 characters */
 		1024,   /* 1024 characters */
 		4,      /* actually 2 bits per pixel - two of the planes are empty */
-		{ 1024*16*8+4, 1024*16*8+0, 4, 0 },
-		{ 8+3, 8+2, 8+1, 8+0, 3, 2, 1, 0 },
-		{ 0*16, 1*16, 2*16, 3*16, 4*16, 5*16, 6*16, 7*16 },   /* characters are rotated 90 degrees */
+		new int[] { 1024*16*8+4, 1024*16*8+0, 4, 0 },
+		new int[] { 8+3, 8+2, 8+1, 8+0, 3, 2, 1, 0 },
+		new int[] { 0*16, 1*16, 2*16, 3*16, 4*16, 5*16, 6*16, 7*16 },   /* characters are rotated 90 degrees */
 		16*8	   /* every char takes 16 bytes */
-	};
+	);
 	
-	static struct GfxLayout tilelayout =
-	{
+	static GfxLayout tilelayout = new GfxLayout
+	(
 		16,16,  /* 16*16 tiles */
 		1024,   /* 1024 tiles */
 		4,      /* 4 bits per pixel */
-		{ 0, 2, 4, 6 }, /* the bitplanes are packed in one nibble */
-		{ 0*8+0, 0*8+1, 7*8+0, 7*8+1, 6*8+0, 6*8+1, 5*8+0, 5*8+1,
+		new int[] { 0, 2, 4, 6 }, /* the bitplanes are packed in one nibble */
+		new int[] { 0*8+0, 0*8+1, 7*8+0, 7*8+1, 6*8+0, 6*8+1, 5*8+0, 5*8+1,
 				4*8+0, 4*8+1, 3*8+0, 3*8+1, 2*8+0, 2*8+1, 1*8+0, 1*8+1 },
-		{ 0*64, 1*64, 2*64, 3*64, 4*64, 5*64, 6*64, 7*64,
+		new int[] { 0*64, 1*64, 2*64, 3*64, 4*64, 5*64, 6*64, 7*64,
 				8*64, 9*64, 10*64, 11*64, 12*64, 13*64, 14*64, 15*64 },
 		128*8  /* every sprite takes 128 consecutive bytes */
-	};
+	);
 	
-	static struct GfxLayout spritelayout =
-	{
+	static GfxLayout spritelayout = new GfxLayout
+	(
 		16,16,  /* 16*16 sprites */
 		512,    /* 512 sprites */
 		4,      /* 4 bits per pixel */
-		{ 0, 2, 4, 6 }, /* the bitplanes are packed in one nibble */
-		{ 7*8+1, 7*8+0, 6*8+1, 6*8+0, 5*8+1, 5*8+0, 4*8+1, 4*8+0,
+		new int[] { 0, 2, 4, 6 }, /* the bitplanes are packed in one nibble */
+		new int[] { 7*8+1, 7*8+0, 6*8+1, 6*8+0, 5*8+1, 5*8+0, 4*8+1, 4*8+0,
 				3*8+1, 3*8+0, 2*8+1, 2*8+0, 1*8+1, 1*8+0, 0*8+1, 0*8+0 },
-		{ 0*64, 1*64, 2*64, 3*64, 4*64, 5*64, 6*64, 7*64,
+		new int[] { 0*64, 1*64, 2*64, 3*64, 4*64, 5*64, 6*64, 7*64,
 				8*64, 9*64, 10*64, 11*64, 12*64, 13*64, 14*64, 15*64 },
 		128*8  /* every sprite takes 128 consecutive bytes */
-	};
+	);
 	
 	static struct GfxDecodeInfo gfxdecodeinfo[] =
 	{

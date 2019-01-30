@@ -147,28 +147,28 @@ public class higemaru
 	
 	
 	
-	static struct GfxLayout charlayout =
-	{
+	static GfxLayout charlayout = new GfxLayout
+	(
 		8,8,	/* 8*8 characters */
 		512,	/* 512 characters */
 		2,	/* 2 bits per pixel */
-		{ 4, 0 },
-		{ 0, 1, 2, 3, 8+0, 8+1, 8+2, 8+3 },
-		{ 0*16, 1*16, 2*16, 3*16, 4*16, 5*16, 6*16, 7*16 },
+		new int[] { 4, 0 },
+		new int[] { 0, 1, 2, 3, 8+0, 8+1, 8+2, 8+3 },
+		new int[] { 0*16, 1*16, 2*16, 3*16, 4*16, 5*16, 6*16, 7*16 },
 		16*8	/* every char takes 16 consecutive bytes */
-	};
-	static struct GfxLayout spritelayout =
-	{
+	);
+	static GfxLayout spritelayout = new GfxLayout
+	(
 		16,16,	/* 16*16 sprites */
 		128,	/* 128 sprites */
 		4,		/* 4 bits per pixel */
-		{ 128*64*8+4, 128*64*8, 4, 0 },
-		{ 0, 1, 2, 3, 8+0, 8+1, 8+2, 8+3,
+		new int[] { 128*64*8+4, 128*64*8, 4, 0 },
+		new int[] { 0, 1, 2, 3, 8+0, 8+1, 8+2, 8+3,
 				32*8+0, 32*8+1, 32*8+2, 32*8+3, 33*8+0, 33*8+1, 33*8+2, 33*8+3 },
-		{ 0*16, 1*16, 2*16, 3*16, 4*16, 5*16, 6*16, 7*16,
+		new int[] { 0*16, 1*16, 2*16, 3*16, 4*16, 5*16, 6*16, 7*16,
 				8*16, 9*16, 10*16, 11*16, 12*16, 13*16, 14*16, 15*16 },
 		64*8	/* every sprite takes 64 consecutive bytes */
-	};
+	);
 	
 	static struct GfxDecodeInfo gfxdecodeinfo[] =
 	{

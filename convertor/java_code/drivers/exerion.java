@@ -232,48 +232,48 @@ public class exerion
 	 * Graphics layouts
 	 *********************************************************************/
 	
-	static struct GfxLayout charlayout =
-	{
+	static GfxLayout charlayout = new GfxLayout
+	(
 		8,8,            /* 8*8 characters */
 		512,          /* total number of chars */
 		2,              /* 2 bits per pixel (# of planes) */
-		{ 0, 4 },       /* start of every bitplane */
-		{ 3, 2, 1, 0, 8+3, 8+2, 8+1, 8+0 },
-		{ 16*0, 16*1, 16*2, 16*3, 16*4, 16*5, 16*6, 16*7 },
+		new int[] { 0, 4 },       /* start of every bitplane */
+		new int[] { 3, 2, 1, 0, 8+3, 8+2, 8+1, 8+0 },
+		new int[] { 16*0, 16*1, 16*2, 16*3, 16*4, 16*5, 16*6, 16*7 },
 		16*8            /* every char takes 16 consecutive bytes */
-	};
+	);
 	
 	/* 16 x 16 sprites -- requires reorganizing characters in init_exerion() */
-	static struct GfxLayout spritelayout =
-	{
+	static GfxLayout spritelayout = new GfxLayout
+	(
 		16,16,          /* 16*16 sprites */
 		128*2,          /* total number of sprites in the rom */
 		2,              /* 2 bits per pixel (# of planes) */
-		{ 0, 4 },       /* start of every bitplane */
-		{  3, 2, 1, 0, 8+3, 8+2, 8+1, 8+0,
+		new int[] { 0, 4 },       /* start of every bitplane */
+		new int[] {  3, 2, 1, 0, 8+3, 8+2, 8+1, 8+0,
 				16+3, 16+2, 16+1, 16+0, 24+3, 24+2, 24+1, 24+0 },
-		{ 32*0, 32*1, 32*2, 32*3, 32*4, 32*5, 32*6, 32*7,
+		new int[] { 32*0, 32*1, 32*2, 32*3, 32*4, 32*5, 32*6, 32*7,
 				32*8, 32*9, 32*10, 32*11, 32*12, 32*13, 32*14, 32*15 },
 		64*8            /* every sprite takes 64 consecutive bytes */
-	};
+	);
 	
 	/* Quick and dirty way to emulate pixel-doubled sprites. */
-	static struct GfxLayout bigspritelayout =
-	{
+	static GfxLayout bigspritelayout = new GfxLayout
+	(
 		32,32,          /* 32*32 sprites */
 		128*2,          /* total number of sprites in the rom */
 		2,              /* 2 bits per pixel (# of planes) */
-		{ 0, 4 },       /* start of every bitplane */
-		{  3, 3, 2, 2, 1, 1, 0, 0,
+		new int[] { 0, 4 },       /* start of every bitplane */
+		new int[] {  3, 3, 2, 2, 1, 1, 0, 0,
 				8+3, 8+3, 8+2, 8+2, 8+1, 8+1, 8+0, 8+0,
 				16+3, 16+3, 16+2, 16+2, 16+1, 16+1, 16+0, 16+0,
 				24+3, 24+3, 24+2, 24+2, 24+1, 24+1, 24+0, 24+0 },
-		{ 32*0, 32*0, 32*1, 32*1, 32*2, 32*2, 32*3, 32*3,
+		new int[] { 32*0, 32*0, 32*1, 32*1, 32*2, 32*2, 32*3, 32*3,
 				32*4, 32*4, 32*5, 32*5, 32*6, 32*6, 32*7, 32*7,
 				32*8, 32*8, 32*9, 32*9, 32*10, 32*10, 32*11, 32*11,
 				32*12, 32*12, 32*13, 32*13, 32*14, 32*14, 32*15, 32*15 },
 		64*8            /* every sprite takes 64 consecutive bytes */
-	};
+	);
 	
 	static struct GfxDecodeInfo gfxdecodeinfo[] =
 	{

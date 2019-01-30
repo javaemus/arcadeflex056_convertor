@@ -182,16 +182,16 @@ public class skychut
 	INPUT_PORTS_END
 	
 	
-	static struct GfxLayout charlayout =
-	{
+	static GfxLayout charlayout = new GfxLayout
+	(
 		8,8,	/* 8*8 characters */
 		256,	/* 256 characters */
 		1,	/* 1 bits per pixel */
-		{ 0 },
-		{ 0*8, 1*8, 2*8, 3*8, 4*8, 5*8, 6*8, 7*8 },
-		{ 7, 6, 5, 4, 3, 2, 1, 0 },
+		new int[] { 0 },
+		new int[] { 0*8, 1*8, 2*8, 3*8, 4*8, 5*8, 6*8, 7*8 },
+		new int[] { 7, 6, 5, 4, 3, 2, 1, 0 },
 		8*8	/* every char takes 8 consecutive bytes */
-	};
+	);
 	
 	
 	static struct GfxDecodeInfo gfxdecodeinfo[] =

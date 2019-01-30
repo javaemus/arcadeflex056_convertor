@@ -363,28 +363,28 @@ public class yunsun16
 	
 	
 	/* 16x16x4 */
-	static struct GfxLayout layout_16x16x4 =
-	{
+	static GfxLayout layout_16x16x4 = new GfxLayout
+	(
 		16,16,
 		RGN_FRAC(1,4),
 		4,
-		{ RGN_FRAC(3,4), RGN_FRAC(1,4), RGN_FRAC(2,4), RGN_FRAC(0,4) },
-		{ STEP16(0,1) },
-		{ STEP16(0,16) },
+		new int[] { RGN_FRAC(3,4), RGN_FRAC(1,4), RGN_FRAC(2,4), RGN_FRAC(0,4) },
+		new int[] { STEP16(0,1) },
+		new int[] { STEP16(0,16) },
 		16*16
-	};
+	);
 	
 	/* 16x16x8 */
-	static struct GfxLayout layout_16x16x8 =
-	{
+	static GfxLayout layout_16x16x8 = new GfxLayout
+	(
 		16,16,
 		RGN_FRAC(1,1),
 		8,
-		{ 6*8,4*8, 2*8,0*8, 7*8,5*8, 3*8,1*8 },
-		{ STEP8(0,1),STEP8(8*8,1) },
-		{ STEP16(0,16*8) },
+		new int[] { 6*8,4*8, 2*8,0*8, 7*8,5*8, 3*8,1*8 },
+		new int[] { STEP8(0,1),STEP8(8*8,1) },
+		new int[] { STEP16(0,16*8) },
 		16*16*8
-	};
+	);
 	
 	
 	static struct GfxDecodeInfo yunsun16_gfxdecodeinfo[] =

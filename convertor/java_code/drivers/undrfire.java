@@ -535,39 +535,39 @@ public class undrfire
 					GFX DECODING
 	**********************************************************/
 	
-	static struct GfxLayout tile16x16_layout =
-	{
+	static GfxLayout tile16x16_layout = new GfxLayout
+	(
 		16,16,	/* 16*16 sprites */
 		RGN_FRAC(1,2),
 		5,	/* 5 bits per pixel */
-		{ RGN_FRAC(1,2), 0, 8, 16, 24,},
-		{ 32, 33, 34, 35, 36, 37, 38, 39, 0, 1, 2, 3, 4, 5, 6, 7 },
-		{ 0*64, 1*64,  2*64,  3*64,  4*64,  5*64,  6*64,  7*64,
+		new int[] { RGN_FRAC(1,2), 0, 8, 16, 24,},
+		new int[] { 32, 33, 34, 35, 36, 37, 38, 39, 0, 1, 2, 3, 4, 5, 6, 7 },
+		new int[] { 0*64, 1*64,  2*64,  3*64,  4*64,  5*64,  6*64,  7*64,
 		  8*64, 9*64, 10*64, 11*64, 12*64, 13*64, 14*64, 15*64 },
 		64*16	/* every sprite takes 128 consecutive bytes */
-	};
+	);
 	
-	static struct GfxLayout charlayout =
-	{
+	static GfxLayout charlayout = new GfxLayout
+	(
 		16,16,    /* 16*16 characters */
 		RGN_FRAC(1,1),
 		4,        /* 4 bits per pixel */
-		{ 0, 1, 2, 3 },
-		{ 1*4, 0*4, 5*4, 4*4, 3*4, 2*4, 7*4, 6*4, 9*4, 8*4, 13*4, 12*4, 11*4, 10*4, 15*4, 14*4 },
-		{ 0*64, 1*64, 2*64, 3*64, 4*64, 5*64, 6*64, 7*64, 8*64, 9*64, 10*64, 11*64, 12*64, 13*64, 14*64, 15*64 },
+		new int[] { 0, 1, 2, 3 },
+		new int[] { 1*4, 0*4, 5*4, 4*4, 3*4, 2*4, 7*4, 6*4, 9*4, 8*4, 13*4, 12*4, 11*4, 10*4, 15*4, 14*4 },
+		new int[] { 0*64, 1*64, 2*64, 3*64, 4*64, 5*64, 6*64, 7*64, 8*64, 9*64, 10*64, 11*64, 12*64, 13*64, 14*64, 15*64 },
 		128*8     /* every sprite takes 128 consecutive bytes */
-	};
+	);
 	
-	static struct GfxLayout pivlayout =
-	{
+	static GfxLayout pivlayout = new GfxLayout
+	(
 		8,8,    /* 8*8 characters */
 		RGN_FRAC(1,2),
 		6,      /* 4 bits per pixel */
-		{ RGN_FRAC(1,2), RGN_FRAC(1,2)+1, 0, 1, 2, 3 },
-		{ 2*4, 3*4, 0*4, 1*4, 6*4, 7*4, 4*4, 5*4 },
-		{ 0*32, 1*32, 2*32, 3*32, 4*32, 5*32, 6*32, 7*32 },
+		new int[] { RGN_FRAC(1,2), RGN_FRAC(1,2)+1, 0, 1, 2, 3 },
+		new int[] { 2*4, 3*4, 0*4, 1*4, 6*4, 7*4, 4*4, 5*4 },
+		new int[] { 0*32, 1*32, 2*32, 3*32, 4*32, 5*32, 6*32, 7*32 },
 		32*8    /* every sprite takes 32 consecutive bytes */
-	};
+	);
 	
 	static struct GfxDecodeInfo undrfire_gfxdecodeinfo[] =
 	{

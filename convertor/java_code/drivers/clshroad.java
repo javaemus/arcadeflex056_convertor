@@ -203,38 +203,38 @@ public class clshroad
 	
 	
 	
-	static struct GfxLayout layout_8x8x2 =
-	{
+	static GfxLayout layout_8x8x2 = new GfxLayout
+	(
 		8,8,
 		RGN_FRAC(1,1),
 		2,
-		{ 0, 4 },
-		{ STEP4(0,1), STEP4(8,1) },
-		{ STEP8(0,8*2) },
+		new int[] { 0, 4 },
+		new int[] { STEP4(0,1), STEP4(8,1) },
+		new int[] { STEP8(0,8*2) },
 		8*8*2
-	};
+	);
 	
-	static struct GfxLayout layout_8x8x4 =
-	{
+	static GfxLayout layout_8x8x4 = new GfxLayout
+	(
 		8,8,
 		RGN_FRAC(1,2),
 		4,
-		{ RGN_FRAC(1,2) + 0, RGN_FRAC(1,2) + 4, 0, 4 },
-		{ STEP4(0,1), STEP4(8,1) },
-		{ STEP8(0,8*2) },
+		new int[] { RGN_FRAC(1,2) + 0, RGN_FRAC(1,2) + 4, 0, 4 },
+		new int[] { STEP4(0,1), STEP4(8,1) },
+		new int[] { STEP8(0,8*2) },
 		8*8*2
-	};
+	);
 	
-	static struct GfxLayout layout_16x16x4 =
-	{
+	static GfxLayout layout_16x16x4 = new GfxLayout
+	(
 		16,16,
 		RGN_FRAC(1,2),
 		4,
-		{ RGN_FRAC(1,2) + 0, RGN_FRAC(1,2) + 4, 0, 4 },
-		{ STEP4(0,1), STEP4(8,1), STEP4(8*8*2+0,1), STEP4(8*8*2+8,1) },
-		{ STEP8(0,8*2), STEP8(8*8*2*2,8*2) },
+		new int[] { RGN_FRAC(1,2) + 0, RGN_FRAC(1,2) + 4, 0, 4 },
+		new int[] { STEP4(0,1), STEP4(8,1), STEP4(8*8*2+0,1), STEP4(8*8*2+8,1) },
+		new int[] { STEP8(0,8*2), STEP8(8*8*2*2,8*2) },
 		16*16*2
-	};
+	);
 	
 	static struct GfxDecodeInfo firebatl_gfxdecodeinfo[] =
 	{

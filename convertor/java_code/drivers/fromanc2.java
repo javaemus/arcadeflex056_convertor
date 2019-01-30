@@ -507,16 +507,16 @@ public class fromanc2
 	INPUT_PORTS_END
 	
 	
-	struct GfxLayout fromanc2_tilelayout =
-	{
+	static GfxLayout fromanc2_tilelayout = new GfxLayout
+	(
 		8, 8,
 		RGN_FRAC(1, 1),
 		4,
-		{ 0, 1, 2, 3 },
-		{ 4, 0, 12, 8, 20, 16, 28, 24 },
-		{ 0*32, 1*32, 2*32, 3*32, 4*32, 5*32, 6*32, 7*32 },
+		new int[] { 0, 1, 2, 3 },
+		new int[] { 4, 0, 12, 8, 20, 16, 28, 24 },
+		new int[] { 0*32, 1*32, 2*32, 3*32, 4*32, 5*32, 6*32, 7*32 },
 		32*8
-	};
+	);
 	
 	struct GfxDecodeInfo fromanc2_gfxdecodeinfo[] =
 	{
@@ -527,16 +527,16 @@ public class fromanc2
 		{ -1 } /* end of array */
 	};
 	
-	struct GfxLayout fromancr_tilelayout =
-	{
+	static GfxLayout fromancr_tilelayout = new GfxLayout
+	(
 		8, 8,
 		RGN_FRAC(1, 1),
 		8,
-		{ 0, 1, 2, 3, 4, 5, 6, 7 },
-		{ 1*8, 0*8, 3*8, 2*8, 5*8, 4*8, 7*8, 6*8 },
-		{ 0*64, 1*64, 2*64, 3*64, 4*64, 5*64, 6*64, 7*64 },
+		new int[] { 0, 1, 2, 3, 4, 5, 6, 7 },
+		new int[] { 1*8, 0*8, 3*8, 2*8, 5*8, 4*8, 7*8, 6*8 },
+		new int[] { 0*64, 1*64, 2*64, 3*64, 4*64, 5*64, 6*64, 7*64 },
 		64*8
-	};
+	);
 	
 	struct GfxDecodeInfo fromancr_gfxdecodeinfo[] =
 	{

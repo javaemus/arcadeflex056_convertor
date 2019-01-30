@@ -437,42 +437,42 @@ public class fuuki16
 	***************************************************************************/
 	
 	/* 8x8x4 */
-	static struct GfxLayout layout_8x8x4 =
-	{
+	static GfxLayout layout_8x8x4 = new GfxLayout
+	(
 		8,8,
 		RGN_FRAC(1,1),
 		4,
-		{ STEP4(0,1) },
-		{ 2*4,3*4,   0*4,1*4,   6*4,7*4, 4*4,5*4 },
-		{ STEP8(0,8*4) },
+		new int[] { STEP4(0,1) },
+		new int[] { 2*4,3*4,   0*4,1*4,   6*4,7*4, 4*4,5*4 },
+		new int[] { STEP8(0,8*4) },
 		8*8*4
-	};
+	);
 	
 	/* 16x16x4 */
-	static struct GfxLayout layout_16x16x4 =
-	{
+	static GfxLayout layout_16x16x4 = new GfxLayout
+	(
 		16,16,
 		RGN_FRAC(1,1),
 		4,
-		{ STEP4(0,1) },
-		{	2*4,3*4,   0*4,1*4,   6*4,7*4, 4*4,5*4,
+		new int[] { STEP4(0,1) },
+		new int[] {	2*4,3*4,   0*4,1*4,   6*4,7*4, 4*4,5*4,
 			10*4,11*4, 8*4,9*4, 14*4,15*4, 12*4,13*4	},
-		{ STEP16(0,16*4) },
+		new int[] { STEP16(0,16*4) },
 		16*16*4
-	};
+	);
 	
 	/* 16x16x8 */
-	static struct GfxLayout layout_16x16x8 =
-	{
+	static GfxLayout layout_16x16x8 = new GfxLayout
+	(
 		16,16,
 		RGN_FRAC(1,2),
 		8,
-		{ STEP4(RGN_FRAC(1,2),1), STEP4(0,1) },
-		{	2*4,3*4,   0*4,1*4,   6*4,7*4, 4*4,5*4,
+		new int[] { STEP4(RGN_FRAC(1,2),1), STEP4(0,1) },
+		new int[] {	2*4,3*4,   0*4,1*4,   6*4,7*4, 4*4,5*4,
 			10*4,11*4, 8*4,9*4, 14*4,15*4, 12*4,13*4	},
-		{ STEP16(0,16*4) },
+		new int[] { STEP16(0,16*4) },
 		16*16*4
-	};
+	);
 	
 	static struct GfxDecodeInfo fuuki16_gfxdecodeinfo[] =
 	{

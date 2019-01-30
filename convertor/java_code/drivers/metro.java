@@ -2921,63 +2921,63 @@ public class metro
 	
 	
 	/* 8x8x4 tiles */
-	static struct GfxLayout layout_8x8x4 =
-	{
+	static GfxLayout layout_8x8x4 = new GfxLayout
+	(
 		8,8,
 		RGN_FRAC(1,1),
 		4,
-		{ GFX_RAW },
-		{ 0 },		/* org displacement */
-		{ 4*8 },	/* line modulo */
+		new int[] { GFX_RAW },
+		new int[] { 0 },		/* org displacement */
+		new int[] { 4*8 },	/* line modulo */
 		32*8		/* char modulo */
-	};
+	);
 	
 	/* 8x8x8 tiles for later games */
-	static struct GfxLayout layout_8x8x8h =
-	{
+	static GfxLayout layout_8x8x8h = new GfxLayout
+	(
 		8,8,
 		RGN_FRAC(1,1),
 		8,
-		{ GFX_RAW },
-		{ 0 },		/* org displacement */
-		{ 8*8 },	/* line modulo */
+		new int[] { GFX_RAW },
+		new int[] { 0 },		/* org displacement */
+		new int[] { 8*8 },	/* line modulo */
 		32*8		/* char modulo (half char step) */
-	};
+	);
 	
 	/* 16x16x4 tiles for later games */
-	static struct GfxLayout layout_16x16x4q =
-	{
+	static GfxLayout layout_16x16x4q = new GfxLayout
+	(
 		16,16,
 		RGN_FRAC(1,1),
 		4,
-		{ GFX_RAW },
-		{ 0 },		/* org displacement */
-		{ 8*8 },	/* line modulo */
+		new int[] { GFX_RAW },
+		new int[] { 0 },		/* org displacement */
+		new int[] { 8*8 },	/* line modulo */
 		32*8		/* char modulo (quarter char step) */
-	};
+	);
 	
 	/* 16x16x8 tiles for later games */
-	static struct GfxLayout layout_16x16x8o =
-	{
+	static GfxLayout layout_16x16x8o = new GfxLayout
+	(
 		16,16,
 		RGN_FRAC(1,1),
 		8,
-		{ GFX_RAW },
-		{ 0 },		/* org displacement */
-		{ 16*8 },	/* line modulo */
+		new int[] { GFX_RAW },
+		new int[] { 0 },		/* org displacement */
+		new int[] { 16*8 },	/* line modulo */
 		32*8		/* char modulo (1/8th char step) */
-	};
+	);
 	
-	static struct GfxLayout layout_053936 =
-	{
+	static GfxLayout layout_053936 = new GfxLayout
+	(
 		8,8,
 		RGN_FRAC(1,1),
 		8,
-		{ 0, 1, 2, 3, 4, 5, 6, 7 },
-		{ 0*8, 1*8, 2*8, 3*8, 4*8, 5*8, 6*8, 7*8 },
-		{ 0*8*8, 1*8*8, 2*8*8, 3*8*8, 4*8*8, 5*8*8, 6*8*8, 7*8*8 },
+		new int[] { 0, 1, 2, 3, 4, 5, 6, 7 },
+		new int[] { 0*8, 1*8, 2*8, 3*8, 4*8, 5*8, 6*8, 7*8 },
+		new int[] { 0*8*8, 1*8*8, 2*8*8, 3*8*8, 4*8*8, 5*8*8, 6*8*8, 7*8*8 },
 		8*8*8
-	};
+	);
 	
 	static struct GfxDecodeInfo gfxdecodeinfo_14100[] =
 	{

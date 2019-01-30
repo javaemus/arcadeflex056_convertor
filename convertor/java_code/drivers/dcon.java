@@ -156,52 +156,52 @@ public class dcon
 	
 	/******************************************************************************/
 	
-	static struct GfxLayout dcon_charlayout =
-	{
+	static GfxLayout dcon_charlayout = new GfxLayout
+	(
 		8,8,		/* 8*8 characters */
 		4096,
 		4,			/* 4 bits per pixel */
-		{ 0,4,(0x10000*8)+0,0x10000*8+4,  },
-		{ 3,2,1,0, 11,10,9,8 ,8,9,10,11,0,1,2,3, },
-		{ 0*16, 1*16, 2*16, 3*16, 4*16, 5*16, 6*16, 7*16 },
+		new int[] { 0,4,(0x10000*8)+0,0x10000*8+4,  },
+		new int[] { 3,2,1,0, 11,10,9,8 ,8,9,10,11,0,1,2,3, },
+		new int[] { 0*16, 1*16, 2*16, 3*16, 4*16, 5*16, 6*16, 7*16 },
 		128
-	};
+	);
 	
-	static struct GfxLayout dcon_tilelayout =
-	{
+	static GfxLayout dcon_tilelayout = new GfxLayout
+	(
 		16,16,	/* 16*16 tiles */
 		4096,		/* 2048*4 tiles */
 		4,		/* 4 bits per pixel */
-		{ 8,12, 0,4 },
-		{
+		new int[] { 8,12, 0,4 },
+		new int[] {
 			3,2,1,0,19,18,17,16,
 			512+3,512+2,512+1,512+0,
 			512+11+8,512+10+8,512+9+8,512+8+8,
 		},
-		{
+		new int[] {
 			0*32, 1*32, 2*32, 3*32, 4*32, 5*32, 6*32, 7*32,
 			8*32, 9*32, 10*32, 11*32, 12*32, 13*32, 14*32, 15*32,
 		},
 		1024
-	};
+	);
 	
-	static struct GfxLayout dcon_spritelayout =
-	{
+	static GfxLayout dcon_spritelayout = new GfxLayout
+	(
 		16,16,	/* 16*16 tiles */
 		4096*4,		/* 2048*4 tiles */
 		4,		/* 4 bits per pixel */
-		{  8,12, 0,4 },
-		{
+		new int[] {  8,12, 0,4 },
+		new int[] {
 			3,2,1,0,19,18,17,16,
 			512+3,512+2,512+1,512+0,
 			512+11+8,512+10+8,512+9+8,512+8+8,
 		},
-		{
+		new int[] {
 			0*32, 1*32, 2*32, 3*32, 4*32, 5*32, 6*32, 7*32,
 			8*32, 9*32, 10*32, 11*32, 12*32, 13*32, 14*32, 15*32,
 		},
 		1024
-	};
+	);
 	
 	static struct GfxDecodeInfo dcon_gfxdecodeinfo[] =
 	{

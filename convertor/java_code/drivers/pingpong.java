@@ -161,31 +161,31 @@ public class pingpong
 	
 	
 	
-	static struct GfxLayout charlayout =
-	{
+	static GfxLayout charlayout = new GfxLayout
+	(
 		8,8,		/* 8*8 characters */
 		512,		/* 512 characters */
 		2,		/* 2 bits per pixel */
-		{ 4, 0 },	/* the bitplanes are packed in one nibble */
-		{ 3, 2, 1, 0, 8*8+3, 8*8+2, 8*8+1, 8*8+0 },	/* x bit */
-		{ 0*8, 1*8, 2*8, 3*8, 4*8, 5*8, 6*8, 7*8   },     /* y bit */
+		new int[] { 4, 0 },	/* the bitplanes are packed in one nibble */
+		new int[] { 3, 2, 1, 0, 8*8+3, 8*8+2, 8*8+1, 8*8+0 },	/* x bit */
+		new int[] { 0*8, 1*8, 2*8, 3*8, 4*8, 5*8, 6*8, 7*8   },     /* y bit */
 		16*8	/* every char takes 16 consecutive bytes */
-	};
+	);
 	
-	static struct GfxLayout spritelayout =
-	{
+	static GfxLayout spritelayout = new GfxLayout
+	(
 		16,16,		/* 16*16 sprites */
 		128,		/* 128 sprites */
 		2,		/* 2 bits per pixel */
-		{ 4, 0 },	/* the bitplanes are packed in one nibble */
-		{ 12*16+3,12*16+2,12*16+1,12*16+0,
+		new int[] { 4, 0 },	/* the bitplanes are packed in one nibble */
+		new int[] { 12*16+3,12*16+2,12*16+1,12*16+0,
 		   8*16+3, 8*16+2, 8*16+1, 8*16+0,
 		   4*16+3, 4*16+2, 4*16+1, 4*16+0,
 		        3,      2,      1,      0 },			/* x bit */
-		{  0*8,  1*8,  2*8,  3*8,  4*8,  5*8,  6*8,  7*8,
+		new int[] {  0*8,  1*8,  2*8,  3*8,  4*8,  5*8,  6*8,  7*8,
 		  32*8, 33*8, 34*8, 35*8, 36*8, 37*8, 38*8, 39*8  },    /* y bit */
 		64*8	/* every char takes 64 consecutive bytes */
-	};
+	);
 	
 	static struct GfxDecodeInfo gfxdecodeinfo[] =
 	{

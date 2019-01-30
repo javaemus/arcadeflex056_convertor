@@ -3398,39 +3398,39 @@ public class cps1
 	
 	
 	
-	static struct GfxLayout layout8x8 =
-	{
+	static GfxLayout layout8x8 = new GfxLayout
+	(
 		8,8,
 		RGN_FRAC(1,1),
 		4,
-		{ GFX_RAW },
-		{ 4*8 },	/* org displacement - 8x8 tiles are taken from the RIGHT side of the 16x16 tile
+		new int[] { GFX_RAW },
+		new int[] { 4*8 },	/* org displacement - 8x8 tiles are taken from the RIGHT side of the 16x16 tile
 					   (fixes cawing which uses character 0x0002 as space, typo instead of 0x20?) */
 		{ 8*8 },	/* line modulo */
 		64*8		/* char modulo */
-	};
+	);
 	
-	static struct GfxLayout layout16x16 =
-	{
+	static GfxLayout layout16x16 = new GfxLayout
+	(
 		16,16,
 		RGN_FRAC(1,1),
 		4,
-		{ GFX_RAW },
-		{ 0 },		/* org displacement */
-		{ 8*8 },	/* line modulo */
+		new int[] { GFX_RAW },
+		new int[] { 0 },		/* org displacement */
+		new int[] { 8*8 },	/* line modulo */
 		128*8		/* char modulo */
-	};
+	);
 	
-	static struct GfxLayout layout32x32 =
-	{
+	static GfxLayout layout32x32 = new GfxLayout
+	(
 		32,32,
 		RGN_FRAC(1,1),
 		4,
-		{ GFX_RAW },
-		{ 0 },		/* org displacement */
-		{ 16*8 },	/* line modulo */
+		new int[] { GFX_RAW },
+		new int[] { 0 },		/* org displacement */
+		new int[] { 16*8 },	/* line modulo */
 		512*8		/* char modulo */
-	};
+	);
 	
 	static struct GfxDecodeInfo gfxdecodeinfo[] =
 	{

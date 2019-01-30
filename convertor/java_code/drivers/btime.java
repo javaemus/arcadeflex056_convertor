@@ -1153,79 +1153,79 @@ public class btime
 	INPUT_PORTS_END
 	
 	
-	static struct GfxLayout charlayout =
-	{
+	static GfxLayout charlayout = new GfxLayout
+	(
 		8,8,    /* 8*8 characters */
 		1024,   /* 1024 characters */
 		3,      /* 3 bits per pixel */
-		{ 2*1024*8*8, 1024*8*8, 0 },    /* the bitplanes are separated */
-		{ 0, 1, 2, 3, 4, 5, 6, 7 },
-		{ 0*8, 1*8, 2*8, 3*8, 4*8, 5*8, 6*8, 7*8 },
+		new int[] { 2*1024*8*8, 1024*8*8, 0 },    /* the bitplanes are separated */
+		new int[] { 0, 1, 2, 3, 4, 5, 6, 7 },
+		new int[] { 0*8, 1*8, 2*8, 3*8, 4*8, 5*8, 6*8, 7*8 },
 		8*8     /* every char takes 8 consecutive bytes */
-	};
+	);
 	
-	static struct GfxLayout spritelayout =
-	{
+	static GfxLayout spritelayout = new GfxLayout
+	(
 		16,16,  /* 16*16 sprites */
 		256,    /* 256 sprites */
 		3,      /* 3 bits per pixel */
-		{ 2*256*16*16, 256*16*16, 0 },  /* the bitplanes are separated */
-		{ 16*8+0, 16*8+1, 16*8+2, 16*8+3, 16*8+4, 16*8+5, 16*8+6, 16*8+7,
+		new int[] { 2*256*16*16, 256*16*16, 0 },  /* the bitplanes are separated */
+		new int[] { 16*8+0, 16*8+1, 16*8+2, 16*8+3, 16*8+4, 16*8+5, 16*8+6, 16*8+7,
 		  0, 1, 2, 3, 4, 5, 6, 7 },
-		{ 0*8, 1*8, 2*8, 3*8, 4*8, 5*8, 6*8, 7*8,
+		new int[] { 0*8, 1*8, 2*8, 3*8, 4*8, 5*8, 6*8, 7*8,
 		  8*8, 9*8, 10*8, 11*8, 12*8, 13*8, 14*8, 15*8 },
 		32*8    /* every sprite takes 32 consecutive bytes */
-	};
+	);
 	
-	static struct GfxLayout zoar_spritelayout =
-	{
+	static GfxLayout zoar_spritelayout = new GfxLayout
+	(
 		16,16,  /* 16*16 sprites */
 		128,    /* 256 sprites */
 		3,      /* 3 bits per pixel */
-		{ 2*128*16*16, 128*16*16, 0 },  /* the bitplanes are separated */
-		{ 16*8+0, 16*8+1, 16*8+2, 16*8+3, 16*8+4, 16*8+5, 16*8+6, 16*8+7,
+		new int[] { 2*128*16*16, 128*16*16, 0 },  /* the bitplanes are separated */
+		new int[] { 16*8+0, 16*8+1, 16*8+2, 16*8+3, 16*8+4, 16*8+5, 16*8+6, 16*8+7,
 		  0, 1, 2, 3, 4, 5, 6, 7 },
-		{ 0*8, 1*8, 2*8, 3*8, 4*8, 5*8, 6*8, 7*8,
+		new int[] { 0*8, 1*8, 2*8, 3*8, 4*8, 5*8, 6*8, 7*8,
 		  8*8, 9*8, 10*8, 11*8, 12*8, 13*8, 14*8, 15*8 },
 		32*8    /* every sprite takes 32 consecutive bytes */
-	};
+	);
 	
-	static struct GfxLayout btime_tilelayout =
-	{
+	static GfxLayout btime_tilelayout = new GfxLayout
+	(
 		16,16,  /* 16*16 characters */
 		64,    /* 64 characters */
 		3,      /* 3 bits per pixel */
-		{  2*64*16*16, 64*16*16, 0 },    /* the bitplanes are separated */
-		{ 16*8+0, 16*8+1, 16*8+2, 16*8+3, 16*8+4, 16*8+5, 16*8+6, 16*8+7,
+		new int[] {  2*64*16*16, 64*16*16, 0 },    /* the bitplanes are separated */
+		new int[] { 16*8+0, 16*8+1, 16*8+2, 16*8+3, 16*8+4, 16*8+5, 16*8+6, 16*8+7,
 		  0, 1, 2, 3, 4, 5, 6, 7 },
-		{ 0*8, 1*8, 2*8, 3*8, 4*8, 5*8, 6*8, 7*8,
+		new int[] { 0*8, 1*8, 2*8, 3*8, 4*8, 5*8, 6*8, 7*8,
 		  8*8, 9*8, 10*8, 11*8, 12*8, 13*8, 14*8, 15*8 },
 		32*8    /* every tile takes 32 consecutive bytes */
-	};
+	);
 	
-	static struct GfxLayout cookrace_tilelayout =
-	{
+	static GfxLayout cookrace_tilelayout = new GfxLayout
+	(
 		8,8,  /* 8*8 characters */
 		256,    /* 256 characters */
 		3,      /* 3 bits per pixel */
-		{  2*256*8*8, 256*8*8, 0 },    /* the bitplanes are separated */
-		{ 0, 1, 2, 3, 4, 5, 6, 7 },
-		{ 0*8, 1*8, 2*8, 3*8, 4*8, 5*8, 6*8, 7*8 },
+		new int[] {  2*256*8*8, 256*8*8, 0 },    /* the bitplanes are separated */
+		new int[] { 0, 1, 2, 3, 4, 5, 6, 7 },
+		new int[] { 0*8, 1*8, 2*8, 3*8, 4*8, 5*8, 6*8, 7*8 },
 		8*8    /* every tile takes 8 consecutive bytes */
-	};
+	);
 	
-	static struct GfxLayout bnj_tilelayout =
-	{
+	static GfxLayout bnj_tilelayout = new GfxLayout
+	(
 		16,16,  /* 16*16 characters */
 		64, /* 64 characters */
 		3,  /* 3 bits per pixel */
-		{ 2*64*16*16+4, 0, 4 },
-		{ 3*16*8+0, 3*16*8+1, 3*16*8+2, 3*16*8+3, 2*16*8+0, 2*16*8+1, 2*16*8+2, 2*16*8+3,
+		new int[] { 2*64*16*16+4, 0, 4 },
+		new int[] { 3*16*8+0, 3*16*8+1, 3*16*8+2, 3*16*8+3, 2*16*8+0, 2*16*8+1, 2*16*8+2, 2*16*8+3,
 		  16*8+0, 16*8+1, 16*8+2, 16*8+3, 0, 1, 2, 3 },
-		{ 0*8, 1*8, 2*8, 3*8, 4*8, 5*8, 6*8, 7*8,
+		new int[] { 0*8, 1*8, 2*8, 3*8, 4*8, 5*8, 6*8, 7*8,
 		  8*8, 9*8, 10*8, 11*8, 12*8, 13*8, 14*8, 15*8 },
 		64*8    /* every tile takes 64 consecutive bytes */
-	};
+	);
 	
 	static struct GfxDecodeInfo btime_gfxdecodeinfo[] =
 	{

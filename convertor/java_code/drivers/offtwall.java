@@ -388,16 +388,16 @@ public class offtwall
 	 *
 	 *************************************/
 	
-	static struct GfxLayout pfmolayout =
-	{
+	static GfxLayout pfmolayout = new GfxLayout
+	(
 		8,8,
 		RGN_FRAC(1,2),
 		4,
-		{ RGN_FRAC(1,2)+0, RGN_FRAC(1,2)+4, 0, 4 },
-		{ 0, 1, 2, 3, 8, 9, 10, 11 },
-		{ 0*8, 2*8, 4*8, 6*8, 8*8, 10*8, 12*8, 14*8 },
+		new int[] { RGN_FRAC(1,2)+0, RGN_FRAC(1,2)+4, 0, 4 },
+		new int[] { 0, 1, 2, 3, 8, 9, 10, 11 },
+		new int[] { 0*8, 2*8, 4*8, 6*8, 8*8, 10*8, 12*8, 14*8 },
 		16*8
-	};
+	);
 	
 	
 	static struct GfxDecodeInfo gfxdecodeinfo[] =

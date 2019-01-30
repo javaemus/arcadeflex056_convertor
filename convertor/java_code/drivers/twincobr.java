@@ -628,43 +628,43 @@ public class twincobr
 	INPUT_PORTS_END
 	
 	
-	static struct GfxLayout charlayout =
-	{
+	static GfxLayout charlayout = new GfxLayout
+	(
 		8,8,	/* 8*8 characters */
 		2048,	/* 2048 characters */
 		3,		/* 3 bits per pixel */
-		{ 0*2048*8*8, 1*2048*8*8, 2*2048*8*8 },
-		{ 0, 1, 2, 3, 4, 5, 6, 7 },
-		{ 0*8, 1*8, 2*8, 3*8, 4*8, 5*8, 6*8, 7*8 },
+		new int[] { 0*2048*8*8, 1*2048*8*8, 2*2048*8*8 },
+		new int[] { 0, 1, 2, 3, 4, 5, 6, 7 },
+		new int[] { 0*8, 1*8, 2*8, 3*8, 4*8, 5*8, 6*8, 7*8 },
 		8*8		/* every char takes 8 consecutive bytes */
-	};
+	);
 	
-	#define TILELAYOUT(NUM) static struct GfxLayout tilelayout_##NUM =  \
-	{																	\
+	#define TILELAYOUT(NUM) static GfxLayout tilelayout_##NUM = new GfxLayout\
+	(																	\
 		8,8,	/* 8*8 tiles */											\
 		NUM,	/* NUM (4096/8192) tiles */								\
 		4,		/* 4 bits per pixel */									\
-		{ 0*NUM*8*8, 1*NUM*8*8, 2*NUM*8*8, 3*NUM*8*8 },					\
-		{ 0, 1, 2, 3, 4, 5, 6, 7 },										\
-		{ 0*8, 1*8, 2*8, 3*8, 4*8, 5*8, 6*8, 7*8 },						\
+		new int[] { 0*NUM*8*8, 1*NUM*8*8, 2*NUM*8*8, 3*NUM*8*8 },					\
+		new int[] { 0, 1, 2, 3, 4, 5, 6, 7 },										\
+		new int[] { 0*8, 1*8, 2*8, 3*8, 4*8, 5*8, 6*8, 7*8 },						\
 		8*8		/* every tile takes 8 consecutive bytes */				\
-	}
+	)
 	
 	TILELAYOUT(4096);
 	TILELAYOUT(8192);
 	
 	
-	static struct GfxLayout spritelayout =
-	{
+	static GfxLayout spritelayout = new GfxLayout
+	(
 		16,16,	/* 16*16 sprites */
 		2048,	/* 2048 sprites */
 		4,		/* 4 bits per pixel */
-		{ 0*2048*32*8, 1*2048*32*8, 2*2048*32*8, 3*2048*32*8 },
-		{ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15 },
-		{ 0*16, 1*16, 2*16, 3*16, 4*16, 5*16, 6*16, 7*16,
+		new int[] { 0*2048*32*8, 1*2048*32*8, 2*2048*32*8, 3*2048*32*8 },
+		new int[] { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15 },
+		new int[] { 0*16, 1*16, 2*16, 3*16, 4*16, 5*16, 6*16, 7*16,
 				8*16, 9*16, 10*16, 11*16, 12*16, 13*16, 14*16, 15*16 },
 		32*8	/* every sprite takes 32 consecutive bytes */
-	};
+	);
 	
 	static struct GfxDecodeInfo gfxdecodeinfo[] =
 	{

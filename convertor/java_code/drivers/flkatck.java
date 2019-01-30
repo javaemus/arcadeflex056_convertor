@@ -255,16 +255,16 @@ public class flkatck
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNUSED )
 	INPUT_PORTS_END
 	
-	static struct GfxLayout gfxlayout =
-	{
+	static GfxLayout gfxlayout = new GfxLayout
+	(
 		8,8,
 		0x80000/32,
 		4,
-		{ 0, 1, 2, 3 },
-		{ 2*4, 3*4, 0*4, 1*4, 6*4, 7*4, 4*4, 5*4 },
-		{ 0*32, 1*32, 2*32, 3*32, 4*32, 5*32, 6*32, 7*32 },
+		new int[] { 0, 1, 2, 3 },
+		new int[] { 2*4, 3*4, 0*4, 1*4, 6*4, 7*4, 4*4, 5*4 },
+		new int[] { 0*32, 1*32, 2*32, 3*32, 4*32, 5*32, 6*32, 7*32 },
 		32*8
-	};
+	);
 	
 	static struct GfxDecodeInfo gfxdecodeinfo[] =
 	{

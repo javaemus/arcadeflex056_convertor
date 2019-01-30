@@ -1263,39 +1263,39 @@ public class gottlieb
 	
 	/* the games can store char gfx data in either a 4k RAM area (128 chars), or */
 	/* a 8k ROM area (256 chars). */
-	static struct GfxLayout charRAMlayout =
-	{
+	static GfxLayout charRAMlayout = new GfxLayout
+	(
 		8,8,    /* 8*8 characters */
 		128,    /* 128 characters */
 		4,      /* 4 bits per pixel */
-		{ 0, 1, 2, 3 },
-		{ 0, 4, 8, 12, 16, 20, 24, 28},
-		{ 0*32, 1*32, 2*32, 3*32, 4*32, 5*32, 6*32, 7*32 },
+		new int[] { 0, 1, 2, 3 },
+		new int[] { 0, 4, 8, 12, 16, 20, 24, 28},
+		new int[] { 0*32, 1*32, 2*32, 3*32, 4*32, 5*32, 6*32, 7*32 },
 		32*8    /* every char takes 32 consecutive bytes */
-	};
+	);
 	
-	static struct GfxLayout charROMlayout =
-	{
+	static GfxLayout charROMlayout = new GfxLayout
+	(
 		8,8,    /* 8*8 characters */
 		256,    /* 256 characters */
 		4,      /* 4 bits per pixel */
-		{ 0, 1, 2, 3 },
-		{ 0, 4, 8, 12, 16, 20, 24, 28},
-		{ 0*32, 1*32, 2*32, 3*32, 4*32, 5*32, 6*32, 7*32 },
+		new int[] { 0, 1, 2, 3 },
+		new int[] { 0, 4, 8, 12, 16, 20, 24, 28},
+		new int[] { 0*32, 1*32, 2*32, 3*32, 4*32, 5*32, 6*32, 7*32 },
 		32*8    /* every char takes 32 consecutive bytes */
-	};
+	);
 	
-	static struct GfxLayout spritelayout =
-	{
+	static GfxLayout spritelayout = new GfxLayout
+	(
 		16,16,
 		RGN_FRAC(1,4),
 		4,      /* 4 bits per pixel */
-		{ RGN_FRAC(0,4), RGN_FRAC(1,4), RGN_FRAC(2,4), RGN_FRAC(3,4) },
-		{ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15 },
-		{ 0*16, 1*16, 2*16, 3*16, 4*16, 5*16, 6*16, 7*16,
+		new int[] { RGN_FRAC(0,4), RGN_FRAC(1,4), RGN_FRAC(2,4), RGN_FRAC(3,4) },
+		new int[] { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15 },
+		new int[] { 0*16, 1*16, 2*16, 3*16, 4*16, 5*16, 6*16, 7*16,
 				8*16, 9*16, 10*16, 11*16, 12*16, 13*16, 14*16, 15*16 },
 		32*8
-	};
+	);
 	
 	static struct GfxDecodeInfo charRAM_gfxdecodeinfo[] =
 	{

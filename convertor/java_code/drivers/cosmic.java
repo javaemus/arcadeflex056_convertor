@@ -1018,76 +1018,76 @@ public class cosmic
 	INPUT_PORTS_END
 	
 	
-	static struct GfxLayout panic_spritelayout0 =
-	{
+	static GfxLayout panic_spritelayout0 = new GfxLayout
+	(
 		16,16,	/* 16*16 sprites */
 		48 ,	/* 64 sprites */
 		2,	    /* 2 bits per pixel */
-		{ 4096*8, 0 },	/* the two bitplanes are separated */
-		{ 0,1,2,3,4,5,6,7,16*8+0,16*8+1,16*8+2,16*8+3,16*8+4,16*8+5,16*8+6,16*8+7 },
-	   	{ 15*8, 14*8, 13*8, 12*8, 11*8, 10*8, 9*8, 8*8, 7*8, 6*8, 5*8, 4*8, 3*8, 2*8, 1*8, 0*8 },
+		new int[] { 4096*8, 0 },	/* the two bitplanes are separated */
+		new int[] { 0,1,2,3,4,5,6,7,16*8+0,16*8+1,16*8+2,16*8+3,16*8+4,16*8+5,16*8+6,16*8+7 },
+	   	new int[] { 15*8, 14*8, 13*8, 12*8, 11*8, 10*8, 9*8, 8*8, 7*8, 6*8, 5*8, 4*8, 3*8, 2*8, 1*8, 0*8 },
 		32*8	/* every sprite takes 32 consecutive bytes */
-	};
+	);
 	
-	static struct GfxLayout panic_spritelayout1 =
-	{
+	static GfxLayout panic_spritelayout1 = new GfxLayout
+	(
 		16,16,	/* 16*16 sprites */
 		16 ,	/* 16 sprites */
 		2,	    /* 2 bits per pixel */
-		{ 4096*8, 0 },	/* the two bitplanes are separated */
-		{ 0,1,2,3,4,5,6,7,16*8+0,16*8+1,16*8+2,16*8+3,16*8+4,16*8+5,16*8+6,16*8+7 },
-	  	{ 15*8, 14*8, 13*8, 12*8, 11*8, 10*8, 9*8, 8*8, 7*8, 6*8, 5*8, 4*8, 3*8, 2*8, 1*8, 0*8 },
+		new int[] { 4096*8, 0 },	/* the two bitplanes are separated */
+		new int[] { 0,1,2,3,4,5,6,7,16*8+0,16*8+1,16*8+2,16*8+3,16*8+4,16*8+5,16*8+6,16*8+7 },
+	  	new int[] { 15*8, 14*8, 13*8, 12*8, 11*8, 10*8, 9*8, 8*8, 7*8, 6*8, 5*8, 4*8, 3*8, 2*8, 1*8, 0*8 },
 		32*8	/* every sprite takes 32 consecutive bytes */
-	};
+	);
 	
-	static struct GfxLayout cosmica_spritelayout16 =
-	{
+	static GfxLayout cosmica_spritelayout16 = new GfxLayout
+	(
 		16,16,				/* 16*16 sprites */
 		64,					/* 64 sprites */
 		2,					/* 2 bits per pixel */
-		{ 64*16*16, 0 },	/* the two bitplanes are separated */
-		{ 0,1,2,3,4,5,6,7,16*8+0,16*8+1,16*8+2,16*8+3,16*8+4,16*8+5,16*8+6,16*8+7},
-		{ 0*8, 1*8, 2*8, 3*8, 4*8, 5*8, 6*8, 7*8, 8*8, 9*8, 10*8, 11*8, 12*8, 13*8, 14*8, 15*8 },
+		new int[] { 64*16*16, 0 },	/* the two bitplanes are separated */
+		new int[] { 0,1,2,3,4,5,6,7,16*8+0,16*8+1,16*8+2,16*8+3,16*8+4,16*8+5,16*8+6,16*8+7},
+		new int[] { 0*8, 1*8, 2*8, 3*8, 4*8, 5*8, 6*8, 7*8, 8*8, 9*8, 10*8, 11*8, 12*8, 13*8, 14*8, 15*8 },
 		32*8				/* every sprite takes 32 consecutive bytes */
-	};
+	);
 	
-	static struct GfxLayout cosmica_spritelayout32 =
-	{
+	static GfxLayout cosmica_spritelayout32 = new GfxLayout
+	(
 		32,32,				/* 32*32 sprites */
 		16,					/* 16 sprites */
 		2,					/* 2 bits per pixel */
-		{ 64*16*16, 0 },	/* the two bitplanes are separated */
-		{ 0,1,2,3,4,5,6,7,
+		new int[] { 64*16*16, 0 },	/* the two bitplanes are separated */
+		new int[] { 0,1,2,3,4,5,6,7,
 		  32*8+0, 32*8+1, 32*8+2, 32*8+3, 32*8+4, 32*8+5, 32*8+6, 32*8+7,
 		  64*8+0, 64*8+1, 64*8+2, 64*8+3, 64*8+4, 64*8+5, 64*8+6, 64*8+7,
 	  	  96*8+0, 96*8+1, 96*8+2, 96*8+3, 96*8+4, 96*8+5, 96*8+6, 96*8+7 },
-		{ 0*8, 1*8, 2*8, 3*8, 4*8, 5*8, 6*8, 7*8, 8*8, 9*8, 10*8, 11*8, 12*8, 13*8, 14*8, 15*8, 16*8, 17*8,18*8,19*8,20*8,21*8,22*8,23*8,24*8,25*8,26*8,27*8,28*8,29*8,30*8,31*8 },
+		new int[] { 0*8, 1*8, 2*8, 3*8, 4*8, 5*8, 6*8, 7*8, 8*8, 9*8, 10*8, 11*8, 12*8, 13*8, 14*8, 15*8, 16*8, 17*8,18*8,19*8,20*8,21*8,22*8,23*8,24*8,25*8,26*8,27*8,28*8,29*8,30*8,31*8 },
 		128*8				/* every sprite takes 128 consecutive bytes */
-	};
+	);
 	
-	static struct GfxLayout nomnlnd_treelayout =
-	{
+	static GfxLayout nomnlnd_treelayout = new GfxLayout
+	(
 		32,32,				/* 32*32 sprites */
 		4,					/* 4 sprites */
 		2,					/* 2 bits per pixel */
-		{ 0, 8*128*8 },	/* the two bitplanes are separated */
-		{ 0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31 },
-		{ 0*32, 1*32, 2*32, 3*32, 4*32, 5*32, 6*32, 7*32, 8*32, 9*32, 10*32, 11*32, 12*32, 13*32, 14*32, 15*32,
+		new int[] { 0, 8*128*8 },	/* the two bitplanes are separated */
+		new int[] { 0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31 },
+		new int[] { 0*32, 1*32, 2*32, 3*32, 4*32, 5*32, 6*32, 7*32, 8*32, 9*32, 10*32, 11*32, 12*32, 13*32, 14*32, 15*32,
 		 16*32, 17*32, 18*32, 19*32, 20*32, 21*32, 22*32, 23*32, 24*32, 25*32, 26*32, 27*32, 28*32, 29*32, 30*32, 31*32 },
 		128*8				/* every sprite takes 128 consecutive bytes */
-	};
+	);
 	
-	static struct GfxLayout nomnlnd_waterlayout =
-	{
+	static GfxLayout nomnlnd_waterlayout = new GfxLayout
+	(
 		16,32,				/* 16*32 sprites */
 		32,					/* 32 sprites */
 		2,					/* 2 bits per pixel */
-		{ 0, 8*128*8 },	/* the two bitplanes are separated */
-		{ 0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15 },
-		{ 0*32, 1*32, 2*32, 3*32, 4*32, 5*32, 6*32, 7*32, 8*32, 9*32, 10*32, 11*32, 12*32, 13*32, 14*32, 15*32,
+		new int[] { 0, 8*128*8 },	/* the two bitplanes are separated */
+		new int[] { 0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15 },
+		new int[] { 0*32, 1*32, 2*32, 3*32, 4*32, 5*32, 6*32, 7*32, 8*32, 9*32, 10*32, 11*32, 12*32, 13*32, 14*32, 15*32,
 		 16*32, 17*32, 18*32, 19*32, 20*32, 21*32, 22*32, 23*32, 24*32, 25*32, 26*32, 27*32, 28*32, 29*32, 30*32, 31*32 },
 		32 				/* To create a set of sprites 1 pixel displaced */
-	};
+	);
 	
 	static struct GfxDecodeInfo panic_gfxdecodeinfo[] =
 	{

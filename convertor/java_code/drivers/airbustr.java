@@ -675,18 +675,18 @@ public class airbustr
 	/* displacement in bits to lower part of gfx */
 	#define lo (8*8*4*2)
 	#define layout16x16(_name_,_romsize_) \
-	static struct GfxLayout _name_ =\
-	{\
+	static GfxLayout _name_ = new GfxLayout\
+	(\
 		16,16,\
 		(_romsize_)*8/(16*16*4),\
 		4,\
-		{0, 1, 2, 3},\
-		{0*4,1*4,2*4,3*4,4*4,5*4,6*4,7*4, \
+		new int[] {0, 1, 2, 3},\
+		new int[] {0*4,1*4,2*4,3*4,4*4,5*4,6*4,7*4, \
 		 0*4+32*8,1*4+32*8,2*4+32*8,3*4+32*8,4*4+32*8,5*4+32*8,6*4+32*8,7*4+32*8},\
-		{0*32,1*32,2*32,3*32,4*32,5*32,6*32,7*32,\
+		new int[] {0*32,1*32,2*32,3*32,4*32,5*32,6*32,7*32,\
 		 0*32+lo,1*32+lo,2*32+lo,3*32+lo,4*32+lo,5*32+lo,6*32+lo,7*32+lo}, \
 		16*16*4\
-	};
+	);
 	
 	layout16x16(tilelayout,  0x080000)
 	layout16x16(spritelayout,0x100000)

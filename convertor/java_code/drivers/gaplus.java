@@ -375,66 +375,66 @@ public class gaplus
 		PORT_BIT( 0x80, IP_ACTIVE_HIGH, IPT_JOYSTICK_LEFT  | IPF_8WAY | IPF_PLAYER2 )
 	INPUT_PORTS_END
 	
-	static struct GfxLayout charlayout1 =
-	{
+	static GfxLayout charlayout1 = new GfxLayout
+	(
 		8,8,											/* 8*8 characters */
 		256,											/* 256 characters */
 		2,											  	/* 2 bits per pixel */
-		{ 4, 6 },				 						/* the 2 bitplanes are packed into one nibble */
-		{ 16*8, 16*8+1, 24*8, 24*8+1, 0, 1, 8*8, 8*8+1 },
-		{ 0*8, 1*8, 2*8, 3*8, 4*8, 5*8, 6*8, 7*8 },
+		new int[] { 4, 6 },				 						/* the 2 bitplanes are packed into one nibble */
+		new int[] { 16*8, 16*8+1, 24*8, 24*8+1, 0, 1, 8*8, 8*8+1 },
+		new int[] { 0*8, 1*8, 2*8, 3*8, 4*8, 5*8, 6*8, 7*8 },
 		32*8
-	};
+	);
 	
-	static struct GfxLayout charlayout2 =
-	{
+	static GfxLayout charlayout2 = new GfxLayout
+	(
 		8,8,											/* 8*8 characters */
 		256,											/* 256 characters */
 		2,												/* 2 bits per pixel */
-		{ 0, 2 },										/* the 2 bitplanes are packed into one nibble */
-		{ 16*8, 16*8+1, 24*8, 24*8+1, 0, 1, 8*8, 8*8+1 },
-		{ 0*8, 1*8, 2*8, 3*8, 4*8, 5*8, 6*8, 7*8 },
+		new int[] { 0, 2 },										/* the 2 bitplanes are packed into one nibble */
+		new int[] { 16*8, 16*8+1, 24*8, 24*8+1, 0, 1, 8*8, 8*8+1 },
+		new int[] { 0*8, 1*8, 2*8, 3*8, 4*8, 5*8, 6*8, 7*8 },
 		32*8
-	};
+	);
 	
-	static struct GfxLayout spritelayout1 =
-	{
+	static GfxLayout spritelayout1 = new GfxLayout
+	(
 		16,16,			/* 16*16 sprites */
 		128,			/* 128 sprites */
 		3,				/* 3 bits per pixel */
-		{ 0, 8192*8+0, 8192*8+4 },
-		{ 0, 1, 2, 3, 8*8, 8*8+1, 8*8+2, 8*8+3,
+		new int[] { 0, 8192*8+0, 8192*8+4 },
+		new int[] { 0, 1, 2, 3, 8*8, 8*8+1, 8*8+2, 8*8+3,
 		  16*8+0, 16*8+1, 16*8+2, 16*8+3, 24*8+0, 24*8+1, 24*8+2, 24*8+3 },
-		{ 0*8, 1*8, 2*8, 3*8, 4*8, 5*8, 6*8, 7*8,
+		new int[] { 0*8, 1*8, 2*8, 3*8, 4*8, 5*8, 6*8, 7*8,
 		  32*8, 33*8, 34*8, 35*8, 36*8, 37*8, 38*8, 39*8 },
 		64*8		   /* every sprite takes 64 bytes */
-	};
+	);
 	
 	
-	static struct GfxLayout spritelayout2 =
-	{
+	static GfxLayout spritelayout2 = new GfxLayout
+	(
 		16,16,			/* 16*16 sprites */
 		128,			/* 128 sprites */
 		3,				/* 3 bits per pixel */
-		{ 4, 8192*8*2+0, 8192*8*2+4 },
-		{ 0, 1, 2, 3, 8*8, 8*8+1, 8*8+2, 8*8+3,
+		new int[] { 4, 8192*8*2+0, 8192*8*2+4 },
+		new int[] { 0, 1, 2, 3, 8*8, 8*8+1, 8*8+2, 8*8+3,
 		  16*8+0, 16*8+1, 16*8+2, 16*8+3, 24*8+0, 24*8+1, 24*8+2, 24*8+3 },
-		{ 0*8, 1*8, 2*8, 3*8, 4*8, 5*8, 6*8, 7*8,
+		new int[] { 0*8, 1*8, 2*8, 3*8, 4*8, 5*8, 6*8, 7*8,
 		  32*8, 33*8, 34*8, 35*8, 36*8, 37*8, 38*8, 39*8 },
 		64*8		   /* every sprite takes 64 bytes */
-	};
+	);
 	
-	static struct GfxLayout spritelayout3 = {
+	static GfxLayout spritelayout3 = new GfxLayout(
 		16,16,										   /* 16*16 sprites */
 		128,										   /* 128 sprites */
 		3,											   /* 3 bits per pixel (one is always 0) */
-		{ 8192*8+0, 0, 4 },							   /* the two bitplanes are packed into one byte */
-		{ 0, 1, 2, 3, 8*8, 8*8+1, 8*8+2, 8*8+3,
+		new int[] { 8192*8+0, 0, 4 },							   /* the two bitplanes are packed into one byte */
+		new int[] { 0, 1, 2, 3, 8*8, 8*8+1, 8*8+2, 8*8+3,
 			16*8+0, 16*8+1, 16*8+2, 16*8+3, 24*8+0, 24*8+1, 24*8+2, 24*8+3 },
-		{ 0*8, 1*8, 2*8, 3*8, 4*8, 5*8, 6*8, 7*8,
+		new int[] { 0*8, 1*8, 2*8, 3*8, 4*8, 5*8, 6*8, 7*8,
 		  32*8, 33*8, 34*8, 35*8, 36*8, 37*8, 38*8, 39*8 },
 		64*8											/* every sprite takes 64 bytes */
-	};
+	);
 	
 	static struct GfxDecodeInfo gfxdecodeinfo[] =
 	{

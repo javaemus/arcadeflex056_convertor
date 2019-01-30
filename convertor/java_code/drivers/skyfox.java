@@ -217,16 +217,16 @@ public class skyfox
 	   we cut them in 8x8x8 ones in the init function, in order to
 	   support 8x8, 16x16 and 32x32 sprites. */
 	
-	static struct GfxLayout layout_8x8x8 =
-	{
+	static GfxLayout layout_8x8x8 = new GfxLayout
+	(
 		8,8,
 		RGN_FRAC(1,1),
 		8,
-		{0,1,2,3,4,5,6,7},
-		{0*8,1*8,2*8,3*8,4*8,5*8,6*8,7*8},
-		{0*64,1*64,2*64,3*64,4*64,5*64,6*64,7*64},
+		new int[] {0,1,2,3,4,5,6,7},
+		new int[] {0*8,1*8,2*8,3*8,4*8,5*8,6*8,7*8},
+		new int[] {0*64,1*64,2*64,3*64,4*64,5*64,6*64,7*64},
 		8*8*8
-	};
+	);
 	
 	/***************************************************************************
 									Sky Fox

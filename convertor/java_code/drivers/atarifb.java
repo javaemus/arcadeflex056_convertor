@@ -554,62 +554,62 @@ public class atarifb
 	
 	
 	
-	static struct GfxLayout charlayout =
-	{
+	static GfxLayout charlayout = new GfxLayout
+	(
 		8,8,	/* 8*8 characters */
 		64, 	/* 64 characters */
 		1,		/* 1 bit per pixel */
-		{ 0 },	/* no separation in 1 bpp */
-		{ 15, 14, 13, 12, 7, 6, 5, 4 },
-		{ 0*16, 1*16, 2*16, 3*16, 4*16, 5*16, 6*16, 7*16 },
+		new int[] { 0 },	/* no separation in 1 bpp */
+		new int[] { 15, 14, 13, 12, 7, 6, 5, 4 },
+		new int[] { 0*16, 1*16, 2*16, 3*16, 4*16, 5*16, 6*16, 7*16 },
 		16*8	/* every char takes 16 consecutive bytes */
-	};
+	);
 	
-	static struct GfxLayout fieldlayout =
-	{
+	static GfxLayout fieldlayout = new GfxLayout
+	(
 		8,8,	/* 8*8 characters */
 		64, 	/* 64 characters */
 		1,		/* 1 bit per pixel */
-		{ 0 },	/* no separation in 1 bpp */
-		{ 0, 1, 2, 3, 4, 5, 6, 7 },
-		{ 0*8, 1*8, 2*8, 3*8, 4*8, 5*8, 6*8, 7*8 },
+		new int[] { 0 },	/* no separation in 1 bpp */
+		new int[] { 0, 1, 2, 3, 4, 5, 6, 7 },
+		new int[] { 0*8, 1*8, 2*8, 3*8, 4*8, 5*8, 6*8, 7*8 },
 		8*8 /* every char takes 8 consecutive bytes */
-	};
+	);
 	
-	static struct GfxLayout soccer_fieldlayout =
-	{
+	static GfxLayout soccer_fieldlayout = new GfxLayout
+	(
 		8,8,	/* 8*8 characters */
 		64, 	/* 64 characters */
 		1,		/* 1 bit per pixel */
-		{ 0 },	/* no separation in 1 bpp */
-		{ 0, 1, 2, 3, 4, 5, 6, 7 },
-		{ 0*8, 1*8, 2*8, 3*8, 4*8, 5*8, 6*8, 7*8 },
+		new int[] { 0 },	/* no separation in 1 bpp */
+		new int[] { 0, 1, 2, 3, 4, 5, 6, 7 },
+		new int[] { 0*8, 1*8, 2*8, 3*8, 4*8, 5*8, 6*8, 7*8 },
 		16*8	/* every char takes 16 consecutive bytes */
-	};
+	);
 	
-	static struct GfxLayout spritelayout =
-	{
+	static GfxLayout spritelayout = new GfxLayout
+	(
 		8,16,	/* 8*16 characters */
 		64, 	/* 64 characters */
 		1,		/* 1 bit per pixel */
-		{ 0 },	/* no separation in 1 bpp */
-		{ 0, 1, 2, 3, 4, 5, 6, 7 },
-		{ 0*8, 1*8, 2*8, 3*8, 4*8, 5*8, 6*8, 7*8,
+		new int[] { 0 },	/* no separation in 1 bpp */
+		new int[] { 0, 1, 2, 3, 4, 5, 6, 7 },
+		new int[] { 0*8, 1*8, 2*8, 3*8, 4*8, 5*8, 6*8, 7*8,
 				8*8, 9*8, 10*8, 11*8, 12*8, 13*8, 14*8, 15*8 },
 		16*8 /* every char takes 16 consecutive bytes */
-	};
+	);
 	
-	static struct GfxLayout spritemasklayout =
-	{
+	static GfxLayout spritemasklayout = new GfxLayout
+	(
 		8,16,	/* 8*6 characters */
 		64, 	/* 64 characters */
 		1,		/* 1 bit per pixel */
-		{ 0 },	/* no separation in 1 bpp */
-		{ 0, 1, 2, 3, 4, 5, 6, 7 },
-		{ 0*8, 1*8, 2*8, 3*8, 4*8, 5*8, 6*8, 7*8,
+		new int[] { 0 },	/* no separation in 1 bpp */
+		new int[] { 0, 1, 2, 3, 4, 5, 6, 7 },
+		new int[] { 0*8, 1*8, 2*8, 3*8, 4*8, 5*8, 6*8, 7*8,
 				8*8, 9*8, 10*8, 11*8, 12*8, 13*8, 14*8, 15*8 },
 		16*8	/* every char takes 16 consecutive bytes */
-	};
+	);
 	
 	static struct GfxDecodeInfo gfxdecodeinfo[] =
 	{

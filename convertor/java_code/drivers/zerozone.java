@@ -181,16 +181,16 @@ public class zerozone
 	INPUT_PORTS_END
 	
 	
-	static struct GfxLayout charlayout =
-	{
+	static GfxLayout charlayout = new GfxLayout
+	(
 		8,8,	/* 8*8 characters */
 		4096,	/* 4096 characters */
 		4,	/* 4 bits per pixel */
-		{ 0, 1, 2, 3 },
-		{ 0, 4, 8+0, 8+4, 16+0, 16+4, 24+0, 24+4 },
-		{ 0*32, 1*32, 2*32, 3*32, 4*32, 5*32, 6*32, 7*32 },
+		new int[] { 0, 1, 2, 3 },
+		new int[] { 0, 4, 8+0, 8+4, 16+0, 16+4, 24+0, 24+4 },
+		new int[] { 0*32, 1*32, 2*32, 3*32, 4*32, 5*32, 6*32, 7*32 },
 		32*8	/* every sprite takes 32 consecutive bytes */
-	};
+	);
 	
 	
 	static struct GfxDecodeInfo gfxdecodeinfo[] =

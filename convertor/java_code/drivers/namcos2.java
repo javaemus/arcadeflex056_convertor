@@ -999,15 +999,15 @@ public class namcos2
 	/* Namco System II - Graphics Declarations					 */
 	/*************************************************************/
 	
-	static struct GfxLayout obj_layout = {
+	static GfxLayout obj_layout = new GfxLayout(
 		32,32,
 		0x800,	/* number of sprites */
 		8,		/* bits per pixel */
-		{		/* plane offsets */
+		new int[] {		/* plane offsets */
 			(0x400000*3),(0x400000*3)+4,(0x400000*2),(0x400000*2)+4,
 			(0x400000*1),(0x400000*1)+4,(0x400000*0),(0x400000*0)+4
 		},
-		{ /* x offsets */
+		new int[] { /* x offsets */
 			0*8,0*8+1,0*8+2,0*8+3,
 			1*8,1*8+1,1*8+2,1*8+3,
 			2*8,2*8+1,2*8+2,2*8+3,
@@ -1018,7 +1018,7 @@ public class namcos2
 			6*8,6*8+1,6*8+2,6*8+3,
 			7*8,7*8+1,7*8+2,7*8+3,
 		},
-		{ /* y offsets */
+		new int[] { /* y offsets */
 			0*128,0*128+64,1*128,1*128+64,
 			2*128,2*128+64,3*128,3*128+64,
 			4*128,4*128+64,5*128,5*128+64,
@@ -1030,27 +1030,27 @@ public class namcos2
 			14*128,14*128+64,15*128,15*128+64
 		},
 		0x800 /* sprite offset */
-	};
+	);
 	
-	static struct GfxLayout chr_layout = {
+	static GfxLayout chr_layout = new GfxLayout(
 		8,8,
 		0x10000,
 		8,
-		{ 0,1,2,3,4,5,6,7 },
-		{ 0*8,1*8,2*8,3*8,4*8,5*8,6*8,7*8 },
-		{ 0*64,1*64,2*64,3*64,4*64,5*64,6*64,7*64 },
+		new int[] { 0,1,2,3,4,5,6,7 },
+		new int[] { 0*8,1*8,2*8,3*8,4*8,5*8,6*8,7*8 },
+		new int[] { 0*64,1*64,2*64,3*64,4*64,5*64,6*64,7*64 },
 		8*64
-	};
+	);
 	
-	static struct GfxLayout roz_layout = {
+	static GfxLayout roz_layout = new GfxLayout(
 		8,8,
 		0x10000,
 		8,
-		{ 0,1,2,3,4,5,6,7 },
-		{ 0*8,1*8,2*8,3*8,4*8,5*8,6*8,7*8 },
-		{ 0*64,1*64,2*64,3*64,4*64,5*64,6*64,7*64 },
+		new int[] { 0,1,2,3,4,5,6,7 },
+		new int[] { 0*8,1*8,2*8,3*8,4*8,5*8,6*8,7*8 },
+		new int[] { 0*64,1*64,2*64,3*64,4*64,5*64,6*64,7*64 },
 		8*64
-	};
+	);
 	
 	static struct GfxDecodeInfo gfxdecodeinfo[] =
 	{

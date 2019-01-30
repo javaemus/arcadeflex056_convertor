@@ -1148,25 +1148,25 @@ public class wecleman
 									WEC Le Mans 24
 	***************************************************************************/
 	
-	static struct GfxLayout wecleman_bg_layout =
-	{
+	static GfxLayout wecleman_bg_layout = new GfxLayout
+	(
 		8,8,
 		8*0x8000*3/(8*8*3),
 		3,
-		{ 0,0x8000*8,0x8000*8*2 },
-		{0,7,6,5,4,3,2,1},
-		{0*8,1*8,2*8,3*8,4*8,5*8,6*8,7*8},
+		new int[] { 0,0x8000*8,0x8000*8*2 },
+		new int[] {0,7,6,5,4,3,2,1},
+		new int[] {0*8,1*8,2*8,3*8,4*8,5*8,6*8,7*8},
 		8*8
-	};
+	);
 	
 	/* We draw the road, made of 512 pixel lines, using 64x1 tiles */
-	static struct GfxLayout wecleman_road_layout =
-	{
+	static GfxLayout wecleman_road_layout = new GfxLayout
+	(
 		64,1,
 		8*0x4000*3/(64*1*3),
 		3,
-		{ 0x4000*8*2,0x4000*8*1,0x4000*8*0 },
-		{0,7,6,5,4,3,2,1,
+		new int[] { 0x4000*8*2,0x4000*8*1,0x4000*8*0 },
+		new int[] {0,7,6,5,4,3,2,1,
 		 8,15,14,13,12,11,10,9,
 		 16,23,22,21,20,19,18,17,
 		 24,31,30,29,28,27,26,25,
@@ -1175,9 +1175,9 @@ public class wecleman
 		 8+32,15+32,14+32,13+32,12+32,11+32,10+32,9+32,
 		 16+32,23+32,22+32,21+32,20+32,19+32,18+32,17+32,
 		 24+32,31+32,30+32,29+32,28+32,27+32,26+32,25+32},
-		{0},
+		new int[] {0},
 		64*1
-	};
+	);
 	
 	
 	static struct GfxDecodeInfo wecleman_gfxdecodeinfo[] =
@@ -1197,19 +1197,19 @@ public class wecleman
 	
 	/* We draw the road, made of 512 pixel lines, using 64x1 tiles */
 	/* tiles are doubled horizontally */
-	static struct GfxLayout hotchase_road_layout =
-	{
+	static GfxLayout hotchase_road_layout = new GfxLayout
+	(
 		64,1,
 		RGN_FRAC(1,1),
 		4,
-		{ 0, 1, 2, 3 },
-		{ 0*4,0*4,1*4,1*4,2*4,2*4,3*4,3*4,4*4,4*4,5*4,5*4,6*4,6*4,7*4,7*4,
+		new int[] { 0, 1, 2, 3 },
+		new int[] { 0*4,0*4,1*4,1*4,2*4,2*4,3*4,3*4,4*4,4*4,5*4,5*4,6*4,6*4,7*4,7*4,
 		  8*4,8*4,9*4,9*4,10*4,10*4,11*4,11*4,12*4,12*4,13*4,13*4,14*4,14*4,15*4,15*4,
 		 16*4,16*4,17*4,17*4,18*4,18*4,19*4,19*4,20*4,20*4,21*4,21*4,22*4,22*4,23*4,23*4,
 		 24*4,24*4,25*4,25*4,26*4,26*4,27*4,27*4,28*4,28*4,29*4,29*4,30*4,30*4,31*4,31*4 },
-		{0},
+		new int[] {0},
 		32*4
-	};
+	);
 	
 	
 	static struct GfxDecodeInfo hotchase_gfxdecodeinfo[] =

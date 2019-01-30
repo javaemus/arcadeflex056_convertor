@@ -1960,68 +1960,68 @@ public class taito_l
 	
 	
 	
-	static struct GfxLayout bg1_layout =
-	{
+	static GfxLayout bg1_layout = new GfxLayout
+	(
 		8, 8,
 		RGN_FRAC(1,2),
 		4,
-		{ RGN_FRAC(1,2)+0, RGN_FRAC(1,2)+4, 0, 4 },
-		{ 3, 2, 1, 0, 8+3, 8+2, 8+1, 8+0 },
-		{ 0*16, 1*16, 2*16, 3*16, 4*16, 5*16, 6*16, 7*16 },
+		new int[] { RGN_FRAC(1,2)+0, RGN_FRAC(1,2)+4, 0, 4 },
+		new int[] { 3, 2, 1, 0, 8+3, 8+2, 8+1, 8+0 },
+		new int[] { 0*16, 1*16, 2*16, 3*16, 4*16, 5*16, 6*16, 7*16 },
 		8*8*2
-	};
+	);
 	
-	static struct GfxLayout bg2_layout =
-	{
+	static GfxLayout bg2_layout = new GfxLayout
+	(
 		8, 8,
 		RGN_FRAC(1,1),
 		4,
-		{ 8, 12, 0, 4 },
-		{ 3, 2, 1, 0, 19, 18, 17, 16 },
-		{ 0*32, 1*32, 2*32, 3*32, 4*32, 5*32, 6*32, 7*32 },
+		new int[] { 8, 12, 0, 4 },
+		new int[] { 3, 2, 1, 0, 19, 18, 17, 16 },
+		new int[] { 0*32, 1*32, 2*32, 3*32, 4*32, 5*32, 6*32, 7*32 },
 		8*8*4
-	};
+	);
 	
 	#define O 8*8*2
 	#define O2 2*O
-	static struct GfxLayout sp1_layout =
-	{
+	static GfxLayout sp1_layout = new GfxLayout
+	(
 		16, 16,
 		RGN_FRAC(1,2),
 		4,
-		{ RGN_FRAC(1,2)+0, RGN_FRAC(1,2)+4, 0, 4 },
-		{ 3, 2, 1, 0, 8+3, 8+2, 8+1, 8+0, O+3, O+2, O+1, O+0, O+8+3, O+8+2, O+8+1, O+8+0 },
-		{ 0*16, 1*16, 2*16, 3*16, 4*16, 5*16, 6*16, 7*16, O2+0*16, O2+1*16, O2+2*16, O2+3*16, O2+4*16, O2+5*16, O2+6*16, O2+7*16 },
+		new int[] { RGN_FRAC(1,2)+0, RGN_FRAC(1,2)+4, 0, 4 },
+		new int[] { 3, 2, 1, 0, 8+3, 8+2, 8+1, 8+0, O+3, O+2, O+1, O+0, O+8+3, O+8+2, O+8+1, O+8+0 },
+		new int[] { 0*16, 1*16, 2*16, 3*16, 4*16, 5*16, 6*16, 7*16, O2+0*16, O2+1*16, O2+2*16, O2+3*16, O2+4*16, O2+5*16, O2+6*16, O2+7*16 },
 		8*8*2*4
-	};
+	);
 	#undef O
 	#undef O2
 	
 	#define O 8*8*4
 	#define O2 2*O
-	static struct GfxLayout sp2_layout =
-	{
+	static GfxLayout sp2_layout = new GfxLayout
+	(
 		16, 16,
 		RGN_FRAC(1,1),
 		4,
-		{ 8, 12, 0, 4 },
-		{ 3, 2, 1, 0, 19, 18, 17, 16, O+3, O+2, O+1, O+0, O+19, O+18, O+17, O+16 },
-		{ 0*32, 1*32, 2*32, 3*32, 4*32, 5*32, 6*32, 7*32, O2+0*32, O2+1*32, O2+2*32, O2+3*32, O2+4*32, O2+5*32, O2+6*32, O2+7*32 },
+		new int[] { 8, 12, 0, 4 },
+		new int[] { 3, 2, 1, 0, 19, 18, 17, 16, O+3, O+2, O+1, O+0, O+19, O+18, O+17, O+16 },
+		new int[] { 0*32, 1*32, 2*32, 3*32, 4*32, 5*32, 6*32, 7*32, O2+0*32, O2+1*32, O2+2*32, O2+3*32, O2+4*32, O2+5*32, O2+6*32, O2+7*32 },
 		8*8*4*4
-	};
+	);
 	#undef O
 	#undef O2
 	
-	static struct GfxLayout char_layout =
-	{
+	static GfxLayout char_layout = new GfxLayout
+	(
 		8, 8,
 		1024,
 		4,
-		{ 8, 12, 0, 4 },
-		{ 3, 2, 1, 0, 19, 18, 17, 16},
-		{ 0*32, 1*32, 2*32, 3*32, 4*32, 5*32, 6*32, 7*32 },
+		new int[] { 8, 12, 0, 4 },
+		new int[] { 3, 2, 1, 0, 19, 18, 17, 16},
+		new int[] { 0*32, 1*32, 2*32, 3*32, 4*32, 5*32, 6*32, 7*32 },
 		8*8*4
-	};
+	);
 	
 	static struct GfxDecodeInfo gfxdecodeinfo1[] =
 	{

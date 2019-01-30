@@ -1807,109 +1807,109 @@ public class nemesis
 	
 	/******************************************************************************/
 	
-	static struct GfxLayout charlayout =
-	{
+	static GfxLayout charlayout = new GfxLayout
+	(
 		8,8,	/* 8*8 characters */
 		2048,	/* 2048 characters */
 		4,	/* 4 bits per pixel */
-		{ 0, 1, 2, 3 }, /* the two bitplanes are merged in the same nibble */
-		{ 0*4, 1*4, 2*4, 3*4, 4*4, 5*4, 6*4, 7*4 },
-		{ 0*32, 1*32, 2*32, 3*32, 4*32, 5*32, 6*32, 7*32 },
+		new int[] { 0, 1, 2, 3 }, /* the two bitplanes are merged in the same nibble */
+		new int[] { 0*4, 1*4, 2*4, 3*4, 4*4, 5*4, 6*4, 7*4 },
+		new int[] { 0*32, 1*32, 2*32, 3*32, 4*32, 5*32, 6*32, 7*32 },
 		32*8     /* every char takes 32 consecutive bytes */
-	};
+	);
 	
-	static struct GfxLayout spritelayout =
-	{
+	static GfxLayout spritelayout = new GfxLayout
+	(
 		16,16,	/* 16*16 sprites */
 		512,	/* 512 sprites */
 		4,	/* 4 bits per pixel */
-		{ 0, 1, 2, 3 }, /* the two bitplanes are merged in the same nibble */
-		{ 0*4, 1*4, 2*4, 3*4, 4*4, 5*4, 6*4, 7*4,
+		new int[] { 0, 1, 2, 3 }, /* the two bitplanes are merged in the same nibble */
+		new int[] { 0*4, 1*4, 2*4, 3*4, 4*4, 5*4, 6*4, 7*4,
 				8*4, 9*4, 10*4, 11*4, 12*4, 13*4, 14*4, 15*4 },
-		{ 0*64, 1*64, 2*64, 3*64, 4*64, 5*64, 6*64, 7*64,
+		new int[] { 0*64, 1*64, 2*64, 3*64, 4*64, 5*64, 6*64, 7*64,
 				8*64, 9*64, 10*64, 11*64, 12*64, 13*64, 14*64, 15*64 },
 		128*8     /* every sprite takes 128 consecutive bytes */
-	};
+	);
 	
-	static struct GfxLayout spritelayout3216 =
-	{
+	static GfxLayout spritelayout3216 = new GfxLayout
+	(
 		32,16,	/* 32*16 sprites */
 		256,	/* 256 sprites */
 		4,	/* 4 bits per pixel */
-		{ 0, 1, 2, 3 }, /* the two bitplanes are merged in the same nibble */
-		{ 0*4, 1*4, 2*4, 3*4, 4*4, 5*4, 6*4, 7*4,
+		new int[] { 0, 1, 2, 3 }, /* the two bitplanes are merged in the same nibble */
+		new int[] { 0*4, 1*4, 2*4, 3*4, 4*4, 5*4, 6*4, 7*4,
 				8*4, 9*4, 10*4, 11*4, 12*4, 13*4, 14*4, 15*4,
 			   16*4,17*4, 18*4, 19*4, 20*4, 21*4, 22*4, 23*4,
 			   24*4,25*4, 26*4, 27*4, 28*4, 29*4, 30*4, 31*4},
-		{ 0*128, 1*128, 2*128, 3*128, 4*128, 5*128, 6*128, 7*128,
+		new int[] { 0*128, 1*128, 2*128, 3*128, 4*128, 5*128, 6*128, 7*128,
 				8*128, 9*128, 10*128, 11*128, 12*128, 13*128, 14*128, 15*128 },
 		256*8     /* every sprite takes 128 consecutive bytes */
-	};
+	);
 	
-	static struct GfxLayout spritelayout1632 =
-	{
+	static GfxLayout spritelayout1632 = new GfxLayout
+	(
 		16,32,	/* 16*32 sprites */
 		256,	/* 256 sprites */
 		4,	/* 4 bits per pixel */
-		{ 0, 1, 2, 3 }, /* the two bitplanes are merged in the same nibble */
-		{ 0*4, 1*4, 2*4, 3*4, 4*4, 5*4, 6*4, 7*4,
+		new int[] { 0, 1, 2, 3 }, /* the two bitplanes are merged in the same nibble */
+		new int[] { 0*4, 1*4, 2*4, 3*4, 4*4, 5*4, 6*4, 7*4,
 				8*4, 9*4, 10*4, 11*4, 12*4, 13*4, 14*4, 15*4},
-		{ 0*64,  1*64,  2*64,  3*64,  4*64,  5*64,  6*64,  7*64,
+		new int[] { 0*64,  1*64,  2*64,  3*64,  4*64,  5*64,  6*64,  7*64,
 		  8*64,  9*64, 10*64, 11*64, 12*64, 13*64, 14*64, 15*64,
 		 16*64, 17*64, 18*64, 19*64, 20*64, 21*64, 22*64, 23*64,
 		 24*64, 25*64, 26*64, 27*64, 28*64, 29*64, 30*64, 31*64},
 		256*8     /* every sprite takes 128 consecutive bytes */
-	};
+	);
 	
-	static struct GfxLayout spritelayout3232 =
-	{
+	static GfxLayout spritelayout3232 = new GfxLayout
+	(
 		32,32,	/* 32*32 sprites */
 		128,	/* 128 sprites */
 		4,	/* 4 bits per pixel */
-		{ 0, 1, 2, 3 }, /* the two bitplanes are merged in the same nibble */
-		{ 0*4, 1*4, 2*4, 3*4, 4*4, 5*4, 6*4, 7*4,
+		new int[] { 0, 1, 2, 3 }, /* the two bitplanes are merged in the same nibble */
+		new int[] { 0*4, 1*4, 2*4, 3*4, 4*4, 5*4, 6*4, 7*4,
 				8*4, 9*4, 10*4, 11*4, 12*4, 13*4, 14*4, 15*4,
 			   16*4,17*4, 18*4, 19*4, 20*4, 21*4, 22*4, 23*4,
 			   24*4,25*4, 26*4, 27*4, 28*4, 29*4, 30*4, 31*4},
-		{ 0*128, 1*128, 2*128, 3*128, 4*128, 5*128, 6*128, 7*128,
+		new int[] { 0*128, 1*128, 2*128, 3*128, 4*128, 5*128, 6*128, 7*128,
 				8*128,  9*128, 10*128, 11*128, 12*128, 13*128, 14*128, 15*128,
 			   16*128, 17*128, 18*128, 19*128, 20*128, 21*128, 22*128, 23*128,
 			   24*128, 25*128, 26*128, 27*128, 28*128, 29*128, 30*128, 31*128},
 		512*8     /* every sprite takes 128 consecutive bytes */
-	};
+	);
 	
-	static struct GfxLayout spritelayout816 =
-	{
+	static GfxLayout spritelayout816 = new GfxLayout
+	(
 		8,16,	/* 16*16 sprites */
 		1024,	/* 1024 sprites */
 		4,	/* 4 bits per pixel */
-		{ 0, 1, 2, 3 }, /* the two bitplanes are merged in the same nibble */
-		{ 0*4, 1*4, 2*4, 3*4, 4*4, 5*4, 6*4, 7*4},
-		{ 0*32, 1*32, 2*32, 3*32, 4*32, 5*32, 6*32, 7*32,
+		new int[] { 0, 1, 2, 3 }, /* the two bitplanes are merged in the same nibble */
+		new int[] { 0*4, 1*4, 2*4, 3*4, 4*4, 5*4, 6*4, 7*4},
+		new int[] { 0*32, 1*32, 2*32, 3*32, 4*32, 5*32, 6*32, 7*32,
 				8*32, 9*32, 10*32, 11*32, 12*32, 13*32, 14*32, 15*32 },
 		64*8     /* every sprite takes 128 consecutive bytes */
-	};
+	);
 	
-	static struct GfxLayout spritelayout168 =
-	{
+	static GfxLayout spritelayout168 = new GfxLayout
+	(
 		16,8,	/* 16*8 sprites */
 		1024,	/* 1024 sprites */
 		4,	/* 4 bits per pixel */
-		{ 0, 1, 2, 3 }, /* the two bitplanes are merged in the same nibble */
-		{ 0*4, 1*4, 2*4, 3*4, 4*4, 5*4, 6*4, 7*4,
+		new int[] { 0, 1, 2, 3 }, /* the two bitplanes are merged in the same nibble */
+		new int[] { 0*4, 1*4, 2*4, 3*4, 4*4, 5*4, 6*4, 7*4,
 				8*4, 9*4, 10*4, 11*4, 12*4, 13*4, 14*4, 15*4},
-		{ 0*64, 1*64, 2*64, 3*64, 4*64, 5*64, 6*64, 7*64},
+		new int[] { 0*64, 1*64, 2*64, 3*64, 4*64, 5*64, 6*64, 7*64},
 		64*8     /* every sprite takes 128 consecutive bytes */
 	
-	};
+	);
 	
-	static struct GfxLayout spritelayout6464 =
-	{
+	static GfxLayout spritelayout6464 = new GfxLayout
+	(
 		64,64,	/* 32*32 sprites */
 		32,	/* 128 sprites */
 		4,	/* 4 bits per pixel */
-		{ 0, 1, 2, 3 }, /* the two bitplanes are merged in the same nibble */
-		{ 0*4, 1*4, 2*4, 3*4, 4*4, 5*4, 6*4, 7*4,
+		new int[] { 0, 1, 2, 3 }, /* the two bitplanes are merged in the same nibble */
+		new int[] { 0*4, 1*4, 2*4, 3*4, 4*4, 5*4, 6*4, 7*4,
 				8*4, 9*4, 10*4, 11*4, 12*4, 13*4, 14*4, 15*4,
 			   16*4,17*4, 18*4, 19*4, 20*4, 21*4, 22*4, 23*4,
 			   24*4,25*4, 26*4, 27*4, 28*4, 29*4, 30*4, 31*4,
@@ -1918,7 +1918,7 @@ public class nemesis
 			   48*4,49*4, 50*4, 51*4, 52*4, 53*4, 54*4, 55*4,
 			   56*4,57*4, 58*4, 59*4, 60*4, 61*4, 62*4, 63*4},
 	
-		{ 0*256, 1*256, 2*256, 3*256, 4*256, 5*256, 6*256, 7*256,
+		new int[] { 0*256, 1*256, 2*256, 3*256, 4*256, 5*256, 6*256, 7*256,
 				8*256,  9*256, 10*256, 11*256, 12*256, 13*256, 14*256, 15*256,
 			   16*256, 17*256, 18*256, 19*256, 20*256, 21*256, 22*256, 23*256,
 			   24*256, 25*256, 26*256, 27*256, 28*256, 29*256, 30*256, 31*256,
@@ -1927,7 +1927,7 @@ public class nemesis
 			   48*256, 49*256, 50*256, 51*256, 52*256, 53*256, 54*256, 55*256,
 			   56*256, 57*256, 58*256, 59*256, 60*256, 61*256, 62*256, 63*256},
 		2048*8     /* every sprite takes 128 consecutive bytes */
-	};
+	);
 	
 	static struct GfxDecodeInfo gfxdecodeinfo[] =
 	{

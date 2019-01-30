@@ -121,29 +121,29 @@ public class gotya
 	INPUT_PORTS_END
 	
 	
-	static struct GfxLayout charlayout =
-	{
+	static GfxLayout charlayout = new GfxLayout
+	(
 		8,8,	/* 8*8 characters */
 		256,	/* 256 characters */
 		2,	    /* 2 bits per pixel */
-		{ 0, 4 },	/* the bitplanes are packed in one byte */
-		{ 0, 1, 2, 3, 8*8+0, 8*8+1, 8*8+2, 8*8+3 },
-		{ 7*8, 6*8, 5*8, 4*8, 3*8, 2*8, 1*8, 0*8 },
+		new int[] { 0, 4 },	/* the bitplanes are packed in one byte */
+		new int[] { 0, 1, 2, 3, 8*8+0, 8*8+1, 8*8+2, 8*8+3 },
+		new int[] { 7*8, 6*8, 5*8, 4*8, 3*8, 2*8, 1*8, 0*8 },
 		16*8	/* every char takes 16 consecutive bytes */
-	};
+	);
 	
-	static struct GfxLayout spritelayout =
-	{
+	static GfxLayout spritelayout = new GfxLayout
+	(
 		16,16,	/* 16*16 characters */
 		64,		/* 64 characters */
 		2,	    /* 2 bits per pixel */
-		{ 0, 4 },	/* the bitplanes are packed in one byte */
-		{ 0, 1, 2, 3, 24*8+0, 24*8+1, 24*8+2, 24*8+3,
+		new int[] { 0, 4 },	/* the bitplanes are packed in one byte */
+		new int[] { 0, 1, 2, 3, 24*8+0, 24*8+1, 24*8+2, 24*8+3,
 		  16*8+0, 16*8+1, 16*8+2, 16*8+3, 8*8+0, 8*8+1, 8*8+2, 8*8+3 },
-		{ 39*8, 38*8, 37*8, 36*8, 35*8, 34*8, 33*8, 32*8,
+		new int[] { 39*8, 38*8, 37*8, 36*8, 35*8, 34*8, 33*8, 32*8,
 		   7*8,  6*8,  5*8,  4*8,  3*8,  2*8,  1*8,  0*8 },
 		64*8	/* every char takes 64 consecutive bytes */
-	};
+	);
 	
 	static struct GfxDecodeInfo gfxdecodeinfo[] =
 	{

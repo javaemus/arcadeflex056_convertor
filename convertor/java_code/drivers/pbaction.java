@@ -204,54 +204,54 @@ public class pbaction
 	
 	
 	
-	static struct GfxLayout charlayout1 =
-	{
+	static GfxLayout charlayout1 = new GfxLayout
+	(
 		8,8,	/* 8*8 characters */
 		1024,	/* 1024 characters */
 		3,	/* 3 bits per pixel */
-		{ 0, 1024*8*8, 2*1024*8*8 },	/* the bitplanes are separated */
-		{ 0, 1, 2, 3, 4, 5, 6, 7 },	/* pretty straightforward layout */
-		{ 0*8, 1*8, 2*8, 3*8, 4*8, 5*8, 6*8, 7*8 },
+		new int[] { 0, 1024*8*8, 2*1024*8*8 },	/* the bitplanes are separated */
+		new int[] { 0, 1, 2, 3, 4, 5, 6, 7 },	/* pretty straightforward layout */
+		new int[] { 0*8, 1*8, 2*8, 3*8, 4*8, 5*8, 6*8, 7*8 },
 		8*8	/* every char takes 8 consecutive bytes */
-	};
-	static struct GfxLayout charlayout2 =
-	{
+	);
+	static GfxLayout charlayout2 = new GfxLayout
+	(
 		8,8,	/* 8*8 characters */
 		2048,	/* 2048 characters */
 		4,	/* 4 bits per pixel */
-		{ 0, 2048*8*8, 2*2048*8*8, 3*2048*8*8 },	/* the bitplanes are separated */
-		{ 0, 1, 2, 3, 4, 5, 6, 7 },	/* pretty straightforward layout */
-		{ 0*8, 1*8, 2*8, 3*8, 4*8, 5*8, 6*8, 7*8 },
+		new int[] { 0, 2048*8*8, 2*2048*8*8, 3*2048*8*8 },	/* the bitplanes are separated */
+		new int[] { 0, 1, 2, 3, 4, 5, 6, 7 },	/* pretty straightforward layout */
+		new int[] { 0*8, 1*8, 2*8, 3*8, 4*8, 5*8, 6*8, 7*8 },
 		8*8	/* every char takes 8 consecutive bytes */
-	};
-	static struct GfxLayout spritelayout1 =
-	{
+	);
+	static GfxLayout spritelayout1 = new GfxLayout
+	(
 		16,16,	/* 16*16 sprites */
 		128,	/* 128 sprites */
 		3,	/* 3 bits per pixel */
-		{ 0, 256*16*16, 2*256*16*16 },	/* the bitplanes are separated */
-		{ 0, 1, 2, 3, 4, 5, 6, 7,	/* pretty straightforward layout */
+		new int[] { 0, 256*16*16, 2*256*16*16 },	/* the bitplanes are separated */
+		new int[] { 0, 1, 2, 3, 4, 5, 6, 7,	/* pretty straightforward layout */
 				8*8+0, 8*8+1, 8*8+2, 8*8+3, 8*8+4, 8*8+5, 8*8+6, 8*8+7 },
-		{ 0*8, 1*8, 2*8, 3*8, 4*8, 5*8, 6*8, 7*8,
+		new int[] { 0*8, 1*8, 2*8, 3*8, 4*8, 5*8, 6*8, 7*8,
 				16*8, 17*8, 18*8, 19*8, 20*8, 21*8, 22*8, 23*8 },
 		32*8	/* every sprite takes 32 consecutive bytes */
-	};
-	static struct GfxLayout spritelayout2 =
-	{
+	);
+	static GfxLayout spritelayout2 = new GfxLayout
+	(
 		32,32,	/* 32*32 sprites */
 		32,	/* 32 sprites */
 		3,	/* 3 bits per pixel */
-		{ 0*64*32*32, 1*64*32*32, 2*64*32*32 },	/* the bitplanes are separated */
-		{ 0, 1, 2, 3, 4, 5, 6, 7,	/* pretty straightforward layout */
+		new int[] { 0*64*32*32, 1*64*32*32, 2*64*32*32 },	/* the bitplanes are separated */
+		new int[] { 0, 1, 2, 3, 4, 5, 6, 7,	/* pretty straightforward layout */
 				8*8+0, 8*8+1, 8*8+2, 8*8+3, 8*8+4, 8*8+5, 8*8+6, 8*8+7,
 				32*8+0, 32*8+1, 32*8+2, 32*8+3, 32*8+4, 32*8+5, 32*8+6, 32*8+7,
 				40*8+0, 40*8+1, 40*8+2, 40*8+3, 40*8+4, 40*8+5, 40*8+6, 40*8+7 },
-		{ 0*8, 1*8, 2*8, 3*8, 4*8, 5*8, 6*8, 7*8,
+		new int[] { 0*8, 1*8, 2*8, 3*8, 4*8, 5*8, 6*8, 7*8,
 				16*8, 17*8, 18*8, 19*8, 20*8, 21*8, 22*8, 23*8,
 				64*8, 65*8, 66*8, 67*8, 68*8, 69*8, 70*8, 71*8,
 				80*8, 81*8, 82*8, 83*8, 84*8, 85*8, 86*8, 87*8 },
 		128*8	/* every sprite takes 128 consecutive bytes */
-	};
+	);
 	
 	
 	

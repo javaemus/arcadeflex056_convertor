@@ -190,16 +190,16 @@ public class snowbros
 	INPUT_PORTS_END
 	
 	
-	static struct GfxLayout tilelayout =
-	{
+	static GfxLayout tilelayout = new GfxLayout
+	(
 		16,16,
 		RGN_FRAC(1,1),
 		4,
-		{ 0, 1, 2, 3 },
-		{ STEP8(0,4), STEP8(8*32,4) },
-		{ STEP8(0,32), STEP8(16*32,32) },
+		new int[] { 0, 1, 2, 3 },
+		new int[] { STEP8(0,4), STEP8(8*32,4) },
+		new int[] { STEP8(0,32), STEP8(16*32,32) },
 		32*32
-	};
+	);
 	
 	static struct GfxDecodeInfo gfxdecodeinfo[] =
 	{
@@ -207,16 +207,16 @@ public class snowbros
 		{ -1 } /* end of array */
 	};
 	
-	static struct GfxLayout tilelayout_wb =
-	{
+	static GfxLayout tilelayout_wb = new GfxLayout
+	(
 		16,16,
 		RGN_FRAC(1,1),
 		4,
-		{ 0, 1, 2, 3 },
-		{ STEP4(3*4,-4), STEP4(7*4,-4), STEP4(11*4,-4), STEP4(15*4,-4) },
-		{ STEP16(0,64) },
+		new int[] { 0, 1, 2, 3 },
+		new int[] { STEP4(3*4,-4), STEP4(7*4,-4), STEP4(11*4,-4), STEP4(15*4,-4) },
+		new int[] { STEP16(0,64) },
 		16*64
-	};
+	);
 	
 	static struct GfxDecodeInfo gfxdecodeinfo_wb[] =
 	{

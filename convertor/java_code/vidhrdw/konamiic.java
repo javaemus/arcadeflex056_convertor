@@ -1791,16 +1791,16 @@ public class konamiic
 			void (*callback)(int tilemap,int bank,int *code,int *color))
 	{
 		int gfx_index;
-		static struct GfxLayout charlayout =
-		{
+		static GfxLayout charlayout = new GfxLayout
+		(
 			8,8,
 			0,				/* filled in later */
 			4,
-			{ 0, 0, 0, 0 },	/* filled in later */
-			{ 0, 1, 2, 3, 4, 5, 6, 7 },
-			{ 0*32, 1*32, 2*32, 3*32, 4*32, 5*32, 6*32, 7*32 },
+			new int[] { 0, 0, 0, 0 },	/* filled in later */
+			new int[] { 0, 1, 2, 3, 4, 5, 6, 7 },
+			new int[] { 0*32, 1*32, 2*32, 3*32, 4*32, 5*32, 6*32, 7*32 },
 			32*8
-		};
+		);
 	
 	
 		/* find first empty slot to decode gfx */
@@ -2272,18 +2272,18 @@ public class konamiic
 			void (*callback)(int *code,int *color,int *priority,int *shadow))
 	{
 		int gfx_index,i;
-		static struct GfxLayout spritelayout =
-		{
+		static GfxLayout spritelayout = new GfxLayout
+		(
 			16,16,
 			0,				/* filled in later */
 			4,
-			{ 0, 0, 0, 0 },	/* filled in later */
-			{ 0, 1, 2, 3, 4, 5, 6, 7,
+			new int[] { 0, 0, 0, 0 },	/* filled in later */
+			new int[] { 0, 1, 2, 3, 4, 5, 6, 7,
 					8*32+0, 8*32+1, 8*32+2, 8*32+3, 8*32+4, 8*32+5, 8*32+6, 8*32+7 },
-			{ 0*32, 1*32, 2*32, 3*32, 4*32, 5*32, 6*32, 7*32,
+			new int[] { 0*32, 1*32, 2*32, 3*32, 4*32, 5*32, 6*32, 7*32,
 					16*32, 17*32, 18*32, 19*32, 20*32, 21*32, 22*32, 23*32 },
 			128*8
-		};
+		);
 	
 	
 		/* find first empty slot to decode gfx */
@@ -2734,18 +2734,18 @@ public class konamiic
 			void (*callback)(int *code,int *color,int *priority))
 	{
 		int gfx_index,i;
-		static struct GfxLayout spritelayout =
-		{
+		static GfxLayout spritelayout = new GfxLayout
+		(
 			16,16,
 			0,				/* filled in later */
 			4,
-			{ 0, 0, 0, 0 },	/* filled in later */
-			{ 0, 1, 2, 3, 4, 5, 6, 7,
+			new int[] { 0, 0, 0, 0 },	/* filled in later */
+			new int[] { 0, 1, 2, 3, 4, 5, 6, 7,
 					8*32+0, 8*32+1, 8*32+2, 8*32+3, 8*32+4, 8*32+5, 8*32+6, 8*32+7 },
-			{ 0*32, 1*32, 2*32, 3*32, 4*32, 5*32, 6*32, 7*32,
+			new int[] { 0*32, 1*32, 2*32, 3*32, 4*32, 5*32, 6*32, 7*32,
 					16*32, 17*32, 18*32, 19*32, 20*32, 21*32, 22*32, 23*32 },
 			128*8
-		};
+		);
 	
 	
 		/* find first empty slot to decode gfx */
@@ -3190,18 +3190,18 @@ public class konamiic
 						 void (*callback)(int *code,int *color,int *priority))
 	{
 		int gfx_index,i;
-		static struct GfxLayout spritelayout =
-		{
+		static GfxLayout spritelayout = new GfxLayout
+		(
 			16,16,
 			0,				/* filled in later */
 			4,
-			{ 0, 0, 0, 0 },	/* filled in later */
-			{ 2*4, 3*4, 0*4, 1*4, 6*4, 7*4, 4*4, 5*4,
+			new int[] { 0, 0, 0, 0 },	/* filled in later */
+			new int[] { 2*4, 3*4, 0*4, 1*4, 6*4, 7*4, 4*4, 5*4,
 					10*4, 11*4, 8*4, 9*4, 14*4, 15*4, 12*4, 13*4 },
-			{ 0*64, 1*64, 2*64, 3*64, 4*64, 5*64, 6*64, 7*64,
+			new int[] { 0*64, 1*64, 2*64, 3*64, 4*64, 5*64, 6*64, 7*64,
 					8*64, 9*64, 10*64, 11*64, 12*64, 13*64, 14*64, 15*64 },
 			128*8
-		};
+		);
 	
 	
 		/* find first empty slot to decode gfx */
@@ -3699,18 +3699,18 @@ public class konamiic
 	
 		if (bpp == 4)
 		{
-			static struct GfxLayout charlayout =
-			{
+			static GfxLayout charlayout = new GfxLayout
+			(
 				16,16,
 				0,				/* filled in later */
 				4,
-				{ 0, 1, 2, 3 },
-				{ 0*4, 1*4, 2*4, 3*4, 4*4, 5*4, 6*4, 7*4,
+				new int[] { 0, 1, 2, 3 },
+				new int[] { 0*4, 1*4, 2*4, 3*4, 4*4, 5*4, 6*4, 7*4,
 						8*4, 9*4, 10*4, 11*4, 12*4, 13*4, 14*4, 15*4 },
-				{ 0*64, 1*64, 2*64, 3*64, 4*64, 5*64, 6*64, 7*64,
+				new int[] { 0*64, 1*64, 2*64, 3*64, 4*64, 5*64, 6*64, 7*64,
 						8*64, 9*64, 10*64, 11*64, 12*64, 13*64, 14*64, 15*64 },
 				128*8
-			};
+			);
 	
 	
 			/* tweak the structure for the number of tiles we have */
@@ -3721,18 +3721,18 @@ public class konamiic
 		}
 		else if (bpp == 7 || bpp == 8)
 		{
-			static struct GfxLayout charlayout =
-			{
+			static GfxLayout charlayout = new GfxLayout
+			(
 				16,16,
 				0,				/* filled in later */
 				0,				/* filled in later */
-				{ 0 },			/* filled in later */
-				{ 0*8, 1*8, 2*8, 3*8, 4*8, 5*8, 6*8, 7*8,
+				new int[] { 0 },			/* filled in later */
+				new int[] { 0*8, 1*8, 2*8, 3*8, 4*8, 5*8, 6*8, 7*8,
 						8*8, 9*8, 10*8, 11*8, 12*8, 13*8, 14*8, 15*8 },
-				{ 0*128, 1*128, 2*128, 3*128, 4*128, 5*128, 6*128, 7*128,
+				new int[] { 0*128, 1*128, 2*128, 3*128, 4*128, 5*128, 6*128, 7*128,
 						8*128, 9*128, 10*128, 11*128, 12*128, 13*128, 14*128, 15*128 },
 				256*8
-			};
+			);
 			int i;
 	
 	
@@ -4461,16 +4461,16 @@ public class konamiic
 	{
 		int gfx_index;
 		int i;
-		static struct GfxLayout charlayout =
-		{
+		static GfxLayout charlayout = new GfxLayout
+		(
 			8, 8,
 			0,				/* filled in later */
 			4,
-			{ 0, 0, 0, 0 },	/* filled in later */
-			{ 2*4, 3*4, 0*4, 1*4, 6*4, 7*4, 4*4, 5*4 },
-			{ 0*8*4, 1*8*4, 2*8*4, 3*8*4, 4*8*4, 5*8*4, 6*8*4, 7*8*4 },
+			new int[] { 0, 0, 0, 0 },	/* filled in later */
+			new int[] { 2*4, 3*4, 0*4, 1*4, 6*4, 7*4, 4*4, 5*4 },
+			new int[] { 0*8*4, 1*8*4, 2*8*4, 3*8*4, 4*8*4, 5*8*4, 6*8*4, 7*8*4 },
 			8*8*4
-		};
+		);
 	
 		/* find first empty slot to decode gfx */
 		for (gfx_index = 0; gfx_index < MAX_GFX_ELEMENTS; gfx_index++)

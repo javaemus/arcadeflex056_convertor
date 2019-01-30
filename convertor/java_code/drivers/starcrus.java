@@ -123,30 +123,30 @@ public class starcrus
 	
 	
 	
-	static struct GfxLayout spritelayout1 =
-	{
+	static GfxLayout spritelayout1 = new GfxLayout
+	(
 		16,16,    /* 16x16 sprites */
 		4,          /* 4 sprites */
 		1,      /* 1 bits per pixel */
-		{ 0 },  /* 1 chip */
-		{ 0*8+4,  0*8+4,  1*8+4,  1*8+4, 2*8+4, 2*8+4, 3*8+4, 3*8+4,
+		new int[] { 0 },  /* 1 chip */
+		new int[] { 0*8+4,  0*8+4,  1*8+4,  1*8+4, 2*8+4, 2*8+4, 3*8+4, 3*8+4,
 		  4*8+4,  4*8+4,  5*8+4,  5*8+4, 6*8+4, 6*8+4, 7*8+4, 7*8+4 },
-		{ 0, 0, 1*64, 1*64, 2*64, 2*64, 3*64, 3*64,
+		new int[] { 0, 0, 1*64, 1*64, 2*64, 2*64, 3*64, 3*64,
 		  4*64, 4*64, 5*64, 5*64, 6*64, 6*64, 7*64, 7*64 },
 		1  /* every sprite takes 1 consecutive bit */
-	};
-	static struct GfxLayout spritelayout2 =
-	{
+	);
+	static GfxLayout spritelayout2 = new GfxLayout
+	(
 	    16,16,   /* 16x16 sprites */
 	    4,       /* 4 sprites */
 	    1,       /* 1 bits per pixel */
-	    { 0 },   /* 1 chip */
-	    { 0*8+4,  1*8+4,  2*8+4,  3*8+4, 4*8+4, 5*8+4, 6*8+4, 7*8+4,
+	    new int[] { 0 },   /* 1 chip */
+	    new int[] { 0*8+4,  1*8+4,  2*8+4,  3*8+4, 4*8+4, 5*8+4, 6*8+4, 7*8+4,
 	      8*8+4,  9*8+4,  10*8+4,  11*8+4, 12*8+4, 13*8+4, 14*8+4, 15*8+4 },
-	    { 0, 1*128, 2*128, 3*128, 4*128, 5*128, 6*128, 7*128,
+	    new int[] { 0, 1*128, 2*128, 3*128, 4*128, 5*128, 6*128, 7*128,
 	      8*128, 9*128, 10*128, 11*128, 12*128, 13*128, 14*128, 15*128 },
 	    1 /* every sprite takes 1 consecutive bytes */
-	};
+	);
 	
 	static struct GfxDecodeInfo gfxdecodeinfo[] =
 	{

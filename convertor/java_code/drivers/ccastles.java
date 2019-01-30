@@ -218,17 +218,17 @@ public class ccastles
 		PORT_ANALOG( 0xff, 0x7f, IPT_TRACKBALL_X, 10, 30, 0, 0 )
 	INPUT_PORTS_END
 	
-	static struct GfxLayout ccastles_spritelayout =
-	{
+	static GfxLayout ccastles_spritelayout = new GfxLayout
+	(
 		8,16,	/* 8*16 sprites */
 		256,	/* 256 sprites */
 		4,	/* 4 bits per pixel (the most significant bit is always 0) */
-		{ 0x2000*8+0, 0x2000*8+4, 0, 4 },	/* the three bitplanes are separated */
-		{ 0, 1, 2, 3, 8+0, 8+1, 8+2, 8+3 },
-		{ 0*16, 1*16, 2*16, 3*16, 4*16, 5*16, 6*16, 7*16,
+		new int[] { 0x2000*8+0, 0x2000*8+4, 0, 4 },	/* the three bitplanes are separated */
+		new int[] { 0, 1, 2, 3, 8+0, 8+1, 8+2, 8+3 },
+		new int[] { 0*16, 1*16, 2*16, 3*16, 4*16, 5*16, 6*16, 7*16,
 				8*16, 9*16, 10*16, 11*16, 12*16, 13*16, 14*16, 15*16 },
 		32*8	/* every sprite takes 32 consecutive bytes */
-	};
+	);
 	
 	
 	static struct GfxDecodeInfo gfxdecodeinfo[] =

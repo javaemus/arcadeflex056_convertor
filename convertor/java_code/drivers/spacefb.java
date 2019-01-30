@@ -337,31 +337,31 @@ public class spacefb
 	
 	
 	
-	static struct GfxLayout spritelayout =
-	{
+	static GfxLayout spritelayout = new GfxLayout
+	(
 		8,8,	/* 8*8 characters */
 		256,	/* 256 characters */
 		2,	/* 2 bits per pixel */
-		{ 0, 256*8*8 },	/* the two bitplanes are separated */
-		{ 0, 1, 2, 3, 4, 5, 6, 7 },
-		{ 0*8, 1*8, 2*8, 3*8, 4*8, 5*8, 6*8, 7*8 },
+		new int[] { 0, 256*8*8 },	/* the two bitplanes are separated */
+		new int[] { 0, 1, 2, 3, 4, 5, 6, 7 },
+		new int[] { 0*8, 1*8, 2*8, 3*8, 4*8, 5*8, 6*8, 7*8 },
 		8*8	/* every char takes 8 consecutive bytes */
-	};
+	);
 	/*
 	 * The bullests are stored in a 256x4bit PROM but the .bin file is
 	 * 256*8bit
 	 */
 	
-	static struct GfxLayout bulletlayout =
-	{
+	static GfxLayout bulletlayout = new GfxLayout
+	(
 		4,4,	/* 4*4 characters */
 		64,		/* 64 characters */
 		1,		/* 1 bits per pixel */
-		{ 0 },
-		{ 4, 5, 6, 7 },
-		{ 0*8, 1*8, 2*8, 3*8 },
+		new int[] { 0 },
+		new int[] { 4, 5, 6, 7 },
+		new int[] { 0*8, 1*8, 2*8, 3*8 },
 		4*8	/* every char takes 4 consecutive bytes */
-	};
+	);
 	
 	static struct GfxDecodeInfo gfxdecodeinfo[] =
 	{

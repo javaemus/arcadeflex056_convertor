@@ -264,63 +264,63 @@ public class bionicc
 	********************************************************************/
 	
 	
-	static struct GfxLayout spritelayout_bionicc=
-	{
+	static GfxLayout spritelayout_bionicc = new GfxLayout
+	(
 		16,16,  /* 16*16 sprites */
 		2048,   /* 2048 sprites */
 		4,      /* 4 bits per pixel */
-		{ 0x30000*8,0x20000*8,0x10000*8,0 },
-		{
+		new int[] { 0x30000*8,0x20000*8,0x10000*8,0 },
+		new int[] {
 			0,1,2,3,4,5,6,7,
 			(16*8)+0,(16*8)+1,(16*8)+2,(16*8)+3,
 			(16*8)+4,(16*8)+5,(16*8)+6,(16*8)+7
 		},
-		{
+		new int[] {
 			0*8, 1*8, 2*8, 3*8, 4*8, 5*8, 6*8, 7*8,
 			8*8, 9*8, 10*8, 11*8, 12*8, 13*8, 14*8, 15*8,
 		},
 		256   /* every sprite takes 256 consecutive bytes */
-	};
+	);
 	
-	static struct GfxLayout vramlayout_bionicc=
-	{
+	static GfxLayout vramlayout_bionicc = new GfxLayout
+	(
 		8,8,    /* 8*8 characters */
 		1024,   /* 1024 character */
 		2,      /* 2 bitplanes */
-		{ 4,0 },
-		{ 0,1,2,3,8,9,10,11 },
-		{ 0*16, 1*16, 2*16, 3*16, 4*16, 5*16, 6*16, 7*16 },
+		new int[] { 4,0 },
+		new int[] { 0,1,2,3,8,9,10,11 },
+		new int[] { 0*16, 1*16, 2*16, 3*16, 4*16, 5*16, 6*16, 7*16 },
 		128   /* every character takes 128 consecutive bytes */
-	};
+	);
 	
-	static struct GfxLayout scroll2layout_bionicc=
-	{
+	static GfxLayout scroll2layout_bionicc = new GfxLayout
+	(
 		8,8,    /* 8*8 tiles */
 		2048,   /* 2048 tiles */
 		4,      /* 4 bits per pixel */
-		{ (0x08000*8)+4,0x08000*8,4,0 },
-		{ 0,1,2,3, 8,9,10,11 },
-		{ 0*16, 1*16, 2*16, 3*16, 4*16, 5*16, 6*16, 7*16 },
+		new int[] { (0x08000*8)+4,0x08000*8,4,0 },
+		new int[] { 0,1,2,3, 8,9,10,11 },
+		new int[] { 0*16, 1*16, 2*16, 3*16, 4*16, 5*16, 6*16, 7*16 },
 		128   /* every tile takes 128 consecutive bytes */
-	};
+	);
 	
-	static struct GfxLayout scroll1layout_bionicc=
-	{
+	static GfxLayout scroll1layout_bionicc = new GfxLayout
+	(
 		16,16,  /* 16*16 tiles */
 		2048,   /* 2048 tiles */
 		4,      /* 4 bits per pixel */
-		{ (0x020000*8)+4,0x020000*8,4,0 },
-		{
+		new int[] { (0x020000*8)+4,0x020000*8,4,0 },
+		new int[] {
 			0,1,2,3, 8,9,10,11,
 			(8*4*8)+0,(8*4*8)+1,(8*4*8)+2,(8*4*8)+3,
 			(8*4*8)+8,(8*4*8)+9,(8*4*8)+10,(8*4*8)+11
 		},
-		{
+		new int[] {
 			0*16, 1*16, 2*16, 3*16, 4*16, 5*16, 6*16, 7*16,
 			8*16, 9*16, 10*16, 11*16, 12*16, 13*16, 14*16, 15*16
 		},
 		512   /* each tile takes 512 consecutive bytes */
-	};
+	);
 	
 	static struct GfxDecodeInfo gfxdecodeinfo_bionicc[] =
 	{

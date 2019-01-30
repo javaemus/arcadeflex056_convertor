@@ -380,29 +380,29 @@ public class meadows
 		PORT_BIT( 0x8e, IP_ACTIVE_LOW, IPT_UNUSED )
 	INPUT_PORTS_END
 	
-	static struct GfxLayout charlayout =
-	{
+	static GfxLayout charlayout = new GfxLayout
+	(
 		8,8,							/* 8*8 characters */
 		128,							/* 128 characters ? */
 		1,								/* 1 bit per pixel */
-		{ 0 },							/* no bitplanes */
-		{ 0, 1, 2, 3, 4, 5, 6, 7 }, 	/* pretty straight layout */
-		{ 0*8, 1*8, 2*8, 3*8, 4*8, 5*8, 6*8, 7*8 },
+		new int[] { 0 },							/* no bitplanes */
+		new int[] { 0, 1, 2, 3, 4, 5, 6, 7 }, 	/* pretty straight layout */
+		new int[] { 0*8, 1*8, 2*8, 3*8, 4*8, 5*8, 6*8, 7*8 },
 		8*8 							/* every char takes 8 bytes */
-	};
+	);
 	
-	static struct GfxLayout spritelayout =
-	{
+	static GfxLayout spritelayout = new GfxLayout
+	(
 		16,16,							/* 16*16 sprites ?	*/
 		32, 							/* 32 sprites  */
 		1,								/* 1 bits per pixel */
-		{ 0 },							/* 1 bitplane */
-		{ 0, 1, 2, 3, 4, 5, 6, 7,
+		new int[] { 0 },							/* 1 bitplane */
+		new int[] { 0, 1, 2, 3, 4, 5, 6, 7,
 		8, 9,10,11,12,13,14,15 },	  /* pretty straight layout */
-		{ 0*16, 1*16, 2*16, 3*16, 4*16, 5*16, 6*16, 7*16,
+		new int[] { 0*16, 1*16, 2*16, 3*16, 4*16, 5*16, 6*16, 7*16,
 		8*16, 9*16,10*16,11*16,12*16,13*16,14*16,15*16 },
 		16*2*8							/* every sprite takes 32 bytes */
-	};
+	);
 	
 	static struct GfxDecodeInfo gfxdecodeinfo[] =
 	{

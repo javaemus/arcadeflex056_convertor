@@ -377,48 +377,48 @@ public class polepos
 	 * Graphics layouts
 	 *********************************************************************/
 	
-	static struct GfxLayout charlayout_2bpp =
-	{
+	static GfxLayout charlayout_2bpp = new GfxLayout
+	(
 		8,8,	/* 8*8 characters */
 		512,	/* 512 characters */
 		2,	  /* 2 bits per pixel */
-		{ 0, 4 }, /* the two bitplanes are packed */
-		{ 0, 1, 2, 3, 8*8+0, 8*8+1, 8*8+2, 8*8+3 },
-		{ 0*8, 1*8, 2*8, 3*8, 4*8, 5*8, 6*8, 7*8 },
+		new int[] { 0, 4 }, /* the two bitplanes are packed */
+		new int[] { 0, 1, 2, 3, 8*8+0, 8*8+1, 8*8+2, 8*8+3 },
+		new int[] { 0*8, 1*8, 2*8, 3*8, 4*8, 5*8, 6*8, 7*8 },
 		8*8*2	/* every char takes 16 consecutive bytes */
-	};
+	);
 	
-	static struct GfxLayout bigspritelayout =
-	{
+	static GfxLayout bigspritelayout = new GfxLayout
+	(
 		32, 32, /* 32*32 sprites */
 		128,	/* 128 sprites */
 		4,		/* 4 bits per pixel */
-		{ 0, 4, 0x8000*8+0, 0x8000*8+4 }, /* each two of the bitplanes are packed */
-		{  0,  1,  2,  3,  8,  9, 10, 11,
+		new int[] { 0, 4, 0x8000*8+0, 0x8000*8+4 }, /* each two of the bitplanes are packed */
+		new int[] {  0,  1,  2,  3,  8,  9, 10, 11,
 		  16, 17, 18, 19, 24, 25, 26, 27,
 		  32, 33, 34, 35, 40, 41, 42, 43,
 		  48, 49, 50, 51, 56, 57, 58, 59},
-		{  0*64,  1*64,  2*64,	3*64,  4*64,  5*64,  6*64,	7*64,
+		new int[] {  0*64,  1*64,  2*64,	3*64,  4*64,  5*64,  6*64,	7*64,
 			8*64,  9*64, 10*64, 11*64, 12*64, 13*64, 14*64, 15*64,
 		  16*64, 17*64, 18*64, 19*64, 20*64, 21*64, 22*64, 23*64,
 		  24*64, 25*64, 26*64, 27*64, 28*64, 29*64, 30*64, 31*64 },
 		32*32*2  /* each sprite takes 256 consecutive bytes */
-	};
+	);
 	
-	static struct GfxLayout smallspritelayout =
-	{
+	static GfxLayout smallspritelayout = new GfxLayout
+	(
 		16,32,	/* 16*32 sprites (pixel doubled vertically) */
 		128,	/* 128 sprites */
 		4,		/* 4 bits per pixel */
-		{ 0, 4, 0x2000*8+0, 0x2000*8+4 }, /* each two of the bitplanes are packed */
-		{  0,  1,  2,  3,  8,  9, 10, 11,
+		new int[] { 0, 4, 0x2000*8+0, 0x2000*8+4 }, /* each two of the bitplanes are packed */
+		new int[] {  0,  1,  2,  3,  8,  9, 10, 11,
 		  16, 17, 18, 19, 24, 25, 26, 27 },
-		{ 0*32,  0*32,	1*32,  1*32,  2*32,  2*32,	3*32,  3*32,
+		new int[] { 0*32,  0*32,	1*32,  1*32,  2*32,  2*32,	3*32,  3*32,
 		  4*32,  4*32,	5*32,  5*32,  6*32,  6*32,	7*32,  7*32,
 		  8*32,  8*32,	9*32,  9*32, 10*32, 10*32, 11*32, 11*32,
 		 12*32, 12*32, 13*32, 13*32, 14*32, 14*32, 15*32, 15*32 },
 		16*16*2  /* each sprite takes 64 consecutive bytes */
-	};
+	);
 	
 	static struct GfxDecodeInfo gfxdecodeinfo[] =
 	{

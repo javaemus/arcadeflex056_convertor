@@ -437,28 +437,28 @@ public class badlands
 	 *
 	 *************************************/
 	
-	static struct GfxLayout pflayout =
-	{
+	static GfxLayout pflayout = new GfxLayout
+	(
 		8,8,
 		RGN_FRAC(1,1),
 		4,
-		{ 0, 1, 2, 3 },
-		{ 0, 4, 8, 12, 16, 20, 24, 28 },
-		{ 0*8, 4*8, 8*8, 12*8, 16*8, 20*8, 24*8, 28*8 },
+		new int[] { 0, 1, 2, 3 },
+		new int[] { 0, 4, 8, 12, 16, 20, 24, 28 },
+		new int[] { 0*8, 4*8, 8*8, 12*8, 16*8, 20*8, 24*8, 28*8 },
 		32*8
-	};
+	);
 	
 	
-	static struct GfxLayout molayout =
-	{
+	static GfxLayout molayout = new GfxLayout
+	(
 		16,8,
 		RGN_FRAC(1,1),
 		4,
-		{ 0, 1, 2, 3 },
-		{ 0, 4, 8, 12, 16, 20, 24, 28, 32, 36, 40, 44, 48, 52, 56, 60 },
-		{ 0*8, 8*8, 16*8, 24*8, 32*8, 40*8, 48*8, 56*8 },
+		new int[] { 0, 1, 2, 3 },
+		new int[] { 0, 4, 8, 12, 16, 20, 24, 28, 32, 36, 40, 44, 48, 52, 56, 60 },
+		new int[] { 0*8, 8*8, 16*8, 24*8, 32*8, 40*8, 48*8, 56*8 },
 		64*8
-	};
+	);
 	
 	
 	static struct GfxDecodeInfo gfxdecodeinfo[] =

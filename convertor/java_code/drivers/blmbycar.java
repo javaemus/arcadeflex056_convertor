@@ -249,16 +249,16 @@ public class blmbycar
 	***************************************************************************/
 	
 	/* 16x16x4 tiles (made of four 8x8 tiles) */
-	static struct GfxLayout layout_16x16x4 =
-	{
+	static GfxLayout layout_16x16x4 = new GfxLayout
+	(
 		16,16,
 		RGN_FRAC(1,4),
 		4,
-		{ RGN_FRAC(3,4),RGN_FRAC(2,4),RGN_FRAC(1,4),RGN_FRAC(0,4) },
-		{ STEP8(0,1), STEP8(8*8*2,1) },
-		{ STEP8(0,8), STEP8(8*8*1,8) },
+		new int[] { RGN_FRAC(3,4),RGN_FRAC(2,4),RGN_FRAC(1,4),RGN_FRAC(0,4) },
+		new int[] { STEP8(0,1), STEP8(8*8*2,1) },
+		new int[] { STEP8(0,8), STEP8(8*8*1,8) },
 		16*16
-	};
+	);
 	
 	/* Layers both use the first $20 color codes. Sprites the next $10 */
 	static struct GfxDecodeInfo blmbycar_gfxdecodeinfo[] =

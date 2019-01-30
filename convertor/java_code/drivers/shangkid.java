@@ -205,63 +205,63 @@ public class shangkid
 	
 	/***************************************************************************************/
 	
-	static struct GfxLayout shangkid_char_layout = {
+	static GfxLayout shangkid_char_layout = new GfxLayout(
 		8,8,
 		RGN_FRAC(1,1),
 		2,
-		{ 0,4 },
-		{ 0,1,2,3,8,9,10,11 },
-		{ 0*16,1*16,2*16,3*16,4*16,5*16,6*16,7*16 },
+		new int[] { 0,4 },
+		new int[] { 0,1,2,3,8,9,10,11 },
+		new int[] { 0*16,1*16,2*16,3*16,4*16,5*16,6*16,7*16 },
 		8*16
-	};
+	);
 	
-	static struct GfxLayout shangkid_sprite_layout = {
+	static GfxLayout shangkid_sprite_layout = new GfxLayout(
 		16,16,
 		RGN_FRAC(1,1),
 		2,
-		{ 0,4 },
-		{
+		new int[] { 0,4 },
+		new int[] {
 			0,1,2,3,8,9,10,11,
 			128+0,128+1,128+2,128+3,128+8,128+9,128+10,128+11
 		},
-		{
+		new int[] {
 			0*16,1*16,2*16,3*16,4*16,5*16,6*16,7*16,
 			256+0*16,256+1*16,256+2*16,256+3*16,256+4*16,256+5*16,256+6*16,256+7*16
 		},
 		8*0x40
-	};
+	);
 	
-	static struct GfxLayout chinhero_sprite_layout1 = {
+	static GfxLayout chinhero_sprite_layout1 = new GfxLayout(
 		16,16,
 		0x80,
 		3,
-		{ 0x4000*8+4,0,4 },
-		{
+		new int[] { 0x4000*8+4,0,4 },
+		new int[] {
 			0,1,2,3,8,9,10,11,
 			128+0,128+1,128+2,128+3,128+8,128+9,128+10,128+11
 		},
-		{
+		new int[] {
 			0*16,1*16,2*16,3*16,4*16,5*16,6*16,7*16,
 			256+0*16,256+1*16,256+2*16,256+3*16,256+4*16,256+5*16,256+6*16,256+7*16
 		},
 		8*0x40
-	};
+	);
 	
-	static struct GfxLayout chinhero_sprite_layout2 = {
+	static GfxLayout chinhero_sprite_layout2 = new GfxLayout(
 		16,16,
 		0x80,
 		3,
-		{ 0x4000*8,0x2000*8+0,0x2000*8+4 },
-		{
+		new int[] { 0x4000*8,0x2000*8+0,0x2000*8+4 },
+		new int[] {
 			0,1,2,3,8,9,10,11,
 			128+0,128+1,128+2,128+3,128+8,128+9,128+10,128+11
 		},
-		{
+		new int[] {
 			0*16,1*16,2*16,3*16,4*16,5*16,6*16,7*16,
 			256+0*16,256+1*16,256+2*16,256+3*16,256+4*16,256+5*16,256+6*16,256+7*16
 		},
 		8*0x40
-	};
+	);
 	
 	static struct GfxDecodeInfo chinhero_gfxdecodeinfo[] = {
 		{ REGION_GFX1, 0, &shangkid_char_layout,	0, 0x40 },

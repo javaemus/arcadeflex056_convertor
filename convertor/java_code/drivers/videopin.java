@@ -125,28 +125,28 @@ public class videopin
 	INPUT_PORTS_END
 	
 	
-	static struct GfxLayout videopin_charlayout =
-	{
+	static GfxLayout videopin_charlayout = new GfxLayout
+	(
 		8,8,	/* 8*8 characters */
 		64, 	/* 64 characters */
 		1,		/* 1 bit per pixel */
-		{ 0 },	/* no separation in 1 bpp */
-	/*	{ 56, 48, 40, 32, 24, 16, 8, 0 }, */
-		{  4, 5, 6, 7, 0x200*8 + 4, 0x200*8 + 5, 0x200*8 + 6, 0x200*8 + 7},
-	    { 0*8, 1*8, 2*8, 3*8, 4*8, 5*8, 6*8, 7*8 },
+		new int[] { 0 },	/* no separation in 1 bpp */
+	/*	new int[] { 56, 48, 40, 32, 24, 16, 8, 0 }, */
+		new int[] {  4, 5, 6, 7, 0x200*8 + 4, 0x200*8 + 5, 0x200*8 + 6, 0x200*8 + 7},
+	    new int[] { 0*8, 1*8, 2*8, 3*8, 4*8, 5*8, 6*8, 7*8 },
 		8*8 /* every char takes 8 consecutive bytes */
-	};
+	);
 	
-	static struct GfxLayout videopin_balllayout =
-	{
+	static GfxLayout videopin_balllayout = new GfxLayout
+	(
 		8,8,	/* 8*8 characters */
 		4, 		/* 4 characters */
 		1,		/* 1 bit per pixel */
-		{ 0 },	/* no separation in 1 bpp */
-		{ 0, 1, 2, 3, 4, 5, 6, 7 },
-	    { 0*8, 1*8, 2*8, 3*8, 4*8, 5*8, 6*8, 7*8 },
+		new int[] { 0 },	/* no separation in 1 bpp */
+		new int[] { 0, 1, 2, 3, 4, 5, 6, 7 },
+	    new int[] { 0*8, 1*8, 2*8, 3*8, 4*8, 5*8, 6*8, 7*8 },
 		8*8 /* every char takes 8 consecutive bytes */
-	};
+	);
 	
 	static struct GfxDecodeInfo videopin_gfxdecodeinfo[] =
 	{

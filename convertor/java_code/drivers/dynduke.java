@@ -177,68 +177,68 @@ public class dynduke
 	
 	/******************************************************************************/
 	
-	static struct GfxLayout charlayout =
-	{
+	static GfxLayout charlayout = new GfxLayout
+	(
 		8,8,		/* 8*8 characters */
 		1024,
 		4,			/* 4 bits per pixel */
-		{ 4,0,(0x10000*8)+4,0x10000*8 },
-		{ 0,1,2,3,8,9,10,11 },
-		{ 0*16, 1*16, 2*16, 3*16, 4*16, 5*16, 6*16, 7*16 },
+		new int[] { 4,0,(0x10000*8)+4,0x10000*8 },
+		new int[] { 0,1,2,3,8,9,10,11 },
+		new int[] { 0*16, 1*16, 2*16, 3*16, 4*16, 5*16, 6*16, 7*16 },
 		128
-	};
+	);
 	
-	static struct GfxLayout spritelayout =
-	{
+	static GfxLayout spritelayout = new GfxLayout
+	(
 	  16,16,	/* 16*16 tiles */
 	  0x4000,
 	  4,		/* 4 bits per pixel */
-	  { 12, 8, 4, 0 },
-	  {
+	  new int[] { 12, 8, 4, 0 },
+	  new int[] {
 	    0,1,2,3, 16,17,18,19,
 		512+0,512+1,512+2,512+3,
 		512+8+8,512+9+8,512+10+8,512+11+8,
 	  },
-	  {
+	  new int[] {
 		0*32, 1*32, 2*32, 3*32, 4*32, 5*32, 6*32, 7*32,
 		8*32, 9*32, 10*32, 11*32, 12*32, 13*32, 14*32, 15*32,
 	  },
 	  1024
-	};
+	);
 	
-	static struct GfxLayout bg_layout =
-	{
+	static GfxLayout bg_layout = new GfxLayout
+	(
 		16,16,
 		0x2000,
 		5,	/* actually 4, 5th bit is transparency */
-		{ 0x100000*8+4, 0x80000*8+4,0x80000*8,4,0 },
-		{
+		new int[] { 0x100000*8+4, 0x80000*8+4,0x80000*8,4,0 },
+		new int[] {
 			0,1,2,3,8,9,10,11,
 			256+0,256+1,256+2,256+3,256+8,256+9,256+10,256+11
 		},
-		{
+		new int[] {
 			0*16,1*16,2*16,3*16,4*16,5*16,6*16,7*16,
 			8*16,9*16,10*16,11*16,12*16,13*16,14*16,15*16
 		},
 		512
-	};
+	);
 	
-	static struct GfxLayout fg_layout =
-	{
+	static GfxLayout fg_layout = new GfxLayout
+	(
 		16,16,
 		0x2000,
 		4,
-		{ 0x80000*8+4, 0x80000*8, 4, 0 },
-		{
+		new int[] { 0x80000*8+4, 0x80000*8, 4, 0 },
+		new int[] {
 			0,1,2,3,8,9,10,11,
 			256+0,256+1,256+2,256+3,256+8,256+9,256+10,256+11
 		},
-		{
+		new int[] {
 			0*16,1*16,2*16,3*16,4*16,5*16,6*16,7*16,
 			8*16,9*16,10*16,11*16,12*16,13*16,14*16,15*16
 		},
 		512
-	};
+	);
 	
 	static struct GfxDecodeInfo dynduke_gfxdecodeinfo[] =
 	{

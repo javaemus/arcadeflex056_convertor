@@ -222,41 +222,41 @@ public class skullxbo
 	 *
 	 *************************************/
 	
-	static struct GfxLayout pflayout =
-	{
+	static GfxLayout pflayout = new GfxLayout
+	(
 		16,8,
 		RGN_FRAC(1,2),
 		4,
-		{ 0, 1, 2, 3 },
-		{ RGN_FRAC(1,2)+0,RGN_FRAC(1,2)+0, RGN_FRAC(1,2)+4,RGN_FRAC(1,2)+4, 0,0, 4,4,
+		new int[] { 0, 1, 2, 3 },
+		new int[] { RGN_FRAC(1,2)+0,RGN_FRAC(1,2)+0, RGN_FRAC(1,2)+4,RGN_FRAC(1,2)+4, 0,0, 4,4,
 		  RGN_FRAC(1,2)+8,RGN_FRAC(1,2)+8, RGN_FRAC(1,2)+12,RGN_FRAC(1,2)+12, 8,8, 12,12 },
-		{ 0*8, 2*8, 4*8, 6*8, 8*8, 10*8, 12*8, 14*8 },
+		new int[] { 0*8, 2*8, 4*8, 6*8, 8*8, 10*8, 12*8, 14*8 },
 		16*8
-	};
+	);
 	
 	
-	static struct GfxLayout anlayout =
-	{
+	static GfxLayout anlayout = new GfxLayout
+	(
 		16,8,
 		RGN_FRAC(1,1),
 		2,
-		{ 0, 1 },
-		{ 0,0, 2,2, 4,4, 6,6, 8,8, 10,10, 12,12, 14,14 },
-		{ 0*16, 1*16, 2*16, 3*16, 4*16, 5*16, 6*16, 7*16 },
+		new int[] { 0, 1 },
+		new int[] { 0,0, 2,2, 4,4, 6,6, 8,8, 10,10, 12,12, 14,14 },
+		new int[] { 0*16, 1*16, 2*16, 3*16, 4*16, 5*16, 6*16, 7*16 },
 		8*16
-	};
+	);
 	
 	
-	static struct GfxLayout molayout =
-	{
+	static GfxLayout molayout = new GfxLayout
+	(
 		16,8,
 		RGN_FRAC(1,5),
 		5,
-		{ RGN_FRAC(4,5), RGN_FRAC(3,5), RGN_FRAC(2,5), RGN_FRAC(1,5), RGN_FRAC(0,5) },
-		{ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15 },
-		{ 0*8, 2*8, 4*8, 6*8, 8*8, 10*8, 12*8, 14*8 },
+		new int[] { RGN_FRAC(4,5), RGN_FRAC(3,5), RGN_FRAC(2,5), RGN_FRAC(1,5), RGN_FRAC(0,5) },
+		new int[] { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15 },
+		new int[] { 0*8, 2*8, 4*8, 6*8, 8*8, 10*8, 12*8, 14*8 },
 		16*8
-	};
+	);
 	
 	
 	static struct GfxDecodeInfo gfxdecodeinfo[] =

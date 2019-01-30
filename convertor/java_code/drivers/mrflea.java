@@ -74,28 +74,28 @@ public class mrflea
 		{ 0 }
 	};
 	
-	static struct GfxLayout tile_layout = {
+	static GfxLayout tile_layout = new GfxLayout(
 		8,8,
 		0x800, /* number of tiles */
 		4,
-		{ 0,1,2,3 },
-		{ 0*4,1*4,2*4,3*4, 4*4,5*4,6*4,7*4 },
-		{ 0*32,1*32,2*32,3*32, 4*32,5*32,6*32,7*32 },
+		new int[] { 0,1,2,3 },
+		new int[] { 0*4,1*4,2*4,3*4, 4*4,5*4,6*4,7*4 },
+		new int[] { 0*32,1*32,2*32,3*32, 4*32,5*32,6*32,7*32 },
 		8*32
-	};
+	);
 	
-	static struct GfxLayout sprite_layout = {
+	static GfxLayout sprite_layout = new GfxLayout(
 		16,16,
 		0x200, /* number of sprites */
 		4,
-		{ 0*0x4000*8,1*0x4000*8,2*0x4000*8,3*0x4000*8 },
-		{ 0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15 },
-		{
+		new int[] { 0*0x4000*8,1*0x4000*8,2*0x4000*8,3*0x4000*8 },
+		new int[] { 0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15 },
+		new int[] {
 			0x00,0x10,0x20,0x30,0x40,0x50,0x60,0x70,
 			0x80,0x90,0xa0,0xb0,0xc0,0xd0,0xe0,0xf0
 		},
 		16*16
-	};
+	);
 	
 	static struct GfxDecodeInfo gfxdecodeinfo[] = {
 		{ REGION_GFX1, 0, &sprite_layout,	0x10, 1 },

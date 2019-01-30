@@ -269,29 +269,29 @@ public class esd16
 	***************************************************************************/
 	
 	/* 16x16x5, made of four 8x8 tiles */
-	static struct GfxLayout layout_16x16x5 =
-	{
+	static GfxLayout layout_16x16x5 = new GfxLayout
+	(
 		16,16,
 		RGN_FRAC(1,5),
 		5,
-		{ RGN_FRAC(4,5),RGN_FRAC(3,5),RGN_FRAC(2,5),RGN_FRAC(1,5), RGN_FRAC(0,5) },
-		{ STEP8(0+7,-1), STEP8(8*16+7,-1) },
-		{ STEP16(0,8) },
+		new int[] { RGN_FRAC(4,5),RGN_FRAC(3,5),RGN_FRAC(2,5),RGN_FRAC(1,5), RGN_FRAC(0,5) },
+		new int[] { STEP8(0+7,-1), STEP8(8*16+7,-1) },
+		new int[] { STEP16(0,8) },
 		16*16
-	};
+	);
 	
 	/* 8x8x8 */
-	static struct GfxLayout layout_8x8x8 =
-	{
+	static GfxLayout layout_8x8x8 = new GfxLayout
+	(
 		8,8,
 		RGN_FRAC(1,4),
 		8,
-		{ STEP8(0,1) },
-		{ RGN_FRAC(3,4)+0*8,RGN_FRAC(2,4)+0*8,RGN_FRAC(1,4)+0*8,RGN_FRAC(0,4)+0*8,
+		new int[] { STEP8(0,1) },
+		new int[] { RGN_FRAC(3,4)+0*8,RGN_FRAC(2,4)+0*8,RGN_FRAC(1,4)+0*8,RGN_FRAC(0,4)+0*8,
 		  RGN_FRAC(3,4)+1*8,RGN_FRAC(2,4)+1*8,RGN_FRAC(1,4)+1*8,RGN_FRAC(0,4)+1*8 },
-		{ STEP8(0,2*8) },
+		new int[] { STEP8(0,2*8) },
 		8*8*2,
-	};
+	);
 	
 	static struct GfxDecodeInfo esd16_gfxdecodeinfo[] =
 	{

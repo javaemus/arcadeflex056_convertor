@@ -1000,28 +1000,28 @@ public class neogeo
 	/******************************************************************************/
 	
 	/* character layout (same for all games) */
-	static struct GfxLayout charlayout =	/* All games */
-	{
+	static GfxLayout charlayout = new GfxLayout/* All games */
+	(
 		8,8,			/* 8 x 8 chars */
 		4096,			/* 4096 in total */
 		4,				/* 4 bits per pixel */
-		{ 0, 1, 2, 3 },    /* planes are packed in a nibble */
-		{ 33*4, 32*4, 49*4, 48*4, 1*4, 0*4, 17*4, 16*4 },
-		{ 0*8, 1*8, 2*8, 3*8, 4*8, 5*8, 6*8, 7*8 },
+		new int[] { 0, 1, 2, 3 },    /* planes are packed in a nibble */
+		new int[] { 33*4, 32*4, 49*4, 48*4, 1*4, 0*4, 17*4, 16*4 },
+		new int[] { 0*8, 1*8, 2*8, 3*8, 4*8, 5*8, 6*8, 7*8 },
 		32*8	/* 32 bytes per char */
-	};
+	);
 	
 	/* Placeholder and also reminder of how this graphic format is put together */
-	static struct GfxLayout dummy_mvs_tilelayout =
-	{
+	static GfxLayout dummy_mvs_tilelayout = new GfxLayout
+	(
 		16,16,	 /* 16*16 sprites */
 		RGN_FRAC(1,1),
 		4,
-		{ GFX_RAW },
-		{ 0 },		/* org displacement */
-		{ 8*8 },	/* line modulo */
+		new int[] { GFX_RAW },
+		new int[] { 0 },		/* org displacement */
+		new int[] { 8*8 },	/* line modulo */
 		128*8		/* char modulo */
-	};
+	);
 	
 	static struct GfxDecodeInfo neogeo_mvs_gfxdecodeinfo[] =
 	{

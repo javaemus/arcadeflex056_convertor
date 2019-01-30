@@ -886,16 +886,16 @@ public class fromance
 	 *
 	 *************************************/
 	
-	static struct GfxLayout bglayout =
-	{
+	static GfxLayout bglayout = new GfxLayout
+	(
 		8,4,
 		RGN_FRAC(1,1),
 		4,
-		{ 0, 1, 2, 3 },
-		{ 4, 0, 12, 8, 20, 16, 28, 24 },
-		{ 0*32, 1*32, 2*32, 3*32 },
+		new int[] { 0, 1, 2, 3 },
+		new int[] { 4, 0, 12, 8, 20, 16, 28, 24 },
+		new int[] { 0*32, 1*32, 2*32, 3*32 },
 		16*8
-	};
+	);
 	
 	
 	static struct GfxDecodeInfo fromance_gfxdecodeinfo[] =

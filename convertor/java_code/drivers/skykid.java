@@ -385,66 +385,66 @@ public class skykid
 	INPUT_PORTS_END
 	
 	
-	static struct GfxLayout text_layout =
-	{
+	static GfxLayout text_layout = new GfxLayout
+	(
 		8,8,		/* 8*8 characters */
 		512,		/* 512 characters */
 		2,			/* 2 bits per pixel */
-		{ 0, 4 },	/* the bitplanes are packed in the same byte */
-		{ 8*8, 8*8+1, 8*8+2, 8*8+3, 0, 1, 2, 3 },
-		{ 0*8, 1*8, 2*8, 3*8, 4*8, 5*8, 6*8, 7*8 },
+		new int[] { 0, 4 },	/* the bitplanes are packed in the same byte */
+		new int[] { 8*8, 8*8+1, 8*8+2, 8*8+3, 0, 1, 2, 3 },
+		new int[] { 0*8, 1*8, 2*8, 3*8, 4*8, 5*8, 6*8, 7*8 },
 		16*8		/* every char takes 16 consecutive bytes */
-	};
+	);
 	
-	static struct GfxLayout tile_layout =
-	{
+	static GfxLayout tile_layout = new GfxLayout
+	(
 		8,8,		/* 8*8 characters */
 		512,		/* 512 characters */
 		2,			/* 2 bits per pixel */
-		{ 0, 4 },
-		{ 0, 1, 2, 3, 8+0, 8+1, 8+2, 8+3 },
-		{ 0*8, 2*8, 4*8, 6*8, 8*8, 10*8, 12*8, 14*8 },
+		new int[] { 0, 4 },
+		new int[] { 0, 1, 2, 3, 8+0, 8+1, 8+2, 8+3 },
+		new int[] { 0*8, 2*8, 4*8, 6*8, 8*8, 10*8, 12*8, 14*8 },
 		16*8		/* every char takes 16 consecutive bytes */
-	};
+	);
 	
-	static struct GfxLayout sprite_layout1 =
-	{
+	static GfxLayout sprite_layout1 = new GfxLayout
+	(
 		16,16,       	/* 16*16 sprites */
 		128,           	/* 128 sprites */
 		3,              /* 3 bits per pixel */
-		{ 0x4000*8+4, 0, 4 },
-		{ 0, 1, 2, 3, 8*8, 8*8+1, 8*8+2, 8*8+3,
+		new int[] { 0x4000*8+4, 0, 4 },
+		new int[] { 0, 1, 2, 3, 8*8, 8*8+1, 8*8+2, 8*8+3,
 				16*8+0, 16*8+1, 16*8+2, 16*8+3, 24*8+0, 24*8+1, 24*8+2, 24*8+3 },
-		{ 0*8, 1*8, 2*8, 3*8, 4*8, 5*8, 6*8, 7*8,
+		new int[] { 0*8, 1*8, 2*8, 3*8, 4*8, 5*8, 6*8, 7*8,
 				32*8, 33*8, 34*8, 35*8, 36*8, 37*8, 38*8, 39*8 },
 		64*8    /* every sprite takes 64 bytes */
-	};
+	);
 	
-	static struct GfxLayout sprite_layout2 =
-	{
+	static GfxLayout sprite_layout2 = new GfxLayout
+	(
 		16,16,       	/* 16*16 sprites */
 		128,           	/* 128 sprites */
 		3,              /* 3 bits per pixel */
-		{ 0x4000*8, 0x2000*8, 0x2000*8+4 },
-		{ 0, 1, 2, 3, 8*8, 8*8+1, 8*8+2, 8*8+3,
+		new int[] { 0x4000*8, 0x2000*8, 0x2000*8+4 },
+		new int[] { 0, 1, 2, 3, 8*8, 8*8+1, 8*8+2, 8*8+3,
 				16*8+0, 16*8+1, 16*8+2, 16*8+3, 24*8+0, 24*8+1, 24*8+2, 24*8+3 },
-		{ 0*8, 1*8, 2*8, 3*8, 4*8, 5*8, 6*8, 7*8,
+		new int[] { 0*8, 1*8, 2*8, 3*8, 4*8, 5*8, 6*8, 7*8,
 				32*8, 33*8, 34*8, 35*8, 36*8, 37*8, 38*8, 39*8 },
 		64*8    /* every sprite takes 64 bytes */
-	};
+	);
 	
-	static struct GfxLayout sprite_layout3 =
-	{
+	static GfxLayout sprite_layout3 = new GfxLayout
+	(
 		16,16,       	/* 16*16 sprites */
 		128,           	/* 128 sprites */
 		3,              /* 3 bits per pixel */
-		{ 0x8000*8, 0x6000*8, 0x6000*8+4 },
-		{ 0, 1, 2, 3, 8*8, 8*8+1, 8*8+2, 8*8+3,
+		new int[] { 0x8000*8, 0x6000*8, 0x6000*8+4 },
+		new int[] { 0, 1, 2, 3, 8*8, 8*8+1, 8*8+2, 8*8+3,
 				16*8+0, 16*8+1, 16*8+2, 16*8+3, 24*8+0, 24*8+1, 24*8+2, 24*8+3 },
-		{ 0*8, 1*8, 2*8, 3*8, 4*8, 5*8, 6*8, 7*8,
+		new int[] { 0*8, 1*8, 2*8, 3*8, 4*8, 5*8, 6*8, 7*8,
 				32*8, 33*8, 34*8, 35*8, 36*8, 37*8, 38*8, 39*8 },
 		64*8    /* every sprite takes 64 bytes */
-	};
+	);
 	
 	static struct GfxDecodeInfo gfxdecodeinfo[] =
 	{

@@ -298,40 +298,40 @@ public class digdug
 		PORT_SERVICE( 0x80, IP_ACTIVE_LOW )
 	INPUT_PORTS_END
 	
-	static struct GfxLayout charlayout1 =
-	{
+	static GfxLayout charlayout1 = new GfxLayout
+	(
 		8,8,	/* 8*8 characters */
 		128,	/* 128 characters */
 		1,		/* 1 bit per pixel */
-		{ 0 },	/* one bitplane */
-		{ 7, 6, 5, 4, 3, 2, 1, 0 },
-		{ 0*8, 1*8, 2*8, 3*8, 4*8, 5*8, 6*8, 7*8 },
+		new int[] { 0 },	/* one bitplane */
+		new int[] { 7, 6, 5, 4, 3, 2, 1, 0 },
+		new int[] { 0*8, 1*8, 2*8, 3*8, 4*8, 5*8, 6*8, 7*8 },
 		8*8	/* every char takes 8 consecutive bytes */
-	};
+	);
 	
-	static struct GfxLayout charlayout2 =
-	{
+	static GfxLayout charlayout2 = new GfxLayout
+	(
 		8,8,	/* 8*8 characters */
 		256,	/* 256 characters */
 		2,	/* 2 bits per pixel */
-		{ 0, 4 },      /* the two bitplanes for 4 pixels are packed into one byte */
-		{ 8*8+0, 8*8+1, 8*8+2, 8*8+3, 0, 1, 2, 3 },   /* bits are packed in groups of four */
-		{ 0*8, 1*8, 2*8, 3*8, 4*8, 5*8, 6*8, 7*8 },   /* characters are rotated 90 degrees */
+		new int[] { 0, 4 },      /* the two bitplanes for 4 pixels are packed into one byte */
+		new int[] { 8*8+0, 8*8+1, 8*8+2, 8*8+3, 0, 1, 2, 3 },   /* bits are packed in groups of four */
+		new int[] { 0*8, 1*8, 2*8, 3*8, 4*8, 5*8, 6*8, 7*8 },   /* characters are rotated 90 degrees */
 		16*8	       /* every char takes 16 bytes */
-	};
+	);
 	
-	static struct GfxLayout spritelayout =
-	{
+	static GfxLayout spritelayout = new GfxLayout
+	(
 		16,16,	        /* 16*16 sprites */
 		256,	        /* 256 sprites */
 		2,	        /* 2 bits per pixel */
-		{ 0, 4 },	/* the two bitplanes for 4 pixels are packed into one byte */
-		{ 0, 1, 2, 3, 8*8, 8*8+1, 8*8+2, 8*8+3, 16*8+0, 16*8+1, 16*8+2, 16*8+3,
+		new int[] { 0, 4 },	/* the two bitplanes for 4 pixels are packed into one byte */
+		new int[] { 0, 1, 2, 3, 8*8, 8*8+1, 8*8+2, 8*8+3, 16*8+0, 16*8+1, 16*8+2, 16*8+3,
 				24*8+0, 24*8+1, 24*8+2, 24*8+3 },
-		{ 0*8, 1*8, 2*8, 3*8, 4*8, 5*8, 6*8, 7*8,
+		new int[] { 0*8, 1*8, 2*8, 3*8, 4*8, 5*8, 6*8, 7*8,
 				32*8, 33*8, 34*8, 35*8, 36*8, 37*8, 38*8, 39*8 },
 		64*8	/* every sprite takes 64 bytes */
-	};
+	);
 	
 	
 	static struct GfxDecodeInfo gfxdecodeinfo[] =

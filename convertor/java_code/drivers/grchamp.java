@@ -156,41 +156,41 @@ public class grchamp
 	
 	/***************************************************************************/
 	
-	static struct GfxLayout char_layout =
-	{
+	static GfxLayout char_layout = new GfxLayout
+	(
 		8,8,
 		0x200,
 		2,
-		{ 0,0x1000*8 },
-		{ 0,1,2,3,4,5,6,7 },
-		{ 0*8, 1*8, 2*8, 3*8, 4*8, 5*8, 6*8, 7*8 },
+		new int[] { 0,0x1000*8 },
+		new int[] { 0,1,2,3,4,5,6,7 },
+		new int[] { 0*8, 1*8, 2*8, 3*8, 4*8, 5*8, 6*8, 7*8 },
 		8*8
-	};
+	);
 	
-	static struct GfxLayout tile_layout =
-	{
+	static GfxLayout tile_layout = new GfxLayout
+	(
 		8,8,
 		0x300,
 		4,
-		{ 0,4,0x3000*8,0x3000*8+4 },
-		{ 8*8+3,8*8+2,8*8+1,8*8+0,3,2,1,0 },
-		{ 7*8,6*8,5*8,4*8,3*8,2*8,1*8,0*8 },
+		new int[] { 0,4,0x3000*8,0x3000*8+4 },
+		new int[] { 8*8+3,8*8+2,8*8+1,8*8+0,3,2,1,0 },
+		new int[] { 7*8,6*8,5*8,4*8,3*8,2*8,1*8,0*8 },
 		16*8
-	};
+	);
 	
-	static struct GfxLayout player_layout =
-	{
+	static GfxLayout player_layout = new GfxLayout
+	(
 		32,32,
 		0x10,
 		2,
-		{ 0,4 },
-		{
+		new int[] { 0,4 },
+		new int[] {
 			0x000,0x001,0x002,0x003,0x008,0x009,0x00a,0x00b,
 			0x010,0x011,0x012,0x013,0x018,0x019,0x01a,0x01b,
 			0x020,0x021,0x022,0x023,0x028,0x029,0x02a,0x02b,
 			0x030,0x031,0x032,0x033,0x038,0x039,0x03a,0x03b,
 		},
-		{
+		new int[] {
 			0x40*0x00,0x40*0x01,0x40*0x02,0x40*0x03,
 			0x40*0x04,0x40*0x05,0x40*0x06,0x40*0x07,
 			0x40*0x08,0x40*0x09,0x40*0x0a,0x40*0x0b,
@@ -201,40 +201,40 @@ public class grchamp
 			0x40*0x1c,0x40*0x1d,0x40*0x1e,0x40*0x1f,
 		},
 		0x800
-	};
+	);
 	
-	static struct GfxLayout rain_layout =
-	{
+	static GfxLayout rain_layout = new GfxLayout
+	(
 		16,16,
 		0x10,
 		1,
-		{ 0 },
-		{ /* ? */
+		new int[] { 0 },
+		new int[] { /* ? */
 			0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15
 		},
-		{ /* ? */
+		new int[] { /* ? */
 			0*16,1*16,2*16,3*16,4*16,5*16,6*16,7*16,
 			8*16,9*16,10*16,11*16,12*16,13*16,14*16,15*16
 		},
 		0x100
-	};
+	);
 	
-	static struct GfxLayout sprite_layout =
-	{
+	static GfxLayout sprite_layout = new GfxLayout
+	(
 		16,16,
 		0x80,
 		2,
-		{ 0,0x1000*8 },
-		{
+		new int[] { 0,0x1000*8 },
+		new int[] {
 			0,1,2,3,4,5,6,7,
 			64+0,64+1,64+2,64+3,64+4,64+5,64+6,64+7
 		},
-		{
+		new int[] {
 			0*8, 1*8, 2*8, 3*8, 4*8, 5*8, 6*8, 7*8,
 			128+0*8, 128+1*8, 128+2*8, 128+3*8, 128+4*8, 128+5*8, 128+6*8, 128+7*8
 		},
 		0x100
-	};
+	);
 	
 	static struct GfxDecodeInfo gfxdecodeinfo[] =
 	{

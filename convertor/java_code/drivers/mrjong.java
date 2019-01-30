@@ -122,29 +122,29 @@ public class mrjong
 	INPUT_PORTS_END
 	
 	
-	static struct GfxLayout tilelayout =
-	{
+	static GfxLayout tilelayout = new GfxLayout
+	(
 		8, 8,				/* 8*8 characters */
 		512,				/* 512 characters */
 		2,				/* 2 bits per pixel */
-		{ 0, 512*8*8 },			/* the two bitplanes are separated */
-		{ 0, 1, 2, 3, 4, 5, 6, 7 },	/* pretty straightforward layout */
-		{ 7*8, 6*8, 5*8, 4*8, 3*8, 2*8, 1*8, 0*8 },
+		new int[] { 0, 512*8*8 },			/* the two bitplanes are separated */
+		new int[] { 0, 1, 2, 3, 4, 5, 6, 7 },	/* pretty straightforward layout */
+		new int[] { 7*8, 6*8, 5*8, 4*8, 3*8, 2*8, 1*8, 0*8 },
 		8*8				/* every char takes 8 consecutive bytes */
-	};
+	);
 	
-	static struct GfxLayout spritelayout =
-	{
+	static GfxLayout spritelayout = new GfxLayout
+	(
 		16, 16,				/* 16*16 sprites */
 		128,				/* 128 sprites */
 		2,				/* 2 bits per pixel */
-		{ 0, 128*16*16 },		/* the bitplanes are separated */
-		{ 8*8+0, 8*8+1, 8*8+2, 8*8+3, 8*8+4, 8*8+5, 8*8+6, 8*8+7,	/* pretty straightforward layout */
+		new int[] { 0, 128*16*16 },		/* the bitplanes are separated */
+		new int[] { 8*8+0, 8*8+1, 8*8+2, 8*8+3, 8*8+4, 8*8+5, 8*8+6, 8*8+7,	/* pretty straightforward layout */
 				0, 1, 2, 3, 4, 5, 6, 7 },
-		{ 23*8, 22*8, 21*8, 20*8, 19*8, 18*8, 17*8, 16*8,
+		new int[] { 23*8, 22*8, 21*8, 20*8, 19*8, 18*8, 17*8, 16*8,
 				7*8, 6*8, 5*8, 4*8, 3*8, 2*8, 1*8, 0*8 },
 		32*8				/* every sprite takes 32 consecutive bytes */
-	};
+	);
 	
 	static struct GfxDecodeInfo gfxdecodeinfo[] =
 	{

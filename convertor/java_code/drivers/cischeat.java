@@ -1247,53 +1247,53 @@ public class cischeat
 	**************************************************************************/
 	
 	/* 8x8x4, straightforward layout */
-	static struct GfxLayout tiles_8x8 =
-	{
+	static GfxLayout tiles_8x8 = new GfxLayout
+	(
 		8,8,
 		RGN_FRAC(1,1),
 		4,
-		{ STEP4(0,1) },
-		{ STEP8(0,4) },
-		{ STEP8(0,4*8) },
+		new int[] { STEP4(0,1) },
+		new int[] { STEP8(0,4) },
+		new int[] { STEP8(0,4*8) },
 		8*8*4
-	};
+	);
 	
 	/* 16x16x4, straightforward layout */
-	static struct GfxLayout tiles_16x16 =
-	{
+	static GfxLayout tiles_16x16 = new GfxLayout
+	(
 		16,16,
 		RGN_FRAC(1,1),
 		4,
-		{ STEP4(0,1) },
-		{ STEP16(0,4) },
-		{ STEP16(0,4*16) },
+		new int[] { STEP4(0,1) },
+		new int[] { STEP16(0,4) },
+		new int[] { STEP16(0,4*16) },
 		16*16*4
-	};
+	);
 	
 	/* 16x16x4, made of four 8x8 tiles */
-	static struct GfxLayout tiles_16x16_quad =
-	{
+	static GfxLayout tiles_16x16_quad = new GfxLayout
+	(
 		16,16,
 		RGN_FRAC(1,1),
 		4,
-		{ STEP4(0,1) },
-		{ STEP8(8*8*4*0,4), STEP8(8*8*4*2,4) },
-		{ STEP16(0,4*8) },
+		new int[] { STEP4(0,1) },
+		new int[] { STEP8(8*8*4*0,4), STEP8(8*8*4*2,4) },
+		new int[] { STEP16(0,4*8) },
 		16*16*4
-	};
+	);
 	
 	/* Road: 64 x 1 x 4 */
-	static struct GfxLayout road_layout =
-	{
+	static GfxLayout road_layout = new GfxLayout
+	(
 		64,1,
 		RGN_FRAC(1,1),
 		4,
-		{ STEP4(0,1) },
-		{ STEP16(16*4*0,4),STEP16(16*4*1,4),
+		new int[] { STEP4(0,1) },
+		new int[] { STEP16(16*4*0,4),STEP16(16*4*1,4),
 		  STEP16(16*4*2,4),STEP16(16*4*3,4) },
-		{ 0 },
+		new int[] { 0 },
 		64*1*4
-	};
+	);
 	
 	/**************************************************************************
 									Big Run

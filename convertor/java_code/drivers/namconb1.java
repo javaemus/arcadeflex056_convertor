@@ -310,38 +310,38 @@ public class namconb1
 	
 	/***************************************************************/
 	
-	static struct GfxLayout obj_layout =
-	{
+	static GfxLayout obj_layout = new GfxLayout
+	(
 		16,16,
 		RGN_FRAC(1,1),
 		8, /* bits per pixel */
-		{
+		new int[] {
 			/* plane offsets */
 			0,1,2,3,4,5,6,7,
 		},
-		{
+		new int[] {
 			0*16+8,1*16+8,0*16,1*16,
 			2*16+8,3*16+8,2*16,3*16,
 			4*16+8,5*16+8,4*16,5*16,
 			6*16+8,7*16+8,6*16,7*16
 		},
-		{
+		new int[] {
 			0x0*128,0x1*128,0x2*128,0x3*128,0x4*128,0x5*128,0x6*128,0x7*128,
 			0x8*128,0x9*128,0xa*128,0xb*128,0xc*128,0xd*128,0xe*128,0xf*128
 		},
 		16*128
-	};
+	);
 	
-	static struct GfxLayout tile_layout =
-	{
+	static GfxLayout tile_layout = new GfxLayout
+	(
 		8,8,
 		RGN_FRAC(1,1),
 		8,
-		{ 0,1,2,3,4,5,6,7 },
-		{ 0*8,1*8,2*8,3*8,4*8,5*8,6*8,7*8 },
-		{ 0*64,1*64,2*64,3*64,4*64,5*64,6*64,7*64 },
+		new int[] { 0,1,2,3,4,5,6,7 },
+		new int[] { 0*8,1*8,2*8,3*8,4*8,5*8,6*8,7*8 },
+		new int[] { 0*64,1*64,2*64,3*64,4*64,5*64,6*64,7*64 },
 		8*64
-	};
+	);
 	
 	static struct GfxDecodeInfo gfxdecodeinfo[] =
 	{

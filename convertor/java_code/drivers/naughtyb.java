@@ -230,16 +230,16 @@ public class naughtyb
 	
 	
 	
-	static struct GfxLayout charlayout =
-	{
+	static GfxLayout charlayout = new GfxLayout
+	(
 		8,8,	/* 8*8 characters */
 		512,	/* 512 characters */
 		2,		/* 2 bits per pixel */
-		{ 512*8*8, 0 }, /* the two bitplanes are separated */
-		{ 7, 6, 5, 4, 3, 2, 1, 0 }, /* pretty straightforward layout */
-		{ 0*8, 1*8, 2*8, 3*8, 4*8, 5*8, 6*8, 7*8 },
+		new int[] { 512*8*8, 0 }, /* the two bitplanes are separated */
+		new int[] { 7, 6, 5, 4, 3, 2, 1, 0 }, /* pretty straightforward layout */
+		new int[] { 0*8, 1*8, 2*8, 3*8, 4*8, 5*8, 6*8, 7*8 },
 		8*8 	/* every char takes 8 consecutive bytes */
-	};
+	);
 	
 	
 	

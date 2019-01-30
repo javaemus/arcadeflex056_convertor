@@ -532,29 +532,29 @@ public class pipedrm
 	 *
 	 *************************************/
 	
-	static struct GfxLayout bglayout =
-	{
+	static GfxLayout bglayout = new GfxLayout
+	(
 		8,4,
 		RGN_FRAC(1,1),
 		4,
-		{ 0, 1, 2, 3 },
-		{ 4, 0, 12, 8, 20, 16, 28, 24 },
-		{ 0*32, 1*32, 2*32, 3*32 },
+		new int[] { 0, 1, 2, 3 },
+		new int[] { 4, 0, 12, 8, 20, 16, 28, 24 },
+		new int[] { 0*32, 1*32, 2*32, 3*32 },
 		8*16
-	};
+	);
 	
 	
-	static struct GfxLayout splayout =
-	{
+	static GfxLayout splayout = new GfxLayout
+	(
 		16,16,
 		RGN_FRAC(1,1),
 		4,
-		{ 0, 1, 2, 3 },
-		{ 12, 8, 28, 24, 4, 0, 20, 16, 44, 40, 60, 56, 36, 32, 52, 48 },
-		{ 0*64, 1*64, 2*64, 3*64, 4*64, 5*64, 6*64, 7*64,
+		new int[] { 0, 1, 2, 3 },
+		new int[] { 12, 8, 28, 24, 4, 0, 20, 16, 44, 40, 60, 56, 36, 32, 52, 48 },
+		new int[] { 0*64, 1*64, 2*64, 3*64, 4*64, 5*64, 6*64, 7*64,
 				8*64, 9*64, 10*64, 11*64, 12*64, 13*64, 14*64, 15*64 },
 		8*128
-	};
+	);
 	
 	
 	static struct GfxDecodeInfo gfxdecodeinfo[] =

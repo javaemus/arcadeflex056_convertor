@@ -219,30 +219,30 @@ public class bsktball
 		PORT_DIPSETTING(	0x00, "English" )
 	INPUT_PORTS_END
 	
-	static struct GfxLayout charlayout =
-	{
+	static GfxLayout charlayout = new GfxLayout
+	(
 		8,8,	/* 8*8 characters */
 		64, 	/* 64 characters */
 		2,		/* 2 bits per pixel */
-		{ 0, 8*0x800 }, 	   /* bitplanes separated by $800 bytes */
-		{ 0, 1, 2, 3, 4, 5, 6, 7 },
-		{ 0*8, 1*8, 2*8, 3*8, 4*8, 5*8, 6*8, 7*8 },
+		new int[] { 0, 8*0x800 }, 	   /* bitplanes separated by $800 bytes */
+		new int[] { 0, 1, 2, 3, 4, 5, 6, 7 },
+		new int[] { 0*8, 1*8, 2*8, 3*8, 4*8, 5*8, 6*8, 7*8 },
 		8*8 /* every char takes 8 consecutive bytes */
-	};
+	);
 	
-	static struct GfxLayout motionlayout =
-	{
+	static GfxLayout motionlayout = new GfxLayout
+	(
 		8,32,	/* 8*32 characters */
 		64, 	/* 64 characters */
 		2,		/* 2 bits per pixel */
-		{ 0, 8*0x800 }, 	   /* bitplanes separated by $800 bytes */
-		{ 0, 1, 2, 3, 4, 5, 6, 7 },
-		{	0*8, 1*8, 2*8, 3*8, 4*8, 5*8, 6*8, 7*8,
+		new int[] { 0, 8*0x800 }, 	   /* bitplanes separated by $800 bytes */
+		new int[] { 0, 1, 2, 3, 4, 5, 6, 7 },
+		new int[] {	0*8, 1*8, 2*8, 3*8, 4*8, 5*8, 6*8, 7*8,
 			8*8, 9*8, 10*8, 11*8, 12*8, 13*8, 14*8, 15*8,
 			16*8, 17*8, 18*8, 19*8, 20*8, 21*8, 22*8, 23*8,
 			24*8, 25*8, 26*8, 27*8, 28*8, 29*8, 30*8, 31*8 },
 		32*8	/* every char takes 32 consecutive bytes */
-	};
+	);
 	
 	static struct GfxDecodeInfo gfxdecodeinfo[] =
 	{

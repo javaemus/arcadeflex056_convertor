@@ -58,16 +58,16 @@ public class mole
 	WRITE_HANDLER( moleattack_videoram_w );
 	WRITE_HANDLER( moleattack_tilesetselector_w );
 	
-	static struct GfxLayout tile_layout =
-	{
+	static GfxLayout tile_layout = new GfxLayout
+	(
 		8,8,	/* character size */
 		512,	/* number of characters */
 		3,		/* number of bitplanes */
-		{ 0x0000*8, 0x1000*8, 0x2000*8 },
-		{ 0, 1, 2, 3, 4, 5, 6, 7 },
-		{ 0*8, 1*8, 2*8, 3*8, 4*8, 5*8, 6*8, 7*8 },
+		new int[] { 0x0000*8, 0x1000*8, 0x2000*8 },
+		new int[] { 0, 1, 2, 3, 4, 5, 6, 7 },
+		new int[] { 0*8, 1*8, 2*8, 3*8, 4*8, 5*8, 6*8, 7*8 },
 		8*8
-	};
+	);
 	
 	static struct GfxDecodeInfo gfx_decode[] = {
 		{ 1, 0x0000, &tile_layout, 0x00, 1 },

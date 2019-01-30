@@ -3501,49 +3501,49 @@ public class seta
 	
 	
 	/* The bitplanes are packed togheter */
-	static struct GfxLayout layout_packed =
-	{
+	static GfxLayout layout_packed = new GfxLayout
+	(
 		16,16,
 		RGN_FRAC(1,1),
 		4,
-		{2*4,3*4,0*4,1*4},
-		{256+128,256+129,256+130,256+131, 256+0,256+1,256+2,256+3,
+		new int[] {2*4,3*4,0*4,1*4},
+		new int[] {256+128,256+129,256+130,256+131, 256+0,256+1,256+2,256+3,
 		 128,129,130,131, 0,1,2,3},
-		{0*16,1*16,2*16,3*16,4*16,5*16,6*16,7*16,
+		new int[] {0*16,1*16,2*16,3*16,4*16,5*16,6*16,7*16,
 		 32*16,33*16,34*16,35*16,36*16,37*16,38*16,39*16},
 		16*16*4
-	};
+	);
 	
 	
 	/* The bitplanes are separated (but there are 2 per rom) */
-	static struct GfxLayout layout_planes_2roms =
-	{
+	static GfxLayout layout_planes_2roms = new GfxLayout
+	(
 		16,16,
 		RGN_FRAC(1,2),
 		4,
-		{RGN_FRAC(1,2)+8, RGN_FRAC(1,2)+0, 8, 0},
-		{0,1,2,3,4,5,6,7, 128,129,130,131,132,133,134,135},
-		{0*16,1*16,2*16,3*16,4*16,5*16,6*16,7*16,
+		new int[] {RGN_FRAC(1,2)+8, RGN_FRAC(1,2)+0, 8, 0},
+		new int[] {0,1,2,3,4,5,6,7, 128,129,130,131,132,133,134,135},
+		new int[] {0*16,1*16,2*16,3*16,4*16,5*16,6*16,7*16,
 		 16*16,17*16,18*16,19*16,20*16,21*16,22*16,23*16 },
 		16*16*2
-	};
+	);
 	
 	
 	/* The bitplanes are separated (but there are 2 per rom).
 	   Each 8x8 tile is additionally split in 2 vertical halves four bits wide,
 	   stored one after the other */
-	static struct GfxLayout layout_planes_2roms_split =
-	{
+	static GfxLayout layout_planes_2roms_split = new GfxLayout
+	(
 		16,16,
 		RGN_FRAC(1,2),
 		4,
-		{0,4, RGN_FRAC(1,2)+0,RGN_FRAC(1,2)+4},
-		{128+64,128+65,128+66,128+67, 128+0,128+1,128+2,128+3,
+		new int[] {0,4, RGN_FRAC(1,2)+0,RGN_FRAC(1,2)+4},
+		new int[] {128+64,128+65,128+66,128+67, 128+0,128+1,128+2,128+3,
 		 8*8+0,8*8+1,8*8+2,8*8+3, 0,1,2,3},
-		{0*8,1*8,2*8,3*8,4*8,5*8,6*8,7*8,
+		new int[] {0*8,1*8,2*8,3*8,4*8,5*8,6*8,7*8,
 		 32*8,33*8,34*8,35*8,36*8,37*8,38*8,39*8},
 		16*16*2
-	};
+	);
 	
 	
 	
@@ -3552,18 +3552,18 @@ public class seta
 	
 	
 	/* The bitplanes are packed together: 3 roms with 2 bits in each */
-	static struct GfxLayout layout_packed_6bits_3roms =
-	{
+	static GfxLayout layout_packed_6bits_3roms = new GfxLayout
+	(
 		16,16,
 		RGN_FRAC(1,3),
 		6,
-		{RGN_FRAC(0,3)+0,RGN_FRAC(0,3)+4,  RGN_FRAC(1,3)+0,RGN_FRAC(1,3)+4,  RGN_FRAC(2,3)+0,RGN_FRAC(2,3)+4},
-		{128+64,128+65,128+66,128+67, 128+0,128+1,128+2,128+3,
+		new int[] {RGN_FRAC(0,3)+0,RGN_FRAC(0,3)+4,  RGN_FRAC(1,3)+0,RGN_FRAC(1,3)+4,  RGN_FRAC(2,3)+0,RGN_FRAC(2,3)+4},
+		new int[] {128+64,128+65,128+66,128+67, 128+0,128+1,128+2,128+3,
 		 64,65,66,67, 0,1,2,3},
-		{0*8,1*8,2*8,3*8,4*8,5*8,6*8,7*8,
+		new int[] {0*8,1*8,2*8,3*8,4*8,5*8,6*8,7*8,
 		 32*8,33*8,34*8,35*8,36*8,37*8,38*8,39*8},
 		16*16*2
-	};
+	);
 	
 	
 	/* The bitplanes are packed togheter: 4 bits in one rom, 2 bits in another.
@@ -3571,18 +3571,18 @@ public class seta
 	   ROM_LOAD16_BYTE. This way we can think of it as a 4 planes rom, with the
 	   upper 2 planes unused.	 */
 	
-	static struct GfxLayout layout_packed_6bits_2roms =
-	{
+	static GfxLayout layout_packed_6bits_2roms = new GfxLayout
+	(
 		16,16,
 		RGN_FRAC(1,2),
 		6,
-		{RGN_FRAC(1,2)+0*4, RGN_FRAC(1,2)+1*4, 2*4,3*4,0*4,1*4},
-		{256+128,256+129,256+130,256+131, 256+0,256+1,256+2,256+3,
+		new int[] {RGN_FRAC(1,2)+0*4, RGN_FRAC(1,2)+1*4, 2*4,3*4,0*4,1*4},
+		new int[] {256+128,256+129,256+130,256+131, 256+0,256+1,256+2,256+3,
 		 128,129,130,131, 0,1,2,3},
-		{0*16,1*16,2*16,3*16,4*16,5*16,6*16,7*16,
+		new int[] {0*16,1*16,2*16,3*16,4*16,5*16,6*16,7*16,
 		 32*16,33*16,34*16,35*16,36*16,37*16,38*16,39*16},
 		16*16*4
-	};
+	);
 	
 	
 	

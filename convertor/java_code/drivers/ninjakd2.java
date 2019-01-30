@@ -474,29 +474,29 @@ public class ninjakd2
 	
 	
 	
-	static struct GfxLayout charlayout =
-	{
+	static GfxLayout charlayout = new GfxLayout
+	(
 		8,8,     /* 8*8 characters */
 		1024,    /* 1024 characters */
 		4,       /* 4 bits per pixel */
-		{0,1,2,3 }, /* the bitplanes are packed in one nibble */
-		{0, 4, 16384*8+0, 16384*8+4, 8, 12, 16384*8+8, 16384*8+12 },
-		{16*0, 16*1, 16*2, 16*3, 16*4, 16*5, 16*6, 16*7 },
+		new int[] {0,1,2,3 }, /* the bitplanes are packed in one nibble */
+		new int[] {0, 4, 16384*8+0, 16384*8+4, 8, 12, 16384*8+8, 16384*8+12 },
+		new int[] {16*0, 16*1, 16*2, 16*3, 16*4, 16*5, 16*6, 16*7 },
 		8*16
-	};
+	);
 	
-	static struct GfxLayout spritelayout =
-	{
+	static GfxLayout spritelayout = new GfxLayout
+	(
 		16,16,   /* 16*16 characters */
 		1024,    /* 1024 sprites */
 		4,       /* 4 bits per pixel */
-		{0,1,2,3}, /* the bitplanes are packed in one nibble */
-		{0,  4,  65536*8+0,  65536*8+4,  8, 12,  65536*8+8, 65536*8+12,
+		new int[] {0,1,2,3}, /* the bitplanes are packed in one nibble */
+		new int[] {0,  4,  65536*8+0,  65536*8+4,  8, 12,  65536*8+8, 65536*8+12,
 			16*8+0, 16*8+4, 16*8+65536*8+0, 16*8+65536*8+4, 16*8+8, 16*8+12, 16*8+65536*8+8, 16*8+65536*8+12},
-		{16*0, 16*1, 16*2, 16*3, 16*4, 16*5, 16*6, 16*7,
+		new int[] {16*0, 16*1, 16*2, 16*3, 16*4, 16*5, 16*6, 16*7,
 			32*8+16*0, 32*8+16*1, 32*8+16*2, 32*8+16*3, 32*8+16*4, 32*8+16*5, 32*8+16*6, 32*8+16*7},
 		8*64
-	};
+	);
 	
 	static struct GfxDecodeInfo gfxdecodeinfo[] =
 	{

@@ -654,16 +654,16 @@ public class bublbobl
 	
 	
 	
-	static struct GfxLayout charlayout =
-	{
+	static GfxLayout charlayout = new GfxLayout
+	(
 		8,8,	/* the characters are 8x8 pixels */
 		256*8*8,	/* 256 chars per bank * 8 banks per ROM pair * 8 ROM pairs */
 		4,	/* 4 bits per pixel */
-		{ 0, 4, 8*0x8000*8, 8*0x8000*8+4 },
-		{ 3, 2, 1, 0, 8+3, 8+2, 8+1, 8+0 },
-		{ 0*16, 1*16, 2*16, 3*16, 4*16, 5*16, 6*16, 7*16 },
+		new int[] { 0, 4, 8*0x8000*8, 8*0x8000*8+4 },
+		new int[] { 3, 2, 1, 0, 8+3, 8+2, 8+1, 8+0 },
+		new int[] { 0*16, 1*16, 2*16, 3*16, 4*16, 5*16, 6*16, 7*16 },
 		16*8	/* every char takes 16 bytes in two ROMs */
-	};
+	);
 	
 	static struct GfxDecodeInfo gfxdecodeinfo[] =
 	{

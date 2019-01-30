@@ -419,45 +419,45 @@ public class rainbow
 					GFX DECODING
 	**************************************************************/
 	
-	static struct GfxLayout spritelayout1 =
-	{
+	static GfxLayout spritelayout1 = new GfxLayout
+	(
 		8,8,		/* 8*8 sprites */
 		16384,	/* 16384 sprites */
 		4,		/* 4 bits per pixel */
-		{ 0, 1, 2, 3 },
-		{ 8, 12, 0, 4, 24, 28, 16, 20 },
-		{ 0*32, 1*32, 2*32, 3*32, 4*32, 5*32, 6*32, 7*32 },
+		new int[] { 0, 1, 2, 3 },
+		new int[] { 8, 12, 0, 4, 24, 28, 16, 20 },
+		new int[] { 0*32, 1*32, 2*32, 3*32, 4*32, 5*32, 6*32, 7*32 },
 		32*8		/* every sprite takes 32 consecutive bytes */
-	};
+	);
 	
-	static struct GfxLayout spritelayout2 =
-	{
+	static GfxLayout spritelayout2 = new GfxLayout
+	(
 		16,16,	/* 16*16 sprites */
 		4096,		/* 1024 sprites */
 		4,		/* 4 bits per pixel */
-		{ 0, 1, 2, 3 },
-		{ 8, 12, 0, 4, 24, 28, 16, 20, 40, 44, 32, 36, 56, 60, 48, 52 },
-		{ 0*64, 1*64, 2*64, 3*64, 4*64, 5*64, 6*64, 7*64,
+		new int[] { 0, 1, 2, 3 },
+		new int[] { 8, 12, 0, 4, 24, 28, 16, 20, 40, 44, 32, 36, 56, 60, 48, 52 },
+		new int[] { 0*64, 1*64, 2*64, 3*64, 4*64, 5*64, 6*64, 7*64,
 				8*64, 9*64, 10*64, 11*64, 12*64, 13*64, 14*64, 15*64 },
 		128*8		/* every sprite takes 128 consecutive bytes */
-	};
+	);
 	
-	static struct GfxLayout spritelayout3 =
-	{
+	static GfxLayout spritelayout3 = new GfxLayout
+	(
 		16,16,	/* 16*16 sprites */
 		1024,		/* 1024 sprites */
 		4,		/* 4 bits per pixel */
-		{ 0, 1, 2, 3 },
-		{
+		new int[] { 0, 1, 2, 3 },
+		new int[] {
 		0, 4, 0x10000*8+0 ,0x10000*8+4,
 		8+0, 8+4, 0x10000*8+8+0, 0x10000*8+8+4,
 		16+0, 16+4, 0x10000*8+16+0, 0x10000*8+16+4,
 		24+0, 24+4, 0x10000*8+24+0, 0x10000*8+24+4
 		},
-		{ 0*32, 1*32, 2*32, 3*32, 4*32, 5*32, 6*32, 7*32,
+		new int[] { 0*32, 1*32, 2*32, 3*32, 4*32, 5*32, 6*32, 7*32,
 				8*32, 9*32, 10*32, 11*32, 12*32, 13*32, 14*32, 15*32 },
 		64*8		/* every sprite takes 64 consecutive bytes */
-	};
+	);
 	
 	static struct GfxDecodeInfo rainbow_gfxdecodeinfo[] =
 	{
@@ -467,27 +467,27 @@ public class rainbow
 		{ -1 }	/* end of array */
 	};
 	
-	static struct GfxLayout jumping_tilelayout =
-	{
+	static GfxLayout jumping_tilelayout = new GfxLayout
+	(
 		8,8,	/* 8*8 sprites */
 		16384,	/* 16384 sprites */
 		4,		/* 4 bits per pixel */
-		{ 0, 0x20000*8, 0x40000*8, 0x60000*8 },
-		{ 0, 1, 2, 3, 4, 5, 6, 7 },
-		{ 0, 1*8, 2*8, 3*8, 4*8, 5*8, 6*8, 7*8 },
+		new int[] { 0, 0x20000*8, 0x40000*8, 0x60000*8 },
+		new int[] { 0, 1, 2, 3, 4, 5, 6, 7 },
+		new int[] { 0, 1*8, 2*8, 3*8, 4*8, 5*8, 6*8, 7*8 },
 		8*8		/* every sprite takes 8 consecutive bytes */
-	};
+	);
 	
-	static struct GfxLayout jumping_spritelayout =
-	{
+	static GfxLayout jumping_spritelayout = new GfxLayout
+	(
 		16,16,	/* 16*16 sprites */
 		5120,	/* 5120 sprites */
 		4,		/* 4 bits per pixel */
-		{ 0x78000*8,0x50000*8,0x28000*8,0 },
-		{ 0, 1, 2, 3, 4, 5, 6, 7, 8*16+0, 8*16+1, 8*16+2, 8*16+3, 8*16+4, 8*16+5, 8*16+6, 8*16+7 },
-		{ 0, 1*8, 2*8, 3*8, 4*8, 5*8, 6*8, 7*8, 8*8, 9*8, 10*8, 11*8, 12*8, 13*8, 14*8, 15*8 },
+		new int[] { 0x78000*8,0x50000*8,0x28000*8,0 },
+		new int[] { 0, 1, 2, 3, 4, 5, 6, 7, 8*16+0, 8*16+1, 8*16+2, 8*16+3, 8*16+4, 8*16+5, 8*16+6, 8*16+7 },
+		new int[] { 0, 1*8, 2*8, 3*8, 4*8, 5*8, 6*8, 7*8, 8*8, 9*8, 10*8, 11*8, 12*8, 13*8, 14*8, 15*8 },
 		32*8		/* every sprite takes 32 consecutive bytes */
-	};
+	);
 	
 	static struct GfxDecodeInfo jumping_gfxdecodeinfo[] =
 	{

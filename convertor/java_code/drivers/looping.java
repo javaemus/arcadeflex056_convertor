@@ -283,33 +283,33 @@ public class looping
 		{ 0x001, 0x007, looping_sound_sw },
 	PORT_END
 	
-	static struct GfxLayout tile_layout =
-	{
+	static GfxLayout tile_layout = new GfxLayout
+	(
 		8,8,		/* 8*8 characters */
 		0x100,		/* number of characters */
 		2,			/* 2 bits per pixel */
-		{ 0,0x800*8 },
-		{ 0, 1, 2, 3, 4, 5, 6, 7 },
-		{ 0*8, 1*8, 2*8, 3*8, 4*8, 5*8, 6*8, 7*8 },
+		new int[] { 0,0x800*8 },
+		new int[] { 0, 1, 2, 3, 4, 5, 6, 7 },
+		new int[] { 0*8, 1*8, 2*8, 3*8, 4*8, 5*8, 6*8, 7*8 },
 		8*8
-	};
+	);
 	
-	static struct GfxLayout sprite_layout =
-	{
+	static GfxLayout sprite_layout = new GfxLayout
+	(
 		16,16,		/* 8*8 characters */
 		0x40,		/* number of characters */
 		2,			/* 2 bits per pixel */
-		{ 0,0x800*8 },
-		{
+		new int[] { 0,0x800*8 },
+		new int[] {
 			0, 1, 2, 3, 4, 5, 6, 7,
 			64+0, 64+1, 64+2, 64+3, 64+4, 64+5, 64+6, 64+7
 		},
-		{
+		new int[] {
 			0*8, 1*8, 2*8, 3*8, 4*8, 5*8, 6*8, 7*8,
 			128+0*8, 128+1*8, 128+2*8, 128+3*8, 128+4*8, 128+5*8, 128+6*8, 128+7*8
 		},
 		8*8*4
-	};
+	);
 	
 	static struct GfxDecodeInfo looping_gfxdecodeinfo[] =
 	{

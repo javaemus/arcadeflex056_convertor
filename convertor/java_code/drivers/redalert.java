@@ -170,38 +170,38 @@ public class redalert
 	INPUT_PORTS_END
 	
 	
-	static struct GfxLayout backlayout =
-	{
+	static GfxLayout backlayout = new GfxLayout
+	(
 		8,8,	/* 8*8 characters */
 		0x400,	  /* 1024 characters */
 		1,	/* 1 bits per pixel */
-		{ 0 }, /* No info needed for bit offsets */
-		{ 0, 1, 2, 3, 4, 5, 6, 7 },
-		{ 0*8, 1*8, 2*8, 3*8, 4*8, 5*8, 6*8, 7*8 },
+		new int[] { 0 }, /* No info needed for bit offsets */
+		new int[] { 0, 1, 2, 3, 4, 5, 6, 7 },
+		new int[] { 0*8, 1*8, 2*8, 3*8, 4*8, 5*8, 6*8, 7*8 },
 		8*8 /* every char takes 8 consecutive bytes */
-	};
+	);
 	
-	static struct GfxLayout charlayout =
-	{
+	static GfxLayout charlayout = new GfxLayout
+	(
 		8,8,	/* 8*8 characters */
 		128,	/* 128 characters */
 		1,	/* 1 bits per pixel */
-		{ 0 }, /* No info needed for bit offsets */
-		{ 0, 1, 2, 3, 4, 5, 6, 7 },
-		{ 0*8, 1*8, 2*8, 3*8, 4*8, 5*8, 6*8, 7*8 },
+		new int[] { 0 }, /* No info needed for bit offsets */
+		new int[] { 0, 1, 2, 3, 4, 5, 6, 7 },
+		new int[] { 0*8, 1*8, 2*8, 3*8, 4*8, 5*8, 6*8, 7*8 },
 		8*8 /* every char takes 8 consecutive bytes */
-	};
+	);
 	
-	static struct GfxLayout spritelayout =
-	{
+	static GfxLayout spritelayout = new GfxLayout
+	(
 		8,8,	/* 8*8 characters */
 		128,	/* 128 characters */
 		2,		/* 1 bits per pixel */
-		{ 0, 0x800*8 }, /* No info needed for bit offsets */
-		{ 0, 1, 2, 3, 4, 5, 6, 7 },
-		{ 0*8, 1*8, 2*8, 3*8, 4*8, 5*8, 6*8, 7*8 },
+		new int[] { 0, 0x800*8 }, /* No info needed for bit offsets */
+		new int[] { 0, 1, 2, 3, 4, 5, 6, 7 },
+		new int[] { 0*8, 1*8, 2*8, 3*8, 4*8, 5*8, 6*8, 7*8 },
 		8*8 /* every char takes 8 consecutive bytes */
-	};
+	);
 	
 	static struct GfxDecodeInfo gfxdecodeinfo[] =
 	{

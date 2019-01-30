@@ -379,53 +379,53 @@ public class fastfred
 	INPUT_PORTS_END
 	
 	
-	static struct GfxLayout fastfred_charlayout =
-	{
+	static GfxLayout fastfred_charlayout = new GfxLayout
+	(
 		8,8,    /* 8*8 characters */
 		1024,   /* 1024 characters */
 		3,      /* 3 bits per pixel */
-		{ 0x4000*8, 0x2000*8, 0 }, /* the three bitplanes are separated */
-		{ 0, 1, 2, 3, 4, 5, 6, 7 },
-		{ 0*8, 1*8, 2*8, 3*8, 4*8, 5*8, 6*8, 7*8 },
+		new int[] { 0x4000*8, 0x2000*8, 0 }, /* the three bitplanes are separated */
+		new int[] { 0, 1, 2, 3, 4, 5, 6, 7 },
+		new int[] { 0*8, 1*8, 2*8, 3*8, 4*8, 5*8, 6*8, 7*8 },
 		8*8     /* every char takes 8 consecutive bytes */
-	};
+	);
 	
-	static struct GfxLayout jumpcoas_charlayout =
-	{
+	static GfxLayout jumpcoas_charlayout = new GfxLayout
+	(
 		8,8,    /* 8*8 characters */
 		256,    /* 256 characters */
 		3,      /* 3 bits per pixel */
-		{ 0x2000*8, 0x1000*8, 0 }, /* the three bitplanes are separated */
-		{ 0, 1, 2, 3, 4, 5, 6, 7 },
-		{ 0*8, 1*8, 2*8, 3*8, 4*8, 5*8, 6*8, 7*8 },
+		new int[] { 0x2000*8, 0x1000*8, 0 }, /* the three bitplanes are separated */
+		new int[] { 0, 1, 2, 3, 4, 5, 6, 7 },
+		new int[] { 0*8, 1*8, 2*8, 3*8, 4*8, 5*8, 6*8, 7*8 },
 		8*8     /* every char takes 8 consecutive bytes */
-	};
+	);
 	
-	static struct GfxLayout fastfred_spritelayout =
-	{
+	static GfxLayout fastfred_spritelayout = new GfxLayout
+	(
 		16,16,  /* 16*16 sprites */
 		128,    /* 128 sprites */
 		3,      /* 3 bits per pixel */
-		{ 0x2000*8, 0x1000*8, 0 }, /* the three bitplanes are separated */
-		{ 0, 1, 2, 3, 4, 5, 6, 7,
+		new int[] { 0x2000*8, 0x1000*8, 0 }, /* the three bitplanes are separated */
+		new int[] { 0, 1, 2, 3, 4, 5, 6, 7,
 		  8*8+0, 8*8+1, 8*8+2, 8*8+3, 8*8+4, 8*8+5, 8*8+6, 8*8+7 },
-		{ 0*8, 1*8, 2*8, 3*8, 4*8, 5*8, 6*8, 7*8,
+		new int[] { 0*8, 1*8, 2*8, 3*8, 4*8, 5*8, 6*8, 7*8,
 				16*8, 17*8, 18*8, 19*8, 20*8, 21*8, 22*8, 23*8 },
 		32*8     /* every sprite takes 32 consecutive bytes */
-	};
+	);
 	
-	static struct GfxLayout jumpcoas_spritelayout =
-	{
+	static GfxLayout jumpcoas_spritelayout = new GfxLayout
+	(
 		16,16,  /* 16*16 sprites */
 		64,     /* 64 sprites */
 		3,      /* 3 bits per pixel */
-		{ 0x2000*8, 0x1000*8, 0 }, /* the three bitplanes are separated */
-		{ 0, 1, 2, 3, 4, 5, 6, 7,
+		new int[] { 0x2000*8, 0x1000*8, 0 }, /* the three bitplanes are separated */
+		new int[] { 0, 1, 2, 3, 4, 5, 6, 7,
 		  8*8+0, 8*8+1, 8*8+2, 8*8+3, 8*8+4, 8*8+5, 8*8+6, 8*8+7 },
-		{ 0*8, 1*8, 2*8, 3*8, 4*8, 5*8, 6*8, 7*8,
+		new int[] { 0*8, 1*8, 2*8, 3*8, 4*8, 5*8, 6*8, 7*8,
 				16*8, 17*8, 18*8, 19*8, 20*8, 21*8, 22*8, 23*8 },
 		32*8     /* every sprite takes 32 consecutive bytes */
-	};
+	);
 	
 	static struct GfxDecodeInfo fastfred_gfxdecodeinfo[] =
 	{

@@ -356,50 +356,50 @@ public class vigilant
 	
 	
 	
-	static struct GfxLayout text_layout =
-	{
+	static GfxLayout text_layout = new GfxLayout
+	(
 		8,8, /* tile size */
 		4096, /* number of tiles */
 		4, /* bits per pixel */
-		{64*1024*8,64*1024*8+4,0,4}, /* plane offsets */
-		{ 0,1,2,3, 64+0,64+1,64+2,64+3 }, /* x offsets */
-		{ 0*8, 1*8, 2*8, 3*8, 4*8, 5*8, 6*8, 7*8 }, /* y offsets */
+		new int[] {64*1024*8,64*1024*8+4,0,4}, /* plane offsets */
+		new int[] { 0,1,2,3, 64+0,64+1,64+2,64+3 }, /* x offsets */
+		new int[] { 0*8, 1*8, 2*8, 3*8, 4*8, 5*8, 6*8, 7*8 }, /* y offsets */
 		128
-	};
+	);
 	
-	static struct GfxLayout sprite_layout =
-	{
+	static GfxLayout sprite_layout = new GfxLayout
+	(
 		16,16,	/* tile size */
 		4096,	/* number of sprites ($1000) */
 		4,		/* bits per pixel */
-		{0x40000*8,0x40000*8+4,0,4}, /* plane offsets */
-		{ /* x offsets */
+		new int[] {0x40000*8,0x40000*8+4,0,4}, /* plane offsets */
+		new int[] { /* x offsets */
 			0x00*8+0,0x00*8+1,0x00*8+2,0x00*8+3,
 			0x10*8+0,0x10*8+1,0x10*8+2,0x10*8+3,
 			0x20*8+0,0x20*8+1,0x20*8+2,0x20*8+3,
 			0x30*8+0,0x30*8+1,0x30*8+2,0x30*8+3
 		},
-		{ /* y offsets */
+		new int[] { /* y offsets */
 			0x00*8, 0x01*8, 0x02*8, 0x03*8,
 			0x04*8, 0x05*8, 0x06*8, 0x07*8,
 			0x08*8, 0x09*8, 0x0A*8, 0x0B*8,
 			0x0C*8, 0x0D*8, 0x0E*8, 0x0F*8
 		},
 		0x40*8
-	};
+	);
 	
-	static struct GfxLayout back_layout =
-	{
+	static GfxLayout back_layout = new GfxLayout
+	(
 		32,1, /* tile size */
 		3*512*8, /* number of tiles */
 		4, /* bits per pixel */
-		{0,2,4,6}, /* plane offsets */
-		{ 0*8+1, 0*8,  1*8+1, 1*8, 2*8+1, 2*8, 3*8+1, 3*8, 4*8+1, 4*8, 5*8+1, 5*8,
+		new int[] {0,2,4,6}, /* plane offsets */
+		new int[] { 0*8+1, 0*8,  1*8+1, 1*8, 2*8+1, 2*8, 3*8+1, 3*8, 4*8+1, 4*8, 5*8+1, 5*8,
 		6*8+1, 6*8, 7*8+1, 7*8, 8*8+1, 8*8, 9*8+1, 9*8, 10*8+1, 10*8, 11*8+1, 11*8,
 		12*8+1, 12*8, 13*8+1, 13*8, 14*8+1, 14*8, 15*8+1, 15*8 }, /* x offsets */
-		{ 0 }, /* y offsets */
+		new int[] { 0 }, /* y offsets */
 		16*8
-	};
+	);
 	
 	static struct GfxDecodeInfo vigilant_gfxdecodeinfo[] =
 	{

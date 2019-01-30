@@ -393,29 +393,29 @@ public class yunsung8
 	***************************************************************************/
 	
 	/* 8x8x4 tiles in 2 roms */
-	static struct GfxLayout layout_8x8x4 =
-	{
+	static GfxLayout layout_8x8x4 = new GfxLayout
+	(
 		8,8,
 		RGN_FRAC(1,2),
 		4,
-		{ STEP4(0,1) },
-		{ RGN_FRAC(1,2)+1*4,RGN_FRAC(1,2)+0*4,1*4,0*4, RGN_FRAC(1,2)+3*4,RGN_FRAC(1,2)+2*4,3*4,2*4},
-		{ STEP8(0,16) },
+		new int[] { STEP4(0,1) },
+		new int[] { RGN_FRAC(1,2)+1*4,RGN_FRAC(1,2)+0*4,1*4,0*4, RGN_FRAC(1,2)+3*4,RGN_FRAC(1,2)+2*4,3*4,2*4},
+		new int[] { STEP8(0,16) },
 		8*8*4/2
-	};
+	);
 	
 	/* 8x8x8 tiles in 4 roms */
-	static struct GfxLayout layout_8x8x8 =
-	{
+	static GfxLayout layout_8x8x8 = new GfxLayout
+	(
 		8,8,
 		RGN_FRAC(1,4),
 		8,
-		{ STEP8(0,1) },
-		{ RGN_FRAC(0,4) + 0*8, RGN_FRAC(1,4) + 0*8, RGN_FRAC(2,4) + 0*8, RGN_FRAC(3,4) + 0*8,
+		new int[] { STEP8(0,1) },
+		new int[] { RGN_FRAC(0,4) + 0*8, RGN_FRAC(1,4) + 0*8, RGN_FRAC(2,4) + 0*8, RGN_FRAC(3,4) + 0*8,
 		  RGN_FRAC(0,4) + 1*8, RGN_FRAC(1,4) + 1*8, RGN_FRAC(2,4) + 1*8, RGN_FRAC(3,4) + 1*8 },
-		{ STEP8(0,16) },
+		new int[] { STEP8(0,16) },
 		8*8*8/4
-	};
+	);
 	
 	static struct GfxDecodeInfo yunsung8_gfxdecodeinfo[] =
 	{

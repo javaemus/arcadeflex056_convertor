@@ -1162,94 +1162,94 @@ public class m62
 	INPUT_PORTS_END
 	
 	
-	#define TILELAYOUT(NUM) static struct GfxLayout tilelayout_##NUM =  \
-	{                                                                   \
+	#define TILELAYOUT(NUM) static GfxLayout tilelayout_##NUM = new GfxLayout\
+	(                                                                   \
 		8,8,	/* 8*8 characters */                                    \
 		NUM,	/* NUM characters */                                    \
 		3,	/* 3 bits per pixel */                                      \
-		{ 2*NUM*8*8, NUM*8*8, 0 },                                      \
-		{ 0, 1, 2, 3, 4, 5, 6, 7 },                                     \
-		{ 0*8, 1*8, 2*8, 3*8, 4*8, 5*8, 6*8, 7*8 },                     \
+		new int[] { 2*NUM*8*8, NUM*8*8, 0 },                                      \
+		new int[] { 0, 1, 2, 3, 4, 5, 6, 7 },                                     \
+		new int[] { 0*8, 1*8, 2*8, 3*8, 4*8, 5*8, 6*8, 7*8 },                     \
 		8*8	/* every char takes 8 consecutive bytes */                  \
-	}
+	)
 	
 	TILELAYOUT(1024);
 	TILELAYOUT(2048);
 	TILELAYOUT(4096);
 	
 	
-	static struct GfxLayout battroad_charlayout =
-	{
+	static GfxLayout battroad_charlayout = new GfxLayout
+	(
 		8,8,	/* 8*8 characters */
 		1024,	/* number of characters */
 		2,	/* 2 bits per pixel */
-		{ 0, 1024*8*8 },
-		{ 0, 1, 2, 3, 4, 5, 6, 7 },
-		{ 0*8, 1*8, 2*8, 3*8, 4*8, 5*8, 6*8, 7*8 },
+		new int[] { 0, 1024*8*8 },
+		new int[] { 0, 1, 2, 3, 4, 5, 6, 7 },
+		new int[] { 0*8, 1*8, 2*8, 3*8, 4*8, 5*8, 6*8, 7*8 },
 		8*8	/* every char takes 8 consecutive bytes */
-	};
+	);
 	
-	static struct GfxLayout lotlot_charlayout =
-	{
+	static GfxLayout lotlot_charlayout = new GfxLayout
+	(
 		12,10, /* character size */
 		256, /* number of characters */
 		3, /* bits per pixel */
-		{ 0, 256*32*8, 2*256*32*8 },
-		{ 0, 1, 2, 3, 16*8+0, 16*8+1, 16*8+2, 16*8+3, 16*8+4, 16*8+5, 16*8+6, 16*8+7 },
-		{ 0*8, 1*8, 2*8, 3*8, 4*8, 5*8, 6*8, 7*8, 8*8, 9*8 },
+		new int[] { 0, 256*32*8, 2*256*32*8 },
+		new int[] { 0, 1, 2, 3, 16*8+0, 16*8+1, 16*8+2, 16*8+3, 16*8+4, 16*8+5, 16*8+6, 16*8+7 },
+		new int[] { 0*8, 1*8, 2*8, 3*8, 4*8, 5*8, 6*8, 7*8, 8*8, 9*8 },
 		32*8	/* every char takes 32 consecutive bytes */
-	};
+	);
 	
-	static struct GfxLayout kidniki_charlayout =
-	{
+	static GfxLayout kidniki_charlayout = new GfxLayout
+	(
 		12,8, /* character size */
 		1024, /* number of characters */
 		3, /* bits per pixel */
-		{ 0, 0x4000*8, 2*0x4000*8 },
-		{ 0, 1, 2, 3, 64+0,64+1,64+2,64+3,64+4,64+5,64+6,64+7 },
-		{ 0*8, 1*8, 2*8, 3*8, 4*8, 5*8, 6*8, 7*8 },
+		new int[] { 0, 0x4000*8, 2*0x4000*8 },
+		new int[] { 0, 1, 2, 3, 64+0,64+1,64+2,64+3,64+4,64+5,64+6,64+7 },
+		new int[] { 0*8, 1*8, 2*8, 3*8, 4*8, 5*8, 6*8, 7*8 },
 		16*8	/* every char takes 16 consecutive bytes */
-	};
+	);
 	
-	static struct GfxLayout spelunk2_charlayout =
-	{
+	static GfxLayout spelunk2_charlayout = new GfxLayout
+	(
 		12,8, /* character size */
 		512, /* number of characters */
 		3, /* bits per pixel */
-		{ 0, 0x4000*8, 2*0x4000*8 },
-		{
+		new int[] { 0, 0x4000*8, 2*0x4000*8 },
+		new int[] {
 			0,1,2,3,
 			0x2000*8+0,0x2000*8+1,0x2000*8+2,0x2000*8+3,
 			0x2000*8+4,0x2000*8+5,0x2000*8+6,0x2000*8+7
 		},
-		{ 0*8, 1*8, 2*8, 3*8, 4*8, 5*8, 6*8, 7*8 },
+		new int[] { 0*8, 1*8, 2*8, 3*8, 4*8, 5*8, 6*8, 7*8 },
 		8*8	/* every char takes 8 consecutive bytes */
-	};
+	);
 	
-	static struct GfxLayout youjyudn_tilelayout =
-	{
+	static GfxLayout youjyudn_tilelayout = new GfxLayout
+	(
 		8,16,
 		RGN_FRAC(1,3),
 		3,
-		{ RGN_FRAC(2,3), RGN_FRAC(1,3), RGN_FRAC(0,3) },
-		{ 0, 1, 2, 3, 4, 5, 6, 7 },
-		{ 0*8, 1*8, 2*8, 3*8, 4*8, 5*8, 6*8, 7*8,
+		new int[] { RGN_FRAC(2,3), RGN_FRAC(1,3), RGN_FRAC(0,3) },
+		new int[] { 0, 1, 2, 3, 4, 5, 6, 7 },
+		new int[] { 0*8, 1*8, 2*8, 3*8, 4*8, 5*8, 6*8, 7*8,
 				8*8, 9*8, 10*8, 11*8, 12*8, 13*8, 14*8, 15*8 },
 		16*8
-	};
+	);
 	
-	static struct GfxLayout spritelayout =
-	{
+	static GfxLayout spritelayout = new GfxLayout
+	(
 		16,16,
 		RGN_FRAC(1,3),
 		3,
-		{ RGN_FRAC(2,3), RGN_FRAC(1,3), RGN_FRAC(0,3) },
-		{ 0, 1, 2, 3, 4, 5, 6, 7,
+		new int[] { RGN_FRAC(2,3), RGN_FRAC(1,3), RGN_FRAC(0,3) },
+		new int[] { 0, 1, 2, 3, 4, 5, 6, 7,
 				16*8+0, 16*8+1, 16*8+2, 16*8+3, 16*8+4, 16*8+5, 16*8+6, 16*8+7 },
-		{ 0*8, 1*8, 2*8, 3*8, 4*8, 5*8, 6*8, 7*8,
+		new int[] { 0*8, 1*8, 2*8, 3*8, 4*8, 5*8, 6*8, 7*8,
 				8*8, 9*8, 10*8, 11*8, 12*8, 13*8, 14*8, 15*8 },
 		32*8
-	};
+	);
 	
 	
 	static struct GfxDecodeInfo kungfum_gfxdecodeinfo[] =

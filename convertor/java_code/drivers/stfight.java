@@ -410,34 +410,34 @@ public class stfight
 	
 	
 	/* text-layer characters */
-	static struct GfxLayout charlayout =
-	{
+	static GfxLayout charlayout = new GfxLayout
+	(
 		8,8,	    /* 8*8 pixels */
 		512,	    /* 512 characters */
 		2,	        /* 2 bits per pixel */
-		{ 4, 0 },
-		{ 0, 1, 2, 3, 8+0, 8+1, 8+2, 8+3 },
-		{ 0*16, 1*16, 2*16, 3*16, 4*16, 5*16, 6*16, 7*16 },
+		new int[] { 4, 0 },
+		new int[] { 0, 1, 2, 3, 8+0, 8+1, 8+2, 8+3 },
+		new int[] { 0*16, 1*16, 2*16, 3*16, 4*16, 5*16, 6*16, 7*16 },
 		8*16	    /* every char takes 16 consecutive bytes */
-	};
+	);
 	
 	/* foreground tiles */
-	static struct GfxLayout fglayout =
-	{
+	static GfxLayout fglayout = new GfxLayout
+	(
 		16,16,	    /* 16*16 pixels */
 		1024,	    /* 1024 tiles */
 		4,	        /* 4 bits per pixel */
-		{ 64*1024*8+0, 64*1024*8+4, 0, 4 },
-		{      0,      1,       2,       3,
+		new int[] { 64*1024*8+0, 64*1024*8+4, 0, 4 },
+		new int[] {      0,      1,       2,       3,
 	           8,      9,      10,      11,
 	      32*8+0, 32*8+1, 32*8+ 2, 32*8+ 3,
 	      32*8+8, 32*8+9, 32*8+10, 32*8+11 },
-		{  0*8,  2*8,  4*8,  6*8,
+		new int[] {  0*8,  2*8,  4*8,  6*8,
 	       8*8, 10*8, 12*8, 14*8,
 	      16*8, 18*8, 20*8, 22*8,
 	      24*8, 26*8, 28*8, 30*8 },
 		64*8	    /* every char takes 64 consecutive bytes */
-	};
+	);
 	
 	/*
 	 *      The background tiles are interleaved in banks of 2
@@ -446,40 +446,40 @@ public class stfight
 	 */
 	
 	/* background tiles */
-	static struct GfxLayout bglayout =
-	{
+	static GfxLayout bglayout = new GfxLayout
+	(
 		16,16,	    /* 16*16 pixels */
 		512,	    /* 512 tiles */
 		4,	        /* 4 bits per pixel */
-		{ 64*1024*8+4, 64*1024*8+0, 4, 0 },
-		{      0,      1,       2,       3,
+		new int[] { 64*1024*8+4, 64*1024*8+0, 4, 0 },
+		new int[] {      0,      1,       2,       3,
 	           8,      9,      10,      11,
 	      64*8+0, 64*8+1, 64*8+ 2, 64*8+ 3,
 	      64*8+8, 64*8+9, 64*8+10, 64*8+11 },
-		{  0*8,  2*8,  4*8,  6*8,
+		new int[] {  0*8,  2*8,  4*8,  6*8,
 	       8*8, 10*8, 12*8, 14*8,
 	      16*8, 18*8, 20*8, 22*8,
 	      24*8, 26*8, 28*8, 30*8 },
 		128*8	    /* every tile takes 64/128 consecutive bytes */
-	};
+	);
 	
 	/* sprites */
-	static struct GfxLayout spritelayout =
-	{
+	static GfxLayout spritelayout = new GfxLayout
+	(
 		16,16,	    /* 16*16 pixels */
 		1024,	    /* 1024 sprites */
 		4,	        /* 4 bits per pixel */
-		{ 64*1024*8+0, 64*1024*8+4, 0, 4 },
-		{      0,      1,       2,       3,
+		new int[] { 64*1024*8+0, 64*1024*8+4, 0, 4 },
+		new int[] {      0,      1,       2,       3,
 	           8,      9,      10,      11,
 	      32*8+0, 32*8+1, 32*8+ 2, 32*8+ 3,
 	      32*8+8, 32*8+9, 32*8+10, 32*8+11 },
-		{  0*8,  2*8,  4*8,  6*8,
+		new int[] {  0*8,  2*8,  4*8,  6*8,
 	       8*8, 10*8, 12*8, 14*8,
 	      16*8, 18*8, 20*8, 22*8,
 	      24*8, 26*8, 28*8, 30*8 },
 		64*8	    /* every sprite takes 64 consecutive bytes */
-	};
+	);
 	
 	
 	static struct GfxDecodeInfo gfxdecodeinfo[] =

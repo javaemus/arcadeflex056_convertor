@@ -93,73 +93,73 @@ public class namcond1
 	
 	/* text-layer characters */
 	
-	static struct GfxLayout pts_8x8_4bits_layout =
-	{
+	static GfxLayout pts_8x8_4bits_layout = new GfxLayout
+	(
 		8,8,	      /* 8*8 pixels */
 		65536,        /* 65536 patterns */
 		4,	          /* 4 bits per pixel */
-		{ 0, 1, 2, 3 },
-	    { STEP8( 0*256, 4 ) },
-	    { STEP8( 0*256, 8*4 ) },
+		new int[] { 0, 1, 2, 3 },
+	    new int[] { STEP8( 0*256, 4 ) },
+	    new int[] { STEP8( 0*256, 8*4 ) },
 		8*8*4
-	};
+	);
 	
-	static struct GfxLayout pts_16x16_4bits_layout =
-	{
+	static GfxLayout pts_16x16_4bits_layout = new GfxLayout
+	(
 		16,16,        /* 16*16 pixels */
 		16384,        /* 16384 patterns */
 		4,	          /* 4 bits per pixel */
-		{ 0, 1, 2, 3 },
-	    { STEP8( 0*256, 4 ), STEP8( 1*256, 4 ) },
-	    { STEP8( 0*256, 8*4 ), STEP8( 2*256, 8*4 ) },
+		new int[] { 0, 1, 2, 3 },
+	    new int[] { STEP8( 0*256, 4 ), STEP8( 1*256, 4 ) },
+	    new int[] { STEP8( 0*256, 8*4 ), STEP8( 2*256, 8*4 ) },
 		16*16*4
-	};
+	);
 	
-	static struct GfxLayout pts_32x32_4bits_layout =
-	{
+	static GfxLayout pts_32x32_4bits_layout = new GfxLayout
+	(
 		32,32,        /* 32*32 pixels */
 		4096,         /* 4096 patterns */
 		4,	          /* 4 bits per pixel */
-		{ 0, 1, 2, 3 },
-	    { STEP8( 0*256, 4 ), STEP8( 1*256, 4 ), STEP8( 4*256, 4 ), STEP8( 5*256, 4 ) },
-	    { STEP8( 0*256, 8*4 ), STEP8( 2*256, 8*4 ), STEP8( 8*256, 8*4 ), STEP8( 10*256, 8*4 ) },
+		new int[] { 0, 1, 2, 3 },
+	    new int[] { STEP8( 0*256, 4 ), STEP8( 1*256, 4 ), STEP8( 4*256, 4 ), STEP8( 5*256, 4 ) },
+	    new int[] { STEP8( 0*256, 8*4 ), STEP8( 2*256, 8*4 ), STEP8( 8*256, 8*4 ), STEP8( 10*256, 8*4 ) },
 		32*32*4
-	};
+	);
 	
-	static struct GfxLayout pts_64x64_4bits_layout =
-	{
+	static GfxLayout pts_64x64_4bits_layout = new GfxLayout
+	(
 		64,64,        /* 32*32 pixels */
 		1024,         /* 1024 patterns */
 		4,	          /* 4 bits per pixel */
-		{ 0, 1, 2, 3 },
-	    { STEP8( 0*256, 4 ), STEP8( 1*256, 4 ), STEP8( 4*256, 4 ), STEP8( 5*256, 4 ),
+		new int[] { 0, 1, 2, 3 },
+	    new int[] { STEP8( 0*256, 4 ), STEP8( 1*256, 4 ), STEP8( 4*256, 4 ), STEP8( 5*256, 4 ),
 	      STEP8( 16*256, 4 ), STEP8( 17*256, 4 ), STEP8( 20*256, 4 ), STEP8( 21*256, 4 ) },
-	    { STEP8( 0*256, 8*4 ), STEP8( 2*256, 8*4 ), STEP8( 8*256, 8*4 ), STEP8( 10*256, 8*4 ),
+	    new int[] { STEP8( 0*256, 8*4 ), STEP8( 2*256, 8*4 ), STEP8( 8*256, 8*4 ), STEP8( 10*256, 8*4 ),
 	      STEP8( 32*256, 8*4 ), STEP8( 34*256, 8*4 ), STEP8( 40*256, 8*4 ), STEP8( 42*256, 8*4 ) },
 		64*64*4
-	};
+	);
 	
-	static struct GfxLayout pts_8x8_8bits_layout =
-	{
+	static GfxLayout pts_8x8_8bits_layout = new GfxLayout
+	(
 		8,8,	      /* 8*8 pixels */
 		32768,        /* 32768 patterns */
 		8,	          /* 8 bits per pixel */
-		{ 0, 1, 2, 3, 4, 5, 6, 7 },
-	    { STEP8( 0*512, 8 ) },
-	    { STEP8( 0*512, 8*8 ) },
+		new int[] { 0, 1, 2, 3, 4, 5, 6, 7 },
+	    new int[] { STEP8( 0*512, 8 ) },
+	    new int[] { STEP8( 0*512, 8*8 ) },
 		8*8*8
-	};
+	);
 	
-	static struct GfxLayout pts_16x16_8bits_layout =
-	{
+	static GfxLayout pts_16x16_8bits_layout = new GfxLayout
+	(
 		16,16,        /* 16*16 pixels */
 		8192,         /* 8192 patterns */
 		8,	          /* 8 bits per pixel */
-		{ 0, 1, 2, 3, 4, 5, 6, 7 },
-	    { STEP8( 0*512, 8 ), STEP8( 1*512, 8 ) },
-	    { STEP8( 0*512, 8*8 ), STEP8( 2*512, 8*8 ) },
+		new int[] { 0, 1, 2, 3, 4, 5, 6, 7 },
+	    new int[] { STEP8( 0*512, 8 ), STEP8( 1*512, 8 ) },
+	    new int[] { STEP8( 0*512, 8*8 ), STEP8( 2*512, 8*8 ) },
 		16*16*8
-	};
+	);
 	
 	static struct GfxDecodeInfo gfxdecodeinfo[] =
 	{

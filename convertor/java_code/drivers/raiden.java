@@ -239,34 +239,34 @@ public class raiden
 	
 	/******************************************************************************/
 	
-	static struct GfxLayout raiden_charlayout =
-	{
+	static GfxLayout raiden_charlayout = new GfxLayout
+	(
 		8,8,		/* 8*8 characters */
 		2048,		/* 512 characters */
 		4,			/* 4 bits per pixel */
-		{ 4,0,(0x08000*8)+4,0x08000*8  },
-		{ 0,1,2,3,8,9,10,11 },
-		{ 0*16, 1*16, 2*16, 3*16, 4*16, 5*16, 6*16, 7*16 },
+		new int[] { 4,0,(0x08000*8)+4,0x08000*8  },
+		new int[] { 0,1,2,3,8,9,10,11 },
+		new int[] { 0*16, 1*16, 2*16, 3*16, 4*16, 5*16, 6*16, 7*16 },
 		128
-	};
+	);
 	
-	static struct GfxLayout raiden_spritelayout =
-	{
+	static GfxLayout raiden_spritelayout = new GfxLayout
+	(
 	  16,16,	/* 16*16 tiles */
 	  4096,		/* 2048*4 tiles */
 	  4,		/* 4 bits per pixel */
-	  { 12, 8, 4, 0 },
-	  {
+	  new int[] { 12, 8, 4, 0 },
+	  new int[] {
 	    0,1,2,3, 16,17,18,19,
 		512+0,512+1,512+2,512+3,
 		512+8+8,512+9+8,512+10+8,512+11+8,
 	  },
-	  {
+	  new int[] {
 		0*32, 1*32, 2*32, 3*32, 4*32, 5*32, 6*32, 7*32,
 		8*32, 9*32, 10*32, 11*32, 12*32, 13*32, 14*32, 15*32,
 	  },
 	  1024
-	};
+	);
 	
 	static struct GfxDecodeInfo raiden_gfxdecodeinfo[] =
 	{

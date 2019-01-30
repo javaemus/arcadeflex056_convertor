@@ -496,26 +496,26 @@ public class gladiatr
 	
 	/*******************************************************************/
 	
-	static struct GfxLayout gladiator_text_layout  =   /* gfxset 0 */
-	{
+	static GfxLayout gladiator_text_layout = new GfxLayout/* gfxset 0 */
+	(
 		8,8,	/* 8*8 tiles */
 		1024,	/* number of tiles */
 		1,		/* bits per pixel */
-		{ 0 },	/* plane offsets */
-		{ 0,1,2,3,4,5,6,7 }, /* x offsets */
-		{ 0*8,1*8,2*8,3*8,4*8,5*8,6*8,7*8 }, /* y offsets */
+		new int[] { 0 },	/* plane offsets */
+		new int[] { 0,1,2,3,4,5,6,7 }, /* x offsets */
+		new int[] { 0*8,1*8,2*8,3*8,4*8,5*8,6*8,7*8 }, /* y offsets */
 		64 /* offset to next tile */
-	};
+	);
 	
 	/*******************************************************************/
 	
-	#define DEFINE_LAYOUT( NAME,P0,P1,P2) static struct GfxLayout NAME = { \
+	#define DEFINE_LAYOUT( NAME,P0,P1,P2) static GfxLayout NAME = new GfxLayout( \
 		8,8,512,3, \
-		{ P0, P1, P2}, \
-		{ 0,1,2,3,64+0,64+1,64+2,64+3 }, \
-		{ 0*8,1*8,2*8,3*8,4*8,5*8,6*8,7*8 }, \
+		new int[] { P0, P1, P2}, \
+		new int[] { 0,1,2,3,64+0,64+1,64+2,64+3 }, \
+		new int[] { 0*8,1*8,2*8,3*8,4*8,5*8,6*8,7*8 }, \
 		128 \
-	};
+	);
 	
 	DEFINE_LAYOUT( gladiator_tile0, 4,			0x08000*8, 0x08000*8+4 )
 	DEFINE_LAYOUT( gladiator_tile1, 0,			0x0A000*8, 0x0A000*8+4 )

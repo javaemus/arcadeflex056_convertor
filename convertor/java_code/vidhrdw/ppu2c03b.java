@@ -211,16 +211,16 @@ public class ppu2c03b
 	}
 	
 	/* the charlayout we use for the chargen */
-	static struct GfxLayout ppu_charlayout =
-	{
+	static GfxLayout ppu_charlayout = new GfxLayout
+	(
 		8,8,	/* 8*8 characters */
 		512,	/* 512 characters - modified at runtime */
 		2,		/* 2 bits per pixel */
-		{ 8*8, 0 },	/* the two bitplanes are separated */
-		{ 0, 1, 2, 3, 4, 5, 6, 7 },
-		{ 0*8, 1*8, 2*8, 3*8, 4*8, 5*8, 6*8, 7*8 },
+		new int[] { 8*8, 0 },	/* the two bitplanes are separated */
+		new int[] { 0, 1, 2, 3, 4, 5, 6, 7 },
+		new int[] { 0*8, 1*8, 2*8, 3*8, 4*8, 5*8, 6*8, 7*8 },
 		16*8	/* every char takes 16 consecutive bytes */
-	};
+	);
 	
 	/*************************************
 	 *

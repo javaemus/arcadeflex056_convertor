@@ -2667,16 +2667,16 @@ public class tmnt
 	
 	
 	
-	static struct GfxLayout zoomlayout =
-	{
+	static GfxLayout zoomlayout = new GfxLayout
+	(
 		8,8,
 		RGN_FRAC(1,1),
 		8,
-		{ STEP8(0,1) },
-		{ STEP8(0,8) },
-		{ STEP8(0,8*8) },
+		new int[] { STEP8(0,1) },
+		new int[] { STEP8(0,8) },
+		new int[] { STEP8(0,8*8) },
 		8*8*8
-	};
+	);
 	static struct GfxDecodeInfo glfgreat_gfxdecodeinfo[] =
 	{
 		{ REGION_GFX3, 0, &zoomlayout, 0x400, 1 },

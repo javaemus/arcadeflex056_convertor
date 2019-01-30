@@ -302,16 +302,16 @@ public class atetris
 	 *
 	 *************************************/
 	
-	static struct GfxLayout charlayout =
-	{
+	static GfxLayout charlayout = new GfxLayout
+	(
 	   8,8,
 	   RGN_FRAC(1,1),
 	   4,
-	   { 0,1,2,3 },
-	   { 0*4, 1*4, 2*4, 3*4, 4*4, 5*4, 6*4, 7*4},
-	   { 0*4*8, 1*4*8, 2*4*8, 3*4*8, 4*4*8, 5*4*8, 6*4*8, 7*4*8},
+	   new int[] { 0,1,2,3 },
+	   new int[] { 0*4, 1*4, 2*4, 3*4, 4*4, 5*4, 6*4, 7*4},
+	   new int[] { 0*4*8, 1*4*8, 2*4*8, 3*4*8, 4*4*8, 5*4*8, 6*4*8, 7*4*8},
 	   8*8*4
-	};
+	);
 	
 	
 	static struct GfxDecodeInfo gfxdecodeinfo[] =

@@ -396,19 +396,19 @@ public class unico16
 	***************************************************************************/
 	
 	/* 16x16x8 */
-	static struct GfxLayout layout_16x16x8 =
-	{
+	static GfxLayout layout_16x16x8 = new GfxLayout
+	(
 		16,16,
 		RGN_FRAC(1,4),
 		8,
-		{	RGN_FRAC(3,4)+8,	RGN_FRAC(3,4)+0,
+		new int[] {	RGN_FRAC(3,4)+8,	RGN_FRAC(3,4)+0,
 			RGN_FRAC(2,4)+8,	RGN_FRAC(2,4)+0,
 			RGN_FRAC(1,4)+8,	RGN_FRAC(1,4)+0,
 			RGN_FRAC(0,4)+8,	RGN_FRAC(0,4)+0	},
-		{	STEP8(0,1), 		STEP8(16,1)		},
-		{	STEP16(0,16*2)						},
+		new int[] {	STEP8(0,1), 		STEP8(16,1)		},
+		new int[] {	STEP16(0,16*2)						},
 		16*16*2
-	};
+	);
 	
 	static struct GfxDecodeInfo unico16_gfxdecodeinfo[] =
 	{

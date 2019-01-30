@@ -257,45 +257,45 @@ public class bking2
 	INPUT_PORTS_END
 	
 	
-	static struct GfxLayout charlayout =
-	{
+	static GfxLayout charlayout = new GfxLayout
+	(
 		8,8,    /* 8*8 characters */
 		1024,   /* 1024 characters */
 		3,      /* 3 bits per pixel */
-		{ 0*1024*8*8, 1*1024*8*8, 2*1024*8*8 }, /* the bitplanes are separated */
-		{ 7, 6, 5, 4, 3, 2, 1, 0 }, /* reverse layout */
-		{ 0*8, 1*8, 2*8, 3*8, 4*8, 5*8, 6*8, 7*8 },
+		new int[] { 0*1024*8*8, 1*1024*8*8, 2*1024*8*8 }, /* the bitplanes are separated */
+		new int[] { 7, 6, 5, 4, 3, 2, 1, 0 }, /* reverse layout */
+		new int[] { 0*8, 1*8, 2*8, 3*8, 4*8, 5*8, 6*8, 7*8 },
 		8*8     /* every char takes 8 consecutive bytes */
-	};
+	);
 	
-	struct GfxLayout crowlayout =
-	{
+	static GfxLayout crowlayout = new GfxLayout
+	(
 		16,32,	/* 16*32 characters */
 		16,		/* 16 characters */
 		2,		/* 2 bits per pixel */
-		{ 0, 4 },
-		{ 3*32*8+3, 3*32*8+2, 3*32*8+1, 3*32*8+0,
+		new int[] { 0, 4 },
+		new int[] { 3*32*8+3, 3*32*8+2, 3*32*8+1, 3*32*8+0,
 		  2*32*8+3, 2*32*8+2, 2*32*8+1, 2*32*8+0,
 		    32*8+3,   32*8+2,   32*8+1,   32*8+0,
 			     3,        2,        1,        0 }, /* reverse layout */
-		{ 31*8, 30*8, 29*8, 28*8, 27*8, 26*8, 25*8, 24*8,
+		new int[] { 31*8, 30*8, 29*8, 28*8, 27*8, 26*8, 25*8, 24*8,
 		  23*8, 22*8, 21*8, 20*8, 19*8, 18*8, 17*8, 16*8,
 		  15*8, 14*8, 13*8, 12*8, 11*8, 10*8,  9*8,  8*8,
 		   7*8,  6*8,  5*8,  4*8,  3*8,  2*8,  1*8,  0*8 },
 		128*8    /* every sprite takes 128 consecutive bytes */
-	};
+	);
 	
-	struct GfxLayout balllayout =
-	{
+	static GfxLayout balllayout = new GfxLayout
+	(
 		8,16,  /* 8*16 sprites */
 		8,     /* 8 sprites */
 		1,  /* 1 bit per pixel */
-		{ 0 },   /* the two bitplanes are separated */
-		{ 7, 6, 5, 4, 3, 2, 1, 0 },   /* pretty straightforward layout */
-		{ 0*8, 1*8, 2*8, 3*8, 4*8, 5*8, 6*8, 7*8,
+		new int[] { 0 },   /* the two bitplanes are separated */
+		new int[] { 7, 6, 5, 4, 3, 2, 1, 0 },   /* pretty straightforward layout */
+		new int[] { 0*8, 1*8, 2*8, 3*8, 4*8, 5*8, 6*8, 7*8,
 		  8*8, 9*8, 10*8, 11*8, 12*8, 13*8, 14*8, 15*8 },
 		16*8    /* every sprite takes 16 consecutive bytes */
-	};
+	);
 	
 	static struct GfxDecodeInfo gfxdecodeinfo[] =
 	{

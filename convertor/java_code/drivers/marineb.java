@@ -420,98 +420,98 @@ public class marineb
 		PORT_DIPSETTING(    0x00, DEF_STR( Free_Play ) )
 	INPUT_PORTS_END
 	
-	static struct GfxLayout marineb_charlayout =
-	{
+	static GfxLayout marineb_charlayout = new GfxLayout
+	(
 		8,8,	/* 8*8 characters */
 		512,	/* 512 characters */
 		2,	    /* 2 bits per pixel */
-		{ 0, 4 },	/* the two bitplanes for 4 pixels are packed into one byte */
-		{ 0, 1, 2, 3, 8*8+0, 8*8+1, 8*8+2, 8*8+3 },	/* bits are packed in groups of four */
-		{ 0*8, 1*8, 2*8, 3*8, 4*8, 5*8, 6*8, 7*8 },
+		new int[] { 0, 4 },	/* the two bitplanes for 4 pixels are packed into one byte */
+		new int[] { 0, 1, 2, 3, 8*8+0, 8*8+1, 8*8+2, 8*8+3 },	/* bits are packed in groups of four */
+		new int[] { 0*8, 1*8, 2*8, 3*8, 4*8, 5*8, 6*8, 7*8 },
 		16*8	/* every char takes 16 bytes */
-	};
+	);
 	
-	static struct GfxLayout wanted_charlayout =
-	{
+	static GfxLayout wanted_charlayout = new GfxLayout
+	(
 		8,8,	/* 8*8 characters */
 		1024,	/* 1024 characters */
 		2,	    /* 2 bits per pixel */
-		{ 4, 0 },	/* the two bitplanes for 4 pixels are packed into one byte */
-		{ 0, 1, 2, 3, 8*8+0, 8*8+1, 8*8+2, 8*8+3 },	/* bits are packed in groups of four */
-		{ 0*8, 1*8, 2*8, 3*8, 4*8, 5*8, 6*8, 7*8 },
+		new int[] { 4, 0 },	/* the two bitplanes for 4 pixels are packed into one byte */
+		new int[] { 0, 1, 2, 3, 8*8+0, 8*8+1, 8*8+2, 8*8+3 },	/* bits are packed in groups of four */
+		new int[] { 0*8, 1*8, 2*8, 3*8, 4*8, 5*8, 6*8, 7*8 },
 		16*8	/* every char takes 16 bytes */
-	};
+	);
 	
-	static struct GfxLayout hopprobo_charlayout =
-	{
+	static GfxLayout hopprobo_charlayout = new GfxLayout
+	(
 		8,8,	/* 8*8 characters */
 		1024,	/* 1024 characters */
 		2,	    /* 2 bits per pixel */
-		{ 0, 4 },	/* the two bitplanes for 4 pixels are packed into one byte */
-		{ 0, 1, 2, 3, 8*8+0, 8*8+1, 8*8+2, 8*8+3 },	/* bits are packed in groups of four */
-		{ 0*8, 1*8, 2*8, 3*8, 4*8, 5*8, 6*8, 7*8 },
+		new int[] { 0, 4 },	/* the two bitplanes for 4 pixels are packed into one byte */
+		new int[] { 0, 1, 2, 3, 8*8+0, 8*8+1, 8*8+2, 8*8+3 },	/* bits are packed in groups of four */
+		new int[] { 0*8, 1*8, 2*8, 3*8, 4*8, 5*8, 6*8, 7*8 },
 		16*8	/* every char takes 16 bytes */
-	};
+	);
 	
-	static struct GfxLayout marineb_small_spritelayout =
-	{
+	static GfxLayout marineb_small_spritelayout = new GfxLayout
+	(
 		16,16,	/* 16*16 sprites */
 		64,	    /* 64 sprites */
 		2,	    /* 2 bits per pixel */
-		{ 0, 256*32*8 },	/* the two bitplanes are separated */
-		{     0,     1,     2,     3,     4,     5,     6,     7,
+		new int[] { 0, 256*32*8 },	/* the two bitplanes are separated */
+		new int[] {     0,     1,     2,     3,     4,     5,     6,     7,
 		  8*8+0, 8*8+1, 8*8+2, 8*8+3, 8*8+4, 8*8+5, 8*8+6, 8*8+7 },
-		{  0*8,  1*8,  2*8,  3*8,  4*8,  5*8,  6*8,  7*8,
+		new int[] {  0*8,  1*8,  2*8,  3*8,  4*8,  5*8,  6*8,  7*8,
 		  16*8, 17*8, 18*8, 19*8, 20*8, 21*8, 22*8, 23*8 },
 		32*8	/* every sprite takes 32 consecutive bytes */
-	};
+	);
 	
-	static struct GfxLayout marineb_big_spritelayout =
-	{
+	static GfxLayout marineb_big_spritelayout = new GfxLayout
+	(
 		32,32,	/* 32*32 sprites */
 		64,	    /* 64 sprites */
 		2,	    /* 2 bits per pixel */
-		{ 0, 256*32*8 },	/* the two bitplanes are separated */
-		{      0,      1,      2,      3,      4,      5,      6,      7,
+		new int[] { 0, 256*32*8 },	/* the two bitplanes are separated */
+		new int[] {      0,      1,      2,      3,      4,      5,      6,      7,
 		   8*8+0,  8*8+1,  8*8+2,  8*8+3,  8*8+4,  8*8+5,  8*8+6,  8*8+7,
 		  32*8+0, 32*8+1, 32*8+2, 32*8+3, 32*8+4, 32*8+5, 32*8+6, 32*8+7,
 		  40*8+0, 40*8+1, 40*8+2, 40*8+3, 40*8+4, 40*8+5, 40*8+6, 40*8+7 },
-		{  0*8,  1*8,  2*8,  3*8,  4*8,  5*8,  6*8,  7*8,
+		new int[] {  0*8,  1*8,  2*8,  3*8,  4*8,  5*8,  6*8,  7*8,
 		  16*8, 17*8, 18*8, 19*8, 20*8, 21*8, 22*8, 23*8,
 		  64*8, 65*8, 66*8, 67*8, 68*8, 69*8, 70*8, 71*8,
 		  80*8, 81*8, 82*8, 83*8, 84*8, 85*8, 86*8, 87*8 },
 		4*32*8	/* every sprite takes 128 consecutive bytes */
-	};
+	);
 	
-	static struct GfxLayout changes_small_spritelayout =
-	{
+	static GfxLayout changes_small_spritelayout = new GfxLayout
+	(
 		16,16,	/* 16*16 sprites */
 		64,	    /* 64 sprites */
 		2,	    /* 2 bits per pixel */
-		{ 0, 4 },	/* the two bitplanes for 4 pixels are packed into one byte */
-		{      0,      1,      2,      3,  8*8+0,  8*8+1,  8*8+2,  8*8+3,
+		new int[] { 0, 4 },	/* the two bitplanes for 4 pixels are packed into one byte */
+		new int[] {      0,      1,      2,      3,  8*8+0,  8*8+1,  8*8+2,  8*8+3,
 		  16*8+0, 16*8+1, 16*8+2, 16*8+3, 24*8+0, 24*8+1, 24*8+2, 24*8+3 },
-		{  0*8,  1*8,  2*8,  3*8,  4*8,  5*8,  6*8,  7*8,
+		new int[] {  0*8,  1*8,  2*8,  3*8,  4*8,  5*8,  6*8,  7*8,
 		  32*8, 33*8, 34*8, 35*8, 36*8, 37*8, 38*8, 39*8 },
 		64*8	/* every sprite takes 64 consecutive bytes */
-	};
+	);
 	
-	static struct GfxLayout changes_big_spritelayout =
-	{
+	static GfxLayout changes_big_spritelayout = new GfxLayout
+	(
 		32,32,	/* 32*3 sprites */
 		16,	    /* 32 sprites */
 		2,	    /* 2 bits per pixel */
-		{ 0, 4 },	/* the two bitplanes for 4 pixels are packed into one byte */
-		{      0,      1,      2,      3,  8*8+0,  8*8+1,  8*8+2,  8*8+3,
+		new int[] { 0, 4 },	/* the two bitplanes for 4 pixels are packed into one byte */
+		new int[] {      0,      1,      2,      3,  8*8+0,  8*8+1,  8*8+2,  8*8+3,
 		  16*8+0, 16*8+1, 16*8+2, 16*8+3, 24*8+0, 24*8+1, 24*8+2, 24*8+3,
 		  64*8+0, 64*8+1, 64*8+2, 64*8+3, 72*8+0, 72*8+1, 72*8+2, 72*8+3,
 		  80*8+0, 80*8+1, 80*8+2, 80*8+3, 88*8+0, 88*8+1, 88*8+2, 88*8+3 },
-		{   0*8,   1*8,   2*8,   3*8,   4*8,   5*8,   6*8,   7*8,
+		new int[] {   0*8,   1*8,   2*8,   3*8,   4*8,   5*8,   6*8,   7*8,
 		   32*8,  33*8,  34*8,  35*8,  36*8,  37*8,  38*8,  39*8,
 		  128*8, 129*8, 130*8, 131*8, 132*8, 133*8, 134*8, 135*8,
 		  160*8, 161*8, 162*8, 163*8, 164*8, 165*8, 166*8, 167*8 },
 		4*64*8	/* every sprite takes 256 consecutive bytes */
-	};
+	);
 	
 	
 	static struct GfxDecodeInfo marineb_gfxdecodeinfo[] =

@@ -747,79 +747,79 @@ public class tubep
 	INPUT_PORTS_END
 	
 	
-	static struct GfxLayout charlayout =
-	{
+	static GfxLayout charlayout = new GfxLayout
+	(
 		8, 8,	/* 8*8 characters */
 		512,	/* 512 characters */
 		1,		/* 1 bit per pixel */
-		{ 0 },
-		{ 0, 1, 2, 3, 4, 5, 6, 7 }, /* pretty straightforward layout */
-		{ 0*8, 1*8, 2*8, 3*8, 4*8, 5*8, 6*8, 7*8 },
+		new int[] { 0 },
+		new int[] { 0, 1, 2, 3, 4, 5, 6, 7 }, /* pretty straightforward layout */
+		new int[] { 0*8, 1*8, 2*8, 3*8, 4*8, 5*8, 6*8, 7*8 },
 		8*8 /* every char takes 8 consecutive bytes */
-	};
+	);
 	
 	#if 1
 	#define LS (64)
-	static struct GfxLayout spritelayout =
-	{
+	static GfxLayout spritelayout = new GfxLayout
+	(
 		16,16,	/* 16*16 sprites */
 		512,	/* 512 sprites */
 		4,	/* 4 bits per pixel */
 	
-		{ 0, 1, 2, 3 }, /* plane offset */
+		new int[] { 0, 1, 2, 3 }, /* plane offset */
 	
-		{ 4, 0,  12, 8,	 20, 16, 28, 24,
+		new int[] { 4, 0,  12, 8,	 20, 16, 28, 24,
 	 	 36, 32, 44, 40, 52, 48, 60, 56 },
 	
-	//	{ 0*LS, 1*LS, 2*LS,  3*LS,  4*LS,  5*LS,  6*LS,  7*LS,
+	//	new int[] { 0*LS, 1*LS, 2*LS,  3*LS,  4*LS,  5*LS,  6*LS,  7*LS,
 	//	  8*LS, 9*LS, 10*LS, 11*LS, 12*LS, 13*LS, 14*LS, 15*LS },
-		{ 15*LS, 14*LS, 13*LS, 12*LS, 11*LS, 10*LS, 9*LS, 8*LS,
+		new int[] { 15*LS, 14*LS, 13*LS, 12*LS, 11*LS, 10*LS, 9*LS, 8*LS,
 	      7*LS,  6*LS,  5*LS,  4*LS,  3*LS,  2*LS,  1*LS, 0*LS },
 	
 		128*8
-	};
+	);
 	#endif
 	
 	#if 0
 	#define LS (32)
-	static struct GfxLayout spritelayout =
-	{
+	static GfxLayout spritelayout = new GfxLayout
+	(
 		8,8,	/* 8*8 sprites */
 		2048,	/* 2048 sprites */
 		4,	/* 4 bits per pixel */
 	
-		{ 0, 1, 2, 3 }, /* plane offset */
+		new int[] { 0, 1, 2, 3 }, /* plane offset */
 	
-		{ 4, 0,  12, 8,	 20, 16, 28, 24 },
+		new int[] { 4, 0,  12, 8,	 20, 16, 28, 24 },
 	
-		{ 7*LS, 6*LS, 5*LS, 4*LS, 3*LS, 2*LS, 1*LS, 0*LS },
+		new int[] { 7*LS, 6*LS, 5*LS, 4*LS, 3*LS, 2*LS, 1*LS, 0*LS },
 	
 		32*8
-	};
+	);
 	#endif
 	
 	#if 0
 	#define LS (128)
-	static struct GfxLayout spritelayout =
-	{
+	static GfxLayout spritelayout = new GfxLayout
+	(
 		32,32,	/* 32*32 sprites */
 		128,	/* 128 sprites */
 		4,	/* 4 bits per pixel */
 	
-		{ 0, 1, 2, 3 }, /* plane offset */
+		new int[] { 0, 1, 2, 3 }, /* plane offset */
 	
-		{ 4, 0,  12, 8,	 20, 16, 28, 24,
+		new int[] { 4, 0,  12, 8,	 20, 16, 28, 24,
 	 	 36, 32, 44, 40, 52, 48, 60, 56,
 		 68, 64, 76, 72, 84, 80, 92, 88,
 	 	 100, 96,108,104,116,112,124,120 },
 	
-		{ 31*LS, 30*LS, 29*LS,  28*LS,  27*LS, 26*LS, 25*LS, 24*LS,
+		new int[] { 31*LS, 30*LS, 29*LS,  28*LS,  27*LS, 26*LS, 25*LS, 24*LS,
 		  23*LS, 22*LS, 21*LS,  20*LS,  19*LS, 18*LS, 17*LS, 16*LS,
 		  15*LS, 14*LS, 13*LS,  12*LS,  11*LS, 10*LS, 9*LS,   8*LS,
 		   7*LS, 6*LS,  5*LS,   4*LS,   3*LS,  2*LS,  1*LS,   0*LS },
 	
 		512*8
-	};
+	);
 	#endif
 	
 	static struct GfxDecodeInfo gfxdecodeinfo[] =

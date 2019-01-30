@@ -150,28 +150,28 @@ public class mrdo
 	
 	
 	
-	static struct GfxLayout charlayout =
-	{
+	static GfxLayout charlayout = new GfxLayout
+	(
 		8,8,	/* 8*8 characters */
 		512,	/* 512 characters */
 		2,	/* 2 bits per pixel */
-		{ 0, 512*8*8 },	/* the two bitplanes are separated */
-		{ 7, 6, 5, 4, 3, 2, 1, 0 },
-		{ 0*8, 1*8, 2*8, 3*8, 4*8, 5*8, 6*8, 7*8 },
+		new int[] { 0, 512*8*8 },	/* the two bitplanes are separated */
+		new int[] { 7, 6, 5, 4, 3, 2, 1, 0 },
+		new int[] { 0*8, 1*8, 2*8, 3*8, 4*8, 5*8, 6*8, 7*8 },
 		8*8	/* every char takes 8 consecutive bytes */
-	};
-	static struct GfxLayout spritelayout =
-	{
+	);
+	static GfxLayout spritelayout = new GfxLayout
+	(
 		16,16,	/* 16*16 sprites */
 		128,	/* 128 sprites */
 		2,	/* 2 bits per pixel */
-		{ 4, 0 },	/* the two bitplanes for 4 pixels are packed into one byte */
-		{ 3, 2, 1, 0, 8+3, 8+2, 8+1, 8+0,
+		new int[] { 4, 0 },	/* the two bitplanes for 4 pixels are packed into one byte */
+		new int[] { 3, 2, 1, 0, 8+3, 8+2, 8+1, 8+0,
 				16+3, 16+2, 16+1, 16+0, 24+3, 24+2, 24+1, 24+0 },
-		{ 0*16, 2*16, 4*16, 6*16, 8*16, 10*16, 12*16, 14*16,
+		new int[] { 0*16, 2*16, 4*16, 6*16, 8*16, 10*16, 12*16, 14*16,
 				16*16, 18*16, 20*16, 22*16, 24*16, 26*16, 28*16, 30*16 },
 		64*8	/* every sprite takes 64 consecutive bytes */
-	};
+	);
 	
 	
 	

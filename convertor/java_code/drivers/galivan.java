@@ -513,44 +513,44 @@ public class galivan
 	INPUT_PORTS_END
 	
 	
-	#define CHARLAYOUT(NUM) static struct GfxLayout charlayout_##NUM =  \
-	{																	\
+	#define CHARLAYOUT(NUM) static GfxLayout charlayout_##NUM = new GfxLayout\
+	(																	\
 		8,8,	/* 8*8 characters */									\
 		NUM,	/* NUM characters */									\
 		4,	/* 4 bits per pixel */										\
-		{ 0, 1, 2, 3 },													\
-		{ 1*4, 0*4, 3*4, 2*4, 5*4, 4*4, 7*4, 6*4 },						\
-		{ 0*32, 1*32, 2*32, 3*32, 4*32, 5*32, 6*32, 7*32 },				\
+		new int[] { 0, 1, 2, 3 },													\
+		new int[] { 1*4, 0*4, 3*4, 2*4, 5*4, 4*4, 7*4, 6*4 },						\
+		new int[] { 0*32, 1*32, 2*32, 3*32, 4*32, 5*32, 6*32, 7*32 },				\
 		32*8	/* every char takes 32 consecutive bytes */				\
-	}
+	)
 	
 	CHARLAYOUT(512);
 	CHARLAYOUT(1024);
 	
-	static struct GfxLayout tilelayout =
-	{
+	static GfxLayout tilelayout = new GfxLayout
+	(
 		16,16,
 		1024,
 		4,
-		{ 0, 1, 2, 3 },
-		{ 4,0,12,8,20,16,28,24,36,32,44,40,52,48,60,56 },
-		{ 0*64, 1*64, 2*64, 3*64, 4*64, 5*64, 6*64, 7*64,
+		new int[] { 0, 1, 2, 3 },
+		new int[] { 4,0,12,8,20,16,28,24,36,32,44,40,52,48,60,56 },
+		new int[] { 0*64, 1*64, 2*64, 3*64, 4*64, 5*64, 6*64, 7*64,
 		  8*64, 9*64, 10*64, 11*64, 12*64, 13*64, 14*64, 15*64 },
 		16*16*4
-	};
+	);
 	
-	#define SPRITELAYOUT(NUM) static struct GfxLayout spritelayout_##NUM =  \
-	{																		\
+	#define SPRITELAYOUT(NUM) static GfxLayout spritelayout_##NUM = new GfxLayout\
+	(																		\
 		16,16,	/* 16*16 sprites */											\
 		NUM,	/* NUM sprites */											\
 		4,	/* 4 bits per pixel */											\
-		{ 0, 1, 2, 3 },														\
-		{ 1*4, 0*4, 1*4+NUM*64*8, 0*4+NUM*64*8, 3*4, 2*4, 3*4+NUM*64*8, 2*4+NUM*64*8,			\
+		new int[] { 0, 1, 2, 3 },														\
+		new int[] { 1*4, 0*4, 1*4+NUM*64*8, 0*4+NUM*64*8, 3*4, 2*4, 3*4+NUM*64*8, 2*4+NUM*64*8,			\
 				5*4, 4*4, 5*4+NUM*64*8, 4*4+NUM*64*8, 7*4, 6*4, 7*4+NUM*64*8, 6*4+NUM*64*8 },	\
-		{ 0*32, 1*32, 2*32, 3*32, 4*32, 5*32, 6*32, 7*32,					\
+		new int[] { 0*32, 1*32, 2*32, 3*32, 4*32, 5*32, 6*32, 7*32,					\
 				8*32, 9*32, 10*32, 11*32, 12*32, 13*32, 14*32, 15*32 },		\
 		64*8	/* every sprite takes 64 consecutive bytes */				\
-	}
+	)
 	
 	SPRITELAYOUT(512);
 	SPRITELAYOUT(1024);

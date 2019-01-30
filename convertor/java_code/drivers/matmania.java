@@ -278,68 +278,68 @@ public class matmania
 		PORT_BIT( 0x80, IP_ACTIVE_HIGH, IPT_VBLANK )
 	INPUT_PORTS_END
 	
-	static struct GfxLayout charlayout =
-	{
+	static GfxLayout charlayout = new GfxLayout
+	(
 		8,8,	/* 8*8 characters */
 		1024,	/* 1024 characters */
 		3,	/* 3 bits per pixel */
-		{ 2*1024*8*8, 1024*8*8, 0 },	/* the bitplanes are separated */
-		{ 0, 1, 2, 3, 4, 5, 6, 7 },
-		{ 0*8, 1*8, 2*8, 3*8, 4*8, 5*8, 6*8, 7*8 },
+		new int[] { 2*1024*8*8, 1024*8*8, 0 },	/* the bitplanes are separated */
+		new int[] { 0, 1, 2, 3, 4, 5, 6, 7 },
+		new int[] { 0*8, 1*8, 2*8, 3*8, 4*8, 5*8, 6*8, 7*8 },
 		8*8	/* every char takes 8 consecutive bytes */
-	};
+	);
 	
-	static struct GfxLayout tilelayout =
-	{
+	static GfxLayout tilelayout = new GfxLayout
+	(
 		16,16,  /* 16*16 tiles */
 		512,    /* 512 tiles */
 		3,	/* 3 bits per pixel */
-		{ 2*512*16*16, 512*16*16, 0 },	/* the bitplanes are separated */
-		{ 16*8+0, 16*8+1, 16*8+2, 16*8+3, 16*8+4, 16*8+5, 16*8+6, 16*8+7,
+		new int[] { 2*512*16*16, 512*16*16, 0 },	/* the bitplanes are separated */
+		new int[] { 16*8+0, 16*8+1, 16*8+2, 16*8+3, 16*8+4, 16*8+5, 16*8+6, 16*8+7,
 				0, 1, 2, 3, 4, 5, 6, 7 },
-		{ 0*8, 1*8, 2*8, 3*8, 4*8, 5*8, 6*8, 7*8,
+		new int[] { 0*8, 1*8, 2*8, 3*8, 4*8, 5*8, 6*8, 7*8,
 				8*8, 9*8, 10*8, 11*8, 12*8, 13*8, 14*8, 15*8 },
 		32*8	/* every tile takes 16 consecutive bytes */
-	};
+	);
 	
-	static struct GfxLayout matmania_spritelayout =
-	{
+	static GfxLayout matmania_spritelayout = new GfxLayout
+	(
 		16,16,  /* 16*16 sprites */
 		3584,    /* 3584 sprites */
 		3,	/* 3 bits per pixel */
-		{ 2*3584*16*16, 3584*16*16, 0 },	/* the bitplanes are separated */
-		{ 16*8+0, 16*8+1, 16*8+2, 16*8+3, 16*8+4, 16*8+5, 16*8+6, 16*8+7,
+		new int[] { 2*3584*16*16, 3584*16*16, 0 },	/* the bitplanes are separated */
+		new int[] { 16*8+0, 16*8+1, 16*8+2, 16*8+3, 16*8+4, 16*8+5, 16*8+6, 16*8+7,
 				0, 1, 2, 3, 4, 5, 6, 7 },
-		{ 0*8, 1*8, 2*8, 3*8, 4*8, 5*8, 6*8, 7*8,
+		new int[] { 0*8, 1*8, 2*8, 3*8, 4*8, 5*8, 6*8, 7*8,
 				8*8, 9*8, 10*8, 11*8, 12*8, 13*8, 14*8, 15*8 },
 		32*8	/* every sprite takes 16 consecutive bytes */
-	};
+	);
 	
-	static struct GfxLayout maniach_spritelayout =
-	{
+	static GfxLayout maniach_spritelayout = new GfxLayout
+	(
 		16,16,  /* 16*16 sprites */
 		3584,    /* 3584 sprites */
 		3,	/* 3 bits per pixel */
-		{ 0, 3584*16*16, 2*3584*16*16 },	/* the bitplanes are separated */
-		{ 16*8+0, 16*8+1, 16*8+2, 16*8+3, 16*8+4, 16*8+5, 16*8+6, 16*8+7,
+		new int[] { 0, 3584*16*16, 2*3584*16*16 },	/* the bitplanes are separated */
+		new int[] { 16*8+0, 16*8+1, 16*8+2, 16*8+3, 16*8+4, 16*8+5, 16*8+6, 16*8+7,
 				0, 1, 2, 3, 4, 5, 6, 7 },
-		{ 0*8, 1*8, 2*8, 3*8, 4*8, 5*8, 6*8, 7*8,
+		new int[] { 0*8, 1*8, 2*8, 3*8, 4*8, 5*8, 6*8, 7*8,
 				8*8, 9*8, 10*8, 11*8, 12*8, 13*8, 14*8, 15*8 },
 		32*8	/* every sprite takes 16 consecutive bytes */
-	};
+	);
 	
-	static struct GfxLayout maniach_tilelayout =
-	{
+	static GfxLayout maniach_tilelayout = new GfxLayout
+	(
 		16,16,  /* 16*16 tiles */
 		1024,    /* 1024 tiles */
 		3,	/* 3 bits per pixel */
-		{ 2*1024*16*16, 1024*16*16, 0 },	/* the bitplanes are separated */
-		{ 16*8+0, 16*8+1, 16*8+2, 16*8+3, 16*8+4, 16*8+5, 16*8+6, 16*8+7,
+		new int[] { 2*1024*16*16, 1024*16*16, 0 },	/* the bitplanes are separated */
+		new int[] { 16*8+0, 16*8+1, 16*8+2, 16*8+3, 16*8+4, 16*8+5, 16*8+6, 16*8+7,
 				0, 1, 2, 3, 4, 5, 6, 7 },
-		{ 0*8, 1*8, 2*8, 3*8, 4*8, 5*8, 6*8, 7*8,
+		new int[] { 0*8, 1*8, 2*8, 3*8, 4*8, 5*8, 6*8, 7*8,
 				8*8, 9*8, 10*8, 11*8, 12*8, 13*8, 14*8, 15*8 },
 		32*8	/* every tile takes 16 consecutive bytes */
-	};
+	);
 	
 	static struct GfxDecodeInfo matmania_gfxdecodeinfo[] =
 	{

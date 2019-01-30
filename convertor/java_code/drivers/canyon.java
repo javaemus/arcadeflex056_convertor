@@ -148,42 +148,42 @@ public class canyon
 	
 	
 	
-	static struct GfxLayout charlayout =
-	{
+	static GfxLayout charlayout = new GfxLayout
+	(
 		8,8,	/* 8*8 characters */
 	    64,     /* 64 characters */
 	    1,      /* 1 bit per pixel */
-	    { 0 },  /* no separation in 1 bpp */
-	    { 4, 5, 6, 7, 12, 13, 14, 15 },
-		{ 0*16, 1*16, 2*16, 3*16, 4*16, 5*16, 6*16, 7*16 },
+	    new int[] { 0 },  /* no separation in 1 bpp */
+	    new int[] { 4, 5, 6, 7, 12, 13, 14, 15 },
+		new int[] { 0*16, 1*16, 2*16, 3*16, 4*16, 5*16, 6*16, 7*16 },
 		16*8	/* every char takes 16 consecutive bytes */
-	};
+	);
 	
-	static struct GfxLayout motionlayout =
-	{
+	static GfxLayout motionlayout = new GfxLayout
+	(
 		32,16,   /* 32*16 characters */
 		4,       /* 4 characters? */
 		1,       /* 1 bit per pixel */
-		{ 0 },   /* no separation in 1 bpp */
-		{ 0x100*8 + 7, 0x100*8 + 6, 0x100*8 + 5, 0x100*8 + 4, 7, 6, 5, 4,
+		new int[] { 0 },   /* no separation in 1 bpp */
+		new int[] { 0x100*8 + 7, 0x100*8 + 6, 0x100*8 + 5, 0x100*8 + 4, 7, 6, 5, 4,
 		  0x100*8 + 15, 0x100*8 + 14, 0x100*8 + 13, 0x100*8 + 12, 15, 14, 13, 12,
 		  0x100*8 + 256+7, 0x100*8 + 256+6, 0x100*8 + 256+5, 0x100*8 + 256+4, 256+7, 256+6, 256+5, 256+4,
 		  0x100*8 + 256+15, 0x100*8 + 256+14, 0x100*8 + 256+13, 0x100*8 + 256+12, 256+15, 256+14, 256+13, 256+12 },
-		{ 0*16, 1*16, 2*16, 3*16, 4*16, 5*16, 6*16, 7*16,
+		new int[] { 0*16, 1*16, 2*16, 3*16, 4*16, 5*16, 6*16, 7*16,
 		  8*16, 9*16, 10*16, 11*16, 12*16, 13*16, 14*16, 15*16 },
 		64*8     /* every char takes 64 consecutive bytes */
-	};
+	);
 	
-	static struct GfxLayout bomb_layout =
-	{
+	static GfxLayout bomb_layout = new GfxLayout
+	(
 		2,2,	/* 2*2 bomb */
 	    1,      /* 1 character */
 	    1,      /* 1 bit per pixel */
-	    { 0 },  /* no separation in 1 bpp */
-	    { 4, 4 }, /* I know that this bit is 1 */
-		{ 3*16, 3*16 },  /* I know that this bit is 1 */
+	    new int[] { 0 },  /* no separation in 1 bpp */
+	    new int[] { 4, 4 }, /* I know that this bit is 1 */
+		new int[] { 3*16, 3*16 },  /* I know that this bit is 1 */
 		16*8	/* every char takes 16 consecutive bytes */
-	};
+	);
 	
 	static struct GfxDecodeInfo gfxdecodeinfo[] =
 	{

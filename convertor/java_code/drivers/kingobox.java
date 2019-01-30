@@ -446,44 +446,44 @@ public class kingobox
 	
 	
 	
-	static struct GfxLayout charlayout =
-	{
+	static GfxLayout charlayout = new GfxLayout
+	(
 		8,8,    /* 8*8 characters */
 		512,   /* 1024 characters */
 		1,      /* 1 bits per pixel */
-		{ 0 },     /* only 1 plane */
-		{ 0, 1, 2, 3, 4, 5, 6, 7 },
-		{ 0*8, 1*8, 2*8, 3*8, 4*8, 5*8, 6*8, 7*8 },
+		new int[] { 0 },     /* only 1 plane */
+		new int[] { 0, 1, 2, 3, 4, 5, 6, 7 },
+		new int[] { 0*8, 1*8, 2*8, 3*8, 4*8, 5*8, 6*8, 7*8 },
 		8*8     /* every char takes 8 consecutive bytes */
-	};
+	);
 	
-	static struct GfxLayout spritelayout =
-	{
+	static GfxLayout spritelayout = new GfxLayout
+	(
 		16,16,	/* 16*16 chars */
 		1024, 	/* 1024 characters */
 		3,		/* bits per pixel */
-		{ 2*0x4000*8, 1*0x4000*8, 0*0x4000*8 },
-		{ 3*0x4000*8+0,3*0x4000*8+1,3*0x4000*8+2,3*0x4000*8+3,
+		new int[] { 2*0x4000*8, 1*0x4000*8, 0*0x4000*8 },
+		new int[] { 3*0x4000*8+0,3*0x4000*8+1,3*0x4000*8+2,3*0x4000*8+3,
 				3*0x4000*8+4,3*0x4000*8+5,3*0x4000*8+6,3*0x4000*8+7,
 				0, 1, 2, 3, 4, 5, 6, 7 },
-		{ 0*8, 1*8, 2*8, 3*8, 4*8, 5*8, 6*8, 7*8,
+		new int[] { 0*8, 1*8, 2*8, 3*8, 4*8, 5*8, 6*8, 7*8,
 				8*8, 9*8, 10*8, 11*8, 12*8, 13*8, 14*8, 15*8 },
 		16*8
-	};
+	);
 	
-	static struct GfxLayout tilelayout =
-	{
+	static GfxLayout tilelayout = new GfxLayout
+	(
 		16,16,	/* 16*16 chars */
 		512,	/* 512 characters */
 		3,		/* bits per pixel */
-		{ 2*0x2000*8, 1*0x2000*8, 0*0x2000*8 },
-		{ 3*0x2000*8+0,3*0x2000*8+1,3*0x2000*8+2,3*0x2000*8+3,
+		new int[] { 2*0x2000*8, 1*0x2000*8, 0*0x2000*8 },
+		new int[] { 3*0x2000*8+0,3*0x2000*8+1,3*0x2000*8+2,3*0x2000*8+3,
 				3*0x2000*8+4,3*0x2000*8+5,3*0x2000*8+6,3*0x2000*8+7,
 				0, 1, 2, 3, 4, 5, 6, 7 },
-		{ 0*8, 1*8, 2*8, 3*8, 4*8, 5*8, 6*8, 7*8,
+		new int[] { 0*8, 1*8, 2*8, 3*8, 4*8, 5*8, 6*8, 7*8,
 				8*8, 9*8, 10*8, 11*8, 12*8, 13*8, 14*8, 15*8 },
 		16*8
-	};
+	);
 	
 	static struct GfxDecodeInfo gfxdecodeinfo[] =
 	{
@@ -495,66 +495,66 @@ public class kingobox
 	};
 	
 	/* Ring King */
-	static struct GfxLayout rk_charlayout1 =
-	{
+	static GfxLayout rk_charlayout1 = new GfxLayout
+	(
 		8,8,    /* 8*8 characters */
 		512,   /* 1024 characters */
 		1,      /* 1 bits per pixel */
-		{ 0 },     /* only 1 plane */
-		{ 7, 6, 5, 4, (0x1000*8)+7, (0x1000*8)+6, (0x1000*8)+5, (0x1000*8)+4 },
-		{ 7*8, 6*8, 5*8, 4*8, 3*8, 2*8, 1*8, 0*8 },
+		new int[] { 0 },     /* only 1 plane */
+		new int[] { 7, 6, 5, 4, (0x1000*8)+7, (0x1000*8)+6, (0x1000*8)+5, (0x1000*8)+4 },
+		new int[] { 7*8, 6*8, 5*8, 4*8, 3*8, 2*8, 1*8, 0*8 },
 		8*8     /* every char takes 8 consecutive bytes */
-	};
+	);
 	
-	static struct GfxLayout rk_charlayout2 =
-	{
+	static GfxLayout rk_charlayout2 = new GfxLayout
+	(
 		8,8,    /* 8*8 characters */
 		512,   /* 1024 characters */
 		1,      /* 1 bits per pixel */
-		{ 0 },     /* only 1 plane */
-		{ 3, 2, 1, 0, (0x1000*8)+3, (0x1000*8)+2, (0x1000*8)+1, (0x1000*8)+0 },
-		{ 7*8, 6*8, 5*8, 4*8, 3*8, 2*8, 1*8, 0*8 },
+		new int[] { 0 },     /* only 1 plane */
+		new int[] { 3, 2, 1, 0, (0x1000*8)+3, (0x1000*8)+2, (0x1000*8)+1, (0x1000*8)+0 },
+		new int[] { 7*8, 6*8, 5*8, 4*8, 3*8, 2*8, 1*8, 0*8 },
 		8*8     /* every char takes 8 consecutive bytes */
-	};
+	);
 	
-	static struct GfxLayout rk_spritelayout =
-	{
+	static GfxLayout rk_spritelayout = new GfxLayout
+	(
 		16,16,	/* 16*16 chars */
 		1024, 	/* 1024 characters */
 		3,		/* bits per pixel */
-		{ 0*0x8000*8, 1*0x8000*8, 2*0x8000*8 },
-		{ 7, 6, 5, 4, 3, 2, 1, 0,
+		new int[] { 0*0x8000*8, 1*0x8000*8, 2*0x8000*8 },
+		new int[] { 7, 6, 5, 4, 3, 2, 1, 0,
 			16*8+7, 16*8+6, 16*8+5, 16*8+4, 16*8+3, 16*8+2, 16*8+1, 16*8+0 },
-		{ 0*8, 1*8, 2*8, 3*8, 4*8, 5*8, 6*8, 7*8,
+		new int[] { 0*8, 1*8, 2*8, 3*8, 4*8, 5*8, 6*8, 7*8,
 				8*8, 9*8, 10*8, 11*8, 12*8, 13*8, 14*8, 15*8 },
 		32*8
-	};
+	);
 	
-	static struct GfxLayout rk_tilelayout =
-	{
+	static GfxLayout rk_tilelayout = new GfxLayout
+	(
 		16,16,	/* 16*16 chars */
 		512, 	/* 1024 characters */
 		3,		/* bits per pixel */
-		{ 0*0x4000*8, 1*0x4000*8, 2*0x4000*8 },
-		{ 7, 6, 5, 4, 3, 2, 1, 0,
+		new int[] { 0*0x4000*8, 1*0x4000*8, 2*0x4000*8 },
+		new int[] { 7, 6, 5, 4, 3, 2, 1, 0,
 			16*8+7, 16*8+6, 16*8+5, 16*8+4, 16*8+3, 16*8+2, 16*8+1, 16*8+0 },
-		{ 0*8, 1*8, 2*8, 3*8, 4*8, 5*8, 6*8, 7*8,
+		new int[] { 0*8, 1*8, 2*8, 3*8, 4*8, 5*8, 6*8, 7*8,
 				8*8, 9*8, 10*8, 11*8, 12*8, 13*8, 14*8, 15*8 },
 		32*8
-	};
+	);
 	
-	static struct GfxLayout rk_bglayout =
-	{
+	static GfxLayout rk_bglayout = new GfxLayout
+	(
 		16,16,	/* 16*16 chars */
 		256, 	/* 1024 characters */
 		3,		/* bits per pixel */
-		{ 0x4000*8+4, 0, 4 },
-		{ 16*8+3, 16*8+2, 16*8+1, 16*8+0, 0x2000*8+3, 0x2000*8+2, 0x2000*8+1, 0x2000*8+0,
+		new int[] { 0x4000*8+4, 0, 4 },
+		new int[] { 16*8+3, 16*8+2, 16*8+1, 16*8+0, 0x2000*8+3, 0x2000*8+2, 0x2000*8+1, 0x2000*8+0,
 			3, 2, 1, 0, 0x2010*8+3, 0x2010*8+2, 0x2010*8+1, 0x2010*8+0 },
-		{ 15*8, 14*8, 13*8, 12*8, 11*8, 10*8, 9*8, 8*8,
+		new int[] { 15*8, 14*8, 13*8, 12*8, 11*8, 10*8, 9*8, 8*8,
 				7*8, 6*8, 5*8, 4*8, 3*8, 2*8, 1*8, 0*8 },
 		32*8
-	};
+	);
 	
 	
 	static struct GfxDecodeInfo rk_gfxdecodeinfo[] =

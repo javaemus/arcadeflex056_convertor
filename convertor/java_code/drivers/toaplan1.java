@@ -1306,39 +1306,39 @@ public class toaplan1
 	INPUT_PORTS_END
 	
 	
-	static struct GfxLayout tilelayout =
-	{
+	static GfxLayout tilelayout = new GfxLayout
+	(
 		8,8,	/* 8x8 */
 		16384,	/* 16384 tiles */
 		4,		/* 4 bits per pixel */
-		{ 3*8*0x20000, 2*8*0x20000, 1*8*0x20000, 0*8*0x20000 },
-		{ 0, 1, 2, 3, 4, 5, 6, 7 },
-		{ 0, 0x08, 0x10, 0x18, 0x20, 0x28, 0x30, 0x38 },
+		new int[] { 3*8*0x20000, 2*8*0x20000, 1*8*0x20000, 0*8*0x20000 },
+		new int[] { 0, 1, 2, 3, 4, 5, 6, 7 },
+		new int[] { 0, 0x08, 0x10, 0x18, 0x20, 0x28, 0x30, 0x38 },
 		64
-	};
+	);
 	
-	static struct GfxLayout rallybik_spr_layout =
-	{
+	static GfxLayout rallybik_spr_layout = new GfxLayout
+	(
 		16,16,	/* 16*16 sprites */
 		2048,	/* 2048 sprites */
 		4,		/* 4 bits per pixel */
-		{ 0*2048*32*8, 1*2048*32*8, 2*2048*32*8, 3*2048*32*8 },
-		{ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15 },
-		{ 0*16, 1*16, 2*16, 3*16, 4*16, 5*16, 6*16, 7*16,
+		new int[] { 0*2048*32*8, 1*2048*32*8, 2*2048*32*8, 3*2048*32*8 },
+		new int[] { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15 },
+		new int[] { 0*16, 1*16, 2*16, 3*16, 4*16, 5*16, 6*16, 7*16,
 				8*16, 9*16, 10*16, 11*16, 12*16, 13*16, 14*16, 15*16 },
 		32*8	/* every sprite takes 32 consecutive bytes */
-	};
+	);
 	
-	static struct GfxLayout vm_tilelayout =
-	{
+	static GfxLayout vm_tilelayout = new GfxLayout
+	(
 		8,8,	/* 8x8 */
 		32768,	/* 32768 tiles */
 		4,		/* 4 bits per pixel */
-		{ 8*0x80000+8, 8*0x80000, 8, 0 },
-		{ 0, 1, 2, 3, 4, 5, 6, 7 },
-		{ 0, 0x10, 0x20, 0x30, 0x40, 0x50, 0x60, 0x70 },
+		new int[] { 8*0x80000+8, 8*0x80000, 8, 0 },
+		new int[] { 0, 1, 2, 3, 4, 5, 6, 7 },
+		new int[] { 0, 0x10, 0x20, 0x30, 0x40, 0x50, 0x60, 0x70 },
 		128
-	};
+	);
 	
 	
 	static struct GfxDecodeInfo gfxdecodeinfo[] =

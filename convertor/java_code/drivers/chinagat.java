@@ -495,28 +495,28 @@ public class chinagat
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_START2 )
 	INPUT_PORTS_END
 	
-	static struct GfxLayout charlayout =
-	{
+	static GfxLayout charlayout = new GfxLayout
+	(
 		8,8,			/* 8*8 chars */
 		RGN_FRAC(1,1),	/* num of characters */
 		4,				/* 4 bits per pixel */
-		{ 0, 2, 4, 6 },		/* plane offset */
-		{ 1, 0, 65, 64, 129, 128, 193, 192 },
-		{ STEP8(0,8) },			/* { 0*8, 1*8 ... 6*8, 7*8 }, */
+		new int[] { 0, 2, 4, 6 },		/* plane offset */
+		new int[] { 1, 0, 65, 64, 129, 128, 193, 192 },
+		new int[] { STEP8(0,8) },			/* { 0*8, 1*8 ... 6*8, 7*8 }, */
 		32*8 /* every char takes 32 consecutive bytes */
-	};
+	);
 	
-	static struct GfxLayout tilelayout =
-	{
+	static GfxLayout tilelayout = new GfxLayout
+	(
 		16,16,			/* 16x16 chars */
 		RGN_FRAC(1,2),	/* num of Tiles/Sprites */
 		4,				/* 4 bits per pixel */
-		{ RGN_FRAC(1,2)+0, RGN_FRAC(1,2)+4, 0,4 }, /* plane offset */
-		{ 3, 2, 1, 0, 16*8+3, 16*8+2, 16*8+1, 16*8+0,
+		new int[] { RGN_FRAC(1,2)+0, RGN_FRAC(1,2)+4, 0,4 }, /* plane offset */
+		new int[] { 3, 2, 1, 0, 16*8+3, 16*8+2, 16*8+1, 16*8+0,
 			32*8+3,32*8+2 ,32*8+1 ,32*8+0 ,48*8+3 ,48*8+2 ,48*8+1 ,48*8+0 },
-		{ STEP16(0,8) },		/* { 0*8, 1*8 ... 14*8, 15*8 }, */
+		new int[] { STEP16(0,8) },		/* { 0*8, 1*8 ... 14*8, 15*8 }, */
 		64*8 /* every char takes 64 consecutive bytes */
-	};
+	);
 	
 	static struct GfxDecodeInfo gfxdecodeinfo[] =
 	{

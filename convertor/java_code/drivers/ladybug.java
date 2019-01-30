@@ -375,38 +375,38 @@ public class ladybug
 	
 	
 	
-	static struct GfxLayout charlayout =
-	{
+	static GfxLayout charlayout = new GfxLayout
+	(
 		8,8,	/* 8*8 characters */
 		512,	/* 512 characters */
 		2,	/* 2 bits per pixel */
-		{ 0, 512*8*8 },	/* the two bitplanes are separated */
-		{ 7, 6, 5, 4, 3, 2, 1, 0 },
-		{ 0*8, 1*8, 2*8, 3*8, 4*8, 5*8, 6*8, 7*8 },
+		new int[] { 0, 512*8*8 },	/* the two bitplanes are separated */
+		new int[] { 7, 6, 5, 4, 3, 2, 1, 0 },
+		new int[] { 0*8, 1*8, 2*8, 3*8, 4*8, 5*8, 6*8, 7*8 },
 		8*8	/* every char takes 8 consecutive bytes */
-	};
-	static struct GfxLayout spritelayout =
-	{
+	);
+	static GfxLayout spritelayout = new GfxLayout
+	(
 		16,16,	/* 16*16 sprites */
 		128,	/* 128 sprites */
 		2,	/* 2 bits per pixel */
-		{ 1, 0 },	/* the two bitplanes are packed in two consecutive bits */
-		{ 0, 2, 4, 6, 8, 10, 12, 14,
+		new int[] { 1, 0 },	/* the two bitplanes are packed in two consecutive bits */
+		new int[] { 0, 2, 4, 6, 8, 10, 12, 14,
 				8*16+0, 8*16+2, 8*16+4, 8*16+6, 8*16+8, 8*16+10, 8*16+12, 8*16+14 },
-		{ 23*16, 22*16, 21*16, 20*16, 19*16, 18*16, 17*16, 16*16,
+		new int[] { 23*16, 22*16, 21*16, 20*16, 19*16, 18*16, 17*16, 16*16,
 				7*16, 6*16, 5*16, 4*16, 3*16, 2*16, 1*16, 0*16 },
 		64*8	/* every sprite takes 64 consecutive bytes */
-	};
-	static struct GfxLayout spritelayout2 =
-	{
+	);
+	static GfxLayout spritelayout2 = new GfxLayout
+	(
 		8,8,	/* 8*8 sprites */
 		512,	/* 512 sprites */
 		2,	/* 2 bits per pixel */
-		{ 1, 0 },	/* the two bitplanes are packed in two consecutive bits */
-		{ 0, 2, 4, 6, 8, 10, 12, 14 },
-		{ 7*16, 6*16, 5*16, 4*16, 3*16, 2*16, 1*16, 0*16 },
+		new int[] { 1, 0 },	/* the two bitplanes are packed in two consecutive bits */
+		new int[] { 0, 2, 4, 6, 8, 10, 12, 14 },
+		new int[] { 7*16, 6*16, 5*16, 4*16, 3*16, 2*16, 1*16, 0*16 },
 		16*8	/* every sprite takes 16 consecutive bytes */
-	};
+	);
 	
 	static struct GfxDecodeInfo gfxdecodeinfo[] =
 	{

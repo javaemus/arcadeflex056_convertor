@@ -347,40 +347,40 @@ public class retofinv
 	INPUT_PORTS_END
 	
 	
-	static struct GfxLayout charlayout =
-	{
+	static GfxLayout charlayout = new GfxLayout
+	(
 		8,8,	/* 8*8 characters */
 		512,	/* 512 characters */
 		1,	/* 1 bits per pixel */
-		{ 0 },
-		{ 0, 1, 2, 3, 4, 5, 6, 7 },		/* x bit */
-		{ 56, 48, 40, 32, 24, 16, 8, 0 },	/* y bit */
+		new int[] { 0 },
+		new int[] { 0, 1, 2, 3, 4, 5, 6, 7 },		/* x bit */
+		new int[] { 56, 48, 40, 32, 24, 16, 8, 0 },	/* y bit */
 		8*8 	/* every char takes 8 consecutive bytes */
-	};
+	);
 	
-	static struct GfxLayout bglayout =
-	{
+	static GfxLayout bglayout = new GfxLayout
+	(
 		8,8,	/* 8*8 characters */
 		512,	/* 512 characters */
 		4,	/* 4 bits per pixel */
-		{ 0, 0x2000*8+4, 0x2000*8, 4 },
-		{ 8*8+3, 8*8+2, 8*8+1, 8*8+0, 3, 2, 1, 0 },
-		{ 7*8, 6*8, 5*8, 4*8, 3*8, 2*8, 1*8, 0*8 },
+		new int[] { 0, 0x2000*8+4, 0x2000*8, 4 },
+		new int[] { 8*8+3, 8*8+2, 8*8+1, 8*8+0, 3, 2, 1, 0 },
+		new int[] { 7*8, 6*8, 5*8, 4*8, 3*8, 2*8, 1*8, 0*8 },
 		16*8	/* every char takes 16 consecutive bytes */
-	};
+	);
 	
-	static struct GfxLayout spritelayout =
-	{
+	static GfxLayout spritelayout = new GfxLayout
+	(
 		16,16,	/* 16*16 characters */
 		256,	/* 256 characters */
 		4,	/* 4 bits per pixel */
-		{ 0, 0x4000*8+4, 0x4000*8, 4 },
-		{ 24*8+3, 24*8+2, 24*8+1, 24*8+0, 16*8+3, 16*8+2, 16*8+1, 16*8+0,
+		new int[] { 0, 0x4000*8+4, 0x4000*8, 4 },
+		new int[] { 24*8+3, 24*8+2, 24*8+1, 24*8+0, 16*8+3, 16*8+2, 16*8+1, 16*8+0,
 		  8*8+3, 8*8+2, 8*8+1, 8*8+0, 3, 2, 1, 0 },
-		{ 39*8, 38*8, 37*8, 36*8, 35*8, 34*8, 33*8, 32*8,
+		new int[] { 39*8, 38*8, 37*8, 36*8, 35*8, 34*8, 33*8, 32*8,
 		  7*8, 6*8, 5*8, 4*8, 3*8, 2*8, 1*8, 0*8 },
 	  	64*8	/* every char takes 64 consecutive bytes */
-	};
+	);
 	
 	static struct GfxDecodeInfo gfxdecodeinfo[] =
 	{

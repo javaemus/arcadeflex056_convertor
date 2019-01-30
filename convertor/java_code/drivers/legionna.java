@@ -388,57 +388,57 @@ public class legionna
 	   The char gfx is also weird, it looks to need various tile sizes and
 	   decoding schemes. */
 	
-	static struct GfxLayout legionna_charlayout =
-	{
+	static GfxLayout legionna_charlayout = new GfxLayout
+	(
 		8,8,
 		RGN_FRAC(1,4),	/* other half is BK3, decoded in char2layout */
 		4,
-		{ 0, 4, 4096*16*8+0, 4096*16*8+4 },
-		{ 3, 2, 1, 0, 8+3, 8+2, 8+1, 8+0 },
+		new int[] { 0, 4, 4096*16*8+0, 4096*16*8+4 },
+		new int[] { 3, 2, 1, 0, 8+3, 8+2, 8+1, 8+0 },
 		{ 0*16, 1*16, 2*16, 3*16, 4*16, 5*16, 6*16, 7*16 },
 		16*8
-	};
+	);
 	
-	static struct GfxLayout legionna_char2layout =
-	{
+	static GfxLayout legionna_char2layout = new GfxLayout
+	(
 		16,16,
 		256,	/* Can't use RGN_FRAC as (1,16) not supported */
 		4,
-		{ 0, 4, 4096*16*8+0, 4096*16*8+4 },
-		{ 3, 2, 1, 0, 11, 10, 9, 8,
+		new int[] { 0, 4, 4096*16*8+0, 4096*16*8+4 },
+		new int[] { 3, 2, 1, 0, 11, 10, 9, 8,
 		  1024*16*8 +3,  1024*16*8 +2,  1024*16*8 +1, 1024*16*8 +0,
 		  1024*16*8 +11, 1024*16*8 +10, 1024*16*8 +9, 1024*16*8 +8 },
-		{ 0*16, 1*16, 2*16, 3*16, 4*16, 5*16, 6*16, 7*16,
+		new int[] { 0*16, 1*16, 2*16, 3*16, 4*16, 5*16, 6*16, 7*16,
 		  512*16*8 +0*16, 512*16*8 +1*16, 512*16*8 +2*16, 512*16*8 +3*16,
 		  512*16*8 +4*16, 512*16*8 +5*16, 512*16*8 +6*16, 512*16*8 +7*16 },
 		16*8
-	};
+	);
 	
-	static struct GfxLayout legionna_tilelayout =
-	{
+	static GfxLayout legionna_tilelayout = new GfxLayout
+	(
 		16,16,
 		RGN_FRAC(1,1),
 		4,
-		{ 2*4, 3*4, 0*4, 1*4 },
-		{ 3, 2, 1, 0, 16+3, 16+2, 16+1, 16+0,
+		new int[] { 2*4, 3*4, 0*4, 1*4 },
+		new int[] { 3, 2, 1, 0, 16+3, 16+2, 16+1, 16+0,
 				64*8+3, 64*8+2, 64*8+1, 64*8+0, 64*8+16+3, 64*8+16+2, 64*8+16+1, 64*8+16+0 },
-		{ 0*32, 1*32, 2*32, 3*32, 4*32, 5*32, 6*32, 7*32,
+		new int[] { 0*32, 1*32, 2*32, 3*32, 4*32, 5*32, 6*32, 7*32,
 				8*32, 9*32, 10*32, 11*32, 12*32, 13*32, 14*32, 15*32 },
 		128*8
-	};
+	);
 	
-	static struct GfxLayout legionna_spritelayout =
-	{
+	static GfxLayout legionna_spritelayout = new GfxLayout
+	(
 		16,16,
 		RGN_FRAC(1,1),
 		4,
-		{ 2*4, 3*4, 0*4, 1*4 },
-		{ 3, 2, 1, 0, 16+3, 16+2, 16+1, 16+0,
+		new int[] { 2*4, 3*4, 0*4, 1*4 },
+		new int[] { 3, 2, 1, 0, 16+3, 16+2, 16+1, 16+0,
 		  64*8+3, 64*8+2, 64*8+1, 64*8+0, 64*8+16+3, 64*8+16+2, 64*8+16+1, 64*8+16+0 },
-		{ 0*32, 1*32, 2*32, 3*32, 4*32, 5*32, 6*32, 7*32,
+		new int[] { 0*32, 1*32, 2*32, 3*32, 4*32, 5*32, 6*32, 7*32,
 		  8*32, 9*32, 10*32, 11*32, 12*32, 13*32, 14*32, 15*32 },
 		128*8
-	};
+	);
 	
 	static struct GfxDecodeInfo legionna_gfxdecodeinfo[] =
 	{

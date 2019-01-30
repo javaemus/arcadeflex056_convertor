@@ -14,52 +14,52 @@ public class firetrk
 	static UINT8 firetruck_bit7_flags;
 	static UINT8 firetruck_bit0_flags;
 	
-	static struct GfxLayout char_layout =
-	{
+	static GfxLayout char_layout = new GfxLayout
+	(
 		16,16,	/* character size */
 		0x20,	/* number of chars */
 		1,		/* bits per pixel */
-		{ 4 },
-		{
+		new int[] { 4 },
+		new int[] {
 			24,25,26,27,
 			0,1,2,3,
 			8,9,10,11,
 			16,17,18,19
 		},
-		{
+		new int[] {
 			0*64,0*64+32,1*64,1*64+32,
 			2*64,2*64+32,3*64,3*64+32,
 			4*64,4*64+32,5*64,5*64+32,
 			6*64,6*64+32,7*64,7*64+32
 		},
 		8*64
-	};
+	);
 	
-	static struct GfxLayout tile_layout =
-	{
+	static GfxLayout tile_layout = new GfxLayout
+	(
 		16,16,		/* character size */
 		0x40,		/* number of characters */
 		1,			/* bits per pixel */
-		{ 0 },
-		{ 0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15 },
-		{ 0*16, 1*16, 2*16, 3*16, 4*16, 5*16, 6*16, 7*16,
+		new int[] { 0 },
+		new int[] { 0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15 },
+		new int[] { 0*16, 1*16, 2*16, 3*16, 4*16, 5*16, 6*16, 7*16,
 		  8*16, 9*16, 10*16, 11*16, 12*16, 13*16, 14*16, 15*16 },
 		8*32
-	};
+	);
 	
-	static struct GfxLayout tail_layout =
-	{
+	static GfxLayout tail_layout = new GfxLayout
+	(
 		64,64,	/* character size */
 		0x8,	/* number of characters */
 		1,		/* bits per pixel */
-		{ 0 },
-		{
+		new int[] { 0 },
+		new int[] {
 			0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,
 			16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,
 			32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,
 			48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63
 		},
-		{
+		new int[] {
 			0*64, 1*64, 2*64, 3*64, 4*64, 5*64, 6*64, 7*64,
 			8*64, 9*64, 10*64, 11*64, 12*64, 13*64, 14*64, 15*64,
 			0x400+0*64, 0x400+1*64, 0x400+2*64, 0x400+3*64,
@@ -76,21 +76,21 @@ public class firetrk
 			0xc00+12*64, 0xc00+13*64, 0xc00+14*64, 0xc00+15*64
 		},
 		16*64*4
-	};
+	);
 	
-	static struct GfxLayout cab_layout1 =
-	{
+	static GfxLayout cab_layout1 = new GfxLayout
+	(
 		32,32,	/* character size */
 		0x4,	/* number of characters */
 		1,		/* bits per pixel */
-		{ 4 },
-		{
+		new int[] { 4 },
+		new int[] {
 			0,1,2,3,8,9,10,11,
 			16,17,18,19,24,25,26,27,
 			32,33,34,35,40,41,42,43,
 			48,49,50,51,56,57,58,59
 		},
-		{
+		new int[] {
 			0*64, 1*64, 2*64, 3*64,
 			4*64, 5*64, 6*64, 7*64,
 			8*64, 9*64, 10*64, 11*64,
@@ -101,15 +101,15 @@ public class firetrk
 			0x400+12*64, 0x400+13*64, 0x400+14*64, 0x400+15*64
 		},
 		16*64*2
-	};
+	);
 	
-	static struct GfxLayout cab_layout2 =
-	{
+	static GfxLayout cab_layout2 = new GfxLayout
+	(
 		32,32,	/* character size */
 		0x4,	/* number of characters */
 		1,		/* bits per pixel */
-		{ 4 },
-		{
+		new int[] { 4 },
+		new int[] {
 			0*64, 1*64, 2*64, 3*64,
 			4*64, 5*64, 6*64, 7*64,
 			8*64, 9*64, 10*64, 11*64,
@@ -119,14 +119,14 @@ public class firetrk
 			0x400+8*64, 0x400+9*64, 0x400+10*64, 0x400+11*64,
 			0x400+12*64, 0x400+13*64, 0x400+14*64, 0x400+15*64
 		},
-		{
+		new int[] {
 			0,1,2,3,8,9,10,11,
 			16,17,18,19,24,25,26,27,
 			32,33,34,35,40,41,42,43,
 			48,49,50,51,56,57,58,59
 		},
 		16*64*2
-	};
+	);
 	
 	static struct GfxDecodeInfo firetruck_gfxdecodeinfo[] =
 	{
