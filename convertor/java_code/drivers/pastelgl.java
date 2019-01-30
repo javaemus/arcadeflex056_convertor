@@ -91,7 +91,7 @@ public class pastelgl
 	};
 	
 	
-	static READ_HANDLER( io_pastelgl_r )
+	public static ReadHandlerPtr io_pastelgl_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		offset = (((offset & 0xff00) >> 8) | ((offset & 0x00ff) << 8));
 	
@@ -109,7 +109,7 @@ public class pastelgl
 			case	0xf100:	return nb1413m3_dipsw2_r();
 			default:	return 0xff;
 		}
-	}
+	} };
 	
 	public static IO_ReadPort readport_pastelgl[]={
 		new IO_ReadPort(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_IO | MEMPORT_WIDTH_8),

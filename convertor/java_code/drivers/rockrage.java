@@ -54,9 +54,9 @@ public class rockrage
 		cpu_cause_interrupt(1,M6809_INT_IRQ);
 	}
 	
-	static READ_HANDLER( rockrage_VLM5030_busy_r ) {
+	public static ReadHandlerPtr rockrage_VLM5030_busy_r  = new ReadHandlerPtr() { public int handler(int offset) {
 		return ( VLM5030_BSY() ? 1 : 0 );
-	}
+	} };
 	
 	static WRITE_HANDLER( rockrage_speech_w ) {
 		VLM5030_RST( ( data >> 2 ) & 0x01 );

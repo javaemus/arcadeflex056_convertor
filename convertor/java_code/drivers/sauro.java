@@ -91,12 +91,12 @@ public class sauro
 		soundlatch_w(offset,data);
 	}
 	
-	static READ_HANDLER( sauro_sound_command_r )
+	public static ReadHandlerPtr sauro_sound_command_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		int ret	= soundlatch_r(offset);
 		soundlatch_clear_w(offset,0);
 		return ret;
-	}
+	} };
 	
 	static WRITE_HANDLER( flip_screen_w )
 	{

@@ -113,10 +113,10 @@ public class cloak
 	static size_t nvram_size;
 	
 	
-	static READ_HANDLER( cloak_sharedram_r )
+	public static ReadHandlerPtr cloak_sharedram_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return cloak_sharedram[offset];
-	}
+	} };
 	
 	static WRITE_HANDLER( cloak_sharedram_w )
 	{

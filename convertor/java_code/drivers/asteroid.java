@@ -183,10 +183,10 @@ public class asteroid
 	/* Lunar Lander mirrors page 0 and page 1. */
 	static unsigned char *llander_zeropage;
 	
-	static READ_HANDLER( llander_zeropage_r )
+	public static ReadHandlerPtr llander_zeropage_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return llander_zeropage[offset & 0xff];
-	}
+	} };
 	
 	static WRITE_HANDLER( llander_zeropage_w )
 	{

@@ -67,18 +67,18 @@ public class warpwarp
 	extern void warpwarp_sh_stop(void);
 	extern void warpwarp_sh_update(void);
 	
-	static READ_HANDLER( warpwarp_input_c000_7_r )
+	public static ReadHandlerPtr warpwarp_input_c000_7_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return (readinputport(0) >> offset) & 1;
-	}
+	} };
 	
 	/* Read the Dipswitches */
-	static READ_HANDLER( warpwarp_input_c020_27_r )
+	public static ReadHandlerPtr warpwarp_input_c020_27_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return (readinputport(1) >> offset) & 1;
-	}
+	} };
 	
-	static READ_HANDLER( warpwarp_input_controller_r )
+	public static ReadHandlerPtr warpwarp_input_controller_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		int res;
 	
@@ -88,7 +88,7 @@ public class warpwarp
 		if (res & 4) return 111;
 		if (res & 8) return 167;
 		return 255;
-	}
+	} };
 	
 	static WRITE_HANDLER( warpwarp_leds_w )
 	{

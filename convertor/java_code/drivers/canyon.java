@@ -34,7 +34,7 @@ public class canyon
 	/* vidhrdw/canyon.c */
 	extern void canyon_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	
-	static READ_HANDLER( canyon_options_r )
+	public static ReadHandlerPtr canyon_options_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		switch (offset & 0x03)
 		{
@@ -49,9 +49,9 @@ public class canyon
 		}
 	
 		return 0xFF;
-	}
+	} };
 	
-	static READ_HANDLER( canyon_switches_r )
+	public static ReadHandlerPtr canyon_switches_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		switch (offset & 0x07)
 		{
@@ -74,7 +74,7 @@ public class canyon
 		}
 	
 		return 0xFF;
-	}
+	} };
 	
 	WRITE_HANDLER( canyon_led_w )
 	{

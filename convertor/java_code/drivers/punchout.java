@@ -186,7 +186,7 @@ public class punchout
 	static int prot_mode_sel = -1; /* Mode selector */
 	static int prot_mem[16];
 	
-	static READ_HANDLER( spunchout_prot_r ) {
+	public static ReadHandlerPtr spunchout_prot_r  = new ReadHandlerPtr() { public int handler(int offset) {
 	
 		switch ( offset ) {
 			case 0x00:
@@ -259,7 +259,7 @@ public class punchout
 		logerror("Read from unknown protection? port %02x ( selector = %02x )\n", offset, prot_mode_sel );
 	
 		return prot_mem[offset];
-	}
+	} };
 	
 	static WRITE_HANDLER( spunchout_prot_w ) {
 	
@@ -321,87 +321,87 @@ public class punchout
 		prot_mem[offset] = data;
 	}
 	
-	static READ_HANDLER( spunchout_prot_0_r ) {
+	public static ReadHandlerPtr spunchout_prot_0_r  = new ReadHandlerPtr() { public int handler(int offset) {
 		return spunchout_prot_r( 0 );
-	}
+	} };
 	
 	static WRITE_HANDLER( spunchout_prot_0_w ) {
 		spunchout_prot_w( 0, data );
 	}
 	
-	static READ_HANDLER( spunchout_prot_1_r ) {
+	public static ReadHandlerPtr spunchout_prot_1_r  = new ReadHandlerPtr() { public int handler(int offset) {
 		return spunchout_prot_r( 1 );
-	}
+	} };
 	
 	static WRITE_HANDLER( spunchout_prot_1_w ) {
 		spunchout_prot_w( 1, data );
 	}
 	
-	static READ_HANDLER( spunchout_prot_2_r ) {
+	public static ReadHandlerPtr spunchout_prot_2_r  = new ReadHandlerPtr() { public int handler(int offset) {
 		return spunchout_prot_r( 2 );
-	}
+	} };
 	
 	static WRITE_HANDLER( spunchout_prot_2_w ) {
 		spunchout_prot_w( 2, data );
 	}
 	
-	static READ_HANDLER( spunchout_prot_3_r ) {
+	public static ReadHandlerPtr spunchout_prot_3_r  = new ReadHandlerPtr() { public int handler(int offset) {
 		return spunchout_prot_r( 3 );
-	}
+	} };
 	
 	static WRITE_HANDLER( spunchout_prot_3_w ) {
 		spunchout_prot_w( 3, data );
 	}
 	
-	static READ_HANDLER( spunchout_prot_5_r ) {
+	public static ReadHandlerPtr spunchout_prot_5_r  = new ReadHandlerPtr() { public int handler(int offset) {
 		return spunchout_prot_r( 5 );
-	}
+	} };
 	
 	static WRITE_HANDLER( spunchout_prot_5_w ) {
 		spunchout_prot_w( 5, data );
 	}
 	
 	
-	static READ_HANDLER( spunchout_prot_6_r ) {
+	public static ReadHandlerPtr spunchout_prot_6_r  = new ReadHandlerPtr() { public int handler(int offset) {
 		return spunchout_prot_r( 6 );
-	}
+	} };
 	
 	static WRITE_HANDLER( spunchout_prot_6_w ) {
 		spunchout_prot_w( 6, data );
 	}
 	
-	static READ_HANDLER( spunchout_prot_9_r ) {
+	public static ReadHandlerPtr spunchout_prot_9_r  = new ReadHandlerPtr() { public int handler(int offset) {
 		return spunchout_prot_r( 9 );
-	}
+	} };
 	
-	static READ_HANDLER( spunchout_prot_b_r ) {
+	public static ReadHandlerPtr spunchout_prot_b_r  = new ReadHandlerPtr() { public int handler(int offset) {
 		return spunchout_prot_r( 11 );
-	}
+	} };
 	
 	static WRITE_HANDLER( spunchout_prot_b_w ) {
 		spunchout_prot_w( 11, data );
 	}
 	
-	static READ_HANDLER( spunchout_prot_c_r ) {
+	public static ReadHandlerPtr spunchout_prot_c_r  = new ReadHandlerPtr() { public int handler(int offset) {
 		return spunchout_prot_r( 12 );
-	}
+	} };
 	
 	static WRITE_HANDLER( spunchout_prot_d_w ) {
 		spunchout_prot_w( 13, data );
 	}
 	
-	static READ_HANDLER( spunchout_prot_a_r ) {
+	public static ReadHandlerPtr spunchout_prot_a_r  = new ReadHandlerPtr() { public int handler(int offset) {
 		return spunchout_prot_r( 10 );
-	}
+	} };
 	
 	static WRITE_HANDLER( spunchout_prot_a_w ) {
 		spunchout_prot_w( 10, data );
 	}
 	
 	#if 0
-	static READ_HANDLER( spunchout_prot_f_r ) {
+	public static ReadHandlerPtr spunchout_prot_f_r  = new ReadHandlerPtr() { public int handler(int offset) {
 		return spunchout_prot_r( 15 );
-	}
+	} };
 	#endif
 	
 	static WRITE_HANDLER( spunchout_prot_f_w ) {

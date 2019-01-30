@@ -514,15 +514,15 @@ public class srmp2
 	MEMORY_END
 	
 	
-	static READ_HANDLER( srmp3_cchip_status_0_r )
+	public static ReadHandlerPtr srmp3_cchip_status_0_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return 0x01;
-	}
+	} };
 	
-	static READ_HANDLER( srmp3_cchip_status_1_r )
+	public static ReadHandlerPtr srmp3_cchip_status_1_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return 0x01;
-	}
+	} };
 	
 	static WRITE_HANDLER( srmp3_input_1_w )
 	{
@@ -561,7 +561,7 @@ public class srmp2
 	
 	}
 	
-	static READ_HANDLER( srmp3_input_r )
+	public static ReadHandlerPtr srmp3_input_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 	/*
 		---x xxxx : Key code
@@ -604,7 +604,7 @@ public class srmp2
 		}
 	
 		return keydata;
-	}
+	} };
 	
 	static WRITE_HANDLER( srmp3_flags_w )
 	{

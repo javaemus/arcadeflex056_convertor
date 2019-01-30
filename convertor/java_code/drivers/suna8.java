@@ -720,7 +720,7 @@ public class suna8
 	
 	static data8_t protection_val;
 	
-	static READ_HANDLER( hardhead_protection_r )
+	public static ReadHandlerPtr hardhead_protection_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		if (protection_val & 0x80)
 			return	((~offset & 0x20)			?	0x20 : 0) |
@@ -729,7 +729,7 @@ public class suna8
 		else
 			return	((~offset & 0x20)					?	0x20 : 0) |
 					(((offset ^ protection_val) & 0x01)	?	0x84 : 0);
-	}
+	} };
 	
 	static WRITE_HANDLER( hardhead_protection_w )
 	{
@@ -752,7 +752,7 @@ public class suna8
 	
 	static data8_t *hardhead_ip;
 	
-	static READ_HANDLER( hardhead_ip_r )
+	public static ReadHandlerPtr hardhead_ip_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		switch (*hardhead_ip)
 		{
@@ -764,7 +764,7 @@ public class suna8
 				logerror("CPU #0 - PC %04X: Unknown IP read: %02X\n",cpu_get_pc(),hardhead_ip);
 				return 0xff;
 		}
-	}
+	} };
 	
 	/*
 		765- ----	Unused (eg. they go into hardhead_flipscreen_w)
@@ -875,10 +875,10 @@ public class suna8
 		---- --1-	1 -> Interlude screens
 		---- ---0
 	*/
-	static READ_HANDLER( rranger_soundstatus_r )
+	public static ReadHandlerPtr rranger_soundstatus_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return 0x02;
-	}
+	} };
 	
 	public static Memory_ReadAddress rranger_readmem[]={
 		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
@@ -930,10 +930,10 @@ public class suna8
 	/*
 	?
 	*/
-	static READ_HANDLER( brickzn_c140_r )
+	public static ReadHandlerPtr brickzn_c140_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return 0xff;
-	}
+	} };
 	
 	/*
 	*/
@@ -1064,10 +1064,10 @@ public class suna8
 		if (data & ~0x02) 	logerror("CPU #0 - PC %04X: unknown spritebank bits: %02X\n",cpu_get_pc(),data);
 	}
 	
-	static READ_HANDLER( hardhea2_c080_r )
+	public static ReadHandlerPtr hardhea2_c080_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return 0xff;
-	}
+	} };
 	
 	/*
 		7654 ----

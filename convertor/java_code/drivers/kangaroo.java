@@ -130,12 +130,12 @@ public class kangaroo
 	   this just seems to do the trick -V-
 	*/
 	
-	static READ_HANDLER( kangaroo_sec_chip_r )
+	public static ReadHandlerPtr kangaroo_sec_chip_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 	/*  kangaroo_clock = (kangaroo_clock << 1) + 1; */
 	  kangaroo_clock++;
 	  return (kangaroo_clock & 0x0f);
-	}
+	} };
 	
 	static WRITE_HANDLER( kangaroo_sec_chip_w )
 	{

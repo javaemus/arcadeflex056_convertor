@@ -54,15 +54,15 @@ public class jackal
 	
 	
 	
-	static READ_HANDLER( rotary_0_r )
+	public static ReadHandlerPtr rotary_0_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return (1 << (readinputport(5) * 8 / 256)) ^ 0xff;
-	}
+	} };
 	
-	static READ_HANDLER( rotary_1_r )
+	public static ReadHandlerPtr rotary_1_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return (1 << (readinputport(6) * 8 / 256)) ^ 0xff;
-	}
+	} };
 	
 	static int irq_enable;
 	

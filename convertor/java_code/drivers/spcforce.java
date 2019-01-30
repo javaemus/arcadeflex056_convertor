@@ -61,10 +61,10 @@ public class spcforce
 		spcforce_SN76496_latch = data;
 	}
 	
-	static READ_HANDLER( spcforce_SN76496_select_r )
+	public static ReadHandlerPtr spcforce_SN76496_select_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return spcforce_SN76496_select;
-	}
+	} };
 	
 	static WRITE_HANDLER( spcforce_SN76496_select_w )
 	{
@@ -75,11 +75,11 @@ public class spcforce
 		if (~data & 0x10)  SN76496_2_w(0, spcforce_SN76496_latch);
 	}
 	
-	static READ_HANDLER( spcforce_t0_r )
+	public static ReadHandlerPtr spcforce_t0_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		/* SN76496 status according to Al - not supported by MAME?? */
 		return rand() & 1;
-	}
+	} };
 	
 	
 	static WRITE_HANDLER( spcforce_soundtrigger_w )

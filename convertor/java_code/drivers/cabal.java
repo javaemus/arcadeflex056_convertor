@@ -201,7 +201,7 @@ public class cabal
 	
 	/*********************************************************************/
 	
-	static READ_HANDLER( cabalbl_snd_r )
+	public static ReadHandlerPtr cabalbl_snd_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		switch(offset){
 			case 0x06: return input_port_3_r(0);
@@ -209,7 +209,7 @@ public class cabal
 			case 0x0a: return cabal_sound_command1;
 			default: return(0xff);
 		}
-	}
+	} };
 	
 	static WRITE_HANDLER( cabalbl_snd_w )
 	{

@@ -63,20 +63,20 @@ public class ddrible
 	}
 	
 	
-	static READ_HANDLER( ddrible_sharedram_r )
+	public static ReadHandlerPtr ddrible_sharedram_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return ddrible_sharedram[offset];
-	}
+	} };
 	
 	static WRITE_HANDLER( ddrible_sharedram_w )
 	{
 		ddrible_sharedram[offset] = data;
 	}
 	
-	static READ_HANDLER( ddrible_snd_sharedram_r )
+	public static ReadHandlerPtr ddrible_snd_sharedram_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return ddrible_snd_sharedram[offset];
-	}
+	} };
 	
 	static WRITE_HANDLER( ddrible_snd_sharedram_w )
 	{
@@ -93,12 +93,12 @@ public class ddrible
 		coin_counter_w(1,(data >> 1) & 0x01);
 	}
 	
-	static READ_HANDLER( ddrible_vlm5030_busy_r )
+	public static ReadHandlerPtr ddrible_vlm5030_busy_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return rand(); /* patch */
 		if (VLM5030_BSY()) return 1;
 		else return 0;
-	}
+	} };
 	
 	static WRITE_HANDLER( ddrible_vlm5030_ctrl_w )
 	{

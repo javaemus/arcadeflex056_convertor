@@ -53,17 +53,17 @@ public class pandoras
 		return ignore_interrupt();
 	}
 	
-	static READ_HANDLER( pandoras_sharedram_r ){
+	public static ReadHandlerPtr pandoras_sharedram_r  = new ReadHandlerPtr() { public int handler(int offset){
 		return pandoras_sharedram[offset];
-	}
+	} };
 	
 	static WRITE_HANDLER( pandoras_sharedram_w ){
 		pandoras_sharedram[offset] = data;
 	}
 	
-	static READ_HANDLER( pandoras_sharedram2_r ){
+	public static ReadHandlerPtr pandoras_sharedram2_r  = new ReadHandlerPtr() { public int handler(int offset){
 		return pandoras_sharedram2[offset];
-	}
+	} };
 	
 	static WRITE_HANDLER( pandoras_sharedram2_w ){
 		pandoras_sharedram2[offset] = data;
@@ -405,15 +405,15 @@ public class pandoras
 		irq_enable_a = irq_enable_b = 0;
 	}
 	
-	static READ_HANDLER( pandoras_portA_r )
+	public static ReadHandlerPtr pandoras_portA_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return i8039_status;
-	}
+	} };
 	
-	static READ_HANDLER( pandoras_portB_r )
+	public static ReadHandlerPtr pandoras_portB_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return (cpu_gettotalcycles() / 512) & 0x0f;
-	}
+	} };
 	
 	static struct AY8910interface ay8910_interface =
 	{

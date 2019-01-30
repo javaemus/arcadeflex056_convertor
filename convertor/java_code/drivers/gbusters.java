@@ -38,13 +38,13 @@ public class gbusters
 			return ignore_interrupt();
 	}
 	
-	static READ_HANDLER( bankedram_r )
+	public static ReadHandlerPtr bankedram_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		if (palette_selected)
 			return paletteram_r(offset);
 		else
 			return ram[offset];
-	}
+	} };
 	
 	static WRITE_HANDLER( bankedram_w )
 	{

@@ -210,10 +210,10 @@ public class mhavoc
 	
 	static unsigned char *gammaram;
 	
-	static READ_HANDLER( mhavoc_gammaram_r )
+	public static ReadHandlerPtr mhavoc_gammaram_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return gammaram[offset & 0x7ff];
-	}
+	} };
 	
 	static WRITE_HANDLER( mhavoc_gammaram_w )
 	{

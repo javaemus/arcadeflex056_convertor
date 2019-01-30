@@ -238,9 +238,9 @@ public class outrun
 		}
 	}
 	
-	static READ_HANDLER( sound2_shared_ram_r ){
+	public static ReadHandlerPtr sound2_shared_ram_r  = new ReadHandlerPtr() { public int handler(int offset){
 		return sound_shared_ram[offset];
-	}
+	} };
 	static WRITE_HANDLER( sound2_shared_ram_w ){
 		sound_shared_ram[offset] = data;
 	}

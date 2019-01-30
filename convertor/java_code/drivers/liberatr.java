@@ -168,7 +168,7 @@ public class liberatr
 	}
 	
 	
-	static READ_HANDLER( liberatr_input_port_0_r )
+	public static ReadHandlerPtr liberatr_input_port_0_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		int	res ;
 		int xdelta, ydelta;
@@ -190,7 +190,7 @@ public class liberatr
 		}
 	
 		return res;
-	}
+	} };
 	
 	
 	

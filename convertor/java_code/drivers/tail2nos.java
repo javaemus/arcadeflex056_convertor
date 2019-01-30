@@ -30,10 +30,10 @@ public class tail2nos
 	void tail2nos_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	
 	
-	static READ_HANDLER( pip )
+	public static ReadHandlerPtr pip  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return rand()&0xffff;
-	}
+	} };
 	static void tail2nos_init_machine(void)
 	{
 		/* point to the extra ROMs */

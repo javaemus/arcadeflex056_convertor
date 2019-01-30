@@ -129,7 +129,7 @@ public class mitchell
 		}
 	}
 	
-	static READ_HANDLER( pang_port5_r )
+	public static ReadHandlerPtr pang_port5_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		int bit;
 		extern const struct GameDriver driver_mgakuen2;
@@ -147,7 +147,7 @@ public class mitchell
 		bit ^= 0x08;
 	
 		return (input_port_0_r(0) & 0x76) | bit;
-	}
+	} };
 	
 	static WRITE_HANDLER( eeprom_cs_w )
 	{
@@ -174,7 +174,7 @@ public class mitchell
 	
 	static int dial[2],dial_selected;
 	
-	static READ_HANDLER( block_input_r )
+	public static ReadHandlerPtr block_input_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		static int dir[2];
 	
@@ -214,7 +214,7 @@ public class mitchell
 	
 			return res;
 		}
-	}
+	} };
 	
 	static WRITE_HANDLER( block_dial_control_w )
 	{
@@ -233,7 +233,7 @@ public class mitchell
 	
 	static int keymatrix;
 	
-	static READ_HANDLER( mahjong_input_r )
+	public static ReadHandlerPtr mahjong_input_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		int i;
 	
@@ -241,7 +241,7 @@ public class mitchell
 			if (keymatrix & (0x80 >> i)) return readinputport(2 + 5 * offset + i);
 	
 		return 0xff;
-	}
+	} };
 	
 	static WRITE_HANDLER( mahjong_input_select_w )
 	{
@@ -251,7 +251,7 @@ public class mitchell
 	
 	static int input_type;
 	
-	static READ_HANDLER( input_r )
+	public static ReadHandlerPtr input_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		switch (input_type)
 		{
@@ -276,7 +276,7 @@ public class mitchell
 				}
 				break;
 		}
-	}
+	} };
 	
 	static WRITE_HANDLER( input_w )
 	{

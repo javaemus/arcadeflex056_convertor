@@ -63,11 +63,11 @@ public class terracre
 		soundlatch_w(0,((data & 0x7f) << 1) | 1);
 	}
 	
-	static READ_HANDLER( soundlatch_clear_r )
+	public static ReadHandlerPtr soundlatch_clear_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		soundlatch_clear_w(0,0);
 		return 0;
-	}
+	} };
 	
 	
 	

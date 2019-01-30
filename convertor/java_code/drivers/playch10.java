@@ -362,13 +362,13 @@ public class playch10
 		up_8w = data & 1;
 	}
 	
-	static READ_HANDLER( ram_8w_r )
+	public static ReadHandlerPtr ram_8w_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		if ( offset >= 0x400 && up_8w )
 			return ram_8w[offset];
 	
 		return ram_8w[offset & 0x3ff];
-	}
+	} };
 	
 	static WRITE_HANDLER( ram_8w_w )
 	{
@@ -385,10 +385,10 @@ public class playch10
 			videoram_w( offset, data );
 	}
 	
-	static READ_HANDLER( mirror_ram_r )
+	public static ReadHandlerPtr mirror_ram_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return work_ram[ offset & 0x7ff ];
-	}
+	} };
 	
 	static WRITE_HANDLER( mirror_ram_w )
 	{

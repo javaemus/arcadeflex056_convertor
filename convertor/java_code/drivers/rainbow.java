@@ -203,10 +203,10 @@ public class rainbow
 		reset_sound_region();
 	}
 	
-	static READ_HANDLER( jumping_latch_r )
+	public static ReadHandlerPtr jumping_latch_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return jumping_latch;
-	}
+	} };
 	
 	#if 0
 	static WRITE_HANDLER( jumping_bankswitch_w )

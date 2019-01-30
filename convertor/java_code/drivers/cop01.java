@@ -75,7 +75,7 @@ public class cop01
 		cpu_cause_interrupt(1,0xff);
 	}
 	
-	static READ_HANDLER( cop01_sound_command_r )
+	public static ReadHandlerPtr cop01_sound_command_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		int res;
 		static int pulse;
@@ -93,7 +93,7 @@ public class cop01
 		else pulse = 0;
 	
 		return res;
-	}
+	} };
 	
 	
 	public static Memory_ReadAddress readmem[]={
@@ -165,7 +165,7 @@ public class cop01
 	};
 	
 	/* this just gets some garbage out of the YM3526 */
-	static READ_HANDLER( kludge ) { static int timer; return timer++; }
+	public static ReadHandlerPtr kludge  = new ReadHandlerPtr() { public int handler(int offset) { static int timer; return timer++; } };
 	
 	public static IO_ReadPort mightguy_sound_readport[]={
 		new IO_ReadPort(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_IO | MEMPORT_WIDTH_8),

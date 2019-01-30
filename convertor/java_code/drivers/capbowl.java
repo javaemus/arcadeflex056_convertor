@@ -192,15 +192,15 @@ public class capbowl
 	
 	static int track[2];
 	
-	static READ_HANDLER( track_0_r )
+	public static ReadHandlerPtr track_0_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return (input_port_0_r(offset) & 0xf0) | ((input_port_2_r(offset) - track[0]) & 0x0f);
-	}
+	} };
 	
-	static READ_HANDLER( track_1_r )
+	public static ReadHandlerPtr track_1_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return (input_port_1_r(offset) & 0xf0) | ((input_port_3_r(offset) - track[1]) & 0x0f);
-	}
+	} };
 	
 	static WRITE_HANDLER( track_reset_w )
 	{

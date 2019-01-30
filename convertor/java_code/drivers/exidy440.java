@@ -358,7 +358,7 @@ public class exidy440
 	 *
 	 *************************************/
 	
-	static READ_HANDLER( input_r )
+	public static ReadHandlerPtr input_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		int result = input_port_0_r(offset);
 	
@@ -374,7 +374,7 @@ public class exidy440
 	
 		/* return with the appropriate XOR */
 		return result ^ port_0_xor;
-	}
+	} };
 	
 	
 	
@@ -404,7 +404,7 @@ public class exidy440
 	 *
 	 *************************************/
 	
-	static READ_HANDLER( io1_r )
+	public static ReadHandlerPtr io1_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		int result = 0xff;
 	
@@ -464,7 +464,7 @@ public class exidy440
 		}
 	
 		return result;
-	}
+	} };
 	
 	
 	

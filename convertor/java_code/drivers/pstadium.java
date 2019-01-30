@@ -123,13 +123,13 @@ public class pstadium
 		soundlatch_w(0, data);
 	}
 	
-	static READ_HANDLER( pstadium_sound_r )
+	public static ReadHandlerPtr pstadium_sound_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		int data;
 	
 		data = soundlatch_r(0);
 		return data;
-	}
+	} };
 	
 	static void init_pstadium(void)
 	{
@@ -390,7 +390,7 @@ public class pstadium
 	};
 	
 	
-	static READ_HANDLER( io_pstadium_r )
+	public static ReadHandlerPtr io_pstadium_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		offset = (((offset & 0xff00) >> 8) | ((offset & 0x00ff) << 8));
 	
@@ -404,7 +404,7 @@ public class pstadium
 			case	0xf800:	return nb1413m3_dipsw2_r();
 			default:	return 0xff;
 		}
-	}
+	} };
 	
 	public static IO_ReadPort readport_pstadium[]={
 		new IO_ReadPort(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_IO | MEMPORT_WIDTH_8),
@@ -482,7 +482,7 @@ public class pstadium
 		new IO_WritePort(MEMPORT_MARKER, 0)
 	};
 	
-	static READ_HANDLER( io_galkoku_r )
+	public static ReadHandlerPtr io_galkoku_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		offset = (((offset & 0xff00) >> 8) | ((offset & 0x00ff) << 8));
 	
@@ -498,7 +498,7 @@ public class pstadium
 			case	0xf100:	return nb1413m3_dipsw2_r();
 			default:	return 0xff;
 		}
-	}
+	} };
 	
 	public static IO_ReadPort readport_galkoku[]={
 		new IO_ReadPort(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_IO | MEMPORT_WIDTH_8),
@@ -548,7 +548,7 @@ public class pstadium
 		new IO_WritePort(MEMPORT_MARKER, 0)
 	};
 	
-	static READ_HANDLER( io_hyouban_r )
+	public static ReadHandlerPtr io_hyouban_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		offset = (((offset & 0xff00) >> 8) | ((offset & 0x00ff) << 8));
 	
@@ -565,7 +565,7 @@ public class pstadium
 			case	0xf100:	return nb1413m3_dipsw2_r();
 			default:	return 0xff;
 		}
-	}
+	} };
 	
 	public static IO_ReadPort readport_hyouban[]={
 		new IO_ReadPort(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_IO | MEMPORT_WIDTH_8),

@@ -791,12 +791,12 @@ public class toaplan2
 		cpu_cause_interrupt(1, Z80_IRQ_INT);
 	}
 	
-	static READ_HANDLER( battleg_commram_check_r0 )
+	public static ReadHandlerPtr battleg_commram_check_r0  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		data8_t *battleg_common_RAM = (data8_t *)battleg_commram16;
 	
 		return battleg_common_RAM[offset * 2];
-	}
+	} };
 	
 	static WRITE_HANDLER( battleg_commram_check_w0 )
 	{
@@ -919,7 +919,7 @@ public class toaplan2
 		batrider_sound_data[6] = data;
 	}
 	
-	static READ_HANDLER( batrider_sound_data_z80_r )
+	public static ReadHandlerPtr batrider_sound_data_z80_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		offset /= 2;
 		switch( offset )
@@ -934,7 +934,7 @@ public class toaplan2
 				break;
 		}
 		return 0;
-	}
+	} };
 	
 	static WRITE_HANDLER( batrider_sound_data_z80_w )
 	{
@@ -967,10 +967,10 @@ public class toaplan2
 		batrider_sound_data[offset] = data;
 	}
 	
-	static READ_HANDLER( batrider_sound_data_z80_r1 )
+	public static ReadHandlerPtr batrider_sound_data_z80_r1  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return batrider_sound_data[offset];
-	}
+	} };
 	static WRITE_HANDLER( batrider_sound_data_z80_w1 )
 	{
 		batrider_sound_data[offset] = data;

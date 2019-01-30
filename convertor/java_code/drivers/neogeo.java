@@ -714,7 +714,7 @@ public class neogeo
 	};
 	
 	
-	static READ_HANDLER( z80_port_r )
+	public static ReadHandlerPtr z80_port_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		static int bank[4];
 	
@@ -787,7 +787,7 @@ public class neogeo
 			return 0;
 			break;
 		}
-	}
+	} };
 	
 	static WRITE_HANDLER( z80_port_w )
 	{

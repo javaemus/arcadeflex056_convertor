@@ -51,7 +51,7 @@ public class _88games
 	
 	static int zoomreadroms;
 	
-	static READ_HANDLER( bankedram_r )
+	public static ReadHandlerPtr bankedram_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		if (videobank) return ram[offset];
 		else
@@ -61,7 +61,7 @@ public class _88games
 			else
 				return K051316_0_r(offset);
 		}
-	}
+	} };
 	
 	static WRITE_HANDLER( bankedram_w )
 	{
@@ -93,7 +93,7 @@ public class _88games
 	}
 	
 	/* handle fake button for speed cheat */
-	static READ_HANDLER( cheat_r )
+	public static ReadHandlerPtr cheat_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		int res;
 		static int cheat = 0;
@@ -108,7 +108,7 @@ public class _88games
 			cheat = (cheat+1)%4;
 		}
 		return res;
-	}
+	} };
 	
 	static int speech_chip;
 	static int invalid_code;

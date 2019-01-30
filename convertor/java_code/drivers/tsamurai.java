@@ -279,28 +279,28 @@ public class tsamurai
 		new IO_WritePort(MEMPORT_MARKER, 0)
 	};
 	
-	static READ_HANDLER( sound_command1_r )
+	public static ReadHandlerPtr sound_command1_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return sound_command1;
-	}
+	} };
 	
 	static WRITE_HANDLER( sound_out1_w )
 	{
 		DAC_data_w(0,data);
 	}
 	
-	static READ_HANDLER( sound_command2_r ){
+	public static ReadHandlerPtr sound_command2_r  = new ReadHandlerPtr() { public int handler(int offset){
 		return sound_command2;
-	}
+	} };
 	
 	static WRITE_HANDLER( sound_out2_w )
 	{
 		DAC_data_w(1,data);
 	}
 	
-	static READ_HANDLER( sound_command3_r ){
+	public static ReadHandlerPtr sound_command3_r  = new ReadHandlerPtr() { public int handler(int offset){
 		return sound_command3;
-	}
+	} };
 	
 	/*******************************************************************************/
 	public static Memory_ReadAddress readmem_sound1[]={
@@ -418,13 +418,13 @@ public class tsamurai
 		return vsgongf_sound_nmi_enabled ? nmi_interrupt() : ignore_interrupt();
 	}
 	
-	static READ_HANDLER( vsgongf_a006_r ){
+	public static ReadHandlerPtr vsgongf_a006_r  = new ReadHandlerPtr() { public int handler(int offset){
 		return 0x80; /* sound CPU busy? */
-	}
+	} };
 	
-	static READ_HANDLER( vsgongf_a100_r ){
+	public static ReadHandlerPtr vsgongf_a100_r  = new ReadHandlerPtr() { public int handler(int offset){
 		return 0xaa;
-	}
+	} };
 	
 	static WRITE_HANDLER( vsgongf_sound_command_w ){
 		soundlatch_w( offset, data );

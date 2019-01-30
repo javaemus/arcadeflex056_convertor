@@ -117,15 +117,15 @@ public class marvins
 		cpu_cause_interrupt( 2, Z80_IRQ_INT );
 	}
 	
-	static READ_HANDLER( sound_command_r ){
+	public static ReadHandlerPtr sound_command_r  = new ReadHandlerPtr() { public int handler(int offset){
 		sound_fetched = 1;
 		return sound_command;
-	}
+	} };
 	
-	static READ_HANDLER( sound_ack_r ){
+	public static ReadHandlerPtr sound_ack_r  = new ReadHandlerPtr() { public int handler(int offset){
 		sound_cpu_ready = 1;
 		return 0xff;
-	}
+	} };
 	
 	public static Memory_ReadAddress readmem_sound[]={
 		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
@@ -149,11 +149,11 @@ public class marvins
 	};
 	
 	/* this input port has one of its bits mapped to sound CPU status */
-	static READ_HANDLER( marvins_port_0_r ){
+	public static ReadHandlerPtr marvins_port_0_r  = new ReadHandlerPtr() { public int handler(int offset){
 		int result = input_port_0_r( 0 );
 		if (sound_cpu_ready == 0) result |= sound_cpu_busy_bit;
 		return result;
-	}
+	} };
 	
 	/***************************************************************************
 	**
@@ -197,7 +197,7 @@ public class marvins
 		}
 	}
 	
-	static READ_HANDLER( CPUA_int_trigger_r )
+	public static ReadHandlerPtr CPUA_int_trigger_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		if( CPUA_latch&SNK_NMI_ENABLE )
 		{
@@ -209,7 +209,7 @@ public class marvins
 			CPUA_latch |= SNK_NMI_PENDING;
 		}
 		return 0xff;
-	}
+	} };
 	
 	static WRITE_HANDLER( CPUB_int_enable_w )
 	{
@@ -224,7 +224,7 @@ public class marvins
 		}
 	}
 	
-	static READ_HANDLER( CPUB_int_trigger_r )
+	public static ReadHandlerPtr CPUB_int_trigger_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		if( CPUB_latch&SNK_NMI_ENABLE )
 		{
@@ -236,7 +236,7 @@ public class marvins
 			CPUB_latch |= SNK_NMI_PENDING;
 		}
 		return 0xff;
-	}
+	} };
 	
 	/***************************************************************************
 	**

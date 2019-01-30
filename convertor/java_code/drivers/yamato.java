@@ -125,14 +125,14 @@ public class yamato
 	{
 		p1 = data;
 	}
-	static READ_HANDLER( p0_r )
+	public static ReadHandlerPtr p0_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return p0;
-	}
-	static READ_HANDLER( p1_r )
+	} };
+	public static ReadHandlerPtr p1_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return p1;
-	}
+	} };
 	
 	static WRITE_HANDLER( flip_screen_x_w )
 	{

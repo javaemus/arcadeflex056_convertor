@@ -108,11 +108,11 @@ public class mario
 	WRITE_HANDLER( mario_sh_fly_w )        { p[1] = ACTIVEHIGH_PORT_BIT(p[1],2,data); }
 	static WRITE_HANDLER( mario_sh_tuneselect_w ) { soundlatch_w(offset,data); }
 	
-	static READ_HANDLER( mario_sh_p1_r )   { return p[1]; }
-	static READ_HANDLER( mario_sh_p2_r )   { return p[2]; }
-	static READ_HANDLER( mario_sh_t0_r )   { return t[0]; }
-	static READ_HANDLER( mario_sh_t1_r )   { return t[1]; }
-	static READ_HANDLER( mario_sh_tune_r ) { return soundlatch_r(offset); }
+	public static ReadHandlerPtr mario_sh_p1_r  = new ReadHandlerPtr() { public int handler(int offset)   { return p[1]; } };
+	public static ReadHandlerPtr mario_sh_p2_r  = new ReadHandlerPtr() { public int handler(int offset)   { return p[2]; } };
+	public static ReadHandlerPtr mario_sh_t0_r  = new ReadHandlerPtr() { public int handler(int offset)   { return t[0]; } };
+	public static ReadHandlerPtr mario_sh_t1_r  = new ReadHandlerPtr() { public int handler(int offset)   { return t[1]; } };
+	public static ReadHandlerPtr mario_sh_tune_r  = new ReadHandlerPtr() { public int handler(int offset) { return soundlatch_r(offset); } };
 	
 	static WRITE_HANDLER( mario_sh_sound_w )
 	{

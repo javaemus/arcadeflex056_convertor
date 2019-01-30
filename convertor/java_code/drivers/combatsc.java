@@ -144,7 +144,7 @@ public class combatsc
 		coin_counter_w(1,data & 0x02);
 	}
 	
-	static READ_HANDLER( trackball_r )
+	public static ReadHandlerPtr trackball_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		static UINT8 pos[4],sign[4];
 	
@@ -177,7 +177,7 @@ public class combatsc
 		}
 	
 		return sign[offset] | (pos[offset] & 0x7f);
-	}
+	} };
 	
 	
 	/* the protection is a simple multiply */
@@ -187,10 +187,10 @@ public class combatsc
 	{
 		prot[offset] = data;
 	}
-	static READ_HANDLER( protection_r )
+	public static ReadHandlerPtr protection_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return ((prot[0] * prot[1]) >> (offset * 8)) & 0xff;
-	}
+	} };
 	static WRITE_HANDLER( protection_clock_w )
 	{
 		/* 0x3f is written here every time before accessing the other registers */

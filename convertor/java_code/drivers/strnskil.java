@@ -49,7 +49,7 @@ public class strnskil
 	
 	/****************************************************************************/
 	
-	static READ_HANDLER( protection_r )
+	public static ReadHandlerPtr protection_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		int res;
 	
@@ -66,7 +66,7 @@ public class strnskil
 	
 		logerror("%04x: protection_r -> %02x\n",cpu_get_pc(),res);
 		return res;
-	}
+	} };
 	
 	static WRITE_HANDLER( protection_w )
 	{

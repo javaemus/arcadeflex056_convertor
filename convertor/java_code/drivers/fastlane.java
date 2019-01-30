@@ -70,18 +70,18 @@ public class fastlane
 	/* Read and write handlers for one K007232 chip:
 	   even and odd register are mapped swapped */
 	
-	static READ_HANDLER( fastlane_K007232_read_port_0_r )
+	public static ReadHandlerPtr fastlane_K007232_read_port_0_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return K007232_read_port_0_r(offset ^ 1);
-	}
+	} };
 	static WRITE_HANDLER( fastlane_K007232_write_port_0_w )
 	{
 		K007232_write_port_0_w(offset ^ 1, data);
 	}
-	static READ_HANDLER( fastlane_K007232_read_port_1_r )
+	public static ReadHandlerPtr fastlane_K007232_read_port_1_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return K007232_read_port_1_r(offset ^ 1);
-	}
+	} };
 	static WRITE_HANDLER( fastlane_K007232_write_port_1_w )
 	{
 		K007232_write_port_1_w(offset ^ 1, data);

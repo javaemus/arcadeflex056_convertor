@@ -103,7 +103,7 @@ public class dynax
 			logerror("CPU#0 PC %06X: Warning, coin counter 1 <- %02X\n", cpu_get_pc(), data);
 	}
 	
-	static READ_HANDLER( ret_ff )	{	return 0xff;	}
+	public static ReadHandlerPtr ret_ff  = new ReadHandlerPtr() { public int handler(int offset)	{	return 0xff;	} };
 	
 	public static Memory_ReadAddress sprtmtch_readmem[]={
 		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),

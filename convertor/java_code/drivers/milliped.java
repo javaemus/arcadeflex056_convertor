@@ -74,7 +74,7 @@ public class milliped
 		dsw_select = (data == 0);
 	}
 	
-	static READ_HANDLER( milliped_IN0_r )
+	public static ReadHandlerPtr milliped_IN0_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		static int oldpos,sign;
 		int newpos;
@@ -90,9 +90,9 @@ public class milliped
 		}
 	
 		return ((readinputport(0) & 0x70) | (oldpos & 0x0f) | sign );
-	}
+	} };
 	
-	static READ_HANDLER( milliped_IN1_r )
+	public static ReadHandlerPtr milliped_IN1_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		static int oldpos,sign;
 		int newpos;
@@ -108,7 +108,7 @@ public class milliped
 		}
 	
 		return ((readinputport(1) & 0x70) | (oldpos & 0x0f) | sign );
-	}
+	} };
 	
 	static WRITE_HANDLER( milliped_led_w )
 	{

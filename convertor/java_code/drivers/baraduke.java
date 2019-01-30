@@ -54,7 +54,7 @@ public class baraduke
 	#define reverse_bitstrm(data) ((data & 0x01) << 4) | ((data & 0x02) << 2) | (data & 0x04) \
 								| ((data & 0x08) >> 2) | ((data & 0x10) >> 4)
 	
-	static READ_HANDLER( inputport_r )
+	public static ReadHandlerPtr inputport_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		int data = 0;
 	
@@ -78,7 +78,7 @@ public class baraduke
 		}
 	
 		return data;
-	}
+	} };
 	
 	static WRITE_HANDLER( baraduke_lamps_w )
 	{

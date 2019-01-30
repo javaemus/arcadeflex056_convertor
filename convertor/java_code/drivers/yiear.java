@@ -69,11 +69,11 @@ public class yiear
 	
 	
 	
-	static READ_HANDLER( yiear_speech_r )
+	public static ReadHandlerPtr yiear_speech_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		if (VLM5030_BSY()) return 1;
 		else return 0;
-	}
+	} };
 	
 	static WRITE_HANDLER( yiear_VLM5030_control_w )
 	{

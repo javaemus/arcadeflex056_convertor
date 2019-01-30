@@ -48,7 +48,7 @@ public class hcastle
 		coin_counter_w(1,data & 0x80);
 	}
 	
-	static READ_HANDLER( speedup_r )
+	public static ReadHandlerPtr speedup_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		unsigned char *RAM = memory_region(REGION_CPU1);
 	
@@ -63,7 +63,7 @@ public class hcastle
 		}
 	
 		return RAM[0x18dc];
-	}
+	} };
 	
 	
 	

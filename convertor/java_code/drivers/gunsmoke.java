@@ -33,7 +33,7 @@ public class gunsmoke
 	
 	
 	
-	static READ_HANDLER( gunsmoke_unknown_r )
+	public static ReadHandlerPtr gunsmoke_unknown_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 	    static int gunsmoke_fixed_data[]={ 0xff, 0x00, 0x00 };
 	    /*
@@ -51,7 +51,7 @@ public class gunsmoke
 	    arcade game.  It's hard to tell without pulling the code apart.
 	    */
 	    return gunsmoke_fixed_data[offset];
-	}
+	} };
 	
 	
 	

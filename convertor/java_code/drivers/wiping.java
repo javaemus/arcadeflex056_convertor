@@ -55,15 +55,15 @@ public class wiping
 	
 	static unsigned char *sharedram1,*sharedram2;
 	
-	static READ_HANDLER( shared1_r )
+	public static ReadHandlerPtr shared1_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return sharedram1[offset];
-	}
+	} };
 	
-	static READ_HANDLER( shared2_r )
+	public static ReadHandlerPtr shared2_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return sharedram2[offset];
-	}
+	} };
 	
 	static WRITE_HANDLER( shared1_w )
 	{
@@ -77,7 +77,7 @@ public class wiping
 	
 	
 	/* input ports are rotated 90 degrees */
-	static READ_HANDLER( ports_r )
+	public static ReadHandlerPtr ports_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		int i,res;
 	
@@ -87,7 +87,7 @@ public class wiping
 			res |= ((readinputport(i) >> offset) & 1) << i;
 	
 		return res;
-	}
+	} };
 	
 	static WRITE_HANDLER( subcpu_reset_w )
 	{

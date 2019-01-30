@@ -53,11 +53,11 @@ public class m107
 		cpu_setbank(1,&RAM[0x100000 + ((data&0x7)*0x10000)]);
 	}
 	
-	static READ_HANDLER( m107_port_4_r )
+	public static ReadHandlerPtr m107_port_4_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		if (m107_vblank) return readinputport(4) | 0;
 		return readinputport(4) | 0x80;
-	}
+	} };
 	
 	static WRITE_HANDLER( m107_coincounter_w )
 	{
@@ -112,7 +112,7 @@ public class m107
 	
 	static int sound_status;
 	
-	static READ_HANDLER( m92_sound_status_r )
+	public static ReadHandlerPtr m92_sound_status_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		if (offset == 0)
 		{
@@ -137,9 +137,9 @@ public class m107
 				return 0xff;
 		}
 		else return 0xff;
-	}
+	} };
 	
-	static READ_HANDLER( m92_soundlatch_r )
+	public static ReadHandlerPtr m92_soundlatch_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		if (offset == 0)
 		{
@@ -148,7 +148,7 @@ public class m107
 			return res;
 		}
 		else return 0xff;
-	}
+	} };
 	
 	static WRITE_HANDLER( m92_sound_irq_ack_w )
 	{

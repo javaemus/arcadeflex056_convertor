@@ -2384,12 +2384,12 @@ public class memory
 		basic static handlers
 	-------------------------------------------------*/
 	
-	static READ_HANDLER( mrh8_bad )
+	public static ReadHandlerPtr mrh8_bad  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		logerror("cpu #%d (PC=%08X): unmapped memory byte read from %08X\n", cpu_getactivecpu(), activecpu_get_pc(), offset);
 		if (activecpu_address_bits() <= SPARSE_THRESH) return cpu_bankbase[STATIC_RAM][offset];
 		return 0;
-	}
+	} };
 	static READ16_HANDLER( mrh16_bad )
 	{
 		logerror("cpu #%d (PC=%08X): unmapped memory word read from %08X & %04X\n", cpu_getactivecpu(), activecpu_get_pc(), offset*2, mem_mask ^ 0xffff);
@@ -2419,11 +2419,11 @@ public class memory
 		if (activecpu_address_bits() <= SPARSE_THRESH) COMBINE_DATA(&((data32_t *)cpu_bankbase[STATIC_RAM])[offset]);
 	}
 	
-	static READ_HANDLER( prh8_bad )
+	public static ReadHandlerPtr prh8_bad  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		logerror("cpu #%d (PC=%08X): unmapped port byte read from %08X\n", cpu_getactivecpu(), activecpu_get_pc(), offset);
 		return 0;
-	}
+	} };
 	static READ16_HANDLER( prh16_bad )
 	{
 		logerror("cpu #%d (PC=%08X): unmapped port word read from %08X & %04X\n", cpu_getactivecpu(), activecpu_get_pc(), offset*2, mem_mask ^ 0xffff);
@@ -2452,7 +2452,7 @@ public class memory
 	static WRITE16_HANDLER( mwh16_rom )    { logerror("cpu #%d (PC=%08X): word write to %08X = %04X & %04X\n", cpu_getactivecpu(), activecpu_get_pc(), offset*2, data, mem_mask ^ 0xffff); }
 	static WRITE32_HANDLER( mwh32_rom )    { logerror("cpu #%d (PC=%08X): dword write to %08X = %08X & %08X\n", cpu_getactivecpu(), activecpu_get_pc(), offset*4, data, mem_mask ^ 0xffffffff); }
 	
-	static READ_HANDLER( mrh8_nop )        { return 0; }
+	public static ReadHandlerPtr mrh8_nop  = new ReadHandlerPtr() { public int handler(int offset)        { return 0; } };
 	static READ16_HANDLER( mrh16_nop )     { return 0; }
 	static READ32_HANDLER( mrh32_nop )     { return 0; }
 	
@@ -2460,37 +2460,37 @@ public class memory
 	static WRITE16_HANDLER( mwh16_nop )    {  }
 	static WRITE32_HANDLER( mwh32_nop )    {  }
 	
-	static READ_HANDLER( mrh8_ram )        { return cpu_bankbase[STATIC_RAM][offset]; }
+	public static ReadHandlerPtr mrh8_ram  = new ReadHandlerPtr() { public int handler(int offset)        { return cpu_bankbase[STATIC_RAM][offset]; } };
 	static WRITE_HANDLER( mwh8_ram )       { cpu_bankbase[STATIC_RAM][offset] = data; }
 	
 	static WRITE_HANDLER( mwh8_ramrom )    { cpu_bankbase[STATIC_RAM][offset] = cpu_bankbase[STATIC_RAM][offset + (OP_ROM - OP_RAM)] = data; }
 	static WRITE16_HANDLER( mwh16_ramrom ) { COMBINE_DATA(&cpu_bankbase[STATIC_RAM][offset*2]); COMBINE_DATA(&cpu_bankbase[0][offset*2 + (OP_ROM - OP_RAM)]); }
 	static WRITE32_HANDLER( mwh32_ramrom ) { COMBINE_DATA(&cpu_bankbase[STATIC_RAM][offset*4]); COMBINE_DATA(&cpu_bankbase[0][offset*4 + (OP_ROM - OP_RAM)]); }
 	
-	static READ_HANDLER( mrh8_bank1 )      { return cpu_bankbase[1][offset]; }
-	static READ_HANDLER( mrh8_bank2 )      { return cpu_bankbase[2][offset]; }
-	static READ_HANDLER( mrh8_bank3 )      { return cpu_bankbase[3][offset]; }
-	static READ_HANDLER( mrh8_bank4 )      { return cpu_bankbase[4][offset]; }
-	static READ_HANDLER( mrh8_bank5 )      { return cpu_bankbase[5][offset]; }
-	static READ_HANDLER( mrh8_bank6 )      { return cpu_bankbase[6][offset]; }
-	static READ_HANDLER( mrh8_bank7 )      { return cpu_bankbase[7][offset]; }
-	static READ_HANDLER( mrh8_bank8 )      { return cpu_bankbase[8][offset]; }
-	static READ_HANDLER( mrh8_bank9 )      { return cpu_bankbase[9][offset]; }
-	static READ_HANDLER( mrh8_bank10 )     { return cpu_bankbase[10][offset]; }
-	static READ_HANDLER( mrh8_bank11 )     { return cpu_bankbase[11][offset]; }
-	static READ_HANDLER( mrh8_bank12 )     { return cpu_bankbase[12][offset]; }
-	static READ_HANDLER( mrh8_bank13 )     { return cpu_bankbase[13][offset]; }
-	static READ_HANDLER( mrh8_bank14 )     { return cpu_bankbase[14][offset]; }
-	static READ_HANDLER( mrh8_bank15 )     { return cpu_bankbase[15][offset]; }
-	static READ_HANDLER( mrh8_bank16 )     { return cpu_bankbase[16][offset]; }
-	static READ_HANDLER( mrh8_bank17 )     { return cpu_bankbase[17][offset]; }
-	static READ_HANDLER( mrh8_bank18 )     { return cpu_bankbase[18][offset]; }
-	static READ_HANDLER( mrh8_bank19 )     { return cpu_bankbase[19][offset]; }
-	static READ_HANDLER( mrh8_bank20 )     { return cpu_bankbase[20][offset]; }
-	static READ_HANDLER( mrh8_bank21 )     { return cpu_bankbase[21][offset]; }
-	static READ_HANDLER( mrh8_bank22 )     { return cpu_bankbase[22][offset]; }
-	static READ_HANDLER( mrh8_bank23 )     { return cpu_bankbase[23][offset]; }
-	static READ_HANDLER( mrh8_bank24 )     { return cpu_bankbase[24][offset]; }
+	public static ReadHandlerPtr mrh8_bank1  = new ReadHandlerPtr() { public int handler(int offset)      { return cpu_bankbase[1][offset]; } };
+	public static ReadHandlerPtr mrh8_bank2  = new ReadHandlerPtr() { public int handler(int offset)      { return cpu_bankbase[2][offset]; } };
+	public static ReadHandlerPtr mrh8_bank3  = new ReadHandlerPtr() { public int handler(int offset)      { return cpu_bankbase[3][offset]; } };
+	public static ReadHandlerPtr mrh8_bank4  = new ReadHandlerPtr() { public int handler(int offset)      { return cpu_bankbase[4][offset]; } };
+	public static ReadHandlerPtr mrh8_bank5  = new ReadHandlerPtr() { public int handler(int offset)      { return cpu_bankbase[5][offset]; } };
+	public static ReadHandlerPtr mrh8_bank6  = new ReadHandlerPtr() { public int handler(int offset)      { return cpu_bankbase[6][offset]; } };
+	public static ReadHandlerPtr mrh8_bank7  = new ReadHandlerPtr() { public int handler(int offset)      { return cpu_bankbase[7][offset]; } };
+	public static ReadHandlerPtr mrh8_bank8  = new ReadHandlerPtr() { public int handler(int offset)      { return cpu_bankbase[8][offset]; } };
+	public static ReadHandlerPtr mrh8_bank9  = new ReadHandlerPtr() { public int handler(int offset)      { return cpu_bankbase[9][offset]; } };
+	public static ReadHandlerPtr mrh8_bank10  = new ReadHandlerPtr() { public int handler(int offset)     { return cpu_bankbase[10][offset]; } };
+	public static ReadHandlerPtr mrh8_bank11  = new ReadHandlerPtr() { public int handler(int offset)     { return cpu_bankbase[11][offset]; } };
+	public static ReadHandlerPtr mrh8_bank12  = new ReadHandlerPtr() { public int handler(int offset)     { return cpu_bankbase[12][offset]; } };
+	public static ReadHandlerPtr mrh8_bank13  = new ReadHandlerPtr() { public int handler(int offset)     { return cpu_bankbase[13][offset]; } };
+	public static ReadHandlerPtr mrh8_bank14  = new ReadHandlerPtr() { public int handler(int offset)     { return cpu_bankbase[14][offset]; } };
+	public static ReadHandlerPtr mrh8_bank15  = new ReadHandlerPtr() { public int handler(int offset)     { return cpu_bankbase[15][offset]; } };
+	public static ReadHandlerPtr mrh8_bank16  = new ReadHandlerPtr() { public int handler(int offset)     { return cpu_bankbase[16][offset]; } };
+	public static ReadHandlerPtr mrh8_bank17  = new ReadHandlerPtr() { public int handler(int offset)     { return cpu_bankbase[17][offset]; } };
+	public static ReadHandlerPtr mrh8_bank18  = new ReadHandlerPtr() { public int handler(int offset)     { return cpu_bankbase[18][offset]; } };
+	public static ReadHandlerPtr mrh8_bank19  = new ReadHandlerPtr() { public int handler(int offset)     { return cpu_bankbase[19][offset]; } };
+	public static ReadHandlerPtr mrh8_bank20  = new ReadHandlerPtr() { public int handler(int offset)     { return cpu_bankbase[20][offset]; } };
+	public static ReadHandlerPtr mrh8_bank21  = new ReadHandlerPtr() { public int handler(int offset)     { return cpu_bankbase[21][offset]; } };
+	public static ReadHandlerPtr mrh8_bank22  = new ReadHandlerPtr() { public int handler(int offset)     { return cpu_bankbase[22][offset]; } };
+	public static ReadHandlerPtr mrh8_bank23  = new ReadHandlerPtr() { public int handler(int offset)     { return cpu_bankbase[23][offset]; } };
+	public static ReadHandlerPtr mrh8_bank24  = new ReadHandlerPtr() { public int handler(int offset)     { return cpu_bankbase[24][offset]; } };
 	
 	static WRITE_HANDLER( mwh8_bank1 )     { cpu_bankbase[1][offset] = data; }
 	static WRITE_HANDLER( mwh8_bank2 )     { cpu_bankbase[2][offset] = data; }

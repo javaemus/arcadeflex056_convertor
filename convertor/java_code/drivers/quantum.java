@@ -114,16 +114,16 @@ public class quantum
 	}
 	
 	
-	static READ_HANDLER( input_1_r )
+	public static ReadHandlerPtr input_1_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return (readinputport(1) << (7 - (offset - POT0_C))) & 0x80;
-	}
+	} };
 	
 	
-	static READ_HANDLER( input_2_r )
+	public static ReadHandlerPtr input_2_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return (readinputport(2) << (7 - (offset - POT0_C))) & 0x80;
-	}
+	} };
 	
 	
 	

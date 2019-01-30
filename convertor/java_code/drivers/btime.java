@@ -1727,7 +1727,7 @@ public class btime
 	ROM_END
 	
 	
-	static READ_HANDLER( wtennis_reset_hack_r )
+	public static ReadHandlerPtr wtennis_reset_hack_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		unsigned char *RAM = memory_region(REGION_CPU1);
 	
@@ -1738,7 +1738,7 @@ public class btime
 		RAM[0xfc30] = 0;
 	
 		return RAM[0xc15f];
-	}
+	} };
 	
 	static void init_btime(void)
 	{

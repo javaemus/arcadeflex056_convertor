@@ -195,7 +195,7 @@ public class lwings
 		return result;
 	}
 	
-	static READ_HANDLER( avengers_protection_r )
+	public static ReadHandlerPtr avengers_protection_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		const int xpos[8] = { 10, 7,  0, -7, -10, -7,   0,  7 };
 		const int ypos[8] = {  0, 7, 10,  7,   0, -7, -10, -7 };
@@ -229,7 +229,7 @@ public class lwings
 			}
 		}
 		return best_dir<<5;
-	}
+	} };
 	
 	static WRITE_HANDLER( msm5205_w )
 	{

@@ -77,10 +77,10 @@ public class wc90
 	
 	static data8_t *wc90_shared;
 	
-	static READ_HANDLER( wc90_shared_r )
+	public static ReadHandlerPtr wc90_shared_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return wc90_shared[offset];
-	}
+	} };
 	
 	static WRITE_HANDLER( wc90_shared_w )
 	{

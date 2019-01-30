@@ -30,7 +30,7 @@ public class bogeyman
 	
 	extern unsigned char *bogeyman_videoram;
 	
-	static READ_HANDLER( bogeyman_videoram_r ) { return bogeyman_videoram[offset]; }
+	public static ReadHandlerPtr bogeyman_videoram_r  = new ReadHandlerPtr() { public int handler(int offset) { return bogeyman_videoram[offset]; } };
 	
 	/******************************************************************************/
 	

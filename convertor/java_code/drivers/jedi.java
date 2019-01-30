@@ -244,11 +244,11 @@ public class jedi
 	}
 	
 	
-	static READ_HANDLER( sound_latch_r )
+	public static ReadHandlerPtr sound_latch_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 	    sound_comm_stat &= ~0x80;
 	    return sound_latch;
-	}
+	} };
 	
 	
 	
@@ -258,11 +258,11 @@ public class jedi
 	 *
 	 *************************************/
 	
-	static READ_HANDLER( sound_ack_latch_r )
+	public static ReadHandlerPtr sound_ack_latch_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 	    sound_comm_stat &= ~0x40;
 	    return sound_ack_latch;
-	}
+	} };
 	
 	
 	static WRITE_HANDLER( sound_ack_latch_w )
@@ -279,7 +279,7 @@ public class jedi
 	 *
 	 *************************************/
 	
-	static READ_HANDLER( a2d_data_r )
+	public static ReadHandlerPtr a2d_data_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		switch (control_num)
 		{
@@ -288,13 +288,13 @@ public class jedi
 			default:	return 0;
 		}
 	    return 0;
-	}
+	} };
 	
 	
-	static READ_HANDLER( special_port1_r )
+	public static ReadHandlerPtr special_port1_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return readinputport(1) ^ ((sound_comm_stat >> 1) & 0x60);
-	}
+	} };
 	
 	
 	static WRITE_HANDLER( a2d_select_w )
@@ -303,10 +303,10 @@ public class jedi
 	}
 	
 	
-	static READ_HANDLER( soundstat_r )
+	public static ReadHandlerPtr soundstat_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 	    return sound_comm_stat;
-	}
+	} };
 	
 	
 	static WRITE_HANDLER( jedi_coin_counter_w )
@@ -338,10 +338,10 @@ public class jedi
 	}
 	
 	
-	static READ_HANDLER( speech_ready_r )
+	public static ReadHandlerPtr speech_ready_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 	    return (!tms5220_ready_r()) << 7;
-	}
+	} };
 	
 	
 	

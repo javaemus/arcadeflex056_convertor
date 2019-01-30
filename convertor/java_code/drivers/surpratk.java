@@ -34,7 +34,7 @@ public class surpratk
 		else return ignore_interrupt();
 	}
 	
-	static READ_HANDLER( bankedram_r )
+	public static ReadHandlerPtr bankedram_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		if (videobank & 0x02)
 		{
@@ -47,7 +47,7 @@ public class surpratk
 			return K053245_r(offset);
 		else
 			return ram[offset];
-	}
+	} };
 	
 	static WRITE_HANDLER( bankedram_w )
 	{

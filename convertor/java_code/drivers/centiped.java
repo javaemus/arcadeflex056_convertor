@@ -176,7 +176,7 @@ public class centiped
 	 * The counter is read 240 times per second. There is no provision whatsoever
 	 * to prevent the counter from wrapping around between reads.
 	 */
-	static READ_HANDLER( centiped_IN0_r )
+	public static ReadHandlerPtr centiped_IN0_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		static int oldpos,sign;
 		int newpos;
@@ -189,9 +189,9 @@ public class centiped
 		}
 	
 		return ((readinputport(0) & 0x70) | (oldpos & 0x0f) | sign );
-	}
+	} };
 	
-	static READ_HANDLER( centiped_IN2_r )
+	public static ReadHandlerPtr centiped_IN2_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		static int oldpos,sign;
 		int newpos;
@@ -204,7 +204,7 @@ public class centiped
 		}
 	
 		return ((oldpos & 0x0f) | sign );
-	}
+	} };
 	
 	
 	static WRITE_HANDLER( centiped_led_w )
@@ -212,10 +212,10 @@ public class centiped
 		set_led_status(offset,~data & 0x80);
 	}
 	
-	static READ_HANDLER( centipdb_rand_r )
+	public static ReadHandlerPtr centipdb_rand_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return rand() % 0xff;
-	}
+	} };
 	
 	static WRITE_HANDLER( centipdb_AY8910_w )
 	{
@@ -223,11 +223,11 @@ public class centiped
 		AY8910_write_port_0_w(0, data);
 	}
 	
-	static READ_HANDLER( centipdb_AY8910_r )
+	public static ReadHandlerPtr centipdb_AY8910_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		AY8910_control_port_0_w(0, offset);
 		return AY8910_read_port_0_r(0);
-	}
+	} };
 	
 	static WRITE_HANDLER( flip_screen_w )
 	{

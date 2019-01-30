@@ -247,7 +247,7 @@ public class airbustr
 	}
 	
 	
-	static READ_HANDLER( sharedram_r )	{ return sharedram[offset]; }
+	public static ReadHandlerPtr sharedram_r  = new ReadHandlerPtr() { public int handler(int offset)	{ return sharedram[offset]; } };
 	static WRITE_HANDLER( sharedram_w )	{ sharedram[offset] = data; }
 	
 	
@@ -451,18 +451,18 @@ public class airbustr
 	*/
 	
 	
-	static READ_HANDLER( soundcommand_status_r )
+	public static ReadHandlerPtr soundcommand_status_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 	/* bits: 2 <-> ?	1 <-> soundlatch full	0 <-> soundlatch2 empty */
 		return 4 + soundlatch_status * 2 + (1-soundlatch2_status);
-	}
+	} };
 	
 	
-	static READ_HANDLER( soundcommand2_r )
+	public static ReadHandlerPtr soundcommand2_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		soundlatch2_status = 0;				// soundlatch2 has been read
 		return soundlatch2_r(0);
-	}
+	} };
 	
 	
 	static WRITE_HANDLER( soundcommand_w )

@@ -67,10 +67,10 @@ public class pushman
 		}
 	}
 	
-	static READ_HANDLER( pushman_68000_r )
+	public static ReadHandlerPtr pushman_68000_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return shared_ram[offset];
-	}
+	} };
 	
 	static WRITE_HANDLER( pushman_68000_w )
 	{

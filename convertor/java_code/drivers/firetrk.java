@@ -541,7 +541,7 @@ public class firetrk
 		discrete_sound_w(0x01,input_port_6_r(0));
 	}
 	
-	static READ_HANDLER( firetruck_dsw_r )
+	public static ReadHandlerPtr firetruck_dsw_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		int dip = readinputport(0);
 		int data = (dip&0x3)<<2; /* coinage */
@@ -552,9 +552,9 @@ public class firetrk
 		case 0x02:  data |= (dip>>2)&0x03; break; /* Extended Play */
 		}
 		return data;
-	}
+	} };
 	
-	static READ_HANDLER( firetruck_io_r )
+	public static ReadHandlerPtr firetruck_io_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		data8_t data, bit0, bit6, bit7;
 		int bit,steer_poll;
@@ -586,7 +586,7 @@ public class firetrk
 		if( bit6 & bit ) data |= 0x40;
 		if( bit7 & bit ) data |= 0x80;
 		return data;
-	}
+	} };
 	
 	static WRITE_HANDLER( steer_reset_w )
 	{

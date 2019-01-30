@@ -109,10 +109,10 @@ public class nyny
 	}
 	
 	
-	static READ_HANDLER( pia1_ca1_r )
+	public static ReadHandlerPtr pia1_ca1_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return pia1_ca1;
-	}
+	} };
 	
 	
 	static WRITE_HANDLER( pia1_porta_w )

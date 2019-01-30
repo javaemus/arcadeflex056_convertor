@@ -31,7 +31,7 @@ public class parodius
 		else return ignore_interrupt();
 	}
 	
-	static READ_HANDLER( bankedram_r )
+	public static ReadHandlerPtr bankedram_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		if (videobank & 0x01)
 		{
@@ -42,7 +42,7 @@ public class parodius
 		}
 		else
 			return ram[offset];
-	}
+	} };
 	
 	static WRITE_HANDLER( bankedram_w )
 	{
@@ -57,13 +57,13 @@ public class parodius
 			ram[offset] = data;
 	}
 	
-	static READ_HANDLER( parodius_052109_053245_r )
+	public static ReadHandlerPtr parodius_052109_053245_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		if (videobank & 0x02)
 			return K053245_r(offset);
 		else
 			return K052109_r(offset);
-	}
+	} };
 	
 	static WRITE_HANDLER( parodius_052109_053245_w )
 	{
@@ -97,13 +97,13 @@ public class parodius
 		/* other bits unknown */
 	}
 	
-	static READ_HANDLER( parodius_sound_r )
+	public static ReadHandlerPtr parodius_sound_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		/* If the sound CPU is running, read the status, otherwise
 		   just make it pass the test */
 		if (Machine->sample_rate != 0) 	return K053260_0_r(2 + offset);
 		else return offset ? 0x00 : 0x80;
-	}
+	} };
 	
 	static WRITE_HANDLER( parodius_sh_irqtrigger_w )
 	{
@@ -131,7 +131,7 @@ public class parodius
 		timer_set(TIME_IN_USEC(50),0,nmi_callback);	/* kludge until the K053260 is emulated correctly */
 	}
 	
-	static READ_HANDLER( speedup_r )
+	public static ReadHandlerPtr speedup_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		int data = memory_region(REGION_CPU1)[0x1837];
 	
@@ -139,7 +139,7 @@ public class parodius
 			cpu_spinuntil_int();
 	
 		return data;
-	}
+	} };
 	
 	/********************************************/
 	

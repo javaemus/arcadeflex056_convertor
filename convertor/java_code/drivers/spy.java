@@ -38,11 +38,11 @@ public class spy
 	static int rambank;
 	static unsigned char *ram;
 	
-	static READ_HANDLER( spy_bankedram1_r )
+	public static ReadHandlerPtr spy_bankedram1_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		if (rambank == 0) return ram[offset];
 		else return paletteram_r(offset);
-	}
+	} };
 	
 	static WRITE_HANDLER( spy_bankedram1_w )
 	{

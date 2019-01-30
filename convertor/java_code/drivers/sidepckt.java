@@ -39,10 +39,10 @@ public class sidepckt
 	    cpu_cause_interrupt(1,M6502_INT_NMI);
 	}
 	
-	static READ_HANDLER( sidepckt_i8751_r )
+	public static ReadHandlerPtr sidepckt_i8751_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return i8751_return;
-	}
+	} };
 	
 	static WRITE_HANDLER( sidepckt_i8751_w )
 	{

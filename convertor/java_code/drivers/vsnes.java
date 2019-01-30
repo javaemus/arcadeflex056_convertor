@@ -119,15 +119,15 @@ public class vsnes
 	/* local stuff */
 	static UINT8 *work_ram, *work_ram_1;
 	
-	static READ_HANDLER( mirror_ram_r )
+	public static ReadHandlerPtr mirror_ram_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return work_ram[ offset & 0x7ff ];
-	}
+	} };
 	
-	static READ_HANDLER( mirror_ram_1_r )
+	public static ReadHandlerPtr mirror_ram_1_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return work_ram[ offset & 0x7ff ];
-	}
+	} };
 	
 	static WRITE_HANDLER( mirror_ram_w )
 	{

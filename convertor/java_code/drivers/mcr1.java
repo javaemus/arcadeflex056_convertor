@@ -104,10 +104,10 @@ public class mcr1
 	 *
 	 *************************************/
 	
-	static READ_HANDLER( kick_dial_r )
+	public static ReadHandlerPtr kick_dial_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return (readinputport(1) & 0x0f) | ((readinputport(6) << 4) & 0xf0);
-	}
+	} };
 	
 	
 	
@@ -117,7 +117,7 @@ public class mcr1
 	 *
 	 *************************************/
 	
-	static READ_HANDLER( solarfox_input_0_r )
+	public static ReadHandlerPtr solarfox_input_0_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		/* This is a kludge; according to the wiring diagram, the player 2 */
 		/* controls are hooked up as documented below. If you go into test */
@@ -128,17 +128,17 @@ public class mcr1
 			return readinputport(0) | 0x08;
 		else
 			return ((readinputport(0) & ~0x14) | 0x08) | ((readinputport(0) & 0x08) >> 1) | ((readinputport(2) & 0x01) << 4);
-	}
+	} };
 	
 	
-	static READ_HANDLER( solarfox_input_1_r )
+	public static ReadHandlerPtr solarfox_input_1_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		/*  same deal as above */
 		if (mcr_cocktail_flip)
 			return readinputport(1) | 0xf0;
 		else
 			return (readinputport(1) >> 4) | 0xf0;
-	}
+	} };
 	
 	
 	

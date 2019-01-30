@@ -79,10 +79,10 @@ public class fromance
 	 *
 	 *************************************/
 	
-	static READ_HANDLER( fromance_commanddata_r )
+	public static ReadHandlerPtr fromance_commanddata_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return fromance_commanddata;
-	}
+	} };
 	
 	
 	static void deferred_commanddata_w(int data)
@@ -99,21 +99,21 @@ public class fromance
 	}
 	
 	
-	static READ_HANDLER( fromance_busycheck_main_r )
+	public static ReadHandlerPtr fromance_busycheck_main_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		/* set a timer to force synchronization after the read */
 		timer_set(TIME_NOW, 0, NULL);
 	
 		if (fromance_directionflag == 0) return 0x00;		// standby
 		else return 0xff;								// busy
-	}
+	} };
 	
 	
-	static READ_HANDLER( fromance_busycheck_sub_r )
+	public static ReadHandlerPtr fromance_busycheck_sub_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		if (fromance_directionflag) return 0xff;		// standby
 		else return 0x00;								// busy
-	}
+	} };
 	
 	
 	static WRITE_HANDLER( fromance_busycheck_sub_w )
@@ -193,7 +193,7 @@ public class fromance
 	}
 	
 	
-	static READ_HANDLER( fromance_keymatrix_r )
+	public static ReadHandlerPtr fromance_keymatrix_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		int ret = 0xff;
 	
@@ -209,7 +209,7 @@ public class fromance
 			ret &= readinputport(8);
 	
 		return ret;
-	}
+	} };
 	
 	
 	

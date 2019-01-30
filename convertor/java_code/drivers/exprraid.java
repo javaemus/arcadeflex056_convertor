@@ -78,17 +78,17 @@ public class exprraid
 	/* Emulate Protection ( only for original express raider, code is cracked on the bootleg */
 	/*****************************************************************************************/
 	
-	static READ_HANDLER( exprraid_prot_0_r )
+	public static ReadHandlerPtr exprraid_prot_0_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		unsigned char *RAM = memory_region(REGION_CPU1);
 	
 		return RAM[0x02a9];
-	}
+	} };
 	
-	static READ_HANDLER( exprraid_prot_1_r )
+	public static ReadHandlerPtr exprraid_prot_1_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return 0x02;
-	}
+	} };
 	
 	static WRITE_HANDLER( sound_cpu_command_w )
 	{
@@ -96,14 +96,14 @@ public class exprraid
 	    cpu_cause_interrupt(1,M6809_INT_NMI);
 	}
 	
-	static READ_HANDLER( vblank_r ) {
+	public static ReadHandlerPtr vblank_r  = new ReadHandlerPtr() { public int handler(int offset) {
 		int val = readinputport( 0 );
 	
 		if ( ( val & 0x02 ) )
 			cpu_spin();
 	
 		return val;
-	}
+	} };
 	
 	public static Memory_ReadAddress readmem[]={
 		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),

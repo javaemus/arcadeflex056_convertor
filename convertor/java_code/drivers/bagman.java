@@ -156,10 +156,10 @@ public class bagman
 	}
 	
 	
-	static READ_HANDLER( bagman_ls259_r )
+	public static ReadHandlerPtr bagman_ls259_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return ls259_buf[offset];
-	}
+	} };
 	
 	static WRITE_HANDLER( bagman_ls259_w )
 	{

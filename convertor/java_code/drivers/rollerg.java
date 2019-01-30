@@ -44,19 +44,19 @@ public class rollerg
 		/* other bits unknown */
 	}
 	
-	static READ_HANDLER( rollerg_K051316_r )
+	public static ReadHandlerPtr rollerg_K051316_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		if (readzoomroms) return K051316_rom_0_r(offset);
 		else return K051316_0_r(offset);
-	}
+	} };
 	
-	static READ_HANDLER( rollerg_sound_r )
+	public static ReadHandlerPtr rollerg_sound_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		/* If the sound CPU is running, read the status, otherwise
 		   just make it pass the test */
 		if (Machine->sample_rate != 0) 	return K053260_0_r(2 + offset);
 		else return 0x00;
-	}
+	} };
 	
 	static WRITE_HANDLER( soundirq_w )
 	{
@@ -74,10 +74,10 @@ public class rollerg
 		timer_set(TIME_IN_USEC(50),0,nmi_callback);	/* kludge until the K053260 is emulated correctly */
 	}
 	
-	static READ_HANDLER( pip_r )
+	public static ReadHandlerPtr pip_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return 0x7f;
-	}
+	} };
 	
 	public static Memory_ReadAddress readmem[]={
 		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),

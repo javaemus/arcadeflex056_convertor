@@ -33,7 +33,7 @@ public class circusc
 	
 	
 	
-	static READ_HANDLER( circusc_sh_timer_r )
+	public static ReadHandlerPtr circusc_sh_timer_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		int clock;
 	#define CIRCUSCHALIE_TIMER_RATE (14318180/6144)
@@ -41,7 +41,7 @@ public class circusc
 		clock = (cpu_gettotalcycles()*4) / CIRCUSCHALIE_TIMER_RATE;
 	
 		return clock & 0xF;
-	}
+	} };
 	
 	static WRITE_HANDLER( circusc_sh_irqtrigger_w )
 	{

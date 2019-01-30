@@ -172,7 +172,7 @@ public class tempest
 {
 	
 	
-	static READ_HANDLER( tempest_IN0_r )
+	public static ReadHandlerPtr tempest_IN0_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		int res;
 	
@@ -186,7 +186,7 @@ public class tempest
 			res |=0x80;
 	
 		return res;
-	}
+	} };
 	
 	static WRITE_HANDLER( tempest_led_w )
 	{

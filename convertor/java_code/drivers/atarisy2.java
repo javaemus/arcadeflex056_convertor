@@ -351,7 +351,7 @@ public class atarisy2
 	}
 	
 	
-	static READ_HANDLER( switch_6502_r )
+	public static ReadHandlerPtr switch_6502_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		int result = input_port_0_r(offset);
 	
@@ -361,7 +361,7 @@ public class atarisy2
 		if (!(input_port_2_r(offset) & 0x80)) result ^= 0x10;
 	
 		return result;
-	}
+	} };
 	
 	
 	static WRITE_HANDLER( switch_6502_w )
@@ -398,7 +398,7 @@ public class atarisy2
 	}
 	
 	
-	static READ_HANDLER( leta_r )
+	public static ReadHandlerPtr leta_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 	    if (pedal_count == -1)   /* 720 */
 		{
@@ -412,7 +412,7 @@ public class atarisy2
 		}
 	
 		return readinputport(7 + (offset & 3));
-	}
+	} };
 	
 	
 	
@@ -457,7 +457,7 @@ public class atarisy2
 	}
 	
 	
-	static READ_HANDLER( sound_6502_r )
+	public static ReadHandlerPtr sound_6502_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		/* clock the state through */
 		p2portrd_state = (interrupt_enable[0] & 1) != 0;
@@ -465,7 +465,7 @@ public class atarisy2
 	
 		/* handle it normally otherwise */
 		return atarigen_6502_sound_r(offset);
-	}
+	} };
 	
 	
 	

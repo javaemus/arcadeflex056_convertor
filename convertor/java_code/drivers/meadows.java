@@ -256,7 +256,7 @@ public class meadows
 		}
 	}
 	
-	static READ_HANDLER( sound_hardware_r )
+	public static ReadHandlerPtr sound_hardware_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		int data = 0;
 	
@@ -278,7 +278,7 @@ public class meadows
 			case 3: break;
 		}
 	    return data;
-	}
+	} };
 	
 	/*************************************************************/
 	/*                                                           */

@@ -126,10 +126,10 @@ public class lkage
 		{ 0xf400, 0xffff, lkage_videoram_w, &videoram }, /* videoram */
 	MEMORY_END
 	
-	static READ_HANDLER( port_fetch_r )
+	public static ReadHandlerPtr port_fetch_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return memory_region(REGION_USER1)[offset];
-	}
+	} };
 	
 	public static IO_ReadPort readport[]={
 		new IO_ReadPort(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_IO | MEMPORT_WIDTH_8),
@@ -557,15 +557,15 @@ public class lkage
 	
 	
 	
-	static READ_HANDLER( fake_mcu_r )
+	public static ReadHandlerPtr fake_mcu_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return 0;
-	}
+	} };
 	
-	static READ_HANDLER( fake_status_r )
+	public static ReadHandlerPtr fake_status_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return 3;
-	}
+	} };
 	
 	void init_lkageb(void)
 	{

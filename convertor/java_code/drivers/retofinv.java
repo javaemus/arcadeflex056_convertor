@@ -66,10 +66,10 @@ public class retofinv
 	
 	static unsigned char *sharedram;
 	
-	static READ_HANDLER( retofinv_shared_ram_r )
+	public static ReadHandlerPtr retofinv_shared_ram_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return sharedram[offset];
-	}
+	} };
 	
 	static WRITE_HANDLER( retofinv_shared_ram_w )
 	{
@@ -98,10 +98,10 @@ public class retofinv
 		cpu2_m6000 = data;
 	}
 	
-	static READ_HANDLER( cpu0_mf800_r )
+	public static ReadHandlerPtr cpu0_mf800_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return cpu2_m6000;
-	}
+	} };
 	
 	static WRITE_HANDLER( soundcommand_w )
 	{

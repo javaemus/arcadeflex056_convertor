@@ -59,10 +59,10 @@ public class finalizr
 			cpu_cause_interrupt(1,I8039_EXT_INT);
 	}
 	
-	static READ_HANDLER( i8039_irqen_and_status_r )
+	public static ReadHandlerPtr i8039_irqen_and_status_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return i8039_status;
-	}
+	} };
 	
 	static WRITE_HANDLER( i8039_irqen_and_status_w )
 	{

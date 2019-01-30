@@ -27,12 +27,12 @@ public class aeroboto
 	
 	static int player;
 	
-	static READ_HANDLER( aeroboto_in0_r )
+	public static ReadHandlerPtr aeroboto_in0_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return readinputport(player);
-	}
+	} };
 	
-	static READ_HANDLER( aeroboto_201_r )
+	public static ReadHandlerPtr aeroboto_201_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		/* if you keep a button pressed during boot, the game will expect this */
 		/* serie of values to be returned from 3004, and display "PASS 201" if it is */
@@ -40,7 +40,7 @@ public class aeroboto
 		static int count;
 		logerror("PC %04x: read 3004\n",cpu_get_pc());
 		return res[(count++)&3];
-	}
+	} };
 	
 	static WRITE_HANDLER( aeroboto_3000_w )
 	{

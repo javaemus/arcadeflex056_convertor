@@ -85,10 +85,10 @@ public class seicross
 	
 	static int portb;
 	
-	static READ_HANDLER( friskyt_portB_r )
+	public static ReadHandlerPtr friskyt_portB_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return (portb & 0x9f) | (readinputport(6) & 0x60);
-	}
+	} };
 	
 	static WRITE_HANDLER( friskyt_portB_w )
 	{
@@ -113,10 +113,10 @@ public class seicross
 	
 	static unsigned char *sharedram;
 	
-	static READ_HANDLER( sharedram_r )
+	public static ReadHandlerPtr sharedram_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return sharedram[offset];
-	}
+	} };
 	
 	static WRITE_HANDLER( sharedram_w )
 	{

@@ -386,19 +386,19 @@ public class itech32
 	}
 	
 	
-	static READ_HANDLER( sound_data_r )
+	public static ReadHandlerPtr sound_data_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		logerror("sound_data_r() = %02x\n", sound_data);
 		cpu_set_irq_line(1, M6809_IRQ_LINE, CLEAR_LINE);
 		sound_int_state = 0;
 		return sound_data;
-	}
+	} };
 	
 	
-	static READ_HANDLER( sound_data_buffer_r )
+	public static ReadHandlerPtr sound_data_buffer_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return 0;
-	}
+	} };
 	
 	
 	
@@ -487,7 +487,7 @@ public class itech32
 	}
 	
 	
-	static READ_HANDLER( via6522_r )
+	public static ReadHandlerPtr via6522_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		int result = 0;
 	
@@ -507,7 +507,7 @@ public class itech32
 	
 		if (FULL_LOGGING) logerror("VIA read(%02x) = %02x\n", offset, result);
 		return result;
-	}
+	} };
 	
 	
 	
@@ -537,12 +537,12 @@ public class itech32
 	 *
 	 *************************************/
 	
-	static READ_HANDLER( sound_speedup_r )
+	public static ReadHandlerPtr sound_speedup_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		if (sound_speedup_data[0] == sound_speedup_data[1] && cpu_getpreviouspc() == sound_speedup_pc)
 			cpu_spinuntil_int();
 		return sound_speedup_data[0];
-	}
+	} };
 	
 	
 	static WRITE32_HANDLER( itech020_watchdog_w )

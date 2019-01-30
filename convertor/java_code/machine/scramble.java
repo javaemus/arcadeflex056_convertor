@@ -39,7 +39,7 @@ public class scramble
 	}
 	
 	
-	static READ_HANDLER( scrambls_input_port_2_r )
+	public static ReadHandlerPtr scrambls_input_port_2_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		int res;
 	
@@ -52,17 +52,17 @@ public class scramble
 		if (cpu_get_pc() == 0x00e4) res &= 0x7f;
 	
 		return res;
-	}
+	} };
 	
-	static READ_HANDLER( ckongs_input_port_1_r )
+	public static ReadHandlerPtr ckongs_input_port_1_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return (readinputport(1) & 0xfc) | ((readinputport(2) & 0x06) >> 1);
-	}
+	} };
 	
-	static READ_HANDLER( ckongs_input_port_2_r )
+	public static ReadHandlerPtr ckongs_input_port_2_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return (readinputport(2) & 0xf9) | ((readinputport(1) & 0x03) << 1);
-	}
+	} };
 	
 	
 	static int moonwar_port_select;
@@ -72,7 +72,7 @@ public class scramble
 		moonwar_port_select = data & 0x10;
 	}
 	
-	static READ_HANDLER( moonwar_input_port_0_r )
+	public static ReadHandlerPtr moonwar_input_port_0_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		int sign;
 		int delta;
@@ -83,22 +83,22 @@ public class scramble
 		delta &= 0x0f;
 	
 		return ((readinputport(0) & 0xe0) | delta | sign );
-	}
+	} };
 	
 	
 	/* the coinage DIPs are spread accross two input ports */
-	static READ_HANDLER( stratgyx_input_port_2_r )
+	public static ReadHandlerPtr stratgyx_input_port_2_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return (readinputport(2) & ~0x06) | ((readinputport(4) << 1) & 0x06);
-	}
+	} };
 	
-	static READ_HANDLER( stratgyx_input_port_3_r )
+	public static ReadHandlerPtr stratgyx_input_port_3_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return (readinputport(3) & ~0x03) | ((readinputport(4) >> 2) & 0x03);
-	}
+	} };
 	
 	
-	static READ_HANDLER( darkplnt_input_port_1_r )
+	public static ReadHandlerPtr darkplnt_input_port_1_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		static UINT8 remap[] = {0x03, 0x02, 0x00, 0x01, 0x21, 0x20, 0x22, 0x23,
 							    0x33, 0x32, 0x30, 0x31, 0x11, 0x10, 0x12, 0x13,
@@ -113,7 +113,7 @@ public class scramble
 		val = readinputport(1);
 	
 		return ((val & 0x03) | (remap[val >> 2] << 2));
-	}
+	} };
 	
 	
 	
@@ -122,7 +122,7 @@ public class scramble
 		/* nothing to do yet */
 	}
 	
-	static READ_HANDLER( scramble_protection_r )
+	public static ReadHandlerPtr scramble_protection_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		switch (cpu_get_pc())
 		{
@@ -138,14 +138,14 @@ public class scramble
 			logerror("%04x: read protection\n",cpu_get_pc());
 			return 0;
 		}
-	}
+	} };
 	
-	static READ_HANDLER( scrambls_protection_r )
+	public static ReadHandlerPtr scrambls_protection_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		logerror("%04x: read protection\n",cpu_get_pc());
 	
 		return 0x6f;
-	}
+	} };
 	
 	READ_HANDLER( scramblb_protection_1_r )
 	{
@@ -177,15 +177,15 @@ public class scramble
 	}
 	
 	
-	static READ_HANDLER( mariner_protection_1_r )
+	public static ReadHandlerPtr mariner_protection_1_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return 7;
-	}
+	} };
 	
-	static READ_HANDLER( mariner_protection_2_r )
+	public static ReadHandlerPtr mariner_protection_2_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return 3;
-	}
+	} };
 	
 	
 	READ_HANDLER( triplep_pip_r )
@@ -226,7 +226,7 @@ public class scramble
 		}
 	}
 	
-	static READ_HANDLER( cavelon_banksw_r )
+	public static ReadHandlerPtr cavelon_banksw_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		cavelon_banksw();
 	
@@ -236,7 +236,7 @@ public class scramble
 			return ppi8255_1_r(offset - 0x0200);
 	
 		return 0xff;
-	}
+	} };
 	
 	static WRITE_HANDLER( cavelon_banksw_w )
 	{

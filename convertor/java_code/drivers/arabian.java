@@ -146,7 +146,7 @@ public class arabian
 	 *
 	 *************************************/
 	
-	static READ_HANDLER( custom_cpu_r )
+	public static ReadHandlerPtr custom_cpu_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		/* since we don't have a simulator for the Fujitsu 8841 4-bit microprocessor */
 		/* we have to simulate its behavior; it looks like Arabian reads out of the  */
@@ -188,7 +188,7 @@ public class arabian
 				return 0;
 		}
 		return 0;
-	}
+	} };
 	
 	
 	static void update_flip_state(void)

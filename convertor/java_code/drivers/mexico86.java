@@ -47,10 +47,10 @@ public class mexico86
 	
 	static unsigned char *shared;
 	
-	static READ_HANDLER( shared_r )
+	public static ReadHandlerPtr shared_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return shared[offset];
-	}
+	} };
 	
 	static WRITE_HANDLER( shared_w )
 	{

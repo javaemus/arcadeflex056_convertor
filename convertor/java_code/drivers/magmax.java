@@ -42,16 +42,16 @@ public class magmax
 		}
 	}
 	
-	static READ_HANDLER( magmax_sound_irq_ack )
+	public static ReadHandlerPtr magmax_sound_irq_ack  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		cpu_set_irq_line(1, 0, CLEAR_LINE);
 		return 0;
-	}
+	} };
 	
-	static READ_HANDLER( magmax_sound_r )
+	public static ReadHandlerPtr magmax_sound_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return (sound_latch | LS74_q);
-	}
+	} };
 	
 	WRITE_HANDLER( ay8910_portB_0_w )
 	{

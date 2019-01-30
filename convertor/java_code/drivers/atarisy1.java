@@ -345,7 +345,7 @@ public class atarisy1
 	 *
 	 *************************************/
 	
-	static READ_HANDLER( switch_6502_r )
+	public static ReadHandlerPtr switch_6502_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		int temp = readinputport(5);
 	
@@ -354,7 +354,7 @@ public class atarisy1
 		if (!(readinputport(4) & 0x0040)) temp ^= 0x80;
 	
 		return temp;
-	}
+	} };
 	
 	
 	
@@ -400,7 +400,7 @@ public class atarisy1
 	 *	        D5 = 	??? (out)
 	 */
 	
-	static READ_HANDLER( m6522_r )
+	public static ReadHandlerPtr m6522_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		switch (offset)
 		{
@@ -420,7 +420,7 @@ public class atarisy1
 			default:
 				return m6522_regs[offset & 15];
 		}
-	}
+	} };
 	
 	
 	WRITE_HANDLER( m6522_w )

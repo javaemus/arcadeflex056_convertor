@@ -240,10 +240,10 @@ public class system1
 	
 	static unsigned char *work_ram;
 	
-	static READ_HANDLER( work_ram_r )
+	public static ReadHandlerPtr work_ram_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return work_ram[offset];
-	}
+	} };
 	
 	static WRITE_HANDLER( work_ram_w )
 	{

@@ -184,7 +184,7 @@ public class gridlee
 	 *
 	 *************************************/
 	
-	static READ_HANDLER( analog_port_r )
+	public static ReadHandlerPtr analog_port_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		int delta, sign, magnitude;
 		UINT8 newval;
@@ -213,7 +213,7 @@ public class gridlee
 	
 		/* or in the sign bit and return that */
 		return (last_analog_output[offset] & 15) | sign;
-	}
+	} };
 	
 	
 	
@@ -271,7 +271,7 @@ public class gridlee
 	 *
 	 *************************************/
 	
-	static READ_HANDLER( random_num_r )
+	public static ReadHandlerPtr random_num_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		unsigned int cc;
 	
@@ -281,7 +281,7 @@ public class gridlee
 		/* 12.5 = 8 + 4 + 0.5 */
 		cc = (cc << 3) + (cc << 2) + (cc >> 1);
 		return rand17[cc & POLY17_SIZE];
-	}
+	} };
 	
 	
 	

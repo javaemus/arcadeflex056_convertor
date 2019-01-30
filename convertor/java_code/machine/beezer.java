@@ -12,15 +12,11 @@ public class beezer
 	
 	static int pbus;
 	
-	static READ_HANDLER( b_via_0_pb_r );
 	static WRITE_HANDLER( b_via_0_pa_w );
 	static WRITE_HANDLER( b_via_0_pb_w );
-	static READ_HANDLER( b_via_0_ca2_r );
 	static WRITE_HANDLER( b_via_0_ca2_w );
 	static void b_via_0_irq (int level);
 	
-	static READ_HANDLER( b_via_1_pa_r );
-	static READ_HANDLER( b_via_1_pb_r );
 	static WRITE_HANDLER( b_via_1_pa_w );
 	static WRITE_HANDLER( b_via_1_pb_w );
 	static void b_via_1_irq (int level);
@@ -41,10 +37,10 @@ public class beezer
 		/*irq                  */ b_via_1_irq
 	};
 	
-	static READ_HANDLER( b_via_0_ca2_r )
+	public static ReadHandlerPtr b_via_0_ca2_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return 0;
-	}
+	} };
 	
 	static WRITE_HANDLER( b_via_0_ca2_w )
 	{
@@ -55,10 +51,10 @@ public class beezer
 		cpu_set_irq_line(0, M6809_IRQ_LINE, level);
 	}
 	
-	static READ_HANDLER( b_via_0_pb_r )
+	public static ReadHandlerPtr b_via_0_pb_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return pbus;
-	}
+	} };
 	
 	static WRITE_HANDLER( b_via_0_pa_w )
 	{
@@ -97,15 +93,15 @@ public class beezer
 		cpu_set_irq_line(1, M6809_IRQ_LINE, level);
 	}
 	
-	static READ_HANDLER( b_via_1_pa_r )
+	public static ReadHandlerPtr b_via_1_pa_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return pbus;
-	}
+	} };
 	
-	static READ_HANDLER( b_via_1_pb_r )
+	public static ReadHandlerPtr b_via_1_pb_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return 0xff;
-	}
+	} };
 	
 	static WRITE_HANDLER( b_via_1_pa_w )
 	{

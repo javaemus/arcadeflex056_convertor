@@ -29,12 +29,12 @@ public class _1943
 	
 	/* this is a protection check. The game crashes (thru a jump to 0x8000) */
 	/* if a read from this address doesn't return the value it expects. */
-	static READ_HANDLER( c1943_protection_r )
+	public static ReadHandlerPtr c1943_protection_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		int data = cpu_get_reg(Z80_BC) >> 8;
 		logerror("protection read, PC: %04x Result:%02x\n",cpu_get_pc(),data);
 		return data;
-	}
+	} };
 	
 	
 	

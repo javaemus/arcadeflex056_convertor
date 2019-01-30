@@ -78,10 +78,10 @@ public class zaccaria
 		}
 	}
 	
-	static READ_HANDLER( zaccaria_dsw_r )
+	public static ReadHandlerPtr zaccaria_dsw_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return readinputport(dsw);
-	}
+	} };
 	
 	
 	
@@ -106,13 +106,13 @@ public class zaccaria
 	
 	static int active_8910,port0a,acs;
 	
-	static READ_HANDLER( zaccaria_port0a_r )
+	public static ReadHandlerPtr zaccaria_port0a_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		if (active_8910 == 0)
 			return AY8910_read_port_0_r(0);
 		else
 			return AY8910_read_port_1_r(0);
-	}
+	} };
 	
 	static WRITE_HANDLER( zaccaria_port0a_w )
 	{
@@ -172,11 +172,11 @@ public class zaccaria
 	
 	static int port1a,port1b;
 	
-	static READ_HANDLER( zaccaria_port1a_r )
+	public static ReadHandlerPtr zaccaria_port1a_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		if (~port1b & 1) return tms5220_status_r(0);
 		else return port1a;
-	}
+	} };
 	
 	static WRITE_HANDLER( zaccaria_port1a_w )
 	{
@@ -199,7 +199,7 @@ public class zaccaria
 		set_led_status(0,~data & 0x10);
 	}
 	
-	static READ_HANDLER( zaccaria_ca2_r )
+	public static ReadHandlerPtr zaccaria_ca2_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 	// TODO: this doesn't work, why?
 	//	return !tms5220_ready_r();
@@ -209,7 +209,7 @@ public class zaccaria
 	
 	return counter;
 	
-	}
+	} };
 	
 	static void tms5220_irq_handler(int state)
 	{
@@ -276,7 +276,7 @@ public class zaccaria
 	
 	struct GameDriver monymony_driver;
 	
-	static READ_HANDLER( zaccaria_prot1_r )
+	public static ReadHandlerPtr zaccaria_prot1_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		switch (offset)
 		{
@@ -294,9 +294,9 @@ public class zaccaria
 			default:
 				return 0;
 		}
-	}
+	} };
 	
-	static READ_HANDLER( zaccaria_prot2_r )
+	public static ReadHandlerPtr zaccaria_prot2_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		switch (offset)
 		{
@@ -315,7 +315,7 @@ public class zaccaria
 			default:
 				return 0;
 		}
-	}
+	} };
 	
 	
 	static WRITE_HANDLER( coin_w )

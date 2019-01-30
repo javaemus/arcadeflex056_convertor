@@ -118,11 +118,11 @@ public class vball
 		}
 	}
 	
-	static READ_HANDLER( dd_adpcm_status_r )
+	public static ReadHandlerPtr dd_adpcm_status_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 	//	logerror("dd_adpcm_status_r\n");
 		return adpcm_idle[0] + (adpcm_idle[1] << 1);
-	}
+	} };
 	
 	
 	WRITE_HANDLER( vb_scrollx_hi_w )

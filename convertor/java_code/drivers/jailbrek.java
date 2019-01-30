@@ -51,9 +51,9 @@ public class jailbrek
 	}
 	
 	
-	static READ_HANDLER( jailbrek_speech_r ) {
+	public static ReadHandlerPtr jailbrek_speech_r  = new ReadHandlerPtr() { public int handler(int offset) {
 		return ( VLM5030_BSY() ? 1 : 0 );
-	}
+	} };
 	
 	static WRITE_HANDLER( jailbrek_speech_w ) {
 		/* bit 0 could be latch direction like in yiear */

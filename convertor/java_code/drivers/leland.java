@@ -179,19 +179,19 @@ public class leland
 	 *
 	 *************************************/
 	
-	static READ_HANDLER( cerberus_dial_1_r )
+	public static ReadHandlerPtr cerberus_dial_1_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		int original = readinputport(0);
 		int modified = dial_compute_value(readinputport(4), 0);
 		return (original & 0xc0) | ((modified & 0x80) >> 2) | (modified & 0x1f);
-	}
+	} };
 	
-	static READ_HANDLER( cerberus_dial_2_r )
+	public static ReadHandlerPtr cerberus_dial_2_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		int original = readinputport(2);
 		int modified = dial_compute_value(readinputport(5), 1);
 		return (original & 0xc0) | ((modified & 0x80) >> 2) | (modified & 0x1f);
-	}
+	} };
 	
 	
 	
@@ -254,23 +254,23 @@ public class leland
 		dial_last_input[1] = newx;
 	}
 	
-	static READ_HANDLER( dangerz_input_y_r )
+	public static ReadHandlerPtr dangerz_input_y_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		update_dangerz_xy();
 		return dangerz_y & 0xff;
-	}
+	} };
 	
-	static READ_HANDLER( dangerz_input_x_r )
+	public static ReadHandlerPtr dangerz_input_x_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		update_dangerz_xy();
 		return dangerz_x & 0xff;
-	}
+	} };
 	
-	static READ_HANDLER( dangerz_input_upper_r )
+	public static ReadHandlerPtr dangerz_input_upper_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		update_dangerz_xy();
 		return ((dangerz_y >> 2) & 0xc0) | ((dangerz_x >> 8) & 0x03);
-	}
+	} };
 	
 	
 	
@@ -282,27 +282,27 @@ public class leland
 	
 	static const UINT8 redline_pedal_value[8] = { 0xf0, 0xe0, 0xc0, 0xd0, 0x90, 0xb0, 0x30, 0x70 };
 	
-	static READ_HANDLER( redline_pedal_1_r )
+	public static ReadHandlerPtr redline_pedal_1_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		int pedal = readinputport(0);
 		return redline_pedal_value[pedal >> 5] | 0x0f;
-	}
+	} };
 	
-	static READ_HANDLER( redline_pedal_2_r )
+	public static ReadHandlerPtr redline_pedal_2_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		int pedal = readinputport(2);
 		return redline_pedal_value[pedal >> 5] | 0x0f;
-	}
+	} };
 	
-	static READ_HANDLER( redline_wheel_1_r )
+	public static ReadHandlerPtr redline_wheel_1_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return dial_compute_value(readinputport(4), 0);
-	}
+	} };
 	
-	static READ_HANDLER( redline_wheel_2_r )
+	public static ReadHandlerPtr redline_wheel_2_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return dial_compute_value(readinputport(5), 1);
-	}
+	} };
 	
 	
 	
@@ -312,20 +312,20 @@ public class leland
 	 *
 	 *************************************/
 	
-	static READ_HANDLER( offroad_wheel_1_r )
+	public static ReadHandlerPtr offroad_wheel_1_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return dial_compute_value(readinputport(7), 0);
-	}
+	} };
 	
-	static READ_HANDLER( offroad_wheel_2_r )
+	public static ReadHandlerPtr offroad_wheel_2_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return dial_compute_value(readinputport(8), 1);
-	}
+	} };
 	
-	static READ_HANDLER( offroad_wheel_3_r )
+	public static ReadHandlerPtr offroad_wheel_3_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return dial_compute_value(readinputport(9), 2);
-	}
+	} };
 	
 	
 	
@@ -415,11 +415,11 @@ public class leland
 	}
 	
 	
-	static READ_HANDLER( master_nmi_clear_r )
+	public static ReadHandlerPtr master_nmi_clear_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		cpu_set_nmi_line(0, CLEAR_LINE);
 		return 0;
-	}
+	} };
 	
 	
 	
@@ -833,7 +833,7 @@ public class leland
 	 *
 	 *************************************/
 	
-	static READ_HANDLER( master_analog_key_r )
+	public static ReadHandlerPtr master_analog_key_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		int result = 0;
 	
@@ -856,7 +856,7 @@ public class leland
 				break;
 		}
 		return result;
-	}
+	} };
 	
 	
 	
@@ -892,7 +892,7 @@ public class leland
 	 *
 	 *************************************/
 	
-	static READ_HANDLER( master_input_r )
+	public static ReadHandlerPtr master_input_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		int result = 0xff;
 	
@@ -933,7 +933,7 @@ public class leland
 				break;
 		}
 		return result;
-	}
+	} };
 	
 	
 	static WRITE_HANDLER( master_output_w )
@@ -989,12 +989,12 @@ public class leland
 	}
 	
 	
-	static READ_HANDLER( gated_paletteram_r )
+	public static ReadHandlerPtr gated_paletteram_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		if (wcol_enable)
 			return paletteram_r(offset);
 		return 0xff;
-	}
+	} };
 	
 	
 	
@@ -1004,10 +1004,10 @@ public class leland
 	 *
 	 *************************************/
 	
-	static READ_HANDLER( sound_port_r )
+	public static ReadHandlerPtr sound_port_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 	    return leland_gfx_control;
-	}
+	} };
 	
 	
 	static WRITE_HANDLER( sound_port_w )
@@ -1077,11 +1077,11 @@ public class leland
 	 *
 	 *************************************/
 	
-	static READ_HANDLER( raster_r )
+	public static ReadHandlerPtr raster_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		int scanline = cpu_getscanline();
 		return (scanline < 255) ? scanline : 255;
-	}
+	} };
 	
 	
 	

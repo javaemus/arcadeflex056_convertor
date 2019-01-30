@@ -146,7 +146,7 @@ public class tnzs
 	
 	
 	
-	static READ_HANDLER( mcu_arknoid2_r )
+	public static ReadHandlerPtr mcu_arknoid2_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		char *mcu_startup = "\x55\xaa\x5a";
 	
@@ -206,7 +206,7 @@ public class tnzs
 			if (mcu_reportcoin & 0x04) return 0x31;	/* coin 3 (will trigger "coin inserted" sound) */
 			return 0x01;
 		}
-	}
+	} };
 	
 	static WRITE_HANDLER( mcu_arknoid2_w )
 	{
@@ -245,7 +245,7 @@ public class tnzs
 	}
 	
 	
-	static READ_HANDLER( mcu_chukatai_r )
+	public static ReadHandlerPtr mcu_chukatai_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		char *mcu_startup = "\xa5\x5a\xaa";
 	
@@ -321,7 +321,7 @@ public class tnzs
 			if (mcu_reportcoin & 0x04) return 0x31;	/* coin C */
 			return 0x01;
 		}
-	}
+	} };
 	
 	static WRITE_HANDLER( mcu_chukatai_w )
 	{
@@ -361,7 +361,7 @@ public class tnzs
 	
 	
 	
-	static READ_HANDLER( mcu_tnzs_r )
+	public static ReadHandlerPtr mcu_tnzs_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		char *mcu_startup = "\x5a\xa5\x55";
 	
@@ -453,7 +453,7 @@ public class tnzs
 			}
 			return 0x01;
 		}
-	}
+	} };
 	
 	static WRITE_HANDLER( mcu_tnzs_w )
 	{

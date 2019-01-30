@@ -712,10 +712,10 @@ public class gng
 	
 	
 	
-	static READ_HANDLER( diamond_hack_r )
+	public static ReadHandlerPtr diamond_hack_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return 0;
-	}
+	} };
 	
 	static void init_diamond(void)
 	{

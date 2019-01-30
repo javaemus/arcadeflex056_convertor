@@ -54,13 +54,13 @@ public class thunderx
 	static int bank;
 	static unsigned char *ram,*cdram;
 	
-	static READ_HANDLER( scontra_bankedram_r )
+	public static ReadHandlerPtr scontra_bankedram_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		if (palette_selected)
 			return paletteram_r(offset);
 		else
 			return ram[offset];
-	}
+	} };
 	
 	static WRITE_HANDLER( scontra_bankedram_w )
 	{
@@ -70,7 +70,7 @@ public class thunderx
 			ram[offset] = data;
 	}
 	
-	static READ_HANDLER( thunderx_bankedram_r )
+	public static ReadHandlerPtr thunderx_bankedram_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		if ((bank & 0x01) == 0)
 		{
@@ -84,7 +84,7 @@ public class thunderx
 		}
 		else
 			return ram[offset];
-	}
+	} };
 	
 	static WRITE_HANDLER( thunderx_bankedram_w )
 	{

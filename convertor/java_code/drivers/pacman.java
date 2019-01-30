@@ -250,15 +250,15 @@ public class pacman
 	}
 	
 	
-	static READ_HANDLER( alibaba_mystery_1_r )
+	public static ReadHandlerPtr alibaba_mystery_1_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		// The return value determines what the mystery item is.  Each bit corresponds
 		// to a question mark
 	
 		return rand() & 0x0f;
-	}
+	} };
 	
-	static READ_HANDLER( alibaba_mystery_2_r )
+	public static ReadHandlerPtr alibaba_mystery_2_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		static int mystery = 0;
 	
@@ -267,7 +267,7 @@ public class pacman
 	
 		mystery++;
 		return (mystery >> 10) & 1;
-	}
+	} };
 	
 	
 	static WRITE_HANDLER( pacman_coin_lockout_global_w )
@@ -449,11 +449,11 @@ public class pacman
 	};
 	
 	
-	static READ_HANDLER( zolakludge_r )
+	public static ReadHandlerPtr zolakludge_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		static int counter;
 		return counter++;
-	}
+	} };
 	
 	static PORT_READ_START( zolapac_readport)
 		{ 0x00,0x00, zolakludge_r },
@@ -2593,7 +2593,7 @@ public class pacman
 	
 	
 	
-	static READ_HANDLER( maketrax_special_port2_r )
+	public static ReadHandlerPtr maketrax_special_port2_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		int pc,data;
 	
@@ -2615,9 +2615,9 @@ public class pacman
 		}
 	
 		return data;
-	}
+	} };
 	
-	static READ_HANDLER( maketrax_special_port3_r )
+	public static ReadHandlerPtr maketrax_special_port3_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		int pc;
 	
@@ -2638,7 +2638,7 @@ public class pacman
 			default:
 				return 0x20;
 		}
-	}
+	} };
 	
 	static void maketrax_rom_decode(void)
 	{

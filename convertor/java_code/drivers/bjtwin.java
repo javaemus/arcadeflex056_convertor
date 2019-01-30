@@ -235,10 +235,10 @@ public class bjtwin
 		timer_set(TIME_NOW,Z80_CLEAR,setvector_callback);
 	}
 	
-	static READ_HANDLER( mustang_soundlatch_r )
+	public static ReadHandlerPtr mustang_soundlatch_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return (soundlatch_word_r(0,0) >> (offset * 8)) & 0xff;
-	}
+	} };
 	
 	static WRITE_HANDLER( mustang_soundlatch2_w )
 	{

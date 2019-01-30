@@ -39,17 +39,17 @@ public class kingobox
 	static unsigned char *sprite_shared;
 	int kingofb_nmi_enable = 0;
 	
-	static READ_HANDLER( video_shared_r ) {
+	public static ReadHandlerPtr video_shared_r  = new ReadHandlerPtr() { public int handler(int offset) {
 		return video_shared[offset];
-	}
+	} };
 	
 	static WRITE_HANDLER( video_shared_w ) {
 		video_shared[offset] = data;
 	}
 	
-	static READ_HANDLER( sprite_shared_r ) {
+	public static ReadHandlerPtr sprite_shared_r  = new ReadHandlerPtr() { public int handler(int offset) {
 		return sprite_shared[offset];
-	}
+	} };
 	
 	static WRITE_HANDLER( sprite_shared_w ) {
 		sprite_shared[offset] = data;

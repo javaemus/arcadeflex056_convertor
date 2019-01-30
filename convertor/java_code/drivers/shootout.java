@@ -67,10 +67,10 @@ public class shootout
 	}
 	
 	/* stub for reading input ports as active low (makes building ports much easier) */
-	static READ_HANDLER( low_input_r )
+	public static ReadHandlerPtr low_input_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return ~readinputport( offset );
-	}
+	} };
 	
 	static WRITE_HANDLER( shootout_coin_counter_w )
 	{

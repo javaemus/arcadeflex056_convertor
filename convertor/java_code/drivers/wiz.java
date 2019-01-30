@@ -113,7 +113,7 @@ public class wiz
 	void stinger_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	
 	
-	static READ_HANDLER( wiz_protection_r )
+	public static ReadHandlerPtr wiz_protection_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		switch (wiz_colorram2[0])
 		{
@@ -123,7 +123,7 @@ public class wiz
 		}
 	
 		return wiz_colorram2[0];
-	}
+	} };
 	
 	static WRITE_HANDLER( sound_command_w )
 	{

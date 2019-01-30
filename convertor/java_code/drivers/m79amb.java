@@ -40,15 +40,15 @@ public class m79amb
 	    20 , 21 , 23 , 22 , 18 , 19 , 17 , 16
 	};
 	
-	static READ_HANDLER( gray5bit_controller0_r )
+	public static ReadHandlerPtr gray5bit_controller0_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 	    return (input_port_2_r(0) & 0xe0) | (~ControllerTable[input_port_2_r(0) & 0x1f] & 0x1f);
-	}
+	} };
 	
-	static READ_HANDLER( gray5bit_controller1_r )
+	public static ReadHandlerPtr gray5bit_controller1_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 	    return (input_port_3_r(0) & 0xe0) | (~ControllerTable[input_port_3_r(0) & 0x1f] & 0x1f);
-	}
+	} };
 	
 	public static Memory_ReadAddress readmem[]={
 		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),

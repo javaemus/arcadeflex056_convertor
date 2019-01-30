@@ -527,35 +527,35 @@ public class tunhunt
 		draw_text( bitmap );
 	}
 	
-	static READ_HANDLER( tunhunt_button_r )
+	public static ReadHandlerPtr tunhunt_button_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		int data = readinputport( 0 );
 		return ((data>>offset)&1)?0x00:0x80;
-	}
-	static READ_HANDLER( dsw1_r )
+	} };
+	public static ReadHandlerPtr dsw1_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return readinputport(3)&0xff;
-	}
-	static READ_HANDLER( dsw2_0r )
+	} };
+	public static ReadHandlerPtr dsw2_0r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return (readinputport(3)&0x0100)?0x80:0x00;
-	}
-	static READ_HANDLER( dsw2_1r )
+	} };
+	public static ReadHandlerPtr dsw2_1r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return (readinputport(3)&0x0200)?0x80:0x00;
-	}
-	static READ_HANDLER( dsw2_2r )
+	} };
+	public static ReadHandlerPtr dsw2_2r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return (readinputport(3)&0x0400)?0x80:0x00;
-	}
-	static READ_HANDLER( dsw2_3r )
+	} };
+	public static ReadHandlerPtr dsw2_3r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return (readinputport(3)&0x0800)?0x80:0x00;
-	}
-	static READ_HANDLER( dsw2_4r )
+	} };
+	public static ReadHandlerPtr dsw2_4r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return (readinputport(3)&0x1000)?0x80:0x00;
-	}
+	} };
 	
 	public static Memory_ReadAddress readmem[]={
 		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),

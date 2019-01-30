@@ -208,9 +208,9 @@ public class snk
 		snk_sound_register &= (data>>4);
 	}
 	
-	static READ_HANDLER( snk_sound_register_r ){
+	public static ReadHandlerPtr snk_sound_register_r  = new ReadHandlerPtr() { public int handler(int offset){
 		return snk_sound_register;// | 0x2; /* hack; lets chopper1 play music */
-	}
+	} };
 	
 	void snk_sound_callback0_w( int state ){ /* ? */
 		if( state ) snk_sound_register |= 0x01;
@@ -268,11 +268,11 @@ public class snk
 		soundlatch_w( offset, data );
 	}
 	
-	static READ_HANDLER( snk_soundlatch_clear_r ){ /* TNK3 */
+	public static ReadHandlerPtr snk_soundlatch_clear_r  = new ReadHandlerPtr() { public int handler(int offset){ /* TNK3 */
 		soundlatch_w( 0, 0 );
 		snk_sound_register = 0;
 		return 0x00;
-	}
+	} };
 	
 	/*********************************************************************/
 	
@@ -389,21 +389,21 @@ public class snk
 	
 	/**********************  Tnk3, Athena, Fighting Golf ********************/
 	
-	static READ_HANDLER( shared_ram_r ){
+	public static ReadHandlerPtr shared_ram_r  = new ReadHandlerPtr() { public int handler(int offset){
 		return shared_ram[offset];
-	}
+	} };
 	static WRITE_HANDLER( shared_ram_w ){
 		shared_ram[offset] = data;
 	}
 	
-	static READ_HANDLER( shared_ram2_r ){
+	public static ReadHandlerPtr shared_ram2_r  = new ReadHandlerPtr() { public int handler(int offset){
 		return shared_ram2[offset];
-	}
+	} };
 	static WRITE_HANDLER( shared_ram2_w ){
 		shared_ram2[offset] = data;
 	}
 	
-	static READ_HANDLER( cpuA_io_r ){
+	public static ReadHandlerPtr cpuA_io_r  = new ReadHandlerPtr() { public int handler(int offset){
 		switch( offset ){
 			case 0x000: return snk_input_port_r( 0 ); // coin input, player start
 			case 0x100: return snk_input_port_r( 1 ); // joy1
@@ -438,7 +438,7 @@ public class snk
 			case 0xee0: if( hard_flags ) return 0xff;
 		}
 		return io_ram[offset];
-	}
+	} };
 	
 	static WRITE_HANDLER( cpuA_io_w ){
 		switch( offset ){
@@ -466,7 +466,7 @@ public class snk
 		}
 	}
 	
-	static READ_HANDLER( cpuB_io_r ){
+	public static ReadHandlerPtr cpuB_io_r  = new ReadHandlerPtr() { public int handler(int offset){
 		switch( offset ){
 			case 0x000:
 			case 0x700:
@@ -489,7 +489,7 @@ public class snk
 			case 0xee0: if( hard_flags ) return 0xff;
 		}
 		return io_ram[offset];
-	}
+	} };
 	
 	static WRITE_HANDLER( cpuB_io_w ){
 		if( offset==0 || offset==0x700 ){

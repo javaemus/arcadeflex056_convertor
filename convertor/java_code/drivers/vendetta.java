@@ -69,7 +69,7 @@ public class vendetta
 		}
 	}
 	
-	static READ_HANDLER( vendetta_eeprom_r )
+	public static ReadHandlerPtr vendetta_eeprom_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		int res;
 	
@@ -85,7 +85,7 @@ public class vendetta
 			res &= 0xfb;
 		}
 		return res;
-	}
+	} };
 	
 	static int irq_enabled;
 	
@@ -115,7 +115,7 @@ public class vendetta
 	
 	/********************************************/
 	
-	static READ_HANDLER( vendetta_K052109_r ) { return K052109_r( offset + 0x2000 ); }
+	public static ReadHandlerPtr vendetta_K052109_r  = new ReadHandlerPtr() { public int handler(int offset) { return K052109_r( offset + 0x2000 ); } };
 	static WRITE_HANDLER( vendetta_K052109_w ) { K052109_w( offset + 0x2000, data ); }
 	
 	static void vendetta_video_banking( int select )
@@ -157,7 +157,7 @@ public class vendetta
 		K053246_set_OBJCHA_line((data & 0x20) ? ASSERT_LINE : CLEAR_LINE);
 	}
 	
-	static READ_HANDLER( speedup_r )
+	public static ReadHandlerPtr speedup_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		unsigned char *RAM = memory_region(REGION_CPU1);
 	
@@ -172,7 +172,7 @@ public class vendetta
 		}
 	
 		return RAM[0x28d2];
-	}
+	} };
 	
 	static void z80_nmi_callback( int param )
 	{

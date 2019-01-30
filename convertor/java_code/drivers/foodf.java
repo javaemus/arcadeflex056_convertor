@@ -366,10 +366,10 @@ public class foodf
 	 *
 	 *************************************/
 	
-	static READ_HANDLER( pot_r )
+	public static ReadHandlerPtr pot_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return (readinputport(5) >> offset) << 7;
-	}
+	} };
 	
 	static struct POKEYinterface pokey_interface =
 	{

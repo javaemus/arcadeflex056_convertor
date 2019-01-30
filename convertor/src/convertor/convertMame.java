@@ -34,6 +34,7 @@ public class convertMame {
     static final int MEMORY_WRITE8 = 6;
     static final int PORT_READ8 = 7;
     static final int PORT_WRITE8 = 8;
+    static final int READ_HANDLER8=9;
 
     public static void Convert() {
         Convertor.inpos = 0;//position of pointer inside the buffers
@@ -299,7 +300,22 @@ public class convertMame {
                                 continue;
                             }
                         }
-
+                        else if (sUtil.getToken("READ_HANDLER(")) {
+                            sUtil.skipSpace();
+                            Convertor.token[0] = sUtil.parseToken();
+                            sUtil.skipSpace();
+                            if (sUtil.getToken(");"))//if it is front function skip it
+                            {
+                                sUtil.skipLine();
+                                continue;
+                            } else {
+                                sUtil.putString("public static ReadHandlerPtr " + Convertor.token[0] + "  = new ReadHandlerPtr() { public int handler(int offset)");
+                                type = READ_HANDLER8;
+                                i3 = -1;
+                                Convertor.inpos += 1;
+                                continue;
+                            }
+                        }
                         Convertor.inpos = i;
                         break;
                     } else {
@@ -344,7 +360,7 @@ public class convertMame {
                             continue;
                         }
                     }
-                    if (type == PLOT_PIXEL || type == MARK_DIRTY || type == PLOT_BOX || type == READ_PIXEL) {
+                    if (type == PLOT_PIXEL || type == MARK_DIRTY || type == PLOT_BOX || type == READ_PIXEL || type == READ_HANDLER8) {
                         i3++;
                     }
                 }
@@ -360,7 +376,7 @@ public class convertMame {
                             continue;
                         }
                     }
-                    if (type == PLOT_PIXEL || type == MARK_DIRTY || type == PLOT_BOX || type == READ_PIXEL) {
+                    if (type == PLOT_PIXEL || type == MARK_DIRTY || type == PLOT_BOX || type == READ_PIXEL || type == READ_HANDLER8) {
                         i3--;
                         if (i3 == -1) {
                             sUtil.putString("} };");

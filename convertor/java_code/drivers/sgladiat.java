@@ -71,19 +71,19 @@ public class sgladiat
 	
 	/************************************************************************/
 	
-	static READ_HANDLER( shared_ram_r )
+	public static ReadHandlerPtr shared_ram_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return shared_ram[offset];
-	}
+	} };
 	static WRITE_HANDLER( shared_ram_w )
 	{
 		shared_ram[offset] = data;
 	}
 	
-	static READ_HANDLER( shared_ram2_r )
+	public static ReadHandlerPtr shared_ram2_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return shared_ram2[offset];
-	}
+	} };
 	static WRITE_HANDLER( shared_ram2_w )
 	{
 		shared_ram2[offset] = data;
@@ -100,15 +100,15 @@ public class sgladiat
 		cpu_cause_interrupt( 2, Z80_NMI_INT );
 	}
 	
-	static READ_HANDLER( snk_sound_ack_r )
+	public static ReadHandlerPtr snk_sound_ack_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		bSoundCPUBusy = 0;
 		return 0xff;
-	}
+	} };
 	
 	/************************************************************************/
 	
-	static READ_HANDLER( sgladiat_cpuA_nmi_r )
+	public static ReadHandlerPtr sgladiat_cpuA_nmi_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		/* trigger NMI on CPUB */
 		if( cpuB_latch & SNK_NMI_ENABLE )
@@ -121,7 +121,7 @@ public class sgladiat
 			cpuB_latch |= SNK_NMI_PENDING;
 		}
 		return 0xff;
-	}
+	} };
 	
 	static WRITE_HANDLER( sgladiat_cpuA_nmi_w )
 	{
@@ -137,7 +137,7 @@ public class sgladiat
 		}
 	}
 	
-	static READ_HANDLER( sgladiat_cpuB_nmi_r )
+	public static ReadHandlerPtr sgladiat_cpuB_nmi_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		/* trigger NMI on CPUA */
 		if( cpuA_latch & SNK_NMI_ENABLE )
@@ -150,7 +150,7 @@ public class sgladiat
 			cpuA_latch |= SNK_NMI_PENDING;
 		}
 		return 0xff;
-	}
+	} };
 	
 	static WRITE_HANDLER( sgladiat_cpuB_nmi_w )
 	{
@@ -166,12 +166,12 @@ public class sgladiat
 		}
 	}
 	
-	static READ_HANDLER( sgladiat_inp0_r )
+	public static ReadHandlerPtr sgladiat_inp0_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		int result = readinputport( 0 );
 		if( bSoundCPUBusy ) result |= 0x20; /* sound CPU busy bit */
 		return result;
-	}
+	} };
 	
 	static WRITE_HANDLER( sglatiat_flipscreen_w )
 	{

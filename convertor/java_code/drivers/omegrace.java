@@ -237,24 +237,24 @@ public class omegrace
 		avgdvg_reset_w (0, 0);
 	}
 	
-	static READ_HANDLER( omegrace_vg_go_r )
+	public static ReadHandlerPtr omegrace_vg_go_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		avgdvg_go_w(0,0);
 		return 0;
-	}
+	} };
 	
-	static READ_HANDLER( omegrace_watchdog_r )
+	public static ReadHandlerPtr omegrace_watchdog_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return 0;
-	}
+	} };
 	
-	static READ_HANDLER( omegrace_vg_status_r )
+	public static ReadHandlerPtr omegrace_vg_status_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		if (avgdvg_done())
 			return 0;
 		else
 			return 0x80;
-	}
+	} };
 	
 	/*
 	 * Encoder bit mappings

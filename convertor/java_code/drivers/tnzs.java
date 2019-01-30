@@ -270,7 +270,7 @@ public class tnzs
 	
 	
 	static int kageki_csport_sel = 0;
-	static READ_HANDLER( kageki_csport_r )
+	public static ReadHandlerPtr kageki_csport_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		int	dsw, dsw1, dsw2;
 	
@@ -297,7 +297,7 @@ public class tnzs
 		}
 	
 		return (dsw & 0xff);
-	}
+	} };
 	
 	static WRITE_HANDLER( kageki_csport_w )
 	{

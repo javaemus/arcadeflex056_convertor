@@ -216,10 +216,10 @@ public class argus
 	
 	***************************************************************************/
 	
-	static READ_HANDLER( argus_bankselect_r )
+	public static ReadHandlerPtr argus_bankselect_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return argus_bank_latch;
-	}
+	} };
 	
 	static WRITE_HANDLER( argus_bankselect_w )
 	{
@@ -239,7 +239,7 @@ public class argus
 		butasan_page_latch = data;
 	}
 	
-	static READ_HANDLER( butasan_pagedram_r )
+	public static ReadHandlerPtr butasan_pagedram_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		if (!(butasan_page_latch & 0x01))
 		{
@@ -265,7 +265,7 @@ public class argus
 		}
 	
 		return 0;
-	}
+	} };
 	
 	static WRITE_HANDLER( butasan_pagedram_w )
 	{

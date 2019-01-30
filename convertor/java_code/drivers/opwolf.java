@@ -118,15 +118,15 @@ public class opwolf
 		return 0xff;
 	}
 	
-	static READ_HANDLER( z80_input1_r )
+	public static ReadHandlerPtr z80_input1_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return input_port_0_word_r(0,0);	/* irrelevant mirror ? */
-	}
+	} };
 	
-	static READ_HANDLER( z80_input2_r )
+	public static ReadHandlerPtr z80_input2_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return input_port_0_word_r(0,0);	/* needed for coins */
-	}
+	} };
 	
 	
 	/******************************************************

@@ -143,7 +143,7 @@ public class segar
 	  Port 6 - 1-1, 1-2, 1-3, 1-4, 1-5, 1-6, 1-7, 1-8
 	  Port 7 - 2-1, 2-2, 2-3, 2-4, 2-5, 2-6, 2-7, 2-8
 	***************************************************************************/
-	static READ_HANDLER( segar_ports_r )
+	public static ReadHandlerPtr segar_ports_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		int dip1, dip2;
 	
@@ -169,7 +169,7 @@ public class segar
 		}
 	
 		return 0;
-	}
+	} };
 	
 	
 	/***************************************************************************

@@ -720,11 +720,11 @@ public class vsnes
 	
 	/* VS Top Gun: ROMs bankings at $8000-$ffff, plus some protection */
 	
-	static READ_HANDLER( topgun_security_r )
+	public static ReadHandlerPtr topgun_security_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		/* low part must be 0x1b */
 		return ppu2c03b_0_r( 2 ) | 0x1b;
-	}
+	} };
 	
 	static WRITE_HANDLER( topgun_security_w )
 	{
@@ -784,7 +784,7 @@ public class vsnes
 		}
 	}
 	
-	static READ_HANDLER( rbi_hack_r)
+	public static ReadHandlerPtr rbi_hack_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 	/* Supplied by Ben Parnell <xodnizel@home.com> of FCE Ultra fame */
 	
@@ -815,7 +815,7 @@ public class vsnes
 				break;
 	    		}
 			}
-	}
+	} };
 	
 	static WRITE_HANDLER( rbibb_rom_switch_w )
 	{
@@ -947,42 +947,42 @@ public class vsnes
 	}
 	
 	
-	static READ_HANDLER( xevious_hack_r)
+	public static ReadHandlerPtr xevious_hack_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 	
 	
 	return 0x05;
 	
-	}
+	} };
 	
-	static READ_HANDLER( xevious_hack_r1)
+	public static ReadHandlerPtr xevious_hack_r1  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 	
 	
 	
 	return 0x01;
 	
-	}
+	} };
 	
 	
-	static READ_HANDLER( xevious_hack_r2)
+	public static ReadHandlerPtr xevious_hack_r2  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 	
 	
 	
 	return 0x89;
 	
-	}
+	} };
 	
 	
-	static READ_HANDLER( xevious_hack_r3)
+	public static ReadHandlerPtr xevious_hack_r3  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 	
 	
 	
 	return 0x37;
 	
-	}
+	} };
 	
 	
 	void init_xevious( void )
@@ -1013,7 +1013,7 @@ public class vsnes
 	}
 	
 	
-	static READ_HANDLER( tko_security_r )
+	public static ReadHandlerPtr tko_security_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		static int security_counter;
 		static UINT8 security_data[] = {
@@ -1031,7 +1031,7 @@ public class vsnes
 	
 		return security_data[(security_counter++)];
 	
-	}
+	} };
 	
 	void init_tkoboxng( void )
 	{

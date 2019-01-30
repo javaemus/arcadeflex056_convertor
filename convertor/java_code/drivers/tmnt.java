@@ -1206,10 +1206,10 @@ public class tmnt
 		new Memory_WriteAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static READ_HANDLER( K054539_0_ctrl_r )
+	public static ReadHandlerPtr K054539_0_ctrl_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return K054539_0_r(0x200+offset);
-	}
+	} };
 	static WRITE_HANDLER( K054539_0_ctrl_w )
 	{
 		K054539_0_w(0x200+offset,data);

@@ -42,14 +42,14 @@ public class mermaid
 	}
 	
 	
-	static READ_HANDLER( mermaid_f800_r )
+	public static ReadHandlerPtr mermaid_f800_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		// collision register active LO
 		// Bit 0
 		// Bit 1 - Sprite - Foreground
 		//return rand() & 0xff;
 		return 0x00;
-	}
+	} };
 	
 	
 	public static Memory_ReadAddress readmem[]={

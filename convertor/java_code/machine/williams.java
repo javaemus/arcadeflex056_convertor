@@ -53,9 +53,6 @@ public class williams
 	/* input port mapping */
 	static UINT8 port_select;
 	static WRITE_HANDLER( williams_port_select_w );
-	static READ_HANDLER( williams_input_port_0_3_r );
-	static READ_HANDLER( williams_input_port_1_4_r );
-	static READ_HANDLER( williams_49way_port_0_r );
 	
 	/* newer-Williams routines */
 	WRITE_HANDLER( williams2_bank_select_w );
@@ -64,17 +61,14 @@ public class williams
 	/* Defender-specific code */
 	WRITE_HANDLER( defender_bank_select_w );
 	READ_HANDLER( defender_input_port_0_r );
-	static READ_HANDLER( defender_io_r );
 	static WRITE_HANDLER( defender_io_w );
 	
 	/* Stargate-specific code */
 	READ_HANDLER( stargate_input_port_0_r );
 	
 	/* Lotto Fun-specific code */
-	static READ_HANDLER( lottofun_input_port_0_r );
 	
 	/* Turkey Shoot-specific code */
-	static READ_HANDLER( tshoot_input_port_0_3_r );
 	static WRITE_HANDLER( tshoot_lamp_w );
 	static WRITE_HANDLER( tshoot_maxvol_w );
 	
@@ -836,11 +830,11 @@ public class williams
 	 *
 	 *************************************/
 	
-	static READ_HANDLER( lottofun_input_port_0_r )
+	public static ReadHandlerPtr lottofun_input_port_0_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		/* merge in the ticket dispenser status */
 		return input_port_0_r(offset) | ticket_dispenser_r(offset);
-	}
+	} };
 	
 	
 	
@@ -850,13 +844,13 @@ public class williams
 	 *
 	 *************************************/
 	
-	static READ_HANDLER( tshoot_input_port_0_3_r )
+	public static ReadHandlerPtr tshoot_input_port_0_3_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		/* merge in the gun inputs with the standard data */
 		int data = williams_input_port_0_3_r(offset);
 		int gun = (data & 0x3f) ^ ((data & 0x3f) >> 1);
 		return (data & 0xc0) | gun;
-	}
+	} };
 	
 	
 	static WRITE_HANDLER( tshoot_maxvol_w )

@@ -88,7 +88,7 @@ public class leprechn
 	    input_port_select = data;
 	}
 	
-	static READ_HANDLER( leprechn_input_port_r )
+	public static ReadHandlerPtr leprechn_input_port_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 	    switch (input_port_select)
 	    {
@@ -107,18 +107,18 @@ public class leprechn
 	    }
 	
 	    return 0xff;
-	}
+	} };
 	
-	static READ_HANDLER( leprechn_200d_r )
+	public static ReadHandlerPtr leprechn_200d_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 	    // Maybe a VSYNC line?
 	    return 0x02;
-	}
+	} };
 	
-	static READ_HANDLER( leprechn_0805_r )
+	public static ReadHandlerPtr leprechn_0805_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 	    return 0xc0;
-	}
+	} };
 	
 	static WRITE_HANDLER( leprechn_sh_w )
 	{

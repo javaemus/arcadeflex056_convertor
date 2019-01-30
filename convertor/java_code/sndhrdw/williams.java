@@ -188,10 +188,6 @@ public class williams
 	static void williams_cvsd_irqa(int state);
 	static void williams_cvsd_irqb(int state);
 	
-	static READ_HANDLER( williams_cvsd_pia_r );
-	static READ_HANDLER( williams_ym2151_r );
-	static READ_HANDLER( counter_down_r );
-	static READ_HANDLER( counter_value_r );
 	
 	static WRITE_HANDLER( williams_dac_data_w );
 	static WRITE_HANDLER( williams_dac2_data_w );
@@ -199,12 +195,9 @@ public class williams
 	static WRITE_HANDLER( williams_ym2151_w );
 	static WRITE_HANDLER( williams_cvsd_bank_select_w );
 	
-	static READ_HANDLER( williams_adpcm_command_r );
 	static WRITE_HANDLER( williams_adpcm_bank_select_w );
 	static WRITE_HANDLER( williams_adpcm_6295_bank_select_w );
 	
-	static READ_HANDLER( williams_narc_command_r );
-	static READ_HANDLER( williams_narc_command2_r );
 	static WRITE_HANDLER( williams_narc_command2_w );
 	static WRITE_HANDLER( williams_narc_master_bank_select_w );
 	static WRITE_HANDLER( williams_narc_slave_bank_select_w );
@@ -1239,10 +1232,10 @@ public class williams
 		YM2151 INTERFACES
 	****************************************************************************/
 	
-	static READ_HANDLER( williams_ym2151_r )
+	public static ReadHandlerPtr williams_ym2151_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return YM2151_status_port_0_r(offset);
-	}
+	} };
 	
 	static WRITE_HANDLER( williams_ym2151_w )
 	{
@@ -1319,10 +1312,10 @@ public class williams
 		PIA INTERFACES
 	****************************************************************************/
 	
-	static READ_HANDLER( williams_cvsd_pia_r )
+	public static ReadHandlerPtr williams_cvsd_pia_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return pia_read(williams_pianum, offset);
-	}
+	} };
 	
 	static WRITE_HANDLER( williams_cvsd_pia_w )
 	{
@@ -1409,11 +1402,11 @@ public class williams
 		counter.adjusted_divisor = data ? data : 256;
 	}
 	
-	static READ_HANDLER( counter_down_r )
+	public static ReadHandlerPtr counter_down_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		update_counter();
 		return counter.downcount[offset];
-	}
+	} };
 	
 	static WRITE_HANDLER( counter_down_w )
 	{
@@ -1421,7 +1414,7 @@ public class williams
 		counter.downcount[offset] = data;
 	}
 	
-	static READ_HANDLER( counter_value_r )
+	public static ReadHandlerPtr counter_value_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		UINT16 pc = cpu_getpreviouspc();
 	
@@ -1449,7 +1442,7 @@ public class williams
 		}
 	
 		return counter.value[offset];
-	}
+	} };
 	
 	static WRITE_HANDLER( counter_value_w )
 	{

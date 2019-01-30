@@ -291,7 +291,7 @@ public class namcos86
 	
 	/* shared memory area with the mcu */
 	static unsigned char *shared1;
-	static READ_HANDLER( shared1_r ) { return shared1[offset]; }
+	public static ReadHandlerPtr shared1_r  = new ReadHandlerPtr() { public int handler(int offset) { return shared1[offset]; } };
 	static WRITE_HANDLER( shared1_w ) { shared1[offset] = data; }
 	
 	
@@ -300,10 +300,10 @@ public class namcos86
 	{
 		spriteram[offset] = data;
 	}
-	static READ_HANDLER( spriteram_r )
+	public static ReadHandlerPtr spriteram_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return spriteram[offset];
-	}
+	} };
 	
 	static WRITE_HANDLER( bankswitch1_w )
 	{
@@ -333,7 +333,7 @@ public class namcos86
 	}
 	
 	/* Stubs to pass the correct Dip Switch setup to the MCU */
-	static READ_HANDLER( dsw0_r )
+	public static ReadHandlerPtr dsw0_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		int rhi, rlo;
 	
@@ -348,9 +348,9 @@ public class namcos86
 		rlo |= ( readinputport( 3 ) & 0x40 ) >> 3;
 	
 		return ~( rhi | rlo ) & 0xff; /* Active Low */
-	}
+	} };
 	
-	static READ_HANDLER( dsw1_r )
+	public static ReadHandlerPtr dsw1_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		int rhi, rlo;
 	
@@ -365,7 +365,7 @@ public class namcos86
 		rlo |= ( readinputport( 3 ) & 0x80 ) >> 4;
 	
 		return ~( rhi | rlo ) & 0xff; /* Active Low */
-	}
+	} };
 	
 	static int int_enabled[2];
 	
@@ -557,10 +557,10 @@ public class namcos86
 	#undef UNUSED
 	
 	
-	static READ_HANDLER( readFF )
+	public static ReadHandlerPtr readFF  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return 0xff;
-	}
+	} };
 	
 	public static IO_ReadPort mcu_readport[]={
 		new IO_ReadPort(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_IO | MEMPORT_WIDTH_8),

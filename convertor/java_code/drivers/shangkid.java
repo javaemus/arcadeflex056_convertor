@@ -198,10 +198,10 @@ public class shangkid
 		shareram[offset] = data;
 	}
 	
-	static READ_HANDLER( shareram_r )
+	public static ReadHandlerPtr shareram_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return shareram[offset];
-	}
+	} };
 	
 	/***************************************************************************************/
 	

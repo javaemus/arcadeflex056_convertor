@@ -104,7 +104,7 @@ public class firetrap
 		cpu_setbank(1,&RAM[bankaddress]);
 	}
 	
-	static READ_HANDLER( firetrap_8751_r )
+	public static ReadHandlerPtr firetrap_8751_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 	//logerror("PC:%04x read from 8751\n",cpu_get_pc());
 	
@@ -113,7 +113,7 @@ public class firetrap
 		/* 8751 - the real thing is much more complicated than that. */
 		if ((readinputport(2) & 0x70) != 0x70) return 0xff;
 		else return 0;
-	}
+	} };
 	
 	static WRITE_HANDLER( firetrap_8751_w )
 	{

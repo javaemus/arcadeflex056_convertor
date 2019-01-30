@@ -71,11 +71,11 @@ public class pcktgal
 		msm5205next=data;
 	}
 	
-	static READ_HANDLER( pcktgal_adpcm_reset_r )
+	public static ReadHandlerPtr pcktgal_adpcm_reset_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		MSM5205_reset_w(0,0);
 		return 0;
-	}
+	} };
 	
 	/***************************************************************************/
 	

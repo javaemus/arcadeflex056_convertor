@@ -43,11 +43,11 @@ public class bking2
 	
 	static int sndnmi_enable = 1;
 	
-	static READ_HANDLER( bking2_sndnmi_disable_r )
+	public static ReadHandlerPtr bking2_sndnmi_disable_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		sndnmi_enable = 0;
 		return 0;
-	}
+	} };
 	
 	static WRITE_HANDLER( bking2_sndnmi_enable_w )
 	{

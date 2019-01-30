@@ -121,7 +121,7 @@ public class vicdual
 		protection_data = data;
 	}
 	
-	static READ_HANDLER( samurai_input_r )
+	public static ReadHandlerPtr samurai_input_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		int answer = 0;
 	
@@ -129,7 +129,7 @@ public class vicdual
 		else if (protection_data == 0x1d) answer = 0x0c;
 	
 		return (readinputport(1 + offset) & 0xfd) | ((answer >> offset) & 0x02);
-	}
+	} };
 	
 	
 	static WRITE_HANDLER( vicdual_ram_w )
@@ -137,17 +137,17 @@ public class vicdual
 		vicdual_ram[offset] = data;
 	}
 	
-	static READ_HANDLER( vicdual_ram_r )
+	public static ReadHandlerPtr vicdual_ram_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return vicdual_ram[offset];
-	}
+	} };
 	
 	
-	static READ_HANDLER( depthch_input_port_1_r )
+	public static ReadHandlerPtr depthch_input_port_1_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		/* bit 0 is 64V according to the schematics */
 		return (input_port_1_r(0) & 0xfe) | ((cpu_getscanline() >> 6) & 0x01);
-	}
+	} };
 	
 	
 	public static Memory_ReadAddress vicdual_readmem[]={

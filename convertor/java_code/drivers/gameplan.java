@@ -89,10 +89,10 @@ public class gameplan
 		}
 	}
 	
-	static READ_HANDLER( gameplan_port_r )
+	public static ReadHandlerPtr gameplan_port_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return readinputport(gameplan_current_port);
-	}
+	} };
 	
 	public static Memory_ReadAddress readmem[]={
 		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),

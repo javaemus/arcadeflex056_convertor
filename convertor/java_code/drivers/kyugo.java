@@ -41,21 +41,21 @@ public class kyugo
 	
 	static unsigned char *shared_ram;
 	
-	static READ_HANDLER( shared_ram_r )
+	public static ReadHandlerPtr shared_ram_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return shared_ram[offset];
-	}
+	} };
 	
 	static WRITE_HANDLER( shared_ram_w )
 	{
 		shared_ram[offset] = data;
 	}
 	
-	static READ_HANDLER( special_spriteram_r )
+	public static ReadHandlerPtr special_spriteram_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		/* RAM is 4 bits wide, must set the high bits to 1 for the RAM test to pass */
 		return spriteram_2[offset] | 0xf0;
-	}
+	} };
 	
 	
 	

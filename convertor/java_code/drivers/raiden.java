@@ -61,7 +61,7 @@ public class raiden
 	
 	/***************************************************************************/
 	
-	static READ_HANDLER( raiden_shared_r ) { return raiden_shared_ram[offset]; }
+	public static ReadHandlerPtr raiden_shared_r  = new ReadHandlerPtr() { public int handler(int offset) { return raiden_shared_ram[offset]; } };
 	static WRITE_HANDLER( raiden_shared_w ) { raiden_shared_ram[offset]=data; }
 	
 	/******************************************************************************/
@@ -482,7 +482,7 @@ public class raiden
 	/***************************************************************************/
 	
 	/* Spin the sub-cpu if it is waiting on the master cpu */
-	static READ_HANDLER( sub_cpu_spin_r )
+	public static ReadHandlerPtr sub_cpu_spin_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		int pc=cpu_get_pc();
 		int ret=raiden_shared_ram[0x8];
@@ -493,9 +493,9 @@ public class raiden
 			cpu_spin();
 	
 		return ret;
-	}
+	} };
 	
-	static READ_HANDLER( sub_cpu_spina_r )
+	public static ReadHandlerPtr sub_cpu_spina_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		int pc=cpu_get_pc();
 		int ret=raiden_shared_ram[0x8];
@@ -506,7 +506,7 @@ public class raiden
 			cpu_spin();
 	
 		return ret;
-	}
+	} };
 	
 	static void init_raiden(void)
 	{

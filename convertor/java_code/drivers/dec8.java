@@ -99,15 +99,15 @@ public class dec8
 		buffer_spriteram_w(0,0);
 	}
 	
-	static READ_HANDLER( i8751_h_r )
+	public static ReadHandlerPtr i8751_h_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return i8751_return>>8; /* MSB */
-	}
+	} };
 	
-	static READ_HANDLER( i8751_l_r )
+	public static ReadHandlerPtr i8751_l_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return i8751_return&0xff; /* LSB */
-	}
+	} };
 	
 	static WRITE_HANDLER( i8751_reset_w )
 	{
@@ -116,7 +116,7 @@ public class dec8
 	
 	/******************************************************************************/
 	
-	static READ_HANDLER( gondo_player_1_r )
+	public static ReadHandlerPtr gondo_player_1_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		switch (offset) {
 			case 0: /* Rotary low byte */
@@ -125,9 +125,9 @@ public class dec8
 				return ((~((1 << (readinputport(5) * 12 / 256))>>4))&0xf0) | (readinputport(0)&0xf);
 		}
 		return 0xff;
-	}
+	} };
 	
-	static READ_HANDLER( gondo_player_2_r )
+	public static ReadHandlerPtr gondo_player_2_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		switch (offset) {
 			case 0: /* Rotary low byte */
@@ -136,7 +136,7 @@ public class dec8
 				return ((~((1 << (readinputport(6) * 12 / 256))>>4))&0xf0) | (readinputport(1)&0xf);
 		}
 		return 0xff;
-	}
+	} };
 	
 	/******************************************************************************/
 	
@@ -441,11 +441,11 @@ public class dec8
 		msm5205next<<=4;
 	}
 	
-	static READ_HANDLER( csilver_adpcm_reset_r )
+	public static ReadHandlerPtr csilver_adpcm_reset_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		MSM5205_reset_w(0,0);
 		return 0;
-	}
+	} };
 	
 	static WRITE_HANDLER( csilver_adpcm_data_w )
 	{
@@ -524,11 +524,11 @@ public class dec8
 	
 	/******************************************************************************/
 	
-	static READ_HANDLER( dec8_share_r ) { return dec8_shared_ram[offset]; }
-	static READ_HANDLER( dec8_share2_r ) { return dec8_shared2_ram[offset]; }
+	public static ReadHandlerPtr dec8_share_r  = new ReadHandlerPtr() { public int handler(int offset) { return dec8_shared_ram[offset]; } };
+	public static ReadHandlerPtr dec8_share2_r  = new ReadHandlerPtr() { public int handler(int offset) { return dec8_shared2_ram[offset]; } };
 	static WRITE_HANDLER( dec8_share_w ) { dec8_shared_ram[offset]=data; }
 	static WRITE_HANDLER( dec8_share2_w ) { dec8_shared2_ram[offset]=data; }
-	static READ_HANDLER( shackled_sprite_r ) { return spriteram[offset]; }
+	public static ReadHandlerPtr shackled_sprite_r  = new ReadHandlerPtr() { public int handler(int offset) { return spriteram[offset]; } };
 	static WRITE_HANDLER( shackled_sprite_w ) { spriteram[offset]=data; }
 	static WRITE_HANDLER( flip_screen_w ) {	flip_screen_set(data); }
 	

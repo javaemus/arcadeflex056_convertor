@@ -77,19 +77,19 @@ public class fastfred
 	WRITE_HANDLER( fastfred_background_color_w );
 	void jumpcoas_init_machine(void);
 	
-	static READ_HANDLER( jumpcoas_custom_io_r )
+	public static ReadHandlerPtr jumpcoas_custom_io_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		if (offset == 0x100)  return 0x63;
 	
 		return 0x00;
-	}
+	} };
 	
 	// This routine is a big hack, but the only way I can get the game working
 	// without knowing anything about the way the protection chip works.
 	// These values were derived based on disassembly of the code. Usually, it
 	// was pretty obvious what the values should be. Of course, this will have
 	// to change if a different ROM set ever surfaces.
-	static READ_HANDLER( fastfred_custom_io_r )
+	public static ReadHandlerPtr fastfred_custom_io_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 	    switch (cpu_get_pc())
 	    {
@@ -119,7 +119,7 @@ public class fastfred
 	
 	    logerror("Uncaught custom I/O read %04X at %04X\n", 0xc800+offset, cpu_get_pc());
 	    return 0x00;
-	}
+	} };
 	
 	static WRITE_HANDLER( flip_screen_x_w )
 	{

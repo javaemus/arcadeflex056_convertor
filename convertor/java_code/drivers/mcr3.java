@@ -148,7 +148,7 @@ public class mcr3
 	 *
 	 *************************************/
 	
-	static READ_HANDLER( dotron_port_2_r )
+	public static ReadHandlerPtr dotron_port_2_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		static char lastfake = 0;
 		static int mask = 0x00FF;
@@ -189,7 +189,7 @@ public class mcr3
 		data &= mask;
 	
 		return data;
-	}
+	} };
 	
 	
 	static WRITE_HANDLER( dotron_port_4_w )
@@ -217,10 +217,10 @@ public class mcr3
 	}
 	
 	
-	static READ_HANDLER( demoderb_port12_r )
+	public static ReadHandlerPtr demoderb_port12_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return readinputport(input_mux ? (6 + offset) : (1 + offset));
-	}
+	} };
 	
 	
 	
@@ -230,16 +230,16 @@ public class mcr3
 	 *
 	 *************************************/
 	
-	static READ_HANDLER( sarge_port_1_r )
+	public static ReadHandlerPtr sarge_port_1_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return readinputport(1) & ~one_joy_trans[readinputport(6) & 0x0f];
-	}
+	} };
 	
 	
-	static READ_HANDLER( sarge_port_2_r )
+	public static ReadHandlerPtr sarge_port_2_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return readinputport(2) & ~one_joy_trans[(readinputport(6) >> 4) & 0x0f];
-	}
+	} };
 	
 	
 	
@@ -256,14 +256,14 @@ public class mcr3
 	}
 	
 	
-	static READ_HANDLER( maxrpm_port_1_r )
+	public static ReadHandlerPtr maxrpm_port_1_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		/* multiplexed steering wheel/gas pedal */
 		return readinputport(6 + input_mux);
-	}
+	} };
 	
 	
-	static READ_HANDLER( maxrpm_port_2_r )
+	public static ReadHandlerPtr maxrpm_port_2_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		static const UINT8 shift_bits[5] = { 0x00, 0x05, 0x06, 0x01, 0x02 };
 		UINT8 start = readinputport(0);
@@ -304,7 +304,7 @@ public class mcr3
 		maxrpm_last_shift = shift;
 	
 		return ~((shift_bits[maxrpm_p1_shift] << 4) + shift_bits[maxrpm_p2_shift]);
-	}
+	} };
 	
 	
 	
@@ -314,11 +314,11 @@ public class mcr3
 	 *
 	 *************************************/
 	
-	static READ_HANDLER( powerdrv_port_2_r )
+	public static ReadHandlerPtr powerdrv_port_2_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		int result = readinputport(2) & 0x7f;
 		return result | (input_mux & 0x80);
-	}
+	} };
 	
 	
 	static WRITE_HANDLER( powerdrv_port_5_w )
@@ -347,7 +347,7 @@ public class mcr3
 	 *
 	 *************************************/
 	
-	static READ_HANDLER( stargrds_port_0_r )
+	public static ReadHandlerPtr stargrds_port_0_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		int result = readinputport(input_mux ? 6 : 0);
 	
@@ -356,7 +356,7 @@ public class mcr3
 		static int temp = 0;
 		result ^= temp ^= 0x10;
 		return result;
-	}
+	} };
 	
 	
 	static WRITE_HANDLER( stargrds_port_5_w )
@@ -386,11 +386,11 @@ public class mcr3
 	 *
 	 *************************************/
 	
-	static READ_HANDLER( spyhunt_port_2_r )
+	public static ReadHandlerPtr spyhunt_port_2_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		/* multiplexed steering wheel/gas pedal */
 		return readinputport(6 + input_mux);
-	}
+	} };
 	
 	
 	static WRITE_HANDLER( spyhunt_port_4_w )
@@ -422,7 +422,7 @@ public class mcr3
 	 *
 	 *************************************/
 	
-	static READ_HANDLER( turbotag_kludge_r )
+	public static ReadHandlerPtr turbotag_kludge_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		/* The checksum on the ttprog1.bin ROM seems to be bad by 1 bit */
 		/* The checksum should come out to $82 but it should be $92     */
@@ -433,7 +433,7 @@ public class mcr3
 			return 0x82;
 		else
 			return 0x92;
-	}
+	} };
 	
 	
 	

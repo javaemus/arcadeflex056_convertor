@@ -53,7 +53,7 @@ public class crimfght
 	
 	/********************************************/
 	
-	static READ_HANDLER( speedup_r )
+	public static ReadHandlerPtr speedup_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		unsigned char *RAM = memory_region(REGION_CPU1);
 	
@@ -68,7 +68,7 @@ public class crimfght
 		}
 	
 		return RAM[0x0414];
-	}
+	} };
 	
 	public static Memory_ReadAddress crimfght_readmem[]={
 		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),

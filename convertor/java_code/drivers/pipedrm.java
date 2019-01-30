@@ -207,16 +207,16 @@ public class pipedrm
 	}
 	
 	
-	static READ_HANDLER( pending_command_r )
+	public static ReadHandlerPtr pending_command_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return pending_command;
-	}
+	} };
 	
 	
-	static READ_HANDLER( sound_command_r )
+	public static ReadHandlerPtr sound_command_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return sound_command;
-	}
+	} };
 	
 	
 	

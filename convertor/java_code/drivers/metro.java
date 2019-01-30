@@ -375,7 +375,7 @@ public class metro
 	
 	static data8_t chip_select;
 	
-	static READ_HANDLER( daitorid_sound_chip_data_r )
+	public static ReadHandlerPtr daitorid_sound_chip_data_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		/* fake status to get the 7810 out of the tight loop waiting for a chip */
 	    static data8_t toggle_bit7;
@@ -388,17 +388,17 @@ public class metro
 			toggle_bit7 ^= 0x80;
 	        return toggle_bit7;
 		}
-	}
+	} };
 	
 	static WRITE_HANDLER( daitorid_sound_chip_data_w )
 	{
 		soundlatch2_w(0,data);	// for debugging, the latch is internal
 	}
 	
-	static READ_HANDLER( daitorid_sound_chip_select_r )
+	public static ReadHandlerPtr daitorid_sound_chip_select_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return chip_select;
-	}
+	} };
 	
 	static WRITE_HANDLER( daitorid_sound_chip_select_w )
 	{

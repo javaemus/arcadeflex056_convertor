@@ -34,7 +34,7 @@ public class mikie
 	
 	
 	
-	static READ_HANDLER( mikie_sh_timer_r )
+	public static ReadHandlerPtr mikie_sh_timer_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		int clock;
 	
@@ -43,7 +43,7 @@ public class mikie
 		clock = cpu_gettotalcycles() / TIMER_RATE;
 	
 		return clock;
-	}
+	} };
 	
 	static WRITE_HANDLER( mikie_sh_irqtrigger_w )
 	{

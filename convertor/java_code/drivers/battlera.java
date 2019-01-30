@@ -60,7 +60,7 @@ public class battlera
 		control_port_select=data;
 	}
 	
-	static READ_HANDLER( control_data_r )
+	public static ReadHandlerPtr control_data_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		switch (control_port_select) {
 			case 0xfe: return readinputport(0); /* Player 1 */
@@ -71,7 +71,7 @@ public class battlera
 		}
 	
 	    return 0xff;
-	}
+	} };
 	
 	/******************************************************************************/
 	

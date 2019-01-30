@@ -157,10 +157,10 @@ public class mcr
 		ssio_status = data;
 	}
 	
-	static READ_HANDLER( ssio_data_r )
+	public static ReadHandlerPtr ssio_data_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return ssio_data[offset];
-	}
+	} };
 	
 	static void ssio_delayed_data_w(int param)
 	{

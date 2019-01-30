@@ -39,10 +39,10 @@ public class xain
 	extern unsigned char *xain_charram, *xain_bgram0, *xain_bgram1;
 	
 	
-	static READ_HANDLER( xain_sharedram_r )
+	public static ReadHandlerPtr xain_sharedram_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return xain_sharedram[offset];
-	}
+	} };
 	
 	static WRITE_HANDLER( xain_sharedram_w )
 	{
@@ -101,11 +101,11 @@ public class xain
 		cpu_set_irq_line(1,M6809_IRQ_LINE,CLEAR_LINE);
 	}
 	
-	static READ_HANDLER( xain_68705_r )
+	public static ReadHandlerPtr xain_68705_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 	//	logerror("read 68705\n");
 		return 0x4d;	/* fake P5 checksum test pass */
-	}
+	} };
 	
 	static WRITE_HANDLER( xain_68705_w )
 	{

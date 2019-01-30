@@ -221,10 +221,10 @@ public class kchamp
 		new Memory_WriteAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static READ_HANDLER( sound_reset_r ) {
+	public static ReadHandlerPtr sound_reset_r  = new ReadHandlerPtr() { public int handler(int offset) {
 		cpu_set_reset_line(1,PULSE_LINE);
 		return 0;
-	}
+	} };
 	
 	static WRITE_HANDLER( kc_sound_control_w ) {
 		if ( offset == 0 )

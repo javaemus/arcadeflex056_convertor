@@ -280,10 +280,10 @@ public class taito_l
 		irq_adr_table[offset] = data;
 	}
 	
-	static READ_HANDLER( irq_adr_r )
+	public static ReadHandlerPtr irq_adr_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return irq_adr_table[offset];
-	}
+	} };
 	
 	static WRITE_HANDLER( irq_enable_w )
 	{
@@ -291,10 +291,10 @@ public class taito_l
 		irq_enable = data;
 	}
 	
-	static READ_HANDLER( irq_enable_r )
+	public static ReadHandlerPtr irq_enable_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return irq_enable;
-	}
+	} };
 	
 	
 	static WRITE_HANDLER( rombankswitch_w )
@@ -335,15 +335,15 @@ public class taito_l
 		}
 	}
 	
-	static READ_HANDLER( rombankswitch_r )
+	public static ReadHandlerPtr rombankswitch_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return cur_rombank;
-	}
+	} };
 	
-	static READ_HANDLER( rombank2switch_r )
+	public static ReadHandlerPtr rombank2switch_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return cur_rombank2;
-	}
+	} };
 	
 	static WRITE_HANDLER( rambankswitch_w )
 	{
@@ -372,10 +372,10 @@ public class taito_l
 		}
 	}
 	
-	static READ_HANDLER( rambankswitch_r )
+	public static ReadHandlerPtr rambankswitch_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return cur_rambank[offset];
-	}
+	} };
 	
 	static WRITE_HANDLER( bank0_w )
 	{
@@ -427,29 +427,29 @@ public class taito_l
 	
 	static int extport;
 	
-	static READ_HANDLER( portA_r )
+	public static ReadHandlerPtr portA_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		if (extport == 0) return porte0_r(0);
 		else return porte1_r(0);
-	}
+	} };
 	
-	static READ_HANDLER( portB_r )
+	public static ReadHandlerPtr portB_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		if (extport == 0) return portf0_r(0);
 		else return portf1_r(0);
-	}
+	} };
 	
-	static READ_HANDLER( ym2203_data0_r )
+	public static ReadHandlerPtr ym2203_data0_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		extport = 0;
 		return YM2203_read_port_0_r(offset);
-	}
+	} };
 	
-	static READ_HANDLER( ym2203_data1_r )
+	public static ReadHandlerPtr ym2203_data1_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		extport = 1;
 		return YM2203_read_port_0_r(offset);
-	}
+	} };
 	
 	static int *mcu_reply;
 	static int mcu_pos = 0, mcu_reply_len = 0;
@@ -477,30 +477,30 @@ public class taito_l
 	//	logerror("mcu control %02x (%04x)\n", data, cpu_get_pc());
 	}
 	
-	static READ_HANDLER( mcu_data_r )
+	public static ReadHandlerPtr mcu_data_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 	//	logerror("mcu read (%04x) [%02x, %04x]\n", cpu_get_pc(), last_data, last_data_adr);
 		if(mcu_pos==mcu_reply_len)
 			return 0;
 	
 		return mcu_reply[mcu_pos++];
-	}
+	} };
 	
-	static READ_HANDLER( mcu_control_r )
+	public static ReadHandlerPtr mcu_control_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 	//	logerror("mcu control read (%04x)\n", cpu_get_pc());
 		return 0x1;
-	}
+	} };
 	
 	static WRITE_HANDLER( sound_w )
 	{
 		logerror("Sound_w %02x (%04x)\n", data, cpu_get_pc());
 	}
 	
-	static READ_HANDLER( shared_r )
+	public static ReadHandlerPtr shared_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return shared_ram[offset];
-	}
+	} };
 	
 	static WRITE_HANDLER( shared_w )
 	{
@@ -509,7 +509,7 @@ public class taito_l
 	
 	static int mux_ctrl = 0;
 	
-	static READ_HANDLER( mux_r )
+	public static ReadHandlerPtr mux_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		switch(mux_ctrl)
 		{
@@ -527,7 +527,7 @@ public class taito_l
 			logerror("Mux read from unknown port %d (%04x)\n", mux_ctrl, cpu_get_pc());
 			return 0xff;
 		}
-	}
+	} };
 	
 	static WRITE_HANDLER( mux_w )
 	{
@@ -576,39 +576,39 @@ public class taito_l
 	
 	static int trackx,tracky;
 	
-	static READ_HANDLER( horshoes_tracky_reset_r )
+	public static ReadHandlerPtr horshoes_tracky_reset_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		/* reset the trackball counter */
 		tracky = readinputport(4);
 		return 0;
-	}
+	} };
 	
-	static READ_HANDLER( horshoes_trackx_reset_r )
+	public static ReadHandlerPtr horshoes_trackx_reset_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		/* reset the trackball counter */
 		trackx = readinputport(5);
 		return 0;
-	}
+	} };
 	
-	static READ_HANDLER( horshoes_tracky_lo_r )
+	public static ReadHandlerPtr horshoes_tracky_lo_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return (readinputport(4) - tracky) & 0xff;
-	}
+	} };
 	
-	static READ_HANDLER( horshoes_tracky_hi_r )
+	public static ReadHandlerPtr horshoes_tracky_hi_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return (readinputport(4) - tracky) >> 8;
-	}
+	} };
 	
-	static READ_HANDLER( horshoes_trackx_lo_r )
+	public static ReadHandlerPtr horshoes_trackx_lo_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return (readinputport(5) - trackx) & 0xff;
-	}
+	} };
 	
-	static READ_HANDLER( horshoes_trackx_hi_r )
+	public static ReadHandlerPtr horshoes_trackx_hi_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return (readinputport(5) - trackx) >> 8;
-	}
+	} };
 	
 	
 	

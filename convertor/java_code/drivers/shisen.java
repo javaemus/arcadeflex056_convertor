@@ -21,7 +21,7 @@ public class shisen
 	
 	
 	
-	static READ_HANDLER( sichuan2_dsw1_r )
+	public static ReadHandlerPtr sichuan2_dsw1_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		int ret = input_port_3_r(0);
 	
@@ -38,7 +38,7 @@ public class shisen
 		}
 	
 		return ret;
-	}
+	} };
 	
 	static WRITE_HANDLER( sichuan2_coin_w )
 	{

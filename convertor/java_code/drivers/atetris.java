@@ -129,7 +129,7 @@ public class atetris
 	 *
 	 *************************************/
 	
-	static READ_HANDLER( atetris_slapstic_r )
+	public static ReadHandlerPtr atetris_slapstic_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		int result = slapstic_base[0x2000 + offset];
 		int new_bank = slapstic_tweak(offset) & 1;
@@ -141,7 +141,7 @@ public class atetris
 			memcpy(slapstic_base, &slapstic_source[current_bank * 0x4000], 0x4000);
 		}
 		return result;
-	}
+	} };
 	
 	
 	

@@ -278,12 +278,12 @@ public class namcos1
 		new Memory_WriteAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static READ_HANDLER( dsw_r )
+	public static ReadHandlerPtr dsw_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		int ret = readinputport(2);
 		if(offset&2) ret>>=4;
 		return 0xf0 | ret;
-	}
+	} };
 	
 	static WRITE_HANDLER( namcos1_coin_w )
 	{
@@ -325,7 +325,7 @@ public class namcos1
 	
 	static int num=0, strobe=0;
 	
-	static READ_HANDLER( quester_in0_r )
+	public static ReadHandlerPtr quester_in0_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		int ret;
 	
@@ -337,9 +337,9 @@ public class namcos1
 		strobe ^= 0x40;
 	
 		return ret;
-	}
+	} };
 	
-	static READ_HANDLER( quester_in1_r )
+	public static ReadHandlerPtr quester_in1_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		int ret;
 	
@@ -351,9 +351,9 @@ public class namcos1
 		if (strobe == 0) num ^= 0x20;
 	
 		return ret;
-	}
+	} };
 	
-	static READ_HANDLER( faceoff_in0_r )
+	public static ReadHandlerPtr faceoff_in0_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		int ret;
 	
@@ -365,9 +365,9 @@ public class namcos1
 			ret = (readinputport(0)&0x80) | (readinputport(6)&0x1f);
 	
 		return ret;
-	}
+	} };
 	
-	static READ_HANDLER( faceoff_in1_r )
+	public static ReadHandlerPtr faceoff_in1_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		int ret;
 	
@@ -389,7 +389,7 @@ public class namcos1
 		strobe ^= 0x40;
 	
 		return ret;
-	}
+	} };
 	
 	public static Memory_ReadAddress mcu_readmem[]={
 		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),

@@ -62,7 +62,7 @@ public class skykid
 	#define reverse_bitstrm(data) ((data & 0x01) << 4) | ((data & 0x02) << 2) | (data & 0x04) \
 								| ((data & 0x08) >> 2) | ((data & 0x10) >> 4)
 	
-	static READ_HANDLER( inputport_r )
+	public static ReadHandlerPtr inputport_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		int data = 0;
 	
@@ -86,7 +86,7 @@ public class skykid
 		}
 	
 		return data;
-	}
+	} };
 	
 	static WRITE_HANDLER( skykid_led_w )
 	{
@@ -185,10 +185,10 @@ public class skykid
 	};
 	
 	
-	static READ_HANDLER( readFF )
+	public static ReadHandlerPtr readFF  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return 0xff;
-	}
+	} };
 	
 	public static IO_ReadPort mcu_readport[]={
 		new IO_ReadPort(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_IO | MEMPORT_WIDTH_8),

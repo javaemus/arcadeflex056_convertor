@@ -114,7 +114,7 @@ public class royalmah
 		royalmah_input_port_select = data;
 	}
 	
-	static READ_HANDLER( royalmah_player_1_port_r )
+	public static ReadHandlerPtr royalmah_player_1_port_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		int ret = (input_port_0_r(offset) & 0xc0) | 0x3f;
 	
@@ -125,9 +125,9 @@ public class royalmah
 		if ((royalmah_input_port_select & 0x10) == 0)  ret &= input_port_4_r(offset);
 	
 		return ret;
-	}
+	} };
 	
-	static READ_HANDLER( royalmah_player_2_port_r )
+	public static ReadHandlerPtr royalmah_player_2_port_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		int ret = (input_port_5_r(offset) & 0xc0) | 0x3f;
 	
@@ -138,7 +138,7 @@ public class royalmah
 		if ((royalmah_input_port_select & 0x10) == 0)  ret &= input_port_9_r(offset);
 	
 		return ret;
-	}
+	} };
 	
 	
 	public static Memory_ReadAddress readmem[]={

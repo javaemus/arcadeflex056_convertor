@@ -561,21 +561,21 @@ public class darius
 		{ 50 }			/* volume */
 	};
 	
-	static READ_HANDLER( adpcm_command_read )
+	public static ReadHandlerPtr adpcm_command_read  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		/* logerror("read port 0: %02x  PC=%4x\n",adpcm_command, cpu_get_pc() ); */
 		return adpcm_command;
-	}
+	} };
 	
-	static READ_HANDLER( readport2 )
+	public static ReadHandlerPtr readport2  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return 0;
-	}
+	} };
 	
-	static READ_HANDLER( readport3 )
+	public static ReadHandlerPtr readport3  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return 0;
-	}
+	} };
 	
 	static WRITE_HANDLER ( adpcm_nmi_disable )
 	{

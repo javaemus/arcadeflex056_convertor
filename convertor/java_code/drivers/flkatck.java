@@ -63,7 +63,7 @@ public class flkatck
 			cpu_setbank(1,&RAM[bankaddress]);
 	}
 	
-	static READ_HANDLER( flkatck_ls138_r )
+	public static ReadHandlerPtr flkatck_ls138_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		int data = 0;
 	
@@ -81,7 +81,7 @@ public class flkatck
 		}
 	
 		return data;
-	}
+	} };
 	
 	static WRITE_HANDLER( flkatck_ls138_w )
 	{

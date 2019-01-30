@@ -125,17 +125,17 @@ public class ultratnk
 		}
 	}
 	
-	static READ_HANDLER( ultratnk_controls_r )
+	public static ReadHandlerPtr ultratnk_controls_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return (ultratnk_controls << offset) & 0x80;
-	}
+	} };
 	
-	static READ_HANDLER( ultratnk_barrier_r )
+	public static ReadHandlerPtr ultratnk_barrier_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return readinputport(2) & 0x80;
-	}
+	} };
 	
-	static READ_HANDLER( ultratnk_coin_r )
+	public static ReadHandlerPtr ultratnk_coin_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		switch (offset & 0x06)
 		{
@@ -146,14 +146,14 @@ public class ultratnk
 		}
 	
 		return 0;
-	}
+	} };
 	
-	static READ_HANDLER( ultratnk_tilt_r )
+	public static ReadHandlerPtr ultratnk_tilt_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return (readinputport(2) << 5) & 0x80;	/* tilt */
-	}
+	} };
 	
-	static READ_HANDLER( ultratnk_collision_r )
+	public static ReadHandlerPtr ultratnk_collision_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		/**	Note: hardware collision detection is not emulated.
 		 *	However, the game is fully playable, since the game software uses it
@@ -165,9 +165,9 @@ public class ultratnk
 			case 0x03:	return 0x80;	/* black tank = D7 */
 		}
 		return 0;
-	}
+	} };
 	
-	static READ_HANDLER( ultratnk_dipsw_r )
+	public static ReadHandlerPtr ultratnk_dipsw_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		int dipsw = input_port_0_r(offset);
 		switch( offset )
@@ -178,7 +178,7 @@ public class ultratnk
 			case 0x03: return ((dipsw & 0x03) >> 0); /* extended time */
 		}
 		return 0;
-	}
+	} };
 	
 	static int ultratnk_interrupt(void)
 	{
@@ -195,10 +195,10 @@ public class ultratnk
 		set_led_status(offset/2,offset&1);
 	}
 	
-	static READ_HANDLER( mirror_r )
+	public static ReadHandlerPtr mirror_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return mirror_ram[offset];
-	}
+	} };
 	
 	static WRITE_HANDLER( mirror_w )
 	{

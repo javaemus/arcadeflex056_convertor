@@ -103,10 +103,10 @@ public class vastar
 			cpu_set_reset_line(1,ASSERT_LINE);
 	}
 	
-	static READ_HANDLER( vastar_sharedram_r )
+	public static ReadHandlerPtr vastar_sharedram_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return vastar_sharedram[offset];
-	}
+	} };
 	
 	static WRITE_HANDLER( vastar_sharedram_w )
 	{

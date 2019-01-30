@@ -1280,17 +1280,17 @@ public class kaneko16
 		cpu_setbank(1, RAM);
 	}
 	
-	static READ_HANDLER( sandscrp_latchstatus_r )
+	public static ReadHandlerPtr sandscrp_latchstatus_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return	(latch2_full ? 0x80 : 0) |	// swapped!?
 				(latch1_full ? 0x40 : 0) ;
-	}
+	} };
 	
-	static READ_HANDLER( sandscrp_soundlatch_r )
+	public static ReadHandlerPtr sandscrp_soundlatch_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		latch1_full = 0;
 		return soundlatch_r(0);
-	}
+	} };
 	
 	static WRITE_HANDLER( sandscrp_soundlatch_w )
 	{

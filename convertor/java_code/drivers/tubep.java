@@ -271,7 +271,7 @@ public class tubep
 	/****************************** Graph CPU ************************************/
 	
 	
-	static READ_HANDLER( tubep_g_fd4a_r )
+	public static ReadHandlerPtr tubep_g_fd4a_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		if (offset==0)
 			return 0x00;
@@ -284,7 +284,7 @@ public class tubep
 	//if value was OK, then it copies part of the shared ram to that value address
 	
 		return 0x00;
-	}
+	} };
 	
 	public static Memory_ReadAddress tubep_g_readmem[]={
 		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
@@ -376,7 +376,7 @@ public class tubep
 	/****************************** Sound CPU ************************************/
 	
 	
-	static READ_HANDLER( tubep_soundlatch_r )
+	public static ReadHandlerPtr tubep_soundlatch_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 	 	int res;
 	
@@ -386,13 +386,13 @@ public class tubep
 		/*logerror("SOUND COMM READ %2x\n",res);*/
 	
 		return res;
-	}
+	} };
 	
-	static READ_HANDLER( tubep_sound_irq_ack )
+	public static ReadHandlerPtr tubep_sound_irq_ack  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		cpu_set_irq_line(2, 0, CLEAR_LINE);
 		return 0;
-	}
+	} };
 	
 	static WRITE_HANDLER( tubep_sound_unknown )
 	{
@@ -440,7 +440,7 @@ public class tubep
 		new IO_WritePort(MEMPORT_MARKER, 0)
 	};
 	
-	static READ_HANDLER( rjammer_soundlatch_r )
+	public static ReadHandlerPtr rjammer_soundlatch_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 	 	int res;
 	
@@ -452,7 +452,7 @@ public class tubep
 	
 	
 		return res;
-	}
+	} };
 	
 	public static IO_ReadPort rjammer_sound_readport[]={
 		new IO_ReadPort(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_IO | MEMPORT_WIDTH_8),

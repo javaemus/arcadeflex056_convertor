@@ -244,11 +244,11 @@ public class armedf
 		new Memory_WriteAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static READ_HANDLER( soundlatch_clear_r )
+	public static ReadHandlerPtr soundlatch_clear_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		soundlatch_clear_w(0,0);
 		return 0;
-	}
+	} };
 	
 	public static IO_ReadPort readport[]={
 		new IO_ReadPort(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_IO | MEMPORT_WIDTH_8),

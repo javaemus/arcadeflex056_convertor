@@ -429,10 +429,10 @@ public class hal21
 	static int snk_soundcommand = 0;
 	static unsigned char *shared_ram, *shared_auxram;
 	
-	static READ_HANDLER( shared_auxram_r ){ return shared_auxram[offset]; }
+	public static ReadHandlerPtr shared_auxram_r  = new ReadHandlerPtr() { public int handler(int offset){ return shared_auxram[offset]; } };
 	static WRITE_HANDLER( shared_auxram_w ){ shared_auxram[offset] = data; }
 	
-	static READ_HANDLER( shared_ram_r ){ return shared_ram[offset]; }
+	public static ReadHandlerPtr shared_ram_r  = new ReadHandlerPtr() { public int handler(int offset){ return shared_ram[offset]; } };
 	static WRITE_HANDLER( shared_ram_w ){ shared_ram[offset] = data; }
 	
 	static int CPUA_latch = 0;
@@ -448,7 +448,7 @@ public class hal21
 		}
 	}
 	
-	static READ_HANDLER( CPUA_int_trigger_r ){
+	public static ReadHandlerPtr CPUA_int_trigger_r  = new ReadHandlerPtr() { public int handler(int offset){
 		if( CPUA_latch&SNK_NMI_ENABLE ){
 			cpu_cause_interrupt( 0, Z80_NMI_INT );
 			CPUA_latch = 0;
@@ -457,7 +457,7 @@ public class hal21
 			CPUA_latch |= SNK_NMI_PENDING;
 		}
 		return 0xff;
-	}
+	} };
 	
 	static WRITE_HANDLER( CPUB_int_enable_w ){
 		if( CPUB_latch & SNK_NMI_PENDING ){
@@ -469,7 +469,7 @@ public class hal21
 		}
 	}
 	
-	static READ_HANDLER( CPUB_int_trigger_r ){
+	public static ReadHandlerPtr CPUB_int_trigger_r  = new ReadHandlerPtr() { public int handler(int offset){
 		if( CPUB_latch&SNK_NMI_ENABLE ){
 			cpu_cause_interrupt( 1, Z80_NMI_INT );
 			CPUB_latch = 0;
@@ -478,7 +478,7 @@ public class hal21
 			CPUB_latch |= SNK_NMI_PENDING;
 		}
 		return 0xff;
-	}
+	} };
 	
 	static WRITE_HANDLER( snk_soundcommand_w ){
 		snk_soundcommand = data;
@@ -486,12 +486,12 @@ public class hal21
 	//	cpu_cause_interrupt(2, 0xff); old ASO
 	}
 	
-	static READ_HANDLER( snk_soundcommand_r )
+	public static ReadHandlerPtr snk_soundcommand_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		int val = snk_soundcommand;
 		snk_soundcommand = 0;
 		return val;
-	}
+	} };
 	
 	/**************************************************************************/
 	

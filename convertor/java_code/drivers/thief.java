@@ -146,7 +146,7 @@ public class thief
 		}
 	}
 	
-	static READ_HANDLER( thief_io_r )
+	public static ReadHandlerPtr thief_io_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		switch( thief_input_select )
 		{
@@ -156,7 +156,7 @@ public class thief
 			case 0x08: return readinputport(3); /* inp#2 */
 		}
 		return 0x00;
-	}
+	} };
 	
 	public static Memory_ReadAddress sharkatt_readmem[]={
 		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),

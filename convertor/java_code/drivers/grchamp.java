@@ -252,10 +252,10 @@ public class grchamp
 	{
 		shareram[offset] = data;
 	}
-	static READ_HANDLER( shareram_r )
+	public static ReadHandlerPtr shareram_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return shareram[offset];
-	}
+	} };
 	
 	public static Memory_ReadAddress readmem[]={
 		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),

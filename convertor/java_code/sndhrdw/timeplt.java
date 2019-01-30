@@ -19,7 +19,6 @@ package sndhrdw;
 public class timeplt
 {
 	
-	static READ_HANDLER( timeplt_portB_r );
 	static WRITE_HANDLER( timeplt_filter_w );
 	
 	MEMORY_READ_START( timeplt_sound_readmem )
@@ -76,7 +75,7 @@ public class timeplt
 		0x00, 0x10, 0x20, 0x30, 0x40, 0x90, 0xa0, 0xb0, 0xa0, 0xd0
 	};
 	
-	static READ_HANDLER( timeplt_portB_r )
+	public static ReadHandlerPtr timeplt_portB_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		/* need to protect from totalcycles overflow */
 		static int last_totalcycles = 0;
@@ -92,7 +91,7 @@ public class timeplt
 		last_totalcycles = current_totalcycles;
 	
 		return timeplt_timer[clock/512];
-	}
+	} };
 	
 	
 	static void filter_w(int chip, int channel, int data)

@@ -88,17 +88,17 @@ public class ddragon
 		cpu_cause_interrupt( 0, M6809_INT_IRQ );
 	}
 	
-	static READ_HANDLER( port4_r )
+	public static ReadHandlerPtr port4_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		int port = readinputport( 4 );
 	
 		return port | dd_sub_cpu_busy;
-	}
+	} };
 	
-	static READ_HANDLER( ddragon_spriteram_r )
+	public static ReadHandlerPtr ddragon_spriteram_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return ddragon_spriteram[offset];
-	}
+	} };
 	
 	static WRITE_HANDLER( ddragon_spriteram_w )
 	{
@@ -163,10 +163,10 @@ public class ddragon
 		}
 	}
 	
-	static READ_HANDLER( dd_adpcm_status_r )
+	public static ReadHandlerPtr dd_adpcm_status_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return adpcm_idle[0] + (adpcm_idle[1] << 1);
-	}
+	} };
 	
 	
 	

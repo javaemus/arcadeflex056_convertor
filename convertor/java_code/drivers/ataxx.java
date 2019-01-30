@@ -177,10 +177,10 @@ public class ataxx
 	 *
 	 *************************************/
 	
-	static READ_HANDLER( ataxx_trackball_r )
+	public static ReadHandlerPtr ataxx_trackball_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return dial_compute_value(readinputport(3 + offset), offset);
-	}
+	} };
 	
 	
 	
@@ -190,12 +190,12 @@ public class ataxx
 	 *
 	 *************************************/
 	
-	static READ_HANDLER( indyheat_wheel_r )
+	public static ReadHandlerPtr indyheat_wheel_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return dial_compute_value(readinputport(3 + offset), offset);
-	}
+	} };
 	
-	static READ_HANDLER( indyheat_analog_r )
+	public static ReadHandlerPtr indyheat_analog_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		switch (offset)
 		{
@@ -213,7 +213,7 @@ public class ataxx
 				break;
 		}
 		return 0xff;
-	}
+	} };
 	
 	static WRITE_HANDLER( indyheat_analog_w )
 	{
@@ -452,7 +452,7 @@ public class ataxx
 	 *
 	 *************************************/
 	
-	static READ_HANDLER( master_input_r )
+	public static ReadHandlerPtr master_input_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		int result = 0xff;
 	
@@ -473,7 +473,7 @@ public class ataxx
 				break;
 		}
 		return result;
-	}
+	} };
 	
 	
 	static WRITE_HANDLER( master_output_w )
@@ -514,12 +514,12 @@ public class ataxx
 	}
 	
 	
-	static READ_HANDLER( eeprom_r )
+	public static ReadHandlerPtr eeprom_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		int port = readinputport(2);
 		if (LOG_EEPROM) logerror("%04X:EE read\n", cpu_getpreviouspc());
 		return (port & ~0x01) | EEPROM_read_bit();
-	}
+	} };
 	
 	
 	static WRITE_HANDLER( eeprom_w )
@@ -570,7 +570,7 @@ public class ataxx
 	}
 	
 	
-	static READ_HANDLER( paletteram_and_misc_r )
+	public static ReadHandlerPtr paletteram_and_misc_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		if (wcol_enable)
 			return paletteram_r(offset);
@@ -588,7 +588,7 @@ public class ataxx
 		}
 		else
 			return extra_tram[offset];
-	}
+	} };
 	
 	
 	
@@ -629,11 +629,11 @@ public class ataxx
 	 *
 	 *************************************/
 	
-	static READ_HANDLER( raster_r )
+	public static ReadHandlerPtr raster_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		int scanline = cpu_getscanline();
 		return (scanline < 255) ? scanline : 255;
-	}
+	} };
 	
 	
 	

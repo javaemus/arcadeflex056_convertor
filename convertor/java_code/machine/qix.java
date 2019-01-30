@@ -28,7 +28,6 @@ public class qix
 	
 	
 	/* Prototypes */
-	static READ_HANDLER( qixmcu_coin_r );
 	static WRITE_HANDLER( qixmcu_coinctrl_w );
 	static WRITE_HANDLER( qixmcu_coin_w );
 	
@@ -46,8 +45,6 @@ public class qix
 	static WRITE_HANDLER( slither_76489_0_w );
 	static WRITE_HANDLER( slither_76489_1_w );
 	
-	static READ_HANDLER( slither_trak_lr_r );
-	static READ_HANDLER( slither_trak_ud_r );
 	
 	
 	
@@ -647,14 +644,14 @@ public class qix
 	 *
 	 *************************************/
 	
-	static READ_HANDLER( slither_trak_lr_r )
+	public static ReadHandlerPtr slither_trak_lr_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return readinputport(qix_cocktail_flip ? 6 : 4);
-	}
+	} };
 	
 	
-	static READ_HANDLER( slither_trak_ud_r )
+	public static ReadHandlerPtr slither_trak_ud_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return readinputport(qix_cocktail_flip ? 5 : 3);
-	}
+	} };
 }

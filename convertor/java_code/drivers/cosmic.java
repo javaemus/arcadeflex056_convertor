@@ -360,15 +360,15 @@ public class cosmic
 		return (input_port_0_r(0) & 0xf0) | pixel_clock;
 	}
 	
-	static READ_HANDLER( magspot2_coinage_dip_r )
+	public static ReadHandlerPtr magspot2_coinage_dip_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return (input_port_5_r(0) & (1 << (7 - offset))) ? 0 : 1;
-	}
+	} };
 	
 	
 	/* Has 8 way joystick, remap combinations to missing directions */
 	
-	static READ_HANDLER( nomnlnd_port_r )
+	public static ReadHandlerPtr nomnlnd_port_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		int control;
 	    int fire = input_port_3_r(0);
@@ -390,7 +390,7 @@ public class cosmic
 	    if ((control & 0xa0) == 0 ) return 0xbf;    /* Up & Right */
 	
 	    return control;
-	}
+	} };
 	
 	
 	#if COSMICG_USES_TMS9980
@@ -411,10 +411,10 @@ public class cosmic
 	    cosmica_videoram_w(offset + 1, data & 0xff);
 	}
 	
-	static READ_HANDLER( cosmicg_videoram_r )
+	public static ReadHandlerPtr cosmicg_videoram_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return (videoram[offset] << 8) | videoram[offset+1];
-	}
+	} };
 	
 	
 	#define COSMICG_ROM_LOAD ROM_LOAD16_WORD

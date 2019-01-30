@@ -430,7 +430,7 @@ public class balsente
 	}
 	
 	
-	static READ_HANDLER( random_num_r )
+	public static ReadHandlerPtr random_num_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		unsigned int cc;
 	
@@ -440,7 +440,7 @@ public class balsente
 		/* 12.5 = 8 + 4 + 0.5 */
 		cc = (cc << 3) + (cc << 2) + (cc >> 1);
 		return rand17[cc & POLY17_SIZE];
-	}
+	} };
 	
 	
 	
@@ -608,7 +608,7 @@ public class balsente
 	 *
 	 *************************************/
 	
-	static READ_HANDLER( m6850_r )
+	public static ReadHandlerPtr m6850_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		int result;
 	
@@ -629,7 +629,7 @@ public class balsente
 		}
 	
 		return result;
-	}
+	} };
 	
 	
 	static void m6850_data_ready_callback(int param)
@@ -677,7 +677,7 @@ public class balsente
 	 *
 	 *************************************/
 	
-	static READ_HANDLER( m6850_sound_r )
+	public static ReadHandlerPtr m6850_sound_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		int result;
 	
@@ -698,7 +698,7 @@ public class balsente
 		}
 	
 		return result;
-	}
+	} };
 	
 	
 	static WRITE_HANDLER( m6850_sound_w )
@@ -774,11 +774,11 @@ public class balsente
 	}
 	
 	
-	static READ_HANDLER( adc_data_r )
+	public static ReadHandlerPtr adc_data_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		/* just return the last value read */
 		return adc_value;
-	}
+	} };
 	
 	
 	static WRITE_HANDLER( adc_select_w )
@@ -912,7 +912,7 @@ public class balsente
 	 *
 	 *************************************/
 	
-	static READ_HANDLER( counter_8253_r )
+	public static ReadHandlerPtr counter_8253_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		int which;
 	
@@ -943,7 +943,7 @@ public class balsente
 				break;
 		}
 		return 0;
-	}
+	} };
 	
 	
 	static WRITE_HANDLER( counter_8253_w )
@@ -1087,7 +1087,7 @@ public class balsente
 	 *
 	 *************************************/
 	
-	static READ_HANDLER( counter_state_r )
+	public static ReadHandlerPtr counter_state_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		/* bit D0 is the inverse of the flip-flop state */
 		int result = !counter_0_ff;
@@ -1096,7 +1096,7 @@ public class balsente
 		if (counter[0].out) result |= 0x02;
 	
 		return result;
-	}
+	} };
 	
 	
 	static WRITE_HANDLER( counter_control_w )
@@ -1151,10 +1151,10 @@ public class balsente
 	 *
 	 *************************************/
 	
-	static READ_HANDLER( nstocker_port2_r )
+	public static ReadHandlerPtr nstocker_port2_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return (readinputport(2) & 0xf0) | nstocker_bits;
-	}
+	} };
 	
 	
 	static WRITE_HANDLER( spiker_expand_w )
@@ -1173,7 +1173,7 @@ public class balsente
 	}
 	
 	
-	static READ_HANDLER( spiker_expand_r )
+	public static ReadHandlerPtr spiker_expand_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		UINT8 left, right;
 	
@@ -1189,7 +1189,7 @@ public class balsente
 	
 		/* return the combined result */
 		return (left & 0xf0) | (right & 0x0f);
-	}
+	} };
 	
 	
 	

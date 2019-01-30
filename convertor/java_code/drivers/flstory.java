@@ -49,7 +49,7 @@ public class flstory
 	logerror("sound command %02x\n",data);
 	}
 	
-	static READ_HANDLER( flstory_d401_r )
+	public static ReadHandlerPtr flstory_d401_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 	/* writing $ef or $06 to $d400 makes bit 0 of d401 go hi */
 		/* it looks like writing $ef to $d400 is meant to eventually
@@ -64,7 +64,7 @@ public class flstory
 			return 0x01;
 		else
 			return 0x03;
-	}
+	} };
 	
 	
 	

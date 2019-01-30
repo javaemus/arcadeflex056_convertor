@@ -316,7 +316,6 @@ public class leland
 	
 	static void set_dac_frequency(int which, int frequency);
 	
-	static READ_HANDLER( peripheral_r );
 	static WRITE_HANDLER( peripheral_w );
 	
 	
@@ -1098,7 +1097,7 @@ public class leland
 	 *
 	 *************************************/
 	
-	static READ_HANDLER( i186_internal_port_r )
+	public static ReadHandlerPtr i186_internal_port_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		int shift = 8 * (offset & 1);
 		int temp, which;
@@ -1273,7 +1272,7 @@ public class leland
 				break;
 		}
 		return 0x00;
-	}
+	} };
 	
 	
 	
@@ -1552,7 +1551,7 @@ public class leland
 	}
 	
 	
-	static READ_HANDLER( pit8254_r )
+	public static ReadHandlerPtr pit8254_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		struct counter_state *ctr;
 		int which = offset / 0x80;
@@ -1591,7 +1590,7 @@ public class leland
 				break;
 		}
 		return 0;
-	}
+	} };
 	
 	
 	static WRITE_HANDLER( pit8254_w )
@@ -1759,7 +1758,7 @@ public class leland
 	}
 	
 	
-	static READ_HANDLER( main_to_sound_comm_r )
+	public static ReadHandlerPtr main_to_sound_comm_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		if (!(offset & 1))
 		{
@@ -1771,7 +1770,7 @@ public class leland
 			if (LOG_COMM) logerror("%05X:Read sound command latch hi = %02X\n", cpu_get_pc(), sound_command[1]);
 			return sound_command[1];
 		}
-	}
+	} };
 	
 	
 	
@@ -2045,7 +2044,7 @@ public class leland
 	 *
 	 *************************************/
 	
-	static READ_HANDLER( peripheral_r )
+	public static ReadHandlerPtr peripheral_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		int select = offset / 0x80;
 		offset &= 0x7f;
@@ -2108,7 +2107,7 @@ public class leland
 				break;
 		}
 		return 0xff;
-	}
+	} };
 	
 	
 	static WRITE_HANDLER( peripheral_w )

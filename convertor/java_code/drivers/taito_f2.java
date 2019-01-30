@@ -818,12 +818,12 @@ public class taito_f2
 	static int driveout_sound_latch = 0;
 	
 	
-	static READ_HANDLER( driveout_sound_command_r)
+	public static ReadHandlerPtr driveout_sound_command_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		cpu_set_irq_line(1,0,CLEAR_LINE);
 	//	logerror("sound IRQ OFF (sound command=%02x)\n",driveout_sound_latch);
 		return driveout_sound_latch;
-	}
+	} };
 	
 	static int oki_bank = 0;
 	

@@ -150,7 +150,7 @@ public class chinagat
 		cpu_cause_interrupt( 2, sound_irq );
 	}
 	
-	static READ_HANDLER( saiyugb1_mcu_command_r )
+	public static ReadHandlerPtr saiyugb1_mcu_command_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 	#if 0
 		if (saiyugb1_mcu_command == 0x78)
@@ -159,7 +159,7 @@ public class chinagat
 		}
 	#endif
 		return saiyugb1_mcu_command;
-	}
+	} };
 	
 	static WRITE_HANDLER( saiyugb1_mcu_command_w )
 	{
@@ -247,7 +247,7 @@ public class chinagat
 	#endif
 	}
 	
-	static READ_HANDLER( saiyugb1_m5205_irq_r )
+	public static ReadHandlerPtr saiyugb1_m5205_irq_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		if (adpcm_sound_irq)
 		{
@@ -255,7 +255,7 @@ public class chinagat
 			return 1;
 		}
 		return 0;
-	}
+	} };
 	static void saiyugb1_m5205_irq_w(int num)
 	{
 		adpcm_sound_irq = 1;

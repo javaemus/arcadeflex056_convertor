@@ -63,10 +63,10 @@ public class cps1
 			cps1_sound_fade_timer = data & 0xff;
 	}
 	
-	static READ_HANDLER( cps1_snd_fade_timer_r )
+	public static ReadHandlerPtr cps1_snd_fade_timer_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return cps1_sound_fade_timer;
-	}
+	} };
 	
 	static WRITE16_HANDLER( cps1_sound_command_w )
 	{

@@ -65,11 +65,8 @@ public class atarijsa
 	
 	static void update_all_volumes(void);
 	
-	static READ_HANDLER( jsa1_io_r );
 	static WRITE_HANDLER( jsa1_io_w );
-	static READ_HANDLER( jsa2_io_r );
 	static WRITE_HANDLER( jsa2_io_w );
-	static READ_HANDLER( jsa3_io_r );
 	static WRITE_HANDLER( jsa3_io_w );
 	
 	
@@ -170,7 +167,7 @@ public class atarijsa
 	 *
 	 *************************************/
 	
-	static READ_HANDLER( jsa1_io_r )
+	public static ReadHandlerPtr jsa1_io_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		int result = 0xff;
 	
@@ -215,7 +212,7 @@ public class atarijsa
 		}
 	
 		return result;
-	}
+	} };
 	
 	
 	static WRITE_HANDLER( jsa1_io_w )
@@ -294,7 +291,7 @@ public class atarijsa
 	 *
 	 *************************************/
 	
-	static READ_HANDLER( jsa2_io_r )
+	public static ReadHandlerPtr jsa2_io_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		int result = 0xff;
 	
@@ -341,7 +338,7 @@ public class atarijsa
 		}
 	
 		return result;
-	}
+	} };
 	
 	
 	static WRITE_HANDLER( jsa2_io_w )
@@ -415,7 +412,7 @@ public class atarijsa
 	 *
 	 *************************************/
 	
-	static READ_HANDLER( jsa3_io_r )
+	public static ReadHandlerPtr jsa3_io_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		int result = 0xff;
 	
@@ -460,7 +457,7 @@ public class atarijsa
 		}
 	
 		return result;
-	}
+	} };
 	
 	
 	static WRITE_HANDLER( jsa3_io_w )
@@ -546,7 +543,7 @@ public class atarijsa
 	 *
 	 *************************************/
 	
-	static READ_HANDLER( jsa3s_io_r )
+	public static ReadHandlerPtr jsa3s_io_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		int result = 0xff;
 	
@@ -596,7 +593,7 @@ public class atarijsa
 		}
 	
 		return result;
-	}
+	} };
 	
 	
 	static WRITE_HANDLER( jsa3s_io_w )

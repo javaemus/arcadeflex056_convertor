@@ -112,7 +112,7 @@ public class junofrst
 	static int i8039_irqenable;
 	static int i8039_status;
 	
-	static READ_HANDLER( junofrst_portA_r )
+	public static ReadHandlerPtr junofrst_portA_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		int timer;
 	
@@ -126,7 +126,7 @@ public class junofrst
 		/* low three bits come from the 8039 */
 	
 		return (timer << 4) | i8039_status;
-	}
+	} };
 	
 	static WRITE_HANDLER( junofrst_portB_w )
 	{

@@ -215,11 +215,11 @@ public class dkong
 	READ_HANDLER( hunchbks_mirror_r );
 	WRITE_HANDLER( hunchbks_mirror_w );
 	
-	static READ_HANDLER( dkong_sh_p1_r )   { return p[1]; }
-	static READ_HANDLER( dkong_sh_p2_r )   { return p[2]; }
-	static READ_HANDLER( dkong_sh_t0_r )   { return t[0]; }
-	static READ_HANDLER( dkong_sh_t1_r )   { return t[1]; }
-	static READ_HANDLER( dkong_sh_tune_r )
+	public static ReadHandlerPtr dkong_sh_p1_r  = new ReadHandlerPtr() { public int handler(int offset)   { return p[1]; } };
+	public static ReadHandlerPtr dkong_sh_p2_r  = new ReadHandlerPtr() { public int handler(int offset)   { return p[2]; } };
+	public static ReadHandlerPtr dkong_sh_t0_r  = new ReadHandlerPtr() { public int handler(int offset)   { return t[0]; } };
+	public static ReadHandlerPtr dkong_sh_t1_r  = new ReadHandlerPtr() { public int handler(int offset)   { return t[1]; } };
+	public static ReadHandlerPtr dkong_sh_tune_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		unsigned char *SND = memory_region(REGION_CPU2);
 		if (page & 0x40)
@@ -230,7 +230,7 @@ public class dkong
 			}
 		}
 		return (SND[2048+(page & 7)*256+offset]);
-	}
+	} };
 	
 	
 	static double envelope,tt;
@@ -260,10 +260,10 @@ public class dkong
 	}
 	
 	
-	static READ_HANDLER( dkong_in2_r )
+	public static ReadHandlerPtr dkong_in2_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return input_port_2_r(offset) | (mcustatus << 6);
-	}
+	} };
 	
 	
 	public static Memory_ReadAddress readmem[]={

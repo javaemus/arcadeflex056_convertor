@@ -46,12 +46,12 @@ public class circus
 	
 	static int circus_interrupt;
 	
-	static READ_HANDLER( ripcord_IN2_r )
+	public static ReadHandlerPtr ripcord_IN2_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		circus_interrupt ++;
 		logerror("circus_int: %02x\n", circus_interrupt);
 		return readinputport (2);
-	}
+	} };
 	
 	public static Memory_ReadAddress readmem[]={
 		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),

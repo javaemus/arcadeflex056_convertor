@@ -197,12 +197,12 @@ public class rpunch
 	}
 	
 	
-	static READ_HANDLER( sound_command_r )
+	public static ReadHandlerPtr sound_command_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		sound_busy = 0;
 		cpu_set_irq_line(1, 0, (ym2151_irq | sound_busy) ? ASSERT_LINE : CLEAR_LINE);
 		return sound_data;
-	}
+	} };
 	
 	
 	static READ16_HANDLER( sound_busy_r )

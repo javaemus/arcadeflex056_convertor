@@ -215,22 +215,22 @@ public class galaxian
 	static int kingball_speech_dip;
 	
 	/* Hack? If $b003 is high, we'll check our "fake" speech dipswitch (marked as SLAM) */
-	static READ_HANDLER( kingball_IN0_r )
+	public static ReadHandlerPtr kingball_IN0_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		if (kingball_speech_dip)
 			return (readinputport(0) & ~0x40) | ((readinputport(3) & 0x01) << 6);
 		else
 			return readinputport(0);
-	}
+	} };
 	
-	static READ_HANDLER( kingball_IN1_r )
+	public static ReadHandlerPtr kingball_IN1_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		/* bit 5 is the NOISE line from the sound circuit.  The code just verifies
 		   that it's working, doesn't actually use return value, so we can just use
 		   rand() */
 	
 		return (readinputport(1) & ~0x20) | (rand() & 0x20);
-	}
+	} };
 	
 	static WRITE_HANDLER( kingball_speech_dip_w )
 	{
@@ -251,7 +251,7 @@ public class galaxian
 	}
 	
 	
-	static READ_HANDLER( jumpbug_protection_r )
+	public static ReadHandlerPtr jumpbug_protection_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		switch (offset)
 		{
@@ -265,9 +265,9 @@ public class galaxian
 		}
 	
 		return 0;
-	}
+	} };
 	
-	static READ_HANDLER( checkmaj_protection_r )
+	public static ReadHandlerPtr checkmaj_protection_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		switch (cpu_get_pc())
 		{
@@ -282,7 +282,7 @@ public class galaxian
 		}
 	
 		return 0;
-	}
+	} };
 	
 	/* Send sound data to the sound cpu and cause an nmi */
 	static WRITE_HANDLER( checkman_sound_command_w )
