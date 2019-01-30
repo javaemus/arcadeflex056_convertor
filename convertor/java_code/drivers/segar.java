@@ -193,12 +193,12 @@ public class segar
 	
 	public static Memory_WriteAddress writemem[]={
 		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
-		new Memory_WriteAddress( 0x0000, 0xffff, segar_w, &segar_mem ),
-		new Memory_WriteAddress( 0xe000, 0xe3ff, MWA_RAM, &videoram, &videoram_size ),    /* handled by */
-		new Memory_WriteAddress( 0xe800, 0xefff, MWA_RAM, &segar_characterram ),    	/* the above, */
-		new Memory_WriteAddress( 0xf000, 0xf03f, MWA_RAM, &segar_mem_colortable ),     /* here only */
-		new Memory_WriteAddress( 0xf040, 0xf07f, MWA_RAM, &segar_mem_bcolortable ),    /* to initialize */
-		new Memory_WriteAddress( 0xf800, 0xffff, MWA_RAM, &segar_characterram2 ),    	/* the pointers */
+		new Memory_WriteAddress( 0x0000, 0xffff, segar_w, segar_mem ),
+		new Memory_WriteAddress( 0xe000, 0xe3ff, MWA_RAM, videoram, videoram_size ),    /* handled by */
+		new Memory_WriteAddress( 0xe800, 0xefff, MWA_RAM, segar_characterram ),    	/* the above, */
+		new Memory_WriteAddress( 0xf000, 0xf03f, MWA_RAM, segar_mem_colortable ),     /* here only */
+		new Memory_WriteAddress( 0xf040, 0xf07f, MWA_RAM, segar_mem_bcolortable ),    /* to initialize */
+		new Memory_WriteAddress( 0xf800, 0xffff, MWA_RAM, segar_characterram2 ),    	/* the pointers */
 		new Memory_WriteAddress(MEMPORT_MARKER, 0)
 	};
 	
@@ -220,13 +220,13 @@ public class segar
 		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
 		new Memory_WriteAddress( 0x0000, 0xc7ff, MWA_ROM ),
 		new Memory_WriteAddress( 0xc800, 0xcfff, MWA_RAM ),
-		new Memory_WriteAddress( 0xe000, 0xe3ff, videoram_w, &videoram, &videoram_size ),
+		new Memory_WriteAddress( 0xe000, 0xe3ff, videoram_w, videoram, videoram_size ),
 		new Memory_WriteAddress( 0xe400, 0xe7ff, MWA_RAM ),
-		new Memory_WriteAddress( 0xe800, 0xefff, segar_characterram_w, &segar_characterram ),
-		new Memory_WriteAddress( 0xf000, 0xf03f, segar_bcolortable_w, &segar_mem_bcolortable ),    /* NOTE, the two color tables are flipped! */
-		new Memory_WriteAddress( 0xf040, 0xf07f, segar_colortable_w, &segar_mem_colortable ),
+		new Memory_WriteAddress( 0xe800, 0xefff, segar_characterram_w, segar_characterram ),
+		new Memory_WriteAddress( 0xf000, 0xf03f, segar_bcolortable_w, segar_mem_bcolortable ),    /* NOTE, the two color tables are flipped! */
+		new Memory_WriteAddress( 0xf040, 0xf07f, segar_colortable_w, segar_mem_colortable ),
 		new Memory_WriteAddress( 0xf080, 0xf7ff, MWA_RAM ),
-		new Memory_WriteAddress( 0xf800, 0xffff, segar_characterram2_w, &segar_characterram2 ),
+		new Memory_WriteAddress( 0xf800, 0xffff, segar_characterram2_w, segar_characterram2 ),
 		new Memory_WriteAddress(MEMPORT_MARKER, 0)
 	};
 	

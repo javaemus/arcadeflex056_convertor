@@ -78,15 +78,15 @@ public class kyugo
 		public static Memory_WriteAddress name##_writemem[]={
 		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),								\
 			new Memory_WriteAddress( 0x0000, 0x7fff, MWA_ROM ),												\
-			new Memory_WriteAddress( 0x8000, 0x87ff, videoram_w, &videoram, &videoram_size ),					\
-			new Memory_WriteAddress( 0x8800, 0x8fff, colorram_w, &colorram ),									\
-			new Memory_WriteAddress( 0x9000, 0x97ff, MWA_RAM, &kyugo_videoram, &kyugo_videoram_size ),			\
-			new Memory_WriteAddress( 0x9800, 0x9fff, MWA_RAM, &spriteram_2 ),	/* 4 bits wide */				\
-			new Memory_WriteAddress( 0xa000, 0xa7ff, MWA_RAM, &spriteram, &spriteram_size ),					\
-			new Memory_WriteAddress( 0xa800, 0xa800, MWA_RAM, &kyugo_back_scrollY_lo ), /* back scroll Y */	\
+			new Memory_WriteAddress( 0x8000, 0x87ff, videoram_w, videoram, videoram_size ),					\
+			new Memory_WriteAddress( 0x8800, 0x8fff, colorram_w, colorram ),									\
+			new Memory_WriteAddress( 0x9000, 0x97ff, MWA_RAM, kyugo_videoram, kyugo_videoram_size ),			\
+			new Memory_WriteAddress( 0x9800, 0x9fff, MWA_RAM, spriteram_2 ),	/* 4 bits wide */				\
+			new Memory_WriteAddress( 0xa000, 0xa7ff, MWA_RAM, spriteram, spriteram_size ),					\
+			new Memory_WriteAddress( 0xa800, 0xa800, MWA_RAM, kyugo_back_scrollY_lo ), /* back scroll Y */	\
 			new Memory_WriteAddress( 0xb000, 0xb000, kyugo_gfxctrl_w ), /* back scroll MSB + other stuff */	\
-			new Memory_WriteAddress( 0xb800, 0xb800, MWA_RAM, &kyugo_back_scrollX ), /* back scroll X */		\
-			new Memory_WriteAddress( shared, shared+0x7ff, shared_ram_w, &shared_ram ), /* shared RAM */		\
+			new Memory_WriteAddress( 0xb800, 0xb800, MWA_RAM, kyugo_back_scrollX ), /* back scroll X */		\
+			new Memory_WriteAddress( shared, shared+0x7ff, shared_ram_w, shared_ram ), /* shared RAM */		\
 			new Memory_WriteAddress( 0xf800, 0xffff, shared_ram_w ), /* shared mirror always here */			\
 			new Memory_WriteAddress( watchdog, watchdog, watchdog_reset_w ),									\
 			new Memory_WriteAddress(MEMPORT_MARKER, 0)

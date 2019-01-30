@@ -74,26 +74,26 @@ public class momoko
 		new Memory_WriteAddress( 0x0000, 0xbfff, MWA_ROM ),
 		new Memory_WriteAddress( 0xc000, 0xcfff, MWA_RAM ),
 	
-		new Memory_WriteAddress( 0xd064, 0xd0ff, MWA_RAM, &spriteram, &spriteram_size ),
+		new Memory_WriteAddress( 0xd064, 0xd0ff, MWA_RAM, spriteram, spriteram_size ),
 	
 		new Memory_WriteAddress( 0xd400, 0xd400, MWA_NOP ), /* interrupt ack? */
 		new Memory_WriteAddress( 0xd402, 0xd402, momoko_flipscreen_w ),
 		new Memory_WriteAddress( 0xd404, 0xd404, watchdog_reset_w ),
 		new Memory_WriteAddress( 0xd406, 0xd406, soundlatch_w ),
 	
-		new Memory_WriteAddress( 0xd800, 0xdbff, paletteram_xxxxRRRRGGGGBBBB_swap_w, &paletteram ),
+		new Memory_WriteAddress( 0xd800, 0xdbff, paletteram_xxxxRRRRGGGGBBBB_swap_w, paletteram ),
 	
 		new Memory_WriteAddress( 0xdc00, 0xdc00, momoko_fg_scrolly_w ),
 		new Memory_WriteAddress( 0xdc01, 0xdc01, momoko_fg_scrollx_w ),
 		new Memory_WriteAddress( 0xdc02, 0xdc02, momoko_fg_select_w ),
 	
-		new Memory_WriteAddress( 0xe000, 0xe3ff, videoram_w, &videoram, &videoram_size ),
+		new Memory_WriteAddress( 0xe000, 0xe3ff, videoram_w, videoram, videoram_size ),
 	
 		new Memory_WriteAddress( 0xe800, 0xe800, momoko_text_scrolly_w ),
 		new Memory_WriteAddress( 0xe801, 0xe801, momoko_text_mode_w ),
 	
-		new Memory_WriteAddress( 0xf000, 0xf001, momoko_bg_scrolly_w, &momoko_bg_scrolly ),
-		new Memory_WriteAddress( 0xf002, 0xf003, momoko_bg_scrollx_w, &momoko_bg_scrollx ),
+		new Memory_WriteAddress( 0xf000, 0xf001, momoko_bg_scrolly_w, momoko_bg_scrolly ),
+		new Memory_WriteAddress( 0xf002, 0xf003, momoko_bg_scrollx_w, momoko_bg_scrollx ),
 		new Memory_WriteAddress( 0xf004, 0xf004, momoko_bg_read_bank_w ),
 		new Memory_WriteAddress( 0xf006, 0xf006, momoko_bg_select_w ),
 		new Memory_WriteAddress( 0xf007, 0xf007, momoko_bg_priority_w ),

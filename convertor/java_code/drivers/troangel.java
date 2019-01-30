@@ -38,10 +38,10 @@ public class troangel
 	public static Memory_WriteAddress troangel_writemem[]={
 		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
 		new Memory_WriteAddress( 0x0000, 0x7fff, MWA_ROM ),
-		new Memory_WriteAddress( 0x8000, 0x87ff, videoram_w, &videoram, &videoram_size ),
+		new Memory_WriteAddress( 0x8000, 0x87ff, videoram_w, videoram, videoram_size ),
 	//	new Memory_WriteAddress( 0x8800, 0x8fff, MWA_RAM ),
-		new Memory_WriteAddress( 0x9000, 0x91ff, MWA_RAM, &troangel_scroll ),
-		new Memory_WriteAddress( 0xc820, 0xc8ff, MWA_RAM, &spriteram, &spriteram_size ),
+		new Memory_WriteAddress( 0x9000, 0x91ff, MWA_RAM, troangel_scroll ),
+		new Memory_WriteAddress( 0xc820, 0xc8ff, MWA_RAM, spriteram, spriteram_size ),
 		new Memory_WriteAddress( 0xd000, 0xd000, irem_sound_cmd_w ),
 		new Memory_WriteAddress( 0xd001, 0xd001, troangel_flipscreen_w ),	/* + coin counters */
 		new Memory_WriteAddress( 0xe000, 0xe7ff, MWA_RAM ),

@@ -140,7 +140,7 @@ public class dynax
 		new IO_WritePort( 0x04, 0x04, dynax_blit_addr0_w		),	// Source Address
 		new IO_WritePort( 0x05, 0x05, dynax_blit_addr1_w		),	//
 		new IO_WritePort( 0x06, 0x06, dynax_blit_addr2_w		),	//
-		new IO_WritePort( 0x07, 0x07, dynax_blit_scroll_w		),	// Layers Scroll X & Y
+		new IO_WritePort( 0x07, 0x07, dynax_blit_scroll_w		),	// Layers Scroll X  Y
 		new IO_WritePort( 0x10, 0x10, YM2203_control_port_0_w	),	// YM2203
 		new IO_WritePort( 0x11, 0x11, YM2203_write_port_0_w		),	//
 	//	new IO_WritePort( 0x12, 0x12, IOWP_NOP					),	// ?? CRT Controller ??

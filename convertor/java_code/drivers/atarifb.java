@@ -240,12 +240,12 @@ public class atarifb
 	public static Memory_WriteAddress writemem[]={
 		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
 		new Memory_WriteAddress( 0x0000, 0x01ff, MWA_RAM ),
-		new Memory_WriteAddress( 0x0200, 0x025f, atarifb_alphap1_vram_w, &atarifb_alphap1_vram, &atarifb_alphap1_vram_size ),
+		new Memory_WriteAddress( 0x0200, 0x025f, atarifb_alphap1_vram_w, atarifb_alphap1_vram, atarifb_alphap1_vram_size ),
 		new Memory_WriteAddress( 0x0260, 0x039f, MWA_RAM ),
-		new Memory_WriteAddress( 0x03a0, 0x03ff, atarifb_alphap2_vram_w, &atarifb_alphap2_vram, &atarifb_alphap2_vram_size ),
-		new Memory_WriteAddress( 0x1000, 0x13bf, videoram_w, &videoram, &videoram_size ),
-		new Memory_WriteAddress( 0x13c0, 0x13ff, MWA_RAM, &spriteram, &spriteram_size ),
-		new Memory_WriteAddress( 0x2000, 0x2000, atarifb_scroll_w, &atarifb_scroll_register ), /* OUT 0 */
+		new Memory_WriteAddress( 0x03a0, 0x03ff, atarifb_alphap2_vram_w, atarifb_alphap2_vram, atarifb_alphap2_vram_size ),
+		new Memory_WriteAddress( 0x1000, 0x13bf, videoram_w, videoram, videoram_size ),
+		new Memory_WriteAddress( 0x13c0, 0x13ff, MWA_RAM, spriteram, spriteram_size ),
+		new Memory_WriteAddress( 0x2000, 0x2000, atarifb_scroll_w, atarifb_scroll_register ), /* OUT 0 */
 		new Memory_WriteAddress( 0x2001, 0x2001, atarifb4_out1_w ), /* OUT 1 */
 		new Memory_WriteAddress( 0x2002, 0x2002, atarifb_out2_w ), /* OUT 2 */
 		new Memory_WriteAddress( 0x2003, 0x2003, atarifb_out3_w ), /* OUT 3 */
@@ -272,12 +272,12 @@ public class atarifb
 	public static Memory_WriteAddress atarifb4_writemem[]={
 		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
 		new Memory_WriteAddress( 0x0000, 0x01ff, MWA_RAM ),
-		new Memory_WriteAddress( 0x0200, 0x025f, atarifb_alphap1_vram_w, &atarifb_alphap1_vram, &atarifb_alphap1_vram_size ),
+		new Memory_WriteAddress( 0x0200, 0x025f, atarifb_alphap1_vram_w, atarifb_alphap1_vram, atarifb_alphap1_vram_size ),
 		new Memory_WriteAddress( 0x0260, 0x039f, MWA_RAM ),
-		new Memory_WriteAddress( 0x03a0, 0x03ff, atarifb_alphap2_vram_w, &atarifb_alphap2_vram, &atarifb_alphap2_vram_size ),
-		new Memory_WriteAddress( 0x1000, 0x13bf, videoram_w, &videoram, &videoram_size ),
-		new Memory_WriteAddress( 0x13c0, 0x13ff, MWA_RAM, &spriteram, &spriteram_size ),
-		new Memory_WriteAddress( 0x2000, 0x2000, atarifb_scroll_w, &atarifb_scroll_register ), /* OUT 0 */
+		new Memory_WriteAddress( 0x03a0, 0x03ff, atarifb_alphap2_vram_w, atarifb_alphap2_vram, atarifb_alphap2_vram_size ),
+		new Memory_WriteAddress( 0x1000, 0x13bf, videoram_w, videoram, videoram_size ),
+		new Memory_WriteAddress( 0x13c0, 0x13ff, MWA_RAM, spriteram, spriteram_size ),
+		new Memory_WriteAddress( 0x2000, 0x2000, atarifb_scroll_w, atarifb_scroll_register ), /* OUT 0 */
 		new Memory_WriteAddress( 0x2001, 0x2001, atarifb_out1_w ), /* OUT 1 */
 		new Memory_WriteAddress( 0x2002, 0x2002, atarifb_out2_w ), /* OUT 2 */
 		new Memory_WriteAddress( 0x2003, 0x2003, atarifb_out3_w ), /* OUT 3 */
@@ -303,12 +303,12 @@ public class atarifb
 	public static Memory_WriteAddress soccer_writemem[]={
 		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
 		new Memory_WriteAddress( 0x0000, 0x01ff, MWA_RAM ),
-		new Memory_WriteAddress( 0x0200, 0x025f, atarifb_alphap1_vram_w, &atarifb_alphap1_vram, &atarifb_alphap1_vram_size ),
+		new Memory_WriteAddress( 0x0200, 0x025f, atarifb_alphap1_vram_w, atarifb_alphap1_vram, atarifb_alphap1_vram_size ),
 		new Memory_WriteAddress( 0x0260, 0x039f, MWA_RAM ),
-		new Memory_WriteAddress( 0x03a0, 0x03ff, atarifb_alphap2_vram_w, &atarifb_alphap2_vram, &atarifb_alphap2_vram_size ),
-		new Memory_WriteAddress( 0x0800, 0x0bbf, videoram_w, &videoram, &videoram_size ),
-		new Memory_WriteAddress( 0x0bc0, 0x0bff, MWA_RAM, &spriteram, &spriteram_size ),
-		new Memory_WriteAddress( 0x1000, 0x1000, atarifb_scroll_w, &atarifb_scroll_register ), /* OUT 0 */
+		new Memory_WriteAddress( 0x03a0, 0x03ff, atarifb_alphap2_vram_w, atarifb_alphap2_vram, atarifb_alphap2_vram_size ),
+		new Memory_WriteAddress( 0x0800, 0x0bbf, videoram_w, videoram, videoram_size ),
+		new Memory_WriteAddress( 0x0bc0, 0x0bff, MWA_RAM, spriteram, spriteram_size ),
+		new Memory_WriteAddress( 0x1000, 0x1000, atarifb_scroll_w, atarifb_scroll_register ), /* OUT 0 */
 		new Memory_WriteAddress( 0x1001, 0x1001, soccer_out1_w ), /* OUT 1 */
 		new Memory_WriteAddress( 0x1002, 0x1002, soccer_out2_w ), /* OUT 2 */
 		new Memory_WriteAddress( 0x1004, 0x1004, MWA_NOP ), /* Interrupt Acknowledge */

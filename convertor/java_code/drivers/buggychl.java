@@ -189,8 +189,8 @@ public class buggychl
 		new Memory_WriteAddress( 0x8000, 0x87ff, MWA_RAM ), /* 6116 SRAM (36) */
 		new Memory_WriteAddress( 0x8800, 0x8fff, MWA_RAM ), /* 6116 SRAM (35) */
 		new Memory_WriteAddress( 0x9000, 0x9fff, buggychl_sprite_lookup_w ),
-		new Memory_WriteAddress( 0xa000, 0xbfff, buggychl_chargen_w, &buggychl_character_ram ),
-		new Memory_WriteAddress( 0xc800, 0xcfff, videoram_w, &videoram, &videoram_size ),
+		new Memory_WriteAddress( 0xa000, 0xbfff, buggychl_chargen_w, buggychl_character_ram ),
+		new Memory_WriteAddress( 0xc800, 0xcfff, videoram_w, videoram, videoram_size ),
 	//	new Memory_WriteAddress( 0xd000, 0xd000, horizon
 		{ 0xd100, 0xd100, buggychl_ctrl_w },
 		{ 0xd200, 0xd200, bankswitch_w },
@@ -200,13 +200,13 @@ public class buggychl
 		{ 0xd303, 0xd303, buggychl_sprite_lookup_bank_w },
 	//	{ 0xd304, 0xd307, sccon 1-4
 		{ 0xd400, 0xd400, buggychl_mcu_w },
-		{ 0xd500, 0xd57f, MWA_RAM, &spriteram, &spriteram_size },
+		{ 0xd500, 0xd57f, MWA_RAM, spriteram, spriteram_size },
 		{ 0xd610, 0xd610, sound_command_w },
-	//	{ 0xd613, 0xd613, reset sound cpu & sound chips
+	//	{ 0xd613, 0xd613, reset sound cpu  sound chips
 		{ 0xd618, 0xd618, MWA_NOP },	/* accelerator clear */
-		{ 0xd700, 0xd7ff, paletteram_xxxxRRRRGGGGBBBB_swap_w, &paletteram },
-		{ 0xd840, 0xd85f, MWA_RAM, &buggychl_scrollv },
-		{ 0xdb00, 0xdbff, MWA_RAM, &buggychl_scrollh },
+		{ 0xd700, 0xd7ff, paletteram_xxxxRRRRGGGGBBBB_swap_w, paletteram },
+		{ 0xd840, 0xd85f, MWA_RAM, buggychl_scrollv },
+		{ 0xdb00, 0xdbff, MWA_RAM, buggychl_scrollh },
 		{ 0xdc04, 0xdc04, MWA_RAM },	/* should be fg scroll */
 		{ 0xdc06, 0xdc06, buggychl_bg_scrollx_w },
 		new Memory_WriteAddress(MEMPORT_MARKER, 0)

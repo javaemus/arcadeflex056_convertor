@@ -100,7 +100,7 @@ public class strnskil
 	
 		new Memory_WriteAddress( 0xc000, 0xc7ff, MWA_RAM ),
 		new Memory_WriteAddress( 0xc800, 0xcfff, strnskil_sharedram_w ),
-		new Memory_WriteAddress( 0xd000, 0xd7ff, videoram_w, &videoram, &videoram_size ),
+		new Memory_WriteAddress( 0xd000, 0xd7ff, videoram_w, videoram, videoram_size ),
 	
 		new Memory_WriteAddress( 0xd808, 0xd808, strnskil_scrl_ctrl_w ),
 		new Memory_WriteAddress( 0xd809, 0xd809, MWA_NOP ), /* coin counter? */
@@ -122,8 +122,8 @@ public class strnskil
 	public static Memory_WriteAddress strnskil_writemem2[]={
 		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
 		new Memory_WriteAddress( 0x0000, 0x5fff, MWA_ROM ),
-		new Memory_WriteAddress( 0xc000, 0xc7ff, MWA_RAM, &spriteram, &spriteram_size ),
-		new Memory_WriteAddress( 0xc800, 0xcfff, MWA_RAM, &strnskil_sharedram ),
+		new Memory_WriteAddress( 0xc000, 0xc7ff, MWA_RAM, spriteram, spriteram_size ),
+		new Memory_WriteAddress( 0xc800, 0xcfff, MWA_RAM, strnskil_sharedram ),
 	
 		new Memory_WriteAddress( 0xd801, 0xd801, SN76496_0_w ),
 		new Memory_WriteAddress( 0xd802, 0xd802, SN76496_1_w ),

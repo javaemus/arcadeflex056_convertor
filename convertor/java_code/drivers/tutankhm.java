@@ -237,9 +237,9 @@ public class tutankhm
 	
 	public static Memory_WriteAddress writemem[]={
 		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
-		new Memory_WriteAddress( 0x0000, 0x7fff, tutankhm_videoram_w, &videoram, &videoram_size ),
-		new Memory_WriteAddress( 0x8000, 0x800f, paletteram_BBGGGRRR_w, &paletteram ),
-		new Memory_WriteAddress( 0x8100, 0x8100, MWA_RAM, &tutankhm_scrollx ),
+		new Memory_WriteAddress( 0x0000, 0x7fff, tutankhm_videoram_w, videoram, videoram_size ),
+		new Memory_WriteAddress( 0x8000, 0x800f, paletteram_BBGGGRRR_w, paletteram ),
+		new Memory_WriteAddress( 0x8100, 0x8100, MWA_RAM, tutankhm_scrollx ),
 		new Memory_WriteAddress( 0x8200, 0x8200, interrupt_enable_w ),
 		new Memory_WriteAddress( 0x8202, 0x8203, tutankhm_coin_counter_w ),
 		new Memory_WriteAddress( 0x8205, 0x8205, MWA_NOP ),	/* ??? */

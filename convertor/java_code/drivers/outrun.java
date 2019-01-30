@@ -771,7 +771,7 @@ public class outrun
 		new Memory_WriteAddress( 0x0000, 0x7fff, MWA_ROM ),
 		new Memory_WriteAddress( 0xf000, 0xf0ff, SegaPCM_w ),
 		new Memory_WriteAddress( 0xf100, 0xf7ff, MWA_NOP ),
-		new Memory_WriteAddress( 0xf800, 0xf807, sound2_shared_ram_w,&sound_shared_ram ),
+		new Memory_WriteAddress( 0xf800, 0xf807, sound2_shared_ram_w,sound_shared_ram ),
 		new Memory_WriteAddress( 0xf808, 0xffff, MWA_RAM ),
 		new Memory_WriteAddress(MEMPORT_MARKER, 0)
 	};
@@ -1176,7 +1176,7 @@ public class outrun
 		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
 		new Memory_WriteAddress( 0x0000, 0x7fff, MWA_ROM ),
 		new Memory_WriteAddress( 0xf000, 0xf7ff, SegaPCM_w ),
-		new Memory_WriteAddress( 0xf800, 0xf807, sound2_shared_ram_w,&sound_shared_ram ),
+		new Memory_WriteAddress( 0xf800, 0xf807, sound2_shared_ram_w,sound_shared_ram ),
 		new Memory_WriteAddress( 0xf808, 0xffff, MWA_RAM ),
 		new Memory_WriteAddress(MEMPORT_MARKER, 0)
 	};

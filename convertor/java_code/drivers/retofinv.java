@@ -137,17 +137,17 @@ public class retofinv
 		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
 		new Memory_WriteAddress( 0x0000, 0x5fff, MWA_ROM ),
 	//	new Memory_WriteAddress( 0x7fff, 0x7fff, MWA_NOP ),
-		new Memory_WriteAddress( 0x8000, 0x83ff, retofinv_fg_videoram_w, &retofinv_fg_videoram, &retofinv_videoram_size ),
-		new Memory_WriteAddress( 0x8400, 0x87ff, retofinv_fg_colorram_w, &retofinv_fg_colorram ),
-		new Memory_WriteAddress( 0x8800, 0x9fff, MWA_RAM, &sharedram ),
-		new Memory_WriteAddress( 0x8f00, 0x8f7f, MWA_RAM, &retofinv_sprite_ram1 ),	/* covered by the above, */
-		new Memory_WriteAddress( 0x9700, 0x977f, MWA_RAM, &retofinv_sprite_ram2 ),	/* here only to */
-		new Memory_WriteAddress( 0x9f00, 0x9f7f, MWA_RAM, &retofinv_sprite_ram3 ),	/* initialize the pointers */
-		new Memory_WriteAddress( 0xa000, 0xa3ff, retofinv_bg_videoram_w, &retofinv_bg_videoram ),
-		new Memory_WriteAddress( 0xa400, 0xa7ff, retofinv_bg_colorram_w, &retofinv_bg_colorram ),
+		new Memory_WriteAddress( 0x8000, 0x83ff, retofinv_fg_videoram_w, retofinv_fg_videoram, retofinv_videoram_size ),
+		new Memory_WriteAddress( 0x8400, 0x87ff, retofinv_fg_colorram_w, retofinv_fg_colorram ),
+		new Memory_WriteAddress( 0x8800, 0x9fff, MWA_RAM, sharedram ),
+		new Memory_WriteAddress( 0x8f00, 0x8f7f, MWA_RAM, retofinv_sprite_ram1 ),	/* covered by the above, */
+		new Memory_WriteAddress( 0x9700, 0x977f, MWA_RAM, retofinv_sprite_ram2 ),	/* here only to */
+		new Memory_WriteAddress( 0x9f00, 0x9f7f, MWA_RAM, retofinv_sprite_ram3 ),	/* initialize the pointers */
+		new Memory_WriteAddress( 0xa000, 0xa3ff, retofinv_bg_videoram_w, retofinv_bg_videoram ),
+		new Memory_WriteAddress( 0xa400, 0xa7ff, retofinv_bg_colorram_w, retofinv_bg_colorram ),
 		new Memory_WriteAddress( 0xb800, 0xb800, retofinv_flip_screen_w ),
-		new Memory_WriteAddress( 0xb801, 0xb801, MWA_RAM, &retofinv_fg_char_bank ),
-		new Memory_WriteAddress( 0xb802, 0xb802, MWA_RAM, &retofinv_bg_char_bank ),
+		new Memory_WriteAddress( 0xb801, 0xb801, MWA_RAM, retofinv_fg_char_bank ),
+		new Memory_WriteAddress( 0xb802, 0xb802, MWA_RAM, retofinv_bg_char_bank ),
 		new Memory_WriteAddress( 0xc800, 0xc800, MWA_NOP ),
 		new Memory_WriteAddress( 0xc801, 0xc801, reset_cpu2_w ),
 		new Memory_WriteAddress( 0xc802, 0xc802, reset_cpu1_w ),

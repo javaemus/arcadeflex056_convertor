@@ -294,7 +294,7 @@ public class bzone
 		new Memory_WriteAddress( 0x1820, 0x182f, pokey1_w ),
 		new Memory_WriteAddress( 0x1840, 0x1840, bzone_sounds_w ),
 		new Memory_WriteAddress( 0x1860, 0x187f, mb_go_w ),
-		new Memory_WriteAddress( 0x2000, 0x2fff, MWA_RAM, &vectorram, &vectorram_size ),
+		new Memory_WriteAddress( 0x2000, 0x2fff, MWA_RAM, vectorram, vectorram_size ),
 		new Memory_WriteAddress( 0x3000, 0x3fff, MWA_ROM ),
 		new Memory_WriteAddress( 0x5000, 0x7fff, MWA_ROM ),
 		new Memory_WriteAddress(MEMPORT_MARKER, 0)
@@ -411,7 +411,7 @@ public class bzone
 		new Memory_WriteAddress( 0x1810, 0x181f, pokey1_w ),
 		new Memory_WriteAddress( 0x1820, 0x185f, atari_vg_earom_w ),
 		new Memory_WriteAddress( 0x1860, 0x187f, mb_go_w ),
-		new Memory_WriteAddress( 0x2000, 0x2fff, MWA_RAM, &vectorram, &vectorram_size ),
+		new Memory_WriteAddress( 0x2000, 0x2fff, MWA_RAM, vectorram, vectorram_size ),
 		new Memory_WriteAddress( 0x3000, 0x3fff, MWA_ROM ),
 		new Memory_WriteAddress( 0x5000, 0x7fff, MWA_ROM ),
 		new Memory_WriteAddress(MEMPORT_MARKER, 0)

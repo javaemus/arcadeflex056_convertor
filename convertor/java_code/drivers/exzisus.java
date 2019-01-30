@@ -182,8 +182,8 @@ public class exzisus
 	public static Memory_WriteAddress cpua_writemem[]={
 		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
 		new Memory_WriteAddress( 0x0000, 0xbfff, MWA_ROM ),
-		new Memory_WriteAddress( 0xc000, 0xc5ff, exzisus_objectram_0_w, &exzisus_objectram0, &exzisus_objectram_size0 ),
-		new Memory_WriteAddress( 0xc600, 0xdfff, exzisus_videoram_0_w, &exzisus_videoram0 ),
+		new Memory_WriteAddress( 0xc000, 0xc5ff, exzisus_objectram_0_w, exzisus_objectram0, exzisus_objectram_size0 ),
+		new Memory_WriteAddress( 0xc600, 0xdfff, exzisus_videoram_0_w, exzisus_videoram0 ),
 		new Memory_WriteAddress( 0xe000, 0xefff, MWA_RAM ),
 		new Memory_WriteAddress( 0xf000, 0xf000, taitosound_port_w ),
 		new Memory_WriteAddress( 0xf001, 0xf001, taitosound_comm_w ),
@@ -227,11 +227,11 @@ public class exzisus
 	public static Memory_WriteAddress cpuc_writemem[]={
 		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
 		new Memory_WriteAddress( 0x0000, 0xbfff, MWA_ROM ),
-		new Memory_WriteAddress( 0xc000, 0xc5ff, exzisus_objectram_1_w, &exzisus_objectram1, &exzisus_objectram_size1 ),
-		new Memory_WriteAddress( 0xc600, 0xdfff, exzisus_videoram_1_w, &exzisus_videoram1 ),
-		new Memory_WriteAddress( 0xe000, 0xefff, exzisus_sharedram_bc_w, &exzisus_sharedram_bc ),
+		new Memory_WriteAddress( 0xc000, 0xc5ff, exzisus_objectram_1_w, exzisus_objectram1, exzisus_objectram_size1 ),
+		new Memory_WriteAddress( 0xc600, 0xdfff, exzisus_videoram_1_w, exzisus_videoram1 ),
+		new Memory_WriteAddress( 0xe000, 0xefff, exzisus_sharedram_bc_w, exzisus_sharedram_bc ),
 		new Memory_WriteAddress( 0xf400, 0xf400, exzisus_cpub_bankswitch_w ),
-		new Memory_WriteAddress( 0xf800, 0xffff, exzisus_sharedram_ac_w, &exzisus_sharedram_ac ),
+		new Memory_WriteAddress( 0xf800, 0xffff, exzisus_sharedram_ac_w, exzisus_sharedram_ac ),
 		new Memory_WriteAddress(MEMPORT_MARKER, 0)
 	};
 	

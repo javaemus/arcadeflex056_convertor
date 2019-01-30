@@ -100,9 +100,9 @@ public class lsasquad
 		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
 		new Memory_WriteAddress( 0x0000, 0x9fff, MWA_ROM ),
 		new Memory_WriteAddress( 0xa000, 0xbfff, MWA_RAM ),	/* SRAM */
-		new Memory_WriteAddress( 0xc000, 0xdfff, MWA_RAM, &videoram, &videoram_size ),	/* SCREEN RAM */
-		new Memory_WriteAddress( 0xe000, 0xe3ff, MWA_RAM, &lsasquad_scrollram ),	/* SCROLL RAM */
-		new Memory_WriteAddress( 0xe400, 0xe5ff, MWA_RAM, &spriteram, &spriteram_size ),	/* OBJECT RAM */
+		new Memory_WriteAddress( 0xc000, 0xdfff, MWA_RAM, videoram, videoram_size ),	/* SCREEN RAM */
+		new Memory_WriteAddress( 0xe000, 0xe3ff, MWA_RAM, lsasquad_scrollram ),	/* SCROLL RAM */
+		new Memory_WriteAddress( 0xe400, 0xe5ff, MWA_RAM, spriteram, spriteram_size ),	/* OBJECT RAM */
 		new Memory_WriteAddress( 0xea00, 0xea00, lsasquad_bankswitch_w ),
 		new Memory_WriteAddress( 0xec00, 0xec00, lsasquad_sound_command_w ),
 		new Memory_WriteAddress( 0xee00, 0xee00, lsasquad_mcu_w ),

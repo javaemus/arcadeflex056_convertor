@@ -67,8 +67,8 @@ public class tagteam
 	//	new Memory_WriteAddress( 0x2003, 0x2003, MWA_NOP ), /* Appears to increment when you're out of the ring */
 		new Memory_WriteAddress( 0x4000, 0x43ff, tagteam_mirrorvideoram_w ),
 		new Memory_WriteAddress( 0x4400, 0x47ff, tagteam_mirrorcolorram_w ),
-		new Memory_WriteAddress( 0x4800, 0x4bff, videoram_w, &videoram, &videoram_size ),
-		new Memory_WriteAddress( 0x4c00, 0x4fff, colorram_w, &colorram ),
+		new Memory_WriteAddress( 0x4800, 0x4bff, videoram_w, videoram, videoram_size ),
+		new Memory_WriteAddress( 0x4c00, 0x4fff, colorram_w, colorram ),
 		new Memory_WriteAddress( 0x8000, 0xffff, MWA_ROM ),
 		new Memory_WriteAddress(MEMPORT_MARKER, 0)
 	};

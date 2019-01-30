@@ -77,8 +77,8 @@ public class astrof
 	public static Memory_WriteAddress astrof_writemem[]={
 		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
 		new Memory_WriteAddress( 0x0000, 0x03ff, MWA_RAM ),
-		new Memory_WriteAddress( 0x4000, 0x5fff, astrof_videoram_w, &videoram, &videoram_size ),
-		new Memory_WriteAddress( 0x8003, 0x8003, MWA_RAM, &astrof_color ),
+		new Memory_WriteAddress( 0x4000, 0x5fff, astrof_videoram_w, videoram, videoram_size ),
+		new Memory_WriteAddress( 0x8003, 0x8003, MWA_RAM, astrof_color ),
 		new Memory_WriteAddress( 0x8004, 0x8004, astrof_video_control1_w ),
 		new Memory_WriteAddress( 0x8005, 0x8005, astrof_video_control2_w ),
 		new Memory_WriteAddress( 0x8006, 0x8006, astrof_sample1_w ),
@@ -89,12 +89,12 @@ public class astrof
 	public static Memory_WriteAddress tomahawk_writemem[]={
 		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
 		new Memory_WriteAddress( 0x0000, 0x03ff, MWA_RAM ),
-		new Memory_WriteAddress( 0x4000, 0x5fff, tomahawk_videoram_w, &videoram, &videoram_size ),
-		new Memory_WriteAddress( 0x8003, 0x8003, MWA_RAM, &astrof_color ),
+		new Memory_WriteAddress( 0x4000, 0x5fff, tomahawk_videoram_w, videoram, videoram_size ),
+		new Memory_WriteAddress( 0x8003, 0x8003, MWA_RAM, astrof_color ),
 		new Memory_WriteAddress( 0x8004, 0x8004, astrof_video_control1_w ),
 		new Memory_WriteAddress( 0x8005, 0x8005, tomahawk_video_control2_w ),
 		new Memory_WriteAddress( 0x8006, 0x8006, MWA_NOP ),                        // Sound triggers
-		new Memory_WriteAddress( 0x8007, 0x8007, MWA_RAM, &tomahawk_protection ),
+		new Memory_WriteAddress( 0x8007, 0x8007, MWA_RAM, tomahawk_protection ),
 		new Memory_WriteAddress(MEMPORT_MARKER, 0)
 	};
 	

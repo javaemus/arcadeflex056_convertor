@@ -784,7 +784,7 @@ public class itech32
 		new Memory_WriteAddress( 0x0880, 0x08bf, ES5506_data_0_w ),
 		new Memory_WriteAddress( 0x0c00, 0x0c00, sound_bank_w ),
 		new Memory_WriteAddress( 0x1000, 0x1000, MWA_NOP ),	/* noisy */
-		new Memory_WriteAddress( 0x1400, 0x140f, via6522_w, &via6522 ),
+		new Memory_WriteAddress( 0x1400, 0x140f, via6522_w, via6522 ),
 		new Memory_WriteAddress( 0x2000, 0x3fff, MWA_RAM ),
 		new Memory_WriteAddress( 0x4000, 0xffff, MWA_ROM ),
 		new Memory_WriteAddress(MEMPORT_MARKER, 0)

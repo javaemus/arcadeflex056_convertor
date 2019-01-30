@@ -297,10 +297,10 @@ public class centiped
 	public static Memory_WriteAddress centiped_writemem[]={
 		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
 		new Memory_WriteAddress( 0x0000, 0x03ff, MWA_RAM ),
-		new Memory_WriteAddress( 0x0400, 0x07bf, videoram_w, &videoram, &videoram_size ),
-		new Memory_WriteAddress( 0x07c0, 0x07ff, MWA_RAM, &spriteram ),
+		new Memory_WriteAddress( 0x0400, 0x07bf, videoram_w, videoram, videoram_size ),
+		new Memory_WriteAddress( 0x07c0, 0x07ff, MWA_RAM, spriteram ),
 		new Memory_WriteAddress( 0x1000, 0x100f, pokey1_w ),
-		new Memory_WriteAddress( 0x1400, 0x140f, centiped_paletteram_w, &paletteram ),
+		new Memory_WriteAddress( 0x1400, 0x140f, centiped_paletteram_w, paletteram ),
 		new Memory_WriteAddress( 0x1600, 0x163f, atari_vg_earom_w ),
 		new Memory_WriteAddress( 0x1680, 0x1680, atari_vg_earom_ctrl_w ),
 		new Memory_WriteAddress( 0x1800, 0x1800, MWA_NOP ),	/* IRQ acknowldege */
@@ -316,10 +316,10 @@ public class centiped
 	public static Memory_WriteAddress centipdb_writemem[]={
 		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
 		new Memory_WriteAddress( 0x0000, 0x03ff, MWA_RAM ),
-		new Memory_WriteAddress( 0x0400, 0x07bf, videoram_w, &videoram, &videoram_size ),
-		new Memory_WriteAddress( 0x07c0, 0x07ff, MWA_RAM, &spriteram ),
+		new Memory_WriteAddress( 0x0400, 0x07bf, videoram_w, videoram, videoram_size ),
+		new Memory_WriteAddress( 0x07c0, 0x07ff, MWA_RAM, spriteram ),
 		new Memory_WriteAddress( 0x1000, 0x100f, centipdb_AY8910_w ),
-		new Memory_WriteAddress( 0x1400, 0x140f, centiped_paletteram_w, &paletteram ),
+		new Memory_WriteAddress( 0x1400, 0x140f, centiped_paletteram_w, paletteram ),
 		new Memory_WriteAddress( 0x1600, 0x163f, atari_vg_earom_w ),
 		new Memory_WriteAddress( 0x1680, 0x1680, atari_vg_earom_ctrl_w ),
 		new Memory_WriteAddress( 0x1800, 0x1800, MWA_NOP ),	/* IRQ acknowldege */
@@ -334,11 +334,11 @@ public class centiped
 	public static Memory_WriteAddress centipb2_writemem[]={
 		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
 		new Memory_WriteAddress( 0x0000, 0x03ff, MWA_RAM ),
-		new Memory_WriteAddress( 0x0400, 0x07bf, videoram_w, &videoram, &videoram_size ),
-		new Memory_WriteAddress( 0x07c0, 0x07ff, MWA_RAM, &spriteram ),
+		new Memory_WriteAddress( 0x0400, 0x07bf, videoram_w, videoram, videoram_size ),
+		new Memory_WriteAddress( 0x07c0, 0x07ff, MWA_RAM, spriteram ),
 		new Memory_WriteAddress( 0x1000, 0x1000, AY8910_write_port_0_w ),
 		new Memory_WriteAddress( 0x1001, 0x1001, AY8910_control_port_0_w ),
-		new Memory_WriteAddress( 0x1400, 0x140f, centiped_paletteram_w, &paletteram ),
+		new Memory_WriteAddress( 0x1400, 0x140f, centiped_paletteram_w, paletteram ),
 		new Memory_WriteAddress( 0x1600, 0x163f, atari_vg_earom_w ),
 		new Memory_WriteAddress( 0x1680, 0x1680, atari_vg_earom_ctrl_w ),
 		new Memory_WriteAddress( 0x1800, 0x1800, MWA_NOP ),	/* IRQ acknowldege */

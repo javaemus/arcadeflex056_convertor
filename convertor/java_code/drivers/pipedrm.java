@@ -242,8 +242,8 @@ public class pipedrm
 		new Memory_WriteAddress( 0x0000, 0x7fff, MWA_ROM ),
 		new Memory_WriteAddress( 0x8000, 0x9fff, MWA_RAM ),
 		new Memory_WriteAddress( 0xa000, 0xbfff, MWA_ROM ),
-		new Memory_WriteAddress( 0xc000, 0xcfff, paletteram_xRRRRRGGGGGBBBBB_w, &paletteram ),
-		new Memory_WriteAddress( 0xd000, 0xffff, fromance_videoram_w, &videoram, &videoram_size ),
+		new Memory_WriteAddress( 0xc000, 0xcfff, paletteram_xRRRRRGGGGGBBBBB_w, paletteram ),
+		new Memory_WriteAddress( 0xd000, 0xffff, fromance_videoram_w, videoram, videoram_size ),
 		new Memory_WriteAddress(MEMPORT_MARKER, 0)
 	};
 	

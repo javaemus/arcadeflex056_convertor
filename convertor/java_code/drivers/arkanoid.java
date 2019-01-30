@@ -93,8 +93,8 @@ public class arkanoid
 		new Memory_WriteAddress( 0xd008, 0xd008, arkanoid_d008_w ),	/* gfx bank, flip screen etc. */
 		new Memory_WriteAddress( 0xd010, 0xd010, watchdog_reset_w ),
 		new Memory_WriteAddress( 0xd018, 0xd018, arkanoid_Z80_mcu_w ), /* output to the 68705 */
-		new Memory_WriteAddress( 0xe000, 0xe7ff, videoram_w, &videoram, &videoram_size ),
-		new Memory_WriteAddress( 0xe800, 0xe83f, MWA_RAM, &spriteram, &spriteram_size ),
+		new Memory_WriteAddress( 0xe000, 0xe7ff, videoram_w, videoram, videoram_size ),
+		new Memory_WriteAddress( 0xe800, 0xe83f, MWA_RAM, spriteram, spriteram_size ),
 		new Memory_WriteAddress( 0xe840, 0xefff, MWA_RAM ),
 		new Memory_WriteAddress(MEMPORT_MARKER, 0)
 	};
@@ -121,8 +121,8 @@ public class arkanoid
 		new Memory_WriteAddress( 0xd008, 0xd008, arkanoid_d008_w ),	/* gfx bank, flip screen etc. */
 		new Memory_WriteAddress( 0xd010, 0xd010, watchdog_reset_w ),
 		new Memory_WriteAddress( 0xd018, 0xd018, MWA_NOP ),
-		new Memory_WriteAddress( 0xe000, 0xe7ff, videoram_w, &videoram, &videoram_size ),
-		new Memory_WriteAddress( 0xe800, 0xe83f, MWA_RAM, &spriteram, &spriteram_size ),
+		new Memory_WriteAddress( 0xe000, 0xe7ff, videoram_w, videoram, videoram_size ),
+		new Memory_WriteAddress( 0xe800, 0xe83f, MWA_RAM, spriteram, spriteram_size ),
 		new Memory_WriteAddress( 0xe840, 0xefff, MWA_RAM ),
 		new Memory_WriteAddress(MEMPORT_MARKER, 0)
 	};

@@ -73,12 +73,12 @@ public class ladybug
 		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
 		new Memory_WriteAddress( 0x0000, 0x5fff, MWA_ROM ),
 		new Memory_WriteAddress( 0x6000, 0x6fff, MWA_RAM ),
-		new Memory_WriteAddress( 0x7000, 0x73ff, MWA_RAM, &spriteram, &spriteram_size ),
+		new Memory_WriteAddress( 0x7000, 0x73ff, MWA_RAM, spriteram, spriteram_size ),
 		new Memory_WriteAddress( 0xa000, 0xa000, ladybug_flipscreen_w ),
 		new Memory_WriteAddress( 0xb000, 0xbfff, SN76496_0_w ),
 		new Memory_WriteAddress( 0xc000, 0xcfff, SN76496_1_w ),
-		new Memory_WriteAddress( 0xd000, 0xd3ff, videoram_w, &videoram, &videoram_size ),
-		new Memory_WriteAddress( 0xd400, 0xd7ff, colorram_w, &colorram ),
+		new Memory_WriteAddress( 0xd000, 0xd3ff, videoram_w, videoram, videoram_size ),
+		new Memory_WriteAddress( 0xd400, 0xd7ff, colorram_w, colorram ),
 		new Memory_WriteAddress(MEMPORT_MARKER, 0)
 	};
 	

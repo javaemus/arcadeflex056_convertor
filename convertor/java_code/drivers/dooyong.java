@@ -101,15 +101,15 @@ public class dooyong
 	public static Memory_WriteAddress lastday_writemem[]={
 		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
 		new Memory_WriteAddress( 0x0000, 0xbfff, MWA_ROM ),
-		new Memory_WriteAddress( 0xc000, 0xc004, MWA_RAM, &lastday_bgscroll ),
-		new Memory_WriteAddress( 0xc008, 0xc00c, MWA_RAM, &lastday_fgscroll ),
+		new Memory_WriteAddress( 0xc000, 0xc004, MWA_RAM, lastday_bgscroll ),
+		new Memory_WriteAddress( 0xc008, 0xc00c, MWA_RAM, lastday_fgscroll ),
 		new Memory_WriteAddress( 0xc010, 0xc010, lastday_ctrl_w ),	/* coin counter, flip screen */
 		new Memory_WriteAddress( 0xc011, 0xc011, lastday_bankswitch_w ),
 		new Memory_WriteAddress( 0xc012, 0xc012, soundlatch_w ),
-		new Memory_WriteAddress( 0xc800, 0xcfff, paletteram_xxxxBBBBGGGGRRRR_w, &paletteram ),
-		new Memory_WriteAddress( 0xd000, 0xdfff, MWA_RAM, &lastday_txvideoram ),
+		new Memory_WriteAddress( 0xc800, 0xcfff, paletteram_xxxxBBBBGGGGRRRR_w, paletteram ),
+		new Memory_WriteAddress( 0xd000, 0xdfff, MWA_RAM, lastday_txvideoram ),
 		new Memory_WriteAddress( 0xe000, 0xefff, MWA_RAM ),
-		new Memory_WriteAddress( 0xf000, 0xffff, MWA_RAM, &spriteram, &spriteram_size ),
+		new Memory_WriteAddress( 0xf000, 0xffff, MWA_RAM, spriteram, spriteram_size ),
 		new Memory_WriteAddress(MEMPORT_MARKER, 0)
 	};
 	
@@ -131,14 +131,14 @@ public class dooyong
 		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
 		new Memory_WriteAddress( 0x0000, 0xbfff, MWA_ROM ),
 		new Memory_WriteAddress( 0xc000, 0xcfff, MWA_RAM ),
-		new Memory_WriteAddress( 0xd000, 0xdfff, MWA_RAM, &spriteram, &spriteram_size ),
-		new Memory_WriteAddress( 0xe000, 0xefff, MWA_RAM, &lastday_txvideoram ),
+		new Memory_WriteAddress( 0xd000, 0xdfff, MWA_RAM, spriteram, spriteram_size ),
+		new Memory_WriteAddress( 0xe000, 0xefff, MWA_RAM, lastday_txvideoram ),
 		new Memory_WriteAddress( 0xf000, 0xf000, lastday_bankswitch_w ),
 		new Memory_WriteAddress( 0xf008, 0xf008, pollux_ctrl_w ),	/* coin counter, flip screen */
 		new Memory_WriteAddress( 0xf010, 0xf010, soundlatch_w ),
-		new Memory_WriteAddress( 0xf018, 0xf01c, MWA_RAM, &lastday_bgscroll ),
-		new Memory_WriteAddress( 0xf020, 0xf024, MWA_RAM, &lastday_fgscroll ),
-		new Memory_WriteAddress( 0xf800, 0xffff, paletteram_xRRRRRGGGGGBBBBB_w, &paletteram ),
+		new Memory_WriteAddress( 0xf018, 0xf01c, MWA_RAM, lastday_bgscroll ),
+		new Memory_WriteAddress( 0xf020, 0xf024, MWA_RAM, lastday_fgscroll ),
+		new Memory_WriteAddress( 0xf800, 0xffff, paletteram_xRRRRRGGGGGBBBBB_w, paletteram ),
 		new Memory_WriteAddress(MEMPORT_MARKER, 0)
 	};
 	
@@ -161,12 +161,12 @@ public class dooyong
 		new Memory_WriteAddress( 0xc000, 0xc000, flip_screen_w ),
 		new Memory_WriteAddress( 0xc008, 0xc008, lastday_bankswitch_w ),
 		new Memory_WriteAddress( 0xc010, 0xc010, soundlatch_w ),
-		new Memory_WriteAddress( 0xc018, 0xc01c, MWA_RAM, &bluehawk_fg2scroll ),
-		new Memory_WriteAddress( 0xc040, 0xc044, MWA_RAM, &lastday_bgscroll ),
-		new Memory_WriteAddress( 0xc048, 0xc04c, MWA_RAM, &lastday_fgscroll ),
-		new Memory_WriteAddress( 0xc800, 0xcfff, paletteram_xRRRRRGGGGGBBBBB_w, &paletteram ),
-		new Memory_WriteAddress( 0xd000, 0xdfff, MWA_RAM, &lastday_txvideoram ),
-		new Memory_WriteAddress( 0xe000, 0xefff, MWA_RAM, &spriteram, &spriteram_size ),
+		new Memory_WriteAddress( 0xc018, 0xc01c, MWA_RAM, bluehawk_fg2scroll ),
+		new Memory_WriteAddress( 0xc040, 0xc044, MWA_RAM, lastday_bgscroll ),
+		new Memory_WriteAddress( 0xc048, 0xc04c, MWA_RAM, lastday_fgscroll ),
+		new Memory_WriteAddress( 0xc800, 0xcfff, paletteram_xRRRRRGGGGGBBBBB_w, paletteram ),
+		new Memory_WriteAddress( 0xd000, 0xdfff, MWA_RAM, lastday_txvideoram ),
+		new Memory_WriteAddress( 0xe000, 0xefff, MWA_RAM, spriteram, spriteram_size ),
 		new Memory_WriteAddress( 0xf000, 0xffff, MWA_RAM ),
 		new Memory_WriteAddress(MEMPORT_MARKER, 0)
 	};
@@ -191,12 +191,12 @@ public class dooyong
 		new Memory_WriteAddress( 0x0000, 0xbfff, MWA_ROM ),
 		new Memory_WriteAddress( 0xc000, 0xcfff, MWA_RAM ),
 		new Memory_WriteAddress( 0xd000, 0xd3ff, MWA_RAM ),	/* what is this? looks like a palette? scratchpad RAM maybe? */
-		new Memory_WriteAddress( 0xe000, 0xefff, MWA_RAM, &lastday_txvideoram ),
-		new Memory_WriteAddress( 0xf000, 0xf7ff, paletteram_xRRRRRGGGGGBBBBB_w, &paletteram ),
+		new Memory_WriteAddress( 0xe000, 0xefff, MWA_RAM, lastday_txvideoram ),
+		new Memory_WriteAddress( 0xf000, 0xf7ff, paletteram_xRRRRRGGGGGBBBBB_w, paletteram ),
 		new Memory_WriteAddress( 0xf800, 0xf800, primella_ctrl_w ),	/* bank switch, flip screen etc */
 		new Memory_WriteAddress( 0xf810, 0xf810, soundlatch_w ),
-		new Memory_WriteAddress( 0xfc00, 0xfc04, MWA_RAM, &lastday_bgscroll ),
-		new Memory_WriteAddress( 0xfc08, 0xfc0c, MWA_RAM, &lastday_fgscroll ),
+		new Memory_WriteAddress( 0xfc00, 0xfc04, MWA_RAM, lastday_bgscroll ),
+		new Memory_WriteAddress( 0xfc08, 0xfc0c, MWA_RAM, lastday_fgscroll ),
 		new Memory_WriteAddress(MEMPORT_MARKER, 0)
 	};
 	

@@ -155,10 +155,10 @@ public class fastfred
 		new Memory_WriteAddress( 0x0000, 0x7fff, MWA_ROM ),
 		new Memory_WriteAddress( 0xc000, 0xc7ff, MWA_RAM ),
 		new Memory_WriteAddress( 0xc800, 0xcfff, MWA_NOP ),
-		new Memory_WriteAddress( 0xd000, 0xd3ff, videoram_w, &videoram, &videoram_size ),
+		new Memory_WriteAddress( 0xd000, 0xd3ff, videoram_w, videoram, videoram_size ),
 		new Memory_WriteAddress( 0xd400, 0xd7ff, videoram_w ),  // Mirrored for above
-		new Memory_WriteAddress( 0xd800, 0xd83f, fastfred_attributes_w, &fastfred_attributesram ),
-		new Memory_WriteAddress( 0xd840, 0xd85f, MWA_RAM, &spriteram, &spriteram_size ),
+		new Memory_WriteAddress( 0xd800, 0xd83f, fastfred_attributes_w, fastfred_attributesram ),
+		new Memory_WriteAddress( 0xd840, 0xd85f, MWA_RAM, spriteram, spriteram_size ),
 		new Memory_WriteAddress( 0xd860, 0xdbff, MWA_RAM ), // Unused, but initialized
 		new Memory_WriteAddress( 0xe000, 0xe000, fastfred_background_color_w ),
 		new Memory_WriteAddress( 0xf000, 0xf000, MWA_NOP ), // Unused, but initialized
@@ -194,10 +194,10 @@ public class fastfred
 		new Memory_WriteAddress( 0x0000, 0x7fff, MWA_ROM ),
 		new Memory_WriteAddress( 0xc000, 0xc7ff, MWA_RAM ),
 		new Memory_WriteAddress( 0xc800, 0xcfff, MWA_NOP ),
-		new Memory_WriteAddress( 0xd000, 0xd03f, fastfred_attributes_w, &fastfred_attributesram ),
-		new Memory_WriteAddress( 0xd040, 0xd05f, MWA_RAM, &spriteram, &spriteram_size ),
+		new Memory_WriteAddress( 0xd000, 0xd03f, fastfred_attributes_w, fastfred_attributesram ),
+		new Memory_WriteAddress( 0xd040, 0xd05f, MWA_RAM, spriteram, spriteram_size ),
 		new Memory_WriteAddress( 0xd060, 0xd3ff, MWA_NOP ),
-		new Memory_WriteAddress( 0xd800, 0xdbff, videoram_w, &videoram, &videoram_size ),
+		new Memory_WriteAddress( 0xd800, 0xdbff, videoram_w, videoram, videoram_size ),
 		new Memory_WriteAddress( 0xdc00, 0xdfff, videoram_w ),	/* mirror address, used in the name entry screen */
 		new Memory_WriteAddress( 0xe000, 0xe000, fastfred_background_color_w ),
 		new Memory_WriteAddress( 0xf000, 0xf000, MWA_NOP ), // Unused, but initialized

@@ -77,10 +77,10 @@ public class exctsccr
 	public static Memory_WriteAddress writemem[]={
 		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
 		new Memory_WriteAddress( 0x0000, 0x5fff, MWA_ROM ),
-		new Memory_WriteAddress( 0x6000, 0x63ff, exctsccr_mcu_w, &exctsccr_mcu_ram ), /* Alpha mcu (protection) */
+		new Memory_WriteAddress( 0x6000, 0x63ff, exctsccr_mcu_w, exctsccr_mcu_ram ), /* Alpha mcu (protection) */
 		new Memory_WriteAddress( 0x7c00, 0x7fff, MWA_RAM ), /* work ram */
-		new Memory_WriteAddress( 0x8000, 0x83ff, videoram_w, &videoram, &videoram_size ),
-		new Memory_WriteAddress( 0x8400, 0x87ff, colorram_w, &colorram ),
+		new Memory_WriteAddress( 0x8000, 0x83ff, videoram_w, videoram, videoram_size ),
+		new Memory_WriteAddress( 0x8400, 0x87ff, colorram_w, colorram ),
 		new Memory_WriteAddress( 0x8800, 0x8bff, MWA_RAM ), /* ??? */
 		new Memory_WriteAddress( 0xa000, 0xa000, MWA_NOP ), /* ??? */
 		new Memory_WriteAddress( 0xa001, 0xa001, MWA_NOP ), /* ??? */
@@ -88,7 +88,7 @@ public class exctsccr
 		new Memory_WriteAddress( 0xa003, 0xa003, MWA_NOP ), /* Cocktail mode ( 0xff = flip screen, 0x00 = normal ) */
 		new Memory_WriteAddress( 0xa006, 0xa006, exctsccr_mcu_control_w ), /* MCU control */
 		new Memory_WriteAddress( 0xa007, 0xa007, MWA_NOP ), /* This is also MCU control, but i dont need it */
-		new Memory_WriteAddress( 0xa040, 0xa06f, MWA_RAM, &spriteram ), /* Sprite pos */
+		new Memory_WriteAddress( 0xa040, 0xa06f, MWA_RAM, spriteram ), /* Sprite pos */
 		new Memory_WriteAddress( 0xa080, 0xa080, soundlatch_w ),
 		new Memory_WriteAddress( 0xa0c0, 0xa0c0, watchdog_reset_w ),
 		new Memory_WriteAddress(MEMPORT_MARKER, 0)
@@ -144,8 +144,8 @@ public class exctsccr
 		new Memory_WriteAddress( 0x0000, 0x5fff, MWA_ROM ),
 		new Memory_WriteAddress( 0x7000, 0x7000, AY8910_write_port_0_w ),
 		new Memory_WriteAddress( 0x7001, 0x7001, AY8910_control_port_0_w ),
-		new Memory_WriteAddress( 0x8000, 0x83ff, videoram_w, &videoram, &videoram_size ),
-		new Memory_WriteAddress( 0x8400, 0x87ff, colorram_w, &colorram ),
+		new Memory_WriteAddress( 0x8000, 0x83ff, videoram_w, videoram, videoram_size ),
+		new Memory_WriteAddress( 0x8400, 0x87ff, colorram_w, colorram ),
 		new Memory_WriteAddress( 0x8800, 0x8fff, MWA_RAM ), /* ??? */
 		new Memory_WriteAddress( 0xa000, 0xa000, MWA_NOP ), /* ??? */
 		new Memory_WriteAddress( 0xa001, 0xa001, MWA_NOP ), /* ??? */
@@ -153,7 +153,7 @@ public class exctsccr
 		new Memory_WriteAddress( 0xa003, 0xa003, MWA_NOP ), /* Cocktail mode ( 0xff = flip screen, 0x00 = normal ) */
 		new Memory_WriteAddress( 0xa006, 0xa006, MWA_NOP ), /* no MCU, but some leftover code still writes here */
 		new Memory_WriteAddress( 0xa007, 0xa007, MWA_NOP ), /* no MCU, but some leftover code still writes here */
-		new Memory_WriteAddress( 0xa040, 0xa06f, MWA_RAM, &spriteram ), /* Sprite Pos */
+		new Memory_WriteAddress( 0xa040, 0xa06f, MWA_RAM, spriteram ), /* Sprite Pos */
 		new Memory_WriteAddress( 0xa080, 0xa080, soundlatch_w ),
 		new Memory_WriteAddress( 0xa0c0, 0xa0c0, watchdog_reset_w ),
 		new Memory_WriteAddress(MEMPORT_MARKER, 0)

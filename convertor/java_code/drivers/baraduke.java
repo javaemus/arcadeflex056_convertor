@@ -110,11 +110,11 @@ public class baraduke
 	public static Memory_WriteAddress baraduke_writemem[]={
 		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
 		new Memory_WriteAddress( 0x0000, 0x17ff, MWA_RAM ),				/* RAM */
-		new Memory_WriteAddress( 0x1800, 0x1fff, MWA_RAM, &spriteram ),	/* Sprite RAM */
-		new Memory_WriteAddress( 0x2000, 0x3fff, baraduke_videoram_w, &baraduke_videoram ),/* Video RAM */
+		new Memory_WriteAddress( 0x1800, 0x1fff, MWA_RAM, spriteram ),	/* Sprite RAM */
+		new Memory_WriteAddress( 0x2000, 0x3fff, baraduke_videoram_w, baraduke_videoram ),/* Video RAM */
 		new Memory_WriteAddress( 0x4000, 0x40ff, namcos1_wavedata_w ),		/* PSG device, shared RAM */
-		new Memory_WriteAddress( 0x4000, 0x43ff, baraduke_sharedram_w, &sharedram ),/* shared RAM with the MCU */
-		new Memory_WriteAddress( 0x4800, 0x4fff, MWA_RAM, &baraduke_textram ),/* video RAM (text layer) */
+		new Memory_WriteAddress( 0x4000, 0x43ff, baraduke_sharedram_w, sharedram ),/* shared RAM with the MCU */
+		new Memory_WriteAddress( 0x4800, 0x4fff, MWA_RAM, baraduke_textram ),/* video RAM (text layer) */
 		new Memory_WriteAddress( 0x8000, 0x8000, watchdog_reset_w ),		/* watchdog reset */
 	//	new Memory_WriteAddress( 0x8800, 0x8800, MWA_NOP ),				/* ??? */
 		new Memory_WriteAddress( 0xb000, 0xb002, baraduke_scroll0_w ),		/* scroll (layer 0) */
@@ -148,8 +148,8 @@ public class baraduke
 		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
 		new Memory_WriteAddress( 0x0000, 0x001f, hd63701_internal_registers_w ),/* internal registers */
 		new Memory_WriteAddress( 0x0080, 0x00ff, MWA_RAM ),				/* built in RAM */
-		new Memory_WriteAddress( 0x1000, 0x10ff, namcos1_wavedata_w, &namco_wavedata ),/* PSG device, shared RAM */
-		new Memory_WriteAddress( 0x1100, 0x113f, namcos1_sound_w, &namco_soundregs ),/* PSG device */
+		new Memory_WriteAddress( 0x1000, 0x10ff, namcos1_wavedata_w, namco_wavedata ),/* PSG device, shared RAM */
+		new Memory_WriteAddress( 0x1100, 0x113f, namcos1_sound_w, namco_soundregs ),/* PSG device */
 		new Memory_WriteAddress( 0x1000, 0x13ff, baraduke_sharedram_w ),	/* shared RAM with the 6809 */
 	//	new Memory_WriteAddress( 0x8000, 0x8000, MWA_NOP ),				/* ??? */
 	//	new Memory_WriteAddress( 0x8800, 0x8800, MWA_NOP ),				/* ??? */

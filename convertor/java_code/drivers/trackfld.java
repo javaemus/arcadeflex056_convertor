@@ -176,14 +176,14 @@ public class trackfld
 		new Memory_WriteAddress( 0x1087, 0x1087, interrupt_enable_w ),
 		new Memory_WriteAddress( 0x1100, 0x1100, soundlatch_w ),
 		new Memory_WriteAddress( 0x2800, 0x2fff, MWA_RAM ),
-		new Memory_WriteAddress( 0x1800, 0x183f, MWA_RAM, &spriteram_2 ),
-		new Memory_WriteAddress( 0x1840, 0x185f, MWA_RAM, &trackfld_scroll ),  /* Scroll amount */
-		new Memory_WriteAddress( 0x1C00, 0x1c3f, MWA_RAM, &spriteram, &spriteram_size ),
-		new Memory_WriteAddress( 0x1C40, 0x1C5f, MWA_RAM, &trackfld_scroll2 ),  /* Scroll amount */
+		new Memory_WriteAddress( 0x1800, 0x183f, MWA_RAM, spriteram_2 ),
+		new Memory_WriteAddress( 0x1840, 0x185f, MWA_RAM, trackfld_scroll ),  /* Scroll amount */
+		new Memory_WriteAddress( 0x1C00, 0x1c3f, MWA_RAM, spriteram, spriteram_size ),
+		new Memory_WriteAddress( 0x1C40, 0x1C5f, MWA_RAM, trackfld_scroll2 ),  /* Scroll amount */
 		new Memory_WriteAddress( 0x2800, 0x2bff, MWA_RAM ),
-		new Memory_WriteAddress( 0x2c00, 0x2fff, MWA_RAM, &nvram, &nvram_size ),
-		new Memory_WriteAddress( 0x3000, 0x37ff, videoram_w, &videoram, &videoram_size ),
-		new Memory_WriteAddress( 0x3800, 0x3fff, colorram_w, &colorram ),
+		new Memory_WriteAddress( 0x2c00, 0x2fff, MWA_RAM, nvram, nvram_size ),
+		new Memory_WriteAddress( 0x3000, 0x37ff, videoram_w, videoram, videoram_size ),
+		new Memory_WriteAddress( 0x3800, 0x3fff, colorram_w, colorram ),
 		new Memory_WriteAddress( 0x6000, 0xffff, MWA_ROM ),
 		new Memory_WriteAddress(MEMPORT_MARKER, 0)
 	};

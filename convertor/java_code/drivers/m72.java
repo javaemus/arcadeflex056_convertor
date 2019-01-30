@@ -556,11 +556,11 @@ public class m72
 		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),				\
 		new Memory_WriteAddress( 0x00000, ROMSIZE-1, MWA_ROM ),							\
 		new Memory_WriteAddress( WORKRAM, WORKRAM+0x3fff, MWA_RAM ),	/* work RAM */		\
-		new Memory_WriteAddress( 0xc0000, 0xc03ff, MWA_RAM, &spriteram, &spriteram_size ),	\
-		new Memory_WriteAddress( 0xc8000, 0xc8bff, m72_palette1_w, &paletteram ),			\
-		new Memory_WriteAddress( 0xcc000, 0xccbff, m72_palette2_w, &paletteram_2 ),		\
-		new Memory_WriteAddress( 0xd0000, 0xd3fff, m72_videoram1_w, &m72_videoram1 ),		\
-		new Memory_WriteAddress( 0xd8000, 0xdbfff, m72_videoram2_w, &m72_videoram2 ),		\
+		new Memory_WriteAddress( 0xc0000, 0xc03ff, MWA_RAM, spriteram, spriteram_size ),	\
+		new Memory_WriteAddress( 0xc8000, 0xc8bff, m72_palette1_w, paletteram ),			\
+		new Memory_WriteAddress( 0xcc000, 0xccbff, m72_palette2_w, paletteram_2 ),		\
+		new Memory_WriteAddress( 0xd0000, 0xd3fff, m72_videoram1_w, m72_videoram1 ),		\
+		new Memory_WriteAddress( 0xd8000, 0xdbfff, m72_videoram2_w, m72_videoram2 ),		\
 		new Memory_WriteAddress( 0xe0000, 0xeffff, soundram_w ),							\
 		new Memory_WriteAddress(MEMPORT_MARKER, 0)
 	};
@@ -590,11 +590,11 @@ public class m72
 		new Memory_WriteAddress( 0x00000, 0x7ffff, MWA_ROM ),
 		new Memory_WriteAddress( 0xb0000, 0xb0001, m72_irq_line_w ),
 		new Memory_WriteAddress( 0xbc000, 0xbc001, m72_dmaon_w ),
-		new Memory_WriteAddress( 0xc0000, 0xc03ff, MWA_RAM, &spriteram, &spriteram_size ),
-		new Memory_WriteAddress( 0xc8000, 0xc8bff, m72_palette1_w, &paletteram ),
-		new Memory_WriteAddress( 0xd0000, 0xd3fff, m72_videoram1_w, &m72_videoram1 ),
-		new Memory_WriteAddress( 0xd4000, 0xd7fff, m72_videoram2_w, &m72_videoram2 ),
-		new Memory_WriteAddress( 0xd8000, 0xd8bff, m72_palette2_w, &paletteram_2 ),
+		new Memory_WriteAddress( 0xc0000, 0xc03ff, MWA_RAM, spriteram, spriteram_size ),
+		new Memory_WriteAddress( 0xc8000, 0xc8bff, m72_palette1_w, paletteram ),
+		new Memory_WriteAddress( 0xd0000, 0xd3fff, m72_videoram1_w, m72_videoram1 ),
+		new Memory_WriteAddress( 0xd4000, 0xd7fff, m72_videoram2_w, m72_videoram2 ),
+		new Memory_WriteAddress( 0xd8000, 0xd8bff, m72_palette2_w, paletteram_2 ),
 		new Memory_WriteAddress( 0xe0000, 0xe3fff, MWA_RAM ),	/* work RAM */
 		new Memory_WriteAddress(MEMPORT_MARKER, 0)
 	};
@@ -616,13 +616,13 @@ public class m72
 	public static Memory_WriteAddress majtitle_writemem[]={
 		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
 		new Memory_WriteAddress( 0x00000, 0x7ffff, MWA_ROM ),
-		new Memory_WriteAddress( 0xa0000, 0xa03ff, MWA_RAM, &majtitle_rowscrollram ),
-		new Memory_WriteAddress( 0xa4000, 0xa4bff, m72_palette2_w, &paletteram_2 ),
-		new Memory_WriteAddress( 0xac000, 0xaffff, m72_videoram1_w, &m72_videoram1 ),
-		new Memory_WriteAddress( 0xb0000, 0xbffff, m72_videoram2_w, &m72_videoram2 ),	/* larger than the other games */
-		new Memory_WriteAddress( 0xc0000, 0xc03ff, MWA_RAM, &spriteram, &spriteram_size ),
-		new Memory_WriteAddress( 0xc8000, 0xc83ff, MWA_RAM, &spriteram_2 ),
-		new Memory_WriteAddress( 0xcc000, 0xccbff, m72_palette1_w, &paletteram ),
+		new Memory_WriteAddress( 0xa0000, 0xa03ff, MWA_RAM, majtitle_rowscrollram ),
+		new Memory_WriteAddress( 0xa4000, 0xa4bff, m72_palette2_w, paletteram_2 ),
+		new Memory_WriteAddress( 0xac000, 0xaffff, m72_videoram1_w, m72_videoram1 ),
+		new Memory_WriteAddress( 0xb0000, 0xbffff, m72_videoram2_w, m72_videoram2 ),	/* larger than the other games */
+		new Memory_WriteAddress( 0xc0000, 0xc03ff, MWA_RAM, spriteram, spriteram_size ),
+		new Memory_WriteAddress( 0xc8000, 0xc83ff, MWA_RAM, spriteram_2 ),
+		new Memory_WriteAddress( 0xcc000, 0xccbff, m72_palette1_w, paletteram ),
 		new Memory_WriteAddress( 0xd0000, 0xd3fff, MWA_RAM ),	/* work RAM */
 		new Memory_WriteAddress( 0xe0000, 0xe0001, m72_irq_line_w ),
 		new Memory_WriteAddress( 0xe4000, 0xe4001, MWA_RAM ),	/* playfield enable? 1 during screen transitions, 0 otherwise */
@@ -647,11 +647,11 @@ public class m72
 		new Memory_WriteAddress( 0x00000, 0x7ffff, MWA_ROM ),
 		new Memory_WriteAddress( 0xa0000, 0xa3fff, MWA_RAM ),	/* work RAM */
 		new Memory_WriteAddress( 0xb0ffe, 0xb0fff, MWA_RAM ),	/* leftover from protection?? */
-		new Memory_WriteAddress( 0xc0000, 0xc03ff, MWA_RAM, &spriteram, &spriteram_size ),
-		new Memory_WriteAddress( 0xc8000, 0xc8bff, m72_palette1_w, &paletteram ),
-		new Memory_WriteAddress( 0xcc000, 0xccbff, m72_palette2_w, &paletteram_2 ),
-		new Memory_WriteAddress( 0xd0000, 0xd3fff, m72_videoram1_w, &m72_videoram1 ),
-		new Memory_WriteAddress( 0xd8000, 0xdbfff, m72_videoram2_w, &m72_videoram2 ),
+		new Memory_WriteAddress( 0xc0000, 0xc03ff, MWA_RAM, spriteram, spriteram_size ),
+		new Memory_WriteAddress( 0xc8000, 0xc8bff, m72_palette1_w, paletteram ),
+		new Memory_WriteAddress( 0xcc000, 0xccbff, m72_palette2_w, paletteram_2 ),
+		new Memory_WriteAddress( 0xd0000, 0xd3fff, m72_videoram1_w, m72_videoram1 ),
+		new Memory_WriteAddress( 0xd8000, 0xdbfff, m72_videoram2_w, m72_videoram2 ),
 		new Memory_WriteAddress(MEMPORT_MARKER, 0)
 	};
 	
@@ -670,14 +670,14 @@ public class m72
 	public static Memory_WriteAddress hharryu_writemem[]={
 		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
 		new Memory_WriteAddress( 0x00000, 0x7ffff, MWA_ROM ),
-		new Memory_WriteAddress( 0xa0000, 0xa0bff, m72_palette1_w, &paletteram ),
-		new Memory_WriteAddress( 0xa8000, 0xa8bff, m72_palette2_w, &paletteram_2 ),
+		new Memory_WriteAddress( 0xa0000, 0xa0bff, m72_palette1_w, paletteram ),
+		new Memory_WriteAddress( 0xa8000, 0xa8bff, m72_palette2_w, paletteram_2 ),
 		new Memory_WriteAddress( 0xb0000, 0xb0001, m72_irq_line_w ),
 		new Memory_WriteAddress( 0xbc000, 0xbc001, m72_dmaon_w ),
 		new Memory_WriteAddress( 0xb0ffe, 0xb0fff, MWA_RAM ),	/* leftover from protection?? */
-		new Memory_WriteAddress( 0xc0000, 0xc03ff, MWA_RAM, &spriteram, &spriteram_size ),
-		new Memory_WriteAddress( 0xd0000, 0xd3fff, m72_videoram1_w, &m72_videoram1 ),
-		new Memory_WriteAddress( 0xd4000, 0xd7fff, m72_videoram2_w, &m72_videoram2 ),
+		new Memory_WriteAddress( 0xc0000, 0xc03ff, MWA_RAM, spriteram, spriteram_size ),
+		new Memory_WriteAddress( 0xd0000, 0xd3fff, m72_videoram1_w, m72_videoram1 ),
+		new Memory_WriteAddress( 0xd4000, 0xd7fff, m72_videoram2_w, m72_videoram2 ),
 		new Memory_WriteAddress( 0xe0000, 0xe3fff, MWA_RAM ),	/* work RAM */
 		new Memory_WriteAddress(MEMPORT_MARKER, 0)
 	};
@@ -697,14 +697,14 @@ public class m72
 	public static Memory_WriteAddress kengo_writemem[]={
 		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
 		new Memory_WriteAddress( 0x00000, 0x7ffff, MWA_ROM ),
-		new Memory_WriteAddress( 0xa0000, 0xa0bff, m72_palette1_w, &paletteram ),
-		new Memory_WriteAddress( 0xa8000, 0xa8bff, m72_palette2_w, &paletteram_2 ),
+		new Memory_WriteAddress( 0xa0000, 0xa0bff, m72_palette1_w, paletteram ),
+		new Memory_WriteAddress( 0xa8000, 0xa8bff, m72_palette2_w, paletteram_2 ),
 		new Memory_WriteAddress( 0xb0000, 0xb0001, m72_irq_line_w ),
 	new Memory_WriteAddress( 0xb4000, 0xb4001, MWA_NOP ),	/* ??? */
 		new Memory_WriteAddress( 0xbc000, 0xbc001, m72_dmaon_w ),
-		new Memory_WriteAddress( 0xc0000, 0xc03ff, MWA_RAM, &spriteram, &spriteram_size ),
-		new Memory_WriteAddress( 0x80000, 0x83fff, m72_videoram1_w, &m72_videoram1 ),
-		new Memory_WriteAddress( 0x84000, 0x87fff, m72_videoram2_w, &m72_videoram2 ),
+		new Memory_WriteAddress( 0xc0000, 0xc03ff, MWA_RAM, spriteram, spriteram_size ),
+		new Memory_WriteAddress( 0x80000, 0x83fff, m72_videoram1_w, m72_videoram1 ),
+		new Memory_WriteAddress( 0x84000, 0x87fff, m72_videoram2_w, m72_videoram2 ),
 		new Memory_WriteAddress( 0xe0000, 0xe3fff, MWA_RAM ),	/* work RAM */
 		new Memory_WriteAddress(MEMPORT_MARKER, 0)
 	};
@@ -821,7 +821,7 @@ public class m72
 	
 	public static Memory_WriteAddress sound_writemem[]={
 		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
-		new Memory_WriteAddress( 0x0000, 0xffff, MWA_RAM, &soundram ),
+		new Memory_WriteAddress( 0x0000, 0xffff, MWA_RAM, soundram ),
 		new Memory_WriteAddress(MEMPORT_MARKER, 0)
 	};
 	

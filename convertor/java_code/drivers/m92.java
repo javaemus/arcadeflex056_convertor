@@ -273,11 +273,11 @@ public class m92
 	public static Memory_WriteAddress writemem[]={
 		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
 		new Memory_WriteAddress( 0x00000, 0xbffff, MWA_ROM ),
-		new Memory_WriteAddress( 0xd0000, 0xdffff, m92_vram_w, &m92_vram_data ),
-		new Memory_WriteAddress( 0xe0000, 0xeffff, MWA_RAM, &m92_ram ), /* System ram */
-		new Memory_WriteAddress( 0xf8000, 0xf87ff, MWA_RAM, &spriteram, &spriteram_size ),
+		new Memory_WriteAddress( 0xd0000, 0xdffff, m92_vram_w, m92_vram_data ),
+		new Memory_WriteAddress( 0xe0000, 0xeffff, MWA_RAM, m92_ram ), /* System ram */
+		new Memory_WriteAddress( 0xf8000, 0xf87ff, MWA_RAM, spriteram, spriteram_size ),
 		new Memory_WriteAddress( 0xf8800, 0xf8fff, m92_paletteram_w ),
-		new Memory_WriteAddress( 0xf9000, 0xf900f, m92_spritecontrol_w, &m92_spritecontrol ),
+		new Memory_WriteAddress( 0xf9000, 0xf900f, m92_spritecontrol_w, m92_spritecontrol ),
 		new Memory_WriteAddress( 0xf9800, 0xf9801, m92_videocontrol_w ),
 		new Memory_WriteAddress( 0xffff0, 0xfffff, MWA_ROM ),
 		new Memory_WriteAddress(MEMPORT_MARKER, 0)
@@ -297,11 +297,11 @@ public class m92
 	public static Memory_WriteAddress lethalth_writemem[]={
 		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
 		new Memory_WriteAddress( 0x00000, 0x7ffff, MWA_ROM ),
-		new Memory_WriteAddress( 0x80000, 0x8ffff, m92_vram_w, &m92_vram_data ),
-		new Memory_WriteAddress( 0xe0000, 0xeffff, MWA_RAM, &m92_ram ), /* System ram */
-		new Memory_WriteAddress( 0xf8000, 0xf87ff, MWA_RAM, &spriteram, &spriteram_size ),
+		new Memory_WriteAddress( 0x80000, 0x8ffff, m92_vram_w, m92_vram_data ),
+		new Memory_WriteAddress( 0xe0000, 0xeffff, MWA_RAM, m92_ram ), /* System ram */
+		new Memory_WriteAddress( 0xf8000, 0xf87ff, MWA_RAM, spriteram, spriteram_size ),
 		new Memory_WriteAddress( 0xf8800, 0xf8fff, m92_paletteram_w ),
-		new Memory_WriteAddress( 0xf9000, 0xf900f, m92_spritecontrol_w, &m92_spritecontrol ),
+		new Memory_WriteAddress( 0xf9000, 0xf900f, m92_spritecontrol_w, m92_spritecontrol ),
 		new Memory_WriteAddress( 0xf9800, 0xf9801, m92_videocontrol_w ),
 		new Memory_WriteAddress( 0xffff0, 0xfffff, MWA_ROM ),
 		new Memory_WriteAddress(MEMPORT_MARKER, 0)
@@ -311,7 +311,7 @@ public class m92
 		new IO_ReadPort(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_IO | MEMPORT_WIDTH_8),
 		new IO_ReadPort( 0x00, 0x00, input_port_0_r ), /* Player 1 */
 		new IO_ReadPort( 0x01, 0x01, input_port_1_r ), /* Player 2 */
-		new IO_ReadPort( 0x02, 0x02, m92_port_4_r ),   /* Coins & VBL */
+		new IO_ReadPort( 0x02, 0x02, m92_port_4_r ),   /* Coins  VBL */
 		new IO_ReadPort( 0x03, 0x03, input_port_7_r ), /* Dip 3 */
 		new IO_ReadPort( 0x04, 0x04, input_port_6_r ), /* Dip 2 */
 		new IO_ReadPort( 0x05, 0x05, input_port_5_r ), /* Dip 1 */

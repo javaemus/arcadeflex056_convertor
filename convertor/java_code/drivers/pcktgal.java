@@ -94,8 +94,8 @@ public class pcktgal
 	public static Memory_WriteAddress writemem[]={
 		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
 		new Memory_WriteAddress( 0x0000, 0x07ff, MWA_RAM ),
-		new Memory_WriteAddress( 0x0800, 0x0fff, videoram_w, &videoram, &videoram_size ),
-		new Memory_WriteAddress( 0x1000, 0x11ff, MWA_RAM, &spriteram, &spriteram_size ),
+		new Memory_WriteAddress( 0x0800, 0x0fff, videoram_w, videoram, videoram_size ),
+		new Memory_WriteAddress( 0x1000, 0x11ff, MWA_RAM, spriteram, spriteram_size ),
 		new Memory_WriteAddress( 0x1801, 0x1801, pcktgal_flipscreen_w ),
 		/* 1800 - 0x181f are unused BAC-06 registers, see vidhrdw/dec0.c */
 		new Memory_WriteAddress( 0x1a00, 0x1a00, pcktgal_sound_w ),

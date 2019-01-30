@@ -280,16 +280,16 @@ public class xevious
 		new Memory_WriteAddress( 0x6830, 0x683f, MWA_NOP ),				/* watch dock reset */
 		new Memory_WriteAddress( 0x7000, 0x700f, xevious_customio_data_w ),
 		new Memory_WriteAddress( 0x7100, 0x7100, xevious_customio_w ),
-		new Memory_WriteAddress( 0x7800, 0xafff, xevious_sharedram_w, &xevious_sharedram ),
-		new Memory_WriteAddress( 0xb000, 0xb7ff, xevious_fg_colorram_w, &xevious_fg_colorram ),
-		new Memory_WriteAddress( 0xb800, 0xbfff, xevious_bg_colorram_w, &xevious_bg_colorram ),
-		new Memory_WriteAddress( 0xc000, 0xc7ff, xevious_fg_videoram_w, &xevious_fg_videoram ),
-		new Memory_WriteAddress( 0xc800, 0xcfff, xevious_bg_videoram_w, &xevious_bg_videoram ),
+		new Memory_WriteAddress( 0x7800, 0xafff, xevious_sharedram_w, xevious_sharedram ),
+		new Memory_WriteAddress( 0xb000, 0xb7ff, xevious_fg_colorram_w, xevious_fg_colorram ),
+		new Memory_WriteAddress( 0xb800, 0xbfff, xevious_bg_colorram_w, xevious_bg_colorram ),
+		new Memory_WriteAddress( 0xc000, 0xc7ff, xevious_fg_videoram_w, xevious_fg_videoram ),
+		new Memory_WriteAddress( 0xc800, 0xcfff, xevious_bg_videoram_w, xevious_bg_videoram ),
 		new Memory_WriteAddress( 0xd000, 0xd07f, xevious_vh_latch_w ), /* ?? */
 		new Memory_WriteAddress( 0xf000, 0xffff, xevious_bs_w ),
-		new Memory_WriteAddress( 0x8780, 0x87ff, MWA_RAM, &spriteram_2 ),	/* here only */
-		new Memory_WriteAddress( 0x9780, 0x97ff, MWA_RAM, &spriteram_3 ),	/* to initialize */
-		new Memory_WriteAddress( 0xa780, 0xa7ff, MWA_RAM, &spriteram, &spriteram_size ),	/* the pointers */
+		new Memory_WriteAddress( 0x8780, 0x87ff, MWA_RAM, spriteram_2 ),	/* here only */
+		new Memory_WriteAddress( 0x9780, 0x97ff, MWA_RAM, spriteram_3 ),	/* to initialize */
+		new Memory_WriteAddress( 0xa780, 0xa7ff, MWA_RAM, spriteram, spriteram_size ),	/* the pointers */
 		new Memory_WriteAddress(MEMPORT_MARKER, 0)
 	};
 	
@@ -310,7 +310,7 @@ public class xevious
 	public static Memory_WriteAddress writemem_cpu3[]={
 		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
 		new Memory_WriteAddress( 0x0000, 0x0fff, MWA_ROM ),
-		new Memory_WriteAddress( 0x6800, 0x681f, pengo_sound_w, &pengo_soundregs ),
+		new Memory_WriteAddress( 0x6800, 0x681f, pengo_sound_w, pengo_soundregs ),
 		new Memory_WriteAddress( 0x6822, 0x6822, xevious_interrupt_enable_3_w ),
 		new Memory_WriteAddress( 0x7800, 0xcfff, xevious_sharedram_w ),
 		new Memory_WriteAddress(MEMPORT_MARKER, 0)

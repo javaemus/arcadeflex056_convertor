@@ -98,16 +98,16 @@ public class amspdwy
 	public static Memory_WriteAddress amspdwy_writemem[]={
 		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
 		new Memory_WriteAddress( 0x0000, 0x7fff, MWA_ROM							),	// ROM
-		new Memory_WriteAddress( 0x8000, 0x801f, amspdwy_paletteram_w, &paletteram	),	// Palette
-		new Memory_WriteAddress( 0x9000, 0x93ff, amspdwy_videoram_w, &videoram		),	// Layer
+		new Memory_WriteAddress( 0x8000, 0x801f, amspdwy_paletteram_w, paletteram	),	// Palette
+		new Memory_WriteAddress( 0x9000, 0x93ff, amspdwy_videoram_w, videoram		),	// Layer
 		new Memory_WriteAddress( 0x9400, 0x97ff, amspdwy_videoram_w				),	// Mirror?
-		new Memory_WriteAddress( 0x9800, 0x9bff, amspdwy_colorram_w, &colorram		),	// Layer
+		new Memory_WriteAddress( 0x9800, 0x9bff, amspdwy_colorram_w, colorram		),	// Layer
 		new Memory_WriteAddress( 0x9c00, 0x9fff, MWA_RAM							),	// Unused?
 	//	new Memory_WriteAddress( 0xa000, 0xa000, MWA_NOP							),	// ?
 		new Memory_WriteAddress( 0xa400, 0xa400, amspdwy_flipscreen_w				),	// Toggle Flip Screen?
 		new Memory_WriteAddress( 0xb000, 0xb000, MWA_NOP							),	// ? Exiting IRQ
 		new Memory_WriteAddress( 0xb400, 0xb400, amspdwy_sound_w					),	// To Sound CPU
-		new Memory_WriteAddress( 0xc000, 0xc0ff, MWA_RAM, &spriteram, &spriteram_size	),	// Sprites
+		new Memory_WriteAddress( 0xc000, 0xc0ff, MWA_RAM, spriteram, spriteram_size	),	// Sprites
 		new Memory_WriteAddress( 0xe000, 0xe7ff, MWA_RAM							),	// Work RAM
 		new Memory_WriteAddress(MEMPORT_MARKER, 0)
 	};

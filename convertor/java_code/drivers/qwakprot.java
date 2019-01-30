@@ -86,9 +86,9 @@ public class qwakprot
 		new Memory_WriteAddress( 0x0000, 0x01ff, MWA_RAM ),
 		new Memory_WriteAddress( 0x0200, 0x025f, MWA_RAM ),
 		new Memory_WriteAddress( 0x0300, 0x03ff, MWA_RAM ),
-		new Memory_WriteAddress( 0x0400, 0x07bf, videoram_w, &videoram, &videoram_size ),
-		new Memory_WriteAddress( 0x07c0, 0x07ff, MWA_RAM, &spriteram ),
-		new Memory_WriteAddress( 0x1c00, 0x1c0f, qwakprot_paletteram_w, &paletteram ), /* just guessing */
+		new Memory_WriteAddress( 0x0400, 0x07bf, videoram_w, videoram, videoram_size ),
+		new Memory_WriteAddress( 0x07c0, 0x07ff, MWA_RAM, spriteram ),
+		new Memory_WriteAddress( 0x1c00, 0x1c0f, qwakprot_paletteram_w, paletteram ), /* just guessing */
 	//	new Memory_WriteAddress( 0x2000, 0x2001, coin_counter_w ),
 		new Memory_WriteAddress( 0x2003, 0x2004, qwakprot_led_w ),
 		new Memory_WriteAddress( 0x6000, 0x600f, pokey1_w ),

@@ -244,9 +244,9 @@ public class looping
 	public static Memory_WriteAddress looping_writemem[]={
 		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
 		new Memory_WriteAddress( 0x0000, 0x7fff, MWA_ROM ),
-		new Memory_WriteAddress( 0x9000, 0x93ff, looping_videoram_w, &videoram ),
-		new Memory_WriteAddress( 0x9800, 0x983f, looping_colorram_w, &colorram ),
-		new Memory_WriteAddress( 0x9840, 0x987f, MWA_RAM, &spriteram ),
+		new Memory_WriteAddress( 0x9000, 0x93ff, looping_videoram_w, videoram ),
+		new Memory_WriteAddress( 0x9800, 0x983f, looping_colorram_w, colorram ),
+		new Memory_WriteAddress( 0x9840, 0x987f, MWA_RAM, spriteram ),
 		new Memory_WriteAddress( 0xe000, 0xefff, MWA_RAM ),
 		new Memory_WriteAddress( 0xb006, 0xb007, MWA_RAM ), /* unknown */
 		new Memory_WriteAddress( 0xf801, 0xf801, looping_soundlatch_w ),

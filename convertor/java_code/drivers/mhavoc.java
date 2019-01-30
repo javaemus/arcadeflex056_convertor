@@ -257,7 +257,7 @@ public class mhavoc
 		new Memory_WriteAddress( 0x17c0, 0x17c0, mhavoc_gamma_w ),		/* Gamma Communication Write Port */
 		new Memory_WriteAddress( 0x1800, 0x1fff, MWA_RAM ),			/* Shared Beta Ram */
 		new Memory_WriteAddress( 0x2000, 0x3fff, MWA_ROM ),			/* Major Havoc writes here.*/
-		new Memory_WriteAddress( 0x4000, 0x4fff, MWA_RAM, &vectorram, &vectorram_size ),/* Vector Generator RAM	*/
+		new Memory_WriteAddress( 0x4000, 0x4fff, MWA_RAM, vectorram, vectorram_size ),/* Vector Generator RAM	*/
 		new Memory_WriteAddress( 0x6000, 0x7fff, MWA_ROM ),
 		new Memory_WriteAddress(MEMPORT_MARKER, 0)
 	};
@@ -281,12 +281,12 @@ public class mhavoc
 	public static Memory_WriteAddress gamma_writemem[]={
 		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
 		new Memory_WriteAddress( 0x0000, 0x07ff, MWA_RAM ),			/* Program RAM (2K)	*/
-		new Memory_WriteAddress( 0x0800, 0x1fff, mhavoc_gammaram_w, &gammaram ),	/* wraps to 0x000-0x7ff */
+		new Memory_WriteAddress( 0x0800, 0x1fff, mhavoc_gammaram_w, gammaram ),	/* wraps to 0x000-0x7ff */
 		new Memory_WriteAddress( 0x2000, 0x203f, quad_pokey_w ),		/* Quad Pokey write	*/
 		new Memory_WriteAddress( 0x4000, 0x4000, mhavoc_irqack_w ),	/* IRQ Acknowledge	*/
 		new Memory_WriteAddress( 0x4800, 0x4800, mhavoc_out_1_w ),		/* Coin Counters 	*/
 		new Memory_WriteAddress( 0x5000, 0x5000, mhavoc_alpha_w ),		/* Alpha Comm. Write Port */
-		new Memory_WriteAddress( 0x6000, 0x61ff, MWA_RAM, &nvram, &nvram_size ),	/* EEROM		*/
+		new Memory_WriteAddress( 0x6000, 0x61ff, MWA_RAM, nvram, nvram_size ),	/* EEROM		*/
 		new Memory_WriteAddress(MEMPORT_MARKER, 0)
 	};
 	

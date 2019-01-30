@@ -74,12 +74,12 @@ public class aeroboto
 		new Memory_WriteAddress( 0x0000, 0x07ff, MWA_RAM ),
 		new Memory_WriteAddress( 0x0800, 0x08ff, MWA_RAM ),	/* ? initialized on startup */
 		new Memory_WriteAddress( 0x0900, 0x09ff, MWA_RAM ),	/* ? initialized on startup (same as 0800) */
-		new Memory_WriteAddress( 0x1000, 0x13ff, MWA_RAM, &aeroboto_videoram ),
-		new Memory_WriteAddress( 0x1400, 0x17ff, videoram_w, &videoram, &videoram_size ),
-		new Memory_WriteAddress( 0x1800, 0x181f, MWA_RAM, &aeroboto_fgscroll ),
-		new Memory_WriteAddress( 0x1820, 0x183f, MWA_RAM, &aeroboto_bgscroll ),
+		new Memory_WriteAddress( 0x1000, 0x13ff, MWA_RAM, aeroboto_videoram ),
+		new Memory_WriteAddress( 0x1400, 0x17ff, videoram_w, videoram, videoram_size ),
+		new Memory_WriteAddress( 0x1800, 0x181f, MWA_RAM, aeroboto_fgscroll ),
+		new Memory_WriteAddress( 0x1820, 0x183f, MWA_RAM, aeroboto_bgscroll ),
 		new Memory_WriteAddress( 0x2000, 0x20ff, MWA_RAM ),	/* scroll? maybe stars? copied from 0800 */
-		new Memory_WriteAddress( 0x2800, 0x28ff, MWA_RAM, &spriteram, &spriteram_size ),
+		new Memory_WriteAddress( 0x2800, 0x28ff, MWA_RAM, spriteram, spriteram_size ),
 		new Memory_WriteAddress( 0x3000, 0x3000, aeroboto_3000_w ),
 		new Memory_WriteAddress( 0x3001, 0x3001, soundlatch_w ),	/* ? */
 		new Memory_WriteAddress( 0x3002, 0x3002, soundlatch2_w ),	/* ? */

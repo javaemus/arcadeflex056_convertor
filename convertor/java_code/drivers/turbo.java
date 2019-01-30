@@ -185,11 +185,11 @@ public class turbo
 	public static Memory_WriteAddress writemem[]={
 		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
 		new Memory_WriteAddress( 0x0000, 0x5fff, MWA_ROM ),
-		new Memory_WriteAddress( 0xa000, 0xa0ff, MWA_RAM, &spriteram, &spriteram_size ),
+		new Memory_WriteAddress( 0xa000, 0xa0ff, MWA_RAM, spriteram, spriteram_size ),
 		new Memory_WriteAddress( 0xa800, 0xa807, turbo_coin_and_lamp_w ),
-		new Memory_WriteAddress( 0xb000, 0xb1ff, MWA_RAM, &turbo_sprite_position ),
+		new Memory_WriteAddress( 0xb000, 0xb1ff, MWA_RAM, turbo_sprite_position ),
 		new Memory_WriteAddress( 0xb800, 0xb800, MWA_NOP ),	/* resets the analog wheel value */
-		new Memory_WriteAddress( 0xe000, 0xe7ff, MWA_RAM, &videoram, &videoram_size ),
+		new Memory_WriteAddress( 0xe000, 0xe7ff, MWA_RAM, videoram, videoram_size ),
 		new Memory_WriteAddress( 0xe800, 0xe800, turbo_collision_clear_w ),
 		new Memory_WriteAddress( 0xf000, 0xf7ff, MWA_RAM ),
 		new Memory_WriteAddress( 0xf800, 0xf803, ppi8255_0_w ),

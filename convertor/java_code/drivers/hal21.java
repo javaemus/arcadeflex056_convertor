@@ -577,10 +577,10 @@ public class hal21
 		new Memory_WriteAddress( 0xcb00, 0xcb00, hal21_vreg4_w ),
 		new Memory_WriteAddress( 0xcc00, 0xcc00, hal21_vreg5_w ),
 		new Memory_WriteAddress( 0xcf00, 0xcf00, hal21_vreg0_w ),
-		new Memory_WriteAddress( 0xd800, 0xdfff, MWA_RAM, &shared_auxram ),
-		new Memory_WriteAddress( 0xe000, 0xe7ff, MWA_RAM, &spriteram ),
-		new Memory_WriteAddress( 0xe800, 0xf7ff, videoram_w, &videoram ),
-		new Memory_WriteAddress( 0xf800, 0xffff, MWA_RAM, &shared_ram ),
+		new Memory_WriteAddress( 0xd800, 0xdfff, MWA_RAM, shared_auxram ),
+		new Memory_WriteAddress( 0xe000, 0xe7ff, MWA_RAM, spriteram ),
+		new Memory_WriteAddress( 0xe800, 0xf7ff, videoram_w, videoram ),
+		new Memory_WriteAddress( 0xf800, 0xffff, MWA_RAM, shared_ram ),
 		new Memory_WriteAddress(MEMPORT_MARKER, 0)
 	};
 	
@@ -631,8 +631,8 @@ public class hal21
 		new Memory_WriteAddress( 0xd500, 0xd500, hal21_vreg3_w ),
 		new Memory_WriteAddress( 0xd600, 0xd600, hal21_vreg4_w ),
 		new Memory_WriteAddress( 0xd700, 0xd700, hal21_vreg5_w ),
-		new Memory_WriteAddress( 0xe000, 0xefff, MWA_RAM, &spriteram ),
-		new Memory_WriteAddress( 0xf000, 0xffff, MWA_RAM, &shared_ram ),
+		new Memory_WriteAddress( 0xe000, 0xefff, MWA_RAM, spriteram ),
+		new Memory_WriteAddress( 0xf000, 0xffff, MWA_RAM, shared_ram ),
 		new Memory_WriteAddress(MEMPORT_MARKER, 0)
 	};
 	
@@ -657,7 +657,7 @@ public class hal21
 		new Memory_WriteAddress( 0x0000, 0x9fff, MWA_ROM ),
 		new Memory_WriteAddress( 0xa000, 0xa000, CPUB_int_enable_w ),
 		new Memory_WriteAddress( 0xc000, 0xcfff, hal21_spriteram_w ),
-		new Memory_WriteAddress( 0xd000, 0xdfff, videoram_w, &videoram ),
+		new Memory_WriteAddress( 0xd000, 0xdfff, videoram_w, videoram ),
 		new Memory_WriteAddress( 0xe000, 0xefff, shared_ram_w ),
 		new Memory_WriteAddress(MEMPORT_MARKER, 0)
 	};

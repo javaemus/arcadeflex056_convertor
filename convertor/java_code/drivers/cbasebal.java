@@ -163,9 +163,9 @@ public class cbasebal
 	public static Memory_WriteAddress cbasebal_writemem[]={
 		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
 		new Memory_WriteAddress( 0x0000, 0xbfff, MWA_ROM ),
-		new Memory_WriteAddress( 0xc000, 0xcfff, bankedram_w, &paletteram ),	/* palette + vram + scrollram */
+		new Memory_WriteAddress( 0xc000, 0xcfff, bankedram_w, paletteram ),	/* palette + vram + scrollram */
 		new Memory_WriteAddress( 0xe000, 0xfdff, MWA_RAM ),			/* work RAM */
-		new Memory_WriteAddress( 0xfe00, 0xffff, MWA_RAM, &spriteram, &spriteram_size ),
+		new Memory_WriteAddress( 0xfe00, 0xffff, MWA_RAM, spriteram, spriteram_size ),
 		new Memory_WriteAddress(MEMPORT_MARKER, 0)
 	};
 	

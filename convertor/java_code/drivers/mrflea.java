@@ -116,9 +116,9 @@ public class mrflea
 		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
 		new Memory_WriteAddress( 0x0000, 0xbfff, MWA_ROM ),
 		new Memory_WriteAddress( 0xc000, 0xcfff, MWA_RAM ),
-		new Memory_WriteAddress( 0xe000, 0xe7ff, mrflea_videoram_w, &videoram ),
-		new Memory_WriteAddress( 0xe800, 0xe83f, paletteram_xxxxRRRRGGGGBBBB_w, &paletteram ),
-		new Memory_WriteAddress( 0xec00, 0xecff, mrflea_spriteram_w, &spriteram ),
+		new Memory_WriteAddress( 0xe000, 0xe7ff, mrflea_videoram_w, videoram ),
+		new Memory_WriteAddress( 0xe800, 0xe83f, paletteram_xxxxRRRRGGGGBBBB_w, paletteram ),
+		new Memory_WriteAddress( 0xec00, 0xecff, mrflea_spriteram_w, spriteram ),
 		new Memory_WriteAddress(MEMPORT_MARKER, 0)
 	};
 	

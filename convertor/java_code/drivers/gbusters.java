@@ -129,15 +129,15 @@ public class gbusters
 	
 	public static Memory_ReadAddress gbusters_readmem[]={
 		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
-		new Memory_ReadAddress( 0x1f90, 0x1f90, input_port_3_r ),		/* coinsw & startsw */
+		new Memory_ReadAddress( 0x1f90, 0x1f90, input_port_3_r ),		/* coinsw  startsw */
 		new Memory_ReadAddress( 0x1f91, 0x1f91, input_port_4_r ),		/* Player 1 inputs */
 		new Memory_ReadAddress( 0x1f92, 0x1f92, input_port_5_r ),		/* Player 2 inputs */
 		new Memory_ReadAddress( 0x1f93, 0x1f93, input_port_2_r ),		/* DIPSW #3 */
 		new Memory_ReadAddress( 0x1f94, 0x1f94, input_port_0_r ),		/* DIPSW #1 */
 		new Memory_ReadAddress( 0x1f95, 0x1f95, input_port_1_r ),		/* DIPSW #2 */
-		new Memory_ReadAddress( 0x0000, 0x3fff, K052109_051960_r ),	/* tiles + sprites (RAM H21, G21 & H6) */
+		new Memory_ReadAddress( 0x0000, 0x3fff, K052109_051960_r ),	/* tiles + sprites (RAM H21, G21  H6) */
 		new Memory_ReadAddress( 0x4000, 0x57ff, MRA_RAM ),			/* RAM I12 */
-		new Memory_ReadAddress( 0x5800, 0x5fff, bankedram_r ),		/* palette + work RAM (RAM D16 & C16) */
+		new Memory_ReadAddress( 0x5800, 0x5fff, bankedram_r ),		/* palette + work RAM (RAM D16  C16) */
 		new Memory_ReadAddress( 0x6000, 0x7fff, MRA_BANK1 ),			/* banked ROM */
 		new Memory_ReadAddress( 0x8000, 0xffff, MRA_ROM ),			/* ROM 878n02.rom */
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
@@ -151,9 +151,9 @@ public class gbusters
 		new Memory_WriteAddress( 0x1f8c, 0x1f8c, watchdog_reset_w ),			/* watchdog reset */
 		new Memory_WriteAddress( 0x1f98, 0x1f98, gbusters_1f98_w ),			/* enable gfx ROM read through VRAM */
 		new Memory_WriteAddress( 0x1f9c, 0x1f9c, gbusters_unknown_w ),			/* ??? */
-		new Memory_WriteAddress( 0x0000, 0x3fff, K052109_051960_w ),			/* tiles + sprites (RAM H21, G21 & H6) */
+		new Memory_WriteAddress( 0x0000, 0x3fff, K052109_051960_w ),			/* tiles + sprites (RAM H21, G21  H6) */
 		new Memory_WriteAddress( 0x4000, 0x57ff, MWA_RAM ),					/* RAM I12 */
-		new Memory_WriteAddress( 0x5800, 0x5fff, bankedram_w, &ram ),			/* palette + work RAM (RAM D16 & C16) */
+		new Memory_WriteAddress( 0x5800, 0x5fff, bankedram_w, ram ),			/* palette + work RAM (RAM D16  C16) */
 		new Memory_WriteAddress( 0x6000, 0x7fff, MWA_ROM ),					/* banked ROM */
 		new Memory_WriteAddress( 0x8000, 0xffff, MWA_ROM ),					/* ROM 878n02.rom */
 		new Memory_WriteAddress(MEMPORT_MARKER, 0)

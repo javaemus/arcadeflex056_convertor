@@ -411,6 +411,13 @@ public class convertMame {
                     Convertor.inpos = i;
                     break;
                 }
+                case '&': {
+                    if (type == MEMORY_READ8 || type == MEMORY_WRITE8 || type == PORT_READ8 || type == PORT_WRITE8) {
+                        Convertor.inpos += 1;
+                        continue;
+                    }
+                    break;
+                }
 
             }
             Convertor.outbuf[Convertor.outpos++] = Convertor.inbuf[Convertor.inpos++];//grapse to inputbuffer sto output

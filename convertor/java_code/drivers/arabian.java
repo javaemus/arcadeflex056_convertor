@@ -244,9 +244,9 @@ public class arabian
 	public static Memory_WriteAddress writemem[]={
 		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
 		new Memory_WriteAddress( 0x0000, 0x7fff, MWA_ROM ),
-		new Memory_WriteAddress( 0x8000, 0xbfff, arabian_videoram_w, &videoram ),
-		new Memory_WriteAddress( 0xd000, 0xd7ff, MWA_RAM, &custom_cpu_ram ),
-		new Memory_WriteAddress( 0xe000, 0xe07f, arabian_blitter_w, &spriteram ),
+		new Memory_WriteAddress( 0x8000, 0xbfff, arabian_videoram_w, videoram ),
+		new Memory_WriteAddress( 0xd000, 0xd7ff, MWA_RAM, custom_cpu_ram ),
+		new Memory_WriteAddress( 0xe000, 0xe07f, arabian_blitter_w, spriteram ),
 		new Memory_WriteAddress(MEMPORT_MARKER, 0)
 	};
 	

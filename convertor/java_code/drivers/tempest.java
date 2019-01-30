@@ -228,7 +228,7 @@ public class tempest
 		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
 		new Memory_WriteAddress( 0x0000, 0x07ff, MWA_RAM ),
 		new Memory_WriteAddress( 0x0800, 0x080f, tempest_colorram_w ),
-		new Memory_WriteAddress( 0x2000, 0x2fff, MWA_RAM, &vectorram, &vectorram_size ),
+		new Memory_WriteAddress( 0x2000, 0x2fff, MWA_RAM, vectorram, vectorram_size ),
 		new Memory_WriteAddress( 0x3000, 0x3fff, MWA_ROM ),
 		new Memory_WriteAddress( 0x4000, 0x4000, tempest_coin_w ),
 		new Memory_WriteAddress( 0x4800, 0x4800, avgdvg_go_w ),

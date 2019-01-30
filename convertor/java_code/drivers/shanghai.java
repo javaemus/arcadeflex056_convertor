@@ -822,7 +822,7 @@ public class shanghai
 	public static Memory_WriteAddress shangha2_writemem[]={
 		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
 		new Memory_WriteAddress( 0x00000, 0x03fff, MWA_RAM ),
-		new Memory_WriteAddress( 0x04000, 0x041ff, paletteram_xxxxBBBBGGGGRRRR_w, &paletteram ),
+		new Memory_WriteAddress( 0x04000, 0x041ff, paletteram_xxxxBBBBGGGGRRRR_w, paletteram ),
 		new Memory_WriteAddress( 0x80000, 0xfffff, MWA_ROM ),
 		new Memory_WriteAddress(MEMPORT_MARKER, 0)
 	};

@@ -115,7 +115,7 @@ public class warlord
 		new Memory_ReadAddress( 0x0801, 0x0801, input_port_3_r ), /* DSW2 */
 		new Memory_ReadAddress( 0x0c00, 0x0c00, input_port_0_r ), /* IN0 */
 		new Memory_ReadAddress( 0x0c01, 0x0c01, input_port_1_r ), /* IN1 */
-		new Memory_ReadAddress( 0x1000, 0x100f, pokey1_r ),		/* Read the 4 paddle values & the random # gen */
+		new Memory_ReadAddress( 0x1000, 0x100f, pokey1_r ),		/* Read the 4 paddle values  the random # gen */
 		new Memory_ReadAddress( 0x5000, 0x7fff, MRA_ROM ),
 		new Memory_ReadAddress( 0xf800, 0xffff, MRA_ROM ),		/* for the reset / interrupt vectors */
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
@@ -124,8 +124,8 @@ public class warlord
 	public static Memory_WriteAddress writemem[]={
 		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
 		new Memory_WriteAddress( 0x0000, 0x03ff, MWA_RAM ),
-		new Memory_WriteAddress( 0x0400, 0x07bf, videoram_w, &videoram, &videoram_size ),
-		new Memory_WriteAddress( 0x07c0, 0x07ff, MWA_RAM, &spriteram ),
+		new Memory_WriteAddress( 0x0400, 0x07bf, videoram_w, videoram, videoram_size ),
+		new Memory_WriteAddress( 0x07c0, 0x07ff, MWA_RAM, spriteram ),
 		new Memory_WriteAddress( 0x1000, 0x100f, pokey1_w ),
 		new Memory_WriteAddress( 0x1800, 0x1800, MWA_NOP ),		/* IRQ Acknowledge */
 		new Memory_WriteAddress( 0x1c00, 0x1c02, warlord_coin_counter_w ),

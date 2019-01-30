@@ -161,7 +161,7 @@ public class tubep
 		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
 		new Memory_WriteAddress( 0x0000, 0x7fff, MWA_ROM ),	//up to 9fff in rjammer
 		new Memory_WriteAddress( 0xa000, 0xa7ff, MWA_RAM ),							/* 6116 #0 */
-		new Memory_WriteAddress( 0xc000, 0xc7ff, tubep_textram_w, &tubep_textram ), 	/* 2147s  0x0-0x7ff  ?????? */
+		new Memory_WriteAddress( 0xc000, 0xc7ff, tubep_textram_w, tubep_textram ), 	/* 2147s  0x0-0x7ff  ?????? */
 		new Memory_WriteAddress( 0xe000, 0xe06a, sharedram_w ),						/* 6116 #1 */
 		new Memory_WriteAddress(MEMPORT_MARKER, 0)
 	};
@@ -262,7 +262,7 @@ public class tubep
 		new Memory_WriteAddress( 0x0000, 0x9fff, MWA_ROM ),	//only up to 7fff in tube panic
 		new Memory_WriteAddress( 0xa000, 0xa7ff, MWA_RAM ),							/* */
 		new Memory_WriteAddress( 0xe000, 0xe7ff, MWA_RAM ),							/* */
-		new Memory_WriteAddress( 0xc000, 0xc7ff, tubep_textram_w, &tubep_textram ), 	/*  */
+		new Memory_WriteAddress( 0xc000, 0xc7ff, tubep_textram_w, tubep_textram ), 	/*  */
 		new Memory_WriteAddress(MEMPORT_MARKER, 0)
 	};
 	
@@ -322,7 +322,7 @@ public class tubep
 		new Memory_WriteAddress( 0xa000, 0xa000, tubep_a000_w ),
 		new Memory_WriteAddress( 0xc000, 0xc000, tubep_c000_w ),
 	
-		new Memory_WriteAddress( 0xe000, 0xe07f, sharedram_w, &sharedram ),	/* 6116 #1 */
+		new Memory_WriteAddress( 0xe000, 0xe07f, sharedram_w, sharedram ),	/* 6116 #1 */
 		new Memory_WriteAddress( 0xe080, 0xe7ff, MWA_RAM ),					/* 6116 #1 */
 	
 		new Memory_WriteAddress( 0xe800, 0xebff, MWA_RAM ),					/* 2147s 0x800 - 0xbff ?????? */
@@ -363,7 +363,7 @@ public class tubep
 		//new Memory_WriteAddress( 0xa000, 0xa000, tubep_a000_w ),
 		//new Memory_WriteAddress( 0xc000, 0xc000, tubep_c000_w ),
 	
-	//	new Memory_WriteAddress( 0xe000, 0xe07f, sharedram_w, &sharedram ),	/* 6116 #1 */
+	//	new Memory_WriteAddress( 0xe000, 0xe07f, sharedram_w, sharedram ),	/* 6116 #1 */
 	//	new Memory_WriteAddress( 0xe080, 0xe7ff, MWA_RAM ),					/* 6116 #1 */
 	//	new Memory_WriteAddress( 0xe800, 0xebff, MWA_RAM ),					/* 2147s 0x800 - 0xbff ?????? */
 	//	new Memory_WriteAddress( 0xf000, 0xf01f, MWA_NOP ), /* Background color lookup table ?? */

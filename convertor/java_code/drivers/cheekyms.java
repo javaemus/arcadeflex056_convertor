@@ -38,7 +38,7 @@ public class cheekyms
 		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
 		new Memory_WriteAddress( 0x0000, 0x1fff, MWA_ROM ),
 		new Memory_WriteAddress( 0x3000, 0x33ff, MWA_RAM ),
-		new Memory_WriteAddress( 0x3800, 0x3bff, videoram_w, &videoram, &videoram_size ),
+		new Memory_WriteAddress( 0x3800, 0x3bff, videoram_w, videoram, videoram_size ),
 		new Memory_WriteAddress(MEMPORT_MARKER, 0)
 	};
 	

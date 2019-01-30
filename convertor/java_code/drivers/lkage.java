@@ -111,8 +111,8 @@ public class lkage
 		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
 		new Memory_WriteAddress( 0x0000, 0xdfff, MWA_ROM ),
 		new Memory_WriteAddress( 0xe000, 0xe7ff, MWA_RAM ),
-		new Memory_WriteAddress( 0xe800, 0xefff, MWA_RAM, &paletteram ),
-	//	paletteram_xxxxRRRRGGGGBBBB_w, &paletteram },
+		new Memory_WriteAddress( 0xe800, 0xefff, MWA_RAM, paletteram ),
+	//	paletteram_xxxxRRRRGGGGBBBB_w, paletteram },
 		{ 0xf000, 0xf003, MWA_RAM, &lkage_vreg }, /* video registers */
 		{ 0xf060, 0xf060, lkage_sound_command_w },
 		{ 0xf061, 0xf061, MWA_NOP }, /* unknown */

@@ -142,12 +142,12 @@ public class seicross
 	public static Memory_WriteAddress writemem[]={
 		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
 		new Memory_WriteAddress( 0x0000, 0x77ff, MWA_ROM ),
-		new Memory_WriteAddress( 0x7800, 0x7fff, sharedram_w, &sharedram ),
-		new Memory_WriteAddress( 0x8820, 0x887f, MWA_RAM, &spriteram, &spriteram_size ),
-		new Memory_WriteAddress( 0x9000, 0x93ff, videoram_w, &videoram, &videoram_size ),
-		new Memory_WriteAddress( 0x9800, 0x981f, MWA_RAM, &seicross_row_scroll ),
-		new Memory_WriteAddress( 0x9880, 0x989f, MWA_RAM, &spriteram_2, &spriteram_2_size ),
-		new Memory_WriteAddress( 0x9c00, 0x9fff, seicross_colorram_w, &colorram ),
+		new Memory_WriteAddress( 0x7800, 0x7fff, sharedram_w, sharedram ),
+		new Memory_WriteAddress( 0x8820, 0x887f, MWA_RAM, spriteram, spriteram_size ),
+		new Memory_WriteAddress( 0x9000, 0x93ff, videoram_w, videoram, videoram_size ),
+		new Memory_WriteAddress( 0x9800, 0x981f, MWA_RAM, seicross_row_scroll ),
+		new Memory_WriteAddress( 0x9880, 0x989f, MWA_RAM, spriteram_2, spriteram_2_size ),
+		new Memory_WriteAddress( 0x9c00, 0x9fff, seicross_colorram_w, colorram ),
 		new Memory_WriteAddress(MEMPORT_MARKER, 0)
 	};
 	
@@ -190,7 +190,7 @@ public class seicross
 	public static Memory_WriteAddress mcu_nvram_writemem[]={
 		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
 		new Memory_WriteAddress( 0x0000, 0x007f, MWA_RAM ),
-		new Memory_WriteAddress( 0x1000, 0x10ff, MWA_RAM, &nvram, &nvram_size ),
+		new Memory_WriteAddress( 0x1000, 0x10ff, MWA_RAM, nvram, nvram_size ),
 		new Memory_WriteAddress( 0x2000, 0x2000, DAC_0_data_w ),
 		new Memory_WriteAddress( 0x8000, 0xf7ff, MWA_ROM ),
 		new Memory_WriteAddress( 0xf800, 0xffff, sharedram_w ),

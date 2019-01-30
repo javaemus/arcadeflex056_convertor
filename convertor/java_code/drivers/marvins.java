@@ -138,7 +138,7 @@ public class marvins
 	
 	public static Memory_WriteAddress writemem_sound[]={
 		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
-		new Memory_WriteAddress( 0x0000, 0x3fff, MWA_ROM, &namco_wavedata ),	/* silly hack - this shouldn't be here */
+		new Memory_WriteAddress( 0x0000, 0x3fff, MWA_ROM, namco_wavedata ),	/* silly hack - this shouldn't be here */
 		new Memory_WriteAddress( 0x8000, 0x8000, AY8910_control_port_0_w ),
 		new Memory_WriteAddress( 0x8001, 0x8001, AY8910_write_port_0_w ),
 		new Memory_WriteAddress( 0x8002, 0x8007, snkwave_w ),
@@ -271,8 +271,8 @@ public class marvins
 		new Memory_WriteAddress( 0x8600, 0x8600, MWA_RAM ),
 		new Memory_WriteAddress( 0x86f1, 0x86f1, MWA_RAM ),
 		new Memory_WriteAddress( 0x8700, 0x8700, CPUA_int_enable_w ),
-		new Memory_WriteAddress( 0xc000, 0xcfff, MWA_RAM, &spriteram ),
-		new Memory_WriteAddress( 0xd000, 0xd7ff, marvins_background_ram_w, &videoram ),
+		new Memory_WriteAddress( 0xc000, 0xcfff, MWA_RAM, spriteram ),
+		new Memory_WriteAddress( 0xd000, 0xd7ff, marvins_background_ram_w, videoram ),
 		new Memory_WriteAddress( 0xd800, 0xdfff, MWA_RAM ),
 		new Memory_WriteAddress( 0xe000, 0xe7ff, marvins_foreground_ram_w ),
 		new Memory_WriteAddress( 0xe800, 0xefff, MWA_RAM ),

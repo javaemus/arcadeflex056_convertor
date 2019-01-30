@@ -151,9 +151,9 @@ public class pandoras
 	
 	public static Memory_WriteAddress pandoras_writemem_a[]={
 		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
-		new Memory_WriteAddress( 0x0000, 0x0fff, pandoras_sharedram_w, &pandoras_sharedram ),	/* Work RAM (Shared with CPU B) */
-		new Memory_WriteAddress( 0x1000, 0x13ff, pandoras_cram_w, &colorram ),					/* Color RAM (shared with CPU B) */
-		new Memory_WriteAddress( 0x1400, 0x17ff, pandoras_vram_w, &videoram ),					/* Video RAM (shared with CPU B) */
+		new Memory_WriteAddress( 0x0000, 0x0fff, pandoras_sharedram_w, pandoras_sharedram ),	/* Work RAM (Shared with CPU B) */
+		new Memory_WriteAddress( 0x1000, 0x13ff, pandoras_cram_w, colorram ),					/* Color RAM (shared with CPU B) */
+		new Memory_WriteAddress( 0x1400, 0x17ff, pandoras_vram_w, videoram ),					/* Video RAM (shared with CPU B) */
 		new Memory_WriteAddress( 0x1800, 0x1807, pandoras_int_control_w ),						/* INT control */
 		new Memory_WriteAddress( 0x1a00, 0x1a00, pandoras_scrolly_w ),							/* bg scroll */
 		new Memory_WriteAddress( 0x1c00, 0x1c00, pandoras_z80_irqtrigger_w ),					/* cause INT on the Z80 */
@@ -161,7 +161,7 @@ public class pandoras
 		new Memory_WriteAddress( 0x2000, 0x2000, pandoras_cpub_irqtrigger_w ),					/* cause FIRQ on CPU B */
 		new Memory_WriteAddress( 0x2001, 0x2001, watchdog_reset_w ),							/* watchdog reset */
 		new Memory_WriteAddress( 0x4000, 0x5fff, MWA_ROM ),									/* see notes */
-		new Memory_WriteAddress( 0x6000, 0x67ff, pandoras_sharedram2_w, &pandoras_sharedram2 ),/* Shared RAM with CPU B */
+		new Memory_WriteAddress( 0x6000, 0x67ff, pandoras_sharedram2_w, pandoras_sharedram2 ),/* Shared RAM with CPU B */
 		new Memory_WriteAddress( 0x8000, 0xffff, MWA_ROM ),									/* ROM */
 		new Memory_WriteAddress(MEMPORT_MARKER, 0)
 	};

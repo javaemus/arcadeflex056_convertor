@@ -441,8 +441,8 @@ public class cosmic
 	public static Memory_WriteAddress panic_writemem[]={
 		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
 		new Memory_WriteAddress( 0x0000, 0x3fff, MWA_ROM ),
-		new Memory_WriteAddress( 0x4000, 0x5fff, cosmica_videoram_w, &videoram, &videoram_size ),
-		new Memory_WriteAddress( 0x6000, 0x601f, MWA_RAM, &spriteram, &spriteram_size ),
+		new Memory_WriteAddress( 0x4000, 0x5fff, cosmica_videoram_w, videoram, videoram_size ),
+		new Memory_WriteAddress( 0x6000, 0x601f, MWA_RAM, spriteram, spriteram_size ),
 		new Memory_WriteAddress( 0x7000, 0x700b, panic_sound_output_w ),
 		new Memory_WriteAddress( 0x700c, 0x700e, panic_color_register_w ),
 		new Memory_WriteAddress( 0x700f, 0x700f, flip_screen_w ),
@@ -464,8 +464,8 @@ public class cosmic
 	public static Memory_WriteAddress cosmica_writemem[]={
 		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
 		new Memory_WriteAddress( 0x0000, 0x3fff, MWA_ROM ),
-		new Memory_WriteAddress( 0x4000, 0x5fff, cosmica_videoram_w, &videoram, &videoram_size ),
-		new Memory_WriteAddress( 0x6000, 0x601f, MWA_RAM ,&spriteram, &spriteram_size ),
+		new Memory_WriteAddress( 0x4000, 0x5fff, cosmica_videoram_w, videoram, videoram_size ),
+		new Memory_WriteAddress( 0x6000, 0x601f, MWA_RAM ,spriteram, spriteram_size ),
 		new Memory_WriteAddress( 0x7000, 0x700b, MWA_RAM ),   			/* Sound Triggers */
 		new Memory_WriteAddress( 0x700c, 0x700e, panic_color_register_w ),
 		new Memory_WriteAddress( 0x700f, 0x700f, flip_screen_w ),
@@ -482,7 +482,7 @@ public class cosmic
 	public static Memory_WriteAddress cosmicg_writemem[]={
 		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
 		new Memory_WriteAddress( 0x0000, 0x1fff, MWA_ROM ),
-		new Memory_WriteAddress( 0x2000, 0x3fff, cosmicg_videoram_w, &videoram, &videoram_size ),
+		new Memory_WriteAddress( 0x2000, 0x3fff, cosmicg_videoram_w, videoram, videoram_size ),
 		new Memory_WriteAddress(MEMPORT_MARKER, 0)
 	};
 	
@@ -515,11 +515,11 @@ public class cosmic
 	public static Memory_WriteAddress magspot2_writemem[]={
 		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
 		new Memory_WriteAddress( 0x0000, 0x2fff, MWA_ROM ),
-		new Memory_WriteAddress( 0x4000, 0x401f, MWA_RAM, &spriteram, &spriteram_size),
+		new Memory_WriteAddress( 0x4000, 0x401f, MWA_RAM, spriteram, spriteram_size),
 		new Memory_WriteAddress( 0x4800, 0x4800, DAC_0_data_w ),
 		new Memory_WriteAddress( 0x480c, 0x480e, panic_color_register_w ),
 		new Memory_WriteAddress( 0x480f, 0x480f, flip_screen_w ),
-		new Memory_WriteAddress( 0x6000, 0x7fff, cosmica_videoram_w, &videoram, &videoram_size),
+		new Memory_WriteAddress( 0x6000, 0x7fff, cosmica_videoram_w, videoram, videoram_size),
 		new Memory_WriteAddress(MEMPORT_MARKER, 0)
 	};
 	
@@ -537,12 +537,12 @@ public class cosmic
 	public static Memory_WriteAddress nomnlnd_writemem[]={
 		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
 		new Memory_WriteAddress( 0x0000, 0x2fff, MWA_ROM ),
-		new Memory_WriteAddress( 0x4000, 0x401f, MWA_RAM, &spriteram, &spriteram_size),
+		new Memory_WriteAddress( 0x4000, 0x401f, MWA_RAM, spriteram, spriteram_size),
 		new Memory_WriteAddress( 0x4807, 0x4807, nomnlnd_background_w ),
 		new Memory_WriteAddress( 0x480a, 0x480a, DAC_0_data_w ),
 		new Memory_WriteAddress( 0x480c, 0x480e, panic_color_register_w ),
 		new Memory_WriteAddress( 0x480f, 0x480f, flip_screen_w ),
-		new Memory_WriteAddress( 0x6000, 0x7fff, cosmica_videoram_w, &videoram, &videoram_size),
+		new Memory_WriteAddress( 0x6000, 0x7fff, cosmica_videoram_w, videoram, videoram_size),
 		new Memory_WriteAddress(MEMPORT_MARKER, 0)
 	};
 	

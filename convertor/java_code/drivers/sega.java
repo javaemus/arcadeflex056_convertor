@@ -177,8 +177,8 @@ public class sega
 	
 	public static Memory_WriteAddress writemem[]={
 		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
-		new Memory_WriteAddress( 0x0000, 0xffff, sega_w, &sega_mem ),
-		new Memory_WriteAddress( 0xe000, 0xefff, MWA_RAM, &vectorram, &vectorram_size ),	/* handled by the above, */
+		new Memory_WriteAddress( 0x0000, 0xffff, sega_w, sega_mem ),
+		new Memory_WriteAddress( 0xe000, 0xefff, MWA_RAM, vectorram, vectorram_size ),	/* handled by the above, */
 													/* here only to initialize the pointer */
 		new Memory_WriteAddress(MEMPORT_MARKER, 0)
 	};

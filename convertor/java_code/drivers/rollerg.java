@@ -110,7 +110,7 @@ public class rollerg
 		new Memory_WriteAddress( 0x0300, 0x030f, K053244_w ),
 		new Memory_WriteAddress( 0x0800, 0x0fff, K051316_0_w ),
 		new Memory_WriteAddress( 0x1000, 0x17ff, K053245_w ),
-		new Memory_WriteAddress( 0x1800, 0x1fff, paletteram_xBBBBBGGGGGRRRRR_swap_w, &paletteram ),
+		new Memory_WriteAddress( 0x1800, 0x1fff, paletteram_xBBBBBGGGGGRRRRR_swap_w, paletteram ),
 		new Memory_WriteAddress( 0x2000, 0x3aff, MWA_RAM ),
 		new Memory_WriteAddress( 0x4000, 0xffff, MWA_ROM ),
 		new Memory_WriteAddress(MEMPORT_MARKER, 0)

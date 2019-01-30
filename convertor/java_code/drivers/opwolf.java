@@ -205,7 +205,7 @@ public class opwolf
 		new Memory_WriteAddress( 0x0000, 0x7fff, MWA_ROM ),
 		new Memory_WriteAddress( 0x9000, 0x9000, MWA_NOP ),	/* unknown write, 0 then 1 each interrupt */
 		new Memory_WriteAddress( 0xa000, 0xa000, MWA_NOP ),	/* unknown write, once per interrupt */
-		new Memory_WriteAddress( 0xc000, 0xcfff, MWA_RAM, &cchip_ram ),
+		new Memory_WriteAddress( 0xc000, 0xcfff, MWA_RAM, cchip_ram ),
 		new Memory_WriteAddress(MEMPORT_MARKER, 0)
 	};
 	

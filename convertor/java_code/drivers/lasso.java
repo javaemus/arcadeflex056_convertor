@@ -123,15 +123,15 @@ public class lasso
 	public static Memory_WriteAddress chameleo_writemem[]={
 		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
 		new Memory_WriteAddress( 0x0000, 0x03ff, MWA_RAM						),	// Work RAM
-		new Memory_WriteAddress( 0x0400, 0x0bff, lasso_videoram_w, &videoram	),	// Tilemap
+		new Memory_WriteAddress( 0x0400, 0x0bff, lasso_videoram_w, videoram	),	// Tilemap
 		new Memory_WriteAddress( 0x0c00, 0x0fff, MWA_RAM						),	//
-		new Memory_WriteAddress( 0x1000, 0x107f, MWA_RAM, &spriteram, &spriteram_size ),	// Sprites
+		new Memory_WriteAddress( 0x1000, 0x107f, MWA_RAM, spriteram, spriteram_size ),	// Sprites
 		new Memory_WriteAddress( 0x1080, 0x10ff, MWA_RAM						),
 		new Memory_WriteAddress( 0x1800, 0x1800, chameleo_sound_command_w		),	// To Sound CPU
 		new Memory_WriteAddress( 0x1801, 0x1801, lasso_backcolor_w				),	// Background Color
 		new Memory_WriteAddress( 0x1802, 0x1802, lasso_gfxbank_w				),	// Flip Screen + Tile Bank
 		new Memory_WriteAddress( 0x4000, 0xbfff, MWA_ROM						),	// ROM
-		new Memory_WriteAddress( 0xc428, 0xc429, MWA_NOP						),	// ? written once with $0&41
+		new Memory_WriteAddress( 0xc428, 0xc429, MWA_NOP						),	// ? written once with $041
 		new Memory_WriteAddress( 0xfffa, 0xffff, MWA_ROM						),	// ROM (Mirror)
 		new Memory_WriteAddress(MEMPORT_MARKER, 0)
 	};
@@ -156,8 +156,8 @@ public class lasso
 	public static Memory_WriteAddress lasso_writemem[]={
 		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
 		new Memory_WriteAddress( 0x0000, 0x03ff, MWA_RAM						),	// ROM
-		new Memory_WriteAddress( 0x0400, 0x0bff, lasso_videoram_w, &videoram	),	// Tilemap
-		new Memory_WriteAddress( 0x0c00, 0x0c7f, MWA_RAM, &spriteram, &spriteram_size ),	// Sprites
+		new Memory_WriteAddress( 0x0400, 0x0bff, lasso_videoram_w, videoram	),	// Tilemap
+		new Memory_WriteAddress( 0x0c00, 0x0c7f, MWA_RAM, spriteram, spriteram_size ),	// Sprites
 		new Memory_WriteAddress( 0x1000, 0x17ff, shareram_w					),	// Shared RAM
 		new Memory_WriteAddress( 0x1800, 0x1800, lasso_sound_command_w			),	// To Sound CPU
 		new Memory_WriteAddress( 0x1801, 0x1801, lasso_backcolor_w				),	// Background Color
@@ -187,13 +187,13 @@ public class lasso
 	public static Memory_WriteAddress wwjgtin_writemem[]={
 		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
 		new Memory_WriteAddress( 0x0000, 0x07ff, MWA_RAM						),	// Work RAM
-		new Memory_WriteAddress( 0x0800, 0x0fff, lasso_videoram_w, &videoram	),	// Tilemap
-		new Memory_WriteAddress( 0x1000, 0x10ff, MWA_RAM, &spriteram, &spriteram_size ),	// Sprites
+		new Memory_WriteAddress( 0x0800, 0x0fff, lasso_videoram_w, videoram	),	// Tilemap
+		new Memory_WriteAddress( 0x1000, 0x10ff, MWA_RAM, spriteram, spriteram_size ),	// Sprites
 		new Memory_WriteAddress( 0x1800, 0x1800, chameleo_sound_command_w		),	// To Sound CPU
 		new Memory_WriteAddress( 0x1801, 0x1801, lasso_backcolor_w				),	// Background Color
 		new Memory_WriteAddress( 0x1802, 0x1802, wwjgtin_gfxbank_w				),	// Flip Screen + Tile Bank
 		new Memory_WriteAddress( 0x1c00, 0x1c03, wwjgtin_lastcolor_w			),	// Last 4 Colors
-		new Memory_WriteAddress( 0x1c04, 0x1c07, MWA_RAM, &wwjgtin_scroll		),	// Scroll (For The Tilemap in ROM)
+		new Memory_WriteAddress( 0x1c04, 0x1c07, MWA_RAM, wwjgtin_scroll		),	// Scroll (For The Tilemap in ROM)
 		new Memory_WriteAddress( 0x5000, 0xbfff, MWA_ROM						),	// ROM
 		new Memory_WriteAddress( 0xfffa, 0xffff, MWA_ROM						),	// ROM (Mirror)
 		new Memory_WriteAddress(MEMPORT_MARKER, 0)
@@ -223,8 +223,8 @@ public class lasso
 	};
 	public static Memory_WriteAddress lasso_coprocessor_writemem[]={
 		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
-		new Memory_WriteAddress( 0x0000, 0x07ff, MWA_RAM, &shareram	),	// Shared RAM (code is executed from here!)
-		new Memory_WriteAddress( 0x2000, 0x3fff, MWA_RAM, &lasso_vram	),	// Video RAM
+		new Memory_WriteAddress( 0x0000, 0x07ff, MWA_RAM, shareram	),	// Shared RAM (code is executed from here!)
+		new Memory_WriteAddress( 0x2000, 0x3fff, MWA_RAM, lasso_vram	),	// Video RAM
 		new Memory_WriteAddress( 0x8000, 0x8fff, MWA_ROM				),	// ROM
 		new Memory_WriteAddress( 0xf000, 0xffff, MWA_ROM				),	// ROM (Mirror)
 		new Memory_WriteAddress(MEMPORT_MARKER, 0)

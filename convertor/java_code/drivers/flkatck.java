@@ -116,9 +116,9 @@ public class flkatck
 		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
 		new Memory_WriteAddress( 0x0000, 0x0007, flkatck_k007121_regs_w ), 	/* 007121 registers */
 		new Memory_WriteAddress( 0x0400, 0x041f, flkatck_ls138_w ),			/* bankswitch + counters + sound command */
-		new Memory_WriteAddress( 0x0800, 0x0bff, paletteram_xBBBBBGGGGGRRRRR_w, &paletteram ),/* palette */
+		new Memory_WriteAddress( 0x0800, 0x0bff, paletteram_xBBBBBGGGGGRRRRR_w, paletteram ),/* palette */
 		new Memory_WriteAddress( 0x1000, 0x1fff, MWA_RAM ),					/* RAM */
-		new Memory_WriteAddress( 0x2000, 0x3fff, flkatck_k007121_w, &k007121_ram ),			/* Video RAM (007121) */
+		new Memory_WriteAddress( 0x2000, 0x3fff, flkatck_k007121_w, k007121_ram ),			/* Video RAM (007121) */
 		new Memory_WriteAddress( 0x4000, 0x5fff, MWA_BANK1 ),					/* banked ROM */
 		new Memory_WriteAddress( 0x6000, 0xffff, MWA_ROM ),					/* ROM */
 		new Memory_WriteAddress(MEMPORT_MARKER, 0)

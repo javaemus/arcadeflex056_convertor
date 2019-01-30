@@ -108,9 +108,9 @@ public class cop01
 		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
 		new Memory_WriteAddress( 0x0000, 0xbfff, MWA_ROM ),
 		new Memory_WriteAddress( 0xc000, 0xcfff, MWA_RAM ),	/* c000-c7ff in cop01 */
-		new Memory_WriteAddress( 0xd000, 0xdfff, cop01_background_w, &cop01_bgvideoram ),
-		new Memory_WriteAddress( 0xe000, 0xe0ff, MWA_RAM, &spriteram, &spriteram_size ),
-		new Memory_WriteAddress( 0xf000, 0xf3ff, cop01_foreground_w, &cop01_fgvideoram ),
+		new Memory_WriteAddress( 0xd000, 0xdfff, cop01_background_w, cop01_bgvideoram ),
+		new Memory_WriteAddress( 0xe000, 0xe0ff, MWA_RAM, spriteram, spriteram_size ),
+		new Memory_WriteAddress( 0xf000, 0xf3ff, cop01_foreground_w, cop01_fgvideoram ),
 		new Memory_WriteAddress(MEMPORT_MARKER, 0)
 	};
 	

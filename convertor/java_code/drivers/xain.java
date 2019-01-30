@@ -144,11 +144,11 @@ public class xain
 	
 	public static Memory_WriteAddress writemem[]={
 		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
-		new Memory_WriteAddress( 0x0000, 0x1fff, xain_sharedram_w, &xain_sharedram ),
-		new Memory_WriteAddress( 0x2000, 0x27ff, xain_charram_w, &xain_charram ),
-		new Memory_WriteAddress( 0x2800, 0x2fff, xain_bgram1_w, &xain_bgram1 ),
-		new Memory_WriteAddress( 0x3000, 0x37ff, xain_bgram0_w, &xain_bgram0 ),
-		new Memory_WriteAddress( 0x3800, 0x397f, MWA_RAM, &spriteram, &spriteram_size ),
+		new Memory_WriteAddress( 0x0000, 0x1fff, xain_sharedram_w, xain_sharedram ),
+		new Memory_WriteAddress( 0x2000, 0x27ff, xain_charram_w, xain_charram ),
+		new Memory_WriteAddress( 0x2800, 0x2fff, xain_bgram1_w, xain_bgram1 ),
+		new Memory_WriteAddress( 0x3000, 0x37ff, xain_bgram0_w, xain_bgram0 ),
+		new Memory_WriteAddress( 0x3800, 0x397f, MWA_RAM, spriteram, spriteram_size ),
 		new Memory_WriteAddress( 0x3a00, 0x3a01, xain_scrollxP1_w ),
 		new Memory_WriteAddress( 0x3a02, 0x3a03, xain_scrollyP1_w ),
 		new Memory_WriteAddress( 0x3a04, 0x3a05, xain_scrollxP0_w ),
@@ -161,8 +161,8 @@ public class xain
 		new Memory_WriteAddress( 0x3a0d, 0x3a0d, xain_flipscreen_w ),
 		new Memory_WriteAddress( 0x3a0e, 0x3a0e, xain_68705_w ),	/* to 68705 */
 		new Memory_WriteAddress( 0x3a0f, 0x3a0f, xainCPUA_bankswitch_w ),
-		new Memory_WriteAddress( 0x3c00, 0x3dff, paletteram_xxxxBBBBGGGGRRRR_split1_w, &paletteram ),
-		new Memory_WriteAddress( 0x3e00, 0x3fff, paletteram_xxxxBBBBGGGGRRRR_split2_w, &paletteram_2 ),
+		new Memory_WriteAddress( 0x3c00, 0x3dff, paletteram_xxxxBBBBGGGGRRRR_split1_w, paletteram ),
+		new Memory_WriteAddress( 0x3e00, 0x3fff, paletteram_xxxxBBBBGGGGRRRR_split2_w, paletteram_2 ),
 		new Memory_WriteAddress( 0x4000, 0xffff, MWA_ROM ),
 		new Memory_WriteAddress(MEMPORT_MARKER, 0)
 	};

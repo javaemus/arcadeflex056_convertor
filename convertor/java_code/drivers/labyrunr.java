@@ -86,11 +86,11 @@ public class labyrunr
 		new Memory_WriteAddress( 0x0c00, 0x0c00, labyrunr_bankswitch_w ),
 		new Memory_WriteAddress( 0x0d00, 0x0d1f, K051733_w ),				/* 051733 (protection) */
 		new Memory_WriteAddress( 0x0e00, 0x0e00, watchdog_reset_w ),
-		new Memory_WriteAddress( 0x1000, 0x10ff, paletteram_xBBBBBGGGGGRRRRR_swap_w, &paletteram ),
+		new Memory_WriteAddress( 0x1000, 0x10ff, paletteram_xBBBBBGGGGGRRRRR_swap_w, paletteram ),
 		new Memory_WriteAddress( 0x1800, 0x1fff, MWA_RAM ),
-		new Memory_WriteAddress( 0x2000, 0x2fff, MWA_RAM, &spriteram ),	/* Sprite RAM */
-		new Memory_WriteAddress( 0x3000, 0x37ff, labyrunr_vram1_w, &labyrunr_videoram1 ),
-		new Memory_WriteAddress( 0x3800, 0x3fff, labyrunr_vram2_w, &labyrunr_videoram2 ),
+		new Memory_WriteAddress( 0x2000, 0x2fff, MWA_RAM, spriteram ),	/* Sprite RAM */
+		new Memory_WriteAddress( 0x3000, 0x37ff, labyrunr_vram1_w, labyrunr_videoram1 ),
+		new Memory_WriteAddress( 0x3800, 0x3fff, labyrunr_vram2_w, labyrunr_videoram2 ),
 		new Memory_WriteAddress( 0x4000, 0xffff, MWA_ROM ),
 		new Memory_WriteAddress(MEMPORT_MARKER, 0)
 	};

@@ -91,13 +91,13 @@ public class phozon
 		/* CPU 1 (MAIN CPU) write addresses */
 	public static Memory_WriteAddress writemem_cpu1[]={
 		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
-		new Memory_WriteAddress( 0x0000, 0x03ff, videoram_w, &videoram, &videoram_size ),				/* video RAM */
-		new Memory_WriteAddress( 0x0400, 0x07ff, colorram_w, &colorram ),  /* color RAM */
-		new Memory_WriteAddress( 0x0800, 0x1fff, phozon_spriteram_w, &phozon_spriteram ),		/* shared RAM with CPU #2/sprite RAM*/
+		new Memory_WriteAddress( 0x0000, 0x03ff, videoram_w, videoram, videoram_size ),				/* video RAM */
+		new Memory_WriteAddress( 0x0400, 0x07ff, colorram_w, colorram ),  /* color RAM */
+		new Memory_WriteAddress( 0x0800, 0x1fff, phozon_spriteram_w, phozon_spriteram ),		/* shared RAM with CPU #2/sprite RAM*/
 		new Memory_WriteAddress( 0x4000, 0x403f, MWA_RAM ),				/* initialized but probably unused */
-		new Memory_WriteAddress( 0x4040, 0x43ff, phozon_snd_sharedram_w, &phozon_snd_sharedram ), /* shared RAM with CPU #3 */
-		new Memory_WriteAddress( 0x4800, 0x480f, phozon_customio_1_w, &phozon_customio_1 ),	/* custom I/O chip #1 interface */
-		new Memory_WriteAddress( 0x4810, 0x481f, phozon_customio_2_w, &phozon_customio_2 ),	/* custom I/O chip #2 interface */
+		new Memory_WriteAddress( 0x4040, 0x43ff, phozon_snd_sharedram_w, phozon_snd_sharedram ), /* shared RAM with CPU #3 */
+		new Memory_WriteAddress( 0x4800, 0x480f, phozon_customio_1_w, phozon_customio_1 ),	/* custom I/O chip #1 interface */
+		new Memory_WriteAddress( 0x4810, 0x481f, phozon_customio_2_w, phozon_customio_2 ),	/* custom I/O chip #2 interface */
 		new Memory_WriteAddress( 0x4820, 0x483f, MWA_RAM ),				/* initialized but probably unused */
 		new Memory_WriteAddress( 0x5000, 0x5007, MWA_NOP ),				/* ??? */
 		new Memory_WriteAddress( 0x5008, 0x5008, phozon_cpu3_reset_w ),	/* reset SOUND CPU? */
@@ -144,7 +144,7 @@ public class phozon
 		/* CPU 3 (SOUND CPU) write addresses */
 	public static Memory_WriteAddress writemem_cpu3[]={
 		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
-		new Memory_WriteAddress( 0x0000, 0x003f, mappy_sound_w, &mappy_soundregs ),/* sound registers */
+		new Memory_WriteAddress( 0x0000, 0x003f, mappy_sound_w, mappy_soundregs ),/* sound registers */
 		new Memory_WriteAddress( 0x0040, 0x03ff, phozon_snd_sharedram_w ),			/* shared RAM with the main CPU */
 		new Memory_WriteAddress( 0xe000, 0xffff, MWA_ROM ),						/* ROM */
 		new Memory_WriteAddress(MEMPORT_MARKER, 0)

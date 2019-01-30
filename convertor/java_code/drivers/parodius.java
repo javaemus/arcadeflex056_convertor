@@ -165,7 +165,7 @@ public class parodius
 	
 	public static Memory_WriteAddress parodius_writemem[]={
 		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
-		new Memory_WriteAddress( 0x0000, 0x07ff, bankedram_w, &ram ),
+		new Memory_WriteAddress( 0x0000, 0x07ff, bankedram_w, ram ),
 		new Memory_WriteAddress( 0x0800, 0x1fff, MWA_RAM ),
 		new Memory_WriteAddress( 0x3fa0, 0x3faf, K053244_w ),
 		new Memory_WriteAddress( 0x3fb0, 0x3fbf, K053251_w ),

@@ -156,8 +156,8 @@ public class bsktball
 		new Memory_WriteAddress( 0x102c, 0x102d, bsktball_noise_reset_w ), /* Noise Reset */
 		new Memory_WriteAddress( 0x102e, 0x102f, bsktball_nmion_w ), /* NMI On */
 		new Memory_WriteAddress( 0x1030, 0x1030, bsktball_note_w ), /* Music Ckt Note Dvsr */
-		new Memory_WriteAddress( 0x1800, 0x1bbf, videoram_w, &videoram, &videoram_size ), /* DISPLAY */
-		new Memory_WriteAddress( 0x1bc0, 0x1bff, MWA_RAM, &bsktball_motion ),
+		new Memory_WriteAddress( 0x1800, 0x1bbf, videoram_w, videoram, videoram_size ), /* DISPLAY */
+		new Memory_WriteAddress( 0x1bc0, 0x1bff, MWA_RAM, bsktball_motion ),
 		new Memory_WriteAddress( 0x2000, 0x3fff, MWA_ROM ), /* PROM1-PROM8 */
 		new Memory_WriteAddress(MEMPORT_MARKER, 0)
 	};

@@ -389,7 +389,7 @@ public class psychic5
 		new Memory_WriteAddress( 0xf004, 0xf004, MWA_RAM ),			// unknown
 		new Memory_WriteAddress( 0xf005, 0xf005, MWA_RAM ),			// unknown
 		new Memory_WriteAddress( 0xf006, 0xf1ff, MWA_NOP ),
-		new Memory_WriteAddress( 0xf200, 0xf7ff, MWA_RAM, &spriteram, &spriteram_size ),
+		new Memory_WriteAddress( 0xf200, 0xf7ff, MWA_RAM, spriteram, spriteram_size ),
 		new Memory_WriteAddress( 0xf800, 0xffff, MWA_RAM ),
 		new Memory_WriteAddress(MEMPORT_MARKER, 0)
 	};

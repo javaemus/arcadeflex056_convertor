@@ -176,7 +176,7 @@ public class dec0
 		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
 		new Memory_WriteAddress( 0x000000, 0x00ffff, MWA_ROM ),
 		new Memory_WriteAddress( 0x1f0000, 0x1f1fff, MWA_RAM ), /* Main ram */
-		new Memory_WriteAddress( 0x1f2000, 0x1f3fff, MWA_RAM, &robocop_shared_ram ), /* Shared ram */
+		new Memory_WriteAddress( 0x1f2000, 0x1f3fff, MWA_RAM, robocop_shared_ram ), /* Shared ram */
 		new Memory_WriteAddress( 0x1ff402, 0x1ff403, H6280_irq_status_w ),
 		new Memory_WriteAddress(MEMPORT_MARKER, 0)
 	};

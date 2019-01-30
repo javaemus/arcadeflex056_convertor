@@ -166,8 +166,8 @@ public class tankbatt
 	public static Memory_WriteAddress writemem[]={
 		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
 		new Memory_WriteAddress( 0x0010, 0x01ff, MWA_RAM ),
-		new Memory_WriteAddress( 0x0800, 0x0bff, videoram_w, &videoram, &videoram_size ),
-		new Memory_WriteAddress( 0x0000, 0x000f, MWA_RAM, &tankbatt_bulletsram, &tankbatt_bulletsram_size ),
+		new Memory_WriteAddress( 0x0800, 0x0bff, videoram_w, videoram, videoram_size ),
+		new Memory_WriteAddress( 0x0000, 0x000f, MWA_RAM, tankbatt_bulletsram, tankbatt_bulletsram_size ),
 		new Memory_WriteAddress( 0x0c18, 0x0c18, MWA_NOP ), /* watchdog ?? */
 		new Memory_WriteAddress( 0x0c00, 0x0c01, tankbatt_led_w ),
 		new Memory_WriteAddress( 0x0c0a, 0x0c0a, tankbatt_interrupt_enable_w ),

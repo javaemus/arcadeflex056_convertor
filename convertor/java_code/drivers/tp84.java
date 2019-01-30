@@ -185,13 +185,13 @@ public class tp84
 		new Memory_WriteAddress( 0x3000, 0x3000, MWA_RAM ),
 		new Memory_WriteAddress( 0x3800, 0x3800, tp84_sh_irqtrigger_w ),
 		new Memory_WriteAddress( 0x3a00, 0x3a00, soundlatch_w ),
-		new Memory_WriteAddress( 0x3c00, 0x3c00, MWA_RAM, &tp84_scrollx ), /* Y scroll */
-		new Memory_WriteAddress( 0x3e00, 0x3e00, MWA_RAM, &tp84_scrolly ), /* X scroll */
-		new Memory_WriteAddress( 0x4000, 0x43ff, videoram_w, &videoram , &videoram_size),
-		new Memory_WriteAddress( 0x4400, 0x47ff, tp84_videoram2_w, &tp84_videoram2 ),
-		new Memory_WriteAddress( 0x4800, 0x4bff, colorram_w, &colorram ),
-		new Memory_WriteAddress( 0x4c00, 0x4fff, tp84_colorram2_w, &tp84_colorram2 ),
-		new Memory_WriteAddress( 0x5000, 0x57ff, sharedram_w, &sharedram ),
+		new Memory_WriteAddress( 0x3c00, 0x3c00, MWA_RAM, tp84_scrollx ), /* Y scroll */
+		new Memory_WriteAddress( 0x3e00, 0x3e00, MWA_RAM, tp84_scrolly ), /* X scroll */
+		new Memory_WriteAddress( 0x4000, 0x43ff, videoram_w, videoram , videoram_size),
+		new Memory_WriteAddress( 0x4400, 0x47ff, tp84_videoram2_w, tp84_videoram2 ),
+		new Memory_WriteAddress( 0x4800, 0x4bff, colorram_w, colorram ),
+		new Memory_WriteAddress( 0x4c00, 0x4fff, tp84_colorram2_w, tp84_colorram2 ),
+		new Memory_WriteAddress( 0x5000, 0x57ff, sharedram_w, sharedram ),
 		new Memory_WriteAddress( 0x8000, 0xffff, MWA_ROM ),
 		new Memory_WriteAddress(MEMPORT_MARKER, 0)
 	};
@@ -214,7 +214,7 @@ public class tp84
 	//	new Memory_WriteAddress( 0x0000, 0x0000, MWA_RAM ), /* Watch dog ?*/
 		new Memory_WriteAddress( 0x4000, 0x4000, interrupt_enable_w ), /* IRQ enable */
 		new Memory_WriteAddress( 0x6000, 0x679f, MWA_RAM ),
-		new Memory_WriteAddress( 0x67a0, 0x67ff, MWA_RAM, &spriteram, &spriteram_size ),	/* REAL (multiplexed) */
+		new Memory_WriteAddress( 0x67a0, 0x67ff, MWA_RAM, spriteram, spriteram_size ),	/* REAL (multiplexed) */
 		new Memory_WriteAddress( 0x8000, 0x87ff, sharedram_w ),
 		new Memory_WriteAddress( 0xe000, 0xffff, MWA_ROM ),
 		new Memory_WriteAddress(MEMPORT_MARKER, 0)

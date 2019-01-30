@@ -110,7 +110,7 @@ public class surpratk
 	
 	public static Memory_WriteAddress surpratk_writemem[]={
 		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
-		new Memory_WriteAddress( 0x0000, 0x07ff, bankedram_w, &ram ),
+		new Memory_WriteAddress( 0x0000, 0x07ff, bankedram_w, ram ),
 		new Memory_WriteAddress( 0x0800, 0x1fff, MWA_RAM ),
 		new Memory_WriteAddress( 0x2000, 0x3fff, MWA_ROM ),					/* banked ROM */
 		new Memory_WriteAddress( 0x5fa0, 0x5faf, K053244_w ),

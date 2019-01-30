@@ -87,10 +87,10 @@ public class commando
 		new Memory_WriteAddress( 0xc804, 0xc804, commando_c804_w ),
 		new Memory_WriteAddress( 0xc808, 0xc809, commando_scrollx_w ),
 		new Memory_WriteAddress( 0xc80a, 0xc80b, commando_scrolly_w ),
-		new Memory_WriteAddress( 0xd000, 0xd7ff, commando_fgvideoram_w, &commando_fgvideoram ),
-		new Memory_WriteAddress( 0xd800, 0xdfff, commando_bgvideoram_w, &commando_bgvideoram ),
+		new Memory_WriteAddress( 0xd000, 0xd7ff, commando_fgvideoram_w, commando_fgvideoram ),
+		new Memory_WriteAddress( 0xd800, 0xdfff, commando_bgvideoram_w, commando_bgvideoram ),
 		new Memory_WriteAddress( 0xe000, 0xfdff, MWA_RAM ),
-		new Memory_WriteAddress( 0xfe00, 0xff7f, MWA_RAM, &spriteram, &spriteram_size ),
+		new Memory_WriteAddress( 0xfe00, 0xff7f, MWA_RAM, spriteram, spriteram_size ),
 		new Memory_WriteAddress( 0xff80, 0xffff, MWA_RAM ),
 		new Memory_WriteAddress(MEMPORT_MARKER, 0)
 	};

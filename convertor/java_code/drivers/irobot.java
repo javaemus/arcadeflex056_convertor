@@ -151,13 +151,13 @@ public class irobot
 	    new Memory_WriteAddress( 0x1140, 0x1140, irobot_statwr_w ),
 	    new Memory_WriteAddress( 0x1180, 0x1180, irobot_out0_w ),
 	    new Memory_WriteAddress( 0x11c0, 0x11c0, irobot_rom_banksel_w ),
-	    new Memory_WriteAddress( 0x1200, 0x12ff, irobot_nvram_w, &nvram, &nvram_size ),
+	    new Memory_WriteAddress( 0x1200, 0x12ff, irobot_nvram_w, nvram, nvram_size ),
 	    new Memory_WriteAddress( 0x1400, 0x143f, quad_pokey_w ),
 	    new Memory_WriteAddress( 0x1800, 0x18ff, irobot_paletteram_w ),
 	    new Memory_WriteAddress( 0x1900, 0x19ff, MWA_RAM ),            /* Watchdog reset */
 	    new Memory_WriteAddress( 0x1a00, 0x1a00, irobot_clearfirq_w ),
 	    new Memory_WriteAddress( 0x1b00, 0x1bff, irobot_control_w ),
-	    new Memory_WriteAddress( 0x1c00, 0x1fff, MWA_RAM, &videoram, &videoram_size ),
+	    new Memory_WriteAddress( 0x1c00, 0x1fff, MWA_RAM, videoram, videoram_size ),
 	    new Memory_WriteAddress( 0x2000, 0x3fff, irobot_sharedmem_w),
 	    new Memory_WriteAddress( 0x4000, 0xffff, MWA_ROM ),
 		new Memory_WriteAddress(MEMPORT_MARKER, 0)

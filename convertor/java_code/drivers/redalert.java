@@ -62,11 +62,11 @@ public class redalert
 		new Memory_WriteAddress( 0x0000, 0x01ff, MWA_RAM ),
 		new Memory_WriteAddress( 0x0200, 0x0fff, MWA_RAM ), /* ? */
 		new Memory_WriteAddress( 0x1000, 0x1fff, MWA_RAM ), /* Scratchpad video RAM */
-		new Memory_WriteAddress( 0x2000, 0x3fff, redalert_backram_w, &redalert_backram ),
-		new Memory_WriteAddress( 0x4000, 0x43ff, videoram_w, &videoram, &videoram_size ),
-		new Memory_WriteAddress( 0x4400, 0x47ff, redalert_spriteram1_w, &redalert_spriteram1 ),
-		new Memory_WriteAddress( 0x4800, 0x4bff, redalert_characterram_w, &redalert_characterram ),
-		new Memory_WriteAddress( 0x4c00, 0x4fff, redalert_spriteram2_w, &redalert_spriteram2 ),
+		new Memory_WriteAddress( 0x2000, 0x3fff, redalert_backram_w, redalert_backram ),
+		new Memory_WriteAddress( 0x4000, 0x43ff, videoram_w, videoram, videoram_size ),
+		new Memory_WriteAddress( 0x4400, 0x47ff, redalert_spriteram1_w, redalert_spriteram1 ),
+		new Memory_WriteAddress( 0x4800, 0x4bff, redalert_characterram_w, redalert_characterram ),
+		new Memory_WriteAddress( 0x4c00, 0x4fff, redalert_spriteram2_w, redalert_spriteram2 ),
 		new Memory_WriteAddress( 0x5000, 0xbfff, MWA_ROM ),
 		new Memory_WriteAddress( 0xc130, 0xc130, redalert_c030_w ),
 	//	new Memory_WriteAddress( 0xc140, 0xc140, redalert_c040_w ), /* Output port? */

@@ -309,13 +309,13 @@ public class gsword
 		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
 		new Memory_WriteAddress( 0x0000, 0x8fff, MWA_ROM ),
 		new Memory_WriteAddress( 0x9000, 0x9fff, MWA_RAM ),
-		new Memory_WriteAddress( 0xa380, 0xa3ff, MWA_RAM, &gs_spritetile_ram ),
-		new Memory_WriteAddress( 0xa780, 0xa7ff, MWA_RAM, &gs_spritexy_ram, &gs_spritexy_size ),
+		new Memory_WriteAddress( 0xa380, 0xa3ff, MWA_RAM, gs_spritetile_ram ),
+		new Memory_WriteAddress( 0xa780, 0xa7ff, MWA_RAM, gs_spritexy_ram, gs_spritexy_size ),
 		new Memory_WriteAddress( 0xa980, 0xa980, gs_charbank_w ),
 		new Memory_WriteAddress( 0xaa80, 0xaa80, gs_videoctrl_w ),	/* flip screen, char palette bank */
-		new Memory_WriteAddress( 0xab00, 0xab00, MWA_RAM, &gs_scrolly_ram ),
-		new Memory_WriteAddress( 0xab80, 0xabff, MWA_RAM, &gs_spriteattrib_ram ),
-		new Memory_WriteAddress( 0xb000, 0xb7ff, gs_videoram_w, &gs_videoram, &gs_videoram_size ),
+		new Memory_WriteAddress( 0xab00, 0xab00, MWA_RAM, gs_scrolly_ram ),
+		new Memory_WriteAddress( 0xab80, 0xabff, MWA_RAM, gs_spriteattrib_ram ),
+		new Memory_WriteAddress( 0xb000, 0xb7ff, gs_videoram_w, gs_videoram, gs_videoram_size ),
 		new Memory_WriteAddress(MEMPORT_MARKER, 0)
 	};
 	

@@ -58,7 +58,7 @@ public class ajax
 		new Memory_WriteAddress( 0x0000, 0x01c0, ajax_ls138_f10_w ),			/* bankswitch + sound command + FIRQ command */
 		new Memory_WriteAddress( 0x0800, 0x0807, K051937_w ),					/* sprite control registers */
 		new Memory_WriteAddress( 0x0c00, 0x0fff, K051960_w ),					/* sprite RAM 2128SL at J7 */
-		new Memory_WriteAddress( 0x1000, 0x1fff, paletteram_xBBBBBGGGGGRRRRR_swap_w, &paletteram ),/* palette */
+		new Memory_WriteAddress( 0x1000, 0x1fff, paletteram_xBBBBBGGGGGRRRRR_swap_w, paletteram ),/* palette */
 		new Memory_WriteAddress( 0x2000, 0x3fff, ajax_sharedram_w ),			/* shared RAM with the 6809 */
 		new Memory_WriteAddress( 0x4000, 0x5fff, MWA_RAM ),					/* RAM 6264L at K10 */
 		new Memory_WriteAddress( 0x6000, 0x7fff, MWA_ROM ),					/* banked ROM */
@@ -82,7 +82,7 @@ public class ajax
 		new Memory_WriteAddress( 0x0000, 0x07ff, K051316_0_w ),			/* 051316 zoom/rotation layer */
 		new Memory_WriteAddress( 0x0800, 0x080f, K051316_ctrl_0_w ),		/* 051316 control registers */
 		new Memory_WriteAddress( 0x1800, 0x1800, ajax_bankswitch_2_w ),	/* bankswitch control */
-		new Memory_WriteAddress( 0x2000, 0x3fff, ajax_sharedram_w, &ajax_sharedram ),/* shared RAM with the 052001 */
+		new Memory_WriteAddress( 0x2000, 0x3fff, ajax_sharedram_w, ajax_sharedram ),/* shared RAM with the 052001 */
 		new Memory_WriteAddress( 0x4000, 0x7fff, K052109_w ),				/* video RAM + color RAM + video registers */
 		new Memory_WriteAddress( 0x8000, 0x9fff, MWA_ROM ),				/* banked ROM */
 		new Memory_WriteAddress( 0xa000, 0xffff, MWA_ROM ),				/* ROM I16 */

@@ -160,12 +160,12 @@ public class safarir
 	public static Memory_WriteAddress writemem[]={
 		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
 		new Memory_WriteAddress( 0x0000, 0x17ff, MWA_ROM ),
-		new Memory_WriteAddress( 0x2000, 0x27ff, safarir_ram_w, &safarir_ram1, &safarir_ram_size ),
+		new Memory_WriteAddress( 0x2000, 0x27ff, safarir_ram_w, safarir_ram1, safarir_ram_size ),
 		new Memory_WriteAddress( 0x2800, 0x28ff, safarir_ram_bank_w ),
 		new Memory_WriteAddress( 0x2c00, 0x2cff, safarir_scroll_w ),
 		new Memory_WriteAddress( 0x3000, 0x30ff, MWA_NOP ),	/* goes to SN76477 */
 	
-		new Memory_WriteAddress( 0x8000, 0x87ff, MWA_NOP, &safarir_ram2 ),	/* only here to initialize pointer */
+		new Memory_WriteAddress( 0x8000, 0x87ff, MWA_NOP, safarir_ram2 ),	/* only here to initialize pointer */
 		new Memory_WriteAddress(MEMPORT_MARKER, 0)
 	};
 	

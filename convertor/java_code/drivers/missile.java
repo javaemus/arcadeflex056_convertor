@@ -174,7 +174,7 @@ public class missile
 		new Memory_WriteAddress( 0x0400, 0x05ff, missile_video_3rd_bit_w ),
 		new Memory_WriteAddress( 0x0600, 0x063f, MWA_RAM ),
 		new Memory_WriteAddress( 0x0640, 0x4fff, missile_w ), /* shared region */
-		new Memory_WriteAddress( 0x5000, 0xffff, missile_video2_w, &missile_video2ram ),
+		new Memory_WriteAddress( 0x5000, 0xffff, missile_video2_w, missile_video2ram ),
 		new Memory_WriteAddress(MEMPORT_MARKER, 0)
 	};
 	

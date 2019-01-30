@@ -266,11 +266,11 @@ public class victory
 		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
 		new Memory_WriteAddress( 0x0000, 0xbfff, MWA_ROM ),
 		new Memory_WriteAddress( 0xc100, 0xc1ff, victory_video_control_w ),
-		new Memory_WriteAddress( 0xc200, 0xc3ff, victory_paletteram_w, &paletteram ),
-		new Memory_WriteAddress( 0xc400, 0xc7ff, victory_videoram_w, &videoram ),
-		new Memory_WriteAddress( 0xc800, 0xdfff, victory_charram_w, &victory_charram ),
+		new Memory_WriteAddress( 0xc200, 0xc3ff, victory_paletteram_w, paletteram ),
+		new Memory_WriteAddress( 0xc400, 0xc7ff, victory_videoram_w, videoram ),
+		new Memory_WriteAddress( 0xc800, 0xdfff, victory_charram_w, victory_charram ),
 		new Memory_WriteAddress( 0xe000, 0xefff, MWA_RAM ),
-		new Memory_WriteAddress( 0xf000, 0xf7ff, MWA_RAM, &nvram, &nvram_size ),
+		new Memory_WriteAddress( 0xf000, 0xf7ff, MWA_RAM, nvram, nvram_size ),
 		new Memory_WriteAddress( 0xf800, 0xf800, sound_command_w ),
 		new Memory_WriteAddress(MEMPORT_MARKER, 0)
 	};

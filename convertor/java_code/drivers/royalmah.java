@@ -153,7 +153,7 @@ public class royalmah
 		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
 		new Memory_WriteAddress( 0x0000, 0x5fff, royalmah_rom_w ),
 		new Memory_WriteAddress( 0x7000, 0x77ff, MWA_RAM ),
-		new Memory_WriteAddress( 0x8000, 0xffff, royalmah_videoram_w, &videoram, &videoram_size ),
+		new Memory_WriteAddress( 0x8000, 0xffff, royalmah_videoram_w, videoram, videoram_size ),
 		new Memory_WriteAddress(MEMPORT_MARKER, 0)
 	};
 	

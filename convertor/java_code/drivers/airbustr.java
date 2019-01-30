@@ -316,10 +316,10 @@ public class airbustr
 	public static Memory_WriteAddress writemem[]={
 		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
 		new Memory_WriteAddress( 0x0000, 0xbfff, MWA_ROM ),	// writing at 0 should cause a reset
-		new Memory_WriteAddress( 0xc000, 0xcfff, MWA_RAM, &spriteram ),			// RAM 0/1
+		new Memory_WriteAddress( 0xc000, 0xcfff, MWA_RAM, spriteram ),			// RAM 0/1
 		new Memory_WriteAddress( 0xd000, 0xdfff, MWA_RAM ),						// RAM 2
-		new Memory_WriteAddress( 0xe000, 0xefff, devram_w, &devram ),				// RAM 3
-		new Memory_WriteAddress( 0xf000, 0xffff, sharedram_w, &sharedram ),
+		new Memory_WriteAddress( 0xe000, 0xefff, devram_w, devram ),				// RAM 3
+		new Memory_WriteAddress( 0xf000, 0xffff, sharedram_w, sharedram ),
 		new Memory_WriteAddress(MEMPORT_MARKER, 0)
 	};
 	
@@ -423,9 +423,9 @@ public class airbustr
 	public static Memory_WriteAddress writemem2[]={
 		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
 		new Memory_WriteAddress( 0x0000, 0xbfff, MWA_ROM ),
-		new Memory_WriteAddress( 0xc000, 0xc7ff, airbustr_fgram_w, &airbustr_fgram ),
-		new Memory_WriteAddress( 0xc800, 0xcfff, airbustr_bgram_w, &airbustr_bgram ),
-		new Memory_WriteAddress( 0xd000, 0xd5ff, airbustr_paletteram_w, &paletteram ),
+		new Memory_WriteAddress( 0xc000, 0xc7ff, airbustr_fgram_w, airbustr_fgram ),
+		new Memory_WriteAddress( 0xc800, 0xcfff, airbustr_bgram_w, airbustr_bgram ),
+		new Memory_WriteAddress( 0xd000, 0xd5ff, airbustr_paletteram_w, paletteram ),
 		new Memory_WriteAddress( 0xd600, 0xdfff, MWA_RAM ),
 		new Memory_WriteAddress( 0xe000, 0xefff, MWA_RAM ),
 		new Memory_WriteAddress( 0xf000, 0xffff, sharedram_w ),

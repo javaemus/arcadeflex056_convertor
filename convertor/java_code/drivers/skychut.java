@@ -86,11 +86,11 @@ public class skychut
 	
 	public static Memory_WriteAddress skychut_writemem[]={
 		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
-		new Memory_WriteAddress( 0x0000, 0x02ff, MWA_RAM, &memory ),
+		new Memory_WriteAddress( 0x0000, 0x02ff, MWA_RAM, memory ),
 		new Memory_WriteAddress( 0x1000, 0x2fff, MWA_ROM ),
-		new Memory_WriteAddress( 0x4000, 0x4400, videoram_w, &videoram, &videoram_size ),
-		new Memory_WriteAddress( 0x4800, 0x4bff, skychut_colorram_w,&colorram ), /* foreground colour  */
-		new Memory_WriteAddress( 0x5000, 0x53ff, MWA_RAM, &iremm15_chargen ), /* background ????? */
+		new Memory_WriteAddress( 0x4000, 0x4400, videoram_w, videoram, videoram_size ),
+		new Memory_WriteAddress( 0x4800, 0x4bff, skychut_colorram_w,colorram ), /* foreground colour  */
+		new Memory_WriteAddress( 0x5000, 0x53ff, MWA_RAM, iremm15_chargen ), /* background ????? */
 		new Memory_WriteAddress( 0xa100, 0xa1ff, MWA_RAM ), /* Sound writes????? */
 		new Memory_WriteAddress( 0Xa400, 0xa400, skychut_vh_flipscreen_w ),
 		new Memory_WriteAddress( 0xfc00, 0xffff, MWA_ROM ),	/* for the reset / interrupt vectors */
@@ -113,11 +113,11 @@ public class skychut
 	
 	public static Memory_WriteAddress greenberet_writemem[]={
 		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
-		new Memory_WriteAddress( 0x0000, 0x02ff, MWA_RAM, &memory ),
+		new Memory_WriteAddress( 0x0000, 0x02ff, MWA_RAM, memory ),
 		new Memory_WriteAddress( 0x1000, 0x33ff, MWA_ROM ),
-		new Memory_WriteAddress( 0x4000, 0x4400, videoram_w, &videoram, &videoram_size ),
-		new Memory_WriteAddress( 0x4800, 0x4bff, skychut_colorram_w,&colorram ), /* foreground colour  */
-		new Memory_WriteAddress( 0x5000, 0x57ff, MWA_RAM, &iremm15_chargen ),
+		new Memory_WriteAddress( 0x4000, 0x4400, videoram_w, videoram, videoram_size ),
+		new Memory_WriteAddress( 0x4800, 0x4bff, skychut_colorram_w,colorram ), /* foreground colour  */
+		new Memory_WriteAddress( 0x5000, 0x57ff, MWA_RAM, iremm15_chargen ),
 		new Memory_WriteAddress( 0xa100, 0xa1ff, MWA_RAM ), /* Sound writes????? */
 		new Memory_WriteAddress( 0Xa400, 0xa400, skychut_vh_flipscreen_w ),
 		new Memory_WriteAddress( 0xfc00, 0xffff, MWA_ROM ),	/* for the reset / interrupt vectors */

@@ -104,12 +104,12 @@ public class thepit
 		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
 		new Memory_WriteAddress( 0x0000, 0x4fff, MWA_ROM ),
 		new Memory_WriteAddress( 0x8000, 0x87ff, MWA_RAM ),
-		new Memory_WriteAddress( 0x8800, 0x8bff, colorram_w, &colorram ),
+		new Memory_WriteAddress( 0x8800, 0x8bff, colorram_w, colorram ),
 		new Memory_WriteAddress( 0x8c00, 0x8fff, colorram_w ),
-		new Memory_WriteAddress( 0x9000, 0x93ff, videoram_w, &videoram, &videoram_size ),
+		new Memory_WriteAddress( 0x9000, 0x93ff, videoram_w, videoram, videoram_size ),
 		new Memory_WriteAddress( 0x9400, 0x97ff, videoram_w ),
-		new Memory_WriteAddress( 0x9800, 0x983f, thepit_attributes_w, &thepit_attributesram ),
-		new Memory_WriteAddress( 0x9840, 0x985f, MWA_RAM, &spriteram, &spriteram_size ),
+		new Memory_WriteAddress( 0x9800, 0x983f, thepit_attributes_w, thepit_attributesram ),
+		new Memory_WriteAddress( 0x9840, 0x985f, MWA_RAM, spriteram, spriteram_size ),
 		new Memory_WriteAddress( 0x9860, 0x98ff, MWA_RAM ), // Probably unused
 		new Memory_WriteAddress( 0xa000, 0xa000, MWA_NOP ), // Not hooked up according to the schematics
 		new Memory_WriteAddress( 0xb000, 0xb000, interrupt_enable_w ),
@@ -140,10 +140,10 @@ public class thepit
 		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
 		new Memory_WriteAddress( 0x0000, 0x4fff, MWA_ROM ),
 		new Memory_WriteAddress( 0x8000, 0x87ff, MWA_RAM ),
-		new Memory_WriteAddress( 0x9000, 0x93ff, videoram_w, &videoram, &videoram_size ),
-		new Memory_WriteAddress( 0x9400, 0x97ff, colorram_w, &colorram ),
-		new Memory_WriteAddress( 0x9800, 0x983f, thepit_attributes_w, &thepit_attributesram ),
-		new Memory_WriteAddress( 0x9840, 0x985f, MWA_RAM, &spriteram, &spriteram_size ),
+		new Memory_WriteAddress( 0x9000, 0x93ff, videoram_w, videoram, videoram_size ),
+		new Memory_WriteAddress( 0x9400, 0x97ff, colorram_w, colorram ),
+		new Memory_WriteAddress( 0x9800, 0x983f, thepit_attributes_w, thepit_attributesram ),
+		new Memory_WriteAddress( 0x9840, 0x985f, MWA_RAM, spriteram, spriteram_size ),
 		new Memory_WriteAddress( 0x9860, 0x98ff, MWA_RAM ), // Probably unused
 		new Memory_WriteAddress( 0xb000, 0xb000, interrupt_enable_w ),
 		new Memory_WriteAddress( 0xb001, 0xb001, MWA_NOP ), // Unused, but initialized

@@ -65,12 +65,12 @@ public class gotya
 		new Memory_WriteAddress( 0x5000, 0x5fff, MWA_RAM ),
 		new Memory_WriteAddress( 0x6004, 0x6004, gotya_video_control_w ),
 		new Memory_WriteAddress( 0x6005, 0x6005, gotya_soundlatch_w ),
-		new Memory_WriteAddress( 0x6006, 0x6006, MWA_RAM, &gotya_scroll ),
+		new Memory_WriteAddress( 0x6006, 0x6006, MWA_RAM, gotya_scroll ),
 		new Memory_WriteAddress( 0x6007, 0x6007, watchdog_reset_w ),
-		new Memory_WriteAddress( 0xc000, 0xc7ff, videoram_w, &videoram, &videoram_size ),
-		new Memory_WriteAddress( 0xc800, 0xcfff, colorram_w, &colorram ),
-		new Memory_WriteAddress( 0xd000, 0xd3df, MWA_RAM, &gotya_foregroundram ),
-		new Memory_WriteAddress( 0xd3e0, 0xd3ff, MWA_RAM, &spriteram ),
+		new Memory_WriteAddress( 0xc000, 0xc7ff, videoram_w, videoram, videoram_size ),
+		new Memory_WriteAddress( 0xc800, 0xcfff, colorram_w, colorram ),
+		new Memory_WriteAddress( 0xd000, 0xd3df, MWA_RAM, gotya_foregroundram ),
+		new Memory_WriteAddress( 0xd3e0, 0xd3ff, MWA_RAM, spriteram ),
 		new Memory_WriteAddress(MEMPORT_MARKER, 0)
 	};
 	

@@ -82,12 +82,12 @@ public class raiden
 	public static Memory_WriteAddress writemem[]={
 		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
 		new Memory_WriteAddress( 0x00000, 0x06fff, MWA_RAM ),
-		new Memory_WriteAddress( 0x07000, 0x07fff, MWA_RAM, &spriteram, &spriteram_size ),
-		new Memory_WriteAddress( 0x0a000, 0x0afff, raiden_shared_w, &raiden_shared_ram ),
+		new Memory_WriteAddress( 0x07000, 0x07fff, MWA_RAM, spriteram, spriteram_size ),
+		new Memory_WriteAddress( 0x0a000, 0x0afff, raiden_shared_w, raiden_shared_ram ),
 		new Memory_WriteAddress( 0x0b000, 0x0b007, raiden_control_w ),
-		new Memory_WriteAddress( 0x0c000, 0x0c7ff, raiden_text_w, &videoram ),
+		new Memory_WriteAddress( 0x0c000, 0x0c7ff, raiden_text_w, videoram ),
 		new Memory_WriteAddress( 0x0d000, 0x0d00d, seibu_main_v30_w ),
-		new Memory_WriteAddress( 0x0d060, 0x0d067, MWA_RAM, &raiden_scroll_ram ),
+		new Memory_WriteAddress( 0x0d060, 0x0d067, MWA_RAM, raiden_scroll_ram ),
 		new Memory_WriteAddress( 0xa0000, 0xfffff, MWA_ROM ),
 		new Memory_WriteAddress(MEMPORT_MARKER, 0)
 	};
@@ -106,9 +106,9 @@ public class raiden
 	public static Memory_WriteAddress sub_writemem[]={
 		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
 		new Memory_WriteAddress( 0x00000, 0x01fff, MWA_RAM ),
-		new Memory_WriteAddress( 0x02000, 0x027ff, raiden_background_w, &raiden_back_data ),
-		new Memory_WriteAddress( 0x02800, 0x02fff, raiden_foreground_w, &raiden_fore_data ),
-		new Memory_WriteAddress( 0x03000, 0x03fff, paletteram_xxxxBBBBGGGGRRRR_w, &paletteram ),
+		new Memory_WriteAddress( 0x02000, 0x027ff, raiden_background_w, raiden_back_data ),
+		new Memory_WriteAddress( 0x02800, 0x02fff, raiden_foreground_w, raiden_fore_data ),
+		new Memory_WriteAddress( 0x03000, 0x03fff, paletteram_xxxxBBBBGGGGRRRR_w, paletteram ),
 		new Memory_WriteAddress( 0x04000, 0x04fff, raiden_shared_w ),
 		new Memory_WriteAddress( 0x07ffe, 0x0afff, MWA_NOP ),
 		new Memory_WriteAddress( 0xc0000, 0xfffff, MWA_ROM ),
@@ -133,12 +133,12 @@ public class raiden
 	public static Memory_WriteAddress alt_writemem[]={
 		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
 		new Memory_WriteAddress( 0x00000, 0x06fff, MWA_RAM ),
-		new Memory_WriteAddress( 0x07000, 0x07fff, MWA_RAM, &spriteram, &spriteram_size ),
-		new Memory_WriteAddress( 0x08000, 0x08fff, raiden_shared_w, &raiden_shared_ram ),
+		new Memory_WriteAddress( 0x07000, 0x07fff, MWA_RAM, spriteram, spriteram_size ),
+		new Memory_WriteAddress( 0x08000, 0x08fff, raiden_shared_w, raiden_shared_ram ),
 		new Memory_WriteAddress( 0x0a000, 0x0a00d, seibu_main_v30_w ),
 		new Memory_WriteAddress( 0x0b000, 0x0b007, raiden_control_w ),
-		new Memory_WriteAddress( 0x0c000, 0x0c7ff, raidena_text_w, &videoram ),
-		new Memory_WriteAddress( 0x0f000, 0x0f035, MWA_RAM, &raiden_scroll_ram ),
+		new Memory_WriteAddress( 0x0c000, 0x0c7ff, raidena_text_w, videoram ),
+		new Memory_WriteAddress( 0x0f000, 0x0f035, MWA_RAM, raiden_scroll_ram ),
 		new Memory_WriteAddress( 0xa0000, 0xfffff, MWA_ROM ),
 		new Memory_WriteAddress(MEMPORT_MARKER, 0)
 	};

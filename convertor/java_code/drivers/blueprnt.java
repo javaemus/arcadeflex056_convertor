@@ -110,13 +110,13 @@ public class blueprnt
 		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
 		new Memory_WriteAddress( 0x0000, 0x5fff, MWA_ROM ),
 		new Memory_WriteAddress( 0x8000, 0x87ff, MWA_RAM ),
-		new Memory_WriteAddress( 0x9000, 0x93ff, videoram_w, &videoram, &videoram_size ),
-		new Memory_WriteAddress( 0xa000, 0xa01f, MWA_RAM, &blueprnt_scrollram ),
-		new Memory_WriteAddress( 0xb000, 0xb0ff, MWA_RAM, &spriteram, &spriteram_size ),
+		new Memory_WriteAddress( 0x9000, 0x93ff, videoram_w, videoram, videoram_size ),
+		new Memory_WriteAddress( 0xa000, 0xa01f, MWA_RAM, blueprnt_scrollram ),
+		new Memory_WriteAddress( 0xb000, 0xb0ff, MWA_RAM, spriteram, spriteram_size ),
 		new Memory_WriteAddress( 0xc000, 0xc000, blueprnt_coin_w ),
 		new Memory_WriteAddress( 0xd000, 0xd000, blueprnt_sound_command_w ),
 		new Memory_WriteAddress( 0xe000, 0xe000, blueprnt_flipscreen_w ),	/* + gfx bank */
-		new Memory_WriteAddress( 0xf000, 0xf3ff, colorram_w, &colorram ),
+		new Memory_WriteAddress( 0xf000, 0xf3ff, colorram_w, colorram ),
 		new Memory_WriteAddress(MEMPORT_MARKER, 0)
 	};
 	

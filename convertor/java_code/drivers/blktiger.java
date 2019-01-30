@@ -83,11 +83,11 @@ public class blktiger
 		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
 		new Memory_WriteAddress( 0x0000, 0xbfff, MWA_ROM ),
 		new Memory_WriteAddress( 0xc000, 0xcfff, blktiger_bgvideoram_w ),
-		new Memory_WriteAddress( 0xd000, 0xd7ff, blktiger_txvideoram_w, &blktiger_txvideoram ),
-		new Memory_WriteAddress( 0xd800, 0xdbff, paletteram_xxxxBBBBRRRRGGGG_split1_w, &paletteram ),
-		new Memory_WriteAddress( 0xdc00, 0xdfff, paletteram_xxxxBBBBRRRRGGGG_split2_w, &paletteram_2 ),
+		new Memory_WriteAddress( 0xd000, 0xd7ff, blktiger_txvideoram_w, blktiger_txvideoram ),
+		new Memory_WriteAddress( 0xd800, 0xdbff, paletteram_xxxxBBBBRRRRGGGG_split1_w, paletteram ),
+		new Memory_WriteAddress( 0xdc00, 0xdfff, paletteram_xxxxBBBBRRRRGGGG_split2_w, paletteram_2 ),
 		new Memory_WriteAddress( 0xe000, 0xfdff, MWA_RAM ),
-		new Memory_WriteAddress( 0xfe00, 0xffff, MWA_RAM, &spriteram, &spriteram_size ),
+		new Memory_WriteAddress( 0xfe00, 0xffff, MWA_RAM, spriteram, spriteram_size ),
 		new Memory_WriteAddress(MEMPORT_MARKER, 0)
 	};
 	

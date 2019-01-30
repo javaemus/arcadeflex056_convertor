@@ -93,10 +93,10 @@ public class marineb
 		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
 		new Memory_WriteAddress( 0x0000, 0x7fff, MWA_ROM ),
 		new Memory_WriteAddress( 0x8000, 0x87ff, MWA_RAM ),
-		new Memory_WriteAddress( 0x8800, 0x8bff, videoram_w, &videoram, &videoram_size ),
-		new Memory_WriteAddress( 0x8c00, 0x8c3f, MWA_RAM, &spriteram ),  /* Hoccer only */
-		new Memory_WriteAddress( 0x9000, 0x93ff, colorram_w, &colorram ),
-		new Memory_WriteAddress( 0x9800, 0x9800, MWA_RAM, &marineb_column_scroll ),
+		new Memory_WriteAddress( 0x8800, 0x8bff, videoram_w, videoram, videoram_size ),
+		new Memory_WriteAddress( 0x8c00, 0x8c3f, MWA_RAM, spriteram ),  /* Hoccer only */
+		new Memory_WriteAddress( 0x9000, 0x93ff, colorram_w, colorram ),
+		new Memory_WriteAddress( 0x9800, 0x9800, MWA_RAM, marineb_column_scroll ),
 		new Memory_WriteAddress( 0x9a00, 0x9a00, marineb_palbank0_w ),
 		new Memory_WriteAddress( 0x9c00, 0x9c00, marineb_palbank1_w ),
 		new Memory_WriteAddress( 0xa000, 0xa000, interrupt_enable_w ),

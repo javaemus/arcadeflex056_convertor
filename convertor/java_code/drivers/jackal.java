@@ -102,7 +102,7 @@ public class jackal
 	
 	public static Memory_WriteAddress jackal_writemem[]={
 		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
-		new Memory_WriteAddress( 0x0000, 0x0003, MWA_RAM, &jackal_videoctrl ),	/* scroll + other things */
+		new Memory_WriteAddress( 0x0000, 0x0003, MWA_RAM, jackal_videoctrl ),	/* scroll + other things */
 		new Memory_WriteAddress( 0x0004, 0x0004, ctrl_w ),
 		new Memory_WriteAddress( 0x0019, 0x0019, MWA_NOP ),	/* possibly watchdog reset */
 		new Memory_WriteAddress( 0x001c, 0x001c, jackal_rambank_w ),
@@ -128,7 +128,7 @@ public class jackal
 		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
 		new Memory_WriteAddress( 0x2000, 0x2000, YM2151_register_port_0_w ),
 		new Memory_WriteAddress( 0x2001, 0x2001, YM2151_data_port_0_w ),
-		new Memory_WriteAddress( 0x4000, 0x43ff, paletteram_xBBBBBGGGGGRRRRR_w, &paletteram ),
+		new Memory_WriteAddress( 0x4000, 0x43ff, paletteram_xBBBBBGGGGGRRRRR_w, paletteram ),
 		new Memory_WriteAddress( 0x6000, 0x605f, MWA_RAM ),
 		new Memory_WriteAddress( 0x6060, 0x7fff, jackal_commonram1_w ),
 		new Memory_WriteAddress( 0x8000, 0xffff, MWA_ROM ),

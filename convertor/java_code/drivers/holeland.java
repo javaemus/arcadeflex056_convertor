@@ -48,9 +48,9 @@ public class holeland
 		new Memory_WriteAddress( 0xa000, 0xbfff, MWA_ROM ),
 		new Memory_WriteAddress( 0xc000, 0xc001, holeland_pal_offs_w ),
 		new Memory_WriteAddress( 0xc006, 0xc007, holeland_flipscreen_w ),
-		new Memory_WriteAddress( 0xe000, 0xe3ff, holeland_colorram_w, &colorram ),
-		new Memory_WriteAddress( 0xe400, 0xe7ff, holeland_videoram_w, &videoram, &videoram_size ),
-		new Memory_WriteAddress( 0xf000, 0xf3ff, MWA_RAM, &spriteram, &spriteram_size ),
+		new Memory_WriteAddress( 0xe000, 0xe3ff, holeland_colorram_w, colorram ),
+		new Memory_WriteAddress( 0xe400, 0xe7ff, holeland_videoram_w, videoram, videoram_size ),
+		new Memory_WriteAddress( 0xf000, 0xf3ff, MWA_RAM, spriteram, spriteram_size ),
 		new Memory_WriteAddress(MEMPORT_MARKER, 0)
 	};
 	
@@ -66,9 +66,9 @@ public class holeland
 		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
 		new Memory_WriteAddress( 0x0000, 0xbfff, MWA_ROM ),
 		new Memory_WriteAddress( 0xc000, 0xc7ff, MWA_RAM ),
-		new Memory_WriteAddress( 0xe000, 0xe3ff, holeland_colorram_w, &colorram ),
-		new Memory_WriteAddress( 0xe400, 0xe7ff, holeland_videoram_w, &videoram, &videoram_size ),
-		new Memory_WriteAddress( 0xe800, 0xebff, MWA_RAM, &spriteram, &spriteram_size ),
+		new Memory_WriteAddress( 0xe000, 0xe3ff, holeland_colorram_w, colorram ),
+		new Memory_WriteAddress( 0xe400, 0xe7ff, holeland_videoram_w, videoram, videoram_size ),
+		new Memory_WriteAddress( 0xe800, 0xebff, MWA_RAM, spriteram, spriteram_size ),
 		new Memory_WriteAddress( 0xf000, 0xf000, holeland_scroll_w ),
 		new Memory_WriteAddress( 0xf800, 0xf801, holeland_pal_offs_w ),
 		new Memory_WriteAddress(MEMPORT_MARKER, 0)

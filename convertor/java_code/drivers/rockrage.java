@@ -86,7 +86,7 @@ public class rockrage
 		new Memory_WriteAddress( 0x0000, 0x1fff, K007342_w ),				/* Color RAM + Video RAM */
 		new Memory_WriteAddress( 0x2000, 0x21ff, K007420_w ),				/* Sprite RAM */
 		new Memory_WriteAddress( 0x2200, 0x23ff, K007342_scroll_w ),		/* Scroll RAM */
-		new Memory_WriteAddress( 0x2400, 0x247f, paletteram_xBBBBBGGGGGRRRRR_w, &paletteram ),/* palette */
+		new Memory_WriteAddress( 0x2400, 0x247f, paletteram_xBBBBBGGGGGRRRRR_w, paletteram ),/* palette */
 		new Memory_WriteAddress( 0x2600, 0x2607, K007342_vreg_w ),			/* Video Registers */
 		new Memory_WriteAddress( 0x2e80, 0x2e80, rockrage_sh_irqtrigger_w ),/* cause interrupt on audio CPU */
 		new Memory_WriteAddress( 0x2ec0, 0x2ec0, watchdog_reset_w ),		/* watchdog reset */

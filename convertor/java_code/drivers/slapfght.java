@@ -254,11 +254,11 @@ public class slapfght
 		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
 		new Memory_WriteAddress( 0x0000, 0x7fff, MWA_ROM ),
 		new Memory_WriteAddress( 0x8000, 0x87ff, MWA_RAM ),
-		new Memory_WriteAddress( 0x8800, 0x880f, slapfight_dpram_w, &slapfight_dpram, &slapfight_dpram_size ),
+		new Memory_WriteAddress( 0x8800, 0x880f, slapfight_dpram_w, slapfight_dpram, slapfight_dpram_size ),
 		new Memory_WriteAddress( 0x8810, 0x8fff, MWA_BANK1 ),	/* Shared RAM with sound CPU */
-		new Memory_WriteAddress( 0x9000, 0x97ff, slapfight_videoram_w, &videoram, &videoram_size ),
-		new Memory_WriteAddress( 0x9800, 0x9fff, slapfight_colorram_w, &colorram ),
-		new Memory_WriteAddress( 0xa000, 0xa7ff, MWA_RAM, &spriteram, &spriteram_size ),
+		new Memory_WriteAddress( 0x9000, 0x97ff, slapfight_videoram_w, videoram, videoram_size ),
+		new Memory_WriteAddress( 0x9800, 0x9fff, slapfight_colorram_w, colorram ),
+		new Memory_WriteAddress( 0xa000, 0xa7ff, MWA_RAM, spriteram, spriteram_size ),
 		new Memory_WriteAddress(MEMPORT_MARKER, 0)
 	};
 	
@@ -295,16 +295,16 @@ public class slapfght
 		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
 		new Memory_WriteAddress( 0x0000, 0xbfff, MWA_ROM ),
 		new Memory_WriteAddress( 0xc000, 0xc7ff, MWA_RAM ),
-		new Memory_WriteAddress( 0xc800, 0xc80f, slapfight_dpram_w, &slapfight_dpram, &slapfight_dpram_size ),
+		new Memory_WriteAddress( 0xc800, 0xc80f, slapfight_dpram_w, slapfight_dpram, slapfight_dpram_size ),
 		new Memory_WriteAddress( 0xc810, 0xcfff, MWA_RAM ),
-		new Memory_WriteAddress( 0xd000, 0xd7ff, slapfight_videoram_w, &videoram, &videoram_size ),
-		new Memory_WriteAddress( 0xd800, 0xdfff, slapfight_colorram_w, &colorram ),
-		new Memory_WriteAddress( 0xe000, 0xe7ff, MWA_RAM, &spriteram, &spriteram_size ),
-		new Memory_WriteAddress( 0xe800, 0xe800, MWA_RAM, &slapfight_scrollx_lo ),
-		new Memory_WriteAddress( 0xe801, 0xe801, MWA_RAM, &slapfight_scrollx_hi ),
-		new Memory_WriteAddress( 0xe802, 0xe802, MWA_RAM, &slapfight_scrolly ),
-		new Memory_WriteAddress( 0xf000, 0xf7ff, slapfight_fixram_w, &slapfight_videoram, &slapfight_videoram_size ),
-		new Memory_WriteAddress( 0xf800, 0xffff, slapfight_fixcol_w, &slapfight_colorram ),
+		new Memory_WriteAddress( 0xd000, 0xd7ff, slapfight_videoram_w, videoram, videoram_size ),
+		new Memory_WriteAddress( 0xd800, 0xdfff, slapfight_colorram_w, colorram ),
+		new Memory_WriteAddress( 0xe000, 0xe7ff, MWA_RAM, spriteram, spriteram_size ),
+		new Memory_WriteAddress( 0xe800, 0xe800, MWA_RAM, slapfight_scrollx_lo ),
+		new Memory_WriteAddress( 0xe801, 0xe801, MWA_RAM, slapfight_scrollx_hi ),
+		new Memory_WriteAddress( 0xe802, 0xe802, MWA_RAM, slapfight_scrolly ),
+		new Memory_WriteAddress( 0xf000, 0xf7ff, slapfight_fixram_w, slapfight_videoram, slapfight_videoram_size ),
+		new Memory_WriteAddress( 0xf800, 0xffff, slapfight_fixcol_w, slapfight_colorram ),
 		new Memory_WriteAddress(MEMPORT_MARKER, 0)
 	};
 	
@@ -312,16 +312,16 @@ public class slapfght
 		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
 		new Memory_WriteAddress( 0x0000, 0xbfff, MWA_ROM ),
 		new Memory_WriteAddress( 0xc000, 0xc7ff, MWA_RAM ),
-		new Memory_WriteAddress( 0xc800, 0xc80f, slapfight_dpram_w, &slapfight_dpram, &slapfight_dpram_size ),
+		new Memory_WriteAddress( 0xc800, 0xc80f, slapfight_dpram_w, slapfight_dpram, slapfight_dpram_size ),
 		new Memory_WriteAddress( 0xc810, 0xcfff, MWA_RAM ),
-		new Memory_WriteAddress( 0xd000, 0xd7ff, slapfight_videoram_w, &videoram, &videoram_size ),
-		new Memory_WriteAddress( 0xd800, 0xdfff, slapfight_colorram_w, &colorram ),
-		new Memory_WriteAddress( 0xe000, 0xe7ff, MWA_RAM, &spriteram, &spriteram_size ),
-		new Memory_WriteAddress( 0xe800, 0xe800, MWA_RAM, &slapfight_scrollx_hi ),
-		new Memory_WriteAddress( 0xe802, 0xe802, MWA_RAM, &slapfight_scrolly ),
-		new Memory_WriteAddress( 0xe803, 0xe803, MWA_RAM, &slapfight_scrollx_lo ),
-		new Memory_WriteAddress( 0xf000, 0xf7ff, slapfight_fixram_w, &slapfight_videoram, &slapfight_videoram_size ),
-		new Memory_WriteAddress( 0xf800, 0xffff, slapfight_fixcol_w, &slapfight_colorram ),
+		new Memory_WriteAddress( 0xd000, 0xd7ff, slapfight_videoram_w, videoram, videoram_size ),
+		new Memory_WriteAddress( 0xd800, 0xdfff, slapfight_colorram_w, colorram ),
+		new Memory_WriteAddress( 0xe000, 0xe7ff, MWA_RAM, spriteram, spriteram_size ),
+		new Memory_WriteAddress( 0xe800, 0xe800, MWA_RAM, slapfight_scrollx_hi ),
+		new Memory_WriteAddress( 0xe802, 0xe802, MWA_RAM, slapfight_scrolly ),
+		new Memory_WriteAddress( 0xe803, 0xe803, MWA_RAM, slapfight_scrollx_lo ),
+		new Memory_WriteAddress( 0xf000, 0xf7ff, slapfight_fixram_w, slapfight_videoram, slapfight_videoram_size ),
+		new Memory_WriteAddress( 0xf800, 0xffff, slapfight_fixcol_w, slapfight_colorram ),
 		new Memory_WriteAddress(MEMPORT_MARKER, 0)
 	};
 	

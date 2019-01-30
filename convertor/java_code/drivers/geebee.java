@@ -128,7 +128,7 @@ public class geebee
 	public static Memory_WriteAddress writemem[]={
 		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
 		new Memory_WriteAddress( 0x0000, 0x1fff, MWA_ROM ),
-		new Memory_WriteAddress( 0x2000, 0x23ff, videoram_w, &videoram, &videoram_size ),
+		new Memory_WriteAddress( 0x2000, 0x23ff, videoram_w, videoram, videoram_size ),
 		new Memory_WriteAddress( 0x2400, 0x27ff, videoram_w ), /* mirror used in kaitei */
 		new Memory_WriteAddress( 0x3000, 0x37ff, MWA_ROM ),
 	    new Memory_WriteAddress( 0x4000, 0x40ff, MWA_RAM ),

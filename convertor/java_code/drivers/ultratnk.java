@@ -228,9 +228,9 @@ public class ultratnk
 	
 	public static Memory_WriteAddress writemem[]={
 		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
-		new Memory_WriteAddress( 0x0000, 0x00ff, MWA_RAM, &mirror_ram ),
+		new Memory_WriteAddress( 0x0000, 0x00ff, MWA_RAM, mirror_ram ),
 		new Memory_WriteAddress( 0x0100, 0x01ff, mirror_w ),
-		new Memory_WriteAddress( 0x0800, 0x0bff, videoram_w, &videoram, &videoram_size ),
+		new Memory_WriteAddress( 0x0800, 0x0bff, videoram_w, videoram, videoram_size ),
 		new Memory_WriteAddress( 0x0c00, 0x0cff, MWA_RAM ), /* ? */
 		new Memory_WriteAddress( 0x2000, 0x2000, MWA_NOP ), /* sound-related? */
 		new Memory_WriteAddress( 0x2020, 0x2023, MWA_NOP ), /* collision reset? */

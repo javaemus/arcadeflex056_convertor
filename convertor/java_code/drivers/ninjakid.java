@@ -101,15 +101,15 @@ public class ninjakid
 	public static Memory_WriteAddress ninjakid_primary_writemem[]={
 		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
 		new Memory_WriteAddress( 0x0000, 0x1fff, MWA_ROM ),
-		new Memory_WriteAddress( 0x2000, 0x7fff, MWA_ROM, &ninjakid_gfx_rom ),
+		new Memory_WriteAddress( 0x2000, 0x7fff, MWA_ROM, ninjakid_gfx_rom ),
 		new Memory_WriteAddress( 0x8000, 0x8003, ninjakun_io_8000_w ),
 		new Memory_WriteAddress( 0xa002, 0xa002, cpu1_A002_w ),
 		new Memory_WriteAddress( 0xa003, 0xa003, ninjakun_flipscreen_w ),
-		new Memory_WriteAddress( 0xc000, 0xc7ff, ninjakid_fg_videoram_w, &videoram ),
+		new Memory_WriteAddress( 0xc000, 0xc7ff, ninjakid_fg_videoram_w, videoram ),
 		new Memory_WriteAddress( 0xc800, 0xcfff, ninjakid_bg_videoram_w ),
-		new Memory_WriteAddress( 0xd000, 0xd7ff, MWA_RAM, &spriteram ),
-		new Memory_WriteAddress( 0xd800, 0xd9ff, ninjakun_paletteram_w, &paletteram ),
-		new Memory_WriteAddress( 0xe000, 0xe7ff, MWA_RAM, &shareram ),
+		new Memory_WriteAddress( 0xd000, 0xd7ff, MWA_RAM, spriteram ),
+		new Memory_WriteAddress( 0xd800, 0xd9ff, ninjakun_paletteram_w, paletteram ),
+		new Memory_WriteAddress( 0xe000, 0xe7ff, MWA_RAM, shareram ),
 		new Memory_WriteAddress(MEMPORT_MARKER, 0)
 	};
 	

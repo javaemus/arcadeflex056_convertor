@@ -574,12 +574,12 @@ public class tunhunt
 		new Memory_WriteAddress( 0x1080, 0x10ff, MWA_RAM ),
 		new Memory_WriteAddress( 0x1200, 0x12ff, MWA_RAM ),
 		new Memory_WriteAddress( 0x1400, 0x14ff, MWA_RAM ),
-		new Memory_WriteAddress( 0x1600, 0x160f, MWA_RAM, &paletteram ), /* COLRAM (D7-D4 SHADE; D3-D0 COLOR) */
+		new Memory_WriteAddress( 0x1600, 0x160f, MWA_RAM, paletteram ), /* COLRAM (D7-D4 SHADE; D3-D0 COLOR) */
 		new Memory_WriteAddress( 0x1800, 0x1800, MWA_RAM ), /* SHEL0H */
 		new Memory_WriteAddress( 0x1a00, 0x1a00, MWA_RAM ), /* SHEL1H */
 		new Memory_WriteAddress( 0x1c00, 0x1c00, MWA_RAM ), /* MOBJV */
-		new Memory_WriteAddress( 0x1e00, 0x1eff, MWA_RAM, &videoram ),	/* ALPHA */
-		new Memory_WriteAddress( 0x2c00, 0x2fff, tunhunt_mott_w, &spriteram ),
+		new Memory_WriteAddress( 0x1e00, 0x1eff, MWA_RAM, videoram ),	/* ALPHA */
+		new Memory_WriteAddress( 0x2c00, 0x2fff, tunhunt_mott_w, spriteram ),
 		new Memory_WriteAddress( 0x2000, 0x2000, MWA_NOP ), /* watchdog */
 		new Memory_WriteAddress( 0x2400, 0x2400, MWA_NOP ), /* INT ACK */
 		new Memory_WriteAddress( 0x2800, 0x2800, tunhunt_control_w ),

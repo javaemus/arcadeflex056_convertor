@@ -297,16 +297,16 @@ public class gladiatr
 	public static Memory_WriteAddress writemem[]={
 		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
 		new Memory_WriteAddress( 0x0000, 0xbfff, MWA_ROM ),
-		new Memory_WriteAddress( 0xc000, 0xcbff, MWA_RAM, &spriteram ),
+		new Memory_WriteAddress( 0xc000, 0xcbff, MWA_RAM, spriteram ),
 		new Memory_WriteAddress( 0xcc00, 0xcfff, gladiatr_video_registers_w ),
-		new Memory_WriteAddress( 0xd000, 0xd1ff, gladiatr_paletteram_rg_w, &paletteram ),
+		new Memory_WriteAddress( 0xd000, 0xd1ff, gladiatr_paletteram_rg_w, paletteram ),
 		new Memory_WriteAddress( 0xd200, 0xd3ff, MWA_RAM ),
-		new Memory_WriteAddress( 0xd400, 0xd5ff, gladiatr_paletteram_b_w, &paletteram_2 ),
+		new Memory_WriteAddress( 0xd400, 0xd5ff, gladiatr_paletteram_b_w, paletteram_2 ),
 		new Memory_WriteAddress( 0xd600, 0xd7ff, MWA_RAM ),
-		new Memory_WriteAddress( 0xd800, 0xdfff, videoram_w, &videoram ),
-		new Memory_WriteAddress( 0xe000, 0xe7ff, colorram_w, &colorram ),
-		new Memory_WriteAddress( 0xe800, 0xefff, MWA_RAM, &gladiator_text ),
-		new Memory_WriteAddress( 0xf000, 0xf3ff, MWA_RAM, &nvram, &nvram_size ), /* battery backed RAM */
+		new Memory_WriteAddress( 0xd800, 0xdfff, videoram_w, videoram ),
+		new Memory_WriteAddress( 0xe000, 0xe7ff, colorram_w, colorram ),
+		new Memory_WriteAddress( 0xe800, 0xefff, MWA_RAM, gladiator_text ),
+		new Memory_WriteAddress( 0xf000, 0xf3ff, MWA_RAM, nvram, nvram_size ), /* battery backed RAM */
 		new Memory_WriteAddress( 0xf400, 0xffff, MWA_RAM ),
 		new Memory_WriteAddress(MEMPORT_MARKER, 0)
 	};

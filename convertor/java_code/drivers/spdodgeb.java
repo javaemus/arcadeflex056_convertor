@@ -217,8 +217,8 @@ public class spdodgeb
 	public static Memory_WriteAddress writemem[]={
 		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
 		new Memory_WriteAddress( 0x0000, 0x0fff, MWA_RAM ),
-		new Memory_WriteAddress( 0x1000, 0x10ff, MWA_RAM, &spriteram, &spriteram_size ),
-		new Memory_WriteAddress( 0x2000, 0x2fff, spdodgeb_videoram_w, &spdodgeb_videoram ),
+		new Memory_WriteAddress( 0x1000, 0x10ff, MWA_RAM, spriteram, spriteram_size ),
+		new Memory_WriteAddress( 0x2000, 0x2fff, spdodgeb_videoram_w, spdodgeb_videoram ),
 	//	new Memory_WriteAddress( 0x3000, 0x3000, MWA_RAM ),
 	//	new Memory_WriteAddress( 0x3001, 0x3001, MWA_RAM ),
 		new Memory_WriteAddress( 0x3002, 0x3002, sound_command_w ),

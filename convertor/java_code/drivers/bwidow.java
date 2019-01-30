@@ -317,7 +317,7 @@ public class bwidow
 	public static Memory_WriteAddress bwidow_writemem[]={
 		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
 		new Memory_WriteAddress( 0x0000, 0x07ff, MWA_RAM ),
-		new Memory_WriteAddress( 0x2000, 0x27ff, MWA_RAM, &vectorram, &vectorram_size ),
+		new Memory_WriteAddress( 0x2000, 0x27ff, MWA_RAM, vectorram, vectorram_size ),
 		new Memory_WriteAddress( 0x2800, 0x5fff, MWA_ROM ),
 		new Memory_WriteAddress( 0x6000, 0x67ff, pokey1_w ),
 		new Memory_WriteAddress( 0x6800, 0x6fff, pokey2_w ),
@@ -360,7 +360,7 @@ public class bwidow
 		new Memory_WriteAddress( 0x0f00, 0x0f3f, atari_vg_earom_w ),
 		new Memory_WriteAddress( 0x1000, 0x13ff, pokey1_w ),
 		new Memory_WriteAddress( 0x1400, 0x17ff, pokey2_w ),
-		new Memory_WriteAddress( 0x2000, 0x27ff, MWA_RAM, &vectorram, &vectorram_size ),
+		new Memory_WriteAddress( 0x2000, 0x27ff, MWA_RAM, vectorram, vectorram_size ),
 		new Memory_WriteAddress( 0x2800, 0x3fff, MWA_ROM ),
 		new Memory_WriteAddress( 0x4000, 0x8fff, MWA_ROM ),
 		new Memory_WriteAddress( 0xf000, 0xffff, MWA_ROM ),

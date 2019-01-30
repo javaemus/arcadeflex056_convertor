@@ -137,12 +137,12 @@ public class ddrible
 		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
 		new Memory_WriteAddress( 0x0000, 0x0004, K005885_0_w ),								/* video registers (005885 #1) */
 		new Memory_WriteAddress( 0x0800, 0x0804, K005885_1_w ),								/* video registers (005885 #2) */
-		new Memory_WriteAddress( 0x1800, 0x187f, paletteram_xBBBBBGGGGGRRRRR_swap_w, &paletteram ),/* seems wrong, MSB is used as well */
-		new Memory_WriteAddress( 0x2000, 0x2fff, ddrible_fg_videoram_w, &ddrible_fg_videoram ),/* Video RAM 1 */
-		new Memory_WriteAddress( 0x3000, 0x3fff, MWA_RAM, &ddrible_spriteram_1 ),				/* Object RAM 1 */
-		new Memory_WriteAddress( 0x4000, 0x5fff, MWA_RAM, &ddrible_sharedram ),				/* shared RAM with CPU #1 */
-		new Memory_WriteAddress( 0x6000, 0x6fff, ddrible_bg_videoram_w, &ddrible_bg_videoram ),/* Video RAM 2 */
-		new Memory_WriteAddress( 0x7000, 0x7fff, MWA_RAM, &ddrible_spriteram_2 ),				/* Object RAM 2 + Work RAM */
+		new Memory_WriteAddress( 0x1800, 0x187f, paletteram_xBBBBBGGGGGRRRRR_swap_w, paletteram ),/* seems wrong, MSB is used as well */
+		new Memory_WriteAddress( 0x2000, 0x2fff, ddrible_fg_videoram_w, ddrible_fg_videoram ),/* Video RAM 1 */
+		new Memory_WriteAddress( 0x3000, 0x3fff, MWA_RAM, ddrible_spriteram_1 ),				/* Object RAM 1 */
+		new Memory_WriteAddress( 0x4000, 0x5fff, MWA_RAM, ddrible_sharedram ),				/* shared RAM with CPU #1 */
+		new Memory_WriteAddress( 0x6000, 0x6fff, ddrible_bg_videoram_w, ddrible_bg_videoram ),/* Video RAM 2 */
+		new Memory_WriteAddress( 0x7000, 0x7fff, MWA_RAM, ddrible_spriteram_2 ),				/* Object RAM 2 + Work RAM */
 		new Memory_WriteAddress( 0x8000, 0x8000, ddrible_bankswitch_w ),						/* bankswitch control */
 		new Memory_WriteAddress( 0x8000, 0xffff, MWA_ROM ),									/* ROM */
 		new Memory_WriteAddress(MEMPORT_MARKER, 0)
@@ -155,7 +155,7 @@ public class ddrible
 		new Memory_ReadAddress( 0x2800, 0x2800, input_port_3_r ),				/* DSW #1 */
 		new Memory_ReadAddress( 0x2801, 0x2801, input_port_0_r ),				/* player 1 inputs */
 		new Memory_ReadAddress( 0x2802, 0x2802, input_port_1_r ),				/* player 2 inputs */
-		new Memory_ReadAddress( 0x2803, 0x2803, input_port_2_r ),				/* coinsw & start */
+		new Memory_ReadAddress( 0x2803, 0x2803, input_port_2_r ),				/* coinsw  start */
 		new Memory_ReadAddress( 0x2c00, 0x2c00, input_port_4_r ),				/* DSW #2 */
 		new Memory_ReadAddress( 0x3000, 0x3000, input_port_5_r ),				/* DSW #3 */
 		new Memory_ReadAddress( 0x8000, 0xffff, MRA_ROM ),					/* ROM */
@@ -183,7 +183,7 @@ public class ddrible
 	
 	public static Memory_WriteAddress writemem_cpu2[]={
 		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
-		new Memory_WriteAddress( 0x0000, 0x07ff, MWA_RAM, &ddrible_snd_sharedram  ),	/* shared RAM with CPU #1 */
+		new Memory_WriteAddress( 0x0000, 0x07ff, MWA_RAM, ddrible_snd_sharedram  ),	/* shared RAM with CPU #1 */
 		new Memory_WriteAddress( 0x1000, 0x1000, YM2203_control_port_0_w ),			/* YM2203 */
 		new Memory_WriteAddress( 0x1001, 0x1001, YM2203_write_port_0_w ),				/* YM2203 */
 		new Memory_WriteAddress( 0x3000, 0x3000, VLM5030_data_w ),						/* Speech data */

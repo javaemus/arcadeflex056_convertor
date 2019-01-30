@@ -111,7 +111,7 @@ public class aliens
 	
 	public static Memory_WriteAddress aliens_writemem[]={
 		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
-		new Memory_WriteAddress( 0x0000, 0x03ff, bankedram_w, &ram ),			/* palette + work RAM */
+		new Memory_WriteAddress( 0x0000, 0x03ff, bankedram_w, ram ),			/* palette + work RAM */
 		new Memory_WriteAddress( 0x0400, 0x1fff, MWA_RAM ),
 		new Memory_WriteAddress( 0x2000, 0x3fff, MWA_ROM ),					/* banked ROM */
 		new Memory_WriteAddress( 0x5f88, 0x5f88, aliens_coin_counter_w ),		/* coin counters */

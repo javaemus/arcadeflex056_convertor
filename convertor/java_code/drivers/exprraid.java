@@ -125,11 +125,11 @@ public class exprraid
 	public static Memory_WriteAddress writemem[]={
 		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
 	    new Memory_WriteAddress( 0x0000, 0x05ff, MWA_RAM ),
-	    new Memory_WriteAddress( 0x0600, 0x07ff, MWA_RAM, &spriteram, &spriteram_size ), /* sprites */
-	    new Memory_WriteAddress( 0x0800, 0x0bff, videoram_w, &videoram, &videoram_size ),
-	    new Memory_WriteAddress( 0x0c00, 0x0fff, colorram_w, &colorram ),
+	    new Memory_WriteAddress( 0x0600, 0x07ff, MWA_RAM, spriteram, spriteram_size ), /* sprites */
+	    new Memory_WriteAddress( 0x0800, 0x0bff, videoram_w, videoram, videoram_size ),
+	    new Memory_WriteAddress( 0x0c00, 0x0fff, colorram_w, colorram ),
 	    new Memory_WriteAddress( 0x2001, 0x2001, sound_cpu_command_w ),
-	    new Memory_WriteAddress( 0x2800, 0x2807, MWA_RAM, &exprraid_bgcontrol ),
+	    new Memory_WriteAddress( 0x2800, 0x2807, MWA_RAM, exprraid_bgcontrol ),
 	    new Memory_WriteAddress( 0x4000, 0xffff, MWA_ROM ),
 		new Memory_WriteAddress(MEMPORT_MARKER, 0)
 	};

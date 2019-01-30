@@ -128,14 +128,14 @@ public class rockola
 	public static Memory_WriteAddress sasuke_writemem[]={
 		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
 		new Memory_WriteAddress( 0x0000, 0x03ff, MWA_RAM ),
-		new Memory_WriteAddress( 0x0400, 0x07ff, MWA_RAM, &rockola_videoram2 ),
-		new Memory_WriteAddress( 0x0800, 0x0bff, videoram_w, &videoram, &videoram_size ),
-		new Memory_WriteAddress( 0x0c00, 0x0fff, colorram_w, &colorram ),
-		new Memory_WriteAddress( 0x1000, 0x1fff, rockola_characterram_w, &rockola_characterram ),
+		new Memory_WriteAddress( 0x0400, 0x07ff, MWA_RAM, rockola_videoram2 ),
+		new Memory_WriteAddress( 0x0800, 0x0bff, videoram_w, videoram, videoram_size ),
+		new Memory_WriteAddress( 0x0c00, 0x0fff, colorram_w, colorram ),
+		new Memory_WriteAddress( 0x1000, 0x1fff, rockola_characterram_w, rockola_characterram ),
 		new Memory_WriteAddress( 0x4000, 0x97ff, MWA_ROM ),
 		new Memory_WriteAddress( 0x3000, 0x3000, crtc6845_address_w ),
 		new Memory_WriteAddress( 0x3001, 0x3001, crtc6845_register_w ),
-		new Memory_WriteAddress( 0xb002, 0xb002, satansat_b002_w ),	/* flip screen & irq enable */
+		new Memory_WriteAddress( 0xb002, 0xb002, satansat_b002_w ),	/* flip screen  irq enable */
 		new Memory_WriteAddress( 0xb003, 0xb003, satansat_backcolor_w ),
 		new Memory_WriteAddress(MEMPORT_MARKER, 0)
 	};
@@ -155,16 +155,16 @@ public class rockola
 	public static Memory_WriteAddress satansat_writemem[]={
 		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
 		new Memory_WriteAddress( 0x0000, 0x03ff, MWA_RAM ),
-		new Memory_WriteAddress( 0x0400, 0x07ff, MWA_RAM, &rockola_videoram2 ),
-		new Memory_WriteAddress( 0x0800, 0x0bff, videoram_w, &videoram, &videoram_size ),
-		new Memory_WriteAddress( 0x0c00, 0x0fff, colorram_w, &colorram ),
-		new Memory_WriteAddress( 0x1000, 0x1fff, rockola_characterram_w, &rockola_characterram ),
+		new Memory_WriteAddress( 0x0400, 0x07ff, MWA_RAM, rockola_videoram2 ),
+		new Memory_WriteAddress( 0x0800, 0x0bff, videoram_w, videoram, videoram_size ),
+		new Memory_WriteAddress( 0x0c00, 0x0fff, colorram_w, colorram ),
+		new Memory_WriteAddress( 0x1000, 0x1fff, rockola_characterram_w, rockola_characterram ),
 		new Memory_WriteAddress( 0x4000, 0x97ff, MWA_ROM ),
 		new Memory_WriteAddress( 0x3000, 0x3000, crtc6845_address_w ),
 		new Memory_WriteAddress( 0x3001, 0x3001, crtc6845_register_w ),
 		new Memory_WriteAddress( 0xb000, 0xb000, satansat_sound0_w ),
 		new Memory_WriteAddress( 0xb001, 0xb001, satansat_sound1_w ),
-		new Memory_WriteAddress( 0xb002, 0xb002, satansat_b002_w ),	/* flip screen & irq enable */
+		new Memory_WriteAddress( 0xb002, 0xb002, satansat_b002_w ),	/* flip screen  irq enable */
 		new Memory_WriteAddress( 0xb003, 0xb003, satansat_backcolor_w ),
 		new Memory_WriteAddress(MEMPORT_MARKER, 0)
 	};
@@ -184,18 +184,18 @@ public class rockola
 	public static Memory_WriteAddress vanguard_writemem[]={
 		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
 		new Memory_WriteAddress( 0x0000, 0x03ff, MWA_RAM ),
-		new Memory_WriteAddress( 0x0400, 0x07ff, MWA_RAM, &rockola_videoram2 ),
-		new Memory_WriteAddress( 0x0800, 0x0bff, videoram_w, &videoram, &videoram_size ),
-		new Memory_WriteAddress( 0x0c00, 0x0fff, colorram_w, &colorram ),
-		new Memory_WriteAddress( 0x1000, 0x1fff, rockola_characterram_w, &rockola_characterram ),
+		new Memory_WriteAddress( 0x0400, 0x07ff, MWA_RAM, rockola_videoram2 ),
+		new Memory_WriteAddress( 0x0800, 0x0bff, videoram_w, videoram, videoram_size ),
+		new Memory_WriteAddress( 0x0c00, 0x0fff, colorram_w, colorram ),
+		new Memory_WriteAddress( 0x1000, 0x1fff, rockola_characterram_w, rockola_characterram ),
 		new Memory_WriteAddress( 0x3000, 0x3000, crtc6845_address_w ),
 		new Memory_WriteAddress( 0x3001, 0x3001, crtc6845_register_w ),
 		new Memory_WriteAddress( 0x3100, 0x3100, vanguard_sound0_w ),
 		new Memory_WriteAddress( 0x3101, 0x3101, vanguard_sound1_w ),
 	//	new Memory_WriteAddress( 0x3102, 0x3102, ),	/* TODO: music channels #0 and #1 volume */
 		new Memory_WriteAddress( 0x3103, 0x3103, rockola_flipscreen_w ),
-		new Memory_WriteAddress( 0x3200, 0x3200, MWA_RAM, &rockola_scrolly ),
-		new Memory_WriteAddress( 0x3300, 0x3300, MWA_RAM, &rockola_scrollx ),
+		new Memory_WriteAddress( 0x3200, 0x3200, MWA_RAM, rockola_scrolly ),
+		new Memory_WriteAddress( 0x3300, 0x3300, MWA_RAM, rockola_scrollx ),
 		new Memory_WriteAddress( 0x4000, 0xbfff, MWA_ROM ),
 		new Memory_WriteAddress(MEMPORT_MARKER, 0)
 	};
@@ -215,18 +215,18 @@ public class rockola
 	public static Memory_WriteAddress fantasy_writemem[]={
 		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
 		new Memory_WriteAddress( 0x0000, 0x03ff, MWA_RAM ),
-		new Memory_WriteAddress( 0x0400, 0x07ff, MWA_RAM, &rockola_videoram2 ),
-		new Memory_WriteAddress( 0x0800, 0x0bff, videoram_w, &videoram, &videoram_size ),
-		new Memory_WriteAddress( 0x0c00, 0x0fff, colorram_w, &colorram ),
-		new Memory_WriteAddress( 0x1000, 0x1fff, rockola_characterram_w, &rockola_characterram ),
+		new Memory_WriteAddress( 0x0400, 0x07ff, MWA_RAM, rockola_videoram2 ),
+		new Memory_WriteAddress( 0x0800, 0x0bff, videoram_w, videoram, videoram_size ),
+		new Memory_WriteAddress( 0x0c00, 0x0fff, colorram_w, colorram ),
+		new Memory_WriteAddress( 0x1000, 0x1fff, rockola_characterram_w, rockola_characterram ),
 		new Memory_WriteAddress( 0x2000, 0x2000, crtc6845_address_w ),
 		new Memory_WriteAddress( 0x2001, 0x2001, crtc6845_register_w ),
 		new Memory_WriteAddress( 0x2100, 0x2100, fantasy_sound0_w ),
 		new Memory_WriteAddress( 0x2101, 0x2101, fantasy_sound1_w ),
 	//	new Memory_WriteAddress( 0x2102, 0x2102, ),	/* TODO: music channels #0 and #1 volume */
 		new Memory_WriteAddress( 0x2103, 0x2103, fantasy_sound2_w ),	/* + flipscreen, gfx bank, bg color */
-		new Memory_WriteAddress( 0x2200, 0x2200, MWA_RAM, &rockola_scrolly ),
-		new Memory_WriteAddress( 0x2300, 0x2300, MWA_RAM, &rockola_scrollx ),
+		new Memory_WriteAddress( 0x2200, 0x2200, MWA_RAM, rockola_scrolly ),
+		new Memory_WriteAddress( 0x2300, 0x2300, MWA_RAM, rockola_scrollx ),
 		new Memory_WriteAddress( 0x3000, 0xbfff, MWA_ROM ),
 		new Memory_WriteAddress(MEMPORT_MARKER, 0)
 	};
@@ -246,10 +246,10 @@ public class rockola
 	public static Memory_WriteAddress pballoon_writemem[]={
 		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
 		new Memory_WriteAddress( 0x0000, 0x03ff, MWA_RAM ),
-		new Memory_WriteAddress( 0x0400, 0x07ff, MWA_RAM, &rockola_videoram2 ),
-		new Memory_WriteAddress( 0x0800, 0x0bff, videoram_w, &videoram, &videoram_size ),
-		new Memory_WriteAddress( 0x0c00, 0x0fff, colorram_w, &colorram ),
-		new Memory_WriteAddress( 0x1000, 0x1fff, rockola_characterram_w, &rockola_characterram ),
+		new Memory_WriteAddress( 0x0400, 0x07ff, MWA_RAM, rockola_videoram2 ),
+		new Memory_WriteAddress( 0x0800, 0x0bff, videoram_w, videoram, videoram_size ),
+		new Memory_WriteAddress( 0x0c00, 0x0fff, colorram_w, colorram ),
+		new Memory_WriteAddress( 0x1000, 0x1fff, rockola_characterram_w, rockola_characterram ),
 		new Memory_WriteAddress( 0x3000, 0x9fff, MWA_ROM ),
 		new Memory_WriteAddress( 0xb000, 0xb000, crtc6845_address_w ),
 		new Memory_WriteAddress( 0xb001, 0xb001, crtc6845_register_w ),
@@ -257,8 +257,8 @@ public class rockola
 		new Memory_WriteAddress( 0xb101, 0xb101, fantasy_sound1_w ),
 	//	new Memory_WriteAddress( 0xb102, 0xb102, ),	/* TODO: music channels #0 and #1 volume */
 		new Memory_WriteAddress( 0xb103, 0xb103, fantasy_sound2_w ),	/* + flipscreen, gfx bank, bg color */
-		new Memory_WriteAddress( 0xb200, 0xb200, MWA_RAM, &rockola_scrolly ),
-		new Memory_WriteAddress( 0xb300, 0xb300, MWA_RAM, &rockola_scrollx ),
+		new Memory_WriteAddress( 0xb200, 0xb200, MWA_RAM, rockola_scrolly ),
+		new Memory_WriteAddress( 0xb300, 0xb300, MWA_RAM, rockola_scrollx ),
 		new Memory_WriteAddress(MEMPORT_MARKER, 0)
 	};
 	

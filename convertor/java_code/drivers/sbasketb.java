@@ -76,19 +76,19 @@ public class sbasketb
 	public static Memory_WriteAddress writemem[]={
 		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
 		new Memory_WriteAddress( 0x2000, 0x2fff, MWA_RAM ),
-		new Memory_WriteAddress( 0x3000, 0x33ff, colorram_w, &colorram ),
-		new Memory_WriteAddress( 0x3400, 0x37ff, videoram_w, &videoram, &videoram_size ),
-		new Memory_WriteAddress( 0x3800, 0x39ff, MWA_RAM, &spriteram, &spriteram_size ),
+		new Memory_WriteAddress( 0x3000, 0x33ff, colorram_w, colorram ),
+		new Memory_WriteAddress( 0x3400, 0x37ff, videoram_w, videoram, videoram_size ),
+		new Memory_WriteAddress( 0x3800, 0x39ff, MWA_RAM, spriteram, spriteram_size ),
 		new Memory_WriteAddress( 0x3a00, 0x3bff, MWA_RAM ),           /* Probably unused, but initialized */
 		new Memory_WriteAddress( 0x3c00, 0x3c00, watchdog_reset_w ),
-		new Memory_WriteAddress( 0x3c20, 0x3c20, MWA_RAM, &sbasketb_palettebank ),
+		new Memory_WriteAddress( 0x3c20, 0x3c20, MWA_RAM, sbasketb_palettebank ),
 		new Memory_WriteAddress( 0x3c80, 0x3c80, flip_screen_w ),
 		new Memory_WriteAddress( 0x3c81, 0x3c81, interrupt_enable_w ),
 		new Memory_WriteAddress( 0x3c83, 0x3c84, sbasketb_coin_counter_w ),
-		new Memory_WriteAddress( 0x3c85, 0x3c85, MWA_RAM, &sbasketb_spriteram_select ),
+		new Memory_WriteAddress( 0x3c85, 0x3c85, MWA_RAM, sbasketb_spriteram_select ),
 		new Memory_WriteAddress( 0x3d00, 0x3d00, soundlatch_w ),
 		new Memory_WriteAddress( 0x3d80, 0x3d80, sbasketb_sh_irqtrigger_w ),
-		new Memory_WriteAddress( 0x3f80, 0x3f80, MWA_RAM, &sbasketb_scroll ),
+		new Memory_WriteAddress( 0x3f80, 0x3f80, MWA_RAM, sbasketb_scroll ),
 		new Memory_WriteAddress(MEMPORT_MARKER, 0)
 	};
 	

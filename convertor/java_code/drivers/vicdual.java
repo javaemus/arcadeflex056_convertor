@@ -183,12 +183,12 @@ public class vicdual
 	public static Memory_WriteAddress vicdual_writemem[]={
 		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
 		new Memory_WriteAddress( 0x0000, 0x7fff, MWA_ROM ),
-		new Memory_WriteAddress( 0x8000, 0x83ff, videoram_w, &videoram, &videoram_size ),
-		new Memory_WriteAddress( 0x8400, 0x87ff, vicdual_ram_w, &vicdual_ram ),
-		new Memory_WriteAddress( 0x8800, 0x8fff, vicdual_characterram_w, &vicdual_characterram ),
-		new Memory_WriteAddress( 0x9000, 0x93ff, videoram_w, &videoram, &videoram_size ),
-		new Memory_WriteAddress( 0x9400, 0x97ff, vicdual_ram_w, &vicdual_ram ),
-		new Memory_WriteAddress( 0x9800, 0x9fff, vicdual_characterram_w, &vicdual_characterram),
+		new Memory_WriteAddress( 0x8000, 0x83ff, videoram_w, videoram, videoram_size ),
+		new Memory_WriteAddress( 0x8400, 0x87ff, vicdual_ram_w, vicdual_ram ),
+		new Memory_WriteAddress( 0x8800, 0x8fff, vicdual_characterram_w, vicdual_characterram ),
+		new Memory_WriteAddress( 0x9000, 0x93ff, videoram_w, videoram, videoram_size ),
+		new Memory_WriteAddress( 0x9400, 0x97ff, vicdual_ram_w, vicdual_ram ),
+		new Memory_WriteAddress( 0x9800, 0x9fff, vicdual_characterram_w, vicdual_characterram),
 		new Memory_WriteAddress( 0xa000, 0xa3ff, videoram_w ),
 		new Memory_WriteAddress( 0xa400, 0xa7ff, vicdual_ram_w ),
 		new Memory_WriteAddress( 0xa800, 0xafff, vicdual_characterram_w ),
@@ -226,9 +226,9 @@ public class vicdual
 		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
 		new Memory_WriteAddress( 0x0000, 0x7fff, MWA_ROM ),
 		new Memory_WriteAddress( 0x8000, 0x87ff, MWA_RAM ),
-		new Memory_WriteAddress( 0xe000, 0xe3ff, videoram_w, &videoram, &videoram_size ),
-		new Memory_WriteAddress( 0xe400, 0xe7ff, vicdual_ram_w, &vicdual_ram ),
-		new Memory_WriteAddress( 0xe800, 0xefff, vicdual_characterram_w, &vicdual_characterram ),
+		new Memory_WriteAddress( 0xe000, 0xe3ff, videoram_w, videoram, videoram_size ),
+		new Memory_WriteAddress( 0xe400, 0xe7ff, vicdual_ram_w, vicdual_ram ),
+		new Memory_WriteAddress( 0xe800, 0xefff, vicdual_characterram_w, vicdual_characterram ),
 		new Memory_WriteAddress(MEMPORT_MARKER, 0)
 	};
 	

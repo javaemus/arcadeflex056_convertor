@@ -91,10 +91,10 @@ public class mikie
 		new Memory_WriteAddress( 0x2100, 0x2100, watchdog_reset_w ),
 		new Memory_WriteAddress( 0x2200, 0x2200, mikie_palettebank_w ),
 		new Memory_WriteAddress( 0x2400, 0x2400, soundlatch_w ),
-		new Memory_WriteAddress( 0x2800, 0x288f, MWA_RAM, &spriteram, &spriteram_size ),
+		new Memory_WriteAddress( 0x2800, 0x288f, MWA_RAM, spriteram, spriteram_size ),
 		new Memory_WriteAddress( 0x2890, 0x37ff, MWA_RAM ),
-		new Memory_WriteAddress( 0x3800, 0x3bff, colorram_w, &colorram ),
-		new Memory_WriteAddress( 0x3c00, 0x3fff, videoram_w, &videoram, &videoram_size ),
+		new Memory_WriteAddress( 0x3800, 0x3bff, colorram_w, colorram ),
+		new Memory_WriteAddress( 0x3c00, 0x3fff, videoram_w, videoram, videoram_size ),
 		new Memory_WriteAddress( 0x6000, 0xffff, MWA_ROM ),
 		new Memory_WriteAddress(MEMPORT_MARKER, 0)
 	};

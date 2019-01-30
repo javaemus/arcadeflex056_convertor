@@ -98,12 +98,12 @@ public class hcastle
 		new Memory_WriteAddress( 0x040c, 0x040c, watchdog_reset_w ),
 		new Memory_WriteAddress( 0x0410, 0x0410, hcastle_coin_w ),
 		new Memory_WriteAddress( 0x0418, 0x0418, hcastle_gfxbank_w ),
-		new Memory_WriteAddress( 0x0600, 0x06ff, paletteram_xBBBBBGGGGGRRRRR_swap_w, &paletteram ),
+		new Memory_WriteAddress( 0x0600, 0x06ff, paletteram_xBBBBBGGGGGRRRRR_swap_w, paletteram ),
 		new Memory_WriteAddress( 0x0700, 0x1fff, MWA_RAM ),
-		new Memory_WriteAddress( 0x2000, 0x2fff, hcastle_pf1_video_w, &hcastle_pf1_videoram ),
-		new Memory_WriteAddress( 0x3000, 0x3fff, MWA_RAM, &spriteram, &spriteram_size ),
-		new Memory_WriteAddress( 0x4000, 0x4fff, hcastle_pf2_video_w, &hcastle_pf2_videoram ),
-		new Memory_WriteAddress( 0x5000, 0x5fff, MWA_RAM, &spriteram_2, &spriteram_2_size ),
+		new Memory_WriteAddress( 0x2000, 0x2fff, hcastle_pf1_video_w, hcastle_pf1_videoram ),
+		new Memory_WriteAddress( 0x3000, 0x3fff, MWA_RAM, spriteram, spriteram_size ),
+		new Memory_WriteAddress( 0x4000, 0x4fff, hcastle_pf2_video_w, hcastle_pf2_videoram ),
+		new Memory_WriteAddress( 0x5000, 0x5fff, MWA_RAM, spriteram_2, spriteram_2_size ),
 	 	new Memory_WriteAddress( 0x6000, 0xffff, MWA_ROM ),
 		new Memory_WriteAddress(MEMPORT_MARKER, 0)
 	};

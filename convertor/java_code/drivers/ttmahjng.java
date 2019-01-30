@@ -79,14 +79,14 @@ public class ttmahjng
 	public static Memory_WriteAddress cpu1_writemem[]={
 		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
 		new Memory_WriteAddress( 0x0000, 0x3fff, MWA_ROM ),
-		new Memory_WriteAddress( 0x4000, 0x43ff, ttmahjng_sharedram_w, &ttmahjng_sharedram ),
+		new Memory_WriteAddress( 0x4000, 0x43ff, ttmahjng_sharedram_w, ttmahjng_sharedram ),
 		new Memory_WriteAddress( 0x4800, 0x4800, ttmahjng_out0_w ),
 		new Memory_WriteAddress( 0x5000, 0x5000, ttmahjng_out1_w ),
 		new Memory_WriteAddress( 0x5800, 0x5800, input_port_matrix_w ),
 		new Memory_WriteAddress( 0x5f3e, 0x5f3e, MWA_NOP ),
 		new Memory_WriteAddress( 0x6800, 0x6800, AY8910_write_port_0_w ),
 		new Memory_WriteAddress( 0x6900, 0x6900, AY8910_control_port_0_w ),
-		new Memory_WriteAddress( 0x8000, 0xbfff, ttmahjng_videoram1_w, &ttmahjng_videoram1, &ttmahjng_videoram_size ),
+		new Memory_WriteAddress( 0x8000, 0xbfff, ttmahjng_videoram1_w, ttmahjng_videoram1, ttmahjng_videoram_size ),
 		new Memory_WriteAddress(MEMPORT_MARKER, 0)
 	};
 	
@@ -102,7 +102,7 @@ public class ttmahjng
 		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
 		new Memory_WriteAddress( 0x0000, 0x1fff, MWA_ROM ),
 		new Memory_WriteAddress( 0x4000, 0x43ff, ttmahjng_sharedram_w ),
-		new Memory_WriteAddress( 0x8000, 0xbfff, ttmahjng_videoram2_w, &ttmahjng_videoram2 ),
+		new Memory_WriteAddress( 0x8000, 0xbfff, ttmahjng_videoram2_w, ttmahjng_videoram2 ),
 		new Memory_WriteAddress(MEMPORT_MARKER, 0)
 	};
 	

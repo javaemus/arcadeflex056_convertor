@@ -814,8 +814,8 @@ public class suna8
 		new Memory_WriteAddress( 0x0000, 0x7fff, MWA_ROM				),	// ROM
 		new Memory_WriteAddress( 0x8000, 0xbfff, MWA_ROM				),	// Banked ROM
 		new Memory_WriteAddress( 0xc000, 0xd7ff, MWA_RAM				),	// RAM
-		new Memory_WriteAddress( 0xd800, 0xd9ff, paletteram_RRRRGGGGBBBBxxxx_swap_w, &paletteram	),	// Palette
-		new Memory_WriteAddress( 0xda00, 0xda00, MWA_RAM, &hardhead_ip	),	// Input Port Select
+		new Memory_WriteAddress( 0xd800, 0xd9ff, paletteram_RRRRGGGGBBBBxxxx_swap_w, paletteram	),	// Palette
+		new Memory_WriteAddress( 0xda00, 0xda00, MWA_RAM, hardhead_ip	),	// Input Port Select
 		new Memory_WriteAddress( 0xda80, 0xda80, hardhead_bankswitch_w	),	// ROM Banking
 		new Memory_WriteAddress( 0xdb00, 0xdb00, soundlatch_w			),	// To Sound CPU
 		new Memory_WriteAddress( 0xdb80, 0xdb80, hardhead_flipscreen_w	),	// Flip Screen + Coin Lockout
@@ -823,7 +823,7 @@ public class suna8
 		new Memory_WriteAddress( 0xdc80, 0xdc80, MWA_NOP				),	// <- R (after bank select)
 		new Memory_WriteAddress( 0xdd00, 0xdd00, MWA_NOP				),	// <- R (after ip select)
 		new Memory_WriteAddress( 0xdd80, 0xddff, hardhead_protection_w	),	// Protection
-		new Memory_WriteAddress( 0xe000, 0xffff, suna8_spriteram_w, &spriteram	),	// Sprites
+		new Memory_WriteAddress( 0xe000, 0xffff, suna8_spriteram_w, spriteram	),	// Sprites
 		new Memory_WriteAddress(MEMPORT_MARKER, 0)
 	};
 	
@@ -905,9 +905,9 @@ public class suna8
 		new Memory_WriteAddress( 0xc002, 0xc002, rranger_bankswitch_w	),	// ROM Banking
 		new Memory_WriteAddress( 0xc200, 0xc200, MWA_NOP				),	// Protection?
 		new Memory_WriteAddress( 0xc280, 0xc280, MWA_NOP				),	// ? NMI Ack
-		new Memory_WriteAddress( 0xc600, 0xc7ff, paletteram_RRRRGGGGBBBBxxxx_swap_w, &paletteram	),	// Palette
+		new Memory_WriteAddress( 0xc600, 0xc7ff, paletteram_RRRRGGGGBBBBxxxx_swap_w, paletteram	),	// Palette
 		new Memory_WriteAddress( 0xc800, 0xdfff, MWA_RAM				),	// RAM
-		new Memory_WriteAddress( 0xe000, 0xffff, suna8_spriteram_w, &spriteram	),	// Sprites
+		new Memory_WriteAddress( 0xe000, 0xffff, suna8_spriteram_w, spriteram	),	// Sprites
 		new Memory_WriteAddress(MEMPORT_MARKER, 0)
 	};
 	
@@ -1112,7 +1112,7 @@ public class suna8
 		new Memory_WriteAddress( 0xc400, 0xc400, hardhea2_leds_w			),	// Leds + Coin Counter
 		new Memory_WriteAddress( 0xc480, 0xc480, MWA_NOP					),	// ~ROM Bank
 		new Memory_WriteAddress( 0xc500, 0xc500, soundlatch_w				),	// To Sound CPU
-		new Memory_WriteAddress( 0xc600, 0xc7ff, paletteram_RRRRGGGGBBBBxxxx_swap_w, &paletteram	),	// Palette (Banked??)
+		new Memory_WriteAddress( 0xc600, 0xc7ff, paletteram_RRRRGGGGBBBBxxxx_swap_w, paletteram	),	// Palette (Banked??)
 		new Memory_WriteAddress( 0xc800, 0xdfff, MWA_RAM					),	// RAM
 		new Memory_WriteAddress( 0xe000, 0xffff, suna8_banked_spriteram_w	),	// Sprites (Banked)
 		new Memory_WriteAddress(MEMPORT_MARKER, 0)
@@ -1169,7 +1169,7 @@ public class suna8
 		new Memory_WriteAddress( 0xc300, 0xc300, hardhea2_flipscreen_w			),	// Flip Screen
 		new Memory_WriteAddress( 0xc400, 0xc400, hardhea2_leds_w				),	// Leds + Coin Counter
 		new Memory_WriteAddress( 0xc500, 0xc500, soundlatch_w					),	// To Sound CPU
-		new Memory_WriteAddress( 0xc600, 0xc7ff, paletteram_RRRRGGGGBBBBxxxx_swap_w, &paletteram	),	// Palette (Banked??)
+		new Memory_WriteAddress( 0xc600, 0xc7ff, paletteram_RRRRGGGGBBBBxxxx_swap_w, paletteram	),	// Palette (Banked??)
 		new Memory_WriteAddress( 0xc800, 0xdfff, MWA_RAM						),	// RAM
 		new Memory_WriteAddress( 0xe000, 0xffff, suna8_banked_spriteram_w		),	// Sprites (Banked)
 		new Memory_WriteAddress(MEMPORT_MARKER, 0)

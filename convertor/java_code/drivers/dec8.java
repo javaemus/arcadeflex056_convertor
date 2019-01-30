@@ -545,7 +545,7 @@ public class dec8
 		new Memory_ReadAddress( 0x3801, 0x3801, input_port_1_r ), /* Player 2 */
 		new Memory_ReadAddress( 0x3802, 0x3802, input_port_3_r ), /* Dip 1 */
 		new Memory_ReadAddress( 0x3803, 0x3803, input_port_4_r ), /* Dip 2 */
-		new Memory_ReadAddress( 0x3a00, 0x3a00, input_port_2_r ), /* VBL & coins */
+		new Memory_ReadAddress( 0x3a00, 0x3a00, input_port_2_r ), /* VBL  coins */
 		new Memory_ReadAddress( 0x4000, 0x7fff, MRA_BANK1 ),
 		new Memory_ReadAddress( 0x8000, 0xffff, MRA_ROM ),
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
@@ -554,12 +554,12 @@ public class dec8
 	public static Memory_WriteAddress cobra_writemem[]={
 		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
 		new Memory_WriteAddress( 0x0000, 0x07ff, MWA_RAM ),
-		new Memory_WriteAddress( 0x0800, 0x0fff, dec8_pf0_data_w, &dec8_pf0_data ),
-		new Memory_WriteAddress( 0x1000, 0x17ff, dec8_pf1_data_w, &dec8_pf1_data ),
+		new Memory_WriteAddress( 0x0800, 0x0fff, dec8_pf0_data_w, dec8_pf0_data ),
+		new Memory_WriteAddress( 0x1000, 0x17ff, dec8_pf1_data_w, dec8_pf1_data ),
 		new Memory_WriteAddress( 0x1800, 0x1fff, MWA_RAM ),
-		new Memory_WriteAddress( 0x2000, 0x27ff, dec8_videoram_w, &videoram, &videoram_size ),
-		new Memory_WriteAddress( 0x2800, 0x2fff, MWA_RAM, &spriteram, &spriteram_size ),
-		new Memory_WriteAddress( 0x3000, 0x31ff, paletteram_xxxxBBBBGGGGRRRR_swap_w, &paletteram ),
+		new Memory_WriteAddress( 0x2000, 0x27ff, dec8_videoram_w, videoram, videoram_size ),
+		new Memory_WriteAddress( 0x2800, 0x2fff, MWA_RAM, spriteram, spriteram_size ),
+		new Memory_WriteAddress( 0x3000, 0x31ff, paletteram_xxxxBBBBGGGGRRRR_swap_w, paletteram ),
 		new Memory_WriteAddress( 0x3200, 0x37ff, MWA_RAM ), /* Unused */
 		new Memory_WriteAddress( 0x3800, 0x381f, dec8_bac06_0_w ),
 		new Memory_WriteAddress( 0x3a00, 0x3a1f, dec8_bac06_1_w ),
@@ -593,12 +593,12 @@ public class dec8
 		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
 		new Memory_WriteAddress( 0x0000, 0x0fff, MWA_RAM ),
 		new Memory_WriteAddress( 0x1000, 0x17ff, MWA_RAM ),
-		new Memory_WriteAddress( 0x1800, 0x1fff, dec8_videoram_w, &videoram, &videoram_size ),
-		new Memory_WriteAddress( 0x2000, 0x27ff, dec8_pf0_data_w, &dec8_pf0_data ),
+		new Memory_WriteAddress( 0x1800, 0x1fff, dec8_videoram_w, videoram, videoram_size ),
+		new Memory_WriteAddress( 0x2000, 0x27ff, dec8_pf0_data_w, dec8_pf0_data ),
 		new Memory_WriteAddress( 0x2800, 0x2bff, MWA_RAM ), /* Scratch ram for rowscroll? */
-		new Memory_WriteAddress( 0x2c00, 0x2dff, MWA_RAM, &dec8_row ),
+		new Memory_WriteAddress( 0x2c00, 0x2dff, MWA_RAM, dec8_row ),
 		new Memory_WriteAddress( 0x2e00, 0x2fff, MWA_RAM ), /* Unused */
-		new Memory_WriteAddress( 0x3000, 0x37ff, MWA_RAM, &spriteram, &spriteram_size ),
+		new Memory_WriteAddress( 0x3000, 0x37ff, MWA_RAM, spriteram, spriteram_size ),
 		new Memory_WriteAddress( 0x3800, 0x3800, dec8_sound_w ),
 		new Memory_WriteAddress( 0x3820, 0x383f, dec8_bac06_0_w ),
 		new Memory_WriteAddress( 0x3840, 0x3840, ghostb_bank_w ),
@@ -625,19 +625,19 @@ public class dec8
 	public static Memory_WriteAddress srdarwin_writemem[]={
 		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
 		new Memory_WriteAddress( 0x0000, 0x05ff, MWA_RAM ),
-		new Memory_WriteAddress( 0x0600, 0x07ff, MWA_RAM, &spriteram ),
-		new Memory_WriteAddress( 0x0800, 0x0fff, srdarwin_videoram_w, &videoram, &spriteram_size ),
+		new Memory_WriteAddress( 0x0600, 0x07ff, MWA_RAM, spriteram ),
+		new Memory_WriteAddress( 0x0800, 0x0fff, srdarwin_videoram_w, videoram, spriteram_size ),
 		new Memory_WriteAddress( 0x1000, 0x13ff, MWA_RAM ),
-		new Memory_WriteAddress( 0x1400, 0x17ff, dec8_pf0_data_w, &dec8_pf0_data ),
+		new Memory_WriteAddress( 0x1400, 0x17ff, dec8_pf0_data_w, dec8_pf0_data ),
 		new Memory_WriteAddress( 0x1800, 0x1801, srdarwin_i8751_w ),
 		new Memory_WriteAddress( 0x1802, 0x1802, i8751_reset_w ),		/* Maybe.. */
 		new Memory_WriteAddress( 0x1803, 0x1803, MWA_NOP ),            /* NMI ack */
 		new Memory_WriteAddress( 0x1804, 0x1804, buffer_spriteram_w ), /* DMA */
-		new Memory_WriteAddress( 0x1805, 0x1806, srdarwin_control_w ), /* Scroll & Bank */
+		new Memory_WriteAddress( 0x1805, 0x1806, srdarwin_control_w ), /* Scroll  Bank */
 		new Memory_WriteAddress( 0x2000, 0x2000, dec8_sound_w ),       /* Sound */
 		new Memory_WriteAddress( 0x2001, 0x2001, flip_screen_w ),  /* Flipscreen */
-		new Memory_WriteAddress( 0x2800, 0x288f, paletteram_xxxxBBBBGGGGRRRR_split1_w, &paletteram ),
-		new Memory_WriteAddress( 0x3000, 0x308f, paletteram_xxxxBBBBGGGGRRRR_split2_w, &paletteram_2 ),
+		new Memory_WriteAddress( 0x2800, 0x288f, paletteram_xxxxBBBBGGGGRRRR_split1_w, paletteram ),
+		new Memory_WriteAddress( 0x3000, 0x308f, paletteram_xxxxBBBBGGGGRRRR_split2_w, paletteram_2 ),
 		new Memory_WriteAddress( 0x4000, 0xffff, MWA_ROM ),
 		new Memory_WriteAddress(MEMPORT_MARKER, 0)
 	};
@@ -666,11 +666,11 @@ public class dec8
 	public static Memory_WriteAddress gondo_writemem[]={
 		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
 		new Memory_WriteAddress( 0x0000, 0x17ff, MWA_RAM ),
-		new Memory_WriteAddress( 0x1800, 0x1fff, dec8_videoram_w, &videoram, &videoram_size ),
-		new Memory_WriteAddress( 0x2000, 0x27ff, dec8_pf0_data_w, &dec8_pf0_data ),
-		new Memory_WriteAddress( 0x2800, 0x2bff, paletteram_xxxxBBBBGGGGRRRR_split1_w, &paletteram ),
-		new Memory_WriteAddress( 0x2c00, 0x2fff, paletteram_xxxxBBBBGGGGRRRR_split2_w, &paletteram_2 ),
-		new Memory_WriteAddress( 0x3000, 0x37ff, MWA_RAM, &spriteram, &spriteram_size ),
+		new Memory_WriteAddress( 0x1800, 0x1fff, dec8_videoram_w, videoram, videoram_size ),
+		new Memory_WriteAddress( 0x2000, 0x27ff, dec8_pf0_data_w, dec8_pf0_data ),
+		new Memory_WriteAddress( 0x2800, 0x2bff, paletteram_xxxxBBBBGGGGRRRR_split1_w, paletteram ),
+		new Memory_WriteAddress( 0x2c00, 0x2fff, paletteram_xxxxBBBBGGGGRRRR_split2_w, paletteram_2 ),
+		new Memory_WriteAddress( 0x3000, 0x37ff, MWA_RAM, spriteram, spriteram_size ),
 		new Memory_WriteAddress( 0x3810, 0x3810, dec8_sound_w ),
 		new Memory_WriteAddress( 0x3818, 0x382f, gondo_scroll_w ),
 		new Memory_WriteAddress( 0x3830, 0x3830, ghostb_bank_w ), /* Bank + NMI enable */
@@ -690,7 +690,7 @@ public class dec8
 		new Memory_ReadAddress( 0x3800, 0x3bff, paletteram_r ),
 		new Memory_ReadAddress( 0x3c00, 0x3c00, input_port_0_r ),
 		new Memory_ReadAddress( 0x3c01, 0x3c01, input_port_1_r ),
-		new Memory_ReadAddress( 0x3c02, 0x3c02, input_port_2_r ), /* VBL & coins */
+		new Memory_ReadAddress( 0x3c02, 0x3c02, input_port_2_r ), /* VBL  coins */
 		new Memory_ReadAddress( 0x3c03, 0x3c03, input_port_3_r ), /* Dip 1 */
 		new Memory_ReadAddress( 0x3c04, 0x3c04, input_port_4_r ),
 		new Memory_ReadAddress( 0x4000, 0x7fff, MRA_BANK1 ),
@@ -700,13 +700,13 @@ public class dec8
 	
 	public static Memory_WriteAddress oscar_writemem[]={
 		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
-		new Memory_WriteAddress( 0x0000, 0x0eff, dec8_share_w, &dec8_shared_ram ),
+		new Memory_WriteAddress( 0x0000, 0x0eff, dec8_share_w, dec8_shared_ram ),
 		new Memory_WriteAddress( 0x0f00, 0x0fff, MWA_RAM ),
-		new Memory_WriteAddress( 0x1000, 0x1fff, dec8_share2_w, &dec8_shared2_ram ),
-		new Memory_WriteAddress( 0x2000, 0x27ff, dec8_videoram_w, &videoram, &videoram_size ),
-		new Memory_WriteAddress( 0x2800, 0x2fff, dec8_pf0_data_w, &dec8_pf0_data ),
-		new Memory_WriteAddress( 0x3000, 0x37ff, MWA_RAM, &spriteram, &spriteram_size ),
-		new Memory_WriteAddress( 0x3800, 0x3bff, paletteram_xxxxBBBBGGGGRRRR_swap_w, &paletteram ),
+		new Memory_WriteAddress( 0x1000, 0x1fff, dec8_share2_w, dec8_shared2_ram ),
+		new Memory_WriteAddress( 0x2000, 0x27ff, dec8_videoram_w, videoram, videoram_size ),
+		new Memory_WriteAddress( 0x2800, 0x2fff, dec8_pf0_data_w, dec8_pf0_data ),
+		new Memory_WriteAddress( 0x3000, 0x37ff, MWA_RAM, spriteram, spriteram_size ),
+		new Memory_WriteAddress( 0x3800, 0x3bff, paletteram_xxxxBBBBGGGGRRRR_swap_w, paletteram ),
 		new Memory_WriteAddress( 0x3c00, 0x3c1f, dec8_bac06_0_w ),
 		new Memory_WriteAddress( 0x3c80, 0x3c80, buffer_spriteram_w ),	/* DMA */
 		new Memory_WriteAddress( 0x3d00, 0x3d00, dec8_bank_w ),   		/* BNKS */
@@ -759,9 +759,9 @@ public class dec8
 	
 	public static Memory_WriteAddress lastmiss_writemem[]={
 		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
-		new Memory_WriteAddress( 0x0000, 0x0fff, dec8_share_w, &dec8_shared_ram ),
-		new Memory_WriteAddress( 0x1000, 0x13ff, paletteram_xxxxBBBBGGGGRRRR_split1_w, &paletteram ),
-		new Memory_WriteAddress( 0x1400, 0x17ff, paletteram_xxxxBBBBGGGGRRRR_split2_w, &paletteram_2 ),
+		new Memory_WriteAddress( 0x0000, 0x0fff, dec8_share_w, dec8_shared_ram ),
+		new Memory_WriteAddress( 0x1000, 0x13ff, paletteram_xxxxBBBBGGGGRRRR_split1_w, paletteram ),
+		new Memory_WriteAddress( 0x1400, 0x17ff, paletteram_xxxxBBBBGGGGRRRR_split2_w, paletteram_2 ),
 		new Memory_WriteAddress( 0x1800, 0x1804, shackled_int_w ),
 		new Memory_WriteAddress( 0x1805, 0x1805, buffer_spriteram_w ), /* DMA */
 		new Memory_WriteAddress( 0x1807, 0x1807, flip_screen_w ),
@@ -770,10 +770,10 @@ public class dec8
 		new Memory_WriteAddress( 0x180c, 0x180c, oscar_sound_w ),
 		new Memory_WriteAddress( 0x180d, 0x180d, lastmiss_control_w ), /* Bank switch + Scroll MSB */
 		new Memory_WriteAddress( 0x180e, 0x180f, lastmiss_i8751_w ),
-		new Memory_WriteAddress( 0x2000, 0x27ff, dec8_videoram_w, &videoram, &videoram_size ),
-		new Memory_WriteAddress( 0x2800, 0x2fff, MWA_RAM, &spriteram, &spriteram_size ),
-		new Memory_WriteAddress( 0x3000, 0x37ff, dec8_share2_w, &dec8_shared2_ram ),
-		new Memory_WriteAddress( 0x3800, 0x3fff, dec8_pf0_data_w, &dec8_pf0_data ),
+		new Memory_WriteAddress( 0x2000, 0x27ff, dec8_videoram_w, videoram, videoram_size ),
+		new Memory_WriteAddress( 0x2800, 0x2fff, MWA_RAM, spriteram, spriteram_size ),
+		new Memory_WriteAddress( 0x3000, 0x37ff, dec8_share2_w, dec8_shared2_ram ),
+		new Memory_WriteAddress( 0x3800, 0x3fff, dec8_pf0_data_w, dec8_pf0_data ),
 		new Memory_WriteAddress( 0x4000, 0xffff, MWA_ROM ),
 		new Memory_WriteAddress(MEMPORT_MARKER, 0)
 	};
@@ -833,9 +833,9 @@ public class dec8
 	
 	public static Memory_WriteAddress shackled_writemem[]={
 		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
-		new Memory_WriteAddress( 0x0000, 0x0fff, dec8_share_w, &dec8_shared_ram ),
-		new Memory_WriteAddress( 0x1000, 0x13ff, paletteram_xxxxBBBBGGGGRRRR_split1_w, &paletteram ),
-		new Memory_WriteAddress( 0x1400, 0x17ff, paletteram_xxxxBBBBGGGGRRRR_split2_w, &paletteram_2 ),
+		new Memory_WriteAddress( 0x0000, 0x0fff, dec8_share_w, dec8_shared_ram ),
+		new Memory_WriteAddress( 0x1000, 0x13ff, paletteram_xxxxBBBBGGGGRRRR_split1_w, paletteram ),
+		new Memory_WriteAddress( 0x1400, 0x17ff, paletteram_xxxxBBBBGGGGRRRR_split2_w, paletteram_2 ),
 		new Memory_WriteAddress( 0x1800, 0x1804, shackled_int_w ),
 		new Memory_WriteAddress( 0x1805, 0x1805, buffer_spriteram_w ), /* DMA */
 		new Memory_WriteAddress( 0x1807, 0x1807, flip_screen_w ),
@@ -845,8 +845,8 @@ public class dec8
 		new Memory_WriteAddress( 0x180d, 0x180d, shackled_control_w ), /* Bank switch + Scroll MSB */
 		new Memory_WriteAddress( 0x2000, 0x27ff, dec8_videoram_w ),
 		new Memory_WriteAddress( 0x2800, 0x2fff, shackled_sprite_w ),
-		new Memory_WriteAddress( 0x3000, 0x37ff, dec8_share2_w, &dec8_shared2_ram ),
-		new Memory_WriteAddress( 0x3800, 0x3fff, dec8_pf0_data_w, &dec8_pf0_data ),
+		new Memory_WriteAddress( 0x3000, 0x37ff, dec8_share2_w, dec8_shared2_ram ),
+		new Memory_WriteAddress( 0x3800, 0x3fff, dec8_pf0_data_w, dec8_pf0_data ),
 		new Memory_WriteAddress( 0x4000, 0xffff, MWA_ROM ),
 		new Memory_WriteAddress(MEMPORT_MARKER, 0)
 	};
@@ -884,8 +884,8 @@ public class dec8
 		new Memory_WriteAddress( 0x180c, 0x180c, oscar_sound_w ),
 		new Memory_WriteAddress( 0x180d, 0x180d, shackled_control_w ), /* Bank switch + Scroll MSB */
 		new Memory_WriteAddress( 0x180e, 0x180f, shackled_i8751_w ),
-		new Memory_WriteAddress( 0x2000, 0x27ff, dec8_videoram_w, &videoram, &videoram_size ),
-		new Memory_WriteAddress( 0x2800, 0x2fff, MWA_RAM, &spriteram, &spriteram_size ),
+		new Memory_WriteAddress( 0x2000, 0x27ff, dec8_videoram_w, videoram, videoram_size ),
+		new Memory_WriteAddress( 0x2800, 0x2fff, MWA_RAM, spriteram, spriteram_size ),
 		new Memory_WriteAddress( 0x3000, 0x37ff, dec8_share2_w ),
 		new Memory_WriteAddress( 0x3800, 0x3fff, dec8_pf0_data_w ),
 		new Memory_WriteAddress( 0x4000, 0xffff, MWA_ROM ),
@@ -915,9 +915,9 @@ public class dec8
 	
 	public static Memory_WriteAddress csilver_writemem[]={
 		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
-		new Memory_WriteAddress( 0x0000, 0x0fff, dec8_share_w, &dec8_shared_ram ),
-		new Memory_WriteAddress( 0x1000, 0x13ff, paletteram_xxxxBBBBGGGGRRRR_split1_w, &paletteram ),
-		new Memory_WriteAddress( 0x1400, 0x17ff, paletteram_xxxxBBBBGGGGRRRR_split2_w, &paletteram_2 ),
+		new Memory_WriteAddress( 0x0000, 0x0fff, dec8_share_w, dec8_shared_ram ),
+		new Memory_WriteAddress( 0x1000, 0x13ff, paletteram_xxxxBBBBGGGGRRRR_split1_w, paletteram ),
+		new Memory_WriteAddress( 0x1400, 0x17ff, paletteram_xxxxBBBBGGGGRRRR_split2_w, paletteram_2 ),
 		new Memory_WriteAddress( 0x1800, 0x1804, shackled_int_w ),
 		new Memory_WriteAddress( 0x1805, 0x1805, buffer_spriteram_w ), /* DMA */
 		new Memory_WriteAddress( 0x1807, 0x1807, flip_screen_w ),
@@ -927,8 +927,8 @@ public class dec8
 		new Memory_WriteAddress( 0x180e, 0x180f, csilver_i8751_w ),
 		new Memory_WriteAddress( 0x2000, 0x27ff, dec8_videoram_w ),
 		new Memory_WriteAddress( 0x2800, 0x2fff, shackled_sprite_w ),
-		new Memory_WriteAddress( 0x3000, 0x37ff, dec8_share2_w, &dec8_shared2_ram ),
-		new Memory_WriteAddress( 0x3800, 0x3fff, dec8_pf0_data_w, &dec8_pf0_data ),
+		new Memory_WriteAddress( 0x3000, 0x37ff, dec8_share2_w, dec8_shared2_ram ),
+		new Memory_WriteAddress( 0x3800, 0x3fff, dec8_pf0_data_w, dec8_pf0_data ),
 		new Memory_WriteAddress( 0x4000, 0xffff, MWA_ROM ),
 		new Memory_WriteAddress(MEMPORT_MARKER, 0)
 	};
@@ -957,8 +957,8 @@ public class dec8
 		new Memory_WriteAddress( 0x1800, 0x1804, shackled_int_w ),
 		new Memory_WriteAddress( 0x1805, 0x1805, buffer_spriteram_w ), /* DMA */
 		new Memory_WriteAddress( 0x180c, 0x180c, oscar_sound_w ),
-		new Memory_WriteAddress( 0x2000, 0x27ff, dec8_videoram_w, &videoram, &videoram_size ),
-		new Memory_WriteAddress( 0x2800, 0x2fff, MWA_RAM, &spriteram, &spriteram_size ),
+		new Memory_WriteAddress( 0x2000, 0x27ff, dec8_videoram_w, videoram, videoram_size ),
+		new Memory_WriteAddress( 0x2800, 0x2fff, MWA_RAM, spriteram, spriteram_size ),
 		new Memory_WriteAddress( 0x3000, 0x37ff, dec8_share2_w ),
 		new Memory_WriteAddress( 0x3800, 0x3fff, dec8_pf0_data_w ),
 		new Memory_WriteAddress( 0x4000, 0xffff, MWA_ROM ),
@@ -988,11 +988,11 @@ public class dec8
 	public static Memory_WriteAddress garyoret_writemem[]={
 		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
 		new Memory_WriteAddress( 0x0000, 0x17ff, MWA_RAM ),
-		new Memory_WriteAddress( 0x1800, 0x1fff, dec8_videoram_w, &videoram, &videoram_size ),
-		new Memory_WriteAddress( 0x2000, 0x27ff, dec8_pf0_data_w, &dec8_pf0_data ),
-		new Memory_WriteAddress( 0x2800, 0x2bff, paletteram_xxxxBBBBGGGGRRRR_split1_w, &paletteram ),
-		new Memory_WriteAddress( 0x2c00, 0x2fff, paletteram_xxxxBBBBGGGGRRRR_split2_w, &paletteram_2 ),
-		new Memory_WriteAddress( 0x3000, 0x37ff, MWA_RAM, &spriteram, &spriteram_size ),
+		new Memory_WriteAddress( 0x1800, 0x1fff, dec8_videoram_w, videoram, videoram_size ),
+		new Memory_WriteAddress( 0x2000, 0x27ff, dec8_pf0_data_w, dec8_pf0_data ),
+		new Memory_WriteAddress( 0x2800, 0x2bff, paletteram_xxxxBBBBGGGGRRRR_split1_w, paletteram ),
+		new Memory_WriteAddress( 0x2c00, 0x2fff, paletteram_xxxxBBBBGGGGRRRR_split2_w, paletteram_2 ),
+		new Memory_WriteAddress( 0x3000, 0x37ff, MWA_RAM, spriteram, spriteram_size ),
 		new Memory_WriteAddress( 0x3810, 0x3810, dec8_sound_w ),
 		new Memory_WriteAddress( 0x3818, 0x382f, gondo_scroll_w ),
 		new Memory_WriteAddress( 0x3830, 0x3830, ghostb_bank_w ), /* Bank + NMI enable */

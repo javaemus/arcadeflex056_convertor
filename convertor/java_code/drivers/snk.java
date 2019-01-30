@@ -518,9 +518,9 @@ public class snk
 	public static Memory_WriteAddress tnk3_writemem_cpuA[]={
 		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
 		new Memory_WriteAddress( 0x0000, 0xbfff, MWA_ROM ),
-		new Memory_WriteAddress( 0xc000, 0xcfff, cpuA_io_w, &io_ram ),
-		new Memory_WriteAddress( 0xd000, 0xf7ff, MWA_RAM, &shared_ram2 ),
-		new Memory_WriteAddress( 0xf800, 0xffff, MWA_RAM, &shared_ram ),
+		new Memory_WriteAddress( 0xc000, 0xcfff, cpuA_io_w, io_ram ),
+		new Memory_WriteAddress( 0xd000, 0xf7ff, MWA_RAM, shared_ram2 ),
+		new Memory_WriteAddress( 0xf800, 0xffff, MWA_RAM, shared_ram ),
 		new Memory_WriteAddress(MEMPORT_MARKER, 0)
 	};
 	
@@ -556,8 +556,8 @@ public class snk
 	public static Memory_WriteAddress writemem_cpuA[]={
 		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
 		new Memory_WriteAddress( 0x0000, 0xbfff, MWA_ROM ),
-		new Memory_WriteAddress( 0xc000, 0xcfff, cpuA_io_w, &io_ram ),
-		new Memory_WriteAddress( 0xd000, 0xffff, MWA_RAM, &shared_ram ),
+		new Memory_WriteAddress( 0xc000, 0xcfff, cpuA_io_w, io_ram ),
+		new Memory_WriteAddress( 0xd000, 0xffff, MWA_RAM, shared_ram ),
 		new Memory_WriteAddress(MEMPORT_MARKER, 0)
 	};
 	

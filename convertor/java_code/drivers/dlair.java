@@ -157,7 +157,7 @@ public class dlair
 		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
 		new Memory_WriteAddress( 0x0000, 0x7fff, MWA_ROM ),
 		new Memory_WriteAddress( 0xa000, 0xa7ff, MWA_RAM ),
-		new Memory_WriteAddress( 0xc000, 0xc3ff, videoram_w, &videoram, &videoram_size ),
+		new Memory_WriteAddress( 0xc000, 0xc3ff, videoram_w, videoram, videoram_size ),
 		new Memory_WriteAddress( 0xc400, 0xc7ff, MWA_RAM ),
 		new Memory_WriteAddress( 0xe000, 0xe000, dlair_led0_w ),
 		new Memory_WriteAddress( 0xe008, 0xe008, dlair_led1_w ),

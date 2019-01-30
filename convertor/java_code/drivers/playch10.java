@@ -432,8 +432,8 @@ public class playch10
 		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
 		new Memory_WriteAddress( 0x0000, 0x3fff, MWA_ROM ),
 		new Memory_WriteAddress( 0x8000, 0x87ff, MWA_RAM ), /* 8V */
-		new Memory_WriteAddress( 0x8800, 0x8fff, ram_8w_w, &ram_8w ), /* 8W */
-		new Memory_WriteAddress( 0x9000, 0x97ff, video_w, &videoram, &videoram_size ),
+		new Memory_WriteAddress( 0x8800, 0x8fff, ram_8w_w, ram_8w ), /* 8W */
+		new Memory_WriteAddress( 0x9000, 0x97ff, video_w, videoram, videoram_size ),
 		new Memory_WriteAddress( 0xc000, 0xdfff, MWA_ROM ),
 		new Memory_WriteAddress( 0xe000, 0xffff, pc10_prot_w ),
 		new Memory_WriteAddress(MEMPORT_MARKER, 0)
@@ -480,7 +480,7 @@ public class playch10
 	
 	public static Memory_WriteAddress cart_writemem[]={
 		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
-		new Memory_WriteAddress( 0x0000, 0x07ff, MWA_RAM, &work_ram ),
+		new Memory_WriteAddress( 0x0000, 0x07ff, MWA_RAM, work_ram ),
 		new Memory_WriteAddress( 0x0800, 0x1fff, mirror_ram_w ),
 		new Memory_WriteAddress( 0x2000, 0x3fff, ppu2c03b_0_w ),
 		new Memory_WriteAddress( 0x4011, 0x4011, DAC_0_data_w ),

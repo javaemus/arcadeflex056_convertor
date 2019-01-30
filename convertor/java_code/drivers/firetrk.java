@@ -663,7 +663,7 @@ public class firetrk
 	
 	public static Memory_WriteAddress firetruck_writemem[]={
 		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
-		new Memory_WriteAddress( 0x0000, 0x01ff, MWA_RAM, &videoram ),
+		new Memory_WriteAddress( 0x0000, 0x01ff, MWA_RAM, videoram ),
 		new Memory_WriteAddress( 0x0800, 0x08ff, MWA_RAM ),				/* PRAM */
 		new Memory_WriteAddress( 0x1000, 0x1000, MWA_RAM ),				/* PVPLOAD */
 		new Memory_WriteAddress( 0x1020, 0x1020, MWA_RAM ),				/* PHPLOAD */

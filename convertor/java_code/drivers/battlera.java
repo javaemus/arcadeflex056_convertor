@@ -90,7 +90,7 @@ public class battlera
 		new Memory_WriteAddress( 0x000000, 0x0fffff, MWA_ROM ),
 		new Memory_WriteAddress( 0x100000, 0x10ffff, HuC6270_debug_w ), /* Cheat to edit vram data */
 		new Memory_WriteAddress( 0x1e0800, 0x1e0801, battlera_sound_w ),
-		new Memory_WriteAddress( 0x1e1000, 0x1e13ff, battlera_palette_w, &paletteram ),
+		new Memory_WriteAddress( 0x1e1000, 0x1e13ff, battlera_palette_w, paletteram ),
 		new Memory_WriteAddress( 0x1f0000, 0x1f1fff, MWA_BANK8 ), /* Main ram */
 		new Memory_WriteAddress( 0x1fe000, 0x1fe001, HuC6270_register_w ),
 		new Memory_WriteAddress( 0x1fe002, 0x1fe003, HuC6270_data_w ),

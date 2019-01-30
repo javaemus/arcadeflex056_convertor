@@ -113,12 +113,12 @@ public class congo
 	public static Memory_WriteAddress writemem[]={
 		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
 		new Memory_WriteAddress( 0x8000, 0x83ff, MWA_RAM ),
-		new Memory_WriteAddress( 0xa000, 0xa3ff, videoram_w, &videoram, &videoram_size ),
-		new Memory_WriteAddress( 0xa400, 0xa7ff, colorram_w, &colorram ),
-		new Memory_WriteAddress( 0x8400, 0x8fff, MWA_RAM, &spriteram ),
+		new Memory_WriteAddress( 0xa000, 0xa3ff, videoram_w, videoram, videoram_size ),
+		new Memory_WriteAddress( 0xa400, 0xa7ff, colorram_w, colorram ),
+		new Memory_WriteAddress( 0x8400, 0x8fff, MWA_RAM, spriteram ),
 		new Memory_WriteAddress( 0xc01f, 0xc01f, interrupt_enable_w ),
-		new Memory_WriteAddress( 0xc028, 0xc029, MWA_RAM, &zaxxon_background_position ),
-		new Memory_WriteAddress( 0xc01d, 0xc01d, MWA_RAM, &zaxxon_background_enable ),
+		new Memory_WriteAddress( 0xc028, 0xc029, MWA_RAM, zaxxon_background_position ),
+		new Memory_WriteAddress( 0xc01d, 0xc01d, MWA_RAM, zaxxon_background_enable ),
 		new Memory_WriteAddress( 0xc038, 0xc038, soundlatch_w ),
 		new Memory_WriteAddress( 0xc030, 0xc033, MWA_NOP ), /* ??? */
 		new Memory_WriteAddress( 0xc01e, 0xc01e, MWA_NOP ), /* flip unused for now */

@@ -71,7 +71,7 @@ public class m79amb
 		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
 		new Memory_WriteAddress( 0x0000, 0x1fff, MWA_ROM ),
 		new Memory_WriteAddress( 0x4000, 0x43ff, MWA_RAM ),
-	    new Memory_WriteAddress( 0x4400, 0x5fff, ramtek_videoram_w, &videoram ),
+	    new Memory_WriteAddress( 0x4400, 0x5fff, ramtek_videoram_w, videoram ),
 	    new Memory_WriteAddress( 0x6000, 0x63ff, MWA_RAM ),		/* ?? */
 		new Memory_WriteAddress( 0x8001, 0x8001, ramtek_mask_w),
 		new Memory_WriteAddress( 0x8000, 0x8000, sound_w ),

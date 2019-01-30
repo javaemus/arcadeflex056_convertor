@@ -119,7 +119,7 @@ public class spy
 	
 	public static Memory_WriteAddress spy_writemem[]={
 		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
-		new Memory_WriteAddress( 0x0000, 0x07ff, spy_bankedram1_w, &ram ),
+		new Memory_WriteAddress( 0x0000, 0x07ff, spy_bankedram1_w, ram ),
 		new Memory_WriteAddress( 0x0800, 0x1aff, MWA_RAM ),
 		new Memory_WriteAddress( 0x3f80, 0x3f80, bankswitch_w ),
 		new Memory_WriteAddress( 0x3f90, 0x3f90, spy_3f90_w ),

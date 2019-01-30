@@ -100,9 +100,9 @@ public class sprint2
 	public static Memory_WriteAddress writemem[]={
 		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
 		new Memory_WriteAddress( 0x0000, 0x03ff, MWA_RAM ), /* WRAM */
-		new Memory_WriteAddress( 0x0010, 0x0013, MWA_RAM, &sprint2_horiz_ram ), /* WRAM */
-		new Memory_WriteAddress( 0x0018, 0x001f, MWA_RAM, &sprint2_vert_car_ram ), /* WRAM */
-		new Memory_WriteAddress( 0x0400, 0x07ff, videoram_w, &videoram, &videoram_size ), /* DISPLAY */
+		new Memory_WriteAddress( 0x0010, 0x0013, MWA_RAM, sprint2_horiz_ram ), /* WRAM */
+		new Memory_WriteAddress( 0x0018, 0x001f, MWA_RAM, sprint2_vert_car_ram ), /* WRAM */
+		new Memory_WriteAddress( 0x0400, 0x07ff, videoram_w, videoram, videoram_size ), /* DISPLAY */
 		new Memory_WriteAddress( 0x0c00, 0x0c0f, MWA_RAM ), /* ATTRACT */
 		new Memory_WriteAddress( 0x0c10, 0x0c1f, MWA_RAM ), /* SKID1 */
 		new Memory_WriteAddress( 0x0c20, 0x0c2f, MWA_RAM ), /* SKID2 */

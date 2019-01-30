@@ -259,9 +259,9 @@ public class btime
 		new Memory_WriteAddress( 0x0000, 0xffff, btime_w ),	    /* override the following entries to */
 											/* support ROM decryption */
 		new Memory_WriteAddress( 0x0000, 0x07ff, MWA_RAM ),
-		new Memory_WriteAddress( 0x0c00, 0x0c0f, btime_paletteram_w, &paletteram ),
-		new Memory_WriteAddress( 0x1000, 0x13ff, videoram_w, &videoram, &videoram_size ),
-		new Memory_WriteAddress( 0x1400, 0x17ff, colorram_w, &colorram ),
+		new Memory_WriteAddress( 0x0c00, 0x0c0f, btime_paletteram_w, paletteram ),
+		new Memory_WriteAddress( 0x1000, 0x13ff, videoram_w, videoram, videoram_size ),
+		new Memory_WriteAddress( 0x1400, 0x17ff, colorram_w, colorram ),
 		new Memory_WriteAddress( 0x1800, 0x1bff, btime_mirrorvideoram_w ),
 		new Memory_WriteAddress( 0x1c00, 0x1fff, btime_mirrorcolorram_w ),
 		new Memory_WriteAddress( 0x4000, 0x4000, MWA_NOP ),
@@ -296,13 +296,13 @@ public class btime
 		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
 		new Memory_WriteAddress( 0x0000, 0x03ff, MWA_RAM ),
 		new Memory_WriteAddress( 0x0500, 0x3fff, MWA_ROM ),
-		new Memory_WriteAddress( 0xc000, 0xc3ff, videoram_w, &videoram, &videoram_size ),
-		new Memory_WriteAddress( 0xc400, 0xc7ff, colorram_w, &colorram ),
+		new Memory_WriteAddress( 0xc000, 0xc3ff, videoram_w, videoram, videoram_size ),
+		new Memory_WriteAddress( 0xc400, 0xc7ff, colorram_w, colorram ),
 		new Memory_WriteAddress( 0xc800, 0xcbff, btime_mirrorvideoram_w ),
 		new Memory_WriteAddress( 0xcc00, 0xcfff, btime_mirrorcolorram_w ),
 		new Memory_WriteAddress( 0xd000, 0xd0ff, MWA_RAM ),	/* background? */
 		new Memory_WriteAddress( 0xd100, 0xd3ff, MWA_RAM ),	/* ? */
-		new Memory_WriteAddress( 0xd400, 0xd7ff, MWA_RAM, &bnj_backgroundram, &bnj_backgroundram_size ),
+		new Memory_WriteAddress( 0xd400, 0xd7ff, MWA_RAM, bnj_backgroundram, bnj_backgroundram_size ),
 		new Memory_WriteAddress( 0xe000, 0xe000, bnj_video_control_w ),
 		new Memory_WriteAddress( 0xe001, 0xe001, sound_command_w ),
 	#if 0
@@ -329,12 +329,12 @@ public class btime
 		new Memory_WriteAddress( 0x0000, 0xffff, zoar_w ),	    /* override the following entries to */
 										/* support ROM decryption */
 		new Memory_WriteAddress( 0x0000, 0x07ff, MWA_RAM ),
-		new Memory_WriteAddress( 0x8000, 0x83ff, videoram_w, &videoram, &videoram_size ),
-		new Memory_WriteAddress( 0x8400, 0x87ff, colorram_w, &colorram ),
+		new Memory_WriteAddress( 0x8000, 0x83ff, videoram_w, videoram, videoram_size ),
+		new Memory_WriteAddress( 0x8400, 0x87ff, colorram_w, colorram ),
 		new Memory_WriteAddress( 0x8800, 0x8bff, btime_mirrorvideoram_w ),
 		new Memory_WriteAddress( 0x8c00, 0x8fff, btime_mirrorcolorram_w ),
 		new Memory_WriteAddress( 0x9000, 0x9000, zoar_video_control_w ),
-		new Memory_WriteAddress( 0x9800, 0x9803, MWA_RAM, &zoar_scrollram ),
+		new Memory_WriteAddress( 0x9800, 0x9803, MWA_RAM, zoar_scrollram ),
 		new Memory_WriteAddress( 0x9805, 0x9805, bnj_scroll2_w ),
 		new Memory_WriteAddress( 0x9805, 0x9805, bnj_scroll1_w ),
 		new Memory_WriteAddress( 0x9806, 0x9806, sound_command_w ),
@@ -361,12 +361,12 @@ public class btime
 		new Memory_WriteAddress( 0x0000, 0xffff, lnc_w ),      /* override the following entries to */
 										/* support ROM decryption */
 		new Memory_WriteAddress( 0x0000, 0x3bff, MWA_RAM ),
-		new Memory_WriteAddress( 0x3c00, 0x3fff, lnc_videoram_w, &videoram, &videoram_size ),
-		new Memory_WriteAddress( 0x7800, 0x7bff, colorram_w, &colorram ),  /* this is just here to initialize the pointer */
+		new Memory_WriteAddress( 0x3c00, 0x3fff, lnc_videoram_w, videoram, videoram_size ),
+		new Memory_WriteAddress( 0x7800, 0x7bff, colorram_w, colorram ),  /* this is just here to initialize the pointer */
 		new Memory_WriteAddress( 0x7c00, 0x7fff, lnc_mirrorvideoram_w ),
 		new Memory_WriteAddress( 0x8000, 0x8000, MWA_NOP ),            /* ??? */
 		new Memory_WriteAddress( 0x8001, 0x8001, lnc_video_control_w ),
-		new Memory_WriteAddress( 0x8003, 0x8003, MWA_RAM, &lnc_charbank ),
+		new Memory_WriteAddress( 0x8003, 0x8003, MWA_RAM, lnc_charbank ),
 		new Memory_WriteAddress( 0x9000, 0x9000, MWA_NOP ),            /* IRQ ACK ??? */
 		new Memory_WriteAddress( 0x9002, 0x9002, sound_command_w ),
 		new Memory_WriteAddress( 0xb000, 0xb1ff, MWA_RAM ),
@@ -393,11 +393,11 @@ public class btime
 		new Memory_WriteAddress( 0x0000, 0xffff, mmonkey_w ),  /* override the following entries to */
 										/* support ROM decryption */
 		new Memory_WriteAddress( 0x0000, 0x3bff, MWA_RAM ),
-		new Memory_WriteAddress( 0x3c00, 0x3fff, lnc_videoram_w, &videoram, &videoram_size ),
-		new Memory_WriteAddress( 0x7800, 0x7bff, colorram_w, &colorram ),  /* this is just here to initialize the pointer */
+		new Memory_WriteAddress( 0x3c00, 0x3fff, lnc_videoram_w, videoram, videoram_size ),
+		new Memory_WriteAddress( 0x7800, 0x7bff, colorram_w, colorram ),  /* this is just here to initialize the pointer */
 		new Memory_WriteAddress( 0x7c00, 0x7fff, lnc_mirrorvideoram_w ),
 		new Memory_WriteAddress( 0x8001, 0x8001, lnc_video_control_w ),
-		new Memory_WriteAddress( 0x8003, 0x8003, MWA_RAM, &lnc_charbank ),
+		new Memory_WriteAddress( 0x8003, 0x8003, MWA_RAM, lnc_charbank ),
 		new Memory_WriteAddress( 0x9000, 0x9000, MWA_NOP ),            /* IRQ ACK ??? */
 		new Memory_WriteAddress( 0x9002, 0x9002, sound_command_w ),
 		new Memory_WriteAddress( 0xb000, 0xbfff, mmonkey_protection_w ),
@@ -425,14 +425,14 @@ public class btime
 		new Memory_WriteAddress( 0x0000, 0x07ff, MWA_RAM ),
 		new Memory_WriteAddress( 0x1001, 0x1001, bnj_video_control_w ),
 		new Memory_WriteAddress( 0x1002, 0x1002, sound_command_w ),
-		new Memory_WriteAddress( 0x4000, 0x43ff, videoram_w, &videoram, &videoram_size ),
-		new Memory_WriteAddress( 0x4400, 0x47ff, colorram_w, &colorram ),
+		new Memory_WriteAddress( 0x4000, 0x43ff, videoram_w, videoram, videoram_size ),
+		new Memory_WriteAddress( 0x4400, 0x47ff, colorram_w, colorram ),
 		new Memory_WriteAddress( 0x4800, 0x4bff, btime_mirrorvideoram_w ),
 		new Memory_WriteAddress( 0x4c00, 0x4fff, btime_mirrorcolorram_w ),
-		new Memory_WriteAddress( 0x5000, 0x51ff, bnj_background_w, &bnj_backgroundram, &bnj_backgroundram_size ),
+		new Memory_WriteAddress( 0x5000, 0x51ff, bnj_background_w, bnj_backgroundram, bnj_backgroundram_size ),
 		new Memory_WriteAddress( 0x5400, 0x5400, bnj_scroll1_w ),
 		new Memory_WriteAddress( 0x5800, 0x5800, bnj_scroll2_w ),
-		new Memory_WriteAddress( 0x5c00, 0x5c0f, btime_paletteram_w, &paletteram ),
+		new Memory_WriteAddress( 0x5c00, 0x5c0f, btime_paletteram_w, paletteram ),
 		new Memory_WriteAddress(MEMPORT_MARKER, 0)
 	};
 	
@@ -454,10 +454,10 @@ public class btime
 		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
 		new Memory_WriteAddress( 0x0000, 0xffff, disco_w ),    /* override the following entries to */
 										/* support ROM decryption */
-		new Memory_WriteAddress( 0x2000, 0x7fff, deco_charram_w, &deco_charram ),
-		new Memory_WriteAddress( 0x8000, 0x83ff, videoram_w, &videoram, &videoram_size ),
-		new Memory_WriteAddress( 0x8400, 0x87ff, colorram_w, &colorram ),
-		new Memory_WriteAddress( 0x8800, 0x881f, MWA_RAM, &spriteram, &spriteram_size ),
+		new Memory_WriteAddress( 0x2000, 0x7fff, deco_charram_w, deco_charram ),
+		new Memory_WriteAddress( 0x8000, 0x83ff, videoram_w, videoram, videoram_size ),
+		new Memory_WriteAddress( 0x8400, 0x87ff, colorram_w, colorram ),
+		new Memory_WriteAddress( 0x8800, 0x881f, MWA_RAM, spriteram, spriteram_size ),
 		new Memory_WriteAddress( 0x9a00, 0x9a00, sound_command_w ),
 		new Memory_WriteAddress( 0x9c00, 0x9c00, disco_video_control_w ),
 		new Memory_WriteAddress(MEMPORT_MARKER, 0)

@@ -214,8 +214,8 @@ public class crbaloon
 		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
 		new Memory_WriteAddress( 0x0000, 0x2fff, MWA_ROM ),
 		new Memory_WriteAddress( 0x4000, 0x43ff, MWA_RAM ),
-		new Memory_WriteAddress( 0x4800, 0x4bff, videoram_w, &videoram, &videoram_size ),
-		new Memory_WriteAddress( 0x5000, 0x53ff, colorram_w, &colorram ),
+		new Memory_WriteAddress( 0x4800, 0x4bff, videoram_w, videoram, videoram_size ),
+		new Memory_WriteAddress( 0x5000, 0x53ff, colorram_w, colorram ),
 		new Memory_WriteAddress(MEMPORT_MARKER, 0)
 	};
 	

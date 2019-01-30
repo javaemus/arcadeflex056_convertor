@@ -92,11 +92,11 @@ public class pooyan
 	public static Memory_WriteAddress writemem[]={
 		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
 		new Memory_WriteAddress( 0x0000, 0x7fff, MWA_ROM ),
-		new Memory_WriteAddress( 0x8000, 0x83ff, colorram_w, &colorram ),
-		new Memory_WriteAddress( 0x8400, 0x87ff, videoram_w, &videoram, &videoram_size ),
+		new Memory_WriteAddress( 0x8000, 0x83ff, colorram_w, colorram ),
+		new Memory_WriteAddress( 0x8400, 0x87ff, videoram_w, videoram, videoram_size ),
 		new Memory_WriteAddress( 0x8800, 0x8fff, MWA_RAM ),
-		new Memory_WriteAddress( 0x9010, 0x903f, MWA_RAM, &spriteram, &spriteram_size ),
-		new Memory_WriteAddress( 0x9410, 0x943f, MWA_RAM, &spriteram_2 ),
+		new Memory_WriteAddress( 0x9010, 0x903f, MWA_RAM, spriteram, spriteram_size ),
+		new Memory_WriteAddress( 0x9410, 0x943f, MWA_RAM, spriteram_2 ),
 		new Memory_WriteAddress( 0xa000, 0xa000, MWA_NOP ),	/* watchdog reset? */
 		new Memory_WriteAddress( 0xa100, 0xa100, soundlatch_w ),
 		new Memory_WriteAddress( 0xa180, 0xa180, interrupt_enable_w ),

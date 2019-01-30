@@ -102,12 +102,12 @@ public class appoooh
 		new Memory_WriteAddress( 0x0000, 0xdfff, MWA_ROM ),
 		new Memory_WriteAddress( 0xe000, 0xe7ff, MWA_RAM ),
 		new Memory_WriteAddress( 0xe800, 0xefff, MWA_RAM ), /* RAM ? */
-		new Memory_WriteAddress( 0xf000, 0xf01f, MWA_RAM, &spriteram  ),
-		new Memory_WriteAddress( 0xf020, 0xf3ff, appoooh_fg_videoram_w, &appoooh_fg_videoram ),
-		new Memory_WriteAddress( 0xf420, 0xf7ff, appoooh_fg_colorram_w, &appoooh_fg_colorram ),
-		new Memory_WriteAddress( 0xf800, 0xf81f, MWA_RAM, &spriteram_2 ),
-		new Memory_WriteAddress( 0xf820, 0xfbff, appoooh_bg_videoram_w, &appoooh_bg_videoram ),
-		new Memory_WriteAddress( 0xfc20, 0xffff, appoooh_bg_colorram_w, &appoooh_bg_colorram ),
+		new Memory_WriteAddress( 0xf000, 0xf01f, MWA_RAM, spriteram  ),
+		new Memory_WriteAddress( 0xf020, 0xf3ff, appoooh_fg_videoram_w, appoooh_fg_videoram ),
+		new Memory_WriteAddress( 0xf420, 0xf7ff, appoooh_fg_colorram_w, appoooh_fg_colorram ),
+		new Memory_WriteAddress( 0xf800, 0xf81f, MWA_RAM, spriteram_2 ),
+		new Memory_WriteAddress( 0xf820, 0xfbff, appoooh_bg_videoram_w, appoooh_bg_videoram ),
+		new Memory_WriteAddress( 0xfc20, 0xffff, appoooh_bg_colorram_w, appoooh_bg_colorram ),
 		new Memory_WriteAddress(MEMPORT_MARKER, 0)
 	};
 	

@@ -167,28 +167,28 @@ public class senjyo
 		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
 		new Memory_WriteAddress( 0x0000, 0x7fff, MWA_ROM ),
 		new Memory_WriteAddress( 0x8000, 0x8fff, MWA_RAM ),
-		new Memory_WriteAddress( 0x9000, 0x93ff, senjyo_fgvideoram_w, &senjyo_fgvideoram ),
-		new Memory_WriteAddress( 0x9400, 0x97ff, senjyo_fgcolorram_w, &senjyo_fgcolorram ),
-		new Memory_WriteAddress( 0x9800, 0x987f, MWA_RAM, &spriteram, &spriteram_size ),
-		new Memory_WriteAddress( 0x9c00, 0x9d8f, paletteram_IIBBGGRR_w, &paletteram ),
-		new Memory_WriteAddress( 0x9e00, 0x9e1f, MWA_RAM, &senjyo_fgscroll ),
-		new Memory_WriteAddress( 0x9e20, 0x9e21, MWA_RAM, &senjyo_scrolly3 ),
+		new Memory_WriteAddress( 0x9000, 0x93ff, senjyo_fgvideoram_w, senjyo_fgvideoram ),
+		new Memory_WriteAddress( 0x9400, 0x97ff, senjyo_fgcolorram_w, senjyo_fgcolorram ),
+		new Memory_WriteAddress( 0x9800, 0x987f, MWA_RAM, spriteram, spriteram_size ),
+		new Memory_WriteAddress( 0x9c00, 0x9d8f, paletteram_IIBBGGRR_w, paletteram ),
+		new Memory_WriteAddress( 0x9e00, 0x9e1f, MWA_RAM, senjyo_fgscroll ),
+		new Memory_WriteAddress( 0x9e20, 0x9e21, MWA_RAM, senjyo_scrolly3 ),
 	/*	new Memory_WriteAddress( 0x9e22, 0x9e23, height of the layer (Senjyo only, fixed at 0x380) */
-		{ 0x9e25, 0x9e25, MWA_RAM, &senjyo_scrollx3 },
-		{ 0x9e27, 0x9e27, senjyo_bgstripes_w, &senjyo_bgstripesram },	/* controls width of background stripes */
-		{ 0x9e28, 0x9e29, MWA_RAM, &senjyo_scrolly2 },
+		{ 0x9e25, 0x9e25, MWA_RAM, senjyo_scrollx3 },
+		{ 0x9e27, 0x9e27, senjyo_bgstripes_w, senjyo_bgstripesram },	/* controls width of background stripes */
+		{ 0x9e28, 0x9e29, MWA_RAM, senjyo_scrolly2 },
 	/*	{ 0x9e2a, 0x9e2b, height of the layer (Senjyo only, fixed at 0x200) */
-		{ 0x9e2d, 0x9e2d, MWA_RAM, &senjyo_scrollx2 },
-		{ 0x9e30, 0x9e31, MWA_RAM, &senjyo_scrolly1 },
+		{ 0x9e2d, 0x9e2d, MWA_RAM, senjyo_scrollx2 },
+		{ 0x9e30, 0x9e31, MWA_RAM, senjyo_scrolly1 },
 	/*	{ 0x9e32, 0x9e33, height of the layer (Senjyo only, fixed at 0x100) */
-		{ 0x9e35, 0x9e35, MWA_RAM, &senjyo_scrollx1 },
+		{ 0x9e35, 0x9e35, MWA_RAM, senjyo_scrollx1 },
 	/*	{ 0x9e38, 0x9e38, probably radar y position (Senjyo only, fixed at 0x61) */
 	/*	{ 0x9e3d, 0x9e3d, probably radar x position (Senjyo only, 0x00/0xc0 depending on screen flip) */
 	{ 0x9e00, 0x9e3f, MWA_RAM },
-		{ 0xa000, 0xa37f, senjyo_bg3videoram_w, &senjyo_bg3videoram },
-		{ 0xa800, 0xaaff, senjyo_bg2videoram_w, &senjyo_bg2videoram },
-		{ 0xb000, 0xb1ff, senjyo_bg1videoram_w, &senjyo_bg1videoram },
-		{ 0xb800, 0xbbff, MWA_RAM, &senjyo_radarram },
+		{ 0xa000, 0xa37f, senjyo_bg3videoram_w, senjyo_bg3videoram },
+		{ 0xa800, 0xaaff, senjyo_bg2videoram_w, senjyo_bg2videoram },
+		{ 0xb000, 0xb1ff, senjyo_bg1videoram_w, senjyo_bg1videoram },
+		{ 0xb800, 0xbbff, MWA_RAM, senjyo_radarram },
 		{ 0xd000, 0xd000, flip_screen_w },
 		{ 0xd004, 0xd004, z80pioA_0_p_w },
 		new Memory_WriteAddress(MEMPORT_MARKER, 0)

@@ -521,7 +521,7 @@ public class nemesis
 	public static Memory_WriteAddress gx400_sound_writemem[]={
 		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
 		new Memory_WriteAddress( 0x0000, 0x1fff, MWA_ROM ),
-		new Memory_WriteAddress( 0x4000, 0x87ff, MWA_RAM, &gx400_shared_ram ),
+		new Memory_WriteAddress( 0x4000, 0x87ff, MWA_RAM, gx400_shared_ram ),
 		new Memory_WriteAddress( 0xa000, 0xafff, k005289_pitch_A_w ),
 		new Memory_WriteAddress( 0xc000, 0xcfff, k005289_pitch_B_w ),
 		new Memory_WriteAddress( 0xe000, 0xe000, VLM5030_data_w ),

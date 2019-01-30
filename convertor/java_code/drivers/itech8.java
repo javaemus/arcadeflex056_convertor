@@ -690,14 +690,14 @@ public class itech8
 		new Memory_WriteAddress( 0x0000, 0x0fff, itech8_tms34061_w ),
 		new Memory_WriteAddress( 0x1100, 0x1100, MWA_NOP ),
 		new Memory_WriteAddress( 0x1120, 0x1120, sound_data_w ),
-		new Memory_WriteAddress( 0x1140, 0x1140, MWA_RAM, &itech8_grom_bank ),
-		new Memory_WriteAddress( 0x1160, 0x1160, MWA_RAM, &itech8_display_page ),
+		new Memory_WriteAddress( 0x1140, 0x1140, MWA_RAM, itech8_grom_bank ),
+		new Memory_WriteAddress( 0x1160, 0x1160, MWA_RAM, itech8_display_page ),
 		new Memory_WriteAddress( 0x1180, 0x1180, tms34061_latch_w ),
 		new Memory_WriteAddress( 0x11a0, 0x11a0, nmi_ack_w ),
 		new Memory_WriteAddress( 0x11c0, 0x11df, blitter_w ),
 		new Memory_WriteAddress( 0x11e0, 0x11e0, itech8_palette_address_w ),
 		new Memory_WriteAddress( 0x11e2, 0x11e3, itech8_palette_data_w ),
-		new Memory_WriteAddress( 0x2000, 0x3fff, MWA_RAM, &main_ram, &main_ram_size ),
+		new Memory_WriteAddress( 0x2000, 0x3fff, MWA_RAM, main_ram, main_ram_size ),
 		new Memory_WriteAddress( 0x4000, 0xffff, MWA_ROM ),
 		new Memory_WriteAddress(MEMPORT_MARKER, 0)
 	};
@@ -726,14 +726,14 @@ public class itech8
 		new Memory_WriteAddress( 0x1000, 0x1fff, itech8_tms34061_w ),
 		new Memory_WriteAddress( 0x0100, 0x0100, MWA_NOP ),
 		new Memory_WriteAddress( 0x0120, 0x0120, sound_data_w ),
-		new Memory_WriteAddress( 0x0140, 0x0140, MWA_RAM, &itech8_grom_bank ),
-		new Memory_WriteAddress( 0x0160, 0x0160, MWA_RAM, &itech8_display_page ),
+		new Memory_WriteAddress( 0x0140, 0x0140, MWA_RAM, itech8_grom_bank ),
+		new Memory_WriteAddress( 0x0160, 0x0160, MWA_RAM, itech8_display_page ),
 		new Memory_WriteAddress( 0x0180, 0x0180, tms34061_latch_w ),
 		new Memory_WriteAddress( 0x01a0, 0x01a0, nmi_ack_w ),
 		new Memory_WriteAddress( 0x01c0, 0x01df, blitter_w ),
 		new Memory_WriteAddress( 0x01e0, 0x01e0, itech8_palette_address_w ),
 		new Memory_WriteAddress( 0x01e2, 0x01e3, itech8_palette_data_w ),
-		new Memory_WriteAddress( 0x2000, 0x3fff, MWA_RAM, &main_ram, &main_ram_size ),
+		new Memory_WriteAddress( 0x2000, 0x3fff, MWA_RAM, main_ram, main_ram_size ),
 		new Memory_WriteAddress( 0x4000, 0xffff, MWA_ROM ),
 		new Memory_WriteAddress(MEMPORT_MARKER, 0)
 	};
@@ -761,14 +761,14 @@ public class itech8
 		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
 		new Memory_WriteAddress( 0x1000, 0x1fff, itech8_tms34061_w ),
 		new Memory_WriteAddress( 0x01c0, 0x01c0, gtg2_sound_data_w ),
-		new Memory_WriteAddress( 0x0160, 0x0160, MWA_RAM, &itech8_grom_bank ),
-		new Memory_WriteAddress( 0x0120, 0x0120, MWA_RAM, &itech8_display_page ),
+		new Memory_WriteAddress( 0x0160, 0x0160, MWA_RAM, itech8_grom_bank ),
+		new Memory_WriteAddress( 0x0120, 0x0120, MWA_RAM, itech8_display_page ),
 		new Memory_WriteAddress( 0x01e0, 0x01e0, tms34061_latch_w ),
 		new Memory_WriteAddress( 0x0100, 0x0100, nmi_ack_w ),
 		new Memory_WriteAddress( 0x0180, 0x019f, blitter_w ),
 		new Memory_WriteAddress( 0x0140, 0x0140, itech8_palette_address_w ),
 		new Memory_WriteAddress( 0x0142, 0x0143, itech8_palette_data_w ),
-		new Memory_WriteAddress( 0x2000, 0x3fff, MWA_RAM, &main_ram, &main_ram_size ),
+		new Memory_WriteAddress( 0x2000, 0x3fff, MWA_RAM, main_ram, main_ram_size ),
 		new Memory_WriteAddress( 0x4000, 0xffff, MWA_ROM ),
 		new Memory_WriteAddress(MEMPORT_MARKER, 0)
 	};
@@ -903,7 +903,7 @@ public class itech8
 	 *************************************/
 	
 	#define PORT_SERVICE_NO_TOGGLE(mask,default)	\
-		PORT_BITX(    mask, mask & default, IPT_SERVICE1, DEF_STR( Service_Mode ), KEYCODE_F2, IP_JOY_NONE )
+		PORT_BITX(    mask, mask  default, IPT_SERVICE1, DEF_STR( Service_Mode ), KEYCODE_F2, IP_JOY_NONE )
 	
 	#define UNUSED_ANALOG	\
 		PORT_START	\
@@ -1510,8 +1510,8 @@ public class itech8
 		/* sound hardware */														\
 		0,0,0,0,																	\
 		{																			\
-			{ SOUND_YM##YMTYPE, &ym##YMTYPE##_interface },							\
-			{ SOUND_OKIM6295, &oki6295_interface_##OKISPEED },						\
+			{ SOUND_YM##YMTYPE, ym##YMTYPE##_interface },							\
+			{ SOUND_OKIM6295, oki6295_interface_##OKISPEED },						\
 		},																			\
 		nvram_handler																\
 	)
@@ -1571,8 +1571,8 @@ public class itech8
 		/* sound hardware */
 		0,0,0,0,
 		{
-			{ SOUND_YM2203, &ym2203_interface },
-			{ SOUND_OKIM6295, &oki6295_interface_high },
+			{ SOUND_YM2203, ym2203_interface },
+			{ SOUND_OKIM6295, oki6295_interface_high },
 		},
 		nvram_handler
 	);
@@ -1621,8 +1621,8 @@ public class itech8
 		/* sound hardware */
 		0,0,0,0,
 		{
-			{ SOUND_YM2203, &ym2203_interface },
-			{ SOUND_OKIM6295, &oki6295_interface_high },
+			{ SOUND_YM2203, ym2203_interface },
+			{ SOUND_OKIM6295, oki6295_interface_high },
 		},
 		nvram_handler
 	);

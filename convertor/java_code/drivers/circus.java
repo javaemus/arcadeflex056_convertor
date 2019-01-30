@@ -72,7 +72,7 @@ public class circus
 		new Memory_WriteAddress( 0x1000, 0x1fff, MWA_ROM ),
 		new Memory_WriteAddress( 0x2000, 0x2000, circus_clown_x_w ),
 		new Memory_WriteAddress( 0x3000, 0x3000, circus_clown_y_w ),
-		new Memory_WriteAddress( 0x4000, 0x43ff, videoram_w, &videoram, &videoram_size ),
+		new Memory_WriteAddress( 0x4000, 0x43ff, videoram_w, videoram, videoram_size ),
 		new Memory_WriteAddress( 0x8000, 0x8000, circus_clown_z_w ),
 		new Memory_WriteAddress( 0xf000, 0xffff, MWA_ROM ),
 		new Memory_WriteAddress(MEMPORT_MARKER, 0)

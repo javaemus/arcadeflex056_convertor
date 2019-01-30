@@ -1088,7 +1088,7 @@ public class tmnt
 		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
 		new Memory_ReadAddress( 0x0000, 0x7fff, MRA_ROM ),
 		new Memory_ReadAddress( 0x8000, 0x87ff, MRA_RAM ),
-		new Memory_ReadAddress( 0x9000, 0x9000, tmnt_sres_r ),	/* title music & UPD7759C reset */
+		new Memory_ReadAddress( 0x9000, 0x9000, tmnt_sres_r ),	/* title music  UPD7759C reset */
 		new Memory_ReadAddress( 0xa000, 0xa000, soundlatch_r ),
 		new Memory_ReadAddress( 0xb000, 0xb00d, K007232_read_port_0_r ),
 		new Memory_ReadAddress( 0xc001, 0xc001, YM2151_status_port_0_r ),
@@ -1100,7 +1100,7 @@ public class tmnt
 		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
 		new Memory_WriteAddress( 0x0000, 0x7fff, MWA_ROM ),
 		new Memory_WriteAddress( 0x8000, 0x87ff, MWA_RAM ),
-		new Memory_WriteAddress( 0x9000, 0x9000, tmnt_sres_w ),	/* title music & UPD7759C reset */
+		new Memory_WriteAddress( 0x9000, 0x9000, tmnt_sres_w ),	/* title music  UPD7759C reset */
 		new Memory_WriteAddress( 0xb000, 0xb00d, K007232_write_port_0_w  ),
 		new Memory_WriteAddress( 0xc000, 0xc000, YM2151_register_port_0_w ),
 		new Memory_WriteAddress( 0xc001, 0xc001, YM2151_data_port_0_w ),

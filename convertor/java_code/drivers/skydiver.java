@@ -179,8 +179,8 @@ public class skydiver
 	public static Memory_WriteAddress writemem[]={
 		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
 		new Memory_WriteAddress( 0x0000, 0x00ff, MWA_RAM ),
-		new Memory_WriteAddress( 0x0010, 0x001f, MWA_RAM, &spriteram, &spriteram_size ),
-		new Memory_WriteAddress( 0x0400, 0x077f, videoram_w, &videoram, &videoram_size ),
+		new Memory_WriteAddress( 0x0010, 0x001f, MWA_RAM, spriteram, spriteram_size ),
+		new Memory_WriteAddress( 0x0400, 0x077f, videoram_w, videoram, videoram_size ),
 		// new Memory_WriteAddress( 0x0780, 0x07ff, MWA_RAM ),
 		new Memory_WriteAddress( 0x0800, 0x0803, skydiver_sk_lamps_w ),
 		// new Memory_WriteAddress( 0x0804, 0x0807, skydiver_start_lamps_w ),

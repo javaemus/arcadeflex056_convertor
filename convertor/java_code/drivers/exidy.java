@@ -224,17 +224,17 @@ public class exidy
 		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
 		new Memory_WriteAddress( 0x0000, 0x03ff, MWA_RAM ),
 		new Memory_WriteAddress( 0x0800, 0x3fff, MWA_ROM ),
-		new Memory_WriteAddress( 0x4000, 0x43ff, videoram_w, &videoram, &videoram_size ),
+		new Memory_WriteAddress( 0x4000, 0x43ff, videoram_w, videoram, videoram_size ),
 		new Memory_WriteAddress( 0x4400, 0x47ff, videoram_w ),
-		new Memory_WriteAddress( 0x4800, 0x4fff, exidy_characterram_w, &exidy_characterram ),
-		new Memory_WriteAddress( 0x5000, 0x5000, MWA_RAM, &exidy_sprite1_xpos ),
-		new Memory_WriteAddress( 0x5040, 0x5040, MWA_RAM, &exidy_sprite1_ypos ),
-		new Memory_WriteAddress( 0x5080, 0x5080, MWA_RAM, &exidy_sprite2_xpos ),
-		new Memory_WriteAddress( 0x50C0, 0x50C0, MWA_RAM, &exidy_sprite2_ypos ),
-		new Memory_WriteAddress( 0x5100, 0x5100, MWA_RAM, &exidy_sprite_no ),
-		new Memory_WriteAddress( 0x5101, 0x5101, MWA_RAM, &exidy_sprite_enable ),
+		new Memory_WriteAddress( 0x4800, 0x4fff, exidy_characterram_w, exidy_characterram ),
+		new Memory_WriteAddress( 0x5000, 0x5000, MWA_RAM, exidy_sprite1_xpos ),
+		new Memory_WriteAddress( 0x5040, 0x5040, MWA_RAM, exidy_sprite1_ypos ),
+		new Memory_WriteAddress( 0x5080, 0x5080, MWA_RAM, exidy_sprite2_xpos ),
+		new Memory_WriteAddress( 0x50C0, 0x50C0, MWA_RAM, exidy_sprite2_ypos ),
+		new Memory_WriteAddress( 0x5100, 0x5100, MWA_RAM, exidy_sprite_no ),
+		new Memory_WriteAddress( 0x5101, 0x5101, MWA_RAM, exidy_sprite_enable ),
 		new Memory_WriteAddress( 0x5200, 0x520F, pia_0_w ),
-		new Memory_WriteAddress( 0x5210, 0x5212, exidy_color_w, &exidy_color_latch ),
+		new Memory_WriteAddress( 0x5210, 0x5212, exidy_color_w, exidy_color_latch ),
 		new Memory_WriteAddress( 0x8000, 0xffff, MWA_ROM ),
 		new Memory_WriteAddress(MEMPORT_MARKER, 0)
 	};
@@ -262,17 +262,17 @@ public class exidy
 		new Memory_WriteAddress( 0x0000, 0x03ff, MWA_RAM ),
 		new Memory_WriteAddress( 0x0400, 0x07ff, MWA_RAM ),			/* Fax only */
 		new Memory_WriteAddress( 0x2000, 0x2000, fax_bank_select_w ),	/* Fax only */
-		new Memory_WriteAddress( 0x4000, 0x43ff, videoram_w, &videoram, &videoram_size ),
-		new Memory_WriteAddress( 0x5000, 0x5000, MWA_RAM, &exidy_sprite1_xpos ),
-		new Memory_WriteAddress( 0x5040, 0x5040, MWA_RAM, &exidy_sprite1_ypos ),
-		new Memory_WriteAddress( 0x5080, 0x5080, MWA_RAM, &exidy_sprite2_xpos ),
-		new Memory_WriteAddress( 0x50C0, 0x50C0, MWA_RAM, &exidy_sprite2_ypos ),
-		new Memory_WriteAddress( 0x5100, 0x5100, MWA_RAM, &exidy_sprite_no ),
-		new Memory_WriteAddress( 0x5101, 0x5101, MWA_RAM, &exidy_sprite_enable ),
+		new Memory_WriteAddress( 0x4000, 0x43ff, videoram_w, videoram, videoram_size ),
+		new Memory_WriteAddress( 0x5000, 0x5000, MWA_RAM, exidy_sprite1_xpos ),
+		new Memory_WriteAddress( 0x5040, 0x5040, MWA_RAM, exidy_sprite1_ypos ),
+		new Memory_WriteAddress( 0x5080, 0x5080, MWA_RAM, exidy_sprite2_xpos ),
+		new Memory_WriteAddress( 0x50C0, 0x50C0, MWA_RAM, exidy_sprite2_ypos ),
+		new Memory_WriteAddress( 0x5100, 0x5100, MWA_RAM, exidy_sprite_no ),
+		new Memory_WriteAddress( 0x5101, 0x5101, MWA_RAM, exidy_sprite_enable ),
 		new Memory_WriteAddress( 0x5200, 0x520F, pia_0_w ),
-		new Memory_WriteAddress( 0x5210, 0x5212, exidy_color_w, &exidy_color_latch ),
+		new Memory_WriteAddress( 0x5210, 0x5212, exidy_color_w, exidy_color_latch ),
 		new Memory_WriteAddress( 0x5213, 0x5217, MWA_NOP ),			/* empty control lines on color/sound board */
-		new Memory_WriteAddress( 0x6000, 0x6fff, exidy_characterram_w, &exidy_characterram ), /* two 6116 character RAMs */
+		new Memory_WriteAddress( 0x6000, 0x6fff, exidy_characterram_w, exidy_characterram ), /* two 6116 character RAMs */
 		new Memory_WriteAddress( 0x8000, 0xffff, MWA_ROM ),
 		new Memory_WriteAddress(MEMPORT_MARKER, 0)
 	};

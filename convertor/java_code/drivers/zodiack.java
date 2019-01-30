@@ -88,12 +88,12 @@ public class zodiack
 		new Memory_WriteAddress( 0x7000, 0x7000, watchdog_reset_w ),
 		new Memory_WriteAddress( 0x7100, 0x7100, zodiac_master_interrupt_enable_w ),
 		new Memory_WriteAddress( 0x7200, 0x7200, zodiac_flipscreen_w ),
-		new Memory_WriteAddress( 0x9000, 0x903f, zodiack_attributes_w, &zodiack_attributesram ),
-		new Memory_WriteAddress( 0x9040, 0x905f, MWA_RAM, &spriteram, &spriteram_size ),
-		new Memory_WriteAddress( 0x9060, 0x907f, MWA_RAM, &zodiack_bulletsram, &zodiack_bulletsram_size ),
+		new Memory_WriteAddress( 0x9000, 0x903f, zodiack_attributes_w, zodiack_attributesram ),
+		new Memory_WriteAddress( 0x9040, 0x905f, MWA_RAM, spriteram, spriteram_size ),
+		new Memory_WriteAddress( 0x9060, 0x907f, MWA_RAM, zodiack_bulletsram, zodiack_bulletsram_size ),
 		new Memory_WriteAddress( 0x9080, 0x93ff, MWA_RAM ),
-		new Memory_WriteAddress( 0xa000, 0xa3ff, videoram_w, &videoram, &videoram_size ),
-		new Memory_WriteAddress( 0xb000, 0xb3ff, MWA_RAM, &zodiack_videoram2 ),
+		new Memory_WriteAddress( 0xa000, 0xa3ff, videoram_w, videoram, videoram_size ),
+		new Memory_WriteAddress( 0xb000, 0xb3ff, MWA_RAM, zodiack_videoram2 ),
 		new Memory_WriteAddress( 0xc000, 0xcfff, MWA_ROM ),
 		new Memory_WriteAddress(MEMPORT_MARKER, 0)
 	};

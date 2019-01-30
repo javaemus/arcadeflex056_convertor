@@ -206,13 +206,13 @@ public class bagman
 		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
 		new Memory_WriteAddress( 0x0000, 0x5fff, MWA_ROM ),
 		new Memory_WriteAddress( 0x6000, 0x67ff, MWA_RAM ),
-		new Memory_WriteAddress( 0x9000, 0x93ff, videoram_w, &videoram, &videoram_size ),
-		new Memory_WriteAddress( 0x9800, 0x9bff, colorram_w, &colorram ),
+		new Memory_WriteAddress( 0x9000, 0x93ff, videoram_w, videoram, videoram_size ),
+		new Memory_WriteAddress( 0x9800, 0x9bff, colorram_w, colorram ),
 		new Memory_WriteAddress( 0xa000, 0xa000, interrupt_enable_w ),
 		new Memory_WriteAddress( 0xa001, 0xa002, bagman_flipscreen_w ),
-		new Memory_WriteAddress( 0xa003, 0xa003, MWA_RAM, &bagman_video_enable ),
+		new Memory_WriteAddress( 0xa003, 0xa003, MWA_RAM, bagman_video_enable ),
 		new Memory_WriteAddress( 0xc000, 0xffff, MWA_ROM ),	/* Super Bagman only */
-		new Memory_WriteAddress( 0x9800, 0x981f, MWA_RAM, &spriteram, &spriteram_size ),	/* hidden portion of color RAM */
+		new Memory_WriteAddress( 0x9800, 0x981f, MWA_RAM, spriteram, spriteram_size ),	/* hidden portion of color RAM */
 										/* here only to initialize the pointer, */
 										/* writes are handled by colorram_w */
 		new Memory_WriteAddress( 0xa800, 0xa805, bagman_ls259_w ), /* TMS5110 driving state machine */
@@ -242,12 +242,12 @@ public class bagman
 		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
 		new Memory_WriteAddress( 0x0000, 0x5fff, MWA_ROM ),
 		new Memory_WriteAddress( 0x7000, 0x77ff, MWA_RAM ),
-		new Memory_WriteAddress( 0x8800, 0x8bff, videoram_w, &videoram, &videoram_size ),
-		new Memory_WriteAddress( 0x9800, 0x9bff, colorram_w, &colorram ),
+		new Memory_WriteAddress( 0x8800, 0x8bff, videoram_w, videoram, videoram_size ),
+		new Memory_WriteAddress( 0x9800, 0x9bff, colorram_w, colorram ),
 		new Memory_WriteAddress( 0xa000, 0xa000, interrupt_enable_w ),
 		new Memory_WriteAddress( 0xa001, 0xa002, bagman_flipscreen_w ),
-		new Memory_WriteAddress( 0xa003, 0xa003, MWA_RAM, &bagman_video_enable ),
-		new Memory_WriteAddress( 0x9800, 0x981f, MWA_RAM, &spriteram, &spriteram_size ),	/* hidden portion of color RAM */
+		new Memory_WriteAddress( 0xa003, 0xa003, MWA_RAM, bagman_video_enable ),
+		new Memory_WriteAddress( 0x9800, 0x981f, MWA_RAM, spriteram, spriteram_size ),	/* hidden portion of color RAM */
 										/* here only to initialize the pointer, */
 										/* writes are handled by colorram_w */
 		new Memory_WriteAddress( 0x9c00, 0x9fff, MWA_NOP ),	/* written to, but unused */

@@ -201,17 +201,17 @@ public class sgladiat
 		new Memory_WriteAddress( 0xa300, 0xa300, snk_soundlatch_w ),
 		new Memory_WriteAddress( 0xa600, 0xa600, sglatiat_flipscreen_w ),
 		new Memory_WriteAddress( 0xa700, 0xa700, sgladiat_cpuA_nmi_w ),
-		new Memory_WriteAddress( 0xd000, 0xd7ff, MWA_RAM, &shared_ram2 ),
+		new Memory_WriteAddress( 0xd000, 0xd7ff, MWA_RAM, shared_ram2 ),
 	//		new Memory_WriteAddress( 0xd200, 0xd200, MWA_RAM ), /* ?0x24 */
 	//		new Memory_WriteAddress( 0xd300, 0xd300, MWA_RAM ), /* ------xx: msb scrollx */
 	//		new Memory_WriteAddress( 0xd400, 0xd400, MWA_RAM ), /* xscroll (sprite) */
 	//		new Memory_WriteAddress( 0xd500, 0xd500, MWA_RAM ), /* yscroll (sprite) */
 	//		new Memory_WriteAddress( 0xd600, 0xd600, MWA_RAM ), /* xscroll (bg) */
 	//		new Memory_WriteAddress( 0xd700, 0xd700, MWA_RAM ), /* yscroll (bg) */
-		new Memory_WriteAddress( 0xd800, 0xdfff, MWA_RAM, &spriteram ),
-		new Memory_WriteAddress( 0xe000, 0xe7ff, MWA_RAM, &videoram ),
+		new Memory_WriteAddress( 0xd800, 0xdfff, MWA_RAM, spriteram ),
+		new Memory_WriteAddress( 0xe000, 0xe7ff, MWA_RAM, videoram ),
 		new Memory_WriteAddress( 0xe800, 0xefff, MWA_RAM ),
-		new Memory_WriteAddress( 0xf000, 0xf7ff, MWA_RAM, &shared_ram ),
+		new Memory_WriteAddress( 0xf000, 0xf7ff, MWA_RAM, shared_ram ),
 		new Memory_WriteAddress(MEMPORT_MARKER, 0)
 	};
 	

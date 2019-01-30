@@ -445,25 +445,25 @@ public class omegaf
 		new Memory_WriteAddress( 0xc004, 0xc004, MWA_NOP ),							/* input protection */
 		new Memory_WriteAddress( 0xc005, 0xc005, MWA_NOP ),							/* input protection */
 		new Memory_WriteAddress( 0xc006, 0xc006, MWA_NOP ),							/* input protection */
-		new Memory_WriteAddress( 0xc100, 0xc101, omegaf_bg0_scrollx_w, &omegaf_bg0_scroll_x ),
-		new Memory_WriteAddress( 0xc102, 0xc103, omegaf_bg0_scrolly_w, &omegaf_bg0_scroll_y ),
+		new Memory_WriteAddress( 0xc100, 0xc101, omegaf_bg0_scrollx_w, omegaf_bg0_scroll_x ),
+		new Memory_WriteAddress( 0xc102, 0xc103, omegaf_bg0_scrolly_w, omegaf_bg0_scroll_y ),
 		new Memory_WriteAddress( 0xc104, 0xc104, omegaf_bg0_enabled_w ),				/* BG0 enabled */
 		new Memory_WriteAddress( 0xc105, 0xc105, omegaf_bg0_bank_w ),					/* BG0 bank select */
-		new Memory_WriteAddress( 0xc200, 0xc201, omegaf_bg1_scrollx_w, &omegaf_bg1_scroll_x ),
-		new Memory_WriteAddress( 0xc202, 0xc203, omegaf_bg1_scrolly_w, &omegaf_bg1_scroll_y ),
+		new Memory_WriteAddress( 0xc200, 0xc201, omegaf_bg1_scrollx_w, omegaf_bg1_scroll_x ),
+		new Memory_WriteAddress( 0xc202, 0xc203, omegaf_bg1_scrolly_w, omegaf_bg1_scroll_y ),
 		new Memory_WriteAddress( 0xc204, 0xc204, omegaf_bg1_enabled_w ),				/* BG1 enabled */
 		new Memory_WriteAddress( 0xc205, 0xc205, omegaf_bg1_bank_w ),					/* BG1 bank select */
-		new Memory_WriteAddress( 0xc300, 0xc301, omegaf_bg2_scrollx_w, &omegaf_bg2_scroll_x ),
-		new Memory_WriteAddress( 0xc302, 0xc303, omegaf_bg2_scrolly_w, &omegaf_bg2_scroll_y ),
+		new Memory_WriteAddress( 0xc300, 0xc301, omegaf_bg2_scrollx_w, omegaf_bg2_scroll_x ),
+		new Memory_WriteAddress( 0xc302, 0xc303, omegaf_bg2_scrolly_w, omegaf_bg2_scroll_y ),
 		new Memory_WriteAddress( 0xc304, 0xc304, omegaf_bg2_enabled_w ),				/* BG2 enabled */
 		new Memory_WriteAddress( 0xc305, 0xc305, omegaf_bg2_bank_w ),					/* BG2 bank select */
 		new Memory_WriteAddress( 0xc400, 0xc7ff, omegaf_bg0_videoram_w ),				/* BG0 video RAM */
 		new Memory_WriteAddress( 0xc800, 0xcbff, omegaf_bg1_videoram_w ),				/* BG1 video RAM */
 		new Memory_WriteAddress( 0xcc00, 0xcfff, omegaf_bg2_videoram_w ),				/* BG2 video RAM */
-		new Memory_WriteAddress( 0xd000, 0xd7ff, omegaf_fgvideoram_w, &omegaf_fg_videoram ),
-		new Memory_WriteAddress( 0xd800, 0xdfff, paletteram_RRRRGGGGBBBBxxxx_swap_w, &paletteram ),
+		new Memory_WriteAddress( 0xd000, 0xd7ff, omegaf_fgvideoram_w, omegaf_fg_videoram ),
+		new Memory_WriteAddress( 0xd800, 0xdfff, paletteram_RRRRGGGGBBBBxxxx_swap_w, paletteram ),
 		new Memory_WriteAddress( 0xe000, 0xf9ff, MWA_RAM ),							/* RAM */
-		new Memory_WriteAddress( 0xfa00, 0xffff, MWA_RAM, &spriteram, &spriteram_size ),
+		new Memory_WriteAddress( 0xfa00, 0xffff, MWA_RAM, spriteram, spriteram_size ),
 		new Memory_WriteAddress(MEMPORT_MARKER, 0)
 	};
 	
@@ -492,28 +492,28 @@ public class omegaf
 	public static Memory_WriteAddress robokid_writemem[]={
 		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
 		new Memory_WriteAddress( 0x0000, 0xbfff, MWA_ROM ),
-		new Memory_WriteAddress( 0xc000, 0xc7ff, paletteram_RRRRGGGGBBBBxxxx_swap_w, &paletteram ),
-		new Memory_WriteAddress( 0xc800, 0xcfff, omegaf_fgvideoram_w, &omegaf_fg_videoram ),
+		new Memory_WriteAddress( 0xc000, 0xc7ff, paletteram_RRRRGGGGBBBBxxxx_swap_w, paletteram ),
+		new Memory_WriteAddress( 0xc800, 0xcfff, omegaf_fgvideoram_w, omegaf_fg_videoram ),
 		new Memory_WriteAddress( 0xd000, 0xd3ff, robokid_bg2_videoram_w ),				/* BG2 video RAM */
 		new Memory_WriteAddress( 0xd400, 0xd7ff, robokid_bg1_videoram_w ),				/* BG1 video RAM */
 		new Memory_WriteAddress( 0xd800, 0xdbff, robokid_bg0_videoram_w ),				/* BG0 video RAM */
 		new Memory_WriteAddress( 0xdc00, 0xdc00, soundlatch_w ),
 		new Memory_WriteAddress( 0xdc02, 0xdc02, omegaf_bankselect_w ),
 		new Memory_WriteAddress( 0xdc03, 0xdc03, omegaf_sprite_overdraw_w ),
-		new Memory_WriteAddress( 0xdd00, 0xdd01, omegaf_bg0_scrollx_w, &omegaf_bg0_scroll_x ),
-		new Memory_WriteAddress( 0xdd02, 0xdd03, omegaf_bg0_scrolly_w, &omegaf_bg0_scroll_y ),
+		new Memory_WriteAddress( 0xdd00, 0xdd01, omegaf_bg0_scrollx_w, omegaf_bg0_scroll_x ),
+		new Memory_WriteAddress( 0xdd02, 0xdd03, omegaf_bg0_scrolly_w, omegaf_bg0_scroll_y ),
 		new Memory_WriteAddress( 0xdd04, 0xdd04, omegaf_bg0_enabled_w ),				/* BG0 enabled */
 		new Memory_WriteAddress( 0xdd05, 0xdd05, omegaf_bg0_bank_w ),					/* BG0 bank select */
-		new Memory_WriteAddress( 0xde00, 0xde01, omegaf_bg1_scrollx_w, &omegaf_bg1_scroll_x ),
-		new Memory_WriteAddress( 0xde02, 0xde03, omegaf_bg1_scrolly_w, &omegaf_bg1_scroll_y ),
+		new Memory_WriteAddress( 0xde00, 0xde01, omegaf_bg1_scrollx_w, omegaf_bg1_scroll_x ),
+		new Memory_WriteAddress( 0xde02, 0xde03, omegaf_bg1_scrolly_w, omegaf_bg1_scroll_y ),
 		new Memory_WriteAddress( 0xde04, 0xde04, omegaf_bg1_enabled_w ),				/* BG1 enabled */
 		new Memory_WriteAddress( 0xde05, 0xde05, omegaf_bg1_bank_w ),					/* BG1 bank select */
-		new Memory_WriteAddress( 0xdf00, 0xdf01, omegaf_bg2_scrollx_w, &omegaf_bg2_scroll_x ),
-		new Memory_WriteAddress( 0xdf02, 0xdf03, omegaf_bg2_scrolly_w, &omegaf_bg2_scroll_y ),
+		new Memory_WriteAddress( 0xdf00, 0xdf01, omegaf_bg2_scrollx_w, omegaf_bg2_scroll_x ),
+		new Memory_WriteAddress( 0xdf02, 0xdf03, omegaf_bg2_scrolly_w, omegaf_bg2_scroll_y ),
 		new Memory_WriteAddress( 0xdf04, 0xdf04, omegaf_bg2_enabled_w ),				/* BG2 enabled */
 		new Memory_WriteAddress( 0xdf05, 0xdf05, omegaf_bg2_bank_w ),					/* BG2 bank select */
 		new Memory_WriteAddress( 0xe000, 0xf9ff, MWA_RAM ),							/* RAM */
-		new Memory_WriteAddress( 0xfa00, 0xffff, MWA_RAM, &spriteram, &spriteram_size ),
+		new Memory_WriteAddress( 0xfa00, 0xffff, MWA_RAM, spriteram, spriteram_size ),
 		new Memory_WriteAddress(MEMPORT_MARKER, 0)
 	};
 	

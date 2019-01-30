@@ -99,16 +99,16 @@ public class locomotn
 	public static Memory_WriteAddress jungler_writemem[]={
 		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
 		new Memory_WriteAddress( 0x0000, 0x7fff, MWA_ROM ),
-		new Memory_WriteAddress( 0x8000, 0x83ff, videoram_w, &videoram, &videoram_size ),
-		new Memory_WriteAddress( 0x8400, 0x87ff, rallyx_videoram2_w, &rallyx_videoram2 ),
-		new Memory_WriteAddress( 0x8800, 0x8bff, colorram_w, &colorram ),
-		new Memory_WriteAddress( 0x8c00, 0x8fff, rallyx_colorram2_w, &rallyx_colorram2 ),
+		new Memory_WriteAddress( 0x8000, 0x83ff, videoram_w, videoram, videoram_size ),
+		new Memory_WriteAddress( 0x8400, 0x87ff, rallyx_videoram2_w, rallyx_videoram2 ),
+		new Memory_WriteAddress( 0x8800, 0x8bff, colorram_w, colorram ),
+		new Memory_WriteAddress( 0x8c00, 0x8fff, rallyx_colorram2_w, rallyx_colorram2 ),
 		new Memory_WriteAddress( 0x9800, 0x9fff, MWA_RAM ),
-		new Memory_WriteAddress( 0xa034, 0xa03f, MWA_RAM, &rallyx_radarattr ),
+		new Memory_WriteAddress( 0xa034, 0xa03f, MWA_RAM, rallyx_radarattr ),
 		new Memory_WriteAddress( 0xa080, 0xa080, watchdog_reset_w ),
 		new Memory_WriteAddress( 0xa100, 0xa100, soundlatch_w ),
-		new Memory_WriteAddress( 0xa130, 0xa130, MWA_RAM, &rallyx_scrollx ),
-		new Memory_WriteAddress( 0xa140, 0xa140, MWA_RAM, &rallyx_scrolly ),
+		new Memory_WriteAddress( 0xa130, 0xa130, MWA_RAM, rallyx_scrollx ),
+		new Memory_WriteAddress( 0xa140, 0xa140, MWA_RAM, rallyx_scrolly ),
 		new Memory_WriteAddress( 0xa170, 0xa170, MWA_NOP ),	/* ????? */
 		new Memory_WriteAddress( 0xa180, 0xa180, timeplt_sh_irqtrigger_w ),
 		new Memory_WriteAddress( 0xa181, 0xa181, interrupt_enable_w ),
@@ -117,26 +117,26 @@ public class locomotn
 		new Memory_WriteAddress( 0xa184, 0xa184, coin_1_w ),
 		new Memory_WriteAddress( 0xa186, 0xa186, coin_2_w ),
 	//	new Memory_WriteAddress( 0xa187, 0xa187, MWA_NOP ),	stars enable
-		new Memory_WriteAddress( 0x8014, 0x801f, MWA_RAM, &spriteram, &spriteram_size ),	/* these are here just to initialize */
-		new Memory_WriteAddress( 0x8814, 0x881f, MWA_RAM, &spriteram_2 ),	/* the pointers. */
-		new Memory_WriteAddress( 0x8034, 0x803f, MWA_RAM, &rallyx_radarx, &rallyx_radarram_size ),	/* ditto */
-		new Memory_WriteAddress( 0x8834, 0x883f, MWA_RAM, &rallyx_radary ),
+		new Memory_WriteAddress( 0x8014, 0x801f, MWA_RAM, spriteram, spriteram_size ),	/* these are here just to initialize */
+		new Memory_WriteAddress( 0x8814, 0x881f, MWA_RAM, spriteram_2 ),	/* the pointers. */
+		new Memory_WriteAddress( 0x8034, 0x803f, MWA_RAM, rallyx_radarx, rallyx_radarram_size ),	/* ditto */
+		new Memory_WriteAddress( 0x8834, 0x883f, MWA_RAM, rallyx_radary ),
 		new Memory_WriteAddress(MEMPORT_MARKER, 0)
 	};
 	
 	public static Memory_WriteAddress writemem[]={
 		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
 		new Memory_WriteAddress( 0x0000, 0x7fff, MWA_ROM ),
-		new Memory_WriteAddress( 0x8000, 0x83ff, videoram_w, &videoram, &videoram_size ),
-		new Memory_WriteAddress( 0x8400, 0x87ff, rallyx_videoram2_w, &rallyx_videoram2 ),
-		new Memory_WriteAddress( 0x8800, 0x8bff, colorram_w, &colorram ),
-		new Memory_WriteAddress( 0x8c00, 0x8fff, rallyx_colorram2_w, &rallyx_colorram2 ),
+		new Memory_WriteAddress( 0x8000, 0x83ff, videoram_w, videoram, videoram_size ),
+		new Memory_WriteAddress( 0x8400, 0x87ff, rallyx_videoram2_w, rallyx_videoram2 ),
+		new Memory_WriteAddress( 0x8800, 0x8bff, colorram_w, colorram ),
+		new Memory_WriteAddress( 0x8c00, 0x8fff, rallyx_colorram2_w, rallyx_colorram2 ),
 		new Memory_WriteAddress( 0x9800, 0x9fff, MWA_RAM ),
-		new Memory_WriteAddress( 0xa000, 0xa00f, MWA_RAM, &rallyx_radarattr ),
+		new Memory_WriteAddress( 0xa000, 0xa00f, MWA_RAM, rallyx_radarattr ),
 		new Memory_WriteAddress( 0xa080, 0xa080, watchdog_reset_w ),
 		new Memory_WriteAddress( 0xa100, 0xa100, soundlatch_w ),
-		new Memory_WriteAddress( 0xa130, 0xa130, MWA_RAM, &rallyx_scrollx ),
-		new Memory_WriteAddress( 0xa140, 0xa140, MWA_RAM, &rallyx_scrolly ),
+		new Memory_WriteAddress( 0xa130, 0xa130, MWA_RAM, rallyx_scrollx ),
+		new Memory_WriteAddress( 0xa140, 0xa140, MWA_RAM, rallyx_scrolly ),
 		new Memory_WriteAddress( 0xa170, 0xa170, MWA_NOP ),	/* ????? */
 		new Memory_WriteAddress( 0xa180, 0xa180, timeplt_sh_irqtrigger_w ),
 		new Memory_WriteAddress( 0xa181, 0xa181, interrupt_enable_w ),
@@ -145,10 +145,10 @@ public class locomotn
 		new Memory_WriteAddress( 0xa184, 0xa184, coin_1_w ),
 		new Memory_WriteAddress( 0xa186, 0xa186, coin_2_w ),
 	//	new Memory_WriteAddress( 0xa187, 0xa187, MWA_NOP ),	stars enable
-		new Memory_WriteAddress( 0x8000, 0x801f, MWA_RAM, &spriteram, &spriteram_size ),	/* these are here just to initialize */
-		new Memory_WriteAddress( 0x8800, 0x881f, MWA_RAM, &spriteram_2 ),	/* the pointers. */
-		new Memory_WriteAddress( 0x8020, 0x803f, MWA_RAM, &rallyx_radarx, &rallyx_radarram_size ),	/* ditto */
-		new Memory_WriteAddress( 0x8820, 0x883f, MWA_RAM, &rallyx_radary ),
+		new Memory_WriteAddress( 0x8000, 0x801f, MWA_RAM, spriteram, spriteram_size ),	/* these are here just to initialize */
+		new Memory_WriteAddress( 0x8800, 0x881f, MWA_RAM, spriteram_2 ),	/* the pointers. */
+		new Memory_WriteAddress( 0x8020, 0x803f, MWA_RAM, rallyx_radarx, rallyx_radarram_size ),	/* ditto */
+		new Memory_WriteAddress( 0x8820, 0x883f, MWA_RAM, rallyx_radary ),
 		new Memory_WriteAddress(MEMPORT_MARKER, 0)
 	};
 	

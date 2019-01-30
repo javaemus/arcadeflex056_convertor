@@ -307,7 +307,7 @@ public class meadows
 		new Memory_WriteAddress( 0x0d00, 0x0d0f, meadows_sprite_w ),
 		new Memory_WriteAddress( 0x0e00, 0x0eff, MWA_RAM ),
 		new Memory_WriteAddress( 0x1000, 0x1bff, MWA_ROM ),
-		new Memory_WriteAddress( 0x1c00, 0x1fff, meadows_videoram_w, &videoram, &videoram_size ),
+		new Memory_WriteAddress( 0x1c00, 0x1fff, meadows_videoram_w, videoram, videoram_size ),
 		new Memory_WriteAddress(MEMPORT_MARKER, 0)
 	};
 	

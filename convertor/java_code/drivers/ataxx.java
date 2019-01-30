@@ -658,7 +658,7 @@ public class ataxx
 		new Memory_WriteAddress( 0x0000, 0x9fff, MWA_ROM ),
 		new Memory_WriteAddress( 0xa000, 0xdfff, battery_ram_w ),
 		new Memory_WriteAddress( 0xe000, 0xf7ff, MWA_RAM ),
-		new Memory_WriteAddress( 0xf800, 0xffff, paletteram_and_misc_w, &paletteram ),
+		new Memory_WriteAddress( 0xf800, 0xffff, paletteram_and_misc_w, paletteram ),
 		new Memory_WriteAddress(MEMPORT_MARKER, 0)
 	};
 	

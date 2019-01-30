@@ -125,9 +125,9 @@ public class _1942
 		new Memory_WriteAddress( 0xc804, 0xc804, c1942_c804_w ),
 		new Memory_WriteAddress( 0xc805, 0xc805, c1942_palette_bank_w ),
 		new Memory_WriteAddress( 0xc806, 0xc806, c1942_bankswitch_w ),
-		new Memory_WriteAddress( 0xcc00, 0xcc7f, MWA_RAM, &spriteram, &spriteram_size ),
-		new Memory_WriteAddress( 0xd000, 0xd7ff, c1942_fgvideoram_w, &c1942_fgvideoram ),
-		new Memory_WriteAddress( 0xd800, 0xdbff, c1942_bgvideoram_w, &c1942_bgvideoram ),
+		new Memory_WriteAddress( 0xcc00, 0xcc7f, MWA_RAM, spriteram, spriteram_size ),
+		new Memory_WriteAddress( 0xd000, 0xd7ff, c1942_fgvideoram_w, c1942_fgvideoram ),
+		new Memory_WriteAddress( 0xd800, 0xdbff, c1942_bgvideoram_w, c1942_bgvideoram ),
 		new Memory_WriteAddress( 0xe000, 0xefff, MWA_RAM ),
 		new Memory_WriteAddress(MEMPORT_MARKER, 0)
 	};

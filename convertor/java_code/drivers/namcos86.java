@@ -432,14 +432,14 @@ public class namcos86
 	
 	public static Memory_WriteAddress writemem1[]={
 		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
-		new Memory_WriteAddress( 0x0000, 0x1fff, rthunder_videoram1_w, &rthunder_videoram1 ),
-		new Memory_WriteAddress( 0x2000, 0x3fff, rthunder_videoram2_w, &rthunder_videoram2 ),
+		new Memory_WriteAddress( 0x0000, 0x1fff, rthunder_videoram1_w, rthunder_videoram1 ),
+		new Memory_WriteAddress( 0x2000, 0x3fff, rthunder_videoram2_w, rthunder_videoram2 ),
 	
-		new Memory_WriteAddress( 0x4000, 0x40ff, namcos1_wavedata_w, &namco_wavedata ), /* PSG device, shared RAM */
-		new Memory_WriteAddress( 0x4100, 0x413f, namcos1_sound_w, &namco_soundregs ), /* PSG device, shared RAM */
-		new Memory_WriteAddress( 0x4000, 0x43ff, shared1_w, &shared1 ),
+		new Memory_WriteAddress( 0x4000, 0x40ff, namcos1_wavedata_w, namco_wavedata ), /* PSG device, shared RAM */
+		new Memory_WriteAddress( 0x4100, 0x413f, namcos1_sound_w, namco_soundregs ), /* PSG device, shared RAM */
+		new Memory_WriteAddress( 0x4000, 0x43ff, shared1_w, shared1 ),
 	
-		new Memory_WriteAddress( 0x4400, 0x5fff, spriteram_w, &spriteram ),
+		new Memory_WriteAddress( 0x4400, 0x5fff, spriteram_w, spriteram ),
 	
 		new Memory_WriteAddress( 0x6000, 0x6000, namco_voice0_play_w ),
 		new Memory_WriteAddress( 0x6200, 0x6200, namco_voice0_select_w ),

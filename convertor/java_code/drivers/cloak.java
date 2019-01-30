@@ -169,18 +169,18 @@ public class cloak
 	public static Memory_WriteAddress writemem[]={
 		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
 		new Memory_WriteAddress( 0x0000, 0x03ff, MWA_RAM ),
-		new Memory_WriteAddress( 0x0400, 0x07ff, videoram_w, &videoram, &videoram_size ),
-		new Memory_WriteAddress( 0x0800, 0x0fff, cloak_sharedram_w, &cloak_sharedram ),
+		new Memory_WriteAddress( 0x0400, 0x07ff, videoram_w, videoram, videoram_size ),
+		new Memory_WriteAddress( 0x0800, 0x0fff, cloak_sharedram_w, cloak_sharedram ),
 		new Memory_WriteAddress( 0x1000, 0x100f, pokey1_w ),
 		new Memory_WriteAddress( 0x1800, 0x180f, pokey2_w ),
-		new Memory_WriteAddress( 0x2800, 0x29ff, MWA_RAM, &nvram, &nvram_size ),
-		new Memory_WriteAddress( 0x3000, 0x30ff, MWA_RAM, &spriteram, &spriteram_size ),
+		new Memory_WriteAddress( 0x2800, 0x29ff, MWA_RAM, nvram, nvram_size ),
+		new Memory_WriteAddress( 0x3000, 0x30ff, MWA_RAM, spriteram, spriteram_size ),
 		new Memory_WriteAddress( 0x3200, 0x327f, cloak_paletteram_w ),
 		new Memory_WriteAddress( 0x3800, 0x3801, cloak_coin_counter_w ),
 		new Memory_WriteAddress( 0x3802, 0x3805, MWA_RAM ),
 		new Memory_WriteAddress( 0x3806, 0x3807, cloak_led_w ),
 		new Memory_WriteAddress( 0x3a00, 0x3a00, watchdog_reset_w ),
-		new Memory_WriteAddress( 0x3e00, 0x3e00, MWA_RAM, &enable_nvRAM ),
+		new Memory_WriteAddress( 0x3e00, 0x3e00, MWA_RAM, enable_nvRAM ),
 		new Memory_WriteAddress( 0x4000, 0xffff, MWA_ROM ),
 		new Memory_WriteAddress(MEMPORT_MARKER, 0)
 	};

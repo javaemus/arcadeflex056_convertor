@@ -94,7 +94,7 @@ public class blockhl
 		new Memory_WriteAddress( 0x1f8c, 0x1f8c, watchdog_reset_w ),
 		new Memory_WriteAddress( 0x0000, 0x3fff, K052109_051960_w ),
 		new Memory_WriteAddress( 0x4000, 0x57ff, MWA_RAM ),
-		new Memory_WriteAddress( 0x5800, 0x5fff, bankedram_w, &ram ),
+		new Memory_WriteAddress( 0x5800, 0x5fff, bankedram_w, ram ),
 		new Memory_WriteAddress( 0x6000, 0x7fff, MWA_ROM ),
 		new Memory_WriteAddress( 0x8000, 0xffff, MWA_ROM ),
 		new Memory_WriteAddress(MEMPORT_MARKER, 0)

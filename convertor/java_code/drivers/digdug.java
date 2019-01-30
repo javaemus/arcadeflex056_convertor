@@ -186,13 +186,13 @@ public class digdug
 		new Memory_WriteAddress( 0x6830, 0x6830, watchdog_reset_w ),
 		new Memory_WriteAddress( 0x7000, 0x700f, digdug_customio_data_w ),
 		new Memory_WriteAddress( 0x7100, 0x7100, digdug_customio_w ),
-		new Memory_WriteAddress( 0x8000, 0x9fff, digdug_sharedram_w, &digdug_sharedram ),
-		new Memory_WriteAddress( 0x8000, 0x83ff, MWA_RAM, &videoram, &videoram_size ),   /* dirtybuffer[] handling is not needed because */
+		new Memory_WriteAddress( 0x8000, 0x9fff, digdug_sharedram_w, digdug_sharedram ),
+		new Memory_WriteAddress( 0x8000, 0x83ff, MWA_RAM, videoram, videoram_size ),   /* dirtybuffer[] handling is not needed because */
 		new Memory_WriteAddress( 0x8400, 0x87ff, MWA_RAM ),	                          /* characters are redrawn every frame */
-		new Memory_WriteAddress( 0x8b80, 0x8bff, MWA_RAM, &spriteram, &spriteram_size ), /* these three are here just to initialize */
-		new Memory_WriteAddress( 0x9380, 0x93ff, MWA_RAM, &spriteram_2 ),	          /* the pointers. The actual writes are */
-		new Memory_WriteAddress( 0x9b80, 0x9bff, MWA_RAM, &spriteram_3 ),                /* handled by digdug_sharedram_w() */
-		new Memory_WriteAddress( 0xa000, 0xa00f, digdug_vh_latch_w, &digdug_vlatches ),
+		new Memory_WriteAddress( 0x8b80, 0x8bff, MWA_RAM, spriteram, spriteram_size ), /* these three are here just to initialize */
+		new Memory_WriteAddress( 0x9380, 0x93ff, MWA_RAM, spriteram_2 ),	          /* the pointers. The actual writes are */
+		new Memory_WriteAddress( 0x9b80, 0x9bff, MWA_RAM, spriteram_3 ),                /* handled by digdug_sharedram_w() */
+		new Memory_WriteAddress( 0xa000, 0xa00f, digdug_vh_latch_w, digdug_vlatches ),
 		new Memory_WriteAddress(MEMPORT_MARKER, 0)
 	};
 	
@@ -209,7 +209,7 @@ public class digdug
 	public static Memory_WriteAddress writemem_cpu3[]={
 		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
 		new Memory_WriteAddress( 0x0000, 0x0fff, MWA_ROM ),
-		new Memory_WriteAddress( 0x6800, 0x681f, pengo_sound_w, &pengo_soundregs ),
+		new Memory_WriteAddress( 0x6800, 0x681f, pengo_sound_w, pengo_soundregs ),
 		new Memory_WriteAddress( 0x6822, 0x6822, digdug_interrupt_enable_3_w ),
 		new Memory_WriteAddress( 0x8000, 0x9fff, digdug_sharedram_w ),
 		new Memory_WriteAddress(MEMPORT_MARKER, 0)

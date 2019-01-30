@@ -116,8 +116,8 @@ public class kopunch
 		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
 		new Memory_WriteAddress( 0x0000, 0x1fff, MWA_ROM ),
 		new Memory_WriteAddress( 0x2000, 0x23ff, MWA_RAM ),
-		new Memory_WriteAddress( 0x6000, 0x63ff, videoram_w, &videoram, &videoram_size ),
-		new Memory_WriteAddress( 0x7000, 0x70ff, MWA_RAM, &bsvideoram, &bsvideoram_size ),
+		new Memory_WriteAddress( 0x6000, 0x63ff, videoram_w, videoram, videoram_size ),
+		new Memory_WriteAddress( 0x7000, 0x70ff, MWA_RAM, bsvideoram, bsvideoram_size ),
 		new Memory_WriteAddress(MEMPORT_MARKER, 0)
 	};
 	

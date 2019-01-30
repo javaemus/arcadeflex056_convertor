@@ -84,9 +84,9 @@ public class raiders5
 		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
 		new Memory_WriteAddress( 0x0000, 0x7fff, MWA_ROM ),
 	
-		new Memory_WriteAddress( 0x8000, 0x87ff, MWA_RAM, &spriteram, &spriteram_size ),
-		new Memory_WriteAddress( 0x8800, 0x8fff, raiders5_fgram_w, &raiders5_fgram, &raiders5_fgram_size ),
-		new Memory_WriteAddress( 0x9000, 0x97ff, raiders5_videoram_w, &videoram, &videoram_size ),
+		new Memory_WriteAddress( 0x8000, 0x87ff, MWA_RAM, spriteram, spriteram_size ),
+		new Memory_WriteAddress( 0x8800, 0x8fff, raiders5_fgram_w, raiders5_fgram, raiders5_fgram_size ),
+		new Memory_WriteAddress( 0x9000, 0x97ff, raiders5_videoram_w, videoram, videoram_size ),
 	
 		new Memory_WriteAddress( 0xa000, 0xa000, raiders5_scroll_x_w ),
 		new Memory_WriteAddress( 0xa001, 0xa001, raiders5_scroll_y_w ),
@@ -97,9 +97,9 @@ public class raiders5
 		new Memory_WriteAddress( 0xc002, 0xc002, AY8910_control_port_1_w ),
 		new Memory_WriteAddress( 0xc003, 0xc003, AY8910_write_port_1_w ),
 	
-		new Memory_WriteAddress( 0xd000, 0xd1ff, raiders5_paletteram_w, &paletteram ),
+		new Memory_WriteAddress( 0xd000, 0xd1ff, raiders5_paletteram_w, paletteram ),
 	
-		new Memory_WriteAddress( 0xe000, 0xe7ff, MWA_RAM, &raiders5_shared_workram ),
+		new Memory_WriteAddress( 0xe000, 0xe7ff, MWA_RAM, raiders5_shared_workram ),
 		new Memory_WriteAddress(MEMPORT_MARKER, 0)
 	};
 	

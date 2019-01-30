@@ -105,11 +105,11 @@ public class yiear
 		new Memory_WriteAddress( 0x4a00, 0x4a00, yiear_VLM5030_control_w ),
 		new Memory_WriteAddress( 0x4b00, 0x4b00, VLM5030_data_w ),
 		new Memory_WriteAddress( 0x4f00, 0x4f00, watchdog_reset_w ),
-		new Memory_WriteAddress( 0x5000, 0x502f, MWA_RAM, &spriteram, &spriteram_size ),
+		new Memory_WriteAddress( 0x5000, 0x502f, MWA_RAM, spriteram, spriteram_size ),
 		new Memory_WriteAddress( 0x5030, 0x53ff, MWA_RAM ),
-		new Memory_WriteAddress( 0x5400, 0x542f, MWA_RAM, &spriteram_2 ),
+		new Memory_WriteAddress( 0x5400, 0x542f, MWA_RAM, spriteram_2 ),
 		new Memory_WriteAddress( 0x5430, 0x57ff, MWA_RAM ),
-		new Memory_WriteAddress( 0x5800, 0x5fff, videoram_w, &videoram, &videoram_size ),
+		new Memory_WriteAddress( 0x5800, 0x5fff, videoram_w, videoram, videoram_size ),
 		new Memory_WriteAddress( 0x8000, 0xffff, MWA_ROM ),
 		new Memory_WriteAddress(MEMPORT_MARKER, 0)
 	};

@@ -87,13 +87,13 @@ public class vulgus
 		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
 		new Memory_WriteAddress( 0x0000, 0x9fff, MWA_ROM ),
 		new Memory_WriteAddress( 0xc800, 0xc800, soundlatch_w ),
-		new Memory_WriteAddress( 0xc802, 0xc803, MWA_RAM, &vulgus_scroll_low ),
+		new Memory_WriteAddress( 0xc802, 0xc803, MWA_RAM, vulgus_scroll_low ),
 		new Memory_WriteAddress( 0xc804, 0xc804, vulgus_c804_w ),
 		new Memory_WriteAddress( 0xc805, 0xc805, vulgus_palette_bank_w ),
-		new Memory_WriteAddress( 0xc902, 0xc903, MWA_RAM, &vulgus_scroll_high ),
-		new Memory_WriteAddress( 0xcc00, 0xcc7f, MWA_RAM, &spriteram, &spriteram_size ),
-		new Memory_WriteAddress( 0xd000, 0xd7ff, vulgus_fgvideoram_w, &vulgus_fgvideoram ),
-		new Memory_WriteAddress( 0xd800, 0xdfff, vulgus_bgvideoram_w, &vulgus_bgvideoram ),
+		new Memory_WriteAddress( 0xc902, 0xc903, MWA_RAM, vulgus_scroll_high ),
+		new Memory_WriteAddress( 0xcc00, 0xcc7f, MWA_RAM, spriteram, spriteram_size ),
+		new Memory_WriteAddress( 0xd000, 0xd7ff, vulgus_fgvideoram_w, vulgus_fgvideoram ),
+		new Memory_WriteAddress( 0xd800, 0xdfff, vulgus_bgvideoram_w, vulgus_bgvideoram ),
 		new Memory_WriteAddress( 0xe000, 0xefff, MWA_RAM ),
 		new Memory_WriteAddress(MEMPORT_MARKER, 0)
 	};

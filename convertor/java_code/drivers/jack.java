@@ -90,12 +90,12 @@ public class jack
 		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
 		new Memory_WriteAddress( 0x0000, 0x3fff, MWA_ROM ),
 		new Memory_WriteAddress( 0x4000, 0x5fff, MWA_RAM ),
-		new Memory_WriteAddress( 0xb000, 0xb07f, MWA_RAM, &spriteram, &spriteram_size ),
+		new Memory_WriteAddress( 0xb000, 0xb07f, MWA_RAM, spriteram, spriteram_size ),
 		new Memory_WriteAddress( 0xb400, 0xb400, jack_sh_command_w ),
 		new Memory_WriteAddress( 0xb506, 0xb507, jack_flipscreen_w ),
-		new Memory_WriteAddress( 0xb600, 0xb61f, jack_paletteram_w, &paletteram ),
-		new Memory_WriteAddress( 0xb800, 0xbbff, videoram_w, &videoram, &videoram_size ),
-		new Memory_WriteAddress( 0xbc00, 0xbfff, colorram_w, &colorram ),
+		new Memory_WriteAddress( 0xb600, 0xb61f, jack_paletteram_w, paletteram ),
+		new Memory_WriteAddress( 0xb800, 0xbbff, videoram_w, videoram, videoram_size ),
+		new Memory_WriteAddress( 0xbc00, 0xbfff, colorram_w, colorram ),
 		new Memory_WriteAddress( 0xc000, 0xffff, MWA_ROM ),
 		new Memory_WriteAddress(MEMPORT_MARKER, 0)
 	};

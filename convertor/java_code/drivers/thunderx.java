@@ -338,7 +338,7 @@ public class thunderx
 	
 		new Memory_WriteAddress( 0x0000, 0x3fff, K052109_051960_w ),		/* video RAM + sprite RAM */
 		new Memory_WriteAddress( 0x4000, 0x57ff, MWA_RAM ),
-		new Memory_WriteAddress( 0x5800, 0x5fff, scontra_bankedram_w, &ram ),			/* palette + work RAM */
+		new Memory_WriteAddress( 0x5800, 0x5fff, scontra_bankedram_w, ram ),			/* palette + work RAM */
 		new Memory_WriteAddress( 0x6000, 0xffff, MWA_ROM ),
 		new Memory_WriteAddress(MEMPORT_MARKER, 0)
 	};
@@ -353,7 +353,7 @@ public class thunderx
 	
 		new Memory_WriteAddress( 0x0000, 0x3fff, K052109_051960_w ),
 		new Memory_WriteAddress( 0x4000, 0x57ff, MWA_RAM ),
-		new Memory_WriteAddress( 0x5800, 0x5fff, thunderx_bankedram_w, &ram ),			/* palette + work RAM + unknown RAM */
+		new Memory_WriteAddress( 0x5800, 0x5fff, thunderx_bankedram_w, ram ),			/* palette + work RAM + unknown RAM */
 		new Memory_WriteAddress( 0x6000, 0xffff, MWA_ROM ),
 		new Memory_WriteAddress(MEMPORT_MARKER, 0)
 	};

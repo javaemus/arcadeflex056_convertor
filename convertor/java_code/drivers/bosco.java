@@ -153,7 +153,7 @@ public class bosco
 	public static Memory_WriteAddress writemem_cpu1[]={
 		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
 		new Memory_WriteAddress( 0x0000, 0x3fff, MWA_ROM ),
-		new Memory_WriteAddress( 0x6800, 0x681f, pengo_sound_w, &pengo_soundregs ),
+		new Memory_WriteAddress( 0x6800, 0x681f, pengo_sound_w, pengo_soundregs ),
 		new Memory_WriteAddress( 0x6820, 0x6820, bosco_interrupt_enable_1_w ),
 		new Memory_WriteAddress( 0x6822, 0x6822, bosco_interrupt_enable_3_w ),
 		new Memory_WriteAddress( 0x6823, 0x6823, bosco_halt_w ),
@@ -161,24 +161,24 @@ public class bosco
 		new Memory_WriteAddress( 0x7000, 0x700f, bosco_customio_data_1_w ),
 		new Memory_WriteAddress( 0x7100, 0x7100, bosco_customio_1_w ),
 	
-		new Memory_WriteAddress( 0x8000, 0x83ff, videoram_w, &videoram, &videoram_size ),
-		new Memory_WriteAddress( 0x8400, 0x87ff, bosco_videoram2_w, &bosco_videoram2 ),
-		new Memory_WriteAddress( 0x8800, 0x8bff, colorram_w, &colorram ),
-		new Memory_WriteAddress( 0x8c00, 0x8fff, bosco_colorram2_w, &bosco_colorram2 ),
+		new Memory_WriteAddress( 0x8000, 0x83ff, videoram_w, videoram, videoram_size ),
+		new Memory_WriteAddress( 0x8400, 0x87ff, bosco_videoram2_w, bosco_videoram2 ),
+		new Memory_WriteAddress( 0x8800, 0x8bff, colorram_w, colorram ),
+		new Memory_WriteAddress( 0x8c00, 0x8fff, bosco_colorram2_w, bosco_colorram2 ),
 	
-		new Memory_WriteAddress( 0x7800, 0x97ff, bosco_sharedram_w, &bosco_sharedram ),
+		new Memory_WriteAddress( 0x7800, 0x97ff, bosco_sharedram_w, bosco_sharedram ),
 	
-		new Memory_WriteAddress( 0x83d4, 0x83df, MWA_RAM, &spriteram, &spriteram_size ),	/* these are here just to initialize */
-		new Memory_WriteAddress( 0x8bd4, 0x8bdf, MWA_RAM, &spriteram_2 ),			/* the pointers. */
-		new Memory_WriteAddress( 0x83f4, 0x83ff, MWA_RAM, &bosco_radarx, &bosco_radarram_size ),	/* ditto */
-		new Memory_WriteAddress( 0x8bf4, 0x8bff, MWA_RAM, &bosco_radary ),
+		new Memory_WriteAddress( 0x83d4, 0x83df, MWA_RAM, spriteram, spriteram_size ),	/* these are here just to initialize */
+		new Memory_WriteAddress( 0x8bd4, 0x8bdf, MWA_RAM, spriteram_2 ),			/* the pointers. */
+		new Memory_WriteAddress( 0x83f4, 0x83ff, MWA_RAM, bosco_radarx, bosco_radarram_size ),	/* ditto */
+		new Memory_WriteAddress( 0x8bf4, 0x8bff, MWA_RAM, bosco_radary ),
 	
 		new Memory_WriteAddress( 0x9810, 0x9810, bosco_scrollx_w ),
 		new Memory_WriteAddress( 0x9820, 0x9820, bosco_scrolly_w ),
 		new Memory_WriteAddress( 0x9830, 0x9830, bosco_starcontrol_w ),
-		new Memory_WriteAddress( 0x9840, 0x9840, MWA_RAM, &bosco_staronoff ),
+		new Memory_WriteAddress( 0x9840, 0x9840, MWA_RAM, bosco_staronoff ),
 		new Memory_WriteAddress( 0x9870, 0x9870, bosco_flipscreen_w ),
-		new Memory_WriteAddress( 0x9804, 0x980f, MWA_RAM, &bosco_radarattr ),
+		new Memory_WriteAddress( 0x9804, 0x980f, MWA_RAM, bosco_radarattr ),
 		new Memory_WriteAddress(MEMPORT_MARKER, 0)
 	};
 	
@@ -198,7 +198,7 @@ public class bosco
 		new Memory_WriteAddress( 0x9810, 0x9810, bosco_scrollx_w ),
 		new Memory_WriteAddress( 0x9820, 0x9820, bosco_scrolly_w ),
 		new Memory_WriteAddress( 0x9830, 0x9830, bosco_starcontrol_w ),
-		new Memory_WriteAddress( 0x9874, 0x9875, MWA_RAM, &bosco_starblink ),
+		new Memory_WriteAddress( 0x9874, 0x9875, MWA_RAM, bosco_starblink ),
 		new Memory_WriteAddress(MEMPORT_MARKER, 0)
 	};
 	

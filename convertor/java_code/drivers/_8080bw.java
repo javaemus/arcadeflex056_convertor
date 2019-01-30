@@ -187,7 +187,7 @@ public class _8080bw
 		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
 		new Memory_WriteAddress( 0x0000, 0x1fff, MWA_ROM ),
 		new Memory_WriteAddress( 0x2000, 0x23ff, MWA_RAM ),
-		new Memory_WriteAddress( 0x2400, 0x3fff, invaders_videoram_w, &videoram, &videoram_size ),
+		new Memory_WriteAddress( 0x2400, 0x3fff, invaders_videoram_w, videoram, videoram_size ),
 		new Memory_WriteAddress( 0x4000, 0x63ff, MWA_ROM ),
 		new Memory_WriteAddress(MEMPORT_MARKER, 0)
 	};
@@ -1215,9 +1215,9 @@ public class _8080bw
 		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
 		new Memory_WriteAddress( 0x0000, 0x1fff, MWA_ROM ),
 		new Memory_WriteAddress( 0x2000, 0x23ff, MWA_RAM ),
-		new Memory_WriteAddress( 0x2400, 0x3fff, invaders_videoram_w, &videoram, &videoram_size ),
+		new Memory_WriteAddress( 0x2400, 0x3fff, invaders_videoram_w, videoram, videoram_size ),
 		new Memory_WriteAddress( 0x4000, 0x5fff, MWA_ROM ),
-		new Memory_WriteAddress( 0xa400, 0xbfff, schaser_colorram_w, &colorram ),
+		new Memory_WriteAddress( 0xa400, 0xbfff, schaser_colorram_w, colorram ),
 		new Memory_WriteAddress( 0xe400, 0xffff, MWA_RAM ),
 		new Memory_WriteAddress(MEMPORT_MARKER, 0)
 	};
@@ -1320,7 +1320,7 @@ public class _8080bw
 	public static Memory_WriteAddress sheriff_writemem[]={
 		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
 		new Memory_WriteAddress( 0x0000, 0x27ff, MWA_ROM ),
-		new Memory_WriteAddress( 0x4200, 0x5dff, invaders_videoram_w, &videoram, &videoram_size ),
+		new Memory_WriteAddress( 0x4200, 0x5dff, invaders_videoram_w, videoram, videoram_size ),
 		new Memory_WriteAddress( 0x5e00, 0x7fff, MWA_RAM ),
 		new Memory_WriteAddress(MEMPORT_MARKER, 0)
 	};
@@ -1900,9 +1900,9 @@ public class _8080bw
 		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
 		new Memory_WriteAddress( 0x0000, 0x1fff, MWA_ROM ),
 		new Memory_WriteAddress( 0x2000, 0x23ff, MWA_RAM ),
-		new Memory_WriteAddress( 0x2400, 0x3fff, invaders_videoram_w, &videoram, &videoram_size ),
+		new Memory_WriteAddress( 0x2400, 0x3fff, invaders_videoram_w, videoram, videoram_size ),
 		new Memory_WriteAddress( 0x4000, 0x5fff, MWA_ROM ),
-		new Memory_WriteAddress( 0xc400, 0xdfff, schaser_colorram_w, &colorram ),
+		new Memory_WriteAddress( 0xc400, 0xdfff, schaser_colorram_w, colorram ),
 		new Memory_WriteAddress(MEMPORT_MARKER, 0)
 	};
 	
@@ -2351,9 +2351,9 @@ public class _8080bw
 	public static Memory_WriteAddress helifire_writemem[]={
 		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
 		new Memory_WriteAddress( 0x0000, 0x27ff, MWA_ROM ),
-		new Memory_WriteAddress( 0x4200, 0x5dff, invaders_videoram_w, &videoram, &videoram_size ),
+		new Memory_WriteAddress( 0x4200, 0x5dff, invaders_videoram_w, videoram, videoram_size ),
 		new Memory_WriteAddress( 0x5e00, 0x7fff, MWA_RAM ),
-		new Memory_WriteAddress( 0xc200, 0xddff, helifire_colorram_w, &colorram ),
+		new Memory_WriteAddress( 0xc200, 0xddff, helifire_colorram_w, colorram ),
 		new Memory_WriteAddress(MEMPORT_MARKER, 0)
 	};
 	

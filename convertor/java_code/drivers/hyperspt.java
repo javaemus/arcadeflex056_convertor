@@ -165,18 +165,18 @@ public class hyperspt
 	
 	public static Memory_WriteAddress writemem[]={
 		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
-		new Memory_WriteAddress( 0x1000, 0x10bf, MWA_RAM, &spriteram, &spriteram_size ),
-		new Memory_WriteAddress( 0x10C0, 0x10ff, MWA_RAM, &hyperspt_scroll ),	/* Scroll amount */
+		new Memory_WriteAddress( 0x1000, 0x10bf, MWA_RAM, spriteram, spriteram_size ),
+		new Memory_WriteAddress( 0x10C0, 0x10ff, MWA_RAM, hyperspt_scroll ),	/* Scroll amount */
 		new Memory_WriteAddress( 0x1400, 0x1400, watchdog_reset_w ),
 		new Memory_WriteAddress( 0x1480, 0x1480, hyperspt_flipscreen_w ),
 		new Memory_WriteAddress( 0x1481, 0x1481, konami_sh_irqtrigger_w ),  /* cause interrupt on audio CPU */
 		new Memory_WriteAddress( 0x1483, 0x1484, hyperspt_coin_counter_w ),
 		new Memory_WriteAddress( 0x1487, 0x1487, interrupt_enable_w ),  /* Interrupt enable */
 		new Memory_WriteAddress( 0x1500, 0x1500, soundlatch_w ),
-		new Memory_WriteAddress( 0x2000, 0x27ff, videoram_w, &videoram, &videoram_size ),
-		new Memory_WriteAddress( 0x2800, 0x2fff, colorram_w, &colorram ),
+		new Memory_WriteAddress( 0x2000, 0x27ff, videoram_w, videoram, videoram_size ),
+		new Memory_WriteAddress( 0x2800, 0x2fff, colorram_w, colorram ),
 		new Memory_WriteAddress( 0x3000, 0x37ff, MWA_RAM ),
-		new Memory_WriteAddress( 0x3800, 0x3fff, MWA_RAM, &nvram, &nvram_size ),
+		new Memory_WriteAddress( 0x3800, 0x3fff, MWA_RAM, nvram, nvram_size ),
 		new Memory_WriteAddress( 0x4000, 0xffff, MWA_ROM ),
 		new Memory_WriteAddress(MEMPORT_MARKER, 0)
 	};

@@ -73,9 +73,9 @@ public class timelimt
 		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
 		new Memory_WriteAddress( 0x0000, 0x7fff, MWA_ROM ),		/* rom */
 		new Memory_WriteAddress( 0x8000, 0x87ff, MWA_RAM ),		/* ram */
-		new Memory_WriteAddress( 0x8800, 0x8bff, timelimt_videoram_w, &videoram, &videoram_size ),	/* video ram */
-		new Memory_WriteAddress( 0x9000, 0x97ff, timelimt_bg_videoram_w, &timelimt_bg_videoram, &timelimt_bg_videoram_size ),/* background ram */
-		new Memory_WriteAddress( 0x9800, 0x98ff, MWA_RAM, &spriteram, &spriteram_size ),	/* sprite ram */
+		new Memory_WriteAddress( 0x8800, 0x8bff, timelimt_videoram_w, videoram, videoram_size ),	/* video ram */
+		new Memory_WriteAddress( 0x9000, 0x97ff, timelimt_bg_videoram_w, timelimt_bg_videoram, timelimt_bg_videoram_size ),/* background ram */
+		new Memory_WriteAddress( 0x9800, 0x98ff, MWA_RAM, spriteram, spriteram_size ),	/* sprite ram */
 		new Memory_WriteAddress( 0xb000, 0xb000, nmi_enable_w ),	/* nmi enable */
 		new Memory_WriteAddress( 0xb003, 0xb003, sound_reset_w ),	/* sound reset ? */
 		new Memory_WriteAddress( 0xb800, 0xb800, soundlatch_w ), 	/* sound write */

@@ -271,10 +271,10 @@ public class grchamp
 		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
 	 	new Memory_WriteAddress( 0x0000, 0x3fff, MWA_ROM ),
 		new Memory_WriteAddress( 0x4000, 0x43ff, MWA_RAM ),
-		new Memory_WriteAddress( 0x4800, 0x4bff, MWA_RAM, &grchamp_radar ),
-		new Memory_WriteAddress( 0x5000, 0x53ff, MWA_RAM, &videoram ),
-		new Memory_WriteAddress( 0x5800, 0x583f, MWA_RAM, &colorram ),
-		new Memory_WriteAddress( 0x5840, 0x58ff, MWA_RAM, &spriteram ),
+		new Memory_WriteAddress( 0x4800, 0x4bff, MWA_RAM, grchamp_radar ),
+		new Memory_WriteAddress( 0x5000, 0x53ff, MWA_RAM, videoram ),
+		new Memory_WriteAddress( 0x5800, 0x583f, MWA_RAM, colorram ),
+		new Memory_WriteAddress( 0x5840, 0x58ff, MWA_RAM, spriteram ),
 		new Memory_WriteAddress(MEMPORT_MARKER, 0)
 	};
 	
@@ -330,7 +330,7 @@ public class grchamp
 	public static Memory_WriteAddress writemem2[]={
 		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
 	 	new Memory_WriteAddress( 0x0000, 0x1fff, MWA_ROM ),
-		new Memory_WriteAddress( 0x2000, 0x37ff, grchamp_videoram_w, &grchamp_videoram ),
+		new Memory_WriteAddress( 0x2000, 0x37ff, grchamp_videoram_w, grchamp_videoram ),
 		new Memory_WriteAddress( 0x3800, 0x3fff, MWA_RAM ),
 		new Memory_WriteAddress( 0x4000, 0x43ff, MWA_RAM ), /* working ram */
 		new Memory_WriteAddress( 0x5000, 0x6fff, MWA_ROM ),

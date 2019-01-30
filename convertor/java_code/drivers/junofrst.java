@@ -201,11 +201,11 @@ public class junofrst
 	
 	public static Memory_WriteAddress writemem[]={
 		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
-		new Memory_WriteAddress( 0x0000, 0x7fff, tutankhm_videoram_w, &videoram, &videoram_size ),
-		new Memory_WriteAddress( 0x8000, 0x800f, paletteram_BBGGGRRR_w, &paletteram ),
+		new Memory_WriteAddress( 0x0000, 0x7fff, tutankhm_videoram_w, videoram, videoram_size ),
+		new Memory_WriteAddress( 0x8000, 0x800f, paletteram_BBGGGRRR_w, paletteram ),
 		new Memory_WriteAddress( 0x8030, 0x8030, interrupt_enable_w ),
 		new Memory_WriteAddress( 0x8031, 0x8032, junofrst_coin_counter_w ),
-		new Memory_WriteAddress( 0x8033, 0x8033, MWA_RAM, &tutankhm_scrollx ),              /* video x pan hardware reg - Not USED in Juno*/
+		new Memory_WriteAddress( 0x8033, 0x8033, MWA_RAM, tutankhm_scrollx ),              /* video x pan hardware reg - Not USED in Juno*/
 		new Memory_WriteAddress( 0x8034, 0x8035, flip_screen_w ),
 		new Memory_WriteAddress( 0x8040, 0x8040, junofrst_sh_irqtrigger_w ),
 		new Memory_WriteAddress( 0x8050, 0x8050, soundlatch_w ),

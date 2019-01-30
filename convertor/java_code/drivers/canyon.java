@@ -99,8 +99,8 @@ public class canyon
 		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
 		new Memory_WriteAddress( 0x0000, 0x01ff, MWA_RAM ), /* WRAM */
 	//	new Memory_WriteAddress( 0x0680, 0x06ff, canyon_led_w ),
-		new Memory_WriteAddress( 0x0bd0, 0x0bdf, MWA_RAM, &spriteram, &spriteram_size ),
-		new Memory_WriteAddress( 0x0800, 0x0bff, videoram_w, &videoram, &videoram_size ), /* DISPLAY */
+		new Memory_WriteAddress( 0x0bd0, 0x0bdf, MWA_RAM, spriteram, spriteram_size ),
+		new Memory_WriteAddress( 0x0800, 0x0bff, videoram_w, videoram, videoram_size ), /* DISPLAY */
 		new Memory_WriteAddress( 0x2000, 0x27ff, MWA_NOP ), /* PROM1 */
 		new Memory_WriteAddress( 0x2800, 0x2fff, MWA_NOP ), /* PROM2 */
 		new Memory_WriteAddress( 0x3000, 0x37ff, MWA_NOP ), /* PROM3 */

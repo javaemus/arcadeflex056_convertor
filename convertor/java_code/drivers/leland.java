@@ -1106,7 +1106,7 @@ public class leland
 		new Memory_WriteAddress( 0x0000, 0x9fff, MWA_ROM ),
 		new Memory_WriteAddress( 0xa000, 0xdfff, battery_ram_w ),
 		new Memory_WriteAddress( 0xe000, 0xefff, MWA_RAM ),
-		new Memory_WriteAddress( 0xf000, 0xf3ff, gated_paletteram_w, &paletteram ),
+		new Memory_WriteAddress( 0xf000, 0xf3ff, gated_paletteram_w, paletteram ),
 		new Memory_WriteAddress( 0xf800, 0xf801, leland_master_video_addr_w ),
 		new Memory_WriteAddress(MEMPORT_MARKER, 0)
 	};

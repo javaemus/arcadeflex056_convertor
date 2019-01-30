@@ -159,7 +159,7 @@ public class bottom9
 		new Memory_WriteAddress( 0x1fb0, 0x1fb0, soundlatch_w ),
 		new Memory_WriteAddress( 0x1fc0, 0x1fc0, bottom9_sh_irqtrigger_w ),
 		new Memory_WriteAddress( 0x1ff0, 0x1fff, K051316_ctrl_0_w ),
-		new Memory_WriteAddress( 0x2000, 0x27ff, bottom9_bankedram2_w, &paletteram ),
+		new Memory_WriteAddress( 0x2000, 0x27ff, bottom9_bankedram2_w, paletteram ),
 		new Memory_WriteAddress( 0x0000, 0x3fff, K052109_051960_w ),
 		new Memory_WriteAddress( 0x4000, 0x5fff, MWA_RAM ),
 		new Memory_WriteAddress( 0x6000, 0x7fff, MWA_ROM ),

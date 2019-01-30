@@ -283,12 +283,12 @@ public class wardner
 	public static Memory_WriteAddress writemem[]={
 		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
 		new Memory_WriteAddress( 0x0000, 0x6fff, MWA_ROM ),
-		new Memory_WriteAddress( 0x7000, 0x7fff, wardner_mainram_w, &wardner_mainram ),
-		new Memory_WriteAddress( 0x8000, 0x8fff, wardner_sprite_w, (data8_t **)&spriteram16, &spriteram_size ),
+		new Memory_WriteAddress( 0x7000, 0x7fff, wardner_mainram_w, wardner_mainram ),
+		new Memory_WriteAddress( 0x8000, 0x8fff, wardner_sprite_w, (data8_t **)spriteram16, spriteram_size ),
 		new Memory_WriteAddress( 0x9000, 0x9fff, MWA_ROM ),
-		new Memory_WriteAddress( 0xa000, 0xadff, paletteram_xBBBBBGGGGGRRRRR_w, &paletteram ),
-		new Memory_WriteAddress( 0xae00, 0xafff, wardner_spare_pal_ram_w, &wardner_spare_pal_ram ),
-		new Memory_WriteAddress( 0xc000, 0xc7ff, wardner_sharedram_w, &wardner_sharedram ),
+		new Memory_WriteAddress( 0xa000, 0xadff, paletteram_xBBBBBGGGGGRRRRR_w, paletteram ),
+		new Memory_WriteAddress( 0xae00, 0xafff, wardner_spare_pal_ram_w, wardner_spare_pal_ram ),
+		new Memory_WriteAddress( 0xc000, 0xc7ff, wardner_sharedram_w, wardner_sharedram ),
 		new Memory_WriteAddress( 0xb000, 0xbfff, MWA_ROM ),
 		new Memory_WriteAddress( 0xc800, 0xffff, MWA_ROM ),
 		new Memory_WriteAddress(MEMPORT_MARKER, 0)

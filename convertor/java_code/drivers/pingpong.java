@@ -58,10 +58,10 @@ public class pingpong
 	public static Memory_WriteAddress writemem[]={
 		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
 		new Memory_WriteAddress( 0x0000, 0x7fff, MWA_ROM ),
-		new Memory_WriteAddress( 0x8000, 0x83ff, colorram_w, &colorram ),
-		new Memory_WriteAddress( 0x8400, 0x87ff, videoram_w, &videoram, &videoram_size ),
+		new Memory_WriteAddress( 0x8000, 0x83ff, colorram_w, colorram ),
+		new Memory_WriteAddress( 0x8400, 0x87ff, videoram_w, videoram, videoram_size ),
 		new Memory_WriteAddress( 0x9000, 0x9002, MWA_RAM ),
-		new Memory_WriteAddress( 0x9003, 0x9052, MWA_RAM, &spriteram, &spriteram_size ),
+		new Memory_WriteAddress( 0x9003, 0x9052, MWA_RAM, spriteram, spriteram_size ),
 		new Memory_WriteAddress( 0x9053, 0x97ff, MWA_RAM ),
 		new Memory_WriteAddress( 0xa000, 0xa000, coin_w ),	/* coin counters + irq enables */
 		new Memory_WriteAddress( 0xa200, 0xa200, MWA_NOP ),		/* SN76496 data latch */

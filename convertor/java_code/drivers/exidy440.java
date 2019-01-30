@@ -613,12 +613,12 @@ public class exidy440
 	
 	public static Memory_WriteAddress writemem_cpu1[]={
 		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
-		new Memory_WriteAddress( 0x0000, 0x1fff, MWA_RAM, &exidy440_imageram ),
-		new Memory_WriteAddress( 0x2000, 0x209f, MWA_RAM, &spriteram ),
+		new Memory_WriteAddress( 0x0000, 0x1fff, MWA_RAM, exidy440_imageram ),
+		new Memory_WriteAddress( 0x2000, 0x209f, MWA_RAM, spriteram ),
 		new Memory_WriteAddress( 0x20a0, 0x29ff, MWA_RAM ),
 		new Memory_WriteAddress( 0x2a00, 0x2aff, exidy440_videoram_w ),
 		new Memory_WriteAddress( 0x2b01, 0x2b01, exidy440_interrupt_clear_w ),
-		new Memory_WriteAddress( 0x2b02, 0x2b02, MWA_RAM, &exidy440_scanline ),
+		new Memory_WriteAddress( 0x2b02, 0x2b02, MWA_RAM, exidy440_scanline ),
 		new Memory_WriteAddress( 0x2b03, 0x2b03, exidy440_control_w ),
 		new Memory_WriteAddress( 0x2c00, 0x2dff, exidy440_paletteram_w ),
 		new Memory_WriteAddress( 0x2e00, 0x2eff, io1_w ),
@@ -650,9 +650,9 @@ public class exidy440
 	
 	public static Memory_WriteAddress writemem_cpu2[]={
 		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
-		new Memory_WriteAddress( 0x8000, 0x8016, exidy440_m6844_w, &exidy440_m6844_data ),
-		new Memory_WriteAddress( 0x8400, 0x8407, exidy440_sound_volume_w, &exidy440_sound_volume ),
-		new Memory_WriteAddress( 0x9400, 0x9403, MWA_RAM, &exidy440_sound_banks ),
+		new Memory_WriteAddress( 0x8000, 0x8016, exidy440_m6844_w, exidy440_m6844_data ),
+		new Memory_WriteAddress( 0x8400, 0x8407, exidy440_sound_volume_w, exidy440_sound_volume ),
+		new Memory_WriteAddress( 0x9400, 0x9403, MWA_RAM, exidy440_sound_banks ),
 		new Memory_WriteAddress( 0x9800, 0x9800, exidy440_sound_interrupt_clear_w ),
 		new Memory_WriteAddress( 0xa000, 0xbfff, MWA_RAM ),
 		new Memory_WriteAddress( 0xe000, 0xffff, MWA_ROM ),

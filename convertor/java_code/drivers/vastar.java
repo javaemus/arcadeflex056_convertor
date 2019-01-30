@@ -137,22 +137,22 @@ public class vastar
 	public static Memory_WriteAddress writemem[]={
 		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
 		new Memory_WriteAddress( 0x0000, 0x7fff, MWA_ROM ),
-		new Memory_WriteAddress( 0x8000, 0x8fff, vastar_bg2videoram_w, &vastar_bg2videoram ),
-		new Memory_WriteAddress( 0x9000, 0x9fff, vastar_bg1videoram_w, &vastar_bg1videoram ),
+		new Memory_WriteAddress( 0x8000, 0x8fff, vastar_bg2videoram_w, vastar_bg2videoram ),
+		new Memory_WriteAddress( 0x9000, 0x9fff, vastar_bg1videoram_w, vastar_bg1videoram ),
 		new Memory_WriteAddress( 0xa000, 0xafff, vastar_bg2videoram_w ),				/* mirror address */
 		new Memory_WriteAddress( 0xb000, 0xbfff, vastar_bg1videoram_w ),  				/* mirror address */
-		new Memory_WriteAddress( 0xc000, 0xc000, MWA_RAM, &vastar_sprite_priority ),	/* sprite/BG priority */
-		new Memory_WriteAddress( 0xc400, 0xcfff, vastar_fgvideoram_w, &vastar_fgvideoram ),
+		new Memory_WriteAddress( 0xc000, 0xc000, MWA_RAM, vastar_sprite_priority ),	/* sprite/BG priority */
+		new Memory_WriteAddress( 0xc400, 0xcfff, vastar_fgvideoram_w, vastar_fgvideoram ),
 		new Memory_WriteAddress( 0xe000, 0xe000, watchdog_reset_w ),
-		new Memory_WriteAddress( 0xf000, 0xf0ff, vastar_sharedram_w, &vastar_sharedram ),
+		new Memory_WriteAddress( 0xf000, 0xf0ff, vastar_sharedram_w, vastar_sharedram ),
 		new Memory_WriteAddress( 0xf100, 0xf7ff, MWA_RAM ),
 	
 		/* in hidden portions of video RAM: */
-		new Memory_WriteAddress( 0xc400, 0xc43f, MWA_RAM, &spriteram, &spriteram_size ),	/* actually c410-c41f and c430-c43f */
-		new Memory_WriteAddress( 0xc7c0, 0xc7df, MWA_RAM, &vastar_bg1_scroll ),
-		new Memory_WriteAddress( 0xc7e0, 0xc7ff, MWA_RAM, &vastar_bg2_scroll ),
-		new Memory_WriteAddress( 0xc800, 0xc83f, MWA_RAM, &spriteram_2 ),	/* actually c810-c81f and c830-c83f */
-		new Memory_WriteAddress( 0xcc00, 0xcc3f, MWA_RAM, &spriteram_3 ),	/* actually cc10-cc1f and cc30-cc3f */
+		new Memory_WriteAddress( 0xc400, 0xc43f, MWA_RAM, spriteram, spriteram_size ),	/* actually c410-c41f and c430-c43f */
+		new Memory_WriteAddress( 0xc7c0, 0xc7df, MWA_RAM, vastar_bg1_scroll ),
+		new Memory_WriteAddress( 0xc7e0, 0xc7ff, MWA_RAM, vastar_bg2_scroll ),
+		new Memory_WriteAddress( 0xc800, 0xc83f, MWA_RAM, spriteram_2 ),	/* actually c810-c81f and c830-c83f */
+		new Memory_WriteAddress( 0xcc00, 0xcc3f, MWA_RAM, spriteram_3 ),	/* actually cc10-cc1f and cc30-cc3f */
 		new Memory_WriteAddress(MEMPORT_MARKER, 0)
 	};
 	

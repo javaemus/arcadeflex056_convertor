@@ -101,14 +101,14 @@ public class actfancr
 		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
 		new Memory_WriteAddress( 0x000000, 0x02ffff, MWA_ROM ),
 		new Memory_WriteAddress( 0x060000, 0x06001f, actfancr_pf1_control_w ),
-		new Memory_WriteAddress( 0x062000, 0x063fff, actfancr_pf1_data_w, &actfancr_pf1_data ),
+		new Memory_WriteAddress( 0x062000, 0x063fff, actfancr_pf1_data_w, actfancr_pf1_data ),
 		new Memory_WriteAddress( 0x070000, 0x07001f, actfancr_pf2_control_w ),
-		new Memory_WriteAddress( 0x072000, 0x0727ff, actfancr_pf2_data_w, &actfancr_pf2_data ),
-		new Memory_WriteAddress( 0x100000, 0x1007ff, MWA_RAM, &spriteram, &spriteram_size ),
+		new Memory_WriteAddress( 0x072000, 0x0727ff, actfancr_pf2_data_w, actfancr_pf2_data ),
+		new Memory_WriteAddress( 0x100000, 0x1007ff, MWA_RAM, spriteram, spriteram_size ),
 		new Memory_WriteAddress( 0x110000, 0x110001, buffer_spriteram_w ),
-		new Memory_WriteAddress( 0x120000, 0x1205ff, paletteram_xxxxBBBBGGGGRRRR_w, &paletteram ),
+		new Memory_WriteAddress( 0x120000, 0x1205ff, paletteram_xxxxBBBBGGGGRRRR_w, paletteram ),
 		new Memory_WriteAddress( 0x150000, 0x150001, actfancr_sound_w ),
-		new Memory_WriteAddress( 0x1f0000, 0x1f3fff, MWA_RAM, &actfancr_ram ), /* Main ram */
+		new Memory_WriteAddress( 0x1f0000, 0x1f3fff, MWA_RAM, actfancr_ram ), /* Main ram */
 		new Memory_WriteAddress(MEMPORT_MARKER, 0)
 	};
 	
@@ -129,16 +129,16 @@ public class actfancr
 		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
 		new Memory_WriteAddress( 0x000000, 0x03ffff, MWA_ROM ),
 		new Memory_WriteAddress( 0x040000, 0x04001f, actfancr_pf2_control_w ),
-		new Memory_WriteAddress( 0x044000, 0x045fff, actfancr_pf2_data_w, &actfancr_pf2_data ),
+		new Memory_WriteAddress( 0x044000, 0x045fff, actfancr_pf2_data_w, actfancr_pf2_data ),
 		new Memory_WriteAddress( 0x046400, 0x0467ff, MWA_NOP ), /* Pf2 rowscroll - is it used? */
 		new Memory_WriteAddress( 0x060000, 0x06001f, actfancr_pf1_control_w ),
-		new Memory_WriteAddress( 0x064000, 0x0647ff, actfancr_pf1_data_w, &actfancr_pf1_data ),
-		new Memory_WriteAddress( 0x066400, 0x0667ff, MWA_RAM, &actfancr_pf1_rowscroll_data ),
+		new Memory_WriteAddress( 0x064000, 0x0647ff, actfancr_pf1_data_w, actfancr_pf1_data ),
+		new Memory_WriteAddress( 0x066400, 0x0667ff, MWA_RAM, actfancr_pf1_rowscroll_data ),
 		new Memory_WriteAddress( 0x100000, 0x100001, actfancr_sound_w ),
 		new Memory_WriteAddress( 0x110000, 0x110001, buffer_spriteram_w ),
-		new Memory_WriteAddress( 0x120000, 0x1207ff, MWA_RAM, &spriteram, &spriteram_size ),
-		new Memory_WriteAddress( 0x130000, 0x1305ff, paletteram_xxxxBBBBGGGGRRRR_w, &paletteram ),
-		new Memory_WriteAddress( 0x1f0000, 0x1f3fff, MWA_RAM, &actfancr_ram ), /* Main ram */
+		new Memory_WriteAddress( 0x120000, 0x1207ff, MWA_RAM, spriteram, spriteram_size ),
+		new Memory_WriteAddress( 0x130000, 0x1305ff, paletteram_xxxxBBBBGGGGRRRR_w, paletteram ),
+		new Memory_WriteAddress( 0x1f0000, 0x1f3fff, MWA_RAM, actfancr_ram ), /* Main ram */
 		new Memory_WriteAddress( 0x1ff000, 0x1ff001, triothep_control_select_w ),
 		new Memory_WriteAddress( 0x1ff402, 0x1ff403, H6280_irq_status_w ),
 		new Memory_WriteAddress(MEMPORT_MARKER, 0)

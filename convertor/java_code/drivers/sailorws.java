@@ -649,7 +649,7 @@ public class sailorws
 		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
 		new Memory_WriteAddress( 0x0000, 0xefff, MWA_ROM ),
 		new Memory_WriteAddress( 0xf000, 0xf1ff, sailorws_palette_w ),
-		new Memory_WriteAddress( 0xf800, 0xffff, MWA_RAM, &sailorws_nvram, &sailorws_nvram_size ),
+		new Memory_WriteAddress( 0xf800, 0xffff, MWA_RAM, sailorws_nvram, sailorws_nvram_size ),
 		new Memory_WriteAddress(MEMPORT_MARKER, 0)
 	};
 	
@@ -681,7 +681,7 @@ public class sailorws
 		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
 		new Memory_WriteAddress( 0x0000, 0xdfff, MWA_ROM ),
 		new Memory_WriteAddress( 0xe000, 0xe1ff, sailorws_palette_w ),
-		new Memory_WriteAddress( 0xe800, 0xefff, MWA_RAM, &sailorws_nvram, &sailorws_nvram_size ),
+		new Memory_WriteAddress( 0xe800, 0xefff, MWA_RAM, sailorws_nvram, sailorws_nvram_size ),
 		new Memory_WriteAddress(MEMPORT_MARKER, 0)
 	};
 	

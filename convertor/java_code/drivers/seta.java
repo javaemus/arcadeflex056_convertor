@@ -1158,7 +1158,7 @@ public class seta
 		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
 		new Memory_WriteAddress( 0x0000, 0x01ff, MWA_RAM				),	// RAM
 		new Memory_WriteAddress( 0x1000, 0x1000, sub_bankswitch_w		),	// ROM Bank + Coin Lockout
-		new Memory_WriteAddress( 0x5000, 0x57ff, MWA_RAM, &sharedram	),	// Shared RAM
+		new Memory_WriteAddress( 0x5000, 0x57ff, MWA_RAM, sharedram	),	// Shared RAM
 		new Memory_WriteAddress( 0x7000, 0xffff, MWA_ROM				),	// ROM
 		new Memory_WriteAddress(MEMPORT_MARKER, 0)
 	};
@@ -1190,7 +1190,7 @@ public class seta
 		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
 		new Memory_WriteAddress( 0x0000, 0x01ff, MWA_RAM				),	// RAM
 		new Memory_WriteAddress( 0x1000, 0x1000, sub_bankswitch_w		),	// ROM Bank + Coin Lockout
-		new Memory_WriteAddress( 0x5000, 0x57ff, MWA_RAM, &sharedram	),	// Shared RAM
+		new Memory_WriteAddress( 0x5000, 0x57ff, MWA_RAM, sharedram	),	// Shared RAM
 		new Memory_WriteAddress( 0x7000, 0x7fff, MWA_ROM				),	// ROM
 		new Memory_WriteAddress( 0x8000, 0xbfff, MWA_ROM				),	// ROM
 		new Memory_WriteAddress( 0xc000, 0xffff, MWA_ROM				),	// ROM
@@ -1221,7 +1221,7 @@ public class seta
 		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
 		new Memory_WriteAddress( 0x0000, 0x01ff, MWA_RAM				),	// RAM
 		new Memory_WriteAddress( 0x1000, 0x1000, sub_bankswitch_w		),	// ROM Bank + Coin Lockout
-		new Memory_WriteAddress( 0x5000, 0x57ff, MWA_RAM, &sharedram	),	// Shared RAM
+		new Memory_WriteAddress( 0x5000, 0x57ff, MWA_RAM, sharedram	),	// Shared RAM
 		new Memory_WriteAddress( 0x7000, 0x7fff, MWA_ROM				),	// ROM
 		new Memory_WriteAddress( 0x8000, 0xbfff, MWA_ROM				),	// ROM
 		new Memory_WriteAddress( 0xc000, 0xffff, MWA_ROM				),	// ROM
@@ -1261,7 +1261,7 @@ public class seta
 		new Memory_WriteAddress( 0x2001, 0x2001, YM2203_write_port_0_w		),
 		new Memory_WriteAddress( 0x3000, 0x3000, YM3812_control_port_0_w	),
 		new Memory_WriteAddress( 0x3001, 0x3001, YM3812_write_port_0_w		),
-		new Memory_WriteAddress( 0x5000, 0x57ff, MWA_RAM, &sharedram		),	// Shared RAM
+		new Memory_WriteAddress( 0x5000, 0x57ff, MWA_RAM, sharedram		),	// Shared RAM
 		new Memory_WriteAddress( 0x6000, 0xffff, MWA_ROM					),	// ROM
 		new Memory_WriteAddress(MEMPORT_MARKER, 0)
 	};

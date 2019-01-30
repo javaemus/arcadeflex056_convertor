@@ -60,7 +60,7 @@ public class dominos
 	public static Memory_WriteAddress writemem[]={
 		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
 		new Memory_WriteAddress( 0x0000, 0x03ff, MWA_RAM ),
-		new Memory_WriteAddress( 0x0400, 0x07ff, videoram_w, &videoram, &videoram_size ), /* DISPLAY */
+		new Memory_WriteAddress( 0x0400, 0x07ff, videoram_w, videoram, videoram_size ), /* DISPLAY */
 		new Memory_WriteAddress( 0x0c00, 0x0c0f, dominos_attract_w ), /* ATTRACT */
 		new Memory_WriteAddress( 0x0c10, 0x0c1f, dominos_tumble_w ), /* TUMBLE */
 		new Memory_WriteAddress( 0x0c30, 0x0c3f, dominos_lamp2_w ), /* LAMP2 */

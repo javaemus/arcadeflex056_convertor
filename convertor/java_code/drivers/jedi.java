@@ -403,7 +403,7 @@ public class jedi
 	public static Memory_WriteAddress writemem[]={
 		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
 		new Memory_WriteAddress( 0x0000, 0x07ff, MWA_RAM ),
-		new Memory_WriteAddress( 0x0800, 0x08ff, nvram_data_w, &nvram, &nvram_size ),
+		new Memory_WriteAddress( 0x0800, 0x08ff, nvram_data_w, nvram, nvram_size ),
 		new Memory_WriteAddress( 0x1c00, 0x1c01, nvram_enable_w ),
 		new Memory_WriteAddress( 0x1c80, 0x1c82, a2d_select_w ),
 		new Memory_WriteAddress( 0x1d00, 0x1d00, MWA_NOP ),	/* NVRAM store */
@@ -416,13 +416,13 @@ public class jedi
 		new Memory_WriteAddress( 0x1e87, 0x1e87, jedi_video_off_w ),
 		new Memory_WriteAddress( 0x1f00, 0x1f00, sound_latch_w ),
 		new Memory_WriteAddress( 0x1f80, 0x1f80, rom_banksel_w ),
-		new Memory_WriteAddress( 0x2000, 0x27ff, jedi_backgroundram_w, &jedi_backgroundram, &jedi_backgroundram_size ),
-		new Memory_WriteAddress( 0x2800, 0x2fff, jedi_paletteram_w, &paletteram ),
-		new Memory_WriteAddress( 0x3000, 0x37bf, videoram_w, &videoram, &videoram_size ),
-		new Memory_WriteAddress( 0x37c0, 0x3bff, MWA_RAM, &spriteram, &spriteram_size ),
+		new Memory_WriteAddress( 0x2000, 0x27ff, jedi_backgroundram_w, jedi_backgroundram, jedi_backgroundram_size ),
+		new Memory_WriteAddress( 0x2800, 0x2fff, jedi_paletteram_w, paletteram ),
+		new Memory_WriteAddress( 0x3000, 0x37bf, videoram_w, videoram, videoram_size ),
+		new Memory_WriteAddress( 0x37c0, 0x3bff, MWA_RAM, spriteram, spriteram_size ),
 		new Memory_WriteAddress( 0x3c00, 0x3c01, jedi_vscroll_w ),
 		new Memory_WriteAddress( 0x3d00, 0x3d01, jedi_hscroll_w ),
-		new Memory_WriteAddress( 0x3e00, 0x3fff, jedi_PIXIRAM_w, &jedi_PIXIRAM ),
+		new Memory_WriteAddress( 0x3e00, 0x3fff, jedi_PIXIRAM_w, jedi_PIXIRAM ),
 		new Memory_WriteAddress( 0x4000, 0xffff, MWA_ROM ),
 		new Memory_WriteAddress(MEMPORT_MARKER, 0)
 	};

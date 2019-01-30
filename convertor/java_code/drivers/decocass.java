@@ -139,14 +139,14 @@ public class decocass
 	
 		new Memory_WriteAddress( 0x0000, 0x1fff, MWA_RAM ),
 		new Memory_WriteAddress( 0x2000, 0x5fff, MWA_RAM ),	/* RMS3 RAM */
-		new Memory_WriteAddress( 0x6000, 0xbfff, decocass_charram_w, &decocass_charram ), /* still RMS3 RAM */
-		new Memory_WriteAddress( 0xc000, 0xc3ff, decocass_fgvideoram_w, &decocass_fgvideoram, &decocass_fgvideoram_size ),  /* DSP3 RAM */
-		new Memory_WriteAddress( 0xc400, 0xc7ff, decocass_colorram_w, &decocass_colorram, &decocass_colorram_size ),
+		new Memory_WriteAddress( 0x6000, 0xbfff, decocass_charram_w, decocass_charram ), /* still RMS3 RAM */
+		new Memory_WriteAddress( 0xc000, 0xc3ff, decocass_fgvideoram_w, decocass_fgvideoram, decocass_fgvideoram_size ),  /* DSP3 RAM */
+		new Memory_WriteAddress( 0xc400, 0xc7ff, decocass_colorram_w, decocass_colorram, decocass_colorram_size ),
 		new Memory_WriteAddress( 0xc800, 0xcbff, decocass_mirrorvideoram_w ),
 		new Memory_WriteAddress( 0xcc00, 0xcfff, decocass_mirrorcolorram_w ),
-		new Memory_WriteAddress( 0xd000, 0xd7ff, decocass_tileram_w, &decocass_tileram, &decocass_tileram_size ),
-		new Memory_WriteAddress( 0xd800, 0xdbff, decocass_objectram_w, &decocass_objectram, &decocass_objectram_size ),
-		new Memory_WriteAddress( 0xe000, 0xe0ff, decocass_paletteram_w, &paletteram ),
+		new Memory_WriteAddress( 0xd000, 0xd7ff, decocass_tileram_w, decocass_tileram, decocass_tileram_size ),
+		new Memory_WriteAddress( 0xd800, 0xdbff, decocass_objectram_w, decocass_objectram, decocass_objectram_size ),
+		new Memory_WriteAddress( 0xe000, 0xe0ff, decocass_paletteram_w, paletteram ),
 		new Memory_WriteAddress( 0xe300, 0xe300, decocass_watchdog_count_w ),
 		new Memory_WriteAddress( 0xe301, 0xe301, decocass_watchdog_flip_w ),
 		new Memory_WriteAddress( 0xe302, 0xe302, decocass_color_missiles_w ),
@@ -396,11 +396,11 @@ public class decocass
 	
 	static struct GfxDecodeInfo decocass_gfxdecodeinfo[] =
 	new IO_WritePort(
-		{ 0, 0x6000, &charlayout,		 0, 4 },  /* char set #1 */
-		{ 0, 0x6000, &spritelayout, 	 0, 4 },  /* sprites */
-		{ 0, 0xd000, &tilelayout,		32, 2 },  /* background tiles */
-		{ 0, 0xd800, &objlayout,		48, 4 },  /* object */
-		{ 0, 0xffff, &missilelayout,	 0, 8 },
+		{ 0, 0x6000, charlayout,		 0, 4 },  /* char set #1 */
+		{ 0, 0x6000, spritelayout, 	 0, 4 },  /* sprites */
+		{ 0, 0xd000, tilelayout,		32, 2 },  /* background tiles */
+		{ 0, 0xd800, objlayout,		48, 4 },  /* object */
+		{ 0, 0xffff, missilelayout,	 0, 8 },
 		{ -1 } /* end of array */
 	);
 	
@@ -426,7 +426,7 @@ public class decocass
 		for (i = 0; i < 8; i++)
 		{
 			sys_colortable[32+i] = 3*8+i;
-			sys_colortable[40+i] = 3*8+((i << 1) & 0x04) + ((i >> 1) & 0x02) + (i & 0x01);
+			sys_colortable[40+i] = 3*8+((i << 1)  0x04) + ((i >> 1)  0x02) + (i  0x01);
 		}
 	
 		/* setup 4 colors for 1bpp object */
@@ -486,7 +486,7 @@ public class decocass
 		{ \
 			{ \
 				SOUND_AY8910, \
-				&ay8910_interface \
+				ay8910_interface \
 			} \
 		}, \
 	)
@@ -936,7 +936,7 @@ public class decocass
 	
 		memory_set_opcode_base(0,rom+diff);
 	
-		/* Swap bits 5 & 6 for opcodes */
+		/* Swap bits 5  6 for opcodes */
 		for (A = 0;A < diff;A++)
 			rom[A+diff] = swap_bits_5_6(rom[A]);
 	)

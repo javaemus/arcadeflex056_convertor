@@ -348,15 +348,15 @@ public class ninjakd2
 		new Memory_WriteAddress( 0xc200, 0xc200, soundlatch_w ),
 		new Memory_WriteAddress( 0xc201, 0xc201, MWA_RAM ),		// unknown but used
 		new Memory_WriteAddress( 0xc202, 0xc202, ninjakd2_bankselect_w ),
-		new Memory_WriteAddress( 0xc203, 0xc203, ninjakd2_sprite_overdraw_w, &ninjakd2_spoverdraw_ram ),
-		new Memory_WriteAddress( 0xc208, 0xc209, MWA_RAM, &ninjakd2_scrollx_ram ),
-		new Memory_WriteAddress( 0xc20a, 0xc20b, MWA_RAM, &ninjakd2_scrolly_ram ),
-		new Memory_WriteAddress( 0xc20c, 0xc20c, ninjakd2_background_enable_w, &ninjakd2_bgenable_ram ),
-		new Memory_WriteAddress( 0xc800, 0xcdff, paletteram_RRRRGGGGBBBBxxxx_swap_w, &paletteram ),
-		new Memory_WriteAddress( 0xd000, 0xd7ff, ninjakd2_fgvideoram_w, &ninjakd2_foreground_videoram, &ninjakd2_foregroundram_size ),
-		new Memory_WriteAddress( 0xd800, 0xdfff, ninjakd2_bgvideoram_w, &ninjakd2_background_videoram, &ninjakd2_backgroundram_size ),
+		new Memory_WriteAddress( 0xc203, 0xc203, ninjakd2_sprite_overdraw_w, ninjakd2_spoverdraw_ram ),
+		new Memory_WriteAddress( 0xc208, 0xc209, MWA_RAM, ninjakd2_scrollx_ram ),
+		new Memory_WriteAddress( 0xc20a, 0xc20b, MWA_RAM, ninjakd2_scrolly_ram ),
+		new Memory_WriteAddress( 0xc20c, 0xc20c, ninjakd2_background_enable_w, ninjakd2_bgenable_ram ),
+		new Memory_WriteAddress( 0xc800, 0xcdff, paletteram_RRRRGGGGBBBBxxxx_swap_w, paletteram ),
+		new Memory_WriteAddress( 0xd000, 0xd7ff, ninjakd2_fgvideoram_w, ninjakd2_foreground_videoram, ninjakd2_foregroundram_size ),
+		new Memory_WriteAddress( 0xd800, 0xdfff, ninjakd2_bgvideoram_w, ninjakd2_background_videoram, ninjakd2_backgroundram_size ),
 		new Memory_WriteAddress( 0xe000, 0xf9ff, MWA_RAM ),
-		new Memory_WriteAddress( 0xfa00, 0xffff, MWA_RAM, &spriteram, &spriteram_size ),
+		new Memory_WriteAddress( 0xfa00, 0xffff, MWA_RAM, spriteram, spriteram_size ),
 		new Memory_WriteAddress(MEMPORT_MARKER, 0)
 	};
 	

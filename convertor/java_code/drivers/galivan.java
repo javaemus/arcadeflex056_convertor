@@ -117,9 +117,9 @@ public class galivan
 	public static Memory_WriteAddress writemem[]={
 		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
 		new Memory_WriteAddress( 0x0000, 0xbfff, MWA_ROM ),
-		new Memory_WriteAddress( 0xd800, 0xdbff, galivan_videoram_w, &videoram, &videoram_size ),
-		new Memory_WriteAddress( 0xdc00, 0xdfff, galivan_colorram_w, &colorram ),
-		new Memory_WriteAddress( 0xe000, 0xe0ff, MWA_RAM, &spriteram, &spriteram_size ),
+		new Memory_WriteAddress( 0xd800, 0xdbff, galivan_videoram_w, videoram, videoram_size ),
+		new Memory_WriteAddress( 0xdc00, 0xdfff, galivan_colorram_w, colorram ),
+		new Memory_WriteAddress( 0xe000, 0xe0ff, MWA_RAM, spriteram, spriteram_size ),
 		new Memory_WriteAddress( 0xe100, 0xffff, MWA_RAM ),
 		new Memory_WriteAddress(MEMPORT_MARKER, 0)
 	};
@@ -128,9 +128,9 @@ public class galivan
 		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
 		new Memory_WriteAddress( 0x0000, 0xbfff, MWA_ROM ),
 		new Memory_WriteAddress( 0xd800, 0xd81f, ninjemak_videoreg_w ),
-		new Memory_WriteAddress( 0xd800, 0xdbff, galivan_videoram_w, &videoram, &videoram_size ),
-		new Memory_WriteAddress( 0xdc00, 0xdfff, galivan_colorram_w, &colorram ),
-		new Memory_WriteAddress( 0xe000, 0xe1ff, MWA_RAM, &spriteram, &spriteram_size ),
+		new Memory_WriteAddress( 0xd800, 0xdbff, galivan_videoram_w, videoram, videoram_size ),
+		new Memory_WriteAddress( 0xdc00, 0xdfff, galivan_colorram_w, colorram ),
+		new Memory_WriteAddress( 0xe000, 0xe1ff, MWA_RAM, spriteram, spriteram_size ),
 		new Memory_WriteAddress( 0xe200, 0xffff, MWA_RAM ),
 		new Memory_WriteAddress(MEMPORT_MARKER, 0)
 	};

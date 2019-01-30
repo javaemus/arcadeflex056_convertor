@@ -98,12 +98,12 @@ public class sbrkout
 	
 	public static Memory_WriteAddress writemem[]={
 		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
-		new Memory_WriteAddress( 0x0011, 0x0011, sbrkout_dac_w, &sbrkout_sound ), /* Noise Generation Bits */
-		new Memory_WriteAddress( 0x0010, 0x0014, MWA_RAM, &sbrkout_horiz_ram ), /* Horizontal Ball Position */
-		new Memory_WriteAddress( 0x0018, 0x001d, MWA_RAM, &sbrkout_vert_ram ), /* Vertical Ball Position / ball picture */
+		new Memory_WriteAddress( 0x0011, 0x0011, sbrkout_dac_w, sbrkout_sound ), /* Noise Generation Bits */
+		new Memory_WriteAddress( 0x0010, 0x0014, MWA_RAM, sbrkout_horiz_ram ), /* Horizontal Ball Position */
+		new Memory_WriteAddress( 0x0018, 0x001d, MWA_RAM, sbrkout_vert_ram ), /* Vertical Ball Position / ball picture */
 		new Memory_WriteAddress( 0x0000, 0x00ff, MWA_RAM ), /* WRAM */
 		new Memory_WriteAddress( 0x0100, 0x01ff, MWA_RAM ), /* ??? */
-		new Memory_WriteAddress( 0x0400, 0x07ff, videoram_w, &videoram, &videoram_size ), /* DISPLAY */
+		new Memory_WriteAddress( 0x0400, 0x07ff, videoram_w, videoram, videoram_size ), /* DISPLAY */
 		new Memory_WriteAddress( 0x0c10, 0x0c11, sbrkout_serve_led_w ), /* Serve LED */
 		new Memory_WriteAddress( 0x0c30, 0x0c31, sbrkout_start_1_led_w ), /* 1 Player Start Light */
 		new Memory_WriteAddress( 0x0c40, 0x0c41, sbrkout_start_2_led_w ), /* 2 Player Start Light */

@@ -96,16 +96,16 @@ public class contra
 		new Memory_WriteAddress( 0x001c, 0x001c, cpu_sound_command_w ),
 		new Memory_WriteAddress( 0x001e, 0x001e, MWA_NOP ),	/* ? */
 		new Memory_WriteAddress( 0x0060, 0x0067, contra_K007121_ctrl_1_w ),
-		new Memory_WriteAddress( 0x0c00, 0x0cff, paletteram_xBBBBBGGGGGRRRRR_w, &paletteram ),
+		new Memory_WriteAddress( 0x0c00, 0x0cff, paletteram_xBBBBBGGGGGRRRRR_w, paletteram ),
 		new Memory_WriteAddress( 0x1000, 0x1fff, MWA_RAM ),
-		new Memory_WriteAddress( 0x2000, 0x23ff, contra_fg_cram_w, &contra_fg_cram ),
-		new Memory_WriteAddress( 0x2400, 0x27ff, contra_fg_vram_w, &contra_fg_vram ),
-		new Memory_WriteAddress( 0x2800, 0x2bff, contra_text_cram_w, &contra_text_cram ),
-		new Memory_WriteAddress( 0x2c00, 0x2fff, contra_text_vram_w, &contra_text_vram ),
-		new Memory_WriteAddress( 0x3000, 0x37ff, MWA_RAM, &spriteram ),/* 2nd bank is at 0x5000 */
+		new Memory_WriteAddress( 0x2000, 0x23ff, contra_fg_cram_w, contra_fg_cram ),
+		new Memory_WriteAddress( 0x2400, 0x27ff, contra_fg_vram_w, contra_fg_vram ),
+		new Memory_WriteAddress( 0x2800, 0x2bff, contra_text_cram_w, contra_text_cram ),
+		new Memory_WriteAddress( 0x2c00, 0x2fff, contra_text_vram_w, contra_text_vram ),
+		new Memory_WriteAddress( 0x3000, 0x37ff, MWA_RAM, spriteram ),/* 2nd bank is at 0x5000 */
 		new Memory_WriteAddress( 0x3800, 0x3fff, MWA_RAM ), // second sprite buffer
-		new Memory_WriteAddress( 0x4000, 0x43ff, contra_bg_cram_w, &contra_bg_cram ),
-		new Memory_WriteAddress( 0x4400, 0x47ff, contra_bg_vram_w, &contra_bg_vram ),
+		new Memory_WriteAddress( 0x4000, 0x43ff, contra_bg_cram_w, contra_bg_cram ),
+		new Memory_WriteAddress( 0x4400, 0x47ff, contra_bg_vram_w, contra_bg_vram ),
 		new Memory_WriteAddress( 0x4800, 0x5fff, MWA_RAM ),
 		new Memory_WriteAddress( 0x6000, 0x6fff, MWA_ROM ),
 	 	new Memory_WriteAddress( 0x7000, 0x7000, contra_bankswitch_w ),

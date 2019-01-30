@@ -206,10 +206,10 @@ public class starwars
 	
 	public static Memory_WriteAddress main_writemem[]={
 		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
-		new Memory_WriteAddress( 0x0000, 0x2fff, MWA_RAM, &vectorram, &vectorram_size ),
+		new Memory_WriteAddress( 0x0000, 0x2fff, MWA_RAM, vectorram, vectorram_size ),
 		new Memory_WriteAddress( 0x3000, 0x3fff, MWA_ROM ),								/* vector_rom */
 		new Memory_WriteAddress( 0x4400, 0x4400, starwars_main_wr_w ),
-		new Memory_WriteAddress( 0x4500, 0x45ff, MWA_RAM, &nvram, &nvram_size ),
+		new Memory_WriteAddress( 0x4500, 0x45ff, MWA_RAM, nvram, nvram_size ),
 		new Memory_WriteAddress( 0x4600, 0x461f, avgdvg_go_w ),
 		new Memory_WriteAddress( 0x4620, 0x463f, avgdvg_reset_w ),
 		new Memory_WriteAddress( 0x4640, 0x465f, watchdog_reset_w ),

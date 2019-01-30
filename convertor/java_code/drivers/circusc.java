@@ -77,16 +77,16 @@ public class circusc
 		new Memory_WriteAddress( 0x0000, 0x0000, circusc_flipscreen_w ),
 		new Memory_WriteAddress( 0x0001, 0x0001, interrupt_enable_w ),
 		new Memory_WriteAddress( 0x0003, 0x0004, circusc_coin_counter_w ),  /* Coin counters */
-		new Memory_WriteAddress( 0x0005, 0x0005, MWA_RAM, &circusc_spritebank ),
+		new Memory_WriteAddress( 0x0005, 0x0005, MWA_RAM, circusc_spritebank ),
 		new Memory_WriteAddress( 0x0400, 0x0400, watchdog_reset_w ),
 		new Memory_WriteAddress( 0x0800, 0x0800, soundlatch_w ),
 		new Memory_WriteAddress( 0x0c00, 0x0c00, circusc_sh_irqtrigger_w ),  /* cause interrupt on audio CPU */
-		new Memory_WriteAddress( 0x1c00, 0x1c00, MWA_RAM, &circusc_scroll ),
+		new Memory_WriteAddress( 0x1c00, 0x1c00, MWA_RAM, circusc_scroll ),
 		new Memory_WriteAddress( 0x2000, 0x2fff, MWA_RAM ),
-		new Memory_WriteAddress( 0x3000, 0x33ff, circusc_colorram_w, &circusc_colorram ),
-		new Memory_WriteAddress( 0x3400, 0x37ff, circusc_videoram_w, &circusc_videoram ),
-		new Memory_WriteAddress( 0x3800, 0x38ff, MWA_RAM, &spriteram_2 ),
-		new Memory_WriteAddress( 0x3900, 0x39ff, MWA_RAM, &spriteram, &spriteram_size ),
+		new Memory_WriteAddress( 0x3000, 0x33ff, circusc_colorram_w, circusc_colorram ),
+		new Memory_WriteAddress( 0x3400, 0x37ff, circusc_videoram_w, circusc_videoram ),
+		new Memory_WriteAddress( 0x3800, 0x38ff, MWA_RAM, spriteram_2 ),
+		new Memory_WriteAddress( 0x3900, 0x39ff, MWA_RAM, spriteram, spriteram_size ),
 		new Memory_WriteAddress( 0x3a00, 0x3fff, MWA_RAM ),
 		new Memory_WriteAddress( 0x6000, 0xffff, MWA_ROM ),
 		new Memory_WriteAddress(MEMPORT_MARKER, 0)

@@ -72,7 +72,7 @@ public class ikki
 	
 		new Memory_WriteAddress( 0xc000, 0xc7ff, MWA_RAM ),
 		new Memory_WriteAddress( 0xc800, 0xcfff, ikki_sharedram_w ),
-		new Memory_WriteAddress( 0xd000, 0xd7ff, videoram_w, &videoram, &videoram_size ),
+		new Memory_WriteAddress( 0xd000, 0xd7ff, videoram_w, videoram, videoram_size ),
 	
 		new Memory_WriteAddress( 0xe008, 0xe008, ikki_scrn_ctrl_w ),
 		new Memory_WriteAddress( 0xe009, 0xe009, MWA_NOP ), /* coin counter? */
@@ -92,8 +92,8 @@ public class ikki
 	public static Memory_WriteAddress ikki_writemem2[]={
 		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
 		new Memory_WriteAddress( 0x0000, 0x5fff, MWA_ROM ),
-		new Memory_WriteAddress( 0xc000, 0xc7ff, MWA_RAM, &spriteram, &spriteram_size ),
-		new Memory_WriteAddress( 0xc800, 0xcfff, MWA_RAM, &ikki_sharedram ),
+		new Memory_WriteAddress( 0xc000, 0xc7ff, MWA_RAM, spriteram, spriteram_size ),
+		new Memory_WriteAddress( 0xc800, 0xcfff, MWA_RAM, ikki_sharedram ),
 	
 		new Memory_WriteAddress( 0xd801, 0xd801, SN76496_0_w ),
 		new Memory_WriteAddress( 0xd802, 0xd802, SN76496_1_w ),

@@ -144,7 +144,7 @@ public class battlane
 		new Memory_WriteAddress( 0x1c04, 0x1c04, YM3526_control_port_0_w ),
 		new Memory_WriteAddress( 0x1c05, 0x1c05, YM3526_write_port_0_w ),
 		new Memory_WriteAddress( 0x1e00, 0x1e3f, battlane_palette_w ),
-		new Memory_WriteAddress( 0x2000, 0x3fff, battlane_bitmap_w, &battlane_bitmap, &battlane_bitmap_size ),
+		new Memory_WriteAddress( 0x2000, 0x3fff, battlane_bitmap_w, battlane_bitmap, battlane_bitmap_size ),
 		new Memory_WriteAddress( 0x4000, 0xffff, MWA_ROM ),
 		new Memory_WriteAddress(MEMPORT_MARKER, 0)
 	};

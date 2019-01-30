@@ -47,7 +47,7 @@ public class avalnche
 	
 	public static Memory_WriteAddress writemem[]={
 		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
-		new Memory_WriteAddress( 0x0000, 0x1fff, avalnche_videoram_w, &videoram, &videoram_size ), /* DISPLAY */
+		new Memory_WriteAddress( 0x0000, 0x1fff, avalnche_videoram_w, videoram, videoram_size ), /* DISPLAY */
 		new Memory_WriteAddress( 0x3000, 0x3fff, MWA_NOP ), /* WATCHDOG */
 		new Memory_WriteAddress( 0x4000, 0x4fff, avalnche_output_w ), /* OUTSEL */
 		new Memory_WriteAddress( 0x5000, 0x5fff, avalnche_noise_amplitude_w ), /* SOUNDLVL */

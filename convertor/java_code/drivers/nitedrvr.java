@@ -71,13 +71,13 @@ public class nitedrvr
 	
 	public static Memory_WriteAddress writemem[]={
 		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
-		new Memory_WriteAddress( 0x0000, 0x00ff, nitedrvr_ram_w, &nitedrvr_ram ), /* SCRAM */
+		new Memory_WriteAddress( 0x0000, 0x00ff, nitedrvr_ram_w, nitedrvr_ram ), /* SCRAM */
 		new Memory_WriteAddress( 0x0100, 0x01ff, nitedrvr_ram_w ), /* SCRAM */
-		new Memory_WriteAddress( 0x0200, 0x027f, videoram_w, &videoram, &videoram_size ), /* PFW */
+		new Memory_WriteAddress( 0x0200, 0x027f, videoram_w, videoram, videoram_size ), /* PFW */
 		new Memory_WriteAddress( 0x0280, 0x02ff, videoram_w ), /* PFW */
 		new Memory_WriteAddress( 0x0300, 0x037f, videoram_w ), /* PFW */
 		new Memory_WriteAddress( 0x0380, 0x03ff, videoram_w ), /* PFW */
-		new Memory_WriteAddress( 0x0400, 0x05ff, nitedrvr_hvc_w, &nitedrvr_hvc ), /* POSH, POSV, CHAR, Watchdog */
+		new Memory_WriteAddress( 0x0400, 0x05ff, nitedrvr_hvc_w, nitedrvr_hvc ), /* POSH, POSV, CHAR, Watchdog */
 		new Memory_WriteAddress( 0x0a00, 0x0bff, nitedrvr_out0_w ),
 		new Memory_WriteAddress( 0x0c00, 0x0dff, nitedrvr_out1_w ),
 		new Memory_WriteAddress( 0x8400, 0x87ff, nitedrvr_steering_reset_w ),

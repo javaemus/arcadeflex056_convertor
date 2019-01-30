@@ -355,8 +355,8 @@ public class gridlee
 	
 	public static Memory_WriteAddress writemem_cpu1[]={
 		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
-		new Memory_WriteAddress( 0x0000, 0x07ff, MWA_RAM, &spriteram ),
-		new Memory_WriteAddress( 0x0800, 0x7fff, gridlee_videoram_w, &videoram, &videoram_size ),
+		new Memory_WriteAddress( 0x0000, 0x07ff, MWA_RAM, spriteram ),
+		new Memory_WriteAddress( 0x0800, 0x7fff, gridlee_videoram_w, videoram, videoram_size ),
 		new Memory_WriteAddress( 0x9000, 0x9000, led_0_w ),
 		new Memory_WriteAddress( 0x9010, 0x9010, led_1_w ),
 		new Memory_WriteAddress( 0x9020, 0x9020, gridlee_coin_counter_w ),
@@ -367,7 +367,7 @@ public class gridlee
 		{ 0x9700, 0x9700, MWA_NOP },
 	/*	{ 0x9828, 0x982c, unknown - sound related? */
 	/*	{ 0x9830, 0x983f, unknown - sound related? */
-		{ 0x9c00, 0x9cff, MWA_RAM, &nvram, &nvram_size },
+		{ 0x9c00, 0x9cff, MWA_RAM, nvram, nvram_size },
 		{ 0xa000, 0xffff, MWA_ROM },
 		new Memory_WriteAddress(MEMPORT_MARKER, 0)
 	};

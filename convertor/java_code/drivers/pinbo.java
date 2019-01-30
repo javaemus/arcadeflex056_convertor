@@ -153,10 +153,10 @@ public class pinbo
 	public static Memory_WriteAddress writemem[]={
 		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
 		new Memory_WriteAddress( 0x0000, 0x03ff, MWA_RAM ),
-		new Memory_WriteAddress( 0x0400, 0x07ff, videoram_w, &videoram, &videoram_size ),
-		new Memory_WriteAddress( 0x0800, 0x0bff, colorram_w, &colorram ),
+		new Memory_WriteAddress( 0x0400, 0x07ff, videoram_w, videoram, videoram_size ),
+		new Memory_WriteAddress( 0x0800, 0x0bff, colorram_w, colorram ),
 		new Memory_WriteAddress( 0x0c00, 0x0c3f, MWA_RAM ),	/* could be scroll RAM */
-		new Memory_WriteAddress( 0x1000, 0x10ff, MWA_RAM, &spriteram, &spriteram_size ),
+		new Memory_WriteAddress( 0x1000, 0x10ff, MWA_RAM, spriteram, spriteram_size ),
 		new Memory_WriteAddress( 0x1800, 0x1800, pinbo_sound_command_w ),
 		new Memory_WriteAddress( 0x2000, 0x3fff, MWA_ROM ),
 		new Memory_WriteAddress( 0x6000, 0xbfff, MWA_ROM ),

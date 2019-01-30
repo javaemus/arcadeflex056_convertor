@@ -635,12 +635,12 @@ public class srmp2
 		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
 		new Memory_WriteAddress( 0x0000, 0x7fff, MWA_ROM ),
 		new Memory_WriteAddress( 0x8000, 0x9fff, MWA_ROM ),						/* rom bank */
-		new Memory_WriteAddress( 0xa000, 0xa7ff, MWA_RAM, &srmp3_nvram, &srmp3_nvram_size ),	/* work ram */
+		new Memory_WriteAddress( 0xa000, 0xa7ff, MWA_RAM, srmp3_nvram, srmp3_nvram_size ),	/* work ram */
 		new Memory_WriteAddress( 0xa800, 0xa800, MWA_NOP ),						/* flag ? */
-		new Memory_WriteAddress( 0xb000, 0xb303, MWA_RAM, &spriteram ),			/* Sprites Y */
+		new Memory_WriteAddress( 0xb000, 0xb303, MWA_RAM, spriteram ),			/* Sprites Y */
 		new Memory_WriteAddress( 0xb800, 0xb800, MWA_NOP ),						/* flag ? */
-		new Memory_WriteAddress( 0xc000, 0xdfff, MWA_RAM, &spriteram_2 ),			/* Sprites Code + X + Attr */
-		new Memory_WriteAddress( 0xe000, 0xffff, MWA_RAM, &spriteram_3 ),
+		new Memory_WriteAddress( 0xc000, 0xdfff, MWA_RAM, spriteram_2 ),			/* Sprites Code + X + Attr */
+		new Memory_WriteAddress( 0xe000, 0xffff, MWA_RAM, spriteram_3 ),
 		new Memory_WriteAddress(MEMPORT_MARKER, 0)
 	};
 	
