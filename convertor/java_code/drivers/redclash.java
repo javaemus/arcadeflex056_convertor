@@ -68,15 +68,17 @@ public class redclash
 	
 	
 	
-	static MEMORY_READ_START( zero_readmem )
-		{ 0x0000, 0x2fff, MRA_ROM },
-		{ 0x3000, 0x37ff, MRA_RAM },
-		{ 0x4800, 0x4800, input_port_0_r }, /* IN0 */
-		{ 0x4801, 0x4801, input_port_1_r }, /* IN1 */
-		{ 0x4802, 0x4802, input_port_2_r }, /* DSW0 */
-		{ 0x4803, 0x4803, input_port_3_r }, /* DSW1 */
-		{ 0x4000, 0x43ff, MRA_RAM },  /* video RAM */
-	MEMORY_END
+	public static Memory_ReadAddress zero_readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x2fff, MRA_ROM ),
+		new Memory_ReadAddress( 0x3000, 0x37ff, MRA_RAM ),
+		new Memory_ReadAddress( 0x4800, 0x4800, input_port_0_r ), /* IN0 */
+		new Memory_ReadAddress( 0x4801, 0x4801, input_port_1_r ), /* IN1 */
+		new Memory_ReadAddress( 0x4802, 0x4802, input_port_2_r ), /* DSW0 */
+		new Memory_ReadAddress( 0x4803, 0x4803, input_port_3_r ), /* DSW1 */
+		new Memory_ReadAddress( 0x4000, 0x43ff, MRA_RAM ),  /* video RAM */
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( zero_writemem )
 		{ 0x0000, 0x2fff, MWA_ROM },
@@ -93,15 +95,17 @@ public class redclash
 		{ 0x7800, 0x7800, irqack_w },
 	MEMORY_END
 	
-	static MEMORY_READ_START( readmem )
-		{ 0x0000, 0x2fff, MRA_ROM },
-		{ 0x4800, 0x4800, input_port_0_r }, /* IN0 */
-		{ 0x4801, 0x4801, input_port_1_r }, /* IN1 */
-		{ 0x4802, 0x4802, input_port_2_r }, /* DSW0 */
-		{ 0x4803, 0x4803, input_port_3_r }, /* DSW1 */
-		{ 0x4000, 0x43ff, MRA_RAM },  /* video RAM */
-		{ 0x6000, 0x67ff, MRA_RAM },
-	MEMORY_END
+	public static Memory_ReadAddress readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x2fff, MRA_ROM ),
+		new Memory_ReadAddress( 0x4800, 0x4800, input_port_0_r ), /* IN0 */
+		new Memory_ReadAddress( 0x4801, 0x4801, input_port_1_r ), /* IN1 */
+		new Memory_ReadAddress( 0x4802, 0x4802, input_port_2_r ), /* DSW0 */
+		new Memory_ReadAddress( 0x4803, 0x4803, input_port_3_r ), /* DSW1 */
+		new Memory_ReadAddress( 0x4000, 0x43ff, MRA_RAM ),  /* video RAM */
+		new Memory_ReadAddress( 0x6000, 0x67ff, MRA_RAM ),
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( writemem )
 		{ 0x0000, 0x2fff, MWA_ROM },

@@ -40,10 +40,12 @@ public class starcrus
 	extern int s1_sprite;
 	extern int s2_sprite;
 	
-	static MEMORY_READ_START( readmem )
-		{ 0x0000, 0x0fff, MRA_ROM }, /* Program ROM */
-		{ 0x1000, 0x10ff, MRA_RAM }, /* RAM */
-	MEMORY_END
+	public static Memory_ReadAddress readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x0fff, MRA_ROM ), /* Program ROM */
+		new Memory_ReadAddress( 0x1000, 0x10ff, MRA_RAM ), /* RAM */
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( writemem )
 	    { 0x0000, 0x0fff, MWA_ROM }, /* Program ROM */

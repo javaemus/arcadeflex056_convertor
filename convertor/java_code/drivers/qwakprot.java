@@ -59,25 +59,27 @@ public class qwakprot
 		set_led_status(offset,~data & 0x80);
 	}
 	
-	static MEMORY_READ_START( readmem )
-		{ 0x0000, 0x01ff, MRA_RAM },
-		{ 0x0200, 0x025f, MRA_RAM },
-		{ 0x0300, 0x03ff, MRA_RAM },
-		{ 0x0400, 0x07ff, MRA_RAM },
-		{ 0x3000, 0x3000, input_port_0_r },
-		{ 0x3001, 0x3001, input_port_1_r },
-		{ 0x3002, 0x3002, input_port_2_r },
-		{ 0x3003, 0x3003, input_port_3_r },
-		{ 0x3004, 0x3004, input_port_4_r },
-		{ 0x3005, 0x3005, input_port_5_r },
-		{ 0x3006, 0x3006, input_port_6_r },
-		{ 0x3007, 0x3007, input_port_7_r },
-		{ 0x4000, 0x4000, input_port_8_r },			/* just guessing */
-		{ 0x6000, 0x600f, pokey1_r },
-		{ 0x7000, 0x700f, pokey2_r },
-		{ 0x8000, 0xbfff, MRA_ROM },
-		{ 0xf000, 0xffff, MRA_ROM },	/* for the reset / interrupt vectors */
-	MEMORY_END
+	public static Memory_ReadAddress readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x01ff, MRA_RAM ),
+		new Memory_ReadAddress( 0x0200, 0x025f, MRA_RAM ),
+		new Memory_ReadAddress( 0x0300, 0x03ff, MRA_RAM ),
+		new Memory_ReadAddress( 0x0400, 0x07ff, MRA_RAM ),
+		new Memory_ReadAddress( 0x3000, 0x3000, input_port_0_r ),
+		new Memory_ReadAddress( 0x3001, 0x3001, input_port_1_r ),
+		new Memory_ReadAddress( 0x3002, 0x3002, input_port_2_r ),
+		new Memory_ReadAddress( 0x3003, 0x3003, input_port_3_r ),
+		new Memory_ReadAddress( 0x3004, 0x3004, input_port_4_r ),
+		new Memory_ReadAddress( 0x3005, 0x3005, input_port_5_r ),
+		new Memory_ReadAddress( 0x3006, 0x3006, input_port_6_r ),
+		new Memory_ReadAddress( 0x3007, 0x3007, input_port_7_r ),
+		new Memory_ReadAddress( 0x4000, 0x4000, input_port_8_r ),			/* just guessing */
+		new Memory_ReadAddress( 0x6000, 0x600f, pokey1_r ),
+		new Memory_ReadAddress( 0x7000, 0x700f, pokey2_r ),
+		new Memory_ReadAddress( 0x8000, 0xbfff, MRA_ROM ),
+		new Memory_ReadAddress( 0xf000, 0xffff, MRA_ROM ),	/* for the reset / interrupt vectors */
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( writemem )
 		{ 0x0000, 0x01ff, MWA_RAM },

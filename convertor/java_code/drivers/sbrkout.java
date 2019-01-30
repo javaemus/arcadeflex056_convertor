@@ -77,22 +77,24 @@ public class sbrkout
 	}
 	
 	
-	static MEMORY_READ_START( readmem )
-		{ 0x001f, 0x001f, input_port_6_r }, /* paddle value */
-		{ 0x0000, 0x00ff, MRA_RAM }, /* Zero Page RAM */
-		{ 0x0100, 0x01ff, MRA_RAM }, /* ??? */
-		{ 0x0400, 0x077f, MRA_RAM }, /* Video Display RAM */
-		{ 0x0828, 0x0828, sbrkout_select1_r }, /* Select 1 */
-		{ 0x082f, 0x082f, sbrkout_select2_r }, /* Select 2 */
-		{ 0x082e, 0x082e, input_port_5_r }, /* Serve Switch */
-		{ 0x0830, 0x0833, sbrkout_read_DIPs_r }, /* DIP Switches */
-		{ 0x0840, 0x0840, input_port_1_r }, /* Coin Switches */
-		{ 0x0880, 0x0880, input_port_2_r }, /* Start Switches */
-		{ 0x08c0, 0x08c0, input_port_3_r }, /* Self Test Switch */
-		{ 0x0c00, 0x0c00, input_port_4_r }, /* Vertical Sync Counter */
-		{ 0x2c00, 0x3fff, MRA_ROM }, /* PROGRAM */
-		{ 0xfff0, 0xffff, MRA_ROM }, /* PROM8 for 6502 vectors */
-	MEMORY_END
+	public static Memory_ReadAddress readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x001f, 0x001f, input_port_6_r ), /* paddle value */
+		new Memory_ReadAddress( 0x0000, 0x00ff, MRA_RAM ), /* Zero Page RAM */
+		new Memory_ReadAddress( 0x0100, 0x01ff, MRA_RAM ), /* ??? */
+		new Memory_ReadAddress( 0x0400, 0x077f, MRA_RAM ), /* Video Display RAM */
+		new Memory_ReadAddress( 0x0828, 0x0828, sbrkout_select1_r ), /* Select 1 */
+		new Memory_ReadAddress( 0x082f, 0x082f, sbrkout_select2_r ), /* Select 2 */
+		new Memory_ReadAddress( 0x082e, 0x082e, input_port_5_r ), /* Serve Switch */
+		new Memory_ReadAddress( 0x0830, 0x0833, sbrkout_read_DIPs_r ), /* DIP Switches */
+		new Memory_ReadAddress( 0x0840, 0x0840, input_port_1_r ), /* Coin Switches */
+		new Memory_ReadAddress( 0x0880, 0x0880, input_port_2_r ), /* Start Switches */
+		new Memory_ReadAddress( 0x08c0, 0x08c0, input_port_3_r ), /* Self Test Switch */
+		new Memory_ReadAddress( 0x0c00, 0x0c00, input_port_4_r ), /* Vertical Sync Counter */
+		new Memory_ReadAddress( 0x2c00, 0x3fff, MRA_ROM ), /* PROGRAM */
+		new Memory_ReadAddress( 0xfff0, 0xffff, MRA_ROM ), /* PROM8 for 6502 vectors */
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( writemem )
 		{ 0x0011, 0x0011, sbrkout_dac_w, &sbrkout_sound }, /* Noise Generation Bits */

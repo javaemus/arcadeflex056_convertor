@@ -214,11 +214,13 @@ public class psikyo
 		cpu_setbank(1, &RAM[bank * 0x8000 + 0x10000 + 0x200]);
 	}
 	
-	static MEMORY_READ_START( gunbird_sound_readmem )
-		{ 0x0000, 0x7fff, MRA_ROM		},	// ROM
-		{ 0x8000, 0x81ff, MRA_RAM		},	// RAM
-		{ 0x8200, 0xffff, MRA_BANK1		},	// Banked ROM
-	MEMORY_END
+	public static Memory_ReadAddress gunbird_sound_readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x7fff, MRA_ROM		),	// ROM
+		new Memory_ReadAddress( 0x8000, 0x81ff, MRA_RAM		),	// RAM
+		new Memory_ReadAddress( 0x8200, 0xffff, MRA_BANK1		),	// Banked ROM
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( gunbird_sound_writemem )
 		{ 0x0000, 0x7fff, MWA_ROM		},	// ROM
@@ -255,11 +257,13 @@ public class psikyo
 		cpu_setbank(1, &RAM[bank * 0x8000 + 0x10000]);
 	}
 	
-	static MEMORY_READ_START( sngkace_sound_readmem )
-		{ 0x0000, 0x77ff, MRA_ROM		},	// ROM
-		{ 0x7800, 0x7fff, MRA_RAM		},	// RAM
-		{ 0x8000, 0xffff, MRA_BANK1		},	// Banked ROM
-	MEMORY_END
+	public static Memory_ReadAddress sngkace_sound_readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x77ff, MRA_ROM		),	// ROM
+		new Memory_ReadAddress( 0x7800, 0x7fff, MRA_RAM		),	// RAM
+		new Memory_ReadAddress( 0x8000, 0xffff, MRA_BANK1		),	// Banked ROM
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( sngkace_sound_writemem )
 		{ 0x0000, 0x77ff, MWA_ROM		},	// ROM

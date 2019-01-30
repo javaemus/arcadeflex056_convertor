@@ -205,22 +205,24 @@ public class tempest
 		vector_set_swap_xy (1);	/* vertical game */
 	}
 	
-	static MEMORY_READ_START( readmem )
-		{ 0x0000, 0x07ff, MRA_RAM },
-		{ 0x0c00, 0x0c00, tempest_IN0_r },	/* IN0 */
-		{ 0x0d00, 0x0d00, input_port_3_r },	/* DSW1 */
-		{ 0x0e00, 0x0e00, input_port_4_r },	/* DSW2 */
-		{ 0x2000, 0x2fff, MRA_RAM },
-		{ 0x3000, 0x3fff, MRA_ROM },
-		{ 0x6040, 0x6040, mb_status_r },
-		{ 0x6050, 0x6050, atari_vg_earom_r },
-		{ 0x6060, 0x6060, mb_lo_r },
-		{ 0x6070, 0x6070, mb_hi_r },
-		{ 0x60c0, 0x60cf, pokey1_r },
-		{ 0x60d0, 0x60df, pokey2_r },
-		{ 0x9000, 0xdfff, MRA_ROM },
-		{ 0xf000, 0xffff, MRA_ROM },	/* for the reset / interrupt vectors */
-	MEMORY_END
+	public static Memory_ReadAddress readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x07ff, MRA_RAM ),
+		new Memory_ReadAddress( 0x0c00, 0x0c00, tempest_IN0_r ),	/* IN0 */
+		new Memory_ReadAddress( 0x0d00, 0x0d00, input_port_3_r ),	/* DSW1 */
+		new Memory_ReadAddress( 0x0e00, 0x0e00, input_port_4_r ),	/* DSW2 */
+		new Memory_ReadAddress( 0x2000, 0x2fff, MRA_RAM ),
+		new Memory_ReadAddress( 0x3000, 0x3fff, MRA_ROM ),
+		new Memory_ReadAddress( 0x6040, 0x6040, mb_status_r ),
+		new Memory_ReadAddress( 0x6050, 0x6050, atari_vg_earom_r ),
+		new Memory_ReadAddress( 0x6060, 0x6060, mb_lo_r ),
+		new Memory_ReadAddress( 0x6070, 0x6070, mb_hi_r ),
+		new Memory_ReadAddress( 0x60c0, 0x60cf, pokey1_r ),
+		new Memory_ReadAddress( 0x60d0, 0x60df, pokey2_r ),
+		new Memory_ReadAddress( 0x9000, 0xdfff, MRA_ROM ),
+		new Memory_ReadAddress( 0xf000, 0xffff, MRA_ROM ),	/* for the reset / interrupt vectors */
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( writemem )
 		{ 0x0000, 0x07ff, MWA_RAM },

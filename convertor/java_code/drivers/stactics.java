@@ -94,32 +94,34 @@ public class stactics
 	WRITE_HANDLER( stactics_videoram_f_w );
 	WRITE_HANDLER( stactics_chardata_f_w );
 	
-	static MEMORY_READ_START( readmem )
-	    { 0x0000, 0x2fff, MRA_ROM },
-	    { 0x4000, 0x47ff, MRA_RAM },
-	    { 0x5000, 0x5fff, input_port_0_r, },
-	    { 0x6000, 0x6fff, input_port_1_r, },
-	    { 0x7000, 0x7fff, stactics_port_2_r, },
-	    { 0x8000, 0x8fff, stactics_port_3_r },
-	    { 0x9000, 0x9fff, stactics_vert_pos_r },
-	    { 0xa000, 0xafff, stactics_horiz_pos_r },
+	public static Memory_ReadAddress readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+	    new Memory_ReadAddress( 0x0000, 0x2fff, MRA_ROM ),
+	    new Memory_ReadAddress( 0x4000, 0x47ff, MRA_RAM ),
+	    new Memory_ReadAddress( 0x5000, 0x5fff, input_port_0_r, ),
+	    new Memory_ReadAddress( 0x6000, 0x6fff, input_port_1_r, ),
+	    new Memory_ReadAddress( 0x7000, 0x7fff, stactics_port_2_r, ),
+	    new Memory_ReadAddress( 0x8000, 0x8fff, stactics_port_3_r ),
+	    new Memory_ReadAddress( 0x9000, 0x9fff, stactics_vert_pos_r ),
+	    new Memory_ReadAddress( 0xa000, 0xafff, stactics_horiz_pos_r ),
 	
-	    { 0xb000, 0xb3ff, MRA_RAM },
-	    { 0xb800, 0xbfff, MRA_RAM },
+	    new Memory_ReadAddress( 0xb000, 0xb3ff, MRA_RAM ),
+	    new Memory_ReadAddress( 0xb800, 0xbfff, MRA_RAM ),
 	
-	    { 0xd000, 0xd3ff, MRA_RAM },
-	    { 0xd600, 0xd7ff, MRA_RAM },   /* Used as scratch RAM, high scores, etc. */
-	    { 0xd800, 0xdfff, MRA_RAM },
+	    new Memory_ReadAddress( 0xd000, 0xd3ff, MRA_RAM ),
+	    new Memory_ReadAddress( 0xd600, 0xd7ff, MRA_RAM ),   /* Used as scratch RAM, high scores, etc. */
+	    new Memory_ReadAddress( 0xd800, 0xdfff, MRA_RAM ),
 	
-	    { 0xe000, 0xe3ff, MRA_RAM },
-	    { 0xe600, 0xe7ff, MRA_RAM },   /* Used as scratch RAM, high scores, etc. */
-	    { 0xe800, 0xefff, MRA_RAM },
+	    new Memory_ReadAddress( 0xe000, 0xe3ff, MRA_RAM ),
+	    new Memory_ReadAddress( 0xe600, 0xe7ff, MRA_RAM ),   /* Used as scratch RAM, high scores, etc. */
+	    new Memory_ReadAddress( 0xe800, 0xefff, MRA_RAM ),
 	
-	    { 0xf000, 0xf3ff, MRA_RAM },
-	    { 0xf600, 0xf7ff, MRA_RAM },   /* Used as scratch RAM, high scores, etc. */
-	    { 0xf800, 0xffff, MRA_RAM },
+	    new Memory_ReadAddress( 0xf000, 0xf3ff, MRA_RAM ),
+	    new Memory_ReadAddress( 0xf600, 0xf7ff, MRA_RAM ),   /* Used as scratch RAM, high scores, etc. */
+	    new Memory_ReadAddress( 0xf800, 0xffff, MRA_RAM ),
 	
-	MEMORY_END
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( writemem )
 	    { 0x4000, 0x47ff, MWA_RAM },

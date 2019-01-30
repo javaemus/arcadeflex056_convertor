@@ -417,12 +417,14 @@ public class metro
 		}
 	}
 	
-	static MEMORY_READ_START( upd7810_readmem )
-	    { 0x0000, 0x3fff, MRA_ROM               },  /* External ROM */
-	    { 0x4000, 0x7fff, MRA_BANK1             },  /* External ROM (Banked) */
-	    { 0x8000, 0x87ff, MRA_RAM               },  /* External RAM */
-	    { 0xff00, 0xffff, MRA_RAM               },  /* Internal RAM */
-	MEMORY_END
+	public static Memory_ReadAddress upd7810_readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+	    new Memory_ReadAddress( 0x0000, 0x3fff, MRA_ROM               ),  /* External ROM */
+	    new Memory_ReadAddress( 0x4000, 0x7fff, MRA_BANK1             ),  /* External ROM (Banked) */
+	    new Memory_ReadAddress( 0x8000, 0x87ff, MRA_RAM               ),  /* External RAM */
+	    new Memory_ReadAddress( 0xff00, 0xffff, MRA_RAM               ),  /* Internal RAM */
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( upd7810_writemem )
 	    { 0x0000, 0x3fff, MWA_ROM               },  /* External ROM */

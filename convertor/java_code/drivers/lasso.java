@@ -105,19 +105,21 @@ public class lasso
 									Chameleon
 	***************************************************************************/
 	
-	static MEMORY_READ_START( chameleo_readmem )
-		{ 0x0000, 0x03ff, MRA_RAM			},	// Work RAM
-		{ 0x0400, 0x0bff, MRA_RAM			},	// Tilemap
-		{ 0x0c00, 0x0fff, MRA_RAM			},	//
-		{ 0x1000, 0x107f, MRA_RAM			},	// Sprites
-		{ 0x1080, 0x10ff, MRA_RAM			},	//
-		{ 0x1804, 0x1804, input_port_0_r	},	// Player 1
-		{ 0x1805, 0x1805, input_port_1_r	},	// Player 2
-		{ 0x1806, 0x1806, input_port_2_r	},	// DSW
-		{ 0x1807, 0x1807, input_port_3_r	},	// Coins + DSW
-		{ 0x4000, 0xbfff, MRA_ROM			},	// ROM
-		{ 0xfffa, 0xffff, MRA_ROM			},	// ROM (Mirror)
-	MEMORY_END
+	public static Memory_ReadAddress chameleo_readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x03ff, MRA_RAM			),	// Work RAM
+		new Memory_ReadAddress( 0x0400, 0x0bff, MRA_RAM			),	// Tilemap
+		new Memory_ReadAddress( 0x0c00, 0x0fff, MRA_RAM			),	//
+		new Memory_ReadAddress( 0x1000, 0x107f, MRA_RAM			),	// Sprites
+		new Memory_ReadAddress( 0x1080, 0x10ff, MRA_RAM			),	//
+		new Memory_ReadAddress( 0x1804, 0x1804, input_port_0_r	),	// Player 1
+		new Memory_ReadAddress( 0x1805, 0x1805, input_port_1_r	),	// Player 2
+		new Memory_ReadAddress( 0x1806, 0x1806, input_port_2_r	),	// DSW
+		new Memory_ReadAddress( 0x1807, 0x1807, input_port_3_r	),	// Coins + DSW
+		new Memory_ReadAddress( 0x4000, 0xbfff, MRA_ROM			),	// ROM
+		new Memory_ReadAddress( 0xfffa, 0xffff, MRA_ROM			),	// ROM (Mirror)
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	static MEMORY_WRITE_START( chameleo_writemem )
 		{ 0x0000, 0x03ff, MWA_RAM						},	// Work RAM
 		{ 0x0400, 0x0bff, lasso_videoram_w, &videoram	},	// Tilemap
@@ -136,17 +138,19 @@ public class lasso
 									Lasso
 	***************************************************************************/
 	
-	static MEMORY_READ_START( lasso_readmem )
-		{ 0x0000, 0x03ff, MRA_RAM			},	// Work RAM
-		{ 0x0400, 0x0bff, MRA_RAM			},	// Tilemap
-		{ 0x0c00, 0x0c7f, MRA_RAM			},	// Sprites
-		{ 0x1000, 0x17ff, shareram_r		},	// Shared RAM (17f0 on CPU1 maps to 07f0 on CPU2)
-		{ 0x1804, 0x1804, input_port_0_r	},	// Player 1
-		{ 0x1805, 0x1805, input_port_1_r	},	// Player 2
-		{ 0x1806, 0x1806, input_port_2_r	},	// DSW
-		{ 0x1807, 0x1807, input_port_3_r	},	// Coins
-		{ 0x8000, 0xffff, MRA_ROM			},	// ROM
-	MEMORY_END
+	public static Memory_ReadAddress lasso_readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x03ff, MRA_RAM			),	// Work RAM
+		new Memory_ReadAddress( 0x0400, 0x0bff, MRA_RAM			),	// Tilemap
+		new Memory_ReadAddress( 0x0c00, 0x0c7f, MRA_RAM			),	// Sprites
+		new Memory_ReadAddress( 0x1000, 0x17ff, shareram_r		),	// Shared RAM (17f0 on CPU1 maps to 07f0 on CPU2)
+		new Memory_ReadAddress( 0x1804, 0x1804, input_port_0_r	),	// Player 1
+		new Memory_ReadAddress( 0x1805, 0x1805, input_port_1_r	),	// Player 2
+		new Memory_ReadAddress( 0x1806, 0x1806, input_port_2_r	),	// DSW
+		new Memory_ReadAddress( 0x1807, 0x1807, input_port_3_r	),	// Coins
+		new Memory_ReadAddress( 0x8000, 0xffff, MRA_ROM			),	// ROM
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	static MEMORY_WRITE_START( lasso_writemem )
 		{ 0x0000, 0x03ff, MWA_RAM						},	// ROM
 		{ 0x0400, 0x0bff, lasso_videoram_w, &videoram	},	// Tilemap
@@ -163,17 +167,19 @@ public class lasso
 								Wai Wai Jockey Gate-In!
 	***************************************************************************/
 	
-	static MEMORY_READ_START( wwjgtin_readmem )
-		{ 0x0000, 0x07ff, MRA_RAM			},	// Work RAM
-		{ 0x0800, 0x0fff, MRA_RAM			},	// Tilemap
-		{ 0x1000, 0x10ff, MRA_RAM			},	// Sprites
-		{ 0x1804, 0x1804, input_port_0_r	},	// Player 1
-		{ 0x1805, 0x1805, input_port_1_r	},	// Player 2
-		{ 0x1806, 0x1806, input_port_2_r	},	// DSW
-		{ 0x1807, 0x1807, input_port_3_r	},	// Coins + DSW
-		{ 0x5000, 0xbfff, MRA_ROM			},	// ROM
-		{ 0xfffa, 0xffff, MRA_ROM			},	// ROM (Mirror)
-	MEMORY_END
+	public static Memory_ReadAddress wwjgtin_readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x07ff, MRA_RAM			),	// Work RAM
+		new Memory_ReadAddress( 0x0800, 0x0fff, MRA_RAM			),	// Tilemap
+		new Memory_ReadAddress( 0x1000, 0x10ff, MRA_RAM			),	// Sprites
+		new Memory_ReadAddress( 0x1804, 0x1804, input_port_0_r	),	// Player 1
+		new Memory_ReadAddress( 0x1805, 0x1805, input_port_1_r	),	// Player 2
+		new Memory_ReadAddress( 0x1806, 0x1806, input_port_2_r	),	// DSW
+		new Memory_ReadAddress( 0x1807, 0x1807, input_port_3_r	),	// Coins + DSW
+		new Memory_ReadAddress( 0x5000, 0xbfff, MRA_ROM			),	// ROM
+		new Memory_ReadAddress( 0xfffa, 0xffff, MRA_ROM			),	// ROM (Mirror)
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	static MEMORY_WRITE_START( wwjgtin_writemem )
 		{ 0x0000, 0x07ff, MWA_RAM						},	// Work RAM
 		{ 0x0800, 0x0fff, lasso_videoram_w, &videoram	},	// Tilemap
@@ -201,12 +207,14 @@ public class lasso
 									Lasso
 	***************************************************************************/
 	
-	static MEMORY_READ_START( lasso_coprocessor_readmem )
-		{ 0x0000, 0x07ff, MRA_RAM				},	// Shared RAM
-		{ 0x2000, 0x3fff, MRA_RAM				},	// Video RAM
-		{ 0x8000, 0x8fff, MRA_ROM				},	// ROM
-		{ 0xf000, 0xffff, MRA_ROM				},	// ROM (Mirror)
-	MEMORY_END
+	public static Memory_ReadAddress lasso_coprocessor_readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x07ff, MRA_RAM				),	// Shared RAM
+		new Memory_ReadAddress( 0x2000, 0x3fff, MRA_RAM				),	// Video RAM
+		new Memory_ReadAddress( 0x8000, 0x8fff, MRA_ROM				),	// ROM
+		new Memory_ReadAddress( 0xf000, 0xffff, MRA_ROM				),	// ROM (Mirror)
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	static MEMORY_WRITE_START( lasso_coprocessor_writemem )
 		{ 0x0000, 0x07ff, MWA_RAM, &shareram	},	// Shared RAM (code is executed from here!)
 		{ 0x2000, 0x3fff, MWA_RAM, &lasso_vram	},	// Video RAM
@@ -228,14 +236,16 @@ public class lasso
 									Chameleon
 	***************************************************************************/
 	
-	static MEMORY_READ_START( chameleo_sound_readmem )
-		{ 0x0000, 0x01ff, MRA_RAM			},	// Work RAM
-		{ 0x1000, 0x1fff, MRA_ROM			},	// ROM
-		{ 0x6000, 0x7fff, MRA_ROM			},	//
-		{ 0xb004, 0xb004, sound_status_r	},	// Sound
-		{ 0xb005, 0xb005, soundlatch_r		},	//
-		{ 0xfffa, 0xffff, MRA_ROM			},	// ROM (Mirror)
-	MEMORY_END
+	public static Memory_ReadAddress chameleo_sound_readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x01ff, MRA_RAM			),	// Work RAM
+		new Memory_ReadAddress( 0x1000, 0x1fff, MRA_ROM			),	// ROM
+		new Memory_ReadAddress( 0x6000, 0x7fff, MRA_ROM			),	//
+		new Memory_ReadAddress( 0xb004, 0xb004, sound_status_r	),	// Sound
+		new Memory_ReadAddress( 0xb005, 0xb005, soundlatch_r		),	//
+		new Memory_ReadAddress( 0xfffa, 0xffff, MRA_ROM			),	// ROM (Mirror)
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	static MEMORY_WRITE_START( chameleo_sound_writemem )
 		{ 0x0000, 0x01ff, MWA_RAM			},	// Work RAM
 		{ 0x1000, 0x1fff, MWA_ROM			},	// ROM
@@ -249,13 +259,15 @@ public class lasso
 									Lasso
 	***************************************************************************/
 	
-	static MEMORY_READ_START( lasso_sound_readmem )
-		{ 0x0000, 0x01ff, MRA_RAM			},	// Work RAM
-		{ 0x5000, 0x7fff, MRA_ROM			},	// ROM
-		{ 0xb004, 0xb004, sound_status_r	},	// Sound
-		{ 0xb005, 0xb005, soundlatch_r		},	// From Main CPU
-		{ 0xf000, 0xffff, MRA_ROM			},	// ROM (mirror)
-	MEMORY_END
+	public static Memory_ReadAddress lasso_sound_readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x01ff, MRA_RAM			),	// Work RAM
+		new Memory_ReadAddress( 0x5000, 0x7fff, MRA_ROM			),	// ROM
+		new Memory_ReadAddress( 0xb004, 0xb004, sound_status_r	),	// Sound
+		new Memory_ReadAddress( 0xb005, 0xb005, soundlatch_r		),	// From Main CPU
+		new Memory_ReadAddress( 0xf000, 0xffff, MRA_ROM			),	// ROM (mirror)
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	static MEMORY_WRITE_START( lasso_sound_writemem )
 		{ 0x0000, 0x01ff, MWA_RAM			},	// Work RAM
 		{ 0x5000, 0x7fff, MWA_ROM			},	// ROM
@@ -268,13 +280,15 @@ public class lasso
 								Wai Wai Jockey Gate-In!
 	***************************************************************************/
 	
-	static MEMORY_READ_START( wwjgtin_sound_readmem )
-		{ 0x0000, 0x01ff, MRA_RAM			},	// Work RAM
-		{ 0x5000, 0x7fff, MRA_ROM			},	// ROM
-		{ 0xb004, 0xb004, sound_status_r	},	// Sound
-		{ 0xb005, 0xb005, soundlatch_r		},	// From Main CPU
-		{ 0xfffa, 0xffff, MRA_ROM			},	// ROM (mirror)
-	MEMORY_END
+	public static Memory_ReadAddress wwjgtin_sound_readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x01ff, MRA_RAM			),	// Work RAM
+		new Memory_ReadAddress( 0x5000, 0x7fff, MRA_ROM			),	// ROM
+		new Memory_ReadAddress( 0xb004, 0xb004, sound_status_r	),	// Sound
+		new Memory_ReadAddress( 0xb005, 0xb005, soundlatch_r		),	// From Main CPU
+		new Memory_ReadAddress( 0xfffa, 0xffff, MRA_ROM			),	// ROM (mirror)
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	static MEMORY_WRITE_START( wwjgtin_sound_writemem )
 		{ 0x0000, 0x01ff, MWA_RAM			},	// Work RAM
 		{ 0x5000, 0x7fff, MWA_ROM			},	// ROM

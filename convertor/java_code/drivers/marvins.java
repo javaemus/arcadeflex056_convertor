@@ -127,12 +127,14 @@ public class marvins
 		return 0xff;
 	}
 	
-	static MEMORY_READ_START( readmem_sound )
-		{ 0x0000, 0x3fff, MRA_ROM },
-		{ 0x4000, 0x4000, sound_command_r },
-		{ 0xa000, 0xa000, sound_ack_r },
-		{ 0xe000, 0xe7ff, MRA_RAM },
-	MEMORY_END
+	public static Memory_ReadAddress readmem_sound[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x3fff, MRA_ROM ),
+		new Memory_ReadAddress( 0x4000, 0x4000, sound_command_r ),
+		new Memory_ReadAddress( 0xa000, 0xa000, sound_ack_r ),
+		new Memory_ReadAddress( 0xe000, 0xe7ff, MRA_RAM ),
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( writemem_sound )
 		{ 0x0000, 0x3fff, MWA_ROM, &namco_wavedata },	/* silly hack - this shouldn't be here */
@@ -245,17 +247,19 @@ public class marvins
 	**
 	***************************************************************************/
 	
-	static MEMORY_READ_START( readmem_CPUA )
-		{ 0x0000, 0x7fff, MRA_ROM },
-		{ 0x8000, 0x8000, marvins_port_0_r },	/* coin input, start, sound CPU status */
-		{ 0x8100, 0x8100, input_port_1_r },		/* player #1 controls */
-		{ 0x8200, 0x8200, input_port_2_r },		/* player #2 controls */
-		{ 0x8400, 0x8400, input_port_3_r },		/* dipswitch#1 */
-		{ 0x8500, 0x8500, input_port_4_r },		/* dipswitch#2 */
-		{ 0x8700, 0x8700, CPUB_int_trigger_r },
-		{ 0xc000, 0xcfff, MRA_RAM },
-		{ 0xd000, 0xffff, MRA_RAM },
-	MEMORY_END
+	public static Memory_ReadAddress readmem_CPUA[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x7fff, MRA_ROM ),
+		new Memory_ReadAddress( 0x8000, 0x8000, marvins_port_0_r ),	/* coin input, start, sound CPU status */
+		new Memory_ReadAddress( 0x8100, 0x8100, input_port_1_r ),		/* player #1 controls */
+		new Memory_ReadAddress( 0x8200, 0x8200, input_port_2_r ),		/* player #2 controls */
+		new Memory_ReadAddress( 0x8400, 0x8400, input_port_3_r ),		/* dipswitch#1 */
+		new Memory_ReadAddress( 0x8500, 0x8500, input_port_4_r ),		/* dipswitch#2 */
+		new Memory_ReadAddress( 0x8700, 0x8700, CPUB_int_trigger_r ),
+		new Memory_ReadAddress( 0xc000, 0xcfff, MRA_RAM ),
+		new Memory_ReadAddress( 0xd000, 0xffff, MRA_RAM ),
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( writemem_CPUA )
 		{ 0x6000, 0x6000, marvins_palette_bank_w }, // Marvin's Maze only
@@ -273,14 +277,16 @@ public class marvins
 		{ 0xf400, 0xffff, MWA_RAM },
 	MEMORY_END
 	
-	static MEMORY_READ_START( marvins_readmem_CPUB )
-		{ 0x0000, 0x7fff, MRA_ROM },
-		{ 0x8700, 0x8700, CPUA_int_trigger_r },
-		{ 0xc000, 0xcfff, marvins_spriteram_r },
-		{ 0xd000, 0xffff, marvins_background_ram_r },
-		{ 0xe000, 0xffff, marvins_foreground_ram_r },
-		{ 0xf000, 0xffff, marvins_text_ram_r },
-	MEMORY_END
+	public static Memory_ReadAddress marvins_readmem_CPUB[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x7fff, MRA_ROM ),
+		new Memory_ReadAddress( 0x8700, 0x8700, CPUA_int_trigger_r ),
+		new Memory_ReadAddress( 0xc000, 0xcfff, marvins_spriteram_r ),
+		new Memory_ReadAddress( 0xd000, 0xffff, marvins_background_ram_r ),
+		new Memory_ReadAddress( 0xe000, 0xffff, marvins_foreground_ram_r ),
+		new Memory_ReadAddress( 0xf000, 0xffff, marvins_text_ram_r ),
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( marvins_writemem_CPUB )
 		{ 0x0000, 0x7fff, MWA_ROM },
@@ -291,13 +297,15 @@ public class marvins
 		{ 0xf000, 0xffff, marvins_text_ram_w },
 	MEMORY_END
 	
-	static MEMORY_READ_START( madcrash_readmem_CPUB )
-		{ 0x0000, 0x9fff, MRA_ROM },
-		{ 0xc000, 0xcfff, marvins_foreground_ram_r },
-		{ 0xd000, 0xdfff, marvins_text_ram_r },
-		{ 0xe000, 0xefff, marvins_spriteram_r },
-		{ 0xf000, 0xffff, marvins_background_ram_r },
-	MEMORY_END
+	public static Memory_ReadAddress madcrash_readmem_CPUB[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x9fff, MRA_ROM ),
+		new Memory_ReadAddress( 0xc000, 0xcfff, marvins_foreground_ram_r ),
+		new Memory_ReadAddress( 0xd000, 0xdfff, marvins_text_ram_r ),
+		new Memory_ReadAddress( 0xe000, 0xefff, marvins_spriteram_r ),
+		new Memory_ReadAddress( 0xf000, 0xffff, marvins_background_ram_r ),
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( madcrash_writemem_CPUB )
 		{ 0x0000, 0x7fff, MWA_ROM },

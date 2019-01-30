@@ -70,12 +70,14 @@ public class hanaawas
 	}
 	
 	
-	static MEMORY_READ_START( readmem )
-		{ 0x0000, 0x2fff, MRA_ROM },
-		{ 0x4000, 0x4fff, MRA_ROM },
-		{ 0x6000, 0x6fff, MRA_ROM },
-		{ 0x8000, 0x8bff, MRA_RAM },
-	MEMORY_END
+	public static Memory_ReadAddress readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x2fff, MRA_ROM ),
+		new Memory_ReadAddress( 0x4000, 0x4fff, MRA_ROM ),
+		new Memory_ReadAddress( 0x6000, 0x6fff, MRA_ROM ),
+		new Memory_ReadAddress( 0x8000, 0x8bff, MRA_RAM ),
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( writemem )
 		{ 0x0000, 0x2fff, MWA_ROM },

@@ -410,11 +410,13 @@ public class punchout
 	
 	
 	
-	static MEMORY_READ_START( readmem )
-		{ 0x0000, 0xbfff, MRA_ROM },
-		{ 0xc000, 0xc3ff, MRA_RAM },
-		{ 0xd000, 0xffff, MRA_RAM },
-	MEMORY_END
+	public static Memory_ReadAddress readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0xbfff, MRA_ROM ),
+		new Memory_ReadAddress( 0xc000, 0xc3ff, MRA_RAM ),
+		new Memory_ReadAddress( 0xd000, 0xffff, MRA_RAM ),
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( writemem )
 		{ 0x0000, 0xbfff, MWA_ROM },
@@ -480,13 +482,15 @@ public class punchout
 		{ 0xf7, 0xf7, spunchout_prot_f_w },
 	PORT_END
 	
-	static MEMORY_READ_START( sound_readmem )
-		{ 0x0000, 0x07ff, MRA_RAM },
-		{ 0x4016, 0x4016, soundlatch_r },
-		{ 0x4017, 0x4017, soundlatch2_r },
-		{ 0x4000, 0x4017, NESPSG_0_r },
-		{ 0xe000, 0xffff, MRA_ROM },
-	MEMORY_END
+	public static Memory_ReadAddress sound_readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x07ff, MRA_RAM ),
+		new Memory_ReadAddress( 0x4016, 0x4016, soundlatch_r ),
+		new Memory_ReadAddress( 0x4017, 0x4017, soundlatch2_r ),
+		new Memory_ReadAddress( 0x4000, 0x4017, NESPSG_0_r ),
+		new Memory_ReadAddress( 0xe000, 0xffff, MRA_ROM ),
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( sound_writemem )
 		{ 0x0000, 0x07ff, MWA_RAM },

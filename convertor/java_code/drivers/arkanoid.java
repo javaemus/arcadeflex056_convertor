@@ -71,16 +71,18 @@ public class arkanoid
 	READ_HANDLER( arkanoid_input_2_r );
 	
 	
-	static MEMORY_READ_START( readmem )
-		{ 0x0000, 0xbfff, MRA_ROM },
-		{ 0xc000, 0xc7ff, MRA_RAM },
-		{ 0xd001, 0xd001, AY8910_read_port_0_r },
-		{ 0xd00c, 0xd00c, arkanoid_68705_input_0_r },  /* mainly an input port, with 2 bits from the 68705 */
-		{ 0xd010, 0xd010, input_port_1_r },
-		{ 0xd018, 0xd018, arkanoid_Z80_mcu_r },  /* input from the 68705 */
-		{ 0xe000, 0xefff, MRA_RAM },
-		{ 0xf000, 0xffff, MRA_NOP },	/* fixes instant death in final level */
-	MEMORY_END
+	public static Memory_ReadAddress readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0xbfff, MRA_ROM ),
+		new Memory_ReadAddress( 0xc000, 0xc7ff, MRA_RAM ),
+		new Memory_ReadAddress( 0xd001, 0xd001, AY8910_read_port_0_r ),
+		new Memory_ReadAddress( 0xd00c, 0xd00c, arkanoid_68705_input_0_r ),  /* mainly an input port, with 2 bits from the 68705 */
+		new Memory_ReadAddress( 0xd010, 0xd010, input_port_1_r ),
+		new Memory_ReadAddress( 0xd018, 0xd018, arkanoid_Z80_mcu_r ),  /* input from the 68705 */
+		new Memory_ReadAddress( 0xe000, 0xefff, MRA_RAM ),
+		new Memory_ReadAddress( 0xf000, 0xffff, MRA_NOP ),	/* fixes instant death in final level */
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( writemem )
 		{ 0x0000, 0xbfff, MWA_ROM },
@@ -95,16 +97,18 @@ public class arkanoid
 		{ 0xe840, 0xefff, MWA_RAM },
 	MEMORY_END
 	
-	static MEMORY_READ_START( boot_readmem )
-		{ 0x0000, 0xbfff, MRA_ROM },
-		{ 0xc000, 0xc7ff, MRA_RAM },
-		{ 0xd001, 0xd001, AY8910_read_port_0_r },
-		{ 0xd00c, 0xd00c, input_port_0_r },
-		{ 0xd010, 0xd010, input_port_1_r },
-		{ 0xd018, 0xd018, arkanoid_input_2_r },
-		{ 0xe000, 0xefff, MRA_RAM },
-		{ 0xf000, 0xffff, MRA_NOP },	/* fixes instant death in final level */
-	MEMORY_END
+	public static Memory_ReadAddress boot_readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0xbfff, MRA_ROM ),
+		new Memory_ReadAddress( 0xc000, 0xc7ff, MRA_RAM ),
+		new Memory_ReadAddress( 0xd001, 0xd001, AY8910_read_port_0_r ),
+		new Memory_ReadAddress( 0xd00c, 0xd00c, input_port_0_r ),
+		new Memory_ReadAddress( 0xd010, 0xd010, input_port_1_r ),
+		new Memory_ReadAddress( 0xd018, 0xd018, arkanoid_input_2_r ),
+		new Memory_ReadAddress( 0xe000, 0xefff, MRA_RAM ),
+		new Memory_ReadAddress( 0xf000, 0xffff, MRA_NOP ),	/* fixes instant death in final level */
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( boot_writemem )
 		{ 0x0000, 0xbfff, MWA_ROM },
@@ -120,13 +124,15 @@ public class arkanoid
 	MEMORY_END
 	
 	
-	static MEMORY_READ_START( mcu_readmem )
-		{ 0x0000, 0x0000, arkanoid_68705_portA_r },
-		{ 0x0001, 0x0001, arkanoid_input_2_r },
-		{ 0x0002, 0x0002, arkanoid_68705_portC_r },
-		{ 0x0010, 0x007f, MRA_RAM },
-		{ 0x0080, 0x07ff, MRA_ROM },
-	MEMORY_END
+	public static Memory_ReadAddress mcu_readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x0000, arkanoid_68705_portA_r ),
+		new Memory_ReadAddress( 0x0001, 0x0001, arkanoid_input_2_r ),
+		new Memory_ReadAddress( 0x0002, 0x0002, arkanoid_68705_portC_r ),
+		new Memory_ReadAddress( 0x0010, 0x007f, MRA_RAM ),
+		new Memory_ReadAddress( 0x0080, 0x07ff, MRA_ROM ),
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( mcu_writemem )
 		{ 0x0000, 0x0000, arkanoid_68705_portA_w },

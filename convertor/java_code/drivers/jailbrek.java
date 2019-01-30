@@ -61,23 +61,25 @@ public class jailbrek
 		VLM5030_RST( ( data >> 2 ) & 1 );
 	}
 	
-	static MEMORY_READ_START( readmem )
-		{ 0x0000, 0x07ff, colorram_r },
-		{ 0x0800, 0x0fff, videoram_r },
-		{ 0x1000, 0x10bf, MRA_RAM }, /* sprites */
-		{ 0x10c0, 0x14ff, MRA_RAM }, /* ??? */
-		{ 0x1500, 0x1fff, MRA_RAM }, /* work ram */
-		{ 0x2000, 0x203f, MRA_RAM }, /* scroll registers */
-		{ 0x3000, 0x307f, MRA_NOP }, /* related to sprites? */
-		{ 0x3100, 0x3100, input_port_4_r }, /* DSW1 */
-		{ 0x3200, 0x3200, input_port_5_r }, /* DSW2 */
-		{ 0x3300, 0x3300, input_port_0_r }, /* coins, start */
-		{ 0x3301, 0x3301, input_port_1_r }, /* joy1 */
-		{ 0x3302, 0x3302, input_port_2_r }, /* joy2 */
-		{ 0x3303, 0x3303, input_port_3_r }, /* DSW0 */
-		{ 0x6000, 0x6000, jailbrek_speech_r },
-		{ 0x8000, 0xffff, MRA_ROM },
-	MEMORY_END
+	public static Memory_ReadAddress readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x07ff, colorram_r ),
+		new Memory_ReadAddress( 0x0800, 0x0fff, videoram_r ),
+		new Memory_ReadAddress( 0x1000, 0x10bf, MRA_RAM ), /* sprites */
+		new Memory_ReadAddress( 0x10c0, 0x14ff, MRA_RAM ), /* ??? */
+		new Memory_ReadAddress( 0x1500, 0x1fff, MRA_RAM ), /* work ram */
+		new Memory_ReadAddress( 0x2000, 0x203f, MRA_RAM ), /* scroll registers */
+		new Memory_ReadAddress( 0x3000, 0x307f, MRA_NOP ), /* related to sprites? */
+		new Memory_ReadAddress( 0x3100, 0x3100, input_port_4_r ), /* DSW1 */
+		new Memory_ReadAddress( 0x3200, 0x3200, input_port_5_r ), /* DSW2 */
+		new Memory_ReadAddress( 0x3300, 0x3300, input_port_0_r ), /* coins, start */
+		new Memory_ReadAddress( 0x3301, 0x3301, input_port_1_r ), /* joy1 */
+		new Memory_ReadAddress( 0x3302, 0x3302, input_port_2_r ), /* joy2 */
+		new Memory_ReadAddress( 0x3303, 0x3303, input_port_3_r ), /* DSW0 */
+		new Memory_ReadAddress( 0x6000, 0x6000, jailbrek_speech_r ),
+		new Memory_ReadAddress( 0x8000, 0xffff, MRA_ROM ),
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( writemem )
 		{ 0x0000, 0x07ff, colorram_w, &colorram },

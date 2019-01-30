@@ -71,14 +71,16 @@ public class pengo
 	
 	
 	
-	static MEMORY_READ_START( readmem )
-		{ 0x0000, 0x7fff, MRA_ROM },
-		{ 0x8000, 0x8fff, MRA_RAM },	/* video and color RAM, scratchpad RAM, sprite codes */
-		{ 0x9000, 0x903f, input_port_3_r },	/* DSW1 */
-		{ 0x9040, 0x907f, input_port_2_r },	/* DSW0 */
-		{ 0x9080, 0x90bf, input_port_1_r },	/* IN1 */
-		{ 0x90c0, 0x90ff, input_port_0_r },	/* IN0 */
-	MEMORY_END
+	public static Memory_ReadAddress readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x7fff, MRA_ROM ),
+		new Memory_ReadAddress( 0x8000, 0x8fff, MRA_RAM ),	/* video and color RAM, scratchpad RAM, sprite codes */
+		new Memory_ReadAddress( 0x9000, 0x903f, input_port_3_r ),	/* DSW1 */
+		new Memory_ReadAddress( 0x9040, 0x907f, input_port_2_r ),	/* DSW0 */
+		new Memory_ReadAddress( 0x9080, 0x90bf, input_port_1_r ),	/* IN1 */
+		new Memory_ReadAddress( 0x90c0, 0x90ff, input_port_0_r ),	/* IN0 */
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( writemem )
 		{ 0x0000, 0x7fff, MWA_ROM },

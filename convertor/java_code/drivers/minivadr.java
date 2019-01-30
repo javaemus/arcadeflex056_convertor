@@ -25,11 +25,13 @@ public class minivadr
 	void minivadr_init_palette(unsigned char *game_palette, unsigned short *game_colortable,const unsigned char *color_prom);
 	
 	
-	static MEMORY_READ_START( readmem )
-		{ 0x0000, 0x1fff, MRA_ROM },
-		{ 0xa000, 0xbfff, MRA_RAM },
-		{ 0xe008, 0xe008, input_port_0_r },
-	MEMORY_END
+	public static Memory_ReadAddress readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x1fff, MRA_ROM ),
+		new Memory_ReadAddress( 0xa000, 0xbfff, MRA_RAM ),
+		new Memory_ReadAddress( 0xe008, 0xe008, input_port_0_r ),
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( writemem )
 		{ 0x0000, 0x1fff, MWA_ROM },

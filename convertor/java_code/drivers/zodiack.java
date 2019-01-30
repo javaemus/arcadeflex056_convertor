@@ -61,20 +61,22 @@ public class zodiack
 	}
 	
 	
-	static MEMORY_READ_START( readmem )
-		{ 0x0000, 0x4fff, MRA_ROM },
-		{ 0x5800, 0x5fff, MRA_RAM },
-		{ 0x6081, 0x6081, input_port_0_r },
-		{ 0x6082, 0x6082, input_port_1_r },
-		{ 0x6083, 0x6083, input_port_2_r },
-		{ 0x6084, 0x6084, input_port_3_r },
-		{ 0x6090, 0x6090, soundlatch_r },
-		{ 0x7000, 0x7000, MRA_NOP },  /* ??? */
-		{ 0x9000, 0x93ff, MRA_RAM },
-		{ 0xa000, 0xa3ff, MRA_RAM },
-		{ 0xb000, 0xb3ff, MRA_RAM },
-		{ 0xc000, 0xcfff, MRA_ROM },
-	MEMORY_END
+	public static Memory_ReadAddress readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x4fff, MRA_ROM ),
+		new Memory_ReadAddress( 0x5800, 0x5fff, MRA_RAM ),
+		new Memory_ReadAddress( 0x6081, 0x6081, input_port_0_r ),
+		new Memory_ReadAddress( 0x6082, 0x6082, input_port_1_r ),
+		new Memory_ReadAddress( 0x6083, 0x6083, input_port_2_r ),
+		new Memory_ReadAddress( 0x6084, 0x6084, input_port_3_r ),
+		new Memory_ReadAddress( 0x6090, 0x6090, soundlatch_r ),
+		new Memory_ReadAddress( 0x7000, 0x7000, MRA_NOP ),  /* ??? */
+		new Memory_ReadAddress( 0x9000, 0x93ff, MRA_RAM ),
+		new Memory_ReadAddress( 0xa000, 0xa3ff, MRA_RAM ),
+		new Memory_ReadAddress( 0xb000, 0xb3ff, MRA_RAM ),
+		new Memory_ReadAddress( 0xc000, 0xcfff, MRA_ROM ),
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	
 	static MEMORY_WRITE_START( writemem )
@@ -94,11 +96,13 @@ public class zodiack
 		{ 0xc000, 0xcfff, MWA_ROM },
 	MEMORY_END
 	
-	static MEMORY_READ_START( sound_readmem )
-		{ 0x0000, 0x1fff, MRA_ROM },
-		{ 0x2000, 0x23ff, MRA_RAM },
-		{ 0x6000, 0x6000, soundlatch_r },
-	MEMORY_END
+	public static Memory_ReadAddress sound_readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x1fff, MRA_ROM ),
+		new Memory_ReadAddress( 0x2000, 0x23ff, MRA_RAM ),
+		new Memory_ReadAddress( 0x6000, 0x6000, soundlatch_r ),
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( sound_writemem )
 		{ 0x0000, 0x1fff, MWA_ROM },

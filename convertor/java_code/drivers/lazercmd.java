@@ -433,12 +433,14 @@ public class lazercmd
 		{ 0x1f00, 0x1f03, lazercmd_hardware_w },
 	MEMORY_END
 	
-	static MEMORY_READ_START( lazercmd_readmem )
-		{ 0x0000, 0x0bff, MRA_ROM },
-		{ 0x1c00, 0x1c1f, MRA_RAM },
-		{ 0x1c20, 0x1eff, MRA_RAM },
-		{ 0x1f00, 0x1f07, lazercmd_hardware_r },
-	MEMORY_END
+	public static Memory_ReadAddress lazercmd_readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x0bff, MRA_ROM ),
+		new Memory_ReadAddress( 0x1c00, 0x1c1f, MRA_RAM ),
+		new Memory_ReadAddress( 0x1c20, 0x1eff, MRA_RAM ),
+		new Memory_ReadAddress( 0x1f00, 0x1f07, lazercmd_hardware_r ),
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( medlanes_writemem )
 		{ 0x0000, 0x0bff, MWA_ROM },
@@ -448,13 +450,15 @@ public class lazercmd
 		{ 0x1f00, 0x1f03, medlanes_hardware_w },
 	MEMORY_END
 	
-	static MEMORY_READ_START( medlanes_readmem )
-		{ 0x0000, 0x0bff, MRA_ROM },
-		{ 0x1000, 0x1800, MRA_ROM },
-		{ 0x1c00, 0x1c1f, MRA_RAM },
-		{ 0x1c20, 0x1eff, MRA_RAM },
-		{ 0x1f00, 0x1f07, lazercmd_hardware_r },
-	MEMORY_END
+	public static Memory_ReadAddress medlanes_readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x0bff, MRA_ROM ),
+		new Memory_ReadAddress( 0x1000, 0x1800, MRA_ROM ),
+		new Memory_ReadAddress( 0x1c00, 0x1c1f, MRA_RAM ),
+		new Memory_ReadAddress( 0x1c20, 0x1eff, MRA_RAM ),
+		new Memory_ReadAddress( 0x1f00, 0x1f07, lazercmd_hardware_r ),
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( bbonk_writemem )
 		{ 0x0000, 0x0bff, MWA_ROM },
@@ -463,12 +467,14 @@ public class lazercmd
 		{ 0x1f00, 0x1f03, bbonk_hardware_w },
 	MEMORY_END
 	
-	static MEMORY_READ_START( bbonk_readmem )
-		{ 0x0000, 0x0bff, MRA_ROM },
-		{ 0x1c00, 0x1c1f, MRA_RAM },
-		{ 0x1c20, 0x1eff, MRA_RAM },
-		{ 0x1f00, 0x1f07, lazercmd_hardware_r },
-	MEMORY_END
+	public static Memory_ReadAddress bbonk_readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x0bff, MRA_ROM ),
+		new Memory_ReadAddress( 0x1c00, 0x1c1f, MRA_RAM ),
+		new Memory_ReadAddress( 0x1c20, 0x1eff, MRA_RAM ),
+		new Memory_ReadAddress( 0x1f00, 0x1f07, lazercmd_hardware_r ),
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static PORT_WRITE_START( lazercmd_writeport )
 		{ S2650_CTRL_PORT, S2650_CTRL_PORT, lazercmd_ctrl_port_w },

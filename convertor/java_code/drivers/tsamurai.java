@@ -156,27 +156,29 @@ public class tsamurai
 	}
 	
 	
-	static MEMORY_READ_START( readmem )
-		{ 0x0000, 0xbfff, MRA_ROM },
-		{ 0xc000, 0xcfff, MRA_RAM },
+	public static Memory_ReadAddress readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0xbfff, MRA_ROM ),
+		new Memory_ReadAddress( 0xc000, 0xcfff, MRA_RAM ),
 	
 		/* protection? - there are writes as well...*/
-		{ 0xd803, 0xd803, unknown_d803_r },
-		{ 0xd806, 0xd806, unknown_d806_r },
-		{ 0xd900, 0xd900, unknown_d900_r },
-		{ 0xd938, 0xd938, unknown_d938_r },
+		new Memory_ReadAddress( 0xd803, 0xd803, unknown_d803_r ),
+		new Memory_ReadAddress( 0xd806, 0xd806, unknown_d806_r ),
+		new Memory_ReadAddress( 0xd900, 0xd900, unknown_d900_r ),
+		new Memory_ReadAddress( 0xd938, 0xd938, unknown_d938_r ),
 	
-		{ 0xe000, 0xe3ff, MRA_RAM },
-		{ 0xe400, 0xe7ff, MRA_RAM },
-		{ 0xe800, 0xefff, MRA_RAM },
-		{ 0xf000, 0xf3ff, MRA_RAM },
+		new Memory_ReadAddress( 0xe000, 0xe3ff, MRA_RAM ),
+		new Memory_ReadAddress( 0xe400, 0xe7ff, MRA_RAM ),
+		new Memory_ReadAddress( 0xe800, 0xefff, MRA_RAM ),
+		new Memory_ReadAddress( 0xf000, 0xf3ff, MRA_RAM ),
 	
-		{ 0xf800, 0xf800, input_port_0_r },
-		{ 0xf801, 0xf801, input_port_1_r },
-		{ 0xf802, 0xf802, input_port_2_r },
-		{ 0xf804, 0xf804, input_port_3_r },
-		{ 0xf805, 0xf805, input_port_4_r },
-	MEMORY_END
+		new Memory_ReadAddress( 0xf800, 0xf800, input_port_0_r ),
+		new Memory_ReadAddress( 0xf801, 0xf801, input_port_1_r ),
+		new Memory_ReadAddress( 0xf802, 0xf802, input_port_2_r ),
+		new Memory_ReadAddress( 0xf804, 0xf804, input_port_3_r ),
+		new Memory_ReadAddress( 0xf805, 0xf805, input_port_4_r ),
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( writemem )
 		{ 0x0000, 0xbfff, MWA_ROM },
@@ -202,27 +204,29 @@ public class tsamurai
 		{ 0xfc03, 0xfc04, tsamurai_coin_counter_w },
 	MEMORY_END
 	
-	static MEMORY_READ_START( readmem_m660 )
-		{ 0x0000, 0xbfff, MRA_ROM },
-		{ 0xc000, 0xcfff, MRA_RAM },
+	public static Memory_ReadAddress readmem_m660[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0xbfff, MRA_ROM ),
+		new Memory_ReadAddress( 0xc000, 0xcfff, MRA_RAM ),
 	
 		/* protection? - there are writes as well...*/
-		{ 0xd803, 0xd803, unknown_d803_m660_r },
-		{ 0xd806, 0xd806, unknown_d806_r },
-		{ 0xd900, 0xd900, unknown_d900_r },
-		{ 0xd938, 0xd938, unknown_d938_r },
+		new Memory_ReadAddress( 0xd803, 0xd803, unknown_d803_m660_r ),
+		new Memory_ReadAddress( 0xd806, 0xd806, unknown_d806_r ),
+		new Memory_ReadAddress( 0xd900, 0xd900, unknown_d900_r ),
+		new Memory_ReadAddress( 0xd938, 0xd938, unknown_d938_r ),
 	
-		{ 0xe000, 0xe3ff, MRA_RAM },
-		{ 0xe400, 0xe7ff, MRA_RAM },
-		{ 0xe800, 0xefff, MRA_RAM },
-		{ 0xf000, 0xf3ff, MRA_RAM },
+		new Memory_ReadAddress( 0xe000, 0xe3ff, MRA_RAM ),
+		new Memory_ReadAddress( 0xe400, 0xe7ff, MRA_RAM ),
+		new Memory_ReadAddress( 0xe800, 0xefff, MRA_RAM ),
+		new Memory_ReadAddress( 0xf000, 0xf3ff, MRA_RAM ),
 	
-		{ 0xf800, 0xf800, input_port_0_r },
-		{ 0xf801, 0xf801, input_port_1_r },
-		{ 0xf802, 0xf802, input_port_2_r },
-		{ 0xf804, 0xf804, input_port_3_r },
-		{ 0xf805, 0xf805, input_port_4_r },
-	MEMORY_END
+		new Memory_ReadAddress( 0xf800, 0xf800, input_port_0_r ),
+		new Memory_ReadAddress( 0xf801, 0xf801, input_port_1_r ),
+		new Memory_ReadAddress( 0xf802, 0xf802, input_port_2_r ),
+		new Memory_ReadAddress( 0xf804, 0xf804, input_port_3_r ),
+		new Memory_ReadAddress( 0xf805, 0xf805, input_port_4_r ),
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( writemem_m660 )
 		{ 0x0000, 0xbfff, MWA_ROM },
@@ -289,11 +293,13 @@ public class tsamurai
 	}
 	
 	/*******************************************************************************/
-	static MEMORY_READ_START( readmem_sound1 )
-		{ 0x0000, 0x3fff, MRA_ROM },
-		{ 0x6000, 0x6000, sound_command1_r },
-		{ 0x7f00, 0x7fff, MRA_RAM },
-	MEMORY_END
+	public static Memory_ReadAddress readmem_sound1[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x3fff, MRA_ROM ),
+		new Memory_ReadAddress( 0x6000, 0x6000, sound_command1_r ),
+		new Memory_ReadAddress( 0x7f00, 0x7fff, MRA_RAM ),
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( writemem_sound1 )
 		{ 0x0000, 0x3fff, MWA_ROM },
@@ -304,11 +310,13 @@ public class tsamurai
 	
 	/*******************************************************************************/
 	
-	static MEMORY_READ_START( readmem_sound2 )
-		{ 0x0000, 0x3fff, MRA_ROM },
-		{ 0x6000, 0x6000, sound_command2_r },
-		{ 0x7f00, 0x7fff, MRA_RAM },
-	MEMORY_END
+	public static Memory_ReadAddress readmem_sound2[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x3fff, MRA_ROM ),
+		new Memory_ReadAddress( 0x6000, 0x6000, sound_command2_r ),
+		new Memory_ReadAddress( 0x7f00, 0x7fff, MRA_RAM ),
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( writemem_sound2 )
 		{ 0x0000, 0x3fff, MWA_ROM },
@@ -319,11 +327,13 @@ public class tsamurai
 	
 	/*******************************************************************************/
 	
-	static MEMORY_READ_START( readmem_sound1_m660 )
-		{ 0x0000, 0x3fff, MRA_ROM },
-		{ 0xc000, 0xc000, sound_command1_r },
-		{ 0x8000, 0x87ff, MRA_RAM },
-	MEMORY_END
+	public static Memory_ReadAddress readmem_sound1_m660[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x3fff, MRA_ROM ),
+		new Memory_ReadAddress( 0xc000, 0xc000, sound_command1_r ),
+		new Memory_ReadAddress( 0x8000, 0x87ff, MRA_RAM ),
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( writemem_sound1_m660 )
 		{ 0x0000, 0x3fff, MWA_ROM },
@@ -334,11 +344,13 @@ public class tsamurai
 	
 	/*******************************************************************************/
 	
-	static MEMORY_READ_START( readmem_sound2_m660 )
-		{ 0x0000, 0x3fff, MRA_ROM },
-		{ 0xc000, 0xc000, sound_command2_r },
-		{ 0x8000, 0x87ff, MRA_RAM },
-	MEMORY_END
+	public static Memory_ReadAddress readmem_sound2_m660[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x3fff, MRA_ROM ),
+		new Memory_ReadAddress( 0xc000, 0xc000, sound_command2_r ),
+		new Memory_ReadAddress( 0x8000, 0x87ff, MRA_RAM ),
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( writemem_sound2_m660 )
 		{ 0x0000, 0x3fff, MWA_ROM },
@@ -357,11 +369,13 @@ public class tsamurai
 		{ 0x01, 0x01, AY8910_write_port_0_w },
 	PORT_END
 	
-	static MEMORY_READ_START( readmem_sound3_m660 )
-		{ 0x0000, 0x3fff, MRA_ROM },
-		{ 0xc000, 0xc000, sound_command3_r },
-		{ 0x8000, 0x87ff, MRA_RAM },
-	MEMORY_END
+	public static Memory_ReadAddress readmem_sound3_m660[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x3fff, MRA_ROM ),
+		new Memory_ReadAddress( 0xc000, 0xc000, sound_command3_r ),
+		new Memory_ReadAddress( 0x8000, 0x87ff, MRA_RAM ),
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( writemem_sound3_m660 )
 		{ 0x0000, 0x3fff, MWA_ROM },
@@ -393,20 +407,22 @@ public class tsamurai
 		cpu_cause_interrupt( 1, Z80_NMI_INT );
 	}
 	
-	static MEMORY_READ_START( readmem_vsgongf )
-		{ 0x0000, 0x7fff, MRA_ROM },
-		{ 0xa003, 0xa003, MRA_RAM },
-		{ 0xa006, 0xa006, vsgongf_a006_r }, /* protection */
-		{ 0xa100, 0xa100, vsgongf_a100_r }, /* protection */
-		{ 0xc000, 0xc7ff, MRA_RAM }, /* work ram */
-		{ 0xe000, 0xe7ff, MRA_RAM },
-		{ 0xf800, 0xf800, input_port_0_r }, /* joy1 */
-		{ 0xf801, 0xf801, input_port_1_r }, /* joy2 */
-		{ 0xf802, 0xf802, input_port_2_r }, /* coin */
-		{ 0xf804, 0xf804, input_port_3_r }, /* dsw1 */
-		{ 0xf805, 0xf805, input_port_4_r }, /* dsw2 */
-		{ 0xfc00, 0xffff, MRA_RAM },
-	MEMORY_END
+	public static Memory_ReadAddress readmem_vsgongf[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x7fff, MRA_ROM ),
+		new Memory_ReadAddress( 0xa003, 0xa003, MRA_RAM ),
+		new Memory_ReadAddress( 0xa006, 0xa006, vsgongf_a006_r ), /* protection */
+		new Memory_ReadAddress( 0xa100, 0xa100, vsgongf_a100_r ), /* protection */
+		new Memory_ReadAddress( 0xc000, 0xc7ff, MRA_RAM ), /* work ram */
+		new Memory_ReadAddress( 0xe000, 0xe7ff, MRA_RAM ),
+		new Memory_ReadAddress( 0xf800, 0xf800, input_port_0_r ), /* joy1 */
+		new Memory_ReadAddress( 0xf801, 0xf801, input_port_1_r ), /* joy2 */
+		new Memory_ReadAddress( 0xf802, 0xf802, input_port_2_r ), /* coin */
+		new Memory_ReadAddress( 0xf804, 0xf804, input_port_3_r ), /* dsw1 */
+		new Memory_ReadAddress( 0xf805, 0xf805, input_port_4_r ), /* dsw2 */
+		new Memory_ReadAddress( 0xfc00, 0xffff, MRA_RAM ),
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( writemem_vsgongf )
 		{ 0x0000, 0x7fff, MWA_ROM },
@@ -427,11 +443,13 @@ public class tsamurai
 		{ 0xfc04, 0xfc04, tsamurai_textbank1_w },
 	MEMORY_END
 	
-	static MEMORY_READ_START( readmem_sound_vsgongf )
-		{ 0x0000, 0x3fff, MRA_ROM },
-		{ 0x6000, 0x63ff, MRA_RAM }, /* work RAM */
-		{ 0x8000, 0x8000, soundlatch_r },
-	MEMORY_END
+	public static Memory_ReadAddress readmem_sound_vsgongf[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x3fff, MRA_ROM ),
+		new Memory_ReadAddress( 0x6000, 0x63ff, MRA_RAM ), /* work RAM */
+		new Memory_ReadAddress( 0x8000, 0x8000, soundlatch_r ),
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( writemem_sound_vsgongf )
 		{ 0x0000, 0x3fff, MWA_ROM },

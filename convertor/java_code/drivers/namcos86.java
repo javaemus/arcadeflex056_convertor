@@ -417,16 +417,18 @@ public class namcos86
 	
 	/*******************************************************************/
 	
-	static MEMORY_READ_START( readmem1 )
-		{ 0x0000, 0x1fff, rthunder_videoram1_r },
-		{ 0x2000, 0x3fff, rthunder_videoram2_r },
-		{ 0x4000, 0x40ff, namcos1_wavedata_r }, /* PSG device, shared RAM */
-		{ 0x4100, 0x413f, namcos1_sound_r }, /* PSG device, shared RAM */
-		{ 0x4000, 0x43ff, shared1_r },
-		{ 0x4400, 0x5fff, spriteram_r },
-		{ 0x6000, 0x7fff, MRA_BANK1 },
-		{ 0x8000, 0xffff, MRA_ROM },
-	MEMORY_END
+	public static Memory_ReadAddress readmem1[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x1fff, rthunder_videoram1_r ),
+		new Memory_ReadAddress( 0x2000, 0x3fff, rthunder_videoram2_r ),
+		new Memory_ReadAddress( 0x4000, 0x40ff, namcos1_wavedata_r ), /* PSG device, shared RAM */
+		new Memory_ReadAddress( 0x4100, 0x413f, namcos1_sound_r ), /* PSG device, shared RAM */
+		new Memory_ReadAddress( 0x4000, 0x43ff, shared1_r ),
+		new Memory_ReadAddress( 0x4400, 0x5fff, spriteram_r ),
+		new Memory_ReadAddress( 0x6000, 0x7fff, MRA_BANK1 ),
+		new Memory_ReadAddress( 0x8000, 0xffff, MRA_ROM ),
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( writemem1 )
 		{ 0x0000, 0x1fff, rthunder_videoram1_w, &rthunder_videoram1 },
@@ -466,14 +468,16 @@ public class namcos86
 	
 	
 	#define CPU2_MEMORY(NAME,ADDR_SPRITE,ADDR_VIDEO1,ADDR_VIDEO2,ADDR_ROM,ADDR_BANK,ADDR_WDOG,ADDR_INT)	\
-	static MEMORY_READ_START( NAME##_readmem2 )											\
-		{ ADDR_SPRITE+0x0000, ADDR_SPRITE+0x03ff, MRA_RAM },							\
-		{ ADDR_SPRITE+0x0400, ADDR_SPRITE+0x1fff, spriteram_r },						\
-		{ ADDR_VIDEO1+0x0000, ADDR_VIDEO1+0x1fff, rthunder_videoram1_r },				\
-		{ ADDR_VIDEO2+0x0000, ADDR_VIDEO2+0x1fff, rthunder_videoram2_r },				\
-		{ ADDR_ROM+0x0000, ADDR_ROM+0x1fff, MRA_BANK2 },								\
-		{ 0x8000, 0xffff, MRA_ROM },													\
-	MEMORY_END																			\
+	public static Memory_ReadAddress NAME##_readmem2[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),										\
+		new Memory_ReadAddress( ADDR_SPRITE+0x0000, ADDR_SPRITE+0x03ff, MRA_RAM ),							\
+		new Memory_ReadAddress( ADDR_SPRITE+0x0400, ADDR_SPRITE+0x1fff, spriteram_r ),						\
+		new Memory_ReadAddress( ADDR_VIDEO1+0x0000, ADDR_VIDEO1+0x1fff, rthunder_videoram1_r ),				\
+		new Memory_ReadAddress( ADDR_VIDEO2+0x0000, ADDR_VIDEO2+0x1fff, rthunder_videoram2_r ),				\
+		new Memory_ReadAddress( ADDR_ROM+0x0000, ADDR_ROM+0x1fff, MRA_BANK2 ),								\
+		new Memory_ReadAddress( 0x8000, 0xffff, MRA_ROM ),													\
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};																		\
 																						\
 	static MEMORY_WRITE_START( NAME##_writemem2 )										\
 		{ ADDR_SPRITE+0x0000, ADDR_SPRITE+0x03ff, MWA_RAM },							\
@@ -501,22 +505,24 @@ public class namcos86
 	
 	
 	#define MCU_MEMORY(NAME,ADDR_LOWROM,ADDR_INPUT,ADDR_UNK1,ADDR_UNK2)			\
-	static MEMORY_READ_START( NAME##_mcu_readmem )								\
-		{ 0x0000, 0x001f, hd63701_internal_registers_r },						\
-		{ 0x0080, 0x00ff, MRA_RAM },											\
-		{ 0x1000, 0x10ff, namcos1_wavedata_r }, /* PSG device, shared RAM */	\
-		{ 0x1100, 0x113f, namcos1_sound_r }, /* PSG device, shared RAM */		\
-		{ 0x1000, 0x13ff, shared1_r },											\
-		{ 0x1400, 0x1fff, MRA_RAM },											\
-		{ ADDR_INPUT+0x00, ADDR_INPUT+0x01, YM2151_status_port_0_r },			\
-		{ ADDR_INPUT+0x20, ADDR_INPUT+0x20, input_port_0_r },					\
-		{ ADDR_INPUT+0x21, ADDR_INPUT+0x21, input_port_1_r },					\
-		{ ADDR_INPUT+0x30, ADDR_INPUT+0x30, dsw0_r },							\
-		{ ADDR_INPUT+0x31, ADDR_INPUT+0x31, dsw1_r },							\
-		{ ADDR_LOWROM, ADDR_LOWROM+0x3fff, MRA_ROM },							\
-		{ 0x8000, 0xbfff, MRA_ROM },											\
-		{ 0xf000, 0xffff, MRA_ROM },											\
-	MEMORY_END																	\
+	public static Memory_ReadAddress NAME##_mcu_readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),							\
+		new Memory_ReadAddress( 0x0000, 0x001f, hd63701_internal_registers_r ),						\
+		new Memory_ReadAddress( 0x0080, 0x00ff, MRA_RAM ),											\
+		new Memory_ReadAddress( 0x1000, 0x10ff, namcos1_wavedata_r ), /* PSG device, shared RAM */	\
+		new Memory_ReadAddress( 0x1100, 0x113f, namcos1_sound_r ), /* PSG device, shared RAM */		\
+		new Memory_ReadAddress( 0x1000, 0x13ff, shared1_r ),											\
+		new Memory_ReadAddress( 0x1400, 0x1fff, MRA_RAM ),											\
+		new Memory_ReadAddress( ADDR_INPUT+0x00, ADDR_INPUT+0x01, YM2151_status_port_0_r ),			\
+		new Memory_ReadAddress( ADDR_INPUT+0x20, ADDR_INPUT+0x20, input_port_0_r ),					\
+		new Memory_ReadAddress( ADDR_INPUT+0x21, ADDR_INPUT+0x21, input_port_1_r ),					\
+		new Memory_ReadAddress( ADDR_INPUT+0x30, ADDR_INPUT+0x30, dsw0_r ),							\
+		new Memory_ReadAddress( ADDR_INPUT+0x31, ADDR_INPUT+0x31, dsw1_r ),							\
+		new Memory_ReadAddress( ADDR_LOWROM, ADDR_LOWROM+0x3fff, MRA_ROM ),							\
+		new Memory_ReadAddress( 0x8000, 0xbfff, MRA_ROM ),											\
+		new Memory_ReadAddress( 0xf000, 0xffff, MRA_ROM ),											\
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};																\
 																				\
 	static MEMORY_WRITE_START( NAME##_mcu_writemem )							\
 		{ 0x0000, 0x001f, hd63701_internal_registers_w },						\

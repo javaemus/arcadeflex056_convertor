@@ -243,26 +243,32 @@ public class xevious
 	
 	
 	
-	static MEMORY_READ_START( readmem_cpu1 )
-		{ 0x0000, 0x3fff, MRA_ROM },
-		{ 0x6800, 0x6807, xevious_dsw_r },
-		{ 0x7000, 0x700f, xevious_customio_data_r },
-		{ 0x7100, 0x7100, xevious_customio_r },
-		{ 0x7800, 0xcfff, xevious_sharedram_r },
-		{ 0xf000, 0xffff, xevious_bb_r },
-	MEMORY_END
+	public static Memory_ReadAddress readmem_cpu1[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x3fff, MRA_ROM ),
+		new Memory_ReadAddress( 0x6800, 0x6807, xevious_dsw_r ),
+		new Memory_ReadAddress( 0x7000, 0x700f, xevious_customio_data_r ),
+		new Memory_ReadAddress( 0x7100, 0x7100, xevious_customio_r ),
+		new Memory_ReadAddress( 0x7800, 0xcfff, xevious_sharedram_r ),
+		new Memory_ReadAddress( 0xf000, 0xffff, xevious_bb_r ),
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
-	static MEMORY_READ_START( readmem_cpu2 )
-		{ 0x0000, 0x1fff, MRA_ROM },
-		{ 0x6800, 0x6807, xevious_dsw_r },
-		{ 0x7800, 0xcfff, xevious_sharedram_r },
-		{ 0xf000, 0xffff, xevious_bb_r },
-	MEMORY_END
+	public static Memory_ReadAddress readmem_cpu2[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x1fff, MRA_ROM ),
+		new Memory_ReadAddress( 0x6800, 0x6807, xevious_dsw_r ),
+		new Memory_ReadAddress( 0x7800, 0xcfff, xevious_sharedram_r ),
+		new Memory_ReadAddress( 0xf000, 0xffff, xevious_bb_r ),
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
-	static MEMORY_READ_START( readmem_cpu3 )
-		{ 0x0000, 0x0fff, MRA_ROM },
-		{ 0x7800, 0xcfff, xevious_sharedram_r },
-	MEMORY_END
+	public static Memory_ReadAddress readmem_cpu3[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x0fff, MRA_ROM ),
+		new Memory_ReadAddress( 0x7800, 0xcfff, xevious_sharedram_r ),
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( writemem_cpu1 )
 		{ 0x0000, 0x3fff, MWA_ROM },

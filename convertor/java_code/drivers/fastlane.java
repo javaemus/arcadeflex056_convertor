@@ -89,22 +89,24 @@ public class fastlane
 	
 	
 	
-	static MEMORY_READ_START( fastlane_readmem )
-		{ 0x0000, 0x005f, MRA_RAM },
-		{ 0x0800, 0x0800, input_port_2_r }, 	/* DIPSW #3 */
-		{ 0x0801, 0x0801, input_port_5_r }, 	/* 2P inputs */
-		{ 0x0802, 0x0802, input_port_4_r }, 	/* 1P inputs */
-		{ 0x0803, 0x0803, input_port_3_r }, 	/* COINSW */
-		{ 0x0900, 0x0900, input_port_0_r }, 	/* DIPSW #1 */
-		{ 0x0901, 0x0901, input_port_1_r }, 	/* DISPW #2 */
-		{ 0x0d00, 0x0d0d, fastlane_K007232_read_port_0_r },/* 007232 registers (chip 1) */
-		{ 0x0e00, 0x0e0d, fastlane_K007232_read_port_1_r },/* 007232 registers (chip 2) */
-		{ 0x0f00, 0x0f1f, K051733_r },			/* 051733 (protection) */
-		{ 0x1000, 0x1fff, MRA_RAM },			/* Palette RAM/Work RAM */
-		{ 0x2000, 0x3fff, MRA_RAM },			/* Video RAM + Sprite RAM */
-		{ 0x4000, 0x7fff, MRA_BANK1 },			/* banked ROM */
-		{ 0x8000, 0xffff, MRA_ROM },			/* ROM */
-	MEMORY_END
+	public static Memory_ReadAddress fastlane_readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x005f, MRA_RAM ),
+		new Memory_ReadAddress( 0x0800, 0x0800, input_port_2_r ), 	/* DIPSW #3 */
+		new Memory_ReadAddress( 0x0801, 0x0801, input_port_5_r ), 	/* 2P inputs */
+		new Memory_ReadAddress( 0x0802, 0x0802, input_port_4_r ), 	/* 1P inputs */
+		new Memory_ReadAddress( 0x0803, 0x0803, input_port_3_r ), 	/* COINSW */
+		new Memory_ReadAddress( 0x0900, 0x0900, input_port_0_r ), 	/* DIPSW #1 */
+		new Memory_ReadAddress( 0x0901, 0x0901, input_port_1_r ), 	/* DISPW #2 */
+		new Memory_ReadAddress( 0x0d00, 0x0d0d, fastlane_K007232_read_port_0_r ),/* 007232 registers (chip 1) */
+		new Memory_ReadAddress( 0x0e00, 0x0e0d, fastlane_K007232_read_port_1_r ),/* 007232 registers (chip 2) */
+		new Memory_ReadAddress( 0x0f00, 0x0f1f, K051733_r ),			/* 051733 (protection) */
+		new Memory_ReadAddress( 0x1000, 0x1fff, MRA_RAM ),			/* Palette RAM/Work RAM */
+		new Memory_ReadAddress( 0x2000, 0x3fff, MRA_RAM ),			/* Video RAM + Sprite RAM */
+		new Memory_ReadAddress( 0x4000, 0x7fff, MRA_BANK1 ),			/* banked ROM */
+		new Memory_ReadAddress( 0x8000, 0xffff, MRA_ROM ),			/* ROM */
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( fastlane_writemem )
 		{ 0x0000, 0x005f, k007121_registers_w, &fastlane_k007121_regs },/* 007121 registers */

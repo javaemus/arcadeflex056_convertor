@@ -124,16 +124,18 @@ public class skykid
 	}
 	
 	
-	static MEMORY_READ_START( skykid_readmem )
-		{ 0x0000, 0x1fff, MRA_BANK1 },				/* banked ROM */
-		{ 0x2000, 0x2fff, skykid_videoram_r },		/* Video RAM (background) */
-		{ 0x4000, 0x47ff, MRA_RAM },				/* video RAM (text layer) */
-		{ 0x4800, 0x5fff, MRA_RAM },				/* RAM + Sprite RAM */
-		{ 0x6800, 0x68ff, namcos1_wavedata_r },		/* PSG device, shared RAM */
-		{ 0x6800, 0x6bff, skykid_sharedram_r },		/* shared RAM with the MCU */
-		{ 0x7800, 0x7800, watchdog_reset_r },		/* watchdog reset */
-		{ 0x8000, 0xffff, MRA_ROM },				/* ROM */
-	MEMORY_END
+	public static Memory_ReadAddress skykid_readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x1fff, MRA_BANK1 ),				/* banked ROM */
+		new Memory_ReadAddress( 0x2000, 0x2fff, skykid_videoram_r ),		/* Video RAM (background) */
+		new Memory_ReadAddress( 0x4000, 0x47ff, MRA_RAM ),				/* video RAM (text layer) */
+		new Memory_ReadAddress( 0x4800, 0x5fff, MRA_RAM ),				/* RAM + Sprite RAM */
+		new Memory_ReadAddress( 0x6800, 0x68ff, namcos1_wavedata_r ),		/* PSG device, shared RAM */
+		new Memory_ReadAddress( 0x6800, 0x6bff, skykid_sharedram_r ),		/* shared RAM with the MCU */
+		new Memory_ReadAddress( 0x7800, 0x7800, watchdog_reset_r ),		/* watchdog reset */
+		new Memory_ReadAddress( 0x8000, 0xffff, MRA_ROM ),				/* ROM */
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( skykid_writemem )
 		{ 0x0000, 0x1fff, MWA_ROM },				/* banked ROM */
@@ -151,16 +153,18 @@ public class skykid
 		{ 0x8000, 0xffff, MWA_ROM },				/* ROM */
 	MEMORY_END
 	
-	static MEMORY_READ_START( mcu_readmem )
-		{ 0x0000, 0x001f, hd63701_internal_registers_r },/* internal registers */
-		{ 0x0080, 0x00ff, MRA_RAM },					/* built in RAM */
-		{ 0x1000, 0x10ff, namcos1_wavedata_r },			/* PSG device, shared RAM */
-		{ 0x1100, 0x113f, MRA_RAM },					/* PSG device */
-		{ 0x1000, 0x13ff, skykid_sharedram_r },			/* shared RAM with the 6809 */
-		{ 0x8000, 0xbfff, MRA_ROM },					/* MCU external ROM */
-		{ 0xc000, 0xc800, MRA_RAM },					/* RAM */
-		{ 0xf000, 0xffff, MRA_ROM },					/* MCU internal ROM */
-	MEMORY_END
+	public static Memory_ReadAddress mcu_readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x001f, hd63701_internal_registers_r ),/* internal registers */
+		new Memory_ReadAddress( 0x0080, 0x00ff, MRA_RAM ),					/* built in RAM */
+		new Memory_ReadAddress( 0x1000, 0x10ff, namcos1_wavedata_r ),			/* PSG device, shared RAM */
+		new Memory_ReadAddress( 0x1100, 0x113f, MRA_RAM ),					/* PSG device */
+		new Memory_ReadAddress( 0x1000, 0x13ff, skykid_sharedram_r ),			/* shared RAM with the 6809 */
+		new Memory_ReadAddress( 0x8000, 0xbfff, MRA_ROM ),					/* MCU external ROM */
+		new Memory_ReadAddress( 0xc000, 0xc800, MRA_RAM ),					/* RAM */
+		new Memory_ReadAddress( 0xf000, 0xffff, MRA_ROM ),					/* MCU internal ROM */
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( mcu_writemem )
 		{ 0x0000, 0x001f, hd63701_internal_registers_w },/* internal registers */

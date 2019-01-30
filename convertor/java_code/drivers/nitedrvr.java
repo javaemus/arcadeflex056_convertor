@@ -49,23 +49,25 @@ public class nitedrvr
 	extern void nitedrvr_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	
 	
-	static MEMORY_READ_START( readmem )
-		{ 0x0000, 0x00ff, nitedrvr_ram_r }, /* SCRAM */
-		{ 0x0100, 0x01ff, nitedrvr_ram_r }, /* SCRAM */
-		{ 0x0600, 0x07ff, nitedrvr_in0_r },
-		{ 0x0800, 0x09ff, nitedrvr_in1_r },
-		{ 0x8000, 0x807f, videoram_r }, /* PFR */
-		{ 0x8080, 0x80ff, videoram_r }, /* PFR */
-		{ 0x8100, 0x817f, videoram_r }, /* PFR */
-		{ 0x8180, 0x81ff, videoram_r }, /* PFR */
-		{ 0x8200, 0x827f, videoram_r }, /* PFR */
-		{ 0x8280, 0x82ff, videoram_r }, /* PFR */
-		{ 0x8300, 0x837f, videoram_r }, /* PFR */
-		{ 0x8380, 0x83ff, videoram_r }, /* PFR */
-		{ 0x8400, 0x87ff, nitedrvr_steering_reset_r },
-		{ 0x9000, 0x9fff, MRA_ROM }, /* ROM1-ROM2 */
-		{ 0xfff0, 0xffff, MRA_ROM }, /* ROM2 for 6502 vectors */
-	MEMORY_END
+	public static Memory_ReadAddress readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x00ff, nitedrvr_ram_r ), /* SCRAM */
+		new Memory_ReadAddress( 0x0100, 0x01ff, nitedrvr_ram_r ), /* SCRAM */
+		new Memory_ReadAddress( 0x0600, 0x07ff, nitedrvr_in0_r ),
+		new Memory_ReadAddress( 0x0800, 0x09ff, nitedrvr_in1_r ),
+		new Memory_ReadAddress( 0x8000, 0x807f, videoram_r ), /* PFR */
+		new Memory_ReadAddress( 0x8080, 0x80ff, videoram_r ), /* PFR */
+		new Memory_ReadAddress( 0x8100, 0x817f, videoram_r ), /* PFR */
+		new Memory_ReadAddress( 0x8180, 0x81ff, videoram_r ), /* PFR */
+		new Memory_ReadAddress( 0x8200, 0x827f, videoram_r ), /* PFR */
+		new Memory_ReadAddress( 0x8280, 0x82ff, videoram_r ), /* PFR */
+		new Memory_ReadAddress( 0x8300, 0x837f, videoram_r ), /* PFR */
+		new Memory_ReadAddress( 0x8380, 0x83ff, videoram_r ), /* PFR */
+		new Memory_ReadAddress( 0x8400, 0x87ff, nitedrvr_steering_reset_r ),
+		new Memory_ReadAddress( 0x9000, 0x9fff, MRA_ROM ), /* ROM1-ROM2 */
+		new Memory_ReadAddress( 0xfff0, 0xffff, MRA_ROM ), /* ROM2 for 6502 vectors */
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( writemem )
 		{ 0x0000, 0x00ff, nitedrvr_ram_w, &nitedrvr_ram }, /* SCRAM */

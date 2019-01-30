@@ -791,11 +791,13 @@ public class aburner
 		{ 0x29c000, 0x2a3fff, SYS16_MWA16_WORKINGRAM2_SHARE }, /* mirror */
 	MEMORY_END
 	
-	static MEMORY_READ_START( aburner_sound_readmem )
-		{ 0x0000, 0x7fff, MRA_ROM },
-		{ 0xf000, 0xf0ff, SegaPCM_r },
-		{ 0xf000, 0xffff, MRA_RAM },
-	MEMORY_END
+	public static Memory_ReadAddress aburner_sound_readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x7fff, MRA_ROM ),
+		new Memory_ReadAddress( 0xf000, 0xf0ff, SegaPCM_r ),
+		new Memory_ReadAddress( 0xf000, 0xffff, MRA_RAM ),
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( aburner_sound_writemem )
 		{ 0x0000, 0x7fff, MWA_ROM },

@@ -338,17 +338,19 @@ public class gridlee
 	 *************************************/
 	
 	/* CPU 1 read addresses */
-	static MEMORY_READ_START( readmem_cpu1 )
-		{ 0x0000, 0x7fff, MRA_RAM },
-		{ 0x9500, 0x9501, analog_port_r },
-		{ 0x9502, 0x9502, input_port_4_r },
-		{ 0x9503, 0x9503, input_port_5_r },
-		{ 0x9600, 0x9600, input_port_6_r },
-		{ 0x9700, 0x9700, input_port_7_r },
-		{ 0x9820, 0x9820, random_num_r },
-		{ 0x9c00, 0x9cff, MRA_RAM },
-		{ 0xa000, 0xffff, MRA_ROM },
-	MEMORY_END
+	public static Memory_ReadAddress readmem_cpu1[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x7fff, MRA_RAM ),
+		new Memory_ReadAddress( 0x9500, 0x9501, analog_port_r ),
+		new Memory_ReadAddress( 0x9502, 0x9502, input_port_4_r ),
+		new Memory_ReadAddress( 0x9503, 0x9503, input_port_5_r ),
+		new Memory_ReadAddress( 0x9600, 0x9600, input_port_6_r ),
+		new Memory_ReadAddress( 0x9700, 0x9700, input_port_7_r ),
+		new Memory_ReadAddress( 0x9820, 0x9820, random_num_r ),
+		new Memory_ReadAddress( 0x9c00, 0x9cff, MRA_RAM ),
+		new Memory_ReadAddress( 0xa000, 0xffff, MRA_ROM ),
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	
 	static MEMORY_WRITE_START( writemem_cpu1 )

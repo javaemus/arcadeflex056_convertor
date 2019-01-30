@@ -386,17 +386,19 @@ public class renegade
 	
 	/********************************************************************************************/
 	
-	static MEMORY_READ_START( main_readmem )
-		{ 0x0000, 0x37ff, MRA_RAM },
-		{ 0x3800, 0x3800, input_port_0_r }, /* Player#1 controls, P1,P2 start */
-		{ 0x3801, 0x3801, input_port_1_r }, /* Player#2 controls, coin triggers */
-		{ 0x3802, 0x3802, input_port_2_r }, /* DIP2  various IO ports */
-		{ 0x3803, 0x3803, input_port_3_r }, /* DIP1 */
-		{ 0x3804, 0x3804, mcu_r },
-		{ 0x3805, 0x3805, mcu_reset_r },
-		{ 0x4000, 0x7fff, MRA_BANK1 },
-		{ 0x8000, 0xffff, MRA_ROM },
-	MEMORY_END
+	public static Memory_ReadAddress main_readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x37ff, MRA_RAM ),
+		new Memory_ReadAddress( 0x3800, 0x3800, input_port_0_r ), /* Player#1 controls, P1,P2 start */
+		new Memory_ReadAddress( 0x3801, 0x3801, input_port_1_r ), /* Player#2 controls, coin triggers */
+		new Memory_ReadAddress( 0x3802, 0x3802, input_port_2_r ), /* DIP2  various IO ports */
+		new Memory_ReadAddress( 0x3803, 0x3803, input_port_3_r ), /* DIP1 */
+		new Memory_ReadAddress( 0x3804, 0x3804, mcu_r ),
+		new Memory_ReadAddress( 0x3805, 0x3805, mcu_reset_r ),
+		new Memory_ReadAddress( 0x4000, 0x7fff, MRA_BANK1 ),
+		new Memory_ReadAddress( 0x8000, 0xffff, MRA_ROM ),
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( main_writemem )
 		{ 0x0000, 0x17ff, MWA_RAM },
@@ -416,12 +418,14 @@ public class renegade
 		{ 0x4000, 0xffff, MWA_ROM },
 	MEMORY_END
 	
-	static MEMORY_READ_START( sound_readmem )
-		{ 0x0000, 0x0fff, MRA_RAM },
-		{ 0x1000, 0x1000, soundlatch_r },
-		{ 0x2801, 0x2801, YM3526_status_port_0_r },
-		{ 0x8000, 0xffff, MRA_ROM },
-	MEMORY_END
+	public static Memory_ReadAddress sound_readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x0fff, MRA_RAM ),
+		new Memory_ReadAddress( 0x1000, 0x1000, soundlatch_r ),
+		new Memory_ReadAddress( 0x2801, 0x2801, YM3526_status_port_0_r ),
+		new Memory_ReadAddress( 0x8000, 0xffff, MRA_ROM ),
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( sound_writemem )
 		{ 0x0000, 0x0fff, MWA_RAM },

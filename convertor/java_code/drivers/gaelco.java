@@ -113,13 +113,15 @@ public class gaelco
 	MEMORY_END
 	
 	
-	static MEMORY_READ_START( bigkarnk_readmem_snd )
-		{ 0x0000, 0x07ff, MRA_RAM },				/* RAM */
-		{ 0x0800, 0x0801, OKIM6295_status_0_r },	/* OKI6295 */
-		{ 0x0a00, 0x0a00, YM3812_status_port_0_r },	/* YM3812 */
-		{ 0x0b00, 0x0b00, soundlatch_r },			/* Sound latch */
-		{ 0x0c00, 0xffff, MRA_ROM },				/* ROM */
-	MEMORY_END
+	public static Memory_ReadAddress bigkarnk_readmem_snd[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x07ff, MRA_RAM ),				/* RAM */
+		new Memory_ReadAddress( 0x0800, 0x0801, OKIM6295_status_0_r ),	/* OKI6295 */
+		new Memory_ReadAddress( 0x0a00, 0x0a00, YM3812_status_port_0_r ),	/* YM3812 */
+		new Memory_ReadAddress( 0x0b00, 0x0b00, soundlatch_r ),			/* Sound latch */
+		new Memory_ReadAddress( 0x0c00, 0xffff, MRA_ROM ),				/* ROM */
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( bigkarnk_writemem_snd )
 		{ 0x0000, 0x07ff, MWA_RAM },				/* RAM */

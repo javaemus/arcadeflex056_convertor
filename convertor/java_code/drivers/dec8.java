@@ -534,20 +534,22 @@ public class dec8
 	
 	/******************************************************************************/
 	
-	static MEMORY_READ_START( cobra_readmem )
-		{ 0x0000, 0x07ff, MRA_RAM },
-		{ 0x0800, 0x0fff, dec8_pf0_data_r },
-		{ 0x1000, 0x17ff, dec8_pf1_data_r },
-		{ 0x1800, 0x2fff, MRA_RAM },
-		{ 0x3000, 0x31ff, paletteram_r },
-		{ 0x3800, 0x3800, input_port_0_r }, /* Player 1 */
-		{ 0x3801, 0x3801, input_port_1_r }, /* Player 2 */
-		{ 0x3802, 0x3802, input_port_3_r }, /* Dip 1 */
-		{ 0x3803, 0x3803, input_port_4_r }, /* Dip 2 */
-		{ 0x3a00, 0x3a00, input_port_2_r }, /* VBL & coins */
-		{ 0x4000, 0x7fff, MRA_BANK1 },
-		{ 0x8000, 0xffff, MRA_ROM },
-	MEMORY_END
+	public static Memory_ReadAddress cobra_readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x07ff, MRA_RAM ),
+		new Memory_ReadAddress( 0x0800, 0x0fff, dec8_pf0_data_r ),
+		new Memory_ReadAddress( 0x1000, 0x17ff, dec8_pf1_data_r ),
+		new Memory_ReadAddress( 0x1800, 0x2fff, MRA_RAM ),
+		new Memory_ReadAddress( 0x3000, 0x31ff, paletteram_r ),
+		new Memory_ReadAddress( 0x3800, 0x3800, input_port_0_r ), /* Player 1 */
+		new Memory_ReadAddress( 0x3801, 0x3801, input_port_1_r ), /* Player 2 */
+		new Memory_ReadAddress( 0x3802, 0x3802, input_port_3_r ), /* Dip 1 */
+		new Memory_ReadAddress( 0x3803, 0x3803, input_port_4_r ), /* Dip 2 */
+		new Memory_ReadAddress( 0x3a00, 0x3a00, input_port_2_r ), /* VBL & coins */
+		new Memory_ReadAddress( 0x4000, 0x7fff, MRA_BANK1 ),
+		new Memory_ReadAddress( 0x8000, 0xffff, MRA_ROM ),
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( cobra_writemem )
 		{ 0x0000, 0x07ff, MWA_RAM },
@@ -566,22 +568,24 @@ public class dec8
 		{ 0x4000, 0xffff, MWA_ROM },
 	MEMORY_END
 	
-	static MEMORY_READ_START( ghostb_readmem )
-		{ 0x0000, 0x1fff, MRA_RAM },
-		{ 0x1800, 0x1fff, videoram_r },
-		{ 0x2000, 0x27ff, dec8_pf0_data_r },
-		{ 0x2800, 0x2dff, MRA_RAM },
-		{ 0x3000, 0x37ff, MRA_RAM },
-		{ 0x3800, 0x3800, input_port_0_r }, /* Player 1 */
-		{ 0x3801, 0x3801, input_port_1_r }, /* Player 2 */
-		{ 0x3802, 0x3802, input_port_2_r }, /* Player 3 */
-		{ 0x3803, 0x3803, input_port_3_r }, /* Start buttons + VBL */
-		{ 0x3820, 0x3820, input_port_5_r }, /* Dip */
-		{ 0x3840, 0x3840, i8751_h_r },
-		{ 0x3860, 0x3860, i8751_l_r },
-		{ 0x4000, 0x7fff, MRA_BANK1 },
-		{ 0x8000, 0xffff, MRA_ROM },
-	MEMORY_END
+	public static Memory_ReadAddress ghostb_readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x1fff, MRA_RAM ),
+		new Memory_ReadAddress( 0x1800, 0x1fff, videoram_r ),
+		new Memory_ReadAddress( 0x2000, 0x27ff, dec8_pf0_data_r ),
+		new Memory_ReadAddress( 0x2800, 0x2dff, MRA_RAM ),
+		new Memory_ReadAddress( 0x3000, 0x37ff, MRA_RAM ),
+		new Memory_ReadAddress( 0x3800, 0x3800, input_port_0_r ), /* Player 1 */
+		new Memory_ReadAddress( 0x3801, 0x3801, input_port_1_r ), /* Player 2 */
+		new Memory_ReadAddress( 0x3802, 0x3802, input_port_2_r ), /* Player 3 */
+		new Memory_ReadAddress( 0x3803, 0x3803, input_port_3_r ), /* Start buttons + VBL */
+		new Memory_ReadAddress( 0x3820, 0x3820, input_port_5_r ), /* Dip */
+		new Memory_ReadAddress( 0x3840, 0x3840, i8751_h_r ),
+		new Memory_ReadAddress( 0x3860, 0x3860, i8751_l_r ),
+		new Memory_ReadAddress( 0x4000, 0x7fff, MRA_BANK1 ),
+		new Memory_ReadAddress( 0x8000, 0xffff, MRA_ROM ),
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( ghostb_writemem )
 		{ 0x0000, 0x0fff, MWA_RAM },
@@ -599,18 +603,20 @@ public class dec8
 		{ 0x4000, 0xffff, MWA_ROM },
 	MEMORY_END
 	
-	static MEMORY_READ_START( srdarwin_readmem )
-		{ 0x0000, 0x13ff, MRA_RAM },
-		{ 0x1400, 0x17ff, dec8_pf0_data_r },
-		{ 0x2000, 0x2000, i8751_h_r },
-		{ 0x2001, 0x2001, i8751_l_r },
-		{ 0x3800, 0x3800, input_port_2_r }, /* Dip 1 */
-		{ 0x3801, 0x3801, input_port_0_r }, /* Player 1 */
-		{ 0x3802, 0x3802, input_port_1_r }, /* Player 2 (cocktail) + VBL */
-		{ 0x3803, 0x3803, input_port_3_r }, /* Dip 2 */
-		{ 0x4000, 0x7fff, MRA_BANK1 },
-		{ 0x8000, 0xffff, MRA_ROM },
-	MEMORY_END
+	public static Memory_ReadAddress srdarwin_readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x13ff, MRA_RAM ),
+		new Memory_ReadAddress( 0x1400, 0x17ff, dec8_pf0_data_r ),
+		new Memory_ReadAddress( 0x2000, 0x2000, i8751_h_r ),
+		new Memory_ReadAddress( 0x2001, 0x2001, i8751_l_r ),
+		new Memory_ReadAddress( 0x3800, 0x3800, input_port_2_r ), /* Dip 1 */
+		new Memory_ReadAddress( 0x3801, 0x3801, input_port_0_r ), /* Player 1 */
+		new Memory_ReadAddress( 0x3802, 0x3802, input_port_1_r ), /* Player 2 (cocktail) + VBL */
+		new Memory_ReadAddress( 0x3803, 0x3803, input_port_3_r ), /* Dip 2 */
+		new Memory_ReadAddress( 0x4000, 0x7fff, MRA_BANK1 ),
+		new Memory_ReadAddress( 0x8000, 0xffff, MRA_ROM ),
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( srdarwin_writemem )
 		{ 0x0000, 0x05ff, MWA_RAM },
@@ -630,24 +636,26 @@ public class dec8
 		{ 0x4000, 0xffff, MWA_ROM },
 	MEMORY_END
 	
-	static MEMORY_READ_START( gondo_readmem )
-		{ 0x0000, 0x17ff, MRA_RAM },
-		{ 0x1800, 0x1fff, videoram_r },
-		{ 0x2000, 0x27ff, dec8_pf0_data_r },
-		{ 0x2800, 0x2bff, paletteram_r },
-		{ 0x2c00, 0x2fff, paletteram_2_r },
-		{ 0x3000, 0x37ff, MRA_RAM },          /* Sprites */
-		{ 0x3800, 0x3800, input_port_7_r },   /* Dip 1 */
-		{ 0x3801, 0x3801, input_port_8_r },   /* Dip 2 */
-		{ 0x380a, 0x380b, gondo_player_1_r }, /* Player 1 rotary */
-		{ 0x380c, 0x380d, gondo_player_2_r }, /* Player 2 rotary */
-		{ 0x380e, 0x380e, input_port_3_r },   /* VBL */
-		{ 0x380f, 0x380f, input_port_2_r },   /* Fire buttons */
-		{ 0x3838, 0x3838, i8751_h_r },
-		{ 0x3839, 0x3839, i8751_l_r },
-		{ 0x4000, 0x7fff, MRA_BANK1 },
-		{ 0x8000, 0xffff, MRA_ROM },
-	MEMORY_END
+	public static Memory_ReadAddress gondo_readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x17ff, MRA_RAM ),
+		new Memory_ReadAddress( 0x1800, 0x1fff, videoram_r ),
+		new Memory_ReadAddress( 0x2000, 0x27ff, dec8_pf0_data_r ),
+		new Memory_ReadAddress( 0x2800, 0x2bff, paletteram_r ),
+		new Memory_ReadAddress( 0x2c00, 0x2fff, paletteram_2_r ),
+		new Memory_ReadAddress( 0x3000, 0x37ff, MRA_RAM ),          /* Sprites */
+		new Memory_ReadAddress( 0x3800, 0x3800, input_port_7_r ),   /* Dip 1 */
+		new Memory_ReadAddress( 0x3801, 0x3801, input_port_8_r ),   /* Dip 2 */
+		new Memory_ReadAddress( 0x380a, 0x380b, gondo_player_1_r ), /* Player 1 rotary */
+		new Memory_ReadAddress( 0x380c, 0x380d, gondo_player_2_r ), /* Player 2 rotary */
+		new Memory_ReadAddress( 0x380e, 0x380e, input_port_3_r ),   /* VBL */
+		new Memory_ReadAddress( 0x380f, 0x380f, input_port_2_r ),   /* Fire buttons */
+		new Memory_ReadAddress( 0x3838, 0x3838, i8751_h_r ),
+		new Memory_ReadAddress( 0x3839, 0x3839, i8751_l_r ),
+		new Memory_ReadAddress( 0x4000, 0x7fff, MRA_BANK1 ),
+		new Memory_ReadAddress( 0x8000, 0xffff, MRA_ROM ),
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( gondo_writemem )
 		{ 0x0000, 0x17ff, MWA_RAM },
@@ -663,22 +671,24 @@ public class dec8
 		{ 0x4000, 0xffff, MWA_ROM },
 	MEMORY_END
 	
-	static MEMORY_READ_START( oscar_readmem )
-		{ 0x0000, 0x0eff, dec8_share_r },
-		{ 0x0f00, 0x0fff, MRA_RAM },
-		{ 0x1000, 0x1fff, dec8_share2_r },
-		{ 0x2000, 0x27ff, videoram_r },
-		{ 0x2800, 0x2fff, dec8_pf0_data_r },
-		{ 0x3000, 0x37ff, MRA_RAM }, /* Sprites */
-		{ 0x3800, 0x3bff, paletteram_r },
-		{ 0x3c00, 0x3c00, input_port_0_r },
-		{ 0x3c01, 0x3c01, input_port_1_r },
-		{ 0x3c02, 0x3c02, input_port_2_r }, /* VBL & coins */
-		{ 0x3c03, 0x3c03, input_port_3_r }, /* Dip 1 */
-		{ 0x3c04, 0x3c04, input_port_4_r },
-		{ 0x4000, 0x7fff, MRA_BANK1 },
-		{ 0x8000, 0xffff, MRA_ROM },
-	MEMORY_END
+	public static Memory_ReadAddress oscar_readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x0eff, dec8_share_r ),
+		new Memory_ReadAddress( 0x0f00, 0x0fff, MRA_RAM ),
+		new Memory_ReadAddress( 0x1000, 0x1fff, dec8_share2_r ),
+		new Memory_ReadAddress( 0x2000, 0x27ff, videoram_r ),
+		new Memory_ReadAddress( 0x2800, 0x2fff, dec8_pf0_data_r ),
+		new Memory_ReadAddress( 0x3000, 0x37ff, MRA_RAM ), /* Sprites */
+		new Memory_ReadAddress( 0x3800, 0x3bff, paletteram_r ),
+		new Memory_ReadAddress( 0x3c00, 0x3c00, input_port_0_r ),
+		new Memory_ReadAddress( 0x3c01, 0x3c01, input_port_1_r ),
+		new Memory_ReadAddress( 0x3c02, 0x3c02, input_port_2_r ), /* VBL & coins */
+		new Memory_ReadAddress( 0x3c03, 0x3c03, input_port_3_r ), /* Dip 1 */
+		new Memory_ReadAddress( 0x3c04, 0x3c04, input_port_4_r ),
+		new Memory_ReadAddress( 0x4000, 0x7fff, MRA_BANK1 ),
+		new Memory_ReadAddress( 0x8000, 0xffff, MRA_ROM ),
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( oscar_writemem )
 		{ 0x0000, 0x0eff, dec8_share_w, &dec8_shared_ram },
@@ -697,12 +707,14 @@ public class dec8
 		{ 0x4000, 0xffff, MWA_ROM },
 	MEMORY_END
 	
-	static MEMORY_READ_START( oscar_sub_readmem )
-		{ 0x0000, 0x0eff, dec8_share_r },
-		{ 0x0f00, 0x0fff, MRA_RAM },
-		{ 0x1000, 0x1fff, dec8_share2_r },
-		{ 0x4000, 0xffff, MRA_ROM },
-	MEMORY_END
+	public static Memory_ReadAddress oscar_sub_readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x0eff, dec8_share_r ),
+		new Memory_ReadAddress( 0x0f00, 0x0fff, MRA_RAM ),
+		new Memory_ReadAddress( 0x1000, 0x1fff, dec8_share2_r ),
+		new Memory_ReadAddress( 0x4000, 0xffff, MRA_ROM ),
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( oscar_sub_writemem )
 		{ 0x0000, 0x0eff, dec8_share_w },
@@ -712,24 +724,26 @@ public class dec8
 		{ 0x4000, 0xffff, MWA_ROM },
 	MEMORY_END
 	
-	static MEMORY_READ_START( lastmiss_readmem )
-		{ 0x0000, 0x0fff, dec8_share_r },
-		{ 0x1000, 0x13ff, paletteram_r },
-		{ 0x1400, 0x17ff, paletteram_2_r },
-		{ 0x1800, 0x1800, input_port_0_r },
-		{ 0x1801, 0x1801, input_port_1_r },
-		{ 0x1802, 0x1802, input_port_2_r },
-		{ 0x1803, 0x1803, input_port_3_r }, /* Dip 1 */
-		{ 0x1804, 0x1804, input_port_4_r }, /* Dip 2 */
-		{ 0x1806, 0x1806, i8751_h_r },
-		{ 0x1807, 0x1807, i8751_l_r },
-		{ 0x2000, 0x27ff, videoram_r },
-		{ 0x2800, 0x2fff, MRA_RAM },
-		{ 0x3000, 0x37ff, dec8_share2_r },
-		{ 0x3800, 0x3fff, dec8_pf0_data_r },
-		{ 0x4000, 0x7fff, MRA_BANK1 },
-		{ 0x8000, 0xffff, MRA_ROM },
-	MEMORY_END
+	public static Memory_ReadAddress lastmiss_readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x0fff, dec8_share_r ),
+		new Memory_ReadAddress( 0x1000, 0x13ff, paletteram_r ),
+		new Memory_ReadAddress( 0x1400, 0x17ff, paletteram_2_r ),
+		new Memory_ReadAddress( 0x1800, 0x1800, input_port_0_r ),
+		new Memory_ReadAddress( 0x1801, 0x1801, input_port_1_r ),
+		new Memory_ReadAddress( 0x1802, 0x1802, input_port_2_r ),
+		new Memory_ReadAddress( 0x1803, 0x1803, input_port_3_r ), /* Dip 1 */
+		new Memory_ReadAddress( 0x1804, 0x1804, input_port_4_r ), /* Dip 2 */
+		new Memory_ReadAddress( 0x1806, 0x1806, i8751_h_r ),
+		new Memory_ReadAddress( 0x1807, 0x1807, i8751_l_r ),
+		new Memory_ReadAddress( 0x2000, 0x27ff, videoram_r ),
+		new Memory_ReadAddress( 0x2800, 0x2fff, MRA_RAM ),
+		new Memory_ReadAddress( 0x3000, 0x37ff, dec8_share2_r ),
+		new Memory_ReadAddress( 0x3800, 0x3fff, dec8_pf0_data_r ),
+		new Memory_ReadAddress( 0x4000, 0x7fff, MRA_BANK1 ),
+		new Memory_ReadAddress( 0x8000, 0xffff, MRA_ROM ),
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( lastmiss_writemem )
 		{ 0x0000, 0x0fff, dec8_share_w, &dec8_shared_ram },
@@ -750,20 +764,22 @@ public class dec8
 		{ 0x4000, 0xffff, MWA_ROM },
 	MEMORY_END
 	
-	static MEMORY_READ_START( lastmiss_sub_readmem )
-		{ 0x0000, 0x0fff, dec8_share_r },
-		{ 0x1000, 0x13ff, paletteram_r },
-		{ 0x1400, 0x17ff, paletteram_2_r },
-		{ 0x1800, 0x1800, input_port_0_r },
-		{ 0x1801, 0x1801, input_port_1_r },
-		{ 0x1802, 0x1802, input_port_2_r },
-		{ 0x1803, 0x1803, input_port_3_r }, /* Dip 1 */
-		{ 0x1804, 0x1804, input_port_4_r }, /* Dip 2 */
-		{ 0x2000, 0x27ff, videoram_r },
-		{ 0x3000, 0x37ff, dec8_share2_r },
-		{ 0x3800, 0x3fff, dec8_pf0_data_r },
-		{ 0x4000, 0xffff, MRA_ROM },
-	MEMORY_END
+	public static Memory_ReadAddress lastmiss_sub_readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x0fff, dec8_share_r ),
+		new Memory_ReadAddress( 0x1000, 0x13ff, paletteram_r ),
+		new Memory_ReadAddress( 0x1400, 0x17ff, paletteram_2_r ),
+		new Memory_ReadAddress( 0x1800, 0x1800, input_port_0_r ),
+		new Memory_ReadAddress( 0x1801, 0x1801, input_port_1_r ),
+		new Memory_ReadAddress( 0x1802, 0x1802, input_port_2_r ),
+		new Memory_ReadAddress( 0x1803, 0x1803, input_port_3_r ), /* Dip 1 */
+		new Memory_ReadAddress( 0x1804, 0x1804, input_port_4_r ), /* Dip 2 */
+		new Memory_ReadAddress( 0x2000, 0x27ff, videoram_r ),
+		new Memory_ReadAddress( 0x3000, 0x37ff, dec8_share2_r ),
+		new Memory_ReadAddress( 0x3800, 0x3fff, dec8_pf0_data_r ),
+		new Memory_ReadAddress( 0x4000, 0xffff, MRA_ROM ),
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( lastmiss_sub_writemem )
 		{ 0x0000, 0x0fff, dec8_share_w },
@@ -780,22 +796,24 @@ public class dec8
 		{ 0x4000, 0xffff, MWA_ROM },
 	MEMORY_END
 	
-	static MEMORY_READ_START( shackled_readmem )
-		{ 0x0000, 0x0fff, dec8_share_r },
-		{ 0x1000, 0x13ff, paletteram_r },
-		{ 0x1400, 0x17ff, paletteram_2_r },
-		{ 0x1800, 0x1800, input_port_0_r },
-		{ 0x1801, 0x1801, input_port_1_r },
-		{ 0x1802, 0x1802, input_port_2_r },
-		{ 0x1803, 0x1803, input_port_3_r },
-		{ 0x1804, 0x1804, input_port_4_r },
-		{ 0x2000, 0x27ff, videoram_r },
-		{ 0x2800, 0x2fff, shackled_sprite_r },
-		{ 0x3000, 0x37ff, dec8_share2_r },
-		{ 0x3800, 0x3fff, dec8_pf0_data_r },
-		{ 0x4000, 0x7fff, MRA_BANK1 },
-		{ 0x8000, 0xffff, MRA_ROM },
-	MEMORY_END
+	public static Memory_ReadAddress shackled_readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x0fff, dec8_share_r ),
+		new Memory_ReadAddress( 0x1000, 0x13ff, paletteram_r ),
+		new Memory_ReadAddress( 0x1400, 0x17ff, paletteram_2_r ),
+		new Memory_ReadAddress( 0x1800, 0x1800, input_port_0_r ),
+		new Memory_ReadAddress( 0x1801, 0x1801, input_port_1_r ),
+		new Memory_ReadAddress( 0x1802, 0x1802, input_port_2_r ),
+		new Memory_ReadAddress( 0x1803, 0x1803, input_port_3_r ),
+		new Memory_ReadAddress( 0x1804, 0x1804, input_port_4_r ),
+		new Memory_ReadAddress( 0x2000, 0x27ff, videoram_r ),
+		new Memory_ReadAddress( 0x2800, 0x2fff, shackled_sprite_r ),
+		new Memory_ReadAddress( 0x3000, 0x37ff, dec8_share2_r ),
+		new Memory_ReadAddress( 0x3800, 0x3fff, dec8_pf0_data_r ),
+		new Memory_ReadAddress( 0x4000, 0x7fff, MRA_BANK1 ),
+		new Memory_ReadAddress( 0x8000, 0xffff, MRA_ROM ),
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( shackled_writemem )
 		{ 0x0000, 0x0fff, dec8_share_w, &dec8_shared_ram },
@@ -815,23 +833,25 @@ public class dec8
 		{ 0x4000, 0xffff, MWA_ROM },
 	MEMORY_END
 	
-	static MEMORY_READ_START( shackled_sub_readmem )
-		{ 0x0000, 0x0fff, dec8_share_r },
-		{ 0x1000, 0x13ff, paletteram_r },
-		{ 0x1400, 0x17ff, paletteram_2_r },
-		{ 0x1800, 0x1800, input_port_0_r },
-		{ 0x1801, 0x1801, input_port_1_r },
-		{ 0x1802, 0x1802, input_port_2_r },
-		{ 0x1803, 0x1803, input_port_3_r },
-		{ 0x1804, 0x1804, input_port_4_r },
-		{ 0x1806, 0x1806, i8751_h_r },
-		{ 0x1807, 0x1807, i8751_l_r },
-		{ 0x2000, 0x27ff, videoram_r },
-		{ 0x2800, 0x2fff, MRA_RAM },
-		{ 0x3000, 0x37ff, dec8_share2_r },
-		{ 0x3800, 0x3fff, dec8_pf0_data_r },
-		{ 0x4000, 0xffff, MRA_ROM },
-	MEMORY_END
+	public static Memory_ReadAddress shackled_sub_readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x0fff, dec8_share_r ),
+		new Memory_ReadAddress( 0x1000, 0x13ff, paletteram_r ),
+		new Memory_ReadAddress( 0x1400, 0x17ff, paletteram_2_r ),
+		new Memory_ReadAddress( 0x1800, 0x1800, input_port_0_r ),
+		new Memory_ReadAddress( 0x1801, 0x1801, input_port_1_r ),
+		new Memory_ReadAddress( 0x1802, 0x1802, input_port_2_r ),
+		new Memory_ReadAddress( 0x1803, 0x1803, input_port_3_r ),
+		new Memory_ReadAddress( 0x1804, 0x1804, input_port_4_r ),
+		new Memory_ReadAddress( 0x1806, 0x1806, i8751_h_r ),
+		new Memory_ReadAddress( 0x1807, 0x1807, i8751_l_r ),
+		new Memory_ReadAddress( 0x2000, 0x27ff, videoram_r ),
+		new Memory_ReadAddress( 0x2800, 0x2fff, MRA_RAM ),
+		new Memory_ReadAddress( 0x3000, 0x37ff, dec8_share2_r ),
+		new Memory_ReadAddress( 0x3800, 0x3fff, dec8_pf0_data_r ),
+		new Memory_ReadAddress( 0x4000, 0xffff, MRA_ROM ),
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( shackled_sub_writemem )
 		{ 0x0000, 0x0fff, dec8_share_w },
@@ -852,24 +872,26 @@ public class dec8
 		{ 0x4000, 0xffff, MWA_ROM },
 	MEMORY_END
 	
-	static MEMORY_READ_START( csilver_readmem )
-		{ 0x0000, 0x0fff, dec8_share_r },
-		{ 0x1000, 0x13ff, paletteram_r },
-		{ 0x1400, 0x17ff, paletteram_2_r },
-		{ 0x1800, 0x1800, input_port_1_r },
-		{ 0x1801, 0x1801, input_port_0_r },
-		{ 0x1803, 0x1803, input_port_2_r },
-		{ 0x1804, 0x1804, input_port_4_r }, /* Dip 2 */
-		{ 0x1805, 0x1805, input_port_3_r }, /* Dip 1 */
-		{ 0x1c00, 0x1c00, i8751_h_r },
-		{ 0x1e00, 0x1e00, i8751_l_r },
-		{ 0x2000, 0x27ff, videoram_r },
-		{ 0x2800, 0x2fff, shackled_sprite_r },
-		{ 0x3000, 0x37ff, dec8_share2_r },
-		{ 0x3800, 0x3fff, dec8_pf0_data_r },
-		{ 0x4000, 0x7fff, MRA_BANK1 },
-		{ 0x8000, 0xffff, MRA_ROM },
-	MEMORY_END
+	public static Memory_ReadAddress csilver_readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x0fff, dec8_share_r ),
+		new Memory_ReadAddress( 0x1000, 0x13ff, paletteram_r ),
+		new Memory_ReadAddress( 0x1400, 0x17ff, paletteram_2_r ),
+		new Memory_ReadAddress( 0x1800, 0x1800, input_port_1_r ),
+		new Memory_ReadAddress( 0x1801, 0x1801, input_port_0_r ),
+		new Memory_ReadAddress( 0x1803, 0x1803, input_port_2_r ),
+		new Memory_ReadAddress( 0x1804, 0x1804, input_port_4_r ), /* Dip 2 */
+		new Memory_ReadAddress( 0x1805, 0x1805, input_port_3_r ), /* Dip 1 */
+		new Memory_ReadAddress( 0x1c00, 0x1c00, i8751_h_r ),
+		new Memory_ReadAddress( 0x1e00, 0x1e00, i8751_l_r ),
+		new Memory_ReadAddress( 0x2000, 0x27ff, videoram_r ),
+		new Memory_ReadAddress( 0x2800, 0x2fff, shackled_sprite_r ),
+		new Memory_ReadAddress( 0x3000, 0x37ff, dec8_share2_r ),
+		new Memory_ReadAddress( 0x3800, 0x3fff, dec8_pf0_data_r ),
+		new Memory_ReadAddress( 0x4000, 0x7fff, MRA_BANK1 ),
+		new Memory_ReadAddress( 0x8000, 0xffff, MRA_ROM ),
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( csilver_writemem )
 		{ 0x0000, 0x0fff, dec8_share_w, &dec8_shared_ram },
@@ -889,19 +911,21 @@ public class dec8
 		{ 0x4000, 0xffff, MWA_ROM },
 	MEMORY_END
 	
-	static MEMORY_READ_START( csilver_sub_readmem )
-		{ 0x0000, 0x0fff, dec8_share_r },
-		{ 0x1000, 0x13ff, paletteram_r },
-		{ 0x1400, 0x17ff, paletteram_2_r },
-		{ 0x1803, 0x1803, input_port_2_r },
-		{ 0x1804, 0x1804, input_port_4_r },
-		{ 0x1805, 0x1805, input_port_3_r },
-		{ 0x2000, 0x27ff, videoram_r },
-		{ 0x2800, 0x2fff, MRA_RAM },
-		{ 0x3000, 0x37ff, dec8_share2_r },
-		{ 0x3800, 0x3fff, dec8_pf0_data_r },
-		{ 0x4000, 0xffff, MRA_ROM },
-	MEMORY_END
+	public static Memory_ReadAddress csilver_sub_readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x0fff, dec8_share_r ),
+		new Memory_ReadAddress( 0x1000, 0x13ff, paletteram_r ),
+		new Memory_ReadAddress( 0x1400, 0x17ff, paletteram_2_r ),
+		new Memory_ReadAddress( 0x1803, 0x1803, input_port_2_r ),
+		new Memory_ReadAddress( 0x1804, 0x1804, input_port_4_r ),
+		new Memory_ReadAddress( 0x1805, 0x1805, input_port_3_r ),
+		new Memory_ReadAddress( 0x2000, 0x27ff, videoram_r ),
+		new Memory_ReadAddress( 0x2800, 0x2fff, MRA_RAM ),
+		new Memory_ReadAddress( 0x3000, 0x37ff, dec8_share2_r ),
+		new Memory_ReadAddress( 0x3800, 0x3fff, dec8_pf0_data_r ),
+		new Memory_ReadAddress( 0x4000, 0xffff, MRA_ROM ),
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( csilver_sub_writemem )
 		{ 0x0000, 0x0fff, dec8_share_w },
@@ -917,23 +941,25 @@ public class dec8
 		{ 0x4000, 0xffff, MWA_ROM },
 	MEMORY_END
 	
-	static MEMORY_READ_START( garyoret_readmem )
-		{ 0x0000, 0x17ff, MRA_RAM },
-		{ 0x1800, 0x1fff, videoram_r },
-		{ 0x2000, 0x27ff, dec8_pf0_data_r },
-		{ 0x2800, 0x2bff, paletteram_r },
-		{ 0x2c00, 0x2fff, paletteram_2_r },
-		{ 0x3000, 0x37ff, MRA_RAM },          /* Sprites */
-		{ 0x3800, 0x3800, input_port_3_r },   /* Dip 1 */
-		{ 0x3801, 0x3801, input_port_4_r },   /* Dip 2 */
-		{ 0x3808, 0x3808, MRA_NOP },          /* ? */
-		{ 0x380a, 0x380a, input_port_1_r },   /* Player 2 + VBL */
-		{ 0x380b, 0x380b, input_port_0_r },   /* Player 1 */
-		{ 0x383a, 0x383a, i8751_h_r },
-		{ 0x383b, 0x383b, i8751_l_r },
-		{ 0x4000, 0x7fff, MRA_BANK1 },
-		{ 0x8000, 0xffff, MRA_ROM },
-	MEMORY_END
+	public static Memory_ReadAddress garyoret_readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x17ff, MRA_RAM ),
+		new Memory_ReadAddress( 0x1800, 0x1fff, videoram_r ),
+		new Memory_ReadAddress( 0x2000, 0x27ff, dec8_pf0_data_r ),
+		new Memory_ReadAddress( 0x2800, 0x2bff, paletteram_r ),
+		new Memory_ReadAddress( 0x2c00, 0x2fff, paletteram_2_r ),
+		new Memory_ReadAddress( 0x3000, 0x37ff, MRA_RAM ),          /* Sprites */
+		new Memory_ReadAddress( 0x3800, 0x3800, input_port_3_r ),   /* Dip 1 */
+		new Memory_ReadAddress( 0x3801, 0x3801, input_port_4_r ),   /* Dip 2 */
+		new Memory_ReadAddress( 0x3808, 0x3808, MRA_NOP ),          /* ? */
+		new Memory_ReadAddress( 0x380a, 0x380a, input_port_1_r ),   /* Player 2 + VBL */
+		new Memory_ReadAddress( 0x380b, 0x380b, input_port_0_r ),   /* Player 1 */
+		new Memory_ReadAddress( 0x383a, 0x383a, i8751_h_r ),
+		new Memory_ReadAddress( 0x383b, 0x383b, i8751_l_r ),
+		new Memory_ReadAddress( 0x4000, 0x7fff, MRA_BANK1 ),
+		new Memory_ReadAddress( 0x8000, 0xffff, MRA_ROM ),
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( garyoret_writemem )
 		{ 0x0000, 0x17ff, MWA_RAM },
@@ -952,11 +978,13 @@ public class dec8
 	/******************************************************************************/
 	
 	/* Used for Cobra Command, Maze Hunter, Super Real Darwin, Gondomania, etc */
-	static MEMORY_READ_START( dec8_s_readmem )
-		{ 0x0000, 0x05ff, MRA_RAM},
-		{ 0x6000, 0x6000, soundlatch_r },
-		{ 0x8000, 0xffff, MRA_ROM },
-	MEMORY_END
+	public static Memory_ReadAddress dec8_s_readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x05ff, MRA_RAM),
+		new Memory_ReadAddress( 0x6000, 0x6000, soundlatch_r ),
+		new Memory_ReadAddress( 0x8000, 0xffff, MRA_ROM ),
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( dec8_s_writemem )
 		{ 0x0000, 0x05ff, MWA_RAM},
@@ -968,11 +996,13 @@ public class dec8
 	MEMORY_END
 	
 	/* Used by Last Mission, Shackled & Breywood */
-	static MEMORY_READ_START( ym3526_s_readmem )
-		{ 0x0000, 0x05ff, MRA_RAM},
-		{ 0x3000, 0x3000, soundlatch_r },
-		{ 0x8000, 0xffff, MRA_ROM },
-	MEMORY_END
+	public static Memory_ReadAddress ym3526_s_readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x05ff, MRA_RAM),
+		new Memory_ReadAddress( 0x3000, 0x3000, soundlatch_r ),
+		new Memory_ReadAddress( 0x8000, 0xffff, MRA_ROM ),
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( ym3526_s_writemem )
 		{ 0x0000, 0x05ff, MWA_RAM},
@@ -984,13 +1014,15 @@ public class dec8
 	MEMORY_END
 	
 	/* Captain Silver - same sound system as Pocket Gal */
-	static MEMORY_READ_START( csilver_s_readmem )
-		{ 0x0000, 0x07ff, MRA_RAM },
-		{ 0x3000, 0x3000, soundlatch_r },
-		{ 0x3400, 0x3400, csilver_adpcm_reset_r },	/* ? not sure */
-		{ 0x4000, 0x7fff, MRA_BANK3 },
-		{ 0x8000, 0xffff, MRA_ROM },
-	MEMORY_END
+	public static Memory_ReadAddress csilver_s_readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x07ff, MRA_RAM ),
+		new Memory_ReadAddress( 0x3000, 0x3000, soundlatch_r ),
+		new Memory_ReadAddress( 0x3400, 0x3400, csilver_adpcm_reset_r ),	/* ? not sure */
+		new Memory_ReadAddress( 0x4000, 0x7fff, MRA_BANK3 ),
+		new Memory_ReadAddress( 0x8000, 0xffff, MRA_ROM ),
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( csilver_s_writemem )
 		{ 0x0000, 0x07ff, MWA_RAM },

@@ -1645,17 +1645,19 @@ public class taito_f2
 	
 	/***************************************************************************/
 	
-	static MEMORY_READ_START( sound_readmem )
-		{ 0x0000, 0x3fff, MRA_ROM },
-		{ 0x4000, 0x7fff, MRA_BANK2 },
-		{ 0xc000, 0xdfff, MRA_RAM },
-		{ 0xe000, 0xe000, YM2610_status_port_0_A_r },
-		{ 0xe001, 0xe001, YM2610_read_port_0_r },
-		{ 0xe002, 0xe002, YM2610_status_port_0_B_r },
-		{ 0xe200, 0xe200, MRA_NOP },
-		{ 0xe201, 0xe201, taitosound_slave_comm_r },
-		{ 0xea00, 0xea00, MRA_NOP },
-	MEMORY_END
+	public static Memory_ReadAddress sound_readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x3fff, MRA_ROM ),
+		new Memory_ReadAddress( 0x4000, 0x7fff, MRA_BANK2 ),
+		new Memory_ReadAddress( 0xc000, 0xdfff, MRA_RAM ),
+		new Memory_ReadAddress( 0xe000, 0xe000, YM2610_status_port_0_A_r ),
+		new Memory_ReadAddress( 0xe001, 0xe001, YM2610_read_port_0_r ),
+		new Memory_ReadAddress( 0xe002, 0xe002, YM2610_status_port_0_B_r ),
+		new Memory_ReadAddress( 0xe200, 0xe200, MRA_NOP ),
+		new Memory_ReadAddress( 0xe201, 0xe201, taitosound_slave_comm_r ),
+		new Memory_ReadAddress( 0xea00, 0xea00, MRA_NOP ),
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( sound_writemem )
 		{ 0x0000, 0x7fff, MWA_ROM },
@@ -1675,13 +1677,15 @@ public class taito_f2
 	
 	/* Alt US version of Cameltry, YM2203 sound, missing ADPCM ? */
 	
-	static MEMORY_READ_START( camltrua_sound_readmem )
-		{ 0x0000, 0x7fff, MRA_ROM },	// I can't see a bank control, but there ARE some bytes past 0x8000
-	//	{ 0x4000, 0x7fff, MRA_BANK1 },
-		{ 0x8000, 0x8fff, MRA_RAM },
-		{ 0x9000, 0x9000, YM2203_status_port_0_r },
-		{ 0xa001, 0xa001, taitosound_slave_comm_r },
-	MEMORY_END
+	public static Memory_ReadAddress camltrua_sound_readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x7fff, MRA_ROM ),	// I can't see a bank control, but there ARE some bytes past 0x8000
+	//	new Memory_ReadAddress( 0x4000, 0x7fff, MRA_BANK1 ),
+		new Memory_ReadAddress( 0x8000, 0x8fff, MRA_RAM ),
+		new Memory_ReadAddress( 0x9000, 0x9000, YM2203_status_port_0_r ),
+		new Memory_ReadAddress( 0xa001, 0xa001, taitosound_slave_comm_r ),
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( camltrua_sound_writemem )
 		{ 0x0000, 0x7fff, MWA_ROM },
@@ -1694,12 +1698,14 @@ public class taito_f2
 	MEMORY_END
 	
 	
-	static MEMORY_READ_START( driveout_sound_readmem )
-		{ 0x0000, 0x7fff, MRA_ROM },
-		{ 0x8000, 0x87ff, MRA_RAM },
-		{ 0x9800, 0x9800, OKIM6295_status_0_r },
-		{ 0xa000, 0xa000, driveout_sound_command_r },
-	MEMORY_END
+	public static Memory_ReadAddress driveout_sound_readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x7fff, MRA_ROM ),
+		new Memory_ReadAddress( 0x8000, 0x87ff, MRA_RAM ),
+		new Memory_ReadAddress( 0x9800, 0x9800, OKIM6295_status_0_r ),
+		new Memory_ReadAddress( 0xa000, 0xa000, driveout_sound_command_r ),
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( driveout_sound_writemem )
 		{ 0x0000, 0x7fff, MWA_ROM },

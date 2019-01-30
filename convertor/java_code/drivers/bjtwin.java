@@ -474,15 +474,17 @@ public class bjtwin
 		{ 0x0f9000, 0x0fffff, MWA16_RAM, &ram },	/* Work RAM again (fe000-fefff is shared with the sound CPU) */
 	MEMORY_END
 	
-	static MEMORY_READ_START( tharrier_sound_readmem )
-		{ 0x0000, 0x7fff, MRA_ROM },
-		{ 0xc000, 0xc7ff, MRA_RAM },
+	public static Memory_ReadAddress tharrier_sound_readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x7fff, MRA_ROM ),
+		new Memory_ReadAddress( 0xc000, 0xc7ff, MRA_RAM ),
 	
-	//	{ 0x4008, 0x4008, YM3812_status_port_0_r },
-	//	{ 0x4010, 0x4011, mustang_soundlatch_r },	/* from 68000 */
-	//	{ 0x6000, 0x6000, OKIM6295_status_0_r },
-	//	{ 0x8000, 0xffff, MRA_ROM },
-	MEMORY_END
+	//	new Memory_ReadAddress( 0x4008, 0x4008, YM3812_status_port_0_r ),
+	//	new Memory_ReadAddress( 0x4010, 0x4011, mustang_soundlatch_r ),	/* from 68000 */
+	//	new Memory_ReadAddress( 0x6000, 0x6000, OKIM6295_status_0_r ),
+	//	new Memory_ReadAddress( 0x8000, 0xffff, MRA_ROM ),
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( tharrier_sound_writemem )
 		{ 0x0000, 0x7fff, MWA_ROM },
@@ -548,14 +550,16 @@ public class bjtwin
 		{ 0x0f9000, 0x0fffff, MWA16_RAM, &ram },	/* Work RAM */
 	MEMORY_END
 	
-	static MEMORY_READ_START( mustang_sound_readmem )
-		{ 0x0000, 0x1fff, MRA_ROM },
-		{ 0x2000, 0x27ff, MRA_RAM },
-		{ 0x4008, 0x4008, YM3812_status_port_0_r },
-		{ 0x4010, 0x4011, mustang_soundlatch_r },	/* from 68000 */
-		{ 0x6000, 0x6000, OKIM6295_status_0_r },
-		{ 0x8000, 0xffff, MRA_ROM },
-	MEMORY_END
+	public static Memory_ReadAddress mustang_sound_readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x1fff, MRA_ROM ),
+		new Memory_ReadAddress( 0x2000, 0x27ff, MRA_RAM ),
+		new Memory_ReadAddress( 0x4008, 0x4008, YM3812_status_port_0_r ),
+		new Memory_ReadAddress( 0x4010, 0x4011, mustang_soundlatch_r ),	/* from 68000 */
+		new Memory_ReadAddress( 0x6000, 0x6000, OKIM6295_status_0_r ),
+		new Memory_ReadAddress( 0x8000, 0xffff, MRA_ROM ),
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( mustang_sound_writemem )
 		{ 0x0000, 0x1fff, MWA_ROM },
@@ -804,13 +808,15 @@ public class bjtwin
 	MEMORY_END
 	
 	
-	static MEMORY_READ_START( macross2_sound_readmem )
-		{ 0x0000, 0x7fff, MRA_ROM },
-		{ 0x8000, 0xbfff, MRA_BANK1 },	/* banked ROM */
-		{ 0xa000, 0xa000, MRA_NOP },	/* IRQ ack? watchdog? */
-		{ 0xc000, 0xdfff, MRA_RAM },
-		{ 0xf000, 0xf000, soundlatch_r },	/* from 68000 */
-	MEMORY_END
+	public static Memory_ReadAddress macross2_sound_readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x7fff, MRA_ROM ),
+		new Memory_ReadAddress( 0x8000, 0xbfff, MRA_BANK1 ),	/* banked ROM */
+		new Memory_ReadAddress( 0xa000, 0xa000, MRA_NOP ),	/* IRQ ack? watchdog? */
+		new Memory_ReadAddress( 0xc000, 0xdfff, MRA_RAM ),
+		new Memory_ReadAddress( 0xf000, 0xf000, soundlatch_r ),	/* from 68000 */
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( macross2_sound_writemem )
 		{ 0x0000, 0xbfff, MWA_ROM },

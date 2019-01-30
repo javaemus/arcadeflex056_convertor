@@ -321,13 +321,15 @@ public class nemesis
 		return cpu_gettotalcycles() / TIMER_RATE;
 	}
 	
-	static MEMORY_READ_START( sound_readmem )
-		{ 0x0000, 0x3fff, MRA_ROM },
-		{ 0x4000, 0x47ff, MRA_RAM },
-		{ 0xe001, 0xe001, soundlatch_r },
-		{ 0xe086, 0xe086, AY8910_read_port_0_r },
-		{ 0xe205, 0xe205, AY8910_read_port_1_r },
-	MEMORY_END
+	public static Memory_ReadAddress sound_readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x3fff, MRA_ROM ),
+		new Memory_ReadAddress( 0x4000, 0x47ff, MRA_RAM ),
+		new Memory_ReadAddress( 0xe001, 0xe001, soundlatch_r ),
+		new Memory_ReadAddress( 0xe086, 0xe086, AY8910_read_port_0_r ),
+		new Memory_ReadAddress( 0xe205, 0xe205, AY8910_read_port_1_r ),
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( sound_writemem )
 		{ 0x0000, 0x3fff, MWA_ROM },
@@ -504,13 +506,15 @@ public class nemesis
 		{ 0x080000, 0x0cffff, MWA16_ROM },
 	MEMORY_END
 	
-	static MEMORY_READ_START( gx400_sound_readmem )
-		{ 0x0000, 0x1fff, MRA_ROM },
-		{ 0x4000, 0x87ff, MRA_RAM },
-		{ 0xe001, 0xe001, soundlatch_r },
-		{ 0xe086, 0xe086, AY8910_read_port_0_r },
-		{ 0xe205, 0xe205, AY8910_read_port_1_r },
-	MEMORY_END
+	public static Memory_ReadAddress gx400_sound_readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x1fff, MRA_ROM ),
+		new Memory_ReadAddress( 0x4000, 0x87ff, MRA_RAM ),
+		new Memory_ReadAddress( 0xe001, 0xe001, soundlatch_r ),
+		new Memory_ReadAddress( 0xe086, 0xe086, AY8910_read_port_0_r ),
+		new Memory_ReadAddress( 0xe205, 0xe205, AY8910_read_port_1_r ),
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( gx400_sound_writemem )
 		{ 0x0000, 0x1fff, MWA_ROM },
@@ -727,14 +731,16 @@ public class nemesis
 		K007232_bankswitch(0,RAM+bank_A,RAM+bank_B);
 	}
 	
-	static MEMORY_READ_START( sal_sound_readmem )
-		{ 0x0000, 0x7fff, MRA_ROM },
-		{ 0x8000, 0x87ff, MRA_RAM },
-		{ 0xa000, 0xa000, soundlatch_r },
-		{ 0xb000, 0xb00d, K007232_read_port_0_r },
-		{ 0xc001, 0xc001, YM2151_status_port_0_r },
-		{ 0xe000, 0xe000, wd_r }, /* watchdog?? */
-	MEMORY_END
+	public static Memory_ReadAddress sal_sound_readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x7fff, MRA_ROM ),
+		new Memory_ReadAddress( 0x8000, 0x87ff, MRA_RAM ),
+		new Memory_ReadAddress( 0xa000, 0xa000, soundlatch_r ),
+		new Memory_ReadAddress( 0xb000, 0xb00d, K007232_read_port_0_r ),
+		new Memory_ReadAddress( 0xc001, 0xc001, YM2151_status_port_0_r ),
+		new Memory_ReadAddress( 0xe000, 0xe000, wd_r ), /* watchdog?? */
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( sal_sound_writemem )
 		{ 0x0000, 0x7fff, MWA_ROM },
@@ -746,13 +752,15 @@ public class nemesis
 		{ 0xf000, 0xf000, salamand_speech_start_w },
 	MEMORY_END
 	
-	static MEMORY_READ_START( city_sound_readmem )
-		{ 0x0000, 0x7fff, MRA_ROM },
-		{ 0x8000, 0x87ff, MRA_RAM },
-		{ 0xa000, 0xa000, YM3812_status_port_0_r },
-		{ 0xb000, 0xb00d, K007232_read_port_0_r },
-		{ 0xd000, 0xd000, soundlatch_r },
-	MEMORY_END
+	public static Memory_ReadAddress city_sound_readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x7fff, MRA_ROM ),
+		new Memory_ReadAddress( 0x8000, 0x87ff, MRA_RAM ),
+		new Memory_ReadAddress( 0xa000, 0xa000, YM3812_status_port_0_r ),
+		new Memory_ReadAddress( 0xb000, 0xb00d, K007232_read_port_0_r ),
+		new Memory_ReadAddress( 0xd000, 0xd000, soundlatch_r ),
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( city_sound_writemem )
 		{ 0x0000, 0x7fff, MWA_ROM },

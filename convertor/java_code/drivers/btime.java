@@ -239,18 +239,20 @@ public class btime
 	}
 	
 	
-	static MEMORY_READ_START( btime_readmem )
-		{ 0x0000, 0x07ff, MRA_RAM },
-		{ 0x1000, 0x17ff, MRA_RAM },
-		{ 0x1800, 0x1bff, btime_mirrorvideoram_r },
-		{ 0x1c00, 0x1fff, btime_mirrorcolorram_r },
-		{ 0x4000, 0x4000, input_port_0_r },     /* IN0 */
-		{ 0x4001, 0x4001, input_port_1_r },     /* IN1 */
-		{ 0x4002, 0x4002, input_port_2_r },     /* coin */
-		{ 0x4003, 0x4003, input_port_3_r },     /* DSW1 */
-		{ 0x4004, 0x4004, input_port_4_r },     /* DSW2 */
-		{ 0xb000, 0xffff, MRA_ROM },
-	MEMORY_END
+	public static Memory_ReadAddress btime_readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x07ff, MRA_RAM ),
+		new Memory_ReadAddress( 0x1000, 0x17ff, MRA_RAM ),
+		new Memory_ReadAddress( 0x1800, 0x1bff, btime_mirrorvideoram_r ),
+		new Memory_ReadAddress( 0x1c00, 0x1fff, btime_mirrorcolorram_r ),
+		new Memory_ReadAddress( 0x4000, 0x4000, input_port_0_r ),     /* IN0 */
+		new Memory_ReadAddress( 0x4001, 0x4001, input_port_1_r ),     /* IN1 */
+		new Memory_ReadAddress( 0x4002, 0x4002, input_port_2_r ),     /* coin */
+		new Memory_ReadAddress( 0x4003, 0x4003, input_port_3_r ),     /* DSW1 */
+		new Memory_ReadAddress( 0x4004, 0x4004, input_port_4_r ),     /* DSW2 */
+		new Memory_ReadAddress( 0xb000, 0xffff, MRA_ROM ),
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( btime_writemem )
 		{ 0x0000, 0xffff, btime_w },	    /* override the following entries to */
@@ -267,24 +269,26 @@ public class btime
 		{ 0x4004, 0x4004, bnj_scroll1_w },
 	MEMORY_END
 	
-	static MEMORY_READ_START( cookrace_readmem )
-		{ 0x0000, 0x03ff, MRA_RAM },
-		{ 0x0500, 0x3fff, MRA_ROM },
-		{ 0xc000, 0xc7ff, MRA_RAM },
-		{ 0xc800, 0xcbff, btime_mirrorvideoram_r },
-		{ 0xcc00, 0xcfff, btime_mirrorcolorram_r },
-		{ 0xd000, 0xd0ff, MRA_RAM },	/* background */
-		{ 0xd100, 0xd3ff, MRA_RAM },	/* ? */
-		{ 0xd400, 0xd7ff, MRA_RAM },	/* background? */
-		{ 0xe000, 0xe000, input_port_3_r },     /* DSW1 */
-		{ 0xe300, 0xe300, input_port_3_r },     /* mirror address used on high score name enter */
+	public static Memory_ReadAddress cookrace_readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x03ff, MRA_RAM ),
+		new Memory_ReadAddress( 0x0500, 0x3fff, MRA_ROM ),
+		new Memory_ReadAddress( 0xc000, 0xc7ff, MRA_RAM ),
+		new Memory_ReadAddress( 0xc800, 0xcbff, btime_mirrorvideoram_r ),
+		new Memory_ReadAddress( 0xcc00, 0xcfff, btime_mirrorcolorram_r ),
+		new Memory_ReadAddress( 0xd000, 0xd0ff, MRA_RAM ),	/* background */
+		new Memory_ReadAddress( 0xd100, 0xd3ff, MRA_RAM ),	/* ? */
+		new Memory_ReadAddress( 0xd400, 0xd7ff, MRA_RAM ),	/* background? */
+		new Memory_ReadAddress( 0xe000, 0xe000, input_port_3_r ),     /* DSW1 */
+		new Memory_ReadAddress( 0xe300, 0xe300, input_port_3_r ),     /* mirror address used on high score name enter */
 												/* screen */
-		{ 0xe001, 0xe001, input_port_4_r },     /* DSW2 */
-		{ 0xe002, 0xe002, input_port_0_r },     /* IN0 */
-		{ 0xe003, 0xe003, input_port_1_r },     /* IN1 */
-		{ 0xe004, 0xe004, input_port_2_r },     /* coin */
-		{ 0xfff9, 0xffff, MRA_ROM },
-	MEMORY_END
+		new Memory_ReadAddress( 0xe001, 0xe001, input_port_4_r ),     /* DSW2 */
+		new Memory_ReadAddress( 0xe002, 0xe002, input_port_0_r ),     /* IN0 */
+		new Memory_ReadAddress( 0xe003, 0xe003, input_port_1_r ),     /* IN1 */
+		new Memory_ReadAddress( 0xe004, 0xe004, input_port_2_r ),     /* coin */
+		new Memory_ReadAddress( 0xfff9, 0xffff, MRA_ROM ),
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( cookrace_writemem )
 		{ 0x0000, 0x03ff, MWA_RAM },
@@ -304,15 +308,17 @@ public class btime
 		{ 0xfff9, 0xffff, MWA_ROM },
 	MEMORY_END
 	
-	static MEMORY_READ_START( zoar_readmem )
-		{ 0x0000, 0x07ff, MRA_RAM },
-		{ 0x9800, 0x9800, input_port_3_r },     /* DSW 1 */
-		{ 0x9801, 0x9801, input_port_4_r },     /* DSW 2 */
-		{ 0x9802, 0x9802, input_port_0_r },     /* IN 0 */
-		{ 0x9803, 0x9803, input_port_1_r },     /* IN 1 */
-		{ 0x9804, 0x9804, input_port_2_r },     /* coin */
-		{ 0xd000, 0xffff, MRA_ROM },
-	MEMORY_END
+	public static Memory_ReadAddress zoar_readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x07ff, MRA_RAM ),
+		new Memory_ReadAddress( 0x9800, 0x9800, input_port_3_r ),     /* DSW 1 */
+		new Memory_ReadAddress( 0x9801, 0x9801, input_port_4_r ),     /* DSW 2 */
+		new Memory_ReadAddress( 0x9802, 0x9802, input_port_0_r ),     /* IN 0 */
+		new Memory_ReadAddress( 0x9803, 0x9803, input_port_1_r ),     /* IN 1 */
+		new Memory_ReadAddress( 0x9804, 0x9804, input_port_2_r ),     /* coin */
+		new Memory_ReadAddress( 0xd000, 0xffff, MRA_ROM ),
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( zoar_writemem )
 		{ 0x0000, 0xffff, zoar_w },	    /* override the following entries to */
@@ -330,17 +336,19 @@ public class btime
 	  /*{ 0x9807, 0x9807, MWA_RAM }, */ /* Marked as ACK on schematics (Board 2 Pg 5) */
 	MEMORY_END
 	
-	static MEMORY_READ_START( lnc_readmem )
-		{ 0x0000, 0x3fff, MRA_RAM },
-		{ 0x7c00, 0x7fff, btime_mirrorvideoram_r },
-		{ 0x8000, 0x8000, input_port_3_r },     /* DSW1 */
-		{ 0x8001, 0x8001, input_port_4_r },     /* DSW2 */
-		{ 0x9000, 0x9000, input_port_0_r },     /* IN0 */
-		{ 0x9001, 0x9001, input_port_1_r },     /* IN1 */
-		{ 0x9002, 0x9002, input_port_2_r },     /* coin */
-		{ 0xb000, 0xb1ff, MRA_RAM },
-		{ 0xc000, 0xffff, MRA_ROM },
-	MEMORY_END
+	public static Memory_ReadAddress lnc_readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x3fff, MRA_RAM ),
+		new Memory_ReadAddress( 0x7c00, 0x7fff, btime_mirrorvideoram_r ),
+		new Memory_ReadAddress( 0x8000, 0x8000, input_port_3_r ),     /* DSW1 */
+		new Memory_ReadAddress( 0x8001, 0x8001, input_port_4_r ),     /* DSW2 */
+		new Memory_ReadAddress( 0x9000, 0x9000, input_port_0_r ),     /* IN0 */
+		new Memory_ReadAddress( 0x9001, 0x9001, input_port_1_r ),     /* IN1 */
+		new Memory_ReadAddress( 0x9002, 0x9002, input_port_2_r ),     /* coin */
+		new Memory_ReadAddress( 0xb000, 0xb1ff, MRA_RAM ),
+		new Memory_ReadAddress( 0xc000, 0xffff, MRA_ROM ),
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( lnc_writemem )
 		{ 0x0000, 0xffff, lnc_w },      /* override the following entries to */
@@ -358,17 +366,19 @@ public class btime
 	MEMORY_END
 	
 	
-	static MEMORY_READ_START( mmonkey_readmem )
-		{ 0x0000, 0x3fff, MRA_RAM },
-		{ 0x7c00, 0x7fff, btime_mirrorvideoram_r },
-		{ 0x8000, 0x8000, input_port_3_r },     /* DSW1 */
-		{ 0x8001, 0x8001, input_port_4_r },     /* DSW2 */
-		{ 0x9000, 0x9000, input_port_0_r },     /* IN0 */
-		{ 0x9001, 0x9001, input_port_1_r },     /* IN1 */
-		{ 0x9002, 0x9002, input_port_2_r },     /* coin */
-		{ 0xb000, 0xbfff, mmonkey_protection_r },
-		{ 0xc000, 0xffff, MRA_ROM },
-	MEMORY_END
+	public static Memory_ReadAddress mmonkey_readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x3fff, MRA_RAM ),
+		new Memory_ReadAddress( 0x7c00, 0x7fff, btime_mirrorvideoram_r ),
+		new Memory_ReadAddress( 0x8000, 0x8000, input_port_3_r ),     /* DSW1 */
+		new Memory_ReadAddress( 0x8001, 0x8001, input_port_4_r ),     /* DSW2 */
+		new Memory_ReadAddress( 0x9000, 0x9000, input_port_0_r ),     /* IN0 */
+		new Memory_ReadAddress( 0x9001, 0x9001, input_port_1_r ),     /* IN1 */
+		new Memory_ReadAddress( 0x9002, 0x9002, input_port_2_r ),     /* coin */
+		new Memory_ReadAddress( 0xb000, 0xbfff, mmonkey_protection_r ),
+		new Memory_ReadAddress( 0xc000, 0xffff, MRA_ROM ),
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( mmonkey_writemem )
 		{ 0x0000, 0xffff, mmonkey_w },  /* override the following entries to */
@@ -385,18 +395,20 @@ public class btime
 	MEMORY_END
 	
 	
-	static MEMORY_READ_START( bnj_readmem )
-		{ 0x0000, 0x07ff, MRA_RAM },
-		{ 0x1000, 0x1000, input_port_3_r },     /* DSW1 */
-		{ 0x1001, 0x1001, input_port_4_r },     /* DSW2 */
-		{ 0x1002, 0x1002, input_port_0_r },     /* IN0 */
-		{ 0x1003, 0x1003, input_port_1_r },     /* IN1 */
-		{ 0x1004, 0x1004, input_port_2_r },     /* coin */
-		{ 0x4000, 0x47ff, MRA_RAM },
-		{ 0x4800, 0x4bff, btime_mirrorvideoram_r },
-		{ 0x4c00, 0x4fff, btime_mirrorcolorram_r },
-		{ 0xa000, 0xffff, MRA_ROM },
-	MEMORY_END
+	public static Memory_ReadAddress bnj_readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x07ff, MRA_RAM ),
+		new Memory_ReadAddress( 0x1000, 0x1000, input_port_3_r ),     /* DSW1 */
+		new Memory_ReadAddress( 0x1001, 0x1001, input_port_4_r ),     /* DSW2 */
+		new Memory_ReadAddress( 0x1002, 0x1002, input_port_0_r ),     /* IN0 */
+		new Memory_ReadAddress( 0x1003, 0x1003, input_port_1_r ),     /* IN1 */
+		new Memory_ReadAddress( 0x1004, 0x1004, input_port_2_r ),     /* coin */
+		new Memory_ReadAddress( 0x4000, 0x47ff, MRA_RAM ),
+		new Memory_ReadAddress( 0x4800, 0x4bff, btime_mirrorvideoram_r ),
+		new Memory_ReadAddress( 0x4c00, 0x4fff, btime_mirrorcolorram_r ),
+		new Memory_ReadAddress( 0xa000, 0xffff, MRA_ROM ),
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( bnj_writemem )
 		{ 0x0000, 0x07ff, MWA_RAM },
@@ -412,17 +424,19 @@ public class btime
 		{ 0x5c00, 0x5c0f, btime_paletteram_w, &paletteram },
 	MEMORY_END
 	
-	static MEMORY_READ_START( disco_readmem )
-		{ 0x0000, 0x04ff, MRA_RAM },
-		{ 0x2000, 0x881f, MRA_RAM },
-		{ 0x9000, 0x9000, input_port_2_r },     /* coin */
-		{ 0x9200, 0x9200, input_port_0_r },     /* IN0 */
-		{ 0x9400, 0x9400, input_port_1_r },     /* IN1 */
-		{ 0x9800, 0x9800, input_port_3_r },     /* DSW1 */
-		{ 0x9a00, 0x9a00, input_port_4_r },     /* DSW2 */
-		{ 0x9c00, 0x9c00, input_port_5_r },     /* VBLANK */
-		{ 0xa000, 0xffff, MRA_ROM },
-	MEMORY_END
+	public static Memory_ReadAddress disco_readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x04ff, MRA_RAM ),
+		new Memory_ReadAddress( 0x2000, 0x881f, MRA_RAM ),
+		new Memory_ReadAddress( 0x9000, 0x9000, input_port_2_r ),     /* coin */
+		new Memory_ReadAddress( 0x9200, 0x9200, input_port_0_r ),     /* IN0 */
+		new Memory_ReadAddress( 0x9400, 0x9400, input_port_1_r ),     /* IN1 */
+		new Memory_ReadAddress( 0x9800, 0x9800, input_port_3_r ),     /* DSW1 */
+		new Memory_ReadAddress( 0x9a00, 0x9a00, input_port_4_r ),     /* DSW2 */
+		new Memory_ReadAddress( 0x9c00, 0x9c00, input_port_5_r ),     /* VBLANK */
+		new Memory_ReadAddress( 0xa000, 0xffff, MRA_ROM ),
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( disco_writemem )
 		{ 0x0000, 0xffff, disco_w },    /* override the following entries to */
@@ -436,12 +450,14 @@ public class btime
 	MEMORY_END
 	
 	
-	static MEMORY_READ_START( sound_readmem )
-		{ 0x0000, 0x03ff, MRA_RAM },
-		{ 0x0200, 0x0fff, MRA_ROM },	/* Cook Race */
-		{ 0xa000, 0xafff, soundlatch_r },
-		{ 0xf000, 0xffff, MRA_ROM },
-	MEMORY_END
+	public static Memory_ReadAddress sound_readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x03ff, MRA_RAM ),
+		new Memory_ReadAddress( 0x0200, 0x0fff, MRA_ROM ),	/* Cook Race */
+		new Memory_ReadAddress( 0xa000, 0xafff, soundlatch_r ),
+		new Memory_ReadAddress( 0xf000, 0xffff, MRA_ROM ),
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( sound_writemem )
 		{ 0x0000, 0x03ff, MWA_RAM },
@@ -455,11 +471,13 @@ public class btime
 	MEMORY_END
 	
 	
-	static MEMORY_READ_START( disco_sound_readmem )
-		{ 0x0000, 0x03ff, MRA_RAM },
-		{ 0x8000, 0x8fff, soundlatch_r },
-		{ 0xf000, 0xffff, MRA_ROM },
-	MEMORY_END
+	public static Memory_ReadAddress disco_sound_readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x03ff, MRA_RAM ),
+		new Memory_ReadAddress( 0x8000, 0x8fff, soundlatch_r ),
+		new Memory_ReadAddress( 0xf000, 0xffff, MRA_ROM ),
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( disco_sound_writemem )
 		{ 0x0000, 0x03ff, MWA_RAM },

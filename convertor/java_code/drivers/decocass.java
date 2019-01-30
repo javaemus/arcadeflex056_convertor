@@ -115,21 +115,23 @@ public class decocass
 		rom[offset+diff] = swap_bits_5_6(data);
 	}
 	
-	static MEMORY_READ_START( decocass_readmem )
-		{ 0x0000, 0x1fff, MRA_RAM },
-		{ 0x2000, 0xbfff, MRA_RAM },				/* RMS3 RAM */
-		{ 0xc000, 0xc7ff, MRA_RAM },				/* DSP3 videoram + colorram */
-		{ 0xc800, 0xcbff, decocass_mirrorvideoram_r },
-		{ 0xcc00, 0xcfff, decocass_mirrorcolorram_r },
-		{ 0xd000, 0xdbff, MRA_RAM },				/* B103 RAM */
-		{ 0xe300, 0xe300, input_port_7_r }, 		/* DSW1 */
-		{ 0xe301, 0xe301, input_port_8_r }, 		/* DSW2 */
-		{ 0xe500, 0xe5ff, decocass_e5xx_r },		/* read data from 8041/status */
-		{ 0xe600, 0xe6ff, decocass_input_r },		/* inputs */
-		{ 0xe700, 0xe700, decocass_sound_data_r },	/* read sound CPU data */
-		{ 0xe701, 0xe701, decocass_sound_ack_r },	/* read sound CPU ack status */
-		{ 0xf000, 0xffff, MRA_ROM },
-	MEMORY_END
+	public static Memory_ReadAddress decocass_readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x1fff, MRA_RAM ),
+		new Memory_ReadAddress( 0x2000, 0xbfff, MRA_RAM ),				/* RMS3 RAM */
+		new Memory_ReadAddress( 0xc000, 0xc7ff, MRA_RAM ),				/* DSP3 videoram + colorram */
+		new Memory_ReadAddress( 0xc800, 0xcbff, decocass_mirrorvideoram_r ),
+		new Memory_ReadAddress( 0xcc00, 0xcfff, decocass_mirrorcolorram_r ),
+		new Memory_ReadAddress( 0xd000, 0xdbff, MRA_RAM ),				/* B103 RAM */
+		new Memory_ReadAddress( 0xe300, 0xe300, input_port_7_r ), 		/* DSW1 */
+		new Memory_ReadAddress( 0xe301, 0xe301, input_port_8_r ), 		/* DSW2 */
+		new Memory_ReadAddress( 0xe500, 0xe5ff, decocass_e5xx_r ),		/* read data from 8041/status */
+		new Memory_ReadAddress( 0xe600, 0xe6ff, decocass_input_r ),		/* inputs */
+		new Memory_ReadAddress( 0xe700, 0xe700, decocass_sound_data_r ),	/* read sound CPU data */
+		new Memory_ReadAddress( 0xe701, 0xe701, decocass_sound_ack_r ),	/* read sound CPU ack status */
+		new Memory_ReadAddress( 0xf000, 0xffff, MRA_ROM ),
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( decocass_writemem )
 		{ 0x0000, 0xffff, decocass_w },
@@ -171,13 +173,15 @@ public class decocass
 		{ 0xf000, 0xffff, MWA_ROM },
 	MEMORY_END
 	
-	static MEMORY_READ_START( decocass_sound_readmem )
-		{ 0x0000, 0x0fff, MRA_RAM },
-		{ 0x1000, 0x17ff, decocass_sound_nmi_enable_r },
-		{ 0x1800, 0x1fff, decocass_sound_data_ack_reset_r },
-		{ 0xa000, 0xafff, decocass_sound_command_r },
-		{ 0xf800, 0xffff, MRA_ROM },
-	MEMORY_END
+	public static Memory_ReadAddress decocass_sound_readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x0fff, MRA_RAM ),
+		new Memory_ReadAddress( 0x1000, 0x17ff, decocass_sound_nmi_enable_r ),
+		new Memory_ReadAddress( 0x1800, 0x1fff, decocass_sound_data_ack_reset_r ),
+		new Memory_ReadAddress( 0xa000, 0xafff, decocass_sound_command_r ),
+		new Memory_ReadAddress( 0xf800, 0xffff, MRA_ROM ),
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( decocass_sound_writemem )
 		{ 0x0000, 0x0fff, MWA_RAM },
@@ -191,10 +195,12 @@ public class decocass
 		{ 0xf800, 0xffff, MWA_ROM },
 	MEMORY_END
 	
-	static MEMORY_READ_START( decocass_mcu_readmem )
-		{ 0x0000, 0x03ff, MRA_ROM },
-		{ 0x0800, 0x083f, MRA_RAM },
-	MEMORY_END
+	public static Memory_ReadAddress decocass_mcu_readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x03ff, MRA_ROM ),
+		new Memory_ReadAddress( 0x0800, 0x083f, MRA_RAM ),
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( decocass_mcu_writemem )
 		{ 0x0000, 0x03ff, MWA_ROM },

@@ -765,15 +765,17 @@ public class itech32
 	 *************************************/
 	
 	/*------ Rev 1 sound board memory layout ------*/
-	static MEMORY_READ_START( sound_readmem )
-		{ 0x0400, 0x0400, sound_data_r },
-		{ 0x0800, 0x083f, ES5506_data_0_r },
-		{ 0x0880, 0x08bf, ES5506_data_0_r },
-		{ 0x1400, 0x140f, via6522_r },
-		{ 0x2000, 0x3fff, MRA_RAM },
-		{ 0x4000, 0x7fff, MRA_BANK1 },
-		{ 0x8000, 0xffff, MRA_ROM },
-	MEMORY_END
+	public static Memory_ReadAddress sound_readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0400, 0x0400, sound_data_r ),
+		new Memory_ReadAddress( 0x0800, 0x083f, ES5506_data_0_r ),
+		new Memory_ReadAddress( 0x0880, 0x08bf, ES5506_data_0_r ),
+		new Memory_ReadAddress( 0x1400, 0x140f, via6522_r ),
+		new Memory_ReadAddress( 0x2000, 0x3fff, MRA_RAM ),
+		new Memory_ReadAddress( 0x4000, 0x7fff, MRA_BANK1 ),
+		new Memory_ReadAddress( 0x8000, 0xffff, MRA_ROM ),
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	
 	static MEMORY_WRITE_START( sound_writemem )
@@ -788,16 +790,18 @@ public class itech32
 	
 	
 	/*------ Rev 2 sound board memory layout ------*/
-	static MEMORY_READ_START( sound_020_readmem )
-		{ 0x0000, 0x0000, sound_data_r },
-		{ 0x0400, 0x0400, sound_data_r },
-		{ 0x0800, 0x083f, ES5506_data_0_r },
-		{ 0x0880, 0x08bf, ES5506_data_0_r },
-		{ 0x1800, 0x1800, sound_data_buffer_r },
-		{ 0x2000, 0x3fff, MRA_RAM },
-		{ 0x4000, 0x7fff, MRA_BANK1 },
-		{ 0x8000, 0xffff, MRA_ROM },
-	MEMORY_END
+	public static Memory_ReadAddress sound_020_readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x0000, sound_data_r ),
+		new Memory_ReadAddress( 0x0400, 0x0400, sound_data_r ),
+		new Memory_ReadAddress( 0x0800, 0x083f, ES5506_data_0_r ),
+		new Memory_ReadAddress( 0x0880, 0x08bf, ES5506_data_0_r ),
+		new Memory_ReadAddress( 0x1800, 0x1800, sound_data_buffer_r ),
+		new Memory_ReadAddress( 0x2000, 0x3fff, MRA_RAM ),
+		new Memory_ReadAddress( 0x4000, 0x7fff, MRA_BANK1 ),
+		new Memory_ReadAddress( 0x8000, 0xffff, MRA_ROM ),
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	
 	static MEMORY_WRITE_START( sound_020_writemem )

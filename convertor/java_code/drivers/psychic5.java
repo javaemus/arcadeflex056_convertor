@@ -358,21 +358,23 @@ public class psychic5
 	}
 	
 	
-	static MEMORY_READ_START( readmem )
-		{ 0x0000, 0x7fff, MRA_ROM },
-		{ 0x8000, 0xbfff, MRA_BANK1 },
-		{ 0xc000, 0xdfff, psychic5_paged_ram_r },
-		{ 0xe000, 0xefff, MRA_RAM },
-		{ 0xf000, 0xf000, MRA_RAM },
-		{ 0xf001, 0xf001, MRA_RAM },			// unknown
-		{ 0xf002, 0xf002, psychic5_bankselect_r },
-		{ 0xf003, 0xf003, psychic5_vram_page_select_r },
-		{ 0xf004, 0xf004, MRA_RAM },			// unknown
-		{ 0xf005, 0xf005, MRA_RAM },			// unknown
-		{ 0xf006, 0xf1ff, MRA_NOP },
-		{ 0xf200, 0xf7ff, MRA_RAM },
-		{ 0xf800, 0xffff, MRA_RAM },
-	MEMORY_END
+	public static Memory_ReadAddress readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x7fff, MRA_ROM ),
+		new Memory_ReadAddress( 0x8000, 0xbfff, MRA_BANK1 ),
+		new Memory_ReadAddress( 0xc000, 0xdfff, psychic5_paged_ram_r ),
+		new Memory_ReadAddress( 0xe000, 0xefff, MRA_RAM ),
+		new Memory_ReadAddress( 0xf000, 0xf000, MRA_RAM ),
+		new Memory_ReadAddress( 0xf001, 0xf001, MRA_RAM ),			// unknown
+		new Memory_ReadAddress( 0xf002, 0xf002, psychic5_bankselect_r ),
+		new Memory_ReadAddress( 0xf003, 0xf003, psychic5_vram_page_select_r ),
+		new Memory_ReadAddress( 0xf004, 0xf004, MRA_RAM ),			// unknown
+		new Memory_ReadAddress( 0xf005, 0xf005, MRA_RAM ),			// unknown
+		new Memory_ReadAddress( 0xf006, 0xf1ff, MRA_NOP ),
+		new Memory_ReadAddress( 0xf200, 0xf7ff, MRA_RAM ),
+		new Memory_ReadAddress( 0xf800, 0xffff, MRA_RAM ),
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( writemem )
 		{ 0x0000, 0x7fff, MWA_ROM },
@@ -390,11 +392,13 @@ public class psychic5
 		{ 0xf800, 0xffff, MWA_RAM },
 	MEMORY_END
 	
-	static MEMORY_READ_START( sound_readmem )
-		{ 0x0000, 0x7fff, MRA_ROM },
-		{ 0xc000, 0xc7ff, MRA_RAM },
-		{ 0xe000, 0xe000, soundlatch_r },
-	MEMORY_END
+	public static Memory_ReadAddress sound_readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x7fff, MRA_ROM ),
+		new Memory_ReadAddress( 0xc000, 0xc7ff, MRA_RAM ),
+		new Memory_ReadAddress( 0xe000, 0xe000, soundlatch_r ),
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( sound_writemem )
 		{ 0x0000, 0x7fff, MWA_ROM },

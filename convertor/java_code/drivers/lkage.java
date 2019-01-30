@@ -86,24 +86,26 @@ public class lkage
 	
 	
 	
-	static MEMORY_READ_START( readmem )
-		{ 0x0000, 0xdfff, MRA_ROM },
-		{ 0xe000, 0xe7ff, MRA_RAM },
-		{ 0xe800, 0xefff, paletteram_r },
-		{ 0xf000, 0xf003, MRA_RAM },
-		{ 0xf062, 0xf062, lkage_mcu_r },
-		{ 0xf080, 0xf080, input_port_0_r }, /* DSW1 */
-		{ 0xf081, 0xf081, input_port_1_r }, /* DSW2 (coinage) */
-		{ 0xf082, 0xf082, input_port_2_r }, /* DSW3 */
-		{ 0xf083, 0xf083, input_port_3_r },	/* start buttons, insert coin, tilt */
-		{ 0xf084, 0xf084, input_port_4_r },	/* P1 controls */
-		{ 0xf086, 0xf086, input_port_5_r },	/* P2 controls */
-		{ 0xf087, 0xf087, lkage_mcu_status_r },
-	//	{ 0xf0a3, 0xf0a3, MRA_NOP }, /* unknown */
-		{ 0xf0c0, 0xf0c5, MRA_RAM },
-		{ 0xf100, 0xf15f, MRA_RAM },
-		{ 0xf400, 0xffff, MRA_RAM },
-	MEMORY_END
+	public static Memory_ReadAddress readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0xdfff, MRA_ROM ),
+		new Memory_ReadAddress( 0xe000, 0xe7ff, MRA_RAM ),
+		new Memory_ReadAddress( 0xe800, 0xefff, paletteram_r ),
+		new Memory_ReadAddress( 0xf000, 0xf003, MRA_RAM ),
+		new Memory_ReadAddress( 0xf062, 0xf062, lkage_mcu_r ),
+		new Memory_ReadAddress( 0xf080, 0xf080, input_port_0_r ), /* DSW1 */
+		new Memory_ReadAddress( 0xf081, 0xf081, input_port_1_r ), /* DSW2 (coinage) */
+		new Memory_ReadAddress( 0xf082, 0xf082, input_port_2_r ), /* DSW3 */
+		new Memory_ReadAddress( 0xf083, 0xf083, input_port_3_r ),	/* start buttons, insert coin, tilt */
+		new Memory_ReadAddress( 0xf084, 0xf084, input_port_4_r ),	/* P1 controls */
+		new Memory_ReadAddress( 0xf086, 0xf086, input_port_5_r ),	/* P2 controls */
+		new Memory_ReadAddress( 0xf087, 0xf087, lkage_mcu_status_r ),
+	//	new Memory_ReadAddress( 0xf0a3, 0xf0a3, MRA_NOP ), /* unknown */
+		new Memory_ReadAddress( 0xf0c0, 0xf0c5, MRA_RAM ),
+		new Memory_ReadAddress( 0xf100, 0xf15f, MRA_RAM ),
+		new Memory_ReadAddress( 0xf400, 0xffff, MRA_RAM ),
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( writemem )
 		{ 0x0000, 0xdfff, MWA_ROM },
@@ -133,13 +135,15 @@ public class lkage
 	PORT_END
 	
 	
-	static MEMORY_READ_START( m68705_readmem )
-		{ 0x0000, 0x0000, lkage_68705_portA_r },
-		{ 0x0001, 0x0001, lkage_68705_portB_r },
-		{ 0x0002, 0x0002, lkage_68705_portC_r },
-		{ 0x0010, 0x007f, MRA_RAM },
-		{ 0x0080, 0x07ff, MRA_ROM },
-	MEMORY_END
+	public static Memory_ReadAddress m68705_readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x0000, lkage_68705_portA_r ),
+		new Memory_ReadAddress( 0x0001, 0x0001, lkage_68705_portB_r ),
+		new Memory_ReadAddress( 0x0002, 0x0002, lkage_68705_portC_r ),
+		new Memory_ReadAddress( 0x0010, 0x007f, MRA_RAM ),
+		new Memory_ReadAddress( 0x0080, 0x07ff, MRA_ROM ),
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( m68705_writemem )
 		{ 0x0000, 0x0000, lkage_68705_portA_w },
@@ -158,15 +162,17 @@ public class lkage
 	
 	/* sound section is almost identical to Bubble Bobble, YM2203 instead of YM3526 */
 	
-	static MEMORY_READ_START( readmem_sound )
-		{ 0x0000, 0x7fff, MRA_ROM },
-		{ 0x8000, 0x87ff, MRA_RAM },
-		{ 0x9000, 0x9000, YM2203_status_port_0_r },
-		{ 0xa000, 0xa000, YM2203_status_port_1_r },
-		{ 0xb000, 0xb000, soundlatch_r },
-		{ 0xb001, 0xb001, MRA_NOP },	/* ??? */
-		{ 0xe000, 0xefff, MRA_ROM },	/* space for diagnostic ROM? */
-	MEMORY_END
+	public static Memory_ReadAddress readmem_sound[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x7fff, MRA_ROM ),
+		new Memory_ReadAddress( 0x8000, 0x87ff, MRA_RAM ),
+		new Memory_ReadAddress( 0x9000, 0x9000, YM2203_status_port_0_r ),
+		new Memory_ReadAddress( 0xa000, 0xa000, YM2203_status_port_1_r ),
+		new Memory_ReadAddress( 0xb000, 0xb000, soundlatch_r ),
+		new Memory_ReadAddress( 0xb001, 0xb001, MRA_NOP ),	/* ??? */
+		new Memory_ReadAddress( 0xe000, 0xefff, MRA_ROM ),	/* space for diagnostic ROM? */
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( writemem_sound )
 		{ 0x0000, 0x7fff, MWA_ROM },

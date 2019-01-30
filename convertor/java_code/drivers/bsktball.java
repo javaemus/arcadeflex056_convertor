@@ -131,15 +131,17 @@ public class bsktball
 			DAC_data_w(1,0);
 	}
 	
-	static MEMORY_READ_START( readmem )
-		{ 0x0000, 0x01ff, MRA_RAM }, /* Zero Page RAM */
-		{ 0x0800, 0x0800, bsktball_in0_r },
-		{ 0x0802, 0x0802, input_port_5_r },
-		{ 0x0803, 0x0803, input_port_6_r },
-		{ 0x1800, 0x1cff, MRA_RAM }, /* video ram */
-		{ 0x2000, 0x3fff, MRA_ROM }, /* PROGRAM */
-		{ 0xfff0, 0xffff, MRA_ROM }, /* PROM8 for 6502 vectors */
-	MEMORY_END
+	public static Memory_ReadAddress readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x01ff, MRA_RAM ), /* Zero Page RAM */
+		new Memory_ReadAddress( 0x0800, 0x0800, bsktball_in0_r ),
+		new Memory_ReadAddress( 0x0802, 0x0802, input_port_5_r ),
+		new Memory_ReadAddress( 0x0803, 0x0803, input_port_6_r ),
+		new Memory_ReadAddress( 0x1800, 0x1cff, MRA_RAM ), /* video ram */
+		new Memory_ReadAddress( 0x2000, 0x3fff, MRA_ROM ), /* PROGRAM */
+		new Memory_ReadAddress( 0xfff0, 0xffff, MRA_ROM ), /* PROM8 for 6502 vectors */
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( writemem )
 		{ 0x0000, 0x01ff, MWA_RAM }, /* WRAM */

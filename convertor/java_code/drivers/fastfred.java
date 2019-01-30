@@ -133,20 +133,22 @@ public class fastfred
 	
 	
 	
-	static MEMORY_READ_START( fastfred_readmem )
-		{ 0x0000, 0x7fff, MRA_ROM },
-		{ 0x8000, 0x9fff, MRA_NOP }, // There is a bug in Fast Freddie that causes
+	public static Memory_ReadAddress fastfred_readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x7fff, MRA_ROM ),
+		new Memory_ReadAddress( 0x8000, 0x9fff, MRA_NOP ), // There is a bug in Fast Freddie that causes
 									 // these locations to be read. See 1b5a
 									 // One of the instructions should be ld de,
 									 // instead of ld hl,
-		{ 0xc000, 0xc7ff, MRA_RAM },
-		{ 0xd000, 0xd3ff, MRA_RAM },
-		{ 0xd800, 0xd8ff, MRA_RAM },
-		{ 0xe000, 0xe000, input_port_0_r },
-		{ 0xe800, 0xe800, input_port_1_r },
-		{ 0xf000, 0xf000, input_port_2_r },
-		{ 0xf800, 0xf800, watchdog_reset_r },
-	MEMORY_END
+		new Memory_ReadAddress( 0xc000, 0xc7ff, MRA_RAM ),
+		new Memory_ReadAddress( 0xd000, 0xd3ff, MRA_RAM ),
+		new Memory_ReadAddress( 0xd800, 0xd8ff, MRA_RAM ),
+		new Memory_ReadAddress( 0xe000, 0xe000, input_port_0_r ),
+		new Memory_ReadAddress( 0xe800, 0xe800, input_port_1_r ),
+		new Memory_ReadAddress( 0xf000, 0xf000, input_port_2_r ),
+		new Memory_ReadAddress( 0xf800, 0xf800, watchdog_reset_r ),
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( fastfred_writemem )
 		{ 0x0000, 0x7fff, MWA_ROM },
@@ -170,17 +172,19 @@ public class fastfred
 	MEMORY_END
 	
 	
-	static MEMORY_READ_START( jumpcoas_readmem )
-		{ 0x0000, 0x7fff, MRA_ROM },
-		{ 0xc000, 0xc7ff, MRA_RAM },
-		{ 0xd000, 0xd3ff, MRA_RAM },
-		{ 0xd800, 0xdbff, MRA_RAM },
-		{ 0xe800, 0xe800, input_port_0_r },
-		{ 0xe802, 0xe802, input_port_1_r },
-		{ 0xe802, 0xe803, input_port_2_r },
-		//{ 0xf800, 0xf800, watchdog_reset_r },  // Why doesn't this work???
-		{ 0xf800, 0xf800, MRA_NOP },
-	MEMORY_END
+	public static Memory_ReadAddress jumpcoas_readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x7fff, MRA_ROM ),
+		new Memory_ReadAddress( 0xc000, 0xc7ff, MRA_RAM ),
+		new Memory_ReadAddress( 0xd000, 0xd3ff, MRA_RAM ),
+		new Memory_ReadAddress( 0xd800, 0xdbff, MRA_RAM ),
+		new Memory_ReadAddress( 0xe800, 0xe800, input_port_0_r ),
+		new Memory_ReadAddress( 0xe802, 0xe802, input_port_1_r ),
+		new Memory_ReadAddress( 0xe802, 0xe803, input_port_2_r ),
+		//new Memory_ReadAddress( 0xf800, 0xf800, watchdog_reset_r ),  // Why doesn't this work???
+		new Memory_ReadAddress( 0xf800, 0xf800, MRA_NOP ),
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	
 	static MEMORY_WRITE_START( jumpcoas_writemem )
@@ -206,11 +210,13 @@ public class fastfred
 	MEMORY_END
 	
 	
-	static MEMORY_READ_START( sound_readmem )
-		{ 0x0000, 0x1fff, MRA_ROM },
-		{ 0x2000, 0x23ff, MRA_RAM },
-		{ 0x3000, 0x3000, soundlatch_r },
-	MEMORY_END
+	public static Memory_ReadAddress sound_readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x1fff, MRA_ROM ),
+		new Memory_ReadAddress( 0x2000, 0x23ff, MRA_RAM ),
+		new Memory_ReadAddress( 0x3000, 0x3000, soundlatch_r ),
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	
 	static MEMORY_WRITE_START( sound_writemem )

@@ -160,19 +160,21 @@ public class skydiver
 		   	return ignore_interrupt();
 	}
 	
-	static MEMORY_READ_START( readmem )
-		{ 0x0000, 0x00ff, MRA_RAM },
-		{ 0x0400, 0x077f, MRA_RAM },
-	//  { 0x780, 0x7ff, MRA_RAM },
-		{ 0x1800, 0x1803, skydiver_input_0_r },
-		{ 0x1804, 0x1807, skydiver_input_1_r },
-		{ 0x1808, 0x180b, skydiver_input_2_r },
-		{ 0x1810, 0x1811, skydiver_input_3_r },
-		{ 0x2000, 0x2000, watchdog_reset_r },
-		{ 0x2800, 0x3fff, MRA_ROM },
-		{ 0x7800, 0x7fff, MRA_ROM },
-		{ 0xf800, 0xffff, MRA_ROM },
-	MEMORY_END
+	public static Memory_ReadAddress readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x00ff, MRA_RAM ),
+		new Memory_ReadAddress( 0x0400, 0x077f, MRA_RAM ),
+	//  new Memory_ReadAddress( 0x780, 0x7ff, MRA_RAM ),
+		new Memory_ReadAddress( 0x1800, 0x1803, skydiver_input_0_r ),
+		new Memory_ReadAddress( 0x1804, 0x1807, skydiver_input_1_r ),
+		new Memory_ReadAddress( 0x1808, 0x180b, skydiver_input_2_r ),
+		new Memory_ReadAddress( 0x1810, 0x1811, skydiver_input_3_r ),
+		new Memory_ReadAddress( 0x2000, 0x2000, watchdog_reset_r ),
+		new Memory_ReadAddress( 0x2800, 0x3fff, MRA_ROM ),
+		new Memory_ReadAddress( 0x7800, 0x7fff, MRA_ROM ),
+		new Memory_ReadAddress( 0xf800, 0xffff, MRA_ROM ),
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( writemem )
 		{ 0x0000, 0x00ff, MWA_RAM },

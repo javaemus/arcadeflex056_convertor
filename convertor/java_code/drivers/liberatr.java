@@ -194,29 +194,33 @@ public class liberatr
 	
 	
 	
-	static MEMORY_READ_START( liberatr_readmem )
-		{ 0x0002, 0x0002, liberatr_bitmap_xy_r },
-		{ 0x0000, 0x3fff, MRA_RAM },	/* overlapping for my convenience */
-		{ 0x4000, 0x403f, atari_vg_earom_r },
-		{ 0x5000, 0x5000, liberatr_input_port_0_r },
-		{ 0x5001, 0x5001, input_port_1_r },
-		{ 0x7000, 0x701f, pokey2_r },
-		{ 0x7800, 0x781f, pokey1_r },
-		{ 0x8000, 0xefff, MRA_ROM },
-		{ 0xfffa, 0xffff, MRA_ROM },
-	MEMORY_END
+	public static Memory_ReadAddress liberatr_readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0002, 0x0002, liberatr_bitmap_xy_r ),
+		new Memory_ReadAddress( 0x0000, 0x3fff, MRA_RAM ),	/* overlapping for my convenience */
+		new Memory_ReadAddress( 0x4000, 0x403f, atari_vg_earom_r ),
+		new Memory_ReadAddress( 0x5000, 0x5000, liberatr_input_port_0_r ),
+		new Memory_ReadAddress( 0x5001, 0x5001, input_port_1_r ),
+		new Memory_ReadAddress( 0x7000, 0x701f, pokey2_r ),
+		new Memory_ReadAddress( 0x7800, 0x781f, pokey1_r ),
+		new Memory_ReadAddress( 0x8000, 0xefff, MRA_ROM ),
+		new Memory_ReadAddress( 0xfffa, 0xffff, MRA_ROM ),
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
-	static MEMORY_READ_START( liberat2_readmem )
-		{ 0x0002, 0x0002, liberatr_bitmap_xy_r },
-		{ 0x0000, 0x3fff, MRA_RAM },	/* overlapping for my convenience */
-		{ 0x4000, 0x4000, liberatr_input_port_0_r },
-		{ 0x4001, 0x4001, input_port_1_r },
-		{ 0x4800, 0x483f, atari_vg_earom_r },
-		{ 0x5000, 0x501f, pokey2_r },
-		{ 0x5800, 0x581f, pokey1_r },
-		{ 0x6000, 0xbfff, MRA_ROM },
-		{ 0xfffa, 0xffff, MRA_ROM },
-	MEMORY_END
+	public static Memory_ReadAddress liberat2_readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0002, 0x0002, liberatr_bitmap_xy_r ),
+		new Memory_ReadAddress( 0x0000, 0x3fff, MRA_RAM ),	/* overlapping for my convenience */
+		new Memory_ReadAddress( 0x4000, 0x4000, liberatr_input_port_0_r ),
+		new Memory_ReadAddress( 0x4001, 0x4001, input_port_1_r ),
+		new Memory_ReadAddress( 0x4800, 0x483f, atari_vg_earom_r ),
+		new Memory_ReadAddress( 0x5000, 0x501f, pokey2_r ),
+		new Memory_ReadAddress( 0x5800, 0x581f, pokey1_r ),
+		new Memory_ReadAddress( 0x6000, 0xbfff, MRA_ROM ),
+		new Memory_ReadAddress( 0xfffa, 0xffff, MRA_ROM ),
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	
 	static MEMORY_WRITE_START( liberatr_writemem )

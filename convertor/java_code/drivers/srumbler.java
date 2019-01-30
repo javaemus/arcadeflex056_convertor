@@ -74,25 +74,27 @@ public class srumbler
 	
 	
 	
-	static MEMORY_READ_START( readmem )
-		{ 0x0000, 0x3fff, MRA_RAM },   /* RAM (of 1 sort or another) */
-		{ 0x4008, 0x4008, input_port_0_r },
-		{ 0x4009, 0x4009, input_port_1_r },
-		{ 0x400a, 0x400a, input_port_2_r },
-		{ 0x400b, 0x400b, input_port_3_r },
-		{ 0x400c, 0x400c, input_port_4_r },
-		{ 0x5000, 0x5fff, MRA_BANK6 },	/* Banked ROM */
-		{ 0x6000, 0x6fff, MRA_BANK7 },	/* Banked ROM */
-		{ 0x7000, 0x7fff, MRA_BANK8 },	/* Banked ROM */
-		{ 0x8000, 0x8fff, MRA_BANK9 },	/* Banked ROM */
-		{ 0x9000, 0x9fff, MRA_BANK10 },	/* Banked ROM */
-		{ 0xa000, 0xafff, MRA_BANK11 },	/* Banked ROM */
-		{ 0xb000, 0xbfff, MRA_BANK12 },	/* Banked ROM */
-		{ 0xc000, 0xcfff, MRA_BANK13 },	/* Banked ROM */
-		{ 0xd000, 0xdfff, MRA_BANK14 },	/* Banked ROM */
-		{ 0xe000, 0xefff, MRA_BANK15 },	/* Banked ROM */
-		{ 0xf000, 0xffff, MRA_BANK16 },	/* Banked ROM */
-	MEMORY_END
+	public static Memory_ReadAddress readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x3fff, MRA_RAM ),   /* RAM (of 1 sort or another) */
+		new Memory_ReadAddress( 0x4008, 0x4008, input_port_0_r ),
+		new Memory_ReadAddress( 0x4009, 0x4009, input_port_1_r ),
+		new Memory_ReadAddress( 0x400a, 0x400a, input_port_2_r ),
+		new Memory_ReadAddress( 0x400b, 0x400b, input_port_3_r ),
+		new Memory_ReadAddress( 0x400c, 0x400c, input_port_4_r ),
+		new Memory_ReadAddress( 0x5000, 0x5fff, MRA_BANK6 ),	/* Banked ROM */
+		new Memory_ReadAddress( 0x6000, 0x6fff, MRA_BANK7 ),	/* Banked ROM */
+		new Memory_ReadAddress( 0x7000, 0x7fff, MRA_BANK8 ),	/* Banked ROM */
+		new Memory_ReadAddress( 0x8000, 0x8fff, MRA_BANK9 ),	/* Banked ROM */
+		new Memory_ReadAddress( 0x9000, 0x9fff, MRA_BANK10 ),	/* Banked ROM */
+		new Memory_ReadAddress( 0xa000, 0xafff, MRA_BANK11 ),	/* Banked ROM */
+		new Memory_ReadAddress( 0xb000, 0xbfff, MRA_BANK12 ),	/* Banked ROM */
+		new Memory_ReadAddress( 0xc000, 0xcfff, MRA_BANK13 ),	/* Banked ROM */
+		new Memory_ReadAddress( 0xd000, 0xdfff, MRA_BANK14 ),	/* Banked ROM */
+		new Memory_ReadAddress( 0xe000, 0xefff, MRA_BANK15 ),	/* Banked ROM */
+		new Memory_ReadAddress( 0xf000, 0xffff, MRA_BANK16 ),	/* Banked ROM */
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	/*
 	The "scroll test" routine on the test screen appears to overflow and write
@@ -118,11 +120,13 @@ public class srumbler
 		{ 0x7400, 0xffff, MWA_ROM },
 	MEMORY_END
 	
-	static MEMORY_READ_START( sound_readmem )
-		{ 0xe000, 0xe000, soundlatch_r },
-		{ 0xc000, 0xc7ff, MRA_RAM },
-		{ 0x0000, 0x7fff, MRA_ROM },
-	MEMORY_END
+	public static Memory_ReadAddress sound_readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0xe000, 0xe000, soundlatch_r ),
+		new Memory_ReadAddress( 0xc000, 0xc7ff, MRA_RAM ),
+		new Memory_ReadAddress( 0x0000, 0x7fff, MRA_ROM ),
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( sound_writemem )
 		{ 0xc000, 0xc7ff, MWA_RAM },

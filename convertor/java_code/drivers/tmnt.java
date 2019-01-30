@@ -1064,13 +1064,15 @@ public class tmnt
 	
 	
 	
-	static MEMORY_READ_START( mia_s_readmem )
-		{ 0x0000, 0x7fff, MRA_ROM },
-		{ 0x8000, 0x87ff, MRA_RAM },
-		{ 0xa000, 0xa000, soundlatch_r },
-		{ 0xb000, 0xb00d, K007232_read_port_0_r },
-		{ 0xc001, 0xc001, YM2151_status_port_0_r },
-	MEMORY_END
+	public static Memory_ReadAddress mia_s_readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x7fff, MRA_ROM ),
+		new Memory_ReadAddress( 0x8000, 0x87ff, MRA_RAM ),
+		new Memory_ReadAddress( 0xa000, 0xa000, soundlatch_r ),
+		new Memory_ReadAddress( 0xb000, 0xb00d, K007232_read_port_0_r ),
+		new Memory_ReadAddress( 0xc001, 0xc001, YM2151_status_port_0_r ),
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( mia_s_writemem )
 		{ 0x0000, 0x7fff, MWA_ROM },
@@ -1080,15 +1082,17 @@ public class tmnt
 		{ 0xc001, 0xc001, YM2151_data_port_0_w },
 	MEMORY_END
 	
-	static MEMORY_READ_START( tmnt_s_readmem )
-		{ 0x0000, 0x7fff, MRA_ROM },
-		{ 0x8000, 0x87ff, MRA_RAM },
-		{ 0x9000, 0x9000, tmnt_sres_r },	/* title music & UPD7759C reset */
-		{ 0xa000, 0xa000, soundlatch_r },
-		{ 0xb000, 0xb00d, K007232_read_port_0_r },
-		{ 0xc001, 0xc001, YM2151_status_port_0_r },
-		{ 0xf000, 0xf000, UPD7759_0_busy_r },
-	MEMORY_END
+	public static Memory_ReadAddress tmnt_s_readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x7fff, MRA_ROM ),
+		new Memory_ReadAddress( 0x8000, 0x87ff, MRA_RAM ),
+		new Memory_ReadAddress( 0x9000, 0x9000, tmnt_sres_r ),	/* title music & UPD7759C reset */
+		new Memory_ReadAddress( 0xa000, 0xa000, soundlatch_r ),
+		new Memory_ReadAddress( 0xb000, 0xb00d, K007232_read_port_0_r ),
+		new Memory_ReadAddress( 0xc001, 0xc001, YM2151_status_port_0_r ),
+		new Memory_ReadAddress( 0xf000, 0xf000, UPD7759_0_busy_r ),
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( tmnt_s_writemem )
 		{ 0x0000, 0x7fff, MWA_ROM },
@@ -1101,12 +1105,14 @@ public class tmnt
 		{ 0xe000, 0xe000, UPD7759_0_start_w },
 	MEMORY_END
 	
-	static MEMORY_READ_START( punkshot_s_readmem )
-		{ 0x0000, 0x7fff, MRA_ROM },
-		{ 0xf000, 0xf7ff, MRA_RAM },
-		{ 0xf801, 0xf801, YM2151_status_port_0_r },
-		{ 0xfc00, 0xfc2f, K053260_0_r },
-	MEMORY_END
+	public static Memory_ReadAddress punkshot_s_readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x7fff, MRA_ROM ),
+		new Memory_ReadAddress( 0xf000, 0xf7ff, MRA_RAM ),
+		new Memory_ReadAddress( 0xf801, 0xf801, YM2151_status_port_0_r ),
+		new Memory_ReadAddress( 0xfc00, 0xfc2f, K053260_0_r ),
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( punkshot_s_writemem )
 		{ 0x0000, 0x7fff, MWA_ROM },
@@ -1117,12 +1123,14 @@ public class tmnt
 		{ 0xfc00, 0xfc2f, K053260_0_w },
 	MEMORY_END
 	
-	static MEMORY_READ_START( lgtnfght_s_readmem )
-		{ 0x0000, 0x7fff, MRA_ROM },
-		{ 0x8000, 0x87ff, MRA_RAM },
-		{ 0xa001, 0xa001, YM2151_status_port_0_r },
-		{ 0xc000, 0xc02f, K053260_0_r },
-	MEMORY_END
+	public static Memory_ReadAddress lgtnfght_s_readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x7fff, MRA_ROM ),
+		new Memory_ReadAddress( 0x8000, 0x87ff, MRA_RAM ),
+		new Memory_ReadAddress( 0xa001, 0xa001, YM2151_status_port_0_r ),
+		new Memory_ReadAddress( 0xc000, 0xc02f, K053260_0_r ),
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( lgtnfght_s_writemem )
 		{ 0x0000, 0x7fff, MWA_ROM },
@@ -1132,11 +1140,13 @@ public class tmnt
 		{ 0xc000, 0xc02f, K053260_0_w },
 	MEMORY_END
 	
-	static MEMORY_READ_START( glfgreat_s_readmem )
-		{ 0x0000, 0x7fff, MRA_ROM },
-		{ 0xf000, 0xf7ff, MRA_RAM },
-		{ 0xf800, 0xf82f, K053260_0_r },
-	MEMORY_END
+	public static Memory_ReadAddress glfgreat_s_readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x7fff, MRA_ROM ),
+		new Memory_ReadAddress( 0xf000, 0xf7ff, MRA_RAM ),
+		new Memory_ReadAddress( 0xf800, 0xf82f, K053260_0_r ),
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( glfgreat_s_writemem )
 		{ 0x0000, 0x7fff, MWA_ROM },
@@ -1145,12 +1155,14 @@ public class tmnt
 		{ 0xfa00, 0xfa00, sound_arm_nmi_w },
 	MEMORY_END
 	
-	static MEMORY_READ_START( ssriders_s_readmem )
-		{ 0x0000, 0xefff, MRA_ROM },
-		{ 0xf000, 0xf7ff, MRA_RAM },
-		{ 0xf801, 0xf801, YM2151_status_port_0_r },
-		{ 0xfa00, 0xfa2f, K053260_0_r },
-	MEMORY_END
+	public static Memory_ReadAddress ssriders_s_readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0xefff, MRA_ROM ),
+		new Memory_ReadAddress( 0xf000, 0xf7ff, MRA_RAM ),
+		new Memory_ReadAddress( 0xf801, 0xf801, YM2151_status_port_0_r ),
+		new Memory_ReadAddress( 0xfa00, 0xfa2f, K053260_0_r ),
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( ssriders_s_writemem )
 		{ 0x0000, 0xefff, MWA_ROM },
@@ -1161,12 +1173,14 @@ public class tmnt
 		{ 0xfc00, 0xfc00, sound_arm_nmi_w },
 	MEMORY_END
 	
-	static MEMORY_READ_START( thndrx2_s_readmem )
-		{ 0x0000, 0xefff, MRA_ROM },
-		{ 0xf000, 0xf7ff, MRA_RAM },
-		{ 0xf801, 0xf801, YM2151_status_port_0_r },
-		{ 0xfc00, 0xfc2f, K053260_0_r },
-	MEMORY_END
+	public static Memory_ReadAddress thndrx2_s_readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0xefff, MRA_ROM ),
+		new Memory_ReadAddress( 0xf000, 0xf7ff, MRA_RAM ),
+		new Memory_ReadAddress( 0xf801, 0xf801, YM2151_status_port_0_r ),
+		new Memory_ReadAddress( 0xfc00, 0xfc2f, K053260_0_r ),
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( thndrx2_s_writemem )
 		{ 0x0000, 0xefff, MWA_ROM },
@@ -1187,15 +1201,17 @@ public class tmnt
 		K054539_0_w(0x200+offset,data);
 	}
 	
-	static MEMORY_READ_START( prmrsocr_s_readmem )
-		{ 0x0000, 0x7fff, MRA_ROM },
-		{ 0x8000, 0xbfff, MRA_BANK1 },
-		{ 0xc000, 0xdfff, MRA_RAM },
-		{ 0xe000, 0xe0ff, K054539_0_r },
-		{ 0xe100, 0xe12f, K054539_0_ctrl_r },
-		{ 0xf002, 0xf002, soundlatch_r },
-		{ 0xf003, 0xf003, soundlatch2_r },
-	MEMORY_END
+	public static Memory_ReadAddress prmrsocr_s_readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x7fff, MRA_ROM ),
+		new Memory_ReadAddress( 0x8000, 0xbfff, MRA_BANK1 ),
+		new Memory_ReadAddress( 0xc000, 0xdfff, MRA_RAM ),
+		new Memory_ReadAddress( 0xe000, 0xe0ff, K054539_0_r ),
+		new Memory_ReadAddress( 0xe100, 0xe12f, K054539_0_ctrl_r ),
+		new Memory_ReadAddress( 0xf002, 0xf002, soundlatch_r ),
+		new Memory_ReadAddress( 0xf003, 0xf003, soundlatch2_r ),
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( prmrsocr_s_writemem )
 		{ 0x0000, 0xbfff, MWA_ROM },

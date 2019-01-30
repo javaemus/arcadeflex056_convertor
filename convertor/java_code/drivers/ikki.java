@@ -49,20 +49,22 @@ public class ikki
 	
 	/****************************************************************************/
 	
-	static MEMORY_READ_START( ikki_readmem1 )
-		{ 0x0000, 0x9fff, MRA_ROM },
+	public static Memory_ReadAddress ikki_readmem1[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x9fff, MRA_ROM ),
 	
-		{ 0xc000, 0xc7ff, MRA_RAM },
-		{ 0xc800, 0xcfff, ikki_sharedram_r },
-		{ 0xd000, 0xd7ff, MRA_RAM }, /* videoram */
+		new Memory_ReadAddress( 0xc000, 0xc7ff, MRA_RAM ),
+		new Memory_ReadAddress( 0xc800, 0xcfff, ikki_sharedram_r ),
+		new Memory_ReadAddress( 0xd000, 0xd7ff, MRA_RAM ), /* videoram */
 	
-		{ 0xe000, 0xe000, ikki_e000_r },
-		{ 0xe001, 0xe001, input_port_0_r }, /* dsw 1 */
-		{ 0xe002, 0xe002, input_port_1_r }, /* dsw 2 */
-		{ 0xe003, 0xe003, input_port_4_r }, /* other inputs */
-		{ 0xe004, 0xe004, input_port_2_r }, /* player1 */
-		{ 0xe005, 0xe005, input_port_3_r }, /* player2 */
-	MEMORY_END
+		new Memory_ReadAddress( 0xe000, 0xe000, ikki_e000_r ),
+		new Memory_ReadAddress( 0xe001, 0xe001, input_port_0_r ), /* dsw 1 */
+		new Memory_ReadAddress( 0xe002, 0xe002, input_port_1_r ), /* dsw 2 */
+		new Memory_ReadAddress( 0xe003, 0xe003, input_port_4_r ), /* other inputs */
+		new Memory_ReadAddress( 0xe004, 0xe004, input_port_2_r ), /* player1 */
+		new Memory_ReadAddress( 0xe005, 0xe005, input_port_3_r ), /* player2 */
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( ikki_writemem1 )
 		{ 0x0000, 0x9fff, MWA_ROM },
@@ -77,11 +79,13 @@ public class ikki
 	
 	MEMORY_END
 	
-	static MEMORY_READ_START( ikki_readmem2 )
-		{ 0x0000, 0x5fff, MRA_ROM },
-		{ 0xc000, 0xc7ff, spriteram_r },
-		{ 0xc800, 0xcfff, MRA_RAM },
-	MEMORY_END
+	public static Memory_ReadAddress ikki_readmem2[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x5fff, MRA_ROM ),
+		new Memory_ReadAddress( 0xc000, 0xc7ff, spriteram_r ),
+		new Memory_ReadAddress( 0xc800, 0xcfff, MRA_RAM ),
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( ikki_writemem2 )
 		{ 0x0000, 0x5fff, MWA_ROM },

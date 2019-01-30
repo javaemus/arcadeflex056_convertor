@@ -411,27 +411,29 @@ public class omegaf
 	  Memory maps
 	**************************************************************************/
 	
-	static MEMORY_READ_START( omegaf_readmem )
-		{ 0x0000, 0x7fff, MRA_ROM },
-		{ 0x8000, 0xbfff, MRA_BANK1 },
-		{ 0xc000, 0xc000, input_port_2_r },			/* system input */
-		{ 0xc001, 0xc001, input_port_0_r },			/* player 1 input */
-		{ 0xc002, 0xc002, input_port_1_r },			/* player 2 input */
-		{ 0xc003, 0xc003, input_port_3_r },			/* DSW 1 input */
-		{ 0xc004, 0xc004, input_port_4_r },			/* DSW 2 input */
-		{ 0xc005, 0xc005, MRA_NOP },
-		{ 0xc006, 0xc006, MRA_NOP },
-		{ 0xc100, 0xc105, MRA_RAM },
-		{ 0xc200, 0xc205, MRA_RAM },
-		{ 0xc300, 0xc305, MRA_RAM },
-		{ 0xc400, 0xc7ff, omegaf_bg0_videoram_r },	/* BG0 video RAM */
-		{ 0xc800, 0xcbff, omegaf_bg1_videoram_r },	/* BG1 video RAM */
-		{ 0xcc00, 0xcfff, omegaf_bg2_videoram_r },	/* BG2 video RAM */
-		{ 0xd000, 0xd7ff, MRA_RAM },				/* FG RAM */
-		{ 0xd800, 0xdfff, paletteram_r },			/* palette RAM */
-		{ 0xe000, 0xf9ff, MRA_RAM },				/* RAM */
-		{ 0xfa00, 0xffff, MRA_RAM },				/* sprite RAM */
-	MEMORY_END
+	public static Memory_ReadAddress omegaf_readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x7fff, MRA_ROM ),
+		new Memory_ReadAddress( 0x8000, 0xbfff, MRA_BANK1 ),
+		new Memory_ReadAddress( 0xc000, 0xc000, input_port_2_r ),			/* system input */
+		new Memory_ReadAddress( 0xc001, 0xc001, input_port_0_r ),			/* player 1 input */
+		new Memory_ReadAddress( 0xc002, 0xc002, input_port_1_r ),			/* player 2 input */
+		new Memory_ReadAddress( 0xc003, 0xc003, input_port_3_r ),			/* DSW 1 input */
+		new Memory_ReadAddress( 0xc004, 0xc004, input_port_4_r ),			/* DSW 2 input */
+		new Memory_ReadAddress( 0xc005, 0xc005, MRA_NOP ),
+		new Memory_ReadAddress( 0xc006, 0xc006, MRA_NOP ),
+		new Memory_ReadAddress( 0xc100, 0xc105, MRA_RAM ),
+		new Memory_ReadAddress( 0xc200, 0xc205, MRA_RAM ),
+		new Memory_ReadAddress( 0xc300, 0xc305, MRA_RAM ),
+		new Memory_ReadAddress( 0xc400, 0xc7ff, omegaf_bg0_videoram_r ),	/* BG0 video RAM */
+		new Memory_ReadAddress( 0xc800, 0xcbff, omegaf_bg1_videoram_r ),	/* BG1 video RAM */
+		new Memory_ReadAddress( 0xcc00, 0xcfff, omegaf_bg2_videoram_r ),	/* BG2 video RAM */
+		new Memory_ReadAddress( 0xd000, 0xd7ff, MRA_RAM ),				/* FG RAM */
+		new Memory_ReadAddress( 0xd800, 0xdfff, paletteram_r ),			/* palette RAM */
+		new Memory_ReadAddress( 0xe000, 0xf9ff, MRA_RAM ),				/* RAM */
+		new Memory_ReadAddress( 0xfa00, 0xffff, MRA_RAM ),				/* sprite RAM */
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( omegaf_writemem )
 		{ 0x0000, 0xbfff, MWA_ROM },
@@ -463,25 +465,27 @@ public class omegaf
 		{ 0xfa00, 0xffff, MWA_RAM, &spriteram, &spriteram_size },
 	MEMORY_END
 	
-	static MEMORY_READ_START( robokid_readmem )
-		{ 0x0000, 0x7fff, MRA_ROM },
-		{ 0x8000, 0xbfff, MRA_BANK1 },
-		{ 0xc000, 0xc7ff, paletteram_r },			/* paletrte RAM */
-		{ 0xc800, 0xcfff, MRA_RAM },				/* FG RAM */
-		{ 0xd000, 0xd3ff, omegaf_bg2_videoram_r },
-		{ 0xd400, 0xd7ff, omegaf_bg1_videoram_r },
-		{ 0xd800, 0xdbff, omegaf_bg0_videoram_r },
-		{ 0xdc00, 0xdc00, input_port_2_r },			/* system input */
-		{ 0xdc01, 0xdc01, input_port_0_r },			/* player 1 input */
-		{ 0xdc02, 0xdc02, input_port_1_r },			/* player 2 input */
-		{ 0xdc03, 0xdc03, input_port_3_r },			/* DSW 1 input */
-		{ 0xdc04, 0xdc04, input_port_4_r },			/* DSW 2 input */
-		{ 0xdd00, 0xdd05, MRA_RAM },
-		{ 0xde00, 0xde05, MRA_RAM },
-		{ 0xdf00, 0xdf05, MRA_RAM },
-		{ 0xe000, 0xf9ff, MRA_RAM },				/* RAM */
-		{ 0xfa00, 0xffff, MRA_RAM },				/* sprite RAM */
-	MEMORY_END
+	public static Memory_ReadAddress robokid_readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x7fff, MRA_ROM ),
+		new Memory_ReadAddress( 0x8000, 0xbfff, MRA_BANK1 ),
+		new Memory_ReadAddress( 0xc000, 0xc7ff, paletteram_r ),			/* paletrte RAM */
+		new Memory_ReadAddress( 0xc800, 0xcfff, MRA_RAM ),				/* FG RAM */
+		new Memory_ReadAddress( 0xd000, 0xd3ff, omegaf_bg2_videoram_r ),
+		new Memory_ReadAddress( 0xd400, 0xd7ff, omegaf_bg1_videoram_r ),
+		new Memory_ReadAddress( 0xd800, 0xdbff, omegaf_bg0_videoram_r ),
+		new Memory_ReadAddress( 0xdc00, 0xdc00, input_port_2_r ),			/* system input */
+		new Memory_ReadAddress( 0xdc01, 0xdc01, input_port_0_r ),			/* player 1 input */
+		new Memory_ReadAddress( 0xdc02, 0xdc02, input_port_1_r ),			/* player 2 input */
+		new Memory_ReadAddress( 0xdc03, 0xdc03, input_port_3_r ),			/* DSW 1 input */
+		new Memory_ReadAddress( 0xdc04, 0xdc04, input_port_4_r ),			/* DSW 2 input */
+		new Memory_ReadAddress( 0xdd00, 0xdd05, MRA_RAM ),
+		new Memory_ReadAddress( 0xde00, 0xde05, MRA_RAM ),
+		new Memory_ReadAddress( 0xdf00, 0xdf05, MRA_RAM ),
+		new Memory_ReadAddress( 0xe000, 0xf9ff, MRA_RAM ),				/* RAM */
+		new Memory_ReadAddress( 0xfa00, 0xffff, MRA_RAM ),				/* sprite RAM */
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( robokid_writemem )
 		{ 0x0000, 0xbfff, MWA_ROM },
@@ -509,12 +513,14 @@ public class omegaf
 		{ 0xfa00, 0xffff, MWA_RAM, &spriteram, &spriteram_size },
 	MEMORY_END
 	
-	static MEMORY_READ_START( sound_readmem )
-		{ 0x0000, 0xbfff, MRA_ROM },
-		{ 0xc000, 0xc7ff, MRA_RAM },
-		{ 0xe000, 0xe000, soundlatch_r },
-		{ 0xefee, 0xefee, MRA_NOP },
-	MEMORY_END
+	public static Memory_ReadAddress sound_readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0xbfff, MRA_ROM ),
+		new Memory_ReadAddress( 0xc000, 0xc7ff, MRA_RAM ),
+		new Memory_ReadAddress( 0xe000, 0xe000, soundlatch_r ),
+		new Memory_ReadAddress( 0xefee, 0xefee, MRA_NOP ),
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( sound_writemem )
 		{ 0x0000, 0xbfff, MWA_ROM },

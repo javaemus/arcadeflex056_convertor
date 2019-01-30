@@ -29,7 +29,8 @@ public class convertMame {
     static final int PLOT_BOX = 1;
     static final int PLOT_PIXEL = 2;
     static final int MARK_DIRTY = 3;
-    static final int READ_PIXEL=4;
+    static final int READ_PIXEL = 4;
+    static final int MEMORY_READ8 = 5;
 
     public static void Convert() {
         Convertor.inpos = 0;//position of pointer inside the buffers
@@ -250,7 +251,19 @@ public class convertMame {
                                 }
 
                             }
+                        } else if (sUtil.getToken("MEMORY_READ_START(")) {
+                            sUtil.skipSpace();
+                            Convertor.token[0] = sUtil.parseToken();
+                            sUtil.skipSpace();
+                            if (sUtil.getToken(")")) {
+                                sUtil.putString("public static Memory_ReadAddress " + Convertor.token[0] + "[]={\n\t\tnew Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),");
+                                type = MEMORY_READ8;
+                                i3 = 1;
+                                Convertor.inpos += 1;
+                                continue;
+                            }
                         }
+
                         Convertor.inpos = i;
                         break;
                     } else {
@@ -259,12 +272,31 @@ public class convertMame {
                     }
                 }
                 case '{': {
-                    if (type == PLOT_PIXEL || type == MARK_DIRTY|| type == PLOT_BOX || type == READ_PIXEL) {
+                    if (type == MEMORY_READ8) {
+                        i3++;
+                        insideagk[i3] = 0;
+                        if (i3 == 2) {
+                            sUtil.putString("new Memory_ReadAddress(");
+                            Convertor.inpos += 1;
+                            continue;
+                        }
+                    }
+                    if (type == PLOT_PIXEL || type == MARK_DIRTY || type == PLOT_BOX || type == READ_PIXEL) {
                         i3++;
                     }
                 }
                 break;
                 case '}': {
+                    if ((type == MEMORY_READ8)) {
+                        i3--;
+                        if (i3 == 0) {
+                            type = -1;
+                        } else if (i3 == 1) {
+                            Convertor.outbuf[(Convertor.outpos++)] = ')';
+                            Convertor.inpos += 1;
+                            continue;
+                        }
+                    }
                     if (type == PLOT_PIXEL || type == MARK_DIRTY || type == PLOT_BOX || type == READ_PIXEL) {
                         i3--;
                         if (i3 == -1) {
@@ -275,6 +307,24 @@ public class convertMame {
                         }
                     }
                 }
+                case 'M':
+                    i = Convertor.inpos;
+                    if (!sUtil.getToken("MEMORY_END")) {
+                        Convertor.inpos = i;
+                        break;
+                    }
+                    if (type == MEMORY_READ8) {
+                        sUtil.putString("\tnew Memory_ReadAddress(MEMPORT_MARKER, 0)\n\t};");
+                        type = -1;
+                        Convertor.inpos += 1;
+                        continue;
+                    }
+                    else
+                    {
+                        Convertor.inpos = i;
+                        break;
+                    }
+                    //break;
             }
             Convertor.outbuf[Convertor.outpos++] = Convertor.inbuf[Convertor.inpos++];//grapse to inputbuffer sto output
         } while (true);

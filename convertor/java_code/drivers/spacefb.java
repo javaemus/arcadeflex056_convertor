@@ -170,11 +170,13 @@ public class spacefb
 	}
 	
 	
-	static MEMORY_READ_START( readmem )
-		{ 0x0000, 0x3fff, MRA_ROM },
-		{ 0x8000, 0x83ff, MRA_RAM },
-		{ 0xc000, 0xc7ff, MRA_RAM },
-	MEMORY_END
+	public static Memory_ReadAddress readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x3fff, MRA_ROM ),
+		new Memory_ReadAddress( 0x8000, 0x83ff, MRA_RAM ),
+		new Memory_ReadAddress( 0xc000, 0xc7ff, MRA_RAM ),
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( writemem )
 		{ 0x0000, 0x3fff, MWA_ROM },
@@ -195,9 +197,11 @@ public class spacefb
 		{ 0x02, 0x02, spacefb_port_2_w },
 	PORT_END
 	
-	static MEMORY_READ_START( readmem_sound )
-		{ 0x0000, 0x03ff, MRA_ROM },
-	MEMORY_END
+	public static Memory_ReadAddress readmem_sound[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x03ff, MRA_ROM ),
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( writemem_sound )
 		{ 0x0000, 0x03ff, MWA_ROM },

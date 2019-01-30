@@ -97,16 +97,18 @@ public class congo
 		coin_counter_w(offset,data);
 	}
 	
-	static MEMORY_READ_START( readmem )
-		{ 0x8000, 0x8fff, MRA_RAM },
-		{ 0xa000, 0xa7ff, MRA_RAM },
-		{ 0xc000, 0xc000, input_port_0_r },
-		{ 0xc001, 0xc001, input_port_1_r },
-		{ 0xc008, 0xc008, input_port_2_r },
-		{ 0xc002, 0xc002, input_port_3_r },
-		{ 0xc003, 0xc003, input_port_4_r },
-		{ 0x0000, 0x7fff, MRA_ROM },
-	MEMORY_END
+	public static Memory_ReadAddress readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x8000, 0x8fff, MRA_RAM ),
+		new Memory_ReadAddress( 0xa000, 0xa7ff, MRA_RAM ),
+		new Memory_ReadAddress( 0xc000, 0xc000, input_port_0_r ),
+		new Memory_ReadAddress( 0xc001, 0xc001, input_port_1_r ),
+		new Memory_ReadAddress( 0xc008, 0xc008, input_port_2_r ),
+		new Memory_ReadAddress( 0xc002, 0xc002, input_port_3_r ),
+		new Memory_ReadAddress( 0xc003, 0xc003, input_port_4_r ),
+		new Memory_ReadAddress( 0x0000, 0x7fff, MRA_ROM ),
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( writemem )
 		{ 0x8000, 0x83ff, MWA_RAM },
@@ -127,11 +129,13 @@ public class congo
 	MEMORY_END
 	
 	
-	static MEMORY_READ_START( sh_readmem )
-		{ 0x0000, 0x1fff, MRA_ROM },
-		{ 0x4000, 0x47ff, MRA_RAM },
-		{ 0x8000, 0x8003, soundlatch_r },
-	MEMORY_END
+	public static Memory_ReadAddress sh_readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x1fff, MRA_ROM ),
+		new Memory_ReadAddress( 0x4000, 0x47ff, MRA_RAM ),
+		new Memory_ReadAddress( 0x8000, 0x8003, soundlatch_r ),
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	static MEMORY_WRITE_START( sh_writemem )
 		{ 0x6000, 0x6003, SN76496_0_w },
 		{ 0xa000, 0xa003, SN76496_1_w },

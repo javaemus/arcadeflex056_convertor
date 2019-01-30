@@ -186,17 +186,19 @@ public class spiders
 	
 	/* Driver structure definition */
 	
-	static MEMORY_READ_START( readmem )
-		{ 0x0000, 0xbfff, MRA_RAM },
-		{ 0xc001, 0xc001, crtc6845_register_r },
-		{ 0xc044, 0xc047, pia_0_r },
-		{ 0xc048, 0xc04b, pia_1_r },
-		{ 0xc050, 0xc053, pia_2_r },
-		{ 0xc060, 0xc060, input_port_2_r },
-		{ 0xc080, 0xc080, input_port_3_r },
-		{ 0xc0a0, 0xc0a0, input_port_4_r },
-		{ 0xc100, 0xffff, MRA_ROM },
-	MEMORY_END
+	public static Memory_ReadAddress readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0xbfff, MRA_RAM ),
+		new Memory_ReadAddress( 0xc001, 0xc001, crtc6845_register_r ),
+		new Memory_ReadAddress( 0xc044, 0xc047, pia_0_r ),
+		new Memory_ReadAddress( 0xc048, 0xc04b, pia_1_r ),
+		new Memory_ReadAddress( 0xc050, 0xc053, pia_2_r ),
+		new Memory_ReadAddress( 0xc060, 0xc060, input_port_2_r ),
+		new Memory_ReadAddress( 0xc080, 0xc080, input_port_3_r ),
+		new Memory_ReadAddress( 0xc0a0, 0xc0a0, input_port_4_r ),
+		new Memory_ReadAddress( 0xc100, 0xffff, MRA_ROM ),
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( writemem )
 		{ 0x0000, 0xbfff, MWA_RAM },
@@ -209,11 +211,13 @@ public class spiders
 	MEMORY_END
 	
 	
-	static MEMORY_READ_START( sound_readmem )
-		{ 0x0000, 0x007f, MRA_RAM },
-		{ 0x0080, 0x0080, soundlatch_r },
-		{ 0xf800, 0xffff, MRA_ROM },
-	MEMORY_END
+	public static Memory_ReadAddress sound_readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x007f, MRA_RAM ),
+		new Memory_ReadAddress( 0x0080, 0x0080, soundlatch_r ),
+		new Memory_ReadAddress( 0xf800, 0xffff, MRA_ROM ),
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( sound_writemem )
 		{ 0x0000, 0x007f, MWA_RAM },

@@ -72,17 +72,19 @@ public class finalizr
 	
 	
 	
-	static MEMORY_READ_START( readmem )
-		{ 0x0800, 0x0800, input_port_5_r },
-		{ 0x0808, 0x0808, input_port_4_r },
-		{ 0x0810, 0x0810, input_port_0_r },
-		{ 0x0811, 0x0811, input_port_1_r },
-		{ 0x0812, 0x0812, input_port_2_r },
-		{ 0x0813, 0x0813, input_port_3_r },
-		{ 0x2000, 0x2fff, MRA_RAM },
-		{ 0x3000, 0x3fff, MRA_RAM },
-		{ 0x4000, 0xffff, MRA_ROM },
-	MEMORY_END
+	public static Memory_ReadAddress readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0800, 0x0800, input_port_5_r ),
+		new Memory_ReadAddress( 0x0808, 0x0808, input_port_4_r ),
+		new Memory_ReadAddress( 0x0810, 0x0810, input_port_0_r ),
+		new Memory_ReadAddress( 0x0811, 0x0811, input_port_1_r ),
+		new Memory_ReadAddress( 0x0812, 0x0812, input_port_2_r ),
+		new Memory_ReadAddress( 0x0813, 0x0813, input_port_3_r ),
+		new Memory_ReadAddress( 0x2000, 0x2fff, MRA_RAM ),
+		new Memory_ReadAddress( 0x3000, 0x3fff, MRA_RAM ),
+		new Memory_ReadAddress( 0x4000, 0xffff, MRA_ROM ),
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( writemem )
 		{ 0x0001, 0x0001, MWA_RAM, &finalizr_scroll },
@@ -106,9 +108,11 @@ public class finalizr
 		{ 0x4000, 0xffff, MWA_ROM },
 	MEMORY_END
 	
-	static MEMORY_READ_START( i8039_readmem )
-		{ 0x0000, 0x0fff, MRA_ROM },
-	MEMORY_END
+	public static Memory_ReadAddress i8039_readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x0fff, MRA_ROM ),
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( i8039_writemem )
 		{ 0x0000, 0x0fff, MWA_ROM },

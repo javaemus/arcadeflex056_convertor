@@ -296,15 +296,17 @@ public class twin16
 		UPD7759_start_w(offset, (!(data & 0x01)));
 	}
 	
-	static MEMORY_READ_START( readmem_sound )
-		{ 0x0000, 0x7fff, MRA_ROM },
-		{ 0x8000, 0x8fff, MRA_RAM },
-		{ 0x9000, 0x9000, twin16_sres_r },
-		{ 0xa000, 0xa000, soundlatch_r },
-		{ 0xb000, 0xb00d, K007232_read_port_0_r },
-		{ 0xc001, 0xc001, YM2151_status_port_0_r },
-		{ 0xf000, 0xf000, UPD7759_0_busy_r },
-	MEMORY_END
+	public static Memory_ReadAddress readmem_sound[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x7fff, MRA_ROM ),
+		new Memory_ReadAddress( 0x8000, 0x8fff, MRA_RAM ),
+		new Memory_ReadAddress( 0x9000, 0x9000, twin16_sres_r ),
+		new Memory_ReadAddress( 0xa000, 0xa000, soundlatch_r ),
+		new Memory_ReadAddress( 0xb000, 0xb00d, K007232_read_port_0_r ),
+		new Memory_ReadAddress( 0xc001, 0xc001, YM2151_status_port_0_r ),
+		new Memory_ReadAddress( 0xf000, 0xf000, UPD7759_0_busy_r ),
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( writemem_sound )
 		{ 0x0000, 0x7fff, MWA_ROM },

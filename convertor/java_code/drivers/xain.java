@@ -126,19 +126,21 @@ public class xain
 	
 	
 	
-	static MEMORY_READ_START( readmem )
-		{ 0x0000, 0x1fff, xain_sharedram_r },
-		{ 0x2000, 0x37ff, MRA_RAM },
-		{ 0x3a00, 0x3a00, input_port_0_r },
-		{ 0x3a01, 0x3a01, input_port_1_r },
-		{ 0x3a02, 0x3a02, input_port_2_r },
-		{ 0x3a03, 0x3a03, input_port_3_r },
-		{ 0x3a04, 0x3a04, xain_68705_r },	/* from the 68705 */
-		{ 0x3a05, 0x3a05, input_port_4_r },
-	//	{ 0x3a06, 0x3a06, MRA_NOP },	/* ?? read (and discarded) on startup. Maybe reset the 68705 */
-		{ 0x4000, 0x7fff, MRA_BANK1 },
-		{ 0x8000, 0xffff, MRA_ROM },
-	MEMORY_END
+	public static Memory_ReadAddress readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x1fff, xain_sharedram_r ),
+		new Memory_ReadAddress( 0x2000, 0x37ff, MRA_RAM ),
+		new Memory_ReadAddress( 0x3a00, 0x3a00, input_port_0_r ),
+		new Memory_ReadAddress( 0x3a01, 0x3a01, input_port_1_r ),
+		new Memory_ReadAddress( 0x3a02, 0x3a02, input_port_2_r ),
+		new Memory_ReadAddress( 0x3a03, 0x3a03, input_port_3_r ),
+		new Memory_ReadAddress( 0x3a04, 0x3a04, xain_68705_r ),	/* from the 68705 */
+		new Memory_ReadAddress( 0x3a05, 0x3a05, input_port_4_r ),
+	//	new Memory_ReadAddress( 0x3a06, 0x3a06, MRA_NOP ),	/* ?? read (and discarded) on startup. Maybe reset the 68705 */
+		new Memory_ReadAddress( 0x4000, 0x7fff, MRA_BANK1 ),
+		new Memory_ReadAddress( 0x8000, 0xffff, MRA_ROM ),
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( writemem )
 		{ 0x0000, 0x1fff, xain_sharedram_w, &xain_sharedram },
@@ -163,11 +165,13 @@ public class xain
 		{ 0x4000, 0xffff, MWA_ROM },
 	MEMORY_END
 	
-	static MEMORY_READ_START( readmemB )
-		{ 0x0000, 0x1fff, xain_sharedram_r },
-		{ 0x4000, 0x7fff, MRA_BANK2 },
-		{ 0x8000, 0xffff, MRA_ROM },
-	MEMORY_END
+	public static Memory_ReadAddress readmemB[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x1fff, xain_sharedram_r ),
+		new Memory_ReadAddress( 0x4000, 0x7fff, MRA_BANK2 ),
+		new Memory_ReadAddress( 0x8000, 0xffff, MRA_ROM ),
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( writememB )
 		{ 0x0000, 0x1fff, xain_sharedram_w },
@@ -177,11 +181,13 @@ public class xain
 		{ 0x4000, 0xffff, MWA_ROM },
 	MEMORY_END
 	
-	static MEMORY_READ_START( sound_readmem )
-		{ 0x0000, 0x07ff, MRA_RAM },
-		{ 0x1000, 0x1000, soundlatch_r },
-		{ 0x8000, 0xffff, MRA_ROM },
-	MEMORY_END
+	public static Memory_ReadAddress sound_readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x07ff, MRA_RAM ),
+		new Memory_ReadAddress( 0x1000, 0x1000, soundlatch_r ),
+		new Memory_ReadAddress( 0x8000, 0xffff, MRA_ROM ),
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( sound_writemem )
 		{ 0x0000, 0x07ff, MWA_RAM },

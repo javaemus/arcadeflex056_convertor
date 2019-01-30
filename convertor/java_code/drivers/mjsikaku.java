@@ -224,31 +224,37 @@ public class mjsikaku
 	}
 	
 	
-	static MEMORY_READ_START( readmem_mjsikaku )
-		{ 0x0000, 0xf7ff, MRA_ROM },
-		{ 0xf800, 0xffff, MRA_RAM },
-	MEMORY_END
+	public static Memory_ReadAddress readmem_mjsikaku[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0xf7ff, MRA_ROM ),
+		new Memory_ReadAddress( 0xf800, 0xffff, MRA_RAM ),
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( writemem_mjsikaku )
 		{ 0x0000, 0xf7ff, MWA_ROM },
 		{ 0xf800, 0xffff, MWA_RAM, &nb1413m3_nvram, &nb1413m3_nvram_size },
 	MEMORY_END
 	
-	static MEMORY_READ_START( readmem_secolove )
-		{ 0x0000, 0xefff, MRA_ROM },
-		{ 0xf000, 0xf7ff, MRA_RAM },
-	MEMORY_END
+	public static Memory_ReadAddress readmem_secolove[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0xefff, MRA_ROM ),
+		new Memory_ReadAddress( 0xf000, 0xf7ff, MRA_RAM ),
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( writemem_secolove )
 		{ 0x0000, 0xefff, MWA_ROM },
 		{ 0xf000, 0xf7ff, MWA_RAM, &nb1413m3_nvram, &nb1413m3_nvram_size },
 	MEMORY_END
 	
-	static MEMORY_READ_START( readmem_ojousan )
-		{ 0x0000, 0x6fff, MRA_ROM },
-		{ 0x7000, 0x7fff, MRA_RAM },
-		{ 0x8000, 0xffff, MRA_ROM },
-	MEMORY_END
+	public static Memory_ReadAddress readmem_ojousan[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x6fff, MRA_ROM ),
+		new Memory_ReadAddress( 0x7000, 0x7fff, MRA_RAM ),
+		new Memory_ReadAddress( 0x8000, 0xffff, MRA_ROM ),
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( writemem_ojousan )
 		{ 0x0000, 0x6fff, MWA_ROM },

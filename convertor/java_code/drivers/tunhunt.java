@@ -557,14 +557,16 @@ public class tunhunt
 		return (readinputport(3)&0x1000)?0x80:0x00;
 	}
 	
-	static MEMORY_READ_START( readmem )
-		{ 0x0000, 0x03ff, MRA_RAM }, /* Work RAM */
-		{ 0x2000, 0x2007, tunhunt_button_r },
-		{ 0x3000, 0x300f, pokey1_r },
-		{ 0x4000, 0x400f, pokey2_r },
-		{ 0x5000, 0x7fff, MRA_ROM },
-		{ 0xfffa, 0xffff, MRA_ROM },
-	MEMORY_END
+	public static Memory_ReadAddress readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x03ff, MRA_RAM ), /* Work RAM */
+		new Memory_ReadAddress( 0x2000, 0x2007, tunhunt_button_r ),
+		new Memory_ReadAddress( 0x3000, 0x300f, pokey1_r ),
+		new Memory_ReadAddress( 0x4000, 0x400f, pokey2_r ),
+		new Memory_ReadAddress( 0x5000, 0x7fff, MRA_ROM ),
+		new Memory_ReadAddress( 0xfffa, 0xffff, MRA_ROM ),
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( writemem )
 		{ 0x0000, 0x03ff, MWA_RAM }, /* Work RAM */

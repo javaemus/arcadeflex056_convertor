@@ -382,20 +382,22 @@ public class jedi
 	 *
 	 *************************************/
 	
-	static MEMORY_READ_START( readmem )
-		{ 0x0000, 0x07ff, MRA_RAM },
-		{ 0x0800, 0x08ff, MRA_RAM },
-		{ 0x0c00, 0x0c00, input_port_0_r },
-		{ 0x0c01, 0x0c01, special_port1_r },
-		{ 0x1400, 0x1400, sound_ack_latch_r },
-		{ 0x1800, 0x1800, a2d_data_r },
-		{ 0x2000, 0x27ff, MRA_RAM },
-		{ 0x2800, 0x2fff, MRA_RAM },
-		{ 0x3000, 0x37bf, MRA_RAM },
-		{ 0x37c0, 0x3bff, MRA_RAM },
-		{ 0x4000, 0x7fff, MRA_BANK1 },
-		{ 0x8000, 0xffff, MRA_ROM },
-	MEMORY_END
+	public static Memory_ReadAddress readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x07ff, MRA_RAM ),
+		new Memory_ReadAddress( 0x0800, 0x08ff, MRA_RAM ),
+		new Memory_ReadAddress( 0x0c00, 0x0c00, input_port_0_r ),
+		new Memory_ReadAddress( 0x0c01, 0x0c01, special_port1_r ),
+		new Memory_ReadAddress( 0x1400, 0x1400, sound_ack_latch_r ),
+		new Memory_ReadAddress( 0x1800, 0x1800, a2d_data_r ),
+		new Memory_ReadAddress( 0x2000, 0x27ff, MRA_RAM ),
+		new Memory_ReadAddress( 0x2800, 0x2fff, MRA_RAM ),
+		new Memory_ReadAddress( 0x3000, 0x37bf, MRA_RAM ),
+		new Memory_ReadAddress( 0x37c0, 0x3bff, MRA_RAM ),
+		new Memory_ReadAddress( 0x4000, 0x7fff, MRA_BANK1 ),
+		new Memory_ReadAddress( 0x8000, 0xffff, MRA_ROM ),
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	
 	static MEMORY_WRITE_START( writemem )
@@ -431,17 +433,19 @@ public class jedi
 	 *
 	 *************************************/
 	
-	static MEMORY_READ_START( readmem2 )
-		{ 0x0000, 0x07ff, MRA_RAM },
-		{ 0x0800, 0x080f, pokey1_r },
-		{ 0x0810, 0x081f, pokey2_r },
-		{ 0x0820, 0x082f, pokey3_r },
-		{ 0x0830, 0x083f, pokey4_r },
-		{ 0x1800, 0x1800, sound_latch_r },
-		{ 0x1c00, 0x1c00, speech_ready_r },
-		{ 0x1c01, 0x1c01, soundstat_r },
-		{ 0x8000, 0xffff, MRA_ROM },
-	MEMORY_END
+	public static Memory_ReadAddress readmem2[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x07ff, MRA_RAM ),
+		new Memory_ReadAddress( 0x0800, 0x080f, pokey1_r ),
+		new Memory_ReadAddress( 0x0810, 0x081f, pokey2_r ),
+		new Memory_ReadAddress( 0x0820, 0x082f, pokey3_r ),
+		new Memory_ReadAddress( 0x0830, 0x083f, pokey4_r ),
+		new Memory_ReadAddress( 0x1800, 0x1800, sound_latch_r ),
+		new Memory_ReadAddress( 0x1c00, 0x1c00, speech_ready_r ),
+		new Memory_ReadAddress( 0x1c01, 0x1c01, soundstat_r ),
+		new Memory_ReadAddress( 0x8000, 0xffff, MRA_ROM ),
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	
 	static MEMORY_WRITE_START( writemem2 )

@@ -54,19 +54,21 @@ public class hexion
 	
 	
 	
-	static MEMORY_READ_START( readmem )
-		{ 0x0000, 0x7fff, MRA_ROM },
-		{ 0x8000, 0x9fff, MRA_BANK1 },
-		{ 0xa000, 0xbfff, MRA_RAM },
-		{ 0xc000, 0xdffe, hexion_bankedram_r },
-		{ 0xf400, 0xf400, input_port_0_r },
-		{ 0xf401, 0xf401, input_port_1_r },
-		{ 0xf402, 0xf402, input_port_3_r },
-		{ 0xf403, 0xf403, input_port_4_r },
-		{ 0xf440, 0xf440, input_port_2_r },
-		{ 0xf441, 0xf441, input_port_5_r },
-		{ 0xf540, 0xf540, watchdog_reset_r },
-	MEMORY_END
+	public static Memory_ReadAddress readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x7fff, MRA_ROM ),
+		new Memory_ReadAddress( 0x8000, 0x9fff, MRA_BANK1 ),
+		new Memory_ReadAddress( 0xa000, 0xbfff, MRA_RAM ),
+		new Memory_ReadAddress( 0xc000, 0xdffe, hexion_bankedram_r ),
+		new Memory_ReadAddress( 0xf400, 0xf400, input_port_0_r ),
+		new Memory_ReadAddress( 0xf401, 0xf401, input_port_1_r ),
+		new Memory_ReadAddress( 0xf402, 0xf402, input_port_3_r ),
+		new Memory_ReadAddress( 0xf403, 0xf403, input_port_4_r ),
+		new Memory_ReadAddress( 0xf440, 0xf440, input_port_2_r ),
+		new Memory_ReadAddress( 0xf441, 0xf441, input_port_5_r ),
+		new Memory_ReadAddress( 0xf540, 0xf540, watchdog_reset_r ),
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( writemem )
 		{ 0x0000, 0x7fff, MWA_ROM },

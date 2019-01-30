@@ -86,17 +86,19 @@ public class thepit
 	}
 	
 	
-	static MEMORY_READ_START( thepit_readmem )
-		{ 0x0000, 0x4fff, MRA_ROM },
-		{ 0x8000, 0x87ff, MRA_RAM },
-		{ 0x8800, 0x93ff, MRA_RAM },
-		{ 0x9400, 0x97ff, videoram_r },
-		{ 0x9800, 0x98ff, MRA_RAM },
-		{ 0xa000, 0xa000, thepit_input_port_0_r },
-		{ 0xa800, 0xa800, input_port_1_r },
-		{ 0xb000, 0xb000, input_port_2_r },
-		{ 0xb800, 0xb800, watchdog_reset_r },
-	MEMORY_END
+	public static Memory_ReadAddress thepit_readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x4fff, MRA_ROM ),
+		new Memory_ReadAddress( 0x8000, 0x87ff, MRA_RAM ),
+		new Memory_ReadAddress( 0x8800, 0x93ff, MRA_RAM ),
+		new Memory_ReadAddress( 0x9400, 0x97ff, videoram_r ),
+		new Memory_ReadAddress( 0x9800, 0x98ff, MRA_RAM ),
+		new Memory_ReadAddress( 0xa000, 0xa000, thepit_input_port_0_r ),
+		new Memory_ReadAddress( 0xa800, 0xa800, input_port_1_r ),
+		new Memory_ReadAddress( 0xb000, 0xb000, input_port_2_r ),
+		new Memory_ReadAddress( 0xb800, 0xb800, watchdog_reset_r ),
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( thepit_writemem )
 		{ 0x0000, 0x4fff, MWA_ROM },
@@ -120,15 +122,17 @@ public class thepit
 	MEMORY_END
 	
 	
-	static MEMORY_READ_START( intrepid_readmem )
-		{ 0x0000, 0x4fff, MRA_ROM },
-		{ 0x8000, 0x87ff, MRA_RAM },
-		{ 0x9000, 0x98ff, MRA_RAM },
-		{ 0xa000, 0xa000, thepit_input_port_0_r },
-		{ 0xa800, 0xa800, input_port_1_r },
-		{ 0xb000, 0xb000, input_port_2_r },
-		{ 0xb800, 0xb800, watchdog_reset_r },
-	MEMORY_END
+	public static Memory_ReadAddress intrepid_readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x4fff, MRA_ROM ),
+		new Memory_ReadAddress( 0x8000, 0x87ff, MRA_RAM ),
+		new Memory_ReadAddress( 0x9000, 0x98ff, MRA_RAM ),
+		new Memory_ReadAddress( 0xa000, 0xa000, thepit_input_port_0_r ),
+		new Memory_ReadAddress( 0xa800, 0xa800, input_port_1_r ),
+		new Memory_ReadAddress( 0xb000, 0xb000, input_port_2_r ),
+		new Memory_ReadAddress( 0xb800, 0xb800, watchdog_reset_r ),
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( intrepid_writemem )
 		{ 0x0000, 0x4fff, MWA_ROM },
@@ -150,10 +154,12 @@ public class thepit
 	MEMORY_END
 	
 	
-	static MEMORY_READ_START( sound_readmem )
-		{ 0x0000, 0x0fff, MRA_ROM },
-		{ 0x3800, 0x3bff, MRA_RAM },
-	MEMORY_END
+	public static Memory_ReadAddress sound_readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x0fff, MRA_ROM ),
+		new Memory_ReadAddress( 0x3800, 0x3bff, MRA_RAM ),
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( sound_writemem )
 		{ 0x3800, 0x3bff, MWA_RAM },

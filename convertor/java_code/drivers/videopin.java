@@ -47,15 +47,17 @@ public class videopin
 	
 	
 	
-	static MEMORY_READ_START( videopin_readmem )
-		{ 0x0000, 0x01ff, MRA_RAM },        /* working   RAM 512  bytes */
-		{ 0x0200, 0x07ff, MRA_RAM },        /* playfield RAM 1,5 Kbytes */
-		{ 0x0800, 0x0800, videopin_in2_r }, /* VBLANK, NUDGE, PLUNGER1, PLUNGER2 */
-		{ 0x1000, 0x1000, videopin_in0_r }, /* IN0 Switches */
-		{ 0x1800, 0x1800, videopin_in1_r }, /* IN1 DSW */
-		{ 0x2000, 0x3fff, MRA_ROM },        /* PROM */
-		{ 0xfff0, 0xffff, MRA_ROM },        /* PROM for 6502 vectors */
-	MEMORY_END
+	public static Memory_ReadAddress videopin_readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x01ff, MRA_RAM ),        /* working   RAM 512  bytes */
+		new Memory_ReadAddress( 0x0200, 0x07ff, MRA_RAM ),        /* playfield RAM 1,5 Kbytes */
+		new Memory_ReadAddress( 0x0800, 0x0800, videopin_in2_r ), /* VBLANK, NUDGE, PLUNGER1, PLUNGER2 */
+		new Memory_ReadAddress( 0x1000, 0x1000, videopin_in0_r ), /* IN0 Switches */
+		new Memory_ReadAddress( 0x1800, 0x1800, videopin_in1_r ), /* IN1 DSW */
+		new Memory_ReadAddress( 0x2000, 0x3fff, MRA_ROM ),        /* PROM */
+		new Memory_ReadAddress( 0xfff0, 0xffff, MRA_ROM ),        /* PROM for 6502 vectors */
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	
 	static MEMORY_WRITE_START( videopin_writemem )

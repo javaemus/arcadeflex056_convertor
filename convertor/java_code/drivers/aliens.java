@@ -93,19 +93,21 @@ public class aliens
 	}
 	
 	
-	static MEMORY_READ_START( aliens_readmem )
-		{ 0x0000, 0x03ff, bankedram_r },			/* palette + work RAM */
-		{ 0x0400, 0x1fff, MRA_RAM },
-		{ 0x2000, 0x3fff, MRA_BANK1 },				/* banked ROM */
-		{ 0x5f80, 0x5f80, input_port_2_r },			/* DIPSW #3 */
-		{ 0x5f81, 0x5f81, input_port_3_r },			/* Player 1 inputs */
-		{ 0x5f82, 0x5f82, input_port_4_r },			/* Player 2 inputs */
-		{ 0x5f83, 0x5f83, input_port_1_r },			/* DIPSW #2 */
-		{ 0x5f84, 0x5f84, input_port_0_r },			/* DIPSW #1 */
-		{ 0x5f88, 0x5f88, watchdog_reset_r },
-		{ 0x4000, 0x7fff, K052109_051960_r },
-		{ 0x8000, 0xffff, MRA_ROM },				/* ROM e24_j02.bin */
-	MEMORY_END
+	public static Memory_ReadAddress aliens_readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x03ff, bankedram_r ),			/* palette + work RAM */
+		new Memory_ReadAddress( 0x0400, 0x1fff, MRA_RAM ),
+		new Memory_ReadAddress( 0x2000, 0x3fff, MRA_BANK1 ),				/* banked ROM */
+		new Memory_ReadAddress( 0x5f80, 0x5f80, input_port_2_r ),			/* DIPSW #3 */
+		new Memory_ReadAddress( 0x5f81, 0x5f81, input_port_3_r ),			/* Player 1 inputs */
+		new Memory_ReadAddress( 0x5f82, 0x5f82, input_port_4_r ),			/* Player 2 inputs */
+		new Memory_ReadAddress( 0x5f83, 0x5f83, input_port_1_r ),			/* DIPSW #2 */
+		new Memory_ReadAddress( 0x5f84, 0x5f84, input_port_0_r ),			/* DIPSW #1 */
+		new Memory_ReadAddress( 0x5f88, 0x5f88, watchdog_reset_r ),
+		new Memory_ReadAddress( 0x4000, 0x7fff, K052109_051960_r ),
+		new Memory_ReadAddress( 0x8000, 0xffff, MRA_ROM ),				/* ROM e24_j02.bin */
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( aliens_writemem )
 		{ 0x0000, 0x03ff, bankedram_w, &ram },			/* palette + work RAM */
@@ -117,13 +119,15 @@ public class aliens
 		{ 0x8000, 0xffff, MWA_ROM },					/* ROM e24_j02.bin */
 	MEMORY_END
 	
-	static MEMORY_READ_START( aliens_readmem_sound )
-		{ 0x0000, 0x7fff, MRA_ROM },				/* ROM g04_b03.bin */
-		{ 0x8000, 0x87ff, MRA_RAM },				/* RAM */
-		{ 0xa001, 0xa001, YM2151_status_port_0_r },
-		{ 0xc000, 0xc000, soundlatch_r },			/* soundlatch_r */
-		{ 0xe000, 0xe00d, K007232_read_port_0_r },
-	MEMORY_END
+	public static Memory_ReadAddress aliens_readmem_sound[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x7fff, MRA_ROM ),				/* ROM g04_b03.bin */
+		new Memory_ReadAddress( 0x8000, 0x87ff, MRA_RAM ),				/* RAM */
+		new Memory_ReadAddress( 0xa001, 0xa001, YM2151_status_port_0_r ),
+		new Memory_ReadAddress( 0xc000, 0xc000, soundlatch_r ),			/* soundlatch_r */
+		new Memory_ReadAddress( 0xe000, 0xe00d, K007232_read_port_0_r ),
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( aliens_writemem_sound )
 		{ 0x0000, 0x7fff, MWA_ROM },					/* ROM g04_b03.bin */

@@ -70,14 +70,16 @@ public class m90
 	
 	/***************************************************************************/
 	
-	static MEMORY_READ_START( readmem )
-		{ 0x00000, 0x7ffff, MRA_ROM },
-		{ 0x80000, 0x8ffff, MRA_BANK1 },	/* Quiz F1 only */
-		{ 0xa0000, 0xa3fff, MRA_RAM },
-		{ 0xd0000, 0xdffff, MRA_RAM },
-		{ 0xe0000, 0xe03ff, paletteram_r },
-		{ 0xffff0, 0xfffff, MRA_ROM },
-	MEMORY_END
+	public static Memory_ReadAddress readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x00000, 0x7ffff, MRA_ROM ),
+		new Memory_ReadAddress( 0x80000, 0x8ffff, MRA_BANK1 ),	/* Quiz F1 only */
+		new Memory_ReadAddress( 0xa0000, 0xa3fff, MRA_RAM ),
+		new Memory_ReadAddress( 0xd0000, 0xdffff, MRA_RAM ),
+		new Memory_ReadAddress( 0xe0000, 0xe03ff, paletteram_r ),
+		new Memory_ReadAddress( 0xffff0, 0xfffff, MRA_ROM ),
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( writemem )
 		{ 0x00000, 0x7ffff, MWA_ROM },
@@ -88,14 +90,16 @@ public class m90
 		{ 0xffff0, 0xfffff, MWA_ROM },
 	MEMORY_END
 	
-	static MEMORY_READ_START( bootleg_readmem )
-		{ 0x00000, 0x3ffff, MRA_ROM },
-		{ 0x60000, 0x60fff, MRA_RAM },
-		{ 0xa0000, 0xa3fff, MRA_RAM },
-		{ 0xd0000, 0xdffff, MRA_RAM },
-		{ 0xe0000, 0xe03ff, paletteram_r },
-		{ 0xffff0, 0xfffff, MRA_ROM },
-	MEMORY_END
+	public static Memory_ReadAddress bootleg_readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x00000, 0x3ffff, MRA_ROM ),
+		new Memory_ReadAddress( 0x60000, 0x60fff, MRA_RAM ),
+		new Memory_ReadAddress( 0xa0000, 0xa3fff, MRA_RAM ),
+		new Memory_ReadAddress( 0xd0000, 0xdffff, MRA_RAM ),
+		new Memory_ReadAddress( 0xe0000, 0xe03ff, paletteram_r ),
+		new Memory_ReadAddress( 0xffff0, 0xfffff, MRA_ROM ),
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( bootleg_writemem )
 		{ 0x00000, 0x3ffff, MWA_ROM },
@@ -126,10 +130,12 @@ public class m90
 	
 	/*****************************************************************************/
 	
-	static MEMORY_READ_START( sound_readmem )
-		{ 0x0000, 0xefff, MRA_ROM },
-		{ 0xf000, 0xffff, MRA_RAM },
-	MEMORY_END
+	public static Memory_ReadAddress sound_readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0xefff, MRA_ROM ),
+		new Memory_ReadAddress( 0xf000, 0xffff, MRA_RAM ),
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( sound_writemem )
 		{ 0x0000, 0xefff, MWA_ROM },

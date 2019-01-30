@@ -76,15 +76,17 @@ public class mexico86
 	
 	
 	
-	static MEMORY_READ_START( readmem )
-		{ 0x0000, 0x7fff, MRA_ROM },
-		{ 0x8000, 0xbfff, MRA_BANK1 },	/* banked roms */
-		{ 0xc000, 0xe7ff, shared_r },	/* shared with sound cpu */
-		{ 0xe800, 0xe8ff, MRA_RAM },	/* protection ram */
-		{ 0xe900, 0xefff, MRA_RAM },
-		{ 0xf010, 0xf010, input_port_5_r },
-		{ 0xf800, 0xffff, MRA_RAM },	/* communication ram - to connect 4 players's subboard */
-	MEMORY_END
+	public static Memory_ReadAddress readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x7fff, MRA_ROM ),
+		new Memory_ReadAddress( 0x8000, 0xbfff, MRA_BANK1 ),	/* banked roms */
+		new Memory_ReadAddress( 0xc000, 0xe7ff, shared_r ),	/* shared with sound cpu */
+		new Memory_ReadAddress( 0xe800, 0xe8ff, MRA_RAM ),	/* protection ram */
+		new Memory_ReadAddress( 0xe900, 0xefff, MRA_RAM ),
+		new Memory_ReadAddress( 0xf010, 0xf010, input_port_5_r ),
+		new Memory_ReadAddress( 0xf800, 0xffff, MRA_RAM ),	/* communication ram - to connect 4 players's subboard */
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( writemem )
 		{ 0x0000, 0xbfff, MWA_ROM },
@@ -99,13 +101,15 @@ public class mexico86
 		{ 0xf800, 0xffff, MWA_RAM },	/* communication ram */
 	MEMORY_END
 	
-	static MEMORY_READ_START( sound_readmem )
-		{ 0x0000, 0x7fff, MRA_ROM },
-		{ 0x8000, 0xa7ff, shared_r },
-		{ 0xa800, 0xbfff, MRA_RAM },
-		{ 0xc000, 0xc000, YM2203_status_port_0_r },
-		{ 0xc001, 0xc001, YM2203_read_port_0_r },
-	MEMORY_END
+	public static Memory_ReadAddress sound_readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x7fff, MRA_ROM ),
+		new Memory_ReadAddress( 0x8000, 0xa7ff, shared_r ),
+		new Memory_ReadAddress( 0xa800, 0xbfff, MRA_RAM ),
+		new Memory_ReadAddress( 0xc000, 0xc000, YM2203_status_port_0_r ),
+		new Memory_ReadAddress( 0xc001, 0xc001, YM2203_read_port_0_r ),
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( sound_writemem )
 		{ 0x0000, 0x7fff, MWA_ROM },
@@ -115,13 +119,15 @@ public class mexico86
 		{ 0xc001, 0xc001, YM2203_write_port_0_w },
 	MEMORY_END
 	
-	static MEMORY_READ_START( m68705_readmem )
-		{ 0x0000, 0x0000, mexico86_68705_portA_r },
-		{ 0x0001, 0x0001, mexico86_68705_portB_r },
-		{ 0x0002, 0x0002, input_port_0_r },	/* COIN */
-		{ 0x0010, 0x007f, MRA_RAM },
-		{ 0x0080, 0x07ff, MRA_ROM },
-	MEMORY_END
+	public static Memory_ReadAddress m68705_readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x0000, mexico86_68705_portA_r ),
+		new Memory_ReadAddress( 0x0001, 0x0001, mexico86_68705_portB_r ),
+		new Memory_ReadAddress( 0x0002, 0x0002, input_port_0_r ),	/* COIN */
+		new Memory_ReadAddress( 0x0010, 0x007f, MRA_RAM ),
+		new Memory_ReadAddress( 0x0080, 0x07ff, MRA_ROM ),
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( m68705_writemem )
 		{ 0x0000, 0x0000, mexico86_68705_portA_w },

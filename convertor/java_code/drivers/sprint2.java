@@ -69,31 +69,33 @@ public class sprint2
 	WRITE_HANDLER( sprint2_lamp2_w );
 	
 	
-	static MEMORY_READ_START( readmem )
-		{ 0x0000, 0x03ff, MRA_RAM }, /* WRAM */
-		{ 0x0400, 0x07ff, MRA_RAM }, /* DISPLAY RAM */
-		{ 0x0800, 0x083f, sprint2_read_ports_r }, /* SWITCH */
-		{ 0x0840, 0x087f, sprint2_coins_r },
-		{ 0x0880, 0x08bf, sprint2_steering1_r },
-		{ 0x08c0, 0x08ff, sprint2_steering2_r },
-		{ 0x0900, 0x093f, sprint2_read_ports_r }, /* SWITCH */
-		{ 0x0940, 0x097f, sprint2_coins_r },
-		{ 0x0980, 0x09bf, sprint2_steering1_r },
-		{ 0x09c0, 0x09ff, sprint2_steering2_r },
-		{ 0x0a00, 0x0a3f, sprint2_read_ports_r }, /* SWITCH */
-		{ 0x0a40, 0x0a7f, sprint2_coins_r },
-		{ 0x0a80, 0x0abf, sprint2_steering1_r },
-		{ 0x0ac0, 0x0aff, sprint2_steering2_r },
-		{ 0x0b00, 0x0b3f, sprint2_read_ports_r }, /* SWITCH */
-		{ 0x0b40, 0x0b7f, sprint2_coins_r },
-		{ 0x0b80, 0x0bbf, sprint2_steering1_r },
-		{ 0x0bc0, 0x0bff, sprint2_steering2_r },
-		{ 0x0c00, 0x0fff, sprint2_read_sync_r }, /* SYNC */
-		{ 0x1000, 0x13ff, sprint2_collision1_r }, /* COLLISION 1 */
-		{ 0x1400, 0x17ff, sprint2_collision2_r }, /* COLLISION 2 */
-		{ 0x2000, 0x3fff, MRA_ROM }, /* PROM1-PROM8 */
-		{ 0xfff0, 0xffff, MRA_ROM }, /* PROM8 for 6502 vectors */
-	MEMORY_END
+	public static Memory_ReadAddress readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x03ff, MRA_RAM ), /* WRAM */
+		new Memory_ReadAddress( 0x0400, 0x07ff, MRA_RAM ), /* DISPLAY RAM */
+		new Memory_ReadAddress( 0x0800, 0x083f, sprint2_read_ports_r ), /* SWITCH */
+		new Memory_ReadAddress( 0x0840, 0x087f, sprint2_coins_r ),
+		new Memory_ReadAddress( 0x0880, 0x08bf, sprint2_steering1_r ),
+		new Memory_ReadAddress( 0x08c0, 0x08ff, sprint2_steering2_r ),
+		new Memory_ReadAddress( 0x0900, 0x093f, sprint2_read_ports_r ), /* SWITCH */
+		new Memory_ReadAddress( 0x0940, 0x097f, sprint2_coins_r ),
+		new Memory_ReadAddress( 0x0980, 0x09bf, sprint2_steering1_r ),
+		new Memory_ReadAddress( 0x09c0, 0x09ff, sprint2_steering2_r ),
+		new Memory_ReadAddress( 0x0a00, 0x0a3f, sprint2_read_ports_r ), /* SWITCH */
+		new Memory_ReadAddress( 0x0a40, 0x0a7f, sprint2_coins_r ),
+		new Memory_ReadAddress( 0x0a80, 0x0abf, sprint2_steering1_r ),
+		new Memory_ReadAddress( 0x0ac0, 0x0aff, sprint2_steering2_r ),
+		new Memory_ReadAddress( 0x0b00, 0x0b3f, sprint2_read_ports_r ), /* SWITCH */
+		new Memory_ReadAddress( 0x0b40, 0x0b7f, sprint2_coins_r ),
+		new Memory_ReadAddress( 0x0b80, 0x0bbf, sprint2_steering1_r ),
+		new Memory_ReadAddress( 0x0bc0, 0x0bff, sprint2_steering2_r ),
+		new Memory_ReadAddress( 0x0c00, 0x0fff, sprint2_read_sync_r ), /* SYNC */
+		new Memory_ReadAddress( 0x1000, 0x13ff, sprint2_collision1_r ), /* COLLISION 1 */
+		new Memory_ReadAddress( 0x1400, 0x17ff, sprint2_collision2_r ), /* COLLISION 2 */
+		new Memory_ReadAddress( 0x2000, 0x3fff, MRA_ROM ), /* PROM1-PROM8 */
+		new Memory_ReadAddress( 0xfff0, 0xffff, MRA_ROM ), /* PROM8 for 6502 vectors */
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( writemem )
 		{ 0x0000, 0x03ff, MWA_RAM }, /* WRAM */
@@ -116,31 +118,33 @@ public class sprint2
 	MEMORY_END
 	
 	/* The only difference is that we use "sprint1_read_ports" */
-	static MEMORY_READ_START( sprint1_readmem )
-		{ 0x0000, 0x03ff, MRA_RAM }, /* WRAM */
-		{ 0x0400, 0x07ff, MRA_RAM }, /* DISPLAY RAM */
-		{ 0x0800, 0x083f, sprint1_read_ports_r }, /* SWITCH */
-		{ 0x0840, 0x087f, sprint2_coins_r },
-		{ 0x0880, 0x08bf, sprint2_steering1_r },
-		{ 0x08c0, 0x08ff, sprint2_steering2_r },
-		{ 0x0900, 0x093f, sprint1_read_ports_r }, /* SWITCH */
-		{ 0x0940, 0x097f, sprint2_coins_r },
-		{ 0x0980, 0x09bf, sprint2_steering1_r },
-		{ 0x09c0, 0x09ff, sprint2_steering2_r },
-		{ 0x0a00, 0x0a3f, sprint1_read_ports_r }, /* SWITCH */
-		{ 0x0a40, 0x0a7f, sprint2_coins_r },
-		{ 0x0a80, 0x0abf, sprint2_steering1_r },
-		{ 0x0ac0, 0x0aff, sprint2_steering2_r },
-		{ 0x0b00, 0x0b3f, sprint1_read_ports_r }, /* SWITCH */
-		{ 0x0b40, 0x0b7f, sprint2_coins_r },
-		{ 0x0b80, 0x0bbf, sprint2_steering1_r },
-		{ 0x0bc0, 0x0bff, sprint2_steering2_r },
-		{ 0x0c00, 0x0fff, sprint2_read_sync_r }, /* SYNC */
-		{ 0x1000, 0x13ff, sprint2_collision1_r }, /* COLLISION 1 */
-		{ 0x1400, 0x17ff, sprint2_collision2_r }, /* COLLISION 2 */
-		{ 0x2000, 0x3fff, MRA_ROM }, /* PROM1-PROM8 */
-		{ 0xfff0, 0xffff, MRA_ROM }, /* PROM8 for 6502 vectors */
-	MEMORY_END
+	public static Memory_ReadAddress sprint1_readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x03ff, MRA_RAM ), /* WRAM */
+		new Memory_ReadAddress( 0x0400, 0x07ff, MRA_RAM ), /* DISPLAY RAM */
+		new Memory_ReadAddress( 0x0800, 0x083f, sprint1_read_ports_r ), /* SWITCH */
+		new Memory_ReadAddress( 0x0840, 0x087f, sprint2_coins_r ),
+		new Memory_ReadAddress( 0x0880, 0x08bf, sprint2_steering1_r ),
+		new Memory_ReadAddress( 0x08c0, 0x08ff, sprint2_steering2_r ),
+		new Memory_ReadAddress( 0x0900, 0x093f, sprint1_read_ports_r ), /* SWITCH */
+		new Memory_ReadAddress( 0x0940, 0x097f, sprint2_coins_r ),
+		new Memory_ReadAddress( 0x0980, 0x09bf, sprint2_steering1_r ),
+		new Memory_ReadAddress( 0x09c0, 0x09ff, sprint2_steering2_r ),
+		new Memory_ReadAddress( 0x0a00, 0x0a3f, sprint1_read_ports_r ), /* SWITCH */
+		new Memory_ReadAddress( 0x0a40, 0x0a7f, sprint2_coins_r ),
+		new Memory_ReadAddress( 0x0a80, 0x0abf, sprint2_steering1_r ),
+		new Memory_ReadAddress( 0x0ac0, 0x0aff, sprint2_steering2_r ),
+		new Memory_ReadAddress( 0x0b00, 0x0b3f, sprint1_read_ports_r ), /* SWITCH */
+		new Memory_ReadAddress( 0x0b40, 0x0b7f, sprint2_coins_r ),
+		new Memory_ReadAddress( 0x0b80, 0x0bbf, sprint2_steering1_r ),
+		new Memory_ReadAddress( 0x0bc0, 0x0bff, sprint2_steering2_r ),
+		new Memory_ReadAddress( 0x0c00, 0x0fff, sprint2_read_sync_r ), /* SYNC */
+		new Memory_ReadAddress( 0x1000, 0x13ff, sprint2_collision1_r ), /* COLLISION 1 */
+		new Memory_ReadAddress( 0x1400, 0x17ff, sprint2_collision2_r ), /* COLLISION 2 */
+		new Memory_ReadAddress( 0x2000, 0x3fff, MRA_ROM ), /* PROM1-PROM8 */
+		new Memory_ReadAddress( 0xfff0, 0xffff, MRA_ROM ), /* PROM8 for 6502 vectors */
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	INPUT_PORTS_START( sprint2 )
 		PORT_START      /* DSW - fake port, gets mapped to Sprint2 ports */

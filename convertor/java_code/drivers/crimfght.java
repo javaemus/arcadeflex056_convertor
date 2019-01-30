@@ -70,23 +70,25 @@ public class crimfght
 		return RAM[0x0414];
 	}
 	
-	static MEMORY_READ_START( crimfght_readmem )
-		{ 0x0000, 0x03ff, MRA_BANK1 },			/* banked RAM */
-		{ 0x0414, 0x0414, speedup_r },
-		{ 0x0400, 0x1fff, MRA_RAM },			/* RAM */
-		{ 0x3f80, 0x3f80, input_port_7_r },		/* Coinsw */
-		{ 0x3f81, 0x3f81, input_port_3_r },		/* 1P controls */
-		{ 0x3f82, 0x3f82, input_port_4_r },		/* 2P controls */
-		{ 0x3f83, 0x3f83, input_port_1_r },		/* DSW #2 */
-		{ 0x3f84, 0x3f84, input_port_2_r },		/* DSW #3 */
-		{ 0x3f85, 0x3f85, input_port_5_r },		/* 3P controls */
-		{ 0x3f86, 0x3f86, input_port_6_r },		/* 4P controls */
-		{ 0x3f87, 0x3f87, input_port_0_r },		/* DSW #1 */
-		{ 0x3f88, 0x3f88, watchdog_reset_r },	/* watchdog reset */
-		{ 0x2000, 0x5fff, K052109_051960_r },	/* video RAM + sprite RAM */
-		{ 0x6000, 0x7fff, MRA_BANK2 },			/* banked ROM */
-		{ 0x8000, 0xffff, MRA_ROM },			/* ROM */
-	MEMORY_END
+	public static Memory_ReadAddress crimfght_readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x03ff, MRA_BANK1 ),			/* banked RAM */
+		new Memory_ReadAddress( 0x0414, 0x0414, speedup_r ),
+		new Memory_ReadAddress( 0x0400, 0x1fff, MRA_RAM ),			/* RAM */
+		new Memory_ReadAddress( 0x3f80, 0x3f80, input_port_7_r ),		/* Coinsw */
+		new Memory_ReadAddress( 0x3f81, 0x3f81, input_port_3_r ),		/* 1P controls */
+		new Memory_ReadAddress( 0x3f82, 0x3f82, input_port_4_r ),		/* 2P controls */
+		new Memory_ReadAddress( 0x3f83, 0x3f83, input_port_1_r ),		/* DSW #2 */
+		new Memory_ReadAddress( 0x3f84, 0x3f84, input_port_2_r ),		/* DSW #3 */
+		new Memory_ReadAddress( 0x3f85, 0x3f85, input_port_5_r ),		/* 3P controls */
+		new Memory_ReadAddress( 0x3f86, 0x3f86, input_port_6_r ),		/* 4P controls */
+		new Memory_ReadAddress( 0x3f87, 0x3f87, input_port_0_r ),		/* DSW #1 */
+		new Memory_ReadAddress( 0x3f88, 0x3f88, watchdog_reset_r ),	/* watchdog reset */
+		new Memory_ReadAddress( 0x2000, 0x5fff, K052109_051960_r ),	/* video RAM + sprite RAM */
+		new Memory_ReadAddress( 0x6000, 0x7fff, MRA_BANK2 ),			/* banked ROM */
+		new Memory_ReadAddress( 0x8000, 0xffff, MRA_ROM ),			/* ROM */
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( crimfght_writemem )
 		{ 0x0000, 0x03ff, MWA_BANK1 },					/* banked RAM */
@@ -98,13 +100,15 @@ public class crimfght
 		{ 0x8000, 0xffff, MWA_ROM },					/* ROM */
 	MEMORY_END
 	
-	static MEMORY_READ_START( crimfght_readmem_sound )
-		{ 0x0000, 0x7fff, MRA_ROM },				/* ROM 821l01.h4 */
-		{ 0x8000, 0x87ff, MRA_RAM },				/* RAM */
-		{ 0xa001, 0xa001, YM2151_status_port_0_r },	/* YM2151 */
-		{ 0xc000, 0xc000, soundlatch_r },			/* soundlatch_r */
-		{ 0xe000, 0xe00d, K007232_read_port_0_r },	/* 007232 registers */
-	MEMORY_END
+	public static Memory_ReadAddress crimfght_readmem_sound[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x7fff, MRA_ROM ),				/* ROM 821l01.h4 */
+		new Memory_ReadAddress( 0x8000, 0x87ff, MRA_RAM ),				/* RAM */
+		new Memory_ReadAddress( 0xa001, 0xa001, YM2151_status_port_0_r ),	/* YM2151 */
+		new Memory_ReadAddress( 0xc000, 0xc000, soundlatch_r ),			/* soundlatch_r */
+		new Memory_ReadAddress( 0xe000, 0xe00d, K007232_read_port_0_r ),	/* 007232 registers */
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( crimfght_writemem_sound )
 		{ 0x0000, 0x7fff, MWA_ROM },					/* ROM 821l01.h4 */

@@ -50,15 +50,17 @@ public class skyfox
 									Sky Fox
 	***************************************************************************/
 	
-	static MEMORY_READ_START( skyfox_readmem )
-		{ 0x0000, 0xbfff, MRA_ROM				},	// ROM
-		{ 0xc000, 0xdfff, MRA_RAM				},	// RAM
-		{ 0xe000, 0xe000, input_port_0_r		},	// Input Ports
-		{ 0xe001, 0xe001, input_port_1_r		},	//
-		{ 0xe002, 0xe002, input_port_2_r		},	//
-		{ 0xf001, 0xf001, input_port_3_r		},	//
-	//	{ 0xff00, 0xff07, skyfox_vregs_r		},	// fake to read the vregs
-	MEMORY_END
+	public static Memory_ReadAddress skyfox_readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0xbfff, MRA_ROM				),	// ROM
+		new Memory_ReadAddress( 0xc000, 0xdfff, MRA_RAM				),	// RAM
+		new Memory_ReadAddress( 0xe000, 0xe000, input_port_0_r		),	// Input Ports
+		new Memory_ReadAddress( 0xe001, 0xe001, input_port_1_r		),	//
+		new Memory_ReadAddress( 0xe002, 0xe002, input_port_2_r		),	//
+		new Memory_ReadAddress( 0xf001, 0xf001, input_port_3_r		),	//
+	//	new Memory_ReadAddress( 0xff00, 0xff07, skyfox_vregs_r		),	// fake to read the vregs
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( skyfox_writemem )
 		{ 0x0000, 0xbfff, MWA_ROM								},	// ROM
@@ -87,13 +89,15 @@ public class skyfox
 	***************************************************************************/
 	
 	
-	static MEMORY_READ_START( skyfox_sound_readmem )
-		{ 0x0000, 0x7fff, MRA_ROM				},	// ROM
-		{ 0x8000, 0x87ff, MRA_RAM				},	// RAM
-		{ 0xa001, 0xa001, YM2203_read_port_0_r 	},	// YM2203 #1
-	//	{ 0xc001, 0xc001, YM2203_read_port_1_r 	},	// YM2203 #2
-		{ 0xb000, 0xb000, soundlatch_r			},	// From Main CPU
-	MEMORY_END
+	public static Memory_ReadAddress skyfox_sound_readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x7fff, MRA_ROM				),	// ROM
+		new Memory_ReadAddress( 0x8000, 0x87ff, MRA_RAM				),	// RAM
+		new Memory_ReadAddress( 0xa001, 0xa001, YM2203_read_port_0_r 	),	// YM2203 #1
+	//	new Memory_ReadAddress( 0xc001, 0xc001, YM2203_read_port_1_r 	),	// YM2203 #2
+		new Memory_ReadAddress( 0xb000, 0xb000, soundlatch_r			),	// From Main CPU
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( skyfox_sound_writemem )
 		{ 0x0000, 0x7fff, MWA_ROM					},	// ROM

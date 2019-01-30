@@ -125,22 +125,24 @@ public class tecmo
 	
 	
 	
-	static MEMORY_READ_START( readmem )
-		{ 0x0000, 0xbfff, MRA_ROM },
-		{ 0xc000, 0xefff, MRA_RAM },
-		{ 0xf000, 0xf7ff, MRA_BANK1 },
-		{ 0xf800, 0xf800, input_port_0_r },
-		{ 0xf801, 0xf801, input_port_1_r },
-		{ 0xf802, 0xf802, input_port_2_r },
-		{ 0xf803, 0xf803, input_port_3_r },
-		{ 0xf804, 0xf804, input_port_4_r },
-		{ 0xf805, 0xf805, input_port_5_r },
-		{ 0xf806, 0xf806, input_port_6_r },
-		{ 0xf807, 0xf807, input_port_7_r },
-		{ 0xf808, 0xf808, input_port_8_r },
-		{ 0xf809, 0xf809, input_port_9_r },
-		{ 0xf80f, 0xf80f, input_port_10_r },
-	MEMORY_END
+	public static Memory_ReadAddress readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0xbfff, MRA_ROM ),
+		new Memory_ReadAddress( 0xc000, 0xefff, MRA_RAM ),
+		new Memory_ReadAddress( 0xf000, 0xf7ff, MRA_BANK1 ),
+		new Memory_ReadAddress( 0xf800, 0xf800, input_port_0_r ),
+		new Memory_ReadAddress( 0xf801, 0xf801, input_port_1_r ),
+		new Memory_ReadAddress( 0xf802, 0xf802, input_port_2_r ),
+		new Memory_ReadAddress( 0xf803, 0xf803, input_port_3_r ),
+		new Memory_ReadAddress( 0xf804, 0xf804, input_port_4_r ),
+		new Memory_ReadAddress( 0xf805, 0xf805, input_port_5_r ),
+		new Memory_ReadAddress( 0xf806, 0xf806, input_port_6_r ),
+		new Memory_ReadAddress( 0xf807, 0xf807, input_port_7_r ),
+		new Memory_ReadAddress( 0xf808, 0xf808, input_port_8_r ),
+		new Memory_ReadAddress( 0xf809, 0xf809, input_port_9_r ),
+		new Memory_ReadAddress( 0xf80f, 0xf80f, input_port_10_r ),
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( rygar_writemem )
 		{ 0x0000, 0xbfff, MWA_ROM },
@@ -194,11 +196,13 @@ public class tecmo
 		{ 0xf80b, 0xf80b, MWA_NOP },	/* ? if mapped to watchdog like in the others, causes reset */
 	MEMORY_END
 	
-	static MEMORY_READ_START( rygar_sound_readmem )
-		{ 0x0000, 0x3fff, MRA_ROM },
-		{ 0x4000, 0x47ff, MRA_RAM },
-		{ 0xc000, 0xc000, soundlatch_r },
-	MEMORY_END
+	public static Memory_ReadAddress rygar_sound_readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x3fff, MRA_ROM ),
+		new Memory_ReadAddress( 0x4000, 0x47ff, MRA_RAM ),
+		new Memory_ReadAddress( 0xc000, 0xc000, soundlatch_r ),
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( rygar_sound_writemem )
 		{ 0x0000, 0x3fff, MWA_ROM },
@@ -211,11 +215,13 @@ public class tecmo
 		{ 0xf000, 0xf000, MWA_NOP },	/* NMI acknowledge */
 	MEMORY_END
 	
-	static MEMORY_READ_START( tecmo_sound_readmem )
-		{ 0x0000, 0x7fff, MRA_ROM },
-		{ 0x8000, 0x87ff, MRA_RAM },
-		{ 0xc000, 0xc000, soundlatch_r },
-	MEMORY_END
+	public static Memory_ReadAddress tecmo_sound_readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x7fff, MRA_ROM ),
+		new Memory_ReadAddress( 0x8000, 0x87ff, MRA_RAM ),
+		new Memory_ReadAddress( 0xc000, 0xc000, soundlatch_r ),
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( tecmo_sound_writemem )
 		{ 0x2000, 0x207f, MWA_RAM },	/* Silkworm set #2 has a custom CPU which */

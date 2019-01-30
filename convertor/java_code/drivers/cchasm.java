@@ -53,12 +53,14 @@ public class cchasm
 		{ 0xffb000, 0xffffff, MWA16_RAM, &cchasm_ram },
 	MEMORY_END
 	
-	static MEMORY_READ_START( sound_readmem )
-		{ 0x0000, 0x0fff, MRA_ROM },
-		{ 0x4000, 0x43ff, MRA_RAM },
-		{ 0x5000, 0x53ff, MRA_RAM },
-		{ 0x6000, 0x6fff, cchasm_snd_io_r },
-	MEMORY_END
+	public static Memory_ReadAddress sound_readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x0fff, MRA_ROM ),
+		new Memory_ReadAddress( 0x4000, 0x43ff, MRA_RAM ),
+		new Memory_ReadAddress( 0x5000, 0x53ff, MRA_RAM ),
+		new Memory_ReadAddress( 0x6000, 0x6fff, cchasm_snd_io_r ),
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( sound_writemem )
 		{ 0x0000, 0x0fff, MWA_ROM },

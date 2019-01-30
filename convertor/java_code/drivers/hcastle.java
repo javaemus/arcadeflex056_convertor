@@ -67,22 +67,24 @@ public class hcastle
 	
 	
 	
-	static MEMORY_READ_START( readmem )
-		{ 0x0020, 0x003f, MRA_RAM },
-		{ 0x0220, 0x023f, MRA_RAM },
-		{ 0x0410, 0x0410, input_port_0_r },
-		{ 0x0411, 0x0411, input_port_1_r },
-		{ 0x0412, 0x0412, input_port_2_r },
-		{ 0x0413, 0x0413, input_port_5_r }, /* Dip 3 */
-		{ 0x0414, 0x0414, input_port_4_r }, /* Dip 2 */
-		{ 0x0415, 0x0415, input_port_3_r }, /* Dip 1 */
-		{ 0x0418, 0x0418, hcastle_gfxbank_r },
-		{ 0x0600, 0x06ff, paletteram_r },
-		{ 0x18dc, 0x18dc, speedup_r },
-		{ 0x0700, 0x5fff, MRA_RAM },
-		{ 0x6000, 0x7fff, MRA_BANK1 },
-		{ 0x8000, 0xffff, MRA_ROM },
-	MEMORY_END
+	public static Memory_ReadAddress readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0020, 0x003f, MRA_RAM ),
+		new Memory_ReadAddress( 0x0220, 0x023f, MRA_RAM ),
+		new Memory_ReadAddress( 0x0410, 0x0410, input_port_0_r ),
+		new Memory_ReadAddress( 0x0411, 0x0411, input_port_1_r ),
+		new Memory_ReadAddress( 0x0412, 0x0412, input_port_2_r ),
+		new Memory_ReadAddress( 0x0413, 0x0413, input_port_5_r ), /* Dip 3 */
+		new Memory_ReadAddress( 0x0414, 0x0414, input_port_4_r ), /* Dip 2 */
+		new Memory_ReadAddress( 0x0415, 0x0415, input_port_3_r ), /* Dip 1 */
+		new Memory_ReadAddress( 0x0418, 0x0418, hcastle_gfxbank_r ),
+		new Memory_ReadAddress( 0x0600, 0x06ff, paletteram_r ),
+		new Memory_ReadAddress( 0x18dc, 0x18dc, speedup_r ),
+		new Memory_ReadAddress( 0x0700, 0x5fff, MRA_RAM ),
+		new Memory_ReadAddress( 0x6000, 0x7fff, MRA_BANK1 ),
+		new Memory_ReadAddress( 0x8000, 0xffff, MRA_ROM ),
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( writemem )
 		{ 0x0000, 0x0007, hcastle_pf1_control_w },
@@ -115,13 +117,15 @@ public class hcastle
 		K007232_bankswitch(0,RAM+bank_A,RAM+bank_B);
 	}
 	
-	static MEMORY_READ_START( sound_readmem )
-		{ 0x0000, 0x7fff, MRA_ROM },
-		{ 0x8000, 0x87ff, MRA_RAM },
-		{ 0xa000, 0xa000, YM3812_status_port_0_r },
-		{ 0xb000, 0xb00d, K007232_read_port_0_r },
-		{ 0xd000, 0xd000, soundlatch_r },
-	MEMORY_END
+	public static Memory_ReadAddress sound_readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x7fff, MRA_ROM ),
+		new Memory_ReadAddress( 0x8000, 0x87ff, MRA_RAM ),
+		new Memory_ReadAddress( 0xa000, 0xa000, YM3812_status_port_0_r ),
+		new Memory_ReadAddress( 0xb000, 0xb00d, K007232_read_port_0_r ),
+		new Memory_ReadAddress( 0xd000, 0xd000, soundlatch_r ),
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( sound_writemem )
 		{ 0x0000, 0x7fff, MWA_ROM },

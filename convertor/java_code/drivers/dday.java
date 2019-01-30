@@ -77,17 +77,19 @@ public class dday
 	READ_HANDLER( dday_countdown_timer_r );
 	
 	
-	static MEMORY_READ_START( readmem )
-		{ 0x0000, 0x3fff, MRA_ROM },
-		{ 0x5000, 0x5bff, MRA_RAM },
-		{ 0x5c00, 0x5fff, dday_colorram_r },
-		{ 0x6000, 0x63ff, MRA_RAM },
-		{ 0x6c00, 0x6c00, input_port_0_r },
-		{ 0x7000, 0x7000, input_port_1_r },
-		{ 0x7400, 0x7400, input_port_2_r },
-		{ 0x7800, 0x7800, dday_countdown_timer_r },
-		{ 0x7c00, 0x7c00, input_port_3_r },
-	MEMORY_END
+	public static Memory_ReadAddress readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x3fff, MRA_ROM ),
+		new Memory_ReadAddress( 0x5000, 0x5bff, MRA_RAM ),
+		new Memory_ReadAddress( 0x5c00, 0x5fff, dday_colorram_r ),
+		new Memory_ReadAddress( 0x6000, 0x63ff, MRA_RAM ),
+		new Memory_ReadAddress( 0x6c00, 0x6c00, input_port_0_r ),
+		new Memory_ReadAddress( 0x7000, 0x7000, input_port_1_r ),
+		new Memory_ReadAddress( 0x7400, 0x7400, input_port_2_r ),
+		new Memory_ReadAddress( 0x7800, 0x7800, dday_countdown_timer_r ),
+		new Memory_ReadAddress( 0x7c00, 0x7c00, input_port_3_r ),
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( writemem )
 		{ 0x0000, 0x3fff, MWA_ROM },

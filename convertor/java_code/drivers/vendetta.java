@@ -213,26 +213,28 @@ public class vendetta
 	
 	/********************************************/
 	
-	static MEMORY_READ_START( readmem )
-		{ 0x0000, 0x1fff, MRA_BANK1	},
-		{ 0x28d2, 0x28d2, speedup_r },
-		{ 0x2000, 0x3fff, MRA_RAM },
-		{ 0x5f80, 0x5f9f, K054000_r },
-		{ 0x5fc0, 0x5fc0, input_port_0_r },
-		{ 0x5fc1, 0x5fc1, input_port_1_r },
-		{ 0x5fc2, 0x5fc2, input_port_4_r },
-		{ 0x5fc3, 0x5fc3, input_port_5_r },
-		{ 0x5fd0, 0x5fd0, vendetta_eeprom_r }, /* vblank, service */
-		{ 0x5fd1, 0x5fd1, input_port_2_r },
-		{ 0x5fe4, 0x5fe4, vendetta_sound_interrupt_r },
-		{ 0x5fe6, 0x5fe7, vendetta_sound_r },
-		{ 0x5fe8, 0x5fe9, K053246_r },
-		{ 0x5fea, 0x5fea, watchdog_reset_r },
-		{ 0x4000, 0x4fff, MRA_BANK3 },
-		{ 0x6000, 0x6fff, MRA_BANK2 },
-		{ 0x4000, 0x7fff, K052109_r },
-		{ 0x8000, 0xffff, MRA_ROM },
-	MEMORY_END
+	public static Memory_ReadAddress readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x1fff, MRA_BANK1	),
+		new Memory_ReadAddress( 0x28d2, 0x28d2, speedup_r ),
+		new Memory_ReadAddress( 0x2000, 0x3fff, MRA_RAM ),
+		new Memory_ReadAddress( 0x5f80, 0x5f9f, K054000_r ),
+		new Memory_ReadAddress( 0x5fc0, 0x5fc0, input_port_0_r ),
+		new Memory_ReadAddress( 0x5fc1, 0x5fc1, input_port_1_r ),
+		new Memory_ReadAddress( 0x5fc2, 0x5fc2, input_port_4_r ),
+		new Memory_ReadAddress( 0x5fc3, 0x5fc3, input_port_5_r ),
+		new Memory_ReadAddress( 0x5fd0, 0x5fd0, vendetta_eeprom_r ), /* vblank, service */
+		new Memory_ReadAddress( 0x5fd1, 0x5fd1, input_port_2_r ),
+		new Memory_ReadAddress( 0x5fe4, 0x5fe4, vendetta_sound_interrupt_r ),
+		new Memory_ReadAddress( 0x5fe6, 0x5fe7, vendetta_sound_r ),
+		new Memory_ReadAddress( 0x5fe8, 0x5fe9, K053246_r ),
+		new Memory_ReadAddress( 0x5fea, 0x5fea, watchdog_reset_r ),
+		new Memory_ReadAddress( 0x4000, 0x4fff, MRA_BANK3 ),
+		new Memory_ReadAddress( 0x6000, 0x6fff, MRA_BANK2 ),
+		new Memory_ReadAddress( 0x4000, 0x7fff, K052109_r ),
+		new Memory_ReadAddress( 0x8000, 0xffff, MRA_ROM ),
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( writemem )
 		{ 0x0000, 0x1fff, MWA_ROM },
@@ -250,12 +252,14 @@ public class vendetta
 		{ 0x8000, 0xffff, MWA_ROM },
 	MEMORY_END
 	
-	static MEMORY_READ_START( readmem_sound )
-		{ 0x0000, 0xefff, MRA_ROM },
-		{ 0xf000, 0xf7ff, MRA_RAM },
-		{ 0xf801, 0xf801, YM2151_status_port_0_r },
-		{ 0xfc00, 0xfc2f, K053260_0_r },
-	MEMORY_END
+	public static Memory_ReadAddress readmem_sound[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0xefff, MRA_ROM ),
+		new Memory_ReadAddress( 0xf000, 0xf7ff, MRA_RAM ),
+		new Memory_ReadAddress( 0xf801, 0xf801, YM2151_status_port_0_r ),
+		new Memory_ReadAddress( 0xfc00, 0xfc2f, K053260_0_r ),
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( writemem_sound )
 		{ 0x0000, 0xefff, MWA_ROM },

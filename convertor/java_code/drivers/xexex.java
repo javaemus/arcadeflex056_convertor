@@ -278,15 +278,17 @@ public class xexex
 		{ 0x1b0000, 0x1b1fff, paletteram16_xrgb_word_w, &paletteram16 },
 	MEMORY_END
 	
-	static MEMORY_READ_START( sound_readmem )
-		{ 0x0000, 0x7fff, MRA_ROM },
-		{ 0x8000, 0xbfff, MRA_BANK2 },
-		{ 0xc000, 0xdfff, MRA_RAM },
-		{ 0xe000, 0xe22f, K054539_0_r },
-		{ 0xec01, 0xec01, YM2151_status_port_0_r },
-		{ 0xf002, 0xf002, soundlatch_r },
-		{ 0xf003, 0xf003, soundlatch2_r },
-	MEMORY_END
+	public static Memory_ReadAddress sound_readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x7fff, MRA_ROM ),
+		new Memory_ReadAddress( 0x8000, 0xbfff, MRA_BANK2 ),
+		new Memory_ReadAddress( 0xc000, 0xdfff, MRA_RAM ),
+		new Memory_ReadAddress( 0xe000, 0xe22f, K054539_0_r ),
+		new Memory_ReadAddress( 0xec01, 0xec01, YM2151_status_port_0_r ),
+		new Memory_ReadAddress( 0xf002, 0xf002, soundlatch_r ),
+		new Memory_ReadAddress( 0xf003, 0xf003, soundlatch2_r ),
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( sound_writemem )
 		{ 0x0000, 0xbfff, MWA_ROM },

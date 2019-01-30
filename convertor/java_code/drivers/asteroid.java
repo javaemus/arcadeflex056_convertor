@@ -195,28 +195,32 @@ public class asteroid
 	
 	
 	
-	static MEMORY_READ_START( asteroid_readmem )
-		{ 0x0000, 0x03ff, MRA_RAM },
-		{ 0x2000, 0x2007, asteroid_IN0_r }, /* IN0 */
-		{ 0x2400, 0x2407, asteroid_IN1_r }, /* IN1 */
-		{ 0x2800, 0x2803, asteroid_DSW1_r }, /* DSW1 */
-		{ 0x4000, 0x47ff, MRA_RAM },
-		{ 0x5000, 0x57ff, MRA_ROM }, /* vector rom */
-		{ 0x6800, 0x7fff, MRA_ROM },
-		{ 0xf800, 0xffff, MRA_ROM }, /* for the reset / interrupt vectors */
-	MEMORY_END
+	public static Memory_ReadAddress asteroid_readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x03ff, MRA_RAM ),
+		new Memory_ReadAddress( 0x2000, 0x2007, asteroid_IN0_r ), /* IN0 */
+		new Memory_ReadAddress( 0x2400, 0x2407, asteroid_IN1_r ), /* IN1 */
+		new Memory_ReadAddress( 0x2800, 0x2803, asteroid_DSW1_r ), /* DSW1 */
+		new Memory_ReadAddress( 0x4000, 0x47ff, MRA_RAM ),
+		new Memory_ReadAddress( 0x5000, 0x57ff, MRA_ROM ), /* vector rom */
+		new Memory_ReadAddress( 0x6800, 0x7fff, MRA_ROM ),
+		new Memory_ReadAddress( 0xf800, 0xffff, MRA_ROM ), /* for the reset / interrupt vectors */
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
-	static MEMORY_READ_START( asteroib_readmem )
-		{ 0x0000, 0x03ff, MRA_RAM },
-		{ 0x2000, 0x2000, asteroib_IN0_r }, /* IN0 */
-		{ 0x2003, 0x2003, input_port_3_r }, /* hyperspace */
-		{ 0x2400, 0x2407, asteroid_IN1_r }, /* IN1 */
-		{ 0x2800, 0x2803, asteroid_DSW1_r }, /* DSW1 */
-		{ 0x4000, 0x47ff, MRA_RAM },
-		{ 0x5000, 0x57ff, MRA_ROM }, /* vector rom */
-		{ 0x6800, 0x7fff, MRA_ROM },
-		{ 0xf800, 0xffff, MRA_ROM }, /* for the reset / interrupt vectors */
-	MEMORY_END
+	public static Memory_ReadAddress asteroib_readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x03ff, MRA_RAM ),
+		new Memory_ReadAddress( 0x2000, 0x2000, asteroib_IN0_r ), /* IN0 */
+		new Memory_ReadAddress( 0x2003, 0x2003, input_port_3_r ), /* hyperspace */
+		new Memory_ReadAddress( 0x2400, 0x2407, asteroid_IN1_r ), /* IN1 */
+		new Memory_ReadAddress( 0x2800, 0x2803, asteroid_DSW1_r ), /* DSW1 */
+		new Memory_ReadAddress( 0x4000, 0x47ff, MRA_RAM ),
+		new Memory_ReadAddress( 0x5000, 0x57ff, MRA_ROM ), /* vector rom */
+		new Memory_ReadAddress( 0x6800, 0x7fff, MRA_ROM ),
+		new Memory_ReadAddress( 0xf800, 0xffff, MRA_ROM ), /* for the reset / interrupt vectors */
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( asteroid_writemem )
 		{ 0x0000, 0x03ff, MWA_RAM },
@@ -231,18 +235,20 @@ public class asteroid
 		{ 0x6800, 0x7fff, MWA_ROM },
 	MEMORY_END
 	
-	static MEMORY_READ_START( astdelux_readmem )
-		{ 0x0000, 0x03ff, MRA_RAM },
-		{ 0x2000, 0x2007, asteroid_IN0_r }, /* IN0 */
-		{ 0x2400, 0x2407, asteroid_IN1_r }, /* IN1 */
-		{ 0x2800, 0x2803, asteroid_DSW1_r }, /* DSW1 */
-		{ 0x2c00, 0x2c0f, pokey1_r },
-		{ 0x2c40, 0x2c7f, atari_vg_earom_r },
-		{ 0x4000, 0x47ff, MRA_RAM },
-		{ 0x4800, 0x57ff, MRA_ROM }, /* vector rom */
-		{ 0x6000, 0x7fff, MRA_ROM },
-		{ 0xf800, 0xffff, MRA_ROM }, /* for the reset / interrupt vectors */
-	MEMORY_END
+	public static Memory_ReadAddress astdelux_readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x03ff, MRA_RAM ),
+		new Memory_ReadAddress( 0x2000, 0x2007, asteroid_IN0_r ), /* IN0 */
+		new Memory_ReadAddress( 0x2400, 0x2407, asteroid_IN1_r ), /* IN1 */
+		new Memory_ReadAddress( 0x2800, 0x2803, asteroid_DSW1_r ), /* DSW1 */
+		new Memory_ReadAddress( 0x2c00, 0x2c0f, pokey1_r ),
+		new Memory_ReadAddress( 0x2c40, 0x2c7f, atari_vg_earom_r ),
+		new Memory_ReadAddress( 0x4000, 0x47ff, MRA_RAM ),
+		new Memory_ReadAddress( 0x4800, 0x57ff, MRA_ROM ), /* vector rom */
+		new Memory_ReadAddress( 0x6000, 0x7fff, MRA_ROM ),
+		new Memory_ReadAddress( 0xf800, 0xffff, MRA_ROM ), /* for the reset / interrupt vectors */
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( astdelux_writemem )
 		{ 0x0000, 0x03ff, MWA_RAM },
@@ -262,17 +268,19 @@ public class asteroid
 		{ 0x6000, 0x7fff, MWA_ROM },
 	MEMORY_END
 	
-	static MEMORY_READ_START( llander_readmem )
-		{ 0x0000, 0x01ff, llander_zeropage_r },
-		{ 0x2000, 0x2000, llander_IN0_r }, /* IN0 */
-		{ 0x2400, 0x2407, asteroid_IN1_r }, /* IN1 */
-		{ 0x2800, 0x2803, asteroid_DSW1_r }, /* DSW1 */
-		{ 0x2c00, 0x2c00, input_port_3_r }, /* IN3 */
-		{ 0x4000, 0x47ff, MRA_RAM },
-		{ 0x4800, 0x5fff, MRA_ROM }, /* vector rom */
-		{ 0x6000, 0x7fff, MRA_ROM },
-		{ 0xf800, 0xffff, MRA_ROM }, /* for the reset / interrupt vectors */
-	MEMORY_END
+	public static Memory_ReadAddress llander_readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x01ff, llander_zeropage_r ),
+		new Memory_ReadAddress( 0x2000, 0x2000, llander_IN0_r ), /* IN0 */
+		new Memory_ReadAddress( 0x2400, 0x2407, asteroid_IN1_r ), /* IN1 */
+		new Memory_ReadAddress( 0x2800, 0x2803, asteroid_DSW1_r ), /* DSW1 */
+		new Memory_ReadAddress( 0x2c00, 0x2c00, input_port_3_r ), /* IN3 */
+		new Memory_ReadAddress( 0x4000, 0x47ff, MRA_RAM ),
+		new Memory_ReadAddress( 0x4800, 0x5fff, MRA_ROM ), /* vector rom */
+		new Memory_ReadAddress( 0x6000, 0x7fff, MRA_ROM ),
+		new Memory_ReadAddress( 0xf800, 0xffff, MRA_ROM ), /* for the reset / interrupt vectors */
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( llander_writemem )
 		{ 0x0000, 0x01ff, llander_zeropage_w, &llander_zeropage },

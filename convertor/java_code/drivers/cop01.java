@@ -96,11 +96,13 @@ public class cop01
 	}
 	
 	
-	static MEMORY_READ_START( readmem )
-		{ 0x0000, 0xbfff, MRA_ROM },
-		{ 0xc000, 0xcfff, MRA_RAM },	/* c000-c7ff in cop01 */
-		{ 0xd000, 0xdfff, MRA_RAM },
-	MEMORY_END
+	public static Memory_ReadAddress readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0xbfff, MRA_ROM ),
+		new Memory_ReadAddress( 0xc000, 0xcfff, MRA_RAM ),	/* c000-c7ff in cop01 */
+		new Memory_ReadAddress( 0xd000, 0xdfff, MRA_RAM ),
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( writemem )
 		{ 0x0000, 0xbfff, MWA_ROM },
@@ -124,11 +126,13 @@ public class cop01
 		{ 0x45, 0x45, watchdog_reset_w }, /* ? */
 	PORT_END
 	
-	static MEMORY_READ_START( sound_readmem )
-		{ 0x0000, 0x7fff, MRA_ROM },
-		{ 0x8000, 0x8000, MRA_NOP },	/* irq ack? */
-		{ 0xc000, 0xc7ff, MRA_RAM },
-	MEMORY_END
+	public static Memory_ReadAddress sound_readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x7fff, MRA_ROM ),
+		new Memory_ReadAddress( 0x8000, 0x8000, MRA_NOP ),	/* irq ack? */
+		new Memory_ReadAddress( 0xc000, 0xc7ff, MRA_RAM ),
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( sound_writemem )
 		{ 0x0000, 0x7fff, MWA_ROM },

@@ -643,13 +643,15 @@ public class ataxx
 	 *
 	 *************************************/
 	
-	static MEMORY_READ_START( master_readmem )
-		{ 0x0000, 0x1fff, MRA_ROM },
-		{ 0x2000, 0x9fff, MRA_BANK1 },
-		{ 0xa000, 0xdfff, MRA_BANK2 },
-		{ 0xe000, 0xf7ff, MRA_RAM },
-		{ 0xf800, 0xffff, paletteram_and_misc_r },
-	MEMORY_END
+	public static Memory_ReadAddress master_readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x1fff, MRA_ROM ),
+		new Memory_ReadAddress( 0x2000, 0x9fff, MRA_BANK1 ),
+		new Memory_ReadAddress( 0xa000, 0xdfff, MRA_BANK2 ),
+		new Memory_ReadAddress( 0xe000, 0xf7ff, MRA_RAM ),
+		new Memory_ReadAddress( 0xf800, 0xffff, paletteram_and_misc_r ),
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( master_writemem )
 		{ 0x0000, 0x9fff, MWA_ROM },
@@ -683,13 +685,15 @@ public class ataxx
 	 *
 	 *************************************/
 	
-	static MEMORY_READ_START( slave_readmem )
-		{ 0x0000, 0x1fff, MRA_ROM },
-		{ 0x2000, 0x9fff, MRA_BANK3 },
-		{ 0xa000, 0xdfff, MRA_ROM },
-		{ 0xe000, 0xefff, MRA_RAM },
-		{ 0xfffe, 0xfffe, raster_r },
-	MEMORY_END
+	public static Memory_ReadAddress slave_readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x1fff, MRA_ROM ),
+		new Memory_ReadAddress( 0x2000, 0x9fff, MRA_BANK3 ),
+		new Memory_ReadAddress( 0xa000, 0xdfff, MRA_ROM ),
+		new Memory_ReadAddress( 0xe000, 0xefff, MRA_RAM ),
+		new Memory_ReadAddress( 0xfffe, 0xfffe, raster_r ),
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( slave_writemem )
 		{ 0x0000, 0xdfff, MWA_ROM },

@@ -76,17 +76,19 @@ public class timeplt
 	
 	
 	
-	static MEMORY_READ_START( readmem )
-		{ 0x0000, 0x5fff, MRA_ROM },
-		{ 0x6004, 0x6004, psurge_protection_r },	/* psurge only */
-		{ 0xa000, 0xbfff, MRA_RAM },
-		{ 0xc000, 0xc000, timeplt_scanline_r },
-		{ 0xc200, 0xc200, input_port_4_r },	/* DSW2 */
-		{ 0xc300, 0xc300, input_port_0_r },	/* IN0 */
-		{ 0xc320, 0xc320, input_port_1_r },	/* IN1 */
-		{ 0xc340, 0xc340, input_port_2_r },	/* IN2 */
-		{ 0xc360, 0xc360, input_port_3_r },	/* DSW1 */
-	MEMORY_END
+	public static Memory_ReadAddress readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x5fff, MRA_ROM ),
+		new Memory_ReadAddress( 0x6004, 0x6004, psurge_protection_r ),	/* psurge only */
+		new Memory_ReadAddress( 0xa000, 0xbfff, MRA_RAM ),
+		new Memory_ReadAddress( 0xc000, 0xc000, timeplt_scanline_r ),
+		new Memory_ReadAddress( 0xc200, 0xc200, input_port_4_r ),	/* DSW2 */
+		new Memory_ReadAddress( 0xc300, 0xc300, input_port_0_r ),	/* IN0 */
+		new Memory_ReadAddress( 0xc320, 0xc320, input_port_1_r ),	/* IN1 */
+		new Memory_ReadAddress( 0xc340, 0xc340, input_port_2_r ),	/* IN2 */
+		new Memory_ReadAddress( 0xc360, 0xc360, input_port_3_r ),	/* DSW1 */
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( writemem )
 		{ 0x0000, 0x5fff, MWA_ROM },

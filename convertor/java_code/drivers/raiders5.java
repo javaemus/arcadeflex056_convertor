@@ -63,20 +63,22 @@ public class raiders5
 	
 	/****************************************************************************/
 	
-	static MEMORY_READ_START( readmem1 )
-		{ 0x0000, 0x7fff, MRA_ROM },
+	public static Memory_ReadAddress readmem1[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x7fff, MRA_ROM ),
 	
-		{ 0x8000, 0x87ff, spriteram_r },
-		{ 0x8800, 0x8fff, raiders5_fgram_r },
-		{ 0x9000, 0x97ff, raiders5_videoram_r },
+		new Memory_ReadAddress( 0x8000, 0x87ff, spriteram_r ),
+		new Memory_ReadAddress( 0x8800, 0x8fff, raiders5_fgram_r ),
+		new Memory_ReadAddress( 0x9000, 0x97ff, raiders5_videoram_r ),
 	
-		{ 0xc001, 0xc001, AY8910_read_port_0_r },
-		{ 0xc003, 0xc003, AY8910_read_port_1_r },
+		new Memory_ReadAddress( 0xc001, 0xc001, AY8910_read_port_0_r ),
+		new Memory_ReadAddress( 0xc003, 0xc003, AY8910_read_port_1_r ),
 	
-		{ 0xd000, 0xd1ff, paletteram_r },
+		new Memory_ReadAddress( 0xd000, 0xd1ff, paletteram_r ),
 	
-		{ 0xe000, 0xe7ff, MRA_RAM },
-	MEMORY_END
+		new Memory_ReadAddress( 0xe000, 0xe7ff, MRA_RAM ),
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( writemem1 )
 		{ 0x0000, 0x7fff, MWA_ROM },
@@ -103,20 +105,22 @@ public class raiders5
 		{ 0x00, 0x00, IORP_NOP }, /* watchdog? */
 	PORT_END
 	
-	static MEMORY_READ_START( readmem2 )
-		{ 0x0000, 0x3fff, MRA_ROM },
+	public static Memory_ReadAddress readmem2[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x3fff, MRA_ROM ),
 	
-		{ 0x8001, 0x8001, AY8910_read_port_0_r },
-		{ 0x8003, 0x8003, AY8910_read_port_1_r },
+		new Memory_ReadAddress( 0x8001, 0x8001, AY8910_read_port_0_r ),
+		new Memory_ReadAddress( 0x8003, 0x8003, AY8910_read_port_1_r ),
 	
-		{ 0x9000, 0x9000, MRA_NOP }, /* unknown */
+		new Memory_ReadAddress( 0x9000, 0x9000, MRA_NOP ), /* unknown */
 	
-		{ 0xa000, 0xa7ff, raiders5_shared_workram_r },
+		new Memory_ReadAddress( 0xa000, 0xa7ff, raiders5_shared_workram_r ),
 	
-		{ 0xc000, 0xc000, MRA_NOP }, /* unknown */
-		{ 0xc800, 0xc800, MRA_NOP }, /* unknown */
-		{ 0xd000, 0xd000, MRA_NOP }, /* unknown */
-	MEMORY_END
+		new Memory_ReadAddress( 0xc000, 0xc000, MRA_NOP ), /* unknown */
+		new Memory_ReadAddress( 0xc800, 0xc800, MRA_NOP ), /* unknown */
+		new Memory_ReadAddress( 0xd000, 0xd000, MRA_NOP ), /* unknown */
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( writemem2 )
 		{ 0x0000, 0x3fff, MWA_ROM },

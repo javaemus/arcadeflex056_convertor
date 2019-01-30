@@ -184,18 +184,20 @@ public class junofrst
 	
 	
 	
-	static MEMORY_READ_START( readmem )
-		{ 0x0000, 0x7fff, MRA_RAM },
-		{ 0x8010, 0x8010, input_port_0_r },	/* DSW2 (inverted bits) */
-		{ 0x801c, 0x801c, watchdog_reset_r },
-		{ 0x8020, 0x8020, input_port_1_r },	/* IN0 I/O: Coin slots, service, 1P/2P buttons */
-		{ 0x8024, 0x8024, input_port_2_r },	/* IN1: Player 1 I/O */
-		{ 0x8028, 0x8028, input_port_3_r },	/* IN2: Player 2 I/O */
-		{ 0x802c, 0x802c, input_port_4_r },	/* DSW1 (inverted bits) */
-		{ 0x8100, 0x8fff, MRA_RAM },
-		{ 0x9000, 0x9fff, MRA_BANK1 },
-		{ 0xa000, 0xffff, MRA_ROM },
-	MEMORY_END
+	public static Memory_ReadAddress readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x7fff, MRA_RAM ),
+		new Memory_ReadAddress( 0x8010, 0x8010, input_port_0_r ),	/* DSW2 (inverted bits) */
+		new Memory_ReadAddress( 0x801c, 0x801c, watchdog_reset_r ),
+		new Memory_ReadAddress( 0x8020, 0x8020, input_port_1_r ),	/* IN0 I/O: Coin slots, service, 1P/2P buttons */
+		new Memory_ReadAddress( 0x8024, 0x8024, input_port_2_r ),	/* IN1: Player 1 I/O */
+		new Memory_ReadAddress( 0x8028, 0x8028, input_port_3_r ),	/* IN2: Player 2 I/O */
+		new Memory_ReadAddress( 0x802c, 0x802c, input_port_4_r ),	/* DSW1 (inverted bits) */
+		new Memory_ReadAddress( 0x8100, 0x8fff, MRA_RAM ),
+		new Memory_ReadAddress( 0x9000, 0x9fff, MRA_BANK1 ),
+		new Memory_ReadAddress( 0xa000, 0xffff, MRA_ROM ),
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( writemem )
 		{ 0x0000, 0x7fff, tutankhm_videoram_w, &videoram, &videoram_size },
@@ -213,12 +215,14 @@ public class junofrst
 	MEMORY_END
 	
 	
-	static MEMORY_READ_START( sound_readmem )
-		{ 0x0000, 0x0fff, MRA_ROM },
-		{ 0x2000, 0x23ff, MRA_RAM },
-		{ 0x3000, 0x3000, soundlatch_r },
-		{ 0x4001, 0x4001, AY8910_read_port_0_r },
-	MEMORY_END
+	public static Memory_ReadAddress sound_readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x0fff, MRA_ROM ),
+		new Memory_ReadAddress( 0x2000, 0x23ff, MRA_RAM ),
+		new Memory_ReadAddress( 0x3000, 0x3000, soundlatch_r ),
+		new Memory_ReadAddress( 0x4001, 0x4001, AY8910_read_port_0_r ),
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( sound_writemem )
 		{ 0x0000, 0x0fff, MWA_ROM },
@@ -230,9 +234,11 @@ public class junofrst
 	MEMORY_END
 	
 	
-	static MEMORY_READ_START( i8039_readmem )
-		{ 0x0000, 0x0fff, MRA_ROM },
-	MEMORY_END
+	public static Memory_ReadAddress i8039_readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x0fff, MRA_ROM ),
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( i8039_writemem )
 		{ 0x0000, 0x0fff, MWA_ROM },

@@ -204,13 +204,15 @@ public class tigeroad
 		{ 0xffc000, 0xffffff, MWA16_RAM, &ram16 },
 	MEMORY_END
 	
-	static MEMORY_READ_START( sound_readmem )
-		{ 0x0000, 0x7fff, MRA_ROM },
-		{ 0x8000, 0x8000, YM2203_status_port_0_r },
-		{ 0xa000, 0xa000, YM2203_status_port_1_r },
-		{ 0xc000, 0xc7ff, MRA_RAM },
-		{ 0xe000, 0xe000, soundlatch_r },
-	MEMORY_END
+	public static Memory_ReadAddress sound_readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x7fff, MRA_ROM ),
+		new Memory_ReadAddress( 0x8000, 0x8000, YM2203_status_port_0_r ),
+		new Memory_ReadAddress( 0xa000, 0xa000, YM2203_status_port_1_r ),
+		new Memory_ReadAddress( 0xc000, 0xc7ff, MRA_RAM ),
+		new Memory_ReadAddress( 0xe000, 0xe000, soundlatch_r ),
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( sound_writemem )
 		{ 0x0000, 0x7fff, MWA_ROM },
@@ -225,9 +227,11 @@ public class tigeroad
 		{ 0x7f, 0x7f, soundlatch2_w },
 	PORT_END
 	
-	static MEMORY_READ_START( sample_readmem )
-		{ 0x0000, 0xffff, MRA_ROM },
-	MEMORY_END
+	public static Memory_ReadAddress sample_readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0xffff, MRA_ROM ),
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	/* yes, no RAM */
 	static MEMORY_WRITE_START( sample_writemem )

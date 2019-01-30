@@ -62,18 +62,20 @@ public class pbaction
 	
 	
 	
-	static MEMORY_READ_START( readmem )
-		{ 0x0000, 0x9fff, MRA_ROM },
-		{ 0xc000, 0xdfff, MRA_RAM },
-		{ 0xe000, 0xe07f, MRA_RAM },
-		{ 0xe400, 0xe5ff, MRA_RAM },
-		{ 0xe600, 0xe600, input_port_0_r },	/* IN0 */
-		{ 0xe601, 0xe601, input_port_1_r },	/* IN1 */
-		{ 0xe602, 0xe602, input_port_2_r },	/* IN2 */
-		{ 0xe604, 0xe604, input_port_3_r },	/* DSW1 */
-		{ 0xe605, 0xe605, input_port_4_r },	/* DSW2 */
-		{ 0xe606, 0xe606, MRA_NOP },	/* ??? */
-	MEMORY_END
+	public static Memory_ReadAddress readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x9fff, MRA_ROM ),
+		new Memory_ReadAddress( 0xc000, 0xdfff, MRA_RAM ),
+		new Memory_ReadAddress( 0xe000, 0xe07f, MRA_RAM ),
+		new Memory_ReadAddress( 0xe400, 0xe5ff, MRA_RAM ),
+		new Memory_ReadAddress( 0xe600, 0xe600, input_port_0_r ),	/* IN0 */
+		new Memory_ReadAddress( 0xe601, 0xe601, input_port_1_r ),	/* IN1 */
+		new Memory_ReadAddress( 0xe602, 0xe602, input_port_2_r ),	/* IN2 */
+		new Memory_ReadAddress( 0xe604, 0xe604, input_port_3_r ),	/* DSW1 */
+		new Memory_ReadAddress( 0xe605, 0xe605, input_port_4_r ),	/* DSW2 */
+		new Memory_ReadAddress( 0xe606, 0xe606, MRA_NOP ),	/* ??? */
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( writemem )
 		{ 0x0000, 0x9fff, MWA_ROM },
@@ -90,11 +92,13 @@ public class pbaction
 		{ 0xe800, 0xe800, pbaction_sh_command_w },
 	MEMORY_END
 	
-	static MEMORY_READ_START( sound_readmem )
-		{ 0x0000, 0x1fff, MRA_ROM },
-		{ 0x4000, 0x47ff, MRA_RAM },
-		{ 0x8000, 0x8000, soundlatch_r },
-	MEMORY_END
+	public static Memory_ReadAddress sound_readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x1fff, MRA_ROM ),
+		new Memory_ReadAddress( 0x4000, 0x47ff, MRA_RAM ),
+		new Memory_ReadAddress( 0x8000, 0x8000, soundlatch_r ),
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( sound_writemem )
 		{ 0x0000, 0x1fff, MWA_ROM },

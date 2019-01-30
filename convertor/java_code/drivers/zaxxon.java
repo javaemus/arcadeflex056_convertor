@@ -185,17 +185,19 @@ public class zaxxon
 	
 	
 	
-	static MEMORY_READ_START( readmem )
-		{ 0x0000, 0x4fff, MRA_ROM },
-		{ 0x6000, 0x6fff, MRA_RAM },
-		{ 0x8000, 0x83ff, MRA_RAM },
-		{ 0xa000, 0xa0ff, MRA_RAM },
-		{ 0xc000, 0xc000, input_port_0_r }, /* IN0 */
-		{ 0xc001, 0xc001, input_port_1_r }, /* IN1 */
-		{ 0xc002, 0xc002, input_port_3_r }, /* DSW0 */
-		{ 0xc003, 0xc003, input_port_4_r }, /* DSW1 */
-		{ 0xc100, 0xc100, input_port_2_r }, /* IN2 */
-	MEMORY_END
+	public static Memory_ReadAddress readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x4fff, MRA_ROM ),
+		new Memory_ReadAddress( 0x6000, 0x6fff, MRA_RAM ),
+		new Memory_ReadAddress( 0x8000, 0x83ff, MRA_RAM ),
+		new Memory_ReadAddress( 0xa000, 0xa0ff, MRA_RAM ),
+		new Memory_ReadAddress( 0xc000, 0xc000, input_port_0_r ), /* IN0 */
+		new Memory_ReadAddress( 0xc001, 0xc001, input_port_1_r ), /* IN1 */
+		new Memory_ReadAddress( 0xc002, 0xc002, input_port_3_r ), /* DSW0 */
+		new Memory_ReadAddress( 0xc003, 0xc003, input_port_4_r ), /* DSW1 */
+		new Memory_ReadAddress( 0xc100, 0xc100, input_port_2_r ), /* IN2 */
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( writemem )
 		{ 0x0000, 0x4fff, MWA_ROM },
@@ -213,18 +215,20 @@ public class zaxxon
 		{ 0xfffb, 0xfffb, MWA_RAM, &zaxxon_background_enable },
 	MEMORY_END
 	
-	static MEMORY_READ_START( ixion_readmem )
-		{ 0x0000, 0x4fff, MRA_ROM },
-		{ 0x6000, 0x6fff, MRA_RAM },
-		{ 0x8000, 0x83ff, MRA_RAM },
-		{ 0xa000, 0xa0ff, MRA_RAM },
-		{ 0xc000, 0xc000, razmataz_dial_0_r }, /* IN0 */
-		{ 0xc001, 0xc001, input_port_1_r }, /* IN1 */
-		{ 0xc002, 0xc002, input_port_3_r }, /* DSW0 */
-		{ 0xc003, 0xc003, input_port_4_r }, /* DSW1 */
-		{ 0xc100, 0xc100, input_port_2_r }, /* IN2 */
-		{ 0xff3c, 0xff3c, razmataz_unknown2_r },	/* no idea .. timer? in razmataz */
-	MEMORY_END
+	public static Memory_ReadAddress ixion_readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x4fff, MRA_ROM ),
+		new Memory_ReadAddress( 0x6000, 0x6fff, MRA_RAM ),
+		new Memory_ReadAddress( 0x8000, 0x83ff, MRA_RAM ),
+		new Memory_ReadAddress( 0xa000, 0xa0ff, MRA_RAM ),
+		new Memory_ReadAddress( 0xc000, 0xc000, razmataz_dial_0_r ), /* IN0 */
+		new Memory_ReadAddress( 0xc001, 0xc001, input_port_1_r ), /* IN1 */
+		new Memory_ReadAddress( 0xc002, 0xc002, input_port_3_r ), /* DSW0 */
+		new Memory_ReadAddress( 0xc003, 0xc003, input_port_4_r ), /* DSW1 */
+		new Memory_ReadAddress( 0xc100, 0xc100, input_port_2_r ), /* IN2 */
+		new Memory_ReadAddress( 0xff3c, 0xff3c, razmataz_unknown2_r ),	/* no idea .. timer? in razmataz */
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( futspy_writemem )
 		{ 0x0000, 0x4fff, MWA_ROM },
@@ -241,21 +245,23 @@ public class zaxxon
 	MEMORY_END
 	
 	
-	static MEMORY_READ_START( razmataz_readmem )
-		{ 0x0000, 0x5fff, MRA_ROM },
-		{ 0x6000, 0x6fff, MRA_RAM },
-		{ 0x8000, 0x83ff, MRA_RAM },
-		{ 0xa000, 0xa0ff, MRA_RAM },
-		{ 0xc000, 0xc000, razmataz_dial_0_r },	/* dial pl 1 */
-		{ 0xc002, 0xc002, input_port_3_r }, /* DSW0 */
-		{ 0xc003, 0xc003, input_port_4_r }, /* DSW1 */
-		{ 0xc004, 0xc004, input_port_6_r }, /* fire/start pl 1 */
-		{ 0xc008, 0xc008, razmataz_dial_1_r },	/* dial pl 2 */
-		{ 0xc00c, 0xc00c, input_port_7_r }, /* fire/start pl 2 */
-		{ 0xc100, 0xc100, input_port_2_r }, /* coin */
-		{ 0xc80a, 0xc80a, razmataz_unknown1_r },	/* needed, otherwise the game hangs */
-		{ 0xff3c, 0xff3c, razmataz_unknown2_r },	/* timer? if 0, "duck season" ends */
-	MEMORY_END
+	public static Memory_ReadAddress razmataz_readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x5fff, MRA_ROM ),
+		new Memory_ReadAddress( 0x6000, 0x6fff, MRA_RAM ),
+		new Memory_ReadAddress( 0x8000, 0x83ff, MRA_RAM ),
+		new Memory_ReadAddress( 0xa000, 0xa0ff, MRA_RAM ),
+		new Memory_ReadAddress( 0xc000, 0xc000, razmataz_dial_0_r ),	/* dial pl 1 */
+		new Memory_ReadAddress( 0xc002, 0xc002, input_port_3_r ), /* DSW0 */
+		new Memory_ReadAddress( 0xc003, 0xc003, input_port_4_r ), /* DSW1 */
+		new Memory_ReadAddress( 0xc004, 0xc004, input_port_6_r ), /* fire/start pl 1 */
+		new Memory_ReadAddress( 0xc008, 0xc008, razmataz_dial_1_r ),	/* dial pl 2 */
+		new Memory_ReadAddress( 0xc00c, 0xc00c, input_port_7_r ), /* fire/start pl 2 */
+		new Memory_ReadAddress( 0xc100, 0xc100, input_port_2_r ), /* coin */
+		new Memory_ReadAddress( 0xc80a, 0xc80a, razmataz_unknown1_r ),	/* needed, otherwise the game hangs */
+		new Memory_ReadAddress( 0xff3c, 0xff3c, razmataz_unknown2_r ),	/* timer? if 0, "duck season" ends */
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( razmataz_writemem )
 		{ 0x0000, 0x5fff, MWA_ROM },

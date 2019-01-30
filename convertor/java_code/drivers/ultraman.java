@@ -146,13 +146,15 @@ public class ultraman
 		{ 0x304800, 0x304fff, ultraman_K051960_w },			/* Sprite RAM */
 	MEMORY_END
 	
-	static MEMORY_READ_START( ultraman_readmem_sound )
-		{ 0x0000, 0x7fff, MRA_ROM },					/* ROM */
-		{ 0x8000, 0xbfff, MRA_RAM },					/* RAM */
-		{ 0xc000, 0xc000, soundlatch_r },				/* Sound latch read */
-		{ 0xe000, 0xe000, OKIM6295_status_0_r },		/* M6295 */
-		{ 0xf001, 0xf001, YM2151_status_port_0_r },		/* YM2151 */
-	MEMORY_END
+	public static Memory_ReadAddress ultraman_readmem_sound[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x7fff, MRA_ROM ),					/* ROM */
+		new Memory_ReadAddress( 0x8000, 0xbfff, MRA_RAM ),					/* RAM */
+		new Memory_ReadAddress( 0xc000, 0xc000, soundlatch_r ),				/* Sound latch read */
+		new Memory_ReadAddress( 0xe000, 0xe000, OKIM6295_status_0_r ),		/* M6295 */
+		new Memory_ReadAddress( 0xf001, 0xf001, YM2151_status_port_0_r ),		/* YM2151 */
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( ultraman_writemem_sound )
 		{ 0x0000, 0x7fff, MWA_ROM },					/* ROM */

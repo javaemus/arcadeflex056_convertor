@@ -286,15 +286,17 @@ public class shangkid
 	
 	/***************************************************************************************/
 	
-	static MEMORY_READ_START( main_readmem )
-		{ 0x0000, 0x7fff, MRA_ROM },
-		{ 0x8000, 0x9fff, MRA_BANK1 },
-		{ 0xb800, 0xb800, input_port_0_r }, /* SW1 */
-		{ 0xb801, 0xb801, input_port_1_r }, /* coin/start */
-		{ 0xb802, 0xb802, input_port_2_r }, /* player#2 */
-		{ 0xb803, 0xb803, input_port_3_r }, /* player#1 */
-		{ 0xd000, 0xffff, MRA_RAM },
-	MEMORY_END
+	public static Memory_ReadAddress main_readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x7fff, MRA_ROM ),
+		new Memory_ReadAddress( 0x8000, 0x9fff, MRA_BANK1 ),
+		new Memory_ReadAddress( 0xb800, 0xb800, input_port_0_r ), /* SW1 */
+		new Memory_ReadAddress( 0xb801, 0xb801, input_port_1_r ), /* coin/start */
+		new Memory_ReadAddress( 0xb802, 0xb802, input_port_2_r ), /* player#2 */
+		new Memory_ReadAddress( 0xb803, 0xb803, input_port_3_r ), /* player#1 */
+		new Memory_ReadAddress( 0xd000, 0xffff, MRA_RAM ),
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( main_writemem )
 		{ 0x0000, 0x9fff, MWA_ROM },
@@ -314,15 +316,17 @@ public class shangkid
 	
 	/***************************************************************************************/
 	
-	static MEMORY_READ_START( bbx_readmem )
-		{ 0x0000, 0x9fff, MRA_ROM },
-		{ 0xb800, 0xb800, input_port_0_r }, /* SW1 */
-		{ 0xb801, 0xb801, input_port_1_r }, /* coin/start */
-		{ 0xb802, 0xb802, input_port_2_r }, /* player#2 */
-		{ 0xb803, 0xb803, input_port_3_r }, /* player#1 */
-		{ 0xd000, 0xdfff, videoram_r },
-		{ 0xe000, 0xffff, shareram_r },
-	MEMORY_END
+	public static Memory_ReadAddress bbx_readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x9fff, MRA_ROM ),
+		new Memory_ReadAddress( 0xb800, 0xb800, input_port_0_r ), /* SW1 */
+		new Memory_ReadAddress( 0xb801, 0xb801, input_port_1_r ), /* coin/start */
+		new Memory_ReadAddress( 0xb802, 0xb802, input_port_2_r ), /* player#2 */
+		new Memory_ReadAddress( 0xb803, 0xb803, input_port_3_r ), /* player#1 */
+		new Memory_ReadAddress( 0xd000, 0xdfff, videoram_r ),
+		new Memory_ReadAddress( 0xe000, 0xffff, shareram_r ),
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( bbx_writemem )
 		{ 0x0000, 0x9fff, MWA_ROM },
@@ -345,10 +349,12 @@ public class shangkid
 	
 	/***************************************************************************************/
 	
-	static MEMORY_READ_START( sound_readmem )
-		{ 0x0000, 0xdfff, MRA_BANK2 },
-		{ 0xe000, 0xefff, MRA_RAM },
-	MEMORY_END
+	public static Memory_ReadAddress sound_readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0xdfff, MRA_BANK2 ),
+		new Memory_ReadAddress( 0xe000, 0xefff, MRA_RAM ),
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( sound_writemem )
 		{ 0x0000, 0xdfff, MWA_NOP }, /* sample player writes to ROM area */
@@ -417,19 +423,21 @@ public class shangkid
 	MACHINE_DRIVER( chinhero )
 	MACHINE_DRIVER( shangkid )
 	
-	static MEMORY_READ_START( dynamski_readmem )
-		{ 0x0000, 0x7fff, MRA_ROM },
-		{ 0xc000, 0xc7ff, MRA_RAM },
-		{ 0xc800, 0xcbff, MRA_RAM },
-		{ 0xd000, 0xd3ff, MRA_RAM },
-		{ 0xd800, 0xdbff, MRA_RAM },
-		{ 0xe000, 0xe002, MRA_RAM },
-		{ 0xe800, 0xe800, input_port_0_r },
-		{ 0xe801, 0xe801, input_port_1_r },
-		{ 0xe802, 0xe802, input_port_2_r },
-		{ 0xe803, 0xe803, input_port_3_r },
-		{ 0xf000, 0xf7ff, MRA_RAM }, /* work ram */
-	MEMORY_END
+	public static Memory_ReadAddress dynamski_readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x7fff, MRA_ROM ),
+		new Memory_ReadAddress( 0xc000, 0xc7ff, MRA_RAM ),
+		new Memory_ReadAddress( 0xc800, 0xcbff, MRA_RAM ),
+		new Memory_ReadAddress( 0xd000, 0xd3ff, MRA_RAM ),
+		new Memory_ReadAddress( 0xd800, 0xdbff, MRA_RAM ),
+		new Memory_ReadAddress( 0xe000, 0xe002, MRA_RAM ),
+		new Memory_ReadAddress( 0xe800, 0xe800, input_port_0_r ),
+		new Memory_ReadAddress( 0xe801, 0xe801, input_port_1_r ),
+		new Memory_ReadAddress( 0xe802, 0xe802, input_port_2_r ),
+		new Memory_ReadAddress( 0xe803, 0xe803, input_port_3_r ),
+		new Memory_ReadAddress( 0xf000, 0xf7ff, MRA_RAM ), /* work ram */
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( dynamski_writemem )
 		{ 0x0000, 0x7fff, MWA_ROM },

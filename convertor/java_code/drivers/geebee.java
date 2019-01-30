@@ -105,21 +105,25 @@ public class geebee
 	 *
 	 *******************************************************/
 	
-	static MEMORY_READ_START( readmem )
-		{ 0x0000, 0x1fff, MRA_ROM },	/* GeeBee uses only the first 4K */
-		{ 0x2000, 0x23ff, MRA_RAM },
-		{ 0x3000, 0x37ff, MRA_ROM },	/* GeeBee uses only the first 1K */
-		{ 0x4000, 0x40ff, MRA_RAM },
-		{ 0x5000, 0x5fff, geebee_in_r },
-	MEMORY_END
+	public static Memory_ReadAddress readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x1fff, MRA_ROM ),	/* GeeBee uses only the first 4K */
+		new Memory_ReadAddress( 0x2000, 0x23ff, MRA_RAM ),
+		new Memory_ReadAddress( 0x3000, 0x37ff, MRA_ROM ),	/* GeeBee uses only the first 1K */
+		new Memory_ReadAddress( 0x4000, 0x40ff, MRA_RAM ),
+		new Memory_ReadAddress( 0x5000, 0x5fff, geebee_in_r ),
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
-	static MEMORY_READ_START( readmem_navalone )
-		{ 0x0000, 0x1fff, MRA_ROM },
-		{ 0x2000, 0x23ff, MRA_RAM },
-		{ 0x3000, 0x37ff, MRA_ROM },
-		{ 0x4000, 0x40ff, MRA_RAM },
-		{ 0x5000, 0x5fff, navalone_in_r },
-	MEMORY_END
+	public static Memory_ReadAddress readmem_navalone[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x1fff, MRA_ROM ),
+		new Memory_ReadAddress( 0x2000, 0x23ff, MRA_RAM ),
+		new Memory_ReadAddress( 0x3000, 0x37ff, MRA_ROM ),
+		new Memory_ReadAddress( 0x4000, 0x40ff, MRA_RAM ),
+		new Memory_ReadAddress( 0x5000, 0x5fff, navalone_in_r ),
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( writemem )
 		{ 0x0000, 0x1fff, MWA_ROM },

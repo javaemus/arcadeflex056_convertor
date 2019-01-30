@@ -191,15 +191,17 @@ public class scobra
 	}
 	
 	
-	static MEMORY_READ_START( type1_readmem )
-		{ 0x0000, 0x7fff, MRA_ROM },
-		{ 0x8000, 0x8bff, MRA_RAM },
-		{ 0x8c00, 0x8fff, galaxian_videoram_r },	/* mirror */
-		{ 0x9000, 0x90ff, MRA_RAM },
-		{ 0x9800, 0x9803, ppi8255_0_r },
-		{ 0xa000, 0xa003, ppi8255_1_r },
-		{ 0xb000, 0xb000, watchdog_reset_r },
-	MEMORY_END
+	public static Memory_ReadAddress type1_readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x7fff, MRA_ROM ),
+		new Memory_ReadAddress( 0x8000, 0x8bff, MRA_RAM ),
+		new Memory_ReadAddress( 0x8c00, 0x8fff, galaxian_videoram_r ),	/* mirror */
+		new Memory_ReadAddress( 0x9000, 0x90ff, MRA_RAM ),
+		new Memory_ReadAddress( 0x9800, 0x9803, ppi8255_0_r ),
+		new Memory_ReadAddress( 0xa000, 0xa003, ppi8255_1_r ),
+		new Memory_ReadAddress( 0xb000, 0xb000, watchdog_reset_r ),
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( type1_writemem )
 		{ 0x0000, 0x7fff, MWA_ROM },
@@ -220,15 +222,17 @@ public class scobra
 	MEMORY_END
 	
 	
-	static MEMORY_READ_START( type2_readmem )
-		{ 0x0000, 0x7fff, MRA_ROM },
-		{ 0x8000, 0x88ff, MRA_RAM },
-		{ 0x9000, 0x93ff, MRA_RAM },
-		{ 0x9400, 0x97ff, galaxian_videoram_r },	/* mirror */
-		{ 0x9800, 0x9800, watchdog_reset_r},
-		{ 0xa000, 0xa00f, scobra_type2_ppi8255_0_r },
-		{ 0xa800, 0xa80f, scobra_type2_ppi8255_1_r },
-	MEMORY_END
+	public static Memory_ReadAddress type2_readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x7fff, MRA_ROM ),
+		new Memory_ReadAddress( 0x8000, 0x88ff, MRA_RAM ),
+		new Memory_ReadAddress( 0x9000, 0x93ff, MRA_RAM ),
+		new Memory_ReadAddress( 0x9400, 0x97ff, galaxian_videoram_r ),	/* mirror */
+		new Memory_ReadAddress( 0x9800, 0x9800, watchdog_reset_r),
+		new Memory_ReadAddress( 0xa000, 0xa00f, scobra_type2_ppi8255_0_r ),
+		new Memory_ReadAddress( 0xa800, 0xa80f, scobra_type2_ppi8255_1_r ),
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( type2_writemem )
 		{ 0x0000, 0x7fff, MWA_ROM },
@@ -249,14 +253,16 @@ public class scobra
 	MEMORY_END
 	
 	
-	static MEMORY_READ_START( hustler_readmem )
-		{ 0x0000, 0x7fff, MRA_ROM },
-		{ 0x8000, 0x8bff, MRA_RAM },
-		{ 0x9000, 0x90ff, MRA_RAM },
-		{ 0xb800, 0xb800, watchdog_reset_r },
-		{ 0xd000, 0xd01f, hustler_ppi8255_0_r },
-		{ 0xe000, 0xe01f, hustler_ppi8255_1_r },
-	MEMORY_END
+	public static Memory_ReadAddress hustler_readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x7fff, MRA_ROM ),
+		new Memory_ReadAddress( 0x8000, 0x8bff, MRA_RAM ),
+		new Memory_ReadAddress( 0x9000, 0x90ff, MRA_RAM ),
+		new Memory_ReadAddress( 0xb800, 0xb800, watchdog_reset_r ),
+		new Memory_ReadAddress( 0xd000, 0xd01f, hustler_ppi8255_0_r ),
+		new Memory_ReadAddress( 0xe000, 0xe01f, hustler_ppi8255_1_r ),
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( hustler_writemem )
 		{ 0x0000, 0x7fff, MWA_ROM },
@@ -275,14 +281,16 @@ public class scobra
 	MEMORY_END
 	
 	
-	static MEMORY_READ_START( hustlerb_readmem )
-		{ 0x0000, 0x7fff, MRA_ROM },
-		{ 0x8000, 0x8bff, MRA_RAM },
-		{ 0x9000, 0x90ff, MRA_RAM },
-		{ 0xb000, 0xb000, watchdog_reset_r },
-		{ 0xc100, 0xc103, ppi8255_0_r },
-		{ 0xc200, 0xc203, ppi8255_1_r },
-	MEMORY_END
+	public static Memory_ReadAddress hustlerb_readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x7fff, MRA_ROM ),
+		new Memory_ReadAddress( 0x8000, 0x8bff, MRA_RAM ),
+		new Memory_ReadAddress( 0x9000, 0x90ff, MRA_RAM ),
+		new Memory_ReadAddress( 0xb000, 0xb000, watchdog_reset_r ),
+		new Memory_ReadAddress( 0xc100, 0xc103, ppi8255_0_r ),
+		new Memory_ReadAddress( 0xc200, 0xc203, ppi8255_1_r ),
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( hustlerb_writemem )
 		{ 0x0000, 0x3fff, MWA_ROM },

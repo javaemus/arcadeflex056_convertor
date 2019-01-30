@@ -276,16 +276,18 @@ public class pacman
 	}
 	
 	
-	static MEMORY_READ_START( readmem )
-		{ 0x0000, 0x3fff, MRA_ROM },
-		{ 0x4000, 0x47ff, MRA_RAM },	/* video and color RAM */
-		{ 0x4c00, 0x4fff, MRA_RAM },	/* including sprite codes at 4ff0-4fff */
-		{ 0x5000, 0x503f, input_port_0_r },	/* IN0 */
-		{ 0x5040, 0x507f, input_port_1_r },	/* IN1 */
-		{ 0x5080, 0x50bf, input_port_2_r },	/* DSW1 */
-		{ 0x50c0, 0x50ff, input_port_3_r },	/* DSW2 */
-		{ 0x8000, 0xbfff, MRA_ROM },	/* Ms. Pac-Man / Ponpoko only */
-	MEMORY_END
+	public static Memory_ReadAddress readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x3fff, MRA_ROM ),
+		new Memory_ReadAddress( 0x4000, 0x47ff, MRA_RAM ),	/* video and color RAM */
+		new Memory_ReadAddress( 0x4c00, 0x4fff, MRA_RAM ),	/* including sprite codes at 4ff0-4fff */
+		new Memory_ReadAddress( 0x5000, 0x503f, input_port_0_r ),	/* IN0 */
+		new Memory_ReadAddress( 0x5040, 0x507f, input_port_1_r ),	/* IN1 */
+		new Memory_ReadAddress( 0x5080, 0x50bf, input_port_2_r ),	/* DSW1 */
+		new Memory_ReadAddress( 0x50c0, 0x50ff, input_port_3_r ),	/* DSW2 */
+		new Memory_ReadAddress( 0x8000, 0xbfff, MRA_ROM ),	/* Ms. Pac-Man / Ponpoko only */
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( writemem )
 		{ 0x0000, 0x3fff, MWA_ROM },
@@ -310,27 +312,31 @@ public class pacman
 	MEMORY_END
 	
 	
-	static MEMORY_READ_START( mschamp_readmem )
-		{ 0x0000, 0x3fff, MRA_BANK1 },		/* By Sil: Zola/Ms. Champ */
-		{ 0x4000, 0x47ff, MRA_RAM },		/* video and color RAM */
-		{ 0x4c00, 0x4fff, MRA_RAM },		/* including sprite codes at 4ff0-4fff */
-		{ 0x5000, 0x503f, input_port_0_r },	/* IN0 */
-		{ 0x5040, 0x507f, input_port_1_r },	/* IN1 */
-		{ 0x5080, 0x50bf, input_port_2_r },	/* DSW */
-		{ 0x8000, 0x9fff, MRA_BANK2 },		/* By Sil: Zola/Ms. Champ */
-	MEMORY_END
+	public static Memory_ReadAddress mschamp_readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x3fff, MRA_BANK1 ),		/* By Sil: Zola/Ms. Champ */
+		new Memory_ReadAddress( 0x4000, 0x47ff, MRA_RAM ),		/* video and color RAM */
+		new Memory_ReadAddress( 0x4c00, 0x4fff, MRA_RAM ),		/* including sprite codes at 4ff0-4fff */
+		new Memory_ReadAddress( 0x5000, 0x503f, input_port_0_r ),	/* IN0 */
+		new Memory_ReadAddress( 0x5040, 0x507f, input_port_1_r ),	/* IN1 */
+		new Memory_ReadAddress( 0x5080, 0x50bf, input_port_2_r ),	/* DSW */
+		new Memory_ReadAddress( 0x8000, 0x9fff, MRA_BANK2 ),		/* By Sil: Zola/Ms. Champ */
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	
-	static MEMORY_READ_START( mspacman_readmem )
-		{ 0x0000, 0x3fff, MRA_BANK1 },
-		{ 0x4000, 0x47ff, MRA_RAM },	/* video and color RAM */
-		{ 0x4c00, 0x4fff, MRA_RAM },	/* including sprite codes at 4ff0-4fff */
-		{ 0x5000, 0x503f, input_port_0_r },	/* IN0 */
-		{ 0x5040, 0x507f, input_port_1_r },	/* IN1 */
-		{ 0x5080, 0x50bf, input_port_2_r },	/* DSW1 */
-		{ 0x50c0, 0x50ff, input_port_3_r },	/* DSW2 */
-		{ 0x8000, 0xbfff, MRA_BANK1 },
-	MEMORY_END
+	public static Memory_ReadAddress mspacman_readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x3fff, MRA_BANK1 ),
+		new Memory_ReadAddress( 0x4000, 0x47ff, MRA_RAM ),	/* video and color RAM */
+		new Memory_ReadAddress( 0x4c00, 0x4fff, MRA_RAM ),	/* including sprite codes at 4ff0-4fff */
+		new Memory_ReadAddress( 0x5000, 0x503f, input_port_0_r ),	/* IN0 */
+		new Memory_ReadAddress( 0x5040, 0x507f, input_port_1_r ),	/* IN1 */
+		new Memory_ReadAddress( 0x5080, 0x50bf, input_port_2_r ),	/* DSW1 */
+		new Memory_ReadAddress( 0x50c0, 0x50ff, input_port_3_r ),	/* DSW2 */
+		new Memory_ReadAddress( 0x8000, 0xbfff, MRA_BANK1 ),
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( mspacman_writemem )
 		{ 0x0000, 0x3fff, MWA_BANK1 },
@@ -356,19 +362,21 @@ public class pacman
 	MEMORY_END
 	
 	
-	static MEMORY_READ_START( alibaba_readmem )
-		{ 0x0000, 0x3fff, MRA_ROM },
-		{ 0x4000, 0x47ff, MRA_RAM },	/* video and color RAM */
-		{ 0x4c00, 0x4fff, MRA_RAM },	/* including sprite codes at 4ef0-4eff */
-		{ 0x5000, 0x503f, input_port_0_r },	/* IN0 */
-		{ 0x5040, 0x507f, input_port_1_r },	/* IN1 */
-		{ 0x5080, 0x50bf, input_port_2_r },	/* DSW1 */
-		{ 0x50c0, 0x50c0, alibaba_mystery_1_r },
-		{ 0x50c1, 0x50c1, alibaba_mystery_2_r },
-		{ 0x8000, 0x8fff, MRA_ROM },
-		{ 0x9000, 0x93ff, MRA_RAM },
-		{ 0xa000, 0xa7ff, MRA_ROM },
-	MEMORY_END
+	public static Memory_ReadAddress alibaba_readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x3fff, MRA_ROM ),
+		new Memory_ReadAddress( 0x4000, 0x47ff, MRA_RAM ),	/* video and color RAM */
+		new Memory_ReadAddress( 0x4c00, 0x4fff, MRA_RAM ),	/* including sprite codes at 4ef0-4eff */
+		new Memory_ReadAddress( 0x5000, 0x503f, input_port_0_r ),	/* IN0 */
+		new Memory_ReadAddress( 0x5040, 0x507f, input_port_1_r ),	/* IN1 */
+		new Memory_ReadAddress( 0x5080, 0x50bf, input_port_2_r ),	/* DSW1 */
+		new Memory_ReadAddress( 0x50c0, 0x50c0, alibaba_mystery_1_r ),
+		new Memory_ReadAddress( 0x50c1, 0x50c1, alibaba_mystery_2_r ),
+		new Memory_ReadAddress( 0x8000, 0x8fff, MRA_ROM ),
+		new Memory_ReadAddress( 0x9000, 0x93ff, MRA_RAM ),
+		new Memory_ReadAddress( 0xa000, 0xa7ff, MRA_ROM ),
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( alibaba_writemem )
 		{ 0x0000, 0x3fff, MWA_ROM },
@@ -410,15 +418,17 @@ public class pacman
 	PORT_END
 	
 	
-	static MEMORY_READ_START( theglobp_readmem )
-		{ 0x0000, 0x3fff, MRA_BANK1 },
-		{ 0x4000, 0x47ff, MRA_RAM },	/* video and color RAM */
-		{ 0x4c00, 0x4fff, MRA_RAM },	/* including sprite codes at 4ff0-4fff */
-		{ 0x5000, 0x503f, input_port_0_r },	/* IN0 */
-		{ 0x5040, 0x507f, input_port_1_r },	/* IN1 */
-		{ 0x5080, 0x50bf, input_port_2_r },	/* DSW1 */
-		{ 0x50c0, 0x50ff, input_port_3_r },	/* DSW2 */
-	MEMORY_END
+	public static Memory_ReadAddress theglobp_readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x3fff, MRA_BANK1 ),
+		new Memory_ReadAddress( 0x4000, 0x47ff, MRA_RAM ),	/* video and color RAM */
+		new Memory_ReadAddress( 0x4c00, 0x4fff, MRA_RAM ),	/* including sprite codes at 4ff0-4fff */
+		new Memory_ReadAddress( 0x5000, 0x503f, input_port_0_r ),	/* IN0 */
+		new Memory_ReadAddress( 0x5040, 0x507f, input_port_1_r ),	/* IN1 */
+		new Memory_ReadAddress( 0x5080, 0x50bf, input_port_2_r ),	/* DSW1 */
+		new Memory_ReadAddress( 0x50c0, 0x50ff, input_port_3_r ),	/* DSW2 */
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static PORT_READ_START( theglobp_readport )
 		{ 0x00, 0xff, theglobp_decrypt_rom },	/* Switch protection logic */

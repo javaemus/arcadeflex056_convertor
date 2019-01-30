@@ -90,21 +90,23 @@ public class surpratk
 	
 	/********************************************/
 	
-	static MEMORY_READ_START( surpratk_readmem )
-		{ 0x0000, 0x07ff, bankedram_r },
-		{ 0x0800, 0x1fff, MRA_RAM },
-		{ 0x2000, 0x3fff, MRA_BANK1 },			/* banked ROM */
-		{ 0x5f8c, 0x5f8c, input_port_0_r },
-		{ 0x5f8d, 0x5f8d, input_port_1_r },
-		{ 0x5f8e, 0x5f8e, input_port_4_r },
-		{ 0x5f8f, 0x5f8f, input_port_2_r },
-		{ 0x5f90, 0x5f90, input_port_3_r },
-	//	{ 0x5f91, 0x5f91, YM2151_status_port_0_r },	/* ? */
-		{ 0x5fa0, 0x5faf, K053244_r },
-		{ 0x5fc0, 0x5fc0, watchdog_reset_r },
-		{ 0x4000, 0x7fff, K052109_r },
-		{ 0x8000, 0xffff, MRA_ROM },			/* ROM */
-	MEMORY_END
+	public static Memory_ReadAddress surpratk_readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x07ff, bankedram_r ),
+		new Memory_ReadAddress( 0x0800, 0x1fff, MRA_RAM ),
+		new Memory_ReadAddress( 0x2000, 0x3fff, MRA_BANK1 ),			/* banked ROM */
+		new Memory_ReadAddress( 0x5f8c, 0x5f8c, input_port_0_r ),
+		new Memory_ReadAddress( 0x5f8d, 0x5f8d, input_port_1_r ),
+		new Memory_ReadAddress( 0x5f8e, 0x5f8e, input_port_4_r ),
+		new Memory_ReadAddress( 0x5f8f, 0x5f8f, input_port_2_r ),
+		new Memory_ReadAddress( 0x5f90, 0x5f90, input_port_3_r ),
+	//	new Memory_ReadAddress( 0x5f91, 0x5f91, YM2151_status_port_0_r ),	/* ? */
+		new Memory_ReadAddress( 0x5fa0, 0x5faf, K053244_r ),
+		new Memory_ReadAddress( 0x5fc0, 0x5fc0, watchdog_reset_r ),
+		new Memory_ReadAddress( 0x4000, 0x7fff, K052109_r ),
+		new Memory_ReadAddress( 0x8000, 0xffff, MRA_ROM ),			/* ROM */
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( surpratk_writemem )
 		{ 0x0000, 0x07ff, bankedram_w, &ram },

@@ -52,16 +52,18 @@ public class dynduke
 	
 	/******************************************************************************/
 	
-	static MEMORY_READ_START( readmem )
-		{ 0x00000, 0x07fff, MRA_RAM },
-		{ 0x0a000, 0x0afff, dynduke_shared_r },
-		{ 0x0b000, 0x0b000, input_port_1_r },
-		{ 0x0b001, 0x0b001, input_port_2_r },
-		{ 0x0b002, 0x0b002, input_port_3_r },
-		{ 0x0b003, 0x0b003, input_port_4_r },
-		{ 0x0d000, 0x0d00d, seibu_main_v30_r },
-		{ 0xa0000, 0xfffff, MRA_ROM },
-	MEMORY_END
+	public static Memory_ReadAddress readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x00000, 0x07fff, MRA_RAM ),
+		new Memory_ReadAddress( 0x0a000, 0x0afff, dynduke_shared_r ),
+		new Memory_ReadAddress( 0x0b000, 0x0b000, input_port_1_r ),
+		new Memory_ReadAddress( 0x0b001, 0x0b001, input_port_2_r ),
+		new Memory_ReadAddress( 0x0b002, 0x0b002, input_port_3_r ),
+		new Memory_ReadAddress( 0x0b003, 0x0b003, input_port_4_r ),
+		new Memory_ReadAddress( 0x0d000, 0x0d00d, seibu_main_v30_r ),
+		new Memory_ReadAddress( 0xa0000, 0xfffff, MRA_ROM ),
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( writemem )
 		{ 0x00000, 0x06fff, MWA_RAM },
@@ -74,14 +76,16 @@ public class dynduke
 		{ 0xa0000, 0xfffff, MWA_ROM },
 	MEMORY_END
 	
-	static MEMORY_READ_START( sub_readmem )
-		{ 0x00000, 0x05fff, MRA_RAM },
-		{ 0x06000, 0x067ff, dynduke_background_r },
-		{ 0x06800, 0x06fff, dynduke_foreground_r },
-		{ 0x07000, 0x07fff, paletteram_r },
-		{ 0x08000, 0x08fff, dynduke_shared_r },
-		{ 0xc0000, 0xfffff, MRA_ROM },
-	MEMORY_END
+	public static Memory_ReadAddress sub_readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x00000, 0x05fff, MRA_RAM ),
+		new Memory_ReadAddress( 0x06000, 0x067ff, dynduke_background_r ),
+		new Memory_ReadAddress( 0x06800, 0x06fff, dynduke_foreground_r ),
+		new Memory_ReadAddress( 0x07000, 0x07fff, paletteram_r ),
+		new Memory_ReadAddress( 0x08000, 0x08fff, dynduke_shared_r ),
+		new Memory_ReadAddress( 0xc0000, 0xfffff, MRA_ROM ),
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( sub_writemem )
 		{ 0x00000, 0x05fff, MWA_RAM },

@@ -166,19 +166,21 @@ public class turbo
 	 * CPU memory structures
 	 *********************************************************************/
 	
-	static MEMORY_READ_START( readmem )
-		{ 0x0000, 0x5fff, MRA_ROM },
-		{ 0xb000, 0xb1ff, MRA_RAM },
-		{ 0xe000, 0xe7ff, MRA_RAM },
-		{ 0xf000, 0xf7ff, MRA_RAM },
-		{ 0xf800, 0xf803, ppi8255_0_r },
-		{ 0xf900, 0xf903, ppi8255_1_r },
-		{ 0xfa00, 0xfa03, ppi8255_2_r },
-		{ 0xfb00, 0xfb03, ppi8255_3_r },
-		{ 0xfc00, 0xfcff, turbo_8279_r },
-		{ 0xfd00, 0xfdff, input_port_0_r },
-		{ 0xfe00, 0xfeff, turbo_collision_r },
-	MEMORY_END
+	public static Memory_ReadAddress readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x5fff, MRA_ROM ),
+		new Memory_ReadAddress( 0xb000, 0xb1ff, MRA_RAM ),
+		new Memory_ReadAddress( 0xe000, 0xe7ff, MRA_RAM ),
+		new Memory_ReadAddress( 0xf000, 0xf7ff, MRA_RAM ),
+		new Memory_ReadAddress( 0xf800, 0xf803, ppi8255_0_r ),
+		new Memory_ReadAddress( 0xf900, 0xf903, ppi8255_1_r ),
+		new Memory_ReadAddress( 0xfa00, 0xfa03, ppi8255_2_r ),
+		new Memory_ReadAddress( 0xfb00, 0xfb03, ppi8255_3_r ),
+		new Memory_ReadAddress( 0xfc00, 0xfcff, turbo_8279_r ),
+		new Memory_ReadAddress( 0xfd00, 0xfdff, input_port_0_r ),
+		new Memory_ReadAddress( 0xfe00, 0xfeff, turbo_collision_r ),
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( writemem )
 		{ 0x0000, 0x5fff, MWA_ROM },

@@ -226,15 +226,17 @@ public class asuka
 	
 	/***************************************************************************/
 	
-	static MEMORY_READ_START( bonzeadv_z80_readmem )
-		{ 0x0000, 0x3fff, MRA_ROM },
-		{ 0x4000, 0x7fff, MRA_BANK1 },
-		{ 0xc000, 0xdfff, MRA_RAM },
-		{ 0xe000, 0xe000, YM2610_status_port_0_A_r },
-		{ 0xe001, 0xe001, YM2610_read_port_0_r },
-		{ 0xe002, 0xe002, YM2610_status_port_0_B_r },
-		{ 0xe201, 0xe201, taitosound_slave_comm_r },
-	MEMORY_END
+	public static Memory_ReadAddress bonzeadv_z80_readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x3fff, MRA_ROM ),
+		new Memory_ReadAddress( 0x4000, 0x7fff, MRA_BANK1 ),
+		new Memory_ReadAddress( 0xc000, 0xdfff, MRA_RAM ),
+		new Memory_ReadAddress( 0xe000, 0xe000, YM2610_status_port_0_A_r ),
+		new Memory_ReadAddress( 0xe001, 0xe001, YM2610_read_port_0_r ),
+		new Memory_ReadAddress( 0xe002, 0xe002, YM2610_status_port_0_B_r ),
+		new Memory_ReadAddress( 0xe201, 0xe201, taitosound_slave_comm_r ),
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( bonzeadv_z80_writemem )
 		{ 0x0000, 0x7fff, MWA_ROM },
@@ -252,14 +254,16 @@ public class asuka
 		{ 0xf200, 0xf200, sound_bankswitch_w },
 	MEMORY_END
 	
-	static MEMORY_READ_START( z80_readmem )
-		{ 0x0000, 0x3fff, MRA_ROM },
-		{ 0x4000, 0x7fff, MRA_BANK1 },
-		{ 0x8000, 0x8fff, MRA_RAM },
-		{ 0x9001, 0x9001, YM2151_status_port_0_r },
-		{ 0x9002, 0x9100, MRA_RAM },
-		{ 0xa001, 0xa001, taitosound_slave_comm_r },
-	MEMORY_END
+	public static Memory_ReadAddress z80_readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x3fff, MRA_ROM ),
+		new Memory_ReadAddress( 0x4000, 0x7fff, MRA_BANK1 ),
+		new Memory_ReadAddress( 0x8000, 0x8fff, MRA_RAM ),
+		new Memory_ReadAddress( 0x9001, 0x9001, YM2151_status_port_0_r ),
+		new Memory_ReadAddress( 0x9002, 0x9100, MRA_RAM ),
+		new Memory_ReadAddress( 0xa001, 0xa001, taitosound_slave_comm_r ),
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( z80_writemem )
 		{ 0x0000, 0x7fff, MWA_ROM },

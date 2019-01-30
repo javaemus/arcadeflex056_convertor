@@ -248,16 +248,18 @@ public class victory
 	 *
 	 *************************************/
 	
-	static MEMORY_READ_START( main_readmem )
-		{ 0x0000, 0xbfff, MRA_ROM },
-		{ 0xc000, 0xc0ff, victory_video_control_r },
-		{ 0xc400, 0xc7ff, MRA_RAM },
-		{ 0xc800, 0xdfff, MRA_RAM },
-		{ 0xe000, 0xefff, MRA_RAM },
-		{ 0xf000, 0xf7ff, MRA_RAM },
-		{ 0xf800, 0xf800, sound_response_r },
-		{ 0xf801, 0xf801, sound_status_r },
-	MEMORY_END
+	public static Memory_ReadAddress main_readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0xbfff, MRA_ROM ),
+		new Memory_ReadAddress( 0xc000, 0xc0ff, victory_video_control_r ),
+		new Memory_ReadAddress( 0xc400, 0xc7ff, MRA_RAM ),
+		new Memory_ReadAddress( 0xc800, 0xdfff, MRA_RAM ),
+		new Memory_ReadAddress( 0xe000, 0xefff, MRA_RAM ),
+		new Memory_ReadAddress( 0xf000, 0xf7ff, MRA_RAM ),
+		new Memory_ReadAddress( 0xf800, 0xf800, sound_response_r ),
+		new Memory_ReadAddress( 0xf801, 0xf801, sound_status_r ),
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	
 	static MEMORY_WRITE_START( main_writemem )
@@ -294,14 +296,16 @@ public class victory
 	 *
 	 *************************************/
 	
-	static MEMORY_READ_START( sound_readmem )
-		{ 0x0000, 0x01ff, MRA_RAM },
-		{ 0x1000, 0x1fff, exidy_shriot_r },
-		{ 0x2000, 0x200f, pia_0_r },
-		{ 0x3000, 0x3fff, exidy_sh8253_r },
-		{ 0x5000, 0x5fff, exidy_sh6840_r },
-		{ 0xc000, 0xffff, MRA_ROM },
-	MEMORY_END
+	public static Memory_ReadAddress sound_readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x01ff, MRA_RAM ),
+		new Memory_ReadAddress( 0x1000, 0x1fff, exidy_shriot_r ),
+		new Memory_ReadAddress( 0x2000, 0x200f, pia_0_r ),
+		new Memory_ReadAddress( 0x3000, 0x3fff, exidy_sh8253_r ),
+		new Memory_ReadAddress( 0x5000, 0x5fff, exidy_sh6840_r ),
+		new Memory_ReadAddress( 0xc000, 0xffff, MRA_ROM ),
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	
 	static MEMORY_WRITE_START( sound_writemem )

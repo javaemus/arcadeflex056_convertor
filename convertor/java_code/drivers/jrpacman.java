@@ -159,14 +159,16 @@ public class jrpacman
 	
 	
 	
-	static MEMORY_READ_START( readmem )
-		{ 0x0000, 0x3fff, MRA_ROM },
-		{ 0x4000, 0x4fff, MRA_RAM },	/* including video and color RAM */
-		{ 0x5000, 0x503f, input_port_0_r },	/* IN0 */
-		{ 0x5040, 0x507f, input_port_1_r },	/* IN1 */
-		{ 0x5080, 0x50bf, input_port_2_r },	/* DSW1 */
-		{ 0x8000, 0xdfff, MRA_ROM },
-	MEMORY_END
+	public static Memory_ReadAddress readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x3fff, MRA_ROM ),
+		new Memory_ReadAddress( 0x4000, 0x4fff, MRA_RAM ),	/* including video and color RAM */
+		new Memory_ReadAddress( 0x5000, 0x503f, input_port_0_r ),	/* IN0 */
+		new Memory_ReadAddress( 0x5040, 0x507f, input_port_1_r ),	/* IN1 */
+		new Memory_ReadAddress( 0x5080, 0x50bf, input_port_2_r ),	/* DSW1 */
+		new Memory_ReadAddress( 0x8000, 0xdfff, MRA_ROM ),
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( writemem )
 		{ 0x0000, 0x3fff, MWA_ROM },

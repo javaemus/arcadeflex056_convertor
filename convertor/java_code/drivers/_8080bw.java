@@ -175,11 +175,13 @@ public class _8080bw
 	/*                                                     */
 	/*******************************************************/
 	
-	static MEMORY_READ_START( invaders_readmem )
-		{ 0x0000, 0x1fff, MRA_ROM },
-		{ 0x2000, 0x3fff, MRA_RAM },
-		{ 0x4000, 0x63ff, MRA_ROM },
-	MEMORY_END
+	public static Memory_ReadAddress invaders_readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x1fff, MRA_ROM ),
+		new Memory_ReadAddress( 0x2000, 0x3fff, MRA_RAM ),
+		new Memory_ReadAddress( 0x4000, 0x63ff, MRA_ROM ),
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( invaders_writemem )
 		{ 0x0000, 0x1fff, MWA_ROM },
@@ -1179,15 +1181,17 @@ public class _8080bw
 	/*                                                     */
 	/*******************************************************/
 	
-	static MEMORY_READ_START( rollingc_readmem )
-		{ 0x0000, 0x1fff, MRA_ROM },
-		{ 0x2000, 0x3fff, MRA_RAM },
-	//  { 0x2000, 0x2002, MRA_RAM },
-	//  { 0x2003, 0x2003, hack },
-		{ 0x4000, 0x5fff, MRA_ROM },
-		{ 0xa400, 0xbfff, schaser_colorram_r },
-		{ 0xe400, 0xffff, MRA_RAM },
-	MEMORY_END
+	public static Memory_ReadAddress rollingc_readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x1fff, MRA_ROM ),
+		new Memory_ReadAddress( 0x2000, 0x3fff, MRA_RAM ),
+	//  new Memory_ReadAddress( 0x2000, 0x2002, MRA_RAM ),
+	//  new Memory_ReadAddress( 0x2003, 0x2003, hack ),
+		new Memory_ReadAddress( 0x4000, 0x5fff, MRA_ROM ),
+		new Memory_ReadAddress( 0xa400, 0xbfff, schaser_colorram_r ),
+		new Memory_ReadAddress( 0xe400, 0xffff, MRA_RAM ),
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( rollingc_writemem )
 		{ 0x0000, 0x1fff, MWA_ROM },
@@ -1286,10 +1290,12 @@ public class _8080bw
 	/*                                                       */
 	/*********************************************************/
 	
-	static MEMORY_READ_START( sheriff_readmem )
-		{ 0x0000, 0x27ff, MRA_ROM },
-		{ 0x4200, 0x7fff, MRA_RAM },
-	MEMORY_END
+	public static Memory_ReadAddress sheriff_readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x27ff, MRA_ROM ),
+		new Memory_ReadAddress( 0x4200, 0x7fff, MRA_RAM ),
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( sheriff_writemem )
 		{ 0x0000, 0x27ff, MWA_ROM },
@@ -1305,9 +1311,11 @@ public class _8080bw
 		{ 0x04, 0x04, input_port_3_r },
 	PORT_END
 	
-	static MEMORY_READ_START( sheriff_sound_readmem )
-		{ 0x0000, 0x03ff, MRA_ROM },
-	MEMORY_END
+	public static Memory_ReadAddress sheriff_sound_readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x03ff, MRA_ROM ),
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	static MEMORY_WRITE_START( sheriff_sound_writemem )
 		{ 0x0000, 0x03ff, MWA_ROM },
 	MEMORY_END
@@ -1845,12 +1853,14 @@ public class _8080bw
 	/*                                                     */
 	/*******************************************************/
 	
-	static MEMORY_READ_START( schaser_readmem )
-		{ 0x0000, 0x1fff, MRA_ROM },
-		{ 0x2000, 0x3fff, MRA_RAM },
-		{ 0x4000, 0x5fff, MRA_ROM },
-		{ 0xc400, 0xdfff, schaser_colorram_r },
-	MEMORY_END
+	public static Memory_ReadAddress schaser_readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x1fff, MRA_ROM ),
+		new Memory_ReadAddress( 0x2000, 0x3fff, MRA_RAM ),
+		new Memory_ReadAddress( 0x4000, 0x5fff, MRA_ROM ),
+		new Memory_ReadAddress( 0xc400, 0xdfff, schaser_colorram_r ),
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( schaser_writemem )
 		{ 0x0000, 0x1fff, MWA_ROM },
@@ -2294,11 +2304,13 @@ public class _8080bw
 	/*                                                     */
 	/*******************************************************/
 	
-	static MEMORY_READ_START( helifire_readmem )
-		{ 0x0000, 0x27ff, MRA_ROM },
-		{ 0x4200, 0x7fff, MRA_RAM },
-		{ 0xc200, 0xddff, MRA_RAM },
-	MEMORY_END
+	public static Memory_ReadAddress helifire_readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x27ff, MRA_ROM ),
+		new Memory_ReadAddress( 0x4200, 0x7fff, MRA_RAM ),
+		new Memory_ReadAddress( 0xc200, 0xddff, MRA_RAM ),
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( helifire_writemem )
 		{ 0x0000, 0x27ff, MWA_ROM },

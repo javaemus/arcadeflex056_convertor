@@ -128,14 +128,16 @@ public class leprechn
 	
 	
 	
-	static MEMORY_READ_START( readmem )
-	    { 0x0000, 0x03ff, MRA_RAM},
-	    { 0x2000, 0x2000, leprechn_graphics_data_r},
-	    { 0x200d, 0x200d, leprechn_200d_r },
-	    { 0x2801, 0x2801, leprechn_input_port_r },
-	    { 0x3002, 0x3003, MRA_RAM},
-	    { 0x8000, 0xffff, MRA_ROM},
-	MEMORY_END
+	public static Memory_ReadAddress readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+	    new Memory_ReadAddress( 0x0000, 0x03ff, MRA_RAM),
+	    new Memory_ReadAddress( 0x2000, 0x2000, leprechn_graphics_data_r),
+	    new Memory_ReadAddress( 0x200d, 0x200d, leprechn_200d_r ),
+	    new Memory_ReadAddress( 0x2801, 0x2801, leprechn_input_port_r ),
+	    new Memory_ReadAddress( 0x3002, 0x3003, MRA_RAM),
+	    new Memory_ReadAddress( 0x8000, 0xffff, MRA_ROM),
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( writemem )
 	    { 0x0000, 0x03ff, MWA_RAM},
@@ -152,15 +154,17 @@ public class leprechn
 	    { 0x8000, 0xffff, MWA_ROM},
 	MEMORY_END
 	
-	static MEMORY_READ_START( sound_readmem )
-	    { 0x0000, 0x01ff, MRA_RAM},
-	    { 0x0800, 0x0800, soundlatch_r},
-	    { 0x0804, 0x0804, MRA_RAM},   // ???
-	    { 0x0805, 0x0805, leprechn_0805_r},   // ???
-	    { 0x080c, 0x080c, MRA_RAM},   // ???
-	    { 0xa001, 0xa001, MRA_RAM},   // ???
-	    { 0xf000, 0xffff, MRA_ROM},
-	MEMORY_END
+	public static Memory_ReadAddress sound_readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+	    new Memory_ReadAddress( 0x0000, 0x01ff, MRA_RAM),
+	    new Memory_ReadAddress( 0x0800, 0x0800, soundlatch_r),
+	    new Memory_ReadAddress( 0x0804, 0x0804, MRA_RAM),   // ???
+	    new Memory_ReadAddress( 0x0805, 0x0805, leprechn_0805_r),   // ???
+	    new Memory_ReadAddress( 0x080c, 0x080c, MRA_RAM),   // ???
+	    new Memory_ReadAddress( 0xa001, 0xa001, MRA_RAM),   // ???
+	    new Memory_ReadAddress( 0xf000, 0xffff, MRA_ROM),
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	
 	static MEMORY_WRITE_START( sound_writemem )

@@ -175,29 +175,31 @@ public class tehkanwc
 	
 	
 	
-	static MEMORY_READ_START( readmem )
-		{ 0x0000, 0xbfff, MRA_ROM },
-		{ 0xc000, 0xc7ff, MRA_RAM },
-		{ 0xc800, 0xcfff, shared_r },
-		{ 0xd000, 0xd3ff, videoram_r },
-		{ 0xd400, 0xd7ff, colorram_r },
-		{ 0xd800, 0xddff, paletteram_r },
-		{ 0xde00, 0xdfff, MRA_RAM },	/* unused part of the palette RAM, I think? Gridiron uses it */
-		{ 0xe000, 0xe7ff, tehkanwc_videoram1_r },
-		{ 0xe800, 0xebff, spriteram_r }, /* sprites */
-		{ 0xec00, 0xec01, tehkanwc_scroll_x_r },
-		{ 0xec02, 0xec02, tehkanwc_scroll_y_r },
-		{ 0xf800, 0xf801, tehkanwc_track_0_r }, /* track 0 x/y */
-		{ 0xf802, 0xf802, input_port_9_r }, /* Coin & Start */
-		{ 0xf803, 0xf803, input_port_5_r }, /* joy0 - button */
-		{ 0xf810, 0xf811, tehkanwc_track_1_r }, /* track 1 x/y */
-		{ 0xf813, 0xf813, input_port_8_r }, /* joy1 - button */
-		{ 0xf820, 0xf820, soundlatch2_r },	/* answer from the sound CPU */
-		{ 0xf840, 0xf840, input_port_0_r }, /* DSW1 */
-		{ 0xf850, 0xf850, input_port_1_r },	/* DSW2 */
-		{ 0xf860, 0xf860, watchdog_reset_r },
-		{ 0xf870, 0xf870, input_port_2_r }, /* DSW3 */
-	MEMORY_END
+	public static Memory_ReadAddress readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0xbfff, MRA_ROM ),
+		new Memory_ReadAddress( 0xc000, 0xc7ff, MRA_RAM ),
+		new Memory_ReadAddress( 0xc800, 0xcfff, shared_r ),
+		new Memory_ReadAddress( 0xd000, 0xd3ff, videoram_r ),
+		new Memory_ReadAddress( 0xd400, 0xd7ff, colorram_r ),
+		new Memory_ReadAddress( 0xd800, 0xddff, paletteram_r ),
+		new Memory_ReadAddress( 0xde00, 0xdfff, MRA_RAM ),	/* unused part of the palette RAM, I think? Gridiron uses it */
+		new Memory_ReadAddress( 0xe000, 0xe7ff, tehkanwc_videoram1_r ),
+		new Memory_ReadAddress( 0xe800, 0xebff, spriteram_r ), /* sprites */
+		new Memory_ReadAddress( 0xec00, 0xec01, tehkanwc_scroll_x_r ),
+		new Memory_ReadAddress( 0xec02, 0xec02, tehkanwc_scroll_y_r ),
+		new Memory_ReadAddress( 0xf800, 0xf801, tehkanwc_track_0_r ), /* track 0 x/y */
+		new Memory_ReadAddress( 0xf802, 0xf802, input_port_9_r ), /* Coin & Start */
+		new Memory_ReadAddress( 0xf803, 0xf803, input_port_5_r ), /* joy0 - button */
+		new Memory_ReadAddress( 0xf810, 0xf811, tehkanwc_track_1_r ), /* track 1 x/y */
+		new Memory_ReadAddress( 0xf813, 0xf813, input_port_8_r ), /* joy1 - button */
+		new Memory_ReadAddress( 0xf820, 0xf820, soundlatch2_r ),	/* answer from the sound CPU */
+		new Memory_ReadAddress( 0xf840, 0xf840, input_port_0_r ), /* DSW1 */
+		new Memory_ReadAddress( 0xf850, 0xf850, input_port_1_r ),	/* DSW2 */
+		new Memory_ReadAddress( 0xf860, 0xf860, watchdog_reset_r ),
+		new Memory_ReadAddress( 0xf870, 0xf870, input_port_2_r ), /* DSW3 */
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( writemem )
 		{ 0x0000, 0xbfff, MWA_ROM },
@@ -219,20 +221,22 @@ public class tehkanwc
 		{ 0xf840, 0xf840, sub_cpu_halt_w },
 	MEMORY_END
 	
-	static MEMORY_READ_START( readmem_sub )
-		{ 0x0000, 0x7fff, MRA_ROM },
-		{ 0x8000, 0xc7ff, MRA_RAM },
-		{ 0xc800, 0xcfff, shared_r },
-		{ 0xd000, 0xd3ff, videoram_r },
-		{ 0xd400, 0xd7ff, colorram_r },
-		{ 0xd800, 0xddff, paletteram_r },
-		{ 0xde00, 0xdfff, MRA_RAM },	/* unused part of the palette RAM, I think? Gridiron uses it */
-		{ 0xe000, 0xe7ff, tehkanwc_videoram1_r },
-		{ 0xe800, 0xebff, spriteram_r }, /* sprites */
-		{ 0xec00, 0xec01, tehkanwc_scroll_x_r },
-		{ 0xec02, 0xec02, tehkanwc_scroll_y_r },
-		{ 0xf860, 0xf860, watchdog_reset_r },
-	MEMORY_END
+	public static Memory_ReadAddress readmem_sub[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x7fff, MRA_ROM ),
+		new Memory_ReadAddress( 0x8000, 0xc7ff, MRA_RAM ),
+		new Memory_ReadAddress( 0xc800, 0xcfff, shared_r ),
+		new Memory_ReadAddress( 0xd000, 0xd3ff, videoram_r ),
+		new Memory_ReadAddress( 0xd400, 0xd7ff, colorram_r ),
+		new Memory_ReadAddress( 0xd800, 0xddff, paletteram_r ),
+		new Memory_ReadAddress( 0xde00, 0xdfff, MRA_RAM ),	/* unused part of the palette RAM, I think? Gridiron uses it */
+		new Memory_ReadAddress( 0xe000, 0xe7ff, tehkanwc_videoram1_r ),
+		new Memory_ReadAddress( 0xe800, 0xebff, spriteram_r ), /* sprites */
+		new Memory_ReadAddress( 0xec00, 0xec01, tehkanwc_scroll_x_r ),
+		new Memory_ReadAddress( 0xec02, 0xec02, tehkanwc_scroll_y_r ),
+		new Memory_ReadAddress( 0xf860, 0xf860, watchdog_reset_r ),
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( writemem_sub )
 		{ 0x0000, 0x7fff, MWA_ROM },
@@ -248,11 +252,13 @@ public class tehkanwc
 		{ 0xec02, 0xec02, tehkanwc_scroll_y_w },
 	MEMORY_END
 	
-	static MEMORY_READ_START( readmem_sound )
-		{ 0x0000, 0x3fff, MRA_ROM },
-		{ 0x4000, 0x47ff, MRA_RAM },
-		{ 0xc000, 0xc000, soundlatch_r },
-	MEMORY_END
+	public static Memory_ReadAddress readmem_sound[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x3fff, MRA_ROM ),
+		new Memory_ReadAddress( 0x4000, 0x47ff, MRA_RAM ),
+		new Memory_ReadAddress( 0xc000, 0xc000, soundlatch_r ),
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( writemem_sound )
 		{ 0x0000, 0x3fff, MWA_ROM },

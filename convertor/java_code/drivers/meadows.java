@@ -309,13 +309,15 @@ public class meadows
 		{ 0x1c00, 0x1fff, meadows_videoram_w, &videoram, &videoram_size },
 	MEMORY_END
 	
-	static MEMORY_READ_START( readmem )
-		{ 0x0000, 0x0bff, MRA_ROM },
-		{ 0x0c00, 0x0c03, meadows_hardware_r },
-		{ 0x0e00, 0x0eff, MRA_RAM },
-		{ 0x1000, 0x1bff, MRA_ROM },
-		{ 0x1c00, 0x1fff, MRA_RAM },
-	MEMORY_END
+	public static Memory_ReadAddress readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x0bff, MRA_ROM ),
+		new Memory_ReadAddress( 0x0c00, 0x0c03, meadows_hardware_r ),
+		new Memory_ReadAddress( 0x0e00, 0x0eff, MRA_RAM ),
+		new Memory_ReadAddress( 0x1000, 0x1bff, MRA_ROM ),
+		new Memory_ReadAddress( 0x1c00, 0x1fff, MRA_RAM ),
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( sound_writemem )
 		{ 0x0000, 0x0bff, MWA_ROM },
@@ -323,11 +325,13 @@ public class meadows
 		{ 0x0e00, 0x0eff, MWA_RAM },
 	MEMORY_END
 	
-	static MEMORY_READ_START( sound_readmem )
-		{ 0x0000, 0x0bff, MRA_ROM },
-		{ 0x0c00, 0x0c03, sound_hardware_r },
-		{ 0x0e00, 0x0eff, MRA_RAM },
-	MEMORY_END
+	public static Memory_ReadAddress sound_readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x0bff, MRA_ROM ),
+		new Memory_ReadAddress( 0x0c00, 0x0c03, sound_hardware_r ),
+		new Memory_ReadAddress( 0x0e00, 0x0eff, MRA_RAM ),
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	INPUT_PORTS_START( meadows )
 		PORT_START		/* IN0 buttons */

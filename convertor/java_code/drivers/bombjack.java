@@ -109,17 +109,19 @@ public class bombjack
 	
 	
 	
-	static MEMORY_READ_START( readmem )
-		{ 0x0000, 0x7fff, MRA_ROM },
-		{ 0x8000, 0x97ff, MRA_RAM },	/* including video and color RAM */
-		{ 0xb000, 0xb000, input_port_0_r },	/* player 1 input */
-		{ 0xb001, 0xb001, input_port_1_r },	/* player 2 input */
-		{ 0xb002, 0xb002, input_port_2_r },	/* coin */
-		{ 0xb003, 0xb003, MRA_NOP },	/* watchdog reset? */
-		{ 0xb004, 0xb004, input_port_3_r },	/* DSW1 */
-		{ 0xb005, 0xb005, input_port_4_r },	/* DSW2 */
-		{ 0xc000, 0xdfff, MRA_ROM },
-	MEMORY_END
+	public static Memory_ReadAddress readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x7fff, MRA_ROM ),
+		new Memory_ReadAddress( 0x8000, 0x97ff, MRA_RAM ),	/* including video and color RAM */
+		new Memory_ReadAddress( 0xb000, 0xb000, input_port_0_r ),	/* player 1 input */
+		new Memory_ReadAddress( 0xb001, 0xb001, input_port_1_r ),	/* player 2 input */
+		new Memory_ReadAddress( 0xb002, 0xb002, input_port_2_r ),	/* coin */
+		new Memory_ReadAddress( 0xb003, 0xb003, MRA_NOP ),	/* watchdog reset? */
+		new Memory_ReadAddress( 0xb004, 0xb004, input_port_3_r ),	/* DSW1 */
+		new Memory_ReadAddress( 0xb005, 0xb005, input_port_4_r ),	/* DSW2 */
+		new Memory_ReadAddress( 0xc000, 0xdfff, MRA_ROM ),
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( writemem )
 		{ 0x0000, 0x7fff, MWA_ROM },
@@ -136,11 +138,13 @@ public class bombjack
 		{ 0xc000, 0xdfff, MWA_ROM },
 	MEMORY_END
 	
-	static MEMORY_READ_START( bombjack_sound_readmem )
-		{ 0x0000, 0x1fff, MRA_ROM },
-		{ 0x4000, 0x43ff, MRA_RAM },
-		{ 0x6000, 0x6000, bombjack_soundlatch_r },
-	MEMORY_END
+	public static Memory_ReadAddress bombjack_sound_readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x1fff, MRA_ROM ),
+		new Memory_ReadAddress( 0x4000, 0x43ff, MRA_RAM ),
+		new Memory_ReadAddress( 0x6000, 0x6000, bombjack_soundlatch_r ),
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( bombjack_sound_writemem )
 		{ 0x0000, 0x1fff, MWA_ROM },

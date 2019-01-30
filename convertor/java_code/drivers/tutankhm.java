@@ -220,18 +220,20 @@ public class tutankhm
 	}
 	
 	
-	static MEMORY_READ_START( readmem )
-		{ 0x0000, 0x7fff, MRA_RAM },
-		{ 0x8120, 0x8120, watchdog_reset_r },
-		{ 0x8160, 0x8160, input_port_0_r },	/* DSW2 (inverted bits) */
-		{ 0x8180, 0x8180, input_port_1_r },	/* IN0 I/O: Coin slots, service, 1P/2P buttons */
-		{ 0x81a0, 0x81a0, input_port_2_r },	/* IN1: Player 1 I/O */
-		{ 0x81c0, 0x81c0, input_port_3_r },	/* IN2: Player 2 I/O */
-		{ 0x81e0, 0x81e0, input_port_4_r },	/* DSW1 (inverted bits) */
-		{ 0x8800, 0x8fff, MRA_RAM },
-		{ 0x9000, 0x9fff, MRA_BANK1 },
-		{ 0xa000, 0xffff, MRA_ROM },
-	MEMORY_END
+	public static Memory_ReadAddress readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x7fff, MRA_RAM ),
+		new Memory_ReadAddress( 0x8120, 0x8120, watchdog_reset_r ),
+		new Memory_ReadAddress( 0x8160, 0x8160, input_port_0_r ),	/* DSW2 (inverted bits) */
+		new Memory_ReadAddress( 0x8180, 0x8180, input_port_1_r ),	/* IN0 I/O: Coin slots, service, 1P/2P buttons */
+		new Memory_ReadAddress( 0x81a0, 0x81a0, input_port_2_r ),	/* IN1: Player 1 I/O */
+		new Memory_ReadAddress( 0x81c0, 0x81c0, input_port_3_r ),	/* IN2: Player 2 I/O */
+		new Memory_ReadAddress( 0x81e0, 0x81e0, input_port_4_r ),	/* DSW1 (inverted bits) */
+		new Memory_ReadAddress( 0x8800, 0x8fff, MRA_RAM ),
+		new Memory_ReadAddress( 0x9000, 0x9fff, MRA_BANK1 ),
+		new Memory_ReadAddress( 0xa000, 0xffff, MRA_ROM ),
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( writemem )
 		{ 0x0000, 0x7fff, tutankhm_videoram_w, &videoram, &videoram_size },

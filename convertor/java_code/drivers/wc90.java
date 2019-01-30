@@ -115,32 +115,36 @@ public class wc90
 	
 	
 	
-	static MEMORY_READ_START( wc90_readmem1 )
-		{ 0x0000, 0x7fff, MRA_ROM },
-		{ 0x8000, 0x9fff, MRA_RAM }, /* Main RAM */
-		{ 0xa000, 0xafff, MRA_RAM }, /* fg video ram */
-		{ 0xb000, 0xbfff, MRA_RAM },
-		{ 0xc000, 0xcfff, MRA_RAM }, /* bg video ram */
-		{ 0xd000, 0xdfff, MRA_RAM },
-		{ 0xe000, 0xefff, MRA_RAM }, /* tx video ram */
-		{ 0xf000, 0xf7ff, MRA_BANK1 },
-		{ 0xf800, 0xfbff, wc90_shared_r },
-		{ 0xfc00, 0xfc00, input_port_0_r }, /* Stick 1 */
-		{ 0xfc02, 0xfc02, input_port_1_r }, /* Stick 2 */
-		{ 0xfc05, 0xfc05, input_port_4_r }, /* Start & Coin */
-		{ 0xfc06, 0xfc06, input_port_2_r }, /* DIP Switch A */
-		{ 0xfc07, 0xfc07, input_port_3_r }, /* DIP Switch B */
-	MEMORY_END
+	public static Memory_ReadAddress wc90_readmem1[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x7fff, MRA_ROM ),
+		new Memory_ReadAddress( 0x8000, 0x9fff, MRA_RAM ), /* Main RAM */
+		new Memory_ReadAddress( 0xa000, 0xafff, MRA_RAM ), /* fg video ram */
+		new Memory_ReadAddress( 0xb000, 0xbfff, MRA_RAM ),
+		new Memory_ReadAddress( 0xc000, 0xcfff, MRA_RAM ), /* bg video ram */
+		new Memory_ReadAddress( 0xd000, 0xdfff, MRA_RAM ),
+		new Memory_ReadAddress( 0xe000, 0xefff, MRA_RAM ), /* tx video ram */
+		new Memory_ReadAddress( 0xf000, 0xf7ff, MRA_BANK1 ),
+		new Memory_ReadAddress( 0xf800, 0xfbff, wc90_shared_r ),
+		new Memory_ReadAddress( 0xfc00, 0xfc00, input_port_0_r ), /* Stick 1 */
+		new Memory_ReadAddress( 0xfc02, 0xfc02, input_port_1_r ), /* Stick 2 */
+		new Memory_ReadAddress( 0xfc05, 0xfc05, input_port_4_r ), /* Start & Coin */
+		new Memory_ReadAddress( 0xfc06, 0xfc06, input_port_2_r ), /* DIP Switch A */
+		new Memory_ReadAddress( 0xfc07, 0xfc07, input_port_3_r ), /* DIP Switch B */
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
-	static MEMORY_READ_START( wc90_readmem2 )
-		{ 0x0000, 0xbfff, MRA_ROM },
-		{ 0xc000, 0xcfff, MRA_RAM },
-		{ 0xd000, 0xd7ff, MRA_RAM },
-		{ 0xd800, 0xdfff, MRA_RAM },
-		{ 0xe000, 0xe7ff, MRA_RAM },
-		{ 0xf000, 0xf7ff, MRA_BANK2 },
-		{ 0xf800, 0xfbff, wc90_shared_r },
-	MEMORY_END
+	public static Memory_ReadAddress wc90_readmem2[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0xbfff, MRA_ROM ),
+		new Memory_ReadAddress( 0xc000, 0xcfff, MRA_RAM ),
+		new Memory_ReadAddress( 0xd000, 0xd7ff, MRA_RAM ),
+		new Memory_ReadAddress( 0xd800, 0xdfff, MRA_RAM ),
+		new Memory_ReadAddress( 0xe000, 0xe7ff, MRA_RAM ),
+		new Memory_ReadAddress( 0xf000, 0xf7ff, MRA_BANK2 ),
+		new Memory_ReadAddress( 0xf800, 0xfbff, wc90_shared_r ),
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( wc90_writemem1 )
 		{ 0x0000, 0x7fff, MWA_ROM },
@@ -181,14 +185,16 @@ public class wc90
 		{ 0xfc01, 0xfc01, watchdog_reset_w },
 	MEMORY_END
 	
-	static MEMORY_READ_START( sound_readmem )
-		{ 0x0000, 0xbfff, MRA_ROM },
-		{ 0xf000, 0xf7ff, MRA_RAM },
-		{ 0xf800, 0xf800, YM2608_status_port_0_A_r },
-		{ 0xf802, 0xf802, YM2608_status_port_0_B_r },
-		{ 0xfc00, 0xfc00, MRA_NOP }, /* ??? adpcm ??? */
-		{ 0xfc10, 0xfc10, soundlatch_r },
-	MEMORY_END
+	public static Memory_ReadAddress sound_readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0xbfff, MRA_ROM ),
+		new Memory_ReadAddress( 0xf000, 0xf7ff, MRA_RAM ),
+		new Memory_ReadAddress( 0xf800, 0xf800, YM2608_status_port_0_A_r ),
+		new Memory_ReadAddress( 0xf802, 0xf802, YM2608_status_port_0_B_r ),
+		new Memory_ReadAddress( 0xfc00, 0xfc00, MRA_NOP ), /* ??? adpcm ??? */
+		new Memory_ReadAddress( 0xfc10, 0xfc10, soundlatch_r ),
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( sound_writemem )
 		{ 0x0000, 0xbfff, MWA_ROM },

@@ -179,19 +179,21 @@ public class sgladiat
 		/* x-------	screen is flipped */
 	}
 	
-	static MEMORY_READ_START( sgladiat_readmem_cpuA )
-		{ 0x0000, 0x9fff, MRA_ROM },
-		{ 0xa000, 0xa000, sgladiat_inp0_r },
-		{ 0xa100, 0xa100, input_port_1_r }, /* joy1 */
-		{ 0xa200, 0xa200, input_port_2_r }, /* joy2 */
-		{ 0xa400, 0xa400, input_port_3_r }, /* dsw1 */
-		{ 0xa500, 0xa500, input_port_4_r }, /* dsw2 */
-		{ 0xa700, 0xa700, sgladiat_cpuA_nmi_r },
-		{ 0xd800, 0xdfff, MRA_RAM }, /* spriteram */
-		{ 0xe000, 0xe7ff, MRA_RAM }, /* videoram */
-		{ 0xe800, 0xefff, MRA_RAM }, /* work ram */
-		{ 0xf000, 0xf7ff, MRA_RAM }, /* shareram */
-	MEMORY_END
+	public static Memory_ReadAddress sgladiat_readmem_cpuA[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x9fff, MRA_ROM ),
+		new Memory_ReadAddress( 0xa000, 0xa000, sgladiat_inp0_r ),
+		new Memory_ReadAddress( 0xa100, 0xa100, input_port_1_r ), /* joy1 */
+		new Memory_ReadAddress( 0xa200, 0xa200, input_port_2_r ), /* joy2 */
+		new Memory_ReadAddress( 0xa400, 0xa400, input_port_3_r ), /* dsw1 */
+		new Memory_ReadAddress( 0xa500, 0xa500, input_port_4_r ), /* dsw2 */
+		new Memory_ReadAddress( 0xa700, 0xa700, sgladiat_cpuA_nmi_r ),
+		new Memory_ReadAddress( 0xd800, 0xdfff, MRA_RAM ), /* spriteram */
+		new Memory_ReadAddress( 0xe000, 0xe7ff, MRA_RAM ), /* videoram */
+		new Memory_ReadAddress( 0xe800, 0xefff, MRA_RAM ), /* work ram */
+		new Memory_ReadAddress( 0xf000, 0xf7ff, MRA_RAM ), /* shareram */
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( sgladiat_writemem_cpuA )
 		{ 0x0000, 0x9fff, MWA_ROM },
@@ -211,13 +213,15 @@ public class sgladiat
 		{ 0xf000, 0xf7ff, MWA_RAM, &shared_ram },
 	MEMORY_END
 	
-	static MEMORY_READ_START( sgladiat_readmem_cpuB )
-		{ 0x0000, 0x7fff, MRA_ROM },
-		{ 0xa000, 0xa000, sgladiat_cpuB_nmi_r },
-		{ 0xc000, 0xcfff, spriteram_r }, /* 0xc800..0xffff is videoram */
-		{ 0xd800, 0xdfff, shared_ram2_r },
-		{ 0xe000, 0xe7ff, shared_ram_r },
-	MEMORY_END
+	public static Memory_ReadAddress sgladiat_readmem_cpuB[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x7fff, MRA_ROM ),
+		new Memory_ReadAddress( 0xa000, 0xa000, sgladiat_cpuB_nmi_r ),
+		new Memory_ReadAddress( 0xc000, 0xcfff, spriteram_r ), /* 0xc800..0xffff is videoram */
+		new Memory_ReadAddress( 0xd800, 0xdfff, shared_ram2_r ),
+		new Memory_ReadAddress( 0xe000, 0xe7ff, shared_ram_r ),
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( sgladiat_writemem_cpuB )
 		{ 0x0000, 0x9fff, MWA_ROM },
@@ -228,12 +232,14 @@ public class sgladiat
 		{ 0xe000, 0xe7ff, shared_ram_w },
 	MEMORY_END
 	
-	static MEMORY_READ_START( sgladiat_readmem_sound )
-		{ 0x0000, 0x3fff, MRA_ROM },
-		{ 0x8000, 0x87ff, MRA_RAM },
-		{ 0xa000, 0xa000, soundlatch_r },
-		{ 0xc000, 0xc000, snk_sound_ack_r },
-	MEMORY_END
+	public static Memory_ReadAddress sgladiat_readmem_sound[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x3fff, MRA_ROM ),
+		new Memory_ReadAddress( 0x8000, 0x87ff, MRA_RAM ),
+		new Memory_ReadAddress( 0xa000, 0xa000, soundlatch_r ),
+		new Memory_ReadAddress( 0xc000, 0xc000, snk_sound_ack_r ),
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( sgladiat_writemem_sound )
 		{ 0x0000, 0x3fff, MWA_ROM },

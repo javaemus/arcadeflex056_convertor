@@ -253,12 +253,14 @@ public class sf1
 		{ 0xffe000, 0xffffff, MWA16_RAM, &sf1_objectram },
 	MEMORY_END
 	
-	static MEMORY_READ_START( sound_readmem )
-		{ 0x0000, 0x7fff, MRA_ROM },
-		{ 0xc000, 0xc7ff, MRA_RAM },
-		{ 0xc800, 0xc800, soundlatch_r },
-		{ 0xe001, 0xe001, YM2151_status_port_0_r },
-	MEMORY_END
+	public static Memory_ReadAddress sound_readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x7fff, MRA_ROM ),
+		new Memory_ReadAddress( 0xc000, 0xc7ff, MRA_RAM ),
+		new Memory_ReadAddress( 0xc800, 0xc800, soundlatch_r ),
+		new Memory_ReadAddress( 0xe001, 0xe001, YM2151_status_port_0_r ),
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( sound_writemem )
 		{ 0x0000, 0x7fff, MWA_ROM },
@@ -268,10 +270,12 @@ public class sf1
 	MEMORY_END
 	
 	
-	static MEMORY_READ_START( sound2_readmem )
-		{ 0x0000, 0x7fff, MRA_ROM },
-		{ 0x8000, 0xffff, MRA_BANK1 },
-	MEMORY_END
+	public static Memory_ReadAddress sound2_readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x7fff, MRA_ROM ),
+		new Memory_ReadAddress( 0x8000, 0xffff, MRA_BANK1 ),
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	/* Yes, _no_ ram */
 	static MEMORY_WRITE_START( sound2_writemem )

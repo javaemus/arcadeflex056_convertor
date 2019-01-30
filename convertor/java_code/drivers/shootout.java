@@ -79,14 +79,16 @@ public class shootout
 	
 	/*******************************************************************************/
 	
-	static MEMORY_READ_START( readmem )
-		{ 0x0000, 0x0fff, MRA_RAM },
-		{ 0x1000, 0x1003, low_input_r },
-		{ 0x2000, 0x27ff, MRA_RAM },	/* foreground */
-		{ 0x2800, 0x2fff, MRA_RAM },	/* background */
-		{ 0x4000, 0x7fff, MRA_BANK1 },
-		{ 0x8000, 0xffff, MRA_ROM },
-	MEMORY_END
+	public static Memory_ReadAddress readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x0fff, MRA_RAM ),
+		new Memory_ReadAddress( 0x1000, 0x1003, low_input_r ),
+		new Memory_ReadAddress( 0x2000, 0x27ff, MRA_RAM ),	/* foreground */
+		new Memory_ReadAddress( 0x2800, 0x2fff, MRA_RAM ),	/* background */
+		new Memory_ReadAddress( 0x4000, 0x7fff, MRA_BANK1 ),
+		new Memory_ReadAddress( 0x8000, 0xffff, MRA_ROM ),
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( writemem )
 		{ 0x0000, 0x0fff, MWA_RAM },
@@ -101,16 +103,18 @@ public class shootout
 		{ 0x4000, 0xffff, MWA_ROM },
 	MEMORY_END
 	
-	static MEMORY_READ_START( readmem_alt )
-		{ 0x0000, 0x0fff, MRA_RAM },
-		{ 0x1000, 0x1003, low_input_r },
-		{ 0x2000, 0x21ff, MRA_RAM },
-		{ 0x2800, 0x2800, YM2203_status_port_0_r },
-		{ 0x3000, 0x37ff, MRA_RAM },	/* foreground */
-		{ 0x3800, 0x3fff, MRA_RAM },	/* background */
-		{ 0x4000, 0x7fff, MRA_BANK1 },
-		{ 0x8000, 0xffff, MRA_ROM },
-	MEMORY_END
+	public static Memory_ReadAddress readmem_alt[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x0fff, MRA_RAM ),
+		new Memory_ReadAddress( 0x1000, 0x1003, low_input_r ),
+		new Memory_ReadAddress( 0x2000, 0x21ff, MRA_RAM ),
+		new Memory_ReadAddress( 0x2800, 0x2800, YM2203_status_port_0_r ),
+		new Memory_ReadAddress( 0x3000, 0x37ff, MRA_RAM ),	/* foreground */
+		new Memory_ReadAddress( 0x3800, 0x3fff, MRA_RAM ),	/* background */
+		new Memory_ReadAddress( 0x4000, 0x7fff, MRA_BANK1 ),
+		new Memory_ReadAddress( 0x8000, 0xffff, MRA_ROM ),
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( writemem_alt )
 		{ 0x0000, 0x0fff, MWA_RAM },
@@ -125,12 +129,14 @@ public class shootout
 	
 	/*******************************************************************************/
 	
-	static MEMORY_READ_START( sound_readmem )
-		{ 0x0000, 0x07ff, MRA_RAM },
-		{ 0x4000, 0x4000, YM2203_status_port_0_r },
-		{ 0xa000, 0xa000, soundlatch_r },
-		{ 0xc000, 0xffff, MRA_ROM },
-	MEMORY_END
+	public static Memory_ReadAddress sound_readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x07ff, MRA_RAM ),
+		new Memory_ReadAddress( 0x4000, 0x4000, YM2203_status_port_0_r ),
+		new Memory_ReadAddress( 0xa000, 0xa000, soundlatch_r ),
+		new Memory_ReadAddress( 0xc000, 0xffff, MRA_ROM ),
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( sound_writemem )
 		{ 0x0000, 0x07ff, MWA_RAM },

@@ -53,19 +53,21 @@ public class aeroboto
 		/* there's probably a flip screen here as well */
 	}
 	
-	static MEMORY_READ_START( readmem )
-		{ 0x0000, 0x07ff, MRA_RAM },
-		{ 0x0800, 0x08ff, MRA_RAM },	/* ? copied to 2000 */
-		{ 0x1000, 0x17ff, MRA_RAM },
-		{ 0x1800, 0x183f, MRA_RAM },
-		{ 0x2800, 0x28ff, MRA_RAM },
-		{ 0x3000, 0x3000, aeroboto_in0_r },
-		{ 0x3001, 0x3001, input_port_2_r },
-		{ 0x3002, 0x3002, input_port_3_r },
-		{ 0x3004, 0x3004, aeroboto_201_r },
-		{ 0x3800, 0x3800, watchdog_reset_r },	/* or IRQ acknowledge */
-		{ 0x4000, 0xffff, MRA_ROM },
-	MEMORY_END
+	public static Memory_ReadAddress readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x07ff, MRA_RAM ),
+		new Memory_ReadAddress( 0x0800, 0x08ff, MRA_RAM ),	/* ? copied to 2000 */
+		new Memory_ReadAddress( 0x1000, 0x17ff, MRA_RAM ),
+		new Memory_ReadAddress( 0x1800, 0x183f, MRA_RAM ),
+		new Memory_ReadAddress( 0x2800, 0x28ff, MRA_RAM ),
+		new Memory_ReadAddress( 0x3000, 0x3000, aeroboto_in0_r ),
+		new Memory_ReadAddress( 0x3001, 0x3001, input_port_2_r ),
+		new Memory_ReadAddress( 0x3002, 0x3002, input_port_3_r ),
+		new Memory_ReadAddress( 0x3004, 0x3004, aeroboto_201_r ),
+		new Memory_ReadAddress( 0x3800, 0x3800, watchdog_reset_r ),	/* or IRQ acknowledge */
+		new Memory_ReadAddress( 0x4000, 0xffff, MRA_ROM ),
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( writemem )
 		{ 0x0000, 0x07ff, MWA_RAM },
@@ -83,12 +85,14 @@ public class aeroboto
 		{ 0x4000, 0xffff, MWA_ROM },
 	MEMORY_END
 	
-	static MEMORY_READ_START( readmem_sound )
-		{ 0x0000, 0x0fff, MRA_RAM },
-		{ 0x9002, 0x9002, AY8910_read_port_0_r },
-		{ 0xa002, 0xa002, AY8910_read_port_1_r },
-		{ 0xf000, 0xffff, MRA_ROM },
-	MEMORY_END
+	public static Memory_ReadAddress readmem_sound[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x0fff, MRA_RAM ),
+		new Memory_ReadAddress( 0x9002, 0x9002, AY8910_read_port_0_r ),
+		new Memory_ReadAddress( 0xa002, 0xa002, AY8910_read_port_1_r ),
+		new Memory_ReadAddress( 0xf000, 0xffff, MRA_ROM ),
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( writemem_sound )
 		{ 0x0000, 0x0fff, MWA_RAM },

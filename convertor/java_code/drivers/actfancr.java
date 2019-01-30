@@ -84,16 +84,18 @@ public class actfancr
 	
 	/******************************************************************************/
 	
-	static MEMORY_READ_START( actfan_readmem )
-		{ 0x000000, 0x02ffff, MRA_ROM },
-		{ 0x062000, 0x063fff, actfancr_pf1_data_r },
-		{ 0x072000, 0x0727ff, actfancr_pf2_data_r },
-		{ 0x100000, 0x1007ff, MRA_RAM },
-		{ 0x130000, 0x130003, actfan_control_1_r },
-		{ 0x140000, 0x140001, actfan_control_0_r },
-		{ 0x120000, 0x1205ff, paletteram_r },
-		{ 0x1f0000, 0x1f3fff, MRA_RAM },
-	MEMORY_END
+	public static Memory_ReadAddress actfan_readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x000000, 0x02ffff, MRA_ROM ),
+		new Memory_ReadAddress( 0x062000, 0x063fff, actfancr_pf1_data_r ),
+		new Memory_ReadAddress( 0x072000, 0x0727ff, actfancr_pf2_data_r ),
+		new Memory_ReadAddress( 0x100000, 0x1007ff, MRA_RAM ),
+		new Memory_ReadAddress( 0x130000, 0x130003, actfan_control_1_r ),
+		new Memory_ReadAddress( 0x140000, 0x140001, actfan_control_0_r ),
+		new Memory_ReadAddress( 0x120000, 0x1205ff, paletteram_r ),
+		new Memory_ReadAddress( 0x1f0000, 0x1f3fff, MRA_RAM ),
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( actfan_writemem )
 		{ 0x000000, 0x02ffff, MWA_ROM },
@@ -108,16 +110,18 @@ public class actfancr
 		{ 0x1f0000, 0x1f3fff, MWA_RAM, &actfancr_ram }, /* Main ram */
 	MEMORY_END
 	
-	static MEMORY_READ_START( triothep_readmem )
-		{ 0x000000, 0x03ffff, MRA_ROM },
-		{ 0x044000, 0x045fff, actfancr_pf2_data_r },
-		{ 0x064000, 0x0647ff, actfancr_pf1_data_r },
-		{ 0x120000, 0x1207ff, MRA_RAM },
-		{ 0x130000, 0x1305ff, paletteram_r },
-		{ 0x140000, 0x140001, MRA_NOP }, /* Value doesn't matter */
-		{ 0x1f0000, 0x1f3fff, MRA_RAM },
-		{ 0x1ff000, 0x1ff001, triothep_control_r },
-	MEMORY_END
+	public static Memory_ReadAddress triothep_readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x000000, 0x03ffff, MRA_ROM ),
+		new Memory_ReadAddress( 0x044000, 0x045fff, actfancr_pf2_data_r ),
+		new Memory_ReadAddress( 0x064000, 0x0647ff, actfancr_pf1_data_r ),
+		new Memory_ReadAddress( 0x120000, 0x1207ff, MRA_RAM ),
+		new Memory_ReadAddress( 0x130000, 0x1305ff, paletteram_r ),
+		new Memory_ReadAddress( 0x140000, 0x140001, MRA_NOP ), /* Value doesn't matter */
+		new Memory_ReadAddress( 0x1f0000, 0x1f3fff, MRA_RAM ),
+		new Memory_ReadAddress( 0x1ff000, 0x1ff001, triothep_control_r ),
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( triothep_writemem )
 		{ 0x000000, 0x03ffff, MWA_ROM },
@@ -138,12 +142,14 @@ public class actfancr
 	
 	/******************************************************************************/
 	
-	static MEMORY_READ_START( dec0_s_readmem )
-		{ 0x0000, 0x07ff, MRA_RAM },
-		{ 0x3000, 0x3000, soundlatch_r },
-		{ 0x3800, 0x3800, OKIM6295_status_0_r },
-		{ 0x4000, 0xffff, MRA_ROM },
-	MEMORY_END
+	public static Memory_ReadAddress dec0_s_readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x07ff, MRA_RAM ),
+		new Memory_ReadAddress( 0x3000, 0x3000, soundlatch_r ),
+		new Memory_ReadAddress( 0x3800, 0x3800, OKIM6295_status_0_r ),
+		new Memory_ReadAddress( 0x4000, 0xffff, MRA_ROM ),
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( dec0_s_writemem )
 		{ 0x0000, 0x07ff, MWA_RAM },

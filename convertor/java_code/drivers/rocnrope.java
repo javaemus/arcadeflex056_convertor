@@ -31,16 +31,18 @@ public class rocnrope
 	}
 	
 	
-	static MEMORY_READ_START( readmem )
-		{ 0x3080, 0x3080, input_port_0_r }, /* IO Coin */
-		{ 0x3081, 0x3081, input_port_1_r }, /* P1 IO */
-		{ 0x3082, 0x3082, input_port_2_r }, /* P2 IO */
-		{ 0x3083, 0x3083, input_port_3_r }, /* DSW 0 */
-		{ 0x3000, 0x3000, input_port_4_r }, /* DSW 1 */
-		{ 0x3100, 0x3100, input_port_5_r }, /* DSW 2 */
-		{ 0x4000, 0x5fff, MRA_RAM },
-		{ 0x6000, 0xffff, MRA_ROM },
-	MEMORY_END
+	public static Memory_ReadAddress readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x3080, 0x3080, input_port_0_r ), /* IO Coin */
+		new Memory_ReadAddress( 0x3081, 0x3081, input_port_1_r ), /* P1 IO */
+		new Memory_ReadAddress( 0x3082, 0x3082, input_port_2_r ), /* P2 IO */
+		new Memory_ReadAddress( 0x3083, 0x3083, input_port_3_r ), /* DSW 0 */
+		new Memory_ReadAddress( 0x3000, 0x3000, input_port_4_r ), /* DSW 1 */
+		new Memory_ReadAddress( 0x3100, 0x3100, input_port_5_r ), /* DSW 2 */
+		new Memory_ReadAddress( 0x4000, 0x5fff, MRA_RAM ),
+		new Memory_ReadAddress( 0x6000, 0xffff, MRA_ROM ),
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( writemem )
 		{ 0x4000, 0x403f, MWA_RAM, &spriteram_2 },

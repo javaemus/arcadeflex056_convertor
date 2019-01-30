@@ -222,19 +222,21 @@ public class mhavoc
 	
 	
 	/* Main board Readmem */
-	static MEMORY_READ_START( readmem )
-		{ 0x0000, 0x01ff, MRA_RAM },			/* 0.5K Program Ram */
-		{ 0x0200, 0x07ff, MRA_BANK1 },			/* 3K Paged Program RAM	*/
-		{ 0x0800, 0x09ff, MRA_RAM },			/* 0.5K Program RAM */
-		{ 0x1000, 0x1000, mhavoc_gamma_r },		/* Gamma Read Port */
-		{ 0x1200, 0x1200, mhavoc_port_0_r },	/* Alpha Input Port 0 */
-		{ 0x1800, 0x1FFF, MRA_RAM},				/* Shared Beta Ram */
-		{ 0x2000, 0x3fff, MRA_BANK2 },			/* Paged Program ROM (32K) */
-		{ 0x4000, 0x4fff, MRA_RAM }, /* Vector RAM	(4K) */
-		{ 0x5000, 0x5fff, MRA_ROM },			/* Vector ROM (4K) */
-		{ 0x6000, 0x7fff, MRA_BANK3 },			/* Paged Vector ROM (32K) */
-		{ 0x8000, 0xffff, MRA_ROM },			/* Program ROM (32K) */
-	MEMORY_END
+	public static Memory_ReadAddress readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x01ff, MRA_RAM ),			/* 0.5K Program Ram */
+		new Memory_ReadAddress( 0x0200, 0x07ff, MRA_BANK1 ),			/* 3K Paged Program RAM	*/
+		new Memory_ReadAddress( 0x0800, 0x09ff, MRA_RAM ),			/* 0.5K Program RAM */
+		new Memory_ReadAddress( 0x1000, 0x1000, mhavoc_gamma_r ),		/* Gamma Read Port */
+		new Memory_ReadAddress( 0x1200, 0x1200, mhavoc_port_0_r ),	/* Alpha Input Port 0 */
+		new Memory_ReadAddress( 0x1800, 0x1FFF, MRA_RAM),				/* Shared Beta Ram */
+		new Memory_ReadAddress( 0x2000, 0x3fff, MRA_BANK2 ),			/* Paged Program ROM (32K) */
+		new Memory_ReadAddress( 0x4000, 0x4fff, MRA_RAM ), /* Vector RAM	(4K) */
+		new Memory_ReadAddress( 0x5000, 0x5fff, MRA_ROM ),			/* Vector ROM (4K) */
+		new Memory_ReadAddress( 0x6000, 0x7fff, MRA_BANK3 ),			/* Paged Vector ROM (32K) */
+		new Memory_ReadAddress( 0x8000, 0xffff, MRA_ROM ),			/* Program ROM (32K) */
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	
 	/* Main Board Writemem */
@@ -260,17 +262,19 @@ public class mhavoc
 	
 	
 	/* Gamma board readmem */
-	static MEMORY_READ_START( gamma_readmem )
-		{ 0x0000, 0x07ff, MRA_RAM },			/* Program RAM (2K)	*/
-		{ 0x0800, 0x1fff, mhavoc_gammaram_r },	/* wraps to 0x000-0x7ff */
-		{ 0x2000, 0x203f, quad_pokey_r },		/* Quad Pokey read	*/
-		{ 0x2800, 0x2800, mhavoc_port_1_r },	/* Gamma Input Port	*/
-		{ 0x3000, 0x3000, mhavoc_alpha_r },		/* Alpha Comm. Read Port*/
-		{ 0x3800, 0x3803, input_port_2_r },		/* Roller Controller Input*/
-		{ 0x4000, 0x4000, input_port_4_r },		/* DSW at 8S */
-		{ 0x6000, 0x61ff, MRA_RAM },			/* EEROM		*/
-		{ 0x8000, 0xffff, MRA_ROM },			/* Program ROM (16K)	*/
-	MEMORY_END
+	public static Memory_ReadAddress gamma_readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x07ff, MRA_RAM ),			/* Program RAM (2K)	*/
+		new Memory_ReadAddress( 0x0800, 0x1fff, mhavoc_gammaram_r ),	/* wraps to 0x000-0x7ff */
+		new Memory_ReadAddress( 0x2000, 0x203f, quad_pokey_r ),		/* Quad Pokey read	*/
+		new Memory_ReadAddress( 0x2800, 0x2800, mhavoc_port_1_r ),	/* Gamma Input Port	*/
+		new Memory_ReadAddress( 0x3000, 0x3000, mhavoc_alpha_r ),		/* Alpha Comm. Read Port*/
+		new Memory_ReadAddress( 0x3800, 0x3803, input_port_2_r ),		/* Roller Controller Input*/
+		new Memory_ReadAddress( 0x4000, 0x4000, input_port_4_r ),		/* DSW at 8S */
+		new Memory_ReadAddress( 0x6000, 0x61ff, MRA_RAM ),			/* EEROM		*/
+		new Memory_ReadAddress( 0x8000, 0xffff, MRA_ROM ),			/* Program ROM (16K)	*/
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( gamma_writemem )
 		{ 0x0000, 0x07ff, MWA_RAM },			/* Program RAM (2K)	*/

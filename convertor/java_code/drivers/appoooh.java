@@ -87,13 +87,15 @@ public class appoooh
 	
 	
 	
-	static MEMORY_READ_START( readmem )
-		{ 0x0000, 0x9fff, MRA_ROM },
-		{ 0xa000, 0xdfff, MRA_BANK1 },
-		{ 0xe000, 0xe7ff, MRA_RAM },
-		{ 0xe800, 0xefff, MRA_RAM }, /* RAM ? */
-		{ 0xf000, 0xffff, MRA_RAM },
-	MEMORY_END
+	public static Memory_ReadAddress readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x9fff, MRA_ROM ),
+		new Memory_ReadAddress( 0xa000, 0xdfff, MRA_BANK1 ),
+		new Memory_ReadAddress( 0xe000, 0xe7ff, MRA_RAM ),
+		new Memory_ReadAddress( 0xe800, 0xefff, MRA_RAM ), /* RAM ? */
+		new Memory_ReadAddress( 0xf000, 0xffff, MRA_RAM ),
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( writemem )
 		{ 0x0000, 0xdfff, MWA_ROM },

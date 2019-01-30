@@ -76,15 +76,17 @@ public class phozon
 	extern void phozon_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	
 		/* CPU 1 (MAIN CPU) read addresses */
-	static MEMORY_READ_START( readmem_cpu1 )
-		{ 0x0000, 0x03ff, videoram_r },			/* video RAM */
-		{ 0x0400, 0x07ff, colorram_r },										/* color RAM */
-		{ 0x0800, 0x1fff, phozon_spriteram_r },			/* shared RAM with CPU #2/sprite RAM*/
-		{ 0x4040, 0x43ff, phozon_snd_sharedram_r },  /* shared RAM with CPU #3 */
-		{ 0x4800, 0x480f, phozon_customio_1_r },		/* custom I/O chip #1 interface */
-		{ 0x4810, 0x481f, phozon_customio_2_r },		/* custom I/O chip #2 interface */
-		{ 0x8000, 0xffff, MRA_ROM },										/* ROM */
-	MEMORY_END
+	public static Memory_ReadAddress readmem_cpu1[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x03ff, videoram_r ),			/* video RAM */
+		new Memory_ReadAddress( 0x0400, 0x07ff, colorram_r ),										/* color RAM */
+		new Memory_ReadAddress( 0x0800, 0x1fff, phozon_spriteram_r ),			/* shared RAM with CPU #2/sprite RAM*/
+		new Memory_ReadAddress( 0x4040, 0x43ff, phozon_snd_sharedram_r ),  /* shared RAM with CPU #3 */
+		new Memory_ReadAddress( 0x4800, 0x480f, phozon_customio_1_r ),		/* custom I/O chip #1 interface */
+		new Memory_ReadAddress( 0x4810, 0x481f, phozon_customio_2_r ),		/* custom I/O chip #2 interface */
+		new Memory_ReadAddress( 0x8000, 0xffff, MRA_ROM ),										/* ROM */
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 		/* CPU 1 (MAIN CPU) write addresses */
 	static MEMORY_WRITE_START( writemem_cpu1 )
@@ -107,13 +109,15 @@ public class phozon
 	MEMORY_END
 	
 		/* CPU 2 (SUB CPU) read addresses */
-	static MEMORY_READ_START( readmem_cpu2 )
-		{ 0x0000, 0x03ff, videoram_r },			/* video RAM */
-		{ 0x0400, 0x07ff, colorram_r },			/* color RAM */
-		{ 0x0800, 0x1fff, phozon_spriteram_r },	/* shared RAM with CPU #1/sprite RAM*/
-		{ 0xa000, 0xa7ff, MRA_RAM },			/* RAM */
-		{ 0xe000, 0xffff, MRA_ROM },			/* ROM */
-	MEMORY_END
+	public static Memory_ReadAddress readmem_cpu2[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x03ff, videoram_r ),			/* video RAM */
+		new Memory_ReadAddress( 0x0400, 0x07ff, colorram_r ),			/* color RAM */
+		new Memory_ReadAddress( 0x0800, 0x1fff, phozon_spriteram_r ),	/* shared RAM with CPU #1/sprite RAM*/
+		new Memory_ReadAddress( 0xa000, 0xa7ff, MRA_RAM ),			/* RAM */
+		new Memory_ReadAddress( 0xe000, 0xffff, MRA_ROM ),			/* ROM */
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 		/* CPU 2 (SUB CPU) write addresses */
 	static MEMORY_WRITE_START( writemem_cpu2 )
@@ -125,11 +129,13 @@ public class phozon
 	MEMORY_END
 	
 		/* CPU 3 (SOUND CPU) read addresses */
-	static MEMORY_READ_START( readmem_cpu3 )
-		{ 0x0000, 0x003f, MRA_RAM },				/* sound registers */
-		{ 0x0040, 0x03ff, phozon_snd_sharedram_r }, /* shared RAM with CPU #1 */
-		{ 0xe000, 0xffff, MRA_ROM },				/* ROM */
-	MEMORY_END
+	public static Memory_ReadAddress readmem_cpu3[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x003f, MRA_RAM ),				/* sound registers */
+		new Memory_ReadAddress( 0x0040, 0x03ff, phozon_snd_sharedram_r ), /* shared RAM with CPU #1 */
+		new Memory_ReadAddress( 0xe000, 0xffff, MRA_ROM ),				/* ROM */
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 		/* CPU 3 (SOUND CPU) write addresses */
 	static MEMORY_WRITE_START( writemem_cpu3 )

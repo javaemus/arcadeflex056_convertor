@@ -60,19 +60,21 @@ public class copsnrob
 	int copsnrob_vh_start(void);
 	void copsnrob_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	
-	static MEMORY_READ_START( readmem )
-		{ 0x0000, 0x01ff, MRA_RAM },
-		{ 0x0800, 0x08ff, MRA_RAM },
-		{ 0x0b00, 0x0bff, MRA_RAM },
-		{ 0x0c00, 0x0fff, MRA_RAM },
-		{ 0x1000, 0x1000, input_port_0_r },
-		{ 0x1002, 0x100e, copsnrob_gun_position_r},
-		{ 0x1012, 0x1012, input_port_3_r },
-		{ 0x1016, 0x1016, input_port_1_r },
-		{ 0x101a, 0x101a, input_port_2_r },
-		{ 0x1200, 0x1fff, MRA_ROM },
-		{ 0xfff8, 0xffff, MRA_ROM },
-	MEMORY_END
+	public static Memory_ReadAddress readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x01ff, MRA_RAM ),
+		new Memory_ReadAddress( 0x0800, 0x08ff, MRA_RAM ),
+		new Memory_ReadAddress( 0x0b00, 0x0bff, MRA_RAM ),
+		new Memory_ReadAddress( 0x0c00, 0x0fff, MRA_RAM ),
+		new Memory_ReadAddress( 0x1000, 0x1000, input_port_0_r ),
+		new Memory_ReadAddress( 0x1002, 0x100e, copsnrob_gun_position_r),
+		new Memory_ReadAddress( 0x1012, 0x1012, input_port_3_r ),
+		new Memory_ReadAddress( 0x1016, 0x1016, input_port_1_r ),
+		new Memory_ReadAddress( 0x101a, 0x101a, input_port_2_r ),
+		new Memory_ReadAddress( 0x1200, 0x1fff, MRA_ROM ),
+		new Memory_ReadAddress( 0xfff8, 0xffff, MRA_ROM ),
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( writemem )
 		{ 0x0000, 0x01ff, MWA_RAM },

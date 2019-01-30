@@ -138,15 +138,17 @@ public class rockola
 		{ 0xb003, 0xb003, satansat_backcolor_w },
 	MEMORY_END
 	
-	static MEMORY_READ_START( satansat_readmem )
-		{ 0x0000, 0x1fff, MRA_RAM },
-		{ 0x4000, 0x97ff, MRA_ROM },
-		{ 0xb004, 0xb004, input_port_0_r }, /* IN0 */
-		{ 0xb005, 0xb005, input_port_1_r }, /* IN1 */
-		{ 0xb006, 0xb006, input_port_2_r }, /* DSW */
-		{ 0xb007, 0xb007, input_port_3_r }, /* IN2 */
-		{ 0xf800, 0xffff, MRA_ROM },
-	MEMORY_END
+	public static Memory_ReadAddress satansat_readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x1fff, MRA_RAM ),
+		new Memory_ReadAddress( 0x4000, 0x97ff, MRA_ROM ),
+		new Memory_ReadAddress( 0xb004, 0xb004, input_port_0_r ), /* IN0 */
+		new Memory_ReadAddress( 0xb005, 0xb005, input_port_1_r ), /* IN1 */
+		new Memory_ReadAddress( 0xb006, 0xb006, input_port_2_r ), /* DSW */
+		new Memory_ReadAddress( 0xb007, 0xb007, input_port_3_r ), /* IN2 */
+		new Memory_ReadAddress( 0xf800, 0xffff, MRA_ROM ),
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( satansat_writemem )
 		{ 0x0000, 0x03ff, MWA_RAM },
@@ -163,15 +165,17 @@ public class rockola
 		{ 0xb003, 0xb003, satansat_backcolor_w },
 	MEMORY_END
 	
-	static MEMORY_READ_START( vanguard_readmem )
-		{ 0x0000, 0x1fff, MRA_RAM },
-		{ 0x3104, 0x3104, input_port_0_r },	/* IN0 */
-		{ 0x3105, 0x3105, input_port_1_r },	/* IN1 */
-		{ 0x3106, 0x3106, input_port_2_r },	/* DSW */
-		{ 0x3107, 0x3107, input_port_3_r },	/* IN2 */
-		{ 0x4000, 0xbfff, MRA_ROM },
-		{ 0xf000, 0xffff, MRA_ROM },	/* for the reset / interrupt vectors */
-	MEMORY_END
+	public static Memory_ReadAddress vanguard_readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x1fff, MRA_RAM ),
+		new Memory_ReadAddress( 0x3104, 0x3104, input_port_0_r ),	/* IN0 */
+		new Memory_ReadAddress( 0x3105, 0x3105, input_port_1_r ),	/* IN1 */
+		new Memory_ReadAddress( 0x3106, 0x3106, input_port_2_r ),	/* DSW */
+		new Memory_ReadAddress( 0x3107, 0x3107, input_port_3_r ),	/* IN2 */
+		new Memory_ReadAddress( 0x4000, 0xbfff, MRA_ROM ),
+		new Memory_ReadAddress( 0xf000, 0xffff, MRA_ROM ),	/* for the reset / interrupt vectors */
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( vanguard_writemem )
 		{ 0x0000, 0x03ff, MWA_RAM },
@@ -190,15 +194,17 @@ public class rockola
 		{ 0x4000, 0xbfff, MWA_ROM },
 	MEMORY_END
 	
-	static MEMORY_READ_START( fantasy_readmem )
-		{ 0x0000, 0x1fff, MRA_RAM },
-		{ 0x2104, 0x2104, input_port_0_r },	/* IN0 */
-		{ 0x2105, 0x2105, input_port_1_r },	/* IN1 */
-		{ 0x2106, 0x2106, input_port_2_r },	/* DSW */
-		{ 0x2107, 0x2107, input_port_3_r },	/* IN2 */
-		{ 0x3000, 0xbfff, MRA_ROM },
-		{ 0xfffa, 0xffff, MRA_ROM },
-	MEMORY_END
+	public static Memory_ReadAddress fantasy_readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x1fff, MRA_RAM ),
+		new Memory_ReadAddress( 0x2104, 0x2104, input_port_0_r ),	/* IN0 */
+		new Memory_ReadAddress( 0x2105, 0x2105, input_port_1_r ),	/* IN1 */
+		new Memory_ReadAddress( 0x2106, 0x2106, input_port_2_r ),	/* DSW */
+		new Memory_ReadAddress( 0x2107, 0x2107, input_port_3_r ),	/* IN2 */
+		new Memory_ReadAddress( 0x3000, 0xbfff, MRA_ROM ),
+		new Memory_ReadAddress( 0xfffa, 0xffff, MRA_ROM ),
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( fantasy_writemem )
 		{ 0x0000, 0x03ff, MWA_RAM },
@@ -217,15 +223,17 @@ public class rockola
 		{ 0x3000, 0xbfff, MWA_ROM },
 	MEMORY_END
 	
-	static MEMORY_READ_START( pballoon_readmem )
-		{ 0x0000, 0x1fff, MRA_RAM },
-		{ 0x3000, 0x9fff, MRA_ROM },
-		{ 0xb104, 0xb104, input_port_0_r },	/* IN0 */
-		{ 0xb105, 0xb105, input_port_1_r },	/* IN1 */
-		{ 0xb106, 0xb106, input_port_2_r },	/* DSW */
-		{ 0xb107, 0xb107, input_port_3_r },	/* IN2 */
-		{ 0xfffa, 0xffff, MRA_ROM },
-	MEMORY_END
+	public static Memory_ReadAddress pballoon_readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x1fff, MRA_RAM ),
+		new Memory_ReadAddress( 0x3000, 0x9fff, MRA_ROM ),
+		new Memory_ReadAddress( 0xb104, 0xb104, input_port_0_r ),	/* IN0 */
+		new Memory_ReadAddress( 0xb105, 0xb105, input_port_1_r ),	/* IN1 */
+		new Memory_ReadAddress( 0xb106, 0xb106, input_port_2_r ),	/* DSW */
+		new Memory_ReadAddress( 0xb107, 0xb107, input_port_3_r ),	/* IN2 */
+		new Memory_ReadAddress( 0xfffa, 0xffff, MRA_ROM ),
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( pballoon_writemem )
 		{ 0x0000, 0x03ff, MWA_RAM },

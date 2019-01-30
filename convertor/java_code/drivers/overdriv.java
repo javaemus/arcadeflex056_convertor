@@ -325,13 +325,15 @@ public class overdriv
 	MEMORY_END
 	
 	
-	static MEMORY_READ_START( overdriv_s_readmem )
-		{ 0x0201, 0x0201, YM2151_status_port_0_r },
-		{ 0x0400, 0x042f, K053260_0_r },
-		{ 0x0600, 0x062f, K053260_1_r },
-		{ 0x0800, 0x0fff, MRA_RAM },
-		{ 0x1000, 0xffff, MRA_ROM },
-	MEMORY_END
+	public static Memory_ReadAddress overdriv_s_readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0201, 0x0201, YM2151_status_port_0_r ),
+		new Memory_ReadAddress( 0x0400, 0x042f, K053260_0_r ),
+		new Memory_ReadAddress( 0x0600, 0x062f, K053260_1_r ),
+		new Memory_ReadAddress( 0x0800, 0x0fff, MRA_RAM ),
+		new Memory_ReadAddress( 0x1000, 0xffff, MRA_ROM ),
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( overdriv_s_writemem )
 		{ 0x0200, 0x0200, YM2151_register_port_0_w },

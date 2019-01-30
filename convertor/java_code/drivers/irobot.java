@@ -125,21 +125,23 @@ public class irobot
 	}
 	
 	
-	static MEMORY_READ_START( readmem )
-	    { 0x0000, 0x07ff, MRA_RAM },
-	    { 0x0800, 0x0fff, MRA_BANK2 },
-	    { 0x1000, 0x103f, input_port_0_r },
-	    { 0x1040, 0x1040, input_port_1_r },
-	    { 0x1080, 0x1080, irobot_status_r },
-	    { 0x10c0, 0x10c0, input_port_3_r },
-	    { 0x1200, 0x12ff, MRA_RAM },
-	    { 0x1300, 0x13ff, irobot_control_r },
-	    { 0x1400, 0x143f, quad_pokey_r },
-	    { 0x1c00, 0x1fff, MRA_RAM },
-	    { 0x2000, 0x3fff, irobot_sharedmem_r },
-	    { 0x4000, 0x5fff, MRA_BANK1 },
-	    { 0x6000, 0xffff, MRA_ROM },
-	MEMORY_END
+	public static Memory_ReadAddress readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+	    new Memory_ReadAddress( 0x0000, 0x07ff, MRA_RAM ),
+	    new Memory_ReadAddress( 0x0800, 0x0fff, MRA_BANK2 ),
+	    new Memory_ReadAddress( 0x1000, 0x103f, input_port_0_r ),
+	    new Memory_ReadAddress( 0x1040, 0x1040, input_port_1_r ),
+	    new Memory_ReadAddress( 0x1080, 0x1080, irobot_status_r ),
+	    new Memory_ReadAddress( 0x10c0, 0x10c0, input_port_3_r ),
+	    new Memory_ReadAddress( 0x1200, 0x12ff, MRA_RAM ),
+	    new Memory_ReadAddress( 0x1300, 0x13ff, irobot_control_r ),
+	    new Memory_ReadAddress( 0x1400, 0x143f, quad_pokey_r ),
+	    new Memory_ReadAddress( 0x1c00, 0x1fff, MRA_RAM ),
+	    new Memory_ReadAddress( 0x2000, 0x3fff, irobot_sharedmem_r ),
+	    new Memory_ReadAddress( 0x4000, 0x5fff, MRA_BANK1 ),
+	    new Memory_ReadAddress( 0x6000, 0xffff, MRA_ROM ),
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( writemem )
 	    { 0x0000, 0x07ff, MWA_RAM },

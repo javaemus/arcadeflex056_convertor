@@ -39,21 +39,23 @@ public class dominos
 	/* vidhrdw/dominos.c */
 	extern void dominos_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	
-	static MEMORY_READ_START( readmem )
-		{ 0x0000, 0x03ff, MRA_RAM }, /* RAM */
-		{ 0x0400, 0x07ff, MRA_RAM }, /* RAM */
-		{ 0x0800, 0x083f, dominos_port_r }, /* SWITCH */
-		{ 0x0840, 0x087f, input_port_3_r }, /* SWITCH */
-		{ 0x0900, 0x093f, dominos_port_r }, /* SWITCH */
-		{ 0x0940, 0x097f, input_port_3_r }, /* SWITCH */
-		{ 0x0a00, 0x0a3f, dominos_port_r }, /* SWITCH */
-		{ 0x0a40, 0x0a7f, input_port_3_r }, /* SWITCH */
-		{ 0x0b00, 0x0b3f, dominos_port_r }, /* SWITCH */
-		{ 0x0b40, 0x0b7f, input_port_3_r }, /* SWITCH */
-		{ 0x0c00, 0x0fff, dominos_sync_r }, /* SYNC */
-		{ 0x3000, 0x3fff, MRA_ROM }, /* ROM1-ROM2 */
-		{ 0xfff0, 0xffff, MRA_ROM }, /* ROM2 for 6502 vectors */
-	MEMORY_END
+	public static Memory_ReadAddress readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x03ff, MRA_RAM ), /* RAM */
+		new Memory_ReadAddress( 0x0400, 0x07ff, MRA_RAM ), /* RAM */
+		new Memory_ReadAddress( 0x0800, 0x083f, dominos_port_r ), /* SWITCH */
+		new Memory_ReadAddress( 0x0840, 0x087f, input_port_3_r ), /* SWITCH */
+		new Memory_ReadAddress( 0x0900, 0x093f, dominos_port_r ), /* SWITCH */
+		new Memory_ReadAddress( 0x0940, 0x097f, input_port_3_r ), /* SWITCH */
+		new Memory_ReadAddress( 0x0a00, 0x0a3f, dominos_port_r ), /* SWITCH */
+		new Memory_ReadAddress( 0x0a40, 0x0a7f, input_port_3_r ), /* SWITCH */
+		new Memory_ReadAddress( 0x0b00, 0x0b3f, dominos_port_r ), /* SWITCH */
+		new Memory_ReadAddress( 0x0b40, 0x0b7f, input_port_3_r ), /* SWITCH */
+		new Memory_ReadAddress( 0x0c00, 0x0fff, dominos_sync_r ), /* SYNC */
+		new Memory_ReadAddress( 0x3000, 0x3fff, MRA_ROM ), /* ROM1-ROM2 */
+		new Memory_ReadAddress( 0xfff0, 0xffff, MRA_ROM ), /* ROM2 for 6502 vectors */
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( writemem )
 		{ 0x0000, 0x03ff, MWA_RAM },

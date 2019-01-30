@@ -87,16 +87,18 @@ public class mystston
 	
 	
 	
-	static MEMORY_READ_START( readmem )
-		{ 0x0000, 0x077f, MRA_RAM },
-		{ 0x0800, 0x0fff, MRA_RAM },	/* work RAM? */
-		{ 0x1000, 0x1fff, MRA_RAM },
-		{ 0x2000, 0x2000, input_port_0_r },
-		{ 0x2010, 0x2010, input_port_1_r },
-		{ 0x2020, 0x2020, input_port_2_r },
-		{ 0x2030, 0x2030, input_port_3_r },
-		{ 0x4000, 0xffff, MRA_ROM },
-	MEMORY_END
+	public static Memory_ReadAddress readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x077f, MRA_RAM ),
+		new Memory_ReadAddress( 0x0800, 0x0fff, MRA_RAM ),	/* work RAM? */
+		new Memory_ReadAddress( 0x1000, 0x1fff, MRA_RAM ),
+		new Memory_ReadAddress( 0x2000, 0x2000, input_port_0_r ),
+		new Memory_ReadAddress( 0x2010, 0x2010, input_port_1_r ),
+		new Memory_ReadAddress( 0x2020, 0x2020, input_port_2_r ),
+		new Memory_ReadAddress( 0x2030, 0x2030, input_port_3_r ),
+		new Memory_ReadAddress( 0x4000, 0xffff, MRA_ROM ),
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( writemem )
 		{ 0x0000, 0x077f, MWA_RAM },

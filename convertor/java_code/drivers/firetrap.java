@@ -168,18 +168,20 @@ public class firetrap
 	}
 	
 	
-	static MEMORY_READ_START( readmem )
-		{ 0x0000, 0x7fff, MRA_ROM },
-		{ 0x8000, 0xbfff, MRA_BANK1 },
-		{ 0xc000, 0xe97f, MRA_RAM },
-		{ 0xf010, 0xf010, input_port_0_r },
-		{ 0xf011, 0xf011, input_port_1_r },
-		{ 0xf012, 0xf012, input_port_2_r },
-		{ 0xf013, 0xf013, input_port_3_r },
-		{ 0xf014, 0xf014, input_port_4_r },
-		{ 0xf016, 0xf016, firetrap_8751_r },
-		{ 0xf800, 0xf8ff, MRA_ROM },	/* extra ROM in the bootleg with unprotection code */
-	MEMORY_END
+	public static Memory_ReadAddress readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x7fff, MRA_ROM ),
+		new Memory_ReadAddress( 0x8000, 0xbfff, MRA_BANK1 ),
+		new Memory_ReadAddress( 0xc000, 0xe97f, MRA_RAM ),
+		new Memory_ReadAddress( 0xf010, 0xf010, input_port_0_r ),
+		new Memory_ReadAddress( 0xf011, 0xf011, input_port_1_r ),
+		new Memory_ReadAddress( 0xf012, 0xf012, input_port_2_r ),
+		new Memory_ReadAddress( 0xf013, 0xf013, input_port_3_r ),
+		new Memory_ReadAddress( 0xf014, 0xf014, input_port_4_r ),
+		new Memory_ReadAddress( 0xf016, 0xf016, firetrap_8751_r ),
+		new Memory_ReadAddress( 0xf800, 0xf8ff, MRA_ROM ),	/* extra ROM in the bootleg with unprotection code */
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( writemem )
 		{ 0x0000, 0xbfff, MWA_ROM },
@@ -201,12 +203,14 @@ public class firetrap
 		{ 0xf800, 0xf8ff, MWA_ROM },	/* extra ROM in the bootleg with unprotection code */
 	MEMORY_END
 	
-	static MEMORY_READ_START( sound_readmem )
-		{ 0x0000, 0x07ff, MRA_RAM },
-		{ 0x3400, 0x3400, soundlatch_r },
-		{ 0x4000, 0x7fff, MRA_BANK2 },
-		{ 0x8000, 0xffff, MRA_ROM },
-	MEMORY_END
+	public static Memory_ReadAddress sound_readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x07ff, MRA_RAM ),
+		new Memory_ReadAddress( 0x3400, 0x3400, soundlatch_r ),
+		new Memory_ReadAddress( 0x4000, 0x7fff, MRA_BANK2 ),
+		new Memory_ReadAddress( 0x8000, 0xffff, MRA_ROM ),
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( sound_writemem )
 		{ 0x0000, 0x07ff, MWA_RAM },

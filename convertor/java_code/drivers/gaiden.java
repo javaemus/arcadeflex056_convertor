@@ -171,13 +171,15 @@ public class gaiden
 		{ 0x07a806, 0x07a807, MWA16_NOP },
 	MEMORY_END
 	
-	static MEMORY_READ_START( sound_readmem )
-		{ 0x0000, 0xdfff, MRA_ROM },
-		{ 0xf000, 0xf7ff, MRA_RAM },
-		{ 0xf800, 0xf800, OKIM6295_status_0_r },
-		{ 0xfc00, 0xfc00, MRA_NOP },	/* ?? */
-		{ 0xfc20, 0xfc20, soundlatch_r },
-	MEMORY_END
+	public static Memory_ReadAddress sound_readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0xdfff, MRA_ROM ),
+		new Memory_ReadAddress( 0xf000, 0xf7ff, MRA_RAM ),
+		new Memory_ReadAddress( 0xf800, 0xf800, OKIM6295_status_0_r ),
+		new Memory_ReadAddress( 0xfc00, 0xfc00, MRA_NOP ),	/* ?? */
+		new Memory_ReadAddress( 0xfc20, 0xfc20, soundlatch_r ),
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( sound_writemem )
 		{ 0x0000, 0xdfff, MWA_ROM },

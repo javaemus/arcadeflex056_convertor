@@ -105,11 +105,13 @@ public class dynax
 	
 	static READ_HANDLER( ret_ff )	{	return 0xff;	}
 	
-	static MEMORY_READ_START( sprtmtch_readmem )
-		{ 0x0000, 0x6fff, MRA_ROM					},	// ROM
-		{ 0x7000, 0x7fff, MRA_RAM					},	// RAM
-		{ 0x8000, 0xffff, MRA_ROM					},	// ROM
-	MEMORY_END
+	public static Memory_ReadAddress sprtmtch_readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x6fff, MRA_ROM					),	// ROM
+		new Memory_ReadAddress( 0x7000, 0x7fff, MRA_RAM					),	// RAM
+		new Memory_ReadAddress( 0x8000, 0xffff, MRA_ROM					),	// ROM
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( sprtmtch_writemem )
 		{ 0x0000, 0x6fff, MWA_ROM					},	// ROM
@@ -322,11 +324,13 @@ public class dynax
 		rongrong_select2 = data;
 	}
 	
-	static MEMORY_READ_START( rongrong_readmem )
-		{ 0x0000, 0x5fff, MRA_ROM					},	// ROM
-		{ 0x6000, 0x7fff, MRA_RAM					},	// RAM
-		{ 0x8000, 0xffff, MRA_BANK1					},	// ROM (Banked)
-	MEMORY_END
+	public static Memory_ReadAddress rongrong_readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x5fff, MRA_ROM					),	// ROM
+		new Memory_ReadAddress( 0x6000, 0x7fff, MRA_RAM					),	// RAM
+		new Memory_ReadAddress( 0x8000, 0xffff, MRA_BANK1					),	// ROM (Banked)
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( rongrong_writemem )
 		{ 0x0000, 0x5fff, MWA_ROM					},	// ROM

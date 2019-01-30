@@ -71,16 +71,18 @@ public class clshroad
 	}
 	
 	
-	static MEMORY_READ_START( clshroad_readmem )
-		{ 0x0000, 0x7fff, MRA_ROM				},	// ROM
-		{ 0x8000, 0x95ff, MRA_RAM				},	// Work   RAM
-		{ 0x9600, 0x97ff, clshroad_sharedram_r	},	// Shared RAM
-		{ 0x9800, 0x9dff, MRA_RAM				},	// Work   RAM
-		{ 0x9e00, 0x9fff, MRA_RAM				},	// Sprite RAM
-		{ 0xa100, 0xa107, clshroad_input_r		},	// Inputs
-		{ 0xa800, 0xafff, MRA_RAM				},	// Layer  1
-		{ 0xc000, 0xc7ff, MRA_RAM				},	// Layers 0
-	MEMORY_END
+	public static Memory_ReadAddress clshroad_readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x7fff, MRA_ROM				),	// ROM
+		new Memory_ReadAddress( 0x8000, 0x95ff, MRA_RAM				),	// Work   RAM
+		new Memory_ReadAddress( 0x9600, 0x97ff, clshroad_sharedram_r	),	// Shared RAM
+		new Memory_ReadAddress( 0x9800, 0x9dff, MRA_RAM				),	// Work   RAM
+		new Memory_ReadAddress( 0x9e00, 0x9fff, MRA_RAM				),	// Sprite RAM
+		new Memory_ReadAddress( 0xa100, 0xa107, clshroad_input_r		),	// Inputs
+		new Memory_ReadAddress( 0xa800, 0xafff, MRA_RAM				),	// Layer  1
+		new Memory_ReadAddress( 0xc000, 0xc7ff, MRA_RAM				),	// Layers 0
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( clshroad_writemem )
 		{ 0x0000, 0x7fff, MWA_ROM									},	// ROM
@@ -95,10 +97,12 @@ public class clshroad
 		{ 0xc000, 0xc7ff, clshroad_vram_0_w, &clshroad_vram_0		},	// Layers 0
 	MEMORY_END
 	
-	static MEMORY_READ_START( clshroad_sound_readmem )
-		{ 0x0000, 0x1fff, MRA_ROM				},	// ROM
-		{ 0x9600, 0x97ff, clshroad_sharedram_r	},	// Shared RAM
-	MEMORY_END
+	public static Memory_ReadAddress clshroad_sound_readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x1fff, MRA_ROM				),	// ROM
+		new Memory_ReadAddress( 0x9600, 0x97ff, clshroad_sharedram_r	),	// Shared RAM
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( clshroad_sound_writemem )
 		{ 0x0000, 0x1fff, MWA_ROM				},	// ROM

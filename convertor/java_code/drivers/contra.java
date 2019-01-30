@@ -71,20 +71,22 @@ public class contra
 	
 	
 	
-	static MEMORY_READ_START( readmem )
-		{ 0x0010, 0x0010, input_port_0_r },		/* IN0 */
-		{ 0x0011, 0x0011, input_port_1_r },		/* IN1 */
-		{ 0x0012, 0x0012, input_port_2_r },		/* IN2 */
+	public static Memory_ReadAddress readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0010, 0x0010, input_port_0_r ),		/* IN0 */
+		new Memory_ReadAddress( 0x0011, 0x0011, input_port_1_r ),		/* IN1 */
+		new Memory_ReadAddress( 0x0012, 0x0012, input_port_2_r ),		/* IN2 */
 	
-		{ 0x0014, 0x0014, input_port_3_r },		/* DIPSW1 */
-		{ 0x0015, 0x0015, input_port_4_r },		/* DIPSW2 */
-		{ 0x0016, 0x0016, input_port_5_r },		/* DIPSW3 */
+		new Memory_ReadAddress( 0x0014, 0x0014, input_port_3_r ),		/* DIPSW1 */
+		new Memory_ReadAddress( 0x0015, 0x0015, input_port_4_r ),		/* DIPSW2 */
+		new Memory_ReadAddress( 0x0016, 0x0016, input_port_5_r ),		/* DIPSW3 */
 	
-		{ 0x0c00, 0x0cff, MRA_RAM },
-		{ 0x1000, 0x5fff, MRA_RAM },
-		{ 0x6000, 0x7fff, MRA_BANK1 },
-		{ 0x8000, 0xffff, MRA_ROM },
-	MEMORY_END
+		new Memory_ReadAddress( 0x0c00, 0x0cff, MRA_RAM ),
+		new Memory_ReadAddress( 0x1000, 0x5fff, MRA_RAM ),
+		new Memory_ReadAddress( 0x6000, 0x7fff, MRA_BANK1 ),
+		new Memory_ReadAddress( 0x8000, 0xffff, MRA_ROM ),
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( writemem )
 		{ 0x0000, 0x0007, contra_K007121_ctrl_0_w },
@@ -109,12 +111,14 @@ public class contra
 		{ 0x7001, 0xffff, MWA_ROM },
 	MEMORY_END
 	
-	static MEMORY_READ_START( readmem_sound )
-		{ 0x0000, 0x0000, soundlatch_r },
-		{ 0x2001, 0x2001, YM2151_status_port_0_r },
-		{ 0x6000, 0x67ff, MRA_RAM },
-		{ 0x8000, 0xffff, MRA_ROM },
-	MEMORY_END
+	public static Memory_ReadAddress readmem_sound[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x0000, soundlatch_r ),
+		new Memory_ReadAddress( 0x2001, 0x2001, YM2151_status_port_0_r ),
+		new Memory_ReadAddress( 0x6000, 0x67ff, MRA_RAM ),
+		new Memory_ReadAddress( 0x8000, 0xffff, MRA_ROM ),
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( writemem_sound )
 		{ 0x2000, 0x2000, YM2151_register_port_0_w },

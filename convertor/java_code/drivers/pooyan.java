@@ -77,15 +77,17 @@ public class pooyan
 	void pooyan_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	
 	
-	static MEMORY_READ_START( readmem )
-		{ 0x0000, 0x7fff, MRA_ROM },
-		{ 0x8000, 0x8fff, MRA_RAM },	/* color and video RAM */
-		{ 0xa000, 0xa000, input_port_4_r },	/* DSW2 */
-		{ 0xa080, 0xa080, input_port_0_r },	/* IN0 */
-		{ 0xa0a0, 0xa0a0, input_port_1_r },	/* IN1 */
-		{ 0xa0c0, 0xa0c0, input_port_2_r },	/* IN2 */
-		{ 0xa0e0, 0xa0e0, input_port_3_r },	/* DSW1 */
-	MEMORY_END
+	public static Memory_ReadAddress readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x7fff, MRA_ROM ),
+		new Memory_ReadAddress( 0x8000, 0x8fff, MRA_RAM ),	/* color and video RAM */
+		new Memory_ReadAddress( 0xa000, 0xa000, input_port_4_r ),	/* DSW2 */
+		new Memory_ReadAddress( 0xa080, 0xa080, input_port_0_r ),	/* IN0 */
+		new Memory_ReadAddress( 0xa0a0, 0xa0a0, input_port_1_r ),	/* IN1 */
+		new Memory_ReadAddress( 0xa0c0, 0xa0c0, input_port_2_r ),	/* IN2 */
+		new Memory_ReadAddress( 0xa0e0, 0xa0e0, input_port_3_r ),	/* DSW1 */
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( writemem )
 		{ 0x0000, 0x7fff, MWA_ROM },

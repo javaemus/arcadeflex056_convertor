@@ -106,13 +106,15 @@ public class lastduel
 	
 	/******************************************************************************/
 	
-	static MEMORY_READ_START( sound_readmem )
-		{ 0x0000, 0xdfff, MRA_ROM },
-		{ 0xe000, 0xe7ff, MRA_RAM },
-		{ 0xe800, 0xe800, YM2203_status_port_0_r },
-		{ 0xf000, 0xf000, YM2203_status_port_1_r },
-		{ 0xf800, 0xf800, soundlatch_r },
-	MEMORY_END
+	public static Memory_ReadAddress sound_readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0xdfff, MRA_ROM ),
+		new Memory_ReadAddress( 0xe000, 0xe7ff, MRA_RAM ),
+		new Memory_ReadAddress( 0xe800, 0xe800, YM2203_status_port_0_r ),
+		new Memory_ReadAddress( 0xf000, 0xf000, YM2203_status_port_1_r ),
+		new Memory_ReadAddress( 0xf800, 0xf800, soundlatch_r ),
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( sound_writemem )
 		{ 0x0000, 0xdfff, MWA_ROM },
@@ -132,14 +134,16 @@ public class lastduel
 		cpu_setbank(3,&RAM[bankaddress]);
 	}
 	
-	static MEMORY_READ_START( mg_sound_readmem )
-		{ 0x0000, 0x7fff, MRA_ROM },
-		{ 0x8000, 0xcfff, MRA_BANK3 },
-		{ 0xd000, 0xd7ff, MRA_RAM },
-		{ 0xf000, 0xf000, YM2203_status_port_0_r },
-		{ 0xf002, 0xf002, YM2203_status_port_1_r },
-		{ 0xf006, 0xf006, soundlatch_r },
-	MEMORY_END
+	public static Memory_ReadAddress mg_sound_readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x7fff, MRA_ROM ),
+		new Memory_ReadAddress( 0x8000, 0xcfff, MRA_BANK3 ),
+		new Memory_ReadAddress( 0xd000, 0xd7ff, MRA_RAM ),
+		new Memory_ReadAddress( 0xf000, 0xf000, YM2203_status_port_0_r ),
+		new Memory_ReadAddress( 0xf002, 0xf002, YM2203_status_port_1_r ),
+		new Memory_ReadAddress( 0xf006, 0xf006, soundlatch_r ),
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( mg_sound_writemem )
 		{ 0x0000, 0xcfff, MWA_ROM },

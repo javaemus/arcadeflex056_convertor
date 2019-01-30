@@ -52,18 +52,20 @@ public class mermaid
 	}
 	
 	
-	static MEMORY_READ_START( readmem )
-		{ 0x0000, 0x9fff, MRA_ROM },
-		{ 0xc000, 0xcbff, MRA_RAM },
-		{ 0xd000, 0xd3ff, MRA_RAM },
-		{ 0xd800, 0xd81f, MRA_RAM },
-		{ 0xd840, 0xd8bf, MRA_RAM },
-		{ 0xdc00, 0xdfff, MRA_RAM },
-		{ 0xe000, 0xe000, input_port_0_r },
-		{ 0xe800, 0xe800, input_port_1_r },
-		{ 0xf000, 0xf000, input_port_2_r },
-		{ 0xf800, 0xf800, mermaid_f800_r },
-	MEMORY_END
+	public static Memory_ReadAddress readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x9fff, MRA_ROM ),
+		new Memory_ReadAddress( 0xc000, 0xcbff, MRA_RAM ),
+		new Memory_ReadAddress( 0xd000, 0xd3ff, MRA_RAM ),
+		new Memory_ReadAddress( 0xd800, 0xd81f, MRA_RAM ),
+		new Memory_ReadAddress( 0xd840, 0xd8bf, MRA_RAM ),
+		new Memory_ReadAddress( 0xdc00, 0xdfff, MRA_RAM ),
+		new Memory_ReadAddress( 0xe000, 0xe000, input_port_0_r ),
+		new Memory_ReadAddress( 0xe800, 0xe800, input_port_1_r ),
+		new Memory_ReadAddress( 0xf000, 0xf000, input_port_2_r ),
+		new Memory_ReadAddress( 0xf800, 0xf800, mermaid_f800_r ),
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( writemem )
 		{ 0x0000, 0x9fff, MWA_ROM },

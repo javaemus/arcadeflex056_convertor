@@ -138,14 +138,16 @@ public class pandoras
 	
 	
 	
-	static MEMORY_READ_START( pandoras_readmem_a )
-		{ 0x0000, 0x0fff, pandoras_sharedram_r },	/* Work RAM (Shared with CPU B) */
-		{ 0x1000, 0x13ff, pandoras_cram_r },		/* Color RAM (shared with CPU B) */
-		{ 0x1400, 0x17ff, pandoras_vram_r },		/* Video RAM (shared with CPU B) */
-		{ 0x4000, 0x5fff, MRA_ROM },				/* space for diagnostic ROM */
-		{ 0x6000, 0x67ff, pandoras_sharedram2_r },	/* Shared RAM with CPU B */
-		{ 0x8000, 0xffff, MRA_ROM },				/* ROM */
-	MEMORY_END
+	public static Memory_ReadAddress pandoras_readmem_a[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x0fff, pandoras_sharedram_r ),	/* Work RAM (Shared with CPU B) */
+		new Memory_ReadAddress( 0x1000, 0x13ff, pandoras_cram_r ),		/* Color RAM (shared with CPU B) */
+		new Memory_ReadAddress( 0x1400, 0x17ff, pandoras_vram_r ),		/* Video RAM (shared with CPU B) */
+		new Memory_ReadAddress( 0x4000, 0x5fff, MRA_ROM ),				/* space for diagnostic ROM */
+		new Memory_ReadAddress( 0x6000, 0x67ff, pandoras_sharedram2_r ),	/* Shared RAM with CPU B */
+		new Memory_ReadAddress( 0x8000, 0xffff, MRA_ROM ),				/* ROM */
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( pandoras_writemem_a )
 		{ 0x0000, 0x0fff, pandoras_sharedram_w, &pandoras_sharedram },	/* Work RAM (Shared with CPU B) */
@@ -162,20 +164,22 @@ public class pandoras
 		{ 0x8000, 0xffff, MWA_ROM },									/* ROM */
 	MEMORY_END
 	
-	static MEMORY_READ_START( pandoras_readmem_b )
-		{ 0x0000, 0x0fff, pandoras_sharedram_r },	/* Work RAM (Shared with CPU A) */
-		{ 0x1000, 0x13ff, pandoras_cram_r },		/* Color RAM (shared with CPU A) */
-		{ 0x1400, 0x17ff, pandoras_vram_r },		/* Video RAM (shared with CPU A) */
-		{ 0x1800, 0x1800, input_port_0_r },			/* DIPSW #1 */
-		{ 0x1a00, 0x1a00, input_port_3_r },			/* COINSW */
-		{ 0x1a01, 0x1a01, input_port_4_r },			/* 1P inputs */
-		{ 0x1a02, 0x1a02, input_port_5_r },			/* 2P inputs */
-		{ 0x1a03, 0x1a03, input_port_2_r },			/* DIPSW #3 */
-		{ 0x1c00, 0x1c00, input_port_1_r },			/* DISPW #2 */
-	//	{ 0x1e00, 0x1e00, MRA_NOP },				/* ??? seems to be important */
-		{ 0xc000, 0xc7ff, pandoras_sharedram2_r },	/* Shared RAM with the CPU A */
-		{ 0xe000, 0xffff, MRA_ROM },				/* ROM */
-	MEMORY_END
+	public static Memory_ReadAddress pandoras_readmem_b[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x0fff, pandoras_sharedram_r ),	/* Work RAM (Shared with CPU A) */
+		new Memory_ReadAddress( 0x1000, 0x13ff, pandoras_cram_r ),		/* Color RAM (shared with CPU A) */
+		new Memory_ReadAddress( 0x1400, 0x17ff, pandoras_vram_r ),		/* Video RAM (shared with CPU A) */
+		new Memory_ReadAddress( 0x1800, 0x1800, input_port_0_r ),			/* DIPSW #1 */
+		new Memory_ReadAddress( 0x1a00, 0x1a00, input_port_3_r ),			/* COINSW */
+		new Memory_ReadAddress( 0x1a01, 0x1a01, input_port_4_r ),			/* 1P inputs */
+		new Memory_ReadAddress( 0x1a02, 0x1a02, input_port_5_r ),			/* 2P inputs */
+		new Memory_ReadAddress( 0x1a03, 0x1a03, input_port_2_r ),			/* DIPSW #3 */
+		new Memory_ReadAddress( 0x1c00, 0x1c00, input_port_1_r ),			/* DISPW #2 */
+	//	new Memory_ReadAddress( 0x1e00, 0x1e00, MRA_NOP ),				/* ??? seems to be important */
+		new Memory_ReadAddress( 0xc000, 0xc7ff, pandoras_sharedram2_r ),	/* Shared RAM with the CPU A */
+		new Memory_ReadAddress( 0xe000, 0xffff, MRA_ROM ),				/* ROM */
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( pandoras_writemem_b )
 		{ 0x0000, 0x0fff, pandoras_sharedram_w },	/* Work RAM (Shared with CPU A) */
@@ -188,12 +192,14 @@ public class pandoras
 		{ 0xe000, 0xffff, MWA_ROM },				/* ROM */
 	MEMORY_END
 	
-	static MEMORY_READ_START( pandoras_readmem_snd )
-		{ 0x0000, 0x1fff, MRA_ROM },				/* ROM */
-		{ 0x2000, 0x23ff, MRA_RAM },				/* RAM */
-		{ 0x4000, 0x4000, soundlatch_r },			/* soundlatch_r */
-		{ 0x6001, 0x6001, AY8910_read_port_0_r },	/* AY-8910 */
-	MEMORY_END
+	public static Memory_ReadAddress pandoras_readmem_snd[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x1fff, MRA_ROM ),				/* ROM */
+		new Memory_ReadAddress( 0x2000, 0x23ff, MRA_RAM ),				/* RAM */
+		new Memory_ReadAddress( 0x4000, 0x4000, soundlatch_r ),			/* soundlatch_r */
+		new Memory_ReadAddress( 0x6001, 0x6001, AY8910_read_port_0_r ),	/* AY-8910 */
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( pandoras_writemem_snd )
 		{ 0x0000, 0x1fff, MWA_ROM },				/* ROM */
@@ -204,9 +210,11 @@ public class pandoras
 		{ 0xa000, 0xa000, soundlatch2_w },			/* sound command to the 8039 */
 	MEMORY_END
 	
-	static MEMORY_READ_START( i8039_readmem )
-		{ 0x0000, 0x0fff, MRA_ROM },
-	MEMORY_END
+	public static Memory_ReadAddress i8039_readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x0fff, MRA_ROM ),
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( i8039_writemem )
 		{ 0x0000, 0x0fff, MWA_ROM },

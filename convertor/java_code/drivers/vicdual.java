@@ -150,33 +150,35 @@ public class vicdual
 	}
 	
 	
-	static MEMORY_READ_START( vicdual_readmem )
-		{ 0x0000, 0x7fff, MRA_ROM },
-		{ 0x8000, 0x83ff, videoram_r },
-		{ 0x8400, 0x87ff, vicdual_ram_r },
-		{ 0x8800, 0x8fff, vicdual_characterram_r },
-		{ 0x9000, 0x93ff, videoram_r },
-		{ 0x9400, 0x97ff, vicdual_ram_r },
-		{ 0x9800, 0x9fff, vicdual_characterram_r },
-		{ 0xa000, 0xa3ff, videoram_r },
-		{ 0xa400, 0xa7ff, vicdual_ram_r },
-		{ 0xa800, 0xafff, vicdual_characterram_r },
-		{ 0xb000, 0xb3ff, videoram_r },
-		{ 0xb400, 0xb7ff, vicdual_ram_r },
-		{ 0xb800, 0xbfff, vicdual_characterram_r },
-		{ 0xc000, 0xc3ff, videoram_r },
-		{ 0xc400, 0xc7ff, vicdual_ram_r },
-		{ 0xc800, 0xcfff, vicdual_characterram_r },
-		{ 0xd000, 0xd3ff, videoram_r },
-		{ 0xd400, 0xd7ff, vicdual_ram_r },
-		{ 0xd800, 0xdfff, vicdual_characterram_r },
-		{ 0xe000, 0xe3ff, videoram_r },
-		{ 0xe400, 0xe7ff, vicdual_ram_r },
-		{ 0xe800, 0xefff, vicdual_characterram_r },
-		{ 0xf000, 0xf3ff, videoram_r },
-		{ 0xf400, 0xf7ff, vicdual_ram_r },
-		{ 0xf800, 0xffff, vicdual_characterram_r },
-	MEMORY_END
+	public static Memory_ReadAddress vicdual_readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x7fff, MRA_ROM ),
+		new Memory_ReadAddress( 0x8000, 0x83ff, videoram_r ),
+		new Memory_ReadAddress( 0x8400, 0x87ff, vicdual_ram_r ),
+		new Memory_ReadAddress( 0x8800, 0x8fff, vicdual_characterram_r ),
+		new Memory_ReadAddress( 0x9000, 0x93ff, videoram_r ),
+		new Memory_ReadAddress( 0x9400, 0x97ff, vicdual_ram_r ),
+		new Memory_ReadAddress( 0x9800, 0x9fff, vicdual_characterram_r ),
+		new Memory_ReadAddress( 0xa000, 0xa3ff, videoram_r ),
+		new Memory_ReadAddress( 0xa400, 0xa7ff, vicdual_ram_r ),
+		new Memory_ReadAddress( 0xa800, 0xafff, vicdual_characterram_r ),
+		new Memory_ReadAddress( 0xb000, 0xb3ff, videoram_r ),
+		new Memory_ReadAddress( 0xb400, 0xb7ff, vicdual_ram_r ),
+		new Memory_ReadAddress( 0xb800, 0xbfff, vicdual_characterram_r ),
+		new Memory_ReadAddress( 0xc000, 0xc3ff, videoram_r ),
+		new Memory_ReadAddress( 0xc400, 0xc7ff, vicdual_ram_r ),
+		new Memory_ReadAddress( 0xc800, 0xcfff, vicdual_characterram_r ),
+		new Memory_ReadAddress( 0xd000, 0xd3ff, videoram_r ),
+		new Memory_ReadAddress( 0xd400, 0xd7ff, vicdual_ram_r ),
+		new Memory_ReadAddress( 0xd800, 0xdfff, vicdual_characterram_r ),
+		new Memory_ReadAddress( 0xe000, 0xe3ff, videoram_r ),
+		new Memory_ReadAddress( 0xe400, 0xe7ff, vicdual_ram_r ),
+		new Memory_ReadAddress( 0xe800, 0xefff, vicdual_characterram_r ),
+		new Memory_ReadAddress( 0xf000, 0xf3ff, videoram_r ),
+		new Memory_ReadAddress( 0xf400, 0xf7ff, vicdual_ram_r ),
+		new Memory_ReadAddress( 0xf800, 0xffff, vicdual_characterram_r ),
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( vicdual_writemem )
 		{ 0x0000, 0x7fff, MWA_ROM },
@@ -208,13 +210,15 @@ public class vicdual
 	
 	
 	/* Safari has extra RAM */
-	static MEMORY_READ_START( safari_readmem )
-		{ 0x0000, 0x7fff, MRA_ROM },
-		{ 0x8000, 0x87ff, MRA_RAM },
-		{ 0xe000, 0xe3ff, videoram_r },
-		{ 0xe400, 0xe7ff, vicdual_ram_r },
-		{ 0xe800, 0xefff, vicdual_characterram_r },
-	MEMORY_END
+	public static Memory_ReadAddress safari_readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x7fff, MRA_ROM ),
+		new Memory_ReadAddress( 0x8000, 0x87ff, MRA_RAM ),
+		new Memory_ReadAddress( 0xe000, 0xe3ff, videoram_r ),
+		new Memory_ReadAddress( 0xe400, 0xe7ff, vicdual_ram_r ),
+		new Memory_ReadAddress( 0xe800, 0xefff, vicdual_characterram_r ),
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( safari_writemem )
 		{ 0x0000, 0x7fff, MWA_ROM },
@@ -254,9 +258,11 @@ public class vicdual
 	PORT_END
 	
 	
-	static MEMORY_READ_START( i8039_readmem )
-		{ 0x0000, 0x07ff, MRA_ROM },
-	MEMORY_END
+	public static Memory_ReadAddress i8039_readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x07ff, MRA_ROM ),
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( i8039_writemem )
 		{ 0x0000, 0x07ff, MWA_ROM },

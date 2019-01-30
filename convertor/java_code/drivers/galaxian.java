@@ -297,17 +297,19 @@ public class galaxian
 	}
 	
 	
-	static MEMORY_READ_START( galaxian_readmem )
-		{ 0x0000, 0x3fff, MRA_ROM },
-		{ 0x4000, 0x47ff, MRA_RAM },
-		{ 0x5000, 0x53ff, MRA_RAM },
-		{ 0x5400, 0x57ff, galaxian_videoram_r },
-		{ 0x5800, 0x58ff, MRA_RAM },
-		{ 0x6000, 0x6000, input_port_0_r },
-		{ 0x6800, 0x6800, input_port_1_r },
-		{ 0x7000, 0x7000, input_port_2_r },
-		{ 0x7800, 0x78ff, watchdog_reset_r },
-	MEMORY_END
+	public static Memory_ReadAddress galaxian_readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x3fff, MRA_ROM ),
+		new Memory_ReadAddress( 0x4000, 0x47ff, MRA_RAM ),
+		new Memory_ReadAddress( 0x5000, 0x53ff, MRA_RAM ),
+		new Memory_ReadAddress( 0x5400, 0x57ff, galaxian_videoram_r ),
+		new Memory_ReadAddress( 0x5800, 0x58ff, MRA_RAM ),
+		new Memory_ReadAddress( 0x6000, 0x6000, input_port_0_r ),
+		new Memory_ReadAddress( 0x6800, 0x6800, input_port_1_r ),
+		new Memory_ReadAddress( 0x7000, 0x7000, input_port_2_r ),
+		new Memory_ReadAddress( 0x7800, 0x78ff, watchdog_reset_r ),
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( galaxian_writemem )
 		{ 0x0000, 0x3fff, MWA_ROM },
@@ -333,17 +335,19 @@ public class galaxian
 	MEMORY_END
 	
 	
-	static MEMORY_READ_START( mooncrst_readmem )
-		{ 0x0000, 0x3fff, MRA_ROM },
-		{ 0x8000, 0x83ff, MRA_RAM },
-		{ 0x9000, 0x93ff, MRA_RAM },
-		{ 0x9400, 0x97ff, galaxian_videoram_r },
-		{ 0x9800, 0x98ff, MRA_RAM },
-		{ 0xa000, 0xa000, input_port_0_r },
-		{ 0xa800, 0xa800, input_port_1_r },
-		{ 0xb000, 0xb000, input_port_2_r },
-		{ 0xb800, 0xb800, watchdog_reset_r },
-	MEMORY_END
+	public static Memory_ReadAddress mooncrst_readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x3fff, MRA_ROM ),
+		new Memory_ReadAddress( 0x8000, 0x83ff, MRA_RAM ),
+		new Memory_ReadAddress( 0x9000, 0x93ff, MRA_RAM ),
+		new Memory_ReadAddress( 0x9400, 0x97ff, galaxian_videoram_r ),
+		new Memory_ReadAddress( 0x9800, 0x98ff, MRA_RAM ),
+		new Memory_ReadAddress( 0xa000, 0xa000, input_port_0_r ),
+		new Memory_ReadAddress( 0xa800, 0xa800, input_port_1_r ),
+		new Memory_ReadAddress( 0xb000, 0xb000, input_port_2_r ),
+		new Memory_ReadAddress( 0xb800, 0xb800, watchdog_reset_r ),
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( mooncrst_writemem )
 		{ 0x0000, 0x3fff, MWA_ROM },
@@ -368,17 +372,19 @@ public class galaxian
 	MEMORY_END
 	
 	
-	static MEMORY_READ_START( scramblb_readmem )
-		{ 0x0000, 0x3fff, MRA_ROM },
-		{ 0x4000, 0x4bff, MRA_RAM },
-		{ 0x5000, 0x50ff, MRA_RAM },
-		{ 0x6000, 0x6000, input_port_0_r },
-		{ 0x6800, 0x6800, input_port_1_r },
-		{ 0x7000, 0x7000, input_port_2_r },
-		{ 0x7800, 0x7800, watchdog_reset_r },
-		{ 0x8102, 0x8102, scramblb_protection_1_r },
-		{ 0x8202, 0x8202, scramblb_protection_2_r },
-	MEMORY_END
+	public static Memory_ReadAddress scramblb_readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x3fff, MRA_ROM ),
+		new Memory_ReadAddress( 0x4000, 0x4bff, MRA_RAM ),
+		new Memory_ReadAddress( 0x5000, 0x50ff, MRA_RAM ),
+		new Memory_ReadAddress( 0x6000, 0x6000, input_port_0_r ),
+		new Memory_ReadAddress( 0x6800, 0x6800, input_port_1_r ),
+		new Memory_ReadAddress( 0x7000, 0x7000, input_port_2_r ),
+		new Memory_ReadAddress( 0x7800, 0x7800, watchdog_reset_r ),
+		new Memory_ReadAddress( 0x8102, 0x8102, scramblb_protection_1_r ),
+		new Memory_ReadAddress( 0x8202, 0x8202, scramblb_protection_2_r ),
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( scramblb_writemem )
 		{ 0x0000, 0x3fff, MWA_ROM },
@@ -405,18 +411,20 @@ public class galaxian
 	MEMORY_END
 	
 	
-	static MEMORY_READ_START( jumpbug_readmem )
-		{ 0x0000, 0x3fff, MRA_ROM },
-		{ 0x4000, 0x4bff, MRA_RAM },
-		{ 0x4c00, 0x4fff, galaxian_videoram_r },
-		{ 0x5000, 0x50ff, MRA_RAM },
-		{ 0x6000, 0x6000, input_port_0_r },
-		{ 0x6800, 0x6800, input_port_1_r },
-		{ 0x7000, 0x7000, input_port_2_r },
-		{ 0x8000, 0xafff, MRA_ROM },
-		{ 0xb000, 0xbfff, jumpbug_protection_r },
-		{ 0xfff0, 0xffff, MRA_RAM },
-	MEMORY_END
+	public static Memory_ReadAddress jumpbug_readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x3fff, MRA_ROM ),
+		new Memory_ReadAddress( 0x4000, 0x4bff, MRA_RAM ),
+		new Memory_ReadAddress( 0x4c00, 0x4fff, galaxian_videoram_r ),
+		new Memory_ReadAddress( 0x5000, 0x50ff, MRA_RAM ),
+		new Memory_ReadAddress( 0x6000, 0x6000, input_port_0_r ),
+		new Memory_ReadAddress( 0x6800, 0x6800, input_port_1_r ),
+		new Memory_ReadAddress( 0x7000, 0x7000, input_port_2_r ),
+		new Memory_ReadAddress( 0x8000, 0xafff, MRA_ROM ),
+		new Memory_ReadAddress( 0xb000, 0xbfff, jumpbug_protection_r ),
+		new Memory_ReadAddress( 0xfff0, 0xffff, MRA_RAM ),
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( jumpbug_writemem )
 		{ 0x0000, 0x3fff, MWA_ROM },
@@ -481,10 +489,12 @@ public class galaxian
 	PORT_END
 	
 	
-	static MEMORY_READ_START( checkman_sound_readmem )
-		{ 0x0000, 0x0fff, MRA_ROM },
-		{ 0x2000, 0x23ff, MRA_RAM },
-	MEMORY_END
+	public static Memory_ReadAddress checkman_sound_readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x0fff, MRA_ROM ),
+		new Memory_ReadAddress( 0x2000, 0x23ff, MRA_RAM ),
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( checkman_sound_writemem )
 		{ 0x0000, 0x0fff, MWA_ROM },
@@ -503,11 +513,13 @@ public class galaxian
 	PORT_END
 	
 	
-	static MEMORY_READ_START( checkmaj_sound_readmem )
-		{ 0x0000, 0x0fff, MRA_ROM },
-		{ 0x8000, 0x81ff, MRA_RAM },
-		{ 0xa002, 0xa002, AY8910_read_port_0_r },
-	MEMORY_END
+	public static Memory_ReadAddress checkmaj_sound_readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x0fff, MRA_ROM ),
+		new Memory_ReadAddress( 0x8000, 0x81ff, MRA_RAM ),
+		new Memory_ReadAddress( 0xa002, 0xa002, AY8910_read_port_0_r ),
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( checkmaj_sound_writemem )
 		{ 0x0000, 0x0fff, MWA_ROM },
@@ -543,9 +555,11 @@ public class galaxian
 		{ 0xb800, 0xb800, galaxian_pitch_w },
 	MEMORY_END
 	
-	static MEMORY_READ_START( kingball_sound_readmem )
-		{ 0x0000, 0x1fff, MRA_ROM },
-	MEMORY_END
+	public static Memory_ReadAddress kingball_sound_readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x1fff, MRA_ROM ),
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( kingball_sound_writemem )
 		{ 0x0000, 0x1fff, MWA_ROM },
@@ -598,18 +612,20 @@ public class galaxian
 		AY8910_control_port_0_w(0,latch);
 	}
 	
-	static MEMORY_READ_START( zigzag_readmem )
-		{ 0x0000, 0x1fff, MRA_ROM },
-		{ 0x2000, 0x2fff, MRA_BANK1 },
-		{ 0x3000, 0x3fff, MRA_BANK2 },
-		{ 0x4000, 0x47ff, MRA_RAM },
-		{ 0x5000, 0x53ff, MRA_RAM },
-		{ 0x5800, 0x58ff, MRA_RAM },
-		{ 0x6000, 0x6000, input_port_0_r },
-		{ 0x6800, 0x6800, input_port_1_r },
-		{ 0x7000, 0x7000, input_port_2_r },
-		{ 0x7800, 0x7800, watchdog_reset_r },
-	MEMORY_END
+	public static Memory_ReadAddress zigzag_readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x1fff, MRA_ROM ),
+		new Memory_ReadAddress( 0x2000, 0x2fff, MRA_BANK1 ),
+		new Memory_ReadAddress( 0x3000, 0x3fff, MRA_BANK2 ),
+		new Memory_ReadAddress( 0x4000, 0x47ff, MRA_RAM ),
+		new Memory_ReadAddress( 0x5000, 0x53ff, MRA_RAM ),
+		new Memory_ReadAddress( 0x5800, 0x58ff, MRA_RAM ),
+		new Memory_ReadAddress( 0x6000, 0x6000, input_port_0_r ),
+		new Memory_ReadAddress( 0x6800, 0x6800, input_port_1_r ),
+		new Memory_ReadAddress( 0x7000, 0x7000, input_port_2_r ),
+		new Memory_ReadAddress( 0x7800, 0x7800, watchdog_reset_r ),
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( zigzag_writemem )
 		{ 0x0000, 0x3fff, MWA_ROM },

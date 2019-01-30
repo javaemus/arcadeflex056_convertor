@@ -219,24 +219,28 @@ public class capbowl
 	 *
 	 *************************************/
 	
-	static MEMORY_READ_START( capbowl_readmem )
-		{ 0x0000, 0x3fff, MRA_BANK1 },
-		{ 0x5000, 0x57ff, MRA_RAM },
-		{ 0x5800, 0x5fff, capbowl_tms34061_r },
-		{ 0x7000, 0x7000, track_0_r },	/* + other inputs */
-		{ 0x7800, 0x7800, track_1_r },	/* + other inputs */
-		{ 0x8000, 0xffff, MRA_ROM },
-	MEMORY_END
+	public static Memory_ReadAddress capbowl_readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x3fff, MRA_BANK1 ),
+		new Memory_ReadAddress( 0x5000, 0x57ff, MRA_RAM ),
+		new Memory_ReadAddress( 0x5800, 0x5fff, capbowl_tms34061_r ),
+		new Memory_ReadAddress( 0x7000, 0x7000, track_0_r ),	/* + other inputs */
+		new Memory_ReadAddress( 0x7800, 0x7800, track_1_r ),	/* + other inputs */
+		new Memory_ReadAddress( 0x8000, 0xffff, MRA_ROM ),
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	
-	static MEMORY_READ_START( bowlrama_readmem )
-		{ 0x0000, 0x001f, bowlrama_turbo_r },
-		{ 0x5000, 0x57ff, MRA_RAM },
-		{ 0x5800, 0x5fff, capbowl_tms34061_r },
-		{ 0x7000, 0x7000, track_0_r },	/* + other inputs */
-		{ 0x7800, 0x7800, track_1_r },	/* + other inputs */
-		{ 0x8000, 0xffff, MRA_ROM },
-	MEMORY_END
+	public static Memory_ReadAddress bowlrama_readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x001f, bowlrama_turbo_r ),
+		new Memory_ReadAddress( 0x5000, 0x57ff, MRA_RAM ),
+		new Memory_ReadAddress( 0x5800, 0x5fff, capbowl_tms34061_r ),
+		new Memory_ReadAddress( 0x7000, 0x7000, track_0_r ),	/* + other inputs */
+		new Memory_ReadAddress( 0x7800, 0x7800, track_1_r ),	/* + other inputs */
+		new Memory_ReadAddress( 0x8000, 0xffff, MRA_ROM ),
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	
 	static MEMORY_WRITE_START( writemem )
@@ -257,13 +261,15 @@ public class capbowl
 	 *
 	 *************************************/
 	
-	static MEMORY_READ_START( sound_readmem )
-		{ 0x0000, 0x07ff, MRA_RAM },
-		{ 0x1000, 0x1000, YM2203_status_port_0_r },
-		{ 0x1001, 0x1001, YM2203_read_port_0_r },
-		{ 0x7000, 0x7000, soundlatch_r },
-		{ 0x8000, 0xffff, MRA_ROM },
-	MEMORY_END
+	public static Memory_ReadAddress sound_readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x07ff, MRA_RAM ),
+		new Memory_ReadAddress( 0x1000, 0x1000, YM2203_status_port_0_r ),
+		new Memory_ReadAddress( 0x1001, 0x1001, YM2203_read_port_0_r ),
+		new Memory_ReadAddress( 0x7000, 0x7000, soundlatch_r ),
+		new Memory_ReadAddress( 0x8000, 0xffff, MRA_ROM ),
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	
 	static MEMORY_WRITE_START( sound_writemem )

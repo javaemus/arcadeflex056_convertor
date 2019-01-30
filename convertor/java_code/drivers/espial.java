@@ -104,21 +104,23 @@ public class espial
 	
 	
 	
-	static MEMORY_READ_START( readmem )
-		{ 0x0000, 0x4fff, MRA_ROM },
-		{ 0x5800, 0x5fff, MRA_RAM },
-		{ 0x7000, 0x7000, MRA_RAM },	/* ?? */
-		{ 0x8000, 0x803f, MRA_RAM },
-		{ 0x8400, 0x87ff, MRA_RAM },
-		{ 0x8c00, 0x903f, MRA_RAM },
-		{ 0x9400, 0x97ff, MRA_RAM },
-		{ 0x6081, 0x6081, input_port_0_r },	/* IN0 */
-		{ 0x6082, 0x6082, input_port_1_r },	/* IN1 */
-		{ 0x6083, 0x6083, input_port_2_r },	/* IN2 */
-		{ 0x6084, 0x6084, input_port_3_r },	/* IN3 */
-		{ 0x6090, 0x6090, soundlatch_r },	/* the main CPU reads the command back from the slave */
-		{ 0xc000, 0xcfff, MRA_ROM },
-	MEMORY_END
+	public static Memory_ReadAddress readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x4fff, MRA_ROM ),
+		new Memory_ReadAddress( 0x5800, 0x5fff, MRA_RAM ),
+		new Memory_ReadAddress( 0x7000, 0x7000, MRA_RAM ),	/* ?? */
+		new Memory_ReadAddress( 0x8000, 0x803f, MRA_RAM ),
+		new Memory_ReadAddress( 0x8400, 0x87ff, MRA_RAM ),
+		new Memory_ReadAddress( 0x8c00, 0x903f, MRA_RAM ),
+		new Memory_ReadAddress( 0x9400, 0x97ff, MRA_RAM ),
+		new Memory_ReadAddress( 0x6081, 0x6081, input_port_0_r ),	/* IN0 */
+		new Memory_ReadAddress( 0x6082, 0x6082, input_port_1_r ),	/* IN1 */
+		new Memory_ReadAddress( 0x6083, 0x6083, input_port_2_r ),	/* IN2 */
+		new Memory_ReadAddress( 0x6084, 0x6084, input_port_3_r ),	/* IN3 */
+		new Memory_ReadAddress( 0x6090, 0x6090, soundlatch_r ),	/* the main CPU reads the command back from the slave */
+		new Memory_ReadAddress( 0xc000, 0xcfff, MRA_ROM ),
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( writemem )
 		{ 0x0000, 0x4fff, MWA_ROM },
@@ -137,11 +139,13 @@ public class espial
 	MEMORY_END
 	
 	
-	static MEMORY_READ_START( sound_readmem )
-		{ 0x0000, 0x1fff, MRA_ROM },
-		{ 0x2000, 0x23ff, MRA_RAM },
-		{ 0x6000, 0x6000, soundlatch_r },
-	MEMORY_END
+	public static Memory_ReadAddress sound_readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x1fff, MRA_ROM ),
+		new Memory_ReadAddress( 0x2000, 0x23ff, MRA_RAM ),
+		new Memory_ReadAddress( 0x6000, 0x6000, soundlatch_r ),
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( sound_writemem )
 		{ 0x0000, 0x1fff, MWA_ROM },

@@ -81,16 +81,18 @@ public class aztarac
 		{ 0xffe000, 0xffffff, MWA16_RAM },
 	MEMORY_END
 	
-	static MEMORY_READ_START( sound_readmem )
-		{ 0x0000, 0x1fff, MRA_ROM },
-		{ 0x8000, 0x87ff, MRA_RAM },
-		{ 0x8800, 0x8800, aztarac_snd_command_r },
-		{ 0x8c00, 0x8c01, AY8910_read_port_0_r },
-		{ 0x8c02, 0x8c03, AY8910_read_port_1_r },
-		{ 0x8c04, 0x8c05, AY8910_read_port_2_r },
-		{ 0x8c06, 0x8c07, AY8910_read_port_3_r },
-		{ 0x9000, 0x9000, aztarac_snd_status_r },
-	MEMORY_END
+	public static Memory_ReadAddress sound_readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x1fff, MRA_ROM ),
+		new Memory_ReadAddress( 0x8000, 0x87ff, MRA_RAM ),
+		new Memory_ReadAddress( 0x8800, 0x8800, aztarac_snd_command_r ),
+		new Memory_ReadAddress( 0x8c00, 0x8c01, AY8910_read_port_0_r ),
+		new Memory_ReadAddress( 0x8c02, 0x8c03, AY8910_read_port_1_r ),
+		new Memory_ReadAddress( 0x8c04, 0x8c05, AY8910_read_port_2_r ),
+		new Memory_ReadAddress( 0x8c06, 0x8c07, AY8910_read_port_3_r ),
+		new Memory_ReadAddress( 0x9000, 0x9000, aztarac_snd_status_r ),
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( sound_writemem )
 		{ 0x0000, 0x1fff, MWA_ROM },

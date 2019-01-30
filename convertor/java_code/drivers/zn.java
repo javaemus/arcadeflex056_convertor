@@ -143,12 +143,14 @@ public class zn
 		cpu_setbank( 1, &RAM[ 0x10000 + ( ( data & 0x0f ) * 0x4000 ) ] );
 	}
 	
-	static MEMORY_READ_START( qsound_readmem )
-		{ 0x0000, 0x7fff, MRA_ROM },
-		{ 0x8000, 0xbfff, MRA_BANK1 },	/* banked (contains music data) */
-		{ 0xd007, 0xd007, qsound_status_r },
-		{ 0xf000, 0xffff, MRA_RAM },
-	MEMORY_END
+	public static Memory_ReadAddress qsound_readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x7fff, MRA_ROM ),
+		new Memory_ReadAddress( 0x8000, 0xbfff, MRA_BANK1 ),	/* banked (contains music data) */
+		new Memory_ReadAddress( 0xd007, 0xd007, qsound_status_r ),
+		new Memory_ReadAddress( 0xf000, 0xffff, MRA_RAM ),
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( qsound_writemem )
 		{ 0x0000, 0xbfff, MWA_ROM },

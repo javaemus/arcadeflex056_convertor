@@ -294,35 +294,39 @@ public class thunderx
 	
 	/***************************************************************************/
 	
-	static MEMORY_READ_START( scontra_readmem )
-		{ 0x1f90, 0x1f90, input_port_0_r }, /* coin */
-		{ 0x1f91, 0x1f91, input_port_1_r }, /* p1 */
-		{ 0x1f92, 0x1f92, input_port_2_r }, /* p2 */
-		{ 0x1f93, 0x1f93, input_port_5_r }, /* Dip 3 */
-		{ 0x1f94, 0x1f94, input_port_3_r }, /* Dip 1 */
-		{ 0x1f95, 0x1f95, input_port_4_r }, /* Dip 2 */
+	public static Memory_ReadAddress scontra_readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x1f90, 0x1f90, input_port_0_r ), /* coin */
+		new Memory_ReadAddress( 0x1f91, 0x1f91, input_port_1_r ), /* p1 */
+		new Memory_ReadAddress( 0x1f92, 0x1f92, input_port_2_r ), /* p2 */
+		new Memory_ReadAddress( 0x1f93, 0x1f93, input_port_5_r ), /* Dip 3 */
+		new Memory_ReadAddress( 0x1f94, 0x1f94, input_port_3_r ), /* Dip 1 */
+		new Memory_ReadAddress( 0x1f95, 0x1f95, input_port_4_r ), /* Dip 2 */
 	
-		{ 0x0000, 0x3fff, K052109_051960_r },
-		{ 0x4000, 0x57ff, MRA_RAM },
-		{ 0x5800, 0x5fff, scontra_bankedram_r },			/* palette + work RAM */
-		{ 0x6000, 0x7fff, MRA_BANK1 },
-		{ 0x8000, 0xffff, MRA_ROM },
-	MEMORY_END
+		new Memory_ReadAddress( 0x0000, 0x3fff, K052109_051960_r ),
+		new Memory_ReadAddress( 0x4000, 0x57ff, MRA_RAM ),
+		new Memory_ReadAddress( 0x5800, 0x5fff, scontra_bankedram_r ),			/* palette + work RAM */
+		new Memory_ReadAddress( 0x6000, 0x7fff, MRA_BANK1 ),
+		new Memory_ReadAddress( 0x8000, 0xffff, MRA_ROM ),
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
-	static MEMORY_READ_START( thunderx_readmem )
-		{ 0x1f90, 0x1f90, input_port_0_r }, /* coin */
-		{ 0x1f91, 0x1f91, input_port_1_r }, /* p1 */
-		{ 0x1f92, 0x1f92, input_port_2_r }, /* p2 */
-		{ 0x1f93, 0x1f93, input_port_5_r }, /* Dip 3 */
-		{ 0x1f94, 0x1f94, input_port_3_r }, /* Dip 1 */
-		{ 0x1f95, 0x1f95, input_port_4_r }, /* Dip 2 */
+	public static Memory_ReadAddress thunderx_readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x1f90, 0x1f90, input_port_0_r ), /* coin */
+		new Memory_ReadAddress( 0x1f91, 0x1f91, input_port_1_r ), /* p1 */
+		new Memory_ReadAddress( 0x1f92, 0x1f92, input_port_2_r ), /* p2 */
+		new Memory_ReadAddress( 0x1f93, 0x1f93, input_port_5_r ), /* Dip 3 */
+		new Memory_ReadAddress( 0x1f94, 0x1f94, input_port_3_r ), /* Dip 1 */
+		new Memory_ReadAddress( 0x1f95, 0x1f95, input_port_4_r ), /* Dip 2 */
 	
-		{ 0x0000, 0x3fff, K052109_051960_r },
-		{ 0x4000, 0x57ff, MRA_RAM },
-		{ 0x5800, 0x5fff, thunderx_bankedram_r },			/* palette + work RAM + unknown RAM */
-		{ 0x6000, 0x7fff, MRA_BANK1 },
-		{ 0x8000, 0xffff, MRA_ROM },
-	MEMORY_END
+		new Memory_ReadAddress( 0x0000, 0x3fff, K052109_051960_r ),
+		new Memory_ReadAddress( 0x4000, 0x57ff, MRA_RAM ),
+		new Memory_ReadAddress( 0x5800, 0x5fff, thunderx_bankedram_r ),			/* palette + work RAM + unknown RAM */
+		new Memory_ReadAddress( 0x6000, 0x7fff, MRA_BANK1 ),
+		new Memory_ReadAddress( 0x8000, 0xffff, MRA_ROM ),
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( scontra_writemem )
 		{ 0x1f80, 0x1f80, scontra_bankswitch_w },	/* bankswitch control + coin counters */
@@ -350,13 +354,15 @@ public class thunderx
 		{ 0x6000, 0xffff, MWA_ROM },
 	MEMORY_END
 	
-	static MEMORY_READ_START( scontra_readmem_sound )
-		{ 0x0000, 0x7fff, MRA_ROM },				/* ROM */
-		{ 0x8000, 0x87ff, MRA_RAM },				/* RAM */
-		{ 0xa000, 0xa000, soundlatch_r },			/* soundlatch_r */
-		{ 0xb000, 0xb00d, K007232_read_port_0_r },	/* 007232 registers */
-		{ 0xc001, 0xc001, YM2151_status_port_0_r },	/* YM2151 */
-	MEMORY_END
+	public static Memory_ReadAddress scontra_readmem_sound[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x7fff, MRA_ROM ),				/* ROM */
+		new Memory_ReadAddress( 0x8000, 0x87ff, MRA_RAM ),				/* RAM */
+		new Memory_ReadAddress( 0xa000, 0xa000, soundlatch_r ),			/* soundlatch_r */
+		new Memory_ReadAddress( 0xb000, 0xb00d, K007232_read_port_0_r ),	/* 007232 registers */
+		new Memory_ReadAddress( 0xc001, 0xc001, YM2151_status_port_0_r ),	/* YM2151 */
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( scontra_writemem_sound )
 		{ 0x0000, 0x7fff, MWA_ROM },					/* ROM */
@@ -367,12 +373,14 @@ public class thunderx
 		{ 0xf000, 0xf000, scontra_snd_bankswitch_w },	/* 007232 bank select */
 	MEMORY_END
 	
-	static MEMORY_READ_START( thunderx_readmem_sound )
-		{ 0x0000, 0x7fff, MRA_ROM },
-		{ 0x8000, 0x87ff, MRA_RAM },
-		{ 0xa000, 0xa000, soundlatch_r },
-		{ 0xc001, 0xc001, YM2151_status_port_0_r },
-	MEMORY_END
+	public static Memory_ReadAddress thunderx_readmem_sound[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x7fff, MRA_ROM ),
+		new Memory_ReadAddress( 0x8000, 0x87ff, MRA_RAM ),
+		new Memory_ReadAddress( 0xa000, 0xa000, soundlatch_r ),
+		new Memory_ReadAddress( 0xc001, 0xc001, YM2151_status_port_0_r ),
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( thunderx_writemem_sound )
 		{ 0x0000, 0x7fff, MWA_ROM },

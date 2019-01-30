@@ -108,16 +108,18 @@ public class warlord
 	
 	
 	
-	static MEMORY_READ_START( readmem )
-		{ 0x0000, 0x07ff, MRA_RAM },
-		{ 0x0800, 0x0800, input_port_2_r }, /* DSW1 */
-		{ 0x0801, 0x0801, input_port_3_r }, /* DSW2 */
-		{ 0x0c00, 0x0c00, input_port_0_r }, /* IN0 */
-		{ 0x0c01, 0x0c01, input_port_1_r }, /* IN1 */
-		{ 0x1000, 0x100f, pokey1_r },		/* Read the 4 paddle values & the random # gen */
-		{ 0x5000, 0x7fff, MRA_ROM },
-		{ 0xf800, 0xffff, MRA_ROM },		/* for the reset / interrupt vectors */
-	MEMORY_END
+	public static Memory_ReadAddress readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x07ff, MRA_RAM ),
+		new Memory_ReadAddress( 0x0800, 0x0800, input_port_2_r ), /* DSW1 */
+		new Memory_ReadAddress( 0x0801, 0x0801, input_port_3_r ), /* DSW2 */
+		new Memory_ReadAddress( 0x0c00, 0x0c00, input_port_0_r ), /* IN0 */
+		new Memory_ReadAddress( 0x0c01, 0x0c01, input_port_1_r ), /* IN1 */
+		new Memory_ReadAddress( 0x1000, 0x100f, pokey1_r ),		/* Read the 4 paddle values & the random # gen */
+		new Memory_ReadAddress( 0x5000, 0x7fff, MRA_ROM ),
+		new Memory_ReadAddress( 0xf800, 0xffff, MRA_ROM ),		/* for the reset / interrupt vectors */
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( writemem )
 		{ 0x0000, 0x03ff, MWA_RAM },

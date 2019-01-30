@@ -72,17 +72,19 @@ public class mpatrol
 	
 	
 	
-	static MEMORY_READ_START( readmem )
-		{ 0x0000, 0x3fff, MRA_ROM },
-		{ 0x8000, 0x87ff, MRA_RAM },
-		{ 0x8800, 0x8800, mpatrol_protection_r },
-		{ 0xd000, 0xd000, input_port_0_r },          /* IN0 */
-		{ 0xd001, 0xd001, input_port_1_r },          /* IN1 */
-		{ 0xd002, 0xd002, input_port_2_r },          /* IN2 */
-		{ 0xd003, 0xd003, mpatrol_input_port_3_r },  /* DSW1 */
-		{ 0xd004, 0xd004, input_port_4_r },          /* DSW2 */
-		{ 0xe000, 0xe7ff, MRA_RAM },
-	MEMORY_END
+	public static Memory_ReadAddress readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x3fff, MRA_ROM ),
+		new Memory_ReadAddress( 0x8000, 0x87ff, MRA_RAM ),
+		new Memory_ReadAddress( 0x8800, 0x8800, mpatrol_protection_r ),
+		new Memory_ReadAddress( 0xd000, 0xd000, input_port_0_r ),          /* IN0 */
+		new Memory_ReadAddress( 0xd001, 0xd001, input_port_1_r ),          /* IN1 */
+		new Memory_ReadAddress( 0xd002, 0xd002, input_port_2_r ),          /* IN2 */
+		new Memory_ReadAddress( 0xd003, 0xd003, mpatrol_input_port_3_r ),  /* DSW1 */
+		new Memory_ReadAddress( 0xd004, 0xd004, input_port_4_r ),          /* DSW2 */
+		new Memory_ReadAddress( 0xe000, 0xe7ff, MRA_RAM ),
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( writemem )
 		{ 0x0000, 0x7fff, MWA_ROM },

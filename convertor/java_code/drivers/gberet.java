@@ -109,17 +109,19 @@ public class gberet
 	
 	
 	
-	static MEMORY_READ_START( readmem )
-		{ 0x0000, 0xbfff, MRA_ROM },
-		{ 0xc000, 0xe03f, MRA_RAM },
-		{ 0xf200, 0xf200, input_port_4_r },	/* DSW1 */
-		{ 0xf400, 0xf400, input_port_5_r },	/* DSW2 */
-		{ 0xf600, 0xf600, input_port_3_r },	/* DSW0 */
-		{ 0xf601, 0xf601, input_port_1_r },	/* IN1 */
-		{ 0xf602, 0xf602, input_port_0_r },	/* IN0 */
-		{ 0xf603, 0xf603, input_port_2_r },	/* IN2 */
-		{ 0xf800, 0xf800, MRA_NOP },	/* gberetb only - IRQ acknowledge */
-	MEMORY_END
+	public static Memory_ReadAddress readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0xbfff, MRA_ROM ),
+		new Memory_ReadAddress( 0xc000, 0xe03f, MRA_RAM ),
+		new Memory_ReadAddress( 0xf200, 0xf200, input_port_4_r ),	/* DSW1 */
+		new Memory_ReadAddress( 0xf400, 0xf400, input_port_5_r ),	/* DSW2 */
+		new Memory_ReadAddress( 0xf600, 0xf600, input_port_3_r ),	/* DSW0 */
+		new Memory_ReadAddress( 0xf601, 0xf601, input_port_1_r ),	/* IN1 */
+		new Memory_ReadAddress( 0xf602, 0xf602, input_port_0_r ),	/* IN0 */
+		new Memory_ReadAddress( 0xf603, 0xf603, input_port_2_r ),	/* IN2 */
+		new Memory_ReadAddress( 0xf800, 0xf800, MRA_NOP ),	/* gberetb only - IRQ acknowledge */
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( writemem )
 		{ 0x0000, 0xbfff, MWA_ROM },
@@ -154,17 +156,19 @@ public class gberet
 		{ 0xf400, 0xf400, SN76496_0_w },
 	MEMORY_END
 	
-	static MEMORY_READ_START( mrgoemon_readmem )
-		{ 0x0000, 0xbfff, MRA_ROM },
-		{ 0xc000, 0xe03f, MRA_RAM },
-		{ 0xf200, 0xf200, input_port_4_r },	/* DSW1 */
-		{ 0xf400, 0xf400, input_port_5_r },	/* DSW2 */
-		{ 0xf600, 0xf600, input_port_3_r },	/* DSW0 */
-		{ 0xf601, 0xf601, input_port_1_r },	/* IN1 */
-		{ 0xf602, 0xf602, input_port_0_r },	/* IN0 */
-		{ 0xf603, 0xf603, input_port_2_r },	/* IN2 */
-		{ 0xf800, 0xffff, MRA_BANK1 },
-	MEMORY_END
+	public static Memory_ReadAddress mrgoemon_readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0xbfff, MRA_ROM ),
+		new Memory_ReadAddress( 0xc000, 0xe03f, MRA_RAM ),
+		new Memory_ReadAddress( 0xf200, 0xf200, input_port_4_r ),	/* DSW1 */
+		new Memory_ReadAddress( 0xf400, 0xf400, input_port_5_r ),	/* DSW2 */
+		new Memory_ReadAddress( 0xf600, 0xf600, input_port_3_r ),	/* DSW0 */
+		new Memory_ReadAddress( 0xf601, 0xf601, input_port_1_r ),	/* IN1 */
+		new Memory_ReadAddress( 0xf602, 0xf602, input_port_0_r ),	/* IN0 */
+		new Memory_ReadAddress( 0xf603, 0xf603, input_port_2_r ),	/* IN2 */
+		new Memory_ReadAddress( 0xf800, 0xffff, MRA_BANK1 ),
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( mrgoemon_writemem )
 		{ 0x0000, 0xbfff, MWA_ROM },

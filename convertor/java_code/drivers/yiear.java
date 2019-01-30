@@ -83,17 +83,19 @@ public class yiear
 	}
 	
 	
-	static MEMORY_READ_START( readmem )
-		{ 0x0000, 0x0000, yiear_speech_r },
-		{ 0x4c00, 0x4c00, input_port_3_r },
-		{ 0x4d00, 0x4d00, input_port_4_r },
-		{ 0x4e00, 0x4e00, input_port_0_r },
-		{ 0x4e01, 0x4e01, input_port_1_r },
-		{ 0x4e02, 0x4e02, input_port_2_r },
-		{ 0x4e03, 0x4e03, input_port_5_r },
-		{ 0x5000, 0x5fff, MRA_RAM },
-		{ 0x8000, 0xffff, MRA_ROM },
-	MEMORY_END
+	public static Memory_ReadAddress readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x0000, yiear_speech_r ),
+		new Memory_ReadAddress( 0x4c00, 0x4c00, input_port_3_r ),
+		new Memory_ReadAddress( 0x4d00, 0x4d00, input_port_4_r ),
+		new Memory_ReadAddress( 0x4e00, 0x4e00, input_port_0_r ),
+		new Memory_ReadAddress( 0x4e01, 0x4e01, input_port_1_r ),
+		new Memory_ReadAddress( 0x4e02, 0x4e02, input_port_2_r ),
+		new Memory_ReadAddress( 0x4e03, 0x4e03, input_port_5_r ),
+		new Memory_ReadAddress( 0x5000, 0x5fff, MRA_RAM ),
+		new Memory_ReadAddress( 0x8000, 0xffff, MRA_ROM ),
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( writemem )
 		{ 0x4000, 0x4000, yiear_control_w },

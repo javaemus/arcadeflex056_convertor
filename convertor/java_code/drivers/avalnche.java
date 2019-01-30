@@ -36,12 +36,14 @@ public class avalnche
 	int avalnche_vh_start(void);
 	void avalnche_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	
-	static MEMORY_READ_START( readmem )
-		{ 0x0000, 0x1fff, MRA_RAM }, /* RAM SEL */
-		{ 0x2000, 0x2fff, avalnche_input_r }, /* INSEL */
-		{ 0x6000, 0x7fff, MRA_ROM }, /* ROM1-ROM2 */
-		{ 0xe000, 0xffff, MRA_ROM }, /* ROM2 for 6502 vectors */
-	MEMORY_END
+	public static Memory_ReadAddress readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x1fff, MRA_RAM ), /* RAM SEL */
+		new Memory_ReadAddress( 0x2000, 0x2fff, avalnche_input_r ), /* INSEL */
+		new Memory_ReadAddress( 0x6000, 0x7fff, MRA_ROM ), /* ROM1-ROM2 */
+		new Memory_ReadAddress( 0xe000, 0xffff, MRA_ROM ), /* ROM2 for 6502 vectors */
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( writemem )
 		{ 0x0000, 0x1fff, avalnche_videoram_w, &videoram, &videoram_size }, /* DISPLAY */

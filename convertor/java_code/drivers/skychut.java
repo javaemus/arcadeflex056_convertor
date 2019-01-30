@@ -69,17 +69,19 @@ public class skychut
 		memcpy(game_palette,spacebeam_palette,sizeof(spacebeam_palette));
 	}
 	
-	static MEMORY_READ_START( skychut_readmem )
-		{ 0x0000, 0x02ff, MRA_RAM }, /* scratch ram */
-		{ 0x1000, 0x2fff, MRA_ROM },
-		{ 0x4000, 0x4400, MRA_RAM },
-		{ 0x4800, 0x4bff, MRA_RAM }, /* Foreground colour  */
-		{ 0x5000, 0x53ff, MRA_RAM }, /* BKgrnd colour ??? */
-		{ 0xa200, 0xa200, input_port_1_r },
-		{ 0xa300, 0xa300, input_port_0_r },
-	/*	{ 0xa700, 0xa700, input_port_2_r }, */
-		{ 0xfC00, 0xffff, MRA_ROM },	/* for the reset / interrupt vectors */
-	MEMORY_END
+	public static Memory_ReadAddress skychut_readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x02ff, MRA_RAM ), /* scratch ram */
+		new Memory_ReadAddress( 0x1000, 0x2fff, MRA_ROM ),
+		new Memory_ReadAddress( 0x4000, 0x4400, MRA_RAM ),
+		new Memory_ReadAddress( 0x4800, 0x4bff, MRA_RAM ), /* Foreground colour  */
+		new Memory_ReadAddress( 0x5000, 0x53ff, MRA_RAM ), /* BKgrnd colour ??? */
+		new Memory_ReadAddress( 0xa200, 0xa200, input_port_1_r ),
+		new Memory_ReadAddress( 0xa300, 0xa300, input_port_0_r ),
+	/*	new Memory_ReadAddress( 0xa700, 0xa700, input_port_2_r ), */
+		new Memory_ReadAddress( 0xfC00, 0xffff, MRA_ROM ),	/* for the reset / interrupt vectors */
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	
 	static MEMORY_WRITE_START( skychut_writemem )
@@ -93,17 +95,19 @@ public class skychut
 		{ 0xfc00, 0xffff, MWA_ROM },	/* for the reset / interrupt vectors */
 	MEMORY_END
 	
-	static MEMORY_READ_START( greenberet_readmem )
-		{ 0x0000, 0x02ff, MRA_RAM }, /* scratch ram */
-		{ 0x1000, 0x33ff, MRA_ROM },
-		{ 0x4000, 0x4400, MRA_RAM },
-		{ 0x4800, 0x4bff, MRA_RAM }, /* Foreground colour  */
-		{ 0x5000, 0x57ff, MRA_RAM },
-		{ 0xa000, 0xa000, input_port_3_r },
-		{ 0xa200, 0xa200, input_port_1_r },
-		{ 0xa300, 0xa300, input_port_0_r },
-		{ 0xfC00, 0xffff, MRA_ROM },	/* for the reset / interrupt vectors */
-	MEMORY_END
+	public static Memory_ReadAddress greenberet_readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x02ff, MRA_RAM ), /* scratch ram */
+		new Memory_ReadAddress( 0x1000, 0x33ff, MRA_ROM ),
+		new Memory_ReadAddress( 0x4000, 0x4400, MRA_RAM ),
+		new Memory_ReadAddress( 0x4800, 0x4bff, MRA_RAM ), /* Foreground colour  */
+		new Memory_ReadAddress( 0x5000, 0x57ff, MRA_RAM ),
+		new Memory_ReadAddress( 0xa000, 0xa000, input_port_3_r ),
+		new Memory_ReadAddress( 0xa200, 0xa200, input_port_1_r ),
+		new Memory_ReadAddress( 0xa300, 0xa300, input_port_0_r ),
+		new Memory_ReadAddress( 0xfC00, 0xffff, MRA_ROM ),	/* for the reset / interrupt vectors */
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( greenberet_writemem )
 		{ 0x0000, 0x02ff, MWA_RAM, &memory },

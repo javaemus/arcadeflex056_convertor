@@ -55,17 +55,19 @@ public class timelimt
 	}
 	
 	
-	static MEMORY_READ_START( readmem )
-		{ 0x0000, 0x7fff, MRA_ROM },		/* rom */
-		{ 0x8000, 0x87ff, MRA_RAM },		/* ram */
-		{ 0x8800, 0x8bff, MRA_RAM },		/* video ram */
-		{ 0x9000, 0x97ff, MRA_RAM },		/* background ram */
-		{ 0x9800, 0x98ff, MRA_RAM },		/* sprite ram */
-		{ 0xa000, 0xa000, input_port_0_r }, /* input port */
-		{ 0xa800, 0xa800, input_port_1_r },	/* input port */
-		{ 0xb000, 0xb000, input_port_2_r },	/* DSW */
-		{ 0xb800, 0xb800, MRA_NOP },		/* NMI ack? */
-	MEMORY_END
+	public static Memory_ReadAddress readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x7fff, MRA_ROM ),		/* rom */
+		new Memory_ReadAddress( 0x8000, 0x87ff, MRA_RAM ),		/* ram */
+		new Memory_ReadAddress( 0x8800, 0x8bff, MRA_RAM ),		/* video ram */
+		new Memory_ReadAddress( 0x9000, 0x97ff, MRA_RAM ),		/* background ram */
+		new Memory_ReadAddress( 0x9800, 0x98ff, MRA_RAM ),		/* sprite ram */
+		new Memory_ReadAddress( 0xa000, 0xa000, input_port_0_r ), /* input port */
+		new Memory_ReadAddress( 0xa800, 0xa800, input_port_1_r ),	/* input port */
+		new Memory_ReadAddress( 0xb000, 0xb000, input_port_2_r ),	/* DSW */
+		new Memory_ReadAddress( 0xb800, 0xb800, MRA_NOP ),		/* NMI ack? */
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( writemem )
 		{ 0x0000, 0x7fff, MWA_ROM },		/* rom */
@@ -87,10 +89,12 @@ public class timelimt
 		{ 0x00, 0x00, watchdog_reset_r },
 	PORT_END
 	
-	static MEMORY_READ_START( readmem_sound )
-		{ 0x0000, 0x1fff, MRA_ROM },	/* rom */
-		{ 0x3800, 0x3bff, MRA_RAM },	/* ram */
-	MEMORY_END
+	public static Memory_ReadAddress readmem_sound[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x1fff, MRA_ROM ),	/* rom */
+		new Memory_ReadAddress( 0x3800, 0x3bff, MRA_RAM ),	/* ram */
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( writemem_sound )
 		{ 0x0000, 0x1fff, MWA_ROM },	/* rom */

@@ -150,10 +150,12 @@ public class tubep
 	}
 	
 	
-	static MEMORY_READ_START( tubep_readmem )
-		{ 0x0000, 0x7fff, MRA_ROM },	//up to 9fff in rjammer
-		{ 0xa000, 0xa7ff, MRA_RAM },
-	MEMORY_END
+	public static Memory_ReadAddress tubep_readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x7fff, MRA_ROM ),	//up to 9fff in rjammer
+		new Memory_ReadAddress( 0xa000, 0xa7ff, MRA_RAM ),
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( tubep_writemem )
 		{ 0x0000, 0x7fff, MWA_ROM },	//up to 9fff in rjammer
@@ -239,11 +241,13 @@ public class tubep
 		{ 0xf0, 0xf0, rjammer_soundlatch_w },
 	PORT_END
 	
-	static MEMORY_READ_START( rjammer_readmem )
-		{ 0x0000, 0x9fff, MRA_ROM },	//only up to 7fff in tube panic
-		{ 0xa000, 0xa7ff, MRA_RAM },
-		{ 0xe000, 0xe7ff, MRA_RAM },
-	MEMORY_END
+	public static Memory_ReadAddress rjammer_readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x9fff, MRA_ROM ),	//only up to 7fff in tube panic
+		new Memory_ReadAddress( 0xa000, 0xa7ff, MRA_RAM ),
+		new Memory_ReadAddress( 0xe000, 0xe7ff, MRA_RAM ),
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( rjammer_writemem )
 		{ 0x0000, 0x9fff, MWA_ROM },	//only up to 7fff in tube panic
@@ -272,12 +276,14 @@ public class tubep
 		return 0x00;
 	}
 	
-	static MEMORY_READ_START( tubep_g_readmem )
-		{ 0x0000, 0x7fff, MRA_ROM },
-		{ 0xe000, 0xe07f, sharedram_r },
-		{ 0xe080, 0xe7ff, MRA_RAM },
-		{ 0xfd4a, 0xfd4b, tubep_g_fd4a_r }, /*could it be a bad ROM ???*/
-	MEMORY_END
+	public static Memory_ReadAddress tubep_g_readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x7fff, MRA_ROM ),
+		new Memory_ReadAddress( 0xe000, 0xe07f, sharedram_r ),
+		new Memory_ReadAddress( 0xe080, 0xe7ff, MRA_RAM ),
+		new Memory_ReadAddress( 0xfd4a, 0xfd4b, tubep_g_fd4a_r ), /*could it be a bad ROM ???*/
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static WRITE_HANDLER( tubep_a000_w )
 	{
@@ -316,17 +322,19 @@ public class tubep
 	
 	
 	
-	static MEMORY_READ_START( rjammer_g_readmem )
-		{ 0x0000, 0x7fff, MRA_ROM },
-		{ 0xa000, 0xa7ff, MRA_RAM },
-		{ 0xe000, 0xe0ff, MRA_RAM },
+	public static Memory_ReadAddress rjammer_g_readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x7fff, MRA_ROM ),
+		new Memory_ReadAddress( 0xa000, 0xa7ff, MRA_RAM ),
+		new Memory_ReadAddress( 0xe000, 0xe0ff, MRA_RAM ),
 	
-		{ 0xf800, 0xf9ff, MRA_RAM },
+		new Memory_ReadAddress( 0xf800, 0xf9ff, MRA_RAM ),
 	
-		//{ 0xe000, 0xe07f, sharedram_r },
-		//{ 0xe080, 0xe7ff, MRA_RAM },
-		//{ 0xfd4a, 0xfd4b, tubep_g_fd4a_r }, /* ??? */
-	MEMORY_END
+		//new Memory_ReadAddress( 0xe000, 0xe07f, sharedram_r ),
+		//new Memory_ReadAddress( 0xe080, 0xe7ff, MRA_RAM ),
+		//new Memory_ReadAddress( 0xfd4a, 0xfd4b, tubep_g_fd4a_r ), /* ??? */
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	
 	static MEMORY_WRITE_START( rjammer_g_writemem )
@@ -385,11 +393,13 @@ public class tubep
 		return;
 	}
 	
-	static MEMORY_READ_START( tubep_sound_readmem )
-		{ 0x0000, 0x3fff, MRA_ROM },
-		{ 0xd000, 0xd000, tubep_sound_irq_ack },
-		{ 0xe000, 0xe7ff, MRA_RAM },
-	MEMORY_END
+	public static Memory_ReadAddress tubep_sound_readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x3fff, MRA_ROM ),
+		new Memory_ReadAddress( 0xd000, 0xd000, tubep_sound_irq_ack ),
+		new Memory_ReadAddress( 0xe000, 0xe7ff, MRA_RAM ),
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( tubep_sound_writemem )
 		{ 0x0000, 0x3fff, MWA_ROM },

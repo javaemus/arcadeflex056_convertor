@@ -427,14 +427,16 @@ public class cosmic
 	}
 	
 	
-	static MEMORY_READ_START( panic_readmem )
-		{ 0x0000, 0x3fff, MRA_ROM },
-		{ 0x4000, 0x5fff, MRA_RAM },
-		{ 0x6800, 0x6800, input_port_0_r }, /* IN1 */
-		{ 0x6801, 0x6801, input_port_1_r }, /* IN2 */
-		{ 0x6802, 0x6802, input_port_2_r }, /* DSW */
-		{ 0x6803, 0x6803, input_port_3_r }, /* IN0 */
-	MEMORY_END
+	public static Memory_ReadAddress panic_readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x3fff, MRA_ROM ),
+		new Memory_ReadAddress( 0x4000, 0x5fff, MRA_RAM ),
+		new Memory_ReadAddress( 0x6800, 0x6800, input_port_0_r ), /* IN1 */
+		new Memory_ReadAddress( 0x6801, 0x6801, input_port_1_r ), /* IN2 */
+		new Memory_ReadAddress( 0x6802, 0x6802, input_port_2_r ), /* DSW */
+		new Memory_ReadAddress( 0x6803, 0x6803, input_port_3_r ), /* IN0 */
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( panic_writemem )
 		{ 0x0000, 0x3fff, MWA_ROM },
@@ -446,14 +448,16 @@ public class cosmic
 		{ 0x7800, 0x7801, panic_sound_output2_w },
 	MEMORY_END
 	
-	static MEMORY_READ_START( cosmica_readmem )
-		{ 0x0000, 0x3fff, MRA_ROM },
-		{ 0x4000, 0x5fff, MRA_RAM },
-		{ 0x6800, 0x6800, input_port_0_r }, /* IN1 */
-		{ 0x6801, 0x6801, input_port_1_r }, /* IN2 */
-		{ 0x6802, 0x6802, input_port_2_r }, /* DSW */
-		{ 0x6803, 0x6803, cosmica_pixel_clock_r },
-	MEMORY_END
+	public static Memory_ReadAddress cosmica_readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x3fff, MRA_ROM ),
+		new Memory_ReadAddress( 0x4000, 0x5fff, MRA_RAM ),
+		new Memory_ReadAddress( 0x6800, 0x6800, input_port_0_r ), /* IN1 */
+		new Memory_ReadAddress( 0x6801, 0x6801, input_port_1_r ), /* IN2 */
+		new Memory_ReadAddress( 0x6802, 0x6802, input_port_2_r ), /* DSW */
+		new Memory_ReadAddress( 0x6803, 0x6803, cosmica_pixel_clock_r ),
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( cosmica_writemem )
 		{ 0x0000, 0x3fff, MWA_ROM },
@@ -464,10 +468,12 @@ public class cosmic
 		{ 0x700f, 0x700f, flip_screen_w },
 	MEMORY_END
 	
-	static MEMORY_READ_START( cosmicg_readmem )
-		{ 0x0000, 0x1fff, MRA_ROM },
-		{ 0x2000, 0x3fff, cosmicg_videoram_r },
-	MEMORY_END
+	public static Memory_ReadAddress cosmicg_readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x1fff, MRA_ROM ),
+		new Memory_ReadAddress( 0x2000, 0x3fff, cosmicg_videoram_r ),
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( cosmicg_writemem )
 		{ 0x0000, 0x1fff, MWA_ROM },
@@ -484,15 +490,17 @@ public class cosmic
 		{ 0x16, 0x17, cosmicg_color_register_w },
 	PORT_END
 	
-	static MEMORY_READ_START( magspot2_readmem )
-		{ 0x0000, 0x2fff, MRA_ROM },
-		{ 0x3800, 0x3807, magspot2_coinage_dip_r },
-		{ 0x5000, 0x5000, input_port_0_r },
-		{ 0x5001, 0x5001, input_port_1_r },
-		{ 0x5002, 0x5002, input_port_2_r },
-		{ 0x5003, 0x5003, input_port_3_r },
-		{ 0x6000, 0x7fff, MRA_RAM },
-	MEMORY_END
+	public static Memory_ReadAddress magspot2_readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x2fff, MRA_ROM ),
+		new Memory_ReadAddress( 0x3800, 0x3807, magspot2_coinage_dip_r ),
+		new Memory_ReadAddress( 0x5000, 0x5000, input_port_0_r ),
+		new Memory_ReadAddress( 0x5001, 0x5001, input_port_1_r ),
+		new Memory_ReadAddress( 0x5002, 0x5002, input_port_2_r ),
+		new Memory_ReadAddress( 0x5003, 0x5003, input_port_3_r ),
+		new Memory_ReadAddress( 0x6000, 0x7fff, MRA_RAM ),
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( magspot2_writemem )
 		{ 0x0000, 0x2fff, MWA_ROM },
@@ -503,14 +511,16 @@ public class cosmic
 		{ 0x6000, 0x7fff, cosmica_videoram_w, &videoram, &videoram_size},
 	MEMORY_END
 	
-	static MEMORY_READ_START( nomnlnd_readmem )
-		{ 0x0000, 0x2fff, MRA_ROM },
-		{ 0x3800, 0x3807, magspot2_coinage_dip_r },
-		{ 0x5000, 0x5001, nomnlnd_port_r },
-		{ 0x5002, 0x5002, input_port_2_r },
-		{ 0x5003, 0x5003, input_port_3_r },
-		{ 0x6000, 0x7fff, MRA_RAM },
-	MEMORY_END
+	public static Memory_ReadAddress nomnlnd_readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x2fff, MRA_ROM ),
+		new Memory_ReadAddress( 0x3800, 0x3807, magspot2_coinage_dip_r ),
+		new Memory_ReadAddress( 0x5000, 0x5001, nomnlnd_port_r ),
+		new Memory_ReadAddress( 0x5002, 0x5002, input_port_2_r ),
+		new Memory_ReadAddress( 0x5003, 0x5003, input_port_3_r ),
+		new Memory_ReadAddress( 0x6000, 0x7fff, MRA_RAM ),
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( nomnlnd_writemem )
 		{ 0x0000, 0x2fff, MWA_ROM },

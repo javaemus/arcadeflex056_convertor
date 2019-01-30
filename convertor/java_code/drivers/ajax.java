@@ -40,16 +40,18 @@ public class ajax
 	
 	/****************************************************************************/
 	
-	static MEMORY_READ_START( ajax_readmem )
-		{ 0x0000, 0x01c0, ajax_ls138_f10_r },			/* inputs + DIPSW */
-		{ 0x0800, 0x0807, K051937_r },					/* sprite control registers */
-		{ 0x0c00, 0x0fff, K051960_r },					/* sprite RAM 2128SL at J7 */
-		{ 0x1000, 0x1fff, MRA_RAM },		/* palette */
-		{ 0x2000, 0x3fff, ajax_sharedram_r },			/* shared RAM with the 6809 */
-		{ 0x4000, 0x5fff, MRA_RAM },					/* RAM 6264L at K10*/
-		{ 0x6000, 0x7fff, MRA_BANK2 },					/* banked ROM */
-		{ 0x8000, 0xffff, MRA_ROM },					/* ROM N11 */
-	MEMORY_END
+	public static Memory_ReadAddress ajax_readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x01c0, ajax_ls138_f10_r ),			/* inputs + DIPSW */
+		new Memory_ReadAddress( 0x0800, 0x0807, K051937_r ),					/* sprite control registers */
+		new Memory_ReadAddress( 0x0c00, 0x0fff, K051960_r ),					/* sprite RAM 2128SL at J7 */
+		new Memory_ReadAddress( 0x1000, 0x1fff, MRA_RAM ),		/* palette */
+		new Memory_ReadAddress( 0x2000, 0x3fff, ajax_sharedram_r ),			/* shared RAM with the 6809 */
+		new Memory_ReadAddress( 0x4000, 0x5fff, MRA_RAM ),					/* RAM 6264L at K10*/
+		new Memory_ReadAddress( 0x6000, 0x7fff, MRA_BANK2 ),					/* banked ROM */
+		new Memory_ReadAddress( 0x8000, 0xffff, MRA_ROM ),					/* ROM N11 */
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( ajax_writemem )
 		{ 0x0000, 0x01c0, ajax_ls138_f10_w },			/* bankswitch + sound command + FIRQ command */
@@ -62,14 +64,16 @@ public class ajax
 		{ 0x8000, 0xffff, MWA_ROM },					/* ROM N11 */
 	MEMORY_END
 	
-	static MEMORY_READ_START( ajax_readmem_2 )
-		{ 0x0000, 0x07ff, K051316_0_r },		/* 051316 zoom/rotation layer */
-		{ 0x1000, 0x17ff, K051316_rom_0_r },	/* 051316 (ROM test) */
-		{ 0x2000, 0x3fff, ajax_sharedram_r },	/* shared RAM with the 052001 */
-		{ 0x4000, 0x7fff, K052109_r },			/* video RAM + color RAM + video registers */
-		{ 0x8000, 0x9fff, MRA_BANK1 },			/* banked ROM */
-		{ 0xa000, 0xffff, MRA_ROM },			/* ROM I16 */
-	MEMORY_END
+	public static Memory_ReadAddress ajax_readmem_2[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x07ff, K051316_0_r ),		/* 051316 zoom/rotation layer */
+		new Memory_ReadAddress( 0x1000, 0x17ff, K051316_rom_0_r ),	/* 051316 (ROM test) */
+		new Memory_ReadAddress( 0x2000, 0x3fff, ajax_sharedram_r ),	/* shared RAM with the 052001 */
+		new Memory_ReadAddress( 0x4000, 0x7fff, K052109_r ),			/* video RAM + color RAM + video registers */
+		new Memory_ReadAddress( 0x8000, 0x9fff, MRA_BANK1 ),			/* banked ROM */
+		new Memory_ReadAddress( 0xa000, 0xffff, MRA_ROM ),			/* ROM I16 */
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( ajax_writemem_2 )
 		{ 0x0000, 0x07ff, K051316_0_w },			/* 051316 zoom/rotation layer */
@@ -81,14 +85,16 @@ public class ajax
 		{ 0xa000, 0xffff, MWA_ROM },				/* ROM I16 */
 	MEMORY_END
 	
-	static MEMORY_READ_START( ajax_readmem_sound )
-		{ 0x0000, 0x7fff, MRA_ROM },				/* ROM F6 */
-		{ 0x8000, 0x87ff, MRA_RAM },				/* RAM 2128SL at D16 */
-		{ 0xa000, 0xa00d, K007232_read_port_0_r },	/* 007232 registers (chip 1) */
-		{ 0xb000, 0xb00d, K007232_read_port_1_r },	/* 007232 registers (chip 2) */
-		{ 0xc001, 0xc001, YM2151_status_port_0_r },	/* YM2151 */
-		{ 0xe000, 0xe000, soundlatch_r },			/* soundlatch_r */
-	MEMORY_END
+	public static Memory_ReadAddress ajax_readmem_sound[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x7fff, MRA_ROM ),				/* ROM F6 */
+		new Memory_ReadAddress( 0x8000, 0x87ff, MRA_RAM ),				/* RAM 2128SL at D16 */
+		new Memory_ReadAddress( 0xa000, 0xa00d, K007232_read_port_0_r ),	/* 007232 registers (chip 1) */
+		new Memory_ReadAddress( 0xb000, 0xb00d, K007232_read_port_1_r ),	/* 007232 registers (chip 2) */
+		new Memory_ReadAddress( 0xc001, 0xc001, YM2151_status_port_0_r ),	/* YM2151 */
+		new Memory_ReadAddress( 0xe000, 0xe000, soundlatch_r ),			/* soundlatch_r */
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( ajax_writemem_sound )
 		{ 0x0000, 0x7fff, MWA_ROM },					/* ROM F6 */

@@ -51,19 +51,21 @@ public class battlnts
 		/* other bits unknown */
 	}
 	
-	static MEMORY_READ_START( battlnts_readmem )
-		{ 0x0000, 0x1fff, K007342_r },			/* Color RAM + Video RAM */
-		{ 0x2000, 0x21ff, K007420_r },			/* Sprite RAM */
-		{ 0x2200, 0x23ff, K007342_scroll_r },	/* Scroll RAM */
-		{ 0x2400, 0x24ff, paletteram_r },		/* Palette */
-		{ 0x2e00, 0x2e00, input_port_0_r }, 	/* DIPSW #1 */
-		{ 0x2e01, 0x2e01, input_port_4_r }, 	/* 2P controls */
-		{ 0x2e02, 0x2e02, input_port_3_r }, 	/* 1P controls */
-		{ 0x2e03, 0x2e03, input_port_2_r }, 	/* coinsw, testsw, startsw */
-		{ 0x2e04, 0x2e04, input_port_1_r }, 	/* DISPW #2 */
-		{ 0x4000, 0x7fff, MRA_BANK1 },			/* banked ROM */
-		{ 0x8000, 0xffff, MRA_ROM },			/* ROM 777e02.bin */
-	MEMORY_END
+	public static Memory_ReadAddress battlnts_readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x1fff, K007342_r ),			/* Color RAM + Video RAM */
+		new Memory_ReadAddress( 0x2000, 0x21ff, K007420_r ),			/* Sprite RAM */
+		new Memory_ReadAddress( 0x2200, 0x23ff, K007342_scroll_r ),	/* Scroll RAM */
+		new Memory_ReadAddress( 0x2400, 0x24ff, paletteram_r ),		/* Palette */
+		new Memory_ReadAddress( 0x2e00, 0x2e00, input_port_0_r ), 	/* DIPSW #1 */
+		new Memory_ReadAddress( 0x2e01, 0x2e01, input_port_4_r ), 	/* 2P controls */
+		new Memory_ReadAddress( 0x2e02, 0x2e02, input_port_3_r ), 	/* 1P controls */
+		new Memory_ReadAddress( 0x2e03, 0x2e03, input_port_2_r ), 	/* coinsw, testsw, startsw */
+		new Memory_ReadAddress( 0x2e04, 0x2e04, input_port_1_r ), 	/* DISPW #2 */
+		new Memory_ReadAddress( 0x4000, 0x7fff, MRA_BANK1 ),			/* banked ROM */
+		new Memory_ReadAddress( 0x8000, 0xffff, MRA_ROM ),			/* ROM 777e02.bin */
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( battlnts_writemem )
 		{ 0x0000, 0x1fff, K007342_w },				/* Color RAM + Video RAM */
@@ -80,13 +82,15 @@ public class battlnts
 		{ 0x8000, 0xffff, MWA_ROM },				/* ROM 777e02.bin */
 	MEMORY_END
 	
-	static MEMORY_READ_START( battlnts_readmem_sound )
-		{ 0x0000, 0x7fff, MRA_ROM },				/* ROM 777c01.rom */
-		{ 0x8000, 0x87ff, MRA_RAM },				/* RAM */
-		{ 0xa000, 0xa000, YM3812_status_port_0_r }, /* YM3812 (chip 1) */
-		{ 0xc000, 0xc000, YM3812_status_port_1_r }, /* YM3812 (chip 2) */
-		{ 0xe000, 0xe000, soundlatch_r },			/* soundlatch_r */
-	MEMORY_END
+	public static Memory_ReadAddress battlnts_readmem_sound[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x7fff, MRA_ROM ),				/* ROM 777c01.rom */
+		new Memory_ReadAddress( 0x8000, 0x87ff, MRA_RAM ),				/* RAM */
+		new Memory_ReadAddress( 0xa000, 0xa000, YM3812_status_port_0_r ), /* YM3812 (chip 1) */
+		new Memory_ReadAddress( 0xc000, 0xc000, YM3812_status_port_1_r ), /* YM3812 (chip 2) */
+		new Memory_ReadAddress( 0xe000, 0xe000, soundlatch_r ),			/* soundlatch_r */
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( battlnts_writemem_sound )
 		{ 0x0000, 0x7fff, MWA_ROM },					/* ROM 777c01.rom */

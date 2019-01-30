@@ -128,15 +128,17 @@ public class tecmo16
 		{ 0x16001e, 0x16001f, tecmo16_scroll2_y_w },
 	MEMORY_END
 	
-	static MEMORY_READ_START( sound_readmem )
-		{ 0x0000, 0xefff, MRA_ROM },
-		{ 0xf000, 0xfbff, MRA_RAM },	/* Sound RAM */
-		{ 0xfc00, 0xfc00, OKIM6295_status_0_r },
-		{ 0xfc05, 0xfc05, YM2151_status_port_0_r },
-		{ 0xfc08, 0xfc08, soundlatch_r },
-		{ 0xfc0c, 0xfc0c, MRA_NOP },
-		{ 0xfffe, 0xffff, MRA_RAM },
-	MEMORY_END
+	public static Memory_ReadAddress sound_readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0xefff, MRA_ROM ),
+		new Memory_ReadAddress( 0xf000, 0xfbff, MRA_RAM ),	/* Sound RAM */
+		new Memory_ReadAddress( 0xfc00, 0xfc00, OKIM6295_status_0_r ),
+		new Memory_ReadAddress( 0xfc05, 0xfc05, YM2151_status_port_0_r ),
+		new Memory_ReadAddress( 0xfc08, 0xfc08, soundlatch_r ),
+		new Memory_ReadAddress( 0xfc0c, 0xfc0c, MRA_NOP ),
+		new Memory_ReadAddress( 0xfffe, 0xffff, MRA_RAM ),
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( sound_writemem )
 		{ 0x0000, 0xefff, MWA_ROM },

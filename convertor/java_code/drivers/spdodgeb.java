@@ -202,15 +202,17 @@ public class spdodgeb
 	
 	
 	
-	static MEMORY_READ_START( readmem )
-		{ 0x0000, 0x0fff, MRA_RAM },
-		{ 0x2000, 0x2fff, MRA_RAM },
-		{ 0x3000, 0x3000, port_0_r },
-		{ 0x3001, 0x3001, input_port_1_r },	/* DIPs */
-		{ 0x3801, 0x3805, mcu63701_r },
-		{ 0x4000, 0x7fff, MRA_BANK1 },
-		{ 0x8000, 0xffff, MRA_ROM },
-	MEMORY_END
+	public static Memory_ReadAddress readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x0fff, MRA_RAM ),
+		new Memory_ReadAddress( 0x2000, 0x2fff, MRA_RAM ),
+		new Memory_ReadAddress( 0x3000, 0x3000, port_0_r ),
+		new Memory_ReadAddress( 0x3001, 0x3001, input_port_1_r ),	/* DIPs */
+		new Memory_ReadAddress( 0x3801, 0x3805, mcu63701_r ),
+		new Memory_ReadAddress( 0x4000, 0x7fff, MRA_BANK1 ),
+		new Memory_ReadAddress( 0x8000, 0xffff, MRA_ROM ),
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( writemem )
 		{ 0x0000, 0x0fff, MWA_RAM },
@@ -227,11 +229,13 @@ public class spdodgeb
 		{ 0x4000, 0xffff, MWA_ROM },
 	MEMORY_END
 	
-	static MEMORY_READ_START( sound_readmem )
-		{ 0x0000, 0x0fff, MRA_RAM },
-		{ 0x1000, 0x1000, soundlatch_r },
-		{ 0x8000, 0xffff, MRA_ROM },
-	MEMORY_END
+	public static Memory_ReadAddress sound_readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x0fff, MRA_RAM ),
+		new Memory_ReadAddress( 0x1000, 0x1000, soundlatch_r ),
+		new Memory_ReadAddress( 0x8000, 0xffff, MRA_ROM ),
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( sound_writemem )
 		{ 0x0000, 0x0fff, MWA_RAM },

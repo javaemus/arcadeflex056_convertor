@@ -124,18 +124,20 @@ public class seicross
 	}
 	
 	
-	static MEMORY_READ_START( readmem )
-		{ 0x0000, 0x77ff, MRA_ROM },
-		{ 0x7800, 0x7fff, sharedram_r },
-		{ 0x8820, 0x887f, MRA_RAM },
-		{ 0x9000, 0x93ff, MRA_RAM },	/* video RAM */
-		{ 0x9800, 0x981f, MRA_RAM },
-		{ 0x9c00, 0x9fff, MRA_RAM },	/* color RAM */
-		{ 0xa000, 0xa000, input_port_0_r },	/* IN0 */
-		{ 0xa800, 0xa800, input_port_1_r },	/* IN1 */
-		{ 0xb000, 0xb000, input_port_2_r },	/* test */
-		{ 0xb800, 0xb800, watchdog_reset_r },
-	MEMORY_END
+	public static Memory_ReadAddress readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x77ff, MRA_ROM ),
+		new Memory_ReadAddress( 0x7800, 0x7fff, sharedram_r ),
+		new Memory_ReadAddress( 0x8820, 0x887f, MRA_RAM ),
+		new Memory_ReadAddress( 0x9000, 0x93ff, MRA_RAM ),	/* video RAM */
+		new Memory_ReadAddress( 0x9800, 0x981f, MRA_RAM ),
+		new Memory_ReadAddress( 0x9c00, 0x9fff, MRA_RAM ),	/* color RAM */
+		new Memory_ReadAddress( 0xa000, 0xa000, input_port_0_r ),	/* IN0 */
+		new Memory_ReadAddress( 0xa800, 0xa800, input_port_1_r ),	/* IN1 */
+		new Memory_ReadAddress( 0xb000, 0xb000, input_port_2_r ),	/* test */
+		new Memory_ReadAddress( 0xb800, 0xb800, watchdog_reset_r ),
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( writemem )
 		{ 0x0000, 0x77ff, MWA_ROM },
@@ -159,21 +161,25 @@ public class seicross
 		{ 0x09, 0x09, AY8910_write_port_0_w },
 	PORT_END
 	
-	static MEMORY_READ_START( mcu_nvram_readmem )
-		{ 0x0000, 0x007f, MRA_RAM },
-		{ 0x1000, 0x10ff, MRA_RAM },
-		{ 0x8000, 0xf7ff, MRA_ROM },
-		{ 0xf800, 0xffff, sharedram_r },
-	MEMORY_END
+	public static Memory_ReadAddress mcu_nvram_readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x007f, MRA_RAM ),
+		new Memory_ReadAddress( 0x1000, 0x10ff, MRA_RAM ),
+		new Memory_ReadAddress( 0x8000, 0xf7ff, MRA_ROM ),
+		new Memory_ReadAddress( 0xf800, 0xffff, sharedram_r ),
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
-	static MEMORY_READ_START( mcu_no_nvram_readmem )
-		{ 0x0000, 0x007f, MRA_RAM },
-		{ 0x1003, 0x1003, input_port_3_r },	/* DSW1 */
-		{ 0x1005, 0x1005, input_port_4_r },	/* DSW2 */
-		{ 0x1006, 0x1006, input_port_5_r },	/* DSW3 */
-		{ 0x8000, 0xf7ff, MRA_ROM },
-		{ 0xf800, 0xffff, sharedram_r },
-	MEMORY_END
+	public static Memory_ReadAddress mcu_no_nvram_readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x007f, MRA_RAM ),
+		new Memory_ReadAddress( 0x1003, 0x1003, input_port_3_r ),	/* DSW1 */
+		new Memory_ReadAddress( 0x1005, 0x1005, input_port_4_r ),	/* DSW2 */
+		new Memory_ReadAddress( 0x1006, 0x1006, input_port_5_r ),	/* DSW3 */
+		new Memory_ReadAddress( 0x8000, 0xf7ff, MRA_ROM ),
+		new Memory_ReadAddress( 0xf800, 0xffff, sharedram_r ),
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( mcu_nvram_writemem )
 		{ 0x0000, 0x007f, MWA_RAM },

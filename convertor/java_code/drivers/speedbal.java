@@ -84,13 +84,15 @@ public class speedbal
 	    speedbal_sharedram[offset] = data;
 	}
 	
-	static MEMORY_READ_START( readmem )
-		{ 0x0000, 0xdbff, MRA_ROM },
-		{ 0xdc00, 0xdfff, speedbal_sharedram_r },  // shared with SOUND
-		{ 0xe000, 0xe1ff, speedbal_background_videoram_r },
-		{ 0xe800, 0xefff, speedbal_foreground_videoram_r },
-		{ 0xf000, 0xffff, MRA_RAM },
-	MEMORY_END
+	public static Memory_ReadAddress readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0xdbff, MRA_ROM ),
+		new Memory_ReadAddress( 0xdc00, 0xdfff, speedbal_sharedram_r ),  // shared with SOUND
+		new Memory_ReadAddress( 0xe000, 0xe1ff, speedbal_background_videoram_r ),
+		new Memory_ReadAddress( 0xe800, 0xefff, speedbal_foreground_videoram_r ),
+		new Memory_ReadAddress( 0xf000, 0xffff, MRA_RAM ),
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( writemem )
 		{ 0x0000, 0xdbff, MWA_ROM },
@@ -102,11 +104,13 @@ public class speedbal
 		{ 0xff00, 0xffff, MWA_RAM, &speedbal_sprites_dataram, &speedbal_sprites_dataram_size },
 	MEMORY_END
 	
-	static MEMORY_READ_START( sound_readmem )
-		{ 0x0000, 0x7fff, MRA_ROM },
-		{ 0xdc00, 0xdfff, speedbal_sharedram_r }, // shared with MAIN CPU
-		{ 0xf000, 0xffff, MRA_RAM },
-	MEMORY_END
+	public static Memory_ReadAddress sound_readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x7fff, MRA_ROM ),
+		new Memory_ReadAddress( 0xdc00, 0xdfff, speedbal_sharedram_r ), // shared with MAIN CPU
+		new Memory_ReadAddress( 0xf000, 0xffff, MRA_RAM ),
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( sound_writemem )
 		{ 0x0000, 0x7fff, MWA_ROM },

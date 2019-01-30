@@ -75,13 +75,15 @@ public class battlera
 	
 	/******************************************************************************/
 	
-	static MEMORY_READ_START( battlera_readmem )
-		{ 0x000000, 0x0fffff, MRA_ROM },
-		{ 0x100000, 0x10ffff, HuC6270_debug_r }, /* Cheat to view vram data */
-		{ 0x1f0000, 0x1f1fff, MRA_BANK8 },
-		{ 0x1fe000, 0x1fe001, HuC6270_register_r },
-		{ 0x1ff000, 0x1ff001, control_data_r },
-	MEMORY_END
+	public static Memory_ReadAddress battlera_readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x000000, 0x0fffff, MRA_ROM ),
+		new Memory_ReadAddress( 0x100000, 0x10ffff, HuC6270_debug_r ), /* Cheat to view vram data */
+		new Memory_ReadAddress( 0x1f0000, 0x1f1fff, MRA_BANK8 ),
+		new Memory_ReadAddress( 0x1fe000, 0x1fe001, HuC6270_register_r ),
+		new Memory_ReadAddress( 0x1ff000, 0x1ff001, control_data_r ),
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( battlera_writemem )
 		{ 0x000000, 0x0fffff, MWA_ROM },
@@ -134,11 +136,13 @@ public class battlera
 		MSM5205_reset_w(0,0);
 	}
 	
-	static MEMORY_READ_START( sound_readmem )
-		{ 0x000000, 0x00ffff, MRA_ROM },
-		{ 0x1f0000, 0x1f1fff, MRA_BANK7 }, /* Main ram */
-		{ 0x1ff000, 0x1ff001, soundlatch_r },
-	MEMORY_END
+	public static Memory_ReadAddress sound_readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x000000, 0x00ffff, MRA_ROM ),
+		new Memory_ReadAddress( 0x1f0000, 0x1f1fff, MRA_BANK7 ), /* Main ram */
+		new Memory_ReadAddress( 0x1ff000, 0x1ff001, soundlatch_r ),
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( sound_writemem )
 	 	{ 0x000000, 0x00ffff, MWA_ROM },

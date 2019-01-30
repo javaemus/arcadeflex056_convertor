@@ -63,16 +63,18 @@ public class ttmahjng
 	}
 	
 	
-	static MEMORY_READ_START( cpu1_readmem )
-		{ 0x0000, 0x3fff, MRA_ROM },
-		{ 0x4000, 0x43ff, ttmahjng_sharedram_r },
-		{ 0x4800, 0x4800, input_port_0_r },
-		{ 0x5000, 0x5000, input_port_1_r },
-		{ 0x5800, 0x5800, input_port_matrix_r },
-		{ 0x7838, 0x7838, MRA_NOP },
-		{ 0x7859, 0x7859, MRA_NOP },
-		{ 0x8000, 0xbfff, ttmahjng_videoram1_r },
-	MEMORY_END
+	public static Memory_ReadAddress cpu1_readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x3fff, MRA_ROM ),
+		new Memory_ReadAddress( 0x4000, 0x43ff, ttmahjng_sharedram_r ),
+		new Memory_ReadAddress( 0x4800, 0x4800, input_port_0_r ),
+		new Memory_ReadAddress( 0x5000, 0x5000, input_port_1_r ),
+		new Memory_ReadAddress( 0x5800, 0x5800, input_port_matrix_r ),
+		new Memory_ReadAddress( 0x7838, 0x7838, MRA_NOP ),
+		new Memory_ReadAddress( 0x7859, 0x7859, MRA_NOP ),
+		new Memory_ReadAddress( 0x8000, 0xbfff, ttmahjng_videoram1_r ),
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( cpu1_writemem )
 		{ 0x0000, 0x3fff, MWA_ROM },
@@ -86,11 +88,13 @@ public class ttmahjng
 		{ 0x8000, 0xbfff, ttmahjng_videoram1_w, &ttmahjng_videoram1, &ttmahjng_videoram_size },
 	MEMORY_END
 	
-	static MEMORY_READ_START( cpu2_readmem )
-		{ 0x0000, 0x1fff, MRA_ROM },
-		{ 0x4000, 0x43ff, ttmahjng_sharedram_r },
-		{ 0x8000, 0xbfff, ttmahjng_videoram2_r },
-	MEMORY_END
+	public static Memory_ReadAddress cpu2_readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x1fff, MRA_ROM ),
+		new Memory_ReadAddress( 0x4000, 0x43ff, ttmahjng_sharedram_r ),
+		new Memory_ReadAddress( 0x8000, 0xbfff, ttmahjng_videoram2_r ),
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( cpu2_writemem )
 		{ 0x0000, 0x1fff, MWA_ROM },

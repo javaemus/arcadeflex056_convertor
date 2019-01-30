@@ -257,21 +257,23 @@ public class cvs
 		{ 100 }
 	};
 	
-	static MEMORY_READ_START( cvs_readmem )
-		{ 0x0000, 0x13ff, MRA_ROM },
-		{ 0x2000, 0x33ff, MRA_ROM },
-		{ 0x4000, 0x53ff, MRA_ROM },
-		{ 0x6000, 0x73ff, MRA_ROM },
-	    { 0x1400, 0x14ff, cvs_bullet_r },
-	    { 0x1500, 0x15ff, cvs_2636_3_r },
-	    { 0x1600, 0x16ff, cvs_2636_2_r },
-	    { 0x1700, 0x17ff, cvs_2636_1_r },
-		{ 0x1800, 0x1bff, cvs_videoram_r },
-	    { 0x1c00, 0x1fff, MRA_RAM },
-		{ 0x3400, 0x3fff, cvs_mirror_r },
-		{ 0x5400, 0x5fff, cvs_mirror_r },
-		{ 0x7400, 0x7fff, cvs_mirror_r },
-	MEMORY_END
+	public static Memory_ReadAddress cvs_readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x13ff, MRA_ROM ),
+		new Memory_ReadAddress( 0x2000, 0x33ff, MRA_ROM ),
+		new Memory_ReadAddress( 0x4000, 0x53ff, MRA_ROM ),
+		new Memory_ReadAddress( 0x6000, 0x73ff, MRA_ROM ),
+	    new Memory_ReadAddress( 0x1400, 0x14ff, cvs_bullet_r ),
+	    new Memory_ReadAddress( 0x1500, 0x15ff, cvs_2636_3_r ),
+	    new Memory_ReadAddress( 0x1600, 0x16ff, cvs_2636_2_r ),
+	    new Memory_ReadAddress( 0x1700, 0x17ff, cvs_2636_1_r ),
+		new Memory_ReadAddress( 0x1800, 0x1bff, cvs_videoram_r ),
+	    new Memory_ReadAddress( 0x1c00, 0x1fff, MRA_RAM ),
+		new Memory_ReadAddress( 0x3400, 0x3fff, cvs_mirror_r ),
+		new Memory_ReadAddress( 0x5400, 0x5fff, cvs_mirror_r ),
+		new Memory_ReadAddress( 0x7400, 0x7fff, cvs_mirror_r ),
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( cvs_writemem )
 		{ 0x0000, 0x13ff, MWA_ROM },
@@ -317,11 +319,13 @@ public class cvs
 		{ S2650_DATA_PORT, S2650_DATA_PORT, cvs_video_fx_w },
 	PORT_END
 	
-	static MEMORY_READ_START( cvs_sound_readmem )
-		{ 0x0000, 0x0fff, MRA_ROM },
-	    { 0x1000, 0x107f, MRA_RAM },
-	    { 0x1800, 0x1800, soundlatch_r },
-	MEMORY_END
+	public static Memory_ReadAddress cvs_sound_readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x0fff, MRA_ROM ),
+	    new Memory_ReadAddress( 0x1000, 0x107f, MRA_RAM ),
+	    new Memory_ReadAddress( 0x1800, 0x1800, soundlatch_r ),
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( cvs_sound_writemem )
 		{ 0x0000, 0x0fff, MWA_ROM },

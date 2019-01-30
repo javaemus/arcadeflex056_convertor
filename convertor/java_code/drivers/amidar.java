@@ -64,15 +64,17 @@ public class amidar
 	}
 	
 	
-	static MEMORY_READ_START( readmem )
-		{ 0x0000, 0x7fff, MRA_ROM },
-		{ 0x8000, 0x87ff, MRA_RAM },
-		{ 0x9000, 0x93ff, MRA_RAM },
-		{ 0x9800, 0x98ff, MRA_RAM },
-		{ 0xa800, 0xa800, watchdog_reset_r },
-		{ 0xb000, 0xb03f, amidar_ppi8255_0_r },
-		{ 0xb800, 0xb83f, amidar_ppi8255_1_r },
-	MEMORY_END
+	public static Memory_ReadAddress readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x7fff, MRA_ROM ),
+		new Memory_ReadAddress( 0x8000, 0x87ff, MRA_RAM ),
+		new Memory_ReadAddress( 0x9000, 0x93ff, MRA_RAM ),
+		new Memory_ReadAddress( 0x9800, 0x98ff, MRA_RAM ),
+		new Memory_ReadAddress( 0xa800, 0xa800, watchdog_reset_r ),
+		new Memory_ReadAddress( 0xb000, 0xb03f, amidar_ppi8255_0_r ),
+		new Memory_ReadAddress( 0xb800, 0xb83f, amidar_ppi8255_1_r ),
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( writemem )
 		{ 0x0000, 0x7fff, MWA_ROM },

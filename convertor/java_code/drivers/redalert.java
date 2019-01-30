@@ -42,18 +42,20 @@ public class redalert
 	WRITE_HANDLER( redalert_sound_register_IC2_w );
 	
 	
-	static MEMORY_READ_START( readmem )
-		{ 0x0000, 0x01ff, MRA_RAM }, /* Zero page / stack */
-		{ 0x0200, 0x0fff, MRA_RAM }, /* ? */
-		{ 0x1000, 0x1fff, MRA_RAM }, /* Scratchpad video RAM */
-		{ 0x2000, 0x4fff, MRA_RAM }, /* Video RAM */
-		{ 0x5000, 0xbfff, MRA_ROM },
-		{ 0xc100, 0xc100, input_port_0_r },
-		{ 0xc110, 0xc110, input_port_1_r },
-		{ 0xc120, 0xc120, input_port_2_r },
-		{ 0xc170, 0xc170, input_port_3_r }, /* Vertical Counter? */
-		{ 0xf000, 0xffff, MRA_ROM }, /* remapped ROM for 6502 vectors */
-	MEMORY_END
+	public static Memory_ReadAddress readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x01ff, MRA_RAM ), /* Zero page / stack */
+		new Memory_ReadAddress( 0x0200, 0x0fff, MRA_RAM ), /* ? */
+		new Memory_ReadAddress( 0x1000, 0x1fff, MRA_RAM ), /* Scratchpad video RAM */
+		new Memory_ReadAddress( 0x2000, 0x4fff, MRA_RAM ), /* Video RAM */
+		new Memory_ReadAddress( 0x5000, 0xbfff, MRA_ROM ),
+		new Memory_ReadAddress( 0xc100, 0xc100, input_port_0_r ),
+		new Memory_ReadAddress( 0xc110, 0xc110, input_port_1_r ),
+		new Memory_ReadAddress( 0xc120, 0xc120, input_port_2_r ),
+		new Memory_ReadAddress( 0xc170, 0xc170, input_port_3_r ), /* Vertical Counter? */
+		new Memory_ReadAddress( 0xf000, 0xffff, MRA_ROM ), /* remapped ROM for 6502 vectors */
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( writemem )
 		{ 0x0000, 0x01ff, MWA_RAM },
@@ -72,12 +74,14 @@ public class redalert
 		{ 0xf000, 0xffff, MWA_ROM },
 	MEMORY_END
 	
-	static MEMORY_READ_START( sound_readmem )
-		{ 0x0000, 0x03ff, MRA_RAM },
-		{ 0x7800, 0x7fff, MRA_ROM },
-		{ 0xf800, 0xffff, MRA_ROM },
-		{ 0x1001, 0x1001, redalert_sound_register_IC1_r },
-	MEMORY_END
+	public static Memory_ReadAddress sound_readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x03ff, MRA_RAM ),
+		new Memory_ReadAddress( 0x7800, 0x7fff, MRA_ROM ),
+		new Memory_ReadAddress( 0xf800, 0xffff, MRA_ROM ),
+		new Memory_ReadAddress( 0x1001, 0x1001, redalert_sound_register_IC1_r ),
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( sound_writemem )
 		{ 0x0000, 0x03ff, MWA_RAM },
@@ -87,11 +91,13 @@ public class redalert
 		{ 0x1001, 0x1001, redalert_sound_register_IC2_w },
 	MEMORY_END
 	
-	static MEMORY_READ_START( voice_readmem )
-		{ 0x0000, 0x3fff, MRA_ROM },
-		{ 0x8000, 0x83ff, MRA_RAM },
-	//	{ 0xc000, 0xc000, redalert_voicecommand_r }, /* reads command from D0-D5? */
-	MEMORY_END
+	public static Memory_ReadAddress voice_readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x3fff, MRA_ROM ),
+		new Memory_ReadAddress( 0x8000, 0x83ff, MRA_RAM ),
+	//	new Memory_ReadAddress( 0xc000, 0xc000, redalert_voicecommand_r ), /* reads command from D0-D5? */
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( voice_writemem )
 		{ 0x0000, 0x3fff, MWA_ROM },

@@ -161,16 +161,18 @@ public class gundealr
 	
 	
 	
-	static MEMORY_READ_START( readmem )
-		{ 0x0000, 0x7fff, MRA_ROM },
-		{ 0x8000, 0xbfff, MRA_BANK1 },
-		{ 0xc000, 0xc000, input_port_0_r },	/* DSW0 */
-		{ 0xc001, 0xc001, input_port_1_r },	/* DSW1 */
-		{ 0xc004, 0xc004, input_port_2_r },	/* COIN (Gun Dealer only) */
-		{ 0xc005, 0xc005, input_port_3_r },	/* IN1 (Gun Dealer only) */
-		{ 0xc006, 0xc006, input_port_4_r },	/* IN0 (Gun Dealer only) */
-		{ 0xc400, 0xffff, MRA_RAM },
-	MEMORY_END
+	public static Memory_ReadAddress readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x7fff, MRA_ROM ),
+		new Memory_ReadAddress( 0x8000, 0xbfff, MRA_BANK1 ),
+		new Memory_ReadAddress( 0xc000, 0xc000, input_port_0_r ),	/* DSW0 */
+		new Memory_ReadAddress( 0xc001, 0xc001, input_port_1_r ),	/* DSW1 */
+		new Memory_ReadAddress( 0xc004, 0xc004, input_port_2_r ),	/* COIN (Gun Dealer only) */
+		new Memory_ReadAddress( 0xc005, 0xc005, input_port_3_r ),	/* IN1 (Gun Dealer only) */
+		new Memory_ReadAddress( 0xc006, 0xc006, input_port_4_r ),	/* IN0 (Gun Dealer only) */
+		new Memory_ReadAddress( 0xc400, 0xffff, MRA_RAM ),
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( writemem )
 		{ 0x0000, 0xbfff, MWA_ROM },

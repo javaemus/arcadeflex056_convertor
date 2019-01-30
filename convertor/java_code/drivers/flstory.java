@@ -68,21 +68,23 @@ public class flstory
 	
 	
 	
-	static MEMORY_READ_START( readmem )
-	    { 0x0000, 0xbfff, MRA_ROM },
-	    { 0xc000, 0xc7ff, MRA_RAM },
-		{ 0xd000, 0xd000, flstory_mcu_r },
-	//	{ 0xd400, 0xd400, MRA_RAM },
-		{ 0xd401, 0xd401, flstory_d401_r },
-		{ 0xd800, 0xd800, input_port_0_r },
-		{ 0xd801, 0xd801, input_port_1_r },
-		{ 0xd802, 0xd802, input_port_2_r },
-		{ 0xd803, 0xd803, input_port_3_r },
-		{ 0xd804, 0xd804, input_port_4_r },
-		{ 0xd805, 0xd805, flstory_mcu_status_r },
-		{ 0xd806, 0xd806, input_port_5_r },
-	    { 0xe000, 0xe7ff, MRA_RAM },
-	MEMORY_END
+	public static Memory_ReadAddress readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+	    new Memory_ReadAddress( 0x0000, 0xbfff, MRA_ROM ),
+	    new Memory_ReadAddress( 0xc000, 0xc7ff, MRA_RAM ),
+		new Memory_ReadAddress( 0xd000, 0xd000, flstory_mcu_r ),
+	//	new Memory_ReadAddress( 0xd400, 0xd400, MRA_RAM ),
+		new Memory_ReadAddress( 0xd401, 0xd401, flstory_d401_r ),
+		new Memory_ReadAddress( 0xd800, 0xd800, input_port_0_r ),
+		new Memory_ReadAddress( 0xd801, 0xd801, input_port_1_r ),
+		new Memory_ReadAddress( 0xd802, 0xd802, input_port_2_r ),
+		new Memory_ReadAddress( 0xd803, 0xd803, input_port_3_r ),
+		new Memory_ReadAddress( 0xd804, 0xd804, input_port_4_r ),
+		new Memory_ReadAddress( 0xd805, 0xd805, flstory_mcu_status_r ),
+		new Memory_ReadAddress( 0xd806, 0xd806, input_port_5_r ),
+	    new Memory_ReadAddress( 0xe000, 0xe7ff, MRA_RAM ),
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( writemem )
 		{ 0x0000, 0xbfff, MWA_ROM },
@@ -98,12 +100,14 @@ public class flstory
 		{ 0xe000, 0xe7ff, MWA_RAM },	/* work RAM */
 	MEMORY_END
 	
-	static MEMORY_READ_START( sound_readmem )
-	    { 0x0000, 0xbfff, MRA_ROM },
-		{ 0xc000, 0xc7ff, MRA_RAM },
-	    { 0xd800, 0xd800, soundlatch_r },
-	    { 0xe000, 0xefff, MRA_ROM },	/* space for diagnostics ROM */
-	MEMORY_END
+	public static Memory_ReadAddress sound_readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+	    new Memory_ReadAddress( 0x0000, 0xbfff, MRA_ROM ),
+		new Memory_ReadAddress( 0xc000, 0xc7ff, MRA_RAM ),
+	    new Memory_ReadAddress( 0xd800, 0xd800, soundlatch_r ),
+	    new Memory_ReadAddress( 0xe000, 0xefff, MRA_ROM ),	/* space for diagnostics ROM */
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( sound_writemem )
 		{ 0x0000, 0xbfff, MWA_ROM },
@@ -118,13 +122,15 @@ public class flstory
 		{ 0xe000, 0xefff, MWA_ROM },
 	MEMORY_END
 	
-	static MEMORY_READ_START( m68705_readmem )
-		{ 0x0000, 0x0000, flstory_68705_portA_r },
-		{ 0x0001, 0x0001, flstory_68705_portB_r },
-		{ 0x0002, 0x0002, flstory_68705_portC_r },
-		{ 0x0010, 0x007f, MRA_RAM },
-		{ 0x0080, 0x07ff, MRA_ROM },
-	MEMORY_END
+	public static Memory_ReadAddress m68705_readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x0000, flstory_68705_portA_r ),
+		new Memory_ReadAddress( 0x0001, 0x0001, flstory_68705_portB_r ),
+		new Memory_ReadAddress( 0x0002, 0x0002, flstory_68705_portC_r ),
+		new Memory_ReadAddress( 0x0010, 0x007f, MRA_RAM ),
+		new Memory_ReadAddress( 0x0080, 0x07ff, MRA_ROM ),
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( m68705_writemem )
 		{ 0x0000, 0x0000, flstory_68705_portA_w },

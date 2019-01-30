@@ -81,17 +81,19 @@ public class canyon
 		set_led_status((offset & 0x01), data & 0x01);
 	}
 	
-	static MEMORY_READ_START( readmem )
-		{ 0x0000, 0x01ff, MRA_RAM }, /* WRAM */
-		{ 0x0800, 0x0bff, MRA_RAM }, /* DISPLAY RAM */
-		{ 0x1000, 0x17ff, canyon_switches_r }, /* SWITCHES */
-		{ 0x1800, 0x1fff, canyon_options_r }, /* OPTIONS */
-		{ 0x2000, 0x27ff, MRA_NOP }, /* PROM1 */
-		{ 0x2800, 0x2fff, MRA_NOP }, /* PROM2 */
-		{ 0x3000, 0x37ff, MRA_NOP }, /* PROM3 */
-		{ 0x3800, 0x3fff, MRA_ROM }, /* PROM4 */
-		{ 0xfff0, 0xffff, MRA_ROM }, /* PROM4 for 6502 vectors */
-	MEMORY_END
+	public static Memory_ReadAddress readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x01ff, MRA_RAM ), /* WRAM */
+		new Memory_ReadAddress( 0x0800, 0x0bff, MRA_RAM ), /* DISPLAY RAM */
+		new Memory_ReadAddress( 0x1000, 0x17ff, canyon_switches_r ), /* SWITCHES */
+		new Memory_ReadAddress( 0x1800, 0x1fff, canyon_options_r ), /* OPTIONS */
+		new Memory_ReadAddress( 0x2000, 0x27ff, MRA_NOP ), /* PROM1 */
+		new Memory_ReadAddress( 0x2800, 0x2fff, MRA_NOP ), /* PROM2 */
+		new Memory_ReadAddress( 0x3000, 0x37ff, MRA_NOP ), /* PROM3 */
+		new Memory_ReadAddress( 0x3800, 0x3fff, MRA_ROM ), /* PROM4 */
+		new Memory_ReadAddress( 0xfff0, 0xffff, MRA_ROM ), /* PROM4 for 6502 vectors */
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( writemem )
 		{ 0x0000, 0x01ff, MWA_RAM }, /* WRAM */

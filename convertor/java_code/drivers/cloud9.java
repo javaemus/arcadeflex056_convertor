@@ -100,20 +100,22 @@ public class cloud9
 	
 	
 	
-	static MEMORY_READ_START( readmem )
-		{ 0x0000, 0x0002, cloud9_bitmap_regs_r },
-		{ 0x0003, 0x05ff, MRA_RAM },
-		{ 0x0600, 0x3fff, MRA_RAM },
-		{ 0x5500, 0x557f, MRA_RAM },
-		{ 0x5800, 0x5800, input_port_0_r },
-		{ 0x5801, 0x5801, input_port_1_r },
-		{ 0x5900, 0x5900, input_port_2_r },
-		{ 0x5901, 0x5901, input_port_3_r },
-		{ 0x5a00, 0x5a0f, pokey1_r },
-		{ 0x5b00, 0x5b0f, pokey2_r },
-		{ 0x5c00, 0x5cff, MRA_RAM },	/* EAROM */
-		{ 0x6000, 0xffff, MRA_ROM },
-	MEMORY_END
+	public static Memory_ReadAddress readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x0002, cloud9_bitmap_regs_r ),
+		new Memory_ReadAddress( 0x0003, 0x05ff, MRA_RAM ),
+		new Memory_ReadAddress( 0x0600, 0x3fff, MRA_RAM ),
+		new Memory_ReadAddress( 0x5500, 0x557f, MRA_RAM ),
+		new Memory_ReadAddress( 0x5800, 0x5800, input_port_0_r ),
+		new Memory_ReadAddress( 0x5801, 0x5801, input_port_1_r ),
+		new Memory_ReadAddress( 0x5900, 0x5900, input_port_2_r ),
+		new Memory_ReadAddress( 0x5901, 0x5901, input_port_3_r ),
+		new Memory_ReadAddress( 0x5a00, 0x5a0f, pokey1_r ),
+		new Memory_ReadAddress( 0x5b00, 0x5b0f, pokey2_r ),
+		new Memory_ReadAddress( 0x5c00, 0x5cff, MRA_RAM ),	/* EAROM */
+		new Memory_ReadAddress( 0x6000, 0xffff, MRA_ROM ),
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( writemem )
 		{ 0x0000, 0x0002, cloud9_bitmap_regs_w, &cloud9_bitmap_regs },

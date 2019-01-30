@@ -38,18 +38,20 @@ public class _1943
 	
 	
 	
-	static MEMORY_READ_START( readmem )
-		{ 0x0000, 0x7fff, MRA_ROM },
-		{ 0x8000, 0xbfff, MRA_BANK1 },
-		{ 0xd000, 0xd7ff, MRA_RAM },
-		{ 0xc000, 0xc000, input_port_0_r },
-		{ 0xc001, 0xc001, input_port_1_r },
-		{ 0xc002, 0xc002, input_port_2_r },
-		{ 0xc003, 0xc003, input_port_3_r },
-		{ 0xc004, 0xc004, input_port_4_r },
-		{ 0xc007, 0xc007, c1943_protection_r },
-		{ 0xe000, 0xffff, MRA_RAM },
-	MEMORY_END
+	public static Memory_ReadAddress readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x7fff, MRA_ROM ),
+		new Memory_ReadAddress( 0x8000, 0xbfff, MRA_BANK1 ),
+		new Memory_ReadAddress( 0xd000, 0xd7ff, MRA_RAM ),
+		new Memory_ReadAddress( 0xc000, 0xc000, input_port_0_r ),
+		new Memory_ReadAddress( 0xc001, 0xc001, input_port_1_r ),
+		new Memory_ReadAddress( 0xc002, 0xc002, input_port_2_r ),
+		new Memory_ReadAddress( 0xc003, 0xc003, input_port_3_r ),
+		new Memory_ReadAddress( 0xc004, 0xc004, input_port_4_r ),
+		new Memory_ReadAddress( 0xc007, 0xc007, c1943_protection_r ),
+		new Memory_ReadAddress( 0xe000, 0xffff, MRA_RAM ),
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( writemem )
 		{ 0x0000, 0xbfff, MWA_ROM },
@@ -68,11 +70,13 @@ public class _1943
 	MEMORY_END
 	
 	
-	static MEMORY_READ_START( sound_readmem )
-		{ 0x0000, 0x7fff, MRA_ROM },
-		{ 0xc000, 0xc7ff, MRA_RAM },
-		{ 0xc800, 0xc800, soundlatch_r },
-	MEMORY_END
+	public static Memory_ReadAddress sound_readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x7fff, MRA_ROM ),
+		new Memory_ReadAddress( 0xc000, 0xc7ff, MRA_RAM ),
+		new Memory_ReadAddress( 0xc800, 0xc800, soundlatch_r ),
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( sound_writemem )
 		{ 0x0000, 0x7fff, MWA_ROM },

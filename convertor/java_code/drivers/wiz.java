@@ -140,17 +140,19 @@ public class wiz
 		coin_counter_w(offset,data);
 	}
 	
-	static MEMORY_READ_START( readmem )
-		{ 0x0000, 0xbfff, MRA_ROM },
-		{ 0xc000, 0xc7ff, MRA_RAM },
-		{ 0xd000, 0xd85f, MRA_RAM },
-		{ 0xe000, 0xe85f, MRA_RAM },
-		{ 0xf000, 0xf000, input_port_2_r },	/* DSW0 */
-		{ 0xf008, 0xf008, input_port_3_r },	/* DSW1 */
-		{ 0xf010, 0xf010, input_port_0_r },	/* IN0 */
-		{ 0xf018, 0xf018, input_port_1_r },	/* IN1 */
-		{ 0xf800, 0xf800, watchdog_reset_r },
-	MEMORY_END
+	public static Memory_ReadAddress readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0xbfff, MRA_ROM ),
+		new Memory_ReadAddress( 0xc000, 0xc7ff, MRA_RAM ),
+		new Memory_ReadAddress( 0xd000, 0xd85f, MRA_RAM ),
+		new Memory_ReadAddress( 0xe000, 0xe85f, MRA_RAM ),
+		new Memory_ReadAddress( 0xf000, 0xf000, input_port_2_r ),	/* DSW0 */
+		new Memory_ReadAddress( 0xf008, 0xf008, input_port_3_r ),	/* DSW1 */
+		new Memory_ReadAddress( 0xf010, 0xf010, input_port_0_r ),	/* IN0 */
+		new Memory_ReadAddress( 0xf018, 0xf018, input_port_1_r ),	/* IN1 */
+		new Memory_ReadAddress( 0xf800, 0xf800, watchdog_reset_r ),
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( writemem )
 		{ 0x0000, 0xbfff, MWA_ROM },
@@ -177,12 +179,14 @@ public class wiz
 	MEMORY_END
 	
 	
-	static MEMORY_READ_START( sound_readmem )
-		{ 0x0000, 0x1fff, MRA_ROM },
-		{ 0x2000, 0x23ff, MRA_RAM },
-		{ 0x3000, 0x3000, soundlatch_r },  /* Stinger/Scion */
-		{ 0x7000, 0x7000, soundlatch_r },  /* Wiz */
-	MEMORY_END
+	public static Memory_ReadAddress sound_readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x1fff, MRA_ROM ),
+		new Memory_ReadAddress( 0x2000, 0x23ff, MRA_RAM ),
+		new Memory_ReadAddress( 0x3000, 0x3000, soundlatch_r ),  /* Stinger/Scion */
+		new Memory_ReadAddress( 0x7000, 0x7000, soundlatch_r ),  /* Wiz */
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( sound_writemem )
 		{ 0x2000, 0x23ff, MWA_RAM },

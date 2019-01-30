@@ -74,14 +74,16 @@ public class popeye
 	
 	
 	
-	static MEMORY_READ_START( readmem )
-		{ 0x0000, 0x7fff, MRA_ROM },
-		{ 0x8000, 0x87ff, MRA_RAM },
-		{ 0x8800, 0x8bff, MRA_RAM },
-		{ 0x8c00, 0x8e7f, MRA_RAM },
-		{ 0x8e80, 0x8fff, MRA_RAM },
-		{ 0xe000, 0xe001, protection_r },
-	MEMORY_END
+	public static Memory_ReadAddress readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x7fff, MRA_ROM ),
+		new Memory_ReadAddress( 0x8000, 0x87ff, MRA_RAM ),
+		new Memory_ReadAddress( 0x8800, 0x8bff, MRA_RAM ),
+		new Memory_ReadAddress( 0x8c00, 0x8e7f, MRA_RAM ),
+		new Memory_ReadAddress( 0x8e80, 0x8fff, MRA_RAM ),
+		new Memory_ReadAddress( 0xe000, 0xe001, protection_r ),
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( writemem )
 		{ 0x0000, 0x7fff, MWA_ROM },
@@ -96,13 +98,15 @@ public class popeye
 		{ 0xe000, 0xe001, protection_w },
 	MEMORY_END
 	
-	static MEMORY_READ_START( popeyebl_readmem )
-		{ 0x0000, 0x7fff, MRA_ROM },
-		{ 0x8000, 0x87ff, MRA_RAM },
-		{ 0x8c00, 0x8e7f, MRA_RAM },
-		{ 0x8e80, 0x8fff, MRA_RAM },
-		{ 0xe000, 0xe01f, MRA_ROM },
-	MEMORY_END
+	public static Memory_ReadAddress popeyebl_readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x7fff, MRA_ROM ),
+		new Memory_ReadAddress( 0x8000, 0x87ff, MRA_RAM ),
+		new Memory_ReadAddress( 0x8c00, 0x8e7f, MRA_RAM ),
+		new Memory_ReadAddress( 0x8e80, 0x8fff, MRA_RAM ),
+		new Memory_ReadAddress( 0xe000, 0xe01f, MRA_ROM ),
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( popeyebl_writemem )
 		{ 0x0000, 0x7fff, MWA_ROM },

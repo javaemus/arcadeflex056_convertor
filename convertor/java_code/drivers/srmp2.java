@@ -620,14 +620,16 @@ public class srmp2
 	}
 	
 	
-	static MEMORY_READ_START( srmp3_readmem )
-		{ 0x0000, 0x7fff, MRA_ROM },
-		{ 0x8000, 0x9fff, MRA_BANK1 },						/* rom bank */
-		{ 0xa000, 0xa7ff, MRA_RAM },						/* work ram */
-		{ 0xb000, 0xb303, MRA_RAM },						/* Sprites Y */
-		{ 0xc000, 0xdfff, MRA_RAM },						/* Sprites Code + X + Attr */
-		{ 0xe000, 0xffff, MRA_RAM },
-	MEMORY_END
+	public static Memory_ReadAddress srmp3_readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x7fff, MRA_ROM ),
+		new Memory_ReadAddress( 0x8000, 0x9fff, MRA_BANK1 ),						/* rom bank */
+		new Memory_ReadAddress( 0xa000, 0xa7ff, MRA_RAM ),						/* work ram */
+		new Memory_ReadAddress( 0xb000, 0xb303, MRA_RAM ),						/* Sprites Y */
+		new Memory_ReadAddress( 0xc000, 0xdfff, MRA_RAM ),						/* Sprites Code + X + Attr */
+		new Memory_ReadAddress( 0xe000, 0xffff, MRA_RAM ),
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( srmp3_writemem )
 		{ 0x0000, 0x7fff, MWA_ROM },

@@ -66,23 +66,25 @@ public class mnight
 	}
 	
 	
-	static MEMORY_READ_START( readmem )
-		{ 0x0000, 0x7fff, MRA_ROM },
-		{ 0x8000, 0xbfff, MRA_BANK1 },
-		{ 0xc000, 0xf7ff, MRA_RAM },
-		{ 0xf800, 0xf800, input_port_2_r },
-		{ 0xf801, 0xf801, input_port_0_r },
-		{ 0xf802, 0xf802, input_port_1_r },
-		{ 0xf803, 0xf803, input_port_3_r },
-		{ 0xf804, 0xf804, input_port_4_r },
-		{ 0xfa00, 0xfa00, MRA_RAM },
-		{ 0xfa01, 0xfa01, MRA_RAM },
-		{ 0xfa02, 0xfa02, mnight_bankselect_r },
-		{ 0xfa03, 0xfa03, MRA_RAM },
-		{ 0xfa08, 0xfa09, MRA_RAM },
-		{ 0xfa0a, 0xfa0b, MRA_RAM },
-		{ 0xfa0c, 0xfa0c, MRA_RAM },
-	MEMORY_END
+	public static Memory_ReadAddress readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x7fff, MRA_ROM ),
+		new Memory_ReadAddress( 0x8000, 0xbfff, MRA_BANK1 ),
+		new Memory_ReadAddress( 0xc000, 0xf7ff, MRA_RAM ),
+		new Memory_ReadAddress( 0xf800, 0xf800, input_port_2_r ),
+		new Memory_ReadAddress( 0xf801, 0xf801, input_port_0_r ),
+		new Memory_ReadAddress( 0xf802, 0xf802, input_port_1_r ),
+		new Memory_ReadAddress( 0xf803, 0xf803, input_port_3_r ),
+		new Memory_ReadAddress( 0xf804, 0xf804, input_port_4_r ),
+		new Memory_ReadAddress( 0xfa00, 0xfa00, MRA_RAM ),
+		new Memory_ReadAddress( 0xfa01, 0xfa01, MRA_RAM ),
+		new Memory_ReadAddress( 0xfa02, 0xfa02, mnight_bankselect_r ),
+		new Memory_ReadAddress( 0xfa03, 0xfa03, MRA_RAM ),
+		new Memory_ReadAddress( 0xfa08, 0xfa09, MRA_RAM ),
+		new Memory_ReadAddress( 0xfa0a, 0xfa0b, MRA_RAM ),
+		new Memory_ReadAddress( 0xfa0c, 0xfa0c, MRA_RAM ),
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	
 	static MEMORY_WRITE_START( writemem )
@@ -103,12 +105,14 @@ public class mnight
 	MEMORY_END
 	
 	
-	static MEMORY_READ_START( snd_readmem )
-		{ 0x0000, 0xbfff, MRA_ROM },
-		{ 0xc000, 0xc7ff, MRA_RAM },
-		{ 0xe000, 0xe000, soundlatch_r },
-		{ 0xefee, 0xefee, MRA_NOP },
-	MEMORY_END
+	public static Memory_ReadAddress snd_readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0xbfff, MRA_ROM ),
+		new Memory_ReadAddress( 0xc000, 0xc7ff, MRA_RAM ),
+		new Memory_ReadAddress( 0xe000, 0xe000, soundlatch_r ),
+		new Memory_ReadAddress( 0xefee, 0xefee, MRA_NOP ),
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	
 	static MEMORY_WRITE_START( snd_writemem )

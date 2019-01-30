@@ -113,27 +113,29 @@ public class xxmissio
 	
 	/****************************************************************************/
 	
-	static MEMORY_READ_START( readmem1 )
-		{ 0x0000, 0x7fff, MRA_ROM },
+	public static Memory_ReadAddress readmem1[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x7fff, MRA_ROM ),
 	
-		{ 0x8000, 0x8000, YM2203_status_port_0_r },
-		{ 0x8001, 0x8001, YM2203_read_port_0_r },
-		{ 0x8002, 0x8002, YM2203_status_port_1_r },
-		{ 0x8003, 0x8003, YM2203_read_port_1_r },
+		new Memory_ReadAddress( 0x8000, 0x8000, YM2203_status_port_0_r ),
+		new Memory_ReadAddress( 0x8001, 0x8001, YM2203_read_port_0_r ),
+		new Memory_ReadAddress( 0x8002, 0x8002, YM2203_status_port_1_r ),
+		new Memory_ReadAddress( 0x8003, 0x8003, YM2203_read_port_1_r ),
 	
-		{ 0xa000, 0xa000, input_port_0_r },
-		{ 0xa001, 0xa001, input_port_1_r },
+		new Memory_ReadAddress( 0xa000, 0xa000, input_port_0_r ),
+		new Memory_ReadAddress( 0xa001, 0xa001, input_port_1_r ),
 	
-		{ 0xa002, 0xa002, xxmissio_status_r },
+		new Memory_ReadAddress( 0xa002, 0xa002, xxmissio_status_r ),
 	
-		{ 0xc000, 0xc7ff, xxmissio_fgram_r },
-		{ 0xc800, 0xcfff, xxmissio_videoram_r },
-		{ 0xd000, 0xd7ff, spriteram_r },
+		new Memory_ReadAddress( 0xc000, 0xc7ff, xxmissio_fgram_r ),
+		new Memory_ReadAddress( 0xc800, 0xcfff, xxmissio_videoram_r ),
+		new Memory_ReadAddress( 0xd000, 0xd7ff, spriteram_r ),
 	
-		{ 0xd800, 0xdaff, paletteram_r },
+		new Memory_ReadAddress( 0xd800, 0xdaff, paletteram_r ),
 	
-		{ 0xe000, 0xffff, MRA_RAM },
-	MEMORY_END
+		new Memory_ReadAddress( 0xe000, 0xffff, MRA_RAM ),
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( writemem1 )
 		{ 0x0000, 0x7fff, MWA_ROM },
@@ -156,29 +158,31 @@ public class xxmissio
 		{ 0xe000, 0xffff, MWA_RAM, &shared_workram },
 	MEMORY_END
 	
-	static MEMORY_READ_START( readmem2 )
-		{ 0x0000, 0x3fff, MRA_ROM },
-		{ 0x4000, 0x7fff, MRA_BANK1 },
+	public static Memory_ReadAddress readmem2[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x3fff, MRA_ROM ),
+		new Memory_ReadAddress( 0x4000, 0x7fff, MRA_BANK1 ),
 	
-		{ 0x8000, 0x8000, YM2203_status_port_0_r },
-		{ 0x8001, 0x8001, YM2203_read_port_0_r },
-		{ 0x8002, 0x8002, YM2203_status_port_1_r },
-		{ 0x8003, 0x8003, YM2203_read_port_1_r },
+		new Memory_ReadAddress( 0x8000, 0x8000, YM2203_status_port_0_r ),
+		new Memory_ReadAddress( 0x8001, 0x8001, YM2203_read_port_0_r ),
+		new Memory_ReadAddress( 0x8002, 0x8002, YM2203_status_port_1_r ),
+		new Memory_ReadAddress( 0x8003, 0x8003, YM2203_read_port_1_r ),
 	
-		{ 0xa000, 0xa000, input_port_0_r },
-		{ 0xa001, 0xa001, input_port_1_r },
+		new Memory_ReadAddress( 0xa000, 0xa000, input_port_0_r ),
+		new Memory_ReadAddress( 0xa001, 0xa001, input_port_1_r ),
 	
-		{ 0xa002, 0xa002, xxmissio_status_r },
+		new Memory_ReadAddress( 0xa002, 0xa002, xxmissio_status_r ),
 	
-		{ 0xc000, 0xc7ff, xxmissio_fgram_r },
-		{ 0xc800, 0xcfff, xxmissio_videoram_r },
-		{ 0xd000, 0xd7ff, spriteram_r },
+		new Memory_ReadAddress( 0xc000, 0xc7ff, xxmissio_fgram_r ),
+		new Memory_ReadAddress( 0xc800, 0xcfff, xxmissio_videoram_r ),
+		new Memory_ReadAddress( 0xd000, 0xd7ff, spriteram_r ),
 	
-		{ 0xd800, 0xdaff, paletteram_r },
+		new Memory_ReadAddress( 0xd800, 0xdaff, paletteram_r ),
 	
-		{ 0xe000, 0xffff, shared_workram_r },
+		new Memory_ReadAddress( 0xe000, 0xffff, shared_workram_r ),
 	
-	MEMORY_END
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( writemem2 )
 		{ 0x0000, 0x3fff, MWA_ROM },

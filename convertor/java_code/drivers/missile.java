@@ -159,11 +159,13 @@ public class missile
 	WRITE_HANDLER( missile_video2_w );
 	
 	
-	static MEMORY_READ_START( readmem )
-		{ 0x0000, 0x18ff, MRA_RAM },
-		{ 0x1900, 0xfff9, missile_r }, /* shared region */
-		{ 0xfffa, 0xffff, MRA_ROM },
-	MEMORY_END
+	public static Memory_ReadAddress readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x18ff, MRA_RAM ),
+		new Memory_ReadAddress( 0x1900, 0xfff9, missile_r ), /* shared region */
+		new Memory_ReadAddress( 0xfffa, 0xffff, MRA_ROM ),
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	
 	static MEMORY_WRITE_START( writemem )

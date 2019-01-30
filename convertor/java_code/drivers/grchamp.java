@@ -257,13 +257,15 @@ public class grchamp
 		return shareram[offset];
 	}
 	
-	static MEMORY_READ_START( readmem )
-		{ 0x0000, 0x3fff, MRA_ROM },
-		{ 0x4000, 0x43ff, MRA_RAM },
-		{ 0x4800, 0x4bff, MRA_RAM }, /* radar */
-		{ 0x5000, 0x53ff, MRA_RAM }, /* text layer */
-		{ 0x5800, 0x58ff, MRA_RAM },
-	MEMORY_END
+	public static Memory_ReadAddress readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x3fff, MRA_ROM ),
+		new Memory_ReadAddress( 0x4000, 0x43ff, MRA_RAM ),
+		new Memory_ReadAddress( 0x4800, 0x4bff, MRA_RAM ), /* radar */
+		new Memory_ReadAddress( 0x5000, 0x53ff, MRA_RAM ), /* text layer */
+		new Memory_ReadAddress( 0x5800, 0x58ff, MRA_RAM ),
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( writemem )
 	 	{ 0x0000, 0x3fff, MWA_ROM },
@@ -309,13 +311,15 @@ public class grchamp
 	
 	/***************************************************************************/
 	
-	static MEMORY_READ_START( readmem2 )
-		{ 0x0000, 0x1fff, MRA_ROM },
-		{ 0x2000, 0x37ff, MRA_RAM }, /* tilemaps */
-		{ 0x3800, 0x3fff, MRA_RAM },
-		{ 0x4000, 0x43ff, MRA_RAM },
-		{ 0x5000, 0x6fff, MRA_ROM },
-	MEMORY_END
+	public static Memory_ReadAddress readmem2[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x1fff, MRA_ROM ),
+		new Memory_ReadAddress( 0x2000, 0x37ff, MRA_RAM ), /* tilemaps */
+		new Memory_ReadAddress( 0x3800, 0x3fff, MRA_RAM ),
+		new Memory_ReadAddress( 0x4000, 0x43ff, MRA_RAM ),
+		new Memory_ReadAddress( 0x5000, 0x6fff, MRA_ROM ),
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( writemem2 )
 	 	{ 0x0000, 0x1fff, MWA_ROM },
@@ -336,11 +340,13 @@ public class grchamp
 	
 	/***************************************************************************/
 	
-	static MEMORY_READ_START( readmem_sound )
-		{ 0x0000, 0x1fff, MRA_ROM },
-		{ 0x4000, 0x43ff, MRA_RAM },
-		{ 0x5000, 0x5000, soundlatch_r },
-	MEMORY_END
+	public static Memory_ReadAddress readmem_sound[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x1fff, MRA_ROM ),
+		new Memory_ReadAddress( 0x4000, 0x43ff, MRA_RAM ),
+		new Memory_ReadAddress( 0x5000, 0x5000, soundlatch_r ),
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( writemem_sound )
 	 	{ 0x0000, 0x1fff, MWA_ROM },

@@ -82,21 +82,23 @@ public class jackal
 	
 	
 	
-	static MEMORY_READ_START( jackal_readmem )
-		{ 0x0010, 0x0010, input_port_0_r },
-		{ 0x0011, 0x0011, input_port_1_r },
-		{ 0x0012, 0x0012, input_port_2_r },
-		{ 0x0013, 0x0013, input_port_3_r },
-		{ 0x0014, 0x0014, rotary_0_r },
-		{ 0x0015, 0x0015, rotary_1_r },
-		{ 0x0018, 0x0018, input_port_4_r },
-		{ 0x0020, 0x005f, jackal_zram_r },	/* MAIN   Z RAM,SUB    Z RAM */
-		{ 0x0060, 0x1fff, jackal_commonram_r },	/* M COMMON RAM,S COMMON RAM */
-		{ 0x2000, 0x2fff, jackal_voram_r },	/* MAIN V O RAM,SUB  V O RAM */
-		{ 0x3000, 0x3fff, jackal_spriteram_r },	/* MAIN V O RAM,SUB  V O RAM */
-		{ 0x4000, 0xbfff, MRA_BANK1 },
-		{ 0xc000, 0xffff, MRA_ROM },
-	MEMORY_END
+	public static Memory_ReadAddress jackal_readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0010, 0x0010, input_port_0_r ),
+		new Memory_ReadAddress( 0x0011, 0x0011, input_port_1_r ),
+		new Memory_ReadAddress( 0x0012, 0x0012, input_port_2_r ),
+		new Memory_ReadAddress( 0x0013, 0x0013, input_port_3_r ),
+		new Memory_ReadAddress( 0x0014, 0x0014, rotary_0_r ),
+		new Memory_ReadAddress( 0x0015, 0x0015, rotary_1_r ),
+		new Memory_ReadAddress( 0x0018, 0x0018, input_port_4_r ),
+		new Memory_ReadAddress( 0x0020, 0x005f, jackal_zram_r ),	/* MAIN   Z RAM,SUB    Z RAM */
+		new Memory_ReadAddress( 0x0060, 0x1fff, jackal_commonram_r ),	/* M COMMON RAM,S COMMON RAM */
+		new Memory_ReadAddress( 0x2000, 0x2fff, jackal_voram_r ),	/* MAIN V O RAM,SUB  V O RAM */
+		new Memory_ReadAddress( 0x3000, 0x3fff, jackal_spriteram_r ),	/* MAIN V O RAM,SUB  V O RAM */
+		new Memory_ReadAddress( 0x4000, 0xbfff, MRA_BANK1 ),
+		new Memory_ReadAddress( 0xc000, 0xffff, MRA_ROM ),
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( jackal_writemem )
 		{ 0x0000, 0x0003, MWA_RAM, &jackal_videoctrl },	/* scroll + other things */
@@ -110,13 +112,15 @@ public class jackal
 		{ 0x4000, 0xffff, MWA_ROM },
 	MEMORY_END
 	
-	static MEMORY_READ_START( jackal_sound_readmem )
-		{ 0x2001, 0x2001, YM2151_status_port_0_r },
-		{ 0x4000, 0x43ff, MRA_RAM },		/* COLOR RAM (Self test only check 0x4000-0x423f */
-		{ 0x6000, 0x605f, MRA_RAM },		/* SOUND RAM (Self test check 0x6000-605f, 0x7c00-0x7fff */
-		{ 0x6060, 0x7fff, jackal_commonram1_r }, /* COMMON RAM */
-		{ 0x8000, 0xffff, MRA_ROM },
-	MEMORY_END
+	public static Memory_ReadAddress jackal_sound_readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x2001, 0x2001, YM2151_status_port_0_r ),
+		new Memory_ReadAddress( 0x4000, 0x43ff, MRA_RAM ),		/* COLOR RAM (Self test only check 0x4000-0x423f */
+		new Memory_ReadAddress( 0x6000, 0x605f, MRA_RAM ),		/* SOUND RAM (Self test check 0x6000-605f, 0x7c00-0x7fff */
+		new Memory_ReadAddress( 0x6060, 0x7fff, jackal_commonram1_r ), /* COMMON RAM */
+		new Memory_ReadAddress( 0x8000, 0xffff, MRA_ROM ),
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( jackal_sound_writemem )
 		{ 0x2000, 0x2000, YM2151_register_port_0_w },

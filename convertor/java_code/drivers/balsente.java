@@ -1291,20 +1291,22 @@ public class balsente
 	 *************************************/
 	
 	/* CPU 1 read addresses */
-	static MEMORY_READ_START( readmem_cpu1 )
-		{ 0x0000, 0x8fff, MRA_RAM },
-		{ 0x9400, 0x9400, adc_data_r },
-		{ 0x9900, 0x9900, input_port_0_r },
-		{ 0x9901, 0x9901, input_port_1_r },
-		{ 0x9902, 0x9902, input_port_2_r },
-		{ 0x9903, 0x9903, input_port_3_r },
-		{ 0x9a00, 0x9a03, random_num_r },
-		{ 0x9a04, 0x9a05, m6850_r },
-		{ 0x9b00, 0x9bff, MRA_RAM },		/* system NOVRAM */
-		{ 0x9c00, 0x9cff, MRA_RAM },		/* cart NOVRAM */
-		{ 0xa000, 0xbfff, MRA_BANK1 },
-		{ 0xc000, 0xffff, MRA_BANK2 },
-	MEMORY_END
+	public static Memory_ReadAddress readmem_cpu1[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x8fff, MRA_RAM ),
+		new Memory_ReadAddress( 0x9400, 0x9400, adc_data_r ),
+		new Memory_ReadAddress( 0x9900, 0x9900, input_port_0_r ),
+		new Memory_ReadAddress( 0x9901, 0x9901, input_port_1_r ),
+		new Memory_ReadAddress( 0x9902, 0x9902, input_port_2_r ),
+		new Memory_ReadAddress( 0x9903, 0x9903, input_port_3_r ),
+		new Memory_ReadAddress( 0x9a00, 0x9a03, random_num_r ),
+		new Memory_ReadAddress( 0x9a04, 0x9a05, m6850_r ),
+		new Memory_ReadAddress( 0x9b00, 0x9bff, MRA_RAM ),		/* system NOVRAM */
+		new Memory_ReadAddress( 0x9c00, 0x9cff, MRA_RAM ),		/* cart NOVRAM */
+		new Memory_ReadAddress( 0xa000, 0xbfff, MRA_BANK1 ),
+		new Memory_ReadAddress( 0xc000, 0xffff, MRA_BANK2 ),
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	
 	/* CPU 1 write addresses */
@@ -1333,11 +1335,13 @@ public class balsente
 	 *
 	 *************************************/
 	
-	static MEMORY_READ_START( readmem_cpu2 )
-		{ 0x0000, 0x1fff, MRA_ROM },
-		{ 0x2000, 0x5fff, MRA_RAM },
-		{ 0xe000, 0xffff, m6850_sound_r },
-	MEMORY_END
+	public static Memory_ReadAddress readmem_cpu2[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x1fff, MRA_ROM ),
+		new Memory_ReadAddress( 0x2000, 0x5fff, MRA_RAM ),
+		new Memory_ReadAddress( 0xe000, 0xffff, m6850_sound_r ),
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	
 	static MEMORY_WRITE_START( writemem_cpu2 )

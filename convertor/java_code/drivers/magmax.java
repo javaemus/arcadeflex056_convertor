@@ -147,11 +147,13 @@ public class magmax
 		{ 0x03001e, 0x03001f, MWA16_NOP },	/* IRQ ack */
 	MEMORY_END
 	
-	static MEMORY_READ_START( magmax_soundreadmem )
-		{ 0x0000, 0x3fff, MRA_ROM },
-		{ 0x4000, 0x4000, magmax_sound_irq_ack },
-		{ 0x6000, 0x67ff, MRA_RAM },
-	MEMORY_END
+	public static Memory_ReadAddress magmax_soundreadmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x3fff, MRA_ROM ),
+		new Memory_ReadAddress( 0x4000, 0x4000, magmax_sound_irq_ack ),
+		new Memory_ReadAddress( 0x6000, 0x67ff, MRA_RAM ),
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( magmax_soundwritemem )
 		{ 0x0000, 0x3fff, MWA_ROM },

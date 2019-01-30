@@ -145,20 +145,22 @@ public class yamato
 	}
 	
 	
-	static MEMORY_READ_START( yamato_readmem )
-		{ 0x0000, 0x5fff, MRA_ROM },
-		{ 0x6000, 0x67ff, MRA_RAM },
-		{ 0x7000, 0x7fff, MRA_ROM },
-		{ 0x8800, 0x8bff, MRA_RAM },
-		{ 0x9000, 0x93ff, MRA_RAM },	/* video RAM */
-		{ 0x9800, 0x9bff, MRA_RAM },	/* column scroll registers */
-		{ 0x9c00, 0x9fff, MRA_RAM },	/* color RAM */
-		{ 0xa000, 0xa000, input_port_0_r },     /* IN0 */
-		{ 0xa800, 0xa800, input_port_1_r },     /* IN1 */
-		{ 0xb000, 0xb000, input_port_2_r },     /* DSW */
-		{ 0xb800, 0xb800, input_port_3_r },     /* IN2 */
-		{ 0xba00, 0xba00, input_port_4_r },     /* IN3 (maybe a mirror of b800) */
-	MEMORY_END
+	public static Memory_ReadAddress yamato_readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x5fff, MRA_ROM ),
+		new Memory_ReadAddress( 0x6000, 0x67ff, MRA_RAM ),
+		new Memory_ReadAddress( 0x7000, 0x7fff, MRA_ROM ),
+		new Memory_ReadAddress( 0x8800, 0x8bff, MRA_RAM ),
+		new Memory_ReadAddress( 0x9000, 0x93ff, MRA_RAM ),	/* video RAM */
+		new Memory_ReadAddress( 0x9800, 0x9bff, MRA_RAM ),	/* column scroll registers */
+		new Memory_ReadAddress( 0x9c00, 0x9fff, MRA_RAM ),	/* color RAM */
+		new Memory_ReadAddress( 0xa000, 0xa000, input_port_0_r ),     /* IN0 */
+		new Memory_ReadAddress( 0xa800, 0xa800, input_port_1_r ),     /* IN1 */
+		new Memory_ReadAddress( 0xb000, 0xb000, input_port_2_r ),     /* DSW */
+		new Memory_ReadAddress( 0xb800, 0xb800, input_port_3_r ),     /* IN2 */
+		new Memory_ReadAddress( 0xba00, 0xba00, input_port_4_r ),     /* IN3 (maybe a mirror of b800) */
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( yamato_writemem )
 		{ 0x0000, 0x5fff, MWA_ROM },
@@ -188,10 +190,12 @@ public class yamato
 		{ 0x01, 0x01, p1_w },	/* ??? */
 	PORT_END
 	
-	static MEMORY_READ_START( yamato_sound_readmem )
-		{ 0x0000, 0x07ff, MRA_ROM },
-		{ 0x5000, 0x53ff, MRA_RAM },
-	MEMORY_END
+	public static Memory_ReadAddress yamato_sound_readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x07ff, MRA_ROM ),
+		new Memory_ReadAddress( 0x5000, 0x53ff, MRA_RAM ),
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( yamato_sound_writemem )
 		{ 0x0000, 0x07ff, MWA_ROM },

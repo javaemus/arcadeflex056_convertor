@@ -140,15 +140,17 @@ public class mario
 		last = data;
 	}
 	
-	static MEMORY_READ_START( readmem )
-		{ 0x0000, 0x5fff, MRA_ROM },
-		{ 0x6000, 0x6fff, MRA_RAM },
-		{ 0x7400, 0x77ff, MRA_RAM },	/* video RAM */
-		{ 0x7c00, 0x7c00, input_port_0_r },	/* IN0 */
-		{ 0x7c80, 0x7c80, input_port_1_r },	/* IN1 */
-		{ 0x7f80, 0x7f80, input_port_2_r },	/* DSW */
-		{ 0xf000, 0xffff, MRA_ROM },
-	MEMORY_END
+	public static Memory_ReadAddress readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x5fff, MRA_ROM ),
+		new Memory_ReadAddress( 0x6000, 0x6fff, MRA_RAM ),
+		new Memory_ReadAddress( 0x7400, 0x77ff, MRA_RAM ),	/* video RAM */
+		new Memory_ReadAddress( 0x7c00, 0x7c00, input_port_0_r ),	/* IN0 */
+		new Memory_ReadAddress( 0x7c80, 0x7c80, input_port_1_r ),	/* IN1 */
+		new Memory_ReadAddress( 0x7f80, 0x7f80, input_port_2_r ),	/* DSW */
+		new Memory_ReadAddress( 0xf000, 0xffff, MRA_ROM ),
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	
 	static MEMORY_WRITE_START( writemem )
@@ -195,9 +197,11 @@ public class mario
 		{ 0x00,   0x00,   IOWP_NOP },  /* unknown... is this a trigger? */
 	PORT_END
 	
-	static MEMORY_READ_START( readmem_sound )
-		{ 0x0000, 0x0fff, MRA_ROM },
-	MEMORY_END
+	public static Memory_ReadAddress readmem_sound[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x0fff, MRA_ROM ),
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	static MEMORY_WRITE_START( writemem_sound )
 		{ 0x0000, 0x0fff, MWA_ROM },
 	MEMORY_END
@@ -386,11 +390,13 @@ public class mario
 		{ 0 }
 	};
 	
-	static MEMORY_READ_START( masao_sound_readmem )
-		{ 0x0000, 0x0fff, MRA_ROM },
-		{ 0x2000, 0x23ff, MRA_RAM },
-		{ 0x4000, 0x4000, AY8910_read_port_0_r },
-	MEMORY_END
+	public static Memory_ReadAddress masao_sound_readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x0fff, MRA_ROM ),
+		new Memory_ReadAddress( 0x2000, 0x23ff, MRA_RAM ),
+		new Memory_ReadAddress( 0x4000, 0x4000, AY8910_read_port_0_r ),
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( masao_sound_writemem )
 		{ 0x0000, 0x0fff, MWA_ROM },

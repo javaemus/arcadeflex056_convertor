@@ -643,12 +643,14 @@ public class williams
 	 *
 	 *************************************/
 	
-	static MEMORY_READ_START( defender_readmem )
-		{ 0x0000, 0x97ff, MRA_BANK1 },
-		{ 0x9800, 0xbfff, MRA_RAM },
-		{ 0xc000, 0xcfff, MRA_BANK2 },
-		{ 0xd000, 0xffff, MRA_ROM },
-	MEMORY_END
+	public static Memory_ReadAddress defender_readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x97ff, MRA_BANK1 ),
+		new Memory_ReadAddress( 0x9800, 0xbfff, MRA_RAM ),
+		new Memory_ReadAddress( 0xc000, 0xcfff, MRA_BANK2 ),
+		new Memory_ReadAddress( 0xd000, 0xffff, MRA_ROM ),
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	
 	static MEMORY_WRITE_START( defender_writemem )
@@ -668,15 +670,17 @@ public class williams
 	 *
 	 *************************************/
 	
-	static MEMORY_READ_START( williams_readmem )
-		{ 0x0000, 0x97ff, MRA_BANK1 },
-		{ 0x9800, 0xbfff, MRA_RAM },
-		{ 0xc804, 0xc807, pia_0_r },
-		{ 0xc80c, 0xc80f, pia_1_r },
-		{ 0xcb00, 0xcb00, williams_video_counter_r },
-		{ 0xcc00, 0xcfff, MRA_RAM },
-		{ 0xd000, 0xffff, MRA_ROM },
-	MEMORY_END
+	public static Memory_ReadAddress williams_readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x97ff, MRA_BANK1 ),
+		new Memory_ReadAddress( 0x9800, 0xbfff, MRA_RAM ),
+		new Memory_ReadAddress( 0xc804, 0xc807, pia_0_r ),
+		new Memory_ReadAddress( 0xc80c, 0xc80f, pia_1_r ),
+		new Memory_ReadAddress( 0xcb00, 0xcb00, williams_video_counter_r ),
+		new Memory_ReadAddress( 0xcc00, 0xcfff, MRA_RAM ),
+		new Memory_ReadAddress( 0xd000, 0xffff, MRA_ROM ),
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	
 	static MEMORY_WRITE_START( williams_writemem )
@@ -700,16 +704,18 @@ public class williams
 	 *
 	 *************************************/
 	
-	static MEMORY_READ_START( blaster_readmem )
-		{ 0x0000, 0x3fff, MRA_BANK1 },
-		{ 0x4000, 0x96ff, MRA_BANK2 },
-		{ 0x9700, 0xbfff, MRA_RAM },
-		{ 0xc804, 0xc807, pia_0_r },
-		{ 0xc80c, 0xc80f, pia_1_r },
-		{ 0xcb00, 0xcb00, williams_video_counter_r },
-		{ 0xcc00, 0xcfff, MRA_RAM },
-		{ 0xd000, 0xffff, MRA_ROM },
-	MEMORY_END
+	public static Memory_ReadAddress blaster_readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x3fff, MRA_BANK1 ),
+		new Memory_ReadAddress( 0x4000, 0x96ff, MRA_BANK2 ),
+		new Memory_ReadAddress( 0x9700, 0xbfff, MRA_RAM ),
+		new Memory_ReadAddress( 0xc804, 0xc807, pia_0_r ),
+		new Memory_ReadAddress( 0xc80c, 0xc80f, pia_1_r ),
+		new Memory_ReadAddress( 0xcb00, 0xcb00, williams_video_counter_r ),
+		new Memory_ReadAddress( 0xcc00, 0xcfff, MRA_RAM ),
+		new Memory_ReadAddress( 0xd000, 0xffff, MRA_ROM ),
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	
 	static MEMORY_WRITE_START( blaster_writemem )
@@ -739,18 +745,20 @@ public class williams
 	 *
 	 *************************************/
 	
-	static MEMORY_READ_START( williams2_readmem )
-		{ 0x0000, 0x7fff, MRA_BANK1 },
-		{ 0x8000, 0x87ff, MRA_BANK2 },
-		{ 0x8800, 0x8fff, MRA_BANK3 },
-		{ 0x9000, 0xbfff, MRA_RAM },
-		{ 0xc000, 0xc7ff, MRA_RAM },
-		{ 0xc980, 0xc983, pia_1_r },
-		{ 0xc984, 0xc987, pia_0_r },
-		{ 0xcbe0, 0xcbe0, williams_video_counter_r },
-		{ 0xcc00, 0xcfff, MRA_RAM },
-		{ 0xd000, 0xffff, MRA_ROM },
-	MEMORY_END
+	public static Memory_ReadAddress williams2_readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x7fff, MRA_BANK1 ),
+		new Memory_ReadAddress( 0x8000, 0x87ff, MRA_BANK2 ),
+		new Memory_ReadAddress( 0x8800, 0x8fff, MRA_BANK3 ),
+		new Memory_ReadAddress( 0x9000, 0xbfff, MRA_RAM ),
+		new Memory_ReadAddress( 0xc000, 0xc7ff, MRA_RAM ),
+		new Memory_ReadAddress( 0xc980, 0xc983, pia_1_r ),
+		new Memory_ReadAddress( 0xc984, 0xc987, pia_0_r ),
+		new Memory_ReadAddress( 0xcbe0, 0xcbe0, williams_video_counter_r ),
+		new Memory_ReadAddress( 0xcc00, 0xcfff, MRA_RAM ),
+		new Memory_ReadAddress( 0xd000, 0xffff, MRA_ROM ),
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	
 	static MEMORY_WRITE_START( williams2_writemem )
@@ -781,12 +789,14 @@ public class williams
 	 *
 	 *************************************/
 	
-	static MEMORY_READ_START( sound_readmem )
-		{ 0x0000, 0x007f, MRA_RAM },
-		{ 0x0400, 0x0403, pia_2_r },
-		{ 0x8400, 0x8403, pia_2_r },	/* used by Colony 7, perhaps others? */
-		{ 0xb000, 0xffff, MRA_ROM },	/* most games start at $F000, Sinistar starts at $B000 */
-	MEMORY_END
+	public static Memory_ReadAddress sound_readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x007f, MRA_RAM ),
+		new Memory_ReadAddress( 0x0400, 0x0403, pia_2_r ),
+		new Memory_ReadAddress( 0x8400, 0x8403, pia_2_r ),	/* used by Colony 7, perhaps others? */
+		new Memory_ReadAddress( 0xb000, 0xffff, MRA_ROM ),	/* most games start at $F000, Sinistar starts at $B000 */
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	
 	static MEMORY_WRITE_START( sound_writemem )
@@ -804,11 +814,13 @@ public class williams
 	 *
 	 *************************************/
 	
-	static MEMORY_READ_START( williams2_sound_readmem )
-		{ 0x0000, 0x00ff, MRA_RAM },
-		{ 0x2000, 0x2003, pia_2_r },
-		{ 0xe000, 0xffff, MRA_ROM },
-	MEMORY_END
+	public static Memory_ReadAddress williams2_sound_readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x00ff, MRA_RAM ),
+		new Memory_ReadAddress( 0x2000, 0x2003, pia_2_r ),
+		new Memory_ReadAddress( 0xe000, 0xffff, MRA_ROM ),
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	
 	static MEMORY_WRITE_START( williams2_sound_writemem )

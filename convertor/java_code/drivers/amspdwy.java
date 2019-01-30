@@ -77,21 +77,23 @@ public class amspdwy
 		cpu_set_nmi_line(1,PULSE_LINE);
 	}
 	
-	static MEMORY_READ_START( amspdwy_readmem )
-		{ 0x0000, 0x7fff, MRA_ROM				},	// ROM
-	//	{ 0x8000, 0x801f, MRA_RAM				},	// Palette
-		{ 0x9000, 0x93ff, videoram_r			},	// Layer
-		{ 0x9400, 0x97ff, videoram_r			},	// Mirror?
-		{ 0x9800, 0x9bff, colorram_r			},	// Layer
-		{ 0x9c00, 0x9fff, MRA_RAM				},	// Unused?
-		{ 0xa000, 0xa000, input_port_0_r		},	// DSW 1
-		{ 0xa400, 0xa400, input_port_1_r		},	// DSW 2
-		{ 0xa800, 0xa800, amspdwy_wheel_0_r		},	// Player 1
-		{ 0xac00, 0xac00, amspdwy_wheel_1_r		},	// Player 2
-		{ 0xb400, 0xb400, amspdwy_sound_r		},	// YM2151 Status + Buttons
-		{ 0xc000, 0xc0ff, MRA_RAM				},	// Sprites
-		{ 0xe000, 0xe7ff, MRA_RAM				},	// Work RAM
-	MEMORY_END
+	public static Memory_ReadAddress amspdwy_readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x7fff, MRA_ROM				),	// ROM
+	//	new Memory_ReadAddress( 0x8000, 0x801f, MRA_RAM				),	// Palette
+		new Memory_ReadAddress( 0x9000, 0x93ff, videoram_r			),	// Layer
+		new Memory_ReadAddress( 0x9400, 0x97ff, videoram_r			),	// Mirror?
+		new Memory_ReadAddress( 0x9800, 0x9bff, colorram_r			),	// Layer
+		new Memory_ReadAddress( 0x9c00, 0x9fff, MRA_RAM				),	// Unused?
+		new Memory_ReadAddress( 0xa000, 0xa000, input_port_0_r		),	// DSW 1
+		new Memory_ReadAddress( 0xa400, 0xa400, input_port_1_r		),	// DSW 2
+		new Memory_ReadAddress( 0xa800, 0xa800, amspdwy_wheel_0_r		),	// Player 1
+		new Memory_ReadAddress( 0xac00, 0xac00, amspdwy_wheel_1_r		),	// Player 2
+		new Memory_ReadAddress( 0xb400, 0xb400, amspdwy_sound_r		),	// YM2151 Status + Buttons
+		new Memory_ReadAddress( 0xc000, 0xc0ff, MRA_RAM				),	// Sprites
+		new Memory_ReadAddress( 0xe000, 0xe7ff, MRA_RAM				),	// Work RAM
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( amspdwy_writemem )
 		{ 0x0000, 0x7fff, MWA_ROM							},	// ROM
@@ -129,12 +131,14 @@ public class amspdwy
 	
 	***************************************************************************/
 	
-	static MEMORY_READ_START( amspdwy_sound_readmem )
-		{ 0x0000, 0x7fff, MRA_ROM					},	// ROM
-		{ 0x9000, 0x9000, soundlatch_r				},	// From Main CPU
-		{ 0xc000, 0xdfff, MRA_RAM					},	// Work RAM
-		{ 0xffff, 0xffff, MRA_NOP					},	// ??? IY = FFFF at the start ?
-	MEMORY_END
+	public static Memory_ReadAddress amspdwy_sound_readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x7fff, MRA_ROM					),	// ROM
+		new Memory_ReadAddress( 0x9000, 0x9000, soundlatch_r				),	// From Main CPU
+		new Memory_ReadAddress( 0xc000, 0xdfff, MRA_RAM					),	// Work RAM
+		new Memory_ReadAddress( 0xffff, 0xffff, MRA_NOP					),	// ??? IY = FFFF at the start ?
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( amspdwy_sound_writemem )
 		{ 0x0000, 0x7fff, MWA_ROM					},	// ROM

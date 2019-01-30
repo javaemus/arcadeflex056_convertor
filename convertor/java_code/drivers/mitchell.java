@@ -303,15 +303,17 @@ public class mitchell
 	
 	***************************************************************************/
 	
-	static MEMORY_READ_START( mgakuen_readmem )
-		{ 0x0000, 0x7fff, MRA_ROM },
-		{ 0x8000, 0xbfff, MRA_BANK1 },
-		{ 0xc000, 0xc7ff, mgakuen_paletteram_r },	/* palette RAM */
-		{ 0xc800, 0xcfff, pang_colorram_r },	/* Attribute RAM */
-		{ 0xd000, 0xdfff, mgakuen_videoram_r },	/* char RAM */
-		{ 0xe000, 0xefff, MRA_RAM },	/* Work RAM */
-		{ 0xf000, 0xffff, mgakuen_objram_r },	/* OBJ RAM */
-	MEMORY_END
+	public static Memory_ReadAddress mgakuen_readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x7fff, MRA_ROM ),
+		new Memory_ReadAddress( 0x8000, 0xbfff, MRA_BANK1 ),
+		new Memory_ReadAddress( 0xc000, 0xc7ff, mgakuen_paletteram_r ),	/* palette RAM */
+		new Memory_ReadAddress( 0xc800, 0xcfff, pang_colorram_r ),	/* Attribute RAM */
+		new Memory_ReadAddress( 0xd000, 0xdfff, mgakuen_videoram_r ),	/* char RAM */
+		new Memory_ReadAddress( 0xe000, 0xefff, MRA_RAM ),	/* Work RAM */
+		new Memory_ReadAddress( 0xf000, 0xffff, mgakuen_objram_r ),	/* OBJ RAM */
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( mgakuen_writemem )
 		{ 0x0000, 0xbfff, MWA_ROM },
@@ -322,14 +324,16 @@ public class mitchell
 		{ 0xf000, 0xffff, mgakuen_objram_w },	/* OBJ RAM */
 	MEMORY_END
 	
-	static MEMORY_READ_START( readmem )
-		{ 0x0000, 0x7fff, MRA_ROM },
-		{ 0x8000, 0xbfff, MRA_BANK1 },
-		{ 0xc000, 0xc7ff, pang_paletteram_r },	/* Banked palette RAM */
-		{ 0xc800, 0xcfff, pang_colorram_r },	/* Attribute RAM */
-		{ 0xd000, 0xdfff, pang_videoram_r },	/* Banked char / OBJ RAM */
-		{ 0xe000, 0xffff, MRA_RAM },	/* Work RAM */
-	MEMORY_END
+	public static Memory_ReadAddress readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x7fff, MRA_ROM ),
+		new Memory_ReadAddress( 0x8000, 0xbfff, MRA_BANK1 ),
+		new Memory_ReadAddress( 0xc000, 0xc7ff, pang_paletteram_r ),	/* Banked palette RAM */
+		new Memory_ReadAddress( 0xc800, 0xcfff, pang_colorram_r ),	/* Attribute RAM */
+		new Memory_ReadAddress( 0xd000, 0xdfff, pang_videoram_r ),	/* Banked char / OBJ RAM */
+		new Memory_ReadAddress( 0xe000, 0xffff, MRA_RAM ),	/* Work RAM */
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( writemem )
 		{ 0x0000, 0xbfff, MWA_ROM },

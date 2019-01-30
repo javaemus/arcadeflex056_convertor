@@ -230,14 +230,16 @@ public class looping
 		DAC_data_w(0, ((r[1]<<7) + (r[2]<<6))*r[6]);
 	}
 	
-	static MEMORY_READ_START( looping_readmem )
-		{ 0x0000, 0x7fff, MRA_ROM },
-	/*	{ 0x9000, 0x9fff, MRA_RAM }, videoram is write only? */
-		{ 0xe000, 0xefff, MRA_RAM },
-		{ 0xf800, 0xf800, input_port_0_r },	/* inp */
-		{ 0xf801, 0xf801, input_port_1_r },
-		{ 0xf802, 0xf802, input_port_2_r },	/* dsw */
-	MEMORY_END
+	public static Memory_ReadAddress looping_readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x7fff, MRA_ROM ),
+	/*	new Memory_ReadAddress( 0x9000, 0x9fff, MRA_RAM ), videoram is write only? */
+		new Memory_ReadAddress( 0xe000, 0xefff, MRA_RAM ),
+		new Memory_ReadAddress( 0xf800, 0xf800, input_port_0_r ),	/* inp */
+		new Memory_ReadAddress( 0xf801, 0xf801, input_port_1_r ),
+		new Memory_ReadAddress( 0xf802, 0xf802, input_port_2_r ),	/* dsw */
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( looping_writemem )
 		{ 0x0000, 0x7fff, MWA_ROM },
@@ -255,12 +257,14 @@ public class looping
 		{ 0x407, 0x407, watchdog_reset_w },
 	PORT_END
 	
-	static MEMORY_READ_START( looping_io_readmem )
-		{ 0x0000, 0x37ff, MRA_ROM },
-		{ 0x3800, 0x3bff, MRA_RAM },
-		{ 0x3c00, 0x3c00, AY8910_read_port_0_r },
-		{ 0x3e02, 0x3e02, tms5220_status_r },
-	MEMORY_END
+	public static Memory_ReadAddress looping_io_readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x37ff, MRA_ROM ),
+		new Memory_ReadAddress( 0x3800, 0x3bff, MRA_RAM ),
+		new Memory_ReadAddress( 0x3c00, 0x3c00, AY8910_read_port_0_r ),
+		new Memory_ReadAddress( 0x3e02, 0x3e02, tms5220_status_r ),
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( looping_io_writemem )
 		{ 0x0000, 0x37ff, MWA_ROM },

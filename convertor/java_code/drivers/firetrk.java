@@ -650,14 +650,16 @@ public class firetrk
 	
 	
 	
-	static MEMORY_READ_START( firetruck_readmem )
-		{ 0x0000, 0x01ff, MRA_RAM },
-		{ 0x0800, 0x08ff, MRA_RAM },
-		{ 0x1800, 0x1807, firetruck_io_r },
-		{ 0x1c00, 0x1c02, firetruck_dsw_r },
-		{ 0x2000, 0x3fff, MRA_ROM },
-		{ 0xf000, 0xffff, MRA_ROM },
-	MEMORY_END
+	public static Memory_ReadAddress firetruck_readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x01ff, MRA_RAM ),
+		new Memory_ReadAddress( 0x0800, 0x08ff, MRA_RAM ),
+		new Memory_ReadAddress( 0x1800, 0x1807, firetruck_io_r ),
+		new Memory_ReadAddress( 0x1c00, 0x1c02, firetruck_dsw_r ),
+		new Memory_ReadAddress( 0x2000, 0x3fff, MRA_ROM ),
+		new Memory_ReadAddress( 0xf000, 0xffff, MRA_ROM ),
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( firetruck_writemem )
 		{ 0x0000, 0x01ff, MWA_RAM, &videoram },

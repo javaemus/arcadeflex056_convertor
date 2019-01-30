@@ -68,15 +68,17 @@ public class funkybee
 		coin_counter_w(offset,data);
 	}
 	
-	static MEMORY_READ_START( readmem )
-		{ 0x0000, 0x4fff, MRA_ROM },
-		{ 0x8000, 0x87ff, MRA_RAM },
-		{ 0xa000, 0xdfff, MRA_RAM },
-		{ 0xf000, 0xf000, MRA_NOP },	/* IRQ Ack */
-		{ 0xf800, 0xf800, funkybee_input_port_0_r },
-		{ 0xf801, 0xf801, input_port_1_r },
-		{ 0xf802, 0xf802, input_port_2_r },
-	MEMORY_END
+	public static Memory_ReadAddress readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x4fff, MRA_ROM ),
+		new Memory_ReadAddress( 0x8000, 0x87ff, MRA_RAM ),
+		new Memory_ReadAddress( 0xa000, 0xdfff, MRA_RAM ),
+		new Memory_ReadAddress( 0xf000, 0xf000, MRA_NOP ),	/* IRQ Ack */
+		new Memory_ReadAddress( 0xf800, 0xf800, funkybee_input_port_0_r ),
+		new Memory_ReadAddress( 0xf801, 0xf801, input_port_1_r ),
+		new Memory_ReadAddress( 0xf802, 0xf802, input_port_2_r ),
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( writemem )
 		{ 0x0000, 0x4fff, MWA_ROM },

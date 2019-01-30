@@ -922,11 +922,13 @@ public class cave
 		memcpy(RAM + 0x20000 * 1, RAM + 0x40000 + 0x20000 * bank2, 0x20000);
 	}
 	
-	static MEMORY_READ_START( hotdogst_sound_readmem )
-		{ 0x0000, 0x3fff, MRA_ROM	},	// ROM
-		{ 0x4000, 0x7fff, MRA_BANK2	},	// ROM (Banked)
-		{ 0xe000, 0xffff, MRA_RAM	},	// RAM
-	MEMORY_END
+	public static Memory_ReadAddress hotdogst_sound_readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x3fff, MRA_ROM	),	// ROM
+		new Memory_ReadAddress( 0x4000, 0x7fff, MRA_BANK2	),	// ROM (Banked)
+		new Memory_ReadAddress( 0xe000, 0xffff, MRA_RAM	),	// RAM
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( hotdogst_sound_writemem )
 		{ 0x0000, 0x3fff, MWA_ROM	},	// ROM
@@ -963,12 +965,14 @@ public class cave
 		cpu_setbank(2, &RAM[ 0x4000 * bank ]);
 	}
 	
-	static MEMORY_READ_START( mazinger_sound_readmem )
-		{ 0x0000, 0x3fff, MRA_ROM	},	// ROM
-		{ 0x4000, 0x7fff, MRA_BANK2	},	// ROM (Banked)
-		{ 0xc000, 0xc7ff, MRA_RAM	},	// RAM
-		{ 0xf800, 0xffff, MRA_RAM	},	// RAM
-	MEMORY_END
+	public static Memory_ReadAddress mazinger_sound_readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x3fff, MRA_ROM	),	// ROM
+		new Memory_ReadAddress( 0x4000, 0x7fff, MRA_BANK2	),	// ROM (Banked)
+		new Memory_ReadAddress( 0xc000, 0xc7ff, MRA_RAM	),	// RAM
+		new Memory_ReadAddress( 0xf800, 0xffff, MRA_RAM	),	// RAM
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( mazinger_sound_writemem )
 		{ 0x0000, 0x3fff, MWA_ROM	},	// ROM
@@ -1025,11 +1029,13 @@ public class cave
 		memcpy(ROM + 0x20000 * 1, ROM + 0x40000 + 0x20000 * bank2, 0x20000);
 	}
 	
-	static MEMORY_READ_START( metmqstr_sound_readmem )
-		{ 0x0000, 0x3fff, MRA_ROM	},	// ROM
-		{ 0x4000, 0x7fff, MRA_BANK1	},	// ROM (Banked)
-		{ 0xe000, 0xffff, MRA_RAM	},	// RAM
-	MEMORY_END
+	public static Memory_ReadAddress metmqstr_sound_readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x3fff, MRA_ROM	),	// ROM
+		new Memory_ReadAddress( 0x4000, 0x7fff, MRA_BANK1	),	// ROM (Banked)
+		new Memory_ReadAddress( 0xe000, 0xffff, MRA_RAM	),	// RAM
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( metmqstr_sound_writemem )
 		{ 0x0000, 0x3fff, MWA_ROM	},	// ROM
@@ -1088,11 +1094,13 @@ public class cave
 		memcpy(RAM + 0x20000 * 1, RAM + 0x40000 + 0x20000 * bank2, 0x20000);
 	}
 	
-	static MEMORY_READ_START( sailormn_sound_readmem )
-		{ 0x0000, 0x3fff, MRA_ROM	},	// ROM
-		{ 0x4000, 0x7fff, MRA_BANK1	},	// ROM (Banked)
-		{ 0xc000, 0xdfff, MRA_RAM	},	// RAM
-	MEMORY_END
+	public static Memory_ReadAddress sailormn_sound_readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x3fff, MRA_ROM	),	// ROM
+		new Memory_ReadAddress( 0x4000, 0x7fff, MRA_BANK1	),	// ROM (Banked)
+		new Memory_ReadAddress( 0xc000, 0xdfff, MRA_RAM	),	// RAM
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( sailormn_sound_writemem )
 		{ 0x0000, 0x3fff, MWA_ROM	},	// ROM

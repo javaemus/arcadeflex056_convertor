@@ -102,18 +102,20 @@ public class spy
 	
 	
 	
-	static MEMORY_READ_START( spy_readmem )
-		{ 0x0000, 0x07ff, spy_bankedram1_r },
-		{ 0x0800, 0x1aff, MRA_RAM },
-		{ 0x3fd0, 0x3fd0, input_port_4_r },
-		{ 0x3fd1, 0x3fd1, input_port_0_r },
-		{ 0x3fd2, 0x3fd2, input_port_1_r },
-		{ 0x3fd3, 0x3fd3, input_port_2_r },
-		{ 0x3fe0, 0x3fe0, input_port_3_r },
-		{ 0x2000, 0x5fff, K052109_051960_r },
-		{ 0x6000, 0x7fff, MRA_BANK1 },
-		{ 0x8000, 0xffff, MRA_ROM },
-	MEMORY_END
+	public static Memory_ReadAddress spy_readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x07ff, spy_bankedram1_r ),
+		new Memory_ReadAddress( 0x0800, 0x1aff, MRA_RAM ),
+		new Memory_ReadAddress( 0x3fd0, 0x3fd0, input_port_4_r ),
+		new Memory_ReadAddress( 0x3fd1, 0x3fd1, input_port_0_r ),
+		new Memory_ReadAddress( 0x3fd2, 0x3fd2, input_port_1_r ),
+		new Memory_ReadAddress( 0x3fd3, 0x3fd3, input_port_2_r ),
+		new Memory_ReadAddress( 0x3fe0, 0x3fe0, input_port_3_r ),
+		new Memory_ReadAddress( 0x2000, 0x5fff, K052109_051960_r ),
+		new Memory_ReadAddress( 0x6000, 0x7fff, MRA_BANK1 ),
+		new Memory_ReadAddress( 0x8000, 0xffff, MRA_ROM ),
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( spy_writemem )
 		{ 0x0000, 0x07ff, spy_bankedram1_w, &ram },
@@ -128,14 +130,16 @@ public class spy
 		{ 0x8000, 0xffff, MWA_ROM },
 	MEMORY_END
 	
-	static MEMORY_READ_START( spy_sound_readmem )
-		{ 0x0000, 0x7fff, MRA_ROM },
-		{ 0x8000, 0x87ff, MRA_RAM },
-		{ 0xa000, 0xa00d, K007232_read_port_0_r },
-		{ 0xb000, 0xb00d, K007232_read_port_1_r },
-		{ 0xc000, 0xc000, YM3812_status_port_0_r },
-		{ 0xd000, 0xd000, soundlatch_r },
-	MEMORY_END
+	public static Memory_ReadAddress spy_sound_readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x7fff, MRA_ROM ),
+		new Memory_ReadAddress( 0x8000, 0x87ff, MRA_RAM ),
+		new Memory_ReadAddress( 0xa000, 0xa00d, K007232_read_port_0_r ),
+		new Memory_ReadAddress( 0xb000, 0xb00d, K007232_read_port_1_r ),
+		new Memory_ReadAddress( 0xc000, 0xc000, YM3812_status_port_0_r ),
+		new Memory_ReadAddress( 0xd000, 0xd000, soundlatch_r ),
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( spy_sound_writemem )
 		{ 0x0000, 0x7fff, MWA_ROM },

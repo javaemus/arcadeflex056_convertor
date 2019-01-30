@@ -207,22 +207,24 @@ public class ultratnk
 	
 	
 	
-	static MEMORY_READ_START( readmem )
-		{ 0x0000, 0x00ff, MRA_RAM },
-		{ 0x0100, 0x01ff, mirror_r },
-		{ 0x0800, 0x0bff, MRA_RAM },
-		{ 0x0c00, 0x0cff, MRA_RAM },
-		{ 0x1000, 0x1000, input_port_1_r }, /* self test, vblank */
-		{ 0x1800, 0x1800, ultratnk_barrier_r }, /* barrier */
-		{ 0x2000, 0x2007, ultratnk_controls_r },
-		{ 0x2020, 0x2026, ultratnk_coin_r },
-		{ 0x2040, 0x2043, ultratnk_collision_r },
-		{ 0x2046, 0x2046, ultratnk_tilt_r },
-		{ 0x2060, 0x2063, ultratnk_dipsw_r },
-		{ 0x2800, 0x2fff, MRA_NOP }, /* diagnostic ROM (see code at B1F3) */
-		{ 0xb000, 0xbfff, MRA_ROM },
-		{ 0xf000, 0xffff, MRA_ROM },
-	MEMORY_END
+	public static Memory_ReadAddress readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x00ff, MRA_RAM ),
+		new Memory_ReadAddress( 0x0100, 0x01ff, mirror_r ),
+		new Memory_ReadAddress( 0x0800, 0x0bff, MRA_RAM ),
+		new Memory_ReadAddress( 0x0c00, 0x0cff, MRA_RAM ),
+		new Memory_ReadAddress( 0x1000, 0x1000, input_port_1_r ), /* self test, vblank */
+		new Memory_ReadAddress( 0x1800, 0x1800, ultratnk_barrier_r ), /* barrier */
+		new Memory_ReadAddress( 0x2000, 0x2007, ultratnk_controls_r ),
+		new Memory_ReadAddress( 0x2020, 0x2026, ultratnk_coin_r ),
+		new Memory_ReadAddress( 0x2040, 0x2043, ultratnk_collision_r ),
+		new Memory_ReadAddress( 0x2046, 0x2046, ultratnk_tilt_r ),
+		new Memory_ReadAddress( 0x2060, 0x2063, ultratnk_dipsw_r ),
+		new Memory_ReadAddress( 0x2800, 0x2fff, MRA_NOP ), /* diagnostic ROM (see code at B1F3) */
+		new Memory_ReadAddress( 0xb000, 0xbfff, MRA_ROM ),
+		new Memory_ReadAddress( 0xf000, 0xffff, MRA_ROM ),
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( writemem )
 		{ 0x0000, 0x00ff, MWA_RAM, &mirror_ram },

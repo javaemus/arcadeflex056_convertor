@@ -668,19 +668,21 @@ public class itech8
 	 *************************************/
 	
 	/*------ common layout with TMS34061 at 0000 ------*/
-	static MEMORY_READ_START( tmslo_readmem )
-		{ 0x0000, 0x0fff, itech8_tms34061_r },
-		{ 0x1140, 0x1140, special_port0_r },
-		{ 0x1160, 0x1160, input_port_1_r },
-		{ 0x1180, 0x1180, input_port_2_r },
-		{ 0x11c0, 0x11d7, itech8_blitter_r },
-		{ 0x11d8, 0x11d9, input_port_3_r },
-		{ 0x11da, 0x11db, input_port_4_r },
-		{ 0x11dc, 0x11dd, input_port_5_r },
-		{ 0x11de, 0x11df, input_port_6_r },
-		{ 0x2000, 0x3fff, MRA_RAM },
-		{ 0x4000, 0xffff, MRA_BANK1 },
-	MEMORY_END
+	public static Memory_ReadAddress tmslo_readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x0fff, itech8_tms34061_r ),
+		new Memory_ReadAddress( 0x1140, 0x1140, special_port0_r ),
+		new Memory_ReadAddress( 0x1160, 0x1160, input_port_1_r ),
+		new Memory_ReadAddress( 0x1180, 0x1180, input_port_2_r ),
+		new Memory_ReadAddress( 0x11c0, 0x11d7, itech8_blitter_r ),
+		new Memory_ReadAddress( 0x11d8, 0x11d9, input_port_3_r ),
+		new Memory_ReadAddress( 0x11da, 0x11db, input_port_4_r ),
+		new Memory_ReadAddress( 0x11dc, 0x11dd, input_port_5_r ),
+		new Memory_ReadAddress( 0x11de, 0x11df, input_port_6_r ),
+		new Memory_ReadAddress( 0x2000, 0x3fff, MRA_RAM ),
+		new Memory_ReadAddress( 0x4000, 0xffff, MRA_BANK1 ),
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	
 	static MEMORY_WRITE_START( tmslo_writemem )
@@ -700,19 +702,21 @@ public class itech8
 	
 	
 	/*------ common layout with TMS34061 at 1000 ------*/
-	static MEMORY_READ_START( tmshi_readmem )
-		{ 0x1000, 0x1fff, itech8_tms34061_r },
-		{ 0x0140, 0x0140, special_port0_r },
-		{ 0x0160, 0x0160, input_port_1_r },
-		{ 0x0180, 0x0180, input_port_2_r },
-		{ 0x01c0, 0x01d7, itech8_blitter_r },
-		{ 0x01d8, 0x01d9, input_port_3_r },
-		{ 0x01da, 0x01db, input_port_4_r },
-		{ 0x01dc, 0x01dd, input_port_5_r },
-		{ 0x01de, 0x01df, input_port_6_r },
-		{ 0x2000, 0x3fff, MRA_RAM },
-		{ 0x4000, 0xffff, MRA_BANK1 },
-	MEMORY_END
+	public static Memory_ReadAddress tmshi_readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x1000, 0x1fff, itech8_tms34061_r ),
+		new Memory_ReadAddress( 0x0140, 0x0140, special_port0_r ),
+		new Memory_ReadAddress( 0x0160, 0x0160, input_port_1_r ),
+		new Memory_ReadAddress( 0x0180, 0x0180, input_port_2_r ),
+		new Memory_ReadAddress( 0x01c0, 0x01d7, itech8_blitter_r ),
+		new Memory_ReadAddress( 0x01d8, 0x01d9, input_port_3_r ),
+		new Memory_ReadAddress( 0x01da, 0x01db, input_port_4_r ),
+		new Memory_ReadAddress( 0x01dc, 0x01dd, input_port_5_r ),
+		new Memory_ReadAddress( 0x01de, 0x01df, input_port_6_r ),
+		new Memory_ReadAddress( 0x2000, 0x3fff, MRA_RAM ),
+		new Memory_ReadAddress( 0x4000, 0xffff, MRA_BANK1 ),
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	
 	static MEMORY_WRITE_START( tmshi_writemem )
@@ -732,19 +736,21 @@ public class itech8
 	
 	
 	/*------ Golden Tee Golf II 1992 layout ------*/
-	static MEMORY_READ_START( gtg2_readmem )
-		{ 0x1000, 0x1fff, itech8_tms34061_r },
-		{ 0x0100, 0x0100, input_port_0_r },
-		{ 0x0120, 0x0120, input_port_1_r },
-		{ 0x0140, 0x0140, input_port_2_r },
-		{ 0x0180, 0x0197, itech8_blitter_r },
-		{ 0x0198, 0x0199, input_port_3_r },
-		{ 0x019a, 0x019b, input_port_4_r },
-		{ 0x019c, 0x019d, input_port_5_r },
-		{ 0x019e, 0x019f, input_port_6_r },
-		{ 0x2000, 0x3fff, MRA_RAM },
-		{ 0x4000, 0xffff, MRA_BANK1 },
-	MEMORY_END
+	public static Memory_ReadAddress gtg2_readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x1000, 0x1fff, itech8_tms34061_r ),
+		new Memory_ReadAddress( 0x0100, 0x0100, input_port_0_r ),
+		new Memory_ReadAddress( 0x0120, 0x0120, input_port_1_r ),
+		new Memory_ReadAddress( 0x0140, 0x0140, input_port_2_r ),
+		new Memory_ReadAddress( 0x0180, 0x0197, itech8_blitter_r ),
+		new Memory_ReadAddress( 0x0198, 0x0199, input_port_3_r ),
+		new Memory_ReadAddress( 0x019a, 0x019b, input_port_4_r ),
+		new Memory_ReadAddress( 0x019c, 0x019d, input_port_5_r ),
+		new Memory_ReadAddress( 0x019e, 0x019f, input_port_6_r ),
+		new Memory_ReadAddress( 0x2000, 0x3fff, MRA_RAM ),
+		new Memory_ReadAddress( 0x4000, 0xffff, MRA_BANK1 ),
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	
 	static MEMORY_WRITE_START( gtg2_writemem )
@@ -798,14 +804,16 @@ public class itech8
 	 *************************************/
 	
 	/*------ YM2203-based sound board ------*/
-	static MEMORY_READ_START( sound2203_readmem )
-		{ 0x1000, 0x1000, sound_data_r },
-		{ 0x2000, 0x2000, YM2203_status_port_0_r },
-		{ 0x2002, 0x2002, YM2203_status_port_0_r },
-		{ 0x3000, 0x37ff, MRA_RAM },
-		{ 0x4000, 0x4000, OKIM6295_status_0_r },
-		{ 0x8000, 0xffff, MRA_ROM },
-	MEMORY_END
+	public static Memory_ReadAddress sound2203_readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x1000, 0x1000, sound_data_r ),
+		new Memory_ReadAddress( 0x2000, 0x2000, YM2203_status_port_0_r ),
+		new Memory_ReadAddress( 0x2002, 0x2002, YM2203_status_port_0_r ),
+		new Memory_ReadAddress( 0x3000, 0x37ff, MRA_RAM ),
+		new Memory_ReadAddress( 0x4000, 0x4000, OKIM6295_status_0_r ),
+		new Memory_ReadAddress( 0x8000, 0xffff, MRA_ROM ),
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	
 	static MEMORY_WRITE_START( sound2203_writemem )
@@ -821,14 +829,16 @@ public class itech8
 	
 	
 	/*------ YM3812-based sound board ------*/
-	static MEMORY_READ_START( sound3812_readmem )
-		{ 0x1000, 0x1000, sound_data_r },
-		{ 0x2000, 0x2000, YM3812_status_port_0_r },
-		{ 0x3000, 0x37ff, MRA_RAM },
-		{ 0x4000, 0x4000, OKIM6295_status_0_r },
-		{ 0x5000, 0x5003, pia_0_r },
-		{ 0x8000, 0xffff, MRA_ROM },
-	MEMORY_END
+	public static Memory_ReadAddress sound3812_readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x1000, 0x1000, sound_data_r ),
+		new Memory_ReadAddress( 0x2000, 0x2000, YM3812_status_port_0_r ),
+		new Memory_ReadAddress( 0x3000, 0x37ff, MRA_RAM ),
+		new Memory_ReadAddress( 0x4000, 0x4000, OKIM6295_status_0_r ),
+		new Memory_ReadAddress( 0x5000, 0x5003, pia_0_r ),
+		new Memory_ReadAddress( 0x8000, 0xffff, MRA_ROM ),
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	
 	static MEMORY_WRITE_START( sound3812_writemem )
@@ -849,9 +859,11 @@ public class itech8
 	 *
 	 *************************************/
 	
-	static MEMORY_READ_START( slikz80_readmem )
-		{ 0x0000, 0x7ff, MRA_ROM },
-	MEMORY_END
+	public static Memory_ReadAddress slikz80_readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x7ff, MRA_ROM ),
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	
 	static MEMORY_WRITE_START( slikz80_writemem )

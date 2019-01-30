@@ -116,22 +116,24 @@ public class bladestl
 		//	logerror("%04x: (speech_ctrl) write %02x\n",cpu_get_pc(), data);
 	}
 	
-	static MEMORY_READ_START( bladestl_readmem )
-		{ 0x0000, 0x1fff, K007342_r },			/* Color RAM + Video RAM */
-		{ 0x2000, 0x21ff, K007420_r },			/* Sprite RAM */
-		{ 0x2200, 0x23ff, K007342_scroll_r },	/* Scroll RAM */
-		{ 0x2400, 0x245f, paletteram_r },		/* Palette */
-		{ 0x2e01, 0x2e01, input_port_3_r },		/* 1P controls */
-		{ 0x2e02, 0x2e02, input_port_4_r },		/* 2P controls */
-		{ 0x2e03, 0x2e03, input_port_1_r },		/* DISPW #2 */
-		{ 0x2e40, 0x2e40, input_port_0_r },		/* DIPSW #1 */
-		{ 0x2e00, 0x2e00, input_port_2_r },		/* DIPSW #3, coinsw, startsw */
-		{ 0x2f00, 0x2f03, trackball_r },		/* Trackballs */
-		{ 0x2f80, 0x2f9f, K051733_r },			/* Protection: 051733 */
-		{ 0x4000, 0x5fff, MRA_RAM },			/* Work RAM */
-		{ 0x6000, 0x7fff, MRA_BANK1 },			/* banked ROM */
-		{ 0x8000, 0xffff, MRA_ROM },			/* ROM */
-	MEMORY_END
+	public static Memory_ReadAddress bladestl_readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x1fff, K007342_r ),			/* Color RAM + Video RAM */
+		new Memory_ReadAddress( 0x2000, 0x21ff, K007420_r ),			/* Sprite RAM */
+		new Memory_ReadAddress( 0x2200, 0x23ff, K007342_scroll_r ),	/* Scroll RAM */
+		new Memory_ReadAddress( 0x2400, 0x245f, paletteram_r ),		/* Palette */
+		new Memory_ReadAddress( 0x2e01, 0x2e01, input_port_3_r ),		/* 1P controls */
+		new Memory_ReadAddress( 0x2e02, 0x2e02, input_port_4_r ),		/* 2P controls */
+		new Memory_ReadAddress( 0x2e03, 0x2e03, input_port_1_r ),		/* DISPW #2 */
+		new Memory_ReadAddress( 0x2e40, 0x2e40, input_port_0_r ),		/* DIPSW #1 */
+		new Memory_ReadAddress( 0x2e00, 0x2e00, input_port_2_r ),		/* DIPSW #3, coinsw, startsw */
+		new Memory_ReadAddress( 0x2f00, 0x2f03, trackball_r ),		/* Trackballs */
+		new Memory_ReadAddress( 0x2f80, 0x2f9f, K051733_r ),			/* Protection: 051733 */
+		new Memory_ReadAddress( 0x4000, 0x5fff, MRA_RAM ),			/* Work RAM */
+		new Memory_ReadAddress( 0x6000, 0x7fff, MRA_BANK1 ),			/* banked ROM */
+		new Memory_ReadAddress( 0x8000, 0xffff, MRA_ROM ),			/* ROM */
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( bladestl_writemem )
 		{ 0x0000, 0x1fff, K007342_w },				/* Color RAM + Video RAM */
@@ -149,14 +151,16 @@ public class bladestl
 		{ 0x8000, 0xffff, MWA_ROM },				/* ROM */
 	MEMORY_END
 	
-	static MEMORY_READ_START( bladestl_readmem_sound )
-		{ 0x0000, 0x07ff, MRA_RAM },				/* RAM */
-		{ 0x1000, 0x1000, YM2203_status_port_0_r },	/* YM2203 */
-		{ 0x1001, 0x1001, YM2203_read_port_0_r },	/* YM2203 */
-		{ 0x4000, 0x4000, UPD7759_0_busy_r },		/* UPD7759? */
-		{ 0x6000, 0x6000, soundlatch_r },			/* soundlatch_r */
-		{ 0x8000, 0xffff, MRA_ROM },				/* ROM */
-	MEMORY_END
+	public static Memory_ReadAddress bladestl_readmem_sound[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x07ff, MRA_RAM ),				/* RAM */
+		new Memory_ReadAddress( 0x1000, 0x1000, YM2203_status_port_0_r ),	/* YM2203 */
+		new Memory_ReadAddress( 0x1001, 0x1001, YM2203_read_port_0_r ),	/* YM2203 */
+		new Memory_ReadAddress( 0x4000, 0x4000, UPD7759_0_busy_r ),		/* UPD7759? */
+		new Memory_ReadAddress( 0x6000, 0x6000, soundlatch_r ),			/* soundlatch_r */
+		new Memory_ReadAddress( 0x8000, 0xffff, MRA_ROM ),				/* ROM */
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( bladestl_writemem_sound )
 		{ 0x0000, 0x07ff, MWA_RAM },				/* RAM */

@@ -105,20 +105,22 @@ public class exprraid
 		return val;
 	}
 	
-	static MEMORY_READ_START( readmem )
-		{ 0x00ff, 0x00ff, vblank_r }, /* HACK!!!! see init_exprraid below */
-	    { 0x0000, 0x05ff, MRA_RAM },
-	    { 0x0600, 0x07ff, MRA_RAM }, /* sprites */
-	    { 0x0800, 0x0bff, videoram_r },
-	    { 0x0c00, 0x0fff, colorram_r },
-	    { 0x1800, 0x1800, input_port_1_r }, /* DSW 0 */
-	    { 0x1801, 0x1801, input_port_2_r }, /* Controls */
-	    { 0x1802, 0x1802, input_port_3_r }, /* Coins */
-	    { 0x1803, 0x1803, input_port_4_r }, /* DSW 1 */
-		{ 0x2800, 0x2800, exprraid_prot_0_r }, /* protection */
-		{ 0x2801, 0x2801, exprraid_prot_1_r }, /* protection */
-	    { 0x4000, 0xffff, MRA_ROM },
-	MEMORY_END
+	public static Memory_ReadAddress readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x00ff, 0x00ff, vblank_r ), /* HACK!!!! see init_exprraid below */
+	    new Memory_ReadAddress( 0x0000, 0x05ff, MRA_RAM ),
+	    new Memory_ReadAddress( 0x0600, 0x07ff, MRA_RAM ), /* sprites */
+	    new Memory_ReadAddress( 0x0800, 0x0bff, videoram_r ),
+	    new Memory_ReadAddress( 0x0c00, 0x0fff, colorram_r ),
+	    new Memory_ReadAddress( 0x1800, 0x1800, input_port_1_r ), /* DSW 0 */
+	    new Memory_ReadAddress( 0x1801, 0x1801, input_port_2_r ), /* Controls */
+	    new Memory_ReadAddress( 0x1802, 0x1802, input_port_3_r ), /* Coins */
+	    new Memory_ReadAddress( 0x1803, 0x1803, input_port_4_r ), /* DSW 1 */
+		new Memory_ReadAddress( 0x2800, 0x2800, exprraid_prot_0_r ), /* protection */
+		new Memory_ReadAddress( 0x2801, 0x2801, exprraid_prot_1_r ), /* protection */
+	    new Memory_ReadAddress( 0x4000, 0xffff, MRA_ROM ),
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( writemem )
 	    { 0x0000, 0x05ff, MWA_RAM },
@@ -130,14 +132,16 @@ public class exprraid
 	    { 0x4000, 0xffff, MWA_ROM },
 	MEMORY_END
 	
-	static MEMORY_READ_START( sub_readmem )
-	    { 0x0000, 0x1fff, MRA_RAM },
-	    { 0x2000, 0x2000, YM2203_status_port_0_r },
-		{ 0x2001, 0x2001, YM2203_read_port_0_r },
-	    { 0x4000, 0x4000, YM3526_status_port_0_r },
-		{ 0x6000, 0x6000, soundlatch_r },
-	    { 0x8000, 0xffff, MRA_ROM },
-	MEMORY_END
+	public static Memory_ReadAddress sub_readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+	    new Memory_ReadAddress( 0x0000, 0x1fff, MRA_RAM ),
+	    new Memory_ReadAddress( 0x2000, 0x2000, YM2203_status_port_0_r ),
+		new Memory_ReadAddress( 0x2001, 0x2001, YM2203_read_port_0_r ),
+	    new Memory_ReadAddress( 0x4000, 0x4000, YM3526_status_port_0_r ),
+		new Memory_ReadAddress( 0x6000, 0x6000, soundlatch_r ),
+	    new Memory_ReadAddress( 0x8000, 0xffff, MRA_ROM ),
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( sub_writemem )
 	    { 0x0000, 0x1fff, MWA_RAM },

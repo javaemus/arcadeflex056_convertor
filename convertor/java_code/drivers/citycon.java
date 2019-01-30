@@ -32,14 +32,16 @@ public class citycon
 	
 	
 	
-	static MEMORY_READ_START( readmem )
-		{ 0x0000, 0x1fff, MRA_RAM },
-		{ 0x3000, 0x3000, citycon_in_r },	/* player 1 & 2 inputs multiplexed */
-		{ 0x3001, 0x3001, input_port_2_r },
-		{ 0x3002, 0x3002, input_port_3_r },
-		{ 0x3007, 0x3007, watchdog_reset_r },	/* ? */
-		{ 0x4000, 0xffff, MRA_ROM },
-	MEMORY_END
+	public static Memory_ReadAddress readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x1fff, MRA_RAM ),
+		new Memory_ReadAddress( 0x3000, 0x3000, citycon_in_r ),	/* player 1 & 2 inputs multiplexed */
+		new Memory_ReadAddress( 0x3001, 0x3001, input_port_2_r ),
+		new Memory_ReadAddress( 0x3002, 0x3002, input_port_3_r ),
+		new Memory_ReadAddress( 0x3007, 0x3007, watchdog_reset_r ),	/* ? */
+		new Memory_ReadAddress( 0x4000, 0xffff, MRA_ROM ),
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( writemem )
 		{ 0x0000, 0x0fff, MWA_RAM },
@@ -54,12 +56,14 @@ public class citycon
 		{ 0x4000, 0xffff, MWA_ROM },
 	MEMORY_END
 	
-	static MEMORY_READ_START( readmem_sound )
-		{ 0x0000, 0x0fff, MRA_RAM },
-	//	{ 0x4002, 0x4002, AY8910_read_port_0_r },	/* ?? */
-		{ 0x6001, 0x6001, YM2203_read_port_0_r },
-		{ 0x8000, 0xffff, MRA_ROM },
-	MEMORY_END
+	public static Memory_ReadAddress readmem_sound[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x0fff, MRA_RAM ),
+	//	new Memory_ReadAddress( 0x4002, 0x4002, AY8910_read_port_0_r ),	/* ?? */
+		new Memory_ReadAddress( 0x6001, 0x6001, YM2203_read_port_0_r ),
+		new Memory_ReadAddress( 0x8000, 0xffff, MRA_ROM ),
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( writemem_sound )
 		{ 0x0000, 0x0fff, MWA_RAM },

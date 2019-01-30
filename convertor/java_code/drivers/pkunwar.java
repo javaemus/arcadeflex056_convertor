@@ -23,14 +23,16 @@ public class pkunwar
 	
 	
 	
-	static MEMORY_READ_START( readmem )
-		{ 0x0000, 0x7fff, MRA_ROM },
-		{ 0x8000, 0x8fff, MRA_RAM },
-		{ 0xa001, 0xa001, AY8910_read_port_0_r },
-		{ 0xa003, 0xa003, AY8910_read_port_1_r },
-		{ 0xc000, 0xc7ff, MRA_RAM },
-		{ 0xe000, 0xffff, MRA_ROM },
-	MEMORY_END
+	public static Memory_ReadAddress readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x7fff, MRA_ROM ),
+		new Memory_ReadAddress( 0x8000, 0x8fff, MRA_RAM ),
+		new Memory_ReadAddress( 0xa001, 0xa001, AY8910_read_port_0_r ),
+		new Memory_ReadAddress( 0xa003, 0xa003, AY8910_read_port_1_r ),
+		new Memory_ReadAddress( 0xc000, 0xc7ff, MRA_RAM ),
+		new Memory_ReadAddress( 0xe000, 0xffff, MRA_ROM ),
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( writemem )
 		{ 0x0000, 0x7fff, MWA_ROM },

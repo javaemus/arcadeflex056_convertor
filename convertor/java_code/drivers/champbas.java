@@ -60,16 +60,18 @@ public class champbas
 	}
 	
 	
-	static MEMORY_READ_START( readmem )
-		{ 0x0000, 0x5fff, MRA_ROM },
-		{ 0x7800, 0x7fff, MRA_ROM },
-		{ 0x8000, 0x8fff, MRA_RAM },
-		{ 0xa000, 0xa000, input_port_0_r },
-		{ 0xa040, 0xa040, input_port_1_r },
-		{ 0xa080, 0xa080, input_port_2_r },
-	/*	{ 0xa0a0, 0xa0a0,  },	???? */
-		{ 0xa0c0, 0xa0c0, input_port_3_r },
-	MEMORY_END
+	public static Memory_ReadAddress readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x5fff, MRA_ROM ),
+		new Memory_ReadAddress( 0x7800, 0x7fff, MRA_ROM ),
+		new Memory_ReadAddress( 0x8000, 0x8fff, MRA_RAM ),
+		new Memory_ReadAddress( 0xa000, 0xa000, input_port_0_r ),
+		new Memory_ReadAddress( 0xa040, 0xa040, input_port_1_r ),
+		new Memory_ReadAddress( 0xa080, 0xa080, input_port_2_r ),
+	/*	new Memory_ReadAddress( 0xa0a0, 0xa0a0,  ),	???? */
+		new Memory_ReadAddress( 0xa0c0, 0xa0c0, input_port_3_r ),
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( writemem )
 		{ 0x0000, 0x5fff, MWA_ROM },
@@ -87,11 +89,13 @@ public class champbas
 		{ 0xa0c0, 0xa0c0, watchdog_reset_w },
 	MEMORY_END
 	
-	static MEMORY_READ_START( readmem2 )
-		{ 0x0000, 0x5fff, MRA_ROM },
-		{ 0x6000, 0x6000, soundlatch_r },
-		{ 0xe000, 0xe3ff, MRA_RAM },
-	MEMORY_END
+	public static Memory_ReadAddress readmem2[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x5fff, MRA_ROM ),
+		new Memory_ReadAddress( 0x6000, 0x6000, soundlatch_r ),
+		new Memory_ReadAddress( 0xe000, 0xe3ff, MRA_RAM ),
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( writemem2 )
 		{ 0x0000, 0x5fff, MWA_ROM },

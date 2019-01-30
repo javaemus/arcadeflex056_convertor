@@ -143,22 +143,24 @@ public class ccastles
 	}
 	
 	
-	static MEMORY_READ_START( readmem )
-		{ 0x0002, 0x0002, ccastles_bitmode_r },
-		{ 0x0000, 0x8fff, MRA_RAM },
-		{ 0x9000, 0x90ff, MRA_RAM },
-		{ 0x9400, 0x9400, input_port_2_r },	/* trackball y - player 1 */
-		{ 0x9402, 0x9402, input_port_2_r },	/* trackball y - player 2 */
-		{ 0x9500, 0x9500, input_port_2_r },	/* trackball y - player 1 mirror */
-		{ 0x9401, 0x9401, input_port_3_r },	/* trackball x - player 1 */
-		{ 0x9403, 0x9403, input_port_3_r },	/* trackball x - player 2 */
-		{ 0x9501, 0x9501, input_port_3_r },	/* trackball x - player 1 mirror */
-		{ 0x9600, 0x9600, input_port_0_r },	/* IN0 */
-		{ 0x9800, 0x980f, pokey1_r }, /* Random # generator on a Pokey */
-		{ 0x9a00, 0x9a0f, pokey2_r }, /* Random #, IN1 */
-		{ 0xa000, 0xdfff, MRA_BANK1 },
-		{ 0xe000, 0xffff, MRA_ROM },	/* ROMs/interrupt vectors */
-	MEMORY_END
+	public static Memory_ReadAddress readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0002, 0x0002, ccastles_bitmode_r ),
+		new Memory_ReadAddress( 0x0000, 0x8fff, MRA_RAM ),
+		new Memory_ReadAddress( 0x9000, 0x90ff, MRA_RAM ),
+		new Memory_ReadAddress( 0x9400, 0x9400, input_port_2_r ),	/* trackball y - player 1 */
+		new Memory_ReadAddress( 0x9402, 0x9402, input_port_2_r ),	/* trackball y - player 2 */
+		new Memory_ReadAddress( 0x9500, 0x9500, input_port_2_r ),	/* trackball y - player 1 mirror */
+		new Memory_ReadAddress( 0x9401, 0x9401, input_port_3_r ),	/* trackball x - player 1 */
+		new Memory_ReadAddress( 0x9403, 0x9403, input_port_3_r ),	/* trackball x - player 2 */
+		new Memory_ReadAddress( 0x9501, 0x9501, input_port_3_r ),	/* trackball x - player 1 mirror */
+		new Memory_ReadAddress( 0x9600, 0x9600, input_port_0_r ),	/* IN0 */
+		new Memory_ReadAddress( 0x9800, 0x980f, pokey1_r ), /* Random # generator on a Pokey */
+		new Memory_ReadAddress( 0x9a00, 0x9a0f, pokey2_r ), /* Random #, IN1 */
+		new Memory_ReadAddress( 0xa000, 0xdfff, MRA_BANK1 ),
+		new Memory_ReadAddress( 0xe000, 0xffff, MRA_ROM ),	/* ROMs/interrupt vectors */
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( writemem )
 		{ 0x0000, 0x0001, MWA_RAM, &ccastles_screen_addr },

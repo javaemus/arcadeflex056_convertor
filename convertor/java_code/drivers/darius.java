@@ -495,16 +495,18 @@ public class darius
 			Sound memory structures / ADPCM
 	*****************************************************/
 	
-	static MEMORY_READ_START( darius_sound_readmem )
-		{ 0x0000, 0x7fff, MRA_BANK1 },
-		{ 0x8000, 0x8fff, MRA_RAM },
-		{ 0x9000, 0x9000, YM2203_status_port_0_r },
-		{ 0x9001, 0x9001, YM2203_read_port_0_r },
-		{ 0xa000, 0xa000, YM2203_status_port_1_r },
-		{ 0xa001, 0xa001, YM2203_read_port_1_r },
-		{ 0xb000, 0xb000, MRA_NOP },
-		{ 0xb001, 0xb001, taitosound_slave_comm_r },
-	MEMORY_END
+	public static Memory_ReadAddress darius_sound_readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x7fff, MRA_BANK1 ),
+		new Memory_ReadAddress( 0x8000, 0x8fff, MRA_RAM ),
+		new Memory_ReadAddress( 0x9000, 0x9000, YM2203_status_port_0_r ),
+		new Memory_ReadAddress( 0x9001, 0x9001, YM2203_read_port_0_r ),
+		new Memory_ReadAddress( 0xa000, 0xa000, YM2203_status_port_1_r ),
+		new Memory_ReadAddress( 0xa001, 0xa001, YM2203_read_port_1_r ),
+		new Memory_ReadAddress( 0xb000, 0xb000, MRA_NOP ),
+		new Memory_ReadAddress( 0xb001, 0xb001, taitosound_slave_comm_r ),
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( darius_sound_writemem )
 		{ 0x0000, 0x7fff, MWA_ROM },
@@ -525,10 +527,12 @@ public class darius
 		{ 0xdc00, 0xdc00, sound_bankswitch_w },
 	MEMORY_END
 	
-	static MEMORY_READ_START( darius_sound2_readmem )
-		{ 0x0000, 0xffff, MRA_ROM },
+	public static Memory_ReadAddress darius_sound2_readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0xffff, MRA_ROM ),
 		/* yes, no RAM */
-	MEMORY_END
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( darius_sound2_writemem )
 		{ 0x0000, 0xffff, MWA_NOP },	/* writes rom whenever interrupt occurs - as no stack */

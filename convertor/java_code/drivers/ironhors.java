@@ -53,18 +53,20 @@ public class ironhors
 	
 	
 	
-	static MEMORY_READ_START( ironhors_readmem )
-		{ 0x0020, 0x003f, MRA_RAM },
-		{ 0x0900, 0x0900, input_port_5_r },	/* Dipswitch settings 2 */
-		{ 0x0a00, 0x0a00, input_port_3_r },	/* Dipswitch settings 0 */
-		{ 0x0b00, 0x0b00, input_port_4_r },	/* Dipswitch settings 1 */
-		{ 0x0b01, 0x0b01, input_port_2_r },	/* player 2 controls */
-		{ 0x0b02, 0x0b02, input_port_1_r },	/* player 1 controls */
-		{ 0x0b03, 0x0b03, input_port_0_r },	/* coins + selftest */
-		{ 0x2000, 0x2fff, MRA_RAM },
-		{ 0x3000, 0x3fff, MRA_RAM },
-		{ 0x4000, 0xffff, MRA_ROM },
-	MEMORY_END
+	public static Memory_ReadAddress ironhors_readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0020, 0x003f, MRA_RAM ),
+		new Memory_ReadAddress( 0x0900, 0x0900, input_port_5_r ),	/* Dipswitch settings 2 */
+		new Memory_ReadAddress( 0x0a00, 0x0a00, input_port_3_r ),	/* Dipswitch settings 0 */
+		new Memory_ReadAddress( 0x0b00, 0x0b00, input_port_4_r ),	/* Dipswitch settings 1 */
+		new Memory_ReadAddress( 0x0b01, 0x0b01, input_port_2_r ),	/* player 2 controls */
+		new Memory_ReadAddress( 0x0b02, 0x0b02, input_port_1_r ),	/* player 1 controls */
+		new Memory_ReadAddress( 0x0b03, 0x0b03, input_port_0_r ),	/* coins + selftest */
+		new Memory_ReadAddress( 0x2000, 0x2fff, MRA_RAM ),
+		new Memory_ReadAddress( 0x3000, 0x3fff, MRA_RAM ),
+		new Memory_ReadAddress( 0x4000, 0xffff, MRA_ROM ),
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( ironhors_writemem )
 		{ 0x0003, 0x0003, ironhors_charbank_w },
@@ -84,11 +86,13 @@ public class ironhors
 		{ 0x4000, 0xffff, MWA_ROM },
 	MEMORY_END
 	
-	static MEMORY_READ_START( ironhors_sound_readmem )
-		{ 0x0000, 0x3fff, MRA_ROM },
-		{ 0x4000, 0x43ff, MRA_RAM },
-		{ 0x8000, 0x8000, soundlatch_r },
-	MEMORY_END
+	public static Memory_ReadAddress ironhors_sound_readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x3fff, MRA_ROM ),
+		new Memory_ReadAddress( 0x4000, 0x43ff, MRA_RAM ),
+		new Memory_ReadAddress( 0x8000, 0x8000, soundlatch_r ),
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( ironhors_sound_writemem )
 		{ 0x0000, 0x3fff, MWA_ROM },
@@ -105,11 +109,13 @@ public class ironhors
 	PORT_END
 	
 	
-	static MEMORY_READ_START( farwest_sound_readmem )
-		{ 0x0000, 0x3fff, MRA_ROM },
-		{ 0x4000, 0x43ff, MRA_RAM },
-		{ 0x8000, 0x8000, soundlatch_r },
-	MEMORY_END
+	public static Memory_ReadAddress farwest_sound_readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x3fff, MRA_ROM ),
+		new Memory_ReadAddress( 0x4000, 0x43ff, MRA_RAM ),
+		new Memory_ReadAddress( 0x8000, 0x8000, soundlatch_r ),
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( farwest_sound_writemem )
 		{ 0x0000, 0x3fff, MWA_ROM },

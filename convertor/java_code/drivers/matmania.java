@@ -81,16 +81,18 @@ public class matmania
 	
 	
 	
-	static MEMORY_READ_START( matmania_readmem )
-		{ 0x0000, 0x077f, MRA_RAM },
-		{ 0x1000, 0x17ff, MRA_RAM },
-		{ 0x2000, 0x27ff, MRA_RAM },
-		{ 0x3000, 0x3000, input_port_0_r },
-		{ 0x3010, 0x3010, input_port_1_r },
-		{ 0x3020, 0x3020, input_port_2_r },
-		{ 0x3030, 0x3030, input_port_3_r },
-		{ 0x4000, 0xffff, MRA_ROM },
-	MEMORY_END
+	public static Memory_ReadAddress matmania_readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x077f, MRA_RAM ),
+		new Memory_ReadAddress( 0x1000, 0x17ff, MRA_RAM ),
+		new Memory_ReadAddress( 0x2000, 0x27ff, MRA_RAM ),
+		new Memory_ReadAddress( 0x3000, 0x3000, input_port_0_r ),
+		new Memory_ReadAddress( 0x3010, 0x3010, input_port_1_r ),
+		new Memory_ReadAddress( 0x3020, 0x3020, input_port_2_r ),
+		new Memory_ReadAddress( 0x3030, 0x3030, input_port_3_r ),
+		new Memory_ReadAddress( 0x4000, 0xffff, MRA_ROM ),
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( matmania_writemem )
 		{ 0x0000, 0x077f, MWA_RAM },
@@ -109,18 +111,20 @@ public class matmania
 		{ 0x4000, 0xffff, MWA_ROM },
 	MEMORY_END
 	
-	static MEMORY_READ_START( maniach_readmem )
-		{ 0x0000, 0x077f, MRA_RAM },
-		{ 0x1000, 0x17ff, MRA_RAM },
-		{ 0x2000, 0x27ff, MRA_RAM },
-		{ 0x3000, 0x3000, input_port_0_r },
-		{ 0x3010, 0x3010, input_port_1_r },
-		{ 0x3020, 0x3020, input_port_2_r },
-		{ 0x3030, 0x3030, input_port_3_r },
-		{ 0x3040, 0x3040, maniach_mcu_r },
-		{ 0x3041, 0x3041, maniach_mcu_status_r },
-		{ 0x4000, 0xffff, MRA_ROM },
-	MEMORY_END
+	public static Memory_ReadAddress maniach_readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x077f, MRA_RAM ),
+		new Memory_ReadAddress( 0x1000, 0x17ff, MRA_RAM ),
+		new Memory_ReadAddress( 0x2000, 0x27ff, MRA_RAM ),
+		new Memory_ReadAddress( 0x3000, 0x3000, input_port_0_r ),
+		new Memory_ReadAddress( 0x3010, 0x3010, input_port_1_r ),
+		new Memory_ReadAddress( 0x3020, 0x3020, input_port_2_r ),
+		new Memory_ReadAddress( 0x3030, 0x3030, input_port_3_r ),
+		new Memory_ReadAddress( 0x3040, 0x3040, maniach_mcu_r ),
+		new Memory_ReadAddress( 0x3041, 0x3041, maniach_mcu_status_r ),
+		new Memory_ReadAddress( 0x4000, 0xffff, MRA_ROM ),
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( maniach_writemem )
 		{ 0x0000, 0x077f, MWA_RAM },
@@ -140,11 +144,13 @@ public class matmania
 		{ 0x4000, 0xffff, MWA_ROM },
 	MEMORY_END
 	
-	static MEMORY_READ_START( sound_readmem )
-		{ 0x0000, 0x01ff, MRA_RAM },
-		{ 0x2007, 0x2007, soundlatch_r },
-		{ 0x8000, 0xffff, MRA_ROM },
-	MEMORY_END
+	public static Memory_ReadAddress sound_readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x01ff, MRA_RAM ),
+		new Memory_ReadAddress( 0x2007, 0x2007, soundlatch_r ),
+		new Memory_ReadAddress( 0x8000, 0xffff, MRA_ROM ),
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( sound_writemem )
 		{ 0x0000, 0x01ff, MWA_RAM },
@@ -156,11 +162,13 @@ public class matmania
 		{ 0x8000, 0xffff, MWA_ROM },
 	MEMORY_END
 	
-	static MEMORY_READ_START( maniach_sound_readmem )
-		{ 0x0000, 0x0fff, MRA_RAM },
-		{ 0x2004, 0x2004, soundlatch_r },
-		{ 0x4000, 0xffff, MRA_ROM },
-	MEMORY_END
+	public static Memory_ReadAddress maniach_sound_readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x0fff, MRA_RAM ),
+		new Memory_ReadAddress( 0x2004, 0x2004, soundlatch_r ),
+		new Memory_ReadAddress( 0x4000, 0xffff, MRA_ROM ),
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( maniach_sound_writemem )
 		{ 0x0000, 0x0fff, MWA_RAM },
@@ -170,13 +178,15 @@ public class matmania
 		{ 0x4000, 0xffff, MWA_ROM },
 	MEMORY_END
 	
-	static MEMORY_READ_START( mcu_readmem )
-		{ 0x0000, 0x0000, maniach_68705_portA_r },
-		{ 0x0001, 0x0001, maniach_68705_portB_r },
-		{ 0x0002, 0x0002, maniach_68705_portC_r },
-		{ 0x0010, 0x007f, MRA_RAM },
-		{ 0x0080, 0x07ff, MRA_ROM },
-	MEMORY_END
+	public static Memory_ReadAddress mcu_readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x0000, maniach_68705_portA_r ),
+		new Memory_ReadAddress( 0x0001, 0x0001, maniach_68705_portB_r ),
+		new Memory_ReadAddress( 0x0002, 0x0002, maniach_68705_portC_r ),
+		new Memory_ReadAddress( 0x0010, 0x007f, MRA_RAM ),
+		new Memory_ReadAddress( 0x0080, 0x07ff, MRA_ROM ),
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( mcu_writemem )
 		{ 0x0000, 0x0000, maniach_68705_portA_w },

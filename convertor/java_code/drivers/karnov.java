@@ -321,11 +321,13 @@ public class karnov
 	
 	/******************************************************************************/
 	
-	static MEMORY_READ_START( karnov_s_readmem )
-		{ 0x0000, 0x05ff, MRA_RAM},
-		{ 0x0800, 0x0800, soundlatch_r },
-		{ 0x8000, 0xffff, MRA_ROM },
-	MEMORY_END
+	public static Memory_ReadAddress karnov_s_readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x05ff, MRA_RAM),
+		new Memory_ReadAddress( 0x0800, 0x0800, soundlatch_r ),
+		new Memory_ReadAddress( 0x8000, 0xffff, MRA_ROM ),
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( karnov_s_writemem )
 	 	{ 0x0000, 0x05ff, MWA_RAM},

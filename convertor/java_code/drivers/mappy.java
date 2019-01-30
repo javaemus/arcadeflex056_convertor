@@ -101,38 +101,46 @@ public class mappy
 	
 	
 	/* CPU 1 read addresses */
-	static MEMORY_READ_START( mappy_readmem_cpu1 )
-		{ 0x4040, 0x43ff, MRA_RAM },			/* shared RAM with the sound CPU */
-		{ 0x4800, 0x480f, mappy_customio_1_r },	/* custom I/O chip #1 interface */
-		{ 0x4810, 0x481f, mappy_customio_2_r },	/* custom I/O chip #2 interface */
-		{ 0x0000, 0x9fff, MRA_RAM },			/* RAM everywhere else */
-		{ 0xa000, 0xffff, MRA_ROM },			/* ROM code */
-	MEMORY_END
+	public static Memory_ReadAddress mappy_readmem_cpu1[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x4040, 0x43ff, MRA_RAM ),			/* shared RAM with the sound CPU */
+		new Memory_ReadAddress( 0x4800, 0x480f, mappy_customio_1_r ),	/* custom I/O chip #1 interface */
+		new Memory_ReadAddress( 0x4810, 0x481f, mappy_customio_2_r ),	/* custom I/O chip #2 interface */
+		new Memory_ReadAddress( 0x0000, 0x9fff, MRA_RAM ),			/* RAM everywhere else */
+		new Memory_ReadAddress( 0xa000, 0xffff, MRA_ROM ),			/* ROM code */
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
-	static MEMORY_READ_START( digdug2_readmem_cpu1 )
-		{ 0x4040, 0x43ff, MRA_RAM },				/* shared RAM with the sound CPU */
-		{ 0x4800, 0x480f, digdug2_customio_1_r },	/* custom I/O chip #1 interface */
-		{ 0x4810, 0x481f, digdug2_customio_2_r },	/* custom I/O chip #2 interface */
-		{ 0x4820, 0x4bff, MRA_RAM },				/* extra RAM for Dig Dug 2 */
-		{ 0x0000, 0x7fff, MRA_RAM },				/* RAM everywhere else */
-		{ 0x8000, 0xffff, MRA_ROM },				/* ROM code */
-	MEMORY_END
+	public static Memory_ReadAddress digdug2_readmem_cpu1[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x4040, 0x43ff, MRA_RAM ),				/* shared RAM with the sound CPU */
+		new Memory_ReadAddress( 0x4800, 0x480f, digdug2_customio_1_r ),	/* custom I/O chip #1 interface */
+		new Memory_ReadAddress( 0x4810, 0x481f, digdug2_customio_2_r ),	/* custom I/O chip #2 interface */
+		new Memory_ReadAddress( 0x4820, 0x4bff, MRA_RAM ),				/* extra RAM for Dig Dug 2 */
+		new Memory_ReadAddress( 0x0000, 0x7fff, MRA_RAM ),				/* RAM everywhere else */
+		new Memory_ReadAddress( 0x8000, 0xffff, MRA_ROM ),				/* ROM code */
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
-	static MEMORY_READ_START( motos_readmem_cpu1 )
-		{ 0x4040, 0x43ff, MRA_RAM },			/* shared RAM with the sound CPU */
-		{ 0x4800, 0x480f, motos_customio_1_r },	/* custom I/O chip #1 interface */
-		{ 0x4810, 0x481f, motos_customio_2_r },	/* custom I/O chip #2 interface */
-		{ 0x0000, 0x7fff, MRA_RAM },			/* RAM everywhere else */
-		{ 0x8000, 0xffff, MRA_ROM },			/* ROM code */
-	MEMORY_END
+	public static Memory_ReadAddress motos_readmem_cpu1[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x4040, 0x43ff, MRA_RAM ),			/* shared RAM with the sound CPU */
+		new Memory_ReadAddress( 0x4800, 0x480f, motos_customio_1_r ),	/* custom I/O chip #1 interface */
+		new Memory_ReadAddress( 0x4810, 0x481f, motos_customio_2_r ),	/* custom I/O chip #2 interface */
+		new Memory_ReadAddress( 0x0000, 0x7fff, MRA_RAM ),			/* RAM everywhere else */
+		new Memory_ReadAddress( 0x8000, 0xffff, MRA_ROM ),			/* ROM code */
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
-	static MEMORY_READ_START( todruaga_readmem_cpu1 )
-		{ 0x4040, 0x43ff, MRA_RAM },				/* shared RAM with the sound CPU */
-		{ 0x4800, 0x480f, todruaga_customio_1_r },	/* custom I/O chip #1 interface */
-		{ 0x4810, 0x481f, todruaga_customio_2_r },	/* custom I/O chip #2 interface */
-		{ 0x0000, 0x7fff, MRA_RAM },				/* RAM everywhere else */
-		{ 0x8000, 0xffff, MRA_ROM },				/* ROM code */
-	MEMORY_END
+	public static Memory_ReadAddress todruaga_readmem_cpu1[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x4040, 0x43ff, MRA_RAM ),				/* shared RAM with the sound CPU */
+		new Memory_ReadAddress( 0x4800, 0x480f, todruaga_customio_1_r ),	/* custom I/O chip #1 interface */
+		new Memory_ReadAddress( 0x4810, 0x481f, todruaga_customio_2_r ),	/* custom I/O chip #2 interface */
+		new Memory_ReadAddress( 0x0000, 0x7fff, MRA_RAM ),				/* RAM everywhere else */
+		new Memory_ReadAddress( 0x8000, 0xffff, MRA_ROM ),				/* ROM code */
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	
 	/* CPU 1 write addresses */
@@ -162,29 +170,37 @@ public class mappy
 	
 	
 	/* CPU 2 read addresses */
-	static MEMORY_READ_START( mappy_readmem_cpu2 )
-		{ 0xe000, 0xffff, MRA_ROM },                                 /* ROM code */
-		{ 0x0040, 0x03ff, mappy_sharedram_r },                      /* shared RAM with the main CPU */
+	public static Memory_ReadAddress mappy_readmem_cpu2[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0xe000, 0xffff, MRA_ROM ),                                 /* ROM code */
+		new Memory_ReadAddress( 0x0040, 0x03ff, mappy_sharedram_r ),                      /* shared RAM with the main CPU */
 	
-	MEMORY_END
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
-	static MEMORY_READ_START( digdug2_readmem_cpu2 )
-		{ 0xe000, 0xffff, MRA_ROM },                                 /* ROM code */
-		{ 0x0040, 0x03ff, mappy_sharedram_r },                    /* shared RAM with the main CPU */
+	public static Memory_ReadAddress digdug2_readmem_cpu2[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0xe000, 0xffff, MRA_ROM ),                                 /* ROM code */
+		new Memory_ReadAddress( 0x0040, 0x03ff, mappy_sharedram_r ),                    /* shared RAM with the main CPU */
 	
-	MEMORY_END
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
-	static MEMORY_READ_START( motos_readmem_cpu2 )
-		{ 0xe000, 0xffff, MRA_ROM },                                 /* ROM code */
-		{ 0x0040, 0x03ff, mappy_sharedram_r },						 /* shared RAM with the main CPU */
+	public static Memory_ReadAddress motos_readmem_cpu2[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0xe000, 0xffff, MRA_ROM ),                                 /* ROM code */
+		new Memory_ReadAddress( 0x0040, 0x03ff, mappy_sharedram_r ),						 /* shared RAM with the main CPU */
 	
-	MEMORY_END
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
-	static MEMORY_READ_START( todruaga_readmem_cpu2 )
-		{ 0xe000, 0xffff, MRA_ROM },                                 /* ROM code */
-		{ 0x0040, 0x03ff, mappy_sharedram_r },						 /* shared RAM with the main CPU */
+	public static Memory_ReadAddress todruaga_readmem_cpu2[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0xe000, 0xffff, MRA_ROM ),                                 /* ROM code */
+		new Memory_ReadAddress( 0x0040, 0x03ff, mappy_sharedram_r ),						 /* shared RAM with the main CPU */
 	
-	MEMORY_END
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	
 	/* CPU 2 write addresses */

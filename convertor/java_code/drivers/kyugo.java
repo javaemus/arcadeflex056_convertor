@@ -62,16 +62,18 @@ public class kyugo
 	/* time to abuse the preprocessor for the memory/port maps */
 	
 	#define Main_MemMap( name, shared, watchdog )										\
-		static MEMORY_READ_START( name##_readmem )										\
-			{ 0x0000, 0x7fff, MRA_ROM },												\
-			{ 0x8000, 0x87ff, videoram_r }, /* background tiles */						\
-			{ 0x8800, 0x8fff, colorram_r }, /* background color */						\
-			{ 0x9000, 0x97ff, MRA_RAM }, /* foreground tiles */							\
-			{ 0x9800, 0x9fff, special_spriteram_r },	/* 4 bits wide */				\
-			{ 0xa000, 0xa7ff, MRA_RAM }, /* sprites */									\
-			{ shared, shared+0x7ff, shared_ram_r }, /* shared RAM */					\
-			{ 0xf800, 0xffff, shared_ram_r }, /* shared mirror always here */			\
-		MEMORY_END																		\
+		public static Memory_ReadAddress name##_readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),									\
+			new Memory_ReadAddress( 0x0000, 0x7fff, MRA_ROM ),												\
+			new Memory_ReadAddress( 0x8000, 0x87ff, videoram_r ), /* background tiles */						\
+			new Memory_ReadAddress( 0x8800, 0x8fff, colorram_r ), /* background color */						\
+			new Memory_ReadAddress( 0x9000, 0x97ff, MRA_RAM ), /* foreground tiles */							\
+			new Memory_ReadAddress( 0x9800, 0x9fff, special_spriteram_r ),	/* 4 bits wide */				\
+			new Memory_ReadAddress( 0xa000, 0xa7ff, MRA_RAM ), /* sprites */									\
+			new Memory_ReadAddress( shared, shared+0x7ff, shared_ram_r ), /* shared RAM */					\
+			new Memory_ReadAddress( 0xf800, 0xffff, shared_ram_r ), /* shared mirror always here */			\
+			new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};																	\
 																						\
 		static MEMORY_WRITE_START( name##_writemem )									\
 			{ 0x0000, 0x7fff, MWA_ROM },												\
@@ -89,14 +91,16 @@ public class kyugo
 		MEMORY_END
 	
 	#define Sub_MemMap( name, rom_end, shared, extra_ram, in0, in1, in2 )	\
-		static MEMORY_READ_START( name##_sub_readmem )						\
-			{ 0x0000, rom_end, MRA_ROM },									\
-			{ shared, shared+0x7ff, shared_ram_r }, /* shared RAM */		\
-			{ extra_ram, extra_ram+0x7ff, MRA_RAM }, /* extra RAM */		\
-			{ in0, in0, input_port_2_r }, /* input port */					\
-			{ in1, in1, input_port_3_r }, /* input port */					\
-			{ in2, in2, input_port_4_r }, /* input port */					\
-		MEMORY_END															\
+		public static Memory_ReadAddress name##_sub_readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),					\
+			new Memory_ReadAddress( 0x0000, rom_end, MRA_ROM ),									\
+			new Memory_ReadAddress( shared, shared+0x7ff, shared_ram_r ), /* shared RAM */		\
+			new Memory_ReadAddress( extra_ram, extra_ram+0x7ff, MRA_RAM ), /* extra RAM */		\
+			new Memory_ReadAddress( in0, in0, input_port_2_r ), /* input port */					\
+			new Memory_ReadAddress( in1, in1, input_port_3_r ), /* input port */					\
+			new Memory_ReadAddress( in2, in2, input_port_4_r ), /* input port */					\
+			new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};														\
 																			\
 		static MEMORY_WRITE_START( name##_sub_writemem )					\
 			{ 0x0000, rom_end, MWA_ROM },									\

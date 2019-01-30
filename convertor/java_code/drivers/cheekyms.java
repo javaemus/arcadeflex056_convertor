@@ -25,11 +25,13 @@ public class cheekyms
 	WRITE_HANDLER( cheekyms_port_80_w );
 	
 	
-	static MEMORY_READ_START( readmem )
-		{ 0x0000, 0x1fff, MRA_ROM},
-		{ 0x3000, 0x33ff, MRA_RAM},
-		{ 0x3800, 0x3bff, MRA_RAM},	/* screen RAM */
-	MEMORY_END
+	public static Memory_ReadAddress readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x1fff, MRA_ROM),
+		new Memory_ReadAddress( 0x3000, 0x33ff, MRA_RAM),
+		new Memory_ReadAddress( 0x3800, 0x3bff, MRA_RAM),	/* screen RAM */
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	
 	static MEMORY_WRITE_START( writemem )

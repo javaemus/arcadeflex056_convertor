@@ -222,20 +222,22 @@ public class combatsc
 	
 	/****************************************************************************/
 	
-	static MEMORY_READ_START( combasc_readmem )
-		{ 0x0020, 0x005f, combasc_scrollram_r },
-		{ 0x0200, 0x0201, protection_r },
-		{ 0x0400, 0x0400, input_port_0_r },
-		{ 0x0401, 0x0401, input_port_1_r },			/* DSW #3 */
-		{ 0x0402, 0x0402, input_port_2_r },			/* DSW #1 */
-		{ 0x0403, 0x0403, input_port_3_r },			/* DSW #2 */
-		{ 0x0404, 0x0407, trackball_r },			/* 1P & 2P controls / trackball */
-		{ 0x0600, 0x06ff, MRA_RAM },				/* palette */
-		{ 0x0800, 0x1fff, MRA_RAM },
-		{ 0x2000, 0x3fff, combasc_video_r },
-		{ 0x4000, 0x7fff, MRA_BANK1 },				/* banked ROM area */
-		{ 0x8000, 0xffff, MRA_ROM },				/* ROM */
-	MEMORY_END
+	public static Memory_ReadAddress combasc_readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0020, 0x005f, combasc_scrollram_r ),
+		new Memory_ReadAddress( 0x0200, 0x0201, protection_r ),
+		new Memory_ReadAddress( 0x0400, 0x0400, input_port_0_r ),
+		new Memory_ReadAddress( 0x0401, 0x0401, input_port_1_r ),			/* DSW #3 */
+		new Memory_ReadAddress( 0x0402, 0x0402, input_port_2_r ),			/* DSW #1 */
+		new Memory_ReadAddress( 0x0403, 0x0403, input_port_3_r ),			/* DSW #2 */
+		new Memory_ReadAddress( 0x0404, 0x0407, trackball_r ),			/* 1P & 2P controls / trackball */
+		new Memory_ReadAddress( 0x0600, 0x06ff, MRA_RAM ),				/* palette */
+		new Memory_ReadAddress( 0x0800, 0x1fff, MRA_RAM ),
+		new Memory_ReadAddress( 0x2000, 0x3fff, combasc_video_r ),
+		new Memory_ReadAddress( 0x4000, 0x7fff, MRA_BANK1 ),				/* banked ROM area */
+		new Memory_ReadAddress( 0x8000, 0xffff, MRA_ROM ),				/* ROM */
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( combasc_writemem )
 		{ 0x0000, 0x0007, combasc_pf_control_w },
@@ -256,14 +258,16 @@ public class combatsc
 		{ 0x8000, 0xffff, MWA_ROM },					/* ROM */
 	MEMORY_END
 	
-	static MEMORY_READ_START( combascb_readmem )
-		{ 0x0000, 0x04ff, MRA_RAM },
-		{ 0x0600, 0x06ff, MRA_RAM },	/* palette */
-		{ 0x0800, 0x1fff, MRA_RAM },
-		{ 0x2000, 0x3fff, combasc_video_r },
-		{ 0x4000, 0x7fff, MRA_BANK1 },				/* banked ROM/RAM area */
-		{ 0x8000, 0xffff, MRA_ROM },				/* ROM */
-	MEMORY_END
+	public static Memory_ReadAddress combascb_readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x04ff, MRA_RAM ),
+		new Memory_ReadAddress( 0x0600, 0x06ff, MRA_RAM ),	/* palette */
+		new Memory_ReadAddress( 0x0800, 0x1fff, MRA_RAM ),
+		new Memory_ReadAddress( 0x2000, 0x3fff, combasc_video_r ),
+		new Memory_ReadAddress( 0x4000, 0x7fff, MRA_BANK1 ),				/* banked ROM/RAM area */
+		new Memory_ReadAddress( 0x8000, 0xffff, MRA_ROM ),				/* ROM */
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( combascb_writemem )
 		{ 0x0000, 0x04ff, MWA_RAM },
@@ -276,16 +280,18 @@ public class combatsc
 	MEMORY_END
 	
 	#if 0
-	static MEMORY_READ_START( readmem_sound )
-		{ 0x0000, 0x7fff, MRA_ROM },					/* ROM */
-		{ 0x8000, 0x87ef, MRA_RAM },					/* RAM */
-		{ 0x87f0, 0x87ff, MRA_RAM },					/* ??? */
-		{ 0x9000, 0x9000, YM2203_status_port_0_r },		/* YM 2203 */
-		{ 0x9008, 0x9008, YM2203_status_port_0_r },		/* ??? */
-		{ 0xa000, 0xa000, soundlatch_r },				/* soundlatch_r? */
-		{ 0x8800, 0xfffb, MRA_ROM },					/* ROM? */
-		{ 0xfffc, 0xffff, MRA_RAM },					/* ??? */
-	MEMORY_END
+	public static Memory_ReadAddress readmem_sound[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x7fff, MRA_ROM ),					/* ROM */
+		new Memory_ReadAddress( 0x8000, 0x87ef, MRA_RAM ),					/* RAM */
+		new Memory_ReadAddress( 0x87f0, 0x87ff, MRA_RAM ),					/* ??? */
+		new Memory_ReadAddress( 0x9000, 0x9000, YM2203_status_port_0_r ),		/* YM 2203 */
+		new Memory_ReadAddress( 0x9008, 0x9008, YM2203_status_port_0_r ),		/* ??? */
+		new Memory_ReadAddress( 0xa000, 0xa000, soundlatch_r ),				/* soundlatch_r? */
+		new Memory_ReadAddress( 0x8800, 0xfffb, MRA_ROM ),					/* ROM? */
+		new Memory_ReadAddress( 0xfffc, 0xffff, MRA_RAM ),					/* ??? */
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( writemem_sound )
 		{ 0x0000, 0x7fff, MWA_ROM },				/* ROM */
@@ -300,13 +306,15 @@ public class combatsc
 	MEMORY_END
 	#endif
 	
-	static MEMORY_READ_START( combasc_readmem_sound )
-		{ 0x0000, 0x7fff, MRA_ROM },					/* ROM */
-		{ 0x8000, 0x87ff, MRA_RAM },					/* RAM */
-		{ 0xb000, 0xb000, UPD7759_0_busy_r },			/* UPD7759 busy? */
-		{ 0xd000, 0xd000, soundlatch_r },				/* soundlatch_r? */
-	    { 0xe000, 0xe000, YM2203_status_port_0_r },		/* YM 2203 */
-	MEMORY_END
+	public static Memory_ReadAddress combasc_readmem_sound[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x7fff, MRA_ROM ),					/* ROM */
+		new Memory_ReadAddress( 0x8000, 0x87ff, MRA_RAM ),					/* RAM */
+		new Memory_ReadAddress( 0xb000, 0xb000, UPD7759_0_busy_r ),			/* UPD7759 busy? */
+		new Memory_ReadAddress( 0xd000, 0xd000, soundlatch_r ),				/* soundlatch_r? */
+	    new Memory_ReadAddress( 0xe000, 0xe000, YM2203_status_port_0_r ),		/* YM 2203 */
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( combasc_writemem_sound )
 		{ 0x0000, 0x7fff, MWA_ROM },				/* ROM */

@@ -563,15 +563,17 @@ public class atarisy1
 	 *
 	 *************************************/
 	
-	static MEMORY_READ_START( sound_readmem )
-		{ 0x0000, 0x0fff, MRA_RAM },
-		{ 0x1000, 0x100f, m6522_r },
-		{ 0x1800, 0x1801, YM2151_status_port_0_r },
-		{ 0x1810, 0x1810, atarigen_6502_sound_r },
-		{ 0x1820, 0x1820, switch_6502_r },
-		{ 0x1870, 0x187f, pokey1_r },
-		{ 0x4000, 0xffff, MRA_ROM },
-	MEMORY_END
+	public static Memory_ReadAddress sound_readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x0fff, MRA_RAM ),
+		new Memory_ReadAddress( 0x1000, 0x100f, m6522_r ),
+		new Memory_ReadAddress( 0x1800, 0x1801, YM2151_status_port_0_r ),
+		new Memory_ReadAddress( 0x1810, 0x1810, atarigen_6502_sound_r ),
+		new Memory_ReadAddress( 0x1820, 0x1820, switch_6502_r ),
+		new Memory_ReadAddress( 0x1870, 0x187f, pokey1_r ),
+		new Memory_ReadAddress( 0x4000, 0xffff, MRA_ROM ),
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	
 	static MEMORY_WRITE_START( sound_writemem )

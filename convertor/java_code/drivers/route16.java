@@ -78,14 +78,16 @@ public class route16
 	void route16_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	WRITE_HANDLER( stratvox_sn76477_w );
 	
-	static MEMORY_READ_START( cpu1_readmem )
-		{ 0x0000, 0x2fff, MRA_ROM },
-		{ 0x4000, 0x43ff, route16_sharedram_r },
-		{ 0x4800, 0x4800, input_port_0_r },
-		{ 0x5000, 0x5000, input_port_1_r },
-		{ 0x5800, 0x5800, input_port_2_r },
-		{ 0x8000, 0xbfff, route16_videoram1_r },
-	MEMORY_END
+	public static Memory_ReadAddress cpu1_readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x2fff, MRA_ROM ),
+		new Memory_ReadAddress( 0x4000, 0x43ff, route16_sharedram_r ),
+		new Memory_ReadAddress( 0x4800, 0x4800, input_port_0_r ),
+		new Memory_ReadAddress( 0x5000, 0x5000, input_port_1_r ),
+		new Memory_ReadAddress( 0x5800, 0x5800, input_port_2_r ),
+		new Memory_ReadAddress( 0x8000, 0xbfff, route16_videoram1_r ),
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( cpu1_writemem )
 		{ 0x0000, 0x2fff, MWA_ROM },
@@ -103,11 +105,13 @@ public class route16
 		{ 0x6900, 0x6900, AY8910_control_port_0_w },
 	PORT_END
 	
-	static MEMORY_READ_START( cpu2_readmem )
-		{ 0x0000, 0x1fff, MRA_ROM },
-		{ 0x4000, 0x43ff, route16_sharedram_r },
-		{ 0x8000, 0xbfff, route16_videoram2_r },
-	MEMORY_END
+	public static Memory_ReadAddress cpu2_readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x1fff, MRA_ROM ),
+		new Memory_ReadAddress( 0x4000, 0x43ff, route16_sharedram_r ),
+		new Memory_ReadAddress( 0x8000, 0xbfff, route16_videoram2_r ),
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( cpu2_writemem )
 		{ 0x0000, 0x1fff, MWA_ROM },

@@ -100,11 +100,13 @@ public class system1
 	
 	
 	
-	static MEMORY_READ_START( readmem )
-		{ 0x0000, 0xbfff, MRA_ROM },
-		{ 0xc000, 0xf3ff, MRA_RAM },
-		{ 0xf800, 0xfbff, MRA_RAM },
-	MEMORY_END
+	public static Memory_ReadAddress readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0xbfff, MRA_ROM ),
+		new Memory_ReadAddress( 0xc000, 0xf3ff, MRA_RAM ),
+		new Memory_ReadAddress( 0xf800, 0xfbff, MRA_RAM ),
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( writemem )
 		{ 0x0000, 0xbfff, MWA_ROM },
@@ -119,21 +121,25 @@ public class system1
 		{ 0xf800, 0xfbff, system1_sprites_collisionram_w, &system1_sprites_collisionram },
 	MEMORY_END
 	
-	static MEMORY_READ_START( brain_readmem )
-		{ 0x0000, 0x7fff, MRA_ROM },
-		{ 0x8000, 0xbfff, MRA_BANK1 },
-		{ 0xc000, 0xf3ff, MRA_RAM },
-		{ 0xf800, 0xfbff, MRA_RAM },
-	MEMORY_END
+	public static Memory_ReadAddress brain_readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x7fff, MRA_ROM ),
+		new Memory_ReadAddress( 0x8000, 0xbfff, MRA_BANK1 ),
+		new Memory_ReadAddress( 0xc000, 0xf3ff, MRA_RAM ),
+		new Memory_ReadAddress( 0xf800, 0xfbff, MRA_RAM ),
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
-	static MEMORY_READ_START( wbml_readmem )
-		{ 0x0000, 0x7fff, MRA_ROM },
-		{ 0x8000, 0xbfff, MRA_BANK1 },
-		{ 0xc000, 0xdfff, MRA_RAM },
-		{ 0xe000, 0xefff, wbml_paged_videoram_r },
-		{ 0xf020, 0xf03f, MRA_RAM },
-		{ 0xf800, 0xfbff, MRA_RAM },
-	MEMORY_END
+	public static Memory_ReadAddress wbml_readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x7fff, MRA_ROM ),
+		new Memory_ReadAddress( 0x8000, 0xbfff, MRA_BANK1 ),
+		new Memory_ReadAddress( 0xc000, 0xdfff, MRA_RAM ),
+		new Memory_ReadAddress( 0xe000, 0xefff, wbml_paged_videoram_r ),
+		new Memory_ReadAddress( 0xf020, 0xf03f, MRA_RAM ),
+		new Memory_ReadAddress( 0xf800, 0xfbff, MRA_RAM ),
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( wbml_writemem )
 		{ 0x0000, 0xbfff, MWA_ROM },
@@ -224,13 +230,15 @@ public class system1
 		work_ram[offset] = data;
 	}
 	
-	static MEMORY_READ_START( sound_readmem )
-		{ 0x0000, 0x7fff, MRA_ROM },
-		{ 0x8000, 0x87ff, work_ram_r },
-		{ 0x8800, 0x8fff, work_ram_r },
-		{ 0xe000, 0xe000, soundlatch_r },
-		{ 0xffff, 0xffff, soundlatch_r },   /* 4D warriors reads also from here - bug? */
-	MEMORY_END
+	public static Memory_ReadAddress sound_readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x7fff, MRA_ROM ),
+		new Memory_ReadAddress( 0x8000, 0x87ff, work_ram_r ),
+		new Memory_ReadAddress( 0x8800, 0x8fff, work_ram_r ),
+		new Memory_ReadAddress( 0xe000, 0xe000, soundlatch_r ),
+		new Memory_ReadAddress( 0xffff, 0xffff, soundlatch_r ),   /* 4D warriors reads also from here - bug? */
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( sound_writemem )
 		{ 0x0000, 0x7fff, MWA_ROM },

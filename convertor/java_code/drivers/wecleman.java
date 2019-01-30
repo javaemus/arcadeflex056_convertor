@@ -753,14 +753,16 @@ public class wecleman
 							    memory_region((data & 1) ? REGION_SOUND1 : REGION_SOUND2) );
 	}
 	
-	static MEMORY_READ_START( wecleman_sound_readmem )
-		{ 0x0000, 0x7fff, MRA_ROM					},	// ROM
-		{ 0x8000, 0x83ff, MRA_RAM					},	// RAM
-		{ 0x9000, 0x9000, multiply_r				},	// Protection
-		{ 0xa000, 0xa000, soundlatch_r				},	// From main CPU
-		{ 0xb000, 0xb00d, K007232_read_port_0_r		},	// K007232 (Reading offset 5/b triggers the sample)
-		{ 0xc001, 0xc001, YM2151_status_port_0_r	},	// YM2151
-	MEMORY_END
+	public static Memory_ReadAddress wecleman_sound_readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x7fff, MRA_ROM					),	// ROM
+		new Memory_ReadAddress( 0x8000, 0x83ff, MRA_RAM					),	// RAM
+		new Memory_ReadAddress( 0x9000, 0x9000, multiply_r				),	// Protection
+		new Memory_ReadAddress( 0xa000, 0xa000, soundlatch_r				),	// From main CPU
+		new Memory_ReadAddress( 0xb000, 0xb00d, K007232_read_port_0_r		),	// K007232 (Reading offset 5/b triggers the sample)
+		new Memory_ReadAddress( 0xc001, 0xc001, YM2151_status_port_0_r	),	// YM2151
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( wecleman_sound_writemem )
 		{ 0x0000, 0x7fff, MWA_ROM					},	// ROM
@@ -874,14 +876,16 @@ public class wecleman
 	
 	
 	
-	static MEMORY_READ_START( hotchase_sound_readmem )
-		{ 0x0000, 0x07ff, MRA_RAM					},	// RAM
-		{ 0x1000, 0x100d, hotchase_K007232_0_r		},	// 3 x  K007232
-		{ 0x2000, 0x200d, hotchase_K007232_1_r		},
-		{ 0x3000, 0x300d, hotchase_K007232_2_r		},
-		{ 0x6000, 0x6000, soundlatch_r				},	// From main CPU (Read on IRQ)
-		{ 0x8000, 0xffff, MRA_ROM					},	// ROM
-	MEMORY_END
+	public static Memory_ReadAddress hotchase_sound_readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x07ff, MRA_RAM					),	// RAM
+		new Memory_ReadAddress( 0x1000, 0x100d, hotchase_K007232_0_r		),	// 3 x  K007232
+		new Memory_ReadAddress( 0x2000, 0x200d, hotchase_K007232_1_r		),
+		new Memory_ReadAddress( 0x3000, 0x300d, hotchase_K007232_2_r		),
+		new Memory_ReadAddress( 0x6000, 0x6000, soundlatch_r				),	// From main CPU (Read on IRQ)
+		new Memory_ReadAddress( 0x8000, 0xffff, MRA_ROM					),	// ROM
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( hotchase_sound_writemem )
 		{ 0x0000, 0x07ff, MWA_RAM					},	// RAM

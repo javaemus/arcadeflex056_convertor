@@ -56,22 +56,24 @@ public class labyrunr
 		coin_counter_w(1,data & 0x10);
 	}
 	
-	static MEMORY_READ_START( labyrunr_readmem )
-		{ 0x0020, 0x005f, MRA_RAM },	/* scroll registers */
-		{ 0x0801, 0x0801, YM2203_status_port_0_r },
-		{ 0x0800, 0x0800, YM2203_read_port_0_r },
-		{ 0x0901, 0x0901, YM2203_status_port_1_r },
-		{ 0x0900, 0x0900, YM2203_read_port_1_r },
-		{ 0x0a00, 0x0a00, input_port_5_r },
-		{ 0x0a01, 0x0a01, input_port_4_r },
-		{ 0x0b00, 0x0b00, input_port_3_r },
-		{ 0x0d00, 0x0d1f, K051733_r },			/* 051733 (protection) */
-		{ 0x1000, 0x10ff, paletteram_r },
-		{ 0x1800, 0x1fff, MRA_RAM },
-		{ 0x2000, 0x3fff, MRA_RAM },
-		{ 0x4000, 0x7fff, MRA_BANK1 },
-		{ 0x8000, 0xffff, MRA_ROM },
-	MEMORY_END
+	public static Memory_ReadAddress labyrunr_readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0020, 0x005f, MRA_RAM ),	/* scroll registers */
+		new Memory_ReadAddress( 0x0801, 0x0801, YM2203_status_port_0_r ),
+		new Memory_ReadAddress( 0x0800, 0x0800, YM2203_read_port_0_r ),
+		new Memory_ReadAddress( 0x0901, 0x0901, YM2203_status_port_1_r ),
+		new Memory_ReadAddress( 0x0900, 0x0900, YM2203_read_port_1_r ),
+		new Memory_ReadAddress( 0x0a00, 0x0a00, input_port_5_r ),
+		new Memory_ReadAddress( 0x0a01, 0x0a01, input_port_4_r ),
+		new Memory_ReadAddress( 0x0b00, 0x0b00, input_port_3_r ),
+		new Memory_ReadAddress( 0x0d00, 0x0d1f, K051733_r ),			/* 051733 (protection) */
+		new Memory_ReadAddress( 0x1000, 0x10ff, paletteram_r ),
+		new Memory_ReadAddress( 0x1800, 0x1fff, MRA_RAM ),
+		new Memory_ReadAddress( 0x2000, 0x3fff, MRA_RAM ),
+		new Memory_ReadAddress( 0x4000, 0x7fff, MRA_BANK1 ),
+		new Memory_ReadAddress( 0x8000, 0xffff, MRA_ROM ),
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( labyrunr_writemem )
 		{ 0x0000, 0x0007, K007121_ctrl_0_w },

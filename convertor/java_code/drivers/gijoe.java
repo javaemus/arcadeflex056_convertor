@@ -173,12 +173,14 @@ public class gijoe
 		{ 0x1e8000, 0x1e8001, control2_w },
 	MEMORY_END
 	
-	static MEMORY_READ_START( sound_readmem )
-		{ 0x0000, 0xebff, MRA_ROM },
-		{ 0xf000, 0xf7ff, MRA_RAM },
-		{ 0xf800, 0xfa2f, K054539_0_r },
-		{ 0xfc02, 0xfc02, soundlatch_r },
-	MEMORY_END
+	public static Memory_ReadAddress sound_readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0xebff, MRA_ROM ),
+		new Memory_ReadAddress( 0xf000, 0xf7ff, MRA_RAM ),
+		new Memory_ReadAddress( 0xf800, 0xfa2f, K054539_0_r ),
+		new Memory_ReadAddress( 0xfc02, 0xfc02, soundlatch_r ),
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( sound_writemem )
 		{ 0x0000, 0xebff, MWA_ROM },

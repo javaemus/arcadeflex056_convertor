@@ -50,22 +50,24 @@ public class momoko
 	
 	/****************************************************************************/
 	
-	static MEMORY_READ_START( readmem )
-		{ 0x0000, 0xbfff, MRA_ROM },
-		{ 0xc000, 0xcfff, MRA_RAM },
+	public static Memory_ReadAddress readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0xbfff, MRA_ROM ),
+		new Memory_ReadAddress( 0xc000, 0xcfff, MRA_RAM ),
 	
-		{ 0xd064, 0xd0ff, MRA_RAM }, /* sprite ram */
+		new Memory_ReadAddress( 0xd064, 0xd0ff, MRA_RAM ), /* sprite ram */
 	
-		{ 0xd400, 0xd400, input_port_0_r },
-		{ 0xd402, 0xd402, input_port_1_r },
-		{ 0xd406, 0xd406, input_port_2_r },
-		{ 0xd407, 0xd407, input_port_3_r },
+		new Memory_ReadAddress( 0xd400, 0xd400, input_port_0_r ),
+		new Memory_ReadAddress( 0xd402, 0xd402, input_port_1_r ),
+		new Memory_ReadAddress( 0xd406, 0xd406, input_port_2_r ),
+		new Memory_ReadAddress( 0xd407, 0xd407, input_port_3_r ),
 	
-		{ 0xd800, 0xdbff, paletteram_r },
-		{ 0xe000, 0xe3ff, MRA_RAM }, /* text */
+		new Memory_ReadAddress( 0xd800, 0xdbff, paletteram_r ),
+		new Memory_ReadAddress( 0xe000, 0xe3ff, MRA_RAM ), /* text */
 	
-		{ 0xf000, 0xffff, MRA_BANK1 },
-	MEMORY_END
+		new Memory_ReadAddress( 0xf000, 0xffff, MRA_BANK1 ),
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( writemem )
 		{ 0x0000, 0xbfff, MWA_ROM },
@@ -96,14 +98,16 @@ public class momoko
 		{ 0xf007, 0xf007, momoko_bg_priority_w },
 	MEMORY_END
 	
-	static MEMORY_READ_START( readmem_sound )
-		{ 0x0000, 0x7fff, MRA_ROM },
-		{ 0x8000, 0x87ff, MRA_RAM },
-		{ 0xa000, 0xa000, YM2203_status_port_0_r },
-		{ 0xa001, 0xa001, YM2203_read_port_0_r },
-		{ 0xc000, 0xc000, YM2203_status_port_1_r },
-		{ 0xc001, 0xc001, YM2203_read_port_1_r },
-	MEMORY_END
+	public static Memory_ReadAddress readmem_sound[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x7fff, MRA_ROM ),
+		new Memory_ReadAddress( 0x8000, 0x87ff, MRA_RAM ),
+		new Memory_ReadAddress( 0xa000, 0xa000, YM2203_status_port_0_r ),
+		new Memory_ReadAddress( 0xa001, 0xa001, YM2203_read_port_0_r ),
+		new Memory_ReadAddress( 0xc000, 0xc000, YM2203_status_port_1_r ),
+		new Memory_ReadAddress( 0xc001, 0xc001, YM2203_read_port_1_r ),
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( writemem_sound )
 		{ 0x0000, 0x7fff, MWA_ROM },

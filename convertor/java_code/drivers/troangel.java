@@ -21,17 +21,19 @@ public class troangel
 	
 	
 	
-	static MEMORY_READ_START( troangel_readmem )
-		{ 0x0000, 0x7fff, MRA_ROM },
-		{ 0x8000, 0x8fff, MRA_RAM },
-		{ 0x9000, 0x90ff, MRA_RAM },
-		{ 0xd000, 0xd000, input_port_0_r },
-		{ 0xd001, 0xd001, input_port_1_r },
-		{ 0xd002, 0xd002, input_port_2_r },
-		{ 0xd003, 0xd003, input_port_3_r },
-		{ 0xd004, 0xd004, input_port_4_r },
-		{ 0xe000, 0xe7ff, MRA_RAM },
-	MEMORY_END
+	public static Memory_ReadAddress troangel_readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x7fff, MRA_ROM ),
+		new Memory_ReadAddress( 0x8000, 0x8fff, MRA_RAM ),
+		new Memory_ReadAddress( 0x9000, 0x90ff, MRA_RAM ),
+		new Memory_ReadAddress( 0xd000, 0xd000, input_port_0_r ),
+		new Memory_ReadAddress( 0xd001, 0xd001, input_port_1_r ),
+		new Memory_ReadAddress( 0xd002, 0xd002, input_port_2_r ),
+		new Memory_ReadAddress( 0xd003, 0xd003, input_port_3_r ),
+		new Memory_ReadAddress( 0xd004, 0xd004, input_port_4_r ),
+		new Memory_ReadAddress( 0xe000, 0xe7ff, MRA_RAM ),
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( troangel_writemem )
 		{ 0x0000, 0x7fff, MWA_ROM },

@@ -224,16 +224,18 @@ public class atarifb
 	//	logerror("out3_w, %02x:%02x\n", loop, data);
 	}
 	
-	static MEMORY_READ_START( readmem )
-		{ 0x0000, 0x03ff, MRA_RAM },
-		{ 0x1000, 0x13bf, MRA_RAM },
-		{ 0x13c0, 0x13ff, MRA_RAM },
-		{ 0x3000, 0x3000, MRA_RAM },
-		{ 0x4000, 0x4000, atarifb_in0_r },
-		{ 0x4002, 0x4002, atarifb_in2_r },
-		{ 0x6000, 0x7fff, MRA_ROM }, /* PROM */
-		{ 0xfff0, 0xffff, MRA_ROM }, /* PROM for 6502 vectors */
-	MEMORY_END
+	public static Memory_ReadAddress readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x03ff, MRA_RAM ),
+		new Memory_ReadAddress( 0x1000, 0x13bf, MRA_RAM ),
+		new Memory_ReadAddress( 0x13c0, 0x13ff, MRA_RAM ),
+		new Memory_ReadAddress( 0x3000, 0x3000, MRA_RAM ),
+		new Memory_ReadAddress( 0x4000, 0x4000, atarifb_in0_r ),
+		new Memory_ReadAddress( 0x4002, 0x4002, atarifb_in2_r ),
+		new Memory_ReadAddress( 0x6000, 0x7fff, MRA_ROM ), /* PROM */
+		new Memory_ReadAddress( 0xfff0, 0xffff, MRA_ROM ), /* PROM for 6502 vectors */
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( writemem )
 		{ 0x0000, 0x01ff, MWA_RAM },
@@ -251,17 +253,19 @@ public class atarifb
 		{ 0x6000, 0x7fff, MWA_ROM }, /* PROM */
 	MEMORY_END
 	
-	static MEMORY_READ_START( atarifb4_readmem )
-		{ 0x0000, 0x03ff, MRA_RAM },
-		{ 0x1000, 0x13bf, MRA_RAM },
-		{ 0x13c0, 0x13ff, MRA_RAM },
-		{ 0x3000, 0x3000, MRA_RAM },
-		{ 0x4000, 0x4000, atarifb4_in0_r },
-		{ 0x4001, 0x4001, input_port_1_r },
-		{ 0x4002, 0x4002, atarifb4_in2_r },
-		{ 0x6000, 0x7fff, MRA_ROM }, /* PROM */
-		{ 0xfff0, 0xffff, MRA_ROM }, /* PROM for 6502 vectors */
-	MEMORY_END
+	public static Memory_ReadAddress atarifb4_readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x03ff, MRA_RAM ),
+		new Memory_ReadAddress( 0x1000, 0x13bf, MRA_RAM ),
+		new Memory_ReadAddress( 0x13c0, 0x13ff, MRA_RAM ),
+		new Memory_ReadAddress( 0x3000, 0x3000, MRA_RAM ),
+		new Memory_ReadAddress( 0x4000, 0x4000, atarifb4_in0_r ),
+		new Memory_ReadAddress( 0x4001, 0x4001, input_port_1_r ),
+		new Memory_ReadAddress( 0x4002, 0x4002, atarifb4_in2_r ),
+		new Memory_ReadAddress( 0x6000, 0x7fff, MRA_ROM ), /* PROM */
+		new Memory_ReadAddress( 0xfff0, 0xffff, MRA_ROM ), /* PROM for 6502 vectors */
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( atarifb4_writemem )
 		{ 0x0000, 0x01ff, MWA_RAM },
@@ -279,16 +283,18 @@ public class atarifb
 		{ 0x6000, 0x7fff, MWA_ROM }, /* PROM */
 	MEMORY_END
 	
-	static MEMORY_READ_START( soccer_readmem )
-		{ 0x0000, 0x03ff, MRA_RAM },
-		{ 0x0800, 0x0bff, MRA_RAM },	/* playfield/object RAM */
-		{ 0x2000, 0x3fff, MRA_ROM }, /* PROM */
-		{ 0x1800, 0x1800, atarifb4_in0_r },
-		{ 0x1801, 0x1801, input_port_1_r },
-		{ 0x1802, 0x1802, atarifb4_in2_r },
-		{ 0x1803, 0x1803, input_port_11_r },
-		{ 0xfff0, 0xffff, MRA_ROM }, /* PROM for 6502 vectors */
-	MEMORY_END
+	public static Memory_ReadAddress soccer_readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x03ff, MRA_RAM ),
+		new Memory_ReadAddress( 0x0800, 0x0bff, MRA_RAM ),	/* playfield/object RAM */
+		new Memory_ReadAddress( 0x2000, 0x3fff, MRA_ROM ), /* PROM */
+		new Memory_ReadAddress( 0x1800, 0x1800, atarifb4_in0_r ),
+		new Memory_ReadAddress( 0x1801, 0x1801, input_port_1_r ),
+		new Memory_ReadAddress( 0x1802, 0x1802, atarifb4_in2_r ),
+		new Memory_ReadAddress( 0x1803, 0x1803, input_port_11_r ),
+		new Memory_ReadAddress( 0xfff0, 0xffff, MRA_ROM ), /* PROM for 6502 vectors */
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( soccer_writemem )
 		{ 0x0000, 0x01ff, MWA_RAM },

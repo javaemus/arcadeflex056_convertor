@@ -59,18 +59,20 @@ public class exctsccr
 	
 	***************************************************************************/
 	
-	static MEMORY_READ_START( readmem )
-		{ 0x0000, 0x5fff, MRA_ROM },
-		{ 0x6000, 0x63ff, MRA_RAM }, /* Alpha mcu (protection) */
-		{ 0x7c00, 0x7fff, MRA_RAM }, /* work ram */
-		{ 0x8000, 0x83ff, videoram_r },
-		{ 0x8400, 0x87ff, colorram_r },
-		{ 0x8800, 0x8bff, MRA_RAM }, /* ??? */
-		{ 0xa000, 0xa000, input_port_0_r },
-		{ 0xa040, 0xa040, input_port_1_r },
-		{ 0xa080, 0xa080, input_port_3_r },
-		{ 0xa0c0, 0xa0c0, input_port_2_r },
-	MEMORY_END
+	public static Memory_ReadAddress readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x5fff, MRA_ROM ),
+		new Memory_ReadAddress( 0x6000, 0x63ff, MRA_RAM ), /* Alpha mcu (protection) */
+		new Memory_ReadAddress( 0x7c00, 0x7fff, MRA_RAM ), /* work ram */
+		new Memory_ReadAddress( 0x8000, 0x83ff, videoram_r ),
+		new Memory_ReadAddress( 0x8400, 0x87ff, colorram_r ),
+		new Memory_ReadAddress( 0x8800, 0x8bff, MRA_RAM ), /* ??? */
+		new Memory_ReadAddress( 0xa000, 0xa000, input_port_0_r ),
+		new Memory_ReadAddress( 0xa040, 0xa040, input_port_1_r ),
+		new Memory_ReadAddress( 0xa080, 0xa080, input_port_3_r ),
+		new Memory_ReadAddress( 0xa0c0, 0xa0c0, input_port_2_r ),
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( writemem )
 		{ 0x0000, 0x5fff, MWA_ROM },
@@ -90,11 +92,13 @@ public class exctsccr
 		{ 0xa0c0, 0xa0c0, watchdog_reset_w },
 	MEMORY_END
 	
-	static MEMORY_READ_START( sound_readmem )
-		{ 0x0000, 0x8fff, MRA_ROM },
-		{ 0xa000, 0xa7ff, MRA_RAM },
-		{ 0xc00d, 0xc00d, soundlatch_r },
-	MEMORY_END
+	public static Memory_ReadAddress sound_readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x8fff, MRA_ROM ),
+		new Memory_ReadAddress( 0xa000, 0xa7ff, MRA_RAM ),
+		new Memory_ReadAddress( 0xc00d, 0xc00d, soundlatch_r ),
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( sound_writemem )
 		{ 0x0000, 0x8fff, MWA_ROM },
@@ -116,16 +120,18 @@ public class exctsccr
 	PORT_END
 	
 	/* Bootleg */
-	static MEMORY_READ_START( bl_readmem )
-		{ 0x0000, 0x5fff, MRA_ROM },
-		{ 0x8000, 0x83ff, videoram_r },
-		{ 0x8400, 0x87ff, colorram_r },
-		{ 0x8800, 0x8fff, MRA_RAM }, /* ??? */
-		{ 0xa000, 0xa000, input_port_0_r },
-		{ 0xa040, 0xa040, input_port_1_r },
-		{ 0xa080, 0xa080, input_port_3_r },
-		{ 0xa0c0, 0xa0c0, input_port_2_r },
-	MEMORY_END
+	public static Memory_ReadAddress bl_readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x5fff, MRA_ROM ),
+		new Memory_ReadAddress( 0x8000, 0x83ff, videoram_r ),
+		new Memory_ReadAddress( 0x8400, 0x87ff, colorram_r ),
+		new Memory_ReadAddress( 0x8800, 0x8fff, MRA_RAM ), /* ??? */
+		new Memory_ReadAddress( 0xa000, 0xa000, input_port_0_r ),
+		new Memory_ReadAddress( 0xa040, 0xa040, input_port_1_r ),
+		new Memory_ReadAddress( 0xa080, 0xa080, input_port_3_r ),
+		new Memory_ReadAddress( 0xa0c0, 0xa0c0, input_port_2_r ),
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( bl_writemem )
 		{ 0x0000, 0x5fff, MWA_ROM },
@@ -145,11 +151,13 @@ public class exctsccr
 		{ 0xa0c0, 0xa0c0, watchdog_reset_w },
 	MEMORY_END
 	
-	static MEMORY_READ_START( bl_sound_readmem )
-		{ 0x0000, 0x5fff, MRA_ROM },
-		{ 0x6000, 0x6000, soundlatch_r },
-		{ 0xe000, 0xe3ff, MRA_RAM },
-	MEMORY_END
+	public static Memory_ReadAddress bl_sound_readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x5fff, MRA_ROM ),
+		new Memory_ReadAddress( 0x6000, 0x6000, soundlatch_r ),
+		new Memory_ReadAddress( 0xe000, 0xe3ff, MRA_RAM ),
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( bl_sound_writemem )
 		{ 0x0000, 0x5fff, MWA_ROM },

@@ -752,13 +752,15 @@ public class outrun
 	
 	// Outrun
 	
-	static MEMORY_READ_START( outrun_sound_readmem )
-		{ 0x0000, 0x7fff, MRA_ROM },
-		{ 0xf000, 0xf0ff, SegaPCM_r },
-		{ 0xf100, 0xf7ff, MRA_NOP },
-		{ 0xf800, 0xf807, sound2_shared_ram_r },
-		{ 0xf808, 0xffff, MRA_RAM },
-	MEMORY_END
+	public static Memory_ReadAddress outrun_sound_readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x7fff, MRA_ROM ),
+		new Memory_ReadAddress( 0xf000, 0xf0ff, SegaPCM_r ),
+		new Memory_ReadAddress( 0xf100, 0xf7ff, MRA_NOP ),
+		new Memory_ReadAddress( 0xf800, 0xf807, sound2_shared_ram_r ),
+		new Memory_ReadAddress( 0xf808, 0xffff, MRA_RAM ),
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( outrun_sound_writemem )
 		{ 0x0000, 0x7fff, MWA_ROM },
@@ -1155,12 +1157,14 @@ public class outrun
 		{ 0x7ffc00, 0x7fffff, SYS16_MWA16_EXTRAM },
 	MEMORY_END
 	
-	static MEMORY_READ_START( shangon_sound_readmem )
-		{ 0x0000, 0x7fff, MRA_ROM },
-		{ 0xf000, 0xf7ff, SegaPCM_r },
-		{ 0xf800, 0xf807, sound2_shared_ram_r },
-		{ 0xf808, 0xffff, MRA_RAM },
-	MEMORY_END
+	public static Memory_ReadAddress shangon_sound_readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x7fff, MRA_ROM ),
+		new Memory_ReadAddress( 0xf000, 0xf7ff, SegaPCM_r ),
+		new Memory_ReadAddress( 0xf800, 0xf807, sound2_shared_ram_r ),
+		new Memory_ReadAddress( 0xf808, 0xffff, MRA_RAM ),
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( shangon_sound_writemem )
 		{ 0x0000, 0x7fff, MWA_ROM },

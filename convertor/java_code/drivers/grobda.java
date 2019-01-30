@@ -53,15 +53,17 @@ public class grobda
 		DAC_data_w(0, (data << 4) | data);
 	}
 	
-	static MEMORY_READ_START( readmem_cpu1 )
-		{ 0x0000, 0x03ff, videoram_r },						/* video RAM */
-		{ 0x0400, 0x07ff, colorram_r },						/* color RAM */
-		{ 0x0800, 0x1fff, MRA_RAM },						/* RAM & sprite RAM */
-		{ 0x4040, 0x43ff, grobda_snd_sharedram_r },			/* shared RAM with CPU #2 */
-		{ 0x4800, 0x480f, grobda_customio_1_r },			/* custom I/O chip #1 interface */
-		{ 0x4810, 0x481f, grobda_customio_2_r },			/* custom I/O chip #2 interface */
-		{ 0xa000, 0xffff, MRA_ROM },						/* ROM */
-	MEMORY_END
+	public static Memory_ReadAddress readmem_cpu1[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x03ff, videoram_r ),						/* video RAM */
+		new Memory_ReadAddress( 0x0400, 0x07ff, colorram_r ),						/* color RAM */
+		new Memory_ReadAddress( 0x0800, 0x1fff, MRA_RAM ),						/* RAM & sprite RAM */
+		new Memory_ReadAddress( 0x4040, 0x43ff, grobda_snd_sharedram_r ),			/* shared RAM with CPU #2 */
+		new Memory_ReadAddress( 0x4800, 0x480f, grobda_customio_1_r ),			/* custom I/O chip #1 interface */
+		new Memory_ReadAddress( 0x4810, 0x481f, grobda_customio_2_r ),			/* custom I/O chip #2 interface */
+		new Memory_ReadAddress( 0xa000, 0xffff, MRA_ROM ),						/* ROM */
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( writemem_cpu1 )
 		{ 0x0000, 0x03ff, videoram_w, &videoram, &videoram_size },		/* video RAM */
@@ -78,11 +80,13 @@ public class grobda
 		{ 0xa000, 0xffff, MWA_ROM },									/* ROM */
 	MEMORY_END
 	
-	static MEMORY_READ_START( readmem_cpu2 )
-		{ 0x0000, 0x003f, MRA_RAM },				/* sound registers */
-		{ 0x0040, 0x03ff, MRA_RAM },				/* shared RAM with CPU #1 */
-		{ 0xe000, 0xffff, MRA_ROM },				/* ROM */
-	MEMORY_END
+	public static Memory_ReadAddress readmem_cpu2[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x003f, MRA_RAM ),				/* sound registers */
+		new Memory_ReadAddress( 0x0040, 0x03ff, MRA_RAM ),				/* shared RAM with CPU #1 */
+		new Memory_ReadAddress( 0xe000, 0xffff, MRA_ROM ),				/* ROM */
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	
 	static MEMORY_WRITE_START( writemem_cpu2 )

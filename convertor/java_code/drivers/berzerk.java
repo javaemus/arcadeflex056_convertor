@@ -57,12 +57,14 @@ public class berzerk
 	
 	
 	
-	static MEMORY_READ_START( berzerk_readmem )
-		{ 0x0000, 0x07ff, MRA_ROM },
-		{ 0x0800, 0x09ff, MRA_RAM },
-		{ 0x1000, 0x3fff, MRA_ROM },
-		{ 0x4000, 0x87ff, MRA_RAM },
-	MEMORY_END
+	public static Memory_ReadAddress berzerk_readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x07ff, MRA_ROM ),
+		new Memory_ReadAddress( 0x0800, 0x09ff, MRA_RAM ),
+		new Memory_ReadAddress( 0x1000, 0x3fff, MRA_ROM ),
+		new Memory_ReadAddress( 0x4000, 0x87ff, MRA_RAM ),
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( berzerk_writemem )
 		{ 0x0000, 0x07ff, MWA_ROM },
@@ -74,12 +76,14 @@ public class berzerk
 	MEMORY_END
 	
 	
-	static MEMORY_READ_START( frenzy_readmem )
-		{ 0x0000, 0x3fff, MRA_ROM },
-		{ 0x4000, 0x87ff, MRA_RAM },
-		{ 0xc000, 0xcfff, MRA_ROM },
-		{ 0xf800, 0xf9ff, MRA_RAM },
-	MEMORY_END
+	public static Memory_ReadAddress frenzy_readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x3fff, MRA_ROM ),
+		new Memory_ReadAddress( 0x4000, 0x87ff, MRA_RAM ),
+		new Memory_ReadAddress( 0xc000, 0xcfff, MRA_ROM ),
+		new Memory_ReadAddress( 0xf800, 0xf9ff, MRA_RAM ),
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( frenzy_writemem )
 		{ 0x0000, 0x3fff, MWA_ROM },

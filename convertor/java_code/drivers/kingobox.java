@@ -73,19 +73,21 @@ public class kingobox
 		cpu_cause_interrupt( 3, 0xff );
 	}
 	
-	static MEMORY_READ_START( main_readmem )
-	    { 0x0000, 0x7fff, MRA_ROM },
-	    { 0xc000, 0xc3ff, MRA_RAM }, /* work ram */
-	    { 0xe000, 0xe7ff, sprite_shared_r },
-	    { 0xe800, 0xefff, video_shared_r },
-	    { 0xf000, 0xf7ff, MRA_RAM }, /* ???? */
-	    { 0xfc00, 0xfc00, input_port_0_r }, /* DSW 0 */
-	    { 0xfc01, 0xfc01, input_port_1_r }, /* DSW 1 */
-	    { 0xfc02, 0xfc02, input_port_2_r }, /* Player 1 controls */
-	    { 0xfc03, 0xfc03, input_port_3_r }, /* Player 2 controls */
-	    { 0xfc04, 0xfc04, input_port_4_r }, /* Coin & Start */
-	    { 0xfc05, 0xfc05, input_port_5_r }, /* Player 1 & 2 button 3 */
-	MEMORY_END
+	public static Memory_ReadAddress main_readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+	    new Memory_ReadAddress( 0x0000, 0x7fff, MRA_ROM ),
+	    new Memory_ReadAddress( 0xc000, 0xc3ff, MRA_RAM ), /* work ram */
+	    new Memory_ReadAddress( 0xe000, 0xe7ff, sprite_shared_r ),
+	    new Memory_ReadAddress( 0xe800, 0xefff, video_shared_r ),
+	    new Memory_ReadAddress( 0xf000, 0xf7ff, MRA_RAM ), /* ???? */
+	    new Memory_ReadAddress( 0xfc00, 0xfc00, input_port_0_r ), /* DSW 0 */
+	    new Memory_ReadAddress( 0xfc01, 0xfc01, input_port_1_r ), /* DSW 1 */
+	    new Memory_ReadAddress( 0xfc02, 0xfc02, input_port_2_r ), /* Player 1 controls */
+	    new Memory_ReadAddress( 0xfc03, 0xfc03, input_port_3_r ), /* Player 2 controls */
+	    new Memory_ReadAddress( 0xfc04, 0xfc04, input_port_4_r ), /* Coin & Start */
+	    new Memory_ReadAddress( 0xfc05, 0xfc05, input_port_5_r ), /* Player 1 & 2 button 3 */
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( main_writemem )
 	    { 0x0000, 0x7fff, MWA_ROM },
@@ -101,15 +103,17 @@ public class kingobox
 	    { 0xf807, 0xf807, sound_command_w }, /* sound latch */
 	MEMORY_END
 	
-	static MEMORY_READ_START( video_readmem )
-	    { 0x0000, 0x3fff, MRA_ROM },
-	    { 0x8000, 0x87ff, MRA_RAM }, /* work ram */
-	    { 0xa000, 0xa7ff, video_shared_r }, /* shared with main */
-	    { 0xc000, 0xc0ff, videoram_r }, /* background vram */
-	    { 0xc400, 0xc4ff, colorram_r }, /* background colorram */
-	    { 0xc800, 0xcbff, MRA_RAM }, /* foreground vram */
-	    { 0xcc00, 0xcfff, MRA_RAM }, /* foreground colorram */
-	MEMORY_END
+	public static Memory_ReadAddress video_readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+	    new Memory_ReadAddress( 0x0000, 0x3fff, MRA_ROM ),
+	    new Memory_ReadAddress( 0x8000, 0x87ff, MRA_RAM ), /* work ram */
+	    new Memory_ReadAddress( 0xa000, 0xa7ff, video_shared_r ), /* shared with main */
+	    new Memory_ReadAddress( 0xc000, 0xc0ff, videoram_r ), /* background vram */
+	    new Memory_ReadAddress( 0xc400, 0xc4ff, colorram_r ), /* background colorram */
+	    new Memory_ReadAddress( 0xc800, 0xcbff, MRA_RAM ), /* foreground vram */
+	    new Memory_ReadAddress( 0xcc00, 0xcfff, MRA_RAM ), /* foreground colorram */
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( video_writemem )
 	    { 0x0000, 0x3fff, MWA_ROM },
@@ -121,13 +125,15 @@ public class kingobox
 	    { 0xcc00, 0xcfff, MWA_RAM, &kingobox_colorram1 }, /* foreground colorram */
 	MEMORY_END
 	
-	static MEMORY_READ_START( sprite_readmem )
-	    { 0x0000, 0x1fff, MRA_ROM },
-	    { 0x8000, 0x87ff, MRA_RAM }, /* work ram */
-	    { 0xa000, 0xa7ff, sprite_shared_r }, /* shared with main */
-	    { 0xc000, 0xc3ff, spriteram_r }, /* sprite ram */
-	    { 0xc400, 0xc43f, MRA_RAM }, /* something related to scroll? */
-	MEMORY_END
+	public static Memory_ReadAddress sprite_readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+	    new Memory_ReadAddress( 0x0000, 0x1fff, MRA_ROM ),
+	    new Memory_ReadAddress( 0x8000, 0x87ff, MRA_RAM ), /* work ram */
+	    new Memory_ReadAddress( 0xa000, 0xa7ff, sprite_shared_r ), /* shared with main */
+	    new Memory_ReadAddress( 0xc000, 0xc3ff, spriteram_r ), /* sprite ram */
+	    new Memory_ReadAddress( 0xc400, 0xc43f, MRA_RAM ), /* something related to scroll? */
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( sprite_writemem )
 	    { 0x0000, 0x1fff, MWA_ROM },
@@ -137,10 +143,12 @@ public class kingobox
 	    { 0xc400, 0xc43f, MWA_RAM },  /* something related to scroll? */
 	MEMORY_END
 	
-	static MEMORY_READ_START( sound_readmem )
-	    { 0x0000, 0xbfff, MRA_ROM },
-	    { 0xc000, 0xc3ff, MRA_RAM }, /* work ram */
-	MEMORY_END
+	public static Memory_ReadAddress sound_readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+	    new Memory_ReadAddress( 0x0000, 0xbfff, MRA_ROM ),
+	    new Memory_ReadAddress( 0xc000, 0xc3ff, MRA_RAM ), /* work ram */
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( sound_writemem )
 	    { 0x8000, 0x8000, MWA_NOP }, /* ??? */
@@ -159,19 +167,21 @@ public class kingobox
 	PORT_END
 	
 	/* Ring King */
-	static MEMORY_READ_START( rk_main_readmem )
-	    { 0x0000, 0xbfff, MRA_ROM },
-	    { 0xc000, 0xc3ff, MRA_RAM }, /* work ram */
-	    { 0xc800, 0xcfff, sprite_shared_r },
-	    { 0xd000, 0xd7ff, video_shared_r },
-	    { 0xe000, 0xe000, input_port_0_r }, /* DSW 0 */
-	    { 0xe001, 0xe001, input_port_1_r }, /* DSW 1 */
-	    { 0xe002, 0xe002, input_port_2_r }, /* Player 1 controls */
-	    { 0xe003, 0xe003, input_port_3_r }, /* Player 2 controls */
-	    { 0xe004, 0xe004, input_port_4_r }, /* Coin & Start */
-	    { 0xe005, 0xe005, input_port_5_r }, /* Player 1 & 2 button 3 */
-	    { 0xf000, 0xf7ff, MRA_RAM }, /* ???? */
-	MEMORY_END
+	public static Memory_ReadAddress rk_main_readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+	    new Memory_ReadAddress( 0x0000, 0xbfff, MRA_ROM ),
+	    new Memory_ReadAddress( 0xc000, 0xc3ff, MRA_RAM ), /* work ram */
+	    new Memory_ReadAddress( 0xc800, 0xcfff, sprite_shared_r ),
+	    new Memory_ReadAddress( 0xd000, 0xd7ff, video_shared_r ),
+	    new Memory_ReadAddress( 0xe000, 0xe000, input_port_0_r ), /* DSW 0 */
+	    new Memory_ReadAddress( 0xe001, 0xe001, input_port_1_r ), /* DSW 1 */
+	    new Memory_ReadAddress( 0xe002, 0xe002, input_port_2_r ), /* Player 1 controls */
+	    new Memory_ReadAddress( 0xe003, 0xe003, input_port_3_r ), /* Player 2 controls */
+	    new Memory_ReadAddress( 0xe004, 0xe004, input_port_4_r ), /* Coin & Start */
+	    new Memory_ReadAddress( 0xe005, 0xe005, input_port_5_r ), /* Player 1 & 2 button 3 */
+	    new Memory_ReadAddress( 0xf000, 0xf7ff, MRA_RAM ), /* ???? */
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( rk_main_writemem )
 	    { 0x0000, 0xbfff, MWA_ROM },
@@ -186,15 +196,17 @@ public class kingobox
 	    { 0xf000, 0xf7ff, MWA_RAM }, /* ???? */
 	MEMORY_END
 	
-	static MEMORY_READ_START( rk_video_readmem )
-	    { 0x0000, 0x3fff, MRA_ROM },
-	    { 0x8000, 0x87ff, MRA_RAM }, /* work ram */
-	    { 0xc000, 0xc7ff, video_shared_r }, /* shared with main */
-	    { 0xa800, 0xa8ff, videoram_r }, /* background vram */
-	    { 0xac00, 0xacff, colorram_r }, /* background colorram */
-	    { 0xa000, 0xa3ff, MRA_RAM }, /* foreground vram */
-	    { 0xa400, 0xa7ff, MRA_RAM }, /* foreground colorram */
-	MEMORY_END
+	public static Memory_ReadAddress rk_video_readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+	    new Memory_ReadAddress( 0x0000, 0x3fff, MRA_ROM ),
+	    new Memory_ReadAddress( 0x8000, 0x87ff, MRA_RAM ), /* work ram */
+	    new Memory_ReadAddress( 0xc000, 0xc7ff, video_shared_r ), /* shared with main */
+	    new Memory_ReadAddress( 0xa800, 0xa8ff, videoram_r ), /* background vram */
+	    new Memory_ReadAddress( 0xac00, 0xacff, colorram_r ), /* background colorram */
+	    new Memory_ReadAddress( 0xa000, 0xa3ff, MRA_RAM ), /* foreground vram */
+	    new Memory_ReadAddress( 0xa400, 0xa7ff, MRA_RAM ), /* foreground colorram */
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( rk_video_writemem )
 	    { 0x0000, 0x3fff, MWA_ROM },
@@ -206,13 +218,15 @@ public class kingobox
 	    { 0xa400, 0xa7ff, MWA_RAM, &kingobox_colorram1 }, /* foreground colorram */
 	MEMORY_END
 	
-	static MEMORY_READ_START( rk_sprite_readmem )
-	    { 0x0000, 0x1fff, MRA_ROM },
-	    { 0x8000, 0x87ff, MRA_RAM }, /* work ram */
-	    { 0xc800, 0xcfff, sprite_shared_r }, /* shared with main */
-	    { 0xa000, 0xa3ff, spriteram_r }, /* sprite ram */
-	    { 0xa400, 0xa43f, MRA_RAM }, /* something related to scroll? */
-	MEMORY_END
+	public static Memory_ReadAddress rk_sprite_readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+	    new Memory_ReadAddress( 0x0000, 0x1fff, MRA_ROM ),
+	    new Memory_ReadAddress( 0x8000, 0x87ff, MRA_RAM ), /* work ram */
+	    new Memory_ReadAddress( 0xc800, 0xcfff, sprite_shared_r ), /* shared with main */
+	    new Memory_ReadAddress( 0xa000, 0xa3ff, spriteram_r ), /* sprite ram */
+	    new Memory_ReadAddress( 0xa400, 0xa43f, MRA_RAM ), /* something related to scroll? */
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( rk_sprite_writemem )
 	    { 0x0000, 0x1fff, MWA_ROM },

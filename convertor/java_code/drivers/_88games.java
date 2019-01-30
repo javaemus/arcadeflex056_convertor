@@ -133,19 +133,21 @@ public class _88games
 		invalid_code = (data == total_samples[speech_chip]);
 	}
 	
-	static MEMORY_READ_START( readmem )
-		{ 0x0000, 0x1fff, MRA_RAM },	/* banked ROM + palette RAM */
-		{ 0x2000, 0x37ff, MRA_RAM },
-		{ 0x3800, 0x3fff, bankedram_r },
-		{ 0x5f94, 0x5f94, input_port_0_r },
-	//	{ 0x5f95, 0x5f95, input_port_1_r },
-		{ 0x5f95, 0x5f95, cheat_r },	/* P1 IO and handle fake button for cheating */
-		{ 0x5f96, 0x5f96, input_port_2_r },
-		{ 0x5f97, 0x5f97, input_port_3_r },
-		{ 0x5f9b, 0x5f9b, input_port_4_r },
-		{ 0x4000, 0x7fff, K052109_051960_r },
-		{ 0x8000, 0xffff, MRA_ROM },
-	MEMORY_END
+	public static Memory_ReadAddress readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x1fff, MRA_RAM ),	/* banked ROM + palette RAM */
+		new Memory_ReadAddress( 0x2000, 0x37ff, MRA_RAM ),
+		new Memory_ReadAddress( 0x3800, 0x3fff, bankedram_r ),
+		new Memory_ReadAddress( 0x5f94, 0x5f94, input_port_0_r ),
+	//	new Memory_ReadAddress( 0x5f95, 0x5f95, input_port_1_r ),
+		new Memory_ReadAddress( 0x5f95, 0x5f95, cheat_r ),	/* P1 IO and handle fake button for cheating */
+		new Memory_ReadAddress( 0x5f96, 0x5f96, input_port_2_r ),
+		new Memory_ReadAddress( 0x5f97, 0x5f97, input_port_3_r ),
+		new Memory_ReadAddress( 0x5f9b, 0x5f9b, input_port_4_r ),
+		new Memory_ReadAddress( 0x4000, 0x7fff, K052109_051960_r ),
+		new Memory_ReadAddress( 0x8000, 0xffff, MRA_ROM ),
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( writemem )
 		{ 0x0000, 0x0fff, MWA_RAM },	/* banked ROM */
@@ -162,12 +164,14 @@ public class _88games
 		{ 0x8000, 0xffff, MWA_ROM },
 	MEMORY_END
 	
-	static MEMORY_READ_START( sound_readmem )
-		{ 0x0000, 0x7fff, MRA_ROM },
-		{ 0x8000, 0x87ff, MRA_RAM },
-		{ 0xa000, 0xa000, soundlatch_r },
-		{ 0xc001, 0xc001, YM2151_status_port_0_r },
-	MEMORY_END
+	public static Memory_ReadAddress sound_readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x7fff, MRA_ROM ),
+		new Memory_ReadAddress( 0x8000, 0x87ff, MRA_RAM ),
+		new Memory_ReadAddress( 0xa000, 0xa000, soundlatch_r ),
+		new Memory_ReadAddress( 0xc001, 0xc001, YM2151_status_port_0_r ),
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( sound_writemem )
 		{ 0x0000, 0x7fff, MWA_ROM },

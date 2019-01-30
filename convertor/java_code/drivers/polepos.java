@@ -150,18 +150,20 @@ public class polepos
 	 * CPU memory structures
 	 *********************************************************************/
 	
-	static MEMORY_READ_START( z80_readmem )
-		{ 0x0000, 0x2fff, MRA_ROM },				/* ROM */
-		{ 0x3000, 0x37ff, MRA_RAM },				/* Battery Backup */
-		{ 0x4000, 0x47ff, polepos_sprite_r },		/* Motion Object */
-		{ 0x4800, 0x4bff, polepos_road_r }, 		/* Road Memory */
-		{ 0x4c00, 0x4fff, polepos_alpha_r },		/* Alphanumeric (char ram) */
-		{ 0x5000, 0x57ff, polepos_view_r }, 		/* Background Memory */
-		{ 0x8000, 0x83ff, MRA_RAM },				/* Sound Memory */
-		{ 0x9000, 0x90ff, polepos_mcu_data_r }, 	/* 4 bit CPU data */
-		{ 0x9100, 0x9100, polepos_mcu_control_r },	/* 4 bit CPU control */
-		{ 0xa000, 0xa000, polepos_io_r },			/* IO */
-	MEMORY_END
+	public static Memory_ReadAddress z80_readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x2fff, MRA_ROM ),				/* ROM */
+		new Memory_ReadAddress( 0x3000, 0x37ff, MRA_RAM ),				/* Battery Backup */
+		new Memory_ReadAddress( 0x4000, 0x47ff, polepos_sprite_r ),		/* Motion Object */
+		new Memory_ReadAddress( 0x4800, 0x4bff, polepos_road_r ), 		/* Road Memory */
+		new Memory_ReadAddress( 0x4c00, 0x4fff, polepos_alpha_r ),		/* Alphanumeric (char ram) */
+		new Memory_ReadAddress( 0x5000, 0x57ff, polepos_view_r ), 		/* Background Memory */
+		new Memory_ReadAddress( 0x8000, 0x83ff, MRA_RAM ),				/* Sound Memory */
+		new Memory_ReadAddress( 0x9000, 0x90ff, polepos_mcu_data_r ), 	/* 4 bit CPU data */
+		new Memory_ReadAddress( 0x9100, 0x9100, polepos_mcu_control_r ),	/* 4 bit CPU control */
+		new Memory_ReadAddress( 0xa000, 0xa000, polepos_io_r ),			/* IO */
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( z80_writemem )
 		{ 0x0000, 0x2fff, MWA_ROM },						/* ROM */

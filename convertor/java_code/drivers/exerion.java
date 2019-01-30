@@ -106,16 +106,18 @@ public class exerion
 	 * CPU memory structures
 	 *********************************************************************/
 	
-	static MEMORY_READ_START( readmem )
-		{ 0x0000, 0x5fff, MRA_ROM },
-		{ 0x6008, 0x600b, exerion_protection_r },
-		{ 0x6000, 0x67ff, MRA_RAM },
-		{ 0x8000, 0x8bff, MRA_RAM },
-		{ 0xa000, 0xa000, exerion_port01_r },
-		{ 0xa800, 0xa800, input_port_2_r },
-		{ 0xb000, 0xb000, exerion_port3_r },
-		{ 0xd802, 0xd802, AY8910_read_port_1_r },
-	MEMORY_END
+	public static Memory_ReadAddress readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x5fff, MRA_ROM ),
+		new Memory_ReadAddress( 0x6008, 0x600b, exerion_protection_r ),
+		new Memory_ReadAddress( 0x6000, 0x67ff, MRA_RAM ),
+		new Memory_ReadAddress( 0x8000, 0x8bff, MRA_RAM ),
+		new Memory_ReadAddress( 0xa000, 0xa000, exerion_port01_r ),
+		new Memory_ReadAddress( 0xa800, 0xa800, input_port_2_r ),
+		new Memory_ReadAddress( 0xb000, 0xb000, exerion_port3_r ),
+		new Memory_ReadAddress( 0xd802, 0xd802, AY8910_read_port_1_r ),
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	
 	static MEMORY_WRITE_START( writemem )
@@ -133,12 +135,14 @@ public class exerion
 	MEMORY_END
 	
 	
-	static MEMORY_READ_START( cpu2_readmem )
-		{ 0x0000, 0x1fff, MRA_ROM },
-		{ 0x4000, 0x47ff, MRA_RAM },
-		{ 0x6000, 0x6000, soundlatch_r },
-		{ 0xa000, 0xa000, exerion_video_timing_r },
-	MEMORY_END
+	public static Memory_ReadAddress cpu2_readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x1fff, MRA_ROM ),
+		new Memory_ReadAddress( 0x4000, 0x47ff, MRA_RAM ),
+		new Memory_ReadAddress( 0x6000, 0x6000, soundlatch_r ),
+		new Memory_ReadAddress( 0xa000, 0xa000, exerion_video_timing_r ),
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	
 	static MEMORY_WRITE_START( cpu2_writemem )

@@ -266,27 +266,31 @@ public class dkong
 	}
 	
 	
-	static MEMORY_READ_START( readmem )
-		{ 0x0000, 0x5fff, MRA_ROM },	/* DK: 0000-3fff */
-		{ 0x6000, 0x6fff, MRA_RAM },	/* including sprites RAM */
-		{ 0x7400, 0x77ff, MRA_RAM },	/* video RAM */
-		{ 0x7c00, 0x7c00, input_port_0_r },	/* IN0 */
-		{ 0x7c80, 0x7c80, input_port_1_r },	/* IN1 */
-		{ 0x7d00, 0x7d00, dkong_in2_r },	/* IN2/DSW2 */
-		{ 0x7d80, 0x7d80, input_port_3_r },	/* DSW1 */
-		{ 0x8000, 0x9fff, MRA_ROM },	/* DK3 and bootleg DKjr only */
-	MEMORY_END
+	public static Memory_ReadAddress readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x5fff, MRA_ROM ),	/* DK: 0000-3fff */
+		new Memory_ReadAddress( 0x6000, 0x6fff, MRA_RAM ),	/* including sprites RAM */
+		new Memory_ReadAddress( 0x7400, 0x77ff, MRA_RAM ),	/* video RAM */
+		new Memory_ReadAddress( 0x7c00, 0x7c00, input_port_0_r ),	/* IN0 */
+		new Memory_ReadAddress( 0x7c80, 0x7c80, input_port_1_r ),	/* IN1 */
+		new Memory_ReadAddress( 0x7d00, 0x7d00, dkong_in2_r ),	/* IN2/DSW2 */
+		new Memory_ReadAddress( 0x7d80, 0x7d80, input_port_3_r ),	/* DSW1 */
+		new Memory_ReadAddress( 0x8000, 0x9fff, MRA_ROM ),	/* DK3 and bootleg DKjr only */
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
-	static MEMORY_READ_START( dkong3_readmem )
-		{ 0x0000, 0x5fff, MRA_ROM },	/* DK: 0000-3fff */
-		{ 0x6000, 0x6fff, MRA_RAM },	/* including sprites RAM */
-		{ 0x7400, 0x77ff, MRA_RAM },	/* video RAM */
-		{ 0x7c00, 0x7c00, input_port_0_r },	/* IN0 */
-		{ 0x7c80, 0x7c80, input_port_1_r },	/* IN1 */
-		{ 0x7d00, 0x7d00, input_port_2_r },	/* IN2/DSW2 */
-		{ 0x7d80, 0x7d80, input_port_3_r },	/* DSW1 */
-		{ 0x8000, 0x9fff, MRA_ROM },	/* DK3 and bootleg DKjr only */
-	MEMORY_END
+	public static Memory_ReadAddress dkong3_readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x5fff, MRA_ROM ),	/* DK: 0000-3fff */
+		new Memory_ReadAddress( 0x6000, 0x6fff, MRA_RAM ),	/* including sprites RAM */
+		new Memory_ReadAddress( 0x7400, 0x77ff, MRA_RAM ),	/* video RAM */
+		new Memory_ReadAddress( 0x7c00, 0x7c00, input_port_0_r ),	/* IN0 */
+		new Memory_ReadAddress( 0x7c80, 0x7c80, input_port_1_r ),	/* IN1 */
+		new Memory_ReadAddress( 0x7d00, 0x7d00, input_port_2_r ),	/* IN2/DSW2 */
+		new Memory_ReadAddress( 0x7d80, 0x7d80, input_port_3_r ),	/* DSW1 */
+		new Memory_ReadAddress( 0x8000, 0x9fff, MRA_ROM ),	/* DK3 and bootleg DKjr only */
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( radarscp_writemem )
 		{ 0x0000, 0x5fff, MWA_ROM },
@@ -336,22 +340,24 @@ public class dkong
 		{ 0x7d86, 0x7d87, dkong_palettebank_w },
 	MEMORY_END
 	
-	static MEMORY_READ_START( hunchbkd_readmem )
-		{ 0x0000, 0x0fff, MRA_ROM },
-		{ 0x2000, 0x2fff, MRA_ROM },
-		{ 0x4000, 0x4fff, MRA_ROM },
-		{ 0x6000, 0x6fff, MRA_ROM },
-		{ 0x1400, 0x1400, input_port_0_r },		/* IN0 */
-		{ 0x1480, 0x1480, input_port_1_r },		/* IN1 */
-		{ 0x1500, 0x1500, input_port_2_r },		/* IN2/DSW2 */
-	//  { 0x1507, 0x1507, herbiedk_iack_r },  	/* Clear Int */
-		{ 0x1580, 0x1580, input_port_3_r },		/* DSW1 */
-		{ 0x1600, 0x1bff, MRA_RAM },			/* video RAM */
-		{ 0x1c00, 0x1fff, MRA_RAM },
-	    { 0x3000, 0x3fff, hunchbks_mirror_r },
-	    { 0x5000, 0x5fff, hunchbks_mirror_r },
-	    { 0x7000, 0x7fff, hunchbks_mirror_r },
-	MEMORY_END
+	public static Memory_ReadAddress hunchbkd_readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x0fff, MRA_ROM ),
+		new Memory_ReadAddress( 0x2000, 0x2fff, MRA_ROM ),
+		new Memory_ReadAddress( 0x4000, 0x4fff, MRA_ROM ),
+		new Memory_ReadAddress( 0x6000, 0x6fff, MRA_ROM ),
+		new Memory_ReadAddress( 0x1400, 0x1400, input_port_0_r ),		/* IN0 */
+		new Memory_ReadAddress( 0x1480, 0x1480, input_port_1_r ),		/* IN1 */
+		new Memory_ReadAddress( 0x1500, 0x1500, input_port_2_r ),		/* IN2/DSW2 */
+	//  new Memory_ReadAddress( 0x1507, 0x1507, herbiedk_iack_r ),  	/* Clear Int */
+		new Memory_ReadAddress( 0x1580, 0x1580, input_port_3_r ),		/* DSW1 */
+		new Memory_ReadAddress( 0x1600, 0x1bff, MRA_RAM ),			/* video RAM */
+		new Memory_ReadAddress( 0x1c00, 0x1fff, MRA_RAM ),
+	    new Memory_ReadAddress( 0x3000, 0x3fff, hunchbks_mirror_r ),
+	    new Memory_ReadAddress( 0x5000, 0x5fff, hunchbks_mirror_r ),
+	    new Memory_ReadAddress( 0x7000, 0x7fff, hunchbks_mirror_r ),
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( hunchbkd_writemem )
 		{ 0x0000, 0x0fff, MWA_ROM },
@@ -424,9 +430,11 @@ public class dkong
 	    { S2650_SENSE_PORT, S2650_SENSE_PORT, input_port_4_r },
 	PORT_END
 	
-	static MEMORY_READ_START( readmem_sound )
-		{ 0x0000, 0x0fff, MRA_ROM },
-	MEMORY_END
+	public static Memory_ReadAddress readmem_sound[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x0fff, MRA_ROM ),
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	static MEMORY_WRITE_START( writemem_sound )
 		{ 0x0000, 0x0fff, MWA_ROM },
 	MEMORY_END
@@ -518,13 +526,15 @@ public class dkong
 		{ 0x00, 0x00, IOWP_NOP },	/* ??? */
 	PORT_END
 	
-	static MEMORY_READ_START( dkong3_sound1_readmem )
-		{ 0x0000, 0x01ff, MRA_RAM },
-		{ 0x4016, 0x4016, soundlatch_r },
-		{ 0x4017, 0x4017, soundlatch2_r },
-		{ 0x4000, 0x4017, NESPSG_0_r },
-		{ 0xe000, 0xffff, MRA_ROM },
-	MEMORY_END
+	public static Memory_ReadAddress dkong3_sound1_readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x01ff, MRA_RAM ),
+		new Memory_ReadAddress( 0x4016, 0x4016, soundlatch_r ),
+		new Memory_ReadAddress( 0x4017, 0x4017, soundlatch2_r ),
+		new Memory_ReadAddress( 0x4000, 0x4017, NESPSG_0_r ),
+		new Memory_ReadAddress( 0xe000, 0xffff, MRA_ROM ),
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( dkong3_sound1_writemem )
 		{ 0x0000, 0x01ff, MWA_RAM },
@@ -532,12 +542,14 @@ public class dkong
 		{ 0xe000, 0xffff, MWA_ROM },
 	MEMORY_END
 	
-	static MEMORY_READ_START( dkong3_sound2_readmem )
-		{ 0x0000, 0x01ff, MRA_RAM },
-		{ 0x4016, 0x4016, soundlatch3_r },
-		{ 0x4000, 0x4017, NESPSG_1_r },
-		{ 0xe000, 0xffff, MRA_ROM },
-	MEMORY_END
+	public static Memory_ReadAddress dkong3_sound2_readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x01ff, MRA_RAM ),
+		new Memory_ReadAddress( 0x4016, 0x4016, soundlatch3_r ),
+		new Memory_ReadAddress( 0x4000, 0x4017, NESPSG_1_r ),
+		new Memory_ReadAddress( 0xe000, 0xffff, MRA_ROM ),
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( dkong3_sound2_writemem )
 		{ 0x0000, 0x01ff, MWA_RAM },

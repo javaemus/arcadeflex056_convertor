@@ -44,17 +44,19 @@ public class tagteam
 	}
 	
 	
-	static MEMORY_READ_START( readmem )
-		{ 0x0000, 0x07ff, MRA_RAM },
-		{ 0x2000, 0x2000, input_port_1_r },     /* IN1 */
-		{ 0x2001, 0x2001, input_port_0_r },     /* IN0 */
-		{ 0x2002, 0x2002, input_port_2_r },     /* DSW2 */
-		{ 0x2003, 0x2003, input_port_3_r },     /* DSW1 */
-		{ 0x4000, 0x43ff, tagteam_mirrorvideoram_r },
-		{ 0x4400, 0x47ff, tagteam_mirrorcolorram_r },
-		{ 0x4800, 0x4fff, MRA_RAM },
-		{ 0x8000, 0xffff, MRA_ROM },
-	MEMORY_END
+	public static Memory_ReadAddress readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x07ff, MRA_RAM ),
+		new Memory_ReadAddress( 0x2000, 0x2000, input_port_1_r ),     /* IN1 */
+		new Memory_ReadAddress( 0x2001, 0x2001, input_port_0_r ),     /* IN0 */
+		new Memory_ReadAddress( 0x2002, 0x2002, input_port_2_r ),     /* DSW2 */
+		new Memory_ReadAddress( 0x2003, 0x2003, input_port_3_r ),     /* DSW1 */
+		new Memory_ReadAddress( 0x4000, 0x43ff, tagteam_mirrorvideoram_r ),
+		new Memory_ReadAddress( 0x4400, 0x47ff, tagteam_mirrorcolorram_r ),
+		new Memory_ReadAddress( 0x4800, 0x4fff, MRA_RAM ),
+		new Memory_ReadAddress( 0x8000, 0xffff, MRA_ROM ),
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( writemem )
 		{ 0x0000, 0x07ff, MWA_RAM },
@@ -70,11 +72,13 @@ public class tagteam
 	MEMORY_END
 	
 	
-	static MEMORY_READ_START( sound_readmem )
-		{ 0x0000, 0x03ff, MRA_RAM },
-		{ 0x2007, 0x2007, soundlatch_r },
-		{ 0x4000, 0xffff, MRA_ROM },
-	MEMORY_END
+	public static Memory_ReadAddress sound_readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x03ff, MRA_RAM ),
+		new Memory_ReadAddress( 0x2007, 0x2007, soundlatch_r ),
+		new Memory_ReadAddress( 0x4000, 0xffff, MRA_ROM ),
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( sound_writemem )
 		{ 0x0000, 0x03ff, MWA_RAM },

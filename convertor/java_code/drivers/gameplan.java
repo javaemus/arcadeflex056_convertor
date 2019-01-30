@@ -94,18 +94,20 @@ public class gameplan
 		return readinputport(gameplan_current_port);
 	}
 	
-	static MEMORY_READ_START( readmem )
-	    { 0x0000, 0x03ff, MRA_RAM },
-	    { 0x032d, 0x03d8, MRA_RAM }, /* note: 300-32c and 3d9-3ff is
+	public static Memory_ReadAddress readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+	    new Memory_ReadAddress( 0x0000, 0x03ff, MRA_RAM ),
+	    new Memory_ReadAddress( 0x032d, 0x03d8, MRA_RAM ), /* note: 300-32c and 3d9-3ff is
 									  * written but never read?
 									  * (write by code at e1df and e1e9,
 									  * 32d is read by e258)*/
-	    { 0x2000, 0x200f, gameplan_video_r },
-	    { 0x2801, 0x2801, gameplan_port_r },
-		{ 0x3000, 0x300f, gameplan_sound_r },
-	    { 0x9000, 0xffff, MRA_ROM },
+	    new Memory_ReadAddress( 0x2000, 0x200f, gameplan_video_r ),
+	    new Memory_ReadAddress( 0x2801, 0x2801, gameplan_port_r ),
+		new Memory_ReadAddress( 0x3000, 0x300f, gameplan_sound_r ),
+	    new Memory_ReadAddress( 0x9000, 0xffff, MRA_ROM ),
 	
-	MEMORY_END
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( writemem )
 	    { 0x0000, 0x03ff, MWA_RAM },
@@ -116,19 +118,21 @@ public class gameplan
 	
 	MEMORY_END
 	
-	static MEMORY_READ_START( readmem_snd )
-		{ 0x0000, 0x0026, MRA_RAM },
-		{ 0x01f6, 0x01ff, MRA_RAM },
-		{ 0x0800, 0x080f, gameplan_via5_r },
+	public static Memory_ReadAddress readmem_snd[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x0026, MRA_RAM ),
+		new Memory_ReadAddress( 0x01f6, 0x01ff, MRA_RAM ),
+		new Memory_ReadAddress( 0x0800, 0x080f, gameplan_via5_r ),
 	
 	#if 0
-	    { 0xa001, 0xa001, gameplan_ay_3_8910_1_r }, /* AY-3-8910 */
+	    new Memory_ReadAddress( 0xa001, 0xa001, gameplan_ay_3_8910_1_r ), /* AY-3-8910 */
 	#else
-	    { 0xa001, 0xa001, soundlatch_r }, /* AY-3-8910 */
+	    new Memory_ReadAddress( 0xa001, 0xa001, soundlatch_r ), /* AY-3-8910 */
 	#endif
 	
-	    { 0xf800, 0xffff, MRA_ROM },
-	MEMORY_END
+	    new Memory_ReadAddress( 0xf800, 0xffff, MRA_ROM ),
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( writemem_snd )
 		{ 0x0000, 0x0026, MWA_RAM },

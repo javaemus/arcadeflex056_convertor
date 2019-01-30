@@ -121,14 +121,16 @@ public class ddrible
 	}
 	
 	
-	static MEMORY_READ_START( readmem_cpu0 )
-		{ 0x1800, 0x187f, MRA_RAM },			/* palette */
-		{ 0x2000, 0x3fff, MRA_RAM },			/* Video RAM 1 + Object RAM 1 */
-		{ 0x4000, 0x5fff, MRA_RAM },			/* shared RAM with CPU #1 */
-		{ 0x6000, 0x7fff, MRA_RAM },			/* Video RAM 2 + Object RAM 2 */
-		{ 0x8000, 0x9fff, MRA_BANK1 },			/* banked ROM */
-		{ 0xa000, 0xffff, MRA_ROM },			/* ROM */
-	MEMORY_END
+	public static Memory_ReadAddress readmem_cpu0[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x1800, 0x187f, MRA_RAM ),			/* palette */
+		new Memory_ReadAddress( 0x2000, 0x3fff, MRA_RAM ),			/* Video RAM 1 + Object RAM 1 */
+		new Memory_ReadAddress( 0x4000, 0x5fff, MRA_RAM ),			/* shared RAM with CPU #1 */
+		new Memory_ReadAddress( 0x6000, 0x7fff, MRA_RAM ),			/* Video RAM 2 + Object RAM 2 */
+		new Memory_ReadAddress( 0x8000, 0x9fff, MRA_BANK1 ),			/* banked ROM */
+		new Memory_ReadAddress( 0xa000, 0xffff, MRA_ROM ),			/* ROM */
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	
 	static MEMORY_WRITE_START( writemem_cpu0 )
@@ -144,17 +146,19 @@ public class ddrible
 		{ 0x8000, 0xffff, MWA_ROM },									/* ROM */
 	MEMORY_END
 	
-	static MEMORY_READ_START( readmem_cpu1 )
-		{ 0x0000, 0x1fff, ddrible_sharedram_r },		/* shared RAM with CPU #0 */
-		{ 0x2000, 0x27ff, ddrible_snd_sharedram_r },	/* shared RAM with CPU #2 */
-		{ 0x2800, 0x2800, input_port_3_r },				/* DSW #1 */
-		{ 0x2801, 0x2801, input_port_0_r },				/* player 1 inputs */
-		{ 0x2802, 0x2802, input_port_1_r },				/* player 2 inputs */
-		{ 0x2803, 0x2803, input_port_2_r },				/* coinsw & start */
-		{ 0x2c00, 0x2c00, input_port_4_r },				/* DSW #2 */
-		{ 0x3000, 0x3000, input_port_5_r },				/* DSW #3 */
-		{ 0x8000, 0xffff, MRA_ROM },					/* ROM */
-	MEMORY_END
+	public static Memory_ReadAddress readmem_cpu1[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x1fff, ddrible_sharedram_r ),		/* shared RAM with CPU #0 */
+		new Memory_ReadAddress( 0x2000, 0x27ff, ddrible_snd_sharedram_r ),	/* shared RAM with CPU #2 */
+		new Memory_ReadAddress( 0x2800, 0x2800, input_port_3_r ),				/* DSW #1 */
+		new Memory_ReadAddress( 0x2801, 0x2801, input_port_0_r ),				/* player 1 inputs */
+		new Memory_ReadAddress( 0x2802, 0x2802, input_port_1_r ),				/* player 2 inputs */
+		new Memory_ReadAddress( 0x2803, 0x2803, input_port_2_r ),				/* coinsw & start */
+		new Memory_ReadAddress( 0x2c00, 0x2c00, input_port_4_r ),				/* DSW #2 */
+		new Memory_ReadAddress( 0x3000, 0x3000, input_port_5_r ),				/* DSW #3 */
+		new Memory_ReadAddress( 0x8000, 0xffff, MRA_ROM ),					/* ROM */
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( writemem_cpu1 )
 		{ 0x0000, 0x1fff, ddrible_sharedram_w },		/* shared RAM with CPU #0 */
@@ -164,12 +168,14 @@ public class ddrible
 		{ 0x8000, 0xffff, MWA_ROM },					/* ROM */
 	MEMORY_END
 	
-	static MEMORY_READ_START( readmem_cpu2 )
-		{ 0x0000, 0x07ff, MRA_RAM },					/* shared RAM with CPU #1 */
-		{ 0x1000, 0x1000, YM2203_status_port_0_r },		/* YM2203 */
-		{ 0x1001, 0x1001, YM2203_read_port_0_r },		/* YM2203 */
-		{ 0x8000, 0xffff, MRA_ROM },					/* ROM */
-	MEMORY_END
+	public static Memory_ReadAddress readmem_cpu2[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x07ff, MRA_RAM ),					/* shared RAM with CPU #1 */
+		new Memory_ReadAddress( 0x1000, 0x1000, YM2203_status_port_0_r ),		/* YM2203 */
+		new Memory_ReadAddress( 0x1001, 0x1001, YM2203_read_port_0_r ),		/* YM2203 */
+		new Memory_ReadAddress( 0x8000, 0xffff, MRA_ROM ),					/* ROM */
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( writemem_cpu2 )
 		{ 0x0000, 0x07ff, MWA_RAM, &ddrible_snd_sharedram  },	/* shared RAM with CPU #1 */

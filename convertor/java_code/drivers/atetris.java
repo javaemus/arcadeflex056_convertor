@@ -204,15 +204,17 @@ public class atetris
 	 *
 	 *************************************/
 	
-	static MEMORY_READ_START( readmem )
-		{ 0x0000, 0x20ff, MRA_RAM },
-		{ 0x2400, 0x25ff, MRA_RAM },
-		{ 0x2800, 0x280f, pokey1_r },
-		{ 0x2810, 0x281f, pokey2_r },
-		{ 0x4000, 0x5fff, MRA_ROM },
-		{ 0x6000, 0x7fff, atetris_slapstic_r },
-		{ 0x8000, 0xffff, MRA_ROM },
-	MEMORY_END
+	public static Memory_ReadAddress readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x20ff, MRA_RAM ),
+		new Memory_ReadAddress( 0x2400, 0x25ff, MRA_RAM ),
+		new Memory_ReadAddress( 0x2800, 0x280f, pokey1_r ),
+		new Memory_ReadAddress( 0x2810, 0x281f, pokey2_r ),
+		new Memory_ReadAddress( 0x4000, 0x5fff, MRA_ROM ),
+		new Memory_ReadAddress( 0x6000, 0x7fff, atetris_slapstic_r ),
+		new Memory_ReadAddress( 0x8000, 0xffff, MRA_ROM ),
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	
 	static MEMORY_WRITE_START( writemem )

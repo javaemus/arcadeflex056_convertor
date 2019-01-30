@@ -45,16 +45,18 @@ public class mrdo
 	
 	
 	
-	static MEMORY_READ_START( readmem )
-		{ 0x0000, 0x7fff, MRA_ROM },
-		{ 0x8000, 0x8fff, MRA_RAM },	/* video and color RAM */
-		{ 0x9803, 0x9803, mrdo_SECRE_r },
-		{ 0xa000, 0xa000, input_port_0_r },	/* IN0 */
-		{ 0xa001, 0xa001, input_port_1_r },	/* IN1 */
-		{ 0xa002, 0xa002, input_port_2_r },	/* DSW1 */
-		{ 0xa003, 0xa003, input_port_3_r },	/* DSW2 */
-		{ 0xe000, 0xefff, MRA_RAM },
-	MEMORY_END
+	public static Memory_ReadAddress readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x7fff, MRA_ROM ),
+		new Memory_ReadAddress( 0x8000, 0x8fff, MRA_RAM ),	/* video and color RAM */
+		new Memory_ReadAddress( 0x9803, 0x9803, mrdo_SECRE_r ),
+		new Memory_ReadAddress( 0xa000, 0xa000, input_port_0_r ),	/* IN0 */
+		new Memory_ReadAddress( 0xa001, 0xa001, input_port_1_r ),	/* IN1 */
+		new Memory_ReadAddress( 0xa002, 0xa002, input_port_2_r ),	/* DSW1 */
+		new Memory_ReadAddress( 0xa003, 0xa003, input_port_3_r ),	/* DSW2 */
+		new Memory_ReadAddress( 0xe000, 0xefff, MRA_RAM ),
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( writemem )
 		{ 0x0000, 0x7fff, MWA_ROM },

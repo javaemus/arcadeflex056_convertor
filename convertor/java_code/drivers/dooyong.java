@@ -85,16 +85,18 @@ public class dooyong
 	
 	
 	
-	static MEMORY_READ_START( lastday_readmem )
-		{ 0x0000, 0x7fff, MRA_ROM },
-		{ 0x8000, 0xbfff, MRA_BANK1 },
-		{ 0xc010, 0xc010, input_port_0_r },
-		{ 0xc011, 0xc011, input_port_1_r },
-		{ 0xc012, 0xc012, input_port_2_r },
-		{ 0xc013, 0xc013, input_port_3_r },	/* DSWA */
-		{ 0xc014, 0xc014, input_port_4_r },	/* DSWB */
-		{ 0xc800, 0xffff, MRA_RAM },
-	MEMORY_END
+	public static Memory_ReadAddress lastday_readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x7fff, MRA_ROM ),
+		new Memory_ReadAddress( 0x8000, 0xbfff, MRA_BANK1 ),
+		new Memory_ReadAddress( 0xc010, 0xc010, input_port_0_r ),
+		new Memory_ReadAddress( 0xc011, 0xc011, input_port_1_r ),
+		new Memory_ReadAddress( 0xc012, 0xc012, input_port_2_r ),
+		new Memory_ReadAddress( 0xc013, 0xc013, input_port_3_r ),	/* DSWA */
+		new Memory_ReadAddress( 0xc014, 0xc014, input_port_4_r ),	/* DSWB */
+		new Memory_ReadAddress( 0xc800, 0xffff, MRA_RAM ),
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( lastday_writemem )
 		{ 0x0000, 0xbfff, MWA_ROM },
@@ -109,17 +111,19 @@ public class dooyong
 		{ 0xf000, 0xffff, MWA_RAM, &spriteram, &spriteram_size },
 	MEMORY_END
 	
-	static MEMORY_READ_START( pollux_readmem )
-		{ 0x0000, 0x7fff, MRA_ROM },
-		{ 0x8000, 0xbfff, MRA_BANK1 },
-		{ 0xc000, 0xefff, MRA_RAM },
-		{ 0xf000, 0xf000, input_port_0_r },
-		{ 0xf001, 0xf001, input_port_1_r },
-		{ 0xf002, 0xf002, input_port_2_r },
-		{ 0xf003, 0xf003, input_port_3_r },
-		{ 0xf004, 0xf004, input_port_4_r },
-		{ 0xf800, 0xffff, MRA_RAM },
-	MEMORY_END
+	public static Memory_ReadAddress pollux_readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x7fff, MRA_ROM ),
+		new Memory_ReadAddress( 0x8000, 0xbfff, MRA_BANK1 ),
+		new Memory_ReadAddress( 0xc000, 0xefff, MRA_RAM ),
+		new Memory_ReadAddress( 0xf000, 0xf000, input_port_0_r ),
+		new Memory_ReadAddress( 0xf001, 0xf001, input_port_1_r ),
+		new Memory_ReadAddress( 0xf002, 0xf002, input_port_2_r ),
+		new Memory_ReadAddress( 0xf003, 0xf003, input_port_3_r ),
+		new Memory_ReadAddress( 0xf004, 0xf004, input_port_4_r ),
+		new Memory_ReadAddress( 0xf800, 0xffff, MRA_RAM ),
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( pollux_writemem )
 		{ 0x0000, 0xbfff, MWA_ROM },
@@ -134,16 +138,18 @@ public class dooyong
 		{ 0xf800, 0xffff, paletteram_xRRRRRGGGGGBBBBB_w, &paletteram },
 	MEMORY_END
 	
-	static MEMORY_READ_START( bluehawk_readmem )
-		{ 0x0000, 0x7fff, MRA_ROM },
-		{ 0x8000, 0xbfff, MRA_BANK1 },
-		{ 0xc000, 0xc000, input_port_0_r },
-		{ 0xc001, 0xc001, input_port_1_r },
-		{ 0xc002, 0xc002, input_port_2_r },
-		{ 0xc003, 0xc003, input_port_3_r },
-		{ 0xc004, 0xc004, input_port_4_r },
-		{ 0xc800, 0xffff, MRA_RAM },
-	MEMORY_END
+	public static Memory_ReadAddress bluehawk_readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x7fff, MRA_ROM ),
+		new Memory_ReadAddress( 0x8000, 0xbfff, MRA_BANK1 ),
+		new Memory_ReadAddress( 0xc000, 0xc000, input_port_0_r ),
+		new Memory_ReadAddress( 0xc001, 0xc001, input_port_1_r ),
+		new Memory_ReadAddress( 0xc002, 0xc002, input_port_2_r ),
+		new Memory_ReadAddress( 0xc003, 0xc003, input_port_3_r ),
+		new Memory_ReadAddress( 0xc004, 0xc004, input_port_4_r ),
+		new Memory_ReadAddress( 0xc800, 0xffff, MRA_RAM ),
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( bluehawk_writemem )
 		{ 0x0000, 0xbfff, MWA_ROM },
@@ -159,18 +165,20 @@ public class dooyong
 		{ 0xf000, 0xffff, MWA_RAM },
 	MEMORY_END
 	
-	static MEMORY_READ_START( primella_readmem )
-		{ 0x0000, 0x7fff, MRA_ROM },
-		{ 0x8000, 0xbfff, MRA_BANK1 },
-		{ 0xc000, 0xcfff, MRA_RAM },
-		{ 0xd000, 0xd3ff, MRA_RAM },
-		{ 0xe000, 0xefff, MRA_RAM },
-		{ 0xf800, 0xf800, input_port_0_r },
-		{ 0xf810, 0xf810, input_port_1_r },
-		{ 0xf820, 0xf820, input_port_2_r },
-		{ 0xf830, 0xf830, input_port_3_r },
-		{ 0xf840, 0xf840, input_port_4_r },
-	MEMORY_END
+	public static Memory_ReadAddress primella_readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x7fff, MRA_ROM ),
+		new Memory_ReadAddress( 0x8000, 0xbfff, MRA_BANK1 ),
+		new Memory_ReadAddress( 0xc000, 0xcfff, MRA_RAM ),
+		new Memory_ReadAddress( 0xd000, 0xd3ff, MRA_RAM ),
+		new Memory_ReadAddress( 0xe000, 0xefff, MRA_RAM ),
+		new Memory_ReadAddress( 0xf800, 0xf800, input_port_0_r ),
+		new Memory_ReadAddress( 0xf810, 0xf810, input_port_1_r ),
+		new Memory_ReadAddress( 0xf820, 0xf820, input_port_2_r ),
+		new Memory_ReadAddress( 0xf830, 0xf830, input_port_3_r ),
+		new Memory_ReadAddress( 0xf840, 0xf840, input_port_4_r ),
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( primella_writemem )
 		{ 0x0000, 0xbfff, MWA_ROM },
@@ -208,15 +216,17 @@ public class dooyong
 		{ 0x3cc010, 0x3cc019, MWA16_RAM, &rshark_scroll1 },
 	MEMORY_END
 	
-	static MEMORY_READ_START( lastday_sound_readmem )
-		{ 0x0000, 0x7fff, MRA_ROM },
-		{ 0xc000, 0xc7ff, MRA_RAM },
-		{ 0xc800, 0xc800, soundlatch_r },
-		{ 0xf000, 0xf000, YM2203_status_port_0_r },
-		{ 0xf001, 0xf001, YM2203_read_port_0_r },
-		{ 0xf002, 0xf002, YM2203_status_port_1_r },
-		{ 0xf003, 0xf003, YM2203_read_port_1_r },
-	MEMORY_END
+	public static Memory_ReadAddress lastday_sound_readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x7fff, MRA_ROM ),
+		new Memory_ReadAddress( 0xc000, 0xc7ff, MRA_RAM ),
+		new Memory_ReadAddress( 0xc800, 0xc800, soundlatch_r ),
+		new Memory_ReadAddress( 0xf000, 0xf000, YM2203_status_port_0_r ),
+		new Memory_ReadAddress( 0xf001, 0xf001, YM2203_read_port_0_r ),
+		new Memory_ReadAddress( 0xf002, 0xf002, YM2203_status_port_1_r ),
+		new Memory_ReadAddress( 0xf003, 0xf003, YM2203_read_port_1_r ),
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( lastday_sound_writemem )
 		{ 0x0000, 0x7fff, MWA_ROM },
@@ -227,15 +237,17 @@ public class dooyong
 		{ 0xf003, 0xf003, YM2203_write_port_1_w },
 	MEMORY_END
 	
-	static MEMORY_READ_START( pollux_sound_readmem )
-		{ 0x0000, 0xefff, MRA_ROM },
-		{ 0xf000, 0xf7ff, MRA_RAM },
-		{ 0xf800, 0xf800, soundlatch_r },
-		{ 0xf802, 0xf802, YM2203_status_port_0_r },
-		{ 0xf803, 0xf803, YM2203_read_port_0_r },
-		{ 0xf804, 0xf804, YM2203_status_port_1_r },
-		{ 0xf805, 0xf805, YM2203_read_port_1_r },
-	MEMORY_END
+	public static Memory_ReadAddress pollux_sound_readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0xefff, MRA_ROM ),
+		new Memory_ReadAddress( 0xf000, 0xf7ff, MRA_RAM ),
+		new Memory_ReadAddress( 0xf800, 0xf800, soundlatch_r ),
+		new Memory_ReadAddress( 0xf802, 0xf802, YM2203_status_port_0_r ),
+		new Memory_ReadAddress( 0xf803, 0xf803, YM2203_read_port_0_r ),
+		new Memory_ReadAddress( 0xf804, 0xf804, YM2203_status_port_1_r ),
+		new Memory_ReadAddress( 0xf805, 0xf805, YM2203_read_port_1_r ),
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( pollux_sound_writemem )
 		{ 0x0000, 0xefff, MWA_ROM },
@@ -246,13 +258,15 @@ public class dooyong
 		{ 0xf805, 0xf805, YM2203_write_port_1_w },
 	MEMORY_END
 	
-	static MEMORY_READ_START( bluehawk_sound_readmem )
-		{ 0x0000, 0xefff, MRA_ROM },
-		{ 0xf000, 0xf7ff, MRA_RAM },
-		{ 0xf800, 0xf800, soundlatch_r },
-		{ 0xf809, 0xf809, YM2151_status_port_0_r },
-		{ 0xf80a, 0xf80a, OKIM6295_status_0_r },
-	MEMORY_END
+	public static Memory_ReadAddress bluehawk_sound_readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0xefff, MRA_ROM ),
+		new Memory_ReadAddress( 0xf000, 0xf7ff, MRA_RAM ),
+		new Memory_ReadAddress( 0xf800, 0xf800, soundlatch_r ),
+		new Memory_ReadAddress( 0xf809, 0xf809, YM2151_status_port_0_r ),
+		new Memory_ReadAddress( 0xf80a, 0xf80a, OKIM6295_status_0_r ),
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( bluehawk_sound_writemem )
 		{ 0x0000, 0xefff, MWA_ROM },

@@ -172,14 +172,16 @@ public class bublbobl
 	
 	
 	
-	static MEMORY_READ_START( bublbobl_readmem )
-		{ 0x0000, 0x7fff, MRA_ROM },
-		{ 0x8000, 0xbfff, MRA_BANK1 },
-		{ 0xc000, 0xdfff, MRA_RAM },
-		{ 0xe000, 0xf7ff, bublbobl_sharedram1_r },
-		{ 0xf800, 0xf9ff, paletteram_r },
-		{ 0xfc00, 0xffff, bublbobl_sharedram2_r },
-	MEMORY_END
+	public static Memory_ReadAddress bublbobl_readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x7fff, MRA_ROM ),
+		new Memory_ReadAddress( 0x8000, 0xbfff, MRA_BANK1 ),
+		new Memory_ReadAddress( 0xc000, 0xdfff, MRA_RAM ),
+		new Memory_ReadAddress( 0xe000, 0xf7ff, bublbobl_sharedram1_r ),
+		new Memory_ReadAddress( 0xf800, 0xf9ff, paletteram_r ),
+		new Memory_ReadAddress( 0xfc00, 0xffff, bublbobl_sharedram2_r ),
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( bublbobl_writemem )
 		{ 0x0000, 0xbfff, MWA_ROM },
@@ -195,13 +197,15 @@ public class bublbobl
 		{ 0xfc00, 0xffff, bublbobl_sharedram2_w, &bublbobl_sharedram2 },
 	MEMORY_END
 	
-	static MEMORY_READ_START( m68705_readmem )
-		{ 0x0000, 0x0000, bublbobl_68705_portA_r },
-		{ 0x0001, 0x0001, bublbobl_68705_portB_r },
-		{ 0x0002, 0x0002, input_port_0_r },	/* COIN */
-		{ 0x0010, 0x007f, MRA_RAM },
-		{ 0x0080, 0x07ff, MRA_ROM },
-	MEMORY_END
+	public static Memory_ReadAddress m68705_readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x0000, bublbobl_68705_portA_r ),
+		new Memory_ReadAddress( 0x0001, 0x0001, bublbobl_68705_portB_r ),
+		new Memory_ReadAddress( 0x0002, 0x0002, input_port_0_r ),	/* COIN */
+		new Memory_ReadAddress( 0x0010, 0x007f, MRA_RAM ),
+		new Memory_ReadAddress( 0x0080, 0x07ff, MRA_ROM ),
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( m68705_writemem )
 		{ 0x0000, 0x0000, bublbobl_68705_portA_w },
@@ -213,18 +217,20 @@ public class bublbobl
 	MEMORY_END
 	
 	
-	static MEMORY_READ_START( boblbobl_readmem )
-		{ 0x0000, 0x7fff, MRA_ROM },
-		{ 0x8000, 0xbfff, MRA_BANK1 },
-		{ 0xc000, 0xdfff, MRA_RAM },
-		{ 0xe000, 0xf7ff, bublbobl_sharedram1_r },
-		{ 0xf800, 0xf9ff, paletteram_r },
-		{ 0xfc00, 0xfcff, bublbobl_sharedram2_r },
-		{ 0xff00, 0xff00, input_port_0_r },
-		{ 0xff01, 0xff01, input_port_1_r },
-		{ 0xff02, 0xff02, input_port_2_r },
-		{ 0xff03, 0xff03, input_port_3_r },
-	MEMORY_END
+	public static Memory_ReadAddress boblbobl_readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x7fff, MRA_ROM ),
+		new Memory_ReadAddress( 0x8000, 0xbfff, MRA_BANK1 ),
+		new Memory_ReadAddress( 0xc000, 0xdfff, MRA_RAM ),
+		new Memory_ReadAddress( 0xe000, 0xf7ff, bublbobl_sharedram1_r ),
+		new Memory_ReadAddress( 0xf800, 0xf9ff, paletteram_r ),
+		new Memory_ReadAddress( 0xfc00, 0xfcff, bublbobl_sharedram2_r ),
+		new Memory_ReadAddress( 0xff00, 0xff00, input_port_0_r ),
+		new Memory_ReadAddress( 0xff01, 0xff01, input_port_1_r ),
+		new Memory_ReadAddress( 0xff02, 0xff02, input_port_2_r ),
+		new Memory_ReadAddress( 0xff03, 0xff03, input_port_3_r ),
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( boblbobl_writemem )
 		{ 0x0000, 0xbfff, MWA_ROM },
@@ -239,10 +245,12 @@ public class bublbobl
 		{ 0xfc00, 0xfcff, bublbobl_sharedram2_w, &bublbobl_sharedram2 },
 	MEMORY_END
 	
-	static MEMORY_READ_START( bublbobl_readmem2 )
-		{ 0x0000, 0x7fff, MRA_ROM },
-		{ 0xe000, 0xf7ff, bublbobl_sharedram1_r },
-	MEMORY_END
+	public static Memory_ReadAddress bublbobl_readmem2[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x7fff, MRA_ROM ),
+		new Memory_ReadAddress( 0xe000, 0xf7ff, bublbobl_sharedram1_r ),
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( bublbobl_writemem2 )
 		{ 0x0000, 0x7fff, MWA_ROM },
@@ -250,17 +258,19 @@ public class bublbobl
 	MEMORY_END
 	
 	
-	static MEMORY_READ_START( sound_readmem )
-		{ 0x0000, 0x7fff, MRA_ROM },
-		{ 0x8000, 0x8fff, MRA_RAM },
-		{ 0x9000, 0x9000, YM2203_status_port_0_r },
-		{ 0x9001, 0x9001, YM2203_read_port_0_r },
-		{ 0xa000, 0xa000, YM3526_status_port_0_r },
-		{ 0xb000, 0xb000, soundlatch_r },
-		{ 0xb001, 0xb001, MRA_NOP },	/* bit 0: message pending for main cpu */
+	public static Memory_ReadAddress sound_readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x7fff, MRA_ROM ),
+		new Memory_ReadAddress( 0x8000, 0x8fff, MRA_RAM ),
+		new Memory_ReadAddress( 0x9000, 0x9000, YM2203_status_port_0_r ),
+		new Memory_ReadAddress( 0x9001, 0x9001, YM2203_read_port_0_r ),
+		new Memory_ReadAddress( 0xa000, 0xa000, YM3526_status_port_0_r ),
+		new Memory_ReadAddress( 0xb000, 0xb000, soundlatch_r ),
+		new Memory_ReadAddress( 0xb001, 0xb001, MRA_NOP ),	/* bit 0: message pending for main cpu */
 										/* bit 1: message pending for sound cpu */
-		{ 0xe000, 0xefff, MRA_ROM },	/* space for diagnostic ROM? */
-	MEMORY_END
+		new Memory_ReadAddress( 0xe000, 0xefff, MRA_ROM ),	/* space for diagnostic ROM? */
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( sound_writemem )
 		{ 0x0000, 0x7fff, MWA_ROM },
@@ -276,19 +286,21 @@ public class bublbobl
 	MEMORY_END
 	
 	
-	static MEMORY_READ_START( tokio_readmem )
-		{ 0x0000, 0x7fff, MRA_ROM },
-		{ 0x8000, 0xbfff, MRA_BANK1 },
-		{ 0xc000, 0xdfff, MRA_RAM },
-		{ 0xe000, 0xf7ff, bublbobl_sharedram1_r },
-		{ 0xf800, 0xf9ff, paletteram_r },
-		{ 0xfa03, 0xfa03, input_port_0_r },
-		{ 0xfa04, 0xfa04, input_port_1_r },
-		{ 0xfa05, 0xfa05, input_port_2_r },
-		{ 0xfa06, 0xfa06, input_port_3_r },
-		{ 0xfa07, 0xfa07, input_port_4_r },
-		{ 0xfe00, 0xfe00, tokio_fake_r },
-	MEMORY_END
+	public static Memory_ReadAddress tokio_readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x7fff, MRA_ROM ),
+		new Memory_ReadAddress( 0x8000, 0xbfff, MRA_BANK1 ),
+		new Memory_ReadAddress( 0xc000, 0xdfff, MRA_RAM ),
+		new Memory_ReadAddress( 0xe000, 0xf7ff, bublbobl_sharedram1_r ),
+		new Memory_ReadAddress( 0xf800, 0xf9ff, paletteram_r ),
+		new Memory_ReadAddress( 0xfa03, 0xfa03, input_port_0_r ),
+		new Memory_ReadAddress( 0xfa04, 0xfa04, input_port_1_r ),
+		new Memory_ReadAddress( 0xfa05, 0xfa05, input_port_2_r ),
+		new Memory_ReadAddress( 0xfa06, 0xfa06, input_port_3_r ),
+		new Memory_ReadAddress( 0xfa07, 0xfa07, input_port_4_r ),
+		new Memory_ReadAddress( 0xfe00, 0xfe00, tokio_fake_r ),
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( tokio_writemem )
 		{ 0x0000, 0xbfff, MWA_ROM },
@@ -304,25 +316,29 @@ public class bublbobl
 		{ 0xfe00, 0xfe00, MWA_NOP }, /* ??? */
 	MEMORY_END
 	
-	static MEMORY_READ_START( tokio_readmem2 )
-		{ 0x0000, 0x7fff, MRA_ROM },
-		{ 0x8000, 0x97ff, bublbobl_sharedram1_r },
-	MEMORY_END
+	public static Memory_ReadAddress tokio_readmem2[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x7fff, MRA_ROM ),
+		new Memory_ReadAddress( 0x8000, 0x97ff, bublbobl_sharedram1_r ),
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( tokio_writemem2 )
 		{ 0x0000, 0x7fff, MWA_ROM },
 		{ 0x8000, 0x97ff, bublbobl_sharedram1_w },
 	MEMORY_END
 	
-	static MEMORY_READ_START( tokio_sound_readmem )
-		{ 0x0000, 0x7fff, MRA_ROM },
-		{ 0x8000, 0x8fff, MRA_RAM },
-		{ 0x9000, 0x9000, soundlatch_r },
-	//	{ 0x9800, 0x9800, MRA_NOP },	/* ??? */
-		{ 0xb000, 0xb000, YM2203_status_port_0_r },
-		{ 0xb001, 0xb001, YM2203_read_port_0_r },
-		{ 0xe000, 0xefff, MRA_ROM },	/* space for diagnostic ROM? */
-	MEMORY_END
+	public static Memory_ReadAddress tokio_sound_readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x7fff, MRA_ROM ),
+		new Memory_ReadAddress( 0x8000, 0x8fff, MRA_RAM ),
+		new Memory_ReadAddress( 0x9000, 0x9000, soundlatch_r ),
+	//	new Memory_ReadAddress( 0x9800, 0x9800, MRA_NOP ),	/* ??? */
+		new Memory_ReadAddress( 0xb000, 0xb000, YM2203_status_port_0_r ),
+		new Memory_ReadAddress( 0xb001, 0xb001, YM2203_read_port_0_r ),
+		new Memory_ReadAddress( 0xe000, 0xefff, MRA_ROM ),	/* space for diagnostic ROM? */
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( tokio_sound_writemem )
 		{ 0x0000, 0x7fff, MWA_ROM },

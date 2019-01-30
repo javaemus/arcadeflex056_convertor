@@ -240,53 +240,59 @@ public class centiped
 	}
 	
 	
-	static MEMORY_READ_START( centiped_readmem )
-		{ 0x0000, 0x03ff, MRA_RAM },
-		{ 0x0400, 0x07ff, MRA_RAM },
-		{ 0x0800, 0x0800, input_port_4_r },	/* DSW1 */
-		{ 0x0801, 0x0801, input_port_5_r },	/* DSW2 */
-		{ 0x0c00, 0x0c00, centiped_IN0_r },	/* IN0 */
-		{ 0x0c01, 0x0c01, input_port_1_r },	/* IN1 */
-		{ 0x0c02, 0x0c02, centiped_IN2_r },	/* IN2 */	/* JB 971220 */
-		{ 0x0c03, 0x0c03, input_port_3_r },	/* IN3 */
-		{ 0x1000, 0x100f, pokey1_r },
-		{ 0x1700, 0x173f, atari_vg_earom_r },
-		{ 0x2000, 0x3fff, MRA_ROM },
-		{ 0xf800, 0xffff, MRA_ROM },	/* for the reset / interrupt vectors */
-	MEMORY_END
+	public static Memory_ReadAddress centiped_readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x03ff, MRA_RAM ),
+		new Memory_ReadAddress( 0x0400, 0x07ff, MRA_RAM ),
+		new Memory_ReadAddress( 0x0800, 0x0800, input_port_4_r ),	/* DSW1 */
+		new Memory_ReadAddress( 0x0801, 0x0801, input_port_5_r ),	/* DSW2 */
+		new Memory_ReadAddress( 0x0c00, 0x0c00, centiped_IN0_r ),	/* IN0 */
+		new Memory_ReadAddress( 0x0c01, 0x0c01, input_port_1_r ),	/* IN1 */
+		new Memory_ReadAddress( 0x0c02, 0x0c02, centiped_IN2_r ),	/* IN2 */	/* JB 971220 */
+		new Memory_ReadAddress( 0x0c03, 0x0c03, input_port_3_r ),	/* IN3 */
+		new Memory_ReadAddress( 0x1000, 0x100f, pokey1_r ),
+		new Memory_ReadAddress( 0x1700, 0x173f, atari_vg_earom_r ),
+		new Memory_ReadAddress( 0x2000, 0x3fff, MRA_ROM ),
+		new Memory_ReadAddress( 0xf800, 0xffff, MRA_ROM ),	/* for the reset / interrupt vectors */
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	/* Same as the regular one, except it uses an AY8910 and an external RNG */
-	static MEMORY_READ_START( centipdb_readmem )
-		{ 0x0000, 0x03ff, MRA_RAM },
-		{ 0x0400, 0x07ff, MRA_RAM },
-		{ 0x0800, 0x0800, input_port_4_r },	/* DSW1 */
-		{ 0x0801, 0x0801, input_port_5_r },	/* DSW2 */
-		{ 0x0c00, 0x0c00, centiped_IN0_r },	/* IN0 */
-		{ 0x0c01, 0x0c01, input_port_1_r },	/* IN1 */
-		{ 0x0c02, 0x0c02, centiped_IN2_r },	/* IN2 */	/* JB 971220 */
-		{ 0x0c03, 0x0c03, input_port_3_r },	/* IN3 */
-		{ 0x1000, 0x100f, centipdb_AY8910_r },
-		{ 0x1700, 0x173f, atari_vg_earom_r },
-		{ 0x1780, 0x1780, centipdb_rand_r },
-		{ 0x2000, 0x3fff, MRA_ROM },
-		{ 0xf800, 0xffff, MRA_ROM },	/* for the reset / interrupt vectors */
-	MEMORY_END
+	public static Memory_ReadAddress centipdb_readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x03ff, MRA_RAM ),
+		new Memory_ReadAddress( 0x0400, 0x07ff, MRA_RAM ),
+		new Memory_ReadAddress( 0x0800, 0x0800, input_port_4_r ),	/* DSW1 */
+		new Memory_ReadAddress( 0x0801, 0x0801, input_port_5_r ),	/* DSW2 */
+		new Memory_ReadAddress( 0x0c00, 0x0c00, centiped_IN0_r ),	/* IN0 */
+		new Memory_ReadAddress( 0x0c01, 0x0c01, input_port_1_r ),	/* IN1 */
+		new Memory_ReadAddress( 0x0c02, 0x0c02, centiped_IN2_r ),	/* IN2 */	/* JB 971220 */
+		new Memory_ReadAddress( 0x0c03, 0x0c03, input_port_3_r ),	/* IN3 */
+		new Memory_ReadAddress( 0x1000, 0x100f, centipdb_AY8910_r ),
+		new Memory_ReadAddress( 0x1700, 0x173f, atari_vg_earom_r ),
+		new Memory_ReadAddress( 0x1780, 0x1780, centipdb_rand_r ),
+		new Memory_ReadAddress( 0x2000, 0x3fff, MRA_ROM ),
+		new Memory_ReadAddress( 0xf800, 0xffff, MRA_ROM ),	/* for the reset / interrupt vectors */
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
-	static MEMORY_READ_START( centipb2_readmem )
-		{ 0x0000, 0x03ff, MRA_RAM },
-		{ 0x0400, 0x07ff, MRA_RAM },
-		{ 0x0800, 0x0800, input_port_4_r },	/* DSW1 */
-		{ 0x0801, 0x0801, input_port_5_r },	/* DSW2 */
-		{ 0x0c00, 0x0c00, centiped_IN0_r },	/* IN0 */
-		{ 0x0c01, 0x0c01, input_port_1_r },	/* IN1 */
-		{ 0x0c02, 0x0c02, centiped_IN2_r },	/* IN2 */	/* JB 971220 */
-		{ 0x0c03, 0x0c03, input_port_3_r },	/* IN3 */
-		{ 0x1001, 0x1001, AY8910_read_port_0_r },
-		{ 0x1700, 0x173f, atari_vg_earom_r },
-		{ 0x2000, 0x3fff, MRA_ROM },
-		{ 0x6000, 0x67ff, MRA_ROM },
-		{ 0xf800, 0xffff, MRA_ROM },	/* for the reset / interrupt vectors */
-	MEMORY_END
+	public static Memory_ReadAddress centipb2_readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x03ff, MRA_RAM ),
+		new Memory_ReadAddress( 0x0400, 0x07ff, MRA_RAM ),
+		new Memory_ReadAddress( 0x0800, 0x0800, input_port_4_r ),	/* DSW1 */
+		new Memory_ReadAddress( 0x0801, 0x0801, input_port_5_r ),	/* DSW2 */
+		new Memory_ReadAddress( 0x0c00, 0x0c00, centiped_IN0_r ),	/* IN0 */
+		new Memory_ReadAddress( 0x0c01, 0x0c01, input_port_1_r ),	/* IN1 */
+		new Memory_ReadAddress( 0x0c02, 0x0c02, centiped_IN2_r ),	/* IN2 */	/* JB 971220 */
+		new Memory_ReadAddress( 0x0c03, 0x0c03, input_port_3_r ),	/* IN3 */
+		new Memory_ReadAddress( 0x1001, 0x1001, AY8910_read_port_0_r ),
+		new Memory_ReadAddress( 0x1700, 0x173f, atari_vg_earom_r ),
+		new Memory_ReadAddress( 0x2000, 0x3fff, MRA_ROM ),
+		new Memory_ReadAddress( 0x6000, 0x67ff, MRA_ROM ),
+		new Memory_ReadAddress( 0xf800, 0xffff, MRA_ROM ),	/* for the reset / interrupt vectors */
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( centiped_writemem )
 		{ 0x0000, 0x03ff, MWA_RAM },

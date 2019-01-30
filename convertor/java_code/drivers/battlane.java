@@ -117,18 +117,20 @@ public class battlane
 	
 	/* Both CPUs share the same memory */
 	
-	static MEMORY_READ_START( battlane_readmem )
-		{ 0x0000, 0x0fff, battlane_shared_ram_r },
-	    { 0x1000, 0x17ff, battlane_tileram_r },
-	    { 0x1800, 0x18ff, battlane_spriteram_r },
-		{ 0x1c00, 0x1c00, input_port_0_r },
-	    { 0x1c01, 0x1c01, input_port_1_r },   /* VBLANK port */
-		{ 0x1c02, 0x1c02, input_port_2_r },
-		{ 0x1c03, 0x1c03, input_port_3_r },
-		{ 0x1c04, 0x1c04, YM3526_status_port_0_r },
-		{ 0x2000, 0x3fff, battlane_bitmap_r },
-		{ 0x4000, 0xffff, MRA_ROM },
-	MEMORY_END
+	public static Memory_ReadAddress battlane_readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x0fff, battlane_shared_ram_r ),
+	    new Memory_ReadAddress( 0x1000, 0x17ff, battlane_tileram_r ),
+	    new Memory_ReadAddress( 0x1800, 0x18ff, battlane_spriteram_r ),
+		new Memory_ReadAddress( 0x1c00, 0x1c00, input_port_0_r ),
+	    new Memory_ReadAddress( 0x1c01, 0x1c01, input_port_1_r ),   /* VBLANK port */
+		new Memory_ReadAddress( 0x1c02, 0x1c02, input_port_2_r ),
+		new Memory_ReadAddress( 0x1c03, 0x1c03, input_port_3_r ),
+		new Memory_ReadAddress( 0x1c04, 0x1c04, YM3526_status_port_0_r ),
+		new Memory_ReadAddress( 0x2000, 0x3fff, battlane_bitmap_r ),
+		new Memory_ReadAddress( 0x4000, 0xffff, MRA_ROM ),
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( battlane_writemem )
 		{ 0x0000, 0x0fff, battlane_shared_ram_w },

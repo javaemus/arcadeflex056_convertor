@@ -38,19 +38,21 @@ public class shaolins
 	
 	
 	
-	static MEMORY_READ_START( readmem )
-		{ 0x0500, 0x0500, input_port_3_r },	/* Dipswitch settings */
-		{ 0x0600, 0x0600, input_port_4_r },	/* Dipswitch settings */
-		{ 0x0700, 0x0700, input_port_0_r },	/* coins + service */
-		{ 0x0701, 0x0701, input_port_1_r },	/* player 1 controls */
-		{ 0x0702, 0x0702, input_port_2_r },	/* player 2 controls */
-		{ 0x0703, 0x0703, input_port_5_r },	/* selftest */
-		{ 0x2800, 0x2bff, MRA_RAM },	/* RAM BANK 2 */
-		{ 0x3000, 0x33ff, MRA_RAM },	/* RAM BANK 1 */
-		{ 0x3800, 0x3fff, MRA_RAM },	/* video RAM */
-		{ 0x4000, 0x5fff, MRA_ROM },    /* Machine checks for extra rom */
-		{ 0x6000, 0xffff, MRA_ROM },
-	MEMORY_END
+	public static Memory_ReadAddress readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0500, 0x0500, input_port_3_r ),	/* Dipswitch settings */
+		new Memory_ReadAddress( 0x0600, 0x0600, input_port_4_r ),	/* Dipswitch settings */
+		new Memory_ReadAddress( 0x0700, 0x0700, input_port_0_r ),	/* coins + service */
+		new Memory_ReadAddress( 0x0701, 0x0701, input_port_1_r ),	/* player 1 controls */
+		new Memory_ReadAddress( 0x0702, 0x0702, input_port_2_r ),	/* player 2 controls */
+		new Memory_ReadAddress( 0x0703, 0x0703, input_port_5_r ),	/* selftest */
+		new Memory_ReadAddress( 0x2800, 0x2bff, MRA_RAM ),	/* RAM BANK 2 */
+		new Memory_ReadAddress( 0x3000, 0x33ff, MRA_RAM ),	/* RAM BANK 1 */
+		new Memory_ReadAddress( 0x3800, 0x3fff, MRA_RAM ),	/* video RAM */
+		new Memory_ReadAddress( 0x4000, 0x5fff, MRA_ROM ),    /* Machine checks for extra rom */
+		new Memory_ReadAddress( 0x6000, 0xffff, MRA_ROM ),
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( writemem )
 		{ 0x0000, 0x0000, MWA_RAM, &shaolins_nmi_enable },	/* bit 1 = nmi enable, bit 2 = ? */

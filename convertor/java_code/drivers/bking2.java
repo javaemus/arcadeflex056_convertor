@@ -68,11 +68,13 @@ public class bking2
 	}
 	
 	
-	static MEMORY_READ_START( readmem )
-	    { 0x0000, 0x7fff, MRA_ROM },
-	    { 0x8000, 0x83ff, MRA_RAM },
-	    { 0x9000, 0x97ff, MRA_RAM },
-	MEMORY_END
+	public static Memory_ReadAddress readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+	    new Memory_ReadAddress( 0x0000, 0x7fff, MRA_ROM ),
+	    new Memory_ReadAddress( 0x8000, 0x83ff, MRA_RAM ),
+	    new Memory_ReadAddress( 0x9000, 0x97ff, MRA_RAM ),
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( writemem )
 	    { 0x0000, 0x7fff, MWA_ROM },
@@ -108,16 +110,18 @@ public class bking2
 	    { 0x0d, 0x0d, bking2_hitclr_w },
 	PORT_END
 	
-	static MEMORY_READ_START( sound_readmem )
-	    { 0x0000, 0x1fff, MRA_ROM },
-	    { 0x4000, 0x43ff, MRA_RAM },
-		{ 0x4401, 0x4401, AY8910_read_port_0_r },
-		{ 0x4403, 0x4403, AY8910_read_port_1_r },
-	    { 0x4800, 0x4800, soundlatch_r },
-	    { 0x4802, 0x4802, bking2_sndnmi_disable_r },
-	    { 0xe000, 0xefff, MRA_ROM },   /* space for some other ROM???
+	public static Memory_ReadAddress sound_readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+	    new Memory_ReadAddress( 0x0000, 0x1fff, MRA_ROM ),
+	    new Memory_ReadAddress( 0x4000, 0x43ff, MRA_RAM ),
+		new Memory_ReadAddress( 0x4401, 0x4401, AY8910_read_port_0_r ),
+		new Memory_ReadAddress( 0x4403, 0x4403, AY8910_read_port_1_r ),
+	    new Memory_ReadAddress( 0x4800, 0x4800, soundlatch_r ),
+	    new Memory_ReadAddress( 0x4802, 0x4802, bking2_sndnmi_disable_r ),
+	    new Memory_ReadAddress( 0xe000, 0xefff, MRA_ROM ),   /* space for some other ROM???
 										  It's checked if there is valid code there */
-	MEMORY_END
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( sound_writemem )
 	    { 0x0000, 0x1fff, MWA_ROM },

@@ -240,13 +240,15 @@ public class gradius3
 	MEMORY_END
 	
 	
-	static MEMORY_READ_START( gradius3_s_readmem )
-		{ 0x0000, 0xefff, MRA_ROM },
-		{ 0xf010, 0xf010, soundlatch_r },
-		{ 0xf020, 0xf02d, K007232_read_port_0_r },
-		{ 0xf031, 0xf031, YM2151_status_port_0_r },
-		{ 0xf800, 0xffff, MRA_RAM },
-	MEMORY_END
+	public static Memory_ReadAddress gradius3_s_readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0xefff, MRA_ROM ),
+		new Memory_ReadAddress( 0xf010, 0xf010, soundlatch_r ),
+		new Memory_ReadAddress( 0xf020, 0xf02d, K007232_read_port_0_r ),
+		new Memory_ReadAddress( 0xf031, 0xf031, YM2151_status_port_0_r ),
+		new Memory_ReadAddress( 0xf800, 0xffff, MRA_RAM ),
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( gradius3_s_writemem )
 		{ 0x0000, 0xefff, MWA_ROM },

@@ -179,25 +179,27 @@ public class taitosj
 	}
 	
 	
-	static MEMORY_READ_START( readmem )
-		{ 0x0000, 0x5fff, MRA_ROM },
-		{ 0x6000, 0x7fff, MRA_BANK1 },
-		{ 0x8000, 0x87ff, MRA_RAM },
-		{ 0x8800, 0x8800, taitosj_fake_data_r },
-		{ 0x8801, 0x8801, taitosj_fake_status_r },
-		{ 0xc400, 0xd015, MRA_RAM },
-		{ 0xd100, 0xd17f, MRA_RAM },
-		{ 0xd400, 0xd403, taitosj_collision_reg_r },
-		{ 0xd404, 0xd404, taitosj_gfxrom_r },
-		{ 0xd408, 0xd408, input_port_0_r },     /* IN0 */
-		{ 0xd409, 0xd409, input_port_1_r },     /* IN1 */
-		{ 0xd40a, 0xd40a, input_port_5_r },     /* DSW1 */
-		{ 0xd40b, 0xd40b, input_port_2_r },     /* IN2 */
-		{ 0xd40c, 0xd40c, input_port_3_r },     /* Service */
-		{ 0xd40d, 0xd40d, input_port_4_r },
-		{ 0xd40f, 0xd40f, AY8910_read_port_0_r },       /* DSW2 and DSW3 */
-		{ 0xe000, 0xefff, MRA_ROM },
-	MEMORY_END
+	public static Memory_ReadAddress readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x5fff, MRA_ROM ),
+		new Memory_ReadAddress( 0x6000, 0x7fff, MRA_BANK1 ),
+		new Memory_ReadAddress( 0x8000, 0x87ff, MRA_RAM ),
+		new Memory_ReadAddress( 0x8800, 0x8800, taitosj_fake_data_r ),
+		new Memory_ReadAddress( 0x8801, 0x8801, taitosj_fake_status_r ),
+		new Memory_ReadAddress( 0xc400, 0xd015, MRA_RAM ),
+		new Memory_ReadAddress( 0xd100, 0xd17f, MRA_RAM ),
+		new Memory_ReadAddress( 0xd400, 0xd403, taitosj_collision_reg_r ),
+		new Memory_ReadAddress( 0xd404, 0xd404, taitosj_gfxrom_r ),
+		new Memory_ReadAddress( 0xd408, 0xd408, input_port_0_r ),     /* IN0 */
+		new Memory_ReadAddress( 0xd409, 0xd409, input_port_1_r ),     /* IN1 */
+		new Memory_ReadAddress( 0xd40a, 0xd40a, input_port_5_r ),     /* DSW1 */
+		new Memory_ReadAddress( 0xd40b, 0xd40b, input_port_2_r ),     /* IN2 */
+		new Memory_ReadAddress( 0xd40c, 0xd40c, input_port_3_r ),     /* Service */
+		new Memory_ReadAddress( 0xd40d, 0xd40d, input_port_4_r ),
+		new Memory_ReadAddress( 0xd40f, 0xd40f, AY8910_read_port_0_r ),       /* DSW2 and DSW3 */
+		new Memory_ReadAddress( 0xe000, 0xefff, MRA_ROM ),
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( writemem )
 		{ 0x0000, 0x7fff, MWA_ROM },
@@ -226,25 +228,27 @@ public class taitosj
 	MEMORY_END
 	
 	/* only difference is taitosj_fake_ replaced with taitosj_mcu_ */
-	static MEMORY_READ_START( mcu_readmem )
-		{ 0x0000, 0x5fff, MRA_ROM },
-		{ 0x6000, 0x7fff, MRA_BANK1 },
-		{ 0x8000, 0x87ff, MRA_RAM },
-		{ 0x8800, 0x8800, taitosj_mcu_data_r },
-		{ 0x8801, 0x8801, taitosj_mcu_status_r },
-		{ 0xc400, 0xd05f, MRA_RAM },
-		{ 0xd100, 0xd17f, MRA_RAM },
-		{ 0xd400, 0xd403, taitosj_collision_reg_r },
-		{ 0xd404, 0xd404, taitosj_gfxrom_r },
-		{ 0xd408, 0xd408, input_port_0_r },     /* IN0 */
-		{ 0xd409, 0xd409, input_port_1_r },     /* IN1 */
-		{ 0xd40a, 0xd40a, input_port_5_r },     /* DSW1 */
-		{ 0xd40b, 0xd40b, input_port_2_r },     /* IN2 */
-		{ 0xd40c, 0xd40c, input_port_3_r },     /* Service */
-		{ 0xd40d, 0xd40d, input_port_4_r },
-		{ 0xd40f, 0xd40f, AY8910_read_port_0_r },       /* DSW2 and DSW3 */
-		{ 0xe000, 0xefff, MRA_ROM },
-	MEMORY_END
+	public static Memory_ReadAddress mcu_readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x5fff, MRA_ROM ),
+		new Memory_ReadAddress( 0x6000, 0x7fff, MRA_BANK1 ),
+		new Memory_ReadAddress( 0x8000, 0x87ff, MRA_RAM ),
+		new Memory_ReadAddress( 0x8800, 0x8800, taitosj_mcu_data_r ),
+		new Memory_ReadAddress( 0x8801, 0x8801, taitosj_mcu_status_r ),
+		new Memory_ReadAddress( 0xc400, 0xd05f, MRA_RAM ),
+		new Memory_ReadAddress( 0xd100, 0xd17f, MRA_RAM ),
+		new Memory_ReadAddress( 0xd400, 0xd403, taitosj_collision_reg_r ),
+		new Memory_ReadAddress( 0xd404, 0xd404, taitosj_gfxrom_r ),
+		new Memory_ReadAddress( 0xd408, 0xd408, input_port_0_r ),     /* IN0 */
+		new Memory_ReadAddress( 0xd409, 0xd409, input_port_1_r ),     /* IN1 */
+		new Memory_ReadAddress( 0xd40a, 0xd40a, input_port_5_r ),     /* DSW1 */
+		new Memory_ReadAddress( 0xd40b, 0xd40b, input_port_2_r ),     /* IN2 */
+		new Memory_ReadAddress( 0xd40c, 0xd40c, input_port_3_r ),     /* Service */
+		new Memory_ReadAddress( 0xd40d, 0xd40d, input_port_4_r ),
+		new Memory_ReadAddress( 0xd40f, 0xd40f, AY8910_read_port_0_r ),       /* DSW2 and DSW3 */
+		new Memory_ReadAddress( 0xe000, 0xefff, MRA_ROM ),
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( mcu_writemem )
 		{ 0x0000, 0x7fff, MWA_ROM },
@@ -273,15 +277,17 @@ public class taitosj
 	
 	
 	
-	static MEMORY_READ_START( sound_readmem )
-		{ 0x0000, 0x3fff, MRA_ROM },
-		{ 0x4000, 0x43ff, MRA_RAM },
-		{ 0x4801, 0x4801, AY8910_read_port_1_r },
-		{ 0x4803, 0x4803, AY8910_read_port_2_r },
-		{ 0x4805, 0x4805, AY8910_read_port_3_r },
-		{ 0x5000, 0x5000, soundlatch_r },
-		{ 0xe000, 0xefff, MRA_ROM },
-	MEMORY_END
+	public static Memory_ReadAddress sound_readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x3fff, MRA_ROM ),
+		new Memory_ReadAddress( 0x4000, 0x43ff, MRA_RAM ),
+		new Memory_ReadAddress( 0x4801, 0x4801, AY8910_read_port_1_r ),
+		new Memory_ReadAddress( 0x4803, 0x4803, AY8910_read_port_2_r ),
+		new Memory_ReadAddress( 0x4805, 0x4805, AY8910_read_port_3_r ),
+		new Memory_ReadAddress( 0x5000, 0x5000, soundlatch_r ),
+		new Memory_ReadAddress( 0xe000, 0xefff, MRA_ROM ),
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( sound_writemem )
 		{ 0x0000, 0x3fff, MWA_ROM },
@@ -295,13 +301,15 @@ public class taitosj
 	MEMORY_END
 	
 	
-	static MEMORY_READ_START( m68705_readmem )
-		{ 0x0000, 0x0000, taitosj_68705_portA_r },
-		{ 0x0001, 0x0001, taitosj_68705_portB_r },
-		{ 0x0002, 0x0002, taitosj_68705_portC_r },
-		{ 0x0003, 0x007f, MRA_RAM },
-		{ 0x0080, 0x07ff, MRA_ROM },
-	MEMORY_END
+	public static Memory_ReadAddress m68705_readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x0000, taitosj_68705_portA_r ),
+		new Memory_ReadAddress( 0x0001, 0x0001, taitosj_68705_portB_r ),
+		new Memory_ReadAddress( 0x0002, 0x0002, taitosj_68705_portC_r ),
+		new Memory_ReadAddress( 0x0003, 0x007f, MRA_RAM ),
+		new Memory_ReadAddress( 0x0080, 0x07ff, MRA_ROM ),
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( m68705_writemem )
 		{ 0x0000, 0x0000, taitosj_68705_portA_w },

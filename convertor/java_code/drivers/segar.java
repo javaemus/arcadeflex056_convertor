@@ -176,17 +176,19 @@ public class segar
 	 Main memory handlers
 	***************************************************************************/
 	
-	static MEMORY_READ_START( readmem )
-		{ 0x0000, 0xc7ff, MRA_ROM },
-		{ 0xc800, 0xcfff, MRA_RAM },    /* Misc RAM */
-		{ 0xe000, 0xe3ff, MRA_RAM },
-		{ 0xe400, 0xe7ff, MRA_RAM },  /* Used by at least Monster Bash? */
-		{ 0xe800, 0xefff, MRA_RAM },
-		{ 0xf000, 0xf03f, MRA_RAM },     /* Dynamic color table */
-		{ 0xf040, 0xf07f, MRA_RAM },    /* Dynamic color table for background (Monster Bash)*/
-		{ 0xf080, 0xf7ff, MRA_RAM },
-		{ 0xf800, 0xffff, MRA_RAM },
-	MEMORY_END
+	public static Memory_ReadAddress readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0xc7ff, MRA_ROM ),
+		new Memory_ReadAddress( 0xc800, 0xcfff, MRA_RAM ),    /* Misc RAM */
+		new Memory_ReadAddress( 0xe000, 0xe3ff, MRA_RAM ),
+		new Memory_ReadAddress( 0xe400, 0xe7ff, MRA_RAM ),  /* Used by at least Monster Bash? */
+		new Memory_ReadAddress( 0xe800, 0xefff, MRA_RAM ),
+		new Memory_ReadAddress( 0xf000, 0xf03f, MRA_RAM ),     /* Dynamic color table */
+		new Memory_ReadAddress( 0xf040, 0xf07f, MRA_RAM ),    /* Dynamic color table for background (Monster Bash)*/
+		new Memory_ReadAddress( 0xf080, 0xf7ff, MRA_RAM ),
+		new Memory_ReadAddress( 0xf800, 0xffff, MRA_RAM ),
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	
 	static MEMORY_WRITE_START( writemem )
@@ -198,17 +200,19 @@ public class segar
 		{ 0xf800, 0xffff, MWA_RAM, &segar_characterram2 },    	/* the pointers */
 	MEMORY_END
 	
-	static MEMORY_READ_START( sindbadm_readmem )
-		{ 0x0000, 0xc7ff, MRA_ROM },
-		{ 0xc800, 0xcfff, MRA_RAM },    /* Misc RAM */
-		{ 0xe000, 0xe3ff, MRA_RAM },
-		{ 0xe400, 0xe7ff, MRA_RAM },  /* Used by at least Monster Bash? */
-		{ 0xe800, 0xefff, MRA_RAM },
-		{ 0xf000, 0xf03f, MRA_RAM },    /* NOTE, the two color tables are flipped! */
-		{ 0xf040, 0xf07f, MRA_RAM },
-		{ 0xf080, 0xf7ff, MRA_RAM },
-		{ 0xf800, 0xffff, MRA_RAM },
-	MEMORY_END
+	public static Memory_ReadAddress sindbadm_readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0xc7ff, MRA_ROM ),
+		new Memory_ReadAddress( 0xc800, 0xcfff, MRA_RAM ),    /* Misc RAM */
+		new Memory_ReadAddress( 0xe000, 0xe3ff, MRA_RAM ),
+		new Memory_ReadAddress( 0xe400, 0xe7ff, MRA_RAM ),  /* Used by at least Monster Bash? */
+		new Memory_ReadAddress( 0xe800, 0xefff, MRA_RAM ),
+		new Memory_ReadAddress( 0xf000, 0xf03f, MRA_RAM ),    /* NOTE, the two color tables are flipped! */
+		new Memory_ReadAddress( 0xf040, 0xf07f, MRA_RAM ),
+		new Memory_ReadAddress( 0xf080, 0xf7ff, MRA_RAM ),
+		new Memory_ReadAddress( 0xf800, 0xffff, MRA_RAM ),
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( sindbadm_writemem )
 		{ 0x0000, 0xc7ff, MWA_ROM },
@@ -301,17 +305,21 @@ public class segar
 	 Sound memory handlers
 	***************************************************************************/
 	
-	static MEMORY_READ_START( speech_readmem )
-		{ 0x0000, 0x07ff, MRA_ROM },
-	MEMORY_END
+	public static Memory_ReadAddress speech_readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x07ff, MRA_ROM ),
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( speech_writemem )
 		{ 0x0000, 0x07ff, MWA_ROM },
 	MEMORY_END
 	
-	static MEMORY_READ_START( monsterb_7751_readmem )
-		{ 0x0000, 0x03ff, MRA_ROM },
-	MEMORY_END
+	public static Memory_ReadAddress monsterb_7751_readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x03ff, MRA_ROM ),
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( monsterb_7751_writemem )
 		{ 0x0000, 0x03ff, MWA_ROM },
@@ -332,11 +340,13 @@ public class segar
 		{ I8039_p7, I8039_p7, monsterb_sh_rom_select_w },
 	PORT_END
 	
-	static MEMORY_READ_START( sindbadm_sound_readmem )
-		{ 0x0000, 0x1fff, MRA_ROM },
-		{ 0x8000, 0x87ff, MRA_RAM },
-		{ 0xe000, 0xe000, soundlatch_r },
-	MEMORY_END
+	public static Memory_ReadAddress sindbadm_sound_readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x1fff, MRA_ROM ),
+		new Memory_ReadAddress( 0x8000, 0x87ff, MRA_RAM ),
+		new Memory_ReadAddress( 0xe000, 0xe000, soundlatch_r ),
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( sindbadm_sound_writemem )
 		{ 0x0000, 0x1fff, MWA_ROM },

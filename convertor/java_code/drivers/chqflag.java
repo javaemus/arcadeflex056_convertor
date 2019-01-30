@@ -143,23 +143,25 @@ public class chqflag
 	
 	/****************************************************************************/
 	
-	static MEMORY_READ_START( chqflag_readmem )
-		{ 0x0000, 0x0fff, MRA_RAM },					/* RAM */
-		{ 0x1000, 0x17ff, MRA_BANK1 },					/* banked RAM (RAM/051316 (chip 1)) */
-		{ 0x1800, 0x1fff, MRA_BANK2 },					/* palette + RAM */
-		{ 0x2000, 0x2007, K051937_r },					/* Sprite control registers */
-		{ 0x2400, 0x27ff, K051960_r },					/* Sprite RAM */
-		{ 0x2800, 0x2fff, MRA_BANK3 },					/* 051316 zoom/rotation (chip 2) */
-		{ 0x3100, 0x3100, input_port_0_r },				/* DIPSW #1  */
-		{ 0x3200, 0x3200, input_port_3_r },				/* COINSW, STARTSW, test mode */
-		{ 0x3201, 0x3201, input_port_2_r },				/* DIPSW #3, SW 4 */
-		{ 0x3203, 0x3203, input_port_1_r },				/* DIPSW #2 */
-		{ 0x3400, 0x341f, K051733_r },					/* 051733 (protection) */
-		{ 0x3701, 0x3701, input_port_4_r },				/* Brake + Shift + ? */
-		{ 0x3702, 0x3702, analog_read_r },				/* accelerator/wheel */
-		{ 0x4000, 0x7fff, MRA_BANK4 },					/* banked ROM */
-		{ 0x8000, 0xffff, MRA_ROM },					/* ROM */
-	MEMORY_END
+	public static Memory_ReadAddress chqflag_readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x0fff, MRA_RAM ),					/* RAM */
+		new Memory_ReadAddress( 0x1000, 0x17ff, MRA_BANK1 ),					/* banked RAM (RAM/051316 (chip 1)) */
+		new Memory_ReadAddress( 0x1800, 0x1fff, MRA_BANK2 ),					/* palette + RAM */
+		new Memory_ReadAddress( 0x2000, 0x2007, K051937_r ),					/* Sprite control registers */
+		new Memory_ReadAddress( 0x2400, 0x27ff, K051960_r ),					/* Sprite RAM */
+		new Memory_ReadAddress( 0x2800, 0x2fff, MRA_BANK3 ),					/* 051316 zoom/rotation (chip 2) */
+		new Memory_ReadAddress( 0x3100, 0x3100, input_port_0_r ),				/* DIPSW #1  */
+		new Memory_ReadAddress( 0x3200, 0x3200, input_port_3_r ),				/* COINSW, STARTSW, test mode */
+		new Memory_ReadAddress( 0x3201, 0x3201, input_port_2_r ),				/* DIPSW #3, SW 4 */
+		new Memory_ReadAddress( 0x3203, 0x3203, input_port_1_r ),				/* DIPSW #2 */
+		new Memory_ReadAddress( 0x3400, 0x341f, K051733_r ),					/* 051733 (protection) */
+		new Memory_ReadAddress( 0x3701, 0x3701, input_port_4_r ),				/* Brake + Shift + ? */
+		new Memory_ReadAddress( 0x3702, 0x3702, analog_read_r ),				/* accelerator/wheel */
+		new Memory_ReadAddress( 0x4000, 0x7fff, MRA_BANK4 ),					/* banked ROM */
+		new Memory_ReadAddress( 0x8000, 0xffff, MRA_ROM ),					/* ROM */
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( chqflag_writemem )
 		{ 0x0000, 0x0fff, MWA_RAM },					/* RAM */
@@ -182,15 +184,17 @@ public class chqflag
 		{ 0x8000, 0xffff, MWA_ROM },					/* ROM */
 	MEMORY_END
 	
-	static MEMORY_READ_START( chqflag_readmem_sound )
-		{ 0x0000, 0x7fff, MRA_ROM },				/* ROM */
-		{ 0x8000, 0x87ff, MRA_RAM },				/* RAM */
-		{ 0xa000, 0xa00d, K007232_read_port_0_r },	/* 007232 (chip 1) */
-		{ 0xb000, 0xb00d, K007232_read_port_1_r },	/* 007232 (chip 2) */
-		{ 0xc001, 0xc001, YM2151_status_port_0_r },	/* YM2151 */
-		{ 0xd000, 0xd000, soundlatch_r },			/* soundlatch_r */
-		//{ 0xe000, 0xe000, MRA_NOP },				/* ??? */
-	MEMORY_END
+	public static Memory_ReadAddress chqflag_readmem_sound[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x7fff, MRA_ROM ),				/* ROM */
+		new Memory_ReadAddress( 0x8000, 0x87ff, MRA_RAM ),				/* RAM */
+		new Memory_ReadAddress( 0xa000, 0xa00d, K007232_read_port_0_r ),	/* 007232 (chip 1) */
+		new Memory_ReadAddress( 0xb000, 0xb00d, K007232_read_port_1_r ),	/* 007232 (chip 2) */
+		new Memory_ReadAddress( 0xc001, 0xc001, YM2151_status_port_0_r ),	/* YM2151 */
+		new Memory_ReadAddress( 0xd000, 0xd000, soundlatch_r ),			/* soundlatch_r */
+		//new Memory_ReadAddress( 0xe000, 0xe000, MRA_NOP ),				/* ??? */
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static WRITE_HANDLER( k007232_bankswitch_w )
 	{

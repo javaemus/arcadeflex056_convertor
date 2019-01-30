@@ -299,18 +299,20 @@ public class bwidow
 	}
 	
 	
-	static MEMORY_READ_START( bwidow_readmem )
-		{ 0x0000, 0x07ff, MRA_RAM },
-		{ 0x2000, 0x27ff, MRA_RAM },
-		{ 0x2800, 0x5fff, MRA_ROM },
-		{ 0x6000, 0x600f, pokey1_r },
-		{ 0x6800, 0x680f, pokey2_r },
-		{ 0x7000, 0x7000, atari_vg_earom_r },
-		{ 0x7800, 0x7800, bzone_IN0_r },	/* IN0 */
-		{ 0x8000, 0x8000, input_port_3_r },	/* IN1 */
-		{ 0x8800, 0x8800, input_port_4_r },	/* IN1 */
-		{ 0x9000, 0xffff, MRA_ROM },
-	MEMORY_END
+	public static Memory_ReadAddress bwidow_readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x07ff, MRA_RAM ),
+		new Memory_ReadAddress( 0x2000, 0x27ff, MRA_RAM ),
+		new Memory_ReadAddress( 0x2800, 0x5fff, MRA_ROM ),
+		new Memory_ReadAddress( 0x6000, 0x600f, pokey1_r ),
+		new Memory_ReadAddress( 0x6800, 0x680f, pokey2_r ),
+		new Memory_ReadAddress( 0x7000, 0x7000, atari_vg_earom_r ),
+		new Memory_ReadAddress( 0x7800, 0x7800, bzone_IN0_r ),	/* IN0 */
+		new Memory_ReadAddress( 0x8000, 0x8000, input_port_3_r ),	/* IN1 */
+		new Memory_ReadAddress( 0x8800, 0x8800, input_port_4_r ),	/* IN1 */
+		new Memory_ReadAddress( 0x9000, 0xffff, MRA_ROM ),
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( bwidow_writemem )
 		{ 0x0000, 0x07ff, MWA_RAM },
@@ -328,18 +330,20 @@ public class bwidow
 		{ 0x9000, 0xffff, MWA_ROM },
 	MEMORY_END
 	
-	static MEMORY_READ_START( spacduel_readmem )
-		{ 0x0000, 0x03ff, MRA_RAM },
-		{ 0x0800, 0x0800, bzone_IN0_r },	/* IN0 */
-		{ 0x0900, 0x0907, spacduel_IN3_r },	/* IN1 */
-		{ 0x0a00, 0x0a00, atari_vg_earom_r },
-		{ 0x1000, 0x100f, pokey1_r },
-		{ 0x1400, 0x140f, pokey2_r },
-		{ 0x2000, 0x27ff, MRA_RAM },
-		{ 0x2800, 0x3fff, MRA_ROM },
-		{ 0x4000, 0x8fff, MRA_ROM },
-		{ 0xf000, 0xffff, MRA_ROM },
-	MEMORY_END
+	public static Memory_ReadAddress spacduel_readmem[]={
+		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_ReadAddress( 0x0000, 0x03ff, MRA_RAM ),
+		new Memory_ReadAddress( 0x0800, 0x0800, bzone_IN0_r ),	/* IN0 */
+		new Memory_ReadAddress( 0x0900, 0x0907, spacduel_IN3_r ),	/* IN1 */
+		new Memory_ReadAddress( 0x0a00, 0x0a00, atari_vg_earom_r ),
+		new Memory_ReadAddress( 0x1000, 0x100f, pokey1_r ),
+		new Memory_ReadAddress( 0x1400, 0x140f, pokey2_r ),
+		new Memory_ReadAddress( 0x2000, 0x27ff, MRA_RAM ),
+		new Memory_ReadAddress( 0x2800, 0x3fff, MRA_ROM ),
+		new Memory_ReadAddress( 0x4000, 0x8fff, MRA_ROM ),
+		new Memory_ReadAddress( 0xf000, 0xffff, MRA_ROM ),
+		new Memory_ReadAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_WRITE_START( spacduel_writemem )
 		{ 0x0000, 0x03ff, MWA_RAM },
