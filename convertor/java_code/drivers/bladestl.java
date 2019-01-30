@@ -135,21 +135,23 @@ public class bladestl
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( bladestl_writemem )
-		{ 0x0000, 0x1fff, K007342_w },				/* Color RAM + Video RAM */
-		{ 0x2000, 0x21ff, K007420_w },				/* Sprite RAM */
-		{ 0x2200, 0x23ff, K007342_scroll_w },		/* Scroll RAM */
-		{ 0x2400, 0x245f, paletteram_xBBBBBGGGGGRRRRR_swap_w, &paletteram },/* palette */
-		{ 0x2600, 0x2607, K007342_vreg_w },			/* Video Registers */
-		{ 0x2e80, 0x2e80, bladestl_sh_irqtrigger_w },/* cause interrupt on audio CPU */
-		{ 0x2ec0, 0x2ec0, watchdog_reset_w },		/* watchdog reset */
-		{ 0x2f40, 0x2f40, bladestl_bankswitch_w },	/* bankswitch control */
-		{ 0x2f80, 0x2f9f, K051733_w },				/* Protection: 051733 */
-		{ 0x2fc0, 0x2fc0, MWA_NOP },				/* ??? */
-		{ 0x4000, 0x5fff, MWA_RAM },				/* Work RAM */
-		{ 0x6000, 0x7fff, MWA_RAM },				/* banked ROM */
-		{ 0x8000, 0xffff, MWA_ROM },				/* ROM */
-	MEMORY_END
+	public static Memory_WriteAddress bladestl_writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0x1fff, K007342_w ),				/* Color RAM + Video RAM */
+		new Memory_WriteAddress( 0x2000, 0x21ff, K007420_w ),				/* Sprite RAM */
+		new Memory_WriteAddress( 0x2200, 0x23ff, K007342_scroll_w ),		/* Scroll RAM */
+		new Memory_WriteAddress( 0x2400, 0x245f, paletteram_xBBBBBGGGGGRRRRR_swap_w, &paletteram ),/* palette */
+		new Memory_WriteAddress( 0x2600, 0x2607, K007342_vreg_w ),			/* Video Registers */
+		new Memory_WriteAddress( 0x2e80, 0x2e80, bladestl_sh_irqtrigger_w ),/* cause interrupt on audio CPU */
+		new Memory_WriteAddress( 0x2ec0, 0x2ec0, watchdog_reset_w ),		/* watchdog reset */
+		new Memory_WriteAddress( 0x2f40, 0x2f40, bladestl_bankswitch_w ),	/* bankswitch control */
+		new Memory_WriteAddress( 0x2f80, 0x2f9f, K051733_w ),				/* Protection: 051733 */
+		new Memory_WriteAddress( 0x2fc0, 0x2fc0, MWA_NOP ),				/* ??? */
+		new Memory_WriteAddress( 0x4000, 0x5fff, MWA_RAM ),				/* Work RAM */
+		new Memory_WriteAddress( 0x6000, 0x7fff, MWA_RAM ),				/* banked ROM */
+		new Memory_WriteAddress( 0x8000, 0xffff, MWA_ROM ),				/* ROM */
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	public static Memory_ReadAddress bladestl_readmem_sound[]={
 		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
@@ -162,14 +164,16 @@ public class bladestl
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( bladestl_writemem_sound )
-		{ 0x0000, 0x07ff, MWA_RAM },				/* RAM */
-		{ 0x1000, 0x1000, YM2203_control_port_0_w },/* YM2203 */
-		{ 0x1001, 0x1001, YM2203_write_port_0_w },	/* YM2203 */
-		{ 0x3000, 0x3000, bladestl_speech_ctrl_w },	/* UPD7759 */
-		{ 0x5000, 0x5000, MWA_NOP },				/* ??? */
-		{ 0x8000, 0xffff, MWA_ROM },				/* ROM */
-	MEMORY_END
+	public static Memory_WriteAddress bladestl_writemem_sound[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0x07ff, MWA_RAM ),				/* RAM */
+		new Memory_WriteAddress( 0x1000, 0x1000, YM2203_control_port_0_w ),/* YM2203 */
+		new Memory_WriteAddress( 0x1001, 0x1001, YM2203_write_port_0_w ),	/* YM2203 */
+		new Memory_WriteAddress( 0x3000, 0x3000, bladestl_speech_ctrl_w ),	/* UPD7759 */
+		new Memory_WriteAddress( 0x5000, 0x5000, MWA_NOP ),				/* ??? */
+		new Memory_WriteAddress( 0x8000, 0xffff, MWA_ROM ),				/* ROM */
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	/***************************************************************************
 	

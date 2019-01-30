@@ -66,21 +66,23 @@ public class markham
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( writemem1 )
-		{ 0x0000, 0x5fff, MWA_ROM },
+	public static Memory_WriteAddress writemem1[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0x5fff, MWA_ROM ),
 	
-		{ 0xc000, 0xc7ff, MWA_RAM },
-		{ 0xc800, 0xcfff, MWA_RAM, &spriteram, &spriteram_size },
-		{ 0xd000, 0xd7ff, videoram_w, &videoram, &videoram_size },
-		{ 0xd800, 0xdfff, markham_sharedram_w },
+		new Memory_WriteAddress( 0xc000, 0xc7ff, MWA_RAM ),
+		new Memory_WriteAddress( 0xc800, 0xcfff, MWA_RAM, &spriteram, &spriteram_size ),
+		new Memory_WriteAddress( 0xd000, 0xd7ff, videoram_w, &videoram, &videoram_size ),
+		new Memory_WriteAddress( 0xd800, 0xdfff, markham_sharedram_w ),
 	
-		{ 0xe008, 0xe008, MWA_NOP }, /* coin counter? */
+		new Memory_WriteAddress( 0xe008, 0xe008, MWA_NOP ), /* coin counter? */
 	
-		{ 0xe009, 0xe009, MWA_NOP }, /* to CPU2 busreq */
+		new Memory_WriteAddress( 0xe009, 0xe009, MWA_NOP ), /* to CPU2 busreq */
 	
-		{ 0xe00c, 0xe00d, markham_scroll_x_w },
-		{ 0xe00e, 0xe00e, markham_flipscreen_w },
-	MEMORY_END
+		new Memory_WriteAddress( 0xe00c, 0xe00d, markham_scroll_x_w ),
+		new Memory_WriteAddress( 0xe00e, 0xe00e, markham_flipscreen_w ),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	public static Memory_ReadAddress readmem2[]={
 		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
@@ -89,16 +91,18 @@ public class markham
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( writemem2 )
-		{ 0x0000, 0x5fff, MWA_ROM },
-		{ 0x8000, 0x87ff, MWA_RAM, &markham_sharedram },
+	public static Memory_WriteAddress writemem2[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0x5fff, MWA_ROM ),
+		new Memory_WriteAddress( 0x8000, 0x87ff, MWA_RAM, &markham_sharedram ),
 	
-		{ 0xc000, 0xc000, SN76496_0_w },
-		{ 0xc001, 0xc001, SN76496_1_w },
+		new Memory_WriteAddress( 0xc000, 0xc000, SN76496_0_w ),
+		new Memory_WriteAddress( 0xc001, 0xc001, SN76496_1_w ),
 	
-		{ 0xc002, 0xc002, MWA_NOP }, /* unknown */
-		{ 0xc003, 0xc003, MWA_NOP }, /* unknown */
-	MEMORY_END
+		new Memory_WriteAddress( 0xc002, 0xc002, MWA_NOP ), /* unknown */
+		new Memory_WriteAddress( 0xc003, 0xc003, MWA_NOP ), /* unknown */
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	
 	/****************************************************************************/

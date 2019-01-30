@@ -33,11 +33,13 @@ public class minivadr
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( writemem )
-		{ 0x0000, 0x1fff, MWA_ROM },
-		{ 0xa000, 0xbfff, minivadr_videoram_w, &videoram, &videoram_size },
-		{ 0xe008, 0xe008, MWA_NOP },		// ???
-	MEMORY_END
+	public static Memory_WriteAddress writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0x1fff, MWA_ROM ),
+		new Memory_WriteAddress( 0xa000, 0xbfff, minivadr_videoram_w, &videoram, &videoram_size ),
+		new Memory_WriteAddress( 0xe008, 0xe008, MWA_NOP ),		// ???
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	
 	INPUT_PORTS_START( minivadr )

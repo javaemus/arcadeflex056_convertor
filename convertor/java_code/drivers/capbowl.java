@@ -243,15 +243,17 @@ public class capbowl
 	};
 	
 	
-	static MEMORY_WRITE_START( writemem )
-		{ 0x0000, 0x001f, bowlrama_turbo_w },	/* Bowl-O-Rama only */
-		{ 0x4000, 0x4000, MWA_RAM, &capbowl_rowaddress },
-		{ 0x4800, 0x4800, capbowl_rom_select_w },
-		{ 0x5000, 0x57ff, MWA_RAM, &nvram, &nvram_size },
-		{ 0x5800, 0x5fff, capbowl_tms34061_w },
-		{ 0x6000, 0x6000, capbowl_sndcmd_w },
-		{ 0x6800, 0x6800, track_reset_w },	/* + watchdog */
-	MEMORY_END
+	public static Memory_WriteAddress writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0x001f, bowlrama_turbo_w ),	/* Bowl-O-Rama only */
+		new Memory_WriteAddress( 0x4000, 0x4000, MWA_RAM, &capbowl_rowaddress ),
+		new Memory_WriteAddress( 0x4800, 0x4800, capbowl_rom_select_w ),
+		new Memory_WriteAddress( 0x5000, 0x57ff, MWA_RAM, &nvram, &nvram_size ),
+		new Memory_WriteAddress( 0x5800, 0x5fff, capbowl_tms34061_w ),
+		new Memory_WriteAddress( 0x6000, 0x6000, capbowl_sndcmd_w ),
+		new Memory_WriteAddress( 0x6800, 0x6800, track_reset_w ),	/* + watchdog */
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	
 	
@@ -272,13 +274,15 @@ public class capbowl
 	};
 	
 	
-	static MEMORY_WRITE_START( sound_writemem )
-		{ 0x0000, 0x07ff, MWA_RAM},
-		{ 0x1000, 0x1000, YM2203_control_port_0_w },
-		{ 0x1001, 0x1001, YM2203_write_port_0_w },
-		{ 0x2000, 0x2000, MWA_NOP },  /* Not hooked up according to the schematics */
-		{ 0x6000, 0x6000, DAC_0_data_w },
-	MEMORY_END
+	public static Memory_WriteAddress sound_writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0x07ff, MWA_RAM),
+		new Memory_WriteAddress( 0x1000, 0x1000, YM2203_control_port_0_w ),
+		new Memory_WriteAddress( 0x1001, 0x1001, YM2203_write_port_0_w ),
+		new Memory_WriteAddress( 0x2000, 0x2000, MWA_NOP ),  /* Not hooked up according to the schematics */
+		new Memory_WriteAddress( 0x6000, 0x6000, DAC_0_data_w ),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	
 	

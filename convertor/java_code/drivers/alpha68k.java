@@ -436,10 +436,12 @@ public class alpha68k
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( sound_writemem )
-		{ 0x0000, 0x7fff, MWA_ROM },
-		{ 0x8000, 0x87ff, MWA_RAM },
-	MEMORY_END
+	public static Memory_WriteAddress sound_writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0x7fff, MWA_ROM ),
+		new Memory_WriteAddress( 0x8000, 0x87ff, MWA_RAM ),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	public static Memory_ReadAddress kyros_sound_readmem[]={
 		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
@@ -450,10 +452,12 @@ public class alpha68k
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( kyros_sound_writemem )
-		{ 0x0000, 0x7fff, MWA_ROM },
-		{ 0xc000, 0xc7ff, MWA_RAM },
-	MEMORY_END
+	public static Memory_WriteAddress kyros_sound_writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0x7fff, MWA_ROM ),
+		new Memory_WriteAddress( 0xc000, 0xc7ff, MWA_RAM ),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	public static Memory_ReadAddress sstingry_sound_readmem[]={
 		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
@@ -469,11 +473,13 @@ public class alpha68k
 		sound_ram[offset]=data;
 	}
 	
-	static MEMORY_WRITE_START( sstingry_sound_writemem )
-		{ 0x0000, 0x7fff, MWA_ROM },
-		{ 0x8000, 0x83ff, MWA_RAM, &sound_ram },
-	//	{ 0xc000, 0xc3ff, soundram_mirror_w },
-	MEMORY_END
+	public static Memory_WriteAddress sstingry_sound_writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0x7fff, MWA_ROM ),
+		new Memory_WriteAddress( 0x8000, 0x83ff, MWA_RAM, &sound_ram ),
+	//	new Memory_WriteAddress( 0xc000, 0xc3ff, soundram_mirror_w ),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static PORT_READ_START( sound_readport )
 		{ 0x00, 0x00, soundlatch_r },

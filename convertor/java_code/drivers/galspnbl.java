@@ -97,14 +97,16 @@ public class galspnbl
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( sound_writemem )
-		{ 0x0000, 0xefff, MWA_ROM },
-		{ 0xf000, 0xf7ff, MWA_RAM },
-		{ 0xf800, 0xf800, OKIM6295_data_0_w },
-		{ 0xf810, 0xf810, YM3812_control_port_0_w },
-		{ 0xf811, 0xf811, YM3812_write_port_0_w },
-		{ 0xfc00, 0xfc00, MWA_NOP },	/* irq ack ?? */
-	MEMORY_END
+	public static Memory_WriteAddress sound_writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0xefff, MWA_ROM ),
+		new Memory_WriteAddress( 0xf000, 0xf7ff, MWA_RAM ),
+		new Memory_WriteAddress( 0xf800, 0xf800, OKIM6295_data_0_w ),
+		new Memory_WriteAddress( 0xf810, 0xf810, YM3812_control_port_0_w ),
+		new Memory_WriteAddress( 0xf811, 0xf811, YM3812_write_port_0_w ),
+		new Memory_WriteAddress( 0xfc00, 0xfc00, MWA_NOP ),	/* irq ack ?? */
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	
 	

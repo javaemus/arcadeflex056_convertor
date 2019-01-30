@@ -176,26 +176,28 @@ public class skydiver
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( writemem )
-		{ 0x0000, 0x00ff, MWA_RAM },
-		{ 0x0010, 0x001f, MWA_RAM, &spriteram, &spriteram_size },
-		{ 0x0400, 0x077f, videoram_w, &videoram, &videoram_size },
-		// { 0x0780, 0x07ff, MWA_RAM },
-		{ 0x0800, 0x0803, skydiver_sk_lamps_w },
-		// { 0x0804, 0x0807, skydiver_start_lamps_w },
-		{ 0x0808, 0x080b, skydiver_yd_lamps_w },
-		// { 0x080c, 0x080d, skydiver_sound_enable_w },
-		// { 0x1000, 0x1001, skydiver_jump1_lamps_w },
-		// { 0x1002, 0x1003, skydiver_coin_lockout_w },
-		// { 0x1006, 0x1007, skydiver_jump2_lamps_w },
-		// { 0x1008, 0x100b, skydiver_whistle_w },
-		{ 0x100c, 0x100d, skydiver_nmion_w },
-		{ 0x100e, 0x100f, skydiver_width_w },
-		{ 0x2002, 0x2009, skydiver_iver_lamps_w },
-		// { 0x200a, 0x200d, skydiver_oct_w },
-		// { 0x200e, 0x200f, skydiver_noise_reset_w },
-		{ 0x2800, 0x3fff, MWA_ROM },
-	MEMORY_END
+	public static Memory_WriteAddress writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0x00ff, MWA_RAM ),
+		new Memory_WriteAddress( 0x0010, 0x001f, MWA_RAM, &spriteram, &spriteram_size ),
+		new Memory_WriteAddress( 0x0400, 0x077f, videoram_w, &videoram, &videoram_size ),
+		// new Memory_WriteAddress( 0x0780, 0x07ff, MWA_RAM ),
+		new Memory_WriteAddress( 0x0800, 0x0803, skydiver_sk_lamps_w ),
+		// new Memory_WriteAddress( 0x0804, 0x0807, skydiver_start_lamps_w ),
+		new Memory_WriteAddress( 0x0808, 0x080b, skydiver_yd_lamps_w ),
+		// new Memory_WriteAddress( 0x080c, 0x080d, skydiver_sound_enable_w ),
+		// new Memory_WriteAddress( 0x1000, 0x1001, skydiver_jump1_lamps_w ),
+		// new Memory_WriteAddress( 0x1002, 0x1003, skydiver_coin_lockout_w ),
+		// new Memory_WriteAddress( 0x1006, 0x1007, skydiver_jump2_lamps_w ),
+		// new Memory_WriteAddress( 0x1008, 0x100b, skydiver_whistle_w ),
+		new Memory_WriteAddress( 0x100c, 0x100d, skydiver_nmion_w ),
+		new Memory_WriteAddress( 0x100e, 0x100f, skydiver_width_w ),
+		new Memory_WriteAddress( 0x2002, 0x2009, skydiver_iver_lamps_w ),
+		// new Memory_WriteAddress( 0x200a, 0x200d, skydiver_oct_w ),
+		// new Memory_WriteAddress( 0x200e, 0x200f, skydiver_noise_reset_w ),
+		new Memory_WriteAddress( 0x2800, 0x3fff, MWA_ROM ),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	INPUT_PORTS_START( skydiver )
 		PORT_START /* fake port, gets mapped to Sky Diver ports */

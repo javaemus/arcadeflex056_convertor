@@ -1310,22 +1310,24 @@ public class balsente
 	
 	
 	/* CPU 1 write addresses */
-	static MEMORY_WRITE_START( writemem_cpu1 )
-		{ 0x0000, 0x07ff, MWA_RAM, &spriteram },
-		{ 0x0800, 0x7fff, balsente_videoram_w, &videoram, &videoram_size },
-		{ 0x8000, 0x8fff, balsente_paletteram_w, &paletteram },
-		{ 0x9000, 0x9007, adc_select_w },
-		{ 0x9800, 0x987f, misc_output_w },
-		{ 0x9880, 0x989f, random_reset_w },
-		{ 0x98a0, 0x98bf, rombank_select_w },
-		{ 0x98c0, 0x98df, balsente_palette_select_w },
-		{ 0x98e0, 0x98ff, watchdog_reset_w },
-		{ 0x9903, 0x9903, MWA_NOP },
-		{ 0x9a04, 0x9a05, m6850_w },
-		{ 0x9b00, 0x9cff, MWA_RAM, &nvram, &nvram_size },		/* system NOVRAM + cart NOVRAM */
-		{ 0x9f00, 0x9f00, rombank2_select_w },
-		{ 0xa000, 0xffff, MWA_ROM },
-	MEMORY_END
+	public static Memory_WriteAddress writemem_cpu1[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0x07ff, MWA_RAM, &spriteram ),
+		new Memory_WriteAddress( 0x0800, 0x7fff, balsente_videoram_w, &videoram, &videoram_size ),
+		new Memory_WriteAddress( 0x8000, 0x8fff, balsente_paletteram_w, &paletteram ),
+		new Memory_WriteAddress( 0x9000, 0x9007, adc_select_w ),
+		new Memory_WriteAddress( 0x9800, 0x987f, misc_output_w ),
+		new Memory_WriteAddress( 0x9880, 0x989f, random_reset_w ),
+		new Memory_WriteAddress( 0x98a0, 0x98bf, rombank_select_w ),
+		new Memory_WriteAddress( 0x98c0, 0x98df, balsente_palette_select_w ),
+		new Memory_WriteAddress( 0x98e0, 0x98ff, watchdog_reset_w ),
+		new Memory_WriteAddress( 0x9903, 0x9903, MWA_NOP ),
+		new Memory_WriteAddress( 0x9a04, 0x9a05, m6850_w ),
+		new Memory_WriteAddress( 0x9b00, 0x9cff, MWA_RAM, &nvram, &nvram_size ),		/* system NOVRAM + cart NOVRAM */
+		new Memory_WriteAddress( 0x9f00, 0x9f00, rombank2_select_w ),
+		new Memory_WriteAddress( 0xa000, 0xffff, MWA_ROM ),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	
 	
@@ -1344,11 +1346,13 @@ public class balsente
 	};
 	
 	
-	static MEMORY_WRITE_START( writemem_cpu2 )
-		{ 0x0000, 0x1fff, MWA_ROM },
-		{ 0x2000, 0x5fff, MWA_RAM },
-		{ 0x6000, 0x7fff, m6850_sound_w },
-	MEMORY_END
+	public static Memory_WriteAddress writemem_cpu2[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0x1fff, MWA_ROM ),
+		new Memory_WriteAddress( 0x2000, 0x5fff, MWA_RAM ),
+		new Memory_WriteAddress( 0x6000, 0x7fff, m6850_sound_w ),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	
 	static PORT_READ_START( readport_cpu2 )

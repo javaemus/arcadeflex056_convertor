@@ -154,29 +154,31 @@ public class wiz
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( writemem )
-		{ 0x0000, 0xbfff, MWA_ROM },
-		{ 0xc000, 0xc7ff, MWA_RAM },
-		{ 0xc800, 0xc801, wiz_coin_counter_w },
-		{ 0xd000, 0xd3ff, MWA_RAM, &wiz_videoram2 },
-		{ 0xd400, 0xd7ff, MWA_RAM, &wiz_colorram2 },
-		{ 0xd800, 0xd83f, MWA_RAM, &wiz_attributesram2 },
-		{ 0xd840, 0xd85f, MWA_RAM, &spriteram_2, &spriteram_size },
-		{ 0xe000, 0xe3ff, videoram_w, &videoram, &videoram_size },
-		{ 0xe400, 0xe7ff, colorram_w, &colorram },
-		{ 0xe800, 0xe83f, wiz_attributes_w, &wiz_attributesram },
-		{ 0xe840, 0xe85f, MWA_RAM, &spriteram },
-		{ 0xf000, 0xf000, MWA_RAM, &wiz_sprite_bank },
-		{ 0xf001, 0xf001, interrupt_enable_w },
-		{ 0xf002, 0xf003, wiz_palettebank_w },
-		{ 0xf004, 0xf005, wiz_char_bank_select_w },
-		{ 0xf006, 0xf006, wiz_flipx_w },
-		{ 0xf007, 0xf007, wiz_flipy_w },
-		{ 0xf800, 0xf800, sound_command_w },
-		{ 0xf808, 0xf808, MWA_NOP },	/* explosion sound trigger - analog? */
-		{ 0xf80a, 0xf80a, MWA_NOP },	/* shoot sound trigger - analog? */
-		{ 0xf818, 0xf818, wiz_bgcolor_w },
-	MEMORY_END
+	public static Memory_WriteAddress writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0xbfff, MWA_ROM ),
+		new Memory_WriteAddress( 0xc000, 0xc7ff, MWA_RAM ),
+		new Memory_WriteAddress( 0xc800, 0xc801, wiz_coin_counter_w ),
+		new Memory_WriteAddress( 0xd000, 0xd3ff, MWA_RAM, &wiz_videoram2 ),
+		new Memory_WriteAddress( 0xd400, 0xd7ff, MWA_RAM, &wiz_colorram2 ),
+		new Memory_WriteAddress( 0xd800, 0xd83f, MWA_RAM, &wiz_attributesram2 ),
+		new Memory_WriteAddress( 0xd840, 0xd85f, MWA_RAM, &spriteram_2, &spriteram_size ),
+		new Memory_WriteAddress( 0xe000, 0xe3ff, videoram_w, &videoram, &videoram_size ),
+		new Memory_WriteAddress( 0xe400, 0xe7ff, colorram_w, &colorram ),
+		new Memory_WriteAddress( 0xe800, 0xe83f, wiz_attributes_w, &wiz_attributesram ),
+		new Memory_WriteAddress( 0xe840, 0xe85f, MWA_RAM, &spriteram ),
+		new Memory_WriteAddress( 0xf000, 0xf000, MWA_RAM, &wiz_sprite_bank ),
+		new Memory_WriteAddress( 0xf001, 0xf001, interrupt_enable_w ),
+		new Memory_WriteAddress( 0xf002, 0xf003, wiz_palettebank_w ),
+		new Memory_WriteAddress( 0xf004, 0xf005, wiz_char_bank_select_w ),
+		new Memory_WriteAddress( 0xf006, 0xf006, wiz_flipx_w ),
+		new Memory_WriteAddress( 0xf007, 0xf007, wiz_flipy_w ),
+		new Memory_WriteAddress( 0xf800, 0xf800, sound_command_w ),
+		new Memory_WriteAddress( 0xf808, 0xf808, MWA_NOP ),	/* explosion sound trigger - analog? */
+		new Memory_WriteAddress( 0xf80a, 0xf80a, MWA_NOP ),	/* shoot sound trigger - analog? */
+		new Memory_WriteAddress( 0xf818, 0xf818, wiz_bgcolor_w ),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	
 	public static Memory_ReadAddress sound_readmem[]={
@@ -188,17 +190,19 @@ public class wiz
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( sound_writemem )
-		{ 0x2000, 0x23ff, MWA_RAM },
-		{ 0x3000, 0x3000, interrupt_enable_w },		/* Stinger/Scion */
-		{ 0x4000, 0x4000, AY8910_control_port_2_w },
-		{ 0x4001, 0x4001, AY8910_write_port_2_w },
-		{ 0x5000, 0x5000, AY8910_control_port_0_w },
-		{ 0x5001, 0x5001, AY8910_write_port_0_w },
-		{ 0x6000, 0x6000, AY8910_control_port_1_w },	/* Wiz only */
-		{ 0x6001, 0x6001, AY8910_write_port_1_w },	/* Wiz only */
-		{ 0x7000, 0x7000, interrupt_enable_w },		/* Wiz */
-	MEMORY_END
+	public static Memory_WriteAddress sound_writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x2000, 0x23ff, MWA_RAM ),
+		new Memory_WriteAddress( 0x3000, 0x3000, interrupt_enable_w ),		/* Stinger/Scion */
+		new Memory_WriteAddress( 0x4000, 0x4000, AY8910_control_port_2_w ),
+		new Memory_WriteAddress( 0x4001, 0x4001, AY8910_write_port_2_w ),
+		new Memory_WriteAddress( 0x5000, 0x5000, AY8910_control_port_0_w ),
+		new Memory_WriteAddress( 0x5001, 0x5001, AY8910_write_port_0_w ),
+		new Memory_WriteAddress( 0x6000, 0x6000, AY8910_control_port_1_w ),	/* Wiz only */
+		new Memory_WriteAddress( 0x6001, 0x6001, AY8910_write_port_1_w ),	/* Wiz only */
+		new Memory_WriteAddress( 0x7000, 0x7000, interrupt_enable_w ),		/* Wiz */
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	
 	

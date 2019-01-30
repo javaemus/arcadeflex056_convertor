@@ -199,21 +199,23 @@ public class zaxxon
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( writemem )
-		{ 0x0000, 0x4fff, MWA_ROM },
-		{ 0x6000, 0x6fff, MWA_RAM },
-		{ 0x8000, 0x83ff, videoram_w, &videoram, &videoram_size },
-		{ 0xa000, 0xa0ff, MWA_RAM, &spriteram, &spriteram_size },
-		{ 0xc000, 0xc002, MWA_NOP },	/* coin enables */
-		{ 0xc003, 0xc004, zaxxon_coin_counter_w },
-		{ 0xc006, 0xc006, zaxxon_screen_flip_w },
-		{ 0xff3c, 0xff3e, zaxxon_sound_w },
-		{ 0xfff0, 0xfff0, interrupt_enable_w },
-		{ 0xfff1, 0xfff1, MWA_RAM, &zaxxon_char_color_bank },
-		{ 0xfff8, 0xfff9, MWA_RAM, &zaxxon_background_position },
-		{ 0xfffa, 0xfffa, MWA_RAM, &zaxxon_background_color_bank },
-		{ 0xfffb, 0xfffb, MWA_RAM, &zaxxon_background_enable },
-	MEMORY_END
+	public static Memory_WriteAddress writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0x4fff, MWA_ROM ),
+		new Memory_WriteAddress( 0x6000, 0x6fff, MWA_RAM ),
+		new Memory_WriteAddress( 0x8000, 0x83ff, videoram_w, &videoram, &videoram_size ),
+		new Memory_WriteAddress( 0xa000, 0xa0ff, MWA_RAM, &spriteram, &spriteram_size ),
+		new Memory_WriteAddress( 0xc000, 0xc002, MWA_NOP ),	/* coin enables */
+		new Memory_WriteAddress( 0xc003, 0xc004, zaxxon_coin_counter_w ),
+		new Memory_WriteAddress( 0xc006, 0xc006, zaxxon_screen_flip_w ),
+		new Memory_WriteAddress( 0xff3c, 0xff3e, zaxxon_sound_w ),
+		new Memory_WriteAddress( 0xfff0, 0xfff0, interrupt_enable_w ),
+		new Memory_WriteAddress( 0xfff1, 0xfff1, MWA_RAM, &zaxxon_char_color_bank ),
+		new Memory_WriteAddress( 0xfff8, 0xfff9, MWA_RAM, &zaxxon_background_position ),
+		new Memory_WriteAddress( 0xfffa, 0xfffa, MWA_RAM, &zaxxon_background_color_bank ),
+		new Memory_WriteAddress( 0xfffb, 0xfffb, MWA_RAM, &zaxxon_background_enable ),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	public static Memory_ReadAddress ixion_readmem[]={
 		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
@@ -230,19 +232,21 @@ public class zaxxon
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( futspy_writemem )
-		{ 0x0000, 0x4fff, MWA_ROM },
-		{ 0x6000, 0x6fff, MWA_RAM },
-		{ 0x8000, 0x83ff, videoram_w, &videoram, &videoram_size },
-		{ 0xa000, 0xa0ff, MWA_RAM, &spriteram, &spriteram_size },
-		{ 0xc000, 0xc002, MWA_NOP },	/* coin enables */
-		{ 0xe03c, 0xe03e, zaxxon_sound_w },
-		{ 0xe0f0, 0xe0f0, interrupt_enable_w },
-		{ 0xe0f1, 0xe0f1, MWA_RAM, &zaxxon_char_color_bank },
-		{ 0xe0f8, 0xe0f9, MWA_RAM, &zaxxon_background_position },
-		{ 0xe0fa, 0xe0fa, MWA_RAM, &zaxxon_background_color_bank },
-		{ 0xe0fb, 0xe0fb, MWA_RAM, &zaxxon_background_enable },
-	MEMORY_END
+	public static Memory_WriteAddress futspy_writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0x4fff, MWA_ROM ),
+		new Memory_WriteAddress( 0x6000, 0x6fff, MWA_RAM ),
+		new Memory_WriteAddress( 0x8000, 0x83ff, videoram_w, &videoram, &videoram_size ),
+		new Memory_WriteAddress( 0xa000, 0xa0ff, MWA_RAM, &spriteram, &spriteram_size ),
+		new Memory_WriteAddress( 0xc000, 0xc002, MWA_NOP ),	/* coin enables */
+		new Memory_WriteAddress( 0xe03c, 0xe03e, zaxxon_sound_w ),
+		new Memory_WriteAddress( 0xe0f0, 0xe0f0, interrupt_enable_w ),
+		new Memory_WriteAddress( 0xe0f1, 0xe0f1, MWA_RAM, &zaxxon_char_color_bank ),
+		new Memory_WriteAddress( 0xe0f8, 0xe0f9, MWA_RAM, &zaxxon_background_position ),
+		new Memory_WriteAddress( 0xe0fa, 0xe0fa, MWA_RAM, &zaxxon_background_color_bank ),
+		new Memory_WriteAddress( 0xe0fb, 0xe0fb, MWA_RAM, &zaxxon_background_enable ),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	
 	public static Memory_ReadAddress razmataz_readmem[]={
@@ -263,21 +267,23 @@ public class zaxxon
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( razmataz_writemem )
-		{ 0x0000, 0x5fff, MWA_ROM },
-		{ 0x6000, 0x6fff, MWA_RAM },
-		{ 0x8000, 0x83ff, videoram_w, &videoram, &videoram_size },
-		{ 0xa000, 0xa0ff, MWA_RAM, &spriteram, &spriteram_size },
-		{ 0xc000, 0xc002, MWA_NOP },	/* coin enables */
-		{ 0xc003, 0xc004, zaxxon_coin_counter_w },
-		{ 0xc006, 0xc006, zaxxon_screen_flip_w },
-		{ 0xe0f0, 0xe0f0, interrupt_enable_w },
-		{ 0xe0f1, 0xe0f1, MWA_RAM, &zaxxon_char_color_bank },
-		{ 0xe0f8, 0xe0f9, MWA_RAM, &zaxxon_background_position },
-		{ 0xe0fa, 0xe0fa, MWA_RAM, &zaxxon_background_color_bank },
-		{ 0xe0fb, 0xe0fb, MWA_RAM, &zaxxon_background_enable },
-	//	{ 0xff3c, 0xff3c, }, sound
-	MEMORY_END
+	public static Memory_WriteAddress razmataz_writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0x5fff, MWA_ROM ),
+		new Memory_WriteAddress( 0x6000, 0x6fff, MWA_RAM ),
+		new Memory_WriteAddress( 0x8000, 0x83ff, videoram_w, &videoram, &videoram_size ),
+		new Memory_WriteAddress( 0xa000, 0xa0ff, MWA_RAM, &spriteram, &spriteram_size ),
+		new Memory_WriteAddress( 0xc000, 0xc002, MWA_NOP ),	/* coin enables */
+		new Memory_WriteAddress( 0xc003, 0xc004, zaxxon_coin_counter_w ),
+		new Memory_WriteAddress( 0xc006, 0xc006, zaxxon_screen_flip_w ),
+		new Memory_WriteAddress( 0xe0f0, 0xe0f0, interrupt_enable_w ),
+		new Memory_WriteAddress( 0xe0f1, 0xe0f1, MWA_RAM, &zaxxon_char_color_bank ),
+		new Memory_WriteAddress( 0xe0f8, 0xe0f9, MWA_RAM, &zaxxon_background_position ),
+		new Memory_WriteAddress( 0xe0fa, 0xe0fa, MWA_RAM, &zaxxon_background_color_bank ),
+		new Memory_WriteAddress( 0xe0fb, 0xe0fb, MWA_RAM, &zaxxon_background_enable ),
+	//	new Memory_WriteAddress( 0xff3c, 0xff3c, ), sound
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	
 	/***************************************************************************

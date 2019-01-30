@@ -799,11 +799,13 @@ public class aburner
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( aburner_sound_writemem )
-		{ 0x0000, 0x7fff, MWA_ROM },
-		{ 0xf000, 0xf0ff, SegaPCM_w },
-		{ 0xf000, 0xffff, MWA_RAM },
-	MEMORY_END
+	public static Memory_WriteAddress aburner_sound_writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0x7fff, MWA_ROM ),
+		new Memory_WriteAddress( 0xf000, 0xf0ff, SegaPCM_w ),
+		new Memory_WriteAddress( 0xf000, 0xffff, MWA_RAM ),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static PORT_READ_START( aburner_sound_readport )
 		{ 0x01, 0x01, YM2151_status_port_0_r },

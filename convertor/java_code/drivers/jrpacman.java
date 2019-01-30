@@ -170,25 +170,27 @@ public class jrpacman
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( writemem )
-		{ 0x0000, 0x3fff, MWA_ROM },
-		{ 0x4000, 0x47ff, jrpacman_videoram_w, &videoram, &videoram_size },
-		{ 0x4800, 0x4fef, MWA_RAM },
-		{ 0x4ff0, 0x4fff, MWA_RAM, &spriteram, &spriteram_size },
-		{ 0x5000, 0x5000, interrupt_enable_w },
-		{ 0x5001, 0x5001, pengo_sound_enable_w },
-		{ 0x5003, 0x5003, jrpacman_flipscreen_w },
-		{ 0x5040, 0x505f, pengo_sound_w, &pengo_soundregs },
-		{ 0x5060, 0x506f, MWA_RAM, &spriteram_2 },
-		{ 0x5070, 0x5070, jrpacman_palettebank_w, &jrpacman_palettebank },
-		{ 0x5071, 0x5071, jrpacman_colortablebank_w, &jrpacman_colortablebank },
-		{ 0x5073, 0x5073, MWA_RAM, &jrpacman_bgpriority },
-		{ 0x5074, 0x5074, jrpacman_charbank_w, &jrpacman_charbank },
-		{ 0x5075, 0x5075, MWA_RAM, &jrpacman_spritebank },
-		{ 0x5080, 0x5080, MWA_RAM, &jrpacman_scroll },
-		{ 0x50c0, 0x50c0, MWA_NOP },
-		{ 0x8000, 0xdfff, MWA_ROM },
-	MEMORY_END
+	public static Memory_WriteAddress writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0x3fff, MWA_ROM ),
+		new Memory_WriteAddress( 0x4000, 0x47ff, jrpacman_videoram_w, &videoram, &videoram_size ),
+		new Memory_WriteAddress( 0x4800, 0x4fef, MWA_RAM ),
+		new Memory_WriteAddress( 0x4ff0, 0x4fff, MWA_RAM, &spriteram, &spriteram_size ),
+		new Memory_WriteAddress( 0x5000, 0x5000, interrupt_enable_w ),
+		new Memory_WriteAddress( 0x5001, 0x5001, pengo_sound_enable_w ),
+		new Memory_WriteAddress( 0x5003, 0x5003, jrpacman_flipscreen_w ),
+		new Memory_WriteAddress( 0x5040, 0x505f, pengo_sound_w, &pengo_soundregs ),
+		new Memory_WriteAddress( 0x5060, 0x506f, MWA_RAM, &spriteram_2 ),
+		new Memory_WriteAddress( 0x5070, 0x5070, jrpacman_palettebank_w, &jrpacman_palettebank ),
+		new Memory_WriteAddress( 0x5071, 0x5071, jrpacman_colortablebank_w, &jrpacman_colortablebank ),
+		new Memory_WriteAddress( 0x5073, 0x5073, MWA_RAM, &jrpacman_bgpriority ),
+		new Memory_WriteAddress( 0x5074, 0x5074, jrpacman_charbank_w, &jrpacman_charbank ),
+		new Memory_WriteAddress( 0x5075, 0x5075, MWA_RAM, &jrpacman_spritebank ),
+		new Memory_WriteAddress( 0x5080, 0x5080, MWA_RAM, &jrpacman_scroll ),
+		new Memory_WriteAddress( 0x50c0, 0x50c0, MWA_NOP ),
+		new Memory_WriteAddress( 0x8000, 0xdfff, MWA_ROM ),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	
 	

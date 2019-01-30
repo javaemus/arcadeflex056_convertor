@@ -236,21 +236,23 @@ public class vendetta
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( writemem )
-		{ 0x0000, 0x1fff, MWA_ROM },
-		{ 0x2000, 0x3fff, MWA_RAM },
-		{ 0x5f80, 0x5f9f, K054000_w },
-		{ 0x5fa0, 0x5faf, K053251_w },
-		{ 0x5fb0, 0x5fb7, K053246_w },
-		{ 0x5fe0, 0x5fe0, vendetta_5fe0_w },
-		{ 0x5fe2, 0x5fe2, vendetta_eeprom_w },
-		{ 0x5fe4, 0x5fe4, z80_irq_w },
-		{ 0x5fe6, 0x5fe7, K053260_0_w },
-		{ 0x4000, 0x4fff, MWA_BANK3 },
-		{ 0x6000, 0x6fff, MWA_BANK2 },
-		{ 0x4000, 0x7fff, K052109_w },
-		{ 0x8000, 0xffff, MWA_ROM },
-	MEMORY_END
+	public static Memory_WriteAddress writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0x1fff, MWA_ROM ),
+		new Memory_WriteAddress( 0x2000, 0x3fff, MWA_RAM ),
+		new Memory_WriteAddress( 0x5f80, 0x5f9f, K054000_w ),
+		new Memory_WriteAddress( 0x5fa0, 0x5faf, K053251_w ),
+		new Memory_WriteAddress( 0x5fb0, 0x5fb7, K053246_w ),
+		new Memory_WriteAddress( 0x5fe0, 0x5fe0, vendetta_5fe0_w ),
+		new Memory_WriteAddress( 0x5fe2, 0x5fe2, vendetta_eeprom_w ),
+		new Memory_WriteAddress( 0x5fe4, 0x5fe4, z80_irq_w ),
+		new Memory_WriteAddress( 0x5fe6, 0x5fe7, K053260_0_w ),
+		new Memory_WriteAddress( 0x4000, 0x4fff, MWA_BANK3 ),
+		new Memory_WriteAddress( 0x6000, 0x6fff, MWA_BANK2 ),
+		new Memory_WriteAddress( 0x4000, 0x7fff, K052109_w ),
+		new Memory_WriteAddress( 0x8000, 0xffff, MWA_ROM ),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	public static Memory_ReadAddress readmem_sound[]={
 		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
@@ -261,14 +263,16 @@ public class vendetta
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( writemem_sound )
-		{ 0x0000, 0xefff, MWA_ROM },
-		{ 0xf000, 0xf7ff, MWA_RAM },
-		{ 0xf800, 0xf800, YM2151_register_port_0_w },
-		{ 0xf801, 0xf801, YM2151_data_port_0_w },
-		{ 0xfa00, 0xfa00, z80_arm_nmi_w },
-		{ 0xfc00, 0xfc2f, K053260_0_w },
-	MEMORY_END
+	public static Memory_WriteAddress writemem_sound[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0xefff, MWA_ROM ),
+		new Memory_WriteAddress( 0xf000, 0xf7ff, MWA_RAM ),
+		new Memory_WriteAddress( 0xf800, 0xf800, YM2151_register_port_0_w ),
+		new Memory_WriteAddress( 0xf801, 0xf801, YM2151_data_port_0_w ),
+		new Memory_WriteAddress( 0xfa00, 0xfa00, z80_arm_nmi_w ),
+		new Memory_WriteAddress( 0xfc00, 0xfc2f, K053260_0_w ),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	
 	/***************************************************************************

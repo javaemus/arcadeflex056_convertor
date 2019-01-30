@@ -72,23 +72,25 @@ public class circusc
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( writemem )
-		{ 0x0000, 0x0000, circusc_flipscreen_w },
-		{ 0x0001, 0x0001, interrupt_enable_w },
-		{ 0x0003, 0x0004, circusc_coin_counter_w },  /* Coin counters */
-		{ 0x0005, 0x0005, MWA_RAM, &circusc_spritebank },
-		{ 0x0400, 0x0400, watchdog_reset_w },
-		{ 0x0800, 0x0800, soundlatch_w },
-		{ 0x0c00, 0x0c00, circusc_sh_irqtrigger_w },  /* cause interrupt on audio CPU */
-		{ 0x1c00, 0x1c00, MWA_RAM, &circusc_scroll },
-		{ 0x2000, 0x2fff, MWA_RAM },
-		{ 0x3000, 0x33ff, circusc_colorram_w, &circusc_colorram },
-		{ 0x3400, 0x37ff, circusc_videoram_w, &circusc_videoram },
-		{ 0x3800, 0x38ff, MWA_RAM, &spriteram_2 },
-		{ 0x3900, 0x39ff, MWA_RAM, &spriteram, &spriteram_size },
-		{ 0x3a00, 0x3fff, MWA_RAM },
-		{ 0x6000, 0xffff, MWA_ROM },
-	MEMORY_END
+	public static Memory_WriteAddress writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0x0000, circusc_flipscreen_w ),
+		new Memory_WriteAddress( 0x0001, 0x0001, interrupt_enable_w ),
+		new Memory_WriteAddress( 0x0003, 0x0004, circusc_coin_counter_w ),  /* Coin counters */
+		new Memory_WriteAddress( 0x0005, 0x0005, MWA_RAM, &circusc_spritebank ),
+		new Memory_WriteAddress( 0x0400, 0x0400, watchdog_reset_w ),
+		new Memory_WriteAddress( 0x0800, 0x0800, soundlatch_w ),
+		new Memory_WriteAddress( 0x0c00, 0x0c00, circusc_sh_irqtrigger_w ),  /* cause interrupt on audio CPU */
+		new Memory_WriteAddress( 0x1c00, 0x1c00, MWA_RAM, &circusc_scroll ),
+		new Memory_WriteAddress( 0x2000, 0x2fff, MWA_RAM ),
+		new Memory_WriteAddress( 0x3000, 0x33ff, circusc_colorram_w, &circusc_colorram ),
+		new Memory_WriteAddress( 0x3400, 0x37ff, circusc_videoram_w, &circusc_videoram ),
+		new Memory_WriteAddress( 0x3800, 0x38ff, MWA_RAM, &spriteram_2 ),
+		new Memory_WriteAddress( 0x3900, 0x39ff, MWA_RAM, &spriteram, &spriteram_size ),
+		new Memory_WriteAddress( 0x3a00, 0x3fff, MWA_RAM ),
+		new Memory_WriteAddress( 0x6000, 0xffff, MWA_ROM ),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	public static Memory_ReadAddress sound_readmem[]={
 		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
@@ -99,19 +101,21 @@ public class circusc
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( sound_writemem )
-		{ 0x0000, 0x3fff, MWA_ROM },
-		{ 0x4000, 0x43ff, MWA_RAM },
-		{ 0xa000, 0xa000, MWA_NOP },    /* latch command for the 76496. We should buffer this */
+	public static Memory_WriteAddress sound_writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0x3fff, MWA_ROM ),
+		new Memory_WriteAddress( 0x4000, 0x43ff, MWA_RAM ),
+		new Memory_WriteAddress( 0xa000, 0xa000, MWA_NOP ),    /* latch command for the 76496. We should buffer this */
 										/* command and send it to the chip, but we just use */
 										/* the triggers below because the program always writes */
 										/* the same number here and there. */
-		{ 0xa001, 0xa001, SN76496_0_w },        /* trigger the 76496 to read the latch */
-		{ 0xa002, 0xa002, SN76496_1_w },        /* trigger the 76496 to read the latch */
-		{ 0xa003, 0xa003, circusc_dac_w },
-		{ 0xa004, 0xa004, MWA_NOP },            /* ??? */
-		{ 0xa07c, 0xa07c, MWA_NOP },            /* ??? */
-	MEMORY_END
+		new Memory_WriteAddress( 0xa001, 0xa001, SN76496_0_w ),        /* trigger the 76496 to read the latch */
+		new Memory_WriteAddress( 0xa002, 0xa002, SN76496_1_w ),        /* trigger the 76496 to read the latch */
+		new Memory_WriteAddress( 0xa003, 0xa003, circusc_dac_w ),
+		new Memory_WriteAddress( 0xa004, 0xa004, MWA_NOP ),            /* ??? */
+		new Memory_WriteAddress( 0xa07c, 0xa07c, MWA_NOP ),            /* ??? */
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	
 	

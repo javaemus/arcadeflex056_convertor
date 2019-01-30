@@ -71,10 +71,12 @@ public class hyhoo
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( writemem_hyhoo )
-		{ 0x0000, 0xefff, MWA_ROM },
-		{ 0xf000, 0xffff, MWA_RAM, &nb1413m3_nvram, &nb1413m3_nvram_size },
-	MEMORY_END
+	public static Memory_WriteAddress writemem_hyhoo[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0xefff, MWA_ROM ),
+		new Memory_WriteAddress( 0xf000, 0xffff, MWA_RAM, &nb1413m3_nvram, &nb1413m3_nvram_size ),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	
 	static READ_HANDLER( io_hyhoo_r )

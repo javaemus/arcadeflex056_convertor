@@ -149,11 +149,13 @@ public class royalmah
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( writemem )
-		{ 0x0000, 0x5fff, royalmah_rom_w },
-		{ 0x7000, 0x77ff, MWA_RAM },
-		{ 0x8000, 0xffff, royalmah_videoram_w, &videoram, &videoram_size },
-	MEMORY_END
+	public static Memory_WriteAddress writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0x5fff, royalmah_rom_w ),
+		new Memory_WriteAddress( 0x7000, 0x77ff, MWA_RAM ),
+		new Memory_WriteAddress( 0x8000, 0xffff, royalmah_videoram_w, &videoram, &videoram_size ),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static PORT_READ_START( readport )
 		{ 0x01, 0x01, AY8910_read_port_0_r },

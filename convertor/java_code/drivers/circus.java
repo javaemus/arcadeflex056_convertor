@@ -66,15 +66,17 @@ public class circus
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( writemem )
-		{ 0x0000, 0x01ff, MWA_RAM },
-		{ 0x1000, 0x1fff, MWA_ROM },
-		{ 0x2000, 0x2000, circus_clown_x_w },
-		{ 0x3000, 0x3000, circus_clown_y_w },
-		{ 0x4000, 0x43ff, videoram_w, &videoram, &videoram_size },
-		{ 0x8000, 0x8000, circus_clown_z_w },
-		{ 0xf000, 0xffff, MWA_ROM },
-	MEMORY_END
+	public static Memory_WriteAddress writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0x01ff, MWA_RAM ),
+		new Memory_WriteAddress( 0x1000, 0x1fff, MWA_ROM ),
+		new Memory_WriteAddress( 0x2000, 0x2000, circus_clown_x_w ),
+		new Memory_WriteAddress( 0x3000, 0x3000, circus_clown_y_w ),
+		new Memory_WriteAddress( 0x4000, 0x43ff, videoram_w, &videoram, &videoram_size ),
+		new Memory_WriteAddress( 0x8000, 0x8000, circus_clown_z_w ),
+		new Memory_WriteAddress( 0xf000, 0xffff, MWA_ROM ),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	
 	INPUT_PORTS_START( circus )

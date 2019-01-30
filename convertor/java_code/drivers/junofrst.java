@@ -199,20 +199,22 @@ public class junofrst
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( writemem )
-		{ 0x0000, 0x7fff, tutankhm_videoram_w, &videoram, &videoram_size },
-		{ 0x8000, 0x800f, paletteram_BBGGGRRR_w, &paletteram },
-		{ 0x8030, 0x8030, interrupt_enable_w },
-		{ 0x8031, 0x8032, junofrst_coin_counter_w },
-		{ 0x8033, 0x8033, MWA_RAM, &tutankhm_scrollx },              /* video x pan hardware reg - Not USED in Juno*/
-		{ 0x8034, 0x8035, flip_screen_w },
-		{ 0x8040, 0x8040, junofrst_sh_irqtrigger_w },
-		{ 0x8050, 0x8050, soundlatch_w },
-		{ 0x8060, 0x8060, junofrst_bankselect_w },
-		{ 0x8070, 0x8073, junofrst_blitter_w },
-		{ 0x8100, 0x8fff, MWA_RAM },
-		{ 0x9000, 0xffff, MWA_ROM },
-	MEMORY_END
+	public static Memory_WriteAddress writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0x7fff, tutankhm_videoram_w, &videoram, &videoram_size ),
+		new Memory_WriteAddress( 0x8000, 0x800f, paletteram_BBGGGRRR_w, &paletteram ),
+		new Memory_WriteAddress( 0x8030, 0x8030, interrupt_enable_w ),
+		new Memory_WriteAddress( 0x8031, 0x8032, junofrst_coin_counter_w ),
+		new Memory_WriteAddress( 0x8033, 0x8033, MWA_RAM, &tutankhm_scrollx ),              /* video x pan hardware reg - Not USED in Juno*/
+		new Memory_WriteAddress( 0x8034, 0x8035, flip_screen_w ),
+		new Memory_WriteAddress( 0x8040, 0x8040, junofrst_sh_irqtrigger_w ),
+		new Memory_WriteAddress( 0x8050, 0x8050, soundlatch_w ),
+		new Memory_WriteAddress( 0x8060, 0x8060, junofrst_bankselect_w ),
+		new Memory_WriteAddress( 0x8070, 0x8073, junofrst_blitter_w ),
+		new Memory_WriteAddress( 0x8100, 0x8fff, MWA_RAM ),
+		new Memory_WriteAddress( 0x9000, 0xffff, MWA_ROM ),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	
 	public static Memory_ReadAddress sound_readmem[]={
@@ -224,14 +226,16 @@ public class junofrst
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( sound_writemem )
-		{ 0x0000, 0x0fff, MWA_ROM },
-		{ 0x2000, 0x23ff, MWA_RAM },
-		{ 0x4000, 0x4000, AY8910_control_port_0_w },
-		{ 0x4002, 0x4002, AY8910_write_port_0_w },
-		{ 0x5000, 0x5000, soundlatch2_w },
-		{ 0x6000, 0x6000, junofrst_i8039_irq_w },
-	MEMORY_END
+	public static Memory_WriteAddress sound_writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0x0fff, MWA_ROM ),
+		new Memory_WriteAddress( 0x2000, 0x23ff, MWA_RAM ),
+		new Memory_WriteAddress( 0x4000, 0x4000, AY8910_control_port_0_w ),
+		new Memory_WriteAddress( 0x4002, 0x4002, AY8910_write_port_0_w ),
+		new Memory_WriteAddress( 0x5000, 0x5000, soundlatch2_w ),
+		new Memory_WriteAddress( 0x6000, 0x6000, junofrst_i8039_irq_w ),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	
 	public static Memory_ReadAddress i8039_readmem[]={
@@ -240,9 +244,11 @@ public class junofrst
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( i8039_writemem )
-		{ 0x0000, 0x0fff, MWA_ROM },
-	MEMORY_END
+	public static Memory_WriteAddress i8039_writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0x0fff, MWA_ROM ),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static PORT_READ_START( i8039_readport )
 		{ 0x00, 0xff, soundlatch2_r },

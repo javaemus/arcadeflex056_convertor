@@ -43,18 +43,20 @@ public class higemaru
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( writemem )
-		{ 0x0000, 0x7fff, MWA_ROM },
-		{ 0xc800, 0xc800, higemaru_c800_w },
-		{ 0xc801, 0xc801, AY8910_control_port_0_w },
-		{ 0xc802, 0xc802, AY8910_write_port_0_w },
-		{ 0xc803, 0xc803, AY8910_control_port_1_w },
-		{ 0xc804, 0xc804, AY8910_write_port_1_w },
-		{ 0xd000, 0xd3ff, videoram_w, &videoram, &videoram_size },
-		{ 0xd400, 0xd7ff, colorram_w, &colorram },
-		{ 0xd880, 0xd9ff, MWA_RAM, &spriteram, &spriteram_size },
-		{ 0xe000, 0xefff, MWA_RAM },
-	MEMORY_END
+	public static Memory_WriteAddress writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0x7fff, MWA_ROM ),
+		new Memory_WriteAddress( 0xc800, 0xc800, higemaru_c800_w ),
+		new Memory_WriteAddress( 0xc801, 0xc801, AY8910_control_port_0_w ),
+		new Memory_WriteAddress( 0xc802, 0xc802, AY8910_write_port_0_w ),
+		new Memory_WriteAddress( 0xc803, 0xc803, AY8910_control_port_1_w ),
+		new Memory_WriteAddress( 0xc804, 0xc804, AY8910_write_port_1_w ),
+		new Memory_WriteAddress( 0xd000, 0xd3ff, videoram_w, &videoram, &videoram_size ),
+		new Memory_WriteAddress( 0xd400, 0xd7ff, colorram_w, &colorram ),
+		new Memory_WriteAddress( 0xd880, 0xd9ff, MWA_RAM, &spriteram, &spriteram_size ),
+		new Memory_WriteAddress( 0xe000, 0xefff, MWA_RAM ),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	
 	

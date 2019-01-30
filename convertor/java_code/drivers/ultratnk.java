@@ -226,23 +226,25 @@ public class ultratnk
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( writemem )
-		{ 0x0000, 0x00ff, MWA_RAM, &mirror_ram },
-		{ 0x0100, 0x01ff, mirror_w },
-		{ 0x0800, 0x0bff, videoram_w, &videoram, &videoram_size },
-		{ 0x0c00, 0x0cff, MWA_RAM }, /* ? */
-		{ 0x2000, 0x2000, MWA_NOP }, /* sound-related? */
-		{ 0x2020, 0x2023, MWA_NOP }, /* collision reset? */
-		{ 0x2040, 0x2040, da_latch_w }, /* D/A LATCH */
-		{ 0x2042, 0x2042, MWA_NOP }, /* EXPLOSION (sound) */
-		{ 0x2044, 0x2044, MWA_NOP }, /* TIMER (watchdog) RESET */
-		{ 0x2066, 0x2066, MWA_NOP }, /* LOCKOUT (coin lockout latched on */
-		{ 0x2067, 0x2067, MWA_NOP }, /* LOCKOUT (coin lockout latched off */
-		{ 0x2068, 0x206b, ultratnk_leds_w },
-	//	{ 0x206c, 0x206f, MWA_RAM }, /* ? */
-		{ 0xb000, 0xbfff, MWA_ROM },
-		{ 0xf000, 0xffff, MWA_ROM },
-	MEMORY_END
+	public static Memory_WriteAddress writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0x00ff, MWA_RAM, &mirror_ram ),
+		new Memory_WriteAddress( 0x0100, 0x01ff, mirror_w ),
+		new Memory_WriteAddress( 0x0800, 0x0bff, videoram_w, &videoram, &videoram_size ),
+		new Memory_WriteAddress( 0x0c00, 0x0cff, MWA_RAM ), /* ? */
+		new Memory_WriteAddress( 0x2000, 0x2000, MWA_NOP ), /* sound-related? */
+		new Memory_WriteAddress( 0x2020, 0x2023, MWA_NOP ), /* collision reset? */
+		new Memory_WriteAddress( 0x2040, 0x2040, da_latch_w ), /* D/A LATCH */
+		new Memory_WriteAddress( 0x2042, 0x2042, MWA_NOP ), /* EXPLOSION (sound) */
+		new Memory_WriteAddress( 0x2044, 0x2044, MWA_NOP ), /* TIMER (watchdog) RESET */
+		new Memory_WriteAddress( 0x2066, 0x2066, MWA_NOP ), /* LOCKOUT (coin lockout latched on */
+		new Memory_WriteAddress( 0x2067, 0x2067, MWA_NOP ), /* LOCKOUT (coin lockout latched off */
+		new Memory_WriteAddress( 0x2068, 0x206b, ultratnk_leds_w ),
+	//	new Memory_WriteAddress( 0x206c, 0x206f, MWA_RAM ), /* ? */
+		new Memory_WriteAddress( 0xb000, 0xbfff, MWA_ROM ),
+		new Memory_WriteAddress( 0xf000, 0xffff, MWA_ROM ),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	
 	

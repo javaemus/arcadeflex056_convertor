@@ -100,21 +100,23 @@ public class mystston
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( writemem )
-		{ 0x0000, 0x077f, MWA_RAM },
-		{ 0x0780, 0x07df, MWA_RAM, &spriteram, &spriteram_size },
-		{ 0x0800, 0x0fff, MWA_RAM },	/* work RAM? */
-		{ 0x1000, 0x17ff, &mystston_fgvideoram_w, &mystston_fgvideoram },
-		{ 0x1800, 0x1bff, &mystston_bgvideoram_w, &mystston_bgvideoram },
-		{ 0x1c00, 0x1fff, MWA_RAM },	/* work RAM? This gets copied to videoram */
-		{ 0x2000, 0x2000, mystston_2000_w },	/* flip screen & coin counters */
-		{ 0x2010, 0x2010, watchdog_reset_w },	/* or IRQ acknowledge maybe? */
-		{ 0x2020, 0x2020, mystston_scroll_w },
-		{ 0x2030, 0x2030, soundlatch_w },
-		{ 0x2040, 0x2040, mystston_soundcontrol_w },
-		{ 0x2060, 0x2077, paletteram_BBGGGRRR_w, &paletteram },
-		{ 0x4000, 0xffff, MWA_ROM },
-	MEMORY_END
+	public static Memory_WriteAddress writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0x077f, MWA_RAM ),
+		new Memory_WriteAddress( 0x0780, 0x07df, MWA_RAM, &spriteram, &spriteram_size ),
+		new Memory_WriteAddress( 0x0800, 0x0fff, MWA_RAM ),	/* work RAM? */
+		new Memory_WriteAddress( 0x1000, 0x17ff, &mystston_fgvideoram_w, &mystston_fgvideoram ),
+		new Memory_WriteAddress( 0x1800, 0x1bff, &mystston_bgvideoram_w, &mystston_bgvideoram ),
+		new Memory_WriteAddress( 0x1c00, 0x1fff, MWA_RAM ),	/* work RAM? This gets copied to videoram */
+		new Memory_WriteAddress( 0x2000, 0x2000, mystston_2000_w ),	/* flip screen & coin counters */
+		new Memory_WriteAddress( 0x2010, 0x2010, watchdog_reset_w ),	/* or IRQ acknowledge maybe? */
+		new Memory_WriteAddress( 0x2020, 0x2020, mystston_scroll_w ),
+		new Memory_WriteAddress( 0x2030, 0x2030, soundlatch_w ),
+		new Memory_WriteAddress( 0x2040, 0x2040, mystston_soundcontrol_w ),
+		new Memory_WriteAddress( 0x2060, 0x2077, paletteram_BBGGGRRR_w, &paletteram ),
+		new Memory_WriteAddress( 0x4000, 0xffff, MWA_ROM ),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	
 	

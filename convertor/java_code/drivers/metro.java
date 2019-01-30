@@ -426,12 +426,14 @@ public class metro
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( upd7810_writemem )
-	    { 0x0000, 0x3fff, MWA_ROM               },  /* External ROM */
-	    { 0x4000, 0x7fff, MWA_ROM               },  /* External ROM (Banked) */
-	    { 0x8000, 0x87ff, MWA_RAM               },  /* External RAM */
-	    { 0xff00, 0xffff, MWA_RAM               },  /* Internal RAM */
-	MEMORY_END
+	public static Memory_WriteAddress upd7810_writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+	    new Memory_WriteAddress( 0x0000, 0x3fff, MWA_ROM               ),  /* External ROM */
+	    new Memory_WriteAddress( 0x4000, 0x7fff, MWA_ROM               ),  /* External ROM (Banked) */
+	    new Memory_WriteAddress( 0x8000, 0x87ff, MWA_RAM               ),  /* External RAM */
+	    new Memory_WriteAddress( 0xff00, 0xffff, MWA_RAM               ),  /* Internal RAM */
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static PORT_READ_START( upd7810_readport )
 		{ UPD7810_PORTA, UPD7810_PORTA, daitorid_sound_chip_data_r		},

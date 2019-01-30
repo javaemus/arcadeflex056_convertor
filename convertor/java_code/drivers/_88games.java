@@ -149,20 +149,22 @@ public class _88games
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( writemem )
-		{ 0x0000, 0x0fff, MWA_RAM },	/* banked ROM */
-		{ 0x1000, 0x1fff, paletteram_xBBBBBGGGGGRRRRR_swap_w, &paletteram },	/* banked ROM + palette RAM */
-		{ 0x2000, 0x2fff, MWA_RAM },
-		{ 0x3000, 0x37ff, MWA_RAM, &nvram, &nvram_size },
-		{ 0x3800, 0x3fff, bankedram_w, &ram },
-		{ 0x5f84, 0x5f84, k88games_5f84_w },
-		{ 0x5f88, 0x5f88, watchdog_reset_w },
-		{ 0x5f8c, 0x5f8c, soundlatch_w },
-		{ 0x5f90, 0x5f90, k88games_sh_irqtrigger_w },
-		{ 0x5fc0, 0x5fcf, K051316_ctrl_0_w },
-		{ 0x4000, 0x7fff, K052109_051960_w },
-		{ 0x8000, 0xffff, MWA_ROM },
-	MEMORY_END
+	public static Memory_WriteAddress writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0x0fff, MWA_RAM ),	/* banked ROM */
+		new Memory_WriteAddress( 0x1000, 0x1fff, paletteram_xBBBBBGGGGGRRRRR_swap_w, &paletteram ),	/* banked ROM + palette RAM */
+		new Memory_WriteAddress( 0x2000, 0x2fff, MWA_RAM ),
+		new Memory_WriteAddress( 0x3000, 0x37ff, MWA_RAM, &nvram, &nvram_size ),
+		new Memory_WriteAddress( 0x3800, 0x3fff, bankedram_w, &ram ),
+		new Memory_WriteAddress( 0x5f84, 0x5f84, k88games_5f84_w ),
+		new Memory_WriteAddress( 0x5f88, 0x5f88, watchdog_reset_w ),
+		new Memory_WriteAddress( 0x5f8c, 0x5f8c, soundlatch_w ),
+		new Memory_WriteAddress( 0x5f90, 0x5f90, k88games_sh_irqtrigger_w ),
+		new Memory_WriteAddress( 0x5fc0, 0x5fcf, K051316_ctrl_0_w ),
+		new Memory_WriteAddress( 0x4000, 0x7fff, K052109_051960_w ),
+		new Memory_WriteAddress( 0x8000, 0xffff, MWA_ROM ),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	public static Memory_ReadAddress sound_readmem[]={
 		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
@@ -173,14 +175,16 @@ public class _88games
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( sound_writemem )
-		{ 0x0000, 0x7fff, MWA_ROM },
-		{ 0x8000, 0x87ff, MWA_RAM },
-		{ 0x9000, 0x9000, speech_msg_w },
-		{ 0xc000, 0xc000, YM2151_register_port_0_w },
-		{ 0xc001, 0xc001, YM2151_data_port_0_w },
-		{ 0xe000, 0xe000, speech_control_w },
-	MEMORY_END
+	public static Memory_WriteAddress sound_writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0x7fff, MWA_ROM ),
+		new Memory_WriteAddress( 0x8000, 0x87ff, MWA_RAM ),
+		new Memory_WriteAddress( 0x9000, 0x9000, speech_msg_w ),
+		new Memory_WriteAddress( 0xc000, 0xc000, YM2151_register_port_0_w ),
+		new Memory_WriteAddress( 0xc001, 0xc001, YM2151_data_port_0_w ),
+		new Memory_WriteAddress( 0xe000, 0xe000, speech_control_w ),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	
 	

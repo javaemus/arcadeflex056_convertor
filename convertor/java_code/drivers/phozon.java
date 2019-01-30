@@ -89,24 +89,26 @@ public class phozon
 	};
 	
 		/* CPU 1 (MAIN CPU) write addresses */
-	static MEMORY_WRITE_START( writemem_cpu1 )
-		{ 0x0000, 0x03ff, videoram_w, &videoram, &videoram_size },				/* video RAM */
-		{ 0x0400, 0x07ff, colorram_w, &colorram },  /* color RAM */
-		{ 0x0800, 0x1fff, phozon_spriteram_w, &phozon_spriteram },		/* shared RAM with CPU #2/sprite RAM*/
-		{ 0x4000, 0x403f, MWA_RAM },				/* initialized but probably unused */
-		{ 0x4040, 0x43ff, phozon_snd_sharedram_w, &phozon_snd_sharedram }, /* shared RAM with CPU #3 */
-		{ 0x4800, 0x480f, phozon_customio_1_w, &phozon_customio_1 },	/* custom I/O chip #1 interface */
-		{ 0x4810, 0x481f, phozon_customio_2_w, &phozon_customio_2 },	/* custom I/O chip #2 interface */
-		{ 0x4820, 0x483f, MWA_RAM },				/* initialized but probably unused */
-		{ 0x5000, 0x5007, MWA_NOP },				/* ??? */
-		{ 0x5008, 0x5008, phozon_cpu3_reset_w },	/* reset SOUND CPU? */
-		{ 0x5009, 0x5009, MWA_NOP },				/* ??? */
-		{ 0x500a, 0x500b, phozon_cpu3_enable_w },	/* SOUND CPU enable */
-		{ 0x500c, 0x500d, phozon_cpu2_enable_w },	/* SUB CPU enable */
-		{ 0x500e, 0x500f, MWA_NOP },				/* ??? */
-		{ 0x7000, 0x7000, watchdog_reset_w },	 	/* watchdog reset */
-		{ 0x8000, 0xffff, MWA_ROM },				/* ROM */
-	MEMORY_END
+	public static Memory_WriteAddress writemem_cpu1[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0x03ff, videoram_w, &videoram, &videoram_size ),				/* video RAM */
+		new Memory_WriteAddress( 0x0400, 0x07ff, colorram_w, &colorram ),  /* color RAM */
+		new Memory_WriteAddress( 0x0800, 0x1fff, phozon_spriteram_w, &phozon_spriteram ),		/* shared RAM with CPU #2/sprite RAM*/
+		new Memory_WriteAddress( 0x4000, 0x403f, MWA_RAM ),				/* initialized but probably unused */
+		new Memory_WriteAddress( 0x4040, 0x43ff, phozon_snd_sharedram_w, &phozon_snd_sharedram ), /* shared RAM with CPU #3 */
+		new Memory_WriteAddress( 0x4800, 0x480f, phozon_customio_1_w, &phozon_customio_1 ),	/* custom I/O chip #1 interface */
+		new Memory_WriteAddress( 0x4810, 0x481f, phozon_customio_2_w, &phozon_customio_2 ),	/* custom I/O chip #2 interface */
+		new Memory_WriteAddress( 0x4820, 0x483f, MWA_RAM ),				/* initialized but probably unused */
+		new Memory_WriteAddress( 0x5000, 0x5007, MWA_NOP ),				/* ??? */
+		new Memory_WriteAddress( 0x5008, 0x5008, phozon_cpu3_reset_w ),	/* reset SOUND CPU? */
+		new Memory_WriteAddress( 0x5009, 0x5009, MWA_NOP ),				/* ??? */
+		new Memory_WriteAddress( 0x500a, 0x500b, phozon_cpu3_enable_w ),	/* SOUND CPU enable */
+		new Memory_WriteAddress( 0x500c, 0x500d, phozon_cpu2_enable_w ),	/* SUB CPU enable */
+		new Memory_WriteAddress( 0x500e, 0x500f, MWA_NOP ),				/* ??? */
+		new Memory_WriteAddress( 0x7000, 0x7000, watchdog_reset_w ),	 	/* watchdog reset */
+		new Memory_WriteAddress( 0x8000, 0xffff, MWA_ROM ),				/* ROM */
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 		/* CPU 2 (SUB CPU) read addresses */
 	public static Memory_ReadAddress readmem_cpu2[]={
@@ -120,13 +122,15 @@ public class phozon
 	};
 	
 		/* CPU 2 (SUB CPU) write addresses */
-	static MEMORY_WRITE_START( writemem_cpu2 )
-		{ 0x0000, 0x03ff, videoram_w },			/* video RAM */
-		{ 0x0400, 0x07ff, colorram_w },			/* color RAM */
-		{ 0x0800, 0x1fff, phozon_spriteram_w },	/* shared RAM with CPU #1/sprite RAM*/
-		{ 0xa000, 0xa7ff, MWA_RAM },			/* RAM */
-		{ 0xe000, 0xffff, MWA_ROM },			/* ROM */
-	MEMORY_END
+	public static Memory_WriteAddress writemem_cpu2[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0x03ff, videoram_w ),			/* video RAM */
+		new Memory_WriteAddress( 0x0400, 0x07ff, colorram_w ),			/* color RAM */
+		new Memory_WriteAddress( 0x0800, 0x1fff, phozon_spriteram_w ),	/* shared RAM with CPU #1/sprite RAM*/
+		new Memory_WriteAddress( 0xa000, 0xa7ff, MWA_RAM ),			/* RAM */
+		new Memory_WriteAddress( 0xe000, 0xffff, MWA_ROM ),			/* ROM */
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 		/* CPU 3 (SOUND CPU) read addresses */
 	public static Memory_ReadAddress readmem_cpu3[]={
@@ -138,11 +142,13 @@ public class phozon
 	};
 	
 		/* CPU 3 (SOUND CPU) write addresses */
-	static MEMORY_WRITE_START( writemem_cpu3 )
-		{ 0x0000, 0x003f, mappy_sound_w, &mappy_soundregs },/* sound registers */
-		{ 0x0040, 0x03ff, phozon_snd_sharedram_w },			/* shared RAM with the main CPU */
-		{ 0xe000, 0xffff, MWA_ROM },						/* ROM */
-	MEMORY_END
+	public static Memory_WriteAddress writemem_cpu3[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0x003f, mappy_sound_w, &mappy_soundregs ),/* sound registers */
+		new Memory_WriteAddress( 0x0040, 0x03ff, phozon_snd_sharedram_w ),			/* shared RAM with the main CPU */
+		new Memory_WriteAddress( 0xe000, 0xffff, MWA_ROM ),						/* ROM */
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	/* The dipswitches and player inputs are not memory mapped, they are handled by an I/O chip. */
 	INPUT_PORTS_START( phozon )

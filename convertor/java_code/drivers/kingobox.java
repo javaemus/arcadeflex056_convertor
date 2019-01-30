@@ -89,19 +89,21 @@ public class kingobox
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( main_writemem )
-	    { 0x0000, 0x7fff, MWA_ROM },
-	    { 0xc000, 0xc3ff, MWA_RAM }, /* work ram */
-	    { 0xe000, 0xe7ff, sprite_shared_w }, /* shared with sprite cpu */
-	    { 0xe800, 0xefff, video_shared_w }, /* shared with video cpu */
-	    { 0xf000, 0xf7ff, MWA_RAM }, /* ???? */
-	    { 0xf800, 0xf800, kingofb_f800_w },	/* NMI enable, palette bank */
-	    { 0xf801, 0xf801, MWA_NOP }, /* ???? */
-	    { 0xf802, 0xf802, MWA_RAM, &kingobox_scroll_y },
-	    { 0xf803, 0xf803, scroll_interrupt_w  },
-	    { 0xf804, 0xf804, video_interrupt_w },
-	    { 0xf807, 0xf807, sound_command_w }, /* sound latch */
-	MEMORY_END
+	public static Memory_WriteAddress main_writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+	    new Memory_WriteAddress( 0x0000, 0x7fff, MWA_ROM ),
+	    new Memory_WriteAddress( 0xc000, 0xc3ff, MWA_RAM ), /* work ram */
+	    new Memory_WriteAddress( 0xe000, 0xe7ff, sprite_shared_w ), /* shared with sprite cpu */
+	    new Memory_WriteAddress( 0xe800, 0xefff, video_shared_w ), /* shared with video cpu */
+	    new Memory_WriteAddress( 0xf000, 0xf7ff, MWA_RAM ), /* ???? */
+	    new Memory_WriteAddress( 0xf800, 0xf800, kingofb_f800_w ),	/* NMI enable, palette bank */
+	    new Memory_WriteAddress( 0xf801, 0xf801, MWA_NOP ), /* ???? */
+	    new Memory_WriteAddress( 0xf802, 0xf802, MWA_RAM, &kingobox_scroll_y ),
+	    new Memory_WriteAddress( 0xf803, 0xf803, scroll_interrupt_w  ),
+	    new Memory_WriteAddress( 0xf804, 0xf804, video_interrupt_w ),
+	    new Memory_WriteAddress( 0xf807, 0xf807, sound_command_w ), /* sound latch */
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	public static Memory_ReadAddress video_readmem[]={
 		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
@@ -115,15 +117,17 @@ public class kingobox
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( video_writemem )
-	    { 0x0000, 0x3fff, MWA_ROM },
-	    { 0x8000, 0x87ff, MWA_RAM }, /* work ram */
-	    { 0xa000, 0xa7ff, video_shared_w, &video_shared }, /* shared with main */
-	    { 0xc000, 0xc0ff, videoram_w, &videoram, &videoram_size }, /* background vram */
-	    { 0xc400, 0xc4ff, colorram_w, &colorram }, /* background colorram */
-	    { 0xc800, 0xcbff, MWA_RAM, &kingobox_videoram1, &kingobox_videoram1_size }, /* foreground vram */
-	    { 0xcc00, 0xcfff, MWA_RAM, &kingobox_colorram1 }, /* foreground colorram */
-	MEMORY_END
+	public static Memory_WriteAddress video_writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+	    new Memory_WriteAddress( 0x0000, 0x3fff, MWA_ROM ),
+	    new Memory_WriteAddress( 0x8000, 0x87ff, MWA_RAM ), /* work ram */
+	    new Memory_WriteAddress( 0xa000, 0xa7ff, video_shared_w, &video_shared ), /* shared with main */
+	    new Memory_WriteAddress( 0xc000, 0xc0ff, videoram_w, &videoram, &videoram_size ), /* background vram */
+	    new Memory_WriteAddress( 0xc400, 0xc4ff, colorram_w, &colorram ), /* background colorram */
+	    new Memory_WriteAddress( 0xc800, 0xcbff, MWA_RAM, &kingobox_videoram1, &kingobox_videoram1_size ), /* foreground vram */
+	    new Memory_WriteAddress( 0xcc00, 0xcfff, MWA_RAM, &kingobox_colorram1 ), /* foreground colorram */
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	public static Memory_ReadAddress sprite_readmem[]={
 		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
@@ -135,13 +139,15 @@ public class kingobox
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( sprite_writemem )
-	    { 0x0000, 0x1fff, MWA_ROM },
-	    { 0x8000, 0x87ff, MWA_RAM }, /* work ram */
-	    { 0xa000, 0xa7ff, sprite_shared_w, &sprite_shared }, /* shared with main */
-	    { 0xc000, 0xc3ff, spriteram_w, &spriteram, &spriteram_size }, /* sprite ram */
-	    { 0xc400, 0xc43f, MWA_RAM },  /* something related to scroll? */
-	MEMORY_END
+	public static Memory_WriteAddress sprite_writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+	    new Memory_WriteAddress( 0x0000, 0x1fff, MWA_ROM ),
+	    new Memory_WriteAddress( 0x8000, 0x87ff, MWA_RAM ), /* work ram */
+	    new Memory_WriteAddress( 0xa000, 0xa7ff, sprite_shared_w, &sprite_shared ), /* shared with main */
+	    new Memory_WriteAddress( 0xc000, 0xc3ff, spriteram_w, &spriteram, &spriteram_size ), /* sprite ram */
+	    new Memory_WriteAddress( 0xc400, 0xc43f, MWA_RAM ),  /* something related to scroll? */
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	public static Memory_ReadAddress sound_readmem[]={
 		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
@@ -150,11 +156,13 @@ public class kingobox
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( sound_writemem )
-	    { 0x8000, 0x8000, MWA_NOP }, /* ??? */
-	    { 0x0000, 0xbfff, MWA_ROM },
-	    { 0xc000, 0xc3ff, MWA_RAM }, /* work ram */
-	MEMORY_END
+	public static Memory_WriteAddress sound_writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+	    new Memory_WriteAddress( 0x8000, 0x8000, MWA_NOP ), /* ??? */
+	    new Memory_WriteAddress( 0x0000, 0xbfff, MWA_ROM ),
+	    new Memory_WriteAddress( 0xc000, 0xc3ff, MWA_RAM ), /* work ram */
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static PORT_READ_START( sound_readport )
 		{ 0x08, 0x08, AY8910_read_port_0_r },
@@ -183,18 +191,20 @@ public class kingobox
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( rk_main_writemem )
-	    { 0x0000, 0xbfff, MWA_ROM },
-	    { 0xc000, 0xc3ff, MWA_RAM }, /* work ram */
-	    { 0xc800, 0xcfff, sprite_shared_w },
-	    { 0xd000, 0xd7ff, video_shared_w },
-	    { 0xd800, 0xd800, kingofb_f800_w },
-	    { 0xd801, 0xd801, sprite_interrupt_w },
-	    { 0xd802, 0xd802, video_interrupt_w },
-	    { 0xd803, 0xd803, sound_command_w },
-	    { 0xe800, 0xe800, MWA_RAM, &kingobox_scroll_y },
-	    { 0xf000, 0xf7ff, MWA_RAM }, /* ???? */
-	MEMORY_END
+	public static Memory_WriteAddress rk_main_writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+	    new Memory_WriteAddress( 0x0000, 0xbfff, MWA_ROM ),
+	    new Memory_WriteAddress( 0xc000, 0xc3ff, MWA_RAM ), /* work ram */
+	    new Memory_WriteAddress( 0xc800, 0xcfff, sprite_shared_w ),
+	    new Memory_WriteAddress( 0xd000, 0xd7ff, video_shared_w ),
+	    new Memory_WriteAddress( 0xd800, 0xd800, kingofb_f800_w ),
+	    new Memory_WriteAddress( 0xd801, 0xd801, sprite_interrupt_w ),
+	    new Memory_WriteAddress( 0xd802, 0xd802, video_interrupt_w ),
+	    new Memory_WriteAddress( 0xd803, 0xd803, sound_command_w ),
+	    new Memory_WriteAddress( 0xe800, 0xe800, MWA_RAM, &kingobox_scroll_y ),
+	    new Memory_WriteAddress( 0xf000, 0xf7ff, MWA_RAM ), /* ???? */
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	public static Memory_ReadAddress rk_video_readmem[]={
 		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
@@ -208,15 +218,17 @@ public class kingobox
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( rk_video_writemem )
-	    { 0x0000, 0x3fff, MWA_ROM },
-	    { 0x8000, 0x87ff, MWA_RAM }, /* work ram */
-	    { 0xc000, 0xc7ff, video_shared_w, &video_shared }, /* shared with main */
-	    { 0xa800, 0xa8ff, videoram_w, &videoram, &videoram_size }, /* background vram */
-	    { 0xac00, 0xacff, colorram_w, &colorram }, /* background colorram */
-	    { 0xa000, 0xa3ff, MWA_RAM, &kingobox_videoram1, &kingobox_videoram1_size }, /* foreground vram */
-	    { 0xa400, 0xa7ff, MWA_RAM, &kingobox_colorram1 }, /* foreground colorram */
-	MEMORY_END
+	public static Memory_WriteAddress rk_video_writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+	    new Memory_WriteAddress( 0x0000, 0x3fff, MWA_ROM ),
+	    new Memory_WriteAddress( 0x8000, 0x87ff, MWA_RAM ), /* work ram */
+	    new Memory_WriteAddress( 0xc000, 0xc7ff, video_shared_w, &video_shared ), /* shared with main */
+	    new Memory_WriteAddress( 0xa800, 0xa8ff, videoram_w, &videoram, &videoram_size ), /* background vram */
+	    new Memory_WriteAddress( 0xac00, 0xacff, colorram_w, &colorram ), /* background colorram */
+	    new Memory_WriteAddress( 0xa000, 0xa3ff, MWA_RAM, &kingobox_videoram1, &kingobox_videoram1_size ), /* foreground vram */
+	    new Memory_WriteAddress( 0xa400, 0xa7ff, MWA_RAM, &kingobox_colorram1 ), /* foreground colorram */
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	public static Memory_ReadAddress rk_sprite_readmem[]={
 		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
@@ -228,13 +240,15 @@ public class kingobox
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( rk_sprite_writemem )
-	    { 0x0000, 0x1fff, MWA_ROM },
-	    { 0x8000, 0x87ff, MWA_RAM }, /* work ram */
-	    { 0xc800, 0xcfff, sprite_shared_w, &sprite_shared }, /* shared with main */
-	    { 0xa000, 0xa3ff, spriteram_w, &spriteram, &spriteram_size }, /* sprite ram */
-	    { 0xa400, 0xa43f, MWA_RAM },  /* something related to scroll? */
-	MEMORY_END
+	public static Memory_WriteAddress rk_sprite_writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+	    new Memory_WriteAddress( 0x0000, 0x1fff, MWA_ROM ),
+	    new Memory_WriteAddress( 0x8000, 0x87ff, MWA_RAM ), /* work ram */
+	    new Memory_WriteAddress( 0xc800, 0xcfff, sprite_shared_w, &sprite_shared ), /* shared with main */
+	    new Memory_WriteAddress( 0xa000, 0xa3ff, spriteram_w, &spriteram, &spriteram_size ), /* sprite ram */
+	    new Memory_WriteAddress( 0xa400, 0xa43f, MWA_RAM ),  /* something related to scroll? */
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static PORT_READ_START( rk_sound_readport )
 		{ 0x02, 0x02, AY8910_read_port_0_r },

@@ -223,52 +223,56 @@ public class liberatr
 	};
 	
 	
-	static MEMORY_WRITE_START( liberatr_writemem )
-		{ 0x0002, 0x0002, liberatr_bitmap_xy_w },
-		{ 0x0000, 0x3fff, liberatr_bitmap_w, &liberatr_bitmapram },	/* overlapping for my convenience */
-		{ 0x6000, 0x600f, MWA_RAM, &liberatr_base_ram },
-		{ 0x6200, 0x621f, liberatr_colorram_w },
-		{ 0x6400, 0x6400, MWA_NOP },
-		{ 0x6600, 0x6600, atari_vg_earom_ctrl_w },
-		{ 0x6800, 0x6800, MWA_RAM, &liberatr_planet_frame },
-		{ 0x6a00, 0x6a00, watchdog_reset_w },
-		{ 0x6c00, 0x6c01, liberatr_led_w },
-		{ 0x6c04, 0x6c04, MWA_RAM, &liberatr_ctrld },
-		{ 0x6c05, 0x6c06, liberatr_coin_counter_w },
-		{ 0x6c07, 0x6c07, MWA_RAM, &liberatr_planet_select },
-		{ 0x6e00, 0x6e3f, atari_vg_earom_w },
-		{ 0x7000, 0x701f, pokey2_w },
-		{ 0x7800, 0x781f, pokey1_w },
-		{ 0x8000, 0xefff, MWA_ROM },
-		{ 0xfffa, 0xffff, MWA_ROM },
+	public static Memory_WriteAddress liberatr_writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0002, 0x0002, liberatr_bitmap_xy_w ),
+		new Memory_WriteAddress( 0x0000, 0x3fff, liberatr_bitmap_w, &liberatr_bitmapram ),	/* overlapping for my convenience */
+		new Memory_WriteAddress( 0x6000, 0x600f, MWA_RAM, &liberatr_base_ram ),
+		new Memory_WriteAddress( 0x6200, 0x621f, liberatr_colorram_w ),
+		new Memory_WriteAddress( 0x6400, 0x6400, MWA_NOP ),
+		new Memory_WriteAddress( 0x6600, 0x6600, atari_vg_earom_ctrl_w ),
+		new Memory_WriteAddress( 0x6800, 0x6800, MWA_RAM, &liberatr_planet_frame ),
+		new Memory_WriteAddress( 0x6a00, 0x6a00, watchdog_reset_w ),
+		new Memory_WriteAddress( 0x6c00, 0x6c01, liberatr_led_w ),
+		new Memory_WriteAddress( 0x6c04, 0x6c04, MWA_RAM, &liberatr_ctrld ),
+		new Memory_WriteAddress( 0x6c05, 0x6c06, liberatr_coin_counter_w ),
+		new Memory_WriteAddress( 0x6c07, 0x6c07, MWA_RAM, &liberatr_planet_select ),
+		new Memory_WriteAddress( 0x6e00, 0x6e3f, atari_vg_earom_w ),
+		new Memory_WriteAddress( 0x7000, 0x701f, pokey2_w ),
+		new Memory_WriteAddress( 0x7800, 0x781f, pokey1_w ),
+		new Memory_WriteAddress( 0x8000, 0xefff, MWA_ROM ),
+		new Memory_WriteAddress( 0xfffa, 0xffff, MWA_ROM ),
 	
-		{ 0x0000, 0x0000, MWA_RAM, &liberatr_x },	/* just here to assign pointer */
-		{ 0x0001, 0x0001, MWA_RAM, &liberatr_y },	/* just here to assign pointer */
-	MEMORY_END
+		new Memory_WriteAddress( 0x0000, 0x0000, MWA_RAM, &liberatr_x ),	/* just here to assign pointer */
+		new Memory_WriteAddress( 0x0001, 0x0001, MWA_RAM, &liberatr_y ),	/* just here to assign pointer */
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
-	static MEMORY_WRITE_START( liberat2_writemem )
-		{ 0x0002, 0x0002, liberatr_bitmap_xy_w },
-		{ 0x0000, 0x3fff, liberatr_bitmap_w, &liberatr_bitmapram },	/* overlapping for my convenience */
-		{ 0x4000, 0x400f, MWA_RAM, &liberatr_base_ram },
-		{ 0x4200, 0x421f, liberatr_colorram_w },
-		{ 0x4400, 0x4400, MWA_NOP },
-		{ 0x4600, 0x4600, atari_vg_earom_ctrl_w },
-		{ 0x4800, 0x4800, MWA_RAM, &liberatr_planet_frame },
-		{ 0x4a00, 0x4a00, watchdog_reset_w },
-		{ 0x4c00, 0x4c01, liberatr_led_w },
-		{ 0x4c04, 0x4c04, MWA_RAM, &liberatr_ctrld },
-		{ 0x4c05, 0x4c06, liberatr_coin_counter_w },
-		{ 0x4c07, 0x4c07, MWA_RAM, &liberatr_planet_select },
-		{ 0x4e00, 0x4e3f, atari_vg_earom_w },
-		{ 0x5000, 0x501f, pokey2_w },
-		{ 0x5800, 0x581f, pokey1_w },
-		//{ 0x6000, 0x601f, pokey1_w }, /* bug ??? */
-		{ 0x6000, 0xbfff, MWA_ROM },
-		{ 0xfffa, 0xffff, MWA_ROM },
+	public static Memory_WriteAddress liberat2_writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0002, 0x0002, liberatr_bitmap_xy_w ),
+		new Memory_WriteAddress( 0x0000, 0x3fff, liberatr_bitmap_w, &liberatr_bitmapram ),	/* overlapping for my convenience */
+		new Memory_WriteAddress( 0x4000, 0x400f, MWA_RAM, &liberatr_base_ram ),
+		new Memory_WriteAddress( 0x4200, 0x421f, liberatr_colorram_w ),
+		new Memory_WriteAddress( 0x4400, 0x4400, MWA_NOP ),
+		new Memory_WriteAddress( 0x4600, 0x4600, atari_vg_earom_ctrl_w ),
+		new Memory_WriteAddress( 0x4800, 0x4800, MWA_RAM, &liberatr_planet_frame ),
+		new Memory_WriteAddress( 0x4a00, 0x4a00, watchdog_reset_w ),
+		new Memory_WriteAddress( 0x4c00, 0x4c01, liberatr_led_w ),
+		new Memory_WriteAddress( 0x4c04, 0x4c04, MWA_RAM, &liberatr_ctrld ),
+		new Memory_WriteAddress( 0x4c05, 0x4c06, liberatr_coin_counter_w ),
+		new Memory_WriteAddress( 0x4c07, 0x4c07, MWA_RAM, &liberatr_planet_select ),
+		new Memory_WriteAddress( 0x4e00, 0x4e3f, atari_vg_earom_w ),
+		new Memory_WriteAddress( 0x5000, 0x501f, pokey2_w ),
+		new Memory_WriteAddress( 0x5800, 0x581f, pokey1_w ),
+		//new Memory_WriteAddress( 0x6000, 0x601f, pokey1_w ), /* bug ??? */
+		new Memory_WriteAddress( 0x6000, 0xbfff, MWA_ROM ),
+		new Memory_WriteAddress( 0xfffa, 0xffff, MWA_ROM ),
 	
-		{ 0x0000, 0x0000, MWA_RAM, &liberatr_x },	/* just here to assign pointer */
-		{ 0x0001, 0x0001, MWA_RAM, &liberatr_y },	/* just here to assign pointer */
-	MEMORY_END
+		new Memory_WriteAddress( 0x0000, 0x0000, MWA_RAM, &liberatr_x ),	/* just here to assign pointer */
+		new Memory_WriteAddress( 0x0001, 0x0001, MWA_RAM, &liberatr_y ),	/* just here to assign pointer */
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	
 	

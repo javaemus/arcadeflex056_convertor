@@ -96,23 +96,25 @@ public class sbrkout
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( writemem )
-		{ 0x0011, 0x0011, sbrkout_dac_w, &sbrkout_sound }, /* Noise Generation Bits */
-		{ 0x0010, 0x0014, MWA_RAM, &sbrkout_horiz_ram }, /* Horizontal Ball Position */
-		{ 0x0018, 0x001d, MWA_RAM, &sbrkout_vert_ram }, /* Vertical Ball Position / ball picture */
-		{ 0x0000, 0x00ff, MWA_RAM }, /* WRAM */
-		{ 0x0100, 0x01ff, MWA_RAM }, /* ??? */
-		{ 0x0400, 0x07ff, videoram_w, &videoram, &videoram_size }, /* DISPLAY */
-		{ 0x0c10, 0x0c11, sbrkout_serve_led_w }, /* Serve LED */
-		{ 0x0c30, 0x0c31, sbrkout_start_1_led_w }, /* 1 Player Start Light */
-		{ 0x0c40, 0x0c41, sbrkout_start_2_led_w }, /* 2 Player Start Light */
-		{ 0x0c50, 0x0c51, MWA_RAM }, /* NMI Pot Reading Enable */
-		{ 0x0c70, 0x0c71, MWA_RAM }, /* Coin Counter */
-		{ 0x0c80, 0x0c80, MWA_NOP }, /* Watchdog */
-		{ 0x0e00, 0x0e00, MWA_NOP }, /* IRQ Enable? */
-		{ 0x1000, 0x1000, MWA_RAM }, /* LSB of Pot Reading */
-		{ 0x2c00, 0x3fff, MWA_ROM }, /* PROM1-PROM8 */
-	MEMORY_END
+	public static Memory_WriteAddress writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0011, 0x0011, sbrkout_dac_w, &sbrkout_sound ), /* Noise Generation Bits */
+		new Memory_WriteAddress( 0x0010, 0x0014, MWA_RAM, &sbrkout_horiz_ram ), /* Horizontal Ball Position */
+		new Memory_WriteAddress( 0x0018, 0x001d, MWA_RAM, &sbrkout_vert_ram ), /* Vertical Ball Position / ball picture */
+		new Memory_WriteAddress( 0x0000, 0x00ff, MWA_RAM ), /* WRAM */
+		new Memory_WriteAddress( 0x0100, 0x01ff, MWA_RAM ), /* ??? */
+		new Memory_WriteAddress( 0x0400, 0x07ff, videoram_w, &videoram, &videoram_size ), /* DISPLAY */
+		new Memory_WriteAddress( 0x0c10, 0x0c11, sbrkout_serve_led_w ), /* Serve LED */
+		new Memory_WriteAddress( 0x0c30, 0x0c31, sbrkout_start_1_led_w ), /* 1 Player Start Light */
+		new Memory_WriteAddress( 0x0c40, 0x0c41, sbrkout_start_2_led_w ), /* 2 Player Start Light */
+		new Memory_WriteAddress( 0x0c50, 0x0c51, MWA_RAM ), /* NMI Pot Reading Enable */
+		new Memory_WriteAddress( 0x0c70, 0x0c71, MWA_RAM ), /* Coin Counter */
+		new Memory_WriteAddress( 0x0c80, 0x0c80, MWA_NOP ), /* Watchdog */
+		new Memory_WriteAddress( 0x0e00, 0x0e00, MWA_NOP ), /* IRQ Enable? */
+		new Memory_WriteAddress( 0x1000, 0x1000, MWA_RAM ), /* LSB of Pot Reading */
+		new Memory_WriteAddress( 0x2c00, 0x3fff, MWA_ROM ), /* PROM1-PROM8 */
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	INPUT_PORTS_START( sbrkout )
 		PORT_START		/* DSW - fake port, gets mapped to Super Breakout ports */

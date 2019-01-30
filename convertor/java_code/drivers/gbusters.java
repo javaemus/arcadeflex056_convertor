@@ -143,19 +143,21 @@ public class gbusters
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( gbusters_writemem )
-		{ 0x1f80, 0x1f80, gbusters_coin_counter_w },	/* coin counters */
-		{ 0x1f84, 0x1f84, soundlatch_w },				/* sound code # */
-		{ 0x1f88, 0x1f88, gbusters_sh_irqtrigger_w },	/* cause interrupt on audio CPU */
-		{ 0x1f8c, 0x1f8c, watchdog_reset_w },			/* watchdog reset */
-		{ 0x1f98, 0x1f98, gbusters_1f98_w },			/* enable gfx ROM read through VRAM */
-		{ 0x1f9c, 0x1f9c, gbusters_unknown_w },			/* ??? */
-		{ 0x0000, 0x3fff, K052109_051960_w },			/* tiles + sprites (RAM H21, G21 & H6) */
-		{ 0x4000, 0x57ff, MWA_RAM },					/* RAM I12 */
-		{ 0x5800, 0x5fff, bankedram_w, &ram },			/* palette + work RAM (RAM D16 & C16) */
-		{ 0x6000, 0x7fff, MWA_ROM },					/* banked ROM */
-		{ 0x8000, 0xffff, MWA_ROM },					/* ROM 878n02.rom */
-	MEMORY_END
+	public static Memory_WriteAddress gbusters_writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x1f80, 0x1f80, gbusters_coin_counter_w ),	/* coin counters */
+		new Memory_WriteAddress( 0x1f84, 0x1f84, soundlatch_w ),				/* sound code # */
+		new Memory_WriteAddress( 0x1f88, 0x1f88, gbusters_sh_irqtrigger_w ),	/* cause interrupt on audio CPU */
+		new Memory_WriteAddress( 0x1f8c, 0x1f8c, watchdog_reset_w ),			/* watchdog reset */
+		new Memory_WriteAddress( 0x1f98, 0x1f98, gbusters_1f98_w ),			/* enable gfx ROM read through VRAM */
+		new Memory_WriteAddress( 0x1f9c, 0x1f9c, gbusters_unknown_w ),			/* ??? */
+		new Memory_WriteAddress( 0x0000, 0x3fff, K052109_051960_w ),			/* tiles + sprites (RAM H21, G21 & H6) */
+		new Memory_WriteAddress( 0x4000, 0x57ff, MWA_RAM ),					/* RAM I12 */
+		new Memory_WriteAddress( 0x5800, 0x5fff, bankedram_w, &ram ),			/* palette + work RAM (RAM D16 & C16) */
+		new Memory_WriteAddress( 0x6000, 0x7fff, MWA_ROM ),					/* banked ROM */
+		new Memory_WriteAddress( 0x8000, 0xffff, MWA_ROM ),					/* ROM 878n02.rom */
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	public static Memory_ReadAddress gbusters_readmem_sound[]={
 		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
@@ -167,14 +169,16 @@ public class gbusters
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( gbusters_writemem_sound )
-		{ 0x0000, 0x7fff, MWA_ROM },					/* ROM 878h01.rom */
-		{ 0x8000, 0x87ff, MWA_RAM },					/* RAM */
-		{ 0xb000, 0xb00d, K007232_write_port_0_w },		/* 007232 registers */
-		{ 0xc000, 0xc000, YM2151_register_port_0_w },	/* YM 2151 */
-		{ 0xc001, 0xc001, YM2151_data_port_0_w },		/* YM 2151 */
-		{ 0xf000, 0xf000, gbusters_snd_bankswitch_w },	/* 007232 bankswitch? */
-	MEMORY_END
+	public static Memory_WriteAddress gbusters_writemem_sound[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0x7fff, MWA_ROM ),					/* ROM 878h01.rom */
+		new Memory_WriteAddress( 0x8000, 0x87ff, MWA_RAM ),					/* RAM */
+		new Memory_WriteAddress( 0xb000, 0xb00d, K007232_write_port_0_w ),		/* 007232 registers */
+		new Memory_WriteAddress( 0xc000, 0xc000, YM2151_register_port_0_w ),	/* YM 2151 */
+		new Memory_WriteAddress( 0xc001, 0xc001, YM2151_data_port_0_w ),		/* YM 2151 */
+		new Memory_WriteAddress( 0xf000, 0xf000, gbusters_snd_bankswitch_w ),	/* 007232 bankswitch? */
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	/***************************************************************************
 	

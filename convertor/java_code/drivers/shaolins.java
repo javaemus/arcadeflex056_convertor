@@ -54,24 +54,26 @@ public class shaolins
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( writemem )
-		{ 0x0000, 0x0000, MWA_RAM, &shaolins_nmi_enable },	/* bit 1 = nmi enable, bit 2 = ? */
+	public static Memory_WriteAddress writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0x0000, MWA_RAM, &shaolins_nmi_enable ),	/* bit 1 = nmi enable, bit 2 = ? */
 															/* bit 3, bit 4 = coin counters */
-		{ 0x0100, 0x0100, watchdog_reset_w },
-		{ 0x0300, 0x0300, SN76496_0_w }, 	/* trigger chip to read from latch. The program always */
-		{ 0x0400, 0x0400, SN76496_1_w }, 	/* writes the same number as the latch, so we don't */
+		new Memory_WriteAddress( 0x0100, 0x0100, watchdog_reset_w ),
+		new Memory_WriteAddress( 0x0300, 0x0300, SN76496_0_w ), 	/* trigger chip to read from latch. The program always */
+		new Memory_WriteAddress( 0x0400, 0x0400, SN76496_1_w ), 	/* writes the same number as the latch, so we don't */
 											/* bother emulating them. */
-		{ 0x0800, 0x0800, MWA_NOP },	/* latch for 76496 #0 */
-		{ 0x1000, 0x1000, MWA_NOP },	/* latch for 76496 #1 */
-		{ 0x1800, 0x1800, shaolins_palettebank_w },
-		{ 0x2000, 0x2000, MWA_RAM, &shaolins_scroll },
-		{ 0x2800, 0x2bff, MWA_RAM },	/* RAM BANK 2 */
-		{ 0x3000, 0x30ff, MWA_RAM },	/* RAM BANK 1 */
-		{ 0x3100, 0x33ff, MWA_RAM, &spriteram, &spriteram_size },
-		{ 0x3800, 0x3bff, colorram_w, &colorram },
-		{ 0x3c00, 0x3fff, videoram_w, &videoram, &videoram_size },
-		{ 0x6000, 0xffff, MWA_ROM },
-	MEMORY_END
+		new Memory_WriteAddress( 0x0800, 0x0800, MWA_NOP ),	/* latch for 76496 #0 */
+		new Memory_WriteAddress( 0x1000, 0x1000, MWA_NOP ),	/* latch for 76496 #1 */
+		new Memory_WriteAddress( 0x1800, 0x1800, shaolins_palettebank_w ),
+		new Memory_WriteAddress( 0x2000, 0x2000, MWA_RAM, &shaolins_scroll ),
+		new Memory_WriteAddress( 0x2800, 0x2bff, MWA_RAM ),	/* RAM BANK 2 */
+		new Memory_WriteAddress( 0x3000, 0x30ff, MWA_RAM ),	/* RAM BANK 1 */
+		new Memory_WriteAddress( 0x3100, 0x33ff, MWA_RAM, &spriteram, &spriteram_size ),
+		new Memory_WriteAddress( 0x3800, 0x3bff, colorram_w, &colorram ),
+		new Memory_WriteAddress( 0x3c00, 0x3fff, videoram_w, &videoram, &videoram_size ),
+		new Memory_WriteAddress( 0x6000, 0xffff, MWA_ROM ),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	
 	

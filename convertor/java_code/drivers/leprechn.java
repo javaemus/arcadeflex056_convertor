@@ -139,20 +139,22 @@ public class leprechn
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( writemem )
-	    { 0x0000, 0x03ff, MWA_RAM},
-	    { 0x2000, 0x2000, leprechn_graphics_command_w},
-	    { 0x2001, 0x2001, leprechn_graphics_data_w},
-	    { 0x2002, 0x2003, MWA_NOP },  // ???
-	    { 0x200c, 0x200e, MWA_NOP },  // ???
-	    { 0x2800, 0x2800, leprechn_input_port_select_w},
-	    { 0x2802, 0x2803, MWA_NOP },  // ???
-	    { 0x280c, 0x280c, MWA_NOP },  // ???
-	    { 0x3001, 0x3001, leprechn_sh_w },
-	    { 0x3002, 0x3003, MWA_RAM},   // ???
-	    { 0x300c, 0x300c, MWA_NOP },  // ???
-	    { 0x8000, 0xffff, MWA_ROM},
-	MEMORY_END
+	public static Memory_WriteAddress writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+	    new Memory_WriteAddress( 0x0000, 0x03ff, MWA_RAM),
+	    new Memory_WriteAddress( 0x2000, 0x2000, leprechn_graphics_command_w),
+	    new Memory_WriteAddress( 0x2001, 0x2001, leprechn_graphics_data_w),
+	    new Memory_WriteAddress( 0x2002, 0x2003, MWA_NOP ),  // ???
+	    new Memory_WriteAddress( 0x200c, 0x200e, MWA_NOP ),  // ???
+	    new Memory_WriteAddress( 0x2800, 0x2800, leprechn_input_port_select_w),
+	    new Memory_WriteAddress( 0x2802, 0x2803, MWA_NOP ),  // ???
+	    new Memory_WriteAddress( 0x280c, 0x280c, MWA_NOP ),  // ???
+	    new Memory_WriteAddress( 0x3001, 0x3001, leprechn_sh_w ),
+	    new Memory_WriteAddress( 0x3002, 0x3003, MWA_RAM),   // ???
+	    new Memory_WriteAddress( 0x300c, 0x300c, MWA_NOP ),  // ???
+	    new Memory_WriteAddress( 0x8000, 0xffff, MWA_ROM),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	public static Memory_ReadAddress sound_readmem[]={
 		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
@@ -167,15 +169,17 @@ public class leprechn
 	};
 	
 	
-	static MEMORY_WRITE_START( sound_writemem )
-	    { 0x0000, 0x01ff, MWA_RAM},
-	    { 0x0801, 0x0803, MWA_RAM},   // ???
-	    { 0x0806, 0x0806, MWA_RAM},   // ???
-	    { 0x081e, 0x081e, MWA_RAM},   // ???
-	    { 0xa000, 0xa000, AY8910_control_port_0_w },
-	    { 0xa002, 0xa002, AY8910_write_port_0_w },
-	    { 0xf000, 0xffff, MWA_ROM},
-	MEMORY_END
+	public static Memory_WriteAddress sound_writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+	    new Memory_WriteAddress( 0x0000, 0x01ff, MWA_RAM),
+	    new Memory_WriteAddress( 0x0801, 0x0803, MWA_RAM),   // ???
+	    new Memory_WriteAddress( 0x0806, 0x0806, MWA_RAM),   // ???
+	    new Memory_WriteAddress( 0x081e, 0x081e, MWA_RAM),   // ???
+	    new Memory_WriteAddress( 0xa000, 0xa000, AY8910_control_port_0_w ),
+	    new Memory_WriteAddress( 0xa002, 0xa002, AY8910_write_port_0_w ),
+	    new Memory_WriteAddress( 0xf000, 0xffff, MWA_ROM),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	INPUT_PORTS_START( leprechn )
 	    // All of these ports are read indirectly through 2800/2801

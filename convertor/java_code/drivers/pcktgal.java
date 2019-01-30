@@ -91,16 +91,18 @@ public class pcktgal
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( writemem )
-		{ 0x0000, 0x07ff, MWA_RAM },
-		{ 0x0800, 0x0fff, videoram_w, &videoram, &videoram_size },
-		{ 0x1000, 0x11ff, MWA_RAM, &spriteram, &spriteram_size },
-		{ 0x1801, 0x1801, pcktgal_flipscreen_w },
+	public static Memory_WriteAddress writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0x07ff, MWA_RAM ),
+		new Memory_WriteAddress( 0x0800, 0x0fff, videoram_w, &videoram, &videoram_size ),
+		new Memory_WriteAddress( 0x1000, 0x11ff, MWA_RAM, &spriteram, &spriteram_size ),
+		new Memory_WriteAddress( 0x1801, 0x1801, pcktgal_flipscreen_w ),
 		/* 1800 - 0x181f are unused BAC-06 registers, see vidhrdw/dec0.c */
-		{ 0x1a00, 0x1a00, pcktgal_sound_w },
-		{ 0x1c00, 0x1c00, pcktgal_bank_w },
-		{ 0x4000, 0xffff, MWA_ROM },
-	MEMORY_END
+		new Memory_WriteAddress( 0x1a00, 0x1a00, pcktgal_sound_w ),
+		new Memory_WriteAddress( 0x1c00, 0x1c00, pcktgal_bank_w ),
+		new Memory_WriteAddress( 0x4000, 0xffff, MWA_ROM ),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	/***************************************************************************/
 	
@@ -114,16 +116,18 @@ public class pcktgal
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( sound_writemem )
-		{ 0x0000, 0x07ff, MWA_RAM },
-		{ 0x0800, 0x0800, YM2203_control_port_0_w },
-		{ 0x0801, 0x0801, YM2203_write_port_0_w },
-		{ 0x1000, 0x1000, YM3812_control_port_0_w },
-		{ 0x1001, 0x1001, YM3812_write_port_0_w },
-		{ 0x1800, 0x1800, pcktgal_adpcm_data_w },	/* ADPCM data for the MSM5205 chip */
-		{ 0x2000, 0x2000, pcktgal_sound_bank_w },
-		{ 0x4000, 0xffff, MWA_ROM },
-	MEMORY_END
+	public static Memory_WriteAddress sound_writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0x07ff, MWA_RAM ),
+		new Memory_WriteAddress( 0x0800, 0x0800, YM2203_control_port_0_w ),
+		new Memory_WriteAddress( 0x0801, 0x0801, YM2203_write_port_0_w ),
+		new Memory_WriteAddress( 0x1000, 0x1000, YM3812_control_port_0_w ),
+		new Memory_WriteAddress( 0x1001, 0x1001, YM3812_write_port_0_w ),
+		new Memory_WriteAddress( 0x1800, 0x1800, pcktgal_adpcm_data_w ),	/* ADPCM data for the MSM5205 chip */
+		new Memory_WriteAddress( 0x2000, 0x2000, pcktgal_sound_bank_w ),
+		new Memory_WriteAddress( 0x4000, 0xffff, MWA_ROM ),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	/***************************************************************************/
 	

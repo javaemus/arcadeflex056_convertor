@@ -132,20 +132,22 @@ public class battlane
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( battlane_writemem )
-		{ 0x0000, 0x0fff, battlane_shared_ram_w },
-	    { 0x1000, 0x17ff, battlane_tileram_w },
-	    { 0x1800, 0x18ff, battlane_spriteram_w },
-		{ 0x1c00, 0x1c00, battlane_video_ctrl_w },
-	    { 0x1c01, 0x1c01, battlane_scrolly_w },
-	    { 0x1c02, 0x1c02, battlane_scrollx_w },
-	    { 0x1c03, 0x1c03, battlane_cpu_command_w },
-		{ 0x1c04, 0x1c04, YM3526_control_port_0_w },
-		{ 0x1c05, 0x1c05, YM3526_write_port_0_w },
-		{ 0x1e00, 0x1e3f, battlane_palette_w },
-		{ 0x2000, 0x3fff, battlane_bitmap_w, &battlane_bitmap, &battlane_bitmap_size },
-		{ 0x4000, 0xffff, MWA_ROM },
-	MEMORY_END
+	public static Memory_WriteAddress battlane_writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0x0fff, battlane_shared_ram_w ),
+	    new Memory_WriteAddress( 0x1000, 0x17ff, battlane_tileram_w ),
+	    new Memory_WriteAddress( 0x1800, 0x18ff, battlane_spriteram_w ),
+		new Memory_WriteAddress( 0x1c00, 0x1c00, battlane_video_ctrl_w ),
+	    new Memory_WriteAddress( 0x1c01, 0x1c01, battlane_scrolly_w ),
+	    new Memory_WriteAddress( 0x1c02, 0x1c02, battlane_scrollx_w ),
+	    new Memory_WriteAddress( 0x1c03, 0x1c03, battlane_cpu_command_w ),
+		new Memory_WriteAddress( 0x1c04, 0x1c04, YM3526_control_port_0_w ),
+		new Memory_WriteAddress( 0x1c05, 0x1c05, YM3526_write_port_0_w ),
+		new Memory_WriteAddress( 0x1e00, 0x1e3f, battlane_palette_w ),
+		new Memory_WriteAddress( 0x2000, 0x3fff, battlane_bitmap_w, &battlane_bitmap, &battlane_bitmap_size ),
+		new Memory_WriteAddress( 0x4000, 0xffff, MWA_ROM ),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	int battlane_cpu1_interrupt(void)
 	{

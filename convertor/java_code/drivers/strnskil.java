@@ -94,20 +94,22 @@ public class strnskil
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( strnskil_writemem1 )
-		{ 0x0000, 0x9fff, MWA_ROM },
+	public static Memory_WriteAddress strnskil_writemem1[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0x9fff, MWA_ROM ),
 	
-		{ 0xc000, 0xc7ff, MWA_RAM },
-		{ 0xc800, 0xcfff, strnskil_sharedram_w },
-		{ 0xd000, 0xd7ff, videoram_w, &videoram, &videoram_size },
+		new Memory_WriteAddress( 0xc000, 0xc7ff, MWA_RAM ),
+		new Memory_WriteAddress( 0xc800, 0xcfff, strnskil_sharedram_w ),
+		new Memory_WriteAddress( 0xd000, 0xd7ff, videoram_w, &videoram, &videoram_size ),
 	
-		{ 0xd808, 0xd808, strnskil_scrl_ctrl_w },
-		{ 0xd809, 0xd809, MWA_NOP }, /* coin counter? */
-		{ 0xd80a, 0xd80b, strnskil_scroll_x_w },
+		new Memory_WriteAddress( 0xd808, 0xd808, strnskil_scrl_ctrl_w ),
+		new Memory_WriteAddress( 0xd809, 0xd809, MWA_NOP ), /* coin counter? */
+		new Memory_WriteAddress( 0xd80a, 0xd80b, strnskil_scroll_x_w ),
 	
-	//	{ 0xd80c, 0xd80c, MWA_NOP },		/* protection reset? */
-		{ 0xd80d, 0xd80d, protection_w },	/* protection data write (pettanp) */
-	MEMORY_END
+	//	new Memory_WriteAddress( 0xd80c, 0xd80c, MWA_NOP ),		/* protection reset? */
+		new Memory_WriteAddress( 0xd80d, 0xd80d, protection_w ),	/* protection data write (pettanp) */
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	public static Memory_ReadAddress strnskil_readmem2[]={
 		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
@@ -117,14 +119,16 @@ public class strnskil
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( strnskil_writemem2 )
-		{ 0x0000, 0x5fff, MWA_ROM },
-		{ 0xc000, 0xc7ff, MWA_RAM, &spriteram, &spriteram_size },
-		{ 0xc800, 0xcfff, MWA_RAM, &strnskil_sharedram },
+	public static Memory_WriteAddress strnskil_writemem2[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0x5fff, MWA_ROM ),
+		new Memory_WriteAddress( 0xc000, 0xc7ff, MWA_RAM, &spriteram, &spriteram_size ),
+		new Memory_WriteAddress( 0xc800, 0xcfff, MWA_RAM, &strnskil_sharedram ),
 	
-		{ 0xd801, 0xd801, SN76496_0_w },
-		{ 0xd802, 0xd802, SN76496_1_w },
-	MEMORY_END
+		new Memory_WriteAddress( 0xd801, 0xd801, SN76496_0_w ),
+		new Memory_WriteAddress( 0xd802, 0xd802, SN76496_1_w ),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	
 	/****************************************************************************/

@@ -86,25 +86,27 @@ public class hcastle
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( writemem )
-		{ 0x0000, 0x0007, hcastle_pf1_control_w },
-		{ 0x0020, 0x003f, MWA_RAM },	/* rowscroll? */
-		{ 0x0200, 0x0207, hcastle_pf2_control_w },
-		{ 0x0220, 0x023f, MWA_RAM },	/* rowscroll? */
-		{ 0x0400, 0x0400, hcastle_bankswitch_w },
-		{ 0x0404, 0x0404, soundlatch_w },
-		{ 0x0408, 0x0408, hcastle_soundirq_w },
-		{ 0x040c, 0x040c, watchdog_reset_w },
-		{ 0x0410, 0x0410, hcastle_coin_w },
-		{ 0x0418, 0x0418, hcastle_gfxbank_w },
-		{ 0x0600, 0x06ff, paletteram_xBBBBBGGGGGRRRRR_swap_w, &paletteram },
-		{ 0x0700, 0x1fff, MWA_RAM },
-		{ 0x2000, 0x2fff, hcastle_pf1_video_w, &hcastle_pf1_videoram },
-		{ 0x3000, 0x3fff, MWA_RAM, &spriteram, &spriteram_size },
-		{ 0x4000, 0x4fff, hcastle_pf2_video_w, &hcastle_pf2_videoram },
-		{ 0x5000, 0x5fff, MWA_RAM, &spriteram_2, &spriteram_2_size },
-	 	{ 0x6000, 0xffff, MWA_ROM },
-	MEMORY_END
+	public static Memory_WriteAddress writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0x0007, hcastle_pf1_control_w ),
+		new Memory_WriteAddress( 0x0020, 0x003f, MWA_RAM ),	/* rowscroll? */
+		new Memory_WriteAddress( 0x0200, 0x0207, hcastle_pf2_control_w ),
+		new Memory_WriteAddress( 0x0220, 0x023f, MWA_RAM ),	/* rowscroll? */
+		new Memory_WriteAddress( 0x0400, 0x0400, hcastle_bankswitch_w ),
+		new Memory_WriteAddress( 0x0404, 0x0404, soundlatch_w ),
+		new Memory_WriteAddress( 0x0408, 0x0408, hcastle_soundirq_w ),
+		new Memory_WriteAddress( 0x040c, 0x040c, watchdog_reset_w ),
+		new Memory_WriteAddress( 0x0410, 0x0410, hcastle_coin_w ),
+		new Memory_WriteAddress( 0x0418, 0x0418, hcastle_gfxbank_w ),
+		new Memory_WriteAddress( 0x0600, 0x06ff, paletteram_xBBBBBGGGGGRRRRR_swap_w, &paletteram ),
+		new Memory_WriteAddress( 0x0700, 0x1fff, MWA_RAM ),
+		new Memory_WriteAddress( 0x2000, 0x2fff, hcastle_pf1_video_w, &hcastle_pf1_videoram ),
+		new Memory_WriteAddress( 0x3000, 0x3fff, MWA_RAM, &spriteram, &spriteram_size ),
+		new Memory_WriteAddress( 0x4000, 0x4fff, hcastle_pf2_video_w, &hcastle_pf2_videoram ),
+		new Memory_WriteAddress( 0x5000, 0x5fff, MWA_RAM, &spriteram_2, &spriteram_2_size ),
+	 	new Memory_WriteAddress( 0x6000, 0xffff, MWA_ROM ),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	/*****************************************************************************/
 	
@@ -127,18 +129,20 @@ public class hcastle
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( sound_writemem )
-		{ 0x0000, 0x7fff, MWA_ROM },
-		{ 0x8000, 0x87ff, MWA_RAM },
-		{ 0x9800, 0x987f, K051649_waveform_w },
-		{ 0x9880, 0x9889, K051649_frequency_w },
-		{ 0x988a, 0x988e, K051649_volume_w },
-		{ 0x988f, 0x988f, K051649_keyonoff_w },
-		{ 0xa000, 0xa000, YM3812_control_port_0_w },
-		{ 0xa001, 0xa001, YM3812_write_port_0_w },
-		{ 0xb000, 0xb00d, K007232_write_port_0_w },
-		{ 0xc000, 0xc000, sound_bank_w }, /* 7232 bankswitch */
-	MEMORY_END
+	public static Memory_WriteAddress sound_writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0x7fff, MWA_ROM ),
+		new Memory_WriteAddress( 0x8000, 0x87ff, MWA_RAM ),
+		new Memory_WriteAddress( 0x9800, 0x987f, K051649_waveform_w ),
+		new Memory_WriteAddress( 0x9880, 0x9889, K051649_frequency_w ),
+		new Memory_WriteAddress( 0x988a, 0x988e, K051649_volume_w ),
+		new Memory_WriteAddress( 0x988f, 0x988f, K051649_keyonoff_w ),
+		new Memory_WriteAddress( 0xa000, 0xa000, YM3812_control_port_0_w ),
+		new Memory_WriteAddress( 0xa001, 0xa001, YM3812_write_port_0_w ),
+		new Memory_WriteAddress( 0xb000, 0xb00d, K007232_write_port_0_w ),
+		new Memory_WriteAddress( 0xc000, 0xc000, sound_bank_w ), /* 7232 bankswitch */
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	/*****************************************************************************/
 	

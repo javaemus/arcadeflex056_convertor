@@ -65,16 +65,18 @@ public class dynduke
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( writemem )
-		{ 0x00000, 0x06fff, MWA_RAM },
-		{ 0x07000, 0x07fff, MWA_RAM, &spriteram, &spriteram_size },
-		{ 0x08000, 0x080ff, MWA_RAM, &dynduke_scroll_ram },
-		{ 0x0a000, 0x0afff, dynduke_shared_w, &dynduke_shared_ram },
-		{ 0x0b000, 0x0b007, dynduke_control_w, &dynduke_control_ram },
-		{ 0x0c000, 0x0c7ff, dynduke_text_w, &videoram },
-		{ 0x0d000, 0x0d00d, seibu_main_v30_w },
-		{ 0xa0000, 0xfffff, MWA_ROM },
-	MEMORY_END
+	public static Memory_WriteAddress writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x00000, 0x06fff, MWA_RAM ),
+		new Memory_WriteAddress( 0x07000, 0x07fff, MWA_RAM, &spriteram, &spriteram_size ),
+		new Memory_WriteAddress( 0x08000, 0x080ff, MWA_RAM, &dynduke_scroll_ram ),
+		new Memory_WriteAddress( 0x0a000, 0x0afff, dynduke_shared_w, &dynduke_shared_ram ),
+		new Memory_WriteAddress( 0x0b000, 0x0b007, dynduke_control_w, &dynduke_control_ram ),
+		new Memory_WriteAddress( 0x0c000, 0x0c7ff, dynduke_text_w, &videoram ),
+		new Memory_WriteAddress( 0x0d000, 0x0d00d, seibu_main_v30_w ),
+		new Memory_WriteAddress( 0xa0000, 0xfffff, MWA_ROM ),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	public static Memory_ReadAddress sub_readmem[]={
 		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
@@ -87,16 +89,18 @@ public class dynduke
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( sub_writemem )
-		{ 0x00000, 0x05fff, MWA_RAM },
-		{ 0x06000, 0x067ff, dynduke_background_w, &dynduke_back_data },
-		{ 0x06800, 0x06fff, dynduke_foreground_w, &dynduke_fore_data },
-		{ 0x07000, 0x07fff, dynduke_paletteram_w, &paletteram },
-		{ 0x08000, 0x08fff, dynduke_shared_w },
-		{ 0x0a000, 0x0a001, dynduke_gfxbank_w },
-		{ 0x0c000, 0x0c001, MWA_NOP },
-		{ 0xc0000, 0xfffff, MWA_ROM },
-	MEMORY_END
+	public static Memory_WriteAddress sub_writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x00000, 0x05fff, MWA_RAM ),
+		new Memory_WriteAddress( 0x06000, 0x067ff, dynduke_background_w, &dynduke_back_data ),
+		new Memory_WriteAddress( 0x06800, 0x06fff, dynduke_foreground_w, &dynduke_fore_data ),
+		new Memory_WriteAddress( 0x07000, 0x07fff, dynduke_paletteram_w, &paletteram ),
+		new Memory_WriteAddress( 0x08000, 0x08fff, dynduke_shared_w ),
+		new Memory_WriteAddress( 0x0a000, 0x0a001, dynduke_gfxbank_w ),
+		new Memory_WriteAddress( 0x0c000, 0x0c001, MWA_NOP ),
+		new Memory_WriteAddress( 0xc0000, 0xfffff, MWA_ROM ),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	/******************************************************************************/
 	

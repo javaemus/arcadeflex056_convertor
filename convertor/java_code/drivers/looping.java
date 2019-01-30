@@ -241,15 +241,17 @@ public class looping
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( looping_writemem )
-		{ 0x0000, 0x7fff, MWA_ROM },
-		{ 0x9000, 0x93ff, looping_videoram_w, &videoram },
-		{ 0x9800, 0x983f, looping_colorram_w, &colorram },
-		{ 0x9840, 0x987f, MWA_RAM, &spriteram },
-		{ 0xe000, 0xefff, MWA_RAM },
-		{ 0xb006, 0xb007, MWA_RAM }, /* unknown */
-		{ 0xf801, 0xf801, looping_soundlatch_w },
-	MEMORY_END
+	public static Memory_WriteAddress looping_writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0x7fff, MWA_ROM ),
+		new Memory_WriteAddress( 0x9000, 0x93ff, looping_videoram_w, &videoram ),
+		new Memory_WriteAddress( 0x9800, 0x983f, looping_colorram_w, &colorram ),
+		new Memory_WriteAddress( 0x9840, 0x987f, MWA_RAM, &spriteram ),
+		new Memory_WriteAddress( 0xe000, 0xefff, MWA_RAM ),
+		new Memory_WriteAddress( 0xb006, 0xb007, MWA_RAM ), /* unknown */
+		new Memory_WriteAddress( 0xf801, 0xf801, looping_soundlatch_w ),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static PORT_WRITE_START( looping_writeport)
 		{ 0x000, 0x000, MWA_NOP },
@@ -266,13 +268,15 @@ public class looping
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( looping_io_writemem )
-		{ 0x0000, 0x37ff, MWA_ROM },
-		{ 0x3800, 0x3bff, MWA_RAM },
-		{ 0x3c00, 0x3c00, AY8910_control_port_0_w },
-		{ 0x3c02, 0x3c02, AY8910_write_port_0_w },
-		{ 0x3e00, 0x3e00, tms5220_data_w },
-	MEMORY_END
+	public static Memory_WriteAddress looping_io_writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0x37ff, MWA_ROM ),
+		new Memory_WriteAddress( 0x3800, 0x3bff, MWA_RAM ),
+		new Memory_WriteAddress( 0x3c00, 0x3c00, AY8910_control_port_0_w ),
+		new Memory_WriteAddress( 0x3c02, 0x3c02, AY8910_write_port_0_w ),
+		new Memory_WriteAddress( 0x3e00, 0x3e00, tms5220_data_w ),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static PORT_WRITE_START( looping_io_writeport)
 		{ 0x000, 0x000, looping_souint_clr },

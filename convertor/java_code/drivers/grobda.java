@@ -65,20 +65,22 @@ public class grobda
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( writemem_cpu1 )
-		{ 0x0000, 0x03ff, videoram_w, &videoram, &videoram_size },		/* video RAM */
-		{ 0x0400, 0x07ff, colorram_w, &colorram },						/* color RAM */
-		{ 0x0800, 0x1fff, MWA_RAM, &spriteram },						/* RAM & sprite RAM */
-		{ 0x2000, 0x2000, flip_screen_w },								/* flip screen */
-		{ 0x4040, 0x43ff, grobda_snd_sharedram_w },						/* shared RAM with CPU #2 */
-		{ 0x4800, 0x480f, grobda_customio_1_w, &grobda_customio_1 },	/* custom I/O chip #1 interface */
-		{ 0x4810, 0x481f, grobda_customio_2_w, &grobda_customio_2 },	/* custom I/O chip #2 interface */
-		{ 0x5002, 0x5003, grobda_interrupt_ctrl_1_w },					/* Interrupt control */
-	//	{ 0x5008, 0x5009, MWA_NOP },									/* ??? */
-		{ 0x500a, 0x500b, grobda_cpu2_enable_w },						/* sound CPU enable? */
-		{ 0x8000, 0x8000, watchdog_reset_w },	 						/* watchdog reset */
-		{ 0xa000, 0xffff, MWA_ROM },									/* ROM */
-	MEMORY_END
+	public static Memory_WriteAddress writemem_cpu1[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0x03ff, videoram_w, &videoram, &videoram_size ),		/* video RAM */
+		new Memory_WriteAddress( 0x0400, 0x07ff, colorram_w, &colorram ),						/* color RAM */
+		new Memory_WriteAddress( 0x0800, 0x1fff, MWA_RAM, &spriteram ),						/* RAM & sprite RAM */
+		new Memory_WriteAddress( 0x2000, 0x2000, flip_screen_w ),								/* flip screen */
+		new Memory_WriteAddress( 0x4040, 0x43ff, grobda_snd_sharedram_w ),						/* shared RAM with CPU #2 */
+		new Memory_WriteAddress( 0x4800, 0x480f, grobda_customio_1_w, &grobda_customio_1 ),	/* custom I/O chip #1 interface */
+		new Memory_WriteAddress( 0x4810, 0x481f, grobda_customio_2_w, &grobda_customio_2 ),	/* custom I/O chip #2 interface */
+		new Memory_WriteAddress( 0x5002, 0x5003, grobda_interrupt_ctrl_1_w ),					/* Interrupt control */
+	//	new Memory_WriteAddress( 0x5008, 0x5009, MWA_NOP ),									/* ??? */
+		new Memory_WriteAddress( 0x500a, 0x500b, grobda_cpu2_enable_w ),						/* sound CPU enable? */
+		new Memory_WriteAddress( 0x8000, 0x8000, watchdog_reset_w ),	 						/* watchdog reset */
+		new Memory_WriteAddress( 0xa000, 0xffff, MWA_ROM ),									/* ROM */
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	public static Memory_ReadAddress readmem_cpu2[]={
 		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
@@ -89,14 +91,16 @@ public class grobda
 	};
 	
 	
-	static MEMORY_WRITE_START( writemem_cpu2 )
-		{ 0x0002, 0x0002, grobda_DAC_w },					/* $12, $22 and $32 are DAC locations as well */
-		{ 0x0000, 0x003f, mappy_sound_w, &mappy_soundregs },/* sound registers */
-		{ 0x0040, 0x03ff, MWA_RAM, &grobda_snd_sharedram },	/* shared RAM with the main CPU */
-		{ 0x2000, 0x2001, grobda_interrupt_ctrl_2_w },		/* Interrupt control */
-		{ 0x2006, 0x2007, mappy_sound_enable_w },			/* sound enable? */
-		{ 0xe000, 0xffff, MWA_ROM },						/* ROM */
-	MEMORY_END
+	public static Memory_WriteAddress writemem_cpu2[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0002, 0x0002, grobda_DAC_w ),					/* $12, $22 and $32 are DAC locations as well */
+		new Memory_WriteAddress( 0x0000, 0x003f, mappy_sound_w, &mappy_soundregs ),/* sound registers */
+		new Memory_WriteAddress( 0x0040, 0x03ff, MWA_RAM, &grobda_snd_sharedram ),	/* shared RAM with the main CPU */
+		new Memory_WriteAddress( 0x2000, 0x2001, grobda_interrupt_ctrl_2_w ),		/* Interrupt control */
+		new Memory_WriteAddress( 0x2006, 0x2007, mappy_sound_enable_w ),			/* sound enable? */
+		new Memory_WriteAddress( 0xe000, 0xffff, MWA_ROM ),						/* ROM */
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	/* The dipswitches and player inputs are not memory mapped, they are handled by an I/O chip. */
 	INPUT_PORTS_START( grobda )

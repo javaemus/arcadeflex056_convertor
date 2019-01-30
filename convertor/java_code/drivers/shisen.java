@@ -59,12 +59,14 @@ public class shisen
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( writemem )
-		{ 0x0000, 0xbfff, MWA_ROM },
-		{ 0xc800, 0xcaff, sichuan2_paletteram_w, &paletteram },
-		{ 0xd000, 0xdfff, videoram_w, &videoram, &videoram_size },
-		{ 0xe000, 0xffff, MWA_RAM },
-	MEMORY_END
+	public static Memory_WriteAddress writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0xbfff, MWA_ROM ),
+		new Memory_WriteAddress( 0xc800, 0xcaff, sichuan2_paletteram_w, &paletteram ),
+		new Memory_WriteAddress( 0xd000, 0xdfff, videoram_w, &videoram, &videoram_size ),
+		new Memory_WriteAddress( 0xe000, 0xffff, MWA_RAM ),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static PORT_READ_START( readport )
 		{ 0x00, 0x00, sichuan2_dsw1_r },
@@ -87,10 +89,12 @@ public class shisen
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( sound_writemem )
-		{ 0x0000, 0x3fff, MWA_ROM },
-		{ 0xfd00, 0xffff, MWA_RAM },
-	MEMORY_END
+	public static Memory_WriteAddress sound_writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0x3fff, MWA_ROM ),
+		new Memory_WriteAddress( 0xfd00, 0xffff, MWA_RAM ),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static PORT_READ_START( sound_readport )
 		{ 0x01, 0x01, YM2151_status_port_0_r },

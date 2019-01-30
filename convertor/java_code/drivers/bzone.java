@@ -284,19 +284,21 @@ public class bzone
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( bzone_writemem )
-		{ 0x0000, 0x03ff, MWA_RAM },
-		{ 0x1000, 0x1000, bzone_coin_counter_w },
-		{ 0x1200, 0x1200, avgdvg_go_w },
-		{ 0x1400, 0x1400, watchdog_reset_w },
-		{ 0x1600, 0x1600, avgdvg_reset_w },
-		{ 0x1820, 0x182f, pokey1_w },
-		{ 0x1840, 0x1840, bzone_sounds_w },
-		{ 0x1860, 0x187f, mb_go_w },
-		{ 0x2000, 0x2fff, MWA_RAM, &vectorram, &vectorram_size },
-		{ 0x3000, 0x3fff, MWA_ROM },
-		{ 0x5000, 0x7fff, MWA_ROM },
-	MEMORY_END
+	public static Memory_WriteAddress bzone_writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0x03ff, MWA_RAM ),
+		new Memory_WriteAddress( 0x1000, 0x1000, bzone_coin_counter_w ),
+		new Memory_WriteAddress( 0x1200, 0x1200, avgdvg_go_w ),
+		new Memory_WriteAddress( 0x1400, 0x1400, watchdog_reset_w ),
+		new Memory_WriteAddress( 0x1600, 0x1600, avgdvg_reset_w ),
+		new Memory_WriteAddress( 0x1820, 0x182f, pokey1_w ),
+		new Memory_WriteAddress( 0x1840, 0x1840, bzone_sounds_w ),
+		new Memory_WriteAddress( 0x1860, 0x187f, mb_go_w ),
+		new Memory_WriteAddress( 0x2000, 0x2fff, MWA_RAM, &vectorram, &vectorram_size ),
+		new Memory_WriteAddress( 0x3000, 0x3fff, MWA_ROM ),
+		new Memory_WriteAddress( 0x5000, 0x7fff, MWA_ROM ),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	
 	INPUT_PORTS_START( bzone )
@@ -396,22 +398,24 @@ public class bzone
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( redbaron_writemem )
-		{ 0x0000, 0x03ff, MWA_RAM },
-		{ 0x1000, 0x1000, MWA_NOP },			/* coin out */
-		{ 0x1200, 0x1200, avgdvg_go_w },
-		{ 0x1400, 0x1400, MWA_NOP },			/* watchdog clear */
-		{ 0x1600, 0x1600, avgdvg_reset_w },
-		{ 0x1808, 0x1808, redbaron_sounds_w },	/* and select joystick pot also */
-		{ 0x180a, 0x180a, MWA_NOP },			/* sound reset, yet todo */
-		{ 0x180c, 0x180c, atari_vg_earom_ctrl_w },
-		{ 0x1810, 0x181f, pokey1_w },
-		{ 0x1820, 0x185f, atari_vg_earom_w },
-		{ 0x1860, 0x187f, mb_go_w },
-		{ 0x2000, 0x2fff, MWA_RAM, &vectorram, &vectorram_size },
-		{ 0x3000, 0x3fff, MWA_ROM },
-		{ 0x5000, 0x7fff, MWA_ROM },
-	MEMORY_END
+	public static Memory_WriteAddress redbaron_writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0x03ff, MWA_RAM ),
+		new Memory_WriteAddress( 0x1000, 0x1000, MWA_NOP ),			/* coin out */
+		new Memory_WriteAddress( 0x1200, 0x1200, avgdvg_go_w ),
+		new Memory_WriteAddress( 0x1400, 0x1400, MWA_NOP ),			/* watchdog clear */
+		new Memory_WriteAddress( 0x1600, 0x1600, avgdvg_reset_w ),
+		new Memory_WriteAddress( 0x1808, 0x1808, redbaron_sounds_w ),	/* and select joystick pot also */
+		new Memory_WriteAddress( 0x180a, 0x180a, MWA_NOP ),			/* sound reset, yet todo */
+		new Memory_WriteAddress( 0x180c, 0x180c, atari_vg_earom_ctrl_w ),
+		new Memory_WriteAddress( 0x1810, 0x181f, pokey1_w ),
+		new Memory_WriteAddress( 0x1820, 0x185f, atari_vg_earom_w ),
+		new Memory_WriteAddress( 0x1860, 0x187f, mb_go_w ),
+		new Memory_WriteAddress( 0x2000, 0x2fff, MWA_RAM, &vectorram, &vectorram_size ),
+		new Memory_WriteAddress( 0x3000, 0x3fff, MWA_ROM ),
+		new Memory_WriteAddress( 0x5000, 0x7fff, MWA_ROM ),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	
 	INPUT_PORTS_START( redbaron )

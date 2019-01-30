@@ -328,31 +328,35 @@ public class thunderx
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( scontra_writemem )
-		{ 0x1f80, 0x1f80, scontra_bankswitch_w },	/* bankswitch control + coin counters */
-		{ 0x1f84, 0x1f84, soundlatch_w },
-		{ 0x1f88, 0x1f88, thunderx_sh_irqtrigger_w },		/* cause interrupt on audio CPU */
-		{ 0x1f8c, 0x1f8c, watchdog_reset_w },
-		{ 0x1f98, 0x1f98, thunderx_1f98_w },
+	public static Memory_WriteAddress scontra_writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x1f80, 0x1f80, scontra_bankswitch_w ),	/* bankswitch control + coin counters */
+		new Memory_WriteAddress( 0x1f84, 0x1f84, soundlatch_w ),
+		new Memory_WriteAddress( 0x1f88, 0x1f88, thunderx_sh_irqtrigger_w ),		/* cause interrupt on audio CPU */
+		new Memory_WriteAddress( 0x1f8c, 0x1f8c, watchdog_reset_w ),
+		new Memory_WriteAddress( 0x1f98, 0x1f98, thunderx_1f98_w ),
 	
-		{ 0x0000, 0x3fff, K052109_051960_w },		/* video RAM + sprite RAM */
-		{ 0x4000, 0x57ff, MWA_RAM },
-		{ 0x5800, 0x5fff, scontra_bankedram_w, &ram },			/* palette + work RAM */
-		{ 0x6000, 0xffff, MWA_ROM },
-	MEMORY_END
+		new Memory_WriteAddress( 0x0000, 0x3fff, K052109_051960_w ),		/* video RAM + sprite RAM */
+		new Memory_WriteAddress( 0x4000, 0x57ff, MWA_RAM ),
+		new Memory_WriteAddress( 0x5800, 0x5fff, scontra_bankedram_w, &ram ),			/* palette + work RAM */
+		new Memory_WriteAddress( 0x6000, 0xffff, MWA_ROM ),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
-	static MEMORY_WRITE_START( thunderx_writemem )
-		{ 0x1f80, 0x1f80, thunderx_videobank_w },
-		{ 0x1f84, 0x1f84, soundlatch_w },
-		{ 0x1f88, 0x1f88, thunderx_sh_irqtrigger_w },		/* cause interrupt on audio CPU */
-		{ 0x1f8c, 0x1f8c, watchdog_reset_w },
-		{ 0x1f98, 0x1f98, thunderx_1f98_w },
+	public static Memory_WriteAddress thunderx_writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x1f80, 0x1f80, thunderx_videobank_w ),
+		new Memory_WriteAddress( 0x1f84, 0x1f84, soundlatch_w ),
+		new Memory_WriteAddress( 0x1f88, 0x1f88, thunderx_sh_irqtrigger_w ),		/* cause interrupt on audio CPU */
+		new Memory_WriteAddress( 0x1f8c, 0x1f8c, watchdog_reset_w ),
+		new Memory_WriteAddress( 0x1f98, 0x1f98, thunderx_1f98_w ),
 	
-		{ 0x0000, 0x3fff, K052109_051960_w },
-		{ 0x4000, 0x57ff, MWA_RAM },
-		{ 0x5800, 0x5fff, thunderx_bankedram_w, &ram },			/* palette + work RAM + unknown RAM */
-		{ 0x6000, 0xffff, MWA_ROM },
-	MEMORY_END
+		new Memory_WriteAddress( 0x0000, 0x3fff, K052109_051960_w ),
+		new Memory_WriteAddress( 0x4000, 0x57ff, MWA_RAM ),
+		new Memory_WriteAddress( 0x5800, 0x5fff, thunderx_bankedram_w, &ram ),			/* palette + work RAM + unknown RAM */
+		new Memory_WriteAddress( 0x6000, 0xffff, MWA_ROM ),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	public static Memory_ReadAddress scontra_readmem_sound[]={
 		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
@@ -364,14 +368,16 @@ public class thunderx
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( scontra_writemem_sound )
-		{ 0x0000, 0x7fff, MWA_ROM },					/* ROM */
-		{ 0x8000, 0x87ff, MWA_RAM },					/* RAM */
-		{ 0xb000, 0xb00d, K007232_write_port_0_w },		/* 007232 registers */
-		{ 0xc000, 0xc000, YM2151_register_port_0_w },	/* YM2151 */
-		{ 0xc001, 0xc001, YM2151_data_port_0_w },		/* YM2151 */
-		{ 0xf000, 0xf000, scontra_snd_bankswitch_w },	/* 007232 bank select */
-	MEMORY_END
+	public static Memory_WriteAddress scontra_writemem_sound[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0x7fff, MWA_ROM ),					/* ROM */
+		new Memory_WriteAddress( 0x8000, 0x87ff, MWA_RAM ),					/* RAM */
+		new Memory_WriteAddress( 0xb000, 0xb00d, K007232_write_port_0_w ),		/* 007232 registers */
+		new Memory_WriteAddress( 0xc000, 0xc000, YM2151_register_port_0_w ),	/* YM2151 */
+		new Memory_WriteAddress( 0xc001, 0xc001, YM2151_data_port_0_w ),		/* YM2151 */
+		new Memory_WriteAddress( 0xf000, 0xf000, scontra_snd_bankswitch_w ),	/* 007232 bank select */
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	public static Memory_ReadAddress thunderx_readmem_sound[]={
 		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
@@ -382,12 +388,14 @@ public class thunderx
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( thunderx_writemem_sound )
-		{ 0x0000, 0x7fff, MWA_ROM },
-		{ 0x8000, 0x87ff, MWA_RAM },
-		{ 0xc000, 0xc000, YM2151_register_port_0_w },
-		{ 0xc001, 0xc001, YM2151_data_port_0_w },
-	MEMORY_END
+	public static Memory_WriteAddress thunderx_writemem_sound[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0x7fff, MWA_ROM ),
+		new Memory_WriteAddress( 0x8000, 0x87ff, MWA_RAM ),
+		new Memory_WriteAddress( 0xc000, 0xc000, YM2151_register_port_0_w ),
+		new Memory_WriteAddress( 0xc001, 0xc001, YM2151_data_port_0_w ),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	/***************************************************************************
 	

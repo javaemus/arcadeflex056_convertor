@@ -376,13 +376,15 @@ public class badlands
 	};
 	
 	
-	static MEMORY_WRITE_START( audio_writemem )
-		{ 0x0000, 0x1fff, MWA_RAM },
-		{ 0x2000, 0x2000, YM2151_register_port_0_w },
-		{ 0x2001, 0x2001, YM2151_data_port_0_w },
-		{ 0x2800, 0x2bff, audio_io_w },
-		{ 0x3000, 0xffff, MWA_ROM },
-	MEMORY_END
+	public static Memory_WriteAddress audio_writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0x1fff, MWA_RAM ),
+		new Memory_WriteAddress( 0x2000, 0x2000, YM2151_register_port_0_w ),
+		new Memory_WriteAddress( 0x2001, 0x2001, YM2151_data_port_0_w ),
+		new Memory_WriteAddress( 0x2800, 0x2bff, audio_io_w ),
+		new Memory_WriteAddress( 0x3000, 0xffff, MWA_ROM ),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	
 	

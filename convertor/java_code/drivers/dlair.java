@@ -153,15 +153,17 @@ public class dlair
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( writemem )
-		{ 0x0000, 0x7fff, MWA_ROM },
-		{ 0xa000, 0xa7ff, MWA_RAM },
-		{ 0xc000, 0xc3ff, videoram_w, &videoram, &videoram_size },
-		{ 0xc400, 0xc7ff, MWA_RAM },
-		{ 0xe000, 0xe000, dlair_led0_w },
-		{ 0xe008, 0xe008, dlair_led1_w },
-		{ 0xe030, 0xe030, watchdog_reset_w },
-	MEMORY_END
+	public static Memory_WriteAddress writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0x7fff, MWA_ROM ),
+		new Memory_WriteAddress( 0xa000, 0xa7ff, MWA_RAM ),
+		new Memory_WriteAddress( 0xc000, 0xc3ff, videoram_w, &videoram, &videoram_size ),
+		new Memory_WriteAddress( 0xc400, 0xc7ff, MWA_RAM ),
+		new Memory_WriteAddress( 0xe000, 0xe000, dlair_led0_w ),
+		new Memory_WriteAddress( 0xe008, 0xe008, dlair_led1_w ),
+		new Memory_WriteAddress( 0xe030, 0xe030, watchdog_reset_w ),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static unsigned char pip[4];
 	static READ_HANDLER( pip_r )

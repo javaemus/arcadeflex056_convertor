@@ -105,14 +105,16 @@ public class splash
 	}
 	
 	
-	static MEMORY_WRITE_START( splash_writemem_sound )
-		{ 0x0000, 0xd7ff, MWA_ROM },					/* ROM */
-		{ 0xd800, 0xd800, splash_adpcm_data_w },		/* ADPCM data for the MSM5205 chip */
-	//	{ 0xe000, 0xe000, MWA_NOP },					/* ??? */
-		{ 0xf000, 0xf000, YM3812_control_port_0_w },	/* YM3812 */
-		{ 0xf001, 0xf001, YM3812_write_port_0_w },		/* YM3812 */
-		{ 0xf800, 0xffff, MWA_RAM },					/* RAM */
-	MEMORY_END
+	public static Memory_WriteAddress splash_writemem_sound[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0xd7ff, MWA_ROM ),					/* ROM */
+		new Memory_WriteAddress( 0xd800, 0xd800, splash_adpcm_data_w ),		/* ADPCM data for the MSM5205 chip */
+	//	new Memory_WriteAddress( 0xe000, 0xe000, MWA_NOP ),					/* ??? */
+		new Memory_WriteAddress( 0xf000, 0xf000, YM3812_control_port_0_w ),	/* YM3812 */
+		new Memory_WriteAddress( 0xf001, 0xf001, YM3812_write_port_0_w ),		/* YM3812 */
+		new Memory_WriteAddress( 0xf800, 0xffff, MWA_RAM ),					/* RAM */
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	
 	INPUT_PORTS_START( splash )

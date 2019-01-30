@@ -57,16 +57,18 @@ public class dominos
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( writemem )
-		{ 0x0000, 0x03ff, MWA_RAM },
-		{ 0x0400, 0x07ff, videoram_w, &videoram, &videoram_size }, /* DISPLAY */
-		{ 0x0c00, 0x0c0f, dominos_attract_w }, /* ATTRACT */
-		{ 0x0c10, 0x0c1f, dominos_tumble_w }, /* TUMBLE */
-		{ 0x0c30, 0x0c3f, dominos_lamp2_w }, /* LAMP2 */
-		{ 0x0c40, 0x0c4f, dominos_lamp1_w }, /* LAMP1 */
-		{ 0x0c80, 0x0cff, MWA_NOP }, /* TIMER RESET */
-		{ 0x3000, 0x3fff, MWA_ROM }, /* ROM1-ROM2 */
-	MEMORY_END
+	public static Memory_WriteAddress writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0x03ff, MWA_RAM ),
+		new Memory_WriteAddress( 0x0400, 0x07ff, videoram_w, &videoram, &videoram_size ), /* DISPLAY */
+		new Memory_WriteAddress( 0x0c00, 0x0c0f, dominos_attract_w ), /* ATTRACT */
+		new Memory_WriteAddress( 0x0c10, 0x0c1f, dominos_tumble_w ), /* TUMBLE */
+		new Memory_WriteAddress( 0x0c30, 0x0c3f, dominos_lamp2_w ), /* LAMP2 */
+		new Memory_WriteAddress( 0x0c40, 0x0c4f, dominos_lamp1_w ), /* LAMP1 */
+		new Memory_WriteAddress( 0x0c80, 0x0cff, MWA_NOP ), /* TIMER RESET */
+		new Memory_WriteAddress( 0x3000, 0x3fff, MWA_ROM ), /* ROM1-ROM2 */
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	INPUT_PORTS_START( dominos )
 			PORT_START		/* DSW - fake port, gets mapped to Dominos ports */

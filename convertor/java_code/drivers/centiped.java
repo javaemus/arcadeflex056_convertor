@@ -294,56 +294,62 @@ public class centiped
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( centiped_writemem )
-		{ 0x0000, 0x03ff, MWA_RAM },
-		{ 0x0400, 0x07bf, videoram_w, &videoram, &videoram_size },
-		{ 0x07c0, 0x07ff, MWA_RAM, &spriteram },
-		{ 0x1000, 0x100f, pokey1_w },
-		{ 0x1400, 0x140f, centiped_paletteram_w, &paletteram },
-		{ 0x1600, 0x163f, atari_vg_earom_w },
-		{ 0x1680, 0x1680, atari_vg_earom_ctrl_w },
-		{ 0x1800, 0x1800, MWA_NOP },	/* IRQ acknowldege */
-		{ 0x1c00, 0x1c02, centiped_coin_counter_w },
-		{ 0x1c03, 0x1c04, centiped_led_w },
-		{ 0x1c07, 0x1c07, flip_screen_w },
-		{ 0x2000, 0x2000, watchdog_reset_w },
-		{ 0x2000, 0x3fff, MWA_ROM },
-	MEMORY_END
+	public static Memory_WriteAddress centiped_writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0x03ff, MWA_RAM ),
+		new Memory_WriteAddress( 0x0400, 0x07bf, videoram_w, &videoram, &videoram_size ),
+		new Memory_WriteAddress( 0x07c0, 0x07ff, MWA_RAM, &spriteram ),
+		new Memory_WriteAddress( 0x1000, 0x100f, pokey1_w ),
+		new Memory_WriteAddress( 0x1400, 0x140f, centiped_paletteram_w, &paletteram ),
+		new Memory_WriteAddress( 0x1600, 0x163f, atari_vg_earom_w ),
+		new Memory_WriteAddress( 0x1680, 0x1680, atari_vg_earom_ctrl_w ),
+		new Memory_WriteAddress( 0x1800, 0x1800, MWA_NOP ),	/* IRQ acknowldege */
+		new Memory_WriteAddress( 0x1c00, 0x1c02, centiped_coin_counter_w ),
+		new Memory_WriteAddress( 0x1c03, 0x1c04, centiped_led_w ),
+		new Memory_WriteAddress( 0x1c07, 0x1c07, flip_screen_w ),
+		new Memory_WriteAddress( 0x2000, 0x2000, watchdog_reset_w ),
+		new Memory_WriteAddress( 0x2000, 0x3fff, MWA_ROM ),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	/* Same as the regular one, except it uses an AY8910 */
-	static MEMORY_WRITE_START( centipdb_writemem )
-		{ 0x0000, 0x03ff, MWA_RAM },
-		{ 0x0400, 0x07bf, videoram_w, &videoram, &videoram_size },
-		{ 0x07c0, 0x07ff, MWA_RAM, &spriteram },
-		{ 0x1000, 0x100f, centipdb_AY8910_w },
-		{ 0x1400, 0x140f, centiped_paletteram_w, &paletteram },
-		{ 0x1600, 0x163f, atari_vg_earom_w },
-		{ 0x1680, 0x1680, atari_vg_earom_ctrl_w },
-		{ 0x1800, 0x1800, MWA_NOP },	/* IRQ acknowldege */
-		{ 0x1c00, 0x1c02, centiped_coin_counter_w },
-		{ 0x1c03, 0x1c04, centiped_led_w },
-		{ 0x1c07, 0x1c07, flip_screen_w },
-		{ 0x2000, 0x2000, watchdog_reset_w },
-		{ 0x2000, 0x3fff, MWA_ROM },
-	MEMORY_END
+	public static Memory_WriteAddress centipdb_writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0x03ff, MWA_RAM ),
+		new Memory_WriteAddress( 0x0400, 0x07bf, videoram_w, &videoram, &videoram_size ),
+		new Memory_WriteAddress( 0x07c0, 0x07ff, MWA_RAM, &spriteram ),
+		new Memory_WriteAddress( 0x1000, 0x100f, centipdb_AY8910_w ),
+		new Memory_WriteAddress( 0x1400, 0x140f, centiped_paletteram_w, &paletteram ),
+		new Memory_WriteAddress( 0x1600, 0x163f, atari_vg_earom_w ),
+		new Memory_WriteAddress( 0x1680, 0x1680, atari_vg_earom_ctrl_w ),
+		new Memory_WriteAddress( 0x1800, 0x1800, MWA_NOP ),	/* IRQ acknowldege */
+		new Memory_WriteAddress( 0x1c00, 0x1c02, centiped_coin_counter_w ),
+		new Memory_WriteAddress( 0x1c03, 0x1c04, centiped_led_w ),
+		new Memory_WriteAddress( 0x1c07, 0x1c07, flip_screen_w ),
+		new Memory_WriteAddress( 0x2000, 0x2000, watchdog_reset_w ),
+		new Memory_WriteAddress( 0x2000, 0x3fff, MWA_ROM ),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
-	static MEMORY_WRITE_START( centipb2_writemem )
-		{ 0x0000, 0x03ff, MWA_RAM },
-		{ 0x0400, 0x07bf, videoram_w, &videoram, &videoram_size },
-		{ 0x07c0, 0x07ff, MWA_RAM, &spriteram },
-		{ 0x1000, 0x1000, AY8910_write_port_0_w },
-		{ 0x1001, 0x1001, AY8910_control_port_0_w },
-		{ 0x1400, 0x140f, centiped_paletteram_w, &paletteram },
-		{ 0x1600, 0x163f, atari_vg_earom_w },
-		{ 0x1680, 0x1680, atari_vg_earom_ctrl_w },
-		{ 0x1800, 0x1800, MWA_NOP },	/* IRQ acknowldege */
-		{ 0x1c00, 0x1c02, centiped_coin_counter_w },
-		{ 0x1c03, 0x1c04, centiped_led_w },
-		{ 0x1c07, 0x1c07, flip_screen_w },
-		{ 0x2000, 0x2000, watchdog_reset_w },
-		{ 0x2000, 0x3fff, MWA_ROM },
-		{ 0x6000, 0x67ff, MWA_ROM },
-	MEMORY_END
+	public static Memory_WriteAddress centipb2_writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0x03ff, MWA_RAM ),
+		new Memory_WriteAddress( 0x0400, 0x07bf, videoram_w, &videoram, &videoram_size ),
+		new Memory_WriteAddress( 0x07c0, 0x07ff, MWA_RAM, &spriteram ),
+		new Memory_WriteAddress( 0x1000, 0x1000, AY8910_write_port_0_w ),
+		new Memory_WriteAddress( 0x1001, 0x1001, AY8910_control_port_0_w ),
+		new Memory_WriteAddress( 0x1400, 0x140f, centiped_paletteram_w, &paletteram ),
+		new Memory_WriteAddress( 0x1600, 0x163f, atari_vg_earom_w ),
+		new Memory_WriteAddress( 0x1680, 0x1680, atari_vg_earom_ctrl_w ),
+		new Memory_WriteAddress( 0x1800, 0x1800, MWA_NOP ),	/* IRQ acknowldege */
+		new Memory_WriteAddress( 0x1c00, 0x1c02, centiped_coin_counter_w ),
+		new Memory_WriteAddress( 0x1c03, 0x1c04, centiped_led_w ),
+		new Memory_WriteAddress( 0x1c07, 0x1c07, flip_screen_w ),
+		new Memory_WriteAddress( 0x2000, 0x2000, watchdog_reset_w ),
+		new Memory_WriteAddress( 0x2000, 0x3fff, MWA_ROM ),
+		new Memory_WriteAddress( 0x6000, 0x67ff, MWA_ROM ),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	
 	/* The input ports are identical for the real one and the bootleg one, except

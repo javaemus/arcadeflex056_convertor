@@ -59,18 +59,20 @@ public class gotya
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( writemem )
-		{ 0x0000, 0x3fff, MWA_ROM },
-		{ 0x5000, 0x5fff, MWA_RAM },
-		{ 0x6004, 0x6004, gotya_video_control_w },
-		{ 0x6005, 0x6005, gotya_soundlatch_w },
-		{ 0x6006, 0x6006, MWA_RAM, &gotya_scroll },
-		{ 0x6007, 0x6007, watchdog_reset_w },
-		{ 0xc000, 0xc7ff, videoram_w, &videoram, &videoram_size },
-		{ 0xc800, 0xcfff, colorram_w, &colorram },
-		{ 0xd000, 0xd3df, MWA_RAM, &gotya_foregroundram },
-		{ 0xd3e0, 0xd3ff, MWA_RAM, &spriteram },
-	MEMORY_END
+	public static Memory_WriteAddress writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0x3fff, MWA_ROM ),
+		new Memory_WriteAddress( 0x5000, 0x5fff, MWA_RAM ),
+		new Memory_WriteAddress( 0x6004, 0x6004, gotya_video_control_w ),
+		new Memory_WriteAddress( 0x6005, 0x6005, gotya_soundlatch_w ),
+		new Memory_WriteAddress( 0x6006, 0x6006, MWA_RAM, &gotya_scroll ),
+		new Memory_WriteAddress( 0x6007, 0x6007, watchdog_reset_w ),
+		new Memory_WriteAddress( 0xc000, 0xc7ff, videoram_w, &videoram, &videoram_size ),
+		new Memory_WriteAddress( 0xc800, 0xcfff, colorram_w, &colorram ),
+		new Memory_WriteAddress( 0xd000, 0xd3df, MWA_RAM, &gotya_foregroundram ),
+		new Memory_WriteAddress( 0xd3e0, 0xd3ff, MWA_RAM, &spriteram ),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	
 	INPUT_PORTS_START( gotya )

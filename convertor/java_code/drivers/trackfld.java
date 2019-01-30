@@ -166,25 +166,27 @@ public class trackfld
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( writemem )
-		{ 0x1000, 0x1000, watchdog_reset_w },
-		{ 0x1080, 0x1080, flip_screen_w },
-		{ 0x1081, 0x1081, konami_sh_irqtrigger_w },  /* cause interrupt on audio CPU */
-		{ 0x1083, 0x1083, MWA_NOP },  /* Coin counter 1 */
-		{ 0x1084, 0x1084, MWA_NOP },  /* Coin counter 2 */
-		{ 0x1087, 0x1087, interrupt_enable_w },
-		{ 0x1100, 0x1100, soundlatch_w },
-		{ 0x2800, 0x2fff, MWA_RAM },
-		{ 0x1800, 0x183f, MWA_RAM, &spriteram_2 },
-		{ 0x1840, 0x185f, MWA_RAM, &trackfld_scroll },  /* Scroll amount */
-		{ 0x1C00, 0x1c3f, MWA_RAM, &spriteram, &spriteram_size },
-		{ 0x1C40, 0x1C5f, MWA_RAM, &trackfld_scroll2 },  /* Scroll amount */
-		{ 0x2800, 0x2bff, MWA_RAM },
-		{ 0x2c00, 0x2fff, MWA_RAM, &nvram, &nvram_size },
-		{ 0x3000, 0x37ff, videoram_w, &videoram, &videoram_size },
-		{ 0x3800, 0x3fff, colorram_w, &colorram },
-		{ 0x6000, 0xffff, MWA_ROM },
-	MEMORY_END
+	public static Memory_WriteAddress writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x1000, 0x1000, watchdog_reset_w ),
+		new Memory_WriteAddress( 0x1080, 0x1080, flip_screen_w ),
+		new Memory_WriteAddress( 0x1081, 0x1081, konami_sh_irqtrigger_w ),  /* cause interrupt on audio CPU */
+		new Memory_WriteAddress( 0x1083, 0x1083, MWA_NOP ),  /* Coin counter 1 */
+		new Memory_WriteAddress( 0x1084, 0x1084, MWA_NOP ),  /* Coin counter 2 */
+		new Memory_WriteAddress( 0x1087, 0x1087, interrupt_enable_w ),
+		new Memory_WriteAddress( 0x1100, 0x1100, soundlatch_w ),
+		new Memory_WriteAddress( 0x2800, 0x2fff, MWA_RAM ),
+		new Memory_WriteAddress( 0x1800, 0x183f, MWA_RAM, &spriteram_2 ),
+		new Memory_WriteAddress( 0x1840, 0x185f, MWA_RAM, &trackfld_scroll ),  /* Scroll amount */
+		new Memory_WriteAddress( 0x1C00, 0x1c3f, MWA_RAM, &spriteram, &spriteram_size ),
+		new Memory_WriteAddress( 0x1C40, 0x1C5f, MWA_RAM, &trackfld_scroll2 ),  /* Scroll amount */
+		new Memory_WriteAddress( 0x2800, 0x2bff, MWA_RAM ),
+		new Memory_WriteAddress( 0x2c00, 0x2fff, MWA_RAM, &nvram, &nvram_size ),
+		new Memory_WriteAddress( 0x3000, 0x37ff, videoram_w, &videoram, &videoram_size ),
+		new Memory_WriteAddress( 0x3800, 0x3fff, colorram_w, &colorram ),
+		new Memory_WriteAddress( 0x6000, 0xffff, MWA_ROM ),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	public static Memory_ReadAddress sound_readmem[]={
 		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
@@ -196,21 +198,23 @@ public class trackfld
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( sound_writemem )
-		{ 0x0000, 0x3fff, MWA_ROM },
-		{ 0x4000, 0x43ff, MWA_RAM },
-		{ 0xa000, 0xa000, SN76496_0_w },	/* Loads the snd command into the snd latch */
-		{ 0xc000, 0xc000, MWA_NOP },		/* This address triggers the SN chip to read the data port. */
-		{ 0xe000, 0xe000, DAC_0_data_w },
+	public static Memory_WriteAddress sound_writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0x3fff, MWA_ROM ),
+		new Memory_WriteAddress( 0x4000, 0x43ff, MWA_RAM ),
+		new Memory_WriteAddress( 0xa000, 0xa000, SN76496_0_w ),	/* Loads the snd command into the snd latch */
+		new Memory_WriteAddress( 0xc000, 0xc000, MWA_NOP ),		/* This address triggers the SN chip to read the data port. */
+		new Memory_WriteAddress( 0xe000, 0xe000, DAC_0_data_w ),
 	/* There are lots more addresses which are used for setting a two bit volume
 		controls for speech and music
 	
 		Currently these are un-supported by Mame
 	*/
-		{ 0xe001, 0xe001, MWA_NOP }, /* watch dog ? */
-		{ 0xe004, 0xe004, VLM5030_data_w },
-		{ 0xe000, 0xefff, trackfld_sound_w, }, /* e003 speech control */
-	MEMORY_END
+		new Memory_WriteAddress( 0xe001, 0xe001, MWA_NOP ), /* watch dog ? */
+		new Memory_WriteAddress( 0xe004, 0xe004, VLM5030_data_w ),
+		new Memory_WriteAddress( 0xe000, 0xefff, trackfld_sound_w, ), /* e003 speech control */
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	public static Memory_ReadAddress hyprolyb_sound_readmem[]={
 		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
@@ -222,21 +226,23 @@ public class trackfld
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( hyprolyb_sound_writemem )
-		{ 0x0000, 0x3fff, MWA_ROM },
-		{ 0x4000, 0x43ff, MWA_RAM },
-		{ 0xa000, 0xa000, SN76496_0_w },	/* Loads the snd command into the snd latch */
-		{ 0xc000, 0xc000, MWA_NOP },		/* This address triggers the SN chip to read the data port. */
-		{ 0xe000, 0xe000, DAC_0_data_w },
+	public static Memory_WriteAddress hyprolyb_sound_writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0x3fff, MWA_ROM ),
+		new Memory_WriteAddress( 0x4000, 0x43ff, MWA_RAM ),
+		new Memory_WriteAddress( 0xa000, 0xa000, SN76496_0_w ),	/* Loads the snd command into the snd latch */
+		new Memory_WriteAddress( 0xc000, 0xc000, MWA_NOP ),		/* This address triggers the SN chip to read the data port. */
+		new Memory_WriteAddress( 0xe000, 0xe000, DAC_0_data_w ),
 	/* There are lots more addresses which are used for setting a two bit volume
 		controls for speech and music
 	
 		Currently these are un-supported by Mame
 	*/
-		{ 0xe001, 0xe001, MWA_NOP }, /* watch dog ? */
-		{ 0xe004, 0xe004, hyprolyb_ADPCM_data_w },
-		{ 0xe000, 0xefff, MWA_NOP },
-	MEMORY_END
+		new Memory_WriteAddress( 0xe001, 0xe001, MWA_NOP ), /* watch dog ? */
+		new Memory_WriteAddress( 0xe004, 0xe004, hyprolyb_ADPCM_data_w ),
+		new Memory_WriteAddress( 0xe000, 0xefff, MWA_NOP ),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	
 	

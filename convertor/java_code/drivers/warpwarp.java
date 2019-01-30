@@ -114,20 +114,22 @@ public class warpwarp
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( bombbee_writemem )
-		{ 0x0000, 0x1fff, MWA_ROM },
-		{ 0x2000, 0x23ff, MWA_RAM },
-		{ 0x4000, 0x43ff, videoram_w, &videoram, &videoram_size },
-		{ 0x4400, 0x47ff, colorram_w, &colorram },
-		{ 0x4800, 0x4fff, MWA_ROM },
-		{ 0x6000, 0x6001, MWA_RAM, &warpwarp_bulletsram },
-		{ 0x6002, 0x6002, warpwarp_sound_w },
-		{ 0x6003, 0x6003, watchdog_reset_w },
-		{ 0x6010, 0x6010, warpwarp_music1_w },
-		{ 0x6020, 0x6020, warpwarp_music2_w },
-		{ 0x6030, 0x6032, warpwarp_leds_w },
-		{ 0x6035, 0x6035, warpwarp_coin_counter_w },
-	MEMORY_END
+	public static Memory_WriteAddress bombbee_writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0x1fff, MWA_ROM ),
+		new Memory_WriteAddress( 0x2000, 0x23ff, MWA_RAM ),
+		new Memory_WriteAddress( 0x4000, 0x43ff, videoram_w, &videoram, &videoram_size ),
+		new Memory_WriteAddress( 0x4400, 0x47ff, colorram_w, &colorram ),
+		new Memory_WriteAddress( 0x4800, 0x4fff, MWA_ROM ),
+		new Memory_WriteAddress( 0x6000, 0x6001, MWA_RAM, &warpwarp_bulletsram ),
+		new Memory_WriteAddress( 0x6002, 0x6002, warpwarp_sound_w ),
+		new Memory_WriteAddress( 0x6003, 0x6003, watchdog_reset_w ),
+		new Memory_WriteAddress( 0x6010, 0x6010, warpwarp_music1_w ),
+		new Memory_WriteAddress( 0x6020, 0x6020, warpwarp_music2_w ),
+		new Memory_WriteAddress( 0x6030, 0x6032, warpwarp_leds_w ),
+		new Memory_WriteAddress( 0x6035, 0x6035, warpwarp_coin_counter_w ),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	public static Memory_ReadAddress warpwarp_readmem[]={
 		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
@@ -141,20 +143,22 @@ public class warpwarp
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( warpwarp_writemem )
-		{ 0x0000, 0x37ff, MWA_ROM },
-		{ 0x4000, 0x43ff, videoram_w, &videoram, &videoram_size },
-		{ 0x4400, 0x47ff, colorram_w, &colorram },
-		{ 0x4800, 0x4fff, MWA_ROM },
-		{ 0x8000, 0x83ff, MWA_RAM },
-		{ 0xc000, 0xc001, MWA_RAM, &warpwarp_bulletsram },
-		{ 0xc002, 0xc002, warpwarp_sound_w },
-		{ 0xc003, 0xc003, watchdog_reset_w },
-		{ 0xc010, 0xc010, warpwarp_music1_w },
-		{ 0xc020, 0xc020, warpwarp_music2_w },
-		{ 0xc030, 0xc032, warpwarp_leds_w },
-		{ 0xc035, 0xc035, warpwarp_coin_counter_w },
-	MEMORY_END
+	public static Memory_WriteAddress warpwarp_writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0x37ff, MWA_ROM ),
+		new Memory_WriteAddress( 0x4000, 0x43ff, videoram_w, &videoram, &videoram_size ),
+		new Memory_WriteAddress( 0x4400, 0x47ff, colorram_w, &colorram ),
+		new Memory_WriteAddress( 0x4800, 0x4fff, MWA_ROM ),
+		new Memory_WriteAddress( 0x8000, 0x83ff, MWA_RAM ),
+		new Memory_WriteAddress( 0xc000, 0xc001, MWA_RAM, &warpwarp_bulletsram ),
+		new Memory_WriteAddress( 0xc002, 0xc002, warpwarp_sound_w ),
+		new Memory_WriteAddress( 0xc003, 0xc003, watchdog_reset_w ),
+		new Memory_WriteAddress( 0xc010, 0xc010, warpwarp_music1_w ),
+		new Memory_WriteAddress( 0xc020, 0xc020, warpwarp_music2_w ),
+		new Memory_WriteAddress( 0xc030, 0xc032, warpwarp_leds_w ),
+		new Memory_WriteAddress( 0xc035, 0xc035, warpwarp_coin_counter_w ),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	
 	

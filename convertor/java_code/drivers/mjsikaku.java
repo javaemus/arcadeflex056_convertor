@@ -231,10 +231,12 @@ public class mjsikaku
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( writemem_mjsikaku )
-		{ 0x0000, 0xf7ff, MWA_ROM },
-		{ 0xf800, 0xffff, MWA_RAM, &nb1413m3_nvram, &nb1413m3_nvram_size },
-	MEMORY_END
+	public static Memory_WriteAddress writemem_mjsikaku[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0xf7ff, MWA_ROM ),
+		new Memory_WriteAddress( 0xf800, 0xffff, MWA_RAM, &nb1413m3_nvram, &nb1413m3_nvram_size ),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	public static Memory_ReadAddress readmem_secolove[]={
 		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
@@ -243,10 +245,12 @@ public class mjsikaku
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( writemem_secolove )
-		{ 0x0000, 0xefff, MWA_ROM },
-		{ 0xf000, 0xf7ff, MWA_RAM, &nb1413m3_nvram, &nb1413m3_nvram_size },
-	MEMORY_END
+	public static Memory_WriteAddress writemem_secolove[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0xefff, MWA_ROM ),
+		new Memory_WriteAddress( 0xf000, 0xf7ff, MWA_RAM, &nb1413m3_nvram, &nb1413m3_nvram_size ),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	public static Memory_ReadAddress readmem_ojousan[]={
 		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
@@ -256,11 +260,13 @@ public class mjsikaku
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( writemem_ojousan )
-		{ 0x0000, 0x6fff, MWA_ROM },
-		{ 0x7000, 0x7fff, MWA_RAM, &nb1413m3_nvram, &nb1413m3_nvram_size },
-		{ 0x8000, 0xffff, MWA_ROM },
-	MEMORY_END
+	public static Memory_WriteAddress writemem_ojousan[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0x6fff, MWA_ROM ),
+		new Memory_WriteAddress( 0x7000, 0x7fff, MWA_RAM, &nb1413m3_nvram, &nb1413m3_nvram_size ),
+		new Memory_WriteAddress( 0x8000, 0xffff, MWA_ROM ),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	
 	static READ_HANDLER( io_mjsikaku_r )

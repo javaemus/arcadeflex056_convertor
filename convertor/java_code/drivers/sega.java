@@ -175,11 +175,13 @@ public class sega
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( writemem )
-		{ 0x0000, 0xffff, sega_w, &sega_mem },
-		{ 0xe000, 0xefff, MWA_RAM, &vectorram, &vectorram_size },	/* handled by the above, */
+	public static Memory_WriteAddress writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0xffff, sega_w, &sega_mem ),
+		new Memory_WriteAddress( 0xe000, 0xefff, MWA_RAM, &vectorram, &vectorram_size ),	/* handled by the above, */
 													/* here only to initialize the pointer */
-	MEMORY_END
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static PORT_READ_START( spacfury_readport )
 		{ 0x3f, 0x3f, sega_sh_r },

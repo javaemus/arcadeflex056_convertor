@@ -142,16 +142,18 @@ public class mole
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( moleattack_writemem )
-		{ 0x0000, 0x03ff, MWA_RAM },
-		{ 0x5000, 0x7fff, MWA_ROM },
-		{ 0x8000, 0x83ff, moleattack_videoram_w },
-		{ 0x8400, 0x8400, moleattack_tilesetselector_w},
-		{ 0x8c00, 0x8c00, AY8910_write_port_0_w },
-		{ 0x8c01, 0x8c01, AY8910_control_port_0_w },
-		{ 0x8d00, 0x8d00, MWA_NOP }, /* watchdog? */
-		{ 0xd000, 0xffff, MWA_ROM },
-	MEMORY_END
+	public static Memory_WriteAddress moleattack_writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0x03ff, MWA_RAM ),
+		new Memory_WriteAddress( 0x5000, 0x7fff, MWA_ROM ),
+		new Memory_WriteAddress( 0x8000, 0x83ff, moleattack_videoram_w ),
+		new Memory_WriteAddress( 0x8400, 0x8400, moleattack_tilesetselector_w),
+		new Memory_WriteAddress( 0x8c00, 0x8c00, AY8910_write_port_0_w ),
+		new Memory_WriteAddress( 0x8c01, 0x8c01, AY8910_control_port_0_w ),
+		new Memory_WriteAddress( 0x8d00, 0x8d00, MWA_NOP ), /* watchdog? */
+		new Memory_WriteAddress( 0xd000, 0xffff, MWA_ROM ),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	const struct MachineDriver machine_driver_mole =
 	{

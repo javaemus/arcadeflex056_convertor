@@ -67,20 +67,22 @@ public class battlnts
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( battlnts_writemem )
-		{ 0x0000, 0x1fff, K007342_w },				/* Color RAM + Video RAM */
-		{ 0x2000, 0x21ff, K007420_w },				/* Sprite RAM */
-		{ 0x2200, 0x23ff, K007342_scroll_w },		/* Scroll RAM */
-		{ 0x2400, 0x24ff, paletteram_xBBBBBGGGGGRRRRR_swap_w, &paletteram },/* palette */
-		{ 0x2600, 0x2607, K007342_vreg_w }, 		/* Video Registers */
-		{ 0x2e08, 0x2e08, battlnts_bankswitch_w },	/* bankswitch control */
-		{ 0x2e0c, 0x2e0c, battlnts_spritebank_w },	/* sprite bank select */
-		{ 0x2e10, 0x2e10, watchdog_reset_w },		/* watchdog reset */
-		{ 0x2e14, 0x2e14, soundlatch_w },			/* sound code # */
-		{ 0x2e18, 0x2e18, battlnts_sh_irqtrigger_w },/* cause interrupt on audio CPU */
-		{ 0x4000, 0x7fff, MWA_ROM },				/* banked ROM */
-		{ 0x8000, 0xffff, MWA_ROM },				/* ROM 777e02.bin */
-	MEMORY_END
+	public static Memory_WriteAddress battlnts_writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0x1fff, K007342_w ),				/* Color RAM + Video RAM */
+		new Memory_WriteAddress( 0x2000, 0x21ff, K007420_w ),				/* Sprite RAM */
+		new Memory_WriteAddress( 0x2200, 0x23ff, K007342_scroll_w ),		/* Scroll RAM */
+		new Memory_WriteAddress( 0x2400, 0x24ff, paletteram_xBBBBBGGGGGRRRRR_swap_w, &paletteram ),/* palette */
+		new Memory_WriteAddress( 0x2600, 0x2607, K007342_vreg_w ), 		/* Video Registers */
+		new Memory_WriteAddress( 0x2e08, 0x2e08, battlnts_bankswitch_w ),	/* bankswitch control */
+		new Memory_WriteAddress( 0x2e0c, 0x2e0c, battlnts_spritebank_w ),	/* sprite bank select */
+		new Memory_WriteAddress( 0x2e10, 0x2e10, watchdog_reset_w ),		/* watchdog reset */
+		new Memory_WriteAddress( 0x2e14, 0x2e14, soundlatch_w ),			/* sound code # */
+		new Memory_WriteAddress( 0x2e18, 0x2e18, battlnts_sh_irqtrigger_w ),/* cause interrupt on audio CPU */
+		new Memory_WriteAddress( 0x4000, 0x7fff, MWA_ROM ),				/* banked ROM */
+		new Memory_WriteAddress( 0x8000, 0xffff, MWA_ROM ),				/* ROM 777e02.bin */
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	public static Memory_ReadAddress battlnts_readmem_sound[]={
 		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
@@ -92,14 +94,16 @@ public class battlnts
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( battlnts_writemem_sound )
-		{ 0x0000, 0x7fff, MWA_ROM },					/* ROM 777c01.rom */
-		{ 0x8000, 0x87ff, MWA_RAM },					/* RAM */
-		{ 0xa000, 0xa000, YM3812_control_port_0_w },	/* YM3812 (chip 1) */
-		{ 0xa001, 0xa001, YM3812_write_port_0_w },		/* YM3812 (chip 1) */
-		{ 0xc000, 0xc000, YM3812_control_port_1_w },	/* YM3812 (chip 2) */
-		{ 0xc001, 0xc001, YM3812_write_port_1_w },		/* YM3812 (chip 2) */
-	MEMORY_END
+	public static Memory_WriteAddress battlnts_writemem_sound[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0x7fff, MWA_ROM ),					/* ROM 777c01.rom */
+		new Memory_WriteAddress( 0x8000, 0x87ff, MWA_RAM ),					/* RAM */
+		new Memory_WriteAddress( 0xa000, 0xa000, YM3812_control_port_0_w ),	/* YM3812 (chip 1) */
+		new Memory_WriteAddress( 0xa001, 0xa001, YM3812_write_port_0_w ),		/* YM3812 (chip 1) */
+		new Memory_WriteAddress( 0xc000, 0xc000, YM3812_control_port_1_w ),	/* YM3812 (chip 2) */
+		new Memory_WriteAddress( 0xc001, 0xc001, YM3812_write_port_1_w ),		/* YM3812 (chip 2) */
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	/***************************************************************************
 	

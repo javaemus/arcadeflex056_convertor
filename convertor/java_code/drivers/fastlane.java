@@ -108,20 +108,22 @@ public class fastlane
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( fastlane_writemem )
-		{ 0x0000, 0x005f, k007121_registers_w, &fastlane_k007121_regs },/* 007121 registers */
-		{ 0x0b00, 0x0b00, watchdog_reset_w },		/* watchdog reset */
-		{ 0x0c00, 0x0c00, fastlane_bankswitch_w },	/* bankswitch control */
-		{ 0x0d00, 0x0d0d, fastlane_K007232_write_port_0_w },	/* 007232 registers (chip 1) */
-		{ 0x0e00, 0x0e0d, fastlane_K007232_write_port_1_w },	/* 007232 registers (chip 2) */
-		{ 0x0f00, 0x0f1f, K051733_w },				/* 051733 (protection) */
-		{ 0x1000, 0x17ff, paletteram_xBBBBBGGGGGRRRRR_swap_w, &paletteram },/* palette RAM */
-		{ 0x1800, 0x1fff, MWA_RAM },				/* Work RAM */
-		{ 0x2000, 0x27ff, fastlane_vram1_w, &fastlane_videoram1 },
-		{ 0x2800, 0x2fff, fastlane_vram2_w, &fastlane_videoram2 },
-		{ 0x3000, 0x3fff, MWA_RAM, &spriteram },	/* Sprite RAM */
-		{ 0x4000, 0xffff, MWA_ROM },				/* ROM/banked ROM */
-	MEMORY_END
+	public static Memory_WriteAddress fastlane_writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0x005f, k007121_registers_w, &fastlane_k007121_regs ),/* 007121 registers */
+		new Memory_WriteAddress( 0x0b00, 0x0b00, watchdog_reset_w ),		/* watchdog reset */
+		new Memory_WriteAddress( 0x0c00, 0x0c00, fastlane_bankswitch_w ),	/* bankswitch control */
+		new Memory_WriteAddress( 0x0d00, 0x0d0d, fastlane_K007232_write_port_0_w ),	/* 007232 registers (chip 1) */
+		new Memory_WriteAddress( 0x0e00, 0x0e0d, fastlane_K007232_write_port_1_w ),	/* 007232 registers (chip 2) */
+		new Memory_WriteAddress( 0x0f00, 0x0f1f, K051733_w ),				/* 051733 (protection) */
+		new Memory_WriteAddress( 0x1000, 0x17ff, paletteram_xBBBBBGGGGGRRRRR_swap_w, &paletteram ),/* palette RAM */
+		new Memory_WriteAddress( 0x1800, 0x1fff, MWA_RAM ),				/* Work RAM */
+		new Memory_WriteAddress( 0x2000, 0x27ff, fastlane_vram1_w, &fastlane_videoram1 ),
+		new Memory_WriteAddress( 0x2800, 0x2fff, fastlane_vram2_w, &fastlane_videoram2 ),
+		new Memory_WriteAddress( 0x3000, 0x3fff, MWA_RAM, &spriteram ),	/* Sprite RAM */
+		new Memory_WriteAddress( 0x4000, 0xffff, MWA_ROM ),				/* ROM/banked ROM */
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	/***************************************************************************
 	

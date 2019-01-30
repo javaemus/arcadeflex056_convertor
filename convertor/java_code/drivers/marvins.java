@@ -136,15 +136,17 @@ public class marvins
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( writemem_sound )
-		{ 0x0000, 0x3fff, MWA_ROM, &namco_wavedata },	/* silly hack - this shouldn't be here */
-		{ 0x8000, 0x8000, AY8910_control_port_0_w },
-		{ 0x8001, 0x8001, AY8910_write_port_0_w },
-		{ 0x8002, 0x8007, snkwave_w },
-		{ 0x8008, 0x8008, AY8910_control_port_1_w },
-		{ 0x8009, 0x8009, AY8910_write_port_1_w },
-		{ 0xe000, 0xe7ff, MWA_RAM },
-	MEMORY_END
+	public static Memory_WriteAddress writemem_sound[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0x3fff, MWA_ROM, &namco_wavedata ),	/* silly hack - this shouldn't be here */
+		new Memory_WriteAddress( 0x8000, 0x8000, AY8910_control_port_0_w ),
+		new Memory_WriteAddress( 0x8001, 0x8001, AY8910_write_port_0_w ),
+		new Memory_WriteAddress( 0x8002, 0x8007, snkwave_w ),
+		new Memory_WriteAddress( 0x8008, 0x8008, AY8910_control_port_1_w ),
+		new Memory_WriteAddress( 0x8009, 0x8009, AY8910_write_port_1_w ),
+		new Memory_WriteAddress( 0xe000, 0xe7ff, MWA_RAM ),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	/* this input port has one of its bits mapped to sound CPU status */
 	static READ_HANDLER( marvins_port_0_r ){
@@ -261,21 +263,23 @@ public class marvins
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( writemem_CPUA )
-		{ 0x6000, 0x6000, marvins_palette_bank_w }, // Marvin's Maze only
-		{ 0x0000, 0x7fff, MWA_ROM },
-		{ 0x8300, 0x8300, sound_command_w },
-		{ 0x8600, 0x8600, MWA_RAM },
-		{ 0x86f1, 0x86f1, MWA_RAM },
-		{ 0x8700, 0x8700, CPUA_int_enable_w },
-		{ 0xc000, 0xcfff, MWA_RAM, &spriteram },
-		{ 0xd000, 0xd7ff, marvins_background_ram_w, &videoram },
-		{ 0xd800, 0xdfff, MWA_RAM },
-		{ 0xe000, 0xe7ff, marvins_foreground_ram_w },
-		{ 0xe800, 0xefff, MWA_RAM },
-		{ 0xf000, 0xf3ff, marvins_text_ram_w },
-		{ 0xf400, 0xffff, MWA_RAM },
-	MEMORY_END
+	public static Memory_WriteAddress writemem_CPUA[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x6000, 0x6000, marvins_palette_bank_w ), // Marvin's Maze only
+		new Memory_WriteAddress( 0x0000, 0x7fff, MWA_ROM ),
+		new Memory_WriteAddress( 0x8300, 0x8300, sound_command_w ),
+		new Memory_WriteAddress( 0x8600, 0x8600, MWA_RAM ),
+		new Memory_WriteAddress( 0x86f1, 0x86f1, MWA_RAM ),
+		new Memory_WriteAddress( 0x8700, 0x8700, CPUA_int_enable_w ),
+		new Memory_WriteAddress( 0xc000, 0xcfff, MWA_RAM, &spriteram ),
+		new Memory_WriteAddress( 0xd000, 0xd7ff, marvins_background_ram_w, &videoram ),
+		new Memory_WriteAddress( 0xd800, 0xdfff, MWA_RAM ),
+		new Memory_WriteAddress( 0xe000, 0xe7ff, marvins_foreground_ram_w ),
+		new Memory_WriteAddress( 0xe800, 0xefff, MWA_RAM ),
+		new Memory_WriteAddress( 0xf000, 0xf3ff, marvins_text_ram_w ),
+		new Memory_WriteAddress( 0xf400, 0xffff, MWA_RAM ),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	public static Memory_ReadAddress marvins_readmem_CPUB[]={
 		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
@@ -288,14 +292,16 @@ public class marvins
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( marvins_writemem_CPUB )
-		{ 0x0000, 0x7fff, MWA_ROM },
-		{ 0x8700, 0x8700, CPUB_int_enable_w },
-		{ 0xc000, 0xcfff, marvins_spriteram_w },
-		{ 0xd000, 0xffff, marvins_background_ram_w },
-		{ 0xe000, 0xffff, marvins_foreground_ram_w },
-		{ 0xf000, 0xffff, marvins_text_ram_w },
-	MEMORY_END
+	public static Memory_WriteAddress marvins_writemem_CPUB[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0x7fff, MWA_ROM ),
+		new Memory_WriteAddress( 0x8700, 0x8700, CPUB_int_enable_w ),
+		new Memory_WriteAddress( 0xc000, 0xcfff, marvins_spriteram_w ),
+		new Memory_WriteAddress( 0xd000, 0xffff, marvins_background_ram_w ),
+		new Memory_WriteAddress( 0xe000, 0xffff, marvins_foreground_ram_w ),
+		new Memory_WriteAddress( 0xf000, 0xffff, marvins_text_ram_w ),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	public static Memory_ReadAddress madcrash_readmem_CPUB[]={
 		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
@@ -307,16 +313,18 @@ public class marvins
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( madcrash_writemem_CPUB )
-		{ 0x0000, 0x7fff, MWA_ROM },
-		{ 0x8700, 0x8700, CPUB_int_enable_w }, /* Vangaurd II */
-		{ 0x8000, 0x9fff, MWA_ROM }, /* extra ROM for Mad Crasher */
-		{ 0xa000, 0xa000, CPUB_int_enable_w }, /* Mad Crasher */
-		{ 0xc000, 0xcfff, marvins_foreground_ram_w },
-		{ 0xd000, 0xdfff, marvins_text_ram_w },
-		{ 0xe000, 0xefff, marvins_spriteram_w },
-		{ 0xf000, 0xffff, marvins_background_ram_w },
-	MEMORY_END
+	public static Memory_WriteAddress madcrash_writemem_CPUB[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0x7fff, MWA_ROM ),
+		new Memory_WriteAddress( 0x8700, 0x8700, CPUB_int_enable_w ), /* Vangaurd II */
+		new Memory_WriteAddress( 0x8000, 0x9fff, MWA_ROM ), /* extra ROM for Mad Crasher */
+		new Memory_WriteAddress( 0xa000, 0xa000, CPUB_int_enable_w ), /* Mad Crasher */
+		new Memory_WriteAddress( 0xc000, 0xcfff, marvins_foreground_ram_w ),
+		new Memory_WriteAddress( 0xd000, 0xdfff, marvins_text_ram_w ),
+		new Memory_WriteAddress( 0xe000, 0xefff, marvins_spriteram_w ),
+		new Memory_WriteAddress( 0xf000, 0xffff, marvins_background_ram_w ),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	
 	

@@ -152,14 +152,16 @@ public class zn
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( qsound_writemem )
-		{ 0x0000, 0xbfff, MWA_ROM },
-		{ 0xd000, 0xd000, qsound_data_h_w },
-		{ 0xd001, 0xd001, qsound_data_l_w },
-		{ 0xd002, 0xd002, qsound_cmd_w },
-		{ 0xd003, 0xd003, qsound_banksw_w },
-		{ 0xf000, 0xffff, MWA_RAM },
-	MEMORY_END
+	public static Memory_WriteAddress qsound_writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0xbfff, MWA_ROM ),
+		new Memory_WriteAddress( 0xd000, 0xd000, qsound_data_h_w ),
+		new Memory_WriteAddress( 0xd001, 0xd001, qsound_data_l_w ),
+		new Memory_WriteAddress( 0xd002, 0xd002, qsound_cmd_w ),
+		new Memory_WriteAddress( 0xd003, 0xd003, qsound_banksw_w ),
+		new Memory_WriteAddress( 0xf000, 0xffff, MWA_RAM ),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static PORT_READ_START( qsound_readport )
 		{ 0x00, 0x00, soundlatch_r },

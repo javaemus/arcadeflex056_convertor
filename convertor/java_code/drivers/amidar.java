@@ -76,24 +76,26 @@ public class amidar
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( writemem )
-		{ 0x0000, 0x7fff, MWA_ROM },
-		{ 0x8000, 0x87ff, MWA_RAM },
-		{ 0x9000, 0x93ff, MWA_RAM, &galaxian_videoram },
-		{ 0x9800, 0x983f, MWA_RAM, &galaxian_attributesram },
-		{ 0x9840, 0x985f, MWA_RAM, &galaxian_spriteram, &galaxian_spriteram_size },
-		{ 0x9860, 0x98ff, MWA_RAM },
-		{ 0xa000, 0xa000, scramble_background_red_w },
-		{ 0xa008, 0xa008, interrupt_enable_w },
-		{ 0xa010, 0xa010, galaxian_flip_screen_x_w },
-		{ 0xa018, 0xa018, galaxian_flip_screen_y_w },
-		{ 0xa020, 0xa020, scramble_background_green_w },
-		{ 0xa028, 0xa028, scramble_background_blue_w },
-		{ 0xa030, 0xa030, amidar_coina_w },
-		{ 0xa038, 0xa038, amidar_coinb_w },
-		{ 0xb000, 0xb03f, amidar_ppi8255_0_w },
-		{ 0xb800, 0xb83f, amidar_ppi8255_1_w },
-	MEMORY_END
+	public static Memory_WriteAddress writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0x7fff, MWA_ROM ),
+		new Memory_WriteAddress( 0x8000, 0x87ff, MWA_RAM ),
+		new Memory_WriteAddress( 0x9000, 0x93ff, MWA_RAM, &galaxian_videoram ),
+		new Memory_WriteAddress( 0x9800, 0x983f, MWA_RAM, &galaxian_attributesram ),
+		new Memory_WriteAddress( 0x9840, 0x985f, MWA_RAM, &galaxian_spriteram, &galaxian_spriteram_size ),
+		new Memory_WriteAddress( 0x9860, 0x98ff, MWA_RAM ),
+		new Memory_WriteAddress( 0xa000, 0xa000, scramble_background_red_w ),
+		new Memory_WriteAddress( 0xa008, 0xa008, interrupt_enable_w ),
+		new Memory_WriteAddress( 0xa010, 0xa010, galaxian_flip_screen_x_w ),
+		new Memory_WriteAddress( 0xa018, 0xa018, galaxian_flip_screen_y_w ),
+		new Memory_WriteAddress( 0xa020, 0xa020, scramble_background_green_w ),
+		new Memory_WriteAddress( 0xa028, 0xa028, scramble_background_blue_w ),
+		new Memory_WriteAddress( 0xa030, 0xa030, amidar_coina_w ),
+		new Memory_WriteAddress( 0xa038, 0xa038, amidar_coinb_w ),
+		new Memory_WriteAddress( 0xb000, 0xb03f, amidar_ppi8255_0_w ),
+		new Memory_WriteAddress( 0xb800, 0xb83f, amidar_ppi8255_1_w ),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	
 	

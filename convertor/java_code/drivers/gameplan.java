@@ -109,14 +109,16 @@ public class gameplan
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( writemem )
-	    { 0x0000, 0x03ff, MWA_RAM },
-	    { 0x2000, 0x200f, gameplan_video_w },		/* VIA 1 */
-	    { 0x2800, 0x280f, gameplan_port_select_w },	/* VIA 2 */
-	    { 0x3000, 0x300f, gameplan_sound_w },       /* VIA 3 */
-	    { 0x9000, 0xffff, MWA_ROM },
+	public static Memory_WriteAddress writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+	    new Memory_WriteAddress( 0x0000, 0x03ff, MWA_RAM ),
+	    new Memory_WriteAddress( 0x2000, 0x200f, gameplan_video_w ),		/* VIA 1 */
+	    new Memory_WriteAddress( 0x2800, 0x280f, gameplan_port_select_w ),	/* VIA 2 */
+	    new Memory_WriteAddress( 0x3000, 0x300f, gameplan_sound_w ),       /* VIA 3 */
+	    new Memory_WriteAddress( 0x9000, 0xffff, MWA_ROM ),
 	
-	MEMORY_END
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	public static Memory_ReadAddress readmem_snd[]={
 		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
@@ -134,22 +136,24 @@ public class gameplan
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( writemem_snd )
-		{ 0x0000, 0x0026, MWA_RAM },
-		{ 0x01f6, 0x01ff, MWA_RAM },
-		{ 0x0800, 0x080f, gameplan_via5_w },
+	public static Memory_WriteAddress writemem_snd[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0x0026, MWA_RAM ),
+		new Memory_WriteAddress( 0x01f6, 0x01ff, MWA_RAM ),
+		new Memory_WriteAddress( 0x0800, 0x080f, gameplan_via5_w ),
 	
 	#if 0
-	    { 0xa000, 0xa000, gameplan_ay_3_8910_0_w }, /* AY-3-8910 */
-	    { 0xa002, 0xa002, gameplan_ay_3_8910_2_w }, /* AY-3-8910 */
+	    new Memory_WriteAddress( 0xa000, 0xa000, gameplan_ay_3_8910_0_w ), /* AY-3-8910 */
+	    new Memory_WriteAddress( 0xa002, 0xa002, gameplan_ay_3_8910_2_w ), /* AY-3-8910 */
 	#else
-	    { 0xa000, 0xa000, AY8910_control_port_0_w }, /* AY-3-8910 */
-	    { 0xa002, 0xa002, AY8910_write_port_0_w }, /* AY-3-8910 */
+	    new Memory_WriteAddress( 0xa000, 0xa000, AY8910_control_port_0_w ), /* AY-3-8910 */
+	    new Memory_WriteAddress( 0xa002, 0xa002, AY8910_write_port_0_w ), /* AY-3-8910 */
 	#endif
 	
-		{ 0xf800, 0xffff, MWA_ROM },
+		new Memory_WriteAddress( 0xf800, 0xffff, MWA_ROM ),
 	
-	MEMORY_END
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	int gameplan_interrupt(void)
 	{

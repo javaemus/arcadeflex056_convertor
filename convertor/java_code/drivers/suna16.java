@@ -180,14 +180,16 @@ public class suna16
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( bssoccer_sound_writemem )
-		{ 0x0000, 0x7fff, MWA_ROM					},	// ROM
-		{ 0xf000, 0xf7ff, MWA_RAM					},	// RAM
-		{ 0xf800, 0xf800, YM2151_register_port_0_w	},	// YM2151
-		{ 0xf801, 0xf801, YM2151_data_port_0_w		},	//
-		{ 0xfd00, 0xfd00, soundlatch2_w 			},	// To PCM Z80 #1
-		{ 0xfe00, 0xfe00, soundlatch3_w 			},	// To PCM Z80 #2
-	MEMORY_END
+	public static Memory_WriteAddress bssoccer_sound_writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0x7fff, MWA_ROM					),	// ROM
+		new Memory_WriteAddress( 0xf000, 0xf7ff, MWA_RAM					),	// RAM
+		new Memory_WriteAddress( 0xf800, 0xf800, YM2151_register_port_0_w	),	// YM2151
+		new Memory_WriteAddress( 0xf801, 0xf801, YM2151_data_port_0_w		),	//
+		new Memory_WriteAddress( 0xfd00, 0xfd00, soundlatch2_w 			),	// To PCM Z80 #1
+		new Memory_WriteAddress( 0xfe00, 0xfe00, soundlatch3_w 			),	// To PCM Z80 #2
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	/***************************************************************************
 									Ultra Balloon
@@ -202,13 +204,15 @@ public class suna16
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( uballoon_sound_writemem )
-		{ 0x0000, 0xefff, MWA_ROM					},	// ROM
-		{ 0xf000, 0xf7ff, MWA_RAM					},	// RAM
-		{ 0xf800, 0xf800, YM2151_register_port_0_w	},	// YM2151
-		{ 0xf801, 0xf801, YM2151_data_port_0_w		},	//
-		{ 0xfc00, 0xfc00, soundlatch2_w				},	// To PCM Z80
-	MEMORY_END
+	public static Memory_WriteAddress uballoon_sound_writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0xefff, MWA_ROM					),	// ROM
+		new Memory_WriteAddress( 0xf000, 0xf7ff, MWA_RAM					),	// RAM
+		new Memory_WriteAddress( 0xf800, 0xf800, YM2151_register_port_0_w	),	// YM2151
+		new Memory_WriteAddress( 0xf801, 0xf801, YM2151_data_port_0_w		),	//
+		new Memory_WriteAddress( 0xfc00, 0xfc00, soundlatch2_w				),	// To PCM Z80
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	
 	
@@ -254,9 +258,11 @@ public class suna16
 		new Memory_ReadAddress( 0x1000, 0xffff, MRA_BANK1 		),	// Banked ROM
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
-	static MEMORY_WRITE_START( bssoccer_pcm_1_writemem )
-		{ 0x0000, 0xffff, MWA_ROM			},	// ROM
-	MEMORY_END
+	public static Memory_WriteAddress bssoccer_pcm_1_writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0xffff, MWA_ROM			),	// ROM
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	
 	public static Memory_ReadAddress bssoccer_pcm_2_readmem[]={
@@ -265,9 +271,11 @@ public class suna16
 		new Memory_ReadAddress( 0x1000, 0xffff, MRA_BANK2 		),	// Banked ROM
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
-	static MEMORY_WRITE_START( bssoccer_pcm_2_writemem )
-		{ 0x0000, 0xffff, MWA_ROM			},	// ROM
-	MEMORY_END
+	public static Memory_WriteAddress bssoccer_pcm_2_writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0xffff, MWA_ROM			),	// ROM
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	
 	
@@ -325,9 +333,11 @@ public class suna16
 		new Memory_ReadAddress( 0x0400, 0xffff, MRA_BANK1 		),	// Banked ROM
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
-	static MEMORY_WRITE_START( uballoon_pcm_1_writemem )
-		{ 0x0000, 0xffff, MWA_ROM			},	// ROM
-	MEMORY_END
+	public static Memory_WriteAddress uballoon_pcm_1_writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0xffff, MWA_ROM			),	// ROM
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	
 	static PORT_READ_START( uballoon_pcm_1_readport )

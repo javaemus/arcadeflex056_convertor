@@ -107,10 +107,11 @@ public class lkage
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( writemem )
-		{ 0x0000, 0xdfff, MWA_ROM },
-		{ 0xe000, 0xe7ff, MWA_RAM },
-		{ 0xe800, 0xefff, MWA_RAM, &paletteram },
+	public static Memory_WriteAddress writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0xdfff, MWA_ROM ),
+		new Memory_WriteAddress( 0xe000, 0xe7ff, MWA_RAM ),
+		new Memory_WriteAddress( 0xe800, 0xefff, MWA_RAM, &paletteram ),
 	//	paletteram_xxxxRRRRGGGGBBBB_w, &paletteram },
 		{ 0xf000, 0xf003, MWA_RAM, &lkage_vreg }, /* video registers */
 		{ 0xf060, 0xf060, lkage_sound_command_w },
@@ -145,16 +146,18 @@ public class lkage
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( m68705_writemem )
-		{ 0x0000, 0x0000, lkage_68705_portA_w },
-		{ 0x0001, 0x0001, lkage_68705_portB_w },
-		{ 0x0002, 0x0002, lkage_68705_portC_w },
-		{ 0x0004, 0x0004, lkage_68705_ddrA_w },
-		{ 0x0005, 0x0005, lkage_68705_ddrB_w },
-		{ 0x0006, 0x0006, lkage_68705_ddrC_w },
-		{ 0x0010, 0x007f, MWA_RAM },
-		{ 0x0080, 0x07ff, MWA_ROM },
-	MEMORY_END
+	public static Memory_WriteAddress m68705_writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0x0000, lkage_68705_portA_w ),
+		new Memory_WriteAddress( 0x0001, 0x0001, lkage_68705_portB_w ),
+		new Memory_WriteAddress( 0x0002, 0x0002, lkage_68705_portC_w ),
+		new Memory_WriteAddress( 0x0004, 0x0004, lkage_68705_ddrA_w ),
+		new Memory_WriteAddress( 0x0005, 0x0005, lkage_68705_ddrB_w ),
+		new Memory_WriteAddress( 0x0006, 0x0006, lkage_68705_ddrC_w ),
+		new Memory_WriteAddress( 0x0010, 0x007f, MWA_RAM ),
+		new Memory_WriteAddress( 0x0080, 0x07ff, MWA_ROM ),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	
 	
@@ -174,18 +177,20 @@ public class lkage
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( writemem_sound )
-		{ 0x0000, 0x7fff, MWA_ROM },
-		{ 0x8000, 0x87ff, MWA_RAM },
-		{ 0x9000, 0x9000, YM2203_control_port_0_w },
-		{ 0x9001, 0x9001, YM2203_write_port_0_w },
-		{ 0xa000, 0xa000, YM2203_control_port_1_w },
-		{ 0xa001, 0xa001, YM2203_write_port_1_w },
-		{ 0xb000, 0xb000, MWA_NOP },	/* ??? */
-		{ 0xb001, 0xb001, lkage_sh_nmi_enable_w },
-		{ 0xb002, 0xb002, lkage_sh_nmi_disable_w },
-		{ 0xe000, 0xefff, MWA_ROM },	/* space for diagnostic ROM? */
-	MEMORY_END
+	public static Memory_WriteAddress writemem_sound[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0x7fff, MWA_ROM ),
+		new Memory_WriteAddress( 0x8000, 0x87ff, MWA_RAM ),
+		new Memory_WriteAddress( 0x9000, 0x9000, YM2203_control_port_0_w ),
+		new Memory_WriteAddress( 0x9001, 0x9001, YM2203_write_port_0_w ),
+		new Memory_WriteAddress( 0xa000, 0xa000, YM2203_control_port_1_w ),
+		new Memory_WriteAddress( 0xa001, 0xa001, YM2203_write_port_1_w ),
+		new Memory_WriteAddress( 0xb000, 0xb000, MWA_NOP ),	/* ??? */
+		new Memory_WriteAddress( 0xb001, 0xb001, lkage_sh_nmi_enable_w ),
+		new Memory_WriteAddress( 0xb002, 0xb002, lkage_sh_nmi_disable_w ),
+		new Memory_WriteAddress( 0xe000, 0xefff, MWA_ROM ),	/* space for diagnostic ROM? */
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	/***************************************************************************/
 	

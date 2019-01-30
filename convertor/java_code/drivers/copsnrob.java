@@ -76,21 +76,23 @@ public class copsnrob
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( writemem )
-		{ 0x0000, 0x01ff, MWA_RAM },
-		{ 0x0500, 0x0503, MWA_RAM },
-		{ 0x0504, 0x0507, MWA_NOP },  // ???
-		{ 0x0600, 0x0600, MWA_RAM, &copsnrob_trucky },
-		{ 0x0700, 0x07ff, MWA_RAM, &copsnrob_truckram },
-		{ 0x0800, 0x08ff, MWA_RAM, &copsnrob_bulletsram },
-		{ 0x0900, 0x0903, MWA_RAM, &copsnrob_carimage },
-		{ 0x0a00, 0x0a03, MWA_RAM, &copsnrob_cary },
-		{ 0x0b00, 0x0bff, MWA_RAM },
-		{ 0x0c00, 0x0fff, MWA_RAM, &videoram, &videoram_size },
-		{ 0x1000, 0x1003, MWA_NOP },
-		{ 0x1200, 0x1fff, MWA_ROM },
-		{ 0xfff8, 0xffff, MWA_ROM },
-	MEMORY_END
+	public static Memory_WriteAddress writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0x01ff, MWA_RAM ),
+		new Memory_WriteAddress( 0x0500, 0x0503, MWA_RAM ),
+		new Memory_WriteAddress( 0x0504, 0x0507, MWA_NOP ),  // ???
+		new Memory_WriteAddress( 0x0600, 0x0600, MWA_RAM, &copsnrob_trucky ),
+		new Memory_WriteAddress( 0x0700, 0x07ff, MWA_RAM, &copsnrob_truckram ),
+		new Memory_WriteAddress( 0x0800, 0x08ff, MWA_RAM, &copsnrob_bulletsram ),
+		new Memory_WriteAddress( 0x0900, 0x0903, MWA_RAM, &copsnrob_carimage ),
+		new Memory_WriteAddress( 0x0a00, 0x0a03, MWA_RAM, &copsnrob_cary ),
+		new Memory_WriteAddress( 0x0b00, 0x0bff, MWA_RAM ),
+		new Memory_WriteAddress( 0x0c00, 0x0fff, MWA_RAM, &videoram, &videoram_size ),
+		new Memory_WriteAddress( 0x1000, 0x1003, MWA_NOP ),
+		new Memory_WriteAddress( 0x1200, 0x1fff, MWA_ROM ),
+		new Memory_WriteAddress( 0xfff8, 0xffff, MWA_ROM ),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	
 	INPUT_PORTS_START( copsnrob )

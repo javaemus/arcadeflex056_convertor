@@ -79,14 +79,16 @@ public class hanaawas
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( writemem )
-		{ 0x0000, 0x2fff, MWA_ROM },
-		{ 0x4000, 0x4fff, MWA_ROM },
-		{ 0x6000, 0x6fff, MWA_ROM },
-		{ 0x8000, 0x83ff, videoram_w, &videoram, &videoram_size },
-		{ 0x8400, 0x87ff, hanaawas_colorram_w, &colorram },
-		{ 0x8800, 0x8bff, MWA_RAM },
-	MEMORY_END
+	public static Memory_WriteAddress writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0x2fff, MWA_ROM ),
+		new Memory_WriteAddress( 0x4000, 0x4fff, MWA_ROM ),
+		new Memory_WriteAddress( 0x6000, 0x6fff, MWA_ROM ),
+		new Memory_WriteAddress( 0x8000, 0x83ff, videoram_w, &videoram, &videoram_size ),
+		new Memory_WriteAddress( 0x8400, 0x87ff, hanaawas_colorram_w, &colorram ),
+		new Memory_WriteAddress( 0x8800, 0x8bff, MWA_RAM ),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static PORT_READ_START( readport )
 		{ 0x00, 0x00, hanaawas_input_port_0_r },

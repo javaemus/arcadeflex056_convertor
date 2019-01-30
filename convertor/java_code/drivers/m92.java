@@ -270,16 +270,18 @@ public class m92
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( writemem )
-		{ 0x00000, 0xbffff, MWA_ROM },
-		{ 0xd0000, 0xdffff, m92_vram_w, &m92_vram_data },
-		{ 0xe0000, 0xeffff, MWA_RAM, &m92_ram }, /* System ram */
-		{ 0xf8000, 0xf87ff, MWA_RAM, &spriteram, &spriteram_size },
-		{ 0xf8800, 0xf8fff, m92_paletteram_w },
-		{ 0xf9000, 0xf900f, m92_spritecontrol_w, &m92_spritecontrol },
-		{ 0xf9800, 0xf9801, m92_videocontrol_w },
-		{ 0xffff0, 0xfffff, MWA_ROM },
-	MEMORY_END
+	public static Memory_WriteAddress writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x00000, 0xbffff, MWA_ROM ),
+		new Memory_WriteAddress( 0xd0000, 0xdffff, m92_vram_w, &m92_vram_data ),
+		new Memory_WriteAddress( 0xe0000, 0xeffff, MWA_RAM, &m92_ram ), /* System ram */
+		new Memory_WriteAddress( 0xf8000, 0xf87ff, MWA_RAM, &spriteram, &spriteram_size ),
+		new Memory_WriteAddress( 0xf8800, 0xf8fff, m92_paletteram_w ),
+		new Memory_WriteAddress( 0xf9000, 0xf900f, m92_spritecontrol_w, &m92_spritecontrol ),
+		new Memory_WriteAddress( 0xf9800, 0xf9801, m92_videocontrol_w ),
+		new Memory_WriteAddress( 0xffff0, 0xfffff, MWA_ROM ),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	public static Memory_ReadAddress lethalth_readmem[]={
 		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),/* Same as above but with different VRAM addressing PAL */
@@ -292,16 +294,18 @@ public class m92
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( lethalth_writemem )
-		{ 0x00000, 0x7ffff, MWA_ROM },
-		{ 0x80000, 0x8ffff, m92_vram_w, &m92_vram_data },
-		{ 0xe0000, 0xeffff, MWA_RAM, &m92_ram }, /* System ram */
-		{ 0xf8000, 0xf87ff, MWA_RAM, &spriteram, &spriteram_size },
-		{ 0xf8800, 0xf8fff, m92_paletteram_w },
-		{ 0xf9000, 0xf900f, m92_spritecontrol_w, &m92_spritecontrol },
-		{ 0xf9800, 0xf9801, m92_videocontrol_w },
-		{ 0xffff0, 0xfffff, MWA_ROM },
-	MEMORY_END
+	public static Memory_WriteAddress lethalth_writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x00000, 0x7ffff, MWA_ROM ),
+		new Memory_WriteAddress( 0x80000, 0x8ffff, m92_vram_w, &m92_vram_data ),
+		new Memory_WriteAddress( 0xe0000, 0xeffff, MWA_RAM, &m92_ram ), /* System ram */
+		new Memory_WriteAddress( 0xf8000, 0xf87ff, MWA_RAM, &spriteram, &spriteram_size ),
+		new Memory_WriteAddress( 0xf8800, 0xf8fff, m92_paletteram_w ),
+		new Memory_WriteAddress( 0xf9000, 0xf900f, m92_spritecontrol_w, &m92_spritecontrol ),
+		new Memory_WriteAddress( 0xf9800, 0xf9801, m92_videocontrol_w ),
+		new Memory_WriteAddress( 0xffff0, 0xfffff, MWA_ROM ),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static PORT_READ_START( readport )
 		{ 0x00, 0x00, input_port_0_r }, /* Player 1 */
@@ -339,17 +343,19 @@ public class m92
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( sound_writemem )
-		{ 0x00000, 0x1ffff, MWA_ROM },
-		{ 0x9ff00, 0x9ffff, MWA_NOP }, /* Irq controller? */
-		{ 0xa0000, 0xa3fff, MWA_RAM },
-		{ 0xa8000, 0xa803f, IremGA20_w },
-		{ 0xa8040, 0xa8041, YM2151_register_port_0_w },
-		{ 0xa8042, 0xa8043, YM2151_data_port_0_w },
-		{ 0xa8044, 0xa8045, m92_sound_irq_ack_w },
-		{ 0xa8046, 0xa8047, m92_sound_status_w },
-		{ 0xffff0, 0xfffff, MWA_ROM },
-	MEMORY_END
+	public static Memory_WriteAddress sound_writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x00000, 0x1ffff, MWA_ROM ),
+		new Memory_WriteAddress( 0x9ff00, 0x9ffff, MWA_NOP ), /* Irq controller? */
+		new Memory_WriteAddress( 0xa0000, 0xa3fff, MWA_RAM ),
+		new Memory_WriteAddress( 0xa8000, 0xa803f, IremGA20_w ),
+		new Memory_WriteAddress( 0xa8040, 0xa8041, YM2151_register_port_0_w ),
+		new Memory_WriteAddress( 0xa8042, 0xa8043, YM2151_data_port_0_w ),
+		new Memory_WriteAddress( 0xa8044, 0xa8045, m92_sound_irq_ack_w ),
+		new Memory_WriteAddress( 0xa8046, 0xa8047, m92_sound_status_w ),
+		new Memory_WriteAddress( 0xffff0, 0xfffff, MWA_ROM ),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	/******************************************************************************/
 	

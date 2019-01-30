@@ -428,14 +428,16 @@ public class playch10
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( writemem )
-		{ 0x0000, 0x3fff, MWA_ROM },
-		{ 0x8000, 0x87ff, MWA_RAM }, /* 8V */
-		{ 0x8800, 0x8fff, ram_8w_w, &ram_8w }, /* 8W */
-		{ 0x9000, 0x97ff, video_w, &videoram, &videoram_size },
-		{ 0xc000, 0xdfff, MWA_ROM },
-		{ 0xe000, 0xffff, pc10_prot_w },
-	MEMORY_END
+	public static Memory_WriteAddress writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0x3fff, MWA_ROM ),
+		new Memory_WriteAddress( 0x8000, 0x87ff, MWA_RAM ), /* 8V */
+		new Memory_WriteAddress( 0x8800, 0x8fff, ram_8w_w, &ram_8w ), /* 8W */
+		new Memory_WriteAddress( 0x9000, 0x97ff, video_w, &videoram, &videoram_size ),
+		new Memory_WriteAddress( 0xc000, 0xdfff, MWA_ROM ),
+		new Memory_WriteAddress( 0xe000, 0xffff, pc10_prot_w ),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static PORT_READ_START( readport )
 		{ 0x00, 0x00, pc10_port_0_r },	/* coins, service */
@@ -472,17 +474,19 @@ public class playch10
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( cart_writemem )
-		{ 0x0000, 0x07ff, MWA_RAM, &work_ram },
-		{ 0x0800, 0x1fff, mirror_ram_w },
-		{ 0x2000, 0x3fff, ppu2c03b_0_w },
-		{ 0x4011, 0x4011, DAC_0_data_w },
-		{ 0x4014, 0x4014, sprite_dma_w },
-		{ 0x4000, 0x4015, NESPSG_0_w },
-		{ 0x4016, 0x4016, pc10_in0_w },
-		{ 0x4017, 0x4017, MWA_NOP }, /* in 1 writes ignored */
-		{ 0x8000, 0xffff, MWA_ROM },
-	MEMORY_END
+	public static Memory_WriteAddress cart_writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0x07ff, MWA_RAM, &work_ram ),
+		new Memory_WriteAddress( 0x0800, 0x1fff, mirror_ram_w ),
+		new Memory_WriteAddress( 0x2000, 0x3fff, ppu2c03b_0_w ),
+		new Memory_WriteAddress( 0x4011, 0x4011, DAC_0_data_w ),
+		new Memory_WriteAddress( 0x4014, 0x4014, sprite_dma_w ),
+		new Memory_WriteAddress( 0x4000, 0x4015, NESPSG_0_w ),
+		new Memory_WriteAddress( 0x4016, 0x4016, pc10_in0_w ),
+		new Memory_WriteAddress( 0x4017, 0x4017, MWA_NOP ), /* in 1 writes ignored */
+		new Memory_WriteAddress( 0x8000, 0xffff, MWA_ROM ),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	/******************************************************************************/
 	

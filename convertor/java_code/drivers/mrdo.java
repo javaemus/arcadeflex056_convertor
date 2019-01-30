@@ -58,18 +58,20 @@ public class mrdo
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( writemem )
-		{ 0x0000, 0x7fff, MWA_ROM },
-		{ 0x8000, 0x87ff, mrdo_bgvideoram_w, &mrdo_bgvideoram },
-		{ 0x8800, 0x8fff, mrdo_fgvideoram_w, &mrdo_fgvideoram },
-		{ 0x9000, 0x90ff, MWA_RAM, &spriteram, &spriteram_size },
-		{ 0x9800, 0x9800, mrdo_flipscreen_w },	/* screen flip + playfield priority */
-		{ 0x9801, 0x9801, SN76496_0_w },
-		{ 0x9802, 0x9802, SN76496_1_w },
-		{ 0xe000, 0xefff, MWA_RAM },
-		{ 0xf000, 0xf7ff, mrdo_scrollx_w },
-		{ 0xf800, 0xffff, mrdo_scrolly_w },
-	MEMORY_END
+	public static Memory_WriteAddress writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0x7fff, MWA_ROM ),
+		new Memory_WriteAddress( 0x8000, 0x87ff, mrdo_bgvideoram_w, &mrdo_bgvideoram ),
+		new Memory_WriteAddress( 0x8800, 0x8fff, mrdo_fgvideoram_w, &mrdo_fgvideoram ),
+		new Memory_WriteAddress( 0x9000, 0x90ff, MWA_RAM, &spriteram, &spriteram_size ),
+		new Memory_WriteAddress( 0x9800, 0x9800, mrdo_flipscreen_w ),	/* screen flip + playfield priority */
+		new Memory_WriteAddress( 0x9801, 0x9801, SN76496_0_w ),
+		new Memory_WriteAddress( 0x9802, 0x9802, SN76496_1_w ),
+		new Memory_WriteAddress( 0xe000, 0xefff, MWA_RAM ),
+		new Memory_WriteAddress( 0xf000, 0xf7ff, mrdo_scrollx_w ),
+		new Memory_WriteAddress( 0xf800, 0xffff, mrdo_scrolly_w ),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	
 	INPUT_PORTS_START( mrdo )

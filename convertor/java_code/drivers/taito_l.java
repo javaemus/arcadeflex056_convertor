@@ -661,11 +661,13 @@ public class taito_l
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( fhawk_writemem )
+	public static Memory_WriteAddress fhawk_writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
 		COMMON_BANKS_WRITE,
-		{ 0x8000, 0x9fff, MWA_RAM, &shared_ram },
-		{ 0xa000, 0xbfff, MWA_RAM },
-	MEMORY_END
+		new Memory_WriteAddress( 0x8000, 0x9fff, MWA_RAM, &shared_ram ),
+		new Memory_WriteAddress( 0xa000, 0xbfff, MWA_RAM ),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	public static Memory_ReadAddress fhawk_2_readmem[]={
 		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
@@ -682,16 +684,18 @@ public class taito_l
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( fhawk_2_writemem )
-		{ 0x0000, 0xbfff, MWA_ROM },
-		{ 0xc000, 0xc000, rombank2switch_w },
-		{ 0xc800, 0xc800, taitosound_port_w },
-		{ 0xc801, 0xc801, taitosound_comm_w },
-		{ 0xd000, 0xd000, MWA_NOP },	// Direct copy of input port 0
-		{ 0xd004, 0xd004, control2_w },
-		{ 0xd005, 0xd006, MWA_NOP },	// Always 0
-		{ 0xe000, 0xffff, shared_w },
-	MEMORY_END
+	public static Memory_WriteAddress fhawk_2_writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0xbfff, MWA_ROM ),
+		new Memory_WriteAddress( 0xc000, 0xc000, rombank2switch_w ),
+		new Memory_WriteAddress( 0xc800, 0xc800, taitosound_port_w ),
+		new Memory_WriteAddress( 0xc801, 0xc801, taitosound_comm_w ),
+		new Memory_WriteAddress( 0xd000, 0xd000, MWA_NOP ),	// Direct copy of input port 0
+		new Memory_WriteAddress( 0xd004, 0xd004, control2_w ),
+		new Memory_WriteAddress( 0xd005, 0xd006, MWA_NOP ),	// Always 0
+		new Memory_WriteAddress( 0xe000, 0xffff, shared_w ),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	public static Memory_ReadAddress fhawk_3_readmem[]={
 		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
@@ -704,14 +708,16 @@ public class taito_l
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( fhawk_3_writemem )
-		{ 0x0000, 0x7fff, MWA_ROM },
-		{ 0x8000, 0x9fff, MWA_RAM },
-		{ 0xe000, 0xe000, taitosound_slave_port_w },
-		{ 0xe001, 0xe001, taitosound_slave_comm_w },
-		{ 0xf000, 0xf000, YM2203_control_port_0_w },
-		{ 0xf001, 0xf001, YM2203_write_port_0_w },
-	MEMORY_END
+	public static Memory_WriteAddress fhawk_3_writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0x7fff, MWA_ROM ),
+		new Memory_WriteAddress( 0x8000, 0x9fff, MWA_RAM ),
+		new Memory_WriteAddress( 0xe000, 0xe000, taitosound_slave_port_w ),
+		new Memory_WriteAddress( 0xe001, 0xe001, taitosound_slave_comm_w ),
+		new Memory_WriteAddress( 0xf000, 0xf000, YM2203_control_port_0_w ),
+		new Memory_WriteAddress( 0xf001, 0xf001, YM2203_write_port_0_w ),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	public static Memory_ReadAddress raimais_readmem[]={
 		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
@@ -724,15 +730,17 @@ public class taito_l
 		new Memory_ReadAddress( 0xa000, 0xbfff, MRA_RAM ),
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
-	static MEMORY_WRITE_START( raimais_writemem )
+	public static Memory_WriteAddress raimais_writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
 		COMMON_BANKS_WRITE,
-		{ 0x8000, 0x87ff, MWA_RAM, &shared_ram },
-		{ 0x8800, 0x8800, mux_w },
-		{ 0x8801, 0x8801, mux_ctrl_w },
-		{ 0x8c00, 0x8c00, taitosound_port_w },
-		{ 0x8c01, 0x8c01, taitosound_comm_w },
-		{ 0xa000, 0xbfff, MWA_RAM },
-	MEMORY_END
+		new Memory_WriteAddress( 0x8000, 0x87ff, MWA_RAM, &shared_ram ),
+		new Memory_WriteAddress( 0x8800, 0x8800, mux_w ),
+		new Memory_WriteAddress( 0x8801, 0x8801, mux_ctrl_w ),
+		new Memory_WriteAddress( 0x8c00, 0x8c00, taitosound_port_w ),
+		new Memory_WriteAddress( 0x8c01, 0x8c01, taitosound_comm_w ),
+		new Memory_WriteAddress( 0xa000, 0xbfff, MWA_RAM ),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	public static Memory_ReadAddress raimais_2_readmem[]={
 		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
@@ -742,11 +750,13 @@ public class taito_l
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( raimais_2_writemem )
-		{ 0x0000, 0xbfff, MWA_ROM },
-		{ 0xc000, 0xdfff, MWA_RAM },
-		{ 0xe000, 0xe7ff, shared_w },
-	MEMORY_END
+	public static Memory_WriteAddress raimais_2_writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0xbfff, MWA_ROM ),
+		new Memory_WriteAddress( 0xc000, 0xdfff, MWA_RAM ),
+		new Memory_WriteAddress( 0xe000, 0xe7ff, shared_w ),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	
 	public static Memory_ReadAddress raimais_3_readmem[]={
@@ -770,21 +780,23 @@ public class taito_l
 		cpu_setbank (7, &RAM [0x10000 + (banknum * 0x4000)]);
 	}
 	
-	static MEMORY_WRITE_START( raimais_3_writemem )
-		{ 0x0000, 0x7fff, MWA_ROM },
-		{ 0xc000, 0xdfff, MWA_RAM },
-		{ 0xe000, 0xe000, YM2610_control_port_0_A_w },
-		{ 0xe001, 0xe001, YM2610_data_port_0_A_w },
-		{ 0xe002, 0xe002, YM2610_control_port_0_B_w },
-		{ 0xe003, 0xe003, YM2610_data_port_0_B_w },
-		{ 0xe200, 0xe200, taitosound_slave_port_w },
-		{ 0xe201, 0xe201, taitosound_slave_comm_w },
-		{ 0xe400, 0xe403, MWA_NOP }, /* pan */
-		{ 0xe600, 0xe600, MWA_NOP }, /* ? */
-		{ 0xee00, 0xee00, MWA_NOP }, /* ? */
-		{ 0xf000, 0xf000, MWA_NOP }, /* ? */
-		{ 0xf200, 0xf200, sound_bankswitch_w },
-	MEMORY_END
+	public static Memory_WriteAddress raimais_3_writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0x7fff, MWA_ROM ),
+		new Memory_WriteAddress( 0xc000, 0xdfff, MWA_RAM ),
+		new Memory_WriteAddress( 0xe000, 0xe000, YM2610_control_port_0_A_w ),
+		new Memory_WriteAddress( 0xe001, 0xe001, YM2610_data_port_0_A_w ),
+		new Memory_WriteAddress( 0xe002, 0xe002, YM2610_control_port_0_B_w ),
+		new Memory_WriteAddress( 0xe003, 0xe003, YM2610_data_port_0_B_w ),
+		new Memory_WriteAddress( 0xe200, 0xe200, taitosound_slave_port_w ),
+		new Memory_WriteAddress( 0xe201, 0xe201, taitosound_slave_comm_w ),
+		new Memory_WriteAddress( 0xe400, 0xe403, MWA_NOP ), /* pan */
+		new Memory_WriteAddress( 0xe600, 0xe600, MWA_NOP ), /* ? */
+		new Memory_WriteAddress( 0xee00, 0xee00, MWA_NOP ), /* ? */
+		new Memory_WriteAddress( 0xf000, 0xf000, MWA_NOP ), /* ? */
+		new Memory_WriteAddress( 0xf200, 0xf200, sound_bankswitch_w ),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	
 	public static Memory_ReadAddress champwr_readmem[]={
@@ -796,11 +808,13 @@ public class taito_l
 	};
 	
 	
-	static MEMORY_WRITE_START( champwr_writemem )
+	public static Memory_WriteAddress champwr_writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
 		COMMON_BANKS_WRITE,
-		{ 0x8000, 0x9fff, MWA_RAM },
-		{ 0xa000, 0xbfff, MWA_RAM, &shared_ram },
-	MEMORY_END
+		new Memory_WriteAddress( 0x8000, 0x9fff, MWA_RAM ),
+		new Memory_WriteAddress( 0xa000, 0xbfff, MWA_RAM, &shared_ram ),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	public static Memory_ReadAddress champwr_2_readmem[]={
 		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
@@ -819,15 +833,17 @@ public class taito_l
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( champwr_2_writemem )
-		{ 0x0000, 0xbfff, MWA_ROM },
-		{ 0xc000, 0xdfff, shared_w },
-		{ 0xe000, 0xe000, MWA_NOP },	// Watchdog
-		{ 0xe004, 0xe004, control2_w },
-		{ 0xe800, 0xe800, taitosound_port_w },
-		{ 0xe801, 0xe801, taitosound_comm_w },
-		{ 0xf000, 0xf000, rombank2switch_w },
-	MEMORY_END
+	public static Memory_WriteAddress champwr_2_writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0xbfff, MWA_ROM ),
+		new Memory_WriteAddress( 0xc000, 0xdfff, shared_w ),
+		new Memory_WriteAddress( 0xe000, 0xe000, MWA_NOP ),	// Watchdog
+		new Memory_WriteAddress( 0xe004, 0xe004, control2_w ),
+		new Memory_WriteAddress( 0xe800, 0xe800, taitosound_port_w ),
+		new Memory_WriteAddress( 0xe801, 0xe801, taitosound_comm_w ),
+		new Memory_WriteAddress( 0xf000, 0xf000, rombank2switch_w ),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	public static Memory_ReadAddress champwr_3_readmem[]={
 		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
@@ -840,18 +856,20 @@ public class taito_l
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( champwr_3_writemem )
-		{ 0x0000, 0x7fff, MWA_ROM },
-		{ 0x8000, 0x8fff, MWA_RAM },
-		{ 0x9000, 0x9000, YM2203_control_port_0_w },
-		{ 0x9001, 0x9001, YM2203_write_port_0_w },
-		{ 0xa000, 0xa000, taitosound_slave_port_w },
-		{ 0xa001, 0xa001, taitosound_slave_comm_w },
-		{ 0xb000, 0xb000, champwr_adpcm_hi_w },
-		{ 0xc000, 0xc000, champwr_adpcm_lo_w },
-		{ 0xd000, 0xd000, MWA_NOP },	/* ADPCM related */
-		{ 0xe000, 0xe000, MWA_NOP },	/* ADPCM related */
-	MEMORY_END
+	public static Memory_WriteAddress champwr_3_writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0x7fff, MWA_ROM ),
+		new Memory_WriteAddress( 0x8000, 0x8fff, MWA_RAM ),
+		new Memory_WriteAddress( 0x9000, 0x9000, YM2203_control_port_0_w ),
+		new Memory_WriteAddress( 0x9001, 0x9001, YM2203_write_port_0_w ),
+		new Memory_WriteAddress( 0xa000, 0xa000, taitosound_slave_port_w ),
+		new Memory_WriteAddress( 0xa001, 0xa001, taitosound_slave_comm_w ),
+		new Memory_WriteAddress( 0xb000, 0xb000, champwr_adpcm_hi_w ),
+		new Memory_WriteAddress( 0xc000, 0xc000, champwr_adpcm_lo_w ),
+		new Memory_WriteAddress( 0xd000, 0xd000, MWA_NOP ),	/* ADPCM related */
+		new Memory_WriteAddress( 0xe000, 0xe000, MWA_NOP ),	/* ADPCM related */
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	
 	
@@ -865,13 +883,15 @@ public class taito_l
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( kurikint_writemem )
+	public static Memory_WriteAddress kurikint_writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
 		COMMON_BANKS_WRITE,
-		{ 0x8000, 0x9fff, MWA_RAM },
-		{ 0xa000, 0xa7ff, MWA_RAM, &shared_ram },
-		{ 0xa800, 0xa800, mux_w },
-		{ 0xa801, 0xa801, mux_ctrl_w },
-	MEMORY_END
+		new Memory_WriteAddress( 0x8000, 0x9fff, MWA_RAM ),
+		new Memory_WriteAddress( 0xa000, 0xa7ff, MWA_RAM, &shared_ram ),
+		new Memory_WriteAddress( 0xa800, 0xa800, mux_w ),
+		new Memory_WriteAddress( 0xa801, 0xa801, mux_ctrl_w ),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	public static Memory_ReadAddress kurikint_2_readmem[]={
 		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
@@ -889,16 +909,18 @@ public class taito_l
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( kurikint_2_writemem )
-		{ 0x0000, 0x7fff, MWA_ROM },
-		{ 0xc000, 0xdfff, MWA_RAM },
-		{ 0xe000, 0xe7ff, shared_w },
-		{ 0xe800, 0xe800, YM2203_control_port_0_w },
-		{ 0xe801, 0xe801, YM2203_write_port_0_w },
+	public static Memory_WriteAddress kurikint_2_writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0x7fff, MWA_ROM ),
+		new Memory_WriteAddress( 0xc000, 0xdfff, MWA_RAM ),
+		new Memory_WriteAddress( 0xe000, 0xe7ff, shared_w ),
+		new Memory_WriteAddress( 0xe800, 0xe800, YM2203_control_port_0_w ),
+		new Memory_WriteAddress( 0xe801, 0xe801, YM2203_write_port_0_w ),
 	#if 0
-		{ 0xc000, 0xc000, rombank2switch_w },
+		new Memory_WriteAddress( 0xc000, 0xc000, rombank2switch_w ),
 	#endif
-	MEMORY_END
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	
 	
@@ -913,14 +935,16 @@ public class taito_l
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( puzznic_writemem )
+	public static Memory_WriteAddress puzznic_writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
 		COMMON_BANKS_WRITE,
 		COMMON_SINGLE_WRITE,
-		{ 0xb000, 0xb7ff, MWA_RAM },	// Wrong, used to overcome protection
-		{ 0xb800, 0xb800, mcu_data_w },
-		{ 0xb801, 0xb801, mcu_control_w },
-		{ 0xbc00, 0xbc00, MWA_NOP },	// Control register, function unknown
-	MEMORY_END
+		new Memory_WriteAddress( 0xb000, 0xb7ff, MWA_RAM ),	// Wrong, used to overcome protection
+		new Memory_WriteAddress( 0xb800, 0xb800, mcu_data_w ),
+		new Memory_WriteAddress( 0xb801, 0xb801, mcu_control_w ),
+		new Memory_WriteAddress( 0xbc00, 0xbc00, MWA_NOP ),	// Control register, function unknown
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	
 	public static Memory_ReadAddress plotting_readmem[]={
@@ -930,12 +954,14 @@ public class taito_l
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( plotting_writemem )
+	public static Memory_WriteAddress plotting_writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
 		COMMON_BANKS_WRITE,
 		COMMON_SINGLE_WRITE,
-		{ 0xa800, 0xa800, MWA_NOP },	// Watchdog or interrupt ack
-		{ 0xb800, 0xb800, MWA_NOP },	// Control register, function unknown
-	MEMORY_END
+		new Memory_WriteAddress( 0xa800, 0xa800, MWA_NOP ),	// Watchdog or interrupt ack
+		new Memory_WriteAddress( 0xb800, 0xb800, MWA_NOP ),	// Control register, function unknown
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	
 	public static Memory_ReadAddress palamed_readmem[]={
@@ -949,12 +975,14 @@ public class taito_l
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( palamed_writemem )
+	public static Memory_WriteAddress palamed_writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
 		COMMON_BANKS_WRITE,
 		COMMON_SINGLE_WRITE,
-		{ 0xa803, 0xa803, MWA_NOP },	// Control register, function unknown
-		{ 0xb000, 0xb000, MWA_NOP },	// Control register, function unknown (copy of 8822)
-	MEMORY_END
+		new Memory_WriteAddress( 0xa803, 0xa803, MWA_NOP ),	// Control register, function unknown
+		new Memory_WriteAddress( 0xb000, 0xb000, MWA_NOP ),	// Control register, function unknown (copy of 8822)
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	
 	public static Memory_ReadAddress cachat_readmem[]={
@@ -969,13 +997,15 @@ public class taito_l
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( cachat_writemem )
+	public static Memory_WriteAddress cachat_writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
 		COMMON_BANKS_WRITE,
 		COMMON_SINGLE_WRITE,
-		{ 0xa803, 0xa803, MWA_NOP },	// Control register, function unknown
-		{ 0xb000, 0xb000, MWA_NOP },	// Control register, function unknown
-		{ 0xfff8, 0xfff8, rombankswitch_w },
-	MEMORY_END
+		new Memory_WriteAddress( 0xa803, 0xa803, MWA_NOP ),	// Control register, function unknown
+		new Memory_WriteAddress( 0xb000, 0xb000, MWA_NOP ),	// Control register, function unknown
+		new Memory_WriteAddress( 0xfff8, 0xfff8, rombankswitch_w ),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	
 	public static Memory_ReadAddress horshoes_readmem[]={
@@ -992,12 +1022,14 @@ public class taito_l
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( horshoes_writemem )
+	public static Memory_WriteAddress horshoes_writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
 		COMMON_BANKS_WRITE,
 		COMMON_SINGLE_WRITE,
-		{ 0xb802, 0xb802, horshoes_bankg_w },
-		{ 0xbc00, 0xbc00, MWA_NOP },
-	MEMORY_END
+		new Memory_WriteAddress( 0xb802, 0xb802, horshoes_bankg_w ),
+		new Memory_WriteAddress( 0xbc00, 0xbc00, MWA_NOP ),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	
 	

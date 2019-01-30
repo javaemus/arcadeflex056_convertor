@@ -62,12 +62,14 @@ public class cchasm
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( sound_writemem )
-		{ 0x0000, 0x0fff, MWA_ROM },
-		{ 0x4000, 0x43ff, MWA_RAM },
-		{ 0x5000, 0x53ff, MWA_RAM },
-		{ 0x6000, 0x6fff, cchasm_snd_io_w },
-	MEMORY_END
+	public static Memory_WriteAddress sound_writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0x0fff, MWA_ROM ),
+		new Memory_WriteAddress( 0x4000, 0x43ff, MWA_RAM ),
+		new Memory_WriteAddress( 0x5000, 0x53ff, MWA_RAM ),
+		new Memory_WriteAddress( 0x6000, 0x6fff, cchasm_snd_io_w ),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static PORT_READ_START( sound_readport )
 		{ 0x00, 0x03, z80ctc_0_r },

@@ -142,28 +142,30 @@ public class xain
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( writemem )
-		{ 0x0000, 0x1fff, xain_sharedram_w, &xain_sharedram },
-		{ 0x2000, 0x27ff, xain_charram_w, &xain_charram },
-		{ 0x2800, 0x2fff, xain_bgram1_w, &xain_bgram1 },
-		{ 0x3000, 0x37ff, xain_bgram0_w, &xain_bgram0 },
-		{ 0x3800, 0x397f, MWA_RAM, &spriteram, &spriteram_size },
-		{ 0x3a00, 0x3a01, xain_scrollxP1_w },
-		{ 0x3a02, 0x3a03, xain_scrollyP1_w },
-		{ 0x3a04, 0x3a05, xain_scrollxP0_w },
-		{ 0x3a06, 0x3a07, xain_scrollyP0_w },
-		{ 0x3a08, 0x3a08, xain_sound_command_w },
-		{ 0x3a09, 0x3a09, MWA_NOP },	/* NMI acknowledge */
-		{ 0x3a0a, 0x3a0a, xain_firqA_clear_w },
-		{ 0x3a0b, 0x3a0b, xain_irqA_clear_w },
-		{ 0x3a0c, 0x3a0c, xain_irqB_assert_w },
-		{ 0x3a0d, 0x3a0d, xain_flipscreen_w },
-		{ 0x3a0e, 0x3a0e, xain_68705_w },	/* to 68705 */
-		{ 0x3a0f, 0x3a0f, xainCPUA_bankswitch_w },
-		{ 0x3c00, 0x3dff, paletteram_xxxxBBBBGGGGRRRR_split1_w, &paletteram },
-		{ 0x3e00, 0x3fff, paletteram_xxxxBBBBGGGGRRRR_split2_w, &paletteram_2 },
-		{ 0x4000, 0xffff, MWA_ROM },
-	MEMORY_END
+	public static Memory_WriteAddress writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0x1fff, xain_sharedram_w, &xain_sharedram ),
+		new Memory_WriteAddress( 0x2000, 0x27ff, xain_charram_w, &xain_charram ),
+		new Memory_WriteAddress( 0x2800, 0x2fff, xain_bgram1_w, &xain_bgram1 ),
+		new Memory_WriteAddress( 0x3000, 0x37ff, xain_bgram0_w, &xain_bgram0 ),
+		new Memory_WriteAddress( 0x3800, 0x397f, MWA_RAM, &spriteram, &spriteram_size ),
+		new Memory_WriteAddress( 0x3a00, 0x3a01, xain_scrollxP1_w ),
+		new Memory_WriteAddress( 0x3a02, 0x3a03, xain_scrollyP1_w ),
+		new Memory_WriteAddress( 0x3a04, 0x3a05, xain_scrollxP0_w ),
+		new Memory_WriteAddress( 0x3a06, 0x3a07, xain_scrollyP0_w ),
+		new Memory_WriteAddress( 0x3a08, 0x3a08, xain_sound_command_w ),
+		new Memory_WriteAddress( 0x3a09, 0x3a09, MWA_NOP ),	/* NMI acknowledge */
+		new Memory_WriteAddress( 0x3a0a, 0x3a0a, xain_firqA_clear_w ),
+		new Memory_WriteAddress( 0x3a0b, 0x3a0b, xain_irqA_clear_w ),
+		new Memory_WriteAddress( 0x3a0c, 0x3a0c, xain_irqB_assert_w ),
+		new Memory_WriteAddress( 0x3a0d, 0x3a0d, xain_flipscreen_w ),
+		new Memory_WriteAddress( 0x3a0e, 0x3a0e, xain_68705_w ),	/* to 68705 */
+		new Memory_WriteAddress( 0x3a0f, 0x3a0f, xainCPUA_bankswitch_w ),
+		new Memory_WriteAddress( 0x3c00, 0x3dff, paletteram_xxxxBBBBGGGGRRRR_split1_w, &paletteram ),
+		new Memory_WriteAddress( 0x3e00, 0x3fff, paletteram_xxxxBBBBGGGGRRRR_split2_w, &paletteram_2 ),
+		new Memory_WriteAddress( 0x4000, 0xffff, MWA_ROM ),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	public static Memory_ReadAddress readmemB[]={
 		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
@@ -173,13 +175,15 @@ public class xain
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( writememB )
-		{ 0x0000, 0x1fff, xain_sharedram_w },
-		{ 0x2000, 0x2000, xain_irqA_assert_w },
-		{ 0x2800, 0x2800, xain_irqB_clear_w },
-		{ 0x3000, 0x3000, xainCPUB_bankswitch_w },
-		{ 0x4000, 0xffff, MWA_ROM },
-	MEMORY_END
+	public static Memory_WriteAddress writememB[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0x1fff, xain_sharedram_w ),
+		new Memory_WriteAddress( 0x2000, 0x2000, xain_irqA_assert_w ),
+		new Memory_WriteAddress( 0x2800, 0x2800, xain_irqB_clear_w ),
+		new Memory_WriteAddress( 0x3000, 0x3000, xainCPUB_bankswitch_w ),
+		new Memory_WriteAddress( 0x4000, 0xffff, MWA_ROM ),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	public static Memory_ReadAddress sound_readmem[]={
 		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
@@ -189,14 +193,16 @@ public class xain
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( sound_writemem )
-		{ 0x0000, 0x07ff, MWA_RAM },
-		{ 0x2800, 0x2800, YM2203_control_port_0_w },
-		{ 0x2801, 0x2801, YM2203_write_port_0_w },
-		{ 0x3000, 0x3000, YM2203_control_port_1_w },
-		{ 0x3001, 0x3001, YM2203_write_port_1_w },
-		{ 0x4000, 0xffff, MWA_ROM },
-	MEMORY_END
+	public static Memory_WriteAddress sound_writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0x07ff, MWA_RAM ),
+		new Memory_WriteAddress( 0x2800, 0x2800, YM2203_control_port_0_w ),
+		new Memory_WriteAddress( 0x2801, 0x2801, YM2203_write_port_0_w ),
+		new Memory_WriteAddress( 0x3000, 0x3000, YM2203_control_port_1_w ),
+		new Memory_WriteAddress( 0x3001, 0x3001, YM2203_write_port_1_w ),
+		new Memory_WriteAddress( 0x4000, 0xffff, MWA_ROM ),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	
 	

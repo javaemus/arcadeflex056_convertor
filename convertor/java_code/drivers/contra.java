@@ -88,28 +88,30 @@ public class contra
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( writemem )
-		{ 0x0000, 0x0007, contra_K007121_ctrl_0_w },
-		{ 0x0018, 0x0018, contra_coin_counter_w },
-		{ 0x001a, 0x001a, contra_sh_irqtrigger_w },
-		{ 0x001c, 0x001c, cpu_sound_command_w },
-		{ 0x001e, 0x001e, MWA_NOP },	/* ? */
-		{ 0x0060, 0x0067, contra_K007121_ctrl_1_w },
-		{ 0x0c00, 0x0cff, paletteram_xBBBBBGGGGGRRRRR_w, &paletteram },
-		{ 0x1000, 0x1fff, MWA_RAM },
-		{ 0x2000, 0x23ff, contra_fg_cram_w, &contra_fg_cram },
-		{ 0x2400, 0x27ff, contra_fg_vram_w, &contra_fg_vram },
-		{ 0x2800, 0x2bff, contra_text_cram_w, &contra_text_cram },
-		{ 0x2c00, 0x2fff, contra_text_vram_w, &contra_text_vram },
-		{ 0x3000, 0x37ff, MWA_RAM, &spriteram },/* 2nd bank is at 0x5000 */
-		{ 0x3800, 0x3fff, MWA_RAM }, // second sprite buffer
-		{ 0x4000, 0x43ff, contra_bg_cram_w, &contra_bg_cram },
-		{ 0x4400, 0x47ff, contra_bg_vram_w, &contra_bg_vram },
-		{ 0x4800, 0x5fff, MWA_RAM },
-		{ 0x6000, 0x6fff, MWA_ROM },
-	 	{ 0x7000, 0x7000, contra_bankswitch_w },
-		{ 0x7001, 0xffff, MWA_ROM },
-	MEMORY_END
+	public static Memory_WriteAddress writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0x0007, contra_K007121_ctrl_0_w ),
+		new Memory_WriteAddress( 0x0018, 0x0018, contra_coin_counter_w ),
+		new Memory_WriteAddress( 0x001a, 0x001a, contra_sh_irqtrigger_w ),
+		new Memory_WriteAddress( 0x001c, 0x001c, cpu_sound_command_w ),
+		new Memory_WriteAddress( 0x001e, 0x001e, MWA_NOP ),	/* ? */
+		new Memory_WriteAddress( 0x0060, 0x0067, contra_K007121_ctrl_1_w ),
+		new Memory_WriteAddress( 0x0c00, 0x0cff, paletteram_xBBBBBGGGGGRRRRR_w, &paletteram ),
+		new Memory_WriteAddress( 0x1000, 0x1fff, MWA_RAM ),
+		new Memory_WriteAddress( 0x2000, 0x23ff, contra_fg_cram_w, &contra_fg_cram ),
+		new Memory_WriteAddress( 0x2400, 0x27ff, contra_fg_vram_w, &contra_fg_vram ),
+		new Memory_WriteAddress( 0x2800, 0x2bff, contra_text_cram_w, &contra_text_cram ),
+		new Memory_WriteAddress( 0x2c00, 0x2fff, contra_text_vram_w, &contra_text_vram ),
+		new Memory_WriteAddress( 0x3000, 0x37ff, MWA_RAM, &spriteram ),/* 2nd bank is at 0x5000 */
+		new Memory_WriteAddress( 0x3800, 0x3fff, MWA_RAM ), // second sprite buffer
+		new Memory_WriteAddress( 0x4000, 0x43ff, contra_bg_cram_w, &contra_bg_cram ),
+		new Memory_WriteAddress( 0x4400, 0x47ff, contra_bg_vram_w, &contra_bg_vram ),
+		new Memory_WriteAddress( 0x4800, 0x5fff, MWA_RAM ),
+		new Memory_WriteAddress( 0x6000, 0x6fff, MWA_ROM ),
+	 	new Memory_WriteAddress( 0x7000, 0x7000, contra_bankswitch_w ),
+		new Memory_WriteAddress( 0x7001, 0xffff, MWA_ROM ),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	public static Memory_ReadAddress readmem_sound[]={
 		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
@@ -120,13 +122,15 @@ public class contra
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( writemem_sound )
-		{ 0x2000, 0x2000, YM2151_register_port_0_w },
-		{ 0x2001, 0x2001, YM2151_data_port_0_w },
-		{ 0x4000, 0x4000, MWA_NOP }, /* read triggers irq reset and latch read (in the hardware only). */
-		{ 0x6000, 0x67ff, MWA_RAM },
-		{ 0x8000, 0xffff, MWA_ROM },
-	MEMORY_END
+	public static Memory_WriteAddress writemem_sound[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x2000, 0x2000, YM2151_register_port_0_w ),
+		new Memory_WriteAddress( 0x2001, 0x2001, YM2151_data_port_0_w ),
+		new Memory_WriteAddress( 0x4000, 0x4000, MWA_NOP ), /* read triggers irq reset and latch read (in the hardware only). */
+		new Memory_WriteAddress( 0x6000, 0x67ff, MWA_RAM ),
+		new Memory_WriteAddress( 0x8000, 0xffff, MWA_ROM ),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	
 	

@@ -430,41 +430,43 @@ public class namcos86
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( writemem1 )
-		{ 0x0000, 0x1fff, rthunder_videoram1_w, &rthunder_videoram1 },
-		{ 0x2000, 0x3fff, rthunder_videoram2_w, &rthunder_videoram2 },
+	public static Memory_WriteAddress writemem1[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0x1fff, rthunder_videoram1_w, &rthunder_videoram1 ),
+		new Memory_WriteAddress( 0x2000, 0x3fff, rthunder_videoram2_w, &rthunder_videoram2 ),
 	
-		{ 0x4000, 0x40ff, namcos1_wavedata_w, &namco_wavedata }, /* PSG device, shared RAM */
-		{ 0x4100, 0x413f, namcos1_sound_w, &namco_soundregs }, /* PSG device, shared RAM */
-		{ 0x4000, 0x43ff, shared1_w, &shared1 },
+		new Memory_WriteAddress( 0x4000, 0x40ff, namcos1_wavedata_w, &namco_wavedata ), /* PSG device, shared RAM */
+		new Memory_WriteAddress( 0x4100, 0x413f, namcos1_sound_w, &namco_soundregs ), /* PSG device, shared RAM */
+		new Memory_WriteAddress( 0x4000, 0x43ff, shared1_w, &shared1 ),
 	
-		{ 0x4400, 0x5fff, spriteram_w, &spriteram },
+		new Memory_WriteAddress( 0x4400, 0x5fff, spriteram_w, &spriteram ),
 	
-		{ 0x6000, 0x6000, namco_voice0_play_w },
-		{ 0x6200, 0x6200, namco_voice0_select_w },
-		{ 0x6400, 0x6400, namco_voice1_play_w },
-		{ 0x6600, 0x6600, namco_voice1_select_w },
-		{ 0x6800, 0x6800, bankswitch1_ext_w },
-	//	{ 0x6c00, 0x6c00, MWA_NOP }, /* ??? */
-	//	{ 0x6e00, 0x6e00, MWA_NOP }, /* ??? */
+		new Memory_WriteAddress( 0x6000, 0x6000, namco_voice0_play_w ),
+		new Memory_WriteAddress( 0x6200, 0x6200, namco_voice0_select_w ),
+		new Memory_WriteAddress( 0x6400, 0x6400, namco_voice1_play_w ),
+		new Memory_WriteAddress( 0x6600, 0x6600, namco_voice1_select_w ),
+		new Memory_WriteAddress( 0x6800, 0x6800, bankswitch1_ext_w ),
+	//	new Memory_WriteAddress( 0x6c00, 0x6c00, MWA_NOP ), /* ??? */
+	//	new Memory_WriteAddress( 0x6e00, 0x6e00, MWA_NOP ), /* ??? */
 	
-		{ 0x8000, 0x8000, watchdog_reset_w },
-		{ 0x8400, 0x8400, int_ack1_w }, /* IRQ acknowledge */
-		{ 0x8800, 0x8800, rthunder_tilebank_select_0_w },
-		{ 0x8c00, 0x8c00, rthunder_tilebank_select_1_w },
+		new Memory_WriteAddress( 0x8000, 0x8000, watchdog_reset_w ),
+		new Memory_WriteAddress( 0x8400, 0x8400, int_ack1_w ), /* IRQ acknowledge */
+		new Memory_WriteAddress( 0x8800, 0x8800, rthunder_tilebank_select_0_w ),
+		new Memory_WriteAddress( 0x8c00, 0x8c00, rthunder_tilebank_select_1_w ),
 	
-		{ 0x9000, 0x9002, rthunder_scroll0_w },	/* scroll + priority */
-		{ 0x9003, 0x9003, bankswitch1_w },
-		{ 0x9004, 0x9006, rthunder_scroll1_w },	/* scroll + priority */
+		new Memory_WriteAddress( 0x9000, 0x9002, rthunder_scroll0_w ),	/* scroll + priority */
+		new Memory_WriteAddress( 0x9003, 0x9003, bankswitch1_w ),
+		new Memory_WriteAddress( 0x9004, 0x9006, rthunder_scroll1_w ),	/* scroll + priority */
 	
-		{ 0x9400, 0x9402, rthunder_scroll2_w },	/* scroll + priority */
-	//	{ 0x9403, 0x9403 } sub CPU rom bank select would be here
-		{ 0x9404, 0x9406, rthunder_scroll3_w },	/* scroll + priority */
+		new Memory_WriteAddress( 0x9400, 0x9402, rthunder_scroll2_w ),	/* scroll + priority */
+	//	new Memory_WriteAddress( 0x9403, 0x9403 ) sub CPU rom bank select would be here
+		new Memory_WriteAddress( 0x9404, 0x9406, rthunder_scroll3_w ),	/* scroll + priority */
 	
-		{ 0xa000, 0xa000, rthunder_backcolor_w },
+		new Memory_WriteAddress( 0xa000, 0xa000, rthunder_backcolor_w ),
 	
-		{ 0x8000, 0xffff, MWA_ROM },
-	MEMORY_END
+		new Memory_WriteAddress( 0x8000, 0xffff, MWA_ROM ),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	
 	#define CPU2_MEMORY(NAME,ADDR_SPRITE,ADDR_VIDEO1,ADDR_VIDEO2,ADDR_ROM,ADDR_BANK,ADDR_WDOG,ADDR_INT)	\
@@ -479,19 +481,21 @@ public class namcos86
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};																		\
 																						\
-	static MEMORY_WRITE_START( NAME##_writemem2 )										\
-		{ ADDR_SPRITE+0x0000, ADDR_SPRITE+0x03ff, MWA_RAM },							\
-		{ ADDR_SPRITE+0x0400, ADDR_SPRITE+0x1fff, spriteram_w },						\
-		{ ADDR_VIDEO1+0x0000, ADDR_VIDEO1+0x1fff, rthunder_videoram1_w },				\
-		{ ADDR_VIDEO2+0x0000, ADDR_VIDEO2+0x1fff, rthunder_videoram2_w },				\
-	/*	{ ADDR_BANK+0x00, ADDR_BANK+0x02 } layer 2 scroll registers would be here */	\
-		{ ADDR_BANK+0x03, ADDR_BANK+0x03, bankswitch2_w },								\
-	/*	{ ADDR_BANK+0x04, ADDR_BANK+0x06 } layer 3 scroll registers would be here */	\
-		{ ADDR_WDOG, ADDR_WDOG, watchdog_reset_w },										\
-		{ ADDR_INT, ADDR_INT, int_ack2_w },	/* IRQ acknowledge */						\
-		{ ADDR_ROM+0x0000, ADDR_ROM+0x1fff, MWA_ROM },									\
-		{ 0x8000, 0xffff, MWA_ROM },													\
-	MEMORY_END
+	public static Memory_WriteAddress NAME##_writemem2[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),									\
+		new Memory_WriteAddress( ADDR_SPRITE+0x0000, ADDR_SPRITE+0x03ff, MWA_RAM ),							\
+		new Memory_WriteAddress( ADDR_SPRITE+0x0400, ADDR_SPRITE+0x1fff, spriteram_w ),						\
+		new Memory_WriteAddress( ADDR_VIDEO1+0x0000, ADDR_VIDEO1+0x1fff, rthunder_videoram1_w ),				\
+		new Memory_WriteAddress( ADDR_VIDEO2+0x0000, ADDR_VIDEO2+0x1fff, rthunder_videoram2_w ),				\
+	/*	new Memory_WriteAddress( ADDR_BANK+0x00, ADDR_BANK+0x02 ) layer 2 scroll registers would be here */	\
+		new Memory_WriteAddress( ADDR_BANK+0x03, ADDR_BANK+0x03, bankswitch2_w ),								\
+	/*	new Memory_WriteAddress( ADDR_BANK+0x04, ADDR_BANK+0x06 ) layer 3 scroll registers would be here */	\
+		new Memory_WriteAddress( ADDR_WDOG, ADDR_WDOG, watchdog_reset_w ),										\
+		new Memory_WriteAddress( ADDR_INT, ADDR_INT, int_ack2_w ),	/* IRQ acknowledge */						\
+		new Memory_WriteAddress( ADDR_ROM+0x0000, ADDR_ROM+0x1fff, MWA_ROM ),									\
+		new Memory_WriteAddress( 0x8000, 0xffff, MWA_ROM ),													\
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	#define UNUSED 0x4000
 	/*                     SPRITE  VIDEO1  VIDEO2  ROM     BANK    WDOG    IRQACK */
@@ -524,21 +528,23 @@ public class namcos86
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};																\
 																				\
-	static MEMORY_WRITE_START( NAME##_mcu_writemem )							\
-		{ 0x0000, 0x001f, hd63701_internal_registers_w },						\
-		{ 0x0080, 0x00ff, MWA_RAM },											\
-		{ 0x1000, 0x10ff, namcos1_wavedata_w }, /* PSG device, shared RAM */	\
-		{ 0x1100, 0x113f, namcos1_sound_w }, /* PSG device, shared RAM */		\
-		{ 0x1000, 0x13ff, shared1_w },											\
-		{ 0x1400, 0x1fff, MWA_RAM },											\
-		{ ADDR_INPUT+0x00, ADDR_INPUT+0x00, YM2151_register_port_0_w },			\
-		{ ADDR_INPUT+0x01, ADDR_INPUT+0x01, YM2151_data_port_0_w },				\
-		{ ADDR_UNK1, ADDR_UNK1, MWA_NOP }, /* ??? written (not always) at end of interrupt */	\
-		{ ADDR_UNK2, ADDR_UNK2, MWA_NOP }, /* ??? written (not always) at end of interrupt */	\
-		{ ADDR_LOWROM, ADDR_LOWROM+0x3fff, MWA_ROM },							\
-		{ 0x8000, 0xbfff, MWA_ROM },											\
-		{ 0xf000, 0xffff, MWA_ROM },											\
-	MEMORY_END
+	public static Memory_WriteAddress NAME##_mcu_writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),						\
+		new Memory_WriteAddress( 0x0000, 0x001f, hd63701_internal_registers_w ),						\
+		new Memory_WriteAddress( 0x0080, 0x00ff, MWA_RAM ),											\
+		new Memory_WriteAddress( 0x1000, 0x10ff, namcos1_wavedata_w ), /* PSG device, shared RAM */	\
+		new Memory_WriteAddress( 0x1100, 0x113f, namcos1_sound_w ), /* PSG device, shared RAM */		\
+		new Memory_WriteAddress( 0x1000, 0x13ff, shared1_w ),											\
+		new Memory_WriteAddress( 0x1400, 0x1fff, MWA_RAM ),											\
+		new Memory_WriteAddress( ADDR_INPUT+0x00, ADDR_INPUT+0x00, YM2151_register_port_0_w ),			\
+		new Memory_WriteAddress( ADDR_INPUT+0x01, ADDR_INPUT+0x01, YM2151_data_port_0_w ),				\
+		new Memory_WriteAddress( ADDR_UNK1, ADDR_UNK1, MWA_NOP ), /* ??? written (not always) at end of interrupt */	\
+		new Memory_WriteAddress( ADDR_UNK2, ADDR_UNK2, MWA_NOP ), /* ??? written (not always) at end of interrupt */	\
+		new Memory_WriteAddress( ADDR_LOWROM, ADDR_LOWROM+0x3fff, MWA_ROM ),							\
+		new Memory_WriteAddress( 0x8000, 0xbfff, MWA_ROM ),											\
+		new Memory_WriteAddress( 0xf000, 0xffff, MWA_ROM ),											\
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	#define UNUSED 0x4000
 	/*                    LOWROM   INPUT    UNK1    UNK2 */

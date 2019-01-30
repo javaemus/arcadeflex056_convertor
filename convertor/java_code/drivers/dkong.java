@@ -292,53 +292,57 @@ public class dkong
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( radarscp_writemem )
-		{ 0x0000, 0x5fff, MWA_ROM },
-		{ 0x6000, 0x68ff, MWA_RAM },
-		{ 0x6900, 0x6a7f, MWA_RAM, &spriteram, &spriteram_size },
-		{ 0x6a80, 0x6fff, MWA_RAM },
-		{ 0x7000, 0x73ff, MWA_RAM },    /* ???? */
-		{ 0x7400, 0x77ff, videoram_w, &videoram, &videoram_size },
-		{ 0x7800, 0x7803, MWA_RAM },	/* ???? */
-		{ 0x7808, 0x7808, MWA_RAM },	/* ???? */
-		{ 0x7c00, 0x7c00, dkong_sh_tuneselect_w },
-		{ 0x7c80, 0x7c80, radarscp_grid_color_w },
-		{ 0x7d00, 0x7d02, dkong_sh1_w },	/* walk/jump/boom sample trigger */
-		{ 0x7d03, 0x7d03, dkong_sh_sound3_w },
-		{ 0x7d04, 0x7d04, dkong_sh_sound4_w },
-		{ 0x7d05, 0x7d05, dkong_sh_sound5_w },
-		{ 0x7d80, 0x7d80, dkong_sh_w },
-		{ 0x7d81, 0x7d81, radarscp_grid_enable_w },
-		{ 0x7d82, 0x7d82, dkong_flipscreen_w },
-		{ 0x7d83, 0x7d83, MWA_RAM },
-		{ 0x7d84, 0x7d84, interrupt_enable_w },
-		{ 0x7d85, 0x7d85, MWA_RAM },
-		{ 0x7d86, 0x7d87, dkong_palettebank_w },
-	MEMORY_END
+	public static Memory_WriteAddress radarscp_writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0x5fff, MWA_ROM ),
+		new Memory_WriteAddress( 0x6000, 0x68ff, MWA_RAM ),
+		new Memory_WriteAddress( 0x6900, 0x6a7f, MWA_RAM, &spriteram, &spriteram_size ),
+		new Memory_WriteAddress( 0x6a80, 0x6fff, MWA_RAM ),
+		new Memory_WriteAddress( 0x7000, 0x73ff, MWA_RAM ),    /* ???? */
+		new Memory_WriteAddress( 0x7400, 0x77ff, videoram_w, &videoram, &videoram_size ),
+		new Memory_WriteAddress( 0x7800, 0x7803, MWA_RAM ),	/* ???? */
+		new Memory_WriteAddress( 0x7808, 0x7808, MWA_RAM ),	/* ???? */
+		new Memory_WriteAddress( 0x7c00, 0x7c00, dkong_sh_tuneselect_w ),
+		new Memory_WriteAddress( 0x7c80, 0x7c80, radarscp_grid_color_w ),
+		new Memory_WriteAddress( 0x7d00, 0x7d02, dkong_sh1_w ),	/* walk/jump/boom sample trigger */
+		new Memory_WriteAddress( 0x7d03, 0x7d03, dkong_sh_sound3_w ),
+		new Memory_WriteAddress( 0x7d04, 0x7d04, dkong_sh_sound4_w ),
+		new Memory_WriteAddress( 0x7d05, 0x7d05, dkong_sh_sound5_w ),
+		new Memory_WriteAddress( 0x7d80, 0x7d80, dkong_sh_w ),
+		new Memory_WriteAddress( 0x7d81, 0x7d81, radarscp_grid_enable_w ),
+		new Memory_WriteAddress( 0x7d82, 0x7d82, dkong_flipscreen_w ),
+		new Memory_WriteAddress( 0x7d83, 0x7d83, MWA_RAM ),
+		new Memory_WriteAddress( 0x7d84, 0x7d84, interrupt_enable_w ),
+		new Memory_WriteAddress( 0x7d85, 0x7d85, MWA_RAM ),
+		new Memory_WriteAddress( 0x7d86, 0x7d87, dkong_palettebank_w ),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
-	static MEMORY_WRITE_START( dkong_writemem )
-		{ 0x0000, 0x5fff, MWA_ROM },
-		{ 0x6000, 0x68ff, MWA_RAM },
-		{ 0x6900, 0x6a7f, MWA_RAM, &spriteram, &spriteram_size },
-		{ 0x6a80, 0x6fff, MWA_RAM },
-		{ 0x7000, 0x73ff, MWA_RAM },    /* ???? */
-		{ 0x7400, 0x77ff, videoram_w, &videoram, &videoram_size },
-		{ 0x7800, 0x7803, MWA_RAM },	/* ???? */
-		{ 0x7808, 0x7808, MWA_RAM },	/* ???? */
-		{ 0x7c00, 0x7c00, dkong_sh_tuneselect_w },
-	//	{ 0x7c80, 0x7c80,  },
-		{ 0x7d00, 0x7d02, dkong_sh1_w },	/* walk/jump/boom sample trigger */
-		{ 0x7d03, 0x7d03, dkong_sh_sound3_w },
-		{ 0x7d04, 0x7d04, dkong_sh_sound4_w },
-		{ 0x7d05, 0x7d05, dkong_sh_sound5_w },
-		{ 0x7d80, 0x7d80, dkong_sh_w },
-		{ 0x7d81, 0x7d81, MWA_RAM },	/* ???? */
-		{ 0x7d82, 0x7d82, dkong_flipscreen_w },
-		{ 0x7d83, 0x7d83, MWA_RAM },
-		{ 0x7d84, 0x7d84, interrupt_enable_w },
-		{ 0x7d85, 0x7d85, MWA_RAM },
-		{ 0x7d86, 0x7d87, dkong_palettebank_w },
-	MEMORY_END
+	public static Memory_WriteAddress dkong_writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0x5fff, MWA_ROM ),
+		new Memory_WriteAddress( 0x6000, 0x68ff, MWA_RAM ),
+		new Memory_WriteAddress( 0x6900, 0x6a7f, MWA_RAM, &spriteram, &spriteram_size ),
+		new Memory_WriteAddress( 0x6a80, 0x6fff, MWA_RAM ),
+		new Memory_WriteAddress( 0x7000, 0x73ff, MWA_RAM ),    /* ???? */
+		new Memory_WriteAddress( 0x7400, 0x77ff, videoram_w, &videoram, &videoram_size ),
+		new Memory_WriteAddress( 0x7800, 0x7803, MWA_RAM ),	/* ???? */
+		new Memory_WriteAddress( 0x7808, 0x7808, MWA_RAM ),	/* ???? */
+		new Memory_WriteAddress( 0x7c00, 0x7c00, dkong_sh_tuneselect_w ),
+	//	new Memory_WriteAddress( 0x7c80, 0x7c80,  ),
+		new Memory_WriteAddress( 0x7d00, 0x7d02, dkong_sh1_w ),	/* walk/jump/boom sample trigger */
+		new Memory_WriteAddress( 0x7d03, 0x7d03, dkong_sh_sound3_w ),
+		new Memory_WriteAddress( 0x7d04, 0x7d04, dkong_sh_sound4_w ),
+		new Memory_WriteAddress( 0x7d05, 0x7d05, dkong_sh_sound5_w ),
+		new Memory_WriteAddress( 0x7d80, 0x7d80, dkong_sh_w ),
+		new Memory_WriteAddress( 0x7d81, 0x7d81, MWA_RAM ),	/* ???? */
+		new Memory_WriteAddress( 0x7d82, 0x7d82, dkong_flipscreen_w ),
+		new Memory_WriteAddress( 0x7d83, 0x7d83, MWA_RAM ),
+		new Memory_WriteAddress( 0x7d84, 0x7d84, interrupt_enable_w ),
+		new Memory_WriteAddress( 0x7d85, 0x7d85, MWA_RAM ),
+		new Memory_WriteAddress( 0x7d86, 0x7d87, dkong_palettebank_w ),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	public static Memory_ReadAddress hunchbkd_readmem[]={
 		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
@@ -359,25 +363,27 @@ public class dkong
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( hunchbkd_writemem )
-		{ 0x0000, 0x0fff, MWA_ROM },
-		{ 0x2000, 0x2fff, MWA_ROM },
-		{ 0x4000, 0x4fff, MWA_ROM },
-		{ 0x6000, 0x6fff, MWA_ROM },
-		{ 0x1400, 0x1400, dkong_sh_tuneselect_w },
-		{ 0x1480, 0x1480, dkongjr_gfxbank_w },
-		{ 0x1580, 0x1580, dkong_sh_w },
-		{ 0x1582, 0x1582, dkong_flipscreen_w },
-		{ 0x1584, 0x1584, MWA_RAM },			/* Possibly still interupt enable */
-		{ 0x1585, 0x1585, MWA_RAM },			/* written a lot - every int */
-		{ 0x1586, 0x1587, dkong_palettebank_w },
-		{ 0x1600, 0x17ff, MWA_RAM, &spriteram, &spriteram_size },
-		{ 0x1800, 0x1bff, videoram_w, &videoram, &videoram_size },
-		{ 0x1C00, 0x1fff, MWA_RAM },
-	    { 0x3000, 0x3fff, hunchbks_mirror_w },
-	    { 0x5000, 0x5fff, hunchbks_mirror_w },
-	    { 0x7000, 0x7fff, hunchbks_mirror_w },
-	MEMORY_END
+	public static Memory_WriteAddress hunchbkd_writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0x0fff, MWA_ROM ),
+		new Memory_WriteAddress( 0x2000, 0x2fff, MWA_ROM ),
+		new Memory_WriteAddress( 0x4000, 0x4fff, MWA_ROM ),
+		new Memory_WriteAddress( 0x6000, 0x6fff, MWA_ROM ),
+		new Memory_WriteAddress( 0x1400, 0x1400, dkong_sh_tuneselect_w ),
+		new Memory_WriteAddress( 0x1480, 0x1480, dkongjr_gfxbank_w ),
+		new Memory_WriteAddress( 0x1580, 0x1580, dkong_sh_w ),
+		new Memory_WriteAddress( 0x1582, 0x1582, dkong_flipscreen_w ),
+		new Memory_WriteAddress( 0x1584, 0x1584, MWA_RAM ),			/* Possibly still interupt enable */
+		new Memory_WriteAddress( 0x1585, 0x1585, MWA_RAM ),			/* written a lot - every int */
+		new Memory_WriteAddress( 0x1586, 0x1587, dkong_palettebank_w ),
+		new Memory_WriteAddress( 0x1600, 0x17ff, MWA_RAM, &spriteram, &spriteram_size ),
+		new Memory_WriteAddress( 0x1800, 0x1bff, videoram_w, &videoram, &videoram_size ),
+		new Memory_WriteAddress( 0x1C00, 0x1fff, MWA_RAM ),
+	    new Memory_WriteAddress( 0x3000, 0x3fff, hunchbks_mirror_w ),
+	    new Memory_WriteAddress( 0x5000, 0x5fff, hunchbks_mirror_w ),
+	    new Memory_WriteAddress( 0x7000, 0x7fff, hunchbks_mirror_w ),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	int hunchloopback;
 	
@@ -435,9 +441,11 @@ public class dkong
 		new Memory_ReadAddress( 0x0000, 0x0fff, MRA_ROM ),
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
-	static MEMORY_WRITE_START( writemem_sound )
-		{ 0x0000, 0x0fff, MWA_ROM },
-	MEMORY_END
+	public static Memory_WriteAddress writemem_sound[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0x0fff, MWA_ROM ),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	static PORT_READ_START( readport_sound )
 		{ 0x00,     0xff,     dkong_sh_tune_r },
 		{ I8039_p1, I8039_p1, dkong_sh_p1_r },
@@ -458,31 +466,33 @@ public class dkong
 		{ I8039_t1, I8039_t1, dkong_sh_t1_r },
 	PORT_END
 	
-	static MEMORY_WRITE_START( dkongjr_writemem )
-		{ 0x0000, 0x5fff, MWA_ROM },
-		{ 0x6000, 0x68ff, MWA_RAM },
-		{ 0x6900, 0x6a7f, MWA_RAM, &spriteram, &spriteram_size },
-		{ 0x6a80, 0x6fff, MWA_RAM },
-		{ 0x7400, 0x77ff, videoram_w, &videoram, &videoram_size },
-		{ 0x7800, 0x7803, MWA_RAM },	/* ???? */
-		{ 0x7808, 0x7808, MWA_RAM },	/* ???? */
-		{ 0x7c00, 0x7c00, dkongjr_sh_tuneselect_w },
-		{ 0x7c80, 0x7c80, dkongjr_gfxbank_w },
-		{ 0x7c81, 0x7c81, dkongjr_sh_test6_w },
-		{ 0x7d00, 0x7d00, dkongjr_sh_climb_w }, /* HC - climb sound */
-		{ 0x7d01, 0x7d01, dkongjr_sh_jump_w }, /* HC - jump */
-		{ 0x7d02, 0x7d02, dkongjr_sh_land_w }, /* HC - climb sound */
-		{ 0x7d03, 0x7d03, dkongjr_sh_roar_w },
-		{ 0x7d04, 0x7d04, dkong_sh_sound4_w },
-		{ 0x7d05, 0x7d05, dkong_sh_sound5_w },
-		{ 0x7d06, 0x7d06, dkongjr_sh_snapjaw_w },
-		{ 0x7d07, 0x7d07, dkongjr_sh_walk_w },	/* controls pitch of the walk/climb? */
-		{ 0x7d80, 0x7d80, dkongjr_sh_death_w },
-		{ 0x7d81, 0x7d81, dkongjr_sh_drop_w },   /* active when Junior is falling */{ 0x7d84, 0x7d84, interrupt_enable_w },
-		{ 0x7d82, 0x7d82, dkong_flipscreen_w },
-		{ 0x7d86, 0x7d87, dkong_palettebank_w },
-		{ 0x8000, 0x9fff, MWA_ROM },	/* bootleg DKjr only */
-	MEMORY_END
+	public static Memory_WriteAddress dkongjr_writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0x5fff, MWA_ROM ),
+		new Memory_WriteAddress( 0x6000, 0x68ff, MWA_RAM ),
+		new Memory_WriteAddress( 0x6900, 0x6a7f, MWA_RAM, &spriteram, &spriteram_size ),
+		new Memory_WriteAddress( 0x6a80, 0x6fff, MWA_RAM ),
+		new Memory_WriteAddress( 0x7400, 0x77ff, videoram_w, &videoram, &videoram_size ),
+		new Memory_WriteAddress( 0x7800, 0x7803, MWA_RAM ),	/* ???? */
+		new Memory_WriteAddress( 0x7808, 0x7808, MWA_RAM ),	/* ???? */
+		new Memory_WriteAddress( 0x7c00, 0x7c00, dkongjr_sh_tuneselect_w ),
+		new Memory_WriteAddress( 0x7c80, 0x7c80, dkongjr_gfxbank_w ),
+		new Memory_WriteAddress( 0x7c81, 0x7c81, dkongjr_sh_test6_w ),
+		new Memory_WriteAddress( 0x7d00, 0x7d00, dkongjr_sh_climb_w ), /* HC - climb sound */
+		new Memory_WriteAddress( 0x7d01, 0x7d01, dkongjr_sh_jump_w ), /* HC - jump */
+		new Memory_WriteAddress( 0x7d02, 0x7d02, dkongjr_sh_land_w ), /* HC - climb sound */
+		new Memory_WriteAddress( 0x7d03, 0x7d03, dkongjr_sh_roar_w ),
+		new Memory_WriteAddress( 0x7d04, 0x7d04, dkong_sh_sound4_w ),
+		new Memory_WriteAddress( 0x7d05, 0x7d05, dkong_sh_sound5_w ),
+		new Memory_WriteAddress( 0x7d06, 0x7d06, dkongjr_sh_snapjaw_w ),
+		new Memory_WriteAddress( 0x7d07, 0x7d07, dkongjr_sh_walk_w ),	/* controls pitch of the walk/climb? */
+		new Memory_WriteAddress( 0x7d80, 0x7d80, dkongjr_sh_death_w ),
+		new Memory_WriteAddress( 0x7d81, 0x7d81, dkongjr_sh_drop_w ),   /* active when Junior is falling */new Memory_WriteAddress( 0x7d84, 0x7d84, interrupt_enable_w ),
+		new Memory_WriteAddress( 0x7d82, 0x7d82, dkong_flipscreen_w ),
+		new Memory_WriteAddress( 0x7d86, 0x7d87, dkong_palettebank_w ),
+		new Memory_WriteAddress( 0x8000, 0x9fff, MWA_ROM ),	/* bootleg DKjr only */
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	
 	
@@ -504,23 +514,25 @@ public class dkong
 		}
 	}
 	
-	static MEMORY_WRITE_START( dkong3_writemem )
-		{ 0x0000, 0x5fff, MWA_ROM },
-		{ 0x6000, 0x68ff, MWA_RAM },
-		{ 0x6900, 0x6a7f, MWA_RAM, &spriteram, &spriteram_size },
-		{ 0x6a80, 0x6fff, MWA_RAM },
-		{ 0x7400, 0x77ff, videoram_w, &videoram, &videoram_size },
-		{ 0x7c00, 0x7c00, soundlatch_w },
-		{ 0x7c80, 0x7c80, soundlatch2_w },
-		{ 0x7d00, 0x7d00, soundlatch3_w },
-		{ 0x7d80, 0x7d80, dkong3_2a03_reset_w },
-		{ 0x7e81, 0x7e81, dkong3_gfxbank_w },
-		{ 0x7e82, 0x7e82, dkong_flipscreen_w },
-		{ 0x7e84, 0x7e84, interrupt_enable_w },
-		{ 0x7e85, 0x7e85, MWA_NOP },	/* ??? */
-		{ 0x7e86, 0x7e87, dkong_palettebank_w },
-		{ 0x8000, 0x9fff, MWA_ROM },
-	MEMORY_END
+	public static Memory_WriteAddress dkong3_writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0x5fff, MWA_ROM ),
+		new Memory_WriteAddress( 0x6000, 0x68ff, MWA_RAM ),
+		new Memory_WriteAddress( 0x6900, 0x6a7f, MWA_RAM, &spriteram, &spriteram_size ),
+		new Memory_WriteAddress( 0x6a80, 0x6fff, MWA_RAM ),
+		new Memory_WriteAddress( 0x7400, 0x77ff, videoram_w, &videoram, &videoram_size ),
+		new Memory_WriteAddress( 0x7c00, 0x7c00, soundlatch_w ),
+		new Memory_WriteAddress( 0x7c80, 0x7c80, soundlatch2_w ),
+		new Memory_WriteAddress( 0x7d00, 0x7d00, soundlatch3_w ),
+		new Memory_WriteAddress( 0x7d80, 0x7d80, dkong3_2a03_reset_w ),
+		new Memory_WriteAddress( 0x7e81, 0x7e81, dkong3_gfxbank_w ),
+		new Memory_WriteAddress( 0x7e82, 0x7e82, dkong_flipscreen_w ),
+		new Memory_WriteAddress( 0x7e84, 0x7e84, interrupt_enable_w ),
+		new Memory_WriteAddress( 0x7e85, 0x7e85, MWA_NOP ),	/* ??? */
+		new Memory_WriteAddress( 0x7e86, 0x7e87, dkong_palettebank_w ),
+		new Memory_WriteAddress( 0x8000, 0x9fff, MWA_ROM ),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static PORT_WRITE_START( dkong3_writeport )
 		{ 0x00, 0x00, IOWP_NOP },	/* ??? */
@@ -536,11 +548,13 @@ public class dkong
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( dkong3_sound1_writemem )
-		{ 0x0000, 0x01ff, MWA_RAM },
-		{ 0x4000, 0x4017, NESPSG_0_w },
-		{ 0xe000, 0xffff, MWA_ROM },
-	MEMORY_END
+	public static Memory_WriteAddress dkong3_sound1_writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0x01ff, MWA_RAM ),
+		new Memory_WriteAddress( 0x4000, 0x4017, NESPSG_0_w ),
+		new Memory_WriteAddress( 0xe000, 0xffff, MWA_ROM ),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	public static Memory_ReadAddress dkong3_sound2_readmem[]={
 		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
@@ -551,11 +565,13 @@ public class dkong
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( dkong3_sound2_writemem )
-		{ 0x0000, 0x01ff, MWA_RAM },
-		{ 0x4000, 0x4017, NESPSG_1_w },
-		{ 0xe000, 0xffff, MWA_ROM },
-	MEMORY_END
+	public static Memory_WriteAddress dkong3_sound2_writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0x01ff, MWA_RAM ),
+		new Memory_WriteAddress( 0x4000, 0x4017, NESPSG_1_w ),
+		new Memory_WriteAddress( 0xe000, 0xffff, MWA_ROM ),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	
 	

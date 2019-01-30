@@ -508,24 +508,26 @@ public class darius
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( darius_sound_writemem )
-		{ 0x0000, 0x7fff, MWA_ROM },
-		{ 0x8000, 0x8fff, MWA_RAM },
-		{ 0x9000, 0x9000, YM2203_control_port_0_w },
-		{ 0x9001, 0x9001, YM2203_write_port_0_w },
-		{ 0xa000, 0xa000, YM2203_control_port_1_w },
-		{ 0xa001, 0xa001, YM2203_write_port_1_w },
-		{ 0xb000, 0xb000, taitosound_slave_port_w },
-		{ 0xb001, 0xb001, taitosound_slave_comm_w },
-		{ 0xc000, 0xc000, darius_fm0_pan },
-		{ 0xc400, 0xc400, darius_fm1_pan },
-		{ 0xc800, 0xc800, darius_psg0_pan },
-		{ 0xcc00, 0xcc00, darius_psg1_pan },
-		{ 0xd000, 0xd000, darius_da_pan },
-		{ 0xd400, 0xd400, adpcm_command_w },	/* ADPCM command for second Z80 to read from port 0x00 */
-	//	{ 0xd800, 0xd800, display_value },	/* ??? */
-		{ 0xdc00, 0xdc00, sound_bankswitch_w },
-	MEMORY_END
+	public static Memory_WriteAddress darius_sound_writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0x7fff, MWA_ROM ),
+		new Memory_WriteAddress( 0x8000, 0x8fff, MWA_RAM ),
+		new Memory_WriteAddress( 0x9000, 0x9000, YM2203_control_port_0_w ),
+		new Memory_WriteAddress( 0x9001, 0x9001, YM2203_write_port_0_w ),
+		new Memory_WriteAddress( 0xa000, 0xa000, YM2203_control_port_1_w ),
+		new Memory_WriteAddress( 0xa001, 0xa001, YM2203_write_port_1_w ),
+		new Memory_WriteAddress( 0xb000, 0xb000, taitosound_slave_port_w ),
+		new Memory_WriteAddress( 0xb001, 0xb001, taitosound_slave_comm_w ),
+		new Memory_WriteAddress( 0xc000, 0xc000, darius_fm0_pan ),
+		new Memory_WriteAddress( 0xc400, 0xc400, darius_fm1_pan ),
+		new Memory_WriteAddress( 0xc800, 0xc800, darius_psg0_pan ),
+		new Memory_WriteAddress( 0xcc00, 0xcc00, darius_psg1_pan ),
+		new Memory_WriteAddress( 0xd000, 0xd000, darius_da_pan ),
+		new Memory_WriteAddress( 0xd400, 0xd400, adpcm_command_w ),	/* ADPCM command for second Z80 to read from port 0x00 */
+	//	new Memory_WriteAddress( 0xd800, 0xd800, display_value ),	/* ??? */
+		new Memory_WriteAddress( 0xdc00, 0xdc00, sound_bankswitch_w ),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	public static Memory_ReadAddress darius_sound2_readmem[]={
 		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
@@ -534,10 +536,12 @@ public class darius
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( darius_sound2_writemem )
-		{ 0x0000, 0xffff, MWA_NOP },	/* writes rom whenever interrupt occurs - as no stack */
+	public static Memory_WriteAddress darius_sound2_writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0xffff, MWA_NOP ),	/* writes rom whenever interrupt occurs - as no stack */
 		/* yes, no RAM */
-	MEMORY_END
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	
 	static void darius_adpcm_int (int data)

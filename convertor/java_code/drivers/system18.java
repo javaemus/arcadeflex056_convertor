@@ -90,13 +90,15 @@ public class system18
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( sound_writemem_18 )
-		{ 0x0000, 0xbfff, MWA_ROM },
+	public static Memory_WriteAddress sound_writemem_18[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0xbfff, MWA_ROM ),
 		/**** D/A register ****/
-		{ 0xc000, 0xc008, RF5C68_reg_w },
-		{ 0xd000, 0xdfff, RF5C68_w },
-		{ 0xe000, 0xffff, MWA_RAM },	//??
-	MEMORY_END
+		new Memory_WriteAddress( 0xc000, 0xc008, RF5C68_reg_w ),
+		new Memory_WriteAddress( 0xd000, 0xdfff, RF5C68_w ),
+		new Memory_WriteAddress( 0xe000, 0xffff, MWA_RAM ),	//??
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static WRITE_HANDLER( sys18_soundbank_w ){
 		/* select access bank for a000~bfff */

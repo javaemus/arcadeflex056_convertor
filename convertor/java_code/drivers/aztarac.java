@@ -94,19 +94,21 @@ public class aztarac
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( sound_writemem )
-		{ 0x0000, 0x1fff, MWA_ROM },
-		{ 0x8000, 0x87ff, MWA_RAM },
-		{ 0x8c00, 0x8c00, AY8910_write_port_0_w },
-		{ 0x8c01, 0x8c01, AY8910_control_port_0_w },
-		{ 0x8c02, 0x8c02, AY8910_write_port_1_w },
-		{ 0x8c03, 0x8c03, AY8910_control_port_1_w },
-		{ 0x8c04, 0x8c04, AY8910_write_port_2_w },
-		{ 0x8c05, 0x8c05, AY8910_control_port_2_w },
-		{ 0x8c06, 0x8c06, AY8910_write_port_3_w },
-		{ 0x8c07, 0x8c07, AY8910_control_port_3_w },
-		{ 0x9000, 0x9000, aztarac_snd_status_w },
-	MEMORY_END
+	public static Memory_WriteAddress sound_writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0x1fff, MWA_ROM ),
+		new Memory_WriteAddress( 0x8000, 0x87ff, MWA_RAM ),
+		new Memory_WriteAddress( 0x8c00, 0x8c00, AY8910_write_port_0_w ),
+		new Memory_WriteAddress( 0x8c01, 0x8c01, AY8910_control_port_0_w ),
+		new Memory_WriteAddress( 0x8c02, 0x8c02, AY8910_write_port_1_w ),
+		new Memory_WriteAddress( 0x8c03, 0x8c03, AY8910_control_port_1_w ),
+		new Memory_WriteAddress( 0x8c04, 0x8c04, AY8910_write_port_2_w ),
+		new Memory_WriteAddress( 0x8c05, 0x8c05, AY8910_control_port_2_w ),
+		new Memory_WriteAddress( 0x8c06, 0x8c06, AY8910_write_port_3_w ),
+		new Memory_WriteAddress( 0x8c07, 0x8c07, AY8910_control_port_3_w ),
+		new Memory_WriteAddress( 0x9000, 0x9000, aztarac_snd_status_w ),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	
 	

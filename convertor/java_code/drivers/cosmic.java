@@ -438,15 +438,17 @@ public class cosmic
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( panic_writemem )
-		{ 0x0000, 0x3fff, MWA_ROM },
-		{ 0x4000, 0x5fff, cosmica_videoram_w, &videoram, &videoram_size },
-		{ 0x6000, 0x601f, MWA_RAM, &spriteram, &spriteram_size },
-		{ 0x7000, 0x700b, panic_sound_output_w },
-		{ 0x700c, 0x700e, panic_color_register_w },
-		{ 0x700f, 0x700f, flip_screen_w },
-		{ 0x7800, 0x7801, panic_sound_output2_w },
-	MEMORY_END
+	public static Memory_WriteAddress panic_writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0x3fff, MWA_ROM ),
+		new Memory_WriteAddress( 0x4000, 0x5fff, cosmica_videoram_w, &videoram, &videoram_size ),
+		new Memory_WriteAddress( 0x6000, 0x601f, MWA_RAM, &spriteram, &spriteram_size ),
+		new Memory_WriteAddress( 0x7000, 0x700b, panic_sound_output_w ),
+		new Memory_WriteAddress( 0x700c, 0x700e, panic_color_register_w ),
+		new Memory_WriteAddress( 0x700f, 0x700f, flip_screen_w ),
+		new Memory_WriteAddress( 0x7800, 0x7801, panic_sound_output2_w ),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	public static Memory_ReadAddress cosmica_readmem[]={
 		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
@@ -459,14 +461,16 @@ public class cosmic
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( cosmica_writemem )
-		{ 0x0000, 0x3fff, MWA_ROM },
-		{ 0x4000, 0x5fff, cosmica_videoram_w, &videoram, &videoram_size },
-		{ 0x6000, 0x601f, MWA_RAM ,&spriteram, &spriteram_size },
-		{ 0x7000, 0x700b, MWA_RAM },   			/* Sound Triggers */
-		{ 0x700c, 0x700e, panic_color_register_w },
-		{ 0x700f, 0x700f, flip_screen_w },
-	MEMORY_END
+	public static Memory_WriteAddress cosmica_writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0x3fff, MWA_ROM ),
+		new Memory_WriteAddress( 0x4000, 0x5fff, cosmica_videoram_w, &videoram, &videoram_size ),
+		new Memory_WriteAddress( 0x6000, 0x601f, MWA_RAM ,&spriteram, &spriteram_size ),
+		new Memory_WriteAddress( 0x7000, 0x700b, MWA_RAM ),   			/* Sound Triggers */
+		new Memory_WriteAddress( 0x700c, 0x700e, panic_color_register_w ),
+		new Memory_WriteAddress( 0x700f, 0x700f, flip_screen_w ),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	public static Memory_ReadAddress cosmicg_readmem[]={
 		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
@@ -475,10 +479,12 @@ public class cosmic
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( cosmicg_writemem )
-		{ 0x0000, 0x1fff, MWA_ROM },
-		{ 0x2000, 0x3fff, cosmicg_videoram_w, &videoram, &videoram_size },
-	MEMORY_END
+	public static Memory_WriteAddress cosmicg_writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0x1fff, MWA_ROM ),
+		new Memory_WriteAddress( 0x2000, 0x3fff, cosmicg_videoram_w, &videoram, &videoram_size ),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static PORT_READ_START( cosmicg_readport )
 		{ 0x00, 0x00, cosmicg_pixel_clock_r },
@@ -502,14 +508,16 @@ public class cosmic
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( magspot2_writemem )
-		{ 0x0000, 0x2fff, MWA_ROM },
-		{ 0x4000, 0x401f, MWA_RAM, &spriteram, &spriteram_size},
-		{ 0x4800, 0x4800, DAC_0_data_w },
-		{ 0x480c, 0x480e, panic_color_register_w },
-		{ 0x480f, 0x480f, flip_screen_w },
-		{ 0x6000, 0x7fff, cosmica_videoram_w, &videoram, &videoram_size},
-	MEMORY_END
+	public static Memory_WriteAddress magspot2_writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0x2fff, MWA_ROM ),
+		new Memory_WriteAddress( 0x4000, 0x401f, MWA_RAM, &spriteram, &spriteram_size),
+		new Memory_WriteAddress( 0x4800, 0x4800, DAC_0_data_w ),
+		new Memory_WriteAddress( 0x480c, 0x480e, panic_color_register_w ),
+		new Memory_WriteAddress( 0x480f, 0x480f, flip_screen_w ),
+		new Memory_WriteAddress( 0x6000, 0x7fff, cosmica_videoram_w, &videoram, &videoram_size),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	public static Memory_ReadAddress nomnlnd_readmem[]={
 		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
@@ -522,15 +530,17 @@ public class cosmic
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( nomnlnd_writemem )
-		{ 0x0000, 0x2fff, MWA_ROM },
-		{ 0x4000, 0x401f, MWA_RAM, &spriteram, &spriteram_size},
-		{ 0x4807, 0x4807, nomnlnd_background_w },
-		{ 0x480a, 0x480a, DAC_0_data_w },
-		{ 0x480c, 0x480e, panic_color_register_w },
-		{ 0x480f, 0x480f, flip_screen_w },
-		{ 0x6000, 0x7fff, cosmica_videoram_w, &videoram, &videoram_size},
-	MEMORY_END
+	public static Memory_WriteAddress nomnlnd_writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0x2fff, MWA_ROM ),
+		new Memory_WriteAddress( 0x4000, 0x401f, MWA_RAM, &spriteram, &spriteram_size),
+		new Memory_WriteAddress( 0x4807, 0x4807, nomnlnd_background_w ),
+		new Memory_WriteAddress( 0x480a, 0x480a, DAC_0_data_w ),
+		new Memory_WriteAddress( 0x480c, 0x480e, panic_color_register_w ),
+		new Memory_WriteAddress( 0x480f, 0x480f, flip_screen_w ),
+		new Memory_WriteAddress( 0x6000, 0x7fff, cosmica_videoram_w, &videoram, &videoram_size),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	
 	INPUT_PORTS_START( panic )

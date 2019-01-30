@@ -181,14 +181,16 @@ public class m107
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( writemem )
-		{ 0x00000, 0xbffff, MWA_ROM },
-		{ 0xd0000, 0xdffff, m107_vram_w, &m107_vram_data },
-		{ 0xe0000, 0xeffff, MWA_RAM, &m107_ram }, /* System ram */
-		{ 0xf8000, 0xf8fff, MWA_RAM, &spriteram },
-		{ 0xf9000, 0xf9fff, paletteram_xBBBBBGGGGGRRRRR_w, &paletteram },
-		{ 0xffff0, 0xfffff, MWA_ROM },
-	MEMORY_END
+	public static Memory_WriteAddress writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x00000, 0xbffff, MWA_ROM ),
+		new Memory_WriteAddress( 0xd0000, 0xdffff, m107_vram_w, &m107_vram_data ),
+		new Memory_WriteAddress( 0xe0000, 0xeffff, MWA_RAM, &m107_ram ), /* System ram */
+		new Memory_WriteAddress( 0xf8000, 0xf8fff, MWA_RAM, &spriteram ),
+		new Memory_WriteAddress( 0xf9000, 0xf9fff, paletteram_xBBBBBGGGGGRRRRR_w, &paletteram ),
+		new Memory_WriteAddress( 0xffff0, 0xfffff, MWA_ROM ),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static PORT_READ_START( readport )
 		{ 0x00, 0x00, input_port_0_r }, /* Player 1 */
@@ -224,17 +226,19 @@ public class m107
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( sound_writemem )
-		{ 0x00000, 0x1ffff, MWA_ROM },
-		{ 0x9ff00, 0x9ffff, MWA_NOP }, /* Irq controller? */
-		{ 0xa0000, 0xa3fff, MWA_RAM },
-		{ 0xa8000, 0xa803f, IremGA20_w },
-		{ 0xa8040, 0xa8041, YM2151_register_port_0_w },
-		{ 0xa8042, 0xa8043, YM2151_data_port_0_w },
-		{ 0xa8044, 0xa8045, m92_sound_irq_ack_w },
-		{ 0xa8046, 0xa8047, m92_sound_status_w },
-		{ 0xffff0, 0xfffff, MWA_ROM },
-	MEMORY_END
+	public static Memory_WriteAddress sound_writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x00000, 0x1ffff, MWA_ROM ),
+		new Memory_WriteAddress( 0x9ff00, 0x9ffff, MWA_NOP ), /* Irq controller? */
+		new Memory_WriteAddress( 0xa0000, 0xa3fff, MWA_RAM ),
+		new Memory_WriteAddress( 0xa8000, 0xa803f, IremGA20_w ),
+		new Memory_WriteAddress( 0xa8040, 0xa8041, YM2151_register_port_0_w ),
+		new Memory_WriteAddress( 0xa8042, 0xa8043, YM2151_data_port_0_w ),
+		new Memory_WriteAddress( 0xa8044, 0xa8045, m92_sound_irq_ack_w ),
+		new Memory_WriteAddress( 0xa8046, 0xa8047, m92_sound_status_w ),
+		new Memory_WriteAddress( 0xffff0, 0xfffff, MWA_ROM ),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	/******************************************************************************/
 	

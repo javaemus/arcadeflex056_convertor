@@ -274,24 +274,26 @@ public class chinagat
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( writemem )
-		{ 0x0000, 0x1fff, MWA_BANK2 },
-		{ 0x2000, 0x27ff, ddragon_fgvideoram_w, &ddragon_fgvideoram },
-		{ 0x2800, 0x2fff, ddragon_bgvideoram_w, &ddragon_bgvideoram },
-		{ 0x3000, 0x317f, paletteram_xxxxBBBBGGGGRRRR_split1_w, &paletteram },
-		{ 0x3400, 0x357f, paletteram_xxxxBBBBGGGGRRRR_split2_w, &paletteram_2 },
-		{ 0x3800, 0x397f, MWA_BANK3, &spriteram, &spriteram_size },
-		{ 0x3e00, 0x3e00, chinagat_cpu_sound_cmd_w },
-	//	{ 0x3e01, 0x3e01, MWA_NOP },
-	//	{ 0x3e02, 0x3e02, MWA_NOP },
-	//	{ 0x3e03, 0x3e03, MWA_NOP },
-		{ 0x3e04, 0x3e04, chinagat_sub_IRQ_w },
-		{ 0x3e06, 0x3e06, MWA_RAM, &ddragon_scrolly_lo },
-		{ 0x3e07, 0x3e07, MWA_RAM, &ddragon_scrollx_lo },
-		{ 0x3f00, 0x3f00, chinagat_video_ctrl_w },
-		{ 0x3f01, 0x3f01, chinagat_bankswitch_w },
-		{ 0x4000, 0xffff, MWA_ROM },
-	MEMORY_END
+	public static Memory_WriteAddress writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0x1fff, MWA_BANK2 ),
+		new Memory_WriteAddress( 0x2000, 0x27ff, ddragon_fgvideoram_w, &ddragon_fgvideoram ),
+		new Memory_WriteAddress( 0x2800, 0x2fff, ddragon_bgvideoram_w, &ddragon_bgvideoram ),
+		new Memory_WriteAddress( 0x3000, 0x317f, paletteram_xxxxBBBBGGGGRRRR_split1_w, &paletteram ),
+		new Memory_WriteAddress( 0x3400, 0x357f, paletteram_xxxxBBBBGGGGRRRR_split2_w, &paletteram_2 ),
+		new Memory_WriteAddress( 0x3800, 0x397f, MWA_BANK3, &spriteram, &spriteram_size ),
+		new Memory_WriteAddress( 0x3e00, 0x3e00, chinagat_cpu_sound_cmd_w ),
+	//	new Memory_WriteAddress( 0x3e01, 0x3e01, MWA_NOP ),
+	//	new Memory_WriteAddress( 0x3e02, 0x3e02, MWA_NOP ),
+	//	new Memory_WriteAddress( 0x3e03, 0x3e03, MWA_NOP ),
+		new Memory_WriteAddress( 0x3e04, 0x3e04, chinagat_sub_IRQ_w ),
+		new Memory_WriteAddress( 0x3e06, 0x3e06, MWA_RAM, &ddragon_scrolly_lo ),
+		new Memory_WriteAddress( 0x3e07, 0x3e07, MWA_RAM, &ddragon_scrollx_lo ),
+		new Memory_WriteAddress( 0x3f00, 0x3f00, chinagat_video_ctrl_w ),
+		new Memory_WriteAddress( 0x3f01, 0x3f01, chinagat_bankswitch_w ),
+		new Memory_WriteAddress( 0x4000, 0xffff, MWA_ROM ),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	public static Memory_ReadAddress sub_readmem[]={
 		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
@@ -303,12 +305,14 @@ public class chinagat
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( sub_writemem )
-		{ 0x0000, 0x1fff, MWA_BANK2 },
-		{ 0x2000, 0x2000, chinagat_sub_bankswitch_w },
-		{ 0x2800, 0x2800, MWA_RAM }, /* Called on CPU start and after return from jump table */
-		{ 0x4000, 0xffff, MWA_ROM },
-	MEMORY_END
+	public static Memory_WriteAddress sub_writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0x1fff, MWA_BANK2 ),
+		new Memory_WriteAddress( 0x2000, 0x2000, chinagat_sub_bankswitch_w ),
+		new Memory_WriteAddress( 0x2800, 0x2800, MWA_RAM ), /* Called on CPU start and after return from jump table */
+		new Memory_WriteAddress( 0x4000, 0xffff, MWA_ROM ),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	public static Memory_ReadAddress sound_readmem[]={
 		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
@@ -320,13 +324,15 @@ public class chinagat
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( sound_writemem )
-		{ 0x0000, 0x7fff, MWA_ROM },
-		{ 0x8000, 0x87ff, MWA_RAM },
-		{ 0x8800, 0x8800, YM2151_register_port_0_w },
-		{ 0x8801, 0x8801, YM2151_data_port_0_w },
-		{ 0x9800, 0x9800, OKIM6295_data_0_w },
-	MEMORY_END
+	public static Memory_WriteAddress sound_writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0x7fff, MWA_ROM ),
+		new Memory_WriteAddress( 0x8000, 0x87ff, MWA_RAM ),
+		new Memory_WriteAddress( 0x8800, 0x8800, YM2151_register_port_0_w ),
+		new Memory_WriteAddress( 0x8801, 0x8801, YM2151_data_port_0_w ),
+		new Memory_WriteAddress( 0x9800, 0x9800, OKIM6295_data_0_w ),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	public static Memory_ReadAddress ym2203c_sound_readmem[]={
 		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
@@ -341,25 +347,27 @@ public class chinagat
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( ym2203c_sound_writemem )
-		{ 0x0000, 0x7fff, MWA_ROM },
-		{ 0x8000, 0x87ff, MWA_RAM },
+	public static Memory_WriteAddress ym2203c_sound_writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0x7fff, MWA_ROM ),
+		new Memory_WriteAddress( 0x8000, 0x87ff, MWA_RAM ),
 	// 8804 and/or 8805 make a gong sound when the coin goes in
 	// but only on the title screen....
 	
-		{ 0x8800, 0x8800, YM2203_control_port_0_w },
-		{ 0x8801, 0x8801, YM2203_write_port_0_w },
-	//	{ 0x8802, 0x8802, OKIM6295_data_0_w },
-	//	{ 0x8803, 0x8803, OKIM6295_data_0_w },
-		{ 0x8804, 0x8804, YM2203_control_port_1_w },
-		{ 0x8805, 0x8805, YM2203_write_port_1_w },
-	//	{ 0x8804, 0x8804, MWA_RAM },
-	//	{ 0x8805, 0x8805, MWA_RAM },
+		new Memory_WriteAddress( 0x8800, 0x8800, YM2203_control_port_0_w ),
+		new Memory_WriteAddress( 0x8801, 0x8801, YM2203_write_port_0_w ),
+	//	new Memory_WriteAddress( 0x8802, 0x8802, OKIM6295_data_0_w ),
+	//	new Memory_WriteAddress( 0x8803, 0x8803, OKIM6295_data_0_w ),
+		new Memory_WriteAddress( 0x8804, 0x8804, YM2203_control_port_1_w ),
+		new Memory_WriteAddress( 0x8805, 0x8805, YM2203_write_port_1_w ),
+	//	new Memory_WriteAddress( 0x8804, 0x8804, MWA_RAM ),
+	//	new Memory_WriteAddress( 0x8805, 0x8805, MWA_RAM ),
 	
-	//	{ 0x8800, 0x8800, YM2151_register_port_0_w },
-	//	{ 0x8801, 0x8801, YM2151_data_port_0_w },
-	//	{ 0x9800, 0x9800, OKIM6295_data_0_w },
-	MEMORY_END
+	//	new Memory_WriteAddress( 0x8800, 0x8800, YM2151_register_port_0_w ),
+	//	new Memory_WriteAddress( 0x8801, 0x8801, YM2151_data_port_0_w ),
+	//	new Memory_WriteAddress( 0x9800, 0x9800, OKIM6295_data_0_w ),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	public static Memory_ReadAddress saiyugb1_sound_readmem[]={
 		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
@@ -370,13 +378,15 @@ public class chinagat
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( saiyugb1_sound_writemem )
-		{ 0x0000, 0x7fff, MWA_ROM },
-		{ 0x8000, 0x87ff, MWA_RAM },
-		{ 0x8800, 0x8800, YM2151_register_port_0_w },
-		{ 0x8801, 0x8801, YM2151_data_port_0_w },
-		{ 0x9800, 0x9800, saiyugb1_mcu_command_w },
-	MEMORY_END
+	public static Memory_WriteAddress saiyugb1_sound_writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0x7fff, MWA_ROM ),
+		new Memory_WriteAddress( 0x8000, 0x87ff, MWA_RAM ),
+		new Memory_WriteAddress( 0x8800, 0x8800, YM2151_register_port_0_w ),
+		new Memory_WriteAddress( 0x8801, 0x8801, YM2151_data_port_0_w ),
+		new Memory_WriteAddress( 0x9800, 0x9800, saiyugb1_mcu_command_w ),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	public static Memory_ReadAddress i8748_readmem[]={
 		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
@@ -385,10 +395,12 @@ public class chinagat
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( i8748_writemem )
-		{ 0x0000, 0x03ff, MWA_ROM },
-		{ 0x0400, 0x07ff, MWA_ROM },
-	MEMORY_END
+	public static Memory_WriteAddress i8748_writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0x03ff, MWA_ROM ),
+		new Memory_WriteAddress( 0x0400, 0x07ff, MWA_ROM ),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static PORT_READ_START( i8748_readport )
 		{ I8039_bus, I8039_bus, saiyugb1_mcu_command_r },

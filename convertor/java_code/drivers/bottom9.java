@@ -150,20 +150,22 @@ public class bottom9
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( bottom9_writemem )
-		{ 0x0000, 0x07ff, bottom9_bankedram1_w },
-		{ 0x1f80, 0x1f80, bankswitch_w },
-		{ 0x1f90, 0x1f90, bottom9_1f90_w },
-		{ 0x1fa0, 0x1fa0, watchdog_reset_w },
-		{ 0x1fb0, 0x1fb0, soundlatch_w },
-		{ 0x1fc0, 0x1fc0, bottom9_sh_irqtrigger_w },
-		{ 0x1ff0, 0x1fff, K051316_ctrl_0_w },
-		{ 0x2000, 0x27ff, bottom9_bankedram2_w, &paletteram },
-		{ 0x0000, 0x3fff, K052109_051960_w },
-		{ 0x4000, 0x5fff, MWA_RAM },
-		{ 0x6000, 0x7fff, MWA_ROM },
-		{ 0x8000, 0xffff, MWA_ROM },
-	MEMORY_END
+	public static Memory_WriteAddress bottom9_writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0x07ff, bottom9_bankedram1_w ),
+		new Memory_WriteAddress( 0x1f80, 0x1f80, bankswitch_w ),
+		new Memory_WriteAddress( 0x1f90, 0x1f90, bottom9_1f90_w ),
+		new Memory_WriteAddress( 0x1fa0, 0x1fa0, watchdog_reset_w ),
+		new Memory_WriteAddress( 0x1fb0, 0x1fb0, soundlatch_w ),
+		new Memory_WriteAddress( 0x1fc0, 0x1fc0, bottom9_sh_irqtrigger_w ),
+		new Memory_WriteAddress( 0x1ff0, 0x1fff, K051316_ctrl_0_w ),
+		new Memory_WriteAddress( 0x2000, 0x27ff, bottom9_bankedram2_w, &paletteram ),
+		new Memory_WriteAddress( 0x0000, 0x3fff, K052109_051960_w ),
+		new Memory_WriteAddress( 0x4000, 0x5fff, MWA_RAM ),
+		new Memory_WriteAddress( 0x6000, 0x7fff, MWA_ROM ),
+		new Memory_WriteAddress( 0x8000, 0xffff, MWA_ROM ),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	public static Memory_ReadAddress bottom9_sound_readmem[]={
 		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
@@ -175,14 +177,16 @@ public class bottom9
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( bottom9_sound_writemem )
-		{ 0x0000, 0x7fff, MWA_ROM },
-		{ 0x8000, 0x87ff, MWA_RAM },
-		{ 0x9000, 0x9000, sound_bank_w },
-		{ 0xa000, 0xa00d, K007232_write_port_0_w },
-		{ 0xb000, 0xb00d, K007232_write_port_1_w },
-		{ 0xf000, 0xf000, nmi_enable_w },
-	MEMORY_END
+	public static Memory_WriteAddress bottom9_sound_writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0x7fff, MWA_ROM ),
+		new Memory_WriteAddress( 0x8000, 0x87ff, MWA_RAM ),
+		new Memory_WriteAddress( 0x9000, 0x9000, sound_bank_w ),
+		new Memory_WriteAddress( 0xa000, 0xa00d, K007232_write_port_0_w ),
+		new Memory_WriteAddress( 0xb000, 0xb00d, K007232_write_port_1_w ),
+		new Memory_WriteAddress( 0xf000, 0xf000, nmi_enable_w ),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	
 	

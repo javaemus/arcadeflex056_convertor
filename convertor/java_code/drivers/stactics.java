@@ -123,41 +123,43 @@ public class stactics
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( writemem )
-	    { 0x4000, 0x47ff, MWA_RAM },
-	    { 0x6000, 0x6001, stactics_coin_lockout_w },
-	    { 0x6006, 0x6007, stactics_palette_w },
-	    /* { 0x6010, 0x601f, stactics_sound_w }, */
-	    { 0x6016, 0x6016, MWA_RAM, &stactics_motor_on },  /* Note: This overlaps rocket sound */
-	    /* { 0x6020, 0x602f, stactics_lamp_latch_w }, */
-	    { 0x6030, 0x603f, stactics_speed_latch_w },
-	    { 0x6040, 0x604f, stactics_shot_trigger_w },
-	    { 0x6050, 0x605f, stactics_shot_flag_clear_w },
-	    { 0x6060, 0x606f, MWA_RAM, &stactics_display_buffer },
-	    /* { 0x60a0, 0x60ef, stactics_sound2_w }, */
+	public static Memory_WriteAddress writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+	    new Memory_WriteAddress( 0x4000, 0x47ff, MWA_RAM ),
+	    new Memory_WriteAddress( 0x6000, 0x6001, stactics_coin_lockout_w ),
+	    new Memory_WriteAddress( 0x6006, 0x6007, stactics_palette_w ),
+	    /* new Memory_WriteAddress( 0x6010, 0x601f, stactics_sound_w ), */
+	    new Memory_WriteAddress( 0x6016, 0x6016, MWA_RAM, &stactics_motor_on ),  /* Note: This overlaps rocket sound */
+	    /* new Memory_WriteAddress( 0x6020, 0x602f, stactics_lamp_latch_w ), */
+	    new Memory_WriteAddress( 0x6030, 0x603f, stactics_speed_latch_w ),
+	    new Memory_WriteAddress( 0x6040, 0x604f, stactics_shot_trigger_w ),
+	    new Memory_WriteAddress( 0x6050, 0x605f, stactics_shot_flag_clear_w ),
+	    new Memory_WriteAddress( 0x6060, 0x606f, MWA_RAM, &stactics_display_buffer ),
+	    /* new Memory_WriteAddress( 0x60a0, 0x60ef, stactics_sound2_w ), */
 	
-	    { 0x8000, 0x8fff, stactics_scroll_ram_w, &stactics_scroll_ram },
+	    new Memory_WriteAddress( 0x8000, 0x8fff, stactics_scroll_ram_w, &stactics_scroll_ram ),
 	
-	    { 0xb000, 0xb3ff, stactics_videoram_b_w, &stactics_videoram_b, &videoram_size },
-	    { 0xb400, 0xb7ff, MWA_RAM },   /* Unused, but initialized */
-	    { 0xb800, 0xbfff, stactics_chardata_b_w, &stactics_chardata_b },
+	    new Memory_WriteAddress( 0xb000, 0xb3ff, stactics_videoram_b_w, &stactics_videoram_b, &videoram_size ),
+	    new Memory_WriteAddress( 0xb400, 0xb7ff, MWA_RAM ),   /* Unused, but initialized */
+	    new Memory_WriteAddress( 0xb800, 0xbfff, stactics_chardata_b_w, &stactics_chardata_b ),
 	
-	    { 0xc000, 0xcfff, MWA_NOP }, /* according to the schematics, nothing is mapped here */
+	    new Memory_WriteAddress( 0xc000, 0xcfff, MWA_NOP ), /* according to the schematics, nothing is mapped here */
 	                                 /* but, the game still tries to clear this out         */
 	
-	    { 0xd000, 0xd3ff, stactics_videoram_d_w, &stactics_videoram_d },
-	    { 0xd400, 0xd7ff, MWA_RAM },   /* Used as scratch RAM, high scores, etc. */
-	    { 0xd800, 0xdfff, stactics_chardata_d_w, &stactics_chardata_d },
+	    new Memory_WriteAddress( 0xd000, 0xd3ff, stactics_videoram_d_w, &stactics_videoram_d ),
+	    new Memory_WriteAddress( 0xd400, 0xd7ff, MWA_RAM ),   /* Used as scratch RAM, high scores, etc. */
+	    new Memory_WriteAddress( 0xd800, 0xdfff, stactics_chardata_d_w, &stactics_chardata_d ),
 	
-	    { 0xe000, 0xe3ff, stactics_videoram_e_w, &stactics_videoram_e },
-	    { 0xe400, 0xe7ff, MWA_RAM },   /* Used as scratch RAM, high scores, etc. */
-	    { 0xe800, 0xefff, stactics_chardata_e_w, &stactics_chardata_e },
+	    new Memory_WriteAddress( 0xe000, 0xe3ff, stactics_videoram_e_w, &stactics_videoram_e ),
+	    new Memory_WriteAddress( 0xe400, 0xe7ff, MWA_RAM ),   /* Used as scratch RAM, high scores, etc. */
+	    new Memory_WriteAddress( 0xe800, 0xefff, stactics_chardata_e_w, &stactics_chardata_e ),
 	
-	    { 0xf000, 0xf3ff, stactics_videoram_f_w, &stactics_videoram_f },
-	    { 0xf400, 0xf7ff, MWA_RAM },   /* Used as scratch RAM, high scores, etc. */
-	    { 0xf800, 0xffff, stactics_chardata_f_w, &stactics_chardata_f },
+	    new Memory_WriteAddress( 0xf000, 0xf3ff, stactics_videoram_f_w, &stactics_videoram_f ),
+	    new Memory_WriteAddress( 0xf400, 0xf7ff, MWA_RAM ),   /* Used as scratch RAM, high scores, etc. */
+	    new Memory_WriteAddress( 0xf800, 0xffff, stactics_chardata_f_w, &stactics_chardata_f ),
 	
-	MEMORY_END
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	INPUT_PORTS_START( stactics )
 	

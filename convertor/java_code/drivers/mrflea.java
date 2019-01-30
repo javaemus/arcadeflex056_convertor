@@ -112,13 +112,15 @@ public class mrflea
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( writemem )
-		{ 0x0000, 0xbfff, MWA_ROM },
-		{ 0xc000, 0xcfff, MWA_RAM },
-		{ 0xe000, 0xe7ff, mrflea_videoram_w, &videoram },
-		{ 0xe800, 0xe83f, paletteram_xxxxRRRRGGGGBBBB_w, &paletteram },
-		{ 0xec00, 0xecff, mrflea_spriteram_w, &spriteram },
-	MEMORY_END
+	public static Memory_WriteAddress writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0xbfff, MWA_ROM ),
+		new Memory_WriteAddress( 0xc000, 0xcfff, MWA_RAM ),
+		new Memory_WriteAddress( 0xe000, 0xe7ff, mrflea_videoram_w, &videoram ),
+		new Memory_WriteAddress( 0xe800, 0xe83f, paletteram_xxxxRRRRGGGGBBBB_w, &paletteram ),
+		new Memory_WriteAddress( 0xec00, 0xecff, mrflea_spriteram_w, &spriteram ),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	public static Memory_ReadAddress readmem_io[]={
 		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
@@ -129,12 +131,14 @@ public class mrflea
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( writemem_io )
-		{ 0x0000, 0x0fff, MWA_ROM },
-		{ 0x2000, 0x3fff, MWA_ROM },
-		{ 0x8000, 0x80ff, MWA_RAM },
-		{ 0x9000, 0x905a, MWA_RAM }, /* ? */
-	MEMORY_END
+	public static Memory_WriteAddress writemem_io[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0x0fff, MWA_ROM ),
+		new Memory_WriteAddress( 0x2000, 0x3fff, MWA_ROM ),
+		new Memory_WriteAddress( 0x8000, 0x80ff, MWA_RAM ),
+		new Memory_WriteAddress( 0x9000, 0x905a, MWA_RAM ), /* ? */
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	/*******************************************************/
 	

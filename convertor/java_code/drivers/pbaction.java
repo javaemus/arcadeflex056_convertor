@@ -77,20 +77,22 @@ public class pbaction
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( writemem )
-		{ 0x0000, 0x9fff, MWA_ROM },
-		{ 0xc000, 0xcfff, MWA_RAM },
-		{ 0xd000, 0xd3ff, videoram_w, &videoram, &videoram_size },
-		{ 0xd400, 0xd7ff, colorram_w, &colorram },
-		{ 0xd800, 0xdbff, pbaction_videoram2_w, &pbaction_videoram2 },
-		{ 0xdc00, 0xdfff, pbaction_colorram2_w, &pbaction_colorram2 },
-		{ 0xe000, 0xe07f, MWA_RAM, &spriteram, &spriteram_size },
-		{ 0xe400, 0xe5ff, paletteram_xxxxBBBBGGGGRRRR_w, &paletteram },
-		{ 0xe600, 0xe600, interrupt_enable_w },
-		{ 0xe604, 0xe604, pbaction_flipscreen_w },
-		{ 0xe606, 0xe606, pbaction_scroll_w },
-		{ 0xe800, 0xe800, pbaction_sh_command_w },
-	MEMORY_END
+	public static Memory_WriteAddress writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0x9fff, MWA_ROM ),
+		new Memory_WriteAddress( 0xc000, 0xcfff, MWA_RAM ),
+		new Memory_WriteAddress( 0xd000, 0xd3ff, videoram_w, &videoram, &videoram_size ),
+		new Memory_WriteAddress( 0xd400, 0xd7ff, colorram_w, &colorram ),
+		new Memory_WriteAddress( 0xd800, 0xdbff, pbaction_videoram2_w, &pbaction_videoram2 ),
+		new Memory_WriteAddress( 0xdc00, 0xdfff, pbaction_colorram2_w, &pbaction_colorram2 ),
+		new Memory_WriteAddress( 0xe000, 0xe07f, MWA_RAM, &spriteram, &spriteram_size ),
+		new Memory_WriteAddress( 0xe400, 0xe5ff, paletteram_xxxxBBBBGGGGRRRR_w, &paletteram ),
+		new Memory_WriteAddress( 0xe600, 0xe600, interrupt_enable_w ),
+		new Memory_WriteAddress( 0xe604, 0xe604, pbaction_flipscreen_w ),
+		new Memory_WriteAddress( 0xe606, 0xe606, pbaction_scroll_w ),
+		new Memory_WriteAddress( 0xe800, 0xe800, pbaction_sh_command_w ),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	public static Memory_ReadAddress sound_readmem[]={
 		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
@@ -100,11 +102,13 @@ public class pbaction
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( sound_writemem )
-		{ 0x0000, 0x1fff, MWA_ROM },
-		{ 0x4000, 0x47ff, MWA_RAM },
-		{ 0xffff, 0xffff, MWA_NOP },	/* watchdog? */
-	MEMORY_END
+	public static Memory_WriteAddress sound_writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0x1fff, MWA_ROM ),
+		new Memory_WriteAddress( 0x4000, 0x47ff, MWA_RAM ),
+		new Memory_WriteAddress( 0xffff, 0xffff, MWA_NOP ),	/* watchdog? */
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	
 	static PORT_WRITE_START( sound_writeport )

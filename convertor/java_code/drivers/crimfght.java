@@ -90,15 +90,17 @@ public class crimfght
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( crimfght_writemem )
-		{ 0x0000, 0x03ff, MWA_BANK1 },					/* banked RAM */
-		{ 0x0400, 0x1fff, MWA_RAM },					/* RAM */
-		{ 0x3f88, 0x3f88, crimfght_coin_w },			/* coin counters */
-		{ 0x3f8c, 0x3f8c, crimfght_sh_irqtrigger_w },	/* cause interrupt on audio CPU? */
-		{ 0x2000, 0x5fff, K052109_051960_w },			/* video RAM + sprite RAM */
-		{ 0x6000, 0x7fff, MWA_ROM },					/* banked ROM */
-		{ 0x8000, 0xffff, MWA_ROM },					/* ROM */
-	MEMORY_END
+	public static Memory_WriteAddress crimfght_writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0x03ff, MWA_BANK1 ),					/* banked RAM */
+		new Memory_WriteAddress( 0x0400, 0x1fff, MWA_RAM ),					/* RAM */
+		new Memory_WriteAddress( 0x3f88, 0x3f88, crimfght_coin_w ),			/* coin counters */
+		new Memory_WriteAddress( 0x3f8c, 0x3f8c, crimfght_sh_irqtrigger_w ),	/* cause interrupt on audio CPU? */
+		new Memory_WriteAddress( 0x2000, 0x5fff, K052109_051960_w ),			/* video RAM + sprite RAM */
+		new Memory_WriteAddress( 0x6000, 0x7fff, MWA_ROM ),					/* banked ROM */
+		new Memory_WriteAddress( 0x8000, 0xffff, MWA_ROM ),					/* ROM */
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	public static Memory_ReadAddress crimfght_readmem_sound[]={
 		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
@@ -110,13 +112,15 @@ public class crimfght
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( crimfght_writemem_sound )
-		{ 0x0000, 0x7fff, MWA_ROM },					/* ROM 821l01.h4 */
-		{ 0x8000, 0x87ff, MWA_RAM },					/* RAM */
-		{ 0xa000, 0xa000, YM2151_register_port_0_w },	/* YM2151 */
-		{ 0xa001, 0xa001, YM2151_data_port_0_w },		/* YM2151 */
-		{ 0xe000, 0xe00d, K007232_write_port_0_w },		/* 007232 registers */
-	MEMORY_END
+	public static Memory_WriteAddress crimfght_writemem_sound[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0x7fff, MWA_ROM ),					/* ROM 821l01.h4 */
+		new Memory_WriteAddress( 0x8000, 0x87ff, MWA_RAM ),					/* RAM */
+		new Memory_WriteAddress( 0xa000, 0xa000, YM2151_register_port_0_w ),	/* YM2151 */
+		new Memory_WriteAddress( 0xa001, 0xa001, YM2151_data_port_0_w ),		/* YM2151 */
+		new Memory_WriteAddress( 0xe000, 0xe00d, K007232_write_port_0_w ),		/* 007232 registers */
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	/***************************************************************************
 	

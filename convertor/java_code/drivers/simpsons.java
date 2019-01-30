@@ -64,19 +64,21 @@ public class simpsons
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( writemem )
-		{ 0x0000, 0x0fff, MWA_BANK3 },
-		{ 0x1fa0, 0x1fa7, K053246_w },
-		{ 0x1fb0, 0x1fbf, K053251_w },
-		{ 0x1fc0, 0x1fc0, simpsons_coin_counter_w },
-		{ 0x1fc2, 0x1fc2, simpsons_eeprom_w },
-		{ 0x1fc6, 0x1fc7, K053260_0_w },
-		{ 0x2000, 0x3fff, MWA_BANK4 },
-		{ 0x0000, 0x3fff, K052109_w },
-		{ 0x4000, 0x5fff, MWA_RAM },
-		{ 0x6000, 0x7fff, MWA_ROM },
-		{ 0x8000, 0xffff, MWA_ROM },
-	MEMORY_END
+	public static Memory_WriteAddress writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0x0fff, MWA_BANK3 ),
+		new Memory_WriteAddress( 0x1fa0, 0x1fa7, K053246_w ),
+		new Memory_WriteAddress( 0x1fb0, 0x1fbf, K053251_w ),
+		new Memory_WriteAddress( 0x1fc0, 0x1fc0, simpsons_coin_counter_w ),
+		new Memory_WriteAddress( 0x1fc2, 0x1fc2, simpsons_eeprom_w ),
+		new Memory_WriteAddress( 0x1fc6, 0x1fc7, K053260_0_w ),
+		new Memory_WriteAddress( 0x2000, 0x3fff, MWA_BANK4 ),
+		new Memory_WriteAddress( 0x0000, 0x3fff, K052109_w ),
+		new Memory_WriteAddress( 0x4000, 0x5fff, MWA_RAM ),
+		new Memory_WriteAddress( 0x6000, 0x7fff, MWA_ROM ),
+		new Memory_WriteAddress( 0x8000, 0xffff, MWA_ROM ),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static WRITE_HANDLER( z80_bankswitch_w )
 	{
@@ -118,16 +120,18 @@ public class simpsons
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( z80_writemem )
-		{ 0x0000, 0x7fff, MWA_ROM },
-		{ 0x8000, 0xbfff, MWA_ROM },
-		{ 0xf000, 0xf7ff, MWA_RAM },
-		{ 0xf800, 0xf800, YM2151_register_port_0_w },
-		{ 0xf801, 0xf801, YM2151_data_port_0_w },
-		{ 0xfa00, 0xfa00, z80_arm_nmi_w },
-		{ 0xfc00, 0xfc2f, K053260_0_w },
-		{ 0xfe00, 0xfe00, z80_bankswitch_w },
-	MEMORY_END
+	public static Memory_WriteAddress z80_writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0x7fff, MWA_ROM ),
+		new Memory_WriteAddress( 0x8000, 0xbfff, MWA_ROM ),
+		new Memory_WriteAddress( 0xf000, 0xf7ff, MWA_RAM ),
+		new Memory_WriteAddress( 0xf800, 0xf800, YM2151_register_port_0_w ),
+		new Memory_WriteAddress( 0xf801, 0xf801, YM2151_data_port_0_w ),
+		new Memory_WriteAddress( 0xfa00, 0xfa00, z80_arm_nmi_w ),
+		new Memory_WriteAddress( 0xfc00, 0xfc2f, K053260_0_w ),
+		new Memory_WriteAddress( 0xfe00, 0xfe00, z80_bankswitch_w ),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	/***************************************************************************
 	

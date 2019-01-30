@@ -62,13 +62,15 @@ public class skyfox
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( skyfox_writemem )
-		{ 0x0000, 0xbfff, MWA_ROM								},	// ROM
-		{ 0xc000, 0xcfff, MWA_RAM								},	// RAM
-		{ 0xd000, 0xd3ff, MWA_RAM, &spriteram, &spriteram_size	},	// Sprites
-		{ 0xd400, 0xdfff, MWA_RAM								},	// RAM?
-		{ 0xe008, 0xe00f, skyfox_vregs_w						},	// Video Regs
-	MEMORY_END
+	public static Memory_WriteAddress skyfox_writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0xbfff, MWA_ROM								),	// ROM
+		new Memory_WriteAddress( 0xc000, 0xcfff, MWA_RAM								),	// RAM
+		new Memory_WriteAddress( 0xd000, 0xd3ff, MWA_RAM, &spriteram, &spriteram_size	),	// Sprites
+		new Memory_WriteAddress( 0xd400, 0xdfff, MWA_RAM								),	// RAM?
+		new Memory_WriteAddress( 0xe008, 0xe00f, skyfox_vregs_w						),	// Video Regs
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	
 	
@@ -99,16 +101,18 @@ public class skyfox
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( skyfox_sound_writemem )
-		{ 0x0000, 0x7fff, MWA_ROM					},	// ROM
-		{ 0x8000, 0x87ff, MWA_RAM					},	// RAM
-	//	{ 0x9000, 0x9001, MWA_NOP					},	// ??
-		{ 0xa000, 0xa000, YM2203_control_port_0_w 	},	// YM2203 #1
-		{ 0xa001, 0xa001, YM2203_write_port_0_w 	},	//
-	//	{ 0xb000, 0xb001, MWA_NOP					},	// ??
-		{ 0xc000, 0xc000, YM2203_control_port_1_w 	},	// YM2203 #2
-		{ 0xc001, 0xc001, YM2203_write_port_1_w 	},	//
-	MEMORY_END
+	public static Memory_WriteAddress skyfox_sound_writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0x7fff, MWA_ROM					),	// ROM
+		new Memory_WriteAddress( 0x8000, 0x87ff, MWA_RAM					),	// RAM
+	//	new Memory_WriteAddress( 0x9000, 0x9001, MWA_NOP					),	// ??
+		new Memory_WriteAddress( 0xa000, 0xa000, YM2203_control_port_0_w 	),	// YM2203 #1
+		new Memory_WriteAddress( 0xa001, 0xa001, YM2203_write_port_0_w 	),	//
+	//	new Memory_WriteAddress( 0xb000, 0xb001, MWA_NOP					),	// ??
+		new Memory_WriteAddress( 0xc000, 0xc000, YM2203_control_port_1_w 	),	// YM2203 #2
+		new Memory_WriteAddress( 0xc001, 0xc001, YM2203_write_port_1_w 	),	//
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	
 	

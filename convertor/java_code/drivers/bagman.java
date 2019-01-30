@@ -202,28 +202,30 @@ public class bagman
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( writemem )
-		{ 0x0000, 0x5fff, MWA_ROM },
-		{ 0x6000, 0x67ff, MWA_RAM },
-		{ 0x9000, 0x93ff, videoram_w, &videoram, &videoram_size },
-		{ 0x9800, 0x9bff, colorram_w, &colorram },
-		{ 0xa000, 0xa000, interrupt_enable_w },
-		{ 0xa001, 0xa002, bagman_flipscreen_w },
-		{ 0xa003, 0xa003, MWA_RAM, &bagman_video_enable },
-		{ 0xc000, 0xffff, MWA_ROM },	/* Super Bagman only */
-		{ 0x9800, 0x981f, MWA_RAM, &spriteram, &spriteram_size },	/* hidden portion of color RAM */
+	public static Memory_WriteAddress writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0x5fff, MWA_ROM ),
+		new Memory_WriteAddress( 0x6000, 0x67ff, MWA_RAM ),
+		new Memory_WriteAddress( 0x9000, 0x93ff, videoram_w, &videoram, &videoram_size ),
+		new Memory_WriteAddress( 0x9800, 0x9bff, colorram_w, &colorram ),
+		new Memory_WriteAddress( 0xa000, 0xa000, interrupt_enable_w ),
+		new Memory_WriteAddress( 0xa001, 0xa002, bagman_flipscreen_w ),
+		new Memory_WriteAddress( 0xa003, 0xa003, MWA_RAM, &bagman_video_enable ),
+		new Memory_WriteAddress( 0xc000, 0xffff, MWA_ROM ),	/* Super Bagman only */
+		new Memory_WriteAddress( 0x9800, 0x981f, MWA_RAM, &spriteram, &spriteram_size ),	/* hidden portion of color RAM */
 										/* here only to initialize the pointer, */
 										/* writes are handled by colorram_w */
-		{ 0xa800, 0xa805, bagman_ls259_w }, /* TMS5110 driving state machine */
-		{ 0x9c00, 0x9fff, MWA_NOP },	/* written to, but unused */
-		{ 0xa004, 0xa004, bagman_coin_counter_w },
+		new Memory_WriteAddress( 0xa800, 0xa805, bagman_ls259_w ), /* TMS5110 driving state machine */
+		new Memory_WriteAddress( 0x9c00, 0x9fff, MWA_NOP ),	/* written to, but unused */
+		new Memory_WriteAddress( 0xa004, 0xa004, bagman_coin_counter_w ),
 	
 	#if 0
-		{ 0xa007, 0xa007, MWA_NOP },	/* ???? */
-		{ 0xb000, 0xb000, MWA_NOP },	/* ???? */
-		{ 0xb800, 0xb800, MWA_NOP },	/* ???? */
+		new Memory_WriteAddress( 0xa007, 0xa007, MWA_NOP ),	/* ???? */
+		new Memory_WriteAddress( 0xb000, 0xb000, MWA_NOP ),	/* ???? */
+		new Memory_WriteAddress( 0xb800, 0xb800, MWA_NOP ),	/* ???? */
 	#endif
-	MEMORY_END
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	public static Memory_ReadAddress pickin_readmem[]={
 		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
@@ -236,25 +238,27 @@ public class bagman
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( pickin_writemem )
-		{ 0x0000, 0x5fff, MWA_ROM },
-		{ 0x7000, 0x77ff, MWA_RAM },
-		{ 0x8800, 0x8bff, videoram_w, &videoram, &videoram_size },
-		{ 0x9800, 0x9bff, colorram_w, &colorram },
-		{ 0xa000, 0xa000, interrupt_enable_w },
-		{ 0xa001, 0xa002, bagman_flipscreen_w },
-		{ 0xa003, 0xa003, MWA_RAM, &bagman_video_enable },
-		{ 0x9800, 0x981f, MWA_RAM, &spriteram, &spriteram_size },	/* hidden portion of color RAM */
+	public static Memory_WriteAddress pickin_writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0x5fff, MWA_ROM ),
+		new Memory_WriteAddress( 0x7000, 0x77ff, MWA_RAM ),
+		new Memory_WriteAddress( 0x8800, 0x8bff, videoram_w, &videoram, &videoram_size ),
+		new Memory_WriteAddress( 0x9800, 0x9bff, colorram_w, &colorram ),
+		new Memory_WriteAddress( 0xa000, 0xa000, interrupt_enable_w ),
+		new Memory_WriteAddress( 0xa001, 0xa002, bagman_flipscreen_w ),
+		new Memory_WriteAddress( 0xa003, 0xa003, MWA_RAM, &bagman_video_enable ),
+		new Memory_WriteAddress( 0x9800, 0x981f, MWA_RAM, &spriteram, &spriteram_size ),	/* hidden portion of color RAM */
 										/* here only to initialize the pointer, */
 										/* writes are handled by colorram_w */
-		{ 0x9c00, 0x9fff, MWA_NOP },	/* written to, but unused */
-		{ 0xa004, 0xa004, bagman_coin_counter_w },
+		new Memory_WriteAddress( 0x9c00, 0x9fff, MWA_NOP ),	/* written to, but unused */
+		new Memory_WriteAddress( 0xa004, 0xa004, bagman_coin_counter_w ),
 	#if 0
-		{ 0xa007, 0xa007, MWA_NOP },	/* ???? */
-		{ 0xb000, 0xb000, MWA_NOP },	/* ???? */
-		{ 0xb800, 0xb800, MWA_NOP },	/* ???? */
+		new Memory_WriteAddress( 0xa007, 0xa007, MWA_NOP ),	/* ???? */
+		new Memory_WriteAddress( 0xb000, 0xb000, MWA_NOP ),	/* ???? */
+		new Memory_WriteAddress( 0xb800, 0xb800, MWA_NOP ),	/* ???? */
 	#endif
-	MEMORY_END
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static PORT_READ_START( readport )
 		{ 0x0c, 0x0c, AY8910_read_port_0_r },

@@ -144,57 +144,63 @@ public class tecmo
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( rygar_writemem )
-		{ 0x0000, 0xbfff, MWA_ROM },
-		{ 0xc000, 0xcfff, MWA_RAM },
-		{ 0xd000, 0xd7ff, tecmo_txvideoram_w, &tecmo_txvideoram },
-		{ 0xd800, 0xdbff, tecmo_fgvideoram_w, &tecmo_fgvideoram },
-		{ 0xdc00, 0xdfff, tecmo_bgvideoram_w, &tecmo_bgvideoram },
-		{ 0xe000, 0xe7ff, MWA_RAM, &spriteram, &spriteram_size },
-		{ 0xe800, 0xefff, paletteram_xxxxBBBBRRRRGGGG_swap_w, &paletteram },
-		{ 0xf000, 0xf7ff, MWA_ROM },
-		{ 0xf800, 0xf802, tecmo_fgscroll_w },
-		{ 0xf803, 0xf805, tecmo_bgscroll_w },
-		{ 0xf806, 0xf806, tecmo_sound_command_w },
-		{ 0xf807, 0xf807, tecmo_flipscreen_w },
-		{ 0xf808, 0xf808, tecmo_bankswitch_w },
-		{ 0xf80b, 0xf80b, watchdog_reset_w },
-	MEMORY_END
+	public static Memory_WriteAddress rygar_writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0xbfff, MWA_ROM ),
+		new Memory_WriteAddress( 0xc000, 0xcfff, MWA_RAM ),
+		new Memory_WriteAddress( 0xd000, 0xd7ff, tecmo_txvideoram_w, &tecmo_txvideoram ),
+		new Memory_WriteAddress( 0xd800, 0xdbff, tecmo_fgvideoram_w, &tecmo_fgvideoram ),
+		new Memory_WriteAddress( 0xdc00, 0xdfff, tecmo_bgvideoram_w, &tecmo_bgvideoram ),
+		new Memory_WriteAddress( 0xe000, 0xe7ff, MWA_RAM, &spriteram, &spriteram_size ),
+		new Memory_WriteAddress( 0xe800, 0xefff, paletteram_xxxxBBBBRRRRGGGG_swap_w, &paletteram ),
+		new Memory_WriteAddress( 0xf000, 0xf7ff, MWA_ROM ),
+		new Memory_WriteAddress( 0xf800, 0xf802, tecmo_fgscroll_w ),
+		new Memory_WriteAddress( 0xf803, 0xf805, tecmo_bgscroll_w ),
+		new Memory_WriteAddress( 0xf806, 0xf806, tecmo_sound_command_w ),
+		new Memory_WriteAddress( 0xf807, 0xf807, tecmo_flipscreen_w ),
+		new Memory_WriteAddress( 0xf808, 0xf808, tecmo_bankswitch_w ),
+		new Memory_WriteAddress( 0xf80b, 0xf80b, watchdog_reset_w ),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
-	static MEMORY_WRITE_START( gemini_writemem )
-		{ 0x0000, 0xbfff, MWA_ROM },
-		{ 0xc000, 0xcfff, MWA_RAM },
-		{ 0xd000, 0xd7ff, tecmo_txvideoram_w, &tecmo_txvideoram },
-		{ 0xd800, 0xdbff, tecmo_fgvideoram_w, &tecmo_fgvideoram },
-		{ 0xdc00, 0xdfff, tecmo_bgvideoram_w, &tecmo_bgvideoram },
-		{ 0xe000, 0xe7ff, paletteram_xxxxBBBBRRRRGGGG_swap_w, &paletteram },
-		{ 0xe800, 0xefff, MWA_RAM, &spriteram, &spriteram_size },
-		{ 0xf000, 0xf7ff, MWA_ROM },
-		{ 0xf800, 0xf802, tecmo_fgscroll_w },
-		{ 0xf803, 0xf805, tecmo_bgscroll_w },
-		{ 0xf806, 0xf806, tecmo_sound_command_w },
-		{ 0xf807, 0xf807, tecmo_flipscreen_w },
-		{ 0xf808, 0xf808, tecmo_bankswitch_w },
-		{ 0xf80b, 0xf80b, watchdog_reset_w },
-	MEMORY_END
+	public static Memory_WriteAddress gemini_writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0xbfff, MWA_ROM ),
+		new Memory_WriteAddress( 0xc000, 0xcfff, MWA_RAM ),
+		new Memory_WriteAddress( 0xd000, 0xd7ff, tecmo_txvideoram_w, &tecmo_txvideoram ),
+		new Memory_WriteAddress( 0xd800, 0xdbff, tecmo_fgvideoram_w, &tecmo_fgvideoram ),
+		new Memory_WriteAddress( 0xdc00, 0xdfff, tecmo_bgvideoram_w, &tecmo_bgvideoram ),
+		new Memory_WriteAddress( 0xe000, 0xe7ff, paletteram_xxxxBBBBRRRRGGGG_swap_w, &paletteram ),
+		new Memory_WriteAddress( 0xe800, 0xefff, MWA_RAM, &spriteram, &spriteram_size ),
+		new Memory_WriteAddress( 0xf000, 0xf7ff, MWA_ROM ),
+		new Memory_WriteAddress( 0xf800, 0xf802, tecmo_fgscroll_w ),
+		new Memory_WriteAddress( 0xf803, 0xf805, tecmo_bgscroll_w ),
+		new Memory_WriteAddress( 0xf806, 0xf806, tecmo_sound_command_w ),
+		new Memory_WriteAddress( 0xf807, 0xf807, tecmo_flipscreen_w ),
+		new Memory_WriteAddress( 0xf808, 0xf808, tecmo_bankswitch_w ),
+		new Memory_WriteAddress( 0xf80b, 0xf80b, watchdog_reset_w ),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
-	static MEMORY_WRITE_START( silkworm_writemem )
-		{ 0x0000, 0xbfff, MWA_ROM },
-		{ 0xc000, 0xc3ff, tecmo_bgvideoram_w, &tecmo_bgvideoram },
-		{ 0xc400, 0xc7ff, tecmo_fgvideoram_w, &tecmo_fgvideoram },
-		{ 0xc800, 0xcfff, tecmo_txvideoram_w, &tecmo_txvideoram },
-		{ 0xd000, 0xdfff, MWA_RAM },
-		{ 0xe000, 0xe7ff, MWA_RAM, &spriteram, &spriteram_size },
-		{ 0xe800, 0xefff, paletteram_xxxxBBBBRRRRGGGG_swap_w, &paletteram },
-		{ 0xf000, 0xf7ff, MWA_ROM },
-		{ 0xf800, 0xf802, tecmo_fgscroll_w },
-		{ 0xf803, 0xf805, tecmo_bgscroll_w },
-		{ 0xf806, 0xf806, tecmo_sound_command_w },
-		{ 0xf807, 0xf807, tecmo_flipscreen_w },
-		{ 0xf808, 0xf808, tecmo_bankswitch_w },
-		{ 0xf809, 0xf809, MWA_NOP },	/* ? */
-		{ 0xf80b, 0xf80b, MWA_NOP },	/* ? if mapped to watchdog like in the others, causes reset */
-	MEMORY_END
+	public static Memory_WriteAddress silkworm_writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0xbfff, MWA_ROM ),
+		new Memory_WriteAddress( 0xc000, 0xc3ff, tecmo_bgvideoram_w, &tecmo_bgvideoram ),
+		new Memory_WriteAddress( 0xc400, 0xc7ff, tecmo_fgvideoram_w, &tecmo_fgvideoram ),
+		new Memory_WriteAddress( 0xc800, 0xcfff, tecmo_txvideoram_w, &tecmo_txvideoram ),
+		new Memory_WriteAddress( 0xd000, 0xdfff, MWA_RAM ),
+		new Memory_WriteAddress( 0xe000, 0xe7ff, MWA_RAM, &spriteram, &spriteram_size ),
+		new Memory_WriteAddress( 0xe800, 0xefff, paletteram_xxxxBBBBRRRRGGGG_swap_w, &paletteram ),
+		new Memory_WriteAddress( 0xf000, 0xf7ff, MWA_ROM ),
+		new Memory_WriteAddress( 0xf800, 0xf802, tecmo_fgscroll_w ),
+		new Memory_WriteAddress( 0xf803, 0xf805, tecmo_bgscroll_w ),
+		new Memory_WriteAddress( 0xf806, 0xf806, tecmo_sound_command_w ),
+		new Memory_WriteAddress( 0xf807, 0xf807, tecmo_flipscreen_w ),
+		new Memory_WriteAddress( 0xf808, 0xf808, tecmo_bankswitch_w ),
+		new Memory_WriteAddress( 0xf809, 0xf809, MWA_NOP ),	/* ? */
+		new Memory_WriteAddress( 0xf80b, 0xf80b, MWA_NOP ),	/* ? if mapped to watchdog like in the others, causes reset */
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	public static Memory_ReadAddress rygar_sound_readmem[]={
 		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
@@ -204,16 +210,18 @@ public class tecmo
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( rygar_sound_writemem )
-		{ 0x0000, 0x3fff, MWA_ROM },
-		{ 0x4000, 0x47ff, MWA_RAM },
-		{ 0x8000, 0x8000, YM3812_control_port_0_w },
-		{ 0x8001, 0x8001, YM3812_write_port_0_w },
-		{ 0xc000, 0xc000, tecmo_adpcm_start_w },
-		{ 0xd000, 0xd000, tecmo_adpcm_end_w },
-		{ 0xe000, 0xe000, tecmo_adpcm_vol_w },
-		{ 0xf000, 0xf000, MWA_NOP },	/* NMI acknowledge */
-	MEMORY_END
+	public static Memory_WriteAddress rygar_sound_writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0x3fff, MWA_ROM ),
+		new Memory_WriteAddress( 0x4000, 0x47ff, MWA_RAM ),
+		new Memory_WriteAddress( 0x8000, 0x8000, YM3812_control_port_0_w ),
+		new Memory_WriteAddress( 0x8001, 0x8001, YM3812_write_port_0_w ),
+		new Memory_WriteAddress( 0xc000, 0xc000, tecmo_adpcm_start_w ),
+		new Memory_WriteAddress( 0xd000, 0xd000, tecmo_adpcm_end_w ),
+		new Memory_WriteAddress( 0xe000, 0xe000, tecmo_adpcm_vol_w ),
+		new Memory_WriteAddress( 0xf000, 0xf000, MWA_NOP ),	/* NMI acknowledge */
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	public static Memory_ReadAddress tecmo_sound_readmem[]={
 		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
@@ -223,18 +231,20 @@ public class tecmo
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( tecmo_sound_writemem )
-		{ 0x2000, 0x207f, MWA_RAM },	/* Silkworm set #2 has a custom CPU which */
+	public static Memory_WriteAddress tecmo_sound_writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x2000, 0x207f, MWA_RAM ),	/* Silkworm set #2 has a custom CPU which */
 										/* writes code to this area */
-		{ 0x0000, 0x7fff, MWA_ROM },
-		{ 0x8000, 0x87ff, MWA_RAM },
-		{ 0xa000, 0xa000, YM3812_control_port_0_w },
-		{ 0xa001, 0xa001, YM3812_write_port_0_w },
-		{ 0xc000, 0xc000, tecmo_adpcm_start_w },
-		{ 0xc400, 0xc400, tecmo_adpcm_end_w },
-		{ 0xc800, 0xc800, tecmo_adpcm_vol_w },
-		{ 0xcc00, 0xcc00, MWA_NOP },	/* NMI acknowledge */
-	MEMORY_END
+		new Memory_WriteAddress( 0x0000, 0x7fff, MWA_ROM ),
+		new Memory_WriteAddress( 0x8000, 0x87ff, MWA_RAM ),
+		new Memory_WriteAddress( 0xa000, 0xa000, YM3812_control_port_0_w ),
+		new Memory_WriteAddress( 0xa001, 0xa001, YM3812_write_port_0_w ),
+		new Memory_WriteAddress( 0xc000, 0xc000, tecmo_adpcm_start_w ),
+		new Memory_WriteAddress( 0xc400, 0xc400, tecmo_adpcm_end_w ),
+		new Memory_WriteAddress( 0xc800, 0xc800, tecmo_adpcm_vol_w ),
+		new Memory_WriteAddress( 0xcc00, 0xcc00, MWA_NOP ),	/* NMI acknowledge */
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	
 	

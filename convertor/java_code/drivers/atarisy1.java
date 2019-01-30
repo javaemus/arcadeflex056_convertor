@@ -576,17 +576,19 @@ public class atarisy1
 	};
 	
 	
-	static MEMORY_WRITE_START( sound_writemem )
-		{ 0x0000, 0x0fff, MWA_RAM },
-		{ 0x1000, 0x100f, m6522_w },
-		{ 0x1800, 0x1800, YM2151_register_port_0_w },
-		{ 0x1801, 0x1801, YM2151_data_port_0_w },
-		{ 0x1810, 0x1810, atarigen_6502_sound_w },
-		{ 0x1824, 0x1825, led_w },
-		{ 0x1820, 0x1827, MWA_NOP },
-		{ 0x1870, 0x187f, pokey1_w },
-		{ 0x4000, 0xffff, MWA_ROM },
-	MEMORY_END
+	public static Memory_WriteAddress sound_writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0x0fff, MWA_RAM ),
+		new Memory_WriteAddress( 0x1000, 0x100f, m6522_w ),
+		new Memory_WriteAddress( 0x1800, 0x1800, YM2151_register_port_0_w ),
+		new Memory_WriteAddress( 0x1801, 0x1801, YM2151_data_port_0_w ),
+		new Memory_WriteAddress( 0x1810, 0x1810, atarigen_6502_sound_w ),
+		new Memory_WriteAddress( 0x1824, 0x1825, led_w ),
+		new Memory_WriteAddress( 0x1820, 0x1827, MWA_NOP ),
+		new Memory_WriteAddress( 0x1870, 0x187f, pokey1_w ),
+		new Memory_WriteAddress( 0x4000, 0xffff, MWA_ROM ),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	
 	

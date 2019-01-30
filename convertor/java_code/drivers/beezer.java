@@ -33,11 +33,13 @@ public class beezer
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( writemem )
-		{ 0x0000, 0xbfff, beezer_ram_w, &beezer_ram },
-		{ 0xc000, 0xcfff, MWA_BANK1 },
-		{ 0xd000, 0xffff, beezer_bankswitch_w },
-	MEMORY_END
+	public static Memory_WriteAddress writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0xbfff, beezer_ram_w, &beezer_ram ),
+		new Memory_WriteAddress( 0xc000, 0xcfff, MWA_BANK1 ),
+		new Memory_WriteAddress( 0xd000, 0xffff, beezer_bankswitch_w ),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	public static Memory_ReadAddress readmem_sound[]={
 		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
@@ -48,13 +50,15 @@ public class beezer
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( writemem_sound )
-		{ 0x0000, 0x07ff, MWA_RAM },
-	//	{ 0x1000, 0x10ff, beezer_6840_w },
-		{ 0x1800, 0x18ff, via_1_w },
-	//	{ 0x8000, 0x9fff, beezer_dac_w },
-		{ 0xe000, 0xffff, MWA_ROM },
-	MEMORY_END
+	public static Memory_WriteAddress writemem_sound[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0x07ff, MWA_RAM ),
+	//	new Memory_WriteAddress( 0x1000, 0x10ff, beezer_6840_w ),
+		new Memory_WriteAddress( 0x1800, 0x18ff, via_1_w ),
+	//	new Memory_WriteAddress( 0x8000, 0x9fff, beezer_dac_w ),
+		new Memory_WriteAddress( 0xe000, 0xffff, MWA_ROM ),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	
 	

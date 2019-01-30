@@ -400,23 +400,25 @@ public class renegade
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( main_writemem )
-		{ 0x0000, 0x17ff, MWA_RAM },
-		{ 0x1800, 0x1fff, renegade_textram_w, &renegade_textram },
-		{ 0x2000, 0x27ff, MWA_RAM, &spriteram },
-		{ 0x2800, 0x2fff, renegade_videoram_w, &videoram },
-		{ 0x3000, 0x30ff, paletteram_xxxxBBBBGGGGRRRR_split1_w, &paletteram },
-		{ 0x3100, 0x31ff, paletteram_xxxxBBBBGGGGRRRR_split2_w, &paletteram_2 },
-		{ 0x3800, 0x3800, renegade_scroll0_w },
-		{ 0x3801, 0x3801, renegade_scroll1_w },
-		{ 0x3802, 0x3802, sound_w },
-		{ 0x3803, 0x3803, renegade_flipscreen_w },
-		{ 0x3804, 0x3804, mcu_w },
-		{ 0x3805, 0x3805, bankswitch_w },
-		{ 0x3806, 0x3806, MWA_NOP }, /* watchdog? */
-		{ 0x3807, 0x3807, renegade_coin_counter_w },
-		{ 0x4000, 0xffff, MWA_ROM },
-	MEMORY_END
+	public static Memory_WriteAddress main_writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0x17ff, MWA_RAM ),
+		new Memory_WriteAddress( 0x1800, 0x1fff, renegade_textram_w, &renegade_textram ),
+		new Memory_WriteAddress( 0x2000, 0x27ff, MWA_RAM, &spriteram ),
+		new Memory_WriteAddress( 0x2800, 0x2fff, renegade_videoram_w, &videoram ),
+		new Memory_WriteAddress( 0x3000, 0x30ff, paletteram_xxxxBBBBGGGGRRRR_split1_w, &paletteram ),
+		new Memory_WriteAddress( 0x3100, 0x31ff, paletteram_xxxxBBBBGGGGRRRR_split2_w, &paletteram_2 ),
+		new Memory_WriteAddress( 0x3800, 0x3800, renegade_scroll0_w ),
+		new Memory_WriteAddress( 0x3801, 0x3801, renegade_scroll1_w ),
+		new Memory_WriteAddress( 0x3802, 0x3802, sound_w ),
+		new Memory_WriteAddress( 0x3803, 0x3803, renegade_flipscreen_w ),
+		new Memory_WriteAddress( 0x3804, 0x3804, mcu_w ),
+		new Memory_WriteAddress( 0x3805, 0x3805, bankswitch_w ),
+		new Memory_WriteAddress( 0x3806, 0x3806, MWA_NOP ), /* watchdog? */
+		new Memory_WriteAddress( 0x3807, 0x3807, renegade_coin_counter_w ),
+		new Memory_WriteAddress( 0x4000, 0xffff, MWA_ROM ),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	public static Memory_ReadAddress sound_readmem[]={
 		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
@@ -427,15 +429,17 @@ public class renegade
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( sound_writemem )
-		{ 0x0000, 0x0fff, MWA_RAM },
-		{ 0x1800, 0x1800, MWA_NOP }, // this gets written the same values as 0x2000
-		{ 0x2000, 0x2000, adpcm_play_w },
-		{ 0x2800, 0x2800, YM3526_control_port_0_w },
-		{ 0x2801, 0x2801, YM3526_write_port_0_w },
-		{ 0x3000, 0x3000, MWA_NOP }, /* adpcm related? stereo pan? */
-		{ 0x8000, 0xffff, MWA_ROM },
-	MEMORY_END
+	public static Memory_WriteAddress sound_writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0x0fff, MWA_RAM ),
+		new Memory_WriteAddress( 0x1800, 0x1800, MWA_NOP ), // this gets written the same values as 0x2000
+		new Memory_WriteAddress( 0x2000, 0x2000, adpcm_play_w ),
+		new Memory_WriteAddress( 0x2800, 0x2800, YM3526_control_port_0_w ),
+		new Memory_WriteAddress( 0x2801, 0x2801, YM3526_write_port_0_w ),
+		new Memory_WriteAddress( 0x3000, 0x3000, MWA_NOP ), /* adpcm related? stereo pan? */
+		new Memory_WriteAddress( 0x8000, 0xffff, MWA_ROM ),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	
 	

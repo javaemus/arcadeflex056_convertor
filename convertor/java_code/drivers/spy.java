@@ -117,18 +117,20 @@ public class spy
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( spy_writemem )
-		{ 0x0000, 0x07ff, spy_bankedram1_w, &ram },
-		{ 0x0800, 0x1aff, MWA_RAM },
-		{ 0x3f80, 0x3f80, bankswitch_w },
-		{ 0x3f90, 0x3f90, spy_3f90_w },
-		{ 0x3fa0, 0x3fa0, watchdog_reset_w },
-		{ 0x3fb0, 0x3fb0, soundlatch_w },
-		{ 0x3fc0, 0x3fc0, spy_sh_irqtrigger_w },
-		{ 0x2000, 0x5fff, K052109_051960_w },
-		{ 0x6000, 0x7fff, MWA_ROM },
-		{ 0x8000, 0xffff, MWA_ROM },
-	MEMORY_END
+	public static Memory_WriteAddress spy_writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0x07ff, spy_bankedram1_w, &ram ),
+		new Memory_WriteAddress( 0x0800, 0x1aff, MWA_RAM ),
+		new Memory_WriteAddress( 0x3f80, 0x3f80, bankswitch_w ),
+		new Memory_WriteAddress( 0x3f90, 0x3f90, spy_3f90_w ),
+		new Memory_WriteAddress( 0x3fa0, 0x3fa0, watchdog_reset_w ),
+		new Memory_WriteAddress( 0x3fb0, 0x3fb0, soundlatch_w ),
+		new Memory_WriteAddress( 0x3fc0, 0x3fc0, spy_sh_irqtrigger_w ),
+		new Memory_WriteAddress( 0x2000, 0x5fff, K052109_051960_w ),
+		new Memory_WriteAddress( 0x6000, 0x7fff, MWA_ROM ),
+		new Memory_WriteAddress( 0x8000, 0xffff, MWA_ROM ),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	public static Memory_ReadAddress spy_sound_readmem[]={
 		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
@@ -141,15 +143,17 @@ public class spy
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( spy_sound_writemem )
-		{ 0x0000, 0x7fff, MWA_ROM },
-		{ 0x8000, 0x87ff, MWA_RAM },
-		{ 0x9000, 0x9000, sound_bank_w },
-		{ 0xa000, 0xa00d, K007232_write_port_0_w },
-		{ 0xb000, 0xb00d, K007232_write_port_1_w },
-		{ 0xc000, 0xc000, YM3812_control_port_0_w },
-		{ 0xc001, 0xc001, YM3812_write_port_0_w },
-	MEMORY_END
+	public static Memory_WriteAddress spy_sound_writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0x7fff, MWA_ROM ),
+		new Memory_WriteAddress( 0x8000, 0x87ff, MWA_RAM ),
+		new Memory_WriteAddress( 0x9000, 0x9000, sound_bank_w ),
+		new Memory_WriteAddress( 0xa000, 0xa00d, K007232_write_port_0_w ),
+		new Memory_WriteAddress( 0xb000, 0xb00d, K007232_write_port_1_w ),
+		new Memory_WriteAddress( 0xc000, 0xc000, YM3812_control_port_0_w ),
+		new Memory_WriteAddress( 0xc001, 0xc001, YM3812_write_port_0_w ),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	
 	

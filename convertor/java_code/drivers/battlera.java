@@ -85,17 +85,19 @@ public class battlera
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( battlera_writemem )
-		{ 0x000000, 0x0fffff, MWA_ROM },
-		{ 0x100000, 0x10ffff, HuC6270_debug_w }, /* Cheat to edit vram data */
-		{ 0x1e0800, 0x1e0801, battlera_sound_w },
-		{ 0x1e1000, 0x1e13ff, battlera_palette_w, &paletteram },
-		{ 0x1f0000, 0x1f1fff, MWA_BANK8 }, /* Main ram */
-		{ 0x1fe000, 0x1fe001, HuC6270_register_w },
-		{ 0x1fe002, 0x1fe003, HuC6270_data_w },
-		{ 0x1ff000, 0x1ff001, control_data_w },
-		{ 0x1ff402, 0x1ff403, H6280_irq_status_w },
-	MEMORY_END
+	public static Memory_WriteAddress battlera_writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x000000, 0x0fffff, MWA_ROM ),
+		new Memory_WriteAddress( 0x100000, 0x10ffff, HuC6270_debug_w ), /* Cheat to edit vram data */
+		new Memory_WriteAddress( 0x1e0800, 0x1e0801, battlera_sound_w ),
+		new Memory_WriteAddress( 0x1e1000, 0x1e13ff, battlera_palette_w, &paletteram ),
+		new Memory_WriteAddress( 0x1f0000, 0x1f1fff, MWA_BANK8 ), /* Main ram */
+		new Memory_WriteAddress( 0x1fe000, 0x1fe001, HuC6270_register_w ),
+		new Memory_WriteAddress( 0x1fe002, 0x1fe003, HuC6270_data_w ),
+		new Memory_WriteAddress( 0x1ff000, 0x1ff001, control_data_w ),
+		new Memory_WriteAddress( 0x1ff402, 0x1ff403, H6280_irq_status_w ),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static PORT_WRITE_START( battlera_portwrite )
 		{ 0x00, 0x01, HuC6270_register_w },
@@ -144,15 +146,17 @@ public class battlera
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( sound_writemem )
-	 	{ 0x000000, 0x00ffff, MWA_ROM },
-		{ 0x040000, 0x040001, YM2203_w },
-		{ 0x080000, 0x080001, battlera_adpcm_data_w },
-		{ 0x1fe800, 0x1fe807, MWA_NOP },
-		{ 0x1f0000, 0x1f1fff, MWA_BANK7 }, /* Main ram */
-		{ 0x1ff000, 0x1ff001, battlera_adpcm_reset_w },
-		{ 0x1ff402, 0x1ff403, H6280_irq_status_w },
-	MEMORY_END
+	public static Memory_WriteAddress sound_writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+	 	new Memory_WriteAddress( 0x000000, 0x00ffff, MWA_ROM ),
+		new Memory_WriteAddress( 0x040000, 0x040001, YM2203_w ),
+		new Memory_WriteAddress( 0x080000, 0x080001, battlera_adpcm_data_w ),
+		new Memory_WriteAddress( 0x1fe800, 0x1fe807, MWA_NOP ),
+		new Memory_WriteAddress( 0x1f0000, 0x1f1fff, MWA_BANK7 ), /* Main ram */
+		new Memory_WriteAddress( 0x1ff000, 0x1ff001, battlera_adpcm_reset_w ),
+		new Memory_WriteAddress( 0x1ff402, 0x1ff403, H6280_irq_status_w ),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	/******************************************************************************/
 	

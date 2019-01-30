@@ -122,15 +122,17 @@ public class exprraid
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( writemem )
-	    { 0x0000, 0x05ff, MWA_RAM },
-	    { 0x0600, 0x07ff, MWA_RAM, &spriteram, &spriteram_size }, /* sprites */
-	    { 0x0800, 0x0bff, videoram_w, &videoram, &videoram_size },
-	    { 0x0c00, 0x0fff, colorram_w, &colorram },
-	    { 0x2001, 0x2001, sound_cpu_command_w },
-	    { 0x2800, 0x2807, MWA_RAM, &exprraid_bgcontrol },
-	    { 0x4000, 0xffff, MWA_ROM },
-	MEMORY_END
+	public static Memory_WriteAddress writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+	    new Memory_WriteAddress( 0x0000, 0x05ff, MWA_RAM ),
+	    new Memory_WriteAddress( 0x0600, 0x07ff, MWA_RAM, &spriteram, &spriteram_size ), /* sprites */
+	    new Memory_WriteAddress( 0x0800, 0x0bff, videoram_w, &videoram, &videoram_size ),
+	    new Memory_WriteAddress( 0x0c00, 0x0fff, colorram_w, &colorram ),
+	    new Memory_WriteAddress( 0x2001, 0x2001, sound_cpu_command_w ),
+	    new Memory_WriteAddress( 0x2800, 0x2807, MWA_RAM, &exprraid_bgcontrol ),
+	    new Memory_WriteAddress( 0x4000, 0xffff, MWA_ROM ),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	public static Memory_ReadAddress sub_readmem[]={
 		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
@@ -143,14 +145,16 @@ public class exprraid
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( sub_writemem )
-	    { 0x0000, 0x1fff, MWA_RAM },
-	    { 0x2000, 0x2000, YM2203_control_port_0_w },
-		{ 0x2001, 0x2001, YM2203_write_port_0_w },
-	    { 0x4000, 0x4000, YM3526_control_port_0_w },
-	    { 0x4001, 0x4001, YM3526_write_port_0_w },
-	    { 0x8000, 0xffff, MWA_ROM },
-	MEMORY_END
+	public static Memory_WriteAddress sub_writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+	    new Memory_WriteAddress( 0x0000, 0x1fff, MWA_RAM ),
+	    new Memory_WriteAddress( 0x2000, 0x2000, YM2203_control_port_0_w ),
+		new Memory_WriteAddress( 0x2001, 0x2001, YM2203_write_port_0_w ),
+	    new Memory_WriteAddress( 0x4000, 0x4000, YM3526_control_port_0_w ),
+	    new Memory_WriteAddress( 0x4001, 0x4001, YM3526_write_port_0_w ),
+	    new Memory_WriteAddress( 0x8000, 0xffff, MWA_ROM ),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	INPUT_PORTS_START( exprraid )
 		PORT_START /* IN 0 - 0x3800 */

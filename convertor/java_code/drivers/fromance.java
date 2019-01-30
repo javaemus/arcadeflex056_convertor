@@ -246,13 +246,15 @@ public class fromance
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( fromance_writemem_main )
-		{ 0x0000, 0x7fff, MWA_ROM },
-		{ 0xc000, 0xdfff, MWA_RAM },
-		{ 0xe000, 0xe000, fromance_portselect_w },
-		{ 0xe002, 0xe002, fromance_coinctr_w },
-		{ 0xe003, 0xe003, fromance_commanddata_w },
-	MEMORY_END
+	public static Memory_WriteAddress fromance_writemem_main[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0x7fff, MWA_ROM ),
+		new Memory_WriteAddress( 0xc000, 0xdfff, MWA_RAM ),
+		new Memory_WriteAddress( 0xe000, 0xe000, fromance_portselect_w ),
+		new Memory_WriteAddress( 0xe002, 0xe002, fromance_coinctr_w ),
+		new Memory_WriteAddress( 0xe003, 0xe003, fromance_commanddata_w ),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	
 	
@@ -273,13 +275,15 @@ public class fromance
 	};
 	
 	
-	static MEMORY_WRITE_START( fromance_writemem_sub )
-		{ 0x0000, 0x7fff, MWA_ROM },
-		{ 0x8000, 0xbfff, MWA_ROM },
-		{ 0xc000, 0xc7ff, MWA_RAM },
-		{ 0xc800, 0xcfff, fromance_paletteram_w },
-		{ 0xd000, 0xffff, fromance_videoram_w },
-	MEMORY_END
+	public static Memory_WriteAddress fromance_writemem_sub[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0x7fff, MWA_ROM ),
+		new Memory_WriteAddress( 0x8000, 0xbfff, MWA_ROM ),
+		new Memory_WriteAddress( 0xc000, 0xc7ff, MWA_RAM ),
+		new Memory_WriteAddress( 0xc800, 0xcfff, fromance_paletteram_w ),
+		new Memory_WriteAddress( 0xd000, 0xffff, fromance_videoram_w ),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	
 	

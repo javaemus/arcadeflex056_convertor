@@ -132,21 +132,23 @@ public class megazone
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( writemem )
-		{ 0x0000, 0x0001, megazone_coin_counter_w }, /* coin counter 2, coin counter 1 */
-		{ 0x0005, 0x0005, megazone_flipscreen_w },
-		{ 0x0007, 0x0007, interrupt_enable_w },
-		{ 0x0800, 0x0800, watchdog_reset_w },
-		{ 0x1800, 0x1800, MWA_RAM, &megazone_scrollx },
-		{ 0x1000, 0x1000, MWA_RAM, &megazone_scrolly },
-		{ 0x2000, 0x23ff, videoram_w, &videoram, &videoram_size },
-		{ 0x2400, 0x27ff, megazone_videoram2_w, &megazone_videoram2, &megazone_videoram2_size },
-		{ 0x2800, 0x2bff, colorram_w, &colorram },
-		{ 0x2c00, 0x2fff, megazone_colorram2_w, &megazone_colorram2 },
-		{ 0x3000, 0x33ff, MWA_RAM, &spriteram, &spriteram_size },
-		{ 0x3800, 0x3fff, megazone_sharedram_w, &megazone_sharedram },
-		{ 0x4000, 0xffff, MWA_ROM },
-	MEMORY_END
+	public static Memory_WriteAddress writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0x0001, megazone_coin_counter_w ), /* coin counter 2, coin counter 1 */
+		new Memory_WriteAddress( 0x0005, 0x0005, megazone_flipscreen_w ),
+		new Memory_WriteAddress( 0x0007, 0x0007, interrupt_enable_w ),
+		new Memory_WriteAddress( 0x0800, 0x0800, watchdog_reset_w ),
+		new Memory_WriteAddress( 0x1800, 0x1800, MWA_RAM, &megazone_scrollx ),
+		new Memory_WriteAddress( 0x1000, 0x1000, MWA_RAM, &megazone_scrolly ),
+		new Memory_WriteAddress( 0x2000, 0x23ff, videoram_w, &videoram, &videoram_size ),
+		new Memory_WriteAddress( 0x2400, 0x27ff, megazone_videoram2_w, &megazone_videoram2, &megazone_videoram2_size ),
+		new Memory_WriteAddress( 0x2800, 0x2bff, colorram_w, &colorram ),
+		new Memory_WriteAddress( 0x2c00, 0x2fff, megazone_colorram2_w, &megazone_colorram2 ),
+		new Memory_WriteAddress( 0x3000, 0x33ff, MWA_RAM, &spriteram, &spriteram_size ),
+		new Memory_WriteAddress( 0x3800, 0x3fff, megazone_sharedram_w, &megazone_sharedram ),
+		new Memory_WriteAddress( 0x4000, 0xffff, MWA_ROM ),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	public static Memory_ReadAddress sound_readmem[]={
 		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
@@ -160,15 +162,17 @@ public class megazone
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( sound_writemem )
-		{ 0x0000, 0x1fff, MWA_ROM },
-		{ 0x2000, 0x2000, megazone_i8039_irq_w },	/* START line. Interrupts 8039 */
-		{ 0x4000, 0x4000, soundlatch_w },			/* CODE  line. Command Interrupts 8039 */
-		{ 0xa000, 0xa000, MWA_RAM },				/* INTMAIN - Interrupts main CPU (unused) */
-		{ 0xc000, 0xc000, MWA_RAM },				/* INT (Actually is NMI) enable/disable (unused)*/
-		{ 0xc001, 0xc001, watchdog_reset_w },
-		{ 0xe000, 0xe7ff, megazone_sharedram_w },	/* Shared with $3800->3fff of main CPU */
-	MEMORY_END
+	public static Memory_WriteAddress sound_writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0x1fff, MWA_ROM ),
+		new Memory_WriteAddress( 0x2000, 0x2000, megazone_i8039_irq_w ),	/* START line. Interrupts 8039 */
+		new Memory_WriteAddress( 0x4000, 0x4000, soundlatch_w ),			/* CODE  line. Command Interrupts 8039 */
+		new Memory_WriteAddress( 0xa000, 0xa000, MWA_RAM ),				/* INTMAIN - Interrupts main CPU (unused) */
+		new Memory_WriteAddress( 0xc000, 0xc000, MWA_RAM ),				/* INT (Actually is NMI) enable/disable (unused)*/
+		new Memory_WriteAddress( 0xc001, 0xc001, watchdog_reset_w ),
+		new Memory_WriteAddress( 0xe000, 0xe7ff, megazone_sharedram_w ),	/* Shared with $3800->3fff of main CPU */
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static PORT_READ_START( sound_readport )
 		{ 0x00, 0x02, AY8910_read_port_0_r },
@@ -185,9 +189,11 @@ public class megazone
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( i8039_writemem )
-		{ 0x0000, 0x0fff, MWA_ROM },
-	MEMORY_END
+	public static Memory_WriteAddress i8039_writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0x0fff, MWA_ROM ),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static PORT_READ_START( i8039_readport )
 		{ 0x00, 0xff, soundlatch_r },

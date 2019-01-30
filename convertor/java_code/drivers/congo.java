@@ -110,23 +110,25 @@ public class congo
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( writemem )
-		{ 0x8000, 0x83ff, MWA_RAM },
-		{ 0xa000, 0xa3ff, videoram_w, &videoram, &videoram_size },
-		{ 0xa400, 0xa7ff, colorram_w, &colorram },
-		{ 0x8400, 0x8fff, MWA_RAM, &spriteram },
-		{ 0xc01f, 0xc01f, interrupt_enable_w },
-		{ 0xc028, 0xc029, MWA_RAM, &zaxxon_background_position },
-		{ 0xc01d, 0xc01d, MWA_RAM, &zaxxon_background_enable },
-		{ 0xc038, 0xc038, soundlatch_w },
-		{ 0xc030, 0xc033, MWA_NOP }, /* ??? */
-		{ 0xc01e, 0xc01e, MWA_NOP }, /* flip unused for now */
-		{ 0xc018, 0xc018, MWA_NOP }, /* coinAen */
-		{ 0xc019, 0xc019, MWA_NOP }, /* coinBen */
-		{ 0xc01a, 0xc01a, MWA_NOP }, /* serven */
-		{ 0xc01b, 0xc01c, congo_coin_counter_w }, /* counterA, counterB */
-		{ 0x0000, 0x7fff, MWA_ROM },
-	MEMORY_END
+	public static Memory_WriteAddress writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x8000, 0x83ff, MWA_RAM ),
+		new Memory_WriteAddress( 0xa000, 0xa3ff, videoram_w, &videoram, &videoram_size ),
+		new Memory_WriteAddress( 0xa400, 0xa7ff, colorram_w, &colorram ),
+		new Memory_WriteAddress( 0x8400, 0x8fff, MWA_RAM, &spriteram ),
+		new Memory_WriteAddress( 0xc01f, 0xc01f, interrupt_enable_w ),
+		new Memory_WriteAddress( 0xc028, 0xc029, MWA_RAM, &zaxxon_background_position ),
+		new Memory_WriteAddress( 0xc01d, 0xc01d, MWA_RAM, &zaxxon_background_enable ),
+		new Memory_WriteAddress( 0xc038, 0xc038, soundlatch_w ),
+		new Memory_WriteAddress( 0xc030, 0xc033, MWA_NOP ), /* ??? */
+		new Memory_WriteAddress( 0xc01e, 0xc01e, MWA_NOP ), /* flip unused for now */
+		new Memory_WriteAddress( 0xc018, 0xc018, MWA_NOP ), /* coinAen */
+		new Memory_WriteAddress( 0xc019, 0xc019, MWA_NOP ), /* coinBen */
+		new Memory_WriteAddress( 0xc01a, 0xc01a, MWA_NOP ), /* serven */
+		new Memory_WriteAddress( 0xc01b, 0xc01c, congo_coin_counter_w ), /* counterA, counterB */
+		new Memory_WriteAddress( 0x0000, 0x7fff, MWA_ROM ),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	
 	public static Memory_ReadAddress sh_readmem[]={
@@ -136,13 +138,15 @@ public class congo
 		new Memory_ReadAddress( 0x8000, 0x8003, soundlatch_r ),
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
-	static MEMORY_WRITE_START( sh_writemem )
-		{ 0x6000, 0x6003, SN76496_0_w },
-		{ 0xa000, 0xa003, SN76496_1_w },
-		{ 0x4000, 0x47ff, MWA_RAM },
-		{ 0x8000, 0x8003, congo_daio_w },
-		{ 0x0000, 0x2000, MWA_ROM },
-	MEMORY_END
+	public static Memory_WriteAddress sh_writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x6000, 0x6003, SN76496_0_w ),
+		new Memory_WriteAddress( 0xa000, 0xa003, SN76496_1_w ),
+		new Memory_WriteAddress( 0x4000, 0x47ff, MWA_RAM ),
+		new Memory_WriteAddress( 0x8000, 0x8003, congo_daio_w ),
+		new Memory_WriteAddress( 0x0000, 0x2000, MWA_ROM ),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	
 	

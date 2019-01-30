@@ -41,16 +41,18 @@ public class holeland
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( writemem )
-		{ 0x0000, 0x7fff, MWA_ROM },
-		{ 0x8000, 0x87ff, MWA_RAM },
-		{ 0xa000, 0xbfff, MWA_ROM },
-		{ 0xc000, 0xc001, holeland_pal_offs_w },
-		{ 0xc006, 0xc007, holeland_flipscreen_w },
-		{ 0xe000, 0xe3ff, holeland_colorram_w, &colorram },
-		{ 0xe400, 0xe7ff, holeland_videoram_w, &videoram, &videoram_size },
-		{ 0xf000, 0xf3ff, MWA_RAM, &spriteram, &spriteram_size },
-	MEMORY_END
+	public static Memory_WriteAddress writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0x7fff, MWA_ROM ),
+		new Memory_WriteAddress( 0x8000, 0x87ff, MWA_RAM ),
+		new Memory_WriteAddress( 0xa000, 0xbfff, MWA_ROM ),
+		new Memory_WriteAddress( 0xc000, 0xc001, holeland_pal_offs_w ),
+		new Memory_WriteAddress( 0xc006, 0xc007, holeland_flipscreen_w ),
+		new Memory_WriteAddress( 0xe000, 0xe3ff, holeland_colorram_w, &colorram ),
+		new Memory_WriteAddress( 0xe400, 0xe7ff, holeland_videoram_w, &videoram, &videoram_size ),
+		new Memory_WriteAddress( 0xf000, 0xf3ff, MWA_RAM, &spriteram, &spriteram_size ),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	public static Memory_ReadAddress crzrally_readmem[]={
 		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
@@ -60,15 +62,17 @@ public class holeland
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( crzrally_writemem )
-		{ 0x0000, 0xbfff, MWA_ROM },
-		{ 0xc000, 0xc7ff, MWA_RAM },
-		{ 0xe000, 0xe3ff, holeland_colorram_w, &colorram },
-		{ 0xe400, 0xe7ff, holeland_videoram_w, &videoram, &videoram_size },
-		{ 0xe800, 0xebff, MWA_RAM, &spriteram, &spriteram_size },
-		{ 0xf000, 0xf000, holeland_scroll_w },
-		{ 0xf800, 0xf801, holeland_pal_offs_w },
-	MEMORY_END
+	public static Memory_WriteAddress crzrally_writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0xbfff, MWA_ROM ),
+		new Memory_WriteAddress( 0xc000, 0xc7ff, MWA_RAM ),
+		new Memory_WriteAddress( 0xe000, 0xe3ff, holeland_colorram_w, &colorram ),
+		new Memory_WriteAddress( 0xe400, 0xe7ff, holeland_videoram_w, &videoram, &videoram_size ),
+		new Memory_WriteAddress( 0xe800, 0xebff, MWA_RAM, &spriteram, &spriteram_size ),
+		new Memory_WriteAddress( 0xf000, 0xf000, holeland_scroll_w ),
+		new Memory_WriteAddress( 0xf800, 0xf801, holeland_pal_offs_w ),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static PORT_READ_START( readport )
 		{ 0x01, 0x01, watchdog_reset_r },	/* ? */

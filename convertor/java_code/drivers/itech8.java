@@ -685,20 +685,22 @@ public class itech8
 	};
 	
 	
-	static MEMORY_WRITE_START( tmslo_writemem )
-		{ 0x0000, 0x0fff, itech8_tms34061_w },
-		{ 0x1100, 0x1100, MWA_NOP },
-		{ 0x1120, 0x1120, sound_data_w },
-		{ 0x1140, 0x1140, MWA_RAM, &itech8_grom_bank },
-		{ 0x1160, 0x1160, MWA_RAM, &itech8_display_page },
-		{ 0x1180, 0x1180, tms34061_latch_w },
-		{ 0x11a0, 0x11a0, nmi_ack_w },
-		{ 0x11c0, 0x11df, blitter_w },
-		{ 0x11e0, 0x11e0, itech8_palette_address_w },
-		{ 0x11e2, 0x11e3, itech8_palette_data_w },
-		{ 0x2000, 0x3fff, MWA_RAM, &main_ram, &main_ram_size },
-		{ 0x4000, 0xffff, MWA_ROM },
-	MEMORY_END
+	public static Memory_WriteAddress tmslo_writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0x0fff, itech8_tms34061_w ),
+		new Memory_WriteAddress( 0x1100, 0x1100, MWA_NOP ),
+		new Memory_WriteAddress( 0x1120, 0x1120, sound_data_w ),
+		new Memory_WriteAddress( 0x1140, 0x1140, MWA_RAM, &itech8_grom_bank ),
+		new Memory_WriteAddress( 0x1160, 0x1160, MWA_RAM, &itech8_display_page ),
+		new Memory_WriteAddress( 0x1180, 0x1180, tms34061_latch_w ),
+		new Memory_WriteAddress( 0x11a0, 0x11a0, nmi_ack_w ),
+		new Memory_WriteAddress( 0x11c0, 0x11df, blitter_w ),
+		new Memory_WriteAddress( 0x11e0, 0x11e0, itech8_palette_address_w ),
+		new Memory_WriteAddress( 0x11e2, 0x11e3, itech8_palette_data_w ),
+		new Memory_WriteAddress( 0x2000, 0x3fff, MWA_RAM, &main_ram, &main_ram_size ),
+		new Memory_WriteAddress( 0x4000, 0xffff, MWA_ROM ),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	
 	/*------ common layout with TMS34061 at 1000 ------*/
@@ -719,20 +721,22 @@ public class itech8
 	};
 	
 	
-	static MEMORY_WRITE_START( tmshi_writemem )
-		{ 0x1000, 0x1fff, itech8_tms34061_w },
-		{ 0x0100, 0x0100, MWA_NOP },
-		{ 0x0120, 0x0120, sound_data_w },
-		{ 0x0140, 0x0140, MWA_RAM, &itech8_grom_bank },
-		{ 0x0160, 0x0160, MWA_RAM, &itech8_display_page },
-		{ 0x0180, 0x0180, tms34061_latch_w },
-		{ 0x01a0, 0x01a0, nmi_ack_w },
-		{ 0x01c0, 0x01df, blitter_w },
-		{ 0x01e0, 0x01e0, itech8_palette_address_w },
-		{ 0x01e2, 0x01e3, itech8_palette_data_w },
-		{ 0x2000, 0x3fff, MWA_RAM, &main_ram, &main_ram_size },
-		{ 0x4000, 0xffff, MWA_ROM },
-	MEMORY_END
+	public static Memory_WriteAddress tmshi_writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x1000, 0x1fff, itech8_tms34061_w ),
+		new Memory_WriteAddress( 0x0100, 0x0100, MWA_NOP ),
+		new Memory_WriteAddress( 0x0120, 0x0120, sound_data_w ),
+		new Memory_WriteAddress( 0x0140, 0x0140, MWA_RAM, &itech8_grom_bank ),
+		new Memory_WriteAddress( 0x0160, 0x0160, MWA_RAM, &itech8_display_page ),
+		new Memory_WriteAddress( 0x0180, 0x0180, tms34061_latch_w ),
+		new Memory_WriteAddress( 0x01a0, 0x01a0, nmi_ack_w ),
+		new Memory_WriteAddress( 0x01c0, 0x01df, blitter_w ),
+		new Memory_WriteAddress( 0x01e0, 0x01e0, itech8_palette_address_w ),
+		new Memory_WriteAddress( 0x01e2, 0x01e3, itech8_palette_data_w ),
+		new Memory_WriteAddress( 0x2000, 0x3fff, MWA_RAM, &main_ram, &main_ram_size ),
+		new Memory_WriteAddress( 0x4000, 0xffff, MWA_ROM ),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	
 	/*------ Golden Tee Golf II 1992 layout ------*/
@@ -753,19 +757,21 @@ public class itech8
 	};
 	
 	
-	static MEMORY_WRITE_START( gtg2_writemem )
-		{ 0x1000, 0x1fff, itech8_tms34061_w },
-		{ 0x01c0, 0x01c0, gtg2_sound_data_w },
-		{ 0x0160, 0x0160, MWA_RAM, &itech8_grom_bank },
-		{ 0x0120, 0x0120, MWA_RAM, &itech8_display_page },
-		{ 0x01e0, 0x01e0, tms34061_latch_w },
-		{ 0x0100, 0x0100, nmi_ack_w },
-		{ 0x0180, 0x019f, blitter_w },
-		{ 0x0140, 0x0140, itech8_palette_address_w },
-		{ 0x0142, 0x0143, itech8_palette_data_w },
-		{ 0x2000, 0x3fff, MWA_RAM, &main_ram, &main_ram_size },
-		{ 0x4000, 0xffff, MWA_ROM },
-	MEMORY_END
+	public static Memory_WriteAddress gtg2_writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x1000, 0x1fff, itech8_tms34061_w ),
+		new Memory_WriteAddress( 0x01c0, 0x01c0, gtg2_sound_data_w ),
+		new Memory_WriteAddress( 0x0160, 0x0160, MWA_RAM, &itech8_grom_bank ),
+		new Memory_WriteAddress( 0x0120, 0x0120, MWA_RAM, &itech8_display_page ),
+		new Memory_WriteAddress( 0x01e0, 0x01e0, tms34061_latch_w ),
+		new Memory_WriteAddress( 0x0100, 0x0100, nmi_ack_w ),
+		new Memory_WriteAddress( 0x0180, 0x019f, blitter_w ),
+		new Memory_WriteAddress( 0x0140, 0x0140, itech8_palette_address_w ),
+		new Memory_WriteAddress( 0x0142, 0x0143, itech8_palette_data_w ),
+		new Memory_WriteAddress( 0x2000, 0x3fff, MWA_RAM, &main_ram, &main_ram_size ),
+		new Memory_WriteAddress( 0x4000, 0xffff, MWA_ROM ),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	
 	/*------ Ninja Clowns layout ------*/
@@ -816,16 +822,18 @@ public class itech8
 	};
 	
 	
-	static MEMORY_WRITE_START( sound2203_writemem )
-		{ 0x0000, 0x0000, MWA_NOP },
-		{ 0x2000, 0x2000, YM2203_control_port_0_w },
-		{ 0x2001, 0x2001, YM2203_write_port_0_w },
-		{ 0x2002, 0x2002, YM2203_control_port_0_w },
-		{ 0x2003, 0x2003, YM2203_write_port_0_w },
-		{ 0x3000, 0x37ff, MWA_RAM },
-		{ 0x4000, 0x4000, OKIM6295_data_0_w },
-		{ 0x8000, 0xffff, MWA_ROM },
-	MEMORY_END
+	public static Memory_WriteAddress sound2203_writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0x0000, MWA_NOP ),
+		new Memory_WriteAddress( 0x2000, 0x2000, YM2203_control_port_0_w ),
+		new Memory_WriteAddress( 0x2001, 0x2001, YM2203_write_port_0_w ),
+		new Memory_WriteAddress( 0x2002, 0x2002, YM2203_control_port_0_w ),
+		new Memory_WriteAddress( 0x2003, 0x2003, YM2203_write_port_0_w ),
+		new Memory_WriteAddress( 0x3000, 0x37ff, MWA_RAM ),
+		new Memory_WriteAddress( 0x4000, 0x4000, OKIM6295_data_0_w ),
+		new Memory_WriteAddress( 0x8000, 0xffff, MWA_ROM ),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	
 	/*------ YM3812-based sound board ------*/
@@ -841,15 +849,17 @@ public class itech8
 	};
 	
 	
-	static MEMORY_WRITE_START( sound3812_writemem )
-		{ 0x0000, 0x0000, MWA_NOP },
-		{ 0x2000, 0x2000, YM3812_control_port_0_w },
-		{ 0x2001, 0x2001, YM3812_write_port_0_w },
-		{ 0x3000, 0x37ff, MWA_RAM },
-		{ 0x4000, 0x4000, OKIM6295_data_0_w },
-		{ 0x5000, 0x5003, pia_0_w },
-		{ 0x8000, 0xffff, MWA_ROM },
-	MEMORY_END
+	public static Memory_WriteAddress sound3812_writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0x0000, MWA_NOP ),
+		new Memory_WriteAddress( 0x2000, 0x2000, YM3812_control_port_0_w ),
+		new Memory_WriteAddress( 0x2001, 0x2001, YM3812_write_port_0_w ),
+		new Memory_WriteAddress( 0x3000, 0x37ff, MWA_RAM ),
+		new Memory_WriteAddress( 0x4000, 0x4000, OKIM6295_data_0_w ),
+		new Memory_WriteAddress( 0x5000, 0x5003, pia_0_w ),
+		new Memory_WriteAddress( 0x8000, 0xffff, MWA_ROM ),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	
 	
@@ -866,9 +876,11 @@ public class itech8
 	};
 	
 	
-	static MEMORY_WRITE_START( slikz80_writemem )
-		{ 0x0000, 0x7f, MWA_ROM },
-	MEMORY_END
+	public static Memory_WriteAddress slikz80_writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0x7f, MWA_ROM ),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	
 	static PORT_READ_START( slikz80_readport )

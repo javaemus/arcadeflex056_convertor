@@ -312,19 +312,21 @@ public class namcos21
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( writemem_sound )
-		{ 0x0000, 0x3fff, MWA_ROM },
-		{ 0x4000, 0x4000, YM2151_register_port_0_w },
-		{ 0x4001, 0x4001, YM2151_data_port_0_w },
-		{ 0x5000, 0x6fff, C140_w },
-		{ 0x7000, 0x77ff, namcos2_dualportram_byte_w, &namcos2_dualportram },
-		{ 0x7800, 0x7fff, namcos2_dualportram_byte_w }, /* mirror */
-		{ 0x8000, 0x9fff, MWA_RAM },
-		{ 0xa000, 0xbfff, MWA_NOP }, /* amplifier enable on 1st write */
-		{ 0xc000, 0xc001, namcos2_sound_bankselect_w },
-		{ 0xd001, 0xd001, MWA_NOP }, /* watchdog */
-		{ 0xc000, 0xffff, MWA_NOP }, /* avoid debug log noise; games write frequently to 0xe000 */
-	MEMORY_END
+	public static Memory_WriteAddress writemem_sound[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0x3fff, MWA_ROM ),
+		new Memory_WriteAddress( 0x4000, 0x4000, YM2151_register_port_0_w ),
+		new Memory_WriteAddress( 0x4001, 0x4001, YM2151_data_port_0_w ),
+		new Memory_WriteAddress( 0x5000, 0x6fff, C140_w ),
+		new Memory_WriteAddress( 0x7000, 0x77ff, namcos2_dualportram_byte_w, &namcos2_dualportram ),
+		new Memory_WriteAddress( 0x7800, 0x7fff, namcos2_dualportram_byte_w ), /* mirror */
+		new Memory_WriteAddress( 0x8000, 0x9fff, MWA_RAM ),
+		new Memory_WriteAddress( 0xa000, 0xbfff, MWA_NOP ), /* amplifier enable on 1st write */
+		new Memory_WriteAddress( 0xc000, 0xc001, namcos2_sound_bankselect_w ),
+		new Memory_WriteAddress( 0xd001, 0xd001, MWA_NOP ), /* watchdog */
+		new Memory_WriteAddress( 0xc000, 0xffff, MWA_NOP ), /* avoid debug log noise; games write frequently to 0xe000 */
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	/* IO CPU */
 	
@@ -351,16 +353,18 @@ public class namcos21
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( writemem_mcu )
-		{ 0x0003, 0x0003, namcos2_mcu_port_d_w },
-		{ 0x0010, 0x0010, namcos2_mcu_analog_ctrl_w },
-		{ 0x0011, 0x0011, namcos2_mcu_analog_port_w },
-		{ 0x0000, 0x003f, MWA_RAM },
-		{ 0x0040, 0x01bf, MWA_RAM },
-		{ 0x01c0, 0x1fff, MWA_ROM },
-		{ 0x5000, 0x57ff, namcos2_dualportram_byte_w, &namcos2_dualportram },
-		{ 0x8000, 0xffff, MWA_ROM },
-	MEMORY_END
+	public static Memory_WriteAddress writemem_mcu[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0003, 0x0003, namcos2_mcu_port_d_w ),
+		new Memory_WriteAddress( 0x0010, 0x0010, namcos2_mcu_analog_ctrl_w ),
+		new Memory_WriteAddress( 0x0011, 0x0011, namcos2_mcu_analog_port_w ),
+		new Memory_WriteAddress( 0x0000, 0x003f, MWA_RAM ),
+		new Memory_WriteAddress( 0x0040, 0x01bf, MWA_RAM ),
+		new Memory_WriteAddress( 0x01c0, 0x1fff, MWA_ROM ),
+		new Memory_WriteAddress( 0x5000, 0x57ff, namcos2_dualportram_byte_w, &namcos2_dualportram ),
+		new Memory_WriteAddress( 0x8000, 0xffff, MWA_ROM ),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static struct GfxLayout tile_layout =
 	{

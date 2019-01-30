@@ -120,19 +120,21 @@ public class lasso
 		new Memory_ReadAddress( 0xfffa, 0xffff, MRA_ROM			),	// ROM (Mirror)
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
-	static MEMORY_WRITE_START( chameleo_writemem )
-		{ 0x0000, 0x03ff, MWA_RAM						},	// Work RAM
-		{ 0x0400, 0x0bff, lasso_videoram_w, &videoram	},	// Tilemap
-		{ 0x0c00, 0x0fff, MWA_RAM						},	//
-		{ 0x1000, 0x107f, MWA_RAM, &spriteram, &spriteram_size },	// Sprites
-		{ 0x1080, 0x10ff, MWA_RAM						},
-		{ 0x1800, 0x1800, chameleo_sound_command_w		},	// To Sound CPU
-		{ 0x1801, 0x1801, lasso_backcolor_w				},	// Background Color
-		{ 0x1802, 0x1802, lasso_gfxbank_w				},	// Flip Screen + Tile Bank
-		{ 0x4000, 0xbfff, MWA_ROM						},	// ROM
-		{ 0xc428, 0xc429, MWA_NOP						},	// ? written once with $0&41
-		{ 0xfffa, 0xffff, MWA_ROM						},	// ROM (Mirror)
-	MEMORY_END
+	public static Memory_WriteAddress chameleo_writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0x03ff, MWA_RAM						),	// Work RAM
+		new Memory_WriteAddress( 0x0400, 0x0bff, lasso_videoram_w, &videoram	),	// Tilemap
+		new Memory_WriteAddress( 0x0c00, 0x0fff, MWA_RAM						),	//
+		new Memory_WriteAddress( 0x1000, 0x107f, MWA_RAM, &spriteram, &spriteram_size ),	// Sprites
+		new Memory_WriteAddress( 0x1080, 0x10ff, MWA_RAM						),
+		new Memory_WriteAddress( 0x1800, 0x1800, chameleo_sound_command_w		),	// To Sound CPU
+		new Memory_WriteAddress( 0x1801, 0x1801, lasso_backcolor_w				),	// Background Color
+		new Memory_WriteAddress( 0x1802, 0x1802, lasso_gfxbank_w				),	// Flip Screen + Tile Bank
+		new Memory_WriteAddress( 0x4000, 0xbfff, MWA_ROM						),	// ROM
+		new Memory_WriteAddress( 0xc428, 0xc429, MWA_NOP						),	// ? written once with $0&41
+		new Memory_WriteAddress( 0xfffa, 0xffff, MWA_ROM						),	// ROM (Mirror)
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	/***************************************************************************
 									Lasso
@@ -151,17 +153,19 @@ public class lasso
 		new Memory_ReadAddress( 0x8000, 0xffff, MRA_ROM			),	// ROM
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
-	static MEMORY_WRITE_START( lasso_writemem )
-		{ 0x0000, 0x03ff, MWA_RAM						},	// ROM
-		{ 0x0400, 0x0bff, lasso_videoram_w, &videoram	},	// Tilemap
-		{ 0x0c00, 0x0c7f, MWA_RAM, &spriteram, &spriteram_size },	// Sprites
-		{ 0x1000, 0x17ff, shareram_w					},	// Shared RAM
-		{ 0x1800, 0x1800, lasso_sound_command_w			},	// To Sound CPU
-		{ 0x1801, 0x1801, lasso_backcolor_w				},	// Background Color
-		{ 0x1802, 0x1802, lasso_gfxbank_w				},	// Flip Screen + Tile Bank
-		{ 0x1806, 0x1806, MWA_NOP						},	// ? spurious write
-		{ 0x8000, 0xffff, MWA_ROM						},	// ROM
-	MEMORY_END
+	public static Memory_WriteAddress lasso_writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0x03ff, MWA_RAM						),	// ROM
+		new Memory_WriteAddress( 0x0400, 0x0bff, lasso_videoram_w, &videoram	),	// Tilemap
+		new Memory_WriteAddress( 0x0c00, 0x0c7f, MWA_RAM, &spriteram, &spriteram_size ),	// Sprites
+		new Memory_WriteAddress( 0x1000, 0x17ff, shareram_w					),	// Shared RAM
+		new Memory_WriteAddress( 0x1800, 0x1800, lasso_sound_command_w			),	// To Sound CPU
+		new Memory_WriteAddress( 0x1801, 0x1801, lasso_backcolor_w				),	// Background Color
+		new Memory_WriteAddress( 0x1802, 0x1802, lasso_gfxbank_w				),	// Flip Screen + Tile Bank
+		new Memory_WriteAddress( 0x1806, 0x1806, MWA_NOP						),	// ? spurious write
+		new Memory_WriteAddress( 0x8000, 0xffff, MWA_ROM						),	// ROM
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	/***************************************************************************
 								Wai Wai Jockey Gate-In!
@@ -180,18 +184,20 @@ public class lasso
 		new Memory_ReadAddress( 0xfffa, 0xffff, MRA_ROM			),	// ROM (Mirror)
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
-	static MEMORY_WRITE_START( wwjgtin_writemem )
-		{ 0x0000, 0x07ff, MWA_RAM						},	// Work RAM
-		{ 0x0800, 0x0fff, lasso_videoram_w, &videoram	},	// Tilemap
-		{ 0x1000, 0x10ff, MWA_RAM, &spriteram, &spriteram_size },	// Sprites
-		{ 0x1800, 0x1800, chameleo_sound_command_w		},	// To Sound CPU
-		{ 0x1801, 0x1801, lasso_backcolor_w				},	// Background Color
-		{ 0x1802, 0x1802, wwjgtin_gfxbank_w				},	// Flip Screen + Tile Bank
-		{ 0x1c00, 0x1c03, wwjgtin_lastcolor_w			},	// Last 4 Colors
-		{ 0x1c04, 0x1c07, MWA_RAM, &wwjgtin_scroll		},	// Scroll (For The Tilemap in ROM)
-		{ 0x5000, 0xbfff, MWA_ROM						},	// ROM
-		{ 0xfffa, 0xffff, MWA_ROM						},	// ROM (Mirror)
-	MEMORY_END
+	public static Memory_WriteAddress wwjgtin_writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0x07ff, MWA_RAM						),	// Work RAM
+		new Memory_WriteAddress( 0x0800, 0x0fff, lasso_videoram_w, &videoram	),	// Tilemap
+		new Memory_WriteAddress( 0x1000, 0x10ff, MWA_RAM, &spriteram, &spriteram_size ),	// Sprites
+		new Memory_WriteAddress( 0x1800, 0x1800, chameleo_sound_command_w		),	// To Sound CPU
+		new Memory_WriteAddress( 0x1801, 0x1801, lasso_backcolor_w				),	// Background Color
+		new Memory_WriteAddress( 0x1802, 0x1802, wwjgtin_gfxbank_w				),	// Flip Screen + Tile Bank
+		new Memory_WriteAddress( 0x1c00, 0x1c03, wwjgtin_lastcolor_w			),	// Last 4 Colors
+		new Memory_WriteAddress( 0x1c04, 0x1c07, MWA_RAM, &wwjgtin_scroll		),	// Scroll (For The Tilemap in ROM)
+		new Memory_WriteAddress( 0x5000, 0xbfff, MWA_ROM						),	// ROM
+		new Memory_WriteAddress( 0xfffa, 0xffff, MWA_ROM						),	// ROM (Mirror)
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	
 	
@@ -215,12 +221,14 @@ public class lasso
 		new Memory_ReadAddress( 0xf000, 0xffff, MRA_ROM				),	// ROM (Mirror)
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
-	static MEMORY_WRITE_START( lasso_coprocessor_writemem )
-		{ 0x0000, 0x07ff, MWA_RAM, &shareram	},	// Shared RAM (code is executed from here!)
-		{ 0x2000, 0x3fff, MWA_RAM, &lasso_vram	},	// Video RAM
-		{ 0x8000, 0x8fff, MWA_ROM				},	// ROM
-		{ 0xf000, 0xffff, MWA_ROM				},	// ROM (Mirror)
-	MEMORY_END
+	public static Memory_WriteAddress lasso_coprocessor_writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0x07ff, MWA_RAM, &shareram	),	// Shared RAM (code is executed from here!)
+		new Memory_WriteAddress( 0x2000, 0x3fff, MWA_RAM, &lasso_vram	),	// Video RAM
+		new Memory_WriteAddress( 0x8000, 0x8fff, MWA_ROM				),	// ROM
+		new Memory_WriteAddress( 0xf000, 0xffff, MWA_ROM				),	// ROM (Mirror)
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	
 	
@@ -246,14 +254,16 @@ public class lasso
 		new Memory_ReadAddress( 0xfffa, 0xffff, MRA_ROM			),	// ROM (Mirror)
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
-	static MEMORY_WRITE_START( chameleo_sound_writemem )
-		{ 0x0000, 0x01ff, MWA_RAM			},	// Work RAM
-		{ 0x1000, 0x1fff, MWA_ROM			},	// ROM
-		{ 0x6000, 0x7fff, MWA_ROM			},	//
-		{ 0xb000, 0xb000, sound_data_w		},	// Sound
-		{ 0xb001, 0xb001, sound_select_w	},	//
-		{ 0xfffa, 0xffff, MWA_ROM			},	// ROM (Mirror)
-	MEMORY_END
+	public static Memory_WriteAddress chameleo_sound_writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0x01ff, MWA_RAM			),	// Work RAM
+		new Memory_WriteAddress( 0x1000, 0x1fff, MWA_ROM			),	// ROM
+		new Memory_WriteAddress( 0x6000, 0x7fff, MWA_ROM			),	//
+		new Memory_WriteAddress( 0xb000, 0xb000, sound_data_w		),	// Sound
+		new Memory_WriteAddress( 0xb001, 0xb001, sound_select_w	),	//
+		new Memory_WriteAddress( 0xfffa, 0xffff, MWA_ROM			),	// ROM (Mirror)
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	/***************************************************************************
 									Lasso
@@ -268,13 +278,15 @@ public class lasso
 		new Memory_ReadAddress( 0xf000, 0xffff, MRA_ROM			),	// ROM (mirror)
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
-	static MEMORY_WRITE_START( lasso_sound_writemem )
-		{ 0x0000, 0x01ff, MWA_RAM			},	// Work RAM
-		{ 0x5000, 0x7fff, MWA_ROM			},	// ROM
-		{ 0xb000, 0xb000, sound_data_w		},	// Sound
-		{ 0xb001, 0xb001, sound_select_w	},	//
-		{ 0xf000, 0xffff, MWA_ROM			},	// ROM (mirror)
-	MEMORY_END
+	public static Memory_WriteAddress lasso_sound_writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0x01ff, MWA_RAM			),	// Work RAM
+		new Memory_WriteAddress( 0x5000, 0x7fff, MWA_ROM			),	// ROM
+		new Memory_WriteAddress( 0xb000, 0xb000, sound_data_w		),	// Sound
+		new Memory_WriteAddress( 0xb001, 0xb001, sound_select_w	),	//
+		new Memory_WriteAddress( 0xf000, 0xffff, MWA_ROM			),	// ROM (mirror)
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	/***************************************************************************
 								Wai Wai Jockey Gate-In!
@@ -289,14 +301,16 @@ public class lasso
 		new Memory_ReadAddress( 0xfffa, 0xffff, MRA_ROM			),	// ROM (mirror)
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
-	static MEMORY_WRITE_START( wwjgtin_sound_writemem )
-		{ 0x0000, 0x01ff, MWA_RAM			},	// Work RAM
-		{ 0x5000, 0x7fff, MWA_ROM			},	// ROM
-		{ 0xb000, 0xb000, sound_data_w		},	// Sound
-		{ 0xb001, 0xb001, sound_select_w	},	//
-		{ 0xb003, 0xb003, DAC_0_data_w		},	//
-		{ 0xfffa, 0xffff, MWA_ROM			},	// ROM (mirror)
-	MEMORY_END
+	public static Memory_WriteAddress wwjgtin_sound_writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0x01ff, MWA_RAM			),	// Work RAM
+		new Memory_WriteAddress( 0x5000, 0x7fff, MWA_ROM			),	// ROM
+		new Memory_WriteAddress( 0xb000, 0xb000, sound_data_w		),	// Sound
+		new Memory_WriteAddress( 0xb001, 0xb001, sound_select_w	),	//
+		new Memory_WriteAddress( 0xb003, 0xb003, DAC_0_data_w		),	//
+		new Memory_WriteAddress( 0xfffa, 0xffff, MWA_ROM			),	// ROM (mirror)
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	
 	

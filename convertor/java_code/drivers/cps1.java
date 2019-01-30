@@ -355,15 +355,17 @@ public class cps1
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( sound_writemem )
-		{ 0x0000, 0xbfff, MWA_ROM },
-		{ 0xd000, 0xd7ff, MWA_RAM },
-		{ 0xf000, 0xf000, YM2151_register_port_0_w },
-		{ 0xf001, 0xf001, YM2151_data_port_0_w },
-		{ 0xf002, 0xf002, OKIM6295_data_0_w },
-		{ 0xf004, 0xf004, cps1_snd_bankswitch_w },
-	//	{ 0xf006, 0xf006, MWA_NOP }, /* ???? Unknown ???? */
-	MEMORY_END
+	public static Memory_WriteAddress sound_writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0xbfff, MWA_ROM ),
+		new Memory_WriteAddress( 0xd000, 0xd7ff, MWA_RAM ),
+		new Memory_WriteAddress( 0xf000, 0xf000, YM2151_register_port_0_w ),
+		new Memory_WriteAddress( 0xf001, 0xf001, YM2151_data_port_0_w ),
+		new Memory_WriteAddress( 0xf002, 0xf002, OKIM6295_data_0_w ),
+		new Memory_WriteAddress( 0xf004, 0xf004, cps1_snd_bankswitch_w ),
+	//	new Memory_WriteAddress( 0xf006, 0xf006, MWA_NOP ), /* ???? Unknown ???? */
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	MEMORY_READ_START( qsound_readmem )
 		{ 0x0000, 0x7fff, MRA_ROM },

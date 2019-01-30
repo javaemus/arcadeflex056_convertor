@@ -163,22 +163,24 @@ public class vball
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( writemem )
-		{ 0x0000, 0x07ff, MWA_RAM },
-		{ 0x0800, 0x08ff, MWA_RAM, &spriteram, &spriteram_size },
-		{ 0x1008, 0x1008, vb_scrollx_hi_w },
-		{ 0x1009, 0x1009, vb_bankswitch_w },
-		{ 0x100a, 0x100a, MWA_RAM },
-		{ 0x100b, 0x100b, MWA_RAM },
-		{ 0x100c, 0x100c, MWA_RAM, &vb_scrollx_lo },
-		{ 0x100d, 0x100d, cpu_sound_command_w },
-		{ 0x100e, 0x100e, MWA_RAM },
-		{ 0x2000, 0x27ff, vb_foreground_w, &vb_videoram },
-		{ 0x2800, 0x2fff, videoram_w, &videoram },
-		{ 0x3000, 0x37ff, vb_fgattrib_w, &vb_fgattribram },
-		{ 0x3800, 0x3fff, vb_attrib_w, &vb_attribram },
-		{ 0x4000, 0xffff, MWA_ROM },
-	MEMORY_END
+	public static Memory_WriteAddress writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0x07ff, MWA_RAM ),
+		new Memory_WriteAddress( 0x0800, 0x08ff, MWA_RAM, &spriteram, &spriteram_size ),
+		new Memory_WriteAddress( 0x1008, 0x1008, vb_scrollx_hi_w ),
+		new Memory_WriteAddress( 0x1009, 0x1009, vb_bankswitch_w ),
+		new Memory_WriteAddress( 0x100a, 0x100a, MWA_RAM ),
+		new Memory_WriteAddress( 0x100b, 0x100b, MWA_RAM ),
+		new Memory_WriteAddress( 0x100c, 0x100c, MWA_RAM, &vb_scrollx_lo ),
+		new Memory_WriteAddress( 0x100d, 0x100d, cpu_sound_command_w ),
+		new Memory_WriteAddress( 0x100e, 0x100e, MWA_RAM ),
+		new Memory_WriteAddress( 0x2000, 0x27ff, vb_foreground_w, &vb_videoram ),
+		new Memory_WriteAddress( 0x2800, 0x2fff, videoram_w, &videoram ),
+		new Memory_WriteAddress( 0x3000, 0x37ff, vb_fgattrib_w, &vb_fgattribram ),
+		new Memory_WriteAddress( 0x3800, 0x3fff, vb_attrib_w, &vb_attribram ),
+		new Memory_WriteAddress( 0x4000, 0xffff, MWA_ROM ),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	public static Memory_ReadAddress sound_readmem[]={
 		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
@@ -190,13 +192,15 @@ public class vball
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( sound_writemem )
-		{ 0x0000, 0x7fff, MWA_ROM },
-		{ 0x8000, 0x87ff, MWA_RAM },
-		{ 0x8800, 0x8800, YM2151_register_port_0_w },
-		{ 0x8801, 0x8801, YM2151_data_port_0_w },
-		{ 0x9800, 0x9800, OKIM6295_data_0_w },
-	MEMORY_END
+	public static Memory_WriteAddress sound_writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0x7fff, MWA_ROM ),
+		new Memory_WriteAddress( 0x8000, 0x87ff, MWA_RAM ),
+		new Memory_WriteAddress( 0x8800, 0x8800, YM2151_register_port_0_w ),
+		new Memory_WriteAddress( 0x8801, 0x8801, YM2151_data_port_0_w ),
+		new Memory_WriteAddress( 0x9800, 0x9800, OKIM6295_data_0_w ),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	public static Memory_ReadAddress vball2pj_sound_readmem[]={
 		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
@@ -208,13 +212,15 @@ public class vball
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( vball2pj_sound_writemem )
-		{ 0x0000, 0x7fff, MWA_ROM },
-		{ 0x8000, 0x87ff, MWA_RAM },
-		{ 0x8800, 0x8800, YM2151_register_port_0_w },
-		{ 0x8801, 0x8801, YM2151_data_port_0_w },
-	//	{ 0x9800, 0x9807, dd_adpcm_w },
-	MEMORY_END
+	public static Memory_WriteAddress vball2pj_sound_writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0x7fff, MWA_ROM ),
+		new Memory_WriteAddress( 0x8000, 0x87ff, MWA_RAM ),
+		new Memory_WriteAddress( 0x8800, 0x8800, YM2151_register_port_0_w ),
+		new Memory_WriteAddress( 0x8801, 0x8801, YM2151_data_port_0_w ),
+	//	new Memory_WriteAddress( 0x9800, 0x9807, dd_adpcm_w ),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	#define COMMON_PORTS_BEFORE  PORT_START \
 		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_8WAY | IPF_PLAYER1 ) \

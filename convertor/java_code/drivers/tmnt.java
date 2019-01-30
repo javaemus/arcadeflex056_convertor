@@ -1074,13 +1074,15 @@ public class tmnt
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( mia_s_writemem )
-		{ 0x0000, 0x7fff, MWA_ROM },
-		{ 0x8000, 0x87ff, MWA_RAM },
-		{ 0xb000, 0xb00d, K007232_write_port_0_w },
-		{ 0xc000, 0xc000, YM2151_register_port_0_w },
-		{ 0xc001, 0xc001, YM2151_data_port_0_w },
-	MEMORY_END
+	public static Memory_WriteAddress mia_s_writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0x7fff, MWA_ROM ),
+		new Memory_WriteAddress( 0x8000, 0x87ff, MWA_RAM ),
+		new Memory_WriteAddress( 0xb000, 0xb00d, K007232_write_port_0_w ),
+		new Memory_WriteAddress( 0xc000, 0xc000, YM2151_register_port_0_w ),
+		new Memory_WriteAddress( 0xc001, 0xc001, YM2151_data_port_0_w ),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	public static Memory_ReadAddress tmnt_s_readmem[]={
 		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
@@ -1094,16 +1096,18 @@ public class tmnt
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( tmnt_s_writemem )
-		{ 0x0000, 0x7fff, MWA_ROM },
-		{ 0x8000, 0x87ff, MWA_RAM },
-		{ 0x9000, 0x9000, tmnt_sres_w },	/* title music & UPD7759C reset */
-		{ 0xb000, 0xb00d, K007232_write_port_0_w  },
-		{ 0xc000, 0xc000, YM2151_register_port_0_w },
-		{ 0xc001, 0xc001, YM2151_data_port_0_w },
-		{ 0xd000, 0xd000, UPD7759_0_message_w },
-		{ 0xe000, 0xe000, UPD7759_0_start_w },
-	MEMORY_END
+	public static Memory_WriteAddress tmnt_s_writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0x7fff, MWA_ROM ),
+		new Memory_WriteAddress( 0x8000, 0x87ff, MWA_RAM ),
+		new Memory_WriteAddress( 0x9000, 0x9000, tmnt_sres_w ),	/* title music & UPD7759C reset */
+		new Memory_WriteAddress( 0xb000, 0xb00d, K007232_write_port_0_w  ),
+		new Memory_WriteAddress( 0xc000, 0xc000, YM2151_register_port_0_w ),
+		new Memory_WriteAddress( 0xc001, 0xc001, YM2151_data_port_0_w ),
+		new Memory_WriteAddress( 0xd000, 0xd000, UPD7759_0_message_w ),
+		new Memory_WriteAddress( 0xe000, 0xe000, UPD7759_0_start_w ),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	public static Memory_ReadAddress punkshot_s_readmem[]={
 		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
@@ -1114,14 +1118,16 @@ public class tmnt
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( punkshot_s_writemem )
-		{ 0x0000, 0x7fff, MWA_ROM },
-		{ 0xf000, 0xf7ff, MWA_RAM },
-		{ 0xf800, 0xf800, YM2151_register_port_0_w },
-		{ 0xf801, 0xf801, YM2151_data_port_0_w },
-		{ 0xfa00, 0xfa00, sound_arm_nmi_w },
-		{ 0xfc00, 0xfc2f, K053260_0_w },
-	MEMORY_END
+	public static Memory_WriteAddress punkshot_s_writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0x7fff, MWA_ROM ),
+		new Memory_WriteAddress( 0xf000, 0xf7ff, MWA_RAM ),
+		new Memory_WriteAddress( 0xf800, 0xf800, YM2151_register_port_0_w ),
+		new Memory_WriteAddress( 0xf801, 0xf801, YM2151_data_port_0_w ),
+		new Memory_WriteAddress( 0xfa00, 0xfa00, sound_arm_nmi_w ),
+		new Memory_WriteAddress( 0xfc00, 0xfc2f, K053260_0_w ),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	public static Memory_ReadAddress lgtnfght_s_readmem[]={
 		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
@@ -1132,13 +1138,15 @@ public class tmnt
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( lgtnfght_s_writemem )
-		{ 0x0000, 0x7fff, MWA_ROM },
-		{ 0x8000, 0x87ff, MWA_RAM },
-		{ 0xa000, 0xa000, YM2151_register_port_0_w },
-		{ 0xa001, 0xa001, YM2151_data_port_0_w },
-		{ 0xc000, 0xc02f, K053260_0_w },
-	MEMORY_END
+	public static Memory_WriteAddress lgtnfght_s_writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0x7fff, MWA_ROM ),
+		new Memory_WriteAddress( 0x8000, 0x87ff, MWA_RAM ),
+		new Memory_WriteAddress( 0xa000, 0xa000, YM2151_register_port_0_w ),
+		new Memory_WriteAddress( 0xa001, 0xa001, YM2151_data_port_0_w ),
+		new Memory_WriteAddress( 0xc000, 0xc02f, K053260_0_w ),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	public static Memory_ReadAddress glfgreat_s_readmem[]={
 		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
@@ -1148,12 +1156,14 @@ public class tmnt
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( glfgreat_s_writemem )
-		{ 0x0000, 0x7fff, MWA_ROM },
-		{ 0xf000, 0xf7ff, MWA_RAM },
-		{ 0xf800, 0xf82f, K053260_0_w },
-		{ 0xfa00, 0xfa00, sound_arm_nmi_w },
-	MEMORY_END
+	public static Memory_WriteAddress glfgreat_s_writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0x7fff, MWA_ROM ),
+		new Memory_WriteAddress( 0xf000, 0xf7ff, MWA_RAM ),
+		new Memory_WriteAddress( 0xf800, 0xf82f, K053260_0_w ),
+		new Memory_WriteAddress( 0xfa00, 0xfa00, sound_arm_nmi_w ),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	public static Memory_ReadAddress ssriders_s_readmem[]={
 		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
@@ -1164,14 +1174,16 @@ public class tmnt
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( ssriders_s_writemem )
-		{ 0x0000, 0xefff, MWA_ROM },
-		{ 0xf000, 0xf7ff, MWA_RAM },
-		{ 0xf800, 0xf800, YM2151_register_port_0_w },
-		{ 0xf801, 0xf801, YM2151_data_port_0_w },
-		{ 0xfa00, 0xfa2f, K053260_0_w },
-		{ 0xfc00, 0xfc00, sound_arm_nmi_w },
-	MEMORY_END
+	public static Memory_WriteAddress ssriders_s_writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0xefff, MWA_ROM ),
+		new Memory_WriteAddress( 0xf000, 0xf7ff, MWA_RAM ),
+		new Memory_WriteAddress( 0xf800, 0xf800, YM2151_register_port_0_w ),
+		new Memory_WriteAddress( 0xf801, 0xf801, YM2151_data_port_0_w ),
+		new Memory_WriteAddress( 0xfa00, 0xfa2f, K053260_0_w ),
+		new Memory_WriteAddress( 0xfc00, 0xfc00, sound_arm_nmi_w ),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	public static Memory_ReadAddress thndrx2_s_readmem[]={
 		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
@@ -1182,15 +1194,17 @@ public class tmnt
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( thndrx2_s_writemem )
-		{ 0x0000, 0xefff, MWA_ROM },
-		{ 0xf000, 0xf7ff, MWA_RAM },
-		{ 0xf800, 0xf800, YM2151_register_port_0_w },
-		{ 0xf801, 0xf801, YM2151_data_port_0_w },
-		{ 0xf811, 0xf811, YM2151_data_port_0_w },	/* mirror */
-		{ 0xfa00, 0xfa00, sound_arm_nmi_w },
-		{ 0xfc00, 0xfc2f, K053260_0_w },
-	MEMORY_END
+	public static Memory_WriteAddress thndrx2_s_writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0xefff, MWA_ROM ),
+		new Memory_WriteAddress( 0xf000, 0xf7ff, MWA_RAM ),
+		new Memory_WriteAddress( 0xf800, 0xf800, YM2151_register_port_0_w ),
+		new Memory_WriteAddress( 0xf801, 0xf801, YM2151_data_port_0_w ),
+		new Memory_WriteAddress( 0xf811, 0xf811, YM2151_data_port_0_w ),	/* mirror */
+		new Memory_WriteAddress( 0xfa00, 0xfa00, sound_arm_nmi_w ),
+		new Memory_WriteAddress( 0xfc00, 0xfc2f, K053260_0_w ),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static READ_HANDLER( K054539_0_ctrl_r )
 	{
@@ -1213,14 +1227,16 @@ public class tmnt
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( prmrsocr_s_writemem )
-		{ 0x0000, 0xbfff, MWA_ROM },
-		{ 0xc000, 0xdfff, MWA_RAM },
-		{ 0xe000, 0xe0ff, K054539_0_w },
-		{ 0xe100, 0xe12f, K054539_0_ctrl_w },
-		{ 0xf000, 0xf000, soundlatch3_w },
-		{ 0xf800, 0xf800, prmrsocr_s_bankswitch_w },
-	MEMORY_END
+	public static Memory_WriteAddress prmrsocr_s_writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0xbfff, MWA_ROM ),
+		new Memory_WriteAddress( 0xc000, 0xdfff, MWA_RAM ),
+		new Memory_WriteAddress( 0xe000, 0xe0ff, K054539_0_w ),
+		new Memory_WriteAddress( 0xe100, 0xe12f, K054539_0_ctrl_w ),
+		new Memory_WriteAddress( 0xf000, 0xf000, soundlatch3_w ),
+		new Memory_WriteAddress( 0xf800, 0xf800, prmrsocr_s_bankswitch_w ),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	
 	

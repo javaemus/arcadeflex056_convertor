@@ -232,14 +232,16 @@ public class rainbow
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( rainbow_s_writemem )
-		{ 0x0000, 0x7fff, MWA_ROM },
-		{ 0x8000, 0x8fff, MWA_RAM },
-		{ 0x9000, 0x9000, YM2151_register_port_0_w },
-		{ 0x9001, 0x9001, YM2151_data_port_0_w },
-		{ 0xa000, 0xa000, taitosound_slave_port_w },
-		{ 0xa001, 0xa001, taitosound_slave_comm_w },
-	MEMORY_END
+	public static Memory_WriteAddress rainbow_s_writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0x7fff, MWA_ROM ),
+		new Memory_WriteAddress( 0x8000, 0x8fff, MWA_RAM ),
+		new Memory_WriteAddress( 0x9000, 0x9000, YM2151_register_port_0_w ),
+		new Memory_WriteAddress( 0x9001, 0x9001, YM2151_data_port_0_w ),
+		new Memory_WriteAddress( 0xa000, 0xa000, taitosound_slave_port_w ),
+		new Memory_WriteAddress( 0xa001, 0xa001, taitosound_slave_comm_w ),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	public static Memory_ReadAddress jumping_sound_readmem[]={
 		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
@@ -252,16 +254,18 @@ public class rainbow
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( jumping_sound_writemem )
-		{ 0x0000, 0x7fff, MWA_ROM },
-		{ 0x8000, 0x8fff, MWA_RAM },
-		{ 0xb000, 0xb000, YM2203_control_port_0_w },
-		{ 0xb001, 0xb001, YM2203_write_port_0_w },
-		{ 0xb400, 0xb400, YM2203_control_port_1_w },
-		{ 0xb401, 0xb401, YM2203_write_port_1_w },
-		{ 0xbc00, 0xbc00, MWA_NOP },
-	//	{ 0xbc00, 0xbc00, jumping_bankswitch_w },	/* looks like a bankswitch, but sound works with or without it */
-	MEMORY_END
+	public static Memory_WriteAddress jumping_sound_writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0x7fff, MWA_ROM ),
+		new Memory_WriteAddress( 0x8000, 0x8fff, MWA_RAM ),
+		new Memory_WriteAddress( 0xb000, 0xb000, YM2203_control_port_0_w ),
+		new Memory_WriteAddress( 0xb001, 0xb001, YM2203_write_port_0_w ),
+		new Memory_WriteAddress( 0xb400, 0xb400, YM2203_control_port_1_w ),
+		new Memory_WriteAddress( 0xb401, 0xb401, YM2203_write_port_1_w ),
+		new Memory_WriteAddress( 0xbc00, 0xbc00, MWA_NOP ),
+	//	new Memory_WriteAddress( 0xbc00, 0xbc00, jumping_bankswitch_w ),	/* looks like a bankswitch, but sound works with or without it */
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	
 	/***********************************************************

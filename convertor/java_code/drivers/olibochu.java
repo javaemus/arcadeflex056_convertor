@@ -162,15 +162,17 @@ public class olibochu
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( writemem )
-		{ 0x0000, 0x7fff, MWA_ROM },
-		{ 0x8000, 0x87ff, MWA_RAM, &olibochu_videoram },
-		{ 0xa800, 0xa801, sound_command_w },
-		{ 0xa802, 0xa802, MWA_NOP },	/* bit 6 = enable sound? */
-		{ 0xf000, 0xffff, MWA_RAM },
-		{ 0xf400, 0xf41f, MWA_RAM, &spriteram, &spriteram_size },
-		{ 0xf440, 0xf47f, MWA_RAM, &spriteram_2, &spriteram_2_size },
-	MEMORY_END
+	public static Memory_WriteAddress writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0x7fff, MWA_ROM ),
+		new Memory_WriteAddress( 0x8000, 0x87ff, MWA_RAM, &olibochu_videoram ),
+		new Memory_WriteAddress( 0xa800, 0xa801, sound_command_w ),
+		new Memory_WriteAddress( 0xa802, 0xa802, MWA_NOP ),	/* bit 6 = enable sound? */
+		new Memory_WriteAddress( 0xf000, 0xffff, MWA_RAM ),
+		new Memory_WriteAddress( 0xf400, 0xf41f, MWA_RAM, &spriteram, &spriteram_size ),
+		new Memory_WriteAddress( 0xf440, 0xf47f, MWA_RAM, &spriteram_2, &spriteram_2_size ),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	public static Memory_ReadAddress sound_readmem[]={
 		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
@@ -180,12 +182,14 @@ public class olibochu
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( sound_writemem )
-		{ 0x0000, 0x1fff, MWA_ROM },
-		{ 0x6000, 0x63ff, MWA_RAM },
-		{ 0x7000, 0x7000, AY8910_control_port_0_w },
-		{ 0x7001, 0x7001, AY8910_write_port_0_w },
-	MEMORY_END
+	public static Memory_WriteAddress sound_writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0x1fff, MWA_ROM ),
+		new Memory_WriteAddress( 0x6000, 0x63ff, MWA_RAM ),
+		new Memory_WriteAddress( 0x7000, 0x7000, AY8910_control_port_0_w ),
+		new Memory_WriteAddress( 0x7001, 0x7001, AY8910_write_port_0_w ),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	
 	

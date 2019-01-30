@@ -130,13 +130,15 @@ public class stadhero
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( stadhero_s_writemem )
-		{ 0x0000, 0x05ff, MWA_RAM },
-		{ 0x0800, 0x0801, YM2203_w },
-		{ 0x1000, 0x1001, YM3812_w },
-		{ 0x3800, 0x3800, OKIM6295_data_0_w },
-		{ 0x8000, 0xffff, MWA_ROM },
-	MEMORY_END
+	public static Memory_WriteAddress stadhero_s_writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0x05ff, MWA_RAM ),
+		new Memory_WriteAddress( 0x0800, 0x0801, YM2203_w ),
+		new Memory_WriteAddress( 0x1000, 0x1001, YM3812_w ),
+		new Memory_WriteAddress( 0x3800, 0x3800, OKIM6295_data_0_w ),
+		new Memory_WriteAddress( 0x8000, 0xffff, MWA_ROM ),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	/******************************************************************************/
 	

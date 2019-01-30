@@ -1577,12 +1577,14 @@ public class toaplan2
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( sound_writemem )
-		{ 0x0000, 0x7fff, MWA_ROM },
-		{ 0x8000, 0x87ff, MWA_RAM, &toaplan2_shared_ram },
-		{ 0xe000, 0xe000, YM3812_control_port_0_w },
-		{ 0xe001, 0xe001, YM3812_write_port_0_w },
-	MEMORY_END
+	public static Memory_WriteAddress sound_writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0x7fff, MWA_ROM ),
+		new Memory_WriteAddress( 0x8000, 0x87ff, MWA_RAM, &toaplan2_shared_ram ),
+		new Memory_WriteAddress( 0xe000, 0xe000, YM3812_control_port_0_w ),
+		new Memory_WriteAddress( 0xe001, 0xe001, YM3812_write_port_0_w ),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	public static Memory_ReadAddress raizing_sound_readmem[]={
 		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
@@ -1593,14 +1595,16 @@ public class toaplan2
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( raizing_sound_writemem )
-		{ 0x0000, 0xbfff, MWA_ROM },
-		{ 0xc000, 0xdfff, MWA_RAM, &raizing_shared_ram },
-		{ 0xe000, 0xe000, YM2151_register_port_0_w },
-		{ 0xe001, 0xe001, YM2151_data_port_0_w },
-		{ 0xe004, 0xe004, OKIM6295_data_0_w },
-		{ 0xe00e, 0xe00e, toaplan2_coin_w },
-	MEMORY_END
+	public static Memory_WriteAddress raizing_sound_writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0xbfff, MWA_ROM ),
+		new Memory_WriteAddress( 0xc000, 0xdfff, MWA_RAM, &raizing_shared_ram ),
+		new Memory_WriteAddress( 0xe000, 0xe000, YM2151_register_port_0_w ),
+		new Memory_WriteAddress( 0xe001, 0xe001, YM2151_data_port_0_w ),
+		new Memory_WriteAddress( 0xe004, 0xe004, OKIM6295_data_0_w ),
+		new Memory_WriteAddress( 0xe00e, 0xe00e, toaplan2_coin_w ),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	public static Memory_ReadAddress battleg_sound_readmem[]={
 		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
@@ -1613,17 +1617,19 @@ public class toaplan2
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( battleg_sound_writemem )
-		{ 0x0000, 0xbfff, MWA_ROM },
-		{ 0xc000, 0xdfff, MWA_RAM, &raizing_shared_ram },
-		{ 0xe000, 0xe000, YM2151_register_port_0_w },
-		{ 0xe001, 0xe001, YM2151_data_port_0_w },
-		{ 0xe004, 0xe004, OKIM6295_data_0_w },
-		{ 0xe006, 0xe006, raizing_okim6295_bankselect_0 },
-		{ 0xe008, 0xe008, raizing_okim6295_bankselect_1 },
-		{ 0xe00a, 0xe00a, battleg_bankswitch_w },
-		{ 0xe00c, 0xe00c, battleg_commram_check_w0 },
-	MEMORY_END
+	public static Memory_WriteAddress battleg_sound_writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0xbfff, MWA_ROM ),
+		new Memory_WriteAddress( 0xc000, 0xdfff, MWA_RAM, &raizing_shared_ram ),
+		new Memory_WriteAddress( 0xe000, 0xe000, YM2151_register_port_0_w ),
+		new Memory_WriteAddress( 0xe001, 0xe001, YM2151_data_port_0_w ),
+		new Memory_WriteAddress( 0xe004, 0xe004, OKIM6295_data_0_w ),
+		new Memory_WriteAddress( 0xe006, 0xe006, raizing_okim6295_bankselect_0 ),
+		new Memory_WriteAddress( 0xe008, 0xe008, raizing_okim6295_bankselect_1 ),
+		new Memory_WriteAddress( 0xe00a, 0xe00a, battleg_bankswitch_w ),
+		new Memory_WriteAddress( 0xe00c, 0xe00c, battleg_commram_check_w0 ),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	public static Memory_ReadAddress batrider_sound_readmem[]={
 		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
@@ -1634,11 +1640,13 @@ public class toaplan2
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( batrider_sound_writemem )
-		{ 0x0000, 0xbfff, MWA_ROM },
-		{ 0xc000, 0xdfff, MWA_BANK2 },
-		{ 0xf000, 0xf007, batrider_sound_data_z80_w1 }, ///
-	MEMORY_END
+	public static Memory_WriteAddress batrider_sound_writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0xbfff, MWA_ROM ),
+		new Memory_WriteAddress( 0xc000, 0xdfff, MWA_BANK2 ),
+		new Memory_WriteAddress( 0xf000, 0xf007, batrider_sound_data_z80_w1 ), ///
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static PORT_READ_START( batrider_sound_readport )
 		{ 0x48, 0x4a, batrider_sound_data_z80_r },
@@ -1669,10 +1677,12 @@ public class toaplan2
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( hd647180_writemem )
-		{ 0x0000, 0x7fff, MWA_ROM },
-		{ 0xfe00, 0xffff, MWA_RAM },			/* Internal 512 bytes of RAM */
-	MEMORY_END
+	public static Memory_WriteAddress hd647180_writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0x7fff, MWA_ROM ),
+		new Memory_WriteAddress( 0xfe00, 0xffff, MWA_RAM ),			/* Internal 512 bytes of RAM */
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	#endif
 	
 	
@@ -1691,17 +1701,19 @@ public class toaplan2
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( Zx80_writemem )
-		{ 0x00000, 0x03fff, MWA_ROM, },
-	//	{ 0x00000, 0x007ff, MWA_RAM, },			/* External shared RAM (Banked) */
-		{ 0x04000, 0x04000, YM2151_register_port_0_w },
-		{ 0x04001, 0x04001, YM2151_data_port_0_w },
-		{ 0x04002, 0x04002, OKIM6295_data_0_w },
-		{ 0x04004, 0x04004, oki_bankswitch_w },
-		{ 0x0400e, 0x0400e, toaplan2_coin_w },
-		{ 0x0fe00, 0x0ffff, MWA_RAM },			/* Internal 512 bytes of RAM */
-		{ 0x80000, 0x87fff, MWA_RAM, &Zx80_sharedram },	/* External shared RAM (ROM for KBASH) */
-	MEMORY_END
+	public static Memory_WriteAddress Zx80_writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x00000, 0x03fff, MWA_ROM, ),
+	//	new Memory_WriteAddress( 0x00000, 0x007ff, MWA_RAM, ),			/* External shared RAM (Banked) */
+		new Memory_WriteAddress( 0x04000, 0x04000, YM2151_register_port_0_w ),
+		new Memory_WriteAddress( 0x04001, 0x04001, YM2151_data_port_0_w ),
+		new Memory_WriteAddress( 0x04002, 0x04002, OKIM6295_data_0_w ),
+		new Memory_WriteAddress( 0x04004, 0x04004, oki_bankswitch_w ),
+		new Memory_WriteAddress( 0x0400e, 0x0400e, toaplan2_coin_w ),
+		new Memory_WriteAddress( 0x0fe00, 0x0ffff, MWA_RAM ),			/* Internal 512 bytes of RAM */
+		new Memory_WriteAddress( 0x80000, 0x87fff, MWA_RAM, &Zx80_sharedram ),	/* External shared RAM (ROM for KBASH) */
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static PORT_READ_START( Zx80_readport )
 		{ 0x0060, 0x0060, input_port_4_r },		/* Directly mapped I/O ports */

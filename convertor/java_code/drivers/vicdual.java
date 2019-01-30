@@ -180,33 +180,35 @@ public class vicdual
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( vicdual_writemem )
-		{ 0x0000, 0x7fff, MWA_ROM },
-		{ 0x8000, 0x83ff, videoram_w, &videoram, &videoram_size },
-		{ 0x8400, 0x87ff, vicdual_ram_w, &vicdual_ram },
-		{ 0x8800, 0x8fff, vicdual_characterram_w, &vicdual_characterram },
-		{ 0x9000, 0x93ff, videoram_w, &videoram, &videoram_size },
-		{ 0x9400, 0x97ff, vicdual_ram_w, &vicdual_ram },
-		{ 0x9800, 0x9fff, vicdual_characterram_w, &vicdual_characterram},
-		{ 0xa000, 0xa3ff, videoram_w },
-		{ 0xa400, 0xa7ff, vicdual_ram_w },
-		{ 0xa800, 0xafff, vicdual_characterram_w },
-		{ 0xb000, 0xb3ff, videoram_w },
-		{ 0xb400, 0xb7ff, vicdual_ram_w },
-		{ 0xb800, 0xbfff, vicdual_characterram_w },
-		{ 0xc000, 0xc3ff, videoram_w },
-		{ 0xc400, 0xc7ff, vicdual_ram_w },
-		{ 0xc800, 0xcfff, vicdual_characterram_w },
-		{ 0xd000, 0xd3ff, videoram_w },
-		{ 0xd400, 0xd7ff, vicdual_ram_w },
-		{ 0xd800, 0xdfff, vicdual_characterram_w },
-		{ 0xe000, 0xe3ff, videoram_w },
-		{ 0xe400, 0xe7ff, vicdual_ram_w },
-		{ 0xe800, 0xefff, vicdual_characterram_w },
-		{ 0xf000, 0xf3ff, videoram_w },
-		{ 0xf400, 0xf7ff, vicdual_ram_w },
-		{ 0xf800, 0xffff, vicdual_characterram_w },
-	MEMORY_END
+	public static Memory_WriteAddress vicdual_writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0x7fff, MWA_ROM ),
+		new Memory_WriteAddress( 0x8000, 0x83ff, videoram_w, &videoram, &videoram_size ),
+		new Memory_WriteAddress( 0x8400, 0x87ff, vicdual_ram_w, &vicdual_ram ),
+		new Memory_WriteAddress( 0x8800, 0x8fff, vicdual_characterram_w, &vicdual_characterram ),
+		new Memory_WriteAddress( 0x9000, 0x93ff, videoram_w, &videoram, &videoram_size ),
+		new Memory_WriteAddress( 0x9400, 0x97ff, vicdual_ram_w, &vicdual_ram ),
+		new Memory_WriteAddress( 0x9800, 0x9fff, vicdual_characterram_w, &vicdual_characterram),
+		new Memory_WriteAddress( 0xa000, 0xa3ff, videoram_w ),
+		new Memory_WriteAddress( 0xa400, 0xa7ff, vicdual_ram_w ),
+		new Memory_WriteAddress( 0xa800, 0xafff, vicdual_characterram_w ),
+		new Memory_WriteAddress( 0xb000, 0xb3ff, videoram_w ),
+		new Memory_WriteAddress( 0xb400, 0xb7ff, vicdual_ram_w ),
+		new Memory_WriteAddress( 0xb800, 0xbfff, vicdual_characterram_w ),
+		new Memory_WriteAddress( 0xc000, 0xc3ff, videoram_w ),
+		new Memory_WriteAddress( 0xc400, 0xc7ff, vicdual_ram_w ),
+		new Memory_WriteAddress( 0xc800, 0xcfff, vicdual_characterram_w ),
+		new Memory_WriteAddress( 0xd000, 0xd3ff, videoram_w ),
+		new Memory_WriteAddress( 0xd400, 0xd7ff, vicdual_ram_w ),
+		new Memory_WriteAddress( 0xd800, 0xdfff, vicdual_characterram_w ),
+		new Memory_WriteAddress( 0xe000, 0xe3ff, videoram_w ),
+		new Memory_WriteAddress( 0xe400, 0xe7ff, vicdual_ram_w ),
+		new Memory_WriteAddress( 0xe800, 0xefff, vicdual_characterram_w ),
+		new Memory_WriteAddress( 0xf000, 0xf3ff, videoram_w ),
+		new Memory_WriteAddress( 0xf400, 0xf7ff, vicdual_ram_w ),
+		new Memory_WriteAddress( 0xf800, 0xffff, vicdual_characterram_w ),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	
 	/* Safari has extra RAM */
@@ -220,13 +222,15 @@ public class vicdual
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( safari_writemem )
-		{ 0x0000, 0x7fff, MWA_ROM },
-		{ 0x8000, 0x87ff, MWA_RAM },
-		{ 0xe000, 0xe3ff, videoram_w, &videoram, &videoram_size },
-		{ 0xe400, 0xe7ff, vicdual_ram_w, &vicdual_ram },
-		{ 0xe800, 0xefff, vicdual_characterram_w, &vicdual_characterram },
-	MEMORY_END
+	public static Memory_WriteAddress safari_writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0x7fff, MWA_ROM ),
+		new Memory_WriteAddress( 0x8000, 0x87ff, MWA_RAM ),
+		new Memory_WriteAddress( 0xe000, 0xe3ff, videoram_w, &videoram, &videoram_size ),
+		new Memory_WriteAddress( 0xe400, 0xe7ff, vicdual_ram_w, &vicdual_ram ),
+		new Memory_WriteAddress( 0xe800, 0xefff, vicdual_characterram_w, &vicdual_characterram ),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	
 	static PORT_READ_START( readport_2ports )
@@ -264,9 +268,11 @@ public class vicdual
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( i8039_writemem )
-		{ 0x0000, 0x07ff, MWA_ROM },
-	MEMORY_END
+	public static Memory_WriteAddress i8039_writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0x07ff, MWA_ROM ),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	
 	static PORT_READ_START( i8039_readport )

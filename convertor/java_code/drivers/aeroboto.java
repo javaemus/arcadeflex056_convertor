@@ -69,21 +69,23 @@ public class aeroboto
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( writemem )
-		{ 0x0000, 0x07ff, MWA_RAM },
-		{ 0x0800, 0x08ff, MWA_RAM },	/* ? initialized on startup */
-		{ 0x0900, 0x09ff, MWA_RAM },	/* ? initialized on startup (same as 0800) */
-		{ 0x1000, 0x13ff, MWA_RAM, &aeroboto_videoram },
-		{ 0x1400, 0x17ff, videoram_w, &videoram, &videoram_size },
-		{ 0x1800, 0x181f, MWA_RAM, &aeroboto_fgscroll },
-		{ 0x1820, 0x183f, MWA_RAM, &aeroboto_bgscroll },
-		{ 0x2000, 0x20ff, MWA_RAM },	/* scroll? maybe stars? copied from 0800 */
-		{ 0x2800, 0x28ff, MWA_RAM, &spriteram, &spriteram_size },
-		{ 0x3000, 0x3000, aeroboto_3000_w },
-		{ 0x3001, 0x3001, soundlatch_w },	/* ? */
-		{ 0x3002, 0x3002, soundlatch2_w },	/* ? */
-		{ 0x4000, 0xffff, MWA_ROM },
-	MEMORY_END
+	public static Memory_WriteAddress writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0x07ff, MWA_RAM ),
+		new Memory_WriteAddress( 0x0800, 0x08ff, MWA_RAM ),	/* ? initialized on startup */
+		new Memory_WriteAddress( 0x0900, 0x09ff, MWA_RAM ),	/* ? initialized on startup (same as 0800) */
+		new Memory_WriteAddress( 0x1000, 0x13ff, MWA_RAM, &aeroboto_videoram ),
+		new Memory_WriteAddress( 0x1400, 0x17ff, videoram_w, &videoram, &videoram_size ),
+		new Memory_WriteAddress( 0x1800, 0x181f, MWA_RAM, &aeroboto_fgscroll ),
+		new Memory_WriteAddress( 0x1820, 0x183f, MWA_RAM, &aeroboto_bgscroll ),
+		new Memory_WriteAddress( 0x2000, 0x20ff, MWA_RAM ),	/* scroll? maybe stars? copied from 0800 */
+		new Memory_WriteAddress( 0x2800, 0x28ff, MWA_RAM, &spriteram, &spriteram_size ),
+		new Memory_WriteAddress( 0x3000, 0x3000, aeroboto_3000_w ),
+		new Memory_WriteAddress( 0x3001, 0x3001, soundlatch_w ),	/* ? */
+		new Memory_WriteAddress( 0x3002, 0x3002, soundlatch2_w ),	/* ? */
+		new Memory_WriteAddress( 0x4000, 0xffff, MWA_ROM ),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	public static Memory_ReadAddress readmem_sound[]={
 		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
@@ -94,14 +96,16 @@ public class aeroboto
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( writemem_sound )
-		{ 0x0000, 0x0fff, MWA_RAM },
-		{ 0x9000, 0x9000, AY8910_control_port_0_w },
-		{ 0x9001, 0x9001, AY8910_write_port_0_w },
-		{ 0xa000, 0xa000, AY8910_control_port_1_w },
-		{ 0xa001, 0xa001, AY8910_write_port_1_w },
-		{ 0xf000, 0xffff, MWA_ROM },
-	MEMORY_END
+	public static Memory_WriteAddress writemem_sound[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0x0fff, MWA_RAM ),
+		new Memory_WriteAddress( 0x9000, 0x9000, AY8910_control_port_0_w ),
+		new Memory_WriteAddress( 0x9001, 0x9001, AY8910_write_port_0_w ),
+		new Memory_WriteAddress( 0xa000, 0xa000, AY8910_control_port_1_w ),
+		new Memory_WriteAddress( 0xa001, 0xa001, AY8910_write_port_1_w ),
+		new Memory_WriteAddress( 0xf000, 0xffff, MWA_ROM ),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	
 	

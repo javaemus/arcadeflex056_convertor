@@ -82,20 +82,22 @@ public class mikie
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( writemem )
-		{ 0x2000, 0x2001, mikie_coin_counter_w },
-		{ 0x2002, 0x2002, mikie_sh_irqtrigger_w },
-		{ 0x2006, 0x2006, mikie_flipscreen_w },
-		{ 0x2007, 0x2007, interrupt_enable_w },
-		{ 0x2100, 0x2100, watchdog_reset_w },
-		{ 0x2200, 0x2200, mikie_palettebank_w },
-		{ 0x2400, 0x2400, soundlatch_w },
-		{ 0x2800, 0x288f, MWA_RAM, &spriteram, &spriteram_size },
-		{ 0x2890, 0x37ff, MWA_RAM },
-		{ 0x3800, 0x3bff, colorram_w, &colorram },
-		{ 0x3c00, 0x3fff, videoram_w, &videoram, &videoram_size },
-		{ 0x6000, 0xffff, MWA_ROM },
-	MEMORY_END
+	public static Memory_WriteAddress writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x2000, 0x2001, mikie_coin_counter_w ),
+		new Memory_WriteAddress( 0x2002, 0x2002, mikie_sh_irqtrigger_w ),
+		new Memory_WriteAddress( 0x2006, 0x2006, mikie_flipscreen_w ),
+		new Memory_WriteAddress( 0x2007, 0x2007, interrupt_enable_w ),
+		new Memory_WriteAddress( 0x2100, 0x2100, watchdog_reset_w ),
+		new Memory_WriteAddress( 0x2200, 0x2200, mikie_palettebank_w ),
+		new Memory_WriteAddress( 0x2400, 0x2400, soundlatch_w ),
+		new Memory_WriteAddress( 0x2800, 0x288f, MWA_RAM, &spriteram, &spriteram_size ),
+		new Memory_WriteAddress( 0x2890, 0x37ff, MWA_RAM ),
+		new Memory_WriteAddress( 0x3800, 0x3bff, colorram_w, &colorram ),
+		new Memory_WriteAddress( 0x3c00, 0x3fff, videoram_w, &videoram, &videoram_size ),
+		new Memory_WriteAddress( 0x6000, 0xffff, MWA_ROM ),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	public static Memory_ReadAddress sound_readmem[]={
 		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
@@ -106,16 +108,18 @@ public class mikie
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( sound_writemem )
-		{ 0x0000, 0x3fff, MWA_ROM },
-		{ 0x4000, 0x43ff, MWA_RAM },
-		{ 0x8000, 0x8000, MWA_NOP },	/* sound command latch */
-		{ 0x8001, 0x8001, MWA_NOP },	/* ??? */
-		{ 0x8002, 0x8002, SN76496_0_w },	/* trigger read of latch */
-		{ 0x8004, 0x8004, SN76496_1_w },	/* trigger read of latch */
-		{ 0x8079, 0x8079, MWA_NOP },	/* ??? */
-	//	{ 0xa003, 0xa003, MWA_RAM },
-	MEMORY_END
+	public static Memory_WriteAddress sound_writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0x3fff, MWA_ROM ),
+		new Memory_WriteAddress( 0x4000, 0x43ff, MWA_RAM ),
+		new Memory_WriteAddress( 0x8000, 0x8000, MWA_NOP ),	/* sound command latch */
+		new Memory_WriteAddress( 0x8001, 0x8001, MWA_NOP ),	/* ??? */
+		new Memory_WriteAddress( 0x8002, 0x8002, SN76496_0_w ),	/* trigger read of latch */
+		new Memory_WriteAddress( 0x8004, 0x8004, SN76496_1_w ),	/* trigger read of latch */
+		new Memory_WriteAddress( 0x8079, 0x8079, MWA_NOP ),	/* ??? */
+	//	new Memory_WriteAddress( 0xa003, 0xa003, MWA_RAM ),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	
 	

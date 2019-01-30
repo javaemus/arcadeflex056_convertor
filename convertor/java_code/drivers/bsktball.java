@@ -143,22 +143,24 @@ public class bsktball
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( writemem )
-		{ 0x0000, 0x01ff, MWA_RAM }, /* WRAM */
-		{ 0x1000, 0x1000, MWA_NOP }, /* Timer Reset */
-		{ 0x1010, 0x1010, bsktball_bounce_w }, /* Crowd Amp / Bounce */
-		{ 0x1022, 0x1023, MWA_NOP }, /* Coin Counter */
-		{ 0x1024, 0x1025, bsktball_led1_w }, /* LED 1 */
-		{ 0x1026, 0x1027, bsktball_led2_w }, /* LED 2 */
-		{ 0x1028, 0x1029, bsktball_ld1_w }, /* LD 1 */
-		{ 0x102a, 0x102b, bsktball_ld2_w }, /* LD 2 */
-		{ 0x102c, 0x102d, bsktball_noise_reset_w }, /* Noise Reset */
-		{ 0x102e, 0x102f, bsktball_nmion_w }, /* NMI On */
-		{ 0x1030, 0x1030, bsktball_note_w }, /* Music Ckt Note Dvsr */
-		{ 0x1800, 0x1bbf, videoram_w, &videoram, &videoram_size }, /* DISPLAY */
-		{ 0x1bc0, 0x1bff, MWA_RAM, &bsktball_motion },
-		{ 0x2000, 0x3fff, MWA_ROM }, /* PROM1-PROM8 */
-	MEMORY_END
+	public static Memory_WriteAddress writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0x01ff, MWA_RAM ), /* WRAM */
+		new Memory_WriteAddress( 0x1000, 0x1000, MWA_NOP ), /* Timer Reset */
+		new Memory_WriteAddress( 0x1010, 0x1010, bsktball_bounce_w ), /* Crowd Amp / Bounce */
+		new Memory_WriteAddress( 0x1022, 0x1023, MWA_NOP ), /* Coin Counter */
+		new Memory_WriteAddress( 0x1024, 0x1025, bsktball_led1_w ), /* LED 1 */
+		new Memory_WriteAddress( 0x1026, 0x1027, bsktball_led2_w ), /* LED 2 */
+		new Memory_WriteAddress( 0x1028, 0x1029, bsktball_ld1_w ), /* LD 1 */
+		new Memory_WriteAddress( 0x102a, 0x102b, bsktball_ld2_w ), /* LD 2 */
+		new Memory_WriteAddress( 0x102c, 0x102d, bsktball_noise_reset_w ), /* Noise Reset */
+		new Memory_WriteAddress( 0x102e, 0x102f, bsktball_nmion_w ), /* NMI On */
+		new Memory_WriteAddress( 0x1030, 0x1030, bsktball_note_w ), /* Music Ckt Note Dvsr */
+		new Memory_WriteAddress( 0x1800, 0x1bbf, videoram_w, &videoram, &videoram_size ), /* DISPLAY */
+		new Memory_WriteAddress( 0x1bc0, 0x1bff, MWA_RAM, &bsktball_motion ),
+		new Memory_WriteAddress( 0x2000, 0x3fff, MWA_ROM ), /* PROM1-PROM8 */
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	INPUT_PORTS_START( bsktball )
 		PORT_START	/* IN0 */

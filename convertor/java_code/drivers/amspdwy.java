@@ -95,20 +95,22 @@ public class amspdwy
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( amspdwy_writemem )
-		{ 0x0000, 0x7fff, MWA_ROM							},	// ROM
-		{ 0x8000, 0x801f, amspdwy_paletteram_w, &paletteram	},	// Palette
-		{ 0x9000, 0x93ff, amspdwy_videoram_w, &videoram		},	// Layer
-		{ 0x9400, 0x97ff, amspdwy_videoram_w				},	// Mirror?
-		{ 0x9800, 0x9bff, amspdwy_colorram_w, &colorram		},	// Layer
-		{ 0x9c00, 0x9fff, MWA_RAM							},	// Unused?
-	//	{ 0xa000, 0xa000, MWA_NOP							},	// ?
-		{ 0xa400, 0xa400, amspdwy_flipscreen_w				},	// Toggle Flip Screen?
-		{ 0xb000, 0xb000, MWA_NOP							},	// ? Exiting IRQ
-		{ 0xb400, 0xb400, amspdwy_sound_w					},	// To Sound CPU
-		{ 0xc000, 0xc0ff, MWA_RAM, &spriteram, &spriteram_size	},	// Sprites
-		{ 0xe000, 0xe7ff, MWA_RAM							},	// Work RAM
-	MEMORY_END
+	public static Memory_WriteAddress amspdwy_writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0x7fff, MWA_ROM							),	// ROM
+		new Memory_WriteAddress( 0x8000, 0x801f, amspdwy_paletteram_w, &paletteram	),	// Palette
+		new Memory_WriteAddress( 0x9000, 0x93ff, amspdwy_videoram_w, &videoram		),	// Layer
+		new Memory_WriteAddress( 0x9400, 0x97ff, amspdwy_videoram_w				),	// Mirror?
+		new Memory_WriteAddress( 0x9800, 0x9bff, amspdwy_colorram_w, &colorram		),	// Layer
+		new Memory_WriteAddress( 0x9c00, 0x9fff, MWA_RAM							),	// Unused?
+	//	new Memory_WriteAddress( 0xa000, 0xa000, MWA_NOP							),	// ?
+		new Memory_WriteAddress( 0xa400, 0xa400, amspdwy_flipscreen_w				),	// Toggle Flip Screen?
+		new Memory_WriteAddress( 0xb000, 0xb000, MWA_NOP							),	// ? Exiting IRQ
+		new Memory_WriteAddress( 0xb400, 0xb400, amspdwy_sound_w					),	// To Sound CPU
+		new Memory_WriteAddress( 0xc000, 0xc0ff, MWA_RAM, &spriteram, &spriteram_size	),	// Sprites
+		new Memory_WriteAddress( 0xe000, 0xe7ff, MWA_RAM							),	// Work RAM
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	
 	READ_HANDLER( amspdwy_port_r )
@@ -140,13 +142,15 @@ public class amspdwy
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( amspdwy_sound_writemem )
-		{ 0x0000, 0x7fff, MWA_ROM					},	// ROM
-	//	{ 0x8000, 0x8000, MWA_NOP					},	// ? Written with 0 at the start
-		{ 0xa000, 0xa000, YM2151_register_port_0_w	},	// YM2151
-		{ 0xa001, 0xa001, YM2151_data_port_0_w		},	//
-		{ 0xc000, 0xdfff, MWA_RAM					},	// Work RAM
-	MEMORY_END
+	public static Memory_WriteAddress amspdwy_sound_writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0x7fff, MWA_ROM					),	// ROM
+	//	new Memory_WriteAddress( 0x8000, 0x8000, MWA_NOP					),	// ? Written with 0 at the start
+		new Memory_WriteAddress( 0xa000, 0xa000, YM2151_register_port_0_w	),	// YM2151
+		new Memory_WriteAddress( 0xa001, 0xa001, YM2151_data_port_0_w		),	//
+		new Memory_WriteAddress( 0xc000, 0xdfff, MWA_RAM					),	// Work RAM
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	
 	

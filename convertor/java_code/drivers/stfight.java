@@ -285,23 +285,25 @@ public class stfight
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( writemem_cpu1 )
-		{ 0x0000, 0x7fff, MWA_ROM },
-		{ 0x8000, 0xbfff, MWA_BANK1 },                  /* sf02.bin */
-		{ 0xc000, 0xc0ff, paletteram_xxxxBBBBRRRRGGGG_split1_w, &paletteram },
-		{ 0xc100, 0xc1ff, paletteram_xxxxBBBBRRRRGGGG_split2_w, &paletteram_2 },
-		{ 0xc500, 0xc500, stfight_fm_w },               /* play fm sound */
-		{ 0xc600, 0xc600, stfight_adpcm_control_w },    /* voice control */
-		{ 0xc700, 0xc700, stfight_coin_w },             /* coin mech */
-		{ 0xc804, 0xc806, MWA_NOP },                    /* TBD */
-		{ 0xc807, 0xc807, stfight_sprite_bank_w },
-		{ 0xd000, 0xd3ff, stfight_text_char_w,      &stfight_text_char_ram },
-		{ 0xd400, 0xd7ff, stfight_text_attr_w,      &stfight_text_attr_ram },
-		{ 0xd800, 0xd808, stfight_vh_latch_w,       &stfight_vh_latch_ram },
-		{ 0xe000, 0xefff, MWA_RAM },
-		{ 0xf000, 0xffff, MWA_RAM,                  &stfight_sprite_ram },
+	public static Memory_WriteAddress writemem_cpu1[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0x7fff, MWA_ROM ),
+		new Memory_WriteAddress( 0x8000, 0xbfff, MWA_BANK1 ),                  /* sf02.bin */
+		new Memory_WriteAddress( 0xc000, 0xc0ff, paletteram_xxxxBBBBRRRRGGGG_split1_w, &paletteram ),
+		new Memory_WriteAddress( 0xc100, 0xc1ff, paletteram_xxxxBBBBRRRRGGGG_split2_w, &paletteram_2 ),
+		new Memory_WriteAddress( 0xc500, 0xc500, stfight_fm_w ),               /* play fm sound */
+		new Memory_WriteAddress( 0xc600, 0xc600, stfight_adpcm_control_w ),    /* voice control */
+		new Memory_WriteAddress( 0xc700, 0xc700, stfight_coin_w ),             /* coin mech */
+		new Memory_WriteAddress( 0xc804, 0xc806, MWA_NOP ),                    /* TBD */
+		new Memory_WriteAddress( 0xc807, 0xc807, stfight_sprite_bank_w ),
+		new Memory_WriteAddress( 0xd000, 0xd3ff, stfight_text_char_w,      &stfight_text_char_ram ),
+		new Memory_WriteAddress( 0xd400, 0xd7ff, stfight_text_attr_w,      &stfight_text_attr_ram ),
+		new Memory_WriteAddress( 0xd800, 0xd808, stfight_vh_latch_w,       &stfight_vh_latch_ram ),
+		new Memory_WriteAddress( 0xe000, 0xefff, MWA_RAM ),
+		new Memory_WriteAddress( 0xf000, 0xffff, MWA_RAM,                  &stfight_sprite_ram ),
 	
-	MEMORY_END
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	public static Memory_ReadAddress readmem_cpu2[]={
 		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
@@ -314,16 +316,18 @@ public class stfight
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( writemem_cpu2 )
-		{ 0x0000, 0x7fff, MWA_ROM },
-		{ 0xc000, 0xc000, YM2203_control_port_0_w },
-		{ 0xc001, 0xc001, YM2203_write_port_0_w },
-		{ 0xc800, 0xc800, YM2203_control_port_1_w },
-		{ 0xc801, 0xc801, YM2203_write_port_1_w },
-		{ 0xe800, 0xe800, stfight_e800_w },
-		{ 0xf800, 0xffff, MWA_RAM },
+	public static Memory_WriteAddress writemem_cpu2[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0x7fff, MWA_ROM ),
+		new Memory_WriteAddress( 0xc000, 0xc000, YM2203_control_port_0_w ),
+		new Memory_WriteAddress( 0xc001, 0xc001, YM2203_write_port_0_w ),
+		new Memory_WriteAddress( 0xc800, 0xc800, YM2203_control_port_1_w ),
+		new Memory_WriteAddress( 0xc801, 0xc801, YM2203_write_port_1_w ),
+		new Memory_WriteAddress( 0xe800, 0xe800, stfight_e800_w ),
+		new Memory_WriteAddress( 0xf800, 0xffff, MWA_RAM ),
 	
-	MEMORY_END
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	
 	INPUT_PORTS_START( stfight )

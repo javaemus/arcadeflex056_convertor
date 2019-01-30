@@ -930,11 +930,13 @@ public class cave
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( hotdogst_sound_writemem )
-		{ 0x0000, 0x3fff, MWA_ROM	},	// ROM
-		{ 0x4000, 0x7fff, MWA_ROM	},	// ROM (Banked)
-		{ 0xe000, 0xffff, MWA_RAM	},	// RAM
-	MEMORY_END
+	public static Memory_WriteAddress hotdogst_sound_writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0x3fff, MWA_ROM	),	// ROM
+		new Memory_WriteAddress( 0x4000, 0x7fff, MWA_ROM	),	// ROM (Banked)
+		new Memory_WriteAddress( 0xe000, 0xffff, MWA_RAM	),	// RAM
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static PORT_READ_START( hotdogst_sound_readport )
 		{ 0x30, 0x30, soundlatch_lo_r			},	// From Main CPU
@@ -974,12 +976,14 @@ public class cave
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( mazinger_sound_writemem )
-		{ 0x0000, 0x3fff, MWA_ROM	},	// ROM
-		{ 0x4000, 0x7fff, MWA_ROM	},	// ROM (Banked)
-		{ 0xc000, 0xc7ff, MWA_RAM	},	// RAM
-		{ 0xf800, 0xffff, MWA_RAM	},	// RAM
-	MEMORY_END
+	public static Memory_WriteAddress mazinger_sound_writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0x3fff, MWA_ROM	),	// ROM
+		new Memory_WriteAddress( 0x4000, 0x7fff, MWA_ROM	),	// ROM (Banked)
+		new Memory_WriteAddress( 0xc000, 0xc7ff, MWA_RAM	),	// RAM
+		new Memory_WriteAddress( 0xf800, 0xffff, MWA_RAM	),	// RAM
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static PORT_READ_START( mazinger_sound_readport )
 		{ 0x30, 0x30, soundlatch_lo_r			},	// From Main CPU
@@ -1037,11 +1041,13 @@ public class cave
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( metmqstr_sound_writemem )
-		{ 0x0000, 0x3fff, MWA_ROM	},	// ROM
-		{ 0x4000, 0x7fff, MWA_ROM	},	// ROM (Banked)
-		{ 0xe000, 0xffff, MWA_RAM	},	// RAM
-	MEMORY_END
+	public static Memory_WriteAddress metmqstr_sound_writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0x3fff, MWA_ROM	),	// ROM
+		new Memory_WriteAddress( 0x4000, 0x7fff, MWA_ROM	),	// ROM (Banked)
+		new Memory_WriteAddress( 0xe000, 0xffff, MWA_RAM	),	// RAM
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static PORT_READ_START( metmqstr_sound_readport )
 		{ 0x20, 0x20, soundflags_r				},	// Communication
@@ -1102,11 +1108,13 @@ public class cave
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( sailormn_sound_writemem )
-		{ 0x0000, 0x3fff, MWA_ROM	},	// ROM
-		{ 0x4000, 0x7fff, MWA_ROM	},	// ROM (Banked)
-		{ 0xc000, 0xdfff, MWA_RAM	},	// RAM
-	MEMORY_END
+	public static Memory_WriteAddress sailormn_sound_writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0x3fff, MWA_ROM	),	// ROM
+		new Memory_WriteAddress( 0x4000, 0x7fff, MWA_ROM	),	// ROM (Banked)
+		new Memory_WriteAddress( 0xc000, 0xdfff, MWA_RAM	),	// RAM
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static PORT_READ_START( sailormn_sound_readport )
 		{ 0x20, 0x20, soundflags_r				},	// Communication

@@ -171,15 +171,17 @@ public class polyplay
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( polyplay_writemem )
-		{ 0x0000, 0x0bff, MWA_ROM },
-		{ 0x0c00, 0x0fff, polyplay_ram_w, &polyplay_ram },
-		{ 0x1000, 0x8fff, MWA_ROM },
+	public static Memory_WriteAddress polyplay_writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0x0bff, MWA_ROM ),
+		new Memory_WriteAddress( 0x0c00, 0x0fff, polyplay_ram_w, &polyplay_ram ),
+		new Memory_WriteAddress( 0x1000, 0x8fff, MWA_ROM ),
 	
-		{ 0xe800, 0xebff, MWA_ROM },
-		{ 0xec00, 0xf7ff, polyplay_characterram_w, &polyplay_characterram },
-		{ 0xf800, 0xffff, videoram_w, &videoram, &videoram_size },
-	MEMORY_END
+		new Memory_WriteAddress( 0xe800, 0xebff, MWA_ROM ),
+		new Memory_WriteAddress( 0xec00, 0xf7ff, polyplay_characterram_w, &polyplay_characterram ),
+		new Memory_WriteAddress( 0xf800, 0xffff, videoram_w, &videoram, &videoram_size ),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	
 	/* port mapping */

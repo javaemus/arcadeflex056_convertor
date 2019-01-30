@@ -148,11 +148,13 @@ public class astrocde
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( seawolf2_writemem )
-		{ 0x0000, 0x3fff, wow_magicram_w },
-		{ 0x4000, 0x7fff, wow_videoram_w, &wow_videoram, &videoram_size },
-		{ 0xc000, 0xc3ff, MWA_RAM },
-	MEMORY_END
+	public static Memory_WriteAddress seawolf2_writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0x3fff, wow_magicram_w ),
+		new Memory_WriteAddress( 0x4000, 0x7fff, wow_videoram_w, &wow_videoram, &videoram_size ),
+		new Memory_WriteAddress( 0xc000, 0xc3ff, MWA_RAM ),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	public static Memory_ReadAddress readmem[]={
 		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
@@ -163,12 +165,14 @@ public class astrocde
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( writemem )
-		{ 0x0000, 0x3fff, wow_magicram_w },
-		{ 0x4000, 0x7fff, wow_videoram_w, &wow_videoram, &videoram_size },	/* ASG */
-		{ 0x8000, 0xcfff, MWA_ROM },
-		{ 0xd000, 0xdfff, MWA_RAM },
-	MEMORY_END
+	public static Memory_WriteAddress writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0x3fff, wow_magicram_w ),
+		new Memory_WriteAddress( 0x4000, 0x7fff, wow_videoram_w, &wow_videoram, &videoram_size ),	/* ASG */
+		new Memory_WriteAddress( 0x8000, 0xcfff, MWA_ROM ),
+		new Memory_WriteAddress( 0xd000, 0xdfff, MWA_RAM ),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	public static Memory_ReadAddress robby_readmem[]={
 		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
@@ -179,12 +183,14 @@ public class astrocde
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( robby_writemem )
-		{ 0x0000, 0x3fff, wow_magicram_w },
-		{ 0x4000, 0x7fff, wow_videoram_w, &wow_videoram, &videoram_size },
-		{ 0x8000, 0xdfff, MWA_ROM },
-		{ 0xe000, 0xffff, MWA_RAM },
-	MEMORY_END
+	public static Memory_WriteAddress robby_writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0x3fff, wow_magicram_w ),
+		new Memory_WriteAddress( 0x4000, 0x7fff, wow_videoram_w, &wow_videoram, &videoram_size ),
+		new Memory_WriteAddress( 0x8000, 0xdfff, MWA_ROM ),
+		new Memory_WriteAddress( 0xe000, 0xffff, MWA_RAM ),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	public static Memory_ReadAddress profpac_readmem[]={
 		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
@@ -194,12 +200,14 @@ public class astrocde
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( profpac_writemem )
-		{ 0x0000, 0x3fff, wow_magicram_w },
-		{ 0x4000, 0x7fff, wow_videoram_w, &wow_videoram, &videoram_size },
-		{ 0x8000, 0xdfff, MWA_ROM },
-		{ 0xe000, 0xffff, MWA_RAM },
-	MEMORY_END
+	public static Memory_WriteAddress profpac_writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0x3fff, wow_magicram_w ),
+		new Memory_WriteAddress( 0x4000, 0x7fff, wow_videoram_w, &wow_videoram, &videoram_size ),
+		new Memory_WriteAddress( 0x8000, 0xdfff, MWA_ROM ),
+		new Memory_WriteAddress( 0xe000, 0xffff, MWA_RAM ),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static PORT_READ_START( readport )
 		{ 0x08, 0x08, wow_intercept_r },

@@ -286,12 +286,14 @@ public class snk
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( YM3526_writemem_sound )
-		{ 0x0000, 0x7fff, MWA_ROM },
-		{ 0x8000, 0x87ff, MWA_RAM },
-		{ 0xe000, 0xe000, YM3526_control_port_0_w },
-		{ 0xe001, 0xe001, YM3526_write_port_0_w },
-	MEMORY_END
+	public static Memory_WriteAddress YM3526_writemem_sound[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0x7fff, MWA_ROM ),
+		new Memory_WriteAddress( 0x8000, 0x87ff, MWA_RAM ),
+		new Memory_WriteAddress( 0xe000, 0xe000, YM3526_control_port_0_w ),
+		new Memory_WriteAddress( 0xe001, 0xe001, YM3526_write_port_0_w ),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	public static Memory_ReadAddress YM3526_YM3526_readmem_sound[]={
 		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
@@ -304,15 +306,17 @@ public class snk
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( YM3526_YM3526_writemem_sound )
-		{ 0x0000, 0xbfff, MWA_ROM },
-		{ 0xc000, 0xcfff, MWA_RAM },
-		{ 0xe800, 0xe800, YM3526_control_port_0_w },
-		{ 0xec00, 0xec00, YM3526_write_port_0_w },
-		{ 0xf000, 0xf000, YM3526_control_port_1_w },
-		{ 0xf400, 0xf400, YM3526_write_port_1_w },
-		{ 0xf800, 0xf800, snk_sound_register_w },
-	MEMORY_END
+	public static Memory_WriteAddress YM3526_YM3526_writemem_sound[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0xbfff, MWA_ROM ),
+		new Memory_WriteAddress( 0xc000, 0xcfff, MWA_RAM ),
+		new Memory_WriteAddress( 0xe800, 0xe800, YM3526_control_port_0_w ),
+		new Memory_WriteAddress( 0xec00, 0xec00, YM3526_write_port_0_w ),
+		new Memory_WriteAddress( 0xf000, 0xf000, YM3526_control_port_1_w ),
+		new Memory_WriteAddress( 0xf400, 0xf400, YM3526_write_port_1_w ),
+		new Memory_WriteAddress( 0xf800, 0xf800, snk_sound_register_w ),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	public static Memory_ReadAddress YM3526_Y8950_readmem_sound[]={
 		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
@@ -325,15 +329,17 @@ public class snk
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( YM3526_Y8950_writemem_sound )
-		{ 0x0000, 0xbfff, MWA_ROM },
-		{ 0xc000, 0xcfff, MWA_RAM },
-		{ 0xe800, 0xe800, Y8950_control_port_0_w }, // YM3526_control_port_0_w
-		{ 0xec00, 0xec00, Y8950_write_port_0_w }, // YM3526_write_port_0_w
-		{ 0xf000, 0xf000, Y8950_control_port_1_w },
-		{ 0xf400, 0xf400, Y8950_write_port_1_w },
-		{ 0xf800, 0xf800, snk_sound_register_w },
-	MEMORY_END
+	public static Memory_WriteAddress YM3526_Y8950_writemem_sound[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0xbfff, MWA_ROM ),
+		new Memory_WriteAddress( 0xc000, 0xcfff, MWA_RAM ),
+		new Memory_WriteAddress( 0xe800, 0xe800, Y8950_control_port_0_w ), // YM3526_control_port_0_w
+		new Memory_WriteAddress( 0xec00, 0xec00, Y8950_write_port_0_w ), // YM3526_write_port_0_w
+		new Memory_WriteAddress( 0xf000, 0xf000, Y8950_control_port_1_w ),
+		new Memory_WriteAddress( 0xf400, 0xf400, Y8950_write_port_1_w ),
+		new Memory_WriteAddress( 0xf800, 0xf800, snk_sound_register_w ),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	public static Memory_ReadAddress YM3812_Y8950_readmem_sound[]={
 		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
@@ -346,15 +352,17 @@ public class snk
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( YM3812_Y8950_writemem_sound )
-		{ 0x0000, 0xbfff, MWA_ROM },
-		{ 0xc000, 0xcfff, MWA_RAM },
-		{ 0xe800, 0xe800, YM3812_control_port_0_w },
-		{ 0xec00, 0xec00, YM3812_write_port_0_w },
-		{ 0xf000, 0xf000, Y8950_control_port_0_w },
-		{ 0xf400, 0xf400, Y8950_write_port_0_w },
-		{ 0xf800, 0xf800, snk_sound_register_w },
-	MEMORY_END
+	public static Memory_WriteAddress YM3812_Y8950_writemem_sound[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0xbfff, MWA_ROM ),
+		new Memory_WriteAddress( 0xc000, 0xcfff, MWA_RAM ),
+		new Memory_WriteAddress( 0xe800, 0xe800, YM3812_control_port_0_w ),
+		new Memory_WriteAddress( 0xec00, 0xec00, YM3812_write_port_0_w ),
+		new Memory_WriteAddress( 0xf000, 0xf000, Y8950_control_port_0_w ),
+		new Memory_WriteAddress( 0xf400, 0xf400, Y8950_write_port_0_w ),
+		new Memory_WriteAddress( 0xf800, 0xf800, snk_sound_register_w ),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	public static Memory_ReadAddress Y8950_readmem_sound[]={
 		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
@@ -367,15 +375,17 @@ public class snk
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( Y8950_writemem_sound )
-		{ 0x0000, 0xbfff, MWA_ROM },
-		{ 0xc000, 0xcfff, MWA_RAM },
-		{ 0xf000, 0xf000, YM3526_control_port_0_w },
-		{ 0xf400, 0xf400, YM3526_write_port_0_w },
-	//	{ 0xf000, 0xf000, Y8950_control_port_0_w },
-	//	{ 0xf400, 0xf400, Y8950_write_port_0_w },
-		{ 0xf800, 0xf800, snk_sound_register_w },
-	MEMORY_END
+	public static Memory_WriteAddress Y8950_writemem_sound[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0xbfff, MWA_ROM ),
+		new Memory_WriteAddress( 0xc000, 0xcfff, MWA_RAM ),
+		new Memory_WriteAddress( 0xf000, 0xf000, YM3526_control_port_0_w ),
+		new Memory_WriteAddress( 0xf400, 0xf400, YM3526_write_port_0_w ),
+	//	new Memory_WriteAddress( 0xf000, 0xf000, Y8950_control_port_0_w ),
+	//	new Memory_WriteAddress( 0xf400, 0xf400, Y8950_write_port_0_w ),
+		new Memory_WriteAddress( 0xf800, 0xf800, snk_sound_register_w ),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	/**********************  Tnk3, Athena, Fighting Golf ********************/
 	
@@ -505,12 +515,14 @@ public class snk
 		new Memory_ReadAddress( 0xf800, 0xffff, MRA_RAM ),
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
-	static MEMORY_WRITE_START( tnk3_writemem_cpuA )
-		{ 0x0000, 0xbfff, MWA_ROM },
-		{ 0xc000, 0xcfff, cpuA_io_w, &io_ram },
-		{ 0xd000, 0xf7ff, MWA_RAM, &shared_ram2 },
-		{ 0xf800, 0xffff, MWA_RAM, &shared_ram },
-	MEMORY_END
+	public static Memory_WriteAddress tnk3_writemem_cpuA[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0xbfff, MWA_ROM ),
+		new Memory_WriteAddress( 0xc000, 0xcfff, cpuA_io_w, &io_ram ),
+		new Memory_WriteAddress( 0xd000, 0xf7ff, MWA_RAM, &shared_ram2 ),
+		new Memory_WriteAddress( 0xf800, 0xffff, MWA_RAM, &shared_ram ),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	public static Memory_ReadAddress tnk3_readmem_cpuB[]={
 		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
@@ -521,13 +533,15 @@ public class snk
 		new Memory_ReadAddress( 0xf800, 0xffff, shared_ram_r ),
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
-	static MEMORY_WRITE_START( tnk3_writemem_cpuB )
-		{ 0x0000, 0xbfff, MWA_ROM },
-		{ 0xc000, 0xc7ff, cpuB_io_w },
-		{ 0xc800, 0xefff, shared_ram2_w },
-		{ 0xf000, 0xf7ff, MWA_RAM },
-		{ 0xf800, 0xffff, shared_ram_w },
-	MEMORY_END
+	public static Memory_WriteAddress tnk3_writemem_cpuB[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0xbfff, MWA_ROM ),
+		new Memory_WriteAddress( 0xc000, 0xc7ff, cpuB_io_w ),
+		new Memory_WriteAddress( 0xc800, 0xefff, shared_ram2_w ),
+		new Memory_WriteAddress( 0xf000, 0xf7ff, MWA_RAM ),
+		new Memory_WriteAddress( 0xf800, 0xffff, shared_ram_w ),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	
 	/* Chopper I, T.D.Fever, Psycho S., Bermuda T. */
@@ -539,11 +553,13 @@ public class snk
 		new Memory_ReadAddress( 0xd000, 0xffff, MRA_RAM ),
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
-	static MEMORY_WRITE_START( writemem_cpuA )
-		{ 0x0000, 0xbfff, MWA_ROM },
-		{ 0xc000, 0xcfff, cpuA_io_w, &io_ram },
-		{ 0xd000, 0xffff, MWA_RAM, &shared_ram },
-	MEMORY_END
+	public static Memory_WriteAddress writemem_cpuA[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0xbfff, MWA_ROM ),
+		new Memory_WriteAddress( 0xc000, 0xcfff, cpuA_io_w, &io_ram ),
+		new Memory_WriteAddress( 0xd000, 0xffff, MWA_RAM, &shared_ram ),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	public static Memory_ReadAddress readmem_cpuB[]={
 		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
@@ -552,11 +568,13 @@ public class snk
 		new Memory_ReadAddress( 0xd000, 0xffff, shared_ram_r ),
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
-	static MEMORY_WRITE_START( writemem_cpuB )
-		{ 0x0000, 0xbfff, MWA_ROM },
-		{ 0xc000, 0xcfff, cpuB_io_w },
-		{ 0xd000, 0xffff, shared_ram_w },
-	MEMORY_END
+	public static Memory_WriteAddress writemem_cpuB[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0xbfff, MWA_ROM ),
+		new Memory_WriteAddress( 0xc000, 0xcfff, cpuB_io_w ),
+		new Memory_WriteAddress( 0xd000, 0xffff, shared_ram_w ),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	/*********************************************************************/
 	

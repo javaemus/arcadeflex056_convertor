@@ -86,17 +86,19 @@ public class jack
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( writemem )
-		{ 0x0000, 0x3fff, MWA_ROM },
-		{ 0x4000, 0x5fff, MWA_RAM },
-		{ 0xb000, 0xb07f, MWA_RAM, &spriteram, &spriteram_size },
-		{ 0xb400, 0xb400, jack_sh_command_w },
-		{ 0xb506, 0xb507, jack_flipscreen_w },
-		{ 0xb600, 0xb61f, jack_paletteram_w, &paletteram },
-		{ 0xb800, 0xbbff, videoram_w, &videoram, &videoram_size },
-		{ 0xbc00, 0xbfff, colorram_w, &colorram },
-		{ 0xc000, 0xffff, MWA_ROM },
-	MEMORY_END
+	public static Memory_WriteAddress writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0x3fff, MWA_ROM ),
+		new Memory_WriteAddress( 0x4000, 0x5fff, MWA_RAM ),
+		new Memory_WriteAddress( 0xb000, 0xb07f, MWA_RAM, &spriteram, &spriteram_size ),
+		new Memory_WriteAddress( 0xb400, 0xb400, jack_sh_command_w ),
+		new Memory_WriteAddress( 0xb506, 0xb507, jack_flipscreen_w ),
+		new Memory_WriteAddress( 0xb600, 0xb61f, jack_paletteram_w, &paletteram ),
+		new Memory_WriteAddress( 0xb800, 0xbbff, videoram_w, &videoram, &videoram_size ),
+		new Memory_WriteAddress( 0xbc00, 0xbfff, colorram_w, &colorram ),
+		new Memory_WriteAddress( 0xc000, 0xffff, MWA_ROM ),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	public static Memory_ReadAddress sound_readmem[]={
 		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
@@ -105,11 +107,13 @@ public class jack
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( sound_writemem )
-		{ 0x0000, 0x1fff, MWA_ROM },
-		{ 0x4000, 0x43ff, MWA_RAM },
-		{ 0x6000, 0x6fff, MWA_NOP },  /* R/C filter ??? */
-	MEMORY_END
+	public static Memory_WriteAddress sound_writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0x1fff, MWA_ROM ),
+		new Memory_WriteAddress( 0x4000, 0x43ff, MWA_RAM ),
+		new Memory_WriteAddress( 0x6000, 0x6fff, MWA_NOP ),  /* R/C filter ??? */
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	
 	static PORT_READ_START( sound_readport )

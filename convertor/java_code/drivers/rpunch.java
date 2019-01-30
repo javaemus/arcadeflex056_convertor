@@ -292,14 +292,16 @@ public class rpunch
 	};
 	
 	
-	static MEMORY_WRITE_START( writemem_sound )
-		{ 0x0000, 0xefff, MWA_ROM },
-		{ 0xf000, 0xf000, YM2151_register_port_0_w },
-		{ 0xf001, 0xf001, YM2151_data_port_0_w },
-		{ 0xf400, 0xf400, upd_control_w },
-		{ 0xf600, 0xf600, upd_data_w },
-		{ 0xf800, 0xffff, MWA_RAM },
-	MEMORY_END
+	public static Memory_WriteAddress writemem_sound[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0xefff, MWA_ROM ),
+		new Memory_WriteAddress( 0xf000, 0xf000, YM2151_register_port_0_w ),
+		new Memory_WriteAddress( 0xf001, 0xf001, YM2151_data_port_0_w ),
+		new Memory_WriteAddress( 0xf400, 0xf400, upd_control_w ),
+		new Memory_WriteAddress( 0xf600, 0xf600, upd_data_w ),
+		new Memory_WriteAddress( 0xf800, 0xffff, MWA_RAM ),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	
 	

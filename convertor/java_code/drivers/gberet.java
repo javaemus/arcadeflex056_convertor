@@ -123,38 +123,42 @@ public class gberet
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( writemem )
-		{ 0x0000, 0xbfff, MWA_ROM },
-		{ 0xc000, 0xc7ff, gberet_colorram_w, &gberet_colorram },
-		{ 0xc800, 0xcfff, gberet_videoram_w, &gberet_videoram },
-		{ 0xd000, 0xd0bf, MWA_RAM, &spriteram_2 },
-		{ 0xd100, 0xd1bf, MWA_RAM, &spriteram, &spriteram_size },
-		{ 0xd200, 0xdfff, MWA_RAM },
-		{ 0xe000, 0xe03f, gberet_scroll_w, &gberet_scrollram },
-		{ 0xe043, 0xe043, MWA_RAM, &gberet_spritebank },
-		{ 0xe044, 0xe044, gberet_e044_w },
-		{ 0xf000, 0xf000, gberet_coincounter_w },
-		{ 0xf200, 0xf200, MWA_NOP },		/* Loads the snd command into the snd latch */
-		{ 0xf400, 0xf400, SN76496_0_w },	/* This address triggers the SN chip to read the data port. */
-	//	{ 0xf600, 0xf600, MWA_NOP },
-	MEMORY_END
+	public static Memory_WriteAddress writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0xbfff, MWA_ROM ),
+		new Memory_WriteAddress( 0xc000, 0xc7ff, gberet_colorram_w, &gberet_colorram ),
+		new Memory_WriteAddress( 0xc800, 0xcfff, gberet_videoram_w, &gberet_videoram ),
+		new Memory_WriteAddress( 0xd000, 0xd0bf, MWA_RAM, &spriteram_2 ),
+		new Memory_WriteAddress( 0xd100, 0xd1bf, MWA_RAM, &spriteram, &spriteram_size ),
+		new Memory_WriteAddress( 0xd200, 0xdfff, MWA_RAM ),
+		new Memory_WriteAddress( 0xe000, 0xe03f, gberet_scroll_w, &gberet_scrollram ),
+		new Memory_WriteAddress( 0xe043, 0xe043, MWA_RAM, &gberet_spritebank ),
+		new Memory_WriteAddress( 0xe044, 0xe044, gberet_e044_w ),
+		new Memory_WriteAddress( 0xf000, 0xf000, gberet_coincounter_w ),
+		new Memory_WriteAddress( 0xf200, 0xf200, MWA_NOP ),		/* Loads the snd command into the snd latch */
+		new Memory_WriteAddress( 0xf400, 0xf400, SN76496_0_w ),	/* This address triggers the SN chip to read the data port. */
+	//	new Memory_WriteAddress( 0xf600, 0xf600, MWA_NOP ),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
-	static MEMORY_WRITE_START( gberetb_writemem )
-		{ 0x0000, 0xbfff, MWA_ROM },
-		{ 0xc000, 0xc7ff, gberet_colorram_w, &gberet_colorram },
-		{ 0xc800, 0xcfff, gberet_videoram_w, &gberet_videoram },
-		{ 0xd000, 0xd0ff, MWA_RAM },
-		{ 0xd100, 0xd1ff, MWA_RAM },
-		{ 0xd200, 0xdfff, MWA_RAM },
-		{ 0xe000, 0xe03f, MWA_RAM },
-	//	{ 0xe800, 0xe8ff, MWA_RAM },
-		{ 0xe900, 0xe9ff, MWA_RAM, &spriteram, &spriteram_size },
-		{ 0xf800, 0xf800, MWA_NOP },	/* NMI acknowledge */
-		{ 0xf900, 0xf901, gberetb_scroll_w },
-	//	{ 0xe043, 0xe043, MWA_RAM, &gberet_spritebank },
-		{ 0xe044, 0xe044, gberet_e044_w },
-		{ 0xf400, 0xf400, SN76496_0_w },
-	MEMORY_END
+	public static Memory_WriteAddress gberetb_writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0xbfff, MWA_ROM ),
+		new Memory_WriteAddress( 0xc000, 0xc7ff, gberet_colorram_w, &gberet_colorram ),
+		new Memory_WriteAddress( 0xc800, 0xcfff, gberet_videoram_w, &gberet_videoram ),
+		new Memory_WriteAddress( 0xd000, 0xd0ff, MWA_RAM ),
+		new Memory_WriteAddress( 0xd100, 0xd1ff, MWA_RAM ),
+		new Memory_WriteAddress( 0xd200, 0xdfff, MWA_RAM ),
+		new Memory_WriteAddress( 0xe000, 0xe03f, MWA_RAM ),
+	//	new Memory_WriteAddress( 0xe800, 0xe8ff, MWA_RAM ),
+		new Memory_WriteAddress( 0xe900, 0xe9ff, MWA_RAM, &spriteram, &spriteram_size ),
+		new Memory_WriteAddress( 0xf800, 0xf800, MWA_NOP ),	/* NMI acknowledge */
+		new Memory_WriteAddress( 0xf900, 0xf901, gberetb_scroll_w ),
+	//	new Memory_WriteAddress( 0xe043, 0xe043, MWA_RAM, &gberet_spritebank ),
+		new Memory_WriteAddress( 0xe044, 0xe044, gberet_e044_w ),
+		new Memory_WriteAddress( 0xf400, 0xf400, SN76496_0_w ),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	public static Memory_ReadAddress mrgoemon_readmem[]={
 		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
@@ -170,21 +174,23 @@ public class gberet
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( mrgoemon_writemem )
-		{ 0x0000, 0xbfff, MWA_ROM },
-		{ 0xc000, 0xc7ff, gberet_colorram_w, &gberet_colorram },
-		{ 0xc800, 0xcfff, gberet_videoram_w, &gberet_videoram },
-		{ 0xd000, 0xd0bf, MWA_RAM, &spriteram_2 },
-		{ 0xd100, 0xd1bf, MWA_RAM, &spriteram, &spriteram_size },
-		{ 0xd200, 0xdfff, MWA_RAM },
-		{ 0xe000, 0xe03f, gberet_scroll_w, &gberet_scrollram },
-		{ 0xe043, 0xe043, MWA_RAM, &gberet_spritebank },
-		{ 0xe044, 0xe044, gberet_e044_w },
-		{ 0xf000, 0xf000, mrgoemon_bankswitch_w },	/* + coin counters */
-		{ 0xf200, 0xf200, MWA_NOP },		/* Loads the snd command into the snd latch */
-		{ 0xf400, 0xf400, SN76496_0_w },	/* This address triggers the SN chip to read the data port. */
-		{ 0xf800, 0xffff, MWA_ROM },
-	MEMORY_END
+	public static Memory_WriteAddress mrgoemon_writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0xbfff, MWA_ROM ),
+		new Memory_WriteAddress( 0xc000, 0xc7ff, gberet_colorram_w, &gberet_colorram ),
+		new Memory_WriteAddress( 0xc800, 0xcfff, gberet_videoram_w, &gberet_videoram ),
+		new Memory_WriteAddress( 0xd000, 0xd0bf, MWA_RAM, &spriteram_2 ),
+		new Memory_WriteAddress( 0xd100, 0xd1bf, MWA_RAM, &spriteram, &spriteram_size ),
+		new Memory_WriteAddress( 0xd200, 0xdfff, MWA_RAM ),
+		new Memory_WriteAddress( 0xe000, 0xe03f, gberet_scroll_w, &gberet_scrollram ),
+		new Memory_WriteAddress( 0xe043, 0xe043, MWA_RAM, &gberet_spritebank ),
+		new Memory_WriteAddress( 0xe044, 0xe044, gberet_e044_w ),
+		new Memory_WriteAddress( 0xf000, 0xf000, mrgoemon_bankswitch_w ),	/* + coin counters */
+		new Memory_WriteAddress( 0xf200, 0xf200, MWA_NOP ),		/* Loads the snd command into the snd latch */
+		new Memory_WriteAddress( 0xf400, 0xf400, SN76496_0_w ),	/* This address triggers the SN chip to read the data port. */
+		new Memory_WriteAddress( 0xf800, 0xffff, MWA_ROM ),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	
 	

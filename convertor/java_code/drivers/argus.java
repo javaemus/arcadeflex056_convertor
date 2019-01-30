@@ -319,24 +319,26 @@ public class argus
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( argus_writemem )
-		{ 0x0000, 0x7fff, MWA_ROM },
-		{ 0x8000, 0xbfff, MWA_BANK1 },
-		{ 0xc200, 0xc200, soundlatch_w },
-		{ 0xc201, 0xc201, argus_flipscreen_w },
-		{ 0xc202, 0xc202, argus_bankselect_w },
-		{ 0xc300, 0xc301, argus_bg0_scrollx_w, &argus_bg0_scrollx },
-		{ 0xc302, 0xc303, argus_bg0_scrolly_w, &argus_bg0_scrolly },
-		{ 0xc308, 0xc309, argus_bg1_scrollx_w, &argus_bg1_scrollx },
-		{ 0xc30a, 0xc30b, argus_bg1_scrolly_w, &argus_bg1_scrolly },
-		{ 0xc30c, 0xc30c, argus_bg_status_w },
-		{ 0xc400, 0xcfff, argus_paletteram_w, &argus_paletteram },
-		{ 0xd000, 0xd7ff, argus_txram_w, &argus_txram },
-		{ 0xd800, 0xdfff, argus_bg1ram_w, &argus_bg1ram },
-		{ 0xe000, 0xf1ff, MWA_RAM },
-		{ 0xf200, 0xf7ff, MWA_RAM, &spriteram, &spriteram_size },
-		{ 0xf800, 0xffff, MWA_RAM },
-	MEMORY_END
+	public static Memory_WriteAddress argus_writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0x7fff, MWA_ROM ),
+		new Memory_WriteAddress( 0x8000, 0xbfff, MWA_BANK1 ),
+		new Memory_WriteAddress( 0xc200, 0xc200, soundlatch_w ),
+		new Memory_WriteAddress( 0xc201, 0xc201, argus_flipscreen_w ),
+		new Memory_WriteAddress( 0xc202, 0xc202, argus_bankselect_w ),
+		new Memory_WriteAddress( 0xc300, 0xc301, argus_bg0_scrollx_w, &argus_bg0_scrollx ),
+		new Memory_WriteAddress( 0xc302, 0xc303, argus_bg0_scrolly_w, &argus_bg0_scrolly ),
+		new Memory_WriteAddress( 0xc308, 0xc309, argus_bg1_scrollx_w, &argus_bg1_scrollx ),
+		new Memory_WriteAddress( 0xc30a, 0xc30b, argus_bg1_scrolly_w, &argus_bg1_scrolly ),
+		new Memory_WriteAddress( 0xc30c, 0xc30c, argus_bg_status_w ),
+		new Memory_WriteAddress( 0xc400, 0xcfff, argus_paletteram_w, &argus_paletteram ),
+		new Memory_WriteAddress( 0xd000, 0xd7ff, argus_txram_w, &argus_txram ),
+		new Memory_WriteAddress( 0xd800, 0xdfff, argus_bg1ram_w, &argus_bg1ram ),
+		new Memory_WriteAddress( 0xe000, 0xf1ff, MWA_RAM ),
+		new Memory_WriteAddress( 0xf200, 0xf7ff, MWA_RAM, &spriteram, &spriteram_size ),
+		new Memory_WriteAddress( 0xf800, 0xffff, MWA_RAM ),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	public static Memory_ReadAddress valtric_readmem[]={
 		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
@@ -356,22 +358,24 @@ public class argus
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( valtric_writemem )
-		{ 0x0000, 0x7fff, MWA_ROM },
-		{ 0x8000, 0xbfff, MWA_BANK1 },
-		{ 0xc200, 0xc200, soundlatch_w },
-		{ 0xc201, 0xc201, argus_flipscreen_w },
-		{ 0xc202, 0xc202, argus_bankselect_w },
-		{ 0xc308, 0xc309, argus_bg1_scrollx_w, &argus_bg1_scrollx },
-		{ 0xc30a, 0xc30b, argus_bg1_scrolly_w, &argus_bg1_scrolly },
-		{ 0xc30c, 0xc30c, valtric_bg_status_w },
-		{ 0xc400, 0xcfff, valtric_paletteram_w, &argus_paletteram },
-		{ 0xd000, 0xd7ff, argus_txram_w, &argus_txram },
-		{ 0xd800, 0xdfff, argus_bg1ram_w, &argus_bg1ram },
-		{ 0xe000, 0xf1ff, MWA_RAM },
-		{ 0xf200, 0xf7ff, MWA_RAM, &spriteram, &spriteram_size },
-		{ 0xf800, 0xffff, MWA_RAM },
-	MEMORY_END
+	public static Memory_WriteAddress valtric_writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0x7fff, MWA_ROM ),
+		new Memory_WriteAddress( 0x8000, 0xbfff, MWA_BANK1 ),
+		new Memory_WriteAddress( 0xc200, 0xc200, soundlatch_w ),
+		new Memory_WriteAddress( 0xc201, 0xc201, argus_flipscreen_w ),
+		new Memory_WriteAddress( 0xc202, 0xc202, argus_bankselect_w ),
+		new Memory_WriteAddress( 0xc308, 0xc309, argus_bg1_scrollx_w, &argus_bg1_scrollx ),
+		new Memory_WriteAddress( 0xc30a, 0xc30b, argus_bg1_scrolly_w, &argus_bg1_scrolly ),
+		new Memory_WriteAddress( 0xc30c, 0xc30c, valtric_bg_status_w ),
+		new Memory_WriteAddress( 0xc400, 0xcfff, valtric_paletteram_w, &argus_paletteram ),
+		new Memory_WriteAddress( 0xd000, 0xd7ff, argus_txram_w, &argus_txram ),
+		new Memory_WriteAddress( 0xd800, 0xdfff, argus_bg1ram_w, &argus_bg1ram ),
+		new Memory_WriteAddress( 0xe000, 0xf1ff, MWA_RAM ),
+		new Memory_WriteAddress( 0xf200, 0xf7ff, MWA_RAM, &spriteram, &spriteram_size ),
+		new Memory_WriteAddress( 0xf800, 0xffff, MWA_RAM ),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	public static Memory_ReadAddress butasan_readmem[]={
 		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
@@ -391,26 +395,28 @@ public class argus
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( butasan_writemem )
-		{ 0x0000, 0x7fff, MWA_ROM },
-		{ 0x8000, 0xbfff, MWA_BANK1 },
-		{ 0xc200, 0xc200, soundlatch_w },
-		{ 0xc201, 0xc201, argus_flipscreen_w },
-		{ 0xc202, 0xc202, argus_bankselect_w },
-		{ 0xc203, 0xc203, butasan_pageselect_w },
-		{ 0xc300, 0xc301, butasan_bg0_scrollx_w, &argus_bg0_scrollx },
-		{ 0xc302, 0xc303, argus_bg0_scrolly_w, &argus_bg0_scrolly },
-		{ 0xc304, 0xc304, butasan_bg0_status_w },
-		{ 0xc308, 0xc309, argus_bg1_scrollx_w, &argus_bg1_scrollx },
-		{ 0xc30a, 0xc30b, argus_bg1_scrolly_w, &argus_bg1_scrolly },
-		{ 0xc30c, 0xc30c, butasan_bg1_status_w },
-		{ 0xc400, 0xc7ff, butasan_bg1ram_w, &butasan_bg1ram },
-		{ 0xc800, 0xcfff, butasan_paletteram_w, &argus_paletteram },
-		{ 0xd000, 0xdfff, butasan_pagedram_w },
-		{ 0xe000, 0xefff, MWA_RAM },
-		{ 0xf000, 0xf67f, MWA_RAM, &spriteram, &spriteram_size },
-		{ 0xf680, 0xffff, MWA_RAM },
-	MEMORY_END
+	public static Memory_WriteAddress butasan_writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0x7fff, MWA_ROM ),
+		new Memory_WriteAddress( 0x8000, 0xbfff, MWA_BANK1 ),
+		new Memory_WriteAddress( 0xc200, 0xc200, soundlatch_w ),
+		new Memory_WriteAddress( 0xc201, 0xc201, argus_flipscreen_w ),
+		new Memory_WriteAddress( 0xc202, 0xc202, argus_bankselect_w ),
+		new Memory_WriteAddress( 0xc203, 0xc203, butasan_pageselect_w ),
+		new Memory_WriteAddress( 0xc300, 0xc301, butasan_bg0_scrollx_w, &argus_bg0_scrollx ),
+		new Memory_WriteAddress( 0xc302, 0xc303, argus_bg0_scrolly_w, &argus_bg0_scrolly ),
+		new Memory_WriteAddress( 0xc304, 0xc304, butasan_bg0_status_w ),
+		new Memory_WriteAddress( 0xc308, 0xc309, argus_bg1_scrollx_w, &argus_bg1_scrollx ),
+		new Memory_WriteAddress( 0xc30a, 0xc30b, argus_bg1_scrolly_w, &argus_bg1_scrolly ),
+		new Memory_WriteAddress( 0xc30c, 0xc30c, butasan_bg1_status_w ),
+		new Memory_WriteAddress( 0xc400, 0xc7ff, butasan_bg1ram_w, &butasan_bg1ram ),
+		new Memory_WriteAddress( 0xc800, 0xcfff, butasan_paletteram_w, &argus_paletteram ),
+		new Memory_WriteAddress( 0xd000, 0xdfff, butasan_pagedram_w ),
+		new Memory_WriteAddress( 0xe000, 0xefff, MWA_RAM ),
+		new Memory_WriteAddress( 0xf000, 0xf67f, MWA_RAM, &spriteram, &spriteram_size ),
+		new Memory_WriteAddress( 0xf680, 0xffff, MWA_RAM ),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	public static Memory_ReadAddress sound_readmem_a[]={
 		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
@@ -420,10 +426,12 @@ public class argus
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( sound_writemem_a )
-		{ 0x0000, 0x7fff, MWA_ROM },
-		{ 0x8000, 0x87ff, MWA_RAM },
-	MEMORY_END
+	public static Memory_WriteAddress sound_writemem_a[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0x7fff, MWA_ROM ),
+		new Memory_WriteAddress( 0x8000, 0x87ff, MWA_RAM ),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	public static Memory_ReadAddress sound_readmem_b[]={
 		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
@@ -433,10 +441,12 @@ public class argus
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( sound_writemem_b )
-		{ 0x0000, 0xbfff, MWA_ROM },
-		{ 0xc000, 0xc7ff, MWA_RAM },
-	MEMORY_END
+	public static Memory_WriteAddress sound_writemem_b[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0xbfff, MWA_ROM ),
+		new Memory_WriteAddress( 0xc000, 0xc7ff, MWA_RAM ),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static PORT_READ_START( sound_readport_1 )
 		{ 0x0000, 0x0000, YM2203_status_port_0_r },

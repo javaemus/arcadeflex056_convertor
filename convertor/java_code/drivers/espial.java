@@ -122,21 +122,23 @@ public class espial
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( writemem )
-		{ 0x0000, 0x4fff, MWA_ROM },
-		{ 0x5800, 0x5fff, MWA_RAM },
-		{ 0x6090, 0x6090, zodiac_master_soundlatch_w },
-		{ 0x7000, 0x7000, watchdog_reset_w },
-		{ 0x7100, 0x7100, zodiac_master_interrupt_enable_w },
-		{ 0x8000, 0x801f, MWA_RAM, &spriteram, &spriteram_size },
-		{ 0x8400, 0x87ff, videoram_w, &videoram, &videoram_size },
-		{ 0x8800, 0x880f, MWA_RAM, &spriteram_3 },
-		{ 0x8c00, 0x8fff, espial_attributeram_w, &espial_attributeram },
-		{ 0x9000, 0x901f, MWA_RAM, &spriteram_2 },
-		{ 0x9020, 0x903f, MWA_RAM, &espial_column_scroll },
-		{ 0x9400, 0x97ff, colorram_w, &colorram },
-		{ 0xc000, 0xcfff, MWA_ROM },
-	MEMORY_END
+	public static Memory_WriteAddress writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0x4fff, MWA_ROM ),
+		new Memory_WriteAddress( 0x5800, 0x5fff, MWA_RAM ),
+		new Memory_WriteAddress( 0x6090, 0x6090, zodiac_master_soundlatch_w ),
+		new Memory_WriteAddress( 0x7000, 0x7000, watchdog_reset_w ),
+		new Memory_WriteAddress( 0x7100, 0x7100, zodiac_master_interrupt_enable_w ),
+		new Memory_WriteAddress( 0x8000, 0x801f, MWA_RAM, &spriteram, &spriteram_size ),
+		new Memory_WriteAddress( 0x8400, 0x87ff, videoram_w, &videoram, &videoram_size ),
+		new Memory_WriteAddress( 0x8800, 0x880f, MWA_RAM, &spriteram_3 ),
+		new Memory_WriteAddress( 0x8c00, 0x8fff, espial_attributeram_w, &espial_attributeram ),
+		new Memory_WriteAddress( 0x9000, 0x901f, MWA_RAM, &spriteram_2 ),
+		new Memory_WriteAddress( 0x9020, 0x903f, MWA_RAM, &espial_column_scroll ),
+		new Memory_WriteAddress( 0x9400, 0x97ff, colorram_w, &colorram ),
+		new Memory_WriteAddress( 0xc000, 0xcfff, MWA_ROM ),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	
 	public static Memory_ReadAddress sound_readmem[]={
@@ -147,12 +149,14 @@ public class espial
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( sound_writemem )
-		{ 0x0000, 0x1fff, MWA_ROM },
-		{ 0x2000, 0x23ff, MWA_RAM },
-		{ 0x4000, 0x4000, interrupt_enable_w },
-		{ 0x6000, 0x6000, soundlatch_w },
-	MEMORY_END
+	public static Memory_WriteAddress sound_writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0x1fff, MWA_ROM ),
+		new Memory_WriteAddress( 0x2000, 0x23ff, MWA_RAM ),
+		new Memory_WriteAddress( 0x4000, 0x4000, interrupt_enable_w ),
+		new Memory_WriteAddress( 0x6000, 0x6000, soundlatch_w ),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static PORT_WRITE_START( sound_writeport )
 		{ 0x00, 0x00, AY8910_control_port_0_w },

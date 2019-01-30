@@ -400,30 +400,32 @@ public class jedi
 	};
 	
 	
-	static MEMORY_WRITE_START( writemem )
-		{ 0x0000, 0x07ff, MWA_RAM },
-		{ 0x0800, 0x08ff, nvram_data_w, &nvram, &nvram_size },
-		{ 0x1c00, 0x1c01, nvram_enable_w },
-		{ 0x1c80, 0x1c82, a2d_select_w },
-		{ 0x1d00, 0x1d00, MWA_NOP },	/* NVRAM store */
-		{ 0x1d80, 0x1d80, watchdog_reset_w },
-		{ 0x1e00, 0x1e00, main_irq_ack_w },
-		{ 0x1e80, 0x1e81, jedi_coin_counter_w },
-		{ 0x1e82, 0x1e83, MWA_NOP },	/* LED control; not used */
-		{ 0x1e84, 0x1e84, jedi_alpha_banksel_w },
-		{ 0x1e86, 0x1e86, sound_reset_w },
-		{ 0x1e87, 0x1e87, jedi_video_off_w },
-		{ 0x1f00, 0x1f00, sound_latch_w },
-		{ 0x1f80, 0x1f80, rom_banksel_w },
-		{ 0x2000, 0x27ff, jedi_backgroundram_w, &jedi_backgroundram, &jedi_backgroundram_size },
-		{ 0x2800, 0x2fff, jedi_paletteram_w, &paletteram },
-		{ 0x3000, 0x37bf, videoram_w, &videoram, &videoram_size },
-		{ 0x37c0, 0x3bff, MWA_RAM, &spriteram, &spriteram_size },
-		{ 0x3c00, 0x3c01, jedi_vscroll_w },
-		{ 0x3d00, 0x3d01, jedi_hscroll_w },
-		{ 0x3e00, 0x3fff, jedi_PIXIRAM_w, &jedi_PIXIRAM },
-		{ 0x4000, 0xffff, MWA_ROM },
-	MEMORY_END
+	public static Memory_WriteAddress writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0x07ff, MWA_RAM ),
+		new Memory_WriteAddress( 0x0800, 0x08ff, nvram_data_w, &nvram, &nvram_size ),
+		new Memory_WriteAddress( 0x1c00, 0x1c01, nvram_enable_w ),
+		new Memory_WriteAddress( 0x1c80, 0x1c82, a2d_select_w ),
+		new Memory_WriteAddress( 0x1d00, 0x1d00, MWA_NOP ),	/* NVRAM store */
+		new Memory_WriteAddress( 0x1d80, 0x1d80, watchdog_reset_w ),
+		new Memory_WriteAddress( 0x1e00, 0x1e00, main_irq_ack_w ),
+		new Memory_WriteAddress( 0x1e80, 0x1e81, jedi_coin_counter_w ),
+		new Memory_WriteAddress( 0x1e82, 0x1e83, MWA_NOP ),	/* LED control; not used */
+		new Memory_WriteAddress( 0x1e84, 0x1e84, jedi_alpha_banksel_w ),
+		new Memory_WriteAddress( 0x1e86, 0x1e86, sound_reset_w ),
+		new Memory_WriteAddress( 0x1e87, 0x1e87, jedi_video_off_w ),
+		new Memory_WriteAddress( 0x1f00, 0x1f00, sound_latch_w ),
+		new Memory_WriteAddress( 0x1f80, 0x1f80, rom_banksel_w ),
+		new Memory_WriteAddress( 0x2000, 0x27ff, jedi_backgroundram_w, &jedi_backgroundram, &jedi_backgroundram_size ),
+		new Memory_WriteAddress( 0x2800, 0x2fff, jedi_paletteram_w, &paletteram ),
+		new Memory_WriteAddress( 0x3000, 0x37bf, videoram_w, &videoram, &videoram_size ),
+		new Memory_WriteAddress( 0x37c0, 0x3bff, MWA_RAM, &spriteram, &spriteram_size ),
+		new Memory_WriteAddress( 0x3c00, 0x3c01, jedi_vscroll_w ),
+		new Memory_WriteAddress( 0x3d00, 0x3d01, jedi_hscroll_w ),
+		new Memory_WriteAddress( 0x3e00, 0x3fff, jedi_PIXIRAM_w, &jedi_PIXIRAM ),
+		new Memory_WriteAddress( 0x4000, 0xffff, MWA_ROM ),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	
 	
@@ -448,18 +450,20 @@ public class jedi
 	};
 	
 	
-	static MEMORY_WRITE_START( writemem2 )
-		{ 0x0000, 0x07ff, MWA_RAM },
-		{ 0x0800, 0x080f, pokey1_w },
-		{ 0x0810, 0x081f, pokey2_w },
-		{ 0x0820, 0x082f, pokey3_w },
-		{ 0x0830, 0x083f, pokey4_w },
-		{ 0x1000, 0x1000, sound_irq_ack_w },
-		{ 0x1100, 0x11ff, speech_data_w },
-		{ 0x1200, 0x13ff, speech_strobe_w },
-		{ 0x1400, 0x1400, sound_ack_latch_w },
-		{ 0x8000, 0xffff, MWA_ROM },
-	MEMORY_END
+	public static Memory_WriteAddress writemem2[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0x07ff, MWA_RAM ),
+		new Memory_WriteAddress( 0x0800, 0x080f, pokey1_w ),
+		new Memory_WriteAddress( 0x0810, 0x081f, pokey2_w ),
+		new Memory_WriteAddress( 0x0820, 0x082f, pokey3_w ),
+		new Memory_WriteAddress( 0x0830, 0x083f, pokey4_w ),
+		new Memory_WriteAddress( 0x1000, 0x1000, sound_irq_ack_w ),
+		new Memory_WriteAddress( 0x1100, 0x11ff, speech_data_w ),
+		new Memory_WriteAddress( 0x1200, 0x13ff, speech_strobe_w ),
+		new Memory_WriteAddress( 0x1400, 0x1400, sound_ack_latch_w ),
+		new Memory_WriteAddress( 0x8000, 0xffff, MWA_ROM ),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	
 	

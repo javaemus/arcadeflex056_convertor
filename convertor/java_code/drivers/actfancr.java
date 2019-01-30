@@ -97,18 +97,20 @@ public class actfancr
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( actfan_writemem )
-		{ 0x000000, 0x02ffff, MWA_ROM },
-		{ 0x060000, 0x06001f, actfancr_pf1_control_w },
-		{ 0x062000, 0x063fff, actfancr_pf1_data_w, &actfancr_pf1_data },
-		{ 0x070000, 0x07001f, actfancr_pf2_control_w },
-		{ 0x072000, 0x0727ff, actfancr_pf2_data_w, &actfancr_pf2_data },
-		{ 0x100000, 0x1007ff, MWA_RAM, &spriteram, &spriteram_size },
-		{ 0x110000, 0x110001, buffer_spriteram_w },
-		{ 0x120000, 0x1205ff, paletteram_xxxxBBBBGGGGRRRR_w, &paletteram },
-		{ 0x150000, 0x150001, actfancr_sound_w },
-		{ 0x1f0000, 0x1f3fff, MWA_RAM, &actfancr_ram }, /* Main ram */
-	MEMORY_END
+	public static Memory_WriteAddress actfan_writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x000000, 0x02ffff, MWA_ROM ),
+		new Memory_WriteAddress( 0x060000, 0x06001f, actfancr_pf1_control_w ),
+		new Memory_WriteAddress( 0x062000, 0x063fff, actfancr_pf1_data_w, &actfancr_pf1_data ),
+		new Memory_WriteAddress( 0x070000, 0x07001f, actfancr_pf2_control_w ),
+		new Memory_WriteAddress( 0x072000, 0x0727ff, actfancr_pf2_data_w, &actfancr_pf2_data ),
+		new Memory_WriteAddress( 0x100000, 0x1007ff, MWA_RAM, &spriteram, &spriteram_size ),
+		new Memory_WriteAddress( 0x110000, 0x110001, buffer_spriteram_w ),
+		new Memory_WriteAddress( 0x120000, 0x1205ff, paletteram_xxxxBBBBGGGGRRRR_w, &paletteram ),
+		new Memory_WriteAddress( 0x150000, 0x150001, actfancr_sound_w ),
+		new Memory_WriteAddress( 0x1f0000, 0x1f3fff, MWA_RAM, &actfancr_ram ), /* Main ram */
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	public static Memory_ReadAddress triothep_readmem[]={
 		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
@@ -123,22 +125,24 @@ public class actfancr
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( triothep_writemem )
-		{ 0x000000, 0x03ffff, MWA_ROM },
-		{ 0x040000, 0x04001f, actfancr_pf2_control_w },
-		{ 0x044000, 0x045fff, actfancr_pf2_data_w, &actfancr_pf2_data },
-		{ 0x046400, 0x0467ff, MWA_NOP }, /* Pf2 rowscroll - is it used? */
-		{ 0x060000, 0x06001f, actfancr_pf1_control_w },
-		{ 0x064000, 0x0647ff, actfancr_pf1_data_w, &actfancr_pf1_data },
-		{ 0x066400, 0x0667ff, MWA_RAM, &actfancr_pf1_rowscroll_data },
-		{ 0x100000, 0x100001, actfancr_sound_w },
-		{ 0x110000, 0x110001, buffer_spriteram_w },
-		{ 0x120000, 0x1207ff, MWA_RAM, &spriteram, &spriteram_size },
-		{ 0x130000, 0x1305ff, paletteram_xxxxBBBBGGGGRRRR_w, &paletteram },
-		{ 0x1f0000, 0x1f3fff, MWA_RAM, &actfancr_ram }, /* Main ram */
-		{ 0x1ff000, 0x1ff001, triothep_control_select_w },
-		{ 0x1ff402, 0x1ff403, H6280_irq_status_w },
-	MEMORY_END
+	public static Memory_WriteAddress triothep_writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x000000, 0x03ffff, MWA_ROM ),
+		new Memory_WriteAddress( 0x040000, 0x04001f, actfancr_pf2_control_w ),
+		new Memory_WriteAddress( 0x044000, 0x045fff, actfancr_pf2_data_w, &actfancr_pf2_data ),
+		new Memory_WriteAddress( 0x046400, 0x0467ff, MWA_NOP ), /* Pf2 rowscroll - is it used? */
+		new Memory_WriteAddress( 0x060000, 0x06001f, actfancr_pf1_control_w ),
+		new Memory_WriteAddress( 0x064000, 0x0647ff, actfancr_pf1_data_w, &actfancr_pf1_data ),
+		new Memory_WriteAddress( 0x066400, 0x0667ff, MWA_RAM, &actfancr_pf1_rowscroll_data ),
+		new Memory_WriteAddress( 0x100000, 0x100001, actfancr_sound_w ),
+		new Memory_WriteAddress( 0x110000, 0x110001, buffer_spriteram_w ),
+		new Memory_WriteAddress( 0x120000, 0x1207ff, MWA_RAM, &spriteram, &spriteram_size ),
+		new Memory_WriteAddress( 0x130000, 0x1305ff, paletteram_xxxxBBBBGGGGRRRR_w, &paletteram ),
+		new Memory_WriteAddress( 0x1f0000, 0x1f3fff, MWA_RAM, &actfancr_ram ), /* Main ram */
+		new Memory_WriteAddress( 0x1ff000, 0x1ff001, triothep_control_select_w ),
+		new Memory_WriteAddress( 0x1ff402, 0x1ff403, H6280_irq_status_w ),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	/******************************************************************************/
 	
@@ -151,15 +155,17 @@ public class actfancr
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( dec0_s_writemem )
-		{ 0x0000, 0x07ff, MWA_RAM },
-		{ 0x0800, 0x0800, YM2203_control_port_0_w },
-		{ 0x0801, 0x0801, YM2203_write_port_0_w },
-		{ 0x1000, 0x1000, YM3812_control_port_0_w },
-		{ 0x1001, 0x1001, YM3812_write_port_0_w },
-		{ 0x3800, 0x3800, OKIM6295_data_0_w },
-		{ 0x4000, 0xffff, MWA_ROM },
-	MEMORY_END
+	public static Memory_WriteAddress dec0_s_writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0x07ff, MWA_RAM ),
+		new Memory_WriteAddress( 0x0800, 0x0800, YM2203_control_port_0_w ),
+		new Memory_WriteAddress( 0x0801, 0x0801, YM2203_write_port_0_w ),
+		new Memory_WriteAddress( 0x1000, 0x1000, YM3812_control_port_0_w ),
+		new Memory_WriteAddress( 0x1001, 0x1001, YM3812_write_port_0_w ),
+		new Memory_WriteAddress( 0x3800, 0x3800, OKIM6295_data_0_w ),
+		new Memory_WriteAddress( 0x4000, 0xffff, MWA_ROM ),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	/******************************************************************************/
 	

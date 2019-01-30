@@ -163,26 +163,28 @@ public class chqflag
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( chqflag_writemem )
-		{ 0x0000, 0x0fff, MWA_RAM },					/* RAM */
-		{ 0x1000, 0x17ff, MWA_BANK1 },					/* banked RAM (RAM/051316 (chip 1)) */
-		{ 0x1800, 0x1fff, MWA_BANK2 },					/* palette + RAM */
-		{ 0x2000, 0x2007, K051937_w },					/* Sprite control registers */
-		{ 0x2400, 0x27ff, K051960_w },					/* Sprite RAM */
-		{ 0x2800, 0x2fff, K051316_1_w },				/* 051316 zoom/rotation (chip 2) */
-		{ 0x3000, 0x3000, soundlatch_w },				/* sound code # */
-		{ 0x3001, 0x3001, chqflag_sh_irqtrigger_w },	/* cause interrupt on audio CPU */
-		{ 0x3002, 0x3002, chqflag_bankswitch_w },		/* bankswitch control */
-		{ 0x3003, 0x3003, chqflag_vreg_w },				/* enable K051316 ROM reading */
-		{ 0x3300, 0x3300, watchdog_reset_w },			/* watchdog timer */
-		{ 0x3400, 0x341f, K051733_w },					/* 051733 (protection) */
-		{ 0x3500, 0x350f, K051316_ctrl_0_w },			/* 051316 control registers (chip 1) */
-		{ 0x3600, 0x360f, K051316_ctrl_1_w },			/* 051316 control registers (chip 2) */
-		{ 0x3700, 0x3700, select_analog_ctrl_w },		/* select accelerator/wheel */
-		{ 0x3702, 0x3702, select_analog_ctrl_w },		/* select accelerator/wheel (mirror?) */
-		{ 0x4000, 0x7fff, MWA_ROM },					/* banked ROM */
-		{ 0x8000, 0xffff, MWA_ROM },					/* ROM */
-	MEMORY_END
+	public static Memory_WriteAddress chqflag_writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0x0fff, MWA_RAM ),					/* RAM */
+		new Memory_WriteAddress( 0x1000, 0x17ff, MWA_BANK1 ),					/* banked RAM (RAM/051316 (chip 1)) */
+		new Memory_WriteAddress( 0x1800, 0x1fff, MWA_BANK2 ),					/* palette + RAM */
+		new Memory_WriteAddress( 0x2000, 0x2007, K051937_w ),					/* Sprite control registers */
+		new Memory_WriteAddress( 0x2400, 0x27ff, K051960_w ),					/* Sprite RAM */
+		new Memory_WriteAddress( 0x2800, 0x2fff, K051316_1_w ),				/* 051316 zoom/rotation (chip 2) */
+		new Memory_WriteAddress( 0x3000, 0x3000, soundlatch_w ),				/* sound code # */
+		new Memory_WriteAddress( 0x3001, 0x3001, chqflag_sh_irqtrigger_w ),	/* cause interrupt on audio CPU */
+		new Memory_WriteAddress( 0x3002, 0x3002, chqflag_bankswitch_w ),		/* bankswitch control */
+		new Memory_WriteAddress( 0x3003, 0x3003, chqflag_vreg_w ),				/* enable K051316 ROM reading */
+		new Memory_WriteAddress( 0x3300, 0x3300, watchdog_reset_w ),			/* watchdog timer */
+		new Memory_WriteAddress( 0x3400, 0x341f, K051733_w ),					/* 051733 (protection) */
+		new Memory_WriteAddress( 0x3500, 0x350f, K051316_ctrl_0_w ),			/* 051316 control registers (chip 1) */
+		new Memory_WriteAddress( 0x3600, 0x360f, K051316_ctrl_1_w ),			/* 051316 control registers (chip 2) */
+		new Memory_WriteAddress( 0x3700, 0x3700, select_analog_ctrl_w ),		/* select accelerator/wheel */
+		new Memory_WriteAddress( 0x3702, 0x3702, select_analog_ctrl_w ),		/* select accelerator/wheel (mirror?) */
+		new Memory_WriteAddress( 0x4000, 0x7fff, MWA_ROM ),					/* banked ROM */
+		new Memory_WriteAddress( 0x8000, 0xffff, MWA_ROM ),					/* ROM */
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	public static Memory_ReadAddress chqflag_readmem_sound[]={
 		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
@@ -215,18 +217,20 @@ public class chqflag
 	
 	}
 	
-	static MEMORY_WRITE_START( chqflag_writemem_sound )
-		{ 0x0000, 0x7fff, MWA_ROM },					/* ROM */
-		{ 0x8000, 0x87ff, MWA_RAM },					/* RAM */
-		{ 0x9000, 0x9000, k007232_bankswitch_w },		/* 007232 bankswitch */
-		{ 0xa000, 0xa00d, K007232_write_port_0_w },		/* 007232 (chip 1) */
-		{ 0xa01c, 0xa01c, k007232_extvolume_w },/* extra volume, goes to the 007232 w/ A11 */
+	public static Memory_WriteAddress chqflag_writemem_sound[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0x7fff, MWA_ROM ),					/* ROM */
+		new Memory_WriteAddress( 0x8000, 0x87ff, MWA_RAM ),					/* RAM */
+		new Memory_WriteAddress( 0x9000, 0x9000, k007232_bankswitch_w ),		/* 007232 bankswitch */
+		new Memory_WriteAddress( 0xa000, 0xa00d, K007232_write_port_0_w ),		/* 007232 (chip 1) */
+		new Memory_WriteAddress( 0xa01c, 0xa01c, k007232_extvolume_w ),/* extra volume, goes to the 007232 w/ A11 */
 												/* selecting a different latch for the external port */
-		{ 0xb000, 0xb00d, K007232_write_port_1_w },		/* 007232 (chip 2) */
-		{ 0xc000, 0xc000, YM2151_register_port_0_w },	/* YM2151 */
-		{ 0xc001, 0xc001, YM2151_data_port_0_w },		/* YM2151 */
-		{ 0xf000, 0xf000, MWA_NOP },					/* ??? */
-	MEMORY_END
+		new Memory_WriteAddress( 0xb000, 0xb00d, K007232_write_port_1_w ),		/* 007232 (chip 2) */
+		new Memory_WriteAddress( 0xc000, 0xc000, YM2151_register_port_0_w ),	/* YM2151 */
+		new Memory_WriteAddress( 0xc001, 0xc001, YM2151_data_port_0_w ),		/* YM2151 */
+		new Memory_WriteAddress( 0xf000, 0xf000, MWA_NOP ),					/* ??? */
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	
 	INPUT_PORTS_START( chqflag )

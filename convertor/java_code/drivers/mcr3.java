@@ -481,13 +481,15 @@ public class mcr3
 	};
 	
 	
-	static MEMORY_WRITE_START( writemem )
-		{ 0x0000, 0xdfff, MWA_ROM },
-		{ 0xe000, 0xe7ff, MWA_RAM },
-		{ 0xe800, 0xe9ff, MWA_RAM, &spriteram, &spriteram_size },
-		{ 0xf000, 0xf7ff, mcr3_videoram_w, &videoram, &videoram_size },
-		{ 0xf800, 0xf8ff, mcr3_paletteram_w, &paletteram },
-	MEMORY_END
+	public static Memory_WriteAddress writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0xdfff, MWA_ROM ),
+		new Memory_WriteAddress( 0xe000, 0xe7ff, MWA_RAM ),
+		new Memory_WriteAddress( 0xe800, 0xe9ff, MWA_RAM, &spriteram, &spriteram_size ),
+		new Memory_WriteAddress( 0xf000, 0xf7ff, mcr3_videoram_w, &videoram, &videoram_size ),
+		new Memory_WriteAddress( 0xf800, 0xf8ff, mcr3_paletteram_w, &paletteram ),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	
 	static PORT_READ_START( readport )
@@ -519,13 +521,15 @@ public class mcr3
 	 *
 	 *************************************/
 	
-	static MEMORY_WRITE_START( mcrmono_writemem )
-		{ 0x0000, 0xdfff, MWA_ROM },
-		{ 0xe000, 0xe7ff, MWA_RAM },
-		{ 0xe800, 0xe9ff, MWA_RAM, &spriteram, &spriteram_size },
-		{ 0xec00, 0xecff, mcr3_paletteram_w, &paletteram },
-		{ 0xf000, 0xf7ff, mcr3_videoram_w, &videoram, &videoram_size },
-	MEMORY_END
+	public static Memory_WriteAddress mcrmono_writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0xdfff, MWA_ROM ),
+		new Memory_WriteAddress( 0xe000, 0xe7ff, MWA_RAM ),
+		new Memory_WriteAddress( 0xe800, 0xe9ff, MWA_RAM, &spriteram, &spriteram_size ),
+		new Memory_WriteAddress( 0xec00, 0xecff, mcr3_paletteram_w, &paletteram ),
+		new Memory_WriteAddress( 0xf000, 0xf7ff, mcr3_videoram_w, &videoram, &videoram_size ),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	
 	static PORT_WRITE_START( mcrmono_writeport )
@@ -551,14 +555,16 @@ public class mcr3
 	};
 	
 	
-	static MEMORY_WRITE_START( spyhunt_writemem )
-		{ 0x0000, 0xdfff, MWA_ROM },
-		{ 0xe000, 0xe7ff, videoram_w, &videoram, &videoram_size },
-		{ 0xe800, 0xebff, MWA_RAM, &spyhunt_alpharam, &spyhunt_alpharam_size },
-		{ 0xf000, 0xf7ff, MWA_RAM },
-		{ 0xf800, 0xf9ff, MWA_RAM, &spriteram, &spriteram_size },
-		{ 0xfa00, 0xfaff, mcr3_paletteram_w, &paletteram },
-	MEMORY_END
+	public static Memory_WriteAddress spyhunt_writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0xdfff, MWA_ROM ),
+		new Memory_WriteAddress( 0xe000, 0xe7ff, videoram_w, &videoram, &videoram_size ),
+		new Memory_WriteAddress( 0xe800, 0xebff, MWA_RAM, &spyhunt_alpharam, &spyhunt_alpharam_size ),
+		new Memory_WriteAddress( 0xf000, 0xf7ff, MWA_RAM ),
+		new Memory_WriteAddress( 0xf800, 0xf9ff, MWA_RAM, &spriteram, &spriteram_size ),
+		new Memory_WriteAddress( 0xfa00, 0xfaff, mcr3_paletteram_w, &paletteram ),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	
 	

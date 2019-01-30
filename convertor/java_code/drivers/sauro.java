@@ -112,15 +112,17 @@ public class sauro
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( writemem )
-	        { 0x0000, 0xdfff, MWA_ROM },
-			{ 0xe000, 0xe7ff, MWA_RAM },
-			{ 0xe800, 0xebff, MWA_RAM, &spriteram, &spriteram_size },
-			{ 0xf000, 0xf3ff, videoram_w, &videoram, &videoram_size },
-			{ 0xf400, 0xf7ff, colorram_w, &colorram },
-			{ 0xf800, 0xfbff, MWA_RAM, &sauro_videoram2 },
-			{ 0xfc00, 0xffff, MWA_RAM, &sauro_colorram2 },
-	MEMORY_END
+	public static Memory_WriteAddress writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+	        new Memory_WriteAddress( 0x0000, 0xdfff, MWA_ROM ),
+			new Memory_WriteAddress( 0xe000, 0xe7ff, MWA_RAM ),
+			new Memory_WriteAddress( 0xe800, 0xebff, MWA_RAM, &spriteram, &spriteram_size ),
+			new Memory_WriteAddress( 0xf000, 0xf3ff, videoram_w, &videoram, &videoram_size ),
+			new Memory_WriteAddress( 0xf400, 0xf7ff, colorram_w, &colorram ),
+			new Memory_WriteAddress( 0xf800, 0xfbff, MWA_RAM, &sauro_videoram2 ),
+			new Memory_WriteAddress( 0xfc00, 0xffff, MWA_RAM, &sauro_colorram2 ),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static PORT_READ_START( readport )
 			{ 0x00, 0x00, input_port_2_r },
@@ -146,14 +148,16 @@ public class sauro
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( sound_writemem )
-		{ 0x8000, 0x87ff, MWA_RAM },
-		{ 0xc000, 0xc000, YM3812_control_port_0_w },
-		{ 0xc001, 0xc001, YM3812_write_port_0_w },
-	//	{ 0xa000, 0xa000, ADPCM_trigger },
-		{ 0xe000, 0xe006, MWA_NOP },
-		{ 0xe00e, 0xe00f, MWA_NOP },
-	MEMORY_END
+	public static Memory_WriteAddress sound_writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x8000, 0x87ff, MWA_RAM ),
+		new Memory_WriteAddress( 0xc000, 0xc000, YM3812_control_port_0_w ),
+		new Memory_WriteAddress( 0xc001, 0xc001, YM3812_write_port_0_w ),
+	//	new Memory_WriteAddress( 0xa000, 0xa000, ADPCM_trigger ),
+		new Memory_WriteAddress( 0xe000, 0xe006, MWA_NOP ),
+		new Memory_WriteAddress( 0xe00e, 0xe00f, MWA_NOP ),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	
 	INPUT_PORTS_START( sauro )

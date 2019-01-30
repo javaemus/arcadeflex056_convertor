@@ -89,20 +89,22 @@ public class marineb
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( writemem )
-		{ 0x0000, 0x7fff, MWA_ROM },
-		{ 0x8000, 0x87ff, MWA_RAM },
-		{ 0x8800, 0x8bff, videoram_w, &videoram, &videoram_size },
-		{ 0x8c00, 0x8c3f, MWA_RAM, &spriteram },  /* Hoccer only */
-		{ 0x9000, 0x93ff, colorram_w, &colorram },
-		{ 0x9800, 0x9800, MWA_RAM, &marineb_column_scroll },
-		{ 0x9a00, 0x9a00, marineb_palbank0_w },
-		{ 0x9c00, 0x9c00, marineb_palbank1_w },
-		{ 0xa000, 0xa000, interrupt_enable_w },
-		{ 0xa001, 0xa001, marineb_flipscreen_y_w },
-		{ 0xa002, 0xa002, marineb_flipscreen_x_w },
-		{ 0xb800, 0xb800, MWA_NOP },
-	MEMORY_END
+	public static Memory_WriteAddress writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0x7fff, MWA_ROM ),
+		new Memory_WriteAddress( 0x8000, 0x87ff, MWA_RAM ),
+		new Memory_WriteAddress( 0x8800, 0x8bff, videoram_w, &videoram, &videoram_size ),
+		new Memory_WriteAddress( 0x8c00, 0x8c3f, MWA_RAM, &spriteram ),  /* Hoccer only */
+		new Memory_WriteAddress( 0x9000, 0x93ff, colorram_w, &colorram ),
+		new Memory_WriteAddress( 0x9800, 0x9800, MWA_RAM, &marineb_column_scroll ),
+		new Memory_WriteAddress( 0x9a00, 0x9a00, marineb_palbank0_w ),
+		new Memory_WriteAddress( 0x9c00, 0x9c00, marineb_palbank1_w ),
+		new Memory_WriteAddress( 0xa000, 0xa000, interrupt_enable_w ),
+		new Memory_WriteAddress( 0xa001, 0xa001, marineb_flipscreen_y_w ),
+		new Memory_WriteAddress( 0xa002, 0xa002, marineb_flipscreen_x_w ),
+		new Memory_WriteAddress( 0xb800, 0xb800, MWA_NOP ),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	
 	static PORT_WRITE_START( marineb_writeport )

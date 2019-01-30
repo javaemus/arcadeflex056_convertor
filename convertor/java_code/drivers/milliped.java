@@ -140,23 +140,25 @@ public class milliped
 	
 	
 	
-	static MEMORY_WRITE_START( writemem )
-		{ 0x0000, 0x03ff, MWA_RAM },
-		{ 0x0400, 0x040f, pokey1_w },
-		{ 0x0800, 0x080f, pokey2_w },
-		{ 0x1000, 0x13ff, videoram_w, &videoram, &videoram_size },
-		{ 0x13c0, 0x13ff, MWA_RAM, &spriteram },
-		{ 0x2480, 0x249f, milliped_paletteram_w, &paletteram },
-		{ 0x2500, 0x2502, milliped_coin_counter_w },
-		{ 0x2503, 0x2504, milliped_led_w },
-		{ 0x2505, 0x2505, milliped_input_select_w },
-	//	{ 0x2506, 0x2507, MWA_NOP }, /* ? */
-		{ 0x2600, 0x2600, MWA_NOP }, /* IRQ ack */
-		{ 0x2680, 0x2680, watchdog_reset_w },
-		{ 0x2700, 0x2700, atari_vg_earom_ctrl_w },
-		{ 0x2780, 0x27bf, atari_vg_earom_w },
-		{ 0x4000, 0x73ff, MWA_ROM },
-	MEMORY_END
+	public static Memory_WriteAddress writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0x03ff, MWA_RAM ),
+		new Memory_WriteAddress( 0x0400, 0x040f, pokey1_w ),
+		new Memory_WriteAddress( 0x0800, 0x080f, pokey2_w ),
+		new Memory_WriteAddress( 0x1000, 0x13ff, videoram_w, &videoram, &videoram_size ),
+		new Memory_WriteAddress( 0x13c0, 0x13ff, MWA_RAM, &spriteram ),
+		new Memory_WriteAddress( 0x2480, 0x249f, milliped_paletteram_w, &paletteram ),
+		new Memory_WriteAddress( 0x2500, 0x2502, milliped_coin_counter_w ),
+		new Memory_WriteAddress( 0x2503, 0x2504, milliped_led_w ),
+		new Memory_WriteAddress( 0x2505, 0x2505, milliped_input_select_w ),
+	//	new Memory_WriteAddress( 0x2506, 0x2507, MWA_NOP ), /* ? */
+		new Memory_WriteAddress( 0x2600, 0x2600, MWA_NOP ), /* IRQ ack */
+		new Memory_WriteAddress( 0x2680, 0x2680, watchdog_reset_w ),
+		new Memory_WriteAddress( 0x2700, 0x2700, atari_vg_earom_ctrl_w ),
+		new Memory_WriteAddress( 0x2780, 0x27bf, atari_vg_earom_w ),
+		new Memory_WriteAddress( 0x4000, 0x73ff, MWA_ROM ),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	
 	INPUT_PORTS_START( milliped )

@@ -661,29 +661,31 @@ public class firetrk
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( firetruck_writemem )
-		{ 0x0000, 0x01ff, MWA_RAM, &videoram },
-		{ 0x0800, 0x08ff, MWA_RAM },				/* PRAM */
-		{ 0x1000, 0x1000, MWA_RAM },				/* PVPLOAD */
-		{ 0x1020, 0x1020, MWA_RAM },				/* PHPLOAD */
-		{ 0x1048, 0x1048, crash_reset_w },			/* CRASHRESET */
-		{ 0x1060, 0x1060, skid_reset_w },			/* SKIDRESET */
-		{ 0x1080, 0x1080, MWA_RAM },				/* CABROT */
-		{ 0x10a0, 0x10a0, steer_reset_w },			/* STEERRESET */
-		{ 0x10c0, 0x10c0, MWA_RAM },				/* WATCHDOGRESET */
-		{ 0x10e0, 0x10e0, MWA_RAM },				/* ARROWOFF */
-		{ 0x1400, 0x1400, firetruck_motorsnd_w },	/* MOTORSND */
-		{ 0x1420, 0x1420, firetruck_crashsnd_w }, 	/* CRASHSND */
-		{ 0x1440, 0x1440, firetruck_skidsnd_w },	/* SKIDSND */
-		{ 0x1460, 0x1460, MWA_RAM },				/* HPOS */
-		{ 0x1480, 0x1480, MWA_RAM },				/* VPOS */
-		{ 0x14a0, 0x14a0, MWA_RAM },				/* TAILROT */
-		{ 0x14c0, 0x14c0, firetruck_out_w },		/* OUT */
-		{ 0x14e0, 0x14e0, firetruck_xtndply_w },	/* XTNDPLY */
-		{ 0x1800, 0x1807, MWA_RAM },				/* ? */
-		{ 0x2000, 0x3fff, MWA_ROM },
-		{ 0xf000, 0xffff, MWA_ROM },
-	MEMORY_END
+	public static Memory_WriteAddress firetruck_writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0x01ff, MWA_RAM, &videoram ),
+		new Memory_WriteAddress( 0x0800, 0x08ff, MWA_RAM ),				/* PRAM */
+		new Memory_WriteAddress( 0x1000, 0x1000, MWA_RAM ),				/* PVPLOAD */
+		new Memory_WriteAddress( 0x1020, 0x1020, MWA_RAM ),				/* PHPLOAD */
+		new Memory_WriteAddress( 0x1048, 0x1048, crash_reset_w ),			/* CRASHRESET */
+		new Memory_WriteAddress( 0x1060, 0x1060, skid_reset_w ),			/* SKIDRESET */
+		new Memory_WriteAddress( 0x1080, 0x1080, MWA_RAM ),				/* CABROT */
+		new Memory_WriteAddress( 0x10a0, 0x10a0, steer_reset_w ),			/* STEERRESET */
+		new Memory_WriteAddress( 0x10c0, 0x10c0, MWA_RAM ),				/* WATCHDOGRESET */
+		new Memory_WriteAddress( 0x10e0, 0x10e0, MWA_RAM ),				/* ARROWOFF */
+		new Memory_WriteAddress( 0x1400, 0x1400, firetruck_motorsnd_w ),	/* MOTORSND */
+		new Memory_WriteAddress( 0x1420, 0x1420, firetruck_crashsnd_w ), 	/* CRASHSND */
+		new Memory_WriteAddress( 0x1440, 0x1440, firetruck_skidsnd_w ),	/* SKIDSND */
+		new Memory_WriteAddress( 0x1460, 0x1460, MWA_RAM ),				/* HPOS */
+		new Memory_WriteAddress( 0x1480, 0x1480, MWA_RAM ),				/* VPOS */
+		new Memory_WriteAddress( 0x14a0, 0x14a0, MWA_RAM ),				/* TAILROT */
+		new Memory_WriteAddress( 0x14c0, 0x14c0, firetruck_out_w ),		/* OUT */
+		new Memory_WriteAddress( 0x14e0, 0x14e0, firetruck_xtndply_w ),	/* XTNDPLY */
+		new Memory_WriteAddress( 0x1800, 0x1807, MWA_RAM ),				/* ? */
+		new Memory_WriteAddress( 0x2000, 0x3fff, MWA_ROM ),
+		new Memory_WriteAddress( 0xf000, 0xffff, MWA_ROM ),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	int firetruck_interrupt( void )
 	{

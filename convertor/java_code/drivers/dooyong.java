@@ -98,18 +98,20 @@ public class dooyong
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( lastday_writemem )
-		{ 0x0000, 0xbfff, MWA_ROM },
-		{ 0xc000, 0xc004, MWA_RAM, &lastday_bgscroll },
-		{ 0xc008, 0xc00c, MWA_RAM, &lastday_fgscroll },
-		{ 0xc010, 0xc010, lastday_ctrl_w },	/* coin counter, flip screen */
-		{ 0xc011, 0xc011, lastday_bankswitch_w },
-		{ 0xc012, 0xc012, soundlatch_w },
-		{ 0xc800, 0xcfff, paletteram_xxxxBBBBGGGGRRRR_w, &paletteram },
-		{ 0xd000, 0xdfff, MWA_RAM, &lastday_txvideoram },
-		{ 0xe000, 0xefff, MWA_RAM },
-		{ 0xf000, 0xffff, MWA_RAM, &spriteram, &spriteram_size },
-	MEMORY_END
+	public static Memory_WriteAddress lastday_writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0xbfff, MWA_ROM ),
+		new Memory_WriteAddress( 0xc000, 0xc004, MWA_RAM, &lastday_bgscroll ),
+		new Memory_WriteAddress( 0xc008, 0xc00c, MWA_RAM, &lastday_fgscroll ),
+		new Memory_WriteAddress( 0xc010, 0xc010, lastday_ctrl_w ),	/* coin counter, flip screen */
+		new Memory_WriteAddress( 0xc011, 0xc011, lastday_bankswitch_w ),
+		new Memory_WriteAddress( 0xc012, 0xc012, soundlatch_w ),
+		new Memory_WriteAddress( 0xc800, 0xcfff, paletteram_xxxxBBBBGGGGRRRR_w, &paletteram ),
+		new Memory_WriteAddress( 0xd000, 0xdfff, MWA_RAM, &lastday_txvideoram ),
+		new Memory_WriteAddress( 0xe000, 0xefff, MWA_RAM ),
+		new Memory_WriteAddress( 0xf000, 0xffff, MWA_RAM, &spriteram, &spriteram_size ),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	public static Memory_ReadAddress pollux_readmem[]={
 		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
@@ -125,18 +127,20 @@ public class dooyong
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( pollux_writemem )
-		{ 0x0000, 0xbfff, MWA_ROM },
-		{ 0xc000, 0xcfff, MWA_RAM },
-		{ 0xd000, 0xdfff, MWA_RAM, &spriteram, &spriteram_size },
-		{ 0xe000, 0xefff, MWA_RAM, &lastday_txvideoram },
-		{ 0xf000, 0xf000, lastday_bankswitch_w },
-		{ 0xf008, 0xf008, pollux_ctrl_w },	/* coin counter, flip screen */
-		{ 0xf010, 0xf010, soundlatch_w },
-		{ 0xf018, 0xf01c, MWA_RAM, &lastday_bgscroll },
-		{ 0xf020, 0xf024, MWA_RAM, &lastday_fgscroll },
-		{ 0xf800, 0xffff, paletteram_xRRRRRGGGGGBBBBB_w, &paletteram },
-	MEMORY_END
+	public static Memory_WriteAddress pollux_writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0xbfff, MWA_ROM ),
+		new Memory_WriteAddress( 0xc000, 0xcfff, MWA_RAM ),
+		new Memory_WriteAddress( 0xd000, 0xdfff, MWA_RAM, &spriteram, &spriteram_size ),
+		new Memory_WriteAddress( 0xe000, 0xefff, MWA_RAM, &lastday_txvideoram ),
+		new Memory_WriteAddress( 0xf000, 0xf000, lastday_bankswitch_w ),
+		new Memory_WriteAddress( 0xf008, 0xf008, pollux_ctrl_w ),	/* coin counter, flip screen */
+		new Memory_WriteAddress( 0xf010, 0xf010, soundlatch_w ),
+		new Memory_WriteAddress( 0xf018, 0xf01c, MWA_RAM, &lastday_bgscroll ),
+		new Memory_WriteAddress( 0xf020, 0xf024, MWA_RAM, &lastday_fgscroll ),
+		new Memory_WriteAddress( 0xf800, 0xffff, paletteram_xRRRRRGGGGGBBBBB_w, &paletteram ),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	public static Memory_ReadAddress bluehawk_readmem[]={
 		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
@@ -151,19 +155,21 @@ public class dooyong
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( bluehawk_writemem )
-		{ 0x0000, 0xbfff, MWA_ROM },
-		{ 0xc000, 0xc000, flip_screen_w },
-		{ 0xc008, 0xc008, lastday_bankswitch_w },
-		{ 0xc010, 0xc010, soundlatch_w },
-		{ 0xc018, 0xc01c, MWA_RAM, &bluehawk_fg2scroll },
-		{ 0xc040, 0xc044, MWA_RAM, &lastday_bgscroll },
-		{ 0xc048, 0xc04c, MWA_RAM, &lastday_fgscroll },
-		{ 0xc800, 0xcfff, paletteram_xRRRRRGGGGGBBBBB_w, &paletteram },
-		{ 0xd000, 0xdfff, MWA_RAM, &lastday_txvideoram },
-		{ 0xe000, 0xefff, MWA_RAM, &spriteram, &spriteram_size },
-		{ 0xf000, 0xffff, MWA_RAM },
-	MEMORY_END
+	public static Memory_WriteAddress bluehawk_writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0xbfff, MWA_ROM ),
+		new Memory_WriteAddress( 0xc000, 0xc000, flip_screen_w ),
+		new Memory_WriteAddress( 0xc008, 0xc008, lastday_bankswitch_w ),
+		new Memory_WriteAddress( 0xc010, 0xc010, soundlatch_w ),
+		new Memory_WriteAddress( 0xc018, 0xc01c, MWA_RAM, &bluehawk_fg2scroll ),
+		new Memory_WriteAddress( 0xc040, 0xc044, MWA_RAM, &lastday_bgscroll ),
+		new Memory_WriteAddress( 0xc048, 0xc04c, MWA_RAM, &lastday_fgscroll ),
+		new Memory_WriteAddress( 0xc800, 0xcfff, paletteram_xRRRRRGGGGGBBBBB_w, &paletteram ),
+		new Memory_WriteAddress( 0xd000, 0xdfff, MWA_RAM, &lastday_txvideoram ),
+		new Memory_WriteAddress( 0xe000, 0xefff, MWA_RAM, &spriteram, &spriteram_size ),
+		new Memory_WriteAddress( 0xf000, 0xffff, MWA_RAM ),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	public static Memory_ReadAddress primella_readmem[]={
 		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
@@ -180,17 +186,19 @@ public class dooyong
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( primella_writemem )
-		{ 0x0000, 0xbfff, MWA_ROM },
-		{ 0xc000, 0xcfff, MWA_RAM },
-		{ 0xd000, 0xd3ff, MWA_RAM },	/* what is this? looks like a palette? scratchpad RAM maybe? */
-		{ 0xe000, 0xefff, MWA_RAM, &lastday_txvideoram },
-		{ 0xf000, 0xf7ff, paletteram_xRRRRRGGGGGBBBBB_w, &paletteram },
-		{ 0xf800, 0xf800, primella_ctrl_w },	/* bank switch, flip screen etc */
-		{ 0xf810, 0xf810, soundlatch_w },
-		{ 0xfc00, 0xfc04, MWA_RAM, &lastday_bgscroll },
-		{ 0xfc08, 0xfc0c, MWA_RAM, &lastday_fgscroll },
-	MEMORY_END
+	public static Memory_WriteAddress primella_writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0xbfff, MWA_ROM ),
+		new Memory_WriteAddress( 0xc000, 0xcfff, MWA_RAM ),
+		new Memory_WriteAddress( 0xd000, 0xd3ff, MWA_RAM ),	/* what is this? looks like a palette? scratchpad RAM maybe? */
+		new Memory_WriteAddress( 0xe000, 0xefff, MWA_RAM, &lastday_txvideoram ),
+		new Memory_WriteAddress( 0xf000, 0xf7ff, paletteram_xRRRRRGGGGGBBBBB_w, &paletteram ),
+		new Memory_WriteAddress( 0xf800, 0xf800, primella_ctrl_w ),	/* bank switch, flip screen etc */
+		new Memory_WriteAddress( 0xf810, 0xf810, soundlatch_w ),
+		new Memory_WriteAddress( 0xfc00, 0xfc04, MWA_RAM, &lastday_bgscroll ),
+		new Memory_WriteAddress( 0xfc08, 0xfc0c, MWA_RAM, &lastday_fgscroll ),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_READ16_START( rshark_readmem )
 		{ 0x000000, 0x03ffff, MRA16_ROM },
@@ -228,14 +236,16 @@ public class dooyong
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( lastday_sound_writemem )
-		{ 0x0000, 0x7fff, MWA_ROM },
-		{ 0xc000, 0xc7ff, MWA_RAM },
-		{ 0xf000, 0xf000, YM2203_control_port_0_w },
-		{ 0xf001, 0xf001, YM2203_write_port_0_w },
-		{ 0xf002, 0xf002, YM2203_control_port_1_w },
-		{ 0xf003, 0xf003, YM2203_write_port_1_w },
-	MEMORY_END
+	public static Memory_WriteAddress lastday_sound_writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0x7fff, MWA_ROM ),
+		new Memory_WriteAddress( 0xc000, 0xc7ff, MWA_RAM ),
+		new Memory_WriteAddress( 0xf000, 0xf000, YM2203_control_port_0_w ),
+		new Memory_WriteAddress( 0xf001, 0xf001, YM2203_write_port_0_w ),
+		new Memory_WriteAddress( 0xf002, 0xf002, YM2203_control_port_1_w ),
+		new Memory_WriteAddress( 0xf003, 0xf003, YM2203_write_port_1_w ),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	public static Memory_ReadAddress pollux_sound_readmem[]={
 		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
@@ -249,14 +259,16 @@ public class dooyong
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( pollux_sound_writemem )
-		{ 0x0000, 0xefff, MWA_ROM },
-		{ 0xf000, 0xf7ff, MWA_RAM },
-		{ 0xf802, 0xf802, YM2203_control_port_0_w },
-		{ 0xf803, 0xf803, YM2203_write_port_0_w },
-		{ 0xf804, 0xf804, YM2203_control_port_1_w },
-		{ 0xf805, 0xf805, YM2203_write_port_1_w },
-	MEMORY_END
+	public static Memory_WriteAddress pollux_sound_writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0xefff, MWA_ROM ),
+		new Memory_WriteAddress( 0xf000, 0xf7ff, MWA_RAM ),
+		new Memory_WriteAddress( 0xf802, 0xf802, YM2203_control_port_0_w ),
+		new Memory_WriteAddress( 0xf803, 0xf803, YM2203_write_port_0_w ),
+		new Memory_WriteAddress( 0xf804, 0xf804, YM2203_control_port_1_w ),
+		new Memory_WriteAddress( 0xf805, 0xf805, YM2203_write_port_1_w ),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	public static Memory_ReadAddress bluehawk_sound_readmem[]={
 		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
@@ -268,13 +280,15 @@ public class dooyong
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( bluehawk_sound_writemem )
-		{ 0x0000, 0xefff, MWA_ROM },
-		{ 0xf000, 0xf7ff, MWA_RAM },
-		{ 0xf808, 0xf808, YM2151_register_port_0_w },
-		{ 0xf809, 0xf809, YM2151_data_port_0_w },
-		{ 0xf80a, 0xf80a, OKIM6295_data_0_w },
-	MEMORY_END
+	public static Memory_WriteAddress bluehawk_sound_writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0xefff, MWA_ROM ),
+		new Memory_WriteAddress( 0xf000, 0xf7ff, MWA_RAM ),
+		new Memory_WriteAddress( 0xf808, 0xf808, YM2151_register_port_0_w ),
+		new Memory_WriteAddress( 0xf809, 0xf809, YM2151_data_port_0_w ),
+		new Memory_WriteAddress( 0xf80a, 0xf80a, OKIM6295_data_0_w ),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	
 	

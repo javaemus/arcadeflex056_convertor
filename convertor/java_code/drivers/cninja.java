@@ -451,16 +451,18 @@ public class cninja
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( sound_writemem )
-		{ 0x000000, 0x00ffff, MWA_ROM },
-		{ 0x100000, 0x100001, YM2203_w },
-		{ 0x110000, 0x110001, YM2151_w },
-		{ 0x120000, 0x120001, OKIM6295_data_0_w },
-		{ 0x130000, 0x130001, OKIM6295_data_1_w },
-		{ 0x1f0000, 0x1f1fff, MWA_BANK8 },
-		{ 0x1fec00, 0x1fec01, H6280_timer_w },
-		{ 0x1ff402, 0x1ff403, H6280_irq_status_w },
-	MEMORY_END
+	public static Memory_WriteAddress sound_writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x000000, 0x00ffff, MWA_ROM ),
+		new Memory_WriteAddress( 0x100000, 0x100001, YM2203_w ),
+		new Memory_WriteAddress( 0x110000, 0x110001, YM2151_w ),
+		new Memory_WriteAddress( 0x120000, 0x120001, OKIM6295_data_0_w ),
+		new Memory_WriteAddress( 0x130000, 0x130001, OKIM6295_data_1_w ),
+		new Memory_WriteAddress( 0x1f0000, 0x1f1fff, MWA_BANK8 ),
+		new Memory_WriteAddress( 0x1fec00, 0x1fec01, H6280_timer_w ),
+		new Memory_WriteAddress( 0x1ff402, 0x1ff403, H6280_irq_status_w ),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	public static Memory_ReadAddress stoneage_s_readmem[]={
 		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
@@ -472,13 +474,15 @@ public class cninja
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( stoneage_s_writemem )
-		{ 0x0000, 0x7fff, MWA_ROM },
-		{ 0x8000, 0x87ff, MWA_RAM },
-		{ 0x8800, 0x8800, YM2151_register_port_0_w },
-		{ 0x8801, 0x8801, YM2151_data_port_0_w },
-		{ 0x9800, 0x9800, OKIM6295_data_0_w },
-	MEMORY_END
+	public static Memory_WriteAddress stoneage_s_writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0x7fff, MWA_ROM ),
+		new Memory_WriteAddress( 0x8000, 0x87ff, MWA_RAM ),
+		new Memory_WriteAddress( 0x8800, 0x8800, YM2151_register_port_0_w ),
+		new Memory_WriteAddress( 0x8801, 0x8801, YM2151_data_port_0_w ),
+		new Memory_WriteAddress( 0x9800, 0x9800, OKIM6295_data_0_w ),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	/**********************************************************************************/
 	

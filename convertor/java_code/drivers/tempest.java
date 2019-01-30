@@ -224,23 +224,25 @@ public class tempest
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( writemem )
-		{ 0x0000, 0x07ff, MWA_RAM },
-		{ 0x0800, 0x080f, tempest_colorram_w },
-		{ 0x2000, 0x2fff, MWA_RAM, &vectorram, &vectorram_size },
-		{ 0x3000, 0x3fff, MWA_ROM },
-		{ 0x4000, 0x4000, tempest_coin_w },
-		{ 0x4800, 0x4800, avgdvg_go_w },
-		{ 0x5000, 0x5000, watchdog_reset_w },
-		{ 0x5800, 0x5800, avgdvg_reset_w },
-		{ 0x6000, 0x603f, atari_vg_earom_w },
-		{ 0x6040, 0x6040, atari_vg_earom_ctrl_w },
-		{ 0x6080, 0x609f, mb_go_w },
-		{ 0x60c0, 0x60cf, pokey1_w },
-		{ 0x60d0, 0x60df, pokey2_w },
-		{ 0x60e0, 0x60e0, tempest_led_w },
-		{ 0x9000, 0xdfff, MWA_ROM },
-	MEMORY_END
+	public static Memory_WriteAddress writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0x07ff, MWA_RAM ),
+		new Memory_WriteAddress( 0x0800, 0x080f, tempest_colorram_w ),
+		new Memory_WriteAddress( 0x2000, 0x2fff, MWA_RAM, &vectorram, &vectorram_size ),
+		new Memory_WriteAddress( 0x3000, 0x3fff, MWA_ROM ),
+		new Memory_WriteAddress( 0x4000, 0x4000, tempest_coin_w ),
+		new Memory_WriteAddress( 0x4800, 0x4800, avgdvg_go_w ),
+		new Memory_WriteAddress( 0x5000, 0x5000, watchdog_reset_w ),
+		new Memory_WriteAddress( 0x5800, 0x5800, avgdvg_reset_w ),
+		new Memory_WriteAddress( 0x6000, 0x603f, atari_vg_earom_w ),
+		new Memory_WriteAddress( 0x6040, 0x6040, atari_vg_earom_ctrl_w ),
+		new Memory_WriteAddress( 0x6080, 0x609f, mb_go_w ),
+		new Memory_WriteAddress( 0x60c0, 0x60cf, pokey1_w ),
+		new Memory_WriteAddress( 0x60d0, 0x60df, pokey2_w ),
+		new Memory_WriteAddress( 0x60e0, 0x60e0, tempest_led_w ),
+		new Memory_WriteAddress( 0x9000, 0xdfff, MWA_ROM ),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	INPUT_PORTS_START( tempest )
 		PORT_START	/* IN0 */

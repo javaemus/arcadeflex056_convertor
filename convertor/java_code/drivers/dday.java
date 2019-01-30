@@ -91,32 +91,34 @@ public class dday
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( writemem )
-		{ 0x0000, 0x3fff, MWA_ROM },
-		{ 0x4000, 0x4000, dday_sl_control_w },
-		{ 0x5000, 0x53ff, dday_textvideoram_w, &dday_textvideoram },
-		{ 0x5400, 0x57ff, dday_fgvideoram_w, &dday_fgvideoram },
-		{ 0x5800, 0x5bff, dday_bgvideoram_w, &dday_bgvideoram },
-		{ 0x5c00, 0x5fff, dday_colorram_w, &dday_colorram },
-		{ 0x6000, 0x63ff, MWA_RAM },
-		{ 0x6400, 0x6400, AY8910_control_port_0_w },
-		{ 0x6401, 0x6401, AY8910_write_port_0_w },
-		{ 0x6402, 0x6402, AY8910_control_port_0_w },
-		{ 0x6403, 0x6403, AY8910_write_port_0_w },
-		{ 0x6404, 0x6404, AY8910_control_port_0_w },
-		{ 0x6405, 0x6405, AY8910_write_port_0_w },
-		{ 0x6406, 0x6406, AY8910_control_port_0_w },
-		{ 0x6407, 0x6407, AY8910_write_port_0_w },
-		{ 0x6408, 0x6408, AY8910_control_port_0_w },
-		{ 0x6409, 0x6409, AY8910_write_port_0_w },
-		{ 0x640a, 0x640a, AY8910_control_port_0_w },
-		{ 0x640b, 0x640b, AY8910_write_port_0_w },
-		{ 0x640c, 0x640c, AY8910_control_port_0_w },
-		{ 0x640d, 0x640d, AY8910_write_port_0_w },
-		{ 0x6800, 0x6800, AY8910_control_port_1_w },
-		{ 0x6801, 0x6801, AY8910_write_port_1_w },
-		{ 0x7800, 0x7800, dday_control_w },
-	MEMORY_END
+	public static Memory_WriteAddress writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0x3fff, MWA_ROM ),
+		new Memory_WriteAddress( 0x4000, 0x4000, dday_sl_control_w ),
+		new Memory_WriteAddress( 0x5000, 0x53ff, dday_textvideoram_w, &dday_textvideoram ),
+		new Memory_WriteAddress( 0x5400, 0x57ff, dday_fgvideoram_w, &dday_fgvideoram ),
+		new Memory_WriteAddress( 0x5800, 0x5bff, dday_bgvideoram_w, &dday_bgvideoram ),
+		new Memory_WriteAddress( 0x5c00, 0x5fff, dday_colorram_w, &dday_colorram ),
+		new Memory_WriteAddress( 0x6000, 0x63ff, MWA_RAM ),
+		new Memory_WriteAddress( 0x6400, 0x6400, AY8910_control_port_0_w ),
+		new Memory_WriteAddress( 0x6401, 0x6401, AY8910_write_port_0_w ),
+		new Memory_WriteAddress( 0x6402, 0x6402, AY8910_control_port_0_w ),
+		new Memory_WriteAddress( 0x6403, 0x6403, AY8910_write_port_0_w ),
+		new Memory_WriteAddress( 0x6404, 0x6404, AY8910_control_port_0_w ),
+		new Memory_WriteAddress( 0x6405, 0x6405, AY8910_write_port_0_w ),
+		new Memory_WriteAddress( 0x6406, 0x6406, AY8910_control_port_0_w ),
+		new Memory_WriteAddress( 0x6407, 0x6407, AY8910_write_port_0_w ),
+		new Memory_WriteAddress( 0x6408, 0x6408, AY8910_control_port_0_w ),
+		new Memory_WriteAddress( 0x6409, 0x6409, AY8910_write_port_0_w ),
+		new Memory_WriteAddress( 0x640a, 0x640a, AY8910_control_port_0_w ),
+		new Memory_WriteAddress( 0x640b, 0x640b, AY8910_write_port_0_w ),
+		new Memory_WriteAddress( 0x640c, 0x640c, AY8910_control_port_0_w ),
+		new Memory_WriteAddress( 0x640d, 0x640d, AY8910_write_port_0_w ),
+		new Memory_WriteAddress( 0x6800, 0x6800, AY8910_control_port_1_w ),
+		new Memory_WriteAddress( 0x6801, 0x6801, AY8910_write_port_1_w ),
+		new Memory_WriteAddress( 0x7800, 0x7800, dday_control_w ),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	
 	

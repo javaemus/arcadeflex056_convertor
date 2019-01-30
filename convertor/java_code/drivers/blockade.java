@@ -213,12 +213,14 @@ public class blockade
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( writemem )
-	    { 0x0000, 0x07ff, MWA_ROM },
-	    { 0x4000, 0x47ff, MWA_ROM },  /* same image */
-	    { 0xe000, 0xe3ff, blockade_videoram_w, &videoram, &videoram_size },
-	    { 0xff00, 0xffff, MWA_RAM },
-	MEMORY_END
+	public static Memory_WriteAddress writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+	    new Memory_WriteAddress( 0x0000, 0x07ff, MWA_ROM ),
+	    new Memory_WriteAddress( 0x4000, 0x47ff, MWA_ROM ),  /* same image */
+	    new Memory_WriteAddress( 0xe000, 0xe3ff, blockade_videoram_w, &videoram, &videoram_size ),
+	    new Memory_WriteAddress( 0xff00, 0xffff, MWA_RAM ),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static PORT_READ_START( readport )
 	    { 0x01, 0x01, blockade_input_port_0_r },

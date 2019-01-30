@@ -275,30 +275,32 @@ public class cvs
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( cvs_writemem )
-		{ 0x0000, 0x13ff, MWA_ROM },
-		{ 0x2000, 0x33ff, MWA_ROM },
-		{ 0x4000, 0x53ff, MWA_ROM },
-		{ 0x6000, 0x73ff, MWA_ROM },
-	    { 0x1400, 0x14ff, cvs_bullet_w, &bullet_ram },
-	    { 0x1500, 0x15ff, cvs_2636_3_w, &s2636_3_ram },
-	    { 0x1600, 0x16ff, cvs_2636_2_w, &s2636_2_ram },
-	    { 0x1700, 0x17ff, cvs_2636_1_w, &s2636_1_ram },
-		{ 0x1800, 0x1bff, cvs_videoram_w, &videoram, &videoram_size },
-	    { 0x1c00, 0x1fff, MWA_RAM },
-		{ 0x3400, 0x3fff, cvs_mirror_w },
-		{ 0x5400, 0x5fff, cvs_mirror_w },
-		{ 0x7400, 0x7fff, cvs_mirror_w },
+	public static Memory_WriteAddress cvs_writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0x13ff, MWA_ROM ),
+		new Memory_WriteAddress( 0x2000, 0x33ff, MWA_ROM ),
+		new Memory_WriteAddress( 0x4000, 0x53ff, MWA_ROM ),
+		new Memory_WriteAddress( 0x6000, 0x73ff, MWA_ROM ),
+	    new Memory_WriteAddress( 0x1400, 0x14ff, cvs_bullet_w, &bullet_ram ),
+	    new Memory_WriteAddress( 0x1500, 0x15ff, cvs_2636_3_w, &s2636_3_ram ),
+	    new Memory_WriteAddress( 0x1600, 0x16ff, cvs_2636_2_w, &s2636_2_ram ),
+	    new Memory_WriteAddress( 0x1700, 0x17ff, cvs_2636_1_w, &s2636_1_ram ),
+		new Memory_WriteAddress( 0x1800, 0x1bff, cvs_videoram_w, &videoram, &videoram_size ),
+	    new Memory_WriteAddress( 0x1c00, 0x1fff, MWA_RAM ),
+		new Memory_WriteAddress( 0x3400, 0x3fff, cvs_mirror_w ),
+		new Memory_WriteAddress( 0x5400, 0x5fff, cvs_mirror_w ),
+		new Memory_WriteAddress( 0x7400, 0x7fff, cvs_mirror_w ),
 	
 	    /** Not real addresses, just memory blocks **/
 	
-	    { 0x8000, 0x83ff, MWA_RAM, &character_1_ram },	/* same bitplane */
-	    { 0x8800, 0x8bff, MWA_RAM, &character_2_ram },	/* separation as */
-	    { 0x9000, 0x93ff, MWA_RAM, &character_3_ram },	/* rom character */
-		{ 0x9400, 0x97ff, MWA_RAM, &colorram },
-	    { 0x9800, 0x98ff, MWA_RAM, &paletteram },
-	    { 0x9900, 0x99ff, MWA_RAM, &dirty_character },
-	MEMORY_END
+	    new Memory_WriteAddress( 0x8000, 0x83ff, MWA_RAM, &character_1_ram ),	/* same bitplane */
+	    new Memory_WriteAddress( 0x8800, 0x8bff, MWA_RAM, &character_2_ram ),	/* separation as */
+	    new Memory_WriteAddress( 0x9000, 0x93ff, MWA_RAM, &character_3_ram ),	/* rom character */
+		new Memory_WriteAddress( 0x9400, 0x97ff, MWA_RAM, &colorram ),
+	    new Memory_WriteAddress( 0x9800, 0x98ff, MWA_RAM, &paletteram ),
+	    new Memory_WriteAddress( 0x9900, 0x99ff, MWA_RAM, &dirty_character ),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static PORT_READ_START( cvs_readport )
 		{ 0x000, 0x000, input_port_0_r },
@@ -327,13 +329,15 @@ public class cvs
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( cvs_sound_writemem )
-		{ 0x0000, 0x0fff, MWA_ROM },
-	    { 0x1000, 0x107f, MWA_RAM },
-	    { 0x1840, 0x1840, DAC_0_data_w },
-	    { 0x1880, 0x1883, cvs_DAC2_w },
-	    { 0x1884, 0x1887, MWA_NOP },		/* Not connected to anything */
-	MEMORY_END
+	public static Memory_WriteAddress cvs_sound_writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0x0fff, MWA_ROM ),
+	    new Memory_WriteAddress( 0x1000, 0x107f, MWA_RAM ),
+	    new Memory_WriteAddress( 0x1840, 0x1840, DAC_0_data_w ),
+	    new Memory_WriteAddress( 0x1880, 0x1883, cvs_DAC2_w ),
+	    new Memory_WriteAddress( 0x1884, 0x1887, MWA_NOP ),		/* Not connected to anything */
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static PORT_READ_START( cvs_sound_readport )
 	    { S2650_SENSE_PORT, S2650_SENSE_PORT, CVS_393hz_Clock_r },

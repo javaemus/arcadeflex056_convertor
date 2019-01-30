@@ -82,22 +82,24 @@ public class pengo
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( writemem )
-		{ 0x0000, 0x7fff, MWA_ROM },
-		{ 0x8000, 0x83ff, videoram_w, &videoram, &videoram_size },
-		{ 0x8400, 0x87ff, colorram_w, &colorram },
-		{ 0x8800, 0x8fef, MWA_RAMROM },
-		{ 0x8ff0, 0x8fff, MWA_RAM, &spriteram, &spriteram_size},
-		{ 0x9000, 0x901f, pengo_sound_w, &pengo_soundregs },
-		{ 0x9020, 0x902f, MWA_RAM, &spriteram_2 },
-		{ 0x9040, 0x9040, interrupt_enable_w },
-		{ 0x9041, 0x9041, pengo_sound_enable_w },
-		{ 0x9042, 0x9042, MWA_NOP },
-		{ 0x9043, 0x9043, pengo_flipscreen_w },
-		{ 0x9044, 0x9046, MWA_NOP },
-		{ 0x9047, 0x9047, pengo_gfxbank_w },
-		{ 0x9070, 0x9070, MWA_NOP },
-	MEMORY_END
+	public static Memory_WriteAddress writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0x7fff, MWA_ROM ),
+		new Memory_WriteAddress( 0x8000, 0x83ff, videoram_w, &videoram, &videoram_size ),
+		new Memory_WriteAddress( 0x8400, 0x87ff, colorram_w, &colorram ),
+		new Memory_WriteAddress( 0x8800, 0x8fef, MWA_RAMROM ),
+		new Memory_WriteAddress( 0x8ff0, 0x8fff, MWA_RAM, &spriteram, &spriteram_size),
+		new Memory_WriteAddress( 0x9000, 0x901f, pengo_sound_w, &pengo_soundregs ),
+		new Memory_WriteAddress( 0x9020, 0x902f, MWA_RAM, &spriteram_2 ),
+		new Memory_WriteAddress( 0x9040, 0x9040, interrupt_enable_w ),
+		new Memory_WriteAddress( 0x9041, 0x9041, pengo_sound_enable_w ),
+		new Memory_WriteAddress( 0x9042, 0x9042, MWA_NOP ),
+		new Memory_WriteAddress( 0x9043, 0x9043, pengo_flipscreen_w ),
+		new Memory_WriteAddress( 0x9044, 0x9046, MWA_NOP ),
+		new Memory_WriteAddress( 0x9047, 0x9047, pengo_gfxbank_w ),
+		new Memory_WriteAddress( 0x9070, 0x9070, MWA_NOP ),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	
 	

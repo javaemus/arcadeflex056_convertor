@@ -85,17 +85,19 @@ public class bogeyman
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( bogeyman_writemem )
-		{ 0x0000, 0x17ff, MWA_RAM },
-		{ 0x1800, 0x1fff, MWA_RAM, &videoram, &videoram_size },
-	  	{ 0x2000, 0x21ff, bogeyman_videoram_w, &bogeyman_videoram },
-		{ 0x2800, 0x2bff, MWA_RAM, &spriteram, &spriteram_size },
-		{ 0x3000, 0x300f, bogeyman_paletteram_w, &paletteram },
-		{ 0x3800, 0x3800, bogeyman_8910_control_w },
-		{ 0x3801, 0x3801, bogeyman_8910_latch_w },
-		{ 0x3803, 0x3803, MWA_NOP },	/* ?? */
-		{ 0x4000, 0xffff, MWA_ROM },
-	MEMORY_END
+	public static Memory_WriteAddress bogeyman_writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0x17ff, MWA_RAM ),
+		new Memory_WriteAddress( 0x1800, 0x1fff, MWA_RAM, &videoram, &videoram_size ),
+	  	new Memory_WriteAddress( 0x2000, 0x21ff, bogeyman_videoram_w, &bogeyman_videoram ),
+		new Memory_WriteAddress( 0x2800, 0x2bff, MWA_RAM, &spriteram, &spriteram_size ),
+		new Memory_WriteAddress( 0x3000, 0x300f, bogeyman_paletteram_w, &paletteram ),
+		new Memory_WriteAddress( 0x3800, 0x3800, bogeyman_8910_control_w ),
+		new Memory_WriteAddress( 0x3801, 0x3801, bogeyman_8910_latch_w ),
+		new Memory_WriteAddress( 0x3803, 0x3803, MWA_NOP ),	/* ?? */
+		new Memory_WriteAddress( 0x4000, 0xffff, MWA_ROM ),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	/******************************************************************************/
 	

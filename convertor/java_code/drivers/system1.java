@@ -108,18 +108,20 @@ public class system1
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( writemem )
-		{ 0x0000, 0xbfff, MWA_ROM },
-		{ 0xc000, 0xcfff, MWA_RAMROM },
-		{ 0xd000, 0xd1ff, MWA_RAM, &spriteram, &spriteram_size },
-		{ 0xd800, 0xddff, system1_paletteram_w, &paletteram },
-		{ 0xe000, 0xe7ff, system1_backgroundram_w, &system1_backgroundram, &system1_backgroundram_size },
-		{ 0xe800, 0xeeff, MWA_RAM, &system1_videoram, &system1_videoram_size },
-		{ 0xefbd, 0xefbd, MWA_RAM, &system1_scroll_y },
-		{ 0xeffc, 0xeffd, MWA_RAM, &system1_scroll_x },
-		{ 0xf000, 0xf3ff, system1_background_collisionram_w, &system1_background_collisionram },
-		{ 0xf800, 0xfbff, system1_sprites_collisionram_w, &system1_sprites_collisionram },
-	MEMORY_END
+	public static Memory_WriteAddress writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0xbfff, MWA_ROM ),
+		new Memory_WriteAddress( 0xc000, 0xcfff, MWA_RAMROM ),
+		new Memory_WriteAddress( 0xd000, 0xd1ff, MWA_RAM, &spriteram, &spriteram_size ),
+		new Memory_WriteAddress( 0xd800, 0xddff, system1_paletteram_w, &paletteram ),
+		new Memory_WriteAddress( 0xe000, 0xe7ff, system1_backgroundram_w, &system1_backgroundram, &system1_backgroundram_size ),
+		new Memory_WriteAddress( 0xe800, 0xeeff, MWA_RAM, &system1_videoram, &system1_videoram_size ),
+		new Memory_WriteAddress( 0xefbd, 0xefbd, MWA_RAM, &system1_scroll_y ),
+		new Memory_WriteAddress( 0xeffc, 0xeffd, MWA_RAM, &system1_scroll_x ),
+		new Memory_WriteAddress( 0xf000, 0xf3ff, system1_background_collisionram_w, &system1_background_collisionram ),
+		new Memory_WriteAddress( 0xf800, 0xfbff, system1_sprites_collisionram_w, &system1_sprites_collisionram ),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	public static Memory_ReadAddress brain_readmem[]={
 		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
@@ -141,27 +143,31 @@ public class system1
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( wbml_writemem )
-		{ 0x0000, 0xbfff, MWA_ROM },
-		{ 0xc000, 0xcfff, MWA_RAMROM },
-		{ 0xd000, 0xd1ff, MWA_RAM, &spriteram, &spriteram_size },
-		{ 0xd800, 0xddff, system1_paletteram_w, &paletteram },
-		{ 0xe000, 0xefff, wbml_paged_videoram_w },
-		{ 0xf000, 0xf3ff, system1_background_collisionram_w, &system1_background_collisionram },
-		{ 0xf800, 0xfbff, system1_sprites_collisionram_w, &system1_sprites_collisionram },
-	MEMORY_END
+	public static Memory_WriteAddress wbml_writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0xbfff, MWA_ROM ),
+		new Memory_WriteAddress( 0xc000, 0xcfff, MWA_RAMROM ),
+		new Memory_WriteAddress( 0xd000, 0xd1ff, MWA_RAM, &spriteram, &spriteram_size ),
+		new Memory_WriteAddress( 0xd800, 0xddff, system1_paletteram_w, &paletteram ),
+		new Memory_WriteAddress( 0xe000, 0xefff, wbml_paged_videoram_w ),
+		new Memory_WriteAddress( 0xf000, 0xf3ff, system1_background_collisionram_w, &system1_background_collisionram ),
+		new Memory_WriteAddress( 0xf800, 0xfbff, system1_sprites_collisionram_w, &system1_sprites_collisionram ),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
-	static MEMORY_WRITE_START( chplft_writemem )
-		{ 0x0000, 0xbfff, MWA_ROM },
-		{ 0xc000, 0xcfff, MWA_RAMROM },
-		{ 0xd000, 0xd1ff, MWA_RAM, &spriteram, &spriteram_size },
-		{ 0xd800, 0xddff, system1_paletteram_w, &paletteram },
-		{ 0xe7c0, 0xe7ff, choplifter_scroll_x_w, &system1_scrollx_ram },
-		{ 0xe000, 0xe7ff, MWA_RAM, &system1_videoram, &system1_videoram_size },
-		{ 0xe800, 0xeeff, system1_backgroundram_w, &system1_backgroundram, &system1_backgroundram_size },
-		{ 0xf000, 0xf3ff, system1_background_collisionram_w, &system1_background_collisionram },
-		{ 0xf800, 0xfbff, system1_sprites_collisionram_w, &system1_sprites_collisionram },
-	MEMORY_END
+	public static Memory_WriteAddress chplft_writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0xbfff, MWA_ROM ),
+		new Memory_WriteAddress( 0xc000, 0xcfff, MWA_RAMROM ),
+		new Memory_WriteAddress( 0xd000, 0xd1ff, MWA_RAM, &spriteram, &spriteram_size ),
+		new Memory_WriteAddress( 0xd800, 0xddff, system1_paletteram_w, &paletteram ),
+		new Memory_WriteAddress( 0xe7c0, 0xe7ff, choplifter_scroll_x_w, &system1_scrollx_ram ),
+		new Memory_WriteAddress( 0xe000, 0xe7ff, MWA_RAM, &system1_videoram, &system1_videoram_size ),
+		new Memory_WriteAddress( 0xe800, 0xeeff, system1_backgroundram_w, &system1_backgroundram, &system1_backgroundram_size ),
+		new Memory_WriteAddress( 0xf000, 0xf3ff, system1_background_collisionram_w, &system1_background_collisionram ),
+		new Memory_WriteAddress( 0xf800, 0xfbff, system1_sprites_collisionram_w, &system1_sprites_collisionram ),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static PORT_READ_START( readport )
 		{ 0x00, 0x00, input_port_0_r }, /* joy1 */
@@ -240,13 +246,15 @@ public class system1
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( sound_writemem )
-		{ 0x0000, 0x7fff, MWA_ROM },
-		{ 0x8000, 0x87ff, work_ram_w, &work_ram },
-		{ 0x8800, 0x8fff, work_ram_w },
-		{ 0xa000, 0xa003, SN76496_0_w },    /* Choplifter writes to the four addresses */
-		{ 0xc000, 0xc003, SN76496_1_w },    /* in sequence */
-	MEMORY_END
+	public static Memory_WriteAddress sound_writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0x7fff, MWA_ROM ),
+		new Memory_WriteAddress( 0x8000, 0x87ff, work_ram_w, &work_ram ),
+		new Memory_WriteAddress( 0x8800, 0x8fff, work_ram_w ),
+		new Memory_WriteAddress( 0xa000, 0xa003, SN76496_0_w ),    /* Choplifter writes to the four addresses */
+		new Memory_WriteAddress( 0xc000, 0xc003, SN76496_1_w ),    /* in sequence */
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	
 	#define IN0_PORT \

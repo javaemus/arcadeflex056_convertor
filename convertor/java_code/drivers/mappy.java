@@ -144,29 +144,31 @@ public class mappy
 	
 	
 	/* CPU 1 write addresses */
-	static MEMORY_WRITE_START( writemem_cpu1 )
-		{ 0x1000, 0x177f, MWA_RAM },                                 /* general RAM, area 1 */
-		{ 0x1800, 0x1f7f, MWA_RAM },                                 /* general RAM, area 2 */
-		{ 0x2000, 0x277f, MWA_RAM },                                 /* general RAM, area 3 */
-		{ 0x4040, 0x43ff, MWA_RAM, &mappy_sharedram },               /* shared RAM with the sound CPU */
-		{ 0x4820, 0x4bff, MWA_RAM },                                 /* extra RAM for Dig Dug 2 */
-		{ 0x0000, 0x07ff, mappy_videoram_w, &videoram, &videoram_size },/* video RAM */
-		{ 0x0800, 0x0fff, mappy_colorram_w, &colorram },             /* color RAM */
-		{ 0x1780, 0x17ff, MWA_RAM, &spriteram, &spriteram_size },    /* sprite RAM, area 1 */
-		{ 0x1f80, 0x1fff, MWA_RAM, &spriteram_2 },                   /* sprite RAM, area 2 */
-		{ 0x2780, 0x27ff, MWA_RAM, &spriteram_3 },                   /* sprite RAM, area 3 */
-		{ 0x3800, 0x3fff, mappy_scroll_w },                          /* scroll registers */
-		{ 0x4800, 0x480f, mappy_customio_1_w, &mappy_customio_1 },   /* custom I/O chip #1 interface */
-		{ 0x4810, 0x481f, mappy_customio_2_w, &mappy_customio_2 },   /* custom I/O chip #2 interface */
-		{ 0x5002, 0x5003, mappy_interrupt_enable_1_w },              /* interrupt enable */
-		{ 0x5004, 0x5005, mappy_flipscreen_w },				 /* cocktail flipscreen */
-		{ 0x5008, 0x5008, mappy_reset_2_w },			       /* reset CPU #2 & disable I/O chips */
-		{ 0x5009, 0x5009, mappy_io_chips_enable_w },		       /* enable I/O chips */
-		{ 0x500a, 0x500b, mappy_cpu_enable_w },                      /* sound CPU enable */
-		{ 0x8000, 0x8000, MWA_NOP },                                 /* watchdog timer */
-		{ 0x8000, 0xffff, MWA_ROM },                                 /* ROM code */
+	public static Memory_WriteAddress writemem_cpu1[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x1000, 0x177f, MWA_RAM ),                                 /* general RAM, area 1 */
+		new Memory_WriteAddress( 0x1800, 0x1f7f, MWA_RAM ),                                 /* general RAM, area 2 */
+		new Memory_WriteAddress( 0x2000, 0x277f, MWA_RAM ),                                 /* general RAM, area 3 */
+		new Memory_WriteAddress( 0x4040, 0x43ff, MWA_RAM, &mappy_sharedram ),               /* shared RAM with the sound CPU */
+		new Memory_WriteAddress( 0x4820, 0x4bff, MWA_RAM ),                                 /* extra RAM for Dig Dug 2 */
+		new Memory_WriteAddress( 0x0000, 0x07ff, mappy_videoram_w, &videoram, &videoram_size ),/* video RAM */
+		new Memory_WriteAddress( 0x0800, 0x0fff, mappy_colorram_w, &colorram ),             /* color RAM */
+		new Memory_WriteAddress( 0x1780, 0x17ff, MWA_RAM, &spriteram, &spriteram_size ),    /* sprite RAM, area 1 */
+		new Memory_WriteAddress( 0x1f80, 0x1fff, MWA_RAM, &spriteram_2 ),                   /* sprite RAM, area 2 */
+		new Memory_WriteAddress( 0x2780, 0x27ff, MWA_RAM, &spriteram_3 ),                   /* sprite RAM, area 3 */
+		new Memory_WriteAddress( 0x3800, 0x3fff, mappy_scroll_w ),                          /* scroll registers */
+		new Memory_WriteAddress( 0x4800, 0x480f, mappy_customio_1_w, &mappy_customio_1 ),   /* custom I/O chip #1 interface */
+		new Memory_WriteAddress( 0x4810, 0x481f, mappy_customio_2_w, &mappy_customio_2 ),   /* custom I/O chip #2 interface */
+		new Memory_WriteAddress( 0x5002, 0x5003, mappy_interrupt_enable_1_w ),              /* interrupt enable */
+		new Memory_WriteAddress( 0x5004, 0x5005, mappy_flipscreen_w ),				 /* cocktail flipscreen */
+		new Memory_WriteAddress( 0x5008, 0x5008, mappy_reset_2_w ),			       /* reset CPU #2 & disable I/O chips */
+		new Memory_WriteAddress( 0x5009, 0x5009, mappy_io_chips_enable_w ),		       /* enable I/O chips */
+		new Memory_WriteAddress( 0x500a, 0x500b, mappy_cpu_enable_w ),                      /* sound CPU enable */
+		new Memory_WriteAddress( 0x8000, 0x8000, MWA_NOP ),                                 /* watchdog timer */
+		new Memory_WriteAddress( 0x8000, 0xffff, MWA_ROM ),                                 /* ROM code */
 	
-	MEMORY_END
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	
 	/* CPU 2 read addresses */
@@ -204,14 +206,16 @@ public class mappy
 	
 	
 	/* CPU 2 write addresses */
-	static MEMORY_WRITE_START( writemem_cpu2 )
-		{ 0x0040, 0x03ff, mappy_sharedram_w },                       /* shared RAM with the main CPU */
-		{ 0x0000, 0x003f, mappy_sound_w, &mappy_soundregs },         /* sound control registers */
-		{ 0x2000, 0x2001, mappy_interrupt_enable_2_w },              /* interrupt enable */
-		{ 0x2006, 0x2007, mappy_sound_enable_w },                    /* sound enable */
-		{ 0xe000, 0xffff, MWA_ROM },                                 /* ROM code */
+	public static Memory_WriteAddress writemem_cpu2[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0040, 0x03ff, mappy_sharedram_w ),                       /* shared RAM with the main CPU */
+		new Memory_WriteAddress( 0x0000, 0x003f, mappy_sound_w, &mappy_soundregs ),         /* sound control registers */
+		new Memory_WriteAddress( 0x2000, 0x2001, mappy_interrupt_enable_2_w ),              /* interrupt enable */
+		new Memory_WriteAddress( 0x2006, 0x2007, mappy_sound_enable_w ),                    /* sound enable */
+		new Memory_WriteAddress( 0xe000, 0xffff, MWA_ROM ),                                 /* ROM code */
 	
-	MEMORY_END
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	
 	/* input from the outside world */

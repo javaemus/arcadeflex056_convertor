@@ -165,18 +165,20 @@ public class mainevt
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( writemem )
-		{ 0x1f80, 0x1f80, mainevt_bankswitch_w },
-		{ 0x1f84, 0x1f84, soundlatch_w },				/* probably */
-		{ 0x1f88, 0x1f88, mainevt_sh_irqtrigger_w },	/* probably */
-		{ 0x1f8c, 0x1f8d, MWA_NOP },	/* ??? */
-		{ 0x1f90, 0x1f90, mainevt_coin_w },	/* coin counters + lamps */
+	public static Memory_WriteAddress writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x1f80, 0x1f80, mainevt_bankswitch_w ),
+		new Memory_WriteAddress( 0x1f84, 0x1f84, soundlatch_w ),				/* probably */
+		new Memory_WriteAddress( 0x1f88, 0x1f88, mainevt_sh_irqtrigger_w ),	/* probably */
+		new Memory_WriteAddress( 0x1f8c, 0x1f8d, MWA_NOP ),	/* ??? */
+		new Memory_WriteAddress( 0x1f90, 0x1f90, mainevt_coin_w ),	/* coin counters + lamps */
 	
-		{ 0x0000, 0x3fff, K052109_051960_w },
-		{ 0x4000, 0x5dff, MWA_RAM },
-		{ 0x5e00, 0x5fff, paletteram_xBBBBBGGGGGRRRRR_swap_w, &paletteram },
-	 	{ 0x6000, 0xffff, MWA_ROM },
-	MEMORY_END
+		new Memory_WriteAddress( 0x0000, 0x3fff, K052109_051960_w ),
+		new Memory_WriteAddress( 0x4000, 0x5dff, MWA_RAM ),
+		new Memory_WriteAddress( 0x5e00, 0x5fff, paletteram_xBBBBBGGGGGRRRRR_swap_w, &paletteram ),
+	 	new Memory_WriteAddress( 0x6000, 0xffff, MWA_ROM ),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	
 	public static Memory_ReadAddress dv_readmem[]={
@@ -196,19 +198,21 @@ public class mainevt
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( dv_writemem )
-		{ 0x1f80, 0x1f80, mainevt_bankswitch_w },
-		{ 0x1f84, 0x1f84, soundlatch_w },				/* probably */
-		{ 0x1f88, 0x1f88, mainevt_sh_irqtrigger_w },	/* probably */
-		{ 0x1f90, 0x1f90, mainevt_coin_w },	/* coin counters + lamps */
-		{ 0x1fb2, 0x1fb2, dv_nmienable_w },
-		{ 0x1fa0, 0x1fbf, K051733_w },
+	public static Memory_WriteAddress dv_writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x1f80, 0x1f80, mainevt_bankswitch_w ),
+		new Memory_WriteAddress( 0x1f84, 0x1f84, soundlatch_w ),				/* probably */
+		new Memory_WriteAddress( 0x1f88, 0x1f88, mainevt_sh_irqtrigger_w ),	/* probably */
+		new Memory_WriteAddress( 0x1f90, 0x1f90, mainevt_coin_w ),	/* coin counters + lamps */
+		new Memory_WriteAddress( 0x1fb2, 0x1fb2, dv_nmienable_w ),
+		new Memory_WriteAddress( 0x1fa0, 0x1fbf, K051733_w ),
 	
-		{ 0x0000, 0x3fff, K052109_051960_w },
-		{ 0x4000, 0x5dff, MWA_RAM },
-		{ 0x5e00, 0x5fff, paletteram_xBBBBBGGGGGRRRRR_swap_w, &paletteram },
-		{ 0x6000, 0xffff, MWA_ROM },
-	MEMORY_END
+		new Memory_WriteAddress( 0x0000, 0x3fff, K052109_051960_w ),
+		new Memory_WriteAddress( 0x4000, 0x5dff, MWA_RAM ),
+		new Memory_WriteAddress( 0x5e00, 0x5fff, paletteram_xBBBBBGGGGGRRRRR_swap_w, &paletteram ),
+		new Memory_WriteAddress( 0x6000, 0xffff, MWA_ROM ),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	
 	public static Memory_ReadAddress sound_readmem[]={
@@ -221,14 +225,16 @@ public class mainevt
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( sound_writemem )
-		{ 0x0000, 0x7fff, MWA_ROM },
-		{ 0x8000, 0x83ff, MWA_RAM },
-		{ 0xb000, 0xb00d, K007232_write_port_0_w },
-		{ 0x9000, 0x9000, UPD7759_0_message_w },
-		{ 0xe000, 0xe000, mainevt_sh_irqcontrol_w },
-		{ 0xf000, 0xf000, mainevt_sh_bankswitch_w },
-	MEMORY_END
+	public static Memory_WriteAddress sound_writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0x7fff, MWA_ROM ),
+		new Memory_WriteAddress( 0x8000, 0x83ff, MWA_RAM ),
+		new Memory_WriteAddress( 0xb000, 0xb00d, K007232_write_port_0_w ),
+		new Memory_WriteAddress( 0x9000, 0x9000, UPD7759_0_message_w ),
+		new Memory_WriteAddress( 0xe000, 0xe000, mainevt_sh_irqcontrol_w ),
+		new Memory_WriteAddress( 0xf000, 0xf000, mainevt_sh_bankswitch_w ),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	public static Memory_ReadAddress dv_sound_readmem[]={
 		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
@@ -240,15 +246,17 @@ public class mainevt
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( dv_sound_writemem )
-		{ 0x0000, 0x7fff, MWA_ROM },
-		{ 0x8000, 0x83ff, MWA_RAM },
-		{ 0xb000, 0xb00d, K007232_write_port_0_w },
-		{ 0xc000, 0xc000, YM2151_register_port_0_w },
-		{ 0xc001, 0xc001, YM2151_data_port_0_w },
-		{ 0xe000, 0xe000, devstor_sh_irqcontrol_w },
-		{ 0xf000, 0xf000, dv_sh_bankswitch_w },
-	MEMORY_END
+	public static Memory_WriteAddress dv_sound_writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0x7fff, MWA_ROM ),
+		new Memory_WriteAddress( 0x8000, 0x83ff, MWA_RAM ),
+		new Memory_WriteAddress( 0xb000, 0xb00d, K007232_write_port_0_w ),
+		new Memory_WriteAddress( 0xc000, 0xc000, YM2151_register_port_0_w ),
+		new Memory_WriteAddress( 0xc001, 0xc001, YM2151_data_port_0_w ),
+		new Memory_WriteAddress( 0xe000, 0xe000, devstor_sh_irqcontrol_w ),
+		new Memory_WriteAddress( 0xf000, 0xf000, dv_sh_bankswitch_w ),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	
 	

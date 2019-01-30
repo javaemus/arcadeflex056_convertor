@@ -164,20 +164,22 @@ public class kangaroo
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( writemem )
-		{ 0x0000, 0x5fff, MWA_ROM },
-		{ 0x8000, 0xbfff, kangaroo_videoram_w },
-		{ 0xc000, 0xdfff, MWA_ROM },
-		{ 0xe000, 0xe3ff, MWA_RAM },
-		{ 0xe800, 0xe805, kangaroo_blitter_w, &kangaroo_blitter },
-		{ 0xe806, 0xe807, MWA_RAM, &kangaroo_scroll },
-		{ 0xe808, 0xe808, kangaroo_bank_select_w, &kangaroo_bank_select },
-		{ 0xe809, 0xe809, kangaroo_video_control_w, &kangaroo_video_control },
-		{ 0xe80a, 0xe80a, kangaroo_color_mask_w },
-		{ 0xec00, 0xec00, soundlatch_w },
-		{ 0xed00, 0xed00, kangaroo_coin_counter_w },
-		{ 0xef00, 0xefff, kangaroo_sec_chip_w },
-	MEMORY_END
+	public static Memory_WriteAddress writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0x5fff, MWA_ROM ),
+		new Memory_WriteAddress( 0x8000, 0xbfff, kangaroo_videoram_w ),
+		new Memory_WriteAddress( 0xc000, 0xdfff, MWA_ROM ),
+		new Memory_WriteAddress( 0xe000, 0xe3ff, MWA_RAM ),
+		new Memory_WriteAddress( 0xe800, 0xe805, kangaroo_blitter_w, &kangaroo_blitter ),
+		new Memory_WriteAddress( 0xe806, 0xe807, MWA_RAM, &kangaroo_scroll ),
+		new Memory_WriteAddress( 0xe808, 0xe808, kangaroo_bank_select_w, &kangaroo_bank_select ),
+		new Memory_WriteAddress( 0xe809, 0xe809, kangaroo_video_control_w, &kangaroo_video_control ),
+		new Memory_WriteAddress( 0xe80a, 0xe80a, kangaroo_color_mask_w ),
+		new Memory_WriteAddress( 0xec00, 0xec00, soundlatch_w ),
+		new Memory_WriteAddress( 0xed00, 0xed00, kangaroo_coin_counter_w ),
+		new Memory_WriteAddress( 0xef00, 0xefff, kangaroo_sec_chip_w ),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	public static Memory_ReadAddress sound_readmem[]={
 		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
@@ -187,10 +189,12 @@ public class kangaroo
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( sound_writemem )
-		{ 0x0000, 0x0fff, MWA_ROM },
-		{ 0x4000, 0x43ff, MWA_RAM },
-	MEMORY_END
+	public static Memory_WriteAddress sound_writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0x0fff, MWA_ROM ),
+		new Memory_WriteAddress( 0x4000, 0x43ff, MWA_RAM ),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static PORT_WRITE_START( sound_writeport )
 		{ 0x7000, 0x7000, AY8910_write_port_0_w },

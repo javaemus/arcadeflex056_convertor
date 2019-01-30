@@ -116,14 +116,16 @@ public class lastduel
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( sound_writemem )
-		{ 0x0000, 0xdfff, MWA_ROM },
-		{ 0xe000, 0xe7ff, MWA_RAM },
-		{ 0xe800, 0xe800, YM2203_control_port_0_w },
-		{ 0xe801, 0xe801, YM2203_write_port_0_w },
-		{ 0xf000, 0xf000, YM2203_control_port_1_w },
-		{ 0xf001, 0xf001, YM2203_write_port_1_w },
-	MEMORY_END
+	public static Memory_WriteAddress sound_writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0xdfff, MWA_ROM ),
+		new Memory_WriteAddress( 0xe000, 0xe7ff, MWA_RAM ),
+		new Memory_WriteAddress( 0xe800, 0xe800, YM2203_control_port_0_w ),
+		new Memory_WriteAddress( 0xe801, 0xe801, YM2203_write_port_0_w ),
+		new Memory_WriteAddress( 0xf000, 0xf000, YM2203_control_port_1_w ),
+		new Memory_WriteAddress( 0xf001, 0xf001, YM2203_write_port_1_w ),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static WRITE_HANDLER( mg_bankswitch_w )
 	{
@@ -145,16 +147,18 @@ public class lastduel
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( mg_sound_writemem )
-		{ 0x0000, 0xcfff, MWA_ROM },
-		{ 0xd000, 0xd7ff, MWA_RAM },
-		{ 0xf000, 0xf000, YM2203_control_port_0_w },
-		{ 0xf001, 0xf001, YM2203_write_port_0_w },
-		{ 0xf002, 0xf002, YM2203_control_port_1_w },
-		{ 0xf003, 0xf003, YM2203_write_port_1_w },
-		{ 0xf004, 0xf004, OKIM6295_data_0_w },
-		{ 0xf00a, 0xf00a, mg_bankswitch_w },
-	MEMORY_END
+	public static Memory_WriteAddress mg_sound_writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0xcfff, MWA_ROM ),
+		new Memory_WriteAddress( 0xd000, 0xd7ff, MWA_RAM ),
+		new Memory_WriteAddress( 0xf000, 0xf000, YM2203_control_port_0_w ),
+		new Memory_WriteAddress( 0xf001, 0xf001, YM2203_write_port_0_w ),
+		new Memory_WriteAddress( 0xf002, 0xf002, YM2203_control_port_1_w ),
+		new Memory_WriteAddress( 0xf003, 0xf003, YM2203_write_port_1_w ),
+		new Memory_WriteAddress( 0xf004, 0xf004, OKIM6295_data_0_w ),
+		new Memory_WriteAddress( 0xf00a, 0xf00a, mg_bankswitch_w ),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	/******************************************************************************/
 	

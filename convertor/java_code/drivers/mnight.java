@@ -87,22 +87,24 @@ public class mnight
 	};
 	
 	
-	static MEMORY_WRITE_START( writemem )
-		{ 0x0000, 0xbfff, MWA_ROM },
-		{ 0xc000, 0xd9ff, MWA_RAM },
-		{ 0xda00, 0xdfff, MWA_RAM, &spriteram, &spriteram_size },
-		{ 0xe000, 0xe7ff, mnight_bgvideoram_w, &mnight_background_videoram, &mnight_backgroundram_size }, // VFY
-		{ 0xe800, 0xefff, mnight_fgvideoram_w, &mnight_foreground_videoram, &mnight_foregroundram_size }, //VFY
-		{ 0xf000, 0xf5ff, paletteram_RRRRGGGGBBBBxxxx_swap_w, &paletteram },
-		{ 0xf600, 0xf7ff, MWA_RAM },
-		{ 0xfa00, 0xfa00, soundlatch_w },
-		{ 0xfa01, 0xfa01, MWA_RAM },		   // unknown but used
-		{ 0xfa02, 0xfa02, mnight_bankselect_w },
-		{ 0xfa03, 0xfa03, mnight_sprite_overdraw_w, &mnight_spoverdraw_ram },
-		{ 0xfa08, 0xfa09, MWA_RAM, &mnight_scrollx_ram },
-		{ 0xfa0a, 0xfa0b, MWA_RAM, &mnight_scrolly_ram },
-		{ 0xfa0c, 0xfa0c, mnight_background_enable_w, &mnight_bgenable_ram },
-	MEMORY_END
+	public static Memory_WriteAddress writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0xbfff, MWA_ROM ),
+		new Memory_WriteAddress( 0xc000, 0xd9ff, MWA_RAM ),
+		new Memory_WriteAddress( 0xda00, 0xdfff, MWA_RAM, &spriteram, &spriteram_size ),
+		new Memory_WriteAddress( 0xe000, 0xe7ff, mnight_bgvideoram_w, &mnight_background_videoram, &mnight_backgroundram_size ), // VFY
+		new Memory_WriteAddress( 0xe800, 0xefff, mnight_fgvideoram_w, &mnight_foreground_videoram, &mnight_foregroundram_size ), //VFY
+		new Memory_WriteAddress( 0xf000, 0xf5ff, paletteram_RRRRGGGGBBBBxxxx_swap_w, &paletteram ),
+		new Memory_WriteAddress( 0xf600, 0xf7ff, MWA_RAM ),
+		new Memory_WriteAddress( 0xfa00, 0xfa00, soundlatch_w ),
+		new Memory_WriteAddress( 0xfa01, 0xfa01, MWA_RAM ),		   // unknown but used
+		new Memory_WriteAddress( 0xfa02, 0xfa02, mnight_bankselect_w ),
+		new Memory_WriteAddress( 0xfa03, 0xfa03, mnight_sprite_overdraw_w, &mnight_spoverdraw_ram ),
+		new Memory_WriteAddress( 0xfa08, 0xfa09, MWA_RAM, &mnight_scrollx_ram ),
+		new Memory_WriteAddress( 0xfa0a, 0xfa0b, MWA_RAM, &mnight_scrolly_ram ),
+		new Memory_WriteAddress( 0xfa0c, 0xfa0c, mnight_background_enable_w, &mnight_bgenable_ram ),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	
 	public static Memory_ReadAddress snd_readmem[]={
@@ -115,12 +117,14 @@ public class mnight
 	};
 	
 	
-	static MEMORY_WRITE_START( snd_writemem )
-		{ 0x0000, 0xbfff, MWA_ROM },
-		{ 0xc000, 0xc7ff, MWA_RAM },
-		{ 0xeff5, 0xeff6, MWA_NOP },			   /* SAMPLE FREQUENCY ??? */
-		{ 0xefee, 0xefee, MWA_NOP },			   /* CHIP COMMAND ?? */
-	MEMORY_END
+	public static Memory_WriteAddress snd_writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0xbfff, MWA_ROM ),
+		new Memory_WriteAddress( 0xc000, 0xc7ff, MWA_RAM ),
+		new Memory_WriteAddress( 0xeff5, 0xeff6, MWA_NOP ),			   /* SAMPLE FREQUENCY ??? */
+		new Memory_WriteAddress( 0xefee, 0xefee, MWA_NOP ),			   /* CHIP COMMAND ?? */
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static PORT_WRITE_START( snd_writeport )
 		{ 0x0000, 0x0000, YM2203_control_port_0_w },

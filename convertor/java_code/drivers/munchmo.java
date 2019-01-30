@@ -90,27 +90,29 @@ public class munchmo
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( writemem )
-	 	{ 0x0000, 0x3fff, MWA_ROM },
-		{ 0x8000, 0x83ff, MWA_RAM }, /* working RAM */
-		{ 0xa000, 0xa3ff, MWA_RAM, &mnchmobl_sprite_xpos },
-		{ 0xa400, 0xa7ff, mnchmobl_sprite_xpos_w },
-		{ 0xa800, 0xabff, MWA_RAM, &mnchmobl_sprite_tile },
-		{ 0xac00, 0xafff, mnchmobl_sprite_tile_w },
-		{ 0xb000, 0xb3ff, MWA_RAM, &mnchmobl_sprite_attr },
-		{ 0xb400, 0xb7ff, mnchmobl_sprite_attr_w },
-		{ 0xb800, 0xb9ff, mnchmobl_videoram_w, &videoram },
-		{ 0xba00, 0xbbff, MWA_RAM },
-		{ 0xbc00, 0xbc7f, MWA_RAM, &mnchmobl_status_vram },
-		{ 0xbe00, 0xbe00, mnchmobl_soundlatch_w },
-		{ 0xbe01, 0xbe01, mnchmobl_palette_bank_w },
-		{ 0xbe11, 0xbe11, MWA_RAM }, /* ? */
-		{ 0xbe21, 0xbe21, MWA_RAM }, /* ? */
-		{ 0xbe31, 0xbe31, MWA_RAM }, /* ? */
-		{ 0xbe41, 0xbe41, mnchmobl_flipscreen_w },
-		{ 0xbe61, 0xbe61, mnchmobl_nmi_enable_w }, /* ENI 1-10C */
-		{ 0xbf00, 0xbf07, MWA_RAM, &mnchmobl_vreg }, /* MY0 1-8C */
-	MEMORY_END
+	public static Memory_WriteAddress writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+	 	new Memory_WriteAddress( 0x0000, 0x3fff, MWA_ROM ),
+		new Memory_WriteAddress( 0x8000, 0x83ff, MWA_RAM ), /* working RAM */
+		new Memory_WriteAddress( 0xa000, 0xa3ff, MWA_RAM, &mnchmobl_sprite_xpos ),
+		new Memory_WriteAddress( 0xa400, 0xa7ff, mnchmobl_sprite_xpos_w ),
+		new Memory_WriteAddress( 0xa800, 0xabff, MWA_RAM, &mnchmobl_sprite_tile ),
+		new Memory_WriteAddress( 0xac00, 0xafff, mnchmobl_sprite_tile_w ),
+		new Memory_WriteAddress( 0xb000, 0xb3ff, MWA_RAM, &mnchmobl_sprite_attr ),
+		new Memory_WriteAddress( 0xb400, 0xb7ff, mnchmobl_sprite_attr_w ),
+		new Memory_WriteAddress( 0xb800, 0xb9ff, mnchmobl_videoram_w, &videoram ),
+		new Memory_WriteAddress( 0xba00, 0xbbff, MWA_RAM ),
+		new Memory_WriteAddress( 0xbc00, 0xbc7f, MWA_RAM, &mnchmobl_status_vram ),
+		new Memory_WriteAddress( 0xbe00, 0xbe00, mnchmobl_soundlatch_w ),
+		new Memory_WriteAddress( 0xbe01, 0xbe01, mnchmobl_palette_bank_w ),
+		new Memory_WriteAddress( 0xbe11, 0xbe11, MWA_RAM ), /* ? */
+		new Memory_WriteAddress( 0xbe21, 0xbe21, MWA_RAM ), /* ? */
+		new Memory_WriteAddress( 0xbe31, 0xbe31, MWA_RAM ), /* ? */
+		new Memory_WriteAddress( 0xbe41, 0xbe41, mnchmobl_flipscreen_w ),
+		new Memory_WriteAddress( 0xbe61, 0xbe61, mnchmobl_nmi_enable_w ), /* ENI 1-10C */
+		new Memory_WriteAddress( 0xbf00, 0xbf07, MWA_RAM, &mnchmobl_vreg ), /* MY0 1-8C */
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	public static Memory_ReadAddress readmem_sound[]={
 		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
@@ -119,17 +121,19 @@ public class munchmo
 		new Memory_ReadAddress( 0xe000, 0xe7ff, MRA_RAM ),
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
-	static MEMORY_WRITE_START( writemem_sound )
-		{ 0x0000, 0x1fff, MWA_ROM },
-		{ 0x4000, 0x4000, AY8910_write_port_0_w },
-		{ 0x5000, 0x5000, AY8910_control_port_0_w },
-		{ 0x6000, 0x6000, AY8910_write_port_1_w },
-		{ 0x7000, 0x7000, AY8910_control_port_1_w },
-		{ 0x8000, 0x8000, MWA_NOP }, /* ? */
-		{ 0xa000, 0xa000, MWA_NOP }, /* ? */
-		{ 0xc000, 0xc000, MWA_NOP }, /* ? */
-		{ 0xe000, 0xe7ff, MWA_RAM },
-	MEMORY_END
+	public static Memory_WriteAddress writemem_sound[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0x1fff, MWA_ROM ),
+		new Memory_WriteAddress( 0x4000, 0x4000, AY8910_write_port_0_w ),
+		new Memory_WriteAddress( 0x5000, 0x5000, AY8910_control_port_0_w ),
+		new Memory_WriteAddress( 0x6000, 0x6000, AY8910_write_port_1_w ),
+		new Memory_WriteAddress( 0x7000, 0x7000, AY8910_control_port_1_w ),
+		new Memory_WriteAddress( 0x8000, 0x8000, MWA_NOP ), /* ? */
+		new Memory_WriteAddress( 0xa000, 0xa000, MWA_NOP ), /* ? */
+		new Memory_WriteAddress( 0xc000, 0xc000, MWA_NOP ), /* ? */
+		new Memory_WriteAddress( 0xe000, 0xe7ff, MWA_RAM ),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static struct AY8910interface ay8910_interface =
 	{

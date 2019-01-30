@@ -80,26 +80,28 @@ public class raiders5
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( writemem1 )
-		{ 0x0000, 0x7fff, MWA_ROM },
+	public static Memory_WriteAddress writemem1[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0x7fff, MWA_ROM ),
 	
-		{ 0x8000, 0x87ff, MWA_RAM, &spriteram, &spriteram_size },
-		{ 0x8800, 0x8fff, raiders5_fgram_w, &raiders5_fgram, &raiders5_fgram_size },
-		{ 0x9000, 0x97ff, raiders5_videoram_w, &videoram, &videoram_size },
+		new Memory_WriteAddress( 0x8000, 0x87ff, MWA_RAM, &spriteram, &spriteram_size ),
+		new Memory_WriteAddress( 0x8800, 0x8fff, raiders5_fgram_w, &raiders5_fgram, &raiders5_fgram_size ),
+		new Memory_WriteAddress( 0x9000, 0x97ff, raiders5_videoram_w, &videoram, &videoram_size ),
 	
-		{ 0xa000, 0xa000, raiders5_scroll_x_w },
-		{ 0xa001, 0xa001, raiders5_scroll_y_w },
-		{ 0xa002, 0xa002, raiders5_flipscreen_w },
+		new Memory_WriteAddress( 0xa000, 0xa000, raiders5_scroll_x_w ),
+		new Memory_WriteAddress( 0xa001, 0xa001, raiders5_scroll_y_w ),
+		new Memory_WriteAddress( 0xa002, 0xa002, raiders5_flipscreen_w ),
 	
-		{ 0xc000, 0xc000, AY8910_control_port_0_w },
-		{ 0xc001, 0xc001, AY8910_write_port_0_w },
-		{ 0xc002, 0xc002, AY8910_control_port_1_w },
-		{ 0xc003, 0xc003, AY8910_write_port_1_w },
+		new Memory_WriteAddress( 0xc000, 0xc000, AY8910_control_port_0_w ),
+		new Memory_WriteAddress( 0xc001, 0xc001, AY8910_write_port_0_w ),
+		new Memory_WriteAddress( 0xc002, 0xc002, AY8910_control_port_1_w ),
+		new Memory_WriteAddress( 0xc003, 0xc003, AY8910_write_port_1_w ),
 	
-		{ 0xd000, 0xd1ff, raiders5_paletteram_w, &paletteram },
+		new Memory_WriteAddress( 0xd000, 0xd1ff, raiders5_paletteram_w, &paletteram ),
 	
-		{ 0xe000, 0xe7ff, MWA_RAM, &raiders5_shared_workram },
-	MEMORY_END
+		new Memory_WriteAddress( 0xe000, 0xe7ff, MWA_RAM, &raiders5_shared_workram ),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static PORT_READ_START ( readport1 )
 		{ 0x00, 0x00, IORP_NOP }, /* watchdog? */
@@ -122,20 +124,22 @@ public class raiders5
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( writemem2 )
-		{ 0x0000, 0x3fff, MWA_ROM },
+	public static Memory_WriteAddress writemem2[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0x3fff, MWA_ROM ),
 	
-		{ 0x8000, 0x8000, AY8910_control_port_0_w },
-		{ 0x8001, 0x8001, AY8910_write_port_0_w },
-		{ 0x8002, 0x8002, AY8910_control_port_1_w },
-		{ 0x8003, 0x8003, AY8910_write_port_1_w },
+		new Memory_WriteAddress( 0x8000, 0x8000, AY8910_control_port_0_w ),
+		new Memory_WriteAddress( 0x8001, 0x8001, AY8910_write_port_0_w ),
+		new Memory_WriteAddress( 0x8002, 0x8002, AY8910_control_port_1_w ),
+		new Memory_WriteAddress( 0x8003, 0x8003, AY8910_write_port_1_w ),
 	
-		{ 0xa000, 0xa7ff, raiders5_shared_workram_w },
+		new Memory_WriteAddress( 0xa000, 0xa7ff, raiders5_shared_workram_w ),
 	
-		{ 0xe000, 0xe000, raiders5_scroll_x_w },
-		{ 0xe001, 0xe001, raiders5_scroll_y_w },
-		{ 0xe002, 0xe002, raiders5_flipscreen_w },
-	MEMORY_END
+		new Memory_WriteAddress( 0xe000, 0xe000, raiders5_scroll_x_w ),
+		new Memory_WriteAddress( 0xe001, 0xe001, raiders5_scroll_y_w ),
+		new Memory_WriteAddress( 0xe002, 0xe002, raiders5_flipscreen_w ),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	/****************************************************************************/
 	

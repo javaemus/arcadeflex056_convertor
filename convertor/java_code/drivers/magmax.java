@@ -155,10 +155,12 @@ public class magmax
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( magmax_soundwritemem )
-		{ 0x0000, 0x3fff, MWA_ROM },
-		{ 0x6000, 0x67ff, MWA_RAM },
-	MEMORY_END
+	public static Memory_WriteAddress magmax_soundwritemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0x3fff, MWA_ROM ),
+		new Memory_WriteAddress( 0x6000, 0x67ff, MWA_RAM ),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static PORT_READ_START( magmax_soundreadport )
 		{ 0x06, 0x06, magmax_sound_r },

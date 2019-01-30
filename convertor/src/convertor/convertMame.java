@@ -31,6 +31,7 @@ public class convertMame {
     static final int MARK_DIRTY = 3;
     static final int READ_PIXEL = 4;
     static final int MEMORY_READ8 = 5;
+    static final int MEMORY_WRITE8 = 6;
 
     public static void Convert() {
         Convertor.inpos = 0;//position of pointer inside the buffers
@@ -263,6 +264,18 @@ public class convertMame {
                                 continue;
                             }
                         }
+                        else if (sUtil.getToken("MEMORY_WRITE_START(")) {
+                            sUtil.skipSpace();
+                            Convertor.token[0] = sUtil.parseToken();
+                            sUtil.skipSpace();
+                            if (sUtil.getToken(")")) {
+                                sUtil.putString("public static Memory_WriteAddress " + Convertor.token[0] + "[]={\n\t\tnew Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),");
+                                type = MEMORY_WRITE8;
+                                i3 = 1;
+                                Convertor.inpos += 1;
+                                continue;
+                            }
+                        }
 
                         Convertor.inpos = i;
                         break;
@@ -281,13 +294,22 @@ public class convertMame {
                             continue;
                         }
                     }
+                    if (type == MEMORY_WRITE8) {
+                        i3++;
+                        insideagk[i3] = 0;
+                        if (i3 == 2) {
+                            sUtil.putString("new Memory_WriteAddress(");
+                            Convertor.inpos += 1;
+                            continue;
+                        }
+                    }
                     if (type == PLOT_PIXEL || type == MARK_DIRTY || type == PLOT_BOX || type == READ_PIXEL) {
                         i3++;
                     }
                 }
                 break;
                 case '}': {
-                    if ((type == MEMORY_READ8)) {
+                    if ((type == MEMORY_READ8)|| type == MEMORY_WRITE8) {
                         i3--;
                         if (i3 == 0) {
                             type = -1;
@@ -315,6 +337,12 @@ public class convertMame {
                     }
                     if (type == MEMORY_READ8) {
                         sUtil.putString("\tnew Memory_ReadAddress(MEMPORT_MARKER, 0)\n\t};");
+                        type = -1;
+                        Convertor.inpos += 1;
+                        continue;
+                    }
+                    else if(type == MEMORY_WRITE8) {
+                        sUtil.putString("\tnew Memory_WriteAddress(MEMPORT_MARKER, 0)\n\t};");
                         type = -1;
                         Convertor.inpos += 1;
                         continue;

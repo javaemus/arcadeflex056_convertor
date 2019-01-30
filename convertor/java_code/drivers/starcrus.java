@@ -47,10 +47,12 @@ public class starcrus
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( writemem )
-	    { 0x0000, 0x0fff, MWA_ROM }, /* Program ROM */
-	    { 0x1000, 0x10ff, MWA_RAM }, /* RAM */
-	MEMORY_END
+	public static Memory_WriteAddress writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+	    new Memory_WriteAddress( 0x0000, 0x0fff, MWA_ROM ), /* Program ROM */
+	    new Memory_WriteAddress( 0x1000, 0x10ff, MWA_RAM ), /* RAM */
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static PORT_READ_START( readport )
 	    { 0x00, 0x00, input_port_0_r },

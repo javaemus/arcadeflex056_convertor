@@ -178,14 +178,16 @@ public class mcr1
 	};
 	
 	
-	static MEMORY_WRITE_START( writemem )
-		{ 0x0000, 0x6fff, MWA_ROM },
-		{ 0x7000, 0x77ff, MWA_RAM },
-		{ 0xf000, 0xf1ff, MWA_RAM, &spriteram, &spriteram_size },
-		{ 0xf400, 0xf41f, paletteram_xxxxRRRRBBBBGGGG_split1_w, &paletteram },
-		{ 0xf800, 0xf81f, paletteram_xxxxRRRRBBBBGGGG_split2_w, &paletteram_2 },
-		{ 0xfc00, 0xffff, mcr1_videoram_w, &videoram, &videoram_size },
-	MEMORY_END
+	public static Memory_WriteAddress writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0x6fff, MWA_ROM ),
+		new Memory_WriteAddress( 0x7000, 0x77ff, MWA_RAM ),
+		new Memory_WriteAddress( 0xf000, 0xf1ff, MWA_RAM, &spriteram, &spriteram_size ),
+		new Memory_WriteAddress( 0xf400, 0xf41f, paletteram_xxxxRRRRBBBBGGGG_split1_w, &paletteram ),
+		new Memory_WriteAddress( 0xf800, 0xf81f, paletteram_xxxxRRRRBBBBGGGG_split2_w, &paletteram_2 ),
+		new Memory_WriteAddress( 0xfc00, 0xffff, mcr1_videoram_w, &videoram, &videoram_size ),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	
 	static PORT_READ_START( readport )

@@ -1100,15 +1100,17 @@ public class seta
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( calibr50_sub_writemem )
-		{ 0x0000, 0x0fff, MWA_RAM					},	// RAM
-		{ 0x1000, 0x107f, seta_sound_w				},	// Sound
-		{ 0x1080, 0x1fff, MWA_RAM					},	//
-		{ 0x4000, 0x4000, sub_bankswitch_w			},	// Bankswitching
-		{ 0x8000, 0xbfff, MWA_ROM					},	// Banked ROM
-		{ 0xc000, 0xc000, calibr50_soundlatch2_w	},	// To Main CPU
-		{ 0xc001, 0xffff, MWA_ROM					},	// ROM
-	MEMORY_END
+	public static Memory_WriteAddress calibr50_sub_writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0x0fff, MWA_RAM					),	// RAM
+		new Memory_WriteAddress( 0x1000, 0x107f, seta_sound_w				),	// Sound
+		new Memory_WriteAddress( 0x1080, 0x1fff, MWA_RAM					),	//
+		new Memory_WriteAddress( 0x4000, 0x4000, sub_bankswitch_w			),	// Bankswitching
+		new Memory_WriteAddress( 0x8000, 0xbfff, MWA_ROM					),	// Banked ROM
+		new Memory_WriteAddress( 0xc000, 0xc000, calibr50_soundlatch2_w	),	// To Main CPU
+		new Memory_WriteAddress( 0xc001, 0xffff, MWA_ROM					),	// ROM
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	
 	
@@ -1152,12 +1154,14 @@ public class seta
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( downtown_sub_writemem )
-		{ 0x0000, 0x01ff, MWA_RAM				},	// RAM
-		{ 0x1000, 0x1000, sub_bankswitch_w		},	// ROM Bank + Coin Lockout
-		{ 0x5000, 0x57ff, MWA_RAM, &sharedram	},	// Shared RAM
-		{ 0x7000, 0xffff, MWA_ROM				},	// ROM
-	MEMORY_END
+	public static Memory_WriteAddress downtown_sub_writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0x01ff, MWA_RAM				),	// RAM
+		new Memory_WriteAddress( 0x1000, 0x1000, sub_bankswitch_w		),	// ROM Bank + Coin Lockout
+		new Memory_WriteAddress( 0x5000, 0x57ff, MWA_RAM, &sharedram	),	// Shared RAM
+		new Memory_WriteAddress( 0x7000, 0xffff, MWA_ROM				),	// ROM
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	
 	
@@ -1182,14 +1186,16 @@ public class seta
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( metafox_sub_writemem )
-		{ 0x0000, 0x01ff, MWA_RAM				},	// RAM
-		{ 0x1000, 0x1000, sub_bankswitch_w		},	// ROM Bank + Coin Lockout
-		{ 0x5000, 0x57ff, MWA_RAM, &sharedram	},	// Shared RAM
-		{ 0x7000, 0x7fff, MWA_ROM				},	// ROM
-		{ 0x8000, 0xbfff, MWA_ROM				},	// ROM
-		{ 0xc000, 0xffff, MWA_ROM				},	// ROM
-	MEMORY_END
+	public static Memory_WriteAddress metafox_sub_writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0x01ff, MWA_RAM				),	// RAM
+		new Memory_WriteAddress( 0x1000, 0x1000, sub_bankswitch_w		),	// ROM Bank + Coin Lockout
+		new Memory_WriteAddress( 0x5000, 0x57ff, MWA_RAM, &sharedram	),	// Shared RAM
+		new Memory_WriteAddress( 0x7000, 0x7fff, MWA_ROM				),	// ROM
+		new Memory_WriteAddress( 0x8000, 0xbfff, MWA_ROM				),	// ROM
+		new Memory_WriteAddress( 0xc000, 0xffff, MWA_ROM				),	// ROM
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	
 	/***************************************************************************
@@ -1211,14 +1217,16 @@ public class seta
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( twineagl_sub_writemem )
-		{ 0x0000, 0x01ff, MWA_RAM				},	// RAM
-		{ 0x1000, 0x1000, sub_bankswitch_w		},	// ROM Bank + Coin Lockout
-		{ 0x5000, 0x57ff, MWA_RAM, &sharedram	},	// Shared RAM
-		{ 0x7000, 0x7fff, MWA_ROM				},	// ROM
-		{ 0x8000, 0xbfff, MWA_ROM				},	// ROM
-		{ 0xc000, 0xffff, MWA_ROM				},	// ROM
-	MEMORY_END
+	public static Memory_WriteAddress twineagl_sub_writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0x01ff, MWA_RAM				),	// RAM
+		new Memory_WriteAddress( 0x1000, 0x1000, sub_bankswitch_w		),	// ROM Bank + Coin Lockout
+		new Memory_WriteAddress( 0x5000, 0x57ff, MWA_RAM, &sharedram	),	// Shared RAM
+		new Memory_WriteAddress( 0x7000, 0x7fff, MWA_ROM				),	// ROM
+		new Memory_WriteAddress( 0x8000, 0xbfff, MWA_ROM				),	// ROM
+		new Memory_WriteAddress( 0xc000, 0xffff, MWA_ROM				),	// ROM
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	
 	
@@ -1245,16 +1253,18 @@ public class seta
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( tndrcade_sub_writemem )
-		{ 0x0000, 0x01ff, MWA_RAM					},	// RAM
-		{ 0x1000, 0x1000, sub_bankswitch_w			},	// ROM Bank + Coin Lockout
-		{ 0x2000, 0x2000, YM2203_control_port_0_w	},
-		{ 0x2001, 0x2001, YM2203_write_port_0_w		},
-		{ 0x3000, 0x3000, YM3812_control_port_0_w	},
-		{ 0x3001, 0x3001, YM3812_write_port_0_w		},
-		{ 0x5000, 0x57ff, MWA_RAM, &sharedram		},	// Shared RAM
-		{ 0x6000, 0xffff, MWA_ROM					},	// ROM
-	MEMORY_END
+	public static Memory_WriteAddress tndrcade_sub_writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0x01ff, MWA_RAM					),	// RAM
+		new Memory_WriteAddress( 0x1000, 0x1000, sub_bankswitch_w			),	// ROM Bank + Coin Lockout
+		new Memory_WriteAddress( 0x2000, 0x2000, YM2203_control_port_0_w	),
+		new Memory_WriteAddress( 0x2001, 0x2001, YM2203_write_port_0_w		),
+		new Memory_WriteAddress( 0x3000, 0x3000, YM3812_control_port_0_w	),
+		new Memory_WriteAddress( 0x3001, 0x3001, YM3812_write_port_0_w		),
+		new Memory_WriteAddress( 0x5000, 0x57ff, MWA_RAM, &sharedram		),	// Shared RAM
+		new Memory_WriteAddress( 0x6000, 0xffff, MWA_ROM					),	// ROM
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	
 	

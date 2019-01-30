@@ -163,20 +163,22 @@ public class parodius
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( parodius_writemem )
-		{ 0x0000, 0x07ff, bankedram_w, &ram },
-		{ 0x0800, 0x1fff, MWA_RAM },
-		{ 0x3fa0, 0x3faf, K053244_w },
-		{ 0x3fb0, 0x3fbf, K053251_w },
-		{ 0x3fc0, 0x3fc0, parodius_3fc0_w },
-		{ 0x3fc4, 0x3fc4, parodius_videobank_w },
-		{ 0x3fc8, 0x3fc8, parodius_sh_irqtrigger_w },
-		{ 0x3fcc, 0x3fcd, K053260_0_w },
-		{ 0x2000, 0x27ff, parodius_052109_053245_w },
-		{ 0x2000, 0x5fff, K052109_w },
-		{ 0x6000, 0x9fff, MWA_ROM },					/* banked ROM */
-		{ 0xa000, 0xffff, MWA_ROM },					/* ROM */
-	MEMORY_END
+	public static Memory_WriteAddress parodius_writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0x07ff, bankedram_w, &ram ),
+		new Memory_WriteAddress( 0x0800, 0x1fff, MWA_RAM ),
+		new Memory_WriteAddress( 0x3fa0, 0x3faf, K053244_w ),
+		new Memory_WriteAddress( 0x3fb0, 0x3fbf, K053251_w ),
+		new Memory_WriteAddress( 0x3fc0, 0x3fc0, parodius_3fc0_w ),
+		new Memory_WriteAddress( 0x3fc4, 0x3fc4, parodius_videobank_w ),
+		new Memory_WriteAddress( 0x3fc8, 0x3fc8, parodius_sh_irqtrigger_w ),
+		new Memory_WriteAddress( 0x3fcc, 0x3fcd, K053260_0_w ),
+		new Memory_WriteAddress( 0x2000, 0x27ff, parodius_052109_053245_w ),
+		new Memory_WriteAddress( 0x2000, 0x5fff, K052109_w ),
+		new Memory_WriteAddress( 0x6000, 0x9fff, MWA_ROM ),					/* banked ROM */
+		new Memory_WriteAddress( 0xa000, 0xffff, MWA_ROM ),					/* ROM */
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	public static Memory_ReadAddress parodius_readmem_sound[]={
 		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
@@ -187,14 +189,16 @@ public class parodius
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( parodius_writemem_sound )
-		{ 0x0000, 0xefff, MWA_ROM },
-		{ 0xf000, 0xf7ff, MWA_RAM },
-		{ 0xf800, 0xf800, YM2151_register_port_0_w },
-		{ 0xf801, 0xf801, YM2151_data_port_0_w },
-		{ 0xfa00, 0xfa00, sound_arm_nmi_w },
-		{ 0xfc00, 0xfc2f, K053260_0_w },
-	MEMORY_END
+	public static Memory_WriteAddress parodius_writemem_sound[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0xefff, MWA_ROM ),
+		new Memory_WriteAddress( 0xf000, 0xf7ff, MWA_RAM ),
+		new Memory_WriteAddress( 0xf800, 0xf800, YM2151_register_port_0_w ),
+		new Memory_WriteAddress( 0xf801, 0xf801, YM2151_data_port_0_w ),
+		new Memory_WriteAddress( 0xfa00, 0xfa00, sound_arm_nmi_w ),
+		new Memory_WriteAddress( 0xfc00, 0xfc2f, K053260_0_w ),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	/***************************************************************************
 	

@@ -69,21 +69,23 @@ public class timelimt
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( writemem )
-		{ 0x0000, 0x7fff, MWA_ROM },		/* rom */
-		{ 0x8000, 0x87ff, MWA_RAM },		/* ram */
-		{ 0x8800, 0x8bff, timelimt_videoram_w, &videoram, &videoram_size },	/* video ram */
-		{ 0x9000, 0x97ff, timelimt_bg_videoram_w, &timelimt_bg_videoram, &timelimt_bg_videoram_size },/* background ram */
-		{ 0x9800, 0x98ff, MWA_RAM, &spriteram, &spriteram_size },	/* sprite ram */
-		{ 0xb000, 0xb000, nmi_enable_w },	/* nmi enable */
-		{ 0xb003, 0xb003, sound_reset_w },	/* sound reset ? */
-		{ 0xb800, 0xb800, soundlatch_w }, 	/* sound write */
-		{ 0xc800, 0xc800, timelimt_scroll_x_lsb_w },
-		{ 0xc801, 0xc801, timelimt_scroll_x_msb_w },
-		{ 0xc802, 0xc802, timelimt_scroll_y_w },
-		{ 0xc803, 0xc803, MWA_NOP },		/* ???? bit 0 used only */
-		{ 0xc804, 0xc804, MWA_NOP },		/* ???? not used */
-	MEMORY_END
+	public static Memory_WriteAddress writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0x7fff, MWA_ROM ),		/* rom */
+		new Memory_WriteAddress( 0x8000, 0x87ff, MWA_RAM ),		/* ram */
+		new Memory_WriteAddress( 0x8800, 0x8bff, timelimt_videoram_w, &videoram, &videoram_size ),	/* video ram */
+		new Memory_WriteAddress( 0x9000, 0x97ff, timelimt_bg_videoram_w, &timelimt_bg_videoram, &timelimt_bg_videoram_size ),/* background ram */
+		new Memory_WriteAddress( 0x9800, 0x98ff, MWA_RAM, &spriteram, &spriteram_size ),	/* sprite ram */
+		new Memory_WriteAddress( 0xb000, 0xb000, nmi_enable_w ),	/* nmi enable */
+		new Memory_WriteAddress( 0xb003, 0xb003, sound_reset_w ),	/* sound reset ? */
+		new Memory_WriteAddress( 0xb800, 0xb800, soundlatch_w ), 	/* sound write */
+		new Memory_WriteAddress( 0xc800, 0xc800, timelimt_scroll_x_lsb_w ),
+		new Memory_WriteAddress( 0xc801, 0xc801, timelimt_scroll_x_msb_w ),
+		new Memory_WriteAddress( 0xc802, 0xc802, timelimt_scroll_y_w ),
+		new Memory_WriteAddress( 0xc803, 0xc803, MWA_NOP ),		/* ???? bit 0 used only */
+		new Memory_WriteAddress( 0xc804, 0xc804, MWA_NOP ),		/* ???? not used */
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static PORT_READ_START( readport )
 		{ 0x00, 0x00, watchdog_reset_r },
@@ -96,10 +98,12 @@ public class timelimt
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( writemem_sound )
-		{ 0x0000, 0x1fff, MWA_ROM },	/* rom */
-		{ 0x3800, 0x3bff, MWA_RAM },	/* ram */
-	MEMORY_END
+	public static Memory_WriteAddress writemem_sound[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0x1fff, MWA_ROM ),	/* rom */
+		new Memory_WriteAddress( 0x3800, 0x3bff, MWA_RAM ),	/* ram */
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static PORT_READ_START( readport_sound )
 		{ 0x8c, 0x8d, AY8910_read_port_0_r },

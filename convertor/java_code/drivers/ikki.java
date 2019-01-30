@@ -66,18 +66,20 @@ public class ikki
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( ikki_writemem1 )
-		{ 0x0000, 0x9fff, MWA_ROM },
+	public static Memory_WriteAddress ikki_writemem1[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0x9fff, MWA_ROM ),
 	
-		{ 0xc000, 0xc7ff, MWA_RAM },
-		{ 0xc800, 0xcfff, ikki_sharedram_w },
-		{ 0xd000, 0xd7ff, videoram_w, &videoram, &videoram_size },
+		new Memory_WriteAddress( 0xc000, 0xc7ff, MWA_RAM ),
+		new Memory_WriteAddress( 0xc800, 0xcfff, ikki_sharedram_w ),
+		new Memory_WriteAddress( 0xd000, 0xd7ff, videoram_w, &videoram, &videoram_size ),
 	
-		{ 0xe008, 0xe008, ikki_scrn_ctrl_w },
-		{ 0xe009, 0xe009, MWA_NOP }, /* coin counter? */
-		{ 0xe00a, 0xe00b, ikki_scroll_w },
+		new Memory_WriteAddress( 0xe008, 0xe008, ikki_scrn_ctrl_w ),
+		new Memory_WriteAddress( 0xe009, 0xe009, MWA_NOP ), /* coin counter? */
+		new Memory_WriteAddress( 0xe00a, 0xe00b, ikki_scroll_w ),
 	
-	MEMORY_END
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	public static Memory_ReadAddress ikki_readmem2[]={
 		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
@@ -87,14 +89,16 @@ public class ikki
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( ikki_writemem2 )
-		{ 0x0000, 0x5fff, MWA_ROM },
-		{ 0xc000, 0xc7ff, MWA_RAM, &spriteram, &spriteram_size },
-		{ 0xc800, 0xcfff, MWA_RAM, &ikki_sharedram },
+	public static Memory_WriteAddress ikki_writemem2[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0x5fff, MWA_ROM ),
+		new Memory_WriteAddress( 0xc000, 0xc7ff, MWA_RAM, &spriteram, &spriteram_size ),
+		new Memory_WriteAddress( 0xc800, 0xcfff, MWA_RAM, &ikki_sharedram ),
 	
-		{ 0xd801, 0xd801, SN76496_0_w },
-		{ 0xd802, 0xd802, SN76496_1_w },
-	MEMORY_END
+		new Memory_WriteAddress( 0xd801, 0xd801, SN76496_0_w ),
+		new Memory_WriteAddress( 0xd802, 0xd802, SN76496_1_w ),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	
 	/****************************************************************************/

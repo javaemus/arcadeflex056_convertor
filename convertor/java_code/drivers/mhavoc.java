@@ -240,25 +240,27 @@ public class mhavoc
 	
 	
 	/* Main Board Writemem */
-	static MEMORY_WRITE_START( writemem )
-		{ 0x0000, 0x01ff, MWA_RAM },			/* 0.5K Program Ram */
-		{ 0x0200, 0x07ff, MWA_BANK1 },			/* 3K Paged Program RAM */
-		{ 0x0800, 0x09ff, MWA_RAM },			/* 0.5K Program RAM */
-		{ 0x1200, 0x1200, MWA_NOP },			/* don't care */
-		{ 0x1400, 0x141f, mhavoc_colorram_w },	/* ColorRAM */
-		{ 0x1600, 0x1600, mhavoc_out_0_w },		/* Control Signals */
-		{ 0x1640, 0x1640, avgdvg_go_w },			/* Vector Generator GO */
-		{ 0x1680, 0x1680, MWA_NOP },			/* Watchdog Clear */
-		{ 0x16c0, 0x16c0, avgdvg_reset_w },		/* Vector Generator Reset */
-		{ 0x1700, 0x1700, MWA_NOP },			/* IRQ ack */
-		{ 0x1740, 0x1740, mhavoc_rom_banksel_w },/* Program ROM Page Select */
-		{ 0x1780, 0x1780, mhavoc_ram_banksel_w },/* Program RAM Page Select */
-		{ 0x17c0, 0x17c0, mhavoc_gamma_w },		/* Gamma Communication Write Port */
-		{ 0x1800, 0x1fff, MWA_RAM },			/* Shared Beta Ram */
-		{ 0x2000, 0x3fff, MWA_ROM },			/* Major Havoc writes here.*/
-		{ 0x4000, 0x4fff, MWA_RAM, &vectorram, &vectorram_size },/* Vector Generator RAM	*/
-		{ 0x6000, 0x7fff, MWA_ROM },
-	MEMORY_END
+	public static Memory_WriteAddress writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0x01ff, MWA_RAM ),			/* 0.5K Program Ram */
+		new Memory_WriteAddress( 0x0200, 0x07ff, MWA_BANK1 ),			/* 3K Paged Program RAM */
+		new Memory_WriteAddress( 0x0800, 0x09ff, MWA_RAM ),			/* 0.5K Program RAM */
+		new Memory_WriteAddress( 0x1200, 0x1200, MWA_NOP ),			/* don't care */
+		new Memory_WriteAddress( 0x1400, 0x141f, mhavoc_colorram_w ),	/* ColorRAM */
+		new Memory_WriteAddress( 0x1600, 0x1600, mhavoc_out_0_w ),		/* Control Signals */
+		new Memory_WriteAddress( 0x1640, 0x1640, avgdvg_go_w ),			/* Vector Generator GO */
+		new Memory_WriteAddress( 0x1680, 0x1680, MWA_NOP ),			/* Watchdog Clear */
+		new Memory_WriteAddress( 0x16c0, 0x16c0, avgdvg_reset_w ),		/* Vector Generator Reset */
+		new Memory_WriteAddress( 0x1700, 0x1700, MWA_NOP ),			/* IRQ ack */
+		new Memory_WriteAddress( 0x1740, 0x1740, mhavoc_rom_banksel_w ),/* Program ROM Page Select */
+		new Memory_WriteAddress( 0x1780, 0x1780, mhavoc_ram_banksel_w ),/* Program RAM Page Select */
+		new Memory_WriteAddress( 0x17c0, 0x17c0, mhavoc_gamma_w ),		/* Gamma Communication Write Port */
+		new Memory_WriteAddress( 0x1800, 0x1fff, MWA_RAM ),			/* Shared Beta Ram */
+		new Memory_WriteAddress( 0x2000, 0x3fff, MWA_ROM ),			/* Major Havoc writes here.*/
+		new Memory_WriteAddress( 0x4000, 0x4fff, MWA_RAM, &vectorram, &vectorram_size ),/* Vector Generator RAM	*/
+		new Memory_WriteAddress( 0x6000, 0x7fff, MWA_ROM ),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	
 	/* Gamma board readmem */
@@ -276,15 +278,17 @@ public class mhavoc
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( gamma_writemem )
-		{ 0x0000, 0x07ff, MWA_RAM },			/* Program RAM (2K)	*/
-		{ 0x0800, 0x1fff, mhavoc_gammaram_w, &gammaram },	/* wraps to 0x000-0x7ff */
-		{ 0x2000, 0x203f, quad_pokey_w },		/* Quad Pokey write	*/
-		{ 0x4000, 0x4000, mhavoc_irqack_w },	/* IRQ Acknowledge	*/
-		{ 0x4800, 0x4800, mhavoc_out_1_w },		/* Coin Counters 	*/
-		{ 0x5000, 0x5000, mhavoc_alpha_w },		/* Alpha Comm. Write Port */
-		{ 0x6000, 0x61ff, MWA_RAM, &nvram, &nvram_size },	/* EEROM		*/
-	MEMORY_END
+	public static Memory_WriteAddress gamma_writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0x07ff, MWA_RAM ),			/* Program RAM (2K)	*/
+		new Memory_WriteAddress( 0x0800, 0x1fff, mhavoc_gammaram_w, &gammaram ),	/* wraps to 0x000-0x7ff */
+		new Memory_WriteAddress( 0x2000, 0x203f, quad_pokey_w ),		/* Quad Pokey write	*/
+		new Memory_WriteAddress( 0x4000, 0x4000, mhavoc_irqack_w ),	/* IRQ Acknowledge	*/
+		new Memory_WriteAddress( 0x4800, 0x4800, mhavoc_out_1_w ),		/* Coin Counters 	*/
+		new Memory_WriteAddress( 0x5000, 0x5000, mhavoc_alpha_w ),		/* Alpha Comm. Write Port */
+		new Memory_WriteAddress( 0x6000, 0x61ff, MWA_RAM, &nvram, &nvram_size ),	/* EEROM		*/
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	INPUT_PORTS_START( mhavoc )
 		PORT_START	/* IN0 - alpha (player_1 = 0) */

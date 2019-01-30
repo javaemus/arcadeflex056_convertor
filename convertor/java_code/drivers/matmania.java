@@ -94,22 +94,24 @@ public class matmania
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( matmania_writemem )
-		{ 0x0000, 0x077f, MWA_RAM },
-		{ 0x0780, 0x07df, MWA_RAM, &spriteram, &spriteram_size },
-		{ 0x1000, 0x13ff, MWA_RAM, &matmania_videoram2, &matmania_videoram2_size },
-		{ 0x1400, 0x17ff, MWA_RAM, &matmania_colorram2 },
-		{ 0x2000, 0x21ff, videoram_w, &videoram, &videoram_size },
-		{ 0x2200, 0x23ff, colorram_w, &colorram },
-		{ 0x2400, 0x25ff, matmania_videoram3_w, &matmania_videoram3, &matmania_videoram3_size },
-		{ 0x2600, 0x27ff, matmania_colorram3_w, &matmania_colorram3 },
-		{ 0x3000, 0x3000, MWA_RAM, &matmania_pageselect },
-		{ 0x3010, 0x3010, matmania_sh_command_w },
-		{ 0x3020, 0x3020, MWA_RAM, &matmania_scroll },
-	//	{ 0x3030, 0x3030, MWA_NOP },	/* ?? */
-		{ 0x3050, 0x307f, matmania_paletteram_w, &paletteram },
-		{ 0x4000, 0xffff, MWA_ROM },
-	MEMORY_END
+	public static Memory_WriteAddress matmania_writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0x077f, MWA_RAM ),
+		new Memory_WriteAddress( 0x0780, 0x07df, MWA_RAM, &spriteram, &spriteram_size ),
+		new Memory_WriteAddress( 0x1000, 0x13ff, MWA_RAM, &matmania_videoram2, &matmania_videoram2_size ),
+		new Memory_WriteAddress( 0x1400, 0x17ff, MWA_RAM, &matmania_colorram2 ),
+		new Memory_WriteAddress( 0x2000, 0x21ff, videoram_w, &videoram, &videoram_size ),
+		new Memory_WriteAddress( 0x2200, 0x23ff, colorram_w, &colorram ),
+		new Memory_WriteAddress( 0x2400, 0x25ff, matmania_videoram3_w, &matmania_videoram3, &matmania_videoram3_size ),
+		new Memory_WriteAddress( 0x2600, 0x27ff, matmania_colorram3_w, &matmania_colorram3 ),
+		new Memory_WriteAddress( 0x3000, 0x3000, MWA_RAM, &matmania_pageselect ),
+		new Memory_WriteAddress( 0x3010, 0x3010, matmania_sh_command_w ),
+		new Memory_WriteAddress( 0x3020, 0x3020, MWA_RAM, &matmania_scroll ),
+	//	new Memory_WriteAddress( 0x3030, 0x3030, MWA_NOP ),	/* ?? */
+		new Memory_WriteAddress( 0x3050, 0x307f, matmania_paletteram_w, &paletteram ),
+		new Memory_WriteAddress( 0x4000, 0xffff, MWA_ROM ),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	public static Memory_ReadAddress maniach_readmem[]={
 		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
@@ -126,23 +128,25 @@ public class matmania
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( maniach_writemem )
-		{ 0x0000, 0x077f, MWA_RAM },
-		{ 0x0780, 0x07df, MWA_RAM, &spriteram, &spriteram_size },
-		{ 0x1000, 0x13ff, MWA_RAM, &matmania_videoram2, &matmania_videoram2_size },
-		{ 0x1400, 0x17ff, MWA_RAM, &matmania_colorram2 },
-		{ 0x2000, 0x21ff, videoram_w, &videoram, &videoram_size },
-		{ 0x2200, 0x23ff, colorram_w, &colorram },
-		{ 0x2400, 0x25ff, matmania_videoram3_w, &matmania_videoram3, &matmania_videoram3_size },
-		{ 0x2600, 0x27ff, matmania_colorram3_w, &matmania_colorram3 },
-		{ 0x3000, 0x3000, MWA_RAM, &matmania_pageselect },
-		{ 0x3010, 0x3010, maniach_sh_command_w },
-		{ 0x3020, 0x3020, MWA_RAM, &matmania_scroll },
-		{ 0x3030, 0x3030, MWA_NOP },	/* ?? */
-		{ 0x3040, 0x3040, maniach_mcu_w },
-		{ 0x3050, 0x307f, matmania_paletteram_w, &paletteram },
-		{ 0x4000, 0xffff, MWA_ROM },
-	MEMORY_END
+	public static Memory_WriteAddress maniach_writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0x077f, MWA_RAM ),
+		new Memory_WriteAddress( 0x0780, 0x07df, MWA_RAM, &spriteram, &spriteram_size ),
+		new Memory_WriteAddress( 0x1000, 0x13ff, MWA_RAM, &matmania_videoram2, &matmania_videoram2_size ),
+		new Memory_WriteAddress( 0x1400, 0x17ff, MWA_RAM, &matmania_colorram2 ),
+		new Memory_WriteAddress( 0x2000, 0x21ff, videoram_w, &videoram, &videoram_size ),
+		new Memory_WriteAddress( 0x2200, 0x23ff, colorram_w, &colorram ),
+		new Memory_WriteAddress( 0x2400, 0x25ff, matmania_videoram3_w, &matmania_videoram3, &matmania_videoram3_size ),
+		new Memory_WriteAddress( 0x2600, 0x27ff, matmania_colorram3_w, &matmania_colorram3 ),
+		new Memory_WriteAddress( 0x3000, 0x3000, MWA_RAM, &matmania_pageselect ),
+		new Memory_WriteAddress( 0x3010, 0x3010, maniach_sh_command_w ),
+		new Memory_WriteAddress( 0x3020, 0x3020, MWA_RAM, &matmania_scroll ),
+		new Memory_WriteAddress( 0x3030, 0x3030, MWA_NOP ),	/* ?? */
+		new Memory_WriteAddress( 0x3040, 0x3040, maniach_mcu_w ),
+		new Memory_WriteAddress( 0x3050, 0x307f, matmania_paletteram_w, &paletteram ),
+		new Memory_WriteAddress( 0x4000, 0xffff, MWA_ROM ),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	public static Memory_ReadAddress sound_readmem[]={
 		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
@@ -152,15 +156,17 @@ public class matmania
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( sound_writemem )
-		{ 0x0000, 0x01ff, MWA_RAM },
-		{ 0x2000, 0x2000, AY8910_write_port_0_w },
-		{ 0x2001, 0x2001, AY8910_control_port_0_w },
-		{ 0x2002, 0x2002, AY8910_write_port_1_w },
-		{ 0x2003, 0x2003, AY8910_control_port_1_w },
-		{ 0x2004, 0x2004, matmania_dac_w },
-		{ 0x8000, 0xffff, MWA_ROM },
-	MEMORY_END
+	public static Memory_WriteAddress sound_writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0x01ff, MWA_RAM ),
+		new Memory_WriteAddress( 0x2000, 0x2000, AY8910_write_port_0_w ),
+		new Memory_WriteAddress( 0x2001, 0x2001, AY8910_control_port_0_w ),
+		new Memory_WriteAddress( 0x2002, 0x2002, AY8910_write_port_1_w ),
+		new Memory_WriteAddress( 0x2003, 0x2003, AY8910_control_port_1_w ),
+		new Memory_WriteAddress( 0x2004, 0x2004, matmania_dac_w ),
+		new Memory_WriteAddress( 0x8000, 0xffff, MWA_ROM ),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	public static Memory_ReadAddress maniach_sound_readmem[]={
 		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
@@ -170,13 +176,15 @@ public class matmania
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( maniach_sound_writemem )
-		{ 0x0000, 0x0fff, MWA_RAM },
-		{ 0x2000, 0x2000, YM3526_control_port_0_w },
-		{ 0x2001, 0x2001, YM3526_write_port_0_w },
-		{ 0x2002, 0x2002, matmania_dac_w },
-		{ 0x4000, 0xffff, MWA_ROM },
-	MEMORY_END
+	public static Memory_WriteAddress maniach_sound_writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0x0fff, MWA_RAM ),
+		new Memory_WriteAddress( 0x2000, 0x2000, YM3526_control_port_0_w ),
+		new Memory_WriteAddress( 0x2001, 0x2001, YM3526_write_port_0_w ),
+		new Memory_WriteAddress( 0x2002, 0x2002, matmania_dac_w ),
+		new Memory_WriteAddress( 0x4000, 0xffff, MWA_ROM ),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	public static Memory_ReadAddress mcu_readmem[]={
 		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
@@ -188,16 +196,18 @@ public class matmania
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( mcu_writemem )
-		{ 0x0000, 0x0000, maniach_68705_portA_w },
-		{ 0x0001, 0x0001, maniach_68705_portB_w },
-		{ 0x0002, 0x0002, maniach_68705_portC_w },
-		{ 0x0004, 0x0004, maniach_68705_ddrA_w },
-		{ 0x0005, 0x0005, maniach_68705_ddrB_w },
-		{ 0x0006, 0x0006, maniach_68705_ddrC_w },
-		{ 0x0010, 0x007f, MWA_RAM },
-		{ 0x0080, 0x07ff, MWA_ROM },
-	MEMORY_END
+	public static Memory_WriteAddress mcu_writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0x0000, maniach_68705_portA_w ),
+		new Memory_WriteAddress( 0x0001, 0x0001, maniach_68705_portB_w ),
+		new Memory_WriteAddress( 0x0002, 0x0002, maniach_68705_portC_w ),
+		new Memory_WriteAddress( 0x0004, 0x0004, maniach_68705_ddrA_w ),
+		new Memory_WriteAddress( 0x0005, 0x0005, maniach_68705_ddrB_w ),
+		new Memory_WriteAddress( 0x0006, 0x0006, maniach_68705_ddrC_w ),
+		new Memory_WriteAddress( 0x0010, 0x007f, MWA_RAM ),
+		new Memory_WriteAddress( 0x0080, 0x07ff, MWA_ROM ),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	
 	

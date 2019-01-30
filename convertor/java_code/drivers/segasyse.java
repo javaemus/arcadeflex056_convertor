@@ -223,11 +223,13 @@ public class segasyse
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( segae_writemem )
-		{ 0x0000, 0x7fff, MWA_ROM },				/* Fixed ROM */
-		{ 0x8000, 0xbfff, segae_mem_8000_w },		/* Banked VRAM */
-		{ 0xc000, 0xffff, MWA_RAM },				/* Main RAM */
-	MEMORY_END
+	public static Memory_WriteAddress segae_writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0x7fff, MWA_ROM ),				/* Fixed ROM */
+		new Memory_WriteAddress( 0x8000, 0xbfff, segae_mem_8000_w ),		/* Banked VRAM */
+		new Memory_WriteAddress( 0xc000, 0xffff, MWA_RAM ),				/* Main RAM */
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	/*-- Ports --*/
 	

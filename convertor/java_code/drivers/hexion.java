@@ -70,21 +70,23 @@ public class hexion
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( writemem )
-		{ 0x0000, 0x7fff, MWA_ROM },
-		{ 0xa000, 0xbfff, MWA_RAM },
-		{ 0xc000, 0xdffe, hexion_bankedram_w },
-		{ 0xdfff, 0xdfff, hexion_bankctrl_w },
-		{ 0xe800, 0xe87f, K051649_waveform_w },
-		{ 0xe880, 0xe889, K051649_frequency_w },
-		{ 0xe88a, 0xe88e, K051649_volume_w },
-		{ 0xe88f, 0xe88f, K051649_keyonoff_w },
-		{ 0xf000, 0xf00f, MWA_NOP },	/* 053252? f00e = IRQ ack, f00f = NMI ack */
-		{ 0xf200, 0xf200, OKIM6295_data_0_w },
-		{ 0xf480, 0xf480, hexion_bankswitch_w },
-		{ 0xf4c0, 0xf4c0, coincntr_w },
-		{ 0xf500, 0xf500, hexion_gfxrom_select_w },
-	MEMORY_END
+	public static Memory_WriteAddress writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0x7fff, MWA_ROM ),
+		new Memory_WriteAddress( 0xa000, 0xbfff, MWA_RAM ),
+		new Memory_WriteAddress( 0xc000, 0xdffe, hexion_bankedram_w ),
+		new Memory_WriteAddress( 0xdfff, 0xdfff, hexion_bankctrl_w ),
+		new Memory_WriteAddress( 0xe800, 0xe87f, K051649_waveform_w ),
+		new Memory_WriteAddress( 0xe880, 0xe889, K051649_frequency_w ),
+		new Memory_WriteAddress( 0xe88a, 0xe88e, K051649_volume_w ),
+		new Memory_WriteAddress( 0xe88f, 0xe88f, K051649_keyonoff_w ),
+		new Memory_WriteAddress( 0xf000, 0xf00f, MWA_NOP ),	/* 053252? f00e = IRQ ack, f00f = NMI ack */
+		new Memory_WriteAddress( 0xf200, 0xf200, OKIM6295_data_0_w ),
+		new Memory_WriteAddress( 0xf480, 0xf480, hexion_bankswitch_w ),
+		new Memory_WriteAddress( 0xf4c0, 0xf4c0, coincntr_w ),
+		new Memory_WriteAddress( 0xf500, 0xf500, hexion_gfxrom_select_w ),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	
 	

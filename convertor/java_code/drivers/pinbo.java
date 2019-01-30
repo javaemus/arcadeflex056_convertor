@@ -150,17 +150,19 @@ public class pinbo
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( writemem )
-		{ 0x0000, 0x03ff, MWA_RAM },
-		{ 0x0400, 0x07ff, videoram_w, &videoram, &videoram_size },
-		{ 0x0800, 0x0bff, colorram_w, &colorram },
-		{ 0x0c00, 0x0c3f, MWA_RAM },	/* could be scroll RAM */
-		{ 0x1000, 0x10ff, MWA_RAM, &spriteram, &spriteram_size },
-		{ 0x1800, 0x1800, pinbo_sound_command_w },
-		{ 0x2000, 0x3fff, MWA_ROM },
-		{ 0x6000, 0xbfff, MWA_ROM },
-		{ 0xe000, 0xffff, MWA_ROM },
-	MEMORY_END
+	public static Memory_WriteAddress writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0x03ff, MWA_RAM ),
+		new Memory_WriteAddress( 0x0400, 0x07ff, videoram_w, &videoram, &videoram_size ),
+		new Memory_WriteAddress( 0x0800, 0x0bff, colorram_w, &colorram ),
+		new Memory_WriteAddress( 0x0c00, 0x0c3f, MWA_RAM ),	/* could be scroll RAM */
+		new Memory_WriteAddress( 0x1000, 0x10ff, MWA_RAM, &spriteram, &spriteram_size ),
+		new Memory_WriteAddress( 0x1800, 0x1800, pinbo_sound_command_w ),
+		new Memory_WriteAddress( 0x2000, 0x3fff, MWA_ROM ),
+		new Memory_WriteAddress( 0x6000, 0xbfff, MWA_ROM ),
+		new Memory_WriteAddress( 0xe000, 0xffff, MWA_ROM ),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	public static Memory_ReadAddress sound_readmem[]={
 		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
@@ -169,10 +171,12 @@ public class pinbo
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( sound_writemem )
-		{ 0x0000, 0x1fff, MWA_ROM },
-		{ 0xf000, 0xffff, MWA_RAM },
-	MEMORY_END
+	public static Memory_WriteAddress sound_writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0x1fff, MWA_ROM ),
+		new Memory_WriteAddress( 0xf000, 0xffff, MWA_RAM ),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static PORT_READ_START( sound_readport )
 		{ 0x02, 0x02, AY8910_read_port_0_r },

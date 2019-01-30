@@ -185,22 +185,24 @@ public class ddragon
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( writemem )
-		{ 0x0000, 0x0fff, MWA_RAM },
-		{ 0x1000, 0x11ff, paletteram_xxxxBBBBGGGGRRRR_split1_w, &paletteram },
-		{ 0x1200, 0x13ff, paletteram_xxxxBBBBGGGGRRRR_split2_w, &paletteram_2 },
-		{ 0x1400, 0x17ff, MWA_RAM },
-		{ 0x1800, 0x1fff, ddragon_fgvideoram_w, &ddragon_fgvideoram },
-		{ 0x2000, 0x2fff, ddragon_spriteram_w, &ddragon_spriteram },
-		{ 0x3000, 0x37ff, ddragon_bgvideoram_w, &ddragon_bgvideoram },
-		{ 0x3808, 0x3808, ddragon_bankswitch_w },
-		{ 0x3809, 0x3809, MWA_RAM, &ddragon_scrollx_lo },
-		{ 0x380a, 0x380a, MWA_RAM, &ddragon_scrolly_lo },
-		{ 0x380b, 0x380d, MWA_RAM },	/* ??? */
-		{ 0x380e, 0x380e, cpu_sound_command_w },
-		{ 0x380f, 0x380f, ddragon_forcedIRQ_w },
-		{ 0x4000, 0xffff, MWA_ROM },
-	MEMORY_END
+	public static Memory_WriteAddress writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0x0fff, MWA_RAM ),
+		new Memory_WriteAddress( 0x1000, 0x11ff, paletteram_xxxxBBBBGGGGRRRR_split1_w, &paletteram ),
+		new Memory_WriteAddress( 0x1200, 0x13ff, paletteram_xxxxBBBBGGGGRRRR_split2_w, &paletteram_2 ),
+		new Memory_WriteAddress( 0x1400, 0x17ff, MWA_RAM ),
+		new Memory_WriteAddress( 0x1800, 0x1fff, ddragon_fgvideoram_w, &ddragon_fgvideoram ),
+		new Memory_WriteAddress( 0x2000, 0x2fff, ddragon_spriteram_w, &ddragon_spriteram ),
+		new Memory_WriteAddress( 0x3000, 0x37ff, ddragon_bgvideoram_w, &ddragon_bgvideoram ),
+		new Memory_WriteAddress( 0x3808, 0x3808, ddragon_bankswitch_w ),
+		new Memory_WriteAddress( 0x3809, 0x3809, MWA_RAM, &ddragon_scrollx_lo ),
+		new Memory_WriteAddress( 0x380a, 0x380a, MWA_RAM, &ddragon_scrolly_lo ),
+		new Memory_WriteAddress( 0x380b, 0x380d, MWA_RAM ),	/* ??? */
+		new Memory_WriteAddress( 0x380e, 0x380e, cpu_sound_command_w ),
+		new Memory_WriteAddress( 0x380f, 0x380f, ddragon_forcedIRQ_w ),
+		new Memory_WriteAddress( 0x4000, 0xffff, MWA_ROM ),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	public static Memory_ReadAddress dd2_readmem[]={
 		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
@@ -218,21 +220,23 @@ public class ddragon
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( dd2_writemem )
-		{ 0x0000, 0x17ff, MWA_RAM },
-		{ 0x1800, 0x1fff, ddragon_fgvideoram_w, &ddragon_fgvideoram },
-		{ 0x2000, 0x2fff, ddragon_spriteram_w, &ddragon_spriteram },
-		{ 0x3000, 0x37ff, ddragon_bgvideoram_w, &ddragon_bgvideoram },
-		{ 0x3808, 0x3808, ddragon_bankswitch_w },
-		{ 0x3809, 0x3809, MWA_RAM, &ddragon_scrollx_lo },
-		{ 0x380a, 0x380a, MWA_RAM, &ddragon_scrolly_lo },
-		{ 0x380b, 0x380d, MWA_RAM },	/* ??? */
-		{ 0x380e, 0x380e, cpu_sound_command_w },
-		{ 0x380f, 0x380f, ddragon_forcedIRQ_w },
-		{ 0x3c00, 0x3dff, paletteram_xxxxBBBBGGGGRRRR_split1_w, &paletteram },
-		{ 0x3e00, 0x3fff, paletteram_xxxxBBBBGGGGRRRR_split2_w, &paletteram_2 },
-		{ 0x4000, 0xffff, MWA_ROM },
-	MEMORY_END
+	public static Memory_WriteAddress dd2_writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0x17ff, MWA_RAM ),
+		new Memory_WriteAddress( 0x1800, 0x1fff, ddragon_fgvideoram_w, &ddragon_fgvideoram ),
+		new Memory_WriteAddress( 0x2000, 0x2fff, ddragon_spriteram_w, &ddragon_spriteram ),
+		new Memory_WriteAddress( 0x3000, 0x37ff, ddragon_bgvideoram_w, &ddragon_bgvideoram ),
+		new Memory_WriteAddress( 0x3808, 0x3808, ddragon_bankswitch_w ),
+		new Memory_WriteAddress( 0x3809, 0x3809, MWA_RAM, &ddragon_scrollx_lo ),
+		new Memory_WriteAddress( 0x380a, 0x380a, MWA_RAM, &ddragon_scrolly_lo ),
+		new Memory_WriteAddress( 0x380b, 0x380d, MWA_RAM ),	/* ??? */
+		new Memory_WriteAddress( 0x380e, 0x380e, cpu_sound_command_w ),
+		new Memory_WriteAddress( 0x380f, 0x380f, ddragon_forcedIRQ_w ),
+		new Memory_WriteAddress( 0x3c00, 0x3dff, paletteram_xxxxBBBBGGGGRRRR_split1_w, &paletteram ),
+		new Memory_WriteAddress( 0x3e00, 0x3fff, paletteram_xxxxBBBBGGGGRRRR_split2_w, &paletteram_2 ),
+		new Memory_WriteAddress( 0x4000, 0xffff, MWA_ROM ),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	public static Memory_ReadAddress sub_readmem[]={
 		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
@@ -242,11 +246,13 @@ public class ddragon
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( sub_writemem )
-		{ 0x0000, 0x0fff, MWA_RAM },
-		{ 0x8000, 0x8fff, ddragon_spriteram_w },
-		{ 0xc000, 0xffff, MWA_ROM },
-	MEMORY_END
+	public static Memory_WriteAddress sub_writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0x0fff, MWA_RAM ),
+		new Memory_WriteAddress( 0x8000, 0x8fff, ddragon_spriteram_w ),
+		new Memory_WriteAddress( 0xc000, 0xffff, MWA_ROM ),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	public static Memory_ReadAddress sound_readmem[]={
 		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
@@ -258,13 +264,15 @@ public class ddragon
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( sound_writemem )
-		{ 0x0000, 0x0fff, MWA_RAM },
-		{ 0x2800, 0x2800, YM2151_register_port_0_w },
-		{ 0x2801, 0x2801, YM2151_data_port_0_w },
-		{ 0x3800, 0x3807, dd_adpcm_w },
-		{ 0x8000, 0xffff, MWA_ROM },
-	MEMORY_END
+	public static Memory_WriteAddress sound_writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0x0fff, MWA_RAM ),
+		new Memory_WriteAddress( 0x2800, 0x2800, YM2151_register_port_0_w ),
+		new Memory_WriteAddress( 0x2801, 0x2801, YM2151_data_port_0_w ),
+		new Memory_WriteAddress( 0x3800, 0x3807, dd_adpcm_w ),
+		new Memory_WriteAddress( 0x8000, 0xffff, MWA_ROM ),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	public static Memory_ReadAddress dd2_sub_readmem[]={
 		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
@@ -274,11 +282,13 @@ public class ddragon
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( dd2_sub_writemem )
-		{ 0x0000, 0xbfff, MWA_ROM },
-		{ 0xc000, 0xcfff, ddragon_spriteram_w },
-		{ 0xd000, 0xffff, MWA_RAM },
-	MEMORY_END
+	public static Memory_WriteAddress dd2_sub_writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0xbfff, MWA_ROM ),
+		new Memory_WriteAddress( 0xc000, 0xcfff, ddragon_spriteram_w ),
+		new Memory_WriteAddress( 0xd000, 0xffff, MWA_RAM ),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	public static Memory_ReadAddress dd2_sound_readmem[]={
 		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
@@ -290,13 +300,15 @@ public class ddragon
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( dd2_sound_writemem )
-		{ 0x0000, 0x7fff, MWA_ROM },
-		{ 0x8000, 0x87ff, MWA_RAM },
-		{ 0x8800, 0x8800, YM2151_register_port_0_w },
-		{ 0x8801, 0x8801, YM2151_data_port_0_w },
-		{ 0x9800, 0x9800, OKIM6295_data_0_w },
-	MEMORY_END
+	public static Memory_WriteAddress dd2_sound_writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0x7fff, MWA_ROM ),
+		new Memory_WriteAddress( 0x8000, 0x87ff, MWA_RAM ),
+		new Memory_WriteAddress( 0x8800, 0x8800, YM2151_register_port_0_w ),
+		new Memory_WriteAddress( 0x8801, 0x8801, YM2151_data_port_0_w ),
+		new Memory_WriteAddress( 0x9800, 0x9800, OKIM6295_data_0_w ),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	
 	

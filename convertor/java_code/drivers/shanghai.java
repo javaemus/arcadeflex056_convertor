@@ -782,10 +782,12 @@ public class shanghai
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( writemem )
-		{ 0x00000, 0x03fff, MWA_RAM },
-		{ 0x80000, 0xfffff, MWA_ROM },
-	MEMORY_END
+	public static Memory_WriteAddress writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x00000, 0x03fff, MWA_RAM ),
+		new Memory_WriteAddress( 0x80000, 0xfffff, MWA_ROM ),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static PORT_READ_START( readport )
 		{ 0x00, 0x01, HD63484_status_r },
@@ -813,11 +815,13 @@ public class shanghai
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( shangha2_writemem )
-		{ 0x00000, 0x03fff, MWA_RAM },
-		{ 0x04000, 0x041ff, paletteram_xxxxBBBBGGGGRRRR_w, &paletteram },
-		{ 0x80000, 0xfffff, MWA_ROM },
-	MEMORY_END
+	public static Memory_WriteAddress shangha2_writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x00000, 0x03fff, MWA_RAM ),
+		new Memory_WriteAddress( 0x04000, 0x041ff, paletteram_xxxxBBBBGGGGRRRR_w, &paletteram ),
+		new Memory_WriteAddress( 0x80000, 0xfffff, MWA_ROM ),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static PORT_READ_START( shangha2_readport )
 		{ 0x00, 0x00, input_port_0_r },

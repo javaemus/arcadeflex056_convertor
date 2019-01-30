@@ -220,14 +220,16 @@ public class asterix
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( sound_writemem )
-		{ 0x0000, 0xefff, MWA_ROM },
-		{ 0xf000, 0xf7ff, MWA_RAM },
-		{ 0xf801, 0xf801, YM2151_data_port_0_w },
-		{ 0xfa00, 0xfa2f, K053260_0_w },
-		{ 0xfc00, 0xfc00, sound_arm_nmi_w },
-		{ 0xfe00, 0xfe00, YM2151_register_port_0_w },
-	MEMORY_END
+	public static Memory_WriteAddress sound_writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0xefff, MWA_ROM ),
+		new Memory_WriteAddress( 0xf000, 0xf7ff, MWA_RAM ),
+		new Memory_WriteAddress( 0xf801, 0xf801, YM2151_data_port_0_w ),
+		new Memory_WriteAddress( 0xfa00, 0xfa2f, K053260_0_w ),
+		new Memory_WriteAddress( 0xfc00, 0xfc00, sound_arm_nmi_w ),
+		new Memory_WriteAddress( 0xfe00, 0xfe00, YM2151_register_port_0_w ),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	
 	

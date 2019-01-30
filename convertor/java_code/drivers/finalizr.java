@@ -86,27 +86,29 @@ public class finalizr
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( writemem )
-		{ 0x0001, 0x0001, MWA_RAM, &finalizr_scroll },
-		{ 0x0003, 0x0003, finalizr_videoctrl_w },
-		{ 0x0004, 0x0004, MWA_RAM, &finalizr_interrupt_enable },
-	//	{ 0x0020, 0x003f, MWA_RAM, &finalizr_scroll },
-		{ 0x0818, 0x0818, watchdog_reset_w },
-		{ 0x0819, 0x0819, finalizr_coin_w },
-		{ 0x081a, 0x081a, SN76496_0_w },	/* This address triggers the SN chip to read the data port. */
-		{ 0x081b, 0x081b, MWA_NOP },		/* Loads the snd command into the snd latch */
-		{ 0x081c, 0x081c, finalizr_i8039_irq_w },	/* custom sound chip */
-		{ 0x081d, 0x081d, soundlatch_w },			/* custom sound chip */
-		{ 0x2000, 0x23ff, colorram_w, &colorram },
-		{ 0x2400, 0x27ff, videoram_w, &videoram, &videoram_size },
-		{ 0x2800, 0x2bff, MWA_RAM, &finalizr_colorram2 },
-		{ 0x2c00, 0x2fff, MWA_RAM, &finalizr_videoram2 },
-		{ 0x3000, 0x31ff, MWA_RAM, &spriteram, &spriteram_size },
-		{ 0x3200, 0x37ff, MWA_RAM },
-		{ 0x3800, 0x39ff, MWA_RAM, &spriteram_2 },
-		{ 0x3a00, 0x3fff, MWA_RAM },
-		{ 0x4000, 0xffff, MWA_ROM },
-	MEMORY_END
+	public static Memory_WriteAddress writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0001, 0x0001, MWA_RAM, &finalizr_scroll ),
+		new Memory_WriteAddress( 0x0003, 0x0003, finalizr_videoctrl_w ),
+		new Memory_WriteAddress( 0x0004, 0x0004, MWA_RAM, &finalizr_interrupt_enable ),
+	//	new Memory_WriteAddress( 0x0020, 0x003f, MWA_RAM, &finalizr_scroll ),
+		new Memory_WriteAddress( 0x0818, 0x0818, watchdog_reset_w ),
+		new Memory_WriteAddress( 0x0819, 0x0819, finalizr_coin_w ),
+		new Memory_WriteAddress( 0x081a, 0x081a, SN76496_0_w ),	/* This address triggers the SN chip to read the data port. */
+		new Memory_WriteAddress( 0x081b, 0x081b, MWA_NOP ),		/* Loads the snd command into the snd latch */
+		new Memory_WriteAddress( 0x081c, 0x081c, finalizr_i8039_irq_w ),	/* custom sound chip */
+		new Memory_WriteAddress( 0x081d, 0x081d, soundlatch_w ),			/* custom sound chip */
+		new Memory_WriteAddress( 0x2000, 0x23ff, colorram_w, &colorram ),
+		new Memory_WriteAddress( 0x2400, 0x27ff, videoram_w, &videoram, &videoram_size ),
+		new Memory_WriteAddress( 0x2800, 0x2bff, MWA_RAM, &finalizr_colorram2 ),
+		new Memory_WriteAddress( 0x2c00, 0x2fff, MWA_RAM, &finalizr_videoram2 ),
+		new Memory_WriteAddress( 0x3000, 0x31ff, MWA_RAM, &spriteram, &spriteram_size ),
+		new Memory_WriteAddress( 0x3200, 0x37ff, MWA_RAM ),
+		new Memory_WriteAddress( 0x3800, 0x39ff, MWA_RAM, &spriteram_2 ),
+		new Memory_WriteAddress( 0x3a00, 0x3fff, MWA_RAM ),
+		new Memory_WriteAddress( 0x4000, 0xffff, MWA_ROM ),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	public static Memory_ReadAddress i8039_readmem[]={
 		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
@@ -114,9 +116,11 @@ public class finalizr
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( i8039_writemem )
-		{ 0x0000, 0x0fff, MWA_ROM },
-	MEMORY_END
+	public static Memory_WriteAddress i8039_writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0x0fff, MWA_ROM ),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static PORT_READ_START( i8039_readport )
 		{ 0x00, 0xff, soundlatch_r },

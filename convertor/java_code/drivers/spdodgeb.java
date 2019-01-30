@@ -214,20 +214,22 @@ public class spdodgeb
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( writemem )
-		{ 0x0000, 0x0fff, MWA_RAM },
-		{ 0x1000, 0x10ff, MWA_RAM, &spriteram, &spriteram_size },
-		{ 0x2000, 0x2fff, spdodgeb_videoram_w, &spdodgeb_videoram },
-	//	{ 0x3000, 0x3000, MWA_RAM },
-	//	{ 0x3001, 0x3001, MWA_RAM },
-		{ 0x3002, 0x3002, sound_command_w },
-	//	{ 0x3003, 0x3003, MWA_RAM },
-		{ 0x3004, 0x3004, spdodgeb_scrollx_lo_w },
-	//	{ 0x3005, 0x3005, MWA_RAM }, /* mcu63701_output_w */
-		{ 0x3006, 0x3006, spdodgeb_ctrl_w },	/* scroll hi, flip screen, bank switch, palette select */
-		{ 0x3800, 0x3800, mcu63701_w },
-		{ 0x4000, 0xffff, MWA_ROM },
-	MEMORY_END
+	public static Memory_WriteAddress writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0x0fff, MWA_RAM ),
+		new Memory_WriteAddress( 0x1000, 0x10ff, MWA_RAM, &spriteram, &spriteram_size ),
+		new Memory_WriteAddress( 0x2000, 0x2fff, spdodgeb_videoram_w, &spdodgeb_videoram ),
+	//	new Memory_WriteAddress( 0x3000, 0x3000, MWA_RAM ),
+	//	new Memory_WriteAddress( 0x3001, 0x3001, MWA_RAM ),
+		new Memory_WriteAddress( 0x3002, 0x3002, sound_command_w ),
+	//	new Memory_WriteAddress( 0x3003, 0x3003, MWA_RAM ),
+		new Memory_WriteAddress( 0x3004, 0x3004, spdodgeb_scrollx_lo_w ),
+	//	new Memory_WriteAddress( 0x3005, 0x3005, MWA_RAM ), /* mcu63701_output_w */
+		new Memory_WriteAddress( 0x3006, 0x3006, spdodgeb_ctrl_w ),	/* scroll hi, flip screen, bank switch, palette select */
+		new Memory_WriteAddress( 0x3800, 0x3800, mcu63701_w ),
+		new Memory_WriteAddress( 0x4000, 0xffff, MWA_ROM ),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	public static Memory_ReadAddress sound_readmem[]={
 		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
@@ -237,13 +239,15 @@ public class spdodgeb
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( sound_writemem )
-		{ 0x0000, 0x0fff, MWA_RAM },
-		{ 0x2800, 0x2800, YM3812_control_port_0_w },
-		{ 0x2801, 0x2801, YM3812_write_port_0_w },
-		{ 0x3800, 0x3807, spd_adpcm_w },
-		{ 0x8000, 0xffff, MWA_ROM },
-	MEMORY_END
+	public static Memory_WriteAddress sound_writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0x0fff, MWA_RAM ),
+		new Memory_WriteAddress( 0x2800, 0x2800, YM3812_control_port_0_w ),
+		new Memory_WriteAddress( 0x2801, 0x2801, YM3812_write_port_0_w ),
+		new Memory_WriteAddress( 0x3800, 0x3807, spd_adpcm_w ),
+		new Memory_WriteAddress( 0x8000, 0xffff, MWA_ROM ),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	
 	INPUT_PORTS_START( spdodgeb )

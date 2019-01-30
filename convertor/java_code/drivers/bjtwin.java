@@ -486,19 +486,21 @@ public class bjtwin
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( tharrier_sound_writemem )
-		{ 0x0000, 0x7fff, MWA_ROM },
-		{ 0xc000, 0xc7ff, MWA_RAM },
+	public static Memory_WriteAddress tharrier_sound_writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0x7fff, MWA_ROM ),
+		new Memory_WriteAddress( 0xc000, 0xc7ff, MWA_RAM ),
 	
-	//	{ 0x4002, 0x4002, mustang_ym3812_irq_ack_w },
-	//	{ 0x4003, 0x4003, mustang_sound_irq_ack_w },
-	//	{ 0x4007, 0x4007, sound ROM bank?
+	//	new Memory_WriteAddress( 0x4002, 0x4002, mustang_ym3812_irq_ack_w ),
+	//	new Memory_WriteAddress( 0x4003, 0x4003, mustang_sound_irq_ack_w ),
+	//	new Memory_WriteAddress( 0x4007, 0x4007, sound ROM bank?
 		//{ 0x4008, 0x4008, YM3812_control_port_0_w },
 		//{ 0x4009, 0x4009, YM3812_write_port_0_w },
 	//	{ 0x4018, 0x4019, mustang_soundlatch2_w },	/* to 68000 */
 	//	{ 0x6000, 0x6000, OKIM6295_data_0_w },
 	//	{ 0x8000, 0xffff, MWA_ROM },
-	MEMORY_END
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static PORT_READ_START( tharrier_sound_readport )
 		{ 0x00, 0x00, YM2203_status_port_0_r },
@@ -561,18 +563,20 @@ public class bjtwin
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( mustang_sound_writemem )
-		{ 0x0000, 0x1fff, MWA_ROM },
-		{ 0x2000, 0x27ff, MWA_RAM },
-		{ 0x4002, 0x4002, mustang_ym3812_irq_ack_w },
-		{ 0x4003, 0x4003, mustang_sound_irq_ack_w },
-	//	{ 0x4007, 0x4007, sound ROM bank?
+	public static Memory_WriteAddress mustang_sound_writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0x1fff, MWA_ROM ),
+		new Memory_WriteAddress( 0x2000, 0x27ff, MWA_RAM ),
+		new Memory_WriteAddress( 0x4002, 0x4002, mustang_ym3812_irq_ack_w ),
+		new Memory_WriteAddress( 0x4003, 0x4003, mustang_sound_irq_ack_w ),
+	//	new Memory_WriteAddress( 0x4007, 0x4007, sound ROM bank?
 		{ 0x4008, 0x4008, YM3812_control_port_0_w },
 		{ 0x4009, 0x4009, YM3812_write_port_0_w },
 		{ 0x4018, 0x4019, mustang_soundlatch2_w },	/* to 68000 */
 		{ 0x6000, 0x6000, OKIM6295_data_0_w },
 		{ 0x8000, 0xffff, MWA_ROM },
-	MEMORY_END
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	
 	static MEMORY_READ16_START( acrobatm_readmem )
@@ -818,12 +822,14 @@ public class bjtwin
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( macross2_sound_writemem )
-		{ 0x0000, 0xbfff, MWA_ROM },
-		{ 0xc000, 0xdfff, MWA_RAM },
-		{ 0xe001, 0xe001, macross2_sound_bank_w },
-		{ 0xf000, 0xf000, soundlatch2_w },	/* to 68000 */
-	MEMORY_END
+	public static Memory_WriteAddress macross2_sound_writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0xbfff, MWA_ROM ),
+		new Memory_WriteAddress( 0xc000, 0xdfff, MWA_RAM ),
+		new Memory_WriteAddress( 0xe001, 0xe001, macross2_sound_bank_w ),
+		new Memory_WriteAddress( 0xf000, 0xf000, soundlatch2_w ),	/* to 68000 */
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static PORT_READ_START( macross2_sound_readport )
 		{ 0x00, 0x00, YM2203_status_port_0_r },

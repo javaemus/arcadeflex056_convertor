@@ -203,23 +203,25 @@ public class scobra
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( type1_writemem )
-		{ 0x0000, 0x7fff, MWA_ROM },
-		{ 0x8000, 0x87ff, MWA_RAM },
-		{ 0x8800, 0x8bff, MWA_RAM, &galaxian_videoram },
-		{ 0x8c00, 0x8fff, galaxian_videoram_w },	/* mirror */
-		{ 0x9000, 0x903f, MWA_RAM, &galaxian_attributesram },
-		{ 0x9040, 0x905f, MWA_RAM, &galaxian_spriteram, &galaxian_spriteram_size },
-		{ 0x9060, 0x907f, MWA_RAM, &galaxian_bulletsram, &galaxian_bulletsram_size },
-		{ 0x9080, 0x90ff, MWA_RAM },
-		{ 0x9800, 0x9803, ppi8255_0_w },
-		{ 0xa000, 0xa003, ppi8255_1_w },
-		{ 0xa801, 0xa801, interrupt_enable_w },
-		{ 0xa802, 0xa802, type1_coin_counter_w },
-		{ 0xa804, 0xa804, galaxian_stars_enable_w },
-		{ 0xa806, 0xa806, galaxian_flip_screen_x_w },
-		{ 0xa807, 0xa807, galaxian_flip_screen_y_w },
-	MEMORY_END
+	public static Memory_WriteAddress type1_writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0x7fff, MWA_ROM ),
+		new Memory_WriteAddress( 0x8000, 0x87ff, MWA_RAM ),
+		new Memory_WriteAddress( 0x8800, 0x8bff, MWA_RAM, &galaxian_videoram ),
+		new Memory_WriteAddress( 0x8c00, 0x8fff, galaxian_videoram_w ),	/* mirror */
+		new Memory_WriteAddress( 0x9000, 0x903f, MWA_RAM, &galaxian_attributesram ),
+		new Memory_WriteAddress( 0x9040, 0x905f, MWA_RAM, &galaxian_spriteram, &galaxian_spriteram_size ),
+		new Memory_WriteAddress( 0x9060, 0x907f, MWA_RAM, &galaxian_bulletsram, &galaxian_bulletsram_size ),
+		new Memory_WriteAddress( 0x9080, 0x90ff, MWA_RAM ),
+		new Memory_WriteAddress( 0x9800, 0x9803, ppi8255_0_w ),
+		new Memory_WriteAddress( 0xa000, 0xa003, ppi8255_1_w ),
+		new Memory_WriteAddress( 0xa801, 0xa801, interrupt_enable_w ),
+		new Memory_WriteAddress( 0xa802, 0xa802, type1_coin_counter_w ),
+		new Memory_WriteAddress( 0xa804, 0xa804, galaxian_stars_enable_w ),
+		new Memory_WriteAddress( 0xa806, 0xa806, galaxian_flip_screen_x_w ),
+		new Memory_WriteAddress( 0xa807, 0xa807, galaxian_flip_screen_y_w ),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	
 	public static Memory_ReadAddress type2_readmem[]={
@@ -234,23 +236,25 @@ public class scobra
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( type2_writemem )
-		{ 0x0000, 0x7fff, MWA_ROM },
-		{ 0x8000, 0x87ff, MWA_RAM },
-		{ 0x8800, 0x883f, MWA_RAM, &galaxian_attributesram },
-		{ 0x8840, 0x885f, MWA_RAM, &galaxian_spriteram, &galaxian_spriteram_size },
-		{ 0x8860, 0x887f, MWA_RAM, &galaxian_bulletsram, &galaxian_bulletsram_size },
-		{ 0x8880, 0x88ff, MWA_RAM },
-		{ 0x9000, 0x93ff, MWA_RAM, &galaxian_videoram },
-		{ 0x9400, 0x97ff, galaxian_videoram_w },	/* mirror */
-		{ 0xa000, 0xa00f, scobra_type2_ppi8255_0_w },
-		{ 0xa800, 0xa80f, scobra_type2_ppi8255_1_w },
-		{ 0xb000, 0xb000, galaxian_stars_enable_w },
-		{ 0xb004, 0xb004, interrupt_enable_w },
-		{ 0xb006, 0xb008, type2_coin_counter_w },
-		{ 0xb00c, 0xb00c, galaxian_flip_screen_y_w },
-		{ 0xb00e, 0xb00e, galaxian_flip_screen_x_w },
-	MEMORY_END
+	public static Memory_WriteAddress type2_writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0x7fff, MWA_ROM ),
+		new Memory_WriteAddress( 0x8000, 0x87ff, MWA_RAM ),
+		new Memory_WriteAddress( 0x8800, 0x883f, MWA_RAM, &galaxian_attributesram ),
+		new Memory_WriteAddress( 0x8840, 0x885f, MWA_RAM, &galaxian_spriteram, &galaxian_spriteram_size ),
+		new Memory_WriteAddress( 0x8860, 0x887f, MWA_RAM, &galaxian_bulletsram, &galaxian_bulletsram_size ),
+		new Memory_WriteAddress( 0x8880, 0x88ff, MWA_RAM ),
+		new Memory_WriteAddress( 0x9000, 0x93ff, MWA_RAM, &galaxian_videoram ),
+		new Memory_WriteAddress( 0x9400, 0x97ff, galaxian_videoram_w ),	/* mirror */
+		new Memory_WriteAddress( 0xa000, 0xa00f, scobra_type2_ppi8255_0_w ),
+		new Memory_WriteAddress( 0xa800, 0xa80f, scobra_type2_ppi8255_1_w ),
+		new Memory_WriteAddress( 0xb000, 0xb000, galaxian_stars_enable_w ),
+		new Memory_WriteAddress( 0xb004, 0xb004, interrupt_enable_w ),
+		new Memory_WriteAddress( 0xb006, 0xb008, type2_coin_counter_w ),
+		new Memory_WriteAddress( 0xb00c, 0xb00c, galaxian_flip_screen_y_w ),
+		new Memory_WriteAddress( 0xb00e, 0xb00e, galaxian_flip_screen_x_w ),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	
 	public static Memory_ReadAddress hustler_readmem[]={
@@ -264,21 +268,23 @@ public class scobra
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( hustler_writemem )
-		{ 0x0000, 0x7fff, MWA_ROM },
-		{ 0x8000, 0x87ff, MWA_RAM },
-		{ 0x8800, 0x8bff, MWA_RAM, &galaxian_videoram },
-		{ 0x9000, 0x903f, MWA_RAM, &galaxian_attributesram },
-		{ 0x9040, 0x905f, MWA_RAM, &galaxian_spriteram, &galaxian_spriteram_size },
-		{ 0x9060, 0x907f, MWA_RAM, &galaxian_bulletsram, &galaxian_bulletsram_size },
-		{ 0x9080, 0x90ff, MWA_RAM },
-		{ 0xa802, 0xa802, galaxian_flip_screen_x_w },
-		{ 0xa804, 0xa804, interrupt_enable_w },
-		{ 0xa806, 0xa806, galaxian_flip_screen_y_w },
-		{ 0xa80e, 0xa80e, MWA_NOP },	/* coin counters */
-		{ 0xd000, 0xd01f, hustler_ppi8255_0_w },
-		{ 0xe000, 0xe01f, hustler_ppi8255_1_w },
-	MEMORY_END
+	public static Memory_WriteAddress hustler_writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0x7fff, MWA_ROM ),
+		new Memory_WriteAddress( 0x8000, 0x87ff, MWA_RAM ),
+		new Memory_WriteAddress( 0x8800, 0x8bff, MWA_RAM, &galaxian_videoram ),
+		new Memory_WriteAddress( 0x9000, 0x903f, MWA_RAM, &galaxian_attributesram ),
+		new Memory_WriteAddress( 0x9040, 0x905f, MWA_RAM, &galaxian_spriteram, &galaxian_spriteram_size ),
+		new Memory_WriteAddress( 0x9060, 0x907f, MWA_RAM, &galaxian_bulletsram, &galaxian_bulletsram_size ),
+		new Memory_WriteAddress( 0x9080, 0x90ff, MWA_RAM ),
+		new Memory_WriteAddress( 0xa802, 0xa802, galaxian_flip_screen_x_w ),
+		new Memory_WriteAddress( 0xa804, 0xa804, interrupt_enable_w ),
+		new Memory_WriteAddress( 0xa806, 0xa806, galaxian_flip_screen_y_w ),
+		new Memory_WriteAddress( 0xa80e, 0xa80e, MWA_NOP ),	/* coin counters */
+		new Memory_WriteAddress( 0xd000, 0xd01f, hustler_ppi8255_0_w ),
+		new Memory_WriteAddress( 0xe000, 0xe01f, hustler_ppi8255_1_w ),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	
 	public static Memory_ReadAddress hustlerb_readmem[]={
@@ -292,21 +298,23 @@ public class scobra
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( hustlerb_writemem )
-		{ 0x0000, 0x3fff, MWA_ROM },
-		{ 0x8000, 0x87ff, MWA_RAM },
-		{ 0x8800, 0x8bff, MWA_RAM, &galaxian_videoram },
-		{ 0x9000, 0x903f, MWA_RAM, &galaxian_attributesram },
-		{ 0x9040, 0x905f, MWA_RAM, &galaxian_spriteram, &galaxian_spriteram_size },
-		{ 0x9060, 0x907f, MWA_RAM, &galaxian_bulletsram, &galaxian_bulletsram_size },
-		{ 0x9080, 0x90ff, MWA_RAM },
-		{ 0xa801, 0xa801, interrupt_enable_w },
-		{ 0xa802, 0xa802, MWA_NOP },	/* coin counters */
-		{ 0xa806, 0xa806, galaxian_flip_screen_y_w },
-		{ 0xa807, 0xa807, galaxian_flip_screen_x_w },
-		{ 0xc100, 0xc103, ppi8255_0_w },
-		{ 0xc200, 0xc203, ppi8255_1_w },
-	MEMORY_END
+	public static Memory_WriteAddress hustlerb_writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0x3fff, MWA_ROM ),
+		new Memory_WriteAddress( 0x8000, 0x87ff, MWA_RAM ),
+		new Memory_WriteAddress( 0x8800, 0x8bff, MWA_RAM, &galaxian_videoram ),
+		new Memory_WriteAddress( 0x9000, 0x903f, MWA_RAM, &galaxian_attributesram ),
+		new Memory_WriteAddress( 0x9040, 0x905f, MWA_RAM, &galaxian_spriteram, &galaxian_spriteram_size ),
+		new Memory_WriteAddress( 0x9060, 0x907f, MWA_RAM, &galaxian_bulletsram, &galaxian_bulletsram_size ),
+		new Memory_WriteAddress( 0x9080, 0x90ff, MWA_RAM ),
+		new Memory_WriteAddress( 0xa801, 0xa801, interrupt_enable_w ),
+		new Memory_WriteAddress( 0xa802, 0xa802, MWA_NOP ),	/* coin counters */
+		new Memory_WriteAddress( 0xa806, 0xa806, galaxian_flip_screen_y_w ),
+		new Memory_WriteAddress( 0xa807, 0xa807, galaxian_flip_screen_x_w ),
+		new Memory_WriteAddress( 0xc100, 0xc103, ppi8255_0_w ),
+		new Memory_WriteAddress( 0xc200, 0xc203, ppi8255_1_w ),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	
 	static UINT8 *scobra_soundram;
@@ -334,12 +342,14 @@ public class scobra
 	MEMORY_END
 	
 	
-	static MEMORY_WRITE_START( hustlerb_sound_writemem )
-		{ 0x0000, 0x1fff, MWA_ROM },
-		{ 0x6000, 0x6fff, frogger_filter_w },
-		{ 0x8000, 0x83ff, MWA_RAM },
-		{ 0x8000, 0x83ff, MWA_NOP, &scobra_soundram },  /* only here to initialize pointer */
-	MEMORY_END
+	public static Memory_WriteAddress hustlerb_sound_writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0x1fff, MWA_ROM ),
+		new Memory_WriteAddress( 0x6000, 0x6fff, frogger_filter_w ),
+		new Memory_WriteAddress( 0x8000, 0x83ff, MWA_RAM ),
+		new Memory_WriteAddress( 0x8000, 0x83ff, MWA_NOP, &scobra_soundram ),  /* only here to initialize pointer */
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	
 	PORT_READ_START( scobra_sound_readport )

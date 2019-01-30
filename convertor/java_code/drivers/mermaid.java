@@ -67,22 +67,24 @@ public class mermaid
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( writemem )
-		{ 0x0000, 0x9fff, MWA_ROM },
-		{ 0xc000, 0xc7ff, MWA_RAM },
-		{ 0xc800, 0xcbff, MWA_RAM, &mermaid_background_videoram, &videoram_size },
-		{ 0xd000, 0xd3ff, MWA_RAM, &mermaid_foreground_videoram },
-		{ 0xd800, 0xd81f, MWA_RAM, &mermaid_background_scrollram },
-		{ 0xd840, 0xd85f, MWA_RAM, &mermaid_foreground_scrollram },
-		{ 0xd880, 0xd8bf, MWA_RAM, &spriteram, &spriteram_size },
-		{ 0xdc00, 0xdfff, MWA_RAM, &mermaid_foreground_colorram },
-		{ 0xe000, 0xe001, MWA_RAM, &mermaid_AY8910_enable },
-		{ 0xe007, 0xe007, interrupt_enable_w },
-		{ 0xe807, 0xe807, MWA_NOP },	/* watchdog? */
-		{ 0xf802, 0xf802, MWA_NOP },	/* ??? see memory map */
-		{ 0xf806, 0xf806, mermaid_AY8910_write_port_w },
-		{ 0xf807, 0xf807, mermaid_AY8910_control_port_w },
-	MEMORY_END
+	public static Memory_WriteAddress writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0x9fff, MWA_ROM ),
+		new Memory_WriteAddress( 0xc000, 0xc7ff, MWA_RAM ),
+		new Memory_WriteAddress( 0xc800, 0xcbff, MWA_RAM, &mermaid_background_videoram, &videoram_size ),
+		new Memory_WriteAddress( 0xd000, 0xd3ff, MWA_RAM, &mermaid_foreground_videoram ),
+		new Memory_WriteAddress( 0xd800, 0xd81f, MWA_RAM, &mermaid_background_scrollram ),
+		new Memory_WriteAddress( 0xd840, 0xd85f, MWA_RAM, &mermaid_foreground_scrollram ),
+		new Memory_WriteAddress( 0xd880, 0xd8bf, MWA_RAM, &spriteram, &spriteram_size ),
+		new Memory_WriteAddress( 0xdc00, 0xdfff, MWA_RAM, &mermaid_foreground_colorram ),
+		new Memory_WriteAddress( 0xe000, 0xe001, MWA_RAM, &mermaid_AY8910_enable ),
+		new Memory_WriteAddress( 0xe007, 0xe007, interrupt_enable_w ),
+		new Memory_WriteAddress( 0xe807, 0xe807, MWA_NOP ),	/* watchdog? */
+		new Memory_WriteAddress( 0xf802, 0xf802, MWA_NOP ),	/* ??? see memory map */
+		new Memory_WriteAddress( 0xf806, 0xf806, mermaid_AY8910_write_port_w ),
+		new Memory_WriteAddress( 0xf807, 0xf807, mermaid_AY8910_control_port_w ),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	
 	INPUT_PORTS_START( mermaid )

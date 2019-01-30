@@ -294,20 +294,22 @@ public class gladiatr
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( writemem )
-		{ 0x0000, 0xbfff, MWA_ROM },
-		{ 0xc000, 0xcbff, MWA_RAM, &spriteram },
-		{ 0xcc00, 0xcfff, gladiatr_video_registers_w },
-		{ 0xd000, 0xd1ff, gladiatr_paletteram_rg_w, &paletteram },
-		{ 0xd200, 0xd3ff, MWA_RAM },
-		{ 0xd400, 0xd5ff, gladiatr_paletteram_b_w, &paletteram_2 },
-		{ 0xd600, 0xd7ff, MWA_RAM },
-		{ 0xd800, 0xdfff, videoram_w, &videoram },
-		{ 0xe000, 0xe7ff, colorram_w, &colorram },
-		{ 0xe800, 0xefff, MWA_RAM, &gladiator_text },
-		{ 0xf000, 0xf3ff, MWA_RAM, &nvram, &nvram_size }, /* battery backed RAM */
-		{ 0xf400, 0xffff, MWA_RAM },
-	MEMORY_END
+	public static Memory_WriteAddress writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0xbfff, MWA_ROM ),
+		new Memory_WriteAddress( 0xc000, 0xcbff, MWA_RAM, &spriteram ),
+		new Memory_WriteAddress( 0xcc00, 0xcfff, gladiatr_video_registers_w ),
+		new Memory_WriteAddress( 0xd000, 0xd1ff, gladiatr_paletteram_rg_w, &paletteram ),
+		new Memory_WriteAddress( 0xd200, 0xd3ff, MWA_RAM ),
+		new Memory_WriteAddress( 0xd400, 0xd5ff, gladiatr_paletteram_b_w, &paletteram_2 ),
+		new Memory_WriteAddress( 0xd600, 0xd7ff, MWA_RAM ),
+		new Memory_WriteAddress( 0xd800, 0xdfff, videoram_w, &videoram ),
+		new Memory_WriteAddress( 0xe000, 0xe7ff, colorram_w, &colorram ),
+		new Memory_WriteAddress( 0xe800, 0xefff, MWA_RAM, &gladiator_text ),
+		new Memory_WriteAddress( 0xf000, 0xf3ff, MWA_RAM, &nvram, &nvram_size ), /* battery backed RAM */
+		new Memory_WriteAddress( 0xf400, 0xffff, MWA_RAM ),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	public static Memory_ReadAddress readmem_cpu2[]={
 		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
@@ -316,10 +318,12 @@ public class gladiatr
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( writemem_cpu2 )
-		{ 0x0000, 0x3fff, MWA_ROM },
-		{ 0x8000, 0x83ff, MWA_RAM },
-	MEMORY_END
+	public static Memory_WriteAddress writemem_cpu2[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0x3fff, MWA_ROM ),
+		new Memory_WriteAddress( 0x8000, 0x83ff, MWA_RAM ),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	public static Memory_ReadAddress sound_readmem[]={
 		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
@@ -330,9 +334,11 @@ public class gladiatr
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( sound_writemem )
-		{ 0x1000, 0x1fff, glad_adpcm_w },
-	MEMORY_END
+	public static Memory_WriteAddress sound_writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x1000, 0x1fff, glad_adpcm_w ),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	
 	static PORT_READ_START( readport )

@@ -69,25 +69,27 @@ public class toypop
 	};
 	
 	
-	static MEMORY_WRITE_START( writemem_mainCPU )
-		{ 0x0000, 0x03ff, MWA_RAM, &videoram, &videoram_size },		/* video RAM */
-		{ 0x0400, 0x07ff, MWA_RAM, &colorram },						/* color RAM */
-		{ 0x0800, 0x0f7f, MWA_RAM },								/* general RAM, area 1 */
-		{ 0x0f80, 0x0fff, MWA_RAM, &spriteram, &spriteram_size },	/* sprite RAM, area 1 */
-		{ 0x1000, 0x177f, MWA_RAM },								/* general RAM, area 2 */
-		{ 0x1780, 0x17ff, MWA_RAM, &spriteram_2 },					/* sprite RAM, area 2 */
-		{ 0x1800, 0x1f7f, MWA_RAM },								/* general RAM, area 3 */
-		{ 0x1f80, 0x1fff, MWA_RAM, &spriteram_3 },					/* sprite RAM, area 3 */
-		{ 0x2800, 0x2fff, MWA_RAM, &toypop_m68000_sharedram },		/* shared RAM with the 68000 CPU */
-		{ 0x7000, 0x7000, toypop_main_interrupt_enable_w },			/* enable interrupt ??? */
-		{ 0x7800, 0x7800, toypop_main_interrupt_disable_w },		/* disable interrupt ??? */
-		{ 0x8000, 0x8000, toypop_m68000_clear_w },					/* reset 68000 */
-		{ 0x8800, 0x8800, toypop_m68000_assert_w },					/* reset 68000 */
-		{ 0x9000, 0x9000, toypop_sound_clear_w },					/* sound CPU reset */
-		{ 0x9800, 0x9800, toypop_sound_assert_w },					/* sound CPU reset */
-		{ 0xa000, 0xa001, toypop_palettebank_w },					/* background image palette */
-		{ 0x8000, 0xffff, MWA_ROM },								/* ROM code */
-	MEMORY_END
+	public static Memory_WriteAddress writemem_mainCPU[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0x03ff, MWA_RAM, &videoram, &videoram_size ),		/* video RAM */
+		new Memory_WriteAddress( 0x0400, 0x07ff, MWA_RAM, &colorram ),						/* color RAM */
+		new Memory_WriteAddress( 0x0800, 0x0f7f, MWA_RAM ),								/* general RAM, area 1 */
+		new Memory_WriteAddress( 0x0f80, 0x0fff, MWA_RAM, &spriteram, &spriteram_size ),	/* sprite RAM, area 1 */
+		new Memory_WriteAddress( 0x1000, 0x177f, MWA_RAM ),								/* general RAM, area 2 */
+		new Memory_WriteAddress( 0x1780, 0x17ff, MWA_RAM, &spriteram_2 ),					/* sprite RAM, area 2 */
+		new Memory_WriteAddress( 0x1800, 0x1f7f, MWA_RAM ),								/* general RAM, area 3 */
+		new Memory_WriteAddress( 0x1f80, 0x1fff, MWA_RAM, &spriteram_3 ),					/* sprite RAM, area 3 */
+		new Memory_WriteAddress( 0x2800, 0x2fff, MWA_RAM, &toypop_m68000_sharedram ),		/* shared RAM with the 68000 CPU */
+		new Memory_WriteAddress( 0x7000, 0x7000, toypop_main_interrupt_enable_w ),			/* enable interrupt ??? */
+		new Memory_WriteAddress( 0x7800, 0x7800, toypop_main_interrupt_disable_w ),		/* disable interrupt ??? */
+		new Memory_WriteAddress( 0x8000, 0x8000, toypop_m68000_clear_w ),					/* reset 68000 */
+		new Memory_WriteAddress( 0x8800, 0x8800, toypop_m68000_assert_w ),					/* reset 68000 */
+		new Memory_WriteAddress( 0x9000, 0x9000, toypop_sound_clear_w ),					/* sound CPU reset */
+		new Memory_WriteAddress( 0x9800, 0x9800, toypop_sound_assert_w ),					/* sound CPU reset */
+		new Memory_WriteAddress( 0xa000, 0xa001, toypop_palettebank_w ),					/* background image palette */
+		new Memory_WriteAddress( 0x8000, 0xffff, MWA_ROM ),								/* ROM code */
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	
 	
@@ -105,14 +107,16 @@ public class toypop
 	};
 	
 	
-	static MEMORY_WRITE_START( writemem_soundCPU )
-		{ 0x0000, 0x003f, mappy_sound_w, &namco_soundregs },	/* sound control registers */
-		{ 0x0040, 0x03ff, toypop_sound_sharedram_w },					/* shared RAM with the main CPU */
-		{ 0x2000, 0x2000, toypop_sound_interrupt_disable_w },			/* interrupt disable ??? */
-		{ 0x4000, 0x4000, toypop_sound_interrupt_enable_w },			/* interrupt enable */
-		{ 0x6000, 0x6000, MWA_NOP },							/* watchdog ??? */
-		{ 0xe000, 0xffff, MWA_ROM },							/* ROM code */
-	MEMORY_END
+	public static Memory_WriteAddress writemem_soundCPU[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0x003f, mappy_sound_w, &namco_soundregs ),	/* sound control registers */
+		new Memory_WriteAddress( 0x0040, 0x03ff, toypop_sound_sharedram_w ),					/* shared RAM with the main CPU */
+		new Memory_WriteAddress( 0x2000, 0x2000, toypop_sound_interrupt_disable_w ),			/* interrupt disable ??? */
+		new Memory_WriteAddress( 0x4000, 0x4000, toypop_sound_interrupt_enable_w ),			/* interrupt enable */
+		new Memory_WriteAddress( 0x6000, 0x6000, MWA_NOP ),							/* watchdog ??? */
+		new Memory_WriteAddress( 0xe000, 0xffff, MWA_ROM ),							/* ROM code */
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	
 	

@@ -84,18 +84,20 @@ public class clshroad
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( clshroad_writemem )
-		{ 0x0000, 0x7fff, MWA_ROM									},	// ROM
-		{ 0x8000, 0x95ff, MWA_RAM									},	// Work   RAM
-		{ 0x9600, 0x97ff, clshroad_sharedram_w, &clshroad_sharedram	},	// Shared RAM
-		{ 0x9800, 0x9dff, MWA_RAM									},	// Work   RAM
-		{ 0x9e00, 0x9fff, MWA_RAM, &spriteram, &spriteram_size		},	// Sprite RAM
-		{ 0xa001, 0xa001, MWA_NOP									},	// ? Interrupt related
-		{ 0xa004, 0xa004, clshroad_flipscreen_w						},	// Flip Screen
-		{ 0xa800, 0xafff, clshroad_vram_1_w, &clshroad_vram_1		},	// Layer 1
-		{ 0xb000, 0xb003, MWA_RAM, &clshroad_vregs					},	// Scroll
-		{ 0xc000, 0xc7ff, clshroad_vram_0_w, &clshroad_vram_0		},	// Layers 0
-	MEMORY_END
+	public static Memory_WriteAddress clshroad_writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0x7fff, MWA_ROM									),	// ROM
+		new Memory_WriteAddress( 0x8000, 0x95ff, MWA_RAM									),	// Work   RAM
+		new Memory_WriteAddress( 0x9600, 0x97ff, clshroad_sharedram_w, &clshroad_sharedram	),	// Shared RAM
+		new Memory_WriteAddress( 0x9800, 0x9dff, MWA_RAM									),	// Work   RAM
+		new Memory_WriteAddress( 0x9e00, 0x9fff, MWA_RAM, &spriteram, &spriteram_size		),	// Sprite RAM
+		new Memory_WriteAddress( 0xa001, 0xa001, MWA_NOP									),	// ? Interrupt related
+		new Memory_WriteAddress( 0xa004, 0xa004, clshroad_flipscreen_w						),	// Flip Screen
+		new Memory_WriteAddress( 0xa800, 0xafff, clshroad_vram_1_w, &clshroad_vram_1		),	// Layer 1
+		new Memory_WriteAddress( 0xb000, 0xb003, MWA_RAM, &clshroad_vregs					),	// Scroll
+		new Memory_WriteAddress( 0xc000, 0xc7ff, clshroad_vram_0_w, &clshroad_vram_0		),	// Layers 0
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	public static Memory_ReadAddress clshroad_sound_readmem[]={
 		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
@@ -104,12 +106,14 @@ public class clshroad
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( clshroad_sound_writemem )
-		{ 0x0000, 0x1fff, MWA_ROM				},	// ROM
-		{ 0x4000, 0x7fff, wiping_sound_w, &wiping_soundregs },
-		{ 0x9600, 0x97ff, clshroad_sharedram_w	},	// Shared RAM
-		{ 0xa003, 0xa003, MWA_NOP				},	// ? Interrupt related
-	MEMORY_END
+	public static Memory_WriteAddress clshroad_sound_writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0x1fff, MWA_ROM				),	// ROM
+		new Memory_WriteAddress( 0x4000, 0x7fff, wiping_sound_w, &wiping_soundregs ),
+		new Memory_WriteAddress( 0x9600, 0x97ff, clshroad_sharedram_w	),	// Shared RAM
+		new Memory_WriteAddress( 0xa003, 0xa003, MWA_NOP				),	// ? Interrupt related
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	
 	

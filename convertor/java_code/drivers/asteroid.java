@@ -222,18 +222,20 @@ public class asteroid
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( asteroid_writemem )
-		{ 0x0000, 0x03ff, MWA_RAM },
-		{ 0x3000, 0x3000, avgdvg_go_w },
-		{ 0x3200, 0x3200, asteroid_bank_switch_w },
-		{ 0x3400, 0x3400, watchdog_reset_w },
-		{ 0x3600, 0x3600, asteroid_explode_w },
-		{ 0x3a00, 0x3a00, asteroid_thump_w },
-		{ 0x3c00, 0x3c05, asteroid_sounds_w },
-		{ 0x4000, 0x47ff, MWA_RAM, &vectorram, &vectorram_size },
-		{ 0x5000, 0x57ff, MWA_ROM }, /* vector rom */
-		{ 0x6800, 0x7fff, MWA_ROM },
-	MEMORY_END
+	public static Memory_WriteAddress asteroid_writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0x03ff, MWA_RAM ),
+		new Memory_WriteAddress( 0x3000, 0x3000, avgdvg_go_w ),
+		new Memory_WriteAddress( 0x3200, 0x3200, asteroid_bank_switch_w ),
+		new Memory_WriteAddress( 0x3400, 0x3400, watchdog_reset_w ),
+		new Memory_WriteAddress( 0x3600, 0x3600, asteroid_explode_w ),
+		new Memory_WriteAddress( 0x3a00, 0x3a00, asteroid_thump_w ),
+		new Memory_WriteAddress( 0x3c00, 0x3c05, asteroid_sounds_w ),
+		new Memory_WriteAddress( 0x4000, 0x47ff, MWA_RAM, &vectorram, &vectorram_size ),
+		new Memory_WriteAddress( 0x5000, 0x57ff, MWA_ROM ), /* vector rom */
+		new Memory_WriteAddress( 0x6800, 0x7fff, MWA_ROM ),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	public static Memory_ReadAddress astdelux_readmem[]={
 		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
@@ -250,23 +252,25 @@ public class asteroid
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( astdelux_writemem )
-		{ 0x0000, 0x03ff, MWA_RAM },
-		{ 0x2405, 0x2405, astdelux_sounds_w }, /* thrust sound */
-		{ 0x2c00, 0x2c0f, pokey1_w },
-		{ 0x3000, 0x3000, avgdvg_go_w },
-		{ 0x3200, 0x323f, atari_vg_earom_w },
-		{ 0x3400, 0x3400, watchdog_reset_w },
-		{ 0x3600, 0x3600, asteroid_explode_w },
-		{ 0x3a00, 0x3a00, atari_vg_earom_ctrl_w },
-	/*	{ 0x3c00, 0x3c03, astdelux_led_w },*/ /* P1 LED, P2 LED, unknown, thrust? */
-		{ 0x3c00, 0x3c03, MWA_NOP }, /* P1 LED, P2 LED, unknown, thrust? */
-		{ 0x3c04, 0x3c04, astdelux_bank_switch_w },
-		{ 0x3c05, 0x3c07, astdelux_coin_counter_w },
-		{ 0x4000, 0x47ff, MWA_RAM, &vectorram, &vectorram_size },
-		{ 0x4800, 0x57ff, MWA_ROM }, /* vector rom */
-		{ 0x6000, 0x7fff, MWA_ROM },
-	MEMORY_END
+	public static Memory_WriteAddress astdelux_writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0x03ff, MWA_RAM ),
+		new Memory_WriteAddress( 0x2405, 0x2405, astdelux_sounds_w ), /* thrust sound */
+		new Memory_WriteAddress( 0x2c00, 0x2c0f, pokey1_w ),
+		new Memory_WriteAddress( 0x3000, 0x3000, avgdvg_go_w ),
+		new Memory_WriteAddress( 0x3200, 0x323f, atari_vg_earom_w ),
+		new Memory_WriteAddress( 0x3400, 0x3400, watchdog_reset_w ),
+		new Memory_WriteAddress( 0x3600, 0x3600, asteroid_explode_w ),
+		new Memory_WriteAddress( 0x3a00, 0x3a00, atari_vg_earom_ctrl_w ),
+	/*	new Memory_WriteAddress( 0x3c00, 0x3c03, astdelux_led_w ),*/ /* P1 LED, P2 LED, unknown, thrust? */
+		new Memory_WriteAddress( 0x3c00, 0x3c03, MWA_NOP ), /* P1 LED, P2 LED, unknown, thrust? */
+		new Memory_WriteAddress( 0x3c04, 0x3c04, astdelux_bank_switch_w ),
+		new Memory_WriteAddress( 0x3c05, 0x3c07, astdelux_coin_counter_w ),
+		new Memory_WriteAddress( 0x4000, 0x47ff, MWA_RAM, &vectorram, &vectorram_size ),
+		new Memory_WriteAddress( 0x4800, 0x57ff, MWA_ROM ), /* vector rom */
+		new Memory_WriteAddress( 0x6000, 0x7fff, MWA_ROM ),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	public static Memory_ReadAddress llander_readmem[]={
 		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
@@ -282,17 +286,19 @@ public class asteroid
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( llander_writemem )
-		{ 0x0000, 0x01ff, llander_zeropage_w, &llander_zeropage },
-		{ 0x3000, 0x3000, avgdvg_go_w },
-		{ 0x3200, 0x3200, llander_led_w },
-		{ 0x3400, 0x3400, watchdog_reset_w },
-		{ 0x3c00, 0x3c00, llander_sounds_w },
-		{ 0x3e00, 0x3e00, llander_snd_reset_w },
-		{ 0x4000, 0x47ff, MWA_RAM, &vectorram, &vectorram_size },
-		{ 0x4800, 0x5fff, MWA_ROM }, /* vector rom */
-		{ 0x6000, 0x7fff, MWA_ROM },
-	MEMORY_END
+	public static Memory_WriteAddress llander_writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0x01ff, llander_zeropage_w, &llander_zeropage ),
+		new Memory_WriteAddress( 0x3000, 0x3000, avgdvg_go_w ),
+		new Memory_WriteAddress( 0x3200, 0x3200, llander_led_w ),
+		new Memory_WriteAddress( 0x3400, 0x3400, watchdog_reset_w ),
+		new Memory_WriteAddress( 0x3c00, 0x3c00, llander_sounds_w ),
+		new Memory_WriteAddress( 0x3e00, 0x3e00, llander_snd_reset_w ),
+		new Memory_WriteAddress( 0x4000, 0x47ff, MWA_RAM, &vectorram, &vectorram_size ),
+		new Memory_WriteAddress( 0x4800, 0x5fff, MWA_ROM ), /* vector rom */
+		new Memory_WriteAddress( 0x6000, 0x7fff, MWA_ROM ),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	INPUT_PORTS_START( asteroid )
 		PORT_START /* IN0 */

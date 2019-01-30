@@ -645,11 +645,13 @@ public class sailorws
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( writemem_sailorws )
-		{ 0x0000, 0xefff, MWA_ROM },
-		{ 0xf000, 0xf1ff, sailorws_palette_w },
-		{ 0xf800, 0xffff, MWA_RAM, &sailorws_nvram, &sailorws_nvram_size },
-	MEMORY_END
+	public static Memory_WriteAddress writemem_sailorws[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0xefff, MWA_ROM ),
+		new Memory_WriteAddress( 0xf000, 0xf1ff, sailorws_palette_w ),
+		new Memory_WriteAddress( 0xf800, 0xffff, MWA_RAM, &sailorws_nvram, &sailorws_nvram_size ),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	public static Memory_ReadAddress readmem_mjuraden[]={
 		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
@@ -659,11 +661,13 @@ public class sailorws
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( writemem_mjuraden )
-		{ 0x0000, 0xefff, MWA_ROM },
-		{ 0xf200, 0xf3ff, sailorws_palette_w },
-		{ 0xf800, 0xffff, MWA_RAM },
-	MEMORY_END
+	public static Memory_WriteAddress writemem_mjuraden[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0xefff, MWA_ROM ),
+		new Memory_WriteAddress( 0xf200, 0xf3ff, sailorws_palette_w ),
+		new Memory_WriteAddress( 0xf800, 0xffff, MWA_RAM ),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	public static Memory_ReadAddress readmem_koinomp[]={
 		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
@@ -673,11 +677,13 @@ public class sailorws
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( writemem_koinomp )
-		{ 0x0000, 0xdfff, MWA_ROM },
-		{ 0xe000, 0xe1ff, sailorws_palette_w },
-		{ 0xe800, 0xefff, MWA_RAM, &sailorws_nvram, &sailorws_nvram_size },
-	MEMORY_END
+	public static Memory_WriteAddress writemem_koinomp[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0xdfff, MWA_ROM ),
+		new Memory_WriteAddress( 0xe000, 0xe1ff, sailorws_palette_w ),
+		new Memory_WriteAddress( 0xe800, 0xefff, MWA_RAM, &sailorws_nvram, &sailorws_nvram_size ),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	public static Memory_ReadAddress readmem_ngpgal[]={
 		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
@@ -687,11 +693,13 @@ public class sailorws
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( writemem_ngpgal )
-		{ 0x0000, 0xcfff, MWA_ROM },
-		{ 0xd000, 0xd1ff, sailorws_palette_w },
-		{ 0xd800, 0xdfff, MWA_RAM },
-	MEMORY_END
+	public static Memory_WriteAddress writemem_ngpgal[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0xcfff, MWA_ROM ),
+		new Memory_WriteAddress( 0xd000, 0xd1ff, sailorws_palette_w ),
+		new Memory_WriteAddress( 0xd800, 0xdfff, MWA_RAM ),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	public static Memory_ReadAddress readmem_mscoutm[]={
 		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
@@ -703,13 +711,15 @@ public class sailorws
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( writemem_mscoutm )
-		{ 0x0000, 0xdfff, MWA_ROM },
-		{ 0xe000, 0xe5ff, MWA_RAM },
-		{ 0xe600, 0xebff, mscoutm_palette_w },
-		{ 0xec00, 0xf1ff, MWA_RAM },
-		{ 0xf200, 0xffff, MWA_RAM },
-	MEMORY_END
+	public static Memory_WriteAddress writemem_mscoutm[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0xdfff, MWA_ROM ),
+		new Memory_WriteAddress( 0xe000, 0xe5ff, MWA_RAM ),
+		new Memory_WriteAddress( 0xe600, 0xebff, mscoutm_palette_w ),
+		new Memory_WriteAddress( 0xec00, 0xf1ff, MWA_RAM ),
+		new Memory_WriteAddress( 0xf200, 0xffff, MWA_RAM ),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	public static Memory_ReadAddress readmem_mjegolf[]={
 		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
@@ -721,13 +731,15 @@ public class sailorws
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( writemem_mjegolf )
-		{ 0x0000, 0xdfff, MWA_ROM },
-		{ 0xe000, 0xe5ff, mscoutm_palette_w },
-		{ 0xe600, 0xebff, MWA_RAM },
-		{ 0xec00, 0xf1ff, MWA_RAM },
-		{ 0xf200, 0xffff, MWA_RAM },
-	MEMORY_END
+	public static Memory_WriteAddress writemem_mjegolf[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0xdfff, MWA_ROM ),
+		new Memory_WriteAddress( 0xe000, 0xe5ff, mscoutm_palette_w ),
+		new Memory_WriteAddress( 0xe600, 0xebff, MWA_RAM ),
+		new Memory_WriteAddress( 0xec00, 0xf1ff, MWA_RAM ),
+		new Memory_WriteAddress( 0xf200, 0xffff, MWA_RAM ),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	public static Memory_ReadAddress sound_readmem[]={
 		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
@@ -737,10 +749,12 @@ public class sailorws
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( sound_writemem )
-		{ 0x0000, 0x77ff, MWA_ROM },
-		{ 0x7800, 0x7fff, MWA_RAM },
-	MEMORY_END
+	public static Memory_WriteAddress sound_writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0x77ff, MWA_ROM ),
+		new Memory_WriteAddress( 0x7800, 0x7fff, MWA_RAM ),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	
 	static PORT_READ_START( readport_mjuraden )

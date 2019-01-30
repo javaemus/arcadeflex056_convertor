@@ -270,45 +270,51 @@ public class xevious
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( writemem_cpu1 )
-		{ 0x0000, 0x3fff, MWA_ROM },
-		{ 0x6820, 0x6820, xevious_interrupt_enable_1_w },
-		{ 0x6821, 0x6821, xevious_interrupt_enable_2_w },
-		{ 0x6822, 0x6822, xevious_interrupt_enable_3_w },
-		{ 0x6823, 0x6823, xevious_halt_w },			/* reset controll */
-		{ 0x6830, 0x683f, MWA_NOP },				/* watch dock reset */
-		{ 0x7000, 0x700f, xevious_customio_data_w },
-		{ 0x7100, 0x7100, xevious_customio_w },
-		{ 0x7800, 0xafff, xevious_sharedram_w, &xevious_sharedram },
-		{ 0xb000, 0xb7ff, xevious_fg_colorram_w, &xevious_fg_colorram },
-		{ 0xb800, 0xbfff, xevious_bg_colorram_w, &xevious_bg_colorram },
-		{ 0xc000, 0xc7ff, xevious_fg_videoram_w, &xevious_fg_videoram },
-		{ 0xc800, 0xcfff, xevious_bg_videoram_w, &xevious_bg_videoram },
-		{ 0xd000, 0xd07f, xevious_vh_latch_w }, /* ?? */
-		{ 0xf000, 0xffff, xevious_bs_w },
-		{ 0x8780, 0x87ff, MWA_RAM, &spriteram_2 },	/* here only */
-		{ 0x9780, 0x97ff, MWA_RAM, &spriteram_3 },	/* to initialize */
-		{ 0xa780, 0xa7ff, MWA_RAM, &spriteram, &spriteram_size },	/* the pointers */
-	MEMORY_END
+	public static Memory_WriteAddress writemem_cpu1[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0x3fff, MWA_ROM ),
+		new Memory_WriteAddress( 0x6820, 0x6820, xevious_interrupt_enable_1_w ),
+		new Memory_WriteAddress( 0x6821, 0x6821, xevious_interrupt_enable_2_w ),
+		new Memory_WriteAddress( 0x6822, 0x6822, xevious_interrupt_enable_3_w ),
+		new Memory_WriteAddress( 0x6823, 0x6823, xevious_halt_w ),			/* reset controll */
+		new Memory_WriteAddress( 0x6830, 0x683f, MWA_NOP ),				/* watch dock reset */
+		new Memory_WriteAddress( 0x7000, 0x700f, xevious_customio_data_w ),
+		new Memory_WriteAddress( 0x7100, 0x7100, xevious_customio_w ),
+		new Memory_WriteAddress( 0x7800, 0xafff, xevious_sharedram_w, &xevious_sharedram ),
+		new Memory_WriteAddress( 0xb000, 0xb7ff, xevious_fg_colorram_w, &xevious_fg_colorram ),
+		new Memory_WriteAddress( 0xb800, 0xbfff, xevious_bg_colorram_w, &xevious_bg_colorram ),
+		new Memory_WriteAddress( 0xc000, 0xc7ff, xevious_fg_videoram_w, &xevious_fg_videoram ),
+		new Memory_WriteAddress( 0xc800, 0xcfff, xevious_bg_videoram_w, &xevious_bg_videoram ),
+		new Memory_WriteAddress( 0xd000, 0xd07f, xevious_vh_latch_w ), /* ?? */
+		new Memory_WriteAddress( 0xf000, 0xffff, xevious_bs_w ),
+		new Memory_WriteAddress( 0x8780, 0x87ff, MWA_RAM, &spriteram_2 ),	/* here only */
+		new Memory_WriteAddress( 0x9780, 0x97ff, MWA_RAM, &spriteram_3 ),	/* to initialize */
+		new Memory_WriteAddress( 0xa780, 0xa7ff, MWA_RAM, &spriteram, &spriteram_size ),	/* the pointers */
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
-	static MEMORY_WRITE_START( writemem_cpu2 )
-		{ 0x0000, 0x1fff, MWA_ROM },
-		{ 0x6830, 0x683f, MWA_NOP },				/* watch dog reset */
-		{ 0x7800, 0xafff, xevious_sharedram_w },
-		{ 0xb000, 0xb7ff, xevious_fg_colorram_w },
-		{ 0xb800, 0xbfff, xevious_bg_colorram_w },
-		{ 0xc000, 0xc7ff, xevious_fg_videoram_w },
-		{ 0xc800, 0xcfff, xevious_bg_videoram_w },
-		{ 0xd000, 0xd07f, xevious_vh_latch_w }, /* ?? */
-		{ 0xf000, 0xffff, xevious_bs_w },
-	MEMORY_END
+	public static Memory_WriteAddress writemem_cpu2[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0x1fff, MWA_ROM ),
+		new Memory_WriteAddress( 0x6830, 0x683f, MWA_NOP ),				/* watch dog reset */
+		new Memory_WriteAddress( 0x7800, 0xafff, xevious_sharedram_w ),
+		new Memory_WriteAddress( 0xb000, 0xb7ff, xevious_fg_colorram_w ),
+		new Memory_WriteAddress( 0xb800, 0xbfff, xevious_bg_colorram_w ),
+		new Memory_WriteAddress( 0xc000, 0xc7ff, xevious_fg_videoram_w ),
+		new Memory_WriteAddress( 0xc800, 0xcfff, xevious_bg_videoram_w ),
+		new Memory_WriteAddress( 0xd000, 0xd07f, xevious_vh_latch_w ), /* ?? */
+		new Memory_WriteAddress( 0xf000, 0xffff, xevious_bs_w ),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
-	static MEMORY_WRITE_START( writemem_cpu3 )
-		{ 0x0000, 0x0fff, MWA_ROM },
-		{ 0x6800, 0x681f, pengo_sound_w, &pengo_soundregs },
-		{ 0x6822, 0x6822, xevious_interrupt_enable_3_w },
-		{ 0x7800, 0xcfff, xevious_sharedram_w },
-	MEMORY_END
+	public static Memory_WriteAddress writemem_cpu3[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0x0fff, MWA_ROM ),
+		new Memory_WriteAddress( 0x6800, 0x681f, pengo_sound_w, &pengo_soundregs ),
+		new Memory_WriteAddress( 0x6822, 0x6822, xevious_interrupt_enable_3_w ),
+		new Memory_WriteAddress( 0x7800, 0xcfff, xevious_sharedram_w ),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	
 	

@@ -87,16 +87,18 @@ public class blockhl
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( writemem )
-		{ 0x1f84, 0x1f84, soundlatch_w },
-		{ 0x1f88, 0x1f88, blockhl_sh_irqtrigger_w },
-		{ 0x1f8c, 0x1f8c, watchdog_reset_w },
-		{ 0x0000, 0x3fff, K052109_051960_w },
-		{ 0x4000, 0x57ff, MWA_RAM },
-		{ 0x5800, 0x5fff, bankedram_w, &ram },
-		{ 0x6000, 0x7fff, MWA_ROM },
-		{ 0x8000, 0xffff, MWA_ROM },
-	MEMORY_END
+	public static Memory_WriteAddress writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x1f84, 0x1f84, soundlatch_w ),
+		new Memory_WriteAddress( 0x1f88, 0x1f88, blockhl_sh_irqtrigger_w ),
+		new Memory_WriteAddress( 0x1f8c, 0x1f8c, watchdog_reset_w ),
+		new Memory_WriteAddress( 0x0000, 0x3fff, K052109_051960_w ),
+		new Memory_WriteAddress( 0x4000, 0x57ff, MWA_RAM ),
+		new Memory_WriteAddress( 0x5800, 0x5fff, bankedram_w, &ram ),
+		new Memory_WriteAddress( 0x6000, 0x7fff, MWA_ROM ),
+		new Memory_WriteAddress( 0x8000, 0xffff, MWA_ROM ),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	public static Memory_ReadAddress sound_readmem[]={
 		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
@@ -107,13 +109,15 @@ public class blockhl
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( sound_writemem )
-		{ 0x0000, 0x7fff, MWA_ROM },
-		{ 0x8000, 0x87ff, MWA_RAM },
-		{ 0xc000, 0xc000, YM2151_register_port_0_w },
-		{ 0xc001, 0xc001, YM2151_data_port_0_w },
-		{ 0xe00c, 0xe00d, MWA_NOP },		/* leftover from missing 007232? */
-	MEMORY_END
+	public static Memory_WriteAddress sound_writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0x7fff, MWA_ROM ),
+		new Memory_WriteAddress( 0x8000, 0x87ff, MWA_RAM ),
+		new Memory_WriteAddress( 0xc000, 0xc000, YM2151_register_port_0_w ),
+		new Memory_WriteAddress( 0xc001, 0xc001, YM2151_data_port_0_w ),
+		new Memory_WriteAddress( 0xe00c, 0xe00d, MWA_NOP ),		/* leftover from missing 007232? */
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	/***************************************************************************
 	

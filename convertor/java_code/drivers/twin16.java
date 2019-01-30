@@ -308,16 +308,18 @@ public class twin16
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( writemem_sound )
-		{ 0x0000, 0x7fff, MWA_ROM },
-		{ 0x8000, 0x8fff, MWA_RAM },
-		{ 0x9000, 0x9000, twin16_sres_w },
-		{ 0xb000, 0xb00d, K007232_write_port_0_w  },
-		{ 0xc000, 0xc000, YM2151_register_port_0_w },
-		{ 0xc001, 0xc001, YM2151_data_port_0_w },
-		{ 0xd000, 0xd000, UPD7759_0_message_w },
-		{ 0xe000, 0xe000, twin16_UPD7759_start_w },	// Changed by Takahiro Nogi. (1999/10/27)
-	MEMORY_END
+	public static Memory_WriteAddress writemem_sound[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0x7fff, MWA_ROM ),
+		new Memory_WriteAddress( 0x8000, 0x8fff, MWA_RAM ),
+		new Memory_WriteAddress( 0x9000, 0x9000, twin16_sres_w ),
+		new Memory_WriteAddress( 0xb000, 0xb00d, K007232_write_port_0_w  ),
+		new Memory_WriteAddress( 0xc000, 0xc000, YM2151_register_port_0_w ),
+		new Memory_WriteAddress( 0xc001, 0xc001, YM2151_data_port_0_w ),
+		new Memory_WriteAddress( 0xd000, 0xd000, UPD7759_0_message_w ),
+		new Memory_WriteAddress( 0xe000, 0xe000, twin16_UPD7759_start_w ),	// Changed by Takahiro Nogi. (1999/10/27)
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	/******************************************************************************************/
 	

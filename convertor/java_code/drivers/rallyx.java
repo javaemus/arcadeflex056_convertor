@@ -118,30 +118,32 @@ public class rallyx
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( writemem )
-		{ 0x0000, 0x3fff, MWA_ROM },
-		{ 0x8000, 0x83ff, videoram_w, &videoram, &videoram_size },
-		{ 0x8400, 0x87ff, rallyx_videoram2_w, &rallyx_videoram2 },
-		{ 0x8800, 0x8bff, colorram_w, &colorram },
-		{ 0x8c00, 0x8fff, rallyx_colorram2_w, &rallyx_colorram2 },
-		{ 0x9800, 0x9fff, MWA_RAM },
-		{ 0xa004, 0xa00f, MWA_RAM, &rallyx_radarattr },
-		{ 0xa080, 0xa080, watchdog_reset_w },
-		{ 0xa100, 0xa11f, pengo_sound_w, &pengo_soundregs },
-		{ 0xa130, 0xa130, MWA_RAM, &rallyx_scrollx },
-		{ 0xa140, 0xa140, MWA_RAM, &rallyx_scrolly },
-		//{ 0xa170, 0xa170, MWA_NOP },	/* ????? */
-		{ 0xa180, 0xa180, rallyx_play_sound_w },
-		{ 0xa181, 0xa181, interrupt_enable_w },
-		{ 0xa183, 0xa183, rallyx_flipscreen_w },
-		{ 0xa184, 0xa185, rallyx_leds_w },
-		{ 0xa186, 0xa186, rallyx_coin_lockout_w },
-		{ 0xa187, 0xa187, rallyx_coin_counter_w },
-		{ 0x8014, 0x801f, MWA_RAM, &spriteram, &spriteram_size },	/* these are here just to initialize */
-		{ 0x8814, 0x881f, MWA_RAM, &spriteram_2 },	/* the pointers. */
-		{ 0x8034, 0x803f, MWA_RAM, &rallyx_radarx, &rallyx_radarram_size }, /* ditto */
-		{ 0x8834, 0x883f, MWA_RAM, &rallyx_radary },
-	MEMORY_END
+	public static Memory_WriteAddress writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0x3fff, MWA_ROM ),
+		new Memory_WriteAddress( 0x8000, 0x83ff, videoram_w, &videoram, &videoram_size ),
+		new Memory_WriteAddress( 0x8400, 0x87ff, rallyx_videoram2_w, &rallyx_videoram2 ),
+		new Memory_WriteAddress( 0x8800, 0x8bff, colorram_w, &colorram ),
+		new Memory_WriteAddress( 0x8c00, 0x8fff, rallyx_colorram2_w, &rallyx_colorram2 ),
+		new Memory_WriteAddress( 0x9800, 0x9fff, MWA_RAM ),
+		new Memory_WriteAddress( 0xa004, 0xa00f, MWA_RAM, &rallyx_radarattr ),
+		new Memory_WriteAddress( 0xa080, 0xa080, watchdog_reset_w ),
+		new Memory_WriteAddress( 0xa100, 0xa11f, pengo_sound_w, &pengo_soundregs ),
+		new Memory_WriteAddress( 0xa130, 0xa130, MWA_RAM, &rallyx_scrollx ),
+		new Memory_WriteAddress( 0xa140, 0xa140, MWA_RAM, &rallyx_scrolly ),
+		//new Memory_WriteAddress( 0xa170, 0xa170, MWA_NOP ),	/* ????? */
+		new Memory_WriteAddress( 0xa180, 0xa180, rallyx_play_sound_w ),
+		new Memory_WriteAddress( 0xa181, 0xa181, interrupt_enable_w ),
+		new Memory_WriteAddress( 0xa183, 0xa183, rallyx_flipscreen_w ),
+		new Memory_WriteAddress( 0xa184, 0xa185, rallyx_leds_w ),
+		new Memory_WriteAddress( 0xa186, 0xa186, rallyx_coin_lockout_w ),
+		new Memory_WriteAddress( 0xa187, 0xa187, rallyx_coin_counter_w ),
+		new Memory_WriteAddress( 0x8014, 0x801f, MWA_RAM, &spriteram, &spriteram_size ),	/* these are here just to initialize */
+		new Memory_WriteAddress( 0x8814, 0x881f, MWA_RAM, &spriteram_2 ),	/* the pointers. */
+		new Memory_WriteAddress( 0x8034, 0x803f, MWA_RAM, &rallyx_radarx, &rallyx_radarram_size ), /* ditto */
+		new Memory_WriteAddress( 0x8834, 0x883f, MWA_RAM, &rallyx_radary ),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static PORT_WRITE_START( writeport )
 		{ 0, 0, interrupt_vector_w },

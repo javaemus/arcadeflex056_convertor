@@ -289,27 +289,29 @@ public class pacman
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( writemem )
-		{ 0x0000, 0x3fff, MWA_ROM },
-		{ 0x4000, 0x43ff, videoram_w, &videoram, &videoram_size },
-		{ 0x4400, 0x47ff, colorram_w, &colorram },
-		{ 0x4c00, 0x4fef, MWA_RAM },
-		{ 0x4ff0, 0x4fff, MWA_RAM, &spriteram, &spriteram_size },
-		{ 0x5000, 0x5000, interrupt_enable_w },
-		{ 0x5001, 0x5001, pengo_sound_enable_w },
-		{ 0x5002, 0x5002, MWA_NOP },
-		{ 0x5003, 0x5003, pengo_flipscreen_w },
-	 	{ 0x5004, 0x5005, pacman_leds_w },
-	// 	{ 0x5006, 0x5006, pacman_coin_lockout_global_w },	this breaks many games
-	 	{ 0x5007, 0x5007, pacman_coin_counter_w },
-		{ 0x5040, 0x505f, pengo_sound_w, &pengo_soundregs },
-		{ 0x5060, 0x506f, MWA_RAM, &spriteram_2 },
-		{ 0x50c0, 0x50c0, watchdog_reset_w },
-		{ 0x8000, 0xbfff, MWA_ROM },	/* Ms. Pac-Man / Ponpoko only */
-		{ 0xc000, 0xc3ff, videoram_w }, /* mirror address for video ram, */
-		{ 0xc400, 0xc7ef, colorram_w }, /* used to display HIGH SCORE and CREDITS */
-		{ 0xffff, 0xffff, MWA_NOP },	/* Eyes writes to this location to simplify code */
-	MEMORY_END
+	public static Memory_WriteAddress writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0x3fff, MWA_ROM ),
+		new Memory_WriteAddress( 0x4000, 0x43ff, videoram_w, &videoram, &videoram_size ),
+		new Memory_WriteAddress( 0x4400, 0x47ff, colorram_w, &colorram ),
+		new Memory_WriteAddress( 0x4c00, 0x4fef, MWA_RAM ),
+		new Memory_WriteAddress( 0x4ff0, 0x4fff, MWA_RAM, &spriteram, &spriteram_size ),
+		new Memory_WriteAddress( 0x5000, 0x5000, interrupt_enable_w ),
+		new Memory_WriteAddress( 0x5001, 0x5001, pengo_sound_enable_w ),
+		new Memory_WriteAddress( 0x5002, 0x5002, MWA_NOP ),
+		new Memory_WriteAddress( 0x5003, 0x5003, pengo_flipscreen_w ),
+	 	new Memory_WriteAddress( 0x5004, 0x5005, pacman_leds_w ),
+	// 	new Memory_WriteAddress( 0x5006, 0x5006, pacman_coin_lockout_global_w ),	this breaks many games
+	 	new Memory_WriteAddress( 0x5007, 0x5007, pacman_coin_counter_w ),
+		new Memory_WriteAddress( 0x5040, 0x505f, pengo_sound_w, &pengo_soundregs ),
+		new Memory_WriteAddress( 0x5060, 0x506f, MWA_RAM, &spriteram_2 ),
+		new Memory_WriteAddress( 0x50c0, 0x50c0, watchdog_reset_w ),
+		new Memory_WriteAddress( 0x8000, 0xbfff, MWA_ROM ),	/* Ms. Pac-Man / Ponpoko only */
+		new Memory_WriteAddress( 0xc000, 0xc3ff, videoram_w ), /* mirror address for video ram, */
+		new Memory_WriteAddress( 0xc400, 0xc7ef, colorram_w ), /* used to display HIGH SCORE and CREDITS */
+		new Memory_WriteAddress( 0xffff, 0xffff, MWA_NOP ),	/* Eyes writes to this location to simplify code */
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	
 	public static Memory_ReadAddress mschamp_readmem[]={
@@ -338,28 +340,30 @@ public class pacman
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( mspacman_writemem )
-		{ 0x0000, 0x3fff, MWA_BANK1 },
-		{ 0x4000, 0x43ff, videoram_w, &videoram, &videoram_size },
-		{ 0x4400, 0x47ff, colorram_w, &colorram },
-		{ 0x4c00, 0x4fef, MWA_RAM },
-		{ 0x4ff0, 0x4fff, MWA_RAM, &spriteram, &spriteram_size },
-		{ 0x5000, 0x5000, interrupt_enable_w },
-		{ 0x5001, 0x5001, pengo_sound_enable_w },
-		{ 0x5002, 0x5002, MWA_NOP },
-		{ 0x5003, 0x5003, pengo_flipscreen_w },
-	 	{ 0x5004, 0x5005, pacman_leds_w },
-		{ 0x5006, 0x5006, mspacman_activate_rom },	/* Not actually, just handy */
-	// 	{ 0x5006, 0x5006, pacman_coin_lockout_global_w },	this breaks many games
-	 	{ 0x5007, 0x5007, pacman_coin_counter_w },
-		{ 0x5040, 0x505f, pengo_sound_w, &pengo_soundregs },
-		{ 0x5060, 0x506f, MWA_RAM, &spriteram_2 },
-		{ 0x50c0, 0x50c0, watchdog_reset_w },
-		{ 0x8000, 0xbfff, MWA_BANK1 },	/* Ms. Pac-Man / Ponpoko only */
-		{ 0xc000, 0xc3ff, videoram_w }, /* mirror address for video ram, */
-		{ 0xc400, 0xc7ef, colorram_w }, /* used to display HIGH SCORE and CREDITS */
-		{ 0xffff, 0xffff, MWA_NOP },	/* Eyes writes to this location to simplify code */
-	MEMORY_END
+	public static Memory_WriteAddress mspacman_writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0x3fff, MWA_BANK1 ),
+		new Memory_WriteAddress( 0x4000, 0x43ff, videoram_w, &videoram, &videoram_size ),
+		new Memory_WriteAddress( 0x4400, 0x47ff, colorram_w, &colorram ),
+		new Memory_WriteAddress( 0x4c00, 0x4fef, MWA_RAM ),
+		new Memory_WriteAddress( 0x4ff0, 0x4fff, MWA_RAM, &spriteram, &spriteram_size ),
+		new Memory_WriteAddress( 0x5000, 0x5000, interrupt_enable_w ),
+		new Memory_WriteAddress( 0x5001, 0x5001, pengo_sound_enable_w ),
+		new Memory_WriteAddress( 0x5002, 0x5002, MWA_NOP ),
+		new Memory_WriteAddress( 0x5003, 0x5003, pengo_flipscreen_w ),
+	 	new Memory_WriteAddress( 0x5004, 0x5005, pacman_leds_w ),
+		new Memory_WriteAddress( 0x5006, 0x5006, mspacman_activate_rom ),	/* Not actually, just handy */
+	// 	new Memory_WriteAddress( 0x5006, 0x5006, pacman_coin_lockout_global_w ),	this breaks many games
+	 	new Memory_WriteAddress( 0x5007, 0x5007, pacman_coin_counter_w ),
+		new Memory_WriteAddress( 0x5040, 0x505f, pengo_sound_w, &pengo_soundregs ),
+		new Memory_WriteAddress( 0x5060, 0x506f, MWA_RAM, &spriteram_2 ),
+		new Memory_WriteAddress( 0x50c0, 0x50c0, watchdog_reset_w ),
+		new Memory_WriteAddress( 0x8000, 0xbfff, MWA_BANK1 ),	/* Ms. Pac-Man / Ponpoko only */
+		new Memory_WriteAddress( 0xc000, 0xc3ff, videoram_w ), /* mirror address for video ram, */
+		new Memory_WriteAddress( 0xc400, 0xc7ef, colorram_w ), /* used to display HIGH SCORE and CREDITS */
+		new Memory_WriteAddress( 0xffff, 0xffff, MWA_NOP ),	/* Eyes writes to this location to simplify code */
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	
 	public static Memory_ReadAddress alibaba_readmem[]={
@@ -378,27 +382,29 @@ public class pacman
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( alibaba_writemem )
-		{ 0x0000, 0x3fff, MWA_ROM },
-		{ 0x4000, 0x43ff, videoram_w, &videoram, &videoram_size },
-		{ 0x4400, 0x47ff, colorram_w, &colorram },
-		{ 0x4ef0, 0x4eff, MWA_RAM, &spriteram, &spriteram_size },
-		{ 0x4c00, 0x4fff, MWA_RAM },
-		{ 0x5000, 0x5000, watchdog_reset_w },
-	 	{ 0x5004, 0x5005, pacman_leds_w },
-	 	{ 0x5006, 0x5006, pacman_coin_lockout_global_w },
-	 	{ 0x5007, 0x5007, pacman_coin_counter_w },
-		{ 0x5040, 0x506f, alibaba_sound_w, &pengo_soundregs },  /* the sound region is not contiguous */
-		{ 0x5060, 0x506f, MWA_RAM, &spriteram_2 }, /* actually at 5050-505f, here to point to free RAM */
-		{ 0x50c0, 0x50c0, pengo_sound_enable_w },
-		{ 0x50c1, 0x50c1, pengo_flipscreen_w },
-		{ 0x50c2, 0x50c2, interrupt_enable_w },
-		{ 0x8000, 0x8fff, MWA_ROM },
-		{ 0x9000, 0x93ff, MWA_RAM },
-		{ 0xa000, 0xa7ff, MWA_ROM },
-		{ 0xc000, 0xc3ff, videoram_w }, /* mirror address for video ram, */
-		{ 0xc400, 0xc7ef, colorram_w }, /* used to display HIGH SCORE and CREDITS */
-	MEMORY_END
+	public static Memory_WriteAddress alibaba_writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0x3fff, MWA_ROM ),
+		new Memory_WriteAddress( 0x4000, 0x43ff, videoram_w, &videoram, &videoram_size ),
+		new Memory_WriteAddress( 0x4400, 0x47ff, colorram_w, &colorram ),
+		new Memory_WriteAddress( 0x4ef0, 0x4eff, MWA_RAM, &spriteram, &spriteram_size ),
+		new Memory_WriteAddress( 0x4c00, 0x4fff, MWA_RAM ),
+		new Memory_WriteAddress( 0x5000, 0x5000, watchdog_reset_w ),
+	 	new Memory_WriteAddress( 0x5004, 0x5005, pacman_leds_w ),
+	 	new Memory_WriteAddress( 0x5006, 0x5006, pacman_coin_lockout_global_w ),
+	 	new Memory_WriteAddress( 0x5007, 0x5007, pacman_coin_counter_w ),
+		new Memory_WriteAddress( 0x5040, 0x506f, alibaba_sound_w, &pengo_soundregs ),  /* the sound region is not contiguous */
+		new Memory_WriteAddress( 0x5060, 0x506f, MWA_RAM, &spriteram_2 ), /* actually at 5050-505f, here to point to free RAM */
+		new Memory_WriteAddress( 0x50c0, 0x50c0, pengo_sound_enable_w ),
+		new Memory_WriteAddress( 0x50c1, 0x50c1, pengo_flipscreen_w ),
+		new Memory_WriteAddress( 0x50c2, 0x50c2, interrupt_enable_w ),
+		new Memory_WriteAddress( 0x8000, 0x8fff, MWA_ROM ),
+		new Memory_WriteAddress( 0x9000, 0x93ff, MWA_RAM ),
+		new Memory_WriteAddress( 0xa000, 0xa7ff, MWA_ROM ),
+		new Memory_WriteAddress( 0xc000, 0xc3ff, videoram_w ), /* mirror address for video ram, */
+		new Memory_WriteAddress( 0xc400, 0xc7ef, colorram_w ), /* used to display HIGH SCORE and CREDITS */
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	
 	

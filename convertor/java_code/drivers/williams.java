@@ -653,14 +653,16 @@ public class williams
 	};
 	
 	
-	static MEMORY_WRITE_START( defender_writemem )
-		{ 0x0000, 0x97ff, williams_videoram_w, &videoram, &videoram_size },
-		{ 0x9800, 0xbfff, MWA_RAM },
-		{ 0xc000, 0xcfff, MWA_BANK2, &defender_bank_base },
-		{ 0xc000, 0xc00f, MWA_RAM, &paletteram },
-		{ 0xd000, 0xdfff, defender_bank_select_w },
-		{ 0xe000, 0xffff, MWA_ROM },
-	MEMORY_END
+	public static Memory_WriteAddress defender_writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0x97ff, williams_videoram_w, &videoram, &videoram_size ),
+		new Memory_WriteAddress( 0x9800, 0xbfff, MWA_RAM ),
+		new Memory_WriteAddress( 0xc000, 0xcfff, MWA_BANK2, &defender_bank_base ),
+		new Memory_WriteAddress( 0xc000, 0xc00f, MWA_RAM, &paletteram ),
+		new Memory_WriteAddress( 0xd000, 0xdfff, defender_bank_select_w ),
+		new Memory_WriteAddress( 0xe000, 0xffff, MWA_ROM ),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	
 	
@@ -683,18 +685,20 @@ public class williams
 	};
 	
 	
-	static MEMORY_WRITE_START( williams_writemem )
-		{ 0x0000, 0x97ff, williams_videoram_w, &williams_bank_base, &videoram_size },
-		{ 0x9800, 0xbfff, MWA_RAM },
-		{ 0xc000, 0xc00f, paletteram_BBGGGRRR_w, &paletteram },
-		{ 0xc804, 0xc807, pia_0_w },
-		{ 0xc80c, 0xc80f, pia_1_w },
-		{ 0xc900, 0xc900, williams_vram_select_w },
-		{ 0xca00, 0xca07, williams_blitter_w, &williams_blitterram },
-		{ 0xcbff, 0xcbff, watchdog_reset_w },
-		{ 0xcc00, 0xcfff, MWA_RAM },
-		{ 0xd000, 0xffff, MWA_ROM },
-	MEMORY_END
+	public static Memory_WriteAddress williams_writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0x97ff, williams_videoram_w, &williams_bank_base, &videoram_size ),
+		new Memory_WriteAddress( 0x9800, 0xbfff, MWA_RAM ),
+		new Memory_WriteAddress( 0xc000, 0xc00f, paletteram_BBGGGRRR_w, &paletteram ),
+		new Memory_WriteAddress( 0xc804, 0xc807, pia_0_w ),
+		new Memory_WriteAddress( 0xc80c, 0xc80f, pia_1_w ),
+		new Memory_WriteAddress( 0xc900, 0xc900, williams_vram_select_w ),
+		new Memory_WriteAddress( 0xca00, 0xca07, williams_blitter_w, &williams_blitterram ),
+		new Memory_WriteAddress( 0xcbff, 0xcbff, watchdog_reset_w ),
+		new Memory_WriteAddress( 0xcc00, 0xcfff, MWA_RAM ),
+		new Memory_WriteAddress( 0xd000, 0xffff, MWA_ROM ),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	
 	
@@ -718,24 +722,26 @@ public class williams
 	};
 	
 	
-	static MEMORY_WRITE_START( blaster_writemem )
-		{ 0x0000, 0x96ff, williams_videoram_w, &williams_bank_base, &videoram_size },
-		{ 0x9700, 0xbaff, MWA_RAM },
-		{ 0xbb00, 0xbbff, blaster_palette_0_w, &blaster_color_zero_table },
-		{ 0xbc00, 0xbcff, MWA_RAM, &blaster_color_zero_flags },
-		{ 0xbd00, 0xbfff, MWA_RAM },
-		{ 0xc000, 0xc00f, paletteram_BBGGGRRR_w, &paletteram },
-		{ 0xc804, 0xc807, pia_0_w },
-		{ 0xc80c, 0xc80f, pia_1_w },
-		{ 0xc900, 0xc900, blaster_vram_select_w },
-		{ 0xc940, 0xc940, blaster_remap_select_w },
-		{ 0xc980, 0xc980, blaster_bank_select_w },
-		{ 0xc9c0, 0xc9c0, MWA_RAM, &blaster_video_bits },
-		{ 0xca00, 0xca07, williams_blitter_w, &williams_blitterram },
-		{ 0xcbff, 0xcbff, watchdog_reset_w },
-		{ 0xcc00, 0xcfff, MWA_RAM },
-		{ 0xd000, 0xffff, MWA_ROM },
-	MEMORY_END
+	public static Memory_WriteAddress blaster_writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0x96ff, williams_videoram_w, &williams_bank_base, &videoram_size ),
+		new Memory_WriteAddress( 0x9700, 0xbaff, MWA_RAM ),
+		new Memory_WriteAddress( 0xbb00, 0xbbff, blaster_palette_0_w, &blaster_color_zero_table ),
+		new Memory_WriteAddress( 0xbc00, 0xbcff, MWA_RAM, &blaster_color_zero_flags ),
+		new Memory_WriteAddress( 0xbd00, 0xbfff, MWA_RAM ),
+		new Memory_WriteAddress( 0xc000, 0xc00f, paletteram_BBGGGRRR_w, &paletteram ),
+		new Memory_WriteAddress( 0xc804, 0xc807, pia_0_w ),
+		new Memory_WriteAddress( 0xc80c, 0xc80f, pia_1_w ),
+		new Memory_WriteAddress( 0xc900, 0xc900, blaster_vram_select_w ),
+		new Memory_WriteAddress( 0xc940, 0xc940, blaster_remap_select_w ),
+		new Memory_WriteAddress( 0xc980, 0xc980, blaster_bank_select_w ),
+		new Memory_WriteAddress( 0xc9c0, 0xc9c0, MWA_RAM, &blaster_video_bits ),
+		new Memory_WriteAddress( 0xca00, 0xca07, williams_blitter_w, &williams_blitterram ),
+		new Memory_WriteAddress( 0xcbff, 0xcbff, watchdog_reset_w ),
+		new Memory_WriteAddress( 0xcc00, 0xcfff, MWA_RAM ),
+		new Memory_WriteAddress( 0xd000, 0xffff, MWA_ROM ),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	
 	
@@ -761,25 +767,27 @@ public class williams
 	};
 	
 	
-	static MEMORY_WRITE_START( williams2_writemem )
-		{ 0x0000, 0x8fff, williams2_videoram_w, &videoram, &videoram_size },
-		{ 0x9000, 0xbfff, MWA_RAM },
-		{ 0xc000, 0xc7ff, MWA_RAM },
-		{ 0xc800, 0xc800, williams2_bank_select_w },
-		{ 0xc880, 0xc887, williams_blitter_w, &williams_blitterram },
-		{ 0xc900, 0xc900, watchdog_reset_w },
-		{ 0xc980, 0xc983, pia_1_w },
-		{ 0xc984, 0xc987, pia_0_w },
-		{ 0xc98c, 0xc98c, williams2_7segment_w },
-		{ 0xcb00, 0xcb00, williams2_fg_select_w },
-		{ 0xcb20, 0xcb20, williams2_bg_select_w },
-		{ 0xcb40, 0xcb40, MWA_RAM, &williams2_xscroll_low },
-		{ 0xcb60, 0xcb60, MWA_RAM, &williams2_xscroll_high },
-		{ 0xcb80, 0xcb80, MWA_RAM },
-		{ 0xcba0, 0xcba0, MWA_RAM, &williams2_blit_inhibit },
-		{ 0xcc00, 0xcfff, MWA_RAM },
-		{ 0xd000, 0xffff, MWA_ROM },
-	MEMORY_END
+	public static Memory_WriteAddress williams2_writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0x8fff, williams2_videoram_w, &videoram, &videoram_size ),
+		new Memory_WriteAddress( 0x9000, 0xbfff, MWA_RAM ),
+		new Memory_WriteAddress( 0xc000, 0xc7ff, MWA_RAM ),
+		new Memory_WriteAddress( 0xc800, 0xc800, williams2_bank_select_w ),
+		new Memory_WriteAddress( 0xc880, 0xc887, williams_blitter_w, &williams_blitterram ),
+		new Memory_WriteAddress( 0xc900, 0xc900, watchdog_reset_w ),
+		new Memory_WriteAddress( 0xc980, 0xc983, pia_1_w ),
+		new Memory_WriteAddress( 0xc984, 0xc987, pia_0_w ),
+		new Memory_WriteAddress( 0xc98c, 0xc98c, williams2_7segment_w ),
+		new Memory_WriteAddress( 0xcb00, 0xcb00, williams2_fg_select_w ),
+		new Memory_WriteAddress( 0xcb20, 0xcb20, williams2_bg_select_w ),
+		new Memory_WriteAddress( 0xcb40, 0xcb40, MWA_RAM, &williams2_xscroll_low ),
+		new Memory_WriteAddress( 0xcb60, 0xcb60, MWA_RAM, &williams2_xscroll_high ),
+		new Memory_WriteAddress( 0xcb80, 0xcb80, MWA_RAM ),
+		new Memory_WriteAddress( 0xcba0, 0xcba0, MWA_RAM, &williams2_blit_inhibit ),
+		new Memory_WriteAddress( 0xcc00, 0xcfff, MWA_RAM ),
+		new Memory_WriteAddress( 0xd000, 0xffff, MWA_ROM ),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	
 	
@@ -799,12 +807,14 @@ public class williams
 	};
 	
 	
-	static MEMORY_WRITE_START( sound_writemem )
-		{ 0x0000, 0x007f, MWA_RAM },
-		{ 0x0400, 0x0403, pia_2_w },
-		{ 0x8400, 0x8403, pia_2_w },	/* used by Colony 7, perhaps others? */
-		{ 0xb000, 0xffff, MWA_ROM },	/* most games start at $F000, Sinistar starts at $B000 */
-	MEMORY_END
+	public static Memory_WriteAddress sound_writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0x007f, MWA_RAM ),
+		new Memory_WriteAddress( 0x0400, 0x0403, pia_2_w ),
+		new Memory_WriteAddress( 0x8400, 0x8403, pia_2_w ),	/* used by Colony 7, perhaps others? */
+		new Memory_WriteAddress( 0xb000, 0xffff, MWA_ROM ),	/* most games start at $F000, Sinistar starts at $B000 */
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	
 	
@@ -823,11 +833,13 @@ public class williams
 	};
 	
 	
-	static MEMORY_WRITE_START( williams2_sound_writemem )
-		{ 0x0000, 0x00ff, MWA_RAM },
-		{ 0x2000, 0x2003, pia_2_w },
-		{ 0xe000, 0xffff, MWA_ROM },
-	MEMORY_END
+	public static Memory_WriteAddress williams2_sound_writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0x00ff, MWA_RAM ),
+		new Memory_WriteAddress( 0x2000, 0x2003, pia_2_w ),
+		new Memory_WriteAddress( 0xe000, 0xffff, MWA_ROM ),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	
 	

@@ -80,18 +80,20 @@ public class commando
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( writemem )
-		{ 0x0000, 0xbfff, MWA_ROM },
-		{ 0xc800, 0xc800, soundlatch_w },
-		{ 0xc804, 0xc804, commando_c804_w },
-		{ 0xc808, 0xc809, commando_scrollx_w },
-		{ 0xc80a, 0xc80b, commando_scrolly_w },
-		{ 0xd000, 0xd7ff, commando_fgvideoram_w, &commando_fgvideoram },
-		{ 0xd800, 0xdfff, commando_bgvideoram_w, &commando_bgvideoram },
-		{ 0xe000, 0xfdff, MWA_RAM },
-		{ 0xfe00, 0xff7f, MWA_RAM, &spriteram, &spriteram_size },
-		{ 0xff80, 0xffff, MWA_RAM },
-	MEMORY_END
+	public static Memory_WriteAddress writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0xbfff, MWA_ROM ),
+		new Memory_WriteAddress( 0xc800, 0xc800, soundlatch_w ),
+		new Memory_WriteAddress( 0xc804, 0xc804, commando_c804_w ),
+		new Memory_WriteAddress( 0xc808, 0xc809, commando_scrollx_w ),
+		new Memory_WriteAddress( 0xc80a, 0xc80b, commando_scrolly_w ),
+		new Memory_WriteAddress( 0xd000, 0xd7ff, commando_fgvideoram_w, &commando_fgvideoram ),
+		new Memory_WriteAddress( 0xd800, 0xdfff, commando_bgvideoram_w, &commando_bgvideoram ),
+		new Memory_WriteAddress( 0xe000, 0xfdff, MWA_RAM ),
+		new Memory_WriteAddress( 0xfe00, 0xff7f, MWA_RAM, &spriteram, &spriteram_size ),
+		new Memory_WriteAddress( 0xff80, 0xffff, MWA_RAM ),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	
 	
@@ -103,14 +105,16 @@ public class commando
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( sound_writemem )
-		{ 0x0000, 0x3fff, MWA_ROM },
-		{ 0x4000, 0x47ff, MWA_RAM },
-		{ 0x8000, 0x8000, YM2203_control_port_0_w },
-		{ 0x8001, 0x8001, YM2203_write_port_0_w },
-		{ 0x8002, 0x8002, YM2203_control_port_1_w },
-		{ 0x8003, 0x8003, YM2203_write_port_1_w },
-	MEMORY_END
+	public static Memory_WriteAddress sound_writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0x3fff, MWA_ROM ),
+		new Memory_WriteAddress( 0x4000, 0x47ff, MWA_RAM ),
+		new Memory_WriteAddress( 0x8000, 0x8000, YM2203_control_port_0_w ),
+		new Memory_WriteAddress( 0x8001, 0x8001, YM2203_write_port_0_w ),
+		new Memory_WriteAddress( 0x8002, 0x8002, YM2203_control_port_1_w ),
+		new Memory_WriteAddress( 0x8003, 0x8003, YM2203_write_port_1_w ),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	
 	

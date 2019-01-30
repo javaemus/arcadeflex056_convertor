@@ -235,21 +235,23 @@ public class tutankhm
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( writemem )
-		{ 0x0000, 0x7fff, tutankhm_videoram_w, &videoram, &videoram_size },
-		{ 0x8000, 0x800f, paletteram_BBGGGRRR_w, &paletteram },
-		{ 0x8100, 0x8100, MWA_RAM, &tutankhm_scrollx },
-		{ 0x8200, 0x8200, interrupt_enable_w },
-		{ 0x8202, 0x8203, tutankhm_coin_counter_w },
-		{ 0x8205, 0x8205, MWA_NOP },	/* ??? */
-		{ 0x8206, 0x8206, flip_screen_x_w },
-		{ 0x8207, 0x8207, flip_screen_y_w },
-		{ 0x8300, 0x8300, tutankhm_bankselect_w },
-		{ 0x8600, 0x8600, timeplt_sh_irqtrigger_w },
-		{ 0x8700, 0x8700, soundlatch_w },
-		{ 0x8800, 0x8fff, MWA_RAM },
-		{ 0xa000, 0xffff, MWA_ROM },
-	MEMORY_END
+	public static Memory_WriteAddress writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0x7fff, tutankhm_videoram_w, &videoram, &videoram_size ),
+		new Memory_WriteAddress( 0x8000, 0x800f, paletteram_BBGGGRRR_w, &paletteram ),
+		new Memory_WriteAddress( 0x8100, 0x8100, MWA_RAM, &tutankhm_scrollx ),
+		new Memory_WriteAddress( 0x8200, 0x8200, interrupt_enable_w ),
+		new Memory_WriteAddress( 0x8202, 0x8203, tutankhm_coin_counter_w ),
+		new Memory_WriteAddress( 0x8205, 0x8205, MWA_NOP ),	/* ??? */
+		new Memory_WriteAddress( 0x8206, 0x8206, flip_screen_x_w ),
+		new Memory_WriteAddress( 0x8207, 0x8207, flip_screen_y_w ),
+		new Memory_WriteAddress( 0x8300, 0x8300, tutankhm_bankselect_w ),
+		new Memory_WriteAddress( 0x8600, 0x8600, timeplt_sh_irqtrigger_w ),
+		new Memory_WriteAddress( 0x8700, 0x8700, soundlatch_w ),
+		new Memory_WriteAddress( 0x8800, 0x8fff, MWA_RAM ),
+		new Memory_WriteAddress( 0xa000, 0xffff, MWA_ROM ),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	
 	INPUT_PORTS_START( tutankhm )

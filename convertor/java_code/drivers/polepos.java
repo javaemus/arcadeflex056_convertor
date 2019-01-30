@@ -165,28 +165,30 @@ public class polepos
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( z80_writemem )
-		{ 0x0000, 0x2fff, MWA_ROM },						/* ROM */
-		{ 0x3000, 0x37ff, MWA_RAM, &nvram, &nvram_size },	/* Battery Backup */
-		{ 0x4000, 0x47ff, polepos_sprite_w },				/* Motion Object */
-		{ 0x4800, 0x4bff, polepos_road_w }, 				/* Road Memory */
-		{ 0x4c00, 0x4fff, polepos_alpha_w },				/* Alphanumeric (char ram) */
-		{ 0x5000, 0x57ff, polepos_view_w }, 				/* Background Memory */
-		{ 0x8000, 0x83bf, MWA_RAM },						/* Sound Memory */
-		{ 0x83c0, 0x83ff, polepos_sound_w, &polepos_soundregs },/* Sound data */
-		{ 0x9000, 0x90ff, polepos_mcu_data_w }, 			/* 4 bit CPU data */
-		{ 0x9100, 0x9100, polepos_mcu_control_w },			/* 4 bit CPU control */
-		{ 0xa000, 0xa000, polepos_z80_irq_enable_w },		/* NMI enable */
-		{ 0xa001, 0xa001, polepos_mcu_enable_w },			/* 4 bit CPU enable */
-		{ 0xa002, 0xa002, MWA_NOP },						/* Sound Enable */
-		{ 0xa003, 0xa003, polepos_adc_select_w },			/* ADC Input select */
-		{ 0xa004, 0xa005, polepos_z8002_enable_w }, 		/* CPU 1/2 enable */
-		{ 0xa006, 0xa006, polepos_start_w },				/* Start Switch */
-		{ 0xa007, 0xa007, MWA_NOP },						/* Color Enable */
-		{ 0xa100, 0xa100, watchdog_reset_w },				/* Watchdog */
-		{ 0xa200, 0xa200, polepos_engine_sound_lsb_w }, 	/* Car Sound ( Lower Nibble ) */
-		{ 0xa300, 0xa300, polepos_engine_sound_msb_w }, 	/* Car Sound ( Upper Nibble ) */
-	MEMORY_END
+	public static Memory_WriteAddress z80_writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0x2fff, MWA_ROM ),						/* ROM */
+		new Memory_WriteAddress( 0x3000, 0x37ff, MWA_RAM, &nvram, &nvram_size ),	/* Battery Backup */
+		new Memory_WriteAddress( 0x4000, 0x47ff, polepos_sprite_w ),				/* Motion Object */
+		new Memory_WriteAddress( 0x4800, 0x4bff, polepos_road_w ), 				/* Road Memory */
+		new Memory_WriteAddress( 0x4c00, 0x4fff, polepos_alpha_w ),				/* Alphanumeric (char ram) */
+		new Memory_WriteAddress( 0x5000, 0x57ff, polepos_view_w ), 				/* Background Memory */
+		new Memory_WriteAddress( 0x8000, 0x83bf, MWA_RAM ),						/* Sound Memory */
+		new Memory_WriteAddress( 0x83c0, 0x83ff, polepos_sound_w, &polepos_soundregs ),/* Sound data */
+		new Memory_WriteAddress( 0x9000, 0x90ff, polepos_mcu_data_w ), 			/* 4 bit CPU data */
+		new Memory_WriteAddress( 0x9100, 0x9100, polepos_mcu_control_w ),			/* 4 bit CPU control */
+		new Memory_WriteAddress( 0xa000, 0xa000, polepos_z80_irq_enable_w ),		/* NMI enable */
+		new Memory_WriteAddress( 0xa001, 0xa001, polepos_mcu_enable_w ),			/* 4 bit CPU enable */
+		new Memory_WriteAddress( 0xa002, 0xa002, MWA_NOP ),						/* Sound Enable */
+		new Memory_WriteAddress( 0xa003, 0xa003, polepos_adc_select_w ),			/* ADC Input select */
+		new Memory_WriteAddress( 0xa004, 0xa005, polepos_z8002_enable_w ), 		/* CPU 1/2 enable */
+		new Memory_WriteAddress( 0xa006, 0xa006, polepos_start_w ),				/* Start Switch */
+		new Memory_WriteAddress( 0xa007, 0xa007, MWA_NOP ),						/* Color Enable */
+		new Memory_WriteAddress( 0xa100, 0xa100, watchdog_reset_w ),				/* Watchdog */
+		new Memory_WriteAddress( 0xa200, 0xa200, polepos_engine_sound_lsb_w ), 	/* Car Sound ( Lower Nibble ) */
+		new Memory_WriteAddress( 0xa300, 0xa300, polepos_engine_sound_msb_w ), 	/* Car Sound ( Upper Nibble ) */
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static PORT_READ_START( z80_readport )
 		{ 0x00, 0x00, polepos_adc_r },

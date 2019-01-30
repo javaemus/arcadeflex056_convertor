@@ -182,15 +182,16 @@ public class buggychl
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( writemem )
-		{ 0x0000, 0x3fff, MWA_ROM }, /* A22-04 (23) */
-		{ 0x4000, 0x7fff, MWA_ROM }, /* A22-05 (22) */
-		{ 0x8000, 0x87ff, MWA_RAM }, /* 6116 SRAM (36) */
-		{ 0x8800, 0x8fff, MWA_RAM }, /* 6116 SRAM (35) */
-		{ 0x9000, 0x9fff, buggychl_sprite_lookup_w },
-		{ 0xa000, 0xbfff, buggychl_chargen_w, &buggychl_character_ram },
-		{ 0xc800, 0xcfff, videoram_w, &videoram, &videoram_size },
-	//	{ 0xd000, 0xd000, horizon
+	public static Memory_WriteAddress writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0x3fff, MWA_ROM ), /* A22-04 (23) */
+		new Memory_WriteAddress( 0x4000, 0x7fff, MWA_ROM ), /* A22-05 (22) */
+		new Memory_WriteAddress( 0x8000, 0x87ff, MWA_RAM ), /* 6116 SRAM (36) */
+		new Memory_WriteAddress( 0x8800, 0x8fff, MWA_RAM ), /* 6116 SRAM (35) */
+		new Memory_WriteAddress( 0x9000, 0x9fff, buggychl_sprite_lookup_w ),
+		new Memory_WriteAddress( 0xa000, 0xbfff, buggychl_chargen_w, &buggychl_character_ram ),
+		new Memory_WriteAddress( 0xc800, 0xcfff, videoram_w, &videoram, &videoram_size ),
+	//	new Memory_WriteAddress( 0xd000, 0xd000, horizon
 		{ 0xd100, 0xd100, buggychl_ctrl_w },
 		{ 0xd200, 0xd200, bankswitch_w },
 		{ 0xd300, 0xd300, watchdog_reset_w },
@@ -208,7 +209,8 @@ public class buggychl
 		{ 0xdb00, 0xdbff, MWA_RAM, &buggychl_scrollh },
 		{ 0xdc04, 0xdc04, MWA_RAM },	/* should be fg scroll */
 		{ 0xdc06, 0xdc06, buggychl_bg_scrollx_w },
-	MEMORY_END
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	public static Memory_ReadAddress sound_readmem[]={
 		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
@@ -220,22 +222,24 @@ public class buggychl
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( sound_writemem )
-		{ 0x0000, 0x3fff, MWA_ROM },
-		{ 0x4000, 0x47ff, MWA_RAM },
-		{ 0x4800, 0x4800, AY8910_control_port_0_w },
-		{ 0x4801, 0x4801, AY8910_write_port_0_w },
-		{ 0x4802, 0x4802, AY8910_control_port_1_w },
-		{ 0x4803, 0x4803, AY8910_write_port_1_w },
-		{ 0x4810, 0x481d, MWA_RAM },	/* MSM5232 registers */
-		{ 0x4820, 0x4820, MWA_RAM },	/* VOL/BAL   for the 7630 on the MSM5232 output */
-		{ 0x4830, 0x4830, MWA_RAM },	/* TRBL/BASS for the 7630 on the MSM5232 output  */
-	//	{ 0x5000, 0x5000, MWA_RAM },	/* to main cpu */
-		{ 0x5001, 0x5001, nmi_enable_w },
-		{ 0x5002, 0x5002, nmi_disable_w },
-		{ 0x5003, 0x5003, sound_enable_w },
-		{ 0xe000, 0xefff, MWA_ROM },
-	MEMORY_END
+	public static Memory_WriteAddress sound_writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0x3fff, MWA_ROM ),
+		new Memory_WriteAddress( 0x4000, 0x47ff, MWA_RAM ),
+		new Memory_WriteAddress( 0x4800, 0x4800, AY8910_control_port_0_w ),
+		new Memory_WriteAddress( 0x4801, 0x4801, AY8910_write_port_0_w ),
+		new Memory_WriteAddress( 0x4802, 0x4802, AY8910_control_port_1_w ),
+		new Memory_WriteAddress( 0x4803, 0x4803, AY8910_write_port_1_w ),
+		new Memory_WriteAddress( 0x4810, 0x481d, MWA_RAM ),	/* MSM5232 registers */
+		new Memory_WriteAddress( 0x4820, 0x4820, MWA_RAM ),	/* VOL/BAL   for the 7630 on the MSM5232 output */
+		new Memory_WriteAddress( 0x4830, 0x4830, MWA_RAM ),	/* TRBL/BASS for the 7630 on the MSM5232 output  */
+	//	new Memory_WriteAddress( 0x5000, 0x5000, MWA_RAM ),	/* to main cpu */
+		new Memory_WriteAddress( 0x5001, 0x5001, nmi_enable_w ),
+		new Memory_WriteAddress( 0x5002, 0x5002, nmi_disable_w ),
+		new Memory_WriteAddress( 0x5003, 0x5003, sound_enable_w ),
+		new Memory_WriteAddress( 0xe000, 0xefff, MWA_ROM ),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	public static Memory_ReadAddress mcu_readmem[]={
 		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
@@ -247,16 +251,18 @@ public class buggychl
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( mcu_writemem )
-		{ 0x0000, 0x0000, buggychl_68705_portA_w },
-		{ 0x0001, 0x0001, buggychl_68705_portB_w },
-		{ 0x0002, 0x0002, buggychl_68705_portC_w },
-		{ 0x0004, 0x0004, buggychl_68705_ddrA_w },
-		{ 0x0005, 0x0005, buggychl_68705_ddrB_w },
-		{ 0x0006, 0x0006, buggychl_68705_ddrC_w },
-		{ 0x0010, 0x007f, MWA_RAM },
-		{ 0x0080, 0x07ff, MWA_ROM },
-	MEMORY_END
+	public static Memory_WriteAddress mcu_writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0x0000, buggychl_68705_portA_w ),
+		new Memory_WriteAddress( 0x0001, 0x0001, buggychl_68705_portB_w ),
+		new Memory_WriteAddress( 0x0002, 0x0002, buggychl_68705_portC_w ),
+		new Memory_WriteAddress( 0x0004, 0x0004, buggychl_68705_ddrA_w ),
+		new Memory_WriteAddress( 0x0005, 0x0005, buggychl_68705_ddrB_w ),
+		new Memory_WriteAddress( 0x0006, 0x0006, buggychl_68705_ddrC_w ),
+		new Memory_WriteAddress( 0x0010, 0x007f, MWA_RAM ),
+		new Memory_WriteAddress( 0x0080, 0x07ff, MWA_ROM ),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	/******************************************************************************/
 	

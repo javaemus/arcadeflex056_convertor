@@ -231,20 +231,22 @@ public class cabal
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( writemem_sound )
-		{ 0x0000, 0x1fff, MWA_ROM },
-		{ 0x2000, 0x27ff, MWA_RAM },
-		{ 0x4001, 0x4001, seibu_irq_clear_w },
-		{ 0x4002, 0x4002, seibu_rst10_ack_w },
-		{ 0x4003, 0x4003, seibu_rst18_ack_w },
-	//	{ 0x4005, 0x4006, 0x401a  adpcm 1
+	public static Memory_WriteAddress writemem_sound[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0x1fff, MWA_ROM ),
+		new Memory_WriteAddress( 0x2000, 0x27ff, MWA_RAM ),
+		new Memory_WriteAddress( 0x4001, 0x4001, seibu_irq_clear_w ),
+		new Memory_WriteAddress( 0x4002, 0x4002, seibu_rst10_ack_w ),
+		new Memory_WriteAddress( 0x4003, 0x4003, seibu_rst18_ack_w ),
+	//	new Memory_WriteAddress( 0x4005, 0x4006, 0x401a  adpcm 1
 		{ 0x4008, 0x4008, YM2151_register_port_0_w },
 		{ 0x4009, 0x4009, YM2151_data_port_0_w },
 		{ 0x4018, 0x4019, seibu_main_data_w },
 		{ 0x401b, 0x401b, seibu_coin_w },
 	//	{ 0x6005, 0x6006, 0x601a  adpcm 2
 		{ 0x8000, 0xffff, MWA_ROM },
-	MEMORY_END
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	public static Memory_ReadAddress cabalbl_readmem_sound[]={
 		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
@@ -256,16 +258,18 @@ public class cabal
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( cabalbl_writemem_sound )
-		{ 0x0000, 0x1fff, MWA_ROM },
-		{ 0x2000, 0x2fff, MWA_RAM },
-		{ 0x4000, 0x4002, cabalbl_snd_w },
-		{ 0x400c, 0x400c, soundlatch2_w },
-		{ 0x400e, 0x400e, YM2151_register_port_0_w },
-		{ 0x400f, 0x400f, YM2151_data_port_0_w },
-		{ 0x6000, 0x6000, MWA_NOP },  /*???*/
-		{ 0x8000, 0xffff, MWA_ROM },
-	MEMORY_END
+	public static Memory_WriteAddress cabalbl_writemem_sound[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0x1fff, MWA_ROM ),
+		new Memory_WriteAddress( 0x2000, 0x2fff, MWA_RAM ),
+		new Memory_WriteAddress( 0x4000, 0x4002, cabalbl_snd_w ),
+		new Memory_WriteAddress( 0x400c, 0x400c, soundlatch2_w ),
+		new Memory_WriteAddress( 0x400e, 0x400e, YM2151_register_port_0_w ),
+		new Memory_WriteAddress( 0x400f, 0x400f, YM2151_data_port_0_w ),
+		new Memory_WriteAddress( 0x6000, 0x6000, MWA_NOP ),  /*???*/
+		new Memory_WriteAddress( 0x8000, 0xffff, MWA_ROM ),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	/* ADPCM CPU (common) */
 	
@@ -275,9 +279,11 @@ public class cabal
 		new Memory_ReadAddress( 0x0000, 0xffff, MRA_ROM ),
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
-	static MEMORY_WRITE_START( cabalbl_writemem_adpcm )
-		{ 0x0000, 0xffff, MWA_NOP },
-	MEMORY_END
+	public static Memory_WriteAddress cabalbl_writemem_adpcm[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0xffff, MWA_NOP ),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	#endif
 	
 	

@@ -60,20 +60,22 @@ public class videopin
 	};
 	
 	
-	static MEMORY_WRITE_START( videopin_writemem )
-		{ 0x0000, 0x01ff, MWA_RAM },                  /* working RAM */
-		{ 0x0200, 0x07ff, videoram_w, &videoram, &videoram_size },
+	public static Memory_WriteAddress videopin_writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0x01ff, MWA_RAM ),                  /* working RAM */
+		new Memory_WriteAddress( 0x0200, 0x07ff, videoram_w, &videoram, &videoram_size ),
 		                                              /* playfield RAM */
-		{ 0x0800, 0x0800, videopin_note_dvslrd_w },   /* No sound yet, audio frequency load (NOTE DVSRLD) */
-		{ 0x0801, 0x0801, videopin_led_w },           /* LED write (LED WR) */
-		{ 0x0802, 0x0802, watchdog_reset_w },         /* watchdog counter clear (WATCHDOG) */
-		{ 0x0804, 0x0804, videopin_ball_position_w }, /* video ball position (BALL POSITION) */
-		{ 0x0805, 0x0805, videopin_out1_w },          /* NMI MASK, lockout coil, audio frequency (OUT 1) */
-		{ 0x0806, 0x0806, videopin_out2_w },          /* audio disable during attract, bell audio gen enable,
+		new Memory_WriteAddress( 0x0800, 0x0800, videopin_note_dvslrd_w ),   /* No sound yet, audio frequency load (NOTE DVSRLD) */
+		new Memory_WriteAddress( 0x0801, 0x0801, videopin_led_w ),           /* LED write (LED WR) */
+		new Memory_WriteAddress( 0x0802, 0x0802, watchdog_reset_w ),         /* watchdog counter clear (WATCHDOG) */
+		new Memory_WriteAddress( 0x0804, 0x0804, videopin_ball_position_w ), /* video ball position (BALL POSITION) */
+		new Memory_WriteAddress( 0x0805, 0x0805, videopin_out1_w ),          /* NMI MASK, lockout coil, audio frequency (OUT 1) */
+		new Memory_WriteAddress( 0x0806, 0x0806, videopin_out2_w ),          /* audio disable during attract, bell audio gen enable,
 	                                                     bong audio gen enable, coin counter,
 														 audio volume select (OUT 2) */
-		{ 0x2000, 0x3fff, MWA_ROM }, /* PROM */
-	MEMORY_END
+		new Memory_WriteAddress( 0x2000, 0x3fff, MWA_ROM ), /* PROM */
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	
 	

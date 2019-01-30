@@ -44,13 +44,15 @@ public class zac2650
 	};
 	
 	
-	static MEMORY_WRITE_START( writemem )
-		{ 0x0000, 0x17FF, MWA_ROM },
-		{ 0x1800, 0x1bff, videoram_w, &videoram, &videoram_size },
-	    { 0x1D00, 0x1dff, MWA_RAM },
-	    { 0x1E80, 0x1E80, tinvader_sound_w },
-	    { 0x1F00, 0x1FFF, zac_s2636_w, &s2636ram },
-	MEMORY_END
+	public static Memory_WriteAddress writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0x17FF, MWA_ROM ),
+		new Memory_WriteAddress( 0x1800, 0x1bff, videoram_w, &videoram, &videoram_size ),
+	    new Memory_WriteAddress( 0x1D00, 0x1dff, MWA_RAM ),
+	    new Memory_WriteAddress( 0x1E80, 0x1E80, tinvader_sound_w ),
+	    new Memory_WriteAddress( 0x1F00, 0x1FFF, zac_s2636_w, &s2636ram ),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static PORT_READ_START( readport )
 	    { S2650_SENSE_PORT, S2650_SENSE_PORT, input_port_3_r },
@@ -304,11 +306,13 @@ public class zac2650
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( emb_writemem )
-		{ 0x0000, 0x0fff, MWA_ROM },
-		{ 0x1e00, 0x1fff, MWA_RAM },
-		{ 0x2000, 0x3dff, invaders_videoram_w, &videoram, &videoram_size },
-	MEMORY_END
+	public static Memory_WriteAddress emb_writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0x0fff, MWA_ROM ),
+		new Memory_WriteAddress( 0x1e00, 0x1fff, MWA_RAM ),
+		new Memory_WriteAddress( 0x2000, 0x3dff, invaders_videoram_w, &videoram, &videoram_size ),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static struct MachineDriver machine_driver_embargo = {
 		{

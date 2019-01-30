@@ -108,19 +108,21 @@ public class surpratk
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( surpratk_writemem )
-		{ 0x0000, 0x07ff, bankedram_w, &ram },
-		{ 0x0800, 0x1fff, MWA_RAM },
-		{ 0x2000, 0x3fff, MWA_ROM },					/* banked ROM */
-		{ 0x5fa0, 0x5faf, K053244_w },
-		{ 0x5fb0, 0x5fbf, K053251_w },
-		{ 0x5fc0, 0x5fc0, surpratk_5fc0_w },
-		{ 0x5fd0, 0x5fd0, YM2151_register_port_0_w },
-		{ 0x5fd1, 0x5fd1, YM2151_data_port_0_w },
-		{ 0x5fc4, 0x5fc4, surpratk_videobank_w },
-		{ 0x4000, 0x7fff, K052109_w },
-		{ 0x8000, 0xffff, MWA_ROM },					/* ROM */
-	MEMORY_END
+	public static Memory_WriteAddress surpratk_writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0x07ff, bankedram_w, &ram ),
+		new Memory_WriteAddress( 0x0800, 0x1fff, MWA_RAM ),
+		new Memory_WriteAddress( 0x2000, 0x3fff, MWA_ROM ),					/* banked ROM */
+		new Memory_WriteAddress( 0x5fa0, 0x5faf, K053244_w ),
+		new Memory_WriteAddress( 0x5fb0, 0x5fbf, K053251_w ),
+		new Memory_WriteAddress( 0x5fc0, 0x5fc0, surpratk_5fc0_w ),
+		new Memory_WriteAddress( 0x5fd0, 0x5fd0, YM2151_register_port_0_w ),
+		new Memory_WriteAddress( 0x5fd1, 0x5fd1, YM2151_data_port_0_w ),
+		new Memory_WriteAddress( 0x5fc4, 0x5fc4, surpratk_videobank_w ),
+		new Memory_WriteAddress( 0x4000, 0x7fff, K052109_w ),
+		new Memory_WriteAddress( 0x8000, 0xffff, MWA_ROM ),					/* ROM */
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	
 	/***************************************************************************

@@ -191,28 +191,30 @@ public class cclimber
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( writemem )
-		{ 0x0000, 0x5fff, MWA_ROM },
-		{ 0x6000, 0x6bff, MWA_RAM },    /* Crazy Kong only */
-		{ 0x8000, 0x83ff, MWA_RAM },
-		{ 0x8800, 0x88ff, cclimber_bigsprite_videoram_w, &cclimber_bsvideoram, &cclimber_bsvideoram_size },
-		{ 0x8900, 0x8bff, MWA_RAM },  /* not used, but initialized */
-		{ 0x9000, 0x93ff, videoram_w, &videoram, &videoram_size },
-		{ 0x9400, 0x97ff, videoram_w }, /* mirror address, used by Crazy Climber to draw windows */
+	public static Memory_WriteAddress writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0x5fff, MWA_ROM ),
+		new Memory_WriteAddress( 0x6000, 0x6bff, MWA_RAM ),    /* Crazy Kong only */
+		new Memory_WriteAddress( 0x8000, 0x83ff, MWA_RAM ),
+		new Memory_WriteAddress( 0x8800, 0x88ff, cclimber_bigsprite_videoram_w, &cclimber_bsvideoram, &cclimber_bsvideoram_size ),
+		new Memory_WriteAddress( 0x8900, 0x8bff, MWA_RAM ),  /* not used, but initialized */
+		new Memory_WriteAddress( 0x9000, 0x93ff, videoram_w, &videoram, &videoram_size ),
+		new Memory_WriteAddress( 0x9400, 0x97ff, videoram_w ), /* mirror address, used by Crazy Climber to draw windows */
 		/* 9800-9bff and 9c00-9fff share the same RAM, interleaved */
 		/* (9800-981f for scroll, 9c20-9c3f for color RAM, and so on) */
-		{ 0x9800, 0x981f, MWA_RAM, &cclimber_column_scroll },
-		{ 0x9880, 0x989f, MWA_RAM, &spriteram, &spriteram_size },
-		{ 0x98dc, 0x98df, MWA_RAM, &cclimber_bigspriteram },
-		{ 0x9800, 0x9bff, MWA_RAM },  /* not used, but initialized */
-		{ 0x9c00, 0x9fff, cclimber_colorram_w, &colorram },
-		{ 0xa000, 0xa000, interrupt_enable_w },
-		{ 0xa001, 0xa001, flip_screen_x_w },
-		{ 0xa002, 0xa002, flip_screen_y_w },
-		{ 0xa004, 0xa004, cclimber_sample_trigger_w },
-		{ 0xa800, 0xa800, cclimber_sample_rate_w },
-		{ 0xb000, 0xb000, cclimber_sample_volume_w },
-	MEMORY_END
+		new Memory_WriteAddress( 0x9800, 0x981f, MWA_RAM, &cclimber_column_scroll ),
+		new Memory_WriteAddress( 0x9880, 0x989f, MWA_RAM, &spriteram, &spriteram_size ),
+		new Memory_WriteAddress( 0x98dc, 0x98df, MWA_RAM, &cclimber_bigspriteram ),
+		new Memory_WriteAddress( 0x9800, 0x9bff, MWA_RAM ),  /* not used, but initialized */
+		new Memory_WriteAddress( 0x9c00, 0x9fff, cclimber_colorram_w, &colorram ),
+		new Memory_WriteAddress( 0xa000, 0xa000, interrupt_enable_w ),
+		new Memory_WriteAddress( 0xa001, 0xa001, flip_screen_x_w ),
+		new Memory_WriteAddress( 0xa002, 0xa002, flip_screen_y_w ),
+		new Memory_WriteAddress( 0xa004, 0xa004, cclimber_sample_trigger_w ),
+		new Memory_WriteAddress( 0xa800, 0xa800, cclimber_sample_rate_w ),
+		new Memory_WriteAddress( 0xb000, 0xb000, cclimber_sample_volume_w ),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static PORT_READ_START( readport )
 		{ 0x0c, 0x0c, AY8910_read_port_0_r },
@@ -1057,27 +1059,29 @@ public class cclimber
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( swimmer_writemem )
-		{ 0x0000, 0x7fff, MWA_ROM },
-		{ 0x8000, 0x87ff, MWA_RAM },
-		{ 0x8800, 0x88ff, cclimber_bigsprite_videoram_w, &cclimber_bsvideoram, &cclimber_bsvideoram_size },
-		{ 0x8900, 0x89ff, cclimber_bigsprite_videoram_w },      /* mirror for the above (Guzzler writes to both) */
-		{ 0x9000, 0x93ff, videoram_w, &videoram, &videoram_size },
-		{ 0x9400, 0x97ff, videoram_w }, /* mirror address (used by Guzzler) */
-		{ 0x9800, 0x981f, MWA_RAM, &cclimber_column_scroll },
-		{ 0x9880, 0x989f, MWA_RAM, &spriteram, &spriteram_size },
-		{ 0x98fc, 0x98ff, MWA_RAM, &cclimber_bigspriteram },
-		{ 0x9c00, 0x9fff, cclimber_colorram_w, &colorram },
-		{ 0xa000, 0xa000, interrupt_enable_w },
-		{ 0xa001, 0xa001, flip_screen_x_w },
-		{ 0xa002, 0xa002, flip_screen_y_w },
-		{ 0xa003, 0xa003, swimmer_sidepanel_enable_w },
-		{ 0xa004, 0xa004, swimmer_palettebank_w },
-		{ 0xa800, 0xa800, swimmer_sh_soundlatch_w },
-		{ 0xb800, 0xb800, swimmer_bgcolor_w },  /* river color in Swimmer */
-		{ 0xc000, 0xc7ff, MWA_RAM },    /* ??? used by Guzzler */
-		{ 0xe000, 0xffff, MWA_ROM },    /* Guzzler only */
-	MEMORY_END
+	public static Memory_WriteAddress swimmer_writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0x7fff, MWA_ROM ),
+		new Memory_WriteAddress( 0x8000, 0x87ff, MWA_RAM ),
+		new Memory_WriteAddress( 0x8800, 0x88ff, cclimber_bigsprite_videoram_w, &cclimber_bsvideoram, &cclimber_bsvideoram_size ),
+		new Memory_WriteAddress( 0x8900, 0x89ff, cclimber_bigsprite_videoram_w ),      /* mirror for the above (Guzzler writes to both) */
+		new Memory_WriteAddress( 0x9000, 0x93ff, videoram_w, &videoram, &videoram_size ),
+		new Memory_WriteAddress( 0x9400, 0x97ff, videoram_w ), /* mirror address (used by Guzzler) */
+		new Memory_WriteAddress( 0x9800, 0x981f, MWA_RAM, &cclimber_column_scroll ),
+		new Memory_WriteAddress( 0x9880, 0x989f, MWA_RAM, &spriteram, &spriteram_size ),
+		new Memory_WriteAddress( 0x98fc, 0x98ff, MWA_RAM, &cclimber_bigspriteram ),
+		new Memory_WriteAddress( 0x9c00, 0x9fff, cclimber_colorram_w, &colorram ),
+		new Memory_WriteAddress( 0xa000, 0xa000, interrupt_enable_w ),
+		new Memory_WriteAddress( 0xa001, 0xa001, flip_screen_x_w ),
+		new Memory_WriteAddress( 0xa002, 0xa002, flip_screen_y_w ),
+		new Memory_WriteAddress( 0xa003, 0xa003, swimmer_sidepanel_enable_w ),
+		new Memory_WriteAddress( 0xa004, 0xa004, swimmer_palettebank_w ),
+		new Memory_WriteAddress( 0xa800, 0xa800, swimmer_sh_soundlatch_w ),
+		new Memory_WriteAddress( 0xb800, 0xb800, swimmer_bgcolor_w ),  /* river color in Swimmer */
+		new Memory_WriteAddress( 0xc000, 0xc7ff, MWA_RAM ),    /* ??? used by Guzzler */
+		new Memory_WriteAddress( 0xe000, 0xffff, MWA_ROM ),    /* Guzzler only */
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	
 	public static Memory_ReadAddress sound_readmem[]={
@@ -1089,11 +1093,13 @@ public class cclimber
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( sound_writemem )
-		{ 0x0000, 0x0fff, MWA_ROM },
-		{ 0x2000, 0x23ff, MWA_RAM },
-		{ 0x4000, 0x4000, MWA_RAM },    /* ??? */
-	MEMORY_END
+	public static Memory_WriteAddress sound_writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0x0fff, MWA_ROM ),
+		new Memory_WriteAddress( 0x2000, 0x23ff, MWA_RAM ),
+		new Memory_WriteAddress( 0x4000, 0x4000, MWA_RAM ),    /* ??? */
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static PORT_WRITE_START( sound_writeport )
 		{ 0x00, 0x00, AY8910_write_port_0_w },

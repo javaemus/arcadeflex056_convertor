@@ -123,20 +123,22 @@ public class bombjack
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( writemem )
-		{ 0x0000, 0x7fff, MWA_ROM },
-		{ 0x8000, 0x8fff, MWA_RAM },
-		{ 0x9000, 0x93ff, videoram_w, &videoram, &videoram_size },
-		{ 0x9400, 0x97ff, colorram_w, &colorram },
-		{ 0x9820, 0x987f, MWA_RAM, &spriteram, &spriteram_size },
-		{ 0x9a00, 0x9a00, MWA_NOP },
-		{ 0x9c00, 0x9cff, paletteram_xxxxBBBBGGGGRRRR_w, &paletteram },
-		{ 0x9e00, 0x9e00, bombjack_background_w },
-		{ 0xb000, 0xb000, interrupt_enable_w },
-		{ 0xb004, 0xb004, bombjack_flipscreen_w },
-		{ 0xb800, 0xb800, bombjack_soundlatch_w },
-		{ 0xc000, 0xdfff, MWA_ROM },
-	MEMORY_END
+	public static Memory_WriteAddress writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0x7fff, MWA_ROM ),
+		new Memory_WriteAddress( 0x8000, 0x8fff, MWA_RAM ),
+		new Memory_WriteAddress( 0x9000, 0x93ff, videoram_w, &videoram, &videoram_size ),
+		new Memory_WriteAddress( 0x9400, 0x97ff, colorram_w, &colorram ),
+		new Memory_WriteAddress( 0x9820, 0x987f, MWA_RAM, &spriteram, &spriteram_size ),
+		new Memory_WriteAddress( 0x9a00, 0x9a00, MWA_NOP ),
+		new Memory_WriteAddress( 0x9c00, 0x9cff, paletteram_xxxxBBBBGGGGRRRR_w, &paletteram ),
+		new Memory_WriteAddress( 0x9e00, 0x9e00, bombjack_background_w ),
+		new Memory_WriteAddress( 0xb000, 0xb000, interrupt_enable_w ),
+		new Memory_WriteAddress( 0xb004, 0xb004, bombjack_flipscreen_w ),
+		new Memory_WriteAddress( 0xb800, 0xb800, bombjack_soundlatch_w ),
+		new Memory_WriteAddress( 0xc000, 0xdfff, MWA_ROM ),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	public static Memory_ReadAddress bombjack_sound_readmem[]={
 		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
@@ -146,10 +148,12 @@ public class bombjack
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( bombjack_sound_writemem )
-		{ 0x0000, 0x1fff, MWA_ROM },
-		{ 0x4000, 0x43ff, MWA_RAM },
-	MEMORY_END
+	public static Memory_WriteAddress bombjack_sound_writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0x1fff, MWA_ROM ),
+		new Memory_WriteAddress( 0x4000, 0x43ff, MWA_RAM ),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	
 	static PORT_WRITE_START( bombjack_sound_writeport )

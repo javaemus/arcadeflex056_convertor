@@ -376,21 +376,23 @@ public class psychic5
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( writemem )
-		{ 0x0000, 0x7fff, MWA_ROM },
-		{ 0x8000, 0xbfff, MWA_BANK1 },
-		{ 0xc000, 0xdfff, psychic5_paged_ram_w },
-		{ 0xe000, 0xefff, MWA_RAM },
-		{ 0xf000, 0xf000, soundlatch_w },
-		{ 0xf001, 0xf001, MWA_RAM },			// unknown
-		{ 0xf002, 0xf002, psychic5_bankselect_w },
-		{ 0xf003, 0xf003, psychic5_vram_page_select_w },
-		{ 0xf004, 0xf004, MWA_RAM },			// unknown
-		{ 0xf005, 0xf005, MWA_RAM },			// unknown
-		{ 0xf006, 0xf1ff, MWA_NOP },
-		{ 0xf200, 0xf7ff, MWA_RAM, &spriteram, &spriteram_size },
-		{ 0xf800, 0xffff, MWA_RAM },
-	MEMORY_END
+	public static Memory_WriteAddress writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0x7fff, MWA_ROM ),
+		new Memory_WriteAddress( 0x8000, 0xbfff, MWA_BANK1 ),
+		new Memory_WriteAddress( 0xc000, 0xdfff, psychic5_paged_ram_w ),
+		new Memory_WriteAddress( 0xe000, 0xefff, MWA_RAM ),
+		new Memory_WriteAddress( 0xf000, 0xf000, soundlatch_w ),
+		new Memory_WriteAddress( 0xf001, 0xf001, MWA_RAM ),			// unknown
+		new Memory_WriteAddress( 0xf002, 0xf002, psychic5_bankselect_w ),
+		new Memory_WriteAddress( 0xf003, 0xf003, psychic5_vram_page_select_w ),
+		new Memory_WriteAddress( 0xf004, 0xf004, MWA_RAM ),			// unknown
+		new Memory_WriteAddress( 0xf005, 0xf005, MWA_RAM ),			// unknown
+		new Memory_WriteAddress( 0xf006, 0xf1ff, MWA_NOP ),
+		new Memory_WriteAddress( 0xf200, 0xf7ff, MWA_RAM, &spriteram, &spriteram_size ),
+		new Memory_WriteAddress( 0xf800, 0xffff, MWA_RAM ),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	public static Memory_ReadAddress sound_readmem[]={
 		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
@@ -400,10 +402,12 @@ public class psychic5
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( sound_writemem )
-		{ 0x0000, 0x7fff, MWA_ROM },
-		{ 0xc000, 0xc7ff, MWA_RAM },
-	MEMORY_END
+	public static Memory_WriteAddress sound_writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0x7fff, MWA_ROM ),
+		new Memory_WriteAddress( 0xc000, 0xc7ff, MWA_RAM ),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static PORT_WRITE_START( sound_writeport )
 		{ 0x00, 0x00, YM2203_control_port_0_w },

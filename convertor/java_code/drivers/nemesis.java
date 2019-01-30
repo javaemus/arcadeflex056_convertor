@@ -331,18 +331,20 @@ public class nemesis
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( sound_writemem )
-		{ 0x0000, 0x3fff, MWA_ROM },
-		{ 0x4000, 0x47ff, MWA_RAM },
-		{ 0xa000, 0xafff, k005289_pitch_A_w },
-		{ 0xc000, 0xcfff, k005289_pitch_B_w },
-		{ 0xe003, 0xe003, k005289_keylatch_A_w },
-		{ 0xe004, 0xe004, k005289_keylatch_B_w },
-		{ 0xe005, 0xe005, AY8910_control_port_1_w },
-		{ 0xe006, 0xe006, AY8910_control_port_0_w },
-		{ 0xe106, 0xe106, AY8910_write_port_0_w },
-		{ 0xe405, 0xe405, AY8910_write_port_1_w },
-	MEMORY_END
+	public static Memory_WriteAddress sound_writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0x3fff, MWA_ROM ),
+		new Memory_WriteAddress( 0x4000, 0x47ff, MWA_RAM ),
+		new Memory_WriteAddress( 0xa000, 0xafff, k005289_pitch_A_w ),
+		new Memory_WriteAddress( 0xc000, 0xcfff, k005289_pitch_B_w ),
+		new Memory_WriteAddress( 0xe003, 0xe003, k005289_keylatch_A_w ),
+		new Memory_WriteAddress( 0xe004, 0xe004, k005289_keylatch_B_w ),
+		new Memory_WriteAddress( 0xe005, 0xe005, AY8910_control_port_1_w ),
+		new Memory_WriteAddress( 0xe006, 0xe006, AY8910_control_port_0_w ),
+		new Memory_WriteAddress( 0xe106, 0xe106, AY8910_write_port_0_w ),
+		new Memory_WriteAddress( 0xe405, 0xe405, AY8910_write_port_1_w ),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_READ16_START( konamigt_readmem )
 		{ 0x000000, 0x03ffff, MRA16_ROM },
@@ -516,20 +518,22 @@ public class nemesis
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( gx400_sound_writemem )
-		{ 0x0000, 0x1fff, MWA_ROM },
-		{ 0x4000, 0x87ff, MWA_RAM, &gx400_shared_ram },
-		{ 0xa000, 0xafff, k005289_pitch_A_w },
-		{ 0xc000, 0xcfff, k005289_pitch_B_w },
-		{ 0xe000, 0xe000, VLM5030_data_w },
-		{ 0xe003, 0xe003, k005289_keylatch_A_w },
-		{ 0xe004, 0xe004, k005289_keylatch_B_w },
-		{ 0xe005, 0xe005, AY8910_control_port_1_w },
-		{ 0xe006, 0xe006, AY8910_control_port_0_w },
-		{ 0xe030, 0xe030, gx400_speech_start_w },
-		{ 0xe106, 0xe106, AY8910_write_port_0_w },
-		{ 0xe405, 0xe405, AY8910_write_port_1_w },
-	MEMORY_END
+	public static Memory_WriteAddress gx400_sound_writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0x1fff, MWA_ROM ),
+		new Memory_WriteAddress( 0x4000, 0x87ff, MWA_RAM, &gx400_shared_ram ),
+		new Memory_WriteAddress( 0xa000, 0xafff, k005289_pitch_A_w ),
+		new Memory_WriteAddress( 0xc000, 0xcfff, k005289_pitch_B_w ),
+		new Memory_WriteAddress( 0xe000, 0xe000, VLM5030_data_w ),
+		new Memory_WriteAddress( 0xe003, 0xe003, k005289_keylatch_A_w ),
+		new Memory_WriteAddress( 0xe004, 0xe004, k005289_keylatch_B_w ),
+		new Memory_WriteAddress( 0xe005, 0xe005, AY8910_control_port_1_w ),
+		new Memory_WriteAddress( 0xe006, 0xe006, AY8910_control_port_0_w ),
+		new Memory_WriteAddress( 0xe030, 0xe030, gx400_speech_start_w ),
+		new Memory_WriteAddress( 0xe106, 0xe106, AY8910_write_port_0_w ),
+		new Memory_WriteAddress( 0xe405, 0xe405, AY8910_write_port_1_w ),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	/******************************************************************************/
 	
@@ -742,15 +746,17 @@ public class nemesis
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( sal_sound_writemem )
-		{ 0x0000, 0x7fff, MWA_ROM },
-		{ 0x8000, 0x87ff, MWA_RAM },
-		{ 0xb000, 0xb00d, K007232_write_port_0_w },
-		{ 0xc000, 0xc000, YM2151_register_port_0_w },
-		{ 0xc001, 0xc001, YM2151_data_port_0_w },
-		{ 0xd000, 0xd000, VLM5030_data_w },
-		{ 0xf000, 0xf000, salamand_speech_start_w },
-	MEMORY_END
+	public static Memory_WriteAddress sal_sound_writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0x7fff, MWA_ROM ),
+		new Memory_WriteAddress( 0x8000, 0x87ff, MWA_RAM ),
+		new Memory_WriteAddress( 0xb000, 0xb00d, K007232_write_port_0_w ),
+		new Memory_WriteAddress( 0xc000, 0xc000, YM2151_register_port_0_w ),
+		new Memory_WriteAddress( 0xc001, 0xc001, YM2151_data_port_0_w ),
+		new Memory_WriteAddress( 0xd000, 0xd000, VLM5030_data_w ),
+		new Memory_WriteAddress( 0xf000, 0xf000, salamand_speech_start_w ),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	public static Memory_ReadAddress city_sound_readmem[]={
 		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
@@ -762,18 +768,20 @@ public class nemesis
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( city_sound_writemem )
-		{ 0x0000, 0x7fff, MWA_ROM },
-		{ 0x8000, 0x87ff, MWA_RAM },
-		{ 0x9800, 0x987f, K051649_waveform_w },
-		{ 0x9880, 0x9889, K051649_frequency_w },
-		{ 0x988a, 0x988e, K051649_volume_w },
-		{ 0x988f, 0x988f, K051649_keyonoff_w },
-		{ 0xa000, 0xa000, YM3812_control_port_0_w },
-		{ 0xa001, 0xa001, YM3812_write_port_0_w },
-		{ 0xb000, 0xb00d, K007232_write_port_0_w },
-		{ 0xc000, 0xc000, city_sound_bank_w }, /* 7232 bankswitch */
-	MEMORY_END
+	public static Memory_WriteAddress city_sound_writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0x7fff, MWA_ROM ),
+		new Memory_WriteAddress( 0x8000, 0x87ff, MWA_RAM ),
+		new Memory_WriteAddress( 0x9800, 0x987f, K051649_waveform_w ),
+		new Memory_WriteAddress( 0x9880, 0x9889, K051649_frequency_w ),
+		new Memory_WriteAddress( 0x988a, 0x988e, K051649_volume_w ),
+		new Memory_WriteAddress( 0x988f, 0x988f, K051649_keyonoff_w ),
+		new Memory_WriteAddress( 0xa000, 0xa000, YM3812_control_port_0_w ),
+		new Memory_WriteAddress( 0xa001, 0xa001, YM3812_write_port_0_w ),
+		new Memory_WriteAddress( 0xb000, 0xb00d, K007232_write_port_0_w ),
+		new Memory_WriteAddress( 0xc000, 0xc000, city_sound_bank_w ), /* 7232 bankswitch */
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	/******************************************************************************/
 	

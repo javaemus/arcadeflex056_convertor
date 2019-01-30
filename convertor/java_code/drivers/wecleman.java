@@ -764,17 +764,19 @@ public class wecleman
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( wecleman_sound_writemem )
-		{ 0x0000, 0x7fff, MWA_ROM					},	// ROM
-		{ 0x8000, 0x83ff, MWA_RAM					},	// RAM
-	//	{ 0x8500, 0x8500, MWA_NOP					},	// incresed with speed (global volume)?
-		{ 0x9000, 0x9001, multiply_w				},	// Protection
-	//	{ 0x9006, 0x9006, MWA_NOP					},	// ?
-		{ 0xb000, 0xb00d, K007232_write_port_0_w	},	// K007232
-		{ 0xc000, 0xc000, YM2151_register_port_0_w	},	// YM2151
-		{ 0xc001, 0xc001, YM2151_data_port_0_w		},
-		{ 0xf000, 0xf000, wecleman_K00723216_bank_w	},	// Samples banking
-	MEMORY_END
+	public static Memory_WriteAddress wecleman_sound_writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0x7fff, MWA_ROM					),	// ROM
+		new Memory_WriteAddress( 0x8000, 0x83ff, MWA_RAM					),	// RAM
+	//	new Memory_WriteAddress( 0x8500, 0x8500, MWA_NOP					),	// incresed with speed (global volume)?
+		new Memory_WriteAddress( 0x9000, 0x9001, multiply_w				),	// Protection
+	//	new Memory_WriteAddress( 0x9006, 0x9006, MWA_NOP					),	// ?
+		new Memory_WriteAddress( 0xb000, 0xb00d, K007232_write_port_0_w	),	// K007232
+		new Memory_WriteAddress( 0xc000, 0xc000, YM2151_register_port_0_w	),	// YM2151
+		new Memory_WriteAddress( 0xc001, 0xc001, YM2151_data_port_0_w		),
+		new Memory_WriteAddress( 0xf000, 0xf000, wecleman_K00723216_bank_w	),	// Samples banking
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	
 	/***************************************************************************
@@ -887,16 +889,18 @@ public class wecleman
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( hotchase_sound_writemem )
-		{ 0x0000, 0x07ff, MWA_RAM					},	// RAM
-		{ 0x1000, 0x100d, hotchase_K007232_0_w		},	// 3 x K007232
-		{ 0x2000, 0x200d, hotchase_K007232_1_w		},
-		{ 0x3000, 0x300d, hotchase_K007232_2_w		},
-		{ 0x4000, 0x4007, hotchase_sound_control_w	},	// Sound volume, banking, etc.
-		{ 0x5000, 0x5000, MWA_NOP					},	// ? (written with 0 on IRQ, 1 on FIRQ)
-		{ 0x7000, 0x7000, MWA_NOP					},	// Command acknowledge ?
-		{ 0x8000, 0xffff, MWA_ROM					},	// ROM
-	MEMORY_END
+	public static Memory_WriteAddress hotchase_sound_writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0x07ff, MWA_RAM					),	// RAM
+		new Memory_WriteAddress( 0x1000, 0x100d, hotchase_K007232_0_w		),	// 3 x K007232
+		new Memory_WriteAddress( 0x2000, 0x200d, hotchase_K007232_1_w		),
+		new Memory_WriteAddress( 0x3000, 0x300d, hotchase_K007232_2_w		),
+		new Memory_WriteAddress( 0x4000, 0x4007, hotchase_sound_control_w	),	// Sound volume, banking, etc.
+		new Memory_WriteAddress( 0x5000, 0x5000, MWA_NOP					),	// ? (written with 0 on IRQ, 1 on FIRQ)
+		new Memory_WriteAddress( 0x7000, 0x7000, MWA_NOP					),	// Command acknowledge ?
+		new Memory_WriteAddress( 0x8000, 0xffff, MWA_ROM					),	// ROM
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	
 	

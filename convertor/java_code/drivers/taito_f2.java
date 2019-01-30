@@ -1659,20 +1659,22 @@ public class taito_f2
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( sound_writemem )
-		{ 0x0000, 0x7fff, MWA_ROM },
-		{ 0xc000, 0xdfff, MWA_RAM },
-		{ 0xe000, 0xe000, YM2610_control_port_0_A_w },
-		{ 0xe001, 0xe001, YM2610_data_port_0_A_w },
-		{ 0xe002, 0xe002, YM2610_control_port_0_B_w },
-		{ 0xe003, 0xe003, YM2610_data_port_0_B_w },
-		{ 0xe200, 0xe200, taitosound_slave_port_w },
-		{ 0xe201, 0xe201, taitosound_slave_comm_w },
-		{ 0xe400, 0xe403, MWA_NOP }, /* pan */
-		{ 0xee00, 0xee00, MWA_NOP }, /* ? */
-		{ 0xf000, 0xf000, MWA_NOP }, /* ? */
-		{ 0xf200, 0xf200, sound_bankswitch_w },	/* ?? */
-	MEMORY_END
+	public static Memory_WriteAddress sound_writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0x7fff, MWA_ROM ),
+		new Memory_WriteAddress( 0xc000, 0xdfff, MWA_RAM ),
+		new Memory_WriteAddress( 0xe000, 0xe000, YM2610_control_port_0_A_w ),
+		new Memory_WriteAddress( 0xe001, 0xe001, YM2610_data_port_0_A_w ),
+		new Memory_WriteAddress( 0xe002, 0xe002, YM2610_control_port_0_B_w ),
+		new Memory_WriteAddress( 0xe003, 0xe003, YM2610_data_port_0_B_w ),
+		new Memory_WriteAddress( 0xe200, 0xe200, taitosound_slave_port_w ),
+		new Memory_WriteAddress( 0xe201, 0xe201, taitosound_slave_comm_w ),
+		new Memory_WriteAddress( 0xe400, 0xe403, MWA_NOP ), /* pan */
+		new Memory_WriteAddress( 0xee00, 0xee00, MWA_NOP ), /* ? */
+		new Memory_WriteAddress( 0xf000, 0xf000, MWA_NOP ), /* ? */
+		new Memory_WriteAddress( 0xf200, 0xf200, sound_bankswitch_w ),	/* ?? */
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	
 	/* Alt US version of Cameltry, YM2203 sound, missing ADPCM ? */
@@ -1687,15 +1689,17 @@ public class taito_f2
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( camltrua_sound_writemem )
-		{ 0x0000, 0x7fff, MWA_ROM },
-		{ 0x8000, 0x8fff, MWA_RAM },
-		{ 0x9000, 0x9000, YM2203_control_port_0_w },
-		{ 0x9001, 0x9001, YM2203_write_port_0_w },
-		{ 0xa000, 0xa000, taitosound_slave_port_w },
-		{ 0xa001, 0xa001, taitosound_slave_comm_w },
-	//	{ 0xb000, 0xb000, unknown_w },	// probably controlling sample player?
-	MEMORY_END
+	public static Memory_WriteAddress camltrua_sound_writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0x7fff, MWA_ROM ),
+		new Memory_WriteAddress( 0x8000, 0x8fff, MWA_RAM ),
+		new Memory_WriteAddress( 0x9000, 0x9000, YM2203_control_port_0_w ),
+		new Memory_WriteAddress( 0x9001, 0x9001, YM2203_write_port_0_w ),
+		new Memory_WriteAddress( 0xa000, 0xa000, taitosound_slave_port_w ),
+		new Memory_WriteAddress( 0xa001, 0xa001, taitosound_slave_comm_w ),
+	//	new Memory_WriteAddress( 0xb000, 0xb000, unknown_w ),	// probably controlling sample player?
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	
 	public static Memory_ReadAddress driveout_sound_readmem[]={
@@ -1707,12 +1711,14 @@ public class taito_f2
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( driveout_sound_writemem )
-		{ 0x0000, 0x7fff, MWA_ROM },
-		{ 0x8000, 0x87ff, MWA_RAM },
-		{ 0x9000, 0x9000, oki_bank_w },
-		{ 0x9800, 0x9800, OKIM6295_data_0_w },
-	MEMORY_END
+	public static Memory_WriteAddress driveout_sound_writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0x7fff, MWA_ROM ),
+		new Memory_WriteAddress( 0x8000, 0x87ff, MWA_RAM ),
+		new Memory_WriteAddress( 0x9000, 0x9000, oki_bank_w ),
+		new Memory_WriteAddress( 0x9800, 0x9800, OKIM6295_data_0_w ),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	/***********************************************************
 	                     INPUT PORTS, DIPs

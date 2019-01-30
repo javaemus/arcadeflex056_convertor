@@ -155,16 +155,18 @@ public class supbtime
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( sound_writemem )
-		{ 0x000000, 0x00ffff, MWA_ROM },
-		{ 0x100000, 0x100001, MWA_NOP }, /* YM2203 - this board doesn't have one */
-		{ 0x110000, 0x110001, YM2151_w },
-		{ 0x120000, 0x120001, OKIM6295_data_0_w },
-		{ 0x130000, 0x130001, MWA_NOP },
-		{ 0x1f0000, 0x1f1fff, MWA_BANK8 },
-		{ 0x1fec00, 0x1fec01, H6280_timer_w },
-		{ 0x1ff402, 0x1ff403, H6280_irq_status_w },
-	MEMORY_END
+	public static Memory_WriteAddress sound_writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x000000, 0x00ffff, MWA_ROM ),
+		new Memory_WriteAddress( 0x100000, 0x100001, MWA_NOP ), /* YM2203 - this board doesn't have one */
+		new Memory_WriteAddress( 0x110000, 0x110001, YM2151_w ),
+		new Memory_WriteAddress( 0x120000, 0x120001, OKIM6295_data_0_w ),
+		new Memory_WriteAddress( 0x130000, 0x130001, MWA_NOP ),
+		new Memory_WriteAddress( 0x1f0000, 0x1f1fff, MWA_BANK8 ),
+		new Memory_WriteAddress( 0x1fec00, 0x1fec01, H6280_timer_w ),
+		new Memory_WriteAddress( 0x1ff402, 0x1ff403, H6280_irq_status_w ),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	/******************************************************************************/
 	

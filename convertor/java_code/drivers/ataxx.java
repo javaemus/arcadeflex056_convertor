@@ -653,12 +653,14 @@ public class ataxx
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( master_writemem )
-		{ 0x0000, 0x9fff, MWA_ROM },
-		{ 0xa000, 0xdfff, battery_ram_w },
-		{ 0xe000, 0xf7ff, MWA_RAM },
-		{ 0xf800, 0xffff, paletteram_and_misc_w, &paletteram },
-	MEMORY_END
+	public static Memory_WriteAddress master_writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0x9fff, MWA_ROM ),
+		new Memory_WriteAddress( 0xa000, 0xdfff, battery_ram_w ),
+		new Memory_WriteAddress( 0xe000, 0xf7ff, MWA_RAM ),
+		new Memory_WriteAddress( 0xf800, 0xffff, paletteram_and_misc_w, &paletteram ),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static PORT_READ_START( master_readport )
 	    { 0x04, 0x04, leland_i86_response_r },
@@ -695,12 +697,14 @@ public class ataxx
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( slave_writemem )
-		{ 0x0000, 0xdfff, MWA_ROM },
-		{ 0xe000, 0xefff, MWA_RAM },
-		{ 0xfffc, 0xfffd, leland_slave_video_addr_w },
-		{ 0xffff, 0xffff, slave_banksw_w },
-	MEMORY_END
+	public static Memory_WriteAddress slave_writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0xdfff, MWA_ROM ),
+		new Memory_WriteAddress( 0xe000, 0xefff, MWA_RAM ),
+		new Memory_WriteAddress( 0xfffc, 0xfffd, leland_slave_video_addr_w ),
+		new Memory_WriteAddress( 0xffff, 0xffff, slave_banksw_w ),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static PORT_READ_START( slave_readport )
 		{ 0x60, 0x7f, ataxx_svram_port_r },

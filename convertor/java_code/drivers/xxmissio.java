@@ -137,26 +137,28 @@ public class xxmissio
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( writemem1 )
-		{ 0x0000, 0x7fff, MWA_ROM },
+	public static Memory_WriteAddress writemem1[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0x7fff, MWA_ROM ),
 	
-		{ 0x8000, 0x8000, YM2203_control_port_0_w },
-		{ 0x8001, 0x8001, YM2203_write_port_0_w },
-		{ 0x8002, 0x8002, YM2203_control_port_1_w },
-		{ 0x8003, 0x8003, YM2203_write_port_1_w },
+		new Memory_WriteAddress( 0x8000, 0x8000, YM2203_control_port_0_w ),
+		new Memory_WriteAddress( 0x8001, 0x8001, YM2203_write_port_0_w ),
+		new Memory_WriteAddress( 0x8002, 0x8002, YM2203_control_port_1_w ),
+		new Memory_WriteAddress( 0x8003, 0x8003, YM2203_write_port_1_w ),
 	
-		{ 0xa002, 0xa002, xxmissio_status_m_w },
+		new Memory_WriteAddress( 0xa002, 0xa002, xxmissio_status_m_w ),
 	
-		{ 0xa003, 0xa003, xxmissio_flipscreen_w },
+		new Memory_WriteAddress( 0xa003, 0xa003, xxmissio_flipscreen_w ),
 	
-		{ 0xc000, 0xc7ff, xxmissio_fgram_w, &xxmissio_fgram, &xxmissio_fgram_size },
-		{ 0xc800, 0xcfff, xxmissio_videoram_w, &videoram, &videoram_size },
-		{ 0xd000, 0xd7ff, MWA_RAM, &spriteram, &spriteram_size },
+		new Memory_WriteAddress( 0xc000, 0xc7ff, xxmissio_fgram_w, &xxmissio_fgram, &xxmissio_fgram_size ),
+		new Memory_WriteAddress( 0xc800, 0xcfff, xxmissio_videoram_w, &videoram, &videoram_size ),
+		new Memory_WriteAddress( 0xd000, 0xd7ff, MWA_RAM, &spriteram, &spriteram_size ),
 	
-		{ 0xd800, 0xdaff, xxmissio_paletteram_w, &paletteram },
+		new Memory_WriteAddress( 0xd800, 0xdaff, xxmissio_paletteram_w, &paletteram ),
 	
-		{ 0xe000, 0xffff, MWA_RAM, &shared_workram },
-	MEMORY_END
+		new Memory_WriteAddress( 0xe000, 0xffff, MWA_RAM, &shared_workram ),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	public static Memory_ReadAddress readmem2[]={
 		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
@@ -184,29 +186,31 @@ public class xxmissio
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( writemem2 )
-		{ 0x0000, 0x3fff, MWA_ROM },
-		{ 0x4000, 0x7fff, MWA_BANK1 },
+	public static Memory_WriteAddress writemem2[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0x3fff, MWA_ROM ),
+		new Memory_WriteAddress( 0x4000, 0x7fff, MWA_BANK1 ),
 	
-		{ 0x8000, 0x8000, YM2203_control_port_0_w },
-		{ 0x8001, 0x8001, YM2203_write_port_0_w },
-		{ 0x8002, 0x8002, YM2203_control_port_1_w },
-		{ 0x8003, 0x8003, YM2203_write_port_1_w },
+		new Memory_WriteAddress( 0x8000, 0x8000, YM2203_control_port_0_w ),
+		new Memory_WriteAddress( 0x8001, 0x8001, YM2203_write_port_0_w ),
+		new Memory_WriteAddress( 0x8002, 0x8002, YM2203_control_port_1_w ),
+		new Memory_WriteAddress( 0x8003, 0x8003, YM2203_write_port_1_w ),
 	
-		{ 0x8006, 0x8006, xxmissio_bank_sel_w },
+		new Memory_WriteAddress( 0x8006, 0x8006, xxmissio_bank_sel_w ),
 	
-		{ 0xa002, 0xa002, xxmissio_status_s_w },
+		new Memory_WriteAddress( 0xa002, 0xa002, xxmissio_status_s_w ),
 	
-		{ 0xa003, 0xa003, xxmissio_flipscreen_w },
+		new Memory_WriteAddress( 0xa003, 0xa003, xxmissio_flipscreen_w ),
 	
-		{ 0xc000, 0xc7ff, xxmissio_fgram_w },
-		{ 0xc800, 0xcfff, xxmissio_videoram_w },
-		{ 0xd000, 0xd7ff, spriteram_w },
+		new Memory_WriteAddress( 0xc000, 0xc7ff, xxmissio_fgram_w ),
+		new Memory_WriteAddress( 0xc800, 0xcfff, xxmissio_videoram_w ),
+		new Memory_WriteAddress( 0xd000, 0xd7ff, spriteram_w ),
 	
-		{ 0xd800, 0xdaff, xxmissio_paletteram_w },
+		new Memory_WriteAddress( 0xd800, 0xdaff, xxmissio_paletteram_w ),
 	
-		{ 0xe000, 0xffff, shared_workram_w },
-	MEMORY_END
+		new Memory_WriteAddress( 0xe000, 0xffff, shared_workram_w ),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	/****************************************************************************/
 	

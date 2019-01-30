@@ -184,15 +184,17 @@ public class xmen
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( sound_writemem )
-		{ 0x0000, 0xbfff, MWA_ROM },
-		{ 0xc000, 0xdfff, MWA_RAM },
-		{ 0xe000, 0xe22f, K054539_0_w },
-		{ 0xe800, 0xe800, YM2151_register_port_0_w },
-		{ 0xec01, 0xec01, YM2151_data_port_0_w },
-		{ 0xf000, 0xf000, soundlatch2_w },
-		{ 0xf800, 0xf800, sound_bankswitch_w },
-	MEMORY_END
+	public static Memory_WriteAddress sound_writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0xbfff, MWA_ROM ),
+		new Memory_WriteAddress( 0xc000, 0xdfff, MWA_RAM ),
+		new Memory_WriteAddress( 0xe000, 0xe22f, K054539_0_w ),
+		new Memory_WriteAddress( 0xe800, 0xe800, YM2151_register_port_0_w ),
+		new Memory_WriteAddress( 0xec01, 0xec01, YM2151_data_port_0_w ),
+		new Memory_WriteAddress( 0xf000, 0xf000, soundlatch2_w ),
+		new Memory_WriteAddress( 0xf800, 0xf800, sound_bankswitch_w ),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	
 	

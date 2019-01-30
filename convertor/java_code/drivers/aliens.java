@@ -109,15 +109,17 @@ public class aliens
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( aliens_writemem )
-		{ 0x0000, 0x03ff, bankedram_w, &ram },			/* palette + work RAM */
-		{ 0x0400, 0x1fff, MWA_RAM },
-		{ 0x2000, 0x3fff, MWA_ROM },					/* banked ROM */
-		{ 0x5f88, 0x5f88, aliens_coin_counter_w },		/* coin counters */
-		{ 0x5f8c, 0x5f8c, aliens_sh_irqtrigger_w },		/* cause interrupt on audio CPU */
-		{ 0x4000, 0x7fff, K052109_051960_w },
-		{ 0x8000, 0xffff, MWA_ROM },					/* ROM e24_j02.bin */
-	MEMORY_END
+	public static Memory_WriteAddress aliens_writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0x03ff, bankedram_w, &ram ),			/* palette + work RAM */
+		new Memory_WriteAddress( 0x0400, 0x1fff, MWA_RAM ),
+		new Memory_WriteAddress( 0x2000, 0x3fff, MWA_ROM ),					/* banked ROM */
+		new Memory_WriteAddress( 0x5f88, 0x5f88, aliens_coin_counter_w ),		/* coin counters */
+		new Memory_WriteAddress( 0x5f8c, 0x5f8c, aliens_sh_irqtrigger_w ),		/* cause interrupt on audio CPU */
+		new Memory_WriteAddress( 0x4000, 0x7fff, K052109_051960_w ),
+		new Memory_WriteAddress( 0x8000, 0xffff, MWA_ROM ),					/* ROM e24_j02.bin */
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	public static Memory_ReadAddress aliens_readmem_sound[]={
 		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
@@ -129,13 +131,15 @@ public class aliens
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( aliens_writemem_sound )
-		{ 0x0000, 0x7fff, MWA_ROM },					/* ROM g04_b03.bin */
-		{ 0x8000, 0x87ff, MWA_RAM },					/* RAM */
-		{ 0xa000, 0xa000, YM2151_register_port_0_w },
-		{ 0xa001, 0xa001, YM2151_data_port_0_w },
-		{ 0xe000, 0xe00d, K007232_write_port_0_w },
-	MEMORY_END
+	public static Memory_WriteAddress aliens_writemem_sound[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0x7fff, MWA_ROM ),					/* ROM g04_b03.bin */
+		new Memory_WriteAddress( 0x8000, 0x87ff, MWA_RAM ),					/* RAM */
+		new Memory_WriteAddress( 0xa000, 0xa000, YM2151_register_port_0_w ),
+		new Memory_WriteAddress( 0xa001, 0xa001, YM2151_data_port_0_w ),
+		new Memory_WriteAddress( 0xe000, 0xe00d, K007232_write_port_0_w ),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	/***************************************************************************
 	

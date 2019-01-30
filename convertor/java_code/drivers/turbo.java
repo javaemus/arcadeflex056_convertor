@@ -182,21 +182,23 @@ public class turbo
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( writemem )
-		{ 0x0000, 0x5fff, MWA_ROM },
-		{ 0xa000, 0xa0ff, MWA_RAM, &spriteram, &spriteram_size },
-		{ 0xa800, 0xa807, turbo_coin_and_lamp_w },
-		{ 0xb000, 0xb1ff, MWA_RAM, &turbo_sprite_position },
-		{ 0xb800, 0xb800, MWA_NOP },	/* resets the analog wheel value */
-		{ 0xe000, 0xe7ff, MWA_RAM, &videoram, &videoram_size },
-		{ 0xe800, 0xe800, turbo_collision_clear_w },
-		{ 0xf000, 0xf7ff, MWA_RAM },
-		{ 0xf800, 0xf803, ppi8255_0_w },
-		{ 0xf900, 0xf903, ppi8255_1_w },
-		{ 0xfa00, 0xfa03, ppi8255_2_w },
-		{ 0xfb00, 0xfb03, ppi8255_3_w },
-		{ 0xfc00, 0xfcff, turbo_8279_w },
-	MEMORY_END
+	public static Memory_WriteAddress writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0x5fff, MWA_ROM ),
+		new Memory_WriteAddress( 0xa000, 0xa0ff, MWA_RAM, &spriteram, &spriteram_size ),
+		new Memory_WriteAddress( 0xa800, 0xa807, turbo_coin_and_lamp_w ),
+		new Memory_WriteAddress( 0xb000, 0xb1ff, MWA_RAM, &turbo_sprite_position ),
+		new Memory_WriteAddress( 0xb800, 0xb800, MWA_NOP ),	/* resets the analog wheel value */
+		new Memory_WriteAddress( 0xe000, 0xe7ff, MWA_RAM, &videoram, &videoram_size ),
+		new Memory_WriteAddress( 0xe800, 0xe800, turbo_collision_clear_w ),
+		new Memory_WriteAddress( 0xf000, 0xf7ff, MWA_RAM ),
+		new Memory_WriteAddress( 0xf800, 0xf803, ppi8255_0_w ),
+		new Memory_WriteAddress( 0xf900, 0xf903, ppi8255_1_w ),
+		new Memory_WriteAddress( 0xfa00, 0xfa03, ppi8255_2_w ),
+		new Memory_WriteAddress( 0xfb00, 0xfb03, ppi8255_3_w ),
+		new Memory_WriteAddress( 0xfc00, 0xfcff, turbo_8279_w ),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	
 	/*********************************************************************

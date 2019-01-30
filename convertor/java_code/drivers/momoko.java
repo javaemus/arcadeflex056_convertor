@@ -69,34 +69,36 @@ public class momoko
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( writemem )
-		{ 0x0000, 0xbfff, MWA_ROM },
-		{ 0xc000, 0xcfff, MWA_RAM },
+	public static Memory_WriteAddress writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0xbfff, MWA_ROM ),
+		new Memory_WriteAddress( 0xc000, 0xcfff, MWA_RAM ),
 	
-		{ 0xd064, 0xd0ff, MWA_RAM, &spriteram, &spriteram_size },
+		new Memory_WriteAddress( 0xd064, 0xd0ff, MWA_RAM, &spriteram, &spriteram_size ),
 	
-		{ 0xd400, 0xd400, MWA_NOP }, /* interrupt ack? */
-		{ 0xd402, 0xd402, momoko_flipscreen_w },
-		{ 0xd404, 0xd404, watchdog_reset_w },
-		{ 0xd406, 0xd406, soundlatch_w },
+		new Memory_WriteAddress( 0xd400, 0xd400, MWA_NOP ), /* interrupt ack? */
+		new Memory_WriteAddress( 0xd402, 0xd402, momoko_flipscreen_w ),
+		new Memory_WriteAddress( 0xd404, 0xd404, watchdog_reset_w ),
+		new Memory_WriteAddress( 0xd406, 0xd406, soundlatch_w ),
 	
-		{ 0xd800, 0xdbff, paletteram_xxxxRRRRGGGGBBBB_swap_w, &paletteram },
+		new Memory_WriteAddress( 0xd800, 0xdbff, paletteram_xxxxRRRRGGGGBBBB_swap_w, &paletteram ),
 	
-		{ 0xdc00, 0xdc00, momoko_fg_scrolly_w },
-		{ 0xdc01, 0xdc01, momoko_fg_scrollx_w },
-		{ 0xdc02, 0xdc02, momoko_fg_select_w },
+		new Memory_WriteAddress( 0xdc00, 0xdc00, momoko_fg_scrolly_w ),
+		new Memory_WriteAddress( 0xdc01, 0xdc01, momoko_fg_scrollx_w ),
+		new Memory_WriteAddress( 0xdc02, 0xdc02, momoko_fg_select_w ),
 	
-		{ 0xe000, 0xe3ff, videoram_w, &videoram, &videoram_size },
+		new Memory_WriteAddress( 0xe000, 0xe3ff, videoram_w, &videoram, &videoram_size ),
 	
-		{ 0xe800, 0xe800, momoko_text_scrolly_w },
-		{ 0xe801, 0xe801, momoko_text_mode_w },
+		new Memory_WriteAddress( 0xe800, 0xe800, momoko_text_scrolly_w ),
+		new Memory_WriteAddress( 0xe801, 0xe801, momoko_text_mode_w ),
 	
-		{ 0xf000, 0xf001, momoko_bg_scrolly_w, &momoko_bg_scrolly },
-		{ 0xf002, 0xf003, momoko_bg_scrollx_w, &momoko_bg_scrollx },
-		{ 0xf004, 0xf004, momoko_bg_read_bank_w },
-		{ 0xf006, 0xf006, momoko_bg_select_w },
-		{ 0xf007, 0xf007, momoko_bg_priority_w },
-	MEMORY_END
+		new Memory_WriteAddress( 0xf000, 0xf001, momoko_bg_scrolly_w, &momoko_bg_scrolly ),
+		new Memory_WriteAddress( 0xf002, 0xf003, momoko_bg_scrollx_w, &momoko_bg_scrollx ),
+		new Memory_WriteAddress( 0xf004, 0xf004, momoko_bg_read_bank_w ),
+		new Memory_WriteAddress( 0xf006, 0xf006, momoko_bg_select_w ),
+		new Memory_WriteAddress( 0xf007, 0xf007, momoko_bg_priority_w ),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	public static Memory_ReadAddress readmem_sound[]={
 		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
@@ -109,16 +111,18 @@ public class momoko
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( writemem_sound )
-		{ 0x0000, 0x7fff, MWA_ROM },
-		{ 0x8000, 0x87ff, MWA_RAM },
-		{ 0x9000, 0x9000, MWA_NOP }, /* unknown */
-		{ 0xa000, 0xa000, YM2203_control_port_0_w },
-		{ 0xa001, 0xa001, YM2203_write_port_0_w },
-		{ 0xb000, 0xb000, MWA_NOP }, /* unknown */
-		{ 0xc000, 0xc000, YM2203_control_port_1_w },
-		{ 0xc001, 0xc001, YM2203_write_port_1_w },
-	MEMORY_END
+	public static Memory_WriteAddress writemem_sound[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0x7fff, MWA_ROM ),
+		new Memory_WriteAddress( 0x8000, 0x87ff, MWA_RAM ),
+		new Memory_WriteAddress( 0x9000, 0x9000, MWA_NOP ), /* unknown */
+		new Memory_WriteAddress( 0xa000, 0xa000, YM2203_control_port_0_w ),
+		new Memory_WriteAddress( 0xa001, 0xa001, YM2203_write_port_0_w ),
+		new Memory_WriteAddress( 0xb000, 0xb000, MWA_NOP ), /* unknown */
+		new Memory_WriteAddress( 0xc000, 0xc000, YM2203_control_port_1_w ),
+		new Memory_WriteAddress( 0xc001, 0xc001, YM2203_write_port_1_w ),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	/****************************************************************************/
 	

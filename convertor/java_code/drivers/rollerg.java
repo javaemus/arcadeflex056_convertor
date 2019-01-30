@@ -99,20 +99,22 @@ public class rollerg
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( writemem )
-		{ 0x0010, 0x0010, rollerg_0010_w },
-		{ 0x0020, 0x0020, watchdog_reset_w },
-		{ 0x0030, 0x0031, K053260_0_w },
-		{ 0x0040, 0x0040, soundirq_w },
-		{ 0x0100, 0x010f, MWA_NOP },	/* 053252? */
-		{ 0x0200, 0x020f, K051316_ctrl_0_w },
-		{ 0x0300, 0x030f, K053244_w },
-		{ 0x0800, 0x0fff, K051316_0_w },
-		{ 0x1000, 0x17ff, K053245_w },
-		{ 0x1800, 0x1fff, paletteram_xBBBBBGGGGGRRRRR_swap_w, &paletteram },
-		{ 0x2000, 0x3aff, MWA_RAM },
-		{ 0x4000, 0xffff, MWA_ROM },
-	MEMORY_END
+	public static Memory_WriteAddress writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0010, 0x0010, rollerg_0010_w ),
+		new Memory_WriteAddress( 0x0020, 0x0020, watchdog_reset_w ),
+		new Memory_WriteAddress( 0x0030, 0x0031, K053260_0_w ),
+		new Memory_WriteAddress( 0x0040, 0x0040, soundirq_w ),
+		new Memory_WriteAddress( 0x0100, 0x010f, MWA_NOP ),	/* 053252? */
+		new Memory_WriteAddress( 0x0200, 0x020f, K051316_ctrl_0_w ),
+		new Memory_WriteAddress( 0x0300, 0x030f, K053244_w ),
+		new Memory_WriteAddress( 0x0800, 0x0fff, K051316_0_w ),
+		new Memory_WriteAddress( 0x1000, 0x17ff, K053245_w ),
+		new Memory_WriteAddress( 0x1800, 0x1fff, paletteram_xBBBBBGGGGGRRRRR_swap_w, &paletteram ),
+		new Memory_WriteAddress( 0x2000, 0x3aff, MWA_RAM ),
+		new Memory_WriteAddress( 0x4000, 0xffff, MWA_ROM ),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	public static Memory_ReadAddress readmem_sound[]={
 		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
@@ -123,14 +125,16 @@ public class rollerg
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( writemem_sound )
-		{ 0x0000, 0x7fff, MWA_ROM },
-		{ 0x8000, 0x87ff, MWA_RAM },
-		{ 0xa000, 0xa02f, K053260_0_w },
-		{ 0xc000, 0xc000, YM3812_control_port_0_w },
-		{ 0xc001, 0xc001, YM3812_write_port_0_w },
-		{ 0xfc00, 0xfc00, sound_arm_nmi_w },
-	MEMORY_END
+	public static Memory_WriteAddress writemem_sound[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0x7fff, MWA_ROM ),
+		new Memory_WriteAddress( 0x8000, 0x87ff, MWA_RAM ),
+		new Memory_WriteAddress( 0xa000, 0xa02f, K053260_0_w ),
+		new Memory_WriteAddress( 0xc000, 0xc000, YM3812_control_port_0_w ),
+		new Memory_WriteAddress( 0xc001, 0xc001, YM3812_write_port_0_w ),
+		new Memory_WriteAddress( 0xfc00, 0xfc00, sound_arm_nmi_w ),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	
 	/***************************************************************************

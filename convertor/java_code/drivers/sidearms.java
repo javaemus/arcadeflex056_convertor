@@ -77,24 +77,26 @@ public class sidearms
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( writemem )
-		{ 0x0000, 0xbfff, MWA_ROM },
-		{ 0xc000, 0xc3ff, paletteram_xxxxBBBBRRRRGGGG_split1_w, &paletteram },
-		{ 0xc400, 0xc7ff, paletteram_xxxxBBBBRRRRGGGG_split2_w, &paletteram_2 },
-		{ 0xc800, 0xc800, soundlatch_w },
-		{ 0xc801, 0xc801, sidearms_bankswitch_w },
-		{ 0xc802, 0xc802, watchdog_reset_w },
-		{ 0xc804, 0xc804, sidearms_c804_w },
-		{ 0xc805, 0xc805, MWA_RAM, &sidearms_bg2_scrollx },
-		{ 0xc806, 0xc806, MWA_RAM, &sidearms_bg2_scrolly },
-		{ 0xc808, 0xc809, MWA_RAM, &sidearms_bg_scrollx },
-		{ 0xc80a, 0xc80b, MWA_RAM, &sidearms_bg_scrolly },
-		{ 0xc80c, 0xc80c, sidearms_gfxctrl_w },	/* background and sprite enable */
-		{ 0xd000, 0xd7ff, videoram_w, &videoram, &videoram_size },
-		{ 0xd800, 0xdfff, colorram_w, &colorram },
-		{ 0xe000, 0xefff, MWA_RAM },
-		{ 0xf000, 0xffff, MWA_RAM, &spriteram, &spriteram_size },
-	MEMORY_END
+	public static Memory_WriteAddress writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0xbfff, MWA_ROM ),
+		new Memory_WriteAddress( 0xc000, 0xc3ff, paletteram_xxxxBBBBRRRRGGGG_split1_w, &paletteram ),
+		new Memory_WriteAddress( 0xc400, 0xc7ff, paletteram_xxxxBBBBRRRRGGGG_split2_w, &paletteram_2 ),
+		new Memory_WriteAddress( 0xc800, 0xc800, soundlatch_w ),
+		new Memory_WriteAddress( 0xc801, 0xc801, sidearms_bankswitch_w ),
+		new Memory_WriteAddress( 0xc802, 0xc802, watchdog_reset_w ),
+		new Memory_WriteAddress( 0xc804, 0xc804, sidearms_c804_w ),
+		new Memory_WriteAddress( 0xc805, 0xc805, MWA_RAM, &sidearms_bg2_scrollx ),
+		new Memory_WriteAddress( 0xc806, 0xc806, MWA_RAM, &sidearms_bg2_scrolly ),
+		new Memory_WriteAddress( 0xc808, 0xc809, MWA_RAM, &sidearms_bg_scrollx ),
+		new Memory_WriteAddress( 0xc80a, 0xc80b, MWA_RAM, &sidearms_bg_scrolly ),
+		new Memory_WriteAddress( 0xc80c, 0xc80c, sidearms_gfxctrl_w ),	/* background and sprite enable */
+		new Memory_WriteAddress( 0xd000, 0xd7ff, videoram_w, &videoram, &videoram_size ),
+		new Memory_WriteAddress( 0xd800, 0xdfff, colorram_w, &colorram ),
+		new Memory_WriteAddress( 0xe000, 0xefff, MWA_RAM ),
+		new Memory_WriteAddress( 0xf000, 0xffff, MWA_RAM, &spriteram, &spriteram_size ),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	#ifdef THIRD_CPU
 	static WRITE_HANDLER( pop )
@@ -116,15 +118,17 @@ public class sidearms
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( writemem2 )
-		{ 0x0000, 0x7fff, MWA_ROM },
-		{ 0xc000, 0xdfff, MWA_RAM },
-		{ 0xe000, 0xe3ff, MWA_RAM },
-		{ 0xe400, 0xe7ff, MWA_RAM },
-		{ 0xe800, 0xebff, MWA_RAM },
-		{ 0xec00, 0xefff, MWA_RAM },
-		{ 0xf80e, 0xf80e, pop },        /* ROM bank selector? (to appear at 8000) */
-	MEMORY_END
+	public static Memory_WriteAddress writemem2[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0x7fff, MWA_ROM ),
+		new Memory_WriteAddress( 0xc000, 0xdfff, MWA_RAM ),
+		new Memory_WriteAddress( 0xe000, 0xe3ff, MWA_RAM ),
+		new Memory_WriteAddress( 0xe400, 0xe7ff, MWA_RAM ),
+		new Memory_WriteAddress( 0xe800, 0xebff, MWA_RAM ),
+		new Memory_WriteAddress( 0xec00, 0xefff, MWA_RAM ),
+		new Memory_WriteAddress( 0xf80e, 0xf80e, pop ),        /* ROM bank selector? (to appear at 8000) */
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	#endif
 	
 	
@@ -138,25 +142,27 @@ public class sidearms
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( turtship_writemem )
-		{ 0x0000, 0xbfff, MWA_ROM },
-		{ 0xc000, 0xcfff, MWA_RAM },
-		{ 0xd000, 0xdfff, MWA_RAM, &spriteram, &spriteram_size },
-		{ 0xe000, 0xe3ff, paletteram_xxxxBBBBRRRRGGGG_split1_w, &paletteram },
-		{ 0xe400, 0xe7ff, paletteram_xxxxBBBBRRRRGGGG_split2_w, &paletteram_2 },
-		{ 0xe800, 0xe800, soundlatch_w },
-		{ 0xe801, 0xe801, sidearms_bankswitch_w },
-		{ 0xe802, 0xe802, watchdog_reset_w },
-		{ 0xe804, 0xe804, sidearms_c804_w },
-		{ 0xe805, 0xe805, MWA_RAM, &sidearms_bg2_scrollx },
-		{ 0xe806, 0xe806, MWA_RAM, &sidearms_bg2_scrolly },
-		{ 0xe808, 0xe809, MWA_RAM, &sidearms_bg_scrollx },
-		{ 0xe80a, 0xe80b, MWA_RAM, &sidearms_bg_scrolly },
-		{ 0xe80a, 0xe80b, MWA_RAM, &sidearms_bg_scrolly },
-		{ 0xe80c, 0xe80c, sidearms_gfxctrl_w },	/* background and sprite enable */
-		{ 0xf000, 0xf7ff, videoram_w, &videoram, &videoram_size },
-		{ 0xf800, 0xffff, colorram_w, &colorram },
-	MEMORY_END
+	public static Memory_WriteAddress turtship_writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0xbfff, MWA_ROM ),
+		new Memory_WriteAddress( 0xc000, 0xcfff, MWA_RAM ),
+		new Memory_WriteAddress( 0xd000, 0xdfff, MWA_RAM, &spriteram, &spriteram_size ),
+		new Memory_WriteAddress( 0xe000, 0xe3ff, paletteram_xxxxBBBBRRRRGGGG_split1_w, &paletteram ),
+		new Memory_WriteAddress( 0xe400, 0xe7ff, paletteram_xxxxBBBBRRRRGGGG_split2_w, &paletteram_2 ),
+		new Memory_WriteAddress( 0xe800, 0xe800, soundlatch_w ),
+		new Memory_WriteAddress( 0xe801, 0xe801, sidearms_bankswitch_w ),
+		new Memory_WriteAddress( 0xe802, 0xe802, watchdog_reset_w ),
+		new Memory_WriteAddress( 0xe804, 0xe804, sidearms_c804_w ),
+		new Memory_WriteAddress( 0xe805, 0xe805, MWA_RAM, &sidearms_bg2_scrollx ),
+		new Memory_WriteAddress( 0xe806, 0xe806, MWA_RAM, &sidearms_bg2_scrolly ),
+		new Memory_WriteAddress( 0xe808, 0xe809, MWA_RAM, &sidearms_bg_scrollx ),
+		new Memory_WriteAddress( 0xe80a, 0xe80b, MWA_RAM, &sidearms_bg_scrolly ),
+		new Memory_WriteAddress( 0xe80a, 0xe80b, MWA_RAM, &sidearms_bg_scrolly ),
+		new Memory_WriteAddress( 0xe80c, 0xe80c, sidearms_gfxctrl_w ),	/* background and sprite enable */
+		new Memory_WriteAddress( 0xf000, 0xf7ff, videoram_w, &videoram, &videoram_size ),
+		new Memory_WriteAddress( 0xf800, 0xffff, colorram_w, &colorram ),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	
 	public static Memory_ReadAddress sound_readmem[]={
@@ -169,14 +175,16 @@ public class sidearms
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( sound_writemem )
-		{ 0x0000, 0x7fff, MWA_ROM },
-		{ 0xc000, 0xc7ff, MWA_RAM },
-		{ 0xf000, 0xf000, YM2203_control_port_0_w },
-		{ 0xf001, 0xf001, YM2203_write_port_0_w },
-		{ 0xf002, 0xf002, YM2203_control_port_1_w },
-		{ 0xf003, 0xf003, YM2203_write_port_1_w },
-	MEMORY_END
+	public static Memory_WriteAddress sound_writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0x7fff, MWA_ROM ),
+		new Memory_WriteAddress( 0xc000, 0xc7ff, MWA_RAM ),
+		new Memory_WriteAddress( 0xf000, 0xf000, YM2203_control_port_0_w ),
+		new Memory_WriteAddress( 0xf001, 0xf001, YM2203_write_port_0_w ),
+		new Memory_WriteAddress( 0xf002, 0xf002, YM2203_control_port_1_w ),
+		new Memory_WriteAddress( 0xf003, 0xf003, YM2203_write_port_1_w ),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	
 	INPUT_PORTS_START( sidearms )

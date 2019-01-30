@@ -179,17 +179,19 @@ public class exzisus
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( cpua_writemem )
-		{ 0x0000, 0xbfff, MWA_ROM },
-		{ 0xc000, 0xc5ff, exzisus_objectram_0_w, &exzisus_objectram0, &exzisus_objectram_size0 },
-		{ 0xc600, 0xdfff, exzisus_videoram_0_w, &exzisus_videoram0 },
-		{ 0xe000, 0xefff, MWA_RAM },
-		{ 0xf000, 0xf000, taitosound_port_w },
-		{ 0xf001, 0xf001, taitosound_comm_w },
-		{ 0xf400, 0xf400, exzisus_cpua_bankswitch_w },
-		{ 0xf402, 0xf402, exzisus_coincounter_w },
-		{ 0xf800, 0xffff, exzisus_sharedram_ac_w },
-	MEMORY_END
+	public static Memory_WriteAddress cpua_writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0xbfff, MWA_ROM ),
+		new Memory_WriteAddress( 0xc000, 0xc5ff, exzisus_objectram_0_w, &exzisus_objectram0, &exzisus_objectram_size0 ),
+		new Memory_WriteAddress( 0xc600, 0xdfff, exzisus_videoram_0_w, &exzisus_videoram0 ),
+		new Memory_WriteAddress( 0xe000, 0xefff, MWA_RAM ),
+		new Memory_WriteAddress( 0xf000, 0xf000, taitosound_port_w ),
+		new Memory_WriteAddress( 0xf001, 0xf001, taitosound_comm_w ),
+		new Memory_WriteAddress( 0xf400, 0xf400, exzisus_cpua_bankswitch_w ),
+		new Memory_WriteAddress( 0xf402, 0xf402, exzisus_coincounter_w ),
+		new Memory_WriteAddress( 0xf800, 0xffff, exzisus_sharedram_ac_w ),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	public static Memory_ReadAddress cpub_readmem[]={
 		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
@@ -201,13 +203,15 @@ public class exzisus
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( cpub_writemem )
-		{ 0x0000, 0x7fff, MWA_ROM },
-		{ 0x8000, 0x85ff, exzisus_objectram_1_w },
-		{ 0x8600, 0x9fff, exzisus_videoram_1_w },
-		{ 0xa000, 0xafff, exzisus_sharedram_bc_w },
-		{ 0xb000, 0xbfff, MWA_RAM },
-	MEMORY_END
+	public static Memory_WriteAddress cpub_writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0x7fff, MWA_ROM ),
+		new Memory_WriteAddress( 0x8000, 0x85ff, exzisus_objectram_1_w ),
+		new Memory_WriteAddress( 0x8600, 0x9fff, exzisus_videoram_1_w ),
+		new Memory_WriteAddress( 0xa000, 0xafff, exzisus_sharedram_bc_w ),
+		new Memory_WriteAddress( 0xb000, 0xbfff, MWA_RAM ),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	public static Memory_ReadAddress cpuc_readmem[]={
 		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
@@ -220,14 +224,16 @@ public class exzisus
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( cpuc_writemem )
-		{ 0x0000, 0xbfff, MWA_ROM },
-		{ 0xc000, 0xc5ff, exzisus_objectram_1_w, &exzisus_objectram1, &exzisus_objectram_size1 },
-		{ 0xc600, 0xdfff, exzisus_videoram_1_w, &exzisus_videoram1 },
-		{ 0xe000, 0xefff, exzisus_sharedram_bc_w, &exzisus_sharedram_bc },
-		{ 0xf400, 0xf400, exzisus_cpub_bankswitch_w },
-		{ 0xf800, 0xffff, exzisus_sharedram_ac_w, &exzisus_sharedram_ac },
-	MEMORY_END
+	public static Memory_WriteAddress cpuc_writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0xbfff, MWA_ROM ),
+		new Memory_WriteAddress( 0xc000, 0xc5ff, exzisus_objectram_1_w, &exzisus_objectram1, &exzisus_objectram_size1 ),
+		new Memory_WriteAddress( 0xc600, 0xdfff, exzisus_videoram_1_w, &exzisus_videoram1 ),
+		new Memory_WriteAddress( 0xe000, 0xefff, exzisus_sharedram_bc_w, &exzisus_sharedram_bc ),
+		new Memory_WriteAddress( 0xf400, 0xf400, exzisus_cpub_bankswitch_w ),
+		new Memory_WriteAddress( 0xf800, 0xffff, exzisus_sharedram_ac_w, &exzisus_sharedram_ac ),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	public static Memory_ReadAddress sound_readmem[]={
 		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
@@ -240,14 +246,16 @@ public class exzisus
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( sound_writemem )
-		{ 0x0000, 0x7fff, MWA_ROM },
-		{ 0x8000, 0x8fff, MWA_RAM },
-		{ 0x9000, 0x9000, YM2151_register_port_0_w },
-		{ 0x9001, 0x9001, YM2151_data_port_0_w },
-		{ 0xa000, 0xa000, taitosound_slave_port_w },
-		{ 0xa001, 0xa001, taitosound_slave_comm_w },
-	MEMORY_END
+	public static Memory_WriteAddress sound_writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0x7fff, MWA_ROM ),
+		new Memory_WriteAddress( 0x8000, 0x8fff, MWA_RAM ),
+		new Memory_WriteAddress( 0x9000, 0x9000, YM2151_register_port_0_w ),
+		new Memory_WriteAddress( 0x9001, 0x9001, YM2151_data_port_0_w ),
+		new Memory_WriteAddress( 0xa000, 0xa000, taitosound_slave_port_w ),
+		new Memory_WriteAddress( 0xa001, 0xa001, taitosound_slave_comm_w ),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	
 	/***************************************************************************

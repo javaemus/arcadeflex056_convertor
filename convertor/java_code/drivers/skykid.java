@@ -137,21 +137,23 @@ public class skykid
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( skykid_writemem )
-		{ 0x0000, 0x1fff, MWA_ROM },				/* banked ROM */
-		{ 0x2000, 0x2fff, skykid_videoram_w, &skykid_videoram },/* Video RAM (background) */
-		{ 0x4000, 0x47ff, MWA_RAM, &skykid_textram },/* video RAM (text layer) */
-		{ 0x4800, 0x5fff, MWA_RAM },				/* RAM + Sprite RAM */
-		{ 0x6000, 0x60ff, skykid_scroll_y_w },		/* Y scroll register map */
-		{ 0x6200, 0x63ff, skykid_scroll_x_w },		/* X scroll register map */
-		{ 0x6800, 0x68ff, namcos1_wavedata_w, &namco_wavedata },/* PSG device, shared RAM */
-		{ 0x6800, 0x6bff, skykid_sharedram_w, &sharedram },	/* shared RAM with the MCU */
-		{ 0x7000, 0x7800, skykid_irq_ctrl_w },		/* IRQ control */
-		{ 0x8000, 0x8800, skykid_halt_mcu_w },		/* MCU control */
-		{ 0x9000, 0x9800, skykid_bankswitch_w },	/* Bankswitch control */
-		{ 0xa000, 0xa001, skykid_flipscreen_w },	/* flip screen */
-		{ 0x8000, 0xffff, MWA_ROM },				/* ROM */
-	MEMORY_END
+	public static Memory_WriteAddress skykid_writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0x1fff, MWA_ROM ),				/* banked ROM */
+		new Memory_WriteAddress( 0x2000, 0x2fff, skykid_videoram_w, &skykid_videoram ),/* Video RAM (background) */
+		new Memory_WriteAddress( 0x4000, 0x47ff, MWA_RAM, &skykid_textram ),/* video RAM (text layer) */
+		new Memory_WriteAddress( 0x4800, 0x5fff, MWA_RAM ),				/* RAM + Sprite RAM */
+		new Memory_WriteAddress( 0x6000, 0x60ff, skykid_scroll_y_w ),		/* Y scroll register map */
+		new Memory_WriteAddress( 0x6200, 0x63ff, skykid_scroll_x_w ),		/* X scroll register map */
+		new Memory_WriteAddress( 0x6800, 0x68ff, namcos1_wavedata_w, &namco_wavedata ),/* PSG device, shared RAM */
+		new Memory_WriteAddress( 0x6800, 0x6bff, skykid_sharedram_w, &sharedram ),	/* shared RAM with the MCU */
+		new Memory_WriteAddress( 0x7000, 0x7800, skykid_irq_ctrl_w ),		/* IRQ control */
+		new Memory_WriteAddress( 0x8000, 0x8800, skykid_halt_mcu_w ),		/* MCU control */
+		new Memory_WriteAddress( 0x9000, 0x9800, skykid_bankswitch_w ),	/* Bankswitch control */
+		new Memory_WriteAddress( 0xa000, 0xa001, skykid_flipscreen_w ),	/* flip screen */
+		new Memory_WriteAddress( 0x8000, 0xffff, MWA_ROM ),				/* ROM */
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	public static Memory_ReadAddress mcu_readmem[]={
 		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
@@ -166,19 +168,21 @@ public class skykid
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( mcu_writemem )
-		{ 0x0000, 0x001f, hd63701_internal_registers_w },/* internal registers */
-		{ 0x0080, 0x00ff, MWA_RAM },					/* built in RAM */
-		{ 0x1000, 0x10ff, namcos1_wavedata_w },			/* PSG device, shared RAM */
-		{ 0x1100, 0x113f, namcos1_sound_w, &namco_soundregs },/* PSG device */
-		{ 0x1000, 0x13ff, skykid_sharedram_w },			/* shared RAM with the 6809 */
-		{ 0x2000, 0x2000, MWA_NOP },					/* ??? */
-		{ 0x4000, 0x4000, MWA_NOP },					/* ??? */
-		{ 0x6000, 0x6000, MWA_NOP },					/* ??? */
-		{ 0x8000, 0xbfff, MWA_ROM },					/* MCU external ROM */
-		{ 0xc000, 0xc800, MWA_RAM },					/* RAM */
-		{ 0xf000, 0xffff, MWA_ROM },					/* MCU internal ROM */
-	MEMORY_END
+	public static Memory_WriteAddress mcu_writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0x001f, hd63701_internal_registers_w ),/* internal registers */
+		new Memory_WriteAddress( 0x0080, 0x00ff, MWA_RAM ),					/* built in RAM */
+		new Memory_WriteAddress( 0x1000, 0x10ff, namcos1_wavedata_w ),			/* PSG device, shared RAM */
+		new Memory_WriteAddress( 0x1100, 0x113f, namcos1_sound_w, &namco_soundregs ),/* PSG device */
+		new Memory_WriteAddress( 0x1000, 0x13ff, skykid_sharedram_w ),			/* shared RAM with the 6809 */
+		new Memory_WriteAddress( 0x2000, 0x2000, MWA_NOP ),					/* ??? */
+		new Memory_WriteAddress( 0x4000, 0x4000, MWA_NOP ),					/* ??? */
+		new Memory_WriteAddress( 0x6000, 0x6000, MWA_NOP ),					/* ??? */
+		new Memory_WriteAddress( 0x8000, 0xbfff, MWA_ROM ),					/* MCU external ROM */
+		new Memory_WriteAddress( 0xc000, 0xc800, MWA_RAM ),					/* RAM */
+		new Memory_WriteAddress( 0xf000, 0xffff, MWA_ROM ),					/* MCU internal ROM */
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	
 	static READ_HANDLER( readFF )

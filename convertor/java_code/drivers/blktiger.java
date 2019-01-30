@@ -79,15 +79,17 @@ public class blktiger
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( writemem )
-		{ 0x0000, 0xbfff, MWA_ROM },
-		{ 0xc000, 0xcfff, blktiger_bgvideoram_w },
-		{ 0xd000, 0xd7ff, blktiger_txvideoram_w, &blktiger_txvideoram },
-		{ 0xd800, 0xdbff, paletteram_xxxxBBBBRRRRGGGG_split1_w, &paletteram },
-		{ 0xdc00, 0xdfff, paletteram_xxxxBBBBRRRRGGGG_split2_w, &paletteram_2 },
-		{ 0xe000, 0xfdff, MWA_RAM },
-		{ 0xfe00, 0xffff, MWA_RAM, &spriteram, &spriteram_size },
-	MEMORY_END
+	public static Memory_WriteAddress writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0xbfff, MWA_ROM ),
+		new Memory_WriteAddress( 0xc000, 0xcfff, blktiger_bgvideoram_w ),
+		new Memory_WriteAddress( 0xd000, 0xd7ff, blktiger_txvideoram_w, &blktiger_txvideoram ),
+		new Memory_WriteAddress( 0xd800, 0xdbff, paletteram_xxxxBBBBRRRRGGGG_split1_w, &paletteram ),
+		new Memory_WriteAddress( 0xdc00, 0xdfff, paletteram_xxxxBBBBRRRRGGGG_split2_w, &paletteram_2 ),
+		new Memory_WriteAddress( 0xe000, 0xfdff, MWA_RAM ),
+		new Memory_WriteAddress( 0xfe00, 0xffff, MWA_RAM, &spriteram, &spriteram_size ),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static PORT_READ_START( readport )
 		{ 0x00, 0x00, input_port_0_r },
@@ -126,14 +128,16 @@ public class blktiger
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( sound_writemem )
-		{ 0x0000, 0x7fff, MWA_ROM },
-		{ 0xc000, 0xc7ff, MWA_RAM },
-		{ 0xe000, 0xe000, YM2203_control_port_0_w },
-		{ 0xe001, 0xe001, YM2203_write_port_0_w },
-		{ 0xe002, 0xe002, YM2203_control_port_1_w },
-		{ 0xe003, 0xe003, YM2203_write_port_1_w },
-	MEMORY_END
+	public static Memory_WriteAddress sound_writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0x7fff, MWA_ROM ),
+		new Memory_WriteAddress( 0xc000, 0xc7ff, MWA_RAM ),
+		new Memory_WriteAddress( 0xe000, 0xe000, YM2203_control_port_0_w ),
+		new Memory_WriteAddress( 0xe001, 0xe001, YM2203_write_port_0_w ),
+		new Memory_WriteAddress( 0xe002, 0xe002, YM2203_control_port_1_w ),
+		new Memory_WriteAddress( 0xe003, 0xe003, YM2203_write_port_1_w ),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	
 	

@@ -568,24 +568,26 @@ public class tunhunt
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( writemem )
-		{ 0x0000, 0x03ff, MWA_RAM }, /* Work RAM */
-		{ 0x1080, 0x10ff, MWA_RAM },
-		{ 0x1200, 0x12ff, MWA_RAM },
-		{ 0x1400, 0x14ff, MWA_RAM },
-		{ 0x1600, 0x160f, MWA_RAM, &paletteram }, /* COLRAM (D7-D4 SHADE; D3-D0 COLOR) */
-		{ 0x1800, 0x1800, MWA_RAM }, /* SHEL0H */
-		{ 0x1a00, 0x1a00, MWA_RAM }, /* SHEL1H */
-		{ 0x1c00, 0x1c00, MWA_RAM }, /* MOBJV */
-		{ 0x1e00, 0x1eff, MWA_RAM, &videoram },	/* ALPHA */
-		{ 0x2c00, 0x2fff, tunhunt_mott_w, &spriteram },
-		{ 0x2000, 0x2000, MWA_NOP }, /* watchdog */
-		{ 0x2400, 0x2400, MWA_NOP }, /* INT ACK */
-		{ 0x2800, 0x2800, tunhunt_control_w },
-		{ 0x3000, 0x300f, pokey1_w },
-		{ 0x4000, 0x400f, pokey2_w },
-		{ 0x5000, 0xffff, MWA_ROM },
-	MEMORY_END
+	public static Memory_WriteAddress writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0x03ff, MWA_RAM ), /* Work RAM */
+		new Memory_WriteAddress( 0x1080, 0x10ff, MWA_RAM ),
+		new Memory_WriteAddress( 0x1200, 0x12ff, MWA_RAM ),
+		new Memory_WriteAddress( 0x1400, 0x14ff, MWA_RAM ),
+		new Memory_WriteAddress( 0x1600, 0x160f, MWA_RAM, &paletteram ), /* COLRAM (D7-D4 SHADE; D3-D0 COLOR) */
+		new Memory_WriteAddress( 0x1800, 0x1800, MWA_RAM ), /* SHEL0H */
+		new Memory_WriteAddress( 0x1a00, 0x1a00, MWA_RAM ), /* SHEL1H */
+		new Memory_WriteAddress( 0x1c00, 0x1c00, MWA_RAM ), /* MOBJV */
+		new Memory_WriteAddress( 0x1e00, 0x1eff, MWA_RAM, &videoram ),	/* ALPHA */
+		new Memory_WriteAddress( 0x2c00, 0x2fff, tunhunt_mott_w, &spriteram ),
+		new Memory_WriteAddress( 0x2000, 0x2000, MWA_NOP ), /* watchdog */
+		new Memory_WriteAddress( 0x2400, 0x2400, MWA_NOP ), /* INT ACK */
+		new Memory_WriteAddress( 0x2800, 0x2800, tunhunt_control_w ),
+		new Memory_WriteAddress( 0x3000, 0x300f, pokey1_w ),
+		new Memory_WriteAddress( 0x4000, 0x400f, pokey2_w ),
+		new Memory_WriteAddress( 0x5000, 0xffff, MWA_ROM ),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	INPUT_PORTS_START( tunhunt )
 		PORT_START

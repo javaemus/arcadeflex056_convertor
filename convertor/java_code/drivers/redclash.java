@@ -80,20 +80,22 @@ public class redclash
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( zero_writemem )
-		{ 0x0000, 0x2fff, MWA_ROM },
-		{ 0x3000, 0x37ff, MWA_RAM },
-		{ 0x3800, 0x3bff, MWA_RAM, &spriteram, &spriteram_size },
-		{ 0x4000, 0x43ff, MWA_RAM, &redclash_textram },
-		{ 0x5000, 0x5007, MWA_NOP },	/* to sound board */
-		{ 0x5800, 0x5800, redclash_star0_w },
-		{ 0x5801, 0x5804, MWA_NOP },	/* to sound board */
-		{ 0x5805, 0x5805, redclash_star1_w },
-		{ 0x5806, 0x5806, redclash_star2_w },
-		{ 0x5807, 0x5807, redclash_flipscreen_w },
-		{ 0x7000, 0x7000, redclash_star_reset_w },
-		{ 0x7800, 0x7800, irqack_w },
-	MEMORY_END
+	public static Memory_WriteAddress zero_writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0x2fff, MWA_ROM ),
+		new Memory_WriteAddress( 0x3000, 0x37ff, MWA_RAM ),
+		new Memory_WriteAddress( 0x3800, 0x3bff, MWA_RAM, &spriteram, &spriteram_size ),
+		new Memory_WriteAddress( 0x4000, 0x43ff, MWA_RAM, &redclash_textram ),
+		new Memory_WriteAddress( 0x5000, 0x5007, MWA_NOP ),	/* to sound board */
+		new Memory_WriteAddress( 0x5800, 0x5800, redclash_star0_w ),
+		new Memory_WriteAddress( 0x5801, 0x5804, MWA_NOP ),	/* to sound board */
+		new Memory_WriteAddress( 0x5805, 0x5805, redclash_star1_w ),
+		new Memory_WriteAddress( 0x5806, 0x5806, redclash_star2_w ),
+		new Memory_WriteAddress( 0x5807, 0x5807, redclash_flipscreen_w ),
+		new Memory_WriteAddress( 0x7000, 0x7000, redclash_star_reset_w ),
+		new Memory_WriteAddress( 0x7800, 0x7800, irqack_w ),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	public static Memory_ReadAddress readmem[]={
 		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
@@ -107,22 +109,24 @@ public class redclash
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( writemem )
-		{ 0x0000, 0x2fff, MWA_ROM },
-	//	{ 0x3000, 0x3000, MWA_NOP },
-	//	{ 0x3800, 0x3800, MWA_NOP },
-		{ 0x4000, 0x43ff, MWA_RAM, &redclash_textram },
-		{ 0x5000, 0x5007, MWA_NOP },	/* to sound board */
-		{ 0x5800, 0x5800, redclash_star0_w },
-		{ 0x5801, 0x5801, redclash_gfxbank_w },
-		{ 0x5805, 0x5805, redclash_star1_w },
-		{ 0x5806, 0x5806, redclash_star2_w },
-		{ 0x5807, 0x5807, redclash_flipscreen_w },
-		{ 0x6000, 0x67ff, MWA_RAM },
-		{ 0x6800, 0x6bff, MWA_RAM, &spriteram, &spriteram_size },
-		{ 0x7000, 0x7000, redclash_star_reset_w },
-		{ 0x7800, 0x7800, irqack_w },
-	MEMORY_END
+	public static Memory_WriteAddress writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0x2fff, MWA_ROM ),
+	//	new Memory_WriteAddress( 0x3000, 0x3000, MWA_NOP ),
+	//	new Memory_WriteAddress( 0x3800, 0x3800, MWA_NOP ),
+		new Memory_WriteAddress( 0x4000, 0x43ff, MWA_RAM, &redclash_textram ),
+		new Memory_WriteAddress( 0x5000, 0x5007, MWA_NOP ),	/* to sound board */
+		new Memory_WriteAddress( 0x5800, 0x5800, redclash_star0_w ),
+		new Memory_WriteAddress( 0x5801, 0x5801, redclash_gfxbank_w ),
+		new Memory_WriteAddress( 0x5805, 0x5805, redclash_star1_w ),
+		new Memory_WriteAddress( 0x5806, 0x5806, redclash_star2_w ),
+		new Memory_WriteAddress( 0x5807, 0x5807, redclash_flipscreen_w ),
+		new Memory_WriteAddress( 0x6000, 0x67ff, MWA_RAM ),
+		new Memory_WriteAddress( 0x6800, 0x6bff, MWA_RAM, &spriteram, &spriteram_size ),
+		new Memory_WriteAddress( 0x7000, 0x7000, redclash_star_reset_w ),
+		new Memory_WriteAddress( 0x7800, 0x7800, irqack_w ),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	
 	

@@ -58,18 +58,20 @@ public class tagteam
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( writemem )
-		{ 0x0000, 0x07ff, MWA_RAM },
-	//	{ 0x2000, 0x2000, tagteam_unk_w },
-		{ 0x2001, 0x2001, tagteam_control_w },
-		{ 0x2002, 0x2002, sound_command_w },
-	//	{ 0x2003, 0x2003, MWA_NOP }, /* Appears to increment when you're out of the ring */
-		{ 0x4000, 0x43ff, tagteam_mirrorvideoram_w },
-		{ 0x4400, 0x47ff, tagteam_mirrorcolorram_w },
-		{ 0x4800, 0x4bff, videoram_w, &videoram, &videoram_size },
-		{ 0x4c00, 0x4fff, colorram_w, &colorram },
-		{ 0x8000, 0xffff, MWA_ROM },
-	MEMORY_END
+	public static Memory_WriteAddress writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0x07ff, MWA_RAM ),
+	//	new Memory_WriteAddress( 0x2000, 0x2000, tagteam_unk_w ),
+		new Memory_WriteAddress( 0x2001, 0x2001, tagteam_control_w ),
+		new Memory_WriteAddress( 0x2002, 0x2002, sound_command_w ),
+	//	new Memory_WriteAddress( 0x2003, 0x2003, MWA_NOP ), /* Appears to increment when you're out of the ring */
+		new Memory_WriteAddress( 0x4000, 0x43ff, tagteam_mirrorvideoram_w ),
+		new Memory_WriteAddress( 0x4400, 0x47ff, tagteam_mirrorcolorram_w ),
+		new Memory_WriteAddress( 0x4800, 0x4bff, videoram_w, &videoram, &videoram_size ),
+		new Memory_WriteAddress( 0x4c00, 0x4fff, colorram_w, &colorram ),
+		new Memory_WriteAddress( 0x8000, 0xffff, MWA_ROM ),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	
 	public static Memory_ReadAddress sound_readmem[]={
@@ -80,15 +82,17 @@ public class tagteam
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( sound_writemem )
-		{ 0x0000, 0x03ff, MWA_RAM },
-		{ 0x2000, 0x2000, AY8910_write_port_0_w },
-		{ 0x2001, 0x2001, AY8910_control_port_0_w },
-		{ 0x2002, 0x2002, AY8910_write_port_1_w },
-		{ 0x2003, 0x2003, AY8910_control_port_1_w },
-		{ 0x2004, 0x2004, DAC_0_data_w },
-		{ 0x2005, 0x2005, interrupt_enable_w },
-	MEMORY_END
+	public static Memory_WriteAddress sound_writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0x03ff, MWA_RAM ),
+		new Memory_WriteAddress( 0x2000, 0x2000, AY8910_write_port_0_w ),
+		new Memory_WriteAddress( 0x2001, 0x2001, AY8910_control_port_0_w ),
+		new Memory_WriteAddress( 0x2002, 0x2002, AY8910_write_port_1_w ),
+		new Memory_WriteAddress( 0x2003, 0x2003, AY8910_control_port_1_w ),
+		new Memory_WriteAddress( 0x2004, 0x2004, DAC_0_data_w ),
+		new Memory_WriteAddress( 0x2005, 0x2005, interrupt_enable_w ),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	
 	

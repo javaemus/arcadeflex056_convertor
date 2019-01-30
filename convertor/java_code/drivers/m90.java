@@ -81,14 +81,16 @@ public class m90
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( writemem )
-		{ 0x00000, 0x7ffff, MWA_ROM },
-		{ 0x80000, 0x8ffff, MWA_ROM },	/* Quiz F1 only */
-		{ 0xa0000, 0xa3fff, MWA_RAM },
-		{ 0xd0000, 0xdffff, m90_video_w, &m90_video_data },
-		{ 0xe0000, 0xe03ff, paletteram_xBBBBBGGGGGRRRRR_w, &paletteram },
-		{ 0xffff0, 0xfffff, MWA_ROM },
-	MEMORY_END
+	public static Memory_WriteAddress writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x00000, 0x7ffff, MWA_ROM ),
+		new Memory_WriteAddress( 0x80000, 0x8ffff, MWA_ROM ),	/* Quiz F1 only */
+		new Memory_WriteAddress( 0xa0000, 0xa3fff, MWA_RAM ),
+		new Memory_WriteAddress( 0xd0000, 0xdffff, m90_video_w, &m90_video_data ),
+		new Memory_WriteAddress( 0xe0000, 0xe03ff, paletteram_xBBBBBGGGGGRRRRR_w, &paletteram ),
+		new Memory_WriteAddress( 0xffff0, 0xfffff, MWA_ROM ),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	public static Memory_ReadAddress bootleg_readmem[]={
 		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
@@ -101,14 +103,16 @@ public class m90
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( bootleg_writemem )
-		{ 0x00000, 0x3ffff, MWA_ROM },
-		{ 0x6000e, 0x60fff, MWA_RAM, &spriteram },
-		{ 0xa0000, 0xa3fff, MWA_RAM },
-		//{ 0xd0000, 0xdffff, m90_bootleg_video_w, &m90_video_data },
-		{ 0xe0000, 0xe03ff, paletteram_xBBBBBGGGGGRRRRR_w, &paletteram },
-		{ 0xffff0, 0xfffff, MWA_ROM },
-	MEMORY_END
+	public static Memory_WriteAddress bootleg_writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x00000, 0x3ffff, MWA_ROM ),
+		new Memory_WriteAddress( 0x6000e, 0x60fff, MWA_RAM, &spriteram ),
+		new Memory_WriteAddress( 0xa0000, 0xa3fff, MWA_RAM ),
+		//new Memory_WriteAddress( 0xd0000, 0xdffff, m90_bootleg_video_w, &m90_video_data ),
+		new Memory_WriteAddress( 0xe0000, 0xe03ff, paletteram_xBBBBBGGGGGRRRRR_w, &paletteram ),
+		new Memory_WriteAddress( 0xffff0, 0xfffff, MWA_ROM ),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static PORT_READ_START( readport )
 		{ 0x00, 0x00, input_port_0_r }, /* Player 1 */
@@ -137,10 +141,12 @@ public class m90
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( sound_writemem )
-		{ 0x0000, 0xefff, MWA_ROM },
-		{ 0xf000, 0xffff, MWA_RAM },
-	MEMORY_END
+	public static Memory_WriteAddress sound_writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0xefff, MWA_ROM ),
+		new Memory_WriteAddress( 0xf000, 0xffff, MWA_RAM ),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static PORT_READ_START( sound_readport )
 		{ 0x01, 0x01, YM2151_status_port_0_r },

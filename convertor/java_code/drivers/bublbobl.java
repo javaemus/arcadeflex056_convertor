@@ -183,19 +183,21 @@ public class bublbobl
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( bublbobl_writemem )
-		{ 0x0000, 0xbfff, MWA_ROM },
-		{ 0xc000, 0xdcff, MWA_RAM, &videoram, &videoram_size },
-		{ 0xdd00, 0xdfff, MWA_RAM, &bublbobl_objectram, &bublbobl_objectram_size },
-		{ 0xe000, 0xf7ff, bublbobl_sharedram1_w, &bublbobl_sharedram1 },
-		{ 0xf800, 0xf9ff, paletteram_RRRRGGGGBBBBxxxx_swap_w, &paletteram },
-		{ 0xfa00, 0xfa00, bublbobl_sound_command_w },
-	//	{ 0xfa03, 0xfa03,  }, clocks reset to sound cpu
-		{ 0xfa80, 0xfa80, watchdog_reset_w },
-		{ 0xfb00, 0xfb00, bublbobl_nmitrigger_w },	/* not used by Bubble Bobble, only by Tokio */
-		{ 0xfb40, 0xfb40, bublbobl_bankswitch_w },
-		{ 0xfc00, 0xffff, bublbobl_sharedram2_w, &bublbobl_sharedram2 },
-	MEMORY_END
+	public static Memory_WriteAddress bublbobl_writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0xbfff, MWA_ROM ),
+		new Memory_WriteAddress( 0xc000, 0xdcff, MWA_RAM, &videoram, &videoram_size ),
+		new Memory_WriteAddress( 0xdd00, 0xdfff, MWA_RAM, &bublbobl_objectram, &bublbobl_objectram_size ),
+		new Memory_WriteAddress( 0xe000, 0xf7ff, bublbobl_sharedram1_w, &bublbobl_sharedram1 ),
+		new Memory_WriteAddress( 0xf800, 0xf9ff, paletteram_RRRRGGGGBBBBxxxx_swap_w, &paletteram ),
+		new Memory_WriteAddress( 0xfa00, 0xfa00, bublbobl_sound_command_w ),
+	//	new Memory_WriteAddress( 0xfa03, 0xfa03,  ), clocks reset to sound cpu
+		new Memory_WriteAddress( 0xfa80, 0xfa80, watchdog_reset_w ),
+		new Memory_WriteAddress( 0xfb00, 0xfb00, bublbobl_nmitrigger_w ),	/* not used by Bubble Bobble, only by Tokio */
+		new Memory_WriteAddress( 0xfb40, 0xfb40, bublbobl_bankswitch_w ),
+		new Memory_WriteAddress( 0xfc00, 0xffff, bublbobl_sharedram2_w, &bublbobl_sharedram2 ),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	public static Memory_ReadAddress m68705_readmem[]={
 		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
@@ -207,14 +209,16 @@ public class bublbobl
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( m68705_writemem )
-		{ 0x0000, 0x0000, bublbobl_68705_portA_w },
-		{ 0x0001, 0x0001, bublbobl_68705_portB_w },
-		{ 0x0004, 0x0004, bublbobl_68705_ddrA_w },
-		{ 0x0005, 0x0005, bublbobl_68705_ddrB_w },
-		{ 0x0010, 0x007f, MWA_RAM },
-		{ 0x0080, 0x07ff, MWA_ROM },
-	MEMORY_END
+	public static Memory_WriteAddress m68705_writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0x0000, bublbobl_68705_portA_w ),
+		new Memory_WriteAddress( 0x0001, 0x0001, bublbobl_68705_portB_w ),
+		new Memory_WriteAddress( 0x0004, 0x0004, bublbobl_68705_ddrA_w ),
+		new Memory_WriteAddress( 0x0005, 0x0005, bublbobl_68705_ddrB_w ),
+		new Memory_WriteAddress( 0x0010, 0x007f, MWA_RAM ),
+		new Memory_WriteAddress( 0x0080, 0x07ff, MWA_ROM ),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	
 	public static Memory_ReadAddress boblbobl_readmem[]={
@@ -232,18 +236,20 @@ public class bublbobl
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( boblbobl_writemem )
-		{ 0x0000, 0xbfff, MWA_ROM },
-		{ 0xc000, 0xdcff, MWA_RAM, &videoram, &videoram_size },
-		{ 0xdd00, 0xdfff, MWA_RAM, &bublbobl_objectram, &bublbobl_objectram_size },
-		{ 0xe000, 0xf7ff, bublbobl_sharedram1_w, &bublbobl_sharedram1 },
-		{ 0xf800, 0xf9ff, paletteram_RRRRGGGGBBBBxxxx_swap_w, &paletteram },
-		{ 0xfa00, 0xfa00, bublbobl_sound_command_w },
-		{ 0xfa80, 0xfa80, MWA_NOP },
-		{ 0xfb00, 0xfb00, bublbobl_nmitrigger_w },	/* not used by Bubble Bobble, only by Tokio */
-		{ 0xfb40, 0xfb40, bublbobl_bankswitch_w },
-		{ 0xfc00, 0xfcff, bublbobl_sharedram2_w, &bublbobl_sharedram2 },
-	MEMORY_END
+	public static Memory_WriteAddress boblbobl_writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0xbfff, MWA_ROM ),
+		new Memory_WriteAddress( 0xc000, 0xdcff, MWA_RAM, &videoram, &videoram_size ),
+		new Memory_WriteAddress( 0xdd00, 0xdfff, MWA_RAM, &bublbobl_objectram, &bublbobl_objectram_size ),
+		new Memory_WriteAddress( 0xe000, 0xf7ff, bublbobl_sharedram1_w, &bublbobl_sharedram1 ),
+		new Memory_WriteAddress( 0xf800, 0xf9ff, paletteram_RRRRGGGGBBBBxxxx_swap_w, &paletteram ),
+		new Memory_WriteAddress( 0xfa00, 0xfa00, bublbobl_sound_command_w ),
+		new Memory_WriteAddress( 0xfa80, 0xfa80, MWA_NOP ),
+		new Memory_WriteAddress( 0xfb00, 0xfb00, bublbobl_nmitrigger_w ),	/* not used by Bubble Bobble, only by Tokio */
+		new Memory_WriteAddress( 0xfb40, 0xfb40, bublbobl_bankswitch_w ),
+		new Memory_WriteAddress( 0xfc00, 0xfcff, bublbobl_sharedram2_w, &bublbobl_sharedram2 ),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	public static Memory_ReadAddress bublbobl_readmem2[]={
 		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
@@ -252,10 +258,12 @@ public class bublbobl
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( bublbobl_writemem2 )
-		{ 0x0000, 0x7fff, MWA_ROM },
-		{ 0xe000, 0xf7ff, bublbobl_sharedram1_w },
-	MEMORY_END
+	public static Memory_WriteAddress bublbobl_writemem2[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0x7fff, MWA_ROM ),
+		new Memory_WriteAddress( 0xe000, 0xf7ff, bublbobl_sharedram1_w ),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	
 	public static Memory_ReadAddress sound_readmem[]={
@@ -272,18 +280,20 @@ public class bublbobl
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( sound_writemem )
-		{ 0x0000, 0x7fff, MWA_ROM },
-		{ 0x8000, 0x8fff, MWA_RAM },
-		{ 0x9000, 0x9000, YM2203_control_port_0_w },
-		{ 0x9001, 0x9001, YM2203_write_port_0_w },
-		{ 0xa000, 0xa000, YM3526_control_port_0_w },
-		{ 0xa001, 0xa001, YM3526_write_port_0_w },
-		{ 0xb000, 0xb000, MWA_NOP },	/* message for main cpu */
-		{ 0xb001, 0xb001, bublbobl_sh_nmi_enable_w },
-		{ 0xb002, 0xb002, bublbobl_sh_nmi_disable_w },
-		{ 0xe000, 0xefff, MWA_ROM },	/* space for diagnostic ROM? */
-	MEMORY_END
+	public static Memory_WriteAddress sound_writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0x7fff, MWA_ROM ),
+		new Memory_WriteAddress( 0x8000, 0x8fff, MWA_RAM ),
+		new Memory_WriteAddress( 0x9000, 0x9000, YM2203_control_port_0_w ),
+		new Memory_WriteAddress( 0x9001, 0x9001, YM2203_write_port_0_w ),
+		new Memory_WriteAddress( 0xa000, 0xa000, YM3526_control_port_0_w ),
+		new Memory_WriteAddress( 0xa001, 0xa001, YM3526_write_port_0_w ),
+		new Memory_WriteAddress( 0xb000, 0xb000, MWA_NOP ),	/* message for main cpu */
+		new Memory_WriteAddress( 0xb001, 0xb001, bublbobl_sh_nmi_enable_w ),
+		new Memory_WriteAddress( 0xb002, 0xb002, bublbobl_sh_nmi_disable_w ),
+		new Memory_WriteAddress( 0xe000, 0xefff, MWA_ROM ),	/* space for diagnostic ROM? */
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	
 	public static Memory_ReadAddress tokio_readmem[]={
@@ -302,19 +312,21 @@ public class bublbobl
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( tokio_writemem )
-		{ 0x0000, 0xbfff, MWA_ROM },
-		{ 0xc000, 0xdcff, MWA_RAM, &videoram, &videoram_size },
-		{ 0xdd00, 0xdfff, MWA_RAM, &bublbobl_objectram, &bublbobl_objectram_size },
-		{ 0xe000, 0xf7ff, bublbobl_sharedram1_w, &bublbobl_sharedram1 },
-		{ 0xf800, 0xf9ff, paletteram_RRRRGGGGBBBBxxxx_swap_w, &paletteram },
-		{ 0xfa00, 0xfa00, MWA_NOP },
-		{ 0xfa80, 0xfa80, tokio_bankswitch_w },
-		{ 0xfb00, 0xfb00, tokio_videoctrl_w },
-		{ 0xfb80, 0xfb80, bublbobl_nmitrigger_w },
-		{ 0xfc00, 0xfc00, bublbobl_sound_command_w },
-		{ 0xfe00, 0xfe00, MWA_NOP }, /* ??? */
-	MEMORY_END
+	public static Memory_WriteAddress tokio_writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0xbfff, MWA_ROM ),
+		new Memory_WriteAddress( 0xc000, 0xdcff, MWA_RAM, &videoram, &videoram_size ),
+		new Memory_WriteAddress( 0xdd00, 0xdfff, MWA_RAM, &bublbobl_objectram, &bublbobl_objectram_size ),
+		new Memory_WriteAddress( 0xe000, 0xf7ff, bublbobl_sharedram1_w, &bublbobl_sharedram1 ),
+		new Memory_WriteAddress( 0xf800, 0xf9ff, paletteram_RRRRGGGGBBBBxxxx_swap_w, &paletteram ),
+		new Memory_WriteAddress( 0xfa00, 0xfa00, MWA_NOP ),
+		new Memory_WriteAddress( 0xfa80, 0xfa80, tokio_bankswitch_w ),
+		new Memory_WriteAddress( 0xfb00, 0xfb00, tokio_videoctrl_w ),
+		new Memory_WriteAddress( 0xfb80, 0xfb80, bublbobl_nmitrigger_w ),
+		new Memory_WriteAddress( 0xfc00, 0xfc00, bublbobl_sound_command_w ),
+		new Memory_WriteAddress( 0xfe00, 0xfe00, MWA_NOP ), /* ??? */
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	public static Memory_ReadAddress tokio_readmem2[]={
 		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
@@ -323,10 +335,12 @@ public class bublbobl
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( tokio_writemem2 )
-		{ 0x0000, 0x7fff, MWA_ROM },
-		{ 0x8000, 0x97ff, bublbobl_sharedram1_w },
-	MEMORY_END
+	public static Memory_WriteAddress tokio_writemem2[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0x7fff, MWA_ROM ),
+		new Memory_WriteAddress( 0x8000, 0x97ff, bublbobl_sharedram1_w ),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	public static Memory_ReadAddress tokio_sound_readmem[]={
 		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
@@ -340,16 +354,18 @@ public class bublbobl
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( tokio_sound_writemem )
-		{ 0x0000, 0x7fff, MWA_ROM },
-		{ 0x8000, 0x8fff, MWA_RAM },
-	//	{ 0x9000, 0x9000, MWA_NOP },	/* ??? */
-		{ 0xa000, 0xa000, bublbobl_sh_nmi_disable_w },
-		{ 0xa800, 0xa800, bublbobl_sh_nmi_enable_w },
-		{ 0xb000, 0xb000, YM2203_control_port_0_w },
-		{ 0xb001, 0xb001, YM2203_write_port_0_w },
-		{ 0xe000, 0xefff, MWA_ROM },	/* space for diagnostic ROM? */
-	MEMORY_END
+	public static Memory_WriteAddress tokio_sound_writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0x7fff, MWA_ROM ),
+		new Memory_WriteAddress( 0x8000, 0x8fff, MWA_RAM ),
+	//	new Memory_WriteAddress( 0x9000, 0x9000, MWA_NOP ),	/* ??? */
+		new Memory_WriteAddress( 0xa000, 0xa000, bublbobl_sh_nmi_disable_w ),
+		new Memory_WriteAddress( 0xa800, 0xa800, bublbobl_sh_nmi_enable_w ),
+		new Memory_WriteAddress( 0xb000, 0xb000, YM2203_control_port_0_w ),
+		new Memory_WriteAddress( 0xb001, 0xb001, YM2203_write_port_0_w ),
+		new Memory_WriteAddress( 0xe000, 0xefff, MWA_ROM ),	/* space for diagnostic ROM? */
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	
 	

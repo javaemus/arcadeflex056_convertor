@@ -160,12 +160,14 @@ public class cbasebal
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( cbasebal_writemem )
-		{ 0x0000, 0xbfff, MWA_ROM },
-		{ 0xc000, 0xcfff, bankedram_w, &paletteram },	/* palette + vram + scrollram */
-		{ 0xe000, 0xfdff, MWA_RAM },			/* work RAM */
-		{ 0xfe00, 0xffff, MWA_RAM, &spriteram, &spriteram_size },
-	MEMORY_END
+	public static Memory_WriteAddress cbasebal_writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0xbfff, MWA_ROM ),
+		new Memory_WriteAddress( 0xc000, 0xcfff, bankedram_w, &paletteram ),	/* palette + vram + scrollram */
+		new Memory_WriteAddress( 0xe000, 0xfdff, MWA_RAM ),			/* work RAM */
+		new Memory_WriteAddress( 0xfe00, 0xffff, MWA_RAM, &spriteram, &spriteram_size ),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static PORT_READ_START( cbasebal_readport )
 		{ 0x10, 0x10, input_port_0_r },

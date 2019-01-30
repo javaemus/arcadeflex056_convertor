@@ -762,13 +762,15 @@ public class outrun
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( outrun_sound_writemem )
-		{ 0x0000, 0x7fff, MWA_ROM },
-		{ 0xf000, 0xf0ff, SegaPCM_w },
-		{ 0xf100, 0xf7ff, MWA_NOP },
-		{ 0xf800, 0xf807, sound2_shared_ram_w,&sound_shared_ram },
-		{ 0xf808, 0xffff, MWA_RAM },
-	MEMORY_END
+	public static Memory_WriteAddress outrun_sound_writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0x7fff, MWA_ROM ),
+		new Memory_WriteAddress( 0xf000, 0xf0ff, SegaPCM_w ),
+		new Memory_WriteAddress( 0xf100, 0xf7ff, MWA_NOP ),
+		new Memory_WriteAddress( 0xf800, 0xf807, sound2_shared_ram_w,&sound_shared_ram ),
+		new Memory_WriteAddress( 0xf808, 0xffff, MWA_RAM ),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	/***************************************************************************/
 	
@@ -1166,12 +1168,14 @@ public class outrun
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( shangon_sound_writemem )
-		{ 0x0000, 0x7fff, MWA_ROM },
-		{ 0xf000, 0xf7ff, SegaPCM_w },
-		{ 0xf800, 0xf807, sound2_shared_ram_w,&sound_shared_ram },
-		{ 0xf808, 0xffff, MWA_RAM },
-	MEMORY_END
+	public static Memory_WriteAddress shangon_sound_writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0x7fff, MWA_ROM ),
+		new Memory_WriteAddress( 0xf000, 0xf7ff, SegaPCM_w ),
+		new Memory_WriteAddress( 0xf800, 0xf807, sound2_shared_ram_w,&sound_shared_ram ),
+		new Memory_WriteAddress( 0xf808, 0xffff, MWA_RAM ),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	/***************************************************************************/
 	

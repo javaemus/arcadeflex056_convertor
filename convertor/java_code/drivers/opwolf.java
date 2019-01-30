@@ -200,12 +200,14 @@ public class opwolf
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( sub_z80_writemem )
-		{ 0x0000, 0x7fff, MWA_ROM },
-		{ 0x9000, 0x9000, MWA_NOP },	/* unknown write, 0 then 1 each interrupt */
-		{ 0xa000, 0xa000, MWA_NOP },	/* unknown write, once per interrupt */
-		{ 0xc000, 0xcfff, MWA_RAM, &cchip_ram },
-	MEMORY_END
+	public static Memory_WriteAddress sub_z80_writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0x7fff, MWA_ROM ),
+		new Memory_WriteAddress( 0x9000, 0x9000, MWA_NOP ),	/* unknown write, 0 then 1 each interrupt */
+		new Memory_WriteAddress( 0xa000, 0xa000, MWA_NOP ),	/* unknown write, once per interrupt */
+		new Memory_WriteAddress( 0xc000, 0xcfff, MWA_RAM, &cchip_ram ),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	/***************************************************************************/
 	
@@ -284,18 +286,20 @@ public class opwolf
 	}
 	
 	
-	static MEMORY_WRITE_START( z80_writemem )
-		{ 0x0000, 0x7fff, MWA_ROM },
-		{ 0x8000, 0x8fff, MWA_RAM },
-		{ 0x9000, 0x9000, YM2151_register_port_0_w },
-		{ 0x9001, 0x9001, YM2151_data_port_0_w },
-		{ 0xa000, 0xa000, taitosound_slave_port_w },
-		{ 0xa001, 0xa001, taitosound_slave_comm_w },
-		{ 0xb000, 0xb006, opwolf_adpcm_b_w },
-		{ 0xc000, 0xc006, opwolf_adpcm_c_w },
-		{ 0xd000, 0xd000, opwolf_adpcm_d_w },
-		{ 0xe000, 0xe000, opwolf_adpcm_e_w },
-	MEMORY_END
+	public static Memory_WriteAddress z80_writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0x7fff, MWA_ROM ),
+		new Memory_WriteAddress( 0x8000, 0x8fff, MWA_RAM ),
+		new Memory_WriteAddress( 0x9000, 0x9000, YM2151_register_port_0_w ),
+		new Memory_WriteAddress( 0x9001, 0x9001, YM2151_data_port_0_w ),
+		new Memory_WriteAddress( 0xa000, 0xa000, taitosound_slave_port_w ),
+		new Memory_WriteAddress( 0xa001, 0xa001, taitosound_slave_comm_w ),
+		new Memory_WriteAddress( 0xb000, 0xb006, opwolf_adpcm_b_w ),
+		new Memory_WriteAddress( 0xc000, 0xc006, opwolf_adpcm_c_w ),
+		new Memory_WriteAddress( 0xd000, 0xd000, opwolf_adpcm_d_w ),
+		new Memory_WriteAddress( 0xe000, 0xe000, opwolf_adpcm_e_w ),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	
 	/***********************************************************

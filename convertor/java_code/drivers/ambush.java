@@ -72,17 +72,19 @@ public class ambush
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( writemem )
-		{ 0x8000, 0x87ff, MWA_RAM },
-		{ 0xc080, 0xc09f, MWA_RAM, &ambush_scrollram },
-		{ 0xc100, 0xc1ff, MWA_RAM, &colorram },
-		{ 0xc200, 0xc3ff, MWA_RAM, &spriteram, &spriteram_size },
-		{ 0xc400, 0xc7ff, MWA_RAM, &videoram, &videoram_size },
-		{ 0xcc00, 0xcc03, MWA_NOP },
-		{ 0xcc04, 0xcc04, flip_screen_w },
-		{ 0xcc05, 0xcc05, MWA_RAM, &ambush_colorbank },
-		{ 0xcc07, 0xcc07, ambush_coin_counter_w },
-	MEMORY_END
+	public static Memory_WriteAddress writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x8000, 0x87ff, MWA_RAM ),
+		new Memory_WriteAddress( 0xc080, 0xc09f, MWA_RAM, &ambush_scrollram ),
+		new Memory_WriteAddress( 0xc100, 0xc1ff, MWA_RAM, &colorram ),
+		new Memory_WriteAddress( 0xc200, 0xc3ff, MWA_RAM, &spriteram, &spriteram_size ),
+		new Memory_WriteAddress( 0xc400, 0xc7ff, MWA_RAM, &videoram, &videoram_size ),
+		new Memory_WriteAddress( 0xcc00, 0xcc03, MWA_NOP ),
+		new Memory_WriteAddress( 0xcc04, 0xcc04, flip_screen_w ),
+		new Memory_WriteAddress( 0xcc05, 0xcc05, MWA_RAM, &ambush_colorbank ),
+		new Memory_WriteAddress( 0xcc07, 0xcc07, ambush_coin_counter_w ),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static PORT_READ_START( readport )
 		{ 0x00, 0x00, AY8910_read_port_0_r },

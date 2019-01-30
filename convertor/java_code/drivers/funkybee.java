@@ -80,16 +80,18 @@ public class funkybee
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( writemem )
-		{ 0x0000, 0x4fff, MWA_ROM },
-		{ 0x8000, 0x87ff, MWA_RAM },
-		{ 0xa000, 0xbfff, videoram_w, &videoram, &videoram_size },
-		{ 0xc000, 0xdfff, colorram_w, &colorram },
-		{ 0xe000, 0xe000, MWA_RAM, &funkyb_row_scroll },
-		{ 0xe802, 0xe803, funkybee_coin_counter_w },
-		{ 0xe805, 0xe805, funkybee_gfx_bank_w },
-		{ 0xf800, 0xf800, watchdog_reset_w },
-	MEMORY_END
+	public static Memory_WriteAddress writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0x4fff, MWA_ROM ),
+		new Memory_WriteAddress( 0x8000, 0x87ff, MWA_RAM ),
+		new Memory_WriteAddress( 0xa000, 0xbfff, videoram_w, &videoram, &videoram_size ),
+		new Memory_WriteAddress( 0xc000, 0xdfff, colorram_w, &colorram ),
+		new Memory_WriteAddress( 0xe000, 0xe000, MWA_RAM, &funkyb_row_scroll ),
+		new Memory_WriteAddress( 0xe802, 0xe803, funkybee_coin_counter_w ),
+		new Memory_WriteAddress( 0xe805, 0xe805, funkybee_gfx_bank_w ),
+		new Memory_WriteAddress( 0xf800, 0xf800, watchdog_reset_w ),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	
 	static PORT_READ_START( readport )

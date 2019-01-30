@@ -62,20 +62,22 @@ public class goindol
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( writemem )
-		{ 0x0000, 0xbfff, MWA_ROM },
-		{ 0xc000, 0xc7ff, MWA_RAM },
-		{ 0xc810, 0xc810, goindol_bankswitch_w },
-		{ 0xc820, 0xd820, MWA_RAM, &goindol_fg_scrolly },
-		{ 0xc830, 0xd830, MWA_RAM, &goindol_fg_scrollx },
-		{ 0xc800, 0xc800, soundlatch_w },
-		{ 0xd000, 0xd03f, MWA_RAM, &spriteram, &spriteram_size },
-		{ 0xd040, 0xd7ff, MWA_RAM },
-		{ 0xd800, 0xdfff, goindol_bg_videoram_w, &goindol_bg_videoram, &goindol_bg_videoram_size },
-		{ 0xe000, 0xe03f, MWA_RAM, &spriteram_2 },
-		{ 0xe040, 0xe7ff, MWA_RAM },
-		{ 0xe800, 0xefff, goindol_fg_videoram_w, &goindol_fg_videoram, &goindol_fg_videoram_size },
-	MEMORY_END
+	public static Memory_WriteAddress writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0xbfff, MWA_ROM ),
+		new Memory_WriteAddress( 0xc000, 0xc7ff, MWA_RAM ),
+		new Memory_WriteAddress( 0xc810, 0xc810, goindol_bankswitch_w ),
+		new Memory_WriteAddress( 0xc820, 0xd820, MWA_RAM, &goindol_fg_scrolly ),
+		new Memory_WriteAddress( 0xc830, 0xd830, MWA_RAM, &goindol_fg_scrollx ),
+		new Memory_WriteAddress( 0xc800, 0xc800, soundlatch_w ),
+		new Memory_WriteAddress( 0xd000, 0xd03f, MWA_RAM, &spriteram, &spriteram_size ),
+		new Memory_WriteAddress( 0xd040, 0xd7ff, MWA_RAM ),
+		new Memory_WriteAddress( 0xd800, 0xdfff, goindol_bg_videoram_w, &goindol_bg_videoram, &goindol_bg_videoram_size ),
+		new Memory_WriteAddress( 0xe000, 0xe03f, MWA_RAM, &spriteram_2 ),
+		new Memory_WriteAddress( 0xe040, 0xe7ff, MWA_RAM ),
+		new Memory_WriteAddress( 0xe800, 0xefff, goindol_fg_videoram_w, &goindol_fg_videoram, &goindol_fg_videoram_size ),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	public static Memory_ReadAddress sound_readmem[]={
 		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
@@ -85,12 +87,14 @@ public class goindol
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( sound_writemem )
-		{ 0x0000, 0x7fff, MWA_ROM },
-		{ 0xc000, 0xc7ff, MWA_RAM },
-		{ 0xa000, 0xa000, YM2203_control_port_0_w },
-		{ 0xa001, 0xa001, YM2203_write_port_0_w },
-	MEMORY_END
+	public static Memory_WriteAddress sound_writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0x7fff, MWA_ROM ),
+		new Memory_WriteAddress( 0xc000, 0xc7ff, MWA_RAM ),
+		new Memory_WriteAddress( 0xa000, 0xa000, YM2203_control_port_0_w ),
+		new Memory_WriteAddress( 0xa001, 0xa001, YM2203_write_port_0_w ),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	
 	INPUT_PORTS_START( goindol )

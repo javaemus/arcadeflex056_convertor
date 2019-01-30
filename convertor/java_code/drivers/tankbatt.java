@@ -163,20 +163,22 @@ public class tankbatt
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( writemem )
-		{ 0x0010, 0x01ff, MWA_RAM },
-		{ 0x0800, 0x0bff, videoram_w, &videoram, &videoram_size },
-		{ 0x0000, 0x000f, MWA_RAM, &tankbatt_bulletsram, &tankbatt_bulletsram_size },
-		{ 0x0c18, 0x0c18, MWA_NOP }, /* watchdog ?? */
-		{ 0x0c00, 0x0c01, tankbatt_led_w },
-		{ 0x0c0a, 0x0c0a, tankbatt_interrupt_enable_w },
-		{ 0x0c0b, 0x0c0b, tankbatt_sh_engine_w },
-		{ 0x0c0c, 0x0c0c, tankbatt_sh_fire_w },
-		{ 0x0c0d, 0x0c0d, tankbatt_sh_expl_w },
-		{ 0x0c0f, 0x0c0f, tankbatt_demo_interrupt_enable_w },
-		{ 0x0200, 0x07ff, MWA_RAM },
-		{ 0x2000, 0x3fff, MWA_ROM },
-	MEMORY_END
+	public static Memory_WriteAddress writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0010, 0x01ff, MWA_RAM ),
+		new Memory_WriteAddress( 0x0800, 0x0bff, videoram_w, &videoram, &videoram_size ),
+		new Memory_WriteAddress( 0x0000, 0x000f, MWA_RAM, &tankbatt_bulletsram, &tankbatt_bulletsram_size ),
+		new Memory_WriteAddress( 0x0c18, 0x0c18, MWA_NOP ), /* watchdog ?? */
+		new Memory_WriteAddress( 0x0c00, 0x0c01, tankbatt_led_w ),
+		new Memory_WriteAddress( 0x0c0a, 0x0c0a, tankbatt_interrupt_enable_w ),
+		new Memory_WriteAddress( 0x0c0b, 0x0c0b, tankbatt_sh_engine_w ),
+		new Memory_WriteAddress( 0x0c0c, 0x0c0c, tankbatt_sh_fire_w ),
+		new Memory_WriteAddress( 0x0c0d, 0x0c0d, tankbatt_sh_expl_w ),
+		new Memory_WriteAddress( 0x0c0f, 0x0c0f, tankbatt_demo_interrupt_enable_w ),
+		new Memory_WriteAddress( 0x0200, 0x07ff, MWA_RAM ),
+		new Memory_WriteAddress( 0x2000, 0x3fff, MWA_ROM ),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	int tankbatt_interrupt (void)
 	{

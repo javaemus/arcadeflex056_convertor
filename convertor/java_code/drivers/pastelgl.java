@@ -83,10 +83,12 @@ public class pastelgl
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( writemem_pastelgl )
-		{ 0x0000, 0xbfff, MWA_ROM },
-		{ 0xe000, 0xe7ff, MWA_RAM, &nb1413m3_nvram, &nb1413m3_nvram_size },
-	MEMORY_END
+	public static Memory_WriteAddress writemem_pastelgl[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0xbfff, MWA_ROM ),
+		new Memory_WriteAddress( 0xe000, 0xe7ff, MWA_RAM, &nb1413m3_nvram, &nb1413m3_nvram_size ),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	
 	static READ_HANDLER( io_pastelgl_r )

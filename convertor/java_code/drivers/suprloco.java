@@ -57,15 +57,17 @@ public class suprloco
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( writemem )
-		{ 0x0000, 0xbfff, MWA_ROM },
-		{ 0xc000, 0xc1ff, MWA_RAM, &spriteram, &spriteram_size },
-		{ 0xe800, 0xe800, suprloco_soundport_w },
-		{ 0xe801, 0xe801, suprloco_control_w },
-		{ 0xf000, 0xf6ff, suprloco_videoram_w, &suprloco_videoram },
-		{ 0xf7e0, 0xf7ff, suprloco_scrollram_w },
-		{ 0xf800, 0xffff, MWA_RAM },
-	MEMORY_END
+	public static Memory_WriteAddress writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0xbfff, MWA_ROM ),
+		new Memory_WriteAddress( 0xc000, 0xc1ff, MWA_RAM, &spriteram, &spriteram_size ),
+		new Memory_WriteAddress( 0xe800, 0xe800, suprloco_soundport_w ),
+		new Memory_WriteAddress( 0xe801, 0xe801, suprloco_control_w ),
+		new Memory_WriteAddress( 0xf000, 0xf6ff, suprloco_videoram_w, &suprloco_videoram ),
+		new Memory_WriteAddress( 0xf7e0, 0xf7ff, suprloco_scrollram_w ),
+		new Memory_WriteAddress( 0xf800, 0xffff, MWA_RAM ),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	
 	public static Memory_ReadAddress sound_readmem[]={
@@ -76,12 +78,14 @@ public class suprloco
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( sound_writemem )
-		{ 0x0000, 0x7fff, MWA_ROM },
-		{ 0x8000, 0x87ff, MWA_RAM },
-		{ 0xa000, 0xa003, SN76496_0_w },
-		{ 0xc000, 0xc003, SN76496_1_w },
-	MEMORY_END
+	public static Memory_WriteAddress sound_writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0x7fff, MWA_ROM ),
+		new Memory_WriteAddress( 0x8000, 0x87ff, MWA_RAM ),
+		new Memory_WriteAddress( 0xa000, 0xa003, SN76496_0_w ),
+		new Memory_WriteAddress( 0xc000, 0xc003, SN76496_1_w ),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	
 	

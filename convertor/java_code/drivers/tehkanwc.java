@@ -201,25 +201,27 @@ public class tehkanwc
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( writemem )
-		{ 0x0000, 0xbfff, MWA_ROM },
-		{ 0xc000, 0xc7ff, MWA_RAM },
-		{ 0xc800, 0xcfff, shared_w, &shared_ram },
-		{ 0xd000, 0xd3ff, videoram_w, &videoram, &videoram_size },
-		{ 0xd400, 0xd7ff, colorram_w, &colorram },
-		{ 0xd800, 0xddff, paletteram_xxxxBBBBGGGGRRRR_swap_w, &paletteram },
-		{ 0xde00, 0xdfff, MWA_RAM },	/* unused part of the palette RAM, I think? Gridiron uses it */
-		{ 0xe000, 0xe7ff, tehkanwc_videoram1_w, &tehkanwc_videoram1, &tehkanwc_videoram1_size },
-		{ 0xe800, 0xebff, spriteram_w, &spriteram, &spriteram_size }, /* sprites */
-		{ 0xec00, 0xec01, tehkanwc_scroll_x_w },
-		{ 0xec02, 0xec02, tehkanwc_scroll_y_w },
-		{ 0xf800, 0xf801, tehkanwc_track_0_reset_w },
-		{ 0xf802, 0xf802, gridiron_led0_w },
-		{ 0xf810, 0xf811, tehkanwc_track_1_reset_w },
-		{ 0xf812, 0xf812, gridiron_led1_w },
-		{ 0xf820, 0xf820, sound_command_w },
-		{ 0xf840, 0xf840, sub_cpu_halt_w },
-	MEMORY_END
+	public static Memory_WriteAddress writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0xbfff, MWA_ROM ),
+		new Memory_WriteAddress( 0xc000, 0xc7ff, MWA_RAM ),
+		new Memory_WriteAddress( 0xc800, 0xcfff, shared_w, &shared_ram ),
+		new Memory_WriteAddress( 0xd000, 0xd3ff, videoram_w, &videoram, &videoram_size ),
+		new Memory_WriteAddress( 0xd400, 0xd7ff, colorram_w, &colorram ),
+		new Memory_WriteAddress( 0xd800, 0xddff, paletteram_xxxxBBBBGGGGRRRR_swap_w, &paletteram ),
+		new Memory_WriteAddress( 0xde00, 0xdfff, MWA_RAM ),	/* unused part of the palette RAM, I think? Gridiron uses it */
+		new Memory_WriteAddress( 0xe000, 0xe7ff, tehkanwc_videoram1_w, &tehkanwc_videoram1, &tehkanwc_videoram1_size ),
+		new Memory_WriteAddress( 0xe800, 0xebff, spriteram_w, &spriteram, &spriteram_size ), /* sprites */
+		new Memory_WriteAddress( 0xec00, 0xec01, tehkanwc_scroll_x_w ),
+		new Memory_WriteAddress( 0xec02, 0xec02, tehkanwc_scroll_y_w ),
+		new Memory_WriteAddress( 0xf800, 0xf801, tehkanwc_track_0_reset_w ),
+		new Memory_WriteAddress( 0xf802, 0xf802, gridiron_led0_w ),
+		new Memory_WriteAddress( 0xf810, 0xf811, tehkanwc_track_1_reset_w ),
+		new Memory_WriteAddress( 0xf812, 0xf812, gridiron_led1_w ),
+		new Memory_WriteAddress( 0xf820, 0xf820, sound_command_w ),
+		new Memory_WriteAddress( 0xf840, 0xf840, sub_cpu_halt_w ),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	public static Memory_ReadAddress readmem_sub[]={
 		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
@@ -238,19 +240,21 @@ public class tehkanwc
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( writemem_sub )
-		{ 0x0000, 0x7fff, MWA_ROM },
-		{ 0xc000, 0xc7ff, MWA_RAM },
-		{ 0xc800, 0xcfff, shared_w },
-		{ 0xd000, 0xd3ff, videoram_w },
-		{ 0xd400, 0xd7ff, colorram_w },
-		{ 0xd800, 0xddff, paletteram_xxxxBBBBGGGGRRRR_swap_w, &paletteram },
-		{ 0xde00, 0xdfff, MWA_RAM },	/* unused part of the palette RAM, I think? Gridiron uses it */
-		{ 0xe000, 0xe7ff, tehkanwc_videoram1_w },
-		{ 0xe800, 0xebff, spriteram_w }, /* sprites */
-		{ 0xec00, 0xec01, tehkanwc_scroll_x_w },
-		{ 0xec02, 0xec02, tehkanwc_scroll_y_w },
-	MEMORY_END
+	public static Memory_WriteAddress writemem_sub[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0x7fff, MWA_ROM ),
+		new Memory_WriteAddress( 0xc000, 0xc7ff, MWA_RAM ),
+		new Memory_WriteAddress( 0xc800, 0xcfff, shared_w ),
+		new Memory_WriteAddress( 0xd000, 0xd3ff, videoram_w ),
+		new Memory_WriteAddress( 0xd400, 0xd7ff, colorram_w ),
+		new Memory_WriteAddress( 0xd800, 0xddff, paletteram_xxxxBBBBGGGGRRRR_swap_w, &paletteram ),
+		new Memory_WriteAddress( 0xde00, 0xdfff, MWA_RAM ),	/* unused part of the palette RAM, I think? Gridiron uses it */
+		new Memory_WriteAddress( 0xe000, 0xe7ff, tehkanwc_videoram1_w ),
+		new Memory_WriteAddress( 0xe800, 0xebff, spriteram_w ), /* sprites */
+		new Memory_WriteAddress( 0xec00, 0xec01, tehkanwc_scroll_x_w ),
+		new Memory_WriteAddress( 0xec02, 0xec02, tehkanwc_scroll_y_w ),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	public static Memory_ReadAddress readmem_sound[]={
 		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
@@ -260,14 +264,16 @@ public class tehkanwc
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( writemem_sound )
-		{ 0x0000, 0x3fff, MWA_ROM },
-		{ 0x4000, 0x47ff, MWA_RAM },
-		{ 0x8001, 0x8001, msm_reset_w },/* MSM51xx reset */
-		{ 0x8002, 0x8002, MWA_NOP },	/* ?? written in the IRQ handler */
-		{ 0x8003, 0x8003, MWA_NOP },	/* ?? written in the NMI handler */
-		{ 0xc000, 0xc000, sound_answer_w },	/* answer for main CPU */
-	MEMORY_END
+	public static Memory_WriteAddress writemem_sound[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0x3fff, MWA_ROM ),
+		new Memory_WriteAddress( 0x4000, 0x47ff, MWA_RAM ),
+		new Memory_WriteAddress( 0x8001, 0x8001, msm_reset_w ),/* MSM51xx reset */
+		new Memory_WriteAddress( 0x8002, 0x8002, MWA_NOP ),	/* ?? written in the IRQ handler */
+		new Memory_WriteAddress( 0x8003, 0x8003, MWA_NOP ),	/* ?? written in the NMI handler */
+		new Memory_WriteAddress( 0xc000, 0xc000, sound_answer_w ),	/* answer for main CPU */
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static PORT_READ_START( sound_readport )
 		{ 0x00, 0x00, AY8910_read_port_0_r },

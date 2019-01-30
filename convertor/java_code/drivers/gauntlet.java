@@ -485,18 +485,20 @@ public class gauntlet
 	};
 	
 	
-	static MEMORY_WRITE_START( sound_writemem )
-		{ 0x0000, 0x0fff, MWA_RAM },
-		{ 0x1000, 0x100f, atarigen_6502_sound_w },
-		{ 0x1020, 0x102f, mixer_w },
-		{ 0x1030, 0x103f, sound_ctl_w },
-		{ 0x1800, 0x180f, pokey1_w },
-		{ 0x1810, 0x1810, YM2151_register_port_0_w },
-		{ 0x1811, 0x1811, YM2151_data_port_0_w },
-		{ 0x1820, 0x182f, tms5220_w },
-		{ 0x1830, 0x183f, atarigen_6502_irq_ack_w },
-		{ 0x4000, 0xffff, MWA_ROM },
-	MEMORY_END
+	public static Memory_WriteAddress sound_writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0x0fff, MWA_RAM ),
+		new Memory_WriteAddress( 0x1000, 0x100f, atarigen_6502_sound_w ),
+		new Memory_WriteAddress( 0x1020, 0x102f, mixer_w ),
+		new Memory_WriteAddress( 0x1030, 0x103f, sound_ctl_w ),
+		new Memory_WriteAddress( 0x1800, 0x180f, pokey1_w ),
+		new Memory_WriteAddress( 0x1810, 0x1810, YM2151_register_port_0_w ),
+		new Memory_WriteAddress( 0x1811, 0x1811, YM2151_data_port_0_w ),
+		new Memory_WriteAddress( 0x1820, 0x182f, tms5220_w ),
+		new Memory_WriteAddress( 0x1830, 0x183f, atarigen_6502_irq_ack_w ),
+		new Memory_WriteAddress( 0x4000, 0xffff, MWA_ROM ),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	
 	

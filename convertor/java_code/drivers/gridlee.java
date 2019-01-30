@@ -353,13 +353,14 @@ public class gridlee
 	};
 	
 	
-	static MEMORY_WRITE_START( writemem_cpu1 )
-		{ 0x0000, 0x07ff, MWA_RAM, &spriteram },
-		{ 0x0800, 0x7fff, gridlee_videoram_w, &videoram, &videoram_size },
-		{ 0x9000, 0x9000, led_0_w },
-		{ 0x9010, 0x9010, led_1_w },
-		{ 0x9020, 0x9020, gridlee_coin_counter_w },
-	/*	{ 0x9060, 0x9060, unknown - only written to at startup */
+	public static Memory_WriteAddress writemem_cpu1[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0x07ff, MWA_RAM, &spriteram ),
+		new Memory_WriteAddress( 0x0800, 0x7fff, gridlee_videoram_w, &videoram, &videoram_size ),
+		new Memory_WriteAddress( 0x9000, 0x9000, led_0_w ),
+		new Memory_WriteAddress( 0x9010, 0x9010, led_1_w ),
+		new Memory_WriteAddress( 0x9020, 0x9020, gridlee_coin_counter_w ),
+	/*	new Memory_WriteAddress( 0x9060, 0x9060, unknown - only written to at startup */
 		{ 0x9070, 0x9070, gridlee_cocktail_flip_w },
 		{ 0x9200, 0x9200, gridlee_palette_select_w },
 		{ 0x9380, 0x9380, watchdog_reset_w },
@@ -368,7 +369,8 @@ public class gridlee
 	/*	{ 0x9830, 0x983f, unknown - sound related? */
 		{ 0x9c00, 0x9cff, MWA_RAM, &nvram, &nvram_size },
 		{ 0xa000, 0xffff, MWA_ROM },
-	MEMORY_END
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	
 	

@@ -97,25 +97,27 @@ public class sprint2
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( writemem )
-		{ 0x0000, 0x03ff, MWA_RAM }, /* WRAM */
-		{ 0x0010, 0x0013, MWA_RAM, &sprint2_horiz_ram }, /* WRAM */
-		{ 0x0018, 0x001f, MWA_RAM, &sprint2_vert_car_ram }, /* WRAM */
-		{ 0x0400, 0x07ff, videoram_w, &videoram, &videoram_size }, /* DISPLAY */
-		{ 0x0c00, 0x0c0f, MWA_RAM }, /* ATTRACT */
-		{ 0x0c10, 0x0c1f, MWA_RAM }, /* SKID1 */
-		{ 0x0c20, 0x0c2f, MWA_RAM }, /* SKID2 */
-		{ 0x0c30, 0x0c3f, sprint2_lamp1_w }, /* LAMP1 */
-		{ 0x0c40, 0x0c4f, sprint2_lamp2_w }, /* LAMP2 */
-		{ 0x0c60, 0x0c6f, MWA_RAM }, /* SPARE */
-		{ 0x0c80, 0x0cff, MWA_NOP }, /* TIMER RESET (watchdog) */
-		{ 0x0d00, 0x0d7f, sprint2_collision_reset1_w }, /* COLLISION RESET 1 */
-		{ 0x0d80, 0x0dff, sprint2_collision_reset2_w }, /* COLLISION RESET 2 */
-		{ 0x0e00, 0x0e7f, sprint2_steering_reset1_w }, /* STEERING RESET 1 */
-		{ 0x0e80, 0x0eff, sprint2_steering_reset2_w }, /* STEERING RESET 2 */
-		{ 0x0f00, 0x0f7f, MWA_RAM }, /* NOISE RESET */
-		{ 0x2000, 0x3fff, MWA_ROM }, /* PROM1-PROM8 */
-	MEMORY_END
+	public static Memory_WriteAddress writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0x03ff, MWA_RAM ), /* WRAM */
+		new Memory_WriteAddress( 0x0010, 0x0013, MWA_RAM, &sprint2_horiz_ram ), /* WRAM */
+		new Memory_WriteAddress( 0x0018, 0x001f, MWA_RAM, &sprint2_vert_car_ram ), /* WRAM */
+		new Memory_WriteAddress( 0x0400, 0x07ff, videoram_w, &videoram, &videoram_size ), /* DISPLAY */
+		new Memory_WriteAddress( 0x0c00, 0x0c0f, MWA_RAM ), /* ATTRACT */
+		new Memory_WriteAddress( 0x0c10, 0x0c1f, MWA_RAM ), /* SKID1 */
+		new Memory_WriteAddress( 0x0c20, 0x0c2f, MWA_RAM ), /* SKID2 */
+		new Memory_WriteAddress( 0x0c30, 0x0c3f, sprint2_lamp1_w ), /* LAMP1 */
+		new Memory_WriteAddress( 0x0c40, 0x0c4f, sprint2_lamp2_w ), /* LAMP2 */
+		new Memory_WriteAddress( 0x0c60, 0x0c6f, MWA_RAM ), /* SPARE */
+		new Memory_WriteAddress( 0x0c80, 0x0cff, MWA_NOP ), /* TIMER RESET (watchdog) */
+		new Memory_WriteAddress( 0x0d00, 0x0d7f, sprint2_collision_reset1_w ), /* COLLISION RESET 1 */
+		new Memory_WriteAddress( 0x0d80, 0x0dff, sprint2_collision_reset2_w ), /* COLLISION RESET 2 */
+		new Memory_WriteAddress( 0x0e00, 0x0e7f, sprint2_steering_reset1_w ), /* STEERING RESET 1 */
+		new Memory_WriteAddress( 0x0e80, 0x0eff, sprint2_steering_reset2_w ), /* STEERING RESET 2 */
+		new Memory_WriteAddress( 0x0f00, 0x0f7f, MWA_RAM ), /* NOISE RESET */
+		new Memory_WriteAddress( 0x2000, 0x3fff, MWA_ROM ), /* PROM1-PROM8 */
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	/* The only difference is that we use "sprint1_read_ports" */
 	public static Memory_ReadAddress sprint1_readmem[]={

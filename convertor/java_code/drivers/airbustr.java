@@ -313,13 +313,15 @@ public class airbustr
 		new Memory_ReadAddress( 0xf000, 0xffff, sharedram_r ),
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
-	static MEMORY_WRITE_START( writemem )
-		{ 0x0000, 0xbfff, MWA_ROM },	// writing at 0 should cause a reset
-		{ 0xc000, 0xcfff, MWA_RAM, &spriteram },			// RAM 0/1
-		{ 0xd000, 0xdfff, MWA_RAM },						// RAM 2
-		{ 0xe000, 0xefff, devram_w, &devram },				// RAM 3
-		{ 0xf000, 0xffff, sharedram_w, &sharedram },
-	MEMORY_END
+	public static Memory_WriteAddress writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0xbfff, MWA_ROM ),	// writing at 0 should cause a reset
+		new Memory_WriteAddress( 0xc000, 0xcfff, MWA_RAM, &spriteram ),			// RAM 0/1
+		new Memory_WriteAddress( 0xd000, 0xdfff, MWA_RAM ),						// RAM 2
+		new Memory_WriteAddress( 0xe000, 0xefff, devram_w, &devram ),				// RAM 3
+		new Memory_WriteAddress( 0xf000, 0xffff, sharedram_w, &sharedram ),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	/* Ports */
 	
@@ -416,15 +418,17 @@ public class airbustr
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( writemem2 )
-		{ 0x0000, 0xbfff, MWA_ROM },
-		{ 0xc000, 0xc7ff, airbustr_fgram_w, &airbustr_fgram },
-		{ 0xc800, 0xcfff, airbustr_bgram_w, &airbustr_bgram },
-		{ 0xd000, 0xd5ff, airbustr_paletteram_w, &paletteram },
-		{ 0xd600, 0xdfff, MWA_RAM },
-		{ 0xe000, 0xefff, MWA_RAM },
-		{ 0xf000, 0xffff, sharedram_w },
-	MEMORY_END
+	public static Memory_WriteAddress writemem2[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0xbfff, MWA_ROM ),
+		new Memory_WriteAddress( 0xc000, 0xc7ff, airbustr_fgram_w, &airbustr_fgram ),
+		new Memory_WriteAddress( 0xc800, 0xcfff, airbustr_bgram_w, &airbustr_bgram ),
+		new Memory_WriteAddress( 0xd000, 0xd5ff, airbustr_paletteram_w, &paletteram ),
+		new Memory_WriteAddress( 0xd600, 0xdfff, MWA_RAM ),
+		new Memory_WriteAddress( 0xe000, 0xefff, MWA_RAM ),
+		new Memory_WriteAddress( 0xf000, 0xffff, sharedram_w ),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	
 	/* Ports */
@@ -525,10 +529,12 @@ public class airbustr
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( sound_writemem )
-		{ 0x0000, 0xbfff, MWA_ROM },
-		{ 0xc000, 0xdfff, MWA_RAM },
-	MEMORY_END
+	public static Memory_WriteAddress sound_writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0xbfff, MWA_ROM ),
+		new Memory_WriteAddress( 0xc000, 0xdfff, MWA_RAM ),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	
 	/* Ports */

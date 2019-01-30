@@ -262,16 +262,18 @@ public class victory
 	};
 	
 	
-	static MEMORY_WRITE_START( main_writemem )
-		{ 0x0000, 0xbfff, MWA_ROM },
-		{ 0xc100, 0xc1ff, victory_video_control_w },
-		{ 0xc200, 0xc3ff, victory_paletteram_w, &paletteram },
-		{ 0xc400, 0xc7ff, victory_videoram_w, &videoram },
-		{ 0xc800, 0xdfff, victory_charram_w, &victory_charram },
-		{ 0xe000, 0xefff, MWA_RAM },
-		{ 0xf000, 0xf7ff, MWA_RAM, &nvram, &nvram_size },
-		{ 0xf800, 0xf800, sound_command_w },
-	MEMORY_END
+	public static Memory_WriteAddress main_writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0xbfff, MWA_ROM ),
+		new Memory_WriteAddress( 0xc100, 0xc1ff, victory_video_control_w ),
+		new Memory_WriteAddress( 0xc200, 0xc3ff, victory_paletteram_w, &paletteram ),
+		new Memory_WriteAddress( 0xc400, 0xc7ff, victory_videoram_w, &videoram ),
+		new Memory_WriteAddress( 0xc800, 0xdfff, victory_charram_w, &victory_charram ),
+		new Memory_WriteAddress( 0xe000, 0xefff, MWA_RAM ),
+		new Memory_WriteAddress( 0xf000, 0xf7ff, MWA_RAM, &nvram, &nvram_size ),
+		new Memory_WriteAddress( 0xf800, 0xf800, sound_command_w ),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	
 	static PORT_READ_START( main_readport )
@@ -308,15 +310,17 @@ public class victory
 	};
 	
 	
-	static MEMORY_WRITE_START( sound_writemem )
-		{ 0x0000, 0x01ff, MWA_RAM },
-		{ 0x1000, 0x1fff, exidy_shriot_w },
-		{ 0x2000, 0x200f, pia_0_w },
-		{ 0x3000, 0x3fff, exidy_sh8253_w },
-		{ 0x5000, 0x5fff, exidy_sh6840_w },
-		{ 0x6000, 0x6fff, exidy_sfxctrl_w },
-		{ 0xc000, 0xffff, MWA_ROM },
-	MEMORY_END
+	public static Memory_WriteAddress sound_writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0x01ff, MWA_RAM ),
+		new Memory_WriteAddress( 0x1000, 0x1fff, exidy_shriot_w ),
+		new Memory_WriteAddress( 0x2000, 0x200f, pia_0_w ),
+		new Memory_WriteAddress( 0x3000, 0x3fff, exidy_sh8253_w ),
+		new Memory_WriteAddress( 0x5000, 0x5fff, exidy_sh6840_w ),
+		new Memory_WriteAddress( 0x6000, 0x6fff, exidy_sfxctrl_w ),
+		new Memory_WriteAddress( 0xc000, 0xffff, MWA_ROM ),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	
 	

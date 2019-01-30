@@ -100,17 +100,19 @@ public class jackal
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( jackal_writemem )
-		{ 0x0000, 0x0003, MWA_RAM, &jackal_videoctrl },	/* scroll + other things */
-		{ 0x0004, 0x0004, ctrl_w },
-		{ 0x0019, 0x0019, MWA_NOP },	/* possibly watchdog reset */
-		{ 0x001c, 0x001c, jackal_rambank_w },
-		{ 0x0020, 0x005f, jackal_zram_w },
-		{ 0x0060, 0x1fff, jackal_commonram_w },
-		{ 0x2000, 0x2fff, jackal_voram_w },
-		{ 0x3000, 0x3fff, jackal_spriteram_w },
-		{ 0x4000, 0xffff, MWA_ROM },
-	MEMORY_END
+	public static Memory_WriteAddress jackal_writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0x0003, MWA_RAM, &jackal_videoctrl ),	/* scroll + other things */
+		new Memory_WriteAddress( 0x0004, 0x0004, ctrl_w ),
+		new Memory_WriteAddress( 0x0019, 0x0019, MWA_NOP ),	/* possibly watchdog reset */
+		new Memory_WriteAddress( 0x001c, 0x001c, jackal_rambank_w ),
+		new Memory_WriteAddress( 0x0020, 0x005f, jackal_zram_w ),
+		new Memory_WriteAddress( 0x0060, 0x1fff, jackal_commonram_w ),
+		new Memory_WriteAddress( 0x2000, 0x2fff, jackal_voram_w ),
+		new Memory_WriteAddress( 0x3000, 0x3fff, jackal_spriteram_w ),
+		new Memory_WriteAddress( 0x4000, 0xffff, MWA_ROM ),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	public static Memory_ReadAddress jackal_sound_readmem[]={
 		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
@@ -122,14 +124,16 @@ public class jackal
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( jackal_sound_writemem )
-		{ 0x2000, 0x2000, YM2151_register_port_0_w },
-		{ 0x2001, 0x2001, YM2151_data_port_0_w },
-		{ 0x4000, 0x43ff, paletteram_xBBBBBGGGGGRRRRR_w, &paletteram },
-		{ 0x6000, 0x605f, MWA_RAM },
-		{ 0x6060, 0x7fff, jackal_commonram1_w },
-		{ 0x8000, 0xffff, MWA_ROM },
-	MEMORY_END
+	public static Memory_WriteAddress jackal_sound_writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x2000, 0x2000, YM2151_register_port_0_w ),
+		new Memory_WriteAddress( 0x2001, 0x2001, YM2151_data_port_0_w ),
+		new Memory_WriteAddress( 0x4000, 0x43ff, paletteram_xBBBBBGGGGGRRRRR_w, &paletteram ),
+		new Memory_WriteAddress( 0x6000, 0x605f, MWA_RAM ),
+		new Memory_WriteAddress( 0x6060, 0x7fff, jackal_commonram1_w ),
+		new Memory_WriteAddress( 0x8000, 0xffff, MWA_ROM ),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	
 	

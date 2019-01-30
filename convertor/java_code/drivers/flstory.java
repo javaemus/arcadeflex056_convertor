@@ -86,19 +86,21 @@ public class flstory
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( writemem )
-		{ 0x0000, 0xbfff, MWA_ROM },
-		{ 0xc000, 0xc7ff, videoram_w, &videoram, &videoram_size },
-		{ 0xd000, 0xd000, flstory_mcu_w },
-		{ 0xd001, 0xd001, MWA_RAM },	/* ??? */
-		{ 0xd002, 0xd002, MWA_RAM },	/* ??? */
-		{ 0xd400, 0xd400, sound_command_w },
-	//	{ 0xda00, 0xda00, MWA_RAM },
-		{ 0xdc00, 0xdc7f, MWA_RAM, &spriteram, &spriteram_size },
-		{ 0xdd00, 0xdeff, flstory_palette_w },
-		{ 0xdf03, 0xdf03, flstory_gfxctrl_w },
-		{ 0xe000, 0xe7ff, MWA_RAM },	/* work RAM */
-	MEMORY_END
+	public static Memory_WriteAddress writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0xbfff, MWA_ROM ),
+		new Memory_WriteAddress( 0xc000, 0xc7ff, videoram_w, &videoram, &videoram_size ),
+		new Memory_WriteAddress( 0xd000, 0xd000, flstory_mcu_w ),
+		new Memory_WriteAddress( 0xd001, 0xd001, MWA_RAM ),	/* ??? */
+		new Memory_WriteAddress( 0xd002, 0xd002, MWA_RAM ),	/* ??? */
+		new Memory_WriteAddress( 0xd400, 0xd400, sound_command_w ),
+	//	new Memory_WriteAddress( 0xda00, 0xda00, MWA_RAM ),
+		new Memory_WriteAddress( 0xdc00, 0xdc7f, MWA_RAM, &spriteram, &spriteram_size ),
+		new Memory_WriteAddress( 0xdd00, 0xdeff, flstory_palette_w ),
+		new Memory_WriteAddress( 0xdf03, 0xdf03, flstory_gfxctrl_w ),
+		new Memory_WriteAddress( 0xe000, 0xe7ff, MWA_RAM ),	/* work RAM */
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	public static Memory_ReadAddress sound_readmem[]={
 		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
@@ -109,18 +111,20 @@ public class flstory
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( sound_writemem )
-		{ 0x0000, 0xbfff, MWA_ROM },
-		{ 0xc000, 0xc7ff, MWA_RAM },
-		{ 0xc800, 0xc800, AY8910_control_port_0_w },
-		{ 0xc801, 0xc801, AY8910_write_port_0_w },
-		{ 0xca00, 0xca0d, MWA_RAM },	/* MSM5232 registers */
-		{ 0xcc00, 0xcc00, MWA_RAM },	/* MSM5232 port 0 */
-		{ 0xce00, 0xce00, MWA_RAM },	/* MSM5232 port 1 */
-		{ 0xda00, 0xda00, MWA_RAM },	/* ??? */
-		{ 0xdc00, 0xdc00, MWA_RAM },	/* ??? */
-		{ 0xe000, 0xefff, MWA_ROM },
-	MEMORY_END
+	public static Memory_WriteAddress sound_writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0xbfff, MWA_ROM ),
+		new Memory_WriteAddress( 0xc000, 0xc7ff, MWA_RAM ),
+		new Memory_WriteAddress( 0xc800, 0xc800, AY8910_control_port_0_w ),
+		new Memory_WriteAddress( 0xc801, 0xc801, AY8910_write_port_0_w ),
+		new Memory_WriteAddress( 0xca00, 0xca0d, MWA_RAM ),	/* MSM5232 registers */
+		new Memory_WriteAddress( 0xcc00, 0xcc00, MWA_RAM ),	/* MSM5232 port 0 */
+		new Memory_WriteAddress( 0xce00, 0xce00, MWA_RAM ),	/* MSM5232 port 1 */
+		new Memory_WriteAddress( 0xda00, 0xda00, MWA_RAM ),	/* ??? */
+		new Memory_WriteAddress( 0xdc00, 0xdc00, MWA_RAM ),	/* ??? */
+		new Memory_WriteAddress( 0xe000, 0xefff, MWA_ROM ),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	public static Memory_ReadAddress m68705_readmem[]={
 		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
@@ -132,16 +136,18 @@ public class flstory
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( m68705_writemem )
-		{ 0x0000, 0x0000, flstory_68705_portA_w },
-		{ 0x0001, 0x0001, flstory_68705_portB_w },
-		{ 0x0002, 0x0002, flstory_68705_portC_w },
-		{ 0x0004, 0x0004, flstory_68705_ddrA_w },
-		{ 0x0005, 0x0005, flstory_68705_ddrB_w },
-		{ 0x0006, 0x0006, flstory_68705_ddrC_w },
-		{ 0x0010, 0x007f, MWA_RAM },
-		{ 0x0080, 0x07ff, MWA_ROM },
-	MEMORY_END
+	public static Memory_WriteAddress m68705_writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0x0000, flstory_68705_portA_w ),
+		new Memory_WriteAddress( 0x0001, 0x0001, flstory_68705_portB_w ),
+		new Memory_WriteAddress( 0x0002, 0x0002, flstory_68705_portC_w ),
+		new Memory_WriteAddress( 0x0004, 0x0004, flstory_68705_ddrA_w ),
+		new Memory_WriteAddress( 0x0005, 0x0005, flstory_68705_ddrB_w ),
+		new Memory_WriteAddress( 0x0006, 0x0006, flstory_68705_ddrC_w ),
+		new Memory_WriteAddress( 0x0010, 0x007f, MWA_RAM ),
+		new Memory_WriteAddress( 0x0080, 0x07ff, MWA_ROM ),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	
 	

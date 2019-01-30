@@ -113,11 +113,13 @@ public class dynax
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( sprtmtch_writemem )
-		{ 0x0000, 0x6fff, MWA_ROM					},	// ROM
-		{ 0x7000, 0x7fff, MWA_RAM					},	// RAM
-		{ 0x8000, 0xffff, MWA_ROM					},	// ROM
-	MEMORY_END
+	public static Memory_WriteAddress sprtmtch_writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0x6fff, MWA_ROM					),	// ROM
+		new Memory_WriteAddress( 0x7000, 0x7fff, MWA_RAM					),	// RAM
+		new Memory_WriteAddress( 0x8000, 0xffff, MWA_ROM					),	// ROM
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static PORT_READ_START( sprtmtch_readport )
 		{ 0x10, 0x10, YM2203_status_port_0_r	},	// YM2203
@@ -332,11 +334,13 @@ public class dynax
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static MEMORY_WRITE_START( rongrong_writemem )
-		{ 0x0000, 0x5fff, MWA_ROM					},	// ROM
-		{ 0x6000, 0x7fff, MWA_RAM					},	// RAM
-		{ 0x8000, 0xffff, MWA_ROM					},	// ROM (Banked)
-	MEMORY_END
+	public static Memory_WriteAddress rongrong_writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0x5fff, MWA_ROM					),	// ROM
+		new Memory_WriteAddress( 0x6000, 0x7fff, MWA_RAM					),	// RAM
+		new Memory_WriteAddress( 0x8000, 0xffff, MWA_ROM					),	// ROM (Banked)
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	static PORT_READ_START( rongrong_readport )
 		{ 0x1c, 0x1c, rongrong_input_r		},	//

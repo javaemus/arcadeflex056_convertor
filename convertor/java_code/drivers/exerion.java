@@ -120,19 +120,21 @@ public class exerion
 	};
 	
 	
-	static MEMORY_WRITE_START( writemem )
-		{ 0x0000, 0x5fff, MWA_ROM },
-		{ 0x6000, 0x67ff, MWA_RAM },
-		{ 0x8000, 0x87ff, videoram_w, &videoram, &videoram_size },
-		{ 0x8800, 0x887f, MWA_RAM, &spriteram, &spriteram_size },
-		{ 0x8800, 0x8bff, MWA_RAM },
-		{ 0xc000, 0xc000, exerion_videoreg_w },
-		{ 0xc800, 0xc800, soundlatch_w },
-		{ 0xd000, 0xd000, AY8910_control_port_0_w },
-		{ 0xd001, 0xd001, AY8910_write_port_0_w },
-		{ 0xd800, 0xd800, AY8910_control_port_1_w },
-		{ 0xd801, 0xd801, AY8910_write_port_1_w },
-	MEMORY_END
+	public static Memory_WriteAddress writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0x5fff, MWA_ROM ),
+		new Memory_WriteAddress( 0x6000, 0x67ff, MWA_RAM ),
+		new Memory_WriteAddress( 0x8000, 0x87ff, videoram_w, &videoram, &videoram_size ),
+		new Memory_WriteAddress( 0x8800, 0x887f, MWA_RAM, &spriteram, &spriteram_size ),
+		new Memory_WriteAddress( 0x8800, 0x8bff, MWA_RAM ),
+		new Memory_WriteAddress( 0xc000, 0xc000, exerion_videoreg_w ),
+		new Memory_WriteAddress( 0xc800, 0xc800, soundlatch_w ),
+		new Memory_WriteAddress( 0xd000, 0xd000, AY8910_control_port_0_w ),
+		new Memory_WriteAddress( 0xd001, 0xd001, AY8910_write_port_0_w ),
+		new Memory_WriteAddress( 0xd800, 0xd800, AY8910_control_port_1_w ),
+		new Memory_WriteAddress( 0xd801, 0xd801, AY8910_write_port_1_w ),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	
 	public static Memory_ReadAddress cpu2_readmem[]={
@@ -145,11 +147,13 @@ public class exerion
 	};
 	
 	
-	static MEMORY_WRITE_START( cpu2_writemem )
-		{ 0x0000, 0x1fff, MWA_ROM },
-		{ 0x4000, 0x47ff, MWA_RAM },
-		{ 0x8000, 0x800c, exerion_video_latch_w },
-	MEMORY_END
+	public static Memory_WriteAddress cpu2_writemem[]={
+		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
+		new Memory_WriteAddress( 0x0000, 0x1fff, MWA_ROM ),
+		new Memory_WriteAddress( 0x4000, 0x47ff, MWA_RAM ),
+		new Memory_WriteAddress( 0x8000, 0x800c, exerion_video_latch_w ),
+		new Memory_WriteAddress(MEMPORT_MARKER, 0)
+	};
 	
 	
 	
