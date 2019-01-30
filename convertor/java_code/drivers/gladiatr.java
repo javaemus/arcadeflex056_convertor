@@ -530,36 +530,36 @@ public class gladiatr
 	DEFINE_LAYOUT( gladiator_tileC, 4+0x6000*8, 0x0E000*8, 0x0E000*8+4 )
 	DEFINE_LAYOUT( gladiator_tileD, 0+0x4000*8, 0x14000*8, 0x14000*8+4 )
 	
-	static struct GfxDecodeInfo gfxdecodeinfo[] =
+	static GfxDecodeInfo gfxdecodeinfo[] =
 	{
 		/* monochrome text layer */
-		{ REGION_GFX1, 0x00000, &gladiator_text_layout, 512, 1 },
+		new GfxDecodeInfo( REGION_GFX1, 0x00000, gladiator_text_layout, 512, 1 ),
 	
 		/* background tiles */
-		{ REGION_GFX2, 0x00000, &gladiator_tile0, 0, 64 },
-		{ REGION_GFX2, 0x00000, &gladiator_tile1, 0, 64 },
-		{ REGION_GFX2, 0x00000, &gladiator_tile2, 0, 64 },
-		{ REGION_GFX2, 0x00000, &gladiator_tile3, 0, 64 },
-		{ REGION_GFX2, 0x00000, &gladiator_tile4, 0, 64 },
-		{ REGION_GFX2, 0x00000, &gladiator_tile5, 0, 64 },
-		{ REGION_GFX2, 0x00000, &gladiator_tile6, 0, 64 },
-		{ REGION_GFX2, 0x00000, &gladiator_tile7, 0, 64 },
+		new GfxDecodeInfo( REGION_GFX2, 0x00000, gladiator_tile0, 0, 64 ),
+		new GfxDecodeInfo( REGION_GFX2, 0x00000, gladiator_tile1, 0, 64 ),
+		new GfxDecodeInfo( REGION_GFX2, 0x00000, gladiator_tile2, 0, 64 ),
+		new GfxDecodeInfo( REGION_GFX2, 0x00000, gladiator_tile3, 0, 64 ),
+		new GfxDecodeInfo( REGION_GFX2, 0x00000, gladiator_tile4, 0, 64 ),
+		new GfxDecodeInfo( REGION_GFX2, 0x00000, gladiator_tile5, 0, 64 ),
+		new GfxDecodeInfo( REGION_GFX2, 0x00000, gladiator_tile6, 0, 64 ),
+		new GfxDecodeInfo( REGION_GFX2, 0x00000, gladiator_tile7, 0, 64 ),
 	
 		/* sprites */
-		{ REGION_GFX3, 0x00000, &gladiator_tile0, 0, 64 },
-		{ REGION_GFX3, 0x00000, &gladiator_tileB, 0, 64 },
-		{ REGION_GFX3, 0x00000, &gladiator_tileA, 0, 64 },
-		{ REGION_GFX3, 0x00000, &gladiator_tile3, 0, 64 }, /* "GLAD..." */
-		{ REGION_GFX3, 0x18000, &gladiator_tile0, 0, 64 },
-		{ REGION_GFX3, 0x18000, &gladiator_tileB, 0, 64 },
-		{ REGION_GFX3, 0x18000, &gladiator_tileA, 0, 64 },
-		{ REGION_GFX3, 0x18000, &gladiator_tile3, 0, 64 }, /* ...DIATOR */
-		{ REGION_GFX3, 0x18000, &gladiator_tile4, 0, 64 },
-		{ REGION_GFX3, 0x18000, &gladiator_tileD, 0, 64 },
-		{ REGION_GFX3, 0x18000, &gladiator_tileC, 0, 64 },
-		{ REGION_GFX3, 0x18000, &gladiator_tile7, 0, 64 },
+		new GfxDecodeInfo( REGION_GFX3, 0x00000, gladiator_tile0, 0, 64 ),
+		new GfxDecodeInfo( REGION_GFX3, 0x00000, gladiator_tileB, 0, 64 ),
+		new GfxDecodeInfo( REGION_GFX3, 0x00000, gladiator_tileA, 0, 64 ),
+		new GfxDecodeInfo( REGION_GFX3, 0x00000, gladiator_tile3, 0, 64 ), /* "GLAD..." */
+		new GfxDecodeInfo( REGION_GFX3, 0x18000, gladiator_tile0, 0, 64 ),
+		new GfxDecodeInfo( REGION_GFX3, 0x18000, gladiator_tileB, 0, 64 ),
+		new GfxDecodeInfo( REGION_GFX3, 0x18000, gladiator_tileA, 0, 64 ),
+		new GfxDecodeInfo( REGION_GFX3, 0x18000, gladiator_tile3, 0, 64 ), /* ...DIATOR */
+		new GfxDecodeInfo( REGION_GFX3, 0x18000, gladiator_tile4, 0, 64 ),
+		new GfxDecodeInfo( REGION_GFX3, 0x18000, gladiator_tileD, 0, 64 ),
+		new GfxDecodeInfo( REGION_GFX3, 0x18000, gladiator_tileC, 0, 64 ),
+		new GfxDecodeInfo( REGION_GFX3, 0x18000, gladiator_tile7, 0, 64 ),
 	
-		{ -1 } /* end of array */
+		new GfxDecodeInfo( -1 ) /* end of array */
 	};
 	
 	#undef DEFINE_LAYOUT

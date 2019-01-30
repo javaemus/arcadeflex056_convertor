@@ -325,12 +325,12 @@ public class xxmissio
 		64*8
 	);
 	
-	static struct GfxDecodeInfo gfxdecodeinfo[] =
+	static GfxDecodeInfo gfxdecodeinfo[] =
 	{
-		{ REGION_GFX1, 0x0000, &charlayout,   256,  8 }, /* FG */
-		{ REGION_GFX1, 0x0000, &spritelayout,   0,  8 }, /* sprite */
-		{ REGION_GFX2, 0x0000, &bglayout,     512, 16 }, /* BG */
-		{ -1 } /* end of array */
+		new GfxDecodeInfo( REGION_GFX1, 0x0000, charlayout,   256,  8 ), /* FG */
+		new GfxDecodeInfo( REGION_GFX1, 0x0000, spritelayout,   0,  8 ), /* sprite */
+		new GfxDecodeInfo( REGION_GFX2, 0x0000, bglayout,     512, 16 ), /* BG */
+		new GfxDecodeInfo( -1 ) /* end of array */
 	};
 	
 	/****************************************************************************/

@@ -304,13 +304,13 @@ public class dday
 		8*8     /* every char takes 8 consecutive bytes */
 	);
 	
-	static struct GfxDecodeInfo gfxdecodeinfo[] =
+	static GfxDecodeInfo gfxdecodeinfo[] =
 	{
-		{ REGION_GFX1, 0, &layout_3bpp, 0,       256/8 },	/* background */
-		{ REGION_GFX2, 0, &layout_2bpp, 8*4,     8 },		/* foreground */
-		{ REGION_GFX3, 0, &layout_2bpp, 8*4+8*4, 8 },		/* text */
-		{ REGION_GFX4, 0, &layout_1bpp, 254,     1 },		/* searchlight */
-		{ -1 } /* end of array */
+		new GfxDecodeInfo( REGION_GFX1, 0, layout_3bpp, 0,       256/8 ),	/* background */
+		new GfxDecodeInfo( REGION_GFX2, 0, layout_2bpp, 8*4,     8 ),		/* foreground */
+		new GfxDecodeInfo( REGION_GFX3, 0, layout_2bpp, 8*4+8*4, 8 ),		/* text */
+		new GfxDecodeInfo( REGION_GFX4, 0, layout_1bpp, 254,     1 ),		/* searchlight */
+		new GfxDecodeInfo( -1 ) /* end of array */
 	};
 	
 	

@@ -482,14 +482,14 @@ public class stfight
 	);
 	
 	
-	static struct GfxDecodeInfo gfxdecodeinfo[] =
+	static GfxDecodeInfo gfxdecodeinfo[] =
 	{
-		{ REGION_GFX1, 0x0000, &charlayout,   0,                16 },
-		{ REGION_GFX2, 0x0000, &fglayout,     16*4,             16 },
-		{ REGION_GFX3, 0x0000, &bglayout,     16*4+16*16,       16 },
-		{ REGION_GFX3, 0x0020, &bglayout,     16*4+16*16,       16 },
-		{ REGION_GFX4, 0x0000, &spritelayout, 16*4+16*16+16*16, 16 },
-		{ -1 } /* end of array */
+		new GfxDecodeInfo( REGION_GFX1, 0x0000, charlayout,   0,                16 ),
+		new GfxDecodeInfo( REGION_GFX2, 0x0000, fglayout,     16*4,             16 ),
+		new GfxDecodeInfo( REGION_GFX3, 0x0000, bglayout,     16*4+16*16,       16 ),
+		new GfxDecodeInfo( REGION_GFX3, 0x0020, bglayout,     16*4+16*16,       16 ),
+		new GfxDecodeInfo( REGION_GFX4, 0x0000, spritelayout, 16*4+16*16+16*16, 16 ),
+		new GfxDecodeInfo( -1 ) /* end of array */
 	};
 	
 	static struct YM2203interface ym2203_interface =

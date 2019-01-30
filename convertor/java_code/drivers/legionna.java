@@ -440,14 +440,14 @@ public class legionna
 		128*8
 	);
 	
-	static struct GfxDecodeInfo legionna_gfxdecodeinfo[] =
+	static GfxDecodeInfo legionna_gfxdecodeinfo[] =
 	{
-		{ REGION_GFX1, 0, &legionna_charlayout,   48*16, 16 },
-		{ REGION_GFX3, 0, &legionna_tilelayout,    0*16, 16 },
-		{ REGION_GFX4, 0, &legionna_char2layout,  32*16, 16 },
-		{ REGION_GFX3, 0, &legionna_tilelayout,   16*16, 16 },
-		{ REGION_GFX2, 0, &legionna_spritelayout , 0*16, 8*16 },
-		{ -1 } /* end of array */
+		new GfxDecodeInfo( REGION_GFX1, 0, legionna_charlayout,   48*16, 16 ),
+		new GfxDecodeInfo( REGION_GFX3, 0, legionna_tilelayout,    0*16, 16 ),
+		new GfxDecodeInfo( REGION_GFX4, 0, legionna_char2layout,  32*16, 16 ),
+		new GfxDecodeInfo( REGION_GFX3, 0, legionna_tilelayout,   16*16, 16 ),
+		new GfxDecodeInfo( REGION_GFX2, 0, legionna_spritelayout , 0*16, 8*16 ),
+		new GfxDecodeInfo( -1 ) /* end of array */
 	};
 	
 	

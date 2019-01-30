@@ -2023,19 +2023,19 @@ public class galaxian
 	);
 	
 	
-	struct GfxDecodeInfo galaxian_gfxdecodeinfo[] =
+	static GfxDecodeInfo galaxian_gfxdecodeinfo[] =
 	{
-		{ REGION_GFX1, 0x0000, &galaxian_charlayout,    0, 8 },
-		{ REGION_GFX1, 0x0000, &galaxian_spritelayout,  0, 8 },
-		{ -1 } /* end of array */
+		new GfxDecodeInfo( REGION_GFX1, 0x0000, galaxian_charlayout,    0, 8 ),
+		new GfxDecodeInfo( REGION_GFX1, 0x0000, galaxian_spritelayout,  0, 8 ),
+		new GfxDecodeInfo( -1 ) /* end of array */
 	};
 	
 	/* separate character and sprite ROMs */
-	static struct GfxDecodeInfo pacmanbl_gfxdecodeinfo[] =
+	static GfxDecodeInfo pacmanbl_gfxdecodeinfo[] =
 	{
-		{ REGION_GFX1, 0x0000, &pacmanbl_charlayout,    0, 8 },
-		{ REGION_GFX1, 0x1000, &pacmanbl_spritelayout,  0, 8 },
-		{ -1 } /* end of array */
+		new GfxDecodeInfo( REGION_GFX1, 0x0000, pacmanbl_charlayout,    0, 8 ),
+		new GfxDecodeInfo( REGION_GFX1, 0x1000, pacmanbl_spritelayout,  0, 8 ),
+		new GfxDecodeInfo( -1 ) /* end of array */
 	};
 	
 	

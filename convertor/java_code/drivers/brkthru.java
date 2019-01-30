@@ -435,19 +435,19 @@ public class brkthru
 		32*8	/* every sprite takes 32 consecutive bytes */
 	);
 	
-	static struct GfxDecodeInfo gfxdecodeinfo[] =
+	static GfxDecodeInfo gfxdecodeinfo[] =
 	{
-		{ REGION_GFX1, 0x00000, &charlayout,   0x00,  1 },	/* use colors 0x00-0x07 */
-		{ REGION_GFX2, 0x00000, &tilelayout1,  0x80, 16 },	/* use colors 0x80-0xff */
-		{ REGION_GFX2, 0x01000, &tilelayout2,  0x80, 16 },
-		{ REGION_GFX2, 0x08000, &tilelayout1,  0x80, 16 },
-		{ REGION_GFX2, 0x09000, &tilelayout2,  0x80, 16 },
-		{ REGION_GFX2, 0x10000, &tilelayout1,  0x80, 16 },
-		{ REGION_GFX2, 0x11000, &tilelayout2,  0x80, 16 },
-		{ REGION_GFX2, 0x18000, &tilelayout1,  0x80, 16 },
-		{ REGION_GFX2, 0x19000, &tilelayout2,  0x80, 16 },
-		{ REGION_GFX3, 0x00000, &spritelayout, 0x40,  8 },	/* use colors 0x40-0x7f */
-		{ -1 } /* end of array */
+		new GfxDecodeInfo( REGION_GFX1, 0x00000, charlayout,   0x00,  1 ),	/* use colors 0x00-0x07 */
+		new GfxDecodeInfo( REGION_GFX2, 0x00000, tilelayout1,  0x80, 16 ),	/* use colors 0x80-0xff */
+		new GfxDecodeInfo( REGION_GFX2, 0x01000, tilelayout2,  0x80, 16 ),
+		new GfxDecodeInfo( REGION_GFX2, 0x08000, tilelayout1,  0x80, 16 ),
+		new GfxDecodeInfo( REGION_GFX2, 0x09000, tilelayout2,  0x80, 16 ),
+		new GfxDecodeInfo( REGION_GFX2, 0x10000, tilelayout1,  0x80, 16 ),
+		new GfxDecodeInfo( REGION_GFX2, 0x11000, tilelayout2,  0x80, 16 ),
+		new GfxDecodeInfo( REGION_GFX2, 0x18000, tilelayout1,  0x80, 16 ),
+		new GfxDecodeInfo( REGION_GFX2, 0x19000, tilelayout2,  0x80, 16 ),
+		new GfxDecodeInfo( REGION_GFX3, 0x00000, spritelayout, 0x40,  8 ),	/* use colors 0x40-0x7f */
+		new GfxDecodeInfo( -1 ) /* end of array */
 	};
 	
 	/* handler called by the 3812 emulator when the internal timers cause an IRQ */

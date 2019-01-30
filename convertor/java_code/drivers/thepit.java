@@ -595,27 +595,27 @@ public class thepit
 	);
 	
 	
-	static struct GfxDecodeInfo thepit_gfxdecodeinfo[] =
+	static GfxDecodeInfo thepit_gfxdecodeinfo[] =
 	{
-		{ REGION_GFX1, 0, &charlayout,     0, 8 },
-		{ REGION_GFX1, 0, &spritelayout,   0, 8 },
-		{ -1 } /* end of array */
+		new GfxDecodeInfo( REGION_GFX1, 0, charlayout,     0, 8 ),
+		new GfxDecodeInfo( REGION_GFX1, 0, spritelayout,   0, 8 ),
+		new GfxDecodeInfo( -1 ) /* end of array */
 	};
 	
-	static struct GfxDecodeInfo intrepid_gfxdecodeinfo[] =
+	static GfxDecodeInfo intrepid_gfxdecodeinfo[] =
 	{
-		{ REGION_GFX1, 0x0000, &charlayout,     0, 8 },
-		{ REGION_GFX1, 0x0000, &spritelayout,   0, 8 },
-		{ REGION_GFX1, 0x0800, &charlayout,     0, 8 },
-		{ REGION_GFX1, 0x0800, &spritelayout,   0, 8 },
-		{ -1 } /* end of array */
+		new GfxDecodeInfo( REGION_GFX1, 0x0000, charlayout,     0, 8 ),
+		new GfxDecodeInfo( REGION_GFX1, 0x0000, spritelayout,   0, 8 ),
+		new GfxDecodeInfo( REGION_GFX1, 0x0800, charlayout,     0, 8 ),
+		new GfxDecodeInfo( REGION_GFX1, 0x0800, spritelayout,   0, 8 ),
+		new GfxDecodeInfo( -1 ) /* end of array */
 	};
 	
-	static struct GfxDecodeInfo suprmous_gfxdecodeinfo[] =
+	static GfxDecodeInfo suprmous_gfxdecodeinfo[] =
 	{
-		{ REGION_GFX1, 0x0000, &suprmous_charlayout,   0, 4 },
-		{ REGION_GFX1, 0x0800, &suprmous_spritelayout, 0, 4 },
-		{ -1 } /* end of array */
+		new GfxDecodeInfo( REGION_GFX1, 0x0000, suprmous_charlayout,   0, 4 ),
+		new GfxDecodeInfo( REGION_GFX1, 0x0800, suprmous_spritelayout, 0, 4 ),
+		new GfxDecodeInfo( -1 ) /* end of array */
 	};
 	
 	

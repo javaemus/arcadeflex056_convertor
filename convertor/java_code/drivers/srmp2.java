@@ -1085,16 +1085,16 @@ public class srmp2
 		16*16*2
 	);
 	
-	static struct GfxDecodeInfo srmp2_gfxdecodeinfo[] =
+	static GfxDecodeInfo srmp2_gfxdecodeinfo[] =
 	{
-		{ REGION_GFX1, 0, &charlayout, 0, 64 },
-		{ -1 }
+		new GfxDecodeInfo( REGION_GFX1, 0, charlayout, 0, 64 ),
+		new GfxDecodeInfo( -1 )
 	};
 	
-	static struct GfxDecodeInfo srmp3_gfxdecodeinfo[] =
+	static GfxDecodeInfo srmp3_gfxdecodeinfo[] =
 	{
-		{ REGION_GFX1, 0, &charlayout, 0, 32 },
-		{ -1 }
+		new GfxDecodeInfo( REGION_GFX1, 0, charlayout, 0, 32 ),
+		new GfxDecodeInfo( -1 )
 	};
 	
 	

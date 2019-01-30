@@ -2023,20 +2023,20 @@ public class taito_l
 		8*8*4
 	);
 	
-	static struct GfxDecodeInfo gfxdecodeinfo1[] =
+	static GfxDecodeInfo gfxdecodeinfo1[] =
 	{
-		{ REGION_GFX1, 0, &bg1_layout, 0, 16 },
-		{ REGION_GFX1, 0, &sp1_layout, 0, 16 },
-		{ 0,           0, &char_layout,  0, 16 },  // Ram-based
-		{ -1 }
+		new GfxDecodeInfo( REGION_GFX1, 0, bg1_layout, 0, 16 ),
+		new GfxDecodeInfo( REGION_GFX1, 0, sp1_layout, 0, 16 ),
+		new GfxDecodeInfo( 0,           0, char_layout,  0, 16 ),  // Ram-based
+		new GfxDecodeInfo( -1 )
 	};
 	
-	static struct GfxDecodeInfo gfxdecodeinfo2[] =
+	static GfxDecodeInfo gfxdecodeinfo2[] =
 	{
-		{ REGION_GFX1, 0, &bg2_layout, 0, 16 },
-		{ REGION_GFX1, 0, &sp2_layout, 0, 16 },
-		{ 0,           0, &char_layout,  0, 16 },  // Ram-based
-		{ -1 }
+		new GfxDecodeInfo( REGION_GFX1, 0, bg2_layout, 0, 16 ),
+		new GfxDecodeInfo( REGION_GFX1, 0, sp2_layout, 0, 16 ),
+		new GfxDecodeInfo( 0,           0, char_layout,  0, 16 ),  // Ram-based
+		new GfxDecodeInfo( -1 )
 	};
 	
 	

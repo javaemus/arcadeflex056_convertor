@@ -383,13 +383,13 @@ public class toki
 		128*8
 	);
 	
-	static struct GfxDecodeInfo toki_gfxdecodeinfo[] =
+	static GfxDecodeInfo toki_gfxdecodeinfo[] =
 	{
-		{ REGION_GFX1, 0, &toki_charlayout,  16*16, 16 },
-		{ REGION_GFX2, 0, &toki_spritelayout, 0*16, 16 },
-		{ REGION_GFX3, 0, &toki_tilelayout,  32*16, 16 },
-		{ REGION_GFX4, 0, &toki_tilelayout,  48*16, 16 },
-		{ -1 } /* end of array */
+		new GfxDecodeInfo( REGION_GFX1, 0, toki_charlayout,  16*16, 16 ),
+		new GfxDecodeInfo( REGION_GFX2, 0, toki_spritelayout, 0*16, 16 ),
+		new GfxDecodeInfo( REGION_GFX3, 0, toki_tilelayout,  32*16, 16 ),
+		new GfxDecodeInfo( REGION_GFX4, 0, toki_tilelayout,  48*16, 16 ),
+		new GfxDecodeInfo( -1 ) /* end of array */
 	};
 	
 	static GfxLayout tokib_charlayout = new GfxLayout
@@ -431,13 +431,13 @@ public class toki
 		16*16
 	);
 	
-	static struct GfxDecodeInfo tokib_gfxdecodeinfo[] =
+	static GfxDecodeInfo tokib_gfxdecodeinfo[] =
 	{
-		{ REGION_GFX1, 0, &tokib_charlayout,	16*16, 16 },
-		{ REGION_GFX2, 0, &tokib_spriteslayout,  0*16, 16 },
-		{ REGION_GFX3, 0, &tokib_tilelayout,	32*16, 16 },
-		{ REGION_GFX4, 0, &tokib_tilelayout,	48*16, 16 },
-		{ -1 } /* end of array */
+		new GfxDecodeInfo( REGION_GFX1, 0, tokib_charlayout,	16*16, 16 ),
+		new GfxDecodeInfo( REGION_GFX2, 0, tokib_spriteslayout,  0*16, 16 ),
+		new GfxDecodeInfo( REGION_GFX3, 0, tokib_tilelayout,	32*16, 16 ),
+		new GfxDecodeInfo( REGION_GFX4, 0, tokib_tilelayout,	48*16, 16 ),
+		new GfxDecodeInfo( -1 ) /* end of array */
 	};
 	
 	

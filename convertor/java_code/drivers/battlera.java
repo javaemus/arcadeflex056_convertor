@@ -264,12 +264,12 @@ public class battlera
 		128*8
 	);
 	
-	static struct GfxDecodeInfo gfxdecodeinfo[] =
+	static GfxDecodeInfo gfxdecodeinfo[] =
 	{
-		{ REGION_GFX1, 0, &tiles,       0,  16 }, /* Dynamically modified */
-		{ REGION_GFX1, 0, &sprites,   256,  16 }, /* Dynamically modified */
-		{ REGION_GFX1, 0, &tiles  ,   256,  16 }, /* Blank tile */
-		{ -1 } /* end of array */
+		new GfxDecodeInfo( REGION_GFX1, 0, tiles,       0,  16 ), /* Dynamically modified */
+		new GfxDecodeInfo( REGION_GFX1, 0, sprites,   256,  16 ), /* Dynamically modified */
+		new GfxDecodeInfo( REGION_GFX1, 0, tiles  ,   256,  16 ), /* Blank tile */
+		new GfxDecodeInfo( -1 ) /* end of array */
 	};
 	
 	/******************************************************************************/

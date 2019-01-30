@@ -643,10 +643,10 @@ public class lazercmd
 		10*8					/* every char takes 10 bytes */
 	);
 	
-	static struct GfxDecodeInfo gfxdecodeinfo[] =
+	static GfxDecodeInfo gfxdecodeinfo[] =
 	{
-		{ REGION_GFX1, 0, &charlayout, 0, 2 },
-		{ -1 }					 /* end of array */
+		new GfxDecodeInfo( REGION_GFX1, 0, charlayout, 0, 2 ),
+		new GfxDecodeInfo( -1 )					 /* end of array */
 	};
 	
 	/* some colors for the frontend */

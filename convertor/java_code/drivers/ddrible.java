@@ -326,13 +326,13 @@ public class ddrible
 		32*32
 	);
 	
-	static struct GfxDecodeInfo gfxdecodeinfo[] =
+	static GfxDecodeInfo gfxdecodeinfo[] =
 	{
-		{ REGION_GFX1, 0x00000, &charlayout,    48,  1 },	/* colors 48-63 */
-		{ REGION_GFX2, 0x00000, &charlayout,    16,  1 },	/* colors 16-31 */
-		{ REGION_GFX1, 0x20000, &spritelayout,  32,  1 },	/* colors 32-47 */
-		{ REGION_GFX2, 0x40000, &spritelayout,  64, 16 },	/* colors  0-15 but using lookup table */
-		{ -1 } /* end of array */
+		new GfxDecodeInfo( REGION_GFX1, 0x00000, charlayout,    48,  1 ),	/* colors 48-63 */
+		new GfxDecodeInfo( REGION_GFX2, 0x00000, charlayout,    16,  1 ),	/* colors 16-31 */
+		new GfxDecodeInfo( REGION_GFX1, 0x20000, spritelayout,  32,  1 ),	/* colors 32-47 */
+		new GfxDecodeInfo( REGION_GFX2, 0x40000, spritelayout,  64, 16 ),	/* colors  0-15 but using lookup table */
+		new GfxDecodeInfo( -1 ) /* end of array */
 	};
 	
 	static struct YM2203interface ym2203_interface =

@@ -643,26 +643,26 @@ public class omegaf
 		16*64*4
 	);
 	
-	static struct GfxDecodeInfo omegaf_gfxdecodeinfo[] =
+	static GfxDecodeInfo omegaf_gfxdecodeinfo[] =
 	{
-		{ REGION_GFX1, 0, &omegaf_bglayout,         0*16, 16},
-		{ REGION_GFX2, 0, &omegaf_bglayout,         0*16, 16},
-		{ REGION_GFX3, 0, &omegaf_bglayout,         0*16, 16},
-		{ REGION_GFX4, 0, &omegaf_spritelayout,    32*16, 16},
-		{ REGION_GFX4, 0, &omegaf_bigspritelayout, 32*16, 16},
-		{ REGION_GFX5, 0, &omegaf_charlayout,      48*16, 16},
-		{ -1} /* end of array */
+		new GfxDecodeInfo( REGION_GFX1, 0, omegaf_bglayout,         0*16, 16),
+		new GfxDecodeInfo( REGION_GFX2, 0, omegaf_bglayout,         0*16, 16),
+		new GfxDecodeInfo( REGION_GFX3, 0, omegaf_bglayout,         0*16, 16),
+		new GfxDecodeInfo( REGION_GFX4, 0, omegaf_spritelayout,    32*16, 16),
+		new GfxDecodeInfo( REGION_GFX4, 0, omegaf_bigspritelayout, 32*16, 16),
+		new GfxDecodeInfo( REGION_GFX5, 0, omegaf_charlayout,      48*16, 16),
+		new GfxDecodeInfo( -1) /* end of array */
 	};
 	
-	static struct GfxDecodeInfo robokid_gfxdecodeinfo[] =
+	static GfxDecodeInfo robokid_gfxdecodeinfo[] =
 	{
-		{ REGION_GFX1, 0, &omegaf_bglayout,          0*16, 16},
-		{ REGION_GFX2, 0, &omegaf_bglayout,          0*16, 16},
-		{ REGION_GFX3, 0, &omegaf_bglayout,          0*16, 16},
-		{ REGION_GFX4, 0, &robokid_spritelayout,    32*16, 16},
-		{ REGION_GFX4, 0, &robokid_bigspritelayout, 32*16, 16},
-		{ REGION_GFX5, 0, &omegaf_charlayout,       48*16, 16},
-		{ -1} /* end of array */
+		new GfxDecodeInfo( REGION_GFX1, 0, omegaf_bglayout,          0*16, 16),
+		new GfxDecodeInfo( REGION_GFX2, 0, omegaf_bglayout,          0*16, 16),
+		new GfxDecodeInfo( REGION_GFX3, 0, omegaf_bglayout,          0*16, 16),
+		new GfxDecodeInfo( REGION_GFX4, 0, robokid_spritelayout,    32*16, 16),
+		new GfxDecodeInfo( REGION_GFX4, 0, robokid_bigspritelayout, 32*16, 16),
+		new GfxDecodeInfo( REGION_GFX5, 0, omegaf_charlayout,       48*16, 16),
+		new GfxDecodeInfo( -1) /* end of array */
 	};
 	
 	

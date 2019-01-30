@@ -518,12 +518,12 @@ public class chinagat
 		64*8 /* every char takes 64 consecutive bytes */
 	);
 	
-	static struct GfxDecodeInfo gfxdecodeinfo[] =
+	static GfxDecodeInfo gfxdecodeinfo[] =
 	{
-		{ REGION_GFX1, 0, &charlayout,   0,16 },	/*  8x8  chars */
-		{ REGION_GFX2, 0, &tilelayout, 128, 8 },	/* 16x16 sprites */
-		{ REGION_GFX3, 0, &tilelayout, 256, 8 },	/* 16x16 background tiles */
-		{ -1 } /* end of array */
+		new GfxDecodeInfo( REGION_GFX1, 0, charlayout,   0,16 ),	/*  8x8  chars */
+		new GfxDecodeInfo( REGION_GFX2, 0, tilelayout, 128, 8 ),	/* 16x16 sprites */
+		new GfxDecodeInfo( REGION_GFX3, 0, tilelayout, 256, 8 ),	/* 16x16 background tiles */
+		new GfxDecodeInfo( -1 ) /* end of array */
 	};
 	
 	static void chinagat_irq_handler(int irq) {

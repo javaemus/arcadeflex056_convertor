@@ -394,14 +394,14 @@ public class decocass
 		8	/* object takes a 1 bit from somewhere */
 	);
 	
-	static struct GfxDecodeInfo decocass_gfxdecodeinfo[] =
+	static GfxDecodeInfo decocass_gfxdecodeinfo[] =
 	{
-		{ 0, 0x6000, &charlayout,		 0, 4 },  /* char set #1 */
-		{ 0, 0x6000, &spritelayout, 	 0, 4 },  /* sprites */
-		{ 0, 0xd000, &tilelayout,		32, 2 },  /* background tiles */
-		{ 0, 0xd800, &objlayout,		48, 4 },  /* object */
-		{ 0, 0xffff, &missilelayout,	 0, 8 },
-		{ -1 } /* end of array */
+		new GfxDecodeInfo( 0, 0x6000, charlayout,		 0, 4 ),  /* char set #1 */
+		new GfxDecodeInfo( 0, 0x6000, spritelayout, 	 0, 4 ),  /* sprites */
+		new GfxDecodeInfo( 0, 0xd000, tilelayout,		32, 2 ),  /* background tiles */
+		new GfxDecodeInfo( 0, 0xd800, objlayout,		48, 4 ),  /* object */
+		new GfxDecodeInfo( 0, 0xffff, missilelayout,	 0, 8 ),
+		new GfxDecodeInfo( -1 ) /* end of array */
 	};
 	
 	static struct AY8910interface ay8910_interface =

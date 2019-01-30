@@ -184,12 +184,12 @@ public class qwakprot
 	);
 	
 	
-	static struct GfxDecodeInfo gfxdecodeinfo[] =
+	static GfxDecodeInfo gfxdecodeinfo[] =
 	{
-		{ REGION_GFX1, 0x0800, &charlayout,   0, 1 },
-		{ REGION_GFX1, 0x0808, &charlayout,   0, 1 },
-		{ REGION_GFX1, 0x0000, &spritelayout, 0, 1 },
-		{ -1 } /* end of array */
+		new GfxDecodeInfo( REGION_GFX1, 0x0800, charlayout,   0, 1 ),
+		new GfxDecodeInfo( REGION_GFX1, 0x0808, charlayout,   0, 1 ),
+		new GfxDecodeInfo( REGION_GFX1, 0x0000, spritelayout, 0, 1 ),
+		new GfxDecodeInfo( -1 ) /* end of array */
 	};
 	
 	

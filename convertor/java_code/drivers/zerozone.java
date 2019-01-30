@@ -193,10 +193,10 @@ public class zerozone
 	);
 	
 	
-	static struct GfxDecodeInfo gfxdecodeinfo[] =
+	static GfxDecodeInfo gfxdecodeinfo[] =
 	{
-		{ REGION_GFX1, 0, &charlayout, 0, 256 },         /* sprites & playfield */
-		{ -1 } /* end of array */
+		new GfxDecodeInfo( REGION_GFX1, 0, charlayout, 0, 256 ),         /* sprites  playfield */
+		new GfxDecodeInfo( -1 ) /* end of array */
 	};
 	
 	

@@ -205,12 +205,12 @@ public class aeroboto
 		16*8	/* every sprite takes 16 consecutive bytes */
 	);
 	
-	static struct GfxDecodeInfo gfxdecodeinfo[] =
+	static GfxDecodeInfo gfxdecodeinfo[] =
 	{
-		{ REGION_GFX1, 0, &charlayout,     0, 64 },	/* chars */
-		{ REGION_GFX2, 0, &charlayout,     0, 64 },	/* sky */
-		{ REGION_GFX3, 0, &spritelayout,   0, 32 },
-		{ -1 } /* end of array */
+		new GfxDecodeInfo( REGION_GFX1, 0, charlayout,     0, 64 ),	/* chars */
+		new GfxDecodeInfo( REGION_GFX2, 0, charlayout,     0, 64 ),	/* sky */
+		new GfxDecodeInfo( REGION_GFX3, 0, spritelayout,   0, 32 ),
+		new GfxDecodeInfo( -1 ) /* end of array */
 	};
 	
 	

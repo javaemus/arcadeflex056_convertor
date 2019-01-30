@@ -282,11 +282,11 @@ public class sidepckt
 	    32*8    /* every char takes 8 consecutive bytes */
 	);
 	
-	static struct GfxDecodeInfo gfxdecodeinfo[] =
+	static GfxDecodeInfo gfxdecodeinfo[] =
 	{
-		{ REGION_GFX1, 0, &charlayout,   128,  4 },	/* colors 128-159 */
-		{ REGION_GFX2, 0, &spritelayout,   0, 16 },	/* colors   0-127 */
-		{ -1 } /* end of array */
+		new GfxDecodeInfo( REGION_GFX1, 0, charlayout,   128,  4 ),	/* colors 128-159 */
+		new GfxDecodeInfo( REGION_GFX2, 0, spritelayout,   0, 16 ),	/* colors   0-127 */
+		new GfxDecodeInfo( -1 ) /* end of array */
 	};
 	
 	

@@ -1034,10 +1034,10 @@ public class vicdual
 		8*8	/* every char takes 8 consecutive bytes */
 	);
 	
-	static struct GfxDecodeInfo gfxdecodeinfo[] =
+	static GfxDecodeInfo gfxdecodeinfo[] =
 	{
-		{ 0, 0xe800, &charlayout, 0, 32 },	/* the game dynamically modifies this */
-		{ -1 }	/* end of array */
+		new GfxDecodeInfo( 0, 0xe800, charlayout, 0, 32 ),	/* the game dynamically modifies this */
+		new GfxDecodeInfo( -1 )	/* end of array */
 	};
 	
 	

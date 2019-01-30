@@ -425,11 +425,11 @@ public class bladestl
 		32*8			/* every sprite takes 32 consecutive bytes */
 	);
 	
-	static struct GfxDecodeInfo gfxdecodeinfo[] =
+	static GfxDecodeInfo gfxdecodeinfo[] =
 	{
-		{ REGION_GFX1, 0x000000, &charlayout,     0,	2 },	/* colors 00..31 */
-		{ REGION_GFX1, 0x040000, &spritelayout,   32,	16 },	/* colors 32..47 but using lookup table */
-		{ -1 } /* end of array */
+		new GfxDecodeInfo( REGION_GFX1, 0x000000, charlayout,     0,	2 ),	/* colors 00..31 */
+		new GfxDecodeInfo( REGION_GFX1, 0x040000, spritelayout,   32,	16 ),	/* colors 32..47 but using lookup table */
+		new GfxDecodeInfo( -1 ) /* end of array */
 	};
 	
 	/***************************************************************************

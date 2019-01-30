@@ -432,12 +432,12 @@ public class tetrisp2
 	);
 	
 	
-	static struct GfxDecodeInfo tetrisp2_gfxdecodeinfo[] =
+	static GfxDecodeInfo tetrisp2_gfxdecodeinfo[] =
 	{
-		{ REGION_GFX1, 0, &layout_8x8x8,   0x0000, 0x10 }, // [0] Sprites
-		{ REGION_GFX2, 0, &layout_16x16x8, 0x1000, 0x10 }, // [1] Background
-		{ REGION_GFX3, 0, &layout_8x8x8,   0x6000, 0x10 }, // [2] Foreground
-		{ -1 }
+		new GfxDecodeInfo( REGION_GFX1, 0, layout_8x8x8,   0x0000, 0x10 ), // [0] Sprites
+		new GfxDecodeInfo( REGION_GFX2, 0, layout_16x16x8, 0x1000, 0x10 ), // [1] Background
+		new GfxDecodeInfo( REGION_GFX3, 0, layout_8x8x8,   0x6000, 0x10 ), // [2] Foreground
+		new GfxDecodeInfo( -1 )
 	};
 	
 	

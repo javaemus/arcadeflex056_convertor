@@ -768,22 +768,22 @@ public class punchout
 		8*8	/* every char takes 8 consecutive bytes */
 	);
 	
-	static struct GfxDecodeInfo punchout_gfxdecodeinfo[] =
+	static GfxDecodeInfo punchout_gfxdecodeinfo[] =
 	{
-		{ REGION_GFX1, 0, &charlayout,                 0, 128 },
-		{ REGION_GFX2, 0, &charlayout,             128*4, 128 },
-		{ REGION_GFX3, 0, &charlayout1,      128*4+128*4,  64 },
-		{ REGION_GFX4, 0, &charlayout2, 128*4+128*4+64*8, 128 },
-		{ -1 } /* end of array */
+		new GfxDecodeInfo( REGION_GFX1, 0, charlayout,                 0, 128 ),
+		new GfxDecodeInfo( REGION_GFX2, 0, charlayout,             128*4, 128 ),
+		new GfxDecodeInfo( REGION_GFX3, 0, charlayout1,      128*4+128*4,  64 ),
+		new GfxDecodeInfo( REGION_GFX4, 0, charlayout2, 128*4+128*4+64*8, 128 ),
+		new GfxDecodeInfo( -1 ) /* end of array */
 	};
 	
-	static struct GfxDecodeInfo armwrest_gfxdecodeinfo[] =
+	static GfxDecodeInfo armwrest_gfxdecodeinfo[] =
 	{
-		{ REGION_GFX1, 0, &armwrest_charlayout,        0, 256 },
-		{ REGION_GFX2, 0, &armwrest_charlayout2,   256*4,  64 },
-		{ REGION_GFX3, 0, &charlayout1,       256*4+64*8,  64 },
-		{ REGION_GFX4, 0, &charlayout2,  256*4+64*8+64*8, 128 },
-		{ -1 } /* end of array */
+		new GfxDecodeInfo( REGION_GFX1, 0, armwrest_charlayout,        0, 256 ),
+		new GfxDecodeInfo( REGION_GFX2, 0, armwrest_charlayout2,   256*4,  64 ),
+		new GfxDecodeInfo( REGION_GFX3, 0, charlayout1,       256*4+64*8,  64 ),
+		new GfxDecodeInfo( REGION_GFX4, 0, charlayout2,  256*4+64*8+64*8, 128 ),
+		new GfxDecodeInfo( -1 ) /* end of array */
 	};
 	
 	

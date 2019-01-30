@@ -761,65 +761,65 @@ public class snk
 	
 	/*********************************************************************/
 	
-	static struct GfxDecodeInfo tnk3_gfxdecodeinfo[] =
+	static GfxDecodeInfo tnk3_gfxdecodeinfo[] =
 	{
-		{ REGION_GFX1, 0x0, &char512,	128*3,  8 },
-		{ REGION_GFX2, 0x0, &char1024,	128*1, 16 },
-		{ REGION_GFX3, 0x0, &sprite512,	128*0, 16 },
-		{ -1 }
+		new GfxDecodeInfo( REGION_GFX1, 0x0, char512,	128*3,  8 ),
+		new GfxDecodeInfo( REGION_GFX2, 0x0, char1024,	128*1, 16 ),
+		new GfxDecodeInfo( REGION_GFX3, 0x0, sprite512,	128*0, 16 ),
+		new GfxDecodeInfo( -1 )
 	};
 	
-	static struct GfxDecodeInfo athena_gfxdecodeinfo[] =
+	static GfxDecodeInfo athena_gfxdecodeinfo[] =
 	{
 		/* colors 512-1023 are currently unused, I think they are a second bank */
-		{ REGION_GFX1, 0x0, &char512,	128*3,  8 },	/* colors 384..511 */
-		{ REGION_GFX2, 0x0, &char1024,   128*1, 16 },	/* colors 128..383 */
-		{ REGION_GFX3, 0x0, &sprite1024,		0, 16 },	/* colors   0..127 */
-		{ -1 }
+		new GfxDecodeInfo( REGION_GFX1, 0x0, char512,	128*3,  8 ),	/* colors 384..511 */
+		new GfxDecodeInfo( REGION_GFX2, 0x0, char1024,   128*1, 16 ),	/* colors 128..383 */
+		new GfxDecodeInfo( REGION_GFX3, 0x0, sprite1024,		0, 16 ),	/* colors   0..127 */
+		new GfxDecodeInfo( -1 )
 	};
 	
-	static struct GfxDecodeInfo ikari_gfxdecodeinfo[] =
+	static GfxDecodeInfo ikari_gfxdecodeinfo[] =
 	{
-		{ REGION_GFX1, 0x0, &char512,             256, 16 },
-		{ REGION_GFX2, 0x0, &tile1024,            256, 16 },
-		{ REGION_GFX3, 0x0, &sprite1024,            0, 16 },
-		{ REGION_GFX4, 0x0, &big_sprite512,       128, 16 },
-		{ -1 }
+		new GfxDecodeInfo( REGION_GFX1, 0x0, char512,             256, 16 ),
+		new GfxDecodeInfo( REGION_GFX2, 0x0, tile1024,            256, 16 ),
+		new GfxDecodeInfo( REGION_GFX3, 0x0, sprite1024,            0, 16 ),
+		new GfxDecodeInfo( REGION_GFX4, 0x0, big_sprite512,       128, 16 ),
+		new GfxDecodeInfo( -1 )
 	};
 	
-	static struct GfxDecodeInfo gwar_gfxdecodeinfo[] =
+	static GfxDecodeInfo gwar_gfxdecodeinfo[] =
 	{
-		{ REGION_GFX1, 0x0, &char1024,             256*0, 16 },
-		{ REGION_GFX2, 0x0, &tile2048,             256*3, 16 },
-		{ REGION_GFX3, 0x0, &gwar_sprite2048,      256*1, 16 },
-		{ REGION_GFX4, 0x0, &gwar_big_sprite1024,  256*2, 16 },
-		{ -1 }
+		new GfxDecodeInfo( REGION_GFX1, 0x0, char1024,             256*0, 16 ),
+		new GfxDecodeInfo( REGION_GFX2, 0x0, tile2048,             256*3, 16 ),
+		new GfxDecodeInfo( REGION_GFX3, 0x0, gwar_sprite2048,      256*1, 16 ),
+		new GfxDecodeInfo( REGION_GFX4, 0x0, gwar_big_sprite1024,  256*2, 16 ),
+		new GfxDecodeInfo( -1 )
 	};
 	
-	static struct GfxDecodeInfo bermudat_gfxdecodeinfo[] =
+	static GfxDecodeInfo bermudat_gfxdecodeinfo[] =
 	{
-		{ REGION_GFX1, 0x0, &char1024,             256*0, 16 },
-		{ REGION_GFX2, 0x0, &tile2048,             256*3, 16 },
-		{ REGION_GFX3, 0x0, &gwar_sprite1024,      256*1, 16 },
-		{ REGION_GFX4, 0x0, &gwar_big_sprite1024,  256*2, 16 },
-		{ -1 }
+		new GfxDecodeInfo( REGION_GFX1, 0x0, char1024,             256*0, 16 ),
+		new GfxDecodeInfo( REGION_GFX2, 0x0, tile2048,             256*3, 16 ),
+		new GfxDecodeInfo( REGION_GFX3, 0x0, gwar_sprite1024,      256*1, 16 ),
+		new GfxDecodeInfo( REGION_GFX4, 0x0, gwar_big_sprite1024,  256*2, 16 ),
+		new GfxDecodeInfo( -1 )
 	};
 	
-	static struct GfxDecodeInfo psychos_gfxdecodeinfo[] =
+	static GfxDecodeInfo psychos_gfxdecodeinfo[] =
 	{
-		{ REGION_GFX1, 0x0, &char1024,             256*0, 16 },
-		{ REGION_GFX2, 0x0, &tile2048,             256*3, 16 },
-		{ REGION_GFX3, 0x0, &gwar_sprite1024,      256*1, 16 },
-		{ REGION_GFX4, 0x0, &gwar_big_sprite1024,  256*2, 16 },
-		{ -1 }
+		new GfxDecodeInfo( REGION_GFX1, 0x0, char1024,             256*0, 16 ),
+		new GfxDecodeInfo( REGION_GFX2, 0x0, tile2048,             256*3, 16 ),
+		new GfxDecodeInfo( REGION_GFX3, 0x0, gwar_sprite1024,      256*1, 16 ),
+		new GfxDecodeInfo( REGION_GFX4, 0x0, gwar_big_sprite1024,  256*2, 16 ),
+		new GfxDecodeInfo( -1 )
 	};
 	
-	static struct GfxDecodeInfo tdfever_gfxdecodeinfo[] =
+	static GfxDecodeInfo tdfever_gfxdecodeinfo[] =
 	{
-		{ REGION_GFX1, 0x0, &char1024,					256*0, 16 },
-		{ REGION_GFX2, 0x0, &tdfever_tiles,				256*2, 16 },
-		{ REGION_GFX3, 0x0, &tdfever_big_sprite1024,	256*1, 16 },
-		{ -1 }
+		new GfxDecodeInfo( REGION_GFX1, 0x0, char1024,					256*0, 16 ),
+		new GfxDecodeInfo( REGION_GFX2, 0x0, tdfever_tiles,				256*2, 16 ),
+		new GfxDecodeInfo( REGION_GFX3, 0x0, tdfever_big_sprite1024,	256*1, 16 ),
+		new GfxDecodeInfo( -1 )
 	};
 	
 	

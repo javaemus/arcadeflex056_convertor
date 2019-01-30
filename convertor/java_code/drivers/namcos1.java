@@ -779,12 +779,12 @@ public class namcos1
 		32*4*8*4  /* every sprite takes 512 consecutive bytes */
 	);
 	
-	static struct GfxDecodeInfo gfxdecodeinfo[] =
+	static GfxDecodeInfo gfxdecodeinfo[] =
 	{
-		{ REGION_GFX1, 0, &charlayout,		 0,   1 },	/* character mask */
-		{ REGION_GFX2, 0, &tilelayout,	128*16,   6 },	/* characters */
-		{ REGION_GFX3, 0, &spritelayout,	 0, 128 },	/* sprites 32/16/8/4 dots */
-		{ -1 } /* end of array */
+		new GfxDecodeInfo( REGION_GFX1, 0, charlayout,		 0,   1 ),	/* character mask */
+		new GfxDecodeInfo( REGION_GFX2, 0, tilelayout,	128*16,   6 ),	/* characters */
+		new GfxDecodeInfo( REGION_GFX3, 0, spritelayout,	 0, 128 ),	/* sprites 32/16/8/4 dots */
+		new GfxDecodeInfo( -1 ) /* end of array */
 	};
 	
 	static void namcos1_sound_interrupt( int irq )

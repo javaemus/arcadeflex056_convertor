@@ -364,13 +364,13 @@ public class wwfwfest
 		32*8	/* every tile takes 32 consecutive bytes */
 	);
 	
-	static struct GfxDecodeInfo gfxdecodeinfo[] =
+	static GfxDecodeInfo gfxdecodeinfo[] =
 	{
-		{ REGION_GFX1, 0, &tiles8x8_layout, 0x0000, 16 },
-		{ REGION_GFX2, 0, &sprite_layout,   0x0400, 16 },
-		{ REGION_GFX3, 0, &tile_layout,     0x1000, 16 },
-		{ REGION_GFX3, 0, &tile_layout,     0x0c00, 16 },
-		{ -1 }
+		new GfxDecodeInfo( REGION_GFX1, 0, tiles8x8_layout, 0x0000, 16 ),
+		new GfxDecodeInfo( REGION_GFX2, 0, sprite_layout,   0x0400, 16 ),
+		new GfxDecodeInfo( REGION_GFX3, 0, tile_layout,     0x1000, 16 ),
+		new GfxDecodeInfo( REGION_GFX3, 0, tile_layout,     0x0c00, 16 ),
+		new GfxDecodeInfo( -1 )
 	};
 	
 	/*******************************************************************************

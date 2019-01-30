@@ -434,12 +434,12 @@ public class gyruss
 	
 	
 	
-	static struct GfxDecodeInfo gfxdecodeinfo[] =
+	static GfxDecodeInfo gfxdecodeinfo[] =
 	{
-		{ REGION_GFX1, 0x0000, &charlayout,      0, 16 },
-		{ REGION_GFX2, 0x0000, &spritelayout, 16*4, 16 },	/* upper half */
-		{ REGION_GFX2, 0x0010, &spritelayout, 16*4, 16 },	/* lower half */
-		{ -1 } /* end of array */
+		new GfxDecodeInfo( REGION_GFX1, 0x0000, charlayout,      0, 16 ),
+		new GfxDecodeInfo( REGION_GFX2, 0x0000, spritelayout, 16*4, 16 ),	/* upper half */
+		new GfxDecodeInfo( REGION_GFX2, 0x0010, spritelayout, 16*4, 16 ),	/* lower half */
+		new GfxDecodeInfo( -1 ) /* end of array */
 	};
 	
 	

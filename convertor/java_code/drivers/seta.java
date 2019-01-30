@@ -3590,57 +3590,57 @@ public class seta
 									Blandia
 	***************************************************************************/
 	
-	static struct GfxDecodeInfo blandia_gfxdecodeinfo[] =
+	static GfxDecodeInfo blandia_gfxdecodeinfo[] =
 	{
-		{ REGION_GFX1, 0, &layout_planes_2roms,       0,           32 }, // [0] Sprites
-		{ REGION_GFX2, 0, &layout_packed_6bits_3roms, 16*32+64*32, 32 }, // [1] Layer 1
-		{ REGION_GFX3, 0, &layout_packed_6bits_3roms, 16*32,       32 }, // [2] Layer 2
-		{ -1 }
+		new GfxDecodeInfo( REGION_GFX1, 0, layout_planes_2roms,       0,           32 ), // [0] Sprites
+		new GfxDecodeInfo( REGION_GFX2, 0, layout_packed_6bits_3roms, 16*32+64*32, 32 ), // [1] Layer 1
+		new GfxDecodeInfo( REGION_GFX3, 0, layout_packed_6bits_3roms, 16*32,       32 ), // [2] Layer 2
+		new GfxDecodeInfo( -1 )
 	};
 	
 	/***************************************************************************
 									DownTown
 	***************************************************************************/
 	
-	static struct GfxDecodeInfo downtown_gfxdecodeinfo[] =
+	static GfxDecodeInfo downtown_gfxdecodeinfo[] =
 	{
-		{ REGION_GFX1, 0, &layout_planes_2roms,       512*0, 32 }, // [0] Sprites
-		{ REGION_GFX2, 0, &layout_planes_2roms_split, 512*0, 32 }, // [1] Layer 1
-		{ -1 }
+		new GfxDecodeInfo( REGION_GFX1, 0, layout_planes_2roms,       512*0, 32 ), // [0] Sprites
+		new GfxDecodeInfo( REGION_GFX2, 0, layout_planes_2roms_split, 512*0, 32 ), // [1] Layer 1
+		new GfxDecodeInfo( -1 )
 	};
 	
 	/***************************************************************************
 									J.J.Squawkers
 	***************************************************************************/
 	
-	static struct GfxDecodeInfo jjsquawk_gfxdecodeinfo[] =
+	static GfxDecodeInfo jjsquawk_gfxdecodeinfo[] =
 	{
-		{ REGION_GFX1, 0, &layout_planes_2roms,       0,             32 }, // [0] Sprites
-		{ REGION_GFX2, 0, &layout_packed_6bits_2roms, 512 + 64*32*0, 32 }, // [1] Layer 1
-		{ REGION_GFX3, 0, &layout_packed_6bits_2roms, 512 + 64*32*1, 32 }, // [2] Layer 2
-		{ -1 }
+		new GfxDecodeInfo( REGION_GFX1, 0, layout_planes_2roms,       0,             32 ), // [0] Sprites
+		new GfxDecodeInfo( REGION_GFX2, 0, layout_packed_6bits_2roms, 512 + 64*32*0, 32 ), // [1] Layer 1
+		new GfxDecodeInfo( REGION_GFX3, 0, layout_packed_6bits_2roms, 512 + 64*32*1, 32 ), // [2] Layer 2
+		new GfxDecodeInfo( -1 )
 	};
 	
 	/***************************************************************************
 								Mobile Suit Gundam
 	***************************************************************************/
 	
-	static struct GfxDecodeInfo msgundam_gfxdecodeinfo[] =
+	static GfxDecodeInfo msgundam_gfxdecodeinfo[] =
 	{
-		{ REGION_GFX1, 0, &layout_planes_2roms, 512*0, 32 }, // [0] Sprites
-		{ REGION_GFX2, 0, &layout_packed,       512*2, 32 }, // [1] Layer 1
-		{ REGION_GFX3, 0, &layout_packed,       512*1, 32 }, // [2] Layer 2
-		{ -1 }
+		new GfxDecodeInfo( REGION_GFX1, 0, layout_planes_2roms, 512*0, 32 ), // [0] Sprites
+		new GfxDecodeInfo( REGION_GFX2, 0, layout_packed,       512*2, 32 ), // [1] Layer 1
+		new GfxDecodeInfo( REGION_GFX3, 0, layout_packed,       512*1, 32 ), // [2] Layer 2
+		new GfxDecodeInfo( -1 )
 	};
 	
 	/***************************************************************************
 									Thundercade
 	***************************************************************************/
 	
-	static struct GfxDecodeInfo tndrcade_gfxdecodeinfo[] =
+	static GfxDecodeInfo tndrcade_gfxdecodeinfo[] =
 	{
-		{ REGION_GFX1, 0, &layout_planes_2roms, 512*0, 32 }, // [0] Sprites
-		{ -1 }
+		new GfxDecodeInfo( REGION_GFX1, 0, layout_planes_2roms, 512*0, 32 ), // [0] Sprites
+		new GfxDecodeInfo( -1 )
 	};
 	
 	/***************************************************************************
@@ -3650,23 +3650,23 @@ public class seta
 	/* 6 bit layer. The colors are still WRONG.
 	   Remember there's a vh_init_palette function */
 	
-	static struct GfxDecodeInfo usclssic_gfxdecodeinfo[] =
+	static GfxDecodeInfo usclssic_gfxdecodeinfo[] =
 	{
-		{ REGION_GFX1, 0, &layout_planes_2roms,       512*0+256, 32/2 }, // [0] Sprites
-		{ REGION_GFX2, 0, &layout_packed_6bits_3roms, 512*1, 32 }, // [1] Layer 1
-		{ -1 }
+		new GfxDecodeInfo( REGION_GFX1, 0, layout_planes_2roms,       512*0+256, 32/2 ), // [0] Sprites
+		new GfxDecodeInfo( REGION_GFX2, 0, layout_packed_6bits_3roms, 512*1, 32 ), // [1] Layer 1
+		new GfxDecodeInfo( -1 )
 	};
 	
 	/***************************************************************************
 									Zing Zing Zip
 	***************************************************************************/
 	
-	static struct GfxDecodeInfo zingzip_gfxdecodeinfo[] =
+	static GfxDecodeInfo zingzip_gfxdecodeinfo[] =
 	{
-		{ REGION_GFX1, 0, &layout_planes_2roms,       512*0, 32 }, // [0] Sprites
-		{ REGION_GFX2, 0, &layout_packed_6bits_2roms, 512*2, 32 }, // [1] Layer 1
-		{ REGION_GFX3, 0, &layout_packed,             512*1, 32 }, // [2] Layer 2
-		{ -1 }
+		new GfxDecodeInfo( REGION_GFX1, 0, layout_planes_2roms,       512*0, 32 ), // [0] Sprites
+		new GfxDecodeInfo( REGION_GFX2, 0, layout_packed_6bits_2roms, 512*2, 32 ), // [1] Layer 1
+		new GfxDecodeInfo( REGION_GFX3, 0, layout_packed,             512*1, 32 ), // [2] Layer 2
+		new GfxDecodeInfo( -1 )
 	};
 	
 	

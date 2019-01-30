@@ -290,12 +290,12 @@ public class battlane
 	);
 	
 	
-	static struct GfxDecodeInfo gfxdecodeinfo[] =
+	static GfxDecodeInfo gfxdecodeinfo[] =
 	{
-		{ REGION_GFX1, 0, &spritelayout,  0, 2 },	/* colors 0x00-0x0f */
-		{ REGION_GFX2, 0, &tilelayout,   32, 4 },	/* colors 0x20-0x3f */
-		{ REGION_GFX2, 0, &tilelayout2,  32, 4 },	/* colors 0x20-0x3f */
-		{ -1 } /* end of array */
+		new GfxDecodeInfo( REGION_GFX1, 0, spritelayout,  0, 2 ),	/* colors 0x00-0x0f */
+		new GfxDecodeInfo( REGION_GFX2, 0, tilelayout,   32, 4 ),	/* colors 0x20-0x3f */
+		new GfxDecodeInfo( REGION_GFX2, 0, tilelayout2,  32, 4 ),	/* colors 0x20-0x3f */
+		new GfxDecodeInfo( -1 ) /* end of array */
 	};
 	
 	

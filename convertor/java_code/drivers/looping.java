@@ -311,11 +311,11 @@ public class looping
 		8*8*4
 	);
 	
-	static struct GfxDecodeInfo looping_gfxdecodeinfo[] =
+	static GfxDecodeInfo looping_gfxdecodeinfo[] =
 	{
-		{ REGION_GFX1, 0, &tile_layout,		0, 8 },
-		{ REGION_GFX1, 0, &sprite_layout,	0, 8 },
-		{ -1 }
+		new GfxDecodeInfo( REGION_GFX1, 0, tile_layout,		0, 8 ),
+		new GfxDecodeInfo( REGION_GFX1, 0, sprite_layout,	0, 8 ),
+		new GfxDecodeInfo( -1 )
 	};
 	
 	static struct TMS5220interface tms5220_interface =

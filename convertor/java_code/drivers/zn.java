@@ -169,9 +169,9 @@ public class zn
 		new IO_ReadPort(MEMPORT_MARKER, 0)
 	};
 	
-	static struct GfxDecodeInfo znqs_gfxdecodeinfo[] =
+	static GfxDecodeInfo znqs_gfxdecodeinfo[] =
 	{
-		{ -1 } /* end of array */
+		new GfxDecodeInfo( -1 ) /* end of array */
 	};
 	
 	static MEMORY_READ16_START( znqs_readmem )

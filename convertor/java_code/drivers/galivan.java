@@ -556,20 +556,20 @@ public class galivan
 	SPRITELAYOUT(1024);
 	
 	
-	static struct GfxDecodeInfo gfxdecodeinfo[] =
+	static GfxDecodeInfo gfxdecodeinfo[] =
 	{
-		{ REGION_GFX1, 0, &charlayout_512,            0,   8 },
-		{ REGION_GFX2, 0, &tilelayout,             8*16,  16 },
-		{ REGION_GFX3, 0, &spritelayout_512, 8*16+16*16, 256 },
-		{ -1 } /* end of array */
+		new GfxDecodeInfo( REGION_GFX1, 0, charlayout_512,            0,   8 ),
+		new GfxDecodeInfo( REGION_GFX2, 0, tilelayout,             8*16,  16 ),
+		new GfxDecodeInfo( REGION_GFX3, 0, spritelayout_512, 8*16+16*16, 256 ),
+		new GfxDecodeInfo( -1 ) /* end of array */
 	};
 	
-	static struct GfxDecodeInfo ninjemak_gfxdecodeinfo[] =
+	static GfxDecodeInfo ninjemak_gfxdecodeinfo[] =
 	{
-		{ REGION_GFX1, 0, &charlayout_1024,            0,   8 },
-		{ REGION_GFX2, 0, &tilelayout,              8*16,  16 },
-		{ REGION_GFX3, 0, &spritelayout_1024, 8*16+16*16, 256 },
-		{ -1 } /* end of array */
+		new GfxDecodeInfo( REGION_GFX1, 0, charlayout_1024,            0,   8 ),
+		new GfxDecodeInfo( REGION_GFX2, 0, tilelayout,              8*16,  16 ),
+		new GfxDecodeInfo( REGION_GFX3, 0, spritelayout_1024, 8*16+16*16, 256 ),
+		new GfxDecodeInfo( -1 ) /* end of array */
 	};
 	
 	

@@ -171,12 +171,12 @@ public class kncljoe
 		32*8
 	);
 	
-	static struct GfxDecodeInfo gfxdecodeinfo[] =
+	static GfxDecodeInfo gfxdecodeinfo[] =
 	{
-		{ REGION_GFX1, 0, &charlayout,   0x00, 16 },	/* colors 0x00-0x7f direct mapped */
-		{ REGION_GFX2, 0, &spritelayout, 0x80, 16 },	/* colors 0x80-0x8f with lookup table */
-		{ REGION_GFX3, 0, &spritelayout, 0x80, 16 },
-		{ -1 } /* end of array */
+		new GfxDecodeInfo( REGION_GFX1, 0, charlayout,   0x00, 16 ),	/* colors 0x00-0x7f direct mapped */
+		new GfxDecodeInfo( REGION_GFX2, 0, spritelayout, 0x80, 16 ),	/* colors 0x80-0x8f with lookup table */
+		new GfxDecodeInfo( REGION_GFX3, 0, spritelayout, 0x80, 16 ),
+		new GfxDecodeInfo( -1 ) /* end of array */
 	};
 	
 	

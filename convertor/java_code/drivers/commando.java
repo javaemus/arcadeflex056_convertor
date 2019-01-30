@@ -314,12 +314,12 @@ public class commando
 	
 	
 	
-	static struct GfxDecodeInfo gfxdecodeinfo[] =
+	static GfxDecodeInfo gfxdecodeinfo[] =
 	{
-		{ REGION_GFX1, 0, &charlayout,   192, 16 },	/* colors 192-255 */
-		{ REGION_GFX2, 0, &tilelayout,     0, 16 },	/* colors   0-127 */
-		{ REGION_GFX3, 0, &spritelayout, 128,  4 },	/* colors 128-191 */
-		{ -1 } /* end of array */
+		new GfxDecodeInfo( REGION_GFX1, 0, charlayout,   192, 16 ),	/* colors 192-255 */
+		new GfxDecodeInfo( REGION_GFX2, 0, tilelayout,     0, 16 ),	/* colors   0-127 */
+		new GfxDecodeInfo( REGION_GFX3, 0, spritelayout, 128,  4 ),	/* colors 128-191 */
+		new GfxDecodeInfo( -1 ) /* end of array */
 	};
 	
 	

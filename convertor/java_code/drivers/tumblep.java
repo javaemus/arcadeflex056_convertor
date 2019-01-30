@@ -278,13 +278,13 @@ public class tumblep
 		64*8
 	);
 	
-	static struct GfxDecodeInfo gfxdecodeinfo[] =
+	static GfxDecodeInfo gfxdecodeinfo[] =
 	{
-		{ REGION_GFX1, 0, &tcharlayout, 256, 16 },	/* Characters 8x8 */
-		{ REGION_GFX1, 0, &tlayout,     512, 16 },	/* Tiles 16x16 */
-		{ REGION_GFX1, 0, &tlayout,     256, 16 },	/* Tiles 16x16 */
-		{ REGION_GFX2, 0, &tlayout,       0, 16 },	/* Sprites 16x16 */
-		{ -1 } /* end of array */
+		new GfxDecodeInfo( REGION_GFX1, 0, tcharlayout, 256, 16 ),	/* Characters 8x8 */
+		new GfxDecodeInfo( REGION_GFX1, 0, tlayout,     512, 16 ),	/* Tiles 16x16 */
+		new GfxDecodeInfo( REGION_GFX1, 0, tlayout,     256, 16 ),	/* Tiles 16x16 */
+		new GfxDecodeInfo( REGION_GFX2, 0, tlayout,       0, 16 ),	/* Sprites 16x16 */
+		new GfxDecodeInfo( -1 ) /* end of array */
 	};
 	
 	/******************************************************************************/

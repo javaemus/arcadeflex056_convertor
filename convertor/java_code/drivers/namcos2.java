@@ -1052,13 +1052,13 @@ public class namcos2
 		8*64
 	);
 	
-	static struct GfxDecodeInfo gfxdecodeinfo[] =
+	static GfxDecodeInfo gfxdecodeinfo[] =
 	{
-		{ REGION_GFX1, 0x000000, &obj_layout,  0*256, 16 },
-		{ REGION_GFX1, 0x200000, &obj_layout,  0*256, 16 },
-		{ REGION_GFX2, 0x000000, &chr_layout, 16*256, 12 },
-		{ REGION_GFX3, 0x000000, &roz_layout, 28*256,  2 },
-		{ -1 }
+		new GfxDecodeInfo( REGION_GFX1, 0x000000, obj_layout,  0*256, 16 ),
+		new GfxDecodeInfo( REGION_GFX1, 0x200000, obj_layout,  0*256, 16 ),
+		new GfxDecodeInfo( REGION_GFX2, 0x000000, chr_layout, 16*256, 12 ),
+		new GfxDecodeInfo( REGION_GFX3, 0x000000, roz_layout, 28*256,  2 ),
+		new GfxDecodeInfo( -1 )
 	};
 	
 	

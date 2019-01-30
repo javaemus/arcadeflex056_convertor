@@ -638,12 +638,12 @@ public class karnov
 		16*16
 	);
 	
-	static struct GfxDecodeInfo karnov_gfxdecodeinfo[] =
+	static GfxDecodeInfo karnov_gfxdecodeinfo[] =
 	{
-		{ REGION_GFX1, 0, &chars,     0,  4 },	/* colors 0-31 */
-		{ REGION_GFX2, 0, &tiles,   512, 16 },	/* colors 512-767 */
-		{ REGION_GFX3, 0, &sprites, 256, 16 },	/* colors 256-511 */
-		{ -1 } /* end of array */
+		new GfxDecodeInfo( REGION_GFX1, 0, chars,     0,  4 ),	/* colors 0-31 */
+		new GfxDecodeInfo( REGION_GFX2, 0, tiles,   512, 16 ),	/* colors 512-767 */
+		new GfxDecodeInfo( REGION_GFX3, 0, sprites, 256, 16 ),	/* colors 256-511 */
+		new GfxDecodeInfo( -1 ) /* end of array */
 	};
 	
 	/******************************************************************************/

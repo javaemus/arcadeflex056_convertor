@@ -297,13 +297,13 @@ public class bking2
 		16*8    /* every sprite takes 16 consecutive bytes */
 	);
 	
-	static struct GfxDecodeInfo gfxdecodeinfo[] =
+	static GfxDecodeInfo gfxdecodeinfo[] =
 	{
-		{ REGION_GFX1, 0, &charlayout, 0,           4  }, /* playfield */
-		{ REGION_GFX2, 0, &crowlayout, 4*8,         4  }, /* crow */
-		{ REGION_GFX3, 0, &balllayout, 4*8+4*4,     4  }, /* ball 1 */
-		{ REGION_GFX4, 0, &balllayout, 4*8+4*4+4*2, 4  }, /* ball 2 */
-		{ -1 } /* end of array */
+		new GfxDecodeInfo( REGION_GFX1, 0, charlayout, 0,           4  ), /* playfield */
+		new GfxDecodeInfo( REGION_GFX2, 0, crowlayout, 4*8,         4  ), /* crow */
+		new GfxDecodeInfo( REGION_GFX3, 0, balllayout, 4*8+4*4,     4  ), /* ball 1 */
+		new GfxDecodeInfo( REGION_GFX4, 0, balllayout, 4*8+4*4+4*2, 4  ), /* ball 2 */
+		new GfxDecodeInfo( -1 ) /* end of array */
 	};
 	
 	

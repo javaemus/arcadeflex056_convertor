@@ -626,12 +626,12 @@ public class tehkanwc
 		64*8	/* every char takes 64 consecutive bytes */
 	);
 	
-	static struct GfxDecodeInfo gfxdecodeinfo[] =
+	static GfxDecodeInfo gfxdecodeinfo[] =
 	{
-		{ REGION_GFX1, 0, &charlayout,     0, 16 }, /* Colors 0 - 255 */
-		{ REGION_GFX2, 0, &spritelayout, 256,  8 }, /* Colors 256 - 383 */
-		{ REGION_GFX3, 0, &tilelayout,   512, 16 }, /* Colors 512 - 767 */
-		{ -1 } /* end of array */
+		new GfxDecodeInfo( REGION_GFX1, 0, charlayout,     0, 16 ), /* Colors 0 - 255 */
+		new GfxDecodeInfo( REGION_GFX2, 0, spritelayout, 256,  8 ), /* Colors 256 - 383 */
+		new GfxDecodeInfo( REGION_GFX3, 0, tilelayout,   512, 16 ), /* Colors 512 - 767 */
+		new GfxDecodeInfo( -1 ) /* end of array */
 	};
 	
 	

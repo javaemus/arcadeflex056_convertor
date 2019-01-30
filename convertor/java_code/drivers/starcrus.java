@@ -148,21 +148,21 @@ public class starcrus
 	    1 /* every sprite takes 1 consecutive bytes */
 	);
 	
-	static struct GfxDecodeInfo gfxdecodeinfo[] =
+	static GfxDecodeInfo gfxdecodeinfo[] =
 	{
-		{ REGION_GFX1, 0x0000, &spritelayout1, 0, 1 },
-	    { REGION_GFX1, 0x0040, &spritelayout1, 0, 1 },
-	    { REGION_GFX1, 0x0080, &spritelayout1, 0, 1 },
-	    { REGION_GFX1, 0x00c0, &spritelayout1, 0, 1 },
-	    { REGION_GFX2, 0x0000, &spritelayout1, 0, 1 },
-	    { REGION_GFX2, 0x0040, &spritelayout1, 0, 1 },
-	    { REGION_GFX2, 0x0080, &spritelayout1, 0, 1 },
-	    { REGION_GFX2, 0x00c0, &spritelayout1, 0, 1 },
-	    { REGION_GFX3, 0x0000, &spritelayout2, 0, 1 },
-	    { REGION_GFX3, 0x0100, &spritelayout2, 0, 1 },
-	    { REGION_GFX3, 0x0200, &spritelayout2, 0, 1 },
-	    { REGION_GFX3, 0x0300, &spritelayout2, 0, 1 },
-		{ -1 } /* end of array */
+		new GfxDecodeInfo( REGION_GFX1, 0x0000, spritelayout1, 0, 1 ),
+	    new GfxDecodeInfo( REGION_GFX1, 0x0040, spritelayout1, 0, 1 ),
+	    new GfxDecodeInfo( REGION_GFX1, 0x0080, spritelayout1, 0, 1 ),
+	    new GfxDecodeInfo( REGION_GFX1, 0x00c0, spritelayout1, 0, 1 ),
+	    new GfxDecodeInfo( REGION_GFX2, 0x0000, spritelayout1, 0, 1 ),
+	    new GfxDecodeInfo( REGION_GFX2, 0x0040, spritelayout1, 0, 1 ),
+	    new GfxDecodeInfo( REGION_GFX2, 0x0080, spritelayout1, 0, 1 ),
+	    new GfxDecodeInfo( REGION_GFX2, 0x00c0, spritelayout1, 0, 1 ),
+	    new GfxDecodeInfo( REGION_GFX3, 0x0000, spritelayout2, 0, 1 ),
+	    new GfxDecodeInfo( REGION_GFX3, 0x0100, spritelayout2, 0, 1 ),
+	    new GfxDecodeInfo( REGION_GFX3, 0x0200, spritelayout2, 0, 1 ),
+	    new GfxDecodeInfo( REGION_GFX3, 0x0300, spritelayout2, 0, 1 ),
+		new GfxDecodeInfo( -1 ) /* end of array */
 	};
 	
 	

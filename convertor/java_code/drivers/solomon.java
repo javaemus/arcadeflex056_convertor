@@ -199,12 +199,12 @@ public class solomon
 		32*8	/* every sprite takes 32 consecutive bytes */
 	);
 	
-	static struct GfxDecodeInfo gfxdecodeinfo[] =
+	static GfxDecodeInfo gfxdecodeinfo[] =
 	{
-		{ REGION_GFX1, 0, &charlayout,     0, 8 },	/* colors   0-127 */
-		{ REGION_GFX2, 0, &charlayout,   128, 8 },	/* colors 128-255 */
-		{ REGION_GFX3, 0, &spritelayout,   0, 8 },	/* colors   0-127 */
-		{ -1 } /* end of array */
+		new GfxDecodeInfo( REGION_GFX1, 0, charlayout,     0, 8 ),	/* colors   0-127 */
+		new GfxDecodeInfo( REGION_GFX2, 0, charlayout,   128, 8 ),	/* colors 128-255 */
+		new GfxDecodeInfo( REGION_GFX3, 0, spritelayout,   0, 8 ),	/* colors   0-127 */
+		new GfxDecodeInfo( -1 ) /* end of array */
 	};
 	
 	static struct AY8910interface ay8910_interface =

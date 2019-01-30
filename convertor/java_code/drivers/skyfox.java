@@ -232,10 +232,10 @@ public class skyfox
 									Sky Fox
 	***************************************************************************/
 	
-	static struct GfxDecodeInfo skyfox_gfxdecodeinfo[] =
+	static GfxDecodeInfo skyfox_gfxdecodeinfo[] =
 	{
-		{ REGION_GFX1, 0, &layout_8x8x8,   0, 1 }, // [0] Sprites
-		{ -1 }
+		new GfxDecodeInfo( REGION_GFX1, 0, layout_8x8x8,   0, 1 ), // [0] Sprites
+		new GfxDecodeInfo( -1 )
 	};
 	
 	

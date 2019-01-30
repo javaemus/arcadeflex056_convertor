@@ -274,19 +274,19 @@ public class exprraid
 	);
 	
 	
-	static struct GfxDecodeInfo gfxdecodeinfo[] =
+	static GfxDecodeInfo gfxdecodeinfo[] =
 	{
-		{ REGION_GFX1, 0x00000, &charlayout,   128, 2 }, /* characters */
-		{ REGION_GFX2, 0x00000, &spritelayout,  64, 8 }, /* sprites */
-		{ REGION_GFX3, 0x00000, &tile1,          0, 4 }, /* background tiles */
-		{ REGION_GFX3, 0x00000, &tile2,          0, 4 },
-		{ REGION_GFX3, 0x04000, &tile1,          0, 4 },
-		{ REGION_GFX3, 0x04000, &tile2,          0, 4 },
-		{ REGION_GFX3, 0x08000, &tile1,          0, 4 },
-		{ REGION_GFX3, 0x08000, &tile2,          0, 4 },
-		{ REGION_GFX3, 0x0c000, &tile1,          0, 4 },
-		{ REGION_GFX3, 0x0c000, &tile2,          0, 4 },
-		{ -1 } /* end of array */
+		new GfxDecodeInfo( REGION_GFX1, 0x00000, charlayout,   128, 2 ), /* characters */
+		new GfxDecodeInfo( REGION_GFX2, 0x00000, spritelayout,  64, 8 ), /* sprites */
+		new GfxDecodeInfo( REGION_GFX3, 0x00000, tile1,          0, 4 ), /* background tiles */
+		new GfxDecodeInfo( REGION_GFX3, 0x00000, tile2,          0, 4 ),
+		new GfxDecodeInfo( REGION_GFX3, 0x04000, tile1,          0, 4 ),
+		new GfxDecodeInfo( REGION_GFX3, 0x04000, tile2,          0, 4 ),
+		new GfxDecodeInfo( REGION_GFX3, 0x08000, tile1,          0, 4 ),
+		new GfxDecodeInfo( REGION_GFX3, 0x08000, tile2,          0, 4 ),
+		new GfxDecodeInfo( REGION_GFX3, 0x0c000, tile1,          0, 4 ),
+		new GfxDecodeInfo( REGION_GFX3, 0x0c000, tile2,          0, 4 ),
+		new GfxDecodeInfo( -1 ) /* end of array */
 	};
 	
 	

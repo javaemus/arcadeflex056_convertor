@@ -354,17 +354,17 @@ public class mpatrol
 	
 	
 	
-	static struct GfxDecodeInfo gfxdecodeinfo[] =
+	static GfxDecodeInfo gfxdecodeinfo[] =
 	{
-		{ REGION_GFX1, 0x0000, &charlayout,               0, 64 },
-		{ REGION_GFX2, 0x0000, &spritelayout,          64*4, 16 },
-		{ REGION_GFX3, 0x0000, &bgcharlayout, 64*4+16*4+0*4,  1 },	/* top half */
-		{ REGION_GFX3, 0x0800, &bgcharlayout, 64*4+16*4+0*4,  1 },	/* bottom half */
-		{ REGION_GFX4, 0x0000, &bgcharlayout, 64*4+16*4+1*4,  1 },	/* top half */
-		{ REGION_GFX4, 0x0800, &bgcharlayout, 64*4+16*4+1*4,  1 },	/* bottom half */
-		{ REGION_GFX5, 0x0000, &bgcharlayout, 64*4+16*4+2*4,  1 },	/* top half */
-		{ REGION_GFX5, 0x0800, &bgcharlayout, 64*4+16*4+2*4,  1 },	/* bottom half */
-		{ -1 } /* end of array */
+		new GfxDecodeInfo( REGION_GFX1, 0x0000, charlayout,               0, 64 ),
+		new GfxDecodeInfo( REGION_GFX2, 0x0000, spritelayout,          64*4, 16 ),
+		new GfxDecodeInfo( REGION_GFX3, 0x0000, bgcharlayout, 64*4+16*4+0*4,  1 ),	/* top half */
+		new GfxDecodeInfo( REGION_GFX3, 0x0800, bgcharlayout, 64*4+16*4+0*4,  1 ),	/* bottom half */
+		new GfxDecodeInfo( REGION_GFX4, 0x0000, bgcharlayout, 64*4+16*4+1*4,  1 ),	/* top half */
+		new GfxDecodeInfo( REGION_GFX4, 0x0800, bgcharlayout, 64*4+16*4+1*4,  1 ),	/* bottom half */
+		new GfxDecodeInfo( REGION_GFX5, 0x0000, bgcharlayout, 64*4+16*4+2*4,  1 ),	/* top half */
+		new GfxDecodeInfo( REGION_GFX5, 0x0800, bgcharlayout, 64*4+16*4+2*4,  1 ),	/* bottom half */
+		new GfxDecodeInfo( -1 ) /* end of array */
 	};
 	
 	

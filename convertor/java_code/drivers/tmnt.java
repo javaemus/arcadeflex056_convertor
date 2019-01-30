@@ -2677,10 +2677,10 @@ public class tmnt
 		new int[] { STEP8(0,8*8) },
 		8*8*8
 	);
-	static struct GfxDecodeInfo glfgreat_gfxdecodeinfo[] =
+	static GfxDecodeInfo glfgreat_gfxdecodeinfo[] =
 	{
-		{ REGION_GFX3, 0, &zoomlayout, 0x400, 1 },
-		{ -1 }
+		new GfxDecodeInfo( REGION_GFX3, 0, zoomlayout, 0x400, 1 ),
+		new GfxDecodeInfo( -1 )
 	};
 	
 	static const struct MachineDriver machine_driver_glfgreat =

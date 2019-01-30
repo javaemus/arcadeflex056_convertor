@@ -261,10 +261,10 @@ public class blmbycar
 	);
 	
 	/* Layers both use the first $20 color codes. Sprites the next $10 */
-	static struct GfxDecodeInfo blmbycar_gfxdecodeinfo[] =
+	static GfxDecodeInfo blmbycar_gfxdecodeinfo[] =
 	{
-		{ REGION_GFX1, 0, &layout_16x16x4, 0x0, 0x30 }, // [0] Layers + Sprites
-		{ -1 }
+		new GfxDecodeInfo( REGION_GFX1, 0, layout_16x16x4, 0x0, 0x30 ), // [0] Layers + Sprites
+		new GfxDecodeInfo( -1 )
 	};
 	
 	

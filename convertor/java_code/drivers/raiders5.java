@@ -244,14 +244,14 @@ public class raiders5
 	);
 	
 	
-	static struct GfxDecodeInfo gfxdecodeinfo[] =
+	static GfxDecodeInfo gfxdecodeinfo[] =
 	{
-		{ REGION_GFX1, 0x0000, &spritelayout, 512, 16 }, /* sprite */
-		{ REGION_GFX1, 0x4000, &spritelayout, 512, 16 }, /* sprite */
-		{ REGION_GFX1, 0x0000, &charlayout,     0, 16 }, /* FG */
-		{ REGION_GFX1, 0x8000, &charlayout,   256, 16 }, /* BG */
-		{ REGION_GFX1, 0x4000, &charlayout,   256, 16 }, /* BG (?)*/
-		{ -1 } /* end of array */
+		new GfxDecodeInfo( REGION_GFX1, 0x0000, spritelayout, 512, 16 ), /* sprite */
+		new GfxDecodeInfo( REGION_GFX1, 0x4000, spritelayout, 512, 16 ), /* sprite */
+		new GfxDecodeInfo( REGION_GFX1, 0x0000, charlayout,     0, 16 ), /* FG */
+		new GfxDecodeInfo( REGION_GFX1, 0x8000, charlayout,   256, 16 ), /* BG */
+		new GfxDecodeInfo( REGION_GFX1, 0x4000, charlayout,   256, 16 ), /* BG (?)*/
+		new GfxDecodeInfo( -1 ) /* end of array */
 	};
 	
 	/****************************************************************************/

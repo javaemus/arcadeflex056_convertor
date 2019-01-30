@@ -353,11 +353,11 @@ public class ultratnk
 		16*8
 	);
 	
-	static struct GfxDecodeInfo gfxdecodeinfo[] =
+	static GfxDecodeInfo gfxdecodeinfo[] =
 	{
-		{ REGION_GFX1, 0, &playfield_layout, 0, 4 }, 	/* playfield graphics */
-		{ REGION_GFX2, 0, &motion_layout,    0, 4 }, 	/* motion graphics */
-		{ -1 } /* end of array */
+		new GfxDecodeInfo( REGION_GFX1, 0, playfield_layout, 0, 4 ), 	/* playfield graphics */
+		new GfxDecodeInfo( REGION_GFX2, 0, motion_layout,    0, 4 ), 	/* motion graphics */
+		new GfxDecodeInfo( -1 ) /* end of array */
 	};
 	
 	

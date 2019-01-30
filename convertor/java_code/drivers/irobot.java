@@ -263,10 +263,10 @@ public class irobot
 	    16*8   /* every char takes 16 consecutive bytes */
 	);
 	
-	static struct GfxDecodeInfo gfxdecodeinfo[] =
+	static GfxDecodeInfo gfxdecodeinfo[] =
 	{
-	    { REGION_GFX1, 0, &charlayout, 64, 16 },
-		{ -1 }
+	    new GfxDecodeInfo( REGION_GFX1, 0, charlayout, 64, 16 ),
+		new GfxDecodeInfo( -1 )
 	};
 	
 	static struct POKEYinterface pokey_interface =

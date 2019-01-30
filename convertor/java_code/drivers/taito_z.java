@@ -2270,29 +2270,29 @@ public class taito_z
 		128*8     /* every sprite takes 128 consecutive bytes */
 	);
 	
-	static struct GfxDecodeInfo taitoz_gfxdecodeinfo[] =
+	static GfxDecodeInfo taitoz_gfxdecodeinfo[] =
 	{
-		{ REGION_GFX2, 0x0, &tile16x8_layout,  0, 256 },	/* sprite parts */
-		{ REGION_GFX1, 0x0, &charlayout,  0, 256 },		/* sprites & playfield */
-		{ -1 } /* end of array */
+		new GfxDecodeInfo( REGION_GFX2, 0x0, tile16x8_layout,  0, 256 ),	/* sprite parts */
+		new GfxDecodeInfo( REGION_GFX1, 0x0, charlayout,  0, 256 ),		/* sprites  playfield */
+		new GfxDecodeInfo( -1 ) /* end of array */
 	};
 	
 	/* taitoic.c TC0100SCN routines expect scr stuff to be in second gfx
 	   slot, so 2nd batch of obj must be placed third */
 	
-	static struct GfxDecodeInfo chasehq_gfxdecodeinfo[] =
+	static GfxDecodeInfo chasehq_gfxdecodeinfo[] =
 	{
-		{ REGION_GFX2, 0x0, &tile16x16_layout,  0, 256 },	/* sprite parts */
-		{ REGION_GFX1, 0x0, &charlayout,  0, 256 },		/* sprites & playfield */
-		{ REGION_GFX4, 0x0, &tile16x16_layout,  0, 256 },	/* sprite parts */
-		{ -1 } /* end of array */
+		new GfxDecodeInfo( REGION_GFX2, 0x0, tile16x16_layout,  0, 256 ),	/* sprite parts */
+		new GfxDecodeInfo( REGION_GFX1, 0x0, charlayout,  0, 256 ),		/* sprites  playfield */
+		new GfxDecodeInfo( REGION_GFX4, 0x0, tile16x16_layout,  0, 256 ),	/* sprite parts */
+		new GfxDecodeInfo( -1 ) /* end of array */
 	};
 	
-	static struct GfxDecodeInfo dblaxle_gfxdecodeinfo[] =
+	static GfxDecodeInfo dblaxle_gfxdecodeinfo[] =
 	{
-		{ REGION_GFX2, 0x0, &tile16x8_layout,  0, 256 },	/* sprite parts */
-		{ REGION_GFX1, 0x0, &dblaxle_charlayout,  0, 256 },	/* sprites & playfield */
-		{ -1 } /* end of array */
+		new GfxDecodeInfo( REGION_GFX2, 0x0, tile16x8_layout,  0, 256 ),	/* sprite parts */
+		new GfxDecodeInfo( REGION_GFX1, 0x0, dblaxle_charlayout,  0, 256 ),	/* sprites  playfield */
+		new GfxDecodeInfo( -1 ) /* end of array */
 	};
 	
 	

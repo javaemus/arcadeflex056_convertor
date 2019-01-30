@@ -420,13 +420,13 @@ public class polepos
 		16*16*2  /* each sprite takes 64 consecutive bytes */
 	);
 	
-	static struct GfxDecodeInfo gfxdecodeinfo[] =
+	static GfxDecodeInfo gfxdecodeinfo[] =
 	{
-		{ REGION_GFX1, 0, &charlayout_2bpp,   0x0000, 128 },
-		{ REGION_GFX2, 0, &charlayout_2bpp,   0x0200, 128 },
-		{ REGION_GFX3, 0, &smallspritelayout, 0x0400, 128 },
-		{ REGION_GFX4, 0, &bigspritelayout,   0x0400, 128 },
-		{ -1 } /* end of array */
+		new GfxDecodeInfo( REGION_GFX1, 0, charlayout_2bpp,   0x0000, 128 ),
+		new GfxDecodeInfo( REGION_GFX2, 0, charlayout_2bpp,   0x0200, 128 ),
+		new GfxDecodeInfo( REGION_GFX3, 0, smallspritelayout, 0x0400, 128 ),
+		new GfxDecodeInfo( REGION_GFX4, 0, bigspritelayout,   0x0400, 128 ),
+		new GfxDecodeInfo( -1 ) /* end of array */
 	};
 	
 	

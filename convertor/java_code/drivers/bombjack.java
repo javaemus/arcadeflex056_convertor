@@ -300,13 +300,13 @@ public class bombjack
 		128*8	/* every sprite takes 128 consecutive bytes */
 	);
 	
-	static struct GfxDecodeInfo gfxdecodeinfo[] =
+	static GfxDecodeInfo gfxdecodeinfo[] =
 	{
-		{ REGION_GFX1, 0x0000, &charlayout1,      0, 16 },	/* characters */
-		{ REGION_GFX2, 0x0000, &charlayout2,      0, 16 },	/* background tiles */
-		{ REGION_GFX3, 0x0000, &spritelayout1,    0, 16 },	/* normal sprites */
-		{ REGION_GFX3, 0x1000, &spritelayout2,    0, 16 },	/* large sprites */
-		{ -1 } /* end of array */
+		new GfxDecodeInfo( REGION_GFX1, 0x0000, charlayout1,      0, 16 ),	/* characters */
+		new GfxDecodeInfo( REGION_GFX2, 0x0000, charlayout2,      0, 16 ),	/* background tiles */
+		new GfxDecodeInfo( REGION_GFX3, 0x0000, spritelayout1,    0, 16 ),	/* normal sprites */
+		new GfxDecodeInfo( REGION_GFX3, 0x1000, spritelayout2,    0, 16 ),	/* large sprites */
+		new GfxDecodeInfo( -1 ) /* end of array */
 	};
 	
 	

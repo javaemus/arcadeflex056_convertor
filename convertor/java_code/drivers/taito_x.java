@@ -911,16 +911,16 @@ public class taito_x
 		32*8	/* every sprite takes 64 consecutive bytes */
 	);
 	
-	static struct GfxDecodeInfo superman_gfxdecodeinfo[] =
+	static GfxDecodeInfo superman_gfxdecodeinfo[] =
 	{
-		{ REGION_GFX1, 0x000000, &tilelayout,    0, 256 },	 /* sprites & playfield */
-		{ -1 } /* end of array */
+		new GfxDecodeInfo( REGION_GFX1, 0x000000, tilelayout,    0, 256 ),	 /* sprites  playfield */
+		new GfxDecodeInfo( -1 ) /* end of array */
 	};
 	
-	static struct GfxDecodeInfo ballbros_gfxdecodeinfo[] =
+	static GfxDecodeInfo ballbros_gfxdecodeinfo[] =
 	{
-		{ REGION_GFX1, 0x000000, &ballbros_tilelayout,    0, 256 },	 /* sprites & playfield */
-		{ -1 } /* end of array */
+		new GfxDecodeInfo( REGION_GFX1, 0x000000, ballbros_tilelayout,    0, 256 ),	 /* sprites  playfield */
+		new GfxDecodeInfo( -1 ) /* end of array */
 	};
 	
 	

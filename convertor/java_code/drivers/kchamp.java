@@ -410,13 +410,13 @@ public class kchamp
 		16*8	/* ofset to next tile */
 	);
 	
-	static struct GfxDecodeInfo gfxdecodeinfo[] =
+	static GfxDecodeInfo gfxdecodeinfo[] =
 	{
-		{ REGION_GFX1, 0x00000, &tilelayout,	32*4, 32 },
-		{ REGION_GFX2, 0x08000, &spritelayout,	0, 16 },
-		{ REGION_GFX2, 0x04000, &spritelayout,	0, 16 },
-		{ REGION_GFX2, 0x00000, &spritelayout,	0, 16 },
-		{ -1 }
+		new GfxDecodeInfo( REGION_GFX1, 0x00000, tilelayout,	32*4, 32 ),
+		new GfxDecodeInfo( REGION_GFX2, 0x08000, spritelayout,	0, 16 ),
+		new GfxDecodeInfo( REGION_GFX2, 0x04000, spritelayout,	0, 16 ),
+		new GfxDecodeInfo( REGION_GFX2, 0x00000, spritelayout,	0, 16 ),
+		new GfxDecodeInfo( -1 )
 	};
 	
 	

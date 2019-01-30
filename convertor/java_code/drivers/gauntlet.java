@@ -666,11 +666,11 @@ public class gauntlet
 	);
 	
 	
-	static struct GfxDecodeInfo gfxdecodeinfo[] =
+	static GfxDecodeInfo gfxdecodeinfo[] =
 	{
-		{ REGION_GFX2, 0, &pfmolayout,  256, 32 },
-		{ REGION_GFX1, 0, &anlayout,      0, 64 },
-		{ -1 }
+		new GfxDecodeInfo( REGION_GFX2, 0, pfmolayout,  256, 32 ),
+		new GfxDecodeInfo( REGION_GFX1, 0, anlayout,      0, 64 ),
+		new GfxDecodeInfo( -1 )
 	};
 	
 	

@@ -1252,66 +1252,66 @@ public class m62
 	);
 	
 	
-	static struct GfxDecodeInfo kungfum_gfxdecodeinfo[] =
+	static GfxDecodeInfo kungfum_gfxdecodeinfo[] =
 	{
-		{ REGION_GFX1, 0, &tilelayout_1024,       0, 32 },	/* use colors   0-255 */
-		{ REGION_GFX2, 0, &spritelayout,        256, 32 },	/* use colors 256-511 */
-		{ -1 } /* end of array */
+		new GfxDecodeInfo( REGION_GFX1, 0, tilelayout_1024,       0, 32 ),	/* use colors   0-255 */
+		new GfxDecodeInfo( REGION_GFX2, 0, spritelayout,        256, 32 ),	/* use colors 256-511 */
+		new GfxDecodeInfo( -1 ) /* end of array */
 	};
 	
-	static struct GfxDecodeInfo battroad_gfxdecodeinfo[] =
+	static GfxDecodeInfo battroad_gfxdecodeinfo[] =
 	{
-		{ REGION_GFX1, 0, &tilelayout_1024,       0, 32 },	/* use colors   0-255 */
-		{ REGION_GFX2, 0, &spritelayout,        256, 32 },	/* use colors 256-511 */
-		{ REGION_GFX3, 0, &battroad_charlayout,	512, 32 },	/* use colors 512-543 */
-		{ -1 } /* end of array */
+		new GfxDecodeInfo( REGION_GFX1, 0, tilelayout_1024,       0, 32 ),	/* use colors   0-255 */
+		new GfxDecodeInfo( REGION_GFX2, 0, spritelayout,        256, 32 ),	/* use colors 256-511 */
+		new GfxDecodeInfo( REGION_GFX3, 0, battroad_charlayout,	512, 32 ),	/* use colors 512-543 */
+		new GfxDecodeInfo( -1 ) /* end of array */
 	};
 	
-	static struct GfxDecodeInfo ldrun3_gfxdecodeinfo[] =
+	static GfxDecodeInfo ldrun3_gfxdecodeinfo[] =
 	{
-		{ REGION_GFX1, 0, &tilelayout_2048,      0, 32 },	/* use colors   0-255 */
-		{ REGION_GFX2, 0, &spritelayout,       256, 32 },	/* use colors 256-511 */
-		{ -1 } /* end of array */
+		new GfxDecodeInfo( REGION_GFX1, 0, tilelayout_2048,      0, 32 ),	/* use colors   0-255 */
+		new GfxDecodeInfo( REGION_GFX2, 0, spritelayout,       256, 32 ),	/* use colors 256-511 */
+		new GfxDecodeInfo( -1 ) /* end of array */
 	};
 	
-	static struct GfxDecodeInfo lotlot_gfxdecodeinfo[] =
+	static GfxDecodeInfo lotlot_gfxdecodeinfo[] =
 	{
-		{ REGION_GFX1, 0, &lotlot_charlayout,    0, 32 },	/* use colors   0-255 */
-		{ REGION_GFX2, 0, &spritelayout,       256, 32 },	/* use colors 256-511 */
-		{ REGION_GFX3, 0, &lotlot_charlayout,  512, 32 },	/* use colors 512-767 */
-		{ -1 } /* end of array */
+		new GfxDecodeInfo( REGION_GFX1, 0, lotlot_charlayout,    0, 32 ),	/* use colors   0-255 */
+		new GfxDecodeInfo( REGION_GFX2, 0, spritelayout,       256, 32 ),	/* use colors 256-511 */
+		new GfxDecodeInfo( REGION_GFX3, 0, lotlot_charlayout,  512, 32 ),	/* use colors 512-767 */
+		new GfxDecodeInfo( -1 ) /* end of array */
 	};
 	
-	static struct GfxDecodeInfo kidniki_gfxdecodeinfo[] =
+	static GfxDecodeInfo kidniki_gfxdecodeinfo[] =
 	{
-		{ REGION_GFX1, 0, &tilelayout_4096,      0, 32 },	/* use colors   0-255 */
-		{ REGION_GFX2, 0, &spritelayout,       256, 32 },	/* use colors 256-511 */
-		{ REGION_GFX3, 0, &kidniki_charlayout,   0, 32 },	/* use colors   0-255 */
-		{ -1 } /* end of array */
+		new GfxDecodeInfo( REGION_GFX1, 0, tilelayout_4096,      0, 32 ),	/* use colors   0-255 */
+		new GfxDecodeInfo( REGION_GFX2, 0, spritelayout,       256, 32 ),	/* use colors 256-511 */
+		new GfxDecodeInfo( REGION_GFX3, 0, kidniki_charlayout,   0, 32 ),	/* use colors   0-255 */
+		new GfxDecodeInfo( -1 ) /* end of array */
 	};
 	
-	static struct GfxDecodeInfo spelunkr_gfxdecodeinfo[] =
+	static GfxDecodeInfo spelunkr_gfxdecodeinfo[] =
 	{
-		{ REGION_GFX1, 0, &tilelayout_4096,	     0, 32 },	/* use colors   0-255 */
-		{ REGION_GFX2, 0, &spritelayout,       256, 32 },	/* use colors 256-511 */
-		{ REGION_GFX3, 0, &spelunk2_charlayout,  0, 32 },	/* use colors   0-255 */
-		{ -1 } /* end of array */
+		new GfxDecodeInfo( REGION_GFX1, 0, tilelayout_4096,	     0, 32 ),	/* use colors   0-255 */
+		new GfxDecodeInfo( REGION_GFX2, 0, spritelayout,       256, 32 ),	/* use colors 256-511 */
+		new GfxDecodeInfo( REGION_GFX3, 0, spelunk2_charlayout,  0, 32 ),	/* use colors   0-255 */
+		new GfxDecodeInfo( -1 ) /* end of array */
 	};
 	
-	static struct GfxDecodeInfo spelunk2_gfxdecodeinfo[] =
+	static GfxDecodeInfo spelunk2_gfxdecodeinfo[] =
 	{
-		{ REGION_GFX1, 0, &tilelayout_4096,	     0, 64 },	/* use colors   0-511 */
-		{ REGION_GFX2, 0, &spritelayout,       512, 32 },	/* use colors 512-767 */
-		{ REGION_GFX3, 0, &spelunk2_charlayout,  0, 64 },	/* use colors   0-511 */
-		{ -1 } /* end of array */
+		new GfxDecodeInfo( REGION_GFX1, 0, tilelayout_4096,	     0, 64 ),	/* use colors   0-511 */
+		new GfxDecodeInfo( REGION_GFX2, 0, spritelayout,       512, 32 ),	/* use colors 512-767 */
+		new GfxDecodeInfo( REGION_GFX3, 0, spelunk2_charlayout,  0, 64 ),	/* use colors   0-511 */
+		new GfxDecodeInfo( -1 ) /* end of array */
 	};
 	
-	static struct GfxDecodeInfo youjyudn_gfxdecodeinfo[] =
+	static GfxDecodeInfo youjyudn_gfxdecodeinfo[] =
 	{
-		{ REGION_GFX1, 0, &youjyudn_tilelayout,  0, 32 },	/* use colors   0-255 */
-		{ REGION_GFX2, 0, &spritelayout,       256, 32 },	/* use colors 256-511 */
-		{ REGION_GFX3, 0, &kidniki_charlayout, 128, 16 },	/* use colors 128-255 */
-		{ -1 } /* end of array */
+		new GfxDecodeInfo( REGION_GFX1, 0, youjyudn_tilelayout,  0, 32 ),	/* use colors   0-255 */
+		new GfxDecodeInfo( REGION_GFX2, 0, spritelayout,       256, 32 ),	/* use colors 256-511 */
+		new GfxDecodeInfo( REGION_GFX3, 0, kidniki_charlayout, 128, 16 ),	/* use colors 128-255 */
+		new GfxDecodeInfo( -1 ) /* end of array */
 	};
 	
 	

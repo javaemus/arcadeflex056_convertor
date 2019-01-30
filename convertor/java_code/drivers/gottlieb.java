@@ -1297,18 +1297,18 @@ public class gottlieb
 		32*8
 	);
 	
-	static struct GfxDecodeInfo charRAM_gfxdecodeinfo[] =
+	static GfxDecodeInfo charRAM_gfxdecodeinfo[] =
 	{
-		{ 0,           0x4000, &charRAMlayout, 0, 1 },	/* the game dynamically modifies this */
-		{ REGION_GFX2, 0x0000, &spritelayout,  0, 1 },
-		{ -1 } /* end of array */
+		new GfxDecodeInfo( 0,           0x4000, charRAMlayout, 0, 1 ),	/* the game dynamically modifies this */
+		new GfxDecodeInfo( REGION_GFX2, 0x0000, spritelayout,  0, 1 ),
+		new GfxDecodeInfo( -1 ) /* end of array */
 	};
 	
-	static struct GfxDecodeInfo charROM_gfxdecodeinfo[] =
+	static GfxDecodeInfo charROM_gfxdecodeinfo[] =
 	{
-		{ REGION_GFX1, 0x0000, &charROMlayout, 0, 1 },
-		{ REGION_GFX2, 0x0000, &spritelayout,  0, 1 },
-		{ -1 } /* end of array */
+		new GfxDecodeInfo( REGION_GFX1, 0x0000, charROMlayout, 0, 1 ),
+		new GfxDecodeInfo( REGION_GFX2, 0x0000, spritelayout,  0, 1 ),
+		new GfxDecodeInfo( -1 ) /* end of array */
 	};
 	
 	

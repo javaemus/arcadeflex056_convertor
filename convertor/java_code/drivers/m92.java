@@ -1074,18 +1074,18 @@ public class m92
 		32*8
 	);
 	
-	static struct GfxDecodeInfo gfxdecodeinfo[] =
+	static GfxDecodeInfo gfxdecodeinfo[] =
 	{
-		{ REGION_GFX1, 0, &charlayout,   0, 128 },
-		{ REGION_GFX2, 0, &spritelayout, 0, 128 },
-		{ -1 } /* end of array */
+		new GfxDecodeInfo( REGION_GFX1, 0, charlayout,   0, 128 ),
+		new GfxDecodeInfo( REGION_GFX2, 0, spritelayout, 0, 128 ),
+		new GfxDecodeInfo( -1 ) /* end of array */
 	};
 	
-	static struct GfxDecodeInfo gfxdecodeinfo2[] =
+	static GfxDecodeInfo gfxdecodeinfo2[] =
 	{
-		{ REGION_GFX1, 0, &charlayout,    0, 128 },
-		{ REGION_GFX2, 0, &spritelayout2, 0, 128 },
-		{ -1 } /* end of array */
+		new GfxDecodeInfo( REGION_GFX1, 0, charlayout,    0, 128 ),
+		new GfxDecodeInfo( REGION_GFX2, 0, spritelayout2, 0, 128 ),
+		new GfxDecodeInfo( -1 ) /* end of array */
 	};
 	
 	/***************************************************************************/

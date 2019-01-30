@@ -442,14 +442,14 @@ public class cvs
 		8*16
 	);
 	
-	static struct GfxDecodeInfo cvs_gfxdecodeinfo[] =
+	static GfxDecodeInfo cvs_gfxdecodeinfo[] =
 	{
-		{ REGION_GFX1, 0x0000, &charlayout8colour, 0, 259 },	/* Rom chars */
-		{ REGION_CPU1, 0x7c00, &charlayout8colour, 0, 259 },	/* Ram chars */
-	  	{ REGION_CPU1, 0x0000, &s2636_character10, 2072, 8 },	/* s2636 #1  */
-	  	{ REGION_CPU1, 0x0000, &s2636_character10, 2072, 8 },	/* s2636 #2  */
-	  	{ REGION_CPU1, 0x0000, &s2636_character10, 2072, 8 },	/* s2636 #3  */
-		{ -1 } /* end of array */
+		new GfxDecodeInfo( REGION_GFX1, 0x0000, charlayout8colour, 0, 259 ),	/* Rom chars */
+		new GfxDecodeInfo( REGION_CPU1, 0x7c00, charlayout8colour, 0, 259 ),	/* Ram chars */
+	  	new GfxDecodeInfo( REGION_CPU1, 0x0000, s2636_character10, 2072, 8 ),	/* s2636 #1  */
+	  	new GfxDecodeInfo( REGION_CPU1, 0x0000, s2636_character10, 2072, 8 ),	/* s2636 #2  */
+	  	new GfxDecodeInfo( REGION_CPU1, 0x0000, s2636_character10, 2072, 8 ),	/* s2636 #3  */
+		new GfxDecodeInfo( -1 ) /* end of array */
 	};
 	
 	static struct MachineDriver machine_driver_cvs =

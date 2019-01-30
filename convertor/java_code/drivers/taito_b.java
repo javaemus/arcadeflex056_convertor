@@ -2438,11 +2438,11 @@ public class taito_b
 		64*8
 	);
 	
-	static struct GfxDecodeInfo gfxdecodeinfo[] =
+	static GfxDecodeInfo gfxdecodeinfo[] =
 	{
-		{ REGION_GFX1, 0, &charlayout,  0, 256 },  /* text */
-		{ REGION_GFX1, 0, &tilelayout,  0, 256 },  /* sprites & playfield */
-		{ -1 } /* end of array */
+		new GfxDecodeInfo( REGION_GFX1, 0, charlayout,  0, 256 ),  /* text */
+		new GfxDecodeInfo( REGION_GFX1, 0, tilelayout,  0, 256 ),  /* sprites  playfield */
+		new GfxDecodeInfo( -1 ) /* end of array */
 	};
 	
 	static GfxLayout rambo3_charlayout = new GfxLayout
@@ -2468,11 +2468,11 @@ public class taito_b
 		32*8
 	);
 	
-	static struct GfxDecodeInfo rambo3_gfxdecodeinfo[] =
+	static GfxDecodeInfo rambo3_gfxdecodeinfo[] =
 	{
-		{ REGION_GFX1, 0, &rambo3_charlayout,  0, 256 },  /* text */
-		{ REGION_GFX1, 0, &rambo3_tilelayout,  0, 256 },  /* sprites & playfield */
-		{ -1 } /* end of array */
+		new GfxDecodeInfo( REGION_GFX1, 0, rambo3_charlayout,  0, 256 ),  /* text */
+		new GfxDecodeInfo( REGION_GFX1, 0, rambo3_tilelayout,  0, 256 ),  /* sprites  playfield */
+		new GfxDecodeInfo( -1 ) /* end of array */
 	};
 	
 	

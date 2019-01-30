@@ -2065,25 +2065,25 @@ public class kaneko16
 		16*16*8
 	);
 	
-	static struct GfxDecodeInfo kaneko16_gfx_1x4bit_1x4bit[] =
+	static GfxDecodeInfo kaneko16_gfx_1x4bit_1x4bit[] =
 	{
-		{ REGION_GFX1, 0, &layout_16x16x4, 0,			0x40 }, // [0] Sprites
-		{ REGION_GFX2, 0, &layout_16x16x4, 0x40 * 16,	0x40 }, // [1] Layers
-		{ -1 }
+		new GfxDecodeInfo( REGION_GFX1, 0, layout_16x16x4, 0,			0x40 ), // [0] Sprites
+		new GfxDecodeInfo( REGION_GFX2, 0, layout_16x16x4, 0x40 * 16,	0x40 ), // [1] Layers
+		new GfxDecodeInfo( -1 )
 	};
-	static struct GfxDecodeInfo kaneko16_gfx_1x4bit_2x4bit[] =
+	static GfxDecodeInfo kaneko16_gfx_1x4bit_2x4bit[] =
 	{
-		{ REGION_GFX1, 0, &layout_16x16x4, 0,			0x40 }, // [0] Sprites
-		{ REGION_GFX2, 0, &layout_16x16x4, 0x40 * 16,	0x40 }, // [1] Layers
-		{ REGION_GFX3, 0, &layout_16x16x4, 0x40 * 16,	0x40 }, // [2] Layers
-		{ -1 }
+		new GfxDecodeInfo( REGION_GFX1, 0, layout_16x16x4, 0,			0x40 ), // [0] Sprites
+		new GfxDecodeInfo( REGION_GFX2, 0, layout_16x16x4, 0x40 * 16,	0x40 ), // [1] Layers
+		new GfxDecodeInfo( REGION_GFX3, 0, layout_16x16x4, 0x40 * 16,	0x40 ), // [2] Layers
+		new GfxDecodeInfo( -1 )
 	};
-	static struct GfxDecodeInfo kaneko16_gfx_1x8bit_2x4bit[] =
+	static GfxDecodeInfo kaneko16_gfx_1x8bit_2x4bit[] =
 	{
-		{ REGION_GFX1, 0, &layout_16x16x8,	0x40 * 256,	0x40 }, // [0] Sprites
-		{ REGION_GFX2, 0, &layout_16x16x4,	0,			0x40 }, // [1] Layers
-		{ REGION_GFX3, 0, &layout_16x16x4,	0,			0x40 }, // [2] Layers
-		{ -1 }
+		new GfxDecodeInfo( REGION_GFX1, 0, layout_16x16x8,	0x40 * 256,	0x40 ), // [0] Sprites
+		new GfxDecodeInfo( REGION_GFX2, 0, layout_16x16x4,	0,			0x40 ), // [1] Layers
+		new GfxDecodeInfo( REGION_GFX3, 0, layout_16x16x4,	0,			0x40 ), // [2] Layers
+		new GfxDecodeInfo( -1 )
 	};
 	
 	/* 16x16x4 tiles (made of four 8x8 tiles) */
@@ -2098,11 +2098,11 @@ public class kaneko16
 		new int[] { STEP8(8*8*4*0, 8*4),     STEP8(8*8*4*2, 8*4) },
 		16*16*4
 	);
-	static struct GfxDecodeInfo sandscrp_gfxdecodeinfo[] =
+	static GfxDecodeInfo sandscrp_gfxdecodeinfo[] =
 	{
-		{ REGION_GFX1, 0, &layout_16x16x4,   0x000, 0x10 }, // [0] Sprites
-		{ REGION_GFX2, 0, &layout_16x16x4_2, 0x400, 0x40 }, // [1] Layers
-		{ -1 }
+		new GfxDecodeInfo( REGION_GFX1, 0, layout_16x16x4,   0x000, 0x10 ), // [0] Sprites
+		new GfxDecodeInfo( REGION_GFX2, 0, layout_16x16x4_2, 0x400, 0x40 ), // [1] Layers
+		new GfxDecodeInfo( -1 )
 	};
 	
 	

@@ -539,11 +539,11 @@ public class ddragon3
 		32*8	/* every tile takes 32 consecutive bytes */
 	);
 	
-	static struct GfxDecodeInfo ddragon3_gfxdecodeinfo[] =
+	static GfxDecodeInfo ddragon3_gfxdecodeinfo[] =
 	{
-		{ REGION_GFX1, 0, &tile_layout,   256, 32 },
-		{ REGION_GFX2, 0, &sprite_layout,		0, 16 },
-		{ -1 }
+		new GfxDecodeInfo( REGION_GFX1, 0, tile_layout,   256, 32 ),
+		new GfxDecodeInfo( REGION_GFX2, 0, sprite_layout,		0, 16 ),
+		new GfxDecodeInfo( -1 )
 	};
 	
 	/***************************************************************************/

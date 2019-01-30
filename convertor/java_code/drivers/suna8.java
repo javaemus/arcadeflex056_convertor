@@ -1638,10 +1638,10 @@ public class suna8
 		8*8*2
 	);
 	
-	static struct GfxDecodeInfo suna8_gfxdecodeinfo[] =
+	static GfxDecodeInfo suna8_gfxdecodeinfo[] =
 	{
-		{ REGION_GFX1, 0, &layout_8x8x4, 0, 16 }, // [0] Sprites
-		{ -1 }
+		new GfxDecodeInfo( REGION_GFX1, 0, layout_8x8x4, 0, 16 ), // [0] Sprites
+		new GfxDecodeInfo( -1 )
 	};
 	
 	

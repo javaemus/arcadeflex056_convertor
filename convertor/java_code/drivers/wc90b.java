@@ -339,27 +339,27 @@ public class wc90b
 		32*8	/* every char takes 128 consecutive bytes */
 	);
 	
-	static struct GfxDecodeInfo gfxdecodeinfo[] =
+	static GfxDecodeInfo gfxdecodeinfo[] =
 	{
-		{ REGION_GFX1, 0x00000, &charlayout,      	1*16*16, 16*16 },
-		{ REGION_GFX2, 0x00000, &tilelayout,			2*16*16, 16*16 },
-		{ REGION_GFX2, 0x02000, &tilelayout,			2*16*16, 16*16 },
-		{ REGION_GFX2, 0x04000, &tilelayout,			2*16*16, 16*16 },
-		{ REGION_GFX2, 0x06000, &tilelayout,			2*16*16, 16*16 },
-		{ REGION_GFX2, 0x08000, &tilelayout,			2*16*16, 16*16 },
-		{ REGION_GFX2, 0x0a000, &tilelayout,			2*16*16, 16*16 },
-		{ REGION_GFX2, 0x0c000, &tilelayout,			2*16*16, 16*16 },
-		{ REGION_GFX2, 0x0e000, &tilelayout,			2*16*16, 16*16 },
-		{ REGION_GFX2, 0x10000, &tilelayout,			3*16*16, 16*16 },
-		{ REGION_GFX2, 0x12000, &tilelayout,			3*16*16, 16*16 },
-		{ REGION_GFX2, 0x14000, &tilelayout,			3*16*16, 16*16 },
-		{ REGION_GFX2, 0x16000, &tilelayout,			3*16*16, 16*16 },
-		{ REGION_GFX2, 0x18000, &tilelayout,			3*16*16, 16*16 },
-		{ REGION_GFX2, 0x1a000, &tilelayout,			3*16*16, 16*16 },
-		{ REGION_GFX2, 0x1c000, &tilelayout,			3*16*16, 16*16 },
-		{ REGION_GFX2, 0x1e000, &tilelayout,			3*16*16, 16*16 },
-		{ REGION_GFX3, 0x00000, &spritelayout,		0*16*16, 16*16 }, // sprites
-		{ -1 } /* end of array */
+		new GfxDecodeInfo( REGION_GFX1, 0x00000, charlayout,      	1*16*16, 16*16 ),
+		new GfxDecodeInfo( REGION_GFX2, 0x00000, tilelayout,			2*16*16, 16*16 ),
+		new GfxDecodeInfo( REGION_GFX2, 0x02000, tilelayout,			2*16*16, 16*16 ),
+		new GfxDecodeInfo( REGION_GFX2, 0x04000, tilelayout,			2*16*16, 16*16 ),
+		new GfxDecodeInfo( REGION_GFX2, 0x06000, tilelayout,			2*16*16, 16*16 ),
+		new GfxDecodeInfo( REGION_GFX2, 0x08000, tilelayout,			2*16*16, 16*16 ),
+		new GfxDecodeInfo( REGION_GFX2, 0x0a000, tilelayout,			2*16*16, 16*16 ),
+		new GfxDecodeInfo( REGION_GFX2, 0x0c000, tilelayout,			2*16*16, 16*16 ),
+		new GfxDecodeInfo( REGION_GFX2, 0x0e000, tilelayout,			2*16*16, 16*16 ),
+		new GfxDecodeInfo( REGION_GFX2, 0x10000, tilelayout,			3*16*16, 16*16 ),
+		new GfxDecodeInfo( REGION_GFX2, 0x12000, tilelayout,			3*16*16, 16*16 ),
+		new GfxDecodeInfo( REGION_GFX2, 0x14000, tilelayout,			3*16*16, 16*16 ),
+		new GfxDecodeInfo( REGION_GFX2, 0x16000, tilelayout,			3*16*16, 16*16 ),
+		new GfxDecodeInfo( REGION_GFX2, 0x18000, tilelayout,			3*16*16, 16*16 ),
+		new GfxDecodeInfo( REGION_GFX2, 0x1a000, tilelayout,			3*16*16, 16*16 ),
+		new GfxDecodeInfo( REGION_GFX2, 0x1c000, tilelayout,			3*16*16, 16*16 ),
+		new GfxDecodeInfo( REGION_GFX2, 0x1e000, tilelayout,			3*16*16, 16*16 ),
+		new GfxDecodeInfo( REGION_GFX3, 0x00000, spritelayout,		0*16*16, 16*16 ), // sprites
+		new GfxDecodeInfo( -1 ) /* end of array */
 	};
 	
 	

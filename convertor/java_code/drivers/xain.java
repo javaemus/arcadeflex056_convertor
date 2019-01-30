@@ -308,13 +308,13 @@ public class xain
 		64*8	/* every char takes 64 consecutive bytes */
 	);
 	
-	static struct GfxDecodeInfo gfxdecodeinfo[] =
+	static GfxDecodeInfo gfxdecodeinfo[] =
 	{
-		{ REGION_GFX1, 0, &charlayout,   0, 8 },	/* 8x8 text */
-		{ REGION_GFX2, 0, &tilelayout, 256, 8 },	/* 16x16 Background */
-		{ REGION_GFX3, 0, &tilelayout, 384, 8 },	/* 16x16 Background */
-		{ REGION_GFX4, 0, &tilelayout, 128, 8 },	/* Sprites */
-		{ -1 } /* end of array */
+		new GfxDecodeInfo( REGION_GFX1, 0, charlayout,   0, 8 ),	/* 8x8 text */
+		new GfxDecodeInfo( REGION_GFX2, 0, tilelayout, 256, 8 ),	/* 16x16 Background */
+		new GfxDecodeInfo( REGION_GFX3, 0, tilelayout, 384, 8 ),	/* 16x16 Background */
+		new GfxDecodeInfo( REGION_GFX4, 0, tilelayout, 128, 8 ),	/* Sprites */
+		new GfxDecodeInfo( -1 ) /* end of array */
 	};
 	
 	

@@ -758,25 +758,25 @@ public class snk68
 		8*32	/* every sprite takes 32 consecutive bytes */
 	);
 	
-	static struct GfxDecodeInfo pow_gfxdecodeinfo[] =
+	static GfxDecodeInfo pow_gfxdecodeinfo[] =
 	{
-		{ REGION_GFX1, 0, &charlayout,		 0, 128 },
-		{ REGION_GFX2, 0, &pow_spritelayout, 0, 128 },
-		{ -1 } /* end of array */
+		new GfxDecodeInfo( REGION_GFX1, 0, charlayout,		 0, 128 ),
+		new GfxDecodeInfo( REGION_GFX2, 0, pow_spritelayout, 0, 128 ),
+		new GfxDecodeInfo( -1 ) /* end of array */
 	};
 	
-	static struct GfxDecodeInfo searchar_gfxdecodeinfo[] =
+	static GfxDecodeInfo searchar_gfxdecodeinfo[] =
 	{
-		{ REGION_GFX1, 0, &charlayout,			  0,  16 },
-		{ REGION_GFX2, 0, &searchar_spritelayout, 0, 128 },
-		{ -1 } /* end of array */
+		new GfxDecodeInfo( REGION_GFX1, 0, charlayout,			  0,  16 ),
+		new GfxDecodeInfo( REGION_GFX2, 0, searchar_spritelayout, 0, 128 ),
+		new GfxDecodeInfo( -1 ) /* end of array */
 	};
 	
-	static struct GfxDecodeInfo ikari3_gfxdecodeinfo[] =
+	static GfxDecodeInfo ikari3_gfxdecodeinfo[] =
 	{
-		{ REGION_GFX1, 0, &charlayout,			0,	16 },
-		{ REGION_GFX2, 0, &ikari3_spritelayout, 0, 128 },
-		{ -1 } /* end of array */
+		new GfxDecodeInfo( REGION_GFX1, 0, charlayout,			0,	16 ),
+		new GfxDecodeInfo( REGION_GFX2, 0, ikari3_spritelayout, 0, 128 ),
+		new GfxDecodeInfo( -1 ) /* end of array */
 	};
 	
 	/******************************************************************************/

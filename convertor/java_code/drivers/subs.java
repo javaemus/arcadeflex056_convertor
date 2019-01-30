@@ -163,11 +163,11 @@ public class subs
 		16*8 /* every char takes 16 consecutive bytes */
 	);
 	
-	static struct GfxDecodeInfo gfxdecodeinfo[] =
+	static GfxDecodeInfo gfxdecodeinfo[] =
 	{
-		{ REGION_GFX1, 0, &playfield_layout, 0, 2 }, 	/* playfield graphics */
-		{ REGION_GFX2, 0, &motion_layout,    0, 2 }, 	/* motion graphics */
-		{ -1 } /* end of array */
+		new GfxDecodeInfo( REGION_GFX1, 0, playfield_layout, 0, 2 ), 	/* playfield graphics */
+		new GfxDecodeInfo( REGION_GFX2, 0, motion_layout,    0, 2 ), 	/* motion graphics */
+		new GfxDecodeInfo( -1 ) /* end of array */
 	};
 	
 	static const struct MachineDriver machine_driver_subs =

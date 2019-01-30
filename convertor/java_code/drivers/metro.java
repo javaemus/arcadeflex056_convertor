@@ -2979,34 +2979,34 @@ public class metro
 		8*8*8
 	);
 	
-	static struct GfxDecodeInfo gfxdecodeinfo_14100[] =
+	static GfxDecodeInfo gfxdecodeinfo_14100[] =
 	{
-		{ REGION_GFX1, 0, &layout_8x8x4,    0x0, 0x200 }, // [0] 4 Bit Tiles
-		{ -1 }
+		new GfxDecodeInfo( REGION_GFX1, 0, layout_8x8x4,    0x0, 0x200 ), // [0] 4 Bit Tiles
+		new GfxDecodeInfo( -1 )
 	};
 	
-	static struct GfxDecodeInfo gfxdecodeinfo_14220[] =
+	static GfxDecodeInfo gfxdecodeinfo_14220[] =
 	{
-		{ REGION_GFX1, 0, &layout_8x8x4,    0x0, 0x200 }, // [0] 4 Bit Tiles
-		{ REGION_GFX1, 0, &layout_8x8x8h,   0x0,  0x20 }, // [1] 8 Bit Tiles
-		{ -1 }
+		new GfxDecodeInfo( REGION_GFX1, 0, layout_8x8x4,    0x0, 0x200 ), // [0] 4 Bit Tiles
+		new GfxDecodeInfo( REGION_GFX1, 0, layout_8x8x8h,   0x0,  0x20 ), // [1] 8 Bit Tiles
+		new GfxDecodeInfo( -1 )
 	};
 	
-	static struct GfxDecodeInfo gfxdecodeinfo_blzntrnd[] =
+	static GfxDecodeInfo gfxdecodeinfo_blzntrnd[] =
 	{
-		{ REGION_GFX1, 0, &layout_8x8x4,    0x0, 0x200 }, // [0] 4 Bit Tiles
-		{ REGION_GFX1, 0, &layout_8x8x8h,   0x0,  0x20 }, // [1] 8 Bit Tiles
-		{ REGION_GFX3, 0, &layout_053936,   0x0,  0x20 }, // [2] 053936 Tiles
-		{ -1 }
+		new GfxDecodeInfo( REGION_GFX1, 0, layout_8x8x4,    0x0, 0x200 ), // [0] 4 Bit Tiles
+		new GfxDecodeInfo( REGION_GFX1, 0, layout_8x8x8h,   0x0,  0x20 ), // [1] 8 Bit Tiles
+		new GfxDecodeInfo( REGION_GFX3, 0, layout_053936,   0x0,  0x20 ), // [2] 053936 Tiles
+		new GfxDecodeInfo( -1 )
 	};
 	
-	static struct GfxDecodeInfo gfxdecodeinfo_14300[] =
+	static GfxDecodeInfo gfxdecodeinfo_14300[] =
 	{
-		{ REGION_GFX1, 0, &layout_8x8x4,    0x0, 0x200 }, // [0] 4 Bit Tiles
-		{ REGION_GFX1, 0, &layout_8x8x8h,   0x0,  0x20 }, // [1] 8 Bit Tiles
-		{ REGION_GFX1, 0, &layout_16x16x4q, 0x0, 0x200 }, // [2] 4 Bit Tiles 16x16
-		{ REGION_GFX1, 0, &layout_16x16x8o, 0x0, 0x200 }, // [2] 8 Bit Tiles 16x16
-		{ -1 }
+		new GfxDecodeInfo( REGION_GFX1, 0, layout_8x8x4,    0x0, 0x200 ), // [0] 4 Bit Tiles
+		new GfxDecodeInfo( REGION_GFX1, 0, layout_8x8x8h,   0x0,  0x20 ), // [1] 8 Bit Tiles
+		new GfxDecodeInfo( REGION_GFX1, 0, layout_16x16x4q, 0x0, 0x200 ), // [2] 4 Bit Tiles 16x16
+		new GfxDecodeInfo( REGION_GFX1, 0, layout_16x16x8o, 0x0, 0x200 ), // [2] 8 Bit Tiles 16x16
+		new GfxDecodeInfo( -1 )
 	};
 	
 	

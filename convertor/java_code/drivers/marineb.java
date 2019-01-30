@@ -514,43 +514,43 @@ public class marineb
 	);
 	
 	
-	static struct GfxDecodeInfo marineb_gfxdecodeinfo[] =
+	static GfxDecodeInfo marineb_gfxdecodeinfo[] =
 	{
-		{ REGION_GFX1, 0x0000, &marineb_charlayout,          0, 64 },
-		{ REGION_GFX2, 0x0000, &marineb_small_spritelayout,  0, 64 },
-		{ REGION_GFX2, 0x0000, &marineb_big_spritelayout,    0, 64 },
-		{ -1 } /* end of array */
+		new GfxDecodeInfo( REGION_GFX1, 0x0000, marineb_charlayout,          0, 64 ),
+		new GfxDecodeInfo( REGION_GFX2, 0x0000, marineb_small_spritelayout,  0, 64 ),
+		new GfxDecodeInfo( REGION_GFX2, 0x0000, marineb_big_spritelayout,    0, 64 ),
+		new GfxDecodeInfo( -1 ) /* end of array */
 	};
 	
-	static struct GfxDecodeInfo wanted_gfxdecodeinfo[] =
+	static GfxDecodeInfo wanted_gfxdecodeinfo[] =
 	{
-		{ REGION_GFX1, 0x0000, &wanted_charlayout,           0, 64 },
-		{ REGION_GFX2, 0x0000, &marineb_small_spritelayout,  0, 64 },
-		{ REGION_GFX2, 0x0000, &marineb_big_spritelayout,    0, 64 },
-		{ -1 } /* end of array */
+		new GfxDecodeInfo( REGION_GFX1, 0x0000, wanted_charlayout,           0, 64 ),
+		new GfxDecodeInfo( REGION_GFX2, 0x0000, marineb_small_spritelayout,  0, 64 ),
+		new GfxDecodeInfo( REGION_GFX2, 0x0000, marineb_big_spritelayout,    0, 64 ),
+		new GfxDecodeInfo( -1 ) /* end of array */
 	};
 	
-	static struct GfxDecodeInfo changes_gfxdecodeinfo[] =
+	static GfxDecodeInfo changes_gfxdecodeinfo[] =
 	{
-		{ REGION_GFX1, 0x0000, &marineb_charlayout,          0, 64 },
-		{ REGION_GFX2, 0x0000, &changes_small_spritelayout,  0, 64 },
-		{ REGION_GFX2, 0x1000, &changes_big_spritelayout,    0, 64 },
-		{ -1 } /* end of array */
+		new GfxDecodeInfo( REGION_GFX1, 0x0000, marineb_charlayout,          0, 64 ),
+		new GfxDecodeInfo( REGION_GFX2, 0x0000, changes_small_spritelayout,  0, 64 ),
+		new GfxDecodeInfo( REGION_GFX2, 0x1000, changes_big_spritelayout,    0, 64 ),
+		new GfxDecodeInfo( -1 ) /* end of array */
 	};
 	
-	static struct GfxDecodeInfo hoccer_gfxdecodeinfo[] =
+	static GfxDecodeInfo hoccer_gfxdecodeinfo[] =
 	{
-		{ REGION_GFX1, 0x0000, &marineb_charlayout,          0, 16 },	/* no palette banks */
-		{ REGION_GFX2, 0x0000, &changes_small_spritelayout,  0, 16 },	/* no palette banks */
-		{ -1 } /* end of array */
+		new GfxDecodeInfo( REGION_GFX1, 0x0000, marineb_charlayout,          0, 16 ),	/* no palette banks */
+		new GfxDecodeInfo( REGION_GFX2, 0x0000, changes_small_spritelayout,  0, 16 ),	/* no palette banks */
+		new GfxDecodeInfo( -1 ) /* end of array */
 	};
 	
-	static struct GfxDecodeInfo hopprobo_gfxdecodeinfo[] =
+	static GfxDecodeInfo hopprobo_gfxdecodeinfo[] =
 	{
-		{ REGION_GFX1, 0x0000, &hopprobo_charlayout,         0, 64 },
-		{ REGION_GFX2, 0x0000, &marineb_small_spritelayout,  0, 64 },
-		{ REGION_GFX2, 0x0000, &marineb_big_spritelayout,    0, 64 },
-		{ -1 } /* end of array */
+		new GfxDecodeInfo( REGION_GFX1, 0x0000, hopprobo_charlayout,         0, 64 ),
+		new GfxDecodeInfo( REGION_GFX2, 0x0000, marineb_small_spritelayout,  0, 64 ),
+		new GfxDecodeInfo( REGION_GFX2, 0x0000, marineb_big_spritelayout,    0, 64 ),
+		new GfxDecodeInfo( -1 ) /* end of array */
 	};
 	
 	

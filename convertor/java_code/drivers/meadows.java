@@ -404,14 +404,14 @@ public class meadows
 		16*2*8							/* every sprite takes 32 bytes */
 	);
 	
-	static struct GfxDecodeInfo gfxdecodeinfo[] =
+	static GfxDecodeInfo gfxdecodeinfo[] =
 	{
-		{ REGION_GFX1, 0, &charlayout,	 0, 4 },		/* character generator */
-		{ REGION_GFX2, 0, &spritelayout, 0, 4 },		/* sprite prom 1 */
-		{ REGION_GFX3, 0, &spritelayout, 0, 4 },		/* sprite prom 2 */
-		{ REGION_GFX4, 0, &spritelayout, 0, 4 },		/* sprite prom 3 (unused) */
-		{ REGION_GFX5, 0, &spritelayout, 0, 4 },		/* sprite prom 4 (unused) */
-		{ -1 } /* end of array */
+		new GfxDecodeInfo( REGION_GFX1, 0, charlayout,	 0, 4 ),		/* character generator */
+		new GfxDecodeInfo( REGION_GFX2, 0, spritelayout, 0, 4 ),		/* sprite prom 1 */
+		new GfxDecodeInfo( REGION_GFX3, 0, spritelayout, 0, 4 ),		/* sprite prom 2 */
+		new GfxDecodeInfo( REGION_GFX4, 0, spritelayout, 0, 4 ),		/* sprite prom 3 (unused) */
+		new GfxDecodeInfo( REGION_GFX5, 0, spritelayout, 0, 4 ),		/* sprite prom 4 (unused) */
+		new GfxDecodeInfo( -1 ) /* end of array */
 	};
 	
 	static unsigned char palette[] =

@@ -556,13 +556,13 @@ public class tecmo
 		32*8
 	);
 	
-	static struct GfxDecodeInfo gfxdecodeinfo[] =
+	static GfxDecodeInfo gfxdecodeinfo[] =
 	{
-		{ REGION_GFX1, 0, &charlayout, 256, 16 },	/* colors 256 - 511 */
-		{ REGION_GFX2, 0, &spritelayout, 0, 16 },	/* colors   0 - 255 */
-		{ REGION_GFX3, 0, &tilelayout, 512, 16 },	/* colors 512 - 767 */
-		{ REGION_GFX4, 0, &tilelayout, 768, 16 },	/* colors 768 - 1023 */
-		{ -1 } /* end of array */
+		new GfxDecodeInfo( REGION_GFX1, 0, charlayout, 256, 16 ),	/* colors 256 - 511 */
+		new GfxDecodeInfo( REGION_GFX2, 0, spritelayout, 0, 16 ),	/* colors   0 - 255 */
+		new GfxDecodeInfo( REGION_GFX3, 0, tilelayout, 512, 16 ),	/* colors 512 - 767 */
+		new GfxDecodeInfo( REGION_GFX4, 0, tilelayout, 768, 16 ),	/* colors 768 - 1023 */
+		new GfxDecodeInfo( -1 ) /* end of array */
 	};
 	
 	

@@ -412,13 +412,13 @@ public class hal21
 		256
 	);
 	
-	static struct GfxDecodeInfo aso_gfxdecodeinfo[] =
+	static GfxDecodeInfo aso_gfxdecodeinfo[] =
 	{
 		/* colors 512-1023 are currently unused, I think they are a second bank */
-		{ REGION_GFX1, 0, &char256,    128*3,  8 },	/* colors 384..511 */
-		{ REGION_GFX2, 0, &char1024,   128*1, 16 },	/* colors 128..383 */
-		{ REGION_GFX3, 0, &sprite1024, 128*0, 16 },	/* colors   0..127 */
-		{ -1 }
+		new GfxDecodeInfo( REGION_GFX1, 0, char256,    128*3,  8 ),	/* colors 384..511 */
+		new GfxDecodeInfo( REGION_GFX2, 0, char1024,   128*1, 16 ),	/* colors 128..383 */
+		new GfxDecodeInfo( REGION_GFX3, 0, sprite1024, 128*0, 16 ),	/* colors   0..127 */
+		new GfxDecodeInfo( -1 )
 	};
 	
 	/**************************************************************************/

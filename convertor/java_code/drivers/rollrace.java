@@ -226,18 +226,18 @@ public class rollrace
 			32*32	 /* every sprite takes 128 consecutive bytes */
 	);
 	
-	static struct GfxDecodeInfo gfxdecodeinfo[] =
+	static GfxDecodeInfo gfxdecodeinfo[] =
 	{
-			{ REGION_GFX1, 0x0000, &charlayout,	0,	32 }, /* foreground */
-			{ REGION_GFX1, 0x0800, &charlayout,	0,	32 },
-			{ REGION_GFX1, 0x1000, &charlayout,	0,	32 },
-			{ REGION_GFX1, 0x1800, &charlayout,	0,	32 },
-			{ REGION_GFX2, 0x0000, &charlayout2,	0, 	32 }, /* for the road */
-			{ REGION_GFX3, 0x0000, &spritelayout,	0, 	32 }, /* sprites */
-			{ REGION_GFX4, 0x0000, &spritelayout,	0,	32 },
-			{ REGION_GFX5, 0x0000, &spritelayout,	0,	32 },
+			new GfxDecodeInfo( REGION_GFX1, 0x0000, charlayout,	0,	32 ), /* foreground */
+			new GfxDecodeInfo( REGION_GFX1, 0x0800, charlayout,	0,	32 ),
+			new GfxDecodeInfo( REGION_GFX1, 0x1000, charlayout,	0,	32 ),
+			new GfxDecodeInfo( REGION_GFX1, 0x1800, charlayout,	0,	32 ),
+			new GfxDecodeInfo( REGION_GFX2, 0x0000, charlayout2,	0, 	32 ), /* for the road */
+			new GfxDecodeInfo( REGION_GFX3, 0x0000, spritelayout,	0, 	32 ), /* sprites */
+			new GfxDecodeInfo( REGION_GFX4, 0x0000, spritelayout,	0,	32 ),
+			new GfxDecodeInfo( REGION_GFX5, 0x0000, spritelayout,	0,	32 ),
 	
-		{ -1 } /* end of array */
+		new GfxDecodeInfo( -1 ) /* end of array */
 	};
 	
 	static struct AY8910interface ra_ay8910_interface =

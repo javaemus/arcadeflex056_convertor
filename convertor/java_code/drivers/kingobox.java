@@ -485,13 +485,13 @@ public class kingobox
 		16*8
 	);
 	
-	static struct GfxDecodeInfo gfxdecodeinfo[] =
+	static GfxDecodeInfo gfxdecodeinfo[] =
 	{
-		{ REGION_GFX1, 0x00000, &charlayout,   256,  8 },	/* characters */
-		{ REGION_GFX1, 0x01000, &charlayout,   256,  8 },	/* characters */
-		{ REGION_GFX2, 0x00000, &spritelayout,   0, 32 },	/* sprites */
-		{ REGION_GFX3, 0x00000, &tilelayout,     0, 32 },	/* bg tiles */
-		{ -1 } /* end of array */
+		new GfxDecodeInfo( REGION_GFX1, 0x00000, charlayout,   256,  8 ),	/* characters */
+		new GfxDecodeInfo( REGION_GFX1, 0x01000, charlayout,   256,  8 ),	/* characters */
+		new GfxDecodeInfo( REGION_GFX2, 0x00000, spritelayout,   0, 32 ),	/* sprites */
+		new GfxDecodeInfo( REGION_GFX3, 0x00000, tilelayout,     0, 32 ),	/* bg tiles */
+		new GfxDecodeInfo( -1 ) /* end of array */
 	};
 	
 	/* Ring King */
@@ -557,14 +557,14 @@ public class kingobox
 	);
 	
 	
-	static struct GfxDecodeInfo rk_gfxdecodeinfo[] =
+	static GfxDecodeInfo rk_gfxdecodeinfo[] =
 	{
-		{ REGION_GFX1, 0x00000, &rk_charlayout1,  256,  8 },	/* characters */
-		{ REGION_GFX1, 0x00000, &rk_charlayout2,  256,  8 },	/* characters */
-		{ REGION_GFX2, 0x00000, &rk_spritelayout,   0, 32 },	/* sprites */
-		{ REGION_GFX3, 0x00000, &rk_tilelayout,     0, 32 },	/* sprites/bg tiles */
-		{ REGION_GFX4, 0x00000, &rk_bglayout,       0, 32 },	/* bg tiles */
-		{ -1 } /* end of array */
+		new GfxDecodeInfo( REGION_GFX1, 0x00000, rk_charlayout1,  256,  8 ),	/* characters */
+		new GfxDecodeInfo( REGION_GFX1, 0x00000, rk_charlayout2,  256,  8 ),	/* characters */
+		new GfxDecodeInfo( REGION_GFX2, 0x00000, rk_spritelayout,   0, 32 ),	/* sprites */
+		new GfxDecodeInfo( REGION_GFX3, 0x00000, rk_tilelayout,     0, 32 ),	/* sprites/bg tiles */
+		new GfxDecodeInfo( REGION_GFX4, 0x00000, rk_bglayout,       0, 32 ),	/* bg tiles */
+		new GfxDecodeInfo( -1 ) /* end of array */
 	};
 	
 	static struct AY8910interface ay8910_interface =

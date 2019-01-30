@@ -456,13 +456,13 @@ public class bloodbro
 		128*8	/* every sprite takes 128 consecutive bytes */
 	);
 	
-	static struct GfxDecodeInfo bloodbro_gfxdecodeinfo[] =
+	static GfxDecodeInfo bloodbro_gfxdecodeinfo[] =
 	{
-		{ REGION_GFX1, 0x00000, &textlayout,   0x70*16,  0x10 }, /* Text */
-		{ REGION_GFX2, 0x00000, &backlayout,   0x40*16,  0x10 }, /* Background */
-		{ REGION_GFX2, 0x80000, &backlayout,   0x50*16,  0x10 }, /* Foreground */
-		{ REGION_GFX3, 0x00000, &spritelayout, 0x00*16,  0x10 }, /* Sprites */
-		{ -1 }
+		new GfxDecodeInfo( REGION_GFX1, 0x00000, textlayout,   0x70*16,  0x10 ), /* Text */
+		new GfxDecodeInfo( REGION_GFX2, 0x00000, backlayout,   0x40*16,  0x10 ), /* Background */
+		new GfxDecodeInfo( REGION_GFX2, 0x80000, backlayout,   0x50*16,  0x10 ), /* Foreground */
+		new GfxDecodeInfo( REGION_GFX3, 0x00000, spritelayout, 0x00*16,  0x10 ), /* Sprites */
+		new GfxDecodeInfo( -1 )
 	};
 	
 	/**** West Story gfx decode *********************************************/
@@ -504,13 +504,13 @@ public class bloodbro
 		32*8	/* every sprite takes 32 consecutive bytes */
 	);
 	
-	static struct GfxDecodeInfo weststry_gfxdecodeinfo[] =
+	static GfxDecodeInfo weststry_gfxdecodeinfo[] =
 	{
-		{ REGION_GFX1, 0x00000, &weststry_textlayout,     16*16,  0x10 },
-		{ REGION_GFX2, 0x00000, &weststry_backlayout,     48*16,  0x10 },
-		{ REGION_GFX2, 0x80000, &weststry_backlayout,     32*16,  0x10 },
-		{ REGION_GFX3, 0x00000, &weststry_spritelayout,    0*16,  0x10 },
-		{ -1 }
+		new GfxDecodeInfo( REGION_GFX1, 0x00000, weststry_textlayout,     16*16,  0x10 ),
+		new GfxDecodeInfo( REGION_GFX2, 0x00000, weststry_backlayout,     48*16,  0x10 ),
+		new GfxDecodeInfo( REGION_GFX2, 0x80000, weststry_backlayout,     32*16,  0x10 ),
+		new GfxDecodeInfo( REGION_GFX3, 0x00000, weststry_spritelayout,    0*16,  0x10 ),
+		new GfxDecodeInfo( -1 )
 	};
 	
 	/**** Blood Bros Interrupt & Driver Machine  ****************************/

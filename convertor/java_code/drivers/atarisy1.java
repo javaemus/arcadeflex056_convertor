@@ -803,10 +803,10 @@ public class atarisy1
 	);
 	
 	
-	static struct GfxDecodeInfo gfxdecodeinfo[] =
+	static GfxDecodeInfo gfxdecodeinfo[] =
 	{
-		{ REGION_GFX1, 0x00000, &anlayout,       0, 64 },
-		{ -1 }
+		new GfxDecodeInfo( REGION_GFX1, 0x00000, anlayout,       0, 64 ),
+		new GfxDecodeInfo( -1 )
 	};
 	
 	

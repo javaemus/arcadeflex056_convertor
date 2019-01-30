@@ -161,15 +161,15 @@ public class namcond1
 		16*16*8
 	);
 	
-	static struct GfxDecodeInfo gfxdecodeinfo[] =
+	static GfxDecodeInfo gfxdecodeinfo[] =
 	{
-		{ REGION_GFX1, 0x00000000, &pts_8x8_4bits_layout,    0,  16 },
-		{ REGION_GFX1, 0x00000000, &pts_16x16_4bits_layout,  0,  16 },
-		{ REGION_GFX1, 0x00000000, &pts_32x32_4bits_layout,  0,  16 },
-		{ REGION_GFX1, 0x00000000, &pts_64x64_4bits_layout,  0,  16 },
-		{ REGION_GFX1, 0x00000000, &pts_8x8_8bits_layout,    0, 256 },
-		{ REGION_GFX1, 0x00000000, &pts_16x16_8bits_layout,  0, 256 },
-		{ -1 }
+		new GfxDecodeInfo( REGION_GFX1, 0x00000000, pts_8x8_4bits_layout,    0,  16 ),
+		new GfxDecodeInfo( REGION_GFX1, 0x00000000, pts_16x16_4bits_layout,  0,  16 ),
+		new GfxDecodeInfo( REGION_GFX1, 0x00000000, pts_32x32_4bits_layout,  0,  16 ),
+		new GfxDecodeInfo( REGION_GFX1, 0x00000000, pts_64x64_4bits_layout,  0,  16 ),
+		new GfxDecodeInfo( REGION_GFX1, 0x00000000, pts_8x8_8bits_layout,    0, 256 ),
+		new GfxDecodeInfo( REGION_GFX1, 0x00000000, pts_16x16_8bits_layout,  0, 256 ),
+		new GfxDecodeInfo( -1 )
 	};
 	
 	/******************************************

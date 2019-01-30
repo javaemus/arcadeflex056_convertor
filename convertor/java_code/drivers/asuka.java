@@ -717,11 +717,11 @@ public class asuka
 		128*8
 	);
 	
-	static struct GfxDecodeInfo gfxdecodeinfo[] =
+	static GfxDecodeInfo gfxdecodeinfo[] =
 	{
-		{ REGION_GFX2, 0, &tilelayout,  0, 256 },	/* OBJ */
-		{ REGION_GFX1, 0, &charlayout,  0, 256 },	/* SCR */
-		{ -1 } /* end of array */
+		new GfxDecodeInfo( REGION_GFX2, 0, tilelayout,  0, 256 ),	/* OBJ */
+		new GfxDecodeInfo( REGION_GFX1, 0, charlayout,  0, 256 ),	/* SCR */
+		new GfxDecodeInfo( -1 ) /* end of array */
 	};
 	
 	

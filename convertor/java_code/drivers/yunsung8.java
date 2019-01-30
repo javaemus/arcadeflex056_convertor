@@ -417,11 +417,11 @@ public class yunsung8
 		8*8*8/4
 	);
 	
-	static struct GfxDecodeInfo yunsung8_gfxdecodeinfo[] =
+	static GfxDecodeInfo yunsung8_gfxdecodeinfo[] =
 	{
-		{ REGION_GFX1, 0, &layout_8x8x8, 0, 0x08 }, // [0] Tiles (Background)
-		{ REGION_GFX2, 0, &layout_8x8x4, 0,	0x40 }, // [1] Tiles (Text)
-		{ -1 }
+		new GfxDecodeInfo( REGION_GFX1, 0, layout_8x8x8, 0, 0x08 ), // [0] Tiles (Background)
+		new GfxDecodeInfo( REGION_GFX2, 0, layout_8x8x4, 0,	0x40 ), // [1] Tiles (Text)
+		new GfxDecodeInfo( -1 )
 	};
 	
 	

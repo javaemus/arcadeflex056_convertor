@@ -243,12 +243,12 @@ public class toobin
 	);
 	
 	
-	static struct GfxDecodeInfo gfxdecodeinfo[] =
+	static GfxDecodeInfo gfxdecodeinfo[] =
 	{
-		{ REGION_GFX1, 0, &pflayout,     0, 16 },
-		{ REGION_GFX2, 0, &molayout,   256, 16 },
-		{ REGION_GFX3, 0, &anlayout,   512, 64 },
-		{ -1 }
+		new GfxDecodeInfo( REGION_GFX1, 0, pflayout,     0, 16 ),
+		new GfxDecodeInfo( REGION_GFX2, 0, molayout,   256, 16 ),
+		new GfxDecodeInfo( REGION_GFX3, 0, anlayout,   512, 64 ),
+		new GfxDecodeInfo( -1 )
 	};
 	
 	

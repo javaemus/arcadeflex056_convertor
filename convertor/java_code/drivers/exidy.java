@@ -787,19 +787,19 @@ public class exidy
 	);
 	
 	
-	static struct GfxDecodeInfo gfxdecodeinfo_1bpp[] =
+	static GfxDecodeInfo gfxdecodeinfo_1bpp[] =
 	{
-		{ REGION_CPU1, 0x4800, &charlayout_1bpp, 0, 4 },	/* the game dynamically modifies this */
-		{ REGION_GFX1, 0x0000, &spritelayout,    8, 2 },
-		{ -1 }
+		new GfxDecodeInfo( REGION_CPU1, 0x4800, charlayout_1bpp, 0, 4 ),	/* the game dynamically modifies this */
+		new GfxDecodeInfo( REGION_GFX1, 0x0000, spritelayout,    8, 2 ),
+		new GfxDecodeInfo( -1 )
 	};
 	
 	
-	static struct GfxDecodeInfo gfxdecodeinfo_2bpp[] =
+	static GfxDecodeInfo gfxdecodeinfo_2bpp[] =
 	{
-		{ REGION_CPU1, 0x6000, &charlayout_2bpp, 0, 4 },	/* the game dynamically modifies this */
-		{ REGION_GFX1, 0x0000, &spritelayout,   16, 2 },
-		{ -1 }
+		new GfxDecodeInfo( REGION_CPU1, 0x6000, charlayout_2bpp, 0, 4 ),	/* the game dynamically modifies this */
+		new GfxDecodeInfo( REGION_GFX1, 0x0000, spritelayout,   16, 2 ),
+		new GfxDecodeInfo( -1 )
 	};
 	
 	

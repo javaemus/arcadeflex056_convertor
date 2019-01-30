@@ -217,11 +217,11 @@ public class shaolins
 		64*8	/* every sprite takes 64 consecutive bytes */
 	);
 	
-	static struct GfxDecodeInfo shaolins_gfxdecodeinfo[] =
+	static GfxDecodeInfo shaolins_gfxdecodeinfo[] =
 	{
-		{ REGION_GFX1, 0, &shaolins_charlayout,         0, 16*8 },
-		{ REGION_GFX2, 0, &shaolins_spritelayout, 16*8*16, 16*8 },
-		{ -1 } /* end of array */
+		new GfxDecodeInfo( REGION_GFX1, 0, shaolins_charlayout,         0, 16*8 ),
+		new GfxDecodeInfo( REGION_GFX2, 0, shaolins_spritelayout, 16*8*16, 16*8 ),
+		new GfxDecodeInfo( -1 ) /* end of array */
 	};
 	
 	

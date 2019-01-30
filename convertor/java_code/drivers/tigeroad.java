@@ -535,12 +535,12 @@ public class tigeroad
 		32*8
 	);
 	
-	static struct GfxDecodeInfo gfxdecodeinfo[] =
+	static GfxDecodeInfo gfxdecodeinfo[] =
 	{
-		{ REGION_GFX1, 0, &text_layout,   512, 16 },   /* colors 512-575 */
-		{ REGION_GFX2, 0, &tile_layout,     0, 16 },   /* colors   0-255 */
-		{ REGION_GFX3, 0, &sprite_layout, 256, 16 },   /* colors 256-511 */
-		{ -1 } /* end of array */
+		new GfxDecodeInfo( REGION_GFX1, 0, text_layout,   512, 16 ),   /* colors 512-575 */
+		new GfxDecodeInfo( REGION_GFX2, 0, tile_layout,     0, 16 ),   /* colors   0-255 */
+		new GfxDecodeInfo( REGION_GFX3, 0, sprite_layout, 256, 16 ),   /* colors 256-511 */
+		new GfxDecodeInfo( -1 ) /* end of array */
 	};
 	
 	

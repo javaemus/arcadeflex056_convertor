@@ -8,6 +8,7 @@
 -Implemented READHANDLER for 8 bit reads
 -Implemented WRITEHANDLER for 8 bit writes
 -Implemented GFXLayout support
+-Implemented GFXDecode support
 
 29/01/2019
 ==========

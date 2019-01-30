@@ -807,12 +807,12 @@ public class darius
 		16*8	/* every sprite takes 32 consecutive bytes */
 	);
 	
-	static struct GfxDecodeInfo darius_gfxdecodeinfo[] =
+	static GfxDecodeInfo darius_gfxdecodeinfo[] =
 	{
-		{ REGION_GFX2, 0, &tilelayout,   0, 256 },	/* sprites */
-		{ REGION_GFX1, 0, &charlayout,   0, 256 },	/* scr tiles */
-		{ REGION_GFX3, 0, &char2layout,  0, 256 },	/* top layer scr tiles */
-		{ -1 } /* end of array */
+		new GfxDecodeInfo( REGION_GFX2, 0, tilelayout,   0, 256 ),	/* sprites */
+		new GfxDecodeInfo( REGION_GFX1, 0, charlayout,   0, 256 ),	/* scr tiles */
+		new GfxDecodeInfo( REGION_GFX3, 0, char2layout,  0, 256 ),	/* top layer scr tiles */
+		new GfxDecodeInfo( -1 ) /* end of array */
 	};
 	
 	

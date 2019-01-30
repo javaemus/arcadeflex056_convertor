@@ -898,11 +898,11 @@ public class fromance
 	);
 	
 	
-	static struct GfxDecodeInfo fromance_gfxdecodeinfo[] =
+	static GfxDecodeInfo fromance_gfxdecodeinfo[] =
 	{
-		{ REGION_GFX1, 0, &bglayout,   0, 128 },
-		{ REGION_GFX2, 0, &bglayout,   0, 128 },
-		{ -1 }
+		new GfxDecodeInfo( REGION_GFX1, 0, bglayout,   0, 128 ),
+		new GfxDecodeInfo( REGION_GFX2, 0, bglayout,   0, 128 ),
+		new GfxDecodeInfo( -1 )
 	};
 	
 	

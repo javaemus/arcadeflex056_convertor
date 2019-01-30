@@ -510,10 +510,10 @@ public class taitoair
 		16*16
 	);
 	
-	static struct GfxDecodeInfo airsys_gfxdecodeinfo[] =
+	static GfxDecodeInfo airsys_gfxdecodeinfo[] =
 	{
-		{ REGION_GFX1, 0, &tilelayout, 0, 32*16 },
-		{ -1 } /* end of array */
+		new GfxDecodeInfo( REGION_GFX1, 0, tilelayout, 0, 32*16 ),
+		new GfxDecodeInfo( -1 ) /* end of array */
 	};
 	
 	

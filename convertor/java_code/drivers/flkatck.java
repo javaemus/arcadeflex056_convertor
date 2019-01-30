@@ -266,10 +266,10 @@ public class flkatck
 		32*8
 	);
 	
-	static struct GfxDecodeInfo gfxdecodeinfo[] =
+	static GfxDecodeInfo gfxdecodeinfo[] =
 	{
-		{ REGION_GFX1, 0, &gfxlayout, 0, 32 },
-		{ -1 } /* end of array */
+		new GfxDecodeInfo( REGION_GFX1, 0, gfxlayout, 0, 32 ),
+		new GfxDecodeInfo( -1 ) /* end of array */
 	};
 	
 	static struct YM2151interface ym2151_interface =

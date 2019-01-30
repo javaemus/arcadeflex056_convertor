@@ -837,43 +837,43 @@ public class dooyong
 	);
 	
 	
-	static struct GfxDecodeInfo lastday_gfxdecodeinfo[] =
+	static GfxDecodeInfo lastday_gfxdecodeinfo[] =
 	{
-		{ REGION_GFX1, 0, &lastday_charlayout,   0, 16 },
-		{ REGION_GFX2, 0, &spritelayout,       256, 16 },
-		{ REGION_GFX3, 0, &tilelayout,         768, 16 },
-		{ REGION_GFX4, 0, &tilelayout,         512, 16 },
-		{ -1 } /* end of array */
+		new GfxDecodeInfo( REGION_GFX1, 0, lastday_charlayout,   0, 16 ),
+		new GfxDecodeInfo( REGION_GFX2, 0, spritelayout,       256, 16 ),
+		new GfxDecodeInfo( REGION_GFX3, 0, tilelayout,         768, 16 ),
+		new GfxDecodeInfo( REGION_GFX4, 0, tilelayout,         512, 16 ),
+		new GfxDecodeInfo( -1 ) /* end of array */
 	};
 	
-	static struct GfxDecodeInfo bluehawk_gfxdecodeinfo[] =
+	static GfxDecodeInfo bluehawk_gfxdecodeinfo[] =
 	{
-		{ REGION_GFX1, 0, &bluehawk_charlayout,  0, 16 },
-		{ REGION_GFX2, 0, &spritelayout,       256, 16 },
-		{ REGION_GFX3, 0, &tilelayout,         768, 16 },
-		{ REGION_GFX4, 0, &tilelayout,         512, 16 },
-		{ REGION_GFX5, 0, &tilelayout,           0, 16 },
-		{ -1 } /* end of array */
+		new GfxDecodeInfo( REGION_GFX1, 0, bluehawk_charlayout,  0, 16 ),
+		new GfxDecodeInfo( REGION_GFX2, 0, spritelayout,       256, 16 ),
+		new GfxDecodeInfo( REGION_GFX3, 0, tilelayout,         768, 16 ),
+		new GfxDecodeInfo( REGION_GFX4, 0, tilelayout,         512, 16 ),
+		new GfxDecodeInfo( REGION_GFX5, 0, tilelayout,           0, 16 ),
+		new GfxDecodeInfo( -1 ) /* end of array */
 	};
 	
-	static struct GfxDecodeInfo primella_gfxdecodeinfo[] =
+	static GfxDecodeInfo primella_gfxdecodeinfo[] =
 	{
-		{ REGION_GFX1, 0, &bluehawk_charlayout,  0, 16 },
+		new GfxDecodeInfo( REGION_GFX1, 0, bluehawk_charlayout,  0, 16 ),
 		/* no sprites */
-		{ REGION_GFX2, 0, &tilelayout,         768, 16 },
-		{ REGION_GFX3, 0, &tilelayout,         512, 16 },
-		{ -1 } /* end of array */
+		new GfxDecodeInfo( REGION_GFX2, 0, tilelayout,         768, 16 ),
+		new GfxDecodeInfo( REGION_GFX3, 0, tilelayout,         512, 16 ),
+		new GfxDecodeInfo( -1 ) /* end of array */
 	};
 	
-	static struct GfxDecodeInfo rshark_gfxdecodeinfo[] =
+	static GfxDecodeInfo rshark_gfxdecodeinfo[] =
 	{
 		/* no chars */
-		{ REGION_GFX1, 0, &rshark_spritelayout,  0, 16 },
-		{ REGION_GFX2, 0, &spritelayout,       256, 16 },
-		{ REGION_GFX3, 0, &spritelayout,       512, 16 },
-		{ REGION_GFX4, 0, &spritelayout,       768, 16 },
-		{ REGION_GFX5, 0, &spritelayout,      1024, 16 },
-		{ -1 } /* end of array */
+		new GfxDecodeInfo( REGION_GFX1, 0, rshark_spritelayout,  0, 16 ),
+		new GfxDecodeInfo( REGION_GFX2, 0, spritelayout,       256, 16 ),
+		new GfxDecodeInfo( REGION_GFX3, 0, spritelayout,       512, 16 ),
+		new GfxDecodeInfo( REGION_GFX4, 0, spritelayout,       768, 16 ),
+		new GfxDecodeInfo( REGION_GFX5, 0, spritelayout,      1024, 16 ),
+		new GfxDecodeInfo( -1 ) /* end of array */
 	};
 	
 	

@@ -340,11 +340,11 @@ public class lkage
 	);
 	
 	
-	static struct GfxDecodeInfo gfxdecodeinfo[] =
+	static GfxDecodeInfo gfxdecodeinfo[] =
 	{
-		{ REGION_GFX1, 0x0000, &tile_layout,  128, 3 },
-		{ REGION_GFX1, 0x0000, &sprite_layout,  0, 8 },
-		{ -1 }
+		new GfxDecodeInfo( REGION_GFX1, 0x0000, tile_layout,  128, 3 ),
+		new GfxDecodeInfo( REGION_GFX1, 0x0000, sprite_layout,  0, 8 ),
+		new GfxDecodeInfo( -1 )
 	};
 	
 	

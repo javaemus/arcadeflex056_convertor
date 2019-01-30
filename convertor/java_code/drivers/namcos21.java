@@ -389,10 +389,10 @@ public class namcos21
 		8*64 /* sprite offset */
 	);
 	
-	static struct GfxDecodeInfo gfxdecodeinfo[] =
+	static GfxDecodeInfo gfxdecodeinfo[] =
 	{
-		{ REGION_GFX1, 0x000000, &tile_layout,  0*256, 0x80 },
-		{ -1 }
+		new GfxDecodeInfo( REGION_GFX1, 0x000000, tile_layout,  0*256, 0x80 ),
+		new GfxDecodeInfo( -1 )
 	};
 	
 	static struct YM2151interface ym2151_interface =

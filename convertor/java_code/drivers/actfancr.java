@@ -368,20 +368,20 @@ public class actfancr
 		32*8	/* every sprite takes 32 consecutive bytes */
 	);
 	
-	static struct GfxDecodeInfo actfan_gfxdecodeinfo[] =
+	static GfxDecodeInfo actfan_gfxdecodeinfo[] =
 	{
-		{ REGION_GFX1, 0, &chars,       0, 16 },
-		{ REGION_GFX2, 0, &sprites,   512, 16 },
-		{ REGION_GFX3, 0, &tiles,     256, 16 },
-		{ -1 } /* end of array */
+		new GfxDecodeInfo( REGION_GFX1, 0, chars,       0, 16 ),
+		new GfxDecodeInfo( REGION_GFX2, 0, sprites,   512, 16 ),
+		new GfxDecodeInfo( REGION_GFX3, 0, tiles,     256, 16 ),
+		new GfxDecodeInfo( -1 ) /* end of array */
 	};
 	
-	static struct GfxDecodeInfo triothep_gfxdecodeinfo[] =
+	static GfxDecodeInfo triothep_gfxdecodeinfo[] =
 	{
-		{ REGION_GFX1, 0, &chars,       0, 16 },
-		{ REGION_GFX2, 0, &sprites,   256, 16 },
-		{ REGION_GFX3, 0, &tiles,     512, 16 },
-		{ -1 } /* end of array */
+		new GfxDecodeInfo( REGION_GFX1, 0, chars,       0, 16 ),
+		new GfxDecodeInfo( REGION_GFX2, 0, sprites,   256, 16 ),
+		new GfxDecodeInfo( REGION_GFX3, 0, tiles,     512, 16 ),
+		new GfxDecodeInfo( -1 ) /* end of array */
 	};
 	
 	/******************************************************************************/

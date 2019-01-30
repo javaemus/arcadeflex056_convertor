@@ -1341,32 +1341,32 @@ public class toaplan1
 	);
 	
 	
-	static struct GfxDecodeInfo gfxdecodeinfo[] =
+	static GfxDecodeInfo gfxdecodeinfo[] =
 	{
-		{ REGION_GFX1, 0x00000, &tilelayout,		0, 64 },
-		{ REGION_GFX2, 0x00000, &tilelayout,	64*16, 64 },
-		{ -1 } /* end of array */
+		new GfxDecodeInfo( REGION_GFX1, 0x00000, tilelayout,		0, 64 ),
+		new GfxDecodeInfo( REGION_GFX2, 0x00000, tilelayout,	64*16, 64 ),
+		new GfxDecodeInfo( -1 ) /* end of array */
 	};
 	
-	static struct GfxDecodeInfo rallybik_gfxdecodeinfo[] =
+	static GfxDecodeInfo rallybik_gfxdecodeinfo[] =
 	{
-		{ REGION_GFX1, 0x00000, &tilelayout,			  0, 64 },
-		{ REGION_GFX2, 0x00000, &rallybik_spr_layout, 64*16, 64 },
-		{ -1 } /* end of array */
+		new GfxDecodeInfo( REGION_GFX1, 0x00000, tilelayout,			  0, 64 ),
+		new GfxDecodeInfo( REGION_GFX2, 0x00000, rallybik_spr_layout, 64*16, 64 ),
+		new GfxDecodeInfo( -1 ) /* end of array */
 	};
 	
-	static struct GfxDecodeInfo outzone_gfxdecodeinfo[] =
+	static GfxDecodeInfo outzone_gfxdecodeinfo[] =
 	{
-		{ REGION_GFX1, 0x00000, &vm_tilelayout, 	0, 64 },
-		{ REGION_GFX2, 0x00000, &tilelayout,	64*16, 64 },
-		{ -1 } /* end of array */
+		new GfxDecodeInfo( REGION_GFX1, 0x00000, vm_tilelayout, 	0, 64 ),
+		new GfxDecodeInfo( REGION_GFX2, 0x00000, tilelayout,	64*16, 64 ),
+		new GfxDecodeInfo( -1 ) /* end of array */
 	};
 	
-	static struct GfxDecodeInfo vm_gfxdecodeinfo[] =
+	static GfxDecodeInfo vm_gfxdecodeinfo[] =
 	{
-		{ REGION_GFX1, 0x00000, &tilelayout,		0, 64 },
-		{ REGION_GFX2, 0x00000, &vm_tilelayout, 64*16, 64 },
-		{ -1 } /* end of array */
+		new GfxDecodeInfo( REGION_GFX1, 0x00000, tilelayout,		0, 64 ),
+		new GfxDecodeInfo( REGION_GFX2, 0x00000, vm_tilelayout, 64*16, 64 ),
+		new GfxDecodeInfo( -1 ) /* end of array */
 	};
 	
 	

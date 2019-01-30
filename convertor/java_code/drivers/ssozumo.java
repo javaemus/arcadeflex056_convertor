@@ -229,12 +229,12 @@ public class ssozumo
 	);
 	
 	
-	static struct GfxDecodeInfo gfxdecodeinfo[] =
+	static GfxDecodeInfo gfxdecodeinfo[] =
 	{
-		{ REGION_GFX1, 0, &charlayout,     0, 4 },
-		{ REGION_GFX2, 0, &tilelayout,   4*8, 4 },
-		{ REGION_GFX3, 0, &spritelayout, 8*8, 2 },
-		{ -1 }		/* end of array */
+		new GfxDecodeInfo( REGION_GFX1, 0, charlayout,     0, 4 ),
+		new GfxDecodeInfo( REGION_GFX2, 0, tilelayout,   4*8, 4 ),
+		new GfxDecodeInfo( REGION_GFX3, 0, spritelayout, 8*8, 2 ),
+		new GfxDecodeInfo( -1 )		/* end of array */
 	};
 	
 	

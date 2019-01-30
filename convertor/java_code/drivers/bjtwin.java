@@ -2111,54 +2111,54 @@ public class bjtwin
 		32*32
 	);
 	
-	static struct GfxDecodeInfo tharrier_gfxdecodeinfo[] =
+	static GfxDecodeInfo tharrier_gfxdecodeinfo[] =
 	{
-		{ REGION_GFX1, 0, &charlayout, 0x000, 16 },	/* color 0x200-0x2ff */
-		{ REGION_GFX2, 0, &tilelayout, 0x000, 16 },	/* color 0x000-0x0ff */
-		{ REGION_GFX3, 0, &tilelayout, 0x100, 16 },	/* color 0x100-0x1ff */
-		{ -1 } /* end of array */
+		new GfxDecodeInfo( REGION_GFX1, 0, charlayout, 0x000, 16 ),	/* color 0x200-0x2ff */
+		new GfxDecodeInfo( REGION_GFX2, 0, tilelayout, 0x000, 16 ),	/* color 0x000-0x0ff */
+		new GfxDecodeInfo( REGION_GFX3, 0, tilelayout, 0x100, 16 ),	/* color 0x100-0x1ff */
+		new GfxDecodeInfo( -1 ) /* end of array */
 	};
 	
-	static struct GfxDecodeInfo macross_gfxdecodeinfo[] =
+	static GfxDecodeInfo macross_gfxdecodeinfo[] =
 	{
-		{ REGION_GFX1, 0, &charlayout, 0x200, 16 },	/* color 0x200-0x2ff */
-		{ REGION_GFX2, 0, &tilelayout, 0x000, 16 },	/* color 0x000-0x0ff */
-		{ REGION_GFX3, 0, &tilelayout, 0x100, 16 },	/* color 0x100-0x1ff */
-		{ -1 } /* end of array */
+		new GfxDecodeInfo( REGION_GFX1, 0, charlayout, 0x200, 16 ),	/* color 0x200-0x2ff */
+		new GfxDecodeInfo( REGION_GFX2, 0, tilelayout, 0x000, 16 ),	/* color 0x000-0x0ff */
+		new GfxDecodeInfo( REGION_GFX3, 0, tilelayout, 0x100, 16 ),	/* color 0x100-0x1ff */
+		new GfxDecodeInfo( -1 ) /* end of array */
 	};
 	
-	static struct GfxDecodeInfo macross2_gfxdecodeinfo[] =
+	static GfxDecodeInfo macross2_gfxdecodeinfo[] =
 	{
-		{ REGION_GFX1, 0, &charlayout, 0x300, 16 },	/* color 0x300-0x3ff */
-		{ REGION_GFX2, 0, &tilelayout, 0x000, 16 },	/* color 0x000-0x0ff */
-		{ REGION_GFX3, 0, &tilelayout, 0x100, 32 },	/* color 0x100-0x2ff */
-		{ -1 } /* end of array */
+		new GfxDecodeInfo( REGION_GFX1, 0, charlayout, 0x300, 16 ),	/* color 0x300-0x3ff */
+		new GfxDecodeInfo( REGION_GFX2, 0, tilelayout, 0x000, 16 ),	/* color 0x000-0x0ff */
+		new GfxDecodeInfo( REGION_GFX3, 0, tilelayout, 0x100, 32 ),	/* color 0x100-0x2ff */
+		new GfxDecodeInfo( -1 ) /* end of array */
 	};
 	
-	static struct GfxDecodeInfo bjtwin_gfxdecodeinfo[] =
+	static GfxDecodeInfo bjtwin_gfxdecodeinfo[] =
 	{
-		{ REGION_GFX1, 0, &charlayout, 0x000, 16 },	/* color 0x000-0x0ff */
-		{ REGION_GFX2, 0, &charlayout, 0x000, 16 },	/* color 0x000-0x0ff */
-		{ REGION_GFX3, 0, &tilelayout, 0x100, 16 },	/* color 0x100-0x1ff */
-		{ -1 } /* end of array */
+		new GfxDecodeInfo( REGION_GFX1, 0, charlayout, 0x000, 16 ),	/* color 0x000-0x0ff */
+		new GfxDecodeInfo( REGION_GFX2, 0, charlayout, 0x000, 16 ),	/* color 0x000-0x0ff */
+		new GfxDecodeInfo( REGION_GFX3, 0, tilelayout, 0x100, 16 ),	/* color 0x100-0x1ff */
+		new GfxDecodeInfo( -1 ) /* end of array */
 	};
 	
-	static struct GfxDecodeInfo bioship_gfxdecodeinfo[] =
+	static GfxDecodeInfo bioship_gfxdecodeinfo[] =
 	{
-		{ REGION_GFX1, 0, &charlayout, 0x300, 16 },	/* color 0x300-0x3ff */
-		{ REGION_GFX2, 0, &tilelayout, 0x100, 16 },	/* color 0x100-0x1ff */
-		{ REGION_GFX3, 0, &tilelayout, 0x200, 16 },	/* color 0x200-0x2ff */
-		{ REGION_GFX4, 0, &tilelayout, 0x000, 16 },	/* color 0x000-0x0ff */
-		{ -1 }
+		new GfxDecodeInfo( REGION_GFX1, 0, charlayout, 0x300, 16 ),	/* color 0x300-0x3ff */
+		new GfxDecodeInfo( REGION_GFX2, 0, tilelayout, 0x100, 16 ),	/* color 0x100-0x1ff */
+		new GfxDecodeInfo( REGION_GFX3, 0, tilelayout, 0x200, 16 ),	/* color 0x200-0x2ff */
+		new GfxDecodeInfo( REGION_GFX4, 0, tilelayout, 0x000, 16 ),	/* color 0x000-0x0ff */
+		new GfxDecodeInfo( -1 )
 	};
 	
-	static struct GfxDecodeInfo strahl_gfxdecodeinfo[] =
+	static GfxDecodeInfo strahl_gfxdecodeinfo[] =
 	{
-		{ REGION_GFX1, 0, &charlayout, 0x000, 16 },	/* color 0x000-0x0ff */
-		{ REGION_GFX2, 0, &tilelayout, 0x300, 16 },	/* color 0x300-0x3ff */
-		{ REGION_GFX3, 0, &tilelayout, 0x100, 16 },	/* color 0x100-0x1ff */
-		{ REGION_GFX4, 0, &tilelayout, 0x200, 16 },	/* color 0x200-0x2ff */
-		{ -1 }
+		new GfxDecodeInfo( REGION_GFX1, 0, charlayout, 0x000, 16 ),	/* color 0x000-0x0ff */
+		new GfxDecodeInfo( REGION_GFX2, 0, tilelayout, 0x300, 16 ),	/* color 0x300-0x3ff */
+		new GfxDecodeInfo( REGION_GFX3, 0, tilelayout, 0x100, 16 ),	/* color 0x100-0x1ff */
+		new GfxDecodeInfo( REGION_GFX4, 0, tilelayout, 0x200, 16 ),	/* color 0x200-0x2ff */
+		new GfxDecodeInfo( -1 )
 	};
 	
 	

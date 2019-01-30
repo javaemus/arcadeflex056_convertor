@@ -379,12 +379,12 @@ public class finalizr
 		32*32
 	);
 	
-	static struct GfxDecodeInfo gfxdecodeinfo[] =
+	static GfxDecodeInfo gfxdecodeinfo[] =
 	{
-		{ REGION_GFX1, 0, &charlayout,        0, 16 },
-		{ REGION_GFX1, 0, &spritelayout,  16*16, 16 },
-		{ REGION_GFX1, 0, &charlayout,    16*16, 16 },  /* to handle 8x8 sprites */
-		{ -1 } /* end of array */
+		new GfxDecodeInfo( REGION_GFX1, 0, charlayout,        0, 16 ),
+		new GfxDecodeInfo( REGION_GFX1, 0, spritelayout,  16*16, 16 ),
+		new GfxDecodeInfo( REGION_GFX1, 0, charlayout,    16*16, 16 ),  /* to handle 8x8 sprites */
+		new GfxDecodeInfo( -1 ) /* end of array */
 	};
 	
 	

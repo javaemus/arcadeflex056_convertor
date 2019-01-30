@@ -376,11 +376,11 @@ public class slapshot
 		128*8     /* every sprite takes 128 consecutive bytes */
 	);
 	
-	static struct GfxDecodeInfo slapshot_gfxdecodeinfo[] =
+	static GfxDecodeInfo slapshot_gfxdecodeinfo[] =
 	{
-		{ REGION_GFX2, 0x0, &tilelayout,  0, 256 },	/* sprite parts */
-		{ REGION_GFX1, 0x0, &slapshot_charlayout,  0, 256 },	/* sprites & playfield */
-		{ -1 } /* end of array */
+		new GfxDecodeInfo( REGION_GFX2, 0x0, tilelayout,  0, 256 ),	/* sprite parts */
+		new GfxDecodeInfo( REGION_GFX1, 0x0, slapshot_charlayout,  0, 256 ),	/* sprites  playfield */
+		new GfxDecodeInfo( -1 ) /* end of array */
 	};
 	
 	

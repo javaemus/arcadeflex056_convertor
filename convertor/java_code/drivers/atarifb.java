@@ -611,20 +611,20 @@ public class atarifb
 		16*8	/* every char takes 16 consecutive bytes */
 	);
 	
-	static struct GfxDecodeInfo gfxdecodeinfo[] =
+	static GfxDecodeInfo gfxdecodeinfo[] =
 	{
-		{ REGION_GFX1, 0, &charlayout,  0x00, 0x01 }, /* offset into colors, # of colors */
-		{ REGION_GFX2, 0, &fieldlayout, 0x02, 0x01 }, /* offset into colors, # of colors */
-		{ -1 } /* end of array */
+		new GfxDecodeInfo( REGION_GFX1, 0, charlayout,  0x00, 0x01 ), /* offset into colors, # of colors */
+		new GfxDecodeInfo( REGION_GFX2, 0, fieldlayout, 0x02, 0x01 ), /* offset into colors, # of colors */
+		new GfxDecodeInfo( -1 ) /* end of array */
 	};
 	
-	static struct GfxDecodeInfo soccer_gfxdecodeinfo[] =
+	static GfxDecodeInfo soccer_gfxdecodeinfo[] =
 	{
-		{ REGION_GFX1, 0x0000, &charlayout,         0x00, 0x01 }, /* offset into colors, # of colors */
-		{ REGION_GFX3, 0x0400, &soccer_fieldlayout, 0x06, 0x01 }, /* offset into colors, # of colors */
-		{ REGION_GFX2, 0x0000, &spritelayout,       0x02, 0x02 }, /* offset into colors, # of colors */
-		{ REGION_GFX3, 0x0000, &spritemasklayout,   0x06, 0x03 }, /* offset into colors, # of colors */
-		{ -1 } /* end of array */
+		new GfxDecodeInfo( REGION_GFX1, 0x0000, charlayout,         0x00, 0x01 ), /* offset into colors, # of colors */
+		new GfxDecodeInfo( REGION_GFX3, 0x0400, soccer_fieldlayout, 0x06, 0x01 ), /* offset into colors, # of colors */
+		new GfxDecodeInfo( REGION_GFX2, 0x0000, spritelayout,       0x02, 0x02 ), /* offset into colors, # of colors */
+		new GfxDecodeInfo( REGION_GFX3, 0x0000, spritemasklayout,   0x06, 0x03 ), /* offset into colors, # of colors */
+		new GfxDecodeInfo( -1 ) /* end of array */
 	};
 	
 	static unsigned char palette[] =

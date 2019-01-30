@@ -246,10 +246,10 @@ public class fastlane
 		32*8
 	);
 	
-	static struct GfxDecodeInfo gfxdecodeinfo[] =
+	static GfxDecodeInfo gfxdecodeinfo[] =
 	{
-		{ REGION_GFX1, 0, &gfxlayout, 0, 64*16 },
-		{ -1 } /* end of array */
+		new GfxDecodeInfo( REGION_GFX1, 0, gfxlayout, 0, 64*16 ),
+		new GfxDecodeInfo( -1 ) /* end of array */
 	};
 	
 	/***************************************************************************

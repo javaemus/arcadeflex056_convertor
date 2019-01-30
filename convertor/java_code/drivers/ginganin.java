@@ -313,13 +313,13 @@ public class ginganin
 	layout8x8  (txtlayout,	 0x04000)
 	layout16x16(spritelayout,0x50000)
 	
-	static struct GfxDecodeInfo gfxdecodeinfo[] =
+	static GfxDecodeInfo gfxdecodeinfo[] =
 	{
-		{ REGION_GFX1, 0, &tilelayout,	 256*3, 16 }, /* [0] bg */
-		{ REGION_GFX2, 0, &tilelayout,	 256*2, 16 }, /* [1] fg */
-		{ REGION_GFX3, 0, &txtlayout,	 256*0, 16 }, /* [2] txt */
-		{ REGION_GFX4, 0, &spritelayout, 256*1, 16 }, /* [3] sprites */
-		{ -1 }
+		new GfxDecodeInfo( REGION_GFX1, 0, tilelayout,	 256*3, 16 ), /* [0] bg */
+		new GfxDecodeInfo( REGION_GFX2, 0, tilelayout,	 256*2, 16 ), /* [1] fg */
+		new GfxDecodeInfo( REGION_GFX3, 0, txtlayout,	 256*0, 16 ), /* [2] txt */
+		new GfxDecodeInfo( REGION_GFX4, 0, spritelayout, 256*1, 16 ), /* [3] sprites */
+		new GfxDecodeInfo( -1 )
 	};
 	
 	

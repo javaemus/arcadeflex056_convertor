@@ -280,15 +280,15 @@ public class redclash
 		32*32
 	);
 	
-	static struct GfxDecodeInfo gfxdecodeinfo[] =
+	static GfxDecodeInfo gfxdecodeinfo[] =
 	{
-		{ REGION_GFX1, 0x0000, &charlayout,          0,  8 },
-		{ REGION_GFX3, 0x0000, &spritelayout8x8,   4*8, 16 },
-		{ REGION_GFX2, 0x0000, &spritelayout16x16, 4*8, 16 },
-		{ REGION_GFX2, 0x0000, &spritelayout24x24, 4*8, 16 },
-		{ REGION_GFX2, 0x0000, &spritelayout16x16bis, 4*8, 16 },
-		{ REGION_GFX2, 0x0004, &spritelayout16x16bis, 4*8, 16 },
-		{ -1 } /* end of array */
+		new GfxDecodeInfo( REGION_GFX1, 0x0000, charlayout,          0,  8 ),
+		new GfxDecodeInfo( REGION_GFX3, 0x0000, spritelayout8x8,   4*8, 16 ),
+		new GfxDecodeInfo( REGION_GFX2, 0x0000, spritelayout16x16, 4*8, 16 ),
+		new GfxDecodeInfo( REGION_GFX2, 0x0000, spritelayout24x24, 4*8, 16 ),
+		new GfxDecodeInfo( REGION_GFX2, 0x0000, spritelayout16x16bis, 4*8, 16 ),
+		new GfxDecodeInfo( REGION_GFX2, 0x0004, spritelayout16x16bis, 4*8, 16 ),
+		new GfxDecodeInfo( -1 ) /* end of array */
 	};
 	
 	

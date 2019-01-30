@@ -294,12 +294,12 @@ public class yard
 	);
 	
 	
-	static struct GfxDecodeInfo gfxdecodeinfo[] =
+	static GfxDecodeInfo gfxdecodeinfo[] =
 	{
-		{ REGION_GFX1, 0, &charlayout,       0, 32 },	/* use colors 0-255 */
-		{ REGION_GFX2, 0, &spritelayout,  32*8, 32 },	/* use colors 256-271 with lookup table */
+		new GfxDecodeInfo( REGION_GFX1, 0, charlayout,       0, 32 ),	/* use colors 0-255 */
+		new GfxDecodeInfo( REGION_GFX2, 0, spritelayout,  32*8, 32 ),	/* use colors 256-271 with lookup table */
 		/* bitmapped radar uses colors 272-527 */
-		{ -1 } /* end of array */
+		new GfxDecodeInfo( -1 ) /* end of array */
 	};
 	
 	

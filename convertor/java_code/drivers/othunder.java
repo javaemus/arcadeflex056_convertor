@@ -527,11 +527,11 @@ public class othunder
 		32*8	/* every sprite takes 32 consecutive bytes */
 	);
 	
-	static struct GfxDecodeInfo othunder_gfxdecodeinfo[] =
+	static GfxDecodeInfo othunder_gfxdecodeinfo[] =
 	{
-		{ REGION_GFX2, 0, &tile16x8_layout, 0, 256 },	/* sprite parts */
-		{ REGION_GFX1, 0, &charlayout,      0, 256 },	/* sprites & playfield */
-		{ -1 } /* end of array */
+		new GfxDecodeInfo( REGION_GFX2, 0, tile16x8_layout, 0, 256 ),	/* sprite parts */
+		new GfxDecodeInfo( REGION_GFX1, 0, charlayout,      0, 256 ),	/* sprites  playfield */
+		new GfxDecodeInfo( -1 ) /* end of array */
 	};
 	
 	

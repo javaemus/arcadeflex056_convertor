@@ -569,12 +569,12 @@ public class undrfire
 		32*8    /* every sprite takes 32 consecutive bytes */
 	);
 	
-	static struct GfxDecodeInfo undrfire_gfxdecodeinfo[] =
+	static GfxDecodeInfo undrfire_gfxdecodeinfo[] =
 	{
-		{ REGION_GFX2, 0x0, &tile16x16_layout,  0, 512 },
-		{ REGION_GFX1, 0x0, &charlayout,        0, 512 },
-		{ REGION_GFX3, 0x0, &pivlayout,         0, 512 },
-		{ -1 } /* end of array */
+		new GfxDecodeInfo( REGION_GFX2, 0x0, tile16x16_layout,  0, 512 ),
+		new GfxDecodeInfo( REGION_GFX1, 0x0, charlayout,        0, 512 ),
+		new GfxDecodeInfo( REGION_GFX3, 0x0, pivlayout,         0, 512 ),
+		new GfxDecodeInfo( -1 ) /* end of array */
 	};
 	
 	

@@ -405,13 +405,13 @@ public class taito_f3
 		128*8	/* every sprite takes 128 consecutive bytes */
 	);
 	
-	static struct GfxDecodeInfo gfxdecodeinfo[] =
+	static GfxDecodeInfo gfxdecodeinfo[] =
 	{
-		{ 0,           0x000000, &charlayout,          0,  64 }, /* Dynamically modified */
-		{ REGION_GFX2, 0x000000, &tile_layout, 	       0, 512 }, /* Tiles area */
-		{ REGION_GFX1, 0x000000, &spriteram_layout, 4096, 256 }, /* Sprites area */
-		{ 0,           0x000000, &pivotlayout,         0,  64 }, /* Dynamically modified */
-		{ -1 } /* end of array */
+		new GfxDecodeInfo( 0,           0x000000, charlayout,          0,  64 ), /* Dynamically modified */
+		new GfxDecodeInfo( REGION_GFX2, 0x000000, tile_layout, 	       0, 512 ), /* Tiles area */
+		new GfxDecodeInfo( REGION_GFX1, 0x000000, spriteram_layout, 4096, 256 ), /* Sprites area */
+		new GfxDecodeInfo( 0,           0x000000, pivotlayout,         0,  64 ), /* Dynamically modified */
+		new GfxDecodeInfo( -1 ) /* end of array */
 	};
 	
 	/******************************************************************************/

@@ -313,12 +313,12 @@ public class turbo
 		8*8		/* every character uses 8 consecutive bytes */
 	);
 	
-	static struct GfxDecodeInfo gfxdecodeinfo[] =
+	static GfxDecodeInfo gfxdecodeinfo[] =
 	{
-		{ REGION_GFX4, 0x0000, &numlayout,	512,   1 },
-		{ REGION_GFX4, 0x0100, &tachlayout,	512,   3 },
-		{ REGION_GFX3, 0x0000, &charlayout,	512,   3 },
-		{ -1 }
+		new GfxDecodeInfo( REGION_GFX4, 0x0000, numlayout,	512,   1 ),
+		new GfxDecodeInfo( REGION_GFX4, 0x0100, tachlayout,	512,   3 ),
+		new GfxDecodeInfo( REGION_GFX3, 0x0000, charlayout,	512,   3 ),
+		new GfxDecodeInfo( -1 )
 	};
 	
 	

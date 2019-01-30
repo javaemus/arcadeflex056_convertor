@@ -359,11 +359,11 @@ public class tp84
 		64*8
 	);
 	
-	static struct GfxDecodeInfo gfxdecodeinfo[] =
+	static GfxDecodeInfo gfxdecodeinfo[] =
 	{
-		{ REGION_GFX1, 0, &charlayout,        0, 64*8 },
-		{ REGION_GFX2, 0, &spritelayout, 64*4*8, 16*8 },
-		{ -1 } /* end of array */
+		new GfxDecodeInfo( REGION_GFX1, 0, charlayout,        0, 64*8 ),
+		new GfxDecodeInfo( REGION_GFX2, 0, spritelayout, 64*4*8, 16*8 ),
+		new GfxDecodeInfo( -1 ) /* end of array */
 	};
 	
 	

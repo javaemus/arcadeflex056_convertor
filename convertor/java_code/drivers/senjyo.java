@@ -543,16 +543,16 @@ public class senjyo
 		128*8	/* every sprite takes 128 consecutive bytes */
 	);
 	
-	static struct GfxDecodeInfo gfxdecodeinfo[] =
+	static GfxDecodeInfo gfxdecodeinfo[] =
 	{
-		{ REGION_GFX1, 0, &charlayout,       0, 8 },	/*   0- 63 characters */
-		{ REGION_GFX2, 0, &tilelayout_256,  64, 8 },	/*  64-127 background #1 */
-		{ REGION_GFX3, 0, &tilelayout_256, 128, 8 },	/* 128-191 background #2 */
-		{ REGION_GFX4, 0, &tilelayout_128, 192, 8 },	/* 192-255 background #3 */
-		{ REGION_GFX5, 0, &spritelayout1,  320, 8 },	/* 320-383 normal sprites */
-		{ REGION_GFX5, 0, &spritelayout2,  320, 8 },	/* 320-383 large sprites */
+		new GfxDecodeInfo( REGION_GFX1, 0, charlayout,       0, 8 ),	/*   0- 63 characters */
+		new GfxDecodeInfo( REGION_GFX2, 0, tilelayout_256,  64, 8 ),	/*  64-127 background #1 */
+		new GfxDecodeInfo( REGION_GFX3, 0, tilelayout_256, 128, 8 ),	/* 128-191 background #2 */
+		new GfxDecodeInfo( REGION_GFX4, 0, tilelayout_128, 192, 8 ),	/* 192-255 background #3 */
+		new GfxDecodeInfo( REGION_GFX5, 0, spritelayout1,  320, 8 ),	/* 320-383 normal sprites */
+		new GfxDecodeInfo( REGION_GFX5, 0, spritelayout2,  320, 8 ),	/* 320-383 large sprites */
 														/* 384-399 is background */
-		{ -1 } /* end of array */
+		new GfxDecodeInfo( -1 ) /* end of array */
 	};
 	
 	

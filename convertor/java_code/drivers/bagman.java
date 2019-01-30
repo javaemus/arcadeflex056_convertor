@@ -495,20 +495,20 @@ public class bagman
 	
 	
 	
-	static struct GfxDecodeInfo gfxdecodeinfo[] =
+	static GfxDecodeInfo gfxdecodeinfo[] =
 	{
-		{ REGION_GFX1, 0, &charlayout,		0, 16 },	/* char set #1 */
-		{ REGION_GFX1, 0, &spritelayout,	0, 16 },	/* sprites */
-		{ REGION_GFX2, 0, &charlayout,		0, 16 },	/* char set #2 */
-		{ -1 } /* end of array */
+		new GfxDecodeInfo( REGION_GFX1, 0, charlayout,		0, 16 ),	/* char set #1 */
+		new GfxDecodeInfo( REGION_GFX1, 0, spritelayout,	0, 16 ),	/* sprites */
+		new GfxDecodeInfo( REGION_GFX2, 0, charlayout,		0, 16 ),	/* char set #2 */
+		new GfxDecodeInfo( -1 ) /* end of array */
 	};
 	
-	static struct GfxDecodeInfo pickin_gfxdecodeinfo[] =
+	static GfxDecodeInfo pickin_gfxdecodeinfo[] =
 	{
-		{ REGION_GFX1, 0, &charlayout,		0, 16 },	/* char set #1 */
-		{ REGION_GFX1, 0, &spritelayout,	0, 16 },	/* sprites */
+		new GfxDecodeInfo( REGION_GFX1, 0, charlayout,		0, 16 ),	/* char set #1 */
+		new GfxDecodeInfo( REGION_GFX1, 0, spritelayout,	0, 16 ),	/* sprites */
 		/* no gfx2 */
-		{ -1 } /* end of array */
+		new GfxDecodeInfo( -1 ) /* end of array */
 	};
 	
 	

@@ -739,12 +739,12 @@ public class psikyo
 									Sengoku Ace
 	***************************************************************************/
 	
-	static struct GfxDecodeInfo sngkace_gfxdecodeinfo[] =
+	static GfxDecodeInfo sngkace_gfxdecodeinfo[] =
 	{
-		{ REGION_GFX1, 0, &layout_16x16x4, 0x000, 0x20 }, // [0] Sprites
-		{ REGION_GFX2, 0, &layout_16x16x4, 0x800, 0x08 }, // [1] Layer 0
-		{ REGION_GFX3, 0, &layout_16x16x4, 0xc00, 0x08 }, // [2] Layer 1
-		{ -1 }
+		new GfxDecodeInfo( REGION_GFX1, 0, layout_16x16x4, 0x000, 0x20 ), // [0] Sprites
+		new GfxDecodeInfo( REGION_GFX2, 0, layout_16x16x4, 0x800, 0x08 ), // [1] Layer 0
+		new GfxDecodeInfo( REGION_GFX3, 0, layout_16x16x4, 0xc00, 0x08 ), // [2] Layer 1
+		new GfxDecodeInfo( -1 )
 	};
 	
 	

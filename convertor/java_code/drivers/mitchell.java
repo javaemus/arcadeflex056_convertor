@@ -948,25 +948,25 @@ public class mitchell
 		64*8    /* every sprite takes 64 consecutive bytes */
 	);
 	
-	static struct GfxDecodeInfo mgakuen_gfxdecodeinfo[] =
+	static GfxDecodeInfo mgakuen_gfxdecodeinfo[] =
 	{
-		{ REGION_GFX1, 0, &marukin_charlayout, 0,  64 }, /* colors 0-1023 */
-		{ REGION_GFX2, 0, &spritelayout,       0,  16 }, /* colors 0- 255 */
-		{ -1 } /* end of array */
+		new GfxDecodeInfo( REGION_GFX1, 0, marukin_charlayout, 0,  64 ), /* colors 0-1023 */
+		new GfxDecodeInfo( REGION_GFX2, 0, spritelayout,       0,  16 ), /* colors 0- 255 */
+		new GfxDecodeInfo( -1 ) /* end of array */
 	};
 	
-	static struct GfxDecodeInfo marukin_gfxdecodeinfo[] =
+	static GfxDecodeInfo marukin_gfxdecodeinfo[] =
 	{
-		{ REGION_GFX1, 0, &marukin_charlayout, 0, 128 }, /* colors 0-2047 */
-		{ REGION_GFX2, 0, &spritelayout,       0,  16 }, /* colors 0- 255 */
-		{ -1 } /* end of array */
+		new GfxDecodeInfo( REGION_GFX1, 0, marukin_charlayout, 0, 128 ), /* colors 0-2047 */
+		new GfxDecodeInfo( REGION_GFX2, 0, spritelayout,       0,  16 ), /* colors 0- 255 */
+		new GfxDecodeInfo( -1 ) /* end of array */
 	};
 	
-	static struct GfxDecodeInfo gfxdecodeinfo[] =
+	static GfxDecodeInfo gfxdecodeinfo[] =
 	{
-		{ REGION_GFX1, 0, &charlayout,     0, 128 }, /* colors 0-2047 */
-		{ REGION_GFX2, 0, &spritelayout,   0,  16 }, /* colors 0- 255 */
-		{ -1 } /* end of array */
+		new GfxDecodeInfo( REGION_GFX1, 0, charlayout,     0, 128 ), /* colors 0-2047 */
+		new GfxDecodeInfo( REGION_GFX2, 0, spritelayout,   0,  16 ), /* colors 0- 255 */
+		new GfxDecodeInfo( -1 ) /* end of array */
 	};
 	
 	

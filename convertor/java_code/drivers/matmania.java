@@ -341,20 +341,20 @@ public class matmania
 		32*8	/* every tile takes 16 consecutive bytes */
 	);
 	
-	static struct GfxDecodeInfo matmania_gfxdecodeinfo[] =
+	static GfxDecodeInfo matmania_gfxdecodeinfo[] =
 	{
-		{ REGION_GFX1, 0, &charlayout,              0, 4 },
-		{ REGION_GFX2, 0, &tilelayout,            4*8, 4 },
-		{ REGION_GFX3, 0, &matmania_spritelayout, 8*8, 2 },
-		{ -1 } /* end of array */
+		new GfxDecodeInfo( REGION_GFX1, 0, charlayout,              0, 4 ),
+		new GfxDecodeInfo( REGION_GFX2, 0, tilelayout,            4*8, 4 ),
+		new GfxDecodeInfo( REGION_GFX3, 0, matmania_spritelayout, 8*8, 2 ),
+		new GfxDecodeInfo( -1 ) /* end of array */
 	};
 	
-	static struct GfxDecodeInfo maniach_gfxdecodeinfo[] =
+	static GfxDecodeInfo maniach_gfxdecodeinfo[] =
 	{
-		{ REGION_GFX1, 0, &charlayout,             0, 4 },
-		{ REGION_GFX2, 0, &maniach_tilelayout,   4*8, 4 },
-		{ REGION_GFX3, 0, &maniach_spritelayout, 8*8, 2 },
-		{ -1 } /* end of array */
+		new GfxDecodeInfo( REGION_GFX1, 0, charlayout,             0, 4 ),
+		new GfxDecodeInfo( REGION_GFX2, 0, maniach_tilelayout,   4*8, 4 ),
+		new GfxDecodeInfo( REGION_GFX3, 0, maniach_spritelayout, 8*8, 2 ),
+		new GfxDecodeInfo( -1 ) /* end of array */
 	};
 	
 	

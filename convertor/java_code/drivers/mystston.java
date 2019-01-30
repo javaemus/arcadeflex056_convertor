@@ -217,12 +217,12 @@ public class mystston
 		32*8
 	);
 	
-	static struct GfxDecodeInfo gfxdecodeinfo[] =
+	static GfxDecodeInfo gfxdecodeinfo[] =
 	{
-		{ REGION_GFX1, 0, &charlayout,   3*8, 4 },
-		{ REGION_GFX2, 0, &spritelayout, 2*8, 1 },
-		{ REGION_GFX1, 0, &spritelayout, 0*8, 2 },
-		{ -1 } /* end of array */
+		new GfxDecodeInfo( REGION_GFX1, 0, charlayout,   3*8, 4 ),
+		new GfxDecodeInfo( REGION_GFX2, 0, spritelayout, 2*8, 1 ),
+		new GfxDecodeInfo( REGION_GFX1, 0, spritelayout, 0*8, 2 ),
+		new GfxDecodeInfo( -1 ) /* end of array */
 	};
 	
 	

@@ -247,12 +247,12 @@ public class powerins
 	);
 	
 	
-	static struct GfxDecodeInfo powerins_gfxdecodeinfo[] =
+	static GfxDecodeInfo powerins_gfxdecodeinfo[] =
 	{
-		{ REGION_GFX1, 0, &layout_16x16x4,      0x000, 0x20 }, // [0] Tiles
-		{ REGION_GFX2, 0, &layout_8x8x4,        0x200, 0x10 }, // [1] Tiles
-		{ REGION_GFX3, 0, &layout_16x16x4_swap, 0x400, 0x40 }, // [2] Sprites
-		{ -1 }
+		new GfxDecodeInfo( REGION_GFX1, 0, layout_16x16x4,      0x000, 0x20 ), // [0] Tiles
+		new GfxDecodeInfo( REGION_GFX2, 0, layout_8x8x4,        0x200, 0x10 ), // [1] Tiles
+		new GfxDecodeInfo( REGION_GFX3, 0, layout_16x16x4_swap, 0x400, 0x40 ), // [2] Sprites
+		new GfxDecodeInfo( -1 )
 	};
 	
 	

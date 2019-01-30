@@ -328,14 +328,14 @@ public class yamato
 		32*8    /* every sprite takes 32 consecutive bytes */
 	);
 	
-	static struct GfxDecodeInfo gfxdecodeinfo[] =
+	static GfxDecodeInfo gfxdecodeinfo[] =
 	{
-		{ REGION_GFX1, 0x0000, &charlayout,      0, 16 }, /* char set #1 */
-		{ REGION_GFX1, 0x2000, &charlayout,      0, 16 }, /* char set #2 */
-		{ REGION_GFX2, 0x0000, &bscharlayout, 16*4,  8 }, /* big sprite char set */
-		{ REGION_GFX1, 0x0000, &spritelayout,    0, 16 }, /* sprite set #1 */
-		{ REGION_GFX1, 0x2000, &spritelayout,    0, 16 }, /* sprite set #2 */
-		{ -1 } /* end of array */
+		new GfxDecodeInfo( REGION_GFX1, 0x0000, charlayout,      0, 16 ), /* char set #1 */
+		new GfxDecodeInfo( REGION_GFX1, 0x2000, charlayout,      0, 16 ), /* char set #2 */
+		new GfxDecodeInfo( REGION_GFX2, 0x0000, bscharlayout, 16*4,  8 ), /* big sprite char set */
+		new GfxDecodeInfo( REGION_GFX1, 0x0000, spritelayout,    0, 16 ), /* sprite set #1 */
+		new GfxDecodeInfo( REGION_GFX1, 0x2000, spritelayout,    0, 16 ), /* sprite set #2 */
+		new GfxDecodeInfo( -1 ) /* end of array */
 	};
 	
 	

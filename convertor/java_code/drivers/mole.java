@@ -69,10 +69,10 @@ public class mole
 		8*8
 	);
 	
-	static struct GfxDecodeInfo gfx_decode[] = {
-		{ 1, 0x0000, &tile_layout, 0x00, 1 },
-		{ 1, 0x3000, &tile_layout, 0x00, 1 },
-		{ -1 }
+	static GfxDecodeInfo gfx_decode[] ={
+		new GfxDecodeInfo( 1, 0x0000, tile_layout, 0x00, 1 ),
+		new GfxDecodeInfo( 1, 0x3000, tile_layout, 0x00, 1 ),
+		new GfxDecodeInfo( -1 )
 	};
 	
 	static struct AY8910interface ay8910_interface =

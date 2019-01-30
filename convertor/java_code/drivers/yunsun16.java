@@ -387,11 +387,11 @@ public class yunsun16
 	);
 	
 	
-	static struct GfxDecodeInfo yunsun16_gfxdecodeinfo[] =
+	static GfxDecodeInfo yunsun16_gfxdecodeinfo[] =
 	{
-		{ REGION_GFX1, 0, &layout_16x16x8, 0x1000, 0x10 }, // [0] Layers
-		{ REGION_GFX2, 0, &layout_16x16x4, 0x0000, 0x20 }, // [1] Sprites
-		{ -1 }
+		new GfxDecodeInfo( REGION_GFX1, 0, layout_16x16x8, 0x1000, 0x10 ), // [0] Layers
+		new GfxDecodeInfo( REGION_GFX2, 0, layout_16x16x4, 0x0000, 0x20 ), // [1] Sprites
+		new GfxDecodeInfo( -1 )
 	};
 	
 	

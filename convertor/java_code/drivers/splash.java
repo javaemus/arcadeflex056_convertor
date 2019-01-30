@@ -212,11 +212,11 @@ public class splash
 		32*8
 	);
 	
-	static struct GfxDecodeInfo gfxdecodeinfo[] =
+	static GfxDecodeInfo gfxdecodeinfo[] =
 	{
-		{ REGION_GFX1, 0x000000, &tilelayout8 ,0,128 },
-		{ REGION_GFX1, 0x000000, &tilelayout16,0,128 },
-		{ -1 }
+		new GfxDecodeInfo( REGION_GFX1, 0x000000, tilelayout8 ,0,128 ),
+		new GfxDecodeInfo( REGION_GFX1, 0x000000, tilelayout16,0,128 ),
+		new GfxDecodeInfo( -1 )
 	};
 	
 	static struct YM3812interface splash_ym3812_interface =

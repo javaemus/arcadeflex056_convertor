@@ -400,10 +400,10 @@ public class offtwall
 	);
 	
 	
-	static struct GfxDecodeInfo gfxdecodeinfo[] =
+	static GfxDecodeInfo gfxdecodeinfo[] =
 	{
-		{ REGION_GFX1, 0, &pfmolayout,  256, 32 },		/* sprites & playfield */
-		{ -1 }
+		new GfxDecodeInfo( REGION_GFX1, 0, pfmolayout,  256, 32 ),		/* sprites  playfield */
+		new GfxDecodeInfo( -1 )
 	};
 	
 	

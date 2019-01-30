@@ -217,12 +217,12 @@ public class zac2650
 		8*8
 	);
 	
-	static struct GfxDecodeInfo tinvader_gfxdecodeinfo[] =
+	static GfxDecodeInfo tinvader_gfxdecodeinfo[] =
 	{
-		{ REGION_GFX1, 0, &tinvader_character,  0, 8 },
-	  	{ REGION_CPU1, 0x1F00, &s2636_character8, 0, 8 },	/* dynamic */
-	  	{ REGION_CPU1, 0x1F00, &s2636_character16, 0, 8 },	/* dynamic */
-		{ -1 } /* end of array */
+		new GfxDecodeInfo( REGION_GFX1, 0, tinvader_character,  0, 8 ),
+	  	new GfxDecodeInfo( REGION_CPU1, 0x1F00, s2636_character8, 0, 8 ),	/* dynamic */
+	  	new GfxDecodeInfo( REGION_CPU1, 0x1F00, s2636_character16, 0, 8 ),	/* dynamic */
+		new GfxDecodeInfo( -1 ) /* end of array */
 	};
 	
 	static const struct MachineDriver machine_driver_tinvader =

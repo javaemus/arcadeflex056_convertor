@@ -1256,20 +1256,20 @@ public class mcr3
 	);
 	
 	
-	static struct GfxDecodeInfo gfxdecodeinfo[] =
+	static GfxDecodeInfo gfxdecodeinfo[] =
 	{
-		{ REGION_GFX1, 0, &mcr_bg_layout,     0, 4 },
-		{ REGION_GFX2, 0, &mcr_sprite_layout, 0, 4 },
-		{ -1 } /* end of array */
+		new GfxDecodeInfo( REGION_GFX1, 0, mcr_bg_layout,     0, 4 ),
+		new GfxDecodeInfo( REGION_GFX2, 0, mcr_sprite_layout, 0, 4 ),
+		new GfxDecodeInfo( -1 ) /* end of array */
 	};
 	
 	
-	static struct GfxDecodeInfo spyhunt_gfxdecodeinfo[] =
+	static GfxDecodeInfo spyhunt_gfxdecodeinfo[] =
 	{
-		{ REGION_GFX1, 0, &spyhunt_charlayout,  1*16, 1 },
-		{ REGION_GFX2, 0, &mcr_sprite_layout,   0*16, 4 },
-		{ REGION_GFX3, 0, &spyhunt_alphalayout, 4*16, 1 },
-		{ -1 } /* end of array */
+		new GfxDecodeInfo( REGION_GFX1, 0, spyhunt_charlayout,  1*16, 1 ),
+		new GfxDecodeInfo( REGION_GFX2, 0, mcr_sprite_layout,   0*16, 4 ),
+		new GfxDecodeInfo( REGION_GFX3, 0, spyhunt_alphalayout, 4*16, 1 ),
+		new GfxDecodeInfo( -1 ) /* end of array */
 	};
 	
 	

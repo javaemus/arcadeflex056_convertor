@@ -182,11 +182,11 @@ public class suprloco
 	);
 	
 	
-	static struct GfxDecodeInfo gfxdecodeinfo[] =
+	static GfxDecodeInfo gfxdecodeinfo[] =
 	{
 		/* sprites use colors 256-511 + 512-767 */
-		{ REGION_GFX1, 0x6000, &charlayout, 0, 16 },
-		{ -1 } /* end of array */
+		new GfxDecodeInfo( REGION_GFX1, 0x6000, charlayout, 0, 16 ),
+		new GfxDecodeInfo( -1 ) /* end of array */
 	};
 	
 	

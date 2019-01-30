@@ -1049,10 +1049,10 @@ public class twin16
 		8*32
 	);
 	
-	static struct GfxDecodeInfo gfxdecodeinfo[] =
+	static GfxDecodeInfo gfxdecodeinfo[] =
 	{
-		{ REGION_GFX1, 0x00000, &alpha_layout, 0, 16 },
-		{ -1 }
+		new GfxDecodeInfo( REGION_GFX1, 0x00000, alpha_layout, 0, 16 ),
+		new GfxDecodeInfo( -1 )
 	};
 	
 	

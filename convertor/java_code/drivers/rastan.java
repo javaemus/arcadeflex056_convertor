@@ -303,11 +303,11 @@ public class rastan
 		64*8	/* every sprite takes 64 consecutive bytes */
 	);
 	
-	static struct GfxDecodeInfo gfxdecodeinfo[] =
+	static GfxDecodeInfo gfxdecodeinfo[] =
 	{
-		{ REGION_GFX2, 0, &spritelayout2,  0, 0x80 },	/* sprites 16x16*/
-		{ REGION_GFX1, 0, &spritelayout1,  0, 0x80 },	/* sprites 8x8*/
-		{ -1 } /* end of array */
+		new GfxDecodeInfo( REGION_GFX2, 0, spritelayout2,  0, 0x80 ),	/* sprites 16x16*/
+		new GfxDecodeInfo( REGION_GFX1, 0, spritelayout1,  0, 0x80 ),	/* sprites 8x8*/
+		new GfxDecodeInfo( -1 ) /* end of array */
 	};
 	
 	

@@ -670,25 +670,25 @@ public class rockola
 	
 	
 	
-	static struct GfxDecodeInfo sasuke_gfxdecodeinfo[] =
+	static GfxDecodeInfo sasuke_gfxdecodeinfo[] =
 	{
-	    { 0,           0x1000, &swapcharlayout,		0, 4 },	/* the game dynamically modifies this */
-	    { REGION_GFX1, 0x0000, &swapcharlayout,	  4*4, 4 },
-		{ -1 }
+	    new GfxDecodeInfo( 0,           0x1000, swapcharlayout,		0, 4 ),	/* the game dynamically modifies this */
+	    new GfxDecodeInfo( REGION_GFX1, 0x0000, swapcharlayout,	  4*4, 4 ),
+		new GfxDecodeInfo( -1 )
 	};
 	
-	static struct GfxDecodeInfo satansat_gfxdecodeinfo[] =
+	static GfxDecodeInfo satansat_gfxdecodeinfo[] =
 	{
-	    { 0,           0x1000, &charlayout_memory,	0, 4 },	/* the game dynamically modifies this */
-	    { REGION_GFX1, 0x0000, &charlayout,		  4*4, 4 },
-		{ -1 }
+	    new GfxDecodeInfo( 0,           0x1000, charlayout_memory,	0, 4 ),	/* the game dynamically modifies this */
+	    new GfxDecodeInfo( REGION_GFX1, 0x0000, charlayout,		  4*4, 4 ),
+		new GfxDecodeInfo( -1 )
 	};
 	
-	static struct GfxDecodeInfo vanguard_gfxdecodeinfo[] =
+	static GfxDecodeInfo vanguard_gfxdecodeinfo[] =
 	{
-		{ 0,           0x1000, &charlayout_memory,	0, 8 },	/* the game dynamically modifies this */
-		{ REGION_GFX1, 0x0000, &charlayout,		  8*4, 8 },
-		{ -1 } /* end of array */
+		new GfxDecodeInfo( 0,           0x1000, charlayout_memory,	0, 8 ),	/* the game dynamically modifies this */
+		new GfxDecodeInfo( REGION_GFX1, 0x0000, charlayout,		  8*4, 8 ),
+		new GfxDecodeInfo( -1 ) /* end of array */
 	};
 	
 	

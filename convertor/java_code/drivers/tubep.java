@@ -822,15 +822,15 @@ public class tubep
 	);
 	#endif
 	
-	static struct GfxDecodeInfo gfxdecodeinfo[] =
+	static GfxDecodeInfo gfxdecodeinfo[] =
 	{
-		{ REGION_GFX3,      0, &charlayout,       0, 16 }, /*16 color codes*/
-		{ REGION_GFX3, 0x1000, &charlayout,       0, 2 }, /**/
-		{ REGION_GFX3, 0x2000, &charlayout,       0, 2 }, /**/
-		{ REGION_GFX3, 0x3000, &charlayout,       0, 2 }, /**/
+		new GfxDecodeInfo( REGION_GFX3,      0, charlayout,       0, 16 ), /*16 color codes*/
+		new GfxDecodeInfo( REGION_GFX3, 0x1000, charlayout,       0, 2 ), /**/
+		new GfxDecodeInfo( REGION_GFX3, 0x2000, charlayout,       0, 2 ), /**/
+		new GfxDecodeInfo( REGION_GFX3, 0x3000, charlayout,       0, 2 ), /**/
 	
-		{ REGION_GFX2, 0, &spritelayout,          2*16, 1 }, /*1 color code*/
-		{ -1 }
+		new GfxDecodeInfo( REGION_GFX2, 0, spritelayout,          2*16, 1 ), /*1 color code*/
+		new GfxDecodeInfo( -1 )
 	};
 	
 	

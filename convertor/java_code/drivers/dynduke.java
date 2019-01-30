@@ -240,13 +240,13 @@ public class dynduke
 		512
 	);
 	
-	static struct GfxDecodeInfo dynduke_gfxdecodeinfo[] =
+	static GfxDecodeInfo dynduke_gfxdecodeinfo[] =
 	{
-		{ REGION_GFX1, 0, &charlayout,   1280, 16 },
-		{ REGION_GFX2, 0, &bg_layout,    2048, 32 }, /* Really 0 */
-		{ REGION_GFX3, 0, &fg_layout,     512, 16 },
-		{ REGION_GFX4, 0, &spritelayout,  768, 32 },
-		{ -1 } /* end of array */
+		new GfxDecodeInfo( REGION_GFX1, 0, charlayout,   1280, 16 ),
+		new GfxDecodeInfo( REGION_GFX2, 0, bg_layout,    2048, 32 ), /* Really 0 */
+		new GfxDecodeInfo( REGION_GFX3, 0, fg_layout,     512, 16 ),
+		new GfxDecodeInfo( REGION_GFX4, 0, spritelayout,  768, 32 ),
+		new GfxDecodeInfo( -1 ) /* end of array */
 	};
 	
 	/******************************************************************************/

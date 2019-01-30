@@ -271,12 +271,12 @@ public class pushman
 		256*8
 	);
 	
-	static struct GfxDecodeInfo pushman_gfxdecodeinfo[] =
+	static GfxDecodeInfo pushman_gfxdecodeinfo[] =
 	{
-		{ REGION_GFX1, 0x000000, &charlayout,   0x300, 16 },	/* colors 0x300-0x33f */
-		{ REGION_GFX2, 0x000000, &spritelayout, 0x200, 16 },	/* colors 0x200-0x2ff */
-		{ REGION_GFX3, 0x000000, &tilelayout,   0x100, 16 },	/* colors 0x100-0x1ff */
-		{ -1 } /* end of array */
+		new GfxDecodeInfo( REGION_GFX1, 0x000000, charlayout,   0x300, 16 ),	/* colors 0x300-0x33f */
+		new GfxDecodeInfo( REGION_GFX2, 0x000000, spritelayout, 0x200, 16 ),	/* colors 0x200-0x2ff */
+		new GfxDecodeInfo( REGION_GFX3, 0x000000, tilelayout,   0x100, 16 ),	/* colors 0x100-0x1ff */
+		new GfxDecodeInfo( -1 ) /* end of array */
 	};
 	
 	/******************************************************************************/

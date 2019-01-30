@@ -386,11 +386,11 @@ public class overdriv
 		8*8*4
 	);
 	
-	static struct GfxDecodeInfo gfxdecodeinfo[] =
+	static GfxDecodeInfo gfxdecodeinfo[] =
 	{
-		{ REGION_GFX4, 0, &charlayout, 0, 0x80 },
-		{ REGION_GFX5, 0, &charlayout, 0, 0x80 },
-		{ -1 }
+		new GfxDecodeInfo( REGION_GFX4, 0, charlayout, 0, 0x80 ),
+		new GfxDecodeInfo( REGION_GFX5, 0, charlayout, 0, 0x80 ),
+		new GfxDecodeInfo( -1 )
 	};
 	
 	

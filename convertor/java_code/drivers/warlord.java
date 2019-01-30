@@ -221,11 +221,11 @@ public class warlord
 	
 	
 	
-	static struct GfxDecodeInfo gfxdecodeinfo[] =
+	static GfxDecodeInfo gfxdecodeinfo[] =
 	{
-		{ REGION_GFX1, 0x0000, &charlayout,   0,   8 },
-		{ REGION_GFX1, 0x0200, &charlayout,   8*4, 8 },
-		{ -1 } /* end of array */
+		new GfxDecodeInfo( REGION_GFX1, 0x0000, charlayout,   0,   8 ),
+		new GfxDecodeInfo( REGION_GFX1, 0x0200, charlayout,   8*4, 8 ),
+		new GfxDecodeInfo( -1 ) /* end of array */
 	};
 	
 	

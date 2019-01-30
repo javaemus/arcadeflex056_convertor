@@ -1323,10 +1323,10 @@ public class vsnes
 	
 	
 	
-	static struct GfxDecodeInfo nes_gfxdecodeinfo[] =
+	static GfxDecodeInfo nes_gfxdecodeinfo[] =
 	{
 		/* none, the ppu generates one */
-		{ -1 } /* end of array */
+		new GfxDecodeInfo( -1 ) /* end of array */
 	};
 	
 	static struct NESinterface nes_interface =

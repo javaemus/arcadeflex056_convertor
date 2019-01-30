@@ -275,11 +275,11 @@ public class shuuz
 	);
 	
 	
-	static struct GfxDecodeInfo gfxdecodeinfo[] =
+	static GfxDecodeInfo gfxdecodeinfo[] =
 	{
-		{ REGION_GFX1, 0, &pfmolayout,  256, 16 },		/* sprites & playfield */
-		{ REGION_GFX2, 0, &pfmolayout,    0, 16 },		/* sprites & playfield */
-		{ -1 }
+		new GfxDecodeInfo( REGION_GFX1, 0, pfmolayout,  256, 16 ),		/* sprites  playfield */
+		new GfxDecodeInfo( REGION_GFX2, 0, pfmolayout,    0, 16 ),		/* sprites  playfield */
+		new GfxDecodeInfo( -1 )
 	};
 	
 	

@@ -148,11 +148,11 @@ public class videopin
 		8*8 /* every char takes 8 consecutive bytes */
 	);
 	
-	static struct GfxDecodeInfo videopin_gfxdecodeinfo[] =
+	static GfxDecodeInfo videopin_gfxdecodeinfo[] =
 	{
-		{ 1, 0x0000, &videopin_charlayout,  0x00, 0x01 }, /* offset into colors, # of colors */
-		{ 1, 0x0400, &videopin_balllayout, 0x00, 0x01 }, /* offset into colors, # of colors */
-		{ -1 } /* end of array */
+		new GfxDecodeInfo( 1, 0x0000, videopin_charlayout,  0x00, 0x01 ), /* offset into colors, # of colors */
+		new GfxDecodeInfo( 1, 0x0400, videopin_balllayout, 0x00, 0x01 ), /* offset into colors, # of colors */
+		new GfxDecodeInfo( -1 ) /* end of array */
 	};
 	
 	static unsigned char videopin_palette[] =

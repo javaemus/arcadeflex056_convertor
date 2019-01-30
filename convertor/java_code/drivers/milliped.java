@@ -295,11 +295,11 @@ public class milliped
 	
 	
 	
-	static struct GfxDecodeInfo gfxdecodeinfo[] =
+	static GfxDecodeInfo gfxdecodeinfo[] =
 	{
-		{ REGION_GFX1, 0, &charlayout,     0, 4 },
-		{ REGION_GFX1, 0, &spritelayout, 4*4, 4*4*4*4 },
-		{ -1 } /* end of array */
+		new GfxDecodeInfo( REGION_GFX1, 0, charlayout,     0, 4 ),
+		new GfxDecodeInfo( REGION_GFX1, 0, spritelayout, 4*4, 4*4*4*4 ),
+		new GfxDecodeInfo( -1 ) /* end of array */
 	};
 	
 	

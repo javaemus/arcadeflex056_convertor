@@ -197,12 +197,12 @@ public class timelimt
 		32*8
 	);
 	
-	static struct GfxDecodeInfo gfxdecodeinfo[] =
+	static GfxDecodeInfo gfxdecodeinfo[] =
 	{
-		{ REGION_GFX1, 0, &charlayout,   32, 1 },	/* seems correct */
-		{ REGION_GFX2, 0, &charlayout,    0, 1 },	/* seems correct */
-		{ REGION_GFX3, 0, &spritelayout,  0, 8 },	/* ?? */
-		{ -1 } /* end of array */
+		new GfxDecodeInfo( REGION_GFX1, 0, charlayout,   32, 1 ),	/* seems correct */
+		new GfxDecodeInfo( REGION_GFX2, 0, charlayout,    0, 1 ),	/* seems correct */
+		new GfxDecodeInfo( REGION_GFX3, 0, spritelayout,  0, 8 ),	/* ?? */
+		new GfxDecodeInfo( -1 ) /* end of array */
 	};
 	
 	/***************************************************************************/

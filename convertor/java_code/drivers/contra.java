@@ -250,11 +250,11 @@ public class contra
 		32*8
 	);
 	
-	static struct GfxDecodeInfo gfxdecodeinfo[] =
+	static GfxDecodeInfo gfxdecodeinfo[] =
 	{
-		{ REGION_GFX1, 0, &gfx_layout,       0, 8*16 },
-		{ REGION_GFX2, 0, &gfx_layout, 8*16*16, 8*16 },
-		{ -1 }
+		new GfxDecodeInfo( REGION_GFX1, 0, gfx_layout,       0, 8*16 ),
+		new GfxDecodeInfo( REGION_GFX2, 0, gfx_layout, 8*16*16, 8*16 ),
+		new GfxDecodeInfo( -1 )
 	};
 	
 	

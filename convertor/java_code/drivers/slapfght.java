@@ -754,19 +754,19 @@ public class slapfght
 	);
 	
 	
-	static struct GfxDecodeInfo perfrman_gfxdecodeinfo[] =
+	static GfxDecodeInfo perfrman_gfxdecodeinfo[] =
 	{
-		{ REGION_GFX1, 0, &perfrman_charlayout,     0, 16 },
-		{ REGION_GFX2, 0, &perfrman_spritelayout, 128, 16 },
-		{ -1 } /* end of array */
+		new GfxDecodeInfo( REGION_GFX1, 0, perfrman_charlayout,     0, 16 ),
+		new GfxDecodeInfo( REGION_GFX2, 0, perfrman_spritelayout, 128, 16 ),
+		new GfxDecodeInfo( -1 ) /* end of array */
 	};
 	
-	static struct GfxDecodeInfo gfxdecodeinfo[] =
+	static GfxDecodeInfo gfxdecodeinfo[] =
 	{
-		{ REGION_GFX1, 0, &charlayout,   0,  64 },
-		{ REGION_GFX2, 0, &tilelayout,   0,  16 },
-		{ REGION_GFX3, 0, &spritelayout, 0,  16 },
-		{ -1 } /* end of array */
+		new GfxDecodeInfo( REGION_GFX1, 0, charlayout,   0,  64 ),
+		new GfxDecodeInfo( REGION_GFX2, 0, tilelayout,   0,  16 ),
+		new GfxDecodeInfo( REGION_GFX3, 0, spritelayout, 0,  16 ),
+		new GfxDecodeInfo( -1 ) /* end of array */
 	};
 	
 	

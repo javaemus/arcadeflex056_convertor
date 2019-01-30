@@ -236,20 +236,20 @@ public class clshroad
 		16*16*2
 	);
 	
-	static struct GfxDecodeInfo firebatl_gfxdecodeinfo[] =
+	static GfxDecodeInfo firebatl_gfxdecodeinfo[] =
 	{
-		{ REGION_GFX1, 0, &layout_16x16x4,   0, 16 }, // [0] Sprites
-		{ REGION_GFX2, 0, &layout_16x16x4, 16, 16 }, // [1] Layer 0
-		{ REGION_GFX3, 0, &layout_8x8x2,   512, 64 }, // [2] Layer 1
-		{ -1 }
+		new GfxDecodeInfo( REGION_GFX1, 0, layout_16x16x4,   0, 16 ), // [0] Sprites
+		new GfxDecodeInfo( REGION_GFX2, 0, layout_16x16x4, 16, 16 ), // [1] Layer 0
+		new GfxDecodeInfo( REGION_GFX3, 0, layout_8x8x2,   512, 64 ), // [2] Layer 1
+		new GfxDecodeInfo( -1 )
 	};
 	
-	static struct GfxDecodeInfo clshroad_gfxdecodeinfo[] =
+	static GfxDecodeInfo clshroad_gfxdecodeinfo[] =
 	{
-		{ REGION_GFX1, 0, &layout_16x16x4, 0, 16 }, // [0] Sprites
-		{ REGION_GFX2, 0, &layout_16x16x4, 0, 16 }, // [1] Layer 0
-		{ REGION_GFX3, 0, &layout_8x8x4,   0, 16 }, // [2] Layer 1
-		{ -1 }
+		new GfxDecodeInfo( REGION_GFX1, 0, layout_16x16x4, 0, 16 ), // [0] Sprites
+		new GfxDecodeInfo( REGION_GFX2, 0, layout_16x16x4, 0, 16 ), // [1] Layer 0
+		new GfxDecodeInfo( REGION_GFX3, 0, layout_8x8x4,   0, 16 ), // [2] Layer 1
+		new GfxDecodeInfo( -1 )
 	};
 	
 	

@@ -2021,27 +2021,27 @@ public class m72
 		32*8	/* every sprite takes 32 consecutive bytes */
 	);
 	
-	static struct GfxDecodeInfo m72_gfxdecodeinfo[] =
+	static GfxDecodeInfo m72_gfxdecodeinfo[] =
 	{
-		{ REGION_GFX1, 0, &spritelayout,    0, 16 },
-		{ REGION_GFX2, 0, &tilelayout,    256, 16 },
-		{ REGION_GFX3, 0, &tilelayout,    256, 16 },
-		{ -1 } /* end of array */
+		new GfxDecodeInfo( REGION_GFX1, 0, spritelayout,    0, 16 ),
+		new GfxDecodeInfo( REGION_GFX2, 0, tilelayout,    256, 16 ),
+		new GfxDecodeInfo( REGION_GFX3, 0, tilelayout,    256, 16 ),
+		new GfxDecodeInfo( -1 ) /* end of array */
 	};
 	
-	static struct GfxDecodeInfo rtype2_gfxdecodeinfo[] =
+	static GfxDecodeInfo rtype2_gfxdecodeinfo[] =
 	{
-		{ REGION_GFX1, 0, &spritelayout,     0, 16 },
-		{ REGION_GFX2, 0, &tilelayout,     256, 16 },
-		{ -1 } /* end of array */
+		new GfxDecodeInfo( REGION_GFX1, 0, spritelayout,     0, 16 ),
+		new GfxDecodeInfo( REGION_GFX2, 0, tilelayout,     256, 16 ),
+		new GfxDecodeInfo( -1 ) /* end of array */
 	};
 	
-	static struct GfxDecodeInfo majtitle_gfxdecodeinfo[] =
+	static GfxDecodeInfo majtitle_gfxdecodeinfo[] =
 	{
-		{ REGION_GFX1, 0, &spritelayout,     0, 16 },
-		{ REGION_GFX2, 0, &tilelayout,     256, 16 },
-		{ REGION_GFX3, 0, &spritelayout,     0, 16 },
-		{ -1 } /* end of array */
+		new GfxDecodeInfo( REGION_GFX1, 0, spritelayout,     0, 16 ),
+		new GfxDecodeInfo( REGION_GFX2, 0, tilelayout,     256, 16 ),
+		new GfxDecodeInfo( REGION_GFX3, 0, spritelayout,     0, 16 ),
+		new GfxDecodeInfo( -1 ) /* end of array */
 	};
 	
 	

@@ -454,12 +454,12 @@ public class ddragon
 		64*8
 	);
 	
-	static struct GfxDecodeInfo gfxdecodeinfo[] =
+	static GfxDecodeInfo gfxdecodeinfo[] =
 	{
-		{ REGION_GFX1, 0, &char_layout,   0, 8 },	/* colors   0-127 */
-		{ REGION_GFX2, 0, &tile_layout, 128, 8 },	/* colors 128-255 */
-		{ REGION_GFX3, 0, &tile_layout, 256, 8 },	/* colors 256-383 */
-		{ -1 }
+		new GfxDecodeInfo( REGION_GFX1, 0, char_layout,   0, 8 ),	/* colors   0-127 */
+		new GfxDecodeInfo( REGION_GFX2, 0, tile_layout, 128, 8 ),	/* colors 128-255 */
+		new GfxDecodeInfo( REGION_GFX3, 0, tile_layout, 256, 8 ),	/* colors 256-383 */
+		new GfxDecodeInfo( -1 )
 	};
 	
 	

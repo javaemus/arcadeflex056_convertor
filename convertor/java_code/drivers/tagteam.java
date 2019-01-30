@@ -220,11 +220,11 @@ public class tagteam
 		32*8    /* every sprite takes 32 consecutive bytes */
 	);
 	
-	static struct GfxDecodeInfo tagteam_gfxdecodeinfo[] =
+	static GfxDecodeInfo tagteam_gfxdecodeinfo[] =
 	{
-		{ REGION_GFX1, 0, &charlayout,   0, 4 }, /* chars */
-		{ REGION_GFX1, 0, &spritelayout, 0, 4 }, /* sprites */
-		{ -1 } /* end of array */
+		new GfxDecodeInfo( REGION_GFX1, 0, charlayout,   0, 4 ), /* chars */
+		new GfxDecodeInfo( REGION_GFX1, 0, spritelayout, 0, 4 ), /* sprites */
+		new GfxDecodeInfo( -1 ) /* end of array */
 	};
 	
 	

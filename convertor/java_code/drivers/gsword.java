@@ -578,12 +578,12 @@ public class gsword
 		64*8*4    /* every sprite takes (64*8=16x6)*4) bytes */
 	);
 	
-	static struct GfxDecodeInfo gfxdecodeinfo[] =
+	static GfxDecodeInfo gfxdecodeinfo[] =
 	{
-		{ REGION_GFX1, 0, &gsword_text,         0, 64 },
-		{ REGION_GFX2, 0, &gsword_sprites1,  64*4, 64 },
-		{ REGION_GFX3, 0, &gsword_sprites2,  64*4, 64 },
-		{ -1 } /* end of array */
+		new GfxDecodeInfo( REGION_GFX1, 0, gsword_text,         0, 64 ),
+		new GfxDecodeInfo( REGION_GFX2, 0, gsword_sprites1,  64*4, 64 ),
+		new GfxDecodeInfo( REGION_GFX3, 0, gsword_sprites2,  64*4, 64 ),
+		new GfxDecodeInfo( -1 ) /* end of array */
 	};
 	
 	

@@ -307,12 +307,12 @@ public class relief
 	);
 	
 	
-	static struct GfxDecodeInfo gfxdecodeinfo[] =
+	static GfxDecodeInfo gfxdecodeinfo[] =
 	{
-		{ REGION_GFX1, 0, &pfmolayout,   0, 64 },		/* alpha & playfield */
-		{ REGION_GFX1, 1, &pfmolayout, 256, 16 },		/* sprites */
-		{ REGION_GFX2, 0, &moexlayout, 256, 16 },		/* extra sprite bit */
-		{ -1 } /* end of array */
+		new GfxDecodeInfo( REGION_GFX1, 0, pfmolayout,   0, 64 ),		/* alpha  playfield */
+		new GfxDecodeInfo( REGION_GFX1, 1, pfmolayout, 256, 16 ),		/* sprites */
+		new GfxDecodeInfo( REGION_GFX2, 0, moexlayout, 256, 16 ),		/* extra sprite bit */
+		new GfxDecodeInfo( -1 ) /* end of array */
 	};
 	
 	

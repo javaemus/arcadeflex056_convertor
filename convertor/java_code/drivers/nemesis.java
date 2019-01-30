@@ -1929,17 +1929,17 @@ public class nemesis
 		2048*8     /* every sprite takes 128 consecutive bytes */
 	);
 	
-	static struct GfxDecodeInfo gfxdecodeinfo[] =
+	static GfxDecodeInfo gfxdecodeinfo[] =
 	{
-	    { 0, 0x0, &charlayout,   0, 0x80 },	/* the game dynamically modifies this */
-	    { 0, 0x0, &spritelayout, 0, 0x80 },	/* the game dynamically modifies this */
-	    { 0, 0x0, &spritelayout3216, 0, 0x80 },	/* the game dynamically modifies this */
-	    { 0, 0x0, &spritelayout816, 0, 0x80 },	/* the game dynamically modifies this */
-	    { 0, 0x0, &spritelayout3232, 0, 0x80 },	/* the game dynamically modifies this */
-	    { 0, 0x0, &spritelayout1632, 0, 0x80 },	/* the game dynamically modifies this */
-	    { 0, 0x0, &spritelayout168, 0, 0x80 },	/* the game dynamically modifies this */
-	    { 0, 0x0, &spritelayout6464, 0, 0x80 },	/* the game dynamically modifies this */
-		{ -1 }
+	    new GfxDecodeInfo( 0, 0x0, charlayout,   0, 0x80 ),	/* the game dynamically modifies this */
+	    new GfxDecodeInfo( 0, 0x0, spritelayout, 0, 0x80 ),	/* the game dynamically modifies this */
+	    new GfxDecodeInfo( 0, 0x0, spritelayout3216, 0, 0x80 ),	/* the game dynamically modifies this */
+	    new GfxDecodeInfo( 0, 0x0, spritelayout816, 0, 0x80 ),	/* the game dynamically modifies this */
+	    new GfxDecodeInfo( 0, 0x0, spritelayout3232, 0, 0x80 ),	/* the game dynamically modifies this */
+	    new GfxDecodeInfo( 0, 0x0, spritelayout1632, 0, 0x80 ),	/* the game dynamically modifies this */
+	    new GfxDecodeInfo( 0, 0x0, spritelayout168, 0, 0x80 ),	/* the game dynamically modifies this */
+	    new GfxDecodeInfo( 0, 0x0, spritelayout6464, 0, 0x80 ),	/* the game dynamically modifies this */
+		new GfxDecodeInfo( -1 )
 	};
 	
 	/******************************************************************************/

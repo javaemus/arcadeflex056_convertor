@@ -363,11 +363,11 @@ public class warpwarp
 	
 	
 	
-	static struct GfxDecodeInfo gfxdecodeinfo[] =
+	static GfxDecodeInfo gfxdecodeinfo[] =
 	{
-		{ REGION_CPU1, 0x4800, &charlayout,   0, 256 },
-		{ REGION_CPU1, 0x4800, &spritelayout, 0, 256 },
-		{ -1 } /* end of array */
+		new GfxDecodeInfo( REGION_CPU1, 0x4800, charlayout,   0, 256 ),
+		new GfxDecodeInfo( REGION_CPU1, 0x4800, spritelayout, 0, 256 ),
+		new GfxDecodeInfo( -1 ) /* end of array */
 	};
 	
 	static struct CustomSound_interface custom_interface =

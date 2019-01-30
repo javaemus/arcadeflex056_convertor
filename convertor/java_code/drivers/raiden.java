@@ -268,13 +268,13 @@ public class raiden
 	  1024
 	);
 	
-	static struct GfxDecodeInfo raiden_gfxdecodeinfo[] =
+	static GfxDecodeInfo raiden_gfxdecodeinfo[] =
 	{
-		{ REGION_GFX1, 0, &raiden_charlayout,   768, 16 },
-		{ REGION_GFX2, 0, &raiden_spritelayout,   0, 16 },
-		{ REGION_GFX3, 0, &raiden_spritelayout, 256, 16 },
-		{ REGION_GFX4, 0, &raiden_spritelayout, 512, 16 },
-		{ -1 } /* end of array */
+		new GfxDecodeInfo( REGION_GFX1, 0, raiden_charlayout,   768, 16 ),
+		new GfxDecodeInfo( REGION_GFX2, 0, raiden_spritelayout,   0, 16 ),
+		new GfxDecodeInfo( REGION_GFX3, 0, raiden_spritelayout, 256, 16 ),
+		new GfxDecodeInfo( REGION_GFX4, 0, raiden_spritelayout, 512, 16 ),
+		new GfxDecodeInfo( -1 ) /* end of array */
 	};
 	
 	/******************************************************************************/

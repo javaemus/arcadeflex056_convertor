@@ -940,12 +940,12 @@ public class tsamurai
 		8*8
 	);
 	
-	static struct GfxDecodeInfo gfxdecodeinfo[] =
+	static GfxDecodeInfo gfxdecodeinfo[] =
 	{
-		{ REGION_GFX1, 0, &tile_layout,   0, 32 },
-		{ REGION_GFX2, 0, &char_layout,   0, 32 },
-		{ REGION_GFX3, 0, &sprite_layout, 0, 32 },
-		{ -1 }
+		new GfxDecodeInfo( REGION_GFX1, 0, tile_layout,   0, 32 ),
+		new GfxDecodeInfo( REGION_GFX2, 0, char_layout,   0, 32 ),
+		new GfxDecodeInfo( REGION_GFX3, 0, sprite_layout, 0, 32 ),
+		new GfxDecodeInfo( -1 )
 	};
 	
 	/*******************************************************************************/

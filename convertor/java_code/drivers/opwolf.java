@@ -440,18 +440,18 @@ public class opwolf
 		128*8	/* every sprite takes 128 consecutive bytes */
 	);
 	
-	static struct GfxDecodeInfo opwolf_gfxdecodeinfo[] =
+	static GfxDecodeInfo opwolf_gfxdecodeinfo[] =
 	{
-		{ REGION_GFX2, 0, &tilelayout,  0, 256 },	/* sprites */
-		{ REGION_GFX1, 0, &charlayout,  0, 256 },	/* scr tiles */
-		{ -1 } /* end of array */
+		new GfxDecodeInfo( REGION_GFX2, 0, tilelayout,  0, 256 ),	/* sprites */
+		new GfxDecodeInfo( REGION_GFX1, 0, charlayout,  0, 256 ),	/* scr tiles */
+		new GfxDecodeInfo( -1 ) /* end of array */
 	};
 	
-	static struct GfxDecodeInfo opwolfb_gfxdecodeinfo[] =
+	static GfxDecodeInfo opwolfb_gfxdecodeinfo[] =
 	{
-		{ REGION_GFX2, 0, &tilelayout_b,  0, 256 },	/* sprites */
-		{ REGION_GFX1, 0, &charlayout_b,  0, 256 },	/* scr tiles */
-		{ -1 } /* end of array */
+		new GfxDecodeInfo( REGION_GFX2, 0, tilelayout_b,  0, 256 ),	/* sprites */
+		new GfxDecodeInfo( REGION_GFX1, 0, charlayout_b,  0, 256 ),	/* scr tiles */
+		new GfxDecodeInfo( -1 ) /* end of array */
 	};
 	
 	

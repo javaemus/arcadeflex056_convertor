@@ -266,12 +266,12 @@ public class cbasebal
 		64*8    /* every sprite takes 64 consecutive bytes */
 	);
 	
-	static struct GfxDecodeInfo cbasebal_gfxdecodeinfo[] =
+	static GfxDecodeInfo cbasebal_gfxdecodeinfo[] =
 	{
-		{ REGION_GFX1, 0, &cbasebal_textlayout,   256,  8 }, /* colors 256- 287 */
-		{ REGION_GFX2, 0, &cbasebal_tilelayout,   768, 16 }, /* colors 768-1023 */
-		{ REGION_GFX3, 0, &cbasebal_spritelayout, 512,  8 }, /* colors 512- 639 */
-		{ -1 } /* end of array */
+		new GfxDecodeInfo( REGION_GFX1, 0, cbasebal_textlayout,   256,  8 ), /* colors 256- 287 */
+		new GfxDecodeInfo( REGION_GFX2, 0, cbasebal_tilelayout,   768, 16 ), /* colors 768-1023 */
+		new GfxDecodeInfo( REGION_GFX3, 0, cbasebal_spritelayout, 512,  8 ), /* colors 512- 639 */
+		new GfxDecodeInfo( -1 ) /* end of array */
 	};
 	
 	

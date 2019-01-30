@@ -293,13 +293,13 @@ public class munchmo
 		256
 	);
 	
-	static struct GfxDecodeInfo gfxdecodeinfo[] =
+	static GfxDecodeInfo gfxdecodeinfo[] =
 	{
-		{ REGION_GFX1, 0,      &char_layout,      0,  4 },	/* colors   0- 63 */
-		{ REGION_GFX2, 0x1000, &tile_layout,     64,  4 },	/* colors  64-127 */
-		{ REGION_GFX3, 0,      &sprite_layout1, 128, 16 },	/* colors 128-255 */
-		{ REGION_GFX4, 0,      &sprite_layout2, 128, 16 },	/* colors 128-255 */
-		{ -1 }
+		new GfxDecodeInfo( REGION_GFX1, 0,      char_layout,      0,  4 ),	/* colors   0- 63 */
+		new GfxDecodeInfo( REGION_GFX2, 0x1000, tile_layout,     64,  4 ),	/* colors  64-127 */
+		new GfxDecodeInfo( REGION_GFX3, 0,      sprite_layout1, 128, 16 ),	/* colors 128-255 */
+		new GfxDecodeInfo( REGION_GFX4, 0,      sprite_layout2, 128, 16 ),	/* colors 128-255 */
+		new GfxDecodeInfo( -1 )
 	};
 	
 	static const struct MachineDriver machine_driver_munchmo =

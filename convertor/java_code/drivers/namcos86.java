@@ -1167,19 +1167,19 @@ public class namcos86
 	
 	
 	#define GFXDECODE(SPRITE)													\
-	static struct GfxDecodeInfo gfxdecodeinfo_##SPRITE[] =						\
+	static GfxDecodeInfo gfxdecodeinfo_##SPRITE[] =\
 	{																			\
-		{ REGION_GFX1, 0x00000,      &tilelayout,            2048*0, 256 },		\
-		{ REGION_GFX2, 0x00000,      &tilelayout,            2048*0, 256 },		\
-		{ REGION_GFX3, 0*128*SPRITE, &spritelayout_##SPRITE, 2048*1, 128 },		\
-		{ REGION_GFX3, 1*128*SPRITE, &spritelayout_##SPRITE, 2048*1, 128 },		\
-		{ REGION_GFX3, 2*128*SPRITE, &spritelayout_##SPRITE, 2048*1, 128 },		\
-		{ REGION_GFX3, 3*128*SPRITE, &spritelayout_##SPRITE, 2048*1, 128 },		\
-		{ REGION_GFX3, 4*128*SPRITE, &spritelayout_##SPRITE, 2048*1, 128 },		\
-		{ REGION_GFX3, 5*128*SPRITE, &spritelayout_##SPRITE, 2048*1, 128 },		\
-		{ REGION_GFX3, 6*128*SPRITE, &spritelayout_##SPRITE, 2048*1, 128 },		\
-		{ REGION_GFX3, 7*128*SPRITE, &spritelayout_##SPRITE, 2048*1, 128 },		\
-		{ -1 }																	\
+		new GfxDecodeInfo( REGION_GFX1, 0x00000,      tilelayout,            2048*0, 256 ),		\
+		new GfxDecodeInfo( REGION_GFX2, 0x00000,      tilelayout,            2048*0, 256 ),		\
+		new GfxDecodeInfo( REGION_GFX3, 0*128*SPRITE, spritelayout_##SPRITE, 2048*1, 128 ),		\
+		new GfxDecodeInfo( REGION_GFX3, 1*128*SPRITE, spritelayout_##SPRITE, 2048*1, 128 ),		\
+		new GfxDecodeInfo( REGION_GFX3, 2*128*SPRITE, spritelayout_##SPRITE, 2048*1, 128 ),		\
+		new GfxDecodeInfo( REGION_GFX3, 3*128*SPRITE, spritelayout_##SPRITE, 2048*1, 128 ),		\
+		new GfxDecodeInfo( REGION_GFX3, 4*128*SPRITE, spritelayout_##SPRITE, 2048*1, 128 ),		\
+		new GfxDecodeInfo( REGION_GFX3, 5*128*SPRITE, spritelayout_##SPRITE, 2048*1, 128 ),		\
+		new GfxDecodeInfo( REGION_GFX3, 6*128*SPRITE, spritelayout_##SPRITE, 2048*1, 128 ),		\
+		new GfxDecodeInfo( REGION_GFX3, 7*128*SPRITE, spritelayout_##SPRITE, 2048*1, 128 ),		\
+		new GfxDecodeInfo( -1 )																	\
 	};
 	
 	GFXDECODE( 256)

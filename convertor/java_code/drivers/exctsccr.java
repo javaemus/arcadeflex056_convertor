@@ -304,14 +304,14 @@ public class exctsccr
 		64*8	/* every sprite takes 64 bytes */
 	);
 	
-	static struct GfxDecodeInfo gfxdecodeinfo[] =
+	static GfxDecodeInfo gfxdecodeinfo[] =
 	{
-		{ REGION_GFX1, 0x0000, &charlayout1,      0, 32 }, /* chars */
-		{ REGION_GFX1, 0x2000, &charlayout2,      0, 32 }, /* chars */
-		{ REGION_GFX1, 0x1000, &spritelayout1, 16*8, 32 }, /* sprites */
-		{ REGION_GFX1, 0x3000, &spritelayout2, 16*8, 32 }, /* sprites */
-		{ REGION_GFX2, 0x0000, &spritelayout,  16*8, 32 }, /* sprites */
-		{ -1 } /* end of array */
+		new GfxDecodeInfo( REGION_GFX1, 0x0000, charlayout1,      0, 32 ), /* chars */
+		new GfxDecodeInfo( REGION_GFX1, 0x2000, charlayout2,      0, 32 ), /* chars */
+		new GfxDecodeInfo( REGION_GFX1, 0x1000, spritelayout1, 16*8, 32 ), /* sprites */
+		new GfxDecodeInfo( REGION_GFX1, 0x3000, spritelayout2, 16*8, 32 ), /* sprites */
+		new GfxDecodeInfo( REGION_GFX2, 0x0000, spritelayout,  16*8, 32 ), /* sprites */
+		new GfxDecodeInfo( -1 ) /* end of array */
 	};
 	
 	/***************************************************************************

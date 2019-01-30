@@ -128,14 +128,14 @@ public class firetrk
 		16*64*2
 	);
 	
-	static struct GfxDecodeInfo firetruck_gfxdecodeinfo[] =
+	static GfxDecodeInfo firetruck_gfxdecodeinfo[] =
 	{
-		{ REGION_GFX1, 0, &char_layout,	0, 0x8 },
-		{ REGION_GFX2, 0, &tile_layout,	0, 0x8 },
-		{ REGION_GFX3, 0, &tail_layout,	0, 0x8 },
-		{ REGION_GFX4, 0, &cab_layout1,	0, 0x8 },
-		{ REGION_GFX4, 0, &cab_layout2,	0, 0x8 },
-		{ -1 }
+		new GfxDecodeInfo( REGION_GFX1, 0, char_layout,	0, 0x8 ),
+		new GfxDecodeInfo( REGION_GFX2, 0, tile_layout,	0, 0x8 ),
+		new GfxDecodeInfo( REGION_GFX3, 0, tail_layout,	0, 0x8 ),
+		new GfxDecodeInfo( REGION_GFX4, 0, cab_layout1,	0, 0x8 ),
+		new GfxDecodeInfo( REGION_GFX4, 0, cab_layout2,	0, 0x8 ),
+		new GfxDecodeInfo( -1 )
 	};
 	
 	static unsigned char palette[] =

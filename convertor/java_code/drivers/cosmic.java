@@ -1089,35 +1089,35 @@ public class cosmic
 		32 				/* To create a set of sprites 1 pixel displaced */
 	);
 	
-	static struct GfxDecodeInfo panic_gfxdecodeinfo[] =
+	static GfxDecodeInfo panic_gfxdecodeinfo[] =
 	{
-		{ REGION_GFX1, 0x0a00, &panic_spritelayout0, 0, 8 },	/* Monsters              0a00-0fff */
-		{ REGION_GFX1, 0x0200, &panic_spritelayout0, 0, 8 },	/* Monsters eating Man   0200-07ff */
-		{ REGION_GFX1, 0x0800, &panic_spritelayout1, 0, 8 },	/* Man                   0800-09ff */
-		{ -1 } /* end of array */
+		new GfxDecodeInfo( REGION_GFX1, 0x0a00, panic_spritelayout0, 0, 8 ),	/* Monsters              0a00-0fff */
+		new GfxDecodeInfo( REGION_GFX1, 0x0200, panic_spritelayout0, 0, 8 ),	/* Monsters eating Man   0200-07ff */
+		new GfxDecodeInfo( REGION_GFX1, 0x0800, panic_spritelayout1, 0, 8 ),	/* Man                   0800-09ff */
+		new GfxDecodeInfo( -1 ) /* end of array */
 	};
 	
-	static struct GfxDecodeInfo cosmica_gfxdecodeinfo[] =
+	static GfxDecodeInfo cosmica_gfxdecodeinfo[] =
 	{
-		{ REGION_GFX1, 0, &cosmica_spritelayout16,  0, 16 },
-		{ REGION_GFX1, 0, &cosmica_spritelayout32,  0, 16 },
-		{ -1 } /* end of array */
+		new GfxDecodeInfo( REGION_GFX1, 0, cosmica_spritelayout16,  0, 16 ),
+		new GfxDecodeInfo( REGION_GFX1, 0, cosmica_spritelayout32,  0, 16 ),
+		new GfxDecodeInfo( -1 ) /* end of array */
 	};
 	
-	static struct GfxDecodeInfo magspot2_gfxdecodeinfo[] =
+	static GfxDecodeInfo magspot2_gfxdecodeinfo[] =
 	{
-		{ REGION_GFX1, 0, &cosmica_spritelayout16,  0, 8 },
-		{ REGION_GFX1, 0, &cosmica_spritelayout32,  0, 8 },
-		{ -1 } /* end of array */
+		new GfxDecodeInfo( REGION_GFX1, 0, cosmica_spritelayout16,  0, 8 ),
+		new GfxDecodeInfo( REGION_GFX1, 0, cosmica_spritelayout32,  0, 8 ),
+		new GfxDecodeInfo( -1 ) /* end of array */
 	};
 	
-	static struct GfxDecodeInfo nomnlnd_gfxdecodeinfo[] =
+	static GfxDecodeInfo nomnlnd_gfxdecodeinfo[] =
 	{
-		{ REGION_GFX1, 0x0000, &cosmica_spritelayout16,  0,  8 },
-		{ REGION_GFX1, 0x0000, &cosmica_spritelayout32,  0,  8 },
-		{ REGION_GFX2, 0x0000, &nomnlnd_treelayout,      0,  9 },
-		{ REGION_GFX2, 0x0200, &nomnlnd_waterlayout,     0,  10 },
-		{ -1 } /* end of array */
+		new GfxDecodeInfo( REGION_GFX1, 0x0000, cosmica_spritelayout16,  0,  8 ),
+		new GfxDecodeInfo( REGION_GFX1, 0x0000, cosmica_spritelayout32,  0,  8 ),
+		new GfxDecodeInfo( REGION_GFX2, 0x0000, nomnlnd_treelayout,      0,  9 ),
+		new GfxDecodeInfo( REGION_GFX2, 0x0200, nomnlnd_waterlayout,     0,  10 ),
+		new GfxDecodeInfo( -1 ) /* end of array */
 	};
 	
 	

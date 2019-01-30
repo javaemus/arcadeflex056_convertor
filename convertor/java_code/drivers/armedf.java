@@ -577,13 +577,13 @@ public class armedf
 		64*8
 	);
 	
-	static struct GfxDecodeInfo gfxdecodeinfo[] =
+	static GfxDecodeInfo gfxdecodeinfo[] =
 	{
-		{ REGION_GFX1, 0, &char_layout,		 0*16,	32 },
-		{ REGION_GFX2, 0, &tile_layout,		64*16,	32 },
-		{ REGION_GFX3, 0, &tile_layout,		96*16,	32 },
-		{ REGION_GFX4, 0, &sprite_layout,	32*16,	32 },
-		{ -1 } /* end of array */
+		new GfxDecodeInfo( REGION_GFX1, 0, char_layout,		 0*16,	32 ),
+		new GfxDecodeInfo( REGION_GFX2, 0, tile_layout,		64*16,	32 ),
+		new GfxDecodeInfo( REGION_GFX3, 0, tile_layout,		96*16,	32 ),
+		new GfxDecodeInfo( REGION_GFX4, 0, sprite_layout,	32*16,	32 ),
+		new GfxDecodeInfo( -1 ) /* end of array */
 	};
 	
 	

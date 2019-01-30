@@ -4648,41 +4648,41 @@ public class taito_f2
 		32*8	/* every sprite takes 32 consecutive bytes */
 	);
 	
-	static struct GfxDecodeInfo finalb_gfxdecodeinfo[] =
+	static GfxDecodeInfo finalb_gfxdecodeinfo[] =
 	{
-		{ REGION_GFX2, 0, &finalb_tilelayout,  0, 64 },	/* sprites & playfield, 6-bit deep */
-		{ REGION_GFX1, 0, &charlayout,  0, 256 },	/* sprites & playfield */
-		{ -1 } /* end of array */
+		new GfxDecodeInfo( REGION_GFX2, 0, finalb_tilelayout,  0, 64 ),	/* sprites  playfield, 6-bit deep */
+		new GfxDecodeInfo( REGION_GFX1, 0, charlayout,  0, 256 ),	/* sprites  playfield */
+		new GfxDecodeInfo( -1 ) /* end of array */
 	};
 	
-	static struct GfxDecodeInfo taitof2_gfxdecodeinfo[] =
+	static GfxDecodeInfo taitof2_gfxdecodeinfo[] =
 	{
-		{ REGION_GFX2, 0, &tilelayout,  0, 256 },	/* sprites & playfield */
-		{ REGION_GFX1, 0, &charlayout,  0, 256 },	/* sprites & playfield */
-		{ -1 } /* end of array */
+		new GfxDecodeInfo( REGION_GFX2, 0, tilelayout,  0, 256 ),	/* sprites  playfield */
+		new GfxDecodeInfo( REGION_GFX1, 0, charlayout,  0, 256 ),	/* sprites  playfield */
+		new GfxDecodeInfo( -1 ) /* end of array */
 	};
 	
-	static struct GfxDecodeInfo pivot_gfxdecodeinfo[] =
+	static GfxDecodeInfo pivot_gfxdecodeinfo[] =
 	{
-		{ REGION_GFX2, 0, &tilelayout,  0, 256 },	/* sprites & playfield */
-		{ REGION_GFX1, 0, &charlayout,  0, 256 },	/* sprites & playfield */
-		{ REGION_GFX3, 0, &pivotlayout, 0, 256 },	/* sprites & playfield */
-		{ -1 } /* end of array */
+		new GfxDecodeInfo( REGION_GFX2, 0, tilelayout,  0, 256 ),	/* sprites  playfield */
+		new GfxDecodeInfo( REGION_GFX1, 0, charlayout,  0, 256 ),	/* sprites  playfield */
+		new GfxDecodeInfo( REGION_GFX3, 0, pivotlayout, 0, 256 ),	/* sprites  playfield */
+		new GfxDecodeInfo( -1 ) /* end of array */
 	};
 	
-	static struct GfxDecodeInfo yuyugogo_gfxdecodeinfo[] =
+	static GfxDecodeInfo yuyugogo_gfxdecodeinfo[] =
 	{
-		{ REGION_GFX2, 0, &tilelayout,  0, 256 },	/* sprites & playfield */
-		{ REGION_GFX1, 0, &yuyugogo_charlayout,  0, 256 },	/* sprites & playfield */
-		{ -1 } /* end of array */
+		new GfxDecodeInfo( REGION_GFX2, 0, tilelayout,  0, 256 ),	/* sprites  playfield */
+		new GfxDecodeInfo( REGION_GFX1, 0, yuyugogo_charlayout,  0, 256 ),	/* sprites  playfield */
+		new GfxDecodeInfo( -1 ) /* end of array */
 	};
 	
-	static struct GfxDecodeInfo thundfox_gfxdecodeinfo[] =
+	static GfxDecodeInfo thundfox_gfxdecodeinfo[] =
 	{
-		{ REGION_GFX2, 0, &tilelayout,  0, 256 },	/* sprites & playfield */
-		{ REGION_GFX1, 0, &charlayout,  0, 256 },	/* TC0100SCN #1 */
-		{ REGION_GFX3, 0, &charlayout,  0, 256 },	/* TC0100SCN #2 */
-		{ -1 } /* end of array */
+		new GfxDecodeInfo( REGION_GFX2, 0, tilelayout,  0, 256 ),	/* sprites  playfield */
+		new GfxDecodeInfo( REGION_GFX1, 0, charlayout,  0, 256 ),	/* TC0100SCN #1 */
+		new GfxDecodeInfo( REGION_GFX3, 0, charlayout,  0, 256 ),	/* TC0100SCN #2 */
+		new GfxDecodeInfo( -1 ) /* end of array */
 	};
 	
 	static GfxLayout deadconx_charlayout = new GfxLayout
@@ -4696,11 +4696,11 @@ public class taito_f2
 		128*8     /* every sprite takes 128 consecutive bytes */
 	);
 	
-	static struct GfxDecodeInfo deadconx_gfxdecodeinfo[] =
+	static GfxDecodeInfo deadconx_gfxdecodeinfo[] =
 	{
-		{ REGION_GFX2, 0, &tilelayout,  0, 256 },	/* sprites & playfield */
-		{ REGION_GFX1, 0, &deadconx_charlayout,  0, 256 },	/* sprites & playfield */
-		{ -1 } /* end of array */
+		new GfxDecodeInfo( REGION_GFX2, 0, tilelayout,  0, 256 ),	/* sprites  playfield */
+		new GfxDecodeInfo( REGION_GFX1, 0, deadconx_charlayout,  0, 256 ),	/* sprites  playfield */
+		new GfxDecodeInfo( -1 ) /* end of array */
 	};
 	
 	

@@ -427,11 +427,11 @@ public class hyperspt
 		64*8	/* every sprite takes 64 consecutive bytes */
 	);
 	
-	static struct GfxDecodeInfo hyperspt_gfxdecodeinfo[] =
+	static GfxDecodeInfo hyperspt_gfxdecodeinfo[] =
 	{
-		{ REGION_GFX1, 0, &hyperspt_charlayout, 	  0, 16 },
-		{ REGION_GFX2, 0, &hyperspt_spritelayout, 16*16, 16 },
-		{ -1 } /* end of array */
+		new GfxDecodeInfo( REGION_GFX1, 0, hyperspt_charlayout, 	  0, 16 ),
+		new GfxDecodeInfo( REGION_GFX2, 0, hyperspt_spritelayout, 16*16, 16 ),
+		new GfxDecodeInfo( -1 ) /* end of array */
 	};
 	
 	
@@ -459,11 +459,11 @@ public class hyperspt
 		64*8	/* every sprite takes 64 consecutive bytes */
 	);
 	
-	static struct GfxDecodeInfo roadf_gfxdecodeinfo[] =
+	static GfxDecodeInfo roadf_gfxdecodeinfo[] =
 	{
-		{ REGION_GFX1, 0, &roadf_charlayout,	   0, 16 },
-		{ REGION_GFX2, 0, &roadf_spritelayout, 16*16, 16 },
-		{ -1 } /* end of array */
+		new GfxDecodeInfo( REGION_GFX1, 0, roadf_charlayout,	   0, 16 ),
+		new GfxDecodeInfo( REGION_GFX2, 0, roadf_spritelayout, 16*16, 16 ),
+		new GfxDecodeInfo( -1 ) /* end of array */
 	};
 	
 	

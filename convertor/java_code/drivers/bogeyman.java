@@ -226,17 +226,17 @@ public class bogeyman
 		16*16
 	);
 	
-	static struct GfxDecodeInfo gfxdecodeinfo[] =
+	static GfxDecodeInfo gfxdecodeinfo[] =
 	{
-		{ REGION_GFX1, 0x00000, &charlayout1,     16, 32 },
-		{ REGION_GFX1, 0x00000, &charlayout2,     16, 32 },
-		{ REGION_GFX2, 0x00000, &sprites,          0,  2 },
-		{ REGION_GFX3, 0x00000, &tiles1a,     16+128,  8 },
-		{ REGION_GFX3, 0x00000, &tiles1b,     16+128,  8 },
-		{ REGION_GFX3, 0x04000, &tiles1a,     16+128,  8 },
-		{ REGION_GFX3, 0x04000, &tiles1b,     16+128,  8 },
+		new GfxDecodeInfo( REGION_GFX1, 0x00000, charlayout1,     16, 32 ),
+		new GfxDecodeInfo( REGION_GFX1, 0x00000, charlayout2,     16, 32 ),
+		new GfxDecodeInfo( REGION_GFX2, 0x00000, sprites,          0,  2 ),
+		new GfxDecodeInfo( REGION_GFX3, 0x00000, tiles1a,     16+128,  8 ),
+		new GfxDecodeInfo( REGION_GFX3, 0x00000, tiles1b,     16+128,  8 ),
+		new GfxDecodeInfo( REGION_GFX3, 0x04000, tiles1a,     16+128,  8 ),
+		new GfxDecodeInfo( REGION_GFX3, 0x04000, tiles1b,     16+128,  8 ),
 		/* colors 16+192 to 16+255 are currently unassigned */
-		{ -1 } /* end of array */
+		new GfxDecodeInfo( -1 ) /* end of array */
 	};
 	
 	/******************************************************************************/

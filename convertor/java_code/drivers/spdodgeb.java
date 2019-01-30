@@ -351,11 +351,11 @@ public class spdodgeb
 		64*8
 	);
 	
-	static struct GfxDecodeInfo gfxdecodeinfo[] =
+	static GfxDecodeInfo gfxdecodeinfo[] =
 	{
-		{ REGION_GFX1, 0, &charlayout,   0x000, 32 },	/* colors 0x000-0x1ff */
-		{ REGION_GFX2, 0, &spritelayout, 0x200, 32 },	/* colors 0x200-0x3ff */
-		{ -1 } /* end of array */
+		new GfxDecodeInfo( REGION_GFX1, 0, charlayout,   0x000, 32 ),	/* colors 0x000-0x1ff */
+		new GfxDecodeInfo( REGION_GFX2, 0, spritelayout, 0x200, 32 ),	/* colors 0x200-0x3ff */
+		new GfxDecodeInfo( -1 ) /* end of array */
 	};
 	
 	

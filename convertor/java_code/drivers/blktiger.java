@@ -257,12 +257,12 @@ public class blktiger
 		32*16
 	);
 	
-	static struct GfxDecodeInfo gfxdecodeinfo[] =
+	static GfxDecodeInfo gfxdecodeinfo[] =
 	{
-		{ REGION_GFX1, 0, &charlayout,   0x300, 32 },	/* colors 0x300-0x37f */
-		{ REGION_GFX2, 0, &spritelayout, 0x000, 16 },	/* colors 0x000-0x0ff */
-		{ REGION_GFX3, 0, &spritelayout, 0x200,  8 },	/* colors 0x200-0x27f */
-		{ -1 } /* end of array */
+		new GfxDecodeInfo( REGION_GFX1, 0, charlayout,   0x300, 32 ),	/* colors 0x300-0x37f */
+		new GfxDecodeInfo( REGION_GFX2, 0, spritelayout, 0x000, 16 ),	/* colors 0x000-0x0ff */
+		new GfxDecodeInfo( REGION_GFX3, 0, spritelayout, 0x200,  8 ),	/* colors 0x200-0x27f */
+		new GfxDecodeInfo( -1 ) /* end of array */
 	};
 	
 	

@@ -1357,22 +1357,22 @@ public class tnzs
 		64*8
 	);
 	
-	static struct GfxDecodeInfo arknoid2_gfxdecodeinfo[] =
+	static GfxDecodeInfo arknoid2_gfxdecodeinfo[] =
 	{
-		{ REGION_GFX1, 0, &arknoid2_charlayout, 0, 32 },
-		{ -1 } /* end of array */
+		new GfxDecodeInfo( REGION_GFX1, 0, arknoid2_charlayout, 0, 32 ),
+		new GfxDecodeInfo( -1 ) /* end of array */
 	};
 	
-	static struct GfxDecodeInfo tnzs_gfxdecodeinfo[] =
+	static GfxDecodeInfo tnzs_gfxdecodeinfo[] =
 	{
-		{ REGION_GFX1, 0, &tnzs_charlayout, 0, 32 },
-		{ -1 }	/* end of array */
+		new GfxDecodeInfo( REGION_GFX1, 0, tnzs_charlayout, 0, 32 ),
+		new GfxDecodeInfo( -1 )	/* end of array */
 	};
 	
-	static struct GfxDecodeInfo insectx_gfxdecodeinfo[] =
+	static GfxDecodeInfo insectx_gfxdecodeinfo[] =
 	{
-		{ REGION_GFX1, 0, &insectx_charlayout, 0, 32 },
-		{ -1 }	/* end of array */
+		new GfxDecodeInfo( REGION_GFX1, 0, insectx_charlayout, 0, 32 ),
+		new GfxDecodeInfo( -1 )	/* end of array */
 	};
 	
 	

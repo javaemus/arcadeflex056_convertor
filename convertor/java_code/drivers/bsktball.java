@@ -244,11 +244,11 @@ public class bsktball
 		32*8	/* every char takes 32 consecutive bytes */
 	);
 	
-	static struct GfxDecodeInfo gfxdecodeinfo[] =
+	static GfxDecodeInfo gfxdecodeinfo[] =
 	{
-		{ REGION_GFX1, 0x0600, &charlayout,   0x00, 0x02 },
-		{ REGION_GFX1, 0x0000, &motionlayout, 0x08, 0x40 },
-		{ -1 } /* end of array */
+		new GfxDecodeInfo( REGION_GFX1, 0x0600, charlayout,   0x00, 0x02 ),
+		new GfxDecodeInfo( REGION_GFX1, 0x0000, motionlayout, 0x08, 0x40 ),
+		new GfxDecodeInfo( -1 ) /* end of array */
 	};
 	
 	

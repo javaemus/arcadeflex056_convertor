@@ -293,12 +293,12 @@ public class skydiver
 		8*32 /* every char takes 32 consecutive bytes */
 	);
 	
-	static struct GfxDecodeInfo gfxdecodeinfo[] =
+	static GfxDecodeInfo gfxdecodeinfo[] =
 	{
-		{ REGION_GFX1, 0, &charlayout,         0, 6 },
-		{ REGION_GFX2, 0, &motion_layout,      0, 6 },
-		{ REGION_GFX2, 0, &wide_motion_layout, 0, 6 },
-		{ -1 } /* end of array */
+		new GfxDecodeInfo( REGION_GFX1, 0, charlayout,         0, 6 ),
+		new GfxDecodeInfo( REGION_GFX2, 0, motion_layout,      0, 6 ),
+		new GfxDecodeInfo( REGION_GFX2, 0, wide_motion_layout, 0, 6 ),
+		new GfxDecodeInfo( -1 ) /* end of array */
 	};
 	
 	#if 0

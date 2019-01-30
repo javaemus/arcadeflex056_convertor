@@ -736,12 +736,12 @@ public class seta2
 	
 	/*	Tiles are 8x8x8, but the hardware is additionally able to discard
 		some bitplanes and use the low 4 bits only, or the high 4 bits only	*/
-	static struct GfxDecodeInfo seta2_gfxdecodeinfo[] =
+	static GfxDecodeInfo seta2_gfxdecodeinfo[] =
 	{
-		{ REGION_GFX1, 0, &layout_8x8x4_lo,	0,		0x8000/16 }, // [0] Sprites
-		{ REGION_GFX1, 0, &layout_8x8x4_hi,	0,		0x8000/16 }, // [1]	""
-		{ REGION_GFX1, 0, &layout_8x8x8,	0x8000,	0x8000/16 }, // [2]	""
-		{ -1 }
+		new GfxDecodeInfo( REGION_GFX1, 0, layout_8x8x4_lo,	0,		0x8000/16 ), // [0] Sprites
+		new GfxDecodeInfo( REGION_GFX1, 0, layout_8x8x4_hi,	0,		0x8000/16 ), // [1]	""
+		new GfxDecodeInfo( REGION_GFX1, 0, layout_8x8x8,	0x8000,	0x8000/16 ), // [2]	""
+		new GfxDecodeInfo( -1 )
 	};
 	
 	

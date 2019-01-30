@@ -892,23 +892,23 @@ public class dkong
 	
 	
 	
-	static struct GfxDecodeInfo dkong_gfxdecodeinfo[] =
+	static GfxDecodeInfo dkong_gfxdecodeinfo[] =
 	{
-		{ REGION_GFX1, 0x0000, &dkong_charlayout,   0, 64 },
-		{ REGION_GFX2, 0x0000, &dkong_spritelayout, 0, 64 },
-		{ -1 } /* end of array */
+		new GfxDecodeInfo( REGION_GFX1, 0x0000, dkong_charlayout,   0, 64 ),
+		new GfxDecodeInfo( REGION_GFX2, 0x0000, dkong_spritelayout, 0, 64 ),
+		new GfxDecodeInfo( -1 ) /* end of array */
 	};
-	static struct GfxDecodeInfo dkongjr_gfxdecodeinfo[] =
+	static GfxDecodeInfo dkongjr_gfxdecodeinfo[] =
 	{
-		{ REGION_GFX1, 0x0000, &dkongjr_charlayout, 0, 64 },
-		{ REGION_GFX2, 0x0000, &dkong_spritelayout, 0, 64 },
-		{ -1 } /* end of array */
+		new GfxDecodeInfo( REGION_GFX1, 0x0000, dkongjr_charlayout, 0, 64 ),
+		new GfxDecodeInfo( REGION_GFX2, 0x0000, dkong_spritelayout, 0, 64 ),
+		new GfxDecodeInfo( -1 ) /* end of array */
 	};
-	static struct GfxDecodeInfo dkong3_gfxdecodeinfo[] =
+	static GfxDecodeInfo dkong3_gfxdecodeinfo[] =
 	{
-		{ REGION_GFX1, 0x0000, &dkongjr_charlayout,   0, 64 },
-		{ REGION_GFX2, 0x0000, &dkong3_spritelayout,  0, 64 },
-		{ -1 } /* end of array */
+		new GfxDecodeInfo( REGION_GFX1, 0x0000, dkongjr_charlayout,   0, 64 ),
+		new GfxDecodeInfo( REGION_GFX2, 0x0000, dkong3_spritelayout,  0, 64 ),
+		new GfxDecodeInfo( -1 ) /* end of array */
 	};
 	
 	

@@ -1794,11 +1794,11 @@ public class system1
 		8*8
 	);
 	
-	static struct GfxDecodeInfo gfxdecodeinfo[] =
+	static GfxDecodeInfo gfxdecodeinfo[] =
 	{
 		/* sprites use colors 0-511, but are not defined here */
-		{ REGION_GFX1, 0, &charlayout, 512, 128 },
-		{ -1 } /* end of array */
+		new GfxDecodeInfo( REGION_GFX1, 0, charlayout, 512, 128 ),
+		new GfxDecodeInfo( -1 ) /* end of array */
 	};
 	
 	

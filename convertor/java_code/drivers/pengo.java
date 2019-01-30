@@ -218,13 +218,13 @@ public class pengo
 		64*8	/* every sprite takes 64 bytes */
 	);
 	
-	static struct GfxDecodeInfo gfxdecodeinfo[] =
+	static GfxDecodeInfo gfxdecodeinfo[] =
 	{
-		{ REGION_GFX1, 0x0000, &tilelayout,      0, 32 },  /* first bank */
-	    { REGION_GFX1, 0x1000, &spritelayout,    0, 32 },
-	    { REGION_GFX2, 0x0000, &tilelayout,   4*32, 32 },  /* second bank */
-	    { REGION_GFX2, 0x1000, &spritelayout, 4*32, 32 },
-	    { -1 } /* end of array */
+		new GfxDecodeInfo( REGION_GFX1, 0x0000, tilelayout,      0, 32 ),  /* first bank */
+	    new GfxDecodeInfo( REGION_GFX1, 0x1000, spritelayout,    0, 32 ),
+	    new GfxDecodeInfo( REGION_GFX2, 0x0000, tilelayout,   4*32, 32 ),  /* second bank */
+	    new GfxDecodeInfo( REGION_GFX2, 0x1000, spritelayout, 4*32, 32 ),
+	    new GfxDecodeInfo( -1 ) /* end of array */
 	};
 	
 	

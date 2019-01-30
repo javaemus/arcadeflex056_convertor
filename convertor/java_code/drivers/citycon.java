@@ -189,25 +189,25 @@ public class citycon
 	);
 	
 	
-	static struct GfxDecodeInfo gfxdecodeinfo[] =
+	static GfxDecodeInfo gfxdecodeinfo[] =
 	{
-	//	{ REGION_GFX1, 0x00000, &charlayout, 512, 32 },	/* colors 512-639 */
-		{ REGION_GFX1, 0x00000, &charlayout, 640, 32 },	/* colors 512-639 */
-		{ REGION_GFX2, 0x00000, &spritelayout, 0, 16 },	/* colors 0-255 */
-		{ REGION_GFX2, 0x01000, &spritelayout, 0, 16 },
-		{ REGION_GFX3, 0x00000, &tilelayout, 256, 16 },	/* colors 256-511 */
-		{ REGION_GFX3, 0x01000, &tilelayout, 256, 16 },
-		{ REGION_GFX3, 0x02000, &tilelayout, 256, 16 },
-		{ REGION_GFX3, 0x03000, &tilelayout, 256, 16 },
-		{ REGION_GFX3, 0x04000, &tilelayout, 256, 16 },
-		{ REGION_GFX3, 0x05000, &tilelayout, 256, 16 },
-		{ REGION_GFX3, 0x06000, &tilelayout, 256, 16 },
-		{ REGION_GFX3, 0x07000, &tilelayout, 256, 16 },
-		{ REGION_GFX3, 0x08000, &tilelayout, 256, 16 },
-		{ REGION_GFX3, 0x09000, &tilelayout, 256, 16 },
-		{ REGION_GFX3, 0x0a000, &tilelayout, 256, 16 },
-		{ REGION_GFX3, 0x0b000, &tilelayout, 256, 16 },
-		{ -1 } /* end of array */
+	//	new GfxDecodeInfo( REGION_GFX1, 0x00000, charlayout, 512, 32 ),	/* colors 512-639 */
+		new GfxDecodeInfo( REGION_GFX1, 0x00000, charlayout, 640, 32 ),	/* colors 512-639 */
+		new GfxDecodeInfo( REGION_GFX2, 0x00000, spritelayout, 0, 16 ),	/* colors 0-255 */
+		new GfxDecodeInfo( REGION_GFX2, 0x01000, spritelayout, 0, 16 ),
+		new GfxDecodeInfo( REGION_GFX3, 0x00000, tilelayout, 256, 16 ),	/* colors 256-511 */
+		new GfxDecodeInfo( REGION_GFX3, 0x01000, tilelayout, 256, 16 ),
+		new GfxDecodeInfo( REGION_GFX3, 0x02000, tilelayout, 256, 16 ),
+		new GfxDecodeInfo( REGION_GFX3, 0x03000, tilelayout, 256, 16 ),
+		new GfxDecodeInfo( REGION_GFX3, 0x04000, tilelayout, 256, 16 ),
+		new GfxDecodeInfo( REGION_GFX3, 0x05000, tilelayout, 256, 16 ),
+		new GfxDecodeInfo( REGION_GFX3, 0x06000, tilelayout, 256, 16 ),
+		new GfxDecodeInfo( REGION_GFX3, 0x07000, tilelayout, 256, 16 ),
+		new GfxDecodeInfo( REGION_GFX3, 0x08000, tilelayout, 256, 16 ),
+		new GfxDecodeInfo( REGION_GFX3, 0x09000, tilelayout, 256, 16 ),
+		new GfxDecodeInfo( REGION_GFX3, 0x0a000, tilelayout, 256, 16 ),
+		new GfxDecodeInfo( REGION_GFX3, 0x0b000, tilelayout, 256, 16 ),
+		new GfxDecodeInfo( -1 ) /* end of array */
 	};
 	
 	

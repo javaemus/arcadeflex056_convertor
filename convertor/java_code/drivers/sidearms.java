@@ -476,12 +476,12 @@ public class sidearms
 		256*8   /* every tile takes 256 consecutive bytes */
 	);
 	
-	static struct GfxDecodeInfo gfxdecodeinfo[] =
+	static GfxDecodeInfo gfxdecodeinfo[] =
 	{
-		{ REGION_GFX1, 0, &charlayout,   768, 64 }, /* colors 768-1023 */
-		{ REGION_GFX2, 0, &tilelayout,     0, 32 }, /* colors   0-511 */
-		{ REGION_GFX3, 0, &spritelayout, 512, 16 }, /* colors 512-767 */
-		{ -1 } /* end of array */
+		new GfxDecodeInfo( REGION_GFX1, 0, charlayout,   768, 64 ), /* colors 768-1023 */
+		new GfxDecodeInfo( REGION_GFX2, 0, tilelayout,     0, 32 ), /* colors   0-511 */
+		new GfxDecodeInfo( REGION_GFX3, 0, spritelayout, 512, 16 ), /* colors 512-767 */
+		new GfxDecodeInfo( -1 ) /* end of array */
 	};
 	
 	
@@ -507,12 +507,12 @@ public class sidearms
 		256*8   /* every tile takes 256 consecutive bytes */
 	);
 	
-	static struct GfxDecodeInfo turtship_gfxdecodeinfo[] =
+	static GfxDecodeInfo turtship_gfxdecodeinfo[] =
 	{
-		{ REGION_GFX1, 0, &charlayout,          768, 64 },	/* colors 768-1023 */
-		{ REGION_GFX2, 0, &turtship_tilelayout,   0, 32 },	/* colors   0-511 */
-		{ REGION_GFX3, 0, &spritelayout,        512, 16 },	/* colors 512-767 */
-		{ -1 } /* end of array */
+		new GfxDecodeInfo( REGION_GFX1, 0, charlayout,          768, 64 ),	/* colors 768-1023 */
+		new GfxDecodeInfo( REGION_GFX2, 0, turtship_tilelayout,   0, 32 ),	/* colors   0-511 */
+		new GfxDecodeInfo( REGION_GFX3, 0, spritelayout,        512, 16 ),	/* colors 512-767 */
+		new GfxDecodeInfo( -1 ) /* end of array */
 	};
 	
 	/* handler called by the 2203 emulator when the internal timers cause an IRQ */

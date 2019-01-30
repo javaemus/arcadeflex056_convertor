@@ -175,11 +175,11 @@ public class ambush
 		32*8     /* every char takes 32 consecutive bytes */
 	);
 	
-	static struct GfxDecodeInfo gfxdecodeinfo[] =
+	static GfxDecodeInfo gfxdecodeinfo[] =
 	{
-		{ REGION_GFX1, 0x0000, &charlayout,   0, 64 },
-		{ REGION_GFX1, 0x0000, &spritelayout, 0, 64 },
-		{ -1 } /* end of array */
+		new GfxDecodeInfo( REGION_GFX1, 0x0000, charlayout,   0, 64 ),
+		new GfxDecodeInfo( REGION_GFX1, 0x0000, spritelayout, 0, 64 ),
+		new GfxDecodeInfo( -1 ) /* end of array */
 	};
 	
 	

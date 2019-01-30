@@ -375,11 +375,11 @@ public class vball
 	);
 	
 	
-	static struct GfxDecodeInfo vb_gfxdecodeinfo[] =
+	static GfxDecodeInfo vb_gfxdecodeinfo[] =
 	{
-		{ REGION_GFX1, 0, &charlayout,     0, 8 },	/* 8x8 chars */
-		{ REGION_GFX2, 0, &spritelayout, 128, 8 },	/* 16x16 sprites */
-		{ -1 } /* end of array */
+		new GfxDecodeInfo( REGION_GFX1, 0, charlayout,     0, 8 ),	/* 8x8 chars */
+		new GfxDecodeInfo( REGION_GFX2, 0, spritelayout, 128, 8 ),	/* 16x16 sprites */
+		new GfxDecodeInfo( -1 ) /* end of array */
 	};
 	
 	static void vball_irq_handler(int irq) {

@@ -596,25 +596,25 @@ public class mappy
 	
 	
 	/* pointers to the appropriate memory locations and their associated decode structs */
-	static struct GfxDecodeInfo mappy_gfxdecodeinfo[] =
+	static GfxDecodeInfo mappy_gfxdecodeinfo[] =
 	{
-		{ REGION_GFX1, 0, &charlayout,            0, 64 },
-		{ REGION_GFX2, 0, &mappy_spritelayout, 64*4, 16 },
-		{ -1 } /* end of array */
+		new GfxDecodeInfo( REGION_GFX1, 0, charlayout,            0, 64 ),
+		new GfxDecodeInfo( REGION_GFX2, 0, mappy_spritelayout, 64*4, 16 ),
+		new GfxDecodeInfo( -1 ) /* end of array */
 	};
 	
-	static struct GfxDecodeInfo digdug2_gfxdecodeinfo[] =
+	static GfxDecodeInfo digdug2_gfxdecodeinfo[] =
 	{
-		{ REGION_GFX1, 0, &charlayout,              0, 64 },
-		{ REGION_GFX2, 0, &digdug2_spritelayout, 64*4, 16 },
-		{ -1 } /* end of array */
+		new GfxDecodeInfo( REGION_GFX1, 0, charlayout,              0, 64 ),
+		new GfxDecodeInfo( REGION_GFX2, 0, digdug2_spritelayout, 64*4, 16 ),
+		new GfxDecodeInfo( -1 ) /* end of array */
 	};
 	
-	static struct GfxDecodeInfo todruaga_gfxdecodeinfo[] =
+	static GfxDecodeInfo todruaga_gfxdecodeinfo[] =
 	{
-		{ REGION_GFX1, 0, &charlayout,            0, 64 },
-		{ REGION_GFX2, 0, &mappy_spritelayout, 64*4, 64 },
-		{ -1 } /* end of array */
+		new GfxDecodeInfo( REGION_GFX1, 0, charlayout,            0, 64 ),
+		new GfxDecodeInfo( REGION_GFX2, 0, mappy_spritelayout, 64*4, 64 ),
+		new GfxDecodeInfo( -1 ) /* end of array */
 	};
 	
 	static struct namco_interface namco_interface =

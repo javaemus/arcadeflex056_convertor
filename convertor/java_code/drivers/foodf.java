@@ -351,11 +351,11 @@ public class foodf
 	);
 	
 	
-	static struct GfxDecodeInfo gfxdecodeinfo[] =
+	static GfxDecodeInfo gfxdecodeinfo[] =
 	{
-		{ REGION_GFX1, 0, &charlayout,   0, 64 },	/* characters 8x8 */
-		{ REGION_GFX2, 0, &spritelayout, 0, 64 },	/* sprites & playfield */
-		{ -1 }
+		new GfxDecodeInfo( REGION_GFX1, 0, charlayout,   0, 64 ),	/* characters 8x8 */
+		new GfxDecodeInfo( REGION_GFX2, 0, spritelayout, 0, 64 ),	/* sprites  playfield */
+		new GfxDecodeInfo( -1 )
 	};
 	
 	

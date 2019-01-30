@@ -608,20 +608,20 @@ public class combatsc
 		8*8*4
 	);
 	
-	static struct GfxDecodeInfo combasc_gfxdecodeinfo[] =
+	static GfxDecodeInfo combasc_gfxdecodeinfo[] =
 	{
-		{ REGION_GFX1, 0x00000, &gfx_layout, 0, 8*16 },
-		{ REGION_GFX2, 0x00000, &gfx_layout, 0, 8*16 },
-		{ -1 }
+		new GfxDecodeInfo( REGION_GFX1, 0x00000, gfx_layout, 0, 8*16 ),
+		new GfxDecodeInfo( REGION_GFX2, 0x00000, gfx_layout, 0, 8*16 ),
+		new GfxDecodeInfo( -1 )
 	};
 	
-	static struct GfxDecodeInfo combascb_gfxdecodeinfo[] =
+	static GfxDecodeInfo combascb_gfxdecodeinfo[] =
 	{
-		{ REGION_GFX1, 0x00000, &tile_layout,   0, 8*16 },
-		{ REGION_GFX1, 0x40000, &tile_layout,   0, 8*16 },
-		{ REGION_GFX2, 0x00000, &sprite_layout, 0, 8*16 },
-		{ REGION_GFX2, 0x40000, &sprite_layout, 0, 8*16 },
-		{ -1 }
+		new GfxDecodeInfo( REGION_GFX1, 0x00000, tile_layout,   0, 8*16 ),
+		new GfxDecodeInfo( REGION_GFX1, 0x40000, tile_layout,   0, 8*16 ),
+		new GfxDecodeInfo( REGION_GFX2, 0x00000, sprite_layout, 0, 8*16 ),
+		new GfxDecodeInfo( REGION_GFX2, 0x40000, sprite_layout, 0, 8*16 ),
+		new GfxDecodeInfo( -1 )
 	};
 	
 	static struct YM2203interface ym2203_interface =

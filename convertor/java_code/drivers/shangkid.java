@@ -263,25 +263,25 @@ public class shangkid
 		8*0x40
 	);
 	
-	static struct GfxDecodeInfo chinhero_gfxdecodeinfo[] = {
-		{ REGION_GFX1, 0, &shangkid_char_layout,	0, 0x40 },
-		{ REGION_GFX2, 0, &chinhero_sprite_layout1,	0, 0x20 },
-		{ REGION_GFX2, 0, &chinhero_sprite_layout2,	0, 0x20 },
-		{ REGION_GFX3, 0, &chinhero_sprite_layout1,	0, 0x20 },
-		{ REGION_GFX3, 0, &chinhero_sprite_layout2,	0, 0x20 },
-		{ -1 }
+	static GfxDecodeInfo chinhero_gfxdecodeinfo[] ={
+		new GfxDecodeInfo( REGION_GFX1, 0, shangkid_char_layout,	0, 0x40 ),
+		new GfxDecodeInfo( REGION_GFX2, 0, chinhero_sprite_layout1,	0, 0x20 ),
+		new GfxDecodeInfo( REGION_GFX2, 0, chinhero_sprite_layout2,	0, 0x20 ),
+		new GfxDecodeInfo( REGION_GFX3, 0, chinhero_sprite_layout1,	0, 0x20 ),
+		new GfxDecodeInfo( REGION_GFX3, 0, chinhero_sprite_layout2,	0, 0x20 ),
+		new GfxDecodeInfo( -1 )
 	};
 	
-	static struct GfxDecodeInfo shangkid_gfxdecodeinfo[] = {
-		{ REGION_GFX1, 0, &shangkid_char_layout,	0, 0x40 },
-		{ REGION_GFX2, 0, &shangkid_sprite_layout,	0, 0x40 },
-		{ -1 }
+	static GfxDecodeInfo shangkid_gfxdecodeinfo[] ={
+		new GfxDecodeInfo( REGION_GFX1, 0, shangkid_char_layout,	0, 0x40 ),
+		new GfxDecodeInfo( REGION_GFX2, 0, shangkid_sprite_layout,	0, 0x40 ),
+		new GfxDecodeInfo( -1 )
 	};
 	
-	static struct GfxDecodeInfo dynamski_gfxdecodeinfo[] = {
-		{ REGION_GFX1, 0, &shangkid_char_layout,	0, 0x40 },
-		{ REGION_GFX2, 0, &shangkid_sprite_layout,	0, 0x40 },
-		{ -1 }
+	static GfxDecodeInfo dynamski_gfxdecodeinfo[] ={
+		new GfxDecodeInfo( REGION_GFX1, 0, shangkid_char_layout,	0, 0x40 ),
+		new GfxDecodeInfo( REGION_GFX2, 0, shangkid_sprite_layout,	0, 0x40 ),
+		new GfxDecodeInfo( -1 )
 	};
 	
 	/***************************************************************************************/

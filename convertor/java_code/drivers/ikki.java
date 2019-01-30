@@ -219,11 +219,11 @@ public class ikki
 		8*8*8
 	);
 	
-	static struct GfxDecodeInfo gfxdecodeinfo[] =
+	static GfxDecodeInfo gfxdecodeinfo[] =
 	{
-		{ REGION_GFX2, 0x0000, &charlayout,   512, 64 },
-		{ REGION_GFX1, 0x0000, &spritelayout, 0,   64 },
-		{ -1 } /* end of array */
+		new GfxDecodeInfo( REGION_GFX2, 0x0000, charlayout,   512, 64 ),
+		new GfxDecodeInfo( REGION_GFX1, 0x0000, spritelayout, 0,   64 ),
+		new GfxDecodeInfo( -1 ) /* end of array */
 	};
 	
 	

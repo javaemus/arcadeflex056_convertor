@@ -87,9 +87,9 @@ public class system16
 		8*8
 	);
 	
-	struct GfxDecodeInfo sys16_gfxdecodeinfo[] = {
-		{ REGION_GFX1, 0, &charlayout,	0, 1024 },
-		{ -1 } /* end of array */
+	static GfxDecodeInfo sys16_gfxdecodeinfo[] ={
+		new GfxDecodeInfo( REGION_GFX1, 0, charlayout,	0, 1024 ),
+		new GfxDecodeInfo( -1 ) /* end of array */
 	};
 	
 	void sys16_interleave_sprite_data( int bank_size )

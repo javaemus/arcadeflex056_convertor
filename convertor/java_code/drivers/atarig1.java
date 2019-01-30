@@ -356,12 +356,12 @@ public class atarig1
 	);
 	
 	
-	static struct GfxDecodeInfo gfxdecodeinfo[] =
+	static GfxDecodeInfo gfxdecodeinfo[] =
 	{
-		{ REGION_GFX1, 0, &pflayout, 0x300, 8 },
-		{ REGION_GFX2, 0, &anlayout, 0x100, 16 },
-		{ REGION_GFX1, 0, &pftoplayout, 0x300, 8 },
-		{ -1 }
+		new GfxDecodeInfo( REGION_GFX1, 0, pflayout, 0x300, 8 ),
+		new GfxDecodeInfo( REGION_GFX2, 0, anlayout, 0x100, 16 ),
+		new GfxDecodeInfo( REGION_GFX1, 0, pftoplayout, 0x300, 8 ),
+		new GfxDecodeInfo( -1 )
 	};
 	
 	

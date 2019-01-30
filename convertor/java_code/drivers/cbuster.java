@@ -340,14 +340,14 @@ public class cbuster
 		64*8
 	);
 	
-	static struct GfxDecodeInfo gfxdecodeinfo[] =
+	static GfxDecodeInfo gfxdecodeinfo[] =
 	{
-		{ REGION_GFX1, 0, &charlayout, 	   0, 16 },	/* Characters 8x8 */
-		{ REGION_GFX2, 0, &tilelayout,  1024, 16 },	/* Tiles 16x16 */
-		{ REGION_GFX2, 0, &tilelayout,   768, 16 },	/* Tiles 16x16 */
-		{ REGION_GFX3, 0, &tilelayout,   512, 16 },	/* Tiles 16x16 */
-		{ REGION_GFX4, 0, &spritelayout, 256, 80 },	/* Sprites 16x16 */
-		{ -1 } /* end of array */
+		new GfxDecodeInfo( REGION_GFX1, 0, charlayout, 	   0, 16 ),	/* Characters 8x8 */
+		new GfxDecodeInfo( REGION_GFX2, 0, tilelayout,  1024, 16 ),	/* Tiles 16x16 */
+		new GfxDecodeInfo( REGION_GFX2, 0, tilelayout,   768, 16 ),	/* Tiles 16x16 */
+		new GfxDecodeInfo( REGION_GFX3, 0, tilelayout,   512, 16 ),	/* Tiles 16x16 */
+		new GfxDecodeInfo( REGION_GFX4, 0, spritelayout, 256, 80 ),	/* Sprites 16x16 */
+		new GfxDecodeInfo( -1 ) /* end of array */
 	};
 	
 	/******************************************************************************/

@@ -166,11 +166,11 @@ public class hanaawas
 	GFX( charlayout_1bpp, 0x2000*8+4, 0x2000*8+4, 0x2000*8+4 )
 	GFX( charlayout_3bpp, 0x2000*8,   0,          4          )
 	
-	static struct GfxDecodeInfo gfxdecodeinfo[] =
+	static GfxDecodeInfo gfxdecodeinfo[] =
 	{
-		{ REGION_GFX1, 0, &charlayout_1bpp, 0, 32 },
-		{ REGION_GFX1, 0, &charlayout_3bpp, 0, 32 },
-		{ -1 } /* end of array */
+		new GfxDecodeInfo( REGION_GFX1, 0, charlayout_1bpp, 0, 32 ),
+		new GfxDecodeInfo( REGION_GFX1, 0, charlayout_3bpp, 0, 32 ),
+		new GfxDecodeInfo( -1 ) /* end of array */
 	};
 	
 	

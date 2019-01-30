@@ -202,11 +202,11 @@ public class grobda
 		64*8                                           /* every sprite takes 64 bytes */
 	);
 	
-	static struct GfxDecodeInfo gfxdecodeinfo[] =
+	static GfxDecodeInfo gfxdecodeinfo[] =
 	{
-		{ REGION_GFX1, 0, &charlayout,		0, 64 },
-		{ REGION_GFX2, 0, &spritelayout,	64*4, 64 },
-		{ -1 } /* end of table */
+		new GfxDecodeInfo( REGION_GFX1, 0, charlayout,		0, 64 ),
+		new GfxDecodeInfo( REGION_GFX2, 0, spritelayout,	64*4, 64 ),
+		new GfxDecodeInfo( -1 ) /* end of table */
 	};
 	
 	static struct namco_interface namco_interface =

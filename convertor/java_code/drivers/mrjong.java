@@ -146,11 +146,11 @@ public class mrjong
 		32*8				/* every sprite takes 32 consecutive bytes */
 	);
 	
-	static struct GfxDecodeInfo gfxdecodeinfo[] =
+	static GfxDecodeInfo gfxdecodeinfo[] =
 	{
-		{ REGION_GFX1, 0x0000, &tilelayout,      0, 32 },
-		{ REGION_GFX1, 0x0000, &spritelayout,    0, 32 },
-		{ -1 }		/* end of array */
+		new GfxDecodeInfo( REGION_GFX1, 0x0000, tilelayout,      0, 32 ),
+		new GfxDecodeInfo( REGION_GFX1, 0x0000, spritelayout,    0, 32 ),
+		new GfxDecodeInfo( -1 )		/* end of array */
 	};
 	
 	

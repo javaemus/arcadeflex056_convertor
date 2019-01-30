@@ -691,11 +691,11 @@ public class airbustr
 	layout16x16(tilelayout,  0x080000)
 	layout16x16(spritelayout,0x100000)
 	
-	static struct GfxDecodeInfo gfxdecodeinfo[] =
+	static GfxDecodeInfo gfxdecodeinfo[] =
 	{
-		{ REGION_GFX1, 0, &tilelayout,   256*0, (256*2) / 16 }, // [0] Layers
-		{ REGION_GFX2, 0, &spritelayout, 256*2, (256*1) / 16 }, // [1] Sprites
-		{ -1 }
+		new GfxDecodeInfo( REGION_GFX1, 0, tilelayout,   256*0, (256*2) / 16 ), // [0] Layers
+		new GfxDecodeInfo( REGION_GFX2, 0, spritelayout, 256*2, (256*1) / 16 ), // [1] Sprites
+		new GfxDecodeInfo( -1 )
 	};
 	
 	

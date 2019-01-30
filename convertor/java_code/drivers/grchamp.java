@@ -236,14 +236,14 @@ public class grchamp
 		0x100
 	);
 	
-	static struct GfxDecodeInfo gfxdecodeinfo[] =
+	static GfxDecodeInfo gfxdecodeinfo[] =
 	{
-		{ REGION_GFX1, 0x0000, &char_layout,    0x20, 8 },
-		{ REGION_GFX2, 0x0000, &tile_layout,	0x00, 2 },
-		{ REGION_GFX1, 0x2000, &player_layout,	0x20, 8 },
-		{ REGION_GFX1, 0x0000, &sprite_layout,	0x20, 9 },
-		{ REGION_GFX3, 0x0000, &rain_layout,	0x20, 1 },
-		{ -1 }
+		new GfxDecodeInfo( REGION_GFX1, 0x0000, char_layout,    0x20, 8 ),
+		new GfxDecodeInfo( REGION_GFX2, 0x0000, tile_layout,	0x00, 2 ),
+		new GfxDecodeInfo( REGION_GFX1, 0x2000, player_layout,	0x20, 8 ),
+		new GfxDecodeInfo( REGION_GFX1, 0x0000, sprite_layout,	0x20, 9 ),
+		new GfxDecodeInfo( REGION_GFX3, 0x0000, rain_layout,	0x20, 1 ),
+		new GfxDecodeInfo( -1 )
 	};
 	
 	/***************************************************************************/

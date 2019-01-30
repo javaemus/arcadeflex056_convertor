@@ -399,12 +399,12 @@ public class buggychl
 		8
 	);
 	
-	static struct GfxDecodeInfo gfxdecodeinfo[] =
+	static GfxDecodeInfo gfxdecodeinfo[] =
 	{
-		{ 0,           0, &charlayout,   0, 8 }, /* decoded at runtime */
+		new GfxDecodeInfo( 0,           0, charlayout,   0, 8 ), /* decoded at runtime */
 		/* sprites are drawn pixel by pixel by draw_sprites() */
-		{ REGION_GFX1, 0, &spritelayout, 0, 8 },
-		{ -1 } /* end of array */
+		new GfxDecodeInfo( REGION_GFX1, 0, spritelayout, 0, 8 ),
+		new GfxDecodeInfo( -1 ) /* end of array */
 	};
 	
 	

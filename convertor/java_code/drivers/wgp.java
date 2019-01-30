@@ -836,12 +836,12 @@ public class wgp
 	/* taitoic.c TC0100SCN routines expect scr stuff to be in second gfx
 	   slot */
 	
-	static struct GfxDecodeInfo wgp_gfxdecodeinfo[] =
+	static GfxDecodeInfo wgp_gfxdecodeinfo[] =
 	{
-		{ REGION_GFX3, 0x0, &wgp_tilelayout,  0, 256 },		/* sprites */
-		{ REGION_GFX1, 0x0, &charlayout,  0, 256 },		/* sprites & playfield */
-		{ REGION_GFX2, 0x0, &wgp_tile2layout,  0, 256 },	/* piv */
-		{ -1 } /* end of array */
+		new GfxDecodeInfo( REGION_GFX3, 0x0, wgp_tilelayout,  0, 256 ),		/* sprites */
+		new GfxDecodeInfo( REGION_GFX1, 0x0, charlayout,  0, 256 ),		/* sprites  playfield */
+		new GfxDecodeInfo( REGION_GFX2, 0x0, wgp_tile2layout,  0, 256 ),	/* piv */
+		new GfxDecodeInfo( -1 ) /* end of array */
 	};
 	
 	

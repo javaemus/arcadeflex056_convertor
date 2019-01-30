@@ -375,12 +375,12 @@ public class ironhors
 		32*32
 	);
 	
-	static struct GfxDecodeInfo ironhors_gfxdecodeinfo[] =
+	static GfxDecodeInfo ironhors_gfxdecodeinfo[] =
 	{
-		{ REGION_GFX1, 0, &ironhors_charlayout,         0, 16*8 },
-		{ REGION_GFX1, 0, &ironhors_spritelayout, 16*8*16, 16*8 },
-		{ REGION_GFX1, 0, &ironhors_charlayout,   16*8*16, 16*8 },  /* to handle 8x8 sprites */
-		{ -1 } /* end of array */
+		new GfxDecodeInfo( REGION_GFX1, 0, ironhors_charlayout,         0, 16*8 ),
+		new GfxDecodeInfo( REGION_GFX1, 0, ironhors_spritelayout, 16*8*16, 16*8 ),
+		new GfxDecodeInfo( REGION_GFX1, 0, ironhors_charlayout,   16*8*16, 16*8 ),  /* to handle 8x8 sprites */
+		new GfxDecodeInfo( -1 ) /* end of array */
 	};
 	
 	
@@ -419,12 +419,12 @@ public class ironhors
 		8*8	/* every char takes 8 consecutive bytes */
 	);
 	
-	static struct GfxDecodeInfo farwest_gfxdecodeinfo[] =
+	static GfxDecodeInfo farwest_gfxdecodeinfo[] =
 	{
-		{ REGION_GFX1, 0, &farwest_charlayout,         0, 16*8 },
-		{ REGION_GFX2, 0, &farwest_spritelayout, 16*8*16, 16*8 },
-		{ REGION_GFX2, 0, &farwest_spritelayout2,16*8*16, 16*8 },  /* to handle 8x8 sprites */
-		{ -1 } /* end of array */
+		new GfxDecodeInfo( REGION_GFX1, 0, farwest_charlayout,         0, 16*8 ),
+		new GfxDecodeInfo( REGION_GFX2, 0, farwest_spritelayout, 16*8*16, 16*8 ),
+		new GfxDecodeInfo( REGION_GFX2, 0, farwest_spritelayout2,16*8*16, 16*8 ),  /* to handle 8x8 sprites */
+		new GfxDecodeInfo( -1 ) /* end of array */
 	};
 	
 	

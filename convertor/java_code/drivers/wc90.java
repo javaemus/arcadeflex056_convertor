@@ -335,13 +335,13 @@ public class wc90
 		64*8
 	);
 	
-	static struct GfxDecodeInfo gfxdecodeinfo[] =
+	static GfxDecodeInfo gfxdecodeinfo[] =
 	{
-		{ REGION_GFX1, 0x00000, &charlayout,      	1*16*16, 16*16 },
-		{ REGION_GFX2, 0x00000, &tilelayout,		2*16*16, 16*16 },
-		{ REGION_GFX3, 0x00000, &tilelayout,		3*16*16, 16*16 },
-		{ REGION_GFX4, 0x00000, &spritelayout,		0*16*16, 16*16 }, // sprites
-		{ -1 } /* end of array */
+		new GfxDecodeInfo( REGION_GFX1, 0x00000, charlayout,      	1*16*16, 16*16 ),
+		new GfxDecodeInfo( REGION_GFX2, 0x00000, tilelayout,		2*16*16, 16*16 ),
+		new GfxDecodeInfo( REGION_GFX3, 0x00000, tilelayout,		3*16*16, 16*16 ),
+		new GfxDecodeInfo( REGION_GFX4, 0x00000, spritelayout,		0*16*16, 16*16 ), // sprites
+		new GfxDecodeInfo( -1 ) /* end of array */
 	};
 	
 	

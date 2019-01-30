@@ -448,12 +448,12 @@ public class warriorb
 		32*8	/* every sprite takes 32 consecutive bytes */
 	);
 	
-	static struct GfxDecodeInfo warriorb_gfxdecodeinfo[] =
+	static GfxDecodeInfo warriorb_gfxdecodeinfo[] =
 	{
-		{ REGION_GFX2, 0, &tilelayout,  0, 256 },	/* sprites */
-		{ REGION_GFX1, 0, &charlayout,  0, 256 },	/* scr tiles (screen 1) */
-		{ REGION_GFX3, 0, &charlayout,  0, 256 },	/* scr tiles (screen 2) */
-		{ -1 } /* end of array */
+		new GfxDecodeInfo( REGION_GFX2, 0, tilelayout,  0, 256 ),	/* sprites */
+		new GfxDecodeInfo( REGION_GFX1, 0, charlayout,  0, 256 ),	/* scr tiles (screen 1) */
+		new GfxDecodeInfo( REGION_GFX3, 0, charlayout,  0, 256 ),	/* scr tiles (screen 2) */
+		new GfxDecodeInfo( -1 ) /* end of array */
 	};
 	
 	

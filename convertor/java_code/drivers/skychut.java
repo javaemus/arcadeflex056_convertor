@@ -194,10 +194,10 @@ public class skychut
 	);
 	
 	
-	static struct GfxDecodeInfo gfxdecodeinfo[] =
+	static GfxDecodeInfo gfxdecodeinfo[] =
 	{
-		{ REGION_GFX1, 0x0000, &charlayout,   0, 7 },	/* 4 color codes to support midframe */
-		{ -1 } /* end of array */
+		new GfxDecodeInfo( REGION_GFX1, 0x0000, charlayout,   0, 7 ),	/* 4 color codes to support midframe */
+		new GfxDecodeInfo( -1 ) /* end of array */
 	};
 	
 	

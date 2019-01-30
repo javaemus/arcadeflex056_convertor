@@ -408,12 +408,12 @@ public class ladybug
 		16*8	/* every sprite takes 16 consecutive bytes */
 	);
 	
-	static struct GfxDecodeInfo gfxdecodeinfo[] =
+	static GfxDecodeInfo gfxdecodeinfo[] =
 	{
-		{ REGION_GFX1, 0, &charlayout,      0,  8 },
-		{ REGION_GFX2, 0, &spritelayout,  4*8, 16 },
-		{ REGION_GFX2, 0, &spritelayout2, 4*8, 16 },
-		{ -1 } /* end of array */
+		new GfxDecodeInfo( REGION_GFX1, 0, charlayout,      0,  8 ),
+		new GfxDecodeInfo( REGION_GFX2, 0, spritelayout,  4*8, 16 ),
+		new GfxDecodeInfo( REGION_GFX2, 0, spritelayout2, 4*8, 16 ),
+		new GfxDecodeInfo( -1 ) /* end of array */
 	};
 	
 	

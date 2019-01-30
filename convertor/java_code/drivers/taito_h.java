@@ -576,23 +576,23 @@ public class taito_h
 	);
 	
 	
-	static struct GfxDecodeInfo syvalion_gfxdecodeinfo[] =
+	static GfxDecodeInfo syvalion_gfxdecodeinfo[] =
 	{
-		{ REGION_GFX1, 0, &tilelayout, 0,     32*16 },
-		{ -1 } /* end of array */
+		new GfxDecodeInfo( REGION_GFX1, 0, tilelayout, 0,     32*16 ),
+		new GfxDecodeInfo( -1 ) /* end of array */
 	};
 	
-	static struct GfxDecodeInfo recordbr_gfxdecodeinfo[] =
+	static GfxDecodeInfo recordbr_gfxdecodeinfo[] =
 	{
-		{ REGION_GFX1, 0, &tilelayout, 0,     32*16 },
-		{ -1 } /* end of array */
+		new GfxDecodeInfo( REGION_GFX1, 0, tilelayout, 0,     32*16 ),
+		new GfxDecodeInfo( -1 ) /* end of array */
 	};
 	
-	static struct GfxDecodeInfo dleague_gfxdecodeinfo[] =
+	static GfxDecodeInfo dleague_gfxdecodeinfo[] =
 	{
-		{ REGION_GFX1, 0, &tilelayout, 0,     32*16 },
-		{ REGION_GFX2, 0, &charlayout, 32*16, 16    },	// seems to be bogus...?
-		{ -1 } /* end of array */
+		new GfxDecodeInfo( REGION_GFX1, 0, tilelayout, 0,     32*16 ),
+		new GfxDecodeInfo( REGION_GFX2, 0, charlayout, 32*16, 16    ),	// seems to be bogus...?
+		new GfxDecodeInfo( -1 ) /* end of array */
 	};
 	
 	

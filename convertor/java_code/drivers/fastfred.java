@@ -427,18 +427,18 @@ public class fastfred
 		32*8     /* every sprite takes 32 consecutive bytes */
 	);
 	
-	static struct GfxDecodeInfo fastfred_gfxdecodeinfo[] =
+	static GfxDecodeInfo fastfred_gfxdecodeinfo[] =
 	{
-		{ REGION_GFX1, 0, &fastfred_charlayout,     0, 32 },
-		{ REGION_GFX2, 0, &fastfred_spritelayout,   0, 32 },
-		{ -1 } /* end of array */
+		new GfxDecodeInfo( REGION_GFX1, 0, fastfred_charlayout,     0, 32 ),
+		new GfxDecodeInfo( REGION_GFX2, 0, fastfred_spritelayout,   0, 32 ),
+		new GfxDecodeInfo( -1 ) /* end of array */
 	};
 	
-	static struct GfxDecodeInfo jumpcoas_gfxdecodeinfo[] =
+	static GfxDecodeInfo jumpcoas_gfxdecodeinfo[] =
 	{
-		{ REGION_GFX1, 0x0000, &jumpcoas_charlayout,     0, 32 },
-		{ REGION_GFX1, 0x0800, &jumpcoas_spritelayout,   0, 32 },
-		{ -1 } /* end of array */
+		new GfxDecodeInfo( REGION_GFX1, 0x0000, jumpcoas_charlayout,     0, 32 ),
+		new GfxDecodeInfo( REGION_GFX1, 0x0800, jumpcoas_spritelayout,   0, 32 ),
+		new GfxDecodeInfo( -1 ) /* end of array */
 	};
 	
 	

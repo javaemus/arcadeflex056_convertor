@@ -548,19 +548,19 @@ public class lasso
 		16*16
 	);
 	
-	static struct GfxDecodeInfo gfxdecodeinfo[] =
+	static GfxDecodeInfo gfxdecodeinfo[] =
 	{
-		{ REGION_GFX1, 0, &layout_8x8x2,	0,	16	},	// [0] Tiles
-		{ REGION_GFX1, 0, &layout_16x16x2,	0,	16	},	// [1] Sprites
-		{ -1 }
+		new GfxDecodeInfo( REGION_GFX1, 0, layout_8x8x2,	0,	16	),	// [0] Tiles
+		new GfxDecodeInfo( REGION_GFX1, 0, layout_16x16x2,	0,	16	),	// [1] Sprites
+		new GfxDecodeInfo( -1 )
 	};
 	
-	static struct GfxDecodeInfo gfxdecodeinfo_wwjgtin[] =
+	static GfxDecodeInfo gfxdecodeinfo_wwjgtin[] =
 	{
-		{ REGION_GFX1, 0, &layout_8x8x2,	0,		16	},	// [0] Tiles
-		{ REGION_GFX1, 0, &layout_16x16x2,	0,		16	},	// [1] Sprites
-		{ REGION_GFX2, 0, &layout_16x16x4,	4*0x10,	16	},	// [2] Tiles (for the tilemap in ROM)
-		{ -1 }
+		new GfxDecodeInfo( REGION_GFX1, 0, layout_8x8x2,	0,		16	),	// [0] Tiles
+		new GfxDecodeInfo( REGION_GFX1, 0, layout_16x16x2,	0,		16	),	// [1] Sprites
+		new GfxDecodeInfo( REGION_GFX2, 0, layout_16x16x4,	4*0x10,	16	),	// [2] Tiles (for the tilemap in ROM)
+		new GfxDecodeInfo( -1 )
 	};
 	
 	

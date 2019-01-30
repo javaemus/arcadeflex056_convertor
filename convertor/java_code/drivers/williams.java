@@ -1297,10 +1297,10 @@ public class williams
 	);
 	
 	
-	static struct GfxDecodeInfo williams2_gfxdecodeinfo[] =
+	static GfxDecodeInfo williams2_gfxdecodeinfo[] =
 	{
-		{ REGION_GFX1, 0, &williams2_layout, 16, 8 },
-		{ -1 } /* end of array */
+		new GfxDecodeInfo( REGION_GFX1, 0, williams2_layout, 16, 8 ),
+		new GfxDecodeInfo( -1 ) /* end of array */
 	};
 	
 	

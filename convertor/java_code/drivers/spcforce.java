@@ -244,10 +244,10 @@ public class spcforce
 	);
 	
 	
-	static struct GfxDecodeInfo gfxdecodeinfo[] =
+	static GfxDecodeInfo gfxdecodeinfo[] =
 	{
-		{ REGION_GFX1, 0, &charlayout, 0, 8 },
-		{ -1 } /* end of array */
+		new GfxDecodeInfo( REGION_GFX1, 0, charlayout, 0, 8 ),
+		new GfxDecodeInfo( -1 ) /* end of array */
 	};
 	
 	

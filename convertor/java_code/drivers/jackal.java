@@ -369,14 +369,14 @@ public class jackal
 		32*8
 	);
 	
-	static struct GfxDecodeInfo jackal_gfxdecodeinfo[] =
+	static GfxDecodeInfo jackal_gfxdecodeinfo[] =
 	{
-		{ REGION_GFX1, 0x00000, &charlayout,               0, 16 },	/* colors 256-511 with lookup */
-		{ REGION_GFX1, 0x20000, &spritelayout,        256*16, 16 },	/* colors   0- 15 with lookup */
-		{ REGION_GFX1, 0x20000, &spritelayout8,       256*16, 16 },	/* to handle 8x8 sprites */
-		{ REGION_GFX1, 0x60000, &spritelayout,  256*16+16*16, 16 },	/* colors  16- 31 with lookup */
-		{ REGION_GFX1, 0x60000, &spritelayout8, 256*16+16*16, 16 },	/* to handle 8x8 sprites */
-		{ -1 } /* end of array */
+		new GfxDecodeInfo( REGION_GFX1, 0x00000, charlayout,               0, 16 ),	/* colors 256-511 with lookup */
+		new GfxDecodeInfo( REGION_GFX1, 0x20000, spritelayout,        256*16, 16 ),	/* colors   0- 15 with lookup */
+		new GfxDecodeInfo( REGION_GFX1, 0x20000, spritelayout8,       256*16, 16 ),	/* to handle 8x8 sprites */
+		new GfxDecodeInfo( REGION_GFX1, 0x60000, spritelayout,  256*16+16*16, 16 ),	/* colors  16- 31 with lookup */
+		new GfxDecodeInfo( REGION_GFX1, 0x60000, spritelayout8, 256*16+16*16, 16 ),	/* to handle 8x8 sprites */
+		new GfxDecodeInfo( -1 ) /* end of array */
 	};
 	
 	

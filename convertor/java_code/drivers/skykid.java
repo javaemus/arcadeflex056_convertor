@@ -446,14 +446,14 @@ public class skykid
 		64*8    /* every sprite takes 64 bytes */
 	);
 	
-	static struct GfxDecodeInfo gfxdecodeinfo[] =
+	static GfxDecodeInfo gfxdecodeinfo[] =
 	{
-		{ REGION_GFX1, 0, &text_layout,		0, 64 },
-		{ REGION_GFX2, 0, &tile_layout,		64*4, 128 },
-		{ REGION_GFX3, 0, &sprite_layout1,	64*4+128*4, 64 },
-		{ REGION_GFX3, 0, &sprite_layout2,	64*4+128*4, 64 },
-		{ REGION_GFX3, 0, &sprite_layout3,	64*4+128*4, 64 },
-		{-1 }
+		new GfxDecodeInfo( REGION_GFX1, 0, text_layout,		0, 64 ),
+		new GfxDecodeInfo( REGION_GFX2, 0, tile_layout,		64*4, 128 ),
+		new GfxDecodeInfo( REGION_GFX3, 0, sprite_layout1,	64*4+128*4, 64 ),
+		new GfxDecodeInfo( REGION_GFX3, 0, sprite_layout2,	64*4+128*4, 64 ),
+		new GfxDecodeInfo( REGION_GFX3, 0, sprite_layout3,	64*4+128*4, 64 ),
+		new GfxDecodeInfo(-1 )
 	};
 	
 	

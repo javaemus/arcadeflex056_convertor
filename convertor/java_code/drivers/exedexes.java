@@ -218,13 +218,13 @@ public class exedexes
 	
 	
 	
-	static struct GfxDecodeInfo gfxdecodeinfo[] =
+	static GfxDecodeInfo gfxdecodeinfo[] =
 	{
-		{ REGION_GFX1, 0, &charlayout,              0, 64 },
-		{ REGION_GFX2, 0, &tilelayout,           64*4, 64 }, /* 32x32 Tiles */
-		{ REGION_GFX3, 0, &spritelayout,       2*64*4, 16 }, /* 16x16 Tiles */
-		{ REGION_GFX4, 0, &spritelayout, 2*64*4+16*16, 16 }, /* Sprites */
-		{ -1 } /* end of array */
+		new GfxDecodeInfo( REGION_GFX1, 0, charlayout,              0, 64 ),
+		new GfxDecodeInfo( REGION_GFX2, 0, tilelayout,           64*4, 64 ), /* 32x32 Tiles */
+		new GfxDecodeInfo( REGION_GFX3, 0, spritelayout,       2*64*4, 16 ), /* 16x16 Tiles */
+		new GfxDecodeInfo( REGION_GFX4, 0, spritelayout, 2*64*4+16*16, 16 ), /* Sprites */
+		new GfxDecodeInfo( -1 ) /* end of array */
 	};
 	
 	

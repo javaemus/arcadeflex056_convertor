@@ -1425,18 +1425,18 @@ public class pacman
 	);
 	
 	
-	static struct GfxDecodeInfo gfxdecodeinfo[] =
+	static GfxDecodeInfo gfxdecodeinfo[] =
 	{
-		{ REGION_GFX1, 0, &tilelayout,   0, 32 },
-		{ REGION_GFX2, 0, &spritelayout, 0, 32 },
-		{ -1 } /* end of array */
+		new GfxDecodeInfo( REGION_GFX1, 0, tilelayout,   0, 32 ),
+		new GfxDecodeInfo( REGION_GFX2, 0, spritelayout, 0, 32 ),
+		new GfxDecodeInfo( -1 ) /* end of array */
 	};
 	
-	static struct GfxDecodeInfo mschampgfxdecodeinfo[] =
+	static GfxDecodeInfo mschampgfxdecodeinfo[] =
 	{
-		{ REGION_GFX1, 0x0000, &tilelayout,   0, 32 },
-		{ REGION_GFX1, 0x1000, &spritelayout, 0, 32 },
-		{ -1 } /* end of array */
+		new GfxDecodeInfo( REGION_GFX1, 0x0000, tilelayout,   0, 32 ),
+		new GfxDecodeInfo( REGION_GFX1, 0x1000, spritelayout, 0, 32 ),
+		new GfxDecodeInfo( -1 ) /* end of array */
 	};
 	
 	

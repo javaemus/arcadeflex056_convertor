@@ -666,13 +666,13 @@ public class twincobr
 		32*8	/* every sprite takes 32 consecutive bytes */
 	);
 	
-	static struct GfxDecodeInfo gfxdecodeinfo[] =
+	static GfxDecodeInfo gfxdecodeinfo[] =
 	{
-		{ REGION_GFX1, 0x00000, &charlayout,	  1536, 32 },	/* colors 1536-1791 */
-		{ REGION_GFX2, 0x00000, &tilelayout_8192, 1280, 16 },	/* colors 1280-1535 */
-		{ REGION_GFX3, 0x00000, &tilelayout_4096, 1024, 16 },	/* colors 1024-1079 */
-		{ REGION_GFX4, 0x00000, &spritelayout,	 	 0, 64 },	/* colors    0-1023 */
-		{ -1 } /* end of array */
+		new GfxDecodeInfo( REGION_GFX1, 0x00000, charlayout,	  1536, 32 ),	/* colors 1536-1791 */
+		new GfxDecodeInfo( REGION_GFX2, 0x00000, tilelayout_8192, 1280, 16 ),	/* colors 1280-1535 */
+		new GfxDecodeInfo( REGION_GFX3, 0x00000, tilelayout_4096, 1024, 16 ),	/* colors 1024-1079 */
+		new GfxDecodeInfo( REGION_GFX4, 0x00000, spritelayout,	 	 0, 64 ),	/* colors    0-1023 */
+		new GfxDecodeInfo( -1 ) /* end of array */
 	};
 	
 	

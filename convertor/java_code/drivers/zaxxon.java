@@ -738,20 +738,20 @@ public class zaxxon
 	
 	
 	
-	static struct GfxDecodeInfo gfxdecodeinfo[] =
+	static GfxDecodeInfo gfxdecodeinfo[] =
 	{
-		{ REGION_GFX1, 0, &zaxxon_charlayout1,	 0, 32 },	/* characters */
-		{ REGION_GFX2, 0, &zaxxon_charlayout2,	 0, 32 },	/* background tiles */
-		{ REGION_GFX3, 0, &spritelayout,  0, 32 },			/* sprites */
-		{ -1 } /* end of array */
+		new GfxDecodeInfo( REGION_GFX1, 0, zaxxon_charlayout1,	 0, 32 ),	/* characters */
+		new GfxDecodeInfo( REGION_GFX2, 0, zaxxon_charlayout2,	 0, 32 ),	/* background tiles */
+		new GfxDecodeInfo( REGION_GFX3, 0, spritelayout,  0, 32 ),			/* sprites */
+		new GfxDecodeInfo( -1 ) /* end of array */
 	};
 	
-	static struct GfxDecodeInfo futspy_gfxdecodeinfo[] =
+	static GfxDecodeInfo futspy_gfxdecodeinfo[] =
 	{
-		{ REGION_GFX1, 0, &zaxxon_charlayout1,	 0, 32 },	/* characters */
-		{ REGION_GFX2, 0, &zaxxon_charlayout2,	 0, 32 },	/* background tiles */
-		{ REGION_GFX3, 0, &futspy_spritelayout,  0, 32 },	/* sprites */
-		{ -1 } /* end of array */
+		new GfxDecodeInfo( REGION_GFX1, 0, zaxxon_charlayout1,	 0, 32 ),	/* characters */
+		new GfxDecodeInfo( REGION_GFX2, 0, zaxxon_charlayout2,	 0, 32 ),	/* background tiles */
+		new GfxDecodeInfo( REGION_GFX3, 0, futspy_spritelayout,  0, 32 ),	/* sprites */
+		new GfxDecodeInfo( -1 ) /* end of array */
 	};
 	
 	

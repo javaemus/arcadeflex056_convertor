@@ -248,13 +248,13 @@ public class momoko
 		8*1
 	);
 	
-	static struct GfxDecodeInfo gfxdecodeinfo[] =
+	static GfxDecodeInfo gfxdecodeinfo[] =
 	{
-		{ REGION_GFX1, 0x0000, &charlayout1,      0,  24 }, /* TEXT */
-		{ REGION_GFX2, 0x0000, &tilelayout,     256,  16 }, /* BG */
-		{ REGION_GFX3, 0x0000, &charlayout,       0,   1 }, /* FG */
-		{ REGION_GFX4, 0x0000, &spritelayout,   128,   8 }, /* sprite */
-		{ -1 } /* end of array */
+		new GfxDecodeInfo( REGION_GFX1, 0x0000, charlayout1,      0,  24 ), /* TEXT */
+		new GfxDecodeInfo( REGION_GFX2, 0x0000, tilelayout,     256,  16 ), /* BG */
+		new GfxDecodeInfo( REGION_GFX3, 0x0000, charlayout,       0,   1 ), /* FG */
+		new GfxDecodeInfo( REGION_GFX4, 0x0000, spritelayout,   128,   8 ), /* sprite */
+		new GfxDecodeInfo( -1 ) /* end of array */
 	};
 	
 	/****************************************************************************/

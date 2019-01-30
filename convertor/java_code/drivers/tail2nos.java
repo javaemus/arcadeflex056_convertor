@@ -252,11 +252,11 @@ public class tail2nos
 		128*8
 	);
 	
-	static struct GfxDecodeInfo tail2nos_gfxdecodeinfo[] =
+	static GfxDecodeInfo tail2nos_gfxdecodeinfo[] =
 	{
-		{ REGION_GFX1, 0, &tail2nos_charlayout,   0, 128 },
-		{ REGION_GFX2, 0, &tail2nos_spritelayout, 0, 128 },
-		{ -1 } /* end of array */
+		new GfxDecodeInfo( REGION_GFX1, 0, tail2nos_charlayout,   0, 128 ),
+		new GfxDecodeInfo( REGION_GFX2, 0, tail2nos_spritelayout, 0, 128 ),
+		new GfxDecodeInfo( -1 ) /* end of array */
 	};
 	
 	

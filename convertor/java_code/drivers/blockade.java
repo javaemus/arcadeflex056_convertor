@@ -441,16 +441,16 @@ public class blockade
 		8*8 /* every char takes 8 consecutive bytes */
 	);
 	
-	static struct GfxDecodeInfo gfxdecodeinfo[] =
+	static GfxDecodeInfo gfxdecodeinfo[] =
 	{
-		{ REGION_GFX1, 0x0000, &blockade_layout, 0, 2 },
-		{ -1 } /* end of array */
+		new GfxDecodeInfo( REGION_GFX1, 0x0000, blockade_layout, 0, 2 ),
+		new GfxDecodeInfo( -1 ) /* end of array */
 	};
 	
-	static struct GfxDecodeInfo blasto_gfxdecodeinfo[] =
+	static GfxDecodeInfo blasto_gfxdecodeinfo[] =
 	{
-		{ REGION_GFX1, 0x0000, &blasto_layout,   0, 2 },
-		{ -1 } /* end of array */
+		new GfxDecodeInfo( REGION_GFX1, 0x0000, blasto_layout,   0, 2 ),
+		new GfxDecodeInfo( -1 ) /* end of array */
 	};
 	
 	

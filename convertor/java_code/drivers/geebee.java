@@ -421,10 +421,10 @@ public class geebee
 		8 * 8							   /* eight bytes per code */
 	);
 	
-	static struct GfxDecodeInfo gfxdecodeinfo_1k[] =
+	static GfxDecodeInfo gfxdecodeinfo_1k[] =
 	{
-		{ REGION_CPU1, 0x3000, &charlayout_1k, 0, 4 },
-		{-1}							   /* end of array */
+		new GfxDecodeInfo( REGION_CPU1, 0x3000, charlayout_1k, 0, 4 ),
+		new GfxDecodeInfo(-1)							   /* end of array */
 	};
 	
 	static GfxLayout charlayout_2k = new GfxLayout
@@ -440,10 +440,10 @@ public class geebee
 	    8 * 8                              /* eight bytes per code */
 	);
 	
-	static struct GfxDecodeInfo gfxdecodeinfo_2k[] =
+	static GfxDecodeInfo gfxdecodeinfo_2k[] =
 	{
-		{ REGION_CPU1, 0x3000, &charlayout_2k, 0, 4 },
-		{-1}							   /* end of array */
+		new GfxDecodeInfo( REGION_CPU1, 0x3000, charlayout_2k, 0, 4 ),
+		new GfxDecodeInfo(-1)							   /* end of array */
 	};
 	
 	static struct CustomSound_interface custom_interface =

@@ -395,10 +395,10 @@ public class galpanic
 		128*8
 	);
 	
-	static struct GfxDecodeInfo gfxdecodeinfo[] =
+	static GfxDecodeInfo gfxdecodeinfo[] =
 	{
-		{ REGION_GFX1, 0, &spritelayout,  256, 16 },
-		{ -1 } /* end of array */
+		new GfxDecodeInfo( REGION_GFX1, 0, spritelayout,  256, 16 ),
+		new GfxDecodeInfo( -1 ) /* end of array */
 	};
 	
 	

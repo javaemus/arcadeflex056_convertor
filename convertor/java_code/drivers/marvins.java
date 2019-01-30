@@ -607,13 +607,13 @@ public class marvins
 		256
 	);
 	
-	static struct GfxDecodeInfo marvins_gfxdecodeinfo[] =
+	static GfxDecodeInfo marvins_gfxdecodeinfo[] =
 	{
-		{ REGION_GFX1, 0, &tile_layout,	0x080, 8  }, /* text layer */
-		{ REGION_GFX2, 0, &tile_layout,	0x110, 1  }, /* background */
-		{ REGION_GFX3, 0, &tile_layout,	0x100, 1  }, /* foreground */
-		{ REGION_GFX4, 0, &sprite_layout,	0x000, 16 }, /* sprites */
-		{ -1 }
+		new GfxDecodeInfo( REGION_GFX1, 0, tile_layout,	0x080, 8  ), /* text layer */
+		new GfxDecodeInfo( REGION_GFX2, 0, tile_layout,	0x110, 1  ), /* background */
+		new GfxDecodeInfo( REGION_GFX3, 0, tile_layout,	0x100, 1  ), /* foreground */
+		new GfxDecodeInfo( REGION_GFX4, 0, sprite_layout,	0x000, 16 ), /* sprites */
+		new GfxDecodeInfo( -1 )
 	};
 	
 	/***************************************************************************

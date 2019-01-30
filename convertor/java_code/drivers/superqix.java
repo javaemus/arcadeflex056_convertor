@@ -187,15 +187,15 @@ public class superqix
 		128*8   /* every sprites takes 128 consecutive bytes */
 	);
 	
-	static struct GfxDecodeInfo gfxdecodeinfo[] =
+	static GfxDecodeInfo gfxdecodeinfo[] =
 	{
-		{ REGION_GFX1, 0x00000, &charlayout,   0, 16 },	/* Chars */
-		{ REGION_GFX2, 0x00000, &charlayout,   0, 16 },	/* Background tiles */
-		{ REGION_GFX2, 0x08000, &charlayout,   0, 16 },
-		{ REGION_GFX2, 0x10000, &charlayout,   0, 16 },
-		{ REGION_GFX2, 0x18000, &charlayout,   0, 16 },
-		{ REGION_GFX3, 0x00000, &spritelayout, 0, 16 },	/* Sprites */
-		{ -1 } /* end of array */
+		new GfxDecodeInfo( REGION_GFX1, 0x00000, charlayout,   0, 16 ),	/* Chars */
+		new GfxDecodeInfo( REGION_GFX2, 0x00000, charlayout,   0, 16 ),	/* Background tiles */
+		new GfxDecodeInfo( REGION_GFX2, 0x08000, charlayout,   0, 16 ),
+		new GfxDecodeInfo( REGION_GFX2, 0x10000, charlayout,   0, 16 ),
+		new GfxDecodeInfo( REGION_GFX2, 0x18000, charlayout,   0, 16 ),
+		new GfxDecodeInfo( REGION_GFX3, 0x00000, spritelayout, 0, 16 ),	/* Sprites */
+		new GfxDecodeInfo( -1 ) /* end of array */
 	};
 	
 	

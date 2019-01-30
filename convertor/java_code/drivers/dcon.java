@@ -203,14 +203,14 @@ public class dcon
 		1024
 	);
 	
-	static struct GfxDecodeInfo dcon_gfxdecodeinfo[] =
+	static GfxDecodeInfo dcon_gfxdecodeinfo[] =
 	{
-		{ REGION_GFX1, 0, &dcon_charlayout,    1024+768, 16 },
-		{ REGION_GFX2, 0, &dcon_tilelayout,    1024+0,   16 },
-		{ REGION_GFX3, 0, &dcon_tilelayout,    1024+512, 16 },
-		{ REGION_GFX4, 0, &dcon_tilelayout,    1024+256, 16 },
-		{ REGION_GFX5, 0, &dcon_spritelayout,         0, 64 },
-		{ -1 } /* end of array */
+		new GfxDecodeInfo( REGION_GFX1, 0, dcon_charlayout,    1024+768, 16 ),
+		new GfxDecodeInfo( REGION_GFX2, 0, dcon_tilelayout,    1024+0,   16 ),
+		new GfxDecodeInfo( REGION_GFX3, 0, dcon_tilelayout,    1024+512, 16 ),
+		new GfxDecodeInfo( REGION_GFX4, 0, dcon_tilelayout,    1024+256, 16 ),
+		new GfxDecodeInfo( REGION_GFX5, 0, dcon_spritelayout,         0, 64 ),
+		new GfxDecodeInfo( -1 ) /* end of array */
 	};
 	
 	/******************************************************************************/

@@ -175,12 +175,12 @@ public class ninjakid
 		1024
 	);
 	
-	static struct GfxDecodeInfo ninjakid_gfxdecodeinfo[] =
+	static GfxDecodeInfo ninjakid_gfxdecodeinfo[] =
 	{
-		{ REGION_GFX1, 0, &tile_layout,		0x000, 0x10 },
-		{ REGION_GFX2, 0, &tile_layout,		0x100, 0x10 },
-		{ REGION_GFX1, 0, &sprite_layout,	0x200, 0x10 },
-		{ -1 }
+		new GfxDecodeInfo( REGION_GFX1, 0, tile_layout,		0x000, 0x10 ),
+		new GfxDecodeInfo( REGION_GFX2, 0, tile_layout,		0x100, 0x10 ),
+		new GfxDecodeInfo( REGION_GFX1, 0, sprite_layout,	0x200, 0x10 ),
+		new GfxDecodeInfo( -1 )
 	};
 	
 	/*******************************************************************************

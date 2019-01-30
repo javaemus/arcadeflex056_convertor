@@ -261,12 +261,12 @@ public class srumbler
 	);
 	
 	
-	static struct GfxDecodeInfo gfxdecodeinfo[] =
+	static GfxDecodeInfo gfxdecodeinfo[] =
 	{
-		{ REGION_GFX1, 0, &charlayout,   448, 16 }, /* colors 448 - 511 */
-		{ REGION_GFX2, 0, &tilelayout,   128,  8 }, /* colors 128 - 255 */
-		{ REGION_GFX3, 0, &spritelayout, 256,  8 }, /* colors 256 - 383 */
-		{ -1 } /* end of array */
+		new GfxDecodeInfo( REGION_GFX1, 0, charlayout,   448, 16 ), /* colors 448 - 511 */
+		new GfxDecodeInfo( REGION_GFX2, 0, tilelayout,   128,  8 ), /* colors 128 - 255 */
+		new GfxDecodeInfo( REGION_GFX3, 0, spritelayout, 256,  8 ), /* colors 256 - 383 */
+		new GfxDecodeInfo( -1 ) /* end of array */
 	};
 	
 	

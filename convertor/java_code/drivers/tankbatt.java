@@ -257,11 +257,11 @@ public class tankbatt
 	);
 	
 	
-	static struct GfxDecodeInfo gfxdecodeinfo[] =
+	static GfxDecodeInfo gfxdecodeinfo[] =
 	{
-		{ REGION_GFX1, 0, &charlayout,   0, 64 },
-		{ REGION_GFX1, 0, &bulletlayout, 0, 64 },
-		{ -1 } /* end of array */
+		new GfxDecodeInfo( REGION_GFX1, 0, charlayout,   0, 64 ),
+		new GfxDecodeInfo( REGION_GFX1, 0, bulletlayout, 0, 64 ),
+		new GfxDecodeInfo( -1 ) /* end of array */
 	};
 	
 	

@@ -596,43 +596,43 @@ public class renegade
 		64*8 /* offset to next tile */
 	);
 	
-	static struct GfxDecodeInfo gfxdecodeinfo[] =
+	static GfxDecodeInfo gfxdecodeinfo[] =
 	{
 		/* 8x8 text, 8 colors */
-		{ REGION_GFX1, 0x00000, &charlayout,	 0, 4 },	/* colors	0- 32 */
+		new GfxDecodeInfo( REGION_GFX1, 0x00000, charlayout,	 0, 4 ),	/* colors	0- 32 */
 	
 		/* 16x16 background tiles, 8 colors */
-		{ REGION_GFX2, 0x00000, &tileslayout1, 192, 8 },	/* colors 192-255 */
-		{ REGION_GFX2, 0x00000, &tileslayout2, 192, 8 },
-		{ REGION_GFX2, 0x00000, &tileslayout3, 192, 8 },
-		{ REGION_GFX2, 0x00000, &tileslayout4, 192, 8 },
+		new GfxDecodeInfo( REGION_GFX2, 0x00000, tileslayout1, 192, 8 ),	/* colors 192-255 */
+		new GfxDecodeInfo( REGION_GFX2, 0x00000, tileslayout2, 192, 8 ),
+		new GfxDecodeInfo( REGION_GFX2, 0x00000, tileslayout3, 192, 8 ),
+		new GfxDecodeInfo( REGION_GFX2, 0x00000, tileslayout4, 192, 8 ),
 	
-		{ REGION_GFX2, 0x18000, &tileslayout1, 192, 8 },
-		{ REGION_GFX2, 0x18000, &tileslayout2, 192, 8 },
-		{ REGION_GFX2, 0x18000, &tileslayout3, 192, 8 },
-		{ REGION_GFX2, 0x18000, &tileslayout4, 192, 8 },
+		new GfxDecodeInfo( REGION_GFX2, 0x18000, tileslayout1, 192, 8 ),
+		new GfxDecodeInfo( REGION_GFX2, 0x18000, tileslayout2, 192, 8 ),
+		new GfxDecodeInfo( REGION_GFX2, 0x18000, tileslayout3, 192, 8 ),
+		new GfxDecodeInfo( REGION_GFX2, 0x18000, tileslayout4, 192, 8 ),
 	
 		/* 16x16 sprites, 8 colors */
-		{ REGION_GFX3, 0x00000, &tileslayout1, 128, 4 },	/* colors 128-159 */
-		{ REGION_GFX3, 0x00000, &tileslayout2, 128, 4 },
-		{ REGION_GFX3, 0x00000, &tileslayout3, 128, 4 },
-		{ REGION_GFX3, 0x00000, &tileslayout4, 128, 4 },
+		new GfxDecodeInfo( REGION_GFX3, 0x00000, tileslayout1, 128, 4 ),	/* colors 128-159 */
+		new GfxDecodeInfo( REGION_GFX3, 0x00000, tileslayout2, 128, 4 ),
+		new GfxDecodeInfo( REGION_GFX3, 0x00000, tileslayout3, 128, 4 ),
+		new GfxDecodeInfo( REGION_GFX3, 0x00000, tileslayout4, 128, 4 ),
 	
-		{ REGION_GFX3, 0x18000, &tileslayout1, 128, 4 },
-		{ REGION_GFX3, 0x18000, &tileslayout2, 128, 4 },
-		{ REGION_GFX3, 0x18000, &tileslayout3, 128, 4 },
-		{ REGION_GFX3, 0x18000, &tileslayout4, 128, 4 },
+		new GfxDecodeInfo( REGION_GFX3, 0x18000, tileslayout1, 128, 4 ),
+		new GfxDecodeInfo( REGION_GFX3, 0x18000, tileslayout2, 128, 4 ),
+		new GfxDecodeInfo( REGION_GFX3, 0x18000, tileslayout3, 128, 4 ),
+		new GfxDecodeInfo( REGION_GFX3, 0x18000, tileslayout4, 128, 4 ),
 	
-		{ REGION_GFX3, 0x30000, &tileslayout1, 128, 4 },
-		{ REGION_GFX3, 0x30000, &tileslayout2, 128, 4 },
-		{ REGION_GFX3, 0x30000, &tileslayout3, 128, 4 },
-		{ REGION_GFX3, 0x30000, &tileslayout4, 128, 4 },
+		new GfxDecodeInfo( REGION_GFX3, 0x30000, tileslayout1, 128, 4 ),
+		new GfxDecodeInfo( REGION_GFX3, 0x30000, tileslayout2, 128, 4 ),
+		new GfxDecodeInfo( REGION_GFX3, 0x30000, tileslayout3, 128, 4 ),
+		new GfxDecodeInfo( REGION_GFX3, 0x30000, tileslayout4, 128, 4 ),
 	
-		{ REGION_GFX3, 0x48000, &tileslayout1, 128, 4 },
-		{ REGION_GFX3, 0x48000, &tileslayout2, 128, 4 },
-		{ REGION_GFX3, 0x48000, &tileslayout3, 128, 4 },
-		{ REGION_GFX3, 0x48000, &tileslayout4, 128, 4 },
-		{ -1 }
+		new GfxDecodeInfo( REGION_GFX3, 0x48000, tileslayout1, 128, 4 ),
+		new GfxDecodeInfo( REGION_GFX3, 0x48000, tileslayout2, 128, 4 ),
+		new GfxDecodeInfo( REGION_GFX3, 0x48000, tileslayout3, 128, 4 ),
+		new GfxDecodeInfo( REGION_GFX3, 0x48000, tileslayout4, 128, 4 ),
+		new GfxDecodeInfo( -1 )
 	};
 	
 	

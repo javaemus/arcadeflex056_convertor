@@ -343,12 +343,12 @@ public class namconb1
 		8*64
 	);
 	
-	static struct GfxDecodeInfo gfxdecodeinfo[] =
+	static GfxDecodeInfo gfxdecodeinfo[] =
 	{
-		{ REGION_GFX1 , 0x000000, &obj_layout,		0x0000, 0x10 },
-		{ REGION_GFX2 , 0x000000, &tile_layout,		0x1000, 0x10 },
+		new GfxDecodeInfo( REGION_GFX1 , 0x000000, obj_layout,		0x0000, 0x10 ),
+		new GfxDecodeInfo( REGION_GFX2 , 0x000000, tile_layout,		0x1000, 0x10 ),
 		/* REGION_GFX3 contains masks for tile */
-		{ -1 }
+		new GfxDecodeInfo( -1 )
 	};
 	
 	/***************************************************************/

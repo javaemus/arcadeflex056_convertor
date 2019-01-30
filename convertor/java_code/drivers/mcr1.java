@@ -351,11 +351,11 @@ public class mcr1
 	 *
 	 *************************************/
 	
-	static struct GfxDecodeInfo gfxdecodeinfo[] =
+	static GfxDecodeInfo gfxdecodeinfo[] =
 	{
-		{ REGION_GFX1, 0, &mcr_bg_layout,     0, 1 },	/* colors 0-15 */
-		{ REGION_GFX2, 0, &mcr_sprite_layout, 16, 1 },	/* colors 16-31 */
-		{ -1 } /* end of array */
+		new GfxDecodeInfo( REGION_GFX1, 0, mcr_bg_layout,     0, 1 ),	/* colors 0-15 */
+		new GfxDecodeInfo( REGION_GFX2, 0, mcr_sprite_layout, 16, 1 ),	/* colors 16-31 */
+		new GfxDecodeInfo( -1 ) /* end of array */
 	};
 	
 	

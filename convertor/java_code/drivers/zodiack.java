@@ -485,13 +485,13 @@ public class zodiack
 		0	/* no use */
 	);
 	
-	static struct GfxDecodeInfo gfxdecodeinfo[] =
+	static GfxDecodeInfo gfxdecodeinfo[] =
 	{
-		{ REGION_GFX1, 0x0000, &charlayout,   8*4    , 8 },
-		{ REGION_GFX1, 0x0800, &spritelayout, 0      , 8 },
-		{ REGION_GFX1, 0x0000, &bulletlayout, 8*4+8*2, 1 },
-		{ REGION_GFX1, 0x1000, &charlayout_2, 0      , 8 },
-		{ -1 } /* end of array */
+		new GfxDecodeInfo( REGION_GFX1, 0x0000, charlayout,   8*4    , 8 ),
+		new GfxDecodeInfo( REGION_GFX1, 0x0800, spritelayout, 0      , 8 ),
+		new GfxDecodeInfo( REGION_GFX1, 0x0000, bulletlayout, 8*4+8*2, 1 ),
+		new GfxDecodeInfo( REGION_GFX1, 0x1000, charlayout_2, 0      , 8 ),
+		new GfxDecodeInfo( -1 ) /* end of array */
 	};
 	
 	

@@ -240,11 +240,11 @@ public class othldrby
 		16*32
 	);
 	
-	static struct GfxDecodeInfo gfxdecodeinfo[] =
+	static GfxDecodeInfo gfxdecodeinfo[] =
 	{
-		{ REGION_GFX1, 0, &spritelayout, 0, 0x80 },
-		{ REGION_GFX1, 0, &tilelayout,   0, 0x80 },
-		{ -1 } /* end of array */
+		new GfxDecodeInfo( REGION_GFX1, 0, spritelayout, 0, 0x80 ),
+		new GfxDecodeInfo( REGION_GFX1, 0, tilelayout,   0, 0x80 ),
+		new GfxDecodeInfo( -1 ) /* end of array */
 	};
 	
 	

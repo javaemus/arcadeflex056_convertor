@@ -3009,47 +3009,47 @@ public class toaplan2
 	);
 	#endif
 	
-	static struct GfxDecodeInfo gfxdecodeinfo[] =
+	static GfxDecodeInfo gfxdecodeinfo[] =
 	{
-		{ REGION_GFX1, 0, &tilelayout,   0, 128 },
-		{ REGION_GFX1, 0, &spritelayout, 0,  64 },
-		{ -1 } /* end of array */
+		new GfxDecodeInfo( REGION_GFX1, 0, tilelayout,   0, 128 ),
+		new GfxDecodeInfo( REGION_GFX1, 0, spritelayout, 0,  64 ),
+		new GfxDecodeInfo( -1 ) /* end of array */
 	};
 	
-	static struct GfxDecodeInfo gfxdecodeinfo_2[] =
+	static GfxDecodeInfo gfxdecodeinfo_2[] =
 	{
-		{ REGION_GFX1, 0, &tilelayout,   0, 128 },
-		{ REGION_GFX1, 0, &spritelayout, 0,  64 },
-		{ REGION_GFX2, 0, &tilelayout,   0, 128 },
-		{ REGION_GFX2, 0, &spritelayout, 0,  64 },
-		{ -1 } /* end of array */
+		new GfxDecodeInfo( REGION_GFX1, 0, tilelayout,   0, 128 ),
+		new GfxDecodeInfo( REGION_GFX1, 0, spritelayout, 0,  64 ),
+		new GfxDecodeInfo( REGION_GFX2, 0, tilelayout,   0, 128 ),
+		new GfxDecodeInfo( REGION_GFX2, 0, spritelayout, 0,  64 ),
+		new GfxDecodeInfo( -1 ) /* end of array */
 	};
 	
-	static struct GfxDecodeInfo truxton2_gfxdecodeinfo[] =
+	static GfxDecodeInfo truxton2_gfxdecodeinfo[] =
 	{
-		{ REGION_GFX1, 0,       &tilelayout            , 0, 128 },
-		{ REGION_GFX1, 0,       &spritelayout          , 0,  64 },
-	//	{ REGION_CPU1, 0x40000, &truxton2_tx_tilelayout, 0, 128 },	/* Truxton 2 */
-	//	{ REGION_CPU1, 0x68000, &truxton2_tx_tilelayout, 0, 128 },	/* Fix Eight */
-		{ 0, 0, &truxton2_tx_tilelayout,  0, 128 },
-		{ -1 } /* end of array */
+		new GfxDecodeInfo( REGION_GFX1, 0,       tilelayout            , 0, 128 ),
+		new GfxDecodeInfo( REGION_GFX1, 0,       spritelayout          , 0,  64 ),
+	//	new GfxDecodeInfo( REGION_CPU1, 0x40000, truxton2_tx_tilelayout, 0, 128 ),	/* Truxton 2 */
+	//	new GfxDecodeInfo( REGION_CPU1, 0x68000, truxton2_tx_tilelayout, 0, 128 ),	/* Fix Eight */
+		new GfxDecodeInfo( 0, 0, truxton2_tx_tilelayout,  0, 128 ),
+		new GfxDecodeInfo( -1 ) /* end of array */
 	};
 	
-	static struct GfxDecodeInfo raizing_gfxdecodeinfo[] =
+	static GfxDecodeInfo raizing_gfxdecodeinfo[] =
 	{
-		{ REGION_GFX1, 0, &tilelayout,         0, 128 },
-		{ REGION_GFX1, 0, &spritelayout,       0,  64 },
-		{ REGION_GFX2, 0, &raizing_textlayout, 0, 128 },		/* Extra-text layer */
-		{ -1 } /* end of array */
+		new GfxDecodeInfo( REGION_GFX1, 0, tilelayout,         0, 128 ),
+		new GfxDecodeInfo( REGION_GFX1, 0, spritelayout,       0,  64 ),
+		new GfxDecodeInfo( REGION_GFX2, 0, raizing_textlayout, 0, 128 ),		/* Extra-text layer */
+		new GfxDecodeInfo( -1 ) /* end of array */
 	};
 	
 	/* This is wrong a bit. Text layer is dynamically changed. */
-	static struct GfxDecodeInfo batrider_gfxdecodeinfo[] =
+	static GfxDecodeInfo batrider_gfxdecodeinfo[] =
 	{
-		{ REGION_GFX1, 0, &tilelayout,             0, 128 },
-		{ REGION_GFX1, 0, &spritelayout,           0,  64 },
-		{ 0,           0, &batrider_tx_tilelayout, 0,  16 },
-		{ -1 } /* end of array */
+		new GfxDecodeInfo( REGION_GFX1, 0, tilelayout,             0, 128 ),
+		new GfxDecodeInfo( REGION_GFX1, 0, spritelayout,           0,  64 ),
+		new GfxDecodeInfo( 0,           0, batrider_tx_tilelayout, 0,  16 ),
+		new GfxDecodeInfo( -1 ) /* end of array */
 	};
 	
 	

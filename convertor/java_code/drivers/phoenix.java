@@ -492,18 +492,18 @@ public class phoenix
 		8*8 /* every char takes 8 consecutive bytes */
 	);
 	
-	static struct GfxDecodeInfo phoenix_gfxdecodeinfo[] =
+	static GfxDecodeInfo phoenix_gfxdecodeinfo[] =
 	{
-		{ REGION_GFX1, 0, &charlayout,	  0, 16 },
-		{ REGION_GFX2, 0, &charlayout, 16*4, 16 },
-		{ -1 } /* end of array */
+		new GfxDecodeInfo( REGION_GFX1, 0, charlayout,	  0, 16 ),
+		new GfxDecodeInfo( REGION_GFX2, 0, charlayout, 16*4, 16 ),
+		new GfxDecodeInfo( -1 ) /* end of array */
 	};
 	
-	static struct GfxDecodeInfo pleiads_gfxdecodeinfo[] =
+	static GfxDecodeInfo pleiads_gfxdecodeinfo[] =
 	{
-		{ REGION_GFX1, 0, &charlayout,	  0, 32 },
-		{ REGION_GFX2, 0, &charlayout, 32*4, 32 },
-		{ -1 } /* end of array */
+		new GfxDecodeInfo( REGION_GFX1, 0, charlayout,	  0, 32 ),
+		new GfxDecodeInfo( REGION_GFX2, 0, charlayout, 32*4, 32 ),
+		new GfxDecodeInfo( -1 ) /* end of array */
 	};
 	
 	

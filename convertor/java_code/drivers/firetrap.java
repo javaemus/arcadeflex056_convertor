@@ -343,13 +343,13 @@ public class firetrap
 		32*8
 	);
 	
-	static struct GfxDecodeInfo gfxdecodeinfo[] =
+	static GfxDecodeInfo gfxdecodeinfo[] =
 	{
-		{ REGION_GFX1, 0, &charlayout,   0x00, 16 },	/* colors 0x00-0x3f */
-		{ REGION_GFX2, 0, &tilelayout,   0x80,  4 },	/* colors 0x80-0xbf */
-		{ REGION_GFX3, 0, &tilelayout,   0xc0,  4 },	/* colors 0xc0-0xff */
-		{ REGION_GFX4, 0, &spritelayout, 0x40,  4 },	/* colors 0x40-0x7f */
-		{ -1 } /* end of array */
+		new GfxDecodeInfo( REGION_GFX1, 0, charlayout,   0x00, 16 ),	/* colors 0x00-0x3f */
+		new GfxDecodeInfo( REGION_GFX2, 0, tilelayout,   0x80,  4 ),	/* colors 0x80-0xbf */
+		new GfxDecodeInfo( REGION_GFX3, 0, tilelayout,   0xc0,  4 ),	/* colors 0xc0-0xff */
+		new GfxDecodeInfo( REGION_GFX4, 0, spritelayout, 0x40,  4 ),	/* colors 0x40-0x7f */
+		new GfxDecodeInfo( -1 ) /* end of array */
 	};
 	
 	

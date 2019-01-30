@@ -1064,18 +1064,18 @@ public class scramble
 	);
 	
 	
-	static struct GfxDecodeInfo devilfsh_gfxdecodeinfo[] =
+	static GfxDecodeInfo devilfsh_gfxdecodeinfo[] =
 	{
-		{ REGION_GFX1, 0x0000, &devilfsh_charlayout,   0, 8 },
-		{ REGION_GFX1, 0x0800, &devilfsh_spritelayout, 0, 8 },
-		{ -1 } /* end of array */
+		new GfxDecodeInfo( REGION_GFX1, 0x0000, devilfsh_charlayout,   0, 8 ),
+		new GfxDecodeInfo( REGION_GFX1, 0x0800, devilfsh_spritelayout, 0, 8 ),
+		new GfxDecodeInfo( -1 ) /* end of array */
 	};
 	
-	static struct GfxDecodeInfo newsin7_gfxdecodeinfo[] =
+	static GfxDecodeInfo newsin7_gfxdecodeinfo[] =
 	{
-		{ REGION_GFX1, 0x0000, &newsin7_charlayout,   0, 4 },
-		{ REGION_GFX1, 0x0800, &newsin7_spritelayout, 0, 4 },
-		{ -1 } /* end of array */
+		new GfxDecodeInfo( REGION_GFX1, 0x0000, newsin7_charlayout,   0, 4 ),
+		new GfxDecodeInfo( REGION_GFX1, 0x0800, newsin7_spritelayout, 0, 4 ),
+		new GfxDecodeInfo( -1 ) /* end of array */
 	};
 	
 	

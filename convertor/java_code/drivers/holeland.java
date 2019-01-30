@@ -284,18 +284,18 @@ public class holeland
 		8*16
 	);
 	
-	static struct GfxDecodeInfo holeland_gfxdecodeinfo[] =
+	static GfxDecodeInfo holeland_gfxdecodeinfo[] =
 	{
-		{ REGION_GFX1, 0, &holeland_charlayout,   0, 256 },
-		{ REGION_GFX2, 0, &holeland_spritelayout, 0, 256 },
-		{ -1 } /* end of array */
+		new GfxDecodeInfo( REGION_GFX1, 0, holeland_charlayout,   0, 256 ),
+		new GfxDecodeInfo( REGION_GFX2, 0, holeland_spritelayout, 0, 256 ),
+		new GfxDecodeInfo( -1 ) /* end of array */
 	};
 	
-	static struct GfxDecodeInfo crzrally_gfxdecodeinfo[] =
+	static GfxDecodeInfo crzrally_gfxdecodeinfo[] =
 	{
-		{ REGION_GFX1, 0, &crzrally_charlayout,   0, 256 },
-		{ REGION_GFX2, 0, &crzrally_spritelayout, 0, 256 },
-		{ -1 } /* end of array */
+		new GfxDecodeInfo( REGION_GFX1, 0, crzrally_charlayout,   0, 256 ),
+		new GfxDecodeInfo( REGION_GFX2, 0, crzrally_spritelayout, 0, 256 ),
+		new GfxDecodeInfo( -1 ) /* end of array */
 	};
 	
 	

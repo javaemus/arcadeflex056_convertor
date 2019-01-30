@@ -285,11 +285,11 @@ public class sprint2
 	        16*8     /* every char takes 16 consecutive bytes */
 	);
 	
-	static struct GfxDecodeInfo gfxdecodeinfo[] =
+	static GfxDecodeInfo gfxdecodeinfo[] =
 	{
-		{ REGION_GFX1, 0, &charlayout, 0, 2 },
-		{ REGION_GFX2, 0, &carlayout,  4, 4 },
-		{ -1 } /* end of array */
+		new GfxDecodeInfo( REGION_GFX1, 0, charlayout, 0, 2 ),
+		new GfxDecodeInfo( REGION_GFX2, 0, carlayout,  4, 4 ),
+		new GfxDecodeInfo( -1 ) /* end of array */
 	};
 	
 	static unsigned char palette[] =

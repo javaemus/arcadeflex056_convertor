@@ -255,13 +255,13 @@ public class pbaction
 	
 	
 	
-	static struct GfxDecodeInfo gfxdecodeinfo[] =
+	static GfxDecodeInfo gfxdecodeinfo[] =
 	{
-		{ REGION_GFX1, 0x00000, &charlayout1,    0, 16 },	/*   0-127 characters */
-		{ REGION_GFX2, 0x00000, &charlayout2,  128,  8 },	/* 128-255 background */
-		{ REGION_GFX3, 0x00000, &spritelayout1,  0, 16 },	/*   0-127 normal sprites */
-		{ REGION_GFX3, 0x01000, &spritelayout2,  0, 16 },	/*   0-127 large sprites */
-		{ -1 } /* end of array */
+		new GfxDecodeInfo( REGION_GFX1, 0x00000, charlayout1,    0, 16 ),	/*   0-127 characters */
+		new GfxDecodeInfo( REGION_GFX2, 0x00000, charlayout2,  128,  8 ),	/* 128-255 background */
+		new GfxDecodeInfo( REGION_GFX3, 0x00000, spritelayout1,  0, 16 ),	/*   0-127 normal sprites */
+		new GfxDecodeInfo( REGION_GFX3, 0x01000, spritelayout2,  0, 16 ),	/*   0-127 large sprites */
+		new GfxDecodeInfo( -1 ) /* end of array */
 	};
 	
 	

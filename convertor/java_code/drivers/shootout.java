@@ -251,12 +251,12 @@ public class shootout
 		8*8 /* every char takes 8 consecutive bytes */
 	);
 	
-	static struct GfxDecodeInfo gfxdecodeinfo[] =
+	static GfxDecodeInfo gfxdecodeinfo[] =
 	{
-		{ REGION_GFX1, 0, &char_layout,   16*4+8*8, 16 }, /* characters */
-		{ REGION_GFX2, 0, &sprite_layout, 16*4, 	 8 }, /* sprites */
-		{ REGION_GFX3, 0, &tile_layout,   0,		16 }, /* tiles */
-		{ -1 } /* end of array */
+		new GfxDecodeInfo( REGION_GFX1, 0, char_layout,   16*4+8*8, 16 ), /* characters */
+		new GfxDecodeInfo( REGION_GFX2, 0, sprite_layout, 16*4, 	 8 ), /* sprites */
+		new GfxDecodeInfo( REGION_GFX3, 0, tile_layout,   0,		16 ), /* tiles */
+		new GfxDecodeInfo( -1 ) /* end of array */
 	};
 	
 	static void shootout_snd_irq(int linestate)

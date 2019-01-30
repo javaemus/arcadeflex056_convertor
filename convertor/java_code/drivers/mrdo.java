@@ -175,12 +175,12 @@ public class mrdo
 	
 	
 	
-	static struct GfxDecodeInfo gfxdecodeinfo[] =
+	static GfxDecodeInfo gfxdecodeinfo[] =
 	{
-		{ REGION_GFX1, 0, &charlayout,      0, 64 },	/* colors 0-255 directly mapped */
-		{ REGION_GFX2, 0, &charlayout,      0, 64 },
-		{ REGION_GFX3, 0, &spritelayout, 4*64, 16 },
-		{ -1 } /* end of array */
+		new GfxDecodeInfo( REGION_GFX1, 0, charlayout,      0, 64 ),	/* colors 0-255 directly mapped */
+		new GfxDecodeInfo( REGION_GFX2, 0, charlayout,      0, 64 ),
+		new GfxDecodeInfo( REGION_GFX3, 0, spritelayout, 4*64, 16 ),
+		new GfxDecodeInfo( -1 ) /* end of array */
 	};
 	
 	

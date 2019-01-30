@@ -825,21 +825,21 @@ public class lwings
 	);
 	
 	
-	static struct GfxDecodeInfo gfxdecodeinfo[] =
+	static GfxDecodeInfo gfxdecodeinfo[] =
 	{
-		{ REGION_GFX1, 0, &charlayout,     512, 16 }, /* colors 512-575 */
-		{ REGION_GFX2, 0, &bg1_tilelayout,   0,  8 }, /* colors   0-127 */
-		{ REGION_GFX3, 0, &spritelayout,   384,  8 }, /* colors 384-511 */
-		{ -1 } /* end of array */
+		new GfxDecodeInfo( REGION_GFX1, 0, charlayout,     512, 16 ), /* colors 512-575 */
+		new GfxDecodeInfo( REGION_GFX2, 0, bg1_tilelayout,   0,  8 ), /* colors   0-127 */
+		new GfxDecodeInfo( REGION_GFX3, 0, spritelayout,   384,  8 ), /* colors 384-511 */
+		new GfxDecodeInfo( -1 ) /* end of array */
 	};
 	
-	static struct GfxDecodeInfo gfxdecodeinfo_trojan[] =
+	static GfxDecodeInfo gfxdecodeinfo_trojan[] =
 	{
-		{ REGION_GFX1, 0, &charlayout,     768, 16 }, /* colors 768-831 */
-		{ REGION_GFX2, 0, &bg1_tilelayout, 256,  8 }, /* colors 256-383 */
-		{ REGION_GFX3, 0, &spritelayout,   640,  8 }, /* colors 640-767 */
-		{ REGION_GFX4, 0, &bg2_tilelayout,   0,  8 }, /* colors   0-127 */
-		{ -1 } /* end of array */
+		new GfxDecodeInfo( REGION_GFX1, 0, charlayout,     768, 16 ), /* colors 768-831 */
+		new GfxDecodeInfo( REGION_GFX2, 0, bg1_tilelayout, 256,  8 ), /* colors 256-383 */
+		new GfxDecodeInfo( REGION_GFX3, 0, spritelayout,   640,  8 ), /* colors 640-767 */
+		new GfxDecodeInfo( REGION_GFX4, 0, bg2_tilelayout,   0,  8 ), /* colors   0-127 */
+		new GfxDecodeInfo( -1 ) /* end of array */
 	};
 	
 	static struct YM2203interface ym2203_interface =

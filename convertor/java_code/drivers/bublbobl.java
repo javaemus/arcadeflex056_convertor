@@ -665,11 +665,11 @@ public class bublbobl
 		16*8	/* every char takes 16 bytes in two ROMs */
 	);
 	
-	static struct GfxDecodeInfo gfxdecodeinfo[] =
+	static GfxDecodeInfo gfxdecodeinfo[] =
 	{
 		/* read all graphics into one big graphics region */
-		{ REGION_GFX1, 0x00000, &charlayout, 0, 16 },
-		{ -1 }	/* end of array */
+		new GfxDecodeInfo( REGION_GFX1, 0x00000, charlayout, 0, 16 ),
+		new GfxDecodeInfo( -1 )	/* end of array */
 	};
 	
 	

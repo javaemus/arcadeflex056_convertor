@@ -401,21 +401,21 @@ public class vigilant
 		16*8
 	);
 	
-	static struct GfxDecodeInfo vigilant_gfxdecodeinfo[] =
+	static GfxDecodeInfo vigilant_gfxdecodeinfo[] =
 	{
-		{ REGION_GFX1, 0, &text_layout,   256, 16 },	/* colors 256-511 */
-		{ REGION_GFX2, 0, &sprite_layout,   0, 16 },	/* colors   0-255 */
-		{ REGION_GFX3, 0, &back_layout,   512,  2 },	/* actually the background uses colors */
+		new GfxDecodeInfo( REGION_GFX1, 0, text_layout,   256, 16 ),	/* colors 256-511 */
+		new GfxDecodeInfo( REGION_GFX2, 0, sprite_layout,   0, 16 ),	/* colors   0-255 */
+		new GfxDecodeInfo( REGION_GFX3, 0, back_layout,   512,  2 ),	/* actually the background uses colors */
 														/* 256-511, but giving it exclusive */
 														/* pens we can handle it more easily. */
-		{ -1 } /* end of array */
+		new GfxDecodeInfo( -1 ) /* end of array */
 	};
 	
-	static struct GfxDecodeInfo kikcubic_gfxdecodeinfo[] =
+	static GfxDecodeInfo kikcubic_gfxdecodeinfo[] =
 	{
-		{ REGION_GFX1, 0, &text_layout,   0, 16 },
-		{ REGION_GFX2, 0, &sprite_layout, 0, 16 },
-		{ -1 } /* end of array */
+		new GfxDecodeInfo( REGION_GFX1, 0, text_layout,   0, 16 ),
+		new GfxDecodeInfo( REGION_GFX2, 0, sprite_layout, 0, 16 ),
+		new GfxDecodeInfo( -1 ) /* end of array */
 	};
 	
 	

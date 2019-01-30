@@ -97,10 +97,10 @@ public class mrflea
 		16*16
 	);
 	
-	static struct GfxDecodeInfo gfxdecodeinfo[] = {
-		{ REGION_GFX1, 0, &sprite_layout,	0x10, 1 },
-		{ REGION_GFX2, 0, &tile_layout,		0x00, 1 },
-		{ -1 }
+	static GfxDecodeInfo gfxdecodeinfo[] ={
+		new GfxDecodeInfo( REGION_GFX1, 0, sprite_layout,	0x10, 1 ),
+		new GfxDecodeInfo( REGION_GFX2, 0, tile_layout,		0x00, 1 ),
+		new GfxDecodeInfo( -1 )
 	};
 	
 	/*******************************************************/

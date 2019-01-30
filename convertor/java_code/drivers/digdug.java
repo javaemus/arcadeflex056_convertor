@@ -334,12 +334,12 @@ public class digdug
 	);
 	
 	
-	static struct GfxDecodeInfo gfxdecodeinfo[] =
+	static GfxDecodeInfo gfxdecodeinfo[] =
 	{
-		{ REGION_GFX1, 0, &charlayout1,            0,  8 },
-		{ REGION_GFX2, 0, &spritelayout,         8*2, 64 },
-		{ REGION_GFX3, 0, &charlayout2,   64*4 + 8*2, 64 },
-		{ -1 } /* end of array */
+		new GfxDecodeInfo( REGION_GFX1, 0, charlayout1,            0,  8 ),
+		new GfxDecodeInfo( REGION_GFX2, 0, spritelayout,         8*2, 64 ),
+		new GfxDecodeInfo( REGION_GFX3, 0, charlayout2,   64*4 + 8*2, 64 ),
+		new GfxDecodeInfo( -1 ) /* end of array */
 	};
 	
 	

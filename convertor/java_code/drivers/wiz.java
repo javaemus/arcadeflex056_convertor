@@ -517,29 +517,29 @@ public class wiz
 	);
 	
 	
-	static struct GfxDecodeInfo wiz_gfxdecodeinfo[] =
+	static GfxDecodeInfo wiz_gfxdecodeinfo[] =
 	{
-		{ REGION_GFX1, 0x0000, &charlayout,   0, 32 },
-		{ REGION_GFX1, 0x0800, &charlayout,   0, 32 },
-		{ REGION_GFX2, 0x6000, &charlayout,   0, 32 },
-		{ REGION_GFX2, 0x0000, &charlayout,   0, 32 },
-		{ REGION_GFX2, 0x0800, &charlayout,   0, 32 },
-		{ REGION_GFX2, 0x6800, &charlayout,   0, 32 },
-		{ REGION_GFX1, 0x0000, &spritelayout, 0, 32 },
-		{ REGION_GFX2, 0x0000, &spritelayout, 0, 32 },
-		{ REGION_GFX2, 0x6000, &spritelayout, 0, 32 },
-		{ -1 } /* end of array */
+		new GfxDecodeInfo( REGION_GFX1, 0x0000, charlayout,   0, 32 ),
+		new GfxDecodeInfo( REGION_GFX1, 0x0800, charlayout,   0, 32 ),
+		new GfxDecodeInfo( REGION_GFX2, 0x6000, charlayout,   0, 32 ),
+		new GfxDecodeInfo( REGION_GFX2, 0x0000, charlayout,   0, 32 ),
+		new GfxDecodeInfo( REGION_GFX2, 0x0800, charlayout,   0, 32 ),
+		new GfxDecodeInfo( REGION_GFX2, 0x6800, charlayout,   0, 32 ),
+		new GfxDecodeInfo( REGION_GFX1, 0x0000, spritelayout, 0, 32 ),
+		new GfxDecodeInfo( REGION_GFX2, 0x0000, spritelayout, 0, 32 ),
+		new GfxDecodeInfo( REGION_GFX2, 0x6000, spritelayout, 0, 32 ),
+		new GfxDecodeInfo( -1 ) /* end of array */
 	};
 	
-	static struct GfxDecodeInfo stinger_gfxdecodeinfo[] =
+	static GfxDecodeInfo stinger_gfxdecodeinfo[] =
 	{
-		{ REGION_GFX1, 0x0000, &charlayout,   0, 32 },
-		{ REGION_GFX1, 0x0800, &charlayout,   0, 32 },
-		{ REGION_GFX2, 0x0000, &charlayout,   0, 32 },
-		{ REGION_GFX2, 0x0800, &charlayout,   0, 32 },
-		{ REGION_GFX1, 0x0000, &spritelayout, 0, 32 },
-		{ REGION_GFX2, 0x0000, &spritelayout, 0, 32 },
-		{ -1 } /* end of array */
+		new GfxDecodeInfo( REGION_GFX1, 0x0000, charlayout,   0, 32 ),
+		new GfxDecodeInfo( REGION_GFX1, 0x0800, charlayout,   0, 32 ),
+		new GfxDecodeInfo( REGION_GFX2, 0x0000, charlayout,   0, 32 ),
+		new GfxDecodeInfo( REGION_GFX2, 0x0800, charlayout,   0, 32 ),
+		new GfxDecodeInfo( REGION_GFX1, 0x0000, spritelayout, 0, 32 ),
+		new GfxDecodeInfo( REGION_GFX2, 0x0000, spritelayout, 0, 32 ),
+		new GfxDecodeInfo( -1 ) /* end of array */
 	};
 	
 	

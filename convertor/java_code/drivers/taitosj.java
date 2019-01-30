@@ -1652,13 +1652,13 @@ public class taitosj
 	
 	
 	
-	static struct GfxDecodeInfo gfxdecodeinfo[] =
+	static GfxDecodeInfo gfxdecodeinfo[] =
 	{
-		{ 0, 0x9000, &charlayout,   0, 16 },    /* the game dynamically modifies this */
-		{ 0, 0x9000, &spritelayout, 0, 16 },    /* the game dynamically modifies this */
-		{ 0, 0xa800, &charlayout,   0, 16 },    /* the game dynamically modifies this */
-		{ 0, 0xa800, &spritelayout, 0, 16 },    /* the game dynamically modifies this */
-		{ -1 } /* end of array */
+		new GfxDecodeInfo( 0, 0x9000, charlayout,   0, 16 ),    /* the game dynamically modifies this */
+		new GfxDecodeInfo( 0, 0x9000, spritelayout, 0, 16 ),    /* the game dynamically modifies this */
+		new GfxDecodeInfo( 0, 0xa800, charlayout,   0, 16 ),    /* the game dynamically modifies this */
+		new GfxDecodeInfo( 0, 0xa800, spritelayout, 0, 16 ),    /* the game dynamically modifies this */
+		new GfxDecodeInfo( -1 ) /* end of array */
 	};
 	
 	

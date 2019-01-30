@@ -61,12 +61,12 @@ public class sgladiat
 		256
 	);
 	
-	static struct GfxDecodeInfo tnk3_gfxdecodeinfo[] =
+	static GfxDecodeInfo tnk3_gfxdecodeinfo[] =
 	{
-		{ REGION_GFX1, 0x0, &tile_layout,	128*3,  8 },
-		{ REGION_GFX2, 0x0, &tile_layout,	128*1, 16 },
-		{ REGION_GFX3, 0x0, &sprite_layout,	128*0, 16 },
-		{ -1 }
+		new GfxDecodeInfo( REGION_GFX1, 0x0, tile_layout,	128*3,  8 ),
+		new GfxDecodeInfo( REGION_GFX2, 0x0, tile_layout,	128*1, 16 ),
+		new GfxDecodeInfo( REGION_GFX3, 0x0, sprite_layout,	128*0, 16 ),
+		new GfxDecodeInfo( -1 )
 	};
 	
 	/************************************************************************/
