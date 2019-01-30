@@ -229,12 +229,12 @@ public class tmnt
 		cpu_cause_interrupt(1,0xff);
 	}
 	
-	static WRITE_HANDLER( prmrsocr_s_bankswitch_w )
+	public static WriteHandlerPtr prmrsocr_s_bankswitch_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		data8_t *rom = memory_region(REGION_CPU2) + 0x10000;
 	
 		cpu_setbank(1,rom + (data & 7) * 0x4000);
-	}
+	} };
 	
 	
 	static READ16_HANDLER( tmnt2_sound_r )
@@ -332,12 +332,12 @@ public class tmnt
 		cpu_set_nmi_line(1,ASSERT_LINE);
 	}
 	
-	static WRITE_HANDLER( sound_arm_nmi_w )
+	public static WriteHandlerPtr sound_arm_nmi_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 	//	sound_nmi_enabled = 1;
 		cpu_set_nmi_line(1,CLEAR_LINE);
 		timer_set(TIME_IN_USEC(50),0,nmi_callback);	/* kludge until the K053260 is emulated correctly */
-	}
+	} };
 	
 	
 	
@@ -1210,10 +1210,10 @@ public class tmnt
 	{
 		return K054539_0_r(0x200+offset);
 	} };
-	static WRITE_HANDLER( K054539_0_ctrl_w )
+	public static WriteHandlerPtr K054539_0_ctrl_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		K054539_0_w(0x200+offset,data);
-	}
+	} };
 	
 	public static Memory_ReadAddress prmrsocr_s_readmem[]={
 		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),

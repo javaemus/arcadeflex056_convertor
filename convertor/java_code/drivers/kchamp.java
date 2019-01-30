@@ -119,32 +119,32 @@ public class kchamp
 		new Memory_WriteAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static WRITE_HANDLER( control_w ) {
+	public static WriteHandlerPtr control_w = new WriteHandlerPtr() {public void handler(int offset, int data) {
 		nmi_enable = data & 1;
-	}
+	} };
 	
-	static WRITE_HANDLER( sound_reset_w ) {
+	public static WriteHandlerPtr sound_reset_w = new WriteHandlerPtr() {public void handler(int offset, int data) {
 		if ( !( data & 1 ) )
 			cpu_set_reset_line(1,PULSE_LINE);
-	}
+	} };
 	
-	static WRITE_HANDLER( sound_control_w ) {
+	public static WriteHandlerPtr sound_control_w = new WriteHandlerPtr() {public void handler(int offset, int data) {
 		MSM5205_reset_w( 0, !( data & 1 ) );
 		sound_nmi_enable = ( ( data >> 1 ) & 1 );
-	}
+	} };
 	
-	static WRITE_HANDLER( sound_command_w ) {
+	public static WriteHandlerPtr sound_command_w = new WriteHandlerPtr() {public void handler(int offset, int data) {
 		soundlatch_w( 0, data );
 		cpu_cause_interrupt( 1, 0xff );
-	}
+	} };
 	
 	static int msm_data = 0;
 	static int msm_play_lo_nibble = 1;
 	
-	static WRITE_HANDLER( sound_msm_w ) {
+	public static WriteHandlerPtr sound_msm_w = new WriteHandlerPtr() {public void handler(int offset, int data) {
 		msm_data = data;
 		msm_play_lo_nibble = 1;
-	}
+	} };
 	
 	public static IO_ReadPort readport[]={
 		new IO_ReadPort(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_IO | MEMPORT_WIDTH_8),
@@ -226,12 +226,12 @@ public class kchamp
 		return 0;
 	} };
 	
-	static WRITE_HANDLER( kc_sound_control_w ) {
+	public static WriteHandlerPtr kc_sound_control_w = new WriteHandlerPtr() {public void handler(int offset, int data) {
 		if ( offset == 0 )
 			sound_nmi_enable = ( ( data >> 7 ) & 1 );
 	//	else
 	//		DAC_set_volume(0,( data == 1 ) ? 255 : 0,0);
-	}
+	} };
 	
 	public static IO_ReadPort kc_readport[]={
 		new IO_ReadPort(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_IO | MEMPORT_WIDTH_8),

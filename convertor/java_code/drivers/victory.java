@@ -196,10 +196,10 @@ public class victory
 		if (LOG_SOUND) logerror("%04X:!!!! Sound command = %02X\n", cpu_getpreviouspc(), data);
 	}
 	
-	static WRITE_HANDLER( sound_command_w )
+	public static WriteHandlerPtr sound_command_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		timer_set(TIME_NOW, data, delayed_command_w);
-	}
+	} };
 	
 	
 	WRITE_HANDLER( victory_sound_response_w )
@@ -232,13 +232,13 @@ public class victory
 	 *
 	 *************************************/
 	
-	static WRITE_HANDLER( lamp_control_w )
+	public static WriteHandlerPtr lamp_control_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		set_led_status(0,data & 0x80);
 		set_led_status(1,data & 0x40);
 		set_led_status(2,data & 0x20);
 		set_led_status(3,data & 0x10);
-	}
+	} };
 	
 	
 	

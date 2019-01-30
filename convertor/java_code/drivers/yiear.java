@@ -75,12 +75,12 @@ public class yiear
 		else return 0;
 	} };
 	
-	static WRITE_HANDLER( yiear_VLM5030_control_w )
+	public static WriteHandlerPtr yiear_VLM5030_control_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		/* bit 0 is latch direction */
 		VLM5030_ST( ( data >> 1 ) & 1 );
 		VLM5030_RST( ( data >> 2 ) & 1 );
-	}
+	} };
 	
 	
 	public static Memory_ReadAddress readmem[]={

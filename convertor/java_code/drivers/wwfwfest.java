@@ -52,7 +52,6 @@ public class wwfwfest
 	static WRITE16_HANDLER( wwfwfest_1410_write ); /* priority write */
 	static WRITE16_HANDLER( wwfwfest_scroll_write ); /* scrolling write */
 	static READ16_HANDLER( wwfwfest_inputs_read );
-	static WRITE_HANDLER( oki_bankswitch_w );
 	static WRITE16_HANDLER ( wwfwfest_soundwrite );
 	
 	static WRITE16_HANDLER( wwfwfest_flipscreen_w )
@@ -197,10 +196,10 @@ public class wwfwfest
 	
 	/*- Sound Related (from dd3) -*/
 	
-	static WRITE_HANDLER( oki_bankswitch_w )
+	public static WriteHandlerPtr oki_bankswitch_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		OKIM6295_set_bank_base(0, (data & 1) * 0x40000);
-	}
+	} };
 	
 	static WRITE16_HANDLER ( wwfwfest_soundwrite )
 	{

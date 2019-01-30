@@ -43,7 +43,6 @@ public class sbrkout
 	
 	/* sound hardware - temporary */
 	
-	static WRITE_HANDLER( sbrkout_dac_w );
 	static void sbrkout_tones_4V(int foo);
 	static int init_timer=1;
 	
@@ -51,7 +50,7 @@ public class sbrkout
 	
 	unsigned char *sbrkout_sound;
 	
-	static WRITE_HANDLER( sbrkout_dac_w )
+	public static WriteHandlerPtr sbrkout_dac_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		sbrkout_sound[offset]=data;
 	
@@ -60,7 +59,7 @@ public class sbrkout
 			timer_set (TIME_IN_MSEC(TIME_4V), 0, sbrkout_tones_4V);
 			init_timer=0;
 		}
-	}
+	} };
 	
 	static void sbrkout_tones_4V(int foo)
 	{

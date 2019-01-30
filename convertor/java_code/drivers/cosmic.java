@@ -120,7 +120,7 @@ public class cosmic
 	
 	/* Schematics show 12 triggers for discrete sound circuits */
 	
-	static WRITE_HANDLER( panic_sound_output_w )
+	public static WriteHandlerPtr panic_sound_output_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 	    static int sound_enabled=1;
 	
@@ -189,7 +189,7 @@ public class cosmic
 	    #ifdef MAME_DEBUG
 	 	logerror("Sound output %x=%x\n",offset,data);
 		#endif
-	}
+	} };
 	
 	WRITE_HANDLER( panic_sound_output2_w )
 	{
@@ -402,14 +402,14 @@ public class cosmic
 	
 	#else
 	
-	static WRITE_HANDLER( cosmicg_videoram_w )
+	public static WriteHandlerPtr cosmicg_videoram_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 	  /* 16-bit handler */
 	  if (! (data & 0xff000000))
 	    cosmica_videoram_w(offset, (data >> 8) & 0xff);
 	  if (! (data & 0x00ff0000))
 	    cosmica_videoram_w(offset + 1, data & 0xff);
-	}
+	} };
 	
 	public static ReadHandlerPtr cosmicg_videoram_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
@@ -421,10 +421,10 @@ public class cosmic
 	
 	#endif
 	
-	static WRITE_HANDLER( flip_screen_w )
+	public static WriteHandlerPtr flip_screen_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		flip_screen_set(data&0x80);
-	}
+	} };
 	
 	
 	public static Memory_ReadAddress panic_readmem[]={

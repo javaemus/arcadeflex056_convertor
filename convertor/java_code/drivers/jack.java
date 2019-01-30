@@ -62,11 +62,11 @@ public class jack
 	} };
 	
 	
-	static WRITE_HANDLER( jack_sh_command_w )
+	public static WriteHandlerPtr jack_sh_command_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		soundlatch_w(0,data);
 		cpu_cause_interrupt(1, Z80_IRQ_INT);
-	}
+	} };
 	
 	
 	public static Memory_ReadAddress readmem[]={

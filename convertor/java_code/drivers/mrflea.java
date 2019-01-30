@@ -142,16 +142,16 @@ public class mrflea
 	
 	/*******************************************************/
 	
-	static WRITE_HANDLER( mrflea_main_w ){
+	public static WriteHandlerPtr mrflea_main_w = new WriteHandlerPtr() {public void handler(int offset, int data){
 		mrflea_status |= 0x01; // pending command to main CPU
 		mrflea_main = data;
-	}
+	} };
 	
-	static WRITE_HANDLER( mrflea_io_w ){
+	public static WriteHandlerPtr mrflea_io_w = new WriteHandlerPtr() {public void handler(int offset, int data){
 		mrflea_status |= 0x08; // pending command to IO CPU
 		mrflea_io = data;
 		cpu_cause_interrupt( 1, Z80_IRQ_INT );
-	}
+	} };
 	
 	public static ReadHandlerPtr mrflea_main_r  = new ReadHandlerPtr() { public int handler(int offset){
 		mrflea_status &= ~0x01; // main CPU command read
@@ -211,21 +211,21 @@ public class mrflea
 	
 	/*******************************************************/
 	
-	static WRITE_HANDLER( mrflea_select0_w ){
+	public static WriteHandlerPtr mrflea_select0_w = new WriteHandlerPtr() {public void handler(int offset, int data){
 		mrflea_select0 = data;
-	}
+	} };
 	
-	static WRITE_HANDLER( mrflea_select1_w ){
+	public static WriteHandlerPtr mrflea_select1_w = new WriteHandlerPtr() {public void handler(int offset, int data){
 		mrflea_select1 = data;
-	}
+	} };
 	
-	static WRITE_HANDLER( mrflea_select2_w ){
+	public static WriteHandlerPtr mrflea_select2_w = new WriteHandlerPtr() {public void handler(int offset, int data){
 		mrflea_select2 = data;
-	}
+	} };
 	
-	static WRITE_HANDLER( mrflea_select3_w ){
+	public static WriteHandlerPtr mrflea_select3_w = new WriteHandlerPtr() {public void handler(int offset, int data){
 		mrflea_select3 = data;
-	}
+	} };
 	
 	/*******************************************************/
 	
@@ -263,23 +263,23 @@ public class mrflea
 		new IO_ReadPort(MEMPORT_MARKER, 0)
 	};
 	
-	static WRITE_HANDLER( mrflea_data0_w ){
+	public static WriteHandlerPtr mrflea_data0_w = new WriteHandlerPtr() {public void handler(int offset, int data){
 		AY8910_control_port_0_w( offset, mrflea_select0 );
 		AY8910_write_port_0_w( offset, data );
-	}
+	} };
 	
-	static WRITE_HANDLER( mrflea_data1_w ){
-	}
+	public static WriteHandlerPtr mrflea_data1_w = new WriteHandlerPtr() {public void handler(int offset, int data){
+	} };
 	
-	static WRITE_HANDLER( mrflea_data2_w ){
+	public static WriteHandlerPtr mrflea_data2_w = new WriteHandlerPtr() {public void handler(int offset, int data){
 		AY8910_control_port_1_w( offset, mrflea_select2 );
 		AY8910_write_port_1_w( offset, data );
-	}
+	} };
 	
-	static WRITE_HANDLER( mrflea_data3_w ){
+	public static WriteHandlerPtr mrflea_data3_w = new WriteHandlerPtr() {public void handler(int offset, int data){
 		AY8910_control_port_2_w( offset, mrflea_select3 );
 		AY8910_write_port_2_w( offset, data );
-	}
+	} };
 	
 	public static IO_WritePort writeport_io[]={
 		new IO_WritePort(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_IO | MEMPORT_WIDTH_8),

@@ -118,10 +118,10 @@ public class cloak
 		return cloak_sharedram[offset];
 	} };
 	
-	static WRITE_HANDLER( cloak_sharedram_w )
+	public static WriteHandlerPtr cloak_sharedram_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		cloak_sharedram[offset] = data;
-	}
+	} };
 	
 	
 	static void nvram_handler(void *file, int read_or_write)
@@ -138,15 +138,15 @@ public class cloak
 	}
 	
 	
-	static WRITE_HANDLER( cloak_led_w )
+	public static WriteHandlerPtr cloak_led_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		set_led_status(1 - offset,~data & 0x80);
-	}
+	} };
 	
-	static WRITE_HANDLER( cloak_coin_counter_w )
+	public static WriteHandlerPtr cloak_coin_counter_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		set_led_status(offset,data);
-	}
+	} };
 	
 	
 	

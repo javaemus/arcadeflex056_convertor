@@ -215,9 +215,6 @@ public class airbustr
 	int u1, u2, u3, u4;
 	
 	
-	static WRITE_HANDLER( bankswitch_w );
-	static WRITE_HANDLER( bankswitch2_w );
-	static WRITE_HANDLER( sound_bankswitch_w );
 	
 	static void airbustr_init_machine (void)
 	{
@@ -248,7 +245,7 @@ public class airbustr
 	
 	
 	public static ReadHandlerPtr sharedram_r  = new ReadHandlerPtr() { public int handler(int offset)	{ return sharedram[offset]; } };
-	static WRITE_HANDLER( sharedram_w )	{ sharedram[offset] = data; }
+	public static WriteHandlerPtr sharedram_w = new WriteHandlerPtr() {public void handler(int offset, int data)	{ sharedram[offset] = data; } };
 	
 	
 	/* There's an MCU here, possibly */
@@ -288,7 +285,7 @@ public class airbustr
 	WRITE_HANDLER( devram_w )	{	devram[offset] = data; }
 	
 	
-	static WRITE_HANDLER( bankswitch_w )
+	public static WriteHandlerPtr bankswitch_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 	unsigned char *RAM = memory_region(REGION_CPU1);
 	
@@ -299,7 +296,7 @@ public class airbustr
 	//	if (data > 7)	logerror("CPU #0 - suspicious bank: %d ! - PC = %04X\n", data, cpu_get_pc());
 	
 		u1 = data & 0xf8;
-	}
+	} };
 	
 	/* Memory */
 	
@@ -325,10 +322,10 @@ public class airbustr
 	
 	/* Ports */
 	
-	static WRITE_HANDLER( cause_nmi_w )
+	public static WriteHandlerPtr cause_nmi_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		cpu_cause_interrupt(1,Z80_NMI_INT);	// cause a nmi to sub cpu
-	}
+	} };
 	
 	public static IO_WritePort writeport[]={
 		new IO_WritePort(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_IO | MEMPORT_WIDTH_8),
@@ -367,7 +364,7 @@ public class airbustr
 	}
 	
 	
-	static WRITE_HANDLER( bankswitch2_w )
+	public static WriteHandlerPtr bankswitch2_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 	unsigned char *RAM = memory_region(REGION_CPU2);
 	
@@ -381,7 +378,7 @@ public class airbustr
 		tilemap_set_flip(ALL_TILEMAPS,flipscreen ? (TILEMAP_FLIPY | TILEMAP_FLIPX) : 0);
 	
 		u2 = data & 0xf8;
-	}
+	} };
 	
 	
 	WRITE_HANDLER( airbustr_paletteram_w )
@@ -465,12 +462,12 @@ public class airbustr
 	} };
 	
 	
-	static WRITE_HANDLER( soundcommand_w )
+	public static WriteHandlerPtr soundcommand_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		soundlatch_w(0,data);
 		soundlatch_status = 1;				// soundlatch has been written
 		cpu_cause_interrupt(2,Z80_NMI_INT);	// cause a nmi to sub cpu
-	}
+	} };
 	
 	
 	WRITE_HANDLER( port_38_w )	{	u4 = data; } // for debug
@@ -511,7 +508,7 @@ public class airbustr
 	**
 	*/
 	
-	static WRITE_HANDLER( sound_bankswitch_w )
+	public static WriteHandlerPtr sound_bankswitch_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 	unsigned char *RAM = memory_region(REGION_CPU3);
 	
@@ -522,7 +519,7 @@ public class airbustr
 	//	if (data > 7)	logerror("CPU #2 - suspicious bank: %d ! - PC = %04X\n", data, cpu_get_pc());
 	
 		u3 = data & 0xf8;
-	}
+	} };
 	
 	
 	/* Memory */

@@ -171,12 +171,12 @@ public class dlair
 	logerror("PC %04x: read I/O port %02x\n",cpu_get_pc(),offset);
 		return pip[offset];
 	} };
-	static WRITE_HANDLER( pip_w )
+	public static WriteHandlerPtr pip_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 	logerror("PC %04x: write %02x to I/O port %02x\n",cpu_get_pc(),data,offset);
 		pip[offset] = data;
 	z80ctc_0_w(offset,data);
-	}
+	} };
 	
 	public static IO_ReadPort readport[]={
 		new IO_ReadPort(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_IO | MEMPORT_WIDTH_8),

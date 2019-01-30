@@ -42,7 +42,7 @@ public class aeroboto
 		return res[(count++)&3];
 	} };
 	
-	static WRITE_HANDLER( aeroboto_3000_w )
+	public static WriteHandlerPtr aeroboto_3000_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		/* bit 0 selects player1/player2 controls */
 		player = data & 1;
@@ -51,7 +51,7 @@ public class aeroboto
 		aeroboto_charbank = (data & 0x02) >> 1;
 	
 		/* there's probably a flip screen here as well */
-	}
+	} };
 	
 	public static Memory_ReadAddress readmem[]={
 		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),

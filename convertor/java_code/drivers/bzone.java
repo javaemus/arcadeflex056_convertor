@@ -261,10 +261,10 @@ public class bzone
 			return readinputport (6);
 	} };
 	
-	static WRITE_HANDLER( bzone_coin_counter_w )
+	public static WriteHandlerPtr bzone_coin_counter_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		coin_counter_w(offset,data);
-	}
+	} };
 	
 	
 	public static Memory_ReadAddress bzone_readmem[]={

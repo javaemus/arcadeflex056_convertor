@@ -117,11 +117,11 @@ public class asterix
 		cpu_set_nmi_line(1,ASSERT_LINE);
 	}
 	
-	static WRITE_HANDLER( sound_arm_nmi_w )
+	public static WriteHandlerPtr sound_arm_nmi_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		cpu_set_nmi_line(1,CLEAR_LINE);
 		timer_set(TIME_IN_USEC(5),0,nmi_callback);
-	}
+	} };
 	
 	static WRITE16_HANDLER( sound_irq_w )
 	{

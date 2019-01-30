@@ -167,16 +167,16 @@ public class taitosj
 	
 	static int sndnmi_disable = 1;
 	
-	static WRITE_HANDLER( taitosj_sndnmi_msk_w )
+	public static WriteHandlerPtr taitosj_sndnmi_msk_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		sndnmi_disable = data & 0x01;
-	}
+	} };
 	
-	static WRITE_HANDLER( taitosj_soundcommand_w )
+	public static WriteHandlerPtr taitosj_soundcommand_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		soundlatch_w(offset,data);
 		if (sndnmi_disable == 0) cpu_cause_interrupt(1,Z80_NMI_INT);
-	}
+	} };
 	
 	
 	public static Memory_ReadAddress readmem[]={

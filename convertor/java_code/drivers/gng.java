@@ -41,7 +41,7 @@ public class gng
 	
 	
 	
-	static WRITE_HANDLER( gng_bankswitch_w )
+	public static WriteHandlerPtr gng_bankswitch_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		unsigned char *rom = memory_region(REGION_CPU1);
 	
@@ -54,12 +54,12 @@ public class gng
 		{
 			cpu_setbank(1,rom + 0x10000 + (data & 3) * 0x2000);
 		}
-	}
+	} };
 	
-	static WRITE_HANDLER( gng_coin_counter_w )
+	public static WriteHandlerPtr gng_coin_counter_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		coin_counter_w(offset,data);
-	}
+	} };
 	
 	public static Memory_ReadAddress readmem[]={
 		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),

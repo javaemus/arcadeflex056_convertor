@@ -44,7 +44,7 @@ public class parodius
 			return ram[offset];
 	} };
 	
-	static WRITE_HANDLER( bankedram_w )
+	public static WriteHandlerPtr bankedram_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		if (videobank & 0x01)
 		{
@@ -55,7 +55,7 @@ public class parodius
 		}
 		else
 			ram[offset] = data;
-	}
+	} };
 	
 	public static ReadHandlerPtr parodius_052109_053245_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
@@ -65,15 +65,15 @@ public class parodius
 			return K052109_r(offset);
 	} };
 	
-	static WRITE_HANDLER( parodius_052109_053245_w )
+	public static WriteHandlerPtr parodius_052109_053245_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		if (videobank & 0x02)
 			K053245_w(offset,data);
 		else
 			K052109_w(offset,data);
-	}
+	} };
 	
-	static WRITE_HANDLER( parodius_videobank_w )
+	public static WriteHandlerPtr parodius_videobank_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		if (videobank & 0xf8) logerror("%04x: videobank = %02x\n",cpu_get_pc(),data);
 	
@@ -81,9 +81,9 @@ public class parodius
 		/* bit 1 = select 052109 or 053245 at 2000-27ff */
 		/* bit 2 = select palette bank 0 or 1 */
 		videobank = data;
-	}
+	} };
 	
-	static WRITE_HANDLER( parodius_3fc0_w )
+	public static WriteHandlerPtr parodius_3fc0_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		if ((data & 0xf4) != 0x10) logerror("%04x: 3fc0 = %02x\n",cpu_get_pc(),data);
 	
@@ -95,7 +95,7 @@ public class parodius
 		K052109_set_RMRD_line( ( data & 0x08 ) ? ASSERT_LINE : CLEAR_LINE );
 	
 		/* other bits unknown */
-	}
+	} };
 	
 	public static ReadHandlerPtr parodius_sound_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
@@ -105,10 +105,10 @@ public class parodius
 		else return offset ? 0x00 : 0x80;
 	} };
 	
-	static WRITE_HANDLER( parodius_sh_irqtrigger_w )
+	public static WriteHandlerPtr parodius_sh_irqtrigger_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		cpu_cause_interrupt(1,0xff);
-	}
+	} };
 	
 	static int nmi_enabled;
 	
@@ -124,12 +124,12 @@ public class parodius
 		cpu_set_nmi_line(1,ASSERT_LINE);
 	}
 	
-	static WRITE_HANDLER( sound_arm_nmi_w )
+	public static WriteHandlerPtr sound_arm_nmi_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 	//	sound_nmi_enabled = 1;
 		cpu_set_nmi_line(1,CLEAR_LINE);
 		timer_set(TIME_IN_USEC(50),0,nmi_callback);	/* kludge until the K053260 is emulated correctly */
-	}
+	} };
 	
 	public static ReadHandlerPtr speedup_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{

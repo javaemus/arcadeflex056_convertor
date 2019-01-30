@@ -144,10 +144,10 @@ public class trackfld
 		}
 	}
 	
-	static WRITE_HANDLER( flip_screen_w )
+	public static WriteHandlerPtr flip_screen_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		flip_screen_set(data);
-	}
+	} };
 	
 	
 	

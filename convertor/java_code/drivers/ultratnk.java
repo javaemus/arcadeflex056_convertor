@@ -98,7 +98,7 @@ public class ultratnk
 		draw_sprites( bitmap );
 	}
 	
-	static WRITE_HANDLER( da_latch_w )
+	public static WriteHandlerPtr da_latch_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		int joybits;
 		ultratnk_controls = input_port_3_r(0); /* start and fire buttons */
@@ -123,7 +123,7 @@ public class ultratnk
 			if( joybits&0x10 ) ultratnk_controls &= ~0x01;
 			break;
 		}
-	}
+	} };
 	
 	public static ReadHandlerPtr ultratnk_controls_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
@@ -190,20 +190,20 @@ public class ultratnk
 		return ignore_interrupt();
 	}
 	
-	static WRITE_HANDLER( ultratnk_leds_w )
+	public static WriteHandlerPtr ultratnk_leds_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		set_led_status(offset/2,offset&1);
-	}
+	} };
 	
 	public static ReadHandlerPtr mirror_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return mirror_ram[offset];
 	} };
 	
-	static WRITE_HANDLER( mirror_w )
+	public static WriteHandlerPtr mirror_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		mirror_ram[offset] = data;
-	}
+	} };
 	
 	
 	

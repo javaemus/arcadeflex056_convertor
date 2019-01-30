@@ -66,7 +66,7 @@ public class bladestl
 		return (delta & 0x80) | (curr >> 1);
 	} };
 	
-	static WRITE_HANDLER( bladestl_bankswitch_w )
+	public static WriteHandlerPtr bladestl_bankswitch_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		unsigned char *RAM = memory_region(REGION_CPU1);
 		int bankaddress;
@@ -88,33 +88,33 @@ public class bladestl
 		/* bit 7 = select sprite bank */
 		bladestl_spritebank = (data & 0x80) << 3;
 	
-	}
+	} };
 	
-	static WRITE_HANDLER( bladestl_sh_irqtrigger_w )
+	public static WriteHandlerPtr bladestl_sh_irqtrigger_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		soundlatch_w(offset, data);
 		cpu_cause_interrupt(1,M6809_INT_IRQ);
 		//logerror("(sound) write %02x\n", data);
-	}
+	} };
 	
-	static WRITE_HANDLER( bladestl_port_A_w ){
+	public static WriteHandlerPtr bladestl_port_A_w = new WriteHandlerPtr() {public void handler(int offset, int data){
 		/* bits 0-4 = uPD7759 sample number (chip 0) */
 		//UPD7759_message_w( 0, data);
 		//if (data)
 		//	logerror("%04x: (port A) write %02x\n",cpu_get_pc(), data);
-	}
+	} };
 	
-	static WRITE_HANDLER( bladestl_port_B_w ){
+	public static WriteHandlerPtr bladestl_port_B_w = new WriteHandlerPtr() {public void handler(int offset, int data){
 		/* unknown */
 		//if (data)
 		//	logerror("%04x: (port B) write %02x\n",cpu_get_pc(), data);
-	}
+	} };
 	
-	static WRITE_HANDLER( bladestl_speech_ctrl_w ){
+	public static WriteHandlerPtr bladestl_speech_ctrl_w = new WriteHandlerPtr() {public void handler(int offset, int data){
 		/* not understood yet */
 		//if (data)
 		//	logerror("%04x: (speech_ctrl) write %02x\n",cpu_get_pc(), data);
-	}
+	} };
 	
 	public static Memory_ReadAddress bladestl_readmem[]={
 		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),

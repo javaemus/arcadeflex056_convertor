@@ -292,7 +292,7 @@ public class mjsikaku
 		new IO_ReadPort(MEMPORT_MARKER, 0)
 	};
 	
-	static WRITE_HANDLER( io_mjsikaku_w )
+	public static WriteHandlerPtr io_mjsikaku_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		offset = (((offset & 0xff00) >> 8) | ((offset & 0x00ff) << 8));
 	
@@ -328,7 +328,7 @@ public class mjsikaku
 			case	0xe000:	mjsikaku_gfxflag2_w(data); break;
 			case	0xf000:	mjsikaku_scrolly_w(data); break;
 		}
-	}
+	} };
 	
 	public static IO_WritePort writeport_mjsikaku[]={
 		new IO_WritePort(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_IO | MEMPORT_WIDTH_8),
@@ -360,7 +360,7 @@ public class mjsikaku
 		new IO_ReadPort(MEMPORT_MARKER, 0)
 	};
 	
-	static WRITE_HANDLER( io_otonano_w )
+	public static WriteHandlerPtr io_otonano_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		offset = (((offset & 0xff00) >> 8) | ((offset & 0x00ff) << 8));
 	
@@ -395,7 +395,7 @@ public class mjsikaku
 			case	0xe000:	mjsikaku_gfxflag2_w(data); break;
 			case	0xf000:	mjsikaku_scrolly_w(data); break;
 		}
-	}
+	} };
 	
 	public static IO_WritePort writeport_otonano[]={
 		new IO_WritePort(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_IO | MEMPORT_WIDTH_8),
@@ -427,7 +427,7 @@ public class mjsikaku
 		new IO_ReadPort(MEMPORT_MARKER, 0)
 	};
 	
-	static WRITE_HANDLER( io_kaguya_w )
+	public static WriteHandlerPtr io_kaguya_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		offset = (((offset & 0xff00) >> 8) | ((offset & 0x00ff) << 8));
 	
@@ -462,7 +462,7 @@ public class mjsikaku
 			case	0xe000:	mjsikaku_gfxflag2_w(data); break;
 			case	0xf000:	mjsikaku_scrolly_w(data); break;
 		}
-	}
+	} };
 	
 	public static IO_WritePort writeport_kaguya[]={
 		new IO_WritePort(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_IO | MEMPORT_WIDTH_8),
@@ -494,7 +494,7 @@ public class mjsikaku
 		new IO_ReadPort(MEMPORT_MARKER, 0)
 	};
 	
-	static WRITE_HANDLER( io_secolove_w )
+	public static WriteHandlerPtr io_secolove_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		offset = (((offset & 0xff00) >> 8) | ((offset & 0x00ff) << 8));
 	
@@ -529,7 +529,7 @@ public class mjsikaku
 					break;
 			case	0xf000:	mjsikaku_scrolly_w(data); break;
 		}
-	}
+	} };
 	
 	public static IO_WritePort writeport_secolove[]={
 		new IO_WritePort(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_IO | MEMPORT_WIDTH_8),
@@ -537,7 +537,7 @@ public class mjsikaku
 		new IO_WritePort(MEMPORT_MARKER, 0)
 	};
 	
-	static WRITE_HANDLER( io_iemoto_w )
+	public static WriteHandlerPtr io_iemoto_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		offset = (((offset & 0xff00) >> 8) | ((offset & 0x00ff) << 8));
 	
@@ -574,7 +574,7 @@ public class mjsikaku
 			case	0xe000:	mjsikaku_gfxflag2_w(data); break;
 			case	0xf000:	mjsikaku_scrolly_w(data); break;
 		}
-	}
+	} };
 	
 	public static IO_WritePort writeport_iemoto[]={
 		new IO_WritePort(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_IO | MEMPORT_WIDTH_8),
@@ -582,7 +582,7 @@ public class mjsikaku
 		new IO_WritePort(MEMPORT_MARKER, 0)
 	};
 	
-	static WRITE_HANDLER( io_seiha_w )
+	public static WriteHandlerPtr io_seiha_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		offset = (((offset & 0xff00) >> 8) | ((offset & 0x00ff) << 8));
 	
@@ -621,7 +621,7 @@ public class mjsikaku
 			case	0xe000:	mjsikaku_gfxflag2_w(data); break;
 			case	0xf000:	mjsikaku_scrolly_w(data); break;
 		}
-	}
+	} };
 	
 	public static IO_WritePort writeport_seiha[]={
 		new IO_WritePort(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_IO | MEMPORT_WIDTH_8),
@@ -629,7 +629,7 @@ public class mjsikaku
 		new IO_WritePort(MEMPORT_MARKER, 0)
 	};
 	
-	static WRITE_HANDLER( io_crystal2_w )
+	public static WriteHandlerPtr io_crystal2_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		offset = (((offset & 0xff00) >> 8) | ((offset & 0x00ff) << 8));
 	
@@ -664,7 +664,7 @@ public class mjsikaku
 					break;
 			case	0xf000:	break;
 		}
-	}
+	} };
 	
 	public static IO_WritePort writeport_crystal2[]={
 		new IO_WritePort(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_IO | MEMPORT_WIDTH_8),
@@ -672,7 +672,7 @@ public class mjsikaku
 		new IO_WritePort(MEMPORT_MARKER, 0)
 	};
 	
-	static WRITE_HANDLER( io_bijokkoy_w )
+	public static WriteHandlerPtr io_bijokkoy_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		offset = (((offset & 0xff00) >> 8) | ((offset & 0x00ff) << 8));
 	
@@ -713,7 +713,7 @@ public class mjsikaku
 					break;
 			case	0xf000:	mjsikaku_scrolly_w(data); break;
 		}
-	}
+	} };
 	
 	public static IO_WritePort writeport_bijokkoy[]={
 		new IO_WritePort(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_IO | MEMPORT_WIDTH_8),

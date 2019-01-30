@@ -62,23 +62,23 @@ public class blueprnt
 	
 	static int dipsw;
 	
-	static WRITE_HANDLER( dipsw_w )
+	public static WriteHandlerPtr dipsw_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		dipsw = data;
-	}
+	} };
 	
 	public static ReadHandlerPtr blueprnt_sh_dipsw_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return dipsw;
 	} };
 	
-	static WRITE_HANDLER( blueprnt_sound_command_w )
+	public static WriteHandlerPtr blueprnt_sound_command_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		soundlatch_w(offset,data);
 		cpu_cause_interrupt(1,Z80_NMI_INT);
-	}
+	} };
 	
-	static WRITE_HANDLER( blueprnt_coin_w )
+	public static WriteHandlerPtr blueprnt_coin_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		static int lastval;
 	
@@ -86,7 +86,7 @@ public class blueprnt
 		coin_counter_w (0, data & 0x01);
 		coin_counter_w (1, data & 0x02);
 		lastval = data;
-	}
+	} };
 	
 	
 	

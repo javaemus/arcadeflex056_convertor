@@ -238,15 +238,15 @@ public class dkong
 	
 	#define TSTEP 0.001
 	
-	static WRITE_HANDLER( dkong_sh_p1_w )
+	public static WriteHandlerPtr dkong_sh_p1_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		envelope=exp(-tt);
 		DAC_data_w(0,(int)(data*envelope));
 		if (decay) tt+=TSTEP;
 		else tt=0;
-	}
+	} };
 	
-	static WRITE_HANDLER( dkong_sh_p2_w )
+	public static WriteHandlerPtr dkong_sh_p2_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		/*   If P2.Bit7 -> is apparently an external signal decay or other output control
 		 *   If P2.Bit6 -> activates the external compressed sample ROM
@@ -257,7 +257,7 @@ public class dkong
 		decay = !(data & 0x80);
 		page = (data & 0x47);
 		mcustatus = ((~data & 0x10) >> 4);
-	}
+	} };
 	
 	
 	public static ReadHandlerPtr dkong_in2_r  = new ReadHandlerPtr() { public int handler(int offset)

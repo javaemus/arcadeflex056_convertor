@@ -163,13 +163,13 @@ public class tigeroad
 			soundlatch_w(offset,data >> 8);
 	}
 	
-	static WRITE_HANDLER( msm5205_w )
+	public static WriteHandlerPtr msm5205_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		MSM5205_reset_w(offset,(data>>7)&1);
 		MSM5205_data_w(offset,data);
 		MSM5205_vclk_w(offset,1);
 		MSM5205_vclk_w(offset,0);
-	}
+	} };
 	
 	int tigeroad_interrupt(void)
 	{

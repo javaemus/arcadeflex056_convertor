@@ -166,7 +166,7 @@ public class atarifb
 		noise_timer_set=1;
 	}
 	
-	static WRITE_HANDLER( atarifb_out2_w )
+	public static WriteHandlerPtr atarifb_out2_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		/* D0-D3 = crowd */
 		crowd_mask = (data & 0x0F) << 4;
@@ -181,9 +181,9 @@ public class atarifb
 	
 		coin_counter_w (0, data & 0x10);
 	//	logerror("out2_w: %02x\n", data & ~0x0f);
-	}
+	} };
 	
-	static WRITE_HANDLER( soccer_out2_w )
+	public static WriteHandlerPtr soccer_out2_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		/* D0-D3 = crowd */
 		crowd_mask = (data & 0x0F) << 4;
@@ -200,9 +200,9 @@ public class atarifb
 		coin_counter_w (1, data & 0x20);
 		coin_counter_w (2, data & 0x10);
 	//	logerror("out2_w: %02x\n", data & ~0x0f);
-	}
+	} };
 	
-	static WRITE_HANDLER( atarifb_out3_w )
+	public static WriteHandlerPtr atarifb_out3_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		int loop = cpu_getiloops ();
 	
@@ -222,7 +222,7 @@ public class atarifb
 				break;
 		}
 	//	logerror("out3_w, %02x:%02x\n", loop, data);
-	}
+	} };
 	
 	public static Memory_ReadAddress readmem[]={
 		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),

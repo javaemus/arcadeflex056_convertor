@@ -197,11 +197,11 @@ public class rainbow
 		cpu_setbank( 5, memory_region(REGION_CPU2) + (banknum * 0x4000) + 0x10000 );
 	}
 	
-	static WRITE_HANDLER( bankswitch_w )
+	public static WriteHandlerPtr bankswitch_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		banknum = (data - 1) & 3;
 		reset_sound_region();
-	}
+	} };
 	
 	public static ReadHandlerPtr jumping_latch_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
@@ -209,7 +209,7 @@ public class rainbow
 	} };
 	
 	#if 0
-	static WRITE_HANDLER( jumping_bankswitch_w )
+	public static WriteHandlerPtr jumping_bankswitch_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		unsigned char *RAM = memory_region(REGION_CPU2);
 		int banknum = (data & 1);
@@ -218,7 +218,7 @@ public class rainbow
 		// if (banknum != 1) logerror("bank selected =%02x\n", banknum);
 	
 		cpu_setbank( 6, &RAM[ 0x10000 + ( banknum * 0x2000 ) ] );
-	}
+	} };
 	#endif
 	
 	public static Memory_ReadAddress rainbow_s_readmem[]={

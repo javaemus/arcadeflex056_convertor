@@ -789,7 +789,7 @@ public class neogeo
 		}
 	} };
 	
-	static WRITE_HANDLER( z80_port_w )
+	public static WriteHandlerPtr z80_port_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		switch (offset & 0xff)
 		{
@@ -825,7 +825,7 @@ public class neogeo
 	logerror("CPU #1 PC %04x: write %02x to unmapped port %02x\n",cpu_get_pc(),data,offset&0xff);
 			break;
 		}
-	}
+	} };
 	
 	public static IO_ReadPort neo_readio[]={
 		new IO_ReadPort(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_IO | MEMPORT_WIDTH_8),

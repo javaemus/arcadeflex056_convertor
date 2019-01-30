@@ -44,7 +44,7 @@ public class xain
 		return xain_sharedram[offset];
 	} };
 	
-	static WRITE_HANDLER( xain_sharedram_w )
+	public static WriteHandlerPtr xain_sharedram_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		/* locations 003d and 003e are used as a semaphores between CPU A and B, */
 		/* so let's resync every time they are changed to avoid deadlocks */
@@ -52,54 +52,54 @@ public class xain
 				&& xain_sharedram[offset] != data)
 			cpu_yield();
 		xain_sharedram[offset] = data;
-	}
+	} };
 	
-	static WRITE_HANDLER( xainCPUA_bankswitch_w )
+	public static WriteHandlerPtr xainCPUA_bankswitch_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		unsigned char *RAM = memory_region(REGION_CPU1);
 	
 		if (data & 0x08) {cpu_setbank(1,&RAM[0x10000]);}
 		else {cpu_setbank(1,&RAM[0x4000]);}
-	}
+	} };
 	
-	static WRITE_HANDLER( xainCPUB_bankswitch_w )
+	public static WriteHandlerPtr xainCPUB_bankswitch_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		unsigned char *RAM = memory_region(REGION_CPU2);
 	
 		if (data & 0x01) {cpu_setbank(2,&RAM[0x10000]);}
 		else {cpu_setbank(2,&RAM[0x4000]);}
-	}
+	} };
 	
-	static WRITE_HANDLER( xain_sound_command_w )
+	public static WriteHandlerPtr xain_sound_command_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		soundlatch_w(offset,data);
 		cpu_cause_interrupt(2,M6809_INT_IRQ);
-	}
+	} };
 	
-	static WRITE_HANDLER( xain_irqA_assert_w )
+	public static WriteHandlerPtr xain_irqA_assert_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		cpu_set_irq_line(0,M6809_IRQ_LINE,ASSERT_LINE);
-	}
+	} };
 	
-	static WRITE_HANDLER( xain_irqA_clear_w )
+	public static WriteHandlerPtr xain_irqA_clear_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		cpu_set_irq_line(0,M6809_IRQ_LINE,CLEAR_LINE);
-	}
+	} };
 	
-	static WRITE_HANDLER( xain_firqA_clear_w )
+	public static WriteHandlerPtr xain_firqA_clear_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		cpu_set_irq_line(0,M6809_FIRQ_LINE,CLEAR_LINE);
-	}
+	} };
 	
-	static WRITE_HANDLER( xain_irqB_assert_w )
+	public static WriteHandlerPtr xain_irqB_assert_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		cpu_set_irq_line(1,M6809_IRQ_LINE,ASSERT_LINE);
-	}
+	} };
 	
-	static WRITE_HANDLER( xain_irqB_clear_w )
+	public static WriteHandlerPtr xain_irqB_clear_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		cpu_set_irq_line(1,M6809_IRQ_LINE,CLEAR_LINE);
-	}
+	} };
 	
 	public static ReadHandlerPtr xain_68705_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
@@ -107,10 +107,10 @@ public class xain
 		return 0x4d;	/* fake P5 checksum test pass */
 	} };
 	
-	static WRITE_HANDLER( xain_68705_w )
+	public static WriteHandlerPtr xain_68705_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 	//	logerror("write %02x to 68705\n",data);
-	}
+	} };
 	
 	static int xainA_interrupt(void)
 	{

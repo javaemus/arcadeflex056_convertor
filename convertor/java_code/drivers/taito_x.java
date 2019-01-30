@@ -270,11 +270,11 @@ public class taito_x
 		cpu_setbank( 2, memory_region(REGION_CPU2) + (banknum * 0x4000) + 0x10000 );
 	}
 	
-	static WRITE_HANDLER( sound_bankswitch_w )
+	public static WriteHandlerPtr sound_bankswitch_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		banknum = (data - 1) & 3;
 		reset_sound_region();
-	}
+	} };
 	
 	
 	/**************************************************************************/

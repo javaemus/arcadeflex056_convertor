@@ -207,21 +207,21 @@ public class centiped
 	} };
 	
 	
-	static WRITE_HANDLER( centiped_led_w )
+	public static WriteHandlerPtr centiped_led_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		set_led_status(offset,~data & 0x80);
-	}
+	} };
 	
 	public static ReadHandlerPtr centipdb_rand_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return rand() % 0xff;
 	} };
 	
-	static WRITE_HANDLER( centipdb_AY8910_w )
+	public static WriteHandlerPtr centipdb_AY8910_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		AY8910_control_port_0_w(0, offset);
 		AY8910_write_port_0_w(0, data);
-	}
+	} };
 	
 	public static ReadHandlerPtr centipdb_AY8910_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
@@ -229,15 +229,15 @@ public class centiped
 		return AY8910_read_port_0_r(0);
 	} };
 	
-	static WRITE_HANDLER( flip_screen_w )
+	public static WriteHandlerPtr flip_screen_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		flip_screen_set(data);
-	}
+	} };
 	
-	static WRITE_HANDLER( centiped_coin_counter_w )
+	public static WriteHandlerPtr centiped_coin_counter_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		coin_counter_w(offset,data);
-	}
+	} };
 	
 	
 	public static Memory_ReadAddress centiped_readmem[]={

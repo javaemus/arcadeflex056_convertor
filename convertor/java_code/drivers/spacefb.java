@@ -163,11 +163,11 @@ public class spacefb
 	    return spacefb_sound_latch & 0x04;
 	} };
 	
-	static WRITE_HANDLER( spacefb_port_1_w )
+	public static WriteHandlerPtr spacefb_port_1_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 	    spacefb_sound_latch = data;
 	    if (!(data & 0x02)) cpu_cause_interrupt(1,I8039_EXT_INT);
-	}
+	} };
 	
 	
 	public static Memory_ReadAddress readmem[]={

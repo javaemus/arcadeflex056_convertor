@@ -296,7 +296,7 @@ public class dec0
 	
 	/******************************************************************************/
 	
-	static WRITE_HANDLER( YM3812_w )
+	public static WriteHandlerPtr YM3812_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		switch (offset) {
 		case 0:
@@ -306,9 +306,9 @@ public class dec0
 			YM3812_write_port_0_w(0,data);
 			break;
 		}
-	}
+	} };
 	
-	static WRITE_HANDLER( YM2203_w )
+	public static WriteHandlerPtr YM2203_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		switch (offset) {
 		case 0:
@@ -318,7 +318,7 @@ public class dec0
 			YM2203_write_port_0_w(0,data);
 			break;
 		}
-	}
+	} };
 	
 	public static Memory_ReadAddress dec0_s_readmem[]={
 		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),

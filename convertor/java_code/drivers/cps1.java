@@ -45,7 +45,7 @@ public class cps1
 	
 	static int cps1_sound_fade_timer;
 	
-	static WRITE_HANDLER( cps1_snd_bankswitch_w )
+	public static WriteHandlerPtr cps1_snd_bankswitch_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		unsigned char *RAM = memory_region(REGION_CPU2);
 		int length = memory_region_length(REGION_CPU2) - 0x10000;
@@ -55,7 +55,7 @@ public class cps1
 		cpu_setbank(1,&RAM[0x10000 + bankaddr]);
 	
 		if (data & 0xfe) logerror("%04x: write %02x to f004\n",cpu_get_pc(),data);
-	}
+	} };
 	
 	static WRITE16_HANDLER( cps1_sound_fade_w )
 	{
@@ -212,7 +212,7 @@ public class cps1
 			qsound_sharedram2[offset] = data;
 	}
 	
-	static WRITE_HANDLER( qsound_banksw_w )
+	public static WriteHandlerPtr qsound_banksw_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		/*
 		Z80 bank register for music note data. It's odd that it isn't encrypted
@@ -226,7 +226,7 @@ public class cps1
 			bankaddress=0x10000;
 		}
 		cpu_setbank(1, &RAM[bankaddress]);
-	}
+	} };
 	
 	
 	/********************************************************************

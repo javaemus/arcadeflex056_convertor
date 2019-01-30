@@ -27,12 +27,12 @@ public class jailbrek
 	
 	static int irq_enable,nmi_enable;
 	
-	static WRITE_HANDLER( ctrl_w )
+	public static WriteHandlerPtr ctrl_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		nmi_enable = data & 0x01;
 		irq_enable = data & 0x02;
 		flip_screen_set(data & 0x08);
-	}
+	} };
 	
 	static int jb_interrupt(void)
 	{
@@ -55,11 +55,11 @@ public class jailbrek
 		return ( VLM5030_BSY() ? 1 : 0 );
 	} };
 	
-	static WRITE_HANDLER( jailbrek_speech_w ) {
+	public static WriteHandlerPtr jailbrek_speech_w = new WriteHandlerPtr() {public void handler(int offset, int data) {
 		/* bit 0 could be latch direction like in yiear */
 		VLM5030_ST( ( data >> 1 ) & 1 );
 		VLM5030_RST( ( data >> 2 ) & 1 );
-	}
+	} };
 	
 	public static Memory_ReadAddress readmem[]={
 		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),

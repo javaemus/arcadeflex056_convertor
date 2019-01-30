@@ -34,10 +34,10 @@ public class lasso
 	{
 		return shareram[offset];
 	} };
-	static WRITE_HANDLER( shareram_w )
+	public static WriteHandlerPtr shareram_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		shareram[offset] = data;
-	}
+	} };
 	
 	
 	/***************************************************************************
@@ -50,16 +50,16 @@ public class lasso
 	
 	/* Write to the sound latch and generate an IRQ on the sound CPU */
 	
-	static WRITE_HANDLER( lasso_sound_command_w )
+	public static WriteHandlerPtr lasso_sound_command_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		soundlatch_w(offset,data);
 		cpu_set_irq_line( 2, 0, PULSE_LINE );
-	}
-	static WRITE_HANDLER( chameleo_sound_command_w )
+	} };
+	public static WriteHandlerPtr chameleo_sound_command_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		soundlatch_w(offset,data);
 		cpu_set_irq_line( 1, 0, PULSE_LINE );
-	}
+	} };
 	
 	public static ReadHandlerPtr sound_status_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
@@ -69,7 +69,7 @@ public class lasso
 	
 	static data8_t lasso_chip_data;
 	
-	static WRITE_HANDLER( sound_data_w )
+	public static WriteHandlerPtr sound_data_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		lasso_chip_data =
 				((data & 0x80) >> 7) |
@@ -80,16 +80,16 @@ public class lasso
 				((data & 0x04) << 3) |
 				((data & 0x02) << 5) |
 				((data & 0x01) << 7);
-	}
+	} };
 	
-	static WRITE_HANDLER( sound_select_w )
+	public static WriteHandlerPtr sound_select_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		if (~data & 0x01)	/* chip #0 */
 			SN76496_0_w(0,lasso_chip_data);
 	
 		if (~data & 0x02)	/* chip #1 */
 			SN76496_1_w(0,lasso_chip_data);
-	}
+	} };
 	
 	
 	

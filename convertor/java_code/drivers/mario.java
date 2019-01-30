@@ -106,7 +106,7 @@ public class mario
 	WRITE_HANDLER( mario_sh_crab_w )       { p[1] = ACTIVEHIGH_PORT_BIT(p[1],0,data); }
 	WRITE_HANDLER( mario_sh_turtle_w )     { p[1] = ACTIVEHIGH_PORT_BIT(p[1],1,data); }
 	WRITE_HANDLER( mario_sh_fly_w )        { p[1] = ACTIVEHIGH_PORT_BIT(p[1],2,data); }
-	static WRITE_HANDLER( mario_sh_tuneselect_w ) { soundlatch_w(offset,data); }
+	public static WriteHandlerPtr mario_sh_tuneselect_w = new WriteHandlerPtr() {public void handler(int offset, int data) { soundlatch_w(offset,data); } };
 	
 	public static ReadHandlerPtr mario_sh_p1_r  = new ReadHandlerPtr() { public int handler(int offset)   { return p[1]; } };
 	public static ReadHandlerPtr mario_sh_p2_r  = new ReadHandlerPtr() { public int handler(int offset)   { return p[2]; } };
@@ -114,18 +114,18 @@ public class mario
 	public static ReadHandlerPtr mario_sh_t1_r  = new ReadHandlerPtr() { public int handler(int offset)   { return t[1]; } };
 	public static ReadHandlerPtr mario_sh_tune_r  = new ReadHandlerPtr() { public int handler(int offset) { return soundlatch_r(offset); } };
 	
-	static WRITE_HANDLER( mario_sh_sound_w )
+	public static WriteHandlerPtr mario_sh_sound_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		DAC_data_w(0,data);
-	}
-	static WRITE_HANDLER( mario_sh_p1_w )
+	} };
+	public static WriteHandlerPtr mario_sh_p1_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		p[1] = data;
-	}
-	static WRITE_HANDLER( mario_sh_p2_w )
+	} };
+	public static WriteHandlerPtr mario_sh_p2_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		p[2] = data;
-	}
+	} };
 	WRITE_HANDLER( masao_sh_irqtrigger_w )
 	{
 		static int last;

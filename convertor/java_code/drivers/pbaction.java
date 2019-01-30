@@ -54,11 +54,11 @@ public class pbaction
 	void pbaction_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	
 	
-	static WRITE_HANDLER( pbaction_sh_command_w )
+	public static WriteHandlerPtr pbaction_sh_command_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		soundlatch_w(offset,data);
 		cpu_cause_interrupt(1,0x00);
-	}
+	} };
 	
 	
 	

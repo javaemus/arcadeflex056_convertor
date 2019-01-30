@@ -77,13 +77,13 @@ public class appoooh
 		}
 	}
 	/* adpcm address write */
-	static WRITE_HANDLER( appoooh_adpcm_w )
+	public static WriteHandlerPtr appoooh_adpcm_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		unsigned char *RAM = memory_region(REGION_SOUND1);
 		adpcmptr  = &RAM[data*256];
 		MSM5205_reset_w(0,0);
 		appoooh_adpcm_data=-1;
-	}
+	} };
 	
 	
 	

@@ -39,7 +39,7 @@ public class baraduke
 	
 	static int inputport_selected;
 	
-	static WRITE_HANDLER( inputport_select_w )
+	public static WriteHandlerPtr inputport_select_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		if ((data & 0xe0) == 0x60)
 			inputport_selected = data & 0x07;
@@ -49,7 +49,7 @@ public class baraduke
 			coin_counter_w(0,data & 2);
 			coin_counter_w(1,data & 4);
 		}
-	}
+	} };
 	
 	#define reverse_bitstrm(data) ((data & 0x01) << 4) | ((data & 0x02) << 2) | (data & 0x04) \
 								| ((data & 0x08) >> 2) | ((data & 0x10) >> 4)
@@ -80,11 +80,11 @@ public class baraduke
 		return data;
 	} };
 	
-	static WRITE_HANDLER( baraduke_lamps_w )
+	public static WriteHandlerPtr baraduke_lamps_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		set_led_status(0,data & 0x08);
 		set_led_status(1,data & 0x10);
-	}
+	} };
 	
 	READ_HANDLER( baraduke_sharedram_r )
 	{

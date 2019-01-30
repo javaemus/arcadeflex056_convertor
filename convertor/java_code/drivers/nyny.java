@@ -115,12 +115,12 @@ public class nyny
 	} };
 	
 	
-	static WRITE_HANDLER( pia1_porta_w )
+	public static WriteHandlerPtr pia1_porta_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		/* bits 0-7 control a timer (low 8 bits) - is this for a starfield? */
-	}
+	} };
 	
-	static WRITE_HANDLER( pia1_portb_w )
+	public static WriteHandlerPtr pia1_portb_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		/* bits 0-3 control a timer (high 4 bits) - is this for a starfield? */
 		/* bit 4 enables the starfield? */
@@ -128,7 +128,7 @@ public class nyny
 		/* bits 5-7 go to the music board */
 		soundlatch2_w(0,(data & 0x60) >> 5);
 		cpu_set_irq_line(2,M6802_IRQ_LINE,(data & 0x80) ? CLEAR_LINE : ASSERT_LINE);
-	}
+	} };
 	
 	static struct pia6821_interface pia0_intf =
 	{

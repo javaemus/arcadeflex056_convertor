@@ -128,7 +128,7 @@ public class junofrst
 		return (timer << 4) | i8039_status;
 	} };
 	
-	static WRITE_HANDLER( junofrst_portB_w )
+	public static WriteHandlerPtr junofrst_portB_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		int i;
 	
@@ -144,7 +144,7 @@ public class junofrst
 			data >>= 2;
 			set_RC_filter(i,1000,2200,200,C);
 		}
-	}
+	} };
 	
 	WRITE_HANDLER( junofrst_sh_irqtrigger_w )
 	{
@@ -166,21 +166,21 @@ public class junofrst
 			cpu_cause_interrupt(2,I8039_EXT_INT);
 	}
 	
-	static WRITE_HANDLER( i8039_irqen_and_status_w )
+	public static WriteHandlerPtr i8039_irqen_and_status_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		i8039_irqenable = data & 0x80;
 		i8039_status = (data & 0x70) >> 4;
-	}
+	} };
 	
-	static WRITE_HANDLER( flip_screen_w )
+	public static WriteHandlerPtr flip_screen_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		flip_screen_set(data);
-	}
+	} };
 	
-	static WRITE_HANDLER( junofrst_coin_counter_w )
+	public static WriteHandlerPtr junofrst_coin_counter_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		coin_counter_w(offset,data);
-	}
+	} };
 	
 	
 	

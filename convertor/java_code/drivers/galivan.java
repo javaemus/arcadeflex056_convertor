@@ -62,10 +62,10 @@ public class galivan
 	//	layers = 0x60;
 	}
 	
-	static WRITE_HANDLER( galivan_sound_command_w )
+	public static WriteHandlerPtr galivan_sound_command_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		soundlatch_w(offset,(data << 1) | 1);
-	}
+	} };
 	
 	public static ReadHandlerPtr galivan_sound_command_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
@@ -83,7 +83,7 @@ public class galivan
 	
 	
 	/* the scroll registers are memory mapped in ninjemak, I/O ports in the others */
-	static WRITE_HANDLER( ninjemak_videoreg_w )
+	public static WriteHandlerPtr ninjemak_videoreg_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		switch (offset)
 		{
@@ -102,7 +102,7 @@ public class galivan
 			default:
 				break;
 		}
-	}
+	} };
 	
 	
 	

@@ -311,7 +311,7 @@ public class playch10
 	static int mmc1_shiftcount;
 	static int mmc1_rom_mask;
 	
-	static WRITE_HANDLER( mmc1_rom_switch_w )
+	public static WriteHandlerPtr mmc1_rom_switch_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		/* basically, a MMC1 mapper from the nes */
 		static int size16k, switchlow, vrom4k;
@@ -416,16 +416,16 @@ public class playch10
 				break;
 			}
 		}
-	}
+	} };
 	
 	/**********************************************************************************/
 	
 	/* A Board games (Track & Field) - BROKEN? - FIX ME? */
 	
-	static WRITE_HANDLER( aboard_vrom_switch_w )
+	public static WriteHandlerPtr aboard_vrom_switch_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		ppu2c03b_set_videorom_bank( 0, 0, 8, ( data & 3 ), 512 );
-	}
+	} };
 	
 	void init_pcaboard( void )
 	{
@@ -440,12 +440,12 @@ public class playch10
 	
 	/* B Board games (Contra, Rush N' Attach, Pro Wrestling) */
 	
-	static WRITE_HANDLER( bboard_rom_switch_w )
+	public static WriteHandlerPtr bboard_rom_switch_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		int bankoffset = 0x10000 + ( ( data & 7 ) * 0x4000 );
 	
 		memcpy( &memory_region( REGION_CPU2 )[0x08000], &memory_region( REGION_CPU2 )[bankoffset], 0x4000 );
-	}
+	} };
 	
 	void init_pcbboard( void )
 	{
@@ -467,10 +467,10 @@ public class playch10
 	
 	/* C Board games (The Goonies) */
 	
-	static WRITE_HANDLER( cboard_vrom_switch_w )
+	public static WriteHandlerPtr cboard_vrom_switch_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		ppu2c03b_set_videorom_bank( 0, 0, 8, ( ( data >> 1 ) & 1 ), 512 );
-	}
+	} };
 	
 	void init_pccboard( void )
 	{
@@ -504,7 +504,7 @@ public class playch10
 	
 	/* E Board games (Mike Tyson's Punchout) - BROKEN - FIX ME */
 	
-	static WRITE_HANDLER( eboard_rom_switch_w )
+	public static WriteHandlerPtr eboard_rom_switch_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		/* a variation of mapper 9 on a nes */
 		switch( offset & 0x7000 )
@@ -537,7 +537,7 @@ public class playch10
 				ppu2c03b_set_mirroring( 0, data ? PPU_MIRROR_HORZ : PPU_MIRROR_VERT );
 			break;
 		}
-	}
+	} };
 	
 	void init_pceboard( void )
 	{
@@ -595,7 +595,7 @@ public class playch10
 		}
 	}
 	
-	static WRITE_HANDLER( gboard_rom_switch_w )
+	public static WriteHandlerPtr gboard_rom_switch_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		/* basically, a MMC3 mapper from the nes */
 		static int last_bank = 0xff;
@@ -721,7 +721,7 @@ public class playch10
 				ppu2c03b_set_scanline_callback( 0, gboard_scanline_cb );
 			break;
 		}
-	}
+	} };
 	
 	void init_pcgboard( void )
 	{
@@ -750,7 +750,7 @@ public class playch10
 	
 	/* i Board games (Captain Sky Hawk, Solar Jetman) */
 	
-	static WRITE_HANDLER( iboard_rom_switch_w )
+	public static WriteHandlerPtr iboard_rom_switch_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		int bank = data & 7;
 	
@@ -760,7 +760,7 @@ public class playch10
 			ppu2c03b_set_mirroring( 0, PPU_MIRROR_LOW );
 	
 		memcpy( &memory_region( REGION_CPU2 )[0x08000], &memory_region( REGION_CPU2 )[bank * 0x8000 + 0x10000], 0x8000 );
-	}
+	} };
 	
 	void init_pciboard( void )
 	{

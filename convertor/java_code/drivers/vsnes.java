@@ -129,29 +129,29 @@ public class vsnes
 		return work_ram[ offset & 0x7ff ];
 	} };
 	
-	static WRITE_HANDLER( mirror_ram_w )
+	public static WriteHandlerPtr mirror_ram_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		work_ram[ offset & 0x7ff ] = data;
-	}
+	} };
 	
-	static WRITE_HANDLER( mirror_ram_1_w )
+	public static WriteHandlerPtr mirror_ram_1_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		work_ram[ offset & 0x7ff ] = data;
-	}
+	} };
 	
-	static WRITE_HANDLER( sprite_dma_w )
+	public static WriteHandlerPtr sprite_dma_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		int source = ( data & 7 ) * 0x100;
 	
 		ppu2c03b_spriteram_dma( 0, &work_ram[source] );
-	}
+	} };
 	
-	static WRITE_HANDLER( sprite_dma_1_w )
+	public static WriteHandlerPtr sprite_dma_1_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		int source = ( data & 7 ) * 0x100;
 	
 		ppu2c03b_spriteram_dma( 1, &work_ram_1[source] );
-	}
+	} };
 	
 	/******************************************************************************/
 	

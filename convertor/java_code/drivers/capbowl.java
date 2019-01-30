@@ -143,12 +143,12 @@ public class capbowl
 	 *
 	 *************************************/
 	
-	static WRITE_HANDLER( capbowl_sndcmd_w )
+	public static WriteHandlerPtr capbowl_sndcmd_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		cpu_cause_interrupt(1, M6809_INT_IRQ);
 	
 		soundlatch_w(offset, data);
-	}
+	} };
 	
 	
 	
@@ -202,14 +202,14 @@ public class capbowl
 		return (input_port_1_r(offset) & 0xf0) | ((input_port_3_r(offset) - track[1]) & 0x0f);
 	} };
 	
-	static WRITE_HANDLER( track_reset_w )
+	public static WriteHandlerPtr track_reset_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		/* reset the trackball counters */
 		track[0] = input_port_2_r(offset);
 		track[1] = input_port_3_r(offset);
 	
 		watchdog_reset_w(offset,data);
-	}
+	} };
 	
 	
 	

@@ -364,7 +364,7 @@ public class atarisy2
 	} };
 	
 	
-	static WRITE_HANDLER( switch_6502_w )
+	public static WriteHandlerPtr switch_6502_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		(void)offset;
 	
@@ -373,7 +373,7 @@ public class atarisy2
 			data = 12 | ((data >> 5) & 1);
 			tms5220_set_frequency(ATARI_CLOCK_20MHz/4 / (16 - data) / 2);
 		}
-	}
+	} };
 	
 	
 	
@@ -422,17 +422,17 @@ public class atarisy2
 	 *
 	 *************************************/
 	
-	static WRITE_HANDLER( mixer_w )
+	public static WriteHandlerPtr mixer_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		atarigen_set_ym2151_vol((data & 7) * 100 / 7);
 		atarigen_set_pokey_vol(((data >> 3) & 3) * 100 / 3);
 		atarigen_set_tms5220_vol(((data >> 5) & 7) * 100 / 7);
-	}
+	} };
 	
 	
-	static WRITE_HANDLER( sound_enable_w )
+	public static WriteHandlerPtr sound_enable_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
-	}
+	} };
 	
 	
 	static READ16_HANDLER( sound_r )
@@ -446,7 +446,7 @@ public class atarisy2
 	}
 	
 	
-	static WRITE_HANDLER( sound_6502_w )
+	public static WriteHandlerPtr sound_6502_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		/* clock the state through */
 		p2portwr_state = (interrupt_enable[0] & 2) != 0;
@@ -454,7 +454,7 @@ public class atarisy2
 	
 		/* handle it normally otherwise */
 		atarigen_6502_sound_w(offset, data);
-	}
+	} };
 	
 	
 	public static ReadHandlerPtr sound_6502_r  = new ReadHandlerPtr() { public int handler(int offset)
@@ -475,19 +475,19 @@ public class atarisy2
 	 *
 	 *************************************/
 	
-	static WRITE_HANDLER( tms5220_w )
+	public static WriteHandlerPtr tms5220_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		tms5220_data = data;
-	}
+	} };
 	
 	
-	static WRITE_HANDLER( tms5220_strobe_w )
+	public static WriteHandlerPtr tms5220_strobe_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		if (!(offset & 1) && tms5220_data_strobe)
 			if (has_tms5220)
 				tms5220_data_w(0, tms5220_data);
 		tms5220_data_strobe = offset & 1;
-	}
+	} };
 	
 	
 	
@@ -497,11 +497,11 @@ public class atarisy2
 	 *
 	 *************************************/
 	
-	static WRITE_HANDLER( coincount_w )
+	public static WriteHandlerPtr coincount_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		coin_counter_w(0, (data >> 0) & 1);
 		coin_counter_w(1, (data >> 1) & 1);
-	}
+	} };
 	
 	
 	

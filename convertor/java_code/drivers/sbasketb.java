@@ -48,15 +48,15 @@ public class sbasketb
 		cpu_cause_interrupt(1,0xff);
 	}
 	
-	static WRITE_HANDLER( flip_screen_w )
+	public static WriteHandlerPtr flip_screen_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		flip_screen_set(data);
-	}
+	} };
 	
-	static WRITE_HANDLER( sbasketb_coin_counter_w )
+	public static WriteHandlerPtr sbasketb_coin_counter_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		coin_counter_w(offset,data);
-	}
+	} };
 	
 	
 	public static Memory_ReadAddress readmem[]={

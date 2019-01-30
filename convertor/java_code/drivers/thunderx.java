@@ -62,13 +62,13 @@ public class thunderx
 			return ram[offset];
 	} };
 	
-	static WRITE_HANDLER( scontra_bankedram_w )
+	public static WriteHandlerPtr scontra_bankedram_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		if (palette_selected)
 			paletteram_xBBBBBGGGGGRRRRR_swap_w(offset,data);
 		else
 			ram[offset] = data;
-	}
+	} };
 	
 	public static ReadHandlerPtr thunderx_bankedram_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
@@ -86,7 +86,7 @@ public class thunderx
 			return ram[offset];
 	} };
 	
-	static WRITE_HANDLER( thunderx_bankedram_w )
+	public static WriteHandlerPtr thunderx_bankedram_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		if ((bank & 0x01) == 0)
 		{
@@ -100,7 +100,7 @@ public class thunderx
 		}
 		else
 			ram[offset] = data;
-	}
+	} };
 	
 	// run_collisions
 	//
@@ -220,7 +220,7 @@ public class thunderx
 		run_collisions(X0,Y0,X1,Y1,CM,HM);
 	}
 	
-	static WRITE_HANDLER( thunderx_1f98_w )
+	public static WriteHandlerPtr thunderx_1f98_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		/* bit 0 = enable char ROM reading through the video RAM */
 		K052109_set_RMRD_line((data & 0x01) ? ASSERT_LINE : CLEAR_LINE);
@@ -235,7 +235,7 @@ public class thunderx
 		}
 	
 		unknown_enable = data;
-	}
+	} };
 	
 	WRITE_HANDLER( scontra_bankswitch_w )
 	{
@@ -259,7 +259,7 @@ public class thunderx
 		scontra_priority = data & 0x80;
 	}
 	
-	static WRITE_HANDLER( thunderx_videobank_w )
+	public static WriteHandlerPtr thunderx_videobank_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 	//logerror("%04x: select video ram bank %02x\n",cpu_get_pc(),data);
 		/* 0x01 = work RAM at 4000-5fff */
@@ -273,14 +273,14 @@ public class thunderx
 	
 		/* bit 3 controls layer priority (seems to be always 1) */
 		scontra_priority = data & 0x08;
-	}
+	} };
 	
-	static WRITE_HANDLER( thunderx_sh_irqtrigger_w )
+	public static WriteHandlerPtr thunderx_sh_irqtrigger_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		cpu_cause_interrupt(1,0xff);
-	}
+	} };
 	
-	static WRITE_HANDLER( scontra_snd_bankswitch_w )
+	public static WriteHandlerPtr scontra_snd_bankswitch_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		unsigned char *RAM = memory_region(REGION_SOUND1);
 		/* b3-b2: bank for chanel B */
@@ -290,7 +290,7 @@ public class thunderx
 		int bank_B = 0x20000*((data >> 2) & 0x03);
 	
 		K007232_bankswitch(0,RAM + bank_A,RAM + bank_B);
-	}
+	} };
 	
 	/***************************************************************************/
 	

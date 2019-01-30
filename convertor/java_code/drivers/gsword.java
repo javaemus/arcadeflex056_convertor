@@ -242,7 +242,7 @@ public class gsword
 		return ignore_interrupt();
 	}
 	
-	static WRITE_HANDLER( gsword_nmi_set_w )
+	public static WriteHandlerPtr gsword_nmi_set_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		switch(data)
 		{
@@ -262,18 +262,18 @@ public class gsword
 		}
 		/* bit1= nmi disable , for ram check */
 		logerror("NMI controll %02x\n",data);
-	}
+	} };
 	
-	static WRITE_HANDLER( gsword_AY8910_control_port_0_w )
+	public static WriteHandlerPtr gsword_AY8910_control_port_0_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		AY8910_control_port_0_w(offset,data);
 		fake8910_0 = data;
-	}
-	static WRITE_HANDLER( gsword_AY8910_control_port_1_w )
+	} };
+	public static WriteHandlerPtr gsword_AY8910_control_port_1_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		AY8910_control_port_1_w(offset,data);
 		fake8910_1 = data;
-	}
+	} };
 	
 	public static ReadHandlerPtr gsword_fake_0_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{

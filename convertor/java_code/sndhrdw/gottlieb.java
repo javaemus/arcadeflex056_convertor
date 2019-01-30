@@ -238,7 +238,7 @@ public class gottlieb
 		cpu_cause_interrupt(cpu_gettotalcpu()-1, M6502_INT_NMI);
 	}
 	
-	static WRITE_HANDLER( common_sound_control_w )
+	public static WriteHandlerPtr common_sound_control_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		/* Bit 0 enables and starts NMI timer */
 	
@@ -256,7 +256,7 @@ public class gottlieb
 		}
 	
 		/* Bit 1 controls a LED on the sound board. I'm not emulating it */
-	}
+	} };
 	
 	WRITE_HANDLER( stooges_sound_control_w )
 	{

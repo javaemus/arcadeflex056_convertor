@@ -108,7 +108,7 @@ public class arabian
 	 *
 	 *************************************/
 	
-	static WRITE_HANDLER( ay8910_porta_w )
+	public static WriteHandlerPtr ay8910_porta_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		/*
 			bit 7 = ENA
@@ -118,10 +118,10 @@ public class arabian
 			bit 3 = /ARHF
 		*/
 		arabian_video_control = data;
-	}
+	} };
 	
 	
-	static WRITE_HANDLER( ay8910_portb_w )
+	public static WriteHandlerPtr ay8910_portb_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		/*
 			bit 5 = /IREQ to custom CPU
@@ -136,7 +136,7 @@ public class arabian
 		/* clock the coin counters */
 		coin_counter_w(1, ~data & 0x02);
 		coin_counter_w(0, ~data & 0x01);
-	}
+	} };
 	
 	
 	
@@ -209,18 +209,18 @@ public class arabian
 	}
 	
 	
-	static WRITE_HANDLER( custom_flip_w )
+	public static WriteHandlerPtr custom_flip_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		custom_cpu_ram[0x34b + offset] = data;
 		update_flip_state();
-	}
+	} };
 	
 	
-	static WRITE_HANDLER( custom_cocktail_w )
+	public static WriteHandlerPtr custom_cocktail_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		custom_cpu_ram[0x400 + offset] = data;
 		update_flip_state();
-	}
+	} };
 	
 	
 	

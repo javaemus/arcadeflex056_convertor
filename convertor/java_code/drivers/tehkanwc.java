@@ -51,19 +51,19 @@ public class tehkanwc
 		return shared_ram[offset];
 	} };
 	
-	static WRITE_HANDLER( shared_w )
+	public static WriteHandlerPtr shared_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		shared_ram[offset] = data;
-	}
+	} };
 	
 	
-	static WRITE_HANDLER( sub_cpu_halt_w )
+	public static WriteHandlerPtr sub_cpu_halt_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		if (data)
 			cpu_set_reset_line(1,CLEAR_LINE);
 		else
 			cpu_set_reset_line(1,ASSERT_LINE);
-	}
+	} };
 	
 	
 	
@@ -89,39 +89,39 @@ public class tehkanwc
 		return readinputport(6 + offset) - track1[offset];
 	} };
 	
-	static WRITE_HANDLER( tehkanwc_track_0_reset_w )
+	public static WriteHandlerPtr tehkanwc_track_0_reset_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		/* reset the trackball counters */
 		track0[offset] = readinputport(3 + offset) + data;
-	}
+	} };
 	
-	static WRITE_HANDLER( tehkanwc_track_1_reset_w )
+	public static WriteHandlerPtr tehkanwc_track_1_reset_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		/* reset the trackball counters */
 		track1[offset] = readinputport(6 + offset) + data;
-	}
+	} };
 	
 	
 	
-	static WRITE_HANDLER( sound_command_w )
+	public static WriteHandlerPtr sound_command_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		soundlatch_w(offset,data);
 		cpu_cause_interrupt(2,Z80_NMI_INT);
-	}
+	} };
 	
 	static void reset_callback(int param)
 	{
 		cpu_set_reset_line(2,PULSE_LINE);
 	}
 	
-	static WRITE_HANDLER( sound_answer_w )
+	public static WriteHandlerPtr sound_answer_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		soundlatch2_w(0,data);
 	
 		/* in Gridiron, the sound CPU goes in a tight loop after the self test, */
 		/* probably waiting to be reset by a watchdog */
 		if (cpu_get_pc() == 0x08bc) timer_set(TIME_IN_SEC(1),0,reset_callback);
-	}
+	} };
 	
 	
 	/* Emulate MSM sound samples with counters */
@@ -138,20 +138,20 @@ public class tehkanwc
 		return (msm_data_offs >> 8) & 0xff;
 	} };
 	
-	static WRITE_HANDLER( tehkanwc_portA_w )
+	public static WriteHandlerPtr tehkanwc_portA_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		msm_data_offs = (msm_data_offs & 0xff00) | data;
-	}
+	} };
 	
-	static WRITE_HANDLER( tehkanwc_portB_w )
+	public static WriteHandlerPtr tehkanwc_portB_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		msm_data_offs = (msm_data_offs & 0x00ff) | (data << 8);
-	}
+	} };
 	
-	static WRITE_HANDLER( msm_reset_w )
+	public static WriteHandlerPtr msm_reset_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		MSM5205_reset_w(0,data ? 0 : 1);
-	}
+	} };
 	
 	void tehkanwc_adpcm_int (int data)
 	{

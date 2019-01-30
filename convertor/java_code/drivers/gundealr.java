@@ -87,16 +87,16 @@ public class gundealr
 		else return ignore_interrupt();
 	}
 	
-	static WRITE_HANDLER( yamyam_bankswitch_w )
+	public static WriteHandlerPtr yamyam_bankswitch_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 	 	int bankaddress;
 		unsigned char *RAM = memory_region(REGION_CPU1);
 	
 		bankaddress = 0x10000 + (data & 0x07) * 0x4000;
 		cpu_setbank(1,&RAM[bankaddress]);
-	}
+	} };
 	
-	static WRITE_HANDLER( yamyam_protection_w )
+	public static WriteHandlerPtr yamyam_protection_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		unsigned char *RAM = memory_region(REGION_CPU1);
 	
@@ -157,7 +157,7 @@ public class gundealr
 			RAM[0xe013] = 0x7e;
 			RAM[0xe014] = 0xc9;
 		}
-	}
+	} };
 	
 	
 	

@@ -99,7 +99,6 @@ public class btime
 	
 	int lnc_sound_interrupt(void);
 	
-	static WRITE_HANDLER( sound_command_w );
 	
 	READ_HANDLER( mmonkey_protection_r );
 	WRITE_HANDLER( mmonkey_protection_w );
@@ -141,7 +140,7 @@ public class btime
 		}
 	}
 	
-	static WRITE_HANDLER( lnc_w )
+	public static WriteHandlerPtr lnc_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		unsigned char *rom = memory_region(REGION_CPU1);
 		int diff = memory_region_length(REGION_CPU1) / 2;
@@ -161,9 +160,9 @@ public class btime
 	
 		/* Swap bits 5 & 6 for opcodes */
 		rom[offset+diff] = swap_bits_5_6(data);
-	}
+	} };
 	
-	static WRITE_HANDLER( mmonkey_w )
+	public static WriteHandlerPtr mmonkey_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		unsigned char *rom = memory_region(REGION_CPU1);
 		int diff = memory_region_length(REGION_CPU1) / 2;
@@ -182,9 +181,9 @@ public class btime
 	
 		/* Swap bits 5 & 6 for opcodes */
 		rom[offset+diff] = swap_bits_5_6(data);
-	}
+	} };
 	
-	static WRITE_HANDLER( btime_w )
+	public static WriteHandlerPtr btime_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		unsigned char *RAM = memory_region(REGION_CPU1);
 	
@@ -200,9 +199,9 @@ public class btime
 		else logerror("CPU #%d PC %04x: warning - write %02x to unmapped memory address %04x\n",cpu_getactivecpu(),cpu_get_pc(),data,offset);
 	
 		btime_decrypt();
-	}
+	} };
 	
-	static WRITE_HANDLER( zoar_w )
+	public static WriteHandlerPtr zoar_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		unsigned char *RAM = memory_region(REGION_CPU1);
 	
@@ -220,9 +219,9 @@ public class btime
 	
 		btime_decrypt();
 	
-	}
+	} };
 	
-	static WRITE_HANDLER( disco_w )
+	public static WriteHandlerPtr disco_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		unsigned char *RAM = memory_region(REGION_CPU1);
 	
@@ -236,7 +235,7 @@ public class btime
 		else logerror("CPU #%d PC %04x: warning - write %02x to unmapped memory address %04x\n",cpu_getactivecpu(),cpu_get_pc(),data,offset);
 	
 		btime_decrypt();
-	}
+	} };
 	
 	
 	public static Memory_ReadAddress btime_readmem[]={
@@ -550,11 +549,11 @@ public class btime
 		return btime_interrupt(nmi_interrupt, 0);
 	}
 	
-	static WRITE_HANDLER( sound_command_w )
+	public static WriteHandlerPtr sound_command_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		soundlatch_w(offset,data);
 		cpu_cause_interrupt(1,M6502_INT_IRQ);
-	}
+	} };
 	
 	
 	INPUT_PORTS_START( btime )

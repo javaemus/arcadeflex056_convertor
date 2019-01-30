@@ -119,10 +119,10 @@ public class buggychl
 	
 	
 	
-	static WRITE_HANDLER( bankswitch_w )
+	public static WriteHandlerPtr bankswitch_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		cpu_setbank(1,&memory_region(REGION_CPU1)[0x10000 + (data & 7) * 0x2000]);
-	}
+	} };
 	
 	
 	static int sound_nmi_enable,pending_nmi;
@@ -133,18 +133,18 @@ public class buggychl
 		else pending_nmi = 1;
 	}
 	
-	static WRITE_HANDLER( sound_command_w )
+	public static WriteHandlerPtr sound_command_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		soundlatch_w(0,data);
 		timer_set(TIME_NOW,data,nmi_callback);
-	}
+	} };
 	
-	static WRITE_HANDLER( nmi_disable_w )
+	public static WriteHandlerPtr nmi_disable_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		sound_nmi_enable = 0;
-	}
+	} };
 	
-	static WRITE_HANDLER( nmi_enable_w )
+	public static WriteHandlerPtr nmi_enable_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		sound_nmi_enable = 1;
 		if (pending_nmi)
@@ -152,12 +152,12 @@ public class buggychl
 			cpu_cause_interrupt(1,Z80_NMI_INT);
 			pending_nmi = 0;
 		}
-	}
+	} };
 	
-	static WRITE_HANDLER( sound_enable_w )
+	public static WriteHandlerPtr sound_enable_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		mixer_sound_enable_global_w(data & 1);
-	}
+	} };
 	
 	
 	
@@ -409,22 +409,22 @@ public class buggychl
 	
 	
 	
-	static WRITE_HANDLER( portA_0_w )
+	public static WriteHandlerPtr portA_0_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		/* VOL/BAL   for the 7630 on this 8910 output */
-	}
-	static WRITE_HANDLER( portB_0_w )
+	} };
+	public static WriteHandlerPtr portB_0_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		/* TRBL/BASS for the 7630 on this 8910 output */
-	}
-	static WRITE_HANDLER( portA_1_w )
+	} };
+	public static WriteHandlerPtr portA_1_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		/* VOL/BAL   for the 7630 on this 8910 output */
-	}
-	static WRITE_HANDLER( portB_1_w )
+	} };
+	public static WriteHandlerPtr portB_1_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		/* TRBL/BASS for the 7630 on this 8910 output */
-	}
+	} };
 	
 	
 	static struct AY8910interface ay8910_interface =

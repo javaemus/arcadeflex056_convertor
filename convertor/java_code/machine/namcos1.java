@@ -84,7 +84,7 @@ public class namcos1
 		return key[offset];
 	} };
 	
-	static WRITE_HANDLER( rev1_key_w ) {
+	public static WriteHandlerPtr rev1_key_w = new WriteHandlerPtr() {public void handler(int offset, int data) {
 		static unsigned short divider, divide_32 = 0;
 		//logerror("CPU #%d PC %08x: keychip write %04X=%02x\n",cpu_getactivecpu(),cpu_get_pc(),offset,data);
 		if(offset >= NAMCOS1_MAX_KEY)
@@ -142,7 +142,7 @@ public class namcos1
 				divide_32 = 0;
 			break;
 		}
-	}
+	} };
 	
 	/*******************************************************************************
 	*																			   *
@@ -161,7 +161,7 @@ public class namcos1
 		return key[offset];
 	} };
 	
-	static WRITE_HANDLER( rev2_key_w )
+	public static WriteHandlerPtr rev2_key_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		//logerror("CPU #%d PC %08x: keychip write %04X=%02x\n",cpu_getactivecpu(),cpu_get_pc(),offset,data);
 		if(offset >= NAMCOS1_MAX_KEY)
@@ -226,7 +226,7 @@ public class namcos1
 				return;
 			}
 		}
-	}
+	} };
 	
 	/*******************************************************************************
 	*																			   *
@@ -244,7 +244,7 @@ public class namcos1
 		return key[offset];
 	} };
 	
-	static WRITE_HANDLER( dangseed_key_w ) {
+	public static WriteHandlerPtr dangseed_key_w = new WriteHandlerPtr() {public void handler(int offset, int data) {
 		int i;
 	//	logerror("CPU #%d PC %08x: keychip write %04X=%02x\n",cpu_getactivecpu(),cpu_get_pc(),offset,data);
 		if(offset >= NAMCOS1_MAX_KEY)
@@ -268,7 +268,7 @@ public class namcos1
 				key[3] = key_id;
 				break;
 		}
-	}
+	} };
 	
 	/*******************************************************************************
 	*																			   *
@@ -287,7 +287,7 @@ public class namcos1
 		return key[offset];
 	} };
 	
-	static WRITE_HANDLER( dspirit_key_w )
+	public static WriteHandlerPtr dspirit_key_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		static unsigned short divisor;
 	//	logerror("CPU #%d PC %08x: keychip write %04X=%02x\n",cpu_getactivecpu(),cpu_get_pc(),offset,data);
@@ -368,7 +368,7 @@ public class namcos1
 				key[3] = key_id;
 			break;
 		}
-	}
+	} };
 	
 	/*******************************************************************************
 	*																			   *
@@ -387,7 +387,7 @@ public class namcos1
 		return key[offset];
 	} };
 	
-	static WRITE_HANDLER( blazer_key_w )
+	public static WriteHandlerPtr blazer_key_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		static unsigned short divisor;
 		logerror("CPU #%d PC %08x: keychip write %04X=%02x\n",cpu_getactivecpu(),cpu_get_pc(),offset,data);
@@ -449,7 +449,7 @@ public class namcos1
 			}
 			break;
 		}
-	}
+	} };
 	
 	/*******************************************************************************
 	*																			   *
@@ -467,7 +467,7 @@ public class namcos1
 		return key[offset];
 	} };
 	
-	static WRITE_HANDLER( ws_key_w ) {
+	public static WriteHandlerPtr ws_key_w = new WriteHandlerPtr() {public void handler(int offset, int data) {
 		static unsigned short divider;
 		//logerror("CPU #%d PC %08x: keychip write %04X=%02x\n",cpu_getactivecpu(),cpu_get_pc(),offset,data);
 		if(offset >= NAMCOS1_MAX_KEY)
@@ -508,7 +508,7 @@ public class namcos1
 			key[4] = key_id;
 			break;
 		}
-	}
+	} };
 	
 	/*******************************************************************************
 	*																			   *
@@ -553,10 +553,10 @@ public class namcos1
 		return 0;
 	} };
 	
-	static WRITE_HANDLER( splatter_key_w ) {
+	public static WriteHandlerPtr splatter_key_w = new WriteHandlerPtr() {public void handler(int offset, int data) {
 	//	logerror("CPU #%d PC %08x: keychip write %04X=%02x\n",cpu_getactivecpu(),cpu_get_pc(),offset,data);
 		/* ignored */
-	}
+	} };
 	
 	
 	/*******************************************************************************
@@ -576,7 +576,7 @@ public class namcos1
 		return namco_wavedata[offset];
 	} };
 	
-	static WRITE_HANDLER( soundram_w )
+	public static WriteHandlerPtr soundram_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		if(offset<0x100)
 		{
@@ -593,13 +593,13 @@ public class namcos1
 	
 		//if(offset>=0x1000)
 		//	logerror("CPU #%d PC %04x: write shared ram %04x=%02x\n",cpu_getactivecpu(),cpu_get_pc(),offset,data);
-	}
+	} };
 	
 	/* ROM handlers */
 	
-	static WRITE_HANDLER( rom_w ) {
+	public static WriteHandlerPtr rom_w = new WriteHandlerPtr() {public void handler(int offset, int data) {
 		logerror("CPU #%d PC %04x: warning - write %02x to rom address %04x\n",cpu_getactivecpu(),cpu_get_pc(),data,offset);
-	}
+	} };
 	
 	/* error handlers */
 	public static ReadHandlerPtr unknown_r  = new ReadHandlerPtr() { public int handler(int offset) {
@@ -607,9 +607,9 @@ public class namcos1
 		return 0;
 	} };
 	
-	static WRITE_HANDLER( unknown_w ) {
+	public static WriteHandlerPtr unknown_w = new WriteHandlerPtr() {public void handler(int offset, int data) {
 		logerror("CPU #%d PC %04x: warning - wrote to unknown chip\n",cpu_getactivecpu(),cpu_get_pc() );
-	}
+	} };
 	
 	/* Main bankswitching routine */
 	void namcos1_bankswitch(int cpu, offs_t offset, data8_t data)

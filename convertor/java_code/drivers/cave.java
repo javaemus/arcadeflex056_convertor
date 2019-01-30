@@ -233,14 +233,14 @@ public class cave
 	
 	
 	/* Sound CPU: write latch for the main CPU (acknowledge) */
-	static WRITE_HANDLER( soundlatch_ack_w )
+	public static WriteHandlerPtr soundlatch_ack_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		soundbuf.data[soundbuf.len] = data;
 		if (soundbuf.len<32)
 			soundbuf.len++;
 		else
 			logerror("CPU #1 - PC %04X: Sound Buffer 2 Overflow Error\n",cpu_get_pc());
-	}
+	} };
 	
 	
 	

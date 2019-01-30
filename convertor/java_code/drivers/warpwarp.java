@@ -90,15 +90,15 @@ public class warpwarp
 		return 255;
 	} };
 	
-	static WRITE_HANDLER( warpwarp_leds_w )
+	public static WriteHandlerPtr warpwarp_leds_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		set_led_status(offset,data & 1);
-	}
+	} };
 	
-	static WRITE_HANDLER( warpwarp_coin_counter_w )
+	public static WriteHandlerPtr warpwarp_coin_counter_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		coin_counter_w(offset,data);
-	}
+	} };
 	
 	
 	

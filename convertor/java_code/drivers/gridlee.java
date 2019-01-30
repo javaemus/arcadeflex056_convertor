@@ -291,25 +291,25 @@ public class gridlee
 	 *
 	 *************************************/
 	
-	static WRITE_HANDLER( led_0_w )
+	public static WriteHandlerPtr led_0_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		set_led_status(0, data & 1);
 		logerror("LED 0 %s\n", (data & 1) ? "on" : "off");
-	}
+	} };
 	
 	
-	static WRITE_HANDLER( led_1_w )
+	public static WriteHandlerPtr led_1_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		set_led_status(1, data & 1);
 		logerror("LED 1 %s\n", (data & 1) ? "on" : "off");
-	}
+	} };
 	
 	
-	static WRITE_HANDLER( gridlee_coin_counter_w )
+	public static WriteHandlerPtr gridlee_coin_counter_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		coin_counter_w(0, data & 1);
 		logerror("coin counter %s\n", (data & 1) ? "on" : "off");
-	}
+	} };
 	
 	
 	

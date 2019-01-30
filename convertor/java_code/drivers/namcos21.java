@@ -190,10 +190,10 @@ public class namcos21
 		return namcos2_dualportram[offset];
 	} };
 	
-	static WRITE_HANDLER( namcos2_dualportram_byte_w )
+	public static WriteHandlerPtr namcos2_dualportram_byte_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		namcos2_dualportram[offset] = data;
-	}
+	} };
 	
 	/**************************************************************************/
 	

@@ -88,15 +88,15 @@ public class cloud9
 	}
 	
 	
-	static WRITE_HANDLER( cloud9_led_w )
+	public static WriteHandlerPtr cloud9_led_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		set_led_status(offset,~data & 0x80);
-	}
+	} };
 	
-	static WRITE_HANDLER( cloud9_coin_counter_w )
+	public static WriteHandlerPtr cloud9_coin_counter_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		coin_counter_w(offset,data);
-	}
+	} };
 	
 	
 	

@@ -63,18 +63,18 @@ public class lkage
 		else pending_nmi = 1;
 	}
 	
-	static WRITE_HANDLER( lkage_sound_command_w )
+	public static WriteHandlerPtr lkage_sound_command_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		soundlatch_w(offset,data);
 		timer_set(TIME_NOW,data,nmi_callback);
-	}
+	} };
 	
-	static WRITE_HANDLER( lkage_sh_nmi_disable_w )
+	public static WriteHandlerPtr lkage_sh_nmi_disable_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		sound_nmi_enable = 0;
-	}
+	} };
 	
-	static WRITE_HANDLER( lkage_sh_nmi_enable_w )
+	public static WriteHandlerPtr lkage_sh_nmi_enable_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		sound_nmi_enable = 1;
 		if (pending_nmi)
@@ -82,7 +82,7 @@ public class lkage
 			cpu_cause_interrupt(1,Z80_NMI_INT);
 			pending_nmi = 0;
 		}
-	}
+	} };
 	
 	
 	

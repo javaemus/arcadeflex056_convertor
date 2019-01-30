@@ -67,7 +67,7 @@ public class dooyong
 	
 	
 	
-	static WRITE_HANDLER( lastday_bankswitch_w )
+	public static WriteHandlerPtr lastday_bankswitch_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 	 	int bankaddress;
 		unsigned char *RAM = memory_region(REGION_CPU1);
@@ -76,12 +76,12 @@ public class dooyong
 		cpu_setbank(1,&RAM[bankaddress]);
 	
 	if (data & 0xf8) usrintf_showmessage("bankswitch %02x",data);
-	}
+	} };
 	
-	static WRITE_HANDLER( flip_screen_w )
+	public static WriteHandlerPtr flip_screen_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		flip_screen_set(data);
-	}
+	} };
 	
 	
 	

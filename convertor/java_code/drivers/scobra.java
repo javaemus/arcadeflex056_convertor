@@ -179,16 +179,16 @@ public class scobra
 	WRITE_HANDLER(hustler_ppi8255_1_w);
 	
 	
-	static WRITE_HANDLER( type1_coin_counter_w )
+	public static WriteHandlerPtr type1_coin_counter_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		coin_counter_w(offset,data);
-	}
+	} };
 	
-	static WRITE_HANDLER( type2_coin_counter_w )
+	public static WriteHandlerPtr type2_coin_counter_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		/* bit 1 selects coin counter */
 		coin_counter_w(offset >> 1, data);
-	}
+	} };
 	
 	
 	public static Memory_ReadAddress type1_readmem[]={

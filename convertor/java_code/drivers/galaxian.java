@@ -201,15 +201,15 @@ public class galaxian
 	READ_HANDLER( scramblb_protection_2_r );
 	
 	
-	static WRITE_HANDLER( galaxian_coin_lockout_w )
+	public static WriteHandlerPtr galaxian_coin_lockout_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		coin_lockout_global_w(~data & 1);
-	}
+	} };
 	
-	static WRITE_HANDLER( galaxian_leds_w )
+	public static WriteHandlerPtr galaxian_leds_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		set_led_status(offset,data & 1);
-	}
+	} };
 	
 	
 	static int kingball_speech_dip;
@@ -232,23 +232,23 @@ public class galaxian
 		return (readinputport(1) & ~0x20) | (rand() & 0x20);
 	} };
 	
-	static WRITE_HANDLER( kingball_speech_dip_w )
+	public static WriteHandlerPtr kingball_speech_dip_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		kingball_speech_dip = data;
-	}
+	} };
 	
 	static int kingball_sound;
 	
-	static WRITE_HANDLER( kingball_sound1_w )
+	public static WriteHandlerPtr kingball_sound1_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		kingball_sound = (kingball_sound & ~0x01) | data;
-	}
+	} };
 	
-	static WRITE_HANDLER( kingball_sound2_w )
+	public static WriteHandlerPtr kingball_sound2_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		kingball_sound = (kingball_sound & ~0x02) | (data << 1);
 		soundlatch_w (0, kingball_sound | 0xf0);
-	}
+	} };
 	
 	
 	public static ReadHandlerPtr jumpbug_protection_r  = new ReadHandlerPtr() { public int handler(int offset)
@@ -285,16 +285,16 @@ public class galaxian
 	} };
 	
 	/* Send sound data to the sound cpu and cause an nmi */
-	static WRITE_HANDLER( checkman_sound_command_w )
+	public static WriteHandlerPtr checkman_sound_command_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		soundlatch_w (0,data);
 		cpu_cause_interrupt (1, Z80_NMI_INT);
-	}
+	} };
 	
-	static WRITE_HANDLER( galaxian_coin_counter_w )
+	public static WriteHandlerPtr galaxian_coin_counter_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		coin_counter_w(offset, data & 0x01);
-	}
+	} };
 	
 	
 	public static Memory_ReadAddress galaxian_readmem[]={
@@ -605,7 +605,7 @@ public class galaxian
 	
 	
 	/* Zig Zag can swap ROMs 2 and 3 as a form of copy protection */
-	static WRITE_HANDLER( zigzag_sillyprotection_w )
+	public static WriteHandlerPtr zigzag_sillyprotection_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		unsigned char *RAM = memory_region(REGION_CPU1);
 	
@@ -621,26 +621,26 @@ public class galaxian
 			cpu_setbank(1,&RAM[0x2000]);
 			cpu_setbank(2,&RAM[0x3000]);
 		}
-	}
+	} };
 	
 	
 	/* but the way the 8910 is hooked up is even sillier! */
 	static int latch;
 	
-	static WRITE_HANDLER( zigzag_8910_latch_w )
+	public static WriteHandlerPtr zigzag_8910_latch_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		latch = offset;
-	}
+	} };
 	
-	static WRITE_HANDLER( zigzag_8910_data_trigger_w )
+	public static WriteHandlerPtr zigzag_8910_data_trigger_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		AY8910_write_port_0_w(0,latch);
-	}
+	} };
 	
-	static WRITE_HANDLER( zigzag_8910_control_trigger_w )
+	public static WriteHandlerPtr zigzag_8910_control_trigger_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		AY8910_control_port_0_w(0,latch);
-	}
+	} };
 	
 	public static Memory_ReadAddress zigzag_readmem[]={
 		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),

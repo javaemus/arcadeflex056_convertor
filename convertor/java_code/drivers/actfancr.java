@@ -58,10 +58,10 @@ public class actfancr
 	
 	static int trio_control_select;
 	
-	static WRITE_HANDLER( triothep_control_select_w )
+	public static WriteHandlerPtr triothep_control_select_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		trio_control_select=data;
-	}
+	} };
 	
 	public static ReadHandlerPtr triothep_control_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
@@ -76,11 +76,11 @@ public class actfancr
 		return 0xff;
 	} };
 	
-	static WRITE_HANDLER( actfancr_sound_w )
+	public static WriteHandlerPtr actfancr_sound_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		soundlatch_w(0,data & 0xff);
 		cpu_cause_interrupt(1,M6502_INT_NMI);
-	}
+	} };
 	
 	/******************************************************************************/
 	

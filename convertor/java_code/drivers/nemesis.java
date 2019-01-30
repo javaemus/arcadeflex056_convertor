@@ -726,14 +726,14 @@ public class nemesis
 		return a;
 	} };
 	
-	static WRITE_HANDLER( city_sound_bank_w )
+	public static WriteHandlerPtr city_sound_bank_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		unsigned char *RAM = memory_region(REGION_SOUND2);
 		int bank_A=0x20000 * (data&0x3);
 		int bank_B=0x20000 * ((data>>2)&0x3);
 	
 		K007232_bankswitch(0,RAM+bank_A,RAM+bank_B);
-	}
+	} };
 	
 	public static Memory_ReadAddress sal_sound_readmem[]={
 		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),

@@ -66,11 +66,11 @@ public class jackal
 	
 	static int irq_enable;
 	
-	static WRITE_HANDLER( ctrl_w )
+	public static WriteHandlerPtr ctrl_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		irq_enable = data & 0x02;
 		flip_screen_set(data & 0x08);
-	}
+	} };
 	
 	int jackal_interrupt(void)
 	{

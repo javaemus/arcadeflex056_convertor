@@ -43,13 +43,13 @@ public class spdodgeb
 	/* end of private globals */
 	
 	
-	static WRITE_HANDLER( sound_command_w )
+	public static WriteHandlerPtr sound_command_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		soundlatch_w(offset,data);
 		cpu_cause_interrupt(1,M6809_INT_IRQ);
-	}
+	} };
 	
-	static WRITE_HANDLER( spd_adpcm_w )
+	public static WriteHandlerPtr spd_adpcm_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		int chip = offset & 1;
 	
@@ -73,7 +73,7 @@ public class spdodgeb
 				MSM5205_reset_w(chip,0);
 				break;
 		}
-	}
+	} };
 	
 	static void spd_adpcm_int(int chip)
 	{
@@ -183,12 +183,12 @@ public class spdodgeb
 		}
 	} };
 	
-	static WRITE_HANDLER( mcu63701_w )
+	public static WriteHandlerPtr mcu63701_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 	//	logerror("CPU #0 PC %04x: write %02x to 63701 control address 3800\n",cpu_get_pc(),data);
 		mcu63701_command = data;
 		mcu63705_update_inputs();
-	}
+	} };
 	
 	
 	public static ReadHandlerPtr port_0_r  = new ReadHandlerPtr() { public int handler(int offset)

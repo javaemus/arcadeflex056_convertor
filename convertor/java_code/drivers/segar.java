@@ -283,30 +283,30 @@ public class segar
 		new IO_WritePort(MEMPORT_MARKER, 0)
 	};
 	
-	static WRITE_HANDLER( sindbadm_soundport_w )
+	public static WriteHandlerPtr sindbadm_soundport_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		soundlatch_w(0,data);
 		cpu_cause_interrupt(1,Z80_NMI_INT);
 		/* spin for a while to let the Z80 read the command (fixes hanging sound in Regulus) */
 		cpu_spinuntil_time(TIME_IN_USEC(50));
-	}
+	} };
 	
 	/* the data lines are flipped */
-	static WRITE_HANDLER( sindbadm_SN76496_0_w )
+	public static WriteHandlerPtr sindbadm_SN76496_0_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		int flipped = ((data >> 7) & 0x01) | ((data >> 5) & 0x02) | ((data >> 3) & 0x04) | ((data >> 1) & 0x08) |
 				      ((data << 1) & 0x10) | ((data << 3) & 0x20) | ((data << 5) & 0x40) | ((data << 7) & 0x80);
 	
 		SN76496_0_w(offset, flipped);
-	}
+	} };
 	
-	static WRITE_HANDLER( sindbadm_SN76496_1_w )
+	public static WriteHandlerPtr sindbadm_SN76496_1_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		int flipped = ((data >> 7) & 0x01) | ((data >> 5) & 0x02) | ((data >> 3) & 0x04) | ((data >> 1) & 0x08) |
 				      ((data << 1) & 0x10) | ((data << 3) & 0x20) | ((data << 5) & 0x40) | ((data << 7) & 0x80);
 	
 		SN76496_1_w(offset, flipped);
-	}
+	} };
 	
 	
 	public static IO_WritePort sindbadm_writeport[]={

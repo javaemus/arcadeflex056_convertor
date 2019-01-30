@@ -222,12 +222,12 @@ public class gladiatr
 		return input_port_2_r(offset)^0xff;
 	} };
 	/* YM2203 port B handler (output) */
-	static WRITE_HANDLER( gladiator_int_control_w )
+	public static WriteHandlerPtr gladiator_int_control_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		/* bit 7   : SSRST = sound reset ? */
 		/* bit 6-1 : N.C.                  */
 		/* bit 0   : ??                    */
-	}
+	} };
 	/* YM2203 IRQ */
 	static void gladiator_ym_irq(int irq)
 	{
@@ -237,7 +237,7 @@ public class gladiatr
 	}
 	
 	/*Sound Functions*/
-	static WRITE_HANDLER( glad_adpcm_w )
+	public static WriteHandlerPtr glad_adpcm_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		unsigned char *RAM = memory_region(REGION_CPU3);
 		/* bit6 = bank offset */
@@ -249,13 +249,13 @@ public class gladiatr
 		MSM5205_data_w(0,data);         /* bit0..3  */
 		MSM5205_reset_w(0,(data>>5)&1); /* bit 5    */
 		MSM5205_vclk_w (0,(data>>4)&1); /* bit4     */
-	}
+	} };
 	
-	static WRITE_HANDLER( glad_cpu_sound_command_w )
+	public static WriteHandlerPtr glad_cpu_sound_command_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		soundlatch_w(0,data);
 		cpu_set_nmi_line(2,ASSERT_LINE);
-	}
+	} };
 	
 	public static ReadHandlerPtr glad_cpu_sound_command_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{

@@ -81,14 +81,14 @@ public class exerion
 		return porta;
 	} };
 	
-	static WRITE_HANDLER( exerion_portb_w )
+	public static WriteHandlerPtr exerion_portb_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		/* pull the expected value from the ROM */
 		porta = memory_region(REGION_CPU1)[0x5f76];
 		portb = data;
 	
 		logerror("Port B = %02X\n", data);
-	}
+	} };
 	
 	public static ReadHandlerPtr exerion_protection_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{

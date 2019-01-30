@@ -118,15 +118,15 @@ public class frogger
 	WRITE_HANDLER(frogger_ppi8255_1_w);
 	
 	
-	static WRITE_HANDLER( frogger_coin_counter_0_w )
+	public static WriteHandlerPtr frogger_coin_counter_0_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		coin_counter_w (0, data);
-	}
+	} };
 	
-	static WRITE_HANDLER( frogger_coin_counter_1_w )
+	public static WriteHandlerPtr frogger_coin_counter_1_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		coin_counter_w (1, data);
-	}
+	} };
 	
 	
 	public static Memory_ReadAddress readmem[]={

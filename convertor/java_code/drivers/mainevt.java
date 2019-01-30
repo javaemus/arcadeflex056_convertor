@@ -47,10 +47,10 @@ public class mainevt
 	
 	static int nmi_enable;
 	
-	static WRITE_HANDLER( dv_nmienable_w )
+	public static WriteHandlerPtr dv_nmienable_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		nmi_enable = data;
-	}
+	} };
 	
 	static int dv_interrupt(void)
 	{

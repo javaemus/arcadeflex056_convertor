@@ -50,10 +50,10 @@ public class munchmo
 	
 	static int mnchmobl_nmi_enable = 0;
 	
-	static WRITE_HANDLER( mnchmobl_nmi_enable_w )
+	public static WriteHandlerPtr mnchmobl_nmi_enable_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		mnchmobl_nmi_enable = data;
-	}
+	} };
 	
 	static int mnchmobl_interrupt( void )
 	{

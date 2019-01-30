@@ -66,10 +66,10 @@ public class deniam
 		}
 	}
 	
-	static WRITE_HANDLER( deniam16b_oki_rom_bank_w )
+	public static WriteHandlerPtr deniam16b_oki_rom_bank_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		OKIM6295_set_bank_base(0,(data & 0x40) ? 0x40000 : 0x00000);
-	}
+	} };
 	
 	static WRITE16_HANDLER( deniam16c_oki_rom_bank_w )
 	{

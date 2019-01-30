@@ -299,7 +299,7 @@ public class tnzs
 		return (dsw & 0xff);
 	} };
 	
-	static WRITE_HANDLER( kageki_csport_w )
+	public static WriteHandlerPtr kageki_csport_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		char mess[80];
 	
@@ -320,7 +320,7 @@ public class tnzs
 			}
 		//	usrintf_showmessage(mess);
 		}
-	}
+	} };
 	
 	
 	public static Memory_ReadAddress readmem[]={
@@ -407,11 +407,11 @@ public class tnzs
 	
 	/* the bootleg board is different, it has a third CPU (and of course no mcu) */
 	
-	static WRITE_HANDLER( tnzsb_sound_command_w )
+	public static WriteHandlerPtr tnzsb_sound_command_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		soundlatch_w(offset,data);
 		cpu_cause_interrupt(2,0xff);
-	}
+	} };
 	
 	public static Memory_ReadAddress tnzsb_readmem1[]={
 		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),

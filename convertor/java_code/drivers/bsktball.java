@@ -37,7 +37,6 @@ public class bsktball
 	
 	static int note_timer=255;
 	static int note_count=256;
-	static WRITE_HANDLER( bsktball_note_w );
 	static void bsktball_note_32H(int foo);
 	static void bsktball_noise_256H(int foo);
 	static int init_timer=1;
@@ -46,7 +45,7 @@ public class bsktball
 	#define TIME_32H 10582*2
 	#define TIME_256H TIME_32H*4
 	
-	static WRITE_HANDLER( bsktball_note_w )
+	public static WriteHandlerPtr bsktball_note_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 	
 		note_timer=data;
@@ -57,14 +56,14 @@ public class bsktball
 			timer_set (TIME_IN_NSEC(TIME_32H), 0, bsktball_note_32H);
 			init_timer=0;
 		}
-	}
+	} };
 	
 	static int noise_b10=0;
 	static int noise_a10=0;
 	static int noise=0;
 	static int noise_timer_set=0;
 	
-	static WRITE_HANDLER( bsktball_noise_reset_w )
+	public static WriteHandlerPtr bsktball_noise_reset_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		noise_a10=0;
 		noise_b10=0;
@@ -73,7 +72,7 @@ public class bsktball
 		if (noise_timer_set == 0)
 			timer_set (TIME_IN_NSEC(TIME_256H), 0, bsktball_noise_256H);
 		noise_timer_set=1;
-	}
+	} };
 	
 	static void bsktball_noise_256H(int foo)
 	{
@@ -115,7 +114,7 @@ public class bsktball
 			init_timer=1;
 	}
 	
-	static WRITE_HANDLER( bsktball_bounce_w )
+	public static WriteHandlerPtr bsktball_bounce_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		/* D0-D3 = crowd */
 		crowd_mask = (data & 0x0F) << 2;
@@ -129,7 +128,7 @@ public class bsktball
 			DAC_data_w(1,63);
 		else
 			DAC_data_w(1,0);
-	}
+	} };
 	
 	public static Memory_ReadAddress readmem[]={
 		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),

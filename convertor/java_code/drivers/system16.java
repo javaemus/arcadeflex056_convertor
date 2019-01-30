@@ -392,13 +392,13 @@ public class system16
 	
 	// some games (aurail, riotcity, eswat), seem to send different format data to the 7759
 	// this function changes that data to what the 7759 expects, but it sounds quite poor.
-	static WRITE_HANDLER( UPD7759_process_message_w )
+	public static WriteHandlerPtr UPD7759_process_message_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		if((data & 0xc0) == 0x40) data=0xc0;
 		else data&=0x3f;
 	
 		UPD7759_message_w(offset,data);
-	}
+	} };
 	
 	public static IO_WritePort sound_writeport_7759[]={
 		new IO_WritePort(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_IO | MEMPORT_WIDTH_8),

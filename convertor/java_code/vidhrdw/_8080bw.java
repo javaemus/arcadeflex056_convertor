@@ -37,15 +37,6 @@ public class _8080bw
 	static void (*vh_screenrefresh_p)(struct mame_bitmap *bitmap,int full_refresh);
 	static void (*plot_pixel_p)(int x, int y, int col);
 	
-	static WRITE_HANDLER( bw_videoram_w );
-	static WRITE_HANDLER( schaser_videoram_w );
-	static WRITE_HANDLER( lupin3_videoram_w );
-	static WRITE_HANDLER( polaris_videoram_w );
-	static WRITE_HANDLER( invadpt2_videoram_w );
-	static WRITE_HANDLER( astinvad_videoram_w );
-	static WRITE_HANDLER( sstrngr2_videoram_w );
-	static WRITE_HANDLER( spaceint_videoram_w );
-	static WRITE_HANDLER( helifire_videoram_w );
 	
 	static void vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	static void seawolf_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
@@ -388,7 +379,7 @@ public class _8080bw
 	}
 	
 	
-	static WRITE_HANDLER( bw_videoram_w )
+	public static WriteHandlerPtr bw_videoram_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		int x,y;
 	
@@ -398,9 +389,9 @@ public class _8080bw
 		x = 8 * (offset % 32);
 	
 		plot_byte(x, y, data, 1, 0);
-	}
+	} };
 	
-	static WRITE_HANDLER( schaser_videoram_w )
+	public static WriteHandlerPtr schaser_videoram_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		UINT8 x,y,col;
 	
@@ -412,9 +403,9 @@ public class _8080bw
 		col = colorram[offset & 0x1f1f] & 0x07;
 	
 		plot_byte(x, y, data, col, background_color);
-	}
+	} };
 	
-	static WRITE_HANDLER( lupin3_videoram_w )
+	public static WriteHandlerPtr lupin3_videoram_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		UINT8 x,y,col;
 	
@@ -426,9 +417,9 @@ public class _8080bw
 		col = ~colorram[offset & 0x1f1f] & 0x07;
 	
 		plot_byte(x, y, data, col, background_color);
-	}
+	} };
 	
-	static WRITE_HANDLER( polaris_videoram_w )
+	public static WriteHandlerPtr polaris_videoram_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		int x,i,col,back_color,fore_color,color_map;
 		UINT8 y, cloud_y;
@@ -490,9 +481,9 @@ public class _8080bw
 				data >>= 1;
 			}
 		}
-	}
+	} };
 	
-	static WRITE_HANDLER( helifire_videoram_w )
+	public static WriteHandlerPtr helifire_videoram_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		int x,y,back_color,foreground_color;
 	
@@ -510,7 +501,7 @@ public class _8080bw
 		}
 	
 		plot_byte(x, y, data, foreground_color, back_color);
-	}
+	} };
 	
 	
 	WRITE_HANDLER( schaser_colorram_w )
@@ -720,7 +711,7 @@ public class _8080bw
 	}
 	
 	
-	static WRITE_HANDLER( invadpt2_videoram_w )
+	public static WriteHandlerPtr invadpt2_videoram_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		UINT8 x,y,col;
 	
@@ -741,9 +732,9 @@ public class _8080bw
 			col = 1;	/* red */
 	
 		plot_byte(x, y, data, col, 0);
-	}
+	} };
 	
-	static WRITE_HANDLER( sstrngr2_videoram_w )
+	public static WriteHandlerPtr sstrngr2_videoram_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		UINT8 x,y,col;
 	
@@ -770,9 +761,9 @@ public class _8080bw
 		}
 	
 		plot_byte(x, y, data, col, 0);
-	}
+	} };
 	
-	static WRITE_HANDLER( astinvad_videoram_w )
+	public static WriteHandlerPtr astinvad_videoram_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		UINT8 x,y,col;
 	
@@ -792,9 +783,9 @@ public class _8080bw
 			col = 1; /* red */
 	
 		plot_byte(x, y, data, col, 0);
-	}
+	} };
 	
-	static WRITE_HANDLER( spaceint_videoram_w )
+	public static WriteHandlerPtr spaceint_videoram_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		UINT8 x,y,col;
 		int i;
@@ -814,5 +805,5 @@ public class _8080bw
 			y++;
 			data >>= 1;
 		}
-	}
+	} };
 }

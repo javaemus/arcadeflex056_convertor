@@ -215,10 +215,10 @@ public class mhavoc
 		return gammaram[offset & 0x7ff];
 	} };
 	
-	static WRITE_HANDLER( mhavoc_gammaram_w )
+	public static WriteHandlerPtr mhavoc_gammaram_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		gammaram[offset & 0x7ff] = data;
-	}
+	} };
 	
 	
 	/* Main board Readmem */

@@ -339,26 +339,26 @@ public class darius
 		cpu_setbank( 1, memory_region(REGION_CPU2) + (banknum * 0x8000) + 0x10000 );
 	}
 	
-	static WRITE_HANDLER( sound_bankswitch_w )
+	public static WriteHandlerPtr sound_bankswitch_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		if( banknum != data )
 		{
 			banknum = data;
 			reset_sound_region();
 		}
-	}
+	} };
 	
-	static WRITE_HANDLER( adpcm_command_w )
+	public static WriteHandlerPtr adpcm_command_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		adpcm_command = data;
 		/* logerror("#ADPCM command write =%2x\n",data); */
-	}
+	} };
 	
 	#if 0
-	static WRITE_HANDLER( display_value )
+	public static WriteHandlerPtr display_value = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		usrintf_showmessage("d800=%x",data);
-	}
+	} };
 	#endif
 	
 	
@@ -413,43 +413,43 @@ public class darius
 		mixer_set_stereo_volume( 8, left, right );
 	}
 	
-	static WRITE_HANDLER( darius_fm0_pan )
+	public static WriteHandlerPtr darius_fm0_pan = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		darius_pan[0] = data&0xff;  /* data 0x00:right 0xff:left */
 		update_fm0();
-	}
+	} };
 	
-	static WRITE_HANDLER( darius_fm1_pan )
+	public static WriteHandlerPtr darius_fm1_pan = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		darius_pan[1] = data&0xff;
 		update_fm1();
-	}
+	} };
 	
-	static WRITE_HANDLER( darius_psg0_pan )
+	public static WriteHandlerPtr darius_psg0_pan = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		darius_pan[2] = data&0xff;
 		update_psg0( 0 );
 		update_psg0( 1 );
 		update_psg0( 2 );
-	}
+	} };
 	
-	static WRITE_HANDLER( darius_psg1_pan )
+	public static WriteHandlerPtr darius_psg1_pan = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		darius_pan[3] = data&0xff;
 		update_psg1( 0 );
 		update_psg1( 1 );
 		update_psg1( 2 );
-	}
+	} };
 	
-	static WRITE_HANDLER( darius_da_pan )
+	public static WriteHandlerPtr darius_da_pan = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		darius_pan[4] = data&0xff;
 		update_da();
-	}
+	} };
 	
 	/**** Mixer Control ****/
 	
-	static WRITE_HANDLER( darius_write_portA0 )
+	public static WriteHandlerPtr darius_write_portA0 = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		// volume control FM #0 PSG #0 A
 		//usrintf_showmessage(" pan %02x %02x %02x %02x %02x", darius_pan[0], darius_pan[1], darius_pan[2], darius_pan[3], darius_pan[4] );
@@ -458,9 +458,9 @@ public class darius
 		darius_vol[6] = darius_def_vol[(data>>0)&0x0f];
 		update_fm0();
 		update_psg0( 0 );
-	}
+	} };
 	
-	static WRITE_HANDLER( darius_write_portA1 )
+	public static WriteHandlerPtr darius_write_portA1 = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		// volume control FM #1 PSG #1 A
 		//usrintf_showmessage(" pan %02x %02x %02x %02x %02x", darius_pan[0], darius_pan[1], darius_pan[2], darius_pan[3], darius_pan[4] );
@@ -468,9 +468,9 @@ public class darius
 		darius_vol[7] = darius_def_vol[(data>>0)&0x0f];
 		update_fm1();
 		update_psg1( 0 );
-	}
+	} };
 	
-	static WRITE_HANDLER( darius_write_portB0 )
+	public static WriteHandlerPtr darius_write_portB0 = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		// volume control PSG #0 B/C
 		//usrintf_showmessage(" pan %02x %02x %02x %02x %02x", darius_pan[0], darius_pan[1], darius_pan[2], darius_pan[3], darius_pan[4] );
@@ -478,9 +478,9 @@ public class darius
 		darius_vol[2] = darius_def_vol[(data>>0)&0x0f];
 		update_psg0( 1 );
 		update_psg0( 2 );
-	}
+	} };
 	
-	static WRITE_HANDLER( darius_write_portB1 )
+	public static WriteHandlerPtr darius_write_portB1 = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		// volume control PSG #1 B/C
 		//usrintf_showmessage(" pan %02x %02x %02x %02x %02x", darius_pan[0], darius_pan[1], darius_pan[2], darius_pan[3], darius_pan[4] );
@@ -488,7 +488,7 @@ public class darius
 		darius_vol[5] = darius_def_vol[(data>>0)&0x0f];
 		update_psg1( 1 );
 		update_psg1( 2 );
-	}
+	} };
 	
 	
 	/*****************************************************
@@ -589,11 +589,11 @@ public class darius
 		/* logerror("write port 1: NMI ENABLE   PC=%4x\n", cpu_get_pc() ); */
 	}
 	
-	static WRITE_HANDLER( adpcm_data_w )
+	public static WriteHandlerPtr adpcm_data_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		MSM5205_data_w (0,   data         );
 		MSM5205_reset_w(0, !(data & 0x20) );	/* my best guess, but it could be output enable as well */
-	}
+	} };
 	
 	public static IO_ReadPort darius_sound2_readport[]={
 		new IO_ReadPort(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_IO | MEMPORT_WIDTH_8),

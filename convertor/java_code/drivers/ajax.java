@@ -21,8 +21,6 @@ public class ajax
 	
 	extern unsigned char *ajax_sharedram;
 	
-	static WRITE_HANDLER( k007232_extvol_w );
-	static WRITE_HANDLER( sound_bank_w );
 	
 	/* from machine/ajax.c */
 	WRITE_HANDLER( ajax_bankswitch_2_w );
@@ -244,7 +242,7 @@ public class ajax
 		0	/ 2MBANK
 	*/
 	
-	static WRITE_HANDLER( sound_bank_w )
+	public static WriteHandlerPtr sound_bank_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		unsigned char *RAM;
 		int bank_A, bank_B;
@@ -260,7 +258,7 @@ public class ajax
 		bank_A = 0x20000 * ((data >> 4) & 0x03);
 		bank_B = 0x20000 * ((data >> 2) & 0x03);
 		K007232_bankswitch(1,RAM + bank_A,RAM + bank_B);
-	}
+	} };
 	
 	static void volume_callback0(int v)
 	{
@@ -268,11 +266,11 @@ public class ajax
 		K007232_set_volume(0,1,0,(v & 0x0f) * 0x11);
 	}
 	
-	static WRITE_HANDLER( k007232_extvol_w )
+	public static WriteHandlerPtr k007232_extvol_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		/* channel A volume (mono) */
 		K007232_set_volume(1,0,(data & 0x0f) * 0x11/2,(data & 0x0f) * 0x11/2);
-	}
+	} };
 	
 	static void volume_callback1(int v)
 	{

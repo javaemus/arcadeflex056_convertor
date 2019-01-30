@@ -44,13 +44,13 @@ public class spy
 		else return paletteram_r(offset);
 	} };
 	
-	static WRITE_HANDLER( spy_bankedram1_w )
+	public static WriteHandlerPtr spy_bankedram1_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		if (rambank == 0) ram[offset] = data;
 		else paletteram_xBBBBBGGGGGRRRRR_swap_w(offset,data);
-	}
+	} };
 	
-	static WRITE_HANDLER( bankswitch_w )
+	public static WriteHandlerPtr bankswitch_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		unsigned char *rom = memory_region(REGION_CPU1);
 		int offs;
@@ -62,9 +62,9 @@ public class spy
 		if (data & 0x10) offs = 0x20000 + (data & 0x06) * 0x1000;
 		else offs = 0x10000 + (data & 0x0e) * 0x1000;
 		cpu_setbank(1,&rom[offs]);
-	}
+	} };
 	
-	static WRITE_HANDLER( spy_3f90_w )
+	public static WriteHandlerPtr spy_3f90_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		/* bits 0/1 = coin counters */
 		coin_counter_w(0,data & 0x01);
@@ -77,15 +77,15 @@ public class spy
 		rambank = data & 0x10;
 	
 		/* other bits unknown */
-	}
+	} };
 	
 	
-	static WRITE_HANDLER( spy_sh_irqtrigger_w )
+	public static WriteHandlerPtr spy_sh_irqtrigger_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		cpu_cause_interrupt(1,0xff);
-	}
+	} };
 	
-	static WRITE_HANDLER( sound_bank_w )
+	public static WriteHandlerPtr sound_bank_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		unsigned char *rom;
 		int bank_A,bank_B;
@@ -98,7 +98,7 @@ public class spy
 		bank_A = 0x20000 * ((data >> 4) & 0x03);
 		bank_B = 0x20000 * ((data >> 6) & 0x03);
 		K007232_bankswitch(1,rom + bank_A,rom + bank_B);
-	}
+	} };
 	
 	
 	

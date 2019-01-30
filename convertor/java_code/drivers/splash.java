@@ -94,9 +94,9 @@ public class splash
 	
 	static int adpcm_data;
 	
-	static WRITE_HANDLER( splash_adpcm_data_w ){
+	public static WriteHandlerPtr splash_adpcm_data_w = new WriteHandlerPtr() {public void handler(int offset, int data){
 		adpcm_data = data;
-	}
+	} };
 	
 	static void splash_msm5205_int(int data)
 	{

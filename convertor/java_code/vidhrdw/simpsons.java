@@ -79,10 +79,10 @@ public class simpsons
 		return K052109_r(offset + 0x2000);
 	} };
 	
-	static WRITE_HANDLER( simpsons_K052109_w )
+	public static WriteHandlerPtr simpsons_K052109_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		K052109_w(offset + 0x2000,data);
-	}
+	} };
 	
 	public static ReadHandlerPtr simpsons_K053247_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
@@ -90,11 +90,11 @@ public class simpsons
 		else return simpsons_xtraram[offset - 0x1000];
 	} };
 	
-	static WRITE_HANDLER( simpsons_K053247_w )
+	public static WriteHandlerPtr simpsons_K053247_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		if (offset < 0x1000) K053247_w(offset,data);
 		else simpsons_xtraram[offset - 0x1000] = data;
-	}
+	} };
 	
 	void simpsons_video_banking(int bank)
 	{

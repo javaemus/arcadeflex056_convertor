@@ -19,7 +19,6 @@ package sndhrdw;
 public class timeplt
 {
 	
-	static WRITE_HANDLER( timeplt_filter_w );
 	
 	MEMORY_READ_START( timeplt_sound_readmem )
 		{ 0x0000, 0x1fff, MRA_ROM },
@@ -103,7 +102,7 @@ public class timeplt
 		set_RC_filter(3*chip + channel,1000,5100,0,C);
 	}
 	
-	static WRITE_HANDLER( timeplt_filter_w )
+	public static WriteHandlerPtr timeplt_filter_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		filter_w(0, 0, (offset >>  6) & 3);
 		filter_w(0, 1, (offset >>  8) & 3);
@@ -111,7 +110,7 @@ public class timeplt
 		filter_w(1, 0, (offset >>  0) & 3);
 		filter_w(1, 1, (offset >>  2) & 3);
 		filter_w(1, 2, (offset >>  4) & 3);
-	}
+	} };
 	
 	
 	WRITE_HANDLER( timeplt_sh_irqtrigger_w )

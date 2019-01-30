@@ -291,10 +291,10 @@ public class twin16
 	
 	
 	// Added by Takahiro Nogi. (1999/10/27)
-	static WRITE_HANDLER( twin16_UPD7759_start_w )
+	public static WriteHandlerPtr twin16_UPD7759_start_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		UPD7759_start_w(offset, (!(data & 0x01)));
-	}
+	} };
 	
 	public static Memory_ReadAddress readmem_sound[]={
 		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),

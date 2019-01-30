@@ -49,7 +49,7 @@ public class shootout
 	
 	/*******************************************************************************/
 	
-	static WRITE_HANDLER( shootout_bankswitch_w )
+	public static WriteHandlerPtr shootout_bankswitch_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		int bankaddress;
 		unsigned char *RAM;
@@ -58,13 +58,13 @@ public class shootout
 		bankaddress = 0x10000 + ( 0x4000 * (data & 0x0f) );
 	
 		cpu_setbank(1,&RAM[bankaddress]);
-	}
+	} };
 	
-	static WRITE_HANDLER( sound_cpu_command_w )
+	public static WriteHandlerPtr sound_cpu_command_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		soundlatch_w( offset, data );
 		cpu_cause_interrupt( 1, M6502_INT_NMI );
-	}
+	} };
 	
 	/* stub for reading input ports as active low (makes building ports much easier) */
 	public static ReadHandlerPtr low_input_r  = new ReadHandlerPtr() { public int handler(int offset)
@@ -72,10 +72,10 @@ public class shootout
 		return ~readinputport( offset );
 	} };
 	
-	static WRITE_HANDLER( shootout_coin_counter_w )
+	public static WriteHandlerPtr shootout_coin_counter_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		coin_counter_w( offset, data );
-	}
+	} };
 	
 	/*******************************************************************************/
 	

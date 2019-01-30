@@ -226,7 +226,7 @@ public class meadows
 	/* Hardware read/write for the sound CPU                     */
 	/*                                                           */
 	/*************************************************************/
-	static WRITE_HANDLER( sound_hardware_w )
+	public static WriteHandlerPtr sound_hardware_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		switch( offset & 3 ) {
 			case 0: /* DAC */
@@ -254,7 +254,7 @@ public class meadows
 				meadows_sh_update();
 	            break;
 		}
-	}
+	} };
 	
 	public static ReadHandlerPtr sound_hardware_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{

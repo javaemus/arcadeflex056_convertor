@@ -174,10 +174,10 @@ public class asteroid
 	void llander_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	
 	
-	static WRITE_HANDLER( astdelux_coin_counter_w )
+	public static WriteHandlerPtr astdelux_coin_counter_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		coin_counter_w(offset,data);
-	}
+	} };
 	
 	
 	/* Lunar Lander mirrors page 0 and page 1. */
@@ -188,10 +188,10 @@ public class asteroid
 		return llander_zeropage[offset & 0xff];
 	} };
 	
-	static WRITE_HANDLER( llander_zeropage_w )
+	public static WriteHandlerPtr llander_zeropage_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		llander_zeropage[offset & 0xff] = data;
-	}
+	} };
 	
 	
 	

@@ -68,10 +68,10 @@ public class strnskil
 		return res;
 	} };
 	
-	static WRITE_HANDLER( protection_w )
+	public static WriteHandlerPtr protection_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		logerror("%04x: protection_w %02x\n",cpu_get_pc(),data);
-	}
+	} };
 	
 	/****************************************************************************/
 	

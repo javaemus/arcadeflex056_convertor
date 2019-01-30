@@ -61,10 +61,10 @@ public class redclash
 		return ignore_interrupt();
 	}
 	
-	static WRITE_HANDLER( irqack_w )
+	public static WriteHandlerPtr irqack_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		cpu_set_irq_line(0,0,CLEAR_LINE);
-	}
+	} };
 	
 	
 	

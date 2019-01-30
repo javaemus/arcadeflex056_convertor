@@ -90,11 +90,11 @@ public class exprraid
 		return 0x02;
 	} };
 	
-	static WRITE_HANDLER( sound_cpu_command_w )
+	public static WriteHandlerPtr sound_cpu_command_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 	    soundlatch_w(0,data);
 	    cpu_cause_interrupt(1,M6809_INT_NMI);
-	}
+	} };
 	
 	public static ReadHandlerPtr vblank_r  = new ReadHandlerPtr() { public int handler(int offset) {
 		int val = readinputport( 0 );

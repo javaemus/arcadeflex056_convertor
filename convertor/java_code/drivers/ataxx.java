@@ -215,7 +215,7 @@ public class ataxx
 		return 0xff;
 	} };
 	
-	static WRITE_HANDLER( indyheat_analog_w )
+	public static WriteHandlerPtr indyheat_analog_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		switch (offset)
 		{
@@ -229,7 +229,7 @@ public class ataxx
 				logerror("Unexpected analog write(%02X) = %02X\n", 8 + offset, data);
 				break;
 		}
-	}
+	} };
 	
 	
 	
@@ -411,7 +411,7 @@ public class ataxx
 	 *
 	 *************************************/
 	
-	static WRITE_HANDLER( battery_ram_w )
+	public static WriteHandlerPtr battery_ram_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		if (battery_ram_enable)
 		{
@@ -422,7 +422,7 @@ public class ataxx
 			ataxx_qram[((master_bank & 0xc0) << 8) + offset] = data;
 		else
 			logerror("%04X:BatteryW@%04X (invalid!)\n", cpu_getpreviouspc(), offset, data);
-	}
+	} };
 	
 	
 	static void nvram_handler(void *file, int read_or_write)
@@ -476,7 +476,7 @@ public class ataxx
 	} };
 	
 	
-	static WRITE_HANDLER( master_output_w )
+	public static WriteHandlerPtr master_output_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		switch (offset)
 		{
@@ -511,7 +511,7 @@ public class ataxx
 				logerror("Master I/O write offset %02X=%02X\n", offset, data);
 				break;
 		}
-	}
+	} };
 	
 	
 	public static ReadHandlerPtr eeprom_r  = new ReadHandlerPtr() { public int handler(int offset)
@@ -522,14 +522,14 @@ public class ataxx
 	} };
 	
 	
-	static WRITE_HANDLER( eeprom_w )
+	public static WriteHandlerPtr eeprom_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		if (LOG_EEPROM) logerror("%04X:EE write %d%d%d\n", cpu_getpreviouspc(),
 				(data >> 6) & 1, (data >> 5) & 1, (data >> 4) & 1);
 		EEPROM_write_bit     ((data & 0x10) >> 4);
 		EEPROM_set_clock_line((data & 0x20) ? ASSERT_LINE : CLEAR_LINE);
 		EEPROM_set_cs_line  ((~data & 0x40) ? ASSERT_LINE : CLEAR_LINE);
-	}
+	} };
 	
 	
 	
@@ -539,7 +539,7 @@ public class ataxx
 	 *
 	 *************************************/
 	
-	static WRITE_HANDLER( paletteram_and_misc_w )
+	public static WriteHandlerPtr paletteram_and_misc_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		if (wcol_enable)
 			paletteram_xxxxRRRRGGGGBBBB_w(offset, data);
@@ -567,7 +567,7 @@ public class ataxx
 		}
 		else
 			extra_tram[offset] = data;
-	}
+	} };
 	
 	
 	public static ReadHandlerPtr paletteram_and_misc_r  = new ReadHandlerPtr() { public int handler(int offset)
@@ -598,7 +598,7 @@ public class ataxx
 	 *
 	 *************************************/
 	
-	static WRITE_HANDLER( slave_banksw_w )
+	public static WriteHandlerPtr slave_banksw_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		int bankaddress, bank = data & 15;
 	
@@ -619,7 +619,7 @@ public class ataxx
 		cpu_setbank(3, &slave_base[bankaddress]);
 	
 		if (LOG_BANKSWITCHING_S) logerror("%04X:Slave bank = %02X (%05X)\n", cpu_getpreviouspc(), data, bankaddress);
-	}
+	} };
 	
 	
 	

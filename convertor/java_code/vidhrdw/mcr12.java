@@ -103,7 +103,7 @@ public class mcr12
 	 *
 	 *************************************/
 	
-	static WRITE_HANDLER( mcr2_paletteram_w )
+	public static WriteHandlerPtr mcr2_paletteram_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		int r, g, b;
 	
@@ -118,7 +118,7 @@ public class mcr12
 		b = (b << 5) | (b << 2) | (b >> 1);
 	
 		palette_set_color(offset / 2, r, g, b);
-	}
+	} };
 	
 	
 	

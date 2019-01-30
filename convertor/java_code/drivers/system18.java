@@ -100,7 +100,7 @@ public class system18
 		new Memory_WriteAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static WRITE_HANDLER( sys18_soundbank_w ){
+	public static WriteHandlerPtr sys18_soundbank_w = new WriteHandlerPtr() {public void handler(int offset, int data){
 		/* select access bank for a000~bfff */
 		unsigned char *RAM = memory_region(REGION_CPU2);
 		int Bank=0;
@@ -119,7 +119,7 @@ public class system18
 				break;
 		}
 		sys18_SoundMemBank = &RAM[Bank+0x10000];
-	}
+	} };
 	
 	public static IO_ReadPort sound_readport_18[]={
 		new IO_ReadPort(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_IO | MEMPORT_WIDTH_8),

@@ -102,12 +102,12 @@ public class thief
 	
 	/***********************************************************/
 	
-	static WRITE_HANDLER( thief_input_select_w )
+	public static WriteHandlerPtr thief_input_select_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		thief_input_select = data;
-	}
+	} };
 	
-	static WRITE_HANDLER( tape_control_w )
+	public static WriteHandlerPtr tape_control_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		switch( data )
 		{
@@ -144,7 +144,7 @@ public class thief
 			tape_set_audio( kCrashTrack, 0 );
 			break;
 		}
-	}
+	} };
 	
 	public static ReadHandlerPtr thief_io_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{

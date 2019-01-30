@@ -134,11 +134,11 @@ public class xmen
 		cpu_setbank(4, memory_region(REGION_CPU2) + 0x10000 + (sound_curbank & 0x07) * 0x4000);
 	}
 	
-	static WRITE_HANDLER( sound_bankswitch_w )
+	public static WriteHandlerPtr sound_bankswitch_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		sound_curbank = data;
 		sound_reset_bank();
-	}
+	} };
 	
 	
 	static MEMORY_READ16_START( readmem )

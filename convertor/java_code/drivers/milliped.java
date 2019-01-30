@@ -69,10 +69,10 @@ public class milliped
 	
 	static UINT8 dsw_select;
 	
-	static WRITE_HANDLER( milliped_input_select_w )
+	public static WriteHandlerPtr milliped_input_select_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		dsw_select = (data == 0);
-	}
+	} };
 	
 	public static ReadHandlerPtr milliped_IN0_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
@@ -110,15 +110,15 @@ public class milliped
 		return ((readinputport(1) & 0x70) | (oldpos & 0x0f) | sign );
 	} };
 	
-	static WRITE_HANDLER( milliped_led_w )
+	public static WriteHandlerPtr milliped_led_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		set_led_status(offset,~data & 0x80);
-	}
+	} };
 	
-	static WRITE_HANDLER( milliped_coin_counter_w )
+	public static WriteHandlerPtr milliped_coin_counter_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		coin_counter_w(offset,data);
-	}
+	} };
 	
 	
 	

@@ -43,11 +43,11 @@ public class finalizr
 		return ignore_interrupt();
 	}
 	
-	static WRITE_HANDLER( finalizr_coin_w )
+	public static WriteHandlerPtr finalizr_coin_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		coin_counter_w(0,data & 0x01);
 		coin_counter_w(1,data & 0x02);
-	}
+	} };
 	
 	
 	static int i8039_irqenable;
@@ -64,11 +64,11 @@ public class finalizr
 		return i8039_status;
 	} };
 	
-	static WRITE_HANDLER( i8039_irqen_and_status_w )
+	public static WriteHandlerPtr i8039_irqen_and_status_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		i8039_irqenable = data & 0x80;
 		i8039_status = data;
-	}
+	} };
 	
 	
 	

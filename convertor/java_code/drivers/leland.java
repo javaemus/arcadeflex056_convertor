@@ -203,7 +203,7 @@ public class leland
 	
 	static UINT8 *alleymas_kludge_mem;
 	
-	static WRITE_HANDLER( alleymas_joystick_kludge )
+	public static WriteHandlerPtr alleymas_joystick_kludge = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		/* catch the case where they clear this memory location at PC $1827 and change */
 		/* the value written to be a 1 */
@@ -221,7 +221,7 @@ public class leland
 			battery_ram[1] = 'I';
 			battery_ram[2] = 'N';
 		}
-	}
+	} };
 	
 	
 	
@@ -429,7 +429,7 @@ public class leland
 	 *
 	 *************************************/
 	
-	static WRITE_HANDLER( master_alt_bankswitch_w )
+	public static WriteHandlerPtr master_alt_bankswitch_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		/* update any bankswitching */
 		if (LOG_BANKSWITCHING_M)
@@ -440,7 +440,7 @@ public class leland
 	
 		/* sound control is in the rest */
 		leland_i86_control_w(offset, data);
-	}
+	} };
 	
 	
 	/* bankswitching for Cerberus */
@@ -654,7 +654,7 @@ public class leland
 	 *
 	 *************************************/
 	
-	static WRITE_HANDLER( battery_ram_w )
+	public static WriteHandlerPtr battery_ram_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		if (battery_ram_enable)
 		{
@@ -663,7 +663,7 @@ public class leland
 		}
 		else
 			logerror("%04X:BatteryW@%04X (invalid!)\n", cpu_getpreviouspc(), offset, data);
-	}
+	} };
 	
 	
 	static void nvram_handler(void *file, int read_or_write)
@@ -860,7 +860,7 @@ public class leland
 	
 	
 	
-	static WRITE_HANDLER( master_analog_key_w )
+	public static WriteHandlerPtr master_analog_key_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		switch (offset)
 		{
@@ -882,7 +882,7 @@ public class leland
 				keycard_w(data);
 				break;
 		}
-	}
+	} };
 	
 	
 	
@@ -936,7 +936,7 @@ public class leland
 	} };
 	
 	
-	static WRITE_HANDLER( master_output_w )
+	public static WriteHandlerPtr master_output_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		switch (offset)
 		{
@@ -972,7 +972,7 @@ public class leland
 				logerror("Master I/O write offset %02X=%02X\n", offset, data);
 				break;
 		}
-	}
+	} };
 	
 	
 	
@@ -982,11 +982,11 @@ public class leland
 	 *
 	 *************************************/
 	
-	static WRITE_HANDLER( gated_paletteram_w )
+	public static WriteHandlerPtr gated_paletteram_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		if (wcol_enable)
 			paletteram_BBGGGRRR_w(offset, data);
-	}
+	} };
 	
 	
 	public static ReadHandlerPtr gated_paletteram_r  = new ReadHandlerPtr() { public int handler(int offset)
@@ -1010,7 +1010,7 @@ public class leland
 	} };
 	
 	
-	static WRITE_HANDLER( sound_port_w )
+	public static WriteHandlerPtr sound_port_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		int gfx_banks = Machine->gfx[0]->total_elements / 0x400;
 		int gfx_bank_mask = (gfx_banks - 1) << 4;
@@ -1030,7 +1030,7 @@ public class leland
 				logerror("%04X:sound_port_bank = %02X\n", cpu_getpreviouspc(), data & 0x24);
 	    sound_port_bank = data & 0x24;
 	    (*update_master_bank)();
-	}
+	} };
 	
 	
 	
@@ -1040,7 +1040,7 @@ public class leland
 	 *
 	 *************************************/
 	
-	static WRITE_HANDLER( slave_small_banksw_w )
+	public static WriteHandlerPtr slave_small_banksw_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		int bankaddress = 0x10000 + 0xc000 * (data & 1);
 	
@@ -1052,10 +1052,10 @@ public class leland
 		cpu_setbank(3, &slave_base[bankaddress]);
 	
 		if (LOG_BANKSWITCHING_S) logerror("%04X:Slave bank = %02X (%05X)\n", cpu_getpreviouspc(), data & 1, bankaddress);
-	}
+	} };
 	
 	
-	static WRITE_HANDLER( slave_large_banksw_w )
+	public static WriteHandlerPtr slave_large_banksw_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		int bankaddress = 0x10000 + 0x8000 * (data & 15);
 	
@@ -1067,7 +1067,7 @@ public class leland
 		cpu_setbank(3, &slave_base[bankaddress]);
 	
 		if (LOG_BANKSWITCHING_S) logerror("%04X:Slave bank = %02X (%05X)\n", cpu_getpreviouspc(), data & 15, bankaddress);
-	}
+	} };
 	
 	
 	

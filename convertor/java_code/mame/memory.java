@@ -2403,11 +2403,11 @@ public class memory
 		return 0;
 	}
 	
-	static WRITE_HANDLER( mwh8_bad )
+	public static WriteHandlerPtr mwh8_bad = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		logerror("cpu #%d (PC=%08X): unmapped memory byte write to %08X = %02X\n", cpu_getactivecpu(), activecpu_get_pc(), offset, data);
 		if (activecpu_address_bits() <= SPARSE_THRESH) cpu_bankbase[STATIC_RAM][offset] = data;
-	}
+	} };
 	static WRITE16_HANDLER( mwh16_bad )
 	{
 		logerror("cpu #%d (PC=%08X): unmapped memory word write to %08X = %04X & %04X\n", cpu_getactivecpu(), activecpu_get_pc(), offset*2, data, mem_mask ^ 0xffff);
@@ -2435,10 +2435,10 @@ public class memory
 		return 0;
 	}
 	
-	static WRITE_HANDLER( pwh8_bad )
+	public static WriteHandlerPtr pwh8_bad = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		logerror("cpu #%d (PC=%08X): unmapped port byte write to %08X = %02X\n", cpu_getactivecpu(), activecpu_get_pc(), offset, data);
-	}
+	} };
 	static WRITE16_HANDLER( pwh16_bad )
 	{
 		logerror("cpu #%d (PC=%08X): unmapped port word write to %08X = %04X & %04X\n", cpu_getactivecpu(), activecpu_get_pc(), offset*2, data, mem_mask ^ 0xffff);
@@ -2448,7 +2448,7 @@ public class memory
 		logerror("cpu #%d (PC=%08X): unmapped port dword write to %08X = %08X & %08X\n", cpu_getactivecpu(), activecpu_get_pc(), offset*4, data, mem_mask ^ 0xffffffff);
 	}
 	
-	static WRITE_HANDLER( mwh8_rom )       { logerror("cpu #%d (PC=%08X): byte write to ROM %08X = %02X\n", cpu_getactivecpu(), activecpu_get_pc(), offset, data); }
+	public static WriteHandlerPtr mwh8_rom = new WriteHandlerPtr() {public void handler(int offset, int data)       { logerror("cpu #%d (PC=%08X): byte write to ROM %08X = %02X\n", cpu_getactivecpu(), activecpu_get_pc(), offset, data); } };
 	static WRITE16_HANDLER( mwh16_rom )    { logerror("cpu #%d (PC=%08X): word write to %08X = %04X & %04X\n", cpu_getactivecpu(), activecpu_get_pc(), offset*2, data, mem_mask ^ 0xffff); }
 	static WRITE32_HANDLER( mwh32_rom )    { logerror("cpu #%d (PC=%08X): dword write to %08X = %08X & %08X\n", cpu_getactivecpu(), activecpu_get_pc(), offset*4, data, mem_mask ^ 0xffffffff); }
 	
@@ -2456,14 +2456,14 @@ public class memory
 	static READ16_HANDLER( mrh16_nop )     { return 0; }
 	static READ32_HANDLER( mrh32_nop )     { return 0; }
 	
-	static WRITE_HANDLER( mwh8_nop )       {  }
+	public static WriteHandlerPtr mwh8_nop = new WriteHandlerPtr() {public void handler(int offset, int data)       {  } };
 	static WRITE16_HANDLER( mwh16_nop )    {  }
 	static WRITE32_HANDLER( mwh32_nop )    {  }
 	
 	public static ReadHandlerPtr mrh8_ram  = new ReadHandlerPtr() { public int handler(int offset)        { return cpu_bankbase[STATIC_RAM][offset]; } };
-	static WRITE_HANDLER( mwh8_ram )       { cpu_bankbase[STATIC_RAM][offset] = data; }
+	public static WriteHandlerPtr mwh8_ram = new WriteHandlerPtr() {public void handler(int offset, int data)       { cpu_bankbase[STATIC_RAM][offset] = data; } };
 	
-	static WRITE_HANDLER( mwh8_ramrom )    { cpu_bankbase[STATIC_RAM][offset] = cpu_bankbase[STATIC_RAM][offset + (OP_ROM - OP_RAM)] = data; }
+	public static WriteHandlerPtr mwh8_ramrom = new WriteHandlerPtr() {public void handler(int offset, int data)    { cpu_bankbase[STATIC_RAM][offset] = cpu_bankbase[STATIC_RAM][offset + (OP_ROM - OP_RAM)] = data; } };
 	static WRITE16_HANDLER( mwh16_ramrom ) { COMBINE_DATA(&cpu_bankbase[STATIC_RAM][offset*2]); COMBINE_DATA(&cpu_bankbase[0][offset*2 + (OP_ROM - OP_RAM)]); }
 	static WRITE32_HANDLER( mwh32_ramrom ) { COMBINE_DATA(&cpu_bankbase[STATIC_RAM][offset*4]); COMBINE_DATA(&cpu_bankbase[0][offset*4 + (OP_ROM - OP_RAM)]); }
 	
@@ -2492,30 +2492,30 @@ public class memory
 	public static ReadHandlerPtr mrh8_bank23  = new ReadHandlerPtr() { public int handler(int offset)     { return cpu_bankbase[23][offset]; } };
 	public static ReadHandlerPtr mrh8_bank24  = new ReadHandlerPtr() { public int handler(int offset)     { return cpu_bankbase[24][offset]; } };
 	
-	static WRITE_HANDLER( mwh8_bank1 )     { cpu_bankbase[1][offset] = data; }
-	static WRITE_HANDLER( mwh8_bank2 )     { cpu_bankbase[2][offset] = data; }
-	static WRITE_HANDLER( mwh8_bank3 )     { cpu_bankbase[3][offset] = data; }
-	static WRITE_HANDLER( mwh8_bank4 )     { cpu_bankbase[4][offset] = data; }
-	static WRITE_HANDLER( mwh8_bank5 )     { cpu_bankbase[5][offset] = data; }
-	static WRITE_HANDLER( mwh8_bank6 )     { cpu_bankbase[6][offset] = data; }
-	static WRITE_HANDLER( mwh8_bank7 )     { cpu_bankbase[7][offset] = data; }
-	static WRITE_HANDLER( mwh8_bank8 )     { cpu_bankbase[8][offset] = data; }
-	static WRITE_HANDLER( mwh8_bank9 )     { cpu_bankbase[9][offset] = data; }
-	static WRITE_HANDLER( mwh8_bank10 )    { cpu_bankbase[10][offset] = data; }
-	static WRITE_HANDLER( mwh8_bank11 )    { cpu_bankbase[11][offset] = data; }
-	static WRITE_HANDLER( mwh8_bank12 )    { cpu_bankbase[12][offset] = data; }
-	static WRITE_HANDLER( mwh8_bank13 )    { cpu_bankbase[13][offset] = data; }
-	static WRITE_HANDLER( mwh8_bank14 )    { cpu_bankbase[14][offset] = data; }
-	static WRITE_HANDLER( mwh8_bank15 )    { cpu_bankbase[15][offset] = data; }
-	static WRITE_HANDLER( mwh8_bank16 )    { cpu_bankbase[16][offset] = data; }
-	static WRITE_HANDLER( mwh8_bank17 )    { cpu_bankbase[17][offset] = data; }
-	static WRITE_HANDLER( mwh8_bank18 )    { cpu_bankbase[18][offset] = data; }
-	static WRITE_HANDLER( mwh8_bank19 )    { cpu_bankbase[19][offset] = data; }
-	static WRITE_HANDLER( mwh8_bank20 )    { cpu_bankbase[20][offset] = data; }
-	static WRITE_HANDLER( mwh8_bank21 )    { cpu_bankbase[21][offset] = data; }
-	static WRITE_HANDLER( mwh8_bank22 )    { cpu_bankbase[22][offset] = data; }
-	static WRITE_HANDLER( mwh8_bank23 )    { cpu_bankbase[23][offset] = data; }
-	static WRITE_HANDLER( mwh8_bank24 )    { cpu_bankbase[24][offset] = data; }
+	public static WriteHandlerPtr mwh8_bank1 = new WriteHandlerPtr() {public void handler(int offset, int data)     { cpu_bankbase[1][offset] = data; } };
+	public static WriteHandlerPtr mwh8_bank2 = new WriteHandlerPtr() {public void handler(int offset, int data)     { cpu_bankbase[2][offset] = data; } };
+	public static WriteHandlerPtr mwh8_bank3 = new WriteHandlerPtr() {public void handler(int offset, int data)     { cpu_bankbase[3][offset] = data; } };
+	public static WriteHandlerPtr mwh8_bank4 = new WriteHandlerPtr() {public void handler(int offset, int data)     { cpu_bankbase[4][offset] = data; } };
+	public static WriteHandlerPtr mwh8_bank5 = new WriteHandlerPtr() {public void handler(int offset, int data)     { cpu_bankbase[5][offset] = data; } };
+	public static WriteHandlerPtr mwh8_bank6 = new WriteHandlerPtr() {public void handler(int offset, int data)     { cpu_bankbase[6][offset] = data; } };
+	public static WriteHandlerPtr mwh8_bank7 = new WriteHandlerPtr() {public void handler(int offset, int data)     { cpu_bankbase[7][offset] = data; } };
+	public static WriteHandlerPtr mwh8_bank8 = new WriteHandlerPtr() {public void handler(int offset, int data)     { cpu_bankbase[8][offset] = data; } };
+	public static WriteHandlerPtr mwh8_bank9 = new WriteHandlerPtr() {public void handler(int offset, int data)     { cpu_bankbase[9][offset] = data; } };
+	public static WriteHandlerPtr mwh8_bank10 = new WriteHandlerPtr() {public void handler(int offset, int data)    { cpu_bankbase[10][offset] = data; } };
+	public static WriteHandlerPtr mwh8_bank11 = new WriteHandlerPtr() {public void handler(int offset, int data)    { cpu_bankbase[11][offset] = data; } };
+	public static WriteHandlerPtr mwh8_bank12 = new WriteHandlerPtr() {public void handler(int offset, int data)    { cpu_bankbase[12][offset] = data; } };
+	public static WriteHandlerPtr mwh8_bank13 = new WriteHandlerPtr() {public void handler(int offset, int data)    { cpu_bankbase[13][offset] = data; } };
+	public static WriteHandlerPtr mwh8_bank14 = new WriteHandlerPtr() {public void handler(int offset, int data)    { cpu_bankbase[14][offset] = data; } };
+	public static WriteHandlerPtr mwh8_bank15 = new WriteHandlerPtr() {public void handler(int offset, int data)    { cpu_bankbase[15][offset] = data; } };
+	public static WriteHandlerPtr mwh8_bank16 = new WriteHandlerPtr() {public void handler(int offset, int data)    { cpu_bankbase[16][offset] = data; } };
+	public static WriteHandlerPtr mwh8_bank17 = new WriteHandlerPtr() {public void handler(int offset, int data)    { cpu_bankbase[17][offset] = data; } };
+	public static WriteHandlerPtr mwh8_bank18 = new WriteHandlerPtr() {public void handler(int offset, int data)    { cpu_bankbase[18][offset] = data; } };
+	public static WriteHandlerPtr mwh8_bank19 = new WriteHandlerPtr() {public void handler(int offset, int data)    { cpu_bankbase[19][offset] = data; } };
+	public static WriteHandlerPtr mwh8_bank20 = new WriteHandlerPtr() {public void handler(int offset, int data)    { cpu_bankbase[20][offset] = data; } };
+	public static WriteHandlerPtr mwh8_bank21 = new WriteHandlerPtr() {public void handler(int offset, int data)    { cpu_bankbase[21][offset] = data; } };
+	public static WriteHandlerPtr mwh8_bank22 = new WriteHandlerPtr() {public void handler(int offset, int data)    { cpu_bankbase[22][offset] = data; } };
+	public static WriteHandlerPtr mwh8_bank23 = new WriteHandlerPtr() {public void handler(int offset, int data)    { cpu_bankbase[23][offset] = data; } };
+	public static WriteHandlerPtr mwh8_bank24 = new WriteHandlerPtr() {public void handler(int offset, int data)    { cpu_bankbase[24][offset] = data; } };
 	
 	
 	/*-------------------------------------------------

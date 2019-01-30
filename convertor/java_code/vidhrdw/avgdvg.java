@@ -947,10 +947,10 @@ public class avgdvg
 	
 	/* If you want to use the next two functions, please make sure that you have
 	 * a fake GfxLayout, otherwise you'll crash */
-	static WRITE_HANDLER( colorram_w )
+	public static WriteHandlerPtr colorram_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		colorram[offset & 0x0f] = data & 0x0f;
-	}
+	} };
 	
 	/*
 	 * Tempest, Major Havoc and Quantum select colors via a 16 byte colorram.

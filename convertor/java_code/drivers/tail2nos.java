@@ -71,10 +71,10 @@ public class tail2nos
 			K051316_ctrl_0_w(offset,data & 0xff);
 	}
 	
-	static WRITE_HANDLER( sound_bankswitch_w )
+	public static WriteHandlerPtr sound_bankswitch_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		cpu_setbank(3,memory_region(REGION_CPU2) + 0x10000 + (data & 0x01) * 0x8000);
-	}
+	} };
 	
 	
 	

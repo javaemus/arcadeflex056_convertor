@@ -90,7 +90,7 @@ public class seicross
 		return (portb & 0x9f) | (readinputport(6) & 0x60);
 	} };
 	
-	static WRITE_HANDLER( friskyt_portB_w )
+	public static WriteHandlerPtr friskyt_portB_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 	//logerror("PC %04x: 8910 port B = %02x\n",cpu_get_pc(),data);
 		/* bit 0 is IRQ enable */
@@ -108,7 +108,7 @@ public class seicross
 	
 		/* other bits unknown */
 		portb = data;
-	}
+	} };
 	
 	
 	static unsigned char *sharedram;
@@ -118,10 +118,10 @@ public class seicross
 		return sharedram[offset];
 	} };
 	
-	static WRITE_HANDLER( sharedram_w )
+	public static WriteHandlerPtr sharedram_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		sharedram[offset] = data;
-	}
+	} };
 	
 	
 	public static Memory_ReadAddress readmem[]={

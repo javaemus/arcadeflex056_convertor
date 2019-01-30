@@ -116,10 +116,10 @@ public class vicdual
 	
 	static int protection_data;
 	
-	static WRITE_HANDLER( samurai_protection_w )
+	public static WriteHandlerPtr samurai_protection_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		protection_data = data;
-	}
+	} };
 	
 	public static ReadHandlerPtr samurai_input_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
@@ -132,10 +132,10 @@ public class vicdual
 	} };
 	
 	
-	static WRITE_HANDLER( vicdual_ram_w )
+	public static WriteHandlerPtr vicdual_ram_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		vicdual_ram[offset] = data;
-	}
+	} };
 	
 	public static ReadHandlerPtr vicdual_ram_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{

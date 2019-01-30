@@ -35,7 +35,7 @@ public class battlnts
 		cpu_cause_interrupt(1,0xff);
 	}
 	
-	static WRITE_HANDLER( battlnts_bankswitch_w )
+	public static WriteHandlerPtr battlnts_bankswitch_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		unsigned char *RAM = memory_region(REGION_CPU1);
 		int bankaddress;
@@ -49,7 +49,7 @@ public class battlnts
 		coin_counter_w(1,data & 0x20);
 	
 		/* other bits unknown */
-	}
+	} };
 	
 	public static Memory_ReadAddress battlnts_readmem[]={
 		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),

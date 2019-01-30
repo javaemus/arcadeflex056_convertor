@@ -97,10 +97,10 @@ public class starwars
 	}
 	
 	
-	static WRITE_HANDLER( irq_ack_w )
+	public static WriteHandlerPtr irq_ack_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		cpu_set_irq_line(0, M6809_IRQ_LINE, CLEAR_LINE);
-	}
+	} };
 	
 	
 	

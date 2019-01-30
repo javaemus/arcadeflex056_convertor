@@ -45,7 +45,7 @@ public class mikie
 		return clock;
 	} };
 	
-	static WRITE_HANDLER( mikie_sh_irqtrigger_w )
+	public static WriteHandlerPtr mikie_sh_irqtrigger_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		static int last;
 	
@@ -57,12 +57,12 @@ public class mikie
 		}
 	
 		last = data;
-	}
+	} };
 	
-	static WRITE_HANDLER( mikie_coin_counter_w )
+	public static WriteHandlerPtr mikie_coin_counter_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		coin_counter_w(offset,data);
-	}
+	} };
 	
 	
 	public static Memory_ReadAddress readmem[]={

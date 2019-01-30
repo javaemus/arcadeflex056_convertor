@@ -119,7 +119,7 @@ public class ginganin
 	static int MC6809_FLAG = 0;
 	
 	
-	static WRITE_HANDLER( MC6840_control_port_0_w )
+	public static WriteHandlerPtr MC6840_control_port_0_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		/* MC6840 Emulation by Takahiro Nogi. 1999/09/27
 		(This routine hasn't been completed yet.) */
@@ -148,31 +148,31 @@ public class ginganin
 	#ifdef MAME_DEBUG
 		logerror("MC6840 Write:(0x%02X)0x%02X\n", MC6840_register0, data);
 	#endif
-	}
+	} };
 	
-	static WRITE_HANDLER( MC6840_control_port_1_w )
+	public static WriteHandlerPtr MC6840_control_port_1_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		/* MC6840 Emulation by Takahiro Nogi. 1999/09/27
 		(This routine hasn't been completed yet.) */
 	
 		MC6840_index1 = data;
-	}
+	} };
 	
-	static WRITE_HANDLER( MC6840_write_port_0_w )
+	public static WriteHandlerPtr MC6840_write_port_0_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		/* MC6840 Emulation by Takahiro Nogi. 1999/09/27
 		(This routine hasn't been completed yet.) */
 	
 		MC6840_register0 = data;
-	}
+	} };
 	
-	static WRITE_HANDLER( MC6840_write_port_1_w )
+	public static WriteHandlerPtr MC6840_write_port_1_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		/* MC6840 Emulation by Takahiro Nogi. 1999/09/27
 		(This routine hasn't been completed yet.) */
 	
 		MC6840_register1 = data;
-	}
+	} };
 	
 	public static Memory_ReadAddress sound_readmem[]={
 		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),

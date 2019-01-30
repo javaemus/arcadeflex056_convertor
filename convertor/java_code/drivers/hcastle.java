@@ -28,25 +28,25 @@ public class hcastle
 	WRITE_HANDLER( hcastle_pf1_control_w );
 	WRITE_HANDLER( hcastle_pf2_control_w );
 	
-	static WRITE_HANDLER( hcastle_bankswitch_w )
+	public static WriteHandlerPtr hcastle_bankswitch_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		unsigned char *RAM = memory_region(REGION_CPU1);
 		int bankaddress;
 	
 		bankaddress = 0x10000 + (data & 0x1f) * 0x2000;
 		cpu_setbank(1,&RAM[bankaddress]);
-	}
+	} };
 	
-	static WRITE_HANDLER( hcastle_soundirq_w )
+	public static WriteHandlerPtr hcastle_soundirq_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		cpu_cause_interrupt( 1, Z80_IRQ_INT );
-	}
+	} };
 	
-	static WRITE_HANDLER( hcastle_coin_w )
+	public static WriteHandlerPtr hcastle_coin_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		coin_counter_w(0,data & 0x40);
 		coin_counter_w(1,data & 0x80);
-	}
+	} };
 	
 	public static ReadHandlerPtr speedup_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
@@ -110,14 +110,14 @@ public class hcastle
 	
 	/*****************************************************************************/
 	
-	static WRITE_HANDLER( sound_bank_w )
+	public static WriteHandlerPtr sound_bank_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		unsigned char *RAM = memory_region(REGION_SOUND1);
 		int bank_A=0x20000 * (data&0x3);
 		int bank_B=0x20000 * ((data>>2)&0x3);
 	
 		K007232_bankswitch(0,RAM+bank_A,RAM+bank_B);
-	}
+	} };
 	
 	public static Memory_ReadAddress sound_readmem[]={
 		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),

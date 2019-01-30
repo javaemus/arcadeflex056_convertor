@@ -62,7 +62,7 @@ public class raiden
 	/***************************************************************************/
 	
 	public static ReadHandlerPtr raiden_shared_r  = new ReadHandlerPtr() { public int handler(int offset) { return raiden_shared_ram[offset]; } };
-	static WRITE_HANDLER( raiden_shared_w ) { raiden_shared_ram[offset]=data; }
+	public static WriteHandlerPtr raiden_shared_w = new WriteHandlerPtr() {public void handler(int offset, int data) { raiden_shared_ram[offset]=data; } };
 	
 	/******************************************************************************/
 	

@@ -63,13 +63,13 @@ public class _88games
 		}
 	} };
 	
-	static WRITE_HANDLER( bankedram_w )
+	public static WriteHandlerPtr bankedram_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		if (videobank) ram[offset] = data;
 		else K051316_0_w(offset,data);
-	}
+	} };
 	
-	static WRITE_HANDLER( k88games_5f84_w )
+	public static WriteHandlerPtr k88games_5f84_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		/* bits 0/1 coin counters */
 		coin_counter_w(0,data & 0x01);
@@ -85,12 +85,12 @@ public class _88games
 			sprintf(buf,"5f84 = %02x",data);
 			usrintf_showmessage(buf);
 		}
-	}
+	} };
 	
-	static WRITE_HANDLER( k88games_sh_irqtrigger_w )
+	public static WriteHandlerPtr k88games_sh_irqtrigger_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		cpu_cause_interrupt(1,0xff);
-	}
+	} };
 	
 	/* handle fake button for speed cheat */
 	public static ReadHandlerPtr cheat_r  = new ReadHandlerPtr() { public int handler(int offset)
@@ -114,7 +114,7 @@ public class _88games
 	static int invalid_code;
 	static int total_samples[] = { 0x39, 0x15 };
 	
-	static WRITE_HANDLER( speech_control_w )
+	public static WriteHandlerPtr speech_control_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		int reset = ( ( data >> 1 ) & 1 );
 		int start = ( ~data ) & 1;
@@ -125,13 +125,13 @@ public class _88games
 	
 		if (invalid_code == 0)
 			UPD7759_start_w( speech_chip, start );
-	}
+	} };
 	
-	static WRITE_HANDLER( speech_msg_w )
+	public static WriteHandlerPtr speech_msg_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		UPD7759_message_w( speech_chip, data );
 		invalid_code = (data == total_samples[speech_chip]);
-	}
+	} };
 	
 	public static Memory_ReadAddress readmem[]={
 		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),

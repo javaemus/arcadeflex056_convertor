@@ -20,12 +20,12 @@ public class irem
 	
 	static int port1,port2;
 	
-	static WRITE_HANDLER( irem_port1_w )
+	public static WriteHandlerPtr irem_port1_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		port1 = data;
-	}
+	} };
 	
-	static WRITE_HANDLER( irem_port2_w )
+	public static WriteHandlerPtr irem_port2_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		/* write latch */
 		if ((port2 & 0x01) && !(data & 0x01))
@@ -49,7 +49,7 @@ public class irem
 			}
 		}
 		port2 = data;
-	}
+	} };
 	
 	
 	public static ReadHandlerPtr irem_port1_r  = new ReadHandlerPtr() { public int handler(int offset)
@@ -69,7 +69,7 @@ public class irem
 	
 	
 	
-	static WRITE_HANDLER( irem_msm5205_w )
+	public static WriteHandlerPtr irem_msm5205_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		/* bits 2-4 select MSM5205 clock & 3b/4b playback mode */
 		MSM5205_playmode_w(0,(data >> 2) & 7);
@@ -78,12 +78,12 @@ public class irem
 		/* bits 0 and 1 reset the two chips */
 		MSM5205_reset_w(0,data & 1);
 		MSM5205_reset_w(1,data & 2);
-	}
+	} };
 	
-	static WRITE_HANDLER( irem_adpcm_w )
+	public static WriteHandlerPtr irem_adpcm_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		MSM5205_data_w(offset,data);
-	}
+	} };
 	
 	static void irem_adpcm_int(int data)
 	{
@@ -94,12 +94,12 @@ public class irem
 		MSM5205_vclk_w(1,0);
 	}
 	
-	static WRITE_HANDLER( irem_analog_w )
+	public static WriteHandlerPtr irem_analog_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 	#ifdef MAME_DEBUG
 	if (data&0x0f) usrintf_showmessage("analog sound %x",data&0x0f);
 	#endif
-	}
+	} };
 	
 	
 	struct AY8910interface irem_ay8910_interface =

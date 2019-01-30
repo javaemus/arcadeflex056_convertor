@@ -49,12 +49,12 @@ public class bking2
 		return 0;
 	} };
 	
-	static WRITE_HANDLER( bking2_sndnmi_enable_w )
+	public static WriteHandlerPtr bking2_sndnmi_enable_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		sndnmi_enable = 1;
-	}
+	} };
 	
-	static WRITE_HANDLER( bking2_soundlatch_w )
+	public static WriteHandlerPtr bking2_soundlatch_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		int i,code;
 	
@@ -65,7 +65,7 @@ public class bking2
 	
 		soundlatch_w(offset,code);
 		if (sndnmi_enable) cpu_cause_interrupt(1,Z80_NMI_INT);
-	}
+	} };
 	
 	
 	public static Memory_ReadAddress readmem[]={
@@ -307,11 +307,11 @@ public class bking2
 	};
 	
 	
-	static WRITE_HANDLER( portb_w )
+	public static WriteHandlerPtr portb_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		/* don't know what this is... could be a filter */
 		if (data != 0x00) logerror("portB = %02x\n",data);
-	}
+	} };
 	
 	static struct AY8910interface ay8910_interface =
 	{

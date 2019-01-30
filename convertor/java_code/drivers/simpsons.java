@@ -80,14 +80,14 @@ public class simpsons
 		new Memory_WriteAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static WRITE_HANDLER( z80_bankswitch_w )
+	public static WriteHandlerPtr z80_bankswitch_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		unsigned char *RAM = memory_region(REGION_CPU2);
 	
 		offset = 0x10000 + ( ( ( data & 7 ) - 2 ) * 0x4000 );
 	
 		cpu_setbank( 2, &RAM[ offset ] );
-	}
+	} };
 	
 	static int nmi_enabled;
 	
@@ -103,12 +103,12 @@ public class simpsons
 		cpu_set_nmi_line(1,ASSERT_LINE);
 	}
 	
-	static WRITE_HANDLER( z80_arm_nmi_w )
+	public static WriteHandlerPtr z80_arm_nmi_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 	//	sound_nmi_enabled = 1;
 		cpu_set_nmi_line(1,CLEAR_LINE);
 		timer_set(TIME_IN_USEC(50),0,nmi_callback);	/* kludge until the K053260 is emulated correctly */
-	}
+	} };
 	
 	public static Memory_ReadAddress z80_readmem[]={
 		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),

@@ -71,43 +71,43 @@ public class retofinv
 		return sharedram[offset];
 	} };
 	
-	static WRITE_HANDLER( retofinv_shared_ram_w )
+	public static WriteHandlerPtr retofinv_shared_ram_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		sharedram[offset] = data;
-	}
+	} };
 	
-	static WRITE_HANDLER( reset_cpu2_w )
+	public static WriteHandlerPtr reset_cpu2_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 	     if (data)
 		    cpu_set_reset_line(2,PULSE_LINE);
-	}
+	} };
 	
-	static WRITE_HANDLER( reset_cpu1_w )
+	public static WriteHandlerPtr reset_cpu1_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 	    if (data)
 		    cpu_set_reset_line(1,PULSE_LINE);
-	}
+	} };
 	
-	static WRITE_HANDLER( cpu1_halt_w )
+	public static WriteHandlerPtr cpu1_halt_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		cpu_set_halt_line(1, data ? CLEAR_LINE : ASSERT_LINE);
-	}
+	} };
 	
-	static WRITE_HANDLER( cpu2_m6000_w )
+	public static WriteHandlerPtr cpu2_m6000_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		cpu2_m6000 = data;
-	}
+	} };
 	
 	public static ReadHandlerPtr cpu0_mf800_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return cpu2_m6000;
 	} };
 	
-	static WRITE_HANDLER( soundcommand_w )
+	public static WriteHandlerPtr soundcommand_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 	      soundlatch_w(0, data);
 	      cpu_set_irq_line(2, 0, HOLD_LINE);
-	}
+	} };
 	
 	public static Memory_ReadAddress readmem[]={
 		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),

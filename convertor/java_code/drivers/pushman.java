@@ -72,14 +72,14 @@ public class pushman
 		return shared_ram[offset];
 	} };
 	
-	static WRITE_HANDLER( pushman_68000_w )
+	public static WriteHandlerPtr pushman_68000_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		if (offset==2 && (shared_ram[2]&2)==0 && data&2) {
 			latch=(shared_ram[1]<<8)|shared_ram[0];
 			new_latch=1;
 		}
 		shared_ram[offset]=data;
-	}
+	} };
 	
 	/******************************************************************************/
 	

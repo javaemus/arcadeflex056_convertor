@@ -85,11 +85,11 @@ public class sauro
 	WRITE_HANDLER( sauro_scroll1_w );
 	WRITE_HANDLER( sauro_scroll2_w );
 	
-	static WRITE_HANDLER( sauro_sound_command_w )
+	public static WriteHandlerPtr sauro_sound_command_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		data |= 0x80;
 		soundlatch_w(offset,data);
-	}
+	} };
 	
 	public static ReadHandlerPtr sauro_sound_command_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
@@ -98,10 +98,10 @@ public class sauro
 		return ret;
 	} };
 	
-	static WRITE_HANDLER( flip_screen_w )
+	public static WriteHandlerPtr flip_screen_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		flip_screen_set(data);
-	}
+	} };
 	
 	
 	public static Memory_ReadAddress readmem[]={

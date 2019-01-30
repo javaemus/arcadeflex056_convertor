@@ -420,7 +420,7 @@ public class toaplan2
 		return video_status;
 	}
 	
-	static WRITE_HANDLER( toaplan2_coin_w )
+	public static WriteHandlerPtr toaplan2_coin_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		/* +----------------+------ Bits 7-5 not used ------+--------------+ */
 		/* | Coin Lockout 2 | Coin Lockout 1 | Coin Count 2 | Coin Count 1 | */
@@ -441,7 +441,7 @@ public class toaplan2
 		{
 			logerror("Writing unknown upper bits (%02x) to coin control\n",data);
 		}
-	}
+	} };
 	static WRITE16_HANDLER( toaplan2_coin_word_w )
 	{
 		if (ACCESSING_LSB)
@@ -798,19 +798,19 @@ public class toaplan2
 		return battleg_common_RAM[offset * 2];
 	} };
 	
-	static WRITE_HANDLER( battleg_commram_check_w0 )
+	public static WriteHandlerPtr battleg_commram_check_w0 = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		data8_t *battleg_common_RAM = (data8_t *)battleg_commram16;
 	
 		battleg_common_RAM[1] = data;
-	}
+	} };
 	
 	static READ16_HANDLER( battleg_z80check_r )
 	{
 		return raizing_shared_ram[offset + 0x10] & 0xff;
 	}
 	
-	static WRITE_HANDLER( battleg_bankswitch_w )
+	public static WriteHandlerPtr battleg_bankswitch_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		data8_t *RAM = (data8_t *)memory_region(REGION_CPU2);
 		int bankaddress;
@@ -824,7 +824,7 @@ public class toaplan2
 			bankaddress = 0x10000 + 0x4000 * current_bank;
 			cpu_setbank(1, &RAM[bankaddress]);
 		}
-	}
+	} };
 	
 	static void raizing_oki6295_set_bankbase( int chip, int channel, int base )
 	{
@@ -843,29 +843,29 @@ public class toaplan2
 	}
 	
 	
-	static WRITE_HANDLER( raizing_okim6295_bankselect_0 )
+	public static WriteHandlerPtr raizing_okim6295_bankselect_0 = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		raizing_oki6295_set_bankbase( 0, 0,  (data       & 0x0f) * 0x10000);
 		raizing_oki6295_set_bankbase( 0, 1, ((data >> 4) & 0x0f) * 0x10000);
-	}
+	} };
 	
-	static WRITE_HANDLER( raizing_okim6295_bankselect_1 )
+	public static WriteHandlerPtr raizing_okim6295_bankselect_1 = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		raizing_oki6295_set_bankbase( 0, 2,  (data       & 0x0f) * 0x10000);
 		raizing_oki6295_set_bankbase( 0, 3, ((data >> 4) & 0x0f) * 0x10000);
-	}
+	} };
 	
-	static WRITE_HANDLER( raizing_okim6295_bankselect_2 )
+	public static WriteHandlerPtr raizing_okim6295_bankselect_2 = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		raizing_oki6295_set_bankbase( 1, 0,  (data       & 0x0f) * 0x10000);
 		raizing_oki6295_set_bankbase( 1, 1, ((data >> 4) & 0x0f) * 0x10000);
-	}
+	} };
 	
-	static WRITE_HANDLER( raizing_okim6295_bankselect_3 )
+	public static WriteHandlerPtr raizing_okim6295_bankselect_3 = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		raizing_oki6295_set_bankbase( 1, 2,  (data       & 0x0f) * 0x10000);
 		raizing_oki6295_set_bankbase( 1, 3, ((data >> 4) & 0x0f) * 0x10000);
-	}
+	} };
 	
 	static READ16_HANDLER( batrider_z80rom_r )
 	{
@@ -877,7 +877,7 @@ public class toaplan2
 		return batrider_Z80_ROM[offset + 0x8000] & 0xff;
 	}
 	
-	static WRITE_HANDLER( batrider_bankswitch_w )
+	public static WriteHandlerPtr batrider_bankswitch_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		data8_t *RAM = (data8_t *)memory_region(REGION_CPU2);
 		int bankaddress;
@@ -895,7 +895,7 @@ public class toaplan2
 				bankaddress = 0x4000 * current_bank;
 			cpu_setbank(1, &RAM[bankaddress]);
 		}
-	}
+	} };
 	
 	static READ16_HANDLER( batrider_sound_data_68000_r )
 	{
@@ -936,7 +936,7 @@ public class toaplan2
 		return 0;
 	} };
 	
-	static WRITE_HANDLER( batrider_sound_data_z80_w )
+	public static WriteHandlerPtr batrider_sound_data_z80_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		offset /= 2;
 		switch( offset )
@@ -952,7 +952,7 @@ public class toaplan2
 				logerror("Batrider Z80 sound data write %02x to offs:%02x  INVALID !!!\n", data, (offset | 4));
 				break;
 		}
-	}
+	} };
 	
 	
 	
@@ -971,10 +971,10 @@ public class toaplan2
 	{
 		return batrider_sound_data[offset];
 	} };
-	static WRITE_HANDLER( batrider_sound_data_z80_w1 )
+	public static WriteHandlerPtr batrider_sound_data_z80_w1 = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		batrider_sound_data[offset] = data;
-	}
+	} };
 	
 	
 	

@@ -248,10 +248,10 @@ public class grchamp
 	
 	/***************************************************************************/
 	static UINT8 *shareram;
-	static WRITE_HANDLER( shareram_w )
+	public static WriteHandlerPtr shareram_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		shareram[offset] = data;
-	}
+	} };
 	public static ReadHandlerPtr shareram_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return shareram[offset];

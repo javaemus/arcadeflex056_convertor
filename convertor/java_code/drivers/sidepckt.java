@@ -33,18 +33,18 @@ public class sidepckt
 	static int i8751_return;
 	
 	
-	static WRITE_HANDLER( sound_cpu_command_w )
+	public static WriteHandlerPtr sound_cpu_command_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 	    soundlatch_w(offset,data);
 	    cpu_cause_interrupt(1,M6502_INT_NMI);
-	}
+	} };
 	
 	public static ReadHandlerPtr sidepckt_i8751_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return i8751_return;
 	} };
 	
-	static WRITE_HANDLER( sidepckt_i8751_w )
+	public static WriteHandlerPtr sidepckt_i8751_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		int table_1[]={5,3,2};
 		int table_2[]={0x8e,0x42,0xad,0x58,0xec,0x85,0xdd,0x4c,0xad,0x9f,0x00,0x4c,0x7e,0x42,0xa2,0xff};
@@ -83,9 +83,9 @@ public class sidepckt
 				if (current_table==3) i8751_return=table_3[current_ptr++];
 				break;
 		}
-	}
+	} };
 	
-	static WRITE_HANDLER( sidepctj_i8751_w )
+	public static WriteHandlerPtr sidepctj_i8751_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		int table_1[]={5,3,0};
 		int table_2[]={0x8e,0x42,0xb2,0x58,0xec,0x85,0xdd,0x4c,0xad,0x9f,0x00,0x4c,0x7e,0x42,0xa7,0xff};
@@ -124,7 +124,7 @@ public class sidepckt
 				if (current_table==3) i8751_return=table_3[current_ptr++];
 				break;
 		}
-	}
+	} };
 	
 	/******************************************************************************/
 	

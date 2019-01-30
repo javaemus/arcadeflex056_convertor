@@ -75,15 +75,15 @@ public class thepit
 	WRITE_HANDLER( thepit_sound_enable_w );
 	WRITE_HANDLER( intrepid_graphics_bank_select_w );
 	
-	static WRITE_HANDLER( flip_screen_x_w )
+	public static WriteHandlerPtr flip_screen_x_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		flip_screen_x_set(data);
-	}
+	} };
 	
-	static WRITE_HANDLER( flip_screen_y_w )
+	public static WriteHandlerPtr flip_screen_y_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		flip_screen_y_set(data);
-	}
+	} };
 	
 	
 	public static Memory_ReadAddress thepit_readmem[]={

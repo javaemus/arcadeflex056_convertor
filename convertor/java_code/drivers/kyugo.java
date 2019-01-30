@@ -46,10 +46,10 @@ public class kyugo
 		return shared_ram[offset];
 	} };
 	
-	static WRITE_HANDLER( shared_ram_w )
+	public static WriteHandlerPtr shared_ram_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		shared_ram[offset] = data;
-	}
+	} };
 	
 	public static ReadHandlerPtr special_spriteram_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
@@ -122,13 +122,13 @@ public class kyugo
 	Sub_MemMap( flashgal, 0x7fff, 0xa000, 0x0000, 0xc080, 0xc040, 0xc000 )
 	Sub_MemMap( srdmissn, 0x7fff, 0x8000, 0x8800, 0xf400, 0xf401, 0xf402 )
 	
-	static WRITE_HANDLER( sub_cpu_control_w )
+	public static WriteHandlerPtr sub_cpu_control_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		if (data & 1)
 			cpu_set_reset_line(1,CLEAR_LINE);
 		else
 			cpu_set_reset_line(1,ASSERT_LINE);
-	}
+	} };
 	
 	#define Main_PortMap( name, base )								\
 		public static IO_WritePort name##_writeport[]={

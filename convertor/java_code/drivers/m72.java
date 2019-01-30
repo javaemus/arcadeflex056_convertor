@@ -140,50 +140,50 @@ public class m72
 	
 	***************************************************************************/
 	
-	static WRITE_HANDLER( bchopper_sample_trigger_w )
+	public static WriteHandlerPtr bchopper_sample_trigger_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		int a[6] = { 0x0000, 0x0010, 0x2510, 0x6510, 0x8510, 0x9310 };
 		if (data < 6) m72_set_sample_start(a[data]);
-	}
+	} };
 	
-	static WRITE_HANDLER( nspirit_sample_trigger_w )
+	public static WriteHandlerPtr nspirit_sample_trigger_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		int a[9] = { 0x0000, 0x0020, 0x2020, 0, 0x5720, 0, 0x7b60, 0x9b60, 0xc360 };
 		if (data < 9) m72_set_sample_start(a[data]);
-	}
+	} };
 	
-	static WRITE_HANDLER( imgfight_sample_trigger_w )
+	public static WriteHandlerPtr imgfight_sample_trigger_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		int a[7] = { 0x0000, 0x0020, 0x44e0, 0x98a0, 0xc820, 0xf7a0, 0x108c0 };
 		if (data < 7) m72_set_sample_start(a[data]);
-	}
+	} };
 	
-	static WRITE_HANDLER( loht_sample_trigger_w )
+	public static WriteHandlerPtr loht_sample_trigger_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		int a[7] = { 0x0000, 0x0020, 0, 0x2c40, 0x4320, 0x7120, 0xb200 };
 		if (data < 7) m72_set_sample_start(a[data]);
-	}
+	} };
 	
-	static WRITE_HANDLER( xmultipl_sample_trigger_w )
+	public static WriteHandlerPtr xmultipl_sample_trigger_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		int a[3] = { 0x0000, 0x0020, 0x1a40 };
 		if (data < 3) m72_set_sample_start(a[data]);
-	}
+	} };
 	
-	static WRITE_HANDLER( dbreed_sample_trigger_w )
+	public static WriteHandlerPtr dbreed_sample_trigger_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		int a[9] = { 0x00000, 0x00020, 0x02c40, 0x08160, 0x0c8c0, 0x0ffe0, 0x13000, 0x15820, 0x15f40 };
 		if (data < 9) m72_set_sample_start(a[data]);
-	}
+	} };
 	
-	static WRITE_HANDLER( airduel_sample_trigger_w )
+	public static WriteHandlerPtr airduel_sample_trigger_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		int a[16] = { 0x00000, 0x00020, 0x03ec0, 0x05640, 0x06dc0, 0x083a0, 0x0c000, 0x0eb60,
 					  0x112e0, 0x13dc0, 0x16520, 0x16d60, 0x18ae0, 0x1a5a0, 0x1bf00, 0x1c340 };
 		if (data < 16) m72_set_sample_start(a[data]);
-	}
+	} };
 	
-	static WRITE_HANDLER( gallop_sample_trigger_w )
+	public static WriteHandlerPtr gallop_sample_trigger_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		/* this is most likely wrong */
 		int a[31] = { 0x00000, 0x00040, 0x01360, 0x02580, 0x04f20, 0x06240, 0x076e0, 0x08660,
@@ -191,7 +191,7 @@ public class m72
 					  0x11380, 0x127a0, 0x13c40, 0x140a0, 0x16760, 0x17e40, 0x18ee0, 0x19f60,
 					  0x1bbc0, 0x1cee0, 0x1e320,       0,       0,       0,       0 };
 		if (data < 31) m72_set_sample_start(a[data]);
-	}
+	} };
 	
 	
 	
@@ -386,13 +386,13 @@ public class m72
 		return protection_ram[offset];
 	} };
 	
-	static WRITE_HANDLER( protection_w )
+	public static WriteHandlerPtr protection_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		protection_ram[offset] = data ^ 0xff;;
 	
 		if (offset == 0x0fff && data == 0)
 			memcpy(&protection_ram[0x0fe0],protection_crc,CRC_LEN);
-	}
+	} };
 	
 	static void install_protection_handler(unsigned char *code,unsigned char *crc)
 	{
@@ -493,10 +493,10 @@ public class m72
 		return soundram[offset];
 	} };
 	
-	static WRITE_HANDLER( soundram_w )
+	public static WriteHandlerPtr soundram_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		soundram[offset] = data;
-	}
+	} };
 	
 	
 	public static ReadHandlerPtr poundfor_trackball_r  = new ReadHandlerPtr() { public int handler(int offset)

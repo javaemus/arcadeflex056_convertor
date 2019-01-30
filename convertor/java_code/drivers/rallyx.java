@@ -81,22 +81,22 @@ public class rallyx
 	void rallyx_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	
 	
-	static WRITE_HANDLER( rallyx_coin_lockout_w )
+	public static WriteHandlerPtr rallyx_coin_lockout_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		coin_lockout_w(offset, data ^ 1);
-	}
+	} };
 	
-	static WRITE_HANDLER( rallyx_coin_counter_w )
+	public static WriteHandlerPtr rallyx_coin_counter_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		coin_counter_w(offset, data);
-	}
+	} };
 	
-	static WRITE_HANDLER( rallyx_leds_w )
+	public static WriteHandlerPtr rallyx_leds_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		set_led_status(offset,data & 1);
-	}
+	} };
 	
-	static WRITE_HANDLER( rallyx_play_sound_w )
+	public static WriteHandlerPtr rallyx_play_sound_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		static int last;
 	
@@ -105,7 +105,7 @@ public class rallyx
 			sample_start(0,0,0);
 	
 		last = data;
-	}
+	} };
 	
 	public static Memory_ReadAddress readmem[]={
 		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),

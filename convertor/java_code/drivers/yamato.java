@@ -117,14 +117,14 @@ public class yamato
 	
 	static int p0,p1;
 	
-	static WRITE_HANDLER( p0_w )
+	public static WriteHandlerPtr p0_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		p0 = data;
-	}
-	static WRITE_HANDLER( p1_w )
+	} };
+	public static WriteHandlerPtr p1_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		p1 = data;
-	}
+	} };
 	public static ReadHandlerPtr p0_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return p0;
@@ -134,15 +134,15 @@ public class yamato
 		return p1;
 	} };
 	
-	static WRITE_HANDLER( flip_screen_x_w )
+	public static WriteHandlerPtr flip_screen_x_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		flip_screen_x_set(data);
-	}
+	} };
 	
-	static WRITE_HANDLER( flip_screen_y_w )
+	public static WriteHandlerPtr flip_screen_y_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		flip_screen_y_set(data);
-	}
+	} };
 	
 	
 	public static Memory_ReadAddress yamato_readmem[]={

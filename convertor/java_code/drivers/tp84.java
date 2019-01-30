@@ -113,10 +113,10 @@ public class tp84
 		return sharedram[offset];
 	} };
 	
-	static WRITE_HANDLER( sharedram_w )
+	public static WriteHandlerPtr sharedram_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		sharedram[offset] = data;
-	}
+	} };
 	
 	
 	
@@ -129,7 +129,7 @@ public class tp84
 		return (cpu_gettotalcycles() / (2048/2)) & 0x0f;
 	} };
 	
-	static WRITE_HANDLER( tp84_filter_w )
+	public static WriteHandlerPtr tp84_filter_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		int C;
 	
@@ -154,12 +154,12 @@ public class tp84
 		C = 0;
 		if (offset & 0x100) C += 470000;	/* 470000pF = 0.47uF */
 		set_RC_filter(2,1000,2200,1000,C);
-	}
+	} };
 	
-	static WRITE_HANDLER( tp84_sh_irqtrigger_w )
+	public static WriteHandlerPtr tp84_sh_irqtrigger_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		cpu_cause_interrupt(2,0xff);
-	}
+	} };
 	
 	
 	

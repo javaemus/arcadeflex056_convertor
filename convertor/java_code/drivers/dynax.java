@@ -90,18 +90,18 @@ public class dynax
 									Sports Match
 	***************************************************************************/
 	
-	static WRITE_HANDLER( sprtmtch_coincounter_0_w )
+	public static WriteHandlerPtr sprtmtch_coincounter_0_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		coin_counter_w(0, data & 1);
 		if (data & ~1)
 			logerror("CPU#0 PC %06X: Warning, coin counter 0 <- %02X\n", cpu_get_pc(), data);
-	}
-	static WRITE_HANDLER( sprtmtch_coincounter_1_w )
+	} };
+	public static WriteHandlerPtr sprtmtch_coincounter_1_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		coin_counter_w(1, data & 1);
 		if (data & ~1)
 			logerror("CPU#0 PC %06X: Warning, coin counter 1 <- %02X\n", cpu_get_pc(), data);
-	}
+	} };
 	
 	public static ReadHandlerPtr ret_ff  = new ReadHandlerPtr() { public int handler(int offset)	{	return 0xff;	} };
 	

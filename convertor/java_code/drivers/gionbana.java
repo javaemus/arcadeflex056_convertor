@@ -424,7 +424,7 @@ public class gionbana
 		new IO_ReadPort(MEMPORT_MARKER, 0)
 	};
 	
-	static WRITE_HANDLER( io_gionbana_w )
+	public static WriteHandlerPtr io_gionbana_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		offset = (((offset & 0xff00) >> 8) | ((offset & 0x00ff) << 8));
 	
@@ -455,7 +455,7 @@ public class gionbana
 			case	0xe000:	gionbana_vramsel_w(data); break;
 			case	0xf000:	nb1413m3_outcoin_w(data); break;
 		}
-	}
+	} };
 	
 	public static IO_WritePort writeport_gionbana[]={
 		new IO_WritePort(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_IO | MEMPORT_WIDTH_8),
@@ -463,7 +463,7 @@ public class gionbana
 		new IO_WritePort(MEMPORT_MARKER, 0)
 	};
 	
-	static WRITE_HANDLER( io_hanamomo_w )
+	public static WriteHandlerPtr io_hanamomo_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		offset = (((offset & 0xff00) >> 8) | ((offset & 0x00ff) << 8));
 	
@@ -494,7 +494,7 @@ public class gionbana
 			case	0xe000:	break;
 			case	0xf000:	break;
 		}
-	}
+	} };
 	
 	public static IO_WritePort writeport_hanamomo[]={
 		new IO_WritePort(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_IO | MEMPORT_WIDTH_8),
@@ -502,7 +502,7 @@ public class gionbana
 		new IO_WritePort(MEMPORT_MARKER, 0)
 	};
 	
-	static WRITE_HANDLER( io_msjiken_w )
+	public static WriteHandlerPtr io_msjiken_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		offset = (((offset & 0xff00) >> 8) | ((offset & 0x00ff) << 8));
 	
@@ -533,7 +533,7 @@ public class gionbana
 			case	0xe000:	break;
 			case	0xf000:	break;
 		}
-	}
+	} };
 	
 	public static IO_WritePort writeport_msjiken[]={
 		new IO_WritePort(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_IO | MEMPORT_WIDTH_8),
@@ -541,7 +541,7 @@ public class gionbana
 		new IO_WritePort(MEMPORT_MARKER, 0)
 	};
 	
-	static WRITE_HANDLER( io_scandal_w )
+	public static WriteHandlerPtr io_scandal_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		offset = (((offset & 0xff00) >> 8) | ((offset & 0x00ff) << 8));
 	
@@ -577,7 +577,7 @@ public class gionbana
 			case	0xe000:	break;
 			case	0xf000:	break;
 		}
-	}
+	} };
 	
 	public static IO_WritePort writeport_scandal[]={
 		new IO_WritePort(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_IO | MEMPORT_WIDTH_8),
@@ -610,7 +610,7 @@ public class gionbana
 		new IO_ReadPort(MEMPORT_MARKER, 0)
 	};
 	
-	static WRITE_HANDLER( io_scandalm_w )
+	public static WriteHandlerPtr io_scandalm_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		offset = (((offset & 0xff00) >> 8) | ((offset & 0x00ff) << 8));
 	
@@ -646,7 +646,7 @@ public class gionbana
 			case	0xe000:	break;
 			case	0xf000:	nb1413m3_outcoin_w(data); break;
 		}
-	}
+	} };
 	
 	public static IO_WritePort writeport_scandalm[]={
 		new IO_WritePort(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_IO | MEMPORT_WIDTH_8),
@@ -654,7 +654,7 @@ public class gionbana
 		new IO_WritePort(MEMPORT_MARKER, 0)
 	};
 	
-	static WRITE_HANDLER( io_bananadr_w )
+	public static WriteHandlerPtr io_bananadr_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		offset = (((offset & 0xff00) >> 8) | ((offset & 0x00ff) << 8));
 	
@@ -691,7 +691,7 @@ public class gionbana
 			case	0xe000:	break;
 			case	0xf000:	nb1413m3_outcoin_w(data); break;
 		}
-	}
+	} };
 	
 	public static IO_WritePort writeport_bananadr[]={
 		new IO_WritePort(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_IO | MEMPORT_WIDTH_8),
@@ -723,7 +723,7 @@ public class gionbana
 		new IO_ReadPort(MEMPORT_MARKER, 0)
 	};
 	
-	static WRITE_HANDLER( io_maiko_w )
+	public static WriteHandlerPtr io_maiko_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		offset = (((offset & 0xff00) >> 8) | ((offset & 0x00ff) << 8));
 	
@@ -754,7 +754,7 @@ public class gionbana
 			case	0xe000:	gionbana_vramsel_w(data); break;
 			case	0xf000:	nb1413m3_outcoin_w(data); break;
 		}
-	}
+	} };
 	
 	public static IO_WritePort writeport_maiko[]={
 		new IO_WritePort(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_IO | MEMPORT_WIDTH_8),

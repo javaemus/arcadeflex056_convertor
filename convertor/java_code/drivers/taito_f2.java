@@ -789,7 +789,7 @@ public class taito_f2
 		cpu_setbank( 2, memory_region(REGION_CPU2) + (banknum * 0x4000) + 0x10000 );
 	}
 	
-	static WRITE_HANDLER( sound_bankswitch_w )
+	public static WriteHandlerPtr sound_bankswitch_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		banknum = (data - 1) & 7;
 		reset_sound_region();
@@ -797,7 +797,7 @@ public class taito_f2
 	#ifdef MAME_DEBUG
 		if (banknum>2) logerror("CPU #1 switch to ROM bank %06x: should only happen if Z80 prg rom is 128K!\n",banknum);
 	#endif
-	}
+	} };
 	
 	
 	READ16_HANDLER( taitof2_sound_r )
@@ -4726,10 +4726,10 @@ public class taito_f2
 	};
 	
 	
-	static WRITE_HANDLER( camltrua_porta_w )
+	public static WriteHandlerPtr camltrua_porta_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		// Implement //
-	}
+	} };
 	
 	static struct YM2203interface ym2203_interface =
 	{

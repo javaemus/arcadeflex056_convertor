@@ -65,9 +65,6 @@ public class atarijsa
 	
 	static void update_all_volumes(void);
 	
-	static WRITE_HANDLER( jsa1_io_w );
-	static WRITE_HANDLER( jsa2_io_w );
-	static WRITE_HANDLER( jsa3_io_w );
 	
 	
 	/*************************************
@@ -215,7 +212,7 @@ public class atarijsa
 	} };
 	
 	
-	static WRITE_HANDLER( jsa1_io_w )
+	public static WriteHandlerPtr jsa1_io_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		switch (offset & 0x206)
 		{
@@ -281,7 +278,7 @@ public class atarijsa
 				update_all_volumes();
 				break;
 		}
-	}
+	} };
 	
 	
 	
@@ -341,7 +338,7 @@ public class atarijsa
 	} };
 	
 	
-	static WRITE_HANDLER( jsa2_io_w )
+	public static WriteHandlerPtr jsa2_io_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		switch (offset & 0x206)
 		{
@@ -402,7 +399,7 @@ public class atarijsa
 				update_all_volumes();
 				break;
 		}
-	}
+	} };
 	
 	
 	
@@ -460,7 +457,7 @@ public class atarijsa
 	} };
 	
 	
-	static WRITE_HANDLER( jsa3_io_w )
+	public static WriteHandlerPtr jsa3_io_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		switch (offset & 0x206)
 		{
@@ -533,7 +530,7 @@ public class atarijsa
 				update_all_volumes();
 				break;
 		}
-	}
+	} };
 	
 	
 	
@@ -596,7 +593,7 @@ public class atarijsa
 	} };
 	
 	
-	static WRITE_HANDLER( jsa3s_io_w )
+	public static WriteHandlerPtr jsa3s_io_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		switch (offset & 0x206)
 		{
@@ -676,7 +673,7 @@ public class atarijsa
 				update_all_volumes();
 				break;
 		}
-	}
+	} };
 	
 	
 	

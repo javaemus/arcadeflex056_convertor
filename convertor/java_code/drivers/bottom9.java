@@ -48,11 +48,11 @@ public class bottom9
 		}
 	} };
 	
-	static WRITE_HANDLER( bottom9_bankedram1_w )
+	public static WriteHandlerPtr bottom9_bankedram1_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		if (K052109_selected) K052109_051960_w(offset,data);
 		else K051316_0_w(offset,data);
-	}
+	} };
 	
 	public static ReadHandlerPtr bottom9_bankedram2_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
@@ -60,13 +60,13 @@ public class bottom9
 		else return paletteram_r(offset);
 	} };
 	
-	static WRITE_HANDLER( bottom9_bankedram2_w )
+	public static WriteHandlerPtr bottom9_bankedram2_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		if (K052109_selected) K052109_051960_w(offset + 0x2000,data);
 		else paletteram_xBBBBBGGGGGRRRRR_swap_w(offset,data);
-	}
+	} };
 	
-	static WRITE_HANDLER( bankswitch_w )
+	public static WriteHandlerPtr bankswitch_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		unsigned char *RAM = memory_region(REGION_CPU1);
 		int offs;
@@ -78,9 +78,9 @@ public class bottom9
 		if (data & 0x10) offs = 0x20000 + (data & 0x06) * 0x1000;
 		else offs = 0x10000 + (data & 0x0e) * 0x1000;
 		cpu_setbank(1,&RAM[offs]);
-	}
+	} };
 	
-	static WRITE_HANDLER( bottom9_1f90_w )
+	public static WriteHandlerPtr bottom9_1f90_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		/* bits 0/1 = coin counters */
 		coin_counter_w(0,data & 0x01);
@@ -97,12 +97,12 @@ public class bottom9
 	
 		/* bit 5 = RAM bank */
 		K052109_selected = data & 0x20;
-	}
+	} };
 	
-	static WRITE_HANDLER( bottom9_sh_irqtrigger_w )
+	public static WriteHandlerPtr bottom9_sh_irqtrigger_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		cpu_cause_interrupt(1,0xff);
-	}
+	} };
 	
 	static int nmienable;
 	
@@ -112,12 +112,12 @@ public class bottom9
 		else return ignore_interrupt();
 	}
 	
-	static WRITE_HANDLER( nmi_enable_w )
+	public static WriteHandlerPtr nmi_enable_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		nmienable = data;
-	}
+	} };
 	
-	static WRITE_HANDLER( sound_bank_w )
+	public static WriteHandlerPtr sound_bank_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		unsigned char *RAM;
 		int bank_A,bank_B;
@@ -130,7 +130,7 @@ public class bottom9
 		bank_A = 0x20000 * ((data >> 4) & 0x03);
 		bank_B = 0x20000 * ((data >> 6) & 0x03);
 		K007232_bankswitch(1,RAM + bank_A,RAM + bank_B);
-	}
+	} };
 	
 	
 	

@@ -221,7 +221,7 @@ public class argus
 		return argus_bank_latch;
 	} };
 	
-	static WRITE_HANDLER( argus_bankselect_w )
+	public static WriteHandlerPtr argus_bankselect_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		data8_t *RAM = memory_region(REGION_CPU1);
 		int bankaddress;
@@ -232,12 +232,12 @@ public class argus
 			bankaddress = 0x10000 + ((data & 7) * 0x4000);
 			cpu_setbank(1, &RAM[bankaddress]);	 /* Select 8 banks of 16k */
 		}
-	}
+	} };
 	
-	static WRITE_HANDLER( butasan_pageselect_w )
+	public static WriteHandlerPtr butasan_pageselect_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		butasan_page_latch = data;
-	}
+	} };
 	
 	public static ReadHandlerPtr butasan_pagedram_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
@@ -267,7 +267,7 @@ public class argus
 		return 0;
 	} };
 	
-	static WRITE_HANDLER( butasan_pagedram_w )
+	public static WriteHandlerPtr butasan_pagedram_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		if (!(butasan_page_latch & 0x01))
 		{
@@ -292,7 +292,7 @@ public class argus
 				butasan_txbackram_w( offset - 0x0800, data );
 			}
 		}
-	}
+	} };
 	
 	
 	/***************************************************************************

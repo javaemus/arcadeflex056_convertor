@@ -588,26 +588,26 @@ public class firetrk
 		return data;
 	} };
 	
-	static WRITE_HANDLER( steer_reset_w )
+	public static WriteHandlerPtr steer_reset_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		firetruck_bit7_flags |= 0x0c;
 		firetruck_steer1 = readinputport(4);
 		firetruck_steer2 = readinputport(5);
-	}
+	} };
 	
-	static WRITE_HANDLER( crash_reset_w )
+	public static WriteHandlerPtr crash_reset_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		firetruck_bit7_flags &= ~0x40;
-	}
+	} };
 	
-	static WRITE_HANDLER( skid_reset_w )
+	public static WriteHandlerPtr skid_reset_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		firetruck_bit0_flags &= ~0x40;
 		// Clear skip sound output, Preset to D-Type, fed into NAND with crash noise
 		discrete_sound_w(0x04,0x00);
-	}
+	} };
 	
-	static WRITE_HANDLER( firetruck_out_w )
+	public static WriteHandlerPtr firetruck_out_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		firetruck_invert_display = data&0x04;
 		//		x-------	0x80 BELLOUT
@@ -620,33 +620,33 @@ public class firetrk
 		//		-------x	0x01 LED for START button
 		discrete_sound_w(0x06,!(data&0x10));	// Attract
 		discrete_sound_w(0x05,(data&0x80)?0x00:0x01);	// Bell
-	}
+	} };
 	
-	static WRITE_HANDLER( firetruck_motorsnd_w )
+	public static WriteHandlerPtr firetruck_motorsnd_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		//		xxxx----	0xf0 Siren Frequency
 		//		----xxxx	0x0f Motor Frequency
 		discrete_sound_w(0x00,data&0x0f);
 		discrete_sound_w(0x02,(data&0xf0)>>4);
-	}
+	} };
 	
-	static WRITE_HANDLER( firetruck_crashsnd_w )
+	public static WriteHandlerPtr firetruck_crashsnd_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		//		xxxx----	0xf0 Crash Volume
 		discrete_sound_w(0x03,(data&0xf0)>>4);
-	}
+	} };
 	
-	static WRITE_HANDLER( firetruck_skidsnd_w )
+	public static WriteHandlerPtr firetruck_skidsnd_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		//		Write starts the skid sound, Clear input to D-Type, fed into NAND with crash noise
 		discrete_sound_w(0x04,0x01);
-	}
+	} };
 	
-	static WRITE_HANDLER( firetruck_xtndply_w )
+	public static WriteHandlerPtr firetruck_xtndply_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		//		-------x	0x01 Extend play sound
 		discrete_sound_w(0x07,!(data&0x01));
-	}
+	} };
 	
 	
 	

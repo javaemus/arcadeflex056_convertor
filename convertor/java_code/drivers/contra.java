@@ -64,10 +64,10 @@ public class contra
 		if (data & 0x02) coin_counter_w(1,(data & 0x02) >> 1);
 	}
 	
-	static WRITE_HANDLER( cpu_sound_command_w )
+	public static WriteHandlerPtr cpu_sound_command_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		soundlatch_w(offset,data);
-	}
+	} };
 	
 	
 	

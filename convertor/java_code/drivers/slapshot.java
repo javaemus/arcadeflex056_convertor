@@ -185,11 +185,11 @@ public class slapshot
 		cpu_setbank( 10, memory_region(REGION_CPU2) + (banknum * 0x4000) + 0x10000 );
 	}
 	
-	static WRITE_HANDLER( sound_bankswitch_w )
+	public static WriteHandlerPtr sound_bankswitch_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		banknum = (data - 1) & 7;
 		reset_sound_region();
-	}
+	} };
 	
 	static WRITE16_HANDLER( slapshot_msb_sound_w )
 	{

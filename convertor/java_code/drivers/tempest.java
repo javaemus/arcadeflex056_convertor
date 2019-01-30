@@ -188,14 +188,14 @@ public class tempest
 		return res;
 	} };
 	
-	static WRITE_HANDLER( tempest_led_w )
+	public static WriteHandlerPtr tempest_led_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		set_led_status(0, ~data & 0x02);
 		set_led_status(1, ~data & 0x01);
 		/* FLIP is bit 0x04 */
-	}
+	} };
 	
-	static WRITE_HANDLER( tempest_coin_w )
+	public static WriteHandlerPtr tempest_coin_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		coin_counter_w (0, (data & 0x01));
 		coin_counter_w (1, (data & 0x02));
@@ -203,7 +203,7 @@ public class tempest
 		vector_set_flip_x (data & 0x08);
 		vector_set_flip_y (data & 0x10);
 		vector_set_swap_xy (1);	/* vertical game */
-	}
+	} };
 	
 	public static Memory_ReadAddress readmem[]={
 		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),

@@ -28,22 +28,13 @@ public class qix
 	
 	
 	/* Prototypes */
-	static WRITE_HANDLER( qixmcu_coinctrl_w );
-	static WRITE_HANDLER( qixmcu_coin_w );
 	
-	static WRITE_HANDLER( qix_dac_w );
-	static WRITE_HANDLER( sync_pia_4_porta_w );
 	
-	static WRITE_HANDLER( qix_inv_flag_w );
 	
-	static WRITE_HANDLER( qix_coinctl_w );
-	static WRITE_HANDLER( slither_coinctl_w );
 	
 	static void qix_pia_sint(int state);
 	static void qix_pia_dint(int state);
 	
-	static WRITE_HANDLER( slither_76489_0_w );
-	static WRITE_HANDLER( slither_76489_1_w );
 	
 	
 	
@@ -385,10 +376,10 @@ public class qix
 	 *
 	 *************************************/
 	
-	static WRITE_HANDLER( qix_dac_w )
+	public static WriteHandlerPtr qix_dac_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		DAC_data_w(0, data);
-	}
+	} };
 	
 	
 	static void deferred_pia_4_porta_w(int data)
@@ -397,11 +388,11 @@ public class qix
 	}
 	
 	
-	static WRITE_HANDLER( sync_pia_4_porta_w )
+	public static WriteHandlerPtr sync_pia_4_porta_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		/* we need to synchronize this so the sound CPU doesn't drop anything important */
 		timer_set(TIME_NOW, data, deferred_pia_4_porta_w);
-	}
+	} };
 	
 	
 	
@@ -438,15 +429,15 @@ public class qix
 	}
 	
 	
-	static WRITE_HANDLER( qixmcu_coin_w )
+	public static WriteHandlerPtr qixmcu_coin_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		/* this is a callback called by pia_0_w(), so I don't need to synchronize */
 		/* the CPUs - they have already been synchronized by qix_pia_0_w() */
 		qix_68705_port_in[0] = data;
-	}
+	} };
 	
 	
-	static WRITE_HANDLER( qixmcu_coinctrl_w )
+	public static WriteHandlerPtr qixmcu_coinctrl_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		if (data & 0x04)
 		{
@@ -460,7 +451,7 @@ public class qix
 		/* this is a callback called by pia_0_w(), so I don't need to synchronize */
 		/* the CPUs - they have already been synchronized by qix_pia_0_w() */
 		qix_coinctrl = data;
-	}
+	} };
 	
 	
 	
@@ -581,10 +572,10 @@ public class qix
 	 *
 	 *************************************/
 	
-	static WRITE_HANDLER( qix_inv_flag_w )
+	public static WriteHandlerPtr qix_inv_flag_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		qix_cocktail_flip = data;
-	}
+	} };
 	
 	
 	
@@ -594,18 +585,18 @@ public class qix
 	 *
 	 *************************************/
 	
-	static WRITE_HANDLER( qix_coinctl_w )
+	public static WriteHandlerPtr qix_coinctl_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		coin_lockout_w(0, (~data >> 2) & 1);
 		coin_counter_w(0, (data >> 1) & 1);
-	}
+	} };
 	
 	
-	static WRITE_HANDLER( slither_coinctl_w )
+	public static WriteHandlerPtr slither_coinctl_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		coin_lockout_w(0, (~data >> 6) & 1);
 		coin_counter_w(0, (data >> 5) & 1);
-	}
+	} };
 	
 	
 	
@@ -615,7 +606,7 @@ public class qix
 	 *
 	 *************************************/
 	
-	static WRITE_HANDLER( slither_76489_0_w )
+	public static WriteHandlerPtr slither_76489_0_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		/* write to the sound chip */
 		SN76496_0_w(0, data);
@@ -623,10 +614,10 @@ public class qix
 		/* clock the ready line going back into CB1 */
 		pia_1_cb1_w(0, 0);
 		pia_1_cb1_w(0, 1);
-	}
+	} };
 	
 	
-	static WRITE_HANDLER( slither_76489_1_w )
+	public static WriteHandlerPtr slither_76489_1_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		/* write to the sound chip */
 		SN76496_1_w(0, data);
@@ -634,7 +625,7 @@ public class qix
 		/* clock the ready line going back into CB1 */
 		pia_2_cb1_w(0, 0);
 		pia_2_cb1_w(0, 1);
-	}
+	} };
 	
 	
 	

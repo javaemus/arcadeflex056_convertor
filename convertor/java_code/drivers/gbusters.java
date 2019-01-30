@@ -46,15 +46,15 @@ public class gbusters
 			return ram[offset];
 	} };
 	
-	static WRITE_HANDLER( bankedram_w )
+	public static WriteHandlerPtr bankedram_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		if (palette_selected)
 			paletteram_xBBBBBGGGGGRRRRR_swap_w(offset,data);
 		else
 			ram[offset] = data;
-	}
+	} };
 	
-	static WRITE_HANDLER( gbusters_1f98_w )
+	public static WriteHandlerPtr gbusters_1f98_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 	
 		/* bit 0 = enable char ROM reading through the video RAM */
@@ -67,9 +67,9 @@ public class gbusters
 			//logerror("%04x: (1f98) write %02x\n",cpu_get_pc(), data);
 			//usrintf_showmessage("$1f98 = %02x", data);
 		}
-	}
+	} };
 	
-	static WRITE_HANDLER( gbusters_coin_counter_w )
+	public static WriteHandlerPtr gbusters_coin_counter_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		/* bit 0 select palette RAM  or work RAM at 5800-5fff */
 		palette_selected = ~data & 0x01;
@@ -91,9 +91,9 @@ public class gbusters
 			sprintf(baf,"ccnt = %02x", data);
 	//		usrintf_showmessage(baf);
 		}
-	}
+	} };
 	
-	static WRITE_HANDLER( gbusters_unknown_w )
+	public static WriteHandlerPtr gbusters_unknown_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		logerror("%04x: write %02x to 0x1f9c\n",cpu_get_pc(), data);
 	
@@ -102,14 +102,14 @@ public class gbusters
 		sprintf(baf,"??? = %02x", data);
 	//	usrintf_showmessage(baf);
 	}
-	}
+	} };
 	
 	WRITE_HANDLER( gbusters_sh_irqtrigger_w )
 	{
 		cpu_cause_interrupt(1,0xff);
 	}
 	
-	static WRITE_HANDLER( gbusters_snd_bankswitch_w )
+	public static WriteHandlerPtr gbusters_snd_bankswitch_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		unsigned char *RAM = memory_region(REGION_SOUND1);
 	
@@ -125,7 +125,7 @@ public class gbusters
 			usrintf_showmessage(baf);
 		}
 	#endif
-	}
+	} };
 	
 	public static Memory_ReadAddress gbusters_readmem[]={
 		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),

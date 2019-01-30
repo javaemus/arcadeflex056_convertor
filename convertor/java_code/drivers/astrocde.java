@@ -125,7 +125,7 @@ public class astrocde
 	READ_HANDLER( ebases_trackball_r );
 	
 	
-	static WRITE_HANDLER( seawolf2_lamps_w )
+	public static WriteHandlerPtr seawolf2_lamps_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		/* 0x42 = player 2 (left), 0x43 = player 1 (right) */
 		/* --x----- explosion */
@@ -137,7 +137,7 @@ public class astrocde
 	
 		/* I'm only supporting the "RELOAD" lamp since we don't have enough leds ;-) */
 		set_led_status(offset^1,data & 0x10);
-	}
+	} };
 	
 	
 	public static Memory_ReadAddress seawolf2_readmem[]={

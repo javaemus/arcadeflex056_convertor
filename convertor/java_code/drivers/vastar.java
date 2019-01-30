@@ -94,29 +94,29 @@ public class vastar
 		cpu_set_reset_line(1,ASSERT_LINE);
 	}
 	
-	static WRITE_HANDLER( vastar_hold_cpu2_w )
+	public static WriteHandlerPtr vastar_hold_cpu2_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		/* I'm not sure that this works exactly like this */
 		if (data & 1)
 			cpu_set_reset_line(1,CLEAR_LINE);
 		else
 			cpu_set_reset_line(1,ASSERT_LINE);
-	}
+	} };
 	
 	public static ReadHandlerPtr vastar_sharedram_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return vastar_sharedram[offset];
 	} };
 	
-	static WRITE_HANDLER( vastar_sharedram_w )
+	public static WriteHandlerPtr vastar_sharedram_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		vastar_sharedram[offset] = data;
-	}
+	} };
 	
-	static WRITE_HANDLER( flip_screen_w )
+	public static WriteHandlerPtr flip_screen_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		flip_screen_set(data);
-	}
+	} };
 	
 	
 	

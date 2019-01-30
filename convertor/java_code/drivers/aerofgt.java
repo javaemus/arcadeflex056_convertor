@@ -113,12 +113,12 @@ public class aerofgt
 		return pending_command;
 	}
 	
-	static WRITE_HANDLER( pending_command_clear_w )
+	public static WriteHandlerPtr pending_command_clear_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		pending_command = 0;
-	}
+	} };
 	
-	static WRITE_HANDLER( aerofgt_sh_bankswitch_w )
+	public static WriteHandlerPtr aerofgt_sh_bankswitch_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		unsigned char *RAM = memory_region(REGION_CPU2);
 		int bankaddress;
@@ -126,7 +126,7 @@ public class aerofgt
 	
 		bankaddress = 0x10000 + (data & 0x03) * 0x8000;
 		cpu_setbank(1,&RAM[bankaddress]);
-	}
+	} };
 	
 	
 	

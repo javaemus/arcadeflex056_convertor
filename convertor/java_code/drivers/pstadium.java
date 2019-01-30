@@ -110,18 +110,18 @@ public class pstadium
 	WRITE_HANDLER( pstadium_paltbl_w );
 	
 	
-	static WRITE_HANDLER( pstadium_soundbank_w )
+	public static WriteHandlerPtr pstadium_soundbank_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		unsigned char *RAM = memory_region(REGION_CPU2);
 	
 		if (!(data & 0x80)) soundlatch_clear_w(0, 0);
 		cpu_setbank(1, &RAM[0x08000 + (0x8000 * (data & 0x03))]);
-	}
+	} };
 	
-	static WRITE_HANDLER( pstadium_sound_w )
+	public static WriteHandlerPtr pstadium_sound_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		soundlatch_w(0, data);
-	}
+	} };
 	
 	public static ReadHandlerPtr pstadium_sound_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
@@ -412,7 +412,7 @@ public class pstadium
 		new IO_ReadPort(MEMPORT_MARKER, 0)
 	};
 	
-	static WRITE_HANDLER( io_pstadium_w )
+	public static WriteHandlerPtr io_pstadium_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		offset = (((offset & 0xff00) >> 8) | ((offset & 0x00ff) << 8));
 	
@@ -439,7 +439,7 @@ public class pstadium
 			case	0xd000:	break;
 			case	0xf000:	nb1413m3_outcoin_w(data); break;
 		}
-	}
+	} };
 	
 	public static IO_WritePort writeport_pstadium[]={
 		new IO_WritePort(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_IO | MEMPORT_WIDTH_8),
@@ -447,7 +447,7 @@ public class pstadium
 		new IO_WritePort(MEMPORT_MARKER, 0)
 	};
 	
-	static WRITE_HANDLER( io_av2mj1_w )
+	public static WriteHandlerPtr io_av2mj1_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		offset = (((offset & 0xff00) >> 8) | ((offset & 0x00ff) << 8));
 	
@@ -474,7 +474,7 @@ public class pstadium
 			case	0xd000:	break;
 			case	0xf000:	break;
 		}
-	}
+	} };
 	
 	public static IO_WritePort writeport_av2mj1[]={
 		new IO_WritePort(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_IO | MEMPORT_WIDTH_8),
@@ -506,7 +506,7 @@ public class pstadium
 		new IO_ReadPort(MEMPORT_MARKER, 0)
 	};
 	
-	static WRITE_HANDLER( io_galkoku_w )
+	public static WriteHandlerPtr io_galkoku_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		offset = (((offset & 0xff00) >> 8) | ((offset & 0x00ff) << 8));
 	
@@ -540,7 +540,7 @@ public class pstadium
 			case	0xe000:	break;
 			case	0xf000:	nb1413m3_outcoin_w(data); break;
 		}
-	}
+	} };
 	
 	public static IO_WritePort writeport_galkoku[]={
 		new IO_WritePort(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_IO | MEMPORT_WIDTH_8),
@@ -573,7 +573,7 @@ public class pstadium
 		new IO_ReadPort(MEMPORT_MARKER, 0)
 	};
 	
-	static WRITE_HANDLER( io_hyouban_w )
+	public static WriteHandlerPtr io_hyouban_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		offset = (((offset & 0xff00) >> 8) | ((offset & 0x00ff) << 8));
 	
@@ -607,7 +607,7 @@ public class pstadium
 			case	0xe000:	break;
 			case	0xf000:	nb1413m3_outcoin_w(data); break;
 		}
-	}
+	} };
 	
 	public static IO_WritePort writeport_hyouban[]={
 		new IO_WritePort(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_IO | MEMPORT_WIDTH_8),

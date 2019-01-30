@@ -419,14 +419,14 @@ public class alpha68k
 	
 	/******************************************************************************/
 	
-	static WRITE_HANDLER( sound_bank_w )
+	public static WriteHandlerPtr sound_bank_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		int bankaddress;
 		unsigned char *RAM = memory_region(REGION_CPU2);
 	
 		bankaddress = 0x10000 + (data) * 0x4000;
 		cpu_setbank(7,&RAM[bankaddress]);
-	}
+	} };
 	
 	public static Memory_ReadAddress sound_readmem[]={
 		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),

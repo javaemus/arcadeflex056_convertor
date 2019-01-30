@@ -153,10 +153,10 @@ public class mcr2
 	 *
 	 *************************************/
 	
-	static WRITE_HANDLER( wacko_mux_select_w )
+	public static WriteHandlerPtr wacko_mux_select_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		wacko_mux_select = data & 1;
-	}
+	} };
 	
 	
 	public static ReadHandlerPtr wacko_trackball_r  = new ReadHandlerPtr() { public int handler(int offset)

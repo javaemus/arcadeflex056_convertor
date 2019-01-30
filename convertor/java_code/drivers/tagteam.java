@@ -37,11 +37,11 @@ public class tagteam
 	void tagteam_vh_stop (void);
 	void tagteam_vh_screenrefresh (struct mame_bitmap *bitmap, int full_refresh);
 	
-	static WRITE_HANDLER( sound_command_w )
+	public static WriteHandlerPtr sound_command_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		soundlatch_w(offset,data);
 		cpu_cause_interrupt(1,M6502_INT_IRQ);
-	}
+	} };
 	
 	
 	public static Memory_ReadAddress readmem[]={

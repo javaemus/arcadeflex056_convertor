@@ -47,7 +47,7 @@ public class dynduke
 	/***************************************************************************/
 	
 	public static ReadHandlerPtr dynduke_shared_r  = new ReadHandlerPtr() { public int handler(int offset) { return dynduke_shared_ram[offset]; } };
-	static WRITE_HANDLER( dynduke_shared_w ) { dynduke_shared_ram[offset]=data; }
+	public static WriteHandlerPtr dynduke_shared_w = new WriteHandlerPtr() {public void handler(int offset, int data) { dynduke_shared_ram[offset]=data; } };
 	
 	
 	/******************************************************************************/

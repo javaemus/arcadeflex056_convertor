@@ -130,13 +130,13 @@ public class taito_b
 	WRITE16_HANDLER( hitice_pixelram_w );
 	WRITE16_HANDLER( hitice_pixel_scroll_w );
 	
-	static WRITE_HANDLER( bankswitch_w )
+	public static WriteHandlerPtr bankswitch_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		unsigned char *RAM = memory_region(REGION_CPU2);
 		int banknum = (data - 1) & 3;
 	
 		cpu_setbank (1, &RAM [0x10000 + (banknum * 0x4000)]);
-	}
+	} };
 	
 	
 	

@@ -195,15 +195,15 @@ public class namcos86
 			sample_start( ch, voice[ch], 0 );
 	}
 	
-	static WRITE_HANDLER( namco_voice0_play_w ) {
+	public static WriteHandlerPtr namco_voice0_play_w = new WriteHandlerPtr() {public void handler(int offset, int data) {
 	
 		namco_voice_play(offset, data, 0);
-	}
+	} };
 	
-	static WRITE_HANDLER( namco_voice1_play_w ) {
+	public static WriteHandlerPtr namco_voice1_play_w = new WriteHandlerPtr() {public void handler(int offset, int data) {
 	
 		namco_voice_play(offset, data, 1);
-	}
+	} };
 	
 	/* select voice sample (Modified and Added by Takahiro Nogi. 1999/09/26) */
 	static void namco_voice_select( int offset, int data, int ch ) {
@@ -278,34 +278,34 @@ public class namcos86
 		voice[ch] = data - 1;
 	}
 	
-	static WRITE_HANDLER( namco_voice0_select_w ) {
+	public static WriteHandlerPtr namco_voice0_select_w = new WriteHandlerPtr() {public void handler(int offset, int data) {
 	
 		namco_voice_select(offset, data, 0);
-	}
+	} };
 	
-	static WRITE_HANDLER( namco_voice1_select_w ) {
+	public static WriteHandlerPtr namco_voice1_select_w = new WriteHandlerPtr() {public void handler(int offset, int data) {
 	
 		namco_voice_select(offset, data, 1);
-	}
+	} };
 	/*******************************************************************/
 	
 	/* shared memory area with the mcu */
 	static unsigned char *shared1;
 	public static ReadHandlerPtr shared1_r  = new ReadHandlerPtr() { public int handler(int offset) { return shared1[offset]; } };
-	static WRITE_HANDLER( shared1_w ) { shared1[offset] = data; }
+	public static WriteHandlerPtr shared1_w = new WriteHandlerPtr() {public void handler(int offset, int data) { shared1[offset] = data; } };
 	
 	
 	
-	static WRITE_HANDLER( spriteram_w )
+	public static WriteHandlerPtr spriteram_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		spriteram[offset] = data;
-	}
+	} };
 	public static ReadHandlerPtr spriteram_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return spriteram[offset];
 	} };
 	
-	static WRITE_HANDLER( bankswitch1_w )
+	public static WriteHandlerPtr bankswitch1_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		unsigned char *base = memory_region(REGION_CPU1) + 0x10000;
 	
@@ -314,23 +314,23 @@ public class namcos86
 		if (memory_region(REGION_USER1)) return;
 	
 		cpu_setbank(1,base + ((data & 0x03) * 0x2000));
-	}
+	} };
 	
-	static WRITE_HANDLER( bankswitch1_ext_w )
+	public static WriteHandlerPtr bankswitch1_ext_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		unsigned char *base = memory_region(REGION_USER1);
 	
 		if (base == 0) return;
 	
 		cpu_setbank(1,base + ((data & 0x1f) * 0x2000));
-	}
+	} };
 	
-	static WRITE_HANDLER( bankswitch2_w )
+	public static WriteHandlerPtr bankswitch2_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		unsigned char *base = memory_region(REGION_CPU2) + 0x10000;
 	
 		cpu_setbank(2,base + ((data & 0x03) * 0x2000));
-	}
+	} };
 	
 	/* Stubs to pass the correct Dip Switch setup to the MCU */
 	public static ReadHandlerPtr dsw0_r  = new ReadHandlerPtr() { public int handler(int offset)
@@ -369,15 +369,15 @@ public class namcos86
 	
 	static int int_enabled[2];
 	
-	static WRITE_HANDLER( int_ack1_w )
+	public static WriteHandlerPtr int_ack1_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		int_enabled[0] = 1;
-	}
+	} };
 	
-	static WRITE_HANDLER( int_ack2_w )
+	public static WriteHandlerPtr int_ack2_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		int_enabled[1] = 1;
-	}
+	} };
 	
 	static int namco86_interrupt1(void)
 	{
@@ -401,18 +401,18 @@ public class namcos86
 		return ignore_interrupt();
 	}
 	
-	static WRITE_HANDLER( namcos86_coin_w )
+	public static WriteHandlerPtr namcos86_coin_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		coin_lockout_global_w(data & 1);
 		coin_counter_w(0,~data & 2);
 		coin_counter_w(1,~data & 4);
-	}
+	} };
 	
-	static WRITE_HANDLER( namcos86_led_w )
+	public static WriteHandlerPtr namcos86_led_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		set_led_status(0,data & 0x08);
 		set_led_status(1,data & 0x10);
-	}
+	} };
 	
 	
 	/*******************************************************************/

@@ -245,10 +245,10 @@ public class system1
 		return work_ram[offset];
 	} };
 	
-	static WRITE_HANDLER( work_ram_w )
+	public static WriteHandlerPtr work_ram_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		work_ram[offset] = data;
-	}
+	} };
 	
 	public static Memory_ReadAddress sound_readmem[]={
 		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),

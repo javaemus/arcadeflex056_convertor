@@ -672,14 +672,14 @@ public class wmsyunit
 	 *************************************/
 	
 	static UINT8 *cvsd_protection_base;
-	static WRITE_HANDLER( cvsd_protection_w )
+	public static WriteHandlerPtr cvsd_protection_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		/* because the entire CVSD ROM is banked, we have to make sure that writes */
 		/* go to the proper location (i.e., bank 0); currently bank 0 always lives */
 		/* in the 0x10000-0x17fff space, so we just need to add 0x8000 to get the  */
 		/* proper offset */
 		cvsd_protection_base[0x8000 + offset] = data;
-	}
+	} };
 	
 	
 	static void init_generic(int bpp, int sound, int prot_start, int prot_end, int max_x, int max_y)

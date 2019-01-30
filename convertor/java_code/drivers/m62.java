@@ -178,7 +178,7 @@ public class m62
 		cpu_setbank(1,&RAM[bankaddress]);
 	}
 	
-	static WRITE_HANDLER( kidniki_bankswitch_w )
+	public static WriteHandlerPtr kidniki_bankswitch_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		int bankaddress;
 		unsigned char *RAM = memory_region(REGION_CPU1);
@@ -186,11 +186,11 @@ public class m62
 	
 		bankaddress = 0x10000 + (data & 0x0f) * 0x2000;
 		cpu_setbank(1,&RAM[bankaddress]);
-	}
+	} };
 	
 	#define battroad_bankswitch_w kidniki_bankswitch_w
 	
-	static WRITE_HANDLER( spelunkr_bankswitch_w )
+	public static WriteHandlerPtr spelunkr_bankswitch_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		int bankaddress;
 		unsigned char *RAM = memory_region(REGION_CPU1);
@@ -198,7 +198,7 @@ public class m62
 	
 		bankaddress = 0x10000 + (data & 0x03) * 0x2000;
 		cpu_setbank(1,&RAM[bankaddress]);
-	}
+	} };
 	
 	WRITE_HANDLER( spelunk2_bankswitch_w )
 	{
@@ -209,7 +209,7 @@ public class m62
 		cpu_setbank(2,&RAM[0x10000 + 0x0400 *  (data & 0x3c)]);
 	}
 	
-	static WRITE_HANDLER( youjyudn_bankswitch_w )
+	public static WriteHandlerPtr youjyudn_bankswitch_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		int bankaddress;
 		unsigned char *RAM = memory_region(REGION_CPU1);
@@ -217,7 +217,7 @@ public class m62
 	
 		bankaddress = 0x10000 + (data & 0x01) * 0x4000;
 		cpu_setbank(1,&RAM[bankaddress]);
-	}
+	} };
 	
 	
 	

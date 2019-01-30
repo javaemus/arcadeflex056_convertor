@@ -323,9 +323,9 @@ public class lsasquad
 		cpu_set_irq_line(1,0,irq ? ASSERT_LINE : CLEAR_LINE);
 	}
 	
-	static WRITE_HANDLER( unk )
+	public static WriteHandlerPtr unk = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
-	}
+	} };
 	
 	/* actually there is one AY8910 and one YM2203, but the sound core doesn't */
 	/* support that so we use 2 YM2203 */

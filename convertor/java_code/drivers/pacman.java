@@ -227,17 +227,17 @@ public class pacman
 		return interrupt();
 	}
 	
-	static WRITE_HANDLER( pacman_leds_w )
+	public static WriteHandlerPtr pacman_leds_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		set_led_status(offset,data & 1);
-	}
+	} };
 	
-	static WRITE_HANDLER( pacman_coin_counter_w )
+	public static WriteHandlerPtr pacman_coin_counter_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		coin_counter_w(offset,data & 1);
-	}
+	} };
 	
-	static WRITE_HANDLER( alibaba_sound_w )
+	public static WriteHandlerPtr alibaba_sound_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		/* since the sound region in Ali Baba is not contiguous, translate the
 		   offset into the 0-0x1f range */
@@ -247,7 +247,7 @@ public class pacman
 			spriteram_2[offset - 0x10] = data;
 		else
 			pengo_sound_w(offset - 0x10, data);
-	}
+	} };
 	
 	
 	public static ReadHandlerPtr alibaba_mystery_1_r  = new ReadHandlerPtr() { public int handler(int offset)
@@ -270,10 +270,10 @@ public class pacman
 	} };
 	
 	
-	static WRITE_HANDLER( pacman_coin_lockout_global_w )
+	public static WriteHandlerPtr pacman_coin_lockout_global_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		coin_lockout_global_w(~data & 0x01);
-	}
+	} };
 	
 	
 	public static Memory_ReadAddress readmem[]={

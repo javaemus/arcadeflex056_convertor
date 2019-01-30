@@ -180,18 +180,18 @@ public class tubep
 	
 	
 	
-	static WRITE_HANDLER( tubep_port80_w )
+	public static WriteHandlerPtr tubep_port80_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 	//  ???
 	//	if (data != 0x0f)
 	//		logerror("PORT80 data = %2x\n",data);
 	
 		return;
-	}
+	} };
 	
 	static unsigned char b01[2];
 	
-	static WRITE_HANDLER( tubep_portb01_w )
+	public static WriteHandlerPtr tubep_portb01_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		b01[offset] = data;
 	/*
@@ -202,22 +202,22 @@ public class tubep
 	//		usrintf_showmessage("CPU 0, port b0=%2x, b1=%2x", b01[0], b01[1]);
 	
 		return;
-	}
+	} };
 	
-	static WRITE_HANDLER( tubep_portb6_w )
+	public static WriteHandlerPtr tubep_portb6_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 	//	if (data)
 	//		usrintf_showmessage("CPU 0, port b6=%2x pc=%4x", data, cpu_get_pc() );
 	
 		return;
-	}
+	} };
 	
-	static WRITE_HANDLER( tubep_soundlatch_w )
+	public static WriteHandlerPtr tubep_soundlatch_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		sound_latch = data | 0x80;
 		//usrintf_showmessage("CPU 0 port d0=%4x", data );
 		//logerror("SOUND COMM WRITE %2x\n",sound_latch);
-	}
+	} };
 	
 	public static IO_WritePort tubep_writeport[]={
 		new IO_WritePort(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_IO | MEMPORT_WIDTH_8),
@@ -230,7 +230,7 @@ public class tubep
 	};
 	
 	
-	static WRITE_HANDLER( rjammer_soundlatch_w )
+	public static WriteHandlerPtr rjammer_soundlatch_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		sound_latch = data;
 		//usrintf_showmessage("CPU 0 soundlatch=%4x", data );
@@ -238,7 +238,7 @@ public class tubep
 		cpu_set_nmi_line(2, PULSE_LINE);
 	
 		logerror("RJAMMER SOUND COMM WRITE %2x\n",sound_latch);
-	}
+	} };
 	
 	public static IO_WritePort rjammer_writeport[]={
 		new IO_WritePort(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_IO | MEMPORT_WIDTH_8),
@@ -295,7 +295,7 @@ public class tubep
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static WRITE_HANDLER( tubep_a000_w )
+	public static WriteHandlerPtr tubep_a000_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 	/*
 		Z position of a tube (how deep in the tube we are)
@@ -303,8 +303,8 @@ public class tubep
 		range: 0x00-0xff
 	*/
 	//	usrintf_showmessage("A000=%2x",data);
-	}
-	static WRITE_HANDLER( tubep_c000_w )
+	} };
+	public static WriteHandlerPtr tubep_c000_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 	/*
 		X position of a tube
@@ -312,7 +312,7 @@ public class tubep
 		range: 0x00-0xff
 	*/
 	//	usrintf_showmessage("c000=%2x",data);
-	}
+	} };
 	
 	
 	public static Memory_WriteAddress tubep_g_writemem[]={
@@ -394,18 +394,18 @@ public class tubep
 		return 0;
 	} };
 	
-	static WRITE_HANDLER( tubep_sound_unknown )
+	public static WriteHandlerPtr tubep_sound_unknown = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		/*logerror("Sound CPU writes to port 0x07 - unknown function\n");*/
 		return;
-	}
+	} };
 	
-	static WRITE_HANDLER( rjammer_sound_unknown_w )
+	public static WriteHandlerPtr rjammer_sound_unknown_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		/*logerror("Sound CPU writes to port 0x80 - unknown function\n");*/
 		cpu_set_irq_line(2, 0, CLEAR_LINE); //?????
 		return;
-	}
+	} };
 	
 	public static Memory_ReadAddress tubep_sound_readmem[]={
 		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
@@ -474,30 +474,30 @@ public class tubep
 	};
 	
 	
-	static WRITE_HANDLER( ay8910_portA_0_w )
+	public static WriteHandlerPtr ay8910_portA_0_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 			//unknown sound control
-	}
-	static WRITE_HANDLER( ay8910_portB_0_w )
+	} };
+	public static WriteHandlerPtr ay8910_portB_0_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 			//unknown sound control
-	}
-	static WRITE_HANDLER( ay8910_portA_1_w )
+	} };
+	public static WriteHandlerPtr ay8910_portA_1_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 			//unknown sound control
-	}
-	static WRITE_HANDLER( ay8910_portB_1_w )
+	} };
+	public static WriteHandlerPtr ay8910_portB_1_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 			//unknown sound control
-	}
-	static WRITE_HANDLER( ay8910_portA_2_w )
+	} };
+	public static WriteHandlerPtr ay8910_portA_2_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 			//unknown sound control
-	}
-	static WRITE_HANDLER( ay8910_portB_2_w )
+	} };
+	public static WriteHandlerPtr ay8910_portB_2_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 			//unknown sound control
-	}
+	} };
 	
 	
 	static void scanline_callback(int scanline)

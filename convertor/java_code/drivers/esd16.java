@@ -122,13 +122,13 @@ public class esd16
 	
 	***************************************************************************/
 	
-	static WRITE_HANDLER( esd16_sound_rombank_w )
+	public static WriteHandlerPtr esd16_sound_rombank_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		int bank = data & 0x7;
 		if (data != bank)	logerror("CPU #1 - PC %04X: unknown bank bits: %02X\n",cpu_get_pc(),data);
 		if (bank >= 3)	bank += 1;
 		cpu_setbank(1, memory_region(REGION_CPU2) + 0x4000 * bank);
-	}
+	} };
 	
 	public static Memory_ReadAddress multchmp_sound_readmem[]={
 		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),

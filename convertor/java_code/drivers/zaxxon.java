@@ -130,15 +130,15 @@ public class zaxxon
 		zaxxon_vid_type = 2;
 	}
 	
-	static WRITE_HANDLER( zaxxon_coin_counter_w )
+	public static WriteHandlerPtr zaxxon_coin_counter_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		coin_counter_w(offset,data);
-	}
+	} };
 	
-	static WRITE_HANDLER( zaxxon_screen_flip_w )
+	public static WriteHandlerPtr zaxxon_screen_flip_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		flip_screen_set(~data & 1);
-	}
+	} };
 	
 	public static ReadHandlerPtr razmataz_unknown1_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{

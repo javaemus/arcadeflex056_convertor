@@ -87,9 +87,6 @@ public class mcr
 	static void mcr68_493_callback(int param);
 	static void zwackery_493_callback(int param);
 	
-	static WRITE_HANDLER( zwackery_pia_2_w );
-	static WRITE_HANDLER( zwackery_pia_3_w );
-	static WRITE_HANDLER( zwackery_ca2_w );
 	static void zwackery_pia_irq(int state);
 	
 	static void reload_count(int counter);
@@ -672,7 +669,7 @@ public class mcr
 	 *
 	 *************************************/
 	
-	static WRITE_HANDLER( mcr68_6840_w_common )
+	public static WriteHandlerPtr mcr68_6840_w_common = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		int i;
 	
@@ -739,7 +736,7 @@ public class mcr
 	
 			LOG(("%06X:Counter %d latch = %04X\n", cpu_getpreviouspc(), counter, m6840_state[counter].latch));
 		}
-	}
+	} };
 	
 	
 	static READ16_HANDLER( mcr68_6840_r_common )

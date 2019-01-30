@@ -58,7 +58,7 @@ public class popeye
 		}
 	} };
 	
-	static WRITE_HANDLER( protection_w )
+	public static WriteHandlerPtr protection_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		if (offset == 0)
 		{
@@ -70,7 +70,7 @@ public class popeye
 			prot0 = prot1;
 			prot1 = data;
 		}
-	}
+	} };
 	
 	
 	
@@ -347,13 +347,13 @@ public class popeye
 	
 	static int dswbit;
 	
-	static WRITE_HANDLER( popeye_portB_w )
+	public static WriteHandlerPtr popeye_portB_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		/* bit 0 does something - RV in the schematics */
 	
 		/* bits 1-3 select DSW1 bit to read */
 		dswbit = (data & 0x0e) >> 1;
-	}
+	} };
 	
 	public static ReadHandlerPtr popeye_portA_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{

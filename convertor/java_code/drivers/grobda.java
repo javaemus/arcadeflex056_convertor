@@ -42,16 +42,16 @@ public class grobda
 	void grobda_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	
 	
-	static WRITE_HANDLER( flip_screen_w )
+	public static WriteHandlerPtr flip_screen_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		flip_screen_set(data);
-	}
+	} };
 	
 	
-	static WRITE_HANDLER( grobda_DAC_w )
+	public static WriteHandlerPtr grobda_DAC_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		DAC_data_w(0, (data << 4) | data);
-	}
+	} };
 	
 	public static Memory_ReadAddress readmem_cpu1[]={
 		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),

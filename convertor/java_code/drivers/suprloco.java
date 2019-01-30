@@ -32,13 +32,13 @@ public class suprloco
 	READ_HANDLER( suprloco_control_r );
 	
 	
-	static WRITE_HANDLER( suprloco_soundport_w )
+	public static WriteHandlerPtr suprloco_soundport_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		soundlatch_w(0,data);
 		cpu_cause_interrupt(1,Z80_NMI_INT);
 		/* spin for a while to let the Z80 read the command (fixes hanging sound in Regulus) */
 		cpu_spinuntil_time(TIME_IN_USEC(50));
-	}
+	} };
 	
 	
 	public static Memory_ReadAddress readmem[]={

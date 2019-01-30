@@ -83,10 +83,10 @@ public class leprechn
 	
 	static UINT8 input_port_select;
 	
-	static WRITE_HANDLER( leprechn_input_port_select_w )
+	public static WriteHandlerPtr leprechn_input_port_select_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 	    input_port_select = data;
-	}
+	} };
 	
 	public static ReadHandlerPtr leprechn_input_port_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
@@ -120,11 +120,11 @@ public class leprechn
 	    return 0xc0;
 	} };
 	
-	static WRITE_HANDLER( leprechn_sh_w )
+	public static WriteHandlerPtr leprechn_sh_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 	    soundlatch_w(offset,data);
 	    cpu_cause_interrupt(1,M6502_INT_IRQ);
-	}
+	} };
 	
 	
 	

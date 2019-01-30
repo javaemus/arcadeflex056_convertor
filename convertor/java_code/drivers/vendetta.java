@@ -89,7 +89,7 @@ public class vendetta
 	
 	static int irq_enabled;
 	
-	static WRITE_HANDLER( vendetta_eeprom_w )
+	public static WriteHandlerPtr vendetta_eeprom_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		/* bit 0 - VOC0 - Video banking related */
 		/* bit 1 - VOC1 - Video banking related */
@@ -111,12 +111,12 @@ public class vendetta
 		irq_enabled = ( data >> 6 ) & 1;
 	
 		vendetta_video_banking( data & 1 );
-	}
+	} };
 	
 	/********************************************/
 	
 	public static ReadHandlerPtr vendetta_K052109_r  = new ReadHandlerPtr() { public int handler(int offset) { return K052109_r( offset + 0x2000 ); } };
-	static WRITE_HANDLER( vendetta_K052109_w ) { K052109_w( offset + 0x2000, data ); }
+	public static WriteHandlerPtr vendetta_K052109_w = new WriteHandlerPtr() {public void handler(int offset, int data) { K052109_w( offset + 0x2000, data ); } };
 	
 	static void vendetta_video_banking( int select )
 	{
@@ -136,7 +136,7 @@ public class vendetta
 		}
 	}
 	
-	static WRITE_HANDLER( vendetta_5fe0_w )
+	public static WriteHandlerPtr vendetta_5fe0_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 	//char baf[40];
 	//sprintf(baf,"5fe0 = %02x",data);
@@ -155,7 +155,7 @@ public class vendetta
 	
 		/* bit 5 = enable sprite ROM reading */
 		K053246_set_OBJCHA_line((data & 0x20) ? ASSERT_LINE : CLEAR_LINE);
-	}
+	} };
 	
 	public static ReadHandlerPtr speedup_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
@@ -179,17 +179,17 @@ public class vendetta
 		cpu_set_nmi_line( 1, ASSERT_LINE );
 	}
 	
-	static WRITE_HANDLER( z80_arm_nmi_w )
+	public static WriteHandlerPtr z80_arm_nmi_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		cpu_set_nmi_line( 1, CLEAR_LINE );
 	
 		timer_set( TIME_IN_USEC( 50 ), 0, z80_nmi_callback );
-	}
+	} };
 	
-	static WRITE_HANDLER( z80_irq_w )
+	public static WriteHandlerPtr z80_irq_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		cpu_cause_interrupt( 1, 0xff );
-	}
+	} };
 	
 	READ_HANDLER( vendetta_sound_interrupt_r )
 	{

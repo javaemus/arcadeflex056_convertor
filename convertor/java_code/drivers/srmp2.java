@@ -272,7 +272,7 @@ public class srmp2
 	}
 	
 	
-	static WRITE_HANDLER( srmp3_adpcm_code_w )
+	public static WriteHandlerPtr srmp3_adpcm_code_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 	/*
 		- Received data may be playing ADPCM number.
@@ -292,7 +292,7 @@ public class srmp2
 	
 		MSM5205_reset_w(0, 0);
 		srmp2_adpcm_data = -1;
-	}
+	} };
 	
 	
 	static void srmp2_adpcm_int(int num)
@@ -418,7 +418,7 @@ public class srmp2
 	}
 	
 	
-	static WRITE_HANDLER( srmp3_rombank_w )
+	public static WriteHandlerPtr srmp3_rombank_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 	/*
 		---x xxxx : MAIN ROM bank
@@ -434,7 +434,7 @@ public class srmp2
 		else addr = 0x10000;
 	
 		cpu_setbank(1, &ROM[addr]);
-	}
+	} };
 	
 	/**************************************************************************
 	
@@ -524,7 +524,7 @@ public class srmp2
 		return 0x01;
 	} };
 	
-	static WRITE_HANDLER( srmp3_input_1_w )
+	public static WriteHandlerPtr srmp3_input_1_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 	/*
 		---- --x- : Player 1 side flag ?
@@ -548,9 +548,9 @@ public class srmp2
 	
 	//		usrintf_showmessage("%04X %04X %04X %04X", qqq01, qqq02, qqq49, qqqzz);
 		}
-	}
+	} };
 	
-	static WRITE_HANDLER( srmp3_input_2_w )
+	public static WriteHandlerPtr srmp3_input_2_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 	
 		/* Key matrix reading related ? */
@@ -559,7 +559,7 @@ public class srmp2
 	
 		srmp2_port_select = 1;
 	
-	}
+	} };
 	
 	public static ReadHandlerPtr srmp3_input_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
@@ -606,7 +606,7 @@ public class srmp2
 		return keydata;
 	} };
 	
-	static WRITE_HANDLER( srmp3_flags_w )
+	public static WriteHandlerPtr srmp3_flags_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 	/*
 		---- ---x : Coin Counter
@@ -617,7 +617,7 @@ public class srmp2
 		coin_counter_w( 0, ((data & 0x01) >> 0) );
 		coin_lockout_w( 0, (((~data) & 0x10) >> 4) );
 		srmp3_gfx_bank = (data >> 6) & 0x03;
-	}
+	} };
 	
 	
 	public static Memory_ReadAddress srmp3_readmem[]={

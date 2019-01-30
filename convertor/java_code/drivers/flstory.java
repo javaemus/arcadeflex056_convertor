@@ -41,13 +41,13 @@ public class flstory
 	
 	int d400 = 0;
 	
-	static WRITE_HANDLER( sound_command_w )
+	public static WriteHandlerPtr sound_command_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		d400 = data;
 		soundlatch_w(0,data);
 		cpu_cause_interrupt(1,Z80_NMI_INT);
 	logerror("sound command %02x\n",data);
-	}
+	} };
 	
 	public static ReadHandlerPtr flstory_d401_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{

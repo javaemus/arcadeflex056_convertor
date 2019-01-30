@@ -12,13 +12,8 @@ public class beezer
 	
 	static int pbus;
 	
-	static WRITE_HANDLER( b_via_0_pa_w );
-	static WRITE_HANDLER( b_via_0_pb_w );
-	static WRITE_HANDLER( b_via_0_ca2_w );
 	static void b_via_0_irq (int level);
 	
-	static WRITE_HANDLER( b_via_1_pa_w );
-	static WRITE_HANDLER( b_via_1_pb_w );
 	static void b_via_1_irq (int level);
 	
 	static struct via6522_interface b_via_0_interface =
@@ -42,9 +37,9 @@ public class beezer
 		return 0;
 	} };
 	
-	static WRITE_HANDLER( b_via_0_ca2_w )
+	public static WriteHandlerPtr b_via_0_ca2_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
-	}
+	} };
 	
 	static void b_via_0_irq (int level)
 	{
@@ -56,7 +51,7 @@ public class beezer
 		return pbus;
 	} };
 	
-	static WRITE_HANDLER( b_via_0_pa_w )
+	public static WriteHandlerPtr b_via_0_pa_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		if ((data & 0x08) == 0)
 			cpu_set_reset_line(1, ASSERT_LINE);
@@ -81,12 +76,12 @@ public class beezer
 				break;
 			}
 		}
-	}
+	} };
 	
-	static WRITE_HANDLER( b_via_0_pb_w )
+	public static WriteHandlerPtr b_via_0_pb_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		pbus = data;
-	}
+	} };
 	
 	static void b_via_1_irq (int level)
 	{
@@ -103,14 +98,14 @@ public class beezer
 		return 0xff;
 	} };
 	
-	static WRITE_HANDLER( b_via_1_pa_w )
+	public static WriteHandlerPtr b_via_1_pa_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		pbus = data;
-	}
+	} };
 	
-	static WRITE_HANDLER( b_via_1_pb_w )
+	public static WriteHandlerPtr b_via_1_pb_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
-	}
+	} };
 	
 	void init_beezer(void)
 	{

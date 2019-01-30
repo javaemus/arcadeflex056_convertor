@@ -177,10 +177,10 @@ public class sailorws
 		return soundlatch_r(0);
 	}
 	
-	static WRITE_HANDLER( sailorws_sound_w )
+	public static WriteHandlerPtr sailorws_sound_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		soundlatch_w(0, data);
-	}
+	} };
 	
 	static void sailorws_soundclr_w(int offset, int data)
 	{
@@ -198,10 +198,10 @@ public class sailorws
 		else sailorws_outcoin_flag = 1;
 	}
 	
-	static WRITE_HANDLER( sailorws_inputportsel_w )
+	public static WriteHandlerPtr sailorws_inputportsel_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		sailorws_inputport = (data ^ 0xff);
-	}
+	} };
 	
 	static int sailorws_dipsw_r(void)
 	{
@@ -503,11 +503,11 @@ public class sailorws
 	public static ReadHandlerPtr tmpz84c011_0_pd_r  = new ReadHandlerPtr() { public int handler(int offset) { return (tmpz84c011_pio_r(3) & ~pio_dir[3]) | (pio_latch[3] & pio_dir[3]); } };
 	public static ReadHandlerPtr tmpz84c011_0_pe_r  = new ReadHandlerPtr() { public int handler(int offset) { return (tmpz84c011_pio_r(4) & ~pio_dir[4]) | (pio_latch[4] & pio_dir[4]); } };
 	
-	static WRITE_HANDLER( tmpz84c011_0_pa_w ) { pio_latch[0] = data; tmpz84c011_pio_w(0, data); }
-	static WRITE_HANDLER( tmpz84c011_0_pb_w ) { pio_latch[1] = data; tmpz84c011_pio_w(1, data); }
-	static WRITE_HANDLER( tmpz84c011_0_pc_w ) { pio_latch[2] = data; tmpz84c011_pio_w(2, data); }
-	static WRITE_HANDLER( tmpz84c011_0_pd_w ) { pio_latch[3] = data; tmpz84c011_pio_w(3, data); }
-	static WRITE_HANDLER( tmpz84c011_0_pe_w ) { pio_latch[4] = data; tmpz84c011_pio_w(4, data); }
+	public static WriteHandlerPtr tmpz84c011_0_pa_w = new WriteHandlerPtr() {public void handler(int offset, int data) { pio_latch[0] = data; tmpz84c011_pio_w(0, data); } };
+	public static WriteHandlerPtr tmpz84c011_0_pb_w = new WriteHandlerPtr() {public void handler(int offset, int data) { pio_latch[1] = data; tmpz84c011_pio_w(1, data); } };
+	public static WriteHandlerPtr tmpz84c011_0_pc_w = new WriteHandlerPtr() {public void handler(int offset, int data) { pio_latch[2] = data; tmpz84c011_pio_w(2, data); } };
+	public static WriteHandlerPtr tmpz84c011_0_pd_w = new WriteHandlerPtr() {public void handler(int offset, int data) { pio_latch[3] = data; tmpz84c011_pio_w(3, data); } };
+	public static WriteHandlerPtr tmpz84c011_0_pe_w = new WriteHandlerPtr() {public void handler(int offset, int data) { pio_latch[4] = data; tmpz84c011_pio_w(4, data); } };
 	
 	public static ReadHandlerPtr tmpz84c011_0_dir_pa_r  = new ReadHandlerPtr() { public int handler(int offset) { return pio_dir[0]; } };
 	public static ReadHandlerPtr tmpz84c011_0_dir_pb_r  = new ReadHandlerPtr() { public int handler(int offset) { return pio_dir[1]; } };
@@ -515,11 +515,11 @@ public class sailorws
 	public static ReadHandlerPtr tmpz84c011_0_dir_pd_r  = new ReadHandlerPtr() { public int handler(int offset) { return pio_dir[3]; } };
 	public static ReadHandlerPtr tmpz84c011_0_dir_pe_r  = new ReadHandlerPtr() { public int handler(int offset) { return pio_dir[4]; } };
 	
-	static WRITE_HANDLER( tmpz84c011_0_dir_pa_w ) { pio_dir[0] = data; }
-	static WRITE_HANDLER( tmpz84c011_0_dir_pb_w ) { pio_dir[1] = data; }
-	static WRITE_HANDLER( tmpz84c011_0_dir_pc_w ) { pio_dir[2] = data; }
-	static WRITE_HANDLER( tmpz84c011_0_dir_pd_w ) { pio_dir[3] = data; }
-	static WRITE_HANDLER( tmpz84c011_0_dir_pe_w ) { pio_dir[4] = data; }
+	public static WriteHandlerPtr tmpz84c011_0_dir_pa_w = new WriteHandlerPtr() {public void handler(int offset, int data) { pio_dir[0] = data; } };
+	public static WriteHandlerPtr tmpz84c011_0_dir_pb_w = new WriteHandlerPtr() {public void handler(int offset, int data) { pio_dir[1] = data; } };
+	public static WriteHandlerPtr tmpz84c011_0_dir_pc_w = new WriteHandlerPtr() {public void handler(int offset, int data) { pio_dir[2] = data; } };
+	public static WriteHandlerPtr tmpz84c011_0_dir_pd_w = new WriteHandlerPtr() {public void handler(int offset, int data) { pio_dir[3] = data; } };
+	public static WriteHandlerPtr tmpz84c011_0_dir_pe_w = new WriteHandlerPtr() {public void handler(int offset, int data) { pio_dir[4] = data; } };
 	
 	/* device 1 */
 	public static ReadHandlerPtr tmpz84c011_1_pa_r  = new ReadHandlerPtr() { public int handler(int offset) { return (tmpz84c011_pio_r(5) & ~pio_dir[5]) | (pio_latch[5] & pio_dir[5]); } };
@@ -528,11 +528,11 @@ public class sailorws
 	public static ReadHandlerPtr tmpz84c011_1_pd_r  = new ReadHandlerPtr() { public int handler(int offset) { return (tmpz84c011_pio_r(8) & ~pio_dir[8]) | (pio_latch[8] & pio_dir[8]); } };
 	public static ReadHandlerPtr tmpz84c011_1_pe_r  = new ReadHandlerPtr() { public int handler(int offset) { return (tmpz84c011_pio_r(9) & ~pio_dir[9]) | (pio_latch[9] & pio_dir[9]); } };
 	
-	static WRITE_HANDLER( tmpz84c011_1_pa_w ) { pio_latch[5] = data; tmpz84c011_pio_w(5, data); }
-	static WRITE_HANDLER( tmpz84c011_1_pb_w ) { pio_latch[6] = data; tmpz84c011_pio_w(6, data); }
-	static WRITE_HANDLER( tmpz84c011_1_pc_w ) { pio_latch[7] = data; tmpz84c011_pio_w(7, data); }
-	static WRITE_HANDLER( tmpz84c011_1_pd_w ) { pio_latch[8] = data; tmpz84c011_pio_w(8, data); }
-	static WRITE_HANDLER( tmpz84c011_1_pe_w ) { pio_latch[9] = data; tmpz84c011_pio_w(9, data); }
+	public static WriteHandlerPtr tmpz84c011_1_pa_w = new WriteHandlerPtr() {public void handler(int offset, int data) { pio_latch[5] = data; tmpz84c011_pio_w(5, data); } };
+	public static WriteHandlerPtr tmpz84c011_1_pb_w = new WriteHandlerPtr() {public void handler(int offset, int data) { pio_latch[6] = data; tmpz84c011_pio_w(6, data); } };
+	public static WriteHandlerPtr tmpz84c011_1_pc_w = new WriteHandlerPtr() {public void handler(int offset, int data) { pio_latch[7] = data; tmpz84c011_pio_w(7, data); } };
+	public static WriteHandlerPtr tmpz84c011_1_pd_w = new WriteHandlerPtr() {public void handler(int offset, int data) { pio_latch[8] = data; tmpz84c011_pio_w(8, data); } };
+	public static WriteHandlerPtr tmpz84c011_1_pe_w = new WriteHandlerPtr() {public void handler(int offset, int data) { pio_latch[9] = data; tmpz84c011_pio_w(9, data); } };
 	
 	public static ReadHandlerPtr tmpz84c011_1_dir_pa_r  = new ReadHandlerPtr() { public int handler(int offset) { return pio_dir[5]; } };
 	public static ReadHandlerPtr tmpz84c011_1_dir_pb_r  = new ReadHandlerPtr() { public int handler(int offset) { return pio_dir[6]; } };
@@ -540,11 +540,11 @@ public class sailorws
 	public static ReadHandlerPtr tmpz84c011_1_dir_pd_r  = new ReadHandlerPtr() { public int handler(int offset) { return pio_dir[8]; } };
 	public static ReadHandlerPtr tmpz84c011_1_dir_pe_r  = new ReadHandlerPtr() { public int handler(int offset) { return pio_dir[9]; } };
 	
-	static WRITE_HANDLER( tmpz84c011_1_dir_pa_w ) { pio_dir[5] = data; }
-	static WRITE_HANDLER( tmpz84c011_1_dir_pb_w ) { pio_dir[6] = data; }
-	static WRITE_HANDLER( tmpz84c011_1_dir_pc_w ) { pio_dir[7] = data; }
-	static WRITE_HANDLER( tmpz84c011_1_dir_pd_w ) { pio_dir[8] = data; }
-	static WRITE_HANDLER( tmpz84c011_1_dir_pe_w ) { pio_dir[9] = data; }
+	public static WriteHandlerPtr tmpz84c011_1_dir_pa_w = new WriteHandlerPtr() {public void handler(int offset, int data) { pio_dir[5] = data; } };
+	public static WriteHandlerPtr tmpz84c011_1_dir_pb_w = new WriteHandlerPtr() {public void handler(int offset, int data) { pio_dir[6] = data; } };
+	public static WriteHandlerPtr tmpz84c011_1_dir_pc_w = new WriteHandlerPtr() {public void handler(int offset, int data) { pio_dir[7] = data; } };
+	public static WriteHandlerPtr tmpz84c011_1_dir_pd_w = new WriteHandlerPtr() {public void handler(int offset, int data) { pio_dir[8] = data; } };
+	public static WriteHandlerPtr tmpz84c011_1_dir_pe_w = new WriteHandlerPtr() {public void handler(int offset, int data) { pio_dir[9] = data; } };
 	
 	
 	static void ctc0_interrupt(int state)

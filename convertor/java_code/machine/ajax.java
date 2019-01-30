@@ -37,7 +37,7 @@ public class ajax
 		(*)	The Coin Counters are handled by the Konami Custom 051550
 	*/
 	
-	static WRITE_HANDLER( ajax_bankswitch_w )
+	public static WriteHandlerPtr ajax_bankswitch_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		unsigned char *RAM = memory_region(REGION_CPU1);
 		int bankaddress = 0;
@@ -55,7 +55,7 @@ public class ajax
 		/* bank # (ROMS N11 and N12) */
 		bankaddress += 0x10000 + (data & 0x07)*0x2000;
 		cpu_setbank(2,&RAM[bankaddress]);
-	}
+	} };
 	
 	/*	ajax_lamps_w:
 	  	Handled by the LS273 Octal +ve edge trigger D-type Flip-flop with Reset at B9:
@@ -81,7 +81,7 @@ public class ajax
 			LS393		C20			Dual -ve edge trigger 4-bit Binary Ripple Counter with Resets
 	*/
 	
-	static WRITE_HANDLER( ajax_lamps_w )
+	public static WriteHandlerPtr ajax_lamps_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		set_led_status(1,data & 0x02);	/* super weapon lamp */
 		set_led_status(2,data & 0x04);	/* power up lamps */
@@ -91,7 +91,7 @@ public class ajax
 		set_led_status(6,data & 0x40);	/* game over lamps */
 		set_led_status(4,data & 0x80);	/* game over lamps */
 		set_led_status(7,data & 0x80);	/* game over lamps */
-	}
+	} };
 	
 	/*	ajax_ls138_f10:
 		The LS138 1-of-8 Decoder/Demultiplexer at F10 selects what to do:

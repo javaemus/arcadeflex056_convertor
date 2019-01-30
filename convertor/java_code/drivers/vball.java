@@ -51,7 +51,7 @@ public class vball
 	
 	}
 	
-	static WRITE_HANDLER( vb_bankswitch_w )
+	public static WriteHandlerPtr vb_bankswitch_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		unsigned char *RAM = memory_region(REGION_CPU1);
 		cpu_setbank( 1,&RAM[ 0x10000 + ( 0x4000 * ( data & 1 ) ) ] );
@@ -62,7 +62,7 @@ public class vball
 		}
 	
 	//	logerror("CPU #0 PC %04x: warning - write %02x to bankswitch memory address 1009\n",cpu_get_pc(),data);
-	}
+	} };
 	
 	/* The sound system comes all but verbatim from Double Dragon */
 	
@@ -73,7 +73,7 @@ public class vball
 		logerror("Sound_command_w\n");
 	}
 	
-	static WRITE_HANDLER( dd_adpcm_w )
+	public static WriteHandlerPtr dd_adpcm_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		int chip = 0;
 		logerror("dd_adpcm_w: %d %d\n",offset, data);
@@ -94,7 +94,7 @@ public class vball
 				MSM5205_reset_w(chip,0);
 				break;
 		}
-	}
+	} };
 	
 	static void dd_adpcm_int(int chip)
 	{

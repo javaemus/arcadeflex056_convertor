@@ -81,27 +81,27 @@ public class tecmo
 		cpu_setbank(1,&RAM[bankaddress]);
 	}
 	
-	static WRITE_HANDLER( tecmo_sound_command_w )
+	public static WriteHandlerPtr tecmo_sound_command_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		soundlatch_w(offset,data);
 		cpu_cause_interrupt(1,Z80_NMI_INT);
-	}
+	} };
 	
 	static int adpcm_pos,adpcm_end;
 	
-	static WRITE_HANDLER( tecmo_adpcm_start_w )
+	public static WriteHandlerPtr tecmo_adpcm_start_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		adpcm_pos = data << 8;
 		MSM5205_reset_w(0,0);
-	}
-	static WRITE_HANDLER( tecmo_adpcm_end_w )
+	} };
+	public static WriteHandlerPtr tecmo_adpcm_end_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		adpcm_end = (data + 1) << 8;
-	}
-	static WRITE_HANDLER( tecmo_adpcm_vol_w )
+	} };
+	public static WriteHandlerPtr tecmo_adpcm_vol_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		MSM5205_set_volume(0,(data & 0x0f) * 100 / 15);
-	}
+	} };
 	static void tecmo_adpcm_int(int num)
 	{
 		static int adpcm_data = -1;

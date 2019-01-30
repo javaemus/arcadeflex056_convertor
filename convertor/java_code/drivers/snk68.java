@@ -192,12 +192,12 @@ public class snk68
 		new Memory_WriteAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static WRITE_HANDLER( D7759_write_port_0_w )
+	public static WriteHandlerPtr D7759_write_port_0_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		UPD7759_reset_w (0,0);
 		UPD7759_message_w(offset,data);
 		UPD7759_start_w (0,0);
-	}
+	} };
 	
 	public static IO_ReadPort sound_readport[]={
 		new IO_ReadPort(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_IO | MEMPORT_WIDTH_8),

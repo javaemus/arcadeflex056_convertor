@@ -185,14 +185,14 @@ public class exidy
 	 *
 	 *************************************/
 	
-	static WRITE_HANDLER( fax_bank_select_w )
+	public static WriteHandlerPtr fax_bank_select_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		UINT8 *RAM = memory_region(REGION_CPU1);
 	
 		cpu_setbank(1, &RAM[0x10000 + (0x2000 * (data & 0x1F))]);
 		if ((data & 0x1F) > 0x17)
 			logerror("Banking to unpopulated ROM bank %02X!\n",data & 0x1F);
-	}
+	} };
 	
 	
 	

@@ -26,19 +26,19 @@ public class crimfght
 	void crimfght_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	
 	
-	static WRITE_HANDLER( crimfght_coin_w )
+	public static WriteHandlerPtr crimfght_coin_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		coin_counter_w(0,data & 1);
 		coin_counter_w(1,data & 2);
-	}
+	} };
 	
-	static WRITE_HANDLER( crimfght_sh_irqtrigger_w )
+	public static WriteHandlerPtr crimfght_sh_irqtrigger_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		soundlatch_w(offset,data);
 		cpu_cause_interrupt(1,0xff);
-	}
+	} };
 	
-	static WRITE_HANDLER( crimfght_snd_bankswitch_w )
+	public static WriteHandlerPtr crimfght_snd_bankswitch_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		unsigned char *RAM = memory_region(REGION_SOUND1);
 		/* b1: bank for channel A */
@@ -48,7 +48,7 @@ public class crimfght
 		int bank_B = 0x20000*((data) & 0x01);
 	
 		K007232_bankswitch(0,RAM + bank_A,RAM + bank_B);
-	}
+	} };
 	
 	
 	/********************************************/

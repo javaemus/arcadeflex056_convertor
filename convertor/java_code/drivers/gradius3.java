@@ -174,7 +174,7 @@ public class gradius3
 		cpu_cause_interrupt(2,0xff);
 	}
 	
-	static WRITE_HANDLER( sound_bank_w )
+	public static WriteHandlerPtr sound_bank_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		unsigned char *RAM = memory_region(REGION_SOUND1);
 		int bank_A, bank_B;
@@ -183,7 +183,7 @@ public class gradius3
 		bank_A = 0x20000 * ((data >> 0) & 0x03);
 		bank_B = 0x20000 * ((data >> 2) & 0x03);
 		K007232_bankswitch(0,RAM + bank_A,RAM + bank_B);
-	}
+	} };
 	
 	
 	

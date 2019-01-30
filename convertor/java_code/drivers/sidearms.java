@@ -37,7 +37,7 @@ public class sidearms
 	void sidearms_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	
 	
-	static WRITE_HANDLER( sidearms_bankswitch_w )
+	public static WriteHandlerPtr sidearms_bankswitch_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		int bankaddress;
 		unsigned char *RAM = memory_region(REGION_CPU1);
@@ -46,7 +46,7 @@ public class sidearms
 		/* bits 0 and 1 select the ROM bank */
 		bankaddress = 0x10000 + (data & 0x0f) * 0x4000;
 		cpu_setbank(1,&RAM[bankaddress]);
-	}
+	} };
 	
 	
 	/* Turtle Ship input ports are rotated 90 degrees */
@@ -99,13 +99,13 @@ public class sidearms
 	};
 	
 	#ifdef THIRD_CPU
-	static WRITE_HANDLER( pop )
+	public static WriteHandlerPtr pop = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 	RAM[0xa000] = 0xc3;
 	RAM[0xa001] = 0x00;
 	RAM[0xa002] = 0xa0;
 	//      interrupt_enable_w(offset,data & 0x80);
-	}
+	} };
 	
 	public static Memory_ReadAddress readmem2[]={
 		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),

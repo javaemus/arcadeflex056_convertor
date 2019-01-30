@@ -199,11 +199,11 @@ public class niyanpai
 	public static ReadHandlerPtr tmpz84c011_0_pd_r  = new ReadHandlerPtr() { public int handler(int offset) { return (tmpz84c011_pio_r(3) & ~pio_dir[3]) | (pio_latch[3] & pio_dir[3]); } };
 	public static ReadHandlerPtr tmpz84c011_0_pe_r  = new ReadHandlerPtr() { public int handler(int offset) { return (tmpz84c011_pio_r(4) & ~pio_dir[4]) | (pio_latch[4] & pio_dir[4]); } };
 	
-	static WRITE_HANDLER( tmpz84c011_0_pa_w ) { pio_latch[0] = data; tmpz84c011_pio_w(0, data); }
-	static WRITE_HANDLER( tmpz84c011_0_pb_w ) { pio_latch[1] = data; tmpz84c011_pio_w(1, data); }
-	static WRITE_HANDLER( tmpz84c011_0_pc_w ) { pio_latch[2] = data; tmpz84c011_pio_w(2, data); }
-	static WRITE_HANDLER( tmpz84c011_0_pd_w ) { pio_latch[3] = data; tmpz84c011_pio_w(3, data); }
-	static WRITE_HANDLER( tmpz84c011_0_pe_w ) { pio_latch[4] = data; tmpz84c011_pio_w(4, data); }
+	public static WriteHandlerPtr tmpz84c011_0_pa_w = new WriteHandlerPtr() {public void handler(int offset, int data) { pio_latch[0] = data; tmpz84c011_pio_w(0, data); } };
+	public static WriteHandlerPtr tmpz84c011_0_pb_w = new WriteHandlerPtr() {public void handler(int offset, int data) { pio_latch[1] = data; tmpz84c011_pio_w(1, data); } };
+	public static WriteHandlerPtr tmpz84c011_0_pc_w = new WriteHandlerPtr() {public void handler(int offset, int data) { pio_latch[2] = data; tmpz84c011_pio_w(2, data); } };
+	public static WriteHandlerPtr tmpz84c011_0_pd_w = new WriteHandlerPtr() {public void handler(int offset, int data) { pio_latch[3] = data; tmpz84c011_pio_w(3, data); } };
+	public static WriteHandlerPtr tmpz84c011_0_pe_w = new WriteHandlerPtr() {public void handler(int offset, int data) { pio_latch[4] = data; tmpz84c011_pio_w(4, data); } };
 	
 	public static ReadHandlerPtr tmpz84c011_0_dir_pa_r  = new ReadHandlerPtr() { public int handler(int offset) { return pio_dir[0]; } };
 	public static ReadHandlerPtr tmpz84c011_0_dir_pb_r  = new ReadHandlerPtr() { public int handler(int offset) { return pio_dir[1]; } };
@@ -211,11 +211,11 @@ public class niyanpai
 	public static ReadHandlerPtr tmpz84c011_0_dir_pd_r  = new ReadHandlerPtr() { public int handler(int offset) { return pio_dir[3]; } };
 	public static ReadHandlerPtr tmpz84c011_0_dir_pe_r  = new ReadHandlerPtr() { public int handler(int offset) { return pio_dir[4]; } };
 	
-	static WRITE_HANDLER( tmpz84c011_0_dir_pa_w ) { pio_dir[0] = data; }
-	static WRITE_HANDLER( tmpz84c011_0_dir_pb_w ) { pio_dir[1] = data; }
-	static WRITE_HANDLER( tmpz84c011_0_dir_pc_w ) { pio_dir[2] = data; }
-	static WRITE_HANDLER( tmpz84c011_0_dir_pd_w ) { pio_dir[3] = data; }
-	static WRITE_HANDLER( tmpz84c011_0_dir_pe_w ) { pio_dir[4] = data; }
+	public static WriteHandlerPtr tmpz84c011_0_dir_pa_w = new WriteHandlerPtr() {public void handler(int offset, int data) { pio_dir[0] = data; } };
+	public static WriteHandlerPtr tmpz84c011_0_dir_pb_w = new WriteHandlerPtr() {public void handler(int offset, int data) { pio_dir[1] = data; } };
+	public static WriteHandlerPtr tmpz84c011_0_dir_pc_w = new WriteHandlerPtr() {public void handler(int offset, int data) { pio_dir[2] = data; } };
+	public static WriteHandlerPtr tmpz84c011_0_dir_pd_w = new WriteHandlerPtr() {public void handler(int offset, int data) { pio_dir[3] = data; } };
+	public static WriteHandlerPtr tmpz84c011_0_dir_pe_w = new WriteHandlerPtr() {public void handler(int offset, int data) { pio_dir[4] = data; } };
 	
 	
 	static void ctc0_interrupt(int state)

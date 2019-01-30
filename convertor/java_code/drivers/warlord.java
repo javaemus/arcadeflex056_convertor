@@ -96,15 +96,15 @@ public class warlord
 	void warlord_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom);
 	void warlord_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	
-	static WRITE_HANDLER( warlord_led_w )
+	public static WriteHandlerPtr warlord_led_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		set_led_status(offset,~data & 0x80);
-	}
+	} };
 	
-	static WRITE_HANDLER( warlord_coin_counter_w )
+	public static WriteHandlerPtr warlord_coin_counter_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		coin_counter_w(offset,data);
-	}
+	} };
 	
 	
 	

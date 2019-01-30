@@ -29,7 +29,7 @@ public class gameplan
 	
 	static int gameplan_current_port;
 	
-	static WRITE_HANDLER( gameplan_port_select_w )
+	public static WriteHandlerPtr gameplan_port_select_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 	#ifdef VERY_VERBOSE
 		logerror("VIA 2: PC %04x: %x -> reg%X\n",cpu_get_pc(), data, offset);
@@ -87,7 +87,7 @@ public class gameplan
 							data, offset);
 				break;
 		}
-	}
+	} };
 	
 	public static ReadHandlerPtr gameplan_port_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{

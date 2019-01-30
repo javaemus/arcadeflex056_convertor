@@ -55,7 +55,7 @@ public class mystston
 	}
 	
 	
-	static WRITE_HANDLER( mystston_soundcontrol_w )
+	public static WriteHandlerPtr mystston_soundcontrol_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		static int last;
 		int soundlatch;
@@ -83,7 +83,7 @@ public class mystston
 		}
 	
 		last = data;
-	}
+	} };
 	
 	
 	

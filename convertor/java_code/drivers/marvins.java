@@ -106,7 +106,7 @@ public class marvins
 		sound_fetched = 1;
 	}
 	
-	static WRITE_HANDLER( sound_command_w ){
+	public static WriteHandlerPtr sound_command_w = new WriteHandlerPtr() {public void handler(int offset, int data){
 		if( sound_fetched==0 ){
 			logerror("missed sound command: %02x\n", sound_command );
 		}
@@ -115,7 +115,7 @@ public class marvins
 		sound_command = data;
 		sound_cpu_ready = 0;
 		cpu_cause_interrupt( 2, Z80_IRQ_INT );
-	}
+	} };
 	
 	public static ReadHandlerPtr sound_command_r  = new ReadHandlerPtr() { public int handler(int offset){
 		sound_fetched = 1;
@@ -184,7 +184,7 @@ public class marvins
 	static int CPUA_latch = 0;
 	static int CPUB_latch = 0;
 	
-	static WRITE_HANDLER( CPUA_int_enable_w )
+	public static WriteHandlerPtr CPUA_int_enable_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		if( CPUA_latch & SNK_NMI_PENDING )
 		{
@@ -195,7 +195,7 @@ public class marvins
 		{
 			CPUA_latch |= SNK_NMI_ENABLE;
 		}
-	}
+	} };
 	
 	public static ReadHandlerPtr CPUA_int_trigger_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
@@ -211,7 +211,7 @@ public class marvins
 		return 0xff;
 	} };
 	
-	static WRITE_HANDLER( CPUB_int_enable_w )
+	public static WriteHandlerPtr CPUB_int_enable_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		if( CPUB_latch & SNK_NMI_PENDING )
 		{
@@ -222,7 +222,7 @@ public class marvins
 		{
 			CPUB_latch |= SNK_NMI_ENABLE;
 		}
-	}
+	} };
 	
 	public static ReadHandlerPtr CPUB_int_trigger_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{

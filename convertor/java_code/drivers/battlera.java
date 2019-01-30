@@ -45,20 +45,20 @@ public class battlera
 	
 	/******************************************************************************/
 	
-	static WRITE_HANDLER( battlera_sound_w )
+	public static WriteHandlerPtr battlera_sound_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		if (offset==0) {
 			soundlatch_w(0,data);
 			cpu_cause_interrupt(1,H6280_INT_IRQ1);
 		}
-	}
+	} };
 	
 	/******************************************************************************/
 	
-	static WRITE_HANDLER( control_data_w )
+	public static WriteHandlerPtr control_data_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		control_port_select=data;
-	}
+	} };
 	
 	public static ReadHandlerPtr control_data_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
@@ -108,13 +108,13 @@ public class battlera
 	
 	/******************************************************************************/
 	
-	static WRITE_HANDLER( YM2203_w )
+	public static WriteHandlerPtr YM2203_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		switch (offset) {
 		case 0: YM2203_control_port_0_w(0,data); break;
 		case 1: YM2203_write_port_0_w(0,data); break;
 		}
-	}
+	} };
 	
 	static int msm5205next;
 	
@@ -130,15 +130,15 @@ public class battlera
 			cpu_cause_interrupt(1,H6280_INT_IRQ2);
 	}
 	
-	static WRITE_HANDLER( battlera_adpcm_data_w )
+	public static WriteHandlerPtr battlera_adpcm_data_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		msm5205next=data;
-	}
+	} };
 	
-	static WRITE_HANDLER( battlera_adpcm_reset_w )
+	public static WriteHandlerPtr battlera_adpcm_reset_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		MSM5205_reset_w(0,0);
-	}
+	} };
 	
 	public static Memory_ReadAddress sound_readmem[]={
 		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),

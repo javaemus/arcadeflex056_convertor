@@ -51,17 +51,17 @@ public class amidar
 	WRITE_HANDLER(amidar_ppi8255_1_w);
 	
 	
-	static WRITE_HANDLER( amidar_coina_w )
+	public static WriteHandlerPtr amidar_coina_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		coin_counter_w (0, data);
 		coin_counter_w (0, 0);
-	}
+	} };
 	
-	static WRITE_HANDLER( amidar_coinb_w )
+	public static WriteHandlerPtr amidar_coinb_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		coin_counter_w (1, data);
 		coin_counter_w (1, 0);
-	}
+	} };
 	
 	
 	public static Memory_ReadAddress readmem[]={

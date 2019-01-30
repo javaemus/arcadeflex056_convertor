@@ -278,11 +278,11 @@ public class cninja
 	}
 	
 	#if 0
-	static WRITE_HANDLER( log_m_w )
+	public static WriteHandlerPtr log_m_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		logerror("INTERRUPT %06x: warning - write address %04x\n",cpu_get_pc(),offset);
 	
-	}
+	} };
 	#endif
 	
 	static READ16_HANDLER( robocop2_prot_r )
@@ -415,7 +415,7 @@ public class cninja
 	
 	/******************************************************************************/
 	
-	static WRITE_HANDLER( YM2151_w )
+	public static WriteHandlerPtr YM2151_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		switch (offset) {
 		case 0:
@@ -425,9 +425,9 @@ public class cninja
 			YM2151_data_port_0_w(0,data);
 			break;
 		}
-	}
+	} };
 	
-	static WRITE_HANDLER( YM2203_w )
+	public static WriteHandlerPtr YM2203_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		switch (offset) {
 		case 0:
@@ -437,7 +437,7 @@ public class cninja
 			YM2203_write_port_0_w(0,data);
 			break;
 		}
-	}
+	} };
 	
 	public static Memory_ReadAddress sound_readmem[]={
 		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
@@ -773,11 +773,11 @@ public class cninja
 		cpu_set_irq_line(1,0,state);
 	}
 	
-	static WRITE_HANDLER( sound_bankswitch_w )
+	public static WriteHandlerPtr sound_bankswitch_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		/* the second OKIM6295 ROM is bank switched */
 		OKIM6295_set_bank_base(1, (data & 1) * 0x40000);
-	}
+	} };
 	
 	static struct YM2151interface ym2151_interface =
 	{

@@ -109,10 +109,10 @@ public class dec8
 		return i8751_return&0xff; /* LSB */
 	} };
 	
-	static WRITE_HANDLER( i8751_reset_w )
+	public static WriteHandlerPtr i8751_reset_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		i8751_return=0;
-	}
+	} };
 	
 	/******************************************************************************/
 	
@@ -140,7 +140,7 @@ public class dec8
 	
 	/******************************************************************************/
 	
-	static WRITE_HANDLER( ghostb_i8751_w )
+	public static WriteHandlerPtr ghostb_i8751_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		i8751_return=0;
 	
@@ -156,9 +156,9 @@ public class dec8
 		if (i8751_value==0x00aa) i8751_return=0x655;
 		if (i8751_value==0x021a) i8751_return=0x6e5; /* Ghostbusters ID */
 		if (i8751_value==0x021b) i8751_return=0x6e4; /* Meikyuu Hunter G ID */
-	}
+	} };
 	
-	static WRITE_HANDLER( srdarwin_i8751_w )
+	public static WriteHandlerPtr srdarwin_i8751_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		static int coins,latch;
 		i8751_return=0;
@@ -228,9 +228,9 @@ public class dec8
 		if (i8751_value==0x8007) i8751_return=0xf580 + 32; /* Boss #8: Teleport */
 		if (i8751_value==0x8008) i8751_return=0xf580 + 38; /* Boss #9: Octopus (Pincer) */
 		if (i8751_value==0x8009) i8751_return=0xf580 + 40; /* Boss #10: Bird */
-	}
+	} };
 	
-	static WRITE_HANDLER( gondo_i8751_w )
+	public static WriteHandlerPtr gondo_i8751_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		static int coin1,coin2,latch,snd;
 		i8751_return=0;
@@ -261,9 +261,9 @@ public class dec8
 		if ((i8751_value>>8)==0x08 && coin2 && !offset) {i8751_return=0x800; coin2--; } /* Coin 2 clear */
 		/* Commands 0x9xx do nothing */
 		if ((i8751_value>>8)==0x0a) {i8751_return=0xa00 | snd; if (snd) snd=0; }
-	}
+	} };
 	
-	static WRITE_HANDLER( shackled_i8751_w )
+	public static WriteHandlerPtr shackled_i8751_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		static int coin1,coin2,latch=0;
 		i8751_return=0;
@@ -289,9 +289,9 @@ public class dec8
 		if (i8751_value==0x0101) i8751_return=0; /* ?? */
 		if (i8751_value==0x8101) i8751_return=((coin2 / 10) << 4) | (coin2 % 10) |
 				((((coin1 / 10) << 4) | (coin1 % 10))<<8); /* Coins */
-	}
+	} };
 	
-	static WRITE_HANDLER( lastmiss_i8751_w )
+	public static WriteHandlerPtr lastmiss_i8751_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		static int coin,latch=0,snd;
 		i8751_return=0;
@@ -317,9 +317,9 @@ public class dec8
 		if ((i8751_value>>8)==0x01) i8751_return=0x0184; /* Coinage setup */
 		if ((i8751_value>>8)==0x02) {i8751_return=snd | ((coin / 10) << 4) | (coin % 10); snd=0;} /* Coin return */
 		if ((i8751_value>>8)==0x03) {i8751_return=0; coin--; } /* Coin clear */
-	}
+	} };
 	
-	static WRITE_HANDLER( csilver_i8751_w )
+	public static WriteHandlerPtr csilver_i8751_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		static int coin,latch=0,snd;
 		i8751_return=0;
@@ -342,9 +342,9 @@ public class dec8
 		if ((i8751_value>>8)==0x01) i8751_return=0; /* Coinage - Not Supported */
 		if ((i8751_value>>8)==0x02) {i8751_return=snd | coin; snd=0; } /* Coin Return */
 		if (i8751_value==0x0003 && coin) {i8751_return=0; coin--;} /* Coin Clear */
-	}
+	} };
 	
-	static WRITE_HANDLER( garyoret_i8751_w )
+	public static WriteHandlerPtr garyoret_i8751_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		static int coin1,coin2,latch;
 		i8751_return=0;
@@ -369,21 +369,21 @@ public class dec8
 		if ((i8751_value>>8)==0x04)  i8751_return=i8751_value; /* Coinage settings (Not supported) */
 		if ((i8751_value>>8)==0x05) {i8751_return=0x00 | ((coin1 / 10) << 4) | (coin1 % 10);  } /* Coin 1 */
 		if ((i8751_value>>8)==0x06 && coin1 && !offset) {i8751_return=0x600; coin1--; } /* Coin 1 clear */
-	}
+	} };
 	
 	/******************************************************************************/
 	
-	static WRITE_HANDLER( dec8_bank_w )
+	public static WriteHandlerPtr dec8_bank_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 	 	int bankaddress;
 		unsigned char *RAM = memory_region(REGION_CPU1);
 	
 		bankaddress = 0x10000 + (data & 0x0f) * 0x4000;
 		cpu_setbank(1,&RAM[bankaddress]);
-	}
+	} };
 	
 	/* Used by Ghostbusters, Meikyuu Hunter G & Gondomania */
-	static WRITE_HANDLER( ghostb_bank_w )
+	public static WriteHandlerPtr ghostb_bank_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 	 	int bankaddress;
 		unsigned char *RAM = memory_region(REGION_CPU1);
@@ -401,7 +401,7 @@ public class dec8
 		if (data&1) int_enable=1; else int_enable=0;
 		if (data&2) nmi_enable=1; else nmi_enable=0;
 		flip_screen_set(data & 0x08);
-	}
+	} };
 	
 	WRITE_HANDLER( csilver_control_w )
 	{
@@ -417,17 +417,17 @@ public class dec8
 		cpu_setbank(1,&RAM[0x10000 + (data & 0x0f) * 0x4000]);
 	}
 	
-	static WRITE_HANDLER( dec8_sound_w )
+	public static WriteHandlerPtr dec8_sound_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 	 	soundlatch_w(0,data);
 		cpu_cause_interrupt(1,M6502_INT_NMI);
-	}
+	} };
 	
-	static WRITE_HANDLER( oscar_sound_w )
+	public static WriteHandlerPtr oscar_sound_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 	 	soundlatch_w(0,data);
 		cpu_cause_interrupt(2,M6502_INT_NMI);
-	}
+	} };
 	
 	static void csilver_adpcm_int(int data)
 	{
@@ -447,22 +447,22 @@ public class dec8
 		return 0;
 	} };
 	
-	static WRITE_HANDLER( csilver_adpcm_data_w )
+	public static WriteHandlerPtr csilver_adpcm_data_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		msm5205next = data;
-	}
+	} };
 	
-	static WRITE_HANDLER( csilver_sound_bank_w )
+	public static WriteHandlerPtr csilver_sound_bank_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		unsigned char *RAM = memory_region(REGION_CPU3);
 	
 		if (data&8) { cpu_setbank(3,&RAM[0x14000]); }
 		else { cpu_setbank(3,&RAM[0x10000]); }
-	}
+	} };
 	
 	/******************************************************************************/
 	
-	static WRITE_HANDLER( oscar_int_w )
+	public static WriteHandlerPtr oscar_int_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		/* Deal with interrupts, coins also generate NMI to CPU 0 */
 		switch (offset) {
@@ -479,10 +479,10 @@ public class dec8
 				cpu_set_irq_line(1,M6809_IRQ_LINE,CLEAR_LINE);
 				return;
 		}
-	}
+	} };
 	
 	/* Used by Shackled, Last Mission, Captain Silver */
-	static WRITE_HANDLER( shackled_int_w )
+	public static WriteHandlerPtr shackled_int_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 	#if 0
 	/* This is correct, but the cpus in Shackled need an interleave of about 5000!
@@ -520,17 +520,17 @@ public class dec8
 	            cpu_cause_interrupt (1, M6809_INT_IRQ);
 	            return;
 		}
-	}
+	} };
 	
 	/******************************************************************************/
 	
 	public static ReadHandlerPtr dec8_share_r  = new ReadHandlerPtr() { public int handler(int offset) { return dec8_shared_ram[offset]; } };
 	public static ReadHandlerPtr dec8_share2_r  = new ReadHandlerPtr() { public int handler(int offset) { return dec8_shared2_ram[offset]; } };
-	static WRITE_HANDLER( dec8_share_w ) { dec8_shared_ram[offset]=data; }
-	static WRITE_HANDLER( dec8_share2_w ) { dec8_shared2_ram[offset]=data; }
+	public static WriteHandlerPtr dec8_share_w = new WriteHandlerPtr() {public void handler(int offset, int data) { dec8_shared_ram[offset]=data; } };
+	public static WriteHandlerPtr dec8_share2_w = new WriteHandlerPtr() {public void handler(int offset, int data) { dec8_shared2_ram[offset]=data; } };
 	public static ReadHandlerPtr shackled_sprite_r  = new ReadHandlerPtr() { public int handler(int offset) { return spriteram[offset]; } };
-	static WRITE_HANDLER( shackled_sprite_w ) { spriteram[offset]=data; }
-	static WRITE_HANDLER( flip_screen_w ) {	flip_screen_set(data); }
+	public static WriteHandlerPtr shackled_sprite_w = new WriteHandlerPtr() {public void handler(int offset, int data) { spriteram[offset]=data; } };
+	public static WriteHandlerPtr flip_screen_w = new WriteHandlerPtr() {public void handler(int offset, int data) {	flip_screen_set(data); } };
 	
 	/******************************************************************************/
 	

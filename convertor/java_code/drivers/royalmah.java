@@ -100,19 +100,19 @@ public class royalmah
 	}
 	
 	
-	static WRITE_HANDLER( royalmah_rom_w )
+	public static WriteHandlerPtr royalmah_rom_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		/* using this handler will avoid all the entries in the error log that are the result of
 		   the RLD and RRD instructions this games uses to print text on the screen */
-	}
+	} };
 	
 	
 	static int royalmah_input_port_select;
 	
-	static WRITE_HANDLER( royalmah_input_port_select_w )
+	public static WriteHandlerPtr royalmah_input_port_select_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		royalmah_input_port_select = data;
-	}
+	} };
 	
 	public static ReadHandlerPtr royalmah_player_1_port_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{

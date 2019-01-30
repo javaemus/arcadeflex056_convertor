@@ -463,10 +463,10 @@ public class namcos2
 		return namcos2_dpram[offset];
 	} };
 	
-	static WRITE_HANDLER( namcos2_dpram_byte_w )
+	public static WriteHandlerPtr namcos2_dpram_byte_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		namcos2_dpram[offset] = data;
-	}
+	} };
 	
 	
 	

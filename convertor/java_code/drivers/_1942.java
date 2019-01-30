@@ -83,7 +83,7 @@ public class _1942
 	
 	
 	
-	static WRITE_HANDLER( c1942_bankswitch_w )
+	public static WriteHandlerPtr c1942_bankswitch_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		int bankaddress;
 		unsigned char *RAM = memory_region(REGION_CPU1);
@@ -91,7 +91,7 @@ public class _1942
 	
 		bankaddress = 0x10000 + (data & 0x03) * 0x4000;
 		cpu_setbank(1,&RAM[bankaddress]);
-	}
+	} };
 	
 	
 	

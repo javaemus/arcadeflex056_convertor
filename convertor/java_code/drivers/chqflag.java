@@ -19,7 +19,6 @@ public class chqflag
 	
 	static int K051316_readroms;
 	
-	static WRITE_HANDLER( k007232_extvolume_w );
 	
 	/* from vidhrdw/chqflag.c */
 	int chqflag_vh_start( void );
@@ -37,7 +36,7 @@ public class chqflag
 		return ignore_interrupt();
 	}
 	
-	static WRITE_HANDLER( chqflag_bankswitch_w )
+	public static WriteHandlerPtr chqflag_bankswitch_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		int bankaddress;
 		unsigned char *RAM = memory_region(REGION_CPU1);
@@ -67,9 +66,9 @@ public class chqflag
 		}
 	
 		/* other bits unknown/unused */
-	}
+	} };
 	
-	static WRITE_HANDLER( chqflag_vreg_w )
+	public static WriteHandlerPtr chqflag_vreg_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		static int last;
 	
@@ -112,14 +111,14 @@ public class chqflag
 	
 	
 		/* other bits unknown. bit 5 is used. */
-	}
+	} };
 	
 	static int analog_ctrl;
 	
-	static WRITE_HANDLER( select_analog_ctrl_w )
+	public static WriteHandlerPtr select_analog_ctrl_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		analog_ctrl = data;
-	}
+	} };
 	
 	public static ReadHandlerPtr analog_read_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
@@ -198,7 +197,7 @@ public class chqflag
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static WRITE_HANDLER( k007232_bankswitch_w )
+	public static WriteHandlerPtr k007232_bankswitch_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		unsigned char *RAM;
 		int bank_A, bank_B;
@@ -215,7 +214,7 @@ public class chqflag
 		bank_B = 0x20000*((data >> 2) & 0x03);
 		K007232_bankswitch(1,RAM + bank_A,RAM + bank_B);
 	
-	}
+	} };
 	
 	public static Memory_WriteAddress chqflag_writemem_sound[]={
 		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
@@ -353,10 +352,10 @@ public class chqflag
 		K007232_set_volume(0,1,0,(v >> 4)*0x11);
 	}
 	
-	static WRITE_HANDLER( k007232_extvolume_w )
+	public static WriteHandlerPtr k007232_extvolume_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		K007232_set_volume(1,1,(data & 0x0f)*0x11/2,(data >> 4)*0x11/2);
-	}
+	} };
 	
 	static void volume_callback1(int v)
 	{

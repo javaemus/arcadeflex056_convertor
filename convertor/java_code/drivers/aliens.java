@@ -44,15 +44,15 @@ public class aliens
 			return ram[offset];
 	} };
 	
-	static WRITE_HANDLER( bankedram_w )
+	public static WriteHandlerPtr bankedram_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		if (palette_selected)
 			paletteram_xBBBBBGGGGGRRRRR_swap_w(offset,data);
 		else
 			ram[offset] = data;
-	}
+	} };
 	
-	static WRITE_HANDLER( aliens_coin_counter_w )
+	public static WriteHandlerPtr aliens_coin_counter_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		/* bits 0-1 = coin counters */
 		coin_counter_w(0,data & 0x01);
@@ -72,7 +72,7 @@ public class aliens
 		usrintf_showmessage(baf);
 	}
 	#endif
-	}
+	} };
 	
 	WRITE_HANDLER( aliens_sh_irqtrigger_w )
 	{
@@ -80,7 +80,7 @@ public class aliens
 		cpu_cause_interrupt(1,0xff);
 	}
 	
-	static WRITE_HANDLER( aliens_snd_bankswitch_w )
+	public static WriteHandlerPtr aliens_snd_bankswitch_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		unsigned char *RAM = memory_region(REGION_SOUND1);
 		/* b1: bank for chanel A */
@@ -90,7 +90,7 @@ public class aliens
 		int bank_B = 0x20000*((data) & 0x01);
 	
 		K007232_bankswitch(0,RAM + bank_A,RAM + bank_B);
-	}
+	} };
 	
 	
 	public static Memory_ReadAddress aliens_readmem[]={

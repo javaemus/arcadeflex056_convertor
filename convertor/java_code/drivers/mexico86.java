@@ -52,10 +52,10 @@ public class mexico86
 		return shared[offset];
 	} };
 	
-	static WRITE_HANDLER( shared_w )
+	public static WriteHandlerPtr shared_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		shared[offset] = data;
-	}
+	} };
 	
 	/*
 	$f008 - write
@@ -68,11 +68,11 @@ public class mexico86
 	bit 1 = microcontroller reset line
 	bit 0 = ? (unused?)
 	*/
-	static WRITE_HANDLER( mexico86_f008_w )
+	public static WriteHandlerPtr mexico86_f008_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		cpu_set_reset_line(1,(data & 4) ? CLEAR_LINE : ASSERT_LINE);
 		cpu_set_reset_line(2,(data & 2) ? CLEAR_LINE : ASSERT_LINE);
-	}
+	} };
 	
 	
 	

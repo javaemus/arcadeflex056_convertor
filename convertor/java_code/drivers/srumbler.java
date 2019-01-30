@@ -30,7 +30,7 @@ public class srumbler
 	
 	
 	
-	static WRITE_HANDLER( srumbler_bankswitch_w )
+	public static WriteHandlerPtr srumbler_bankswitch_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		/*
 		  banking is controlled by two PROMs. 0000-4fff is mapped to the same
@@ -52,7 +52,7 @@ public class srumbler
 	
 			cpu_setbank(i+1,&ROM[bank*0x1000]);
 		}
-	}
+	} };
 	
 	static void srumbler_init_machine(void)
 	{

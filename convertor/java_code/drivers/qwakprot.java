@@ -54,10 +54,10 @@ public class qwakprot
 	WRITE_HANDLER( qwakprot_paletteram_w );
 	
 	
-	static WRITE_HANDLER( qwakprot_led_w )
+	public static WriteHandlerPtr qwakprot_led_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		set_led_status(offset,~data & 0x80);
-	}
+	} };
 	
 	public static Memory_ReadAddress readmem[]={
 		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),

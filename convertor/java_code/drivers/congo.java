@@ -92,10 +92,10 @@ public class congo
 		}
 	}
 	
-	static WRITE_HANDLER( congo_coin_counter_w )
+	public static WriteHandlerPtr congo_coin_counter_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		coin_counter_w(offset,data);
-	}
+	} };
 	
 	public static Memory_ReadAddress readmem[]={
 		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),

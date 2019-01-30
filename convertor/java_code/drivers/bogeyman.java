@@ -38,12 +38,12 @@ public class bogeyman
 	
 	static int psg_latch;
 	
-	static WRITE_HANDLER( bogeyman_8910_latch_w )
+	public static WriteHandlerPtr bogeyman_8910_latch_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		psg_latch = data;
-	}
+	} };
 	
-	static WRITE_HANDLER( bogeyman_8910_control_w )
+	public static WriteHandlerPtr bogeyman_8910_control_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		static int last;
 	
@@ -67,7 +67,7 @@ public class bogeyman
 		}
 	
 		last = data;
-	}
+	} };
 	
 	/******************************************************************************/
 	

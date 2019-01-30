@@ -64,7 +64,7 @@ public class ddragon
 		dd_sub_cpu_busy = 0x10;
 	}
 	
-	static WRITE_HANDLER( ddragon_bankswitch_w )
+	public static WriteHandlerPtr ddragon_bankswitch_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		unsigned char *RAM = memory_region(REGION_CPU1);
 	
@@ -81,12 +81,12 @@ public class ddragon
 			cpu_cause_interrupt( 1, sprite_irq );
 	
 		cpu_setbank( 1,&RAM[ 0x10000 + ( 0x4000 * ( ( data & 0xe0) >> 5 ) ) ] );
-	}
+	} };
 	
-	static WRITE_HANDLER( ddragon_forcedIRQ_w )
+	public static WriteHandlerPtr ddragon_forcedIRQ_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		cpu_cause_interrupt( 0, M6809_INT_IRQ );
-	}
+	} };
 	
 	public static ReadHandlerPtr port4_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
@@ -100,21 +100,21 @@ public class ddragon
 		return ddragon_spriteram[offset];
 	} };
 	
-	static WRITE_HANDLER( ddragon_spriteram_w )
+	public static WriteHandlerPtr ddragon_spriteram_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		if ( cpu_getactivecpu() == 1 && offset == 0 )
 			dd_sub_cpu_busy = 0x10;
 	
 		ddragon_spriteram[offset] = data;
-	}
+	} };
 	
-	static WRITE_HANDLER( cpu_sound_command_w )
+	public static WriteHandlerPtr cpu_sound_command_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		soundlatch_w( offset, data );
 		cpu_cause_interrupt( 2, sound_irq );
-	}
+	} };
 	
-	static WRITE_HANDLER( dd_adpcm_w )
+	public static WriteHandlerPtr dd_adpcm_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		int chip = offset & 1;
 	
@@ -138,7 +138,7 @@ public class ddragon
 				MSM5205_reset_w(chip,0);
 				break;
 		}
-	}
+	} };
 	
 	static void dd_adpcm_int(int chip)
 	{

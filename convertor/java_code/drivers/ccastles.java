@@ -117,30 +117,30 @@ public class ccastles
 	}
 	
 	
-	static WRITE_HANDLER( ccastles_led_w )
+	public static WriteHandlerPtr ccastles_led_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		set_led_status(offset,~data & 1);
-	}
+	} };
 	
-	static WRITE_HANDLER( ccastles_coin_counter_w )
+	public static WriteHandlerPtr ccastles_coin_counter_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		/* this is not working, haven't investigated why */
 		coin_counter_w(offset^1, ~data);
-	}
+	} };
 	
-	static WRITE_HANDLER( ccastles_bankswitch_w )
+	public static WriteHandlerPtr ccastles_bankswitch_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		unsigned char *RAM = memory_region(REGION_CPU1);
 	
 	
 		if (data) { cpu_setbank(1,&RAM[0x10000]); }
 		else { cpu_setbank(1,&RAM[0xa000]); }
-	}
+	} };
 	
-	static WRITE_HANDLER( flip_screen_w )
+	public static WriteHandlerPtr flip_screen_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		flip_screen_set(data);
-	}
+	} };
 	
 	
 	public static Memory_ReadAddress readmem[]={

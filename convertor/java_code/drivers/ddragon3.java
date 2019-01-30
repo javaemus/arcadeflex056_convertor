@@ -40,10 +40,10 @@ public class ddragon3
 	
 	/***************************************************************************/
 	
-	static WRITE_HANDLER( oki_bankswitch_w )
+	public static WriteHandlerPtr oki_bankswitch_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		OKIM6295_set_bank_base(0, (data & 1) * 0x40000);
-	}
+	} };
 	
 	static READ16_HANDLER( ddrago3b_io16_r )
 	{

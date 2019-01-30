@@ -148,25 +148,25 @@ public class scramble
 	READ_HANDLER( triplep_pap_r );
 	
 	
-	static WRITE_HANDLER( scramble_coin_counter_1_w )
+	public static WriteHandlerPtr scramble_coin_counter_1_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		coin_counter_w(0, data);
-	}
+	} };
 	
-	static WRITE_HANDLER( scramble_coin_counter_2_w )
+	public static WriteHandlerPtr scramble_coin_counter_2_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		coin_counter_w(1, data);
-	}
+	} };
 	
-	static WRITE_HANDLER( scramble_coin_counter_3_w )
+	public static WriteHandlerPtr scramble_coin_counter_3_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		coin_counter_w(2, data);
-	}
+	} };
 	
-	static WRITE_HANDLER( flip_screen_w )
+	public static WriteHandlerPtr flip_screen_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		flip_screen_set(data);
-	}
+	} };
 	
 	
 	READ_HANDLER( hunchbks_mirror_r )

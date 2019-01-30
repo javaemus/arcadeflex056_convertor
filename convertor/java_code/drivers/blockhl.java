@@ -57,13 +57,13 @@ public class blockhl
 			return ram[offset];
 	} };
 	
-	static WRITE_HANDLER( bankedram_w )
+	public static WriteHandlerPtr bankedram_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		if (palette_selected)
 			paletteram_xBBBBBGGGGGRRRRR_swap_w(offset,data);
 		else
 			ram[offset] = data;
-	}
+	} };
 	
 	WRITE_HANDLER( blockhl_sh_irqtrigger_w )
 	{

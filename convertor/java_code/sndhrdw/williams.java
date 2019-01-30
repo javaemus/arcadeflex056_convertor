@@ -189,26 +189,11 @@ public class williams
 	static void williams_cvsd_irqb(int state);
 	
 	
-	static WRITE_HANDLER( williams_dac_data_w );
-	static WRITE_HANDLER( williams_dac2_data_w );
-	static WRITE_HANDLER( williams_cvsd_pia_w );
-	static WRITE_HANDLER( williams_ym2151_w );
-	static WRITE_HANDLER( williams_cvsd_bank_select_w );
 	
-	static WRITE_HANDLER( williams_adpcm_bank_select_w );
-	static WRITE_HANDLER( williams_adpcm_6295_bank_select_w );
 	
-	static WRITE_HANDLER( williams_narc_command2_w );
-	static WRITE_HANDLER( williams_narc_master_bank_select_w );
-	static WRITE_HANDLER( williams_narc_slave_bank_select_w );
 	
 	static void counter_enable(int param);
-	static WRITE_HANDLER( counter_divisor_w );
-	static WRITE_HANDLER( counter_down_w );
-	static WRITE_HANDLER( counter_value_w );
 	
-	static WRITE_HANDLER( cvsd_state_w );
-	static WRITE_HANDLER( dac_state_bank_w );
 	
 	static void update_counter(void);
 	static void cvsd_update(int num, INT16 *buffer, int length);
@@ -1237,7 +1222,7 @@ public class williams
 		return YM2151_status_port_0_r(offset);
 	} };
 	
-	static WRITE_HANDLER( williams_ym2151_w )
+	public static WriteHandlerPtr williams_ym2151_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		if (offset & 1)
 		{
@@ -1305,7 +1290,7 @@ public class williams
 			if (DISABLE_FIRQ_SPEEDUP || ym2151.current_register < 0x10 || ym2151.current_register > 0x14)
 				YM2151_register_port_0_w(offset, data);
 		}
-	}
+	} };
 	
 	
 	/***************************************************************************
@@ -1317,25 +1302,25 @@ public class williams
 		return pia_read(williams_pianum, offset);
 	} };
 	
-	static WRITE_HANDLER( williams_cvsd_pia_w )
+	public static WriteHandlerPtr williams_cvsd_pia_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		pia_write(williams_pianum, offset, data);
-	}
+	} };
 	
 	
 	/***************************************************************************
 		DAC INTERFACES
 	****************************************************************************/
 	
-	static WRITE_HANDLER( williams_dac_data_w )
+	public static WriteHandlerPtr williams_dac_data_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		DAC_data_w(0, data);
-	}
+	} };
 	
-	static WRITE_HANDLER( williams_dac2_data_w )
+	public static WriteHandlerPtr williams_dac2_data_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		DAC_data_w(1, data);
-	}
+	} };
 	
 	
 	/***************************************************************************
@@ -1395,12 +1380,12 @@ public class williams
 		counter.downcount[0] = downcounter;
 	}
 	
-	static WRITE_HANDLER( counter_divisor_w )
+	public static WriteHandlerPtr counter_divisor_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		update_counter();
 		counter.divisor[offset] = data;
 		counter.adjusted_divisor = data ? data : 256;
-	}
+	} };
 	
 	public static ReadHandlerPtr counter_down_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
@@ -1408,11 +1393,11 @@ public class williams
 		return counter.downcount[offset];
 	} };
 	
-	static WRITE_HANDLER( counter_down_w )
+	public static WriteHandlerPtr counter_down_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		update_counter();
 		counter.downcount[offset] = data;
-	}
+	} };
 	
 	public static ReadHandlerPtr counter_value_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
@@ -1444,14 +1429,14 @@ public class williams
 		return counter.value[offset];
 	} };
 	
-	static WRITE_HANDLER( counter_value_w )
+	public static WriteHandlerPtr counter_value_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		/* only update the counter after the LSB is written */
 		if (offset == 1)
 			update_counter();
 		counter.value[offset] = data;
 		counter.hotspot_hit_count = 0;
-	}
+	} };
 	
 	
 	/***************************************************************************
@@ -1480,7 +1465,7 @@ public class williams
 		cvsd.invalid = 0;
 	}
 	
-	static WRITE_HANDLER( cvsd_state_w )
+	public static WriteHandlerPtr cvsd_state_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		/* if we write a value here with a non-zero high bit, prepare to start playing */
 		stream_update(cvsd_stream, 0);
@@ -1491,7 +1476,7 @@ public class williams
 		}
 	
 		cvsd.state[offset] = data;
-	}
+	} };
 	
 	
 	/***************************************************************************
@@ -1520,7 +1505,7 @@ public class williams
 		dac.invalid = 0;
 	}
 	
-	static WRITE_HANDLER( dac_state_bank_w )
+	public static WriteHandlerPtr dac_state_bank_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		/* if we write a value here with a non-zero high bit, prepare to start playing */
 		stream_update(dac_stream, 0);
@@ -1531,7 +1516,7 @@ public class williams
 		}
 	
 		dac.state_bank[offset] = data;
-	}
+	} };
 	
 	
 	/***************************************************************************

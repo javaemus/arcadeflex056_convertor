@@ -360,7 +360,7 @@ public class metro
 		return readinputport(0) | (metro_soundstatus ? 0x80 : 0);
 	}
 	
-	static WRITE_HANDLER( daitorid_sound_rombank_w )
+	public static WriteHandlerPtr daitorid_sound_rombank_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		unsigned char *RAM = memory_region(REGION_CPU2);
 		int bank = (data >> 4) & 0x07;
@@ -371,7 +371,7 @@ public class metro
 		else			RAM = &RAM[0x4000 * (bank-2) + 0x10000];
 	
 		cpu_setbank(1, RAM);
-	}
+	} };
 	
 	static data8_t chip_select;
 	
@@ -390,17 +390,17 @@ public class metro
 		}
 	} };
 	
-	static WRITE_HANDLER( daitorid_sound_chip_data_w )
+	public static WriteHandlerPtr daitorid_sound_chip_data_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		soundlatch2_w(0,data);	// for debugging, the latch is internal
-	}
+	} };
 	
 	public static ReadHandlerPtr daitorid_sound_chip_select_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return chip_select;
 	} };
 	
-	static WRITE_HANDLER( daitorid_sound_chip_select_w )
+	public static WriteHandlerPtr daitorid_sound_chip_select_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		chip_select = data;
 	
@@ -415,7 +415,7 @@ public class metro
 		default:
 			logerror("CPU #1 PC %04X : writing to unknown chip: %02X\n",cpu_get_pc(),chip_select);
 		}
-	}
+	} };
 	
 	public static Memory_ReadAddress upd7810_readmem[]={
 		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),

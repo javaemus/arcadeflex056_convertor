@@ -1068,7 +1068,7 @@ public class seta
 	
 	***************************************************************************/
 	
-	static WRITE_HANDLER( sub_bankswitch_w )
+	public static WriteHandlerPtr sub_bankswitch_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		unsigned char *RAM = memory_region(REGION_CPU2);
 		int bank = data >> 4;
@@ -1076,7 +1076,7 @@ public class seta
 		seta_coin_lockout_w(data);
 	
 		cpu_setbank(1, &RAM[ bank * 0x4000 + 0xc000 ]);
-	}
+	} };
 	
 	
 	/***************************************************************************

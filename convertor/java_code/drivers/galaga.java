@@ -104,10 +104,10 @@ public class galaga
 	extern unsigned char *pengo_soundregs;
 	
 	
-	static WRITE_HANDLER( flip_screen_w )
+	public static WriteHandlerPtr flip_screen_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		flip_screen_set(data);
-	}
+	} };
 	
 	
 	public static Memory_ReadAddress readmem_cpu1[]={

@@ -430,15 +430,15 @@ public class hal21
 	static unsigned char *shared_ram, *shared_auxram;
 	
 	public static ReadHandlerPtr shared_auxram_r  = new ReadHandlerPtr() { public int handler(int offset){ return shared_auxram[offset]; } };
-	static WRITE_HANDLER( shared_auxram_w ){ shared_auxram[offset] = data; }
+	public static WriteHandlerPtr shared_auxram_w = new WriteHandlerPtr() {public void handler(int offset, int data){ shared_auxram[offset] = data; } };
 	
 	public static ReadHandlerPtr shared_ram_r  = new ReadHandlerPtr() { public int handler(int offset){ return shared_ram[offset]; } };
-	static WRITE_HANDLER( shared_ram_w ){ shared_ram[offset] = data; }
+	public static WriteHandlerPtr shared_ram_w = new WriteHandlerPtr() {public void handler(int offset, int data){ shared_ram[offset] = data; } };
 	
 	static int CPUA_latch = 0;
 	static int CPUB_latch = 0;
 	
-	static WRITE_HANDLER( CPUA_int_enable_w ){
+	public static WriteHandlerPtr CPUA_int_enable_w = new WriteHandlerPtr() {public void handler(int offset, int data){
 		if( CPUA_latch & SNK_NMI_PENDING ){
 			cpu_cause_interrupt( 0, Z80_NMI_INT );
 			CPUA_latch = 0;
@@ -446,7 +446,7 @@ public class hal21
 		else {
 			CPUA_latch |= SNK_NMI_ENABLE;
 		}
-	}
+	} };
 	
 	public static ReadHandlerPtr CPUA_int_trigger_r  = new ReadHandlerPtr() { public int handler(int offset){
 		if( CPUA_latch&SNK_NMI_ENABLE ){
@@ -459,7 +459,7 @@ public class hal21
 		return 0xff;
 	} };
 	
-	static WRITE_HANDLER( CPUB_int_enable_w ){
+	public static WriteHandlerPtr CPUB_int_enable_w = new WriteHandlerPtr() {public void handler(int offset, int data){
 		if( CPUB_latch & SNK_NMI_PENDING ){
 			cpu_cause_interrupt( 1, Z80_NMI_INT );
 			CPUB_latch = 0;
@@ -467,7 +467,7 @@ public class hal21
 		else {
 			CPUB_latch |= SNK_NMI_ENABLE;
 		}
-	}
+	} };
 	
 	public static ReadHandlerPtr CPUB_int_trigger_r  = new ReadHandlerPtr() { public int handler(int offset){
 		if( CPUB_latch&SNK_NMI_ENABLE ){
@@ -480,11 +480,11 @@ public class hal21
 		return 0xff;
 	} };
 	
-	static WRITE_HANDLER( snk_soundcommand_w ){
+	public static WriteHandlerPtr snk_soundcommand_w = new WriteHandlerPtr() {public void handler(int offset, int data){
 		snk_soundcommand = data;
 		cpu_cause_interrupt( 2, Z80_IRQ_INT );
 	//	cpu_cause_interrupt(2, 0xff); old ASO
-	}
+	} };
 	
 	public static ReadHandlerPtr snk_soundcommand_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{

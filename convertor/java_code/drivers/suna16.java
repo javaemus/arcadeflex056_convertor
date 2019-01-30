@@ -232,21 +232,21 @@ public class suna16
 	
 	/* Bank Switching */
 	
-	static WRITE_HANDLER( bssoccer_pcm_1_bankswitch_w )
+	public static WriteHandlerPtr bssoccer_pcm_1_bankswitch_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		unsigned char *RAM = memory_region(REGION_CPU3);
 		int bank = data & 7;
 		if (bank & ~7)	logerror("CPU#2 PC %06X - ROM bank unknown bits: %02X\n", cpu_get_pc(), data);
 		cpu_setbank(1, &RAM[bank * 0x10000 + 0x1000]);
-	}
+	} };
 	
-	static WRITE_HANDLER( bssoccer_pcm_2_bankswitch_w )
+	public static WriteHandlerPtr bssoccer_pcm_2_bankswitch_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		unsigned char *RAM = memory_region(REGION_CPU4);
 		int bank = data & 7;
 		if (bank & ~7)	logerror("CPU#3 PC %06X - ROM bank unknown bits: %02X\n", cpu_get_pc(), data);
 		cpu_setbank(2, &RAM[bank * 0x10000 + 0x1000]);
-	}
+	} };
 	
 	
 	
@@ -281,15 +281,15 @@ public class suna16
 	
 	/* 2 DACs per CPU - 4 bits per sample */
 	
-	static WRITE_HANDLER( bssoccer_DAC_1_w )
+	public static WriteHandlerPtr bssoccer_DAC_1_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		DAC_data_w( 0 + (offset & 1), (data & 0xf) * 0x11 );
-	}
+	} };
 	
-	static WRITE_HANDLER( bssoccer_DAC_2_w )
+	public static WriteHandlerPtr bssoccer_DAC_2_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		DAC_data_w( 2 + (offset & 1), (data & 0xf) * 0x11 );
-	}
+	} };
 	
 	
 	
@@ -325,13 +325,13 @@ public class suna16
 	
 	/* Bank Switching */
 	
-	static WRITE_HANDLER( uballoon_pcm_1_bankswitch_w )
+	public static WriteHandlerPtr uballoon_pcm_1_bankswitch_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		unsigned char *RAM = memory_region(REGION_CPU3);
 		int bank = data & 1;
 		if (bank & ~1)	logerror("CPU#2 PC %06X - ROM bank unknown bits: %02X\n", cpu_get_pc(), data);
 		cpu_setbank(1, &RAM[bank * 0x10000 + 0x400]);
-	}
+	} };
 	
 	/* Memory maps: Yes, *no* RAM */
 	

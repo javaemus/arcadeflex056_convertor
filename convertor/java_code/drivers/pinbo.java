@@ -128,11 +128,11 @@ public class pinbo
 		else return interrupt();	/* one IRQ per frame */
 	}
 	
-	static WRITE_HANDLER( pinbo_sound_command_w )
+	public static WriteHandlerPtr pinbo_sound_command_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		soundlatch_w(offset,data);
 		cpu_cause_interrupt(1,Z80_IRQ_INT);
-	}
+	} };
 	
 	
 	

@@ -208,7 +208,7 @@ public class tnzs
 		}
 	} };
 	
-	static WRITE_HANDLER( mcu_arknoid2_w )
+	public static WriteHandlerPtr mcu_arknoid2_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		if (offset == 0)
 		{
@@ -242,7 +242,7 @@ public class tnzs
 	
 			mcu_command = data;
 		}
-	}
+	} };
 	
 	
 	public static ReadHandlerPtr mcu_chukatai_r  = new ReadHandlerPtr() { public int handler(int offset)
@@ -323,7 +323,7 @@ public class tnzs
 		}
 	} };
 	
-	static WRITE_HANDLER( mcu_chukatai_w )
+	public static WriteHandlerPtr mcu_chukatai_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		logerror("PC %04x (re %04x): write %02x to mcu %04x\n", cpu_get_pc(), cpu_geturnpc(), data, 0xc000 + offset);
 	
@@ -357,7 +357,7 @@ public class tnzs
 	
 			mcu_command = data;
 		}
-	}
+	} };
 	
 	
 	
@@ -455,7 +455,7 @@ public class tnzs
 		}
 	} };
 	
-	static WRITE_HANDLER( mcu_tnzs_w )
+	public static WriteHandlerPtr mcu_tnzs_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		if (offset == 0)
 		{
@@ -501,7 +501,7 @@ public class tnzs
 	
 			mcu_command = data;
 		}
-	}
+	} };
 	
 	
 	

@@ -43,20 +43,20 @@ public class circusc
 		return clock & 0xF;
 	} };
 	
-	static WRITE_HANDLER( circusc_sh_irqtrigger_w )
+	public static WriteHandlerPtr circusc_sh_irqtrigger_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		cpu_cause_interrupt(1,0xff);
-	}
+	} };
 	
-	static WRITE_HANDLER( circusc_dac_w )
+	public static WriteHandlerPtr circusc_dac_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		DAC_data_w(0,data);
-	}
+	} };
 	
-	static WRITE_HANDLER( circusc_coin_counter_w )
+	public static WriteHandlerPtr circusc_coin_counter_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		coin_counter_w(offset,data);
-	}
+	} };
 	
 	
 	

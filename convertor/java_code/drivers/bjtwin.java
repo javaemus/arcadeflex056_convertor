@@ -219,10 +219,10 @@ public class bjtwin
 			timer_set(TIME_NOW,YM3812_CLEAR,setvector_callback);
 	}
 	
-	static WRITE_HANDLER( mustang_ym3812_irq_ack_w )
+	public static WriteHandlerPtr mustang_ym3812_irq_ack_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 	//	timer_set(TIME_NOW,YM3812_CLEAR,setvector_callback);
-	}
+	} };
 	
 	static WRITE16_HANDLER( mustang_sound_command_w )
 	{
@@ -230,23 +230,23 @@ public class bjtwin
 		timer_set(TIME_NOW,Z80_ASSERT,setvector_callback);
 	}
 	
-	static WRITE_HANDLER( mustang_sound_irq_ack_w )
+	public static WriteHandlerPtr mustang_sound_irq_ack_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		timer_set(TIME_NOW,Z80_CLEAR,setvector_callback);
-	}
+	} };
 	
 	public static ReadHandlerPtr mustang_soundlatch_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return (soundlatch_word_r(0,0) >> (offset * 8)) & 0xff;
 	} };
 	
-	static WRITE_HANDLER( mustang_soundlatch2_w )
+	public static WriteHandlerPtr mustang_soundlatch2_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		if (offset)
 			soundlatch2_word_w(0,data << 8,0x00ff);
 		else
 			soundlatch2_word_w(0,data,0xff00);
-	}
+	} };
 	
 	
 	
@@ -329,14 +329,14 @@ public class bjtwin
 		return soundlatch2_r(0);
 	}
 	
-	static WRITE_HANDLER( macross2_sound_bank_w )
+	public static WriteHandlerPtr macross2_sound_bank_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		const UINT8 *rom = memory_region(REGION_CPU2) + 0x10000;
 	
 		cpu_setbank(1,rom + (data & 0x07) * 0x4000);
-	}
+	} };
 	
-	static WRITE_HANDLER( macross2_oki6295_bankswitch_w )
+	public static WriteHandlerPtr macross2_oki6295_bankswitch_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		/* The OKI6295 ROM space is divided in four banks, each one indepentently
 		   controlled. The sample table at the beginning of the addressing space is
@@ -355,7 +355,7 @@ public class bjtwin
 		/* and also copy the samples address table */
 		rom += banknum * TABLESIZE;
 		memcpy(rom,rom + 0x40000 + bankaddr,TABLESIZE);
-	}
+	} };
 	
 	static WRITE16_HANDLER( bjtwin_oki6295_bankswitch_w )
 	{

@@ -117,7 +117,7 @@ public class pastelgl
 		new IO_ReadPort(MEMPORT_MARKER, 0)
 	};
 	
-	static WRITE_HANDLER( io_pastelgl_w )
+	public static WriteHandlerPtr io_pastelgl_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		offset = (((offset & 0xff00) >> 8) | ((offset & 0x00ff) << 8));
 	
@@ -152,7 +152,7 @@ public class pastelgl
 			case	0xd000:	DAC_0_data_w(0, data); break;
 	#endif
 		}
-	}
+	} };
 	
 	public static IO_WritePort writeport_pastelgl[]={
 		new IO_WritePort(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_IO | MEMPORT_WIDTH_8),

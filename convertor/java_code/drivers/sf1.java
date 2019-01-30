@@ -177,20 +177,20 @@ public class sf1
 	}
 	
 	
-	static WRITE_HANDLER( sound2_bank_w )
+	public static WriteHandlerPtr sound2_bank_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		cpu_setbank(1,memory_region(REGION_CPU3)+0x8000*(data+1));
-	}
+	} };
 	
 	
-	static WRITE_HANDLER( msm5205_w )
+	public static WriteHandlerPtr msm5205_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		MSM5205_reset_w(offset,(data>>7)&1);
 		/* ?? bit 6?? */
 		MSM5205_data_w(offset,data);
 		MSM5205_vclk_w(offset,1);
 		MSM5205_vclk_w(offset,0);
-	}
+	} };
 	
 	
 	

@@ -6,6 +6,7 @@
 -Implemented PORT_WRITE for 8bit handlers
 -Removed references inside MEMORY-PORT handlers
 -Implemented READHANDLER for 8 bit reads
+-Implemented WRITEHANDLER for 8 bit writes
 
 29/01/2019
 ==========

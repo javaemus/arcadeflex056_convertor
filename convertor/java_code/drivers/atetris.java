@@ -97,10 +97,10 @@ public class atetris
 	}
 	
 	
-	static WRITE_HANDLER( irq_ack_w )
+	public static WriteHandlerPtr irq_ack_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		cpu_set_irq_line(0, 0, CLEAR_LINE);
-	}
+	} };
 	
 	
 	
@@ -151,11 +151,11 @@ public class atetris
 	 *
 	 *************************************/
 	
-	static WRITE_HANDLER( coincount_w )
+	public static WriteHandlerPtr coincount_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		coin_counter_w(0, (data >> 5) & 1);
 		coin_counter_w(1, (data >> 4) & 1);
-	}
+	} };
 	
 	
 	
@@ -165,18 +165,18 @@ public class atetris
 	 *
 	 *************************************/
 	
-	static WRITE_HANDLER( nvram_w )
+	public static WriteHandlerPtr nvram_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		if (nvram_write_enable)
 			nvram[offset] = data;
 		nvram_write_enable = 0;
-	}
+	} };
 	
 	
-	static WRITE_HANDLER( nvram_enable_w )
+	public static WriteHandlerPtr nvram_enable_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		nvram_write_enable = 1;
-	}
+	} };
 	
 	
 	

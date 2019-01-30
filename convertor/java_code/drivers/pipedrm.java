@@ -138,7 +138,7 @@ public class pipedrm
 	}
 	
 	
-	static WRITE_HANDLER( pipedrm_bankswitch_w )
+	public static WriteHandlerPtr pipedrm_bankswitch_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		/*
 			Bit layout:
@@ -158,14 +158,14 @@ public class pipedrm
 		/* map to the fromance gfx register */
 		fromance_gfxreg_w(offset, ((data >> 6) & 0x01) | 	/* flipscreen */
 								  ((~data >> 2) & 0x02));	/* videoram select */
-	}
+	} };
 	
 	
-	static WRITE_HANDLER( sound_bankswitch_w )
+	public static WriteHandlerPtr sound_bankswitch_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		UINT8 *ram = memory_region(REGION_CPU2);
 		cpu_setbank(2, &ram[0x10000 + (data & 0x01) * 0x8000]);
-	}
+	} };
 	
 	
 	
@@ -188,23 +188,23 @@ public class pipedrm
 	}
 	
 	
-	static WRITE_HANDLER( sound_command_w )
+	public static WriteHandlerPtr sound_command_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		timer_set(TIME_NOW, data | 0x100, delayed_command_w);
-	}
+	} };
 	
 	
-	static WRITE_HANDLER( sound_command_nonmi_w )
+	public static WriteHandlerPtr sound_command_nonmi_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		timer_set(TIME_NOW, data, delayed_command_w);
-	}
+	} };
 	
 	
-	static WRITE_HANDLER( pending_command_clear_w )
+	public static WriteHandlerPtr pending_command_clear_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		pending_command = 0;
 		cpu_set_nmi_line(1, CLEAR_LINE);
-	}
+	} };
 	
 	
 	public static ReadHandlerPtr pending_command_r  = new ReadHandlerPtr() { public int handler(int offset)

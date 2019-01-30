@@ -368,10 +368,10 @@ public class gauntlet
 	 *
 	 *************************************/
 	
-	static WRITE_HANDLER( tms5220_w )
+	public static WriteHandlerPtr tms5220_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		speech_val = data;
-	}
+	} };
 	
 	
 	
@@ -381,7 +381,7 @@ public class gauntlet
 	 *
 	 *************************************/
 	
-	static WRITE_HANDLER( sound_ctl_w )
+	public static WriteHandlerPtr sound_ctl_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		switch (offset & 7)
 		{
@@ -404,7 +404,7 @@ public class gauntlet
 				tms5220_set_frequency(ATARI_CLOCK_14MHz/2 / (16 - data));
 				break;
 		}
-	}
+	} };
 	
 	
 	
@@ -414,12 +414,12 @@ public class gauntlet
 	 *
 	 *************************************/
 	
-	static WRITE_HANDLER( mixer_w )
+	public static WriteHandlerPtr mixer_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		atarigen_set_ym2151_vol((data & 7) * 100 / 7);
 		atarigen_set_pokey_vol(((data >> 3) & 3) * 100 / 3);
 		atarigen_set_tms5220_vol(((data >> 5) & 7) * 100 / 7);
-	}
+	} };
 	
 	
 	

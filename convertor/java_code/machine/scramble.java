@@ -67,10 +67,10 @@ public class scramble
 	
 	static int moonwar_port_select;
 	
-	static WRITE_HANDLER( moonwar_port_select_w )
+	public static WriteHandlerPtr moonwar_port_select_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		moonwar_port_select = data & 0x10;
-	}
+	} };
 	
 	public static ReadHandlerPtr moonwar_input_port_0_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
@@ -117,10 +117,10 @@ public class scramble
 	
 	
 	
-	static WRITE_HANDLER( scramble_protection_w )
+	public static WriteHandlerPtr scramble_protection_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		/* nothing to do yet */
-	}
+	} };
 	
 	public static ReadHandlerPtr scramble_protection_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
@@ -171,10 +171,10 @@ public class scramble
 	}
 	
 	
-	static WRITE_HANDLER( theend_coin_counter_w )
+	public static WriteHandlerPtr theend_coin_counter_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		coin_counter_w(0, data & 0x80);
-	}
+	} };
 	
 	
 	public static ReadHandlerPtr mariner_protection_1_r  = new ReadHandlerPtr() { public int handler(int offset)
@@ -238,7 +238,7 @@ public class scramble
 		return 0xff;
 	} };
 	
-	static WRITE_HANDLER( cavelon_banksw_w )
+	public static WriteHandlerPtr cavelon_banksw_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		cavelon_banksw();
 	
@@ -246,7 +246,7 @@ public class scramble
 			ppi8255_0_w(offset - 0x0100, data);
 		else if ((offset >= 0x0200) && (offset <= 0x0203))
 			ppi8255_1_w(offset - 0x0200, data);
-	}
+	} };
 	
 	
 	READ_HANDLER(frogger_ppi8255_0_r)

@@ -69,7 +69,7 @@ public class toki
 			cpu_set_nmi_line(1, PULSE_LINE);
 	}
 	
-	static WRITE_HANDLER( toki_adpcm_control_w )
+	public static WriteHandlerPtr toki_adpcm_control_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		int bankaddress;
 		unsigned char *RAM = memory_region(REGION_CPU2);
@@ -80,12 +80,12 @@ public class toki
 		cpu_setbank(1,&RAM[bankaddress]);
 	
 		MSM5205_reset_w(0,data & 0x08);
-	}
+	} };
 	
-	static WRITE_HANDLER( toki_adpcm_data_w )
+	public static WriteHandlerPtr toki_adpcm_data_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		msm5205next = data;
-	}
+	} };
 	
 	
 	/*****************************************************************************/

@@ -4083,9 +4083,9 @@ public class konamiic
 	
 	static unsigned char K054000_ram[0x20];
 	
-	static WRITE_HANDLER( collision_w )
+	public static WriteHandlerPtr collision_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
-	}
+	} };
 	
 	WRITE_HANDLER( K054000_w )
 	{

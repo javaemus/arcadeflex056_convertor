@@ -56,24 +56,24 @@ public class spcforce
 	static int spcforce_SN76496_latch;
 	static int spcforce_SN76496_select;
 	
-	static WRITE_HANDLER( spcforce_SN76496_latch_w )
+	public static WriteHandlerPtr spcforce_SN76496_latch_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		spcforce_SN76496_latch = data;
-	}
+	} };
 	
 	public static ReadHandlerPtr spcforce_SN76496_select_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return spcforce_SN76496_select;
 	} };
 	
-	static WRITE_HANDLER( spcforce_SN76496_select_w )
+	public static WriteHandlerPtr spcforce_SN76496_select_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 	    spcforce_SN76496_select = data;
 	
 		if (~data & 0x40)  SN76496_0_w(0, spcforce_SN76496_latch);
 		if (~data & 0x20)  SN76496_1_w(0, spcforce_SN76496_latch);
 		if (~data & 0x10)  SN76496_2_w(0, spcforce_SN76496_latch);
-	}
+	} };
 	
 	public static ReadHandlerPtr spcforce_t0_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
@@ -82,10 +82,10 @@ public class spcforce
 	} };
 	
 	
-	static WRITE_HANDLER( spcforce_soundtrigger_w )
+	public static WriteHandlerPtr spcforce_soundtrigger_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		cpu_set_irq_line(1, I8039_EXT_INT, (~data & 0x08) ? ASSERT_LINE : CLEAR_LINE);
-	}
+	} };
 	
 	
 	public static Memory_ReadAddress readmem[]={

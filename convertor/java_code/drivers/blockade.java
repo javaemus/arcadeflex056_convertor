@@ -194,7 +194,7 @@ public class blockade
 	    return;
 	}
 	
-	static WRITE_HANDLER( blockade_videoram_w )
+	public static WriteHandlerPtr blockade_videoram_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		videoram_w(offset, data);
 		if (input_port_3_r(0) & 0x80)
@@ -202,7 +202,7 @@ public class blockade
 			logerror("blockade_videoram_w: scanline %d\n", cpu_getscanline());
 			cpu_spinuntil_int();
 		}
-	}
+	} };
 	
 	public static Memory_ReadAddress readmem[]={
 		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),

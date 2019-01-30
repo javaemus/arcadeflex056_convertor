@@ -44,7 +44,7 @@ public class m90
 	
 	/***************************************************************************/
 	
-	static WRITE_HANDLER( m90_coincounter_w )
+	public static WriteHandlerPtr m90_coincounter_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		if (offset==0)
 		{
@@ -53,9 +53,9 @@ public class m90
 	
 			if (data&0xfe) logerror("Coin counter %02x\n",data);
 		}
-	}
+	} };
 	
-	static WRITE_HANDLER( quizf1_bankswitch_w )
+	public static WriteHandlerPtr quizf1_bankswitch_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		if (offset == 0)
 		{
@@ -66,7 +66,7 @@ public class m90
 			else
 				cpu_setbank(1,rom + 0x10000 * (data & 0x0f));
 		}
-	}
+	} };
 	
 	/***************************************************************************/
 	

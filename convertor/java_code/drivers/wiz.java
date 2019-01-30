@@ -125,7 +125,7 @@ public class wiz
 		return wiz_colorram2[0];
 	} };
 	
-	static WRITE_HANDLER( sound_command_w )
+	public static WriteHandlerPtr sound_command_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		if (data == 0x90)
 		{
@@ -133,12 +133,12 @@ public class wiz
 		}
 		else
 			soundlatch_w(0,data);	/* ??? */
-	}
+	} };
 	
-	static WRITE_HANDLER( wiz_coin_counter_w )
+	public static WriteHandlerPtr wiz_coin_counter_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		coin_counter_w(offset,data);
-	}
+	} };
 	
 	public static Memory_ReadAddress readmem[]={
 		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),

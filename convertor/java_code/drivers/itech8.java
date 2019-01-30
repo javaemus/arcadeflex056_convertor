@@ -239,8 +239,6 @@ public class itech8
 	 *
 	 *************************************/
 	
-	static WRITE_HANDLER( pia_porta_out );
-	static WRITE_HANDLER( pia_portb_out );
 	
 	static struct pia6821_interface pia_interface =
 	{
@@ -309,11 +307,11 @@ public class itech8
 	}
 	
 	
-	static WRITE_HANDLER( nmi_ack_w )
+	public static WriteHandlerPtr nmi_ack_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 	/* doesn't seem to hold for every game (e.g., hstennis) */
 	/*	cpu_set_nmi_line(0, CLEAR_LINE);*/
-	}
+	} };
 	
 	
 	static void generate_sound_irq(int state)
@@ -357,7 +355,7 @@ public class itech8
 	 *
 	 *************************************/
 	
-	static WRITE_HANDLER( blitter_w )
+	public static WriteHandlerPtr blitter_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		/* bit 0x20 on address 7 controls CPU banking */
 		if (offset / 2 == 7)
@@ -365,14 +363,14 @@ public class itech8
 	
 		/* the rest is handled by the video hardware */
 		itech8_blitter_w(offset, data);
-	}
+	} };
 	
 	
-	static WRITE_HANDLER( rimrockn_bank_w )
+	public static WriteHandlerPtr rimrockn_bank_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		/* banking is controlled here instead of by the blitter output */
 		cpu_setbank(1, &memory_region(REGION_CPU1)[0x4000 + 0xc000 * (data & 3)]);
-	}
+	} };
 	
 	
 	
@@ -446,13 +444,13 @@ public class itech8
 	}
 	
 	
-	static WRITE_HANDLER( sound_data_w )
+	public static WriteHandlerPtr sound_data_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		timer_set(TIME_NOW, data, delayed_sound_data_w);
-	}
+	} };
 	
 	
-	static WRITE_HANDLER( gtg2_sound_data_w )
+	public static WriteHandlerPtr gtg2_sound_data_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		/* on the later GTG2 board, they swizzle the data lines */
 		data = ((data & 0x80) >> 7) |
@@ -460,7 +458,7 @@ public class itech8
 		       ((data & 0x20) >> 3) |
 		       ((data & 0x02) << 5);
 		timer_set(TIME_NOW, data, delayed_sound_data_w);
-	}
+	} };
 	
 	
 	public static ReadHandlerPtr sound_data_r  = new ReadHandlerPtr() { public int handler(int offset)
@@ -494,7 +492,7 @@ public class itech8
 	}
 	
 	
-	static WRITE_HANDLER( via6522_w )
+	public static WriteHandlerPtr via6522_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		/* update the data */
 		via6522[offset] = data;
@@ -525,7 +523,7 @@ public class itech8
 				if (FULL_LOGGING) logerror("VIA write(%02x) = %02x\n", offset, data);
 				break;
 		}
-	}
+	} };
 	
 	
 	public static ReadHandlerPtr via6522_r  = new ReadHandlerPtr() { public int handler(int offset)

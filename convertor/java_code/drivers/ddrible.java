@@ -53,14 +53,14 @@ public class ddrible
 	}
 	
 	
-	static WRITE_HANDLER( ddrible_bankswitch_w )
+	public static WriteHandlerPtr ddrible_bankswitch_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		int bankaddress;
 		unsigned char *RAM = memory_region(REGION_CPU1);
 	
 		bankaddress = 0x10000 + (data & 0x0f)*0x2000;
 		cpu_setbank(1,&RAM[bankaddress]);
-	}
+	} };
 	
 	
 	public static ReadHandlerPtr ddrible_sharedram_r  = new ReadHandlerPtr() { public int handler(int offset)
@@ -68,22 +68,22 @@ public class ddrible
 		return ddrible_sharedram[offset];
 	} };
 	
-	static WRITE_HANDLER( ddrible_sharedram_w )
+	public static WriteHandlerPtr ddrible_sharedram_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		ddrible_sharedram[offset] = data;
-	}
+	} };
 	
 	public static ReadHandlerPtr ddrible_snd_sharedram_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return ddrible_snd_sharedram[offset];
 	} };
 	
-	static WRITE_HANDLER( ddrible_snd_sharedram_w )
+	public static WriteHandlerPtr ddrible_snd_sharedram_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		ddrible_snd_sharedram[offset] = data;
-	}
+	} };
 	
-	static WRITE_HANDLER( ddrible_coin_counter_w )
+	public static WriteHandlerPtr ddrible_coin_counter_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		/* b4-b7: unused */
 		/* b2-b3: unknown */
@@ -91,7 +91,7 @@ public class ddrible
 		/* b0: coin counter 1 */
 		coin_counter_w(0,(data) & 0x01);
 		coin_counter_w(1,(data >> 1) & 0x01);
-	}
+	} };
 	
 	public static ReadHandlerPtr ddrible_vlm5030_busy_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
@@ -100,7 +100,7 @@ public class ddrible
 		else return 0;
 	} };
 	
-	static WRITE_HANDLER( ddrible_vlm5030_ctrl_w )
+	public static WriteHandlerPtr ddrible_vlm5030_ctrl_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		unsigned char *SPEECH_ROM = memory_region(REGION_SOUND1);
 		/* b7 : vlm data bus OE   */
@@ -118,7 +118,7 @@ public class ddrible
 		set_RC_filter(2,1000,2200,1000,data & 0x04 ? 150000 : 0); /* YM2203-SSG-C */
 		set_RC_filter(1,1000,2200,1000,data & 0x02 ? 150000 : 0); /* YM2203-SSG-B */
 		set_RC_filter(0,1000,2200,1000,data & 0x01 ? 150000 : 0); /* YM2203-SSG-A */
-	}
+	} };
 	
 	
 	public static Memory_ReadAddress readmem_cpu0[]={

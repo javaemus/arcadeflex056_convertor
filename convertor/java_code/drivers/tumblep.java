@@ -130,7 +130,7 @@ public class tumblep
 	
 	/******************************************************************************/
 	
-	static WRITE_HANDLER( YM2151_w )
+	public static WriteHandlerPtr YM2151_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		switch (offset) {
 		case 0:
@@ -140,7 +140,7 @@ public class tumblep
 			YM2151_data_port_0_w(0,data);
 			break;
 		}
-	}
+	} };
 	
 	/* Physical memory map (21 bits) */
 	public static Memory_ReadAddress sound_readmem[]={
