@@ -206,15 +206,17 @@ public class m107
 		new IO_ReadPort(MEMPORT_MARKER, 0)
 	};
 	
-	static PORT_WRITE_START( writeport )
-		{ 0x00, 0x01, m92_soundlatch_w },
-		{ 0x02, 0x03, m107_coincounter_w },
-		{ 0x04, 0x05, MWA_NOP }, /* ??? 0008 */
-		{ 0x06, 0x07, bankswitch_w },
-		{ 0x80, 0x9f, m107_control_w },
-		{ 0xa0, 0xaf, MWA_NOP }, /* Written with 0's in interrupt */
-		{ 0xb0, 0xb1, m107_spritebuffer_w },
-	PORT_END
+	public static IO_WritePort writeport[]={
+		new IO_WritePort(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_IO | MEMPORT_WIDTH_8),
+		new IO_WritePort( 0x00, 0x01, m92_soundlatch_w ),
+		new IO_WritePort( 0x02, 0x03, m107_coincounter_w ),
+		new IO_WritePort( 0x04, 0x05, MWA_NOP ), /* ??? 0008 */
+		new IO_WritePort( 0x06, 0x07, bankswitch_w ),
+		new IO_WritePort( 0x80, 0x9f, m107_control_w ),
+		new IO_WritePort( 0xa0, 0xaf, MWA_NOP ), /* Written with 0's in interrupt */
+		new IO_WritePort( 0xb0, 0xb1, m107_spritebuffer_w ),
+		new IO_WritePort(MEMPORT_MARKER, 0)
+	};
 	
 	/******************************************************************************/
 	

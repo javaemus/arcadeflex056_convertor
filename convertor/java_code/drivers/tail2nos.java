@@ -135,13 +135,15 @@ public class tail2nos
 		new IO_ReadPort(MEMPORT_MARKER, 0)
 	};
 	
-	static PORT_WRITE_START( sound_writeport )
-		{ 0x07, 0x07, IOWP_NOP },	/* clear pending command */
-		{ 0x08, 0x08, YM2608_control_port_0_A_w },
-		{ 0x09, 0x09, YM2608_data_port_0_A_w },
-		{ 0x0a, 0x0a, YM2608_control_port_0_B_w },
-		{ 0x0b, 0x0b, YM2608_data_port_0_B_w },
-	PORT_END
+	public static IO_WritePort sound_writeport[]={
+		new IO_WritePort(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_IO | MEMPORT_WIDTH_8),
+		new IO_WritePort( 0x07, 0x07, IOWP_NOP ),	/* clear pending command */
+		new IO_WritePort( 0x08, 0x08, YM2608_control_port_0_A_w ),
+		new IO_WritePort( 0x09, 0x09, YM2608_data_port_0_A_w ),
+		new IO_WritePort( 0x0a, 0x0a, YM2608_control_port_0_B_w ),
+		new IO_WritePort( 0x0b, 0x0b, YM2608_data_port_0_B_w ),
+		new IO_WritePort(MEMPORT_MARKER, 0)
+	};
 	
 	
 	

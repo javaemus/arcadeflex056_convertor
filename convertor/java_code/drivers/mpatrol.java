@@ -101,14 +101,16 @@ public class mpatrol
 	
 	
 	
-	static PORT_WRITE_START( writeport )
-		{ 0x10, 0x1f, mpatrol_scroll_w },
-		{ 0x40, 0x40, mpatrol_bg1xpos_w },
-		{ 0x60, 0x60, mpatrol_bg1ypos_w },
-		{ 0x80, 0x80, mpatrol_bg2xpos_w },
-		{ 0xa0, 0xa0, mpatrol_bg2ypos_w },
-		{ 0xc0, 0xc0, mpatrol_bgcontrol_w },
-	PORT_END
+	public static IO_WritePort writeport[]={
+		new IO_WritePort(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_IO | MEMPORT_WIDTH_8),
+		new IO_WritePort( 0x10, 0x1f, mpatrol_scroll_w ),
+		new IO_WritePort( 0x40, 0x40, mpatrol_bg1xpos_w ),
+		new IO_WritePort( 0x60, 0x60, mpatrol_bg1ypos_w ),
+		new IO_WritePort( 0x80, 0x80, mpatrol_bg2xpos_w ),
+		new IO_WritePort( 0xa0, 0xa0, mpatrol_bg2ypos_w ),
+		new IO_WritePort( 0xc0, 0xc0, mpatrol_bgcontrol_w ),
+		new IO_WritePort(MEMPORT_MARKER, 0)
+	};
 	
 	
 	

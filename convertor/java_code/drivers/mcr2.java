@@ -269,13 +269,15 @@ public class mcr2
 	};
 	
 	
-	static PORT_WRITE_START( writeport )
-		{ 0x00, 0x00, mcr_control_port_w },
-		{ 0x1c, 0x1f, ssio_data_w },
-		{ 0xe0, 0xe0, watchdog_reset_w },
-		{ 0xe8, 0xe8, MWA_NOP },
-		{ 0xf0, 0xf3, z80ctc_0_w },
-	PORT_END
+	public static IO_WritePort writeport[]={
+		new IO_WritePort(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_IO | MEMPORT_WIDTH_8),
+		new IO_WritePort( 0x00, 0x00, mcr_control_port_w ),
+		new IO_WritePort( 0x1c, 0x1f, ssio_data_w ),
+		new IO_WritePort( 0xe0, 0xe0, watchdog_reset_w ),
+		new IO_WritePort( 0xe8, 0xe8, MWA_NOP ),
+		new IO_WritePort( 0xf0, 0xf3, z80ctc_0_w ),
+		new IO_WritePort(MEMPORT_MARKER, 0)
+	};
 	
 	
 	

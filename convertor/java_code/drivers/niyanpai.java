@@ -427,21 +427,23 @@ public class niyanpai
 		new IO_ReadPort(MEMPORT_MARKER, 0)
 	};
 	
-	static PORT_WRITE_START( sound_writeport )
-		{ 0x10, 0x13, z80ctc_0_w },
-		{ 0x50, 0x50, tmpz84c011_0_pa_w },
-		{ 0x51, 0x51, tmpz84c011_0_pb_w },
-		{ 0x52, 0x52, tmpz84c011_0_pc_w },
-		{ 0x30, 0x30, tmpz84c011_0_pd_w },
-		{ 0x40, 0x40, tmpz84c011_0_pe_w },
-		{ 0x54, 0x54, tmpz84c011_0_dir_pa_w },
-		{ 0x55, 0x55, tmpz84c011_0_dir_pb_w },
-		{ 0x56, 0x56, tmpz84c011_0_dir_pc_w },
-		{ 0x34, 0x34, tmpz84c011_0_dir_pd_w },
-		{ 0x44, 0x44, tmpz84c011_0_dir_pe_w },
-		{ 0x80, 0x80, YM3812_control_port_0_w },
-		{ 0x81, 0x81, YM3812_write_port_0_w },
-	PORT_END
+	public static IO_WritePort sound_writeport[]={
+		new IO_WritePort(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_IO | MEMPORT_WIDTH_8),
+		new IO_WritePort( 0x10, 0x13, z80ctc_0_w ),
+		new IO_WritePort( 0x50, 0x50, tmpz84c011_0_pa_w ),
+		new IO_WritePort( 0x51, 0x51, tmpz84c011_0_pb_w ),
+		new IO_WritePort( 0x52, 0x52, tmpz84c011_0_pc_w ),
+		new IO_WritePort( 0x30, 0x30, tmpz84c011_0_pd_w ),
+		new IO_WritePort( 0x40, 0x40, tmpz84c011_0_pe_w ),
+		new IO_WritePort( 0x54, 0x54, tmpz84c011_0_dir_pa_w ),
+		new IO_WritePort( 0x55, 0x55, tmpz84c011_0_dir_pb_w ),
+		new IO_WritePort( 0x56, 0x56, tmpz84c011_0_dir_pc_w ),
+		new IO_WritePort( 0x34, 0x34, tmpz84c011_0_dir_pd_w ),
+		new IO_WritePort( 0x44, 0x44, tmpz84c011_0_dir_pe_w ),
+		new IO_WritePort( 0x80, 0x80, YM3812_control_port_0_w ),
+		new IO_WritePort( 0x81, 0x81, YM3812_write_port_0_w ),
+		new IO_WritePort(MEMPORT_MARKER, 0)
+	};
 	
 	
 	INPUT_PORTS_START( niyanpai )

@@ -195,11 +195,13 @@ public class spacefb
 		new IO_ReadPort(MEMPORT_MARKER, 0)
 	};
 	
-	static PORT_WRITE_START( writeport )
-		{ 0x00, 0x00, spacefb_video_control_w },
-		{ 0x01, 0x01, spacefb_port_1_w },
-		{ 0x02, 0x02, spacefb_port_2_w },
-	PORT_END
+	public static IO_WritePort writeport[]={
+		new IO_WritePort(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_IO | MEMPORT_WIDTH_8),
+		new IO_WritePort( 0x00, 0x00, spacefb_video_control_w ),
+		new IO_WritePort( 0x01, 0x01, spacefb_port_1_w ),
+		new IO_WritePort( 0x02, 0x02, spacefb_port_2_w ),
+		new IO_WritePort(MEMPORT_MARKER, 0)
+	};
 	
 	public static Memory_ReadAddress readmem_sound[]={
 		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
@@ -221,9 +223,11 @@ public class spacefb
 		new IO_ReadPort(MEMPORT_MARKER, 0)
 	};
 	
-	static PORT_WRITE_START( writeport_sound )
-		{ I8039_p1, I8039_p1, DAC_0_data_w },
-	PORT_END
+	public static IO_WritePort writeport_sound[]={
+		new IO_WritePort(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_IO | MEMPORT_WIDTH_8),
+		new IO_WritePort( I8039_p1, I8039_p1, DAC_0_data_w ),
+		new IO_WritePort(MEMPORT_MARKER, 0)
+	};
 	
 	
 	INPUT_PORTS_START( spacefb )

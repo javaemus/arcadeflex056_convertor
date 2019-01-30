@@ -245,13 +245,15 @@ public class segasyse
 		new IO_ReadPort(MEMPORT_MARKER, 0)
 	};
 	
-	static PORT_WRITE_START( segae_writeport )
-		{ 0x7b, 0x7b, SN76496_0_w }, /* Not sure which chip each is on */
-		{ 0x7f, 0x7f, SN76496_1_w }, /* Not sure which chip each is on */
-		{ 0xba, 0xbb, segae_port_ba_bb_w },			/* Back Layer VDP */
-		{ 0xbe, 0xbf, segae_port_be_bf_w },			/* Front Layer VDP */
-		{ 0xf7, 0xf7, segae_port_f7_w },			/* Banking Control */
-	PORT_END
+	public static IO_WritePort segae_writeport[]={
+		new IO_WritePort(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_IO | MEMPORT_WIDTH_8),
+		new IO_WritePort( 0x7b, 0x7b, SN76496_0_w ), /* Not sure which chip each is on */
+		new IO_WritePort( 0x7f, 0x7f, SN76496_1_w ), /* Not sure which chip each is on */
+		new IO_WritePort( 0xba, 0xbb, segae_port_ba_bb_w ),			/* Back Layer VDP */
+		new IO_WritePort( 0xbe, 0xbf, segae_port_be_bf_w ),			/* Front Layer VDP */
+		new IO_WritePort( 0xf7, 0xf7, segae_port_f7_w ),			/* Banking Control */
+		new IO_WritePort(MEMPORT_MARKER, 0)
+	};
 	
 	/*******************************************************************************
 	 Read / Write Handlers

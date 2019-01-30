@@ -330,9 +330,11 @@ public class mjsikaku
 		}
 	}
 	
-	static PORT_WRITE_START( writeport_mjsikaku )
-		{ 0x0000, 0xffff, io_mjsikaku_w },
-	PORT_END
+	public static IO_WritePort writeport_mjsikaku[]={
+		new IO_WritePort(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_IO | MEMPORT_WIDTH_8),
+		new IO_WritePort( 0x0000, 0xffff, io_mjsikaku_w ),
+		new IO_WritePort(MEMPORT_MARKER, 0)
+	};
 	
 	static READ_HANDLER( io_otonano_r )
 	{
@@ -395,9 +397,11 @@ public class mjsikaku
 		}
 	}
 	
-	static PORT_WRITE_START( writeport_otonano )
-		{ 0x0000, 0xffff, io_otonano_w },
-	PORT_END
+	public static IO_WritePort writeport_otonano[]={
+		new IO_WritePort(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_IO | MEMPORT_WIDTH_8),
+		new IO_WritePort( 0x0000, 0xffff, io_otonano_w ),
+		new IO_WritePort(MEMPORT_MARKER, 0)
+	};
 	
 	static READ_HANDLER( io_kaguya_r )
 	{
@@ -460,9 +464,11 @@ public class mjsikaku
 		}
 	}
 	
-	static PORT_WRITE_START( writeport_kaguya )
-		{ 0x0000, 0xffff, io_kaguya_w },
-	PORT_END
+	public static IO_WritePort writeport_kaguya[]={
+		new IO_WritePort(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_IO | MEMPORT_WIDTH_8),
+		new IO_WritePort( 0x0000, 0xffff, io_kaguya_w ),
+		new IO_WritePort(MEMPORT_MARKER, 0)
+	};
 	
 	static READ_HANDLER( io_secolove_r )
 	{
@@ -525,9 +531,11 @@ public class mjsikaku
 		}
 	}
 	
-	static PORT_WRITE_START( writeport_secolove )
-		{ 0x0000, 0xffff, io_secolove_w },
-	PORT_END
+	public static IO_WritePort writeport_secolove[]={
+		new IO_WritePort(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_IO | MEMPORT_WIDTH_8),
+		new IO_WritePort( 0x0000, 0xffff, io_secolove_w ),
+		new IO_WritePort(MEMPORT_MARKER, 0)
+	};
 	
 	static WRITE_HANDLER( io_iemoto_w )
 	{
@@ -568,9 +576,11 @@ public class mjsikaku
 		}
 	}
 	
-	static PORT_WRITE_START( writeport_iemoto )
-		{ 0x0000, 0xffff, io_iemoto_w },
-	PORT_END
+	public static IO_WritePort writeport_iemoto[]={
+		new IO_WritePort(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_IO | MEMPORT_WIDTH_8),
+		new IO_WritePort( 0x0000, 0xffff, io_iemoto_w ),
+		new IO_WritePort(MEMPORT_MARKER, 0)
+	};
 	
 	static WRITE_HANDLER( io_seiha_w )
 	{
@@ -613,9 +623,11 @@ public class mjsikaku
 		}
 	}
 	
-	static PORT_WRITE_START( writeport_seiha )
-		{ 0x0000, 0xffff, io_seiha_w },
-	PORT_END
+	public static IO_WritePort writeport_seiha[]={
+		new IO_WritePort(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_IO | MEMPORT_WIDTH_8),
+		new IO_WritePort( 0x0000, 0xffff, io_seiha_w ),
+		new IO_WritePort(MEMPORT_MARKER, 0)
+	};
 	
 	static WRITE_HANDLER( io_crystal2_w )
 	{
@@ -654,9 +666,11 @@ public class mjsikaku
 		}
 	}
 	
-	static PORT_WRITE_START( writeport_crystal2 )
-		{ 0x0000, 0xffff, io_crystal2_w },
-	PORT_END
+	public static IO_WritePort writeport_crystal2[]={
+		new IO_WritePort(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_IO | MEMPORT_WIDTH_8),
+		new IO_WritePort( 0x0000, 0xffff, io_crystal2_w ),
+		new IO_WritePort(MEMPORT_MARKER, 0)
+	};
 	
 	static WRITE_HANDLER( io_bijokkoy_w )
 	{
@@ -701,9 +715,11 @@ public class mjsikaku
 		}
 	}
 	
-	static PORT_WRITE_START( writeport_bijokkoy )
-		{ 0x0000, 0xffff, io_bijokkoy_w },
-	PORT_END
+	public static IO_WritePort writeport_bijokkoy[]={
+		new IO_WritePort(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_IO | MEMPORT_WIDTH_8),
+		new IO_WritePort( 0x0000, 0xffff, io_bijokkoy_w ),
+		new IO_WritePort(MEMPORT_MARKER, 0)
+	};
 	
 	
 	INPUT_PORTS_START( mjsikaku )

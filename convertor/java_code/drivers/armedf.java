@@ -257,12 +257,14 @@ public class armedf
 		new IO_ReadPort(MEMPORT_MARKER, 0)
 	};
 	
-	static PORT_WRITE_START( writeport )
-		{ 0x0, 0x0, YM3812_control_port_0_w },
-		{ 0x1, 0x1, YM3812_write_port_0_w },
-	  	{ 0x2, 0x2, DAC_0_signed_data_w },
-	  	{ 0x3, 0x3, DAC_1_signed_data_w },
-	PORT_END
+	public static IO_WritePort writeport[]={
+		new IO_WritePort(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_IO | MEMPORT_WIDTH_8),
+		new IO_WritePort( 0x0, 0x0, YM3812_control_port_0_w ),
+		new IO_WritePort( 0x1, 0x1, YM3812_write_port_0_w ),
+	  	new IO_WritePort( 0x2, 0x2, DAC_0_signed_data_w ),
+	  	new IO_WritePort( 0x3, 0x3, DAC_1_signed_data_w ),
+		new IO_WritePort(MEMPORT_MARKER, 0)
+	};
 	
 	
 	/****************

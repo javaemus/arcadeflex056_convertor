@@ -161,14 +161,16 @@ public class esd16
 		new IO_ReadPort(MEMPORT_MARKER, 0)
 	};
 	
-	static PORT_WRITE_START( multchmp_sound_writeport )
-		{ 0x00, 0x00, YM3812_control_port_0_w	},	// YM3812
-		{ 0x01, 0x01, YM3812_write_port_0_w		},
-		{ 0x02, 0x02, OKIM6295_data_0_w			},	// M6295
-		{ 0x04, 0x04, IOWP_NOP					},	// ? $00, $30
-		{ 0x05, 0x05, esd16_sound_rombank_w 	},	// ROM Bank
-		{ 0x06, 0x06, IOWP_NOP					},	// ? 1 (End of NMI routine)
-	PORT_END
+	public static IO_WritePort multchmp_sound_writeport[]={
+		new IO_WritePort(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_IO | MEMPORT_WIDTH_8),
+		new IO_WritePort( 0x00, 0x00, YM3812_control_port_0_w	),	// YM3812
+		new IO_WritePort( 0x01, 0x01, YM3812_write_port_0_w		),
+		new IO_WritePort( 0x02, 0x02, OKIM6295_data_0_w			),	// M6295
+		new IO_WritePort( 0x04, 0x04, IOWP_NOP					),	// ? $00, $30
+		new IO_WritePort( 0x05, 0x05, esd16_sound_rombank_w 	),	// ROM Bank
+		new IO_WritePort( 0x06, 0x06, IOWP_NOP					),	// ? 1 (End of NMI routine)
+		new IO_WritePort(MEMPORT_MARKER, 0)
+	};
 	
 	
 	/***************************************************************************

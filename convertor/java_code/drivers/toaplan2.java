@@ -1657,18 +1657,19 @@ public class toaplan2
 		new IO_ReadPort( 0x84, 0x84, OKIM6295_status_1_r ),
 	MEMORY_END
 	
-	static PORT_WRITE_START( batrider_sound_writeport )
-		new IO_ReadPort( 0x40, 0x46, batrider_sound_data_z80_w ),
-		new IO_ReadPort( 0x80, 0x80, YM2151_register_port_0_w ),
-		new IO_ReadPort( 0x81, 0x81, YM2151_data_port_0_w ),
-		new IO_ReadPort( 0x82, 0x82, OKIM6295_data_0_w ),
-		new IO_ReadPort( 0x84, 0x84, OKIM6295_data_1_w ),
-		new IO_ReadPort( 0x88, 0x88, batrider_bankswitch_w ),
-		new IO_ReadPort( 0xc0, 0xc0, raizing_okim6295_bankselect_0 ),
-		new IO_ReadPort( 0xc2, 0xc2, raizing_okim6295_bankselect_1 ),
-		new IO_ReadPort( 0xc4, 0xc4, raizing_okim6295_bankselect_2 ),
-		new IO_ReadPort( 0xc6, 0xc6, raizing_okim6295_bankselect_3 ),
-		new IO_ReadPort(MEMPORT_MARKER, 0)
+	public static IO_WritePort batrider_sound_writeport[]={
+		new IO_WritePort(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_IO | MEMPORT_WIDTH_8),
+		new IO_WritePort( 0x40, 0x46, batrider_sound_data_z80_w ),
+		new IO_WritePort( 0x80, 0x80, YM2151_register_port_0_w ),
+		new IO_WritePort( 0x81, 0x81, YM2151_data_port_0_w ),
+		new IO_WritePort( 0x82, 0x82, OKIM6295_data_0_w ),
+		new IO_WritePort( 0x84, 0x84, OKIM6295_data_1_w ),
+		new IO_WritePort( 0x88, 0x88, batrider_bankswitch_w ),
+		new IO_WritePort( 0xc0, 0xc0, raizing_okim6295_bankselect_0 ),
+		new IO_WritePort( 0xc2, 0xc2, raizing_okim6295_bankselect_1 ),
+		new IO_WritePort( 0xc4, 0xc4, raizing_okim6295_bankselect_2 ),
+		new IO_WritePort( 0xc6, 0xc6, raizing_okim6295_bankselect_3 ),
+		new IO_WritePort(MEMPORT_MARKER, 0)
 	};
 	
 	#if HD64x180

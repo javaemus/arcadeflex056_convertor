@@ -258,10 +258,12 @@ public class arabian
 	 *
 	 *************************************/
 	
-	static PORT_WRITE_START( writeport )
-		{ 0xc800, 0xc800, AY8910_control_port_0_w },
-		{ 0xca00, 0xca00, AY8910_write_port_0_w },
-	PORT_END
+	public static IO_WritePort writeport[]={
+		new IO_WritePort(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_IO | MEMPORT_WIDTH_8),
+		new IO_WritePort( 0xc800, 0xc800, AY8910_control_port_0_w ),
+		new IO_WritePort( 0xca00, 0xca00, AY8910_write_port_0_w ),
+		new IO_WritePort(MEMPORT_MARKER, 0)
+	};
 	
 	
 	

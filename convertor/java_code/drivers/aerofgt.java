@@ -362,14 +362,16 @@ public class aerofgt
 		new IO_ReadPort(MEMPORT_MARKER, 0)
 	};
 	
-	static PORT_WRITE_START( turbofrc_sound_writeport )
-		{ 0x00, 0x00, aerofgt_sh_bankswitch_w },
-		{ 0x14, 0x14, pending_command_clear_w },
-		{ 0x18, 0x18, YM2610_control_port_0_A_w },
-		{ 0x19, 0x19, YM2610_data_port_0_A_w },
-		{ 0x1a, 0x1a, YM2610_control_port_0_B_w },
-		{ 0x1b, 0x1b, YM2610_data_port_0_B_w },
-	PORT_END
+	public static IO_WritePort turbofrc_sound_writeport[]={
+		new IO_WritePort(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_IO | MEMPORT_WIDTH_8),
+		new IO_WritePort( 0x00, 0x00, aerofgt_sh_bankswitch_w ),
+		new IO_WritePort( 0x14, 0x14, pending_command_clear_w ),
+		new IO_WritePort( 0x18, 0x18, YM2610_control_port_0_A_w ),
+		new IO_WritePort( 0x19, 0x19, YM2610_data_port_0_A_w ),
+		new IO_WritePort( 0x1a, 0x1a, YM2610_control_port_0_B_w ),
+		new IO_WritePort( 0x1b, 0x1b, YM2610_data_port_0_B_w ),
+		new IO_WritePort(MEMPORT_MARKER, 0)
+	};
 	
 	public static IO_ReadPort aerofgt_sound_readport[]={
 		new IO_ReadPort(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_IO | MEMPORT_WIDTH_8),
@@ -379,14 +381,16 @@ public class aerofgt
 		new IO_ReadPort(MEMPORT_MARKER, 0)
 	};
 	
-	static PORT_WRITE_START( aerofgt_sound_writeport )
-		{ 0x00, 0x00, YM2610_control_port_0_A_w },
-		{ 0x01, 0x01, YM2610_data_port_0_A_w },
-		{ 0x02, 0x02, YM2610_control_port_0_B_w },
-		{ 0x03, 0x03, YM2610_data_port_0_B_w },
-		{ 0x04, 0x04, aerofgt_sh_bankswitch_w },
-		{ 0x08, 0x08, pending_command_clear_w },
-	PORT_END
+	public static IO_WritePort aerofgt_sound_writeport[]={
+		new IO_WritePort(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_IO | MEMPORT_WIDTH_8),
+		new IO_WritePort( 0x00, 0x00, YM2610_control_port_0_A_w ),
+		new IO_WritePort( 0x01, 0x01, YM2610_data_port_0_A_w ),
+		new IO_WritePort( 0x02, 0x02, YM2610_control_port_0_B_w ),
+		new IO_WritePort( 0x03, 0x03, YM2610_data_port_0_B_w ),
+		new IO_WritePort( 0x04, 0x04, aerofgt_sh_bankswitch_w ),
+		new IO_WritePort( 0x08, 0x08, pending_command_clear_w ),
+		new IO_WritePort(MEMPORT_MARKER, 0)
+	};
 	
 	
 	

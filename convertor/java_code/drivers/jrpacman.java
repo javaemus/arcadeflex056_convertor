@@ -194,9 +194,11 @@ public class jrpacman
 	
 	
 	
-	static PORT_WRITE_START( writeport )
-		{ 0, 0, interrupt_vector_w },
-	PORT_END
+	public static IO_WritePort writeport[]={
+		new IO_WritePort(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_IO | MEMPORT_WIDTH_8),
+		new IO_WritePort( 0, 0, interrupt_vector_w ),
+		new IO_WritePort(MEMPORT_MARKER, 0)
+	};
 	
 	
 	INPUT_PORTS_START( jrpacman )

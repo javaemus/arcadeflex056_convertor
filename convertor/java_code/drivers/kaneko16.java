@@ -1255,10 +1255,12 @@ public class kaneko16
 		new IO_ReadPort( 0x06, 0x06, soundlatch_r				),
 		new IO_ReadPort(MEMPORT_MARKER, 0)
 	};
-	static PORT_WRITE_START( blazeon_sound_writeport )
-		{ 0x02, 0x02, YM2151_register_port_0_w	},
-		{ 0x03, 0x03, YM2151_data_port_0_w		},
-	PORT_END
+	public static IO_WritePort blazeon_sound_writeport[]={
+		new IO_WritePort(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_IO | MEMPORT_WIDTH_8),
+		new IO_WritePort( 0x02, 0x02, YM2151_register_port_0_w	),
+		new IO_WritePort( 0x03, 0x03, YM2151_data_port_0_w		),
+		new IO_WritePort(MEMPORT_MARKER, 0)
+	};
 	
 	
 	/***************************************************************************
@@ -1319,13 +1321,15 @@ public class kaneko16
 		new IO_ReadPort( 0x08, 0x08, sandscrp_latchstatus_r		),	//
 		new IO_ReadPort(MEMPORT_MARKER, 0)
 	};
-	static PORT_WRITE_START( sandscrp_sound_writeport )
-		{ 0x00, 0x00, sandscrp_bankswitch_w		},	// ROM Bank
-		{ 0x02, 0x02, YM2203_control_port_0_w	},	// YM2203
-		{ 0x03, 0x03, YM2203_write_port_0_w		},	//
-		{ 0x04, 0x04, OKIM6295_data_0_w			},	// OKIM6295
-		{ 0x06, 0x06, sandscrp_soundlatch_w		},	//
-	PORT_END
+	public static IO_WritePort sandscrp_sound_writeport[]={
+		new IO_WritePort(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_IO | MEMPORT_WIDTH_8),
+		new IO_WritePort( 0x00, 0x00, sandscrp_bankswitch_w		),	// ROM Bank
+		new IO_WritePort( 0x02, 0x02, YM2203_control_port_0_w	),	// YM2203
+		new IO_WritePort( 0x03, 0x03, YM2203_write_port_0_w		),	//
+		new IO_WritePort( 0x04, 0x04, OKIM6295_data_0_w			),	// OKIM6295
+		new IO_WritePort( 0x06, 0x06, sandscrp_soundlatch_w		),	//
+		new IO_WritePort(MEMPORT_MARKER, 0)
+	};
 	
 	
 	

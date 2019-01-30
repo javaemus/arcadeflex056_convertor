@@ -482,10 +482,12 @@ public class lazercmd
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static PORT_WRITE_START( lazercmd_writeport )
-		{ S2650_CTRL_PORT, S2650_CTRL_PORT, lazercmd_ctrl_port_w },
-		{ S2650_DATA_PORT, S2650_DATA_PORT, lazercmd_data_port_w },
-	PORT_END
+	public static IO_WritePort lazercmd_writeport[]={
+		new IO_WritePort(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_IO | MEMPORT_WIDTH_8),
+		new IO_WritePort( S2650_CTRL_PORT, S2650_CTRL_PORT, lazercmd_ctrl_port_w ),
+		new IO_WritePort( S2650_DATA_PORT, S2650_DATA_PORT, lazercmd_data_port_w ),
+		new IO_WritePort(MEMPORT_MARKER, 0)
+	};
 	
 	public static IO_ReadPort lazercmd_readport[]={
 		new IO_ReadPort(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_IO | MEMPORT_WIDTH_8),

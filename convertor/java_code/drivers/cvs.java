@@ -317,11 +317,13 @@ public class cvs
 		new IO_ReadPort(MEMPORT_MARKER, 0)
 	};
 	
-	static PORT_WRITE_START( cvs_writeport )
-		{ 0              , 0xff           , cvs_scroll_w },
-		{ S2650_CTRL_PORT, S2650_CTRL_PORT, control_port_w },
-		{ S2650_DATA_PORT, S2650_DATA_PORT, cvs_video_fx_w },
-	PORT_END
+	public static IO_WritePort cvs_writeport[]={
+		new IO_WritePort(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_IO | MEMPORT_WIDTH_8),
+		new IO_WritePort( 0              , 0xff           , cvs_scroll_w ),
+		new IO_WritePort( S2650_CTRL_PORT, S2650_CTRL_PORT, control_port_w ),
+		new IO_WritePort( S2650_DATA_PORT, S2650_DATA_PORT, cvs_video_fx_w ),
+		new IO_WritePort(MEMPORT_MARKER, 0)
+	};
 	
 	public static Memory_ReadAddress cvs_sound_readmem[]={
 		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),

@@ -421,9 +421,11 @@ public class dkong
 	    return 1;
 	}
 	
-	static PORT_WRITE_START( hunchbkd_writeport )
-		{ 0x101, 0x101, hunchbkd_data_w },
-	PORT_END
+	public static IO_WritePort hunchbkd_writeport[]={
+		new IO_WritePort(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_IO | MEMPORT_WIDTH_8),
+		new IO_WritePort( 0x101, 0x101, hunchbkd_data_w ),
+		new IO_WritePort(MEMPORT_MARKER, 0)
+	};
 	
 	public static IO_ReadPort hunchbkd_readport[]={
 		new IO_ReadPort(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_IO | MEMPORT_WIDTH_8),
@@ -459,10 +461,12 @@ public class dkong
 		new IO_ReadPort( I8039_t1, I8039_t1, dkong_sh_t1_r ),
 		new IO_ReadPort(MEMPORT_MARKER, 0)
 	};
-	static PORT_WRITE_START( writeport_sound )
-		{ I8039_p1, I8039_p1, dkong_sh_p1_w },
-		{ I8039_p2, I8039_p2, dkong_sh_p2_w },
-	PORT_END
+	public static IO_WritePort writeport_sound[]={
+		new IO_WritePort(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_IO | MEMPORT_WIDTH_8),
+		new IO_WritePort( I8039_p1, I8039_p1, dkong_sh_p1_w ),
+		new IO_WritePort( I8039_p2, I8039_p2, dkong_sh_p2_w ),
+		new IO_WritePort(MEMPORT_MARKER, 0)
+	};
 	
 	public static IO_ReadPort readport_hunchbkd_sound[]={
 		new IO_ReadPort(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_IO | MEMPORT_WIDTH_8),
@@ -542,9 +546,11 @@ public class dkong
 		new Memory_WriteAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static PORT_WRITE_START( dkong3_writeport )
-		{ 0x00, 0x00, IOWP_NOP },	/* ??? */
-	PORT_END
+	public static IO_WritePort dkong3_writeport[]={
+		new IO_WritePort(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_IO | MEMPORT_WIDTH_8),
+		new IO_WritePort( 0x00, 0x00, IOWP_NOP ),	/* ??? */
+		new IO_WritePort(MEMPORT_MARKER, 0)
+	};
 	
 	public static Memory_ReadAddress dkong3_sound1_readmem[]={
 		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),

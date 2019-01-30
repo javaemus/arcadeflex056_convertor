@@ -191,14 +191,16 @@ public class sega
 		new IO_ReadPort(MEMPORT_MARKER, 0)
 	};
 	
-	static PORT_WRITE_START( spacfury_writeport )
-		{ 0x38, 0x38, sega_sh_speech_w },
-		{ 0x3e, 0x3e, spacfury1_sh_w },
-		{ 0x3f, 0x3f, spacfury2_sh_w },
-		{ 0xbd, 0xbd, sega_mult1_w },
-		{ 0xbe, 0xbe, sega_mult2_w },
-		{ 0xf9, 0xf9, sega_coin_counter_w }, /* 0x80 = enable, 0x00 = disable */
-	PORT_END
+	public static IO_WritePort spacfury_writeport[]={
+		new IO_WritePort(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_IO | MEMPORT_WIDTH_8),
+		new IO_WritePort( 0x38, 0x38, sega_sh_speech_w ),
+		new IO_WritePort( 0x3e, 0x3e, spacfury1_sh_w ),
+		new IO_WritePort( 0x3f, 0x3f, spacfury2_sh_w ),
+		new IO_WritePort( 0xbd, 0xbd, sega_mult1_w ),
+		new IO_WritePort( 0xbe, 0xbe, sega_mult2_w ),
+		new IO_WritePort( 0xf9, 0xf9, sega_coin_counter_w ), /* 0x80 = enable, 0x00 = disable */
+		new IO_WritePort(MEMPORT_MARKER, 0)
+	};
 	
 	public static IO_ReadPort zektor_readport[]={
 		new IO_ReadPort(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_IO | MEMPORT_WIDTH_8),
@@ -209,23 +211,27 @@ public class sega
 		new IO_ReadPort(MEMPORT_MARKER, 0)
 	};
 	
-	static PORT_WRITE_START( zektor_writeport )
-		{ 0x38, 0x38, sega_sh_speech_w },
-			{ 0x3e, 0x3e, zektor1_sh_w },
-			{ 0x3f, 0x3f, zektor2_sh_w },
-		{ 0xbd, 0xbd, sega_mult1_w },
-		{ 0xbe, 0xbe, sega_mult2_w },
-		{ 0xf8, 0xf8, sega_switch_w },
-		{ 0xf9, 0xf9, sega_coin_counter_w }, /* 0x80 = enable, 0x00 = disable */
-	PORT_END
+	public static IO_WritePort zektor_writeport[]={
+		new IO_WritePort(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_IO | MEMPORT_WIDTH_8),
+		new IO_WritePort( 0x38, 0x38, sega_sh_speech_w ),
+			new IO_WritePort( 0x3e, 0x3e, zektor1_sh_w ),
+			new IO_WritePort( 0x3f, 0x3f, zektor2_sh_w ),
+		new IO_WritePort( 0xbd, 0xbd, sega_mult1_w ),
+		new IO_WritePort( 0xbe, 0xbe, sega_mult2_w ),
+		new IO_WritePort( 0xf8, 0xf8, sega_switch_w ),
+		new IO_WritePort( 0xf9, 0xf9, sega_coin_counter_w ), /* 0x80 = enable, 0x00 = disable */
+		new IO_WritePort(MEMPORT_MARKER, 0)
+	};
 	
-	static PORT_WRITE_START( tacscan_writeport )
-		{ 0x3f, 0x3f, tacscan_sh_w },
-		{ 0xbd, 0xbd, sega_mult1_w },
-		{ 0xbe, 0xbe, sega_mult2_w },
-		{ 0xf8, 0xf8, sega_switch_w },
-		{ 0xf9, 0xf9, sega_coin_counter_w }, /* 0x80 = enable, 0x00 = disable */
-	PORT_END
+	public static IO_WritePort tacscan_writeport[]={
+		new IO_WritePort(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_IO | MEMPORT_WIDTH_8),
+		new IO_WritePort( 0x3f, 0x3f, tacscan_sh_w ),
+		new IO_WritePort( 0xbd, 0xbd, sega_mult1_w ),
+		new IO_WritePort( 0xbe, 0xbe, sega_mult2_w ),
+		new IO_WritePort( 0xf8, 0xf8, sega_switch_w ),
+		new IO_WritePort( 0xf9, 0xf9, sega_coin_counter_w ), /* 0x80 = enable, 0x00 = disable */
+		new IO_WritePort(MEMPORT_MARKER, 0)
+	};
 	
 	public static IO_ReadPort elim2_readport[]={
 		new IO_ReadPort(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_IO | MEMPORT_WIDTH_8),
@@ -245,23 +251,27 @@ public class sega
 		new IO_ReadPort(MEMPORT_MARKER, 0)
 	};
 	
-	static PORT_WRITE_START( elim_writeport )
-		{ 0x3e, 0x3e, elim1_sh_w },
-		{ 0x3f, 0x3f, elim2_sh_w },
-		{ 0xbd, 0xbd, sega_mult1_w },
-		{ 0xbe, 0xbe, sega_mult2_w },
-		{ 0xf8, 0xf8, sega_switch_w },
-		{ 0xf9, 0xf9, sega_coin_counter_w }, /* 0x80 = enable, 0x00 = disable */
-	PORT_END
+	public static IO_WritePort elim_writeport[]={
+		new IO_WritePort(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_IO | MEMPORT_WIDTH_8),
+		new IO_WritePort( 0x3e, 0x3e, elim1_sh_w ),
+		new IO_WritePort( 0x3f, 0x3f, elim2_sh_w ),
+		new IO_WritePort( 0xbd, 0xbd, sega_mult1_w ),
+		new IO_WritePort( 0xbe, 0xbe, sega_mult2_w ),
+		new IO_WritePort( 0xf8, 0xf8, sega_switch_w ),
+		new IO_WritePort( 0xf9, 0xf9, sega_coin_counter_w ), /* 0x80 = enable, 0x00 = disable */
+		new IO_WritePort(MEMPORT_MARKER, 0)
+	};
 	
-	static PORT_WRITE_START( startrek_writeport )
-		{ 0x38, 0x38, sega_sh_speech_w },
-		{ 0x3f, 0x3f, startrek_sh_w },
-		{ 0xbd, 0xbd, sega_mult1_w },
-		{ 0xbe, 0xbe, sega_mult2_w },
-		{ 0xf8, 0xf8, sega_switch_w },
-		{ 0xf9, 0xf9, sega_coin_counter_w }, /* 0x80 = enable, 0x00 = disable */
-	PORT_END
+	public static IO_WritePort startrek_writeport[]={
+		new IO_WritePort(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_IO | MEMPORT_WIDTH_8),
+		new IO_WritePort( 0x38, 0x38, sega_sh_speech_w ),
+		new IO_WritePort( 0x3f, 0x3f, startrek_sh_w ),
+		new IO_WritePort( 0xbd, 0xbd, sega_mult1_w ),
+		new IO_WritePort( 0xbe, 0xbe, sega_mult2_w ),
+		new IO_WritePort( 0xf8, 0xf8, sega_switch_w ),
+		new IO_WritePort( 0xf9, 0xf9, sega_coin_counter_w ), /* 0x80 = enable, 0x00 = disable */
+		new IO_WritePort(MEMPORT_MARKER, 0)
+	};
 	
 	/*************************************************************************
 	Input Ports

@@ -288,9 +288,11 @@ public class victory
 	};
 	
 	
-	static PORT_WRITE_START( main_writeport )
-		{ 0x10, 0x13, lamp_control_w },
-	PORT_END
+	public static IO_WritePort main_writeport[]={
+		new IO_WritePort(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_IO | MEMPORT_WIDTH_8),
+		new IO_WritePort( 0x10, 0x13, lamp_control_w ),
+		new IO_WritePort(MEMPORT_MARKER, 0)
+	};
 	
 	
 	

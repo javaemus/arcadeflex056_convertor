@@ -441,9 +441,11 @@ public class pstadium
 		}
 	}
 	
-	static PORT_WRITE_START( writeport_pstadium )
-		{ 0x0000, 0xffff, io_pstadium_w },
-	PORT_END
+	public static IO_WritePort writeport_pstadium[]={
+		new IO_WritePort(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_IO | MEMPORT_WIDTH_8),
+		new IO_WritePort( 0x0000, 0xffff, io_pstadium_w ),
+		new IO_WritePort(MEMPORT_MARKER, 0)
+	};
 	
 	static WRITE_HANDLER( io_av2mj1_w )
 	{
@@ -474,9 +476,11 @@ public class pstadium
 		}
 	}
 	
-	static PORT_WRITE_START( writeport_av2mj1 )
-		{ 0x0000, 0xffff, io_av2mj1_w },
-	PORT_END
+	public static IO_WritePort writeport_av2mj1[]={
+		new IO_WritePort(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_IO | MEMPORT_WIDTH_8),
+		new IO_WritePort( 0x0000, 0xffff, io_av2mj1_w ),
+		new IO_WritePort(MEMPORT_MARKER, 0)
+	};
 	
 	static READ_HANDLER( io_galkoku_r )
 	{
@@ -538,9 +542,11 @@ public class pstadium
 		}
 	}
 	
-	static PORT_WRITE_START( writeport_galkoku )
-		{ 0x0000, 0xffff, io_galkoku_w },
-	PORT_END
+	public static IO_WritePort writeport_galkoku[]={
+		new IO_WritePort(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_IO | MEMPORT_WIDTH_8),
+		new IO_WritePort( 0x0000, 0xffff, io_galkoku_w ),
+		new IO_WritePort(MEMPORT_MARKER, 0)
+	};
 	
 	static READ_HANDLER( io_hyouban_r )
 	{
@@ -603,9 +609,11 @@ public class pstadium
 		}
 	}
 	
-	static PORT_WRITE_START( writeport_hyouban )
-		{ 0x0000, 0xffff, io_hyouban_w },
-	PORT_END
+	public static IO_WritePort writeport_hyouban[]={
+		new IO_WritePort(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_IO | MEMPORT_WIDTH_8),
+		new IO_WritePort( 0x0000, 0xffff, io_hyouban_w ),
+		new IO_WritePort(MEMPORT_MARKER, 0)
+	};
 	
 	
 	public static Memory_ReadAddress sound_readmem_pstadium[]={
@@ -630,19 +638,21 @@ public class pstadium
 		new IO_ReadPort(MEMPORT_MARKER, 0)
 	};
 	
-	static PORT_WRITE_START( sound_writeport_pstadium )
+	public static IO_WritePort sound_writeport_pstadium[]={
+		new IO_WritePort(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_IO | MEMPORT_WIDTH_8),
 	#if SIGNED_DAC
-		{ 0x00, 0x00, DAC_0_signed_data_w },
-		{ 0x02, 0x02, DAC_1_signed_data_w },
+		new IO_WritePort( 0x00, 0x00, DAC_0_signed_data_w ),
+		new IO_WritePort( 0x02, 0x02, DAC_1_signed_data_w ),
 	#else
-		{ 0x00, 0x00, DAC_0_data_w },
-		{ 0x02, 0x02, DAC_1_data_w },
+		new IO_WritePort( 0x00, 0x00, DAC_0_data_w ),
+		new IO_WritePort( 0x02, 0x02, DAC_1_data_w ),
 	#endif
-		{ 0x04, 0x04, pstadium_soundbank_w },
-		{ 0x06, 0x06, IOWP_NOP },
-		{ 0x80, 0x80, YM3812_control_port_0_w },
-		{ 0x81, 0x81, YM3812_write_port_0_w },
-	PORT_END
+		new IO_WritePort( 0x04, 0x04, pstadium_soundbank_w ),
+		new IO_WritePort( 0x06, 0x06, IOWP_NOP ),
+		new IO_WritePort( 0x80, 0x80, YM3812_control_port_0_w ),
+		new IO_WritePort( 0x81, 0x81, YM3812_write_port_0_w ),
+		new IO_WritePort(MEMPORT_MARKER, 0)
+	};
 	
 	
 	INPUT_PORTS_START( pstadium )

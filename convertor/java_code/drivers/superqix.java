@@ -66,16 +66,18 @@ public class superqix
 		new IO_ReadPort(MEMPORT_MARKER, 0)
 	};
 	
-	static PORT_WRITE_START( writeport )
-		{ 0x0000, 0x00ff, paletteram_BBGGRRII_w },
-		{ 0x0402, 0x0402, AY8910_write_port_0_w },
-		{ 0x0403, 0x0403, AY8910_control_port_0_w },
-		{ 0x0406, 0x0406, AY8910_write_port_1_w },
-		{ 0x0407, 0x0407, AY8910_control_port_1_w },
-		{ 0x0410, 0x0410, superqix_0410_w },	/* ROM bank, NMI enable, tile bank */
-		{ 0x0800, 0x77ff, superqix_bitmapram_w },
-		{ 0x8800, 0xf7ff, superqix_bitmapram2_w },
-	PORT_END
+	public static IO_WritePort writeport[]={
+		new IO_WritePort(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_IO | MEMPORT_WIDTH_8),
+		new IO_WritePort( 0x0000, 0x00ff, paletteram_BBGGRRII_w ),
+		new IO_WritePort( 0x0402, 0x0402, AY8910_write_port_0_w ),
+		new IO_WritePort( 0x0403, 0x0403, AY8910_control_port_0_w ),
+		new IO_WritePort( 0x0406, 0x0406, AY8910_write_port_1_w ),
+		new IO_WritePort( 0x0407, 0x0407, AY8910_control_port_1_w ),
+		new IO_WritePort( 0x0410, 0x0410, superqix_0410_w ),	/* ROM bank, NMI enable, tile bank */
+		new IO_WritePort( 0x0800, 0x77ff, superqix_bitmapram_w ),
+		new IO_WritePort( 0x8800, 0xf7ff, superqix_bitmapram2_w ),
+		new IO_WritePort(MEMPORT_MARKER, 0)
+	};
 	
 	
 	

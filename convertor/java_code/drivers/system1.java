@@ -184,12 +184,14 @@ public class system1
 		new IO_ReadPort(MEMPORT_MARKER, 0)
 	};
 	
-	static PORT_WRITE_START( writeport )
-		{ 0x14, 0x14, system1_soundport_w },    /* sound commands */
-		{ 0x15, 0x15, system1_videomode_w },    /* video control and (in some games) bank switching */
-		{ 0x18, 0x18, system1_soundport_w },    /* mirror address */
-		{ 0x19, 0x19, system1_videomode_w },    /* mirror address */
-	PORT_END
+	public static IO_WritePort writeport[]={
+		new IO_WritePort(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_IO | MEMPORT_WIDTH_8),
+		new IO_WritePort( 0x14, 0x14, system1_soundport_w ),    /* sound commands */
+		new IO_WritePort( 0x15, 0x15, system1_videomode_w ),    /* video control and (in some games) bank switching */
+		new IO_WritePort( 0x18, 0x18, system1_soundport_w ),    /* mirror address */
+		new IO_WritePort( 0x19, 0x19, system1_videomode_w ),    /* mirror address */
+		new IO_WritePort(MEMPORT_MARKER, 0)
+	};
 	
 	public static IO_ReadPort wbml_readport[]={
 		new IO_ReadPort(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_IO | MEMPORT_WIDTH_8),
@@ -206,26 +208,34 @@ public class system1
 		new IO_ReadPort(MEMPORT_MARKER, 0)
 	};
 	
-	static PORT_WRITE_START( wbml_writeport )
-		{ 0x14, 0x14, system1_soundport_w },    /* sound commands */
-		{ 0x15, 0x15, chplft_videomode_w },
-		{ 0x16, 0x16, wbml_videoram_bank_latch_w },
-	PORT_END
+	public static IO_WritePort wbml_writeport[]={
+		new IO_WritePort(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_IO | MEMPORT_WIDTH_8),
+		new IO_WritePort( 0x14, 0x14, system1_soundport_w ),    /* sound commands */
+		new IO_WritePort( 0x15, 0x15, chplft_videomode_w ),
+		new IO_WritePort( 0x16, 0x16, wbml_videoram_bank_latch_w ),
+		new IO_WritePort(MEMPORT_MARKER, 0)
+	};
 	
-	static PORT_WRITE_START( hvymetal_writeport )
-		{ 0x18, 0x18, system1_soundport_w },    /* sound commands */
-		{ 0x19, 0x19, hvymetal_videomode_w },
-	PORT_END
+	public static IO_WritePort hvymetal_writeport[]={
+		new IO_WritePort(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_IO | MEMPORT_WIDTH_8),
+		new IO_WritePort( 0x18, 0x18, system1_soundport_w ),    /* sound commands */
+		new IO_WritePort( 0x19, 0x19, hvymetal_videomode_w ),
+		new IO_WritePort(MEMPORT_MARKER, 0)
+	};
 	
-	static PORT_WRITE_START( brain_writeport )
-		{ 0x18, 0x18, system1_soundport_w },    /* sound commands */
-		{ 0x19, 0x19, brain_videomode_w },
-	PORT_END
+	public static IO_WritePort brain_writeport[]={
+		new IO_WritePort(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_IO | MEMPORT_WIDTH_8),
+		new IO_WritePort( 0x18, 0x18, system1_soundport_w ),    /* sound commands */
+		new IO_WritePort( 0x19, 0x19, brain_videomode_w ),
+		new IO_WritePort(MEMPORT_MARKER, 0)
+	};
 	
-	static PORT_WRITE_START( chplft_writeport )
-		{ 0x14, 0x14, system1_soundport_w },    /* sound commands */
-		{ 0x15, 0x15, chplft_videomode_w },
-	PORT_END
+	public static IO_WritePort chplft_writeport[]={
+		new IO_WritePort(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_IO | MEMPORT_WIDTH_8),
+		new IO_WritePort( 0x14, 0x14, system1_soundport_w ),    /* sound commands */
+		new IO_WritePort( 0x15, 0x15, chplft_videomode_w ),
+		new IO_WritePort(MEMPORT_MARKER, 0)
+	};
 	
 	
 	static unsigned char *work_ram;

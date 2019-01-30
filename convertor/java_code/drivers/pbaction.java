@@ -111,14 +111,16 @@ public class pbaction
 	};
 	
 	
-	static PORT_WRITE_START( sound_writeport )
-		{ 0x10, 0x10, AY8910_control_port_0_w },
-		{ 0x11, 0x11, AY8910_write_port_0_w },
-		{ 0x20, 0x20, AY8910_control_port_1_w },
-		{ 0x21, 0x21, AY8910_write_port_1_w },
-		{ 0x30, 0x30, AY8910_control_port_2_w },
-		{ 0x31, 0x31, AY8910_write_port_2_w },
-	PORT_END
+	public static IO_WritePort sound_writeport[]={
+		new IO_WritePort(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_IO | MEMPORT_WIDTH_8),
+		new IO_WritePort( 0x10, 0x10, AY8910_control_port_0_w ),
+		new IO_WritePort( 0x11, 0x11, AY8910_write_port_0_w ),
+		new IO_WritePort( 0x20, 0x20, AY8910_control_port_1_w ),
+		new IO_WritePort( 0x21, 0x21, AY8910_write_port_1_w ),
+		new IO_WritePort( 0x30, 0x30, AY8910_control_port_2_w ),
+		new IO_WritePort( 0x31, 0x31, AY8910_write_port_2_w ),
+		new IO_WritePort(MEMPORT_MARKER, 0)
+	};
 	
 	
 	INPUT_PORTS_START( pbaction )

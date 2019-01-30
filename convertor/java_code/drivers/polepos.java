@@ -196,9 +196,11 @@ public class polepos
 		new IO_ReadPort(MEMPORT_MARKER, 0)
 	};
 	
-	static PORT_WRITE_START( z80_writeport )
-		{ 0x00, 0x00, IOWP_NOP }, /* ??? */
-	PORT_END
+	public static IO_WritePort z80_writeport[]={
+		new IO_WritePort(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_IO | MEMPORT_WIDTH_8),
+		new IO_WritePort( 0x00, 0x00, IOWP_NOP ), /* ??? */
+		new IO_WritePort(MEMPORT_MARKER, 0)
+	};
 	
 	static MEMORY_READ16_START( z8002_readmem )
 		{ 0x0000, 0x7fff, MRA16_ROM },			/* ROM */

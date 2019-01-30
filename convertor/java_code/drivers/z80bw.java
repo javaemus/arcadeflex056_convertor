@@ -84,10 +84,12 @@ public class z80bw
 		new IO_ReadPort(MEMPORT_MARKER, 0)
 	};
 	
-	static PORT_WRITE_START( astinvad_writeport )
-		{ 0x04, 0x04, astinvad_sh_port_4_w },
-		{ 0x05, 0x05, astinvad_sh_port_5_w },
-	PORT_END
+	public static IO_WritePort astinvad_writeport[]={
+		new IO_WritePort(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_IO | MEMPORT_WIDTH_8),
+		new IO_WritePort( 0x04, 0x04, astinvad_sh_port_4_w ),
+		new IO_WritePort( 0x05, 0x05, astinvad_sh_port_5_w ),
+		new IO_WritePort(MEMPORT_MARKER, 0)
+	};
 	
 	
 	INPUT_PORTS_START( astinvad )

@@ -409,11 +409,13 @@ public class chinagat
 		new IO_ReadPort(MEMPORT_MARKER, 0)
 	};
 	
-	static PORT_WRITE_START( i8748_writeport )
-		{ I8039_t0,  I8039_t0,  saiyugb1_m5205_clk_w }, 		/* Drives the clock on the m5205 at 1/8 of this frequency */
-		{ I8039_p1,  I8039_p1,  saiyugb1_adpcm_rom_addr_w },
-		{ I8039_p2,  I8039_p2,  saiyugb1_adpcm_control_w },
-	PORT_END
+	public static IO_WritePort i8748_writeport[]={
+		new IO_WritePort(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_IO | MEMPORT_WIDTH_8),
+		new IO_WritePort( I8039_t0,  I8039_t0,  saiyugb1_m5205_clk_w ), 		/* Drives the clock on the m5205 at 1/8 of this frequency */
+		new IO_WritePort( I8039_p1,  I8039_p1,  saiyugb1_adpcm_rom_addr_w ),
+		new IO_WritePort( I8039_p2,  I8039_p2,  saiyugb1_adpcm_control_w ),
+		new IO_WritePort(MEMPORT_MARKER, 0)
+	};
 	
 	
 	

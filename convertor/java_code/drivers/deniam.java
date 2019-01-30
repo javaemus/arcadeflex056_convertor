@@ -143,12 +143,14 @@ public class deniam
 		new IO_ReadPort(MEMPORT_MARKER, 0)
 	};
 	
-	static PORT_WRITE_START( sound_writeport )
-		{ 0x02, 0x02, YM3812_control_port_0_w },
-		{ 0x03, 0x03, YM3812_write_port_0_w },
-		{ 0x05, 0x05, OKIM6295_data_0_w },
-		{ 0x07, 0x07, deniam16b_oki_rom_bank_w },
-	PORT_END
+	public static IO_WritePort sound_writeport[]={
+		new IO_WritePort(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_IO | MEMPORT_WIDTH_8),
+		new IO_WritePort( 0x02, 0x02, YM3812_control_port_0_w ),
+		new IO_WritePort( 0x03, 0x03, YM3812_write_port_0_w ),
+		new IO_WritePort( 0x05, 0x05, OKIM6295_data_0_w ),
+		new IO_WritePort( 0x07, 0x07, deniam16b_oki_rom_bank_w ),
+		new IO_WritePort(MEMPORT_MARKER, 0)
+	};
 	
 	
 	/* identical to 16b, but handles sound directly */

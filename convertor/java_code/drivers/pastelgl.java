@@ -154,9 +154,11 @@ public class pastelgl
 		}
 	}
 	
-	static PORT_WRITE_START( writeport_pastelgl )
-		{ 0x0000, 0xffff, io_pastelgl_w },
-	PORT_END
+	public static IO_WritePort writeport_pastelgl[]={
+		new IO_WritePort(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_IO | MEMPORT_WIDTH_8),
+		new IO_WritePort( 0x0000, 0xffff, io_pastelgl_w ),
+		new IO_WritePort(MEMPORT_MARKER, 0)
+	};
 	
 	
 	INPUT_PORTS_START( pastelgl )

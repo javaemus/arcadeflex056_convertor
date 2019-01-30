@@ -201,30 +201,40 @@ public class _8080bw
 		new IO_ReadPort(MEMPORT_MARKER, 0)
 	};
 	
-	static PORT_WRITE_START( writeport_0_3 )
-		{ 0x00, 0x00, invaders_shift_amount_w },
-		{ 0x03, 0x03, invaders_shift_data_w },
-	PORT_END
+	public static IO_WritePort writeport_0_3[]={
+		new IO_WritePort(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_IO | MEMPORT_WIDTH_8),
+		new IO_WritePort( 0x00, 0x00, invaders_shift_amount_w ),
+		new IO_WritePort( 0x03, 0x03, invaders_shift_data_w ),
+		new IO_WritePort(MEMPORT_MARKER, 0)
+	};
 	
-	static PORT_WRITE_START( writeport_1_2 )
-		{ 0x01, 0x01, invaders_shift_amount_w },
-		{ 0x02, 0x02, invaders_shift_data_w },
-	PORT_END
+	public static IO_WritePort writeport_1_2[]={
+		new IO_WritePort(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_IO | MEMPORT_WIDTH_8),
+		new IO_WritePort( 0x01, 0x01, invaders_shift_amount_w ),
+		new IO_WritePort( 0x02, 0x02, invaders_shift_data_w ),
+		new IO_WritePort(MEMPORT_MARKER, 0)
+	};
 	
-	static PORT_WRITE_START( writeport_2_3 )
-		{ 0x02, 0x02, invaders_shift_amount_w },
-		{ 0x03, 0x03, invaders_shift_data_w },
-	PORT_END
+	public static IO_WritePort writeport_2_3[]={
+		new IO_WritePort(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_IO | MEMPORT_WIDTH_8),
+		new IO_WritePort( 0x02, 0x02, invaders_shift_amount_w ),
+		new IO_WritePort( 0x03, 0x03, invaders_shift_data_w ),
+		new IO_WritePort(MEMPORT_MARKER, 0)
+	};
 	
-	static PORT_WRITE_START( writeport_2_4 )
-		{ 0x02, 0x02, invaders_shift_amount_w },
-		{ 0x04, 0x04, invaders_shift_data_w },
-	PORT_END
+	public static IO_WritePort writeport_2_4[]={
+		new IO_WritePort(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_IO | MEMPORT_WIDTH_8),
+		new IO_WritePort( 0x02, 0x02, invaders_shift_amount_w ),
+		new IO_WritePort( 0x04, 0x04, invaders_shift_data_w ),
+		new IO_WritePort(MEMPORT_MARKER, 0)
+	};
 	
-	static PORT_WRITE_START( writeport_4_3 )
-		{ 0x03, 0x03, invaders_shift_data_w },
-		{ 0x04, 0x04, invaders_shift_amount_w },
-	PORT_END
+	public static IO_WritePort writeport_4_3[]={
+		new IO_WritePort(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_IO | MEMPORT_WIDTH_8),
+		new IO_WritePort( 0x03, 0x03, invaders_shift_data_w ),
+		new IO_WritePort( 0x04, 0x04, invaders_shift_amount_w ),
+		new IO_WritePort(MEMPORT_MARKER, 0)
+	};
 	
 	
 	INPUT_PORTS_START( invaders )
@@ -727,9 +737,11 @@ public class _8080bw
 		new IO_ReadPort(MEMPORT_MARKER, 0)
 	};
 	
-	static PORT_WRITE_START( sstrngr2_writeport )
+	public static IO_WritePort sstrngr2_writeport[]={
+		new IO_WritePort(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_IO | MEMPORT_WIDTH_8),
 		/* no shifter circuit */
-	PORT_END
+		new IO_WritePort(MEMPORT_MARKER, 0)
+	};
 	
 	INPUT_PORTS_START( sstrangr )
 		PORT_START      /* IN0 */
@@ -1343,9 +1355,11 @@ public class _8080bw
 		new IO_ReadPort(MEMPORT_MARKER, 0)
 	};
 	
-	static PORT_WRITE_START( sheriff_sound_writeport )
-		{ I8039_p2, I8039_p2, sheriff_sh_p2_w },
-	PORT_END
+	public static IO_WritePort sheriff_sound_writeport[]={
+		new IO_WritePort(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_IO | MEMPORT_WIDTH_8),
+		new IO_WritePort( I8039_p2, I8039_p2, sheriff_sh_p2_w ),
+		new IO_WritePort(MEMPORT_MARKER, 0)
+	};
 	
 	/* All of the controls/dips for cocktail mode are as per the schematic */
 	/* BUT a coffee table version was never manufactured and support was   */

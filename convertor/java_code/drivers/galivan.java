@@ -147,14 +147,16 @@ public class galivan
 		new IO_ReadPort(MEMPORT_MARKER, 0)
 	};
 	
-	static PORT_WRITE_START( writeport )
-		{ 0x40, 0x40, galivan_gfxbank_w },
-		{ 0x41, 0x42, galivan_scrollx_w },
-		{ 0x43, 0x44, galivan_scrolly_w },
-		{ 0x45, 0x45, galivan_sound_command_w },
-	/*	{ 0x46, 0x46, IOWP_NOP }, */
-	/*	{ 0x47, 0x47, IOWP_NOP }, */
-	PORT_END
+	public static IO_WritePort writeport[]={
+		new IO_WritePort(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_IO | MEMPORT_WIDTH_8),
+		new IO_WritePort( 0x40, 0x40, galivan_gfxbank_w ),
+		new IO_WritePort( 0x41, 0x42, galivan_scrollx_w ),
+		new IO_WritePort( 0x43, 0x44, galivan_scrolly_w ),
+		new IO_WritePort( 0x45, 0x45, galivan_sound_command_w ),
+	/*	new IO_WritePort( 0x46, 0x46, IOWP_NOP ), */
+	/*	new IO_WritePort( 0x47, 0x47, IOWP_NOP ), */
+		new IO_WritePort(MEMPORT_MARKER, 0)
+	};
 	
 	public static IO_ReadPort ninjemak_readport[]={
 		new IO_ReadPort(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_IO | MEMPORT_WIDTH_8),
@@ -167,12 +169,14 @@ public class galivan
 		new IO_ReadPort(MEMPORT_MARKER, 0)
 	};
 	
-	static PORT_WRITE_START( ninjemak_writeport )
-		{ 0x80, 0x80, ninjemak_gfxbank_w },
-		{ 0x85, 0x85, galivan_sound_command_w },
-	//	{ 0x86, 0x86, IOWP_NOP },			// ??
-	//	{ 0x87, 0x87, IOWP_NOP },			// ??
-	PORT_END
+	public static IO_WritePort ninjemak_writeport[]={
+		new IO_WritePort(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_IO | MEMPORT_WIDTH_8),
+		new IO_WritePort( 0x80, 0x80, ninjemak_gfxbank_w ),
+		new IO_WritePort( 0x85, 0x85, galivan_sound_command_w ),
+	//	new IO_WritePort( 0x86, 0x86, IOWP_NOP ),			// ??
+	//	new IO_WritePort( 0x87, 0x87, IOWP_NOP ),			// ??
+		new IO_WritePort(MEMPORT_MARKER, 0)
+	};
 	
 	
 	public static Memory_ReadAddress sound_readmem[]={
@@ -197,12 +201,14 @@ public class galivan
 		new IO_ReadPort(MEMPORT_MARKER, 0)
 	};
 	
-	static PORT_WRITE_START( sound_writeport )
-		{ 0x00, 0x00, YM3526_control_port_0_w },
-		{ 0x01, 0x01, YM3526_write_port_0_w },
-		{ 0x02, 0x02, DAC_0_data_w },
-		{ 0x03, 0x03, DAC_1_data_w },
-	PORT_END
+	public static IO_WritePort sound_writeport[]={
+		new IO_WritePort(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_IO | MEMPORT_WIDTH_8),
+		new IO_WritePort( 0x00, 0x00, YM3526_control_port_0_w ),
+		new IO_WritePort( 0x01, 0x01, YM3526_write_port_0_w ),
+		new IO_WritePort( 0x02, 0x02, DAC_0_data_w ),
+		new IO_WritePort( 0x03, 0x03, DAC_1_data_w ),
+		new IO_WritePort(MEMPORT_MARKER, 0)
+	};
 	
 	
 	/***************

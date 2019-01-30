@@ -302,32 +302,36 @@ public class fromance
 	};
 	
 	
-	static PORT_WRITE_START( idolmj_writeport_sub )
-		{ 0x10, 0x10, fromance_crtc_data_w },
-		{ 0x11, 0x11, fromance_crtc_register_w },
-		{ 0x20, 0x20, fromance_rombank_w },
-		{ 0x21, 0x21, fromance_gfxreg_w },
-		{ 0x22, 0x25, fromance_scroll_w },
-		{ 0x26, 0x26, fromance_busycheck_sub_w },
-		{ 0x27, 0x27, fromance_adpcm_reset_w },
-		{ 0x28, 0x28, fromance_adpcm_w },
-		{ 0x29, 0x29, AY8910_write_port_0_w },
-		{ 0x2a, 0x2a, AY8910_control_port_0_w },
-	PORT_END
+	public static IO_WritePort idolmj_writeport_sub[]={
+		new IO_WritePort(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_IO | MEMPORT_WIDTH_8),
+		new IO_WritePort( 0x10, 0x10, fromance_crtc_data_w ),
+		new IO_WritePort( 0x11, 0x11, fromance_crtc_register_w ),
+		new IO_WritePort( 0x20, 0x20, fromance_rombank_w ),
+		new IO_WritePort( 0x21, 0x21, fromance_gfxreg_w ),
+		new IO_WritePort( 0x22, 0x25, fromance_scroll_w ),
+		new IO_WritePort( 0x26, 0x26, fromance_busycheck_sub_w ),
+		new IO_WritePort( 0x27, 0x27, fromance_adpcm_reset_w ),
+		new IO_WritePort( 0x28, 0x28, fromance_adpcm_w ),
+		new IO_WritePort( 0x29, 0x29, AY8910_write_port_0_w ),
+		new IO_WritePort( 0x2a, 0x2a, AY8910_control_port_0_w ),
+		new IO_WritePort(MEMPORT_MARKER, 0)
+	};
 	
 	
-	static PORT_WRITE_START( fromance_writeport_sub )
-		{ 0x10, 0x10, fromance_crtc_data_w },
-		{ 0x11, 0x11, fromance_crtc_register_w },
-		{ 0x20, 0x20, fromance_rombank_w },
-		{ 0x21, 0x21, fromance_gfxreg_w },
-		{ 0x22, 0x25, fromance_scroll_w },
-		{ 0x26, 0x26, fromance_busycheck_sub_w },
-		{ 0x27, 0x27, fromance_adpcm_reset_w },
-		{ 0x28, 0x28, fromance_adpcm_w },
-		{ 0x2a, 0x2a, YM2413_register_port_0_w },
-		{ 0x2b, 0x2b, YM2413_data_port_0_w },
-	PORT_END
+	public static IO_WritePort fromance_writeport_sub[]={
+		new IO_WritePort(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_IO | MEMPORT_WIDTH_8),
+		new IO_WritePort( 0x10, 0x10, fromance_crtc_data_w ),
+		new IO_WritePort( 0x11, 0x11, fromance_crtc_register_w ),
+		new IO_WritePort( 0x20, 0x20, fromance_rombank_w ),
+		new IO_WritePort( 0x21, 0x21, fromance_gfxreg_w ),
+		new IO_WritePort( 0x22, 0x25, fromance_scroll_w ),
+		new IO_WritePort( 0x26, 0x26, fromance_busycheck_sub_w ),
+		new IO_WritePort( 0x27, 0x27, fromance_adpcm_reset_w ),
+		new IO_WritePort( 0x28, 0x28, fromance_adpcm_w ),
+		new IO_WritePort( 0x2a, 0x2a, YM2413_register_port_0_w ),
+		new IO_WritePort( 0x2b, 0x2b, YM2413_data_port_0_w ),
+		new IO_WritePort(MEMPORT_MARKER, 0)
+	};
 	
 	
 	

@@ -136,10 +136,12 @@ public class spcforce
 		new IO_ReadPort(MEMPORT_MARKER, 0)
 	};
 	
-	static PORT_WRITE_START( sound_writeport )
-		{ I8039_p1,  I8039_p1,  spcforce_SN76496_latch_w },
-		{ I8039_p2,  I8039_p2,  spcforce_SN76496_select_w },
-	PORT_END
+	public static IO_WritePort sound_writeport[]={
+		new IO_WritePort(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_IO | MEMPORT_WIDTH_8),
+		new IO_WritePort( I8039_p1,  I8039_p1,  spcforce_SN76496_latch_w ),
+		new IO_WritePort( I8039_p2,  I8039_p2,  spcforce_SN76496_select_w ),
+		new IO_WritePort(MEMPORT_MARKER, 0)
+	};
 	
 	
 	INPUT_PORTS_START( spcforce )

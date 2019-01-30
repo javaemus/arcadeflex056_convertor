@@ -219,9 +219,10 @@ public class decocass
 		new IO_ReadPort( 0x02, 0x02, i8041_p2_r ),
 	MEMORY_END
 	
-	static PORT_WRITE_START( decocass_mcu_writeport )
-		new IO_ReadPort( 0x01, 0x01, i8041_p1_w ),
-		new IO_ReadPort( 0x02, 0x02, i8041_p2_w ),
+	public static IO_WritePort decocass_mcu_writeport[]={
+		new IO_WritePort(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_IO | MEMPORT_WIDTH_8),
+		new IO_WritePort( 0x01, 0x01, i8041_p1_w ),
+		new IO_WritePort( 0x02, 0x02, i8041_p2_w ),
 	MEMORY_END
 	
 	INPUT_PORTS_START( decocass )
@@ -315,7 +316,7 @@ public class decocass
 	INPUT_PORTS_END
 	
 	static struct GfxLayout charlayout =
-	new IO_ReadPort(
+	new IO_WritePort(
 		8,8,	/* 8*8 characters */
 		1024,	/* 1024 characters */
 		3,		/* 3 bits per pixel */
@@ -326,7 +327,7 @@ public class decocass
 	);
 	
 	static struct GfxLayout spritelayout =
-	new IO_ReadPort(
+	new IO_WritePort(
 		16,16,	/* 16*16 sprites */
 		256,	/* 256 sprites */
 		3,		/* 3 bits per pixel */
@@ -339,7 +340,7 @@ public class decocass
 	);
 	
 	static struct GfxLayout tilelayout =
-	new IO_ReadPort(
+	new IO_WritePort(
 		16,16,	/* 16*16 characters */
 		16+1,	/* 16 tiles (+1 empty tile used in the half-width bg tilemaps) */
 		3,	/* 3 bits per pixel */
@@ -354,7 +355,7 @@ public class decocass
 	);
 	
 	static struct GfxLayout objlayout =
-	new IO_ReadPort(
+	new IO_WritePort(
 		64,64,	/* 64x64 object */
 		2,		/* 2 objects */
 		1,		/* 1 bits per pixel */
@@ -383,7 +384,7 @@ public class decocass
 	);
 	
 	static struct GfxLayout missilelayout =
-	new IO_ReadPort(
+	new IO_WritePort(
 		4,1,	/* 4x1 object ?? */
 		1,		/* 1 object */
 		1,		/* 1 bits per pixel */
@@ -394,7 +395,7 @@ public class decocass
 	);
 	
 	static struct GfxDecodeInfo decocass_gfxdecodeinfo[] =
-	new IO_ReadPort(
+	new IO_WritePort(
 		{ 0, 0x6000, &charlayout,		 0, 4 },  /* char set #1 */
 		{ 0, 0x6000, &spritelayout, 	 0, 4 },  /* sprites */
 		{ 0, 0xd000, &tilelayout,		32, 2 },  /* background tiles */
@@ -404,7 +405,7 @@ public class decocass
 	);
 	
 	static struct AY8910interface ay8910_interface =
-	new IO_ReadPort(
+	new IO_WritePort(
 		2,		/* 2 chips */
 		1500000,		/* 1.5 MHz ? (hand tuned) */
 		{ 40, 40 },
@@ -415,7 +416,7 @@ public class decocass
 	);
 	
 	static void decocass_init_palette(unsigned char *sys_palette, unsigned short *sys_colortable,const unsigned char *color_prom)
-	new IO_ReadPort(
+	new IO_WritePort(
 		int i;
 		/* set up 32 colors 1:1 pens */
 		for (i = 0; i < 32; i++)
@@ -441,7 +442,7 @@ public class decocass
 	
 	#define MACHINE_DRIVER_DECOCASS(GAMENAME)	\
 	static const struct MachineDriver machine_driver_##GAMENAME = \
-	new IO_ReadPort( \
+	new IO_WritePort( \
 		/* basic machine hardware */ \
 		{ \
 			{ \
@@ -928,7 +929,7 @@ public class decocass
 	
 	
 	static void init_decocass(void)
-	new IO_ReadPort(
+	new IO_WritePort(
 		int A;
 		unsigned char *rom = memory_region(REGION_CPU1);
 		int diff = memory_region_length(REGION_CPU1) / 2;

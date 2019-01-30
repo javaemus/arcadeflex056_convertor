@@ -197,9 +197,11 @@ public class mario
 		new Memory_WriteAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static PORT_WRITE_START( mario_writeport )
-		{ 0x00,   0x00,   IOWP_NOP },  /* unknown... is this a trigger? */
-	PORT_END
+	public static IO_WritePort mario_writeport[]={
+		new IO_WritePort(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_IO | MEMPORT_WIDTH_8),
+		new IO_WritePort( 0x00,   0x00,   IOWP_NOP ),  /* unknown... is this a trigger? */
+		new IO_WritePort(MEMPORT_MARKER, 0)
+	};
 	
 	public static Memory_ReadAddress readmem_sound[]={
 		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
@@ -220,11 +222,13 @@ public class mario
 		new IO_ReadPort( I8039_t1, I8039_t1, mario_sh_t1_r ),
 		new IO_ReadPort(MEMPORT_MARKER, 0)
 	};
-	static PORT_WRITE_START( writeport_sound )
-		{ 0x00,     0xff,     mario_sh_sound_w },
-		{ I8039_p1, I8039_p1, mario_sh_p1_w },
-		{ I8039_p2, I8039_p2, mario_sh_p2_w },
-	PORT_END
+	public static IO_WritePort writeport_sound[]={
+		new IO_WritePort(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_IO | MEMPORT_WIDTH_8),
+		new IO_WritePort( 0x00,     0xff,     mario_sh_sound_w ),
+		new IO_WritePort( I8039_p1, I8039_p1, mario_sh_p1_w ),
+		new IO_WritePort( I8039_p2, I8039_p2, mario_sh_p2_w ),
+		new IO_WritePort(MEMPORT_MARKER, 0)
+	};
 	
 	
 	

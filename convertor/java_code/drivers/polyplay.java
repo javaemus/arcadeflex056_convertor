@@ -192,10 +192,12 @@ public class polyplay
 		new IO_ReadPort(MEMPORT_MARKER, 0)
 	};
 	
-	static PORT_WRITE_START( writeport_polyplay )
-		{ 0x80, 0x81, polyplay_sound_channel },
-		{ 0x82, 0x82, polyplay_start_timer2 },
-	PORT_END
+	public static IO_WritePort writeport_polyplay[]={
+		new IO_WritePort(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_IO | MEMPORT_WIDTH_8),
+		new IO_WritePort( 0x80, 0x81, polyplay_sound_channel ),
+		new IO_WritePort( 0x82, 0x82, polyplay_start_timer2 ),
+		new IO_WritePort(MEMPORT_MARKER, 0)
+	};
 	
 	INPUT_PORTS_START( polyplay )
 		PORT_START	/* IN0 */

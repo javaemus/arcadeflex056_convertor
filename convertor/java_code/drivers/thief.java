@@ -207,19 +207,21 @@ public class thief
 		new IO_ReadPort(MEMPORT_MARKER, 0)
 	};
 	
-	static PORT_WRITE_START( writeport )
-		{ 0x00, 0x00, MWA_NOP }, /* watchdog */
-		{ 0x10, 0x10, thief_video_control_w },
-		{ 0x30, 0x30, thief_input_select_w }, // 8255
-		{ 0x33, 0x33, tape_control_w },
-		{ 0x40, 0x40, AY8910_control_port_0_w },
-		{ 0x41, 0x41, AY8910_write_port_0_w },
-		{ 0x42, 0x42, AY8910_control_port_1_w },
-		{ 0x43, 0x43, AY8910_write_port_1_w },
-		{ 0x50, 0x50, thief_color_plane_w },
-		{ 0x60, 0x6f, thief_vtcsel_w },
-		{ 0x70, 0x7f, thief_color_map_w },
-	PORT_END
+	public static IO_WritePort writeport[]={
+		new IO_WritePort(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_IO | MEMPORT_WIDTH_8),
+		new IO_WritePort( 0x00, 0x00, MWA_NOP ), /* watchdog */
+		new IO_WritePort( 0x10, 0x10, thief_video_control_w ),
+		new IO_WritePort( 0x30, 0x30, thief_input_select_w ), // 8255
+		new IO_WritePort( 0x33, 0x33, tape_control_w ),
+		new IO_WritePort( 0x40, 0x40, AY8910_control_port_0_w ),
+		new IO_WritePort( 0x41, 0x41, AY8910_write_port_0_w ),
+		new IO_WritePort( 0x42, 0x42, AY8910_control_port_1_w ),
+		new IO_WritePort( 0x43, 0x43, AY8910_write_port_1_w ),
+		new IO_WritePort( 0x50, 0x50, thief_color_plane_w ),
+		new IO_WritePort( 0x60, 0x6f, thief_vtcsel_w ),
+		new IO_WritePort( 0x70, 0x7f, thief_color_map_w ),
+		new IO_WritePort(MEMPORT_MARKER, 0)
+	};
 	
 	
 	

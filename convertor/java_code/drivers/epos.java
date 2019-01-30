@@ -67,12 +67,14 @@ public class epos
 		new IO_ReadPort(MEMPORT_MARKER, 0)
 	};
 	
-	static PORT_WRITE_START( writeport )
-		{ 0x00, 0x00, watchdog_reset_w },
-		{ 0x01, 0x01, epos_port_1_w },
-		{ 0x02, 0x02, AY8910_write_port_0_w },
-		{ 0x06, 0x06, AY8910_control_port_0_w },
-	PORT_END
+	public static IO_WritePort writeport[]={
+		new IO_WritePort(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_IO | MEMPORT_WIDTH_8),
+		new IO_WritePort( 0x00, 0x00, watchdog_reset_w ),
+		new IO_WritePort( 0x01, 0x01, epos_port_1_w ),
+		new IO_WritePort( 0x02, 0x02, AY8910_write_port_0_w ),
+		new IO_WritePort( 0x06, 0x06, AY8910_control_port_0_w ),
+		new IO_WritePort(MEMPORT_MARKER, 0)
+	};
 	
 	
 	/* I think the upper two bits of port 1 are used as a simple form of protection,

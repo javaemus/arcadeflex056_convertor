@@ -457,9 +457,11 @@ public class gionbana
 		}
 	}
 	
-	static PORT_WRITE_START( writeport_gionbana )
-		{ 0x0000, 0xffff, io_gionbana_w },
-	PORT_END
+	public static IO_WritePort writeport_gionbana[]={
+		new IO_WritePort(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_IO | MEMPORT_WIDTH_8),
+		new IO_WritePort( 0x0000, 0xffff, io_gionbana_w ),
+		new IO_WritePort(MEMPORT_MARKER, 0)
+	};
 	
 	static WRITE_HANDLER( io_hanamomo_w )
 	{
@@ -494,9 +496,11 @@ public class gionbana
 		}
 	}
 	
-	static PORT_WRITE_START( writeport_hanamomo )
-		{ 0x0000, 0xffff, io_hanamomo_w },
-	PORT_END
+	public static IO_WritePort writeport_hanamomo[]={
+		new IO_WritePort(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_IO | MEMPORT_WIDTH_8),
+		new IO_WritePort( 0x0000, 0xffff, io_hanamomo_w ),
+		new IO_WritePort(MEMPORT_MARKER, 0)
+	};
 	
 	static WRITE_HANDLER( io_msjiken_w )
 	{
@@ -531,9 +535,11 @@ public class gionbana
 		}
 	}
 	
-	static PORT_WRITE_START( writeport_msjiken )
-		{ 0x0000, 0xffff, io_msjiken_w },
-	PORT_END
+	public static IO_WritePort writeport_msjiken[]={
+		new IO_WritePort(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_IO | MEMPORT_WIDTH_8),
+		new IO_WritePort( 0x0000, 0xffff, io_msjiken_w ),
+		new IO_WritePort(MEMPORT_MARKER, 0)
+	};
 	
 	static WRITE_HANDLER( io_scandal_w )
 	{
@@ -573,9 +579,11 @@ public class gionbana
 		}
 	}
 	
-	static PORT_WRITE_START( writeport_scandal )
-		{ 0x0000, 0xffff, io_scandal_w },
-	PORT_END
+	public static IO_WritePort writeport_scandal[]={
+		new IO_WritePort(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_IO | MEMPORT_WIDTH_8),
+		new IO_WritePort( 0x0000, 0xffff, io_scandal_w ),
+		new IO_WritePort(MEMPORT_MARKER, 0)
+	};
 	
 	static READ_HANDLER( io_scandalm_r )
 	{
@@ -640,9 +648,11 @@ public class gionbana
 		}
 	}
 	
-	static PORT_WRITE_START( writeport_scandalm )
-		{ 0x0000, 0xffff, io_scandalm_w },
-	PORT_END
+	public static IO_WritePort writeport_scandalm[]={
+		new IO_WritePort(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_IO | MEMPORT_WIDTH_8),
+		new IO_WritePort( 0x0000, 0xffff, io_scandalm_w ),
+		new IO_WritePort(MEMPORT_MARKER, 0)
+	};
 	
 	static WRITE_HANDLER( io_bananadr_w )
 	{
@@ -683,9 +693,11 @@ public class gionbana
 		}
 	}
 	
-	static PORT_WRITE_START( writeport_bananadr )
-		{ 0x0000, 0xffff, io_bananadr_w },
-	PORT_END
+	public static IO_WritePort writeport_bananadr[]={
+		new IO_WritePort(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_IO | MEMPORT_WIDTH_8),
+		new IO_WritePort( 0x0000, 0xffff, io_bananadr_w ),
+		new IO_WritePort(MEMPORT_MARKER, 0)
+	};
 	
 	static READ_HANDLER( io_maiko_r )
 	{
@@ -744,9 +756,11 @@ public class gionbana
 		}
 	}
 	
-	static PORT_WRITE_START( writeport_maiko )
-		{ 0x0000, 0xffff, io_maiko_w },
-	PORT_END
+	public static IO_WritePort writeport_maiko[]={
+		new IO_WritePort(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_IO | MEMPORT_WIDTH_8),
+		new IO_WritePort( 0x0000, 0xffff, io_maiko_w ),
+		new IO_WritePort(MEMPORT_MARKER, 0)
+	};
 	
 	
 	INPUT_PORTS_START( hanamomo )

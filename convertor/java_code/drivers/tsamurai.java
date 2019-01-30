@@ -264,16 +264,20 @@ public class tsamurai
 		new IO_ReadPort(MEMPORT_MARKER, 0)
 	};
 	
-	static PORT_WRITE_START( z80_writeport )
-		{ 0x00, 0x00, AY8910_control_port_0_w },
-		{ 0x01, 0x01, AY8910_write_port_0_w },
-	PORT_END
+	public static IO_WritePort z80_writeport[]={
+		new IO_WritePort(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_IO | MEMPORT_WIDTH_8),
+		new IO_WritePort( 0x00, 0x00, AY8910_control_port_0_w ),
+		new IO_WritePort( 0x01, 0x01, AY8910_write_port_0_w ),
+		new IO_WritePort(MEMPORT_MARKER, 0)
+	};
 	
-	static PORT_WRITE_START( z80_writeport_m660 )
-		{ 0x00, 0x00, MWA_NOP },		       /* ? */
-		{ 0x01, 0x01, MWA_NOP },               /* Written continuously. Increments with level. */
-		{ 0x02, 0x02, MWA_NOP },               /* Always follows above with 0x01 data */
-	PORT_END
+	public static IO_WritePort z80_writeport_m660[]={
+		new IO_WritePort(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_IO | MEMPORT_WIDTH_8),
+		new IO_WritePort( 0x00, 0x00, MWA_NOP ),		       /* ? */
+		new IO_WritePort( 0x01, 0x01, MWA_NOP ),               /* Written continuously. Increments with level. */
+		new IO_WritePort( 0x02, 0x02, MWA_NOP ),               /* Always follows above with 0x01 data */
+		new IO_WritePort(MEMPORT_MARKER, 0)
+	};
 	
 	static READ_HANDLER( sound_command1_r )
 	{
@@ -380,10 +384,12 @@ public class tsamurai
 		new IO_ReadPort(MEMPORT_MARKER, 0)
 	};
 	
-	static PORT_WRITE_START( writeport_sound3_m660 )
-		{ 0x00, 0x00, AY8910_control_port_0_w },
-		{ 0x01, 0x01, AY8910_write_port_0_w },
-	PORT_END
+	public static IO_WritePort writeport_sound3_m660[]={
+		new IO_WritePort(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_IO | MEMPORT_WIDTH_8),
+		new IO_WritePort( 0x00, 0x00, AY8910_control_port_0_w ),
+		new IO_WritePort( 0x01, 0x01, AY8910_write_port_0_w ),
+		new IO_WritePort(MEMPORT_MARKER, 0)
+	};
 	
 	public static Memory_ReadAddress readmem_sound3_m660[]={
 		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),

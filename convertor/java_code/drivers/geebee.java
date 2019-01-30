@@ -149,10 +149,12 @@ public class geebee
 		new IO_ReadPort(MEMPORT_MARKER, 0)
 	};
 	
-	static PORT_WRITE_START( writeport )
-		{ 0x60, 0x6f, geebee_out6_w },
-		{ 0x70, 0x7f, geebee_out7_w },
-	PORT_END
+	public static IO_WritePort writeport[]={
+		new IO_WritePort(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_IO | MEMPORT_WIDTH_8),
+		new IO_WritePort( 0x60, 0x6f, geebee_out6_w ),
+		new IO_WritePort( 0x70, 0x7f, geebee_out7_w ),
+		new IO_WritePort(MEMPORT_MARKER, 0)
+	};
 	
 	INPUT_PORTS_START( geebee )
 		PORT_START		/* IN0 SW0 */

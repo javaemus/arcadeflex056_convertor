@@ -117,19 +117,23 @@ public class terracre
 		new IO_ReadPort(MEMPORT_MARKER, 0)
 	};
 	
-	static PORT_WRITE_START( sound_writeport_3526 )
-		{ 0x00, 0x00, YM3526_control_port_0_w },
-		{ 0x01, 0x01, YM3526_write_port_0_w },
-		{ 0x02, 0x02, DAC_0_signed_data_w },
-		{ 0x03, 0x03, DAC_1_signed_data_w },
-	PORT_END
+	public static IO_WritePort sound_writeport_3526[]={
+		new IO_WritePort(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_IO | MEMPORT_WIDTH_8),
+		new IO_WritePort( 0x00, 0x00, YM3526_control_port_0_w ),
+		new IO_WritePort( 0x01, 0x01, YM3526_write_port_0_w ),
+		new IO_WritePort( 0x02, 0x02, DAC_0_signed_data_w ),
+		new IO_WritePort( 0x03, 0x03, DAC_1_signed_data_w ),
+		new IO_WritePort(MEMPORT_MARKER, 0)
+	};
 	
-	static PORT_WRITE_START( sound_writeport_2203 )
-		{ 0x00, 0x00, YM2203_control_port_0_w },
-		{ 0x01, 0x01, YM2203_write_port_0_w },
-		{ 0x02, 0x02, DAC_0_signed_data_w },
-		{ 0x03, 0x03, DAC_1_signed_data_w },
-	PORT_END
+	public static IO_WritePort sound_writeport_2203[]={
+		new IO_WritePort(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_IO | MEMPORT_WIDTH_8),
+		new IO_WritePort( 0x00, 0x00, YM2203_control_port_0_w ),
+		new IO_WritePort( 0x01, 0x01, YM2203_write_port_0_w ),
+		new IO_WritePort( 0x02, 0x02, DAC_0_signed_data_w ),
+		new IO_WritePort( 0x03, 0x03, DAC_1_signed_data_w ),
+		new IO_WritePort(MEMPORT_MARKER, 0)
+	};
 	
 	
 	INPUT_PORTS_START( terracre )

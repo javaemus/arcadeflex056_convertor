@@ -265,9 +265,11 @@ public class vicdual
 	};
 	
 	
-	static PORT_WRITE_START( writeport )
-		{ 0x40, 0x40, vicdual_palette_bank_w },
-	PORT_END
+	public static IO_WritePort writeport[]={
+		new IO_WritePort(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_IO | MEMPORT_WIDTH_8),
+		new IO_WritePort( 0x40, 0x40, vicdual_palette_bank_w ),
+		new IO_WritePort(MEMPORT_MARKER, 0)
+	};
 	
 	
 	public static Memory_ReadAddress i8039_readmem[]={
@@ -289,10 +291,12 @@ public class vicdual
 		new IO_ReadPort(MEMPORT_MARKER, 0)
 	};
 	
-	static PORT_WRITE_START( i8039_writeport )
-		{ I8039_p1, I8039_p1, carnival_music_port_1_w },
-		{ I8039_p2, I8039_p2, carnival_music_port_2_w },
-	PORT_END
+	public static IO_WritePort i8039_writeport[]={
+		new IO_WritePort(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_IO | MEMPORT_WIDTH_8),
+		new IO_WritePort( I8039_p1, I8039_p1, carnival_music_port_1_w ),
+		new IO_WritePort( I8039_p2, I8039_p2, carnival_music_port_2_w ),
+		new IO_WritePort(MEMPORT_MARKER, 0)
+	};
 	
 	
 	

@@ -97,22 +97,24 @@ public class bking2
 		new IO_ReadPort(MEMPORT_MARKER, 0)
 	};
 	
-	static PORT_WRITE_START( writeport )
-	    { 0x00, 0x00, bking2_xld1_w },
-	    { 0x01, 0x01, bking2_yld1_w },
-	    { 0x02, 0x02, bking2_xld2_w },
-	    { 0x03, 0x03, bking2_yld2_w },
-	    { 0x04, 0x04, bking2_xld3_w },
-	    { 0x05, 0x05, bking2_yld3_w },
-	    { 0x06, 0x06, bking2_msk_w },
-	    { 0x07, 0x07, watchdog_reset_w },
-	    { 0x08, 0x08, bking2_cont1_w },
-	    { 0x09, 0x09, bking2_cont2_w },
-	    { 0x0a, 0x0a, bking2_cont3_w },
-	    { 0x0b, 0x0b, bking2_soundlatch_w },
-	  //{ 0x0c, 0x0c, bking2_eport2_w },   this is not shown to be connected anywhere
-	    { 0x0d, 0x0d, bking2_hitclr_w },
-	PORT_END
+	public static IO_WritePort writeport[]={
+		new IO_WritePort(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_IO | MEMPORT_WIDTH_8),
+	    new IO_WritePort( 0x00, 0x00, bking2_xld1_w ),
+	    new IO_WritePort( 0x01, 0x01, bking2_yld1_w ),
+	    new IO_WritePort( 0x02, 0x02, bking2_xld2_w ),
+	    new IO_WritePort( 0x03, 0x03, bking2_yld2_w ),
+	    new IO_WritePort( 0x04, 0x04, bking2_xld3_w ),
+	    new IO_WritePort( 0x05, 0x05, bking2_yld3_w ),
+	    new IO_WritePort( 0x06, 0x06, bking2_msk_w ),
+	    new IO_WritePort( 0x07, 0x07, watchdog_reset_w ),
+	    new IO_WritePort( 0x08, 0x08, bking2_cont1_w ),
+	    new IO_WritePort( 0x09, 0x09, bking2_cont2_w ),
+	    new IO_WritePort( 0x0a, 0x0a, bking2_cont3_w ),
+	    new IO_WritePort( 0x0b, 0x0b, bking2_soundlatch_w ),
+	  //new IO_WritePort( 0x0c, 0x0c, bking2_eport2_w ),   this is not shown to be connected anywhere
+	    new IO_WritePort( 0x0d, 0x0d, bking2_hitclr_w ),
+		new IO_WritePort(MEMPORT_MARKER, 0)
+	};
 	
 	public static Memory_ReadAddress sound_readmem[]={
 		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),

@@ -56,10 +56,12 @@ public class ladyfrog
 		new IO_ReadPort(MEMPORT_MARKER, 0)
 	};
 	
-	static PORT_WRITE_START( sound_writeport )
-	//	{ 0x12, 0x12, },	ym2151?
-	//	{ 0x13, 0x13, },
-	PORT_END
+	public static IO_WritePort sound_writeport[]={
+		new IO_WritePort(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_IO | MEMPORT_WIDTH_8),
+	//	new IO_WritePort( 0x12, 0x12, ),	ym2151?
+	//	new IO_WritePort( 0x13, 0x13, ),
+		new IO_WritePort(MEMPORT_MARKER, 0)
+	};
 	
 	
 	

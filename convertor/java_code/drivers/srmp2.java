@@ -654,16 +654,18 @@ public class srmp2
 		new IO_ReadPort(MEMPORT_MARKER, 0)
 	};
 	
-	static PORT_WRITE_START( srmp3_writeport )
-		{ 0x20, 0x20, IOWP_NOP },							/* elapsed interrupt signal */
-		{ 0x40, 0x40, srmp3_flags_w },						/* GFX bank, counter, lockout */
-		{ 0x60, 0x60, srmp3_rombank_w },					/* ROM bank select */
-		{ 0xa0, 0xa0, srmp3_adpcm_code_w },					/* ADPCM number */
-		{ 0xc0, 0xc0, srmp3_input_1_w },					/* I/O ??? */
-		{ 0xc1, 0xc1, srmp3_input_2_w },					/* I/O ??? */
-		{ 0xe0, 0xe0, AY8910_control_port_0_w },
-		{ 0xe1, 0xe1, AY8910_write_port_0_w },
-	PORT_END
+	public static IO_WritePort srmp3_writeport[]={
+		new IO_WritePort(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_IO | MEMPORT_WIDTH_8),
+		new IO_WritePort( 0x20, 0x20, IOWP_NOP ),							/* elapsed interrupt signal */
+		new IO_WritePort( 0x40, 0x40, srmp3_flags_w ),						/* GFX bank, counter, lockout */
+		new IO_WritePort( 0x60, 0x60, srmp3_rombank_w ),					/* ROM bank select */
+		new IO_WritePort( 0xa0, 0xa0, srmp3_adpcm_code_w ),					/* ADPCM number */
+		new IO_WritePort( 0xc0, 0xc0, srmp3_input_1_w ),					/* I/O ??? */
+		new IO_WritePort( 0xc1, 0xc1, srmp3_input_2_w ),					/* I/O ??? */
+		new IO_WritePort( 0xe0, 0xe0, AY8910_control_port_0_w ),
+		new IO_WritePort( 0xe1, 0xe1, AY8910_write_port_0_w ),
+		new IO_WritePort(MEMPORT_MARKER, 0)
+	};
 	
 	
 	/***************************************************************************

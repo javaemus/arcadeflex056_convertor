@@ -442,11 +442,13 @@ public class metro
 		new IO_ReadPort(MEMPORT_MARKER, 0)
 	};
 	
-	static PORT_WRITE_START( upd7810_writeport )
-		{ UPD7810_PORTA, UPD7810_PORTA, daitorid_sound_chip_data_w		},
-		{ UPD7810_PORTB, UPD7810_PORTB, daitorid_sound_chip_select_w	},
-		{ UPD7810_PORTC, UPD7810_PORTC, daitorid_sound_rombank_w		},
-	PORT_END
+	public static IO_WritePort upd7810_writeport[]={
+		new IO_WritePort(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_IO | MEMPORT_WIDTH_8),
+		new IO_WritePort( UPD7810_PORTA, UPD7810_PORTA, daitorid_sound_chip_data_w		),
+		new IO_WritePort( UPD7810_PORTB, UPD7810_PORTB, daitorid_sound_chip_select_w	),
+		new IO_WritePort( UPD7810_PORTC, UPD7810_PORTC, daitorid_sound_rombank_w		),
+		new IO_WritePort(MEMPORT_MARKER, 0)
+	};
 	
 	static void metro_sound_irq_handler(int state)
 	{

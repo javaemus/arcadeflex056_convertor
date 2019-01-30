@@ -165,10 +165,12 @@ public class baraduke
 		new IO_ReadPort(MEMPORT_MARKER, 0)
 	};
 	
-	static PORT_WRITE_START( mcu_writeport )
-		{ HD63701_PORT1, HD63701_PORT1, inputport_select_w },	/* input port select */
-		{ HD63701_PORT2, HD63701_PORT2, baraduke_lamps_w },		/* lamps */
-	PORT_END
+	public static IO_WritePort mcu_writeport[]={
+		new IO_WritePort(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_IO | MEMPORT_WIDTH_8),
+		new IO_WritePort( HD63701_PORT1, HD63701_PORT1, inputport_select_w ),	/* input port select */
+		new IO_WritePort( HD63701_PORT2, HD63701_PORT2, baraduke_lamps_w ),		/* lamps */
+		new IO_WritePort(MEMPORT_MARKER, 0)
+	};
 	
 	INPUT_PORTS_START( baraduke )
 		PORT_START	/* DSW A */

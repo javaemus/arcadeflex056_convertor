@@ -124,11 +124,13 @@ public class cop01
 		new IO_ReadPort(MEMPORT_MARKER, 0)
 	};
 	
-	static PORT_WRITE_START( writeport )
-		{ 0x40, 0x43, cop01_vreg_w },
-		{ 0x44, 0x44, cop01_sound_command_w },
-		{ 0x45, 0x45, watchdog_reset_w }, /* ? */
-	PORT_END
+	public static IO_WritePort writeport[]={
+		new IO_WritePort(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_IO | MEMPORT_WIDTH_8),
+		new IO_WritePort( 0x40, 0x43, cop01_vreg_w ),
+		new IO_WritePort( 0x44, 0x44, cop01_sound_command_w ),
+		new IO_WritePort( 0x45, 0x45, watchdog_reset_w ), /* ? */
+		new IO_WritePort(MEMPORT_MARKER, 0)
+	};
 	
 	public static Memory_ReadAddress sound_readmem[]={
 		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
@@ -151,14 +153,16 @@ public class cop01
 		new IO_ReadPort(MEMPORT_MARKER, 0)
 	};
 	
-	static PORT_WRITE_START( sound_writeport )
-		{ 0x00, 0x00, AY8910_control_port_0_w },
-		{ 0x01, 0x01, AY8910_write_port_0_w },
-		{ 0x02, 0x02, AY8910_control_port_1_w },
-		{ 0x03, 0x03, AY8910_write_port_1_w },
-		{ 0x04, 0x04, AY8910_control_port_2_w },
-		{ 0x05, 0x05, AY8910_write_port_2_w },
-	PORT_END
+	public static IO_WritePort sound_writeport[]={
+		new IO_WritePort(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_IO | MEMPORT_WIDTH_8),
+		new IO_WritePort( 0x00, 0x00, AY8910_control_port_0_w ),
+		new IO_WritePort( 0x01, 0x01, AY8910_write_port_0_w ),
+		new IO_WritePort( 0x02, 0x02, AY8910_control_port_1_w ),
+		new IO_WritePort( 0x03, 0x03, AY8910_write_port_1_w ),
+		new IO_WritePort( 0x04, 0x04, AY8910_control_port_2_w ),
+		new IO_WritePort( 0x05, 0x05, AY8910_write_port_2_w ),
+		new IO_WritePort(MEMPORT_MARKER, 0)
+	};
 	
 	/* this just gets some garbage out of the YM3526 */
 	static READ_HANDLER( kludge ) { static int timer; return timer++; }
@@ -170,12 +174,14 @@ public class cop01
 		new IO_ReadPort(MEMPORT_MARKER, 0)
 	};
 	
-	static PORT_WRITE_START( mightguy_sound_writeport )
-		{ 0x00, 0x00, YM3526_control_port_0_w },
-		{ 0x01, 0x01, YM3526_write_port_0_w },
-		{ 0x02, 0x02, MWA_NOP },	/* 1412M2? */
-		{ 0x03, 0x03, MWA_NOP },	/* 1412M2? */
-	PORT_END
+	public static IO_WritePort mightguy_sound_writeport[]={
+		new IO_WritePort(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_IO | MEMPORT_WIDTH_8),
+		new IO_WritePort( 0x00, 0x00, YM3526_control_port_0_w ),
+		new IO_WritePort( 0x01, 0x01, YM3526_write_port_0_w ),
+		new IO_WritePort( 0x02, 0x02, MWA_NOP ),	/* 1412M2? */
+		new IO_WritePort( 0x03, 0x03, MWA_NOP ),	/* 1412M2? */
+		new IO_WritePort(MEMPORT_MARKER, 0)
+	};
 	
 	
 	

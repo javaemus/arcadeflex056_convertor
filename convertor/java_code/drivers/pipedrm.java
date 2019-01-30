@@ -260,11 +260,13 @@ public class pipedrm
 	};
 	
 	
-	static PORT_WRITE_START( writeport )
-		{ 0x20, 0x20, sound_command_w },
-		{ 0x21, 0x21, pipedrm_bankswitch_w },
-		{ 0x22, 0x25, fromance_scroll_w },
-	PORT_END
+	public static IO_WritePort writeport[]={
+		new IO_WritePort(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_IO | MEMPORT_WIDTH_8),
+		new IO_WritePort( 0x20, 0x20, sound_command_w ),
+		new IO_WritePort( 0x21, 0x21, pipedrm_bankswitch_w ),
+		new IO_WritePort( 0x22, 0x25, fromance_scroll_w ),
+		new IO_WritePort(MEMPORT_MARKER, 0)
+	};
 	
 	
 	
@@ -301,14 +303,16 @@ public class pipedrm
 	};
 	
 	
-	static PORT_WRITE_START( sound_writeport )
-		{ 0x04, 0x04, sound_bankswitch_w },
-		{ 0x17, 0x17, pending_command_clear_w },
-		{ 0x18, 0x18, YM2610_control_port_0_A_w },
-		{ 0x19, 0x19, YM2610_data_port_0_A_w },
-		{ 0x1a, 0x1a, YM2610_control_port_0_B_w },
-		{ 0x1b, 0x1b, YM2610_data_port_0_B_w },
-	PORT_END
+	public static IO_WritePort sound_writeport[]={
+		new IO_WritePort(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_IO | MEMPORT_WIDTH_8),
+		new IO_WritePort( 0x04, 0x04, sound_bankswitch_w ),
+		new IO_WritePort( 0x17, 0x17, pending_command_clear_w ),
+		new IO_WritePort( 0x18, 0x18, YM2610_control_port_0_A_w ),
+		new IO_WritePort( 0x19, 0x19, YM2610_data_port_0_A_w ),
+		new IO_WritePort( 0x1a, 0x1a, YM2610_control_port_0_B_w ),
+		new IO_WritePort( 0x1b, 0x1b, YM2610_data_port_0_B_w ),
+		new IO_WritePort(MEMPORT_MARKER, 0)
+	};
 	
 	
 	public static IO_ReadPort hatris_sound_readport[]={
@@ -321,15 +325,17 @@ public class pipedrm
 	};
 	
 	
-	static PORT_WRITE_START( hatris_sound_writeport )
-		{ 0x02, 0x02, YM2608_control_port_0_B_w },
-		{ 0x03, 0x03, YM2608_data_port_0_B_w },
-		{ 0x05, 0x05, pending_command_clear_w },
-		{ 0x08, 0x08, YM2608_control_port_0_A_w },
-		{ 0x09, 0x09, YM2608_data_port_0_A_w },
-		{ 0x0a, 0x0a, YM2608_control_port_0_B_w },
-		{ 0x0b, 0x0b, YM2608_data_port_0_B_w },
-	PORT_END
+	public static IO_WritePort hatris_sound_writeport[]={
+		new IO_WritePort(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_IO | MEMPORT_WIDTH_8),
+		new IO_WritePort( 0x02, 0x02, YM2608_control_port_0_B_w ),
+		new IO_WritePort( 0x03, 0x03, YM2608_data_port_0_B_w ),
+		new IO_WritePort( 0x05, 0x05, pending_command_clear_w ),
+		new IO_WritePort( 0x08, 0x08, YM2608_control_port_0_A_w ),
+		new IO_WritePort( 0x09, 0x09, YM2608_data_port_0_A_w ),
+		new IO_WritePort( 0x0a, 0x0a, YM2608_control_port_0_B_w ),
+		new IO_WritePort( 0x0b, 0x0b, YM2608_data_port_0_B_w ),
+		new IO_WritePort(MEMPORT_MARKER, 0)
+	};
 	
 	
 	

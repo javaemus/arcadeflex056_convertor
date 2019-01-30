@@ -354,9 +354,11 @@ public class gsword
 		new IO_ReadPort(MEMPORT_MARKER, 0)
 	};
 	
-	static PORT_WRITE_START( writeport )
-		{ 0x7e, 0x7f, TAITO8741_0_w },
-	PORT_END
+	public static IO_WritePort writeport[]={
+		new IO_WritePort(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_IO | MEMPORT_WIDTH_8),
+		new IO_WritePort( 0x7e, 0x7f, TAITO8741_0_w ),
+		new IO_WritePort(MEMPORT_MARKER, 0)
+	};
 	
 	public static IO_ReadPort readport_cpu2[]={
 		new IO_ReadPort(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_IO | MEMPORT_WIDTH_8),
@@ -371,17 +373,19 @@ public class gsword
 		new IO_ReadPort(MEMPORT_MARKER, 0)
 	};
 	
-	static PORT_WRITE_START( writeport_cpu2 )
-		{ 0x00, 0x01, TAITO8741_2_w },
-		{ 0x20, 0x21, TAITO8741_3_w },
-		{ 0x40, 0x41, TAITO8741_1_w },
-		{ 0x60, 0x60, gsword_AY8910_control_port_0_w },
-		{ 0x61, 0x61, AY8910_write_port_0_w },
-		{ 0x80, 0x80, gsword_AY8910_control_port_1_w },
-		{ 0x81, 0x81, AY8910_write_port_1_w },
-		{ 0xa0, 0xa0, IOWP_NOP }, /* ?? */
-		{ 0xe0, 0xe0, IOWP_NOP }, /* watch dog ?*/
-	PORT_END
+	public static IO_WritePort writeport_cpu2[]={
+		new IO_WritePort(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_IO | MEMPORT_WIDTH_8),
+		new IO_WritePort( 0x00, 0x01, TAITO8741_2_w ),
+		new IO_WritePort( 0x20, 0x21, TAITO8741_3_w ),
+		new IO_WritePort( 0x40, 0x41, TAITO8741_1_w ),
+		new IO_WritePort( 0x60, 0x60, gsword_AY8910_control_port_0_w ),
+		new IO_WritePort( 0x61, 0x61, AY8910_write_port_0_w ),
+		new IO_WritePort( 0x80, 0x80, gsword_AY8910_control_port_1_w ),
+		new IO_WritePort( 0x81, 0x81, AY8910_write_port_1_w ),
+		new IO_WritePort( 0xa0, 0xa0, IOWP_NOP ), /* ?? */
+		new IO_WritePort( 0xe0, 0xe0, IOWP_NOP ), /* watch dog ?*/
+		new IO_WritePort(MEMPORT_MARKER, 0)
+	};
 	
 	
 	
@@ -411,12 +415,14 @@ public class gsword
 		new IO_ReadPort(MEMPORT_MARKER, 0)
 	};
 	
-	static PORT_WRITE_START( josvolly_sound_writeport )
-		{ 0x00, 0x00, AY8910_control_port_0_w },
-		{ 0x01, 0x01, AY8910_write_port_0_w },
-		{ 0x40, 0x40, AY8910_control_port_1_w },
-		{ 0x41, 0x41, AY8910_write_port_1_w },
-	PORT_END
+	public static IO_WritePort josvolly_sound_writeport[]={
+		new IO_WritePort(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_IO | MEMPORT_WIDTH_8),
+		new IO_WritePort( 0x00, 0x00, AY8910_control_port_0_w ),
+		new IO_WritePort( 0x01, 0x01, AY8910_write_port_0_w ),
+		new IO_WritePort( 0x40, 0x40, AY8910_control_port_1_w ),
+		new IO_WritePort( 0x41, 0x41, AY8910_write_port_1_w ),
+		new IO_WritePort(MEMPORT_MARKER, 0)
+	};
 	
 	
 	

@@ -833,8 +833,10 @@ public class suna8
 		new IO_ReadPort(MEMPORT_MARKER, 0)
 	};
 	
-	static PORT_WRITE_START( hardhead_writeport )
-	PORT_END
+	public static IO_WritePort hardhead_writeport[]={
+		new IO_WritePort(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_IO | MEMPORT_WIDTH_8),
+		new IO_WritePort(MEMPORT_MARKER, 0)
+	};
 	
 	
 	/***************************************************************************
@@ -915,8 +917,10 @@ public class suna8
 		new IO_ReadPort(MEMPORT_MARKER, 0)
 	};
 	
-	static PORT_WRITE_START( rranger_writeport )
-	PORT_END
+	public static IO_WritePort rranger_writeport[]={
+		new IO_WritePort(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_IO | MEMPORT_WIDTH_8),
+		new IO_WritePort(MEMPORT_MARKER, 0)
+	};
 	
 	
 	/***************************************************************************
@@ -1012,8 +1016,10 @@ public class suna8
 		new IO_ReadPort(MEMPORT_MARKER, 0)
 	};
 	
-	static PORT_WRITE_START( brickzn_writeport )
-	PORT_END
+	public static IO_WritePort brickzn_writeport[]={
+		new IO_WritePort(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_IO | MEMPORT_WIDTH_8),
+		new IO_WritePort(MEMPORT_MARKER, 0)
+	};
 	
 	
 	/***************************************************************************
@@ -1117,8 +1123,10 @@ public class suna8
 		new IO_ReadPort(MEMPORT_MARKER, 0)
 	};
 	
-	static PORT_WRITE_START( hardhea2_writeport )
-	PORT_END
+	public static IO_WritePort hardhea2_writeport[]={
+		new IO_WritePort(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_IO | MEMPORT_WIDTH_8),
+		new IO_WritePort(MEMPORT_MARKER, 0)
+	};
 	
 	
 	/***************************************************************************
@@ -1172,8 +1180,10 @@ public class suna8
 		new IO_ReadPort(MEMPORT_MARKER, 0)
 	};
 	
-	static PORT_WRITE_START( starfigh_writeport )
-	PORT_END
+	public static IO_WritePort starfigh_writeport[]={
+		new IO_WritePort(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_IO | MEMPORT_WIDTH_8),
+		new IO_WritePort(MEMPORT_MARKER, 0)
+	};
 	
 	
 	
@@ -1216,8 +1226,10 @@ public class suna8
 		new IO_ReadPort(MEMPORT_MARKER, 0)
 	};
 	
-	static PORT_WRITE_START( hardhead_sound_writeport )
-	PORT_END
+	public static IO_WritePort hardhead_sound_writeport[]={
+		new IO_WritePort(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_IO | MEMPORT_WIDTH_8),
+		new IO_WritePort(MEMPORT_MARKER, 0)
+	};
 	
 	
 	
@@ -1250,8 +1262,10 @@ public class suna8
 		new IO_ReadPort(MEMPORT_MARKER, 0)
 	};
 	
-	static PORT_WRITE_START( rranger_sound_writeport )
-	PORT_END
+	public static IO_WritePort rranger_sound_writeport[]={
+		new IO_WritePort(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_IO | MEMPORT_WIDTH_8),
+		new IO_WritePort(MEMPORT_MARKER, 0)
+	};
 	
 	
 	/***************************************************************************
@@ -1283,8 +1297,10 @@ public class suna8
 		new IO_ReadPort(MEMPORT_MARKER, 0)
 	};
 	
-	static PORT_WRITE_START( brickzn_sound_writeport )
-	PORT_END
+	public static IO_WritePort brickzn_sound_writeport[]={
+		new IO_WritePort(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_IO | MEMPORT_WIDTH_8),
+		new IO_WritePort(MEMPORT_MARKER, 0)
+	};
 	
 	
 	/* PCM Z80 , 4 DACs (4 bits per sample), NO RAM !! */
@@ -1311,9 +1327,11 @@ public class suna8
 		new IO_ReadPort( 0x00, 0x00, soundlatch2_r		),	// From Sound CPU
 		new IO_ReadPort(MEMPORT_MARKER, 0)
 	};
-	static PORT_WRITE_START( brickzn_pcm_writeport )
-		{ 0x00, 0x03, brickzn_pcm_w			},	// 4 x DAC
-	PORT_END
+	public static IO_WritePort brickzn_pcm_writeport[]={
+		new IO_WritePort(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_IO | MEMPORT_WIDTH_8),
+		new IO_WritePort( 0x00, 0x03, brickzn_pcm_w			),	// 4 x DAC
+		new IO_WritePort(MEMPORT_MARKER, 0)
+	};
 	
 	
 	

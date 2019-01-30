@@ -132,31 +132,33 @@ public class dynax
 		new IO_ReadPort(MEMPORT_MARKER, 0)
 	};
 	
-	static PORT_WRITE_START( sprtmtch_writeport )
-		{ 0x01, 0x01, sprtmtch_blit_draw_w		},	// Blitter
-		{ 0x02, 0x02, dynax_blit_x_w			},	// Destination X
-		{ 0x03, 0x03, dynax_blit_y_w			},	// Destination Y
-		{ 0x04, 0x04, dynax_blit_addr0_w		},	// Source Address
-		{ 0x05, 0x05, dynax_blit_addr1_w		},	//
-		{ 0x06, 0x06, dynax_blit_addr2_w		},	//
-		{ 0x07, 0x07, dynax_blit_scroll_w		},	// Layers Scroll X & Y
-		{ 0x10, 0x10, YM2203_control_port_0_w	},	// YM2203
-		{ 0x11, 0x11, YM2203_write_port_0_w		},	//
-	//	{ 0x12, 0x12, IOWP_NOP					},	// ?? CRT Controller ??
-	//	{ 0x13, 0x13, IOWP_NOP					},	// ?? CRT Controller ??
-		{ 0x30, 0x30, dynax_blit_enable_w		},	// Layers Enable
-		{ 0x32, 0x32, dynax_blit_dest_w			},	// Destination Layer
-		{ 0x33, 0x33, dynax_blit_pen_w			},	// Destination Pen
-		{ 0x34, 0x34, dynax_blit_palette01_w	},	// Layers Palettes (Low Bits)
-		{ 0x35, 0x35, dynax_blit_palette2_w		},	//
-		{ 0x36, 0x36, dynax_blit_backpen_w		},	// Background Color
-		{ 0x37, 0x37, sprtmtch_vblank_ack_w		},	// VBlank IRQ Ack
-		{ 0x41, 0x41, dynax_flipscreen_w		},	// Flip Screen
-		{ 0x42, 0x42, sprtmtch_coincounter_0_w	},	// Coin Counters
-		{ 0x43, 0x43, sprtmtch_coincounter_1_w	},	//
-		{ 0x44, 0x44, sprtmtch_blitter_ack_w	},	// Blitter IRQ Ack
-		{ 0x45, 0x45, dynax_blit_palbank_w		},	// Layers Palettes (High Bit)
-	PORT_END
+	public static IO_WritePort sprtmtch_writeport[]={
+		new IO_WritePort(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_IO | MEMPORT_WIDTH_8),
+		new IO_WritePort( 0x01, 0x01, sprtmtch_blit_draw_w		),	// Blitter
+		new IO_WritePort( 0x02, 0x02, dynax_blit_x_w			),	// Destination X
+		new IO_WritePort( 0x03, 0x03, dynax_blit_y_w			),	// Destination Y
+		new IO_WritePort( 0x04, 0x04, dynax_blit_addr0_w		),	// Source Address
+		new IO_WritePort( 0x05, 0x05, dynax_blit_addr1_w		),	//
+		new IO_WritePort( 0x06, 0x06, dynax_blit_addr2_w		),	//
+		new IO_WritePort( 0x07, 0x07, dynax_blit_scroll_w		),	// Layers Scroll X & Y
+		new IO_WritePort( 0x10, 0x10, YM2203_control_port_0_w	),	// YM2203
+		new IO_WritePort( 0x11, 0x11, YM2203_write_port_0_w		),	//
+	//	new IO_WritePort( 0x12, 0x12, IOWP_NOP					),	// ?? CRT Controller ??
+	//	new IO_WritePort( 0x13, 0x13, IOWP_NOP					),	// ?? CRT Controller ??
+		new IO_WritePort( 0x30, 0x30, dynax_blit_enable_w		),	// Layers Enable
+		new IO_WritePort( 0x32, 0x32, dynax_blit_dest_w			),	// Destination Layer
+		new IO_WritePort( 0x33, 0x33, dynax_blit_pen_w			),	// Destination Pen
+		new IO_WritePort( 0x34, 0x34, dynax_blit_palette01_w	),	// Layers Palettes (Low Bits)
+		new IO_WritePort( 0x35, 0x35, dynax_blit_palette2_w		),	//
+		new IO_WritePort( 0x36, 0x36, dynax_blit_backpen_w		),	// Background Color
+		new IO_WritePort( 0x37, 0x37, sprtmtch_vblank_ack_w		),	// VBlank IRQ Ack
+		new IO_WritePort( 0x41, 0x41, dynax_flipscreen_w		),	// Flip Screen
+		new IO_WritePort( 0x42, 0x42, sprtmtch_coincounter_0_w	),	// Coin Counters
+		new IO_WritePort( 0x43, 0x43, sprtmtch_coincounter_1_w	),	//
+		new IO_WritePort( 0x44, 0x44, sprtmtch_blitter_ack_w	),	// Blitter IRQ Ack
+		new IO_WritePort( 0x45, 0x45, dynax_blit_palbank_w		),	// Layers Palettes (High Bit)
+		new IO_WritePort(MEMPORT_MARKER, 0)
+	};
 	
 	
 	/***************************************************************************
@@ -353,11 +355,13 @@ public class dynax
 		new IO_ReadPort(MEMPORT_MARKER, 0)
 	};
 	
-	static PORT_WRITE_START( rongrong_writeport )
-		{ 0x1e, 0x1e, rongrong_select_w		},	//
-		{ 0x40, 0x40, OKIM6295_data_0_w		},	//
-		{ 0xa0, 0xa0, rongrong_select2_w	},	//
-	PORT_END
+	public static IO_WritePort rongrong_writeport[]={
+		new IO_WritePort(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_IO | MEMPORT_WIDTH_8),
+		new IO_WritePort( 0x1e, 0x1e, rongrong_select_w		),	//
+		new IO_WritePort( 0x40, 0x40, OKIM6295_data_0_w		),	//
+		new IO_WritePort( 0xa0, 0xa0, rongrong_select2_w	),	//
+		new IO_WritePort(MEMPORT_MARKER, 0)
+	};
 	/*
 	0&1: video chip
 		14 x

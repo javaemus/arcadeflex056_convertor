@@ -49,11 +49,13 @@ public class cheekyms
 		new IO_ReadPort(MEMPORT_MARKER, 0)
 	};
 	
-	static PORT_WRITE_START( writeport )
-		{ 0x20, 0x3f, cheekyms_sprite_w },
-		{ 0x40, 0x40, cheekyms_port_40_w },
-		{ 0x80, 0x80, cheekyms_port_80_w },
-	PORT_END
+	public static IO_WritePort writeport[]={
+		new IO_WritePort(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_IO | MEMPORT_WIDTH_8),
+		new IO_WritePort( 0x20, 0x3f, cheekyms_sprite_w ),
+		new IO_WritePort( 0x40, 0x40, cheekyms_port_40_w ),
+		new IO_WritePort( 0x80, 0x80, cheekyms_port_80_w ),
+		new IO_WritePort(MEMPORT_MARKER, 0)
+	};
 	
 	
 	static int cheekyms_interrupt(void)

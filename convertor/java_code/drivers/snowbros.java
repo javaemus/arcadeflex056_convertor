@@ -104,11 +104,13 @@ public class snowbros
 		new IO_ReadPort(MEMPORT_MARKER, 0)
 	};
 	
-	static PORT_WRITE_START( sound_writeport )
-		{ 0x02, 0x02, YM3812_control_port_0_w },
-		{ 0x03, 0x03, YM3812_write_port_0_w },
-		{ 0x04, 0x04, soundlatch_w },	/* goes back to the main CPU, checked during boot */
-	PORT_END
+	public static IO_WritePort sound_writeport[]={
+		new IO_WritePort(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_IO | MEMPORT_WIDTH_8),
+		new IO_WritePort( 0x02, 0x02, YM3812_control_port_0_w ),
+		new IO_WritePort( 0x03, 0x03, YM3812_write_port_0_w ),
+		new IO_WritePort( 0x04, 0x04, soundlatch_w ),	/* goes back to the main CPU, checked during boot */
+		new IO_WritePort(MEMPORT_MARKER, 0)
+	};
 	
 	
 	

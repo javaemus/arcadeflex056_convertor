@@ -348,13 +348,15 @@ public class gladiatr
 		new IO_ReadPort(MEMPORT_MARKER, 0)
 	};
 	
-	static PORT_WRITE_START( writeport )
-		{ 0x01, 0x01, gladiatr_spritebank_w},
-		{ 0x02, 0x02, gladiatr_bankswitch_w},
-		{ 0x04, 0x04, gladiatr_irq_patch_w}, /* !!! patch to 2nd CPU IRQ !!! */
-		{ 0x9e, 0x9f, TAITO8741_0_w },
-		{ 0xbf, 0xbf, IOWP_NOP },
-	PORT_END
+	public static IO_WritePort writeport[]={
+		new IO_WritePort(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_IO | MEMPORT_WIDTH_8),
+		new IO_WritePort( 0x01, 0x01, gladiatr_spritebank_w),
+		new IO_WritePort( 0x02, 0x02, gladiatr_bankswitch_w),
+		new IO_WritePort( 0x04, 0x04, gladiatr_irq_patch_w), /* !!! patch to 2nd CPU IRQ !!! */
+		new IO_WritePort( 0x9e, 0x9f, TAITO8741_0_w ),
+		new IO_WritePort( 0xbf, 0xbf, IOWP_NOP ),
+		new IO_WritePort(MEMPORT_MARKER, 0)
+	};
 	
 	public static IO_ReadPort readport_cpu2[]={
 		new IO_ReadPort(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_IO | MEMPORT_WIDTH_8),
@@ -367,15 +369,17 @@ public class gladiatr
 		new IO_ReadPort(MEMPORT_MARKER, 0)
 	};
 	
-	static PORT_WRITE_START( writeport_cpu2 )
-		{ 0x00, 0x00, YM2203_control_port_0_w },
-		{ 0x01, 0x01, YM2203_write_port_0_w },
-		{ 0x20, 0x21, TAITO8741_1_w },
-		{ 0x60, 0x61, TAITO8741_2_w },
-		{ 0x80, 0x81, TAITO8741_3_w },
-	/*	{ 0x40, 0x40, glad_sh_irq_clr }, */
-		{ 0xe0, 0xe0, glad_cpu_sound_command_w },
-	PORT_END
+	public static IO_WritePort writeport_cpu2[]={
+		new IO_WritePort(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_IO | MEMPORT_WIDTH_8),
+		new IO_WritePort( 0x00, 0x00, YM2203_control_port_0_w ),
+		new IO_WritePort( 0x01, 0x01, YM2203_write_port_0_w ),
+		new IO_WritePort( 0x20, 0x21, TAITO8741_1_w ),
+		new IO_WritePort( 0x60, 0x61, TAITO8741_2_w ),
+		new IO_WritePort( 0x80, 0x81, TAITO8741_3_w ),
+	/*	new IO_WritePort( 0x40, 0x40, glad_sh_irq_clr ), */
+		new IO_WritePort( 0xe0, 0xe0, glad_cpu_sound_command_w ),
+		new IO_WritePort(MEMPORT_MARKER, 0)
+	};
 	
 	INPUT_PORTS_START( gladiatr )
 		PORT_START		/* DSW1 (8741-0 parallel port)*/

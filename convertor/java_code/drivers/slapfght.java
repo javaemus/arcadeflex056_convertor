@@ -331,24 +331,28 @@ public class slapfght
 		new IO_ReadPort(MEMPORT_MARKER, 0)
 	};
 	
-	static PORT_WRITE_START( tigerh_writeport )
-		{ 0x00, 0x00, slapfight_port_00_w },
-		{ 0x01, 0x01, slapfight_port_01_w },
-		{ 0x02, 0x03, slapfight_flipscreen_w },
-		{ 0x06, 0x06, slapfight_port_06_w },
-		{ 0x07, 0x07, slapfight_port_07_w },
-	PORT_END
+	public static IO_WritePort tigerh_writeport[]={
+		new IO_WritePort(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_IO | MEMPORT_WIDTH_8),
+		new IO_WritePort( 0x00, 0x00, slapfight_port_00_w ),
+		new IO_WritePort( 0x01, 0x01, slapfight_port_01_w ),
+		new IO_WritePort( 0x02, 0x03, slapfight_flipscreen_w ),
+		new IO_WritePort( 0x06, 0x06, slapfight_port_06_w ),
+		new IO_WritePort( 0x07, 0x07, slapfight_port_07_w ),
+		new IO_WritePort(MEMPORT_MARKER, 0)
+	};
 	
-	static PORT_WRITE_START( writeport )
-		{ 0x00, 0x00, slapfight_port_00_w },
-		{ 0x01, 0x01, slapfight_port_01_w },
-		{ 0x02, 0x03, slapfight_flipscreen_w },
-	//	{ 0x04, 0x04, getstar_port_04_w   },
-		{ 0x06, 0x06, slapfight_port_06_w },
-		{ 0x07, 0x07, slapfight_port_07_w },
-		{ 0x08, 0x08, slapfight_port_08_w },	/* select bank 0 */
-		{ 0x09, 0x09, slapfight_port_09_w },	/* select bank 1 */
-	PORT_END
+	public static IO_WritePort writeport[]={
+		new IO_WritePort(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_IO | MEMPORT_WIDTH_8),
+		new IO_WritePort( 0x00, 0x00, slapfight_port_00_w ),
+		new IO_WritePort( 0x01, 0x01, slapfight_port_01_w ),
+		new IO_WritePort( 0x02, 0x03, slapfight_flipscreen_w ),
+	//	new IO_WritePort( 0x04, 0x04, getstar_port_04_w   ),
+		new IO_WritePort( 0x06, 0x06, slapfight_port_06_w ),
+		new IO_WritePort( 0x07, 0x07, slapfight_port_07_w ),
+		new IO_WritePort( 0x08, 0x08, slapfight_port_08_w ),	/* select bank 0 */
+		new IO_WritePort( 0x09, 0x09, slapfight_port_09_w ),	/* select bank 1 */
+		new IO_WritePort(MEMPORT_MARKER, 0)
+	};
 	
 	
 	public static Memory_ReadAddress perfrman_sound_readmem[]={

@@ -448,20 +448,22 @@ public class playch10
 		new IO_ReadPort(MEMPORT_MARKER, 0)
 	};
 	
-	static PORT_WRITE_START( writeport )
-		{ 0x00, 0x00, pc10_SDCS_w },
-		{ 0x01, 0x01, pc10_CNTRLMASK_w },
-		{ 0x02, 0x02, pc10_DISPMASK_w },
-		{ 0x03, 0x03, pc10_SOUNDMASK_w },
-		{ 0x04, 0x04, pc10_GAMERES_w },
-		{ 0x05, 0x05, pc10_GAMESTOP_w },
-		{ 0x06, 0x07, IOWP_NOP },
-		{ 0x08, 0x08, pc10_NMIENABLE_w },
-		{ 0x09, 0x09, pc10_DOGDI_w },
-		{ 0x0a, 0x0a, pc10_PPURES_w },
-		{ 0x0b, 0x0e, pc10_CARTSEL_w },
-		{ 0x0f, 0x0f, up8w_w },
-	PORT_END
+	public static IO_WritePort writeport[]={
+		new IO_WritePort(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_IO | MEMPORT_WIDTH_8),
+		new IO_WritePort( 0x00, 0x00, pc10_SDCS_w ),
+		new IO_WritePort( 0x01, 0x01, pc10_CNTRLMASK_w ),
+		new IO_WritePort( 0x02, 0x02, pc10_DISPMASK_w ),
+		new IO_WritePort( 0x03, 0x03, pc10_SOUNDMASK_w ),
+		new IO_WritePort( 0x04, 0x04, pc10_GAMERES_w ),
+		new IO_WritePort( 0x05, 0x05, pc10_GAMESTOP_w ),
+		new IO_WritePort( 0x06, 0x07, IOWP_NOP ),
+		new IO_WritePort( 0x08, 0x08, pc10_NMIENABLE_w ),
+		new IO_WritePort( 0x09, 0x09, pc10_DOGDI_w ),
+		new IO_WritePort( 0x0a, 0x0a, pc10_PPURES_w ),
+		new IO_WritePort( 0x0b, 0x0e, pc10_CARTSEL_w ),
+		new IO_WritePort( 0x0f, 0x0f, up8w_w ),
+		new IO_WritePort(MEMPORT_MARKER, 0)
+	};
 	
 	/* Cart */
 	public static Memory_ReadAddress cart_readmem[]={

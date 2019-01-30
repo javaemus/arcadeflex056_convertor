@@ -200,12 +200,14 @@ public class mrflea
 		new IO_ReadPort(MEMPORT_MARKER, 0)
 	};
 	
-	static PORT_WRITE_START( writeport )
-		{ 0x00, 0x00, MWA_NOP }, /* watchdog? */
-		{ 0x40, 0x40, mrflea_io_w },
-		{ 0x43, 0x43, MWA_NOP }, /* 0xa6,0x0d,0x05 */
-		{ 0x60, 0x60, mrflea_gfx_bank_w },
-	PORT_END
+	public static IO_WritePort writeport[]={
+		new IO_WritePort(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_IO | MEMPORT_WIDTH_8),
+		new IO_WritePort( 0x00, 0x00, MWA_NOP ), /* watchdog? */
+		new IO_WritePort( 0x40, 0x40, mrflea_io_w ),
+		new IO_WritePort( 0x43, 0x43, MWA_NOP ), /* 0xa6,0x0d,0x05 */
+		new IO_WritePort( 0x60, 0x60, mrflea_gfx_bank_w ),
+		new IO_WritePort(MEMPORT_MARKER, 0)
+	};
 	
 	/*******************************************************/
 	
@@ -279,21 +281,23 @@ public class mrflea
 		AY8910_write_port_2_w( offset, data );
 	}
 	
-	static PORT_WRITE_START( writeport_io )
-		{ 0x00, 0x00, MWA_NOP }, /* watchdog */
-		{ 0x10, 0x10, MWA_NOP }, /* irq ACK */
-		{ 0x11, 0x11, MWA_NOP }, /* 0x83,0x00,0xfc */
-		{ 0x21, 0x21, mrflea_main_w },
-		{ 0x23, 0x23, MWA_NOP }, /* 0xb4,0x09,0x05 */
-		{ 0x40, 0x40, mrflea_data0_w },
-		{ 0x41, 0x41, mrflea_select0_w },
-		{ 0x42, 0x42, mrflea_data1_w },
-		{ 0x43, 0x43, mrflea_select1_w },
-		{ 0x44, 0x44, mrflea_data2_w },
-		{ 0x45, 0x45, mrflea_select2_w },
-		{ 0x46, 0x46, mrflea_data3_w },
-		{ 0x47, 0x47, mrflea_select3_w },
-	PORT_END
+	public static IO_WritePort writeport_io[]={
+		new IO_WritePort(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_IO | MEMPORT_WIDTH_8),
+		new IO_WritePort( 0x00, 0x00, MWA_NOP ), /* watchdog */
+		new IO_WritePort( 0x10, 0x10, MWA_NOP ), /* irq ACK */
+		new IO_WritePort( 0x11, 0x11, MWA_NOP ), /* 0x83,0x00,0xfc */
+		new IO_WritePort( 0x21, 0x21, mrflea_main_w ),
+		new IO_WritePort( 0x23, 0x23, MWA_NOP ), /* 0xb4,0x09,0x05 */
+		new IO_WritePort( 0x40, 0x40, mrflea_data0_w ),
+		new IO_WritePort( 0x41, 0x41, mrflea_select0_w ),
+		new IO_WritePort( 0x42, 0x42, mrflea_data1_w ),
+		new IO_WritePort( 0x43, 0x43, mrflea_select1_w ),
+		new IO_WritePort( 0x44, 0x44, mrflea_data2_w ),
+		new IO_WritePort( 0x45, 0x45, mrflea_select2_w ),
+		new IO_WritePort( 0x46, 0x46, mrflea_data3_w ),
+		new IO_WritePort( 0x47, 0x47, mrflea_select3_w ),
+		new IO_WritePort(MEMPORT_MARKER, 0)
+	};
 	
 	static struct MachineDriver machine_driver_mrflea = {
 		/* basic machine hardware */

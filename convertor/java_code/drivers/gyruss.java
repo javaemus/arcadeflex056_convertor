@@ -171,20 +171,22 @@ public class gyruss
 		new IO_ReadPort(MEMPORT_MARKER, 0)
 	};
 	
-	static PORT_WRITE_START( sound_writeport )
-		{ 0x00, 0x00, AY8910_control_port_0_w },
-		{ 0x02, 0x02, AY8910_write_port_0_w },
-		{ 0x04, 0x04, AY8910_control_port_1_w },
-		{ 0x06, 0x06, AY8910_write_port_1_w },
-		{ 0x08, 0x08, AY8910_control_port_2_w },
-		{ 0x0a, 0x0a, AY8910_write_port_2_w },
-		{ 0x0c, 0x0c, AY8910_control_port_3_w },
-		{ 0x0e, 0x0e, AY8910_write_port_3_w },
-		{ 0x10, 0x10, AY8910_control_port_4_w },
-		{ 0x12, 0x12, AY8910_write_port_4_w },
-		{ 0x14, 0x14, gyruss_i8039_irq_w },
-		{ 0x18, 0x18, soundlatch2_w },
-	PORT_END
+	public static IO_WritePort sound_writeport[]={
+		new IO_WritePort(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_IO | MEMPORT_WIDTH_8),
+		new IO_WritePort( 0x00, 0x00, AY8910_control_port_0_w ),
+		new IO_WritePort( 0x02, 0x02, AY8910_write_port_0_w ),
+		new IO_WritePort( 0x04, 0x04, AY8910_control_port_1_w ),
+		new IO_WritePort( 0x06, 0x06, AY8910_write_port_1_w ),
+		new IO_WritePort( 0x08, 0x08, AY8910_control_port_2_w ),
+		new IO_WritePort( 0x0a, 0x0a, AY8910_write_port_2_w ),
+		new IO_WritePort( 0x0c, 0x0c, AY8910_control_port_3_w ),
+		new IO_WritePort( 0x0e, 0x0e, AY8910_write_port_3_w ),
+		new IO_WritePort( 0x10, 0x10, AY8910_control_port_4_w ),
+		new IO_WritePort( 0x12, 0x12, AY8910_write_port_4_w ),
+		new IO_WritePort( 0x14, 0x14, gyruss_i8039_irq_w ),
+		new IO_WritePort( 0x18, 0x18, soundlatch2_w ),
+		new IO_WritePort(MEMPORT_MARKER, 0)
+	};
 	
 	public static Memory_ReadAddress i8039_readmem[]={
 		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
@@ -204,10 +206,12 @@ public class gyruss
 		new IO_ReadPort(MEMPORT_MARKER, 0)
 	};
 	
-	static PORT_WRITE_START( i8039_writeport )
-		{ I8039_p1, I8039_p1, DAC_0_data_w },
-		{ I8039_p2, I8039_p2, IOWP_NOP },
-	PORT_END
+	public static IO_WritePort i8039_writeport[]={
+		new IO_WritePort(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_IO | MEMPORT_WIDTH_8),
+		new IO_WritePort( I8039_p1, I8039_p1, DAC_0_data_w ),
+		new IO_WritePort( I8039_p2, I8039_p2, IOWP_NOP ),
+		new IO_WritePort(MEMPORT_MARKER, 0)
+	};
 	
 	
 	

@@ -131,11 +131,13 @@ public class kyugo
 	}
 	
 	#define Main_PortMap( name, base )								\
-		static PORT_WRITE_START( name##_writeport )					\
-			{ base+0, base+0, interrupt_enable_w },					\
-			{ base+1, base+1, kyugo_flipscreen_w },					\
-			{ base+2, base+2, sub_cpu_control_w },					\
-		PORT_END													\
+		public static IO_WritePort name##_writeport[]={
+		new IO_WritePort(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_IO | MEMPORT_WIDTH_8),				\
+			new IO_WritePort( base+0, base+0, interrupt_enable_w ),					\
+			new IO_WritePort( base+1, base+1, kyugo_flipscreen_w ),					\
+			new IO_WritePort( base+2, base+2, sub_cpu_control_w ),					\
+			new IO_WritePort(MEMPORT_MARKER, 0)
+	};												\
 	
 	#define Sub_PortMap( name, ay0_base, ay1_base )					\
 		public static IO_ReadPort name##_sub_readport[]={
@@ -144,12 +146,14 @@ public class kyugo
 			new IO_ReadPort(MEMPORT_MARKER, 0)
 	};												\
 																	\
-		static PORT_WRITE_START( name##_sub_writeport )				\
-			{ ay0_base+0, ay0_base+0, AY8910_control_port_0_w },	\
-			{ ay0_base+1, ay0_base+1, AY8910_write_port_0_w },		\
-			{ ay1_base+0, ay1_base+0, AY8910_control_port_1_w },	\
-			{ ay1_base+1, ay1_base+1, AY8910_write_port_1_w },		\
-		PORT_END
+		public static IO_WritePort name##_sub_writeport[]={
+		new IO_WritePort(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_IO | MEMPORT_WIDTH_8),			\
+			new IO_WritePort( ay0_base+0, ay0_base+0, AY8910_control_port_0_w ),	\
+			new IO_WritePort( ay0_base+1, ay0_base+1, AY8910_write_port_0_w ),		\
+			new IO_WritePort( ay1_base+0, ay1_base+0, AY8910_control_port_1_w ),	\
+			new IO_WritePort( ay1_base+1, ay1_base+1, AY8910_write_port_1_w ),		\
+			new IO_WritePort(MEMPORT_MARKER, 0)
+	};
 	
 	
 	/* actual definitions */

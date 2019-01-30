@@ -119,15 +119,17 @@ public class berzerk
 	};
 	
 	
-	static PORT_WRITE_START( writeport )
-		{ 0x40, 0x46, berzerk_sound_control_a_w}, /* First sound board */
-		{ 0x47, 0x47, IOWP_NOP}, /* not used sound stuff */
-		{ 0x4b, 0x4b, berzerk_magicram_control_w},
-		{ 0x4c, 0x4c, berzerk_nmi_enable_w},
-		{ 0x4d, 0x4d, berzerk_nmi_disable_w},
-		{ 0x4f, 0x4f, berzerk_irq_enable_w},
-		{ 0x50, 0x57, IOWP_NOP}, /* Second sound board but not used */
-	PORT_END
+	public static IO_WritePort writeport[]={
+		new IO_WritePort(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_IO | MEMPORT_WIDTH_8),
+		new IO_WritePort( 0x40, 0x46, berzerk_sound_control_a_w), /* First sound board */
+		new IO_WritePort( 0x47, 0x47, IOWP_NOP), /* not used sound stuff */
+		new IO_WritePort( 0x4b, 0x4b, berzerk_magicram_control_w),
+		new IO_WritePort( 0x4c, 0x4c, berzerk_nmi_enable_w),
+		new IO_WritePort( 0x4d, 0x4d, berzerk_nmi_disable_w),
+		new IO_WritePort( 0x4f, 0x4f, berzerk_irq_enable_w),
+		new IO_WritePort( 0x50, 0x57, IOWP_NOP), /* Second sound board but not used */
+		new IO_WritePort(MEMPORT_MARKER, 0)
+	};
 	
 	
 	#define COINAGE(CHUTE) \

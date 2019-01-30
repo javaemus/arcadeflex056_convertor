@@ -102,10 +102,12 @@ public class route16
 	};
 	
 	
-	static PORT_WRITE_START( cpu1_writeport )
-		{ 0x6800, 0x6800, AY8910_write_port_0_w },
-		{ 0x6900, 0x6900, AY8910_control_port_0_w },
-	PORT_END
+	public static IO_WritePort cpu1_writeport[]={
+		new IO_WritePort(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_IO | MEMPORT_WIDTH_8),
+		new IO_WritePort( 0x6800, 0x6800, AY8910_write_port_0_w ),
+		new IO_WritePort( 0x6900, 0x6900, AY8910_control_port_0_w ),
+		new IO_WritePort(MEMPORT_MARKER, 0)
+	};
 	
 	public static Memory_ReadAddress cpu2_readmem[]={
 		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),

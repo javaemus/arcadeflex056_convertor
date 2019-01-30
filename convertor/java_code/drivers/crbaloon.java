@@ -225,12 +225,14 @@ public class crbaloon
 		new IO_ReadPort(MEMPORT_MARKER, 0)
 	};
 	
-	static PORT_WRITE_START( writeport )
-		{ 0x02, 0x04, crbaloon_spritectrl_w },
-		{ 0x06, 0x06, crbaloon_06_w },
-		{ 0x08, 0x08, crbaloon_08_w },
-		{ 0x0a, 0x0a, crbaloon_0a_w },
-	PORT_END
+	public static IO_WritePort writeport[]={
+		new IO_WritePort(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_IO | MEMPORT_WIDTH_8),
+		new IO_WritePort( 0x02, 0x04, crbaloon_spritectrl_w ),
+		new IO_WritePort( 0x06, 0x06, crbaloon_06_w ),
+		new IO_WritePort( 0x08, 0x08, crbaloon_08_w ),
+		new IO_WritePort( 0x0a, 0x0a, crbaloon_0a_w ),
+		new IO_WritePort(MEMPORT_MARKER, 0)
+	};
 	
 	
 	

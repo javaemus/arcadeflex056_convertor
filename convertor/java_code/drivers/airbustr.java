@@ -330,11 +330,13 @@ public class airbustr
 		cpu_cause_interrupt(1,Z80_NMI_INT);	// cause a nmi to sub cpu
 	}
 	
-	static PORT_WRITE_START( writeport )
-		{ 0x00, 0x00, bankswitch_w },
-	//	{ 0x01, 0x01, IOWP_NOP },	// ?? only 2 (see 378b)
-		{ 0x02, 0x02, cause_nmi_w },	// always 0. Cause a nmi to sub cpu
-	PORT_END
+	public static IO_WritePort writeport[]={
+		new IO_WritePort(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_IO | MEMPORT_WIDTH_8),
+		new IO_WritePort( 0x00, 0x00, bankswitch_w ),
+	//	new IO_WritePort( 0x01, 0x01, IOWP_NOP ),	// ?? only 2 (see 378b)
+		new IO_WritePort( 0x02, 0x02, cause_nmi_w ),	// always 0. Cause a nmi to sub cpu
+		new IO_WritePort(MEMPORT_MARKER, 0)
+	};
 	
 	
 	
@@ -484,13 +486,15 @@ public class airbustr
 		new IO_ReadPort(MEMPORT_MARKER, 0)
 	};
 	
-	static PORT_WRITE_START( writeport2 )
-		{ 0x00, 0x00, bankswitch2_w },			// bits 2-0 bank, bit 4 (on if dsw1-1 active)?,  bit 5?
-		{ 0x02, 0x02, soundcommand_w },			// to sound cpu
-		{ 0x04, 0x0c, airbustr_scrollregs_w },	// Scroll values
-	//	{ 0x28, 0x28, port_38_w },				// ??
-	//	{ 0x38, 0x38, IOWP_NOP },				// ?? Followed by EI. Value isn't important
-	PORT_END
+	public static IO_WritePort writeport2[]={
+		new IO_WritePort(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_IO | MEMPORT_WIDTH_8),
+		new IO_WritePort( 0x00, 0x00, bankswitch2_w ),			// bits 2-0 bank, bit 4 (on if dsw1-1 active)?,  bit 5?
+		new IO_WritePort( 0x02, 0x02, soundcommand_w ),			// to sound cpu
+		new IO_WritePort( 0x04, 0x0c, airbustr_scrollregs_w ),	// Scroll values
+	//	new IO_WritePort( 0x28, 0x28, port_38_w ),				// ??
+	//	new IO_WritePort( 0x38, 0x38, IOWP_NOP ),				// ?? Followed by EI. Value isn't important
+		new IO_WritePort(MEMPORT_MARKER, 0)
+	};
 	
 	
 	
@@ -564,13 +568,15 @@ public class airbustr
 		new IO_ReadPort(MEMPORT_MARKER, 0)
 	};
 	
-	static PORT_WRITE_START( sound_writeport )
-		{ 0x00, 0x00, sound_bankswitch_w },
-		{ 0x02, 0x02, YM2203_control_port_0_w },
-		{ 0x03, 0x03, YM2203_write_port_0_w },
-		{ 0x04, 0x04, OKIM6295_data_0_w },
-		{ 0x06, 0x06, soundcommand2_w },		// write command result to sub cpu
-	PORT_END
+	public static IO_WritePort sound_writeport[]={
+		new IO_WritePort(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_IO | MEMPORT_WIDTH_8),
+		new IO_WritePort( 0x00, 0x00, sound_bankswitch_w ),
+		new IO_WritePort( 0x02, 0x02, YM2203_control_port_0_w ),
+		new IO_WritePort( 0x03, 0x03, YM2203_write_port_0_w ),
+		new IO_WritePort( 0x04, 0x04, OKIM6295_data_0_w ),
+		new IO_WritePort( 0x06, 0x06, soundcommand2_w ),		// write command result to sub cpu
+		new IO_WritePort(MEMPORT_MARKER, 0)
+	};
 	
 	
 	
