@@ -276,14 +276,16 @@ public class victory
 	};
 	
 	
-	static PORT_READ_START( main_readport )
-		{ 0x00, 0x03, input_port_0_r },
-		{ 0x04, 0x07, input_port_1_r },
-		{ 0x08, 0x08, input_port_2_r },
-		{ 0x0a, 0x0a, input_port_3_r },
-		{ 0x0c, 0x0c, input_port_4_r },
-		{ 0x0e, 0x0e, input_port_5_r },
-	PORT_END
+	public static IO_ReadPort main_readport[]={
+		new IO_ReadPort(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_IO | MEMPORT_WIDTH_8),
+		new IO_ReadPort( 0x00, 0x03, input_port_0_r ),
+		new IO_ReadPort( 0x04, 0x07, input_port_1_r ),
+		new IO_ReadPort( 0x08, 0x08, input_port_2_r ),
+		new IO_ReadPort( 0x0a, 0x0a, input_port_3_r ),
+		new IO_ReadPort( 0x0c, 0x0c, input_port_4_r ),
+		new IO_ReadPort( 0x0e, 0x0e, input_port_5_r ),
+		new IO_ReadPort(MEMPORT_MARKER, 0)
+	};
 	
 	
 	static PORT_WRITE_START( main_writeport )

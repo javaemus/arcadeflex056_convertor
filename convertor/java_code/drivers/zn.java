@@ -163,9 +163,11 @@ public class zn
 		new Memory_WriteAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static PORT_READ_START( qsound_readport )
-		{ 0x00, 0x00, soundlatch_r },
-	PORT_END
+	public static IO_ReadPort qsound_readport[]={
+		new IO_ReadPort(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_IO | MEMPORT_WIDTH_8),
+		new IO_ReadPort( 0x00, 0x00, soundlatch_r ),
+		new IO_ReadPort(MEMPORT_MARKER, 0)
+	};
 	
 	static struct GfxDecodeInfo znqs_gfxdecodeinfo[] =
 	{

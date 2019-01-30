@@ -307,17 +307,19 @@ public class m92
 		new Memory_WriteAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static PORT_READ_START( readport )
-		{ 0x00, 0x00, input_port_0_r }, /* Player 1 */
-		{ 0x01, 0x01, input_port_1_r }, /* Player 2 */
-		{ 0x02, 0x02, m92_port_4_r },   /* Coins & VBL */
-		{ 0x03, 0x03, input_port_7_r }, /* Dip 3 */
-		{ 0x04, 0x04, input_port_6_r }, /* Dip 2 */
-		{ 0x05, 0x05, input_port_5_r }, /* Dip 1 */
-		{ 0x06, 0x06, input_port_2_r }, /* Player 3 */
-		{ 0x07, 0x07, input_port_3_r },	/* Player 4 */
-		{ 0x08, 0x09, m92_sound_status_r },	/* answer from sound CPU */
-	PORT_END
+	public static IO_ReadPort readport[]={
+		new IO_ReadPort(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_IO | MEMPORT_WIDTH_8),
+		new IO_ReadPort( 0x00, 0x00, input_port_0_r ), /* Player 1 */
+		new IO_ReadPort( 0x01, 0x01, input_port_1_r ), /* Player 2 */
+		new IO_ReadPort( 0x02, 0x02, m92_port_4_r ),   /* Coins & VBL */
+		new IO_ReadPort( 0x03, 0x03, input_port_7_r ), /* Dip 3 */
+		new IO_ReadPort( 0x04, 0x04, input_port_6_r ), /* Dip 2 */
+		new IO_ReadPort( 0x05, 0x05, input_port_5_r ), /* Dip 1 */
+		new IO_ReadPort( 0x06, 0x06, input_port_2_r ), /* Player 3 */
+		new IO_ReadPort( 0x07, 0x07, input_port_3_r ),	/* Player 4 */
+		new IO_ReadPort( 0x08, 0x09, m92_sound_status_r ),	/* answer from sound CPU */
+		new IO_ReadPort(MEMPORT_MARKER, 0)
+	};
 	
 	static PORT_WRITE_START( writeport )
 		{ 0x00, 0x01, m92_soundlatch_w },

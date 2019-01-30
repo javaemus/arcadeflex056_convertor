@@ -1355,10 +1355,12 @@ public class balsente
 	};
 	
 	
-	static PORT_READ_START( readport_cpu2 )
-		{ 0x00, 0x03, counter_8253_r },
-		{ 0x08, 0x0f, counter_state_r },
-	PORT_END
+	public static IO_ReadPort readport_cpu2[]={
+		new IO_ReadPort(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_IO | MEMPORT_WIDTH_8),
+		new IO_ReadPort( 0x00, 0x03, counter_8253_r ),
+		new IO_ReadPort( 0x08, 0x0f, counter_state_r ),
+		new IO_ReadPort(MEMPORT_MARKER, 0)
+	};
 	
 	
 	static PORT_WRITE_START( writeport_cpu2 )

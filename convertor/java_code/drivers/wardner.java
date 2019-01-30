@@ -325,14 +325,16 @@ public class wardner
 	MEMORY_END
 	
 	
-	static PORT_READ_START( readport )
-		{ 0x50, 0x50, input_port_3_r },			/* DSW A */
-		{ 0x52, 0x52, input_port_4_r },			/* DSW B */
-		{ 0x54, 0x54, input_port_1_r },			/* Player 1 */
-		{ 0x56, 0x56, input_port_2_r },			/* Player 2 */
-		{ 0x58, 0x58, input_port_0_r },			/* V-Blank/Coin/Start */
-		{ 0x60, 0x65, wardner_videoram_r },		/* data from video layer RAM */
-	PORT_END
+	public static IO_ReadPort readport[]={
+		new IO_ReadPort(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_IO | MEMPORT_WIDTH_8),
+		new IO_ReadPort( 0x50, 0x50, input_port_3_r ),			/* DSW A */
+		new IO_ReadPort( 0x52, 0x52, input_port_4_r ),			/* DSW B */
+		new IO_ReadPort( 0x54, 0x54, input_port_1_r ),			/* Player 1 */
+		new IO_ReadPort( 0x56, 0x56, input_port_2_r ),			/* Player 2 */
+		new IO_ReadPort( 0x58, 0x58, input_port_0_r ),			/* V-Blank/Coin/Start */
+		new IO_ReadPort( 0x60, 0x65, wardner_videoram_r ),		/* data from video layer RAM */
+		new IO_ReadPort(MEMPORT_MARKER, 0)
+	};
 	
 	static PORT_WRITE_START( writeport )
 		{ 0x00, 0x00, CRTC_reg_sel_w },
@@ -350,9 +352,11 @@ public class wardner
 		{ 0x70, 0x70, wardner_ramrom_banks_w },	/* ROM bank select */
 	PORT_END
 	
-	static PORT_READ_START( sound_readport )
-		{ 0x00, 0x00, YM3812_status_port_0_r },
-	PORT_END
+	public static IO_ReadPort sound_readport[]={
+		new IO_ReadPort(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_IO | MEMPORT_WIDTH_8),
+		new IO_ReadPort( 0x00, 0x00, YM3812_status_port_0_r ),
+		new IO_ReadPort(MEMPORT_MARKER, 0)
+	};
 	
 	static PORT_WRITE_START( sound_writeport )
 		{ 0x00, 0x00, YM3812_control_port_0_w },

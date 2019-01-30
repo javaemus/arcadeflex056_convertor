@@ -1249,10 +1249,12 @@ public class kaneko16
 		new Memory_WriteAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static PORT_READ_START( blazeon_sound_readport )
-		{ 0x03, 0x03, YM2151_status_port_0_r	},
-		{ 0x06, 0x06, soundlatch_r				},
-	PORT_END
+	public static IO_ReadPort blazeon_sound_readport[]={
+		new IO_ReadPort(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_IO | MEMPORT_WIDTH_8),
+		new IO_ReadPort( 0x03, 0x03, YM2151_status_port_0_r	),
+		new IO_ReadPort( 0x06, 0x06, soundlatch_r				),
+		new IO_ReadPort(MEMPORT_MARKER, 0)
+	};
 	static PORT_WRITE_START( blazeon_sound_writeport )
 		{ 0x02, 0x02, YM2151_register_port_0_w	},
 		{ 0x03, 0x03, YM2151_data_port_0_w		},
@@ -1309,12 +1311,14 @@ public class kaneko16
 		new Memory_WriteAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static PORT_READ_START( sandscrp_sound_readport )
-		{ 0x02, 0x02, YM2203_status_port_0_r		},	// YM2203
-		{ 0x03, 0x03, YM2203_read_port_0_r			},	// PORTA/B read
-		{ 0x07, 0x07, sandscrp_soundlatch_r			},	//
-		{ 0x08, 0x08, sandscrp_latchstatus_r		},	//
-	PORT_END
+	public static IO_ReadPort sandscrp_sound_readport[]={
+		new IO_ReadPort(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_IO | MEMPORT_WIDTH_8),
+		new IO_ReadPort( 0x02, 0x02, YM2203_status_port_0_r		),	// YM2203
+		new IO_ReadPort( 0x03, 0x03, YM2203_read_port_0_r			),	// PORTA/B read
+		new IO_ReadPort( 0x07, 0x07, sandscrp_soundlatch_r			),	//
+		new IO_ReadPort( 0x08, 0x08, sandscrp_latchstatus_r		),	//
+		new IO_ReadPort(MEMPORT_MARKER, 0)
+	};
 	static PORT_WRITE_START( sandscrp_sound_writeport )
 		{ 0x00, 0x00, sandscrp_bankswitch_w		},	// ROM Bank
 		{ 0x02, 0x02, YM2203_control_port_0_w	},	// YM2203

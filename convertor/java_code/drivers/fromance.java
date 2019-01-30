@@ -293,11 +293,13 @@ public class fromance
 	 *
 	 *************************************/
 	
-	static PORT_READ_START( fromance_readport_sub )
-		{ 0x12, 0x12, IORP_NOP },				// unknown
-		{ 0x21, 0x21, fromance_busycheck_sub_r },
-		{ 0x26, 0x26, fromance_commanddata_r },
-	PORT_END
+	public static IO_ReadPort fromance_readport_sub[]={
+		new IO_ReadPort(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_IO | MEMPORT_WIDTH_8),
+		new IO_ReadPort( 0x12, 0x12, IORP_NOP ),				// unknown
+		new IO_ReadPort( 0x21, 0x21, fromance_busycheck_sub_r ),
+		new IO_ReadPort( 0x26, 0x26, fromance_commanddata_r ),
+		new IO_ReadPort(MEMPORT_MARKER, 0)
+	};
 	
 	
 	static PORT_WRITE_START( idolmj_writeport_sub )

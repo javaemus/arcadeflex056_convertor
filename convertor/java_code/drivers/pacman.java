@@ -436,9 +436,11 @@ public class pacman
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static PORT_READ_START( theglobp_readport )
-		{ 0x00, 0xff, theglobp_decrypt_rom },	/* Switch protection logic */
-	PORT_END
+	public static IO_ReadPort theglobp_readport[]={
+		new IO_ReadPort(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_IO | MEMPORT_WIDTH_8),
+		new IO_ReadPort( 0x00, 0xff, theglobp_decrypt_rom ),	/* Switch protection logic */
+		new IO_ReadPort(MEMPORT_MARKER, 0)
+	};
 	
 	
 	static READ_HANDLER( zolakludge_r )

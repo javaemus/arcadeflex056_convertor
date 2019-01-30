@@ -325,9 +325,11 @@ public class slapfght
 		new Memory_WriteAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static PORT_READ_START( readport )
-		{ 0x00, 0x00, slapfight_port_00_r },	/* status register */
-	PORT_END
+	public static IO_ReadPort readport[]={
+		new IO_ReadPort(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_IO | MEMPORT_WIDTH_8),
+		new IO_ReadPort( 0x00, 0x00, slapfight_port_00_r ),	/* status register */
+		new IO_ReadPort(MEMPORT_MARKER, 0)
+	};
 	
 	static PORT_WRITE_START( tigerh_writeport )
 		{ 0x00, 0x00, slapfight_port_00_w },

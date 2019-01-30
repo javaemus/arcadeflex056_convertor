@@ -136,14 +136,16 @@ public class galivan
 	};
 	
 	
-	static PORT_READ_START( readport )
-		{ 0x00, 0x00, input_port_0_r },
-		{ 0x01, 0x01, input_port_1_r },
-		{ 0x02, 0x02, input_port_2_r },
-		{ 0x03, 0x03, input_port_3_r },
-		{ 0x04, 0x04, input_port_4_r },
-		{ 0xc0, 0xc0, IO_port_c0_r }, /* dangar needs to return 0x58 */
-	PORT_END
+	public static IO_ReadPort readport[]={
+		new IO_ReadPort(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_IO | MEMPORT_WIDTH_8),
+		new IO_ReadPort( 0x00, 0x00, input_port_0_r ),
+		new IO_ReadPort( 0x01, 0x01, input_port_1_r ),
+		new IO_ReadPort( 0x02, 0x02, input_port_2_r ),
+		new IO_ReadPort( 0x03, 0x03, input_port_3_r ),
+		new IO_ReadPort( 0x04, 0x04, input_port_4_r ),
+		new IO_ReadPort( 0xc0, 0xc0, IO_port_c0_r ), /* dangar needs to return 0x58 */
+		new IO_ReadPort(MEMPORT_MARKER, 0)
+	};
 	
 	static PORT_WRITE_START( writeport )
 		{ 0x40, 0x40, galivan_gfxbank_w },
@@ -154,14 +156,16 @@ public class galivan
 	/*	{ 0x47, 0x47, IOWP_NOP }, */
 	PORT_END
 	
-	static PORT_READ_START( ninjemak_readport )
-		{ 0x80, 0x80, input_port_0_r },
-		{ 0x81, 0x81, input_port_1_r },
-		{ 0x82, 0x82, input_port_2_r },
-		{ 0x83, 0x83, input_port_3_r },
-		{ 0x84, 0x84, input_port_4_r },
-		{ 0x85, 0x85, input_port_5_r },
-	PORT_END
+	public static IO_ReadPort ninjemak_readport[]={
+		new IO_ReadPort(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_IO | MEMPORT_WIDTH_8),
+		new IO_ReadPort( 0x80, 0x80, input_port_0_r ),
+		new IO_ReadPort( 0x81, 0x81, input_port_1_r ),
+		new IO_ReadPort( 0x82, 0x82, input_port_2_r ),
+		new IO_ReadPort( 0x83, 0x83, input_port_3_r ),
+		new IO_ReadPort( 0x84, 0x84, input_port_4_r ),
+		new IO_ReadPort( 0x85, 0x85, input_port_5_r ),
+		new IO_ReadPort(MEMPORT_MARKER, 0)
+	};
 	
 	static PORT_WRITE_START( ninjemak_writeport )
 		{ 0x80, 0x80, ninjemak_gfxbank_w },
@@ -186,10 +190,12 @@ public class galivan
 	};
 	
 	
-	static PORT_READ_START( sound_readport )
-	/*	{ 0x04, 0x04, IORP_NOP },    value read and *discarded*    */
-		{ 0x06, 0x06, galivan_sound_command_r },
-	PORT_END
+	public static IO_ReadPort sound_readport[]={
+		new IO_ReadPort(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_IO | MEMPORT_WIDTH_8),
+	/*	new IO_ReadPort( 0x04, 0x04, IORP_NOP ),    value read and *discarded*    */
+		new IO_ReadPort( 0x06, 0x06, galivan_sound_command_r ),
+		new IO_ReadPort(MEMPORT_MARKER, 0)
+	};
 	
 	static PORT_WRITE_START( sound_writeport )
 		{ 0x00, 0x00, YM3526_control_port_0_w },

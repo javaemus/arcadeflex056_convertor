@@ -486,10 +486,12 @@ public class cosmic
 		new Memory_WriteAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static PORT_READ_START( cosmicg_readport )
-		{ 0x00, 0x00, cosmicg_pixel_clock_r },
-		{ 0x01, 0x01, input_port_1_r },
-	PORT_END
+	public static IO_ReadPort cosmicg_readport[]={
+		new IO_ReadPort(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_IO | MEMPORT_WIDTH_8),
+		new IO_ReadPort( 0x00, 0x00, cosmicg_pixel_clock_r ),
+		new IO_ReadPort( 0x01, 0x01, input_port_1_r ),
+		new IO_ReadPort(MEMPORT_MARKER, 0)
+	};
 	
 	static PORT_WRITE_START( cosmicg_writeport )
 		{ 0x00, 0x15, cosmicg_output_w },

@@ -145,11 +145,13 @@ public class fuuki16
 		new Memory_WriteAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static PORT_READ_START( fuuki16_sound_readport )
-		{ 0x11, 0x11, soundlatch_r				},	// From Main CPU
-		{ 0x50, 0x50, YM3812_status_port_0_r	},	// YM3812
-		{ 0x60, 0x60, OKIM6295_status_0_r		},	// M6295
-	PORT_END
+	public static IO_ReadPort fuuki16_sound_readport[]={
+		new IO_ReadPort(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_IO | MEMPORT_WIDTH_8),
+		new IO_ReadPort( 0x11, 0x11, soundlatch_r				),	// From Main CPU
+		new IO_ReadPort( 0x50, 0x50, YM3812_status_port_0_r	),	// YM3812
+		new IO_ReadPort( 0x60, 0x60, OKIM6295_status_0_r		),	// M6295
+		new IO_ReadPort(MEMPORT_MARKER, 0)
+	};
 	
 	static PORT_WRITE_START( fuuki16_sound_writeport )
 		{ 0x00, 0x00, fuuki16_sound_rombank_w 	},	// ROM Bank

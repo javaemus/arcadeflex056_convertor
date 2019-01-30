@@ -439,12 +439,14 @@ public class playch10
 		new Memory_WriteAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static PORT_READ_START( readport )
-		{ 0x00, 0x00, pc10_port_0_r },	/* coins, service */
-		{ 0x01, 0x01, input_port_1_r },	/* dipswitch 1 */
-		{ 0x02, 0x02, input_port_2_r }, /* dipswitch 2 */
-		{ 0x03, 0x03, pc10_detectclr_r },
-	PORT_END
+	public static IO_ReadPort readport[]={
+		new IO_ReadPort(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_IO | MEMPORT_WIDTH_8),
+		new IO_ReadPort( 0x00, 0x00, pc10_port_0_r ),	/* coins, service */
+		new IO_ReadPort( 0x01, 0x01, input_port_1_r ),	/* dipswitch 1 */
+		new IO_ReadPort( 0x02, 0x02, input_port_2_r ), /* dipswitch 2 */
+		new IO_ReadPort( 0x03, 0x03, pc10_detectclr_r ),
+		new IO_ReadPort(MEMPORT_MARKER, 0)
+	};
 	
 	static PORT_WRITE_START( writeport )
 		{ 0x00, 0x00, pc10_SDCS_w },

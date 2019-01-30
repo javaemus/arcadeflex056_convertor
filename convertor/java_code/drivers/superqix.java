@@ -55,14 +55,16 @@ public class superqix
 		new Memory_WriteAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static PORT_READ_START( readport )
-		{ 0x0000, 0x00ff, paletteram_r },
-		{ 0x0401, 0x0401, AY8910_read_port_0_r },
-		{ 0x0405, 0x0405, AY8910_read_port_1_r },
-		{ 0x0418, 0x0418, input_port_4_r },
-		{ 0x0800, 0x77ff, superqix_bitmapram_r },
-		{ 0x8800, 0xf7ff, superqix_bitmapram2_r },
-	PORT_END
+	public static IO_ReadPort readport[]={
+		new IO_ReadPort(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_IO | MEMPORT_WIDTH_8),
+		new IO_ReadPort( 0x0000, 0x00ff, paletteram_r ),
+		new IO_ReadPort( 0x0401, 0x0401, AY8910_read_port_0_r ),
+		new IO_ReadPort( 0x0405, 0x0405, AY8910_read_port_1_r ),
+		new IO_ReadPort( 0x0418, 0x0418, input_port_4_r ),
+		new IO_ReadPort( 0x0800, 0x77ff, superqix_bitmapram_r ),
+		new IO_ReadPort( 0x8800, 0xf7ff, superqix_bitmapram2_r ),
+		new IO_ReadPort(MEMPORT_MARKER, 0)
+	};
 	
 	static PORT_WRITE_START( writeport )
 		{ 0x0000, 0x00ff, paletteram_BBGGRRII_w },

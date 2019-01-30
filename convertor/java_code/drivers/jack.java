@@ -116,9 +116,11 @@ public class jack
 	};
 	
 	
-	static PORT_READ_START( sound_readport )
-		{ 0x40, 0x40, AY8910_read_port_0_r },
-	PORT_END
+	public static IO_ReadPort sound_readport[]={
+		new IO_ReadPort(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_IO | MEMPORT_WIDTH_8),
+		new IO_ReadPort( 0x40, 0x40, AY8910_read_port_0_r ),
+		new IO_ReadPort(MEMPORT_MARKER, 0)
+	};
 	
 	static PORT_WRITE_START( sound_writeport )
 		{ 0x80, 0x80, AY8910_control_port_0_w },

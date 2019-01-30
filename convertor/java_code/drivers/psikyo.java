@@ -231,11 +231,13 @@ public class psikyo
 	};
 	
 	
-	static PORT_READ_START( gunbird_sound_readport )
-		{ 0x04, 0x04, YM2610_status_port_0_A_r		},
-		{ 0x06, 0x06, YM2610_status_port_0_B_r		},
-		{ 0x08, 0x08, soundlatch_r					},
-	PORT_END
+	public static IO_ReadPort gunbird_sound_readport[]={
+		new IO_ReadPort(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_IO | MEMPORT_WIDTH_8),
+		new IO_ReadPort( 0x04, 0x04, YM2610_status_port_0_A_r		),
+		new IO_ReadPort( 0x06, 0x06, YM2610_status_port_0_B_r		),
+		new IO_ReadPort( 0x08, 0x08, soundlatch_r					),
+		new IO_ReadPort(MEMPORT_MARKER, 0)
+	};
 	
 	static PORT_WRITE_START( gunbird_sound_writeport )
 		{ 0x00, 0x00, gunbird_sound_bankswitch_w	},
@@ -276,11 +278,13 @@ public class psikyo
 	};
 	
 	
-	static PORT_READ_START( sngkace_sound_readport )
-		{ 0x00, 0x00, YM2610_status_port_0_A_r		},
-		{ 0x02, 0x02, YM2610_status_port_0_B_r		},
-		{ 0x08, 0x08, soundlatch_r					},
-	PORT_END
+	public static IO_ReadPort sngkace_sound_readport[]={
+		new IO_ReadPort(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_IO | MEMPORT_WIDTH_8),
+		new IO_ReadPort( 0x00, 0x00, YM2610_status_port_0_A_r		),
+		new IO_ReadPort( 0x02, 0x02, YM2610_status_port_0_B_r		),
+		new IO_ReadPort( 0x08, 0x08, soundlatch_r					),
+		new IO_ReadPort(MEMPORT_MARKER, 0)
+	};
 	
 	static PORT_WRITE_START( sngkace_sound_writeport )
 		{ 0x00, 0x00, YM2610_control_port_0_A_w		},
@@ -297,11 +301,13 @@ public class psikyo
 	***************************************************************************/
 	
 	
-	static PORT_READ_START( s1945_sound_readport )
-		{ 0x08, 0x08, YM2610_status_port_0_A_r		},
-	//	{ 0x06, 0x06, YM2610_status_port_0_B_r		},
-		{ 0x10, 0x10, soundlatch_r					},
-	PORT_END
+	public static IO_ReadPort s1945_sound_readport[]={
+		new IO_ReadPort(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_IO | MEMPORT_WIDTH_8),
+		new IO_ReadPort( 0x08, 0x08, YM2610_status_port_0_A_r		),
+	//	new IO_ReadPort( 0x06, 0x06, YM2610_status_port_0_B_r		),
+		new IO_ReadPort( 0x10, 0x10, soundlatch_r					),
+		new IO_ReadPort(MEMPORT_MARKER, 0)
+	};
 	
 	static PORT_WRITE_START( s1945_sound_writeport )
 		{ 0x00, 0x00, gunbird_sound_bankswitch_w	},

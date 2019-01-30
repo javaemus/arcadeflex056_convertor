@@ -302,18 +302,20 @@ public class cvs
 		new Memory_WriteAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static PORT_READ_START( cvs_readport )
-		{ 0x000, 0x000, input_port_0_r },
-	    { 0x002, 0x002, input_port_1_r },
-		{ 0x003, 0x003, input_port_2_r },
-	    { 0x004, 0x004, input_port_3_r },
-		{ 0x006, 0x006, input_port_4_r },		// Dip 1
-		{ 0x007, 0x007, input_port_5_r },		// Dip 2
-	    { 0x010, 0x0ff, cvs_character_mode_r },	// Programmable Character Settings
-		{ S2650_DATA_PORT, S2650_DATA_PORT, cvs_collision_clear },
-		{ S2650_CTRL_PORT, S2650_CTRL_PORT, cvs_collision_r },
-	    { S2650_SENSE_PORT, S2650_SENSE_PORT, input_port_6_r },
-	PORT_END
+	public static IO_ReadPort cvs_readport[]={
+		new IO_ReadPort(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_IO | MEMPORT_WIDTH_8),
+		new IO_ReadPort( 0x000, 0x000, input_port_0_r ),
+	    new IO_ReadPort( 0x002, 0x002, input_port_1_r ),
+		new IO_ReadPort( 0x003, 0x003, input_port_2_r ),
+	    new IO_ReadPort( 0x004, 0x004, input_port_3_r ),
+		new IO_ReadPort( 0x006, 0x006, input_port_4_r ),		// Dip 1
+		new IO_ReadPort( 0x007, 0x007, input_port_5_r ),		// Dip 2
+	    new IO_ReadPort( 0x010, 0x0ff, cvs_character_mode_r ),	// Programmable Character Settings
+		new IO_ReadPort( S2650_DATA_PORT, S2650_DATA_PORT, cvs_collision_clear ),
+		new IO_ReadPort( S2650_CTRL_PORT, S2650_CTRL_PORT, cvs_collision_r ),
+	    new IO_ReadPort( S2650_SENSE_PORT, S2650_SENSE_PORT, input_port_6_r ),
+		new IO_ReadPort(MEMPORT_MARKER, 0)
+	};
 	
 	static PORT_WRITE_START( cvs_writeport )
 		{ 0              , 0xff           , cvs_scroll_w },
@@ -339,9 +341,11 @@ public class cvs
 		new Memory_WriteAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static PORT_READ_START( cvs_sound_readport )
-	    { S2650_SENSE_PORT, S2650_SENSE_PORT, CVS_393hz_Clock_r },
-	PORT_END
+	public static IO_ReadPort cvs_sound_readport[]={
+		new IO_ReadPort(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_IO | MEMPORT_WIDTH_8),
+	    new IO_ReadPort( S2650_SENSE_PORT, S2650_SENSE_PORT, CVS_393hz_Clock_r ),
+		new IO_ReadPort(MEMPORT_MARKER, 0)
+	};
 	
 	INPUT_PORTS_START( cvs )
 	

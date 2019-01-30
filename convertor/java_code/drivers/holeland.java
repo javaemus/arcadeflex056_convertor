@@ -74,11 +74,13 @@ public class holeland
 		new Memory_WriteAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static PORT_READ_START( readport )
-		{ 0x01, 0x01, watchdog_reset_r },	/* ? */
-		{ 0x04, 0x04, AY8910_read_port_0_r },
-		{ 0x06, 0x06, AY8910_read_port_1_r },
-	PORT_END
+	public static IO_ReadPort readport[]={
+		new IO_ReadPort(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_IO | MEMPORT_WIDTH_8),
+		new IO_ReadPort( 0x01, 0x01, watchdog_reset_r ),	/* ? */
+		new IO_ReadPort( 0x04, 0x04, AY8910_read_port_0_r ),
+		new IO_ReadPort( 0x06, 0x06, AY8910_read_port_1_r ),
+		new IO_ReadPort(MEMPORT_MARKER, 0)
+	};
 	
 	static PORT_WRITE_START( writeport )
 		{ 0x04, 0x04, AY8910_control_port_0_w },

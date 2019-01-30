@@ -120,8 +120,10 @@ public class system32
 		{ 0xf00000, 0xffffff, MWA16_ROM },
 	MEMORY_END
 	
-	static PORT_READ_START( system32_readport )
-	PORT_END
+	public static IO_ReadPort system32_readport[]={
+		new IO_ReadPort(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_IO | MEMPORT_WIDTH_8),
+		new IO_ReadPort(MEMPORT_MARKER, 0)
+	};
 	
 	static PORT_WRITE_START( system32_writeport )
 	PORT_END

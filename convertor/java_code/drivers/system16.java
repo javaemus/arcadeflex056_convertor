@@ -310,10 +310,12 @@ public class system16
 		new Memory_WriteAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static PORT_READ_START( sound_readport )
-		{ 0x01, 0x01, YM2151_status_port_0_r },
-		{ 0xc0, 0xc0, soundlatch_r },
-	PORT_END
+	public static IO_ReadPort sound_readport[]={
+		new IO_ReadPort(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_IO | MEMPORT_WIDTH_8),
+		new IO_ReadPort( 0x01, 0x01, YM2151_status_port_0_r ),
+		new IO_ReadPort( 0xc0, 0xc0, soundlatch_r ),
+		new IO_ReadPort(MEMPORT_MARKER, 0)
+	};
 	
 	static PORT_WRITE_START( sound_writeport )
 		{ 0x00, 0x00, YM2151_register_port_0_w },
@@ -329,11 +331,13 @@ public class system16
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static PORT_READ_START( sound_readport_7751 )
-		{ 0x01, 0x01, YM2151_status_port_0_r },
-	//    { 0x0e, 0x0e, sys16_7751_audio_8255_r },
-		{ 0xc0, 0xc0, soundlatch_r },
-	PORT_END
+	public static IO_ReadPort sound_readport_7751[]={
+		new IO_ReadPort(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_IO | MEMPORT_WIDTH_8),
+		new IO_ReadPort( 0x01, 0x01, YM2151_status_port_0_r ),
+	//    new IO_ReadPort( 0x0e, 0x0e, sys16_7751_audio_8255_r ),
+		new IO_ReadPort( 0xc0, 0xc0, soundlatch_r ),
+		new IO_ReadPort(MEMPORT_MARKER, 0)
+	};
 	
 	static PORT_WRITE_START( sound_writeport_7751 )
 		{ 0x00, 0x00, YM2151_register_port_0_w },
@@ -353,11 +357,13 @@ public class system16
 		new Memory_WriteAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static PORT_READ_START( readport_7751 )
-		{ I8039_t1,  I8039_t1,  sys16_7751_sh_t1_r },
-		{ I8039_p2,  I8039_p2,  sys16_7751_sh_command_r },
-		{ I8039_bus, I8039_bus, sys16_7751_sh_rom_r },
-	PORT_END
+	public static IO_ReadPort readport_7751[]={
+		new IO_ReadPort(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_IO | MEMPORT_WIDTH_8),
+		new IO_ReadPort( I8039_t1,  I8039_t1,  sys16_7751_sh_t1_r ),
+		new IO_ReadPort( I8039_p2,  I8039_p2,  sys16_7751_sh_command_r ),
+		new IO_ReadPort( I8039_bus, I8039_bus, sys16_7751_sh_rom_r ),
+		new IO_ReadPort(MEMPORT_MARKER, 0)
+	};
 	
 	static PORT_WRITE_START( writeport_7751 )
 		{ I8039_p1, I8039_p1, sys16_7751_sh_dac_w },

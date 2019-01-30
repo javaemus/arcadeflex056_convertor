@@ -293,17 +293,21 @@ public class suna16
 	
 	
 	
-	static PORT_READ_START( bssoccer_pcm_1_readport )
-		{ 0x00, 0x00, soundlatch2_r 				},	// From The Sound Z80
-	PORT_END
+	public static IO_ReadPort bssoccer_pcm_1_readport[]={
+		new IO_ReadPort(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_IO | MEMPORT_WIDTH_8),
+		new IO_ReadPort( 0x00, 0x00, soundlatch2_r 				),	// From The Sound Z80
+		new IO_ReadPort(MEMPORT_MARKER, 0)
+	};
 	static PORT_WRITE_START( bssoccer_pcm_1_writeport )
 		{ 0x00, 0x01, bssoccer_DAC_1_w				},	// 2 x DAC
 		{ 0x03, 0x03, bssoccer_pcm_1_bankswitch_w	},	// Rom Bank
 	PORT_END
 	
-	static PORT_READ_START( bssoccer_pcm_2_readport )
-		{ 0x00, 0x00, soundlatch3_r 				},	// From The Sound Z80
-	PORT_END
+	public static IO_ReadPort bssoccer_pcm_2_readport[]={
+		new IO_ReadPort(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_IO | MEMPORT_WIDTH_8),
+		new IO_ReadPort( 0x00, 0x00, soundlatch3_r 				),	// From The Sound Z80
+		new IO_ReadPort(MEMPORT_MARKER, 0)
+	};
 	static PORT_WRITE_START( bssoccer_pcm_2_writeport )
 		{ 0x00, 0x01, bssoccer_DAC_2_w				},	// 2 x DAC
 		{ 0x03, 0x03, bssoccer_pcm_2_bankswitch_w	},	// Rom Bank
@@ -340,9 +344,11 @@ public class suna16
 	};
 	
 	
-	static PORT_READ_START( uballoon_pcm_1_readport )
-		{ 0x00, 0x00, soundlatch2_r 				},	// From The Sound Z80
-	PORT_END
+	public static IO_ReadPort uballoon_pcm_1_readport[]={
+		new IO_ReadPort(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_IO | MEMPORT_WIDTH_8),
+		new IO_ReadPort( 0x00, 0x00, soundlatch2_r 				),	// From The Sound Z80
+		new IO_ReadPort(MEMPORT_MARKER, 0)
+	};
 	static PORT_WRITE_START( uballoon_pcm_1_writeport )
 		{ 0x00, 0x01, bssoccer_DAC_1_w				},	// 2 x DAC
 		{ 0x03, 0x03, uballoon_pcm_1_bankswitch_w	},	// Rom Bank

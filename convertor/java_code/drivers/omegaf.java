@@ -536,12 +536,14 @@ public class omegaf
 		new Memory_WriteAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static PORT_READ_START( sound_readport )
-		{ 0x0000, 0x0000, YM2203_status_port_0_r },
-		{ 0x0001, 0x0001, YM2203_read_port_0_r },
-		{ 0x0080, 0x0080, YM2203_status_port_1_r },
-		{ 0x0081, 0x0081, YM2203_read_port_1_r },
-	PORT_END
+	public static IO_ReadPort sound_readport[]={
+		new IO_ReadPort(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_IO | MEMPORT_WIDTH_8),
+		new IO_ReadPort( 0x0000, 0x0000, YM2203_status_port_0_r ),
+		new IO_ReadPort( 0x0001, 0x0001, YM2203_read_port_0_r ),
+		new IO_ReadPort( 0x0080, 0x0080, YM2203_status_port_1_r ),
+		new IO_ReadPort( 0x0081, 0x0081, YM2203_read_port_1_r ),
+		new IO_ReadPort(MEMPORT_MARKER, 0)
+	};
 	
 	static PORT_WRITE_START( sound_writeport )
 		{ 0x0000, 0x0000, YM2203_control_port_0_w },

@@ -111,9 +111,11 @@ public class pastelgl
 		}
 	}
 	
-	static PORT_READ_START( readport_pastelgl )
-		{ 0x0000, 0xffff, io_pastelgl_r },
-	PORT_END
+	public static IO_ReadPort readport_pastelgl[]={
+		new IO_ReadPort(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_IO | MEMPORT_WIDTH_8),
+		new IO_ReadPort( 0x0000, 0xffff, io_pastelgl_r ),
+		new IO_ReadPort(MEMPORT_MARKER, 0)
+	};
 	
 	static WRITE_HANDLER( io_pastelgl_w )
 	{

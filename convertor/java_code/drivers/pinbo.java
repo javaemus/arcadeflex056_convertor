@@ -178,11 +178,13 @@ public class pinbo
 		new Memory_WriteAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static PORT_READ_START( sound_readport )
-		{ 0x02, 0x02, AY8910_read_port_0_r },
-		{ 0x06, 0x06, AY8910_read_port_1_r },
-		{ 0x08, 0x08, soundlatch_r },
-	PORT_END
+	public static IO_ReadPort sound_readport[]={
+		new IO_ReadPort(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_IO | MEMPORT_WIDTH_8),
+		new IO_ReadPort( 0x02, 0x02, AY8910_read_port_0_r ),
+		new IO_ReadPort( 0x06, 0x06, AY8910_read_port_1_r ),
+		new IO_ReadPort( 0x08, 0x08, soundlatch_r ),
+		new IO_ReadPort(MEMPORT_MARKER, 0)
+	};
 	
 	static PORT_WRITE_START( sound_writeport )
 		{ 0x00, 0x00, AY8910_control_port_0_w },

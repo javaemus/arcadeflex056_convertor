@@ -87,9 +87,11 @@ public class timelimt
 		new Memory_WriteAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static PORT_READ_START( readport )
-		{ 0x00, 0x00, watchdog_reset_r },
-	PORT_END
+	public static IO_ReadPort readport[]={
+		new IO_ReadPort(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_IO | MEMPORT_WIDTH_8),
+		new IO_ReadPort( 0x00, 0x00, watchdog_reset_r ),
+		new IO_ReadPort(MEMPORT_MARKER, 0)
+	};
 	
 	public static Memory_ReadAddress readmem_sound[]={
 		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
@@ -105,10 +107,12 @@ public class timelimt
 		new Memory_WriteAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static PORT_READ_START( readport_sound )
-		{ 0x8c, 0x8d, AY8910_read_port_0_r },
-		{ 0x8e, 0x8f, AY8910_read_port_1_r },
-	PORT_END
+	public static IO_ReadPort readport_sound[]={
+		new IO_ReadPort(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_IO | MEMPORT_WIDTH_8),
+		new IO_ReadPort( 0x8c, 0x8d, AY8910_read_port_0_r ),
+		new IO_ReadPort( 0x8e, 0x8f, AY8910_read_port_1_r ),
+		new IO_ReadPort(MEMPORT_MARKER, 0)
+	};
 	
 	static PORT_WRITE_START( writeport_sound )
 		{ 0x00, 0x00, soundlatch_clear_w },

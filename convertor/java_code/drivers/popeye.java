@@ -125,12 +125,14 @@ public class popeye
 	};
 	
 	
-	static PORT_READ_START( readport )
-		{ 0x00, 0x00, input_port_0_r },
-		{ 0x01, 0x01, input_port_1_r },
-		{ 0x02, 0x02, input_port_2_r },
-		{ 0x03, 0x03, AY8910_read_port_0_r },
-	PORT_END
+	public static IO_ReadPort readport[]={
+		new IO_ReadPort(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_IO | MEMPORT_WIDTH_8),
+		new IO_ReadPort( 0x00, 0x00, input_port_0_r ),
+		new IO_ReadPort( 0x01, 0x01, input_port_1_r ),
+		new IO_ReadPort( 0x02, 0x02, input_port_2_r ),
+		new IO_ReadPort( 0x03, 0x03, AY8910_read_port_0_r ),
+		new IO_ReadPort(MEMPORT_MARKER, 0)
+	};
 	
 	static PORT_WRITE_START( writeport )
 		{ 0x00, 0x00, AY8910_control_port_0_w },

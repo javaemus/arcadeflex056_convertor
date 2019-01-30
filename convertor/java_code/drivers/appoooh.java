@@ -111,12 +111,14 @@ public class appoooh
 		new Memory_WriteAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static PORT_READ_START( readport )
-		{ 0x00, 0x00, input_port_0_r },	/* IN0 */
-		{ 0x01, 0x01, input_port_1_r },	/* IN1 */
-		{ 0x03, 0x03, input_port_3_r },	/* DSW */
-		{ 0x04, 0x04, input_port_2_r },	/* IN2 */
-	PORT_END
+	public static IO_ReadPort readport[]={
+		new IO_ReadPort(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_IO | MEMPORT_WIDTH_8),
+		new IO_ReadPort( 0x00, 0x00, input_port_0_r ),	/* IN0 */
+		new IO_ReadPort( 0x01, 0x01, input_port_1_r ),	/* IN1 */
+		new IO_ReadPort( 0x03, 0x03, input_port_3_r ),	/* DSW */
+		new IO_ReadPort( 0x04, 0x04, input_port_2_r ),	/* IN2 */
+		new IO_ReadPort(MEMPORT_MARKER, 0)
+	};
 	
 	static PORT_WRITE_START( writeport )
 		{ 0x00, 0x00, SN76496_0_w },

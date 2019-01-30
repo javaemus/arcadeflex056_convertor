@@ -54,9 +54,11 @@ public class zac2650
 		new Memory_WriteAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static PORT_READ_START( readport )
-	    { S2650_SENSE_PORT, S2650_SENSE_PORT, input_port_3_r },
-	PORT_END
+	public static IO_ReadPort readport[]={
+		new IO_ReadPort(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_IO | MEMPORT_WIDTH_8),
+	    new IO_ReadPort( S2650_SENSE_PORT, S2650_SENSE_PORT, input_port_3_r ),
+		new IO_ReadPort(MEMPORT_MARKER, 0)
+	};
 	
 	INPUT_PORTS_START( tinvader )
 	

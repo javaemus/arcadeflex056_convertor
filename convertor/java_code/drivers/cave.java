@@ -938,13 +938,15 @@ public class cave
 		new Memory_WriteAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static PORT_READ_START( hotdogst_sound_readport )
-		{ 0x30, 0x30, soundlatch_lo_r			},	// From Main CPU
-		{ 0x40, 0x40, soundlatch_hi_r			},	//
-		{ 0x50, 0x50, YM2203_status_port_0_r	},	// YM2203
-		{ 0x51, 0x51, YM2203_read_port_0_r		},	//
-		{ 0x60, 0x60, OKIM6295_status_0_r		},	// M6295
-	PORT_END
+	public static IO_ReadPort hotdogst_sound_readport[]={
+		new IO_ReadPort(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_IO | MEMPORT_WIDTH_8),
+		new IO_ReadPort( 0x30, 0x30, soundlatch_lo_r			),	// From Main CPU
+		new IO_ReadPort( 0x40, 0x40, soundlatch_hi_r			),	//
+		new IO_ReadPort( 0x50, 0x50, YM2203_status_port_0_r	),	// YM2203
+		new IO_ReadPort( 0x51, 0x51, YM2203_read_port_0_r		),	//
+		new IO_ReadPort( 0x60, 0x60, OKIM6295_status_0_r		),	// M6295
+		new IO_ReadPort(MEMPORT_MARKER, 0)
+	};
 	
 	static PORT_WRITE_START( hotdogst_sound_writeport )
 		{ 0x00, 0x00, hotdogst_rombank_w		},	// ROM bank
@@ -985,10 +987,12 @@ public class cave
 		new Memory_WriteAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static PORT_READ_START( mazinger_sound_readport )
-		{ 0x30, 0x30, soundlatch_lo_r			},	// From Main CPU
-		{ 0x52, 0x52, YM2203_status_port_0_r	},	// YM2203
-	PORT_END
+	public static IO_ReadPort mazinger_sound_readport[]={
+		new IO_ReadPort(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_IO | MEMPORT_WIDTH_8),
+		new IO_ReadPort( 0x30, 0x30, soundlatch_lo_r			),	// From Main CPU
+		new IO_ReadPort( 0x52, 0x52, YM2203_status_port_0_r	),	// YM2203
+		new IO_ReadPort(MEMPORT_MARKER, 0)
+	};
 	
 	static PORT_WRITE_START( mazinger_sound_writeport )
 		{ 0x00, 0x00, mazinger_rombank_w		},	// ROM bank
@@ -1049,12 +1053,14 @@ public class cave
 		new Memory_WriteAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static PORT_READ_START( metmqstr_sound_readport )
-		{ 0x20, 0x20, soundflags_r				},	// Communication
-		{ 0x30, 0x30, soundlatch_lo_r			},	// From Main CPU
-		{ 0x40, 0x40, soundlatch_hi_r			},	//
-		{ 0x51, 0x51, YM2151_status_port_0_r	},	// YM2151
-	PORT_END
+	public static IO_ReadPort metmqstr_sound_readport[]={
+		new IO_ReadPort(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_IO | MEMPORT_WIDTH_8),
+		new IO_ReadPort( 0x20, 0x20, soundflags_r				),	// Communication
+		new IO_ReadPort( 0x30, 0x30, soundlatch_lo_r			),	// From Main CPU
+		new IO_ReadPort( 0x40, 0x40, soundlatch_hi_r			),	//
+		new IO_ReadPort( 0x51, 0x51, YM2151_status_port_0_r	),	// YM2151
+		new IO_ReadPort(MEMPORT_MARKER, 0)
+	};
 	
 	static PORT_WRITE_START( metmqstr_sound_writeport )
 		{ 0x00, 0x00, metmqstr_rombank_w		},	// Rom Bank
@@ -1116,14 +1122,16 @@ public class cave
 		new Memory_WriteAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static PORT_READ_START( sailormn_sound_readport )
-		{ 0x20, 0x20, soundflags_r				},	// Communication
-		{ 0x30, 0x30, soundlatch_lo_r			},	// From Main CPU
-		{ 0x40, 0x40, soundlatch_hi_r			},	//
-		{ 0x51, 0x51, YM2151_status_port_0_r	},	// YM2151
-		{ 0x60, 0x60, OKIM6295_status_0_r		},	// M6295 #0
-		{ 0x80, 0x80, OKIM6295_status_1_r		},	// M6295 #1
-	PORT_END
+	public static IO_ReadPort sailormn_sound_readport[]={
+		new IO_ReadPort(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_IO | MEMPORT_WIDTH_8),
+		new IO_ReadPort( 0x20, 0x20, soundflags_r				),	// Communication
+		new IO_ReadPort( 0x30, 0x30, soundlatch_lo_r			),	// From Main CPU
+		new IO_ReadPort( 0x40, 0x40, soundlatch_hi_r			),	//
+		new IO_ReadPort( 0x51, 0x51, YM2151_status_port_0_r	),	// YM2151
+		new IO_ReadPort( 0x60, 0x60, OKIM6295_status_0_r		),	// M6295 #0
+		new IO_ReadPort( 0x80, 0x80, OKIM6295_status_1_r		),	// M6295 #1
+		new IO_ReadPort(MEMPORT_MARKER, 0)
+	};
 	
 	static PORT_WRITE_START( sailormn_sound_writeport )
 		{ 0x00, 0x00, sailormn_rombank_w		},	// Rom Bank

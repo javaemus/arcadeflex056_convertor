@@ -278,19 +278,21 @@ public class grchamp
 		new Memory_WriteAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static PORT_READ_START( readport )
-		{ 0x00, 0x00, input_port_3_r },		/* accel */
-		{ 0x01, 0x01, PC3259_0_r },
-		{ 0x02, 0x02, grchamp_port_0_r },	/* comm */
-		{ 0x03, 0x03, input_port_4_r },		/* wheel */
-		{ 0x00, 0x03, grchamp_port_0_r },	/* scanline read, cpu2 read, etc */
-		{ 0x04, 0x04, input_port_0_r },		/* DSWA */
-		{ 0x05, 0x05, input_port_1_r },		/* DSWB */
-		{ 0x06, 0x06, input_port_2_r },		/* tilt, coin, reset HS, etc */
-		{ 0x09, 0x09, PC3259_1_r },
-		{ 0x11, 0x11, PC3259_2_r },
-		{ 0x19, 0x19, PC3259_3_r },
-	PORT_END
+	public static IO_ReadPort readport[]={
+		new IO_ReadPort(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_IO | MEMPORT_WIDTH_8),
+		new IO_ReadPort( 0x00, 0x00, input_port_3_r ),		/* accel */
+		new IO_ReadPort( 0x01, 0x01, PC3259_0_r ),
+		new IO_ReadPort( 0x02, 0x02, grchamp_port_0_r ),	/* comm */
+		new IO_ReadPort( 0x03, 0x03, input_port_4_r ),		/* wheel */
+		new IO_ReadPort( 0x00, 0x03, grchamp_port_0_r ),	/* scanline read, cpu2 read, etc */
+		new IO_ReadPort( 0x04, 0x04, input_port_0_r ),		/* DSWA */
+		new IO_ReadPort( 0x05, 0x05, input_port_1_r ),		/* DSWB */
+		new IO_ReadPort( 0x06, 0x06, input_port_2_r ),		/* tilt, coin, reset HS, etc */
+		new IO_ReadPort( 0x09, 0x09, PC3259_1_r ),
+		new IO_ReadPort( 0x11, 0x11, PC3259_2_r ),
+		new IO_ReadPort( 0x19, 0x19, PC3259_3_r ),
+		new IO_ReadPort(MEMPORT_MARKER, 0)
+	};
 	
 	static PORT_WRITE_START( writeport )
 		{ 0x00, 0x00, grchamp_control0_w },
@@ -334,9 +336,11 @@ public class grchamp
 	};
 	
 	
-	static PORT_READ_START( readport2 )
-		{ 0x00, 0x03, grchamp_port_1_r },
-	PORT_END
+	public static IO_ReadPort readport2[]={
+		new IO_ReadPort(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_IO | MEMPORT_WIDTH_8),
+		new IO_ReadPort( 0x00, 0x03, grchamp_port_1_r ),
+		new IO_ReadPort(MEMPORT_MARKER, 0)
+	};
 	
 	static PORT_WRITE_START( writeport2 )
 		{ 0x00, 0x0f, grchamp_port_1_w },

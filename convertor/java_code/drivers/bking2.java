@@ -84,16 +84,18 @@ public class bking2
 		new Memory_WriteAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static PORT_READ_START( readport )
-	    { 0x00, 0x00, input_port_0_r },
-	    { 0x01, 0x01, input_port_1_r },
-	    { 0x02, 0x02, input_port_2_r },
-	    { 0x03, 0x03, input_port_3_r },
-	    { 0x04, 0x04, input_port_4_r },
-	    { 0x05, 0x05, bking2_input_port_5_r },
-	    { 0x06, 0x06, bking2_input_port_6_r },
-		{ 0x07, 0x1f, bking2_pos_r },
-	PORT_END
+	public static IO_ReadPort readport[]={
+		new IO_ReadPort(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_IO | MEMPORT_WIDTH_8),
+	    new IO_ReadPort( 0x00, 0x00, input_port_0_r ),
+	    new IO_ReadPort( 0x01, 0x01, input_port_1_r ),
+	    new IO_ReadPort( 0x02, 0x02, input_port_2_r ),
+	    new IO_ReadPort( 0x03, 0x03, input_port_3_r ),
+	    new IO_ReadPort( 0x04, 0x04, input_port_4_r ),
+	    new IO_ReadPort( 0x05, 0x05, bking2_input_port_5_r ),
+	    new IO_ReadPort( 0x06, 0x06, bking2_input_port_6_r ),
+		new IO_ReadPort( 0x07, 0x1f, bking2_pos_r ),
+		new IO_ReadPort(MEMPORT_MARKER, 0)
+	};
 	
 	static PORT_WRITE_START( writeport )
 	    { 0x00, 0x00, bking2_xld1_w },

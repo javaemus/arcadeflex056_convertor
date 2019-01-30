@@ -883,13 +883,14 @@ public class itech8
 	};
 	
 	
-	static PORT_READ_START( slikz80_readport )
-		{ 0x00, 0x00, slikz80_port_r },
+	public static IO_ReadPort slikz80_readport[]={
+		new IO_ReadPort(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_IO | MEMPORT_WIDTH_8),
+		new IO_ReadPort( 0x00, 0x00, slikz80_port_r ),
 	MEMORY_END
 	
 	
 	static PORT_WRITE_START( slikz80_writeport )
-		{ 0x00, 0x00, slikz80_port_w },
+		new IO_ReadPort( 0x00, 0x00, slikz80_port_w ),
 	MEMORY_END
 	
 	
@@ -1425,7 +1426,7 @@ public class itech8
 	 *************************************/
 	
 	static struct YM2203interface ym2203_interface =
-	{
+	new IO_ReadPort(
 		1,
 		CLOCK_8MHz/2,
 		{ YM2203_VOL(75,7) },
@@ -1434,34 +1435,34 @@ public class itech8
 		{ 0 },
 		{ ym2203_portb_out },
 		{ generate_sound_irq }
-	};
+	);
 	
 	
 	static struct YM3812interface ym3812_interface =
-	{
+	new IO_ReadPort(
 		1,
 		CLOCK_8MHz/2,
 		{ 75 },
 		{ generate_sound_irq }
-	};
+	);
 	
 	
 	static struct OKIM6295interface oki6295_interface_low =
-	{
+	new IO_ReadPort(
 		1,
 		{ CLOCK_8MHz/8/165 },
 		{ REGION_SOUND1 },
 		{ 75 }
-	};
+	);
 	
 	
 	static struct OKIM6295interface oki6295_interface_high =
-	{
+	new IO_ReadPort(
 		1,
 		{ CLOCK_8MHz/8/128 },
 		{ REGION_SOUND1 },
 		{ 75 }
-	};
+	);
 	
 	
 	
@@ -1473,7 +1474,7 @@ public class itech8
 	
 	#define ITECH_DRIVER(NAME, CPUTYPE, CPUCLOCK, MAINMEM, YMTYPE, OKISPEED, XMIN, XMAX)	\
 	static struct MachineDriver machine_driver_##NAME =								\
-	{																				\
+	new IO_ReadPort(																				\
 		/* basic machine hardware */												\
 		{																			\
 			{																		\
@@ -1512,7 +1513,7 @@ public class itech8
 			{ SOUND_OKIM6295, &oki6295_interface_##OKISPEED },						\
 		},																			\
 		nvram_handler																\
-	}
+	)
 	
 	
 	/*           NAME,      CPU,    CPUCLOCK,      MAINMEM,  YMTYPE, OKISPEED, XMIN, XMAX) */
@@ -1528,7 +1529,7 @@ public class itech8
 	
 	
 	static struct MachineDriver machine_driver_slikshot =
-	{
+	new IO_ReadPort(
 		/* basic machine hardware */
 		{
 			{
@@ -1573,12 +1574,12 @@ public class itech8
 			{ SOUND_OKIM6295, &oki6295_interface_high },
 		},
 		nvram_handler
-	};
+	);
 	
 	
 	
 	static struct MachineDriver machine_driver_sstrike =
-	{
+	new IO_ReadPort(
 		/* basic machine hardware */
 		{
 			{
@@ -1623,7 +1624,7 @@ public class itech8
 			{ SOUND_OKIM6295, &oki6295_interface_high },
 		},
 		nvram_handler
-	};
+	);
 	
 	
 	
@@ -2083,31 +2084,31 @@ public class itech8
 	 *************************************/
 	
 	static void init_viasound(void)
-	{
+	new IO_ReadPort(
 		/* some games with a YM3812 use a VIA(6522) for timing and communication */
 		install_mem_read_handler (1, 0x5000, 0x500f, via6522_r);
 		via6522 = install_mem_write_handler(1, 0x5000, 0x500f, via6522_w);
-	}
+	)
 	
 	
 	static void init_slikshot(void)
-	{
+	new IO_ReadPort(
 		install_mem_read_handler (0, 0x0180, 0x0180, slikshot_z80_r);
 		install_mem_read_handler (0, 0x01cf, 0x01cf, slikshot_z80_control_r);
 		install_mem_write_handler(0, 0x01cf, 0x01cf, slikshot_z80_control_w);
-	}
+	)
 	
 	
 	static void init_sstrike(void)
-	{
+	new IO_ReadPort(
 		install_mem_read_handler (0, 0x1180, 0x1180, slikshot_z80_r);
 		install_mem_read_handler (0, 0x11cf, 0x11cf, slikshot_z80_control_r);
 		install_mem_write_handler(0, 0x11cf, 0x11cf, slikshot_z80_control_w);
-	}
+	)
 	
 	
 	static void init_rimrockn(void)
-	{
+	new IO_ReadPort(
 		/* additional input ports */
 		install_mem_read_handler (0, 0x0161, 0x0161, input_port_3_r);
 		install_mem_read_handler (0, 0x0162, 0x0162, input_port_4_r);
@@ -2121,7 +2122,7 @@ public class itech8
 	
 		/* VIA-based sound timing */
 		init_viasound();
-	}
+	)
 	
 	
 	

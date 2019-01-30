@@ -202,11 +202,13 @@ public class shangha3
 		new Memory_WriteAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static PORT_READ_START( heberpop_sound_readport )
-		{ 0x00, 0x00, YM2612_status_port_0_A_r },
-		{ 0x80, 0x80, OKIM6295_status_0_r },
-		{ 0xc0, 0xc0, soundlatch_r },
-	PORT_END
+	public static IO_ReadPort heberpop_sound_readport[]={
+		new IO_ReadPort(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_IO | MEMPORT_WIDTH_8),
+		new IO_ReadPort( 0x00, 0x00, YM2612_status_port_0_A_r ),
+		new IO_ReadPort( 0x80, 0x80, OKIM6295_status_0_r ),
+		new IO_ReadPort( 0xc0, 0xc0, soundlatch_r ),
+		new IO_ReadPort(MEMPORT_MARKER, 0)
+	};
 	
 	static PORT_WRITE_START( heberpop_sound_writeport )
 		{ 0x00, 0x00, YM2612_control_port_0_A_w },

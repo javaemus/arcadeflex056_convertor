@@ -114,16 +114,18 @@ public class m90
 		new Memory_WriteAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static PORT_READ_START( readport )
-		{ 0x00, 0x00, input_port_0_r }, /* Player 1 */
-		{ 0x01, 0x01, input_port_1_r }, /* Player 2 */
-		{ 0x02, 0x02, input_port_2_r }, /* Coins */
-		{ 0x03, 0x03, MRA_NOP },		/* Unused?  High byte of above */
-		{ 0x04, 0x04, input_port_3_r }, /* Dip 1 */
-		{ 0x05, 0x05, input_port_4_r }, /* Dip 2 */
-		{ 0x06, 0x06, input_port_5_r }, /* Player 3 */
-		{ 0x07, 0x07, input_port_6_r }, /* Player 4 */
-	PORT_END
+	public static IO_ReadPort readport[]={
+		new IO_ReadPort(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_IO | MEMPORT_WIDTH_8),
+		new IO_ReadPort( 0x00, 0x00, input_port_0_r ), /* Player 1 */
+		new IO_ReadPort( 0x01, 0x01, input_port_1_r ), /* Player 2 */
+		new IO_ReadPort( 0x02, 0x02, input_port_2_r ), /* Coins */
+		new IO_ReadPort( 0x03, 0x03, MRA_NOP ),		/* Unused?  High byte of above */
+		new IO_ReadPort( 0x04, 0x04, input_port_3_r ), /* Dip 1 */
+		new IO_ReadPort( 0x05, 0x05, input_port_4_r ), /* Dip 2 */
+		new IO_ReadPort( 0x06, 0x06, input_port_5_r ), /* Player 3 */
+		new IO_ReadPort( 0x07, 0x07, input_port_6_r ), /* Player 4 */
+		new IO_ReadPort(MEMPORT_MARKER, 0)
+	};
 	
 	static PORT_WRITE_START( writeport )
 		{ 0x00, 0x01, m72_sound_command_w },
@@ -148,11 +150,13 @@ public class m90
 		new Memory_WriteAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static PORT_READ_START( sound_readport )
-		{ 0x01, 0x01, YM2151_status_port_0_r },
-		{ 0x80, 0x80, soundlatch_r },
-		{ 0x84, 0x84, m72_sample_r },
-	PORT_END
+	public static IO_ReadPort sound_readport[]={
+		new IO_ReadPort(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_IO | MEMPORT_WIDTH_8),
+		new IO_ReadPort( 0x01, 0x01, YM2151_status_port_0_r ),
+		new IO_ReadPort( 0x80, 0x80, soundlatch_r ),
+		new IO_ReadPort( 0x84, 0x84, m72_sample_r ),
+		new IO_ReadPort(MEMPORT_MARKER, 0)
+	};
 	
 	static PORT_WRITE_START( sound_writeport )
 		{ 0x00, 0x00, YM2151_register_port_0_w },
@@ -162,11 +166,13 @@ public class m90
 		{ 0x83, 0x83, m72_sound_irq_ack_w },
 	PORT_END
 	
-	static PORT_READ_START( bbmanw_sound_readport )
-		{ 0x41, 0x41, YM2151_status_port_0_r },
-		{ 0x42, 0x42, soundlatch_r },
-	//	{ 0x41, 0x41, m72_sample_r },
-	PORT_END
+	public static IO_ReadPort bbmanw_sound_readport[]={
+		new IO_ReadPort(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_IO | MEMPORT_WIDTH_8),
+		new IO_ReadPort( 0x41, 0x41, YM2151_status_port_0_r ),
+		new IO_ReadPort( 0x42, 0x42, soundlatch_r ),
+	//	new IO_ReadPort( 0x41, 0x41, m72_sample_r ),
+		new IO_ReadPort(MEMPORT_MARKER, 0)
+	};
 	
 	static PORT_WRITE_START( bbmanw_sound_writeport )
 		{ 0x40, 0x40, YM2151_register_port_0_w },

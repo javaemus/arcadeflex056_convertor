@@ -259,8 +259,10 @@ public class tsamurai
 		new Memory_WriteAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static PORT_READ_START( z80_readport )
-	PORT_END
+	public static IO_ReadPort z80_readport[]={
+		new IO_ReadPort(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_IO | MEMPORT_WIDTH_8),
+		new IO_ReadPort(MEMPORT_MARKER, 0)
+	};
 	
 	static PORT_WRITE_START( z80_writeport )
 		{ 0x00, 0x00, AY8910_control_port_0_w },
@@ -373,8 +375,10 @@ public class tsamurai
 	
 	/*******************************************************************************/
 	
-	static PORT_READ_START( readport_sound3_m660 )
-	PORT_END
+	public static IO_ReadPort readport_sound3_m660[]={
+		new IO_ReadPort(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_IO | MEMPORT_WIDTH_8),
+		new IO_ReadPort(MEMPORT_MARKER, 0)
+	};
 	
 	static PORT_WRITE_START( writeport_sound3_m660 )
 		{ 0x00, 0x00, AY8910_control_port_0_w },

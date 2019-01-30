@@ -434,25 +434,27 @@ public class punchout
 		new Memory_WriteAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static PORT_READ_START( readport )
-		{ 0x00, 0x00, input_port_0_r },
-		{ 0x01, 0x01, input_port_1_r },
-		{ 0x02, 0x02, input_port_2_r },
-		{ 0x03, 0x03, punchout_input_3_r },
+	public static IO_ReadPort readport[]={
+		new IO_ReadPort(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_IO | MEMPORT_WIDTH_8),
+		new IO_ReadPort( 0x00, 0x00, input_port_0_r ),
+		new IO_ReadPort( 0x01, 0x01, input_port_1_r ),
+		new IO_ReadPort( 0x02, 0x02, input_port_2_r ),
+		new IO_ReadPort( 0x03, 0x03, punchout_input_3_r ),
 	
 		/* protection ports */
-		{ 0x07, 0x07, spunchout_prot_0_r },
-		{ 0x17, 0x17, spunchout_prot_1_r },
-		{ 0x27, 0x27, spunchout_prot_2_r },
-		{ 0x37, 0x37, spunchout_prot_3_r },
-		{ 0x57, 0x57, spunchout_prot_5_r },
-		{ 0x67, 0x67, spunchout_prot_6_r },
-		{ 0x97, 0x97, spunchout_prot_9_r },
-		{ 0xa7, 0xa7, spunchout_prot_a_r },
-		{ 0xb7, 0xb7, spunchout_prot_b_r },
-		{ 0xc7, 0xc7, spunchout_prot_c_r },
-		/* { 0xf7, 0xf7, spunchout_prot_f_r }, */
-	PORT_END
+		new IO_ReadPort( 0x07, 0x07, spunchout_prot_0_r ),
+		new IO_ReadPort( 0x17, 0x17, spunchout_prot_1_r ),
+		new IO_ReadPort( 0x27, 0x27, spunchout_prot_2_r ),
+		new IO_ReadPort( 0x37, 0x37, spunchout_prot_3_r ),
+		new IO_ReadPort( 0x57, 0x57, spunchout_prot_5_r ),
+		new IO_ReadPort( 0x67, 0x67, spunchout_prot_6_r ),
+		new IO_ReadPort( 0x97, 0x97, spunchout_prot_9_r ),
+		new IO_ReadPort( 0xa7, 0xa7, spunchout_prot_a_r ),
+		new IO_ReadPort( 0xb7, 0xb7, spunchout_prot_b_r ),
+		new IO_ReadPort( 0xc7, 0xc7, spunchout_prot_c_r ),
+		/* new IO_ReadPort( 0xf7, 0xf7, spunchout_prot_f_r ), */
+		new IO_ReadPort(MEMPORT_MARKER, 0)
+	};
 	
 	static PORT_WRITE_START( writeport )
 		{ 0x00, 0x01, IOWP_NOP },	/* the 2A03 #1 is not present */

@@ -162,9 +162,11 @@ public class magmax
 		new Memory_WriteAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static PORT_READ_START( magmax_soundreadport )
-		{ 0x06, 0x06, magmax_sound_r },
-	PORT_END
+	public static IO_ReadPort magmax_soundreadport[]={
+		new IO_ReadPort(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_IO | MEMPORT_WIDTH_8),
+		new IO_ReadPort( 0x06, 0x06, magmax_sound_r ),
+		new IO_ReadPort(MEMPORT_MARKER, 0)
+	};
 	
 	static PORT_WRITE_START( magmax_soundwriteport )
 		{ 0x00, 0x00, AY8910_control_port_0_w },

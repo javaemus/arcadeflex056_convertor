@@ -341,10 +341,12 @@ public class gladiatr
 	};
 	
 	
-	static PORT_READ_START( readport )
-		{ 0x02, 0x02, gladiatr_bankswitch_r },
-		{ 0x9e, 0x9f, TAITO8741_0_r },
-	PORT_END
+	public static IO_ReadPort readport[]={
+		new IO_ReadPort(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_IO | MEMPORT_WIDTH_8),
+		new IO_ReadPort( 0x02, 0x02, gladiatr_bankswitch_r ),
+		new IO_ReadPort( 0x9e, 0x9f, TAITO8741_0_r ),
+		new IO_ReadPort(MEMPORT_MARKER, 0)
+	};
 	
 	static PORT_WRITE_START( writeport )
 		{ 0x01, 0x01, gladiatr_spritebank_w},
@@ -354,14 +356,16 @@ public class gladiatr
 		{ 0xbf, 0xbf, IOWP_NOP },
 	PORT_END
 	
-	static PORT_READ_START( readport_cpu2 )
-		{ 0x00, 0x00, YM2203_status_port_0_r },
-		{ 0x01, 0x01, YM2203_read_port_0_r },
-		{ 0x20, 0x21, TAITO8741_1_r },
-		{ 0x40, 0x40, IORP_NOP },
-		{ 0x60, 0x61, TAITO8741_2_r },
-		{ 0x80, 0x81, TAITO8741_3_r },
-	PORT_END
+	public static IO_ReadPort readport_cpu2[]={
+		new IO_ReadPort(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_IO | MEMPORT_WIDTH_8),
+		new IO_ReadPort( 0x00, 0x00, YM2203_status_port_0_r ),
+		new IO_ReadPort( 0x01, 0x01, YM2203_read_port_0_r ),
+		new IO_ReadPort( 0x20, 0x21, TAITO8741_1_r ),
+		new IO_ReadPort( 0x40, 0x40, IORP_NOP ),
+		new IO_ReadPort( 0x60, 0x61, TAITO8741_2_r ),
+		new IO_ReadPort( 0x80, 0x81, TAITO8741_3_r ),
+		new IO_ReadPort(MEMPORT_MARKER, 0)
+	};
 	
 	static PORT_WRITE_START( writeport_cpu2 )
 		{ 0x00, 0x00, YM2203_control_port_0_w },

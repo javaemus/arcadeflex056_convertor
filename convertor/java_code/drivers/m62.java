@@ -427,13 +427,15 @@ public class m62
 	};
 	
 	
-	static PORT_READ_START( ldrun_readport )
-		{ 0x00, 0x00, input_port_0_r },   /* coin */
-		{ 0x01, 0x01, input_port_1_r },   /* player 1 control */
-		{ 0x02, 0x02, input_port_2_r },   /* player 2 control */
-		{ 0x03, 0x03, input_port_3_r },   /* DSW 1 */
-		{ 0x04, 0x04, input_port_4_r },   /* DSW 2 */
-	PORT_END
+	public static IO_ReadPort ldrun_readport[]={
+		new IO_ReadPort(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_IO | MEMPORT_WIDTH_8),
+		new IO_ReadPort( 0x00, 0x00, input_port_0_r ),   /* coin */
+		new IO_ReadPort( 0x01, 0x01, input_port_1_r ),   /* player 1 control */
+		new IO_ReadPort( 0x02, 0x02, input_port_2_r ),   /* player 2 control */
+		new IO_ReadPort( 0x03, 0x03, input_port_3_r ),   /* DSW 1 */
+		new IO_ReadPort( 0x04, 0x04, input_port_4_r ),   /* DSW 2 */
+		new IO_ReadPort(MEMPORT_MARKER, 0)
+	};
 	
 	static PORT_WRITE_START( battroad_writeport )
 		{ 0x00, 0x00, irem_sound_cmd_w },
@@ -447,14 +449,16 @@ public class m62
 		{ 0x01, 0x01, irem_flipscreen_w },	/* + coin counters */
 	PORT_END
 	
-	static PORT_READ_START( ldrun2_readport )
-		{ 0x00, 0x00, input_port_0_r },   /* coin */
-		{ 0x01, 0x01, input_port_1_r },   /* player 1 control */
-		{ 0x02, 0x02, input_port_2_r },   /* player 2 control */
-		{ 0x03, 0x03, input_port_3_r },   /* DSW 1 */
-		{ 0x04, 0x04, input_port_4_r },   /* DSW 2 */
-		{ 0x80, 0x80, ldrun2_bankswitch_r },
-	PORT_END
+	public static IO_ReadPort ldrun2_readport[]={
+		new IO_ReadPort(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_IO | MEMPORT_WIDTH_8),
+		new IO_ReadPort( 0x00, 0x00, input_port_0_r ),   /* coin */
+		new IO_ReadPort( 0x01, 0x01, input_port_1_r ),   /* player 1 control */
+		new IO_ReadPort( 0x02, 0x02, input_port_2_r ),   /* player 2 control */
+		new IO_ReadPort( 0x03, 0x03, input_port_3_r ),   /* DSW 1 */
+		new IO_ReadPort( 0x04, 0x04, input_port_4_r ),   /* DSW 2 */
+		new IO_ReadPort( 0x80, 0x80, ldrun2_bankswitch_r ),
+		new IO_ReadPort(MEMPORT_MARKER, 0)
+	};
 	
 	static PORT_WRITE_START( ldrun2_writeport )
 		{ 0x00, 0x00, irem_sound_cmd_w },

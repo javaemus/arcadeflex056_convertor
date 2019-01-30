@@ -287,9 +287,11 @@ public class sf1
 		new Memory_WriteAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static PORT_READ_START( sound2_readport )
-		{ 0x01, 0x01, soundlatch_r },
-	PORT_END
+	public static IO_ReadPort sound2_readport[]={
+		new IO_ReadPort(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_IO | MEMPORT_WIDTH_8),
+		new IO_ReadPort( 0x01, 0x01, soundlatch_r ),
+		new IO_ReadPort(MEMPORT_MARKER, 0)
+	};
 	
 	
 	static PORT_WRITE_START( sound2_writeport )

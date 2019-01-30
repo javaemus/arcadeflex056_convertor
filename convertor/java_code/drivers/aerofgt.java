@@ -354,11 +354,13 @@ public class aerofgt
 		new Memory_WriteAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static PORT_READ_START( turbofrc_sound_readport )
-		{ 0x14, 0x14, soundlatch_r },
-		{ 0x18, 0x18, YM2610_status_port_0_A_r },
-		{ 0x1a, 0x1a, YM2610_status_port_0_B_r },
-	PORT_END
+	public static IO_ReadPort turbofrc_sound_readport[]={
+		new IO_ReadPort(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_IO | MEMPORT_WIDTH_8),
+		new IO_ReadPort( 0x14, 0x14, soundlatch_r ),
+		new IO_ReadPort( 0x18, 0x18, YM2610_status_port_0_A_r ),
+		new IO_ReadPort( 0x1a, 0x1a, YM2610_status_port_0_B_r ),
+		new IO_ReadPort(MEMPORT_MARKER, 0)
+	};
 	
 	static PORT_WRITE_START( turbofrc_sound_writeport )
 		{ 0x00, 0x00, aerofgt_sh_bankswitch_w },
@@ -369,11 +371,13 @@ public class aerofgt
 		{ 0x1b, 0x1b, YM2610_data_port_0_B_w },
 	PORT_END
 	
-	static PORT_READ_START( aerofgt_sound_readport )
-		{ 0x00, 0x00, YM2610_status_port_0_A_r },
-		{ 0x02, 0x02, YM2610_status_port_0_B_r },
-		{ 0x0c, 0x0c, soundlatch_r },
-	PORT_END
+	public static IO_ReadPort aerofgt_sound_readport[]={
+		new IO_ReadPort(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_IO | MEMPORT_WIDTH_8),
+		new IO_ReadPort( 0x00, 0x00, YM2610_status_port_0_A_r ),
+		new IO_ReadPort( 0x02, 0x02, YM2610_status_port_0_B_r ),
+		new IO_ReadPort( 0x0c, 0x0c, soundlatch_r ),
+		new IO_ReadPort(MEMPORT_MARKER, 0)
+	};
 	
 	static PORT_WRITE_START( aerofgt_sound_writeport )
 		{ 0x00, 0x00, YM2610_control_port_0_A_w },

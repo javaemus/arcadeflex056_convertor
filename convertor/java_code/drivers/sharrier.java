@@ -263,9 +263,11 @@ public class sharrier
 		new Memory_WriteAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static PORT_READ_START( hangon_sound_readport )
-		{ 0x40, 0x40, soundlatch_r },
-	PORT_END
+	public static IO_ReadPort hangon_sound_readport[]={
+		new IO_ReadPort(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_IO | MEMPORT_WIDTH_8),
+		new IO_ReadPort( 0x40, 0x40, soundlatch_r ),
+		new IO_ReadPort(MEMPORT_MARKER, 0)
+	};
 	
 	static PORT_WRITE_START( hangon_sound_writeport )
 	PORT_END
@@ -444,9 +446,11 @@ public class sharrier
 		new Memory_WriteAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static PORT_READ_START( harrier_sound_readport )
-		{ 0x40, 0x40, soundlatch_r },
-	PORT_END
+	public static IO_ReadPort harrier_sound_readport[]={
+		new IO_ReadPort(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_IO | MEMPORT_WIDTH_8),
+		new IO_ReadPort( 0x40, 0x40, soundlatch_r ),
+		new IO_ReadPort(MEMPORT_MARKER, 0)
+	};
 	
 	
 	static PORT_WRITE_START( harrier_sound_writeport )
@@ -682,9 +686,11 @@ public class sharrier
 		new Memory_WriteAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static PORT_READ_START( enduror_sound_readport )
-		{ 0x40, 0x40, soundlatch_r },
-	PORT_END
+	public static IO_ReadPort enduror_sound_readport[]={
+		new IO_ReadPort(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_IO | MEMPORT_WIDTH_8),
+		new IO_ReadPort( 0x40, 0x40, soundlatch_r ),
+		new IO_ReadPort(MEMPORT_MARKER, 0)
+	};
 	
 	static PORT_WRITE_START( enduror_sound_writeport )
 	PORT_END
@@ -707,12 +713,14 @@ public class sharrier
 		new Memory_WriteAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static PORT_READ_START( enduror_b2_sound_readport )
-		{ 0x00, 0x00, YM2203_status_port_0_r },
-		{ 0x80, 0x80, YM2203_status_port_1_r },
-		{ 0xc0, 0xc0, YM2203_status_port_2_r },
-		{ 0x40, 0x40, soundlatch_r },
-	PORT_END
+	public static IO_ReadPort enduror_b2_sound_readport[]={
+		new IO_ReadPort(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_IO | MEMPORT_WIDTH_8),
+		new IO_ReadPort( 0x00, 0x00, YM2203_status_port_0_r ),
+		new IO_ReadPort( 0x80, 0x80, YM2203_status_port_1_r ),
+		new IO_ReadPort( 0xc0, 0xc0, YM2203_status_port_2_r ),
+		new IO_ReadPort( 0x40, 0x40, soundlatch_r ),
+		new IO_ReadPort(MEMPORT_MARKER, 0)
+	};
 	
 	static PORT_WRITE_START( enduror_b2_sound_writeport )
 		{ 0x00, 0x00, YM2203_control_port_0_w },

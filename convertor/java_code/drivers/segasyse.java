@@ -233,15 +233,17 @@ public class segasyse
 	
 	/*-- Ports --*/
 	
-	static PORT_READ_START( segae_readport )
-		{ 0x7e, 0x7f, segae_port_7e_7f_r },			/* Vertical / Horizontal Beam Position Read */
-		{ 0xba, 0xbb, segae_port_ba_bb_r },			/* Back Layer VDP */
-		{ 0xbe, 0xbf, segae_port_be_bf_r },			/* Front Layer VDP */
-		{ 0xe0, 0xe0, input_port_2_r }, /* Coins + Starts */
-		{ 0xe1, 0xe1, input_port_3_r }, /* Controls */
-		{ 0xf2, 0xf2, input_port_0_r }, /* DSW0 */
-		{ 0xf3, 0xf3, input_port_1_r }, /* DSW1 */
-	PORT_END
+	public static IO_ReadPort segae_readport[]={
+		new IO_ReadPort(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_IO | MEMPORT_WIDTH_8),
+		new IO_ReadPort( 0x7e, 0x7f, segae_port_7e_7f_r ),			/* Vertical / Horizontal Beam Position Read */
+		new IO_ReadPort( 0xba, 0xbb, segae_port_ba_bb_r ),			/* Back Layer VDP */
+		new IO_ReadPort( 0xbe, 0xbf, segae_port_be_bf_r ),			/* Front Layer VDP */
+		new IO_ReadPort( 0xe0, 0xe0, input_port_2_r ), /* Coins + Starts */
+		new IO_ReadPort( 0xe1, 0xe1, input_port_3_r ), /* Controls */
+		new IO_ReadPort( 0xf2, 0xf2, input_port_0_r ), /* DSW0 */
+		new IO_ReadPort( 0xf3, 0xf3, input_port_1_r ), /* DSW1 */
+		new IO_ReadPort(MEMPORT_MARKER, 0)
+	};
 	
 	static PORT_WRITE_START( segae_writeport )
 		{ 0x7b, 0x7b, SN76496_0_w }, /* Not sure which chip each is on */

@@ -331,9 +331,11 @@ public class exidy
 		{ 0x00, 0xff, mtrap_voiceio_w },
 	PORT_END
 	
-	static PORT_READ_START( cvsd_ioread )
-		{ 0x00, 0xff, mtrap_voiceio_r },
-	PORT_END
+	public static IO_ReadPort cvsd_ioread[]={
+		new IO_ReadPort(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_IO | MEMPORT_WIDTH_8),
+		new IO_ReadPort( 0x00, 0xff, mtrap_voiceio_r ),
+		new IO_ReadPort(MEMPORT_MARKER, 0)
+	};
 	
 	
 	

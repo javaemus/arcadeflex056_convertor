@@ -174,9 +174,11 @@ public class megazone
 		new Memory_WriteAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static PORT_READ_START( sound_readport )
-		{ 0x00, 0x02, AY8910_read_port_0_r },
-	PORT_END
+	public static IO_ReadPort sound_readport[]={
+		new IO_ReadPort(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_IO | MEMPORT_WIDTH_8),
+		new IO_ReadPort( 0x00, 0x02, AY8910_read_port_0_r ),
+		new IO_ReadPort(MEMPORT_MARKER, 0)
+	};
 	
 	static PORT_WRITE_START( sound_writeport )
 		{ 0x00, 0x00, AY8910_control_port_0_w },
@@ -195,10 +197,12 @@ public class megazone
 		new Memory_WriteAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static PORT_READ_START( i8039_readport )
-		{ 0x00, 0xff, soundlatch_r },
-		{ 0x111,0x111, IORP_NOP },
-	PORT_END
+	public static IO_ReadPort i8039_readport[]={
+		new IO_ReadPort(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_IO | MEMPORT_WIDTH_8),
+		new IO_ReadPort( 0x00, 0xff, soundlatch_r ),
+		new IO_ReadPort( 0x111,0x111, IORP_NOP ),
+		new IO_ReadPort(MEMPORT_MARKER, 0)
+	};
 	
 	static PORT_WRITE_START( i8039_writeport )
 		{ I8039_p1, I8039_p1, DAC_0_data_w },

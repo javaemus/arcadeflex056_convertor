@@ -169,11 +169,13 @@ public class cbasebal
 		new Memory_WriteAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static PORT_READ_START( cbasebal_readport )
-		{ 0x10, 0x10, input_port_0_r },
-		{ 0x11, 0x11, input_port_1_r },
-		{ 0x12, 0x12, eeprom_r },
-	PORT_END
+	public static IO_ReadPort cbasebal_readport[]={
+		new IO_ReadPort(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_IO | MEMPORT_WIDTH_8),
+		new IO_ReadPort( 0x10, 0x10, input_port_0_r ),
+		new IO_ReadPort( 0x11, 0x11, input_port_1_r ),
+		new IO_ReadPort( 0x12, 0x12, eeprom_r ),
+		new IO_ReadPort(MEMPORT_MARKER, 0)
+	};
 	
 	static PORT_WRITE_START( cbasebal_writeport )
 		{ 0x00, 0x00, cbasebal_bankswitch_w },

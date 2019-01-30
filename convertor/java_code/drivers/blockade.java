@@ -222,11 +222,13 @@ public class blockade
 		new Memory_WriteAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static PORT_READ_START( readport )
-	    { 0x01, 0x01, blockade_input_port_0_r },
-	    { 0x02, 0x02, input_port_1_r },
-	    { 0x04, 0x04, input_port_2_r },
-	PORT_END
+	public static IO_ReadPort readport[]={
+		new IO_ReadPort(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_IO | MEMPORT_WIDTH_8),
+	    new IO_ReadPort( 0x01, 0x01, blockade_input_port_0_r ),
+	    new IO_ReadPort( 0x02, 0x02, input_port_1_r ),
+	    new IO_ReadPort( 0x04, 0x04, input_port_2_r ),
+		new IO_ReadPort(MEMPORT_MARKER, 0)
+	};
 	
 	static PORT_WRITE_START( writeport )
 	    { 0x01, 0x01, blockade_coin_latch_w },

@@ -516,10 +516,12 @@ public class galaxian
 	};
 	
 	
-	static PORT_READ_START( checkman_sound_readport )
-		{ 0x03, 0x03, soundlatch_r },
-		{ 0x06, 0x06, AY8910_read_port_0_r },
-	PORT_END
+	public static IO_ReadPort checkman_sound_readport[]={
+		new IO_ReadPort(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_IO | MEMPORT_WIDTH_8),
+		new IO_ReadPort( 0x03, 0x03, soundlatch_r ),
+		new IO_ReadPort( 0x06, 0x06, AY8910_read_port_0_r ),
+		new IO_ReadPort(MEMPORT_MARKER, 0)
+	};
 	
 	static PORT_WRITE_START( checkman_sound_writeport )
 		{ 0x04, 0x04, AY8910_control_port_0_w },
@@ -585,9 +587,11 @@ public class galaxian
 		new Memory_WriteAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static PORT_READ_START( kingball_sound_readport )
-		{ 0x00, 0x00, soundlatch_r },
-	PORT_END
+	public static IO_ReadPort kingball_sound_readport[]={
+		new IO_ReadPort(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_IO | MEMPORT_WIDTH_8),
+		new IO_ReadPort( 0x00, 0x00, soundlatch_r ),
+		new IO_ReadPort(MEMPORT_MARKER, 0)
+	};
 	
 	static PORT_WRITE_START( kingball_sound_writeport )
 		{ 0x00, 0x00, DAC_0_data_w },

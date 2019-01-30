@@ -169,18 +169,20 @@ public class system1
 		new Memory_WriteAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static PORT_READ_START( readport )
-		{ 0x00, 0x00, input_port_0_r }, /* joy1 */
-		{ 0x04, 0x04, input_port_1_r }, /* joy2 */
-		{ 0x08, 0x08, input_port_2_r }, /* coin,start */
-		{ 0x0c, 0x0c, input_port_3_r }, /* DIP2 */
-		{ 0x0e, 0x0e, input_port_3_r }, /* DIP2 blckgalb reads it from here */
-		{ 0x0d, 0x0d, input_port_4_r }, /* DIP1 some games read it from here... */
-		{ 0x10, 0x10, input_port_4_r }, /* DIP1 ... and some others from here */
+	public static IO_ReadPort readport[]={
+		new IO_ReadPort(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_IO | MEMPORT_WIDTH_8),
+		new IO_ReadPort( 0x00, 0x00, input_port_0_r ), /* joy1 */
+		new IO_ReadPort( 0x04, 0x04, input_port_1_r ), /* joy2 */
+		new IO_ReadPort( 0x08, 0x08, input_port_2_r ), /* coin,start */
+		new IO_ReadPort( 0x0c, 0x0c, input_port_3_r ), /* DIP2 */
+		new IO_ReadPort( 0x0e, 0x0e, input_port_3_r ), /* DIP2 blckgalb reads it from here */
+		new IO_ReadPort( 0x0d, 0x0d, input_port_4_r ), /* DIP1 some games read it from here... */
+		new IO_ReadPort( 0x10, 0x10, input_port_4_r ), /* DIP1 ... and some others from here */
 										/* but there are games which check BOTH! */
-		{ 0x15, 0x15, system1_videomode_r },
-		{ 0x19, 0x19, system1_videomode_r },    /* mirror address */
-	PORT_END
+		new IO_ReadPort( 0x15, 0x15, system1_videomode_r ),
+		new IO_ReadPort( 0x19, 0x19, system1_videomode_r ),    /* mirror address */
+		new IO_ReadPort(MEMPORT_MARKER, 0)
+	};
 	
 	static PORT_WRITE_START( writeport )
 		{ 0x14, 0x14, system1_soundport_w },    /* sound commands */
@@ -189,18 +191,20 @@ public class system1
 		{ 0x19, 0x19, system1_videomode_w },    /* mirror address */
 	PORT_END
 	
-	static PORT_READ_START( wbml_readport )
-		{ 0x00, 0x00, input_port_0_r }, /* joy1 */
-		{ 0x04, 0x04, input_port_1_r }, /* joy2 */
-		{ 0x08, 0x08, input_port_2_r }, /* coin,start */
-		{ 0x0c, 0x0c, input_port_3_r }, /* DIP2 */
-		{ 0x0d, 0x0d, input_port_4_r }, /* DIP1 some games read it from here... */
-		{ 0x10, 0x10, input_port_4_r }, /* DIP1 ... and some others from here */
+	public static IO_ReadPort wbml_readport[]={
+		new IO_ReadPort(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_IO | MEMPORT_WIDTH_8),
+		new IO_ReadPort( 0x00, 0x00, input_port_0_r ), /* joy1 */
+		new IO_ReadPort( 0x04, 0x04, input_port_1_r ), /* joy2 */
+		new IO_ReadPort( 0x08, 0x08, input_port_2_r ), /* coin,start */
+		new IO_ReadPort( 0x0c, 0x0c, input_port_3_r ), /* DIP2 */
+		new IO_ReadPort( 0x0d, 0x0d, input_port_4_r ), /* DIP1 some games read it from here... */
+		new IO_ReadPort( 0x10, 0x10, input_port_4_r ), /* DIP1 ... and some others from here */
 										/* but there are games which check BOTH! */
-		{ 0x15, 0x15, system1_videomode_r },
-		{ 0x16, 0x16, wbml_videoram_bank_latch_r },
-		{ 0x19, 0x19, system1_videomode_r },  /* mirror address */
-	PORT_END
+		new IO_ReadPort( 0x15, 0x15, system1_videomode_r ),
+		new IO_ReadPort( 0x16, 0x16, wbml_videoram_bank_latch_r ),
+		new IO_ReadPort( 0x19, 0x19, system1_videomode_r ),  /* mirror address */
+		new IO_ReadPort(MEMPORT_MARKER, 0)
+	};
 	
 	static PORT_WRITE_START( wbml_writeport )
 		{ 0x14, 0x14, system1_soundport_w },    /* sound commands */

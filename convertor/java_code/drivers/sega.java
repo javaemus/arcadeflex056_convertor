@@ -183,11 +183,13 @@ public class sega
 		new Memory_WriteAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static PORT_READ_START( spacfury_readport )
-		{ 0x3f, 0x3f, sega_sh_r },
-		{ 0xbe, 0xbe, sega_mult_r },
-		{ 0xf8, 0xfb, sega_ports_r },
-	PORT_END
+	public static IO_ReadPort spacfury_readport[]={
+		new IO_ReadPort(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_IO | MEMPORT_WIDTH_8),
+		new IO_ReadPort( 0x3f, 0x3f, sega_sh_r ),
+		new IO_ReadPort( 0xbe, 0xbe, sega_mult_r ),
+		new IO_ReadPort( 0xf8, 0xfb, sega_ports_r ),
+		new IO_ReadPort(MEMPORT_MARKER, 0)
+	};
 	
 	static PORT_WRITE_START( spacfury_writeport )
 		{ 0x38, 0x38, sega_sh_speech_w },
@@ -198,12 +200,14 @@ public class sega
 		{ 0xf9, 0xf9, sega_coin_counter_w }, /* 0x80 = enable, 0x00 = disable */
 	PORT_END
 	
-	static PORT_READ_START( zektor_readport )
-		{ 0x3f, 0x3f, sega_sh_r },
-		{ 0xbe, 0xbe, sega_mult_r },
-		{ 0xf8, 0xfb, sega_ports_r },
-		{ 0xfc, 0xfc, sega_IN4_r },
-	PORT_END
+	public static IO_ReadPort zektor_readport[]={
+		new IO_ReadPort(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_IO | MEMPORT_WIDTH_8),
+		new IO_ReadPort( 0x3f, 0x3f, sega_sh_r ),
+		new IO_ReadPort( 0xbe, 0xbe, sega_mult_r ),
+		new IO_ReadPort( 0xf8, 0xfb, sega_ports_r ),
+		new IO_ReadPort( 0xfc, 0xfc, sega_IN4_r ),
+		new IO_ReadPort(MEMPORT_MARKER, 0)
+	};
 	
 	static PORT_WRITE_START( zektor_writeport )
 		{ 0x38, 0x38, sega_sh_speech_w },
@@ -223,19 +227,23 @@ public class sega
 		{ 0xf9, 0xf9, sega_coin_counter_w }, /* 0x80 = enable, 0x00 = disable */
 	PORT_END
 	
-	static PORT_READ_START( elim2_readport )
-		{ 0x3f, 0x3f, sega_sh_r },
-		{ 0xbe, 0xbe, sega_mult_r },
-		{ 0xf8, 0xfb, sega_ports_r },
-		{ 0xfc, 0xfc, input_port_4_r },
-	PORT_END
+	public static IO_ReadPort elim2_readport[]={
+		new IO_ReadPort(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_IO | MEMPORT_WIDTH_8),
+		new IO_ReadPort( 0x3f, 0x3f, sega_sh_r ),
+		new IO_ReadPort( 0xbe, 0xbe, sega_mult_r ),
+		new IO_ReadPort( 0xf8, 0xfb, sega_ports_r ),
+		new IO_ReadPort( 0xfc, 0xfc, input_port_4_r ),
+		new IO_ReadPort(MEMPORT_MARKER, 0)
+	};
 	
-	static PORT_READ_START( elim4_readport )
-		{ 0x3f, 0x3f, sega_sh_r },
-		{ 0xbe, 0xbe, sega_mult_r },
-		{ 0xf8, 0xfb, sega_ports_r },
-		{ 0xfc, 0xfc, elim4_IN4_r },
-	PORT_END
+	public static IO_ReadPort elim4_readport[]={
+		new IO_ReadPort(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_IO | MEMPORT_WIDTH_8),
+		new IO_ReadPort( 0x3f, 0x3f, sega_sh_r ),
+		new IO_ReadPort( 0xbe, 0xbe, sega_mult_r ),
+		new IO_ReadPort( 0xf8, 0xfb, sega_ports_r ),
+		new IO_ReadPort( 0xfc, 0xfc, elim4_IN4_r ),
+		new IO_ReadPort(MEMPORT_MARKER, 0)
+	};
 	
 	static PORT_WRITE_START( elim_writeport )
 		{ 0x3e, 0x3e, elim1_sh_w },

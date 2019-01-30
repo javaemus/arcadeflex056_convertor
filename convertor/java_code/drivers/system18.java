@@ -121,13 +121,15 @@ public class system18
 		sys18_SoundMemBank = &RAM[Bank+0x10000];
 	}
 	
-	static PORT_READ_START( sound_readport_18 )
-		{ 0x80, 0x80, YM2612_status_port_0_A_r },
-	//	{ 0x82, 0x82, YM2612_status_port_0_B_r },
-	//	{ 0x90, 0x90, YM2612_status_port_1_A_r },
-	//	{ 0x92, 0x92, YM2612_status_port_1_B_r },
-		{ 0xc0, 0xc0, soundlatch_r },
-	PORT_END
+	public static IO_ReadPort sound_readport_18[]={
+		new IO_ReadPort(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_IO | MEMPORT_WIDTH_8),
+		new IO_ReadPort( 0x80, 0x80, YM2612_status_port_0_A_r ),
+	//	new IO_ReadPort( 0x82, 0x82, YM2612_status_port_0_B_r ),
+	//	new IO_ReadPort( 0x90, 0x90, YM2612_status_port_1_A_r ),
+	//	new IO_ReadPort( 0x92, 0x92, YM2612_status_port_1_B_r ),
+		new IO_ReadPort( 0xc0, 0xc0, soundlatch_r ),
+		new IO_ReadPort(MEMPORT_MARKER, 0)
+	};
 	
 	static PORT_WRITE_START( sound_writeport_18 )
 		{ 0x80, 0x80, YM2612_control_port_0_A_w },

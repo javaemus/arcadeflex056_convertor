@@ -211,13 +211,15 @@ public class mario
 		new Memory_WriteAddress( 0x0000, 0x0fff, MWA_ROM ),
 		new Memory_WriteAddress(MEMPORT_MARKER, 0)
 	};
-	static PORT_READ_START( readport_sound )
-		{ 0x00,     0xff,     mario_sh_tune_r },
-		{ I8039_p1, I8039_p1, mario_sh_p1_r },
-		{ I8039_p2, I8039_p2, mario_sh_p2_r },
-		{ I8039_t0, I8039_t0, mario_sh_t0_r },
-		{ I8039_t1, I8039_t1, mario_sh_t1_r },
-	PORT_END
+	public static IO_ReadPort readport_sound[]={
+		new IO_ReadPort(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_IO | MEMPORT_WIDTH_8),
+		new IO_ReadPort( 0x00,     0xff,     mario_sh_tune_r ),
+		new IO_ReadPort( I8039_p1, I8039_p1, mario_sh_p1_r ),
+		new IO_ReadPort( I8039_p2, I8039_p2, mario_sh_p2_r ),
+		new IO_ReadPort( I8039_t0, I8039_t0, mario_sh_t0_r ),
+		new IO_ReadPort( I8039_t1, I8039_t1, mario_sh_t1_r ),
+		new IO_ReadPort(MEMPORT_MARKER, 0)
+	};
 	static PORT_WRITE_START( writeport_sound )
 		{ 0x00,     0xff,     mario_sh_sound_w },
 		{ I8039_p1, I8039_p1, mario_sh_p1_w },

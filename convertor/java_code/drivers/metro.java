@@ -435,10 +435,12 @@ public class metro
 		new Memory_WriteAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static PORT_READ_START( upd7810_readport )
-		{ UPD7810_PORTA, UPD7810_PORTA, daitorid_sound_chip_data_r		},
-		{ UPD7810_PORTB, UPD7810_PORTB, daitorid_sound_chip_select_r	},
-	PORT_END
+	public static IO_ReadPort upd7810_readport[]={
+		new IO_ReadPort(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_IO | MEMPORT_WIDTH_8),
+		new IO_ReadPort( UPD7810_PORTA, UPD7810_PORTA, daitorid_sound_chip_data_r		),
+		new IO_ReadPort( UPD7810_PORTB, UPD7810_PORTB, daitorid_sound_chip_select_r	),
+		new IO_ReadPort(MEMPORT_MARKER, 0)
+	};
 	
 	static PORT_WRITE_START( upd7810_writeport )
 		{ UPD7810_PORTA, UPD7810_PORTA, daitorid_sound_chip_data_w		},

@@ -153,11 +153,13 @@ public class esd16
 		return soundlatch_r(0);
 	}
 	
-	static PORT_READ_START( multchmp_sound_readport )
-		{ 0x02, 0x02, OKIM6295_status_0_r		},	// M6295
-		{ 0x03, 0x03, esd16_sound_command_r		},	// From Main CPU
-		{ 0x06, 0x06, IORP_NOP					},	// ? At the start
-	PORT_END
+	public static IO_ReadPort multchmp_sound_readport[]={
+		new IO_ReadPort(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_IO | MEMPORT_WIDTH_8),
+		new IO_ReadPort( 0x02, 0x02, OKIM6295_status_0_r		),	// M6295
+		new IO_ReadPort( 0x03, 0x03, esd16_sound_command_r		),	// From Main CPU
+		new IO_ReadPort( 0x06, 0x06, IORP_NOP					),	// ? At the start
+		new IO_ReadPort(MEMPORT_MARKER, 0)
+	};
 	
 	static PORT_WRITE_START( multchmp_sound_writeport )
 		{ 0x00, 0x00, YM3812_control_port_0_w	},	// YM3812

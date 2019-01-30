@@ -347,13 +347,15 @@ public class mitchell
 		new Memory_WriteAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static PORT_READ_START( readport )
-		{ 0x00, 0x02, input_r },	/* Super Pang needs a kludge to initialize EEPROM.
+	public static IO_ReadPort readport[]={
+		new IO_ReadPort(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_IO | MEMPORT_WIDTH_8),
+		new IO_ReadPort( 0x00, 0x02, input_r ),	/* Super Pang needs a kludge to initialize EEPROM.
 							The Mahjong games and Block Block need special input treatment */
-		{ 0x03, 0x03, input_port_12_r },	/* mgakuen only */
-		{ 0x04, 0x04, input_port_13_r },	/* mgakuen only */
-		{ 0x05, 0x05, pang_port5_r },
-	PORT_END
+		new IO_ReadPort( 0x03, 0x03, input_port_12_r ),	/* mgakuen only */
+		new IO_ReadPort( 0x04, 0x04, input_port_13_r ),	/* mgakuen only */
+		new IO_ReadPort( 0x05, 0x05, pang_port5_r ),
+		new IO_ReadPort(MEMPORT_MARKER, 0)
+	};
 	
 	static PORT_WRITE_START( writeport )
 		{ 0x00, 0x00, pang_gfxctrl_w },    /* Palette bank, layer enable, coin counters, more */

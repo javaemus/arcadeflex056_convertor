@@ -474,13 +474,15 @@ public class airbustr
 	WRITE_HANDLER( port_38_w )	{	u4 = data; } // for debug
 	
 	
-	static PORT_READ_START( readport2 )
-		{ 0x02, 0x02, soundcommand2_r },		// from sound cpu
-		{ 0x0e, 0x0e, soundcommand_status_r },	// status of the latches ?
-		{ 0x20, 0x20, input_port_0_r },			// player 1
-		{ 0x22, 0x22, input_port_1_r },			// player 2
-		{ 0x24, 0x24, input_port_2_r },			// service
-	PORT_END
+	public static IO_ReadPort readport2[]={
+		new IO_ReadPort(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_IO | MEMPORT_WIDTH_8),
+		new IO_ReadPort( 0x02, 0x02, soundcommand2_r ),		// from sound cpu
+		new IO_ReadPort( 0x0e, 0x0e, soundcommand_status_r ),	// status of the latches ?
+		new IO_ReadPort( 0x20, 0x20, input_port_0_r ),			// player 1
+		new IO_ReadPort( 0x22, 0x22, input_port_1_r ),			// player 2
+		new IO_ReadPort( 0x24, 0x24, input_port_2_r ),			// service
+		new IO_ReadPort(MEMPORT_MARKER, 0)
+	};
 	
 	static PORT_WRITE_START( writeport2 )
 		{ 0x00, 0x00, bankswitch2_w },			// bits 2-0 bank, bit 4 (on if dsw1-1 active)?,  bit 5?
@@ -553,12 +555,14 @@ public class airbustr
 	}
 	
 	
-	static PORT_READ_START( sound_readport )
-		{ 0x02, 0x02, YM2203_status_port_0_r },
-		{ 0x03, 0x03, YM2203_read_port_0_r },
-		{ 0x04, 0x04, OKIM6295_status_0_r },
-		{ 0x06, 0x06, soundcommand_r },			// read command from sub cpu
-	PORT_END
+	public static IO_ReadPort sound_readport[]={
+		new IO_ReadPort(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_IO | MEMPORT_WIDTH_8),
+		new IO_ReadPort( 0x02, 0x02, YM2203_status_port_0_r ),
+		new IO_ReadPort( 0x03, 0x03, YM2203_read_port_0_r ),
+		new IO_ReadPort( 0x04, 0x04, OKIM6295_status_0_r ),
+		new IO_ReadPort( 0x06, 0x06, soundcommand_r ),			// read command from sub cpu
+		new IO_ReadPort(MEMPORT_MARKER, 0)
+	};
 	
 	static PORT_WRITE_START( sound_writeport )
 		{ 0x00, 0x00, sound_bankswitch_w },

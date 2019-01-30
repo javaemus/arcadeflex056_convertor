@@ -193,10 +193,12 @@ public class mrflea
 	
 	/*******************************************************/
 	
-	static PORT_READ_START( readport )
-		{ 0x41, 0x41, mrflea_main_r },
-		{ 0x42, 0x42, mrflea_main_status_r },
-	PORT_END
+	public static IO_ReadPort readport[]={
+		new IO_ReadPort(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_IO | MEMPORT_WIDTH_8),
+		new IO_ReadPort( 0x41, 0x41, mrflea_main_r ),
+		new IO_ReadPort( 0x42, 0x42, mrflea_main_status_r ),
+		new IO_ReadPort(MEMPORT_MARKER, 0)
+	};
 	
 	static PORT_WRITE_START( writeport )
 		{ 0x00, 0x00, MWA_NOP }, /* watchdog? */
@@ -247,15 +249,17 @@ public class mrflea
 	
 	/*******************************************************/
 	
-	static PORT_READ_START( readport_io )
-		{ 0x10, 0x10, mrflea_interrupt_type_r }, /* ? */
-		{ 0x20, 0x20, mrflea_io_r },
-		{ 0x22, 0x22, mrflea_io_status_r },
-		{ 0x40, 0x40, mrflea_input0_r },
-		{ 0x42, 0x42, mrflea_input1_r },
-		{ 0x44, 0x44, mrflea_input2_r },
-		{ 0x46, 0x46, mrflea_input3_r },
-	PORT_END
+	public static IO_ReadPort readport_io[]={
+		new IO_ReadPort(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_IO | MEMPORT_WIDTH_8),
+		new IO_ReadPort( 0x10, 0x10, mrflea_interrupt_type_r ), /* ? */
+		new IO_ReadPort( 0x20, 0x20, mrflea_io_r ),
+		new IO_ReadPort( 0x22, 0x22, mrflea_io_status_r ),
+		new IO_ReadPort( 0x40, 0x40, mrflea_input0_r ),
+		new IO_ReadPort( 0x42, 0x42, mrflea_input1_r ),
+		new IO_ReadPort( 0x44, 0x44, mrflea_input2_r ),
+		new IO_ReadPort( 0x46, 0x46, mrflea_input3_r ),
+		new IO_ReadPort(MEMPORT_MARKER, 0)
+	};
 	
 	static WRITE_HANDLER( mrflea_data0_w ){
 		AY8910_control_port_0_w( offset, mrflea_select0 );

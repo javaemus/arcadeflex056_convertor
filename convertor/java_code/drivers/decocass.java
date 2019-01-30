@@ -213,14 +213,15 @@ public class decocass
 		new Memory_WriteAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static PORT_READ_START( decocass_mcu_readport )
-		{ 0x01, 0x01, i8041_p1_r },
-		{ 0x02, 0x02, i8041_p2_r },
+	public static IO_ReadPort decocass_mcu_readport[]={
+		new IO_ReadPort(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_IO | MEMPORT_WIDTH_8),
+		new IO_ReadPort( 0x01, 0x01, i8041_p1_r ),
+		new IO_ReadPort( 0x02, 0x02, i8041_p2_r ),
 	MEMORY_END
 	
 	static PORT_WRITE_START( decocass_mcu_writeport )
-		{ 0x01, 0x01, i8041_p1_w },
-		{ 0x02, 0x02, i8041_p2_w },
+		new IO_ReadPort( 0x01, 0x01, i8041_p1_w ),
+		new IO_ReadPort( 0x02, 0x02, i8041_p2_w ),
 	MEMORY_END
 	
 	INPUT_PORTS_START( decocass )
@@ -314,7 +315,7 @@ public class decocass
 	INPUT_PORTS_END
 	
 	static struct GfxLayout charlayout =
-	{
+	new IO_ReadPort(
 		8,8,	/* 8*8 characters */
 		1024,	/* 1024 characters */
 		3,		/* 3 bits per pixel */
@@ -322,10 +323,10 @@ public class decocass
 		{ 0, 1, 2, 3, 4, 5, 6, 7 },
 		{ 0*8, 1*8, 2*8, 3*8, 4*8, 5*8, 6*8, 7*8 },
 		8*8 	/* every char takes 8 consecutive bytes */
-	};
+	);
 	
 	static struct GfxLayout spritelayout =
-	{
+	new IO_ReadPort(
 		16,16,	/* 16*16 sprites */
 		256,	/* 256 sprites */
 		3,		/* 3 bits per pixel */
@@ -335,10 +336,10 @@ public class decocass
 		{ 0*8, 1*8, 2*8, 3*8, 4*8, 5*8, 6*8, 7*8,
 		  8*8, 9*8, 10*8, 11*8, 12*8, 13*8, 14*8, 15*8 },
 		32*8	/* every sprite takes 32 consecutive bytes */
-	};
+	);
 	
 	static struct GfxLayout tilelayout =
-	{
+	new IO_ReadPort(
 		16,16,	/* 16*16 characters */
 		16+1,	/* 16 tiles (+1 empty tile used in the half-width bg tilemaps) */
 		3,	/* 3 bits per pixel */
@@ -350,10 +351,10 @@ public class decocass
 		{ 0*8, 1*8, 2*8, 3*8, 4*8, 5*8, 6*8, 7*8,
 		  8*8, 9*8,10*8,11*8,12*8,13*8,14*8,15*8 },
 		2*16*16 /* every tile takes 64 consecutive bytes */
-	};
+	);
 	
 	static struct GfxLayout objlayout =
-	{
+	new IO_ReadPort(
 		64,64,	/* 64x64 object */
 		2,		/* 2 objects */
 		1,		/* 1 bits per pixel */
@@ -379,10 +380,10 @@ public class decocass
 			 7*2*64, 6*2*64, 5*2*64, 4*2*64, 3*2*64, 2*2*64, 1*2*64, 0*2*64
 		},
 		8*8 /* object takes 8 consecutive bytes */
-	};
+	);
 	
 	static struct GfxLayout missilelayout =
-	{
+	new IO_ReadPort(
 		4,1,	/* 4x1 object ?? */
 		1,		/* 1 object */
 		1,		/* 1 bits per pixel */
@@ -390,20 +391,20 @@ public class decocass
 		{ 0, 0, 0, 0, 0, 0, 0, 0 },
 		{ 0, 0, 0, 0, 0, 0, 0, 0 },
 		8	/* object takes a 1 bit from somewhere */
-	};
+	);
 	
 	static struct GfxDecodeInfo decocass_gfxdecodeinfo[] =
-	{
+	new IO_ReadPort(
 		{ 0, 0x6000, &charlayout,		 0, 4 },  /* char set #1 */
 		{ 0, 0x6000, &spritelayout, 	 0, 4 },  /* sprites */
 		{ 0, 0xd000, &tilelayout,		32, 2 },  /* background tiles */
 		{ 0, 0xd800, &objlayout,		48, 4 },  /* object */
 		{ 0, 0xffff, &missilelayout,	 0, 8 },
 		{ -1 } /* end of array */
-	};
+	);
 	
 	static struct AY8910interface ay8910_interface =
-	{
+	new IO_ReadPort(
 		2,		/* 2 chips */
 		1500000,		/* 1.5 MHz ? (hand tuned) */
 		{ 40, 40 },
@@ -411,10 +412,10 @@ public class decocass
 		{ 0 },
 		{ 0 },
 		{ 0 }
-	};
+	);
 	
 	static void decocass_init_palette(unsigned char *sys_palette, unsigned short *sys_colortable,const unsigned char *color_prom)
-	{
+	new IO_ReadPort(
 		int i;
 		/* set up 32 colors 1:1 pens */
 		for (i = 0; i < 32; i++)
@@ -436,11 +437,11 @@ public class decocass
 		sys_colortable[48+2*2+1] = 26;	/* testtape green from 4th palette section? */
 		sys_colortable[48+3*2+0] = 0;
 		sys_colortable[48+3*2+1] = 23;	/* ???? */
-	}
+	)
 	
 	#define MACHINE_DRIVER_DECOCASS(GAMENAME)	\
 	static const struct MachineDriver machine_driver_##GAMENAME = \
-	{ \
+	new IO_ReadPort( \
 		/* basic machine hardware */ \
 		{ \
 			{ \
@@ -487,7 +488,7 @@ public class decocass
 				&ay8910_interface \
 			} \
 		}, \
-	}
+	)
 	
 	MACHINE_DRIVER_DECOCASS( decocass );	/* parent driver */
 	MACHINE_DRIVER_DECOCASS( ctsttape );
@@ -927,7 +928,7 @@ public class decocass
 	
 	
 	static void init_decocass(void)
-	{
+	new IO_ReadPort(
 		int A;
 		unsigned char *rom = memory_region(REGION_CPU1);
 		int diff = memory_region_length(REGION_CPU1) / 2;
@@ -937,7 +938,7 @@ public class decocass
 		/* Swap bits 5 & 6 for opcodes */
 		for (A = 0;A < diff;A++)
 			rom[A+diff] = swap_bits_5_6(rom[A]);
-	}
+	)
 	
 	GAMEX( 1981, decocass, 0,		 decocass, decocass, decocass, ROT270, "DECO", "Cassette System", NOT_A_DRIVER )
 	GAME ( 1981, ctsttape, decocass, ctsttape, decocass, decocass, ROT270, "DECO", "Cassette: Test Tape" )

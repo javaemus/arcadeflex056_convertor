@@ -344,17 +344,19 @@ public class omegrace
 	};
 	
 	
-	static PORT_READ_START( readport )
-		{ 0x08, 0x08, omegrace_vg_go_r },
-		{ 0x09, 0x09, omegrace_watchdog_r },
-		{ 0x0b, 0x0b, omegrace_vg_status_r }, /* vg_halt */
-		{ 0x10, 0x10, input_port_0_r }, /* DIP SW C4 */
-		{ 0x17, 0x17, input_port_1_r }, /* DIP SW C6 */
-		{ 0x11, 0x11, input_port_2_r }, /* Player 1 input */
-		{ 0x12, 0x12, input_port_3_r }, /* Player 2 input */
-		{ 0x15, 0x15, omegrace_spinner1_r }, /* 1st controller */
-		{ 0x16, 0x16, input_port_5_r }, /* 2nd controller (cocktail) */
-	PORT_END
+	public static IO_ReadPort readport[]={
+		new IO_ReadPort(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_IO | MEMPORT_WIDTH_8),
+		new IO_ReadPort( 0x08, 0x08, omegrace_vg_go_r ),
+		new IO_ReadPort( 0x09, 0x09, omegrace_watchdog_r ),
+		new IO_ReadPort( 0x0b, 0x0b, omegrace_vg_status_r ), /* vg_halt */
+		new IO_ReadPort( 0x10, 0x10, input_port_0_r ), /* DIP SW C4 */
+		new IO_ReadPort( 0x17, 0x17, input_port_1_r ), /* DIP SW C6 */
+		new IO_ReadPort( 0x11, 0x11, input_port_2_r ), /* Player 1 input */
+		new IO_ReadPort( 0x12, 0x12, input_port_3_r ), /* Player 2 input */
+		new IO_ReadPort( 0x15, 0x15, omegrace_spinner1_r ), /* 1st controller */
+		new IO_ReadPort( 0x16, 0x16, input_port_5_r ), /* 2nd controller (cocktail) */
+		new IO_ReadPort(MEMPORT_MARKER, 0)
+	};
 	
 	static PORT_WRITE_START( writeport )
 		{ 0x0a, 0x0a, avgdvg_reset_w },
@@ -362,9 +364,11 @@ public class omegrace
 		{ 0x14, 0x14, omegrace_soundlatch_w }, /* Sound command */
 	PORT_END
 	
-	static PORT_READ_START( sound_readport )
-		{ 0x00, 0x00, soundlatch_r },
-	PORT_END
+	public static IO_ReadPort sound_readport[]={
+		new IO_ReadPort(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_IO | MEMPORT_WIDTH_8),
+		new IO_ReadPort( 0x00, 0x00, soundlatch_r ),
+		new IO_ReadPort(MEMPORT_MARKER, 0)
+	};
 	
 	static PORT_WRITE_START( sound_writeport )
 		{ 0x00, 0x00, AY8910_control_port_0_w },

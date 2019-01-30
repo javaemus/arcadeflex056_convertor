@@ -233,28 +233,36 @@ public class vicdual
 	};
 	
 	
-	static PORT_READ_START( readport_2ports )
-		{ 0x01, 0x01, input_port_0_r },
-		{ 0x08, 0x08, input_port_1_r },
-	PORT_END
+	public static IO_ReadPort readport_2ports[]={
+		new IO_ReadPort(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_IO | MEMPORT_WIDTH_8),
+		new IO_ReadPort( 0x01, 0x01, input_port_0_r ),
+		new IO_ReadPort( 0x08, 0x08, input_port_1_r ),
+		new IO_ReadPort(MEMPORT_MARKER, 0)
+	};
 	
-	static PORT_READ_START( readport_3ports )
-		{ 0x01, 0x01, input_port_0_r },
-		{ 0x04, 0x04, input_port_1_r },
-		{ 0x08, 0x08, input_port_2_r },
-	PORT_END
+	public static IO_ReadPort readport_3ports[]={
+		new IO_ReadPort(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_IO | MEMPORT_WIDTH_8),
+		new IO_ReadPort( 0x01, 0x01, input_port_0_r ),
+		new IO_ReadPort( 0x04, 0x04, input_port_1_r ),
+		new IO_ReadPort( 0x08, 0x08, input_port_2_r ),
+		new IO_ReadPort(MEMPORT_MARKER, 0)
+	};
 	
-	static PORT_READ_START( readport_4ports )
-		{ 0x00, 0x00, input_port_0_r },
-		{ 0x01, 0x01, input_port_1_r },
-		{ 0x02, 0x02, input_port_2_r },
-		{ 0x03, 0x03, input_port_3_r },
-	PORT_END
+	public static IO_ReadPort readport_4ports[]={
+		new IO_ReadPort(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_IO | MEMPORT_WIDTH_8),
+		new IO_ReadPort( 0x00, 0x00, input_port_0_r ),
+		new IO_ReadPort( 0x01, 0x01, input_port_1_r ),
+		new IO_ReadPort( 0x02, 0x02, input_port_2_r ),
+		new IO_ReadPort( 0x03, 0x03, input_port_3_r ),
+		new IO_ReadPort(MEMPORT_MARKER, 0)
+	};
 	
-	static PORT_READ_START( readport_safari )
-		{ 0x03, 0x03, input_port_0_r },
-		{ 0x08, 0x08, input_port_1_r },
-	PORT_END
+	public static IO_ReadPort readport_safari[]={
+		new IO_ReadPort(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_IO | MEMPORT_WIDTH_8),
+		new IO_ReadPort( 0x03, 0x03, input_port_0_r ),
+		new IO_ReadPort( 0x08, 0x08, input_port_1_r ),
+		new IO_ReadPort(MEMPORT_MARKER, 0)
+	};
 	
 	
 	static PORT_WRITE_START( writeport )
@@ -275,9 +283,11 @@ public class vicdual
 	};
 	
 	
-	static PORT_READ_START( i8039_readport )
-		{ I8039_t1, I8039_t1, carnival_music_port_t1_r },
-	PORT_END
+	public static IO_ReadPort i8039_readport[]={
+		new IO_ReadPort(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_IO | MEMPORT_WIDTH_8),
+		new IO_ReadPort( I8039_t1, I8039_t1, carnival_music_port_t1_r ),
+		new IO_ReadPort(MEMPORT_MARKER, 0)
+	};
 	
 	static PORT_WRITE_START( i8039_writeport )
 		{ I8039_p1, I8039_p1, carnival_music_port_1_w },

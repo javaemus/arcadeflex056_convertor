@@ -286,9 +286,11 @@ public class mjsikaku
 		}
 	}
 	
-	static PORT_READ_START( readport_mjsikaku )
-		{ 0x0000, 0xffff, io_mjsikaku_r },
-	PORT_END
+	public static IO_ReadPort readport_mjsikaku[]={
+		new IO_ReadPort(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_IO | MEMPORT_WIDTH_8),
+		new IO_ReadPort( 0x0000, 0xffff, io_mjsikaku_r ),
+		new IO_ReadPort(MEMPORT_MARKER, 0)
+	};
 	
 	static WRITE_HANDLER( io_mjsikaku_w )
 	{
@@ -350,9 +352,11 @@ public class mjsikaku
 		}
 	}
 	
-	static PORT_READ_START( readport_otonano )
-		{ 0x0000, 0xffff, io_otonano_r },
-	PORT_END
+	public static IO_ReadPort readport_otonano[]={
+		new IO_ReadPort(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_IO | MEMPORT_WIDTH_8),
+		new IO_ReadPort( 0x0000, 0xffff, io_otonano_r ),
+		new IO_ReadPort(MEMPORT_MARKER, 0)
+	};
 	
 	static WRITE_HANDLER( io_otonano_w )
 	{
@@ -413,9 +417,11 @@ public class mjsikaku
 		}
 	}
 	
-	static PORT_READ_START( readport_kaguya )
-		{ 0x0000, 0xffff, io_kaguya_r },
-	PORT_END
+	public static IO_ReadPort readport_kaguya[]={
+		new IO_ReadPort(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_IO | MEMPORT_WIDTH_8),
+		new IO_ReadPort( 0x0000, 0xffff, io_kaguya_r ),
+		new IO_ReadPort(MEMPORT_MARKER, 0)
+	};
 	
 	static WRITE_HANDLER( io_kaguya_w )
 	{
@@ -476,9 +482,11 @@ public class mjsikaku
 		}
 	}
 	
-	static PORT_READ_START( readport_secolove )
-		{ 0x0000, 0xffff, io_secolove_r },
-	PORT_END
+	public static IO_ReadPort readport_secolove[]={
+		new IO_ReadPort(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_IO | MEMPORT_WIDTH_8),
+		new IO_ReadPort( 0x0000, 0xffff, io_secolove_r ),
+		new IO_ReadPort(MEMPORT_MARKER, 0)
+	};
 	
 	static WRITE_HANDLER( io_secolove_w )
 	{

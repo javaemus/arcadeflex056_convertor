@@ -256,9 +256,11 @@ public class sgladiat
 		new Memory_WriteAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static PORT_READ_START( sgladiat_readport )
-		{ 0x00, 0x00, MRA_NOP },
-	PORT_END
+	public static IO_ReadPort sgladiat_readport[]={
+		new IO_ReadPort(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_IO | MEMPORT_WIDTH_8),
+		new IO_ReadPort( 0x00, 0x00, MRA_NOP ),
+		new IO_ReadPort(MEMPORT_MARKER, 0)
+	};
 	
 	static const struct MachineDriver machine_driver_sgladiat =
 	{

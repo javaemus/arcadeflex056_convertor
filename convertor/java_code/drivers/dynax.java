@@ -121,14 +121,16 @@ public class dynax
 		new Memory_WriteAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static PORT_READ_START( sprtmtch_readport )
-		{ 0x10, 0x10, YM2203_status_port_0_r	},	// YM2203
-		{ 0x11, 0x11, YM2203_read_port_0_r		},	// 2 x DSW
-		{ 0x20, 0x20, input_port_0_r			},	// P1
-		{ 0x21, 0x21, input_port_1_r			},	// P2
-		{ 0x22, 0x22, input_port_2_r			},	// Coins
-		{ 0x23, 0x23, ret_ff					},	// ?
-	PORT_END
+	public static IO_ReadPort sprtmtch_readport[]={
+		new IO_ReadPort(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_IO | MEMPORT_WIDTH_8),
+		new IO_ReadPort( 0x10, 0x10, YM2203_status_port_0_r	),	// YM2203
+		new IO_ReadPort( 0x11, 0x11, YM2203_read_port_0_r		),	// 2 x DSW
+		new IO_ReadPort( 0x20, 0x20, input_port_0_r			),	// P1
+		new IO_ReadPort( 0x21, 0x21, input_port_1_r			),	// P2
+		new IO_ReadPort( 0x22, 0x22, input_port_2_r			),	// Coins
+		new IO_ReadPort( 0x23, 0x23, ret_ff					),	// ?
+		new IO_ReadPort(MEMPORT_MARKER, 0)
+	};
 	
 	static PORT_WRITE_START( sprtmtch_writeport )
 		{ 0x01, 0x01, sprtmtch_blit_draw_w		},	// Blitter
@@ -342,12 +344,14 @@ public class dynax
 		new Memory_WriteAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static PORT_READ_START( rongrong_readport )
-		{ 0x1c, 0x1c, rongrong_input_r		},	//
-		{ 0x40, 0x40, OKIM6295_status_0_r	},	//
-		{ 0xa2, 0xa2, rongrong_input2_r		},	//
-		{ 0xa3, 0xa3, rongrong_input2_r		},	//
-	PORT_END
+	public static IO_ReadPort rongrong_readport[]={
+		new IO_ReadPort(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_IO | MEMPORT_WIDTH_8),
+		new IO_ReadPort( 0x1c, 0x1c, rongrong_input_r		),	//
+		new IO_ReadPort( 0x40, 0x40, OKIM6295_status_0_r	),	//
+		new IO_ReadPort( 0xa2, 0xa2, rongrong_input2_r		),	//
+		new IO_ReadPort( 0xa3, 0xa3, rongrong_input2_r		),	//
+		new IO_ReadPort(MEMPORT_MARKER, 0)
+	};
 	
 	static PORT_WRITE_START( rongrong_writeport )
 		{ 0x1e, 0x1e, rongrong_select_w		},	//

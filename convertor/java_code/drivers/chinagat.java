@@ -402,10 +402,12 @@ public class chinagat
 		new Memory_WriteAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static PORT_READ_START( i8748_readport )
-		{ I8039_bus, I8039_bus, saiyugb1_mcu_command_r },
-		{ I8039_t1,  I8039_t1,  saiyugb1_m5205_irq_r },
-	PORT_END
+	public static IO_ReadPort i8748_readport[]={
+		new IO_ReadPort(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_IO | MEMPORT_WIDTH_8),
+		new IO_ReadPort( I8039_bus, I8039_bus, saiyugb1_mcu_command_r ),
+		new IO_ReadPort( I8039_t1,  I8039_t1,  saiyugb1_m5205_irq_r ),
+		new IO_ReadPort(MEMPORT_MARKER, 0)
+	};
 	
 	static PORT_WRITE_START( i8748_writeport )
 		{ I8039_t0,  I8039_t0,  saiyugb1_m5205_clk_w }, 		/* Drives the clock on the m5205 at 1/8 of this frequency */

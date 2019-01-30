@@ -231,12 +231,14 @@ public class segar
 	};
 	
 	
-	static PORT_READ_START( readport )
-	//{0x3f, 0x3f, MRA_NOP }, /* Pig Newton - read from 1D87 */
-		{ 0x0e, 0x0e, monsterb_audio_8255_r },
-		{ 0x81, 0x81, input_port_8_r },     /* only used by Sindbad Mystery */
-		{ 0xf8, 0xfc, segar_ports_r },
-	PORT_END
+	public static IO_ReadPort readport[]={
+		new IO_ReadPort(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_IO | MEMPORT_WIDTH_8),
+	//new IO_ReadPort(0x3f, 0x3f, MRA_NOP ), /* Pig Newton - read from 1D87 */
+		new IO_ReadPort( 0x0e, 0x0e, monsterb_audio_8255_r ),
+		new IO_ReadPort( 0x81, 0x81, input_port_8_r ),     /* only used by Sindbad Mystery */
+		new IO_ReadPort( 0xf8, 0xfc, segar_ports_r ),
+		new IO_ReadPort(MEMPORT_MARKER, 0)
+	};
 	
 	static PORT_WRITE_START( astrob_writeport )
 		{ 0x38, 0x38, astrob_speech_port_w },
@@ -333,11 +335,13 @@ public class segar
 		new Memory_WriteAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static PORT_READ_START( monsterb_7751_readport )
-		{ I8039_t1,  I8039_t1,  monsterb_sh_t1_r },
-		{ I8039_p2,  I8039_p2,  monsterb_sh_command_r },
-		{ I8039_bus, I8039_bus, monsterb_sh_rom_r },
-	PORT_END
+	public static IO_ReadPort monsterb_7751_readport[]={
+		new IO_ReadPort(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_IO | MEMPORT_WIDTH_8),
+		new IO_ReadPort( I8039_t1,  I8039_t1,  monsterb_sh_t1_r ),
+		new IO_ReadPort( I8039_p2,  I8039_p2,  monsterb_sh_command_r ),
+		new IO_ReadPort( I8039_bus, I8039_bus, monsterb_sh_rom_r ),
+		new IO_ReadPort(MEMPORT_MARKER, 0)
+	};
 	
 	static PORT_WRITE_START( monsterb_7751_writeport )
 		{ I8039_p1, I8039_p1, monsterb_sh_dac_w },

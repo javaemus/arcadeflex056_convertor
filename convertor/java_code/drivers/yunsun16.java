@@ -152,11 +152,13 @@ public class yunsun16
 		new Memory_WriteAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static PORT_READ_START( yunsun16_sound_readport )
-		{ 0x10, 0x10, YM3812_status_port_0_r	},	// YM3812
-		{ 0x18, 0x18, soundlatch_r				},	// From Main CPU
-		{ 0x1c, 0x1c, OKIM6295_status_0_r		},	// M6295
-	PORT_END
+	public static IO_ReadPort yunsun16_sound_readport[]={
+		new IO_ReadPort(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_IO | MEMPORT_WIDTH_8),
+		new IO_ReadPort( 0x10, 0x10, YM3812_status_port_0_r	),	// YM3812
+		new IO_ReadPort( 0x18, 0x18, soundlatch_r				),	// From Main CPU
+		new IO_ReadPort( 0x1c, 0x1c, OKIM6295_status_0_r		),	// M6295
+		new IO_ReadPort(MEMPORT_MARKER, 0)
+	};
 	
 	static PORT_WRITE_START( yunsun16_sound_writeport )
 		{ 0x10, 0x10, YM3812_control_port_0_w	},	// YM3812

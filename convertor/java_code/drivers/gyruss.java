@@ -161,13 +161,15 @@ public class gyruss
 		new Memory_WriteAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static PORT_READ_START( sound_readport )
-		{ 0x01, 0x01, AY8910_read_port_0_r },
-	  	{ 0x05, 0x05, AY8910_read_port_1_r },
-		{ 0x09, 0x09, AY8910_read_port_2_r },
-	  	{ 0x0d, 0x0d, AY8910_read_port_3_r },
-	  	{ 0x11, 0x11, AY8910_read_port_4_r },
-	PORT_END
+	public static IO_ReadPort sound_readport[]={
+		new IO_ReadPort(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_IO | MEMPORT_WIDTH_8),
+		new IO_ReadPort( 0x01, 0x01, AY8910_read_port_0_r ),
+	  	new IO_ReadPort( 0x05, 0x05, AY8910_read_port_1_r ),
+		new IO_ReadPort( 0x09, 0x09, AY8910_read_port_2_r ),
+	  	new IO_ReadPort( 0x0d, 0x0d, AY8910_read_port_3_r ),
+	  	new IO_ReadPort( 0x11, 0x11, AY8910_read_port_4_r ),
+		new IO_ReadPort(MEMPORT_MARKER, 0)
+	};
 	
 	static PORT_WRITE_START( sound_writeport )
 		{ 0x00, 0x00, AY8910_control_port_0_w },
@@ -196,9 +198,11 @@ public class gyruss
 		new Memory_WriteAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static PORT_READ_START( i8039_readport )
-		{ 0x00, 0xff, soundlatch2_r },
-	PORT_END
+	public static IO_ReadPort i8039_readport[]={
+		new IO_ReadPort(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_IO | MEMPORT_WIDTH_8),
+		new IO_ReadPort( 0x00, 0xff, soundlatch2_r ),
+		new IO_ReadPort(MEMPORT_MARKER, 0)
+	};
 	
 	static PORT_WRITE_START( i8039_writeport )
 		{ I8039_p1, I8039_p1, DAC_0_data_w },

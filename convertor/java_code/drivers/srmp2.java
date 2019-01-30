@@ -644,13 +644,15 @@ public class srmp2
 		new Memory_WriteAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static PORT_READ_START( srmp3_readport )
-		{ 0x40, 0x40, input_port_0_r },						/* coin, service */
-		{ 0xa1, 0xa1, srmp3_cchip_status_0_r },				/* custom chip status ??? */
-		{ 0xc0, 0xc0, srmp3_input_r },						/* key matrix */
-		{ 0xc1, 0xc1, srmp3_cchip_status_1_r },				/* custom chip status ??? */
-		{ 0xe2, 0xe2, AY8910_read_port_0_r },
-	PORT_END
+	public static IO_ReadPort srmp3_readport[]={
+		new IO_ReadPort(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_IO | MEMPORT_WIDTH_8),
+		new IO_ReadPort( 0x40, 0x40, input_port_0_r ),						/* coin, service */
+		new IO_ReadPort( 0xa1, 0xa1, srmp3_cchip_status_0_r ),				/* custom chip status ??? */
+		new IO_ReadPort( 0xc0, 0xc0, srmp3_input_r ),						/* key matrix */
+		new IO_ReadPort( 0xc1, 0xc1, srmp3_cchip_status_1_r ),				/* custom chip status ??? */
+		new IO_ReadPort( 0xe2, 0xe2, AY8910_read_port_0_r ),
+		new IO_ReadPort(MEMPORT_MARKER, 0)
+	};
 	
 	static PORT_WRITE_START( srmp3_writeport )
 		{ 0x20, 0x20, IOWP_NOP },							/* elapsed interrupt signal */

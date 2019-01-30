@@ -76,11 +76,13 @@ public class z80bw
 	};
 	
 	
-	static PORT_READ_START( astinvad_readport )
-		{ 0x08, 0x08, input_port_0_r },
-		{ 0x09, 0x09, input_port_1_r },
-		{ 0x0a, 0x0a, input_port_2_r },
-	PORT_END
+	public static IO_ReadPort astinvad_readport[]={
+		new IO_ReadPort(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_IO | MEMPORT_WIDTH_8),
+		new IO_ReadPort( 0x08, 0x08, input_port_0_r ),
+		new IO_ReadPort( 0x09, 0x09, input_port_1_r ),
+		new IO_ReadPort( 0x0a, 0x0a, input_port_2_r ),
+		new IO_ReadPort(MEMPORT_MARKER, 0)
+	};
 	
 	static PORT_WRITE_START( astinvad_writeport )
 		{ 0x04, 0x04, astinvad_sh_port_4_w },
@@ -252,10 +254,12 @@ public class z80bw
 	};
 	
 	
-	static PORT_READ_START( spaceint_readport )
-		{ 0x00, 0x00, input_port_0_r },
-		{ 0x01, 0x01, input_port_1_r },
-	PORT_END
+	public static IO_ReadPort spaceint_readport[]={
+		new IO_ReadPort(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_IO | MEMPORT_WIDTH_8),
+		new IO_ReadPort( 0x00, 0x00, input_port_0_r ),
+		new IO_ReadPort( 0x01, 0x01, input_port_1_r ),
+		new IO_ReadPort(MEMPORT_MARKER, 0)
+	};
 	
 	
 	INPUT_PORTS_START( spaceint )

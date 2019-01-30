@@ -138,9 +138,11 @@ public class kyugo
 		PORT_END													\
 	
 	#define Sub_PortMap( name, ay0_base, ay1_base )					\
-		static PORT_READ_START( name##_sub_readport )				\
-			{ ay0_base+2, ay0_base+2, AY8910_read_port_0_r },		\
-		PORT_END													\
+		public static IO_ReadPort name##_sub_readport[]={
+		new IO_ReadPort(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_IO | MEMPORT_WIDTH_8),			\
+			new IO_ReadPort( ay0_base+2, ay0_base+2, AY8910_read_port_0_r ),		\
+			new IO_ReadPort(MEMPORT_MARKER, 0)
+	};												\
 																	\
 		static PORT_WRITE_START( name##_sub_writeport )				\
 			{ ay0_base+0, ay0_base+0, AY8910_control_port_0_w },	\

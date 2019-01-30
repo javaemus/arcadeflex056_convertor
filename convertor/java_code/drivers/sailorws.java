@@ -757,22 +757,24 @@ public class sailorws
 	};
 	
 	
-	static PORT_READ_START( readport_mjuraden )
-		{ 0x10, 0x13, z80ctc_0_r },
-		{ 0x50, 0x50, tmpz84c011_0_pa_r },
-		{ 0x51, 0x51, tmpz84c011_0_pb_r },
-		{ 0x52, 0x52, tmpz84c011_0_pc_r },
-		{ 0x30, 0x30, tmpz84c011_0_pd_r },
-		{ 0x40, 0x40, tmpz84c011_0_pe_r },
-		{ 0x54, 0x54, tmpz84c011_0_dir_pa_r },
-		{ 0x55, 0x55, tmpz84c011_0_dir_pb_r },
-		{ 0x56, 0x56, tmpz84c011_0_dir_pc_r },
-		{ 0x34, 0x34, tmpz84c011_0_dir_pd_r },
-		{ 0x44, 0x44, tmpz84c011_0_dir_pe_r },
+	public static IO_ReadPort readport_mjuraden[]={
+		new IO_ReadPort(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_IO | MEMPORT_WIDTH_8),
+		new IO_ReadPort( 0x10, 0x13, z80ctc_0_r ),
+		new IO_ReadPort( 0x50, 0x50, tmpz84c011_0_pa_r ),
+		new IO_ReadPort( 0x51, 0x51, tmpz84c011_0_pb_r ),
+		new IO_ReadPort( 0x52, 0x52, tmpz84c011_0_pc_r ),
+		new IO_ReadPort( 0x30, 0x30, tmpz84c011_0_pd_r ),
+		new IO_ReadPort( 0x40, 0x40, tmpz84c011_0_pe_r ),
+		new IO_ReadPort( 0x54, 0x54, tmpz84c011_0_dir_pa_r ),
+		new IO_ReadPort( 0x55, 0x55, tmpz84c011_0_dir_pb_r ),
+		new IO_ReadPort( 0x56, 0x56, tmpz84c011_0_dir_pc_r ),
+		new IO_ReadPort( 0x34, 0x34, tmpz84c011_0_dir_pd_r ),
+		new IO_ReadPort( 0x44, 0x44, tmpz84c011_0_dir_pe_r ),
 	
-		{ 0x80, 0x80, sailorws_gfxbusy_0_r },
-		{ 0x81, 0x81, sailorws_gfxrom_0_r },
-	PORT_END
+		new IO_ReadPort( 0x80, 0x80, sailorws_gfxbusy_0_r ),
+		new IO_ReadPort( 0x81, 0x81, sailorws_gfxrom_0_r ),
+		new IO_ReadPort(MEMPORT_MARKER, 0)
+	};
 	
 	static PORT_WRITE_START( writeport_mjuraden )
 		{ 0x10, 0x13, z80ctc_0_w },
@@ -806,24 +808,26 @@ public class sailorws
 	PORT_END
 	
 	
-	static PORT_READ_START( readport_koinomp )
-		{ 0x10, 0x13, z80ctc_0_r },
-		{ 0x50, 0x50, tmpz84c011_0_pa_r },
-		{ 0x51, 0x51, tmpz84c011_0_pb_r },
-		{ 0x52, 0x52, tmpz84c011_0_pc_r },
-		{ 0x30, 0x30, tmpz84c011_0_pd_r },
-		{ 0x40, 0x40, tmpz84c011_0_pe_r },
-		{ 0x54, 0x54, tmpz84c011_0_dir_pa_r },
-		{ 0x55, 0x55, tmpz84c011_0_dir_pb_r },
-		{ 0x56, 0x56, tmpz84c011_0_dir_pc_r },
-		{ 0x34, 0x34, tmpz84c011_0_dir_pd_r },
-		{ 0x44, 0x44, tmpz84c011_0_dir_pe_r },
+	public static IO_ReadPort readport_koinomp[]={
+		new IO_ReadPort(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_IO | MEMPORT_WIDTH_8),
+		new IO_ReadPort( 0x10, 0x13, z80ctc_0_r ),
+		new IO_ReadPort( 0x50, 0x50, tmpz84c011_0_pa_r ),
+		new IO_ReadPort( 0x51, 0x51, tmpz84c011_0_pb_r ),
+		new IO_ReadPort( 0x52, 0x52, tmpz84c011_0_pc_r ),
+		new IO_ReadPort( 0x30, 0x30, tmpz84c011_0_pd_r ),
+		new IO_ReadPort( 0x40, 0x40, tmpz84c011_0_pe_r ),
+		new IO_ReadPort( 0x54, 0x54, tmpz84c011_0_dir_pa_r ),
+		new IO_ReadPort( 0x55, 0x55, tmpz84c011_0_dir_pb_r ),
+		new IO_ReadPort( 0x56, 0x56, tmpz84c011_0_dir_pc_r ),
+		new IO_ReadPort( 0x34, 0x34, tmpz84c011_0_dir_pd_r ),
+		new IO_ReadPort( 0x44, 0x44, tmpz84c011_0_dir_pe_r ),
 	
-		{ 0x80, 0x80, sailorws_gfxbusy_0_r },
-		{ 0x81, 0x81, sailorws_gfxrom_0_r },
-		{ 0xa0, 0xa0, sailorws_gfxbusy_1_r },
-		{ 0xa1, 0xa1, sailorws_gfxrom_1_r },
-	PORT_END
+		new IO_ReadPort( 0x80, 0x80, sailorws_gfxbusy_0_r ),
+		new IO_ReadPort( 0x81, 0x81, sailorws_gfxrom_0_r ),
+		new IO_ReadPort( 0xa0, 0xa0, sailorws_gfxbusy_1_r ),
+		new IO_ReadPort( 0xa1, 0xa1, sailorws_gfxrom_1_r ),
+		new IO_ReadPort(MEMPORT_MARKER, 0)
+	};
 	
 	static PORT_WRITE_START( writeport_koinomp )
 		{ 0x10, 0x13, z80ctc_0_w },
@@ -869,24 +873,26 @@ public class sailorws
 	PORT_END
 	
 	
-	static PORT_READ_START( readport_patimono )
-		{ 0x10, 0x13, z80ctc_0_r },
-		{ 0x50, 0x50, tmpz84c011_0_pa_r },
-		{ 0x51, 0x51, tmpz84c011_0_pb_r },
-		{ 0x52, 0x52, tmpz84c011_0_pc_r },
-		{ 0x30, 0x30, tmpz84c011_0_pd_r },
-		{ 0x40, 0x40, tmpz84c011_0_pe_r },
-		{ 0x54, 0x54, tmpz84c011_0_dir_pa_r },
-		{ 0x55, 0x55, tmpz84c011_0_dir_pb_r },
-		{ 0x56, 0x56, tmpz84c011_0_dir_pc_r },
-		{ 0x34, 0x34, tmpz84c011_0_dir_pd_r },
-		{ 0x44, 0x44, tmpz84c011_0_dir_pe_r },
+	public static IO_ReadPort readport_patimono[]={
+		new IO_ReadPort(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_IO | MEMPORT_WIDTH_8),
+		new IO_ReadPort( 0x10, 0x13, z80ctc_0_r ),
+		new IO_ReadPort( 0x50, 0x50, tmpz84c011_0_pa_r ),
+		new IO_ReadPort( 0x51, 0x51, tmpz84c011_0_pb_r ),
+		new IO_ReadPort( 0x52, 0x52, tmpz84c011_0_pc_r ),
+		new IO_ReadPort( 0x30, 0x30, tmpz84c011_0_pd_r ),
+		new IO_ReadPort( 0x40, 0x40, tmpz84c011_0_pe_r ),
+		new IO_ReadPort( 0x54, 0x54, tmpz84c011_0_dir_pa_r ),
+		new IO_ReadPort( 0x55, 0x55, tmpz84c011_0_dir_pb_r ),
+		new IO_ReadPort( 0x56, 0x56, tmpz84c011_0_dir_pc_r ),
+		new IO_ReadPort( 0x34, 0x34, tmpz84c011_0_dir_pd_r ),
+		new IO_ReadPort( 0x44, 0x44, tmpz84c011_0_dir_pe_r ),
 	
-		{ 0xc0, 0xc0, sailorws_gfxbusy_0_r },
-		{ 0xc1, 0xc1, sailorws_gfxrom_0_r },
-		{ 0x80, 0x80, sailorws_gfxbusy_1_r },
-		{ 0x81, 0x81, sailorws_gfxrom_1_r },
-	PORT_END
+		new IO_ReadPort( 0xc0, 0xc0, sailorws_gfxbusy_0_r ),
+		new IO_ReadPort( 0xc1, 0xc1, sailorws_gfxrom_0_r ),
+		new IO_ReadPort( 0x80, 0x80, sailorws_gfxbusy_1_r ),
+		new IO_ReadPort( 0x81, 0x81, sailorws_gfxrom_1_r ),
+		new IO_ReadPort(MEMPORT_MARKER, 0)
+	};
 	
 	static PORT_WRITE_START( writeport_patimono )
 		{ 0x10, 0x13, z80ctc_0_w },
@@ -931,41 +937,45 @@ public class sailorws
 	PORT_END
 	
 	
-	static PORT_READ_START( readport_gal10ren )
-		{ 0x10, 0x13, z80ctc_0_r },
-		{ 0x50, 0x50, tmpz84c011_0_pa_r },
-		{ 0x51, 0x51, tmpz84c011_0_pb_r },
-		{ 0x52, 0x52, tmpz84c011_0_pc_r },
-		{ 0x30, 0x30, tmpz84c011_0_pd_r },
-		{ 0x40, 0x40, tmpz84c011_0_pe_r },
-		{ 0x54, 0x54, tmpz84c011_0_dir_pa_r },
-		{ 0x55, 0x55, tmpz84c011_0_dir_pb_r },
-		{ 0x56, 0x56, tmpz84c011_0_dir_pc_r },
-		{ 0x34, 0x34, tmpz84c011_0_dir_pd_r },
-		{ 0x44, 0x44, tmpz84c011_0_dir_pe_r },
+	public static IO_ReadPort readport_gal10ren[]={
+		new IO_ReadPort(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_IO | MEMPORT_WIDTH_8),
+		new IO_ReadPort( 0x10, 0x13, z80ctc_0_r ),
+		new IO_ReadPort( 0x50, 0x50, tmpz84c011_0_pa_r ),
+		new IO_ReadPort( 0x51, 0x51, tmpz84c011_0_pb_r ),
+		new IO_ReadPort( 0x52, 0x52, tmpz84c011_0_pc_r ),
+		new IO_ReadPort( 0x30, 0x30, tmpz84c011_0_pd_r ),
+		new IO_ReadPort( 0x40, 0x40, tmpz84c011_0_pe_r ),
+		new IO_ReadPort( 0x54, 0x54, tmpz84c011_0_dir_pa_r ),
+		new IO_ReadPort( 0x55, 0x55, tmpz84c011_0_dir_pb_r ),
+		new IO_ReadPort( 0x56, 0x56, tmpz84c011_0_dir_pc_r ),
+		new IO_ReadPort( 0x34, 0x34, tmpz84c011_0_dir_pd_r ),
+		new IO_ReadPort( 0x44, 0x44, tmpz84c011_0_dir_pe_r ),
 	
-		{ 0x60, 0x60, sailorws_gfxbusy_0_r },
-		{ 0x61, 0x61, sailorws_gfxrom_0_r },
-		{ 0xa0, 0xa0, sailorws_gfxbusy_1_r },
-		{ 0xa1, 0xa1, sailorws_gfxrom_1_r },
-	PORT_END
+		new IO_ReadPort( 0x60, 0x60, sailorws_gfxbusy_0_r ),
+		new IO_ReadPort( 0x61, 0x61, sailorws_gfxrom_0_r ),
+		new IO_ReadPort( 0xa0, 0xa0, sailorws_gfxbusy_1_r ),
+		new IO_ReadPort( 0xa1, 0xa1, sailorws_gfxrom_1_r ),
+		new IO_ReadPort(MEMPORT_MARKER, 0)
+	};
 	
-	static PORT_READ_START( readport_mmehyou )
-		{ 0x10, 0x13, z80ctc_0_r },
-		{ 0x50, 0x50, tmpz84c011_0_pa_r },
-		{ 0x51, 0x51, tmpz84c011_0_pb_r },
-		{ 0x52, 0x52, tmpz84c011_0_pc_r },
-		{ 0x30, 0x30, tmpz84c011_0_pd_r },
-		{ 0x40, 0x40, tmpz84c011_0_pe_r },
-		{ 0x54, 0x54, tmpz84c011_0_dir_pa_r },
-		{ 0x55, 0x55, tmpz84c011_0_dir_pb_r },
-		{ 0x56, 0x56, tmpz84c011_0_dir_pc_r },
-		{ 0x34, 0x34, tmpz84c011_0_dir_pd_r },
-		{ 0x44, 0x44, tmpz84c011_0_dir_pe_r },
+	public static IO_ReadPort readport_mmehyou[]={
+		new IO_ReadPort(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_IO | MEMPORT_WIDTH_8),
+		new IO_ReadPort( 0x10, 0x13, z80ctc_0_r ),
+		new IO_ReadPort( 0x50, 0x50, tmpz84c011_0_pa_r ),
+		new IO_ReadPort( 0x51, 0x51, tmpz84c011_0_pb_r ),
+		new IO_ReadPort( 0x52, 0x52, tmpz84c011_0_pc_r ),
+		new IO_ReadPort( 0x30, 0x30, tmpz84c011_0_pd_r ),
+		new IO_ReadPort( 0x40, 0x40, tmpz84c011_0_pe_r ),
+		new IO_ReadPort( 0x54, 0x54, tmpz84c011_0_dir_pa_r ),
+		new IO_ReadPort( 0x55, 0x55, tmpz84c011_0_dir_pb_r ),
+		new IO_ReadPort( 0x56, 0x56, tmpz84c011_0_dir_pc_r ),
+		new IO_ReadPort( 0x34, 0x34, tmpz84c011_0_dir_pd_r ),
+		new IO_ReadPort( 0x44, 0x44, tmpz84c011_0_dir_pe_r ),
 	
-		{ 0x80, 0x80, sailorws_gfxbusy_0_r },
-		{ 0x81, 0x81, sailorws_gfxrom_0_r },
-	PORT_END
+		new IO_ReadPort( 0x80, 0x80, sailorws_gfxbusy_0_r ),
+		new IO_ReadPort( 0x81, 0x81, sailorws_gfxrom_0_r ),
+		new IO_ReadPort(MEMPORT_MARKER, 0)
+	};
 	
 	static PORT_WRITE_START( writeport_mmehyou )
 		{ 0x10, 0x13, z80ctc_0_w },
@@ -1042,24 +1052,26 @@ public class sailorws
 	PORT_END
 	
 	
-	static PORT_READ_START( readport_mjlaman )
-		{ 0x10, 0x13, z80ctc_0_r },
-		{ 0x50, 0x50, tmpz84c011_0_pa_r },
-		{ 0x51, 0x51, tmpz84c011_0_pb_r },
-		{ 0x52, 0x52, tmpz84c011_0_pc_r },
-		{ 0x30, 0x30, tmpz84c011_0_pd_r },
-		{ 0x40, 0x40, tmpz84c011_0_pe_r },
-		{ 0x54, 0x54, tmpz84c011_0_dir_pa_r },
-		{ 0x55, 0x55, tmpz84c011_0_dir_pb_r },
-		{ 0x56, 0x56, tmpz84c011_0_dir_pc_r },
-		{ 0x34, 0x34, tmpz84c011_0_dir_pd_r },
-		{ 0x44, 0x44, tmpz84c011_0_dir_pe_r },
+	public static IO_ReadPort readport_mjlaman[]={
+		new IO_ReadPort(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_IO | MEMPORT_WIDTH_8),
+		new IO_ReadPort( 0x10, 0x13, z80ctc_0_r ),
+		new IO_ReadPort( 0x50, 0x50, tmpz84c011_0_pa_r ),
+		new IO_ReadPort( 0x51, 0x51, tmpz84c011_0_pb_r ),
+		new IO_ReadPort( 0x52, 0x52, tmpz84c011_0_pc_r ),
+		new IO_ReadPort( 0x30, 0x30, tmpz84c011_0_pd_r ),
+		new IO_ReadPort( 0x40, 0x40, tmpz84c011_0_pe_r ),
+		new IO_ReadPort( 0x54, 0x54, tmpz84c011_0_dir_pa_r ),
+		new IO_ReadPort( 0x55, 0x55, tmpz84c011_0_dir_pb_r ),
+		new IO_ReadPort( 0x56, 0x56, tmpz84c011_0_dir_pc_r ),
+		new IO_ReadPort( 0x34, 0x34, tmpz84c011_0_dir_pd_r ),
+		new IO_ReadPort( 0x44, 0x44, tmpz84c011_0_dir_pe_r ),
 	
-		{ 0x80, 0x80, sailorws_gfxbusy_0_r },
-		{ 0x81, 0x81, sailorws_gfxrom_0_r },
-		{ 0xe0, 0xe0, sailorws_gfxbusy_1_r },
-		{ 0xe1, 0xe1, sailorws_gfxrom_1_r },
-	PORT_END
+		new IO_ReadPort( 0x80, 0x80, sailorws_gfxbusy_0_r ),
+		new IO_ReadPort( 0x81, 0x81, sailorws_gfxrom_0_r ),
+		new IO_ReadPort( 0xe0, 0xe0, sailorws_gfxbusy_1_r ),
+		new IO_ReadPort( 0xe1, 0xe1, sailorws_gfxrom_1_r ),
+		new IO_ReadPort(MEMPORT_MARKER, 0)
+	};
 	
 	static PORT_WRITE_START( writeport_mjlaman )
 		{ 0x10, 0x13, z80ctc_0_w },
@@ -1104,24 +1116,26 @@ public class sailorws
 	PORT_END
 	
 	
-	static PORT_READ_START( readport_mkeibaou )
-		{ 0x10, 0x13, z80ctc_0_r },
-		{ 0x50, 0x50, tmpz84c011_0_pa_r },
-		{ 0x51, 0x51, tmpz84c011_0_pb_r },
-		{ 0x52, 0x52, tmpz84c011_0_pc_r },
-		{ 0x30, 0x30, tmpz84c011_0_pd_r },
-		{ 0x40, 0x40, tmpz84c011_0_pe_r },
-		{ 0x54, 0x54, tmpz84c011_0_dir_pa_r },
-		{ 0x55, 0x55, tmpz84c011_0_dir_pb_r },
-		{ 0x56, 0x56, tmpz84c011_0_dir_pc_r },
-		{ 0x34, 0x34, tmpz84c011_0_dir_pd_r },
-		{ 0x44, 0x44, tmpz84c011_0_dir_pe_r },
+	public static IO_ReadPort readport_mkeibaou[]={
+		new IO_ReadPort(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_IO | MEMPORT_WIDTH_8),
+		new IO_ReadPort( 0x10, 0x13, z80ctc_0_r ),
+		new IO_ReadPort( 0x50, 0x50, tmpz84c011_0_pa_r ),
+		new IO_ReadPort( 0x51, 0x51, tmpz84c011_0_pb_r ),
+		new IO_ReadPort( 0x52, 0x52, tmpz84c011_0_pc_r ),
+		new IO_ReadPort( 0x30, 0x30, tmpz84c011_0_pd_r ),
+		new IO_ReadPort( 0x40, 0x40, tmpz84c011_0_pe_r ),
+		new IO_ReadPort( 0x54, 0x54, tmpz84c011_0_dir_pa_r ),
+		new IO_ReadPort( 0x55, 0x55, tmpz84c011_0_dir_pb_r ),
+		new IO_ReadPort( 0x56, 0x56, tmpz84c011_0_dir_pc_r ),
+		new IO_ReadPort( 0x34, 0x34, tmpz84c011_0_dir_pd_r ),
+		new IO_ReadPort( 0x44, 0x44, tmpz84c011_0_dir_pe_r ),
 	
-		{ 0x80, 0x80, sailorws_gfxbusy_0_r },
-		{ 0x81, 0x81, sailorws_gfxrom_0_r },
-		{ 0xa0, 0xa0, sailorws_gfxbusy_1_r },
-		{ 0xa1, 0xa1, sailorws_gfxrom_1_r },
-	PORT_END
+		new IO_ReadPort( 0x80, 0x80, sailorws_gfxbusy_0_r ),
+		new IO_ReadPort( 0x81, 0x81, sailorws_gfxrom_0_r ),
+		new IO_ReadPort( 0xa0, 0xa0, sailorws_gfxbusy_1_r ),
+		new IO_ReadPort( 0xa1, 0xa1, sailorws_gfxrom_1_r ),
+		new IO_ReadPort(MEMPORT_MARKER, 0)
+	};
 	
 	static PORT_WRITE_START( writeport_mkeibaou )
 		{ 0x10, 0x13, z80ctc_0_w },
@@ -1166,24 +1180,26 @@ public class sailorws
 	PORT_END
 	
 	
-	static PORT_READ_START( readport_pachiten )
-		{ 0x10, 0x13, z80ctc_0_r },
-		{ 0x50, 0x50, tmpz84c011_0_pa_r },
-		{ 0x51, 0x51, tmpz84c011_0_pb_r },
-		{ 0x52, 0x52, tmpz84c011_0_pc_r },
-		{ 0x30, 0x30, tmpz84c011_0_pd_r },
-		{ 0x40, 0x40, tmpz84c011_0_pe_r },
-		{ 0x54, 0x54, tmpz84c011_0_dir_pa_r },
-		{ 0x55, 0x55, tmpz84c011_0_dir_pb_r },
-		{ 0x56, 0x56, tmpz84c011_0_dir_pc_r },
-		{ 0x34, 0x34, tmpz84c011_0_dir_pd_r },
-		{ 0x44, 0x44, tmpz84c011_0_dir_pe_r },
+	public static IO_ReadPort readport_pachiten[]={
+		new IO_ReadPort(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_IO | MEMPORT_WIDTH_8),
+		new IO_ReadPort( 0x10, 0x13, z80ctc_0_r ),
+		new IO_ReadPort( 0x50, 0x50, tmpz84c011_0_pa_r ),
+		new IO_ReadPort( 0x51, 0x51, tmpz84c011_0_pb_r ),
+		new IO_ReadPort( 0x52, 0x52, tmpz84c011_0_pc_r ),
+		new IO_ReadPort( 0x30, 0x30, tmpz84c011_0_pd_r ),
+		new IO_ReadPort( 0x40, 0x40, tmpz84c011_0_pe_r ),
+		new IO_ReadPort( 0x54, 0x54, tmpz84c011_0_dir_pa_r ),
+		new IO_ReadPort( 0x55, 0x55, tmpz84c011_0_dir_pb_r ),
+		new IO_ReadPort( 0x56, 0x56, tmpz84c011_0_dir_pc_r ),
+		new IO_ReadPort( 0x34, 0x34, tmpz84c011_0_dir_pd_r ),
+		new IO_ReadPort( 0x44, 0x44, tmpz84c011_0_dir_pe_r ),
 	
-		{ 0x60, 0x60, sailorws_gfxbusy_0_r },
-		{ 0x61, 0x61, sailorws_gfxrom_0_r },
-		{ 0xa0, 0xa0, sailorws_gfxbusy_1_r },
-		{ 0xa1, 0xa1, sailorws_gfxrom_1_r },
-	PORT_END
+		new IO_ReadPort( 0x60, 0x60, sailorws_gfxbusy_0_r ),
+		new IO_ReadPort( 0x61, 0x61, sailorws_gfxrom_0_r ),
+		new IO_ReadPort( 0xa0, 0xa0, sailorws_gfxbusy_1_r ),
+		new IO_ReadPort( 0xa1, 0xa1, sailorws_gfxrom_1_r ),
+		new IO_ReadPort(MEMPORT_MARKER, 0)
+	};
 	
 	static PORT_WRITE_START( writeport_pachiten )
 		{ 0x10, 0x13, z80ctc_0_w },
@@ -1228,24 +1244,26 @@ public class sailorws
 	PORT_END
 	
 	
-	static PORT_READ_START( readport_sailorws )
-		{ 0x10, 0x13, z80ctc_0_r },
-		{ 0x50, 0x50, tmpz84c011_0_pa_r },
-		{ 0x51, 0x51, tmpz84c011_0_pb_r },
-		{ 0x52, 0x52, tmpz84c011_0_pc_r },
-		{ 0x30, 0x30, tmpz84c011_0_pd_r },
-		{ 0x40, 0x40, tmpz84c011_0_pe_r },
-		{ 0x54, 0x54, tmpz84c011_0_dir_pa_r },
-		{ 0x55, 0x55, tmpz84c011_0_dir_pb_r },
-		{ 0x56, 0x56, tmpz84c011_0_dir_pc_r },
-		{ 0x34, 0x34, tmpz84c011_0_dir_pd_r },
-		{ 0x44, 0x44, tmpz84c011_0_dir_pe_r },
+	public static IO_ReadPort readport_sailorws[]={
+		new IO_ReadPort(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_IO | MEMPORT_WIDTH_8),
+		new IO_ReadPort( 0x10, 0x13, z80ctc_0_r ),
+		new IO_ReadPort( 0x50, 0x50, tmpz84c011_0_pa_r ),
+		new IO_ReadPort( 0x51, 0x51, tmpz84c011_0_pb_r ),
+		new IO_ReadPort( 0x52, 0x52, tmpz84c011_0_pc_r ),
+		new IO_ReadPort( 0x30, 0x30, tmpz84c011_0_pd_r ),
+		new IO_ReadPort( 0x40, 0x40, tmpz84c011_0_pe_r ),
+		new IO_ReadPort( 0x54, 0x54, tmpz84c011_0_dir_pa_r ),
+		new IO_ReadPort( 0x55, 0x55, tmpz84c011_0_dir_pb_r ),
+		new IO_ReadPort( 0x56, 0x56, tmpz84c011_0_dir_pc_r ),
+		new IO_ReadPort( 0x34, 0x34, tmpz84c011_0_dir_pd_r ),
+		new IO_ReadPort( 0x44, 0x44, tmpz84c011_0_dir_pe_r ),
 	
-		{ 0x60, 0x60, sailorws_gfxbusy_0_r },
-		{ 0x61, 0x61, sailorws_gfxrom_0_r },
-		{ 0x80, 0x80, sailorws_gfxbusy_1_r },
-		{ 0x81, 0x81, sailorws_gfxrom_1_r },
-	PORT_END
+		new IO_ReadPort( 0x60, 0x60, sailorws_gfxbusy_0_r ),
+		new IO_ReadPort( 0x61, 0x61, sailorws_gfxrom_0_r ),
+		new IO_ReadPort( 0x80, 0x80, sailorws_gfxbusy_1_r ),
+		new IO_ReadPort( 0x81, 0x81, sailorws_gfxrom_1_r ),
+		new IO_ReadPort(MEMPORT_MARKER, 0)
+	};
 	
 	static PORT_WRITE_START( writeport_sailorws )
 		{ 0x10, 0x13, z80ctc_0_w },
@@ -1290,24 +1308,26 @@ public class sailorws
 	PORT_END
 	
 	
-	static PORT_READ_START( readport_sailorwr )
-		{ 0x10, 0x13, z80ctc_0_r },
-		{ 0x50, 0x50, tmpz84c011_0_pa_r },
-		{ 0x51, 0x51, tmpz84c011_0_pb_r },
-		{ 0x52, 0x52, tmpz84c011_0_pc_r },
-		{ 0x30, 0x30, tmpz84c011_0_pd_r },
-		{ 0x40, 0x40, tmpz84c011_0_pe_r },
-		{ 0x54, 0x54, tmpz84c011_0_dir_pa_r },
-		{ 0x55, 0x55, tmpz84c011_0_dir_pb_r },
-		{ 0x56, 0x56, tmpz84c011_0_dir_pc_r },
-		{ 0x34, 0x34, tmpz84c011_0_dir_pd_r },
-		{ 0x44, 0x44, tmpz84c011_0_dir_pe_r },
+	public static IO_ReadPort readport_sailorwr[]={
+		new IO_ReadPort(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_IO | MEMPORT_WIDTH_8),
+		new IO_ReadPort( 0x10, 0x13, z80ctc_0_r ),
+		new IO_ReadPort( 0x50, 0x50, tmpz84c011_0_pa_r ),
+		new IO_ReadPort( 0x51, 0x51, tmpz84c011_0_pb_r ),
+		new IO_ReadPort( 0x52, 0x52, tmpz84c011_0_pc_r ),
+		new IO_ReadPort( 0x30, 0x30, tmpz84c011_0_pd_r ),
+		new IO_ReadPort( 0x40, 0x40, tmpz84c011_0_pe_r ),
+		new IO_ReadPort( 0x54, 0x54, tmpz84c011_0_dir_pa_r ),
+		new IO_ReadPort( 0x55, 0x55, tmpz84c011_0_dir_pb_r ),
+		new IO_ReadPort( 0x56, 0x56, tmpz84c011_0_dir_pc_r ),
+		new IO_ReadPort( 0x34, 0x34, tmpz84c011_0_dir_pd_r ),
+		new IO_ReadPort( 0x44, 0x44, tmpz84c011_0_dir_pe_r ),
 	
-		{ 0x60, 0x60, sailorws_gfxbusy_0_r },
-		{ 0x61, 0x61, sailorws_gfxrom_0_r },
-		{ 0x80, 0x80, sailorws_gfxbusy_1_r },
-		{ 0x81, 0x81, sailorws_gfxrom_1_r },
-	PORT_END
+		new IO_ReadPort( 0x60, 0x60, sailorws_gfxbusy_0_r ),
+		new IO_ReadPort( 0x61, 0x61, sailorws_gfxrom_0_r ),
+		new IO_ReadPort( 0x80, 0x80, sailorws_gfxbusy_1_r ),
+		new IO_ReadPort( 0x81, 0x81, sailorws_gfxrom_1_r ),
+		new IO_ReadPort(MEMPORT_MARKER, 0)
+	};
 	
 	static PORT_WRITE_START( writeport_sailorwr )
 		{ 0x10, 0x13, z80ctc_0_w },
@@ -1352,24 +1372,26 @@ public class sailorws
 	PORT_END
 	
 	
-	static PORT_READ_START( readport_psailor1 )
-		{ 0x10, 0x13, z80ctc_0_r },
-		{ 0x50, 0x50, tmpz84c011_0_pa_r },
-		{ 0x51, 0x51, tmpz84c011_0_pb_r },
-		{ 0x52, 0x52, tmpz84c011_0_pc_r },
-		{ 0x30, 0x30, tmpz84c011_0_pd_r },
-		{ 0x40, 0x40, tmpz84c011_0_pe_r },
-		{ 0x54, 0x54, tmpz84c011_0_dir_pa_r },
-		{ 0x55, 0x55, tmpz84c011_0_dir_pb_r },
-		{ 0x56, 0x56, tmpz84c011_0_dir_pc_r },
-		{ 0x34, 0x34, tmpz84c011_0_dir_pd_r },
-		{ 0x44, 0x44, tmpz84c011_0_dir_pe_r },
+	public static IO_ReadPort readport_psailor1[]={
+		new IO_ReadPort(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_IO | MEMPORT_WIDTH_8),
+		new IO_ReadPort( 0x10, 0x13, z80ctc_0_r ),
+		new IO_ReadPort( 0x50, 0x50, tmpz84c011_0_pa_r ),
+		new IO_ReadPort( 0x51, 0x51, tmpz84c011_0_pb_r ),
+		new IO_ReadPort( 0x52, 0x52, tmpz84c011_0_pc_r ),
+		new IO_ReadPort( 0x30, 0x30, tmpz84c011_0_pd_r ),
+		new IO_ReadPort( 0x40, 0x40, tmpz84c011_0_pe_r ),
+		new IO_ReadPort( 0x54, 0x54, tmpz84c011_0_dir_pa_r ),
+		new IO_ReadPort( 0x55, 0x55, tmpz84c011_0_dir_pb_r ),
+		new IO_ReadPort( 0x56, 0x56, tmpz84c011_0_dir_pc_r ),
+		new IO_ReadPort( 0x34, 0x34, tmpz84c011_0_dir_pd_r ),
+		new IO_ReadPort( 0x44, 0x44, tmpz84c011_0_dir_pe_r ),
 	
-		{ 0x60, 0x60, sailorws_gfxbusy_0_r },
-		{ 0x61, 0x61, sailorws_gfxrom_0_r },
-		{ 0xc0, 0xc0, sailorws_gfxbusy_1_r },
-		{ 0xc1, 0xc1, sailorws_gfxrom_1_r },
-	PORT_END
+		new IO_ReadPort( 0x60, 0x60, sailorws_gfxbusy_0_r ),
+		new IO_ReadPort( 0x61, 0x61, sailorws_gfxrom_0_r ),
+		new IO_ReadPort( 0xc0, 0xc0, sailorws_gfxbusy_1_r ),
+		new IO_ReadPort( 0xc1, 0xc1, sailorws_gfxrom_1_r ),
+		new IO_ReadPort(MEMPORT_MARKER, 0)
+	};
 	
 	static PORT_WRITE_START( writeport_psailor1 )
 		{ 0x10, 0x13, z80ctc_0_w },
@@ -1414,24 +1436,26 @@ public class sailorws
 	PORT_END
 	
 	
-	static PORT_READ_START( readport_psailor2 )
-		{ 0x10, 0x13, z80ctc_0_r },
-		{ 0x50, 0x50, tmpz84c011_0_pa_r },
-		{ 0x51, 0x51, tmpz84c011_0_pb_r },
-		{ 0x52, 0x52, tmpz84c011_0_pc_r },
-		{ 0x30, 0x30, tmpz84c011_0_pd_r },
-		{ 0x40, 0x40, tmpz84c011_0_pe_r },
-		{ 0x54, 0x54, tmpz84c011_0_dir_pa_r },
-		{ 0x55, 0x55, tmpz84c011_0_dir_pb_r },
-		{ 0x56, 0x56, tmpz84c011_0_dir_pc_r },
-		{ 0x34, 0x34, tmpz84c011_0_dir_pd_r },
-		{ 0x44, 0x44, tmpz84c011_0_dir_pe_r },
+	public static IO_ReadPort readport_psailor2[]={
+		new IO_ReadPort(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_IO | MEMPORT_WIDTH_8),
+		new IO_ReadPort( 0x10, 0x13, z80ctc_0_r ),
+		new IO_ReadPort( 0x50, 0x50, tmpz84c011_0_pa_r ),
+		new IO_ReadPort( 0x51, 0x51, tmpz84c011_0_pb_r ),
+		new IO_ReadPort( 0x52, 0x52, tmpz84c011_0_pc_r ),
+		new IO_ReadPort( 0x30, 0x30, tmpz84c011_0_pd_r ),
+		new IO_ReadPort( 0x40, 0x40, tmpz84c011_0_pe_r ),
+		new IO_ReadPort( 0x54, 0x54, tmpz84c011_0_dir_pa_r ),
+		new IO_ReadPort( 0x55, 0x55, tmpz84c011_0_dir_pb_r ),
+		new IO_ReadPort( 0x56, 0x56, tmpz84c011_0_dir_pc_r ),
+		new IO_ReadPort( 0x34, 0x34, tmpz84c011_0_dir_pd_r ),
+		new IO_ReadPort( 0x44, 0x44, tmpz84c011_0_dir_pe_r ),
 	
-		{ 0x60, 0x60, sailorws_gfxbusy_0_r },
-		{ 0x61, 0x61, sailorws_gfxrom_0_r },
-		{ 0xa0, 0xa0, sailorws_gfxbusy_1_r },
-		{ 0xa1, 0xa1, sailorws_gfxrom_1_r },
-	PORT_END
+		new IO_ReadPort( 0x60, 0x60, sailorws_gfxbusy_0_r ),
+		new IO_ReadPort( 0x61, 0x61, sailorws_gfxrom_0_r ),
+		new IO_ReadPort( 0xa0, 0xa0, sailorws_gfxbusy_1_r ),
+		new IO_ReadPort( 0xa1, 0xa1, sailorws_gfxrom_1_r ),
+		new IO_ReadPort(MEMPORT_MARKER, 0)
+	};
 	
 	static PORT_WRITE_START( writeport_psailor2 )
 		{ 0x10, 0x13, z80ctc_0_w },
@@ -1476,24 +1500,26 @@ public class sailorws
 	PORT_END
 	
 	
-	static PORT_READ_START( readport_otatidai )
-		{ 0x10, 0x13, z80ctc_0_r },
-		{ 0x50, 0x50, tmpz84c011_0_pa_r },
-		{ 0x51, 0x51, tmpz84c011_0_pb_r },
-		{ 0x52, 0x52, tmpz84c011_0_pc_r },
-		{ 0x30, 0x30, tmpz84c011_0_pd_r },
-		{ 0x40, 0x40, tmpz84c011_0_pe_r },
-		{ 0x54, 0x54, tmpz84c011_0_dir_pa_r },
-		{ 0x55, 0x55, tmpz84c011_0_dir_pb_r },
-		{ 0x56, 0x56, tmpz84c011_0_dir_pc_r },
-		{ 0x34, 0x34, tmpz84c011_0_dir_pd_r },
-		{ 0x44, 0x44, tmpz84c011_0_dir_pe_r },
+	public static IO_ReadPort readport_otatidai[]={
+		new IO_ReadPort(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_IO | MEMPORT_WIDTH_8),
+		new IO_ReadPort( 0x10, 0x13, z80ctc_0_r ),
+		new IO_ReadPort( 0x50, 0x50, tmpz84c011_0_pa_r ),
+		new IO_ReadPort( 0x51, 0x51, tmpz84c011_0_pb_r ),
+		new IO_ReadPort( 0x52, 0x52, tmpz84c011_0_pc_r ),
+		new IO_ReadPort( 0x30, 0x30, tmpz84c011_0_pd_r ),
+		new IO_ReadPort( 0x40, 0x40, tmpz84c011_0_pe_r ),
+		new IO_ReadPort( 0x54, 0x54, tmpz84c011_0_dir_pa_r ),
+		new IO_ReadPort( 0x55, 0x55, tmpz84c011_0_dir_pb_r ),
+		new IO_ReadPort( 0x56, 0x56, tmpz84c011_0_dir_pc_r ),
+		new IO_ReadPort( 0x34, 0x34, tmpz84c011_0_dir_pd_r ),
+		new IO_ReadPort( 0x44, 0x44, tmpz84c011_0_dir_pe_r ),
 	
-		{ 0x60, 0x60, sailorws_gfxbusy_0_r },
-		{ 0x61, 0x61, sailorws_gfxrom_0_r },
-		{ 0x80, 0x80, sailorws_gfxbusy_1_r },
-		{ 0x81, 0x81, sailorws_gfxrom_1_r },
-	PORT_END
+		new IO_ReadPort( 0x60, 0x60, sailorws_gfxbusy_0_r ),
+		new IO_ReadPort( 0x61, 0x61, sailorws_gfxrom_0_r ),
+		new IO_ReadPort( 0x80, 0x80, sailorws_gfxbusy_1_r ),
+		new IO_ReadPort( 0x81, 0x81, sailorws_gfxrom_1_r ),
+		new IO_ReadPort(MEMPORT_MARKER, 0)
+	};
 	
 	static PORT_WRITE_START( writeport_otatidai )
 		{ 0x10, 0x13, z80ctc_0_w },
@@ -1538,22 +1564,24 @@ public class sailorws
 	PORT_END
 	
 	
-	static PORT_READ_START( readport_ngpgal )
-		{ 0x10, 0x13, z80ctc_0_r },
-		{ 0x50, 0x50, tmpz84c011_0_pa_r },
-		{ 0x51, 0x51, tmpz84c011_0_pb_r },
-		{ 0x52, 0x52, tmpz84c011_0_pc_r },
-		{ 0x30, 0x30, tmpz84c011_0_pd_r },
-		{ 0x40, 0x40, tmpz84c011_0_pe_r },
-		{ 0x54, 0x54, tmpz84c011_0_dir_pa_r },
-		{ 0x55, 0x55, tmpz84c011_0_dir_pb_r },
-		{ 0x56, 0x56, tmpz84c011_0_dir_pc_r },
-		{ 0x34, 0x34, tmpz84c011_0_dir_pd_r },
-		{ 0x44, 0x44, tmpz84c011_0_dir_pe_r },
+	public static IO_ReadPort readport_ngpgal[]={
+		new IO_ReadPort(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_IO | MEMPORT_WIDTH_8),
+		new IO_ReadPort( 0x10, 0x13, z80ctc_0_r ),
+		new IO_ReadPort( 0x50, 0x50, tmpz84c011_0_pa_r ),
+		new IO_ReadPort( 0x51, 0x51, tmpz84c011_0_pb_r ),
+		new IO_ReadPort( 0x52, 0x52, tmpz84c011_0_pc_r ),
+		new IO_ReadPort( 0x30, 0x30, tmpz84c011_0_pd_r ),
+		new IO_ReadPort( 0x40, 0x40, tmpz84c011_0_pe_r ),
+		new IO_ReadPort( 0x54, 0x54, tmpz84c011_0_dir_pa_r ),
+		new IO_ReadPort( 0x55, 0x55, tmpz84c011_0_dir_pb_r ),
+		new IO_ReadPort( 0x56, 0x56, tmpz84c011_0_dir_pc_r ),
+		new IO_ReadPort( 0x34, 0x34, tmpz84c011_0_dir_pd_r ),
+		new IO_ReadPort( 0x44, 0x44, tmpz84c011_0_dir_pe_r ),
 	
-		{ 0xc0, 0xc0, sailorws_gfxbusy_0_r },
-		{ 0xc1, 0xc1, sailorws_gfxrom_0_r },
-	PORT_END
+		new IO_ReadPort( 0xc0, 0xc0, sailorws_gfxbusy_0_r ),
+		new IO_ReadPort( 0xc1, 0xc1, sailorws_gfxrom_0_r ),
+		new IO_ReadPort(MEMPORT_MARKER, 0)
+	};
 	
 	static PORT_WRITE_START( writeport_ngpgal )
 		{ 0x10, 0x13, z80ctc_0_w },
@@ -1587,22 +1615,24 @@ public class sailorws
 	PORT_END
 	
 	
-	static PORT_READ_START( readport_mjgottsu )
-		{ 0x10, 0x13, z80ctc_0_r },
-		{ 0x50, 0x50, tmpz84c011_0_pa_r },
-		{ 0x51, 0x51, tmpz84c011_0_pb_r },
-		{ 0x52, 0x52, tmpz84c011_0_pc_r },
-		{ 0x30, 0x30, tmpz84c011_0_pd_r },
-		{ 0x40, 0x40, tmpz84c011_0_pe_r },
-		{ 0x54, 0x54, tmpz84c011_0_dir_pa_r },
-		{ 0x55, 0x55, tmpz84c011_0_dir_pb_r },
-		{ 0x56, 0x56, tmpz84c011_0_dir_pc_r },
-		{ 0x34, 0x34, tmpz84c011_0_dir_pd_r },
-		{ 0x44, 0x44, tmpz84c011_0_dir_pe_r },
+	public static IO_ReadPort readport_mjgottsu[]={
+		new IO_ReadPort(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_IO | MEMPORT_WIDTH_8),
+		new IO_ReadPort( 0x10, 0x13, z80ctc_0_r ),
+		new IO_ReadPort( 0x50, 0x50, tmpz84c011_0_pa_r ),
+		new IO_ReadPort( 0x51, 0x51, tmpz84c011_0_pb_r ),
+		new IO_ReadPort( 0x52, 0x52, tmpz84c011_0_pc_r ),
+		new IO_ReadPort( 0x30, 0x30, tmpz84c011_0_pd_r ),
+		new IO_ReadPort( 0x40, 0x40, tmpz84c011_0_pe_r ),
+		new IO_ReadPort( 0x54, 0x54, tmpz84c011_0_dir_pa_r ),
+		new IO_ReadPort( 0x55, 0x55, tmpz84c011_0_dir_pb_r ),
+		new IO_ReadPort( 0x56, 0x56, tmpz84c011_0_dir_pc_r ),
+		new IO_ReadPort( 0x34, 0x34, tmpz84c011_0_dir_pd_r ),
+		new IO_ReadPort( 0x44, 0x44, tmpz84c011_0_dir_pe_r ),
 	
-		{ 0x80, 0x80, sailorws_gfxbusy_0_r },
-		{ 0x81, 0x81, sailorws_gfxrom_0_r },
-	PORT_END
+		new IO_ReadPort( 0x80, 0x80, sailorws_gfxbusy_0_r ),
+		new IO_ReadPort( 0x81, 0x81, sailorws_gfxrom_0_r ),
+		new IO_ReadPort(MEMPORT_MARKER, 0)
+	};
 	
 	static PORT_WRITE_START( writeport_mjgottsu )
 		{ 0x10, 0x13, z80ctc_0_w },
@@ -1636,22 +1666,24 @@ public class sailorws
 	PORT_END
 	
 	
-	static PORT_READ_START( readport_cmehyou )
-		{ 0x10, 0x13, z80ctc_0_r },
-		{ 0x50, 0x50, tmpz84c011_0_pa_r },
-		{ 0x51, 0x51, tmpz84c011_0_pb_r },
-		{ 0x52, 0x52, tmpz84c011_0_pc_r },
-		{ 0x30, 0x30, tmpz84c011_0_pd_r },
-		{ 0x40, 0x40, tmpz84c011_0_pe_r },
-		{ 0x54, 0x54, tmpz84c011_0_dir_pa_r },
-		{ 0x55, 0x55, tmpz84c011_0_dir_pb_r },
-		{ 0x56, 0x56, tmpz84c011_0_dir_pc_r },
-		{ 0x34, 0x34, tmpz84c011_0_dir_pd_r },
-		{ 0x44, 0x44, tmpz84c011_0_dir_pe_r },
+	public static IO_ReadPort readport_cmehyou[]={
+		new IO_ReadPort(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_IO | MEMPORT_WIDTH_8),
+		new IO_ReadPort( 0x10, 0x13, z80ctc_0_r ),
+		new IO_ReadPort( 0x50, 0x50, tmpz84c011_0_pa_r ),
+		new IO_ReadPort( 0x51, 0x51, tmpz84c011_0_pb_r ),
+		new IO_ReadPort( 0x52, 0x52, tmpz84c011_0_pc_r ),
+		new IO_ReadPort( 0x30, 0x30, tmpz84c011_0_pd_r ),
+		new IO_ReadPort( 0x40, 0x40, tmpz84c011_0_pe_r ),
+		new IO_ReadPort( 0x54, 0x54, tmpz84c011_0_dir_pa_r ),
+		new IO_ReadPort( 0x55, 0x55, tmpz84c011_0_dir_pb_r ),
+		new IO_ReadPort( 0x56, 0x56, tmpz84c011_0_dir_pc_r ),
+		new IO_ReadPort( 0x34, 0x34, tmpz84c011_0_dir_pd_r ),
+		new IO_ReadPort( 0x44, 0x44, tmpz84c011_0_dir_pe_r ),
 	
-		{ 0xc0, 0xc0, sailorws_gfxbusy_0_r },
-		{ 0xc1, 0xc1, sailorws_gfxrom_0_r },
-	PORT_END
+		new IO_ReadPort( 0xc0, 0xc0, sailorws_gfxbusy_0_r ),
+		new IO_ReadPort( 0xc1, 0xc1, sailorws_gfxrom_0_r ),
+		new IO_ReadPort(MEMPORT_MARKER, 0)
+	};
 	
 	static PORT_WRITE_START( writeport_cmehyou )
 		{ 0x10, 0x13, z80ctc_0_w },
@@ -1685,22 +1717,24 @@ public class sailorws
 	PORT_END
 	
 	
-	static PORT_READ_START( readport_mjkoiura )
-		{ 0x10, 0x13, z80ctc_0_r },
-		{ 0x50, 0x50, tmpz84c011_0_pa_r },
-		{ 0x51, 0x51, tmpz84c011_0_pb_r },
-		{ 0x52, 0x52, tmpz84c011_0_pc_r },
-		{ 0x30, 0x30, tmpz84c011_0_pd_r },
-		{ 0x40, 0x40, tmpz84c011_0_pe_r },
-		{ 0x54, 0x54, tmpz84c011_0_dir_pa_r },
-		{ 0x55, 0x55, tmpz84c011_0_dir_pb_r },
-		{ 0x56, 0x56, tmpz84c011_0_dir_pc_r },
-		{ 0x34, 0x34, tmpz84c011_0_dir_pd_r },
-		{ 0x44, 0x44, tmpz84c011_0_dir_pe_r },
+	public static IO_ReadPort readport_mjkoiura[]={
+		new IO_ReadPort(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_IO | MEMPORT_WIDTH_8),
+		new IO_ReadPort( 0x10, 0x13, z80ctc_0_r ),
+		new IO_ReadPort( 0x50, 0x50, tmpz84c011_0_pa_r ),
+		new IO_ReadPort( 0x51, 0x51, tmpz84c011_0_pb_r ),
+		new IO_ReadPort( 0x52, 0x52, tmpz84c011_0_pc_r ),
+		new IO_ReadPort( 0x30, 0x30, tmpz84c011_0_pd_r ),
+		new IO_ReadPort( 0x40, 0x40, tmpz84c011_0_pe_r ),
+		new IO_ReadPort( 0x54, 0x54, tmpz84c011_0_dir_pa_r ),
+		new IO_ReadPort( 0x55, 0x55, tmpz84c011_0_dir_pb_r ),
+		new IO_ReadPort( 0x56, 0x56, tmpz84c011_0_dir_pc_r ),
+		new IO_ReadPort( 0x34, 0x34, tmpz84c011_0_dir_pd_r ),
+		new IO_ReadPort( 0x44, 0x44, tmpz84c011_0_dir_pe_r ),
 	
-		{ 0x80, 0x80, sailorws_gfxbusy_0_r },
-		{ 0x81, 0x81, sailorws_gfxrom_0_r },
-	PORT_END
+		new IO_ReadPort( 0x80, 0x80, sailorws_gfxbusy_0_r ),
+		new IO_ReadPort( 0x81, 0x81, sailorws_gfxrom_0_r ),
+		new IO_ReadPort(MEMPORT_MARKER, 0)
+	};
 	
 	static PORT_WRITE_START( writeport_mjkoiura )
 		{ 0x10, 0x13, z80ctc_0_w },
@@ -1734,26 +1768,28 @@ public class sailorws
 	PORT_END
 	
 	
-	static PORT_READ_START( readport_mscoutm )
-		{ 0x10, 0x13, z80ctc_0_r },
-		{ 0x50, 0x50, tmpz84c011_0_pa_r },
-		{ 0x51, 0x51, tmpz84c011_0_pb_r },
-		{ 0x52, 0x52, tmpz84c011_0_pc_r },
-		{ 0x30, 0x30, tmpz84c011_0_pd_r },
-		{ 0x40, 0x40, tmpz84c011_0_pe_r },
-		{ 0x54, 0x54, tmpz84c011_0_dir_pa_r },
-		{ 0x55, 0x55, tmpz84c011_0_dir_pb_r },
-		{ 0x56, 0x56, tmpz84c011_0_dir_pc_r },
-		{ 0x34, 0x34, tmpz84c011_0_dir_pd_r },
-		{ 0x44, 0x44, tmpz84c011_0_dir_pe_r },
+	public static IO_ReadPort readport_mscoutm[]={
+		new IO_ReadPort(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_IO | MEMPORT_WIDTH_8),
+		new IO_ReadPort( 0x10, 0x13, z80ctc_0_r ),
+		new IO_ReadPort( 0x50, 0x50, tmpz84c011_0_pa_r ),
+		new IO_ReadPort( 0x51, 0x51, tmpz84c011_0_pb_r ),
+		new IO_ReadPort( 0x52, 0x52, tmpz84c011_0_pc_r ),
+		new IO_ReadPort( 0x30, 0x30, tmpz84c011_0_pd_r ),
+		new IO_ReadPort( 0x40, 0x40, tmpz84c011_0_pe_r ),
+		new IO_ReadPort( 0x54, 0x54, tmpz84c011_0_dir_pa_r ),
+		new IO_ReadPort( 0x55, 0x55, tmpz84c011_0_dir_pb_r ),
+		new IO_ReadPort( 0x56, 0x56, tmpz84c011_0_dir_pc_r ),
+		new IO_ReadPort( 0x34, 0x34, tmpz84c011_0_dir_pd_r ),
+		new IO_ReadPort( 0x44, 0x44, tmpz84c011_0_dir_pe_r ),
 	
-		{ 0x80, 0x80, mscoutm_dipsw_1_r },
-		{ 0x82, 0x82, mscoutm_dipsw_0_r },
-		{ 0xc0, 0xc0, sailorws_gfxbusy_0_r },
-		{ 0xc1, 0xc1, sailorws_gfxrom_0_r },
-		{ 0xe0, 0xe0, sailorws_gfxbusy_1_r },
-		{ 0xe1, 0xe1, sailorws_gfxrom_1_r },
-	PORT_END
+		new IO_ReadPort( 0x80, 0x80, mscoutm_dipsw_1_r ),
+		new IO_ReadPort( 0x82, 0x82, mscoutm_dipsw_0_r ),
+		new IO_ReadPort( 0xc0, 0xc0, sailorws_gfxbusy_0_r ),
+		new IO_ReadPort( 0xc1, 0xc1, sailorws_gfxrom_0_r ),
+		new IO_ReadPort( 0xe0, 0xe0, sailorws_gfxbusy_1_r ),
+		new IO_ReadPort( 0xe1, 0xe1, sailorws_gfxrom_1_r ),
+		new IO_ReadPort(MEMPORT_MARKER, 0)
+	};
 	
 	static PORT_WRITE_START( writeport_mscoutm )
 		{ 0x10, 0x13, z80ctc_0_w },
@@ -1797,26 +1833,28 @@ public class sailorws
 	PORT_END
 	
 	
-	static PORT_READ_START( readport_imekura )
-		{ 0x10, 0x13, z80ctc_0_r },
-		{ 0x50, 0x50, tmpz84c011_0_pa_r },
-		{ 0x51, 0x51, tmpz84c011_0_pb_r },
-		{ 0x52, 0x52, tmpz84c011_0_pc_r },
-		{ 0x30, 0x30, tmpz84c011_0_pd_r },
-		{ 0x40, 0x40, tmpz84c011_0_pe_r },
-		{ 0x54, 0x54, tmpz84c011_0_dir_pa_r },
-		{ 0x55, 0x55, tmpz84c011_0_dir_pb_r },
-		{ 0x56, 0x56, tmpz84c011_0_dir_pc_r },
-		{ 0x34, 0x34, tmpz84c011_0_dir_pd_r },
-		{ 0x44, 0x44, tmpz84c011_0_dir_pe_r },
+	public static IO_ReadPort readport_imekura[]={
+		new IO_ReadPort(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_IO | MEMPORT_WIDTH_8),
+		new IO_ReadPort( 0x10, 0x13, z80ctc_0_r ),
+		new IO_ReadPort( 0x50, 0x50, tmpz84c011_0_pa_r ),
+		new IO_ReadPort( 0x51, 0x51, tmpz84c011_0_pb_r ),
+		new IO_ReadPort( 0x52, 0x52, tmpz84c011_0_pc_r ),
+		new IO_ReadPort( 0x30, 0x30, tmpz84c011_0_pd_r ),
+		new IO_ReadPort( 0x40, 0x40, tmpz84c011_0_pe_r ),
+		new IO_ReadPort( 0x54, 0x54, tmpz84c011_0_dir_pa_r ),
+		new IO_ReadPort( 0x55, 0x55, tmpz84c011_0_dir_pb_r ),
+		new IO_ReadPort( 0x56, 0x56, tmpz84c011_0_dir_pc_r ),
+		new IO_ReadPort( 0x34, 0x34, tmpz84c011_0_dir_pd_r ),
+		new IO_ReadPort( 0x44, 0x44, tmpz84c011_0_dir_pe_r ),
 	
-		{ 0x80, 0x80, mscoutm_dipsw_1_r },
-		{ 0x82, 0x82, mscoutm_dipsw_0_r },
-		{ 0xc0, 0xc0, sailorws_gfxbusy_0_r },
-		{ 0xc1, 0xc1, sailorws_gfxrom_0_r },
-		{ 0xe0, 0xe0, sailorws_gfxbusy_1_r },
-		{ 0xe1, 0xe1, sailorws_gfxrom_1_r },
-	PORT_END
+		new IO_ReadPort( 0x80, 0x80, mscoutm_dipsw_1_r ),
+		new IO_ReadPort( 0x82, 0x82, mscoutm_dipsw_0_r ),
+		new IO_ReadPort( 0xc0, 0xc0, sailorws_gfxbusy_0_r ),
+		new IO_ReadPort( 0xc1, 0xc1, sailorws_gfxrom_0_r ),
+		new IO_ReadPort( 0xe0, 0xe0, sailorws_gfxbusy_1_r ),
+		new IO_ReadPort( 0xe1, 0xe1, sailorws_gfxrom_1_r ),
+		new IO_ReadPort(MEMPORT_MARKER, 0)
+	};
 	
 	static PORT_WRITE_START( writeport_imekura )
 		{ 0x10, 0x13, z80ctc_0_w },
@@ -1860,26 +1898,28 @@ public class sailorws
 	PORT_END
 	
 	
-	static PORT_READ_START( readport_mjegolf )
-		{ 0x10, 0x13, z80ctc_0_r },
-		{ 0x50, 0x50, tmpz84c011_0_pa_r },
-		{ 0x51, 0x51, tmpz84c011_0_pb_r },
-		{ 0x52, 0x52, tmpz84c011_0_pc_r },
-		{ 0x30, 0x30, tmpz84c011_0_pd_r },
-		{ 0x40, 0x40, tmpz84c011_0_pe_r },
-		{ 0x54, 0x54, tmpz84c011_0_dir_pa_r },
-		{ 0x55, 0x55, tmpz84c011_0_dir_pb_r },
-		{ 0x56, 0x56, tmpz84c011_0_dir_pc_r },
-		{ 0x34, 0x34, tmpz84c011_0_dir_pd_r },
-		{ 0x44, 0x44, tmpz84c011_0_dir_pe_r },
+	public static IO_ReadPort readport_mjegolf[]={
+		new IO_ReadPort(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_IO | MEMPORT_WIDTH_8),
+		new IO_ReadPort( 0x10, 0x13, z80ctc_0_r ),
+		new IO_ReadPort( 0x50, 0x50, tmpz84c011_0_pa_r ),
+		new IO_ReadPort( 0x51, 0x51, tmpz84c011_0_pb_r ),
+		new IO_ReadPort( 0x52, 0x52, tmpz84c011_0_pc_r ),
+		new IO_ReadPort( 0x30, 0x30, tmpz84c011_0_pd_r ),
+		new IO_ReadPort( 0x40, 0x40, tmpz84c011_0_pe_r ),
+		new IO_ReadPort( 0x54, 0x54, tmpz84c011_0_dir_pa_r ),
+		new IO_ReadPort( 0x55, 0x55, tmpz84c011_0_dir_pb_r ),
+		new IO_ReadPort( 0x56, 0x56, tmpz84c011_0_dir_pc_r ),
+		new IO_ReadPort( 0x34, 0x34, tmpz84c011_0_dir_pd_r ),
+		new IO_ReadPort( 0x44, 0x44, tmpz84c011_0_dir_pe_r ),
 	
-		{ 0xe0, 0xe0, mscoutm_dipsw_1_r },
-		{ 0xe2, 0xe2, mscoutm_dipsw_0_r },
-		{ 0xa0, 0xa0, sailorws_gfxbusy_0_r },
-		{ 0xa1, 0xa1, sailorws_gfxrom_0_r },
-		{ 0xc0, 0xc0, sailorws_gfxbusy_1_r },
-		{ 0xc1, 0xc1, sailorws_gfxrom_1_r },
-	PORT_END
+		new IO_ReadPort( 0xe0, 0xe0, mscoutm_dipsw_1_r ),
+		new IO_ReadPort( 0xe2, 0xe2, mscoutm_dipsw_0_r ),
+		new IO_ReadPort( 0xa0, 0xa0, sailorws_gfxbusy_0_r ),
+		new IO_ReadPort( 0xa1, 0xa1, sailorws_gfxrom_0_r ),
+		new IO_ReadPort( 0xc0, 0xc0, sailorws_gfxbusy_1_r ),
+		new IO_ReadPort( 0xc1, 0xc1, sailorws_gfxrom_1_r ),
+		new IO_ReadPort(MEMPORT_MARKER, 0)
+	};
 	
 	static PORT_WRITE_START( writeport_mjegolf )
 		{ 0x10, 0x13, z80ctc_0_w },
@@ -1923,19 +1963,21 @@ public class sailorws
 	PORT_END
 	
 	
-	static PORT_READ_START( sound_readport )
-		{ 0x10, 0x13, z80ctc_1_r },
-		{ 0x50, 0x50, tmpz84c011_1_pa_r },
-		{ 0x51, 0x51, tmpz84c011_1_pb_r },
-		{ 0x52, 0x52, tmpz84c011_1_pc_r },
-		{ 0x30, 0x30, tmpz84c011_1_pd_r },
-		{ 0x40, 0x40, tmpz84c011_1_pe_r },
-		{ 0x54, 0x54, tmpz84c011_1_dir_pa_r },
-		{ 0x55, 0x55, tmpz84c011_1_dir_pb_r },
-		{ 0x56, 0x56, tmpz84c011_1_dir_pc_r },
-		{ 0x34, 0x34, tmpz84c011_1_dir_pd_r },
-		{ 0x44, 0x44, tmpz84c011_1_dir_pe_r },
-	PORT_END
+	public static IO_ReadPort sound_readport[]={
+		new IO_ReadPort(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_IO | MEMPORT_WIDTH_8),
+		new IO_ReadPort( 0x10, 0x13, z80ctc_1_r ),
+		new IO_ReadPort( 0x50, 0x50, tmpz84c011_1_pa_r ),
+		new IO_ReadPort( 0x51, 0x51, tmpz84c011_1_pb_r ),
+		new IO_ReadPort( 0x52, 0x52, tmpz84c011_1_pc_r ),
+		new IO_ReadPort( 0x30, 0x30, tmpz84c011_1_pd_r ),
+		new IO_ReadPort( 0x40, 0x40, tmpz84c011_1_pe_r ),
+		new IO_ReadPort( 0x54, 0x54, tmpz84c011_1_dir_pa_r ),
+		new IO_ReadPort( 0x55, 0x55, tmpz84c011_1_dir_pb_r ),
+		new IO_ReadPort( 0x56, 0x56, tmpz84c011_1_dir_pc_r ),
+		new IO_ReadPort( 0x34, 0x34, tmpz84c011_1_dir_pd_r ),
+		new IO_ReadPort( 0x44, 0x44, tmpz84c011_1_dir_pe_r ),
+		new IO_ReadPort(MEMPORT_MARKER, 0)
+	};
 	
 	static PORT_WRITE_START( sound_writeport )
 		{ 0x10, 0x13, z80ctc_1_w },

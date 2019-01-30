@@ -159,9 +159,11 @@ public class baraduke
 		new Memory_WriteAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static PORT_READ_START( mcu_readport )
-		{ HD63701_PORT1, HD63701_PORT1, inputport_r },			/* input ports read */
-	PORT_END
+	public static IO_ReadPort mcu_readport[]={
+		new IO_ReadPort(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_IO | MEMPORT_WIDTH_8),
+		new IO_ReadPort( HD63701_PORT1, HD63701_PORT1, inputport_r ),			/* input ports read */
+		new IO_ReadPort(MEMPORT_MARKER, 0)
+	};
 	
 	static PORT_WRITE_START( mcu_writeport )
 		{ HD63701_PORT1, HD63701_PORT1, inputport_select_w },	/* input port select */

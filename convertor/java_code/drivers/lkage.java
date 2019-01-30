@@ -131,9 +131,11 @@ public class lkage
 		return memory_region(REGION_USER1)[offset];
 	}
 	
-	static PORT_READ_START( readport )
-		{ 0x4000, 0x7fff, port_fetch_r },
-	PORT_END
+	public static IO_ReadPort readport[]={
+		new IO_ReadPort(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_IO | MEMPORT_WIDTH_8),
+		new IO_ReadPort( 0x4000, 0x7fff, port_fetch_r ),
+		new IO_ReadPort(MEMPORT_MARKER, 0)
+	};
 	
 	
 	public static Memory_ReadAddress m68705_readmem[]={

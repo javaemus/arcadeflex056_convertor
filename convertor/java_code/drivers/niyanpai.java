@@ -411,19 +411,21 @@ public class niyanpai
 	};
 	
 	
-	static PORT_READ_START( sound_readport )
-		{ 0x10, 0x13, z80ctc_0_r },
-		{ 0x50, 0x50, tmpz84c011_0_pa_r },
-		{ 0x51, 0x51, tmpz84c011_0_pb_r },
-		{ 0x52, 0x52, tmpz84c011_0_pc_r },
-		{ 0x30, 0x30, tmpz84c011_0_pd_r },
-		{ 0x40, 0x40, tmpz84c011_0_pe_r },
-		{ 0x54, 0x54, tmpz84c011_0_dir_pa_r },
-		{ 0x55, 0x55, tmpz84c011_0_dir_pb_r },
-		{ 0x56, 0x56, tmpz84c011_0_dir_pc_r },
-		{ 0x34, 0x34, tmpz84c011_0_dir_pd_r },
-		{ 0x44, 0x44, tmpz84c011_0_dir_pe_r },
-	PORT_END
+	public static IO_ReadPort sound_readport[]={
+		new IO_ReadPort(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_IO | MEMPORT_WIDTH_8),
+		new IO_ReadPort( 0x10, 0x13, z80ctc_0_r ),
+		new IO_ReadPort( 0x50, 0x50, tmpz84c011_0_pa_r ),
+		new IO_ReadPort( 0x51, 0x51, tmpz84c011_0_pb_r ),
+		new IO_ReadPort( 0x52, 0x52, tmpz84c011_0_pc_r ),
+		new IO_ReadPort( 0x30, 0x30, tmpz84c011_0_pd_r ),
+		new IO_ReadPort( 0x40, 0x40, tmpz84c011_0_pe_r ),
+		new IO_ReadPort( 0x54, 0x54, tmpz84c011_0_dir_pa_r ),
+		new IO_ReadPort( 0x55, 0x55, tmpz84c011_0_dir_pb_r ),
+		new IO_ReadPort( 0x56, 0x56, tmpz84c011_0_dir_pc_r ),
+		new IO_ReadPort( 0x34, 0x34, tmpz84c011_0_dir_pd_r ),
+		new IO_ReadPort( 0x44, 0x44, tmpz84c011_0_dir_pe_r ),
+		new IO_ReadPort(MEMPORT_MARKER, 0)
+	};
 	
 	static PORT_WRITE_START( sound_writeport )
 		{ 0x10, 0x13, z80ctc_0_w },

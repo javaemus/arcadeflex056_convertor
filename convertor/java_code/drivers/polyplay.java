@@ -185,10 +185,12 @@ public class polyplay
 	
 	
 	/* port mapping */
-	static PORT_READ_START( readport_polyplay )
-		{ 0x84, 0x84, polyplay_input_read },
-		{ 0x83, 0x83, polyplay_random_read },
-	PORT_END
+	public static IO_ReadPort readport_polyplay[]={
+		new IO_ReadPort(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_IO | MEMPORT_WIDTH_8),
+		new IO_ReadPort( 0x84, 0x84, polyplay_input_read ),
+		new IO_ReadPort( 0x83, 0x83, polyplay_random_read ),
+		new IO_ReadPort(MEMPORT_MARKER, 0)
+	};
 	
 	static PORT_WRITE_START( writeport_polyplay )
 		{ 0x80, 0x81, polyplay_sound_channel },

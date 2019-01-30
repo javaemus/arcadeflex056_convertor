@@ -166,15 +166,17 @@ public class tubep
 		new Memory_WriteAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static PORT_READ_START( tubep_readport )
-		{ 0x80, 0x80, input_port_3_r },
-		{ 0x90, 0x90, input_port_4_r },
-		{ 0xa0, 0xa0, input_port_5_r },
+	public static IO_ReadPort tubep_readport[]={
+		new IO_ReadPort(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_IO | MEMPORT_WIDTH_8),
+		new IO_ReadPort( 0x80, 0x80, input_port_3_r ),
+		new IO_ReadPort( 0x90, 0x90, input_port_4_r ),
+		new IO_ReadPort( 0xa0, 0xa0, input_port_5_r ),
 	
-		{ 0xb0, 0xb0, input_port_2_r },
-		{ 0xc0, 0xc0, input_port_1_r },
-		{ 0xd0, 0xd0, input_port_0_r },
-	PORT_END
+		new IO_ReadPort( 0xb0, 0xb0, input_port_2_r ),
+		new IO_ReadPort( 0xc0, 0xc0, input_port_1_r ),
+		new IO_ReadPort( 0xd0, 0xd0, input_port_0_r ),
+		new IO_ReadPort(MEMPORT_MARKER, 0)
+	};
 	
 	
 	
@@ -416,9 +418,11 @@ public class tubep
 		new Memory_WriteAddress(MEMPORT_MARKER, 0)
 	};
 	
-	static PORT_READ_START( tubep_sound_readport )
-		{ 0x06, 0x06, tubep_soundlatch_r },
-	PORT_END
+	public static IO_ReadPort tubep_sound_readport[]={
+		new IO_ReadPort(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_IO | MEMPORT_WIDTH_8),
+		new IO_ReadPort( 0x06, 0x06, tubep_soundlatch_r ),
+		new IO_ReadPort(MEMPORT_MARKER, 0)
+	};
 	
 	static PORT_WRITE_START( tubep_sound_writeport )
 		{ 0x00, 0x00, AY8910_control_port_0_w },
@@ -444,9 +448,11 @@ public class tubep
 		return res;
 	}
 	
-	static PORT_READ_START( rjammer_sound_readport )
-		{ 0x00, 0x00, rjammer_soundlatch_r },
-	PORT_END
+	public static IO_ReadPort rjammer_sound_readport[]={
+		new IO_ReadPort(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_IO | MEMPORT_WIDTH_8),
+		new IO_ReadPort( 0x00, 0x00, rjammer_soundlatch_r ),
+		new IO_ReadPort(MEMPORT_MARKER, 0)
+	};
 	
 	static PORT_WRITE_START( rjammer_sound_writeport )
 		{ 0x90, 0x90, AY8910_control_port_0_w },
