@@ -109,7 +109,6 @@ public class frogger
 	void galaxian_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	WRITE_HANDLER( frogger_filter_w );
 	
-	READ_HANDLER( frogger_portB_r );
 	WRITE_HANDLER( froggrmc_sh_irqtrigger_w );
 	
 	READ_HANDLER(frogger_ppi8255_0_r);

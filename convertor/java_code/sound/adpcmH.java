@@ -48,8 +48,6 @@ void OKIM6295_sh_update(void);
 void OKIM6295_set_bank_base(int which, int base);
 void OKIM6295_set_frequency(int which, int frequency);
 
-READ_HANDLER( OKIM6295_status_0_r );
-READ_HANDLER( OKIM6295_status_1_r );
 READ16_HANDLER( OKIM6295_status_0_lsb_r );
 READ16_HANDLER( OKIM6295_status_1_lsb_r );
 READ16_HANDLER( OKIM6295_status_0_msb_r );

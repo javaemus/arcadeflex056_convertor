@@ -32,8 +32,6 @@ public class pandoras
 	
 	/* from vidhrdw */
 	void pandoras_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom);
-	READ_HANDLER( pandoras_vram_r );
-	READ_HANDLER( pandoras_cram_r );
 	WRITE_HANDLER( pandoras_vram_w );
 	WRITE_HANDLER( pandoras_cram_w );
 	WRITE_HANDLER( pandoras_flipscreen_w );

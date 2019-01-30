@@ -88,18 +88,13 @@ public class buggychl
 	
 	
 	/* in machine */
-	READ_HANDLER( buggychl_68705_portA_r );
 	WRITE_HANDLER( buggychl_68705_portA_w );
 	WRITE_HANDLER( buggychl_68705_ddrA_w );
-	READ_HANDLER( buggychl_68705_portB_r );
 	WRITE_HANDLER( buggychl_68705_portB_w );
 	WRITE_HANDLER( buggychl_68705_ddrB_w );
-	READ_HANDLER( buggychl_68705_portC_r );
 	WRITE_HANDLER( buggychl_68705_portC_w );
 	WRITE_HANDLER( buggychl_68705_ddrC_w );
 	WRITE_HANDLER( buggychl_mcu_w );
-	READ_HANDLER( buggychl_mcu_r );
-	READ_HANDLER( buggychl_mcu_status_r );
 	
 	/* in vidhrdw */
 	extern unsigned char *buggychl_scrollv,*buggychl_scrollh;

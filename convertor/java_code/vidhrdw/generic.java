@@ -130,15 +130,15 @@ public class generic
 	}
 	
 	
-	READ_HANDLER( videoram_r )
+	public static ReadHandlerPtr videoram_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return videoram[offset];
-	}
+	} };
 	
-	READ_HANDLER( colorram_r )
+	public static ReadHandlerPtr colorram_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return colorram[offset];
-	}
+	} };
 	
 	WRITE_HANDLER( videoram_w )
 	{
@@ -162,10 +162,10 @@ public class generic
 	
 	
 	
-	READ_HANDLER( spriteram_r )
+	public static ReadHandlerPtr spriteram_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return spriteram[offset];
-	}
+	} };
 	
 	WRITE_HANDLER( spriteram_w )
 	{
@@ -182,10 +182,10 @@ public class generic
 		COMBINE_DATA(spriteram16+offset);
 	}
 	
-	READ_HANDLER( spriteram_2_r )
+	public static ReadHandlerPtr spriteram_2_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return spriteram_2[offset];
-	}
+	} };
 	
 	WRITE_HANDLER( spriteram_2_w )
 	{

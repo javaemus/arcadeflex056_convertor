@@ -59,10 +59,10 @@ public class tehkanwc
 	
 	
 	
-	READ_HANDLER( tehkanwc_videoram1_r )
+	public static ReadHandlerPtr tehkanwc_videoram1_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return tehkanwc_videoram1[offset];
-	}
+	} };
 	
 	WRITE_HANDLER( tehkanwc_videoram1_w )
 	{
@@ -70,15 +70,15 @@ public class tehkanwc
 		dirtybuffer1[offset] = 1;
 	}
 	
-	READ_HANDLER( tehkanwc_scroll_x_r )
+	public static ReadHandlerPtr tehkanwc_scroll_x_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return scroll_x[offset];
-	}
+	} };
 	
-	READ_HANDLER( tehkanwc_scroll_y_r )
+	public static ReadHandlerPtr tehkanwc_scroll_y_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return scroll_y;
-	}
+	} };
 	
 	WRITE_HANDLER( tehkanwc_scroll_x_w )
 	{

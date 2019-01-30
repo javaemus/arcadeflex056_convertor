@@ -255,12 +255,12 @@ public class rf5c68
 	/************************************************/
 	/*    RF5C68 read memory                        */
 	/************************************************/
-	READ_HANDLER( RF5C68_r )
+	public static ReadHandlerPtr RF5C68_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		unsigned int  bank;
 		bank = ((unsigned int)(wreg[0x07]&0x0f))<<(8+4);
 		return pcmbuf[bank + offset];
-	}
+	} };
 	/************************************************/
 	/*    RF5C68 write memory                       */
 	/************************************************/

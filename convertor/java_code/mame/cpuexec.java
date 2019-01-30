@@ -644,11 +644,11 @@ public class cpuexec
 	}
 	
 	
-	READ_HANDLER( watchdog_reset_r )
+	public static ReadHandlerPtr watchdog_reset_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		watchdog_reset();
 		return 0xff;
-	}
+	} };
 	
 	
 	WRITE16_HANDLER( watchdog_reset16_w )

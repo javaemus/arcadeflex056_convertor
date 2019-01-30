@@ -186,10 +186,10 @@ public class shangkid
 	
 	/***************************************************************************************/
 	
-	READ_HANDLER( shangkid_soundlatch_r )
+	public static ReadHandlerPtr shangkid_soundlatch_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return sound_latch;
-	}
+	} };
 	
 	/***************************************************************************************/
 	

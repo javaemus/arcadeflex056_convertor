@@ -125,7 +125,7 @@ public class vsnes
 		}
 	}
 	
-	READ_HANDLER( gun_in0_r )
+	public static ReadHandlerPtr gun_in0_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 	
 	
@@ -153,10 +153,10 @@ public class vsnes
 	return ret;
 	
 	
-	}
+	} };
 	
 	
-	READ_HANDLER( vsnes_in0_r )
+	public static ReadHandlerPtr vsnes_in0_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 	
 		int ret = ( input_latch[0] ) & 1;
@@ -169,10 +169,10 @@ public class vsnes
 	
 		return ret;
 	
-	}
+	} };
 	
 	
-	READ_HANDLER( vsnes_in1_r )
+	public static ReadHandlerPtr vsnes_in1_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		int ret = ( input_latch[1] ) & 1;
 	
@@ -182,7 +182,7 @@ public class vsnes
 		input_latch[1] >>= 1;
 	
 		return ret;
-	}
+	} };
 	
 	WRITE_HANDLER( vsnes_in0_1_w )
 	{
@@ -195,7 +195,7 @@ public class vsnes
 		}
 	}
 	
-	READ_HANDLER( vsnes_in0_1_r )
+	public static ReadHandlerPtr vsnes_in0_1_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		int ret = ( input_latch[2] ) & 1;
 	
@@ -205,9 +205,9 @@ public class vsnes
 		ret |= readinputport( 6 ); 				/* merge coins, etc */
 		ret |= ( readinputport( 7 ) & 3 ) << 3; /* merge 2 dipswitches */
 		return ret;
-	}
+	} };
 	
-	READ_HANDLER( vsnes_in1_1_r )
+	public static ReadHandlerPtr vsnes_in1_1_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		int ret = ( input_latch[3] ) & 1;
 	
@@ -218,7 +218,7 @@ public class vsnes
 	
 		return ret;
 	
-	}
+	} };
 	
 	/*************************************
 	 *

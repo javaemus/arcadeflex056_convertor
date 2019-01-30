@@ -344,24 +344,24 @@ public class tait8741
 	}
 	
 	/* Read port handler */
-	READ_HANDLER( TAITO8741_0_r )
+	public static ReadHandlerPtr TAITO8741_0_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		if(offset&1) return I8741_status_r(0);
 		return I8741_data_r(0);
-	}
-	READ_HANDLER( TAITO8741_1_r )
+	} };
+	public static ReadHandlerPtr TAITO8741_1_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		if(offset&1) return I8741_status_r(1);
 		return I8741_data_r(1);
-	}
-	READ_HANDLER( TAITO8741_2_r )
+	} };
+	public static ReadHandlerPtr TAITO8741_2_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		if(offset&1) return I8741_status_r(2);
 		return I8741_data_r(2);
-	}
-	READ_HANDLER( TAITO8741_3_r )
+	} };
+	public static ReadHandlerPtr TAITO8741_3_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		if(offset&1) return I8741_status_r(3);
 		return I8741_data_r(3);
-	}
+	} };
 }

@@ -71,10 +71,7 @@ public class route16
 	WRITE_HANDLER( route16_out1_w );
 	WRITE_HANDLER( route16_videoram1_w );
 	WRITE_HANDLER( route16_videoram2_w );
-	READ_HANDLER( route16_videoram1_r );
-	READ_HANDLER( route16_videoram2_r );
 	WRITE_HANDLER( route16_sharedram_w );
-	READ_HANDLER( route16_sharedram_r );
 	void route16_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	WRITE_HANDLER( stratvox_sn76477_w );
 	

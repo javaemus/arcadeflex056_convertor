@@ -121,20 +121,20 @@ public class actfancr
 		if (pf1_alt_tilemap) tilemap_mark_tile_dirty(pf1_alt_tilemap,offset/2);
 	}
 	
-	READ_HANDLER( actfancr_pf1_data_r )
+	public static ReadHandlerPtr actfancr_pf1_data_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return actfancr_pf1_data[offset];
-	}
+	} };
 	
 	WRITE_HANDLER( actfancr_pf2_data_w )
 	{
 		actfancr_pf2_data[offset]=data;
 	}
 	
-	READ_HANDLER( actfancr_pf2_data_r )
+	public static ReadHandlerPtr actfancr_pf2_data_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return actfancr_pf2_data[offset];
-	}
+	} };
 	
 	/******************************************************************************/
 	

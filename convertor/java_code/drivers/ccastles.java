@@ -96,7 +96,6 @@ public class ccastles
 	void ccastles_vh_stop(void);
 	void ccastles_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	
-	READ_HANDLER( ccastles_bitmode_r );
 	WRITE_HANDLER( ccastles_bitmode_w );
 	
 	

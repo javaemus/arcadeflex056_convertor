@@ -36,9 +36,6 @@ int UPD7759_data_r (int num, int offs);
 
 WRITE_HANDLER( UPD7759_0_message_w );
 WRITE_HANDLER( UPD7759_0_start_w );
-READ_HANDLER( UPD7759_0_busy_r );
-READ_HANDLER( UPD7759_0_data_r );
-READ_HANDLER( UPD7759_1_data_r );
 
 #endif
 

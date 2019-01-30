@@ -17,9 +17,7 @@ void K007121_sprites_draw(int chip,struct mame_bitmap *bitmap,
 
 int K007342_vh_start(int gfx_index, void (*callback)(int layer,int bank,int *code,int *color));
 void K007342_vh_stop(void);
-READ_HANDLER( K007342_r );
 WRITE_HANDLER( K007342_w );
-READ_HANDLER( K007342_scroll_r );
 WRITE_HANDLER( K007342_scroll_w );
 void K007342_tilemap_update(void);
 WRITE_HANDLER( K007342_vreg_w );
@@ -30,7 +28,6 @@ int K007342_is_INT_enabled(void);
 
 int K007420_vh_start(int gfxnum, void (*callback)(int *code,int *color));
 void K007420_vh_stop(void);
-READ_HANDLER( K007420_r );
 WRITE_HANDLER( K007420_w );
 void K007420_sprites_draw(struct mame_bitmap *bitmap);
 
@@ -66,7 +63,6 @@ int K052109_vh_start(int gfx_memory_region,int plane0,int plane1,int plane2,int 
 		void (*callback)(int layer,int bank,int *code,int *color));
 void K052109_vh_stop(void);
 /* plain 8-bit access */
-READ_HANDLER( K052109_r );
 WRITE_HANDLER( K052109_w );
 READ16_HANDLER( K052109_word_r );
 WRITE16_HANDLER( K052109_word_w );
@@ -94,11 +90,9 @@ The callback must put:
 int K051960_vh_start(int gfx_memory_region,int plane0,int plane1,int plane2,int plane3,
 		void (*callback)(int *code,int *color,int *priority,int *shadow));
 void K051960_vh_stop(void);
-READ_HANDLER( K051960_r );
 WRITE_HANDLER( K051960_w );
 READ16_HANDLER( K051960_word_r );
 WRITE16_HANDLER( K051960_word_w );
-READ_HANDLER( K051937_r );
 WRITE_HANDLER( K051937_w );
 READ16_HANDLER( K051937_word_r );
 WRITE16_HANDLER( K051937_word_w );
@@ -107,7 +101,6 @@ int K051960_is_IRQ_enabled(void);
 int K051960_is_NMI_enabled(void);
 
 /* special handling for the chips sharing address space */
-READ_HANDLER( K052109_051960_r );
 WRITE_HANDLER( K052109_051960_w );
 
 
@@ -116,9 +109,7 @@ int K053245_vh_start(int gfx_memory_region,int plane0,int plane1,int plane2,int 
 void K053245_vh_stop(void);
 READ16_HANDLER( K053245_word_r );
 WRITE16_HANDLER( K053245_word_w );
-READ_HANDLER( K053245_r );
 WRITE_HANDLER( K053245_w );
-READ_HANDLER( K053244_r );
 WRITE_HANDLER( K053244_w );
 READ16_HANDLER( K053244_lsb_r );
 WRITE16_HANDLER( K053244_lsb_w );
@@ -133,11 +124,9 @@ int K053247_vh_start(int gfx_memory_region,int dx,int dy,int plane0,int plane1,i
 void K053247_vh_stop(void);
 READ16_HANDLER( K053247_word_r );
 WRITE16_HANDLER( K053247_word_w );
-READ_HANDLER( K053247_r );
 WRITE_HANDLER( K053247_w );
 void K053247_sprites_draw(struct mame_bitmap *bitmap);
 
-READ_HANDLER( K053246_r );
 WRITE_HANDLER( K053246_w );
 READ16_HANDLER( K053246_word_r );
 WRITE16_HANDLER( K053246_word_w );
@@ -168,15 +157,9 @@ int K051316_vh_start_2(int gfx_memory_region,int bpp,
 void K051316_vh_stop_0(void);
 void K051316_vh_stop_1(void);
 void K051316_vh_stop_2(void);
-READ_HANDLER( K051316_0_r );
-READ_HANDLER( K051316_1_r );
-READ_HANDLER( K051316_2_r );
 WRITE_HANDLER( K051316_0_w );
 WRITE_HANDLER( K051316_1_w );
 WRITE_HANDLER( K051316_2_w );
-READ_HANDLER( K051316_rom_0_r );
-READ_HANDLER( K051316_rom_1_r );
-READ_HANDLER( K051316_rom_2_r );
 WRITE_HANDLER( K051316_ctrl_0_w );
 WRITE_HANDLER( K051316_ctrl_1_w );
 WRITE_HANDLER( K051316_ctrl_2_w );
@@ -197,12 +180,10 @@ int K053251_vh_start(void);
 
 
 WRITE_HANDLER( K054000_w );
-READ_HANDLER( K054000_r );
 WRITE16_HANDLER( K054000_lsb_w );
 READ16_HANDLER( K054000_lsb_r );
 
 WRITE_HANDLER( K051733_w );
-READ_HANDLER( K051733_r );
 
 int K054157_vh_start(int gfx_memory_region, int big, int (*scrolld)[4][2],
 		     int plane0,int plane1,int plane2,int plane3,

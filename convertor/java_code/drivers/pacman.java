@@ -146,7 +146,6 @@ public class pacman
 	extern void shootbul_decode(void);
 	
 	void theglobp_init_machine(void);
-	READ_HANDLER( theglobp_decrypt_rom );
 	
 	void mspacman_init_machine(void);
 	WRITE_HANDLER( mspacman_activate_rom );

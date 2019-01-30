@@ -151,14 +151,14 @@ public class punchout
 	
 	
 	
-	READ_HANDLER( punchout_input_3_r )
+	public static ReadHandlerPtr punchout_input_3_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		int data = input_port_3_r(offset);
 		/* bit 4 is busy pin level */
 		if( VLM5030_BSY() ) data &= ~0x10;
 		else data |= 0x10;
 		return data;
-	}
+	} };
 	
 	WRITE_HANDLER( punchout_speech_reset_w )
 	{

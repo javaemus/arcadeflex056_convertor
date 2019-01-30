@@ -38,9 +38,9 @@ public class thief
 	
 	/***************************************************************************/
 	
-	READ_HANDLER( thief_context_ram_r ){
+	public static ReadHandlerPtr thief_context_ram_r  = new ReadHandlerPtr() { public int handler(int offset){
 		return thief_coprocessor.context_ram[0x40*thief_coprocessor.bank+offset];
-	}
+	} };
 	
 	WRITE_HANDLER( thief_context_ram_w ){
 		thief_coprocessor.context_ram[0x40*thief_coprocessor.bank+offset] = data;
@@ -96,11 +96,11 @@ public class thief
 		thief_read_mask = (data>>4)&3;
 	}
 	
-	READ_HANDLER( thief_videoram_r ){
+	public static ReadHandlerPtr thief_videoram_r  = new ReadHandlerPtr() { public int handler(int offset){
 		unsigned char *source = &videoram[offset];
 		if( thief_video_control&0x02 ) source+=0x2000*4; /* foreground/background */
 		return source[thief_read_mask*0x2000];
-	}
+	} };
 	
 	WRITE_HANDLER( thief_videoram_w ){
 		UINT8 *dest = &videoram[offset];
@@ -279,7 +279,7 @@ public class thief
 		}
 	}
 	
-	READ_HANDLER( thief_coprocessor_r ){
+	public static ReadHandlerPtr thief_coprocessor_r  = new ReadHandlerPtr() { public int handler(int offset){
 		switch( offset ){
 	 	case SCREEN_XPOS: /* xpos */
 		case SCREEN_YPOS: /* ypos */
@@ -320,7 +320,7 @@ public class thief
 		}
 	
 		return thief_coprocessor.param[offset];
-	}
+	} };
 	
 	WRITE_HANDLER( thief_coprocessor_w ){
 		switch( offset ){

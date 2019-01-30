@@ -66,20 +66,20 @@ public class ddrible
 			ddrible_int_enable_1 = 0;
 	}
 	
-	READ_HANDLER( ddrible_sharedram_r )
+	public static ReadHandlerPtr ddrible_sharedram_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return ddrible_sharedram[offset];
-	}
+	} };
 	
 	WRITE_HANDLER( ddrible_sharedram_w )
 	{
 		ddrible_sharedram[offset] = data;
 	}
 	
-	READ_HANDLER( ddrible_snd_sharedram_r )
+	public static ReadHandlerPtr ddrible_snd_sharedram_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return ddrible_snd_sharedram[offset];
-	}
+	} };
 	
 	WRITE_HANDLER( ddrible_snd_sharedram_w )
 	{

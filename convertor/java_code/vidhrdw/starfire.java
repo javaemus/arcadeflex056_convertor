@@ -132,10 +132,10 @@ public class starfire
 		}
 	}
 	
-	READ_HANDLER( starfire_colorram_r )
+	public static ReadHandlerPtr starfire_colorram_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return starfire_colorram[offset];
-	}
+	} };
 	
 	
 	
@@ -226,7 +226,7 @@ public class starfire
 		}
 	}
 	
-	READ_HANDLER( starfire_videoram_r )
+	public static ReadHandlerPtr starfire_videoram_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		int sh, mask, d0;
 		int offset1 = offset & 0x1fff;
@@ -254,7 +254,7 @@ public class starfire
 		d0 = (starfire_videoram[offset1] & (mask >> 8)) | (starfire_videoram[offset2] & mask);
 		d0 = (d0 << sh) | (d0 >> (8 - sh));
 		return d0 & 0xff;
-	}
+	} };
 	
 	
 	

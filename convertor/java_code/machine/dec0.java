@@ -256,13 +256,13 @@ public class dec0
 	static int share[0xff];
 	static int hippodrm_msb,hippodrm_lsb;
 	
-	READ_HANDLER( hippodrm_prot_r )
+	public static ReadHandlerPtr hippodrm_prot_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 	//logerror("6280 PC %06x - Read %06x\n",cpu_getpc(),offset+0x1d0000);
 		if (hippodrm_lsb==0x45) return 0x4e;
 		if (hippodrm_lsb==0x92) return 0x15;
 		return 0;
-	}
+	} };
 	
 	WRITE_HANDLER( hippodrm_prot_w )
 	{
@@ -273,10 +273,10 @@ public class dec0
 	//logerror("6280 PC %06x - Wrote %06x to %04x\n",cpu_getpc(),data,offset+0x1d0000);
 	}
 	
-	READ_HANDLER( hippodrm_shared_r )
+	public static ReadHandlerPtr hippodrm_shared_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return share[offset];
-	}
+	} };
 	
 	WRITE_HANDLER( hippodrm_shared_w )
 	{

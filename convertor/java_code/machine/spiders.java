@@ -41,7 +41,6 @@ public class spiders
 	
 	WRITE_HANDLER( spiders_flip_w );
 	WRITE_HANDLER( spiders_vrif_w );
-	READ_HANDLER( spiders_vrom_r );
 	
 	
 	/* Declare PIA structure */
@@ -158,7 +157,7 @@ public class spiders
 		vrom_ctrl_data=15-(data&0x0f);
 	}
 	
-	READ_HANDLER( spiders_vrom_r )
+	public static ReadHandlerPtr spiders_vrom_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		int retval;
 		unsigned char *RAM = memory_region(REGION_GFX1);
@@ -196,6 +195,6 @@ public class spiders
 	//	        logerror("VIDEO : Port address set to %04x\n",vrom_address);
 		}
 		return retval;
-	}
+	} };
 	
 }

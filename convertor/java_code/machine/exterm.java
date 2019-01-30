@@ -16,13 +16,13 @@ public class exterm
 	}
 	
 	
-	READ_HANDLER( exterm_host_data_r )
+	public static ReadHandlerPtr exterm_host_data_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return tms34010_host_r(1, TMS34010_HOST_DATA);
-	}
+	} };
 	
 	
-	READ_HANDLER( exterm_input_port_0_1_r )
+	public static ReadHandlerPtr exterm_input_port_0_1_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		int hi = input_port_1_r(offset);
 		if (!(hi & 2)) aimpos1++;
@@ -30,9 +30,9 @@ public class exterm
 		aimpos1 &= 0x3f;
 	
 		return ((hi & 0x80) << 8) | (aimpos1 << 8) | input_port_0_r(offset);
-	}
+	} };
 	
-	READ_HANDLER( exterm_input_port_2_3_r )
+	public static ReadHandlerPtr exterm_input_port_2_3_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		int hi = input_port_3_r(offset);
 		if (!(hi & 2)) aimpos2++;
@@ -40,7 +40,7 @@ public class exterm
 		aimpos2 &= 0x3f;
 	
 		return (aimpos2 << 8) | input_port_2_r(offset);
-	}
+	} };
 	
 	WRITE_HANDLER( exterm_output_port_0_w )
 	{

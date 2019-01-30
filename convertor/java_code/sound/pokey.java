@@ -953,34 +953,34 @@ public class pokey
 	    return data;
 	}
 	
-	READ_HANDLER( pokey1_r )
+	public static ReadHandlerPtr pokey1_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return pokey_register_r(0, offset);
-	}
+	} };
 	
-	READ_HANDLER( pokey2_r )
+	public static ReadHandlerPtr pokey2_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return pokey_register_r(1, offset);
-	}
+	} };
 	
-	READ_HANDLER( pokey3_r )
+	public static ReadHandlerPtr pokey3_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return pokey_register_r(2, offset);
-	}
+	} };
 	
-	READ_HANDLER( pokey4_r )
+	public static ReadHandlerPtr pokey4_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return pokey_register_r(3, offset);
-	}
+	} };
 	
-	READ_HANDLER( quad_pokey_r )
+	public static ReadHandlerPtr quad_pokey_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		int pokey_num = (offset >> 3) & ~0x04;
 		int control = (offset & 0x20) >> 2;
 		int pokey_reg = (offset % 8) | control;
 	
 		return pokey_register_r(pokey_num, pokey_reg);
-	}
+	} };
 	
 	
 	void pokey_register_w(int chip, int offs, int data)

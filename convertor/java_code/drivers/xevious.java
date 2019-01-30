@@ -208,16 +208,11 @@ public class xevious
 	
 	
 	extern unsigned char *xevious_sharedram;
-	READ_HANDLER( xevious_sharedram_r );
 	WRITE_HANDLER( xevious_sharedram_w );
-	READ_HANDLER( xevious_dsw_r );
 	WRITE_HANDLER( xevious_interrupt_enable_1_w );
 	WRITE_HANDLER( xevious_interrupt_enable_2_w );
 	WRITE_HANDLER( xevious_interrupt_enable_3_w );
 	WRITE_HANDLER( xevious_bs_w );
-	READ_HANDLER( xevious_bb_r );
-	READ_HANDLER( xevious_customio_r );
-	READ_HANDLER( xevious_customio_data_r );
 	WRITE_HANDLER( xevious_customio_w );
 	WRITE_HANDLER( xevious_customio_data_w );
 	WRITE_HANDLER( xevious_halt_w );

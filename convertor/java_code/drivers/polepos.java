@@ -78,12 +78,8 @@ public class polepos
 	int polepos_z8002_2_interrupt(void);
 	WRITE_HANDLER( polepos_z8002_enable_w );
 	WRITE_HANDLER( polepos_adc_select_w );
-	READ_HANDLER( polepos_adc_r );
-	READ_HANDLER( polepos_io_r );
 	WRITE_HANDLER( polepos_mcu_enable_w );
-	READ_HANDLER( polepos_mcu_control_r );
 	WRITE_HANDLER( polepos_mcu_control_w );
-	READ_HANDLER( polepos_mcu_data_r );
 	WRITE_HANDLER( polepos_mcu_data_w );
 	WRITE_HANDLER( polepos_start_w );
 	READ16_HANDLER( polepos2_ic25_r );
@@ -119,10 +115,6 @@ public class polepos
 	READ16_HANDLER( polepos_road16_r );
 	READ16_HANDLER( polepos_alpha16_r );
 	READ16_HANDLER( polepos_sprite16_r );
-	READ_HANDLER( polepos_view_r );
-	READ_HANDLER( polepos_road_r );
-	READ_HANDLER( polepos_alpha_r );
-	READ_HANDLER( polepos_sprite_r );
 	
 	WRITE16_HANDLER( polepos_view16_hscroll_w );
 	WRITE16_HANDLER( polepos_road16_vscroll_w );

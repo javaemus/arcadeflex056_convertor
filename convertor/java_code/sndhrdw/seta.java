@@ -99,7 +99,7 @@ public class seta
 	/* Use these for 8 bit CPUs */
 	
 	
-	READ_HANDLER( seta_sound_r )
+	public static ReadHandlerPtr seta_sound_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		int channel	=	offset / 8;
 		int reg		=	offset % 8;
@@ -120,7 +120,7 @@ public class seta
 		}
 	
 		return 0;
-	}
+	} };
 	
 	
 	

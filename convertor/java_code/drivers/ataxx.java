@@ -98,7 +98,6 @@ public class ataxx
 	WRITE_HANDLER( ataxx_i86_control_w );
 	WRITE_HANDLER( leland_i86_command_lo_w );
 	WRITE_HANDLER( leland_i86_command_hi_w );
-	READ_HANDLER( leland_i86_response_r );
 	
 	int  leland_i186_sh_start(const struct MachineSound *msound);
 	void leland_i186_sound_init(void);
@@ -114,8 +113,6 @@ public class ataxx
 	/* Video routines */
 	extern UINT8 *ataxx_qram;
 	
-	READ_HANDLER( ataxx_mvram_port_r );
-	READ_HANDLER( ataxx_svram_port_r );
 	WRITE_HANDLER( ataxx_mvram_port_w );
 	WRITE_HANDLER( ataxx_svram_port_w );
 	WRITE_HANDLER( leland_master_video_addr_w );

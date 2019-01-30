@@ -115,12 +115,12 @@ public class _5220intf
 	
 	***********************************************************************************************/
 	
-	READ_HANDLER( tms5220_status_r )
+	public static ReadHandlerPtr tms5220_status_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 	    /* bring up to date first */
 	    stream_update(stream, -1);
 	    return tms5220_status_read();
-	}
+	} };
 	
 	
 	

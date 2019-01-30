@@ -40,10 +40,7 @@ public class trackfld
 	void hyperspt_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	
 	WRITE_HANDLER( konami_sh_irqtrigger_w );
-	READ_HANDLER( trackfld_sh_timer_r );
-	READ_HANDLER( trackfld_speech_r );
 	WRITE_HANDLER( trackfld_sound_w );
-	READ_HANDLER( hyprolyb_speech_r );
 	WRITE_HANDLER( hyprolyb_ADPCM_data_w );
 	
 	extern struct SN76496interface konami_sn76496_interface;

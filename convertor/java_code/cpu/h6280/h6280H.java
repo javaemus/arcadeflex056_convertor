@@ -56,10 +56,8 @@ public class h6280H
 	extern const char *h6280_info(void *context, int regnum);
 	extern unsigned h6280_dasm(char *buffer, unsigned pc);
 	
-	READ_HANDLER( H6280_irq_status_r );
 	WRITE_HANDLER( H6280_irq_status_w );
 	
-	READ_HANDLER( H6280_timer_r );
 	WRITE_HANDLER( H6280_timer_w );
 	
 	#ifdef MAME_DEBUG

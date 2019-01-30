@@ -146,10 +146,10 @@ public class liberatr
 	}
 	
 	
-	READ_HANDLER( liberatr_bitmap_xy_r )
+	public static ReadHandlerPtr liberatr_bitmap_xy_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return liberatr_videoram[((*liberatr_y)<<8) | (*liberatr_x)];
-	}
+	} };
 	
 	
 	WRITE_HANDLER( liberatr_colorram_w )

@@ -130,20 +130,20 @@ public class mitchell
 		}
 	}
 	
-	READ_HANDLER( mgakuen_videoram_r )
+	public static ReadHandlerPtr mgakuen_videoram_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return pang_videoram[offset];
-	}
+	} };
 	
 	WRITE_HANDLER( mgakuen_objram_w )
 	{
 		pang_objram[offset]=data;
 	}
 	
-	READ_HANDLER( mgakuen_objram_r )
+	public static ReadHandlerPtr mgakuen_objram_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return pang_objram[offset];
-	}
+	} };
 	
 	WRITE_HANDLER( pang_videoram_w )
 	{
@@ -151,11 +151,11 @@ public class mitchell
 		else mgakuen_videoram_w(offset,data);
 	}
 	
-	READ_HANDLER( pang_videoram_r )
+	public static ReadHandlerPtr pang_videoram_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		if (video_bank) return mgakuen_objram_r(offset);
 		else return mgakuen_videoram_r(offset);
-	}
+	} };
 	
 	/***************************************************************************
 	  COLOUR RAM
@@ -170,10 +170,10 @@ public class mitchell
 		}
 	}
 	
-	READ_HANDLER( pang_colorram_r )
+	public static ReadHandlerPtr pang_colorram_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return pang_colorram[offset];
-	}
+	} };
 	
 	/***************************************************************************
 	  PALETTE HANDLERS (COLOURS: BANK 0 = 0x00-0x3f BANK 1=0x40-0xff)
@@ -222,21 +222,21 @@ public class mitchell
 		else paletteram_xxxxRRRRGGGGBBBB_w(offset,data);
 	}
 	
-	READ_HANDLER( pang_paletteram_r )
+	public static ReadHandlerPtr pang_paletteram_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		if (paletteram_bank) return paletteram_r(offset + 0x800);
 		return paletteram_r(offset);
-	}
+	} };
 	
 	WRITE_HANDLER( mgakuen_paletteram_w )
 	{
 		paletteram_xxxxRRRRGGGGBBBB_w(offset,data);
 	}
 	
-	READ_HANDLER( mgakuen_paletteram_r )
+	public static ReadHandlerPtr mgakuen_paletteram_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return paletteram_r(offset);
-	}
+	} };
 	
 	
 	

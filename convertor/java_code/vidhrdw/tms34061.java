@@ -563,10 +563,10 @@ public class tms34061
 	 *
 	 *************************************/
 	
-	READ_HANDLER( tms34061_latch_r )
+	public static ReadHandlerPtr tms34061_latch_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return tms34061.latchdata;
-	}
+	} };
 	
 	
 	WRITE_HANDLER( tms34061_latch_w )

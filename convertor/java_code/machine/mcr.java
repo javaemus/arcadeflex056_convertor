@@ -156,7 +156,6 @@ public class mcr
 	 *
 	 *************************************/
 	
-	READ_HANDLER( zwackery_port_2_r );
 	
 	static struct pia6821_interface zwackery_pia_2_intf =
 	{

@@ -141,10 +141,10 @@ public class suprloco
 		tilemap_set_scrollx(bg_tilemap,offset, data - adj);
 	}
 	
-	READ_HANDLER( suprloco_scrollram_r )
+	public static ReadHandlerPtr suprloco_scrollram_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return suprloco_scrollram[offset];
-	}
+	} };
 	
 	WRITE_HANDLER( suprloco_control_w )
 	{
@@ -173,10 +173,10 @@ public class suprloco
 	}
 	
 	
-	READ_HANDLER( suprloco_control_r )
+	public static ReadHandlerPtr suprloco_control_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return control;
-	}
+	} };
 	
 	
 	

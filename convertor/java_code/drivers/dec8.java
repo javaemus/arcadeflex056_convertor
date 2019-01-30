@@ -67,8 +67,6 @@ public class dec8
 	WRITE_HANDLER( dec8_bac06_1_w );
 	WRITE_HANDLER( dec8_pf0_data_w );
 	WRITE_HANDLER( dec8_pf1_data_w );
-	READ_HANDLER( dec8_pf0_data_r );
-	READ_HANDLER( dec8_pf1_data_r );
 	WRITE_HANDLER( srdarwin_videoram_w );
 	WRITE_HANDLER( dec8_scroll1_w );
 	WRITE_HANDLER( dec8_scroll2_w );

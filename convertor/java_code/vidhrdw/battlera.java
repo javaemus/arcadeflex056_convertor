@@ -84,16 +84,16 @@ public class battlera
 	
 	/******************************************************************************/
 	
-	READ_HANDLER( HuC6270_debug_r )
+	public static ReadHandlerPtr HuC6270_debug_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return HuC6270_vram[offset];
-	}
+	} };
 	
 	WRITE_HANDLER( HuC6270_debug_w )
 	{
 		HuC6270_vram[offset]=data;
 	}
-	READ_HANDLER( HuC6270_register_r )
+	public static ReadHandlerPtr HuC6270_register_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		int rr;
 	
@@ -107,7 +107,7 @@ public class battlera
 			| (bldwolf_vblank << 5)	/* VD flag (1 when vblank else 0) */
 			| (0 << 6)	/* BSY flag (1 when dma active, else 0) */
 			| (0 << 7);	/* Always zero */
-	}
+	} };
 	
 	WRITE_HANDLER( HuC6270_register_w )
 	{
@@ -122,7 +122,7 @@ public class battlera
 	
 	/******************************************************************************/
 	
-	READ_HANDLER( HuC6270_data_r )
+	public static ReadHandlerPtr HuC6270_data_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		int result;
 	
@@ -137,7 +137,7 @@ public class battlera
 		}
 	
 		return 0;
-	}
+	} };
 	
 	WRITE_HANDLER( HuC6270_data_w )
 	{

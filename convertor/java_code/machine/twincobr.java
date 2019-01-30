@@ -192,10 +192,10 @@ public class twincobr
 		wardner_mainram[offset] = data;
 	
 	}
-	READ_HANDLER( wardner_mainram_r )
+	public static ReadHandlerPtr wardner_mainram_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return wardner_mainram[offset];
-	}
+	} };
 	
 	
 	static void toaplan0_control_w(int offset, int data)

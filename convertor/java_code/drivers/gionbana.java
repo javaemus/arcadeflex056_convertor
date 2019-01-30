@@ -102,9 +102,7 @@ public class gionbana
 	int hanamomo_vh_start(void);
 	void hanamomo_vh_stop(void);
 	
-	READ_HANDLER( gionbana_palette_r );
 	WRITE_HANDLER( gionbana_palette_w );
-	READ_HANDLER( maiko_palette_r );
 	WRITE_HANDLER( maiko_palette_w );
 	void gionbana_radrx_w(int data);
 	void gionbana_radry_w(int data);
@@ -117,7 +115,6 @@ public class gionbana
 	void gionbana_vramsel_w(int data);
 	void gionbana_romsel_w(int data);
 	void gionbana_paltblnum_w(int data);
-	READ_HANDLER( gionbana_paltbl_r );
 	WRITE_HANDLER( gionbana_paltbl_w );
 	
 	

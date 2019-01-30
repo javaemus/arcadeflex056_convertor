@@ -131,12 +131,8 @@ public class sega
 	extern void sega_security(int chip);
 	WRITE_HANDLER( sega_w );
 	
-	READ_HANDLER( sega_ports_r );
-	READ_HANDLER( sega_IN4_r );
-	READ_HANDLER( elim4_IN4_r );
 	
 	int sega_interrupt(void);
-	READ_HANDLER( sega_mult_r );
 	WRITE_HANDLER( sega_mult1_w );
 	WRITE_HANDLER( sega_mult2_w );
 	WRITE_HANDLER( sega_switch_w );
@@ -144,7 +140,6 @@ public class sega
 	
 	/* Sound hardware prototypes */
 	int sega_sh_start (const struct MachineSound *msound);
-	READ_HANDLER( sega_sh_r );
 	WRITE_HANDLER( sega_sh_speech_w );
 	void sega_sh_update(void);
 	

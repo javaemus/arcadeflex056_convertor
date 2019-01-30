@@ -221,7 +221,7 @@ public class astrof
 	}
 	
 	
-	READ_HANDLER( tomahawk_protection_r )
+	public static ReadHandlerPtr tomahawk_protection_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		/* flip the byte */
 	
@@ -235,7 +235,7 @@ public class astrof
 				  ((*tomahawk_protection & 0x80) >> 7);
 	
 		return res;
-	}
+	} };
 	/***************************************************************************
 	
 	  Draw the game screen in the given mame_bitmap.

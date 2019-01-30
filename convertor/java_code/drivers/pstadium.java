@@ -90,7 +90,6 @@ public class pstadium
 	int pstadium_vh_start(void);
 	void pstadium_vh_stop(void);
 	
-	READ_HANDLER( pstadium_palette_r );
 	WRITE_HANDLER( pstadium_palette_w );
 	WRITE_HANDLER( galkoku_palette_w );
 	WRITE_HANDLER( galkaika_palette_w );
@@ -106,7 +105,6 @@ public class pstadium
 	void pstadium_scrolly_w(int data);
 	void pstadium_romsel_w(int data);
 	void pstadium_paltblnum_w(int data);
-	READ_HANDLER( pstadium_paltbl_r );
 	WRITE_HANDLER( pstadium_paltbl_w );
 	
 	

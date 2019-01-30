@@ -209,7 +209,7 @@ public class turbo
 	
 	*******************************************/
 	
-	READ_HANDLER( turbo_8279_r )
+	public static ReadHandlerPtr turbo_8279_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		if ((offset & 1) == 0)
 			return readinputport(1);  /* DSW 1 */
@@ -218,7 +218,7 @@ public class turbo
 			logerror("read 0xfc%02x\n", offset);
 			return 0x10;
 		}
-	}
+	} };
 	
 	WRITE_HANDLER( turbo_8279_w )
 	{
@@ -256,10 +256,10 @@ public class turbo
 	
 	*******************************************/
 	
-	READ_HANDLER( turbo_collision_r )
+	public static ReadHandlerPtr turbo_collision_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return readinputport(3) | (turbo_collision & 15);
-	}
+	} };
 	
 	WRITE_HANDLER( turbo_collision_clear_w )
 	{

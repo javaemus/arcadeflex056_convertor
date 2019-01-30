@@ -329,12 +329,6 @@ public class playch10
 	extern void init_pchboard( void );	/* h-board games */
 	extern void init_pciboard( void );	/* i-board games */
 	extern void init_pckboard( void );	/* k-board games */
-	READ_HANDLER( pc10_port_0_r );
-	READ_HANDLER( pc10_instrom_r );
-	READ_HANDLER( pc10_prot_r );
-	READ_HANDLER( pc10_detectclr_r );
-	READ_HANDLER( pc10_in0_r );
-	READ_HANDLER( pc10_in1_r );
 	WRITE_HANDLER( pc10_SDCS_w );
 	WRITE_HANDLER( pc10_CNTRLMASK_w );
 	WRITE_HANDLER( pc10_DISPMASK_w );

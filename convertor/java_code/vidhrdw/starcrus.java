@@ -599,8 +599,8 @@ public class starcrus
 	
 	}
 	
-	READ_HANDLER( starcrus_coll_det_r )
+	public static ReadHandlerPtr starcrus_coll_det_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 	    return collision_reg ^ 0xff;
-	}
+	} };
 }

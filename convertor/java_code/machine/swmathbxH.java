@@ -16,9 +16,6 @@ void run_mbox(void);
 void init_swmathbox (void);
 
 /* Read handlers */
-READ_HANDLER( reh_r );
-READ_HANDLER( rel_r );
-READ_HANDLER( prng_r );
 
 /* Write handlers */
 WRITE_HANDLER( prngclr_w );

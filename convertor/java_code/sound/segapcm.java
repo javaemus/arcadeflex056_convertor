@@ -357,10 +357,10 @@ public class segapcm
 	/************************************************/
 	/*    read register SEGAPCM                     */
 	/************************************************/
-	READ_HANDLER( SegaPCM_r )
+	public static ReadHandlerPtr SegaPCM_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 	  return spcm.writeram[offset & 0x07ff];		/* read value data */
-	}
+	} };
 	
 	/**************** end of file ****************/
 }

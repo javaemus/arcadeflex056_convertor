@@ -274,15 +274,15 @@ public class seibu
 		coin_counter_w(1,data & 2);
 	}
 	
-	READ_HANDLER( seibu_soundlatch_r )
+	public static ReadHandlerPtr seibu_soundlatch_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return main2sub[offset];
-	}
+	} };
 	
-	READ_HANDLER( seibu_main_data_pending_r )
+	public static ReadHandlerPtr seibu_main_data_pending_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return sub2main_pending ? 1 : 0;
-	}
+	} };
 	
 	WRITE_HANDLER( seibu_main_data_w )
 	{
@@ -335,10 +335,10 @@ public class seibu
 		}
 	}
 	
-	READ_HANDLER( seibu_main_v30_r )
+	public static ReadHandlerPtr seibu_main_v30_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return seibu_main_word_r(offset/2,0) >> (8 * (offset & 1));
-	}
+	} };
 	
 	WRITE_HANDLER( seibu_main_v30_w )
 	{

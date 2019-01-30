@@ -34,10 +34,7 @@ public class tehkanwc
 	int tehkanwc_vh_start(void);
 	void tehkanwc_vh_stop(void);
 	void tehkanwc_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
-	READ_HANDLER( tehkanwc_videoram1_r );
 	WRITE_HANDLER( tehkanwc_videoram1_w );
-	READ_HANDLER( tehkanwc_scroll_x_r );
-	READ_HANDLER( tehkanwc_scroll_y_r );
 	WRITE_HANDLER( tehkanwc_scroll_x_w );
 	WRITE_HANDLER( tehkanwc_scroll_y_w );
 	WRITE_HANDLER( gridiron_led0_w );

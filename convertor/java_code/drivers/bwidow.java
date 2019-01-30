@@ -278,7 +278,6 @@ public class bwidow
 		return res;
 		} };
 	
-	READ_HANDLER( bzone_IN0_r );
 	
 	WRITE_HANDLER( bwidow_misc_w )
 	{

@@ -29,10 +29,8 @@ public class mexico86
 	/* in machine/mexico86.c */
 	extern unsigned char *mexico86_protection_ram;
 	int mexico86_m68705_interrupt(void);
-	READ_HANDLER( mexico86_68705_portA_r );
 	WRITE_HANDLER( mexico86_68705_portA_w );
 	WRITE_HANDLER( mexico86_68705_ddrA_w );
-	READ_HANDLER( mexico86_68705_portB_r );
 	WRITE_HANDLER( mexico86_68705_portB_w );
 	WRITE_HANDLER( mexico86_68705_ddrB_w );
 	

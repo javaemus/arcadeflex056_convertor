@@ -120,52 +120,52 @@ public class _8254pit
 	}
 	
 	
-	READ_HANDLER( pit8254_0_r )
+	public static ReadHandlerPtr pit8254_0_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return pit8254_r(0, offset);
-	}
+	} };
 	
-	READ_HANDLER( pit8254_0_counter1_r )
+	public static ReadHandlerPtr pit8254_0_counter1_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return pit8254_r(0, 0);
-	}
+	} };
 	
-	READ_HANDLER( pit8254_0_counter2_r )
+	public static ReadHandlerPtr pit8254_0_counter2_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return pit8254_r(0, 1);
-	}
+	} };
 	
-	READ_HANDLER( pit8254_0_counter3_r )
+	public static ReadHandlerPtr pit8254_0_counter3_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return pit8254_r(0, 2);
-	}
+	} };
 	
-	READ_HANDLER( pit8254_0_control_r )
+	public static ReadHandlerPtr pit8254_0_control_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return pit8254_r(0, 3);
-	}
+	} };
 	
-	READ_HANDLER( pit8254_1_r )
+	public static ReadHandlerPtr pit8254_1_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return pit8254_r(1, offset);
-	}
+	} };
 	
-	READ_HANDLER( pit8254_1_counter1_r )
+	public static ReadHandlerPtr pit8254_1_counter1_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return pit8254_r(1, 0);
-	}
+	} };
 	
-	READ_HANDLER( pit8254_1_counter2_r )
+	public static ReadHandlerPtr pit8254_1_counter2_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return pit8254_r(1, 1);
-	}
+	} };
 	
-	READ_HANDLER( pit8254_1_counter3_r )
+	public static ReadHandlerPtr pit8254_1_counter3_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return pit8254_r(1, 2);
-	}
-	READ_HANDLER( pit8254_1_control_r )
+	} };
+	public static ReadHandlerPtr pit8254_1_control_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return pit8254_r(1, 3);
-	}
+	} };
 }

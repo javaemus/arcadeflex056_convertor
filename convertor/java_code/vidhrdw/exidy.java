@@ -220,14 +220,14 @@ public class exidy
 	}
 	
 	
-	READ_HANDLER( exidy_interrupt_r )
+	public static ReadHandlerPtr exidy_interrupt_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		/* clear any interrupts */
 		cpu_set_irq_line(0, 0, CLEAR_LINE);
 	
 		/* return the latched condition */
 		return int_condition;
-	}
+	} };
 	
 	
 	

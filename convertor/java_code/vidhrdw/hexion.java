@@ -97,7 +97,7 @@ public class hexion
 	//logerror("%04x: bankswitch_w %02x\n",cpu_get_pc(),data);
 	}
 	
-	READ_HANDLER( hexion_bankedram_r )
+	public static ReadHandlerPtr hexion_bankedram_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		if (gfxrom_select && offset < 0x1000)
 		{
@@ -116,7 +116,7 @@ public class hexion
 	//logerror("%04x: bankedram_r offset %04x, bankctrl = %02x\n",cpu_get_pc(),offset,bankctrl);
 			return 0;
 		}
-	}
+	} };
 	
 	WRITE_HANDLER( hexion_bankedram_w )
 	{

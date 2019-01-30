@@ -45,8 +45,6 @@ package drivers;
 public class raiden
 {
 	
-	READ_HANDLER( raiden_background_r );
-	READ_HANDLER( raiden_foreground_r );
 	WRITE_HANDLER( raiden_background_w );
 	WRITE_HANDLER( raiden_foreground_w );
 	WRITE_HANDLER( raiden_text_w );

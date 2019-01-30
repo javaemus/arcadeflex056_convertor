@@ -207,7 +207,7 @@ public class bzone
 	void redbaron_sh_stop(void);
 	void redbaron_sh_update(void);
 	
-	READ_HANDLER( bzone_IN0_r )
+	public static ReadHandlerPtr bzone_IN0_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		int res;
 	
@@ -224,7 +224,7 @@ public class bzone
 			res &= ~IN0_VG_HALT;
 	
 		return res;
-	}
+	} };
 	
 	/* Translation table for one-joystick emulation */
 	static int one_joy_trans[32]={

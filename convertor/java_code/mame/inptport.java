@@ -1720,26 +1720,26 @@ public class inptport
 		return input_port_value[port];
 	}
 	
-	READ_HANDLER( input_port_0_r ) { return readinputport(0); }
-	READ_HANDLER( input_port_1_r ) { return readinputport(1); }
-	READ_HANDLER( input_port_2_r ) { return readinputport(2); }
-	READ_HANDLER( input_port_3_r ) { return readinputport(3); }
-	READ_HANDLER( input_port_4_r ) { return readinputport(4); }
-	READ_HANDLER( input_port_5_r ) { return readinputport(5); }
-	READ_HANDLER( input_port_6_r ) { return readinputport(6); }
-	READ_HANDLER( input_port_7_r ) { return readinputport(7); }
-	READ_HANDLER( input_port_8_r ) { return readinputport(8); }
-	READ_HANDLER( input_port_9_r ) { return readinputport(9); }
-	READ_HANDLER( input_port_10_r ) { return readinputport(10); }
-	READ_HANDLER( input_port_11_r ) { return readinputport(11); }
-	READ_HANDLER( input_port_12_r ) { return readinputport(12); }
-	READ_HANDLER( input_port_13_r ) { return readinputport(13); }
-	READ_HANDLER( input_port_14_r ) { return readinputport(14); }
-	READ_HANDLER( input_port_15_r ) { return readinputport(15); }
-	READ_HANDLER( input_port_16_r ) { return readinputport(16); }
-	READ_HANDLER( input_port_17_r ) { return readinputport(17); }
-	READ_HANDLER( input_port_18_r ) { return readinputport(18); }
-	READ_HANDLER( input_port_19_r ) { return readinputport(19); }
+	public static ReadHandlerPtr input_port_0_r  = new ReadHandlerPtr() { public int handler(int offset) { return readinputport(0); } };
+	public static ReadHandlerPtr input_port_1_r  = new ReadHandlerPtr() { public int handler(int offset) { return readinputport(1); } };
+	public static ReadHandlerPtr input_port_2_r  = new ReadHandlerPtr() { public int handler(int offset) { return readinputport(2); } };
+	public static ReadHandlerPtr input_port_3_r  = new ReadHandlerPtr() { public int handler(int offset) { return readinputport(3); } };
+	public static ReadHandlerPtr input_port_4_r  = new ReadHandlerPtr() { public int handler(int offset) { return readinputport(4); } };
+	public static ReadHandlerPtr input_port_5_r  = new ReadHandlerPtr() { public int handler(int offset) { return readinputport(5); } };
+	public static ReadHandlerPtr input_port_6_r  = new ReadHandlerPtr() { public int handler(int offset) { return readinputport(6); } };
+	public static ReadHandlerPtr input_port_7_r  = new ReadHandlerPtr() { public int handler(int offset) { return readinputport(7); } };
+	public static ReadHandlerPtr input_port_8_r  = new ReadHandlerPtr() { public int handler(int offset) { return readinputport(8); } };
+	public static ReadHandlerPtr input_port_9_r  = new ReadHandlerPtr() { public int handler(int offset) { return readinputport(9); } };
+	public static ReadHandlerPtr input_port_10_r  = new ReadHandlerPtr() { public int handler(int offset) { return readinputport(10); } };
+	public static ReadHandlerPtr input_port_11_r  = new ReadHandlerPtr() { public int handler(int offset) { return readinputport(11); } };
+	public static ReadHandlerPtr input_port_12_r  = new ReadHandlerPtr() { public int handler(int offset) { return readinputport(12); } };
+	public static ReadHandlerPtr input_port_13_r  = new ReadHandlerPtr() { public int handler(int offset) { return readinputport(13); } };
+	public static ReadHandlerPtr input_port_14_r  = new ReadHandlerPtr() { public int handler(int offset) { return readinputport(14); } };
+	public static ReadHandlerPtr input_port_15_r  = new ReadHandlerPtr() { public int handler(int offset) { return readinputport(15); } };
+	public static ReadHandlerPtr input_port_16_r  = new ReadHandlerPtr() { public int handler(int offset) { return readinputport(16); } };
+	public static ReadHandlerPtr input_port_17_r  = new ReadHandlerPtr() { public int handler(int offset) { return readinputport(17); } };
+	public static ReadHandlerPtr input_port_18_r  = new ReadHandlerPtr() { public int handler(int offset) { return readinputport(18); } };
+	public static ReadHandlerPtr input_port_19_r  = new ReadHandlerPtr() { public int handler(int offset) { return readinputport(19); } };
 	
 	READ16_HANDLER( input_port_0_word_r ) { return readinputport(0); }
 	READ16_HANDLER( input_port_1_word_r ) { return readinputport(1); }

@@ -140,10 +140,10 @@ public class m92
 	//	logerror("%04x: m92_videocontrol_w %d = %02x\n",cpu_get_pc(),offset,data);
 	}
 	
-	READ_HANDLER( m92_paletteram_r )
+	public static ReadHandlerPtr m92_paletteram_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return paletteram_r(offset + 0x800*m92_palette_bank);
-	}
+	} };
 	
 	WRITE_HANDLER( m92_paletteram_w )
 	{
@@ -281,10 +281,10 @@ public class m92
 	
 	/*****************************************************************************/
 	
-	READ_HANDLER( m92_vram_r )
+	public static ReadHandlerPtr m92_vram_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return m92_vram_data[offset];
-	}
+	} };
 	
 	WRITE_HANDLER( m92_vram_w )
 	{

@@ -165,12 +165,12 @@ public class berzerk
 	}
 	
 	
-	READ_HANDLER( berzerk_collision_r )
+	public static ReadHandlerPtr berzerk_collision_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		int ret = (collision ? 0x80 : 0x00);
 	
 		return ret | berzerk_irq_end_of_screen;
-	}
+	} };
 	
 	
 	/***************************************************************************

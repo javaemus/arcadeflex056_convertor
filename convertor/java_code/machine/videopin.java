@@ -110,19 +110,19 @@ public class videopin
 	}
 	
 	
-	READ_HANDLER( videopin_in0_r )
+	public static ReadHandlerPtr videopin_in0_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 	//	logerror("in0_r\n");
 		return input_port_0_r(offset);
-	}
+	} };
 	
-	READ_HANDLER( videopin_in1_r )
+	public static ReadHandlerPtr videopin_in1_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 	//	logerror("in1_r\n");
 		return input_port_1_r(offset);
-	}
+	} };
 	
-	READ_HANDLER( videopin_in2_r )
+	public static ReadHandlerPtr videopin_in2_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		int res;
 	
@@ -135,6 +135,6 @@ public class videopin
 			res |= 1;
 	
 		return res;
-	}
+	} };
 	
 }

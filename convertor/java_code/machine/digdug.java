@@ -36,10 +36,10 @@ public class digdug
 	}
 	
 	
-	READ_HANDLER( digdug_sharedram_r )
+	public static ReadHandlerPtr digdug_sharedram_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return digdug_sharedram[offset];
-	}
+	} };
 	
 	
 	WRITE_HANDLER( digdug_sharedram_w )
@@ -88,7 +88,7 @@ public class digdug
 	}
 	
 	
-	READ_HANDLER( digdug_customio_data_r )
+	public static ReadHandlerPtr digdug_customio_data_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		switch (customio_command)
 		{
@@ -213,13 +213,13 @@ public class digdug
 		}
 	
 		return -1;
-	}
+	} };
 	
 	
-	READ_HANDLER( digdug_customio_r )
+	public static ReadHandlerPtr digdug_customio_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return customio_command;
-	}
+	} };
 	
 	void digdug_nmi_generate (int param)
 	{

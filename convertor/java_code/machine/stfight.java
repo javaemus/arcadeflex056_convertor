@@ -136,15 +136,15 @@ public class stfight
 	 */
 	
 	// Perhaps define dipswitches as active low?
-	READ_HANDLER( stfight_dsw_r )
+	public static ReadHandlerPtr stfight_dsw_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 	    return( ~readinputport( 3+offset ) );
-	}
+	} };
 	
 	static int stfight_coin_mech_query_active = 0;
 	static int stfight_coin_mech_query;
 	
-	READ_HANDLER( stfight_coin_r )
+	public static ReadHandlerPtr stfight_coin_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 	    static int coin_mech_latch[2] = { 0x02, 0x01 };
 	
@@ -177,7 +177,7 @@ public class stfight
 	    }
 	
 	    return( coin_mech_data );
-	}
+	} };
 	
 	WRITE_HANDLER( stfight_coin_w )
 	{
@@ -253,7 +253,7 @@ public class stfight
 	    fm_data = 0x80 | data;
 	}
 	
-	READ_HANDLER( stfight_fm_r )
+	public static ReadHandlerPtr stfight_fm_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 	    int data = fm_data;
 	
@@ -261,5 +261,5 @@ public class stfight
 	    fm_data &= 0x7f;
 	
 	    return( data );
-	}
+	} };
 }

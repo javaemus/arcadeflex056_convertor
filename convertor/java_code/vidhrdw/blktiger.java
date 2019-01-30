@@ -126,10 +126,10 @@ public class blktiger
 		}
 	}
 	
-	READ_HANDLER( blktiger_bgvideoram_r )
+	public static ReadHandlerPtr blktiger_bgvideoram_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return scroll_ram[offset + blktiger_scroll_bank];
-	}
+	} };
 	
 	WRITE_HANDLER( blktiger_bgvideoram_w )
 	{

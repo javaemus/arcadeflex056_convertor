@@ -94,8 +94,6 @@ public class mcr2
 	
 	int mcr12_vh_start(void);
 	void mcr12_vh_stop(void);
-	READ_HANDLER( mcr2_videoram_r );
-	READ_HANDLER( twotigra_videoram_r );
 	WRITE_HANDLER( mcr2_videoram_w );
 	WRITE_HANDLER( twotigra_videoram_w );
 	void mcr2_vh_screenrefresh(struct mame_bitmap *bitmap, int full_refresh);

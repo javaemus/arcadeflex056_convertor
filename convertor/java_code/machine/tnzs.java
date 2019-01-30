@@ -43,7 +43,7 @@ public class tnzs
 	
 	
 	
-	READ_HANDLER( arknoid2_sh_f000_r )
+	public static ReadHandlerPtr arknoid2_sh_f000_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		int val;
 	
@@ -58,7 +58,7 @@ public class tnzs
 		{
 			return val & 0xff;
 		}
-	}
+	} };
 	
 	
 	static void mcu_reset(void)
@@ -579,7 +579,7 @@ public class tnzs
 	}
 	
 	
-	READ_HANDLER( tnzs_mcu_r )
+	public static ReadHandlerPtr tnzs_mcu_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		switch (mcu_type)
 		{
@@ -596,7 +596,7 @@ public class tnzs
 				return mcu_tnzs_r(offset);
 				break;
 		}
-	}
+	} };
 	
 	WRITE_HANDLER( tnzs_mcu_w )
 	{
@@ -667,7 +667,7 @@ public class tnzs
 	}
 	
 	
-	READ_HANDLER( tnzs_workram_r )
+	public static ReadHandlerPtr tnzs_workram_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		/* Location $EF10 workaround required to stop TNZS getting */
 		/* caught in and endless loop due to shared ram sync probs */
@@ -690,12 +690,12 @@ public class tnzs
 			}
 		}
 		return tnzs_workram[offset];
-	}
+	} };
 	
-	READ_HANDLER( tnzs_workram_sub_r )
+	public static ReadHandlerPtr tnzs_workram_sub_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return tnzs_workram[offset];
-	}
+	} };
 	
 	WRITE_HANDLER( tnzs_workram_w )
 	{

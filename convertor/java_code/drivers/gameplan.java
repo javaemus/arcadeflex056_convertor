@@ -20,11 +20,8 @@ public class gameplan
 {
 	
 	int gameplan_vh_start(void);
-	READ_HANDLER( gameplan_video_r );
 	WRITE_HANDLER( gameplan_video_w );
-	READ_HANDLER( gameplan_sound_r );
 	WRITE_HANDLER( gameplan_sound_w );
-	READ_HANDLER( gameplan_via5_r );
 	WRITE_HANDLER( gameplan_via5_w );
 	
 	static int gameplan_current_port;

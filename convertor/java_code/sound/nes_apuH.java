@@ -48,8 +48,6 @@ public class nes_apuH
 	   int volume[MAX_NESPSG];
 	};
 	
-	READ_HANDLER( NESPSG_0_r );
-	READ_HANDLER( NESPSG_1_r );
 	WRITE_HANDLER( NESPSG_0_w );
 	WRITE_HANDLER( NESPSG_1_w );
 	

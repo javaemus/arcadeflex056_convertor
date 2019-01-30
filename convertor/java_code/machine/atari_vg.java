@@ -22,11 +22,11 @@ public class atari_vg
 	static int earom_data;
 	static char earom[EAROM_SIZE];
 	
-	READ_HANDLER( atari_vg_earom_r )
+	public static ReadHandlerPtr atari_vg_earom_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		logerror("read earom: %02x(%02x):%02x\n", earom_offset, offset, earom_data);
 		return (earom_data);
-	}
+	} };
 	
 	WRITE_HANDLER( atari_vg_earom_w )
 	{

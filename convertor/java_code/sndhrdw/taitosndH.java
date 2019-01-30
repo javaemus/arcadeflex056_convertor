@@ -15,12 +15,10 @@ READ16_HANDLER( taitosound_comm16_msb_r );
 /* MASTER (8bit bus) control functions */
 WRITE_HANDLER( taitosound_port_w );
 WRITE_HANDLER( taitosound_comm_w );
-READ_HANDLER( taitosound_comm_r );
 
 
 /* SLAVE (8bit bus) control functions ONLY */
 WRITE_HANDLER( taitosound_slave_port_w );
-READ_HANDLER( taitosound_slave_comm_r );
 WRITE_HANDLER( taitosound_slave_comm_w );
 
 

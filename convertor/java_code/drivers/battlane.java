@@ -26,13 +26,9 @@ public class battlane
 	extern unsigned char *battlane_bitmap;
 	extern size_t battlane_bitmap_size;
 	WRITE_HANDLER( battlane_spriteram_w );
-	READ_HANDLER( battlane_spriteram_r );
 	WRITE_HANDLER( battlane_tileram_w );
-	READ_HANDLER( battlane_tileram_r );
 	WRITE_HANDLER( battlane_bitmap_w );
-	READ_HANDLER( battlane_bitmap_r );
 	WRITE_HANDLER( battlane_video_ctrl_w );
-	READ_HANDLER( battlane_video_ctrl_r );
 	WRITE_HANDLER( battlane_palette_w );
 	extern void battlane_set_video_flip(int);
 	
@@ -50,12 +46,12 @@ public class battlane
 		RAM[offset]=data;
 	}
 	
-	READ_HANDLER( battlane_shared_ram_r )
+	public static ReadHandlerPtr battlane_shared_ram_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		unsigned char *RAM =
 			memory_region(REGION_CPU1);
 		return RAM[offset];
-	}
+	} };
 	
 	
 	WRITE_HANDLER( battlane_cpu_command_w )

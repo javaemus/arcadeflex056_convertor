@@ -39,10 +39,10 @@ public class dday
 	
 	  Thanks Zwaxy for the timer info. */
 	
-	READ_HANDLER( dday_countdown_timer_r )
+	public static ReadHandlerPtr dday_countdown_timer_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 	    return ((timer_value / 10) << 4) | (timer_value % 10);
-	}
+	} };
 	
 	static void countdown_timer_callback(int param)
 	{
@@ -323,10 +323,10 @@ public class dday
 		}
 	}
 	
-	READ_HANDLER( dday_colorram_r )
+	public static ReadHandlerPtr dday_colorram_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 	    return dday_colorram[offset & 0x03e0];
-	}
+	} };
 	
 	
 	WRITE_HANDLER( dday_sl_control_w )

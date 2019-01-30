@@ -31,7 +31,7 @@ public class gyruss
 		0x00, 0x01, 0x02, 0x03, 0x04, 0x09, 0x0a, 0x0b, 0x0a, 0x0d
 	};
 	
-	READ_HANDLER( gyruss_portA_r )
+	public static ReadHandlerPtr gyruss_portA_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		/* need to protect from totalcycles overflow */
 		static int last_totalcycles = 0;
@@ -47,7 +47,7 @@ public class gyruss
 		last_totalcycles = current_totalcycles;
 	
 		return gyruss_timer[clock/1024];
-	}
+	} };
 	
 	
 	

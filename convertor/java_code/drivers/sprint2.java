@@ -53,14 +53,6 @@ public class sprint2
 	extern unsigned char *sprint2_horiz_ram;
 	
 	/* machine/sprint2.c */
-	READ_HANDLER( sprint1_read_ports_r );
-	READ_HANDLER( sprint2_read_ports_r );
-	READ_HANDLER( sprint2_read_sync_r );
-	READ_HANDLER( sprint2_coins_r );
-	READ_HANDLER( sprint2_steering1_r );
-	READ_HANDLER( sprint2_steering2_r );
-	READ_HANDLER( sprint2_collision1_r );
-	READ_HANDLER( sprint2_collision2_r );
 	WRITE_HANDLER( sprint2_collision_reset1_w );
 	WRITE_HANDLER( sprint2_collision_reset2_w );
 	WRITE_HANDLER( sprint2_steering_reset1_w );

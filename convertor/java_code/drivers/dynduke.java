@@ -30,8 +30,6 @@ package drivers;
 public class dynduke
 {
 	
-	READ_HANDLER( dynduke_background_r );
-	READ_HANDLER( dynduke_foreground_r );
 	WRITE_HANDLER( dynduke_background_w );
 	WRITE_HANDLER( dynduke_foreground_w );
 	WRITE_HANDLER( dynduke_text_w );

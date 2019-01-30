@@ -76,19 +76,13 @@ public class bosco
 {
 	
 	extern unsigned char *bosco_sharedram;
-	READ_HANDLER( bosco_sharedram_r );
 	WRITE_HANDLER( bosco_sharedram_w );
-	READ_HANDLER( bosco_dsw_r );
 	WRITE_HANDLER( bosco_interrupt_enable_1_w );
 	WRITE_HANDLER( bosco_interrupt_enable_2_w );
 	WRITE_HANDLER( bosco_interrupt_enable_3_w );
 	WRITE_HANDLER( bosco_halt_w );
-	READ_HANDLER( bosco_customio_1_r );
-	READ_HANDLER( bosco_customio_2_r );
 	WRITE_HANDLER( bosco_customio_1_w );
 	WRITE_HANDLER( bosco_customio_2_w );
-	READ_HANDLER( bosco_customio_data_1_r );
-	READ_HANDLER( bosco_customio_data_2_r );
 	WRITE_HANDLER( bosco_customio_data_1_w );
 	WRITE_HANDLER( bosco_customio_data_2_w );
 	int  bosco_interrupt_1(void);

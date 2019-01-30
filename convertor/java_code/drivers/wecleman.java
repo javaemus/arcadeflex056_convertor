@@ -721,10 +721,10 @@ public class wecleman
 	
 	
 	/* Protection - an external multiplyer connected to the sound CPU */
-	READ_HANDLER( multiply_r )
+	public static ReadHandlerPtr multiply_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return (multiply_reg[0] * multiply_reg[1]) & 0xFF;
-	}
+	} };
 	WRITE_HANDLER( multiply_w )
 	{
 		multiply_reg[offset] = data;
@@ -862,10 +862,10 @@ public class wecleman
 	   even and odd register are mapped swapped */
 	
 	#define HOTCHASE_K007232_RW(_chip_) \
-	READ_HANDLER( hotchase_K007232_##_chip_##_r ) \
+	public static ReadHandlerPtr hotchase_K007232_##_chip_##_r  = new ReadHandlerPtr() { public int handler(int offset) \
 	{ \
 		return K007232_read_port_##_chip_##_r(offset ^ 1); \
-	} \
+	} }; \
 	WRITE_HANDLER( hotchase_K007232_##_chip_##_w ) \
 	{ \
 		K007232_write_port_##_chip_##_w(offset ^ 1, data); \

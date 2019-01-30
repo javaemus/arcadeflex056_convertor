@@ -852,15 +852,15 @@ public class ymz280b
 	
 	***********************************************************************************************/
 	
-	READ_HANDLER( YMZ280B_status_0_r )
+	public static ReadHandlerPtr YMZ280B_status_0_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return compute_status(&ymz280b[0]);
-	}
+	} };
 	
-	READ_HANDLER( YMZ280B_status_1_r )
+	public static ReadHandlerPtr YMZ280B_status_1_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return compute_status(&ymz280b[1]);
-	}
+	} };
 	
 	
 	

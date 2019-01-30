@@ -450,20 +450,20 @@ public class k053260
 	/**************************************************************************************************/
 	/* Accesors */
 	
-	READ_HANDLER( K053260_0_r )
+	public static ReadHandlerPtr K053260_0_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return K053260_read( 0, offset );
-	}
+	} };
 	
 	WRITE_HANDLER( K053260_0_w )
 	{
 		K053260_write( 0, offset, data );
 	}
 	
-	READ_HANDLER( K053260_1_r )
+	public static ReadHandlerPtr K053260_1_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return K053260_read( 1, offset );
-	}
+	} };
 	
 	WRITE_HANDLER( K053260_1_w )
 	{

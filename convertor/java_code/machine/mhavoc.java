@@ -71,22 +71,22 @@ public class mhavoc
 	}
 	
 	/* Read from the gamma processor */
-	READ_HANDLER( mhavoc_gamma_r )
+	public static ReadHandlerPtr mhavoc_gamma_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		logerror("  reading from gamma processor: %02x (%d %d)\n", gamma_data, alpha_rcvd, gamma_xmtd);
 		alpha_rcvd=1;
 		gamma_xmtd=0;
 		return gamma_data;
-	}
+	} };
 	
 	/* Read from the alpha processor */
-	READ_HANDLER( mhavoc_alpha_r )
+	public static ReadHandlerPtr mhavoc_alpha_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		logerror("\t\t\t\t\treading from alpha processor: %02x (%d %d)\n", alpha_data, gamma_rcvd, alpha_xmtd);
 		gamma_rcvd=1;
 		alpha_xmtd=0;
 		return alpha_data;
-	}
+	} };
 	
 	/* Write to the gamma processor */
 	WRITE_HANDLER( mhavoc_gamma_w )
@@ -111,7 +111,7 @@ public class mhavoc
 	}
 	
 	/* Simulates frequency and vector halt */
-	READ_HANDLER( mhavoc_port_0_r )
+	public static ReadHandlerPtr mhavoc_port_0_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		int res;
 	
@@ -141,9 +141,9 @@ public class mhavoc
 			res &=~0x04;
 	
 		return (res & 0xff);
-	}
+	} };
 	
-	READ_HANDLER( mhavoc_port_1_r )
+	public static ReadHandlerPtr mhavoc_port_1_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		int res;
 	
@@ -160,7 +160,7 @@ public class mhavoc
 			res &=~0x01;
 	
 		return (res & 0xff);
-	}
+	} };
 	
 	WRITE_HANDLER( mhavoc_out_0_w )
 	{

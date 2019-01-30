@@ -110,15 +110,15 @@ public class pandoras
 	
 	***************************************************************************/
 	
-	READ_HANDLER( pandoras_vram_r )
+	public static ReadHandlerPtr pandoras_vram_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return videoram[offset];
-	}
+	} };
 	
-	READ_HANDLER( pandoras_cram_r )
+	public static ReadHandlerPtr pandoras_cram_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return colorram[offset];
-	}
+	} };
 	
 	WRITE_HANDLER( pandoras_vram_w )
 	{

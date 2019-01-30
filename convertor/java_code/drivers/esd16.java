@@ -146,12 +146,12 @@ public class esd16
 		new Memory_WriteAddress(MEMPORT_MARKER, 0)
 	};
 	
-	READ_HANDLER( esd16_sound_command_r )
+	public static ReadHandlerPtr esd16_sound_command_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		/* Clear IRQ only after reading the command, or some get lost */
 		cpu_set_irq_line(1,0,CLEAR_LINE);
 		return soundlatch_r(0);
-	}
+	} };
 	
 	public static IO_ReadPort multchmp_sound_readport[]={
 		new IO_ReadPort(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_IO | MEMPORT_WIDTH_8),

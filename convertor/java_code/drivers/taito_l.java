@@ -73,10 +73,8 @@ public class taito_l
 	void taitol_obj1b_m(int offset);
 	
 	WRITE_HANDLER( taitol_control_w );
-	READ_HANDLER( taitol_control_r );
 	WRITE_HANDLER( horshoes_bankg_w );
 	WRITE_HANDLER( taitol_bankc_w );
-	READ_HANDLER( taitol_bankc_r );
 	
 	
 	

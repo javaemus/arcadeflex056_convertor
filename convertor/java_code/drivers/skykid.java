@@ -21,7 +21,6 @@ public class skykid
 	
 	/* from vidhrdw/skykid.c */
 	int skykid_vh_start( void );
-	READ_HANDLER( skykid_videoram_r );
 	WRITE_HANDLER( skykid_videoram_w );
 	WRITE_HANDLER( skykid_scroll_x_w );
 	WRITE_HANDLER( skykid_scroll_y_w );
@@ -105,10 +104,10 @@ public class skykid
 		}
 	} };
 	
-	READ_HANDLER( skykid_sharedram_r )
+	public static ReadHandlerPtr skykid_sharedram_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return sharedram[offset];
-	}
+	} };
 	WRITE_HANDLER( skykid_sharedram_w )
 	{
 		sharedram[offset] = data;

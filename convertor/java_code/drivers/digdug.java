@@ -121,16 +121,12 @@ public class digdug
 {
 	
 	extern unsigned char *digdug_sharedram;
-	READ_HANDLER( digdug_hiscore_print_r );
-	READ_HANDLER( digdug_sharedram_r );
 	WRITE_HANDLER( digdug_sharedram_w );
 	WRITE_HANDLER( digdug_interrupt_enable_1_w );
 	WRITE_HANDLER( digdug_interrupt_enable_2_w );
 	WRITE_HANDLER( digdug_interrupt_enable_3_w );
 	WRITE_HANDLER( digdug_halt_w );
-	READ_HANDLER( digdug_customio_r );
 	WRITE_HANDLER( digdug_customio_w );
-	READ_HANDLER( digdug_customio_data_r );
 	WRITE_HANDLER( digdug_customio_data_w );
 	int digdug_interrupt_1(void);
 	int digdug_interrupt_2(void);

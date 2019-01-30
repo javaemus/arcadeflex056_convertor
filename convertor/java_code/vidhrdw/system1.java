@@ -170,10 +170,10 @@ public class system1
 		flip_screen_set(data & 0x80);
 	}
 	
-	READ_HANDLER( system1_videomode_r )
+	public static ReadHandlerPtr system1_videomode_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return system1_video_mode;
-	}
+	} };
 	
 	void system1_define_background_memory(int mode)
 	{
@@ -698,10 +698,10 @@ public class system1
 	
 	
 	
-	READ_HANDLER( wbml_videoram_bank_latch_r )
+	public static ReadHandlerPtr wbml_videoram_bank_latch_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return wbml_videoram_bank_latch;
-	}
+	} };
 	
 	WRITE_HANDLER( wbml_videoram_bank_latch_w )
 	{
@@ -709,10 +709,10 @@ public class system1
 		wbml_videoram_bank = (data >> 1) & 0x03;	/* Select 4 banks of 4k, bit 2,1 */
 	}
 	
-	READ_HANDLER( wbml_paged_videoram_r )
+	public static ReadHandlerPtr wbml_paged_videoram_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return wbml_paged_videoram[0x1000*wbml_videoram_bank + offset];
-	}
+	} };
 	
 	WRITE_HANDLER( wbml_paged_videoram_w )
 	{

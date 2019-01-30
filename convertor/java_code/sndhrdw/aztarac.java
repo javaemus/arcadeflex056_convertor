@@ -36,17 +36,17 @@ public class aztarac
 		}
 	}
 	
-	READ_HANDLER( aztarac_snd_command_r )
+	public static ReadHandlerPtr aztarac_snd_command_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 	    sound_status |= 0x01;
 	    sound_status &= ~0x20;
 	    return soundlatch_r(offset);
-	}
+	} };
 	
-	READ_HANDLER( aztarac_snd_status_r )
+	public static ReadHandlerPtr aztarac_snd_status_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 	    return sound_status & ~0x01;
-	}
+	} };
 	
 	WRITE_HANDLER( aztarac_snd_status_w )
 	{

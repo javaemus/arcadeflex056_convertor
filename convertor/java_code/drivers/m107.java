@@ -41,7 +41,6 @@ public class m107
 	int m107_vh_start(void);
 	WRITE_HANDLER( m107_control_w );
 	WRITE_HANDLER( m107_vram_w );
-	READ_HANDLER( m107_vram_r );
 	
 	/*****************************************************************************/
 	

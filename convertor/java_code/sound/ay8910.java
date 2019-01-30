@@ -319,11 +319,11 @@ public class ay8910
 	
 	
 	/* AY8910 interface */
-	READ_HANDLER( AY8910_read_port_0_r ) { return AY8910Read(0); }
-	READ_HANDLER( AY8910_read_port_1_r ) { return AY8910Read(1); }
-	READ_HANDLER( AY8910_read_port_2_r ) { return AY8910Read(2); }
-	READ_HANDLER( AY8910_read_port_3_r ) { return AY8910Read(3); }
-	READ_HANDLER( AY8910_read_port_4_r ) { return AY8910Read(4); }
+	public static ReadHandlerPtr AY8910_read_port_0_r  = new ReadHandlerPtr() { public int handler(int offset) { return AY8910Read(0); } };
+	public static ReadHandlerPtr AY8910_read_port_1_r  = new ReadHandlerPtr() { public int handler(int offset) { return AY8910Read(1); } };
+	public static ReadHandlerPtr AY8910_read_port_2_r  = new ReadHandlerPtr() { public int handler(int offset) { return AY8910Read(2); } };
+	public static ReadHandlerPtr AY8910_read_port_3_r  = new ReadHandlerPtr() { public int handler(int offset) { return AY8910Read(3); } };
+	public static ReadHandlerPtr AY8910_read_port_4_r  = new ReadHandlerPtr() { public int handler(int offset) { return AY8910Read(4); } };
 	READ16_HANDLER( AY8910_read_port_0_lsb_r ) { return AY8910Read(0); }
 	READ16_HANDLER( AY8910_read_port_1_lsb_r ) { return AY8910Read(1); }
 	READ16_HANDLER( AY8910_read_port_2_lsb_r ) { return AY8910Read(2); }

@@ -83,9 +83,7 @@ public class btime
 	WRITE_HANDLER( bnj_background_w );
 	WRITE_HANDLER( bnj_scroll1_w );
 	WRITE_HANDLER( bnj_scroll2_w );
-	READ_HANDLER( btime_mirrorvideoram_r );
 	WRITE_HANDLER( btime_mirrorvideoram_w );
-	READ_HANDLER( btime_mirrorcolorram_r );
 	WRITE_HANDLER( btime_mirrorcolorram_w );
 	WRITE_HANDLER( lnc_videoram_w );
 	WRITE_HANDLER( lnc_mirrorvideoram_w );
@@ -100,7 +98,6 @@ public class btime
 	int lnc_sound_interrupt(void);
 	
 	
-	READ_HANDLER( mmonkey_protection_r );
 	WRITE_HANDLER( mmonkey_protection_w );
 	
 	

@@ -27,7 +27,6 @@ public class blktiger
 	
 	WRITE_HANDLER( blktiger_screen_layout_w );
 	
-	READ_HANDLER( blktiger_bgvideoram_r );
 	WRITE_HANDLER( blktiger_bgvideoram_w );
 	WRITE_HANDLER( blktiger_txvideoram_w );
 	WRITE_HANDLER( blktiger_video_control_w );

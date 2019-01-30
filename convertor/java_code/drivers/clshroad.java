@@ -62,13 +62,13 @@ public class clshroad
 	READ_HANDLER ( clshroad_sharedram_r )	{	return clshroad_sharedram[offset];	}
 	WRITE_HANDLER( clshroad_sharedram_w )	{	clshroad_sharedram[offset] = data;	}
 	
-	READ_HANDLER( clshroad_input_r )
+	public static ReadHandlerPtr clshroad_input_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return	((~readinputport(0) & (1 << offset)) ? 1 : 0) |
 				((~readinputport(1) & (1 << offset)) ? 2 : 0) |
 				((~readinputport(2) & (1 << offset)) ? 4 : 0) |
 				((~readinputport(3) & (1 << offset)) ? 8 : 0) ;
-	}
+	} };
 	
 	
 	public static Memory_ReadAddress clshroad_readmem[]={

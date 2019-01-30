@@ -678,10 +678,10 @@ public class galaxian
 		galaxian_videoram[offset] = data;
 	}
 	
-	READ_HANDLER( galaxian_videoram_r )
+	public static ReadHandlerPtr galaxian_videoram_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return galaxian_videoram[offset];
-	}
+	} };
 	
 	
 	WRITE_HANDLER( galaxian_flip_screen_x_w )

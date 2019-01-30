@@ -29,8 +29,6 @@ public class dominos
 {
 	
 	/* machine/dominos.c */
-	READ_HANDLER( dominos_port_r );
-	READ_HANDLER( dominos_sync_r );
 	WRITE_HANDLER( dominos_attract_w );
 	WRITE_HANDLER( dominos_tumble_w );
 	WRITE_HANDLER( dominos_lamp2_w );

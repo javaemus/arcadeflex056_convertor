@@ -60,10 +60,10 @@ public class skyfox
 	
 	***************************************************************************/
 	
-	READ_HANDLER( skyfox_vregs_r )	// for debug
+	public static ReadHandlerPtr skyfox_vregs_r  = new ReadHandlerPtr() { public int handler(int offset)	// for debug
 	{
 		return vreg[offset];
-	}
+	} };
 	
 	WRITE_HANDLER( skyfox_vregs_w )
 	{

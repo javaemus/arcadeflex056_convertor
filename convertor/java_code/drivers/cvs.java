@@ -115,23 +115,15 @@ public class cvs
 	WRITE_HANDLER( cvs_scroll_w );
 	WRITE_HANDLER( cvs_video_fx_w );
 	
-	READ_HANDLER( cvs_collision_r );
-	READ_HANDLER( cvs_collision_clear );
-	READ_HANDLER( cvs_videoram_r );
-	READ_HANDLER( cvs_bullet_r );
-	READ_HANDLER( cvs_2636_1_r );
-	READ_HANDLER( cvs_2636_2_r );
-	READ_HANDLER( cvs_2636_3_r );
-	READ_HANDLER( cvs_character_mode_r );
 	
 	/***************************************************************************
 		S2650 Memory Mirroring calls
 	***************************************************************************/
 	
-	READ_HANDLER( cvs_mirror_r )
+	public static ReadHandlerPtr cvs_mirror_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return cpu_readmem16(0x1400+offset);
-	}
+	} };
 	
 	WRITE_HANDLER( cvs_mirror_w )
 	{
@@ -237,11 +229,11 @@ public class cvs
 		DAC_1_data_w(0,DAC_Value);
 	}
 	
-	READ_HANDLER( CVS_393hz_Clock_r )
+	public static ReadHandlerPtr CVS_393hz_Clock_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 	  	if(cpu_scalebyfcount(6) & 1) return 0x80;
 	    else return 0;
-	}
+	} };
 	
 	static struct TMS5110interface tms5110_interface =
 	{

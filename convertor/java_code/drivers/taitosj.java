@@ -127,21 +127,13 @@ public class taitosj
 	
 	void taitosj_init_machine(void);
 	WRITE_HANDLER( taitosj_bankswitch_w );
-	READ_HANDLER( taitosj_fake_data_r );
-	READ_HANDLER( taitosj_fake_status_r );
 	WRITE_HANDLER( taitosj_fake_data_w );
-	READ_HANDLER( taitosj_mcu_data_r );
-	READ_HANDLER( taitosj_mcu_status_r );
 	WRITE_HANDLER( taitosj_mcu_data_w );
-	READ_HANDLER( taitosj_68705_portA_r );
-	READ_HANDLER( taitosj_68705_portB_r );
-	READ_HANDLER( taitosj_68705_portC_r );
 	WRITE_HANDLER( taitosj_68705_portA_w );
 	WRITE_HANDLER( taitosj_68705_portB_w );
 	
 	WRITE_HANDLER( alpine_protection_w );
 	WRITE_HANDLER( alpinea_bankswitch_w );
-	READ_HANDLER( alpine_port_2_r );
 	
 	extern unsigned char *taitosj_videoram2,*taitosj_videoram3;
 	extern unsigned char *taitosj_characterram;
@@ -150,7 +142,6 @@ public class taitosj
 	extern unsigned char *taitosj_gfxpointer;
 	extern unsigned char *taitosj_colorbank,*taitosj_video_priority;
 	void taitosj_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom);
-	READ_HANDLER( taitosj_gfxrom_r );
 	WRITE_HANDLER( taitosj_videoram2_w );
 	WRITE_HANDLER( taitosj_videoram3_w );
 	WRITE_HANDLER( taitosj_paletteram_w );
@@ -158,7 +149,6 @@ public class taitosj
 	WRITE_HANDLER( taitosj_videoenable_w );
 	WRITE_HANDLER( taitosj_characterram_w );
 	WRITE_HANDLER( junglhbr_characterram_w );
-	READ_HANDLER( taitosj_collision_reg_r );
 	WRITE_HANDLER( taitosj_collision_reg_clear_w );
 	int taitosj_vh_start(void);
 	void taitosj_vh_stop(void);

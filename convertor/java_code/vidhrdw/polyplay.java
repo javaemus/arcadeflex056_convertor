@@ -55,10 +55,10 @@ public class polyplay
 		}
 	}
 	
-	READ_HANDLER( polyplay_characterram_r )
+	public static ReadHandlerPtr polyplay_characterram_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return polyplay_characterram[offset];
-	}
+	} };
 	
 	
 	void polyplay_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)

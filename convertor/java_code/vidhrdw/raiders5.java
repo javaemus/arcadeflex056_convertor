@@ -38,10 +38,10 @@ public class raiders5
 		flipscreen = data & 0x01;
 	}
 	
-	READ_HANDLER( raiders5_fgram_r )
+	public static ReadHandlerPtr raiders5_fgram_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return raiders5_fgram[offset];
-	}
+	} };
 	WRITE_HANDLER( raiders5_fgram_w )
 	{
 		raiders5_fgram[offset] = data;
@@ -55,14 +55,14 @@ public class raiders5
 	
 		videoram[offs] = data;
 	}
-	READ_HANDLER( raiders5_videoram_r )
+	public static ReadHandlerPtr raiders5_videoram_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		int y = (offset + ((raiders5_yscroll & 0xf8) << 2) ) & 0x3e0;
 		int x = (offset + (raiders5_xscroll >> 3) ) & 0x1f;
 		int offs = x+y+(offset & 0x400);
 	
 		return videoram[offs];
-	}
+	} };
 	
 	WRITE_HANDLER( raiders5_paletteram_w )
 	{

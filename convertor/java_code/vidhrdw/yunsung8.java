@@ -60,7 +60,7 @@ public class yunsung8
 	}
 	
 	
-	READ_HANDLER( yunsung8_videoram_r )
+	public static ReadHandlerPtr yunsung8_videoram_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		int bank;
 	
@@ -72,7 +72,7 @@ public class yunsung8
 	
 		if (bank)	return yunsung8_videoram_0[offset];
 		else		return yunsung8_videoram_1[offset];
-	}
+	} };
 	
 	
 	WRITE_HANDLER( yunsung8_videoram_w )

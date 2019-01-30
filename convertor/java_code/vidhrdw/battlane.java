@@ -51,10 +51,10 @@ public class battlane
 		battlane_video_ctrl=data;
 	}
 	
-	READ_HANDLER( battlane_video_ctrl_r )
+	public static ReadHandlerPtr battlane_video_ctrl_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return battlane_video_ctrl;
-	}
+	} };
 	
 	WRITE_HANDLER( battlane_palette_w )
 	{
@@ -115,20 +115,20 @@ public class battlane
 	    battlane_tileram[offset]=data;
 	}
 	
-	READ_HANDLER( battlane_tileram_r )
+	public static ReadHandlerPtr battlane_tileram_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 	    return battlane_tileram[offset];
-	}
+	} };
 	
 	WRITE_HANDLER( battlane_spriteram_w )
 	{
 	    battlane_spriteram[offset]=data;
 	}
 	
-	READ_HANDLER( battlane_spriteram_r )
+	public static ReadHandlerPtr battlane_spriteram_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 	    return battlane_spriteram[offset];
-	}
+	} };
 	
 	
 	WRITE_HANDLER( battlane_bitmap_w )
@@ -154,10 +154,10 @@ public class battlane
 		battlane_bitmap[offset]=data;
 	}
 	
-	READ_HANDLER( battlane_bitmap_r )
+	public static ReadHandlerPtr battlane_bitmap_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return battlane_bitmap[offset];
-	}
+	} };
 	
 	
 	

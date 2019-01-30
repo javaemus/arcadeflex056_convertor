@@ -71,7 +71,6 @@ public class thepit
 	void thepit_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom);
 	void suprmous_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom);
 	void thepit_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
-	READ_HANDLER( thepit_input_port_0_r );
 	WRITE_HANDLER( thepit_sound_enable_w );
 	WRITE_HANDLER( intrepid_graphics_bank_select_w );
 	

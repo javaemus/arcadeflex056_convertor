@@ -26,10 +26,10 @@ public class nitedrvr
 	/***************************************************************************
 	nitedrvr_ram_r
 	***************************************************************************/
-	READ_HANDLER( nitedrvr_ram_r )
+	public static ReadHandlerPtr nitedrvr_ram_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return nitedrvr_ram[offset];
-	}
+	} };
 	
 	/***************************************************************************
 	nitedrvr_ram_w
@@ -84,11 +84,11 @@ public class nitedrvr
 	/***************************************************************************
 	nitedrvr_steering_reset
 	***************************************************************************/
-	READ_HANDLER( nitedrvr_steering_reset_r )
+	public static ReadHandlerPtr nitedrvr_steering_reset_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		nitedrvr_steering_val=0x00;
 		return 0;
-	}
+	} };
 	
 	WRITE_HANDLER( nitedrvr_steering_reset_w )
 	{
@@ -124,7 +124,7 @@ public class nitedrvr
 	Fill in the steering and gear bits in a special way.
 	***************************************************************************/
 	
-	READ_HANDLER( nitedrvr_in0_r )
+	public static ReadHandlerPtr nitedrvr_in0_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		int gear;
 	
@@ -150,7 +150,7 @@ public class nitedrvr
 			default:
 				return 0xFF;
 		}
-	}
+	} };
 	
 	/***************************************************************************
 	nitedrvr_in1_r
@@ -184,7 +184,7 @@ public class nitedrvr
 	Fill in the track difficulty switch and special signal in a special way.
 	***************************************************************************/
 	
-	READ_HANDLER( nitedrvr_in1_r )
+	public static ReadHandlerPtr nitedrvr_in1_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		static int ac_line=0x00;
 		int port;
@@ -218,7 +218,7 @@ public class nitedrvr
 			default:
 				return 0xFF;
 		}
-	}
+	} };
 	
 	/***************************************************************************
 	nitedrvr_out0_w

@@ -26,7 +26,6 @@ public class hyperspt
 	void roadf_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	
 	WRITE_HANDLER( konami_sh_irqtrigger_w );
-	READ_HANDLER( hyperspt_sh_timer_r );
 	WRITE_HANDLER( hyperspt_sound_w );
 	
 	/* these routines lurk in sndhrdw/trackfld.c */

@@ -41,18 +41,13 @@ public class lkage
 	int lkage_vh_start(void);
 	void lkage_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	
-	READ_HANDLER( lkage_68705_portA_r );
 	WRITE_HANDLER( lkage_68705_portA_w );
-	READ_HANDLER( lkage_68705_portB_r );
 	WRITE_HANDLER( lkage_68705_portB_w );
-	READ_HANDLER( lkage_68705_portC_r );
 	WRITE_HANDLER( lkage_68705_portC_w );
 	WRITE_HANDLER( lkage_68705_ddrA_w );
 	WRITE_HANDLER( lkage_68705_ddrB_w );
 	WRITE_HANDLER( lkage_68705_ddrC_w );
 	WRITE_HANDLER( lkage_mcu_w );
-	READ_HANDLER( lkage_mcu_r );
-	READ_HANDLER( lkage_mcu_status_r );
 	
 	
 	static int sound_nmi_enable,pending_nmi;

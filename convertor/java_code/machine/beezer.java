@@ -8,7 +8,6 @@ public class beezer
 {
 	
 	WRITE_HANDLER( beezer_map_w );
-	READ_HANDLER( beezer_line_r );
 	
 	static int pbus;
 	

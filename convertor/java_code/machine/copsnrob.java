@@ -26,7 +26,7 @@ public class copsnrob
 	// I read out the current gun position via the sprite image locations,
 	// and then decrement/increment it if the up/down keys are pressed.
 	
-	READ_HANDLER( copsnrob_gun_position_r )
+	public static ReadHandlerPtr copsnrob_gun_position_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 	    int keys, current_car_image, current_gun_pos = 0;
 	
@@ -67,5 +67,5 @@ public class copsnrob
 	    if ((keys & 0x02) && (current_gun_pos != 0))  current_gun_pos--;
 	
 	    return (keys & 0x80) | gun_mask[current_gun_pos];
-	}
+	} };
 }

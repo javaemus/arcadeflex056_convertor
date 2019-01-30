@@ -207,11 +207,11 @@ public class _2610intf
 	/************************************************/
 	/* Status Read for YM2610 - Chip 0				*/
 	/************************************************/
-	READ_HANDLER( YM2610_status_port_0_A_r )
+	public static ReadHandlerPtr YM2610_status_port_0_A_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 	//logerror("PC %04x: 2610 S0A=%02X\n",cpu_get_pc(),YM2610Read(0,0));
 		return YM2610Read(0,0);
-	}
+	} };
 	
 	READ16_HANDLER( YM2610_status_port_0_A_lsb_r )
 	{
@@ -219,11 +219,11 @@ public class _2610intf
 		return YM2610Read(0,0);
 	}
 	
-	READ_HANDLER( YM2610_status_port_0_B_r )
+	public static ReadHandlerPtr YM2610_status_port_0_B_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 	//logerror("PC %04x: 2610 S0B=%02X\n",cpu_get_pc(),YM2610Read(0,2));
 		return YM2610Read(0,2);
-	}
+	} };
 	
 	READ16_HANDLER( YM2610_status_port_0_B_lsb_r )
 	{
@@ -234,17 +234,17 @@ public class _2610intf
 	/************************************************/
 	/* Status Read for YM2610 - Chip 1				*/
 	/************************************************/
-	READ_HANDLER( YM2610_status_port_1_A_r ) {
+	public static ReadHandlerPtr YM2610_status_port_1_A_r  = new ReadHandlerPtr() { public int handler(int offset) {
 		return YM2610Read(1,0);
-	}
+	} };
 	
 	READ16_HANDLER( YM2610_status_port_1_A_lsb_r ) {
 		return YM2610Read(1,0);
 	}
 	
-	READ_HANDLER( YM2610_status_port_1_B_r ) {
+	public static ReadHandlerPtr YM2610_status_port_1_B_r  = new ReadHandlerPtr() { public int handler(int offset) {
 		return YM2610Read(1,2);
-	}
+	} };
 	
 	READ16_HANDLER( YM2610_status_port_1_B_lsb_r ) {
 		return YM2610Read(1,2);
@@ -253,9 +253,9 @@ public class _2610intf
 	/************************************************/
 	/* Port Read for YM2610 - Chip 0				*/
 	/************************************************/
-	READ_HANDLER( YM2610_read_port_0_r ){
+	public static ReadHandlerPtr YM2610_read_port_0_r  = new ReadHandlerPtr() { public int handler(int offset){
 		return YM2610Read(0,1);
-	}
+	} };
 	
 	READ16_HANDLER( YM2610_read_port_0_lsb_r ){
 		return YM2610Read(0,1);
@@ -264,9 +264,9 @@ public class _2610intf
 	/************************************************/
 	/* Port Read for YM2610 - Chip 1				*/
 	/************************************************/
-	READ_HANDLER( YM2610_read_port_1_r ){
+	public static ReadHandlerPtr YM2610_read_port_1_r  = new ReadHandlerPtr() { public int handler(int offset){
 		return YM2610Read(1,1);
-	}
+	} };
 	
 	READ16_HANDLER( YM2610_read_port_1_lsb_r ){
 		return YM2610Read(1,1);

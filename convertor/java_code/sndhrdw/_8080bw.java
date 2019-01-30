@@ -45,16 +45,10 @@ public class _8080bw
 	
 	
 	
-	READ_HANDLER( boothill_port_0_r );
-	READ_HANDLER( boothill_port_1_r );
 	
-	READ_HANDLER( gunfight_port_0_r );
-	READ_HANDLER( gunfight_port_1_r );
 	
-	READ_HANDLER( seawolf_port_1_r );
 	
 	WRITE_HANDLER( desertgu_controller_select_w );
-	READ_HANDLER( desertgu_port_1_r );
 	
 	static int  schaser_sh_start(const struct MachineSound *msound);
 	static void schaser_sh_stop(void);
@@ -559,25 +553,25 @@ public class _8080bw
 	} };
 	
 	
-	READ_HANDLER( sheriff_sh_t0_r )
+	public static ReadHandlerPtr sheriff_sh_t0_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return sheriff_t0;
-	}
+	} };
 	
-	READ_HANDLER( sheriff_sh_t1_r )
+	public static ReadHandlerPtr sheriff_sh_t1_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return sheriff_t1;
-	}
+	} };
 	
-	READ_HANDLER( sheriff_sh_p1_r )
+	public static ReadHandlerPtr sheriff_sh_p1_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return soundlatch_r(0);;
-	}
+	} };
 	
-	READ_HANDLER( sheriff_sh_p2_r )
+	public static ReadHandlerPtr sheriff_sh_p2_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return sheriff_p2;
-	}
+	} };
 	
 	WRITE_HANDLER( sheriff_sh_p2_w )
 	{

@@ -36,11 +36,6 @@ public class jackal
 	int jackal_vh_start(void);
 	void jackal_vh_stop(void);
 	
-	READ_HANDLER( jackal_zram_r );
-	READ_HANDLER( jackal_commonram_r );
-	READ_HANDLER( jackal_commonram1_r );
-	READ_HANDLER( jackal_voram_r );
-	READ_HANDLER( jackal_spriteram_r );
 	
 	WRITE_HANDLER( jackal_rambank_w );
 	WRITE_HANDLER( jackal_zram_w );

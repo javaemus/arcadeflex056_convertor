@@ -68,7 +68,7 @@ public class starwars
 	 *
 	 *************************************/
 	
-	READ_HANDLER( starwars_m6532_r )
+	public static ReadHandlerPtr starwars_m6532_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		static int temp;
 	
@@ -99,7 +99,7 @@ public class starwars
 		}
 	
 		return 0; /* will never execute this */
-	}
+	} };
 	
 	
 	
@@ -179,7 +179,7 @@ public class starwars
 	 *
 	 *************************************/
 	
-	READ_HANDLER( starwars_sin_r )
+	public static ReadHandlerPtr starwars_sin_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		int res;
 	
@@ -187,7 +187,7 @@ public class starwars
 		res = sound_data;
 		sound_data = 0;
 		return res;
-	}
+	} };
 	
 	
 	WRITE_HANDLER( starwars_sout_w )
@@ -205,7 +205,7 @@ public class starwars
 	 *
 	 *************************************/
 	
-	READ_HANDLER( starwars_main_read_r )
+	public static ReadHandlerPtr starwars_main_read_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		int res;
 	
@@ -215,17 +215,17 @@ public class starwars
 		res = main_data;
 		main_data = 0;
 		return res;
-	}
+	} };
 	
 	
-	READ_HANDLER( starwars_main_ready_flag_r )
+	public static ReadHandlerPtr starwars_main_ready_flag_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 	#if 0 /* correct, but doesn't work */
 		return (port_A & 0xc0); /* only upper two flag bits mapped */
 	#else
 		return (port_A & 0x40); /* sound cpu always ready */
 	#endif
-	}
+	} };
 	
 	
 	WRITE_HANDLER( starwars_main_wr_w )

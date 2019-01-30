@@ -189,17 +189,17 @@ public class docastle
 	}
 	
 	
-	READ_HANDLER( docastle_flipscreen_off_r )
+	public static ReadHandlerPtr docastle_flipscreen_off_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		flip_screen_set(0);
 		return 0;
-	}
+	} };
 	
-	READ_HANDLER( docastle_flipscreen_on_r )
+	public static ReadHandlerPtr docastle_flipscreen_on_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		flip_screen_set(1);
 		return 0;
-	}
+	} };
 	
 	WRITE_HANDLER( docastle_flipscreen_off_w )
 	{

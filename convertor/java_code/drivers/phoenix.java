@@ -44,15 +44,10 @@ public class phoenix
 	
 	
 	
-	READ_HANDLER( phoenix_videoram_r );
 	WRITE_HANDLER( phoenix_videoram_w );
 	WRITE_HANDLER( phoenix_videoreg_w );
 	WRITE_HANDLER( pleiads_videoreg_w );
 	WRITE_HANDLER( phoenix_scroll_w );
-	READ_HANDLER( phoenix_input_port_0_r );
-	READ_HANDLER( pleiads_input_port_0_r );
-	READ_HANDLER( survival_input_port_0_r );
-	READ_HANDLER( survival_protection_r );
 	void phoenix_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom);
 	void pleiads_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom);
 	int  phoenix_vh_start(void);

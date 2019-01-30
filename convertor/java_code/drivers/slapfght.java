@@ -218,9 +218,7 @@ public class slapfght
 	extern unsigned char *slapfight_dpram;
 	extern size_t slapfight_dpram_size;
 	WRITE_HANDLER( slapfight_dpram_w );
-	READ_HANDLER( slapfight_dpram_r );
 	
-	READ_HANDLER( slapfight_port_00_r );
 	
 	WRITE_HANDLER( slapfight_port_00_w );
 	WRITE_HANDLER( slapfight_port_01_w );
@@ -231,7 +229,6 @@ public class slapfght
 	WRITE_HANDLER( slapfight_port_09_w );
 	
 	
-	READ_HANDLER( getstar_e803_r );
 	WRITE_HANDLER( getstar_sh_intenable_w );
 	int getstar_interrupt(void);
 	

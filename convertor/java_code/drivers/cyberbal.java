@@ -73,9 +73,6 @@ public class cyberbal
 	
 	int cyberbal_sound_68k_irq_gen(void);
 	
-	READ_HANDLER( cyberbal_special_port3_r );
-	READ_HANDLER( cyberbal_sound_6502_stat_r );
-	READ_HANDLER( cyberbal_sound_68k_6502_r );
 	WRITE_HANDLER( cyberbal_sound_bank_select_w );
 	WRITE_HANDLER( cyberbal_sound_68k_6502_w );
 	

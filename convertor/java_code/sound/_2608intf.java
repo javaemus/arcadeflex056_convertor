@@ -233,42 +233,42 @@ public class _2608intf
 	/************************************************/
 	/* Status Read for YM2608 - Chip 0				*/
 	/************************************************/
-	READ_HANDLER( YM2608_status_port_0_A_r )
+	public static ReadHandlerPtr YM2608_status_port_0_A_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 	//logerror("PC %04x: 2608 S0A=%02X\n",cpu_get_pc(),YM2608Read(0,0));
 		return YM2608Read(0,0);
-	}
+	} };
 	
-	READ_HANDLER( YM2608_status_port_0_B_r )
+	public static ReadHandlerPtr YM2608_status_port_0_B_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 	//logerror("PC %04x: 2608 S0B=%02X\n",cpu_get_pc(),YM2608Read(0,2));
 		return YM2608Read(0,2);
-	}
+	} };
 	
 	/************************************************/
 	/* Status Read for YM2608 - Chip 1				*/
 	/************************************************/
-	READ_HANDLER( YM2608_status_port_1_A_r ) {
+	public static ReadHandlerPtr YM2608_status_port_1_A_r  = new ReadHandlerPtr() { public int handler(int offset) {
 		return YM2608Read(1,0);
-	}
+	} };
 	
-	READ_HANDLER( YM2608_status_port_1_B_r ) {
+	public static ReadHandlerPtr YM2608_status_port_1_B_r  = new ReadHandlerPtr() { public int handler(int offset) {
 		return YM2608Read(1,2);
-	}
+	} };
 	
 	/************************************************/
 	/* Port Read for YM2608 - Chip 0				*/
 	/************************************************/
-	READ_HANDLER( YM2608_read_port_0_r ){
+	public static ReadHandlerPtr YM2608_read_port_0_r  = new ReadHandlerPtr() { public int handler(int offset){
 		return YM2608Read(0,1);
-	}
+	} };
 	
 	/************************************************/
 	/* Port Read for YM2608 - Chip 1				*/
 	/************************************************/
-	READ_HANDLER( YM2608_read_port_1_r ){
+	public static ReadHandlerPtr YM2608_read_port_1_r  = new ReadHandlerPtr() { public int handler(int offset){
 		return YM2608Read(1,1);
-	}
+	} };
 	
 	/************************************************/
 	/* Control Write for YM2608 - Chip 0			*/

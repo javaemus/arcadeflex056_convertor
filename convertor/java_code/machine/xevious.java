@@ -64,7 +64,7 @@ public class xevious
 		xevious_bs[offset & 0x01] = data;
 	}
 	
-	READ_HANDLER( xevious_bb_r )
+	public static ReadHandlerPtr xevious_bb_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		int adr_2b,adr_2c;
 		int dat1,dat2;
@@ -99,12 +99,12 @@ public class xevious
 			dat2 ^= (dat1 >> 2) & 0x80;
 		}
 		return dat2;
-	}
+	} };
 	
-	READ_HANDLER( xevious_sharedram_r )
+	public static ReadHandlerPtr xevious_sharedram_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return xevious_sharedram[offset];
-	}
+	} };
 	
 	WRITE_HANDLER( xevious_sharedram_w )
 	{
@@ -113,7 +113,7 @@ public class xevious
 	
 	
 	
-	READ_HANDLER( xevious_dsw_r )
+	public static ReadHandlerPtr xevious_dsw_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		int bit0,bit1;
 	
@@ -121,7 +121,7 @@ public class xevious
 		bit1 = (input_port_1_r(0) >> offset) & 1;
 	
 		return bit0 | (bit1 << 1);
-	}
+	} };
 	
 	/***************************************************************************
 	
@@ -204,7 +204,7 @@ public class xevious
 	}
 	
 	
-	READ_HANDLER( xevious_customio_data_r )
+	public static ReadHandlerPtr xevious_customio_data_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		if (customio_command != 0x71)
 			logerror("%04x: custom IO read offset %02x\n",cpu_get_pc(),offset);
@@ -311,13 +311,13 @@ public class xevious
 		}
 	
 		return -1;
-	}
+	} };
 	
 	
-	READ_HANDLER( xevious_customio_r )
+	public static ReadHandlerPtr xevious_customio_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return customio_command;
-	}
+	} };
 	
 	void xevious_nmi_generate (int param)
 	{

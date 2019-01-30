@@ -204,7 +204,7 @@ public class btime
 	    }
 	}
 	
-	READ_HANDLER( btime_mirrorvideoram_r )
+	public static ReadHandlerPtr btime_mirrorvideoram_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 	    int x,y;
 	
@@ -214,9 +214,9 @@ public class btime
 	    offset = 32 * y + x;
 	
 	    return videoram_r(offset);
-	}
+	} };
 	
-	READ_HANDLER( btime_mirrorcolorram_r )
+	public static ReadHandlerPtr btime_mirrorcolorram_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 	    int x,y;
 	
@@ -226,7 +226,7 @@ public class btime
 	    offset = 32 * y + x;
 	
 	    return colorram_r(offset);
-	}
+	} };
 	
 	WRITE_HANDLER( btime_mirrorvideoram_w )
 	{

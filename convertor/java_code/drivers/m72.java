@@ -97,12 +97,8 @@ public class m72
 	int hharry_vh_start(void);
 	int poundfor_vh_start(void);
 	void m72_vh_stop(void);
-	READ_HANDLER( m72_palette1_r );
-	READ_HANDLER( m72_palette2_r );
 	WRITE_HANDLER( m72_palette1_w );
 	WRITE_HANDLER( m72_palette2_w );
-	READ_HANDLER( m72_videoram1_r );
-	READ_HANDLER( m72_videoram2_r );
 	WRITE_HANDLER( m72_videoram1_w );
 	WRITE_HANDLER( m72_videoram2_w );
 	WRITE_HANDLER( m72_irq_line_w );

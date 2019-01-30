@@ -148,7 +148,6 @@ public class liberatr
 	void liberatr_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	WRITE_HANDLER( liberatr_colorram_w ) ;
 	WRITE_HANDLER( liberatr_bitmap_w );
-	READ_HANDLER( liberatr_bitmap_xy_r );
 	WRITE_HANDLER( liberatr_bitmap_xy_w );
 	
 	

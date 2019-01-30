@@ -26,8 +26,6 @@ public class zac2650
 	WRITE_HANDLER( zac_s2636_w );
 	WRITE_HANDLER( tinvader_sound_w );
 	
-	READ_HANDLER( zac_s2636_r );
-	READ_HANDLER( tinvader_port_0_r );
 	
 	
 	

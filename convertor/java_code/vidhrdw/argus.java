@@ -486,10 +486,10 @@ public class argus
 	  Memory handler
 	***************************************************************************/
 	
-	READ_HANDLER( argus_txram_r )
+	public static ReadHandlerPtr argus_txram_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return argus_txram[ offset ];
-	}
+	} };
 	
 	WRITE_HANDLER( argus_txram_w )
 	{
@@ -500,10 +500,10 @@ public class argus
 		}
 	}
 	
-	READ_HANDLER( butasan_txram_r )
+	public static ReadHandlerPtr butasan_txram_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return butasan_txram[ offset ];
-	}
+	} };
 	
 	WRITE_HANDLER( butasan_txram_w )
 	{
@@ -514,10 +514,10 @@ public class argus
 		}
 	}
 	
-	READ_HANDLER( argus_bg1ram_r )
+	public static ReadHandlerPtr argus_bg1ram_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return argus_bg1ram[ offset ];
-	}
+	} };
 	
 	WRITE_HANDLER( argus_bg1ram_w )
 	{
@@ -528,10 +528,10 @@ public class argus
 		}
 	}
 	
-	READ_HANDLER( butasan_bg0ram_r )
+	public static ReadHandlerPtr butasan_bg0ram_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return butasan_bg0ram[ offset ];
-	}
+	} };
 	
 	WRITE_HANDLER( butasan_bg0ram_w )
 	{
@@ -548,10 +548,10 @@ public class argus
 		}
 	}
 	
-	READ_HANDLER( butasan_bg1ram_r )
+	public static ReadHandlerPtr butasan_bg1ram_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return butasan_bg1ram[ offset ];
-	}
+	} };
 	
 	WRITE_HANDLER( butasan_bg1ram_w )
 	{
@@ -734,10 +734,10 @@ public class argus
 		}
 	}
 	
-	READ_HANDLER( argus_paletteram_r )
+	public static ReadHandlerPtr argus_paletteram_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return argus_paletteram[ offset ];
-	}
+	} };
 	
 	WRITE_HANDLER( argus_paletteram_w )
 	{
@@ -872,10 +872,10 @@ public class argus
 		}
 	}
 	
-	READ_HANDLER( butasan_txbackram_r )
+	public static ReadHandlerPtr butasan_txbackram_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return butasan_txbackram[ offset ];
-	}
+	} };
 	
 	WRITE_HANDLER( butasan_txbackram_w )
 	{
@@ -885,10 +885,10 @@ public class argus
 		}
 	}
 	
-	READ_HANDLER( butasan_bg0backram_r )
+	public static ReadHandlerPtr butasan_bg0backram_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return butasan_bg0backram[ offset ];
-	}
+	} };
 	
 	WRITE_HANDLER( butasan_bg0backram_w )
 	{

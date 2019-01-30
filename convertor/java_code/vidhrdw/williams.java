@@ -312,10 +312,10 @@ public class williams
 	}
 	
 	
-	READ_HANDLER( williams_video_counter_r )
+	public static ReadHandlerPtr williams_video_counter_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return cpu_getscanline() & 0xfc;
-	}
+	} };
 	
 	
 	

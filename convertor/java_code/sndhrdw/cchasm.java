@@ -16,7 +16,7 @@ public class cchasm
 	
 	static int sound_flags;
 	
-	READ_HANDLER( cchasm_snd_io_r )
+	public static ReadHandlerPtr cchasm_snd_io_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 	    int coin;
 	
@@ -44,7 +44,7 @@ public class cchasm
 	        logerror("Read from unmapped internal IO device at 0x%x\n", offset + 0x6000);
 	        return 0;
 	    }
-	}
+	} };
 	
 	WRITE_HANDLER( cchasm_snd_io_w )
 	{

@@ -199,7 +199,7 @@ public class sega
 		return 0;
 	}
 	
-	READ_HANDLER( sega_sh_r )
+	public static ReadHandlerPtr sega_sh_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		/* 0x80 = universal sound board ready */
 		/* 0x01 = speech ready */
@@ -208,7 +208,7 @@ public class sega
 			return 0x81;
 		else
 			return 0x80;
-	}
+	} };
 	
 	WRITE_HANDLER( sega_sh_speech_w )
 	{

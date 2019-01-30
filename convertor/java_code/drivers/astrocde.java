@@ -77,26 +77,20 @@ public class astrocde
 	extern const char *gorf_sample_names[];
 	
 	void astrocde_init_palette(unsigned char *game_palette, unsigned short *game_colortable,const unsigned char *color_prom);
-	READ_HANDLER( wow_intercept_r );
 	WRITE_HANDLER( wow_videoram_w );
 	WRITE_HANDLER( astrocde_magic_expand_color_w );
 	WRITE_HANDLER( astrocde_magic_control_w );
 	WRITE_HANDLER( wow_magicram_w );
 	WRITE_HANDLER( astrocde_pattern_board_w );
 	void astrocde_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
-	READ_HANDLER( wow_video_retrace_r );
 	
 	WRITE_HANDLER( astrocde_interrupt_enable_w );
 	WRITE_HANDLER( astrocde_interrupt_w );
 	int  wow_interrupt(void);
 	
-	READ_HANDLER( seawolf2_controller1_r );
-	READ_HANDLER( seawolf2_controller2_r );
 	void seawolf2_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	
 	int  gorf_interrupt(void);
-	READ_HANDLER( gorf_timer_r );
-	READ_HANDLER( gorf_io_r );
 	
 	int  astrocde_vh_start(void);
 	int  astrocde_stars_vh_start(void);
@@ -105,14 +99,9 @@ public class astrocde
 	int  wow_sh_start(const struct MachineSound *msound);
 	void wow_sh_update(void);
 	
-	READ_HANDLER( wow_speech_r );
-	READ_HANDLER( wow_port_2_r );
-	READ_HANDLER( wow_io_r );
 	
 	int  gorf_sh_start(const struct MachineSound *msound);
 	void gorf_sh_update(void);
-	READ_HANDLER( gorf_speech_r );
-	READ_HANDLER( gorf_port_2_r );
 	WRITE_HANDLER( gorf_sound_control_a_w );
 	
 	WRITE_HANDLER( astrocde_mode_w );
@@ -122,7 +111,6 @@ public class astrocde
 	WRITE_HANDLER( astrocde_colour_block_w );
 	
 	WRITE_HANDLER( ebases_trackball_select_w );
-	READ_HANDLER( ebases_trackball_r );
 	
 	
 	public static WriteHandlerPtr seawolf2_lamps_w = new WriteHandlerPtr() {public void handler(int offset, int data)

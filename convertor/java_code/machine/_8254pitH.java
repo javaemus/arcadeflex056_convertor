@@ -28,15 +28,5 @@ WRITE_HANDLER( pit8254_1_counter3_w );
 WRITE_HANDLER( pit8254_1_control_w );
 
 int pit8254_r (int which, int offset);
-READ_HANDLER( pit8254_0_r );
-READ_HANDLER( pit8254_0_counter1_r );
-READ_HANDLER( pit8254_0_counter2_r );
-READ_HANDLER( pit8254_0_counter3_r );
-READ_HANDLER( pit8254_0_control_r );
-READ_HANDLER( pit8254_1_r );
-READ_HANDLER( pit8254_1_counter1_r );
-READ_HANDLER( pit8254_1_counter2_r );
-READ_HANDLER( pit8254_1_counter3_r );
-READ_HANDLER( pit8254_1_control_r );
 
 #endif

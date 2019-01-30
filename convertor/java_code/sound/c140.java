@@ -97,11 +97,11 @@ public class c140
 		v->sample_loop=0;
 	}
 	
-	READ_HANDLER( C140_r )
+	public static ReadHandlerPtr C140_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		offset&=0x1ff;
 		return REG[offset];
-	}
+	} };
 	
 	static long find_sample( long adrs, long bank)
 	{

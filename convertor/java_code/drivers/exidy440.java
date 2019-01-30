@@ -254,9 +254,7 @@ public class exidy440
 	void exidy440_sh_update(void);
 	int exidy440_sound_interrupt(void);
 	
-	READ_HANDLER( exidy440_m6844_r );
 	WRITE_HANDLER( exidy440_m6844_w );
-	READ_HANDLER( exidy440_sound_command_r );
 	WRITE_HANDLER( exidy440_sound_volume_w );
 	WRITE_HANDLER( exidy440_sound_interrupt_clear_w );
 	
@@ -275,13 +273,9 @@ public class exidy440
 	void topsecex_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	int exidy440_vblank_interrupt(void);
 	
-	READ_HANDLER( exidy440_videoram_r );
 	WRITE_HANDLER( exidy440_videoram_w );
-	READ_HANDLER( exidy440_paletteram_r );
 	WRITE_HANDLER( exidy440_paletteram_w );
 	WRITE_HANDLER( exidy440_control_w );
-	READ_HANDLER( exidy440_vertical_pos_r );
-	READ_HANDLER( exidy440_horizontal_pos_r );
 	WRITE_HANDLER( exidy440_interrupt_clear_w );
 	
 	
@@ -530,7 +524,7 @@ public class exidy440
 	 *
 	 *************************************/
 	
-	READ_HANDLER( showdown_pld_trigger_r )
+	public static ReadHandlerPtr showdown_pld_trigger_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		/* bank 0 is where the PLD lives - a read here will set the trigger */
 		if (exidy440_bank == 0)
@@ -538,10 +532,10 @@ public class exidy440
 	
 		/* just return the value from the current bank */
 		return memory_region(REGION_CPU1)[0x10000 + exidy440_bank * 0x4000 + 0x0055 + offset];
-	}
+	} };
 	
 	
-	READ_HANDLER( showdown_pld_select1_r )
+	public static ReadHandlerPtr showdown_pld_select1_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		/* bank 0 is where the PLD lives - a read here after a trigger will set bank "1" */
 		if (exidy440_bank == 0 && showdown_bank_triggered)
@@ -560,10 +554,10 @@ public class exidy440
 	
 		/* just return the value from the current bank */
 		return memory_region(REGION_CPU1)[0x10000 + exidy440_bank * 0x4000 + 0x00ed + offset];
-	}
+	} };
 	
 	
-	READ_HANDLER( showdown_pld_select2_r )
+	public static ReadHandlerPtr showdown_pld_select2_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		/* bank 0 is where the PLD lives - a read here after a trigger will set bank "2" */
 		if (exidy440_bank == 0 && showdown_bank_triggered)
@@ -582,7 +576,7 @@ public class exidy440
 	
 		/* just return the value from the current bank */
 		return memory_region(REGION_CPU1)[0x10000 + exidy440_bank * 0x4000 + 0x1243 + offset];
-	}
+	} };
 	
 	
 	

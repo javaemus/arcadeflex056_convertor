@@ -47,15 +47,11 @@ public class genericH
 	void generic_vh_stop(void);
 	void generic_bitmapped_vh_stop(void);
 	void generic_bitmapped_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
-	READ_HANDLER( videoram_r );
-	READ_HANDLER( colorram_r );
 	WRITE_HANDLER( videoram_w );
 	WRITE_HANDLER( colorram_w );
-	READ_HANDLER( spriteram_r );
 	WRITE_HANDLER( spriteram_w );
 	READ16_HANDLER( spriteram16_r );
 	WRITE16_HANDLER( spriteram16_w );
-	READ_HANDLER( spriteram_2_r );
 	WRITE_HANDLER( spriteram_2_w );
 	WRITE_HANDLER( buffer_spriteram_w );
 	WRITE16_HANDLER( buffer_spriteram16_w );

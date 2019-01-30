@@ -293,8 +293,8 @@ public class z80fmly
 		}
 	}
 	
-	READ_HANDLER( z80ctc_0_r ) { return z80ctc_r (0, offset); }
-	READ_HANDLER( z80ctc_1_r ) { return z80ctc_r (1, offset); }
+	public static ReadHandlerPtr z80ctc_0_r  = new ReadHandlerPtr() { public int handler(int offset) { return z80ctc_r (0, offset); } };
+	public static ReadHandlerPtr z80ctc_1_r  = new ReadHandlerPtr() { public int handler(int offset) { return z80ctc_r (1, offset); } };
 	
 	
 	int z80ctc_interrupt( int which )
@@ -757,15 +757,15 @@ public class z80fmly
 		else         z80pio_d_w(0,(offset/2)&1,data);
 	}
 	
-	READ_HANDLER( z80pio_0_r )
+	public static ReadHandlerPtr z80pio_0_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return (offset&1) ? z80pio_c_r(0,(offset/2)&1) : z80pio_d_r(0,(offset/2)&1);
-	}
+	} };
 	
 	WRITE_HANDLER( z80pioA_0_p_w ) { z80pio_p_w(0,0,data);   }
 	WRITE_HANDLER( z80pioB_0_p_w ) { z80pio_p_w(0,1,data);   }
-	READ_HANDLER( z80pioA_0_p_r )           { return z80pio_p_r(0,0); }
-	READ_HANDLER( z80pioB_0_p_r )           { return z80pio_p_r(0,1); }
+	public static ReadHandlerPtr z80pioA_0_p_r  = new ReadHandlerPtr() { public int handler(int offset)           { return z80pio_p_r(0,0); } };
+	public static ReadHandlerPtr z80pioB_0_p_r  = new ReadHandlerPtr() { public int handler(int offset)           { return z80pio_p_r(0,1); } };
 	
 	static void z80pio_update_strobe(int which, int ch, int state)
 	{

@@ -75,14 +75,6 @@ void via_set_input_si(int which, int data);
 
 /******************* Standard 8-bit CPU interfaces, D0-D7 *******************/
 
-READ_HANDLER( via_0_r );
-READ_HANDLER( via_1_r );
-READ_HANDLER( via_2_r );
-READ_HANDLER( via_3_r );
-READ_HANDLER( via_4_r );
-READ_HANDLER( via_5_r );
-READ_HANDLER( via_6_r );
-READ_HANDLER( via_7_r );
 
 WRITE_HANDLER( via_0_w );
 WRITE_HANDLER( via_1_w );
@@ -113,23 +105,7 @@ WRITE_HANDLER( via_5_portb_w );
 WRITE_HANDLER( via_6_portb_w );
 WRITE_HANDLER( via_7_portb_w );
 
-READ_HANDLER( via_0_porta_r );
-READ_HANDLER( via_1_porta_r );
-READ_HANDLER( via_2_porta_r );
-READ_HANDLER( via_3_porta_r );
-READ_HANDLER( via_4_porta_r );
-READ_HANDLER( via_5_porta_r );
-READ_HANDLER( via_6_porta_r );
-READ_HANDLER( via_7_porta_r );
 
-READ_HANDLER( via_0_portb_r );
-READ_HANDLER( via_1_portb_r );
-READ_HANDLER( via_2_portb_r );
-READ_HANDLER( via_3_portb_r );
-READ_HANDLER( via_4_portb_r );
-READ_HANDLER( via_5_portb_r );
-READ_HANDLER( via_6_portb_r );
-READ_HANDLER( via_7_portb_r );
 
 /******************* 1-bit CA1/CA2/CB1/CB2 port interfaces *******************/
 
@@ -167,39 +143,7 @@ WRITE_HANDLER( via_5_cb2_w );
 WRITE_HANDLER( via_6_cb2_w );
 WRITE_HANDLER( via_7_cb2_w );
 
-READ_HANDLER( via_0_ca1_r );
-READ_HANDLER( via_1_ca1_r );
-READ_HANDLER( via_2_ca1_r );
-READ_HANDLER( via_3_ca1_r );
-READ_HANDLER( via_4_ca1_r );
-READ_HANDLER( via_5_ca1_r );
-READ_HANDLER( via_6_ca1_r );
-READ_HANDLER( via_7_ca1_r );
-READ_HANDLER( via_0_ca2_r );
-READ_HANDLER( via_1_ca2_r );
-READ_HANDLER( via_2_ca2_r );
-READ_HANDLER( via_3_ca2_r );
-READ_HANDLER( via_4_ca2_r );
-READ_HANDLER( via_5_ca2_r );
-READ_HANDLER( via_6_ca2_r );
-READ_HANDLER( via_7_ca2_r );
 
-READ_HANDLER( via_0_cb1_r );
-READ_HANDLER( via_1_cb1_r );
-READ_HANDLER( via_2_cb1_r );
-READ_HANDLER( via_3_cb1_r );
-READ_HANDLER( via_4_cb1_r );
-READ_HANDLER( via_5_cb1_r );
-READ_HANDLER( via_6_cb1_r );
-READ_HANDLER( via_7_cb1_r );
-READ_HANDLER( via_0_cb2_r );
-READ_HANDLER( via_1_cb2_r );
-READ_HANDLER( via_2_cb2_r );
-READ_HANDLER( via_3_cb2_r );
-READ_HANDLER( via_4_cb2_r );
-READ_HANDLER( via_5_cb2_r );
-READ_HANDLER( via_6_cb2_r );
-READ_HANDLER( via_7_cb2_r );
 #ifdef __cplusplus
 }
 #endif

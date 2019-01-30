@@ -124,10 +124,10 @@ public class ttmahjng
 	/***************************************************************************
 	  ttmahjng_sharedram_r
 	***************************************************************************/
-	READ_HANDLER( ttmahjng_sharedram_r )
+	public static ReadHandlerPtr ttmahjng_sharedram_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return ttmahjng_sharedram[offset];
-	}
+	} };
 	
 	/***************************************************************************
 	  ttmahjng_sharedram_w
@@ -140,18 +140,18 @@ public class ttmahjng
 	/***************************************************************************
 	  ttmahjng_videoram1_r
 	***************************************************************************/
-	READ_HANDLER( ttmahjng_videoram1_r )
+	public static ReadHandlerPtr ttmahjng_videoram1_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return ttmahjng_videoram1[offset];
-	}
+	} };
 	
 	/***************************************************************************
 	  ttmahjng_videoram2_r
 	***************************************************************************/
-	READ_HANDLER( ttmahjng_videoram2_r )
+	public static ReadHandlerPtr ttmahjng_videoram2_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return ttmahjng_videoram1[offset];
-	}
+	} };
 	
 	/***************************************************************************
 	  ttmahjng_videoram1_w

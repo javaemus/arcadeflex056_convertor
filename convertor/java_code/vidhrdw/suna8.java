@@ -109,17 +109,17 @@ public class suna8
 	
 	
 	
-	READ_HANDLER( suna8_banked_paletteram_r )
+	public static ReadHandlerPtr suna8_banked_paletteram_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		offset += suna8_palettebank * 0x200;
 		return paletteram[offset];
-	}
+	} };
 	
-	READ_HANDLER( suna8_banked_spriteram_r )
+	public static ReadHandlerPtr suna8_banked_spriteram_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		offset += suna8_spritebank * 0x2000;
 		return spriteram[offset];
-	}
+	} };
 	
 	WRITE_HANDLER( suna8_spriteram_w )
 	{

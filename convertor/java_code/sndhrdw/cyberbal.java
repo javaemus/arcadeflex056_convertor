@@ -43,23 +43,23 @@ public class cyberbal
 	 *
 	 *************************************/
 	
-	READ_HANDLER( cyberbal_special_port3_r )
+	public static ReadHandlerPtr cyberbal_special_port3_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		int temp = readinputport(3);
 		if (!(readinputport(0) & 0x8000)) temp ^= 0x80;
 		if (atarigen_cpu_to_sound_ready) temp ^= 0x40;
 		if (atarigen_sound_to_cpu_ready) temp ^= 0x20;
 		return temp;
-	}
+	} };
 	
 	
-	READ_HANDLER( cyberbal_sound_6502_stat_r )
+	public static ReadHandlerPtr cyberbal_sound_6502_stat_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		int temp = 0xff;
 		if (sound_data_from_6502_ready) temp ^= 0x80;
 		if (sound_data_from_68k_ready) temp ^= 0x40;
 		return temp;
-	}
+	} };
 	
 	
 	WRITE_HANDLER( cyberbal_sound_bank_select_w )
@@ -73,11 +73,11 @@ public class cyberbal
 	}
 	
 	
-	READ_HANDLER( cyberbal_sound_68k_6502_r )
+	public static ReadHandlerPtr cyberbal_sound_68k_6502_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		sound_data_from_68k_ready = 0;
 		return sound_data_from_68k;
-	}
+	} };
 	
 	
 	WRITE_HANDLER( cyberbal_sound_68k_6502_w )

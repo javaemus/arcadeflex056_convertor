@@ -823,13 +823,13 @@ public class dec0
 		tilemap_mark_tile_dirty(pf3_tilemap_2,offset>>1);
 	}
 	
-	READ_HANDLER( dec0_pf3_data_8bit_r )
+	public static ReadHandlerPtr dec0_pf3_data_8bit_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		if (offset&1) /* MSB */
 			return dec0_pf3_data[offset>>1]>>8;
 	
 		return dec0_pf3_data[offset>>1]&0xff;
-	}
+	} };
 	
 	/******************************************************************************/
 	

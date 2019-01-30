@@ -46,8 +46,6 @@ public class suna8
 	WRITE_HANDLER( suna8_spriteram_w );			// for debug
 	WRITE_HANDLER( suna8_banked_spriteram_w );	// for debug
 	
-	READ_HANDLER( suna8_banked_paletteram_r );
-	READ_HANDLER( suna8_banked_spriteram_r );
 	
 	WRITE_HANDLER( suna8_banked_paletteram_w );
 	WRITE_HANDLER( brickzn_banked_paletteram_w );

@@ -40,7 +40,7 @@ public class megazone
 	
 	
 	
-	READ_HANDLER( megazone_portA_r )
+	public static ReadHandlerPtr megazone_portA_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		int clock,timer;
 	
@@ -58,7 +58,7 @@ public class megazone
 		/* low three bits come from the 8039 */
 	
 		return (timer << 4) | i8039_status;
-	}
+	} };
 	
 	public static WriteHandlerPtr megazone_portB_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
@@ -94,10 +94,10 @@ public class megazone
 		}
 	}
 	
-	READ_HANDLER( megazone_sharedram_r )
+	public static ReadHandlerPtr megazone_sharedram_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return(megazone_sharedram[offset]);
-	}
+	} };
 	
 	WRITE_HANDLER( megazone_sharedram_w )
 	{

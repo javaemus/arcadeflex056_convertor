@@ -555,7 +555,7 @@ public class exidy
 	 *
 	 *************************************/
 	
-	READ_HANDLER( exidy_shriot_r )
+	public static ReadHandlerPtr exidy_shriot_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		/* mask to the low 7 bits */
 		offset &= 0x7f;
@@ -617,7 +617,7 @@ public class exidy
 	
 		logerror("Undeclared RIOT read: %x  PC:%x\n",offset,cpu_get_pc());
 		return 0xff;
-	}
+	} };
 	
 	
 	
@@ -664,11 +664,11 @@ public class exidy
 	}
 	
 	
-	READ_HANDLER( exidy_sh8253_r )
+	public static ReadHandlerPtr exidy_sh8253_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 	    logerror("8253(R): %x\n",offset);
 		return 0;
-	}
+	} };
 	
 	
 	
@@ -678,11 +678,11 @@ public class exidy
 	 *
 	 *************************************/
 	
-	READ_HANDLER( exidy_sh6840_r )
+	public static ReadHandlerPtr exidy_sh6840_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 	    logerror("6840R %x\n",offset);
 	    return 0;
-	}
+	} };
 	
 	
 	WRITE_HANDLER( exidy_sh6840_w )
@@ -774,7 +774,7 @@ public class exidy
 	}
 	
 	
-	READ_HANDLER( mtrap_voiceio_r )
+	public static ReadHandlerPtr mtrap_voiceio_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		if (!(offset & 0x80))
 		{
@@ -789,5 +789,5 @@ public class exidy
 	    	return (clock_pulse & 1) << 7;
 		}
 		return 0;
-	}
+	} };
 }

@@ -329,26 +329,6 @@ public class inptportH
 	void inputport_vblank_end(void);	/* called by cpuintrf.c - not for external use */
 	
 	int readinputport(int port);
-	READ_HANDLER( input_port_0_r );
-	READ_HANDLER( input_port_1_r );
-	READ_HANDLER( input_port_2_r );
-	READ_HANDLER( input_port_3_r );
-	READ_HANDLER( input_port_4_r );
-	READ_HANDLER( input_port_5_r );
-	READ_HANDLER( input_port_6_r );
-	READ_HANDLER( input_port_7_r );
-	READ_HANDLER( input_port_8_r );
-	READ_HANDLER( input_port_9_r );
-	READ_HANDLER( input_port_10_r );
-	READ_HANDLER( input_port_11_r );
-	READ_HANDLER( input_port_12_r );
-	READ_HANDLER( input_port_13_r );
-	READ_HANDLER( input_port_14_r );
-	READ_HANDLER( input_port_15_r );
-	READ_HANDLER( input_port_16_r );
-	READ_HANDLER( input_port_17_r );
-	READ_HANDLER( input_port_18_r );
-	READ_HANDLER( input_port_19_r );
 	
 	READ16_HANDLER( input_port_0_word_r );
 	READ16_HANDLER( input_port_1_word_r );

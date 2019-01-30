@@ -25,10 +25,10 @@ public class citycon
 	void citycon_vh_stop(void);
 	
 	
-	READ_HANDLER( citycon_in_r )
+	public static ReadHandlerPtr citycon_in_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return readinputport(flip_screen ? 1 : 0);
-	}
+	} };
 	
 	
 	

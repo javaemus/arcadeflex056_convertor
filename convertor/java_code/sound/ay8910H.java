@@ -26,11 +26,6 @@ void AY8910Write(int chip,int a,int data);
 int AY8910Read(int chip);
 
 
-READ_HANDLER( AY8910_read_port_0_r );
-READ_HANDLER( AY8910_read_port_1_r );
-READ_HANDLER( AY8910_read_port_2_r );
-READ_HANDLER( AY8910_read_port_3_r );
-READ_HANDLER( AY8910_read_port_4_r );
 READ16_HANDLER( AY8910_read_port_0_lsb_r );
 READ16_HANDLER( AY8910_read_port_1_lsb_r );
 READ16_HANDLER( AY8910_read_port_2_lsb_r );

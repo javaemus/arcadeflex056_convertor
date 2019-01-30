@@ -76,25 +76,25 @@ public class nyny
 		flip_screen_set(data);
 	}
 	
-	READ_HANDLER( nyny_videoram0_r )
+	public static ReadHandlerPtr nyny_videoram0_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return( nyny_videoram[offset] ) ;
-	}
+	} };
 	
-	READ_HANDLER( nyny_videoram1_r )
+	public static ReadHandlerPtr nyny_videoram1_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return( nyny_videoram[offset+0x2000] ) ;
-	}
+	} };
 	
-	READ_HANDLER( nyny_colourram0_r )
+	public static ReadHandlerPtr nyny_colourram0_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return( nyny_colourram[offset] ) ;
-	}
+	} };
 	
-	READ_HANDLER( nyny_colourram1_r )
+	public static ReadHandlerPtr nyny_colourram1_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return( nyny_colourram[offset+0x2000] ) ;
-	}
+	} };
 	
 	WRITE_HANDLER( nyny_colourram0_w )
 	{

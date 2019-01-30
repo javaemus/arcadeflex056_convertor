@@ -122,10 +122,10 @@ public class gyruss
 	
 	
 	/* Return the current video scan line */
-	READ_HANDLER( gyruss_scanline_r )
+	public static ReadHandlerPtr gyruss_scanline_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return scanline;
-	}
+	} };
 	
 	
 	

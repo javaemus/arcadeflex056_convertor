@@ -24,9 +24,6 @@ public class subs
 	extern void subs_init_machine(void);
 	extern int subs_interrupt(void);
 	WRITE_HANDLER( subs_steer_reset_w );
-	READ_HANDLER( subs_control_r );
-	READ_HANDLER( subs_coin_r );
-	READ_HANDLER( subs_options_r );
 	WRITE_HANDLER( subs_lamp1_w );
 	WRITE_HANDLER( subs_lamp2_w );
 	WRITE_HANDLER( subs_noise_reset_w );

@@ -78,29 +78,29 @@ public class tankbatt
 		set_led_status(offset,data & 1);
 	}
 	
-	READ_HANDLER( tankbatt_in0_r )
+	public static ReadHandlerPtr tankbatt_in0_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		int val;
 	
 		val = readinputport(0);
 		return ((val << (7-offset)) & 0x80);
-	}
+	} };
 	
-	READ_HANDLER( tankbatt_in1_r )
+	public static ReadHandlerPtr tankbatt_in1_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		int val;
 	
 		val = readinputport(1);
 		return ((val << (7-offset)) & 0x80);
-	}
+	} };
 	
-	READ_HANDLER( tankbatt_dsw_r )
+	public static ReadHandlerPtr tankbatt_dsw_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		int val;
 	
 		val = readinputport(2);
 		return ((val << (7-offset)) & 0x80);
-	}
+	} };
 	
 	WRITE_HANDLER( tankbatt_interrupt_enable_w )
 	{

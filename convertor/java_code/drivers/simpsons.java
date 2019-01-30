@@ -24,13 +24,8 @@ public class simpsons
 	void simpsons_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	
 	/* from machine */
-	READ_HANDLER( simpsons_eeprom_r );
 	WRITE_HANDLER( simpsons_eeprom_w );
 	WRITE_HANDLER( simpsons_coin_counter_w );
-	READ_HANDLER( simpsons_sound_interrupt_r );
-	READ_HANDLER( simpsons_sound_r );
-	READ_HANDLER( simpsons_speedup1_r );
-	READ_HANDLER( simpsons_speedup2_r );
 	void simpsons_init_machine( void );
 	void simpsons_nvram_handler(void *file,int read_or_write);
 	extern int simpsons_firq_enabled;

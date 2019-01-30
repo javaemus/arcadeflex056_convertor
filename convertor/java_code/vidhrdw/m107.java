@@ -127,10 +127,10 @@ public class m107
 	
 	/*****************************************************************************/
 	
-	READ_HANDLER( m107_vram_r )
+	public static ReadHandlerPtr m107_vram_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return m107_vram_data[offset];
-	}
+	} };
 	
 	WRITE_HANDLER( m107_vram_w )
 	{

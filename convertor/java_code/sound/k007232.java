@@ -442,30 +442,30 @@ public class k007232
 		K007232_WriteReg(offset,data,0);
 	}
 	
-	READ_HANDLER( K007232_read_port_0_r )
+	public static ReadHandlerPtr K007232_read_port_0_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return K007232_ReadReg(offset,0);
-	}
+	} };
 	
 	WRITE_HANDLER( K007232_write_port_1_w )
 	{
 		K007232_WriteReg(offset,data,1);
 	}
 	
-	READ_HANDLER( K007232_read_port_1_r )
+	public static ReadHandlerPtr K007232_read_port_1_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return K007232_ReadReg(offset,1);
-	}
+	} };
 	
 	WRITE_HANDLER( K007232_write_port_2_w )
 	{
 		K007232_WriteReg(offset,data,2);
 	}
 	
-	READ_HANDLER( K007232_read_port_2_r )
+	public static ReadHandlerPtr K007232_read_port_2_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return K007232_ReadReg(offset,2);
-	}
+	} };
 	
 	void K007232_bankswitch(int chip,unsigned char *ptr_A,unsigned char *ptr_B)
 	{

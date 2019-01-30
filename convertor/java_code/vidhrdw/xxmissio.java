@@ -43,10 +43,10 @@ public class xxmissio
 		}
 	}
 	
-	READ_HANDLER( xxmissio_fgram_r )
+	public static ReadHandlerPtr xxmissio_fgram_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return xxmissio_fgram[offset];
-	}
+	} };
 	WRITE_HANDLER( xxmissio_fgram_w )
 	{
 		xxmissio_fgram[offset] = data;
@@ -61,14 +61,14 @@ public class xxmissio
 		videoram[offs] = data;
 		dirtybuffer[offs & 0x3ff] = 1;
 	}
-	READ_HANDLER( xxmissio_videoram_r )
+	public static ReadHandlerPtr xxmissio_videoram_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		int offs = offset & 0x7e0;
 		int x = (offset + (xxmissio_xscroll >> 3) ) & 0x1f;
 		offs |= x;
 	
 		return videoram[offs];
-	}
+	} };
 	
 	WRITE_HANDLER( xxmissio_paletteram_w )
 	{

@@ -103,8 +103,6 @@ extern data16_t *paletteram16;
 extern data16_t *paletteram16_2;
 extern data32_t *paletteram32;
 
-READ_HANDLER( paletteram_r );
-READ_HANDLER( paletteram_2_r );
 READ16_HANDLER( paletteram16_word_r );
 READ16_HANDLER( paletteram16_2_word_r );
 READ32_HANDLER( paletteram32_r );

@@ -65,7 +65,7 @@ public class bsktball
 	bsktball_in0_r
 	***************************************************************************/
 	
-	READ_HANDLER( bsktball_in0_r )
+	public static ReadHandlerPtr bsktball_in0_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		static int DR0=0;		/* PL2 H DIR */
 		static int DR1=0;		/* PL2 V DIR */
@@ -163,7 +163,7 @@ public class bsktball
 	
 			return (temp | DR0 | DR1 | DR2 | DR3);
 		}
-	}
+	} };
 	
 	/***************************************************************************
 	bsktball_led_w

@@ -466,19 +466,19 @@ public class k054539
 		K054539_w(0, offset, data);
 	}
 	
-	READ_HANDLER( K054539_0_r )
+	public static ReadHandlerPtr K054539_0_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return K054539_r(0, offset);
-	}
+	} };
 	
 	WRITE_HANDLER( K054539_1_w )
 	{
 		K054539_w(1, offset, data);
 	}
 	
-	READ_HANDLER( K054539_1_r )
+	public static ReadHandlerPtr K054539_1_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return K054539_r(1, offset);
-	}
+	} };
 	
 }

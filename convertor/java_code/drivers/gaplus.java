@@ -23,8 +23,6 @@ public class gaplus
 	extern unsigned char *mappy_soundregs;
 	
 	/* shared memory functions */
-	READ_HANDLER( gaplus_sharedram_r );
-	READ_HANDLER( gaplus_snd_sharedram_r );
 	WRITE_HANDLER( gaplus_sharedram_w );
 	WRITE_HANDLER( gaplus_snd_sharedram_w );
 	
@@ -32,15 +30,6 @@ public class gaplus
 	WRITE_HANDLER( gaplus_customio_1_w );
 	WRITE_HANDLER( gaplus_customio_2_w );
 	WRITE_HANDLER( gaplus_customio_3_w );
-	READ_HANDLER( gaplus_customio_1_r );
-	READ_HANDLER( gaplus_customio_2_r );
-	READ_HANDLER( gaplus_customio_3_r );
-	READ_HANDLER( gaplusa_customio_1_r );
-	READ_HANDLER( gaplusa_customio_2_r );
-	READ_HANDLER( gaplusa_customio_3_r );
-	READ_HANDLER( galaga3_customio_1_r );
-	READ_HANDLER( galaga3_customio_2_r );
-	READ_HANDLER( galaga3_customio_3_r );
 	
 	extern int gaplus_interrupt_1(void);
 	WRITE_HANDLER( gaplus_reset_2_3_w );

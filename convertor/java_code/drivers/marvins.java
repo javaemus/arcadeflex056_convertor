@@ -32,16 +32,12 @@ public class marvins
 	**
 	***************************************************************************/
 	
-	READ_HANDLER( marvins_background_ram_r );
 	WRITE_HANDLER( marvins_background_ram_w );
 	
-	READ_HANDLER( marvins_foreground_ram_r );
 	WRITE_HANDLER( marvins_foreground_ram_w );
 	
-	READ_HANDLER( marvins_text_ram_r );
 	WRITE_HANDLER( marvins_text_ram_w );
 	
-	READ_HANDLER( marvins_spriteram_r );
 	WRITE_HANDLER( marvins_spriteram_w );
 	
 	/***************************************************************************

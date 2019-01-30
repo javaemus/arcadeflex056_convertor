@@ -29,9 +29,7 @@ public class cbasebal
 	int cbasebal_vh_start(void);
 	void cbasebal_vh_stop(void);
 	WRITE_HANDLER( cbasebal_textram_w );
-	READ_HANDLER( cbasebal_textram_r );
 	WRITE_HANDLER( cbasebal_scrollram_w );
-	READ_HANDLER( cbasebal_scrollram_r );
 	WRITE_HANDLER( cbasebal_gfxctrl_w );
 	WRITE_HANDLER( cbasebal_scrollx_w );
 	WRITE_HANDLER( cbasebal_scrolly_w );

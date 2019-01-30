@@ -68,8 +68,6 @@ public class m6509H
 	extern const char *m6509_info(void *context, int regnum);
 	extern unsigned m6509_dasm(char *buffer, unsigned pc);
 	
-	READ_HANDLER( m6509_read_00000 );
-	READ_HANDLER( m6509_read_00001 );
 	
 	WRITE_HANDLER( m6509_write_00000 );
 	WRITE_HANDLER( m6509_write_00001 );

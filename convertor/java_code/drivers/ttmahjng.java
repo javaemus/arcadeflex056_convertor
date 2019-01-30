@@ -24,10 +24,7 @@ public class ttmahjng
 	WRITE_HANDLER( ttmahjng_out1_w );
 	WRITE_HANDLER( ttmahjng_videoram1_w );
 	WRITE_HANDLER( ttmahjng_videoram2_w );
-	READ_HANDLER( ttmahjng_videoram1_r );
-	READ_HANDLER( ttmahjng_videoram2_r );
 	WRITE_HANDLER( ttmahjng_sharedram_w );
-	READ_HANDLER( ttmahjng_sharedram_r );
 	void ttmahjng_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	
 	
@@ -37,7 +34,7 @@ public class ttmahjng
 		psel = data;
 	}
 	
-	READ_HANDLER( input_port_matrix_r )
+	public static ReadHandlerPtr input_port_matrix_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		int	cdata;
 	
@@ -60,7 +57,7 @@ public class ttmahjng
 				break;
 		}
 		return cdata;
-	}
+	} };
 	
 	
 	public static Memory_ReadAddress cpu1_readmem[]={

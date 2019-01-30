@@ -122,15 +122,15 @@ public class vastar
 	}
 	
 	
-	READ_HANDLER( vastar_bg1videoram_r )
+	public static ReadHandlerPtr vastar_bg1videoram_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return vastar_bg1videoram[offset];
-	}
+	} };
 	
-	READ_HANDLER( vastar_bg2videoram_r )
+	public static ReadHandlerPtr vastar_bg2videoram_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return vastar_bg2videoram[offset];
-	}
+	} };
 	
 	
 	/***************************************************************************

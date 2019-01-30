@@ -309,7 +309,7 @@ public class mpatrol
 	}
 	
 	
-	READ_HANDLER( mpatrol_input_port_3_r )
+	public static ReadHandlerPtr mpatrol_input_port_3_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		int ret = input_port_3_r(0);
 	
@@ -326,7 +326,7 @@ public class mpatrol
 		}
 	
 		return ret;
-	}
+	} };
 	
 	
 	

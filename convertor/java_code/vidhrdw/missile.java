@@ -47,10 +47,10 @@ public class missile
 	}
 	
 	/********************************************************************************************/
-	READ_HANDLER( missile_video_r )
+	public static ReadHandlerPtr missile_video_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return (missile_videoram[offset] & 0xe0);
-	}
+	} };
 	
 	/********************************************************************************************/
 	static void missile_blit_w (offs_t offset)

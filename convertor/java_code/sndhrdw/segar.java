@@ -461,34 +461,34 @@ public class segar
 		}
 	}
 	
-	READ_HANDLER( monsterb_audio_8255_r )
+	public static ReadHandlerPtr monsterb_audio_8255_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		// Only PC4 is hooked up
 		/* 0x00 = BUSY, 0x10 = NOT BUSY */
 		return (port_8255_c47 & 0x10);
-	}
+	} };
 	
 	/* read from BUS */
-	READ_HANDLER( monsterb_sh_rom_r )
+	public static ReadHandlerPtr monsterb_sh_rom_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		unsigned char *sound_rom = memory_region(REGION_SOUND1);
 	
 		return sound_rom[rom_offset];
-	}
+	} };
 	
 	/* read from T1 */
-	READ_HANDLER( monsterb_sh_t1_r )
+	public static ReadHandlerPtr monsterb_sh_t1_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		// Labelled as "TEST", connected to ground
 		return 0;
-	}
+	} };
 	
 	/* read from P2 */
-	READ_HANDLER( monsterb_sh_command_r )
+	public static ReadHandlerPtr monsterb_sh_command_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		// 8255's PC0-2 connects to 7751's S0-2 (P24-P26 on an 8048)
 		return ((port_8255_c03 & 0x07) << 4) | port_7751_p27;
-	}
+	} };
 	
 	/* write to P1 */
 	WRITE_HANDLER( monsterb_sh_dac_w )

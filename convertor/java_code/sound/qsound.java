@@ -231,11 +231,11 @@ public class qsound
 		qsound_set_command(data, qsound_data);
 	}
 	
-	READ_HANDLER( qsound_status_r )
+	public static ReadHandlerPtr qsound_status_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		/* Port ready bit (0x80 if ready) */
 		return 0x80;
-	}
+	} };
 	
 	void qsound_set_command(int data, int value)
 	{

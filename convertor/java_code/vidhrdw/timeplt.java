@@ -178,10 +178,10 @@ public class timeplt
 	}
 	
 	/* Return the current video scan line */
-	READ_HANDLER( timeplt_scanline_r )
+	public static ReadHandlerPtr timeplt_scanline_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return scanline;
-	}
+	} };
 	
 	
 	

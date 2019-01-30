@@ -29,12 +29,11 @@ public class rollrace
 	WRITE_HANDLER( rollrace_spritebank_w );
 	WRITE_HANDLER( rollrace_flipx_w );
 	
-	READ_HANDLER( rollrace_bkgpen_r );
 	
-	READ_HANDLER( ra_fake_d800_r )
+	public static ReadHandlerPtr ra_fake_d800_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return 0x51;
-	}
+	} };
 	
 	WRITE_HANDLER( ra_fake_d800_w )
 	{

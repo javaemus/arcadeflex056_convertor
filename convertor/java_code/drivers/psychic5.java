@@ -323,18 +323,16 @@ public class psychic5
 	void psychic5_vh_stop(void);
 	void psychic5_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	WRITE_HANDLER( psychic5_paged_ram_w );
-	READ_HANDLER( psychic5_paged_ram_r );
 	WRITE_HANDLER( psychic5_vram_page_select_w );
-	READ_HANDLER( psychic5_vram_page_select_r );
 	
 	
 	static int psychic5_bank_latch = 0x0;
 	
 	
-	READ_HANDLER( psychic5_bankselect_r )
+	public static ReadHandlerPtr psychic5_bankselect_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return psychic5_bank_latch;
-	}
+	} };
 	
 	WRITE_HANDLER( psychic5_bankselect_w )
 	{

@@ -190,10 +190,10 @@ public class route16
 	/***************************************************************************
 	  route16_sharedram_r
 	***************************************************************************/
-	READ_HANDLER( route16_sharedram_r )
+	public static ReadHandlerPtr route16_sharedram_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return route16_sharedram[offset];
-	}
+	} };
 	
 	/***************************************************************************
 	  route16_sharedram_w
@@ -213,18 +213,18 @@ public class route16
 	/***************************************************************************
 	  route16_videoram1_r
 	***************************************************************************/
-	READ_HANDLER( route16_videoram1_r )
+	public static ReadHandlerPtr route16_videoram1_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return route16_videoram1[offset];
-	}
+	} };
 	
 	/***************************************************************************
 	  route16_videoram2_r
 	***************************************************************************/
-	READ_HANDLER( route16_videoram2_r )
+	public static ReadHandlerPtr route16_videoram2_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return route16_videoram1[offset];
-	}
+	} };
 	
 	/***************************************************************************
 	  route16_videoram1_w

@@ -42,15 +42,15 @@ public class dynduke
 		}
 	}
 	
-	READ_HANDLER( dynduke_background_r )
+	public static ReadHandlerPtr dynduke_background_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return dynduke_back_data[offset];
-	}
+	} };
 	
-	READ_HANDLER( dynduke_foreground_r )
+	public static ReadHandlerPtr dynduke_foreground_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return dynduke_fore_data[offset];
-	}
+	} };
 	
 	WRITE_HANDLER( dynduke_background_w )
 	{

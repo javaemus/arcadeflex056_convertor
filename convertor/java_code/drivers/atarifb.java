@@ -124,11 +124,7 @@ public class atarifb
 	
 	/* machine/atarifb.c */
 	WRITE_HANDLER( atarifb_out1_w );
-	READ_HANDLER( atarifb_in0_r );
-	READ_HANDLER( atarifb_in2_r );
 	WRITE_HANDLER( atarifb4_out1_w );
-	READ_HANDLER( atarifb4_in0_r );
-	READ_HANDLER( atarifb4_in2_r );
 	WRITE_HANDLER( soccer_out1_w );
 	
 	int atarifb_lamp1, atarifb_lamp2;

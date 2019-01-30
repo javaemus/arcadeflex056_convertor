@@ -183,9 +183,6 @@ public class itech8
 	 *************************************/
 	
 	/* machine functions */
-	READ_HANDLER( slikshot_z80_r );
-	READ_HANDLER( slikshot_z80_control_r );
-	READ_HANDLER( slikz80_port_r );
 	WRITE_HANDLER( slikz80_port_w );
 	WRITE_HANDLER( slikshot_z80_control_w );
 	
@@ -198,8 +195,6 @@ public class itech8
 	void itech8_vh_stop(void);
 	void itech8_vh_screenrefresh(struct mame_bitmap *bitmap, int full_refresh);
 	
-	READ_HANDLER( itech8_tms34061_r );
-	READ_HANDLER( itech8_blitter_r );
 	
 	WRITE_HANDLER( itech8_tms34061_w );
 	WRITE_HANDLER( itech8_palette_address_w );

@@ -517,7 +517,7 @@ public class namcos2
 		}
 	}
 	
-	READ_HANDLER( namcos2_mcu_analog_ctrl_r )
+	public static ReadHandlerPtr namcos2_mcu_analog_ctrl_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		int data=0;
 	
@@ -529,24 +529,24 @@ public class namcos2
 		data|=namcos2_mcu_analog_ctrl&0x3f;
 		/* Return the value */
 		return data;
-	}
+	} };
 	
 	WRITE_HANDLER( namcos2_mcu_analog_port_w )
 	{
 	}
 	
-	READ_HANDLER( namcos2_mcu_analog_port_r )
+	public static ReadHandlerPtr namcos2_mcu_analog_port_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		if(namcos2_mcu_analog_complete==1) namcos2_mcu_analog_complete=0;
 		return namcos2_mcu_analog_data;
-	}
+	} };
 	
 	WRITE_HANDLER( namcos2_mcu_port_d_w )
 	{
 		/* Undefined operation on write */
 	}
 	
-	READ_HANDLER( namcos2_mcu_port_d_r )
+	public static ReadHandlerPtr namcos2_mcu_port_d_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		/* Provides a digital version of the analog ports */
 		int threshold=0x7f;
@@ -564,9 +564,9 @@ public class namcos2
 	
 		/* Return the result */
 		return data;
-	}
+	} };
 	
-	READ_HANDLER( namcos2_input_port_0_r )
+	public static ReadHandlerPtr namcos2_input_port_0_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		int data=readinputport(0);
 	
@@ -591,9 +591,9 @@ public class namcos2
 					}
 		}
 		return data;
-	}
+	} };
 	
-	READ_HANDLER( namcos2_input_port_10_r )
+	public static ReadHandlerPtr namcos2_input_port_10_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		int data=readinputport(10);
 	
@@ -617,9 +617,9 @@ public class namcos2
 					}
 		}
 		return data;
-	}
+	} };
 	
-	READ_HANDLER( namcos2_input_port_12_r )
+	public static ReadHandlerPtr namcos2_input_port_12_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		int data=readinputport(12);
 	
@@ -643,5 +643,5 @@ public class namcos2
 					}
 		}
 		return data;
-	}
+	} };
 }

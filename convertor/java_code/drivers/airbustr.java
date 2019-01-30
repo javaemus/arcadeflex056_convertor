@@ -249,7 +249,7 @@ public class airbustr
 	
 	
 	/* There's an MCU here, possibly */
-	READ_HANDLER( devram_r )
+	public static ReadHandlerPtr devram_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		switch (offset)
 		{
@@ -281,7 +281,7 @@ public class airbustr
 			default:	{ return devram[offset]; break;}
 		}
 	
-	}
+	} };
 	WRITE_HANDLER( devram_w )	{	devram[offset] = data; }
 	
 	
@@ -542,11 +542,11 @@ public class airbustr
 	
 	/* Ports */
 	
-	READ_HANDLER( soundcommand_r )
+	public static ReadHandlerPtr soundcommand_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		soundlatch_status = 0;		// soundlatch has been read
 		return soundlatch_r(0);
-	}
+	} };
 	
 	
 	WRITE_HANDLER( soundcommand2_w )

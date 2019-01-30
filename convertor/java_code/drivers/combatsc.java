@@ -113,7 +113,6 @@ public class combatsc
 	/* from vidhrdw/combasc.c */
 	void combasc_convert_color_prom( unsigned char *palette, unsigned short *colortable, const unsigned char *color_prom );
 	void combascb_convert_color_prom( unsigned char *palette, unsigned short *colortable, const unsigned char *color_prom );
-	READ_HANDLER( combasc_video_r );
 	WRITE_HANDLER( combasc_video_w );
 	int combasc_vh_start( void );
 	int combascb_vh_start( void );
@@ -123,7 +122,6 @@ public class combatsc
 	WRITE_HANDLER( combasc_bankselect_w );
 	void combasc_init_machine( void );
 	WRITE_HANDLER( combasc_pf_control_w );
-	READ_HANDLER( combasc_scrollram_r );
 	WRITE_HANDLER( combasc_scrollram_w );
 	
 	void combascb_vh_screenrefresh( struct mame_bitmap *bitmap, int fullrefresh );

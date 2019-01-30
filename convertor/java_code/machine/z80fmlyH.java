@@ -32,8 +32,6 @@ WRITE_HANDLER( z80ctc_0_w );
 WRITE_HANDLER( z80ctc_1_w );
 
 int z80ctc_r (int which, int offset);
-READ_HANDLER( z80ctc_0_r );
-READ_HANDLER( z80ctc_1_r );
 
 void z80ctc_trg_w (int which, int trg, int offset, int data);
 WRITE_HANDLER( z80ctc_0_trg0_w );
@@ -84,11 +82,8 @@ void z80pio_0_reset (void);
 
 /* this functions can use when C/D = A0 , A/B = A1 */
 WRITE_HANDLER( z80pio_0_w );
-READ_HANDLER( z80pio_0_r );
 
 WRITE_HANDLER( z80pioA_0_p_w );
 WRITE_HANDLER( z80pioB_0_p_w );
-READ_HANDLER( z80pioA_0_p_r );
-READ_HANDLER( z80pioB_0_p_r );
 
 

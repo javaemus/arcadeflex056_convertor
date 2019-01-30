@@ -102,30 +102,30 @@ public class tsamurai
 		return nmi_enabled?nmi_interrupt():ignore_interrupt();
 	}
 	
-	READ_HANDLER( unknown_d803_r )
+	public static ReadHandlerPtr unknown_d803_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return 0x6b;
-	}
+	} };
 	
-	READ_HANDLER( unknown_d803_m660_r )
+	public static ReadHandlerPtr unknown_d803_m660_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return 0x53;     // this is what the bootleg patches in.
-	}
+	} };
 	
-	READ_HANDLER( unknown_d806_r )
+	public static ReadHandlerPtr unknown_d806_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return 0x40;
-	}
+	} };
 	
-	READ_HANDLER( unknown_d900_r )
+	public static ReadHandlerPtr unknown_d900_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return 0x6a;
-	}
+	} };
 	
-	READ_HANDLER( unknown_d938_r )
+	public static ReadHandlerPtr unknown_d938_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return 0xfb;
-	}
+	} };
 	
 	public static WriteHandlerPtr sound_command1_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{

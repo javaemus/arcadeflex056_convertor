@@ -79,16 +79,10 @@ public class _8080bw
 	
 	WRITE_HANDLER( invaders_shift_amount_w );
 	WRITE_HANDLER( invaders_shift_data_w );
-	READ_HANDLER( invaders_shift_data_r );
-	READ_HANDLER( invaders_shift_data_rev_r );
-	READ_HANDLER( invaders_shift_data_comp_r );
 	int  invaders_interrupt(void);
 	int  polaris_interrupt(void);
 	
-	READ_HANDLER( boothill_shift_data_r );
 	
-	READ_HANDLER( spcenctr_port_0_r );
-	READ_HANDLER( spcenctr_port_1_r );
 	
 	/* in sndhrdw/8080bw.c */
 	
@@ -106,10 +100,6 @@ public class _8080bw
 	void init_machine_polaris(void);
 	
 	WRITE_HANDLER( sheriff_sh_p2_w );
-	READ_HANDLER( sheriff_sh_p1_r );
-	READ_HANDLER( sheriff_sh_p2_r );
-	READ_HANDLER( sheriff_sh_t0_r );
-	READ_HANDLER( sheriff_sh_t1_r );
 	
 	extern struct SN76477interface invaders_sn76477_interface;
 	extern struct Samplesinterface invaders_samples_interface;
@@ -148,7 +138,6 @@ public class _8080bw
 	
 	WRITE_HANDLER( invaders_videoram_w );
 	WRITE_HANDLER( schaser_colorram_w );
-	READ_HANDLER( schaser_colorram_r );
 	WRITE_HANDLER( helifire_colorram_w );
 	
 	void invaders_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);

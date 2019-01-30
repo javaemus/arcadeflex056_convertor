@@ -37,11 +37,11 @@ public class mrdo
 	
 	/* this looks like some kind of protection. The game doesn't clear the screen */
 	/* if a read from this address doesn't return the value it expects. */
-	READ_HANDLER( mrdo_SECRE_r )
+	public static ReadHandlerPtr mrdo_SECRE_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		unsigned char *RAM = memory_region(REGION_CPU1);
 		return RAM[ cpu_get_reg(Z80_HL) ];
-	}
+	} };
 	
 	
 	

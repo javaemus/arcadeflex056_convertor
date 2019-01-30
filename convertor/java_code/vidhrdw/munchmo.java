@@ -63,13 +63,13 @@ public class munchmo
 	}
 	
 	
-	READ_HANDLER( mnchmobl_sprite_xpos_r ){ return mnchmobl_sprite_xpos[offset]; }
+	public static ReadHandlerPtr mnchmobl_sprite_xpos_r  = new ReadHandlerPtr() { public int handler(int offset){ return mnchmobl_sprite_xpos[offset]; } };
 	WRITE_HANDLER( mnchmobl_sprite_xpos_w ){ mnchmobl_sprite_xpos[offset] = data; }
 	
-	READ_HANDLER( mnchmobl_sprite_attr_r ){ return mnchmobl_sprite_attr[offset]; }
+	public static ReadHandlerPtr mnchmobl_sprite_attr_r  = new ReadHandlerPtr() { public int handler(int offset){ return mnchmobl_sprite_attr[offset]; } };
 	WRITE_HANDLER( mnchmobl_sprite_attr_w ){ mnchmobl_sprite_attr[offset] = data; }
 	
-	READ_HANDLER( mnchmobl_sprite_tile_r ){ return mnchmobl_sprite_tile[offset]; }
+	public static ReadHandlerPtr mnchmobl_sprite_tile_r  = new ReadHandlerPtr() { public int handler(int offset){ return mnchmobl_sprite_tile[offset]; } };
 	WRITE_HANDLER( mnchmobl_sprite_tile_w ){ mnchmobl_sprite_tile[offset] = data; }
 	
 	void mnchmobl_vh_stop( void )
@@ -91,10 +91,10 @@ public class munchmo
 		return 1;
 	}
 	
-	READ_HANDLER( mnchmobl_videoram_r )
+	public static ReadHandlerPtr mnchmobl_videoram_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return videoram[offset];
-	}
+	} };
 	
 	WRITE_HANDLER( mnchmobl_videoram_w )
 	{

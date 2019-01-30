@@ -245,10 +245,10 @@ public class tmnt
 		else return offset ? 0x00 : 0x80;
 	}
 	
-	READ_HANDLER( tmnt_sres_r )
+	public static ReadHandlerPtr tmnt_sres_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return tmnt_soundlatch;
-	}
+	} };
 	
 	WRITE_HANDLER( tmnt_sres_w )
 	{

@@ -279,13 +279,13 @@ public class omegrace
 		0x30, 0x34, 0x24, 0x20, 0x28, 0x2c, 0x0c, 0x08 };
 	
 	
-	READ_HANDLER( omegrace_spinner1_r )
+	public static ReadHandlerPtr omegrace_spinner1_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		int res;
 		res=readinputport(4);
 	
 		return (spinnerTable[res&0x3f]);
-	}
+	} };
 	
 	WRITE_HANDLER( omegrace_leds_w )
 	{

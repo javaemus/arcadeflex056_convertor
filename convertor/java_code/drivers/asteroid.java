@@ -162,11 +162,6 @@ public class asteroid
 	WRITE_HANDLER( llander_snd_reset_w );
 	extern struct discrete_sound_block *llander_sound_interface;
 	
-	READ_HANDLER( asteroid_IN0_r );
-	READ_HANDLER( asteroib_IN0_r );
-	READ_HANDLER( asteroid_IN1_r );
-	READ_HANDLER( asteroid_DSW1_r );
-	READ_HANDLER( llander_IN0_r );
 	
 	void llander_init_colors (unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom);
 	int llander_start(void);

@@ -165,7 +165,6 @@ public class galaxian
 	void galaxian_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom);
 	void scramble_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom);
 	WRITE_HANDLER( galaxian_videoram_w );
-	READ_HANDLER( galaxian_videoram_r );
 	WRITE_HANDLER( galaxian_stars_enable_w );
 	WRITE_HANDLER( scramble_background_enable_w );
 	WRITE_HANDLER( mooncrst_gfxextend_w );
@@ -197,8 +196,6 @@ public class galaxian
 	void galaxian_sh_stop(void);
 	void galaxian_sh_update(void);
 	
-	READ_HANDLER( scramblb_protection_1_r );
-	READ_HANDLER( scramblb_protection_2_r );
 	
 	
 	public static WriteHandlerPtr galaxian_coin_lockout_w = new WriteHandlerPtr() {public void handler(int offset, int data)

@@ -29,8 +29,6 @@ public class baraduke
 	void baraduke_vh_stop( void );
 	void baraduke_vh_screenrefresh( struct mame_bitmap *bitmap,int full_refresh );
 	void metrocrs_vh_screenrefresh( struct mame_bitmap *bitmap,int full_refresh );
-	READ_HANDLER( baraduke_textlayer_r );
-	READ_HANDLER( baraduke_videoram_r );
 	WRITE_HANDLER( baraduke_textlayer_w );
 	WRITE_HANDLER( baraduke_videoram_w );
 	WRITE_HANDLER( baraduke_scroll0_w );
@@ -86,10 +84,10 @@ public class baraduke
 		set_led_status(1,data & 0x10);
 	} };
 	
-	READ_HANDLER( baraduke_sharedram_r )
+	public static ReadHandlerPtr baraduke_sharedram_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return sharedram[offset];
-	}
+	} };
 	WRITE_HANDLER( baraduke_sharedram_w )
 	{
 		sharedram[offset] = data;
@@ -123,12 +121,12 @@ public class baraduke
 		new Memory_WriteAddress(MEMPORT_MARKER, 0)
 	};
 	
-	READ_HANDLER( soundkludge_r )
+	public static ReadHandlerPtr soundkludge_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		static int counter;
 	
 		return ((counter++) >> 4) & 0xff;
-	}
+	} };
 	
 	public static Memory_ReadAddress mcu_readmem[]={
 		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),

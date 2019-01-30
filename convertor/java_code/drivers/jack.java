@@ -48,7 +48,6 @@ public class jack
 	
 	WRITE_HANDLER( jack_paletteram_w );
 	void jack_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
-	READ_HANDLER( jack_flipscreen_r );
 	WRITE_HANDLER( jack_flipscreen_w );
 	
 	

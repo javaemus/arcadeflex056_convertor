@@ -2314,10 +2314,10 @@ public class z180
 		}
 	}
 	
-	READ_HANDLER( z180_internal_r )
+	public static ReadHandlerPtr z180_internal_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return Z180.io[offset & 0x3f];
-	}
+	} };
 	
 	WRITE_HANDLER( z180_internal_w )
 	{

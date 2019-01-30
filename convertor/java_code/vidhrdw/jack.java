@@ -23,11 +23,11 @@ public class jack
 	}
 	
 	
-	READ_HANDLER( jack_flipscreen_r )
+	public static ReadHandlerPtr jack_flipscreen_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		flip_screen_set(offset);
 		return 0;
-	}
+	} };
 	
 	WRITE_HANDLER( jack_flipscreen_w )
 	{

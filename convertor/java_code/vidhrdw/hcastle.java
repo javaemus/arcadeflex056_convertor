@@ -156,10 +156,10 @@ public class hcastle
 		gfx_bank = data;
 	}
 	
-	READ_HANDLER( hcastle_gfxbank_r )
+	public static ReadHandlerPtr hcastle_gfxbank_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return gfx_bank;
-	}
+	} };
 	
 	WRITE_HANDLER( hcastle_pf1_control_w )
 	{

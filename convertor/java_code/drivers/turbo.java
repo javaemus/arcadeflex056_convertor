@@ -146,8 +146,6 @@ public class turbo
 	
 	/* from machine */
 	void turbo_init_machine(void);
-	READ_HANDLER( turbo_8279_r );
-	READ_HANDLER( turbo_collision_r );
 	WRITE_HANDLER( turbo_8279_w );
 	WRITE_HANDLER( turbo_coin_and_lamp_w );
 	

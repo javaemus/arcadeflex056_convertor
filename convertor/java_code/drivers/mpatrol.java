@@ -58,17 +58,16 @@ public class mpatrol
 	void mpatrol_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom);
 	void mpatrol_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	
-	READ_HANDLER( mpatrol_input_port_3_r );
 	
 	
 	
 	/* this looks like some kind of protection. The game does strange things */
 	/* if a read from this address doesn't return the value it expects. */
-	READ_HANDLER( mpatrol_protection_r )
+	public static ReadHandlerPtr mpatrol_protection_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 	//logerror("%04x: read protection\n",cpu_get_pc());
 		return cpu_get_reg(Z80_DE) & 0xff;
-	}
+	} };
 	
 	
 	

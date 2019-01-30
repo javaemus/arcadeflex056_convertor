@@ -31,9 +31,7 @@ public class xxmissio
 	WRITE_HANDLER( xxmissio_scroll_y_w );
 	WRITE_HANDLER( xxmissio_flipscreen_w );
 	
-	READ_HANDLER( xxmissio_videoram_r );
 	WRITE_HANDLER( xxmissio_videoram_w );
-	READ_HANDLER( xxmissio_fgram_r );
 	WRITE_HANDLER( xxmissio_fgram_w );
 	
 	WRITE_HANDLER( xxmissio_paletteram_w );
@@ -43,10 +41,10 @@ public class xxmissio
 		shared_workram[offset ^ 0x1000] = data;
 	}
 	
-	READ_HANDLER( shared_workram_r )
+	public static ReadHandlerPtr shared_workram_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return shared_workram[offset ^ 0x1000];
-	}
+	} };
 	
 	WRITE_HANDLER( xxmissio_bank_sel_w )
 	{
@@ -55,11 +53,11 @@ public class xxmissio
 		cpu_setbank(1, &BANK[bank_address]);
 	}
 	
-	READ_HANDLER( xxmissio_status_r )
+	public static ReadHandlerPtr xxmissio_status_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		xxmissio_status = (xxmissio_status | 2) & ( readinputport(4) | 0xfd );
 		return xxmissio_status;
-	}
+	} };
 	
 	WRITE_HANDLER ( xxmissio_status_m_w )
 	{

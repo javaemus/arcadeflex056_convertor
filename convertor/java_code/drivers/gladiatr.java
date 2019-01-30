@@ -110,7 +110,6 @@ public class gladiatr
 	/*Video functions*/
 	extern unsigned char *gladiator_text;
 	WRITE_HANDLER( gladiatr_video_registers_w );
-	READ_HANDLER( gladiatr_video_registers_r );
 	WRITE_HANDLER( gladiatr_paletteram_rg_w );
 	WRITE_HANDLER( gladiatr_paletteram_b_w );
 	extern int gladiatr_vh_start(void);
@@ -121,7 +120,6 @@ public class gladiatr
 	/*Rom bankswitching*/
 	static int banka;
 	WRITE_HANDLER( gladiatr_bankswitch_w );
-	READ_HANDLER( gladiatr_bankswitch_r );
 	
 	/*Rom bankswitching*/
 	WRITE_HANDLER( gladiatr_bankswitch_w ){
@@ -133,9 +131,9 @@ public class gladiatr
 		cpu_setbank(2,&RAM[bank2[(data & 0x03)]]);
 	}
 	
-	READ_HANDLER( gladiatr_bankswitch_r ){
+	public static ReadHandlerPtr gladiatr_bankswitch_r  = new ReadHandlerPtr() { public int handler(int offset){
 		return banka;
-	}
+	} };
 	
 	public static ReadHandlerPtr gladiator_dsw1_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{

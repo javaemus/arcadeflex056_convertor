@@ -577,6 +577,23 @@ public class convertMame {
                             Convertor.inpos = i;
                         }
                     }
+                    if (sUtil.getToken("READ_HANDLER(")) {
+                        sUtil.skipSpace();
+                        Convertor.token[0] = sUtil.parseToken();
+                        sUtil.skipSpace();
+                        if (sUtil.getToken(");"))//if it is front function skip it
+                        {
+                            sUtil.skipLine();
+                            continue;
+                        } else {
+                            sUtil.putString("public static ReadHandlerPtr " + Convertor.token[0] + "  = new ReadHandlerPtr() { public int handler(int offset)");
+                            type = READ_HANDLER8;
+                            i3 = -1;
+                            Convertor.inpos += 1;
+                            continue;
+                        }
+                    }
+
                     Convertor.inpos = i;
                 }
                 break;

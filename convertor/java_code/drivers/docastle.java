@@ -122,8 +122,6 @@ public class docastle
 	
 	
 	
-	READ_HANDLER( docastle_shared0_r );
-	READ_HANDLER( docastle_shared1_r );
 	WRITE_HANDLER( docastle_shared0_w );
 	WRITE_HANDLER( docastle_shared1_w );
 	WRITE_HANDLER( docastle_nmitrigger_w );
@@ -133,8 +131,6 @@ public class docastle
 	int docastle_vh_start(void);
 	void docastle_vh_stop(void);
 	void docastle_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
-	READ_HANDLER( docastle_flipscreen_off_r );
-	READ_HANDLER( docastle_flipscreen_on_r );
 	WRITE_HANDLER( docastle_flipscreen_off_w );
 	WRITE_HANDLER( docastle_flipscreen_on_w );
 	

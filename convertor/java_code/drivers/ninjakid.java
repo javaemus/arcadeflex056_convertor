@@ -30,10 +30,8 @@ public class ninjakid
 	
 	extern WRITE_HANDLER( ninjakid_bg_videoram_w );
 	extern WRITE_HANDLER( ninjakid_fg_videoram_w );
-	extern READ_HANDLER( ninjakid_bg_videoram_r );
-	
-	extern READ_HANDLER( ninjakun_io_8000_r );
-	extern WRITE_HANDLER( ninjakun_io_8000_w );
+	extern 
+	extern extern WRITE_HANDLER( ninjakun_io_8000_w );
 	
 	extern int ninjakid_vh_start( void );
 	extern void ninjakid_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);

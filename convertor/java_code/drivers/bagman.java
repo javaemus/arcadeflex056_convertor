@@ -66,7 +66,6 @@ public class bagman
 {
 	
 	
-	READ_HANDLER( bagman_pal16r6_r );
 	void bagman_machine_init(void);
 	WRITE_HANDLER( bagman_pal16r6_w );
 	

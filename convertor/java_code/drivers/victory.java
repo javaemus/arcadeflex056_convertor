@@ -118,9 +118,6 @@ public class victory
 	/* sound driver data & functions */
 	int victory_sh_start(const struct MachineSound *msound);
 	
-	READ_HANDLER( exidy_shriot_r );
-	READ_HANDLER( exidy_sh6840_r );
-	READ_HANDLER( exidy_sh8253_r );
 	WRITE_HANDLER( exidy_shriot_w );
 	WRITE_HANDLER( exidy_sh6840_w );
 	WRITE_HANDLER( exidy_sh8253_w );
@@ -136,7 +133,6 @@ public class victory
 	void victory_vh_screenrefresh(struct mame_bitmap *bitmap, int full_refresh);
 	int victory_vblank_interrupt(void);
 	
-	READ_HANDLER( victory_video_control_r );
 	WRITE_HANDLER( victory_video_control_w );
 	WRITE_HANDLER( victory_paletteram_w );
 	WRITE_HANDLER( victory_videoram_w );

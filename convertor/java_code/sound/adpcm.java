@@ -812,15 +812,15 @@ public class adpcm
 	
 	***********************************************************************************************/
 	
-	READ_HANDLER( OKIM6295_status_0_r )
+	public static ReadHandlerPtr OKIM6295_status_0_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return OKIM6295_status_r(0);
-	}
+	} };
 	
-	READ_HANDLER( OKIM6295_status_1_r )
+	public static ReadHandlerPtr OKIM6295_status_1_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return OKIM6295_status_r(1);
-	}
+	} };
 	
 	READ16_HANDLER( OKIM6295_status_0_lsb_r )
 	{

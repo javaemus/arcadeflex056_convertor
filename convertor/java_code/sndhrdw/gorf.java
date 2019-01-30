@@ -136,7 +136,7 @@ public class gorf
 	    return 0;
 	}
 	
-	READ_HANDLER( gorf_speech_r )
+	public static ReadHandlerPtr gorf_speech_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 	    int Phoneme,Intonation;
 	    int i = 0;
@@ -199,7 +199,7 @@ public class gorf
 	
 	    /* Note : We should really also use volume in this as well as frequency */
 		 return data;				                   /* Return nicely */
-	}
+	} };
 	
 	int gorf_status_r(void)
 	{
@@ -208,14 +208,14 @@ public class gorf
 	
 	/* Read from port 2 (0x12) returns speech status as 0x80 */
 	
-	READ_HANDLER( gorf_port_2_r )
+	public static ReadHandlerPtr gorf_port_2_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 	    int Ans;
 	
 	    Ans = (input_port_2_r(0) & 0x7F);
 	    if (gorf_status_r() != 0) Ans += 128;
 	    return Ans;
-	}
+	} };
 	
 	void gorf_sh_update(void)
 	{

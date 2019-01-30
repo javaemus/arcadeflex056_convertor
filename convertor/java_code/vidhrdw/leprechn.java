@@ -126,10 +126,10 @@ public class leprechn
 	}
 	
 	
-	READ_HANDLER( leprechn_graphics_data_r )
+	public static ReadHandlerPtr leprechn_graphics_data_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 	    return videoram[y * screen_width + x];
-	}
+	} };
 	
 	
 	/***************************************************************************

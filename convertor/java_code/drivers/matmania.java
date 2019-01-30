@@ -46,18 +46,13 @@ public class matmania
 	void matmania_vh_stop(void);
 	void matmania_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	
-	READ_HANDLER( maniach_68705_portA_r );
 	WRITE_HANDLER( maniach_68705_portA_w );
-	READ_HANDLER( maniach_68705_portB_r );
 	WRITE_HANDLER( maniach_68705_portB_w );
-	READ_HANDLER( maniach_68705_portC_r );
 	WRITE_HANDLER( maniach_68705_portC_w );
 	WRITE_HANDLER( maniach_68705_ddrA_w );
 	WRITE_HANDLER( maniach_68705_ddrB_w );
 	WRITE_HANDLER( maniach_68705_ddrC_w );
 	WRITE_HANDLER( maniach_mcu_w );
-	READ_HANDLER( maniach_mcu_r );
-	READ_HANDLER( maniach_mcu_status_r );
 	
 	
 	

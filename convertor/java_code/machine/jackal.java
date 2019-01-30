@@ -33,34 +33,34 @@ public class jackal
 	
 	
 	
-	READ_HANDLER( jackal_zram_r )
+	public static ReadHandlerPtr jackal_zram_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return jackal_rambank[0x0020+offset];
-	}
+	} };
 	
 	
-	READ_HANDLER( jackal_commonram_r )
+	public static ReadHandlerPtr jackal_commonram_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return jackal_rambank[0x0060+offset];
-	}
+	} };
 	
 	
-	READ_HANDLER( jackal_commonram1_r )
+	public static ReadHandlerPtr jackal_commonram1_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return (memory_region(REGION_CPU1))[0x0060+offset];
-	}
+	} };
 	
 	
-	READ_HANDLER( jackal_voram_r )
+	public static ReadHandlerPtr jackal_voram_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return jackal_rambank[0x2000+offset];
-	}
+	} };
 	
 	
-	READ_HANDLER( jackal_spriteram_r )
+	public static ReadHandlerPtr jackal_spriteram_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return jackal_spritebank[0x3000+offset];
-	}
+	} };
 	
 	
 	WRITE_HANDLER( jackal_rambank_w )

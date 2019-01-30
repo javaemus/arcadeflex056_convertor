@@ -137,10 +137,10 @@ public class taito_l
 		}
 	}
 	
-	READ_HANDLER( taitol_bankc_r )
+	public static ReadHandlerPtr taitol_bankc_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return bankc[offset];
-	}
+	} };
 	
 	
 	WRITE_HANDLER( taitol_control_w )
@@ -163,11 +163,11 @@ public class taito_l
 		/* bit 5 display enable - handled in vh_screenrefresh() */
 	}
 	
-	READ_HANDLER( taitol_control_r )
+	public static ReadHandlerPtr taitol_control_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 	//	logerror("Control Read %02x (%04x)\n", cur_ctrl, cpu_get_pc());
 		return cur_ctrl;
-	}
+	} };
 	
 	void taitol_chardef14_m(int offset)
 	{

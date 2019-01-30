@@ -20,14 +20,11 @@ public class grobda
 	extern unsigned char *mappy_soundregs;
 	
 	/* memory functions */
-	READ_HANDLER( grobda_snd_sharedram_r );
 	WRITE_HANDLER( grobda_snd_sharedram_w );
 	
 	/* custom IO chips functions */
 	WRITE_HANDLER( grobda_customio_1_w );
 	WRITE_HANDLER( grobda_customio_2_w );
-	READ_HANDLER( grobda_customio_1_r );
-	READ_HANDLER( grobda_customio_2_r );
 	
 	/* INT functions */
 	int grobda_interrupt_1(void);

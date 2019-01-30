@@ -162,7 +162,7 @@ public class thepit
 	}
 	
 	
-	READ_HANDLER( thepit_input_port_0_r )
+	public static ReadHandlerPtr thepit_input_port_0_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		/* Read either the real or the fake input ports depending on the
 		   horizontal flip switch. (This is how the real PCB does it) */
@@ -174,7 +174,7 @@ public class thepit
 		{
 			return input_port_0_r(offset);
 		}
-	}
+	} };
 	
 	
 	WRITE_HANDLER( thepit_sound_enable_w )

@@ -34,10 +34,10 @@ public class galaga
 	
 	
 	
-	READ_HANDLER( galaga_sharedram_r )
+	public static ReadHandlerPtr galaga_sharedram_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return galaga_sharedram[offset];
-	}
+	} };
 	
 	
 	
@@ -51,7 +51,7 @@ public class galaga
 	
 	
 	
-	READ_HANDLER( galaga_dsw_r )
+	public static ReadHandlerPtr galaga_dsw_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		int bit0,bit1;
 	
@@ -60,7 +60,7 @@ public class galaga
 		bit1 = (input_port_1_r(0) >> offset) & 1;
 	
 		return bit0 | (bit1 << 1);
-	}
+	} };
 	
 	
 	
@@ -99,7 +99,7 @@ public class galaga
 	}
 	
 	
-	READ_HANDLER( galaga_customio_data_r )
+	public static ReadHandlerPtr galaga_customio_data_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		if (customio_command != 0x71)
 			logerror("%04x: custom IO read offset %02x\n",cpu_get_pc(),offset);
@@ -159,13 +159,13 @@ public class galaga
 		}
 	
 		return -1;
-	}
+	} };
 	
 	
-	READ_HANDLER( galaga_customio_r )
+	public static ReadHandlerPtr galaga_customio_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return customio_command;
-	}
+	} };
 	
 	
 	void galaga_nmi_generate (int param)

@@ -636,9 +636,9 @@ public class hal21
 		new Memory_WriteAddress(MEMPORT_MARKER, 0)
 	};
 	
-	READ_HANDLER( hal21_spriteram_r ){
+	public static ReadHandlerPtr hal21_spriteram_r  = new ReadHandlerPtr() { public int handler(int offset){
 		return spriteram[offset];
-	}
+	} };
 	WRITE_HANDLER( hal21_spriteram_w ){
 		spriteram[offset] = data;
 	}

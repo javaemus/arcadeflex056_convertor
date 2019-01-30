@@ -137,7 +137,7 @@ public class crbaloon
 		val0a = data;
 	}
 	
-	READ_HANDLER( crbaloon_IN2_r )
+	public static ReadHandlerPtr crbaloon_IN2_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		extern int crbaloon_collision;
 	
@@ -157,9 +157,9 @@ public class crbaloon
 	logerror("PC %04x: %02x low\n",cpu_get_pc(),offset);
 			return (input_port_2_r(0) & 0xf0) | 0x07;
 		}
-	}
+	} };
 	
-	READ_HANDLER( crbaloon_IN3_r )
+	public static ReadHandlerPtr crbaloon_IN3_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		if (val08 & 0x02)
 			/* enable coin & start input? Wild guess!!! */
@@ -176,10 +176,10 @@ public class crbaloon
 	logerror("PC %04x: 03 low\n",cpu_get_pc());
 			return (input_port_3_r(0) & 0x0f) | 0x00;
 		}
-	}
+	} };
 	
 	
-	READ_HANDLER( crbaloon_IN_r )
+	public static ReadHandlerPtr crbaloon_IN_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		switch (offset & 0x03)
 		{
@@ -197,7 +197,7 @@ public class crbaloon
 		}
 	
 		return 0;
-	}
+	} };
 	
 	
 	

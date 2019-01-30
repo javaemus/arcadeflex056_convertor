@@ -1371,10 +1371,10 @@ public class konamiic
 		K007342_scroll_ram = 0;
 	}
 	
-	READ_HANDLER( K007342_r )
+	public static ReadHandlerPtr K007342_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return K007342_ram[offset];
-	}
+	} };
 	
 	WRITE_HANDLER( K007342_w )
 	{
@@ -1396,10 +1396,10 @@ public class konamiic
 		}
 	}
 	
-	READ_HANDLER( K007342_scroll_r )
+	public static ReadHandlerPtr K007342_scroll_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return K007342_scroll_ram[offset];
-	}
+	} };
 	
 	WRITE_HANDLER( K007342_scroll_w )
 	{
@@ -1538,10 +1538,10 @@ public class konamiic
 		K007420_ram = 0;
 	}
 	
-	READ_HANDLER( K007420_r )
+	public static ReadHandlerPtr K007420_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return K007420_ram[offset];
-	}
+	} };
 	
 	WRITE_HANDLER( K007420_w )
 	{
@@ -1889,7 +1889,7 @@ public class konamiic
 	
 	
 	
-	READ_HANDLER( K052109_r )
+	public static ReadHandlerPtr K052109_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		if (K052109_RMRD_line == CLEAR_LINE)
 		{
@@ -1931,7 +1931,7 @@ public class konamiic
 	
 			return memory_region(K052109_memory_region)[addr];
 		}
-	}
+	} };
 	
 	WRITE_HANDLER( K052109_w )
 	{
@@ -2367,7 +2367,7 @@ public class konamiic
 		return memory_region(K051960_memory_region)[addr];
 	}
 	
-	READ_HANDLER( K051960_r )
+	public static ReadHandlerPtr K051960_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		if (K051960_readroms)
 		{
@@ -2377,7 +2377,7 @@ public class konamiic
 		}
 		else
 			return K051960_ram[offset];
-	}
+	} };
 	
 	WRITE_HANDLER( K051960_w )
 	{
@@ -2397,7 +2397,7 @@ public class konamiic
 			K051960_w(offset*2 + 1,data & 0xff);
 	}
 	
-	READ_HANDLER( K051937_r )
+	public static ReadHandlerPtr K051937_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		if (K051960_readroms && offset >= 4 && offset < 8)
 		{
@@ -2415,7 +2415,7 @@ public class konamiic
 	logerror("%04x: read unknown 051937 address %x\n",cpu_get_pc(),offset);
 			return 0;
 		}
-	}
+	} };
 	
 	WRITE_HANDLER( K051937_w )
 	{
@@ -2694,7 +2694,7 @@ public class konamiic
 	
 	
 	
-	READ_HANDLER( K052109_051960_r )
+	public static ReadHandlerPtr K052109_051960_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		if (K052109_RMRD_line == CLEAR_LINE)
 		{
@@ -2706,7 +2706,7 @@ public class konamiic
 				return K051960_r(offset - 0x3c00);
 		}
 		else return K052109_r(offset);
-	}
+	} };
 	
 	WRITE_HANDLER( K052109_051960_w )
 	{
@@ -2827,13 +2827,13 @@ public class konamiic
 		COMBINE_DATA(K053245_ram+offset);
 	}
 	
-	READ_HANDLER( K053245_r )
+	public static ReadHandlerPtr K053245_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		if(offset & 1)
 			return K053245_ram[offset>>1] & 0xff;
 		else
 			return (K053245_ram[offset>>1]>>8) & 0xff;
-	}
+	} };
 	
 	WRITE_HANDLER( K053245_w )
 	{
@@ -2848,7 +2848,7 @@ public class konamiic
 		memcpy(K053245_buffer, K053245_ram, K053245_ramsize);
 	}
 	
-	READ_HANDLER( K053244_r )
+	public static ReadHandlerPtr K053244_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		if ((K053244_regs[5] & 0x10) && offset >= 0x0c && offset < 0x10)
 		{
@@ -2875,7 +2875,7 @@ public class konamiic
 	logerror("%04x: read from unknown 053244 address %x\n",cpu_get_pc(),offset);
 			return 0;
 		}
-	}
+	} };
 	
 	WRITE_HANDLER( K053244_w )
 	{
@@ -3279,13 +3279,13 @@ public class konamiic
 		COMBINE_DATA(K053247_ram + offset);
 	}
 	
-	READ_HANDLER( K053247_r )
+	public static ReadHandlerPtr K053247_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		if(offset & 1)
 			return K053247_ram[offset>>1] & 0xff;
 		else
 			return (K053247_ram[offset>>1]>>8) & 0xff;
-	}
+	} };
 	
 	WRITE_HANDLER( K053247_w )
 	{
@@ -3295,7 +3295,7 @@ public class konamiic
 			K053247_ram[offset>>1] = (K053247_ram[offset>>1] & 0x00ff) | (data<<8);
 	}
 	
-	READ_HANDLER( K053246_r )
+	public static ReadHandlerPtr K053246_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		if (K053246_OBJCHA_line == ASSERT_LINE)
 		{
@@ -3316,7 +3316,7 @@ public class konamiic
 	logerror("%04x: read from unknown 053246 address %x\n",cpu_get_pc(),offset);
 			return 0;
 		}
-	}
+	} };
 	
 	WRITE_HANDLER( K053246_w )
 	{
@@ -3837,20 +3837,20 @@ public class konamiic
 		return K051316_ram[chip][offset];
 	}
 	
-	READ_HANDLER( K051316_0_r )
+	public static ReadHandlerPtr K051316_0_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return K051316_r(0, offset);
-	}
+	} };
 	
-	READ_HANDLER( K051316_1_r )
+	public static ReadHandlerPtr K051316_1_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return K051316_r(1, offset);
-	}
+	} };
 	
-	READ_HANDLER( K051316_2_r )
+	public static ReadHandlerPtr K051316_2_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return K051316_r(2, offset);
-	}
+	} };
 	
 	
 	void K051316_w(int chip,int offset,int data)
@@ -3901,20 +3901,20 @@ public class konamiic
 		}
 	}
 	
-	READ_HANDLER( K051316_rom_0_r )
+	public static ReadHandlerPtr K051316_rom_0_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return K051316_rom_r(0,offset);
-	}
+	} };
 	
-	READ_HANDLER( K051316_rom_1_r )
+	public static ReadHandlerPtr K051316_rom_1_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return K051316_rom_r(1,offset);
-	}
+	} };
 	
-	READ_HANDLER( K051316_rom_2_r )
+	public static ReadHandlerPtr K051316_rom_2_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return K051316_rom_r(2,offset);
-	}
+	} };
 	
 	
 	
@@ -4096,7 +4096,7 @@ public class konamiic
 		K054000_ram[offset] = data;
 	}
 	
-	READ_HANDLER( K054000_r )
+	public static ReadHandlerPtr K054000_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		int Acx,Acy,Aax,Aay;
 		int Bcx,Bcy,Bax,Bay;
@@ -4135,7 +4135,7 @@ public class konamiic
 			return 1;
 	
 		return 0;
-	}
+	} };
 	
 	READ16_HANDLER( K054000_lsb_r )
 	{
@@ -4179,7 +4179,7 @@ public class konamiic
 		return i;
 	}
 	
-	READ_HANDLER( K051733_r )
+	public static ReadHandlerPtr K051733_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		int op1 = (K051733_ram[0x00] << 8) | K051733_ram[0x01];
 		int op2 = (K051733_ram[0x02] << 8) | K051733_ram[0x03];
@@ -4235,7 +4235,7 @@ public class konamiic
 			default:
 				return K051733_ram[offset];
 		}
-	}
+	} };
 	
 	
 	

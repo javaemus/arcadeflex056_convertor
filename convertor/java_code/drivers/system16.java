@@ -127,11 +127,7 @@ public class system16
 	
 	// 7751 emulation
 	WRITE_HANDLER( sys16_7751_audio_8255_w );
-	 READ_HANDLER( sys16_7751_audio_8255_r );
-	 READ_HANDLER( sys16_7751_sh_rom_r );
-	 READ_HANDLER( sys16_7751_sh_t1_r );
-	 READ_HANDLER( sys16_7751_sh_command_r );
-	WRITE_HANDLER( sys16_7751_sh_dac_w );
+	    WRITE_HANDLER( sys16_7751_sh_dac_w );
 	WRITE_HANDLER( sys16_7751_sh_busy_w );
 	WRITE_HANDLER( sys16_7751_sh_offset_a0_a3_w );
 	WRITE_HANDLER( sys16_7751_sh_offset_a4_a7_w );

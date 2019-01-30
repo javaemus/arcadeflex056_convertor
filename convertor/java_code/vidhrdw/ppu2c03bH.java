@@ -63,8 +63,6 @@ public class ppu2c03bH
 	int ppu2c03b_r( int num, int offset );
 	
 	/* accesors */
-	READ_HANDLER( ppu2c03b_0_r );
-	READ_HANDLER( ppu2c03b_1_r );
 	
 	WRITE_HANDLER( ppu2c03b_0_w );
 	WRITE_HANDLER( ppu2c03b_1_w );

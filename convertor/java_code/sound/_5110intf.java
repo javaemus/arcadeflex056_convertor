@@ -137,12 +137,12 @@ public class _5110intf
 	
 	******************************************************************************/
 	
-	READ_HANDLER( tms5110_status_r )
+	public static ReadHandlerPtr tms5110_status_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 	    /* bring up to date first */
 	    stream_update(stream, 0);
 	    return tms5110_status_read();
-	}
+	} };
 	
 	
 	

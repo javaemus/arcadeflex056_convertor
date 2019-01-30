@@ -44,7 +44,7 @@ public class dominos
 	We remap our input ports because if we didn't, we'd use a bunch of ports.
 	***************************************************************************/
 	
-	READ_HANDLER( dominos_port_r )
+	public static ReadHandlerPtr dominos_port_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		switch (offset)
 		{
@@ -86,7 +86,7 @@ public class dominos
 			/* Just in case */
 			default:		return 0xFF;
 		}
-	}
+	} };
 	
 	/***************************************************************************
 	Sync
@@ -99,7 +99,7 @@ public class dominos
 	
 	The only one of these I really understand is the VBLANK...
 	***************************************************************************/
-	READ_HANDLER( dominos_sync_r )
+	public static ReadHandlerPtr dominos_sync_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 			static int ac_line=0x00;
 	
@@ -108,7 +108,7 @@ public class dominos
 					return ((input_port_4_r(0) & 0x7F) | dominos_attract | 0x80);
 			else
 					return ((input_port_4_r(0) & 0x7F) | dominos_attract );
-	}
+	} };
 	
 	
 	

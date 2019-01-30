@@ -78,8 +78,6 @@ public class geebee
 	/* from machine/geebee.c */
 	extern int geebee_interrupt(void);
 	extern int kaitei_interrupt(void);
-	READ_HANDLER( geebee_in_r );
-	READ_HANDLER( navalone_in_r );
 	WRITE_HANDLER( geebee_out6_w );
 	WRITE_HANDLER( geebee_out7_w );
 	

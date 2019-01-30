@@ -46,10 +46,10 @@ public class mnight
 		return 0x00d7;	/* RST 10h */
 	}
 	
-	READ_HANDLER( mnight_bankselect_r )
+	public static ReadHandlerPtr mnight_bankselect_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return mnight_bank_latch;
-	}
+	} };
 	
 	WRITE_HANDLER( mnight_bankselect_w )
 	{

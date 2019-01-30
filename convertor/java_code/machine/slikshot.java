@@ -419,7 +419,7 @@ public class slikshot
 	 *
 	 *************************************/
 	
-	READ_HANDLER( slikz80_port_r )
+	public static ReadHandlerPtr slikz80_port_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		int result = 0;
 	
@@ -439,7 +439,7 @@ public class slikshot
 		result |= z80_clear_to_send << 7;
 	
 		return result;
-	}
+	} };
 	
 	
 	
@@ -463,14 +463,14 @@ public class slikshot
 	 *
 	 *************************************/
 	
-	READ_HANDLER( slikshot_z80_r )
+	public static ReadHandlerPtr slikshot_z80_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		/* allow the Z80 to send us stuff now */
 		z80_clear_to_send = 1;
 		timer_set(TIME_NOW, 0, NULL);
 	
 		return z80_port_val;
-	}
+	} };
 	
 	
 	
@@ -480,10 +480,10 @@ public class slikshot
 	 *
 	 *************************************/
 	
-	READ_HANDLER( slikshot_z80_control_r )
+	public static ReadHandlerPtr slikshot_z80_control_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return z80_ctrl;
-	}
+	} };
 	
 	
 	

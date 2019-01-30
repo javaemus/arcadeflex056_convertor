@@ -1386,15 +1386,15 @@ public class ppu2c03b
 	 *
 	 *************************************/
 	
-	READ_HANDLER( ppu2c03b_0_r )
+	public static ReadHandlerPtr ppu2c03b_0_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return ppu2c03b_r( 0, offset );
-	}
+	} };
 	
-	READ_HANDLER( ppu2c03b_1_r )
+	public static ReadHandlerPtr ppu2c03b_1_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return ppu2c03b_r( 1, offset );
-	}
+	} };
 	
 	WRITE_HANDLER( ppu2c03b_0_w )
 	{

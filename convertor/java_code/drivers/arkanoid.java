@@ -56,19 +56,14 @@ public class arkanoid
 	WRITE_HANDLER( arkanoid_d008_w );
 	void arkanoid_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	
-	READ_HANDLER( arkanoid_Z80_mcu_r );
 	WRITE_HANDLER( arkanoid_Z80_mcu_w );
 	
-	READ_HANDLER( arkanoid_68705_portA_r );
 	WRITE_HANDLER( arkanoid_68705_portA_w );
 	WRITE_HANDLER( arkanoid_68705_ddrA_w );
 	
-	READ_HANDLER( arkanoid_68705_portC_r );
 	WRITE_HANDLER( arkanoid_68705_portC_w );
 	WRITE_HANDLER( arkanoid_68705_ddrC_w );
 	
-	READ_HANDLER( arkanoid_68705_input_0_r );
-	READ_HANDLER( arkanoid_input_2_r );
 	
 	
 	public static Memory_ReadAddress readmem[]={

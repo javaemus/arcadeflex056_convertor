@@ -88,7 +88,6 @@ public class vicdual
 	extern unsigned char *vicdual_characterram;
 	void vicdual_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom);
 	WRITE_HANDLER( vicdual_characterram_w );
-	READ_HANDLER( vicdual_characterram_r );
 	WRITE_HANDLER( vicdual_palette_bank_w );
 	void vicdual_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	
@@ -96,7 +95,6 @@ public class vicdual
 	extern const char *carnival_sample_names[];
 	WRITE_HANDLER( carnival_sh_port1_w );
 	WRITE_HANDLER( carnival_sh_port2_w );
-	READ_HANDLER( carnival_music_port_t1_r );
 	WRITE_HANDLER( carnival_music_port_1_w );
 	WRITE_HANDLER( carnival_music_port_2_w );
 	

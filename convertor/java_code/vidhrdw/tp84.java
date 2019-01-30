@@ -239,10 +239,10 @@ public class tp84
 	
 	
 	/* Return the current video scan line */
-	READ_HANDLER( tp84_scanline_r )
+	public static ReadHandlerPtr tp84_scanline_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return scanline;
-	}
+	} };
 	
 	
 	/***************************************************************************

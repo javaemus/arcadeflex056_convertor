@@ -41,9 +41,9 @@ public class grchamp
 	
 	***************************************************************************/
 	
-	READ_HANDLER( grchamp_port_0_r ) {
+	public static ReadHandlerPtr grchamp_port_0_r  = new ReadHandlerPtr() { public int handler(int offset) {
 		return comm_latch;
-	}
+	} };
 	
 	extern WRITE_HANDLER( PC3259_control_w );
 	
@@ -88,9 +88,9 @@ public class grchamp
 	
 	***************************************************************************/
 	
-	READ_HANDLER( grchamp_port_1_r ) {
+	public static ReadHandlerPtr grchamp_port_1_r  = new ReadHandlerPtr() { public int handler(int offset) {
 		return comm_latch2[offset];
-	}
+	} };
 	
 	WRITE_HANDLER( grchamp_port_1_w ) {
 		grchamp_vreg1[offset] = data;

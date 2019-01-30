@@ -46,11 +46,11 @@ public class sndintrf
 		timer_set(TIME_NOW,word,soundlatch_callback);
 	}
 	
-	READ_HANDLER( soundlatch_r )
+	public static ReadHandlerPtr soundlatch_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		read_debug = 1;
 		return latch;
-	}
+	} };
 	
 	READ16_HANDLER( soundlatch_word_r )
 	{
@@ -89,11 +89,11 @@ public class sndintrf
 		timer_set(TIME_NOW,word,soundlatch2_callback);
 	}
 	
-	READ_HANDLER( soundlatch2_r )
+	public static ReadHandlerPtr soundlatch2_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		read_debug2 = 1;
 		return latch2;
-	}
+	} };
 	
 	READ16_HANDLER( soundlatch2_word_r )
 	{
@@ -132,11 +132,11 @@ public class sndintrf
 		timer_set(TIME_NOW,word,soundlatch3_callback);
 	}
 	
-	READ_HANDLER( soundlatch3_r )
+	public static ReadHandlerPtr soundlatch3_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		read_debug3 = 1;
 		return latch3;
-	}
+	} };
 	
 	READ16_HANDLER( soundlatch3_word_r )
 	{
@@ -175,11 +175,11 @@ public class sndintrf
 		timer_set(TIME_NOW,word,soundlatch4_callback);
 	}
 	
-	READ_HANDLER( soundlatch4_r )
+	public static ReadHandlerPtr soundlatch4_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		read_debug4 = 1;
 		return latch4;
-	}
+	} };
 	
 	READ16_HANDLER( soundlatch4_word_r )
 	{

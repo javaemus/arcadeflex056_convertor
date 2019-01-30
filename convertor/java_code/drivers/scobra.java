@@ -167,7 +167,6 @@ public class scobra
 	extern const struct IO_ReadPort frogger_sound_readport[];
 	extern const struct IO_WritePort frogger_sound_writeport[];
 	
-	READ_HANDLER( scramble_portB_r );
 	
 	READ_HANDLER(scobra_type2_ppi8255_0_r);
 	READ_HANDLER(scobra_type2_ppi8255_1_r);

@@ -31,7 +31,6 @@ public class starcrus
 	WRITE_HANDLER( starcrus_ship_parm_2_w );
 	WRITE_HANDLER( starcrus_proj_parm_1_w );
 	WRITE_HANDLER( starcrus_proj_parm_2_w );
-	READ_HANDLER( starcrus_coll_det_r );
 	extern int starcrus_vh_start(void);
 	extern void starcrus_vh_stop(void);
 	extern void starcrus_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);

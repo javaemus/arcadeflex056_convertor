@@ -110,7 +110,7 @@ public class ajax
 		0x01c0	(r) MIO2			Enables DIPSW #3 reading
 	*/
 	
-	READ_HANDLER( ajax_ls138_f10_r )
+	public static ReadHandlerPtr ajax_ls138_f10_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		int data = 0;
 	
@@ -136,7 +136,7 @@ public class ajax
 		}
 	
 		return data;
-	}
+	} };
 	
 	WRITE_HANDLER( ajax_ls138_f10_w )
 	{
@@ -168,10 +168,10 @@ public class ajax
 	}
 	
 	/* Shared RAM between the 052001 and the 6809 (6264SL at I8) */
-	READ_HANDLER( ajax_sharedram_r )
+	public static ReadHandlerPtr ajax_sharedram_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return ajax_sharedram[offset];
-	}
+	} };
 	
 	WRITE_HANDLER( ajax_sharedram_w )
 	{

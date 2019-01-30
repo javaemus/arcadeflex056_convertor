@@ -274,10 +274,10 @@ public class twin16
 	/******************************************************************************************/
 	/* sound system */
 	
-	READ_HANDLER( twin16_sres_r )
+	public static ReadHandlerPtr twin16_sres_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return twin16_soundlatch;
-	}
+	} };
 	
 	WRITE_HANDLER( twin16_sres_w )
 	{

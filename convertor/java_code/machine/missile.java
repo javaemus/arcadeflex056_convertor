@@ -20,14 +20,13 @@ public class missile
 	static int ctrld;
 	static int h_pos, v_pos;
 	
-	READ_HANDLER( missile_video_r );
 	WRITE_HANDLER( missile_video_w );
 	WRITE_HANDLER( missile_video_mult_w );
 	WRITE_HANDLER( missile_palette_w );
 	
 	
 	/********************************************************************************************/
-	READ_HANDLER( missile_IN0_r )
+	public static ReadHandlerPtr missile_IN0_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		if (ctrld)	/* trackball */
 		{
@@ -38,7 +37,7 @@ public class missile
 		}
 		else	/* buttons */
 			return (readinputport(0));
-	}
+	} };
 	
 	
 	/********************************************************************************************/
@@ -126,7 +125,7 @@ public class missile
 	
 	unsigned char *missile_video2ram;
 	
-	READ_HANDLER( missile_r )
+	public static ReadHandlerPtr missile_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		int pc, opcode;
 		offset = offset + 0x1900;
@@ -155,5 +154,5 @@ public class missile
 	
 		logerror("possible unmapped read, offset: %04x\n", offset);
 		return 0;
-	}
+	} };
 }

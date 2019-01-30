@@ -48,16 +48,16 @@ public class zac2650
 	    }
 	}
 	
-	READ_HANDLER( zac_s2636_r )
+	public static ReadHandlerPtr zac_s2636_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		if(offset!=0xCB) return s2636ram[offset];
 	    else return CollisionSprite;
-	}
+	} };
 	
-	READ_HANDLER( tinvader_port_0_r )
+	public static ReadHandlerPtr tinvader_port_0_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return input_port_0_r(0) - CollisionBackground;
-	}
+	} };
 	
 	/****************************************************/
 	/* Convert from 6x8 based co-ordinates to 8x8 based */

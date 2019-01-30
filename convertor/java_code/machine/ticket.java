@@ -57,13 +57,13 @@ public class ticket
 	/***************************************************************************
 	  ticket_dispenser_r
 	***************************************************************************/
-	READ_HANDLER( ticket_dispenser_r )
+	public static ReadHandlerPtr ticket_dispenser_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 	#ifdef DEBUG_TICKET
 		logerror("PC: %04X  Ticket Status Read = %02X\n", cpu_get_pc(), status);
 	#endif
 		return status;
-	}
+	} };
 	
 	/***************************************************************************
 	  ticket_dispenser_w

@@ -110,7 +110,7 @@ public class starwars
 	 *
 	 *************************************/
 	
-	READ_HANDLER( esb_slapstic_r )
+	public static ReadHandlerPtr esb_slapstic_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		int result = slapstic_base[offset];
 		int new_bank = slapstic_tweak(offset);
@@ -122,7 +122,7 @@ public class starwars
 			memcpy(slapstic_base, &slapstic_source[current_bank * 0x2000], 0x2000);
 		}
 		return result;
-	}
+	} };
 	
 	
 	WRITE_HANDLER( esb_slapstic_w )

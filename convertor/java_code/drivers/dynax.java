@@ -298,16 +298,16 @@ public class dynax
 	
 	data8_t rongrong_select,rongrong_select2;
 	
-	READ_HANDLER( rongrong_input_r )
+	public static ReadHandlerPtr rongrong_input_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		if (!(rongrong_select & 0x01))	return readinputport(3);
 		if (!(rongrong_select & 0x02))	return readinputport(4);
 		if (!(rongrong_select & 0x04))	return readinputport(0);
 		if (!(rongrong_select & 0x08))	return readinputport(1);
 		return 0xff;
-	}
+	} };
 	
-	READ_HANDLER( rongrong_input2_r )
+	public static ReadHandlerPtr rongrong_input2_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		switch( rongrong_select2 )
 		{
@@ -316,7 +316,7 @@ public class dynax
 			case 0x02:	return readinputport(2);
 		}
 		return 0xff;
-	}
+	} };
 	
 	WRITE_HANDLER( rongrong_select_w )
 	{

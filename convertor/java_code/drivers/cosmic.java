@@ -348,17 +348,17 @@ public class cosmic
 	}
 	
 	
-	READ_HANDLER( cosmica_pixel_clock_r )
+	public static ReadHandlerPtr cosmica_pixel_clock_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return pixel_clock;
-	}
+	} };
 	
-	READ_HANDLER( cosmicg_pixel_clock_r )
+	public static ReadHandlerPtr cosmicg_pixel_clock_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		/* The top four address lines from the CRTC are bits 0-3 */
 	
 		return (input_port_0_r(0) & 0xf0) | pixel_clock;
-	}
+	} };
 	
 	public static ReadHandlerPtr magspot2_coinage_dip_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{

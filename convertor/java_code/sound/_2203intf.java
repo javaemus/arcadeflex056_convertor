@@ -122,17 +122,17 @@ public class _2203intf
 	
 	
 	
-	READ_HANDLER( YM2203_status_port_0_r ) { return YM2203Read(0,0); }
-	READ_HANDLER( YM2203_status_port_1_r ) { return YM2203Read(1,0); }
-	READ_HANDLER( YM2203_status_port_2_r ) { return YM2203Read(2,0); }
-	READ_HANDLER( YM2203_status_port_3_r ) { return YM2203Read(3,0); }
-	READ_HANDLER( YM2203_status_port_4_r ) { return YM2203Read(4,0); }
+	public static ReadHandlerPtr YM2203_status_port_0_r  = new ReadHandlerPtr() { public int handler(int offset) { return YM2203Read(0,0); } };
+	public static ReadHandlerPtr YM2203_status_port_1_r  = new ReadHandlerPtr() { public int handler(int offset) { return YM2203Read(1,0); } };
+	public static ReadHandlerPtr YM2203_status_port_2_r  = new ReadHandlerPtr() { public int handler(int offset) { return YM2203Read(2,0); } };
+	public static ReadHandlerPtr YM2203_status_port_3_r  = new ReadHandlerPtr() { public int handler(int offset) { return YM2203Read(3,0); } };
+	public static ReadHandlerPtr YM2203_status_port_4_r  = new ReadHandlerPtr() { public int handler(int offset) { return YM2203Read(4,0); } };
 	
-	READ_HANDLER( YM2203_read_port_0_r ) { return YM2203Read(0,1); }
-	READ_HANDLER( YM2203_read_port_1_r ) { return YM2203Read(1,1); }
-	READ_HANDLER( YM2203_read_port_2_r ) { return YM2203Read(2,1); }
-	READ_HANDLER( YM2203_read_port_3_r ) { return YM2203Read(3,1); }
-	READ_HANDLER( YM2203_read_port_4_r ) { return YM2203Read(4,1); }
+	public static ReadHandlerPtr YM2203_read_port_0_r  = new ReadHandlerPtr() { public int handler(int offset) { return YM2203Read(0,1); } };
+	public static ReadHandlerPtr YM2203_read_port_1_r  = new ReadHandlerPtr() { public int handler(int offset) { return YM2203Read(1,1); } };
+	public static ReadHandlerPtr YM2203_read_port_2_r  = new ReadHandlerPtr() { public int handler(int offset) { return YM2203Read(2,1); } };
+	public static ReadHandlerPtr YM2203_read_port_3_r  = new ReadHandlerPtr() { public int handler(int offset) { return YM2203Read(3,1); } };
+	public static ReadHandlerPtr YM2203_read_port_4_r  = new ReadHandlerPtr() { public int handler(int offset) { return YM2203Read(4,1); } };
 	
 	WRITE_HANDLER( YM2203_control_port_0_w )
 	{

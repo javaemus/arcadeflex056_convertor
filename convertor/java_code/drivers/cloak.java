@@ -101,7 +101,6 @@ public class cloak
 	static unsigned char *enable_nvRAM;
 	static unsigned char *cloak_sharedram;
 	WRITE_HANDLER( cloak_paletteram_w );
-	READ_HANDLER( graph_processor_r );
 	WRITE_HANDLER( graph_processor_w );
 	WRITE_HANDLER( cloak_clearbmp_w );
 	extern int  cloak_vh_start(void);

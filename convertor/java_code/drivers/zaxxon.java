@@ -101,7 +101,6 @@ public class zaxxon
 	
 	
 	
-	READ_HANDLER( zaxxon_IN2_r );
 	
 	extern unsigned char *zaxxon_char_color_bank;
 	extern unsigned char *zaxxon_background_position;

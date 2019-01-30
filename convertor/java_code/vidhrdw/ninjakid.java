@@ -55,14 +55,14 @@ public class ninjakid
 		tilemap_mark_tile_dirty(bg_tilemap,x+y);
 	}
 	
-	READ_HANDLER( ninjakid_bg_videoram_r )
+	public static ReadHandlerPtr ninjakid_bg_videoram_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		int y = (offset + ((ninjakun_yscroll & 0xf8) << 2) ) & 0x3e0;
 		int x = (offset + (ninjakun_xscroll >> 3) ) & 0x1f;
 		int offs = x+y+(offset & 0x400);
 	
 		return videoram[0x800+offs];
-	}
+	} };
 	
 	/******************************************************************************/
 	
@@ -71,7 +71,7 @@ public class ninjakid
 		tilemap_set_flip( ALL_TILEMAPS,flipscreen );
 	}
 	
-	READ_HANDLER( ninjakun_io_8000_r ){
+	public static ReadHandlerPtr ninjakun_io_8000_r  = new ReadHandlerPtr() { public int handler(int offset){
 		switch( offset ){
 		case 0: /* control */
 			return AY8910_read_port_0_r( 0 );
@@ -96,7 +96,7 @@ public class ninjakid
 	
 	//	logerror("PC=%04x; RAM[0x800%d]\n",cpu_get_pc(),offset);
 		return 0xFF;
-	}
+	} };
 	
 	/* static void handle_scrolly( UINT8 new_scroll ){ */
 	

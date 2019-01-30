@@ -76,7 +76,6 @@ public class leprechn
 	void leprechn_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	
 	WRITE_HANDLER( leprechn_graphics_command_w );
-	READ_HANDLER( leprechn_graphics_data_r );
 	WRITE_HANDLER( leprechn_graphics_data_w );
 	
 	

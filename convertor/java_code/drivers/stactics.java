@@ -52,11 +52,6 @@ public class stactics
 {
 	
 	/* Defined in machine/stactics.c */
-	READ_HANDLER( stactics_port_0_r );
-	READ_HANDLER( stactics_port_2_r );
-	READ_HANDLER( stactics_port_3_r );
-	READ_HANDLER( stactics_vert_pos_r );
-	READ_HANDLER( stactics_horiz_pos_r );
 	int stactics_interrupt(void);
 	WRITE_HANDLER( stactics_coin_lockout_w );
 	extern unsigned char *stactics_motor_on;

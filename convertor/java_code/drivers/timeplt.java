@@ -52,7 +52,6 @@ public class timeplt
 	
 	extern unsigned char *timeplt_videoram,*timeplt_colorram;
 	
-	READ_HANDLER( timeplt_scanline_r );
 	WRITE_HANDLER( timeplt_videoram_w );
 	WRITE_HANDLER( timeplt_colorram_w );
 	WRITE_HANDLER( timeplt_flipscreen_w );

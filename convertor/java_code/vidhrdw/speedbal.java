@@ -144,10 +144,10 @@ public class speedbal
 	   speedbal_foreground_videoram[offset]=data;
 	}
 	
-	READ_HANDLER( speedbal_foreground_videoram_r )
+	public static ReadHandlerPtr speedbal_foreground_videoram_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 	   return speedbal_foreground_videoram[offset];
-	}
+	} };
 	
 	
 	
@@ -163,10 +163,10 @@ public class speedbal
 	   speedbal_background_videoram[offset] = data;
 	}
 	
-	READ_HANDLER( speedbal_background_videoram_r )
+	public static ReadHandlerPtr speedbal_background_videoram_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 	   return speedbal_background_videoram[offset];
-	}
+	} };
 	
 	
 	

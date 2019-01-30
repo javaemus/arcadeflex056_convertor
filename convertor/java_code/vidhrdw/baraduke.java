@@ -114,10 +114,10 @@ public class baraduke
 	
 	***************************************************************************/
 	
-	READ_HANDLER( baraduke_videoram_r )
+	public static ReadHandlerPtr baraduke_videoram_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return baraduke_videoram[offset];
-	}
+	} };
 	
 	WRITE_HANDLER( baraduke_videoram_w )
 	{

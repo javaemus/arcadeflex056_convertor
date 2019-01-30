@@ -119,10 +119,10 @@ public class vicdual
 		}
 	}
 	
-	READ_HANDLER( vicdual_characterram_r )
+	public static ReadHandlerPtr vicdual_characterram_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return vicdual_characterram[offset];
-	}
+	} };
 	
 	WRITE_HANDLER( vicdual_palette_bank_w )
 	{

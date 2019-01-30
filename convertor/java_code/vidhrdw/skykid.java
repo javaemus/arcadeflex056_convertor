@@ -125,10 +125,10 @@ public class skykid
 	
 	***************************************************************************/
 	
-	READ_HANDLER( skykid_videoram_r )
+	public static ReadHandlerPtr skykid_videoram_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return skykid_videoram[offset];
-	}
+	} };
 	
 	WRITE_HANDLER( skykid_videoram_w )
 	{

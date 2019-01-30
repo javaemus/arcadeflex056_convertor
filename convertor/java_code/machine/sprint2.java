@@ -46,7 +46,7 @@ public class sprint2
 	We remap our input ports because if we didn't, we'd need 16 ports for this.
 	***************************************************************************/
 	
-	READ_HANDLER( sprint1_read_ports_r )
+	public static ReadHandlerPtr sprint1_read_ports_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		int gear;
 	
@@ -86,7 +86,7 @@ public class sprint2
 		        /* Just in case */
 		        default:        return 0xFF;
 		}
-	}
+	} };
 	
 	/***************************************************************************
 	Read Ports
@@ -116,7 +116,7 @@ public class sprint2
 	We remap our input ports because if we didn't, we'd need 16 ports for this.
 	***************************************************************************/
 	
-	READ_HANDLER( sprint2_read_ports_r )
+	public static ReadHandlerPtr sprint2_read_ports_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		int gear;
 	
@@ -169,7 +169,7 @@ public class sprint2
 		        /* Just in case */
 		        default:        return 0xFF;
 		}
-	}
+	} };
 	
 	/***************************************************************************
 	Sync
@@ -182,7 +182,7 @@ public class sprint2
 	
 	The only one of these I really understand is the VBLANK...
 	***************************************************************************/
-	READ_HANDLER( sprint2_read_sync_r )
+	public static ReadHandlerPtr sprint2_read_sync_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		static int ac_line=0x00;
 	
@@ -191,17 +191,17 @@ public class sprint2
 		        return ((input_port_3_r(0) & 0x7f) | 0x80);
 		else
 		        return (input_port_3_r(0) & 0x7F);
-	}
+	} };
 	
 	
 	
 	/***************************************************************************
 	Coin inputs - Nothing special here.
 	***************************************************************************/
-	READ_HANDLER( sprint2_coins_r )
+	public static ReadHandlerPtr sprint2_coins_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return (input_port_4_r(0));
-	}
+	} };
 	
 	
 	
@@ -214,7 +214,7 @@ public class sprint2
 	because D6 and D7 are apparently checked at different times, and a
 	change in-between can affect the direction you move.
 	***************************************************************************/
-	READ_HANDLER( sprint2_steering1_r )
+	public static ReadHandlerPtr sprint2_steering1_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		static int last_val=0;
 		int this_val;
@@ -241,9 +241,9 @@ public class sprint2
 		}
 	
 		return sprint2_steering_val1;
-	}
+	} };
 	
-	READ_HANDLER( sprint2_steering2_r )
+	public static ReadHandlerPtr sprint2_steering2_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		static int last_val=0;
 		int this_val;
@@ -269,7 +269,7 @@ public class sprint2
 		}
 	
 		return sprint2_steering_val2;
-	}
+	} };
 	
 	WRITE_HANDLER( sprint2_steering_reset1_w )
 	{
@@ -290,15 +290,15 @@ public class sprint2
 	
 	Note:  collisions are actually being set in vidhrdw/sprint2.c
 	***************************************************************************/
-	READ_HANDLER( sprint2_collision1_r )
+	public static ReadHandlerPtr sprint2_collision1_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return sprint2_collision1_data;
-	}
+	} };
 	
-	READ_HANDLER( sprint2_collision2_r )
+	public static ReadHandlerPtr sprint2_collision2_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return sprint2_collision2_data;
-	}
+	} };
 	
 	WRITE_HANDLER( sprint2_collision_reset1_w )
 	{

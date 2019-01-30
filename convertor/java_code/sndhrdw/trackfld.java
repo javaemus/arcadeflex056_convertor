@@ -54,17 +54,17 @@ public class trackfld
 	    the no of cycles by 4 to undo the 14.318/4 operation
 	*/
 	
-	READ_HANDLER( trackfld_sh_timer_r )
+	public static ReadHandlerPtr trackfld_sh_timer_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 	    int clock = cpu_gettotalcycles() / TIMER_RATE;
 	
 	    return clock & 0xF;
-	}
+	} };
 	
-	READ_HANDLER( trackfld_speech_r )
+	public static ReadHandlerPtr trackfld_speech_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 	    return VLM5030_BSY() ? 0x10 : 0;
-	}
+	} };
 	
 	static int last_addr = 0;
 	
@@ -87,12 +87,12 @@ public class trackfld
 	    last_addr = offset;
 	}
 	
-	READ_HANDLER( hyperspt_sh_timer_r )
+	public static ReadHandlerPtr hyperspt_sh_timer_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 	    int clock = cpu_gettotalcycles() / TIMER_RATE;
 	
 	    return (clock & 0x3) | (VLM5030_BSY()? 0x04 : 0);
-	}
+	} };
 	
 	WRITE_HANDLER( hyperspt_sound_w )
 	{
@@ -144,10 +144,10 @@ public class trackfld
 	
 	
 	
-	READ_HANDLER( hyprolyb_speech_r )
+	public static ReadHandlerPtr hyprolyb_speech_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 	    return ADPCM_playing(0) ? 0x10 : 0x00;
-	}
+	} };
 	
 	WRITE_HANDLER( hyprolyb_ADPCM_data_w )
 	{

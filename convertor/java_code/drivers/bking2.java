@@ -36,9 +36,6 @@ public class bking2
 	WRITE_HANDLER( bking2_cont2_w );
 	WRITE_HANDLER( bking2_cont3_w );
 	WRITE_HANDLER( bking2_hitclr_w );
-	READ_HANDLER( bking2_input_port_5_r );
-	READ_HANDLER( bking2_input_port_6_r );
-	READ_HANDLER( bking2_pos_r );
 	
 	
 	static int sndnmi_enable = 1;

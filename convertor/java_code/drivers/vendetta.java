@@ -191,13 +191,13 @@ public class vendetta
 		cpu_cause_interrupt( 1, 0xff );
 	} };
 	
-	READ_HANDLER( vendetta_sound_interrupt_r )
+	public static ReadHandlerPtr vendetta_sound_interrupt_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		cpu_cause_interrupt( 1, 0xff );
 		return 0x00;
-	}
+	} };
 	
-	READ_HANDLER( vendetta_sound_r )
+	public static ReadHandlerPtr vendetta_sound_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		/* If the sound CPU is running, read the status, otherwise
 		   just make it pass the test */
@@ -209,7 +209,7 @@ public class vendetta
 			res = ((res + 1) & 0x07);
 			return offset ? res : 0x00;
 		}
-	}
+	} };
 	
 	/********************************************/
 	

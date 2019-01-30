@@ -288,7 +288,7 @@ public class taitosj
 	
 	
 	
-	READ_HANDLER( taitosj_gfxrom_r )
+	public static ReadHandlerPtr taitosj_gfxrom_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		int offs;
 	
@@ -301,7 +301,7 @@ public class taitosj
 		if (offs < 0x8000)
 			return memory_region(REGION_GFX1)[offs];
 		else return 0;
-	}
+	} };
 	
 	
 	WRITE_HANDLER( taitosj_videoram2_w )
@@ -395,10 +395,10 @@ public class taitosj
 	  collision detection.
 	
 	***************************************************************************/
-	READ_HANDLER( taitosj_collision_reg_r )
+	public static ReadHandlerPtr taitosj_collision_reg_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return taitosj_collision_reg[offset];
-	}
+	} };
 	
 	WRITE_HANDLER( taitosj_collision_reg_clear_w )
 	{

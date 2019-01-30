@@ -70,7 +70,7 @@ public class irobot
 	
 	
 	
-	READ_HANDLER( irobot_sharedmem_r )
+	public static ReadHandlerPtr irobot_sharedmem_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		if (irobot_outx == 3)
 			return mbRAM[BYTE_XOR_BE(offset)];
@@ -85,7 +85,7 @@ public class irobot
 			return mbROM[0x4000 + ((irobot_mpage & 3) << 13) + BYTE_XOR_BE(offset)];
 	
 		return 0xFF;
-	}
+	} };
 	
 	/* Comment out the mbRAM =, comRAM2 = or comRAM1 = and it will start working */
 	WRITE_HANDLER( irobot_sharedmem_w )
@@ -236,7 +236,7 @@ public class irobot
 		irobot_control_num = offset & 0x03;
 	}
 	
-	READ_HANDLER( irobot_control_r )
+	public static ReadHandlerPtr irobot_control_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 	
 		if (irobot_control_num == 0)
@@ -245,11 +245,11 @@ public class irobot
 			return readinputport (6);
 		return 0;
 	
-	}
+	} };
 	
 	/*  we allow irmb_running and irvg_running to appear running before clearing
 		them to simulate the mathbox and vector generator running in real time */
-	READ_HANDLER( irobot_status_r )
+	public static ReadHandlerPtr irobot_status_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		int d=0;
 	
@@ -268,7 +268,7 @@ public class irobot
 		irvg_running=0;
 	#endif
 		return d;
-	}
+	} };
 	
 	
 	/***********************************************************************

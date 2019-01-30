@@ -33,12 +33,9 @@ public class redalert
 	
 	/* sndhrdw/redalert.c */
 	WRITE_HANDLER( redalert_c030_w );
-	READ_HANDLER( redalert_voicecommand_r );
 	WRITE_HANDLER( redalert_soundlatch_w );
-	READ_HANDLER( redalert_AY8910_A_r );
 	WRITE_HANDLER( redalert_AY8910_B_w );
 	WRITE_HANDLER( redalert_AY8910_w );
-	READ_HANDLER( redalert_sound_register_IC1_r );
 	WRITE_HANDLER( redalert_sound_register_IC2_w );
 	
 	

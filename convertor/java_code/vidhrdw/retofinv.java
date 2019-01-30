@@ -124,25 +124,25 @@ public class retofinv
 		fillbitmap(bitmap_bg,Machine->pens[0],0);
 	}
 	
-	READ_HANDLER( retofinv_bg_videoram_r )
+	public static ReadHandlerPtr retofinv_bg_videoram_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return retofinv_bg_videoram[offset];
-	}
+	} };
 	
-	READ_HANDLER( retofinv_fg_videoram_r )
+	public static ReadHandlerPtr retofinv_fg_videoram_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return retofinv_fg_videoram[offset];
-	}
+	} };
 	
-	READ_HANDLER( retofinv_bg_colorram_r )
+	public static ReadHandlerPtr retofinv_bg_colorram_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return retofinv_bg_colorram[offset];
-	}
+	} };
 	
-	READ_HANDLER( retofinv_fg_colorram_r )
+	public static ReadHandlerPtr retofinv_fg_colorram_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return retofinv_fg_colorram[offset];
-	}
+	} };
 	
 	WRITE_HANDLER( retofinv_bg_videoram_w )
 	{

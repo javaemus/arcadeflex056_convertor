@@ -237,11 +237,11 @@ public class carnival
 	}
 	
 	
-	READ_HANDLER( carnival_music_port_t1_r )
+	public static ReadHandlerPtr carnival_music_port_t1_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		/* note: 8039 T1 signal is inverted on music board */
 		return ( port2State & OUT_PORT_2_MUSIC_T1 ) ? 0 : 1;
-	}
+	} };
 	
 	
 	WRITE_HANDLER( carnival_music_port_1_w )

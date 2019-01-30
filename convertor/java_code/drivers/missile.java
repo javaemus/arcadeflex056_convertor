@@ -148,7 +148,6 @@ public class missile
 	extern unsigned char *missile_video2ram;
 	
 	void missile_init_machine(void);
-	READ_HANDLER( missile_r );
 	WRITE_HANDLER( missile_w );
 	
 	int  missile_vh_start(void);

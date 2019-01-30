@@ -129,7 +129,7 @@ public class astrocde
 		return 0;
 	}
 	
-	READ_HANDLER( wow_speech_r )
+	public static ReadHandlerPtr wow_speech_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		int Phoneme,Intonation;
 		int i = 0;
@@ -195,7 +195,7 @@ public class astrocde
 	
 		/* Note : We should really also use volume in this as well as frequency */
 		return data;				                   /* Return nicely */
-	}
+	} };
 	
 	int wow_status_r(void)
 	{
@@ -205,14 +205,14 @@ public class astrocde
 	
 	/* Read from port 2 (0x12) returns speech status as 0x80 */
 	
-	READ_HANDLER( wow_port_2_r )
+	public static ReadHandlerPtr wow_port_2_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		int Ans;
 	
 		Ans = (input_port_2_r(0) & 0x7F);
 		if (wow_status_r() != 0) Ans += 128;
 		return Ans;
-	}
+	} };
 	
 	void wow_sh_update(void)
 	{

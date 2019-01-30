@@ -1060,12 +1060,12 @@ public class williams
 		ADPCM COMMUNICATIONS
 	****************************************************************************/
 	
-	READ_HANDLER( williams_adpcm_command_r )
+	public static ReadHandlerPtr williams_adpcm_command_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		cpu_set_irq_line(williams_cpunum, M6809_IRQ_LINE, CLEAR_LINE);
 		williams_sound_int_state = 0;
 		return soundlatch_r(0);
-	}
+	} };
 	
 	void williams_adpcm_data_w(int data)
 	{
@@ -1096,13 +1096,13 @@ public class williams
 		NARC COMMUNICATIONS
 	****************************************************************************/
 	
-	READ_HANDLER( williams_narc_command_r )
+	public static ReadHandlerPtr williams_narc_command_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		cpu_set_nmi_line(williams_cpunum, CLEAR_LINE);
 		cpu_set_irq_line(williams_cpunum, M6809_IRQ_LINE, CLEAR_LINE);
 		williams_sound_int_state = 0;
 		return soundlatch_r(0);
-	}
+	} };
 	
 	void williams_narc_data_w(int data)
 	{
@@ -1135,11 +1135,11 @@ public class williams
 		}
 	}
 	
-	READ_HANDLER( williams_narc_command2_r )
+	public static ReadHandlerPtr williams_narc_command2_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		cpu_set_irq_line(williams_cpunum + 1, M6809_FIRQ_LINE, CLEAR_LINE);
 		return soundlatch2_r(0);
-	}
+	} };
 	
 	WRITE_HANDLER( williams_narc_command2_w )
 	{

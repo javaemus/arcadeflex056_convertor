@@ -52,20 +52,14 @@ public class mitchell
 	void pang_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	
 	WRITE_HANDLER( mgakuen_paletteram_w );
-	READ_HANDLER( mgakuen_paletteram_r );
 	WRITE_HANDLER( mgakuen_videoram_w );
-	READ_HANDLER( mgakuen_videoram_r );
 	WRITE_HANDLER( mgakuen_objram_w );
-	READ_HANDLER( mgakuen_objram_r );
 	
 	WRITE_HANDLER( pang_video_bank_w );
 	WRITE_HANDLER( pang_videoram_w );
-	READ_HANDLER( pang_videoram_r );
 	WRITE_HANDLER( pang_colorram_w );
-	READ_HANDLER( pang_colorram_r );
 	WRITE_HANDLER( pang_gfxctrl_w );
 	WRITE_HANDLER( pang_paletteram_w );
-	READ_HANDLER( pang_paletteram_r );
 	
 	extern unsigned char *pang_videoram;
 	extern unsigned char *pang_colorram;

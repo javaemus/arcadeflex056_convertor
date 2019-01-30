@@ -109,9 +109,7 @@ public class sailorws
 	int mscoutm_vh_start(void);
 	void mscoutm_vh_stop(void);
 	
-	READ_HANDLER( sailorws_palette_r );
 	WRITE_HANDLER( sailorws_palette_w );
-	READ_HANDLER( mscoutm_palette_r );
 	WRITE_HANDLER( mscoutm_palette_w );
 	
 	WRITE_HANDLER( sailorws_gfxflag_0_w );
@@ -136,10 +134,6 @@ public class sailorws
 	void sailorws_paltblnum_w(int data);
 	WRITE_HANDLER( sailorws_paltbl_0_w );
 	WRITE_HANDLER( sailorws_paltbl_1_w );
-	READ_HANDLER( sailorws_gfxbusy_0_r );
-	READ_HANDLER( sailorws_gfxbusy_1_r );
-	READ_HANDLER( sailorws_gfxrom_0_r );
-	READ_HANDLER( sailorws_gfxrom_1_r );
 	
 	
 	static int sailorws_inputport;

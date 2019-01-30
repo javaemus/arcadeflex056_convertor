@@ -158,7 +158,7 @@ public class cvs
 	    set_led_status(2,data & 32);	/* Lamp 2 */
 	}
 	
-	READ_HANDLER( cvs_character_mode_r )
+	public static ReadHandlerPtr cvs_character_mode_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		/* Really a write - uses address info */
 	
@@ -174,18 +174,18 @@ public class cvs
 	    character_page = (value << 2) & 0x300;
 	
 	    return 0;
-	}
+	} };
 	
-	READ_HANDLER( cvs_collision_r )
+	public static ReadHandlerPtr cvs_collision_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return CollisionRegister;
-	}
+	} };
 	
-	READ_HANDLER( cvs_collision_clear )
+	public static ReadHandlerPtr cvs_collision_clear  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		CollisionRegister=0;
 	    return 0;
-	}
+	} };
 	
 	WRITE_HANDLER( cvs_scroll_w )
 	{
@@ -214,7 +214,7 @@ public class cvs
 	    }
 	}
 	
-	READ_HANDLER( cvs_videoram_r )
+	public static ReadHandlerPtr cvs_videoram_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		if(!s2650_get_flag())
 	    {
@@ -228,7 +228,7 @@ public class cvs
 	
 	        return videoram[offset];
 	    }
-	}
+	} };
 	
 	WRITE_HANDLER( cvs_bullet_w )
 	{
@@ -246,7 +246,7 @@ public class cvs
 	    }
 	}
 	
-	READ_HANDLER( cvs_bullet_r )
+	public static ReadHandlerPtr cvs_bullet_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		if(!s2650_get_flag())
 	    {
@@ -260,7 +260,7 @@ public class cvs
 	
 	        return (paletteram[offset] ^ 0xff);
 	    }
-	}
+	} };
 	
 	WRITE_HANDLER( cvs_2636_1_w )
 	{
@@ -282,7 +282,7 @@ public class cvs
 		}
 	}
 	
-	READ_HANDLER( cvs_2636_1_r )
+	public static ReadHandlerPtr cvs_2636_1_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		if(!s2650_get_flag())
 	    {
@@ -296,7 +296,7 @@ public class cvs
 	
 	        return character_1_ram[character_page + offset];
 	    }
-	}
+	} };
 	
 	WRITE_HANDLER( cvs_2636_2_w )
 	{
@@ -318,7 +318,7 @@ public class cvs
 	    }
 	}
 	
-	READ_HANDLER( cvs_2636_2_r )
+	public static ReadHandlerPtr cvs_2636_2_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		if(!s2650_get_flag())
 	    {
@@ -332,7 +332,7 @@ public class cvs
 	
 	        return character_2_ram[character_page + offset];
 	    }
-	}
+	} };
 	
 	WRITE_HANDLER( cvs_2636_3_w )
 	{
@@ -354,7 +354,7 @@ public class cvs
 	    }
 	}
 	
-	READ_HANDLER( cvs_2636_3_r )
+	public static ReadHandlerPtr cvs_2636_3_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		if(!s2650_get_flag())
 	    {
@@ -368,7 +368,7 @@ public class cvs
 	
 	        return character_3_ram[character_page + offset];
 	    }
-	}
+	} };
 	
 	int cvs_vh_start(void)
 	{

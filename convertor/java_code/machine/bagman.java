@@ -236,7 +236,7 @@ public class bagman
 		update_pal();
 	}
 	
-	READ_HANDLER( bagman_pal16r6_r )
+	public static ReadHandlerPtr bagman_pal16r6_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		update_pal();
 		return	(outvalue[6]) + (outvalue[5]<<1) + (outvalue[4]<<2) +
@@ -246,5 +246,5 @@ public class bagman
 	** This is the PAL 16R6 shown almost in the middle of the schematics.
 	** The /RD4 line goes low (active) whenever CPU reads from memory address a000.
 	*/
-	}
+	} };
 }

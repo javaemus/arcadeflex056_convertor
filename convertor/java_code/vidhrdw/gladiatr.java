@@ -66,15 +66,14 @@ public class gladiatr
 		sprite_bank = (data)?4:2;
 	}
 	
-	READ_HANDLER( gladiatr_video_registers_r );
-	READ_HANDLER( gladiatr_video_registers_r ){
+	public static ReadHandlerPtr gladiatr_video_registers_r  = new ReadHandlerPtr() { public int handler(int offset){
 		switch( offset ){
 			case 0x080: return video_attributes;
 			case 0x100: return base_scroll;
 			case 0x300: return background_scroll;
 		}
 		return 0;
-	}
+	} };
 	
 	WRITE_HANDLER( gladiatr_video_registers_w );
 	WRITE_HANDLER( gladiatr_video_registers_w ){

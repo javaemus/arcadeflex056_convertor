@@ -204,11 +204,11 @@ public class rp5h01
 		RP5H01_test_w( 0, data );
 	}
 	
-	READ_HANDLER( RP5H01_0_counter_r ) {
+	public static ReadHandlerPtr RP5H01_0_counter_r  = new ReadHandlerPtr() { public int handler(int offset) {
 		return RP5H01_counter_r( 0 );
-	}
+	} };
 	
-	READ_HANDLER( RP5H01_0_data_r ) {
+	public static ReadHandlerPtr RP5H01_0_data_r  = new ReadHandlerPtr() { public int handler(int offset) {
 		return RP5H01_data_r( 0 );
-	}
+	} };
 }

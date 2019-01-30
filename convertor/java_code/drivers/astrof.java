@@ -56,7 +56,6 @@ public class astrof
 	WRITE_HANDLER( astrof_video_control1_w );
 	WRITE_HANDLER( astrof_video_control2_w );
 	WRITE_HANDLER( tomahawk_video_control2_w );
-	READ_HANDLER( tomahawk_protection_r );
 	WRITE_HANDLER( astrof_sample1_w );
 	WRITE_HANDLER( astrof_sample2_w );
 	

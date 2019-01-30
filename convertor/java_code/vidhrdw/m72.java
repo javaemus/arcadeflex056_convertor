@@ -293,7 +293,7 @@ public class m72
 	
 	***************************************************************************/
 	
-	READ_HANDLER( m72_palette1_r )
+	public static ReadHandlerPtr m72_palette1_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		/* only D0-D4 are connected */
 		if (offset & 1) return 0xff;
@@ -302,9 +302,9 @@ public class m72
 		offset &= ~0x200;
 	
 		return paletteram[offset] | 0xe0;	/* only D0-D4 are connected */
-	}
+	} };
 	
-	READ_HANDLER( m72_palette2_r )
+	public static ReadHandlerPtr m72_palette2_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		/* only D0-D4 are connected */
 		if (offset & 1) return 0xff;
@@ -313,7 +313,7 @@ public class m72
 		offset &= ~0x200;
 	
 		return paletteram_2[offset] | 0xe0;	/* only D0-D4 are connected */
-	}
+	} };
 	
 	INLINE void changecolor(int color,int r,int g,int b)
 	{
@@ -356,15 +356,15 @@ public class m72
 				paletteram_2[offset + 0x800]);
 	}
 	
-	READ_HANDLER( m72_videoram1_r )
+	public static ReadHandlerPtr m72_videoram1_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return m72_videoram1[offset];
-	}
+	} };
 	
-	READ_HANDLER( m72_videoram2_r )
+	public static ReadHandlerPtr m72_videoram2_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return m72_videoram2[offset];
-	}
+	} };
 	
 	WRITE_HANDLER( m72_videoram1_w )
 	{

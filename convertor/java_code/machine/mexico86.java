@@ -34,11 +34,11 @@ public class mexico86
 	
 	static unsigned char portA_in,portA_out,ddrA;
 	
-	READ_HANDLER( mexico86_68705_portA_r )
+	public static ReadHandlerPtr mexico86_68705_portA_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 	//logerror("%04x: 68705 port A read %02x\n",cpu_get_pc(),portA_in);
 		return (portA_out & ddrA) | (portA_in & ~ddrA);
-	}
+	} };
 	
 	WRITE_HANDLER( mexico86_68705_portA_w )
 	{
@@ -71,10 +71,10 @@ public class mexico86
 	
 	static unsigned char portB_in,portB_out,ddrB;
 	
-	READ_HANDLER( mexico86_68705_portB_r )
+	public static ReadHandlerPtr mexico86_68705_portB_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return (portB_out & ddrB) | (portB_in & ~ddrB);
-	}
+	} };
 	
 	static int address,latch;
 	

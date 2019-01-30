@@ -167,10 +167,10 @@ public class namcos86
 	
 	***************************************************************************/
 	
-	READ_HANDLER( rthunder_videoram1_r )
+	public static ReadHandlerPtr rthunder_videoram1_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return rthunder_videoram1[offset];
-	}
+	} };
 	
 	WRITE_HANDLER( rthunder_videoram1_w )
 	{
@@ -181,10 +181,10 @@ public class namcos86
 		}
 	}
 	
-	READ_HANDLER( rthunder_videoram2_r )
+	public static ReadHandlerPtr rthunder_videoram2_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return rthunder_videoram2[offset];
-	}
+	} };
 	
 	WRITE_HANDLER( rthunder_videoram2_w )
 	{

@@ -66,10 +66,10 @@ public class slapfght
 	    return;
 	}
 	
-	READ_HANDLER( slapfight_dpram_r )
+	public static ReadHandlerPtr slapfight_dpram_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 	    return slapfight_dpram[offset];
-	}
+	} };
 	
 	
 	
@@ -121,7 +121,7 @@ public class slapfght
 	
 	/* Status register */
 	
-	READ_HANDLER( slapfight_port_00_r )
+	public static ReadHandlerPtr slapfight_port_00_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		int states[3]={ 0xc7, 0x55, 0x00 };
 	
@@ -131,7 +131,7 @@ public class slapfght
 		if (slapfight_status_state > 2) slapfight_status_state = 0;
 	
 		return slapfight_status;
-	}
+	} };
 	
 	
 	
@@ -141,7 +141,7 @@ public class slapfght
 	 - third value is (first+5)^0x56
 	 I don't know what writes to this address do (connected to port 0 reads?).
 	*/
-	READ_HANDLER( getstar_e803_r )
+	public static ReadHandlerPtr getstar_e803_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 	unsigned char seq[] = { 0, 1, (0+5)^0x56 };
 	unsigned char val;
@@ -149,7 +149,7 @@ public class slapfght
 		val = seq[getstar_sequence_index];
 		getstar_sequence_index = (getstar_sequence_index+1)%3;
 		return val;
-	}
+	} };
 	
 	
 	

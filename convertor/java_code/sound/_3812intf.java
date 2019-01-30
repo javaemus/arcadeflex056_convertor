@@ -451,13 +451,13 @@ public class _3812intf
 		(*write_port_w)( 0, data );
 	}
 	
-	READ_HANDLER( YM3812_status_port_0_r ) {
+	public static ReadHandlerPtr YM3812_status_port_0_r  = new ReadHandlerPtr() { public int handler(int offset) {
 		return (*status_port_r)( 0 );
-	}
+	} };
 	
-	READ_HANDLER( YM3812_read_port_0_r ) {
+	public static ReadHandlerPtr YM3812_read_port_0_r  = new ReadHandlerPtr() { public int handler(int offset) {
 		return (*read_port_r)( 0 );
-	}
+	} };
 	
 	WRITE_HANDLER( YM3812_control_port_1_w ) {
 		(*control_port_w)( 1, data );
@@ -467,13 +467,13 @@ public class _3812intf
 		(*write_port_w)( 1, data );
 	}
 	
-	READ_HANDLER( YM3812_status_port_1_r ) {
+	public static ReadHandlerPtr YM3812_status_port_1_r  = new ReadHandlerPtr() { public int handler(int offset) {
 		return (*status_port_r)( 1 );
-	}
+	} };
 	
-	READ_HANDLER( YM3812_read_port_1_r ) {
+	public static ReadHandlerPtr YM3812_read_port_1_r  = new ReadHandlerPtr() { public int handler(int offset) {
 		return (*read_port_r)( 1 );
-	}
+	} };
 	
 	/**********************************************************************************************
 		End of YM3812 interface stubs block

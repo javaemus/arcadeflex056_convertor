@@ -58,7 +58,6 @@ public class mappy
 	extern unsigned char *mappy_customio_1,*mappy_customio_2;
 	void mappy_init_machine(void);
 	void motos_init_machine(void);
-	READ_HANDLER( mappy_sharedram_r );
 	WRITE_HANDLER( mappy_sharedram_w );
 	WRITE_HANDLER( mappy_customio_1_w );
 	WRITE_HANDLER( mappy_customio_2_w );
@@ -71,17 +70,9 @@ public class mappy
 	WRITE_HANDLER( mappy_io_chips_enable_w );
 	WRITE_HANDLER( mappy_flipscreen_w );
 	
-	READ_HANDLER( mappy_customio_1_r );
-	READ_HANDLER( mappy_customio_2_r );
 	
-	READ_HANDLER( digdug2_customio_1_r );
-	READ_HANDLER( digdug2_customio_2_r );
 	
-	READ_HANDLER( motos_customio_1_r );
-	READ_HANDLER( motos_customio_2_r );
 	
-	READ_HANDLER( todruaga_customio_1_r );
-	READ_HANDLER( todruaga_customio_2_r );
 	
 	/* video driver data & functions */
 	int mappy_vh_start(void);

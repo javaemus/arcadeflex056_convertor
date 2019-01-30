@@ -15,15 +15,15 @@ public class raiden
 	
 	/******************************************************************************/
 	
-	READ_HANDLER( raiden_background_r )
+	public static ReadHandlerPtr raiden_background_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return raiden_back_data[offset];
-	}
+	} };
 	
-	READ_HANDLER( raiden_foreground_r )
+	public static ReadHandlerPtr raiden_foreground_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return raiden_fore_data[offset];
-	}
+	} };
 	
 	WRITE_HANDLER( raiden_background_w )
 	{

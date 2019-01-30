@@ -24,17 +24,11 @@ public class berzerk
 	WRITE_HANDLER( berzerk_irq_enable_w );
 	WRITE_HANDLER( berzerk_nmi_enable_w );
 	WRITE_HANDLER( berzerk_nmi_disable_w );
-	READ_HANDLER( berzerk_nmi_enable_r );
-	READ_HANDLER( berzerk_nmi_disable_r );
-	READ_HANDLER( berzerk_led_on_r );
-	READ_HANDLER( berzerk_led_off_r );
-	READ_HANDLER( berzerk_voiceboard_r );
 	WRITE_HANDLER( berzerk_videoram_w );
 	WRITE_HANDLER( berzerk_colorram_w );
 	
 	WRITE_HANDLER( berzerk_magicram_w );
 	WRITE_HANDLER( berzerk_magicram_control_w );
-	READ_HANDLER( berzerk_collision_r );
 	
 	WRITE_HANDLER( berzerk_sound_control_a_w );
 	int  berzerk_sh_start(const struct MachineSound *msound);

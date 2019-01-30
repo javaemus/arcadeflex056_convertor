@@ -1118,7 +1118,7 @@ public class seta
 									DownTown
 	***************************************************************************/
 	
-	READ_HANDLER( downtown_ip_r )
+	public static ReadHandlerPtr downtown_ip_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		int dir1 = readinputport(4);	// analog port
 		int dir2 = readinputport(5);	// analog port
@@ -1139,7 +1139,7 @@ public class seta
 		}
 	
 		return 0;
-	}
+	} };
 	
 	public static Memory_ReadAddress downtown_sub_readmem[]={
 		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),

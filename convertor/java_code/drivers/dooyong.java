@@ -883,10 +883,10 @@ public class dooyong
 		cpu_set_irq_line(1,0,irq ? ASSERT_LINE : CLEAR_LINE);
 	}
 	
-	READ_HANDLER( unk_r )
+	public static ReadHandlerPtr unk_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return 0;
-	}
+	} };
 	
 	static struct YM2203interface ym2203_interface =
 	{

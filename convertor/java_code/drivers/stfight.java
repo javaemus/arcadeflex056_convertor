@@ -244,13 +244,10 @@ public class stfight
 	int  stfight_vb_interrupt( void );
 	int  stfight_interrupt_1( void );
 	int  stfight_interrupt_2( void );
-	READ_HANDLER( stfight_dsw_r );
 	WRITE_HANDLER( stfight_fm_w );
 	WRITE_HANDLER( stfight_voice_w );
-	READ_HANDLER( stfight_coin_r );
 	WRITE_HANDLER( stfight_coin_w );
 	WRITE_HANDLER( stfight_e800_w );
-	READ_HANDLER( stfight_fm_r );
 	void stfight_adpcm_int( int data );
 	WRITE_HANDLER( stfight_adpcm_control_w );
 	

@@ -184,9 +184,9 @@ public class iremga20
 		}
 	}
 	
-	READ_HANDLER( IremGA20_r )
+	public static ReadHandlerPtr IremGA20_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		/* Todo - Looks like there is a status bit to show whether each channel is playing */
 		return 0xff;
-	}
+	} };
 }

@@ -139,11 +139,11 @@ public class qix
 	 *
 	 *************************************/
 	
-	READ_HANDLER( qix_scanline_r )
+	public static ReadHandlerPtr qix_scanline_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		int scanline = cpu_getscanline();
 		return (scanline <= 0xff) ? scanline : 0;
-	}
+	} };
 	
 	
 	
@@ -178,12 +178,12 @@ public class qix
 	 *
 	 *************************************/
 	
-	READ_HANDLER( qix_videoram_r )
+	public static ReadHandlerPtr qix_videoram_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		/* add in the upper bit of the address latch */
 		offset += (qix_videoaddress[0] & 0x80) << 8;
 		return videoram[offset];
-	}
+	} };
 	
 	
 	WRITE_HANDLER( qix_videoram_w )
@@ -212,12 +212,12 @@ public class qix
 	 *
 	 *************************************/
 	
-	READ_HANDLER( qix_addresslatch_r )
+	public static ReadHandlerPtr qix_addresslatch_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		/* compute the value at the address latch */
 		offset = (qix_videoaddress[0] << 8) | qix_videoaddress[1];
 		return videoram[offset];
-	}
+	} };
 	
 	
 	

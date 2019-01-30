@@ -230,7 +230,7 @@ public class twincobr
 		else logerror("PC - write %04x to unknown video scroll X register\n",data);
 	}
 	
-	READ_HANDLER( wardner_videoram_r )
+	public static ReadHandlerPtr wardner_videoram_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		int shift = 8 * (offset & 1);
 		switch (offset/2) {
@@ -239,7 +239,7 @@ public class twincobr
 			case 2: return twincobr_fgram_r(0,0) >> shift; break;
 		}
 		return 0;
-	}
+	} };
 	
 	WRITE_HANDLER( wardner_videoram_w )
 	{

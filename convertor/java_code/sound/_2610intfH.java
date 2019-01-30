@@ -51,11 +51,8 @@ public class _2610intfH
 	/************************************************/
 	/* Chip 0 functions								*/
 	/************************************************/
-	READ_HANDLER( YM2610_status_port_0_A_r );
 	READ16_HANDLER( YM2610_status_port_0_A_lsb_r );
-	READ_HANDLER( YM2610_status_port_0_B_r );
 	READ16_HANDLER( YM2610_status_port_0_B_lsb_r );
-	READ_HANDLER( YM2610_read_port_0_r );
 	READ16_HANDLER( YM2610_read_port_0_lsb_r );
 	WRITE_HANDLER( YM2610_control_port_0_A_w );
 	WRITE16_HANDLER( YM2610_control_port_0_A_lsb_w );
@@ -69,11 +66,8 @@ public class _2610intfH
 	/************************************************/
 	/* Chip 1 functions								*/
 	/************************************************/
-	READ_HANDLER( YM2610_status_port_1_A_r );
 	READ16_HANDLER( YM2610_status_port_1_A_lsb_r );
-	READ_HANDLER( YM2610_status_port_1_B_r );
 	READ16_HANDLER( YM2610_status_port_1_B_lsb_r );
-	READ_HANDLER( YM2610_read_port_1_r );
 	READ16_HANDLER( YM2610_read_port_1_lsb_r );
 	WRITE_HANDLER( YM2610_control_port_1_A_w );
 	WRITE16_HANDLER( YM2610_control_port_1_A_lsb_w );

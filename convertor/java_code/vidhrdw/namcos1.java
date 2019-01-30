@@ -131,10 +131,10 @@ public class namcos1
 		}
 	} };
 	
-	READ_HANDLER( namcos1_videoram_r )
+	public static ReadHandlerPtr namcos1_videoram_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return namcos1_videoram[offset];
-	}
+	} };
 	
 	WRITE_HANDLER( namcos1_videoram_w )
 	{
@@ -157,10 +157,10 @@ public class namcos1
 		}
 	}
 	
-	READ_HANDLER( namcos1_paletteram_r )
+	public static ReadHandlerPtr namcos1_paletteram_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return namcos1_paletteram[offset];
-	}
+	} };
 	
 	WRITE_HANDLER( namcos1_paletteram_w )
 	{

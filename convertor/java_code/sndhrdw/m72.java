@@ -176,10 +176,10 @@ public class m72
 		sample_addr <<= 5;
 	}
 	
-	READ_HANDLER( m72_sample_r )
+	public static ReadHandlerPtr m72_sample_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return memory_region(REGION_SOUND1)[sample_addr];
-	}
+	} };
 	
 	WRITE_HANDLER( m72_sample_w )
 	{

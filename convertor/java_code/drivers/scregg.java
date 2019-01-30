@@ -26,9 +26,7 @@ public class scregg
 	int  btime_vh_start (void);
 	void eggs_vh_screenrefresh    (struct mame_bitmap *bitmap,int full_refresh);
 	
-	READ_HANDLER( btime_mirrorvideoram_r );
 	WRITE_HANDLER( btime_mirrorvideoram_w );
-	READ_HANDLER( btime_mirrorcolorram_r );
 	WRITE_HANDLER( btime_mirrorcolorram_w );
 	WRITE_HANDLER( btime_video_control_w );
 	

@@ -111,7 +111,6 @@ public class senjyo
 	WRITE_HANDLER( senjyo_sh_2_w );
 	
 	WRITE_HANDLER( starforc_pio_w );
-	READ_HANDLER( starforc_pio_r );
 	
 	#if 1
 	WRITE_HANDLER( senjyo_volume_w );

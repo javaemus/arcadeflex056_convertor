@@ -42,10 +42,10 @@ public class lwings
 		avengers_adpcm = data;
 	}
 	
-	READ_HANDLER( avengers_adpcm_r )
+	public static ReadHandlerPtr avengers_adpcm_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return avengers_adpcm;
-	}
+	} };
 	
 	public static WriteHandlerPtr lwings_bankswitch_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{

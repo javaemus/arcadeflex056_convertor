@@ -147,7 +147,7 @@ public class scramble
 		return 0x6f;
 	} };
 	
-	READ_HANDLER( scramblb_protection_1_r )
+	public static ReadHandlerPtr scramblb_protection_1_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		switch (cpu_get_pc())
 		{
@@ -157,9 +157,9 @@ public class scramble
 			logerror("%04x: read protection 1\n",cpu_get_pc());
 			return 0;
 		}
-	}
+	} };
 	
-	READ_HANDLER( scramblb_protection_2_r )
+	public static ReadHandlerPtr scramblb_protection_2_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		switch (cpu_get_pc())
 		{
@@ -168,7 +168,7 @@ public class scramble
 			logerror("%04x: read protection 2\n",cpu_get_pc());
 			return 0;
 		}
-	}
+	} };
 	
 	
 	public static WriteHandlerPtr theend_coin_counter_w = new WriteHandlerPtr() {public void handler(int offset, int data)
@@ -188,20 +188,20 @@ public class scramble
 	} };
 	
 	
-	READ_HANDLER( triplep_pip_r )
+	public static ReadHandlerPtr triplep_pip_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		logerror("PC %04x: triplep read port 2\n",cpu_get_pc());
 		if (cpu_get_pc() == 0x015a) return 0xff;
 		else if (cpu_get_pc() == 0x0886) return 0x05;
 		else return 0;
-	}
+	} };
 	
-	READ_HANDLER( triplep_pap_r )
+	public static ReadHandlerPtr triplep_pap_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		logerror("PC %04x: triplep read port 3\n",cpu_get_pc());
 		if (cpu_get_pc() == 0x015d) return 0x04;
 		else return 0;
-	}
+	} };
 	
 	
 	static void cavelon_banksw(void)

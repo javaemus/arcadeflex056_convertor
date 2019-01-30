@@ -104,7 +104,6 @@ public class scramble
 	void mariner_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom);
 	void frogger_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom);
 	WRITE_HANDLER( galaxian_videoram_w );
-	READ_HANDLER( galaxian_videoram_r );
 	WRITE_HANDLER( galaxian_stars_enable_w );
 	
 	void init_scramble_ppi(void);
@@ -144,8 +143,6 @@ public class scramble
 	WRITE_HANDLER(mars_ppi8255_1_w);
 	
 	/* protection stuff. in machine\scramble.c */
-	READ_HANDLER( triplep_pip_r );
-	READ_HANDLER( triplep_pap_r );
 	
 	
 	public static WriteHandlerPtr scramble_coin_counter_1_w = new WriteHandlerPtr() {public void handler(int offset, int data)
@@ -169,10 +166,10 @@ public class scramble
 	} };
 	
 	
-	READ_HANDLER( hunchbks_mirror_r )
+	public static ReadHandlerPtr hunchbks_mirror_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return cpu_readmem16(0x1000+offset);
-	}
+	} };
 	
 	WRITE_HANDLER( hunchbks_mirror_w )
 	{

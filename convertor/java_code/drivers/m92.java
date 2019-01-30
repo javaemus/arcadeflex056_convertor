@@ -118,9 +118,7 @@ public class m92
 	/* From vidhrdw/m92.c */
 	WRITE_HANDLER( m92_spritecontrol_w );
 	WRITE_HANDLER( m92_videocontrol_w );
-	READ_HANDLER( m92_paletteram_r );
 	WRITE_HANDLER( m92_paletteram_w );
-	READ_HANDLER( m92_vram_r );
 	WRITE_HANDLER( m92_vram_w );
 	WRITE_HANDLER( m92_pf1_control_w );
 	WRITE_HANDLER( m92_pf2_control_w );

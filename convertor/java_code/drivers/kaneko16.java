@@ -718,10 +718,10 @@ public class kaneko16
 	
 	***************************************************************************/
 	
-	READ_HANDLER( kaneko16_eeprom_r )
+	public static ReadHandlerPtr kaneko16_eeprom_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return EEPROM_read_bit() & 1;
-	}
+	} };
 	
 	WRITE_HANDLER( kaneko16_eeprom_reset_w )
 	{

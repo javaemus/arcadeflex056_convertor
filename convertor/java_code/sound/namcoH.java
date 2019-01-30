@@ -24,8 +24,6 @@ WRITE_HANDLER( mappy_sound_w );
 
 WRITE_HANDLER( namcos1_sound_w );
 WRITE_HANDLER( namcos1_wavedata_w );
-READ_HANDLER( namcos1_sound_r );
-READ_HANDLER( namcos1_wavedata_r );
 
 extern unsigned char *namco_soundregs;
 extern unsigned char *namco_wavedata;

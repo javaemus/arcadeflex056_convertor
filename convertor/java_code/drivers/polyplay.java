@@ -95,12 +95,9 @@ public class polyplay
 	extern unsigned char *polyplay_characterram;
 	void polyplay_init_palette(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom);
 	void polyplay_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
-	READ_HANDLER( polyplay_characterram_r );
 	WRITE_HANDLER( polyplay_characterram_w );
 	
 	/* I/O Port handling */
-	READ_HANDLER( polyplay_input_read );
-	READ_HANDLER( polyplay_random_read );
 	
 	/* sound handling */
 	void poly_sound(void);
@@ -153,10 +150,10 @@ public class polyplay
 		polyplay_ram[offset] = data;
 	}
 	
-	READ_HANDLER( polyplay_ram_r )
+	public static ReadHandlerPtr polyplay_ram_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return polyplay_ram[offset];
-	}
+	} };
 	
 	/* memory mapping */
 	public static Memory_ReadAddress polyplay_readmem[]={
@@ -274,10 +271,10 @@ public class polyplay
 	}
 	
 	/* random number generator */
-	READ_HANDLER( polyplay_random_read )
+	public static ReadHandlerPtr polyplay_random_read  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return rand() % 0xff;
-	}
+	} };
 	
 	/* graphic sturctures */
 	static GfxLayout charlayout_1_bit = new GfxLayout
@@ -398,7 +395,7 @@ public class polyplay
 	
 	
 	/* interrupt handling, the game runs in IM 2 */
-	READ_HANDLER( polyplay_input_read )
+	public static ReadHandlerPtr polyplay_input_read  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		int inp = input_port_0_r(offset);
 	
@@ -409,7 +406,7 @@ public class polyplay
 		}
 	
 		return inp;
-	}
+	} };
 	
 	static void polyplay_timer(int param)
 	{

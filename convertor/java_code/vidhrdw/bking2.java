@@ -190,20 +190,20 @@ public class bking2
 	}
 	
 	
-	READ_HANDLER( bking2_input_port_5_r )
+	public static ReadHandlerPtr bking2_input_port_5_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return controller ? input_port_7_r(0) : input_port_5_r(0);
-	}
+	} };
 	
-	READ_HANDLER( bking2_input_port_6_r )
+	public static ReadHandlerPtr bking2_input_port_6_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return controller ? input_port_8_r(0) : input_port_6_r(0);
-	}
+	} };
 	
 	
 	/* Hack alert.  I don't know how to upper bits work, so I'm just returning
 	   what the code expects, otherwise the collision detection is skipped */
-	READ_HANDLER( bking2_pos_r )
+	public static ReadHandlerPtr bking2_pos_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		unsigned char *RAM = memory_region(REGION_CPU1);
 	
@@ -234,7 +234,7 @@ public class bking2
 		default:
 			return 0;
 		}
-	}
+	} };
 	
 	/***************************************************************************
 	

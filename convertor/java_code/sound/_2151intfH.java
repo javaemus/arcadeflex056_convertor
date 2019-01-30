@@ -18,9 +18,6 @@ struct YM2151interface
 	mem_write_handler portwritehandler[MAX_2151];
 };
 
-READ_HANDLER( YM2151_status_port_0_r );
-READ_HANDLER( YM2151_status_port_1_r );
-READ_HANDLER( YM2151_status_port_2_r );
 
 WRITE_HANDLER( YM2151_register_port_0_w );
 WRITE_HANDLER( YM2151_register_port_1_w );

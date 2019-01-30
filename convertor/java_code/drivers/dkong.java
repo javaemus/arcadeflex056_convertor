@@ -212,7 +212,6 @@ public class dkong
 	WRITE_HANDLER( dkongjr_sh_test4_w )      { p[2] = ACTIVELOW_PORT_BIT(p[2],4,data); }
 	WRITE_HANDLER( dkongjr_sh_tuneselect_w ) { soundlatch_w(offset,data); }
 	
-	READ_HANDLER( hunchbks_mirror_r );
 	WRITE_HANDLER( hunchbks_mirror_w );
 	
 	public static ReadHandlerPtr dkong_sh_p1_r  = new ReadHandlerPtr() { public int handler(int offset)   { return p[1]; } };
@@ -392,7 +391,7 @@ public class dkong
 		hunchloopback=data;
 	}
 	
-	READ_HANDLER( hunchbkd_port0_r )
+	public static ReadHandlerPtr hunchbkd_port0_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		logerror("port 0 : pc = %4x\n",activecpu_get_pc());
 	
@@ -403,14 +402,14 @@ public class dkong
 		}
 	
 	    return 0;
-	}
+	} };
 	
-	READ_HANDLER( hunchbkd_port1_r )
+	public static ReadHandlerPtr hunchbkd_port1_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return hunchloopback;
-	}
+	} };
 	
-	READ_HANDLER( herbiedk_port1_r )
+	public static ReadHandlerPtr herbiedk_port1_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		switch (activecpu_get_pc())
 		{
@@ -419,7 +418,7 @@ public class dkong
 		}
 	
 	    return 1;
-	}
+	} };
 	
 	public static IO_WritePort hunchbkd_writeport[]={
 		new IO_WritePort(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_IO | MEMPORT_WIDTH_8),

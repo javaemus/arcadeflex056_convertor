@@ -86,7 +86,7 @@ public class mole
 		{ 0 }
 	};
 	
-	READ_HANDLER( mole_prot_r ){
+	public static ReadHandlerPtr mole_prot_r  = new ReadHandlerPtr() { public int handler(int offset){
 		/*	Following are all known examples of Mole Attack
 		**	code reading from the protection circuitry:
 		**
@@ -127,7 +127,7 @@ public class mole
 		**	return 0x00
 		*/
 		return 0x00;
-	}
+	} };
 	
 	public static Memory_ReadAddress moleattack_readmem[]={
 		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),

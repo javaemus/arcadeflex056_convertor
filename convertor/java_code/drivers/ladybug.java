@@ -45,8 +45,6 @@ public class ladybug
 	
 	
 	
-	READ_HANDLER( ladybug_IN0_r );
-	READ_HANDLER( ladybug_IN1_r );
 	int ladybug_interrupt(void);
 	
 	void ladybug_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom);

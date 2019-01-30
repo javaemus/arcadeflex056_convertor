@@ -43,10 +43,10 @@ public class pstadium
 	
 	
 	******************************************************************************/
-	READ_HANDLER( pstadium_palette_r )
+	public static ReadHandlerPtr pstadium_palette_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return pstadium_palette[offset];
-	}
+	} };
 	
 	WRITE_HANDLER( pstadium_palette_w )
 	{
@@ -221,10 +221,10 @@ public class pstadium
 		pstadium_paltblnum = data;
 	}
 	
-	READ_HANDLER( pstadium_paltbl_r )
+	public static ReadHandlerPtr pstadium_paltbl_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return pstadium_paltbl[offset];
-	}
+	} };
 	
 	WRITE_HANDLER( pstadium_paltbl_w )
 	{

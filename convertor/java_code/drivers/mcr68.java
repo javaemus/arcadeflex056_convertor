@@ -95,13 +95,13 @@ public class mcr68
 	 *
 	 *************************************/
 	
-	READ_HANDLER( zwackery_port_2_r )
+	public static ReadHandlerPtr zwackery_port_2_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		int result = readinputport(2);
 		int wheel = readinputport(5);
 	
 		return result | ((wheel >> 2) & 0x3e);
-	}
+	} };
 	
 	
 	static READ16_HANDLER( zwackery_6840_r )

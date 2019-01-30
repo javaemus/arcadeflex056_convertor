@@ -32,13 +32,10 @@ public class battlera
 	void battlera_vh_stop (void);
 	int battlera_interrupt(void);
 	
-	READ_HANDLER( HuC6270_register_r );
 	WRITE_HANDLER( HuC6270_register_w );
-	READ_HANDLER( HuC6270_data_r );
 	WRITE_HANDLER( HuC6270_data_w );
 	WRITE_HANDLER( battlera_palette_w );
 	
-	READ_HANDLER( HuC6270_debug_r );
 	WRITE_HANDLER( HuC6270_debug_w );
 	
 	static int control_port_select;

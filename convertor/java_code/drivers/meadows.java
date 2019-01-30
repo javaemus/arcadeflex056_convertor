@@ -159,7 +159,7 @@ public class meadows
 	/* Hardware read/write from the main CPU                     */
 	/*                                                           */
 	/*************************************************************/
-	READ_HANDLER( meadows_hardware_r )
+	public static ReadHandlerPtr meadows_hardware_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		switch( offset ) {
 	        case 0: /* buttons */
@@ -172,7 +172,7 @@ public class meadows
 	            return input_port_2_r(0);
 	    }
 	    return 0;
-	}
+	} };
 	
 	WRITE_HANDLER( meadows_hardware_w )
 	{

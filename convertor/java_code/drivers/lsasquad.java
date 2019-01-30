@@ -42,20 +42,13 @@ public class lsasquad
 	WRITE_HANDLER( lsasquad_sh_nmi_disable_w );
 	WRITE_HANDLER( lsasquad_sh_nmi_enable_w );
 	WRITE_HANDLER( lsasquad_sound_command_w );
-	READ_HANDLER( lsasquad_sh_sound_command_r );
 	WRITE_HANDLER( lsasquad_sh_result_w );
-	READ_HANDLER( lsasquad_sound_result_r );
-	READ_HANDLER( lsasquad_sound_status_r );
 	
-	READ_HANDLER( lsasquad_68705_portA_r );
 	WRITE_HANDLER( lsasquad_68705_portA_w );
 	WRITE_HANDLER( lsasquad_68705_ddrA_w );
-	READ_HANDLER( lsasquad_68705_portB_r );
 	WRITE_HANDLER( lsasquad_68705_portB_w );
 	WRITE_HANDLER( lsasquad_68705_ddrB_w );
 	WRITE_HANDLER( lsasquad_mcu_w );
-	READ_HANDLER( lsasquad_mcu_r );
-	READ_HANDLER( lsasquad_mcu_status_r );
 	
 	
 	

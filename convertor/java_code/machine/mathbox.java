@@ -266,18 +266,18 @@ public class mathbox
 	#endif
 	}
 	
-	READ_HANDLER( mb_status_r )
+	public static ReadHandlerPtr mb_status_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return 0x00; /* always done! */
-	}
+	} };
 	
-	READ_HANDLER( mb_lo_r )
+	public static ReadHandlerPtr mb_lo_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return mb_result & 0xff;
-	}
+	} };
 	
-	READ_HANDLER( mb_hi_r )
+	public static ReadHandlerPtr mb_hi_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return (mb_result >> 8) & 0xff;
-	}
+	} };
 }

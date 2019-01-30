@@ -98,13 +98,10 @@ public class capbowl
 	
 	WRITE_HANDLER( capbowl_rom_select_w );
 	
-	READ_HANDLER( capbowl_pagedrom_r );
 	
 	WRITE_HANDLER( bowlrama_turbo_w );
-	READ_HANDLER( bowlrama_turbo_r );
 	
 	WRITE_HANDLER( capbowl_tms34061_w );
-	READ_HANDLER( capbowl_tms34061_r );
 	
 	
 	

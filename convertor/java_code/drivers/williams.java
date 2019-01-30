@@ -540,7 +540,6 @@ public class williams
 	
 	/* Mayday protection */
 	extern UINT8 *mayday_protection;
-	READ_HANDLER( mayday_protection_r );
 	
 	
 	
@@ -576,7 +575,6 @@ public class williams
 	WRITE_HANDLER( williams_blitter_w );
 	WRITE_HANDLER( blaster_remap_select_w );
 	WRITE_HANDLER( blaster_palette_0_w );
-	READ_HANDLER( williams_video_counter_r );
 	
 	
 	int williams_vh_start(void);

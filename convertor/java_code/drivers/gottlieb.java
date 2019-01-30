@@ -169,14 +169,11 @@ public class gottlieb
 	WRITE_HANDLER( gottlieb_sh_w );
 	
 	extern unsigned char *riot_ram;
-	READ_HANDLER( riot_ram_r );
-	READ_HANDLER( gottlieb_riot_r );
 	WRITE_HANDLER( riot_ram_w );
 	WRITE_HANDLER( gottlieb_riot_w );
 	WRITE_HANDLER( gottlieb_speech_w );
 	WRITE_HANDLER( gottlieb_speech_clock_DAC_w );
 	void gottlieb_sound_init(void);
-	READ_HANDLER( stooges_sound_input_r );
 	WRITE_HANDLER( stooges_8910_latch_w );
 	WRITE_HANDLER( stooges_sound_control_w );
 	WRITE_HANDLER( gottlieb_nmi_rate_w );
@@ -196,15 +193,15 @@ public class gottlieb
 	
 	static int track[2];
 	
-	READ_HANDLER( gottlieb_track_0_r )
+	public static ReadHandlerPtr gottlieb_track_0_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return input_port_2_r(offset) - track[0];
-	}
+	} };
 	
-	READ_HANDLER( gottlieb_track_1_r )
+	public static ReadHandlerPtr gottlieb_track_1_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return input_port_3_r(offset) - track[1];
-	}
+	} };
 	
 	WRITE_HANDLER( gottlieb_track_reset_w )
 	{
@@ -215,7 +212,7 @@ public class gottlieb
 	
 	static int joympx;
 	
-	READ_HANDLER( stooges_IN4_r )
+	public static ReadHandlerPtr stooges_IN4_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		int joy;
 	
@@ -235,7 +232,7 @@ public class gottlieb
 		}
 	
 		return joy | (readinputport(4) & 0xf0);
-	}
+	} };
 	
 	WRITE_HANDLER( reactor_output_w )
 	{
@@ -278,7 +275,7 @@ public class gottlieb
 	 * This gives a total of 1+3+3+19*53=1014 bytes, the 10 last bytes are ignored
 	 */
 	
-	READ_HANDLER( gottlieb_laserdisc_status_r )
+	public static ReadHandlerPtr gottlieb_laserdisc_status_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		int tmp;
 		switch (offset)
@@ -317,7 +314,7 @@ public class gottlieb
 		}
 	
 		return 0;
-	}
+	} };
 	
 	WRITE_HANDLER( gottlieb_laserdisc_mpx_w )
 	{

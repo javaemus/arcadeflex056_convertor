@@ -157,40 +157,40 @@ public class _2612intf
 	/************************************************/
 	/* Status Read for YM2612 - Chip 0				*/
 	/************************************************/
-	READ_HANDLER( YM2612_status_port_0_A_r )
+	public static ReadHandlerPtr YM2612_status_port_0_A_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 	  return YM2612Read(0,0);
-	}
+	} };
 	
-	READ_HANDLER( YM2612_status_port_0_B_r )
+	public static ReadHandlerPtr YM2612_status_port_0_B_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 	  return YM2612Read(0,2);
-	}
+	} };
 	
 	/************************************************/
 	/* Status Read for YM2612 - Chip 1				*/
 	/************************************************/
-	READ_HANDLER( YM2612_status_port_1_A_r ) {
+	public static ReadHandlerPtr YM2612_status_port_1_A_r  = new ReadHandlerPtr() { public int handler(int offset) {
 	  return YM2612Read(1,0);
-	}
+	} };
 	
-	READ_HANDLER( YM2612_status_port_1_B_r ) {
+	public static ReadHandlerPtr YM2612_status_port_1_B_r  = new ReadHandlerPtr() { public int handler(int offset) {
 	  return YM2612Read(1,2);
-	}
+	} };
 	
 	/************************************************/
 	/* Port Read for YM2612 - Chip 0				*/
 	/************************************************/
-	READ_HANDLER( YM2612_read_port_0_r ){
+	public static ReadHandlerPtr YM2612_read_port_0_r  = new ReadHandlerPtr() { public int handler(int offset){
 	  return YM2612Read(0,1);
-	}
+	} };
 	
 	/************************************************/
 	/* Port Read for YM2612 - Chip 1				*/
 	/************************************************/
-	READ_HANDLER( YM2612_read_port_1_r ){
+	public static ReadHandlerPtr YM2612_read_port_1_r  = new ReadHandlerPtr() { public int handler(int offset){
 	  return YM2612Read(1,1);
-	}
+	} };
 	
 	/************************************************/
 	/* Control Write for YM2612 - Chip 0			*/

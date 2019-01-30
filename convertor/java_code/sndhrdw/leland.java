@@ -1803,7 +1803,7 @@ public class leland
 	}
 	
 	
-	READ_HANDLER( leland_i86_response_r )
+	public static ReadHandlerPtr leland_i86_response_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		if (LOG_COMM) logerror("%04X:Read sound response latch = %02X\n", cpu_getpreviouspc(), sound_response);
 	
@@ -1816,7 +1816,7 @@ public class leland
 			timer_set(TIME_NOW, cpu_getpreviouspc() + 2, delayed_response_r);
 			return sound_response;
 		}
-	}
+	} };
 	
 	
 	public static WriteHandlerPtr sound_to_main_comm_w = new WriteHandlerPtr() {public void handler(int offset, int data)

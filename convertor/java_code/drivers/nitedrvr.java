@@ -33,10 +33,6 @@ public class nitedrvr
 	
 	/* machine/nitedrvr.c */
 	extern unsigned char *nitedrvr_ram;
-	READ_HANDLER( nitedrvr_in0_r );
-	READ_HANDLER( nitedrvr_in1_r );
-	READ_HANDLER( nitedrvr_ram_r );
-	READ_HANDLER( nitedrvr_steering_reset_r );
 	WRITE_HANDLER( nitedrvr_steering_reset_w );
 	WRITE_HANDLER( nitedrvr_out0_w );
 	WRITE_HANDLER( nitedrvr_out1_w );

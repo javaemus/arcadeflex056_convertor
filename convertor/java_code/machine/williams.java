@@ -23,7 +23,6 @@ public class williams
 	
 	void williams_vh_update(int counter);
 	WRITE_HANDLER( williams_videoram_w );
-	READ_HANDLER( williams_video_counter_r );
 	
 	
 	/* banking addresses set by the drivers */
@@ -57,10 +56,8 @@ public class williams
 	
 	/* Defender-specific code */
 	WRITE_HANDLER( defender_bank_select_w );
-	READ_HANDLER( defender_input_port_0_r );
 	
 	/* Stargate-specific code */
-	READ_HANDLER( stargate_input_port_0_r );
 	
 	/* Lotto Fun-specific code */
 	
@@ -386,16 +383,16 @@ public class williams
 	}
 	
 	
-	READ_HANDLER( williams_input_port_0_3_r )
+	public static ReadHandlerPtr williams_input_port_0_3_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return readinputport(port_select ? 3 : 0);
-	}
+	} };
 	
 	
-	READ_HANDLER( williams_input_port_1_4_r )
+	public static ReadHandlerPtr williams_input_port_1_4_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return readinputport(port_select ? 4 : 1);
-	}
+	} };
 	
 	
 	/*
@@ -423,7 +420,7 @@ public class williams
 	 *
 	 */
 	
-	READ_HANDLER( williams_49way_port_0_r )
+	public static ReadHandlerPtr williams_49way_port_0_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		int joy_x, joy_y;
 		int bits_x, bits_y;
@@ -435,7 +432,7 @@ public class williams
 		bits_y = (0x70 >> (7 - joy_y)) & 0x0f;
 	
 		return (bits_x << 4) | bits_y;
-	}
+	} };
 	
 	
 	
@@ -652,7 +649,7 @@ public class williams
 	}
 	
 	
-	READ_HANDLER( defender_input_port_0_r )
+	public static ReadHandlerPtr defender_input_port_0_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		int keys, altkeys;
 	
@@ -674,10 +671,10 @@ public class williams
 		}
 	
 		return keys;
-	}
+	} };
 	
 	
-	READ_HANDLER( defender_io_r )
+	public static ReadHandlerPtr defender_io_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		/* PIAs */
 		if (offset >= 0x0c00 && offset < 0x0c04)
@@ -691,7 +688,7 @@ public class williams
 	
 		/* If not bank 0 then return banked RAM */
 		return defender_bank_base[offset];
-	}
+	} };
 	
 	
 	WRITE_HANDLER( defender_io_w )
@@ -722,7 +719,7 @@ public class williams
 	 *
 	 *************************************/
 	
-	READ_HANDLER( mayday_protection_r )
+	public static ReadHandlerPtr mayday_protection_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		/* Mayday does some kind of protection check that is not currently understood  */
 		/* However, the results of that protection check are stored at $a190 and $a191 */
@@ -730,7 +727,7 @@ public class williams
 		/* the protection from resetting the machine, we just return $a193 for $a190,  */
 		/* and $a194 for $a191. */
 		return mayday_protection[offset + 3];
-	}
+	} };
 	
 	
 	
@@ -740,7 +737,7 @@ public class williams
 	 *
 	 *************************************/
 	
-	READ_HANDLER( stargate_input_port_0_r )
+	public static ReadHandlerPtr stargate_input_port_0_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		int keys, altkeys;
 	
@@ -762,7 +759,7 @@ public class williams
 		}
 	
 		return keys;
-	}
+	} };
 	
 	
 	

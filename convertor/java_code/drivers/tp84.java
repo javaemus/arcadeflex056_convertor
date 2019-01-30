@@ -98,7 +98,6 @@ public class tp84
 	WRITE_HANDLER( tp84_videoram2_w );
 	WRITE_HANDLER( tp84_colorram2_w );
 	WRITE_HANDLER( tp84_col0_w );
-	READ_HANDLER( tp84_scanline_r );
 	void tp84_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom);
 	int tp84_vh_start(void);
 	void tp84_vh_stop(void);

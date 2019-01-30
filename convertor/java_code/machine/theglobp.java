@@ -218,7 +218,7 @@ public class theglobp
 	}
 	
 	
-	READ_HANDLER( theglobp_decrypt_rom )
+	public static ReadHandlerPtr theglobp_decrypt_rom  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		unsigned char *RAM = memory_region(REGION_CPU1);
 	
@@ -245,7 +245,7 @@ public class theglobp
 		}
 	
 		return 0;
-	}
+	} };
 	
 	
 	void theglobp_init_machine(void)

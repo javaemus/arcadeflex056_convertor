@@ -127,7 +127,7 @@ public class ccastles
 	
 	
 	
-	READ_HANDLER( ccastles_bitmode_r )
+	public static ReadHandlerPtr ccastles_bitmode_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		int addr;
 	
@@ -162,7 +162,7 @@ public class ccastles
 		}
 	
 		return 0;
-	}
+	} };
 	
 	WRITE_HANDLER( ccastles_bitmode_w )
 	{

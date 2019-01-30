@@ -304,10 +304,6 @@ public class sndintrfH
 	int sound_scalebufferpos(int value);
 	
 	
-	READ_HANDLER( soundlatch_r );
-	READ_HANDLER( soundlatch2_r );
-	READ_HANDLER( soundlatch3_r );
-	READ_HANDLER( soundlatch4_r );
 	READ16_HANDLER( soundlatch_word_r );
 	READ16_HANDLER( soundlatch2_word_r );
 	READ16_HANDLER( soundlatch3_word_r );

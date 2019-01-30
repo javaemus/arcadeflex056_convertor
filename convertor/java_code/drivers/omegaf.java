@@ -66,9 +66,6 @@ public class omegaf
 	WRITE_HANDLER( omegaf_bg0_bank_w );
 	WRITE_HANDLER( omegaf_bg1_bank_w );
 	WRITE_HANDLER( omegaf_bg2_bank_w );
-	READ_HANDLER( omegaf_bg0_videoram_r );
-	READ_HANDLER( omegaf_bg1_videoram_r );
-	READ_HANDLER( omegaf_bg2_videoram_r );
 	WRITE_HANDLER( omegaf_bg0_videoram_w );
 	WRITE_HANDLER( omegaf_bg1_videoram_w );
 	WRITE_HANDLER( omegaf_bg2_videoram_w );

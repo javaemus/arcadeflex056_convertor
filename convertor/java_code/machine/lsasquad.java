@@ -49,12 +49,12 @@ public class lsasquad
 		timer_set(TIME_NOW,data,nmi_callback);
 	}
 	
-	READ_HANDLER( lsasquad_sh_sound_command_r )
+	public static ReadHandlerPtr lsasquad_sh_sound_command_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		sound_pending &= ~0x01;
 	//logerror("%04x: read sound cmd %02x\n",cpu_get_pc(),sound_cmd);
 		return sound_cmd;
-	}
+	} };
 	
 	WRITE_HANDLER( lsasquad_sh_result_w )
 	{
@@ -63,19 +63,19 @@ public class lsasquad
 		sound_result = data;
 	}
 	
-	READ_HANDLER( lsasquad_sound_result_r )
+	public static ReadHandlerPtr lsasquad_sound_result_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		sound_pending &= ~0x02;
 	//logerror("%04x: read sound res %02x\n",cpu_get_pc(),sound_result);
 		return sound_result;
-	}
+	} };
 	
-	READ_HANDLER( lsasquad_sound_status_r )
+	public static ReadHandlerPtr lsasquad_sound_status_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		/* bit 0: message pending for sound cpu */
 		/* bit 1: message pending for main cpu */
 		return sound_pending;
-	}
+	} };
 	
 	
 	
@@ -92,11 +92,11 @@ public class lsasquad
 	
 	static unsigned char portA_in,portA_out,ddrA;
 	
-	READ_HANDLER( lsasquad_68705_portA_r )
+	public static ReadHandlerPtr lsasquad_68705_portA_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 	//logerror("%04x: 68705 port A read %02x\n",cpu_get_pc(),portA_in);
 		return (portA_out & ddrA) | (portA_in & ~ddrA);
-	}
+	} };
 	
 	WRITE_HANDLER( lsasquad_68705_portA_w )
 	{
@@ -122,10 +122,10 @@ public class lsasquad
 	
 	static unsigned char portB_in,portB_out,ddrB;
 	
-	READ_HANDLER( lsasquad_68705_portB_r )
+	public static ReadHandlerPtr lsasquad_68705_portB_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return (portB_out & ddrB) | (portB_in & ~ddrB);
-	}
+	} };
 	
 	WRITE_HANDLER( lsasquad_68705_portB_w )
 	{
@@ -161,14 +161,14 @@ public class lsasquad
 		cpu_set_irq_line(2,0,ASSERT_LINE);
 	}
 	
-	READ_HANDLER( lsasquad_mcu_r )
+	public static ReadHandlerPtr lsasquad_mcu_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 	//logerror("%04x: mcu_r %02x\n",cpu_get_pc(),from_mcu);
 		mcu_sent = 0;
 		return from_mcu;
-	}
+	} };
 	
-	READ_HANDLER( lsasquad_mcu_status_r )
+	public static ReadHandlerPtr lsasquad_mcu_status_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		int res = input_port_3_r(0);
 	
@@ -179,5 +179,5 @@ public class lsasquad
 		if (mcu_sent == 0) res |= 0x02;
 	
 		return res ^ lsasquad_invertcoin;
-	}
+	} };
 }

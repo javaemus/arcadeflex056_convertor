@@ -137,7 +137,6 @@ public class wardner
 	
 	/******************** Machine stuff **********************/
 	void wardner_reset(void);
-	READ_HANDLER( wardner_mainram_r );
 	WRITE_HANDLER( wardner_mainram_w );
 	WRITE_HANDLER( wardner_control_w );
 	WRITE_HANDLER( wardner_coin_dsp_w );

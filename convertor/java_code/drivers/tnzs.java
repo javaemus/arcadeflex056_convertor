@@ -194,12 +194,8 @@ public class tnzs
 	void init_tnzs(void);
 	void init_insectx(void);
 	void init_kageki(void);
-	READ_HANDLER( arknoid2_sh_f000_r );
 	void tnzs_init_machine(void);
 	int tnzs_interrupt (void);
-	READ_HANDLER( tnzs_mcu_r );
-	READ_HANDLER( tnzs_workram_r );
-	READ_HANDLER( tnzs_workram_sub_r );
 	WRITE_HANDLER( tnzs_workram_w );
 	WRITE_HANDLER( tnzs_workram_sub_w );
 	WRITE_HANDLER( tnzs_mcu_w );

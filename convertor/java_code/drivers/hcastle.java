@@ -23,7 +23,6 @@ public class hcastle
 	
 	WRITE_HANDLER( hcastle_pf1_video_w );
 	WRITE_HANDLER( hcastle_pf2_video_w );
-	READ_HANDLER( hcastle_gfxbank_r );
 	WRITE_HANDLER( hcastle_gfxbank_w );
 	WRITE_HANDLER( hcastle_pf1_control_w );
 	WRITE_HANDLER( hcastle_pf2_control_w );

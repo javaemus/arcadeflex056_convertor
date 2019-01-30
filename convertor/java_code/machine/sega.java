@@ -96,14 +96,14 @@ public class sega
 		coin_counter_w(offset,data);
 	}
 	
-	READ_HANDLER( sega_mult_r )
+	public static ReadHandlerPtr sega_mult_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		int c;
 	
 		c = result & 0xff;
 		result >>= 8;
 		return (c);
-	}
+	} };
 	
 	/***************************************************************************
 	
@@ -121,7 +121,7 @@ public class sega
 	  Port 7 - 2-1, 2-2, 2-3, 2-4, 2-5, 2-6, 2-7, 2-8
 	***************************************************************************/
 	
-	READ_HANDLER( sega_ports_r )
+	public static ReadHandlerPtr sega_ports_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		int dip1, dip2;
 	
@@ -145,10 +145,10 @@ public class sega
 		}
 	
 		return 0;
-	}
+	} };
 	
 	
-	READ_HANDLER( sega_IN4_r ) {
+	public static ReadHandlerPtr sega_IN4_r  = new ReadHandlerPtr() { public int handler(int offset) {
 	
 	/*
 	 * The values returned are always increasing.  That is, regardless of whether
@@ -176,9 +176,9 @@ public class sega
 			spinner += delta;
 		}
 		return (~((spinner<<1) | sign));
-	}
+	} };
 	
-	READ_HANDLER( elim4_IN4_r )
+	public static ReadHandlerPtr elim4_IN4_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		/* If the ioPort ($f8) is 0x1f, we're reading the 4 coin inputs.    */
 		/* If the ioPort ($f8) is 0x1e, we're reading player 3 & 4 controls.*/
@@ -188,6 +188,6 @@ public class sega
 		if (ioSwitch == 0x1f)
 			return readinputport (8);
 		return (0);
-	}
+	} };
 	
 }

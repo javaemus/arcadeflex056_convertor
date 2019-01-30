@@ -209,7 +209,7 @@ public class _2151intf
 	
 	static int lastreg0,lastreg1,lastreg2;
 	
-	READ_HANDLER( YM2151_status_port_0_r )
+	public static ReadHandlerPtr YM2151_status_port_0_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		switch(FMMode)
 		{
@@ -223,9 +223,9 @@ public class _2151intf
 	#endif
 		}
 		return 0;
-	}
+	} };
 	
-	READ_HANDLER( YM2151_status_port_1_r )
+	public static ReadHandlerPtr YM2151_status_port_1_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		switch(FMMode)
 		{
@@ -239,9 +239,9 @@ public class _2151intf
 	#endif
 		}
 		return 0;
-	}
+	} };
 	
-	READ_HANDLER( YM2151_status_port_2_r )
+	public static ReadHandlerPtr YM2151_status_port_2_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		switch(FMMode)
 		{
@@ -255,7 +255,7 @@ public class _2151intf
 	#endif
 		}
 		return 0;
-	}
+	} };
 	
 	WRITE_HANDLER( YM2151_register_port_0_w )
 	{

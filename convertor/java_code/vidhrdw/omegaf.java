@@ -369,20 +369,20 @@ public class omegaf
 		omegaf_bg2_bank = data & bank_mask;
 	}
 	
-	READ_HANDLER( omegaf_bg0_videoram_r )
+	public static ReadHandlerPtr omegaf_bg0_videoram_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return omegaf_bg0_videoram[ (omegaf_bg0_bank << 10) | offset ];
-	}
+	} };
 	
-	READ_HANDLER( omegaf_bg1_videoram_r )
+	public static ReadHandlerPtr omegaf_bg1_videoram_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return omegaf_bg1_videoram[ (omegaf_bg1_bank << 10) | offset ];
-	}
+	} };
 	
-	READ_HANDLER( omegaf_bg2_videoram_r )
+	public static ReadHandlerPtr omegaf_bg2_videoram_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return omegaf_bg2_videoram[ (omegaf_bg2_bank << 10) | offset ];
-	}
+	} };
 	
 	WRITE_HANDLER( omegaf_bg0_videoram_w )
 	{

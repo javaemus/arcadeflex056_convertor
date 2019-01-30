@@ -22,7 +22,7 @@ public class docastle
 	
 	
 	
-	READ_HANDLER( docastle_shared0_r )
+	public static ReadHandlerPtr docastle_shared0_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		if (offset == 8) logerror("CPU #0 shared0r  clock = %d\n",cpu_gettotalcycles());
 	
@@ -35,14 +35,14 @@ public class docastle
 		}
 	
 		return buffer0[offset];
-	}
+	} };
 	
 	
-	READ_HANDLER( docastle_shared1_r )
+	public static ReadHandlerPtr docastle_shared1_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		if (offset == 8) logerror("CPU #1 shared1r  clock = %d\n",cpu_gettotalcycles());
 		return buffer1[offset];
-	}
+	} };
 	
 	
 	WRITE_HANDLER( docastle_shared0_w )

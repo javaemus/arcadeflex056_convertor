@@ -90,7 +90,7 @@ public class skydiver
 	
 	static int skydiver_nmion;
 	
-	READ_HANDLER( skydiver_input_0_r )
+	public static ReadHandlerPtr skydiver_input_0_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		int data = input_port_0_r(0);
 	
@@ -102,9 +102,9 @@ public class skydiver
 			case 3:		return ((data & 0xC0) << 0);
 			default:		return 0;
 		}
-	}
+	} };
 	
-	READ_HANDLER( skydiver_input_1_r )
+	public static ReadHandlerPtr skydiver_input_1_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		int data = input_port_1_r(0);
 	
@@ -116,9 +116,9 @@ public class skydiver
 			case 3:		return ((data & 0xC0) << 0);
 			default:		return 0;
 		}
-	}
+	} };
 	
-	READ_HANDLER( skydiver_input_2_r )
+	public static ReadHandlerPtr skydiver_input_2_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		int data = input_port_2_r(0);
 	
@@ -130,9 +130,9 @@ public class skydiver
 			case 3:		return ((data & 0xC0) << 0);
 			default:		return 0;
 		}
-	}
+	} };
 	
-	READ_HANDLER( skydiver_input_3_r )
+	public static ReadHandlerPtr skydiver_input_3_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		int data = input_port_3_r(0);
 	
@@ -144,7 +144,7 @@ public class skydiver
 			case 3:		return ((data & 0xC0) << 0);
 			default:		return 0;
 		}
-	}
+	} };
 	
 	WRITE_HANDLER( skydiver_nmion_w )
 	{

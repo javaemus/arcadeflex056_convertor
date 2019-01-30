@@ -24,7 +24,6 @@ public class bsktball
 	extern int bsktball_interrupt(void);
 	WRITE_HANDLER( bsktball_ld1_w );
 	WRITE_HANDLER( bsktball_ld2_w );
-	READ_HANDLER( bsktball_in0_r );
 	WRITE_HANDLER( bsktball_led1_w );
 	WRITE_HANDLER( bsktball_led2_w );
 	

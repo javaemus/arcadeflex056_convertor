@@ -79,8 +79,6 @@ public class vastar
 	WRITE_HANDLER( vastar_bg1videoram_w );
 	WRITE_HANDLER( vastar_bg2videoram_w );
 	WRITE_HANDLER( vastar_fgvideoram_w );
-	READ_HANDLER( vastar_bg1videoram_r );
-	READ_HANDLER( vastar_bg2videoram_r );
 	int vastar_vh_start(void);
 	void vastar_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	

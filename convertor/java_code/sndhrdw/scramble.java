@@ -45,7 +45,7 @@ public class scramble
 		0x00, 0x10, 0x20, 0x30, 0x40, 0x90, 0xa0, 0xb0, 0xa0, 0xd0
 	};
 	
-	READ_HANDLER( scramble_portB_r )
+	public static ReadHandlerPtr scramble_portB_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		/* need to protect from totalcycles overflow */
 		static int last_totalcycles = 0;
@@ -61,7 +61,7 @@ public class scramble
 		last_totalcycles = current_totalcycles;
 	
 		return scramble_timer[clock/512];
-	}
+	} };
 	
 	
 	
@@ -87,7 +87,7 @@ public class scramble
 		0x00, 0x10, 0x08, 0x18, 0x40, 0x90, 0x88, 0x98, 0x88, 0xd0
 	};
 	
-	READ_HANDLER( frogger_portB_r )
+	public static ReadHandlerPtr frogger_portB_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		/* need to protect from totalcycles overflow */
 		static int last_totalcycles = 0;
@@ -103,7 +103,7 @@ public class scramble
 		last_totalcycles = current_totalcycles;
 	
 		return frogger_timer[clock/512];
-	}
+	} };
 	
 	
 	WRITE_HANDLER( scramble_sh_irqtrigger_w )

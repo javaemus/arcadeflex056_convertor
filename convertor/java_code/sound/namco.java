@@ -536,10 +536,10 @@ public class namco
 		voice->noise_sw = nssw;
 	}
 	
-	READ_HANDLER( namcos1_sound_r )
+	public static ReadHandlerPtr namcos1_sound_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return namco_soundregs[offset];
-	}
+	} };
 	
 	WRITE_HANDLER( namcos1_wavedata_w )
 	{
@@ -549,10 +549,10 @@ public class namco
 		namco_wavedata[offset] = data;
 	}
 	
-	READ_HANDLER( namcos1_wavedata_r )
+	public static ReadHandlerPtr namcos1_wavedata_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return namco_wavedata[offset];
-	}
+	} };
 	
 	
 	/********************************************************************************/

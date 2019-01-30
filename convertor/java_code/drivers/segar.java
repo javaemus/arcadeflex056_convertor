@@ -51,12 +51,8 @@ public class segar
 	WRITE_HANDLER( astrob_audio_ports_w );
 	WRITE_HANDLER( spaceod_audio_ports_w );
 	WRITE_HANDLER( monsterb_audio_8255_w );
-	 READ_HANDLER( monsterb_audio_8255_r );
-	
-	 READ_HANDLER( monsterb_sh_rom_r );
-	 READ_HANDLER( monsterb_sh_t1_r );
-	 READ_HANDLER( monsterb_sh_command_r );
-	WRITE_HANDLER( monsterb_sh_dac_w );
+	 
+	   WRITE_HANDLER( monsterb_sh_dac_w );
 	WRITE_HANDLER( monsterb_sh_busy_w );
 	WRITE_HANDLER( monsterb_sh_offset_a0_a3_w );
 	WRITE_HANDLER( monsterb_sh_offset_a4_a7_w );

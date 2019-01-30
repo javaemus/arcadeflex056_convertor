@@ -138,15 +138,15 @@ public class mcr12
 	}
 	
 	
-	READ_HANDLER( mcr2_videoram_r )
+	public static ReadHandlerPtr mcr2_videoram_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return videoram[offset];
-	}
+	} };
 	
-	READ_HANDLER( twotigra_videoram_r )
+	public static ReadHandlerPtr twotigra_videoram_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return videoram[((offset & 0x400) >> 10) | ((offset & 0x3ff) << 1)];
-	}
+	} };
 	
 	WRITE_HANDLER( mcr2_videoram_w )
 	{

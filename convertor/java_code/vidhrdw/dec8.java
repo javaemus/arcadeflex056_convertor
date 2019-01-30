@@ -132,15 +132,15 @@ public class dec8
 		tilemap_mark_tile_dirty(dec8_pf1_tilemap,offset/2);
 	}
 	
-	READ_HANDLER( dec8_pf0_data_r )
+	public static ReadHandlerPtr dec8_pf0_data_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return dec8_pf0_data[offset];
-	}
+	} };
 	
-	READ_HANDLER( dec8_pf1_data_r )
+	public static ReadHandlerPtr dec8_pf1_data_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return dec8_pf1_data[offset];
-	}
+	} };
 	
 	WRITE_HANDLER( dec8_videoram_w )
 	{

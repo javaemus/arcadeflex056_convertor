@@ -727,14 +727,14 @@ public class _6821pia
 	
 	/******************* Standard 8-bit CPU interfaces, D0-D7 *******************/
 	
-	READ_HANDLER( pia_0_r ) { return pia_read(0, offset); }
-	READ_HANDLER( pia_1_r ) { return pia_read(1, offset); }
-	READ_HANDLER( pia_2_r ) { return pia_read(2, offset); }
-	READ_HANDLER( pia_3_r ) { return pia_read(3, offset); }
-	READ_HANDLER( pia_4_r ) { return pia_read(4, offset); }
-	READ_HANDLER( pia_5_r ) { return pia_read(5, offset); }
-	READ_HANDLER( pia_6_r ) { return pia_read(6, offset); }
-	READ_HANDLER( pia_7_r ) { return pia_read(7, offset); }
+	public static ReadHandlerPtr pia_0_r  = new ReadHandlerPtr() { public int handler(int offset) { return pia_read(0, offset); } };
+	public static ReadHandlerPtr pia_1_r  = new ReadHandlerPtr() { public int handler(int offset) { return pia_read(1, offset); } };
+	public static ReadHandlerPtr pia_2_r  = new ReadHandlerPtr() { public int handler(int offset) { return pia_read(2, offset); } };
+	public static ReadHandlerPtr pia_3_r  = new ReadHandlerPtr() { public int handler(int offset) { return pia_read(3, offset); } };
+	public static ReadHandlerPtr pia_4_r  = new ReadHandlerPtr() { public int handler(int offset) { return pia_read(4, offset); } };
+	public static ReadHandlerPtr pia_5_r  = new ReadHandlerPtr() { public int handler(int offset) { return pia_read(5, offset); } };
+	public static ReadHandlerPtr pia_6_r  = new ReadHandlerPtr() { public int handler(int offset) { return pia_read(6, offset); } };
+	public static ReadHandlerPtr pia_7_r  = new ReadHandlerPtr() { public int handler(int offset) { return pia_read(7, offset); } };
 	
 	WRITE_HANDLER( pia_0_w ) { pia_write(0, offset, data); }
 	WRITE_HANDLER( pia_1_w ) { pia_write(1, offset, data); }
@@ -805,23 +805,23 @@ public class _6821pia
 	WRITE_HANDLER( pia_6_portb_w ) { pia_set_input_b(6, data); }
 	WRITE_HANDLER( pia_7_portb_w ) { pia_set_input_b(7, data); }
 	
-	READ_HANDLER( pia_0_porta_r ) { return pia[0].in_a; }
-	READ_HANDLER( pia_1_porta_r ) { return pia[1].in_a; }
-	READ_HANDLER( pia_2_porta_r ) { return pia[2].in_a; }
-	READ_HANDLER( pia_3_porta_r ) { return pia[3].in_a; }
-	READ_HANDLER( pia_4_porta_r ) { return pia[4].in_a; }
-	READ_HANDLER( pia_5_porta_r ) { return pia[5].in_a; }
-	READ_HANDLER( pia_6_porta_r ) { return pia[6].in_a; }
-	READ_HANDLER( pia_7_porta_r ) { return pia[7].in_a; }
+	public static ReadHandlerPtr pia_0_porta_r  = new ReadHandlerPtr() { public int handler(int offset) { return pia[0].in_a; } };
+	public static ReadHandlerPtr pia_1_porta_r  = new ReadHandlerPtr() { public int handler(int offset) { return pia[1].in_a; } };
+	public static ReadHandlerPtr pia_2_porta_r  = new ReadHandlerPtr() { public int handler(int offset) { return pia[2].in_a; } };
+	public static ReadHandlerPtr pia_3_porta_r  = new ReadHandlerPtr() { public int handler(int offset) { return pia[3].in_a; } };
+	public static ReadHandlerPtr pia_4_porta_r  = new ReadHandlerPtr() { public int handler(int offset) { return pia[4].in_a; } };
+	public static ReadHandlerPtr pia_5_porta_r  = new ReadHandlerPtr() { public int handler(int offset) { return pia[5].in_a; } };
+	public static ReadHandlerPtr pia_6_porta_r  = new ReadHandlerPtr() { public int handler(int offset) { return pia[6].in_a; } };
+	public static ReadHandlerPtr pia_7_porta_r  = new ReadHandlerPtr() { public int handler(int offset) { return pia[7].in_a; } };
 	
-	READ_HANDLER( pia_0_portb_r ) { return pia[0].in_b; }
-	READ_HANDLER( pia_1_portb_r ) { return pia[1].in_b; }
-	READ_HANDLER( pia_2_portb_r ) { return pia[2].in_b; }
-	READ_HANDLER( pia_3_portb_r ) { return pia[3].in_b; }
-	READ_HANDLER( pia_4_portb_r ) { return pia[4].in_b; }
-	READ_HANDLER( pia_5_portb_r ) { return pia[5].in_b; }
-	READ_HANDLER( pia_6_portb_r ) { return pia[6].in_b; }
-	READ_HANDLER( pia_7_portb_r ) { return pia[7].in_b; }
+	public static ReadHandlerPtr pia_0_portb_r  = new ReadHandlerPtr() { public int handler(int offset) { return pia[0].in_b; } };
+	public static ReadHandlerPtr pia_1_portb_r  = new ReadHandlerPtr() { public int handler(int offset) { return pia[1].in_b; } };
+	public static ReadHandlerPtr pia_2_portb_r  = new ReadHandlerPtr() { public int handler(int offset) { return pia[2].in_b; } };
+	public static ReadHandlerPtr pia_3_portb_r  = new ReadHandlerPtr() { public int handler(int offset) { return pia[3].in_b; } };
+	public static ReadHandlerPtr pia_4_portb_r  = new ReadHandlerPtr() { public int handler(int offset) { return pia[4].in_b; } };
+	public static ReadHandlerPtr pia_5_portb_r  = new ReadHandlerPtr() { public int handler(int offset) { return pia[5].in_b; } };
+	public static ReadHandlerPtr pia_6_portb_r  = new ReadHandlerPtr() { public int handler(int offset) { return pia[6].in_b; } };
+	public static ReadHandlerPtr pia_7_portb_r  = new ReadHandlerPtr() { public int handler(int offset) { return pia[7].in_b; } };
 	
 	/******************* 1-bit CA1/CA2/CB1/CB2 port interfaces *******************/
 	
@@ -859,37 +859,37 @@ public class _6821pia
 	WRITE_HANDLER( pia_6_cb2_w ) { pia_set_input_cb2(6, data); }
 	WRITE_HANDLER( pia_7_cb2_w ) { pia_set_input_cb2(7, data); }
 	
-	READ_HANDLER( pia_0_ca1_r ) { return pia[0].in_ca1; }
-	READ_HANDLER( pia_1_ca1_r ) { return pia[1].in_ca1; }
-	READ_HANDLER( pia_2_ca1_r ) { return pia[2].in_ca1; }
-	READ_HANDLER( pia_3_ca1_r ) { return pia[3].in_ca1; }
-	READ_HANDLER( pia_4_ca1_r ) { return pia[4].in_ca1; }
-	READ_HANDLER( pia_5_ca1_r ) { return pia[5].in_ca1; }
-	READ_HANDLER( pia_6_ca1_r ) { return pia[6].in_ca1; }
-	READ_HANDLER( pia_7_ca1_r ) { return pia[7].in_ca1; }
-	READ_HANDLER( pia_0_ca2_r ) { return pia[0].in_ca2; }
-	READ_HANDLER( pia_1_ca2_r ) { return pia[1].in_ca2; }
-	READ_HANDLER( pia_2_ca2_r ) { return pia[2].in_ca2; }
-	READ_HANDLER( pia_3_ca2_r ) { return pia[3].in_ca2; }
-	READ_HANDLER( pia_4_ca2_r ) { return pia[4].in_ca2; }
-	READ_HANDLER( pia_5_ca2_r ) { return pia[5].in_ca2; }
-	READ_HANDLER( pia_6_ca2_r ) { return pia[6].in_ca2; }
-	READ_HANDLER( pia_7_ca2_r ) { return pia[7].in_ca2; }
+	public static ReadHandlerPtr pia_0_ca1_r  = new ReadHandlerPtr() { public int handler(int offset) { return pia[0].in_ca1; } };
+	public static ReadHandlerPtr pia_1_ca1_r  = new ReadHandlerPtr() { public int handler(int offset) { return pia[1].in_ca1; } };
+	public static ReadHandlerPtr pia_2_ca1_r  = new ReadHandlerPtr() { public int handler(int offset) { return pia[2].in_ca1; } };
+	public static ReadHandlerPtr pia_3_ca1_r  = new ReadHandlerPtr() { public int handler(int offset) { return pia[3].in_ca1; } };
+	public static ReadHandlerPtr pia_4_ca1_r  = new ReadHandlerPtr() { public int handler(int offset) { return pia[4].in_ca1; } };
+	public static ReadHandlerPtr pia_5_ca1_r  = new ReadHandlerPtr() { public int handler(int offset) { return pia[5].in_ca1; } };
+	public static ReadHandlerPtr pia_6_ca1_r  = new ReadHandlerPtr() { public int handler(int offset) { return pia[6].in_ca1; } };
+	public static ReadHandlerPtr pia_7_ca1_r  = new ReadHandlerPtr() { public int handler(int offset) { return pia[7].in_ca1; } };
+	public static ReadHandlerPtr pia_0_ca2_r  = new ReadHandlerPtr() { public int handler(int offset) { return pia[0].in_ca2; } };
+	public static ReadHandlerPtr pia_1_ca2_r  = new ReadHandlerPtr() { public int handler(int offset) { return pia[1].in_ca2; } };
+	public static ReadHandlerPtr pia_2_ca2_r  = new ReadHandlerPtr() { public int handler(int offset) { return pia[2].in_ca2; } };
+	public static ReadHandlerPtr pia_3_ca2_r  = new ReadHandlerPtr() { public int handler(int offset) { return pia[3].in_ca2; } };
+	public static ReadHandlerPtr pia_4_ca2_r  = new ReadHandlerPtr() { public int handler(int offset) { return pia[4].in_ca2; } };
+	public static ReadHandlerPtr pia_5_ca2_r  = new ReadHandlerPtr() { public int handler(int offset) { return pia[5].in_ca2; } };
+	public static ReadHandlerPtr pia_6_ca2_r  = new ReadHandlerPtr() { public int handler(int offset) { return pia[6].in_ca2; } };
+	public static ReadHandlerPtr pia_7_ca2_r  = new ReadHandlerPtr() { public int handler(int offset) { return pia[7].in_ca2; } };
 	
-	READ_HANDLER( pia_0_cb1_r ) { return pia[0].in_cb1; }
-	READ_HANDLER( pia_1_cb1_r ) { return pia[1].in_cb1; }
-	READ_HANDLER( pia_2_cb1_r ) { return pia[2].in_cb1; }
-	READ_HANDLER( pia_3_cb1_r ) { return pia[3].in_cb1; }
-	READ_HANDLER( pia_4_cb1_r ) { return pia[4].in_cb1; }
-	READ_HANDLER( pia_5_cb1_r ) { return pia[5].in_cb1; }
-	READ_HANDLER( pia_6_cb1_r ) { return pia[6].in_cb1; }
-	READ_HANDLER( pia_7_cb1_r ) { return pia[7].in_cb1; }
-	READ_HANDLER( pia_0_cb2_r ) { return pia[0].in_cb2; }
-	READ_HANDLER( pia_1_cb2_r ) { return pia[1].in_cb2; }
-	READ_HANDLER( pia_2_cb2_r ) { return pia[2].in_cb2; }
-	READ_HANDLER( pia_3_cb2_r ) { return pia[3].in_cb2; }
-	READ_HANDLER( pia_4_cb2_r ) { return pia[4].in_cb2; }
-	READ_HANDLER( pia_5_cb2_r ) { return pia[5].in_cb2; }
-	READ_HANDLER( pia_6_cb2_r ) { return pia[6].in_cb2; }
-	READ_HANDLER( pia_7_cb2_r ) { return pia[7].in_cb2; }
+	public static ReadHandlerPtr pia_0_cb1_r  = new ReadHandlerPtr() { public int handler(int offset) { return pia[0].in_cb1; } };
+	public static ReadHandlerPtr pia_1_cb1_r  = new ReadHandlerPtr() { public int handler(int offset) { return pia[1].in_cb1; } };
+	public static ReadHandlerPtr pia_2_cb1_r  = new ReadHandlerPtr() { public int handler(int offset) { return pia[2].in_cb1; } };
+	public static ReadHandlerPtr pia_3_cb1_r  = new ReadHandlerPtr() { public int handler(int offset) { return pia[3].in_cb1; } };
+	public static ReadHandlerPtr pia_4_cb1_r  = new ReadHandlerPtr() { public int handler(int offset) { return pia[4].in_cb1; } };
+	public static ReadHandlerPtr pia_5_cb1_r  = new ReadHandlerPtr() { public int handler(int offset) { return pia[5].in_cb1; } };
+	public static ReadHandlerPtr pia_6_cb1_r  = new ReadHandlerPtr() { public int handler(int offset) { return pia[6].in_cb1; } };
+	public static ReadHandlerPtr pia_7_cb1_r  = new ReadHandlerPtr() { public int handler(int offset) { return pia[7].in_cb1; } };
+	public static ReadHandlerPtr pia_0_cb2_r  = new ReadHandlerPtr() { public int handler(int offset) { return pia[0].in_cb2; } };
+	public static ReadHandlerPtr pia_1_cb2_r  = new ReadHandlerPtr() { public int handler(int offset) { return pia[1].in_cb2; } };
+	public static ReadHandlerPtr pia_2_cb2_r  = new ReadHandlerPtr() { public int handler(int offset) { return pia[2].in_cb2; } };
+	public static ReadHandlerPtr pia_3_cb2_r  = new ReadHandlerPtr() { public int handler(int offset) { return pia[3].in_cb2; } };
+	public static ReadHandlerPtr pia_4_cb2_r  = new ReadHandlerPtr() { public int handler(int offset) { return pia[4].in_cb2; } };
+	public static ReadHandlerPtr pia_5_cb2_r  = new ReadHandlerPtr() { public int handler(int offset) { return pia[5].in_cb2; } };
+	public static ReadHandlerPtr pia_6_cb2_r  = new ReadHandlerPtr() { public int handler(int offset) { return pia[6].in_cb2; } };
+	public static ReadHandlerPtr pia_7_cb2_r  = new ReadHandlerPtr() { public int handler(int offset) { return pia[7].in_cb2; } };
 }

@@ -10,6 +10,7 @@
 -Implemented GFXLayout support
 -Implemented GFXDecode support
 -ROM Macros conversion support
+-Improved READHANDLER for 8 bit reads
 
 29/01/2019
 ==========
