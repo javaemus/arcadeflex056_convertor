@@ -306,60 +306,60 @@ public class ssozumo
 	
 	
 	
-	ROM_START( ssozumo )
-		ROM_REGION( 0x10000, REGION_CPU1, 0 )
+	static RomLoadPtr rom_ssozumo = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x10000, REGION_CPU1, 0 );
 		/* Main Program ROMs */
-		ROM_LOAD( "ic61.g01",	0x06000, 0x2000, 0x86968f46 )	// m1
-		ROM_LOAD( "ic60.g11",	0x08000, 0x2000, 0x1a5143dd )	// m2
-		ROM_LOAD( "ic59.g21",	0x0a000, 0x2000, 0xd3df04d7 )	// m3
-		ROM_LOAD( "ic58.g31",	0x0c000, 0x2000, 0x0ee43a78 )	// m4
-		ROM_LOAD( "ic57.g41",	0x0e000, 0x2000, 0xac77aa4c )	// m5
+		ROM_LOAD( "ic61.g01",	0x06000, 0x2000, 0x86968f46 );// m1
+		ROM_LOAD( "ic60.g11",	0x08000, 0x2000, 0x1a5143dd );// m2
+		ROM_LOAD( "ic59.g21",	0x0a000, 0x2000, 0xd3df04d7 );// m3
+		ROM_LOAD( "ic58.g31",	0x0c000, 0x2000, 0x0ee43a78 );// m4
+		ROM_LOAD( "ic57.g41",	0x0e000, 0x2000, 0xac77aa4c );// m5
 	
-		ROM_REGION( 0x10000, REGION_CPU2, 0 )
+		ROM_REGION( 0x10000, REGION_CPU2, 0 );
 		/* Sound Program & Voice Sample ROMs*/
-		ROM_LOAD( "ic47.g50",	0x04000, 0x2000, 0xb64ec829 )	// a1
-		ROM_LOAD( "ic46.g60",	0x06000, 0x2000, 0x630d7380 )	// a2
-		ROM_LOAD( "ic45.g70",	0x08000, 0x2000, 0x1854b657 )	// a3
-		ROM_LOAD( "ic44.g80",	0x0a000, 0x2000, 0x40b9a0da )	// a4
-		ROM_LOAD( "ic43.g90",	0x0c000, 0x2000, 0x20262064 )	// a5
-		ROM_LOAD( "ic42.ga0",	0x0e000, 0x2000, 0x98d7e998 )	// a6
+		ROM_LOAD( "ic47.g50",	0x04000, 0x2000, 0xb64ec829 );// a1
+		ROM_LOAD( "ic46.g60",	0x06000, 0x2000, 0x630d7380 );// a2
+		ROM_LOAD( "ic45.g70",	0x08000, 0x2000, 0x1854b657 );// a3
+		ROM_LOAD( "ic44.g80",	0x0a000, 0x2000, 0x40b9a0da );// a4
+		ROM_LOAD( "ic43.g90",	0x0c000, 0x2000, 0x20262064 );// a5
+		ROM_LOAD( "ic42.ga0",	0x0e000, 0x2000, 0x98d7e998 );// a6
 	
-		ROM_REGION( 0x06000, REGION_GFX1, ROMREGION_DISPOSE )
+		ROM_REGION( 0x06000, REGION_GFX1, ROMREGION_DISPOSE );
 		/* Character ROMs */
-		ROM_LOAD( "ic22.gq0",	0x00000, 0x2000, 0xb4c7e612 )	// c1
-		ROM_LOAD( "ic23.gr0",	0x02000, 0x2000, 0x90bb9fda )	// c2
-		ROM_LOAD( "ic21.gs0",	0x04000, 0x2000, 0xd8cd5c78 )	// c3
+		ROM_LOAD( "ic22.gq0",	0x00000, 0x2000, 0xb4c7e612 );// c1
+		ROM_LOAD( "ic23.gr0",	0x02000, 0x2000, 0x90bb9fda );// c2
+		ROM_LOAD( "ic21.gs0",	0x04000, 0x2000, 0xd8cd5c78 );// c3
 	
-		ROM_REGION( 0x06000, REGION_GFX2, ROMREGION_DISPOSE )
+		ROM_REGION( 0x06000, REGION_GFX2, ROMREGION_DISPOSE );
 		/* tile set ROMs */
-		ROM_LOAD( "ic69.gt0",	0x00000, 0x2000, 0x771116ca )	// t1
-		ROM_LOAD( "ic59.gu0",	0x02000, 0x2000, 0x68035bfd )	// t2
-		ROM_LOAD( "ic81.gv0",	0x04000, 0x2000, 0xcdda1f9f )	// t3
+		ROM_LOAD( "ic69.gt0",	0x00000, 0x2000, 0x771116ca );// t1
+		ROM_LOAD( "ic59.gu0",	0x02000, 0x2000, 0x68035bfd );// t2
+		ROM_LOAD( "ic81.gv0",	0x04000, 0x2000, 0xcdda1f9f );// t3
 	
-		ROM_REGION( 0x1e000, REGION_GFX3, ROMREGION_DISPOSE )
+		ROM_REGION( 0x1e000, REGION_GFX3, ROMREGION_DISPOSE );
 		/* sprites ROMs */
-		ROM_LOAD( "ic06.gg0",	0x00000, 0x2000, 0xd2342c50 )	// s1a
-		ROM_LOAD( "ic05.gh0",	0x02000, 0x2000, 0x14a3cb10 )	// s1b
-		ROM_LOAD( "ic04.gi0",	0x04000, 0x2000, 0x169276c1 )	// s1c
-		ROM_LOAD( "ic03.gj0",	0x06000, 0x2000, 0xe71b9f28 )	// s1d
-		ROM_LOAD( "ic02.gk0",	0x08000, 0x2000, 0x6e94773c )	// s1e
-		ROM_LOAD( "ic29.gl0",	0x0a000, 0x2000, 0x40f67cc4 )	// s2a
-		ROM_LOAD( "ic28.gm0",	0x0c000, 0x2000, 0x8c97b1a2 )	// s2b
-		ROM_LOAD( "ic27.gn0",	0x0e000, 0x2000, 0xbe8bb3dd )	// s2c
-		ROM_LOAD( "ic26.go0",	0x10000, 0x2000, 0x9c098a2c )	// s2d
-		ROM_LOAD( "ic25.gp0",	0x12000, 0x2000, 0xf73f8a76 )	// s2e
-		ROM_LOAD( "ic44.gb0",	0x14000, 0x2000, 0xcdd7f2eb )	// s3a
-		ROM_LOAD( "ic43.gc0",	0x16000, 0x2000, 0x7b4c632e )	// s3b
-		ROM_LOAD( "ic42.gd0",	0x18000, 0x2000, 0xcd1c8fe6 )	// s3c
-		ROM_LOAD( "ic41.ge0",	0x1a000, 0x2000, 0x935578d0 )	// s3d
-		ROM_LOAD( "ic40.gf0",	0x1c000, 0x2000, 0x5a3bf1ba )	// s3e
+		ROM_LOAD( "ic06.gg0",	0x00000, 0x2000, 0xd2342c50 );// s1a
+		ROM_LOAD( "ic05.gh0",	0x02000, 0x2000, 0x14a3cb10 );// s1b
+		ROM_LOAD( "ic04.gi0",	0x04000, 0x2000, 0x169276c1 );// s1c
+		ROM_LOAD( "ic03.gj0",	0x06000, 0x2000, 0xe71b9f28 );// s1d
+		ROM_LOAD( "ic02.gk0",	0x08000, 0x2000, 0x6e94773c );// s1e
+		ROM_LOAD( "ic29.gl0",	0x0a000, 0x2000, 0x40f67cc4 );// s2a
+		ROM_LOAD( "ic28.gm0",	0x0c000, 0x2000, 0x8c97b1a2 );// s2b
+		ROM_LOAD( "ic27.gn0",	0x0e000, 0x2000, 0xbe8bb3dd );// s2c
+		ROM_LOAD( "ic26.go0",	0x10000, 0x2000, 0x9c098a2c );// s2d
+		ROM_LOAD( "ic25.gp0",	0x12000, 0x2000, 0xf73f8a76 );// s2e
+		ROM_LOAD( "ic44.gb0",	0x14000, 0x2000, 0xcdd7f2eb );// s3a
+		ROM_LOAD( "ic43.gc0",	0x16000, 0x2000, 0x7b4c632e );// s3b
+		ROM_LOAD( "ic42.gd0",	0x18000, 0x2000, 0xcd1c8fe6 );// s3c
+		ROM_LOAD( "ic41.ge0",	0x1a000, 0x2000, 0x935578d0 );// s3d
+		ROM_LOAD( "ic40.gf0",	0x1c000, 0x2000, 0x5a3bf1ba );// s3e
 	
-		ROM_REGION( 0x0080, REGION_PROMS, 0 )
-		ROM_LOAD( "ic33.gz0",	0x00000, 0x0020, 0x523d29ad )	/* char palette red and green components */
-		ROM_LOAD( "ic30.gz2",	0x00020, 0x0020, 0x0de202e1 )	/* tile palette red and green components */
-		ROM_LOAD( "ic32.gz1",	0x00040, 0x0020, 0x6fbff4d2 )	/* char palette blue component */
-		ROM_LOAD( "ic31.gz3",	0x00060, 0x0020, 0x18e7fe63 )	/* tile palette blue component */
-	ROM_END
+		ROM_REGION( 0x0080, REGION_PROMS, 0 );
+		ROM_LOAD( "ic33.gz0",	0x00000, 0x0020, 0x523d29ad );/* char palette red and green components */
+		ROM_LOAD( "ic30.gz2",	0x00020, 0x0020, 0x0de202e1 );/* tile palette red and green components */
+		ROM_LOAD( "ic32.gz1",	0x00040, 0x0020, 0x6fbff4d2 );/* char palette blue component */
+		ROM_LOAD( "ic31.gz3",	0x00060, 0x0020, 0x18e7fe63 );/* tile palette blue component */
+	ROM_END(); }}; 
 	
 	
 	

@@ -468,168 +468,168 @@ public class namconb1
 	
 	/***************************************************************/
 	
-	ROM_START( ptblank )
-		ROM_REGION( 0x100000, REGION_CPU1, 0 ) /* main program */
-		ROM_LOAD32_WORD( "gn2mprlb.15b", 0x00002, 0x80000, 0xfe2d9425 )
-		ROM_LOAD32_WORD( "gn2mprub.13b", 0x00000, 0x80000, 0x3bf4985a )
+	static RomLoadPtr rom_ptblank = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x100000, REGION_CPU1, 0 );/* main program */
+		ROM_LOAD32_WORD( "gn2mprlb.15b", 0x00002, 0x80000, 0xfe2d9425 );
+		ROM_LOAD32_WORD( "gn2mprub.13b", 0x00000, 0x80000, 0x3bf4985a );
 	
-		ROM_REGION( 0x20000, REGION_CPU2, 0 ) /* sound program */
-		ROM_LOAD( "gn1-spr0.bin", 0, 0x20000, 0x6836ba38 )
+		ROM_REGION( 0x20000, REGION_CPU2, 0 );/* sound program */
+		ROM_LOAD( "gn1-spr0.bin", 0, 0x20000, 0x6836ba38 );
 	
-		ROM_REGION( 0x200000, REGION_SOUND1, 0 )
-		ROM_LOAD( "gn1-voi0.bin", 0, 0x200000, 0x05477eb7 )
+		ROM_REGION( 0x200000, REGION_SOUND1, 0 );
+		ROM_LOAD( "gn1-voi0.bin", 0, 0x200000, 0x05477eb7 );
 	
-		ROM_REGION( 0x800000, REGION_GFX1, ROMREGION_DISPOSE )
-		ROM_LOAD16_BYTE( "gn1obj0l.bin", 0x000001, 0x200000, 0x06722dc8 )
-		ROM_LOAD16_BYTE( "gn1obj0u.bin", 0x000000, 0x200000, 0xfcefc909 )
-		ROM_LOAD16_BYTE( "gn1obj1u.bin", 0x400000, 0x200000, 0x3109a071 )
-		ROM_LOAD16_BYTE( "gn1obj1l.bin", 0x400001, 0x200000, 0x48468df7 )
+		ROM_REGION( 0x800000, REGION_GFX1, ROMREGION_DISPOSE );
+		ROM_LOAD16_BYTE( "gn1obj0l.bin", 0x000001, 0x200000, 0x06722dc8 );
+		ROM_LOAD16_BYTE( "gn1obj0u.bin", 0x000000, 0x200000, 0xfcefc909 );
+		ROM_LOAD16_BYTE( "gn1obj1u.bin", 0x400000, 0x200000, 0x3109a071 );
+		ROM_LOAD16_BYTE( "gn1obj1l.bin", 0x400001, 0x200000, 0x48468df7 );
 	
-		ROM_REGION( 0x400000, REGION_GFX2, ROMREGION_DISPOSE )
-		ROM_LOAD( "gn1-chr0.bin", 0x000000, 0x100000, 0xa5c61246 )
-		ROM_LOAD( "gn1-chr1.bin", 0x100000, 0x100000, 0xc8c59772 )
-		ROM_LOAD( "gn1-chr2.bin", 0x200000, 0x100000, 0xdc96d999 )
-		ROM_LOAD( "gn1-chr3.bin", 0x300000, 0x100000, 0x4352c308 )
+		ROM_REGION( 0x400000, REGION_GFX2, ROMREGION_DISPOSE );
+		ROM_LOAD( "gn1-chr0.bin", 0x000000, 0x100000, 0xa5c61246 );
+		ROM_LOAD( "gn1-chr1.bin", 0x100000, 0x100000, 0xc8c59772 );
+		ROM_LOAD( "gn1-chr2.bin", 0x200000, 0x100000, 0xdc96d999 );
+		ROM_LOAD( "gn1-chr3.bin", 0x300000, 0x100000, 0x4352c308 );
 	
-		ROM_REGION( 0x80000, REGION_GFX3, 0 )
-		ROM_LOAD( "gn1-sha0.bin", 0, 0x80000, 0x86d4ff85 )
-	ROM_END
+		ROM_REGION( 0x80000, REGION_GFX3, 0 );
+		ROM_LOAD( "gn1-sha0.bin", 0, 0x80000, 0x86d4ff85 );
+	ROM_END(); }}; 
 	
-	ROM_START( gunbulet )
-		ROM_REGION( 0x100000, REGION_CPU1, 0 ) /* main program */
-		ROM_LOAD32_WORD( "gn1-mprl.bin", 0x00002, 0x80000, 0xf99e309e )
-		ROM_LOAD32_WORD( "gn1-mpru.bin", 0x00000, 0x80000, 0x72a4db07 )
+	static RomLoadPtr rom_gunbulet = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x100000, REGION_CPU1, 0 );/* main program */
+		ROM_LOAD32_WORD( "gn1-mprl.bin", 0x00002, 0x80000, 0xf99e309e );
+		ROM_LOAD32_WORD( "gn1-mpru.bin", 0x00000, 0x80000, 0x72a4db07 );
 	
-		ROM_REGION( 0x20000, REGION_CPU2, 0 ) /* sound program */
-		ROM_LOAD( "gn1-spr0.bin", 0, 0x20000, 0x6836ba38 )
+		ROM_REGION( 0x20000, REGION_CPU2, 0 );/* sound program */
+		ROM_LOAD( "gn1-spr0.bin", 0, 0x20000, 0x6836ba38 );
 	
-		ROM_REGION( 0x200000, REGION_SOUND1, 0 )
-		ROM_LOAD( "gn1-voi0.bin", 0, 0x200000, 0x05477eb7 )
+		ROM_REGION( 0x200000, REGION_SOUND1, 0 );
+		ROM_LOAD( "gn1-voi0.bin", 0, 0x200000, 0x05477eb7 );
 	
-		ROM_REGION( 0x800000, REGION_GFX1, ROMREGION_DISPOSE )
-		ROM_LOAD16_BYTE( "gn1obj0l.bin", 0x000001, 0x200000, 0x06722dc8 )
-		ROM_LOAD16_BYTE( "gn1obj0u.bin", 0x000000, 0x200000, 0xfcefc909 )
-		ROM_LOAD16_BYTE( "gn1obj1u.bin", 0x400000, 0x200000, 0x3109a071 )
-		ROM_LOAD16_BYTE( "gn1obj1l.bin", 0x400001, 0x200000, 0x48468df7 )
+		ROM_REGION( 0x800000, REGION_GFX1, ROMREGION_DISPOSE );
+		ROM_LOAD16_BYTE( "gn1obj0l.bin", 0x000001, 0x200000, 0x06722dc8 );
+		ROM_LOAD16_BYTE( "gn1obj0u.bin", 0x000000, 0x200000, 0xfcefc909 );
+		ROM_LOAD16_BYTE( "gn1obj1u.bin", 0x400000, 0x200000, 0x3109a071 );
+		ROM_LOAD16_BYTE( "gn1obj1l.bin", 0x400001, 0x200000, 0x48468df7 );
 	
-		ROM_REGION( 0x400000, REGION_GFX2, ROMREGION_DISPOSE )
-		ROM_LOAD( "gn1-chr0.bin", 0x000000, 0x100000, 0xa5c61246 )
-		ROM_LOAD( "gn1-chr1.bin", 0x100000, 0x100000, 0xc8c59772 )
-		ROM_LOAD( "gn1-chr2.bin", 0x200000, 0x100000, 0xdc96d999 )
-		ROM_LOAD( "gn1-chr3.bin", 0x300000, 0x100000, 0x4352c308 )
+		ROM_REGION( 0x400000, REGION_GFX2, ROMREGION_DISPOSE );
+		ROM_LOAD( "gn1-chr0.bin", 0x000000, 0x100000, 0xa5c61246 );
+		ROM_LOAD( "gn1-chr1.bin", 0x100000, 0x100000, 0xc8c59772 );
+		ROM_LOAD( "gn1-chr2.bin", 0x200000, 0x100000, 0xdc96d999 );
+		ROM_LOAD( "gn1-chr3.bin", 0x300000, 0x100000, 0x4352c308 );
 	
-		ROM_REGION( 0x80000, REGION_GFX3, 0 )
-		ROM_LOAD( "gn1-sha0.bin", 0, 0x80000, 0x86d4ff85 )
-	ROM_END
+		ROM_REGION( 0x80000, REGION_GFX3, 0 );
+		ROM_LOAD( "gn1-sha0.bin", 0, 0x80000, 0x86d4ff85 );
+	ROM_END(); }}; 
 	
-	ROM_START( nebulray )
-		ROM_REGION( 0x100000, REGION_CPU1, 0 ) /* main program */
-		ROM_LOAD32_WORD( "nr1-mpru", 0x00000, 0x80000, 0x42ef71f9 )
-		ROM_LOAD32_WORD( "nr1-mprl", 0x00002, 0x80000, 0xfae5f62c )
+	static RomLoadPtr rom_nebulray = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x100000, REGION_CPU1, 0 );/* main program */
+		ROM_LOAD32_WORD( "nr1-mpru", 0x00000, 0x80000, 0x42ef71f9 );
+		ROM_LOAD32_WORD( "nr1-mprl", 0x00002, 0x80000, 0xfae5f62c );
 	
-		ROM_REGION( 0x20000, REGION_CPU2, 0 ) /* sound program */
-		ROM_LOAD( "nr1-spr0", 0, 0x20000, 0x1cc2b44b )
+		ROM_REGION( 0x20000, REGION_CPU2, 0 );/* sound program */
+		ROM_LOAD( "nr1-spr0", 0, 0x20000, 0x1cc2b44b );
 	
-		ROM_REGION( 0x200000, REGION_SOUND1, 0 )
-		ROM_LOAD( "nr1-voi0", 0, 0x200000, 0x332d5e26 )
+		ROM_REGION( 0x200000, REGION_SOUND1, 0 );
+		ROM_LOAD( "nr1-voi0", 0, 0x200000, 0x332d5e26 );
 	
-		ROM_REGION( 0x1000000, REGION_GFX1, ROMREGION_DISPOSE )
-		ROM_LOAD16_BYTE( "nr1obj0u", 0x000000, 0x200000, 0xfb82a881 )
-		ROM_LOAD16_BYTE( "nr1obj0l", 0x000001, 0x200000, 0x0e99ef46 )
-		ROM_LOAD16_BYTE( "nr1obj1u", 0x400000, 0x200000, 0x49d9dbd7 )
-		ROM_LOAD16_BYTE( "nr1obj1l", 0x400001, 0x200000, 0xf7a898f0 )
-		ROM_LOAD16_BYTE( "nr1obj2u", 0x800000, 0x200000, 0x8c8205b1 )
-		ROM_LOAD16_BYTE( "nr1obj2l", 0x800001, 0x200000, 0xb39871d1 )
-		ROM_LOAD16_BYTE( "nr1obj3u", 0xc00000, 0x200000, 0xd5918c9e )
-		ROM_LOAD16_BYTE( "nr1obj3l", 0xc00001, 0x200000, 0xc90d13ae )
+		ROM_REGION( 0x1000000, REGION_GFX1, ROMREGION_DISPOSE );
+		ROM_LOAD16_BYTE( "nr1obj0u", 0x000000, 0x200000, 0xfb82a881 );
+		ROM_LOAD16_BYTE( "nr1obj0l", 0x000001, 0x200000, 0x0e99ef46 );
+		ROM_LOAD16_BYTE( "nr1obj1u", 0x400000, 0x200000, 0x49d9dbd7 );
+		ROM_LOAD16_BYTE( "nr1obj1l", 0x400001, 0x200000, 0xf7a898f0 );
+		ROM_LOAD16_BYTE( "nr1obj2u", 0x800000, 0x200000, 0x8c8205b1 );
+		ROM_LOAD16_BYTE( "nr1obj2l", 0x800001, 0x200000, 0xb39871d1 );
+		ROM_LOAD16_BYTE( "nr1obj3u", 0xc00000, 0x200000, 0xd5918c9e );
+		ROM_LOAD16_BYTE( "nr1obj3l", 0xc00001, 0x200000, 0xc90d13ae );
 	
-		ROM_REGION( 0x400000, REGION_GFX2, ROMREGION_DISPOSE )
-		ROM_LOAD( "nr1-chr0", 0x000000, 0x100000,0x8d5b54ea )
-		ROM_LOAD( "nr1-chr1", 0x100000, 0x100000,0xcd21630c )
-		ROM_LOAD( "nr1-chr2", 0x200000, 0x100000,0x70a11023 )
-		ROM_LOAD( "nr1-chr3", 0x300000, 0x100000,0x8f4b1d51 )
+		ROM_REGION( 0x400000, REGION_GFX2, ROMREGION_DISPOSE );
+		ROM_LOAD( "nr1-chr0", 0x000000, 0x100000,0x8d5b54ea );
+		ROM_LOAD( "nr1-chr1", 0x100000, 0x100000,0xcd21630c );
+		ROM_LOAD( "nr1-chr2", 0x200000, 0x100000,0x70a11023 );
+		ROM_LOAD( "nr1-chr3", 0x300000, 0x100000,0x8f4b1d51 );
 	
-		ROM_REGION( 0x80000, REGION_GFX3, 0 )
-		ROM_LOAD( "nr1-sha0", 0, 0x80000,0xca667e13 )
+		ROM_REGION( 0x80000, REGION_GFX3, 0 );
+		ROM_LOAD( "nr1-sha0", 0, 0x80000,0xca667e13 );
 	
-		ROM_REGION( 0x20, REGION_PROMS, 0 ) /* custom key data? */
-		ROM_LOAD( "c366.bin", 0, 0x20, 0x8c96f31d )
-	ROM_END
+		ROM_REGION( 0x20, REGION_PROMS, 0 );/* custom key data? */
+		ROM_LOAD( "c366.bin", 0, 0x20, 0x8c96f31d );
+	ROM_END(); }}; 
 	
-	ROM_START( gslgr94u )
-		ROM_REGION( 0x100000, REGION_CPU1, 0 ) /* main program */
-		ROM_LOAD32_WORD( "gse2mprl.bin", 0x00002, 0x80000, 0xa514349c )
-		ROM_LOAD32_WORD( "gse2mpru.bin", 0x00000, 0x80000, 0xb6afd238 )
+	static RomLoadPtr rom_gslgr94u = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x100000, REGION_CPU1, 0 );/* main program */
+		ROM_LOAD32_WORD( "gse2mprl.bin", 0x00002, 0x80000, 0xa514349c );
+		ROM_LOAD32_WORD( "gse2mpru.bin", 0x00000, 0x80000, 0xb6afd238 );
 	
-		ROM_REGION( 0x20000, REGION_CPU2, 0 ) /* sound program */
-		ROM_LOAD( "gse2spr0.bin", 0, 0x20000, 0x17e87cfc )
+		ROM_REGION( 0x20000, REGION_CPU2, 0 );/* sound program */
+		ROM_LOAD( "gse2spr0.bin", 0, 0x20000, 0x17e87cfc );
 	
-		ROM_REGION( 0x200000, REGION_SOUND1, 0 )
-		ROM_LOAD( "gse-voi0.bin", 0, 0x200000, 0xd3480574 )
+		ROM_REGION( 0x200000, REGION_SOUND1, 0 );
+		ROM_LOAD( "gse-voi0.bin", 0, 0x200000, 0xd3480574 );
 	
-		ROM_REGION( 0x400000, REGION_GFX1, ROMREGION_DISPOSE )
-		ROM_LOAD16_BYTE( "gseobj0l.bin", 0x000001, 0x200000, 0x531520ca )
-		ROM_LOAD16_BYTE( "gseobj0u.bin", 0x000000, 0x200000, 0xfcc1283c )
+		ROM_REGION( 0x400000, REGION_GFX1, ROMREGION_DISPOSE );
+		ROM_LOAD16_BYTE( "gseobj0l.bin", 0x000001, 0x200000, 0x531520ca );
+		ROM_LOAD16_BYTE( "gseobj0u.bin", 0x000000, 0x200000, 0xfcc1283c );
 	
-		ROM_REGION( 0x400000, REGION_GFX2, ROMREGION_DISPOSE )
-		ROM_LOAD( "gse-chr0.bin", 0x000000, 0x100000, 0x9314085d )
-		ROM_LOAD( "gse-chr1.bin", 0x100000, 0x100000, 0xc128a887 )
-		ROM_LOAD( "gse-chr2.bin", 0x200000, 0x100000, 0x48f0a311 )
-		ROM_LOAD( "gse-chr3.bin", 0x300000, 0x100000, 0xadbd1f88 )
+		ROM_REGION( 0x400000, REGION_GFX2, ROMREGION_DISPOSE );
+		ROM_LOAD( "gse-chr0.bin", 0x000000, 0x100000, 0x9314085d );
+		ROM_LOAD( "gse-chr1.bin", 0x100000, 0x100000, 0xc128a887 );
+		ROM_LOAD( "gse-chr2.bin", 0x200000, 0x100000, 0x48f0a311 );
+		ROM_LOAD( "gse-chr3.bin", 0x300000, 0x100000, 0xadbd1f88 );
 	
-		ROM_REGION( 0x80000, REGION_GFX3, 0 )
-		ROM_LOAD( "gse-sha0.bin", 0, 0x80000, 0x6b2beabb )
-	ROM_END
+		ROM_REGION( 0x80000, REGION_GFX3, 0 );
+		ROM_LOAD( "gse-sha0.bin", 0, 0x80000, 0x6b2beabb );
+	ROM_END(); }}; 
 	
-	ROM_START( sws96 )
-		ROM_REGION( 0x100000, REGION_CPU1, 0 ) /* main program */
-		ROM_LOAD32_WORD( "ss61mprl.bin", 0x00002, 0x80000, 0x6f55e73 )
-		ROM_LOAD32_WORD( "ss61mpru.bin", 0x00000, 0x80000, 0xabdbb83 )
+	static RomLoadPtr rom_sws96 = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x100000, REGION_CPU1, 0 );/* main program */
+		ROM_LOAD32_WORD( "ss61mprl.bin", 0x00002, 0x80000, 0x6f55e73 );
+		ROM_LOAD32_WORD( "ss61mpru.bin", 0x00000, 0x80000, 0xabdbb83 );
 	
-		ROM_REGION( 0x80000, REGION_CPU2, 0 ) /* sound program */
-		ROM_LOAD( "ss61spr0.bin", 0, 0x80000, 0x71cb12f5 )
+		ROM_REGION( 0x80000, REGION_CPU2, 0 );/* sound program */
+		ROM_LOAD( "ss61spr0.bin", 0, 0x80000, 0x71cb12f5 );
 	
-		ROM_REGION( 0x200000, REGION_SOUND1, 0 )
-		ROM_LOAD( "ss61voi0.bin", 0, 0x200000, 0x2740ec72 )
+		ROM_REGION( 0x200000, REGION_SOUND1, 0 );
+		ROM_LOAD( "ss61voi0.bin", 0, 0x200000, 0x2740ec72 );
 	
-		ROM_REGION( 0x400000, REGION_GFX1, ROMREGION_DISPOSE )
-		ROM_LOAD16_BYTE( "ss61ob0l.bin", 0x000001, 0x200000, 0x579b19d4 )
-		ROM_LOAD16_BYTE( "ss61ob0u.bin", 0x000000, 0x200000, 0xa69bbd9e )
+		ROM_REGION( 0x400000, REGION_GFX1, ROMREGION_DISPOSE );
+		ROM_LOAD16_BYTE( "ss61ob0l.bin", 0x000001, 0x200000, 0x579b19d4 );
+		ROM_LOAD16_BYTE( "ss61ob0u.bin", 0x000000, 0x200000, 0xa69bbd9e );
 	
-		ROM_REGION( 0x400000, REGION_GFX2, ROMREGION_DISPOSE )
-		ROM_LOAD( "ss61chr0.bin", 0x000000, 0x100000, 0x9d2ae07b )
-		ROM_LOAD( "ss61chr1.bin", 0x100000, 0x100000, 0x4dc75da6 )
-		ROM_LOAD( "ss61chr2.bin", 0x200000, 0x100000, 0x1240704b )
-		ROM_LOAD( "ss61chr3.bin", 0x300000, 0x100000, 0x066581d4 )
+		ROM_REGION( 0x400000, REGION_GFX2, ROMREGION_DISPOSE );
+		ROM_LOAD( "ss61chr0.bin", 0x000000, 0x100000, 0x9d2ae07b );
+		ROM_LOAD( "ss61chr1.bin", 0x100000, 0x100000, 0x4dc75da6 );
+		ROM_LOAD( "ss61chr2.bin", 0x200000, 0x100000, 0x1240704b );
+		ROM_LOAD( "ss61chr3.bin", 0x300000, 0x100000, 0x066581d4 );
 	
-		ROM_REGION( 0x80000, REGION_GFX3, 0 )
-		ROM_LOAD( "ss61sha0.bin", 0, 0x80000, 0xfceaa19c )
-	ROM_END
+		ROM_REGION( 0x80000, REGION_GFX3, 0 );
+		ROM_LOAD( "ss61sha0.bin", 0, 0x80000, 0xfceaa19c );
+	ROM_END(); }}; 
 	
-	ROM_START( sws97 )
-		ROM_REGION( 0x100000, REGION_CPU1, 0 ) /* main program */
-		ROM_LOAD32_WORD( "ss71mprl.bin", 0x00002, 0x80000, 0xbd60b50e )
-		ROM_LOAD32_WORD( "ss71mpru.bin", 0x00000, 0x80000, 0x3444f5a8 )
+	static RomLoadPtr rom_sws97 = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x100000, REGION_CPU1, 0 );/* main program */
+		ROM_LOAD32_WORD( "ss71mprl.bin", 0x00002, 0x80000, 0xbd60b50e );
+		ROM_LOAD32_WORD( "ss71mpru.bin", 0x00000, 0x80000, 0x3444f5a8 );
 	
-		ROM_REGION( 0x80000, REGION_CPU2, 0 ) /* sound program */
-		ROM_LOAD( "ss71spr0.bin", 0, 0x80000, 0x71cb12f5 )
+		ROM_REGION( 0x80000, REGION_CPU2, 0 );/* sound program */
+		ROM_LOAD( "ss71spr0.bin", 0, 0x80000, 0x71cb12f5 );
 	
-		ROM_REGION( 0x200000, REGION_SOUND1, 0 )
-		ROM_LOAD( "ss71voi0.bin", 0, 0x200000, 0x2740ec72 )
+		ROM_REGION( 0x200000, REGION_SOUND1, 0 );
+		ROM_LOAD( "ss71voi0.bin", 0, 0x200000, 0x2740ec72 );
 	
-		ROM_REGION( 0x400000, REGION_GFX1, ROMREGION_DISPOSE )
-		ROM_LOAD16_BYTE( "ss71ob0l.bin", 0x000001, 0x200000, 0x9559ad44 )
-		ROM_LOAD16_BYTE( "ss71ob0u.bin", 0x000000, 0x200000, 0x4df4a722 )
+		ROM_REGION( 0x400000, REGION_GFX1, ROMREGION_DISPOSE );
+		ROM_LOAD16_BYTE( "ss71ob0l.bin", 0x000001, 0x200000, 0x9559ad44 );
+		ROM_LOAD16_BYTE( "ss71ob0u.bin", 0x000000, 0x200000, 0x4df4a722 );
 	
-		ROM_REGION( 0x400000, REGION_GFX2, ROMREGION_DISPOSE )
-		ROM_LOAD( "ss71chr0.bin", 0x000000, 0x100000, 0xbd606356 )
-		ROM_LOAD( "ss71chr1.bin", 0x100000, 0x100000, 0x4dc75da6 )
-		ROM_LOAD( "ss71chr2.bin", 0x200000, 0x100000, 0x1240704b )
-		ROM_LOAD( "ss71chr3.bin", 0x300000, 0x100000, 0x066581d4 )
+		ROM_REGION( 0x400000, REGION_GFX2, ROMREGION_DISPOSE );
+		ROM_LOAD( "ss71chr0.bin", 0x000000, 0x100000, 0xbd606356 );
+		ROM_LOAD( "ss71chr1.bin", 0x100000, 0x100000, 0x4dc75da6 );
+		ROM_LOAD( "ss71chr2.bin", 0x200000, 0x100000, 0x1240704b );
+		ROM_LOAD( "ss71chr3.bin", 0x300000, 0x100000, 0x066581d4 );
 	
-		ROM_REGION( 0x80000, REGION_GFX3, 0 )
-		ROM_LOAD( "ss71sha0.bin", 0, 0x80000, 0xbe8c2758 )
-	ROM_END
+		ROM_REGION( 0x80000, REGION_GFX3, 0 );
+		ROM_LOAD( "ss71sha0.bin", 0, 0x80000, 0xbe8c2758 );
+	ROM_END(); }}; 
 	
 	/***************************************************************/
 	

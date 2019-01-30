@@ -392,44 +392,44 @@ public class bking2
 	
 	***************************************************************************/
 	
-	ROM_START( bking2 )
-		ROM_REGION( 0x10000, REGION_CPU1, 0 )
-		ROM_LOAD( "01.13f",       0x0000, 0x1000, 0x078ada3f )
-		ROM_LOAD( "02.11f",       0x1000, 0x1000, 0xc37d110a )
-		ROM_LOAD( "03.10f",       0x2000, 0x1000, 0x2ba5c681 )
-		ROM_LOAD( "04.8f",        0x3000, 0x1000, 0x8fad54e8 )
-		ROM_LOAD( "05.7f",        0x4000, 0x1000, 0xb4de6b58 )
-		ROM_LOAD( "06.5f",        0x5000, 0x1000, 0x9ac43b87 )
-		ROM_LOAD( "07.4f",        0x6000, 0x1000, 0xb3ed40b7 )
-		ROM_LOAD( "08.2f",        0x7000, 0x1000, 0x8fddb2e8 )
+	static RomLoadPtr rom_bking2 = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x10000, REGION_CPU1, 0 );
+		ROM_LOAD( "01.13f",       0x0000, 0x1000, 0x078ada3f );
+		ROM_LOAD( "02.11f",       0x1000, 0x1000, 0xc37d110a );
+		ROM_LOAD( "03.10f",       0x2000, 0x1000, 0x2ba5c681 );
+		ROM_LOAD( "04.8f",        0x3000, 0x1000, 0x8fad54e8 );
+		ROM_LOAD( "05.7f",        0x4000, 0x1000, 0xb4de6b58 );
+		ROM_LOAD( "06.5f",        0x5000, 0x1000, 0x9ac43b87 );
+		ROM_LOAD( "07.4f",        0x6000, 0x1000, 0xb3ed40b7 );
+		ROM_LOAD( "08.2f",        0x7000, 0x1000, 0x8fddb2e8 );
 	
-		ROM_REGION( 0x10000, REGION_CPU2, 0 )         /* Sound ROMs */
-		ROM_LOAD( "15",           0x0000, 0x1000, 0xf045d0fe )
-		ROM_LOAD( "16",           0x1000, 0x1000, 0x92d50410 )
+		ROM_REGION( 0x10000, REGION_CPU2, 0 );        /* Sound ROMs */
+		ROM_LOAD( "15",           0x0000, 0x1000, 0xf045d0fe );
+		ROM_LOAD( "16",           0x1000, 0x1000, 0x92d50410 );
 	
-		ROM_REGION( 0x6000, REGION_GFX1, ROMREGION_DISPOSE )
-		ROM_LOAD( "14.5a",        0x0000, 0x1000, 0x52636a94 )
-		ROM_LOAD( "13.7a",        0x1000, 0x1000, 0x6b9e0564 )
-		ROM_LOAD( "12.8a",        0x2000, 0x1000, 0xc6d685d9 )
-		ROM_LOAD( "11.10a",       0x3000, 0x1000, 0x2b949987 )
-		ROM_LOAD( "10.11a",       0x4000, 0x1000, 0xeb96f948 )
-		ROM_LOAD( "09.13a",       0x5000, 0x1000, 0x595e3dd4 )
+		ROM_REGION( 0x6000, REGION_GFX1, ROMREGION_DISPOSE );
+		ROM_LOAD( "14.5a",        0x0000, 0x1000, 0x52636a94 );
+		ROM_LOAD( "13.7a",        0x1000, 0x1000, 0x6b9e0564 );
+		ROM_LOAD( "12.8a",        0x2000, 0x1000, 0xc6d685d9 );
+		ROM_LOAD( "11.10a",       0x3000, 0x1000, 0x2b949987 );
+		ROM_LOAD( "10.11a",       0x4000, 0x1000, 0xeb96f948 );
+		ROM_LOAD( "09.13a",       0x5000, 0x1000, 0x595e3dd4 );
 	
-		ROM_REGION( 0x0800, REGION_GFX2, ROMREGION_DISPOSE )
-		ROM_LOAD( "17",           0x0000, 0x0800, 0xe5663f0b )	/* crow graphics */
+		ROM_REGION( 0x0800, REGION_GFX2, ROMREGION_DISPOSE );
+		ROM_LOAD( "17",           0x0000, 0x0800, 0xe5663f0b );/* crow graphics */
 	
-		ROM_REGION( 0x0800, REGION_GFX3, ROMREGION_DISPOSE )
-		ROM_LOAD( "18",           0x0000, 0x0800, 0xfc9cec31 )	/* ball 1 graphics. Only the first 128 bytes used */
+		ROM_REGION( 0x0800, REGION_GFX3, ROMREGION_DISPOSE );
+		ROM_LOAD( "18",           0x0000, 0x0800, 0xfc9cec31 );/* ball 1 graphics. Only the first 128 bytes used */
 	
-		ROM_REGION( 0x0800, REGION_GFX4, ROMREGION_DISPOSE )
-		ROM_LOAD( "19",           0x0000, 0x0800, 0xfc9cec31 )  /* ball 2 graphics. Only the first 128 bytes used */
+		ROM_REGION( 0x0800, REGION_GFX4, ROMREGION_DISPOSE );
+		ROM_LOAD( "19",           0x0000, 0x0800, 0xfc9cec31 ); /* ball 2 graphics. Only the first 128 bytes used */
 	
-		ROM_REGION( 0x0220, REGION_PROMS, 0 )
-		ROM_LOAD( "82s141.2d",    0x0000, 0x0200, 0x61b7a9ff )	/* palette */
+		ROM_REGION( 0x0220, REGION_PROMS, 0 );
+		ROM_LOAD( "82s141.2d",    0x0000, 0x0200, 0x61b7a9ff );/* palette */
 		/* Collision detection prom 32x1 (not currently used) */
 		/* HIT0-1 go to A3-A4. Character image goes to A0-A2 */
-		ROM_LOAD( "mb7051.2c",    0x0200, 0x0020, 0x4cb5bd32 )
-	ROM_END
+		ROM_LOAD( "mb7051.2c",    0x0200, 0x0020, 0x4cb5bd32 );
+	ROM_END(); }}; 
 	
 	
 	

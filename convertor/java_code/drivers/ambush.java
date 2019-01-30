@@ -239,24 +239,24 @@ public class ambush
 	
 	***************************************************************************/
 	
-	ROM_START( ambush )
-		ROM_REGION( 0x10000, REGION_CPU1, 0 )       /* 64k for code */
-		ROM_LOAD( "ambush.h7",    0x0000, 0x2000, 0xce306563 )
-		ROM_LOAD( "ambush.g7",    0x2000, 0x2000, 0x90291409 )
-		ROM_LOAD( "ambush.f7",    0x4000, 0x2000, 0xd023ca29 )
-		ROM_LOAD( "ambush.e7",    0x6000, 0x2000, 0x6cc2d3ee )
+	static RomLoadPtr rom_ambush = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x10000, REGION_CPU1, 0 );      /* 64k for code */
+		ROM_LOAD( "ambush.h7",    0x0000, 0x2000, 0xce306563 );
+		ROM_LOAD( "ambush.g7",    0x2000, 0x2000, 0x90291409 );
+		ROM_LOAD( "ambush.f7",    0x4000, 0x2000, 0xd023ca29 );
+		ROM_LOAD( "ambush.e7",    0x6000, 0x2000, 0x6cc2d3ee );
 	
-		ROM_REGION( 0x4000, REGION_GFX1, ROMREGION_DISPOSE )
-		ROM_LOAD( "ambush.n4",    0x0000, 0x2000, 0xecc0dc85 )
-		ROM_LOAD( "ambush.m4",    0x2000, 0x2000, 0xe86ca98a )
+		ROM_REGION( 0x4000, REGION_GFX1, ROMREGION_DISPOSE );
+		ROM_LOAD( "ambush.n4",    0x0000, 0x2000, 0xecc0dc85 );
+		ROM_LOAD( "ambush.m4",    0x2000, 0x2000, 0xe86ca98a );
 	
-		ROM_REGION( 0x0400, REGION_PROMS, 0 )
-		ROM_LOAD( "a.bpr",        0x0000, 0x0100, 0x5f27f511 )  /* color PROMs */
+		ROM_REGION( 0x0400, REGION_PROMS, 0 );
+		ROM_LOAD( "a.bpr",        0x0000, 0x0100, 0x5f27f511 ); /* color PROMs */
 	
-		ROM_LOAD( "b.bpr",        0x0100, 0x0100, 0x1b03fd3b )	/* How is this selected, */
-		ROM_LOAD( "13.bpr",		  0x0200, 0x0100, 0x547e970f )  /* I'm not sure what these do. */
-		ROM_LOAD( "14.bpr",		  0x0300, 0x0100, 0x622a8ce7 )  /* They don't look like color PROMs */
-	ROM_END
+		ROM_LOAD( "b.bpr",        0x0100, 0x0100, 0x1b03fd3b );/* How is this selected, */
+		ROM_LOAD( "13.bpr",		  0x0200, 0x0100, 0x547e970f ); /* I'm not sure what these do. */
+		ROM_LOAD( "14.bpr",		  0x0300, 0x0100, 0x622a8ce7 ); /* They don't look like color PROMs */
+	ROM_END(); }}; 
 	
 	
 	

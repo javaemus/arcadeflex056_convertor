@@ -258,21 +258,21 @@ public class zerozone
 	
 	***************************************************************************/
 	
-	ROM_START( zerozone )
-		ROM_REGION( 0x20000, REGION_CPU1, 0 )     /* 128k for 68000 code */
-		ROM_LOAD16_BYTE( "zz-4.rom", 0x0000, 0x10000, 0x83718b9b )
-		ROM_LOAD16_BYTE( "zz-5.rom", 0x0001, 0x10000, 0x18557f41 )
+	static RomLoadPtr rom_zerozone = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x20000, REGION_CPU1, 0 );    /* 128k for 68000 code */
+		ROM_LOAD16_BYTE( "zz-4.rom", 0x0000, 0x10000, 0x83718b9b );
+		ROM_LOAD16_BYTE( "zz-5.rom", 0x0001, 0x10000, 0x18557f41 );
 	
-		ROM_REGION( 0x10000, REGION_CPU2, 0 )      /* sound cpu */
-		ROM_LOAD( "zz-1.rom", 0x00000, 0x08000, 0x223ccce5 )
+		ROM_REGION( 0x10000, REGION_CPU2, 0 );     /* sound cpu */
+		ROM_LOAD( "zz-1.rom", 0x00000, 0x08000, 0x223ccce5 );
 	
-		ROM_REGION( 0x080000, REGION_GFX1, ROMREGION_DISPOSE )
-		ROM_LOAD( "zz-6.rom", 0x00000, 0x80000, 0xc8b906b9 )
+		ROM_REGION( 0x080000, REGION_GFX1, ROMREGION_DISPOSE );
+		ROM_LOAD( "zz-6.rom", 0x00000, 0x80000, 0xc8b906b9 );
 	
-		ROM_REGION( 0x40000, REGION_SOUND1, 0 )      /* ADPCM samples */
-		ROM_LOAD( "zz-2.rom", 0x00000, 0x20000, 0xc7551e81 )
-		ROM_LOAD( "zz-3.rom", 0x20000, 0x20000, 0xe348ff5e )
-	ROM_END
+		ROM_REGION( 0x40000, REGION_SOUND1, 0 );     /* ADPCM samples */
+		ROM_LOAD( "zz-2.rom", 0x00000, 0x20000, 0xc7551e81 );
+		ROM_LOAD( "zz-3.rom", 0x20000, 0x20000, 0xe348ff5e );
+	ROM_END(); }}; 
 	
 	
 	

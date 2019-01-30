@@ -555,125 +555,125 @@ public class fastfred
 	
 	***************************************************************************/
 	
-	ROM_START( fastfred )
-		ROM_REGION( 0x10000, REGION_CPU1, 0 )     /* 64k for main CPU */
-		ROM_LOAD( "ffr.01",       0x0000, 0x1000, 0x15032c13 )
-		ROM_LOAD( "ffr.02",       0x1000, 0x1000, 0xf9642744 )
-		ROM_LOAD( "ffr.03",       0x2000, 0x1000, 0xf0919727 )
-		ROM_LOAD( "ffr.04",       0x3000, 0x1000, 0xc778751e )
-		ROM_LOAD( "ffr.05",       0x4000, 0x1000, 0xcd6e160a )
-		ROM_LOAD( "ffr.06",       0x5000, 0x1000, 0x67f7f9b3 )
-		ROM_LOAD( "ffr.07",       0x6000, 0x1000, 0x2935c76a )
-		ROM_LOAD( "ffr.08",       0x7000, 0x1000, 0x0fb79e7b )
+	static RomLoadPtr rom_fastfred = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x10000, REGION_CPU1, 0 );    /* 64k for main CPU */
+		ROM_LOAD( "ffr.01",       0x0000, 0x1000, 0x15032c13 );
+		ROM_LOAD( "ffr.02",       0x1000, 0x1000, 0xf9642744 );
+		ROM_LOAD( "ffr.03",       0x2000, 0x1000, 0xf0919727 );
+		ROM_LOAD( "ffr.04",       0x3000, 0x1000, 0xc778751e );
+		ROM_LOAD( "ffr.05",       0x4000, 0x1000, 0xcd6e160a );
+		ROM_LOAD( "ffr.06",       0x5000, 0x1000, 0x67f7f9b3 );
+		ROM_LOAD( "ffr.07",       0x6000, 0x1000, 0x2935c76a );
+		ROM_LOAD( "ffr.08",       0x7000, 0x1000, 0x0fb79e7b );
 	
-		ROM_REGION( 0x10000, REGION_CPU2, 0 )     /* 64k for audio CPU */
-		ROM_LOAD( "ffr.09",       0x0000, 0x1000, 0xa1ec8d7e )
-		ROM_LOAD( "ffr.10",       0x1000, 0x1000, 0x460ca837 )
+		ROM_REGION( 0x10000, REGION_CPU2, 0 );    /* 64k for audio CPU */
+		ROM_LOAD( "ffr.09",       0x0000, 0x1000, 0xa1ec8d7e );
+		ROM_LOAD( "ffr.10",       0x1000, 0x1000, 0x460ca837 );
 	
-		ROM_REGION( 0x6000, REGION_GFX1, ROMREGION_DISPOSE )
-		ROM_LOAD( "ffr.14",       0x0000, 0x1000, 0xe8a00e81 )
-		ROM_LOAD( "ffr.17",       0x1000, 0x1000, 0x701e0f01 )
-		ROM_LOAD( "ffr.15",       0x2000, 0x1000, 0xb49b053f )
-		ROM_LOAD( "ffr.18",       0x3000, 0x1000, 0x4b208c8b )
-		ROM_LOAD( "ffr.16",       0x4000, 0x1000, 0x8c686bc2 )
-		ROM_LOAD( "ffr.19",       0x5000, 0x1000, 0x75b613f6 )
+		ROM_REGION( 0x6000, REGION_GFX1, ROMREGION_DISPOSE );
+		ROM_LOAD( "ffr.14",       0x0000, 0x1000, 0xe8a00e81 );
+		ROM_LOAD( "ffr.17",       0x1000, 0x1000, 0x701e0f01 );
+		ROM_LOAD( "ffr.15",       0x2000, 0x1000, 0xb49b053f );
+		ROM_LOAD( "ffr.18",       0x3000, 0x1000, 0x4b208c8b );
+		ROM_LOAD( "ffr.16",       0x4000, 0x1000, 0x8c686bc2 );
+		ROM_LOAD( "ffr.19",       0x5000, 0x1000, 0x75b613f6 );
 	
-		ROM_REGION( 0x3000, REGION_GFX2, ROMREGION_DISPOSE )
-		ROM_LOAD( "ffr.11",       0x0000, 0x1000, 0x0e1316d4 )
-		ROM_LOAD( "ffr.12",       0x1000, 0x1000, 0x94c06686 )
-		ROM_LOAD( "ffr.13",       0x2000, 0x1000, 0x3fcfaa8e )
+		ROM_REGION( 0x3000, REGION_GFX2, ROMREGION_DISPOSE );
+		ROM_LOAD( "ffr.11",       0x0000, 0x1000, 0x0e1316d4 );
+		ROM_LOAD( "ffr.12",       0x1000, 0x1000, 0x94c06686 );
+		ROM_LOAD( "ffr.13",       0x2000, 0x1000, 0x3fcfaa8e );
 	
-		ROM_REGION( 0x0300, REGION_PROMS, 0 )
-		ROM_LOAD( "flyboy.red",   0x0000, 0x0100, 0xb801e294 )
-		ROM_LOAD( "flyboy.grn",   0x0100, 0x0100, 0x7da063d0 )
-		ROM_LOAD( "flyboy.blu",   0x0200, 0x0100, 0x85c05c18 )
-	ROM_END
+		ROM_REGION( 0x0300, REGION_PROMS, 0 );
+		ROM_LOAD( "flyboy.red",   0x0000, 0x0100, 0xb801e294 );
+		ROM_LOAD( "flyboy.grn",   0x0100, 0x0100, 0x7da063d0 );
+		ROM_LOAD( "flyboy.blu",   0x0200, 0x0100, 0x85c05c18 );
+	ROM_END(); }}; 
 	
-	ROM_START( flyboy )
-		ROM_REGION( 0x10000, REGION_CPU1, 0 )     /* 64k for main CPU */
-		ROM_LOAD( "flyboy01.cpu", 0x0000, 0x1000, 0xb05aa900 )
-		ROM_LOAD( "flyboy02.cpu", 0x1000, 0x1000, 0x474867f5 )
-		ROM_LOAD( "rom3.cpu",     0x2000, 0x1000, 0xd2f8f085 )
-		ROM_LOAD( "rom4.cpu",     0x3000, 0x1000, 0x19e5e15c )
-		ROM_LOAD( "flyboy05.cpu", 0x4000, 0x1000, 0x207551f7 )
-		ROM_LOAD( "rom6.cpu",     0x5000, 0x1000, 0xf5464c72 )
-		ROM_LOAD( "rom7.cpu",     0x6000, 0x1000, 0x50a1baff )
-		ROM_LOAD( "rom8.cpu",     0x7000, 0x1000, 0xfe2ae95d )
+	static RomLoadPtr rom_flyboy = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x10000, REGION_CPU1, 0 );    /* 64k for main CPU */
+		ROM_LOAD( "flyboy01.cpu", 0x0000, 0x1000, 0xb05aa900 );
+		ROM_LOAD( "flyboy02.cpu", 0x1000, 0x1000, 0x474867f5 );
+		ROM_LOAD( "rom3.cpu",     0x2000, 0x1000, 0xd2f8f085 );
+		ROM_LOAD( "rom4.cpu",     0x3000, 0x1000, 0x19e5e15c );
+		ROM_LOAD( "flyboy05.cpu", 0x4000, 0x1000, 0x207551f7 );
+		ROM_LOAD( "rom6.cpu",     0x5000, 0x1000, 0xf5464c72 );
+		ROM_LOAD( "rom7.cpu",     0x6000, 0x1000, 0x50a1baff );
+		ROM_LOAD( "rom8.cpu",     0x7000, 0x1000, 0xfe2ae95d );
 	
-		ROM_REGION( 0x10000, REGION_CPU2, 0 )     /* 64k for audio CPU */
-		ROM_LOAD( "rom9.cpu",     0x0000, 0x1000, 0x5d05d1a0 )
-		ROM_LOAD( "rom10.cpu",    0x1000, 0x1000, 0x7a28005b )
+		ROM_REGION( 0x10000, REGION_CPU2, 0 );    /* 64k for audio CPU */
+		ROM_LOAD( "rom9.cpu",     0x0000, 0x1000, 0x5d05d1a0 );
+		ROM_LOAD( "rom10.cpu",    0x1000, 0x1000, 0x7a28005b );
 	
-		ROM_REGION( 0x6000, REGION_GFX1, ROMREGION_DISPOSE )
-		ROM_LOAD( "rom14.rom",    0x0000, 0x1000, 0xaeb07260 )
-		ROM_LOAD( "rom17.rom",    0x1000, 0x1000, 0xa834325b )
-		ROM_LOAD( "rom15.rom",    0x2000, 0x1000, 0xc10c7ce2 )
-		ROM_LOAD( "rom18.rom",    0x3000, 0x1000, 0x2f196c80 )
-		ROM_LOAD( "rom16.rom",    0x4000, 0x1000, 0x719246b1 )
-		ROM_LOAD( "rom19.rom",    0x5000, 0x1000, 0x00c1c5d2 )
+		ROM_REGION( 0x6000, REGION_GFX1, ROMREGION_DISPOSE );
+		ROM_LOAD( "rom14.rom",    0x0000, 0x1000, 0xaeb07260 );
+		ROM_LOAD( "rom17.rom",    0x1000, 0x1000, 0xa834325b );
+		ROM_LOAD( "rom15.rom",    0x2000, 0x1000, 0xc10c7ce2 );
+		ROM_LOAD( "rom18.rom",    0x3000, 0x1000, 0x2f196c80 );
+		ROM_LOAD( "rom16.rom",    0x4000, 0x1000, 0x719246b1 );
+		ROM_LOAD( "rom19.rom",    0x5000, 0x1000, 0x00c1c5d2 );
 	
-		ROM_REGION( 0x3000, REGION_GFX2, ROMREGION_DISPOSE )
-		ROM_LOAD( "rom11.rom",    0x0000, 0x1000, 0xee7ec342 )
-		ROM_LOAD( "rom12.rom",    0x1000, 0x1000, 0x84d03124 )
-		ROM_LOAD( "rom13.rom",    0x2000, 0x1000, 0xfcb33ff4 )
+		ROM_REGION( 0x3000, REGION_GFX2, ROMREGION_DISPOSE );
+		ROM_LOAD( "rom11.rom",    0x0000, 0x1000, 0xee7ec342 );
+		ROM_LOAD( "rom12.rom",    0x1000, 0x1000, 0x84d03124 );
+		ROM_LOAD( "rom13.rom",    0x2000, 0x1000, 0xfcb33ff4 );
 	
-		ROM_REGION( 0x0300, REGION_PROMS, 0 )
-		ROM_LOAD( "flyboy.red",   0x0000, 0x0100, 0xb801e294 )
-		ROM_LOAD( "flyboy.grn",   0x0100, 0x0100, 0x7da063d0 )
-		ROM_LOAD( "flyboy.blu",   0x0200, 0x0100, 0x85c05c18 )
-	ROM_END
+		ROM_REGION( 0x0300, REGION_PROMS, 0 );
+		ROM_LOAD( "flyboy.red",   0x0000, 0x0100, 0xb801e294 );
+		ROM_LOAD( "flyboy.grn",   0x0100, 0x0100, 0x7da063d0 );
+		ROM_LOAD( "flyboy.blu",   0x0200, 0x0100, 0x85c05c18 );
+	ROM_END(); }}; 
 	
-	ROM_START( flyboyb )
-		ROM_REGION( 0x10000, REGION_CPU1, 0 )     /* 64k for main CPU */
-		ROM_LOAD( "rom1.cpu",     0x0000, 0x1000, 0xe9e1f527 )
-		ROM_LOAD( "rom2.cpu",     0x1000, 0x1000, 0x07fbe78c )
-		ROM_LOAD( "rom3.cpu",     0x2000, 0x1000, 0xd2f8f085 )
-		ROM_LOAD( "rom4.cpu",     0x3000, 0x1000, 0x19e5e15c )
-		ROM_LOAD( "rom5.cpu",     0x4000, 0x1000, 0xd56872ea )
-		ROM_LOAD( "rom6.cpu",     0x5000, 0x1000, 0xf5464c72 )
-		ROM_LOAD( "rom7.cpu",     0x6000, 0x1000, 0x50a1baff )
-		ROM_LOAD( "rom8.cpu",     0x7000, 0x1000, 0xfe2ae95d )
+	static RomLoadPtr rom_flyboyb = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x10000, REGION_CPU1, 0 );    /* 64k for main CPU */
+		ROM_LOAD( "rom1.cpu",     0x0000, 0x1000, 0xe9e1f527 );
+		ROM_LOAD( "rom2.cpu",     0x1000, 0x1000, 0x07fbe78c );
+		ROM_LOAD( "rom3.cpu",     0x2000, 0x1000, 0xd2f8f085 );
+		ROM_LOAD( "rom4.cpu",     0x3000, 0x1000, 0x19e5e15c );
+		ROM_LOAD( "rom5.cpu",     0x4000, 0x1000, 0xd56872ea );
+		ROM_LOAD( "rom6.cpu",     0x5000, 0x1000, 0xf5464c72 );
+		ROM_LOAD( "rom7.cpu",     0x6000, 0x1000, 0x50a1baff );
+		ROM_LOAD( "rom8.cpu",     0x7000, 0x1000, 0xfe2ae95d );
 	
-		ROM_REGION( 0x10000, REGION_CPU2, 0 )     /* 64k for audio CPU */
-		ROM_LOAD( "rom9.cpu",     0x0000, 0x1000, 0x5d05d1a0 )
-		ROM_LOAD( "rom10.cpu",    0x1000, 0x1000, 0x7a28005b )
+		ROM_REGION( 0x10000, REGION_CPU2, 0 );    /* 64k for audio CPU */
+		ROM_LOAD( "rom9.cpu",     0x0000, 0x1000, 0x5d05d1a0 );
+		ROM_LOAD( "rom10.cpu",    0x1000, 0x1000, 0x7a28005b );
 	
-		ROM_REGION( 0x6000, REGION_GFX1, ROMREGION_DISPOSE )
-		ROM_LOAD( "rom14.rom",    0x0000, 0x1000, 0xaeb07260 )
-		ROM_LOAD( "rom17.rom",    0x1000, 0x1000, 0xa834325b )
-		ROM_LOAD( "rom15.rom",    0x2000, 0x1000, 0xc10c7ce2 )
-		ROM_LOAD( "rom18.rom",    0x3000, 0x1000, 0x2f196c80 )
-		ROM_LOAD( "rom16.rom",    0x4000, 0x1000, 0x719246b1 )
-		ROM_LOAD( "rom19.rom",    0x5000, 0x1000, 0x00c1c5d2 )
+		ROM_REGION( 0x6000, REGION_GFX1, ROMREGION_DISPOSE );
+		ROM_LOAD( "rom14.rom",    0x0000, 0x1000, 0xaeb07260 );
+		ROM_LOAD( "rom17.rom",    0x1000, 0x1000, 0xa834325b );
+		ROM_LOAD( "rom15.rom",    0x2000, 0x1000, 0xc10c7ce2 );
+		ROM_LOAD( "rom18.rom",    0x3000, 0x1000, 0x2f196c80 );
+		ROM_LOAD( "rom16.rom",    0x4000, 0x1000, 0x719246b1 );
+		ROM_LOAD( "rom19.rom",    0x5000, 0x1000, 0x00c1c5d2 );
 	
-		ROM_REGION( 0x3000, REGION_GFX2, ROMREGION_DISPOSE )
-		ROM_LOAD( "rom11.rom",    0x0000, 0x1000, 0xee7ec342 )
-		ROM_LOAD( "rom12.rom",    0x1000, 0x1000, 0x84d03124 )
-		ROM_LOAD( "rom13.rom",    0x2000, 0x1000, 0xfcb33ff4 )
+		ROM_REGION( 0x3000, REGION_GFX2, ROMREGION_DISPOSE );
+		ROM_LOAD( "rom11.rom",    0x0000, 0x1000, 0xee7ec342 );
+		ROM_LOAD( "rom12.rom",    0x1000, 0x1000, 0x84d03124 );
+		ROM_LOAD( "rom13.rom",    0x2000, 0x1000, 0xfcb33ff4 );
 	
-		ROM_REGION( 0x0300, REGION_PROMS, 0 )
-		ROM_LOAD( "flyboy.red",   0x0000, 0x0100, 0xb801e294 )
-		ROM_LOAD( "flyboy.grn",   0x0100, 0x0100, 0x7da063d0 )
-		ROM_LOAD( "flyboy.blu",   0x0200, 0x0100, 0x85c05c18 )
-	ROM_END
+		ROM_REGION( 0x0300, REGION_PROMS, 0 );
+		ROM_LOAD( "flyboy.red",   0x0000, 0x0100, 0xb801e294 );
+		ROM_LOAD( "flyboy.grn",   0x0100, 0x0100, 0x7da063d0 );
+		ROM_LOAD( "flyboy.blu",   0x0200, 0x0100, 0x85c05c18 );
+	ROM_END(); }}; 
 	
-	ROM_START( jumpcoas )
-		ROM_REGION( 0x10000, REGION_CPU1, 0 )     /* 64k for code */
-		ROM_LOAD( "jumpcoas.001", 0x0000, 0x2000, 0x0778c953 )
-		ROM_LOAD( "jumpcoas.002", 0x2000, 0x2000, 0x57f59ce1 )
-		ROM_LOAD( "jumpcoas.003", 0x4000, 0x2000, 0xd9fc93be )
-		ROM_LOAD( "jumpcoas.004", 0x6000, 0x2000, 0xdc108fc1 )
+	static RomLoadPtr rom_jumpcoas = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x10000, REGION_CPU1, 0 );    /* 64k for code */
+		ROM_LOAD( "jumpcoas.001", 0x0000, 0x2000, 0x0778c953 );
+		ROM_LOAD( "jumpcoas.002", 0x2000, 0x2000, 0x57f59ce1 );
+		ROM_LOAD( "jumpcoas.003", 0x4000, 0x2000, 0xd9fc93be );
+		ROM_LOAD( "jumpcoas.004", 0x6000, 0x2000, 0xdc108fc1 );
 	
-		ROM_REGION( 0x3000, REGION_GFX1, ROMREGION_DISPOSE )
-		ROM_LOAD( "jumpcoas.005", 0x0000, 0x1000, 0x2dce6b07 )
-		ROM_LOAD( "jumpcoas.006", 0x1000, 0x1000, 0x0d24aa1b )
-		ROM_LOAD( "jumpcoas.007", 0x2000, 0x1000, 0x14c21e67 )
+		ROM_REGION( 0x3000, REGION_GFX1, ROMREGION_DISPOSE );
+		ROM_LOAD( "jumpcoas.005", 0x0000, 0x1000, 0x2dce6b07 );
+		ROM_LOAD( "jumpcoas.006", 0x1000, 0x1000, 0x0d24aa1b );
+		ROM_LOAD( "jumpcoas.007", 0x2000, 0x1000, 0x14c21e67 );
 	
-		ROM_REGION( 0x0300, REGION_PROMS, 0 )
-		ROM_LOAD( "jumpcoas.red", 0x0000, 0x0100, 0x13714880 )
-		ROM_LOAD( "jumpcoas.gre", 0x0100, 0x0100, 0x05354848 )
-		ROM_LOAD( "jumpcoas.blu", 0x0200, 0x0100, 0xf4662db7 )
-	ROM_END
+		ROM_REGION( 0x0300, REGION_PROMS, 0 );
+		ROM_LOAD( "jumpcoas.red", 0x0000, 0x0100, 0x13714880 );
+		ROM_LOAD( "jumpcoas.gre", 0x0100, 0x0100, 0x05354848 );
+		ROM_LOAD( "jumpcoas.blu", 0x0200, 0x0100, 0xf4662db7 );
+	ROM_END(); }}; 
 	
 	
 	static void init_fastfred(void)

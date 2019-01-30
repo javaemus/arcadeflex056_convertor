@@ -268,25 +268,25 @@ public class zac2650
 	    /* c4 = hit saucer */
 	}
 	
-	ROM_START( sia2650 )
-		ROM_REGION( 0x2000, REGION_CPU1, 0 )
-		ROM_LOAD( "42_1.bin",   0x0000, 0x0800, 0xa85550a9 )
-		ROM_LOAD( "44_2.bin",   0x0800, 0x0800, 0x48d5a3ed )
-		ROM_LOAD( "46_3.bin",   0x1000, 0x0800, 0xd766e784 )
+	static RomLoadPtr rom_sia2650 = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x2000, REGION_CPU1, 0 );
+		ROM_LOAD( "42_1.bin",   0x0000, 0x0800, 0xa85550a9 );
+		ROM_LOAD( "44_2.bin",   0x0800, 0x0800, 0x48d5a3ed );
+		ROM_LOAD( "46_3.bin",   0x1000, 0x0800, 0xd766e784 );
 	
-		ROM_REGION( 0x400, REGION_GFX1, ROMREGION_DISPOSE )
-		ROM_LOAD( "06_inv.bin", 0x0000, 0x0400, 0x7bfed23e )
-	ROM_END
+		ROM_REGION( 0x400, REGION_GFX1, ROMREGION_DISPOSE );
+		ROM_LOAD( "06_inv.bin", 0x0000, 0x0400, 0x7bfed23e );
+	ROM_END(); }}; 
 	
-	ROM_START( tinv2650 )
-		ROM_REGION( 0x2000, REGION_CPU1, 0 )
-		ROM_LOAD( "42_1.bin",   0x0000, 0x0800, 0xa85550a9 )
-		ROM_LOAD( "44_2t.bin",  0x0800, 0x0800, 0x083c8621 )
-		ROM_LOAD( "46_3t.bin",  0x1000, 0x0800, 0x12c0934f )
+	static RomLoadPtr rom_tinv2650 = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x2000, REGION_CPU1, 0 );
+		ROM_LOAD( "42_1.bin",   0x0000, 0x0800, 0xa85550a9 );
+		ROM_LOAD( "44_2t.bin",  0x0800, 0x0800, 0x083c8621 );
+		ROM_LOAD( "46_3t.bin",  0x1000, 0x0800, 0x12c0934f );
 	
-		ROM_REGION( 0x400, REGION_GFX1, ROMREGION_DISPOSE )
-		ROM_LOAD( "06_inv.bin", 0x0000, 0x0400, 0x7bfed23e )
-	ROM_END
+		ROM_REGION( 0x400, REGION_GFX1, ROMREGION_DISPOSE );
+		ROM_LOAD( "06_inv.bin", 0x0000, 0x0400, 0x7bfed23e );
+	ROM_END(); }}; 
 	
 	/*
 	 * Embargo
@@ -344,17 +344,17 @@ public class zac2650
 		0,0,0,0,
 	};
 	
-	ROM_START( embargo )
-		ROM_REGION( 0x8000, REGION_CPU1, 0 )
-		ROM_LOAD( "emb1", 0x0000, 0x0200, 0x00dcbc24 )
-		ROM_LOAD( "emb2", 0x0200, 0x0200, 0xe7069b11 )
-		ROM_LOAD( "emb3", 0x0400, 0x0200, 0x1af7a966 )
-		ROM_LOAD( "emb4", 0x0600, 0x0200, 0xd9c75da0 )
-		ROM_LOAD( "emb5", 0x0800, 0x0200, 0x15960b58 )
-		ROM_LOAD( "emb6", 0x0A00, 0x0200, 0x7ba23058 )
-		ROM_LOAD( "emb7", 0x0C00, 0x0200, 0x6d46a593 )
-		ROM_LOAD( "emb8", 0x0E00, 0x0200, 0xf0b00634 )
-	ROM_END
+	static RomLoadPtr rom_embargo = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x8000, REGION_CPU1, 0 );
+		ROM_LOAD( "emb1", 0x0000, 0x0200, 0x00dcbc24 );
+		ROM_LOAD( "emb2", 0x0200, 0x0200, 0xe7069b11 );
+		ROM_LOAD( "emb3", 0x0400, 0x0200, 0x1af7a966 );
+		ROM_LOAD( "emb4", 0x0600, 0x0200, 0xd9c75da0 );
+		ROM_LOAD( "emb5", 0x0800, 0x0200, 0x15960b58 );
+		ROM_LOAD( "emb6", 0x0A00, 0x0200, 0x7ba23058 );
+		ROM_LOAD( "emb7", 0x0C00, 0x0200, 0x6d46a593 );
+		ROM_LOAD( "emb8", 0x0E00, 0x0200, 0xf0b00634 );
+	ROM_END(); }}; 
 	
 	
 	GAMEX( 19??, sia2650,  0,       tinvader, sinvader, 0,      ROT270, "Zaccaria/Zelco", "Super Invader Attack", GAME_NO_SOUND )

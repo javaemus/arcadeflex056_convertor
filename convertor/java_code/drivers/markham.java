@@ -280,33 +280,33 @@ public class markham
 	
 	/****************************************************************************/
 	
-	ROM_START( markham )
-		ROM_REGION( 0x10000, REGION_CPU1, 0 ) /* main CPU */
-		ROM_LOAD( "tv3.9",   0x0000,  0x2000, 0x59391637 )
-		ROM_LOAD( "tvg4.10", 0x2000,  0x2000, 0x1837bcce )
-		ROM_LOAD( "tvg5.11", 0x4000,  0x2000, 0x651da602 )
+	static RomLoadPtr rom_markham = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x10000, REGION_CPU1, 0 );/* main CPU */
+		ROM_LOAD( "tv3.9",   0x0000,  0x2000, 0x59391637 );
+		ROM_LOAD( "tvg4.10", 0x2000,  0x2000, 0x1837bcce );
+		ROM_LOAD( "tvg5.11", 0x4000,  0x2000, 0x651da602 );
 	
-		ROM_REGION( 0x10000, REGION_CPU2, 0 ) /* sub CPU */
-		ROM_LOAD( "tvg1.5",  0x0000,  0x2000, 0xc5299766 )
-		ROM_LOAD( "tvg2.6",  0x4000,  0x2000, 0xb216300a )
+		ROM_REGION( 0x10000, REGION_CPU2, 0 );/* sub CPU */
+		ROM_LOAD( "tvg1.5",  0x0000,  0x2000, 0xc5299766 );
+		ROM_LOAD( "tvg2.6",  0x4000,  0x2000, 0xb216300a );
 	
-		ROM_REGION( 0x6000, REGION_GFX1, ROMREGION_DISPOSE ) /* sprite */
-		ROM_LOAD( "tvg6.84", 0x0000,  0x2000, 0xab933ae5 )
-		ROM_LOAD( "tvg7.85", 0x2000,  0x2000, 0xce8edda7 )
-		ROM_LOAD( "tvg8.86", 0x4000,  0x2000, 0x74d1536a )
+		ROM_REGION( 0x6000, REGION_GFX1, ROMREGION_DISPOSE );/* sprite */
+		ROM_LOAD( "tvg6.84", 0x0000,  0x2000, 0xab933ae5 );
+		ROM_LOAD( "tvg7.85", 0x2000,  0x2000, 0xce8edda7 );
+		ROM_LOAD( "tvg8.86", 0x4000,  0x2000, 0x74d1536a );
 	
-		ROM_REGION( 0x6000, REGION_GFX2, ROMREGION_DISPOSE ) /* bg */
-		ROM_LOAD( "tvg9.87",  0x0000,  0x2000, 0x42168675 )
-		ROM_LOAD( "tvg10.88", 0x2000,  0x2000, 0xfa9feb67 )
-		ROM_LOAD( "tvg11.89", 0x4000,  0x2000, 0x71f3dd49 )
+		ROM_REGION( 0x6000, REGION_GFX2, ROMREGION_DISPOSE );/* bg */
+		ROM_LOAD( "tvg9.87",  0x0000,  0x2000, 0x42168675 );
+		ROM_LOAD( "tvg10.88", 0x2000,  0x2000, 0xfa9feb67 );
+		ROM_LOAD( "tvg11.89", 0x4000,  0x2000, 0x71f3dd49 );
 	
-		ROM_REGION( 0x0700, REGION_PROMS, 0 ) /* color PROMs */
-		ROM_LOAD( "14-3.99",  0x0000,  0x0100, 0x89d09126 ) /* R */
-		ROM_LOAD( "14-4.100", 0x0100,  0x0100, 0xe1cafe6c ) /* G */
-		ROM_LOAD( "14-5.101", 0x0200,  0x0100, 0x2d444fa6 ) /* B */
-		ROM_LOAD( "14-1.61",  0x0300,  0x0200, 0x3ad8306d ) /* sprite */
-		ROM_LOAD( "14-2.115", 0x0500,  0x0200, 0x12a4f1ff ) /* bg */
-	ROM_END
+		ROM_REGION( 0x0700, REGION_PROMS, 0 );/* color PROMs */
+		ROM_LOAD( "14-3.99",  0x0000,  0x0100, 0x89d09126 );/* R */
+		ROM_LOAD( "14-4.100", 0x0100,  0x0100, 0xe1cafe6c );/* G */
+		ROM_LOAD( "14-5.101", 0x0200,  0x0100, 0x2d444fa6 );/* B */
+		ROM_LOAD( "14-1.61",  0x0300,  0x0200, 0x3ad8306d );/* sprite */
+		ROM_LOAD( "14-2.115", 0x0500,  0x0200, 0x12a4f1ff );/* bg */
+	ROM_END(); }}; 
 	
 	
 	GAME( 1983, markham, 0, markham, markham, 0, ROT0, "Sun Electronics", "Markham" )

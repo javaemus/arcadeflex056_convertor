@@ -519,413 +519,413 @@ public class decocass
 	MACHINE_DRIVER_DECOCASS( cscrtry );
 	
 	#define DECOCASS_COMMON_ROMS	\
-		ROM_REGION( 2*0x10000, REGION_CPU1, 0 ) /* 64k for code + 64k for decrypted opcodes */ \
-		ROM_LOAD( "rms8.cpu",     0xf000, 0x1000, 0x23d929b7 ) \
+		ROM_REGION( 2*0x10000, REGION_CPU1, 0 );/* 64k for code + 64k for decrypted opcodes */ \
+		ROM_LOAD( "rms8.cpu",     0xf000, 0x1000, 0x23d929b7 );\
 	/* the following two are just about the same stuff as the one above */ \
-	/*	ROM_LOAD( "dsp3.p0b",     0xf000, 0x0800, 0xb67a91d9 ) */ \
-	/*	ROM_LOAD( "dsp3.p1b",     0xf800, 0x0800, 0x3bfff5f3 ) */ \
+	/*	ROM_LOAD( "dsp3.p0b",     0xf000, 0x0800, 0xb67a91d9 );*/ \
+	/*	ROM_LOAD( "dsp3.p1b",     0xf800, 0x0800, 0x3bfff5f3 );*/ \
 	\
-		ROM_REGION( 0x10000, REGION_CPU2, 0 )	  /* 64k for the audio CPU */ \
-		ROM_LOAD( "rms8.snd",     0xf800, 0x0800, 0xb66b2c2a ) \
+		ROM_REGION( 0x10000, REGION_CPU2, 0 );  /* 64k for the audio CPU */ \
+		ROM_LOAD( "rms8.snd",     0xf800, 0x0800, 0xb66b2c2a );\
 	\
-		ROM_REGION( 0x01000, REGION_CPU3, 0 )	  /* 4k for the MCU (actually 1K ROM + 64 bytes RAM @ 0x800) */ \
-		ROM_LOAD( "cass8041.bin", 0x0000, 0x0400, 0xa6df18fd ) \
+		ROM_REGION( 0x01000, REGION_CPU3, 0 );  /* 4k for the MCU (actually 1K ROM + 64 bytes RAM @ 0x800) */ \
+		ROM_LOAD( "cass8041.bin", 0x0000, 0x0400, 0xa6df18fd );\
 	\
-		ROM_REGION( 0x00060, REGION_PROMS, 0 )	  /* PROMS */ \
-		ROM_LOAD( "dsp8.3m",      0x0000, 0x0020, 0x238fdb40 ) \
-		ROM_LOAD( "dsp8.10d",     0x0020, 0x0020, 0x3b5836b4 ) \
-		ROM_LOAD( "rms8.j3",      0x0040, 0x0020, 0x51eef657 ) /* DRAM banking and timing */ \
+		ROM_REGION( 0x00060, REGION_PROMS, 0 );  /* PROMS */ \
+		ROM_LOAD( "dsp8.3m",      0x0000, 0x0020, 0x238fdb40 );\
+		ROM_LOAD( "dsp8.10d",     0x0020, 0x0020, 0x3b5836b4 );\
+		ROM_LOAD( "rms8.j3",      0x0040, 0x0020, 0x51eef657 );/* DRAM banking and timing */ \
 	
 	
-	ROM_START( decocass )
+	static RomLoadPtr rom_decocass = new RomLoadPtr(){ public void handler(){ 
 		DECOCASS_COMMON_ROMS
 	
-	ROM_END
+	ROM_END(); }}; 
 	
 	/* The Following use Dongle Type 1 (DE-0061)
 	    (dongle data same for each game)		 */
 	
-	ROM_START( ctsttape )
+	static RomLoadPtr rom_ctsttape = new RomLoadPtr(){ public void handler(){ 
 		DECOCASS_COMMON_ROMS
 	
-		ROM_REGION( 0x00020, REGION_USER1, 0 )	  /* dongle data */
-		ROM_LOAD( "de-0061.pro", 0x0000, 0x0020, 0xe09ae5de )
+		ROM_REGION( 0x00020, REGION_USER1, 0 );  /* dongle data */
+		ROM_LOAD( "de-0061.pro", 0x0000, 0x0020, 0xe09ae5de );
 	
-		ROM_REGION( 0x10000, REGION_USER2, 0 )	  /* (max) 64k for cassette image */
-		ROM_LOAD( "testtape.cas", 0x0000, 0x2000, 0x4f9d8efb )
-	ROM_END
+		ROM_REGION( 0x10000, REGION_USER2, 0 );  /* (max) 64k for cassette image */
+		ROM_LOAD( "testtape.cas", 0x0000, 0x2000, 0x4f9d8efb );
+	ROM_END(); }}; 
 	
-	ROM_START( clocknch )
+	static RomLoadPtr rom_clocknch = new RomLoadPtr(){ public void handler(){ 
 		DECOCASS_COMMON_ROMS
 	
-		ROM_REGION( 0x00020, REGION_USER1, 0 )	  /* dongle data */
-		ROM_LOAD( "de-0061.pro", 0x0000, 0x0020, 0xe09ae5de )
+		ROM_REGION( 0x00020, REGION_USER1, 0 );  /* dongle data */
+		ROM_LOAD( "de-0061.pro", 0x0000, 0x0020, 0xe09ae5de );
 	
-		ROM_REGION( 0x10000, REGION_USER2, 0 )	  /* (max) 64k for cassette image */
-		ROM_LOAD( "clocknch.cas", 0x0000, 0x8000, 0xc9d163a4 )
-	ROM_END
+		ROM_REGION( 0x10000, REGION_USER2, 0 );  /* (max) 64k for cassette image */
+		ROM_LOAD( "clocknch.cas", 0x0000, 0x8000, 0xc9d163a4 );
+	ROM_END(); }}; 
 	
-	ROM_START( ctisland )
+	static RomLoadPtr rom_ctisland = new RomLoadPtr(){ public void handler(){ 
 		DECOCASS_COMMON_ROMS
 	
-		ROM_REGION( 0x00020, REGION_USER1, 0 )	  /* dongle data */
-		ROM_LOAD( "de-0061.pro", 0x0000, 0x0020, 0xe09ae5de )
+		ROM_REGION( 0x00020, REGION_USER1, 0 );  /* dongle data */
+		ROM_LOAD( "de-0061.pro", 0x0000, 0x0020, 0xe09ae5de );
 	
-		ROM_REGION( 0x10000, REGION_USER2, 0 )	  /* (max) 64k for cassette image */
-		ROM_LOAD( "ctisland.cas", 0x0000, 0x8000, 0x3f63b8f8 )
-	ROM_END
+		ROM_REGION( 0x10000, REGION_USER2, 0 );  /* (max) 64k for cassette image */
+		ROM_LOAD( "ctisland.cas", 0x0000, 0x8000, 0x3f63b8f8 );
+	ROM_END(); }}; 
 	
-	ROM_START( ctislnd2 )
+	static RomLoadPtr rom_ctislnd2 = new RomLoadPtr(){ public void handler(){ 
 		DECOCASS_COMMON_ROMS
 	
-		ROM_REGION( 0x00020, REGION_USER1, 0 )	  /* dongle data */
-		ROM_LOAD( "de-0061.pro", 0x0000, 0x0020, 0xe09ae5de )
+		ROM_REGION( 0x00020, REGION_USER1, 0 );  /* dongle data */
+		ROM_LOAD( "de-0061.pro", 0x0000, 0x0020, 0xe09ae5de );
 	
-		ROM_REGION( 0x10000, REGION_USER2, 0 )	  /* (max) 64k for cassette image */
-		ROM_LOAD( "ctislnd3.cas", 0x0000, 0x8000, 0x2854b4c0 )
-	ROM_END
+		ROM_REGION( 0x10000, REGION_USER2, 0 );  /* (max) 64k for cassette image */
+		ROM_LOAD( "ctislnd3.cas", 0x0000, 0x8000, 0x2854b4c0 );
+	ROM_END(); }}; 
 	
-	ROM_START( ctislnd3 )
+	static RomLoadPtr rom_ctislnd3 = new RomLoadPtr(){ public void handler(){ 
 		DECOCASS_COMMON_ROMS
 	
-		ROM_REGION( 0x00020, REGION_USER1, 0 )	  /* dongle data */
-		ROM_LOAD( "de-0061.pro", 0x0000, 0x0020, 0xe09ae5de )
+		ROM_REGION( 0x00020, REGION_USER1, 0 );  /* dongle data */
+		ROM_LOAD( "de-0061.pro", 0x0000, 0x0020, 0xe09ae5de );
 	
-		ROM_REGION( 0x10000, REGION_USER2, 0 )	  /* (max) 64k for cassette image */
-		ROM_LOAD( "ctislnd2.cas", 0x0000, 0x8000, 0x45464e1e )
-	ROM_END
+		ROM_REGION( 0x10000, REGION_USER2, 0 );  /* (max) 64k for cassette image */
+		ROM_LOAD( "ctislnd2.cas", 0x0000, 0x8000, 0x45464e1e );
+	ROM_END(); }}; 
 	
-	ROM_START( csuperas )
+	static RomLoadPtr rom_csuperas = new RomLoadPtr(){ public void handler(){ 
 		DECOCASS_COMMON_ROMS
 	
-		ROM_REGION( 0x00020, REGION_USER1, 0 )	  /* dongle data */
-		ROM_LOAD( "de-0061.pro", 0x0000, 0x0020, 0xe09ae5de )
+		ROM_REGION( 0x00020, REGION_USER1, 0 );  /* dongle data */
+		ROM_LOAD( "de-0061.pro", 0x0000, 0x0020, 0xe09ae5de );
 	
-		ROM_REGION( 0x10000, REGION_USER2, 0 )	  /* (max) 64k for cassette image */
-		ROM_LOAD( "csuperas.cas", 0x0000, 0x8000, 0xfabcd07f )
-	ROM_END
+		ROM_REGION( 0x10000, REGION_USER2, 0 );  /* (max) 64k for cassette image */
+		ROM_LOAD( "csuperas.cas", 0x0000, 0x8000, 0xfabcd07f );
+	ROM_END(); }}; 
 	
-	ROM_START( castfant )
+	static RomLoadPtr rom_castfant = new RomLoadPtr(){ public void handler(){ 
 		DECOCASS_COMMON_ROMS
 	
-		ROM_REGION( 0x00020, REGION_USER1, 0 )	  /* dongle data */
-		ROM_LOAD( "de-0061.pro", 0x0000, 0x0020, 0xe09ae5de )
+		ROM_REGION( 0x00020, REGION_USER1, 0 );  /* dongle data */
+		ROM_LOAD( "de-0061.pro", 0x0000, 0x0020, 0xe09ae5de );
 	
-		ROM_REGION( 0x10000, REGION_USER2, 0 )	  /* (max) 64k for cassette image */
-		ROM_LOAD( "castfant.cas", 0x0000, 0x8000, 0x6d77d1b5 )
-	ROM_END
+		ROM_REGION( 0x10000, REGION_USER2, 0 );  /* (max) 64k for cassette image */
+		ROM_LOAD( "castfant.cas", 0x0000, 0x8000, 0x6d77d1b5 );
+	ROM_END(); }}; 
 	
-	ROM_START( cluckypo )
+	static RomLoadPtr rom_cluckypo = new RomLoadPtr(){ public void handler(){ 
 		DECOCASS_COMMON_ROMS
 	
-		ROM_REGION( 0x00020, REGION_USER1, 0 )	  /* dongle data */
-		ROM_LOAD( "de-0061.pro", 0x0000, 0x0020, 0xe09ae5de )
+		ROM_REGION( 0x00020, REGION_USER1, 0 );  /* dongle data */
+		ROM_LOAD( "de-0061.pro", 0x0000, 0x0020, 0xe09ae5de );
 	
-		ROM_REGION( 0x10000, REGION_USER2, 0 )	  /* (max) 64k for cassette image */
-		ROM_LOAD( "cluckypo.cas", 0x0000, 0x8000, 0x2070c243 )
-	ROM_END
+		ROM_REGION( 0x10000, REGION_USER2, 0 );  /* (max) 64k for cassette image */
+		ROM_LOAD( "cluckypo.cas", 0x0000, 0x8000, 0x2070c243 );
+	ROM_END(); }}; 
 	
-	ROM_START( cterrani )
+	static RomLoadPtr rom_cterrani = new RomLoadPtr(){ public void handler(){ 
 		DECOCASS_COMMON_ROMS
 	
-		ROM_REGION( 0x00020, REGION_USER1, 0 )	  /* dongle data */
-		ROM_LOAD( "de-0061.pro", 0x0000, 0x0020, 0xe09ae5de )
+		ROM_REGION( 0x00020, REGION_USER1, 0 );  /* dongle data */
+		ROM_LOAD( "de-0061.pro", 0x0000, 0x0020, 0xe09ae5de );
 	
-		ROM_REGION( 0x10000, REGION_USER2, 0 )	  /* (max) 64k for cassette image */
-		ROM_LOAD( "cterrani.cas", 0x0000, 0x8000, 0xeb71adbc )
-	ROM_END
+		ROM_REGION( 0x10000, REGION_USER2, 0 );  /* (max) 64k for cassette image */
+		ROM_LOAD( "cterrani.cas", 0x0000, 0x8000, 0xeb71adbc );
+	ROM_END(); }}; 
 	
-	ROM_START( cexplore )
+	static RomLoadPtr rom_cexplore = new RomLoadPtr(){ public void handler(){ 
 		DECOCASS_COMMON_ROMS
 	
-		ROM_REGION( 0x00020, REGION_USER1, 0 )	  /* dongle data */
-		ROM_LOAD( "de-0061.pro", 0x0000, 0x0020, 0xe09ae5de )
+		ROM_REGION( 0x00020, REGION_USER1, 0 );  /* dongle data */
+		ROM_LOAD( "de-0061.pro", 0x0000, 0x0020, 0xe09ae5de );
 	
-		ROM_REGION( 0x10000, REGION_USER2, 0 )	  /* (max) 64k for cassette image */
-		ROM_LOAD( "cexplore.cas", 0x0000, 0x8000, 0xfae49c66 )
-	ROM_END
+		ROM_REGION( 0x10000, REGION_USER2, 0 );  /* (max) 64k for cassette image */
+		ROM_LOAD( "cexplore.cas", 0x0000, 0x8000, 0xfae49c66 );
+	ROM_END(); }}; 
 	
-	ROM_START( cprogolf )
+	static RomLoadPtr rom_cprogolf = new RomLoadPtr(){ public void handler(){ 
 		DECOCASS_COMMON_ROMS
 	
-		ROM_REGION( 0x00020, REGION_USER1, 0 )	  /* dongle data */
-		ROM_LOAD( "de-0061.pro", 0x0000, 0x0020, 0xe09ae5de )
+		ROM_REGION( 0x00020, REGION_USER1, 0 );  /* dongle data */
+		ROM_LOAD( "de-0061.pro", 0x0000, 0x0020, 0xe09ae5de );
 	
-		ROM_REGION( 0x10000, REGION_USER2, 0 )	  /* (max) 64k for cassette image */
-		ROM_LOAD( "cprogolf.cas", 0x0000, 0x8000, 0x02123cd1 )
-	ROM_END
+		ROM_REGION( 0x10000, REGION_USER2, 0 );  /* (max) 64k for cassette image */
+		ROM_LOAD( "cprogolf.cas", 0x0000, 0x8000, 0x02123cd1 );
+	ROM_END(); }}; 
 	
 	/* The Following use Dongle Type 2 (CS82-007)
 	    (dongle data differs for each game)		 */
 	
-	ROM_START( cmissnx )
+	static RomLoadPtr rom_cmissnx = new RomLoadPtr(){ public void handler(){ 
 		DECOCASS_COMMON_ROMS
 	
-		ROM_REGION( 0x00800, REGION_USER1, 0 )	  /* dongle data */
-		ROM_LOAD( "cmissnx.pro",  0x0000, 0x0800, 0x8a41c071 )
+		ROM_REGION( 0x00800, REGION_USER1, 0 );  /* dongle data */
+		ROM_LOAD( "cmissnx.pro",  0x0000, 0x0800, 0x8a41c071 );
 	
-		ROM_REGION( 0x10000, REGION_USER2, 0 )	  /* (max) 64k for cassette image */
-		ROM_LOAD( "cmissnx.cas",  0x0000, 0x8000, 0x3a094e11 )
-	ROM_END
+		ROM_REGION( 0x10000, REGION_USER2, 0 );  /* (max) 64k for cassette image */
+		ROM_LOAD( "cmissnx.cas",  0x0000, 0x8000, 0x3a094e11 );
+	ROM_END(); }}; 
 	
-	ROM_START( cdiscon1 )
+	static RomLoadPtr rom_cdiscon1 = new RomLoadPtr(){ public void handler(){ 
 		DECOCASS_COMMON_ROMS
 	
-		ROM_REGION( 0x00800, REGION_USER1, 0 )	  /* dongle data */
-		ROM_LOAD( "cdiscon1.pro", 0x0000, 0x0800, 0x0f793fab )
+		ROM_REGION( 0x00800, REGION_USER1, 0 );  /* dongle data */
+		ROM_LOAD( "cdiscon1.pro", 0x0000, 0x0800, 0x0f793fab );
 	
-		ROM_REGION( 0x10000, REGION_USER2, 0 )	  /* (max) 64k for cassette image */
-		ROM_LOAD( "cdiscon1.cas", 0x0000, 0x8000, 0x1429a397 )
-	ROM_END
+		ROM_REGION( 0x10000, REGION_USER2, 0 );  /* (max) 64k for cassette image */
+		ROM_LOAD( "cdiscon1.cas", 0x0000, 0x8000, 0x1429a397 );
+	ROM_END(); }}; 
 	
-	ROM_START( csweetht )
+	static RomLoadPtr rom_csweetht = new RomLoadPtr(){ public void handler(){ 
 	 DECOCASS_COMMON_ROMS
 	
-	 ROM_REGION( 0x00800, REGION_USER1, 0 )   /* dongle data */
-	 ROM_LOAD( "cdiscon1.pro", 0x0000, 0x0800, 0x0f793fab )
+	 ROM_REGION( 0x00800, REGION_USER1, 0 );  /* dongle data */
+	 ROM_LOAD( "cdiscon1.pro", 0x0000, 0x0800, 0x0f793fab );
 	
-	 ROM_REGION( 0x10000, REGION_USER2, 0 )   /* (max) 64k for cassette image */
-	 ROM_LOAD( "csweetht.cas", 0x0000, 0x8000, 0x175ef706 )
-	ROM_END
+	 ROM_REGION( 0x10000, REGION_USER2, 0 );  /* (max) 64k for cassette image */
+	 ROM_LOAD( "csweetht.cas", 0x0000, 0x8000, 0x175ef706 );
+	ROM_END(); }}; 
 	
-	ROM_START( cptennis )
+	static RomLoadPtr rom_cptennis = new RomLoadPtr(){ public void handler(){ 
 		DECOCASS_COMMON_ROMS
 	
-		ROM_REGION( 0x00800, REGION_USER1, 0 )	  /* dongle data */
-		ROM_LOAD( "cptennis.pro", 0x0000, 0x0800, 0x59b8cede )
+		ROM_REGION( 0x00800, REGION_USER1, 0 );  /* dongle data */
+		ROM_LOAD( "cptennis.pro", 0x0000, 0x0800, 0x59b8cede );
 	
-		ROM_REGION( 0x10000, REGION_USER2, 0 )	  /* (max) 64k for cassette image */
-		ROM_LOAD( "cptennis.cas", 0x0000, 0x8000, 0x6bb257fe )
-	ROM_END
+		ROM_REGION( 0x10000, REGION_USER2, 0 );  /* (max) 64k for cassette image */
+		ROM_LOAD( "cptennis.cas", 0x0000, 0x8000, 0x6bb257fe );
+	ROM_END(); }}; 
 	
-	ROM_START( ctornado )
+	static RomLoadPtr rom_ctornado = new RomLoadPtr(){ public void handler(){ 
 		DECOCASS_COMMON_ROMS
 	
-		ROM_REGION( 0x00800, REGION_USER1, 0 )	  /* dongle data */
-		ROM_LOAD( "ctornado.pro", 0x0000, 0x0800, 0xc9a91697 )
+		ROM_REGION( 0x00800, REGION_USER1, 0 );  /* dongle data */
+		ROM_LOAD( "ctornado.pro", 0x0000, 0x0800, 0xc9a91697 );
 	
-		ROM_REGION( 0x10000, REGION_USER2, 0 )	  /* (max) 64k for cassette image */
-		ROM_LOAD( "ctornado.cas", 0x0000, 0x8000, 0xe4e36ce0 )
-	ROM_END
+		ROM_REGION( 0x10000, REGION_USER2, 0 );  /* (max) 64k for cassette image */
+		ROM_LOAD( "ctornado.cas", 0x0000, 0x8000, 0xe4e36ce0 );
+	ROM_END(); }}; 
 	
 	/* The Following use Dongle Type 3 (unknown part number?)
 	    (dongle data differs for each game)		 */
 	
-	ROM_START( cburnrub )
+	static RomLoadPtr rom_cburnrub = new RomLoadPtr(){ public void handler(){ 
 		DECOCASS_COMMON_ROMS
 	
-		ROM_REGION( 0x01000, REGION_USER1, 0 )	  /* dongle data */
-		ROM_LOAD( "cburnrub.pro",   0x0000, 0x1000, 0x9f396832 )
+		ROM_REGION( 0x01000, REGION_USER1, 0 );  /* dongle data */
+		ROM_LOAD( "cburnrub.pro",   0x0000, 0x1000, 0x9f396832 );
 	
-		ROM_REGION( 0x10000, REGION_USER2, 0 )	  /* (max) 64k for cassette image */
-		ROM_LOAD( "cburnrub.cas",   0x0000, 0x8000, 0x4528ac22 )
-	ROM_END
+		ROM_REGION( 0x10000, REGION_USER2, 0 );  /* (max) 64k for cassette image */
+		ROM_LOAD( "cburnrub.cas",   0x0000, 0x8000, 0x4528ac22 );
+	ROM_END(); }}; 
 	
-	ROM_START( cburnrb2 )
+	static RomLoadPtr rom_cburnrb2 = new RomLoadPtr(){ public void handler(){ 
 		DECOCASS_COMMON_ROMS
 	
-		ROM_REGION( 0x01000, REGION_USER1, 0 )	  /* dongle data */
-		ROM_LOAD( "cburnrub.pro",   0x0000, 0x1000, 0x9f396832 )
+		ROM_REGION( 0x01000, REGION_USER1, 0 );  /* dongle data */
+		ROM_LOAD( "cburnrub.pro",   0x0000, 0x1000, 0x9f396832 );
 	
-		ROM_REGION( 0x10000, REGION_USER2, 0 )	  /* (max) 64k for cassette image */
-		ROM_LOAD( "cburnrb2.cas",   0x0000, 0x8000, 0x84a9ed66 )
-	ROM_END
+		ROM_REGION( 0x10000, REGION_USER2, 0 );  /* (max) 64k for cassette image */
+		ROM_LOAD( "cburnrb2.cas",   0x0000, 0x8000, 0x84a9ed66 );
+	ROM_END(); }}; 
 	
-	ROM_START( cbnj )
+	static RomLoadPtr rom_cbnj = new RomLoadPtr(){ public void handler(){ 
 		DECOCASS_COMMON_ROMS
 	
-		ROM_REGION( 0x01000, REGION_USER1, 0 )	  /* dongle data */
-		ROM_LOAD( "cburnrub.pro",   0x0000, 0x1000, 0x9f396832 )
+		ROM_REGION( 0x01000, REGION_USER1, 0 );  /* dongle data */
+		ROM_LOAD( "cburnrub.pro",   0x0000, 0x1000, 0x9f396832 );
 	
-		ROM_REGION( 0x10000, REGION_USER2, 0 )	  /* (max) 64k for cassette image */
-		ROM_LOAD( "cbnj.cas",       0x0000, 0x8000, 0xeed41560 )
-	ROM_END
+		ROM_REGION( 0x10000, REGION_USER2, 0 );  /* (max) 64k for cassette image */
+		ROM_LOAD( "cbnj.cas",       0x0000, 0x8000, 0xeed41560 );
+	ROM_END(); }}; 
 	
-	ROM_START( cbtime )
+	static RomLoadPtr rom_cbtime = new RomLoadPtr(){ public void handler(){ 
 		DECOCASS_COMMON_ROMS
 	
-		ROM_REGION( 0x01000, REGION_USER1, 0 )	  /* dongle data */
-		ROM_LOAD( "cbtime.pro",   0x0000, 0x1000, 0x25bec0f0 )
+		ROM_REGION( 0x01000, REGION_USER1, 0 );  /* dongle data */
+		ROM_LOAD( "cbtime.pro",   0x0000, 0x1000, 0x25bec0f0 );
 	
-		ROM_REGION( 0x10000, REGION_USER2, 0 )	  /* (max) 64k for cassette image */
-		ROM_LOAD( "cbtime.cas",   0x0000, 0x8000, 0x56d7dc58 )
-	ROM_END
+		ROM_REGION( 0x10000, REGION_USER2, 0 );  /* (max) 64k for cassette image */
+		ROM_LOAD( "cbtime.cas",   0x0000, 0x8000, 0x56d7dc58 );
+	ROM_END(); }}; 
 	
-	ROM_START( cgraplop )
+	static RomLoadPtr rom_cgraplop = new RomLoadPtr(){ public void handler(){ 
 		DECOCASS_COMMON_ROMS
 	
-		ROM_REGION( 0x01000, REGION_USER1, 0 )	  /* dongle data */
-		ROM_LOAD( "cgraplop.pro", 0x0000, 0x1000, 0xee93787d )
+		ROM_REGION( 0x01000, REGION_USER1, 0 );  /* dongle data */
+		ROM_LOAD( "cgraplop.pro", 0x0000, 0x1000, 0xee93787d );
 	
-		ROM_REGION( 0x10000, REGION_USER2, 0 )	  /* (max) 64k for cassette image */
-		ROM_LOAD( "cgraplop.cas", 0x0000, 0x8000, 0xd2c1c1bb )
-	ROM_END
+		ROM_REGION( 0x10000, REGION_USER2, 0 );  /* (max) 64k for cassette image */
+		ROM_LOAD( "cgraplop.cas", 0x0000, 0x8000, 0xd2c1c1bb );
+	ROM_END(); }}; 
 	
-	ROM_START( cgraplp2 )
+	static RomLoadPtr rom_cgraplp2 = new RomLoadPtr(){ public void handler(){ 
 		DECOCASS_COMMON_ROMS
 	
-		ROM_REGION( 0x01000, REGION_USER1, 0 )	  /* dongle data */
-		ROM_LOAD( "cgraplop.pro", 0x0000, 0x1000, 0xee93787d ) /* is this right for this set? */
+		ROM_REGION( 0x01000, REGION_USER1, 0 );  /* dongle data */
+		ROM_LOAD( "cgraplop.pro", 0x0000, 0x1000, 0xee93787d );/* is this right for this set? */
 	
-		ROM_REGION( 0x10000, REGION_USER2, 0 )	  /* (max) 64k for cassette image */
-		ROM_LOAD( "cgraplp2.cas", 0x0000, 0x8000, 0x2e728981 )
-	ROM_END
+		ROM_REGION( 0x10000, REGION_USER2, 0 );  /* (max) 64k for cassette image */
+		ROM_LOAD( "cgraplp2.cas", 0x0000, 0x8000, 0x2e728981 );
+	ROM_END(); }}; 
 	
-	ROM_START( clapapa )
+	static RomLoadPtr rom_clapapa = new RomLoadPtr(){ public void handler(){ 
 		DECOCASS_COMMON_ROMS
 	
-		ROM_REGION( 0x01000, REGION_USER1, 0 )	  /* dongle data */
-		ROM_LOAD( "clapapa.pro",  0x0000, 0x1000, 0xe172819a )
+		ROM_REGION( 0x01000, REGION_USER1, 0 );  /* dongle data */
+		ROM_LOAD( "clapapa.pro",  0x0000, 0x1000, 0xe172819a );
 	
-		ROM_REGION( 0x10000, REGION_USER2, 0 )	  /* (max) 64k for cassette image */
-		ROM_LOAD( "clapapa.cas",  0x0000, 0x8000, 0x4ffbac24 )
-	ROM_END
+		ROM_REGION( 0x10000, REGION_USER2, 0 );  /* (max) 64k for cassette image */
+		ROM_LOAD( "clapapa.cas",  0x0000, 0x8000, 0x4ffbac24 );
+	ROM_END(); }}; 
 	
-	ROM_START( clapapa2 )
+	static RomLoadPtr rom_clapapa2 = new RomLoadPtr(){ public void handler(){ 
 	 DECOCASS_COMMON_ROMS
 	
-	 ROM_REGION( 0x01000, REGION_USER1, 0 )   /* dongle data */
-	 ROM_LOAD( "clapapa.pro",  0x0000, 0x1000, 0xe172819a )
+	 ROM_REGION( 0x01000, REGION_USER1, 0 );  /* dongle data */
+	 ROM_LOAD( "clapapa.pro",  0x0000, 0x1000, 0xe172819a );
 	
-	 ROM_REGION( 0x10000, REGION_USER2, 0 )   /* (max) 64k for cassette image */
-	 ROM_LOAD( "clapapa2.cas",  0x0000, 0x8000, 0x69dd3c4 )
-	ROM_END
+	 ROM_REGION( 0x10000, REGION_USER2, 0 );  /* (max) 64k for cassette image */
+	 ROM_LOAD( "clapapa2.cas",  0x0000, 0x8000, 0x69dd3c4 );
+	ROM_END(); }}; 
 	
-	ROM_START( cfghtice )
+	static RomLoadPtr rom_cfghtice = new RomLoadPtr(){ public void handler(){ 
 		DECOCASS_COMMON_ROMS
 	
-		ROM_REGION( 0x01000, REGION_USER1, 0 )	  /* dongle data */
-		ROM_LOAD( "cfghtice.pro", 0x0000, 0x1000, 0x5abd27b5 )
+		ROM_REGION( 0x01000, REGION_USER1, 0 );  /* dongle data */
+		ROM_LOAD( "cfghtice.pro", 0x0000, 0x1000, 0x5abd27b5 );
 	
-		ROM_REGION( 0x10000, REGION_USER2, 0 )	  /* (max) 64k for cassette image */
-		ROM_LOAD( "cfghtice.cas", 0x0000, 0x10000, 0x906dd7fb )
-	ROM_END
+		ROM_REGION( 0x10000, REGION_USER2, 0 );  /* (max) 64k for cassette image */
+		ROM_LOAD( "cfghtice.cas", 0x0000, 0x10000, 0x906dd7fb );
+	ROM_END(); }}; 
 	
-	ROM_START( cprobowl )
+	static RomLoadPtr rom_cprobowl = new RomLoadPtr(){ public void handler(){ 
 		DECOCASS_COMMON_ROMS
 	
-		ROM_REGION( 0x01000, REGION_USER1, 0 )	  /* dongle data */
-		ROM_LOAD( "cprobowl.pro", 0x0000, 0x1000, 0xe3a88e60 )
+		ROM_REGION( 0x01000, REGION_USER1, 0 );  /* dongle data */
+		ROM_LOAD( "cprobowl.pro", 0x0000, 0x1000, 0xe3a88e60 );
 	
-		ROM_REGION( 0x10000, REGION_USER2, 0 )	  /* (max) 64k for cassette image */
-		ROM_LOAD( "cprobowl.cas", 0x0000, 0x8000, 0xcb86c5e1 )
-	ROM_END
+		ROM_REGION( 0x10000, REGION_USER2, 0 );  /* (max) 64k for cassette image */
+		ROM_LOAD( "cprobowl.cas", 0x0000, 0x8000, 0xcb86c5e1 );
+	ROM_END(); }}; 
 	
-	ROM_START( cnightst )
+	static RomLoadPtr rom_cnightst = new RomLoadPtr(){ public void handler(){ 
 		DECOCASS_COMMON_ROMS
 	
-		ROM_REGION( 0x01000, REGION_USER1, 0 )	  /* dongle data */
-		ROM_LOAD( "cnightst.pro", 0x0000, 0x1000, 0x553b0fbc )
+		ROM_REGION( 0x01000, REGION_USER1, 0 );  /* dongle data */
+		ROM_LOAD( "cnightst.pro", 0x0000, 0x1000, 0x553b0fbc );
 	
-		ROM_REGION( 0x10000, REGION_USER2, 0 )	  /* (max) 64k for cassette image */
-		ROM_LOAD( "cnightst.cas", 0x0000, 0x8000, 0xc6f844cb )
-	ROM_END
+		ROM_REGION( 0x10000, REGION_USER2, 0 );  /* (max) 64k for cassette image */
+		ROM_LOAD( "cnightst.cas", 0x0000, 0x8000, 0xc6f844cb );
+	ROM_END(); }}; 
 	
-	ROM_START( cnights2 )
+	static RomLoadPtr rom_cnights2 = new RomLoadPtr(){ public void handler(){ 
 	 DECOCASS_COMMON_ROMS
 	
-	 ROM_REGION( 0x01000, REGION_USER1, 0 )   /* dongle data */
-	 ROM_LOAD( "cnightst.pro", 0x0000, 0x1000, 0x553b0fbc )
+	 ROM_REGION( 0x01000, REGION_USER1, 0 );  /* dongle data */
+	 ROM_LOAD( "cnightst.pro", 0x0000, 0x1000, 0x553b0fbc );
 	
-	 ROM_REGION( 0x10000, REGION_USER2, 0 )   /* (max) 64k for cassette image */
-	 ROM_LOAD( "cnights2.cas", 0x0000, 0x8000, 0x1a28128c )
-	ROM_END
+	 ROM_REGION( 0x10000, REGION_USER2, 0 );  /* (max) 64k for cassette image */
+	 ROM_LOAD( "cnights2.cas", 0x0000, 0x8000, 0x1a28128c );
+	ROM_END(); }}; 
 	
-	ROM_START( cprosocc )
+	static RomLoadPtr rom_cprosocc = new RomLoadPtr(){ public void handler(){ 
 		DECOCASS_COMMON_ROMS
 	
-		ROM_REGION( 0x01000, REGION_USER1, 0 )	  /* dongle data */
-		ROM_LOAD( "cprosocc.pro", 0x0000, 0x1000,  0x919fabb2 )
+		ROM_REGION( 0x01000, REGION_USER1, 0 );  /* dongle data */
+		ROM_LOAD( "cprosocc.pro", 0x0000, 0x1000,  0x919fabb2 );
 	
-		ROM_REGION( 0x10000, REGION_USER2, 0 )	  /* (max) 64k for cassette image */
-		ROM_LOAD( "cprosocc.cas", 0x0000, 0x10000, 0x76b1ad2c )
-	ROM_END
+		ROM_REGION( 0x10000, REGION_USER2, 0 );  /* (max) 64k for cassette image */
+		ROM_LOAD( "cprosocc.cas", 0x0000, 0x10000, 0x76b1ad2c );
+	ROM_END(); }}; 
 	
-	ROM_START( cppicf )
+	static RomLoadPtr rom_cppicf = new RomLoadPtr(){ public void handler(){ 
 		DECOCASS_COMMON_ROMS
 	
-		ROM_REGION( 0x01000, REGION_USER1, 0 )	  /* dongle data */
-		ROM_LOAD( "cppicf.pro",   0x0000, 0x1000, 0x0b1a1ecb )
+		ROM_REGION( 0x01000, REGION_USER1, 0 );  /* dongle data */
+		ROM_LOAD( "cppicf.pro",   0x0000, 0x1000, 0x0b1a1ecb );
 	
-		ROM_REGION( 0x10000, REGION_USER2, 0 )	  /* (max) 64k for cassette image */
-		ROM_LOAD( "cppicf.cas",   0x0000, 0x8000, 0x8c02f160 )
-	ROM_END
+		ROM_REGION( 0x10000, REGION_USER2, 0 );  /* (max) 64k for cassette image */
+		ROM_LOAD( "cppicf.cas",   0x0000, 0x8000, 0x8c02f160 );
+	ROM_END(); }}; 
 	
-	ROM_START( cppicf2 )
+	static RomLoadPtr rom_cppicf2 = new RomLoadPtr(){ public void handler(){ 
 	 DECOCASS_COMMON_ROMS
 	
-	 ROM_REGION( 0x01000, REGION_USER1, 0 )   /* dongle data */
-	 ROM_LOAD( "cppicf.pro",   0x0000, 0x1000, 0x0b1a1ecb )
+	 ROM_REGION( 0x01000, REGION_USER1, 0 );  /* dongle data */
+	 ROM_LOAD( "cppicf.pro",   0x0000, 0x1000, 0x0b1a1ecb );
 	
-	 ROM_REGION( 0x10000, REGION_USER2, 0 )   /* (max) 64k for cassette image */
-	 ROM_LOAD( "cppicf2.cas",   0x0000, 0x8000, 0x78ffa1bc )
-	ROM_END
+	 ROM_REGION( 0x10000, REGION_USER2, 0 );  /* (max) 64k for cassette image */
+	 ROM_LOAD( "cppicf2.cas",   0x0000, 0x8000, 0x78ffa1bc );
+	ROM_END(); }}; 
 	
 	/* The Following use Dongle Type 4 (unknown part number?)
 	    (dongle data probably differs for each game, but only one is known using it atm) */
 	
-	ROM_START( cscrtry )
+	static RomLoadPtr rom_cscrtry = new RomLoadPtr(){ public void handler(){ 
 		DECOCASS_COMMON_ROMS
 	
-		ROM_REGION( 0x08000, REGION_USER1, 0 )	  /* dongle data */
-		ROM_LOAD( "cscrtry.pro",  0x0000, 0x8000, 0x7bc3460b )
+		ROM_REGION( 0x08000, REGION_USER1, 0 );  /* dongle data */
+		ROM_LOAD( "cscrtry.pro",  0x0000, 0x8000, 0x7bc3460b );
 	
-		ROM_REGION( 0x10000, REGION_USER2, 0 )	  /* (max) 64k for cassette image */
-		ROM_LOAD( "cscrtry.cas",  0x0000, 0x8000, 0x5625f0ca )
-	ROM_END
+		ROM_REGION( 0x10000, REGION_USER2, 0 );  /* (max) 64k for cassette image */
+		ROM_LOAD( "cscrtry.cas",  0x0000, 0x8000, 0x5625f0ca );
+	ROM_END(); }}; 
 	
-	ROM_START( cscrtry2 )
+	static RomLoadPtr rom_cscrtry2 = new RomLoadPtr(){ public void handler(){ 
 	 DECOCASS_COMMON_ROMS
 	
-	 ROM_REGION( 0x08000, REGION_USER1, 0 )   /* dongle data */
-	 ROM_LOAD( "cscrtry.pro",  0x0000, 0x8000, 0x7bc3460b )
+	 ROM_REGION( 0x08000, REGION_USER1, 0 );  /* dongle data */
+	 ROM_LOAD( "cscrtry.pro",  0x0000, 0x8000, 0x7bc3460b );
 	
-	 ROM_REGION( 0x10000, REGION_USER2, 0 )   /* (max) 64k for cassette image */
-	 ROM_LOAD( "cscrtry2.cas",  0x0000, 0x8000, 0x4597842 )
-	ROM_END
+	 ROM_REGION( 0x10000, REGION_USER2, 0 );  /* (max) 64k for cassette image */
+	 ROM_LOAD( "cscrtry2.cas",  0x0000, 0x8000, 0x4597842 );
+	ROM_END(); }}; 
 	
 	/* The Following use Dongle Type 5 (unknown part number?)
 	    (dongle data not read)		 */
 	
-	ROM_START( cbdash )
+	static RomLoadPtr rom_cbdash = new RomLoadPtr(){ public void handler(){ 
 		DECOCASS_COMMON_ROMS
 	
-	/*	ROM_REGION( 0x01000, REGION_USER1, 0 ) */ /* (max) 4k for dongle data */
+	/*	ROM_REGION( 0x01000, REGION_USER1, 0 );*/ /* (max) 4k for dongle data */
 		/* no proms */
 	
-		ROM_REGION( 0x10000, REGION_USER2, 0 )	  /* (max) 64k for cassette image */
-		ROM_LOAD( "cbdash.cas",   0x0000, 0x8000, 0xcba4c1af )
-	ROM_END
+		ROM_REGION( 0x10000, REGION_USER2, 0 );  /* (max) 64k for cassette image */
+		ROM_LOAD( "cbdash.cas",   0x0000, 0x8000, 0xcba4c1af );
+	ROM_END(); }}; 
 	
 	/* The Following have unknown Dongles
 	    (dongle data not read)		 */
 	
-	ROM_START( chwy )
+	static RomLoadPtr rom_chwy = new RomLoadPtr(){ public void handler(){ 
 		DECOCASS_COMMON_ROMS
 	
 		/* no dumped dongle data, type1? its an early game if its highway chase */
 	
-		ROM_REGION( 0x10000, REGION_USER2, 0 )	  /* (max) 64k for cassette image */
-		ROM_LOAD( "chwy.cas",   0x0000, 0x8000, 0x68a48064 )
-	ROM_END
+		ROM_REGION( 0x10000, REGION_USER2, 0 );  /* (max) 64k for cassette image */
+		ROM_LOAD( "chwy.cas",   0x0000, 0x8000, 0x68a48064 );
+	ROM_END(); }}; 
 	
-	ROM_START( cflyball )
+	static RomLoadPtr rom_cflyball = new RomLoadPtr(){ public void handler(){ 
 		DECOCASS_COMMON_ROMS
 	
 		/* no dumped dongle data */
 	
-		ROM_REGION( 0x10000, REGION_USER2, 0 )	  /* (max) 64k for cassette image */
-		ROM_LOAD( "cflyball.cas",   0x0000, 0x10000, 0xcb40d043 )
-	ROM_END
+		ROM_REGION( 0x10000, REGION_USER2, 0 );  /* (max) 64k for cassette image */
+		ROM_LOAD( "cflyball.cas",   0x0000, 0x10000, 0xcb40d043 );
+	ROM_END(); }}; 
 	
-	ROM_START( czeroize )
+	static RomLoadPtr rom_czeroize = new RomLoadPtr(){ public void handler(){ 
 		DECOCASS_COMMON_ROMS
 	
 		/* no dumped dongle data */
 	
-		ROM_REGION( 0x10000, REGION_USER2, 0 )	  /* (max) 64k for cassette image */
-		ROM_LOAD( "czeroize.cas",   0x0000, 0x10000, 0x3ef0a406 )
-	ROM_END
+		ROM_REGION( 0x10000, REGION_USER2, 0 );  /* (max) 64k for cassette image */
+		ROM_LOAD( "czeroize.cas",   0x0000, 0x10000, 0x3ef0a406 );
+	ROM_END(); }}; 
 	
 	
 	static void init_decocass(void)

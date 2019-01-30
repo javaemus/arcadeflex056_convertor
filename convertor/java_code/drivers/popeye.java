@@ -461,105 +461,105 @@ public class popeye
 	
 	***************************************************************************/
 	
-	ROM_START( popeye )
-		ROM_REGION( 0x10000, REGION_CPU1, 0 )	/* 64k for code */
-		ROM_LOAD( "c-7a",         0x0000, 0x2000, 0x9af7c821 )
-		ROM_LOAD( "c-7b",         0x2000, 0x2000, 0xc3704958 )
-		ROM_LOAD( "c-7c",         0x4000, 0x2000, 0x5882ebf9 )
-		ROM_LOAD( "c-7e",         0x6000, 0x2000, 0xef8649ca )
+	static RomLoadPtr rom_popeye = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x10000, REGION_CPU1, 0 );/* 64k for code */
+		ROM_LOAD( "c-7a",         0x0000, 0x2000, 0x9af7c821 );
+		ROM_LOAD( "c-7b",         0x2000, 0x2000, 0xc3704958 );
+		ROM_LOAD( "c-7c",         0x4000, 0x2000, 0x5882ebf9 );
+		ROM_LOAD( "c-7e",         0x6000, 0x2000, 0xef8649ca );
 	
-		ROM_REGION( 0x0800, REGION_GFX1, ROMREGION_DISPOSE )
-		ROM_LOAD( "v-5n",         0x0000, 0x0800, 0xcca61ddd )	/* first half is empty */
-		ROM_CONTINUE(             0x0000, 0x0800 )
+		ROM_REGION( 0x0800, REGION_GFX1, ROMREGION_DISPOSE );
+		ROM_LOAD( "v-5n",         0x0000, 0x0800, 0xcca61ddd );/* first half is empty */
+		ROM_CONTINUE(             0x0000, 0x0800 );
 	
-		ROM_REGION( 0x8000, REGION_GFX2, ROMREGION_DISPOSE )
-		ROM_LOAD( "v-1e",         0x0000, 0x2000, 0x0f2cd853 )
-		ROM_LOAD( "v-1f",         0x2000, 0x2000, 0x888f3474 )
-		ROM_LOAD( "v-1j",         0x4000, 0x2000, 0x7e864668 )
-		ROM_LOAD( "v-1k",         0x6000, 0x2000, 0x49e1d170 )
+		ROM_REGION( 0x8000, REGION_GFX2, ROMREGION_DISPOSE );
+		ROM_LOAD( "v-1e",         0x0000, 0x2000, 0x0f2cd853 );
+		ROM_LOAD( "v-1f",         0x2000, 0x2000, 0x888f3474 );
+		ROM_LOAD( "v-1j",         0x4000, 0x2000, 0x7e864668 );
+		ROM_LOAD( "v-1k",         0x6000, 0x2000, 0x49e1d170 );
 	
-		ROM_REGION( 0x0340, REGION_PROMS, 0 )
-		ROM_LOAD( "prom-cpu.4a",  0x0000, 0x0020, 0x375e1602 ) /* background palette */
-		ROM_LOAD( "prom-cpu.3a",  0x0020, 0x0020, 0xe950bea1 ) /* char palette */
-		ROM_LOAD( "prom-cpu.5b",  0x0040, 0x0100, 0xc5826883 ) /* sprite palette - low 4 bits */
-		ROM_LOAD( "prom-cpu.5a",  0x0140, 0x0100, 0xc576afba ) /* sprite palette - high 4 bits */
-		ROM_LOAD( "prom-vid.7j",  0x0240, 0x0100, 0xa4655e2e ) /* timing for the protection ALU */
-	ROM_END
+		ROM_REGION( 0x0340, REGION_PROMS, 0 );
+		ROM_LOAD( "prom-cpu.4a",  0x0000, 0x0020, 0x375e1602 );/* background palette */
+		ROM_LOAD( "prom-cpu.3a",  0x0020, 0x0020, 0xe950bea1 );/* char palette */
+		ROM_LOAD( "prom-cpu.5b",  0x0040, 0x0100, 0xc5826883 );/* sprite palette - low 4 bits */
+		ROM_LOAD( "prom-cpu.5a",  0x0140, 0x0100, 0xc576afba );/* sprite palette - high 4 bits */
+		ROM_LOAD( "prom-vid.7j",  0x0240, 0x0100, 0xa4655e2e );/* timing for the protection ALU */
+	ROM_END(); }}; 
 	
-	ROM_START( popeyeu )
-		ROM_REGION( 0x10000, REGION_CPU1, 0 )	/* 64k for code */
-		ROM_LOAD( "7a",           0x0000, 0x2000, 0x0bd04389 )
-		ROM_LOAD( "7b",           0x2000, 0x2000, 0xefdf02c3 )
-		ROM_LOAD( "7c",           0x4000, 0x2000, 0x8eee859e )
-		ROM_LOAD( "7e",           0x6000, 0x2000, 0xb64aa314 )
+	static RomLoadPtr rom_popeyeu = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x10000, REGION_CPU1, 0 );/* 64k for code */
+		ROM_LOAD( "7a",           0x0000, 0x2000, 0x0bd04389 );
+		ROM_LOAD( "7b",           0x2000, 0x2000, 0xefdf02c3 );
+		ROM_LOAD( "7c",           0x4000, 0x2000, 0x8eee859e );
+		ROM_LOAD( "7e",           0x6000, 0x2000, 0xb64aa314 );
 	
-		ROM_REGION( 0x0800, REGION_GFX1, ROMREGION_DISPOSE )
-		ROM_LOAD( "v-5n",         0x0000, 0x0800, 0xcca61ddd )	/* first half is empty */
-		ROM_CONTINUE(             0x0000, 0x0800 )
+		ROM_REGION( 0x0800, REGION_GFX1, ROMREGION_DISPOSE );
+		ROM_LOAD( "v-5n",         0x0000, 0x0800, 0xcca61ddd );/* first half is empty */
+		ROM_CONTINUE(             0x0000, 0x0800 );
 	
-		ROM_REGION( 0x8000, REGION_GFX2, ROMREGION_DISPOSE )
-		ROM_LOAD( "v-1e",         0x0000, 0x2000, 0x0f2cd853 )
-		ROM_LOAD( "v-1f",         0x2000, 0x2000, 0x888f3474 )
-		ROM_LOAD( "v-1j",         0x4000, 0x2000, 0x7e864668 )
-		ROM_LOAD( "v-1k",         0x6000, 0x2000, 0x49e1d170 )
+		ROM_REGION( 0x8000, REGION_GFX2, ROMREGION_DISPOSE );
+		ROM_LOAD( "v-1e",         0x0000, 0x2000, 0x0f2cd853 );
+		ROM_LOAD( "v-1f",         0x2000, 0x2000, 0x888f3474 );
+		ROM_LOAD( "v-1j",         0x4000, 0x2000, 0x7e864668 );
+		ROM_LOAD( "v-1k",         0x6000, 0x2000, 0x49e1d170 );
 	
-		ROM_REGION( 0x0340, REGION_PROMS, 0 )
-		ROM_LOAD( "prom-cpu.4a",  0x0000, 0x0020, 0x375e1602 ) /* background palette */
-		ROM_LOAD( "prom-cpu.3a",  0x0020, 0x0020, 0xe950bea1 ) /* char palette */
-		ROM_LOAD( "prom-cpu.5b",  0x0040, 0x0100, 0xc5826883 ) /* sprite palette - low 4 bits */
-		ROM_LOAD( "prom-cpu.5a",  0x0140, 0x0100, 0xc576afba ) /* sprite palette - high 4 bits */
-		ROM_LOAD( "prom-vid.7j",  0x0240, 0x0100, 0xa4655e2e ) /* timing for the protection ALU */
-	ROM_END
+		ROM_REGION( 0x0340, REGION_PROMS, 0 );
+		ROM_LOAD( "prom-cpu.4a",  0x0000, 0x0020, 0x375e1602 );/* background palette */
+		ROM_LOAD( "prom-cpu.3a",  0x0020, 0x0020, 0xe950bea1 );/* char palette */
+		ROM_LOAD( "prom-cpu.5b",  0x0040, 0x0100, 0xc5826883 );/* sprite palette - low 4 bits */
+		ROM_LOAD( "prom-cpu.5a",  0x0140, 0x0100, 0xc576afba );/* sprite palette - high 4 bits */
+		ROM_LOAD( "prom-vid.7j",  0x0240, 0x0100, 0xa4655e2e );/* timing for the protection ALU */
+	ROM_END(); }}; 
 	
-	ROM_START( popeyef )
-		ROM_REGION( 0x10000, REGION_CPU1, 0 )	/* 64k for code */
-		ROM_LOAD( "tpp2-c_f.7a",  0x0000, 0x2000, 0x5fc5264d )
-		ROM_LOAD( "tpp2-c_f.7b",  0x2000, 0x2000, 0x51de48e8 )
-		ROM_LOAD( "tpp2-c_f.7c",  0x4000, 0x2000, 0x62df9647 )
-		ROM_LOAD( "tpp2-c_f.7e",  0x6000, 0x2000, 0xf31e7916 )
+	static RomLoadPtr rom_popeyef = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x10000, REGION_CPU1, 0 );/* 64k for code */
+		ROM_LOAD( "tpp2-c_f.7a",  0x0000, 0x2000, 0x5fc5264d );
+		ROM_LOAD( "tpp2-c_f.7b",  0x2000, 0x2000, 0x51de48e8 );
+		ROM_LOAD( "tpp2-c_f.7c",  0x4000, 0x2000, 0x62df9647 );
+		ROM_LOAD( "tpp2-c_f.7e",  0x6000, 0x2000, 0xf31e7916 );
 	
-		ROM_REGION( 0x0800, REGION_GFX1, ROMREGION_DISPOSE )
-		ROM_LOAD( "v-5n",         0x0000, 0x0800, 0xcca61ddd )	/* first half is empty */
-		ROM_CONTINUE(             0x0000, 0x0800 )
+		ROM_REGION( 0x0800, REGION_GFX1, ROMREGION_DISPOSE );
+		ROM_LOAD( "v-5n",         0x0000, 0x0800, 0xcca61ddd );/* first half is empty */
+		ROM_CONTINUE(             0x0000, 0x0800 );
 	
-		ROM_REGION( 0x8000, REGION_GFX2, ROMREGION_DISPOSE )
-		ROM_LOAD( "v-1e",         0x0000, 0x2000, 0x0f2cd853 )
-		ROM_LOAD( "v-1f",         0x2000, 0x2000, 0x888f3474 )
-		ROM_LOAD( "v-1j",         0x4000, 0x2000, 0x7e864668 )
-		ROM_LOAD( "v-1k",         0x6000, 0x2000, 0x49e1d170 )
+		ROM_REGION( 0x8000, REGION_GFX2, ROMREGION_DISPOSE );
+		ROM_LOAD( "v-1e",         0x0000, 0x2000, 0x0f2cd853 );
+		ROM_LOAD( "v-1f",         0x2000, 0x2000, 0x888f3474 );
+		ROM_LOAD( "v-1j",         0x4000, 0x2000, 0x7e864668 );
+		ROM_LOAD( "v-1k",         0x6000, 0x2000, 0x49e1d170 );
 	
-		ROM_REGION( 0x0340, REGION_PROMS, 0 )
-		ROM_LOAD( "prom-cpu.4a",  0x0000, 0x0020, 0x375e1602 ) /* background palette */
-		ROM_LOAD( "prom-cpu.3a",  0x0020, 0x0020, 0xe950bea1 ) /* char palette */
-		ROM_LOAD( "prom-cpu.5b",  0x0040, 0x0100, 0xc5826883 ) /* sprite palette - low 4 bits */
-		ROM_LOAD( "prom-cpu.5a",  0x0140, 0x0100, 0xc576afba ) /* sprite palette - high 4 bits */
-		ROM_LOAD( "prom-vid.7j",  0x0240, 0x0100, 0xa4655e2e ) /* timing for the protection ALU */
-	ROM_END
+		ROM_REGION( 0x0340, REGION_PROMS, 0 );
+		ROM_LOAD( "prom-cpu.4a",  0x0000, 0x0020, 0x375e1602 );/* background palette */
+		ROM_LOAD( "prom-cpu.3a",  0x0020, 0x0020, 0xe950bea1 );/* char palette */
+		ROM_LOAD( "prom-cpu.5b",  0x0040, 0x0100, 0xc5826883 );/* sprite palette - low 4 bits */
+		ROM_LOAD( "prom-cpu.5a",  0x0140, 0x0100, 0xc576afba );/* sprite palette - high 4 bits */
+		ROM_LOAD( "prom-vid.7j",  0x0240, 0x0100, 0xa4655e2e );/* timing for the protection ALU */
+	ROM_END(); }}; 
 	
-	ROM_START( popeyebl )
-		ROM_REGION( 0x10000, REGION_CPU1, 0 )	/* 64k for code */
-		ROM_LOAD( "po1",          0x0000, 0x2000, 0xb14a07ca )
-		ROM_LOAD( "po2",          0x2000, 0x2000, 0x995475ff )
-		ROM_LOAD( "po3",          0x4000, 0x2000, 0x99d6a04a )
-		ROM_LOAD( "po4",          0x6000, 0x2000, 0x548a6514 )
-		ROM_LOAD( "po_d1-e1.bin", 0xe000, 0x0020, 0x8de22998 )	/* protection PROM */
+	static RomLoadPtr rom_popeyebl = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x10000, REGION_CPU1, 0 );/* 64k for code */
+		ROM_LOAD( "po1",          0x0000, 0x2000, 0xb14a07ca );
+		ROM_LOAD( "po2",          0x2000, 0x2000, 0x995475ff );
+		ROM_LOAD( "po3",          0x4000, 0x2000, 0x99d6a04a );
+		ROM_LOAD( "po4",          0x6000, 0x2000, 0x548a6514 );
+		ROM_LOAD( "po_d1-e1.bin", 0xe000, 0x0020, 0x8de22998 );/* protection PROM */
 	
-		ROM_REGION( 0x0800, REGION_GFX1, ROMREGION_DISPOSE )
-		ROM_LOAD( "v-5n",         0x0000, 0x0800, 0xcca61ddd )	/* first half is empty */
-		ROM_CONTINUE(             0x0000, 0x0800 )
+		ROM_REGION( 0x0800, REGION_GFX1, ROMREGION_DISPOSE );
+		ROM_LOAD( "v-5n",         0x0000, 0x0800, 0xcca61ddd );/* first half is empty */
+		ROM_CONTINUE(             0x0000, 0x0800 );
 	
-		ROM_REGION( 0x8000, REGION_GFX2, ROMREGION_DISPOSE )
-		ROM_LOAD( "v-1e",         0x0000, 0x2000, 0x0f2cd853 )
-		ROM_LOAD( "v-1f",         0x2000, 0x2000, 0x888f3474 )
-		ROM_LOAD( "v-1j",         0x4000, 0x2000, 0x7e864668 )
-		ROM_LOAD( "v-1k",         0x6000, 0x2000, 0x49e1d170 )
+		ROM_REGION( 0x8000, REGION_GFX2, ROMREGION_DISPOSE );
+		ROM_LOAD( "v-1e",         0x0000, 0x2000, 0x0f2cd853 );
+		ROM_LOAD( "v-1f",         0x2000, 0x2000, 0x888f3474 );
+		ROM_LOAD( "v-1j",         0x4000, 0x2000, 0x7e864668 );
+		ROM_LOAD( "v-1k",         0x6000, 0x2000, 0x49e1d170 );
 	
-		ROM_REGION( 0x0240, REGION_PROMS, 0 )
-		ROM_LOAD( "popeye.pr1",   0x0000, 0x0020, 0xd138e8a4 ) /* background palette */
-		ROM_LOAD( "popeye.pr2",   0x0020, 0x0020, 0x0f364007 ) /* char palette */
-		ROM_LOAD( "popeye.pr3",   0x0040, 0x0100, 0xca4d7b6a ) /* sprite palette - low 4 bits */
-		ROM_LOAD( "popeye.pr4",   0x0140, 0x0100, 0xcab9bc53 ) /* sprite palette - high 4 bits */
-	ROM_END
+		ROM_REGION( 0x0240, REGION_PROMS, 0 );
+		ROM_LOAD( "popeye.pr1",   0x0000, 0x0020, 0xd138e8a4 );/* background palette */
+		ROM_LOAD( "popeye.pr2",   0x0020, 0x0020, 0x0f364007 );/* char palette */
+		ROM_LOAD( "popeye.pr3",   0x0040, 0x0100, 0xca4d7b6a );/* sprite palette - low 4 bits */
+		ROM_LOAD( "popeye.pr4",   0x0140, 0x0100, 0xcab9bc53 );/* sprite palette - high 4 bits */
+	ROM_END(); }}; 
 	
 	
 	

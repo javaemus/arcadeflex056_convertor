@@ -38,6 +38,7 @@ public class convertMame {
     static final int WRITE_HANDLER8 = 10;
     static final int GFXLAYOUT = 11;
     static final int GFXDECODE = 12;
+    static final int ROMDEF = 13;
 
     public static void Convert() {
         Convertor.inpos = 0;//position of pointer inside the buffers
@@ -540,7 +541,62 @@ public class convertMame {
                         }
                     }
                     break;
-
+                case 'R': {
+                    i = Convertor.inpos;
+                    if (sUtil.getToken("ROM_START")) {
+                        if (sUtil.parseChar() != '(') {
+                            Convertor.inpos = i;
+                            break;
+                        }
+                        sUtil.skipSpace();
+                        Convertor.token[0] = sUtil.parseToken();
+                        sUtil.skipSpace();
+                        if (sUtil.parseChar() != ')') {
+                            Convertor.inpos = i;
+                            break;
+                        }
+                        sUtil.putString((new StringBuilder()).append("static RomLoadPtr rom_").append(Convertor.token[0]).append(" = new RomLoadPtr(){ public void handler(){ ").toString());
+                        continue;
+                    }
+                    if (sUtil.getToken("ROM_END")) {
+                        sUtil.putString((new StringBuilder()).append("ROM_END(); }}; ").toString());
+                        continue;
+                    }
+                    if (sUtil.getToken("ROM_REGION") || sUtil.getToken("ROM_LOAD")
+                            || sUtil.getToken("ROM_RELOAD") || sUtil.getToken("ROM_CONTINUE")
+                            || sUtil.getToken("ROM_LOAD16_BYTE") || sUtil.getToken("ROM_LOAD_NIB_HIGH")
+                            || sUtil.getToken("ROM_LOAD_NIB_LOW") || sUtil.getToken("ROM_FILL")
+                            || sUtil.getToken("ROM_COPY") || sUtil.getToken("ROM_LOAD16_WORD")
+                            || sUtil.getToken("ROM_LOAD32_BYTE") || sUtil.getToken("ROM_LOAD32_WORD")
+                            || sUtil.getToken("ROM_LOAD32_WORD_SWAP") || sUtil.getToken("ROM_REGION16_LE")
+                            || sUtil.getToken("ROM_REGION16_BE") || sUtil.getToken("ROM_REGION32_LE") || sUtil.getToken("ROM_REGION32_BE")) {
+                        i8++;
+                        type2 = ROMDEF;
+                        sUtil.skipSpace();
+                        if (sUtil.parseChar() == '(') {
+                            Convertor.inpos = i;
+                        }
+                    }
+                    Convertor.inpos = i;
+                }
+                break;
+                case ')': {
+                    if (type2 == ROMDEF) {
+                        i8--;
+                        Convertor.outbuf[(Convertor.outpos++)] = ')';
+                        Convertor.outbuf[(Convertor.outpos++)] = ';';
+                        Convertor.inpos += 2;
+                        if (sUtil.getChar() == ')') {//fix for badcrc case
+                            Convertor.outpos -= 1;
+                            Convertor.outbuf[(Convertor.outpos++)] = ')';
+                            Convertor.outbuf[(Convertor.outpos++)] = ';';
+                            Convertor.inpos += 1;
+                        }
+                        type2 = -1;
+                        continue;
+                    }
+                }
+                break;
             }
             Convertor.outbuf[Convertor.outpos++] = Convertor.inbuf[Convertor.inpos++];//grapse to inputbuffer sto output
         } while (true);

@@ -406,77 +406,77 @@ public class tumblep
 	
 	/******************************************************************************/
 	
-	ROM_START( tumblep )
-		ROM_REGION( 0x80000, REGION_CPU1, 0 ) /* 68000 code */
-		ROM_LOAD16_BYTE("hl00-1.f12", 0x00000, 0x40000, 0xfd697c1b )
-		ROM_LOAD16_BYTE("hl01-1.f13", 0x00001, 0x40000, 0xd5a62a3f )
+	static RomLoadPtr rom_tumblep = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x80000, REGION_CPU1, 0 );/* 68000 code */
+		ROM_LOAD16_BYTE("hl00-1.f12", 0x00000, 0x40000, 0xfd697c1b );
+		ROM_LOAD16_BYTE("hl01-1.f13", 0x00001, 0x40000, 0xd5a62a3f );
 	
-		ROM_REGION( 0x10000, REGION_CPU2, 0 ) /* Sound cpu */
-		ROM_LOAD( "hl02-.f16",    0x00000, 0x10000, 0xa5cab888 )
+		ROM_REGION( 0x10000, REGION_CPU2, 0 );/* Sound cpu */
+		ROM_LOAD( "hl02-.f16",    0x00000, 0x10000, 0xa5cab888 );
 	
-		ROM_REGION( 0x080000, REGION_GFX1, ROMREGION_DISPOSE )
-		ROM_LOAD( "map-02.rom",   0x00000, 0x80000, 0xdfceaa26 )	// encrypted
+		ROM_REGION( 0x080000, REGION_GFX1, ROMREGION_DISPOSE );
+		ROM_LOAD( "map-02.rom",   0x00000, 0x80000, 0xdfceaa26 );// encrypted
 	
-		ROM_REGION( 0x100000, REGION_GFX2, ROMREGION_DISPOSE )
-		ROM_LOAD( "map-01.rom",   0x00000, 0x80000, 0xe81ffa09 )
-		ROM_LOAD( "map-00.rom",   0x80000, 0x80000, 0x8c879cfe )
+		ROM_REGION( 0x100000, REGION_GFX2, ROMREGION_DISPOSE );
+		ROM_LOAD( "map-01.rom",   0x00000, 0x80000, 0xe81ffa09 );
+		ROM_LOAD( "map-00.rom",   0x80000, 0x80000, 0x8c879cfe );
 	
-		ROM_REGION( 0x20000, REGION_SOUND1, 0 ) /* Oki samples */
-		ROM_LOAD( "hl03-.j15",    0x00000, 0x20000, 0x01b81da0 )
-	ROM_END
+		ROM_REGION( 0x20000, REGION_SOUND1, 0 );/* Oki samples */
+		ROM_LOAD( "hl03-.j15",    0x00000, 0x20000, 0x01b81da0 );
+	ROM_END(); }}; 
 	
-	ROM_START( tumblepj )
-		ROM_REGION( 0x80000, REGION_CPU1, 0 ) /* 68000 code */
-		ROM_LOAD16_BYTE("hk00-1.f12", 0x00000, 0x40000, 0x2d3e4d3d )
-		ROM_LOAD16_BYTE("hk01-1.f13", 0x00001, 0x40000, 0x56912a00 )
+	static RomLoadPtr rom_tumblepj = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x80000, REGION_CPU1, 0 );/* 68000 code */
+		ROM_LOAD16_BYTE("hk00-1.f12", 0x00000, 0x40000, 0x2d3e4d3d );
+		ROM_LOAD16_BYTE("hk01-1.f13", 0x00001, 0x40000, 0x56912a00 );
 	
-		ROM_REGION( 0x10000, REGION_CPU2, 0 ) /* Sound cpu */
-		ROM_LOAD( "hl02-.f16",    0x00000, 0x10000, 0xa5cab888 )
+		ROM_REGION( 0x10000, REGION_CPU2, 0 );/* Sound cpu */
+		ROM_LOAD( "hl02-.f16",    0x00000, 0x10000, 0xa5cab888 );
 	
-		ROM_REGION( 0x080000, REGION_GFX1, ROMREGION_DISPOSE )
-		ROM_LOAD( "map-02.rom",   0x00000, 0x80000, 0xdfceaa26 )	// encrypted
+		ROM_REGION( 0x080000, REGION_GFX1, ROMREGION_DISPOSE );
+		ROM_LOAD( "map-02.rom",   0x00000, 0x80000, 0xdfceaa26 );// encrypted
 	
-		ROM_REGION( 0x100000, REGION_GFX2, ROMREGION_DISPOSE )
-		ROM_LOAD( "map-01.rom",   0x00000, 0x80000, 0xe81ffa09 )
-		ROM_LOAD( "map-00.rom",   0x80000, 0x80000, 0x8c879cfe )
+		ROM_REGION( 0x100000, REGION_GFX2, ROMREGION_DISPOSE );
+		ROM_LOAD( "map-01.rom",   0x00000, 0x80000, 0xe81ffa09 );
+		ROM_LOAD( "map-00.rom",   0x80000, 0x80000, 0x8c879cfe );
 	
-		ROM_REGION( 0x20000, REGION_SOUND1, 0 ) /* Oki samples */
-		ROM_LOAD( "hl03-.j15",    0x00000, 0x20000, 0x01b81da0 )
-	ROM_END
+		ROM_REGION( 0x20000, REGION_SOUND1, 0 );/* Oki samples */
+		ROM_LOAD( "hl03-.j15",    0x00000, 0x20000, 0x01b81da0 );
+	ROM_END(); }}; 
 	
-	ROM_START( tumblepb )
-		ROM_REGION( 0x80000, REGION_CPU1, 0 ) /* 68000 code */
-		ROM_LOAD16_BYTE ("thumbpop.12", 0x00000, 0x40000, 0x0c984703 )
-		ROM_LOAD16_BYTE( "thumbpop.13", 0x00001, 0x40000, 0x864c4053 )
+	static RomLoadPtr rom_tumblepb = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x80000, REGION_CPU1, 0 );/* 68000 code */
+		ROM_LOAD16_BYTE ("thumbpop.12", 0x00000, 0x40000, 0x0c984703 );
+		ROM_LOAD16_BYTE( "thumbpop.13", 0x00001, 0x40000, 0x864c4053 );
 	
-		ROM_REGION( 0x080000, REGION_GFX1, ROMREGION_DISPOSE )
-		ROM_LOAD16_BYTE( "thumbpop.19",  0x00000, 0x40000, 0x0795aab4 )
-		ROM_LOAD16_BYTE( "thumbpop.18",  0x00001, 0x40000, 0xad58df43 )
+		ROM_REGION( 0x080000, REGION_GFX1, ROMREGION_DISPOSE );
+		ROM_LOAD16_BYTE( "thumbpop.19",  0x00000, 0x40000, 0x0795aab4 );
+		ROM_LOAD16_BYTE( "thumbpop.18",  0x00001, 0x40000, 0xad58df43 );
 	
-		ROM_REGION( 0x100000, REGION_GFX2, ROMREGION_DISPOSE )
-		ROM_LOAD( "map-01.rom",   0x00000, 0x80000, 0xe81ffa09 )
-		ROM_LOAD( "map-00.rom",   0x80000, 0x80000, 0x8c879cfe )
+		ROM_REGION( 0x100000, REGION_GFX2, ROMREGION_DISPOSE );
+		ROM_LOAD( "map-01.rom",   0x00000, 0x80000, 0xe81ffa09 );
+		ROM_LOAD( "map-00.rom",   0x80000, 0x80000, 0x8c879cfe );
 	
-		ROM_REGION( 0x80000, REGION_SOUND1, 0 ) /* Oki samples */
-		ROM_LOAD( "thumbpop.snd", 0x00000, 0x80000, 0xfabbf15d )
-	ROM_END
+		ROM_REGION( 0x80000, REGION_SOUND1, 0 );/* Oki samples */
+		ROM_LOAD( "thumbpop.snd", 0x00000, 0x80000, 0xfabbf15d );
+	ROM_END(); }}; 
 	
-	ROM_START( tumblep2 )
-		ROM_REGION( 0x80000, REGION_CPU1, 0 ) /* 68000 code */
-		ROM_LOAD16_BYTE ("thumbpop.2", 0x00000, 0x40000, 0x34b016e1 )
-		ROM_LOAD16_BYTE( "thumbpop.3", 0x00001, 0x40000, 0x89501c71 )
+	static RomLoadPtr rom_tumblep2 = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x80000, REGION_CPU1, 0 );/* 68000 code */
+		ROM_LOAD16_BYTE ("thumbpop.2", 0x00000, 0x40000, 0x34b016e1 );
+		ROM_LOAD16_BYTE( "thumbpop.3", 0x00001, 0x40000, 0x89501c71 );
 	
-		ROM_REGION( 0x080000, REGION_GFX1, ROMREGION_DISPOSE )
-		ROM_LOAD16_BYTE( "thumbpop.19",  0x00000, 0x40000, 0x0795aab4 )
-		ROM_LOAD16_BYTE( "thumbpop.18",  0x00001, 0x40000, 0xad58df43 )
+		ROM_REGION( 0x080000, REGION_GFX1, ROMREGION_DISPOSE );
+		ROM_LOAD16_BYTE( "thumbpop.19",  0x00000, 0x40000, 0x0795aab4 );
+		ROM_LOAD16_BYTE( "thumbpop.18",  0x00001, 0x40000, 0xad58df43 );
 	
-	 	ROM_REGION( 0x100000, REGION_GFX2, ROMREGION_DISPOSE )
-		ROM_LOAD( "map-01.rom",   0x00000, 0x80000, 0xe81ffa09 )
-		ROM_LOAD( "map-00.rom",   0x80000, 0x80000, 0x8c879cfe )
+	 	ROM_REGION( 0x100000, REGION_GFX2, ROMREGION_DISPOSE );
+		ROM_LOAD( "map-01.rom",   0x00000, 0x80000, 0xe81ffa09 );
+		ROM_LOAD( "map-00.rom",   0x80000, 0x80000, 0x8c879cfe );
 	
-		ROM_REGION( 0x80000, REGION_SOUND1, 0 ) /* Oki samples */
-		ROM_LOAD( "thumbpop.snd", 0x00000, 0x80000, 0xfabbf15d )
-	ROM_END
+		ROM_REGION( 0x80000, REGION_SOUND1, 0 );/* Oki samples */
+		ROM_LOAD( "thumbpop.snd", 0x00000, 0x80000, 0xfabbf15d );
+	ROM_END(); }}; 
 	
 	
 	/******************************************************************************/

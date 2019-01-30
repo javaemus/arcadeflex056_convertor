@@ -849,28 +849,28 @@ public class topspeed
 	Note: driver does NOT make use of the zoom sprite tables rom.
 	***************************************************************************/
 	
-	ROM_START( topspeed )
-		ROM_REGION( 0x100000, REGION_CPU1, 0 )	/* 128K for 68000 code (CPU A) */
-		ROM_LOAD16_BYTE( "b14-67-1.11", 0x00000, 0x10000, 0x23f17616 )
-		ROM_LOAD16_BYTE( "b14-68-1.9",  0x00001, 0x10000, 0x835659d9 )
-		ROM_LOAD16_BYTE( "b14-54.24",   0x80000, 0x20000, 0x172924d5 )	/* 4 data roms */
-		ROM_LOAD16_BYTE( "b14-52.26",   0x80001, 0x20000, 0xe1b5b2a1 )
-		ROM_LOAD16_BYTE( "b14-55.23",   0xc0000, 0x20000, 0xa1f15499 )
-		ROM_LOAD16_BYTE( "b14-53.25",   0xc0001, 0x20000, 0x04a04f5f )
+	static RomLoadPtr rom_topspeed = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x100000, REGION_CPU1, 0 );/* 128K for 68000 code (CPU A) */
+		ROM_LOAD16_BYTE( "b14-67-1.11", 0x00000, 0x10000, 0x23f17616 );
+		ROM_LOAD16_BYTE( "b14-68-1.9",  0x00001, 0x10000, 0x835659d9 );
+		ROM_LOAD16_BYTE( "b14-54.24",   0x80000, 0x20000, 0x172924d5 );/* 4 data roms */
+		ROM_LOAD16_BYTE( "b14-52.26",   0x80001, 0x20000, 0xe1b5b2a1 );
+		ROM_LOAD16_BYTE( "b14-55.23",   0xc0000, 0x20000, 0xa1f15499 );
+		ROM_LOAD16_BYTE( "b14-53.25",   0xc0001, 0x20000, 0x04a04f5f );
 	
-		ROM_REGION( 0x20000, REGION_CPU3, 0 )	/* 128K for 68000 code (CPU B) */
-		ROM_LOAD16_BYTE( "b14-69.80",   0x00000, 0x10000, 0xd652e300 )
-		ROM_LOAD16_BYTE( "b14-70.81",   0x00001, 0x10000, 0xb720592b )
+		ROM_REGION( 0x20000, REGION_CPU3, 0 );/* 128K for 68000 code (CPU B) */
+		ROM_LOAD16_BYTE( "b14-69.80",   0x00000, 0x10000, 0xd652e300 );
+		ROM_LOAD16_BYTE( "b14-70.81",   0x00001, 0x10000, 0xb720592b );
 	
-		ROM_REGION( 0x1c000, REGION_CPU2, 0 )	/* Z80 sound cpu */
-		ROM_LOAD( "b14-25.67", 0x00000, 0x04000, 0x9eab28ef )
-		ROM_CONTINUE(          0x10000, 0x0c000 )	/* banked stuff */
+		ROM_REGION( 0x1c000, REGION_CPU2, 0 );/* Z80 sound cpu */
+		ROM_LOAD( "b14-25.67", 0x00000, 0x04000, 0x9eab28ef );
+		ROM_CONTINUE(          0x10000, 0x0c000 );/* banked stuff */
 	
-		ROM_REGION( 0x40000, REGION_GFX1, ROMREGION_DISPOSE )
-		ROM_LOAD16_BYTE( "b14-07.54",   0x00000, 0x20000, 0xc6025fff )	/* SCR tiles */
-		ROM_LOAD16_BYTE( "b14-06.52",   0x00001, 0x20000, 0xb4e2536e )
+		ROM_REGION( 0x40000, REGION_GFX1, ROMREGION_DISPOSE );
+		ROM_LOAD16_BYTE( "b14-07.54",   0x00000, 0x20000, 0xc6025fff );/* SCR tiles */
+		ROM_LOAD16_BYTE( "b14-06.52",   0x00001, 0x20000, 0xb4e2536e );
 	
-		ROM_REGION( 0x200000, REGION_GFX2, ROMREGION_DISPOSE )
+		ROM_REGION( 0x200000, REGION_GFX2, ROMREGION_DISPOSE );
 		ROMX_LOAD( "b14-48.16", 0x000003, 0x20000, 0x30c7f265, ROM_SKIP(7) )	/* OBJ, bitplane 3 */
 		ROMX_LOAD( "b14-49.12", 0x100003, 0x20000, 0x32ba4265, ROM_SKIP(7) )
 		ROMX_LOAD( "b14-50.8",  0x000007, 0x20000, 0xec1ef311, ROM_SKIP(7) )
@@ -891,87 +891,87 @@ public class topspeed
 		ROMX_LOAD( "b14-38.5",  0x000004, 0x20000, 0xde0c213e, ROM_SKIP(7) )
 		ROMX_LOAD( "b14-39.1",  0x100004, 0x20000, 0x798c28c5, ROM_SKIP(7) )
 	
-		ROM_REGION( 0x10000, REGION_USER1, 0 )
-		ROM_LOAD( "b14-30.88", 0x00000, 0x10000, 0xdccb0c7f )	/* zoom tables for zoom sprite h/w */
+		ROM_REGION( 0x10000, REGION_USER1, 0 );
+		ROM_LOAD( "b14-30.88", 0x00000, 0x10000, 0xdccb0c7f );/* zoom tables for zoom sprite h/w */
 	
 	// One dump has this 0x10000 long, but just contains the same stuff repeated 8 times //
-		ROM_REGION( 0x2000, REGION_USER2, 0 )
-		ROM_LOAD( "b14-31.90",  0x0000,  0x2000,  0x5c6b013d )	/* microcontroller */
+		ROM_REGION( 0x2000, REGION_USER2, 0 );
+		ROM_LOAD( "b14-31.90",  0x0000,  0x2000,  0x5c6b013d );/* microcontroller */
 	
-		ROM_REGION( 0x20000, REGION_SOUND1, 0 )	/* ADPCM samples */
-		ROM_LOAD( "b14-28.103",  0x00000, 0x10000, 0xdf11d0ae )
-		ROM_LOAD( "b14-29.109",  0x10000, 0x10000, 0x7ad983e7 )
-	ROM_END
+		ROM_REGION( 0x20000, REGION_SOUND1, 0 );/* ADPCM samples */
+		ROM_LOAD( "b14-28.103",  0x00000, 0x10000, 0xdf11d0ae );
+		ROM_LOAD( "b14-29.109",  0x10000, 0x10000, 0x7ad983e7 );
+	ROM_END(); }}; 
 	
-	ROM_START( topspedu )
-		ROM_REGION( 0x100000, REGION_CPU1, 0 )	/* 128K for 68000 code (CPU A) */
-		ROM_LOAD16_BYTE     ( "b14-23", 0x00000, 0x10000, 0xdd0307fd )
-		ROM_LOAD16_BYTE     ( "b14-24", 0x00001, 0x10000, 0xacdf08d4 )
+	static RomLoadPtr rom_topspedu = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x100000, REGION_CPU1, 0 );/* 128K for 68000 code (CPU A) */
+		ROM_LOAD16_BYTE     ( "b14-23", 0x00000, 0x10000, 0xdd0307fd );
+		ROM_LOAD16_BYTE     ( "b14-24", 0x00001, 0x10000, 0xacdf08d4 );
 		ROM_LOAD16_WORD_SWAP( "b14-05", 0x80000, 0x80000, 0x6557e9d8 )	/* data rom */
 	
-		ROM_REGION( 0x20000, REGION_CPU3, 0 )	/* 128K for 68000 code (CPU B) */
-		ROM_LOAD16_BYTE( "b14-26", 0x00000, 0x10000, 0x659dc872 )
-		ROM_LOAD16_BYTE( "b14-56", 0x00001, 0x10000, 0xd165cf1b )
+		ROM_REGION( 0x20000, REGION_CPU3, 0 );/* 128K for 68000 code (CPU B) */
+		ROM_LOAD16_BYTE( "b14-26", 0x00000, 0x10000, 0x659dc872 );
+		ROM_LOAD16_BYTE( "b14-56", 0x00001, 0x10000, 0xd165cf1b );
 	
-		ROM_REGION( 0x1c000, REGION_CPU2, 0 )	/* Z80 sound cpu */
-		ROM_LOAD( "b14-25.67", 0x00000, 0x04000, 0x9eab28ef )
-		ROM_CONTINUE(          0x10000, 0x0c000 )	/* banked stuff */
+		ROM_REGION( 0x1c000, REGION_CPU2, 0 );/* Z80 sound cpu */
+		ROM_LOAD( "b14-25.67", 0x00000, 0x04000, 0x9eab28ef );
+		ROM_CONTINUE(          0x10000, 0x0c000 );/* banked stuff */
 	
-		ROM_REGION( 0x40000, REGION_GFX1, ROMREGION_DISPOSE )
-		ROM_LOAD16_BYTE( "b14-07.54", 0x00000, 0x20000, 0xc6025fff )	/* SCR tiles */
-		ROM_LOAD16_BYTE( "b14-06.52", 0x00001, 0x20000, 0xb4e2536e )
+		ROM_REGION( 0x40000, REGION_GFX1, ROMREGION_DISPOSE );
+		ROM_LOAD16_BYTE( "b14-07.54", 0x00000, 0x20000, 0xc6025fff );/* SCR tiles */
+		ROM_LOAD16_BYTE( "b14-06.52", 0x00001, 0x20000, 0xb4e2536e );
 	
-		ROM_REGION( 0x200000, REGION_GFX2, ROMREGION_DISPOSE )
-		ROM_LOAD32_BYTE( "b14-01", 0x00000, 0x80000, 0x84a56f37 )	/* OBJ: each rom has 1 bitplane, forming 16x8 tiles */
-		ROM_LOAD32_BYTE( "b14-02", 0x00001, 0x80000, 0x6889186b )
-		ROM_LOAD32_BYTE( "b14-03", 0x00002, 0x80000, 0xd1ed9e71 )
-		ROM_LOAD32_BYTE( "b14-04", 0x00003, 0x80000, 0xb63f0519 )
+		ROM_REGION( 0x200000, REGION_GFX2, ROMREGION_DISPOSE );
+		ROM_LOAD32_BYTE( "b14-01", 0x00000, 0x80000, 0x84a56f37 );/* OBJ: each rom has 1 bitplane, forming 16x8 tiles */
+		ROM_LOAD32_BYTE( "b14-02", 0x00001, 0x80000, 0x6889186b );
+		ROM_LOAD32_BYTE( "b14-03", 0x00002, 0x80000, 0xd1ed9e71 );
+		ROM_LOAD32_BYTE( "b14-04", 0x00003, 0x80000, 0xb63f0519 );
 	
-		ROM_REGION( 0x10000, REGION_USER1, 0 )
-		ROM_LOAD( "b14-30.88", 0x00000, 0x10000, 0xdccb0c7f )	/* zoom tables for zoom sprite h/w */
+		ROM_REGION( 0x10000, REGION_USER1, 0 );
+		ROM_LOAD( "b14-30.88", 0x00000, 0x10000, 0xdccb0c7f );/* zoom tables for zoom sprite h/w */
 	
-		ROM_REGION( 0x2000, REGION_USER2, 0 )
-		ROM_LOAD( "b14-31.90", 0x0000,  0x2000,  0x5c6b013d )	/* microcontroller */
+		ROM_REGION( 0x2000, REGION_USER2, 0 );
+		ROM_LOAD( "b14-31.90", 0x0000,  0x2000,  0x5c6b013d );/* microcontroller */
 	
-		ROM_REGION( 0x20000, REGION_SOUND1, 0 )	/* ADPCM samples */
-		ROM_LOAD( "b14-28.103", 0x00000, 0x10000, 0xdf11d0ae )
-		ROM_LOAD( "b14-29.109", 0x10000, 0x10000, 0x7ad983e7 )
-	ROM_END
+		ROM_REGION( 0x20000, REGION_SOUND1, 0 );/* ADPCM samples */
+		ROM_LOAD( "b14-28.103", 0x00000, 0x10000, 0xdf11d0ae );
+		ROM_LOAD( "b14-29.109", 0x10000, 0x10000, 0x7ad983e7 );
+	ROM_END(); }}; 
 	
-	ROM_START( fullthrl )
-		ROM_REGION( 0x100000, REGION_CPU1, 0 )	/* 128K for 68000 code (CPU A) */
-		ROM_LOAD16_BYTE     ( "b14-67", 0x00000, 0x10000, 0x284c943f )	// Later rev?
-		ROM_LOAD16_BYTE     ( "b14-68", 0x00001, 0x10000, 0x54cf6196 )
+	static RomLoadPtr rom_fullthrl = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x100000, REGION_CPU1, 0 );/* 128K for 68000 code (CPU A) */
+		ROM_LOAD16_BYTE     ( "b14-67", 0x00000, 0x10000, 0x284c943f );// Later rev?
+		ROM_LOAD16_BYTE     ( "b14-68", 0x00001, 0x10000, 0x54cf6196 );
 		ROM_LOAD16_WORD_SWAP( "b14-05", 0x80000, 0x80000, 0x6557e9d8 )	/* data rom */
 	
-		ROM_REGION( 0x20000, REGION_CPU3, 0 )	/* 128K for 68000 code (CPU B) */
-		ROM_LOAD16_BYTE( "b14-69.80", 0x00000, 0x10000, 0xd652e300 )
-		ROM_LOAD16_BYTE( "b14-71",    0x00001, 0x10000, 0xf7081727 )
+		ROM_REGION( 0x20000, REGION_CPU3, 0 );/* 128K for 68000 code (CPU B) */
+		ROM_LOAD16_BYTE( "b14-69.80", 0x00000, 0x10000, 0xd652e300 );
+		ROM_LOAD16_BYTE( "b14-71",    0x00001, 0x10000, 0xf7081727 );
 	
-		ROM_REGION( 0x1c000, REGION_CPU2, 0 )	/* Z80 sound cpu */
-		ROM_LOAD( "b14-25.67", 0x00000, 0x04000, 0x9eab28ef )
-		ROM_CONTINUE(          0x10000, 0x0c000 )	/* banked stuff */
+		ROM_REGION( 0x1c000, REGION_CPU2, 0 );/* Z80 sound cpu */
+		ROM_LOAD( "b14-25.67", 0x00000, 0x04000, 0x9eab28ef );
+		ROM_CONTINUE(          0x10000, 0x0c000 );/* banked stuff */
 	
-		ROM_REGION( 0x40000, REGION_GFX1, ROMREGION_DISPOSE )
-		ROM_LOAD16_BYTE( "b14-07.54", 0x00000, 0x20000, 0xc6025fff )	/* SCR tiles */
-		ROM_LOAD16_BYTE( "b14-06.52", 0x00001, 0x20000, 0xb4e2536e )
+		ROM_REGION( 0x40000, REGION_GFX1, ROMREGION_DISPOSE );
+		ROM_LOAD16_BYTE( "b14-07.54", 0x00000, 0x20000, 0xc6025fff );/* SCR tiles */
+		ROM_LOAD16_BYTE( "b14-06.52", 0x00001, 0x20000, 0xb4e2536e );
 	
-		ROM_REGION( 0x200000, REGION_GFX2, ROMREGION_DISPOSE )
-		ROM_LOAD32_BYTE( "b14-01", 0x00000, 0x80000, 0x84a56f37 )	/* OBJ: each rom has 1 bitplane, forming 16x8 tiles */
-		ROM_LOAD32_BYTE( "b14-02", 0x00001, 0x80000, 0x6889186b )
-		ROM_LOAD32_BYTE( "b14-03", 0x00002, 0x80000, 0xd1ed9e71 )
-		ROM_LOAD32_BYTE( "b14-04", 0x00003, 0x80000, 0xb63f0519 )
+		ROM_REGION( 0x200000, REGION_GFX2, ROMREGION_DISPOSE );
+		ROM_LOAD32_BYTE( "b14-01", 0x00000, 0x80000, 0x84a56f37 );/* OBJ: each rom has 1 bitplane, forming 16x8 tiles */
+		ROM_LOAD32_BYTE( "b14-02", 0x00001, 0x80000, 0x6889186b );
+		ROM_LOAD32_BYTE( "b14-03", 0x00002, 0x80000, 0xd1ed9e71 );
+		ROM_LOAD32_BYTE( "b14-04", 0x00003, 0x80000, 0xb63f0519 );
 	
-		ROM_REGION( 0x10000, REGION_USER1, 0 )
-		ROM_LOAD( "b14-30.88", 0x00000, 0x10000, 0xdccb0c7f )	/* zoom tables for zoom sprite h/w */
+		ROM_REGION( 0x10000, REGION_USER1, 0 );
+		ROM_LOAD( "b14-30.88", 0x00000, 0x10000, 0xdccb0c7f );/* zoom tables for zoom sprite h/w */
 	
-		ROM_REGION( 0x2000, REGION_USER2, 0 )
-		ROM_LOAD( "b14-31.90", 0x0000,  0x2000,  0x5c6b013d )	/* microcontroller */
+		ROM_REGION( 0x2000, REGION_USER2, 0 );
+		ROM_LOAD( "b14-31.90", 0x0000,  0x2000,  0x5c6b013d );/* microcontroller */
 	
-		ROM_REGION( 0x20000, REGION_SOUND1, 0 )	/* ADPCM samples */
-		ROM_LOAD( "b14-28.103", 0x00000, 0x10000, 0xdf11d0ae )
-		ROM_LOAD( "b14-29.109", 0x10000, 0x10000, 0x7ad983e7 )
-	ROM_END
+		ROM_REGION( 0x20000, REGION_SOUND1, 0 );/* ADPCM samples */
+		ROM_LOAD( "b14-28.103", 0x00000, 0x10000, 0xdf11d0ae );
+		ROM_LOAD( "b14-29.109", 0x10000, 0x10000, 0x7ad983e7 );
+	ROM_END(); }}; 
 	
 	
 	void init_topspeed(void)

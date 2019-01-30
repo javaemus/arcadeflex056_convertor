@@ -948,110 +948,110 @@ public class tubep
 	
 	
 	
-	ROM_START( tubep )
-		ROM_REGION( 0x10000,REGION_CPU1, 0 ) /* Z80 (main) cpu code */
-		ROM_LOAD( "tp-p_5", 0x0000, 0x2000, 0xd5e0cc2f )
-		ROM_LOAD( "tp-p.6", 0x2000, 0x2000, 0x97b791a0 )
-		ROM_LOAD( "tp-p.7", 0x4000, 0x2000, 0xadd9983e )
-		ROM_LOAD( "tp-p.8", 0x6000, 0x2000, 0xb3793cb5 )
+	static RomLoadPtr rom_tubep = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x10000,REGION_CPU1, 0 );/* Z80 (main) cpu code */
+		ROM_LOAD( "tp-p_5", 0x0000, 0x2000, 0xd5e0cc2f );
+		ROM_LOAD( "tp-p.6", 0x2000, 0x2000, 0x97b791a0 );
+		ROM_LOAD( "tp-p.7", 0x4000, 0x2000, 0xadd9983e );
+		ROM_LOAD( "tp-p.8", 0x6000, 0x2000, 0xb3793cb5 );
 	
-		ROM_REGION( 0x10000,REGION_CPU2, 0 ) /* Z80 (graphics??) cpu code */
-		ROM_LOAD( "tp-p_1", 0x0000, 0x2000, 0xb4020fcc )
-		ROM_LOAD( "tp-p_2", 0x2000, 0x2000, 0xa69862d6 )
-		ROM_LOAD( "tp-p.3", 0x4000, 0x2000, 0xf1d86e00 )
-		ROM_LOAD( "tp-p.4", 0x6000, 0x2000, 0x0a1027bc )
+		ROM_REGION( 0x10000,REGION_CPU2, 0 );/* Z80 (graphics??) cpu code */
+		ROM_LOAD( "tp-p_1", 0x0000, 0x2000, 0xb4020fcc );
+		ROM_LOAD( "tp-p_2", 0x2000, 0x2000, 0xa69862d6 );
+		ROM_LOAD( "tp-p.3", 0x4000, 0x2000, 0xf1d86e00 );
+		ROM_LOAD( "tp-p.4", 0x6000, 0x2000, 0x0a1027bc );
 	
-		ROM_REGION( 0x10000,REGION_CPU3, 0 ) /* Z80 (sound) cpu code */
-		ROM_LOAD( "tp-s.1", 0x0000, 0x2000, 0x78964fcc )
-		ROM_LOAD( "tp-s.2", 0x2000, 0x2000, 0x61232e29 )
+		ROM_REGION( 0x10000,REGION_CPU3, 0 );/* Z80 (sound) cpu code */
+		ROM_LOAD( "tp-s.1", 0x0000, 0x2000, 0x78964fcc );
+		ROM_LOAD( "tp-s.2", 0x2000, 0x2000, 0x61232e29 );
 	
-		ROM_REGION( 0xc000, REGION_GFX1, 0 ) /* */
-		ROM_LOAD( "tp-b.1", 0x0000, 0x2000, 0xfda355e0 )
-		ROM_LOAD( "tp-b.2", 0x2000, 0x2000, 0xcbe30149 )
-		ROM_LOAD( "tp-b.3", 0x4000, 0x2000, 0xf5d118e7 )
-		ROM_LOAD( "tp-b.4", 0x6000, 0x2000, 0x01952144 )
-		ROM_LOAD( "tp-b.5", 0x8000, 0x2000, 0x4dabea43 )
-		ROM_LOAD( "tp-b.6", 0xa000, 0x2000, 0x01952144 )
+		ROM_REGION( 0xc000, REGION_GFX1, 0 );/* */
+		ROM_LOAD( "tp-b.1", 0x0000, 0x2000, 0xfda355e0 );
+		ROM_LOAD( "tp-b.2", 0x2000, 0x2000, 0xcbe30149 );
+		ROM_LOAD( "tp-b.3", 0x4000, 0x2000, 0xf5d118e7 );
+		ROM_LOAD( "tp-b.4", 0x6000, 0x2000, 0x01952144 );
+		ROM_LOAD( "tp-b.5", 0x8000, 0x2000, 0x4dabea43 );
+		ROM_LOAD( "tp-b.6", 0xa000, 0x2000, 0x01952144 );
 	
-		ROM_REGION( 0x10000,REGION_GFX2, 0 ) /* */
-		ROM_LOAD( "tp-c.1", 0x0000, 0x2000, 0xec002af2 )
-		ROM_LOAD( "tp-c.2", 0x2000, 0x2000, 0xc44f7128 )
-		ROM_LOAD( "tp-c.3", 0x4000, 0x2000, 0x4146b0c9 )
-		ROM_LOAD( "tp-c.4", 0x6000, 0x2000, 0x552b58cf )
-		ROM_LOAD( "tp-c.5", 0x8000, 0x2000, 0x2bb481d7 )
-		ROM_LOAD( "tp-c.6", 0xa000, 0x2000, 0xc07a4338 )
-		ROM_LOAD( "tp-c.7", 0xc000, 0x2000, 0x87b8700a )
-		ROM_LOAD( "tp-c.8", 0xe000, 0x2000, 0xa6497a03 )
+		ROM_REGION( 0x10000,REGION_GFX2, 0 );/* */
+		ROM_LOAD( "tp-c.1", 0x0000, 0x2000, 0xec002af2 );
+		ROM_LOAD( "tp-c.2", 0x2000, 0x2000, 0xc44f7128 );
+		ROM_LOAD( "tp-c.3", 0x4000, 0x2000, 0x4146b0c9 );
+		ROM_LOAD( "tp-c.4", 0x6000, 0x2000, 0x552b58cf );
+		ROM_LOAD( "tp-c.5", 0x8000, 0x2000, 0x2bb481d7 );
+		ROM_LOAD( "tp-c.6", 0xa000, 0x2000, 0xc07a4338 );
+		ROM_LOAD( "tp-c.7", 0xc000, 0x2000, 0x87b8700a );
+		ROM_LOAD( "tp-c.8", 0xe000, 0x2000, 0xa6497a03 );
 	
-		ROM_REGION( 0x4000, REGION_GFX3, 0 ) /*  */
-		ROM_LOAD( "tp-g.3", 0x0000, 0x1000, 0x657a465d )
-		ROM_LOAD( "tp-g.4", 0x1000, 0x1000, 0x40a1fe00 )
-		ROM_LOAD( "tp-g.1", 0x2000, 0x1000, 0x4a7407a2 )
-		ROM_LOAD( "tp-g.2", 0x3000, 0x1000, 0xf0b26c2e )
+		ROM_REGION( 0x4000, REGION_GFX3, 0 );/*  */
+		ROM_LOAD( "tp-g.3", 0x0000, 0x1000, 0x657a465d );
+		ROM_LOAD( "tp-g.4", 0x1000, 0x1000, 0x40a1fe00 );
+		ROM_LOAD( "tp-g.1", 0x2000, 0x1000, 0x4a7407a2 );
+		ROM_LOAD( "tp-g.2", 0x3000, 0x1000, 0xf0b26c2e );
 	
-		ROM_REGION( 0x8000, REGION_GFX4, 0 ) /*  */
-		ROM_LOAD( "tp-g.5", 0x0000, 0x2000, 0x9f375b27 )
-		ROM_LOAD( "tp-g.6", 0x2000, 0x2000, 0x3ea127b8 )
-		ROM_LOAD( "tp-g.7", 0x4000, 0x2000, 0x105cb9e4 )
-		ROM_LOAD( "tp-g.8", 0x6000, 0x2000, 0x27e5e6c1 )
+		ROM_REGION( 0x8000, REGION_GFX4, 0 );/*  */
+		ROM_LOAD( "tp-g.5", 0x0000, 0x2000, 0x9f375b27 );
+		ROM_LOAD( "tp-g.6", 0x2000, 0x2000, 0x3ea127b8 );
+		ROM_LOAD( "tp-g.7", 0x4000, 0x2000, 0x105cb9e4 );
+		ROM_LOAD( "tp-g.8", 0x6000, 0x2000, 0x27e5e6c1 );
 	
-		ROM_REGION( 0x100,   REGION_PROMS, 0 ) /* color proms */
-		ROM_LOAD( "tp-2.c12", 0x0000, 0x0020, 0xac7e582f ) /* text and sprites palette */
-		ROM_LOAD( "tp-1.c13", 0x0020, 0x0020, 0xcd0910d6 ) /* background palette ??? */
-	ROM_END
+		ROM_REGION( 0x100,   REGION_PROMS, 0 );/* color proms */
+		ROM_LOAD( "tp-2.c12", 0x0000, 0x0020, 0xac7e582f );/* text and sprites palette */
+		ROM_LOAD( "tp-1.c13", 0x0020, 0x0020, 0xcd0910d6 );/* background palette ??? */
+	ROM_END(); }}; 
 	
-	ROM_START( rjammer )
-		ROM_REGION( 0x10000,REGION_CPU1, 0 ) /* Z80 (main) cpu code */
-		ROM_LOAD( "tp-p.1", 0x0000, 0x2000, 0x93eeed67 )
-		ROM_LOAD( "tp-p.2", 0x2000, 0x2000, 0xed2830c4 )
-		ROM_LOAD( "tp-p.3", 0x4000, 0x2000, 0xe29f25e3 )
-		ROM_LOAD( "tp-p.4", 0x8000, 0x2000, 0x6ed71fbc ) /* 0x4000 !!!! */
-		ROM_CONTINUE(       0x6000, 0x2000 )
+	static RomLoadPtr rom_rjammer = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x10000,REGION_CPU1, 0 );/* Z80 (main) cpu code */
+		ROM_LOAD( "tp-p.1", 0x0000, 0x2000, 0x93eeed67 );
+		ROM_LOAD( "tp-p.2", 0x2000, 0x2000, 0xed2830c4 );
+		ROM_LOAD( "tp-p.3", 0x4000, 0x2000, 0xe29f25e3 );
+		ROM_LOAD( "tp-p.4", 0x8000, 0x2000, 0x6ed71fbc );/* 0x4000 !!!! */
+		ROM_CONTINUE(       0x6000, 0x2000 );
 	
-		ROM_REGION( 0x10000,REGION_CPU2, 0 ) /* Z80 (graphics??) cpu code */
-		ROM_LOAD( "tp-p.8", 0x0000, 0x2000, 0x388b9c66 )
-		ROM_LOAD( "tp-p.7", 0x2000, 0x2000, 0x595030bb )
-		ROM_LOAD( "tp-p.6", 0x4000, 0x2000, 0xb5aa0f89 )
-		ROM_LOAD( "tp-p.5", 0x6000, 0x2000, 0x56eae9ac )
+		ROM_REGION( 0x10000,REGION_CPU2, 0 );/* Z80 (graphics??) cpu code */
+		ROM_LOAD( "tp-p.8", 0x0000, 0x2000, 0x388b9c66 );
+		ROM_LOAD( "tp-p.7", 0x2000, 0x2000, 0x595030bb );
+		ROM_LOAD( "tp-p.6", 0x4000, 0x2000, 0xb5aa0f89 );
+		ROM_LOAD( "tp-p.5", 0x6000, 0x2000, 0x56eae9ac );
 	
-		ROM_REGION( 0x10000,REGION_CPU3, 0 ) /* Z80 (sound) cpu code */
-		ROM_LOAD( "tp-b.1", 0x0000, 0x2000, 0xb1c2525c )
-		ROM_LOAD( "tp-s.3", 0x2000, 0x2000, 0x90c9d0b9 )
-		ROM_LOAD( "tp-s.2", 0x4000, 0x2000, 0x444b6a1d )
-		ROM_LOAD( "tp-s.1", 0x6000, 0x2000, 0x391097cd )
+		ROM_REGION( 0x10000,REGION_CPU3, 0 );/* Z80 (sound) cpu code */
+		ROM_LOAD( "tp-b.1", 0x0000, 0x2000, 0xb1c2525c );
+		ROM_LOAD( "tp-s.3", 0x2000, 0x2000, 0x90c9d0b9 );
+		ROM_LOAD( "tp-s.2", 0x4000, 0x2000, 0x444b6a1d );
+		ROM_LOAD( "tp-s.1", 0x6000, 0x2000, 0x391097cd );
 	
-		ROM_REGION( 0x8000, REGION_GFX1, 0 ) /* */
-		ROM_LOAD( "tp-b.2", 0x0000, 0x2000, 0x8cd2c917 )
-		ROM_LOAD( "tp-b.3", 0x2000, 0x1000, 0xb80ef399 ) /* 0x1000 !!!!! */
-		ROM_LOAD( "tp-b.4", 0x4000, 0x2000, 0x6600f306 )
-		ROM_LOAD( "tp-b.5", 0x6000, 0x2000, 0x0f260bfe )
+		ROM_REGION( 0x8000, REGION_GFX1, 0 );/* */
+		ROM_LOAD( "tp-b.2", 0x0000, 0x2000, 0x8cd2c917 );
+		ROM_LOAD( "tp-b.3", 0x2000, 0x1000, 0xb80ef399 );/* 0x1000 !!!!! */
+		ROM_LOAD( "tp-b.4", 0x4000, 0x2000, 0x6600f306 );
+		ROM_LOAD( "tp-b.5", 0x6000, 0x2000, 0x0f260bfe );
 	
-		ROM_REGION( 0x10000,REGION_GFX2, 0 ) /* */
-		ROM_LOAD( "tp-c.1", 0x0000, 0x2000, 0xef573117 )
-		ROM_LOAD( "tp-c.2", 0x2000, 0x2000, 0x1d29f1e6 )
-		ROM_LOAD( "tp-c.3", 0x4000, 0x2000, 0x086511a7 )
-		ROM_LOAD( "tp-c.4", 0x6000, 0x2000, 0x49f372ea )
-		ROM_LOAD( "tp-c.5", 0x8000, 0x2000, 0x513f8777 )
-		ROM_LOAD( "tp-c.6", 0xa000, 0x2000, 0x11f9752b )
-		ROM_LOAD( "tp-c.7", 0xc000, 0x2000, 0xcbf093f1 )
-		ROM_LOAD( "tp-c.8", 0xe000, 0x2000, 0x9f31ecb5 )
+		ROM_REGION( 0x10000,REGION_GFX2, 0 );/* */
+		ROM_LOAD( "tp-c.1", 0x0000, 0x2000, 0xef573117 );
+		ROM_LOAD( "tp-c.2", 0x2000, 0x2000, 0x1d29f1e6 );
+		ROM_LOAD( "tp-c.3", 0x4000, 0x2000, 0x086511a7 );
+		ROM_LOAD( "tp-c.4", 0x6000, 0x2000, 0x49f372ea );
+		ROM_LOAD( "tp-c.5", 0x8000, 0x2000, 0x513f8777 );
+		ROM_LOAD( "tp-c.6", 0xa000, 0x2000, 0x11f9752b );
+		ROM_LOAD( "tp-c.7", 0xc000, 0x2000, 0xcbf093f1 );
+		ROM_LOAD( "tp-c.8", 0xe000, 0x2000, 0x9f31ecb5 );
 	
-		ROM_REGION( 0x4000, REGION_GFX3, 0 ) /*  */
-		ROM_LOAD( "tp-g.4", 0x0000, 0x1000, 0x99e72549 )
-		ROM_LOAD( "tp-g.3", 0x1000, 0x1000, 0x1f2abec5 )
-		ROM_LOAD( "tp-g.2", 0x2000, 0x1000, 0x4a7407a2 )
-		ROM_LOAD( "tp-g.1", 0x3000, 0x1000, 0xf0b26c2e )
+		ROM_REGION( 0x4000, REGION_GFX3, 0 );/*  */
+		ROM_LOAD( "tp-g.4", 0x0000, 0x1000, 0x99e72549 );
+		ROM_LOAD( "tp-g.3", 0x1000, 0x1000, 0x1f2abec5 );
+		ROM_LOAD( "tp-g.2", 0x2000, 0x1000, 0x4a7407a2 );
+		ROM_LOAD( "tp-g.1", 0x3000, 0x1000, 0xf0b26c2e );
 	
-		ROM_REGION( 0x8000, REGION_GFX4, 0 ) /*  */
-		ROM_LOAD( "tp-g.5", 0x0000, 0x2000, 0x27e5e6c1 )
-		ROM_LOAD( "tp-g.6", 0x2000, 0x2000, 0x105cb9e4 )
-		ROM_LOAD( "tp-g.7", 0x4000, 0x2000, 0x9f375b27 )
-		ROM_LOAD( "tp-g.8", 0x6000, 0x2000, 0x2e619fec )
+		ROM_REGION( 0x8000, REGION_GFX4, 0 );/*  */
+		ROM_LOAD( "tp-g.5", 0x0000, 0x2000, 0x27e5e6c1 );
+		ROM_LOAD( "tp-g.6", 0x2000, 0x2000, 0x105cb9e4 );
+		ROM_LOAD( "tp-g.7", 0x4000, 0x2000, 0x9f375b27 );
+		ROM_LOAD( "tp-g.8", 0x6000, 0x2000, 0x2e619fec );
 	
-		ROM_REGION( 0x100,   REGION_PROMS, 0 ) /* color proms */
-		ROM_LOAD( "16b",    0x0000, 0x0020, 0x9a12873a ) /* background palette ??? */
-		ROM_LOAD( "16a",    0x0020, 0x0020, 0x90222a71 ) /* text and sprites palette */
-	ROM_END
+		ROM_REGION( 0x100,   REGION_PROMS, 0 );/* color proms */
+		ROM_LOAD( "16b",    0x0000, 0x0020, 0x9a12873a );/* background palette ??? */
+		ROM_LOAD( "16a",    0x0020, 0x0020, 0x90222a71 );/* text and sprites palette */
+	ROM_END(); }}; 
 	
 	/*     year  rom      parent  machine  inp   init */
 	GAMEX( 1984, tubep,   0,      tubep,   tubep,   0, ROT0, "Nichibutsu + Fujitek", "Tube Panic", GAME_IMPERFECT_GRAPHICS )

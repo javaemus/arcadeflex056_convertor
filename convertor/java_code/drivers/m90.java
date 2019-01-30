@@ -687,196 +687,196 @@ public class m90
 	
 	#define CODE_SIZE 0x100000
 	
-	ROM_START( hasamu )
-		ROM_REGION( CODE_SIZE * 2, REGION_CPU1, 0 )
-		ROM_LOAD16_BYTE( "hasc-p1.bin",  0x00001, 0x20000, 0x53df9834 )
-		ROM_LOAD16_BYTE( "hasc-p0.bin",  0x00000, 0x20000, 0xdff0ba6e )
-		ROM_COPY( REGION_CPU1, 0x3fff0,  0xffff0, 0x10 )	/* start vector */
+	static RomLoadPtr rom_hasamu = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( CODE_SIZE * 2, REGION_CPU1, 0 );
+		ROM_LOAD16_BYTE( "hasc-p1.bin",  0x00001, 0x20000, 0x53df9834 );
+		ROM_LOAD16_BYTE( "hasc-p0.bin",  0x00000, 0x20000, 0xdff0ba6e );
+		ROM_COPY( REGION_CPU1, 0x3fff0,  0xffff0, 0x10 );/* start vector */
 	
-		ROM_REGION( 0x10000, REGION_CPU2, 0 )	/* 64k for the audio CPU */
-		ROM_LOAD( "hasc-sp.bin",    0x0000, 0x10000, 0x259b1687 )
+		ROM_REGION( 0x10000, REGION_CPU2, 0 );/* 64k for the audio CPU */
+		ROM_LOAD( "hasc-sp.bin",    0x0000, 0x10000, 0x259b1687 );
 	
-		ROM_REGION( 0x80000, REGION_GFX1, ROMREGION_DISPOSE )
-		ROM_LOAD( "hasc-c0.bin",    0x000000, 0x20000, 0xdd5a2174 )
-		ROM_LOAD( "hasc-c1.bin",    0x020000, 0x20000, 0x76b8217c )
-		ROM_LOAD( "hasc-c2.bin",    0x040000, 0x20000, 0xd90f9a68 )
-		ROM_LOAD( "hasc-c3.bin",    0x060000, 0x20000, 0x6cfe0d39 )
+		ROM_REGION( 0x80000, REGION_GFX1, ROMREGION_DISPOSE );
+		ROM_LOAD( "hasc-c0.bin",    0x000000, 0x20000, 0xdd5a2174 );
+		ROM_LOAD( "hasc-c1.bin",    0x020000, 0x20000, 0x76b8217c );
+		ROM_LOAD( "hasc-c2.bin",    0x040000, 0x20000, 0xd90f9a68 );
+		ROM_LOAD( "hasc-c3.bin",    0x060000, 0x20000, 0x6cfe0d39 );
 	
-		ROM_REGION( 0x20000, REGION_SOUND1, 0 )	/* samples */
+		ROM_REGION( 0x20000, REGION_SOUND1, 0 );/* samples */
 		/* No samples */
-	ROM_END
+	ROM_END(); }}; 
 	
-	ROM_START( bombrman )
-		ROM_REGION( CODE_SIZE * 2, REGION_CPU1, 0 )
-		ROM_LOAD16_BYTE( "bbm-p1.bin",   0x00001, 0x20000, 0x982bd166 )
-		ROM_LOAD16_BYTE( "bbm-p0.bin",   0x00000, 0x20000, 0x0a20afcc )
-		ROM_COPY( REGION_CPU1, 0x3fff0,  0xffff0, 0x10 )	/* start vector */
+	static RomLoadPtr rom_bombrman = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( CODE_SIZE * 2, REGION_CPU1, 0 );
+		ROM_LOAD16_BYTE( "bbm-p1.bin",   0x00001, 0x20000, 0x982bd166 );
+		ROM_LOAD16_BYTE( "bbm-p0.bin",   0x00000, 0x20000, 0x0a20afcc );
+		ROM_COPY( REGION_CPU1, 0x3fff0,  0xffff0, 0x10 );/* start vector */
 	
-		ROM_REGION( 0x10000, REGION_CPU2, 0 )	/* 64k for the audio CPU */
-		ROM_LOAD( "bbm-sp.bin",    0x0000, 0x10000, 0x251090cd )
+		ROM_REGION( 0x10000, REGION_CPU2, 0 );/* 64k for the audio CPU */
+		ROM_LOAD( "bbm-sp.bin",    0x0000, 0x10000, 0x251090cd );
 	
-		ROM_REGION( 0x100000, REGION_GFX1, ROMREGION_DISPOSE )
-		ROM_LOAD( "bbm-c0.bin",    0x000000, 0x40000, 0x695d2019 )
-		ROM_LOAD( "bbm-c1.bin",    0x040000, 0x40000, 0x4c7c8bbc )
-		ROM_LOAD( "bbm-c2.bin",    0x080000, 0x40000, 0x0700d406 )
-		ROM_LOAD( "bbm-c3.bin",    0x0c0000, 0x40000, 0x3c3613af )
+		ROM_REGION( 0x100000, REGION_GFX1, ROMREGION_DISPOSE );
+		ROM_LOAD( "bbm-c0.bin",    0x000000, 0x40000, 0x695d2019 );
+		ROM_LOAD( "bbm-c1.bin",    0x040000, 0x40000, 0x4c7c8bbc );
+		ROM_LOAD( "bbm-c2.bin",    0x080000, 0x40000, 0x0700d406 );
+		ROM_LOAD( "bbm-c3.bin",    0x0c0000, 0x40000, 0x3c3613af );
 	
-		ROM_REGION( 0x20000, REGION_SOUND1, 0 )	/* samples */
-		ROM_LOAD( "bbm-v0.bin",    0x0000, 0x20000, 0x0fa803fe )
-	ROM_END
+		ROM_REGION( 0x20000, REGION_SOUND1, 0 );/* samples */
+		ROM_LOAD( "bbm-v0.bin",    0x0000, 0x20000, 0x0fa803fe );
+	ROM_END(); }}; 
 	
-	ROM_START( dynablsb )
-		ROM_REGION( 0x100000, REGION_CPU1, 0 )
-		ROM_LOAD16_BYTE( "db2-26.bin",   0x00001, 0x20000, 0xa78c72f8 )
-		ROM_LOAD16_BYTE( "db3-25.bin",   0x00000, 0x20000, 0xbf3137c3 )
-		ROM_COPY( REGION_CPU1, 0x3fff0,  0xffff0, 0x10 )	/* start vector */
+	static RomLoadPtr rom_dynablsb = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x100000, REGION_CPU1, 0 );
+		ROM_LOAD16_BYTE( "db2-26.bin",   0x00001, 0x20000, 0xa78c72f8 );
+		ROM_LOAD16_BYTE( "db3-25.bin",   0x00000, 0x20000, 0xbf3137c3 );
+		ROM_COPY( REGION_CPU1, 0x3fff0,  0xffff0, 0x10 );/* start vector */
 	
-		ROM_REGION( 0x10000, REGION_CPU2, 0 )	/* 64k for the audio CPU */
-		ROM_LOAD( "db1-17.bin",    0x0000, 0x10000, 0xe693c32f )
+		ROM_REGION( 0x10000, REGION_CPU2, 0 );/* 64k for the audio CPU */
+		ROM_LOAD( "db1-17.bin",    0x0000, 0x10000, 0xe693c32f );
 	
-		ROM_REGION( 0x100000, REGION_GFX1, ROMREGION_DISPOSE )
-		ROM_LOAD( "bbm-c0.bin",    0x000000, 0x40000, 0x695d2019 )
-		ROM_LOAD( "bbm-c1.bin",    0x040000, 0x40000, 0x4c7c8bbc )
-		ROM_LOAD( "bbm-c2.bin",    0x080000, 0x40000, 0x0700d406 )
-		ROM_LOAD( "bbm-c3.bin",    0x0c0000, 0x40000, 0x3c3613af )
+		ROM_REGION( 0x100000, REGION_GFX1, ROMREGION_DISPOSE );
+		ROM_LOAD( "bbm-c0.bin",    0x000000, 0x40000, 0x695d2019 );
+		ROM_LOAD( "bbm-c1.bin",    0x040000, 0x40000, 0x4c7c8bbc );
+		ROM_LOAD( "bbm-c2.bin",    0x080000, 0x40000, 0x0700d406 );
+		ROM_LOAD( "bbm-c3.bin",    0x0c0000, 0x40000, 0x3c3613af );
 	
-		ROM_REGION( 0x20000, REGION_SOUND1, 0 )	/* samples */
+		ROM_REGION( 0x20000, REGION_SOUND1, 0 );/* samples */
 		/* Does this have a sample rom? */
-	ROM_END
+	ROM_END(); }}; 
 	
-	ROM_START( bbmanw )
-		ROM_REGION( CODE_SIZE * 2, REGION_CPU1, 0 )
-		ROM_LOAD16_BYTE( "db_h0-b.rom",  0x00001, 0x40000, 0x567d3709 )
-		ROM_LOAD16_BYTE( "db_l0-b.rom",  0x00000, 0x40000, 0xe762c22b )
-		ROM_COPY( REGION_CPU1, 0x7fff0,  0xffff0, 0x10 )	/* start vector */
+	static RomLoadPtr rom_bbmanw = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( CODE_SIZE * 2, REGION_CPU1, 0 );
+		ROM_LOAD16_BYTE( "db_h0-b.rom",  0x00001, 0x40000, 0x567d3709 );
+		ROM_LOAD16_BYTE( "db_l0-b.rom",  0x00000, 0x40000, 0xe762c22b );
+		ROM_COPY( REGION_CPU1, 0x7fff0,  0xffff0, 0x10 );/* start vector */
 	
-		ROM_REGION( 0x10000, REGION_CPU2, 0 )	/* 64k for the audio CPU */
-		ROM_LOAD( "db_sp.rom",    0x0000, 0x10000, 0x6bc1689e )
+		ROM_REGION( 0x10000, REGION_CPU2, 0 );/* 64k for the audio CPU */
+		ROM_LOAD( "db_sp.rom",    0x0000, 0x10000, 0x6bc1689e );
 	
-		ROM_REGION( 0x200000, REGION_GFX1, ROMREGION_DISPOSE )
-		ROM_LOAD( "bbm2_c0.bin",  0x000000, 0x40000, 0xe7ce058a )
-		ROM_LOAD( "bbm2_c1.bin",  0x080000, 0x40000, 0x636a78a9 )
-		ROM_LOAD( "bbm2_c2.bin",  0x100000, 0x40000, 0x9ac2142f )
-		ROM_LOAD( "bbm2_c3.bin",  0x180000, 0x40000, 0x47af1750 )
+		ROM_REGION( 0x200000, REGION_GFX1, ROMREGION_DISPOSE );
+		ROM_LOAD( "bbm2_c0.bin",  0x000000, 0x40000, 0xe7ce058a );
+		ROM_LOAD( "bbm2_c1.bin",  0x080000, 0x40000, 0x636a78a9 );
+		ROM_LOAD( "bbm2_c2.bin",  0x100000, 0x40000, 0x9ac2142f );
+		ROM_LOAD( "bbm2_c3.bin",  0x180000, 0x40000, 0x47af1750 );
 	
-		ROM_REGION( 0x20000, REGION_SOUND1, 0 )
-		ROM_LOAD( "db_w04m.rom",    0x0000, 0x20000, 0x4ad889ed )
-	ROM_END
+		ROM_REGION( 0x20000, REGION_SOUND1, 0 );
+		ROM_LOAD( "db_w04m.rom",    0x0000, 0x20000, 0x4ad889ed );
+	ROM_END(); }}; 
 	
-	ROM_START( bbmanwj )
-		ROM_REGION( CODE_SIZE * 2, REGION_CPU1, 0 )
-		ROM_LOAD16_BYTE( "bbm2_h0.bin",  0x00001, 0x40000, 0xe1407b91 )
-		ROM_LOAD16_BYTE( "bbm2_l0.bin",  0x00000, 0x40000, 0x20873b49 )
-		ROM_COPY( REGION_CPU1, 0x7fff0,  0xffff0, 0x10 )	/* start vector */
+	static RomLoadPtr rom_bbmanwj = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( CODE_SIZE * 2, REGION_CPU1, 0 );
+		ROM_LOAD16_BYTE( "bbm2_h0.bin",  0x00001, 0x40000, 0xe1407b91 );
+		ROM_LOAD16_BYTE( "bbm2_l0.bin",  0x00000, 0x40000, 0x20873b49 );
+		ROM_COPY( REGION_CPU1, 0x7fff0,  0xffff0, 0x10 );/* start vector */
 	
-		ROM_REGION( 0x10000, REGION_CPU2, 0 )	/* 64k for the audio CPU */
-		ROM_LOAD( "bbm2sp-b.bin", 0x0000, 0x10000, 0xb8d8108c )
+		ROM_REGION( 0x10000, REGION_CPU2, 0 );/* 64k for the audio CPU */
+		ROM_LOAD( "bbm2sp-b.bin", 0x0000, 0x10000, 0xb8d8108c );
 	
-		ROM_REGION( 0x200000, REGION_GFX1, ROMREGION_DISPOSE )
-		ROM_LOAD( "bbm2_c0.bin",  0x000000, 0x40000, 0xe7ce058a )
-		ROM_LOAD( "bbm2_c1.bin",  0x080000, 0x40000, 0x636a78a9 )
-		ROM_LOAD( "bbm2_c2.bin",  0x100000, 0x40000, 0x9ac2142f )
-		ROM_LOAD( "bbm2_c3.bin",  0x180000, 0x40000, 0x47af1750 )
+		ROM_REGION( 0x200000, REGION_GFX1, ROMREGION_DISPOSE );
+		ROM_LOAD( "bbm2_c0.bin",  0x000000, 0x40000, 0xe7ce058a );
+		ROM_LOAD( "bbm2_c1.bin",  0x080000, 0x40000, 0x636a78a9 );
+		ROM_LOAD( "bbm2_c2.bin",  0x100000, 0x40000, 0x9ac2142f );
+		ROM_LOAD( "bbm2_c3.bin",  0x180000, 0x40000, 0x47af1750 );
 	
-		ROM_REGION( 0x20000, REGION_SOUND1, 0 )	/* samples */
-		ROM_LOAD( "bbm2_vo.bin",  0x0000, 0x20000, 0x0ae655ff )
-	ROM_END
+		ROM_REGION( 0x20000, REGION_SOUND1, 0 );/* samples */
+		ROM_LOAD( "bbm2_vo.bin",  0x0000, 0x20000, 0x0ae655ff );
+	ROM_END(); }}; 
 	
-	ROM_START( atompunk )
-		ROM_REGION( CODE_SIZE * 2, REGION_CPU1, 0 )
-		ROM_LOAD16_BYTE( "bm2-ho-a.9f",  0x00001, 0x40000, 0x7d858682 )
-		ROM_LOAD16_BYTE( "bm2-lo-a.9k",  0x00000, 0x40000, 0xc7568031 )
-		ROM_COPY( REGION_CPU1, 0x7fff0,  0xffff0, 0x10 )	/* start vector */
+	static RomLoadPtr rom_atompunk = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( CODE_SIZE * 2, REGION_CPU1, 0 );
+		ROM_LOAD16_BYTE( "bm2-ho-a.9f",  0x00001, 0x40000, 0x7d858682 );
+		ROM_LOAD16_BYTE( "bm2-lo-a.9k",  0x00000, 0x40000, 0xc7568031 );
+		ROM_COPY( REGION_CPU1, 0x7fff0,  0xffff0, 0x10 );/* start vector */
 	
-		ROM_REGION( 0x10000, REGION_CPU2, 0 )	/* 64k for the audio CPU */
-		ROM_LOAD( "db_sp.rom",             0x0000, 0x10000, 0x6bc1689e )
+		ROM_REGION( 0x10000, REGION_CPU2, 0 );/* 64k for the audio CPU */
+		ROM_LOAD( "db_sp.rom",             0x0000, 0x10000, 0x6bc1689e );
 	
-		ROM_REGION( 0x200000, REGION_GFX1, ROMREGION_DISPOSE )
-		ROM_LOAD( "bbm2_c0.bin",  0x000000, 0x40000, 0xe7ce058a )
-		ROM_LOAD( "bbm2_c1.bin",  0x080000, 0x40000, 0x636a78a9 )
-		ROM_LOAD( "bbm2_c2.bin",  0x100000, 0x40000, 0x9ac2142f )
-		ROM_LOAD( "bbm2_c3.bin",  0x180000, 0x40000, 0x47af1750 )
+		ROM_REGION( 0x200000, REGION_GFX1, ROMREGION_DISPOSE );
+		ROM_LOAD( "bbm2_c0.bin",  0x000000, 0x40000, 0xe7ce058a );
+		ROM_LOAD( "bbm2_c1.bin",  0x080000, 0x40000, 0x636a78a9 );
+		ROM_LOAD( "bbm2_c2.bin",  0x100000, 0x40000, 0x9ac2142f );
+		ROM_LOAD( "bbm2_c3.bin",  0x180000, 0x40000, 0x47af1750 );
 	
-		ROM_REGION( 0x20000, REGION_SOUND1, 0 )	/* samples */
-		ROM_LOAD( "db_w04m.rom",           0x0000, 0x20000, 0x4ad889ed )
-	ROM_END
+		ROM_REGION( 0x20000, REGION_SOUND1, 0 );/* samples */
+		ROM_LOAD( "db_w04m.rom",           0x0000, 0x20000, 0x4ad889ed );
+	ROM_END(); }}; 
 	
-	ROM_START( quizf1 )
-		ROM_REGION( CODE_SIZE * 2, REGION_CPU1, 0 )
-		ROM_LOAD16_BYTE( "qf1-h0-.77",   0x000001, 0x40000, 0x280e3049 )
-		ROM_LOAD16_BYTE( "qf1-l0-.79",   0x000000, 0x40000, 0x94588a6f )
-		ROM_COPY( REGION_CPU1, 0x7fff0,  0xffff0, 0x10 )	/* start vector */
+	static RomLoadPtr rom_quizf1 = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( CODE_SIZE * 2, REGION_CPU1, 0 );
+		ROM_LOAD16_BYTE( "qf1-h0-.77",   0x000001, 0x40000, 0x280e3049 );
+		ROM_LOAD16_BYTE( "qf1-l0-.79",   0x000000, 0x40000, 0x94588a6f );
+		ROM_COPY( REGION_CPU1, 0x7fff0,  0xffff0, 0x10 );/* start vector */
 	
-		ROM_REGION( 0x100000, REGION_USER1, 0 )
-		ROM_LOAD16_BYTE( "qf1-h1-.78",   0x000001, 0x80000, 0xc6c2eb2b )	/* banked at 80000-8FFFF */
-		ROM_LOAD16_BYTE( "qf1-l1-.80",   0x000000, 0x80000, 0x3132c144 )
+		ROM_REGION( 0x100000, REGION_USER1, 0 );
+		ROM_LOAD16_BYTE( "qf1-h1-.78",   0x000001, 0x80000, 0xc6c2eb2b );/* banked at 80000-8FFFF */
+		ROM_LOAD16_BYTE( "qf1-l1-.80",   0x000000, 0x80000, 0x3132c144 );
 	
-		ROM_REGION( 0x10000, REGION_CPU2, 0 )	/* 64k for the audio CPU */
-		ROM_LOAD( "qf1-sp-.33",   0x0000, 0x10000, 0x0664fa9f )
+		ROM_REGION( 0x10000, REGION_CPU2, 0 );/* 64k for the audio CPU */
+		ROM_LOAD( "qf1-sp-.33",   0x0000, 0x10000, 0x0664fa9f );
 	
-		ROM_REGION( 0x200000, REGION_GFX1, ROMREGION_DISPOSE )
-		ROM_LOAD( "qf1-c0-.81",   0x000000, 0x80000, 0xc26b521e )
-		ROM_LOAD( "qf1-c1-.82",   0x080000, 0x80000, 0xdb9d7394 )
-		ROM_LOAD( "qf1-c2-.83",   0x100000, 0x80000, 0x0b1460ae )
-		ROM_LOAD( "qf1-c3-.84",   0x180000, 0x80000, 0x2d32ff37 )
+		ROM_REGION( 0x200000, REGION_GFX1, ROMREGION_DISPOSE );
+		ROM_LOAD( "qf1-c0-.81",   0x000000, 0x80000, 0xc26b521e );
+		ROM_LOAD( "qf1-c1-.82",   0x080000, 0x80000, 0xdb9d7394 );
+		ROM_LOAD( "qf1-c2-.83",   0x100000, 0x80000, 0x0b1460ae );
+		ROM_LOAD( "qf1-c3-.84",   0x180000, 0x80000, 0x2d32ff37 );
 	
-		ROM_REGION( 0x40000, REGION_SOUND1, 0 )	/* samples */
-		ROM_LOAD( "qf1-v0-.30",   0x0000, 0x40000, 0xb8d16e7c )
-	ROM_END
+		ROM_REGION( 0x40000, REGION_SOUND1, 0 );/* samples */
+		ROM_LOAD( "qf1-v0-.30",   0x0000, 0x40000, 0xb8d16e7c );
+	ROM_END(); }}; 
 	
-	ROM_START( riskchal )
-		ROM_REGION( CODE_SIZE * 2, REGION_CPU1, 0 )
-		ROM_LOAD16_BYTE( "rc_h0.rom",    0x00001, 0x40000, 0x4c9b5344 )
-		ROM_LOAD16_BYTE( "rc_l0.rom",    0x00000, 0x40000, 0x0455895a )
-		ROM_COPY( REGION_CPU1, 0x7fff0,  0xffff0, 0x10 )	/* start vector */
+	static RomLoadPtr rom_riskchal = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( CODE_SIZE * 2, REGION_CPU1, 0 );
+		ROM_LOAD16_BYTE( "rc_h0.rom",    0x00001, 0x40000, 0x4c9b5344 );
+		ROM_LOAD16_BYTE( "rc_l0.rom",    0x00000, 0x40000, 0x0455895a );
+		ROM_COPY( REGION_CPU1, 0x7fff0,  0xffff0, 0x10 );/* start vector */
 	
-		ROM_REGION( 0x10000, REGION_CPU2, 0 )	/* 64k for the audio CPU */
-		ROM_LOAD( "rc_sp.rom",    0x0000, 0x10000, 0xbb80094e )
+		ROM_REGION( 0x10000, REGION_CPU2, 0 );/* 64k for the audio CPU */
+		ROM_LOAD( "rc_sp.rom",    0x0000, 0x10000, 0xbb80094e );
 	
-		ROM_REGION( 0x200000, REGION_GFX1, ROMREGION_DISPOSE )
-		ROM_LOAD( "rc_c0.rom",    0x000000, 0x80000, 0x84d0b907 )
-		ROM_LOAD( "rc_c1.rom",    0x080000, 0x80000, 0xcb3784ef )
-		ROM_LOAD( "rc_c2.rom",    0x100000, 0x80000, 0x687164d7 )
-		ROM_LOAD( "rc_c3.rom",    0x180000, 0x80000, 0xc86be6af )
+		ROM_REGION( 0x200000, REGION_GFX1, ROMREGION_DISPOSE );
+		ROM_LOAD( "rc_c0.rom",    0x000000, 0x80000, 0x84d0b907 );
+		ROM_LOAD( "rc_c1.rom",    0x080000, 0x80000, 0xcb3784ef );
+		ROM_LOAD( "rc_c2.rom",    0x100000, 0x80000, 0x687164d7 );
+		ROM_LOAD( "rc_c3.rom",    0x180000, 0x80000, 0xc86be6af );
 	
-		ROM_REGION( 0x40000, REGION_SOUND1, 0 )	/* samples */
-		ROM_LOAD( "rc_v0.rom",    0x0000, 0x40000, 0xcddac360 )
-	ROM_END
+		ROM_REGION( 0x40000, REGION_SOUND1, 0 );/* samples */
+		ROM_LOAD( "rc_v0.rom",    0x0000, 0x40000, 0xcddac360 );
+	ROM_END(); }}; 
 	
-	ROM_START( gussun )
-		ROM_REGION( CODE_SIZE * 2, REGION_CPU1, 0 )
-		ROM_LOAD16_BYTE( "l4_h0.rom",    0x00001, 0x40000, 0x9d585e61 )
-		ROM_LOAD16_BYTE( "l4_l0.rom",    0x00000, 0x40000, 0xc7b4c519 )
-		ROM_COPY( REGION_CPU1, 0x7fff0,  0xffff0, 0x10 )	/* start vector */
+	static RomLoadPtr rom_gussun = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( CODE_SIZE * 2, REGION_CPU1, 0 );
+		ROM_LOAD16_BYTE( "l4_h0.rom",    0x00001, 0x40000, 0x9d585e61 );
+		ROM_LOAD16_BYTE( "l4_l0.rom",    0x00000, 0x40000, 0xc7b4c519 );
+		ROM_COPY( REGION_CPU1, 0x7fff0,  0xffff0, 0x10 );/* start vector */
 	
-		ROM_REGION( 0x10000, REGION_CPU2, 0 )	/* 64k for the audio CPU */
-		ROM_LOAD( "rc_sp.rom",    0x0000, 0x10000, 0xbb80094e )
+		ROM_REGION( 0x10000, REGION_CPU2, 0 );/* 64k for the audio CPU */
+		ROM_LOAD( "rc_sp.rom",    0x0000, 0x10000, 0xbb80094e );
 	
-		ROM_REGION( 0x200000, REGION_GFX1, ROMREGION_DISPOSE )
-		ROM_LOAD( "rc_c0.rom",    0x000000, 0x80000, 0x84d0b907 )
-		ROM_LOAD( "rc_c1.rom",    0x080000, 0x80000, 0xcb3784ef )
-		ROM_LOAD( "rc_c2.rom",    0x100000, 0x80000, 0x687164d7 )
-		ROM_LOAD( "rc_c3.rom",    0x180000, 0x80000, 0xc86be6af )
+		ROM_REGION( 0x200000, REGION_GFX1, ROMREGION_DISPOSE );
+		ROM_LOAD( "rc_c0.rom",    0x000000, 0x80000, 0x84d0b907 );
+		ROM_LOAD( "rc_c1.rom",    0x080000, 0x80000, 0xcb3784ef );
+		ROM_LOAD( "rc_c2.rom",    0x100000, 0x80000, 0x687164d7 );
+		ROM_LOAD( "rc_c3.rom",    0x180000, 0x80000, 0xc86be6af );
 	
-		ROM_REGION( 0x40000, REGION_SOUND1, 0 )	/* samples */
-		ROM_LOAD( "rc_v0.rom",    0x0000, 0x40000, 0xcddac360 )
-	ROM_END
+		ROM_REGION( 0x40000, REGION_SOUND1, 0 );/* samples */
+		ROM_LOAD( "rc_v0.rom",    0x0000, 0x40000, 0xcddac360 );
+	ROM_END(); }}; 
 	
-	ROM_START( shisen2 )
-		ROM_REGION( CODE_SIZE * 2, REGION_CPU1, 0 )
-		ROM_LOAD16_BYTE( "sis2-ho-.rom", 0x00001, 0x40000, 0x6fae0aea )
-		ROM_LOAD16_BYTE( "sis2-lo-.rom", 0x00000, 0x40000, 0x2af25182 )
-		ROM_COPY( REGION_CPU1, 0x7fff0,  0xffff0, 0x10 )	/* start vector */
+	static RomLoadPtr rom_shisen2 = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( CODE_SIZE * 2, REGION_CPU1, 0 );
+		ROM_LOAD16_BYTE( "sis2-ho-.rom", 0x00001, 0x40000, 0x6fae0aea );
+		ROM_LOAD16_BYTE( "sis2-lo-.rom", 0x00000, 0x40000, 0x2af25182 );
+		ROM_COPY( REGION_CPU1, 0x7fff0,  0xffff0, 0x10 );/* start vector */
 	
-		ROM_REGION( 0x10000, REGION_CPU2, 0 )	/* 64k for the audio CPU */
-		ROM_LOAD( "sis2-sp-.rom", 0x0000, 0x10000, 0x6fc0ff3a )
+		ROM_REGION( 0x10000, REGION_CPU2, 0 );/* 64k for the audio CPU */
+		ROM_LOAD( "sis2-sp-.rom", 0x0000, 0x10000, 0x6fc0ff3a );
 	
-		ROM_REGION( 0x200000, REGION_GFX1, ROMREGION_DISPOSE )
-		ROM_LOAD( "ic81.rom",     0x000000, 0x80000, 0x5a7cb88f )
-		ROM_LOAD( "ic82.rom",     0x080000, 0x80000, 0x54a7852c )
-		ROM_LOAD( "ic83.rom",     0x100000, 0x80000, 0x2bd65dc6 )
-		ROM_LOAD( "ic84.rom",     0x180000, 0x80000, 0x876d5fdb )
-	ROM_END
+		ROM_REGION( 0x200000, REGION_GFX1, ROMREGION_DISPOSE );
+		ROM_LOAD( "ic81.rom",     0x000000, 0x80000, 0x5a7cb88f );
+		ROM_LOAD( "ic82.rom",     0x080000, 0x80000, 0x54a7852c );
+		ROM_LOAD( "ic83.rom",     0x100000, 0x80000, 0x2bd65dc6 );
+		ROM_LOAD( "ic84.rom",     0x180000, 0x80000, 0x876d5fdb );
+	ROM_END(); }}; 
 	
 	
 	

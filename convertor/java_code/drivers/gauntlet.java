@@ -774,222 +774,222 @@ public class gauntlet
 	 *
 	 *************************************/
 	
-	ROM_START( gauntlet )
-		ROM_REGION( 0x80000, REGION_CPU1, 0 )	/* 8*64k for 68000 code */
-		ROM_LOAD16_BYTE( "gauntlt1.9a",  0x00000, 0x08000, 0x46fe8743 )
-		ROM_LOAD16_BYTE( "gauntlt1.9b",  0x00001, 0x08000, 0x276e15c4 )
-		ROM_LOAD16_BYTE( "gauntlt1.10a", 0x38000, 0x04000, 0x6d99ed51 )
-		ROM_LOAD16_BYTE( "gauntlt1.10b", 0x38001, 0x04000, 0x545ead91 )
-		ROM_LOAD16_BYTE( "gauntlt1.7a",  0x40000, 0x08000, 0x6fb8419c )
-		ROM_LOAD16_BYTE( "gauntlt1.7b",  0x40001, 0x08000, 0x931bd2a0 )
+	static RomLoadPtr rom_gauntlet = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x80000, REGION_CPU1, 0 );/* 8*64k for 68000 code */
+		ROM_LOAD16_BYTE( "gauntlt1.9a",  0x00000, 0x08000, 0x46fe8743 );
+		ROM_LOAD16_BYTE( "gauntlt1.9b",  0x00001, 0x08000, 0x276e15c4 );
+		ROM_LOAD16_BYTE( "gauntlt1.10a", 0x38000, 0x04000, 0x6d99ed51 );
+		ROM_LOAD16_BYTE( "gauntlt1.10b", 0x38001, 0x04000, 0x545ead91 );
+		ROM_LOAD16_BYTE( "gauntlt1.7a",  0x40000, 0x08000, 0x6fb8419c );
+		ROM_LOAD16_BYTE( "gauntlt1.7b",  0x40001, 0x08000, 0x931bd2a0 );
 	
-		ROM_REGION( 0x10000, REGION_CPU2, 0 )	/* 64k for 6502 code */
-		ROM_LOAD( "gauntlt1.16r", 0x4000, 0x4000, 0x6ee7f3cc )
-		ROM_LOAD( "gauntlt1.16s", 0x8000, 0x8000, 0xfa19861f )
+		ROM_REGION( 0x10000, REGION_CPU2, 0 );/* 64k for 6502 code */
+		ROM_LOAD( "gauntlt1.16r", 0x4000, 0x4000, 0x6ee7f3cc );
+		ROM_LOAD( "gauntlt1.16s", 0x8000, 0x8000, 0xfa19861f );
 	
-		ROM_REGION( 0x04000, REGION_GFX1, ROMREGION_DISPOSE )
-		ROM_LOAD( "gauntlt1.6p",  0x00000, 0x04000, 0x6c276a1d )
+		ROM_REGION( 0x04000, REGION_GFX1, ROMREGION_DISPOSE );
+		ROM_LOAD( "gauntlt1.6p",  0x00000, 0x04000, 0x6c276a1d );
 	
-		ROM_REGION( 0x40000, REGION_GFX2, ROMREGION_DISPOSE )
-		ROM_LOAD( "gauntlt1.1a",  0x00000, 0x08000, 0x91700f33 )
-		ROM_LOAD( "gauntlt1.1b",  0x08000, 0x08000, 0x869330be )
+		ROM_REGION( 0x40000, REGION_GFX2, ROMREGION_DISPOSE );
+		ROM_LOAD( "gauntlt1.1a",  0x00000, 0x08000, 0x91700f33 );
+		ROM_LOAD( "gauntlt1.1b",  0x08000, 0x08000, 0x869330be );
 	
-		ROM_LOAD( "gauntlt1.1l",  0x10000, 0x08000, 0xd497d0a8 )
-		ROM_LOAD( "gauntlt1.1mn", 0x18000, 0x08000, 0x29ef9882 )
+		ROM_LOAD( "gauntlt1.1l",  0x10000, 0x08000, 0xd497d0a8 );
+		ROM_LOAD( "gauntlt1.1mn", 0x18000, 0x08000, 0x29ef9882 );
 	
-		ROM_LOAD( "gauntlt1.2a",  0x20000, 0x08000, 0x9510b898 )
-		ROM_LOAD( "gauntlt1.2b",  0x28000, 0x08000, 0x11e0ac5b )
+		ROM_LOAD( "gauntlt1.2a",  0x20000, 0x08000, 0x9510b898 );
+		ROM_LOAD( "gauntlt1.2b",  0x28000, 0x08000, 0x11e0ac5b );
 	
-		ROM_LOAD( "gauntlt1.2l",  0x30000, 0x08000, 0x29a5db41 )
-		ROM_LOAD( "gauntlt1.2mn", 0x38000, 0x08000, 0x8bf3b263 )
-	ROM_END
-	
-	
-	ROM_START( gauntir1 )
-		ROM_REGION( 0x80000, REGION_CPU1, 0 )	/* 8*64k for 68000 code */
-		ROM_LOAD16_BYTE( "gaun1ir1.9a",  0x00000, 0x08000, 0xfd871f81 )
-		ROM_LOAD16_BYTE( "gaun1ir1.9b",  0x00001, 0x08000, 0xbcb2fb1d )
-		ROM_LOAD16_BYTE( "gaun1ir1.10a", 0x38000, 0x04000, 0x4642cd95 )
-		ROM_LOAD16_BYTE( "gaun1ir1.10b", 0x38001, 0x04000, 0xc8df945e )
-		ROM_LOAD16_BYTE( "gaun1ir1.7a",  0x40000, 0x08000, 0xc57377b3 )
-		ROM_LOAD16_BYTE( "gaun1ir1.7b",  0x40001, 0x08000, 0x1cac2071 )
-	
-		ROM_REGION( 0x10000, REGION_CPU2, 0 )	/* 64k for 6502 code */
-		ROM_LOAD( "gauntlt1.16r", 0x4000, 0x4000, 0x6ee7f3cc )
-		ROM_LOAD( "gauntlt1.16s", 0x8000, 0x8000, 0xfa19861f )
-	
-		ROM_REGION( 0x04000, REGION_GFX1, ROMREGION_DISPOSE )
-		ROM_LOAD( "gauntlt1.6p",  0x00000, 0x04000, 0x6c276a1d )
-	
-		ROM_REGION( 0x40000, REGION_GFX2, ROMREGION_DISPOSE )
-		ROM_LOAD( "gauntlt1.1a",  0x00000, 0x08000, 0x91700f33 )
-		ROM_LOAD( "gauntlt1.1b",  0x08000, 0x08000, 0x869330be )
-	
-		ROM_LOAD( "gauntlt1.1l",  0x10000, 0x08000, 0xd497d0a8 )
-		ROM_LOAD( "gauntlt1.1mn", 0x18000, 0x08000, 0x29ef9882 )
-	
-		ROM_LOAD( "gauntlt1.2a",  0x20000, 0x08000, 0x9510b898 )
-		ROM_LOAD( "gauntlt1.2b",  0x28000, 0x08000, 0x11e0ac5b )
-	
-		ROM_LOAD( "gauntlt1.2l",  0x30000, 0x08000, 0x29a5db41 )
-		ROM_LOAD( "gauntlt1.2mn", 0x38000, 0x08000, 0x8bf3b263 )
-	ROM_END
+		ROM_LOAD( "gauntlt1.2l",  0x30000, 0x08000, 0x29a5db41 );
+		ROM_LOAD( "gauntlt1.2mn", 0x38000, 0x08000, 0x8bf3b263 );
+	ROM_END(); }}; 
 	
 	
-	ROM_START( gauntir2 )
-		ROM_REGION( 0x80000, REGION_CPU1, 0 )	/* 8*64k for 68000 code */
-		ROM_LOAD16_BYTE( "gaun1ir1.9a",  0x00000, 0x08000, 0xfd871f81 )
-		ROM_LOAD16_BYTE( "gaun1ir1.9b",  0x00001, 0x08000, 0xbcb2fb1d )
-		ROM_LOAD16_BYTE( "gaun1ir1.10a", 0x38000, 0x04000, 0x4642cd95 )
-		ROM_LOAD16_BYTE( "gaun1ir1.10b", 0x38001, 0x04000, 0xc8df945e )
-		ROM_LOAD16_BYTE( "gaun1ir2.7a",  0x40000, 0x08000, 0x73e1ad79 )
-		ROM_LOAD16_BYTE( "gaun1ir2.7b",  0x40001, 0x08000, 0xfd248cea )
+	static RomLoadPtr rom_gauntir1 = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x80000, REGION_CPU1, 0 );/* 8*64k for 68000 code */
+		ROM_LOAD16_BYTE( "gaun1ir1.9a",  0x00000, 0x08000, 0xfd871f81 );
+		ROM_LOAD16_BYTE( "gaun1ir1.9b",  0x00001, 0x08000, 0xbcb2fb1d );
+		ROM_LOAD16_BYTE( "gaun1ir1.10a", 0x38000, 0x04000, 0x4642cd95 );
+		ROM_LOAD16_BYTE( "gaun1ir1.10b", 0x38001, 0x04000, 0xc8df945e );
+		ROM_LOAD16_BYTE( "gaun1ir1.7a",  0x40000, 0x08000, 0xc57377b3 );
+		ROM_LOAD16_BYTE( "gaun1ir1.7b",  0x40001, 0x08000, 0x1cac2071 );
 	
-		ROM_REGION( 0x10000, REGION_CPU2, 0 )	/* 64k for 6502 code */
-		ROM_LOAD( "gauntlt1.16r", 0x4000, 0x4000, 0x6ee7f3cc )
-		ROM_LOAD( "gauntlt1.16s", 0x8000, 0x8000, 0xfa19861f )
+		ROM_REGION( 0x10000, REGION_CPU2, 0 );/* 64k for 6502 code */
+		ROM_LOAD( "gauntlt1.16r", 0x4000, 0x4000, 0x6ee7f3cc );
+		ROM_LOAD( "gauntlt1.16s", 0x8000, 0x8000, 0xfa19861f );
 	
-		ROM_REGION( 0x04000, REGION_GFX1, ROMREGION_DISPOSE )
-		ROM_LOAD( "gauntlt1.6p",  0x00000, 0x04000, 0x6c276a1d )
+		ROM_REGION( 0x04000, REGION_GFX1, ROMREGION_DISPOSE );
+		ROM_LOAD( "gauntlt1.6p",  0x00000, 0x04000, 0x6c276a1d );
 	
-		ROM_REGION( 0x40000, REGION_GFX2, ROMREGION_DISPOSE )
-		ROM_LOAD( "gauntlt1.1a",  0x00000, 0x08000, 0x91700f33 )
-		ROM_LOAD( "gauntlt1.1b",  0x08000, 0x08000, 0x869330be )
+		ROM_REGION( 0x40000, REGION_GFX2, ROMREGION_DISPOSE );
+		ROM_LOAD( "gauntlt1.1a",  0x00000, 0x08000, 0x91700f33 );
+		ROM_LOAD( "gauntlt1.1b",  0x08000, 0x08000, 0x869330be );
 	
-		ROM_LOAD( "gauntlt1.1l",  0x10000, 0x08000, 0xd497d0a8 )
-		ROM_LOAD( "gauntlt1.1mn", 0x18000, 0x08000, 0x29ef9882 )
+		ROM_LOAD( "gauntlt1.1l",  0x10000, 0x08000, 0xd497d0a8 );
+		ROM_LOAD( "gauntlt1.1mn", 0x18000, 0x08000, 0x29ef9882 );
 	
-		ROM_LOAD( "gauntlt1.2a",  0x20000, 0x08000, 0x9510b898 )
-		ROM_LOAD( "gauntlt1.2b",  0x28000, 0x08000, 0x11e0ac5b )
+		ROM_LOAD( "gauntlt1.2a",  0x20000, 0x08000, 0x9510b898 );
+		ROM_LOAD( "gauntlt1.2b",  0x28000, 0x08000, 0x11e0ac5b );
 	
-		ROM_LOAD( "gauntlt1.2l",  0x30000, 0x08000, 0x29a5db41 )
-		ROM_LOAD( "gauntlt1.2mn", 0x38000, 0x08000, 0x8bf3b263 )
-	ROM_END
-	
-	
-	ROM_START( gaunt2p )
-		ROM_REGION( 0x80000, REGION_CPU1, 0 )	/* 8*64k for 68000 code */
-		ROM_LOAD16_BYTE( "gaunt2p.9a",   0x00000, 0x08000, 0x8784133f )
-		ROM_LOAD16_BYTE( "gaunt2p.9b",   0x00001, 0x08000, 0x2843bde3 )
-		ROM_LOAD16_BYTE( "gauntlt1.10a", 0x38000, 0x04000, 0x6d99ed51 )
-		ROM_LOAD16_BYTE( "gauntlt1.10b", 0x38001, 0x04000, 0x545ead91 )
-		ROM_LOAD16_BYTE( "gaunt2p.7a",   0x40000, 0x08000, 0x5b4ee415 )
-		ROM_LOAD16_BYTE( "gaunt2p.7b",   0x40001, 0x08000, 0x41f5c9e2 )
-	
-		ROM_REGION( 0x10000, REGION_CPU2, 0 )	/* 64k for 6502 code */
-		ROM_LOAD( "gauntlt1.16r", 0x4000, 0x4000, 0x6ee7f3cc )
-		ROM_LOAD( "gauntlt1.16s", 0x8000, 0x8000, 0xfa19861f )
-	
-		ROM_REGION( 0x04000, REGION_GFX1, ROMREGION_DISPOSE )
-		ROM_LOAD( "gauntlt1.6p",  0x00000, 0x04000, 0x6c276a1d )
-	
-		ROM_REGION( 0x40000, REGION_GFX2, ROMREGION_DISPOSE )
-		ROM_LOAD( "gauntlt1.1a",  0x00000, 0x08000, 0x91700f33 )
-		ROM_LOAD( "gauntlt1.1b",  0x08000, 0x08000, 0x869330be )
-	
-		ROM_LOAD( "gauntlt1.1l",  0x10000, 0x08000, 0xd497d0a8 )
-		ROM_LOAD( "gauntlt1.1mn", 0x18000, 0x08000, 0x29ef9882 )
-	
-		ROM_LOAD( "gauntlt1.2a",  0x20000, 0x08000, 0x9510b898 )
-		ROM_LOAD( "gauntlt1.2b",  0x28000, 0x08000, 0x11e0ac5b )
-	
-		ROM_LOAD( "gauntlt1.2l",  0x30000, 0x08000, 0x29a5db41 )
-		ROM_LOAD( "gauntlt1.2mn", 0x38000, 0x08000, 0x8bf3b263 )
-	ROM_END
+		ROM_LOAD( "gauntlt1.2l",  0x30000, 0x08000, 0x29a5db41 );
+		ROM_LOAD( "gauntlt1.2mn", 0x38000, 0x08000, 0x8bf3b263 );
+	ROM_END(); }}; 
 	
 	
-	ROM_START( gaunt2 )
-		ROM_REGION( 0x80000, REGION_CPU1, 0 )	/* 8*64k for 68000 code */
-		ROM_LOAD16_BYTE( "gauntlt2.9a",  0x00000, 0x08000, 0x46fe8743 )
-		ROM_LOAD16_BYTE( "gauntlt2.9b",  0x00001, 0x08000, 0x276e15c4 )
-		ROM_LOAD16_BYTE( "gauntlt2.10a", 0x38000, 0x04000, 0x45dfda47 )
-		ROM_LOAD16_BYTE( "gauntlt2.10b", 0x38001, 0x04000, 0x343c029c )
-		ROM_LOAD16_BYTE( "gauntlt2.7a",  0x40000, 0x08000, 0x58a0a9a3 )
-		ROM_LOAD16_BYTE( "gauntlt2.7b",  0x40001, 0x08000, 0x658f0da8 )
-		ROM_LOAD16_BYTE( "gauntlt2.6a",  0x50000, 0x08000, 0xae301bba )
-		ROM_LOAD16_BYTE( "gauntlt2.6b",  0x50001, 0x08000, 0xe94aaa8a )
+	static RomLoadPtr rom_gauntir2 = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x80000, REGION_CPU1, 0 );/* 8*64k for 68000 code */
+		ROM_LOAD16_BYTE( "gaun1ir1.9a",  0x00000, 0x08000, 0xfd871f81 );
+		ROM_LOAD16_BYTE( "gaun1ir1.9b",  0x00001, 0x08000, 0xbcb2fb1d );
+		ROM_LOAD16_BYTE( "gaun1ir1.10a", 0x38000, 0x04000, 0x4642cd95 );
+		ROM_LOAD16_BYTE( "gaun1ir1.10b", 0x38001, 0x04000, 0xc8df945e );
+		ROM_LOAD16_BYTE( "gaun1ir2.7a",  0x40000, 0x08000, 0x73e1ad79 );
+		ROM_LOAD16_BYTE( "gaun1ir2.7b",  0x40001, 0x08000, 0xfd248cea );
 	
-		ROM_REGION( 0x10000, REGION_CPU2, 0 )	/* 64k for 6502 code */
-		ROM_LOAD( "gauntlt2.16r", 0x4000, 0x4000, 0x5c731006 )
-		ROM_LOAD( "gauntlt2.16s", 0x8000, 0x8000, 0xdc3591e7 )
+		ROM_REGION( 0x10000, REGION_CPU2, 0 );/* 64k for 6502 code */
+		ROM_LOAD( "gauntlt1.16r", 0x4000, 0x4000, 0x6ee7f3cc );
+		ROM_LOAD( "gauntlt1.16s", 0x8000, 0x8000, 0xfa19861f );
 	
-		ROM_REGION( 0x04000, REGION_GFX1, ROMREGION_DISPOSE )
-		ROM_LOAD( "gauntlt2.6p",  0x00000, 0x04000, 0xd101905d )
+		ROM_REGION( 0x04000, REGION_GFX1, ROMREGION_DISPOSE );
+		ROM_LOAD( "gauntlt1.6p",  0x00000, 0x04000, 0x6c276a1d );
 	
-		ROM_REGION( 0x60000, REGION_GFX2, ROMREGION_DISPOSE )
-		ROM_LOAD( "gauntlt2.1a",  0x00000, 0x08000, 0x09df6e23 )
-		ROM_LOAD( "gauntlt2.1b",  0x08000, 0x08000, 0x869330be )
-		ROM_LOAD( "gauntlt2.1c",  0x10000, 0x04000, 0xe4c98f01 )
-		ROM_RELOAD(               0x14000, 0x04000 )
+		ROM_REGION( 0x40000, REGION_GFX2, ROMREGION_DISPOSE );
+		ROM_LOAD( "gauntlt1.1a",  0x00000, 0x08000, 0x91700f33 );
+		ROM_LOAD( "gauntlt1.1b",  0x08000, 0x08000, 0x869330be );
 	
-		ROM_LOAD( "gauntlt2.1l",  0x18000, 0x08000, 0x33cb476e )
-		ROM_LOAD( "gauntlt2.1mn", 0x20000, 0x08000, 0x29ef9882 )
-		ROM_LOAD( "gauntlt2.1p",  0x28000, 0x04000, 0xc4857879 )
-		ROM_RELOAD(               0x2c000, 0x04000 )
+		ROM_LOAD( "gauntlt1.1l",  0x10000, 0x08000, 0xd497d0a8 );
+		ROM_LOAD( "gauntlt1.1mn", 0x18000, 0x08000, 0x29ef9882 );
 	
-		ROM_LOAD( "gauntlt2.2a",  0x30000, 0x08000, 0xf71e2503 )
-		ROM_LOAD( "gauntlt2.2b",  0x38000, 0x08000, 0x11e0ac5b )
-		ROM_LOAD( "gauntlt2.2c",  0x40000, 0x04000, 0xd9c2c2d1 )
-		ROM_RELOAD(               0x44000, 0x04000 )
+		ROM_LOAD( "gauntlt1.2a",  0x20000, 0x08000, 0x9510b898 );
+		ROM_LOAD( "gauntlt1.2b",  0x28000, 0x08000, 0x11e0ac5b );
 	
-		ROM_LOAD( "gauntlt2.2l",  0x48000, 0x08000, 0x9e30b2e9 )
-		ROM_LOAD( "gauntlt2.2mn", 0x50000, 0x08000, 0x8bf3b263 )
-		ROM_LOAD( "gauntlt2.2p",  0x58000, 0x04000, 0xa32c732a )
-		ROM_RELOAD(               0x5c000, 0x04000 )
-	ROM_END
+		ROM_LOAD( "gauntlt1.2l",  0x30000, 0x08000, 0x29a5db41 );
+		ROM_LOAD( "gauntlt1.2mn", 0x38000, 0x08000, 0x8bf3b263 );
+	ROM_END(); }}; 
 	
 	
-	ROM_START( vindctr2 )
-		ROM_REGION( 0x80000, REGION_CPU1, 0 )	/* 8*64k for 68000 code */
-		ROM_LOAD16_BYTE( "1186", 0x00000, 0x08000, 0xaf138263 )
-		ROM_LOAD16_BYTE( "1187", 0x00001, 0x08000, 0x44baff64 )
-		ROM_LOAD16_BYTE( "1196", 0x38000, 0x04000, 0xc92bf6dd )
-		ROM_LOAD16_BYTE( "1197", 0x38001, 0x04000, 0xd7ace347 )
-		ROM_LOAD16_BYTE( "3188", 0x40000, 0x08000, 0x10f558d2 )
-		ROM_LOAD16_BYTE( "3189", 0x40001, 0x08000, 0x302e24b6 )
-		ROM_LOAD16_BYTE( "2190", 0x50000, 0x08000, 0xe7dc2b74 )
-		ROM_LOAD16_BYTE( "2191", 0x50001, 0x08000, 0xed8ed86e )
-		ROM_LOAD16_BYTE( "2192", 0x60000, 0x08000, 0xeec2c93d )
-		ROM_LOAD16_BYTE( "2193", 0x60001, 0x08000, 0x3fbee9aa )
-		ROM_LOAD16_BYTE( "1194", 0x70000, 0x08000, 0xe6bcf458 )
-		ROM_LOAD16_BYTE( "1195", 0x70001, 0x08000, 0xb9bf245d )
+	static RomLoadPtr rom_gaunt2p = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x80000, REGION_CPU1, 0 );/* 8*64k for 68000 code */
+		ROM_LOAD16_BYTE( "gaunt2p.9a",   0x00000, 0x08000, 0x8784133f );
+		ROM_LOAD16_BYTE( "gaunt2p.9b",   0x00001, 0x08000, 0x2843bde3 );
+		ROM_LOAD16_BYTE( "gauntlt1.10a", 0x38000, 0x04000, 0x6d99ed51 );
+		ROM_LOAD16_BYTE( "gauntlt1.10b", 0x38001, 0x04000, 0x545ead91 );
+		ROM_LOAD16_BYTE( "gaunt2p.7a",   0x40000, 0x08000, 0x5b4ee415 );
+		ROM_LOAD16_BYTE( "gaunt2p.7b",   0x40001, 0x08000, 0x41f5c9e2 );
 	
-		ROM_REGION( 0x10000, REGION_CPU2, 0 )	/* 64k for 6502 code */
-		ROM_LOAD( "1160", 0x4000, 0x4000, 0xeef0a003 )
-		ROM_LOAD( "1161", 0x8000, 0x8000, 0x68c74337 )
+		ROM_REGION( 0x10000, REGION_CPU2, 0 );/* 64k for 6502 code */
+		ROM_LOAD( "gauntlt1.16r", 0x4000, 0x4000, 0x6ee7f3cc );
+		ROM_LOAD( "gauntlt1.16s", 0x8000, 0x8000, 0xfa19861f );
 	
-		ROM_REGION( 0x04000, REGION_GFX1, ROMREGION_DISPOSE )
-		ROM_LOAD( "1198",  0x00000, 0x04000, 0xf99b631a )
+		ROM_REGION( 0x04000, REGION_GFX1, ROMREGION_DISPOSE );
+		ROM_LOAD( "gauntlt1.6p",  0x00000, 0x04000, 0x6c276a1d );
 	
-		ROM_REGION( 0xc0000, REGION_GFX2, ROMREGION_DISPOSE )
-		ROM_LOAD( "1101", 0x00000, 0x08000, 0xdd3833ad )
-		ROM_LOAD( "1166", 0x08000, 0x08000, 0xe2db50a0 )
-		ROM_LOAD( "1170", 0x10000, 0x08000, 0xf050ab43 )
-		ROM_LOAD( "1174", 0x18000, 0x08000, 0xb6704bd1 )
-		ROM_LOAD( "1178", 0x20000, 0x08000, 0xd3006f05 )
-		ROM_LOAD( "1182", 0x28000, 0x08000, 0x9046e985 )
+		ROM_REGION( 0x40000, REGION_GFX2, ROMREGION_DISPOSE );
+		ROM_LOAD( "gauntlt1.1a",  0x00000, 0x08000, 0x91700f33 );
+		ROM_LOAD( "gauntlt1.1b",  0x08000, 0x08000, 0x869330be );
 	
-		ROM_LOAD( "1102", 0x30000, 0x08000, 0xd505b04a )
-		ROM_LOAD( "1167", 0x38000, 0x08000, 0x1869c76d )
-		ROM_LOAD( "1171", 0x40000, 0x08000, 0x1b229c2b )
-		ROM_LOAD( "1175", 0x48000, 0x08000, 0x73c41aca )
-		ROM_LOAD( "1179", 0x50000, 0x08000, 0x9b7cb0ef )
-		ROM_LOAD( "1183", 0x58000, 0x08000, 0x393bba42 )
+		ROM_LOAD( "gauntlt1.1l",  0x10000, 0x08000, 0xd497d0a8 );
+		ROM_LOAD( "gauntlt1.1mn", 0x18000, 0x08000, 0x29ef9882 );
 	
-		ROM_LOAD( "1103", 0x60000, 0x08000, 0x50e76162 )
-		ROM_LOAD( "1168", 0x68000, 0x08000, 0x35c78469 )
-		ROM_LOAD( "1172", 0x70000, 0x08000, 0x314ac268 )
-		ROM_LOAD( "1176", 0x78000, 0x08000, 0x061d79db )
-		ROM_LOAD( "1180", 0x80000, 0x08000, 0x89c1fe16 )
-		ROM_LOAD( "1184", 0x88000, 0x08000, 0x541209d3 )
+		ROM_LOAD( "gauntlt1.2a",  0x20000, 0x08000, 0x9510b898 );
+		ROM_LOAD( "gauntlt1.2b",  0x28000, 0x08000, 0x11e0ac5b );
 	
-		ROM_LOAD( "1104", 0x90000, 0x08000, 0x9484ba65 )
-		ROM_LOAD( "1169", 0x98000, 0x08000, 0x132d3337 )
-		ROM_LOAD( "1173", 0xa0000, 0x08000, 0x98de2426 )
-		ROM_LOAD( "1177", 0xa8000, 0x08000, 0x9d0824f8 )
-		ROM_LOAD( "1181", 0xb0000, 0x08000, 0x9e62b27c )
-		ROM_LOAD( "1185", 0xb8000, 0x08000, 0x9d62f6b7 )
-	ROM_END
+		ROM_LOAD( "gauntlt1.2l",  0x30000, 0x08000, 0x29a5db41 );
+		ROM_LOAD( "gauntlt1.2mn", 0x38000, 0x08000, 0x8bf3b263 );
+	ROM_END(); }}; 
+	
+	
+	static RomLoadPtr rom_gaunt2 = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x80000, REGION_CPU1, 0 );/* 8*64k for 68000 code */
+		ROM_LOAD16_BYTE( "gauntlt2.9a",  0x00000, 0x08000, 0x46fe8743 );
+		ROM_LOAD16_BYTE( "gauntlt2.9b",  0x00001, 0x08000, 0x276e15c4 );
+		ROM_LOAD16_BYTE( "gauntlt2.10a", 0x38000, 0x04000, 0x45dfda47 );
+		ROM_LOAD16_BYTE( "gauntlt2.10b", 0x38001, 0x04000, 0x343c029c );
+		ROM_LOAD16_BYTE( "gauntlt2.7a",  0x40000, 0x08000, 0x58a0a9a3 );
+		ROM_LOAD16_BYTE( "gauntlt2.7b",  0x40001, 0x08000, 0x658f0da8 );
+		ROM_LOAD16_BYTE( "gauntlt2.6a",  0x50000, 0x08000, 0xae301bba );
+		ROM_LOAD16_BYTE( "gauntlt2.6b",  0x50001, 0x08000, 0xe94aaa8a );
+	
+		ROM_REGION( 0x10000, REGION_CPU2, 0 );/* 64k for 6502 code */
+		ROM_LOAD( "gauntlt2.16r", 0x4000, 0x4000, 0x5c731006 );
+		ROM_LOAD( "gauntlt2.16s", 0x8000, 0x8000, 0xdc3591e7 );
+	
+		ROM_REGION( 0x04000, REGION_GFX1, ROMREGION_DISPOSE );
+		ROM_LOAD( "gauntlt2.6p",  0x00000, 0x04000, 0xd101905d );
+	
+		ROM_REGION( 0x60000, REGION_GFX2, ROMREGION_DISPOSE );
+		ROM_LOAD( "gauntlt2.1a",  0x00000, 0x08000, 0x09df6e23 );
+		ROM_LOAD( "gauntlt2.1b",  0x08000, 0x08000, 0x869330be );
+		ROM_LOAD( "gauntlt2.1c",  0x10000, 0x04000, 0xe4c98f01 );
+		ROM_RELOAD(               0x14000, 0x04000 );
+	
+		ROM_LOAD( "gauntlt2.1l",  0x18000, 0x08000, 0x33cb476e );
+		ROM_LOAD( "gauntlt2.1mn", 0x20000, 0x08000, 0x29ef9882 );
+		ROM_LOAD( "gauntlt2.1p",  0x28000, 0x04000, 0xc4857879 );
+		ROM_RELOAD(               0x2c000, 0x04000 );
+	
+		ROM_LOAD( "gauntlt2.2a",  0x30000, 0x08000, 0xf71e2503 );
+		ROM_LOAD( "gauntlt2.2b",  0x38000, 0x08000, 0x11e0ac5b );
+		ROM_LOAD( "gauntlt2.2c",  0x40000, 0x04000, 0xd9c2c2d1 );
+		ROM_RELOAD(               0x44000, 0x04000 );
+	
+		ROM_LOAD( "gauntlt2.2l",  0x48000, 0x08000, 0x9e30b2e9 );
+		ROM_LOAD( "gauntlt2.2mn", 0x50000, 0x08000, 0x8bf3b263 );
+		ROM_LOAD( "gauntlt2.2p",  0x58000, 0x04000, 0xa32c732a );
+		ROM_RELOAD(               0x5c000, 0x04000 );
+	ROM_END(); }}; 
+	
+	
+	static RomLoadPtr rom_vindctr2 = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x80000, REGION_CPU1, 0 );/* 8*64k for 68000 code */
+		ROM_LOAD16_BYTE( "1186", 0x00000, 0x08000, 0xaf138263 );
+		ROM_LOAD16_BYTE( "1187", 0x00001, 0x08000, 0x44baff64 );
+		ROM_LOAD16_BYTE( "1196", 0x38000, 0x04000, 0xc92bf6dd );
+		ROM_LOAD16_BYTE( "1197", 0x38001, 0x04000, 0xd7ace347 );
+		ROM_LOAD16_BYTE( "3188", 0x40000, 0x08000, 0x10f558d2 );
+		ROM_LOAD16_BYTE( "3189", 0x40001, 0x08000, 0x302e24b6 );
+		ROM_LOAD16_BYTE( "2190", 0x50000, 0x08000, 0xe7dc2b74 );
+		ROM_LOAD16_BYTE( "2191", 0x50001, 0x08000, 0xed8ed86e );
+		ROM_LOAD16_BYTE( "2192", 0x60000, 0x08000, 0xeec2c93d );
+		ROM_LOAD16_BYTE( "2193", 0x60001, 0x08000, 0x3fbee9aa );
+		ROM_LOAD16_BYTE( "1194", 0x70000, 0x08000, 0xe6bcf458 );
+		ROM_LOAD16_BYTE( "1195", 0x70001, 0x08000, 0xb9bf245d );
+	
+		ROM_REGION( 0x10000, REGION_CPU2, 0 );/* 64k for 6502 code */
+		ROM_LOAD( "1160", 0x4000, 0x4000, 0xeef0a003 );
+		ROM_LOAD( "1161", 0x8000, 0x8000, 0x68c74337 );
+	
+		ROM_REGION( 0x04000, REGION_GFX1, ROMREGION_DISPOSE );
+		ROM_LOAD( "1198",  0x00000, 0x04000, 0xf99b631a );
+	
+		ROM_REGION( 0xc0000, REGION_GFX2, ROMREGION_DISPOSE );
+		ROM_LOAD( "1101", 0x00000, 0x08000, 0xdd3833ad );
+		ROM_LOAD( "1166", 0x08000, 0x08000, 0xe2db50a0 );
+		ROM_LOAD( "1170", 0x10000, 0x08000, 0xf050ab43 );
+		ROM_LOAD( "1174", 0x18000, 0x08000, 0xb6704bd1 );
+		ROM_LOAD( "1178", 0x20000, 0x08000, 0xd3006f05 );
+		ROM_LOAD( "1182", 0x28000, 0x08000, 0x9046e985 );
+	
+		ROM_LOAD( "1102", 0x30000, 0x08000, 0xd505b04a );
+		ROM_LOAD( "1167", 0x38000, 0x08000, 0x1869c76d );
+		ROM_LOAD( "1171", 0x40000, 0x08000, 0x1b229c2b );
+		ROM_LOAD( "1175", 0x48000, 0x08000, 0x73c41aca );
+		ROM_LOAD( "1179", 0x50000, 0x08000, 0x9b7cb0ef );
+		ROM_LOAD( "1183", 0x58000, 0x08000, 0x393bba42 );
+	
+		ROM_LOAD( "1103", 0x60000, 0x08000, 0x50e76162 );
+		ROM_LOAD( "1168", 0x68000, 0x08000, 0x35c78469 );
+		ROM_LOAD( "1172", 0x70000, 0x08000, 0x314ac268 );
+		ROM_LOAD( "1176", 0x78000, 0x08000, 0x061d79db );
+		ROM_LOAD( "1180", 0x80000, 0x08000, 0x89c1fe16 );
+		ROM_LOAD( "1184", 0x88000, 0x08000, 0x541209d3 );
+	
+		ROM_LOAD( "1104", 0x90000, 0x08000, 0x9484ba65 );
+		ROM_LOAD( "1169", 0x98000, 0x08000, 0x132d3337 );
+		ROM_LOAD( "1173", 0xa0000, 0x08000, 0x98de2426 );
+		ROM_LOAD( "1177", 0xa8000, 0x08000, 0x9d0824f8 );
+		ROM_LOAD( "1181", 0xb0000, 0x08000, 0x9e62b27c );
+		ROM_LOAD( "1185", 0xb8000, 0x08000, 0x9d62f6b7 );
+	ROM_END(); }}; 
 	
 	
 	

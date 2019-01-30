@@ -481,43 +481,43 @@ public class overdriv
 	
 	***************************************************************************/
 	
-	ROM_START( overdriv )
-		ROM_REGION( 0x40000, REGION_CPU1, 0 )
-		ROM_LOAD16_BYTE( "789.2",        0x00000, 0x20000, 0x77f18f3f )
-		ROM_LOAD16_BYTE( "789.1",        0x00001, 0x20000, 0x4f44e6ad )
+	static RomLoadPtr rom_overdriv = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x40000, REGION_CPU1, 0 );
+		ROM_LOAD16_BYTE( "789.2",        0x00000, 0x20000, 0x77f18f3f );
+		ROM_LOAD16_BYTE( "789.1",        0x00001, 0x20000, 0x4f44e6ad );
 	
-		ROM_REGION( 0x40000, REGION_CPU2, 0 )
-		ROM_LOAD16_BYTE( "789.4",        0x00000, 0x20000, 0x46fb7e88 )
-		ROM_LOAD16_BYTE( "789.3",        0x00001, 0x20000, 0x24427195 )
+		ROM_REGION( 0x40000, REGION_CPU2, 0 );
+		ROM_LOAD16_BYTE( "789.4",        0x00000, 0x20000, 0x46fb7e88 );
+		ROM_LOAD16_BYTE( "789.3",        0x00001, 0x20000, 0x24427195 );
 	
-		ROM_REGION( 0x10000, REGION_CPU3, 0 )	/* 64k for the audio CPU */
-		ROM_LOAD( "789.5",        0x00000, 0x10000, 0x1085f069 )
+		ROM_REGION( 0x10000, REGION_CPU3, 0 );/* 64k for the audio CPU */
+		ROM_LOAD( "789.5",        0x00000, 0x10000, 0x1085f069 );
 	
-		ROM_REGION( 0x400000, REGION_GFX1, 0 )	/* graphics (addressable by the CPU) */
-		ROM_LOAD( "e12.r1",       0x000000, 0x100000, 0x14a10fb2 )	/* sprites */
-		ROM_LOAD( "e13.r4",       0x100000, 0x100000, 0x6314a628 )
-		ROM_LOAD( "e14.r10",      0x200000, 0x100000, 0xb5eca14b )
-		ROM_LOAD( "e15.r15",      0x300000, 0x100000, 0x5d93e0c3 )
+		ROM_REGION( 0x400000, REGION_GFX1, 0 );/* graphics (addressable by the CPU) */
+		ROM_LOAD( "e12.r1",       0x000000, 0x100000, 0x14a10fb2 );/* sprites */
+		ROM_LOAD( "e13.r4",       0x100000, 0x100000, 0x6314a628 );
+		ROM_LOAD( "e14.r10",      0x200000, 0x100000, 0xb5eca14b );
+		ROM_LOAD( "e15.r15",      0x300000, 0x100000, 0x5d93e0c3 );
 	
-		ROM_REGION( 0x020000, REGION_GFX2, 0 )	/* graphics (addressable by the CPU) */
-		ROM_LOAD( "e06.a21",      0x000000, 0x020000, 0x14a085e6 )	/* zoom/rotate */
+		ROM_REGION( 0x020000, REGION_GFX2, 0 );/* graphics (addressable by the CPU) */
+		ROM_LOAD( "e06.a21",      0x000000, 0x020000, 0x14a085e6 );/* zoom/rotate */
 	
-		ROM_REGION( 0x020000, REGION_GFX3, 0 )	/* graphics (addressable by the CPU) */
-		ROM_LOAD( "e07.c23",      0x000000, 0x020000, 0x8a6ceab9 )	/* zoom/rotate */
+		ROM_REGION( 0x020000, REGION_GFX3, 0 );/* graphics (addressable by the CPU) */
+		ROM_LOAD( "e07.c23",      0x000000, 0x020000, 0x8a6ceab9 );/* zoom/rotate */
 	
-		ROM_REGION( 0x0c0000, REGION_GFX4, 0 )	/* graphics (addressable by the CPU) */
-		ROM_LOAD( "e18.p22",      0x000000, 0x040000, 0x985a4a75 )	/* 053250 #0 */
-		ROM_LOAD( "e19.r22",      0x040000, 0x040000, 0x15c54ea2 )
-		ROM_LOAD( "e20.s22",      0x080000, 0x040000, 0xea204acd )
+		ROM_REGION( 0x0c0000, REGION_GFX4, 0 );/* graphics (addressable by the CPU) */
+		ROM_LOAD( "e18.p22",      0x000000, 0x040000, 0x985a4a75 );/* 053250 #0 */
+		ROM_LOAD( "e19.r22",      0x040000, 0x040000, 0x15c54ea2 );
+		ROM_LOAD( "e20.s22",      0x080000, 0x040000, 0xea204acd );
 	
-		ROM_REGION( 0x080000, REGION_GFX5, 0 )	/* unknown (053250?) */
-		ROM_LOAD( "e16.p12",      0x000000, 0x040000, 0x9348dee1 )	/* 053250 #1 */
-		ROM_LOAD( "e17.p17",      0x040000, 0x040000, 0x04c07248 )
+		ROM_REGION( 0x080000, REGION_GFX5, 0 );/* unknown (053250?) */
+		ROM_LOAD( "e16.p12",      0x000000, 0x040000, 0x9348dee1 );/* 053250 #1 */
+		ROM_LOAD( "e17.p17",      0x040000, 0x040000, 0x04c07248 );
 	
-		ROM_REGION( 0x200000, REGION_SOUND1, 0 )	/* 053260 samples */
-		ROM_LOAD( "e03.j1",       0x000000, 0x100000, 0x51ebfebe )
-		ROM_LOAD( "e02.f1",       0x100000, 0x100000, 0xbdd3b5c6 )
-	ROM_END
+		ROM_REGION( 0x200000, REGION_SOUND1, 0 );/* 053260 samples */
+		ROM_LOAD( "e03.j1",       0x000000, 0x100000, 0x51ebfebe );
+		ROM_LOAD( "e02.f1",       0x100000, 0x100000, 0xbdd3b5c6 );
+	ROM_END(); }}; 
 	
 	
 	

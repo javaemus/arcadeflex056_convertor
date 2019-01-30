@@ -2951,827 +2951,827 @@ public class tmnt
 	
 	***************************************************************************/
 	
-	ROM_START( mia )
-		ROM_REGION( 0x40000, REGION_CPU1, 0 )	/* 2*128k and 2*64k for 68000 code */
-		ROM_LOAD16_BYTE( "808t20.h17",   0x00000, 0x20000, 0x6f0acb1d )
-		ROM_LOAD16_BYTE( "808t21.j17",   0x00001, 0x20000, 0x42a30416 )
-	
-		ROM_REGION( 0x10000, REGION_CPU2, 0 )	/* 64k for the audio CPU */
-		ROM_LOAD( "808e03.f4",    0x00000, 0x08000, 0x3d93a7cd )
-	
-		ROM_REGION( 0x40000, REGION_GFX1, 0 )	/* graphics (addressable by the main CPU) */
-		ROM_LOAD16_BYTE( "808e12.f28",   0x000000, 0x10000, 0xd62f1fde )        /* 8x8 tiles */
-		ROM_LOAD16_BYTE( "808e13.h28",   0x000001, 0x10000, 0x1fa708f4 )        /* 8x8 tiles */
-		ROM_LOAD16_BYTE( "808e22.i28",   0x020000, 0x10000, 0x73d758f6 )        /* 8x8 tiles */
-		ROM_LOAD16_BYTE( "808e23.k28",   0x020001, 0x10000, 0x8ff08b21 )        /* 8x8 tiles */
-	
-		ROM_REGION( 0x100000, REGION_GFX2, 0 )	/* graphics (addressable by the main CPU) */
-		ROM_LOAD( "808d17.j4",    0x00000, 0x80000, 0xd1299082 )	/* sprites */
-		ROM_LOAD( "808d15.h4",    0x80000, 0x80000, 0x2b22a6b6 )
-	
-		ROM_REGION( 0x0100, REGION_PROMS, 0 )
-		ROM_LOAD( "808a18.f16",   0x0000, 0x0100, 0xeb95aede )	/* priority encoder (not used) */
-	
-		ROM_REGION( 0x20000, REGION_SOUND1, 0 )	/* 128k for the samples */
-		ROM_LOAD( "808d01.d4",    0x00000, 0x20000, 0xfd4d37c0 ) /* samples for 007232 */
-	ROM_END
-	
-	ROM_START( mia2 )
-		ROM_REGION( 0x40000, REGION_CPU1, 0 )	/* 2*128k and 2*64k for 68000 code */
-		ROM_LOAD16_BYTE( "808s20.h17",   0x00000, 0x20000, 0xcaa2897f )
-		ROM_LOAD16_BYTE( "808s21.j17",   0x00001, 0x20000, 0x3d892ffb )
-	
-		ROM_REGION( 0x10000, REGION_CPU2, 0 )	/* 64k for the audio CPU */
-		ROM_LOAD( "808e03.f4",    0x00000, 0x08000, 0x3d93a7cd )
-	
-		ROM_REGION( 0x40000, REGION_GFX1, 0 )	/* graphics (addressable by the main CPU) */
-		ROM_LOAD16_BYTE( "808e12.f28",   0x000000, 0x10000, 0xd62f1fde )        /* 8x8 tiles */
-		ROM_LOAD16_BYTE( "808e13.h28",   0x000001, 0x10000, 0x1fa708f4 )        /* 8x8 tiles */
-		ROM_LOAD16_BYTE( "808e22.i28",   0x020000, 0x10000, 0x73d758f6 )        /* 8x8 tiles */
-		ROM_LOAD16_BYTE( "808e23.k28",   0x020001, 0x10000, 0x8ff08b21 )        /* 8x8 tiles */
-	
-		ROM_REGION( 0x100000, REGION_GFX2, 0 )	/* graphics (addressable by the main CPU) */
-		ROM_LOAD( "808d17.j4",    0x00000, 0x80000, 0xd1299082 )	/* sprites */
-		ROM_LOAD( "808d15.h4",    0x80000, 0x80000, 0x2b22a6b6 )
-	
-		ROM_REGION( 0x0100, REGION_PROMS, 0 )
-		ROM_LOAD( "808a18.f16",   0x0000, 0x0100, 0xeb95aede )	/* priority encoder (not used) */
-	
-		ROM_REGION( 0x20000, REGION_SOUND1, 0 )	/* 128k for the samples */
-		ROM_LOAD( "808d01.d4",    0x00000, 0x20000, 0xfd4d37c0 ) /* samples for 007232 */
-	ROM_END
-	
-	ROM_START( tmnt )
-		ROM_REGION( 0x60000, REGION_CPU1, 0 )	/* 2*128k and 2*64k for 68000 code */
-		ROM_LOAD16_BYTE( "963-x23",      0x00000, 0x20000, 0xa9549004 )
-		ROM_LOAD16_BYTE( "963-x24",      0x00001, 0x20000, 0xe5cc9067 )
-		ROM_LOAD16_BYTE( "963-x21",      0x40000, 0x10000, 0x5789cf92 )
-		ROM_LOAD16_BYTE( "963-x22",      0x40001, 0x10000, 0x0a74e277 )
-	
-		ROM_REGION( 0x10000, REGION_CPU2, 0 )	/* 64k for the audio CPU */
-		ROM_LOAD( "963-e20",      0x00000, 0x08000, 0x1692a6d6 )
-	
-		ROM_REGION( 0x100000, REGION_GFX1, 0 )	/* graphics (addressable by the main CPU) */
-		ROM_LOAD( "963-a28",      0x000000, 0x80000, 0xdb4769a8 )        /* 8x8 tiles */
-		ROM_LOAD( "963-a29",      0x080000, 0x80000, 0x8069cd2e )        /* 8x8 tiles */
-	
-		ROM_REGION( 0x200000, REGION_GFX2, 0 )	/* graphics (addressable by the main CPU) */
-		ROM_LOAD( "963-a17",      0x000000, 0x80000, 0xb5239a44 )        /* sprites */
-		ROM_LOAD( "963-a18",      0x080000, 0x80000, 0xdd51adef )        /* sprites */
-		ROM_LOAD( "963-a15",      0x100000, 0x80000, 0x1f324eed )        /* sprites */
-		ROM_LOAD( "963-a16",      0x180000, 0x80000, 0xd4bd9984 )        /* sprites */
-	
-		ROM_REGION( 0x0200, REGION_PROMS, 0 )
-		ROM_LOAD( "963-a30",      0x0000, 0x0100, 0xabd82680 )	/* sprite address decoder */
-		ROM_LOAD( "963-a31",      0x0100, 0x0100, 0xf8004a1c )	/* priority encoder (not used) */
-	
-		ROM_REGION( 0x20000, REGION_SOUND1, 0 )	/* 128k for the samples */
-		ROM_LOAD( "963-a26",      0x00000, 0x20000, 0xe2ac3063 ) /* samples for 007232 */
-	
-		ROM_REGION( 0x20000, REGION_SOUND2, 0 )	/* 128k for the samples */
-		ROM_LOAD( "963-a27",      0x00000, 0x20000, 0x2dfd674b ) /* samples for UPD7759C */
-	
-		ROM_REGION( 0x80000, REGION_SOUND3, 0 )	/* 512k for the title music sample */
-		ROM_LOAD( "963-a25",      0x00000, 0x80000, 0xfca078c7 )
-	ROM_END
-	
-	ROM_START( tmntu )
-		ROM_REGION( 0x60000, REGION_CPU1, 0 )	/* 2*128k and 2*64k for 68000 code */
-		ROM_LOAD16_BYTE( "963-r23",      0x00000, 0x20000, 0xa7f61195 )
-		ROM_LOAD16_BYTE( "963-r24",      0x00001, 0x20000, 0x661e056a )
-		ROM_LOAD16_BYTE( "963-r21",      0x40000, 0x10000, 0xde047bb6 )
-		ROM_LOAD16_BYTE( "963-r22",      0x40001, 0x10000, 0xd86a0888 )
-	
-		ROM_REGION( 0x10000, REGION_CPU2, 0 )	/* 64k for the audio CPU */
-		ROM_LOAD( "963-e20",      0x00000, 0x08000, 0x1692a6d6 )
-	
-		ROM_REGION( 0x100000, REGION_GFX1, 0 )	/* graphics (addressable by the main CPU) */
-		ROM_LOAD( "963-a28",      0x000000, 0x80000, 0xdb4769a8 )        /* 8x8 tiles */
-		ROM_LOAD( "963-a29",      0x080000, 0x80000, 0x8069cd2e )        /* 8x8 tiles */
-	
-		ROM_REGION( 0x200000, REGION_GFX2, 0 )	/* graphics (addressable by the main CPU) */
-		ROM_LOAD( "963-a17",      0x000000, 0x80000, 0xb5239a44 )        /* sprites */
-		ROM_LOAD( "963-a18",      0x080000, 0x80000, 0xdd51adef )        /* sprites */
-		ROM_LOAD( "963-a15",      0x100000, 0x80000, 0x1f324eed )        /* sprites */
-		ROM_LOAD( "963-a16",      0x180000, 0x80000, 0xd4bd9984 )        /* sprites */
-	
-		ROM_REGION( 0x0200, REGION_PROMS, 0 )
-		ROM_LOAD( "963-a30",      0x0000, 0x0100, 0xabd82680 )	/* sprite address decoder */
-		ROM_LOAD( "963-a31",      0x0100, 0x0100, 0xf8004a1c )	/* priority encoder (not used) */
-	
-		ROM_REGION( 0x20000, REGION_SOUND1, 0 )	/* 128k for the samples */
-		ROM_LOAD( "963-a26",      0x00000, 0x20000, 0xe2ac3063 ) /* samples for 007232 */
-	
-		ROM_REGION( 0x20000, REGION_SOUND2, 0 )	/* 128k for the samples */
-		ROM_LOAD( "963-a27",      0x00000, 0x20000, 0x2dfd674b ) /* samples for UPD7759C */
-	
-		ROM_REGION( 0x80000, REGION_SOUND3, 0 )	/* 512k for the title music sample */
-		ROM_LOAD( "963-a25",      0x00000, 0x80000, 0xfca078c7 )
-	ROM_END
-	
-	ROM_START( tmht )
-		ROM_REGION( 0x60000, REGION_CPU1, 0 )	/* 2*128k and 2*64k for 68000 code */
-		ROM_LOAD16_BYTE( "963f23.j17",   0x00000, 0x20000, 0x9cb5e461 )
-		ROM_LOAD16_BYTE( "963f24.k17",   0x00001, 0x20000, 0x2d902fab )
-		ROM_LOAD16_BYTE( "963f21.j15",   0x40000, 0x10000, 0x9fa25378 )
-		ROM_LOAD16_BYTE( "963f22.k15",   0x40001, 0x10000, 0x2127ee53 )
-	
-		ROM_REGION( 0x10000, REGION_CPU2, 0 )	/* 64k for the audio CPU */
-		ROM_LOAD( "963-e20",      0x00000, 0x08000, 0x1692a6d6 )
-	
-		ROM_REGION( 0x100000, REGION_GFX1, 0 )	/* graphics (addressable by the main CPU) */
-		ROM_LOAD( "963-a28",      0x000000, 0x80000, 0xdb4769a8 )        /* 8x8 tiles */
-		ROM_LOAD( "963-a29",      0x080000, 0x80000, 0x8069cd2e )        /* 8x8 tiles */
-	
-		ROM_REGION( 0x200000, REGION_GFX2, 0 )	/* graphics (addressable by the main CPU) */
-		ROM_LOAD( "963-a17",      0x000000, 0x80000, 0xb5239a44 )        /* sprites */
-		ROM_LOAD( "963-a18",      0x080000, 0x80000, 0xdd51adef )        /* sprites */
-		ROM_LOAD( "963-a15",      0x100000, 0x80000, 0x1f324eed )        /* sprites */
-		ROM_LOAD( "963-a16",      0x180000, 0x80000, 0xd4bd9984 )        /* sprites */
-	
-		ROM_REGION( 0x0200, REGION_PROMS, 0 )
-		ROM_LOAD( "963-a30",      0x0000, 0x0100, 0xabd82680 )	/* sprite address decoder */
-		ROM_LOAD( "963-a31",      0x0100, 0x0100, 0xf8004a1c )	/* priority encoder (not used) */
-	
-		ROM_REGION( 0x20000, REGION_SOUND1, 0 )	/* 128k for the samples */
-		ROM_LOAD( "963-a26",      0x00000, 0x20000, 0xe2ac3063 ) /* samples for 007232 */
-	
-		ROM_REGION( 0x20000, REGION_SOUND2, 0 )	/* 128k for the samples */
-		ROM_LOAD( "963-a27",      0x00000, 0x20000, 0x2dfd674b ) /* samples for UPD7759C */
-	
-		ROM_REGION( 0x80000, REGION_SOUND3, 0 )	/* 512k for the title music sample */
-		ROM_LOAD( "963-a25",      0x00000, 0x80000, 0xfca078c7 )
-	ROM_END
-	
-	ROM_START( tmntj )
-		ROM_REGION( 0x60000, REGION_CPU1, 0 )	/* 2*128k and 2*64k for 68000 code */
-		ROM_LOAD16_BYTE( "963_223.j17",  0x00000, 0x20000, 0x0d34a5ff )
-		ROM_LOAD16_BYTE( "963_224.k17",  0x00001, 0x20000, 0x2fd453f2 )
-		ROM_LOAD16_BYTE( "963_221.j15",  0x40000, 0x10000, 0xfa8e25fd )
-		ROM_LOAD16_BYTE( "963_222.k15",  0x40001, 0x10000, 0xca437a4f )
-	
-		ROM_REGION( 0x10000, REGION_CPU2, 0 )	/* 64k for the audio CPU */
-		ROM_LOAD( "963-e20",      0x00000, 0x08000, 0x1692a6d6 )
-	
-		ROM_REGION( 0x100000, REGION_GFX1, 0 )	/* graphics (addressable by the main CPU) */
-		ROM_LOAD( "963-a28",      0x000000, 0x80000, 0xdb4769a8 )        /* 8x8 tiles */
-		ROM_LOAD( "963-a29",      0x080000, 0x80000, 0x8069cd2e )        /* 8x8 tiles */
-	
-		ROM_REGION( 0x200000, REGION_GFX2, 0 )	/* graphics (addressable by the main CPU) */
-		ROM_LOAD( "963-a17",      0x000000, 0x80000, 0xb5239a44 )        /* sprites */
-		ROM_LOAD( "963-a18",      0x080000, 0x80000, 0xdd51adef )        /* sprites */
-		ROM_LOAD( "963-a15",      0x100000, 0x80000, 0x1f324eed )        /* sprites */
-		ROM_LOAD( "963-a16",      0x180000, 0x80000, 0xd4bd9984 )        /* sprites */
-	
-		ROM_REGION( 0x0200, REGION_PROMS, 0 )
-		ROM_LOAD( "963-a30",      0x0000, 0x0100, 0xabd82680 )	/* sprite address decoder */
-		ROM_LOAD( "963-a31",      0x0100, 0x0100, 0xf8004a1c )	/* priority encoder (not used) */
-	
-		ROM_REGION( 0x20000, REGION_SOUND1, 0 )	/* 128k for the samples */
-		ROM_LOAD( "963-a26",      0x00000, 0x20000, 0xe2ac3063 ) /* samples for 007232 */
-	
-		ROM_REGION( 0x20000, REGION_SOUND2, 0 )	/* 128k for the samples */
-		ROM_LOAD( "963-a27",      0x00000, 0x20000, 0x2dfd674b ) /* samples for UPD7759C */
-	
-		ROM_REGION( 0x80000, REGION_SOUND3, 0 )	/* 512k for the title music sample */
-		ROM_LOAD( "963-a25",      0x00000, 0x80000, 0xfca078c7 )
-	ROM_END
-	
-	ROM_START( tmht2p )
-		ROM_REGION( 0x60000, REGION_CPU1, 0 )	/* 2*128k and 2*64k for 68000 code */
-		ROM_LOAD16_BYTE( "963-u23",      0x00000, 0x20000, 0x58bec748 )
-		ROM_LOAD16_BYTE( "963-u24",      0x00001, 0x20000, 0xdce87c8d )
-		ROM_LOAD16_BYTE( "963-u21",      0x40000, 0x10000, 0xabce5ead )
-		ROM_LOAD16_BYTE( "963-u22",      0x40001, 0x10000, 0x4ecc8d6b )
-	
-		ROM_REGION( 0x10000, REGION_CPU2, 0 )	/* 64k for the audio CPU */
-		ROM_LOAD( "963-e20",      0x00000, 0x08000, 0x1692a6d6 )
-	
-		ROM_REGION( 0x100000, REGION_GFX1, 0 )	/* graphics (addressable by the main CPU) */
-		ROM_LOAD( "963-a28",      0x000000, 0x80000, 0xdb4769a8 )        /* 8x8 tiles */
-		ROM_LOAD( "963-a29",      0x080000, 0x80000, 0x8069cd2e )        /* 8x8 tiles */
-	
-		ROM_REGION( 0x200000, REGION_GFX2, 0 )	/* graphics (addressable by the main CPU) */
-		ROM_LOAD( "963-a17",      0x000000, 0x80000, 0xb5239a44 )        /* sprites */
-		ROM_LOAD( "963-a18",      0x080000, 0x80000, 0xdd51adef )        /* sprites */
-		ROM_LOAD( "963-a15",      0x100000, 0x80000, 0x1f324eed )        /* sprites */
-		ROM_LOAD( "963-a16",      0x180000, 0x80000, 0xd4bd9984 )        /* sprites */
-	
-		ROM_REGION( 0x0200, REGION_PROMS, 0 )
-		ROM_LOAD( "963-a30",      0x0000, 0x0100, 0xabd82680 )	/* sprite address decoder */
-		ROM_LOAD( "963-a31",      0x0100, 0x0100, 0xf8004a1c )	/* priority encoder (not used) */
-	
-		ROM_REGION( 0x20000, REGION_SOUND1, 0 )	/* 128k for the samples */
-		ROM_LOAD( "963-a26",      0x00000, 0x20000, 0xe2ac3063 ) /* samples for 007232 */
-	
-		ROM_REGION( 0x20000, REGION_SOUND2, 0 )	/* 128k for the samples */
-		ROM_LOAD( "963-a27",      0x00000, 0x20000, 0x2dfd674b ) /* samples for UPD7759C */
-	
-		ROM_REGION( 0x80000, REGION_SOUND3, 0 )	/* 512k for the title music sample */
-		ROM_LOAD( "963-a25",      0x00000, 0x80000, 0xfca078c7 )
-	ROM_END
-	
-	ROM_START( tmnt2pj )
-		ROM_REGION( 0x60000, REGION_CPU1, 0 )	/* 2*128k and 2*64k for 68000 code */
-		ROM_LOAD16_BYTE( "963-123",      0x00000, 0x20000, 0x6a3527c9 )
-		ROM_LOAD16_BYTE( "963-124",      0x00001, 0x20000, 0x2c4bfa15 )
-		ROM_LOAD16_BYTE( "963-121",      0x40000, 0x10000, 0x4181b733 )
-		ROM_LOAD16_BYTE( "963-122",      0x40001, 0x10000, 0xc64eb5ff )
-	
-		ROM_REGION( 0x10000, REGION_CPU2, 0 )	/* 64k for the audio CPU */
-		ROM_LOAD( "963-e20",      0x00000, 0x08000, 0x1692a6d6 )
-	
-		ROM_REGION( 0x100000, REGION_GFX1, 0 )	/* graphics (addressable by the main CPU) */
-		ROM_LOAD( "963-a28",      0x000000, 0x80000, 0xdb4769a8 )        /* 8x8 tiles */
-		ROM_LOAD( "963-a29",      0x080000, 0x80000, 0x8069cd2e )        /* 8x8 tiles */
-	
-		ROM_REGION( 0x200000, REGION_GFX2, 0 )	/* graphics (addressable by the main CPU) */
-		ROM_LOAD( "963-a17",      0x000000, 0x80000, 0xb5239a44 )        /* sprites */
-		ROM_LOAD( "963-a18",      0x080000, 0x80000, 0xdd51adef )        /* sprites */
-		ROM_LOAD( "963-a15",      0x100000, 0x80000, 0x1f324eed )        /* sprites */
-		ROM_LOAD( "963-a16",      0x180000, 0x80000, 0xd4bd9984 )        /* sprites */
-	
-		ROM_REGION( 0x0200, REGION_PROMS, 0 )
-		ROM_LOAD( "963-a30",      0x0000, 0x0100, 0xabd82680 )	/* sprite address decoder */
-		ROM_LOAD( "963-a31",      0x0100, 0x0100, 0xf8004a1c )	/* priority encoder (not used) */
-	
-		ROM_REGION( 0x20000, REGION_SOUND1, 0 )	/* 128k for the samples */
-		ROM_LOAD( "963-a26",      0x00000, 0x20000, 0xe2ac3063 ) /* samples for 007232 */
-	
-		ROM_REGION( 0x20000, REGION_SOUND2, 0 )	/* 128k for the samples */
-		ROM_LOAD( "963-a27",      0x00000, 0x20000, 0x2dfd674b ) /* samples for UPD7759C */
-	
-		ROM_REGION( 0x80000, REGION_SOUND3, 0 )	/* 512k for the title music sample */
-		ROM_LOAD( "963-a25",      0x00000, 0x80000, 0xfca078c7 )
-	ROM_END
-	
-	ROM_START( tmnt2po )
-		ROM_REGION( 0x60000, REGION_CPU1, 0 )	/* 2*128k and 2*64k for 68000 code */
-		ROM_LOAD16_BYTE( "tmnt123.bin",  0x00000, 0x20000, 0x2d905183 )
-		ROM_LOAD16_BYTE( "tmnt124.bin",  0x00001, 0x20000, 0xe0125352 )
-		ROM_LOAD16_BYTE( "tmnt21.bin",   0x40000, 0x10000, 0x12deeafb )
-		ROM_LOAD16_BYTE( "tmnt22.bin",   0x40001, 0x10000, 0xaec4f1c3 )
-	
-		ROM_REGION( 0x10000, REGION_CPU2, 0 )	/* 64k for the audio CPU */
-		ROM_LOAD( "963-e20",      0x00000, 0x08000, 0x1692a6d6 )
-	
-		ROM_REGION( 0x100000, REGION_GFX1, 0 )	/* graphics (addressable by the main CPU) */
-		ROM_LOAD( "963-a28",      0x000000, 0x80000, 0xdb4769a8 )        /* 8x8 tiles */
-		ROM_LOAD( "963-a29",      0x080000, 0x80000, 0x8069cd2e )        /* 8x8 tiles */
-	
-		ROM_REGION( 0x200000, REGION_GFX2, 0 )	/* graphics (addressable by the main CPU) */
-		ROM_LOAD( "963-a17",      0x000000, 0x80000, 0xb5239a44 )        /* sprites */
-		ROM_LOAD( "963-a18",      0x080000, 0x80000, 0xdd51adef )        /* sprites */
-		ROM_LOAD( "963-a15",      0x100000, 0x80000, 0x1f324eed )        /* sprites */
-		ROM_LOAD( "963-a16",      0x180000, 0x80000, 0xd4bd9984 )        /* sprites */
-	
-		ROM_REGION( 0x0200, REGION_PROMS, 0 )
-		ROM_LOAD( "963-a30",      0x0000, 0x0100, 0xabd82680 )	/* sprite address decoder */
-		ROM_LOAD( "963-a31",      0x0100, 0x0100, 0xf8004a1c )	/* priority encoder (not used) */
-	
-		ROM_REGION( 0x20000, REGION_SOUND1, 0 )	/* 128k for the samples */
-		ROM_LOAD( "963-a26",      0x00000, 0x20000, 0xe2ac3063 ) /* samples for 007232 */
-	
-		ROM_REGION( 0x20000, REGION_SOUND2, 0 )	/* 128k for the samples */
-		ROM_LOAD( "963-a27",      0x00000, 0x20000, 0x2dfd674b ) /* samples for UPD7759C */
-	
-		ROM_REGION( 0x80000, REGION_SOUND3, 0 )	/* 512k for the title music sample */
-		ROM_LOAD( "963-a25",      0x00000, 0x80000, 0xfca078c7 )
-	ROM_END
-	
-	ROM_START( punkshot )
-		ROM_REGION( 0x40000, REGION_CPU1, 0 )	/* 4*64k for 68000 code */
-		ROM_LOAD16_BYTE( "907-j02.i7",   0x00000, 0x20000, 0xdbb3a23b )
-		ROM_LOAD16_BYTE( "907-j03.i10",  0x00001, 0x20000, 0x2151d1ab )
-	
-		ROM_REGION( 0x10000, REGION_CPU2, 0 )	/* 64k for the audio CPU */
-		ROM_LOAD( "907f01.e8",    0x0000, 0x8000, 0xf040c484 )
-	
-		ROM_REGION( 0x80000, REGION_GFX1, 0 )	/* graphics (addressable by the main CPU) */
-		ROM_LOAD( "907d06.e23",   0x000000, 0x40000, 0xf5cc38f4 )
-		ROM_LOAD( "907d05.e22",   0x040000, 0x40000, 0xe25774c1 )
-	
-		ROM_REGION( 0x200000, REGION_GFX2, 0 )	/* graphics (addressable by the main CPU) */
-		ROM_LOAD( "907d07l.k2",   0x000000, 0x80000, 0xfeeb345a )
-		ROM_LOAD( "907d07h.k2",   0x080000, 0x80000, 0x0bff4383 )
-		ROM_LOAD( "907d08l.k7",   0x100000, 0x80000, 0x05f3d196 )
-		ROM_LOAD( "907d08h.k7",   0x180000, 0x80000, 0xeaf18c22 )
-	
-		ROM_REGION( 0x80000, REGION_SOUND1, 0 )	/* samples for 053260 */
-		ROM_LOAD( "907d04.d3",    0x0000, 0x80000, 0x090feb5e )
-	ROM_END
-	
-	ROM_START( punksht2 )
-		ROM_REGION( 0x40000, REGION_CPU1, 0 )	/* 4*64k for 68000 code */
-		ROM_LOAD16_BYTE( "907m02.i7",    0x00000, 0x20000, 0x59e14575 )
-		ROM_LOAD16_BYTE( "907m03.i10",   0x00001, 0x20000, 0xadb14b1e )
-	
-		ROM_REGION( 0x10000, REGION_CPU2, 0 )	/* 64k for the audio CPU */
-		ROM_LOAD( "907f01.e8",    0x0000, 0x8000, 0xf040c484 )
-	
-		ROM_REGION( 0x80000, REGION_GFX1, 0 )	/* graphics (addressable by the main CPU) */
-		ROM_LOAD( "907d06.e23",   0x000000, 0x40000, 0xf5cc38f4 )
-		ROM_LOAD( "907d05.e22",   0x040000, 0x40000, 0xe25774c1 )
-	
-		ROM_REGION( 0x200000, REGION_GFX2, 0 )	/* graphics (addressable by the main CPU) */
-		ROM_LOAD( "907d07l.k2",   0x000000, 0x80000, 0xfeeb345a )
-		ROM_LOAD( "907d07h.k2",   0x080000, 0x80000, 0x0bff4383 )
-		ROM_LOAD( "907d08l.k7",   0x100000, 0x80000, 0x05f3d196 )
-		ROM_LOAD( "907d08h.k7",   0x180000, 0x80000, 0xeaf18c22 )
-	
-		ROM_REGION( 0x80000, REGION_SOUND1, 0 )	/* samples for the 053260 */
-		ROM_LOAD( "907d04.d3",    0x0000, 0x80000, 0x090feb5e )
-	ROM_END
-	
-	ROM_START( punkshtj )
-		ROM_REGION( 0x40000, REGION_CPU1, 0 )	/* 4*64k for 68000 code */
-		ROM_LOAD16_BYTE( "907z02.i7",    0x00000, 0x20000, 0x7a3a5c89 )
-		ROM_LOAD16_BYTE( "907z03.i10",   0x00001, 0x20000, 0x22a3d9d6 )
-	
-		ROM_REGION( 0x10000, REGION_CPU2, 0 )	/* 64k for the audio CPU */
-		ROM_LOAD( "907f01.e8",    0x0000, 0x8000, 0xf040c484 )
-	
-		ROM_REGION( 0x80000, REGION_GFX1, 0 )	/* graphics (addressable by the main CPU) */
-		ROM_LOAD( "907d06.e23",   0x000000, 0x40000, 0xf5cc38f4 )
-		ROM_LOAD( "907d05.e22",   0x040000, 0x40000, 0xe25774c1 )
-	
-		ROM_REGION( 0x200000, REGION_GFX2, 0 )	/* graphics (addressable by the main CPU) */
-		ROM_LOAD( "907d07l.k2",   0x000000, 0x80000, 0xfeeb345a )
-		ROM_LOAD( "907d07h.k2",   0x080000, 0x80000, 0x0bff4383 )
-		ROM_LOAD( "907d08l.k7",   0x100000, 0x80000, 0x05f3d196 )
-		ROM_LOAD( "907d08h.k7",   0x180000, 0x80000, 0xeaf18c22 )
-	
-		ROM_REGION( 0x80000, REGION_SOUND1, 0 )	/* samples for the 053260 */
-		ROM_LOAD( "907d04.d3",    0x0000, 0x80000, 0x090feb5e )
-	ROM_END
-	
-	ROM_START( lgtnfght )
-		ROM_REGION( 0x40000, REGION_CPU1, 0 )	/* 4*64k for 68000 code */
-		ROM_LOAD16_BYTE( "939m02.e11",   0x00000, 0x20000, 0x61a12184 )
-		ROM_LOAD16_BYTE( "939m03.e15",   0x00001, 0x20000, 0x6db6659d )
-	
-		ROM_REGION( 0x10000, REGION_CPU2, 0 )	/* 64k for the audio CPU */
-		ROM_LOAD( "939e01.d7",    0x0000, 0x8000, 0x4a5fc848 )
-	
-		ROM_REGION( 0x100000, REGION_GFX1, 0 )	/* graphics (addressable by the main CPU) */
-		ROM_LOAD( "939a07.k14",   0x000000, 0x80000, 0x7955dfcf )
-		ROM_LOAD( "939a08.k19",   0x080000, 0x80000, 0xed95b385 )
-	
-		ROM_REGION( 0x100000, REGION_GFX2, 0 )	/* graphics (addressable by the main CPU) */
-		ROM_LOAD( "939a06.k8",    0x000000, 0x80000, 0xe393c206 )
-		ROM_LOAD( "939a05.k2",    0x080000, 0x80000, 0x3662d47a )
-	
-		ROM_REGION( 0x80000, REGION_SOUND1, 0 )	/* samples for the 053260 */
-		ROM_LOAD( "939a04.c5",    0x0000, 0x80000, 0xc24e2b6e )
-	ROM_END
-	
-	ROM_START( trigon )
-		ROM_REGION( 0x40000, REGION_CPU1, 0 )	/* 4*64k for 68000 code */
-		ROM_LOAD16_BYTE( "939j02.bin",   0x00000, 0x20000, 0x38381d1b )
-		ROM_LOAD16_BYTE( "939j03.bin",   0x00001, 0x20000, 0xb5beddcd )
-	
-		ROM_REGION( 0x10000, REGION_CPU2, 0 )	/* 64k for the audio CPU */
-		ROM_LOAD( "939e01.d7",    0x0000, 0x8000, 0x4a5fc848 )
-	
-		ROM_REGION( 0x100000, REGION_GFX1, 0 )	/* graphics (addressable by the main CPU) */
-		ROM_LOAD( "939a07.k14",   0x000000, 0x80000, 0x7955dfcf )
-		ROM_LOAD( "939a08.k19",   0x080000, 0x80000, 0xed95b385 )
-	
-		ROM_REGION( 0x100000, REGION_GFX2, 0 )	/* graphics (addressable by the main CPU) */
-		ROM_LOAD( "939a06.k8",    0x000000, 0x80000, 0xe393c206 )
-		ROM_LOAD( "939a05.k2",    0x080000, 0x80000, 0x3662d47a )
-	
-		ROM_REGION( 0x80000, REGION_SOUND1, 0 )	/* samples for the 053260 */
-		ROM_LOAD( "939a04.c5",    0x0000, 0x80000, 0xc24e2b6e )
-	ROM_END
-	
-	ROM_START( blswhstl )
-		ROM_REGION( 0x80000, REGION_CPU1, 0 )
-		ROM_LOAD16_BYTE( "e09.bin",     0x000000, 0x20000, 0xe8b7b234 )
-		ROM_LOAD16_BYTE( "g09.bin",     0x000001, 0x20000, 0x3c26d281 )
-		ROM_LOAD16_BYTE( "e11.bin",     0x040000, 0x20000, 0x14628736 )
-		ROM_LOAD16_BYTE( "g11.bin",     0x040001, 0x20000, 0xf738ad4a )
-	
-		ROM_REGION( 0x10000, REGION_CPU2, 0 ) /* 64k for the audio CPU */
-		ROM_LOAD( "060_j01.rom",  0x0000, 0x10000, 0xf9d9a673 )
-	
-	    ROM_REGION( 0x100000, REGION_GFX1, 0 )	/* graphics (addressable by the main CPU) */
+	static RomLoadPtr rom_mia = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x40000, REGION_CPU1, 0 );/* 2*128k and 2*64k for 68000 code */
+		ROM_LOAD16_BYTE( "808t20.h17",   0x00000, 0x20000, 0x6f0acb1d );
+		ROM_LOAD16_BYTE( "808t21.j17",   0x00001, 0x20000, 0x42a30416 );
+	
+		ROM_REGION( 0x10000, REGION_CPU2, 0 );/* 64k for the audio CPU */
+		ROM_LOAD( "808e03.f4",    0x00000, 0x08000, 0x3d93a7cd );
+	
+		ROM_REGION( 0x40000, REGION_GFX1, 0 );/* graphics (addressable by the main CPU) */
+		ROM_LOAD16_BYTE( "808e12.f28",   0x000000, 0x10000, 0xd62f1fde );       /* 8x8 tiles */
+		ROM_LOAD16_BYTE( "808e13.h28",   0x000001, 0x10000, 0x1fa708f4 );       /* 8x8 tiles */
+		ROM_LOAD16_BYTE( "808e22.i28",   0x020000, 0x10000, 0x73d758f6 );       /* 8x8 tiles */
+		ROM_LOAD16_BYTE( "808e23.k28",   0x020001, 0x10000, 0x8ff08b21 );       /* 8x8 tiles */
+	
+		ROM_REGION( 0x100000, REGION_GFX2, 0 );/* graphics (addressable by the main CPU) */
+		ROM_LOAD( "808d17.j4",    0x00000, 0x80000, 0xd1299082 );/* sprites */
+		ROM_LOAD( "808d15.h4",    0x80000, 0x80000, 0x2b22a6b6 );
+	
+		ROM_REGION( 0x0100, REGION_PROMS, 0 );
+		ROM_LOAD( "808a18.f16",   0x0000, 0x0100, 0xeb95aede );/* priority encoder (not used) */
+	
+		ROM_REGION( 0x20000, REGION_SOUND1, 0 );/* 128k for the samples */
+		ROM_LOAD( "808d01.d4",    0x00000, 0x20000, 0xfd4d37c0 );/* samples for 007232 */
+	ROM_END(); }}; 
+	
+	static RomLoadPtr rom_mia2 = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x40000, REGION_CPU1, 0 );/* 2*128k and 2*64k for 68000 code */
+		ROM_LOAD16_BYTE( "808s20.h17",   0x00000, 0x20000, 0xcaa2897f );
+		ROM_LOAD16_BYTE( "808s21.j17",   0x00001, 0x20000, 0x3d892ffb );
+	
+		ROM_REGION( 0x10000, REGION_CPU2, 0 );/* 64k for the audio CPU */
+		ROM_LOAD( "808e03.f4",    0x00000, 0x08000, 0x3d93a7cd );
+	
+		ROM_REGION( 0x40000, REGION_GFX1, 0 );/* graphics (addressable by the main CPU) */
+		ROM_LOAD16_BYTE( "808e12.f28",   0x000000, 0x10000, 0xd62f1fde );       /* 8x8 tiles */
+		ROM_LOAD16_BYTE( "808e13.h28",   0x000001, 0x10000, 0x1fa708f4 );       /* 8x8 tiles */
+		ROM_LOAD16_BYTE( "808e22.i28",   0x020000, 0x10000, 0x73d758f6 );       /* 8x8 tiles */
+		ROM_LOAD16_BYTE( "808e23.k28",   0x020001, 0x10000, 0x8ff08b21 );       /* 8x8 tiles */
+	
+		ROM_REGION( 0x100000, REGION_GFX2, 0 );/* graphics (addressable by the main CPU) */
+		ROM_LOAD( "808d17.j4",    0x00000, 0x80000, 0xd1299082 );/* sprites */
+		ROM_LOAD( "808d15.h4",    0x80000, 0x80000, 0x2b22a6b6 );
+	
+		ROM_REGION( 0x0100, REGION_PROMS, 0 );
+		ROM_LOAD( "808a18.f16",   0x0000, 0x0100, 0xeb95aede );/* priority encoder (not used) */
+	
+		ROM_REGION( 0x20000, REGION_SOUND1, 0 );/* 128k for the samples */
+		ROM_LOAD( "808d01.d4",    0x00000, 0x20000, 0xfd4d37c0 );/* samples for 007232 */
+	ROM_END(); }}; 
+	
+	static RomLoadPtr rom_tmnt = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x60000, REGION_CPU1, 0 );/* 2*128k and 2*64k for 68000 code */
+		ROM_LOAD16_BYTE( "963-x23",      0x00000, 0x20000, 0xa9549004 );
+		ROM_LOAD16_BYTE( "963-x24",      0x00001, 0x20000, 0xe5cc9067 );
+		ROM_LOAD16_BYTE( "963-x21",      0x40000, 0x10000, 0x5789cf92 );
+		ROM_LOAD16_BYTE( "963-x22",      0x40001, 0x10000, 0x0a74e277 );
+	
+		ROM_REGION( 0x10000, REGION_CPU2, 0 );/* 64k for the audio CPU */
+		ROM_LOAD( "963-e20",      0x00000, 0x08000, 0x1692a6d6 );
+	
+		ROM_REGION( 0x100000, REGION_GFX1, 0 );/* graphics (addressable by the main CPU) */
+		ROM_LOAD( "963-a28",      0x000000, 0x80000, 0xdb4769a8 );       /* 8x8 tiles */
+		ROM_LOAD( "963-a29",      0x080000, 0x80000, 0x8069cd2e );       /* 8x8 tiles */
+	
+		ROM_REGION( 0x200000, REGION_GFX2, 0 );/* graphics (addressable by the main CPU) */
+		ROM_LOAD( "963-a17",      0x000000, 0x80000, 0xb5239a44 );       /* sprites */
+		ROM_LOAD( "963-a18",      0x080000, 0x80000, 0xdd51adef );       /* sprites */
+		ROM_LOAD( "963-a15",      0x100000, 0x80000, 0x1f324eed );       /* sprites */
+		ROM_LOAD( "963-a16",      0x180000, 0x80000, 0xd4bd9984 );       /* sprites */
+	
+		ROM_REGION( 0x0200, REGION_PROMS, 0 );
+		ROM_LOAD( "963-a30",      0x0000, 0x0100, 0xabd82680 );/* sprite address decoder */
+		ROM_LOAD( "963-a31",      0x0100, 0x0100, 0xf8004a1c );/* priority encoder (not used) */
+	
+		ROM_REGION( 0x20000, REGION_SOUND1, 0 );/* 128k for the samples */
+		ROM_LOAD( "963-a26",      0x00000, 0x20000, 0xe2ac3063 );/* samples for 007232 */
+	
+		ROM_REGION( 0x20000, REGION_SOUND2, 0 );/* 128k for the samples */
+		ROM_LOAD( "963-a27",      0x00000, 0x20000, 0x2dfd674b );/* samples for UPD7759C */
+	
+		ROM_REGION( 0x80000, REGION_SOUND3, 0 );/* 512k for the title music sample */
+		ROM_LOAD( "963-a25",      0x00000, 0x80000, 0xfca078c7 );
+	ROM_END(); }}; 
+	
+	static RomLoadPtr rom_tmntu = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x60000, REGION_CPU1, 0 );/* 2*128k and 2*64k for 68000 code */
+		ROM_LOAD16_BYTE( "963-r23",      0x00000, 0x20000, 0xa7f61195 );
+		ROM_LOAD16_BYTE( "963-r24",      0x00001, 0x20000, 0x661e056a );
+		ROM_LOAD16_BYTE( "963-r21",      0x40000, 0x10000, 0xde047bb6 );
+		ROM_LOAD16_BYTE( "963-r22",      0x40001, 0x10000, 0xd86a0888 );
+	
+		ROM_REGION( 0x10000, REGION_CPU2, 0 );/* 64k for the audio CPU */
+		ROM_LOAD( "963-e20",      0x00000, 0x08000, 0x1692a6d6 );
+	
+		ROM_REGION( 0x100000, REGION_GFX1, 0 );/* graphics (addressable by the main CPU) */
+		ROM_LOAD( "963-a28",      0x000000, 0x80000, 0xdb4769a8 );       /* 8x8 tiles */
+		ROM_LOAD( "963-a29",      0x080000, 0x80000, 0x8069cd2e );       /* 8x8 tiles */
+	
+		ROM_REGION( 0x200000, REGION_GFX2, 0 );/* graphics (addressable by the main CPU) */
+		ROM_LOAD( "963-a17",      0x000000, 0x80000, 0xb5239a44 );       /* sprites */
+		ROM_LOAD( "963-a18",      0x080000, 0x80000, 0xdd51adef );       /* sprites */
+		ROM_LOAD( "963-a15",      0x100000, 0x80000, 0x1f324eed );       /* sprites */
+		ROM_LOAD( "963-a16",      0x180000, 0x80000, 0xd4bd9984 );       /* sprites */
+	
+		ROM_REGION( 0x0200, REGION_PROMS, 0 );
+		ROM_LOAD( "963-a30",      0x0000, 0x0100, 0xabd82680 );/* sprite address decoder */
+		ROM_LOAD( "963-a31",      0x0100, 0x0100, 0xf8004a1c );/* priority encoder (not used) */
+	
+		ROM_REGION( 0x20000, REGION_SOUND1, 0 );/* 128k for the samples */
+		ROM_LOAD( "963-a26",      0x00000, 0x20000, 0xe2ac3063 );/* samples for 007232 */
+	
+		ROM_REGION( 0x20000, REGION_SOUND2, 0 );/* 128k for the samples */
+		ROM_LOAD( "963-a27",      0x00000, 0x20000, 0x2dfd674b );/* samples for UPD7759C */
+	
+		ROM_REGION( 0x80000, REGION_SOUND3, 0 );/* 512k for the title music sample */
+		ROM_LOAD( "963-a25",      0x00000, 0x80000, 0xfca078c7 );
+	ROM_END(); }}; 
+	
+	static RomLoadPtr rom_tmht = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x60000, REGION_CPU1, 0 );/* 2*128k and 2*64k for 68000 code */
+		ROM_LOAD16_BYTE( "963f23.j17",   0x00000, 0x20000, 0x9cb5e461 );
+		ROM_LOAD16_BYTE( "963f24.k17",   0x00001, 0x20000, 0x2d902fab );
+		ROM_LOAD16_BYTE( "963f21.j15",   0x40000, 0x10000, 0x9fa25378 );
+		ROM_LOAD16_BYTE( "963f22.k15",   0x40001, 0x10000, 0x2127ee53 );
+	
+		ROM_REGION( 0x10000, REGION_CPU2, 0 );/* 64k for the audio CPU */
+		ROM_LOAD( "963-e20",      0x00000, 0x08000, 0x1692a6d6 );
+	
+		ROM_REGION( 0x100000, REGION_GFX1, 0 );/* graphics (addressable by the main CPU) */
+		ROM_LOAD( "963-a28",      0x000000, 0x80000, 0xdb4769a8 );       /* 8x8 tiles */
+		ROM_LOAD( "963-a29",      0x080000, 0x80000, 0x8069cd2e );       /* 8x8 tiles */
+	
+		ROM_REGION( 0x200000, REGION_GFX2, 0 );/* graphics (addressable by the main CPU) */
+		ROM_LOAD( "963-a17",      0x000000, 0x80000, 0xb5239a44 );       /* sprites */
+		ROM_LOAD( "963-a18",      0x080000, 0x80000, 0xdd51adef );       /* sprites */
+		ROM_LOAD( "963-a15",      0x100000, 0x80000, 0x1f324eed );       /* sprites */
+		ROM_LOAD( "963-a16",      0x180000, 0x80000, 0xd4bd9984 );       /* sprites */
+	
+		ROM_REGION( 0x0200, REGION_PROMS, 0 );
+		ROM_LOAD( "963-a30",      0x0000, 0x0100, 0xabd82680 );/* sprite address decoder */
+		ROM_LOAD( "963-a31",      0x0100, 0x0100, 0xf8004a1c );/* priority encoder (not used) */
+	
+		ROM_REGION( 0x20000, REGION_SOUND1, 0 );/* 128k for the samples */
+		ROM_LOAD( "963-a26",      0x00000, 0x20000, 0xe2ac3063 );/* samples for 007232 */
+	
+		ROM_REGION( 0x20000, REGION_SOUND2, 0 );/* 128k for the samples */
+		ROM_LOAD( "963-a27",      0x00000, 0x20000, 0x2dfd674b );/* samples for UPD7759C */
+	
+		ROM_REGION( 0x80000, REGION_SOUND3, 0 );/* 512k for the title music sample */
+		ROM_LOAD( "963-a25",      0x00000, 0x80000, 0xfca078c7 );
+	ROM_END(); }}; 
+	
+	static RomLoadPtr rom_tmntj = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x60000, REGION_CPU1, 0 );/* 2*128k and 2*64k for 68000 code */
+		ROM_LOAD16_BYTE( "963_223.j17",  0x00000, 0x20000, 0x0d34a5ff );
+		ROM_LOAD16_BYTE( "963_224.k17",  0x00001, 0x20000, 0x2fd453f2 );
+		ROM_LOAD16_BYTE( "963_221.j15",  0x40000, 0x10000, 0xfa8e25fd );
+		ROM_LOAD16_BYTE( "963_222.k15",  0x40001, 0x10000, 0xca437a4f );
+	
+		ROM_REGION( 0x10000, REGION_CPU2, 0 );/* 64k for the audio CPU */
+		ROM_LOAD( "963-e20",      0x00000, 0x08000, 0x1692a6d6 );
+	
+		ROM_REGION( 0x100000, REGION_GFX1, 0 );/* graphics (addressable by the main CPU) */
+		ROM_LOAD( "963-a28",      0x000000, 0x80000, 0xdb4769a8 );       /* 8x8 tiles */
+		ROM_LOAD( "963-a29",      0x080000, 0x80000, 0x8069cd2e );       /* 8x8 tiles */
+	
+		ROM_REGION( 0x200000, REGION_GFX2, 0 );/* graphics (addressable by the main CPU) */
+		ROM_LOAD( "963-a17",      0x000000, 0x80000, 0xb5239a44 );       /* sprites */
+		ROM_LOAD( "963-a18",      0x080000, 0x80000, 0xdd51adef );       /* sprites */
+		ROM_LOAD( "963-a15",      0x100000, 0x80000, 0x1f324eed );       /* sprites */
+		ROM_LOAD( "963-a16",      0x180000, 0x80000, 0xd4bd9984 );       /* sprites */
+	
+		ROM_REGION( 0x0200, REGION_PROMS, 0 );
+		ROM_LOAD( "963-a30",      0x0000, 0x0100, 0xabd82680 );/* sprite address decoder */
+		ROM_LOAD( "963-a31",      0x0100, 0x0100, 0xf8004a1c );/* priority encoder (not used) */
+	
+		ROM_REGION( 0x20000, REGION_SOUND1, 0 );/* 128k for the samples */
+		ROM_LOAD( "963-a26",      0x00000, 0x20000, 0xe2ac3063 );/* samples for 007232 */
+	
+		ROM_REGION( 0x20000, REGION_SOUND2, 0 );/* 128k for the samples */
+		ROM_LOAD( "963-a27",      0x00000, 0x20000, 0x2dfd674b );/* samples for UPD7759C */
+	
+		ROM_REGION( 0x80000, REGION_SOUND3, 0 );/* 512k for the title music sample */
+		ROM_LOAD( "963-a25",      0x00000, 0x80000, 0xfca078c7 );
+	ROM_END(); }}; 
+	
+	static RomLoadPtr rom_tmht2p = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x60000, REGION_CPU1, 0 );/* 2*128k and 2*64k for 68000 code */
+		ROM_LOAD16_BYTE( "963-u23",      0x00000, 0x20000, 0x58bec748 );
+		ROM_LOAD16_BYTE( "963-u24",      0x00001, 0x20000, 0xdce87c8d );
+		ROM_LOAD16_BYTE( "963-u21",      0x40000, 0x10000, 0xabce5ead );
+		ROM_LOAD16_BYTE( "963-u22",      0x40001, 0x10000, 0x4ecc8d6b );
+	
+		ROM_REGION( 0x10000, REGION_CPU2, 0 );/* 64k for the audio CPU */
+		ROM_LOAD( "963-e20",      0x00000, 0x08000, 0x1692a6d6 );
+	
+		ROM_REGION( 0x100000, REGION_GFX1, 0 );/* graphics (addressable by the main CPU) */
+		ROM_LOAD( "963-a28",      0x000000, 0x80000, 0xdb4769a8 );       /* 8x8 tiles */
+		ROM_LOAD( "963-a29",      0x080000, 0x80000, 0x8069cd2e );       /* 8x8 tiles */
+	
+		ROM_REGION( 0x200000, REGION_GFX2, 0 );/* graphics (addressable by the main CPU) */
+		ROM_LOAD( "963-a17",      0x000000, 0x80000, 0xb5239a44 );       /* sprites */
+		ROM_LOAD( "963-a18",      0x080000, 0x80000, 0xdd51adef );       /* sprites */
+		ROM_LOAD( "963-a15",      0x100000, 0x80000, 0x1f324eed );       /* sprites */
+		ROM_LOAD( "963-a16",      0x180000, 0x80000, 0xd4bd9984 );       /* sprites */
+	
+		ROM_REGION( 0x0200, REGION_PROMS, 0 );
+		ROM_LOAD( "963-a30",      0x0000, 0x0100, 0xabd82680 );/* sprite address decoder */
+		ROM_LOAD( "963-a31",      0x0100, 0x0100, 0xf8004a1c );/* priority encoder (not used) */
+	
+		ROM_REGION( 0x20000, REGION_SOUND1, 0 );/* 128k for the samples */
+		ROM_LOAD( "963-a26",      0x00000, 0x20000, 0xe2ac3063 );/* samples for 007232 */
+	
+		ROM_REGION( 0x20000, REGION_SOUND2, 0 );/* 128k for the samples */
+		ROM_LOAD( "963-a27",      0x00000, 0x20000, 0x2dfd674b );/* samples for UPD7759C */
+	
+		ROM_REGION( 0x80000, REGION_SOUND3, 0 );/* 512k for the title music sample */
+		ROM_LOAD( "963-a25",      0x00000, 0x80000, 0xfca078c7 );
+	ROM_END(); }}; 
+	
+	static RomLoadPtr rom_tmnt2pj = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x60000, REGION_CPU1, 0 );/* 2*128k and 2*64k for 68000 code */
+		ROM_LOAD16_BYTE( "963-123",      0x00000, 0x20000, 0x6a3527c9 );
+		ROM_LOAD16_BYTE( "963-124",      0x00001, 0x20000, 0x2c4bfa15 );
+		ROM_LOAD16_BYTE( "963-121",      0x40000, 0x10000, 0x4181b733 );
+		ROM_LOAD16_BYTE( "963-122",      0x40001, 0x10000, 0xc64eb5ff );
+	
+		ROM_REGION( 0x10000, REGION_CPU2, 0 );/* 64k for the audio CPU */
+		ROM_LOAD( "963-e20",      0x00000, 0x08000, 0x1692a6d6 );
+	
+		ROM_REGION( 0x100000, REGION_GFX1, 0 );/* graphics (addressable by the main CPU) */
+		ROM_LOAD( "963-a28",      0x000000, 0x80000, 0xdb4769a8 );       /* 8x8 tiles */
+		ROM_LOAD( "963-a29",      0x080000, 0x80000, 0x8069cd2e );       /* 8x8 tiles */
+	
+		ROM_REGION( 0x200000, REGION_GFX2, 0 );/* graphics (addressable by the main CPU) */
+		ROM_LOAD( "963-a17",      0x000000, 0x80000, 0xb5239a44 );       /* sprites */
+		ROM_LOAD( "963-a18",      0x080000, 0x80000, 0xdd51adef );       /* sprites */
+		ROM_LOAD( "963-a15",      0x100000, 0x80000, 0x1f324eed );       /* sprites */
+		ROM_LOAD( "963-a16",      0x180000, 0x80000, 0xd4bd9984 );       /* sprites */
+	
+		ROM_REGION( 0x0200, REGION_PROMS, 0 );
+		ROM_LOAD( "963-a30",      0x0000, 0x0100, 0xabd82680 );/* sprite address decoder */
+		ROM_LOAD( "963-a31",      0x0100, 0x0100, 0xf8004a1c );/* priority encoder (not used) */
+	
+		ROM_REGION( 0x20000, REGION_SOUND1, 0 );/* 128k for the samples */
+		ROM_LOAD( "963-a26",      0x00000, 0x20000, 0xe2ac3063 );/* samples for 007232 */
+	
+		ROM_REGION( 0x20000, REGION_SOUND2, 0 );/* 128k for the samples */
+		ROM_LOAD( "963-a27",      0x00000, 0x20000, 0x2dfd674b );/* samples for UPD7759C */
+	
+		ROM_REGION( 0x80000, REGION_SOUND3, 0 );/* 512k for the title music sample */
+		ROM_LOAD( "963-a25",      0x00000, 0x80000, 0xfca078c7 );
+	ROM_END(); }}; 
+	
+	static RomLoadPtr rom_tmnt2po = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x60000, REGION_CPU1, 0 );/* 2*128k and 2*64k for 68000 code */
+		ROM_LOAD16_BYTE( "tmnt123.bin",  0x00000, 0x20000, 0x2d905183 );
+		ROM_LOAD16_BYTE( "tmnt124.bin",  0x00001, 0x20000, 0xe0125352 );
+		ROM_LOAD16_BYTE( "tmnt21.bin",   0x40000, 0x10000, 0x12deeafb );
+		ROM_LOAD16_BYTE( "tmnt22.bin",   0x40001, 0x10000, 0xaec4f1c3 );
+	
+		ROM_REGION( 0x10000, REGION_CPU2, 0 );/* 64k for the audio CPU */
+		ROM_LOAD( "963-e20",      0x00000, 0x08000, 0x1692a6d6 );
+	
+		ROM_REGION( 0x100000, REGION_GFX1, 0 );/* graphics (addressable by the main CPU) */
+		ROM_LOAD( "963-a28",      0x000000, 0x80000, 0xdb4769a8 );       /* 8x8 tiles */
+		ROM_LOAD( "963-a29",      0x080000, 0x80000, 0x8069cd2e );       /* 8x8 tiles */
+	
+		ROM_REGION( 0x200000, REGION_GFX2, 0 );/* graphics (addressable by the main CPU) */
+		ROM_LOAD( "963-a17",      0x000000, 0x80000, 0xb5239a44 );       /* sprites */
+		ROM_LOAD( "963-a18",      0x080000, 0x80000, 0xdd51adef );       /* sprites */
+		ROM_LOAD( "963-a15",      0x100000, 0x80000, 0x1f324eed );       /* sprites */
+		ROM_LOAD( "963-a16",      0x180000, 0x80000, 0xd4bd9984 );       /* sprites */
+	
+		ROM_REGION( 0x0200, REGION_PROMS, 0 );
+		ROM_LOAD( "963-a30",      0x0000, 0x0100, 0xabd82680 );/* sprite address decoder */
+		ROM_LOAD( "963-a31",      0x0100, 0x0100, 0xf8004a1c );/* priority encoder (not used) */
+	
+		ROM_REGION( 0x20000, REGION_SOUND1, 0 );/* 128k for the samples */
+		ROM_LOAD( "963-a26",      0x00000, 0x20000, 0xe2ac3063 );/* samples for 007232 */
+	
+		ROM_REGION( 0x20000, REGION_SOUND2, 0 );/* 128k for the samples */
+		ROM_LOAD( "963-a27",      0x00000, 0x20000, 0x2dfd674b );/* samples for UPD7759C */
+	
+		ROM_REGION( 0x80000, REGION_SOUND3, 0 );/* 512k for the title music sample */
+		ROM_LOAD( "963-a25",      0x00000, 0x80000, 0xfca078c7 );
+	ROM_END(); }}; 
+	
+	static RomLoadPtr rom_punkshot = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x40000, REGION_CPU1, 0 );/* 4*64k for 68000 code */
+		ROM_LOAD16_BYTE( "907-j02.i7",   0x00000, 0x20000, 0xdbb3a23b );
+		ROM_LOAD16_BYTE( "907-j03.i10",  0x00001, 0x20000, 0x2151d1ab );
+	
+		ROM_REGION( 0x10000, REGION_CPU2, 0 );/* 64k for the audio CPU */
+		ROM_LOAD( "907f01.e8",    0x0000, 0x8000, 0xf040c484 );
+	
+		ROM_REGION( 0x80000, REGION_GFX1, 0 );/* graphics (addressable by the main CPU) */
+		ROM_LOAD( "907d06.e23",   0x000000, 0x40000, 0xf5cc38f4 );
+		ROM_LOAD( "907d05.e22",   0x040000, 0x40000, 0xe25774c1 );
+	
+		ROM_REGION( 0x200000, REGION_GFX2, 0 );/* graphics (addressable by the main CPU) */
+		ROM_LOAD( "907d07l.k2",   0x000000, 0x80000, 0xfeeb345a );
+		ROM_LOAD( "907d07h.k2",   0x080000, 0x80000, 0x0bff4383 );
+		ROM_LOAD( "907d08l.k7",   0x100000, 0x80000, 0x05f3d196 );
+		ROM_LOAD( "907d08h.k7",   0x180000, 0x80000, 0xeaf18c22 );
+	
+		ROM_REGION( 0x80000, REGION_SOUND1, 0 );/* samples for 053260 */
+		ROM_LOAD( "907d04.d3",    0x0000, 0x80000, 0x090feb5e );
+	ROM_END(); }}; 
+	
+	static RomLoadPtr rom_punksht2 = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x40000, REGION_CPU1, 0 );/* 4*64k for 68000 code */
+		ROM_LOAD16_BYTE( "907m02.i7",    0x00000, 0x20000, 0x59e14575 );
+		ROM_LOAD16_BYTE( "907m03.i10",   0x00001, 0x20000, 0xadb14b1e );
+	
+		ROM_REGION( 0x10000, REGION_CPU2, 0 );/* 64k for the audio CPU */
+		ROM_LOAD( "907f01.e8",    0x0000, 0x8000, 0xf040c484 );
+	
+		ROM_REGION( 0x80000, REGION_GFX1, 0 );/* graphics (addressable by the main CPU) */
+		ROM_LOAD( "907d06.e23",   0x000000, 0x40000, 0xf5cc38f4 );
+		ROM_LOAD( "907d05.e22",   0x040000, 0x40000, 0xe25774c1 );
+	
+		ROM_REGION( 0x200000, REGION_GFX2, 0 );/* graphics (addressable by the main CPU) */
+		ROM_LOAD( "907d07l.k2",   0x000000, 0x80000, 0xfeeb345a );
+		ROM_LOAD( "907d07h.k2",   0x080000, 0x80000, 0x0bff4383 );
+		ROM_LOAD( "907d08l.k7",   0x100000, 0x80000, 0x05f3d196 );
+		ROM_LOAD( "907d08h.k7",   0x180000, 0x80000, 0xeaf18c22 );
+	
+		ROM_REGION( 0x80000, REGION_SOUND1, 0 );/* samples for the 053260 */
+		ROM_LOAD( "907d04.d3",    0x0000, 0x80000, 0x090feb5e );
+	ROM_END(); }}; 
+	
+	static RomLoadPtr rom_punkshtj = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x40000, REGION_CPU1, 0 );/* 4*64k for 68000 code */
+		ROM_LOAD16_BYTE( "907z02.i7",    0x00000, 0x20000, 0x7a3a5c89 );
+		ROM_LOAD16_BYTE( "907z03.i10",   0x00001, 0x20000, 0x22a3d9d6 );
+	
+		ROM_REGION( 0x10000, REGION_CPU2, 0 );/* 64k for the audio CPU */
+		ROM_LOAD( "907f01.e8",    0x0000, 0x8000, 0xf040c484 );
+	
+		ROM_REGION( 0x80000, REGION_GFX1, 0 );/* graphics (addressable by the main CPU) */
+		ROM_LOAD( "907d06.e23",   0x000000, 0x40000, 0xf5cc38f4 );
+		ROM_LOAD( "907d05.e22",   0x040000, 0x40000, 0xe25774c1 );
+	
+		ROM_REGION( 0x200000, REGION_GFX2, 0 );/* graphics (addressable by the main CPU) */
+		ROM_LOAD( "907d07l.k2",   0x000000, 0x80000, 0xfeeb345a );
+		ROM_LOAD( "907d07h.k2",   0x080000, 0x80000, 0x0bff4383 );
+		ROM_LOAD( "907d08l.k7",   0x100000, 0x80000, 0x05f3d196 );
+		ROM_LOAD( "907d08h.k7",   0x180000, 0x80000, 0xeaf18c22 );
+	
+		ROM_REGION( 0x80000, REGION_SOUND1, 0 );/* samples for the 053260 */
+		ROM_LOAD( "907d04.d3",    0x0000, 0x80000, 0x090feb5e );
+	ROM_END(); }}; 
+	
+	static RomLoadPtr rom_lgtnfght = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x40000, REGION_CPU1, 0 );/* 4*64k for 68000 code */
+		ROM_LOAD16_BYTE( "939m02.e11",   0x00000, 0x20000, 0x61a12184 );
+		ROM_LOAD16_BYTE( "939m03.e15",   0x00001, 0x20000, 0x6db6659d );
+	
+		ROM_REGION( 0x10000, REGION_CPU2, 0 );/* 64k for the audio CPU */
+		ROM_LOAD( "939e01.d7",    0x0000, 0x8000, 0x4a5fc848 );
+	
+		ROM_REGION( 0x100000, REGION_GFX1, 0 );/* graphics (addressable by the main CPU) */
+		ROM_LOAD( "939a07.k14",   0x000000, 0x80000, 0x7955dfcf );
+		ROM_LOAD( "939a08.k19",   0x080000, 0x80000, 0xed95b385 );
+	
+		ROM_REGION( 0x100000, REGION_GFX2, 0 );/* graphics (addressable by the main CPU) */
+		ROM_LOAD( "939a06.k8",    0x000000, 0x80000, 0xe393c206 );
+		ROM_LOAD( "939a05.k2",    0x080000, 0x80000, 0x3662d47a );
+	
+		ROM_REGION( 0x80000, REGION_SOUND1, 0 );/* samples for the 053260 */
+		ROM_LOAD( "939a04.c5",    0x0000, 0x80000, 0xc24e2b6e );
+	ROM_END(); }}; 
+	
+	static RomLoadPtr rom_trigon = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x40000, REGION_CPU1, 0 );/* 4*64k for 68000 code */
+		ROM_LOAD16_BYTE( "939j02.bin",   0x00000, 0x20000, 0x38381d1b );
+		ROM_LOAD16_BYTE( "939j03.bin",   0x00001, 0x20000, 0xb5beddcd );
+	
+		ROM_REGION( 0x10000, REGION_CPU2, 0 );/* 64k for the audio CPU */
+		ROM_LOAD( "939e01.d7",    0x0000, 0x8000, 0x4a5fc848 );
+	
+		ROM_REGION( 0x100000, REGION_GFX1, 0 );/* graphics (addressable by the main CPU) */
+		ROM_LOAD( "939a07.k14",   0x000000, 0x80000, 0x7955dfcf );
+		ROM_LOAD( "939a08.k19",   0x080000, 0x80000, 0xed95b385 );
+	
+		ROM_REGION( 0x100000, REGION_GFX2, 0 );/* graphics (addressable by the main CPU) */
+		ROM_LOAD( "939a06.k8",    0x000000, 0x80000, 0xe393c206 );
+		ROM_LOAD( "939a05.k2",    0x080000, 0x80000, 0x3662d47a );
+	
+		ROM_REGION( 0x80000, REGION_SOUND1, 0 );/* samples for the 053260 */
+		ROM_LOAD( "939a04.c5",    0x0000, 0x80000, 0xc24e2b6e );
+	ROM_END(); }}; 
+	
+	static RomLoadPtr rom_blswhstl = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x80000, REGION_CPU1, 0 );
+		ROM_LOAD16_BYTE( "e09.bin",     0x000000, 0x20000, 0xe8b7b234 );
+		ROM_LOAD16_BYTE( "g09.bin",     0x000001, 0x20000, 0x3c26d281 );
+		ROM_LOAD16_BYTE( "e11.bin",     0x040000, 0x20000, 0x14628736 );
+		ROM_LOAD16_BYTE( "g11.bin",     0x040001, 0x20000, 0xf738ad4a );
+	
+		ROM_REGION( 0x10000, REGION_CPU2, 0 );/* 64k for the audio CPU */
+		ROM_LOAD( "060_j01.rom",  0x0000, 0x10000, 0xf9d9a673 );
+	
+	    ROM_REGION( 0x100000, REGION_GFX1, 0 );/* graphics (addressable by the main CPU) */
 		ROM_LOAD16_WORD_SWAP( "060_e07.r16",  0x000000, 0x080000, 0xc400edf3 )	/* tiles */
 		ROM_LOAD16_WORD_SWAP( "060_e08.r16",  0x080000, 0x080000, 0x70dddba1 )
 	
-		ROM_REGION( 0x100000, REGION_GFX2, 0 )	/* graphics (addressable by the main CPU) */
+		ROM_REGION( 0x100000, REGION_GFX2, 0 );/* graphics (addressable by the main CPU) */
 		ROM_LOAD16_WORD_SWAP( "060_e06.r16",  0x000000, 0x080000, 0x09381492 )	/* sprites */
 		ROM_LOAD16_WORD_SWAP( "060_e05.r16",  0x080000, 0x080000, 0x32454241 )
 	
-		ROM_REGION( 0x100000, REGION_SOUND1, 0 )	/* samples for the 053260 */
-		ROM_LOAD( "060_e04.r16",  0x0000, 0x100000, 0xc680395d )
-	ROM_END
+		ROM_REGION( 0x100000, REGION_SOUND1, 0 );/* samples for the 053260 */
+		ROM_LOAD( "060_e04.r16",  0x0000, 0x100000, 0xc680395d );
+	ROM_END(); }}; 
 	
-	ROM_START( detatwin )
-		ROM_REGION( 0x80000, REGION_CPU1, 0 )
-		ROM_LOAD16_BYTE( "060_j02.rom", 0x000000, 0x20000, 0x11b761ac )
-		ROM_LOAD16_BYTE( "060_j03.rom", 0x000001, 0x20000, 0x8d0b588c )
-		ROM_LOAD16_BYTE( "060_j09.rom", 0x040000, 0x20000, 0xf2a5f15f )
-		ROM_LOAD16_BYTE( "060_j10.rom", 0x040001, 0x20000, 0x36eefdbc )
+	static RomLoadPtr rom_detatwin = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x80000, REGION_CPU1, 0 );
+		ROM_LOAD16_BYTE( "060_j02.rom", 0x000000, 0x20000, 0x11b761ac );
+		ROM_LOAD16_BYTE( "060_j03.rom", 0x000001, 0x20000, 0x8d0b588c );
+		ROM_LOAD16_BYTE( "060_j09.rom", 0x040000, 0x20000, 0xf2a5f15f );
+		ROM_LOAD16_BYTE( "060_j10.rom", 0x040001, 0x20000, 0x36eefdbc );
 	
-		ROM_REGION( 0x10000, REGION_CPU2, 0 ) /* 64k for the audio CPU */
-		ROM_LOAD( "060_j01.rom",  0x0000, 0x10000, 0xf9d9a673 )
+		ROM_REGION( 0x10000, REGION_CPU2, 0 );/* 64k for the audio CPU */
+		ROM_LOAD( "060_j01.rom",  0x0000, 0x10000, 0xf9d9a673 );
 	
-	    ROM_REGION( 0x100000, REGION_GFX1, 0 )	/* graphics (addressable by the main CPU) */
+	    ROM_REGION( 0x100000, REGION_GFX1, 0 );/* graphics (addressable by the main CPU) */
 		ROM_LOAD16_WORD_SWAP( "060_e07.r16",  0x000000, 0x080000, 0xc400edf3 )	/* tiles */
 		ROM_LOAD16_WORD_SWAP( "060_e08.r16",  0x080000, 0x080000, 0x70dddba1 )
 	
-		ROM_REGION( 0x100000, REGION_GFX2, 0 )	/* graphics (addressable by the main CPU) */
+		ROM_REGION( 0x100000, REGION_GFX2, 0 );/* graphics (addressable by the main CPU) */
 		ROM_LOAD16_WORD_SWAP( "060_e06.r16",  0x000000, 0x080000, 0x09381492 )	/* sprites */
 		ROM_LOAD16_WORD_SWAP( "060_e05.r16",  0x080000, 0x080000, 0x32454241 )
 	
-		ROM_REGION( 0x100000, REGION_SOUND1, 0 )	/* samples for the 053260 */
-		ROM_LOAD( "060_e04.r16",  0x0000, 0x100000, 0xc680395d )
-	ROM_END
+		ROM_REGION( 0x100000, REGION_SOUND1, 0 );/* samples for the 053260 */
+		ROM_LOAD( "060_e04.r16",  0x0000, 0x100000, 0xc680395d );
+	ROM_END(); }}; 
 	
-	ROM_START( glfgreat )
-		ROM_REGION( 0x40000, REGION_CPU1, 0 )
-		ROM_LOAD16_BYTE( "061l02.1h",   0x000000, 0x20000, 0xac7399f4 )
-		ROM_LOAD16_BYTE( "061l03.4h",   0x000001, 0x20000, 0x77b0ff5c )
+	static RomLoadPtr rom_glfgreat = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x40000, REGION_CPU1, 0 );
+		ROM_LOAD16_BYTE( "061l02.1h",   0x000000, 0x20000, 0xac7399f4 );
+		ROM_LOAD16_BYTE( "061l03.4h",   0x000001, 0x20000, 0x77b0ff5c );
 	
-		ROM_REGION( 0x10000, REGION_CPU2, 0 ) /* 64k for the audio CPU */
-		ROM_LOAD( "061f01.4e",    0x0000, 0x8000, 0xab9a2a57 )
+		ROM_REGION( 0x10000, REGION_CPU2, 0 );/* 64k for the audio CPU */
+		ROM_LOAD( "061f01.4e",    0x0000, 0x8000, 0xab9a2a57 );
 	
-	    ROM_REGION( 0x100000, REGION_GFX1, 0 )	/* graphics (addressable by the main CPU) */
-		ROM_LOAD( "061d14.12l",   0x000000, 0x080000, 0xb9440924 )	/* tiles */
-		ROM_LOAD( "061d13.12k",   0x080000, 0x080000, 0x9f999f0b )
+	    ROM_REGION( 0x100000, REGION_GFX1, 0 );/* graphics (addressable by the main CPU) */
+		ROM_LOAD( "061d14.12l",   0x000000, 0x080000, 0xb9440924 );/* tiles */
+		ROM_LOAD( "061d13.12k",   0x080000, 0x080000, 0x9f999f0b );
 	
-		ROM_REGION( 0x200000, REGION_GFX2, 0 )	/* graphics (addressable by the main CPU) */
-		ROM_LOAD( "061d11.3k",    0x000000, 0x100000, 0xc45b66a3 )	/* sprites */
-		ROM_LOAD( "061d12.8k",    0x100000, 0x100000, 0xd305ecd1 )
+		ROM_REGION( 0x200000, REGION_GFX2, 0 );/* graphics (addressable by the main CPU) */
+		ROM_LOAD( "061d11.3k",    0x000000, 0x100000, 0xc45b66a3 );/* sprites */
+		ROM_LOAD( "061d12.8k",    0x100000, 0x100000, 0xd305ecd1 );
 	
-		ROM_REGION( 0x180000, REGION_GFX3, 0 )	/* 053936 tiles */
-		ROM_LOAD( "061b08.14g",   0x000000, 0x080000, 0x6ab739c3 )
-		ROM_LOAD( "061b09.15g",   0x080000, 0x080000, 0x42c7a603 )
-		ROM_LOAD( "061b10.17g",   0x100000, 0x080000, 0x10f89ce7 )
+		ROM_REGION( 0x180000, REGION_GFX3, 0 );/* 053936 tiles */
+		ROM_LOAD( "061b08.14g",   0x000000, 0x080000, 0x6ab739c3 );
+		ROM_LOAD( "061b09.15g",   0x080000, 0x080000, 0x42c7a603 );
+		ROM_LOAD( "061b10.17g",   0x100000, 0x080000, 0x10f89ce7 );
 	
-		ROM_REGION( 0x120000, REGION_USER1, 0 )	/* unknown (further data for the 053936?) */
-		ROM_LOAD( "061b07.18d",   0x000000, 0x080000, 0x517887e2 )
-		ROM_LOAD( "061b06.16d",   0x080000, 0x080000, 0x41ada2ad )
-		ROM_LOAD( "061b05.15d",   0x100000, 0x020000, 0x2456fb11 )
+		ROM_REGION( 0x120000, REGION_USER1, 0 );/* unknown (further data for the 053936?) */
+		ROM_LOAD( "061b07.18d",   0x000000, 0x080000, 0x517887e2 );
+		ROM_LOAD( "061b06.16d",   0x080000, 0x080000, 0x41ada2ad );
+		ROM_LOAD( "061b05.15d",   0x100000, 0x020000, 0x2456fb11 );
 	
-		ROM_REGION( 0x100000, REGION_SOUND1, 0 )	/* samples for the 053260 */
-		ROM_LOAD( "061e04.1d",    0x0000, 0x100000, 0x7921d8df )
-	ROM_END
+		ROM_REGION( 0x100000, REGION_SOUND1, 0 );/* samples for the 053260 */
+		ROM_LOAD( "061e04.1d",    0x0000, 0x100000, 0x7921d8df );
+	ROM_END(); }}; 
 	
-	ROM_START( glfgretj )
-		ROM_REGION( 0x40000, REGION_CPU1, 0 )
-		ROM_LOAD16_BYTE( "061j02.1h",   0x000000, 0x20000, 0x7f0d95f4 )
-		ROM_LOAD16_BYTE( "061j03.4h",   0x000001, 0x20000, 0x06caa38b )
+	static RomLoadPtr rom_glfgretj = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x40000, REGION_CPU1, 0 );
+		ROM_LOAD16_BYTE( "061j02.1h",   0x000000, 0x20000, 0x7f0d95f4 );
+		ROM_LOAD16_BYTE( "061j03.4h",   0x000001, 0x20000, 0x06caa38b );
 	
-		ROM_REGION( 0x10000, REGION_CPU2, 0 ) /* 64k for the audio CPU */
-		ROM_LOAD( "061f01.4e",    0x0000, 0x8000, 0xab9a2a57 )
+		ROM_REGION( 0x10000, REGION_CPU2, 0 );/* 64k for the audio CPU */
+		ROM_LOAD( "061f01.4e",    0x0000, 0x8000, 0xab9a2a57 );
 	
-	    ROM_REGION( 0x100000, REGION_GFX1, 0 )	/* graphics (addressable by the main CPU) */
-		ROM_LOAD( "061d14.12l",   0x000000, 0x080000, 0xb9440924 )	/* tiles */
-		ROM_LOAD( "061d13.12k",   0x080000, 0x080000, 0x9f999f0b )
+	    ROM_REGION( 0x100000, REGION_GFX1, 0 );/* graphics (addressable by the main CPU) */
+		ROM_LOAD( "061d14.12l",   0x000000, 0x080000, 0xb9440924 );/* tiles */
+		ROM_LOAD( "061d13.12k",   0x080000, 0x080000, 0x9f999f0b );
 	
-		ROM_REGION( 0x200000, REGION_GFX2, 0 )	/* graphics (addressable by the main CPU) */
-		ROM_LOAD( "061d11.3k",    0x000000, 0x100000, 0xc45b66a3 )	/* sprites */
-		ROM_LOAD( "061d12.8k",    0x100000, 0x100000, 0xd305ecd1 )
+		ROM_REGION( 0x200000, REGION_GFX2, 0 );/* graphics (addressable by the main CPU) */
+		ROM_LOAD( "061d11.3k",    0x000000, 0x100000, 0xc45b66a3 );/* sprites */
+		ROM_LOAD( "061d12.8k",    0x100000, 0x100000, 0xd305ecd1 );
 	
-		ROM_REGION( 0x180000, REGION_GFX3, 0 )	/* 053936 tiles */
-		ROM_LOAD( "061b08.14g",   0x000000, 0x080000, 0x6ab739c3 )
-		ROM_LOAD( "061b09.15g",   0x080000, 0x080000, 0x42c7a603 )
-		ROM_LOAD( "061b10.17g",   0x100000, 0x080000, 0x10f89ce7 )
+		ROM_REGION( 0x180000, REGION_GFX3, 0 );/* 053936 tiles */
+		ROM_LOAD( "061b08.14g",   0x000000, 0x080000, 0x6ab739c3 );
+		ROM_LOAD( "061b09.15g",   0x080000, 0x080000, 0x42c7a603 );
+		ROM_LOAD( "061b10.17g",   0x100000, 0x080000, 0x10f89ce7 );
 	
-		ROM_REGION( 0x120000, REGION_USER1, 0 )	/* unknown (further data for the 053936?) */
-		ROM_LOAD( "061b07.18d",   0x000000, 0x080000, 0x517887e2 )
-		ROM_LOAD( "061b06.16d",   0x080000, 0x080000, 0x41ada2ad )
-		ROM_LOAD( "061b05.15d",   0x100000, 0x020000, 0x2456fb11 )
+		ROM_REGION( 0x120000, REGION_USER1, 0 );/* unknown (further data for the 053936?) */
+		ROM_LOAD( "061b07.18d",   0x000000, 0x080000, 0x517887e2 );
+		ROM_LOAD( "061b06.16d",   0x080000, 0x080000, 0x41ada2ad );
+		ROM_LOAD( "061b05.15d",   0x100000, 0x020000, 0x2456fb11 );
 	
-		ROM_REGION( 0x100000, REGION_SOUND1, 0 )	/* samples for the 053260 */
-		ROM_LOAD( "061e04.1d",    0x0000, 0x100000, 0x7921d8df )
-	ROM_END
+		ROM_REGION( 0x100000, REGION_SOUND1, 0 );/* samples for the 053260 */
+		ROM_LOAD( "061e04.1d",    0x0000, 0x100000, 0x7921d8df );
+	ROM_END(); }}; 
 	
-	ROM_START( tmnt2 )
-		ROM_REGION( 0x80000, REGION_CPU1, 0 )
-		ROM_LOAD16_BYTE( "uaa02", 0x000000, 0x20000, 0x58d5c93d )
-		ROM_LOAD16_BYTE( "uaa03", 0x000001, 0x20000, 0x0541fec9 )
-		ROM_LOAD16_BYTE( "uaa04", 0x040000, 0x20000, 0x1d441a7d )
-		ROM_LOAD16_BYTE( "uaa05", 0x040001, 0x20000, 0x9c428273 )
+	static RomLoadPtr rom_tmnt2 = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x80000, REGION_CPU1, 0 );
+		ROM_LOAD16_BYTE( "uaa02", 0x000000, 0x20000, 0x58d5c93d );
+		ROM_LOAD16_BYTE( "uaa03", 0x000001, 0x20000, 0x0541fec9 );
+		ROM_LOAD16_BYTE( "uaa04", 0x040000, 0x20000, 0x1d441a7d );
+		ROM_LOAD16_BYTE( "uaa05", 0x040001, 0x20000, 0x9c428273 );
 	
-		ROM_REGION( 0x10000, REGION_CPU2, 0 ) /* 64k for the audio CPU */
-		ROM_LOAD( "b01",          0x0000, 0x10000, 0x364f548a )
+		ROM_REGION( 0x10000, REGION_CPU2, 0 );/* 64k for the audio CPU */
+		ROM_LOAD( "b01",          0x0000, 0x10000, 0x364f548a );
 	
-	    ROM_REGION( 0x100000, REGION_GFX1, 0 )	/* graphics (addressable by the main CPU) */
-		ROM_LOAD( "b12",          0x000000, 0x080000, 0xd3283d19 )	/* tiles */
-		ROM_LOAD( "b11",          0x080000, 0x080000, 0x6ebc0c15 )
+	    ROM_REGION( 0x100000, REGION_GFX1, 0 );/* graphics (addressable by the main CPU) */
+		ROM_LOAD( "b12",          0x000000, 0x080000, 0xd3283d19 );/* tiles */
+		ROM_LOAD( "b11",          0x080000, 0x080000, 0x6ebc0c15 );
 	
-		ROM_REGION( 0x400000, REGION_GFX2, 0 )	/* graphics (addressable by the main CPU) */
-		ROM_LOAD( "b09",          0x000000, 0x100000, 0x2d7a9d2a )	/* sprites */
-		ROM_LOAD( "b10",          0x100000, 0x080000, 0xf2dd296e )
+		ROM_REGION( 0x400000, REGION_GFX2, 0 );/* graphics (addressable by the main CPU) */
+		ROM_LOAD( "b09",          0x000000, 0x100000, 0x2d7a9d2a );/* sprites */
+		ROM_LOAD( "b10",          0x100000, 0x080000, 0xf2dd296e );
 		/* second half empty */
-		ROM_LOAD( "b07",          0x200000, 0x100000, 0xd9bee7bf )
-		ROM_LOAD( "b08",          0x300000, 0x080000, 0x3b1ae36f )
-		/* second half empty */
-	
-		ROM_REGION( 0x200000, REGION_SOUND1, 0 )	/* samples for the 053260 */
-		ROM_LOAD( "063b06",       0x0000, 0x200000, 0x1e510aa5 )
-	ROM_END
-	
-	ROM_START( tmnt22p )
-		ROM_REGION( 0x80000, REGION_CPU1, 0 )
-		ROM_LOAD16_BYTE( "a02",   0x000000, 0x20000, 0xaadffe3a )
-		ROM_LOAD16_BYTE( "a03",   0x000001, 0x20000, 0x125687a8 )
-		ROM_LOAD16_BYTE( "a04",   0x040000, 0x20000, 0xfb5c7ded )
-		ROM_LOAD16_BYTE( "a05",   0x040001, 0x20000, 0x3c40fe66 )
-	
-		ROM_REGION( 0x10000, REGION_CPU2, 0 ) /* 64k for the audio CPU */
-		ROM_LOAD( "b01",          0x0000, 0x10000, 0x364f548a )
-	
-	    ROM_REGION( 0x100000, REGION_GFX1, 0 )	/* graphics (addressable by the main CPU) */
-		ROM_LOAD( "b12",          0x000000, 0x080000, 0xd3283d19 )	/* tiles */
-		ROM_LOAD( "b11",          0x080000, 0x080000, 0x6ebc0c15 )
-	
-		ROM_REGION( 0x400000, REGION_GFX2, 0 )	/* graphics (addressable by the main CPU) */
-		ROM_LOAD( "b09",          0x000000, 0x100000, 0x2d7a9d2a )	/* sprites */
-		ROM_LOAD( "b10",          0x100000, 0x080000, 0xf2dd296e )
-		/* second half empty */
-		ROM_LOAD( "b07",          0x200000, 0x100000, 0xd9bee7bf )
-		ROM_LOAD( "b08",          0x300000, 0x080000, 0x3b1ae36f )
+		ROM_LOAD( "b07",          0x200000, 0x100000, 0xd9bee7bf );
+		ROM_LOAD( "b08",          0x300000, 0x080000, 0x3b1ae36f );
 		/* second half empty */
 	
-		ROM_REGION( 0x200000, REGION_SOUND1, 0 )	/* samples for the 053260 */
-		ROM_LOAD( "063b06",       0x0000, 0x200000, 0x1e510aa5 )
-	ROM_END
+		ROM_REGION( 0x200000, REGION_SOUND1, 0 );/* samples for the 053260 */
+		ROM_LOAD( "063b06",       0x0000, 0x200000, 0x1e510aa5 );
+	ROM_END(); }}; 
 	
-	ROM_START( tmnt2a )
-		ROM_REGION( 0x80000, REGION_CPU1, 0 )
-		ROM_LOAD16_BYTE( "ada02", 0x000000, 0x20000, 0x4f11b587 )
-		ROM_LOAD16_BYTE( "ada03", 0x000001, 0x20000, 0x82a1b9ac )
-		ROM_LOAD16_BYTE( "ada04", 0x040000, 0x20000, 0x05ad187a )
-		ROM_LOAD16_BYTE( "ada05", 0x040001, 0x20000, 0xd4826547 )
+	static RomLoadPtr rom_tmnt22p = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x80000, REGION_CPU1, 0 );
+		ROM_LOAD16_BYTE( "a02",   0x000000, 0x20000, 0xaadffe3a );
+		ROM_LOAD16_BYTE( "a03",   0x000001, 0x20000, 0x125687a8 );
+		ROM_LOAD16_BYTE( "a04",   0x040000, 0x20000, 0xfb5c7ded );
+		ROM_LOAD16_BYTE( "a05",   0x040001, 0x20000, 0x3c40fe66 );
 	
-		ROM_REGION( 0x10000, REGION_CPU2, 0 ) /* 64k for the audio CPU */
-		ROM_LOAD( "b01",          0x0000, 0x10000, 0x364f548a )
+		ROM_REGION( 0x10000, REGION_CPU2, 0 );/* 64k for the audio CPU */
+		ROM_LOAD( "b01",          0x0000, 0x10000, 0x364f548a );
 	
-	    ROM_REGION( 0x100000, REGION_GFX1, 0 )	/* graphics (addressable by the main CPU) */
-		ROM_LOAD( "b12",          0x000000, 0x080000, 0xd3283d19 )	/* tiles */
-		ROM_LOAD( "b11",          0x080000, 0x080000, 0x6ebc0c15 )
+	    ROM_REGION( 0x100000, REGION_GFX1, 0 );/* graphics (addressable by the main CPU) */
+		ROM_LOAD( "b12",          0x000000, 0x080000, 0xd3283d19 );/* tiles */
+		ROM_LOAD( "b11",          0x080000, 0x080000, 0x6ebc0c15 );
 	
-		ROM_REGION( 0x400000, REGION_GFX2, 0 )	/* graphics (addressable by the main CPU) */
-		ROM_LOAD( "b09",          0x000000, 0x100000, 0x2d7a9d2a )	/* sprites */
-		ROM_LOAD( "b10",          0x100000, 0x080000, 0xf2dd296e )
+		ROM_REGION( 0x400000, REGION_GFX2, 0 );/* graphics (addressable by the main CPU) */
+		ROM_LOAD( "b09",          0x000000, 0x100000, 0x2d7a9d2a );/* sprites */
+		ROM_LOAD( "b10",          0x100000, 0x080000, 0xf2dd296e );
 		/* second half empty */
-		ROM_LOAD( "b07",          0x200000, 0x100000, 0xd9bee7bf )
-		ROM_LOAD( "b08",          0x300000, 0x080000, 0x3b1ae36f )
+		ROM_LOAD( "b07",          0x200000, 0x100000, 0xd9bee7bf );
+		ROM_LOAD( "b08",          0x300000, 0x080000, 0x3b1ae36f );
 		/* second half empty */
 	
-		ROM_REGION( 0x200000, REGION_SOUND1, 0 )	/* samples for the 053260 */
-		ROM_LOAD( "063b06",       0x0000, 0x200000, 0x1e510aa5 )
-	ROM_END
+		ROM_REGION( 0x200000, REGION_SOUND1, 0 );/* samples for the 053260 */
+		ROM_LOAD( "063b06",       0x0000, 0x200000, 0x1e510aa5 );
+	ROM_END(); }}; 
 	
-	ROM_START( qgakumon )
-		ROM_REGION( 0x100000, REGION_CPU1, 0 )
-		ROM_LOAD16_BYTE( "248jaa02.8e",  0x000000, 0x40000, 0xfab79410 )
-		ROM_LOAD16_BYTE( "248jaa03.8g",  0x000001, 0x40000, 0x8d888ef3 )
-		ROM_LOAD16_BYTE( "248jaa04.10e", 0x080000, 0x40000, 0x56cb16cb )
-		ROM_LOAD16_BYTE( "248jaa05.10g", 0x080001, 0x40000, 0x27614fcd )
+	static RomLoadPtr rom_tmnt2a = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x80000, REGION_CPU1, 0 );
+		ROM_LOAD16_BYTE( "ada02", 0x000000, 0x20000, 0x4f11b587 );
+		ROM_LOAD16_BYTE( "ada03", 0x000001, 0x20000, 0x82a1b9ac );
+		ROM_LOAD16_BYTE( "ada04", 0x040000, 0x20000, 0x05ad187a );
+		ROM_LOAD16_BYTE( "ada05", 0x040001, 0x20000, 0xd4826547 );
 	
-		ROM_REGION( 0x10000, REGION_CPU2, 0 ) /* 64k for the audio CPU */
-		ROM_LOAD( "248a01.2f",          0x0000, 0x10000, 0xa8a41cc6 )
+		ROM_REGION( 0x10000, REGION_CPU2, 0 );/* 64k for the audio CPU */
+		ROM_LOAD( "b01",          0x0000, 0x10000, 0x364f548a );
 	
-	    ROM_REGION( 0x100000, REGION_GFX1, 0 )	/* graphics (addressable by the main CPU) */
-		ROM_LOAD( "248a12.16k",          0x000000, 0x080000, 0x62870987 )	/* tiles */
-		ROM_LOAD( "248a11.12k",          0x080000, 0x080000, 0xfad2dbfd )
+	    ROM_REGION( 0x100000, REGION_GFX1, 0 );/* graphics (addressable by the main CPU) */
+		ROM_LOAD( "b12",          0x000000, 0x080000, 0xd3283d19 );/* tiles */
+		ROM_LOAD( "b11",          0x080000, 0x080000, 0x6ebc0c15 );
 	
-		ROM_REGION( 0x400000, REGION_GFX2, 0 )	/* graphics (addressable by the main CPU) */
-		ROM_LOAD( "248a09.7l",          0x000000, 0x100000, 0xa176e205 )	/* sprites */
-		ROM_LOAD( "248a07.3l",          0x200000, 0x100000, 0x9595589f )
+		ROM_REGION( 0x400000, REGION_GFX2, 0 );/* graphics (addressable by the main CPU) */
+		ROM_LOAD( "b09",          0x000000, 0x100000, 0x2d7a9d2a );/* sprites */
+		ROM_LOAD( "b10",          0x100000, 0x080000, 0xf2dd296e );
+		/* second half empty */
+		ROM_LOAD( "b07",          0x200000, 0x100000, 0xd9bee7bf );
+		ROM_LOAD( "b08",          0x300000, 0x080000, 0x3b1ae36f );
+		/* second half empty */
 	
-		ROM_REGION( 0x200000, REGION_SOUND1, 0 )	/* samples for the 053260 */
-		ROM_LOAD( "248a06.1d",       0x0000, 0x200000, 0x0fba1def )
-	ROM_END
+		ROM_REGION( 0x200000, REGION_SOUND1, 0 );/* samples for the 053260 */
+		ROM_LOAD( "063b06",       0x0000, 0x200000, 0x1e510aa5 );
+	ROM_END(); }}; 
 	
-	ROM_START( ssriders )
-		ROM_REGION( 0xc0000, REGION_CPU1, 0 )
-		ROM_LOAD16_BYTE( "064eac02",    0x000000, 0x40000, 0x5a5425f4 )
-		ROM_LOAD16_BYTE( "064eac03",    0x000001, 0x40000, 0x093c00fb )
-		ROM_LOAD16_BYTE( "sr_b04.rom",  0x080000, 0x20000, 0xef2315bd )
-		ROM_LOAD16_BYTE( "sr_b05.rom",  0x080001, 0x20000, 0x51d6fbc4 )
+	static RomLoadPtr rom_qgakumon = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x100000, REGION_CPU1, 0 );
+		ROM_LOAD16_BYTE( "248jaa02.8e",  0x000000, 0x40000, 0xfab79410 );
+		ROM_LOAD16_BYTE( "248jaa03.8g",  0x000001, 0x40000, 0x8d888ef3 );
+		ROM_LOAD16_BYTE( "248jaa04.10e", 0x080000, 0x40000, 0x56cb16cb );
+		ROM_LOAD16_BYTE( "248jaa05.10g", 0x080001, 0x40000, 0x27614fcd );
 	
-		ROM_REGION( 0x10000, REGION_CPU2, 0 ) /* 64k for the audio CPU */
-		ROM_LOAD( "sr_e01.rom",   0x0000, 0x10000, 0x44b9bc52 )
+		ROM_REGION( 0x10000, REGION_CPU2, 0 );/* 64k for the audio CPU */
+		ROM_LOAD( "248a01.2f",          0x0000, 0x10000, 0xa8a41cc6 );
 	
-	    ROM_REGION( 0x100000, REGION_GFX1, 0 )	/* graphics (addressable by the main CPU) */
-		ROM_LOAD( "sr_16k.rom",   0x000000, 0x080000, 0xe2bdc619 )	/* tiles */
-		ROM_LOAD( "sr_12k.rom",   0x080000, 0x080000, 0x2d8ca8b0 )
+	    ROM_REGION( 0x100000, REGION_GFX1, 0 );/* graphics (addressable by the main CPU) */
+		ROM_LOAD( "248a12.16k",          0x000000, 0x080000, 0x62870987 );/* tiles */
+		ROM_LOAD( "248a11.12k",          0x080000, 0x080000, 0xfad2dbfd );
 	
-		ROM_REGION( 0x200000, REGION_GFX2, 0 )	/* graphics (addressable by the main CPU) */
-		ROM_LOAD( "sr_7l.rom",    0x000000, 0x100000, 0x4160c372 )	/* sprites */
-		ROM_LOAD( "sr_3l.rom",    0x100000, 0x100000, 0x64dd673c )
+		ROM_REGION( 0x400000, REGION_GFX2, 0 );/* graphics (addressable by the main CPU) */
+		ROM_LOAD( "248a09.7l",          0x000000, 0x100000, 0xa176e205 );/* sprites */
+		ROM_LOAD( "248a07.3l",          0x200000, 0x100000, 0x9595589f );
 	
-		ROM_REGION( 0x100000, REGION_SOUND1, 0 )	/* samples for the 053260 */
-		ROM_LOAD( "sr_1d.rom",    0x0000, 0x100000, 0x59810df9 )
-	ROM_END
+		ROM_REGION( 0x200000, REGION_SOUND1, 0 );/* samples for the 053260 */
+		ROM_LOAD( "248a06.1d",       0x0000, 0x200000, 0x0fba1def );
+	ROM_END(); }}; 
 	
-	ROM_START( ssrdrebd )
-		ROM_REGION( 0xc0000, REGION_CPU1, 0 )
-		ROM_LOAD16_BYTE( "064ebd02",    0x000000, 0x40000, 0x8deef9ac )
-		ROM_LOAD16_BYTE( "064ebd03",    0x000001, 0x40000, 0x2370c107 )
-		ROM_LOAD16_BYTE( "sr_b04.rom",  0x080000, 0x20000, 0xef2315bd )
-		ROM_LOAD16_BYTE( "sr_b05.rom",  0x080001, 0x20000, 0x51d6fbc4 )
+	static RomLoadPtr rom_ssriders = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0xc0000, REGION_CPU1, 0 );
+		ROM_LOAD16_BYTE( "064eac02",    0x000000, 0x40000, 0x5a5425f4 );
+		ROM_LOAD16_BYTE( "064eac03",    0x000001, 0x40000, 0x093c00fb );
+		ROM_LOAD16_BYTE( "sr_b04.rom",  0x080000, 0x20000, 0xef2315bd );
+		ROM_LOAD16_BYTE( "sr_b05.rom",  0x080001, 0x20000, 0x51d6fbc4 );
 	
-		ROM_REGION( 0x10000, REGION_CPU2, 0 ) /* 64k for the audio CPU */
-		ROM_LOAD( "sr_e01.rom",   0x0000, 0x10000, 0x44b9bc52 )
+		ROM_REGION( 0x10000, REGION_CPU2, 0 );/* 64k for the audio CPU */
+		ROM_LOAD( "sr_e01.rom",   0x0000, 0x10000, 0x44b9bc52 );
 	
-	    ROM_REGION( 0x100000, REGION_GFX1, 0 )	/* graphics (addressable by the main CPU) */
-		ROM_LOAD( "sr_16k.rom",   0x000000, 0x080000, 0xe2bdc619 )	/* tiles */
-		ROM_LOAD( "sr_12k.rom",   0x080000, 0x080000, 0x2d8ca8b0 )
+	    ROM_REGION( 0x100000, REGION_GFX1, 0 );/* graphics (addressable by the main CPU) */
+		ROM_LOAD( "sr_16k.rom",   0x000000, 0x080000, 0xe2bdc619 );/* tiles */
+		ROM_LOAD( "sr_12k.rom",   0x080000, 0x080000, 0x2d8ca8b0 );
 	
-		ROM_REGION( 0x200000, REGION_GFX2, 0 )	/* graphics (addressable by the main CPU) */
-		ROM_LOAD( "sr_7l.rom",    0x000000, 0x100000, 0x4160c372 )	/* sprites */
-		ROM_LOAD( "sr_3l.rom",    0x100000, 0x100000, 0x64dd673c )
+		ROM_REGION( 0x200000, REGION_GFX2, 0 );/* graphics (addressable by the main CPU) */
+		ROM_LOAD( "sr_7l.rom",    0x000000, 0x100000, 0x4160c372 );/* sprites */
+		ROM_LOAD( "sr_3l.rom",    0x100000, 0x100000, 0x64dd673c );
 	
-		ROM_REGION( 0x100000, REGION_SOUND1, 0 )	/* samples for the 053260 */
-		ROM_LOAD( "sr_1d.rom",    0x0000, 0x100000, 0x59810df9 )
-	ROM_END
+		ROM_REGION( 0x100000, REGION_SOUND1, 0 );/* samples for the 053260 */
+		ROM_LOAD( "sr_1d.rom",    0x0000, 0x100000, 0x59810df9 );
+	ROM_END(); }}; 
 	
-	ROM_START( ssrdrebc )
-		ROM_REGION( 0xc0000, REGION_CPU1, 0 )
-		ROM_LOAD16_BYTE( "sr_c02.rom",  0x000000, 0x40000, 0x9bd7d164 )
-		ROM_LOAD16_BYTE( "sr_c03.rom",  0x000001, 0x40000, 0x40fd4165 )
-		ROM_LOAD16_BYTE( "sr_b04.rom",  0x080000, 0x20000, 0xef2315bd )
-		ROM_LOAD16_BYTE( "sr_b05.rom",  0x080001, 0x20000, 0x51d6fbc4 )
+	static RomLoadPtr rom_ssrdrebd = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0xc0000, REGION_CPU1, 0 );
+		ROM_LOAD16_BYTE( "064ebd02",    0x000000, 0x40000, 0x8deef9ac );
+		ROM_LOAD16_BYTE( "064ebd03",    0x000001, 0x40000, 0x2370c107 );
+		ROM_LOAD16_BYTE( "sr_b04.rom",  0x080000, 0x20000, 0xef2315bd );
+		ROM_LOAD16_BYTE( "sr_b05.rom",  0x080001, 0x20000, 0x51d6fbc4 );
 	
-		ROM_REGION( 0x10000, REGION_CPU2, 0 ) /* 64k for the audio CPU */
-		ROM_LOAD( "sr_e01.rom",   0x0000, 0x10000, 0x44b9bc52 )
+		ROM_REGION( 0x10000, REGION_CPU2, 0 );/* 64k for the audio CPU */
+		ROM_LOAD( "sr_e01.rom",   0x0000, 0x10000, 0x44b9bc52 );
 	
-	    ROM_REGION( 0x100000, REGION_GFX1, 0 )	/* graphics (addressable by the main CPU) */
-		ROM_LOAD( "sr_16k.rom",   0x000000, 0x080000, 0xe2bdc619 )	/* tiles */
-		ROM_LOAD( "sr_12k.rom",   0x080000, 0x080000, 0x2d8ca8b0 )
+	    ROM_REGION( 0x100000, REGION_GFX1, 0 );/* graphics (addressable by the main CPU) */
+		ROM_LOAD( "sr_16k.rom",   0x000000, 0x080000, 0xe2bdc619 );/* tiles */
+		ROM_LOAD( "sr_12k.rom",   0x080000, 0x080000, 0x2d8ca8b0 );
 	
-		ROM_REGION( 0x200000, REGION_GFX2, 0 )	/* graphics (addressable by the main CPU) */
-		ROM_LOAD( "sr_7l.rom",    0x000000, 0x100000, 0x4160c372 )	/* sprites */
-		ROM_LOAD( "sr_3l.rom",    0x100000, 0x100000, 0x64dd673c )
+		ROM_REGION( 0x200000, REGION_GFX2, 0 );/* graphics (addressable by the main CPU) */
+		ROM_LOAD( "sr_7l.rom",    0x000000, 0x100000, 0x4160c372 );/* sprites */
+		ROM_LOAD( "sr_3l.rom",    0x100000, 0x100000, 0x64dd673c );
 	
-		ROM_REGION( 0x100000, REGION_SOUND1, 0 )	/* samples for the 053260 */
-		ROM_LOAD( "sr_1d.rom",    0x0000, 0x100000, 0x59810df9 )
-	ROM_END
+		ROM_REGION( 0x100000, REGION_SOUND1, 0 );/* samples for the 053260 */
+		ROM_LOAD( "sr_1d.rom",    0x0000, 0x100000, 0x59810df9 );
+	ROM_END(); }}; 
 	
-	ROM_START( ssrdruda )
-		ROM_REGION( 0xc0000, REGION_CPU1, 0 )
-		ROM_LOAD16_BYTE( "064uda02",    0x000000, 0x40000, 0x5129a6b7 )
-		ROM_LOAD16_BYTE( "064uda03",    0x000001, 0x40000, 0x9f887214 )
-		ROM_LOAD16_BYTE( "sr_b04.rom",  0x080000, 0x20000, 0xef2315bd )
-		ROM_LOAD16_BYTE( "sr_b05.rom",  0x080001, 0x20000, 0x51d6fbc4 )
+	static RomLoadPtr rom_ssrdrebc = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0xc0000, REGION_CPU1, 0 );
+		ROM_LOAD16_BYTE( "sr_c02.rom",  0x000000, 0x40000, 0x9bd7d164 );
+		ROM_LOAD16_BYTE( "sr_c03.rom",  0x000001, 0x40000, 0x40fd4165 );
+		ROM_LOAD16_BYTE( "sr_b04.rom",  0x080000, 0x20000, 0xef2315bd );
+		ROM_LOAD16_BYTE( "sr_b05.rom",  0x080001, 0x20000, 0x51d6fbc4 );
 	
-		ROM_REGION( 0x10000, REGION_CPU2, 0 ) /* 64k for the audio CPU */
-		ROM_LOAD( "sr_e01.rom",   0x0000, 0x10000, 0x44b9bc52 )
+		ROM_REGION( 0x10000, REGION_CPU2, 0 );/* 64k for the audio CPU */
+		ROM_LOAD( "sr_e01.rom",   0x0000, 0x10000, 0x44b9bc52 );
 	
-	    ROM_REGION( 0x100000, REGION_GFX1, 0 )	/* graphics (addressable by the main CPU) */
-		ROM_LOAD( "sr_16k.rom",   0x000000, 0x080000, 0xe2bdc619 )	/* tiles */
-		ROM_LOAD( "sr_12k.rom",   0x080000, 0x080000, 0x2d8ca8b0 )
+	    ROM_REGION( 0x100000, REGION_GFX1, 0 );/* graphics (addressable by the main CPU) */
+		ROM_LOAD( "sr_16k.rom",   0x000000, 0x080000, 0xe2bdc619 );/* tiles */
+		ROM_LOAD( "sr_12k.rom",   0x080000, 0x080000, 0x2d8ca8b0 );
 	
-		ROM_REGION( 0x200000, REGION_GFX2, 0 )	/* graphics (addressable by the main CPU) */
-		ROM_LOAD( "sr_7l.rom",    0x000000, 0x100000, 0x4160c372 )	/* sprites */
-		ROM_LOAD( "sr_3l.rom",    0x100000, 0x100000, 0x64dd673c )
+		ROM_REGION( 0x200000, REGION_GFX2, 0 );/* graphics (addressable by the main CPU) */
+		ROM_LOAD( "sr_7l.rom",    0x000000, 0x100000, 0x4160c372 );/* sprites */
+		ROM_LOAD( "sr_3l.rom",    0x100000, 0x100000, 0x64dd673c );
 	
-		ROM_REGION( 0x100000, REGION_SOUND1, 0 )	/* samples for the 053260 */
-		ROM_LOAD( "sr_1d.rom",    0x0000, 0x100000, 0x59810df9 )
-	ROM_END
+		ROM_REGION( 0x100000, REGION_SOUND1, 0 );/* samples for the 053260 */
+		ROM_LOAD( "sr_1d.rom",    0x0000, 0x100000, 0x59810df9 );
+	ROM_END(); }}; 
 	
-	ROM_START( ssrdruac )
-		ROM_REGION( 0xc0000, REGION_CPU1, 0 )
-		ROM_LOAD16_BYTE( "064uac02",    0x000000, 0x40000, 0x870473b6 )
-		ROM_LOAD16_BYTE( "064uac03",    0x000001, 0x40000, 0xeadf289a )
-		ROM_LOAD16_BYTE( "sr_b04.rom",  0x080000, 0x20000, 0xef2315bd )
-		ROM_LOAD16_BYTE( "sr_b05.rom",  0x080001, 0x20000, 0x51d6fbc4 )
+	static RomLoadPtr rom_ssrdruda = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0xc0000, REGION_CPU1, 0 );
+		ROM_LOAD16_BYTE( "064uda02",    0x000000, 0x40000, 0x5129a6b7 );
+		ROM_LOAD16_BYTE( "064uda03",    0x000001, 0x40000, 0x9f887214 );
+		ROM_LOAD16_BYTE( "sr_b04.rom",  0x080000, 0x20000, 0xef2315bd );
+		ROM_LOAD16_BYTE( "sr_b05.rom",  0x080001, 0x20000, 0x51d6fbc4 );
 	
-		ROM_REGION( 0x10000, REGION_CPU2, 0 ) /* 64k for the audio CPU */
-		ROM_LOAD( "sr_e01.rom",   0x0000, 0x10000, 0x44b9bc52 )
+		ROM_REGION( 0x10000, REGION_CPU2, 0 );/* 64k for the audio CPU */
+		ROM_LOAD( "sr_e01.rom",   0x0000, 0x10000, 0x44b9bc52 );
 	
-	    ROM_REGION( 0x100000, REGION_GFX1, 0 )	/* graphics (addressable by the main CPU) */
-		ROM_LOAD( "sr_16k.rom",   0x000000, 0x080000, 0xe2bdc619 )	/* tiles */
-		ROM_LOAD( "sr_12k.rom",   0x080000, 0x080000, 0x2d8ca8b0 )
+	    ROM_REGION( 0x100000, REGION_GFX1, 0 );/* graphics (addressable by the main CPU) */
+		ROM_LOAD( "sr_16k.rom",   0x000000, 0x080000, 0xe2bdc619 );/* tiles */
+		ROM_LOAD( "sr_12k.rom",   0x080000, 0x080000, 0x2d8ca8b0 );
 	
-		ROM_REGION( 0x200000, REGION_GFX2, 0 )	/* graphics (addressable by the main CPU) */
-		ROM_LOAD( "sr_7l.rom",    0x000000, 0x100000, 0x4160c372 )	/* sprites */
-		ROM_LOAD( "sr_3l.rom",    0x100000, 0x100000, 0x64dd673c )
+		ROM_REGION( 0x200000, REGION_GFX2, 0 );/* graphics (addressable by the main CPU) */
+		ROM_LOAD( "sr_7l.rom",    0x000000, 0x100000, 0x4160c372 );/* sprites */
+		ROM_LOAD( "sr_3l.rom",    0x100000, 0x100000, 0x64dd673c );
 	
-		ROM_REGION( 0x100000, REGION_SOUND1, 0 )	/* samples for the 053260 */
-		ROM_LOAD( "sr_1d.rom",    0x0000, 0x100000, 0x59810df9 )
-	ROM_END
+		ROM_REGION( 0x100000, REGION_SOUND1, 0 );/* samples for the 053260 */
+		ROM_LOAD( "sr_1d.rom",    0x0000, 0x100000, 0x59810df9 );
+	ROM_END(); }}; 
 	
-	ROM_START( ssrdrubc )
-		ROM_REGION( 0xc0000, REGION_CPU1, 0 )
-		ROM_LOAD16_BYTE( "2pl.8e",      0x000000, 0x40000, 0xaca7fda5 )
-		ROM_LOAD16_BYTE( "2pl.8g",      0x000001, 0x40000, 0xbb1fdeff )
-		ROM_LOAD16_BYTE( "sr_b04.rom",  0x080000, 0x20000, 0xef2315bd )
-		ROM_LOAD16_BYTE( "sr_b05.rom",  0x080001, 0x20000, 0x51d6fbc4 )
+	static RomLoadPtr rom_ssrdruac = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0xc0000, REGION_CPU1, 0 );
+		ROM_LOAD16_BYTE( "064uac02",    0x000000, 0x40000, 0x870473b6 );
+		ROM_LOAD16_BYTE( "064uac03",    0x000001, 0x40000, 0xeadf289a );
+		ROM_LOAD16_BYTE( "sr_b04.rom",  0x080000, 0x20000, 0xef2315bd );
+		ROM_LOAD16_BYTE( "sr_b05.rom",  0x080001, 0x20000, 0x51d6fbc4 );
 	
-		ROM_REGION( 0x10000, REGION_CPU2, 0 ) /* 64k for the audio CPU */
-		ROM_LOAD( "sr_e01.rom",   0x0000, 0x10000, 0x44b9bc52 )
+		ROM_REGION( 0x10000, REGION_CPU2, 0 );/* 64k for the audio CPU */
+		ROM_LOAD( "sr_e01.rom",   0x0000, 0x10000, 0x44b9bc52 );
 	
-	    ROM_REGION( 0x100000, REGION_GFX1, 0 )	/* graphics (addressable by the main CPU) */
-		ROM_LOAD( "sr_16k.rom",   0x000000, 0x080000, 0xe2bdc619 )	/* tiles */
-		ROM_LOAD( "sr_12k.rom",   0x080000, 0x080000, 0x2d8ca8b0 )
+	    ROM_REGION( 0x100000, REGION_GFX1, 0 );/* graphics (addressable by the main CPU) */
+		ROM_LOAD( "sr_16k.rom",   0x000000, 0x080000, 0xe2bdc619 );/* tiles */
+		ROM_LOAD( "sr_12k.rom",   0x080000, 0x080000, 0x2d8ca8b0 );
 	
-		ROM_REGION( 0x200000, REGION_GFX2, 0 )	/* graphics (addressable by the main CPU) */
-		ROM_LOAD( "sr_7l.rom",    0x000000, 0x100000, 0x4160c372 )	/* sprites */
-		ROM_LOAD( "sr_3l.rom",    0x100000, 0x100000, 0x64dd673c )
+		ROM_REGION( 0x200000, REGION_GFX2, 0 );/* graphics (addressable by the main CPU) */
+		ROM_LOAD( "sr_7l.rom",    0x000000, 0x100000, 0x4160c372 );/* sprites */
+		ROM_LOAD( "sr_3l.rom",    0x100000, 0x100000, 0x64dd673c );
 	
-		ROM_REGION( 0x100000, REGION_SOUND1, 0 )	/* samples for the 053260 */
-		ROM_LOAD( "sr_1d.rom",    0x0000, 0x100000, 0x59810df9 )
-	ROM_END
+		ROM_REGION( 0x100000, REGION_SOUND1, 0 );/* samples for the 053260 */
+		ROM_LOAD( "sr_1d.rom",    0x0000, 0x100000, 0x59810df9 );
+	ROM_END(); }}; 
 	
-	ROM_START( ssrdrabd )
-		ROM_REGION( 0xc0000, REGION_CPU1, 0 )
-		ROM_LOAD16_BYTE( "064abd02.8e", 0x000000, 0x40000, 0x713406cb )
-		ROM_LOAD16_BYTE( "064abd03.8g", 0x000001, 0x40000, 0x680feb3c )
-		ROM_LOAD16_BYTE( "sr_b04.rom",  0x080000, 0x20000, 0xef2315bd )
-		ROM_LOAD16_BYTE( "sr_b05.rom",  0x080001, 0x20000, 0x51d6fbc4 )
+	static RomLoadPtr rom_ssrdrubc = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0xc0000, REGION_CPU1, 0 );
+		ROM_LOAD16_BYTE( "2pl.8e",      0x000000, 0x40000, 0xaca7fda5 );
+		ROM_LOAD16_BYTE( "2pl.8g",      0x000001, 0x40000, 0xbb1fdeff );
+		ROM_LOAD16_BYTE( "sr_b04.rom",  0x080000, 0x20000, 0xef2315bd );
+		ROM_LOAD16_BYTE( "sr_b05.rom",  0x080001, 0x20000, 0x51d6fbc4 );
 	
-		ROM_REGION( 0x10000, REGION_CPU2, 0 ) /* 64k for the audio CPU */
-		ROM_LOAD( "sr_e01.rom",   0x0000, 0x10000, 0x44b9bc52 )
+		ROM_REGION( 0x10000, REGION_CPU2, 0 );/* 64k for the audio CPU */
+		ROM_LOAD( "sr_e01.rom",   0x0000, 0x10000, 0x44b9bc52 );
 	
-	    ROM_REGION( 0x100000, REGION_GFX1, 0 )	/* graphics (addressable by the main CPU) */
-		ROM_LOAD( "sr_16k.rom",   0x000000, 0x080000, 0xe2bdc619 )	/* tiles */
-		ROM_LOAD( "sr_12k.rom",   0x080000, 0x080000, 0x2d8ca8b0 )
+	    ROM_REGION( 0x100000, REGION_GFX1, 0 );/* graphics (addressable by the main CPU) */
+		ROM_LOAD( "sr_16k.rom",   0x000000, 0x080000, 0xe2bdc619 );/* tiles */
+		ROM_LOAD( "sr_12k.rom",   0x080000, 0x080000, 0x2d8ca8b0 );
 	
-		ROM_REGION( 0x200000, REGION_GFX2, 0 )	/* graphics (addressable by the main CPU) */
-		ROM_LOAD( "sr_7l.rom",    0x000000, 0x100000, 0x4160c372 )	/* sprites */
-		ROM_LOAD( "sr_3l.rom",    0x100000, 0x100000, 0x64dd673c )
+		ROM_REGION( 0x200000, REGION_GFX2, 0 );/* graphics (addressable by the main CPU) */
+		ROM_LOAD( "sr_7l.rom",    0x000000, 0x100000, 0x4160c372 );/* sprites */
+		ROM_LOAD( "sr_3l.rom",    0x100000, 0x100000, 0x64dd673c );
 	
-		ROM_REGION( 0x100000, REGION_SOUND1, 0 )	/* samples for the 053260 */
-		ROM_LOAD( "sr_1d.rom",    0x0000, 0x100000, 0x59810df9 )
-	ROM_END
+		ROM_REGION( 0x100000, REGION_SOUND1, 0 );/* samples for the 053260 */
+		ROM_LOAD( "sr_1d.rom",    0x0000, 0x100000, 0x59810df9 );
+	ROM_END(); }}; 
 	
-	ROM_START( ssrdrjbd )
-		ROM_REGION( 0xc0000, REGION_CPU1, 0 )
-		ROM_LOAD16_BYTE( "064jbd02.8e", 0x000000, 0x40000, 0x7acdc1e3 )
-		ROM_LOAD16_BYTE( "064jbd03.8g", 0x000001, 0x40000, 0x6a424918 )
-		ROM_LOAD16_BYTE( "sr_b04.rom",  0x080000, 0x20000, 0xef2315bd )
-		ROM_LOAD16_BYTE( "sr_b05.rom",  0x080001, 0x20000, 0x51d6fbc4 )
+	static RomLoadPtr rom_ssrdrabd = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0xc0000, REGION_CPU1, 0 );
+		ROM_LOAD16_BYTE( "064abd02.8e", 0x000000, 0x40000, 0x713406cb );
+		ROM_LOAD16_BYTE( "064abd03.8g", 0x000001, 0x40000, 0x680feb3c );
+		ROM_LOAD16_BYTE( "sr_b04.rom",  0x080000, 0x20000, 0xef2315bd );
+		ROM_LOAD16_BYTE( "sr_b05.rom",  0x080001, 0x20000, 0x51d6fbc4 );
 	
-		ROM_REGION( 0x10000, REGION_CPU2, 0 ) /* 64k for the audio CPU */
-		ROM_LOAD( "sr_e01.rom",   0x0000, 0x10000, 0x44b9bc52 )
+		ROM_REGION( 0x10000, REGION_CPU2, 0 );/* 64k for the audio CPU */
+		ROM_LOAD( "sr_e01.rom",   0x0000, 0x10000, 0x44b9bc52 );
 	
-	    ROM_REGION( 0x100000, REGION_GFX1, 0 )	/* graphics (addressable by the main CPU) */
-		ROM_LOAD( "sr_16k.rom",   0x000000, 0x080000, 0xe2bdc619 )	/* tiles */
-		ROM_LOAD( "sr_12k.rom",   0x080000, 0x080000, 0x2d8ca8b0 )
+	    ROM_REGION( 0x100000, REGION_GFX1, 0 );/* graphics (addressable by the main CPU) */
+		ROM_LOAD( "sr_16k.rom",   0x000000, 0x080000, 0xe2bdc619 );/* tiles */
+		ROM_LOAD( "sr_12k.rom",   0x080000, 0x080000, 0x2d8ca8b0 );
 	
-		ROM_REGION( 0x200000, REGION_GFX2, 0 )	/* graphics (addressable by the main CPU) */
-		ROM_LOAD( "sr_7l.rom",    0x000000, 0x100000, 0x4160c372 )	/* sprites */
-		ROM_LOAD( "sr_3l.rom",    0x100000, 0x100000, 0x64dd673c )
+		ROM_REGION( 0x200000, REGION_GFX2, 0 );/* graphics (addressable by the main CPU) */
+		ROM_LOAD( "sr_7l.rom",    0x000000, 0x100000, 0x4160c372 );/* sprites */
+		ROM_LOAD( "sr_3l.rom",    0x100000, 0x100000, 0x64dd673c );
 	
-		ROM_REGION( 0x100000, REGION_SOUND1, 0 )	/* samples for the 053260 */
-		ROM_LOAD( "sr_1d.rom",    0x0000, 0x100000, 0x59810df9 )
-	ROM_END
+		ROM_REGION( 0x100000, REGION_SOUND1, 0 );/* samples for the 053260 */
+		ROM_LOAD( "sr_1d.rom",    0x0000, 0x100000, 0x59810df9 );
+	ROM_END(); }}; 
 	
-	ROM_START( thndrx2 )
-		ROM_REGION( 0x40000, REGION_CPU1, 0 )
-		ROM_LOAD16_BYTE( "073-k02.11c", 0x000000, 0x20000, 0x0c8b2d3f )
-		ROM_LOAD16_BYTE( "073-k03.12c", 0x000001, 0x20000, 0x3803b427 )
+	static RomLoadPtr rom_ssrdrjbd = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0xc0000, REGION_CPU1, 0 );
+		ROM_LOAD16_BYTE( "064jbd02.8e", 0x000000, 0x40000, 0x7acdc1e3 );
+		ROM_LOAD16_BYTE( "064jbd03.8g", 0x000001, 0x40000, 0x6a424918 );
+		ROM_LOAD16_BYTE( "sr_b04.rom",  0x080000, 0x20000, 0xef2315bd );
+		ROM_LOAD16_BYTE( "sr_b05.rom",  0x080001, 0x20000, 0x51d6fbc4 );
 	
-		ROM_REGION( 0x10000, REGION_CPU2, 0 ) /* 64k for the audio CPU */
-		ROM_LOAD( "073-c01.4f",   0x0000, 0x10000, 0x44ebe83c )
+		ROM_REGION( 0x10000, REGION_CPU2, 0 );/* 64k for the audio CPU */
+		ROM_LOAD( "sr_e01.rom",   0x0000, 0x10000, 0x44b9bc52 );
 	
-	    ROM_REGION( 0x100000, REGION_GFX1, 0 )	/* graphics (addressable by the main CPU) */
-		ROM_LOAD( "073-c06.16k",  0x000000, 0x080000, 0x24e22b42 )	/* tiles */
-		ROM_LOAD( "073-c05.12k",  0x080000, 0x080000, 0x952a935f )
+	    ROM_REGION( 0x100000, REGION_GFX1, 0 );/* graphics (addressable by the main CPU) */
+		ROM_LOAD( "sr_16k.rom",   0x000000, 0x080000, 0xe2bdc619 );/* tiles */
+		ROM_LOAD( "sr_12k.rom",   0x080000, 0x080000, 0x2d8ca8b0 );
 	
-		ROM_REGION( 0x100000, REGION_GFX2, 0 )	/* graphics (addressable by the main CPU) */
-		ROM_LOAD( "073-c07.7k",   0x000000, 0x080000, 0x14e93f38 )	/* sprites */
-		ROM_LOAD( "073-c08.3k",   0x080000, 0x080000, 0x09fab3ab )
+		ROM_REGION( 0x200000, REGION_GFX2, 0 );/* graphics (addressable by the main CPU) */
+		ROM_LOAD( "sr_7l.rom",    0x000000, 0x100000, 0x4160c372 );/* sprites */
+		ROM_LOAD( "sr_3l.rom",    0x100000, 0x100000, 0x64dd673c );
 	
-		ROM_REGION( 0x80000, REGION_SOUND1, 0 )	/* samples for the 053260 */
-		ROM_LOAD( "073-b04.2d",   0x0000, 0x80000, 0x05287a0b )
-	ROM_END
+		ROM_REGION( 0x100000, REGION_SOUND1, 0 );/* samples for the 053260 */
+		ROM_LOAD( "sr_1d.rom",    0x0000, 0x100000, 0x59810df9 );
+	ROM_END(); }}; 
 	
-	ROM_START( prmrsocr )
-		ROM_REGION( 0x80000, REGION_CPU1, 0 )
-		ROM_LOAD16_BYTE( "101jab08.1h", 0x000000, 0x40000, 0xc22b528c )
-		ROM_LOAD16_BYTE( "101jab07.4h", 0x000001, 0x40000, 0x06e7acaf )
+	static RomLoadPtr rom_thndrx2 = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x40000, REGION_CPU1, 0 );
+		ROM_LOAD16_BYTE( "073-k02.11c", 0x000000, 0x20000, 0x0c8b2d3f );
+		ROM_LOAD16_BYTE( "073-k03.12c", 0x000001, 0x20000, 0x3803b427 );
 	
-		ROM_REGION( 0x30000, REGION_CPU2, 0 ) /* 64k for the audio CPU */
-		ROM_LOAD( "101_c05.5e",   0x00000, 0x20000, 0x02c3679f )
-		ROM_RELOAD(               0x10000, 0x20000 )
+		ROM_REGION( 0x10000, REGION_CPU2, 0 );/* 64k for the audio CPU */
+		ROM_LOAD( "073-c01.4f",   0x0000, 0x10000, 0x44ebe83c );
 	
-	    ROM_REGION( 0x080000, REGION_GFX1, 0 )	/* graphics (addressable by the main CPU) */
-		ROM_LOAD( "101a12.12l",   0x000000, 0x040000, 0x33530d7f )	/* tiles */
-		ROM_LOAD( "101a11.12k",   0x040000, 0x040000, 0x7f773271 )
+	    ROM_REGION( 0x100000, REGION_GFX1, 0 );/* graphics (addressable by the main CPU) */
+		ROM_LOAD( "073-c06.16k",  0x000000, 0x080000, 0x24e22b42 );/* tiles */
+		ROM_LOAD( "073-c05.12k",  0x080000, 0x080000, 0x952a935f );
 	
-		ROM_REGION( 0x400000, REGION_GFX2, 0 )	/* graphics (addressable by the main CPU) */
-		ROM_LOAD( "101a09.3l",    0x000000, 0x200000, 0xb6a1b424 )	/* sprites */
-		ROM_LOAD( "101a10.8l",    0x200000, 0x200000, 0xbbd58adc )
+		ROM_REGION( 0x100000, REGION_GFX2, 0 );/* graphics (addressable by the main CPU) */
+		ROM_LOAD( "073-c07.7k",   0x000000, 0x080000, 0x14e93f38 );/* sprites */
+		ROM_LOAD( "073-c08.3k",   0x080000, 0x080000, 0x09fab3ab );
 	
-		ROM_REGION( 0x080000, REGION_GFX3, 0 )	/* 053936 tiles */
-		ROM_LOAD( "101a03.18f",   0x000000, 0x080000, 0x59a1a91c )
+		ROM_REGION( 0x80000, REGION_SOUND1, 0 );/* samples for the 053260 */
+		ROM_LOAD( "073-b04.2d",   0x0000, 0x80000, 0x05287a0b );
+	ROM_END(); }}; 
 	
-		ROM_REGION( 0x040000, REGION_USER1, 0 )	/* unknown (further data for the 053936?) */
-		ROM_LOAD( "101a01.18d",   0x000000, 0x020000, 0x716f910f )
-		ROM_LOAD( "101a02.16d",   0x020000, 0x020000, 0x222869c7 )
+	static RomLoadPtr rom_prmrsocr = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x80000, REGION_CPU1, 0 );
+		ROM_LOAD16_BYTE( "101jab08.1h", 0x000000, 0x40000, 0xc22b528c );
+		ROM_LOAD16_BYTE( "101jab07.4h", 0x000001, 0x40000, 0x06e7acaf );
 	
-		ROM_REGION( 0x200000, REGION_SOUND1, 0 )	/* samples for the 054539 */
-		ROM_LOAD( "101a06.1d",    0x0000, 0x200000, 0x4f48e043 )
-	ROM_END
+		ROM_REGION( 0x30000, REGION_CPU2, 0 );/* 64k for the audio CPU */
+		ROM_LOAD( "101_c05.5e",   0x00000, 0x20000, 0x02c3679f );
+		ROM_RELOAD(               0x10000, 0x20000 );
+	
+	    ROM_REGION( 0x080000, REGION_GFX1, 0 );/* graphics (addressable by the main CPU) */
+		ROM_LOAD( "101a12.12l",   0x000000, 0x040000, 0x33530d7f );/* tiles */
+		ROM_LOAD( "101a11.12k",   0x040000, 0x040000, 0x7f773271 );
+	
+		ROM_REGION( 0x400000, REGION_GFX2, 0 );/* graphics (addressable by the main CPU) */
+		ROM_LOAD( "101a09.3l",    0x000000, 0x200000, 0xb6a1b424 );/* sprites */
+		ROM_LOAD( "101a10.8l",    0x200000, 0x200000, 0xbbd58adc );
+	
+		ROM_REGION( 0x080000, REGION_GFX3, 0 );/* 053936 tiles */
+		ROM_LOAD( "101a03.18f",   0x000000, 0x080000, 0x59a1a91c );
+	
+		ROM_REGION( 0x040000, REGION_USER1, 0 );/* unknown (further data for the 053936?) */
+		ROM_LOAD( "101a01.18d",   0x000000, 0x020000, 0x716f910f );
+		ROM_LOAD( "101a02.16d",   0x020000, 0x020000, 0x222869c7 );
+	
+		ROM_REGION( 0x200000, REGION_SOUND1, 0 );/* samples for the 054539 */
+		ROM_LOAD( "101a06.1d",    0x0000, 0x200000, 0x4f48e043 );
+	ROM_END(); }}; 
 	
 	
 	

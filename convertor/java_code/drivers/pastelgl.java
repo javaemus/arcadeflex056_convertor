@@ -290,28 +290,28 @@ public class pastelgl
 	NBMJDRV( pastelgl,  96, pastelgl, pastelgl, pastelgl, pastelgl, nb1413m3_nvram_handler )
 	
 	
-	ROM_START( pastelgl )
-		ROM_REGION( 0x10000, REGION_CPU1, 0 ) /* program */
-		ROM_LOAD( "pgal_09.bin",  0x00000, 0x04000, 0x1e494af3 )
-		ROM_LOAD( "pgal_10.bin",  0x04000, 0x04000, 0x677cccea )
-		ROM_LOAD( "pgal_11.bin",  0x08000, 0x04000, 0xc2ccea38 )
+	static RomLoadPtr rom_pastelgl = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x10000, REGION_CPU1, 0 );/* program */
+		ROM_LOAD( "pgal_09.bin",  0x00000, 0x04000, 0x1e494af3 );
+		ROM_LOAD( "pgal_10.bin",  0x04000, 0x04000, 0x677cccea );
+		ROM_LOAD( "pgal_11.bin",  0x08000, 0x04000, 0xc2ccea38 );
 	
-		ROM_REGION( 0x08000, REGION_SOUND1, 0 ) /* voice */
-		ROM_LOAD( "pgal_08.bin",  0x00000, 0x08000, 0x895961a1 )
+		ROM_REGION( 0x08000, REGION_SOUND1, 0 );/* voice */
+		ROM_LOAD( "pgal_08.bin",  0x00000, 0x08000, 0x895961a1 );
 	
-		ROM_REGION( 0x38000, REGION_GFX1, 0 ) /* gfx */
-		ROM_LOAD( "pgal_01.bin",  0x00000, 0x08000, 0x1bb14d52 )
-		ROM_LOAD( "pgal_02.bin",  0x08000, 0x08000, 0xea85673a )
-		ROM_LOAD( "pgal_03.bin",  0x10000, 0x08000, 0x40011248 )
-		ROM_LOAD( "pgal_04.bin",  0x18000, 0x08000, 0x10613a66 )
-		ROM_LOAD( "pgal_05.bin",  0x20000, 0x08000, 0x6a152703 )
-		ROM_LOAD( "pgal_06.bin",  0x28000, 0x08000, 0xf56acfe8 )
-		ROM_LOAD( "pgal_07.bin",  0x30000, 0x08000, 0xfa4226dc )
+		ROM_REGION( 0x38000, REGION_GFX1, 0 );/* gfx */
+		ROM_LOAD( "pgal_01.bin",  0x00000, 0x08000, 0x1bb14d52 );
+		ROM_LOAD( "pgal_02.bin",  0x08000, 0x08000, 0xea85673a );
+		ROM_LOAD( "pgal_03.bin",  0x10000, 0x08000, 0x40011248 );
+		ROM_LOAD( "pgal_04.bin",  0x18000, 0x08000, 0x10613a66 );
+		ROM_LOAD( "pgal_05.bin",  0x20000, 0x08000, 0x6a152703 );
+		ROM_LOAD( "pgal_06.bin",  0x28000, 0x08000, 0xf56acfe8 );
+		ROM_LOAD( "pgal_07.bin",  0x30000, 0x08000, 0xfa4226dc );
 	
-		ROM_REGION( 0x0040, REGION_PROMS, 0 ) /* color */
-		ROM_LOAD( "pgal_bp1.bin", 0x0000, 0x0020, 0x2b7fc61a )
-		ROM_LOAD( "pgal_bp2.bin", 0x0020, 0x0020, 0x4433021e )
-	ROM_END
+		ROM_REGION( 0x0040, REGION_PROMS, 0 );/* color */
+		ROM_LOAD( "pgal_bp1.bin", 0x0000, 0x0020, 0x2b7fc61a );
+		ROM_LOAD( "pgal_bp2.bin", 0x0020, 0x0020, 0x4433021e );
+	ROM_END(); }}; 
 	
 	
 	GAME( 1985, pastelgl, 0, pastelgl, pastelgl, pastelgl, ROT0, "Nichibutsu", "Pastel Gal (Japan)" )

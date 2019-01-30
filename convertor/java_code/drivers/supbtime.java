@@ -502,62 +502,62 @@ public class supbtime
 	
 	/******************************************************************************/
 	
-	ROM_START( supbtime )
-		ROM_REGION( 0x40000, REGION_CPU1, 0 ) /* 68000 code */
-		ROM_LOAD16_BYTE( "gk03", 0x00000, 0x20000, 0xaeaeed61 )
-		ROM_LOAD16_BYTE( "gk04", 0x00001, 0x20000, 0x2bc5a4eb )
+	static RomLoadPtr rom_supbtime = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x40000, REGION_CPU1, 0 );/* 68000 code */
+		ROM_LOAD16_BYTE( "gk03", 0x00000, 0x20000, 0xaeaeed61 );
+		ROM_LOAD16_BYTE( "gk04", 0x00001, 0x20000, 0x2bc5a4eb );
 	
-		ROM_REGION( 0x10000, REGION_CPU2, 0 )	/* Sound CPU */
-		ROM_LOAD( "gc06.bin",    0x00000, 0x10000, 0xe0e6c0f4 )
+		ROM_REGION( 0x10000, REGION_CPU2, 0 );/* Sound CPU */
+		ROM_LOAD( "gc06.bin",    0x00000, 0x10000, 0xe0e6c0f4 );
 	
-		ROM_REGION( 0x080000, REGION_GFX1, ROMREGION_DISPOSE )
-		ROM_LOAD( "mae02.bin", 0x000000, 0x80000, 0xa715cca0 ) /* chars */
+		ROM_REGION( 0x080000, REGION_GFX1, ROMREGION_DISPOSE );
+		ROM_LOAD( "mae02.bin", 0x000000, 0x80000, 0xa715cca0 );/* chars */
 	
-		ROM_REGION( 0x100000, REGION_GFX2, ROMREGION_DISPOSE )
-	  	ROM_LOAD( "mae00.bin", 0x000000, 0x80000, 0x30043094 ) /* sprites */
-		ROM_LOAD( "mae01.bin", 0x080000, 0x80000, 0x434af3fb )
+		ROM_REGION( 0x100000, REGION_GFX2, ROMREGION_DISPOSE );
+	  	ROM_LOAD( "mae00.bin", 0x000000, 0x80000, 0x30043094 );/* sprites */
+		ROM_LOAD( "mae01.bin", 0x080000, 0x80000, 0x434af3fb );
 	
-		ROM_REGION( 0x20000, REGION_SOUND1, 0 )	/* ADPCM samples */
-	  	ROM_LOAD( "gc05.bin",    0x00000, 0x20000, 0x2f2246ff )
-	ROM_END
+		ROM_REGION( 0x20000, REGION_SOUND1, 0 );/* ADPCM samples */
+	  	ROM_LOAD( "gc05.bin",    0x00000, 0x20000, 0x2f2246ff );
+	ROM_END(); }}; 
 	
-	ROM_START( supbtimj )
-		ROM_REGION( 0x40000, REGION_CPU1, 0 ) /* 68000 code */
-		ROM_LOAD16_BYTE( "gc03.bin", 0x00000, 0x20000, 0xb5621f6a )
-		ROM_LOAD16_BYTE( "gc04.bin", 0x00001, 0x20000, 0x551b2a0c )
+	static RomLoadPtr rom_supbtimj = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x40000, REGION_CPU1, 0 );/* 68000 code */
+		ROM_LOAD16_BYTE( "gc03.bin", 0x00000, 0x20000, 0xb5621f6a );
+		ROM_LOAD16_BYTE( "gc04.bin", 0x00001, 0x20000, 0x551b2a0c );
 	
-		ROM_REGION( 0x10000, REGION_CPU2, 0 )	/* Sound CPU */
-		ROM_LOAD( "gc06.bin",    0x00000, 0x10000, 0xe0e6c0f4 )
+		ROM_REGION( 0x10000, REGION_CPU2, 0 );/* Sound CPU */
+		ROM_LOAD( "gc06.bin",    0x00000, 0x10000, 0xe0e6c0f4 );
 	
-		ROM_REGION( 0x080000, REGION_GFX1, ROMREGION_DISPOSE )
-		ROM_LOAD( "mae02.bin", 0x000000, 0x80000, 0xa715cca0 ) /* chars */
+		ROM_REGION( 0x080000, REGION_GFX1, ROMREGION_DISPOSE );
+		ROM_LOAD( "mae02.bin", 0x000000, 0x80000, 0xa715cca0 );/* chars */
 	
-		ROM_REGION( 0x100000, REGION_GFX2, ROMREGION_DISPOSE )
-	  	ROM_LOAD( "mae00.bin", 0x000000, 0x80000, 0x30043094 ) /* sprites */
-		ROM_LOAD( "mae01.bin", 0x080000, 0x80000, 0x434af3fb )
+		ROM_REGION( 0x100000, REGION_GFX2, ROMREGION_DISPOSE );
+	  	ROM_LOAD( "mae00.bin", 0x000000, 0x80000, 0x30043094 );/* sprites */
+		ROM_LOAD( "mae01.bin", 0x080000, 0x80000, 0x434af3fb );
 	
-		ROM_REGION( 0x20000, REGION_SOUND1, 0 )	/* ADPCM samples */
-	  	ROM_LOAD( "gc05.bin",    0x00000, 0x20000, 0x2f2246ff )
-	ROM_END
+		ROM_REGION( 0x20000, REGION_SOUND1, 0 );/* ADPCM samples */
+	  	ROM_LOAD( "gc05.bin",    0x00000, 0x20000, 0x2f2246ff );
+	ROM_END(); }}; 
 	
-	ROM_START( chinatwn )
-		ROM_REGION( 0x40000, REGION_CPU1, 0 ) /* 68000 code */
-		ROM_LOAD16_BYTE( "gv_00-.f11", 0x00000, 0x20000, 0x2ea7ea5d )
-		ROM_LOAD16_BYTE( "gv_01-.f13", 0x00001, 0x20000, 0xbcab03c7 )
+	static RomLoadPtr rom_chinatwn = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x40000, REGION_CPU1, 0 );/* 68000 code */
+		ROM_LOAD16_BYTE( "gv_00-.f11", 0x00000, 0x20000, 0x2ea7ea5d );
+		ROM_LOAD16_BYTE( "gv_01-.f13", 0x00001, 0x20000, 0xbcab03c7 );
 	
-		ROM_REGION( 0x10000, REGION_CPU2, 0 )	/* Sound CPU */
-		ROM_LOAD( "gv_02-.f16",    0x00000, 0x10000, 0x95151d84 )
+		ROM_REGION( 0x10000, REGION_CPU2, 0 );/* Sound CPU */
+		ROM_LOAD( "gv_02-.f16",    0x00000, 0x10000, 0x95151d84 );
 	
-		ROM_REGION( 0x080000, REGION_GFX1, ROMREGION_DISPOSE )
-		ROM_LOAD( "mak-02.h2", 0x000000, 0x80000, 0x745b2c50 ) /* chars */
+		ROM_REGION( 0x080000, REGION_GFX1, ROMREGION_DISPOSE );
+		ROM_LOAD( "mak-02.h2", 0x000000, 0x80000, 0x745b2c50 );/* chars */
 	
-		ROM_REGION( 0x100000, REGION_GFX2, ROMREGION_DISPOSE )
-	  	ROM_LOAD( "mak-00.a2", 0x000000, 0x80000, 0x18e8cc1b ) /* sprites */
-		ROM_LOAD( "mak-01.a4", 0x080000, 0x80000, 0xd88ebda8 )
+		ROM_REGION( 0x100000, REGION_GFX2, ROMREGION_DISPOSE );
+	  	ROM_LOAD( "mak-00.a2", 0x000000, 0x80000, 0x18e8cc1b );/* sprites */
+		ROM_LOAD( "mak-01.a4", 0x080000, 0x80000, 0xd88ebda8 );
 	
-		ROM_REGION( 0x20000, REGION_SOUND1, 0 )	/* ADPCM samples */
-	  	ROM_LOAD( "gv_03-.j14",    0x00000, 0x20000, 0x948faf92 )
-	ROM_END
+		ROM_REGION( 0x20000, REGION_SOUND1, 0 );/* ADPCM samples */
+	  	ROM_LOAD( "gv_03-.j14",    0x00000, 0x20000, 0x948faf92 );
+	ROM_END(); }}; 
 	
 	/******************************************************************************/
 	

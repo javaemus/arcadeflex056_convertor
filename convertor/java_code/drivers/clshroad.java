@@ -349,84 +349,84 @@ public class clshroad
 	
 	
 	
-	ROM_START( firebatl )
-		ROM_REGION( 0x10000, REGION_CPU1, 0 )		/* Main Z80 Code */
-		ROM_LOAD( "rom01",       0x00000, 0x2000, 0x10e24ef6 )
-		ROM_LOAD( "rom02",       0x02000, 0x2000, 0x47f79bee )
-		ROM_LOAD( "rom03",       0x04000, 0x2000, 0x693459b9 )
+	static RomLoadPtr rom_firebatl = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x10000, REGION_CPU1, 0 );	/* Main Z80 Code */
+		ROM_LOAD( "rom01",       0x00000, 0x2000, 0x10e24ef6 );
+		ROM_LOAD( "rom02",       0x02000, 0x2000, 0x47f79bee );
+		ROM_LOAD( "rom03",       0x04000, 0x2000, 0x693459b9 );
 	
-		ROM_REGION( 0x10000, REGION_CPU2, 0 )		/* Sound Z80 Code */
-		ROM_LOAD( "rom04",       0x0000, 0x2000, 0x5f232d9a )
+		ROM_REGION( 0x10000, REGION_CPU2, 0 );	/* Sound Z80 Code */
+		ROM_LOAD( "rom04",       0x0000, 0x2000, 0x5f232d9a );
 	
-		ROM_REGION( 0x08000, REGION_GFX1, ROMREGION_DISPOSE )	/* Sprites */
-		ROM_LOAD( "rom14",       0x0000, 0x2000, 0x36a508a7 )
-		ROM_LOAD( "rom13",       0x2000, 0x2000, 0xa2ec508e )
-		ROM_LOAD( "rom12",       0x4000, 0x2000, 0xf80ece92 )
-		ROM_LOAD( "rom11",       0x6000, 0x2000, 0xb293e701 )
+		ROM_REGION( 0x08000, REGION_GFX1, ROMREGION_DISPOSE );/* Sprites */
+		ROM_LOAD( "rom14",       0x0000, 0x2000, 0x36a508a7 );
+		ROM_LOAD( "rom13",       0x2000, 0x2000, 0xa2ec508e );
+		ROM_LOAD( "rom12",       0x4000, 0x2000, 0xf80ece92 );
+		ROM_LOAD( "rom11",       0x6000, 0x2000, 0xb293e701 );
 	
-		ROM_REGION( 0x08000, REGION_GFX2, ROMREGION_DISPOSE )	/* Layer 0 */
-		ROM_LOAD( "rom09",       0x0000, 0x2000, 0x77ea3e39 )
-		ROM_LOAD( "rom08",       0x2000, 0x2000, 0x1b7585dd )
-		ROM_LOAD( "rom07",       0x4000, 0x2000, 0xe3ec9825 )
-		ROM_LOAD( "rom06",       0x6000, 0x2000, 0xd29fab5f )
+		ROM_REGION( 0x08000, REGION_GFX2, ROMREGION_DISPOSE );/* Layer 0 */
+		ROM_LOAD( "rom09",       0x0000, 0x2000, 0x77ea3e39 );
+		ROM_LOAD( "rom08",       0x2000, 0x2000, 0x1b7585dd );
+		ROM_LOAD( "rom07",       0x4000, 0x2000, 0xe3ec9825 );
+		ROM_LOAD( "rom06",       0x6000, 0x2000, 0xd29fab5f );
 	
-		ROM_REGION( 0x01000, REGION_GFX3, ROMREGION_DISPOSE )	/* Layer 1 */
-		ROM_LOAD( "rom15",       0x0000, 0x1000, 0x8b5464d6 )
+		ROM_REGION( 0x01000, REGION_GFX3, ROMREGION_DISPOSE );/* Layer 1 */
+		ROM_LOAD( "rom15",       0x0000, 0x1000, 0x8b5464d6 );
 	
-		ROM_REGION( 0x0a20, REGION_PROMS, 0 )
-		ROM_LOAD( "prom6.bpr",   0x0000, 0x0100, 0xb117d22c )	/* palette red? */
-		ROM_LOAD( "prom7.bpr",   0x0100, 0x0100, 0x9b6b4f56 )	/* palette green? */
-		ROM_LOAD( "prom8.bpr",   0x0200, 0x0100, 0x67cb68ae )	/* palette blue? */
-		ROM_LOAD( "prom9.bpr",   0x0300, 0x0100, 0xdd015b80 )	/* char lookup table msb? */
-		ROM_LOAD( "prom10.bpr",  0x0400, 0x0100, 0x71b768c7 )	/* char lookup table lsb? */
-		ROM_LOAD( "prom4.bpr",   0x0500, 0x0100, 0x06523b81 )	/* unknown */
-		ROM_LOAD( "prom5.bpr",   0x0600, 0x0100, 0x75ea8f70 )	/* unknown */
-		ROM_LOAD( "prom11.bpr",  0x0700, 0x0100, 0xba42a582 )	/* unknown */
-		ROM_LOAD( "prom12.bpr",  0x0800, 0x0100, 0xf2540c51 )	/* unknown */
-		ROM_LOAD( "prom13.bpr",  0x0900, 0x0100, 0x4e2a2781 )	/* unknown */
-		ROM_LOAD( "prom1.bpr",   0x0a00, 0x0020, 0x1afc04f0 )	/* timing? (on the cpu board) */
+		ROM_REGION( 0x0a20, REGION_PROMS, 0 );
+		ROM_LOAD( "prom6.bpr",   0x0000, 0x0100, 0xb117d22c );/* palette red? */
+		ROM_LOAD( "prom7.bpr",   0x0100, 0x0100, 0x9b6b4f56 );/* palette green? */
+		ROM_LOAD( "prom8.bpr",   0x0200, 0x0100, 0x67cb68ae );/* palette blue? */
+		ROM_LOAD( "prom9.bpr",   0x0300, 0x0100, 0xdd015b80 );/* char lookup table msb? */
+		ROM_LOAD( "prom10.bpr",  0x0400, 0x0100, 0x71b768c7 );/* char lookup table lsb? */
+		ROM_LOAD( "prom4.bpr",   0x0500, 0x0100, 0x06523b81 );/* unknown */
+		ROM_LOAD( "prom5.bpr",   0x0600, 0x0100, 0x75ea8f70 );/* unknown */
+		ROM_LOAD( "prom11.bpr",  0x0700, 0x0100, 0xba42a582 );/* unknown */
+		ROM_LOAD( "prom12.bpr",  0x0800, 0x0100, 0xf2540c51 );/* unknown */
+		ROM_LOAD( "prom13.bpr",  0x0900, 0x0100, 0x4e2a2781 );/* unknown */
+		ROM_LOAD( "prom1.bpr",   0x0a00, 0x0020, 0x1afc04f0 );/* timing? (on the cpu board) */
 	
-		ROM_REGION( 0x2000, REGION_SOUND1, 0 )	/* samples */
-		ROM_LOAD( "rom05",       0x0000, 0x2000, 0x21544cd6 )
+		ROM_REGION( 0x2000, REGION_SOUND1, 0 );/* samples */
+		ROM_LOAD( "rom05",       0x0000, 0x2000, 0x21544cd6 );
 	
-		ROM_REGION( 0x0200, REGION_SOUND2, 0 )	/* 4bit->8bit sample expansion PROMs */
-		ROM_LOAD( "prom3.bpr",   0x0000, 0x0100, 0xbd2c080b )	/* low 4 bits */
-		ROM_LOAD( "prom2.bpr",   0x0100, 0x0100, 0x4017a2a6 )	/* high 4 bits */
-	ROM_END
+		ROM_REGION( 0x0200, REGION_SOUND2, 0 );/* 4bit->8bit sample expansion PROMs */
+		ROM_LOAD( "prom3.bpr",   0x0000, 0x0100, 0xbd2c080b );/* low 4 bits */
+		ROM_LOAD( "prom2.bpr",   0x0100, 0x0100, 0x4017a2a6 );/* high 4 bits */
+	ROM_END(); }}; 
 	
-	ROM_START( clshroad )
-		ROM_REGION( 0x10000, REGION_CPU1, 0 )		/* Main Z80 Code */
-		ROM_LOAD( "clashr3.bin", 0x0000, 0x8000, 0x865c32ae )
+	static RomLoadPtr rom_clshroad = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x10000, REGION_CPU1, 0 );	/* Main Z80 Code */
+		ROM_LOAD( "clashr3.bin", 0x0000, 0x8000, 0x865c32ae );
 	
-		ROM_REGION( 0x10000, REGION_CPU2, 0 )		/* Sound Z80 Code */
-		ROM_LOAD( "clashr2.bin", 0x0000, 0x2000, 0xe6389ec1 )
+		ROM_REGION( 0x10000, REGION_CPU2, 0 );	/* Sound Z80 Code */
+		ROM_LOAD( "clashr2.bin", 0x0000, 0x2000, 0xe6389ec1 );
 	
-		ROM_REGION( 0x08000, REGION_GFX1, ROMREGION_DISPOSE )	/* Sprites */
-		ROM_LOAD( "clashr6.bin", 0x0000, 0x4000, 0xdaa1daf3 )
-		ROM_LOAD( "clashr5.bin", 0x4000, 0x4000, 0x094858b8 )
+		ROM_REGION( 0x08000, REGION_GFX1, ROMREGION_DISPOSE );/* Sprites */
+		ROM_LOAD( "clashr6.bin", 0x0000, 0x4000, 0xdaa1daf3 );
+		ROM_LOAD( "clashr5.bin", 0x4000, 0x4000, 0x094858b8 );
 	
-		ROM_REGION( 0x08000, REGION_GFX2, ROMREGION_DISPOSE )	/* Layer 0 */
-		ROM_LOAD( "clashr9.bin", 0x0000, 0x4000, 0xc15e8eed )
-		ROM_LOAD( "clashr8.bin", 0x4000, 0x4000, 0xcbb66719 )
+		ROM_REGION( 0x08000, REGION_GFX2, ROMREGION_DISPOSE );/* Layer 0 */
+		ROM_LOAD( "clashr9.bin", 0x0000, 0x4000, 0xc15e8eed );
+		ROM_LOAD( "clashr8.bin", 0x4000, 0x4000, 0xcbb66719 );
 	
-		ROM_REGION( 0x04000, REGION_GFX3, ROMREGION_DISPOSE )	/* Layer 1 */
-		ROM_LOAD( "clashr7.bin", 0x0000, 0x2000, 0x97973030 )
-		ROM_LOAD( "clashr4.bin", 0x2000, 0x2000, 0x664201d9 )
+		ROM_REGION( 0x04000, REGION_GFX3, ROMREGION_DISPOSE );/* Layer 1 */
+		ROM_LOAD( "clashr7.bin", 0x0000, 0x2000, 0x97973030 );
+		ROM_LOAD( "clashr4.bin", 0x2000, 0x2000, 0x664201d9 );
 	
-		ROM_REGION( 0x0b40, REGION_PROMS, 0 )
+		ROM_REGION( 0x0b40, REGION_PROMS, 0 );
 		/* all other proms that firebatl has are missing */
-		ROM_LOAD( "clashrd.a2",  0x0900, 0x0100, 0x4e2a2781 )	/* unknown */
-		ROM_LOAD( "clashrd.g4",  0x0a00, 0x0020, 0x1afc04f0 )	/* timing? */
-		ROM_LOAD( "clashrd.b11", 0x0a20, 0x0020, 0xd453f2c5 )	/* unknown (possibly bad dump) */
-		ROM_LOAD( "clashrd.g10", 0x0a40, 0x0100, 0x73afefd0 )	/* unknown (possibly bad dump) */
+		ROM_LOAD( "clashrd.a2",  0x0900, 0x0100, 0x4e2a2781 );/* unknown */
+		ROM_LOAD( "clashrd.g4",  0x0a00, 0x0020, 0x1afc04f0 );/* timing? */
+		ROM_LOAD( "clashrd.b11", 0x0a20, 0x0020, 0xd453f2c5 );/* unknown (possibly bad dump) */
+		ROM_LOAD( "clashrd.g10", 0x0a40, 0x0100, 0x73afefd0 );/* unknown (possibly bad dump) */
 	
-		ROM_REGION( 0x2000, REGION_SOUND1, 0 )	/* samples */
-		ROM_LOAD( "clashr1.bin", 0x0000, 0x2000, 0x0d0a8068 )
+		ROM_REGION( 0x2000, REGION_SOUND1, 0 );/* samples */
+		ROM_LOAD( "clashr1.bin", 0x0000, 0x2000, 0x0d0a8068 );
 	
-		ROM_REGION( 0x0200, REGION_SOUND2, 0 )	/* 4bit->8bit sample expansion PROMs */
-		ROM_LOAD( "clashrd.g8",  0x0000, 0x0100, 0xbd2c080b )	/* low 4 bits */
-		ROM_LOAD( "clashrd.g7",  0x0100, 0x0100, 0x4017a2a6 )	/* high 4 bits */
-	ROM_END
+		ROM_REGION( 0x0200, REGION_SOUND2, 0 );/* 4bit->8bit sample expansion PROMs */
+		ROM_LOAD( "clashrd.g8",  0x0000, 0x0100, 0xbd2c080b );/* low 4 bits */
+		ROM_LOAD( "clashrd.g7",  0x0100, 0x0100, 0x4017a2a6 );/* high 4 bits */
+	ROM_END(); }}; 
 	
 	
 	

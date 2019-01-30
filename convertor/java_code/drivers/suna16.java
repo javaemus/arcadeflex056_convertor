@@ -783,32 +783,32 @@ public class suna16
 	
 	***************************************************************************/
 	
-	ROM_START( bssoccer )
+	static RomLoadPtr rom_bssoccer = new RomLoadPtr(){ public void handler(){ 
 	
-		ROM_REGION( 0x200000, REGION_CPU1, 0 ) 	/* 68000 Code */
-		ROM_LOAD16_BYTE( "02", 0x000000, 0x080000, 0x32871005 )
-		ROM_LOAD16_BYTE( "01", 0x000001, 0x080000, 0xace00db6 )
-		ROM_LOAD16_BYTE( "04", 0x100000, 0x080000, 0x25ee404d )
-		ROM_LOAD16_BYTE( "03", 0x100001, 0x080000, 0x1a131014 )
+		ROM_REGION( 0x200000, REGION_CPU1, 0 );	/* 68000 Code */
+		ROM_LOAD16_BYTE( "02", 0x000000, 0x080000, 0x32871005 );
+		ROM_LOAD16_BYTE( "01", 0x000001, 0x080000, 0xace00db6 );
+		ROM_LOAD16_BYTE( "04", 0x100000, 0x080000, 0x25ee404d );
+		ROM_LOAD16_BYTE( "03", 0x100001, 0x080000, 0x1a131014 );
 	
-		ROM_REGION( 0x010000, REGION_CPU2, 0 ) 	/* Z80 #1 - Music */
-		ROM_LOAD( "11", 0x000000, 0x010000, 0xdf7ae9bc ) // 1xxxxxxxxxxxxxxx = 0xFF
+		ROM_REGION( 0x010000, REGION_CPU2, 0 );	/* Z80 #1 - Music */
+		ROM_LOAD( "11", 0x000000, 0x010000, 0xdf7ae9bc );// 1xxxxxxxxxxxxxxx = 0xFF
 	
-		ROM_REGION( 0x080000, REGION_CPU3, 0 ) 	/* Z80 #2 - PCM */
-		ROM_LOAD( "13", 0x000000, 0x080000, 0x2b273dca )
+		ROM_REGION( 0x080000, REGION_CPU3, 0 );	/* Z80 #2 - PCM */
+		ROM_LOAD( "13", 0x000000, 0x080000, 0x2b273dca );
 	
-		ROM_REGION( 0x080000, REGION_CPU4, 0 ) 	/* Z80 #3 - PCM */
-		ROM_LOAD( "12", 0x000000, 0x080000, 0x6b73b87b )
+		ROM_REGION( 0x080000, REGION_CPU4, 0 );	/* Z80 #3 - PCM */
+		ROM_LOAD( "12", 0x000000, 0x080000, 0x6b73b87b );
 	
-		ROM_REGION( 0x300000, REGION_GFX1, ROMREGION_DISPOSE | ROMREGION_INVERT )	/* Sprites */
-		ROM_LOAD( "05", 0x000000, 0x080000, 0xa5245bd4 )
-		ROM_LOAD( "07", 0x080000, 0x080000, 0xfdb765c2 )
-		ROM_LOAD( "09", 0x100000, 0x080000, 0x0e82277f )
-		ROM_LOAD( "06", 0x180000, 0x080000, 0xd42ce84b )
-		ROM_LOAD( "08", 0x200000, 0x080000, 0x96cd2136 )
-		ROM_LOAD( "10", 0x280000, 0x080000, 0x1ca94d21 )
+		ROM_REGION( 0x300000, REGION_GFX1, ROMREGION_DISPOSE | ROMREGION_INVERT );/* Sprites */
+		ROM_LOAD( "05", 0x000000, 0x080000, 0xa5245bd4 );
+		ROM_LOAD( "07", 0x080000, 0x080000, 0xfdb765c2 );
+		ROM_LOAD( "09", 0x100000, 0x080000, 0x0e82277f );
+		ROM_LOAD( "06", 0x180000, 0x080000, 0xd42ce84b );
+		ROM_LOAD( "08", 0x200000, 0x080000, 0x96cd2136 );
+		ROM_LOAD( "10", 0x280000, 0x080000, 0x1ca94d21 );
 	
-	ROM_END
+	ROM_END(); }}; 
 	
 	
 	
@@ -831,27 +831,27 @@ public class suna16
 	
 	***************************************************************************/
 	
-	ROM_START( uballoon )
+	static RomLoadPtr rom_uballoon = new RomLoadPtr(){ public void handler(){ 
 	
-		ROM_REGION( 0x100000, REGION_CPU1, 0 ) 	/* 68000 Code */
-		ROM_LOAD16_BYTE( "prg2.rom", 0x000000, 0x080000, 0x72ab80ea )
-		ROM_LOAD16_BYTE( "prg1.rom", 0x000001, 0x080000, 0x27a04f55 )
+		ROM_REGION( 0x100000, REGION_CPU1, 0 );	/* 68000 Code */
+		ROM_LOAD16_BYTE( "prg2.rom", 0x000000, 0x080000, 0x72ab80ea );
+		ROM_LOAD16_BYTE( "prg1.rom", 0x000001, 0x080000, 0x27a04f55 );
 	
-		ROM_REGION( 0x010000, REGION_CPU2, 0 ) 	/* Z80 #1 - Music */
-		ROM_LOAD( "audio1.rom", 0x000000, 0x010000, 0xc771f2b4 )
+		ROM_REGION( 0x010000, REGION_CPU2, 0 );	/* Z80 #1 - Music */
+		ROM_LOAD( "audio1.rom", 0x000000, 0x010000, 0xc771f2b4 );
 	
-		ROM_REGION( 0x020000, REGION_CPU3, 0 ) 	/* Z80 #2 - PCM */
-		ROM_LOAD( "audio2.rom", 0x000000, 0x020000, 0xc7f75347 )
+		ROM_REGION( 0x020000, REGION_CPU3, 0 );	/* Z80 #2 - PCM */
+		ROM_LOAD( "audio2.rom", 0x000000, 0x020000, 0xc7f75347 );
 	
 		/* There's no Z80 #3 - PCM */
 	
-		ROM_REGION( 0x200000, REGION_GFX1, ROMREGION_DISPOSE | ROMREGION_INVERT )	/* Sprites */
-		ROM_LOAD( "gfx1.rom", 0x000000, 0x080000, 0xfd2ec297 )
-		ROM_LOAD( "gfx2.rom", 0x080000, 0x080000, 0x6307aa60 )
-		ROM_LOAD( "gfx3.rom", 0x100000, 0x080000, 0x718f3150 )
-		ROM_LOAD( "gfx4.rom", 0x180000, 0x080000, 0xaf7e057e )
+		ROM_REGION( 0x200000, REGION_GFX1, ROMREGION_DISPOSE | ROMREGION_INVERT );/* Sprites */
+		ROM_LOAD( "gfx1.rom", 0x000000, 0x080000, 0xfd2ec297 );
+		ROM_LOAD( "gfx2.rom", 0x080000, 0x080000, 0x6307aa60 );
+		ROM_LOAD( "gfx3.rom", 0x100000, 0x080000, 0x718f3150 );
+		ROM_LOAD( "gfx4.rom", 0x180000, 0x080000, 0xaf7e057e );
 	
-	ROM_END
+	ROM_END(); }}; 
 	
 	
 	void init_uballoon(void)

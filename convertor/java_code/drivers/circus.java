@@ -453,92 +453,92 @@ public class circus
 	
 	
 	
-	ROM_START( circus )
-		ROM_REGION( 0x10000, REGION_CPU1, 0 )     /* 64k for code */
-		ROM_LOAD( "circus.1a",    0x1000, 0x0200, 0x7654ea75 ) /* Code */
-		ROM_LOAD( "circus.2a",    0x1200, 0x0200, 0xb8acdbc5 )
-		ROM_LOAD( "circus.3a",    0x1400, 0x0200, 0x901dfff6 )
-		ROM_LOAD( "circus.5a",    0x1600, 0x0200, 0x9dfdae38 )
-		ROM_LOAD( "circus.6a",    0x1800, 0x0200, 0xc8681cf6 )
-		ROM_LOAD( "circus.7a",    0x1a00, 0x0200, 0x585f633e )
-		ROM_LOAD( "circus.8a",    0x1c00, 0x0200, 0x69cc409f )
-		ROM_LOAD( "circus.9a",    0x1e00, 0x0200, 0xaff835eb )
-		ROM_RELOAD(               0xfe00, 0x0200 ) /* for the reset and interrupt vectors */
+	static RomLoadPtr rom_circus = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x10000, REGION_CPU1, 0 );    /* 64k for code */
+		ROM_LOAD( "circus.1a",    0x1000, 0x0200, 0x7654ea75 );/* Code */
+		ROM_LOAD( "circus.2a",    0x1200, 0x0200, 0xb8acdbc5 );
+		ROM_LOAD( "circus.3a",    0x1400, 0x0200, 0x901dfff6 );
+		ROM_LOAD( "circus.5a",    0x1600, 0x0200, 0x9dfdae38 );
+		ROM_LOAD( "circus.6a",    0x1800, 0x0200, 0xc8681cf6 );
+		ROM_LOAD( "circus.7a",    0x1a00, 0x0200, 0x585f633e );
+		ROM_LOAD( "circus.8a",    0x1c00, 0x0200, 0x69cc409f );
+		ROM_LOAD( "circus.9a",    0x1e00, 0x0200, 0xaff835eb );
+		ROM_RELOAD(               0xfe00, 0x0200 );/* for the reset and interrupt vectors */
 	
-		ROM_REGION( 0x0800, REGION_GFX1, ROMREGION_DISPOSE )
-		ROM_LOAD( "circus.4c",    0x0000, 0x0200, 0x6efc315a )	/* Character Set */
-		ROM_LOAD( "circus.3c",    0x0200, 0x0200, 0x30d72ef5 )
-		ROM_LOAD( "circus.2c",    0x0400, 0x0200, 0x361da7ee )
-		ROM_LOAD( "circus.1c",    0x0600, 0x0200, 0x1f954bb3 )
+		ROM_REGION( 0x0800, REGION_GFX1, ROMREGION_DISPOSE );
+		ROM_LOAD( "circus.4c",    0x0000, 0x0200, 0x6efc315a );/* Character Set */
+		ROM_LOAD( "circus.3c",    0x0200, 0x0200, 0x30d72ef5 );
+		ROM_LOAD( "circus.2c",    0x0400, 0x0200, 0x361da7ee );
+		ROM_LOAD( "circus.1c",    0x0600, 0x0200, 0x1f954bb3 );
 	
-		ROM_REGION( 0x0200, REGION_GFX2, ROMREGION_DISPOSE )
-		ROM_LOAD( "circus.14d",   0x0000, 0x0200, 0x2fde3930 )	/* Clown */
-	ROM_END
+		ROM_REGION( 0x0200, REGION_GFX2, ROMREGION_DISPOSE );
+		ROM_LOAD( "circus.14d",   0x0000, 0x0200, 0x2fde3930 );/* Clown */
+	ROM_END(); }}; 
 	
-	ROM_START( robotbwl )
-		ROM_REGION( 0x10000, REGION_CPU1, 0 )     /* 64k for code */
-		ROM_LOAD( "robotbwl.1a",  0xf000, 0x0200, 0xdf387a0b ) /* Code */
-		ROM_LOAD( "robotbwl.2a",  0xf200, 0x0200, 0xc948274d )
-		ROM_LOAD( "robotbwl.3a",  0xf400, 0x0200, 0x8fdb3ec5 )
-		ROM_LOAD( "robotbwl.5a",  0xf600, 0x0200, 0xba9a6929 )
-		ROM_LOAD( "robotbwl.6a",  0xf800, 0x0200, 0x16fd8480 )
-		ROM_LOAD( "robotbwl.7a",  0xfa00, 0x0200, 0x4cadbf06 )
-		ROM_LOAD( "robotbwl.8a",  0xfc00, 0x0200, 0xbc809ed3 )
-		ROM_LOAD( "robotbwl.9a",  0xfe00, 0x0200, 0x07487e27 )
+	static RomLoadPtr rom_robotbwl = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x10000, REGION_CPU1, 0 );    /* 64k for code */
+		ROM_LOAD( "robotbwl.1a",  0xf000, 0x0200, 0xdf387a0b );/* Code */
+		ROM_LOAD( "robotbwl.2a",  0xf200, 0x0200, 0xc948274d );
+		ROM_LOAD( "robotbwl.3a",  0xf400, 0x0200, 0x8fdb3ec5 );
+		ROM_LOAD( "robotbwl.5a",  0xf600, 0x0200, 0xba9a6929 );
+		ROM_LOAD( "robotbwl.6a",  0xf800, 0x0200, 0x16fd8480 );
+		ROM_LOAD( "robotbwl.7a",  0xfa00, 0x0200, 0x4cadbf06 );
+		ROM_LOAD( "robotbwl.8a",  0xfc00, 0x0200, 0xbc809ed3 );
+		ROM_LOAD( "robotbwl.9a",  0xfe00, 0x0200, 0x07487e27 );
 	
-		ROM_REGION( 0x0800, REGION_GFX1, ROMREGION_DISPOSE )
-		ROM_LOAD( "robotbwl.4c",  0x0000, 0x0200, 0xa5f7acb9 )	/* Character Set */
-		ROM_LOAD( "robotbwl.3c",  0x0200, 0x0200, 0xd5380c9b )
-		ROM_LOAD( "robotbwl.2c",  0x0400, 0x0200, 0x47b3e39c )
-		ROM_LOAD( "robotbwl.1c",  0x0600, 0x0200, 0xb2991e7e )
+		ROM_REGION( 0x0800, REGION_GFX1, ROMREGION_DISPOSE );
+		ROM_LOAD( "robotbwl.4c",  0x0000, 0x0200, 0xa5f7acb9 );/* Character Set */
+		ROM_LOAD( "robotbwl.3c",  0x0200, 0x0200, 0xd5380c9b );
+		ROM_LOAD( "robotbwl.2c",  0x0400, 0x0200, 0x47b3e39c );
+		ROM_LOAD( "robotbwl.1c",  0x0600, 0x0200, 0xb2991e7e );
 	
-		ROM_REGION( 0x0020, REGION_GFX2, ROMREGION_DISPOSE )
-		ROM_LOAD( "robotbwl.14d", 0x0000, 0x0020, 0xa402ac06 )	/* Ball */
-	ROM_END
+		ROM_REGION( 0x0020, REGION_GFX2, ROMREGION_DISPOSE );
+		ROM_LOAD( "robotbwl.14d", 0x0000, 0x0020, 0xa402ac06 );/* Ball */
+	ROM_END(); }}; 
 	
-	ROM_START( crash )
-		ROM_REGION( 0x10000, REGION_CPU1, 0 )     /* 64k for code */
-		ROM_LOAD( "crash.a1",     0x1000, 0x0200, 0xb9571203 ) /* Code */
-		ROM_LOAD( "crash.a2",     0x1200, 0x0200, 0xb4581a95 )
-		ROM_LOAD( "crash.a3",     0x1400, 0x0200, 0x597555ae )
-		ROM_LOAD( "crash.a4",     0x1600, 0x0200, 0x0a15d69f )
-		ROM_LOAD( "crash.a5",     0x1800, 0x0200, 0xa9c7a328 )
-		ROM_LOAD( "crash.a6",     0x1a00, 0x0200, 0xc7d62d27 )
-		ROM_LOAD( "crash.a7",     0x1c00, 0x0200, 0x5e5af244 )
-		ROM_LOAD( "crash.a8",     0x1e00, 0x0200, 0x3dc50839 )
-		ROM_RELOAD(               0xfe00, 0x0200 ) /* for the reset and interrupt vectors */
+	static RomLoadPtr rom_crash = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x10000, REGION_CPU1, 0 );    /* 64k for code */
+		ROM_LOAD( "crash.a1",     0x1000, 0x0200, 0xb9571203 );/* Code */
+		ROM_LOAD( "crash.a2",     0x1200, 0x0200, 0xb4581a95 );
+		ROM_LOAD( "crash.a3",     0x1400, 0x0200, 0x597555ae );
+		ROM_LOAD( "crash.a4",     0x1600, 0x0200, 0x0a15d69f );
+		ROM_LOAD( "crash.a5",     0x1800, 0x0200, 0xa9c7a328 );
+		ROM_LOAD( "crash.a6",     0x1a00, 0x0200, 0xc7d62d27 );
+		ROM_LOAD( "crash.a7",     0x1c00, 0x0200, 0x5e5af244 );
+		ROM_LOAD( "crash.a8",     0x1e00, 0x0200, 0x3dc50839 );
+		ROM_RELOAD(               0xfe00, 0x0200 );/* for the reset and interrupt vectors */
 	
-		ROM_REGION( 0x0800, REGION_GFX1, ROMREGION_DISPOSE )
-		ROM_LOAD( "crash.c4",     0x0000, 0x0200, 0xba16f9e8 )	/* Character Set */
-		ROM_LOAD( "crash.c3",     0x0200, 0x0200, 0x3c8f7560 )
-		ROM_LOAD( "crash.c2",     0x0400, 0x0200, 0x38f3e4ed )
-		ROM_LOAD( "crash.c1",     0x0600, 0x0200, 0xe9adf1e1 )
+		ROM_REGION( 0x0800, REGION_GFX1, ROMREGION_DISPOSE );
+		ROM_LOAD( "crash.c4",     0x0000, 0x0200, 0xba16f9e8 );/* Character Set */
+		ROM_LOAD( "crash.c3",     0x0200, 0x0200, 0x3c8f7560 );
+		ROM_LOAD( "crash.c2",     0x0400, 0x0200, 0x38f3e4ed );
+		ROM_LOAD( "crash.c1",     0x0600, 0x0200, 0xe9adf1e1 );
 	
-		ROM_REGION( 0x0200, REGION_GFX2, ROMREGION_DISPOSE )
-		ROM_LOAD( "crash.d14",    0x0000, 0x0200, 0x833f81e4 )	/* Cars */
-	ROM_END
+		ROM_REGION( 0x0200, REGION_GFX2, ROMREGION_DISPOSE );
+		ROM_LOAD( "crash.d14",    0x0000, 0x0200, 0x833f81e4 );/* Cars */
+	ROM_END(); }}; 
 	
-	ROM_START( ripcord )
-		ROM_REGION( 0x10000, REGION_CPU1, 0 )     /* 64k for code */
-		ROM_LOAD( "9027.1a",      0x1000, 0x0200, 0x56b8dc06 ) /* Code */
-		ROM_LOAD( "9028.2a",      0x1200, 0x0200, 0xa8a78a30 )
-		ROM_LOAD( "9029.4a",      0x1400, 0x0200, 0xfc5c8e07 )
-		ROM_LOAD( "9030.5a",      0x1600, 0x0200, 0xb496263c )
-		ROM_LOAD( "9031.6a",      0x1800, 0x0200, 0xcdc7d46e )
-		ROM_LOAD( "9032.7a",      0x1a00, 0x0200, 0xa6588bec )
-		ROM_LOAD( "9033.8a",      0x1c00, 0x0200, 0xfd49b806 )
-		ROM_LOAD( "9034.9a",      0x1e00, 0x0200, 0x7caf926d )
-		ROM_RELOAD(               0xfe00, 0x0200 ) /* for the reset and interrupt vectors */
+	static RomLoadPtr rom_ripcord = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x10000, REGION_CPU1, 0 );    /* 64k for code */
+		ROM_LOAD( "9027.1a",      0x1000, 0x0200, 0x56b8dc06 );/* Code */
+		ROM_LOAD( "9028.2a",      0x1200, 0x0200, 0xa8a78a30 );
+		ROM_LOAD( "9029.4a",      0x1400, 0x0200, 0xfc5c8e07 );
+		ROM_LOAD( "9030.5a",      0x1600, 0x0200, 0xb496263c );
+		ROM_LOAD( "9031.6a",      0x1800, 0x0200, 0xcdc7d46e );
+		ROM_LOAD( "9032.7a",      0x1a00, 0x0200, 0xa6588bec );
+		ROM_LOAD( "9033.8a",      0x1c00, 0x0200, 0xfd49b806 );
+		ROM_LOAD( "9034.9a",      0x1e00, 0x0200, 0x7caf926d );
+		ROM_RELOAD(               0xfe00, 0x0200 );/* for the reset and interrupt vectors */
 	
-		ROM_REGION( 0x0800, REGION_GFX1, ROMREGION_DISPOSE )
-		ROM_LOAD( "9026.5c",      0x0000, 0x0200, 0x06e7adbb )	/* Character Set */
-		ROM_LOAD( "9025.4c",      0x0200, 0x0200, 0x3129527e )
-		ROM_LOAD( "9024.2c",      0x0400, 0x0200, 0xbcb88396 )
-		ROM_LOAD( "9023.1c",      0x0600, 0x0200, 0x9f86ed5b )
+		ROM_REGION( 0x0800, REGION_GFX1, ROMREGION_DISPOSE );
+		ROM_LOAD( "9026.5c",      0x0000, 0x0200, 0x06e7adbb );/* Character Set */
+		ROM_LOAD( "9025.4c",      0x0200, 0x0200, 0x3129527e );
+		ROM_LOAD( "9024.2c",      0x0400, 0x0200, 0xbcb88396 );
+		ROM_LOAD( "9023.1c",      0x0600, 0x0200, 0x9f86ed5b );
 	
-		ROM_REGION( 0x0200, REGION_GFX2, ROMREGION_DISPOSE )
-		ROM_LOAD( "9035.14d",     0x0000, 0x0200, 0xc9979802 )
-	ROM_END
+		ROM_REGION( 0x0200, REGION_GFX2, ROMREGION_DISPOSE );
+		ROM_LOAD( "9035.14d",     0x0000, 0x0200, 0xc9979802 );
+	ROM_END(); }}; 
 	
 	
 	

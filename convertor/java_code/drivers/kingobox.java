@@ -721,163 +721,163 @@ public class kingobox
 	
 	***************************************************************************/
 	
-	ROM_START( kingofb )
-		ROM_REGION( 0x10000, REGION_CPU1, 0 )     /* 64k for code */
-		ROM_LOAD( "d09_22.bin",   0x00000, 0x4000, 0x6220bfa2 )
-		ROM_LOAD( "e09_23.bin",   0x04000, 0x4000, 0x5782fdd8 )
+	static RomLoadPtr rom_kingofb = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x10000, REGION_CPU1, 0 );    /* 64k for code */
+		ROM_LOAD( "d09_22.bin",   0x00000, 0x4000, 0x6220bfa2 );
+		ROM_LOAD( "e09_23.bin",   0x04000, 0x4000, 0x5782fdd8 );
 	
-		ROM_REGION( 0x10000, REGION_CPU2, 0 )     /* 64k for the video cpu */
-		ROM_LOAD( "b09_21.bin",   0x00000, 0x4000, 0x3fb39489 )
+		ROM_REGION( 0x10000, REGION_CPU2, 0 );    /* 64k for the video cpu */
+		ROM_LOAD( "b09_21.bin",   0x00000, 0x4000, 0x3fb39489 );
 	
-		ROM_REGION( 0x10000, REGION_CPU3, 0 )     /* 64k for the sprite cpu */
-		ROM_LOAD( "j09_dcr.bin",  0x00000, 0x2000, 0x379f4f84 )
+		ROM_REGION( 0x10000, REGION_CPU3, 0 );    /* 64k for the sprite cpu */
+		ROM_LOAD( "j09_dcr.bin",  0x00000, 0x2000, 0x379f4f84 );
 	
-		ROM_REGION( 0x10000, REGION_CPU4, 0 )     /* 64k for the audio cpu */
-		ROM_LOAD( "f05_18.bin",   0x00000, 0x4000, 0xc057e28e )
-		ROM_LOAD( "h05_19.bin",   0x04000, 0x4000, 0x060253dd )
-		ROM_LOAD( "j05_20.bin",   0x08000, 0x4000, 0x64c137a4 )
+		ROM_REGION( 0x10000, REGION_CPU4, 0 );    /* 64k for the audio cpu */
+		ROM_LOAD( "f05_18.bin",   0x00000, 0x4000, 0xc057e28e );
+		ROM_LOAD( "h05_19.bin",   0x04000, 0x4000, 0x060253dd );
+		ROM_LOAD( "j05_20.bin",   0x08000, 0x4000, 0x64c137a4 );
 	
-		ROM_REGION( 0x2000, REGION_GFX1, ROMREGION_DISPOSE )
-		ROM_LOAD( "vd15_13.bin",  0x00000, 0x2000, 0xe36d4f4f ) /* characters */
+		ROM_REGION( 0x2000, REGION_GFX1, ROMREGION_DISPOSE );
+		ROM_LOAD( "vd15_13.bin",  0x00000, 0x2000, 0xe36d4f4f );/* characters */
 	
-		ROM_REGION( 0x18000, REGION_GFX2, ROMREGION_DISPOSE )	/* sprites */
-		ROM_LOAD( "vb01_01.bin",  0x00000, 0x4000, 0xce6580af )
-		ROM_LOAD( "vb04_03.bin",  0x04000, 0x4000, 0xcf74ea50 )
-		ROM_LOAD( "vb07_05.bin",  0x08000, 0x4000, 0xd8b53975 )
-		ROM_LOAD( "vb03_02.bin",  0x0c000, 0x4000, 0x4ab506d2 )
-		ROM_LOAD( "vb05_04.bin",  0x10000, 0x4000, 0xecf95a2c )
-		ROM_LOAD( "vb08_06.bin",  0x14000, 0x4000, 0x8200cb2b )
+		ROM_REGION( 0x18000, REGION_GFX2, ROMREGION_DISPOSE );/* sprites */
+		ROM_LOAD( "vb01_01.bin",  0x00000, 0x4000, 0xce6580af );
+		ROM_LOAD( "vb04_03.bin",  0x04000, 0x4000, 0xcf74ea50 );
+		ROM_LOAD( "vb07_05.bin",  0x08000, 0x4000, 0xd8b53975 );
+		ROM_LOAD( "vb03_02.bin",  0x0c000, 0x4000, 0x4ab506d2 );
+		ROM_LOAD( "vb05_04.bin",  0x10000, 0x4000, 0xecf95a2c );
+		ROM_LOAD( "vb08_06.bin",  0x14000, 0x4000, 0x8200cb2b );
 	
-		ROM_REGION( 0xc000, REGION_GFX3, ROMREGION_DISPOSE )	/* tiles */
-		ROM_LOAD( "vd01_07.bin",  0x00000, 0x2000, 0x3d472a22 )
-		ROM_LOAD( "vd04_09.bin",  0x02000, 0x2000, 0xcc002ea9 )
-		ROM_LOAD( "vd07_11.bin",  0x04000, 0x2000, 0x23c1b3ee )
-		ROM_LOAD( "vd03_08.bin",  0x06000, 0x2000, 0xd6b1b8fe )
-		ROM_LOAD( "vd05_10.bin",  0x08000, 0x2000, 0xfce71e5a )
-		ROM_LOAD( "vd08_12.bin",  0x0a000, 0x2000, 0x3f68b991 )
+		ROM_REGION( 0xc000, REGION_GFX3, ROMREGION_DISPOSE );/* tiles */
+		ROM_LOAD( "vd01_07.bin",  0x00000, 0x2000, 0x3d472a22 );
+		ROM_LOAD( "vd04_09.bin",  0x02000, 0x2000, 0xcc002ea9 );
+		ROM_LOAD( "vd07_11.bin",  0x04000, 0x2000, 0x23c1b3ee );
+		ROM_LOAD( "vd03_08.bin",  0x06000, 0x2000, 0xd6b1b8fe );
+		ROM_LOAD( "vd05_10.bin",  0x08000, 0x2000, 0xfce71e5a );
+		ROM_LOAD( "vd08_12.bin",  0x0a000, 0x2000, 0x3f68b991 );
 	
-		ROM_REGION( 0x0300, REGION_PROMS, 0 )
-		ROM_LOAD( "vb14_col.bin", 0x0000, 0x0100, 0xc58e5121 )	/* red component */
-		ROM_LOAD( "vb15_col.bin", 0x0100, 0x0100, 0x5ab06f25 )	/* green component */
-		ROM_LOAD( "vb16_col.bin", 0x0200, 0x0100, 0x1171743f )	/* blue component */
-	ROM_END
+		ROM_REGION( 0x0300, REGION_PROMS, 0 );
+		ROM_LOAD( "vb14_col.bin", 0x0000, 0x0100, 0xc58e5121 );/* red component */
+		ROM_LOAD( "vb15_col.bin", 0x0100, 0x0100, 0x5ab06f25 );/* green component */
+		ROM_LOAD( "vb16_col.bin", 0x0200, 0x0100, 0x1171743f );/* blue component */
+	ROM_END(); }}; 
 	
 	/* Ring King */
-	ROM_START( ringking )
-		ROM_REGION( 0x10000, REGION_CPU1, 0 )     /* 64k for code */
-		ROM_LOAD( "cx13.9f",      0x00000, 0x8000, 0x93e38c02 )
-		ROM_LOAD( "cx14.11f",     0x08000, 0x4000, 0xa435acb0 )
+	static RomLoadPtr rom_ringking = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x10000, REGION_CPU1, 0 );    /* 64k for code */
+		ROM_LOAD( "cx13.9f",      0x00000, 0x8000, 0x93e38c02 );
+		ROM_LOAD( "cx14.11f",     0x08000, 0x4000, 0xa435acb0 );
 	
-		ROM_REGION( 0x10000, REGION_CPU2, 0 )     /* 64k for the video cpu */
-		ROM_LOAD( "cx07.10c",     0x00000, 0x4000, 0x9f074746 )
+		ROM_REGION( 0x10000, REGION_CPU2, 0 );    /* 64k for the video cpu */
+		ROM_LOAD( "cx07.10c",     0x00000, 0x4000, 0x9f074746 );
 	
-		ROM_REGION( 0x10000, REGION_CPU3, 0 )     /* 64k for the sprite cpu */
-		ROM_LOAD( "cx00.4c",      0x00000, 0x2000, 0x880b8aa7 )
+		ROM_REGION( 0x10000, REGION_CPU3, 0 );    /* 64k for the sprite cpu */
+		ROM_LOAD( "cx00.4c",      0x00000, 0x2000, 0x880b8aa7 );
 	
-		ROM_REGION( 0x10000, REGION_CPU4, 0 )     /* 64k for the audio cpu */
-		ROM_LOAD( "cx12.4ef",     0x00000, 0x8000, 0x1d5d6c6b )
-		ROM_LOAD( "j05_20.bin",   0x08000, 0x4000, 0x64c137a4 )
+		ROM_REGION( 0x10000, REGION_CPU4, 0 );    /* 64k for the audio cpu */
+		ROM_LOAD( "cx12.4ef",     0x00000, 0x8000, 0x1d5d6c6b );
+		ROM_LOAD( "j05_20.bin",   0x08000, 0x4000, 0x64c137a4 );
 	
-		ROM_REGION( 0x2000, REGION_GFX1, ROMREGION_DISPOSE )
-		ROM_LOAD( "cx08.13b",     0x00000, 0x2000, 0xdbd7c1c2 )	/* characters */
+		ROM_REGION( 0x2000, REGION_GFX1, ROMREGION_DISPOSE );
+		ROM_LOAD( "cx08.13b",     0x00000, 0x2000, 0xdbd7c1c2 );/* characters */
 	
-		ROM_REGION( 0x18000, REGION_GFX2, ROMREGION_DISPOSE )
-		ROM_LOAD( "cx04.11j",     0x00000, 0x8000, 0x506a2ed9 )
-		ROM_LOAD( "cx02.8j",      0x08000, 0x8000, 0x009dde6a )
-		ROM_LOAD( "cx06.13j",     0x10000, 0x8000, 0xd819a3b2 )
+		ROM_REGION( 0x18000, REGION_GFX2, ROMREGION_DISPOSE );
+		ROM_LOAD( "cx04.11j",     0x00000, 0x8000, 0x506a2ed9 );
+		ROM_LOAD( "cx02.8j",      0x08000, 0x8000, 0x009dde6a );
+		ROM_LOAD( "cx06.13j",     0x10000, 0x8000, 0xd819a3b2 );
 	
-		ROM_REGION( 0xc000, REGION_GFX3, ROMREGION_DISPOSE )
-		ROM_LOAD( "cx03.9j",      0x00000, 0x4000, 0x682fd1c4 )	/* sprites */
-		ROM_LOAD( "cx01.7j",      0x04000, 0x4000, 0x85130b46 )
-		ROM_LOAD( "cx05.12j",     0x08000, 0x4000, 0xf7c4f3dc )
+		ROM_REGION( 0xc000, REGION_GFX3, ROMREGION_DISPOSE );
+		ROM_LOAD( "cx03.9j",      0x00000, 0x4000, 0x682fd1c4 );/* sprites */
+		ROM_LOAD( "cx01.7j",      0x04000, 0x4000, 0x85130b46 );
+		ROM_LOAD( "cx05.12j",     0x08000, 0x4000, 0xf7c4f3dc );
 	
-		ROM_REGION( 0x8000, REGION_GFX4, ROMREGION_DISPOSE )
-		ROM_LOAD( "cx09.17d",     0x00000, 0x4000, 0x37a082cf )	/* tiles */
-		ROM_LOAD( "cx10.17e",     0x04000, 0x4000, 0xab9446c5 )
+		ROM_REGION( 0x8000, REGION_GFX4, ROMREGION_DISPOSE );
+		ROM_LOAD( "cx09.17d",     0x00000, 0x4000, 0x37a082cf );/* tiles */
+		ROM_LOAD( "cx10.17e",     0x04000, 0x4000, 0xab9446c5 );
 	
-		ROM_REGION( 0x0200, REGION_PROMS, 0 )
-		ROM_LOAD( "82s135.2a",    0x0000, 0x0100, 0x0e723a83 )	/* red and green component */
-		ROM_LOAD( "82s129.1a",    0x0100, 0x0100, 0xd345cbb3 )	/* blue component */
-	ROM_END
+		ROM_REGION( 0x0200, REGION_PROMS, 0 );
+		ROM_LOAD( "82s135.2a",    0x0000, 0x0100, 0x0e723a83 );/* red and green component */
+		ROM_LOAD( "82s129.1a",    0x0100, 0x0100, 0xd345cbb3 );/* blue component */
+	ROM_END(); }}; 
 	
-	ROM_START( ringkin2 )
-		ROM_REGION( 0x10000, REGION_CPU1, 0 )     /* 64k for code */
-		ROM_LOAD( "rkngm1.bin",   0x00000, 0x8000, 0x086921ea )
-		ROM_LOAD( "rkngm2.bin",   0x08000, 0x4000, 0xc0b636a4 )
+	static RomLoadPtr rom_ringkin2 = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x10000, REGION_CPU1, 0 );    /* 64k for code */
+		ROM_LOAD( "rkngm1.bin",   0x00000, 0x8000, 0x086921ea );
+		ROM_LOAD( "rkngm2.bin",   0x08000, 0x4000, 0xc0b636a4 );
 	
-		ROM_REGION( 0x10000, REGION_CPU2, 0 )     /* 64k for the video cpu */
-		ROM_LOAD( "rkngtram.bin", 0x00000, 0x4000, 0xd9dc1a0a )
+		ROM_REGION( 0x10000, REGION_CPU2, 0 );    /* 64k for the video cpu */
+		ROM_LOAD( "rkngtram.bin", 0x00000, 0x4000, 0xd9dc1a0a );
 	
-		ROM_REGION( 0x10000, REGION_CPU3, 0 )     /* 64k for the sprite cpu */
-		ROM_LOAD( "cx00.4c",      0x00000, 0x2000, 0x880b8aa7 )
+		ROM_REGION( 0x10000, REGION_CPU3, 0 );    /* 64k for the sprite cpu */
+		ROM_LOAD( "cx00.4c",      0x00000, 0x2000, 0x880b8aa7 );
 	
-		ROM_REGION( 0x10000, REGION_CPU4, 0 )     /* 64k for the audio cpu */
-		ROM_LOAD( "cx12.4ef",     0x00000, 0x8000, 0x1d5d6c6b )
-		ROM_LOAD( "j05_20.bin",   0x08000, 0x4000, 0x64c137a4 )
+		ROM_REGION( 0x10000, REGION_CPU4, 0 );    /* 64k for the audio cpu */
+		ROM_LOAD( "cx12.4ef",     0x00000, 0x8000, 0x1d5d6c6b );
+		ROM_LOAD( "j05_20.bin",   0x08000, 0x4000, 0x64c137a4 );
 	
-		ROM_REGION( 0x2000, REGION_GFX1, ROMREGION_DISPOSE )
-		ROM_LOAD( "cx08.13b",     0x00000, 0x2000, 0xdbd7c1c2 )	/* characters */
+		ROM_REGION( 0x2000, REGION_GFX1, ROMREGION_DISPOSE );
+		ROM_LOAD( "cx08.13b",     0x00000, 0x2000, 0xdbd7c1c2 );/* characters */
 	
-		ROM_REGION( 0x18000, REGION_GFX2, ROMREGION_DISPOSE )
-		ROM_LOAD( "cx04.11j",     0x00000, 0x8000, 0x506a2ed9 )
-		ROM_LOAD( "cx02.8j",      0x08000, 0x8000, 0x009dde6a )
-		ROM_LOAD( "cx06.13j",     0x10000, 0x8000, 0xd819a3b2 )
+		ROM_REGION( 0x18000, REGION_GFX2, ROMREGION_DISPOSE );
+		ROM_LOAD( "cx04.11j",     0x00000, 0x8000, 0x506a2ed9 );
+		ROM_LOAD( "cx02.8j",      0x08000, 0x8000, 0x009dde6a );
+		ROM_LOAD( "cx06.13j",     0x10000, 0x8000, 0xd819a3b2 );
 	
-		ROM_REGION( 0xc000, REGION_GFX3, ROMREGION_DISPOSE )
-		ROM_LOAD( "cx03.9j",      0x00000, 0x4000, 0x682fd1c4 )	/* sprites */
-		ROM_LOAD( "cx01.7j",      0x04000, 0x4000, 0x85130b46 )
-		ROM_LOAD( "cx05.12j",     0x08000, 0x4000, 0xf7c4f3dc )
+		ROM_REGION( 0xc000, REGION_GFX3, ROMREGION_DISPOSE );
+		ROM_LOAD( "cx03.9j",      0x00000, 0x4000, 0x682fd1c4 );/* sprites */
+		ROM_LOAD( "cx01.7j",      0x04000, 0x4000, 0x85130b46 );
+		ROM_LOAD( "cx05.12j",     0x08000, 0x4000, 0xf7c4f3dc );
 	
-		ROM_REGION( 0x8000, REGION_GFX4, ROMREGION_DISPOSE )
-		ROM_LOAD( "cx09.17d",     0x00000, 0x4000, 0x37a082cf )	/* tiles */
-		ROM_LOAD( "cx10.17e",     0x04000, 0x4000, 0xab9446c5 )
+		ROM_REGION( 0x8000, REGION_GFX4, ROMREGION_DISPOSE );
+		ROM_LOAD( "cx09.17d",     0x00000, 0x4000, 0x37a082cf );/* tiles */
+		ROM_LOAD( "cx10.17e",     0x04000, 0x4000, 0xab9446c5 );
 	
-		ROM_REGION( 0x0200, REGION_PROMS, 0 )
-		ROM_LOAD( "82s135.2a",    0x0000, 0x0100, 0x0e723a83 )	/* red and green component */
-		ROM_LOAD( "82s129.1a",    0x0100, 0x0100, 0xd345cbb3 )	/* blue component */
-	ROM_END
+		ROM_REGION( 0x0200, REGION_PROMS, 0 );
+		ROM_LOAD( "82s135.2a",    0x0000, 0x0100, 0x0e723a83 );/* red and green component */
+		ROM_LOAD( "82s129.1a",    0x0100, 0x0100, 0xd345cbb3 );/* blue component */
+	ROM_END(); }}; 
 	
-	ROM_START( ringkin3 )
-		ROM_REGION( 0x10000, REGION_CPU1, 0 )     /* 64k for code */
-		ROM_LOAD( "14.9d",        0x00000, 0x4000, 0x63627b8b )
-		ROM_LOAD( "15.9e",        0x04000, 0x4000, 0xe7557489 )
-		ROM_LOAD( "16.9f",        0x08000, 0x4000, 0xa3b3bb16 )
+	static RomLoadPtr rom_ringkin3 = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x10000, REGION_CPU1, 0 );    /* 64k for code */
+		ROM_LOAD( "14.9d",        0x00000, 0x4000, 0x63627b8b );
+		ROM_LOAD( "15.9e",        0x04000, 0x4000, 0xe7557489 );
+		ROM_LOAD( "16.9f",        0x08000, 0x4000, 0xa3b3bb16 );
 	
-		ROM_REGION( 0x10000, REGION_CPU2, 0 )     /* 64k for the video cpu */
-		ROM_LOAD( "13.9b",        0x00000, 0x4000, 0xf33f94a2 )
+		ROM_REGION( 0x10000, REGION_CPU2, 0 );    /* 64k for the video cpu */
+		ROM_LOAD( "13.9b",        0x00000, 0x4000, 0xf33f94a2 );
 	
-		ROM_REGION( 0x10000, REGION_CPU3, 0 )     /* 64k for the sprite cpu */
-		ROM_LOAD( "j09_dcr.bin",  0x00000, 0x2000, 0x379f4f84 )
+		ROM_REGION( 0x10000, REGION_CPU3, 0 );    /* 64k for the sprite cpu */
+		ROM_LOAD( "j09_dcr.bin",  0x00000, 0x2000, 0x379f4f84 );
 	
-		ROM_REGION( 0x10000, REGION_CPU4, 0 )     /* 64k for the audio cpu */
-		ROM_LOAD( "f05_18.bin",   0x00000, 0x4000, 0xc057e28e )
-		ROM_LOAD( "h05_19.bin",   0x04000, 0x4000, 0x060253dd )
-		ROM_LOAD( "j05_20.bin",   0x08000, 0x4000, 0x64c137a4 )
+		ROM_REGION( 0x10000, REGION_CPU4, 0 );    /* 64k for the audio cpu */
+		ROM_LOAD( "f05_18.bin",   0x00000, 0x4000, 0xc057e28e );
+		ROM_LOAD( "h05_19.bin",   0x04000, 0x4000, 0x060253dd );
+		ROM_LOAD( "j05_20.bin",   0x08000, 0x4000, 0x64c137a4 );
 	
-		ROM_REGION( 0x2000, REGION_GFX1, ROMREGION_DISPOSE )
-		ROM_LOAD( "12.15d",       0x00000, 0x2000, 0x988a77bf ) /* characters (Japanese) */
+		ROM_REGION( 0x2000, REGION_GFX1, ROMREGION_DISPOSE );
+		ROM_LOAD( "12.15d",       0x00000, 0x2000, 0x988a77bf );/* characters (Japanese) */
 	
-		ROM_REGION( 0x18000, REGION_GFX2, ROMREGION_DISPOSE )	/* sprites */
-		ROM_LOAD( "vb01_01.bin",  0x00000, 0x4000, 0xce6580af )
-		ROM_LOAD( "vb04_03.bin",  0x04000, 0x4000, 0xcf74ea50 )
-		ROM_LOAD( "vb07_05.bin",  0x08000, 0x4000, 0xd8b53975 )
-		ROM_LOAD( "vb03_02.bin",  0x0c000, 0x4000, 0x4ab506d2 )
-		ROM_LOAD( "vb05_04.bin",  0x10000, 0x4000, 0xecf95a2c )
-		ROM_LOAD( "vb08_06.bin",  0x14000, 0x4000, 0x8200cb2b )
+		ROM_REGION( 0x18000, REGION_GFX2, ROMREGION_DISPOSE );/* sprites */
+		ROM_LOAD( "vb01_01.bin",  0x00000, 0x4000, 0xce6580af );
+		ROM_LOAD( "vb04_03.bin",  0x04000, 0x4000, 0xcf74ea50 );
+		ROM_LOAD( "vb07_05.bin",  0x08000, 0x4000, 0xd8b53975 );
+		ROM_LOAD( "vb03_02.bin",  0x0c000, 0x4000, 0x4ab506d2 );
+		ROM_LOAD( "vb05_04.bin",  0x10000, 0x4000, 0xecf95a2c );
+		ROM_LOAD( "vb08_06.bin",  0x14000, 0x4000, 0x8200cb2b );
 	
-		ROM_REGION( 0xc000, REGION_GFX3, ROMREGION_DISPOSE )	/* tiles */
-		ROM_LOAD( "7.1d",         0x00000, 0x2000, 0x019a88b0 )
-		ROM_LOAD( "9.4d",         0x02000, 0x2000, 0xbfdc741a )
-		ROM_LOAD( "11.7d",        0x04000, 0x2000, 0x3cc7bdc5 )
-		ROM_LOAD( "8.3d",         0x06000, 0x2000, 0x65f1281b )
-		ROM_LOAD( "10.5d",        0x08000, 0x2000, 0xaf5013e7 )
-		ROM_LOAD( "12.8d",        0x0a000, 0x2000, 0x00000000 )
+		ROM_REGION( 0xc000, REGION_GFX3, ROMREGION_DISPOSE );/* tiles */
+		ROM_LOAD( "7.1d",         0x00000, 0x2000, 0x019a88b0 );
+		ROM_LOAD( "9.4d",         0x02000, 0x2000, 0xbfdc741a );
+		ROM_LOAD( "11.7d",        0x04000, 0x2000, 0x3cc7bdc5 );
+		ROM_LOAD( "8.3d",         0x06000, 0x2000, 0x65f1281b );
+		ROM_LOAD( "10.5d",        0x08000, 0x2000, 0xaf5013e7 );
+		ROM_LOAD( "12.8d",        0x0a000, 0x2000, 0x00000000 );
 	
-		ROM_REGION( 0x0300, REGION_PROMS, 0 )
+		ROM_REGION( 0x0300, REGION_PROMS, 0 );
 		/* we load the ringking PROMs and then expand the first to look like the kingobox ones... */
-		ROM_LOAD( "82s135.2a",    0x0100, 0x0100, 0x0e723a83 )	/* red and green component */
-		ROM_LOAD( "82s129.1a",    0x0200, 0x0100, 0xd345cbb3 )	/* blue component */
-	ROM_END
+		ROM_LOAD( "82s135.2a",    0x0100, 0x0100, 0x0e723a83 );/* red and green component */
+		ROM_LOAD( "82s129.1a",    0x0200, 0x0100, 0xd345cbb3 );/* blue component */
+	ROM_END(); }}; 
 	
 	
 	static void init_ringkin3(void)

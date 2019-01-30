@@ -762,109 +762,109 @@ public class hal21
 	
 	/**************************************************************************/
 	
-	ROM_START( hal21 )
-		ROM_REGION( 0x10000, REGION_CPU1, 0 )	/* 64k for CPUA code */
-		ROM_LOAD( "hal21p1.bin",    0x0000, 0x2000, 0x9d193830 )
-		ROM_LOAD( "hal21p2.bin",    0x2000, 0x2000, 0xc1f00350 )
-		ROM_LOAD( "hal21p3.bin",    0x4000, 0x2000, 0x881d22a6 )
-		ROM_LOAD( "hal21p4.bin",    0x6000, 0x2000, 0xce692534 )
+	static RomLoadPtr rom_hal21 = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x10000, REGION_CPU1, 0 );/* 64k for CPUA code */
+		ROM_LOAD( "hal21p1.bin",    0x0000, 0x2000, 0x9d193830 );
+		ROM_LOAD( "hal21p2.bin",    0x2000, 0x2000, 0xc1f00350 );
+		ROM_LOAD( "hal21p3.bin",    0x4000, 0x2000, 0x881d22a6 );
+		ROM_LOAD( "hal21p4.bin",    0x6000, 0x2000, 0xce692534 );
 	
-		ROM_REGION( 0x10000, REGION_CPU2, 0 )	/* 64k for CPUB code */
-		ROM_LOAD( "hal21p5.bin",    0x0000, 0x2000, 0x3ce0684a )
-		ROM_LOAD( "hal21p6.bin",    0x2000, 0x2000, 0x878ef798 )
-		ROM_LOAD( "hal21p7.bin",    0x4000, 0x2000, 0x72ebbe95 )
-		ROM_LOAD( "hal21p8.bin",    0x6000, 0x2000, 0x17e22ad3 )
-		ROM_LOAD( "hal21p9.bin",    0x8000, 0x2000, 0xb146f891 )
+		ROM_REGION( 0x10000, REGION_CPU2, 0 );/* 64k for CPUB code */
+		ROM_LOAD( "hal21p5.bin",    0x0000, 0x2000, 0x3ce0684a );
+		ROM_LOAD( "hal21p6.bin",    0x2000, 0x2000, 0x878ef798 );
+		ROM_LOAD( "hal21p7.bin",    0x4000, 0x2000, 0x72ebbe95 );
+		ROM_LOAD( "hal21p8.bin",    0x6000, 0x2000, 0x17e22ad3 );
+		ROM_LOAD( "hal21p9.bin",    0x8000, 0x2000, 0xb146f891 );
 	
-		ROM_REGION( 0x10000, REGION_CPU3, 0 )	/* 64k for sound code */
-		ROM_LOAD( "hal21p10.bin",   0x0000, 0x4000, 0x916f7ba0 )
+		ROM_REGION( 0x10000, REGION_CPU3, 0 );/* 64k for sound code */
+		ROM_LOAD( "hal21p10.bin",   0x0000, 0x4000, 0x916f7ba0 );
 	
-		ROM_REGION( 0x2000, REGION_GFX1, ROMREGION_DISPOSE )
-		ROM_LOAD( "hal21p12.bin", 0x0000, 0x2000, 0x9839a7cd ) /* char */
+		ROM_REGION( 0x2000, REGION_GFX1, ROMREGION_DISPOSE );
+		ROM_LOAD( "hal21p12.bin", 0x0000, 0x2000, 0x9839a7cd );/* char */
 	
-		ROM_REGION( 0x8000, REGION_GFX2, ROMREGION_DISPOSE ) /* background tiles */
-		ROM_LOAD( "hal21p11.bin", 0x0000, 0x4000, 0x24abc57e )
+		ROM_REGION( 0x8000, REGION_GFX2, ROMREGION_DISPOSE );/* background tiles */
+		ROM_LOAD( "hal21p11.bin", 0x0000, 0x4000, 0x24abc57e );
 	
-		ROM_REGION( 0x18000, REGION_GFX3, ROMREGION_DISPOSE ) /* 16x16 sprites */
-		ROM_LOAD( "hal21p13.bin", 0x00000, 0x4000, 0x052b4f4f )
-		ROM_RELOAD(               0x04000, 0x4000 )
-		ROM_LOAD( "hal21p14.bin", 0x08000, 0x4000, 0xda0cb670 )
-		ROM_RELOAD(               0x0c000, 0x4000 )
-		ROM_LOAD( "hal21p15.bin", 0x10000, 0x4000, 0x5c5ea945 )
-		ROM_RELOAD(               0x14000, 0x4000 )
+		ROM_REGION( 0x18000, REGION_GFX3, ROMREGION_DISPOSE );/* 16x16 sprites */
+		ROM_LOAD( "hal21p13.bin", 0x00000, 0x4000, 0x052b4f4f );
+		ROM_RELOAD(               0x04000, 0x4000 );
+		ROM_LOAD( "hal21p14.bin", 0x08000, 0x4000, 0xda0cb670 );
+		ROM_RELOAD(               0x0c000, 0x4000 );
+		ROM_LOAD( "hal21p15.bin", 0x10000, 0x4000, 0x5c5ea945 );
+		ROM_RELOAD(               0x14000, 0x4000 );
 	
-		ROM_REGION( 0x0c00, REGION_PROMS, 0 )
-		ROM_LOAD( "hal21_1.prm",  0x000, 0x400, 0x195768fc )
-		ROM_LOAD( "hal21_2.prm",  0x400, 0x400, 0xc5d84225 )
-		ROM_LOAD( "hal21_3.prm",  0x800, 0x400, 0x605afff8 )
-	ROM_END
+		ROM_REGION( 0x0c00, REGION_PROMS, 0 );
+		ROM_LOAD( "hal21_1.prm",  0x000, 0x400, 0x195768fc );
+		ROM_LOAD( "hal21_2.prm",  0x400, 0x400, 0xc5d84225 );
+		ROM_LOAD( "hal21_3.prm",  0x800, 0x400, 0x605afff8 );
+	ROM_END(); }}; 
 	
-	ROM_START( hal21j )
-		ROM_REGION( 0x10000, REGION_CPU1, 0 )	/* 64k for CPUA code */
-		ROM_LOAD( "hal21p1.bin",    0x0000, 0x2000, 0x9d193830 )
-		ROM_LOAD( "hal21p2.bin",    0x2000, 0x2000, 0xc1f00350 )
-		ROM_LOAD( "hal21p3.bin",    0x4000, 0x2000, 0x881d22a6 )
-		ROM_LOAD( "hal21p4.bin",    0x6000, 0x2000, 0xce692534 )
+	static RomLoadPtr rom_hal21j = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x10000, REGION_CPU1, 0 );/* 64k for CPUA code */
+		ROM_LOAD( "hal21p1.bin",    0x0000, 0x2000, 0x9d193830 );
+		ROM_LOAD( "hal21p2.bin",    0x2000, 0x2000, 0xc1f00350 );
+		ROM_LOAD( "hal21p3.bin",    0x4000, 0x2000, 0x881d22a6 );
+		ROM_LOAD( "hal21p4.bin",    0x6000, 0x2000, 0xce692534 );
 	
-		ROM_REGION( 0x10000, REGION_CPU2, 0 )	/* 64k for CPUB code */
-		ROM_LOAD( "hal21p5.bin",    0x0000, 0x2000, 0x3ce0684a )
-		ROM_LOAD( "hal21p6.bin",    0x2000, 0x2000, 0x878ef798 )
-		ROM_LOAD( "hal21p7.bin",    0x4000, 0x2000, 0x72ebbe95 )
-		ROM_LOAD( "hal21p8.bin",    0x6000, 0x2000, 0x17e22ad3 )
-		ROM_LOAD( "hal21p9.bin",    0x8000, 0x2000, 0xb146f891 )
+		ROM_REGION( 0x10000, REGION_CPU2, 0 );/* 64k for CPUB code */
+		ROM_LOAD( "hal21p5.bin",    0x0000, 0x2000, 0x3ce0684a );
+		ROM_LOAD( "hal21p6.bin",    0x2000, 0x2000, 0x878ef798 );
+		ROM_LOAD( "hal21p7.bin",    0x4000, 0x2000, 0x72ebbe95 );
+		ROM_LOAD( "hal21p8.bin",    0x6000, 0x2000, 0x17e22ad3 );
+		ROM_LOAD( "hal21p9.bin",    0x8000, 0x2000, 0xb146f891 );
 	
-		ROM_REGION( 0x10000, REGION_CPU3, 0 )	/* 64k for sound code */
-		ROM_LOAD( "hal21-10.bin",   0x0000, 0x4000, 0xa182b3f0 )
+		ROM_REGION( 0x10000, REGION_CPU3, 0 );/* 64k for sound code */
+		ROM_LOAD( "hal21-10.bin",   0x0000, 0x4000, 0xa182b3f0 );
 	
-		ROM_REGION( 0x2000, REGION_GFX1, ROMREGION_DISPOSE )
-		ROM_LOAD( "hal21p12.bin", 0x0000, 0x2000, 0x9839a7cd ) /* char */
+		ROM_REGION( 0x2000, REGION_GFX1, ROMREGION_DISPOSE );
+		ROM_LOAD( "hal21p12.bin", 0x0000, 0x2000, 0x9839a7cd );/* char */
 	
-		ROM_REGION( 0x8000, REGION_GFX2, ROMREGION_DISPOSE ) /* background tiles */
-		ROM_LOAD( "hal21p11.bin", 0x0000, 0x4000, 0x24abc57e )
+		ROM_REGION( 0x8000, REGION_GFX2, ROMREGION_DISPOSE );/* background tiles */
+		ROM_LOAD( "hal21p11.bin", 0x0000, 0x4000, 0x24abc57e );
 	
-		ROM_REGION( 0x18000, REGION_GFX3, ROMREGION_DISPOSE ) /* 16x16 sprites */
-		ROM_LOAD( "hal21p13.bin", 0x00000, 0x4000, 0x052b4f4f )
-		ROM_RELOAD(               0x04000, 0x4000 )
-		ROM_LOAD( "hal21p14.bin", 0x08000, 0x4000, 0xda0cb670 )
-		ROM_RELOAD(               0x0c000, 0x4000 )
-		ROM_LOAD( "hal21p15.bin", 0x10000, 0x4000, 0x5c5ea945 )
-		ROM_RELOAD(               0x14000, 0x4000 )
+		ROM_REGION( 0x18000, REGION_GFX3, ROMREGION_DISPOSE );/* 16x16 sprites */
+		ROM_LOAD( "hal21p13.bin", 0x00000, 0x4000, 0x052b4f4f );
+		ROM_RELOAD(               0x04000, 0x4000 );
+		ROM_LOAD( "hal21p14.bin", 0x08000, 0x4000, 0xda0cb670 );
+		ROM_RELOAD(               0x0c000, 0x4000 );
+		ROM_LOAD( "hal21p15.bin", 0x10000, 0x4000, 0x5c5ea945 );
+		ROM_RELOAD(               0x14000, 0x4000 );
 	
-		ROM_REGION( 0x0c00, REGION_PROMS, 0 )
-		ROM_LOAD( "hal21_1.prm",  0x000, 0x400, 0x195768fc )
-		ROM_LOAD( "hal21_2.prm",  0x400, 0x400, 0xc5d84225 )
-		ROM_LOAD( "hal21_3.prm",  0x800, 0x400, 0x605afff8 )
-	ROM_END
+		ROM_REGION( 0x0c00, REGION_PROMS, 0 );
+		ROM_LOAD( "hal21_1.prm",  0x000, 0x400, 0x195768fc );
+		ROM_LOAD( "hal21_2.prm",  0x400, 0x400, 0xc5d84225 );
+		ROM_LOAD( "hal21_3.prm",  0x800, 0x400, 0x605afff8 );
+	ROM_END(); }}; 
 	
-	ROM_START( aso )
-		ROM_REGION( 0x10000, REGION_CPU1, 0 )	/* 64k for cpuA code */
-		ROM_LOAD( "aso.1",    0x0000, 0x8000, 0x3fc9d5e4 )
-		ROM_LOAD( "aso.3",    0x8000, 0x4000, 0x39a666d2 )
+	static RomLoadPtr rom_aso = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x10000, REGION_CPU1, 0 );/* 64k for cpuA code */
+		ROM_LOAD( "aso.1",    0x0000, 0x8000, 0x3fc9d5e4 );
+		ROM_LOAD( "aso.3",    0x8000, 0x4000, 0x39a666d2 );
 	
-		ROM_REGION( 0x10000, REGION_CPU2, 0 )	/* 64k for cpuB code */
-		ROM_LOAD( "aso.4",    0x0000, 0x8000, 0x2429792b )
-		ROM_LOAD( "aso.6",    0x8000, 0x4000, 0xc0bfdf1f )
+		ROM_REGION( 0x10000, REGION_CPU2, 0 );/* 64k for cpuB code */
+		ROM_LOAD( "aso.4",    0x0000, 0x8000, 0x2429792b );
+		ROM_LOAD( "aso.6",    0x8000, 0x4000, 0xc0bfdf1f );
 	
-		ROM_REGION( 0x10000, REGION_CPU3, 0 )	/* 64k for sound code */
-		ROM_LOAD( "aso.7",    0x0000, 0x8000, 0x49258162 )  /* YM3526 */
-		ROM_LOAD( "aso.9",    0x8000, 0x4000, 0xaef5a4f4 )
+		ROM_REGION( 0x10000, REGION_CPU3, 0 );/* 64k for sound code */
+		ROM_LOAD( "aso.7",    0x0000, 0x8000, 0x49258162 ); /* YM3526 */
+		ROM_LOAD( "aso.9",    0x8000, 0x4000, 0xaef5a4f4 );
 	
-		ROM_REGION( 0x2000, REGION_GFX1, ROMREGION_DISPOSE ) /* characters */
-		ROM_LOAD( "aso.14",   0x0000, 0x2000, 0x8baa2253 )
+		ROM_REGION( 0x2000, REGION_GFX1, ROMREGION_DISPOSE );/* characters */
+		ROM_LOAD( "aso.14",   0x0000, 0x2000, 0x8baa2253 );
 	
-		ROM_REGION( 0x8000, REGION_GFX2, ROMREGION_DISPOSE ) /* background tiles */
-		ROM_LOAD( "aso.10",   0x0000, 0x8000, 0x00dff996 )
+		ROM_REGION( 0x8000, REGION_GFX2, ROMREGION_DISPOSE );/* background tiles */
+		ROM_LOAD( "aso.10",   0x0000, 0x8000, 0x00dff996 );
 	
-		ROM_REGION( 0x18000, REGION_GFX3, ROMREGION_DISPOSE ) /* 16x16 sprites */
-		ROM_LOAD( "aso.11",   0x00000, 0x8000, 0x7feac86c )
-		ROM_LOAD( "aso.12",   0x08000, 0x8000, 0x6895990b )
-		ROM_LOAD( "aso.13",   0x10000, 0x8000, 0x87a81ce1 )
+		ROM_REGION( 0x18000, REGION_GFX3, ROMREGION_DISPOSE );/* 16x16 sprites */
+		ROM_LOAD( "aso.11",   0x00000, 0x8000, 0x7feac86c );
+		ROM_LOAD( "aso.12",   0x08000, 0x8000, 0x6895990b );
+		ROM_LOAD( "aso.13",   0x10000, 0x8000, 0x87a81ce1 );
 	
-		ROM_REGION( 0x0c00, REGION_PROMS, 0 )
-		ROM_LOAD( "up02_f12.rom",  0x000, 0x00400, 0x5b0a0059 )
-		ROM_LOAD( "up02_f13.rom",  0x400, 0x00400, 0x37e28dd8 )
-		ROM_LOAD( "up02_f14.rom",  0x800, 0x00400, 0xc3fd1dd3 )
-	ROM_END
+		ROM_REGION( 0x0c00, REGION_PROMS, 0 );
+		ROM_LOAD( "up02_f12.rom",  0x000, 0x00400, 0x5b0a0059 );
+		ROM_LOAD( "up02_f13.rom",  0x400, 0x00400, 0x37e28dd8 );
+		ROM_LOAD( "up02_f14.rom",  0x800, 0x00400, 0xc3fd1dd3 );
+	ROM_END(); }}; 
 	
 	
 	

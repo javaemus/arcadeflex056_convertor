@@ -456,42 +456,42 @@ public class offtwall
 	 *
 	 *************************************/
 	
-	ROM_START( offtwall )
-		ROM_REGION( 0x40000, REGION_CPU1, 0 )	/* 4*64k for 68000 code */
-		ROM_LOAD16_BYTE( "otw2012.bin", 0x00000, 0x20000, 0xd08d81eb )
-		ROM_LOAD16_BYTE( "otw2013.bin", 0x00001, 0x20000, 0x61c2553d )
+	static RomLoadPtr rom_offtwall = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x40000, REGION_CPU1, 0 );/* 4*64k for 68000 code */
+		ROM_LOAD16_BYTE( "otw2012.bin", 0x00000, 0x20000, 0xd08d81eb );
+		ROM_LOAD16_BYTE( "otw2013.bin", 0x00001, 0x20000, 0x61c2553d );
 	
-		ROM_REGION( 0x14000, REGION_CPU2, 0 )	/* 64k for 6502 code */
-		ROM_LOAD( "otw1020.bin", 0x10000, 0x4000, 0x488112a5 )
-		ROM_CONTINUE(            0x04000, 0xc000 )
+		ROM_REGION( 0x14000, REGION_CPU2, 0 );/* 64k for 6502 code */
+		ROM_LOAD( "otw1020.bin", 0x10000, 0x4000, 0x488112a5 );
+		ROM_CONTINUE(            0x04000, 0xc000 );
 	
-		ROM_REGION( 0xc0000, REGION_GFX1, ROMREGION_DISPOSE )
-		ROM_LOAD( "otw1014.bin", 0x000000, 0x20000, 0x4d64507e )
-		ROM_LOAD( "otw1016.bin", 0x020000, 0x20000, 0xf5454f3a )
-		ROM_LOAD( "otw1018.bin", 0x040000, 0x20000, 0x17864231 )
-		ROM_LOAD( "otw1015.bin", 0x060000, 0x20000, 0x271f7856 )
-		ROM_LOAD( "otw1017.bin", 0x080000, 0x20000, 0x7f7f8012 )
-		ROM_LOAD( "otw1019.bin", 0x0a0000, 0x20000, 0x9efe511b )
-	ROM_END
+		ROM_REGION( 0xc0000, REGION_GFX1, ROMREGION_DISPOSE );
+		ROM_LOAD( "otw1014.bin", 0x000000, 0x20000, 0x4d64507e );
+		ROM_LOAD( "otw1016.bin", 0x020000, 0x20000, 0xf5454f3a );
+		ROM_LOAD( "otw1018.bin", 0x040000, 0x20000, 0x17864231 );
+		ROM_LOAD( "otw1015.bin", 0x060000, 0x20000, 0x271f7856 );
+		ROM_LOAD( "otw1017.bin", 0x080000, 0x20000, 0x7f7f8012 );
+		ROM_LOAD( "otw1019.bin", 0x0a0000, 0x20000, 0x9efe511b );
+	ROM_END(); }}; 
 	
 	
-	ROM_START( offtwalc )
-		ROM_REGION( 0x40000, REGION_CPU1, 0 )	/* 4*64k for 68000 code */
-		ROM_LOAD16_BYTE( "090-2612.rom", 0x00000, 0x20000, 0xfc891a3f )
-		ROM_LOAD16_BYTE( "090-2613.rom", 0x00001, 0x20000, 0x805d79d4 )
+	static RomLoadPtr rom_offtwalc = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x40000, REGION_CPU1, 0 );/* 4*64k for 68000 code */
+		ROM_LOAD16_BYTE( "090-2612.rom", 0x00000, 0x20000, 0xfc891a3f );
+		ROM_LOAD16_BYTE( "090-2613.rom", 0x00001, 0x20000, 0x805d79d4 );
 	
-		ROM_REGION( 0x14000, REGION_CPU2, 0 )	/* 64k for 6502 code */
-		ROM_LOAD( "otw1020.bin", 0x10000, 0x4000, 0x488112a5 )
-		ROM_CONTINUE(            0x04000, 0xc000 )
+		ROM_REGION( 0x14000, REGION_CPU2, 0 );/* 64k for 6502 code */
+		ROM_LOAD( "otw1020.bin", 0x10000, 0x4000, 0x488112a5 );
+		ROM_CONTINUE(            0x04000, 0xc000 );
 	
-		ROM_REGION( 0xc0000, REGION_GFX1, ROMREGION_DISPOSE )
-		ROM_LOAD( "090-1614.rom", 0x000000, 0x20000, 0x307ed447 )
-		ROM_LOAD( "090-1616.rom", 0x020000, 0x20000, 0xa5bd3d9b )
-		ROM_LOAD( "090-1618.rom", 0x040000, 0x20000, 0xc7d9df5d )
-		ROM_LOAD( "090-1615.rom", 0x060000, 0x20000, 0xac3642c7 )
-		ROM_LOAD( "090-1617.rom", 0x080000, 0x20000, 0x15208a89 )
-		ROM_LOAD( "090-1619.rom", 0x0a0000, 0x20000, 0x8a5d79b3 )
-	ROM_END
+		ROM_REGION( 0xc0000, REGION_GFX1, ROMREGION_DISPOSE );
+		ROM_LOAD( "090-1614.rom", 0x000000, 0x20000, 0x307ed447 );
+		ROM_LOAD( "090-1616.rom", 0x020000, 0x20000, 0xa5bd3d9b );
+		ROM_LOAD( "090-1618.rom", 0x040000, 0x20000, 0xc7d9df5d );
+		ROM_LOAD( "090-1615.rom", 0x060000, 0x20000, 0xac3642c7 );
+		ROM_LOAD( "090-1617.rom", 0x080000, 0x20000, 0x15208a89 );
+		ROM_LOAD( "090-1619.rom", 0x0a0000, 0x20000, 0x8a5d79b3 );
+	ROM_END(); }}; 
 	
 	
 	

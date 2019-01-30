@@ -501,110 +501,110 @@ public class cop01
 	
 	
 	
-	ROM_START( cop01 )
-		ROM_REGION( 0x10000, REGION_CPU1, 0 )     /* 64k for code */
-		ROM_LOAD( "cop01.2b",     0x0000, 0x4000, 0x5c2734ab )
-		ROM_LOAD( "cop02.4b",     0x4000, 0x4000, 0x9c7336ef )
-		ROM_LOAD( "cop03.5b",     0x8000, 0x4000, 0x2566c8bf )
+	static RomLoadPtr rom_cop01 = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x10000, REGION_CPU1, 0 );    /* 64k for code */
+		ROM_LOAD( "cop01.2b",     0x0000, 0x4000, 0x5c2734ab );
+		ROM_LOAD( "cop02.4b",     0x4000, 0x4000, 0x9c7336ef );
+		ROM_LOAD( "cop03.5b",     0x8000, 0x4000, 0x2566c8bf );
 	
-		ROM_REGION( 0x10000, REGION_CPU2, 0 )     /* 64k for code */
-		ROM_LOAD( "cop15.17b",    0x0000, 0x4000, 0x6a5f08fa )
-		ROM_LOAD( "cop16.18b",    0x4000, 0x4000, 0x56bf6946 )
+		ROM_REGION( 0x10000, REGION_CPU2, 0 );    /* 64k for code */
+		ROM_LOAD( "cop15.17b",    0x0000, 0x4000, 0x6a5f08fa );
+		ROM_LOAD( "cop16.18b",    0x4000, 0x4000, 0x56bf6946 );
 	
-		ROM_REGION( 0x02000, REGION_GFX1, ROMREGION_DISPOSE )
-		ROM_LOAD( "cop14.15g",    0x00000, 0x2000, 0x066d1c55 )	/* chars */
+		ROM_REGION( 0x02000, REGION_GFX1, ROMREGION_DISPOSE );
+		ROM_LOAD( "cop14.15g",    0x00000, 0x2000, 0x066d1c55 );/* chars */
 	
-		ROM_REGION( 0x08000, REGION_GFX2, ROMREGION_DISPOSE )
-		ROM_LOAD( "cop04.15c",    0x00000, 0x4000, 0x622d32e6 )	/* tiles */
-		ROM_LOAD( "cop05.16c",    0x04000, 0x4000, 0xc6ac5a35 )
+		ROM_REGION( 0x08000, REGION_GFX2, ROMREGION_DISPOSE );
+		ROM_LOAD( "cop04.15c",    0x00000, 0x4000, 0x622d32e6 );/* tiles */
+		ROM_LOAD( "cop05.16c",    0x04000, 0x4000, 0xc6ac5a35 );
 	
-		ROM_REGION( 0x10000, REGION_GFX3, ROMREGION_DISPOSE )
-		ROM_LOAD( "cop06.3g",     0x00000, 0x2000, 0xf1c1f4a5 )	/* sprites */
-		ROM_LOAD( "cop07.5g",     0x02000, 0x2000, 0x11db7b72 )
-		ROM_LOAD( "cop08.6g",     0x04000, 0x2000, 0xa63ddda6 )
-		ROM_LOAD( "cop09.8g",     0x06000, 0x2000, 0x855a2ec3 )
-		ROM_LOAD( "cop10.3e",     0x08000, 0x2000, 0x444cb19d )
-		ROM_LOAD( "cop11.5e",     0x0a000, 0x2000, 0x9078bc04 )
-		ROM_LOAD( "cop12.6e",     0x0c000, 0x2000, 0x257a6706 )
-		ROM_LOAD( "cop13.8e",     0x0e000, 0x2000, 0x07c4ea66 )
+		ROM_REGION( 0x10000, REGION_GFX3, ROMREGION_DISPOSE );
+		ROM_LOAD( "cop06.3g",     0x00000, 0x2000, 0xf1c1f4a5 );/* sprites */
+		ROM_LOAD( "cop07.5g",     0x02000, 0x2000, 0x11db7b72 );
+		ROM_LOAD( "cop08.6g",     0x04000, 0x2000, 0xa63ddda6 );
+		ROM_LOAD( "cop09.8g",     0x06000, 0x2000, 0x855a2ec3 );
+		ROM_LOAD( "cop10.3e",     0x08000, 0x2000, 0x444cb19d );
+		ROM_LOAD( "cop11.5e",     0x0a000, 0x2000, 0x9078bc04 );
+		ROM_LOAD( "cop12.6e",     0x0c000, 0x2000, 0x257a6706 );
+		ROM_LOAD( "cop13.8e",     0x0e000, 0x2000, 0x07c4ea66 );
 	
-		ROM_REGION( 0x0500, REGION_PROMS, 0 )
-		ROM_LOAD( "copproma.13d", 0x0000, 0x0100, 0x97f68a7a )	/* red */
-		ROM_LOAD( "coppromb.14d", 0x0100, 0x0100, 0x39a40b4c )	/* green */
-		ROM_LOAD( "coppromc.15d", 0x0200, 0x0100, 0x8181748b )	/* blue */
-		ROM_LOAD( "coppromd.19d", 0x0300, 0x0100, 0x6a63dbb8 )	/* tile lookup table */
-		ROM_LOAD( "copprome.2e",  0x0400, 0x0100, 0x214392fa )	/* sprite lookup table */
-	ROM_END
+		ROM_REGION( 0x0500, REGION_PROMS, 0 );
+		ROM_LOAD( "copproma.13d", 0x0000, 0x0100, 0x97f68a7a );/* red */
+		ROM_LOAD( "coppromb.14d", 0x0100, 0x0100, 0x39a40b4c );/* green */
+		ROM_LOAD( "coppromc.15d", 0x0200, 0x0100, 0x8181748b );/* blue */
+		ROM_LOAD( "coppromd.19d", 0x0300, 0x0100, 0x6a63dbb8 );/* tile lookup table */
+		ROM_LOAD( "copprome.2e",  0x0400, 0x0100, 0x214392fa );/* sprite lookup table */
+	ROM_END(); }}; 
 	
-	ROM_START( cop01a )
-		ROM_REGION( 0x10000, REGION_CPU1, 0 )     /* 64k for code */
-		ROM_LOAD( "cop01alt.001", 0x0000, 0x4000, 0xa13ee0d3 )
-		ROM_LOAD( "cop01alt.002", 0x4000, 0x4000, 0x20bad28e )
-		ROM_LOAD( "cop01alt.003", 0x8000, 0x4000, 0xa7e10b79 )
+	static RomLoadPtr rom_cop01a = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x10000, REGION_CPU1, 0 );    /* 64k for code */
+		ROM_LOAD( "cop01alt.001", 0x0000, 0x4000, 0xa13ee0d3 );
+		ROM_LOAD( "cop01alt.002", 0x4000, 0x4000, 0x20bad28e );
+		ROM_LOAD( "cop01alt.003", 0x8000, 0x4000, 0xa7e10b79 );
 	
-		ROM_REGION( 0x10000, REGION_CPU2, 0 )     /* 64k for code */
-		ROM_LOAD( "cop01alt.015", 0x0000, 0x4000, 0x95be9270 )
-		ROM_LOAD( "cop01alt.016", 0x4000, 0x4000, 0xc20bf649 )
+		ROM_REGION( 0x10000, REGION_CPU2, 0 );    /* 64k for code */
+		ROM_LOAD( "cop01alt.015", 0x0000, 0x4000, 0x95be9270 );
+		ROM_LOAD( "cop01alt.016", 0x4000, 0x4000, 0xc20bf649 );
 	
-		ROM_REGION( 0x02000, REGION_GFX1, ROMREGION_DISPOSE )
-		ROM_LOAD( "cop01alt.014", 0x00000, 0x2000, 0xedd8a474 )	/* chars */
+		ROM_REGION( 0x02000, REGION_GFX1, ROMREGION_DISPOSE );
+		ROM_LOAD( "cop01alt.014", 0x00000, 0x2000, 0xedd8a474 );/* chars */
 	
-		ROM_REGION( 0x08000, REGION_GFX2, ROMREGION_DISPOSE )
-		ROM_LOAD( "cop04.15c",    0x00000, 0x4000, 0x622d32e6 )	/* tiles */
-		ROM_LOAD( "cop05.16c",    0x04000, 0x4000, 0xc6ac5a35 )
+		ROM_REGION( 0x08000, REGION_GFX2, ROMREGION_DISPOSE );
+		ROM_LOAD( "cop04.15c",    0x00000, 0x4000, 0x622d32e6 );/* tiles */
+		ROM_LOAD( "cop05.16c",    0x04000, 0x4000, 0xc6ac5a35 );
 	
-		ROM_REGION( 0x10000, REGION_GFX3, ROMREGION_DISPOSE )
-		ROM_LOAD( "cop01alt.006", 0x00000, 0x2000, 0xcac7dac8 )	/* sprites */
-		ROM_LOAD( "cop07.5g",     0x02000, 0x2000, 0x11db7b72 )
-		ROM_LOAD( "cop08.6g",     0x04000, 0x2000, 0xa63ddda6 )
-		ROM_LOAD( "cop09.8g",     0x06000, 0x2000, 0x855a2ec3 )
-		ROM_LOAD( "cop01alt.010", 0x08000, 0x2000, 0x94aee9d6 )
-		ROM_LOAD( "cop11.5e",     0x0a000, 0x2000, 0x9078bc04 )
-		ROM_LOAD( "cop12.6e",     0x0c000, 0x2000, 0x257a6706 )
-		ROM_LOAD( "cop13.8e",     0x0e000, 0x2000, 0x07c4ea66 )
+		ROM_REGION( 0x10000, REGION_GFX3, ROMREGION_DISPOSE );
+		ROM_LOAD( "cop01alt.006", 0x00000, 0x2000, 0xcac7dac8 );/* sprites */
+		ROM_LOAD( "cop07.5g",     0x02000, 0x2000, 0x11db7b72 );
+		ROM_LOAD( "cop08.6g",     0x04000, 0x2000, 0xa63ddda6 );
+		ROM_LOAD( "cop09.8g",     0x06000, 0x2000, 0x855a2ec3 );
+		ROM_LOAD( "cop01alt.010", 0x08000, 0x2000, 0x94aee9d6 );
+		ROM_LOAD( "cop11.5e",     0x0a000, 0x2000, 0x9078bc04 );
+		ROM_LOAD( "cop12.6e",     0x0c000, 0x2000, 0x257a6706 );
+		ROM_LOAD( "cop13.8e",     0x0e000, 0x2000, 0x07c4ea66 );
 	
-		ROM_REGION( 0x0500, REGION_PROMS, 0 )
-		ROM_LOAD( "copproma.13d", 0x0000, 0x0100, 0x97f68a7a )	/* red */
-		ROM_LOAD( "coppromb.14d", 0x0100, 0x0100, 0x39a40b4c )	/* green */
-		ROM_LOAD( "coppromc.15d", 0x0200, 0x0100, 0x8181748b )	/* blue */
-		ROM_LOAD( "coppromd.19d", 0x0300, 0x0100, 0x6a63dbb8 )	/* tile lookup table */
-		ROM_LOAD( "copprome.2e",  0x0400, 0x0100, 0x214392fa )	/* sprite lookup table */
+		ROM_REGION( 0x0500, REGION_PROMS, 0 );
+		ROM_LOAD( "copproma.13d", 0x0000, 0x0100, 0x97f68a7a );/* red */
+		ROM_LOAD( "coppromb.14d", 0x0100, 0x0100, 0x39a40b4c );/* green */
+		ROM_LOAD( "coppromc.15d", 0x0200, 0x0100, 0x8181748b );/* blue */
+		ROM_LOAD( "coppromd.19d", 0x0300, 0x0100, 0x6a63dbb8 );/* tile lookup table */
+		ROM_LOAD( "copprome.2e",  0x0400, 0x0100, 0x214392fa );/* sprite lookup table */
 		/* a timing PROM (13B?) is probably missing */
-	ROM_END
+	ROM_END(); }}; 
 	
-	ROM_START( mightguy )
-		ROM_REGION( 0x60000, REGION_CPU1, 0 ) /* Z80 code (main cpu) */
-		ROM_LOAD( "1.2b",       0x0000, 0x4000,0xbc8e4557 )
-		ROM_LOAD( "2.4b",       0x4000, 0x4000,0xfb73d684 )
-		ROM_LOAD( "3.5b",       0x8000, 0x4000,0xb14b6ab8 )
+	static RomLoadPtr rom_mightguy = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x60000, REGION_CPU1, 0 );/* Z80 code (main cpu) */
+		ROM_LOAD( "1.2b",       0x0000, 0x4000,0xbc8e4557 );
+		ROM_LOAD( "2.4b",       0x4000, 0x4000,0xfb73d684 );
+		ROM_LOAD( "3.5b",       0x8000, 0x4000,0xb14b6ab8 );
 	
-		ROM_REGION( 0x10000, REGION_CPU2, 0 ) /* Z80 code (sound cpu) */
-		ROM_LOAD( "11.15b",     0x0000, 0x4000, 0x576183ea)
+		ROM_REGION( 0x10000, REGION_CPU2, 0 );/* Z80 code (sound cpu) */
+		ROM_LOAD( "11.15b",     0x0000, 0x4000, 0x576183ea);
 	
-		ROM_REGION( 0x8000, REGION_USER1, 0 ) /* 1412M2 protection data */
-		ROM_LOAD( "10.ic2",     0x0000, 0x8000, 0x1a5d2bb1 )
+		ROM_REGION( 0x8000, REGION_USER1, 0 );/* 1412M2 protection data */
+		ROM_LOAD( "10.ic2",     0x0000, 0x8000, 0x1a5d2bb1 );
 	
-		ROM_REGION( 0x02000, REGION_GFX1, ROMREGION_DISPOSE ) /* alpha */
-		ROM_LOAD( "10.15g",     0x0000, 0x2000, 0x17874300)
+		ROM_REGION( 0x02000, REGION_GFX1, ROMREGION_DISPOSE );/* alpha */
+		ROM_LOAD( "10.15g",     0x0000, 0x2000, 0x17874300);
 	
-		ROM_REGION( 0x08000, REGION_GFX2, ROMREGION_DISPOSE ) /* tiles */
-		ROM_LOAD( "4.15c",      0x0000, 0x4000,0x84d29e76 )
-		ROM_LOAD( "5.16c",      0x4000, 0x4000,0xf7bb8d82 )
+		ROM_REGION( 0x08000, REGION_GFX2, ROMREGION_DISPOSE );/* tiles */
+		ROM_LOAD( "4.15c",      0x0000, 0x4000,0x84d29e76 );
+		ROM_LOAD( "5.16c",      0x4000, 0x4000,0xf7bb8d82 );
 	
-		ROM_REGION( 0x14000, REGION_GFX3, ROMREGION_DISPOSE ) /* sprites */
-		ROM_LOAD( "6.3g",       0x00000, 0x2000, 0x6ff88615)
-		ROM_LOAD( "7.8g",       0x02000, 0x8000, 0xe79ea66f)
-		ROM_LOAD( "8.3e",       0x0a000, 0x2000, 0x29f6eb44)
-		ROM_LOAD( "9.8e",       0x0c000, 0x8000, 0xb9f64c6f)
+		ROM_REGION( 0x14000, REGION_GFX3, ROMREGION_DISPOSE );/* sprites */
+		ROM_LOAD( "6.3g",       0x00000, 0x2000, 0x6ff88615);
+		ROM_LOAD( "7.8g",       0x02000, 0x8000, 0xe79ea66f);
+		ROM_LOAD( "8.3e",       0x0a000, 0x2000, 0x29f6eb44);
+		ROM_LOAD( "9.8e",       0x0c000, 0x8000, 0xb9f64c6f);
 	
-		ROM_REGION( 0x600, REGION_PROMS, 0 )
-		ROM_LOAD( "clr.13d",    0x000, 0x100, 0xc4cf0bdd ) /* red */
-		ROM_LOAD( "clr.14d",    0x100, 0x100, 0x5b3b8a9b ) /* green */
-		ROM_LOAD( "clr.15d",    0x200, 0x100, 0x6c072a64 ) /* blue */
-		ROM_LOAD( "clr.19d",    0x300, 0x100, 0x19b66ac6 ) /* tile lookup table */
-		ROM_LOAD( "2e",         0x400, 0x100, 0xd9c45126 ) /* sprite lookup table */
-		ROM_LOAD( "13b",        0x500, 0x100, 0x4a6f9a6d ) /* state machine data used for video signals generation (not used in emulation)*/
-	ROM_END
+		ROM_REGION( 0x600, REGION_PROMS, 0 );
+		ROM_LOAD( "clr.13d",    0x000, 0x100, 0xc4cf0bdd );/* red */
+		ROM_LOAD( "clr.14d",    0x100, 0x100, 0x5b3b8a9b );/* green */
+		ROM_LOAD( "clr.15d",    0x200, 0x100, 0x6c072a64 );/* blue */
+		ROM_LOAD( "clr.19d",    0x300, 0x100, 0x19b66ac6 );/* tile lookup table */
+		ROM_LOAD( "2e",         0x400, 0x100, 0xd9c45126 );/* sprite lookup table */
+		ROM_LOAD( "13b",        0x500, 0x100, 0x4a6f9a6d );/* state machine data used for video signals generation (not used in emulation)*/
+	ROM_END(); }}; 
 	
 	
 	

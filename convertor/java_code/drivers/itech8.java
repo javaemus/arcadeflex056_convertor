@@ -1633,446 +1633,446 @@ public class itech8
 	 *
 	 *************************************/
 	
-	ROM_START( stratab )
-		ROM_REGION( 0x1c000, REGION_CPU1, 0 )
-		ROM_LOAD( "sbprogv3.bin", 0x08000, 0x8000, 0xa5ae728f )
-		ROM_COPY( REGION_CPU1,    0x8000, 0x14000, 0x8000 )
+	static RomLoadPtr rom_stratab = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x1c000, REGION_CPU1, 0 );
+		ROM_LOAD( "sbprogv3.bin", 0x08000, 0x8000, 0xa5ae728f );
+		ROM_COPY( REGION_CPU1,    0x8000, 0x14000, 0x8000 );
 	
-		ROM_REGION( 0x10000, REGION_CPU2, 0 )
-		ROM_LOAD( "sbsnds.bin", 0x08000, 0x8000, 0xb36c8f0a )
+		ROM_REGION( 0x10000, REGION_CPU2, 0 );
+		ROM_LOAD( "sbsnds.bin", 0x08000, 0x8000, 0xb36c8f0a );
 	
-		ROM_REGION( 0xc0000, REGION_GFX1, 0 )
-		ROM_LOAD( "grom0.bin", 0x00000, 0x20000, 0xa915b0bd )
-		ROM_LOAD( "grom1.bin", 0x20000, 0x20000, 0x340c661f )
-		ROM_LOAD( "grom2.bin", 0x40000, 0x20000, 0x5df9f1cf )
+		ROM_REGION( 0xc0000, REGION_GFX1, 0 );
+		ROM_LOAD( "grom0.bin", 0x00000, 0x20000, 0xa915b0bd );
+		ROM_LOAD( "grom1.bin", 0x20000, 0x20000, 0x340c661f );
+		ROM_LOAD( "grom2.bin", 0x40000, 0x20000, 0x5df9f1cf );
 	
-		ROM_REGION( 0x20000, REGION_SOUND1, 0 )
-		ROM_LOAD( "srom0.bin", 0x00000, 0x20000, 0x6ff390b9 )
-	ROM_END
-	
-	
-	ROM_START( wfortune )
-		ROM_REGION( 0x1c000, REGION_CPU1, 0 )
-		ROM_LOAD( "wofpgm", 0x04000, 0x4000, 0xbd984654 )
-		ROM_CONTINUE(       0x10000, 0xc000 )
-		ROM_COPY( REGION_CPU1, 0x14000, 0x8000, 0x8000 )
-	
-		ROM_REGION( 0x10000, REGION_CPU2, 0 )
-		ROM_LOAD( "wofsnd", 0x08000, 0x8000, 0x0a6aa5dc )
-	
-		ROM_REGION( 0xc0000, REGION_GFX1, 0 )
-		ROM_LOAD( "wofgrom0", 0x00000, 0x10000, 0x9a157b2c )
-		ROM_LOAD( "wofgrom1", 0x10000, 0x10000, 0x5064739b )
-		ROM_LOAD( "wofgrom2", 0x20000, 0x10000, 0x3d393b2b )
-		ROM_LOAD( "wofgrom3", 0x30000, 0x10000, 0x117a2ce9 )
-	
-		ROM_REGION( 0x20000, REGION_SOUND1, 0 )
-		ROM_LOAD( "wofsbom0", 0x00000, 0x20000, 0x5c28c3fe )
-	ROM_END
+		ROM_REGION( 0x20000, REGION_SOUND1, 0 );
+		ROM_LOAD( "srom0.bin", 0x00000, 0x20000, 0x6ff390b9 );
+	ROM_END(); }}; 
 	
 	
-	ROM_START( wfortuna )
-		ROM_REGION( 0x1c000, REGION_CPU1, 0 )
-		ROM_LOAD( "wofpgmr1.bin", 0x04000, 0x4000, 0xc3d3eb21 )
-		ROM_CONTINUE(             0x10000, 0xc000 )
-		ROM_COPY( REGION_CPU1, 0x14000, 0x8000, 0x8000 )
+	static RomLoadPtr rom_wfortune = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x1c000, REGION_CPU1, 0 );
+		ROM_LOAD( "wofpgm", 0x04000, 0x4000, 0xbd984654 );
+		ROM_CONTINUE(       0x10000, 0xc000 );
+		ROM_COPY( REGION_CPU1, 0x14000, 0x8000, 0x8000 );
 	
-		ROM_REGION( 0x10000, REGION_CPU2, 0 )
-		ROM_LOAD( "wofsnd", 0x08000, 0x8000, 0x0a6aa5dc )
+		ROM_REGION( 0x10000, REGION_CPU2, 0 );
+		ROM_LOAD( "wofsnd", 0x08000, 0x8000, 0x0a6aa5dc );
 	
-		ROM_REGION( 0xc0000, REGION_GFX1, 0 )
-		ROM_LOAD( "wofgrom0", 0x00000, 0x10000, 0x9a157b2c )
-		ROM_LOAD( "wofgrom1", 0x10000, 0x10000, 0x5064739b )
-		ROM_LOAD( "wofgrom2", 0x20000, 0x10000, 0x3d393b2b )
-		ROM_LOAD( "wofgrom3", 0x30000, 0x10000, 0x117a2ce9 )
+		ROM_REGION( 0xc0000, REGION_GFX1, 0 );
+		ROM_LOAD( "wofgrom0", 0x00000, 0x10000, 0x9a157b2c );
+		ROM_LOAD( "wofgrom1", 0x10000, 0x10000, 0x5064739b );
+		ROM_LOAD( "wofgrom2", 0x20000, 0x10000, 0x3d393b2b );
+		ROM_LOAD( "wofgrom3", 0x30000, 0x10000, 0x117a2ce9 );
 	
-		ROM_REGION( 0x20000, REGION_SOUND1, 0 )
-		ROM_LOAD( "wofsbom0", 0x00000, 0x20000, 0x5c28c3fe )
-	ROM_END
-	
-	
-	ROM_START( gtg )
-		ROM_REGION( 0x1c000, REGION_CPU1, 0 )
-		ROM_LOAD( "u5.bin", 0x04000, 0x4000, 0x61984272 )
-		ROM_CONTINUE(       0x10000, 0xc000 )
-		ROM_COPY( REGION_CPU1, 0x14000, 0x8000, 0x8000 )
-	
-		ROM_REGION( 0x10000, REGION_CPU2, 0 )
-		ROM_LOAD( "u27.bin", 0x08000, 0x8000, 0x358d2440 )
-	
-		ROM_REGION( 0xc0000, REGION_GFX1, 0 )
-		ROM_LOAD( "grom0.bin", 0x00000, 0x20000, 0xa29c688a )
-		ROM_LOAD( "grom1.bin", 0x20000, 0x20000, 0xb52a23f6 )
-		ROM_LOAD( "grom2.bin", 0x40000, 0x20000, 0x9b8e3a61 )
-		ROM_LOAD( "grom3.bin", 0x60000, 0x20000, 0xb6e9fb15 )
-		ROM_LOAD( "grom4.bin", 0x80000, 0x20000, 0xfaa16729 )
-		ROM_LOAD( "grom5.bin", 0xa0000, 0x20000, 0x5b393314 )
-	
-		ROM_REGION( 0x20000, REGION_SOUND1, 0 )
-		ROM_LOAD( "srom0.bin", 0x00000, 0x20000, 0x1cccbfdf )
-	ROM_END
+		ROM_REGION( 0x20000, REGION_SOUND1, 0 );
+		ROM_LOAD( "wofsbom0", 0x00000, 0x20000, 0x5c28c3fe );
+	ROM_END(); }}; 
 	
 	
-	ROM_START( slikshot )
-		ROM_REGION( 0x1c000, REGION_CPU1, 0 )
-		ROM_LOAD( "pgm20.u5",  0x04000, 0x4000, 0x370a00eb )
-		ROM_CONTINUE(          0x10000, 0xc000 )
-		ROM_COPY( REGION_CPU1, 0x14000, 0x8000, 0x8000 )
+	static RomLoadPtr rom_wfortuna = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x1c000, REGION_CPU1, 0 );
+		ROM_LOAD( "wofpgmr1.bin", 0x04000, 0x4000, 0xc3d3eb21 );
+		ROM_CONTINUE(             0x10000, 0xc000 );
+		ROM_COPY( REGION_CPU1, 0x14000, 0x8000, 0x8000 );
 	
-		ROM_REGION( 0x10000, REGION_CPU2, 0 )
-		ROM_LOAD( "u27.bin", 0x08000, 0x8000, 0xa96ce0f7 )
+		ROM_REGION( 0x10000, REGION_CPU2, 0 );
+		ROM_LOAD( "wofsnd", 0x08000, 0x8000, 0x0a6aa5dc );
 	
-		ROM_REGION( 0x10000, REGION_CPU3, 0 )
-		ROM_LOAD( "u53.bin", 0x00000, 0x0800, 0x04b85918 )
-		ROM_CONTINUE(        0x00000, 0x0800 )
-		ROM_CONTINUE(        0x00000, 0x0800 )
-		ROM_CONTINUE(        0x00000, 0x0800 )
+		ROM_REGION( 0xc0000, REGION_GFX1, 0 );
+		ROM_LOAD( "wofgrom0", 0x00000, 0x10000, 0x9a157b2c );
+		ROM_LOAD( "wofgrom1", 0x10000, 0x10000, 0x5064739b );
+		ROM_LOAD( "wofgrom2", 0x20000, 0x10000, 0x3d393b2b );
+		ROM_LOAD( "wofgrom3", 0x30000, 0x10000, 0x117a2ce9 );
 	
-		ROM_REGION( 0xc0000, REGION_GFX1, 0 )
-		ROM_LOAD( "grom0.bin", 0x00000, 0x20000, 0xe60c2804 )
-		ROM_LOAD( "grom1.bin", 0x20000, 0x20000, 0xd764d542 )
-	
-		ROM_REGION( 0x10000, REGION_SOUND1, 0 )
-		ROM_LOAD( "srom0.bin", 0x00000, 0x10000, 0x4b075f5e )
-	ROM_END
+		ROM_REGION( 0x20000, REGION_SOUND1, 0 );
+		ROM_LOAD( "wofsbom0", 0x00000, 0x20000, 0x5c28c3fe );
+	ROM_END(); }}; 
 	
 	
-	ROM_START( sliksh17 )
-		ROM_REGION( 0x1c000, REGION_CPU1, 0 )
-		ROM_LOAD( "u5.bin", 0x04000, 0x4000, 0x09d70554 )
-		ROM_CONTINUE(       0x10000, 0xc000 )
-		ROM_COPY( REGION_CPU1, 0x14000, 0x8000, 0x8000 )
+	static RomLoadPtr rom_gtg = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x1c000, REGION_CPU1, 0 );
+		ROM_LOAD( "u5.bin", 0x04000, 0x4000, 0x61984272 );
+		ROM_CONTINUE(       0x10000, 0xc000 );
+		ROM_COPY( REGION_CPU1, 0x14000, 0x8000, 0x8000 );
 	
-		ROM_REGION( 0x10000, REGION_CPU2, 0 )
-		ROM_LOAD( "u27.bin", 0x08000, 0x8000, 0xa96ce0f7 )
+		ROM_REGION( 0x10000, REGION_CPU2, 0 );
+		ROM_LOAD( "u27.bin", 0x08000, 0x8000, 0x358d2440 );
 	
-		ROM_REGION( 0x10000, REGION_CPU3, 0 )
-		ROM_LOAD( "u53.bin", 0x00000, 0x0800, 0x04b85918 )
-		ROM_CONTINUE(        0x00000, 0x0800 )
-		ROM_CONTINUE(        0x00000, 0x0800 )
-		ROM_CONTINUE(        0x00000, 0x0800 )
+		ROM_REGION( 0xc0000, REGION_GFX1, 0 );
+		ROM_LOAD( "grom0.bin", 0x00000, 0x20000, 0xa29c688a );
+		ROM_LOAD( "grom1.bin", 0x20000, 0x20000, 0xb52a23f6 );
+		ROM_LOAD( "grom2.bin", 0x40000, 0x20000, 0x9b8e3a61 );
+		ROM_LOAD( "grom3.bin", 0x60000, 0x20000, 0xb6e9fb15 );
+		ROM_LOAD( "grom4.bin", 0x80000, 0x20000, 0xfaa16729 );
+		ROM_LOAD( "grom5.bin", 0xa0000, 0x20000, 0x5b393314 );
 	
-		ROM_REGION( 0xc0000, REGION_GFX1, 0 )
-		ROM_LOAD( "grom0.bin", 0x00000, 0x20000, 0xe60c2804 )
-		ROM_LOAD( "grom1.bin", 0x20000, 0x20000, 0xd764d542 )
-	
-		ROM_REGION( 0x10000, REGION_SOUND1, 0 )
-		ROM_LOAD( "srom0.bin", 0x00000, 0x10000, 0x4b075f5e )
-	ROM_END
+		ROM_REGION( 0x20000, REGION_SOUND1, 0 );
+		ROM_LOAD( "srom0.bin", 0x00000, 0x20000, 0x1cccbfdf );
+	ROM_END(); }}; 
 	
 	
-	ROM_START( sstrike )
-		ROM_REGION( 0x1c000, REGION_CPU1, 0 )
-		ROM_LOAD( "sstrku5.bin", 0x08000, 0x8000, 0xaf00cddf )
-		ROM_COPY( REGION_CPU1,    0x8000, 0x14000, 0x8000 )
+	static RomLoadPtr rom_slikshot = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x1c000, REGION_CPU1, 0 );
+		ROM_LOAD( "pgm20.u5",  0x04000, 0x4000, 0x370a00eb );
+		ROM_CONTINUE(          0x10000, 0xc000 );
+		ROM_COPY( REGION_CPU1, 0x14000, 0x8000, 0x8000 );
 	
-		ROM_REGION( 0x10000, REGION_CPU2, 0 )
-		ROM_LOAD( "sstrku27.bin", 0x08000, 0x8000, 0xefab7252 )
+		ROM_REGION( 0x10000, REGION_CPU2, 0 );
+		ROM_LOAD( "u27.bin", 0x08000, 0x8000, 0xa96ce0f7 );
 	
-		ROM_REGION( 0x10000, REGION_CPU3, 0 )
-		ROM_LOAD( "spstku53.bin", 0x00000, 0x0800, 0x04b85918 )
-		ROM_CONTINUE(        0x00000, 0x0800 )
-		ROM_CONTINUE(        0x00000, 0x0800 )
-		ROM_CONTINUE(        0x00000, 0x0800 )
+		ROM_REGION( 0x10000, REGION_CPU3, 0 );
+		ROM_LOAD( "u53.bin", 0x00000, 0x0800, 0x04b85918 );
+		ROM_CONTINUE(        0x00000, 0x0800 );
+		ROM_CONTINUE(        0x00000, 0x0800 );
+		ROM_CONTINUE(        0x00000, 0x0800 );
 	
-		ROM_REGION( 0xc0000, REGION_GFX1, 0 )
-		ROM_LOAD( "sstgrom0.bin", 0x00000, 0x20000, 0x9cfb9849 )
-		ROM_LOAD( "sstgrom1.bin", 0x20000, 0x20000, 0xd9ea14e1 )
-		ROM_LOAD( "sstgrom2.bin", 0x40000, 0x20000, 0xdcd97bf7 )
+		ROM_REGION( 0xc0000, REGION_GFX1, 0 );
+		ROM_LOAD( "grom0.bin", 0x00000, 0x20000, 0xe60c2804 );
+		ROM_LOAD( "grom1.bin", 0x20000, 0x20000, 0xd764d542 );
 	
-		ROM_REGION( 0x20000, REGION_SOUND1, 0 )
-		ROM_LOAD( "sstsrom0.bin", 0x00000, 0x20000, 0x6ff390b9 )
-	ROM_END
+		ROM_REGION( 0x10000, REGION_SOUND1, 0 );
+		ROM_LOAD( "srom0.bin", 0x00000, 0x10000, 0x4b075f5e );
+	ROM_END(); }}; 
 	
 	
-	ROM_START( gtg2 )
+	static RomLoadPtr rom_sliksh17 = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x1c000, REGION_CPU1, 0 );
+		ROM_LOAD( "u5.bin", 0x04000, 0x4000, 0x09d70554 );
+		ROM_CONTINUE(       0x10000, 0xc000 );
+		ROM_COPY( REGION_CPU1, 0x14000, 0x8000, 0x8000 );
+	
+		ROM_REGION( 0x10000, REGION_CPU2, 0 );
+		ROM_LOAD( "u27.bin", 0x08000, 0x8000, 0xa96ce0f7 );
+	
+		ROM_REGION( 0x10000, REGION_CPU3, 0 );
+		ROM_LOAD( "u53.bin", 0x00000, 0x0800, 0x04b85918 );
+		ROM_CONTINUE(        0x00000, 0x0800 );
+		ROM_CONTINUE(        0x00000, 0x0800 );
+		ROM_CONTINUE(        0x00000, 0x0800 );
+	
+		ROM_REGION( 0xc0000, REGION_GFX1, 0 );
+		ROM_LOAD( "grom0.bin", 0x00000, 0x20000, 0xe60c2804 );
+		ROM_LOAD( "grom1.bin", 0x20000, 0x20000, 0xd764d542 );
+	
+		ROM_REGION( 0x10000, REGION_SOUND1, 0 );
+		ROM_LOAD( "srom0.bin", 0x00000, 0x10000, 0x4b075f5e );
+	ROM_END(); }}; 
+	
+	
+	static RomLoadPtr rom_sstrike = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x1c000, REGION_CPU1, 0 );
+		ROM_LOAD( "sstrku5.bin", 0x08000, 0x8000, 0xaf00cddf );
+		ROM_COPY( REGION_CPU1,    0x8000, 0x14000, 0x8000 );
+	
+		ROM_REGION( 0x10000, REGION_CPU2, 0 );
+		ROM_LOAD( "sstrku27.bin", 0x08000, 0x8000, 0xefab7252 );
+	
+		ROM_REGION( 0x10000, REGION_CPU3, 0 );
+		ROM_LOAD( "spstku53.bin", 0x00000, 0x0800, 0x04b85918 );
+		ROM_CONTINUE(        0x00000, 0x0800 );
+		ROM_CONTINUE(        0x00000, 0x0800 );
+		ROM_CONTINUE(        0x00000, 0x0800 );
+	
+		ROM_REGION( 0xc0000, REGION_GFX1, 0 );
+		ROM_LOAD( "sstgrom0.bin", 0x00000, 0x20000, 0x9cfb9849 );
+		ROM_LOAD( "sstgrom1.bin", 0x20000, 0x20000, 0xd9ea14e1 );
+		ROM_LOAD( "sstgrom2.bin", 0x40000, 0x20000, 0xdcd97bf7 );
+	
+		ROM_REGION( 0x20000, REGION_SOUND1, 0 );
+		ROM_LOAD( "sstsrom0.bin", 0x00000, 0x20000, 0x6ff390b9 );
+	ROM_END(); }}; 
+	
+	
+	static RomLoadPtr rom_gtg2 = new RomLoadPtr(){ public void handler(){ 
 		/* banks are loaded in the opposite order from the others, */
-		ROM_REGION( 0x1c000, REGION_CPU1, 0 )
-		ROM_LOAD( "u5.2",   0x10000, 0x4000, 0x4a61580f )
-		ROM_CONTINUE(       0x04000, 0xc000 )
-		ROM_COPY( REGION_CPU1, 0x8000, 0x14000, 0x8000 )
+		ROM_REGION( 0x1c000, REGION_CPU1, 0 );
+		ROM_LOAD( "u5.2",   0x10000, 0x4000, 0x4a61580f );
+		ROM_CONTINUE(       0x04000, 0xc000 );
+		ROM_COPY( REGION_CPU1, 0x8000, 0x14000, 0x8000 );
 	
-		ROM_REGION( 0x10000, REGION_CPU2, 0 )
-		ROM_LOAD( "u27.2", 0x08000, 0x8000, 0x55734876 )
+		ROM_REGION( 0x10000, REGION_CPU2, 0 );
+		ROM_LOAD( "u27.2", 0x08000, 0x8000, 0x55734876 );
 	
-		ROM_REGION( 0xc0000, REGION_GFX1, 0 )
-		ROM_LOAD( "grom0.bin", 0x00000, 0x20000, 0xa29c688a )
-		ROM_LOAD( "grom1.bin", 0x20000, 0x20000, 0xa4182776 )
-		ROM_LOAD( "grom2.bin", 0x40000, 0x20000, 0x0580bb99 )
-		ROM_LOAD( "grom3.bin", 0x60000, 0x20000, 0x89edb624 )
-		ROM_LOAD( "grom4.bin", 0x80000, 0x20000, 0xf6557950 )
-		ROM_LOAD( "grom5.bin", 0xa0000, 0x20000, 0xa680ce6a )
+		ROM_REGION( 0xc0000, REGION_GFX1, 0 );
+		ROM_LOAD( "grom0.bin", 0x00000, 0x20000, 0xa29c688a );
+		ROM_LOAD( "grom1.bin", 0x20000, 0x20000, 0xa4182776 );
+		ROM_LOAD( "grom2.bin", 0x40000, 0x20000, 0x0580bb99 );
+		ROM_LOAD( "grom3.bin", 0x60000, 0x20000, 0x89edb624 );
+		ROM_LOAD( "grom4.bin", 0x80000, 0x20000, 0xf6557950 );
+		ROM_LOAD( "grom5.bin", 0xa0000, 0x20000, 0xa680ce6a );
 	
-		ROM_REGION( 0x20000, REGION_SOUND1, 0 )
-		ROM_LOAD( "vr-srom0", 0x00000, 0x20000, 0x4dd4db42 )
-	ROM_END
+		ROM_REGION( 0x20000, REGION_SOUND1, 0 );
+		ROM_LOAD( "vr-srom0", 0x00000, 0x20000, 0x4dd4db42 );
+	ROM_END(); }}; 
 	
 	
-	ROM_START( gtg2t )
+	static RomLoadPtr rom_gtg2t = new RomLoadPtr(){ public void handler(){ 
 		/* banks are loaded in the opposite order from the others, */
-		ROM_REGION( 0x1c000, REGION_CPU1, 0 )
-		ROM_LOAD( "u5",     0x10000, 0x4000, 0xc7b3a9f3 )
-		ROM_CONTINUE(       0x04000, 0xc000 )
-		ROM_COPY( REGION_CPU1, 0x8000, 0x14000, 0x8000 )
+		ROM_REGION( 0x1c000, REGION_CPU1, 0 );
+		ROM_LOAD( "u5",     0x10000, 0x4000, 0xc7b3a9f3 );
+		ROM_CONTINUE(       0x04000, 0xc000 );
+		ROM_COPY( REGION_CPU1, 0x8000, 0x14000, 0x8000 );
 	
-		ROM_REGION( 0x10000, REGION_CPU2, 0 )
-		ROM_LOAD( "u27.bin", 0x08000, 0x8000, 0xdd2a5905 )
+		ROM_REGION( 0x10000, REGION_CPU2, 0 );
+		ROM_LOAD( "u27.bin", 0x08000, 0x8000, 0xdd2a5905 );
 	
-		ROM_REGION( 0xc0000, REGION_GFX1, 0 )
-		ROM_LOAD( "grom0.bin", 0x00000, 0x20000, 0xa29c688a )
-		ROM_LOAD( "grom1.bin", 0x20000, 0x20000, 0xa4182776 )
-		ROM_LOAD( "grom2.bin", 0x40000, 0x20000, 0x0580bb99 )
-		ROM_LOAD( "grom3.bin", 0x60000, 0x20000, 0x89edb624 )
-		ROM_LOAD( "grom4.bin", 0x80000, 0x20000, 0xf6557950 )
-		ROM_LOAD( "grom5.bin", 0xa0000, 0x20000, 0xa680ce6a )
+		ROM_REGION( 0xc0000, REGION_GFX1, 0 );
+		ROM_LOAD( "grom0.bin", 0x00000, 0x20000, 0xa29c688a );
+		ROM_LOAD( "grom1.bin", 0x20000, 0x20000, 0xa4182776 );
+		ROM_LOAD( "grom2.bin", 0x40000, 0x20000, 0x0580bb99 );
+		ROM_LOAD( "grom3.bin", 0x60000, 0x20000, 0x89edb624 );
+		ROM_LOAD( "grom4.bin", 0x80000, 0x20000, 0xf6557950 );
+		ROM_LOAD( "grom5.bin", 0xa0000, 0x20000, 0xa680ce6a );
 	
-		ROM_REGION( 0x20000, REGION_SOUND1, 0 )
-		ROM_LOAD( "vr-srom0", 0x00000, 0x20000, 0x4dd4db42 )
-	ROM_END
-	
-	
-	ROM_START( gtg2j )
-		ROM_REGION( 0x1c000, REGION_CPU1, 0 )
-		ROM_LOAD( "u5.bin", 0x04000, 0x4000, 0x9c95ceaa )
-		ROM_CONTINUE(       0x10000, 0xc000 )
-		ROM_COPY( REGION_CPU1, 0x14000, 0x8000, 0x8000 )
-	
-		ROM_REGION( 0x10000, REGION_CPU2, 0 )
-		ROM_LOAD( "u27.bin", 0x08000, 0x8000, 0xdd2a5905 )
-	
-		ROM_REGION( 0xc0000, REGION_GFX1, 0 )
-		ROM_LOAD( "grom0.bin", 0x00000, 0x20000, 0xa29c688a )
-		ROM_LOAD( "grom1.bin", 0x20000, 0x20000, 0xa4182776 )
-		ROM_LOAD( "grom2.bin", 0x40000, 0x20000, 0x0580bb99 )
-		ROM_LOAD( "grom3.bin", 0x60000, 0x20000, 0x89edb624 )
-		ROM_LOAD( "grom4.bin", 0x80000, 0x20000, 0xf6557950 )
-		ROM_LOAD( "grom5.bin", 0xa0000, 0x20000, 0xa680ce6a )
-	
-		ROM_REGION( 0x20000, REGION_SOUND1, 0 )
-		ROM_LOAD( "srom0.bin", 0x00000, 0x20000, 0x1cccbfdf )
-	ROM_END
+		ROM_REGION( 0x20000, REGION_SOUND1, 0 );
+		ROM_LOAD( "vr-srom0", 0x00000, 0x20000, 0x4dd4db42 );
+	ROM_END(); }}; 
 	
 	
-	ROM_START( arlingtn )
+	static RomLoadPtr rom_gtg2j = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x1c000, REGION_CPU1, 0 );
+		ROM_LOAD( "u5.bin", 0x04000, 0x4000, 0x9c95ceaa );
+		ROM_CONTINUE(       0x10000, 0xc000 );
+		ROM_COPY( REGION_CPU1, 0x14000, 0x8000, 0x8000 );
+	
+		ROM_REGION( 0x10000, REGION_CPU2, 0 );
+		ROM_LOAD( "u27.bin", 0x08000, 0x8000, 0xdd2a5905 );
+	
+		ROM_REGION( 0xc0000, REGION_GFX1, 0 );
+		ROM_LOAD( "grom0.bin", 0x00000, 0x20000, 0xa29c688a );
+		ROM_LOAD( "grom1.bin", 0x20000, 0x20000, 0xa4182776 );
+		ROM_LOAD( "grom2.bin", 0x40000, 0x20000, 0x0580bb99 );
+		ROM_LOAD( "grom3.bin", 0x60000, 0x20000, 0x89edb624 );
+		ROM_LOAD( "grom4.bin", 0x80000, 0x20000, 0xf6557950 );
+		ROM_LOAD( "grom5.bin", 0xa0000, 0x20000, 0xa680ce6a );
+	
+		ROM_REGION( 0x20000, REGION_SOUND1, 0 );
+		ROM_LOAD( "srom0.bin", 0x00000, 0x20000, 0x1cccbfdf );
+	ROM_END(); }}; 
+	
+	
+	static RomLoadPtr rom_arlingtn = new RomLoadPtr(){ public void handler(){ 
 		/* banks are loaded in the opposite order from the others, */
-		ROM_REGION( 0x1c000, REGION_CPU1, 0 )
-		ROM_LOAD( "ahrd121.bin", 0x10000, 0x4000, 0x00aae02e )
-		ROM_CONTINUE(            0x04000, 0xc000 )
-		ROM_COPY( REGION_CPU1, 0x8000, 0x14000, 0x8000 )
+		ROM_REGION( 0x1c000, REGION_CPU1, 0 );
+		ROM_LOAD( "ahrd121.bin", 0x10000, 0x4000, 0x00aae02e );
+		ROM_CONTINUE(            0x04000, 0xc000 );
+		ROM_COPY( REGION_CPU1, 0x8000, 0x14000, 0x8000 );
 	
-		ROM_REGION( 0x10000, REGION_CPU2, 0 )
-		ROM_LOAD( "ahrsnd11.bin", 0x08000, 0x8000, 0xdec57dca )
+		ROM_REGION( 0x10000, REGION_CPU2, 0 );
+		ROM_LOAD( "ahrsnd11.bin", 0x08000, 0x8000, 0xdec57dca );
 	
-		ROM_REGION( 0xc0000, REGION_GFX1, 0 )
-		ROM_LOAD( "grom0.bin", 0x00000, 0x20000, 0x5ef57fe5 )
-		ROM_LOAD( "grom1.bin", 0x20000, 0x20000, 0x6aca95c0 )
-		ROM_LOAD( "grom2.bin", 0x40000, 0x10000, 0x6d6fde1b )
+		ROM_REGION( 0xc0000, REGION_GFX1, 0 );
+		ROM_LOAD( "grom0.bin", 0x00000, 0x20000, 0x5ef57fe5 );
+		ROM_LOAD( "grom1.bin", 0x20000, 0x20000, 0x6aca95c0 );
+		ROM_LOAD( "grom2.bin", 0x40000, 0x10000, 0x6d6fde1b );
 	
-		ROM_REGION( 0x40000, REGION_SOUND1, 0 )
-		ROM_LOAD( "srom0.bin", 0x00000, 0x40000, 0x56087f81 )
-	ROM_END
+		ROM_REGION( 0x40000, REGION_SOUND1, 0 );
+		ROM_LOAD( "srom0.bin", 0x00000, 0x40000, 0x56087f81 );
+	ROM_END(); }}; 
 	
 	
-	ROM_START( neckneck )
+	static RomLoadPtr rom_neckneck = new RomLoadPtr(){ public void handler(){ 
 		/* banks are loaded in the opposite order from the others, */
-		ROM_REGION( 0x1c000, REGION_CPU1, 0 )
-		ROM_LOAD( "nn_prg12.u5", 0x04000, 0x4000, 0x8e51734a )
-		ROM_CONTINUE(            0x10000, 0xc000 )
-		ROM_COPY( REGION_CPU1, 0x14000, 0x8000, 0x8000 )
+		ROM_REGION( 0x1c000, REGION_CPU1, 0 );
+		ROM_LOAD( "nn_prg12.u5", 0x04000, 0x4000, 0x8e51734a );
+		ROM_CONTINUE(            0x10000, 0xc000 );
+		ROM_COPY( REGION_CPU1, 0x14000, 0x8000, 0x8000 );
 	
-		ROM_REGION( 0x10000, REGION_CPU2, 0 )
-		ROM_LOAD( "nn_snd10.u27", 0x08000, 0x8000, 0x74771b2f )
+		ROM_REGION( 0x10000, REGION_CPU2, 0 );
+		ROM_LOAD( "nn_snd10.u27", 0x08000, 0x8000, 0x74771b2f );
 	
-		ROM_REGION( 0xc0000, REGION_GFX1, 0 )
-		ROM_LOAD( "nn_grom0.bin", 0x00000, 0x20000, 0x064d1464 )
-		ROM_LOAD( "nn_grom1.bin", 0x20000, 0x20000, 0x622d9a0b )
-		ROM_LOAD( "nn_grom2.bin", 0x40000, 0x20000, 0xe7eb4020 )
-		ROM_LOAD( "nn_grom3.bin", 0x60000, 0x20000, 0x765c8593 )
+		ROM_REGION( 0xc0000, REGION_GFX1, 0 );
+		ROM_LOAD( "nn_grom0.bin", 0x00000, 0x20000, 0x064d1464 );
+		ROM_LOAD( "nn_grom1.bin", 0x20000, 0x20000, 0x622d9a0b );
+		ROM_LOAD( "nn_grom2.bin", 0x40000, 0x20000, 0xe7eb4020 );
+		ROM_LOAD( "nn_grom3.bin", 0x60000, 0x20000, 0x765c8593 );
 	
-		ROM_REGION( 0x40000, REGION_SOUND1, 0 )
-		ROM_LOAD( "nn_srom0.bin", 0x00000, 0x40000, 0x33687201 )
-	ROM_END
-	
-	
-	ROM_START( peggle )
-		ROM_REGION( 0x1c000, REGION_CPU1, 0 )
-		ROM_LOAD( "j-stick.u5", 0x04000, 0x4000, 0x140d5a9c )
-		ROM_CONTINUE(           0x10000, 0xc000 )
-		ROM_COPY( REGION_CPU1, 0x14000, 0x8000, 0x8000 )
-	
-		ROM_REGION( 0x10000, REGION_CPU2, 0 )
-		ROM_LOAD( "sound.u27", 0x08000, 0x8000, 0xb99beb70 )
-	
-		ROM_REGION( 0xc0000, REGION_GFX1, 0 )
-		ROM_LOAD( "grom0.bin", 0x00000, 0x20000, 0x5c02348d )
-		ROM_LOAD( "grom1.bin", 0x20000, 0x20000, 0x85a7a3a2 )
-		ROM_LOAD( "grom2.bin", 0x40000, 0x20000, 0xbfe11f18 )
-	
-		ROM_REGION( 0x20000, REGION_SOUND1, 0 )
-		ROM_LOAD( "srom0", 0x00000, 0x20000, 0x001846ea )
-	ROM_END
+		ROM_REGION( 0x40000, REGION_SOUND1, 0 );
+		ROM_LOAD( "nn_srom0.bin", 0x00000, 0x40000, 0x33687201 );
+	ROM_END(); }}; 
 	
 	
-	ROM_START( pegglet )
-		ROM_REGION( 0x1c000, REGION_CPU1, 0 )
-		ROM_LOAD( "trakball.u5", 0x04000, 0x4000, 0xd2694868 )
-		ROM_CONTINUE(            0x10000, 0xc000 )
-		ROM_COPY( REGION_CPU1, 0x14000, 0x8000, 0x8000 )
+	static RomLoadPtr rom_peggle = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x1c000, REGION_CPU1, 0 );
+		ROM_LOAD( "j-stick.u5", 0x04000, 0x4000, 0x140d5a9c );
+		ROM_CONTINUE(           0x10000, 0xc000 );
+		ROM_COPY( REGION_CPU1, 0x14000, 0x8000, 0x8000 );
 	
-		ROM_REGION( 0x10000, REGION_CPU2, 0 )
-		ROM_LOAD( "sound.u27", 0x08000, 0x8000, 0xb99beb70 )
+		ROM_REGION( 0x10000, REGION_CPU2, 0 );
+		ROM_LOAD( "sound.u27", 0x08000, 0x8000, 0xb99beb70 );
 	
-		ROM_REGION( 0xc0000, REGION_GFX1, 0 )
-		ROM_LOAD( "grom0.bin", 0x00000, 0x20000, 0x5c02348d )
-		ROM_LOAD( "grom1.bin", 0x20000, 0x20000, 0x85a7a3a2 )
-		ROM_LOAD( "grom2.bin", 0x40000, 0x20000, 0xbfe11f18 )
+		ROM_REGION( 0xc0000, REGION_GFX1, 0 );
+		ROM_LOAD( "grom0.bin", 0x00000, 0x20000, 0x5c02348d );
+		ROM_LOAD( "grom1.bin", 0x20000, 0x20000, 0x85a7a3a2 );
+		ROM_LOAD( "grom2.bin", 0x40000, 0x20000, 0xbfe11f18 );
 	
-		ROM_REGION( 0x20000, REGION_SOUND1, 0 )
-		ROM_LOAD( "srom0", 0x00000, 0x20000, 0x001846ea )
-	ROM_END
-	
-	
-	ROM_START( hstennis )
-		ROM_REGION( 0x1c000, REGION_CPU1, 0 )
-		ROM_LOAD( "ten_v1_1.bin", 0x04000, 0x4000, 0xfaffab5c )
-		ROM_CONTINUE(             0x10000, 0xc000 )
-		ROM_COPY( REGION_CPU1, 0x14000, 0x8000, 0x8000 )
-	
-		ROM_REGION( 0x10000, REGION_CPU2, 0 )
-		ROM_LOAD( "tensd_v1.bin", 0x08000, 0x8000, 0xf034a694 )
-	
-		ROM_REGION( 0xc0000, REGION_GFX1, 0 )
-		ROM_LOAD( "grom0.bin", 0x00000, 0x20000, 0x1e69ebae )
-		ROM_LOAD( "grom1.bin", 0x20000, 0x20000, 0x4e6a22d5 )
-		ROM_LOAD( "grom2.bin", 0x40000, 0x20000, 0xc0b643a9 )
-		ROM_LOAD( "grom3.bin", 0x60000, 0x20000, 0x54afb456 )
-		ROM_LOAD( "grom4.bin", 0x80000, 0x20000, 0xee09d645 )
-	
-		ROM_REGION( 0x20000, REGION_SOUND1, 0 )
-		ROM_LOAD( "srom0.bin", 0x00000, 0x20000, 0xd9ce58c3 )
-	ROM_END
+		ROM_REGION( 0x20000, REGION_SOUND1, 0 );
+		ROM_LOAD( "srom0", 0x00000, 0x20000, 0x001846ea );
+	ROM_END(); }}; 
 	
 	
-	ROM_START( rimrockn )
-		ROM_REGION( 0x34000, REGION_CPU1, 0 )
-		ROM_LOAD( "u5-2_2",    0x04000, 0x4000, 0x97777683 )
-		ROM_CONTINUE(          0x10000, 0x4000 )
-		ROM_CONTINUE(          0x1c000, 0x4000 )
-		ROM_CONTINUE(          0x28000, 0xc000 )
-		ROM_CONTINUE(          0x2c000, 0x8000 )
-		ROM_COPY( REGION_CPU1, 0x2c000, 0x08000, 0x8000 )
-		ROM_COPY( REGION_CPU1, 0x2c000, 0x14000, 0x8000 )
-		ROM_COPY( REGION_CPU1, 0x2c000, 0x20000, 0x8000 )
+	static RomLoadPtr rom_pegglet = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x1c000, REGION_CPU1, 0 );
+		ROM_LOAD( "trakball.u5", 0x04000, 0x4000, 0xd2694868 );
+		ROM_CONTINUE(            0x10000, 0xc000 );
+		ROM_COPY( REGION_CPU1, 0x14000, 0x8000, 0x8000 );
 	
-		ROM_REGION( 0x10000, REGION_CPU2, 0 )
-		ROM_LOAD( "u27", 0x08000, 0x8000, 0x59f87f0e )
+		ROM_REGION( 0x10000, REGION_CPU2, 0 );
+		ROM_LOAD( "sound.u27", 0x08000, 0x8000, 0xb99beb70 );
 	
-		ROM_REGION( 0x100000, REGION_GFX1, 0 )
-		ROM_LOAD( "grom00",       0x00000, 0x40000, 0x3eacbad9 )
-		ROM_LOAD( "grom01",       0x40000, 0x40000, 0x864cc269 )
-		ROM_LOAD( "grom02-2.st2", 0x80000, 0x40000, 0x47904233 )
-		ROM_LOAD( "grom03-2.st2", 0xc0000, 0x40000, 0xf005f118 )
+		ROM_REGION( 0xc0000, REGION_GFX1, 0 );
+		ROM_LOAD( "grom0.bin", 0x00000, 0x20000, 0x5c02348d );
+		ROM_LOAD( "grom1.bin", 0x20000, 0x20000, 0x85a7a3a2 );
+		ROM_LOAD( "grom2.bin", 0x40000, 0x20000, 0xbfe11f18 );
 	
-		ROM_REGION( 0x40000, REGION_SOUND1, 0 )
-		ROM_LOAD( "srom0", 0x00000, 0x40000, 0x7ad42be0 )
-	ROM_END
+		ROM_REGION( 0x20000, REGION_SOUND1, 0 );
+		ROM_LOAD( "srom0", 0x00000, 0x20000, 0x001846ea );
+	ROM_END(); }}; 
 	
 	
-	ROM_START( rimrck20 )
-		ROM_REGION( 0x34000, REGION_CPU1, 0 )
-		ROM_LOAD( "rrb.bin",   0x04000, 0x4000, 0x7e9d5545 )
-		ROM_CONTINUE(          0x10000, 0x4000 )
-		ROM_CONTINUE(          0x1c000, 0x4000 )
-		ROM_CONTINUE(          0x28000, 0xc000 )
-		ROM_CONTINUE(          0x2c000, 0x8000 )
-		ROM_COPY( REGION_CPU1, 0x2c000, 0x08000, 0x8000 )
-		ROM_COPY( REGION_CPU1, 0x2c000, 0x14000, 0x8000 )
-		ROM_COPY( REGION_CPU1, 0x2c000, 0x20000, 0x8000 )
+	static RomLoadPtr rom_hstennis = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x1c000, REGION_CPU1, 0 );
+		ROM_LOAD( "ten_v1_1.bin", 0x04000, 0x4000, 0xfaffab5c );
+		ROM_CONTINUE(             0x10000, 0xc000 );
+		ROM_COPY( REGION_CPU1, 0x14000, 0x8000, 0x8000 );
 	
-		ROM_REGION( 0x10000, REGION_CPU2, 0 )
-		ROM_LOAD( "u27", 0x08000, 0x8000, 0x59f87f0e )
+		ROM_REGION( 0x10000, REGION_CPU2, 0 );
+		ROM_LOAD( "tensd_v1.bin", 0x08000, 0x8000, 0xf034a694 );
 	
-		ROM_REGION( 0x100000, REGION_GFX1, 0 )
-		ROM_LOAD( "grom00",       0x00000, 0x40000, 0x3eacbad9 )
-		ROM_LOAD( "grom01",       0x40000, 0x40000, 0x864cc269 )
-		ROM_LOAD( "grom02-2.st2", 0x80000, 0x40000, 0x47904233 )
-		ROM_LOAD( "grom03-2.st2", 0xc0000, 0x40000, 0xf005f118 )
+		ROM_REGION( 0xc0000, REGION_GFX1, 0 );
+		ROM_LOAD( "grom0.bin", 0x00000, 0x20000, 0x1e69ebae );
+		ROM_LOAD( "grom1.bin", 0x20000, 0x20000, 0x4e6a22d5 );
+		ROM_LOAD( "grom2.bin", 0x40000, 0x20000, 0xc0b643a9 );
+		ROM_LOAD( "grom3.bin", 0x60000, 0x20000, 0x54afb456 );
+		ROM_LOAD( "grom4.bin", 0x80000, 0x20000, 0xee09d645 );
 	
-		ROM_REGION( 0x40000, REGION_SOUND1, 0 )
-		ROM_LOAD( "srom0", 0x00000, 0x40000, 0x7ad42be0 )
-	ROM_END
+		ROM_REGION( 0x20000, REGION_SOUND1, 0 );
+		ROM_LOAD( "srom0.bin", 0x00000, 0x20000, 0xd9ce58c3 );
+	ROM_END(); }}; 
 	
 	
-	ROM_START( rimrck16 )
-		ROM_REGION( 0x34000, REGION_CPU1, 0 )
-		ROM_LOAD( "rrbbv16.u5",0x04000, 0x4000, 0x999cd502 )
-		ROM_CONTINUE(          0x10000, 0x4000 )
-		ROM_CONTINUE(          0x1c000, 0x4000 )
-		ROM_CONTINUE(          0x28000, 0xc000 )
-		ROM_CONTINUE(          0x2c000, 0x8000 )
-		ROM_COPY( REGION_CPU1, 0x2c000, 0x08000, 0x8000 )
-		ROM_COPY( REGION_CPU1, 0x2c000, 0x14000, 0x8000 )
-		ROM_COPY( REGION_CPU1, 0x2c000, 0x20000, 0x8000 )
+	static RomLoadPtr rom_rimrockn = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x34000, REGION_CPU1, 0 );
+		ROM_LOAD( "u5-2_2",    0x04000, 0x4000, 0x97777683 );
+		ROM_CONTINUE(          0x10000, 0x4000 );
+		ROM_CONTINUE(          0x1c000, 0x4000 );
+		ROM_CONTINUE(          0x28000, 0xc000 );
+		ROM_CONTINUE(          0x2c000, 0x8000 );
+		ROM_COPY( REGION_CPU1, 0x2c000, 0x08000, 0x8000 );
+		ROM_COPY( REGION_CPU1, 0x2c000, 0x14000, 0x8000 );
+		ROM_COPY( REGION_CPU1, 0x2c000, 0x20000, 0x8000 );
 	
-		ROM_REGION( 0x10000, REGION_CPU2, 0 )
-		ROM_LOAD( "u27", 0x08000, 0x8000, 0x59f87f0e )
+		ROM_REGION( 0x10000, REGION_CPU2, 0 );
+		ROM_LOAD( "u27", 0x08000, 0x8000, 0x59f87f0e );
 	
-		ROM_REGION( 0x100000, REGION_GFX1, 0 )
-		ROM_LOAD( "grom00", 0x00000, 0x40000, 0x3eacbad9 )
-		ROM_LOAD( "grom01", 0x40000, 0x40000, 0x864cc269 )
-		ROM_LOAD( "grom02", 0x80000, 0x40000, 0x34e567d5 )
-		ROM_LOAD( "grom03", 0xc0000, 0x40000, 0xfd18045d )
+		ROM_REGION( 0x100000, REGION_GFX1, 0 );
+		ROM_LOAD( "grom00",       0x00000, 0x40000, 0x3eacbad9 );
+		ROM_LOAD( "grom01",       0x40000, 0x40000, 0x864cc269 );
+		ROM_LOAD( "grom02-2.st2", 0x80000, 0x40000, 0x47904233 );
+		ROM_LOAD( "grom03-2.st2", 0xc0000, 0x40000, 0xf005f118 );
 	
-		ROM_REGION( 0x40000, REGION_SOUND1, 0 )
-		ROM_LOAD( "srom0", 0x00000, 0x40000, 0x7ad42be0 )
-	ROM_END
-	
-	
-	ROM_START( rimrck12 )
-		ROM_REGION( 0x34000, REGION_CPU1, 0 )
-		ROM_LOAD( "rrbbv12.u5",0x04000, 0x4000, 0x661761a6 )
-		ROM_CONTINUE(          0x10000, 0x4000 )
-		ROM_CONTINUE(          0x1c000, 0x4000 )
-		ROM_CONTINUE(          0x28000, 0xc000 )
-		ROM_CONTINUE(          0x2c000, 0x8000 )
-		ROM_COPY( REGION_CPU1, 0x2c000, 0x08000, 0x8000 )
-		ROM_COPY( REGION_CPU1, 0x2c000, 0x14000, 0x8000 )
-		ROM_COPY( REGION_CPU1, 0x2c000, 0x20000, 0x8000 )
-	
-		ROM_REGION( 0x10000, REGION_CPU2, 0 )
-		ROM_LOAD( "rrbsndv1.u27", 0x08000, 0x8000, 0x8eda5f53 )
-	
-		ROM_REGION( 0x100000, REGION_GFX1, 0 )
-		ROM_LOAD( "grom00", 0x00000, 0x40000, 0x3eacbad9 )
-		ROM_LOAD( "grom01", 0x40000, 0x40000, 0x864cc269 )
-		ROM_LOAD( "grom02", 0x80000, 0x40000, 0x34e567d5 )
-		ROM_LOAD( "grom03", 0xc0000, 0x40000, 0xfd18045d )
-	
-		ROM_REGION( 0x40000, REGION_SOUND1, 0 )
-		ROM_LOAD( "srom0", 0x00000, 0x40000, 0x7ad42be0 )
-	ROM_END
+		ROM_REGION( 0x40000, REGION_SOUND1, 0 );
+		ROM_LOAD( "srom0", 0x00000, 0x40000, 0x7ad42be0 );
+	ROM_END(); }}; 
 	
 	
-	ROM_START( ninclown )
-		ROM_REGION( 0x80000, REGION_CPU1, 0 )
-		ROM_LOAD16_BYTE( "prog1", 0x00000, 0x20000, 0xfabfdcd2 )
-		ROM_LOAD16_BYTE( "prog0", 0x00001, 0x20000, 0xeca63db5 )
-		ROM_COPY(    REGION_CPU1, 0x08000, 0x40000, 0x38000 )
+	static RomLoadPtr rom_rimrck20 = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x34000, REGION_CPU1, 0 );
+		ROM_LOAD( "rrb.bin",   0x04000, 0x4000, 0x7e9d5545 );
+		ROM_CONTINUE(          0x10000, 0x4000 );
+		ROM_CONTINUE(          0x1c000, 0x4000 );
+		ROM_CONTINUE(          0x28000, 0xc000 );
+		ROM_CONTINUE(          0x2c000, 0x8000 );
+		ROM_COPY( REGION_CPU1, 0x2c000, 0x08000, 0x8000 );
+		ROM_COPY( REGION_CPU1, 0x2c000, 0x14000, 0x8000 );
+		ROM_COPY( REGION_CPU1, 0x2c000, 0x20000, 0x8000 );
 	
-		ROM_REGION( 0x10000, REGION_CPU2, 0 )
-		ROM_LOAD( "nc-snd", 0x08000, 0x8000, 0xf9d5b4e1 )
+		ROM_REGION( 0x10000, REGION_CPU2, 0 );
+		ROM_LOAD( "u27", 0x08000, 0x8000, 0x59f87f0e );
 	
-		ROM_REGION( 0x180000, REGION_GFX1, 0 )
-		ROM_LOAD( "nc-grom0", 0x000000, 0x40000, 0x532f7bff )
-		ROM_LOAD( "nc-grom1", 0x040000, 0x40000, 0x45640d4a )
-		ROM_LOAD( "nc-grom2", 0x080000, 0x40000, 0xc8281d06 )
-		ROM_LOAD( "nc-grom3", 0x0c0000, 0x40000, 0x2a6d33ac )
-		ROM_LOAD( "nc-grom4", 0x100000, 0x40000, 0x910876ba )
-		ROM_LOAD( "nc-grom5", 0x140000, 0x40000, 0x2533279b )
+		ROM_REGION( 0x100000, REGION_GFX1, 0 );
+		ROM_LOAD( "grom00",       0x00000, 0x40000, 0x3eacbad9 );
+		ROM_LOAD( "grom01",       0x40000, 0x40000, 0x864cc269 );
+		ROM_LOAD( "grom02-2.st2", 0x80000, 0x40000, 0x47904233 );
+		ROM_LOAD( "grom03-2.st2", 0xc0000, 0x40000, 0xf005f118 );
 	
-		ROM_REGION( 0x40000, REGION_SOUND1, 0 )
-		ROM_LOAD( "srom0.bin", 0x00000, 0x40000, 0xf6b501e1 )
-	ROM_END
+		ROM_REGION( 0x40000, REGION_SOUND1, 0 );
+		ROM_LOAD( "srom0", 0x00000, 0x40000, 0x7ad42be0 );
+	ROM_END(); }}; 
+	
+	
+	static RomLoadPtr rom_rimrck16 = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x34000, REGION_CPU1, 0 );
+		ROM_LOAD( "rrbbv16.u5",0x04000, 0x4000, 0x999cd502 );
+		ROM_CONTINUE(          0x10000, 0x4000 );
+		ROM_CONTINUE(          0x1c000, 0x4000 );
+		ROM_CONTINUE(          0x28000, 0xc000 );
+		ROM_CONTINUE(          0x2c000, 0x8000 );
+		ROM_COPY( REGION_CPU1, 0x2c000, 0x08000, 0x8000 );
+		ROM_COPY( REGION_CPU1, 0x2c000, 0x14000, 0x8000 );
+		ROM_COPY( REGION_CPU1, 0x2c000, 0x20000, 0x8000 );
+	
+		ROM_REGION( 0x10000, REGION_CPU2, 0 );
+		ROM_LOAD( "u27", 0x08000, 0x8000, 0x59f87f0e );
+	
+		ROM_REGION( 0x100000, REGION_GFX1, 0 );
+		ROM_LOAD( "grom00", 0x00000, 0x40000, 0x3eacbad9 );
+		ROM_LOAD( "grom01", 0x40000, 0x40000, 0x864cc269 );
+		ROM_LOAD( "grom02", 0x80000, 0x40000, 0x34e567d5 );
+		ROM_LOAD( "grom03", 0xc0000, 0x40000, 0xfd18045d );
+	
+		ROM_REGION( 0x40000, REGION_SOUND1, 0 );
+		ROM_LOAD( "srom0", 0x00000, 0x40000, 0x7ad42be0 );
+	ROM_END(); }}; 
+	
+	
+	static RomLoadPtr rom_rimrck12 = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x34000, REGION_CPU1, 0 );
+		ROM_LOAD( "rrbbv12.u5",0x04000, 0x4000, 0x661761a6 );
+		ROM_CONTINUE(          0x10000, 0x4000 );
+		ROM_CONTINUE(          0x1c000, 0x4000 );
+		ROM_CONTINUE(          0x28000, 0xc000 );
+		ROM_CONTINUE(          0x2c000, 0x8000 );
+		ROM_COPY( REGION_CPU1, 0x2c000, 0x08000, 0x8000 );
+		ROM_COPY( REGION_CPU1, 0x2c000, 0x14000, 0x8000 );
+		ROM_COPY( REGION_CPU1, 0x2c000, 0x20000, 0x8000 );
+	
+		ROM_REGION( 0x10000, REGION_CPU2, 0 );
+		ROM_LOAD( "rrbsndv1.u27", 0x08000, 0x8000, 0x8eda5f53 );
+	
+		ROM_REGION( 0x100000, REGION_GFX1, 0 );
+		ROM_LOAD( "grom00", 0x00000, 0x40000, 0x3eacbad9 );
+		ROM_LOAD( "grom01", 0x40000, 0x40000, 0x864cc269 );
+		ROM_LOAD( "grom02", 0x80000, 0x40000, 0x34e567d5 );
+		ROM_LOAD( "grom03", 0xc0000, 0x40000, 0xfd18045d );
+	
+		ROM_REGION( 0x40000, REGION_SOUND1, 0 );
+		ROM_LOAD( "srom0", 0x00000, 0x40000, 0x7ad42be0 );
+	ROM_END(); }}; 
+	
+	
+	static RomLoadPtr rom_ninclown = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x80000, REGION_CPU1, 0 );
+		ROM_LOAD16_BYTE( "prog1", 0x00000, 0x20000, 0xfabfdcd2 );
+		ROM_LOAD16_BYTE( "prog0", 0x00001, 0x20000, 0xeca63db5 );
+		ROM_COPY(    REGION_CPU1, 0x08000, 0x40000, 0x38000 );
+	
+		ROM_REGION( 0x10000, REGION_CPU2, 0 );
+		ROM_LOAD( "nc-snd", 0x08000, 0x8000, 0xf9d5b4e1 );
+	
+		ROM_REGION( 0x180000, REGION_GFX1, 0 );
+		ROM_LOAD( "nc-grom0", 0x000000, 0x40000, 0x532f7bff );
+		ROM_LOAD( "nc-grom1", 0x040000, 0x40000, 0x45640d4a );
+		ROM_LOAD( "nc-grom2", 0x080000, 0x40000, 0xc8281d06 );
+		ROM_LOAD( "nc-grom3", 0x0c0000, 0x40000, 0x2a6d33ac );
+		ROM_LOAD( "nc-grom4", 0x100000, 0x40000, 0x910876ba );
+		ROM_LOAD( "nc-grom5", 0x140000, 0x40000, 0x2533279b );
+	
+		ROM_REGION( 0x40000, REGION_SOUND1, 0 );
+		ROM_LOAD( "srom0.bin", 0x00000, 0x40000, 0xf6b501e1 );
+	ROM_END(); }}; 
 	
 	
 	

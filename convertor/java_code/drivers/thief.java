@@ -607,97 +607,97 @@ public class thief
 	
 	/**********************************************************/
 	
-	ROM_START( sharkatt )
-		ROM_REGION( 0x10000, REGION_CPU1, 0 )     /* 64k for code */
-		ROM_LOAD( "sharkatt.0",   0x0000, 0x800, 0xc71505e9 )
-		ROM_LOAD( "sharkatt.1",   0x0800, 0x800, 0x3e3abf70 )
-		ROM_LOAD( "sharkatt.2",   0x1000, 0x800, 0x96ded944 )
-		ROM_LOAD( "sharkatt.3",   0x1800, 0x800, 0x007283ae )
-		ROM_LOAD( "sharkatt.4a",  0x2000, 0x800, 0x5cb114a7 )
-		ROM_LOAD( "sharkatt.5",   0x2800, 0x800, 0x1d88aaad )
-		ROM_LOAD( "sharkatt.6",   0x3000, 0x800, 0xc164bad4 )
-		ROM_LOAD( "sharkatt.7",   0x3800, 0x800, 0xd78c4b8b )
-		ROM_LOAD( "sharkatt.8",   0x4000, 0x800, 0x5958476a )
-		ROM_LOAD( "sharkatt.9",   0x4800, 0x800, 0x4915eb37 )
-		ROM_LOAD( "sharkatt.10",  0x5000, 0x800, 0x9d07cb68 )
-		ROM_LOAD( "sharkatt.11",  0x5800, 0x800, 0x21edc962 )
-		ROM_LOAD( "sharkatt.12a", 0x6000, 0x800, 0x5dd8785a )
-	ROM_END
+	static RomLoadPtr rom_sharkatt = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x10000, REGION_CPU1, 0 );    /* 64k for code */
+		ROM_LOAD( "sharkatt.0",   0x0000, 0x800, 0xc71505e9 );
+		ROM_LOAD( "sharkatt.1",   0x0800, 0x800, 0x3e3abf70 );
+		ROM_LOAD( "sharkatt.2",   0x1000, 0x800, 0x96ded944 );
+		ROM_LOAD( "sharkatt.3",   0x1800, 0x800, 0x007283ae );
+		ROM_LOAD( "sharkatt.4a",  0x2000, 0x800, 0x5cb114a7 );
+		ROM_LOAD( "sharkatt.5",   0x2800, 0x800, 0x1d88aaad );
+		ROM_LOAD( "sharkatt.6",   0x3000, 0x800, 0xc164bad4 );
+		ROM_LOAD( "sharkatt.7",   0x3800, 0x800, 0xd78c4b8b );
+		ROM_LOAD( "sharkatt.8",   0x4000, 0x800, 0x5958476a );
+		ROM_LOAD( "sharkatt.9",   0x4800, 0x800, 0x4915eb37 );
+		ROM_LOAD( "sharkatt.10",  0x5000, 0x800, 0x9d07cb68 );
+		ROM_LOAD( "sharkatt.11",  0x5800, 0x800, 0x21edc962 );
+		ROM_LOAD( "sharkatt.12a", 0x6000, 0x800, 0x5dd8785a );
+	ROM_END(); }}; 
 	
-	ROM_START( thief )
-		ROM_REGION( 0x10000, REGION_CPU1, 0 ) /* Z80 code */
-		ROM_LOAD( "t8a0ah0a",	0x0000, 0x1000, 0xedbbf71c )
-		ROM_LOAD( "t2662h2",	0x1000, 0x1000, 0x85b4f6ff )
-		ROM_LOAD( "tc162h4",	0x2000, 0x1000, 0x70478a82 )
-		ROM_LOAD( "t0cb4h6",	0x3000, 0x1000, 0x29de0425 )
-		ROM_LOAD( "tc707h8",	0x4000, 0x1000, 0xea8dd847 )
-		ROM_LOAD( "t857bh10",	0x5000, 0x1000, 0x403c33b7 )
-		ROM_LOAD( "t606bh12",	0x6000, 0x1000, 0x4ca2748b )
-		ROM_LOAD( "tae4bh14",	0x7000, 0x1000, 0x22e7dcc3 ) /* diagnostics ROM */
+	static RomLoadPtr rom_thief = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x10000, REGION_CPU1, 0 );/* Z80 code */
+		ROM_LOAD( "t8a0ah0a",	0x0000, 0x1000, 0xedbbf71c );
+		ROM_LOAD( "t2662h2",	0x1000, 0x1000, 0x85b4f6ff );
+		ROM_LOAD( "tc162h4",	0x2000, 0x1000, 0x70478a82 );
+		ROM_LOAD( "t0cb4h6",	0x3000, 0x1000, 0x29de0425 );
+		ROM_LOAD( "tc707h8",	0x4000, 0x1000, 0xea8dd847 );
+		ROM_LOAD( "t857bh10",	0x5000, 0x1000, 0x403c33b7 );
+		ROM_LOAD( "t606bh12",	0x6000, 0x1000, 0x4ca2748b );
+		ROM_LOAD( "tae4bh14",	0x7000, 0x1000, 0x22e7dcc3 );/* diagnostics ROM */
 	
-		ROM_REGION( 0x400, REGION_CPU2, 0 ) /* coprocessor */
-		ROM_LOAD( "b8",			0x000, 0x0200, 0xfe865b2a )
+		ROM_REGION( 0x400, REGION_CPU2, 0 );/* coprocessor */
+		ROM_LOAD( "b8",			0x000, 0x0200, 0xfe865b2a );
 		/* B8 is a function dispatch table for the coprocessor (unused) */
-		ROM_LOAD( "c8", 		0x200, 0x0200, 0x7ed5c923 )
+		ROM_LOAD( "c8", 		0x200, 0x0200, 0x7ed5c923 );
 		/* C8 is mapped (banked) in CPU1's address space; it contains Z80 code */
 	
-		ROM_REGION( 0x6000, REGION_GFX1, 0 ) /* image ROMs for coprocessor */
-		ROM_LOAD16_BYTE( "t079ahd4" ,  0x0001, 0x1000, 0x928bd8ef )
-		ROM_LOAD16_BYTE( "tdda7hh4" ,  0x0000, 0x1000, 0xb48f0862 )
+		ROM_REGION( 0x6000, REGION_GFX1, 0 );/* image ROMs for coprocessor */
+		ROM_LOAD16_BYTE( "t079ahd4" ,  0x0001, 0x1000, 0x928bd8ef );
+		ROM_LOAD16_BYTE( "tdda7hh4" ,  0x0000, 0x1000, 0xb48f0862 );
 		/* next 0x4000 bytes are unmapped (used by Nato Defense) */
-	ROM_END
+	ROM_END(); }}; 
 	
-	ROM_START( natodef )
-		ROM_REGION( 0x10000, REGION_CPU1, 0 ) /* Z80 code */
-		ROM_LOAD( "natodef.cp0",	0x0000, 0x1000, 0x8397c787 )
-		ROM_LOAD( "natodef.cp2",	0x1000, 0x1000, 0x8cfbf26f )
-		ROM_LOAD( "natodef.cp4",	0x2000, 0x1000, 0xb4c90fb2 )
-		ROM_LOAD( "natodef.cp6",	0x3000, 0x1000, 0xc6d0d35e )
-		ROM_LOAD( "natodef.cp8",	0x4000, 0x1000, 0xe4b6c21e )
-		ROM_LOAD( "natodef.cpa",	0x5000, 0x1000, 0x888ecd42 )
-		ROM_LOAD( "natodef.cpc",	0x6000, 0x1000, 0xcf713bc9 )
-		ROM_LOAD( "natodef.cpe",	0x7000, 0x1000, 0x4eef6bf4 )
-		ROM_LOAD( "natodef.cp5",	0xa000, 0x1000, 0x65c3601b )	/* diagnostics ROM */
+	static RomLoadPtr rom_natodef = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x10000, REGION_CPU1, 0 );/* Z80 code */
+		ROM_LOAD( "natodef.cp0",	0x0000, 0x1000, 0x8397c787 );
+		ROM_LOAD( "natodef.cp2",	0x1000, 0x1000, 0x8cfbf26f );
+		ROM_LOAD( "natodef.cp4",	0x2000, 0x1000, 0xb4c90fb2 );
+		ROM_LOAD( "natodef.cp6",	0x3000, 0x1000, 0xc6d0d35e );
+		ROM_LOAD( "natodef.cp8",	0x4000, 0x1000, 0xe4b6c21e );
+		ROM_LOAD( "natodef.cpa",	0x5000, 0x1000, 0x888ecd42 );
+		ROM_LOAD( "natodef.cpc",	0x6000, 0x1000, 0xcf713bc9 );
+		ROM_LOAD( "natodef.cpe",	0x7000, 0x1000, 0x4eef6bf4 );
+		ROM_LOAD( "natodef.cp5",	0xa000, 0x1000, 0x65c3601b );/* diagnostics ROM */
 	
-		ROM_REGION( 0x400, REGION_CPU2, 0 ) /* coprocessor */
-		ROM_LOAD( "b8",			0x000, 0x0200, 0xfe865b2a )
-		ROM_LOAD( "c8", 		0x200, 0x0200, 0x7ed5c923 )
+		ROM_REGION( 0x400, REGION_CPU2, 0 );/* coprocessor */
+		ROM_LOAD( "b8",			0x000, 0x0200, 0xfe865b2a );
+		ROM_LOAD( "c8", 		0x200, 0x0200, 0x7ed5c923 );
 		/* C8 is mapped (banked) in CPU1's address space; it contains Z80 code */
 	
-		ROM_REGION( 0x6000, REGION_GFX1, 0 ) /* image ROMs for coprocessor */
-		ROM_LOAD16_BYTE( "natodef.o4",	0x0001, 0x1000, 0x39a868f8 )
-		ROM_LOAD16_BYTE( "natodef.e1",	0x0000, 0x1000, 0xb6d1623d )
-		ROM_LOAD16_BYTE( "natodef.o2",	0x2001, 0x1000, 0x77cc9cfd )
-		ROM_LOAD16_BYTE( "natodef.e3",	0x2000, 0x1000, 0x5302410d )
-		ROM_LOAD16_BYTE( "natodef.o3",	0x4001, 0x1000, 0xb217909a )
-		ROM_LOAD16_BYTE( "natodef.e2",	0x4000, 0x1000, 0x886c3f05 )
-	ROM_END
+		ROM_REGION( 0x6000, REGION_GFX1, 0 );/* image ROMs for coprocessor */
+		ROM_LOAD16_BYTE( "natodef.o4",	0x0001, 0x1000, 0x39a868f8 );
+		ROM_LOAD16_BYTE( "natodef.e1",	0x0000, 0x1000, 0xb6d1623d );
+		ROM_LOAD16_BYTE( "natodef.o2",	0x2001, 0x1000, 0x77cc9cfd );
+		ROM_LOAD16_BYTE( "natodef.e3",	0x2000, 0x1000, 0x5302410d );
+		ROM_LOAD16_BYTE( "natodef.o3",	0x4001, 0x1000, 0xb217909a );
+		ROM_LOAD16_BYTE( "natodef.e2",	0x4000, 0x1000, 0x886c3f05 );
+	ROM_END(); }}; 
 	
-	ROM_START( natodefa )
-		ROM_REGION( 0x10000, REGION_CPU1, 0 ) /* Z80 code */
-		ROM_LOAD( "natodef.cp0",	0x0000, 0x1000, 0x8397c787 )
-		ROM_LOAD( "natodef.cp2",	0x1000, 0x1000, 0x8cfbf26f )
-		ROM_LOAD( "natodef.cp4",	0x2000, 0x1000, 0xb4c90fb2 )
-		ROM_LOAD( "natodef.cp6",	0x3000, 0x1000, 0xc6d0d35e )
-		ROM_LOAD( "natodef.cp8",	0x4000, 0x1000, 0xe4b6c21e )
-		ROM_LOAD( "natodef.cpa",	0x5000, 0x1000, 0x888ecd42 )
-		ROM_LOAD( "natodef.cpc",	0x6000, 0x1000, 0xcf713bc9 )
-		ROM_LOAD( "natodef.cpe",	0x7000, 0x1000, 0x4eef6bf4 )
-		ROM_LOAD( "natodef.cp5",	0xa000, 0x1000, 0x65c3601b )	/* diagnostics ROM */
+	static RomLoadPtr rom_natodefa = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x10000, REGION_CPU1, 0 );/* Z80 code */
+		ROM_LOAD( "natodef.cp0",	0x0000, 0x1000, 0x8397c787 );
+		ROM_LOAD( "natodef.cp2",	0x1000, 0x1000, 0x8cfbf26f );
+		ROM_LOAD( "natodef.cp4",	0x2000, 0x1000, 0xb4c90fb2 );
+		ROM_LOAD( "natodef.cp6",	0x3000, 0x1000, 0xc6d0d35e );
+		ROM_LOAD( "natodef.cp8",	0x4000, 0x1000, 0xe4b6c21e );
+		ROM_LOAD( "natodef.cpa",	0x5000, 0x1000, 0x888ecd42 );
+		ROM_LOAD( "natodef.cpc",	0x6000, 0x1000, 0xcf713bc9 );
+		ROM_LOAD( "natodef.cpe",	0x7000, 0x1000, 0x4eef6bf4 );
+		ROM_LOAD( "natodef.cp5",	0xa000, 0x1000, 0x65c3601b );/* diagnostics ROM */
 	
-		ROM_REGION( 0x400, REGION_CPU2, 0 ) /* coprocessor */
-		ROM_LOAD( "b8",			0x000, 0x0200, 0xfe865b2a )
-		ROM_LOAD( "c8", 		0x200, 0x0200, 0x7ed5c923 )
+		ROM_REGION( 0x400, REGION_CPU2, 0 );/* coprocessor */
+		ROM_LOAD( "b8",			0x000, 0x0200, 0xfe865b2a );
+		ROM_LOAD( "c8", 		0x200, 0x0200, 0x7ed5c923 );
 		/* C8 is mapped (banked) in CPU1's address space; it contains Z80 code */
 	
-		ROM_REGION( 0x6000, REGION_GFX1, 0 ) /* image ROMs for coprocessor */
-		ROM_LOAD16_BYTE( "natodef.o4",	0x0001, 0x1000, 0x39a868f8 )
-		ROM_LOAD16_BYTE( "natodef.e1",	0x0000, 0x1000, 0xb6d1623d )
-		ROM_LOAD16_BYTE( "natodef.o3",	0x2001, 0x1000, 0xb217909a ) /* same ROMs as natodef, */
-		ROM_LOAD16_BYTE( "natodef.e2",	0x2000, 0x1000, 0x886c3f05 ) /* but in a different */
-		ROM_LOAD16_BYTE( "natodef.o2",	0x4001, 0x1000, 0x77cc9cfd ) /* order to give */
-		ROM_LOAD16_BYTE( "natodef.e3",	0x4000, 0x1000, 0x5302410d ) /* different mazes */
-	ROM_END
+		ROM_REGION( 0x6000, REGION_GFX1, 0 );/* image ROMs for coprocessor */
+		ROM_LOAD16_BYTE( "natodef.o4",	0x0001, 0x1000, 0x39a868f8 );
+		ROM_LOAD16_BYTE( "natodef.e1",	0x0000, 0x1000, 0xb6d1623d );
+		ROM_LOAD16_BYTE( "natodef.o3",	0x2001, 0x1000, 0xb217909a );/* same ROMs as natodef, */
+		ROM_LOAD16_BYTE( "natodef.e2",	0x2000, 0x1000, 0x886c3f05 );/* but in a different */
+		ROM_LOAD16_BYTE( "natodef.o2",	0x4001, 0x1000, 0x77cc9cfd );/* order to give */
+		ROM_LOAD16_BYTE( "natodef.e3",	0x4000, 0x1000, 0x5302410d );/* different mazes */
+	ROM_END(); }}; 
 	
 	
 	static void init_thief(void)

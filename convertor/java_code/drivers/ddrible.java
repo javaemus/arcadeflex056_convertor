@@ -409,33 +409,33 @@ public class ddrible
 	};
 	
 	
-	ROM_START( ddribble )
-		ROM_REGION( 0x1a000, REGION_CPU1, 0 ) /* 64K CPU #0 + 40K for Banked ROMS */
-		ROM_LOAD( "690c03.bin",	0x10000, 0x0a000, 0x07975a58 )
-		ROM_CONTINUE(			0x0a000, 0x06000 )
+	static RomLoadPtr rom_ddribble = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x1a000, REGION_CPU1, 0 );/* 64K CPU #0 + 40K for Banked ROMS */
+		ROM_LOAD( "690c03.bin",	0x10000, 0x0a000, 0x07975a58 );
+		ROM_CONTINUE(			0x0a000, 0x06000 );
 	
-		ROM_REGION( 0x10000, REGION_CPU2, 0 ) /* 64 for the CPU #1 */
-		ROM_LOAD( "690c02.bin", 0x08000, 0x08000, 0xf07c030a )
+		ROM_REGION( 0x10000, REGION_CPU2, 0 );/* 64 for the CPU #1 */
+		ROM_LOAD( "690c02.bin", 0x08000, 0x08000, 0xf07c030a );
 	
-		ROM_REGION( 0x10000, REGION_CPU3, 0 )	/* 64k for the SOUND CPU */
-		ROM_LOAD( "690b01.bin", 0x08000, 0x08000, 0x806b8453 )
+		ROM_REGION( 0x10000, REGION_CPU3, 0 );/* 64k for the SOUND CPU */
+		ROM_LOAD( "690b01.bin", 0x08000, 0x08000, 0x806b8453 );
 	
-		ROM_REGION( 0x40000, REGION_GFX1, ROMREGION_DISPOSE )
-		ROM_LOAD16_BYTE( "690a05.bin",	0x00000, 0x20000, 0x6a816d0d )	/* characters & objects */
-		ROM_LOAD16_BYTE( "690a06.bin",	0x00001, 0x20000, 0x46300cd0 )
+		ROM_REGION( 0x40000, REGION_GFX1, ROMREGION_DISPOSE );
+		ROM_LOAD16_BYTE( "690a05.bin",	0x00000, 0x20000, 0x6a816d0d );/* characters & objects */
+		ROM_LOAD16_BYTE( "690a06.bin",	0x00001, 0x20000, 0x46300cd0 );
 	
-		ROM_REGION( 0x80000, REGION_GFX2, ROMREGION_DISPOSE )
-		ROM_LOAD16_BYTE( "690a10.bin", 0x00000, 0x20000, 0x61efa222 )	/* characters */
-		ROM_LOAD16_BYTE( "690a09.bin", 0x00001, 0x20000, 0xab682186 )
-		ROM_LOAD16_BYTE( "690a08.bin", 0x40000, 0x20000, 0x9a889944 )	/* objects */
-		ROM_LOAD16_BYTE( "690a07.bin", 0x40001, 0x20000, 0xfaf81b3f )
+		ROM_REGION( 0x80000, REGION_GFX2, ROMREGION_DISPOSE );
+		ROM_LOAD16_BYTE( "690a10.bin", 0x00000, 0x20000, 0x61efa222 );/* characters */
+		ROM_LOAD16_BYTE( "690a09.bin", 0x00001, 0x20000, 0xab682186 );
+		ROM_LOAD16_BYTE( "690a08.bin", 0x40000, 0x20000, 0x9a889944 );/* objects */
+		ROM_LOAD16_BYTE( "690a07.bin", 0x40001, 0x20000, 0xfaf81b3f );
 	
-		ROM_REGION( 0x0100, REGION_PROMS, 0 )
-		ROM_LOAD( "690a11.i15", 0x0000, 0x0100, 0xf34617ad )	/* sprite lookup table */
+		ROM_REGION( 0x0100, REGION_PROMS, 0 );
+		ROM_LOAD( "690a11.i15", 0x0000, 0x0100, 0xf34617ad );/* sprite lookup table */
 	
-		ROM_REGION( 0x20000, REGION_SOUND1, 0 )	/* 128k for the VLM5030 data */
-		ROM_LOAD( "690a04.bin", 0x00000, 0x20000, 0x1bfeb763 )
-	ROM_END
+		ROM_REGION( 0x20000, REGION_SOUND1, 0 );/* 128k for the VLM5030 data */
+		ROM_LOAD( "690a04.bin", 0x00000, 0x20000, 0x1bfeb763 );
+	ROM_END(); }}; 
 	
 	
 	

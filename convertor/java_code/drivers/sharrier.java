@@ -974,311 +974,311 @@ public class sharrier
 	
 	/*****************************************************************************/
 	
-	ROM_START( hangon )
-		ROM_REGION( 0x20000, REGION_CPU1, 0 ) /* 68000 code */
-		ROM_LOAD16_BYTE( "6918.rom", 0x000000, 0x8000, 0x20b1c2b0 )
-		ROM_LOAD16_BYTE( "6916.rom", 0x000001, 0x8000, 0x7d9db1bf )
-		ROM_LOAD16_BYTE( "6917.rom", 0x010000, 0x8000, 0xfea12367 )
-		ROM_LOAD16_BYTE( "6915.rom", 0x010001, 0x8000, 0xac883240 )
+	static RomLoadPtr rom_hangon = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x20000, REGION_CPU1, 0 );/* 68000 code */
+		ROM_LOAD16_BYTE( "6918.rom", 0x000000, 0x8000, 0x20b1c2b0 );
+		ROM_LOAD16_BYTE( "6916.rom", 0x000001, 0x8000, 0x7d9db1bf );
+		ROM_LOAD16_BYTE( "6917.rom", 0x010000, 0x8000, 0xfea12367 );
+		ROM_LOAD16_BYTE( "6915.rom", 0x010001, 0x8000, 0xac883240 );
 	
-		ROM_REGION( 0x18000, REGION_GFX1, ROMREGION_DISPOSE ) /* tiles */
-		ROM_LOAD( "6841.rom", 0x00000, 0x08000, 0x54d295dc )
-		ROM_LOAD( "6842.rom", 0x08000, 0x08000, 0xf677b568 )
-		ROM_LOAD( "6843.rom", 0x10000, 0x08000, 0xa257f0da )
+		ROM_REGION( 0x18000, REGION_GFX1, ROMREGION_DISPOSE );/* tiles */
+		ROM_LOAD( "6841.rom", 0x00000, 0x08000, 0x54d295dc );
+		ROM_LOAD( "6842.rom", 0x08000, 0x08000, 0xf677b568 );
+		ROM_LOAD( "6843.rom", 0x10000, 0x08000, 0xa257f0da );
 	
-		ROM_REGION( 0x80000, REGION_GFX2, 0 ) /* sprites */
-		ROM_LOAD16_BYTE( "6819.rom", 0x000001, 0x8000, 0x469dad07 )
-		ROM_LOAD16_BYTE( "6820.rom", 0x000000, 0x8000, 0x87cbc6de )
-		ROM_LOAD16_BYTE( "6821.rom", 0x010001, 0x8000, 0x15792969 )
-		ROM_LOAD16_BYTE( "6822.rom", 0x010000, 0x8000, 0xe9718de5 )
-		ROM_LOAD16_BYTE( "6823.rom", 0x020001, 0x8000, 0x49422691 )
-		ROM_LOAD16_BYTE( "6824.rom", 0x020000, 0x8000, 0x701deaa4 )
-		ROM_LOAD16_BYTE( "6825.rom", 0x030001, 0x8000, 0x6e23c8b4 )
-		ROM_LOAD16_BYTE( "6826.rom", 0x030000, 0x8000, 0x77d0de2c )
-		ROM_LOAD16_BYTE( "6827.rom", 0x040001, 0x8000, 0x7fa1bfb6 )
-		ROM_LOAD16_BYTE( "6828.rom", 0x040000, 0x8000, 0x8e880c93 )
-		ROM_LOAD16_BYTE( "6829.rom", 0x050001, 0x8000, 0x7ca0952d )
-		ROM_LOAD16_BYTE( "6830.rom", 0x050000, 0x8000, 0xb1a63aef )
-		ROM_LOAD16_BYTE( "6845.rom", 0x060001, 0x8000, 0xba08c9b8 )
-		ROM_LOAD16_BYTE( "6846.rom", 0x060000, 0x8000, 0xf21e57a3 )
+		ROM_REGION( 0x80000, REGION_GFX2, 0 );/* sprites */
+		ROM_LOAD16_BYTE( "6819.rom", 0x000001, 0x8000, 0x469dad07 );
+		ROM_LOAD16_BYTE( "6820.rom", 0x000000, 0x8000, 0x87cbc6de );
+		ROM_LOAD16_BYTE( "6821.rom", 0x010001, 0x8000, 0x15792969 );
+		ROM_LOAD16_BYTE( "6822.rom", 0x010000, 0x8000, 0xe9718de5 );
+		ROM_LOAD16_BYTE( "6823.rom", 0x020001, 0x8000, 0x49422691 );
+		ROM_LOAD16_BYTE( "6824.rom", 0x020000, 0x8000, 0x701deaa4 );
+		ROM_LOAD16_BYTE( "6825.rom", 0x030001, 0x8000, 0x6e23c8b4 );
+		ROM_LOAD16_BYTE( "6826.rom", 0x030000, 0x8000, 0x77d0de2c );
+		ROM_LOAD16_BYTE( "6827.rom", 0x040001, 0x8000, 0x7fa1bfb6 );
+		ROM_LOAD16_BYTE( "6828.rom", 0x040000, 0x8000, 0x8e880c93 );
+		ROM_LOAD16_BYTE( "6829.rom", 0x050001, 0x8000, 0x7ca0952d );
+		ROM_LOAD16_BYTE( "6830.rom", 0x050000, 0x8000, 0xb1a63aef );
+		ROM_LOAD16_BYTE( "6845.rom", 0x060001, 0x8000, 0xba08c9b8 );
+		ROM_LOAD16_BYTE( "6846.rom", 0x060000, 0x8000, 0xf21e57a3 );
 	
-		ROM_REGION( 0x10000, REGION_CPU2, 0 ) /* sound CPU */
-		ROM_LOAD( "6833.rom", 0x00000, 0x4000, 0x3b942f5f )
+		ROM_REGION( 0x10000, REGION_CPU2, 0 );/* sound CPU */
+		ROM_LOAD( "6833.rom", 0x00000, 0x4000, 0x3b942f5f );
 	
-		ROM_REGION( 0x10000, REGION_SOUND1, 0 ) /* Sega PCM sound data */
-		ROM_LOAD( "6831.rom", 0x00000, 0x8000, 0xcfef5481 )
-		ROM_LOAD( "6832.rom", 0x08000, 0x8000, 0x4165aea5 )
+		ROM_REGION( 0x10000, REGION_SOUND1, 0 );/* Sega PCM sound data */
+		ROM_LOAD( "6831.rom", 0x00000, 0x8000, 0xcfef5481 );
+		ROM_LOAD( "6832.rom", 0x08000, 0x8000, 0x4165aea5 );
 	
-		ROM_REGION( 0x10000, REGION_CPU3, 0 ) /* second 68000 CPU */
-		ROM_LOAD16_BYTE( "6920.rom", 0x0000, 0x8000, 0x1c95013e )
-		ROM_LOAD16_BYTE( "6919.rom", 0x0001, 0x8000, 0x6ca30d69 )
+		ROM_REGION( 0x10000, REGION_CPU3, 0 );/* second 68000 CPU */
+		ROM_LOAD16_BYTE( "6920.rom", 0x0000, 0x8000, 0x1c95013e );
+		ROM_LOAD16_BYTE( "6919.rom", 0x0001, 0x8000, 0x6ca30d69 );
 	
-		ROM_REGION( 0x40000, REGION_GFX3, 0 ) /* Road Graphics  (region size should be gr_bitmapwidth*256, 0 )*/
-		ROM_LOAD( "6840.rom", 0x0000, 0x8000, 0x581230e3 )
-	ROM_END
+		ROM_REGION( 0x40000, REGION_GFX3, 0 );/* Road Graphics  (region size should be gr_bitmapwidth*256, 0 )*/
+		ROM_LOAD( "6840.rom", 0x0000, 0x8000, 0x581230e3 );
+	ROM_END(); }}; 
 	
-	ROM_START( enduror )
-		ROM_REGION( 0x040000, REGION_CPU1, 0 ) /* 68000 code */
-		ROM_LOAD16_BYTE( "7640a.rom",0x00000, 0x8000, 0x1d1dc5d4 )
-		ROM_LOAD16_BYTE( "7636a.rom",0x00001, 0x8000, 0x84131639 )
+	static RomLoadPtr rom_enduror = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x040000, REGION_CPU1, 0 );/* 68000 code */
+		ROM_LOAD16_BYTE( "7640a.rom",0x00000, 0x8000, 0x1d1dc5d4 );
+		ROM_LOAD16_BYTE( "7636a.rom",0x00001, 0x8000, 0x84131639 );
 	
-		ROM_LOAD16_BYTE( "7641.rom", 0x10000, 0x8000, 0x2503ae7c )
-		ROM_LOAD16_BYTE( "7637.rom", 0x10001, 0x8000, 0x82a27a8c )
-		ROM_LOAD16_BYTE( "7642.rom", 0x20000, 0x8000, 0x1c453bea )	// enduro.a06 / .a09
-		ROM_LOAD16_BYTE( "7638.rom", 0x20001, 0x8000, 0x70544779 )	// looks like encrypted versions of
+		ROM_LOAD16_BYTE( "7641.rom", 0x10000, 0x8000, 0x2503ae7c );
+		ROM_LOAD16_BYTE( "7637.rom", 0x10001, 0x8000, 0x82a27a8c );
+		ROM_LOAD16_BYTE( "7642.rom", 0x20000, 0x8000, 0x1c453bea );// enduro.a06 / .a09
+		ROM_LOAD16_BYTE( "7638.rom", 0x20001, 0x8000, 0x70544779 );// looks like encrypted versions of
 	
-		ROM_REGION( 0x18000, REGION_GFX1, ROMREGION_DISPOSE ) /* tiles */
-		ROM_LOAD( "7644.rom", 0x00000, 0x08000, 0xe7a4ff90 )
-		ROM_LOAD( "7645.rom", 0x08000, 0x08000, 0x4caa0095 )
-		ROM_LOAD( "7646.rom", 0x10000, 0x08000, 0x7e432683 )
+		ROM_REGION( 0x18000, REGION_GFX1, ROMREGION_DISPOSE );/* tiles */
+		ROM_LOAD( "7644.rom", 0x00000, 0x08000, 0xe7a4ff90 );
+		ROM_LOAD( "7645.rom", 0x08000, 0x08000, 0x4caa0095 );
+		ROM_LOAD( "7646.rom", 0x10000, 0x08000, 0x7e432683 );
 	
-		ROM_REGION( 0x100000, REGION_GFX2, 0 ) /* sprites */
-		ROM_LOAD( "7678.rom", 0x00000, 0x8000, 0x9fb5e656 )
-		ROM_LOAD( "7677.rom", 0x08000, 0x8000, 0x7764765b )
-		ROM_LOAD( "7676.rom", 0x10000, 0x8000, 0x2e42e0d4 )
-		ROM_LOAD( "7675.rom", 0x18000, 0x8000, 0x5cd2d61 )
-		ROM_LOAD( "7674.rom", 0x20000, 0x8000, 0x1a129acf )
-		ROM_LOAD( "7673.rom", 0x28000, 0x8000, 0x82602394 )
-		ROM_LOAD( "7672.rom", 0x30000, 0x8000, 0xd11452f7 )
-		ROM_LOAD( "7671.rom", 0x38000, 0x8000, 0xb0c7fdc6 )
-		ROM_LOAD( "7670.rom", 0x40000, 0x8000, 0xdbbe2f6e )
-		ROM_LOAD( "7669.rom", 0x48000, 0x8000, 0xf9525faa )
-		ROM_LOAD( "7668.rom", 0x50000, 0x8000, 0xe115ce33 )
-		ROM_LOAD( "7667.rom", 0x58000, 0x8000, 0x923bde9d )
-		ROM_LOAD( "7666.rom", 0x60000, 0x8000, 0x23697257 )
-		ROM_LOAD( "7665.rom", 0x68000, 0x8000, 0x12d77607 )
-		ROM_LOAD( "7664.rom", 0x70000, 0x8000, 0x0df2cfad )
-		ROM_LOAD( "7663.rom", 0x78000, 0x8000, 0x2b0b8f08 )
-		ROM_LOAD( "7662.rom", 0x80000, 0x8000, 0xcb0c13c5 )
-		ROM_LOAD( "7661.rom", 0x88000, 0x8000, 0xfe93a79b )
-		ROM_LOAD( "7660.rom", 0x90000, 0x8000, 0x86dfbb68 )
-		ROM_LOAD( "7659.rom", 0x98000, 0x8000, 0x629dc8ce )
-		ROM_LOAD( "7658.rom", 0xa0000, 0x8000, 0x1677f24f )
-		ROM_LOAD( "7657.rom", 0xa8000, 0x8000, 0x8158839c )
-		ROM_LOAD( "7656.rom", 0xb0000, 0x8000, 0x6c741272 )
-		ROM_LOAD( "7655.rom", 0xb8000, 0x8000, 0x3433fe7b )
-		ROM_LOAD( "7654.rom", 0xc0000, 0x8000, 0x2db6520d )
-		ROM_LOAD( "7653.rom", 0xc8000, 0x8000, 0x46a52114 )
-		ROM_LOAD( "7652.rom", 0xd0000, 0x8000, 0x2880cfdb )
-		ROM_LOAD( "7651.rom", 0xd8000, 0x8000, 0xd7902bad )
-		ROM_LOAD( "7650.rom", 0xe0000, 0x8000, 0x642635ec )
-		ROM_LOAD( "7649.rom", 0xe8000, 0x8000, 0x4edba14c )
-		ROM_LOAD( "7648.rom", 0xf0000, 0x8000, 0x983ea830 )
-		ROM_LOAD( "7647.rom", 0xf8000, 0x8000, 0x2e7fbec0 )
+		ROM_REGION( 0x100000, REGION_GFX2, 0 );/* sprites */
+		ROM_LOAD( "7678.rom", 0x00000, 0x8000, 0x9fb5e656 );
+		ROM_LOAD( "7677.rom", 0x08000, 0x8000, 0x7764765b );
+		ROM_LOAD( "7676.rom", 0x10000, 0x8000, 0x2e42e0d4 );
+		ROM_LOAD( "7675.rom", 0x18000, 0x8000, 0x5cd2d61 );
+		ROM_LOAD( "7674.rom", 0x20000, 0x8000, 0x1a129acf );
+		ROM_LOAD( "7673.rom", 0x28000, 0x8000, 0x82602394 );
+		ROM_LOAD( "7672.rom", 0x30000, 0x8000, 0xd11452f7 );
+		ROM_LOAD( "7671.rom", 0x38000, 0x8000, 0xb0c7fdc6 );
+		ROM_LOAD( "7670.rom", 0x40000, 0x8000, 0xdbbe2f6e );
+		ROM_LOAD( "7669.rom", 0x48000, 0x8000, 0xf9525faa );
+		ROM_LOAD( "7668.rom", 0x50000, 0x8000, 0xe115ce33 );
+		ROM_LOAD( "7667.rom", 0x58000, 0x8000, 0x923bde9d );
+		ROM_LOAD( "7666.rom", 0x60000, 0x8000, 0x23697257 );
+		ROM_LOAD( "7665.rom", 0x68000, 0x8000, 0x12d77607 );
+		ROM_LOAD( "7664.rom", 0x70000, 0x8000, 0x0df2cfad );
+		ROM_LOAD( "7663.rom", 0x78000, 0x8000, 0x2b0b8f08 );
+		ROM_LOAD( "7662.rom", 0x80000, 0x8000, 0xcb0c13c5 );
+		ROM_LOAD( "7661.rom", 0x88000, 0x8000, 0xfe93a79b );
+		ROM_LOAD( "7660.rom", 0x90000, 0x8000, 0x86dfbb68 );
+		ROM_LOAD( "7659.rom", 0x98000, 0x8000, 0x629dc8ce );
+		ROM_LOAD( "7658.rom", 0xa0000, 0x8000, 0x1677f24f );
+		ROM_LOAD( "7657.rom", 0xa8000, 0x8000, 0x8158839c );
+		ROM_LOAD( "7656.rom", 0xb0000, 0x8000, 0x6c741272 );
+		ROM_LOAD( "7655.rom", 0xb8000, 0x8000, 0x3433fe7b );
+		ROM_LOAD( "7654.rom", 0xc0000, 0x8000, 0x2db6520d );
+		ROM_LOAD( "7653.rom", 0xc8000, 0x8000, 0x46a52114 );
+		ROM_LOAD( "7652.rom", 0xd0000, 0x8000, 0x2880cfdb );
+		ROM_LOAD( "7651.rom", 0xd8000, 0x8000, 0xd7902bad );
+		ROM_LOAD( "7650.rom", 0xe0000, 0x8000, 0x642635ec );
+		ROM_LOAD( "7649.rom", 0xe8000, 0x8000, 0x4edba14c );
+		ROM_LOAD( "7648.rom", 0xf0000, 0x8000, 0x983ea830 );
+		ROM_LOAD( "7647.rom", 0xf8000, 0x8000, 0x2e7fbec0 );
 	
-		ROM_REGION( 0x10000, REGION_CPU2, 0 ) /* sound CPU */
-		ROM_LOAD( "7682.rom", 0x00000, 0x8000, 0xc4efbf48 )
+		ROM_REGION( 0x10000, REGION_CPU2, 0 );/* sound CPU */
+		ROM_LOAD( "7682.rom", 0x00000, 0x8000, 0xc4efbf48 );
 	
-		ROM_REGION( 0x10000, REGION_SOUND1, 0 ) /* Sega PCM sound data */
-		ROM_LOAD( "7681.rom", 0x00000, 0x8000, 0xbc0c4d12 )
-		ROM_LOAD( "7680.rom", 0x08000, 0x8000, 0x627b3c8c )
+		ROM_REGION( 0x10000, REGION_SOUND1, 0 );/* Sega PCM sound data */
+		ROM_LOAD( "7681.rom", 0x00000, 0x8000, 0xbc0c4d12 );
+		ROM_LOAD( "7680.rom", 0x08000, 0x8000, 0x627b3c8c );
 	
-		ROM_REGION( 0x10000, REGION_CPU3, 0 ) /* second 68000 CPU */
-		ROM_LOAD16_BYTE("7634.rom", 0x0000, 0x8000, 0x3e07fd32 )
-		ROM_LOAD16_BYTE("7635.rom", 0x0001, 0x8000, 0x22f762ab )
+		ROM_REGION( 0x10000, REGION_CPU3, 0 );/* second 68000 CPU */
+		ROM_LOAD16_BYTE("7634.rom", 0x0000, 0x8000, 0x3e07fd32 );
+		ROM_LOAD16_BYTE("7635.rom", 0x0001, 0x8000, 0x22f762ab );
 		// alternate version??
-	//	ROM_LOAD16_BYTE("7634a.rom", 0x0000, 0x8000, 0xaec83731 )
-	//	ROM_LOAD16_BYTE("7635a.rom", 0x0001, 0x8000, 0xb2fce96f )
+	//	ROM_LOAD16_BYTE("7634a.rom", 0x0000, 0x8000, 0xaec83731 );
+	//	ROM_LOAD16_BYTE("7635a.rom", 0x0001, 0x8000, 0xb2fce96f );
 	
-		ROM_REGION( 0x40000, REGION_GFX3, 0 ) /* Road Graphics  (region size should be gr_bitmapwidth*256, 0 )*/
-		ROM_LOAD( "7633.rom", 0x0000, 0x8000, 0x6f146210 )
-	ROM_END
+		ROM_REGION( 0x40000, REGION_GFX3, 0 );/* Road Graphics  (region size should be gr_bitmapwidth*256, 0 )*/
+		ROM_LOAD( "7633.rom", 0x0000, 0x8000, 0x6f146210 );
+	ROM_END(); }}; 
 	
-	ROM_START( endurobl )
-		ROM_REGION( 0x040000+0x010000+0x040000, REGION_CPU1, 0 ) /* 68000 code + space for RAM + space for decrypted opcodes */
-		ROM_LOAD16_BYTE( "7.13j", 0x030000, 0x08000, 0xf1d6b4b7 )
-		ROM_CONTINUE (            0x000000, 0x08000 )
-		ROM_LOAD16_BYTE( "4.13h", 0x030001, 0x08000, 0x43bff873 )				// rom de-coded
-		ROM_CONTINUE (            0x000001, 0x08000 )		// data de-coded
+	static RomLoadPtr rom_endurobl = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x040000+0x010000+0x040000, REGION_CPU1, 0 );/* 68000 code + space for RAM + space for decrypted opcodes */
+		ROM_LOAD16_BYTE( "7.13j", 0x030000, 0x08000, 0xf1d6b4b7 );
+		ROM_CONTINUE (            0x000000, 0x08000 );
+		ROM_LOAD16_BYTE( "4.13h", 0x030001, 0x08000, 0x43bff873 );			// rom de-coded
+		ROM_CONTINUE (            0x000001, 0x08000 );	// data de-coded
 	
-		ROM_LOAD16_BYTE( "8.14j", 0x010000, 0x08000, 0x2153154a )
-		ROM_LOAD16_BYTE( "5.14h", 0x010001, 0x08000, 0x0a97992c )
-		ROM_LOAD16_BYTE( "9.15j", 0x020000, 0x08000, 0xdb3bff1c )	// one byte difference from
-		ROM_LOAD16_BYTE( "6.15h", 0x020001, 0x08000, 0x54b1885a )	// enduro.a06 / enduro.a09
+		ROM_LOAD16_BYTE( "8.14j", 0x010000, 0x08000, 0x2153154a );
+		ROM_LOAD16_BYTE( "5.14h", 0x010001, 0x08000, 0x0a97992c );
+		ROM_LOAD16_BYTE( "9.15j", 0x020000, 0x08000, 0xdb3bff1c );// one byte difference from
+		ROM_LOAD16_BYTE( "6.15h", 0x020001, 0x08000, 0x54b1885a );// enduro.a06 / enduro.a09
 	
-		ROM_REGION( 0x18000, REGION_GFX1, ROMREGION_DISPOSE ) /* tiles */
-		ROM_LOAD( "7644.rom", 0x00000, 0x08000, 0xe7a4ff90 )
-		ROM_LOAD( "7645.rom", 0x08000, 0x08000, 0x4caa0095 )
-		ROM_LOAD( "7646.rom", 0x10000, 0x08000, 0x7e432683 )
+		ROM_REGION( 0x18000, REGION_GFX1, ROMREGION_DISPOSE );/* tiles */
+		ROM_LOAD( "7644.rom", 0x00000, 0x08000, 0xe7a4ff90 );
+		ROM_LOAD( "7645.rom", 0x08000, 0x08000, 0x4caa0095 );
+		ROM_LOAD( "7646.rom", 0x10000, 0x08000, 0x7e432683 );
 	
-		ROM_REGION( 0x100000, REGION_GFX2, 0 ) /* sprites */
-		ROM_LOAD( "7678.rom", 0x00000, 0x8000, 0x9fb5e656 )
-		ROM_LOAD( "7677.rom", 0x08000, 0x8000, 0x7764765b )
-		ROM_LOAD( "7676.rom", 0x10000, 0x8000, 0x2e42e0d4 )
-		ROM_LOAD( "7675.rom", 0x18000, 0x8000, 0x5cd2d61 )
-		ROM_LOAD( "7674.rom", 0x20000, 0x8000, 0x1a129acf )
-		ROM_LOAD( "7673.rom", 0x28000, 0x8000, 0x82602394 )
-		ROM_LOAD( "7672.rom", 0x30000, 0x8000, 0xd11452f7 )
-		ROM_LOAD( "7671.rom", 0x38000, 0x8000, 0xb0c7fdc6 )
-		ROM_LOAD( "7670.rom", 0x40000, 0x8000, 0xdbbe2f6e )
-		ROM_LOAD( "7669.rom", 0x48000, 0x8000, 0xf9525faa )
-		ROM_LOAD( "7668.rom", 0x50000, 0x8000, 0xe115ce33 )
-		ROM_LOAD( "7667.rom", 0x58000, 0x8000, 0x923bde9d )
-		ROM_LOAD( "7666.rom", 0x60000, 0x8000, 0x23697257 )
-		ROM_LOAD( "7665.rom", 0x68000, 0x8000, 0x12d77607 )
-		ROM_LOAD( "7664.rom", 0x70000, 0x8000, 0x0df2cfad )
-		ROM_LOAD( "7663.rom", 0x78000, 0x8000, 0x2b0b8f08 )
-		ROM_LOAD( "7662.rom", 0x80000, 0x8000, 0xcb0c13c5 )
-		ROM_LOAD( "7661.rom", 0x88000, 0x8000, 0xfe93a79b )
-		ROM_LOAD( "7660.rom", 0x90000, 0x8000, 0x86dfbb68 )
-		ROM_LOAD( "7659.rom", 0x98000, 0x8000, 0x629dc8ce )
-		ROM_LOAD( "7658.rom", 0xa0000, 0x8000, 0x1677f24f )
-		ROM_LOAD( "7657.rom", 0xa8000, 0x8000, 0x8158839c )
-		ROM_LOAD( "7656.rom", 0xb0000, 0x8000, 0x6c741272 )
-		ROM_LOAD( "7655.rom", 0xb8000, 0x8000, 0x3433fe7b )
-		ROM_LOAD( "7654.rom", 0xc0000, 0x8000, 0x2db6520d )
-		ROM_LOAD( "7653.rom", 0xc8000, 0x8000, 0x46a52114 )
-		ROM_LOAD( "7652.rom", 0xd0000, 0x8000, 0x2880cfdb )
-		ROM_LOAD( "7651.rom", 0xd8000, 0x8000, 0xd7902bad )
-		ROM_LOAD( "7650.rom", 0xe0000, 0x8000, 0x642635ec )
-		ROM_LOAD( "7649.rom", 0xe8000, 0x8000, 0x4edba14c )
-		ROM_LOAD( "7648.rom", 0xf0000, 0x8000, 0x983ea830 )
-		ROM_LOAD( "7647.rom", 0xf8000, 0x8000, 0x2e7fbec0 )
+		ROM_REGION( 0x100000, REGION_GFX2, 0 );/* sprites */
+		ROM_LOAD( "7678.rom", 0x00000, 0x8000, 0x9fb5e656 );
+		ROM_LOAD( "7677.rom", 0x08000, 0x8000, 0x7764765b );
+		ROM_LOAD( "7676.rom", 0x10000, 0x8000, 0x2e42e0d4 );
+		ROM_LOAD( "7675.rom", 0x18000, 0x8000, 0x5cd2d61 );
+		ROM_LOAD( "7674.rom", 0x20000, 0x8000, 0x1a129acf );
+		ROM_LOAD( "7673.rom", 0x28000, 0x8000, 0x82602394 );
+		ROM_LOAD( "7672.rom", 0x30000, 0x8000, 0xd11452f7 );
+		ROM_LOAD( "7671.rom", 0x38000, 0x8000, 0xb0c7fdc6 );
+		ROM_LOAD( "7670.rom", 0x40000, 0x8000, 0xdbbe2f6e );
+		ROM_LOAD( "7669.rom", 0x48000, 0x8000, 0xf9525faa );
+		ROM_LOAD( "7668.rom", 0x50000, 0x8000, 0xe115ce33 );
+		ROM_LOAD( "7667.rom", 0x58000, 0x8000, 0x923bde9d );
+		ROM_LOAD( "7666.rom", 0x60000, 0x8000, 0x23697257 );
+		ROM_LOAD( "7665.rom", 0x68000, 0x8000, 0x12d77607 );
+		ROM_LOAD( "7664.rom", 0x70000, 0x8000, 0x0df2cfad );
+		ROM_LOAD( "7663.rom", 0x78000, 0x8000, 0x2b0b8f08 );
+		ROM_LOAD( "7662.rom", 0x80000, 0x8000, 0xcb0c13c5 );
+		ROM_LOAD( "7661.rom", 0x88000, 0x8000, 0xfe93a79b );
+		ROM_LOAD( "7660.rom", 0x90000, 0x8000, 0x86dfbb68 );
+		ROM_LOAD( "7659.rom", 0x98000, 0x8000, 0x629dc8ce );
+		ROM_LOAD( "7658.rom", 0xa0000, 0x8000, 0x1677f24f );
+		ROM_LOAD( "7657.rom", 0xa8000, 0x8000, 0x8158839c );
+		ROM_LOAD( "7656.rom", 0xb0000, 0x8000, 0x6c741272 );
+		ROM_LOAD( "7655.rom", 0xb8000, 0x8000, 0x3433fe7b );
+		ROM_LOAD( "7654.rom", 0xc0000, 0x8000, 0x2db6520d );
+		ROM_LOAD( "7653.rom", 0xc8000, 0x8000, 0x46a52114 );
+		ROM_LOAD( "7652.rom", 0xd0000, 0x8000, 0x2880cfdb );
+		ROM_LOAD( "7651.rom", 0xd8000, 0x8000, 0xd7902bad );
+		ROM_LOAD( "7650.rom", 0xe0000, 0x8000, 0x642635ec );
+		ROM_LOAD( "7649.rom", 0xe8000, 0x8000, 0x4edba14c );
+		ROM_LOAD( "7648.rom", 0xf0000, 0x8000, 0x983ea830 );
+		ROM_LOAD( "7647.rom", 0xf8000, 0x8000, 0x2e7fbec0 );
 	
-		ROM_REGION( 0x10000, REGION_CPU2, 0 ) /* sound CPU */
-		ROM_LOAD( "13.16d", 0x00000, 0x004000, 0x81c82fc9 )
-		ROM_LOAD( "12.16e", 0x04000, 0x004000, 0x755bfdad )
+		ROM_REGION( 0x10000, REGION_CPU2, 0 );/* sound CPU */
+		ROM_LOAD( "13.16d", 0x00000, 0x004000, 0x81c82fc9 );
+		ROM_LOAD( "12.16e", 0x04000, 0x004000, 0x755bfdad );
 	
-		ROM_REGION( 0x10000, REGION_SOUND1, 0 ) /* Sega PCM sound data */
-		ROM_LOAD( "7681.rom", 0x00000, 0x8000, 0xbc0c4d12 )
-		ROM_LOAD( "7680.rom", 0x08000, 0x8000, 0x627b3c8c )
+		ROM_REGION( 0x10000, REGION_SOUND1, 0 );/* Sega PCM sound data */
+		ROM_LOAD( "7681.rom", 0x00000, 0x8000, 0xbc0c4d12 );
+		ROM_LOAD( "7680.rom", 0x08000, 0x8000, 0x627b3c8c );
 	
-		ROM_REGION( 0x10000, REGION_CPU3, 0 ) /* second 68000 CPU */
-		ROM_LOAD16_BYTE("7634.rom", 0x0000, 0x8000, 0x3e07fd32 )
-		ROM_LOAD16_BYTE("7635.rom", 0x0001, 0x8000, 0x22f762ab )
+		ROM_REGION( 0x10000, REGION_CPU3, 0 );/* second 68000 CPU */
+		ROM_LOAD16_BYTE("7634.rom", 0x0000, 0x8000, 0x3e07fd32 );
+		ROM_LOAD16_BYTE("7635.rom", 0x0001, 0x8000, 0x22f762ab );
 	
-		ROM_REGION( 0x40000, REGION_GFX3, 0 ) /* Road Graphics  (region size should be gr_bitmapwidth*256, 0 )*/
-		ROM_LOAD( "7633.rom", 0x0000, 0x8000, 0x6f146210 )
-	ROM_END
+		ROM_REGION( 0x40000, REGION_GFX3, 0 );/* Road Graphics  (region size should be gr_bitmapwidth*256, 0 )*/
+		ROM_LOAD( "7633.rom", 0x0000, 0x8000, 0x6f146210 );
+	ROM_END(); }}; 
 	
-	ROM_START( endurob2 )
-		ROM_REGION( 0x040000+0x010000+0x040000, REGION_CPU1, 0 ) /* 68000 code + space for RAM + space for decrypted opcodes */
-		ROM_LOAD16_BYTE( "enduro.a07", 0x000000, 0x08000, 0x259069bc )
-		ROM_LOAD16_BYTE( "enduro.a04", 0x000001, 0x08000, 0xf584fbd9 )
-		ROM_LOAD16_BYTE( "enduro.a08", 0x010000, 0x08000, 0xd234918c )
-		ROM_LOAD16_BYTE( "enduro.a05", 0x010001, 0x08000, 0xa525dd57 )
-		ROM_LOAD16_BYTE( "enduro.a09", 0x020000, 0x08000, 0xf6391091 )
-		ROM_LOAD16_BYTE( "enduro.a06", 0x020001, 0x08000, 0x79b367d7 )
+	static RomLoadPtr rom_endurob2 = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x040000+0x010000+0x040000, REGION_CPU1, 0 );/* 68000 code + space for RAM + space for decrypted opcodes */
+		ROM_LOAD16_BYTE( "enduro.a07", 0x000000, 0x08000, 0x259069bc );
+		ROM_LOAD16_BYTE( "enduro.a04", 0x000001, 0x08000, 0xf584fbd9 );
+		ROM_LOAD16_BYTE( "enduro.a08", 0x010000, 0x08000, 0xd234918c );
+		ROM_LOAD16_BYTE( "enduro.a05", 0x010001, 0x08000, 0xa525dd57 );
+		ROM_LOAD16_BYTE( "enduro.a09", 0x020000, 0x08000, 0xf6391091 );
+		ROM_LOAD16_BYTE( "enduro.a06", 0x020001, 0x08000, 0x79b367d7 );
 	
-		ROM_REGION( 0x18000, REGION_GFX1, ROMREGION_DISPOSE ) /* tiles */
-		ROM_LOAD( "7644.rom", 0x00000, 0x08000, 0xe7a4ff90 )
-		ROM_LOAD( "7645.rom", 0x08000, 0x08000, 0x4caa0095 )
-		ROM_LOAD( "7646.rom", 0x10000, 0x08000, 0x7e432683 )
+		ROM_REGION( 0x18000, REGION_GFX1, ROMREGION_DISPOSE );/* tiles */
+		ROM_LOAD( "7644.rom", 0x00000, 0x08000, 0xe7a4ff90 );
+		ROM_LOAD( "7645.rom", 0x08000, 0x08000, 0x4caa0095 );
+		ROM_LOAD( "7646.rom", 0x10000, 0x08000, 0x7e432683 );
 	
-		ROM_REGION( 0x100000, REGION_GFX2, 0 ) /* sprites */
-		ROM_LOAD( "7678.rom",		0x00000, 0x8000, 0x9fb5e656 )
-		ROM_LOAD( "7677.rom", 		0x08000, 0x8000, 0x7764765b )
-		ROM_LOAD( "7676.rom", 		0x10000, 0x8000, 0x2e42e0d4 )
-		ROM_LOAD( "enduro.a20", 	0x18000, 0x8000, 0x7c280bc8 )
-		ROM_LOAD( "7674.rom", 		0x20000, 0x8000, 0x1a129acf )
-		ROM_LOAD( "7673.rom",		0x28000, 0x8000, 0x82602394 )
-		ROM_LOAD( "7672.rom", 		0x30000, 0x8000, 0xd11452f7 )
-		ROM_LOAD( "7671.rom", 		0x38000, 0x8000, 0xb0c7fdc6 )
-		ROM_LOAD( "7670.rom", 		0x40000, 0x8000, 0xdbbe2f6e )
-		ROM_LOAD( "7669.rom", 		0x48000, 0x8000, 0xf9525faa )
-		ROM_LOAD( "7668.rom", 		0x50000, 0x8000, 0xe115ce33 )
-		ROM_LOAD( "enduro.a28", 	0x58000, 0x8000, 0x321f034b )
-		ROM_LOAD( "7666.rom", 		0x60000, 0x8000, 0x23697257 )
-		ROM_LOAD( "7665.rom", 		0x68000, 0x8000, 0x12d77607 )
-		ROM_LOAD( "7664.rom", 		0x70000, 0x8000, 0x0df2cfad )
-		ROM_LOAD( "7663.rom", 		0x78000, 0x8000, 0x2b0b8f08 )
-		ROM_LOAD( "7662.rom", 		0x80000, 0x8000, 0xcb0c13c5 )
-		ROM_LOAD( "enduro.a34", 	0x88000, 0x8000, 0x296454d8 )
-		ROM_LOAD( "enduro.a35", 	0x90000, 0x8000, 0x1ebe76df )
-		ROM_LOAD( "enduro.a36",		0x98000, 0x8000, 0x243e34e5 )
-		ROM_LOAD( "7658.rom", 		0xa0000, 0x8000, 0x1677f24f )
-		ROM_LOAD( "7657.rom", 		0xa8000, 0x8000, 0x8158839c )
-		ROM_LOAD( "enduro.a39",		0xb0000, 0x8000, 0x1ff3a5e2 )
-		ROM_LOAD( "7655.rom", 		0xb8000, 0x8000, 0x3433fe7b )
-		ROM_LOAD( "7654.rom", 		0xc0000, 0x8000, 0x2db6520d )
-		ROM_LOAD( "7653.rom", 		0xc8000, 0x8000, 0x46a52114 )
-		ROM_LOAD( "7652.rom", 		0xd0000, 0x8000, 0x2880cfdb )
-		ROM_LOAD( "enduro.a44", 	0xd8000, 0x8000, 0x84bb12a1 )
-		ROM_LOAD( "7650.rom", 		0xe0000, 0x8000, 0x642635ec )
-		ROM_LOAD( "7649.rom", 		0xe8000, 0x8000, 0x4edba14c )
-		ROM_LOAD( "7648.rom", 		0xf0000, 0x8000, 0x983ea830 )
-		ROM_LOAD( "7647.rom", 		0xf8000, 0x8000, 0x2e7fbec0 )
+		ROM_REGION( 0x100000, REGION_GFX2, 0 );/* sprites */
+		ROM_LOAD( "7678.rom",		0x00000, 0x8000, 0x9fb5e656 );
+		ROM_LOAD( "7677.rom", 		0x08000, 0x8000, 0x7764765b );
+		ROM_LOAD( "7676.rom", 		0x10000, 0x8000, 0x2e42e0d4 );
+		ROM_LOAD( "enduro.a20", 	0x18000, 0x8000, 0x7c280bc8 );
+		ROM_LOAD( "7674.rom", 		0x20000, 0x8000, 0x1a129acf );
+		ROM_LOAD( "7673.rom",		0x28000, 0x8000, 0x82602394 );
+		ROM_LOAD( "7672.rom", 		0x30000, 0x8000, 0xd11452f7 );
+		ROM_LOAD( "7671.rom", 		0x38000, 0x8000, 0xb0c7fdc6 );
+		ROM_LOAD( "7670.rom", 		0x40000, 0x8000, 0xdbbe2f6e );
+		ROM_LOAD( "7669.rom", 		0x48000, 0x8000, 0xf9525faa );
+		ROM_LOAD( "7668.rom", 		0x50000, 0x8000, 0xe115ce33 );
+		ROM_LOAD( "enduro.a28", 	0x58000, 0x8000, 0x321f034b );
+		ROM_LOAD( "7666.rom", 		0x60000, 0x8000, 0x23697257 );
+		ROM_LOAD( "7665.rom", 		0x68000, 0x8000, 0x12d77607 );
+		ROM_LOAD( "7664.rom", 		0x70000, 0x8000, 0x0df2cfad );
+		ROM_LOAD( "7663.rom", 		0x78000, 0x8000, 0x2b0b8f08 );
+		ROM_LOAD( "7662.rom", 		0x80000, 0x8000, 0xcb0c13c5 );
+		ROM_LOAD( "enduro.a34", 	0x88000, 0x8000, 0x296454d8 );
+		ROM_LOAD( "enduro.a35", 	0x90000, 0x8000, 0x1ebe76df );
+		ROM_LOAD( "enduro.a36",		0x98000, 0x8000, 0x243e34e5 );
+		ROM_LOAD( "7658.rom", 		0xa0000, 0x8000, 0x1677f24f );
+		ROM_LOAD( "7657.rom", 		0xa8000, 0x8000, 0x8158839c );
+		ROM_LOAD( "enduro.a39",		0xb0000, 0x8000, 0x1ff3a5e2 );
+		ROM_LOAD( "7655.rom", 		0xb8000, 0x8000, 0x3433fe7b );
+		ROM_LOAD( "7654.rom", 		0xc0000, 0x8000, 0x2db6520d );
+		ROM_LOAD( "7653.rom", 		0xc8000, 0x8000, 0x46a52114 );
+		ROM_LOAD( "7652.rom", 		0xd0000, 0x8000, 0x2880cfdb );
+		ROM_LOAD( "enduro.a44", 	0xd8000, 0x8000, 0x84bb12a1 );
+		ROM_LOAD( "7650.rom", 		0xe0000, 0x8000, 0x642635ec );
+		ROM_LOAD( "7649.rom", 		0xe8000, 0x8000, 0x4edba14c );
+		ROM_LOAD( "7648.rom", 		0xf0000, 0x8000, 0x983ea830 );
+		ROM_LOAD( "7647.rom", 		0xf8000, 0x8000, 0x2e7fbec0 );
 	
-		ROM_REGION( 0x10000, REGION_CPU2, 0 ) /* sound CPU */
-		ROM_LOAD( "enduro.a16", 0x00000, 0x8000, 0xd2cb6eb5 )
+		ROM_REGION( 0x10000, REGION_CPU2, 0 );/* sound CPU */
+		ROM_LOAD( "enduro.a16", 0x00000, 0x8000, 0xd2cb6eb5 );
 	
-		ROM_REGION( 0x10000, REGION_SOUND1, 0 ) /* Sega PCM sound data */
-		ROM_LOAD( "7681.rom", 0x00000, 0x8000, 0xbc0c4d12 )
-		ROM_LOAD( "7680.rom", 0x08000, 0x8000, 0x627b3c8c )
+		ROM_REGION( 0x10000, REGION_SOUND1, 0 );/* Sega PCM sound data */
+		ROM_LOAD( "7681.rom", 0x00000, 0x8000, 0xbc0c4d12 );
+		ROM_LOAD( "7680.rom", 0x08000, 0x8000, 0x627b3c8c );
 	
-		ROM_REGION( 0x10000, REGION_CPU3, 0 ) /* second 68000 CPU */
-		ROM_LOAD16_BYTE("7634.rom", 0x0000, 0x8000, 0x3e07fd32 )
-		ROM_LOAD16_BYTE("7635.rom", 0x0001, 0x8000, 0x22f762ab )
+		ROM_REGION( 0x10000, REGION_CPU3, 0 );/* second 68000 CPU */
+		ROM_LOAD16_BYTE("7634.rom", 0x0000, 0x8000, 0x3e07fd32 );
+		ROM_LOAD16_BYTE("7635.rom", 0x0001, 0x8000, 0x22f762ab );
 	
-		ROM_REGION( 0x40000, REGION_GFX3, 0 ) /* Road Graphics  (region size should be gr_bitmapwidth*256, 0 )*/
-		ROM_LOAD( "7633.rom", 0x0000, 0x8000, 0x6f146210 )
-	ROM_END
+		ROM_REGION( 0x40000, REGION_GFX3, 0 );/* Road Graphics  (region size should be gr_bitmapwidth*256, 0 )*/
+		ROM_LOAD( "7633.rom", 0x0000, 0x8000, 0x6f146210 );
+	ROM_END(); }}; 
 	
-	ROM_START( sharrier )
-		ROM_REGION( 0x040000, REGION_CPU1, 0 ) /* 68000 code */
-		ROM_LOAD16_BYTE( "ic97.bin", 0x000000, 0x8000, 0x7c30a036 )
-		ROM_LOAD16_BYTE( "ic84.bin", 0x000001, 0x8000, 0x16deaeb1 )
-		ROM_LOAD16_BYTE( "ic98.bin", 0x010000, 0x8000, 0x40b1309f )
-		ROM_LOAD16_BYTE( "ic85.bin", 0x010001, 0x8000, 0xce78045c )
-		ROM_LOAD16_BYTE( "ic99.bin", 0x020000, 0x8000, 0xf6391091 )
-		ROM_LOAD16_BYTE( "ic86.bin", 0x020001, 0x8000, 0x79b367d7 )
-		ROM_LOAD16_BYTE( "ic100.bin", 0x030000, 0x8000, 0x6171e9d3 )
-		ROM_LOAD16_BYTE( "ic87.bin", 0x030001, 0x8000, 0x70cb72ef )
+	static RomLoadPtr rom_sharrier = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x040000, REGION_CPU1, 0 );/* 68000 code */
+		ROM_LOAD16_BYTE( "ic97.bin", 0x000000, 0x8000, 0x7c30a036 );
+		ROM_LOAD16_BYTE( "ic84.bin", 0x000001, 0x8000, 0x16deaeb1 );
+		ROM_LOAD16_BYTE( "ic98.bin", 0x010000, 0x8000, 0x40b1309f );
+		ROM_LOAD16_BYTE( "ic85.bin", 0x010001, 0x8000, 0xce78045c );
+		ROM_LOAD16_BYTE( "ic99.bin", 0x020000, 0x8000, 0xf6391091 );
+		ROM_LOAD16_BYTE( "ic86.bin", 0x020001, 0x8000, 0x79b367d7 );
+		ROM_LOAD16_BYTE( "ic100.bin", 0x030000, 0x8000, 0x6171e9d3 );
+		ROM_LOAD16_BYTE( "ic87.bin", 0x030001, 0x8000, 0x70cb72ef );
 	
-		ROM_REGION( 0x18000, REGION_GFX1, ROMREGION_DISPOSE ) /* tiles */
-		ROM_LOAD( "sic31.bin", 0x00000, 0x08000, 0x347fa325 )
-		ROM_LOAD( "sic46.bin", 0x08000, 0x08000, 0x39d98bd1 )
-		ROM_LOAD( "sic60.bin", 0x10000, 0x08000, 0x3da3ea6b )
+		ROM_REGION( 0x18000, REGION_GFX1, ROMREGION_DISPOSE );/* tiles */
+		ROM_LOAD( "sic31.bin", 0x00000, 0x08000, 0x347fa325 );
+		ROM_LOAD( "sic46.bin", 0x08000, 0x08000, 0x39d98bd1 );
+		ROM_LOAD( "sic60.bin", 0x10000, 0x08000, 0x3da3ea6b );
 	
-		ROM_REGION( 0x100000, REGION_GFX2, 0 ) /* sprites */
-		ROM_LOAD( "ic36.bin", 0x00000, 0x8000, 0x93e2d264 )
-		ROM_LOAD( "ic35.bin", 0x08000, 0x8000, 0xcd6e7500 )
-		ROM_LOAD( "ic34.bin", 0x10000, 0x8000, 0xd5e15e66 )
-		ROM_LOAD( "ic33.bin", 0x18000, 0x8000, 0x60d7c1bb )
-		ROM_LOAD( "ic32.bin", 0x20000, 0x8000, 0x6d7b5c97 )
-		ROM_LOAD( "ic31.bin", 0x28000, 0x8000, 0x5e784271 )
-		ROM_LOAD( "ic30.bin", 0x30000, 0x8000, 0xec42c9ef )
-		ROM_LOAD( "ic29.bin", 0x38000, 0x8000, 0xed51fdc4 )
-		ROM_LOAD( "ic28.bin", 0x40000, 0x8000, 0xedbf5fc3 )
-		ROM_LOAD( "ic27.bin", 0x48000, 0x8000, 0x41f25a9c )
-		ROM_LOAD( "ic26.bin", 0x50000, 0x8000, 0xac62ae2e )
-		ROM_LOAD( "ic25.bin", 0x58000, 0x8000, 0xf6330038 )
-		ROM_LOAD( "ic24.bin", 0x60000, 0x8000, 0xcebf797c )
-		ROM_LOAD( "ic23.bin", 0x68000, 0x8000, 0x510e5e10 )
-		ROM_LOAD( "ic22.bin", 0x70000, 0x8000, 0x6d4a7d7a )
-		ROM_LOAD( "ic21.bin", 0x78000, 0x8000, 0xdfe75f3d )
-		ROM_LOAD( "ic118.bin",0x80000, 0x8000, 0xe8c537d8 )
-		ROM_LOAD( "ic17.bin", 0x88000, 0x8000, 0x5bb09a67 )
-		ROM_LOAD( "ic16.bin", 0x90000, 0x8000, 0x9c782295 )
-		ROM_LOAD( "ic15.bin", 0x98000, 0x8000, 0x60737b98 )
-		ROM_LOAD( "ic14.bin", 0xa0000, 0x8000, 0x24596a8b )
-		ROM_LOAD( "ic13.bin", 0xa8000, 0x8000, 0x7a2dad15 )
-		ROM_LOAD( "ic12.bin", 0xb0000, 0x8000, 0x0f732717 )
-		ROM_LOAD( "ic11.bin", 0xb8000, 0x8000, 0xa2c07741 )
-		ROM_LOAD( "ic8.bin",  0xc0000, 0x8000, 0x22844fa4 )
-		ROM_LOAD( "ic7.bin",  0xc8000, 0x8000, 0xdcaa2ebf )
-		ROM_LOAD( "ic6.bin",  0xd0000, 0x8000, 0x3711105c )
-		ROM_LOAD( "ic5.bin",  0xd8000, 0x8000, 0x70fb5ebb )
-		ROM_LOAD( "ic4.bin",  0xe0000, 0x8000, 0xb537d082 )
-		ROM_LOAD( "ic3.bin",  0xe8000, 0x8000, 0xf5ba4e08 )
-		ROM_LOAD( "ic2.bin",  0xf0000, 0x8000, 0xfc3bf8f3 )
-		ROM_LOAD( "ic1.bin",  0xf8000, 0x8000, 0xb191e22f )
+		ROM_REGION( 0x100000, REGION_GFX2, 0 );/* sprites */
+		ROM_LOAD( "ic36.bin", 0x00000, 0x8000, 0x93e2d264 );
+		ROM_LOAD( "ic35.bin", 0x08000, 0x8000, 0xcd6e7500 );
+		ROM_LOAD( "ic34.bin", 0x10000, 0x8000, 0xd5e15e66 );
+		ROM_LOAD( "ic33.bin", 0x18000, 0x8000, 0x60d7c1bb );
+		ROM_LOAD( "ic32.bin", 0x20000, 0x8000, 0x6d7b5c97 );
+		ROM_LOAD( "ic31.bin", 0x28000, 0x8000, 0x5e784271 );
+		ROM_LOAD( "ic30.bin", 0x30000, 0x8000, 0xec42c9ef );
+		ROM_LOAD( "ic29.bin", 0x38000, 0x8000, 0xed51fdc4 );
+		ROM_LOAD( "ic28.bin", 0x40000, 0x8000, 0xedbf5fc3 );
+		ROM_LOAD( "ic27.bin", 0x48000, 0x8000, 0x41f25a9c );
+		ROM_LOAD( "ic26.bin", 0x50000, 0x8000, 0xac62ae2e );
+		ROM_LOAD( "ic25.bin", 0x58000, 0x8000, 0xf6330038 );
+		ROM_LOAD( "ic24.bin", 0x60000, 0x8000, 0xcebf797c );
+		ROM_LOAD( "ic23.bin", 0x68000, 0x8000, 0x510e5e10 );
+		ROM_LOAD( "ic22.bin", 0x70000, 0x8000, 0x6d4a7d7a );
+		ROM_LOAD( "ic21.bin", 0x78000, 0x8000, 0xdfe75f3d );
+		ROM_LOAD( "ic118.bin",0x80000, 0x8000, 0xe8c537d8 );
+		ROM_LOAD( "ic17.bin", 0x88000, 0x8000, 0x5bb09a67 );
+		ROM_LOAD( "ic16.bin", 0x90000, 0x8000, 0x9c782295 );
+		ROM_LOAD( "ic15.bin", 0x98000, 0x8000, 0x60737b98 );
+		ROM_LOAD( "ic14.bin", 0xa0000, 0x8000, 0x24596a8b );
+		ROM_LOAD( "ic13.bin", 0xa8000, 0x8000, 0x7a2dad15 );
+		ROM_LOAD( "ic12.bin", 0xb0000, 0x8000, 0x0f732717 );
+		ROM_LOAD( "ic11.bin", 0xb8000, 0x8000, 0xa2c07741 );
+		ROM_LOAD( "ic8.bin",  0xc0000, 0x8000, 0x22844fa4 );
+		ROM_LOAD( "ic7.bin",  0xc8000, 0x8000, 0xdcaa2ebf );
+		ROM_LOAD( "ic6.bin",  0xd0000, 0x8000, 0x3711105c );
+		ROM_LOAD( "ic5.bin",  0xd8000, 0x8000, 0x70fb5ebb );
+		ROM_LOAD( "ic4.bin",  0xe0000, 0x8000, 0xb537d082 );
+		ROM_LOAD( "ic3.bin",  0xe8000, 0x8000, 0xf5ba4e08 );
+		ROM_LOAD( "ic2.bin",  0xf0000, 0x8000, 0xfc3bf8f3 );
+		ROM_LOAD( "ic1.bin",  0xf8000, 0x8000, 0xb191e22f );
 	
-		ROM_REGION( 0x10000, REGION_CPU2, 0 ) /* sound CPU */
-		ROM_LOAD( "ic73.bin", 0x00000, 0x004000, 0xd6397933 )
-		ROM_LOAD( "ic72.bin", 0x04000, 0x004000, 0x504e76d9 )
+		ROM_REGION( 0x10000, REGION_CPU2, 0 );/* sound CPU */
+		ROM_LOAD( "ic73.bin", 0x00000, 0x004000, 0xd6397933 );
+		ROM_LOAD( "ic72.bin", 0x04000, 0x004000, 0x504e76d9 );
 	
-		ROM_REGION( 0x10000, REGION_SOUND1, 0 ) /* Sega PCM sound data */
-		ROM_LOAD( "snd7231.256", 0x00000, 0x8000, 0x871c6b14 )
-		ROM_LOAD( "snd7232.256", 0x08000, 0x8000, 0x4b59340c )
+		ROM_REGION( 0x10000, REGION_SOUND1, 0 );/* Sega PCM sound data */
+		ROM_LOAD( "snd7231.256", 0x00000, 0x8000, 0x871c6b14 );
+		ROM_LOAD( "snd7232.256", 0x08000, 0x8000, 0x4b59340c );
 	
-		ROM_REGION( 0x10000, REGION_CPU3, 0 ) /* second 68000 CPU */
-		ROM_LOAD16_BYTE( "ic54.bin", 0x0000, 0x8000, 0xd7c535b6 )
-		ROM_LOAD16_BYTE( "ic67.bin", 0x0001, 0x8000, 0xa6153af8 )
+		ROM_REGION( 0x10000, REGION_CPU3, 0 );/* second 68000 CPU */
+		ROM_LOAD16_BYTE( "ic54.bin", 0x0000, 0x8000, 0xd7c535b6 );
+		ROM_LOAD16_BYTE( "ic67.bin", 0x0001, 0x8000, 0xa6153af8 );
 	
-		ROM_REGION( 0x40000, REGION_GFX3, 0 ) /* Road Graphics  (region size should be gr_bitmapwidth*256, 0 )*/
-		ROM_LOAD( "pic2.bin", 0x0000, 0x8000, 0xb4740419 )
-	ROM_END
+		ROM_REGION( 0x40000, REGION_GFX3, 0 );/* Road Graphics  (region size should be gr_bitmapwidth*256, 0 )*/
+		ROM_LOAD( "pic2.bin", 0x0000, 0x8000, 0xb4740419 );
+	ROM_END(); }}; 
 	
 	/***************************************************************************/
 	

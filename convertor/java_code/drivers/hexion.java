@@ -292,21 +292,21 @@ public class hexion
 	
 	***************************************************************************/
 	
-	ROM_START( hexion )
-		ROM_REGION( 0x34800, REGION_CPU1, 0 )	/* ROMs + space for additional RAM */
-		ROM_LOAD( "122jab01.bin", 0x00000, 0x20000, 0xeabc6dd1 )
-		ROM_RELOAD(               0x10000, 0x20000 )	/* banked at 8000-9fff */
+	static RomLoadPtr rom_hexion = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x34800, REGION_CPU1, 0 );/* ROMs + space for additional RAM */
+		ROM_LOAD( "122jab01.bin", 0x00000, 0x20000, 0xeabc6dd1 );
+		ROM_RELOAD(               0x10000, 0x20000 );/* banked at 8000-9fff */
 	
-		ROM_REGION( 0x80000, REGION_GFX1, 0 )	/* addressable by the main CPU */
-		ROM_LOAD( "122a07.bin",   0x00000, 0x40000, 0x22ae55e3 )
-		ROM_LOAD( "122a06.bin",   0x40000, 0x40000, 0x438f4388 )
+		ROM_REGION( 0x80000, REGION_GFX1, 0 );/* addressable by the main CPU */
+		ROM_LOAD( "122a07.bin",   0x00000, 0x40000, 0x22ae55e3 );
+		ROM_LOAD( "122a06.bin",   0x40000, 0x40000, 0x438f4388 );
 	
-		ROM_REGION( 0x40000, REGION_SOUND1, 0 )	/* OKIM6295 samples */
-		ROM_LOAD( "122a05.bin",   0x0000, 0x40000, 0xbcc831bf )
+		ROM_REGION( 0x40000, REGION_SOUND1, 0 );/* OKIM6295 samples */
+		ROM_LOAD( "122a05.bin",   0x0000, 0x40000, 0xbcc831bf );
 	
-		ROM_REGION( 0x0300, REGION_PROMS, 0 )
-		ROM_LOAD( "proms",        0x0000, 0x0300, 0x00000000 )
-	ROM_END
+		ROM_REGION( 0x0300, REGION_PROMS, 0 );
+		ROM_LOAD( "proms",        0x0000, 0x0300, 0x00000000 );
+	ROM_END(); }}; 
 	
 	
 	static void init_hexion(void)

@@ -1386,813 +1386,813 @@ public class m62
 	
 	***************************************************************************/
 	
-	ROM_START( kungfum )
-		ROM_REGION( 0x10000, REGION_CPU1, 0 )	/* 64k for code */
-		ROM_LOAD( "a-4e-c.bin",   0x0000, 0x4000, 0xb6e2d083 )
-		ROM_LOAD( "a-4d-c.bin",   0x4000, 0x4000, 0x7532918e )
+	static RomLoadPtr rom_kungfum = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x10000, REGION_CPU1, 0 );/* 64k for code */
+		ROM_LOAD( "a-4e-c.bin",   0x0000, 0x4000, 0xb6e2d083 );
+		ROM_LOAD( "a-4d-c.bin",   0x4000, 0x4000, 0x7532918e );
 	
-		ROM_REGION( 0x10000, REGION_CPU2, 0 )	/* 64k for the audio CPU (6803) */
-		ROM_LOAD( "a-3e-.bin",    0xa000, 0x2000, 0x58e87ab0 )	/* samples (ADPCM 4-bit) */
-		ROM_LOAD( "a-3f-.bin",    0xc000, 0x2000, 0xc81e31ea )	/* samples (ADPCM 4-bit) */
-		ROM_LOAD( "a-3h-.bin",    0xe000, 0x2000, 0xd99fb995 )
+		ROM_REGION( 0x10000, REGION_CPU2, 0 );/* 64k for the audio CPU (6803) */
+		ROM_LOAD( "a-3e-.bin",    0xa000, 0x2000, 0x58e87ab0 );/* samples (ADPCM 4-bit) */
+		ROM_LOAD( "a-3f-.bin",    0xc000, 0x2000, 0xc81e31ea );/* samples (ADPCM 4-bit) */
+		ROM_LOAD( "a-3h-.bin",    0xe000, 0x2000, 0xd99fb995 );
 	
-		ROM_REGION( 0x06000, REGION_GFX1, ROMREGION_DISPOSE )
-		ROM_LOAD( "g-4c-a.bin",   0x00000, 0x2000, 0x6b2cc9c8 )	/* characters */
-		ROM_LOAD( "g-4d-a.bin",   0x02000, 0x2000, 0xc648f558 )
-		ROM_LOAD( "g-4e-a.bin",   0x04000, 0x2000, 0xfbe9276e )
+		ROM_REGION( 0x06000, REGION_GFX1, ROMREGION_DISPOSE );
+		ROM_LOAD( "g-4c-a.bin",   0x00000, 0x2000, 0x6b2cc9c8 );/* characters */
+		ROM_LOAD( "g-4d-a.bin",   0x02000, 0x2000, 0xc648f558 );
+		ROM_LOAD( "g-4e-a.bin",   0x04000, 0x2000, 0xfbe9276e );
 	
-		ROM_REGION( 0x18000, REGION_GFX2, ROMREGION_DISPOSE )
-		ROM_LOAD( "b-4k-.bin",    0x00000, 0x2000, 0x16fb5150 )	/* sprites */
-		ROM_LOAD( "b-4f-.bin",    0x02000, 0x2000, 0x67745a33 )
-		ROM_LOAD( "b-4l-.bin",    0x04000, 0x2000, 0xbd1c2261 )
-		ROM_LOAD( "b-4h-.bin",    0x06000, 0x2000, 0x8ac5ed3a )
-		ROM_LOAD( "b-3n-.bin",    0x08000, 0x2000, 0x28a213aa )
-		ROM_LOAD( "b-4n-.bin",    0x0a000, 0x2000, 0xd5228df3 )
-		ROM_LOAD( "b-4m-.bin",    0x0c000, 0x2000, 0xb16de4f2 )
-		ROM_LOAD( "b-3m-.bin",    0x0e000, 0x2000, 0xeba0d66b )
-		ROM_LOAD( "b-4c-.bin",    0x10000, 0x2000, 0x01298885 )
-		ROM_LOAD( "b-4e-.bin",    0x12000, 0x2000, 0xc77b87d4 )
-		ROM_LOAD( "b-4d-.bin",    0x14000, 0x2000, 0x6a70615f )
-		ROM_LOAD( "b-4a-.bin",    0x16000, 0x2000, 0x6189d626 )
+		ROM_REGION( 0x18000, REGION_GFX2, ROMREGION_DISPOSE );
+		ROM_LOAD( "b-4k-.bin",    0x00000, 0x2000, 0x16fb5150 );/* sprites */
+		ROM_LOAD( "b-4f-.bin",    0x02000, 0x2000, 0x67745a33 );
+		ROM_LOAD( "b-4l-.bin",    0x04000, 0x2000, 0xbd1c2261 );
+		ROM_LOAD( "b-4h-.bin",    0x06000, 0x2000, 0x8ac5ed3a );
+		ROM_LOAD( "b-3n-.bin",    0x08000, 0x2000, 0x28a213aa );
+		ROM_LOAD( "b-4n-.bin",    0x0a000, 0x2000, 0xd5228df3 );
+		ROM_LOAD( "b-4m-.bin",    0x0c000, 0x2000, 0xb16de4f2 );
+		ROM_LOAD( "b-3m-.bin",    0x0e000, 0x2000, 0xeba0d66b );
+		ROM_LOAD( "b-4c-.bin",    0x10000, 0x2000, 0x01298885 );
+		ROM_LOAD( "b-4e-.bin",    0x12000, 0x2000, 0xc77b87d4 );
+		ROM_LOAD( "b-4d-.bin",    0x14000, 0x2000, 0x6a70615f );
+		ROM_LOAD( "b-4a-.bin",    0x16000, 0x2000, 0x6189d626 );
 	
-		ROM_REGION( 0x0720, REGION_PROMS, 0 )
-		ROM_LOAD( "g-1j-.bin",    0x0000, 0x0100, 0x668e6bca )	/* character palette red component */
-		ROM_LOAD( "b-1m-.bin",    0x0100, 0x0100, 0x76c05a9c )	/* sprite palette red component */
-		ROM_LOAD( "g-1f-.bin",    0x0200, 0x0100, 0x964b6495 )	/* character palette green component */
-		ROM_LOAD( "b-1n-.bin",    0x0300, 0x0100, 0x23f06b99 )	/* sprite palette green component */
-		ROM_LOAD( "g-1h-.bin",    0x0400, 0x0100, 0x550563e1 )	/* character palette blue component */
-		ROM_LOAD( "b-1l-.bin",    0x0500, 0x0100, 0x35e45021 )	/* sprite palette blue component */
-		ROM_LOAD( "b-5f-.bin",    0x0600, 0x0020, 0x7a601c3d )	/* sprite height, one entry per 32 */
+		ROM_REGION( 0x0720, REGION_PROMS, 0 );
+		ROM_LOAD( "g-1j-.bin",    0x0000, 0x0100, 0x668e6bca );/* character palette red component */
+		ROM_LOAD( "b-1m-.bin",    0x0100, 0x0100, 0x76c05a9c );/* sprite palette red component */
+		ROM_LOAD( "g-1f-.bin",    0x0200, 0x0100, 0x964b6495 );/* character palette green component */
+		ROM_LOAD( "b-1n-.bin",    0x0300, 0x0100, 0x23f06b99 );/* sprite palette green component */
+		ROM_LOAD( "g-1h-.bin",    0x0400, 0x0100, 0x550563e1 );/* character palette blue component */
+		ROM_LOAD( "b-1l-.bin",    0x0500, 0x0100, 0x35e45021 );/* sprite palette blue component */
+		ROM_LOAD( "b-5f-.bin",    0x0600, 0x0020, 0x7a601c3d );/* sprite height, one entry per 32 */
 																/* sprites. Used at run time! */
-		ROM_LOAD( "b-6f-.bin",    0x0620, 0x0100, 0x82c20d12 )	/* video timing - same as battroad */
-	ROM_END
+		ROM_LOAD( "b-6f-.bin",    0x0620, 0x0100, 0x82c20d12 );/* video timing - same as battroad */
+	ROM_END(); }}; 
 	
-	ROM_START( kungfud )
-		ROM_REGION( 0x10000, REGION_CPU1, 0 )	/* 64k for code */
-		ROM_LOAD( "a-4e-d",       0x0000, 0x4000, 0xfc330a46 )
-		ROM_LOAD( "a-4d-d",       0x4000, 0x4000, 0x1b2fd32f )
+	static RomLoadPtr rom_kungfud = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x10000, REGION_CPU1, 0 );/* 64k for code */
+		ROM_LOAD( "a-4e-d",       0x0000, 0x4000, 0xfc330a46 );
+		ROM_LOAD( "a-4d-d",       0x4000, 0x4000, 0x1b2fd32f );
 	
-		ROM_REGION( 0x10000, REGION_CPU2, 0 )	/* 64k for the audio CPU (6803) */
-		ROM_LOAD( "a-3e-.bin",    0xa000, 0x2000, 0x58e87ab0 )	/* samples (ADPCM 4-bit) */
-		ROM_LOAD( "a-3f-.bin",    0xc000, 0x2000, 0xc81e31ea )	/* samples (ADPCM 4-bit) */
-		ROM_LOAD( "a-3h-.bin",    0xe000, 0x2000, 0xd99fb995 )
+		ROM_REGION( 0x10000, REGION_CPU2, 0 );/* 64k for the audio CPU (6803) */
+		ROM_LOAD( "a-3e-.bin",    0xa000, 0x2000, 0x58e87ab0 );/* samples (ADPCM 4-bit) */
+		ROM_LOAD( "a-3f-.bin",    0xc000, 0x2000, 0xc81e31ea );/* samples (ADPCM 4-bit) */
+		ROM_LOAD( "a-3h-.bin",    0xe000, 0x2000, 0xd99fb995 );
 	
-		ROM_REGION( 0x06000, REGION_GFX1, ROMREGION_DISPOSE )
-		ROM_LOAD( "g-4c-a.bin",   0x00000, 0x2000, 0x6b2cc9c8 )	/* characters */
-		ROM_LOAD( "g-4d-a.bin",   0x02000, 0x2000, 0xc648f558 )
-		ROM_LOAD( "g-4e-a.bin",   0x04000, 0x2000, 0xfbe9276e )
+		ROM_REGION( 0x06000, REGION_GFX1, ROMREGION_DISPOSE );
+		ROM_LOAD( "g-4c-a.bin",   0x00000, 0x2000, 0x6b2cc9c8 );/* characters */
+		ROM_LOAD( "g-4d-a.bin",   0x02000, 0x2000, 0xc648f558 );
+		ROM_LOAD( "g-4e-a.bin",   0x04000, 0x2000, 0xfbe9276e );
 	
-		ROM_REGION( 0x18000, REGION_GFX2, ROMREGION_DISPOSE )
-		ROM_LOAD( "b-4k-.bin",    0x00000, 0x2000, 0x16fb5150 )	/* sprites */
-		ROM_LOAD( "b-4f-.bin",    0x02000, 0x2000, 0x67745a33 )
-		ROM_LOAD( "b-4l-.bin",    0x04000, 0x2000, 0xbd1c2261 )
-		ROM_LOAD( "b-4h-.bin",    0x06000, 0x2000, 0x8ac5ed3a )
-		ROM_LOAD( "b-3n-.bin",    0x08000, 0x2000, 0x28a213aa )
-		ROM_LOAD( "b-4n-.bin",    0x0a000, 0x2000, 0xd5228df3 )
-		ROM_LOAD( "b-4m-.bin",    0x0c000, 0x2000, 0xb16de4f2 )
-		ROM_LOAD( "b-3m-.bin",    0x0e000, 0x2000, 0xeba0d66b )
-		ROM_LOAD( "b-4c-.bin",    0x10000, 0x2000, 0x01298885 )
-		ROM_LOAD( "b-4e-.bin",    0x12000, 0x2000, 0xc77b87d4 )
-		ROM_LOAD( "b-4d-.bin",    0x14000, 0x2000, 0x6a70615f )
-		ROM_LOAD( "b-4a-.bin",    0x16000, 0x2000, 0x6189d626 )
+		ROM_REGION( 0x18000, REGION_GFX2, ROMREGION_DISPOSE );
+		ROM_LOAD( "b-4k-.bin",    0x00000, 0x2000, 0x16fb5150 );/* sprites */
+		ROM_LOAD( "b-4f-.bin",    0x02000, 0x2000, 0x67745a33 );
+		ROM_LOAD( "b-4l-.bin",    0x04000, 0x2000, 0xbd1c2261 );
+		ROM_LOAD( "b-4h-.bin",    0x06000, 0x2000, 0x8ac5ed3a );
+		ROM_LOAD( "b-3n-.bin",    0x08000, 0x2000, 0x28a213aa );
+		ROM_LOAD( "b-4n-.bin",    0x0a000, 0x2000, 0xd5228df3 );
+		ROM_LOAD( "b-4m-.bin",    0x0c000, 0x2000, 0xb16de4f2 );
+		ROM_LOAD( "b-3m-.bin",    0x0e000, 0x2000, 0xeba0d66b );
+		ROM_LOAD( "b-4c-.bin",    0x10000, 0x2000, 0x01298885 );
+		ROM_LOAD( "b-4e-.bin",    0x12000, 0x2000, 0xc77b87d4 );
+		ROM_LOAD( "b-4d-.bin",    0x14000, 0x2000, 0x6a70615f );
+		ROM_LOAD( "b-4a-.bin",    0x16000, 0x2000, 0x6189d626 );
 	
-		ROM_REGION( 0x0720, REGION_PROMS, 0 )
-		ROM_LOAD( "g-1j-.bin",    0x0000, 0x0100, 0x668e6bca )	/* character palette red component */
-		ROM_LOAD( "b-1m-.bin",    0x0100, 0x0100, 0x76c05a9c )	/* sprite palette red component */
-		ROM_LOAD( "g-1f-.bin",    0x0200, 0x0100, 0x964b6495 )	/* character palette green component */
-		ROM_LOAD( "b-1n-.bin",    0x0300, 0x0100, 0x23f06b99 )	/* sprite palette green component */
-		ROM_LOAD( "g-1h-.bin",    0x0400, 0x0100, 0x550563e1 )	/* character palette blue component */
-		ROM_LOAD( "b-1l-.bin",    0x0500, 0x0100, 0x35e45021 )	/* sprite palette blue component */
-		ROM_LOAD( "b-5f-.bin",    0x0600, 0x0020, 0x7a601c3d )	/* sprite height, one entry per 32 */
+		ROM_REGION( 0x0720, REGION_PROMS, 0 );
+		ROM_LOAD( "g-1j-.bin",    0x0000, 0x0100, 0x668e6bca );/* character palette red component */
+		ROM_LOAD( "b-1m-.bin",    0x0100, 0x0100, 0x76c05a9c );/* sprite palette red component */
+		ROM_LOAD( "g-1f-.bin",    0x0200, 0x0100, 0x964b6495 );/* character palette green component */
+		ROM_LOAD( "b-1n-.bin",    0x0300, 0x0100, 0x23f06b99 );/* sprite palette green component */
+		ROM_LOAD( "g-1h-.bin",    0x0400, 0x0100, 0x550563e1 );/* character palette blue component */
+		ROM_LOAD( "b-1l-.bin",    0x0500, 0x0100, 0x35e45021 );/* sprite palette blue component */
+		ROM_LOAD( "b-5f-.bin",    0x0600, 0x0020, 0x7a601c3d );/* sprite height, one entry per 32 */
 																/* sprites. Used at run time! */
-		ROM_LOAD( "b-6f-.bin",    0x0620, 0x0100, 0x82c20d12 )	/* video timing - same as battroad */
-	ROM_END
+		ROM_LOAD( "b-6f-.bin",    0x0620, 0x0100, 0x82c20d12 );/* video timing - same as battroad */
+	ROM_END(); }}; 
 	
-	ROM_START( spartanx )
-		ROM_REGION( 0x10000, REGION_CPU1, 0 )	/* 64k for code */
-		ROM_LOAD( "a-4e-c-j.bin", 0x0000, 0x4000, 0x32a0a9a6 )
-		ROM_LOAD( "a-4d-c-j.bin", 0x4000, 0x4000, 0x3173ea78 )
+	static RomLoadPtr rom_spartanx = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x10000, REGION_CPU1, 0 );/* 64k for code */
+		ROM_LOAD( "a-4e-c-j.bin", 0x0000, 0x4000, 0x32a0a9a6 );
+		ROM_LOAD( "a-4d-c-j.bin", 0x4000, 0x4000, 0x3173ea78 );
 	
-		ROM_REGION( 0x10000, REGION_CPU2, 0 )	/* 64k for the audio CPU (6803) */
-		ROM_LOAD( "a-3e-.bin",    0xa000, 0x2000, 0x58e87ab0 )	/* samples (ADPCM 4-bit) */
-		ROM_LOAD( "a-3f-.bin",    0xc000, 0x2000, 0xc81e31ea )	/* samples (ADPCM 4-bit) */
-		ROM_LOAD( "a-3h-.bin",    0xe000, 0x2000, 0xd99fb995 )
+		ROM_REGION( 0x10000, REGION_CPU2, 0 );/* 64k for the audio CPU (6803) */
+		ROM_LOAD( "a-3e-.bin",    0xa000, 0x2000, 0x58e87ab0 );/* samples (ADPCM 4-bit) */
+		ROM_LOAD( "a-3f-.bin",    0xc000, 0x2000, 0xc81e31ea );/* samples (ADPCM 4-bit) */
+		ROM_LOAD( "a-3h-.bin",    0xe000, 0x2000, 0xd99fb995 );
 	
-		ROM_REGION( 0x06000, REGION_GFX1, ROMREGION_DISPOSE )
-		ROM_LOAD( "g-4c-a-j.bin", 0x00000, 0x2000, 0x8af9c5a6 )	/* characters */
-		ROM_LOAD( "g-4d-a-j.bin", 0x02000, 0x2000, 0xb8300c72 )
-		ROM_LOAD( "g-4e-a-j.bin", 0x04000, 0x2000, 0xb50429cd )
+		ROM_REGION( 0x06000, REGION_GFX1, ROMREGION_DISPOSE );
+		ROM_LOAD( "g-4c-a-j.bin", 0x00000, 0x2000, 0x8af9c5a6 );/* characters */
+		ROM_LOAD( "g-4d-a-j.bin", 0x02000, 0x2000, 0xb8300c72 );
+		ROM_LOAD( "g-4e-a-j.bin", 0x04000, 0x2000, 0xb50429cd );
 	
-		ROM_REGION( 0x18000, REGION_GFX2, ROMREGION_DISPOSE )
-		ROM_LOAD( "b-4k-.bin",    0x00000, 0x2000, 0x16fb5150 )	/* sprites */
-		ROM_LOAD( "b-4f-.bin",    0x02000, 0x2000, 0x67745a33 )
-		ROM_LOAD( "b-4l-.bin",    0x04000, 0x2000, 0xbd1c2261 )
-		ROM_LOAD( "b-4h-.bin",    0x06000, 0x2000, 0x8ac5ed3a )
-		ROM_LOAD( "b-3n-.bin",    0x08000, 0x2000, 0x28a213aa )
-		ROM_LOAD( "b-4n-.bin",    0x0a000, 0x2000, 0xd5228df3 )
-		ROM_LOAD( "b-4m-.bin",    0x0c000, 0x2000, 0xb16de4f2 )
-		ROM_LOAD( "b-3m-.bin",    0x0e000, 0x2000, 0xeba0d66b )
-		ROM_LOAD( "b-4c-.bin",    0x10000, 0x2000, 0x01298885 )
-		ROM_LOAD( "b-4e-.bin",    0x12000, 0x2000, 0xc77b87d4 )
-		ROM_LOAD( "b-4d-.bin",    0x14000, 0x2000, 0x6a70615f )
-		ROM_LOAD( "b-4a-.bin",    0x16000, 0x2000, 0x6189d626 )
+		ROM_REGION( 0x18000, REGION_GFX2, ROMREGION_DISPOSE );
+		ROM_LOAD( "b-4k-.bin",    0x00000, 0x2000, 0x16fb5150 );/* sprites */
+		ROM_LOAD( "b-4f-.bin",    0x02000, 0x2000, 0x67745a33 );
+		ROM_LOAD( "b-4l-.bin",    0x04000, 0x2000, 0xbd1c2261 );
+		ROM_LOAD( "b-4h-.bin",    0x06000, 0x2000, 0x8ac5ed3a );
+		ROM_LOAD( "b-3n-.bin",    0x08000, 0x2000, 0x28a213aa );
+		ROM_LOAD( "b-4n-.bin",    0x0a000, 0x2000, 0xd5228df3 );
+		ROM_LOAD( "b-4m-.bin",    0x0c000, 0x2000, 0xb16de4f2 );
+		ROM_LOAD( "b-3m-.bin",    0x0e000, 0x2000, 0xeba0d66b );
+		ROM_LOAD( "b-4c-.bin",    0x10000, 0x2000, 0x01298885 );
+		ROM_LOAD( "b-4e-.bin",    0x12000, 0x2000, 0xc77b87d4 );
+		ROM_LOAD( "b-4d-.bin",    0x14000, 0x2000, 0x6a70615f );
+		ROM_LOAD( "b-4a-.bin",    0x16000, 0x2000, 0x6189d626 );
 	
-		ROM_REGION( 0x0720, REGION_PROMS, 0 )
-		ROM_LOAD( "g-1j-.bin",    0x0000, 0x0100, 0x668e6bca )	/* character palette red component */
-		ROM_LOAD( "b-1m-.bin",    0x0100, 0x0100, 0x76c05a9c )	/* sprite palette red component */
-		ROM_LOAD( "g-1f-.bin",    0x0200, 0x0100, 0x964b6495 )	/* character palette green component */
-		ROM_LOAD( "b-1n-.bin",    0x0300, 0x0100, 0x23f06b99 )	/* sprite palette green component */
-		ROM_LOAD( "g-1h-.bin",    0x0400, 0x0100, 0x550563e1 )	/* character palette blue component */
-		ROM_LOAD( "b-1l-.bin",    0x0500, 0x0100, 0x35e45021 )	/* sprite palette blue component */
-		ROM_LOAD( "b-5f-.bin",    0x0600, 0x0020, 0x7a601c3d )	/* sprite height, one entry per 32 */
+		ROM_REGION( 0x0720, REGION_PROMS, 0 );
+		ROM_LOAD( "g-1j-.bin",    0x0000, 0x0100, 0x668e6bca );/* character palette red component */
+		ROM_LOAD( "b-1m-.bin",    0x0100, 0x0100, 0x76c05a9c );/* sprite palette red component */
+		ROM_LOAD( "g-1f-.bin",    0x0200, 0x0100, 0x964b6495 );/* character palette green component */
+		ROM_LOAD( "b-1n-.bin",    0x0300, 0x0100, 0x23f06b99 );/* sprite palette green component */
+		ROM_LOAD( "g-1h-.bin",    0x0400, 0x0100, 0x550563e1 );/* character palette blue component */
+		ROM_LOAD( "b-1l-.bin",    0x0500, 0x0100, 0x35e45021 );/* sprite palette blue component */
+		ROM_LOAD( "b-5f-.bin",    0x0600, 0x0020, 0x7a601c3d );/* sprite height, one entry per 32 */
 																/* sprites. Used at run time! */
-		ROM_LOAD( "b-6f-.bin",    0x0620, 0x0100, 0x82c20d12 )	/* video timing - same as battroad */
-	ROM_END
+		ROM_LOAD( "b-6f-.bin",    0x0620, 0x0100, 0x82c20d12 );/* video timing - same as battroad */
+	ROM_END(); }}; 
 	
-	ROM_START( kungfub )
-		ROM_REGION( 0x10000, REGION_CPU1, 0 )	/* 64k for code */
-		ROM_LOAD( "c5.5h",        0x0000, 0x4000, 0x5d8e791d )
-		ROM_LOAD( "c4.5k",        0x4000, 0x4000, 0x4000e2b8 )
+	static RomLoadPtr rom_kungfub = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x10000, REGION_CPU1, 0 );/* 64k for code */
+		ROM_LOAD( "c5.5h",        0x0000, 0x4000, 0x5d8e791d );
+		ROM_LOAD( "c4.5k",        0x4000, 0x4000, 0x4000e2b8 );
 	
-		ROM_REGION( 0x10000, REGION_CPU2, 0 )	/* 64k for the audio CPU (6803) */
-		ROM_LOAD( "a-3e-.bin",    0xa000, 0x2000, 0x58e87ab0 )	/* samples (ADPCM 4-bit) */
-		ROM_LOAD( "a-3f-.bin",    0xc000, 0x2000, 0xc81e31ea )	/* samples (ADPCM 4-bit) */
-		ROM_LOAD( "a-3h-.bin",    0xe000, 0x2000, 0xd99fb995 )
+		ROM_REGION( 0x10000, REGION_CPU2, 0 );/* 64k for the audio CPU (6803) */
+		ROM_LOAD( "a-3e-.bin",    0xa000, 0x2000, 0x58e87ab0 );/* samples (ADPCM 4-bit) */
+		ROM_LOAD( "a-3f-.bin",    0xc000, 0x2000, 0xc81e31ea );/* samples (ADPCM 4-bit) */
+		ROM_LOAD( "a-3h-.bin",    0xe000, 0x2000, 0xd99fb995 );
 	
-		ROM_REGION( 0x06000, REGION_GFX1, ROMREGION_DISPOSE )
-		ROM_LOAD( "g-4c-a.bin",   0x00000, 0x2000, 0x6b2cc9c8 )	/* characters */
-		ROM_LOAD( "g-4d-a.bin",   0x02000, 0x2000, 0xc648f558 )
-		ROM_LOAD( "g-4e-a.bin",   0x04000, 0x2000, 0xfbe9276e )
+		ROM_REGION( 0x06000, REGION_GFX1, ROMREGION_DISPOSE );
+		ROM_LOAD( "g-4c-a.bin",   0x00000, 0x2000, 0x6b2cc9c8 );/* characters */
+		ROM_LOAD( "g-4d-a.bin",   0x02000, 0x2000, 0xc648f558 );
+		ROM_LOAD( "g-4e-a.bin",   0x04000, 0x2000, 0xfbe9276e );
 	
-		ROM_REGION( 0x18000, REGION_GFX2, ROMREGION_DISPOSE )
-		ROM_LOAD( "b-4k-.bin",    0x00000, 0x2000, 0x16fb5150 )	/* sprites */
-		ROM_LOAD( "b-4f-.bin",    0x02000, 0x2000, 0x67745a33 )
-		ROM_LOAD( "b-4l-.bin",    0x04000, 0x2000, 0xbd1c2261 )
-		ROM_LOAD( "b-4h-.bin",    0x06000, 0x2000, 0x8ac5ed3a )
-		ROM_LOAD( "b-3n-.bin",    0x08000, 0x2000, 0x28a213aa )
-		ROM_LOAD( "b-4n-.bin",    0x0a000, 0x2000, 0xd5228df3 )
-		ROM_LOAD( "b-4m-.bin",    0x0c000, 0x2000, 0xb16de4f2 )
-		ROM_LOAD( "b-3m-.bin",    0x0e000, 0x2000, 0xeba0d66b )
-		ROM_LOAD( "b-4c-.bin",    0x10000, 0x2000, 0x01298885 )
-		ROM_LOAD( "b-4e-.bin",    0x12000, 0x2000, 0xc77b87d4 )
-		ROM_LOAD( "b-4d-.bin",    0x14000, 0x2000, 0x6a70615f )
-		ROM_LOAD( "b-4a-.bin",    0x16000, 0x2000, 0x6189d626 )
+		ROM_REGION( 0x18000, REGION_GFX2, ROMREGION_DISPOSE );
+		ROM_LOAD( "b-4k-.bin",    0x00000, 0x2000, 0x16fb5150 );/* sprites */
+		ROM_LOAD( "b-4f-.bin",    0x02000, 0x2000, 0x67745a33 );
+		ROM_LOAD( "b-4l-.bin",    0x04000, 0x2000, 0xbd1c2261 );
+		ROM_LOAD( "b-4h-.bin",    0x06000, 0x2000, 0x8ac5ed3a );
+		ROM_LOAD( "b-3n-.bin",    0x08000, 0x2000, 0x28a213aa );
+		ROM_LOAD( "b-4n-.bin",    0x0a000, 0x2000, 0xd5228df3 );
+		ROM_LOAD( "b-4m-.bin",    0x0c000, 0x2000, 0xb16de4f2 );
+		ROM_LOAD( "b-3m-.bin",    0x0e000, 0x2000, 0xeba0d66b );
+		ROM_LOAD( "b-4c-.bin",    0x10000, 0x2000, 0x01298885 );
+		ROM_LOAD( "b-4e-.bin",    0x12000, 0x2000, 0xc77b87d4 );
+		ROM_LOAD( "b-4d-.bin",    0x14000, 0x2000, 0x6a70615f );
+		ROM_LOAD( "b-4a-.bin",    0x16000, 0x2000, 0x6189d626 );
 	
-		ROM_REGION( 0x0720, REGION_PROMS, 0 )
-		ROM_LOAD( "g-1j-.bin",    0x0000, 0x0100, 0x668e6bca )	/* character palette red component */
-		ROM_LOAD( "b-1m-.bin",    0x0100, 0x0100, 0x76c05a9c )	/* sprite palette red component */
-		ROM_LOAD( "g-1f-.bin",    0x0200, 0x0100, 0x964b6495 )	/* character palette green component */
-		ROM_LOAD( "b-1n-.bin",    0x0300, 0x0100, 0x23f06b99 )	/* sprite palette green component */
-		ROM_LOAD( "g-1h-.bin",    0x0400, 0x0100, 0x550563e1 )	/* character palette blue component */
-		ROM_LOAD( "b-1l-.bin",    0x0500, 0x0100, 0x35e45021 )	/* sprite palette blue component */
-		ROM_LOAD( "b-5f-.bin",    0x0600, 0x0020, 0x7a601c3d )	/* sprite height, one entry per 32 */
+		ROM_REGION( 0x0720, REGION_PROMS, 0 );
+		ROM_LOAD( "g-1j-.bin",    0x0000, 0x0100, 0x668e6bca );/* character palette red component */
+		ROM_LOAD( "b-1m-.bin",    0x0100, 0x0100, 0x76c05a9c );/* sprite palette red component */
+		ROM_LOAD( "g-1f-.bin",    0x0200, 0x0100, 0x964b6495 );/* character palette green component */
+		ROM_LOAD( "b-1n-.bin",    0x0300, 0x0100, 0x23f06b99 );/* sprite palette green component */
+		ROM_LOAD( "g-1h-.bin",    0x0400, 0x0100, 0x550563e1 );/* character palette blue component */
+		ROM_LOAD( "b-1l-.bin",    0x0500, 0x0100, 0x35e45021 );/* sprite palette blue component */
+		ROM_LOAD( "b-5f-.bin",    0x0600, 0x0020, 0x7a601c3d );/* sprite height, one entry per 32 */
 																/* sprites. Used at run time! */
-		ROM_LOAD( "b-6f-.bin",    0x0620, 0x0100, 0x82c20d12 )	/* video timing - same as battroad */
-	ROM_END
+		ROM_LOAD( "b-6f-.bin",    0x0620, 0x0100, 0x82c20d12 );/* video timing - same as battroad */
+	ROM_END(); }}; 
 	
-	ROM_START( kungfub2 )
-		ROM_REGION( 0x10000, REGION_CPU1, 0 )	/* 64k for code */
-		ROM_LOAD( "kf4",          0x0000, 0x4000, 0x3f65313f )
-		ROM_LOAD( "kf5",          0x4000, 0x4000, 0x9ea325f3 )
+	static RomLoadPtr rom_kungfub2 = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x10000, REGION_CPU1, 0 );/* 64k for code */
+		ROM_LOAD( "kf4",          0x0000, 0x4000, 0x3f65313f );
+		ROM_LOAD( "kf5",          0x4000, 0x4000, 0x9ea325f3 );
 	
-		ROM_REGION( 0x10000, REGION_CPU2, 0 )	/* 64k for the audio CPU (6803) */
-		ROM_LOAD( "a-3e-.bin",    0xa000, 0x2000, 0x58e87ab0 )	/* samples (ADPCM 4-bit) */
-		ROM_LOAD( "a-3f-.bin",    0xc000, 0x2000, 0xc81e31ea )	/* samples (ADPCM 4-bit) */
-		ROM_LOAD( "a-3h-.bin",    0xe000, 0x2000, 0xd99fb995 )
+		ROM_REGION( 0x10000, REGION_CPU2, 0 );/* 64k for the audio CPU (6803) */
+		ROM_LOAD( "a-3e-.bin",    0xa000, 0x2000, 0x58e87ab0 );/* samples (ADPCM 4-bit) */
+		ROM_LOAD( "a-3f-.bin",    0xc000, 0x2000, 0xc81e31ea );/* samples (ADPCM 4-bit) */
+		ROM_LOAD( "a-3h-.bin",    0xe000, 0x2000, 0xd99fb995 );
 	
-		ROM_REGION( 0x06000, REGION_GFX1, ROMREGION_DISPOSE )
-		ROM_LOAD( "g-4c-a.bin",   0x00000, 0x2000, 0x6b2cc9c8 )	/* characters */
-		ROM_LOAD( "g-4d-a.bin",   0x02000, 0x2000, 0xc648f558 )
-		ROM_LOAD( "g-4e-a.bin",   0x04000, 0x2000, 0xfbe9276e )
+		ROM_REGION( 0x06000, REGION_GFX1, ROMREGION_DISPOSE );
+		ROM_LOAD( "g-4c-a.bin",   0x00000, 0x2000, 0x6b2cc9c8 );/* characters */
+		ROM_LOAD( "g-4d-a.bin",   0x02000, 0x2000, 0xc648f558 );
+		ROM_LOAD( "g-4e-a.bin",   0x04000, 0x2000, 0xfbe9276e );
 	
-		ROM_REGION( 0x18000, REGION_GFX2, ROMREGION_DISPOSE )
-		ROM_LOAD( "b-4k-.bin",    0x00000, 0x2000, 0x16fb5150 )	/* sprites */
-		ROM_LOAD( "b-4f-.bin",    0x02000, 0x2000, 0x67745a33 )
-		ROM_LOAD( "b-4l-.bin",    0x04000, 0x2000, 0xbd1c2261 )
-		ROM_LOAD( "b-4h-.bin",    0x06000, 0x2000, 0x8ac5ed3a )
-		ROM_LOAD( "b-3n-.bin",    0x08000, 0x2000, 0x28a213aa )
-		ROM_LOAD( "b-4n-.bin",    0x0a000, 0x2000, 0xd5228df3 )
-		ROM_LOAD( "b-4m-.bin",    0x0c000, 0x2000, 0xb16de4f2 )
-		ROM_LOAD( "b-3m-.bin",    0x0e000, 0x2000, 0xeba0d66b )
-		ROM_LOAD( "b-4c-.bin",    0x10000, 0x2000, 0x01298885 )
-		ROM_LOAD( "b-4e-.bin",    0x12000, 0x2000, 0xc77b87d4 )
-		ROM_LOAD( "b-4d-.bin",    0x14000, 0x2000, 0x6a70615f )
-		ROM_LOAD( "b-4a-.bin",    0x16000, 0x2000, 0x6189d626 )
+		ROM_REGION( 0x18000, REGION_GFX2, ROMREGION_DISPOSE );
+		ROM_LOAD( "b-4k-.bin",    0x00000, 0x2000, 0x16fb5150 );/* sprites */
+		ROM_LOAD( "b-4f-.bin",    0x02000, 0x2000, 0x67745a33 );
+		ROM_LOAD( "b-4l-.bin",    0x04000, 0x2000, 0xbd1c2261 );
+		ROM_LOAD( "b-4h-.bin",    0x06000, 0x2000, 0x8ac5ed3a );
+		ROM_LOAD( "b-3n-.bin",    0x08000, 0x2000, 0x28a213aa );
+		ROM_LOAD( "b-4n-.bin",    0x0a000, 0x2000, 0xd5228df3 );
+		ROM_LOAD( "b-4m-.bin",    0x0c000, 0x2000, 0xb16de4f2 );
+		ROM_LOAD( "b-3m-.bin",    0x0e000, 0x2000, 0xeba0d66b );
+		ROM_LOAD( "b-4c-.bin",    0x10000, 0x2000, 0x01298885 );
+		ROM_LOAD( "b-4e-.bin",    0x12000, 0x2000, 0xc77b87d4 );
+		ROM_LOAD( "b-4d-.bin",    0x14000, 0x2000, 0x6a70615f );
+		ROM_LOAD( "b-4a-.bin",    0x16000, 0x2000, 0x6189d626 );
 	
-		ROM_REGION( 0x0720, REGION_PROMS, 0 )
-		ROM_LOAD( "g-1j-.bin",    0x0000, 0x0100, 0x668e6bca )	/* character palette red component */
-		ROM_LOAD( "b-1m-.bin",    0x0100, 0x0100, 0x76c05a9c )	/* sprite palette red component */
-		ROM_LOAD( "g-1f-.bin",    0x0200, 0x0100, 0x964b6495 )	/* character palette green component */
-		ROM_LOAD( "b-1n-.bin",    0x0300, 0x0100, 0x23f06b99 )	/* sprite palette green component */
-		ROM_LOAD( "g-1h-.bin",    0x0400, 0x0100, 0x550563e1 )	/* character palette blue component */
-		ROM_LOAD( "b-1l-.bin",    0x0500, 0x0100, 0x35e45021 )	/* sprite palette blue component */
-		ROM_LOAD( "b-5f-.bin",    0x0600, 0x0020, 0x7a601c3d )	/* sprite height, one entry per 32 */
+		ROM_REGION( 0x0720, REGION_PROMS, 0 );
+		ROM_LOAD( "g-1j-.bin",    0x0000, 0x0100, 0x668e6bca );/* character palette red component */
+		ROM_LOAD( "b-1m-.bin",    0x0100, 0x0100, 0x76c05a9c );/* sprite palette red component */
+		ROM_LOAD( "g-1f-.bin",    0x0200, 0x0100, 0x964b6495 );/* character palette green component */
+		ROM_LOAD( "b-1n-.bin",    0x0300, 0x0100, 0x23f06b99 );/* sprite palette green component */
+		ROM_LOAD( "g-1h-.bin",    0x0400, 0x0100, 0x550563e1 );/* character palette blue component */
+		ROM_LOAD( "b-1l-.bin",    0x0500, 0x0100, 0x35e45021 );/* sprite palette blue component */
+		ROM_LOAD( "b-5f-.bin",    0x0600, 0x0020, 0x7a601c3d );/* sprite height, one entry per 32 */
 																/* sprites. Used at run time! */
-		ROM_LOAD( "b-6f-.bin",    0x0620, 0x0100, 0x82c20d12 )	/* video timing - same as battroad */
-	ROM_END
+		ROM_LOAD( "b-6f-.bin",    0x0620, 0x0100, 0x82c20d12 );/* video timing - same as battroad */
+	ROM_END(); }}; 
 	
-	ROM_START( battroad )
-		ROM_REGION( 0x1e000, REGION_CPU1, 0 )	/* 64k for code */
-		ROM_LOAD( "br-a-4e.b",	0x00000, 0x2000, 0x9bf14768 )
-		ROM_LOAD( "br-a-4d.b",	0x02000, 0x2000, 0x39ca1627 )
-		ROM_LOAD( "br-a-4b.b",	0x04000, 0x2000, 0x1865bb22 )
-		ROM_LOAD( "br-a-4a",	0x06000, 0x2000, 0x65b61c21 )
-		ROM_LOAD( "br-c-7c",	0x10000, 0x2000, 0x2e1eca52 )	/* banked at a000-bfff */
-		ROM_LOAD( "br-c-7l",	0x12000, 0x2000, 0xf2178578 )
-		ROM_LOAD( "br-c-7d",	0x14000, 0x2000, 0x3aa9fa30 )
-		ROM_LOAD( "br-c-7b",	0x16000, 0x2000, 0x0b31b90b )
-		ROM_LOAD( "br-c-7a",	0x18000, 0x2000, 0xec3b0080 )
-		ROM_LOAD( "br-c-7k",	0x1c000, 0x2000, 0xedc75f7f )
+	static RomLoadPtr rom_battroad = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x1e000, REGION_CPU1, 0 );/* 64k for code */
+		ROM_LOAD( "br-a-4e.b",	0x00000, 0x2000, 0x9bf14768 );
+		ROM_LOAD( "br-a-4d.b",	0x02000, 0x2000, 0x39ca1627 );
+		ROM_LOAD( "br-a-4b.b",	0x04000, 0x2000, 0x1865bb22 );
+		ROM_LOAD( "br-a-4a",	0x06000, 0x2000, 0x65b61c21 );
+		ROM_LOAD( "br-c-7c",	0x10000, 0x2000, 0x2e1eca52 );/* banked at a000-bfff */
+		ROM_LOAD( "br-c-7l",	0x12000, 0x2000, 0xf2178578 );
+		ROM_LOAD( "br-c-7d",	0x14000, 0x2000, 0x3aa9fa30 );
+		ROM_LOAD( "br-c-7b",	0x16000, 0x2000, 0x0b31b90b );
+		ROM_LOAD( "br-c-7a",	0x18000, 0x2000, 0xec3b0080 );
+		ROM_LOAD( "br-c-7k",	0x1c000, 0x2000, 0xedc75f7f );
 	
-		ROM_REGION( 0x10000, REGION_CPU2, 0 )	/* 64k for the audio CPU (6803) */
-		ROM_LOAD( "br-a-3e",     0xa000, 0x2000, 0xa7140871 )
-		ROM_LOAD( "br-a-3f",     0xc000, 0x2000, 0x1bb51b30 )
-		ROM_LOAD( "br-a-3h",     0xe000, 0x2000, 0xafb3e083 )
+		ROM_REGION( 0x10000, REGION_CPU2, 0 );/* 64k for the audio CPU (6803) */
+		ROM_LOAD( "br-a-3e",     0xa000, 0x2000, 0xa7140871 );
+		ROM_LOAD( "br-a-3f",     0xc000, 0x2000, 0x1bb51b30 );
+		ROM_LOAD( "br-a-3h",     0xe000, 0x2000, 0xafb3e083 );
 	
-		ROM_REGION( 0x06000, REGION_GFX1, ROMREGION_DISPOSE )
-		ROM_LOAD( "br-c-6h",	0x00000, 0x2000, 0xca50841c )	/* tiles */
-		ROM_LOAD( "br-c-6n",	0x02000, 0x2000, 0x7d53163a )
-		ROM_LOAD( "br-c-6k",	0x04000, 0x2000, 0x5951e12a )
+		ROM_REGION( 0x06000, REGION_GFX1, ROMREGION_DISPOSE );
+		ROM_LOAD( "br-c-6h",	0x00000, 0x2000, 0xca50841c );/* tiles */
+		ROM_LOAD( "br-c-6n",	0x02000, 0x2000, 0x7d53163a );
+		ROM_LOAD( "br-c-6k",	0x04000, 0x2000, 0x5951e12a );
 	
-		ROM_REGION( 0x0c000, REGION_GFX2, ROMREGION_DISPOSE )
-		ROM_LOAD( "br-b-4k.a",	0x00000, 0x2000, 0xd3c5e85b )	/* sprites */
-		ROM_LOAD( "br-b-4f.a",	0x02000, 0x2000, 0x4354232a )
-		ROM_LOAD( "br-b-3n.a",	0x04000, 0x2000, 0x2668dbef )
-		ROM_LOAD( "br-b-4n.a",	0x06000, 0x2000, 0xc719a324 )
-		ROM_LOAD( "br-b-4c.a",	0x08000, 0x2000, 0x0b3193bf )
-		ROM_LOAD( "br-b-4e.a",	0x0a000, 0x2000, 0x3662e8fb )
+		ROM_REGION( 0x0c000, REGION_GFX2, ROMREGION_DISPOSE );
+		ROM_LOAD( "br-b-4k.a",	0x00000, 0x2000, 0xd3c5e85b );/* sprites */
+		ROM_LOAD( "br-b-4f.a",	0x02000, 0x2000, 0x4354232a );
+		ROM_LOAD( "br-b-3n.a",	0x04000, 0x2000, 0x2668dbef );
+		ROM_LOAD( "br-b-4n.a",	0x06000, 0x2000, 0xc719a324 );
+		ROM_LOAD( "br-b-4c.a",	0x08000, 0x2000, 0x0b3193bf );
+		ROM_LOAD( "br-b-4e.a",	0x0a000, 0x2000, 0x3662e8fb );
 	
-		ROM_REGION( 0x04000, REGION_GFX3, ROMREGION_DISPOSE )
-		ROM_LOAD( "br-c-1b",	0x00000, 0x2000, 0x8088911e )	/* characters */
-		ROM_LOAD( "br-c-1c",	0x02000, 0x2000, 0x3d78b653 )
+		ROM_REGION( 0x04000, REGION_GFX3, ROMREGION_DISPOSE );
+		ROM_LOAD( "br-c-1b",	0x00000, 0x2000, 0x8088911e );/* characters */
+		ROM_LOAD( "br-c-1c",	0x02000, 0x2000, 0x3d78b653 );
 	
-		ROM_REGION( 0x0740, REGION_PROMS, 0 )
-		ROM_LOAD( "br-c-3j",     0x0000, 0x0100, 0xaceaed79 )	/* tile palette red component */
-		ROM_LOAD( "br-b-1m",     0x0100, 0x0100, 0x3bd30c7d )	/* sprite palette red component */
-		ROM_LOAD( "br-c-3l",     0x0200, 0x0100, 0x7cf6f380 )	/* tile palette green component */
-		ROM_LOAD( "br-b-1n",     0x0300, 0x0100, 0xb7f3dc3b )	/* sprite palette green component */
-		ROM_LOAD( "br-c-3k",     0x0400, 0x0100, 0xd90e4a54 )	/* tile palette blue component */
-		ROM_LOAD( "br-b-1l",     0x0500, 0x0100, 0x5271c7d8 )	/* sprite palette blue component */
-		ROM_LOAD( "br-c-1j",     0x0600, 0x0020, 0x78eb5d77 )	/* character palette */
-		ROM_LOAD( "br-b-5p",     0x0620, 0x0020, 0xce746937 )	/* sprite height, one entry per 32 */
+		ROM_REGION( 0x0740, REGION_PROMS, 0 );
+		ROM_LOAD( "br-c-3j",     0x0000, 0x0100, 0xaceaed79 );/* tile palette red component */
+		ROM_LOAD( "br-b-1m",     0x0100, 0x0100, 0x3bd30c7d );/* sprite palette red component */
+		ROM_LOAD( "br-c-3l",     0x0200, 0x0100, 0x7cf6f380 );/* tile palette green component */
+		ROM_LOAD( "br-b-1n",     0x0300, 0x0100, 0xb7f3dc3b );/* sprite palette green component */
+		ROM_LOAD( "br-c-3k",     0x0400, 0x0100, 0xd90e4a54 );/* tile palette blue component */
+		ROM_LOAD( "br-b-1l",     0x0500, 0x0100, 0x5271c7d8 );/* sprite palette blue component */
+		ROM_LOAD( "br-c-1j",     0x0600, 0x0020, 0x78eb5d77 );/* character palette */
+		ROM_LOAD( "br-b-5p",     0x0620, 0x0020, 0xce746937 );/* sprite height, one entry per 32 */
 		                                                        /* sprites. Used at run time! */
-		ROM_LOAD( "br-b-6f",     0x0640, 0x0100, 0x82c20d12 )	/* video timing - same as kungfum */
-	ROM_END
+		ROM_LOAD( "br-b-6f",     0x0640, 0x0100, 0x82c20d12 );/* video timing - same as kungfum */
+	ROM_END(); }}; 
 	
-	ROM_START( ldrun )
-		ROM_REGION( 0x10000, REGION_CPU1, 0 )	/* 64k for code */
-		ROM_LOAD( "lr-a-4e",      0x0000, 0x2000, 0x5d7e2a4d )
-		ROM_LOAD( "lr-a-4d",      0x2000, 0x2000, 0x96f20473 )
-		ROM_LOAD( "lr-a-4b",      0x4000, 0x2000, 0xb041c4a9 )
-		ROM_LOAD( "lr-a-4a",      0x6000, 0x2000, 0x645e42aa )
+	static RomLoadPtr rom_ldrun = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x10000, REGION_CPU1, 0 );/* 64k for code */
+		ROM_LOAD( "lr-a-4e",      0x0000, 0x2000, 0x5d7e2a4d );
+		ROM_LOAD( "lr-a-4d",      0x2000, 0x2000, 0x96f20473 );
+		ROM_LOAD( "lr-a-4b",      0x4000, 0x2000, 0xb041c4a9 );
+		ROM_LOAD( "lr-a-4a",      0x6000, 0x2000, 0x645e42aa );
 	
-		ROM_REGION( 0x10000, REGION_CPU2, 0 )	/* 64k for the audio CPU (6803) */
-		ROM_LOAD( "lr-a-3f",      0xc000, 0x2000, 0x7a96accd )
-		ROM_LOAD( "lr-a-3h",      0xe000, 0x2000, 0x3f7f3939 )
+		ROM_REGION( 0x10000, REGION_CPU2, 0 );/* 64k for the audio CPU (6803) */
+		ROM_LOAD( "lr-a-3f",      0xc000, 0x2000, 0x7a96accd );
+		ROM_LOAD( "lr-a-3h",      0xe000, 0x2000, 0x3f7f3939 );
 	
-		ROM_REGION( 0x6000, REGION_GFX1, ROMREGION_DISPOSE )
-		ROM_LOAD( "lr-e-2d",      0x0000, 0x2000, 0x24f9b58d )	/* characters */
-		ROM_LOAD( "lr-e-2j",      0x2000, 0x2000, 0x43175e08 )
-		ROM_LOAD( "lr-e-2f",      0x4000, 0x2000, 0xe0317124 )
+		ROM_REGION( 0x6000, REGION_GFX1, ROMREGION_DISPOSE );
+		ROM_LOAD( "lr-e-2d",      0x0000, 0x2000, 0x24f9b58d );/* characters */
+		ROM_LOAD( "lr-e-2j",      0x2000, 0x2000, 0x43175e08 );
+		ROM_LOAD( "lr-e-2f",      0x4000, 0x2000, 0xe0317124 );
 	
-		ROM_REGION( 0x6000, REGION_GFX2, ROMREGION_DISPOSE )
-		ROM_LOAD( "lr-b-4k",      0x0000, 0x2000, 0x8141403e )	/* sprites */
-		ROM_LOAD( "lr-b-3n",      0x2000, 0x2000, 0x55154154 )
-		ROM_LOAD( "lr-b-4c",      0x4000, 0x2000, 0x924e34d0 )
+		ROM_REGION( 0x6000, REGION_GFX2, ROMREGION_DISPOSE );
+		ROM_LOAD( "lr-b-4k",      0x0000, 0x2000, 0x8141403e );/* sprites */
+		ROM_LOAD( "lr-b-3n",      0x2000, 0x2000, 0x55154154 );
+		ROM_LOAD( "lr-b-4c",      0x4000, 0x2000, 0x924e34d0 );
 	
-		ROM_REGION( 0x0720, REGION_PROMS, 0 )
-		ROM_LOAD( "lr-e-3m",      0x0000, 0x0100, 0x53040416 )	/* character palette red component */
-		ROM_LOAD( "lr-b-1m",      0x0100, 0x0100, 0x4bae1c25 )	/* sprite palette red component */
-		ROM_LOAD( "lr-e-3l",      0x0200, 0x0100, 0x67786037 )	/* character palette green component */
-		ROM_LOAD( "lr-b-1n",      0x0300, 0x0100, 0x9cd3db94 )	/* sprite palette green component */
-		ROM_LOAD( "lr-e-3n",      0x0400, 0x0100, 0x5b716837 )	/* character palette blue component */
-		ROM_LOAD( "lr-b-1l",      0x0500, 0x0100, 0x08d8cf9a )	/* sprite palette blue component */
-		ROM_LOAD( "lr-b-5p",      0x0600, 0x0020, 0xe01f69e2 )	/* sprite height, one entry per 32 */
+		ROM_REGION( 0x0720, REGION_PROMS, 0 );
+		ROM_LOAD( "lr-e-3m",      0x0000, 0x0100, 0x53040416 );/* character palette red component */
+		ROM_LOAD( "lr-b-1m",      0x0100, 0x0100, 0x4bae1c25 );/* sprite palette red component */
+		ROM_LOAD( "lr-e-3l",      0x0200, 0x0100, 0x67786037 );/* character palette green component */
+		ROM_LOAD( "lr-b-1n",      0x0300, 0x0100, 0x9cd3db94 );/* sprite palette green component */
+		ROM_LOAD( "lr-e-3n",      0x0400, 0x0100, 0x5b716837 );/* character palette blue component */
+		ROM_LOAD( "lr-b-1l",      0x0500, 0x0100, 0x08d8cf9a );/* sprite palette blue component */
+		ROM_LOAD( "lr-b-5p",      0x0600, 0x0020, 0xe01f69e2 );/* sprite height, one entry per 32 */
 		                                                        /* sprites. Used at run time! */
-		ROM_LOAD( "lr-b-6f",      0x0620, 0x0100, 0x34d88d3c )	/* video timing - common to the other games */
-	ROM_END
+		ROM_LOAD( "lr-b-6f",      0x0620, 0x0100, 0x34d88d3c );/* video timing - common to the other games */
+	ROM_END(); }}; 
 	
-	ROM_START( ldruna )
-		ROM_REGION( 0x10000, REGION_CPU1, 0 )	/* 64k for code */
-		ROM_LOAD( "roma4c",       0x0000, 0x2000, 0x279421e1 )
-		ROM_LOAD( "lr-a-4d",      0x2000, 0x2000, 0x96f20473 )
-		ROM_LOAD( "roma4b",       0x4000, 0x2000, 0x3c464bad )
-		ROM_LOAD( "roma4a",       0x6000, 0x2000, 0x899df8e0 )
+	static RomLoadPtr rom_ldruna = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x10000, REGION_CPU1, 0 );/* 64k for code */
+		ROM_LOAD( "roma4c",       0x0000, 0x2000, 0x279421e1 );
+		ROM_LOAD( "lr-a-4d",      0x2000, 0x2000, 0x96f20473 );
+		ROM_LOAD( "roma4b",       0x4000, 0x2000, 0x3c464bad );
+		ROM_LOAD( "roma4a",       0x6000, 0x2000, 0x899df8e0 );
 	
-		ROM_REGION( 0x10000, REGION_CPU2, 0 )	/* 64k for the audio CPU (6803) */
-		ROM_LOAD( "lr-a-3f",      0xc000, 0x2000, 0x7a96accd )
-		ROM_LOAD( "lr-a-3h",      0xe000, 0x2000, 0x3f7f3939 )
+		ROM_REGION( 0x10000, REGION_CPU2, 0 );/* 64k for the audio CPU (6803) */
+		ROM_LOAD( "lr-a-3f",      0xc000, 0x2000, 0x7a96accd );
+		ROM_LOAD( "lr-a-3h",      0xe000, 0x2000, 0x3f7f3939 );
 	
-		ROM_REGION( 0x6000, REGION_GFX1, ROMREGION_DISPOSE )
-		ROM_LOAD( "lr-e-2d",      0x0000, 0x2000, 0x24f9b58d )	/* characters */
-		ROM_LOAD( "lr-e-2j",      0x2000, 0x2000, 0x43175e08 )
-		ROM_LOAD( "lr-e-2f",      0x4000, 0x2000, 0xe0317124 )
+		ROM_REGION( 0x6000, REGION_GFX1, ROMREGION_DISPOSE );
+		ROM_LOAD( "lr-e-2d",      0x0000, 0x2000, 0x24f9b58d );/* characters */
+		ROM_LOAD( "lr-e-2j",      0x2000, 0x2000, 0x43175e08 );
+		ROM_LOAD( "lr-e-2f",      0x4000, 0x2000, 0xe0317124 );
 	
-		ROM_REGION( 0x6000, REGION_GFX2, ROMREGION_DISPOSE )
-		ROM_LOAD( "lr-b-4k",      0x0000, 0x2000, 0x8141403e )	/* sprites */
-		ROM_LOAD( "lr-b-3n",      0x2000, 0x2000, 0x55154154 )
-		ROM_LOAD( "lr-b-4c",      0x4000, 0x2000, 0x924e34d0 )
+		ROM_REGION( 0x6000, REGION_GFX2, ROMREGION_DISPOSE );
+		ROM_LOAD( "lr-b-4k",      0x0000, 0x2000, 0x8141403e );/* sprites */
+		ROM_LOAD( "lr-b-3n",      0x2000, 0x2000, 0x55154154 );
+		ROM_LOAD( "lr-b-4c",      0x4000, 0x2000, 0x924e34d0 );
 	
-		ROM_REGION( 0x0720, REGION_PROMS, 0 )
-		ROM_LOAD( "lr-e-3m",      0x0000, 0x0100, 0x53040416 )	/* character palette red component */
-		ROM_LOAD( "lr-b-1m",      0x0100, 0x0100, 0x4bae1c25 )	/* sprite palette red component */
-		ROM_LOAD( "lr-e-3l",      0x0200, 0x0100, 0x67786037 )	/* character palette green component */
-		ROM_LOAD( "lr-b-1n",      0x0300, 0x0100, 0x9cd3db94 )	/* sprite palette green component */
-		ROM_LOAD( "lr-e-3n",      0x0400, 0x0100, 0x5b716837 )	/* character palette blue component */
-		ROM_LOAD( "lr-b-1l",      0x0500, 0x0100, 0x08d8cf9a )	/* sprite palette blue component */
-		ROM_LOAD( "lr-b-5p",      0x0600, 0x0020, 0xe01f69e2 )	/* sprite height, one entry per 32 */
+		ROM_REGION( 0x0720, REGION_PROMS, 0 );
+		ROM_LOAD( "lr-e-3m",      0x0000, 0x0100, 0x53040416 );/* character palette red component */
+		ROM_LOAD( "lr-b-1m",      0x0100, 0x0100, 0x4bae1c25 );/* sprite palette red component */
+		ROM_LOAD( "lr-e-3l",      0x0200, 0x0100, 0x67786037 );/* character palette green component */
+		ROM_LOAD( "lr-b-1n",      0x0300, 0x0100, 0x9cd3db94 );/* sprite palette green component */
+		ROM_LOAD( "lr-e-3n",      0x0400, 0x0100, 0x5b716837 );/* character palette blue component */
+		ROM_LOAD( "lr-b-1l",      0x0500, 0x0100, 0x08d8cf9a );/* sprite palette blue component */
+		ROM_LOAD( "lr-b-5p",      0x0600, 0x0020, 0xe01f69e2 );/* sprite height, one entry per 32 */
 		                                                        /* sprites. Used at run time! */
-		ROM_LOAD( "lr-b-6f",      0x0620, 0x0100, 0x34d88d3c )	/* video timing - common to the other games */
-	ROM_END
+		ROM_LOAD( "lr-b-6f",      0x0620, 0x0100, 0x34d88d3c );/* video timing - common to the other games */
+	ROM_END(); }}; 
 	
-	ROM_START( ldrun2 )
-		ROM_REGION( 0x14000, REGION_CPU1, 0 )	/* 64k for code + 16k for banks */
-		ROM_LOAD( "lr2-a-4e.a",   0x00000, 0x2000, 0x22313327 )
-		ROM_LOAD( "lr2-a-4d",     0x02000, 0x2000, 0xef645179 )
-		ROM_LOAD( "lr2-a-4a.a",   0x04000, 0x2000, 0xb11ddf59 )
-		ROM_LOAD( "lr2-a-4a",     0x06000, 0x2000, 0x470cc8a1 )
-		ROM_LOAD( "lr2-h-1c.a",   0x10000, 0x2000, 0x7ebcadbc )	/* banked at 8000-9fff */
-		ROM_LOAD( "lr2-h-1d.a",   0x12000, 0x2000, 0x64cbb7f9 )	/* banked at 8000-9fff */
+	static RomLoadPtr rom_ldrun2 = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x14000, REGION_CPU1, 0 );/* 64k for code + 16k for banks */
+		ROM_LOAD( "lr2-a-4e.a",   0x00000, 0x2000, 0x22313327 );
+		ROM_LOAD( "lr2-a-4d",     0x02000, 0x2000, 0xef645179 );
+		ROM_LOAD( "lr2-a-4a.a",   0x04000, 0x2000, 0xb11ddf59 );
+		ROM_LOAD( "lr2-a-4a",     0x06000, 0x2000, 0x470cc8a1 );
+		ROM_LOAD( "lr2-h-1c.a",   0x10000, 0x2000, 0x7ebcadbc );/* banked at 8000-9fff */
+		ROM_LOAD( "lr2-h-1d.a",   0x12000, 0x2000, 0x64cbb7f9 );/* banked at 8000-9fff */
 	
-		ROM_REGION( 0x10000, REGION_CPU2, 0 )	/* 64k for the audio CPU (6803) */
-		ROM_LOAD( "lr2-a-3e",     0xa000, 0x2000, 0x853f3898 )
-		ROM_LOAD( "lr2-a-3f",     0xc000, 0x2000, 0x7a96accd )
-		ROM_LOAD( "lr2-a-3h",     0xe000, 0x2000, 0x2a0e83ca )
+		ROM_REGION( 0x10000, REGION_CPU2, 0 );/* 64k for the audio CPU (6803) */
+		ROM_LOAD( "lr2-a-3e",     0xa000, 0x2000, 0x853f3898 );
+		ROM_LOAD( "lr2-a-3f",     0xc000, 0x2000, 0x7a96accd );
+		ROM_LOAD( "lr2-a-3h",     0xe000, 0x2000, 0x2a0e83ca );
 	
-		ROM_REGION( 0x6000, REGION_GFX1, ROMREGION_DISPOSE )
-		ROM_LOAD( "lr2-h-1e",     0x00000, 0x2000, 0x9d63a8ff )	/* characters */
-		ROM_LOAD( "lr2-h-1j",     0x02000, 0x2000, 0x40332bbd )
-		ROM_LOAD( "lr2-h-1h",     0x04000, 0x2000, 0x9404727d )
+		ROM_REGION( 0x6000, REGION_GFX1, ROMREGION_DISPOSE );
+		ROM_LOAD( "lr2-h-1e",     0x00000, 0x2000, 0x9d63a8ff );/* characters */
+		ROM_LOAD( "lr2-h-1j",     0x02000, 0x2000, 0x40332bbd );
+		ROM_LOAD( "lr2-h-1h",     0x04000, 0x2000, 0x9404727d );
 	
-		ROM_REGION( 0xc000, REGION_GFX2, ROMREGION_DISPOSE )
-		ROM_LOAD( "lr2-b-4k",     0x00000, 0x2000, 0x79909871 )	/* sprites */
-		ROM_LOAD( "lr2-b-4f",     0x02000, 0x2000, 0x06ba1ef4 )
-		ROM_LOAD( "lr2-b-3n",     0x04000, 0x2000, 0x3cc5893f )
-		ROM_LOAD( "lr2-b-4n",     0x06000, 0x2000, 0x49c12f42 )
-		ROM_LOAD( "lr2-b-4c",     0x08000, 0x2000, 0xfbe6d24c )
-		ROM_LOAD( "lr2-b-4e",     0x0a000, 0x2000, 0x75172d1f )
+		ROM_REGION( 0xc000, REGION_GFX2, ROMREGION_DISPOSE );
+		ROM_LOAD( "lr2-b-4k",     0x00000, 0x2000, 0x79909871 );/* sprites */
+		ROM_LOAD( "lr2-b-4f",     0x02000, 0x2000, 0x06ba1ef4 );
+		ROM_LOAD( "lr2-b-3n",     0x04000, 0x2000, 0x3cc5893f );
+		ROM_LOAD( "lr2-b-4n",     0x06000, 0x2000, 0x49c12f42 );
+		ROM_LOAD( "lr2-b-4c",     0x08000, 0x2000, 0xfbe6d24c );
+		ROM_LOAD( "lr2-b-4e",     0x0a000, 0x2000, 0x75172d1f );
 	
-		ROM_REGION( 0x0720, REGION_PROMS, 0 )
-		ROM_LOAD( "lr2-h-3m",     0x0000, 0x0100, 0x2c5d834b )	/* character palette red component */
-		ROM_LOAD( "lr2-b-1m",     0x0100, 0x0100, 0x4ec9bb3d )	/* sprite palette red component */
-		ROM_LOAD( "lr2-h-3l",     0x0200, 0x0100, 0x3ae69aca )	/* character palette green component */
-		ROM_LOAD( "lr2-b-1n",     0x0300, 0x0100, 0x1daf1fa4 )	/* sprite palette green component */
-		ROM_LOAD( "lr2-h-3n",     0x0400, 0x0100, 0x2b28aec5 )	/* character palette blue component */
-		ROM_LOAD( "lr2-b-1l",     0x0500, 0x0100, 0xc8fb708a )	/* sprite palette blue component */
-		ROM_LOAD( "lr2-b-5p",     0x0600, 0x0020, 0xe01f69e2 )	/* sprite height, one entry per 32 */
+		ROM_REGION( 0x0720, REGION_PROMS, 0 );
+		ROM_LOAD( "lr2-h-3m",     0x0000, 0x0100, 0x2c5d834b );/* character palette red component */
+		ROM_LOAD( "lr2-b-1m",     0x0100, 0x0100, 0x4ec9bb3d );/* sprite palette red component */
+		ROM_LOAD( "lr2-h-3l",     0x0200, 0x0100, 0x3ae69aca );/* character palette green component */
+		ROM_LOAD( "lr2-b-1n",     0x0300, 0x0100, 0x1daf1fa4 );/* sprite palette green component */
+		ROM_LOAD( "lr2-h-3n",     0x0400, 0x0100, 0x2b28aec5 );/* character palette blue component */
+		ROM_LOAD( "lr2-b-1l",     0x0500, 0x0100, 0xc8fb708a );/* sprite palette blue component */
+		ROM_LOAD( "lr2-b-5p",     0x0600, 0x0020, 0xe01f69e2 );/* sprite height, one entry per 32 */
 		                                                        /* sprites. Used at run time! */
-		ROM_LOAD( "lr2-b-6f",     0x0620, 0x0100, 0x34d88d3c )	/* video timing - common to the other games */
-	ROM_END
+		ROM_LOAD( "lr2-b-6f",     0x0620, 0x0100, 0x34d88d3c );/* video timing - common to the other games */
+	ROM_END(); }}; 
 	
-	ROM_START( ldrun3 )
-		ROM_REGION( 0x10000, REGION_CPU1, 0 )	/* 64k for code */
-		ROM_LOAD( "lr3-a-4e",     0x0000, 0x4000, 0x5b334e8e )
-		ROM_LOAD( "lr3-a-4d.a",   0x4000, 0x4000, 0xa84bc931 )
-		ROM_LOAD( "lr3-a-4b.a",   0x8000, 0x4000, 0xbe09031d )
+	static RomLoadPtr rom_ldrun3 = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x10000, REGION_CPU1, 0 );/* 64k for code */
+		ROM_LOAD( "lr3-a-4e",     0x0000, 0x4000, 0x5b334e8e );
+		ROM_LOAD( "lr3-a-4d.a",   0x4000, 0x4000, 0xa84bc931 );
+		ROM_LOAD( "lr3-a-4b.a",   0x8000, 0x4000, 0xbe09031d );
 	
-		ROM_REGION( 0x10000, REGION_CPU2, 0 )	/* 64k for the audio CPU (6803) */
-		ROM_LOAD( "lr3-a-3d",     0x8000, 0x4000, 0x28be68cd )
-		ROM_LOAD( "lr3-a-3f",     0xc000, 0x4000, 0xcb7186b7 )
+		ROM_REGION( 0x10000, REGION_CPU2, 0 );/* 64k for the audio CPU (6803) */
+		ROM_LOAD( "lr3-a-3d",     0x8000, 0x4000, 0x28be68cd );
+		ROM_LOAD( "lr3-a-3f",     0xc000, 0x4000, 0xcb7186b7 );
 	
-		ROM_REGION( 0xc000, REGION_GFX1, ROMREGION_DISPOSE )
-		ROM_LOAD( "lr3-n-2a",     0x00000, 0x4000, 0xf9b74dee )	/* characters */
-		ROM_LOAD( "lr3-n-2c",     0x04000, 0x4000, 0xfef707ba )
-		ROM_LOAD( "lr3-n-2b",     0x08000, 0x4000, 0xaf3d27b9 )
+		ROM_REGION( 0xc000, REGION_GFX1, ROMREGION_DISPOSE );
+		ROM_LOAD( "lr3-n-2a",     0x00000, 0x4000, 0xf9b74dee );/* characters */
+		ROM_LOAD( "lr3-n-2c",     0x04000, 0x4000, 0xfef707ba );
+		ROM_LOAD( "lr3-n-2b",     0x08000, 0x4000, 0xaf3d27b9 );
 	
-		ROM_REGION( 0xc000, REGION_GFX2, ROMREGION_DISPOSE )
-		ROM_LOAD( "lr3-b-4k",     0x00000, 0x4000, 0x63f070c7 )	/* sprites */
-		ROM_LOAD( "lr3-b-3n",     0x04000, 0x4000, 0xeab7ad91 )
-		ROM_LOAD( "lr3-b-4c",     0x08000, 0x4000, 0x1a460a46 )
+		ROM_REGION( 0xc000, REGION_GFX2, ROMREGION_DISPOSE );
+		ROM_LOAD( "lr3-b-4k",     0x00000, 0x4000, 0x63f070c7 );/* sprites */
+		ROM_LOAD( "lr3-b-3n",     0x04000, 0x4000, 0xeab7ad91 );
+		ROM_LOAD( "lr3-b-4c",     0x08000, 0x4000, 0x1a460a46 );
 	
-		ROM_REGION( 0x0820, REGION_PROMS, 0 )
-		ROM_LOAD( "lr3-n-2l",     0x0000, 0x0100, 0xe880b86b ) /* character palette red component */
-		ROM_LOAD( "lr3-b-1m",     0x0100, 0x0100, 0xf02d7167 ) /* sprite palette red component */
-		ROM_LOAD( "lr3-n-2k",     0x0200, 0x0100, 0x047ee051 ) /* character palette green component */
-		ROM_LOAD( "lr3-b-1n",     0x0300, 0x0100, 0x9e37f181 ) /* sprite palette green component */
-		ROM_LOAD( "lr3-n-2m",     0x0400, 0x0100, 0x69ad8678 ) /* character palette blue component */
-		ROM_LOAD( "lr3-b-1l",     0x0500, 0x0100, 0x5b11c41d ) /* sprite palette blue component */
-		ROM_LOAD( "lr3-b-5p",     0x0600, 0x0020, 0xe01f69e2 )	/* sprite height, one entry per 32 */
+		ROM_REGION( 0x0820, REGION_PROMS, 0 );
+		ROM_LOAD( "lr3-n-2l",     0x0000, 0x0100, 0xe880b86b );/* character palette red component */
+		ROM_LOAD( "lr3-b-1m",     0x0100, 0x0100, 0xf02d7167 );/* sprite palette red component */
+		ROM_LOAD( "lr3-n-2k",     0x0200, 0x0100, 0x047ee051 );/* character palette green component */
+		ROM_LOAD( "lr3-b-1n",     0x0300, 0x0100, 0x9e37f181 );/* sprite palette green component */
+		ROM_LOAD( "lr3-n-2m",     0x0400, 0x0100, 0x69ad8678 );/* character palette blue component */
+		ROM_LOAD( "lr3-b-1l",     0x0500, 0x0100, 0x5b11c41d );/* sprite palette blue component */
+		ROM_LOAD( "lr3-b-5p",     0x0600, 0x0020, 0xe01f69e2 );/* sprite height, one entry per 32 */
 		                                                        /* sprites. Used at run time! */
-		ROM_LOAD( "lr3-n-4f",     0x0620, 0x0100, 0xdf674be9 )	/* unknown */
-		ROM_LOAD( "lr3-b-6f",     0x0720, 0x0100, 0x34d88d3c )	/* video timing - common to the other games */
-	ROM_END
+		ROM_LOAD( "lr3-n-4f",     0x0620, 0x0100, 0xdf674be9 );/* unknown */
+		ROM_LOAD( "lr3-b-6f",     0x0720, 0x0100, 0x34d88d3c );/* video timing - common to the other games */
+	ROM_END(); }}; 
 	
-	ROM_START( ldrun4 )
-		ROM_REGION( 0x18000, REGION_CPU1, 0 )	/* 64k for code + 32k for banked ROM */
-		ROM_LOAD( "lr4-a-4e",     0x00000, 0x4000, 0x5383e9bf )
-		ROM_LOAD( "lr4-a-4d.c",   0x04000, 0x4000, 0x298afa36 )
-		ROM_LOAD( "lr4-v-4k",     0x10000, 0x8000, 0x8b248abd )	/* banked at 8000-bfff */
+	static RomLoadPtr rom_ldrun4 = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x18000, REGION_CPU1, 0 );/* 64k for code + 32k for banked ROM */
+		ROM_LOAD( "lr4-a-4e",     0x00000, 0x4000, 0x5383e9bf );
+		ROM_LOAD( "lr4-a-4d.c",   0x04000, 0x4000, 0x298afa36 );
+		ROM_LOAD( "lr4-v-4k",     0x10000, 0x8000, 0x8b248abd );/* banked at 8000-bfff */
 	
-		ROM_REGION( 0x10000, REGION_CPU2, 0 )	/* 64k for the audio CPU (6803) */
-		ROM_LOAD( "lr4-a-3d",     0x8000, 0x4000, 0x86c6d445 )
-		ROM_LOAD( "lr4-a-3f",     0xc000, 0x4000, 0x097c6c0a )
+		ROM_REGION( 0x10000, REGION_CPU2, 0 );/* 64k for the audio CPU (6803) */
+		ROM_LOAD( "lr4-a-3d",     0x8000, 0x4000, 0x86c6d445 );
+		ROM_LOAD( "lr4-a-3f",     0xc000, 0x4000, 0x097c6c0a );
 	
-		ROM_REGION( 0xc000, REGION_GFX1, ROMREGION_DISPOSE )
-		ROM_LOAD( "lr4-v-2b",     0x00000, 0x4000, 0x4118e60a )	/* characters */
-		ROM_LOAD( "lr4-v-2d",     0x04000, 0x4000, 0x542bb5b5 )
-		ROM_LOAD( "lr4-v-2c",     0x08000, 0x4000, 0xc765266c )
+		ROM_REGION( 0xc000, REGION_GFX1, ROMREGION_DISPOSE );
+		ROM_LOAD( "lr4-v-2b",     0x00000, 0x4000, 0x4118e60a );/* characters */
+		ROM_LOAD( "lr4-v-2d",     0x04000, 0x4000, 0x542bb5b5 );
+		ROM_LOAD( "lr4-v-2c",     0x08000, 0x4000, 0xc765266c );
 	
-		ROM_REGION( 0x18000, REGION_GFX2, ROMREGION_DISPOSE )
-		ROM_LOAD( "lr4-b-4k",     0x00000, 0x4000, 0xe7fe620c )	/* sprites */
-		ROM_LOAD( "lr4-b-4f",     0x04000, 0x4000, 0x6f0403db )
-		ROM_LOAD( "lr4-b-3n",     0x08000, 0x4000, 0xad1fba1b )
-		ROM_LOAD( "lr4-b-4n",     0x0c000, 0x4000, 0x0e568fab )
-		ROM_LOAD( "lr4-b-4c",     0x10000, 0x4000, 0x82c53669 )
-		ROM_LOAD( "lr4-b-4e",     0x14000, 0x4000, 0x767a1352 )
+		ROM_REGION( 0x18000, REGION_GFX2, ROMREGION_DISPOSE );
+		ROM_LOAD( "lr4-b-4k",     0x00000, 0x4000, 0xe7fe620c );/* sprites */
+		ROM_LOAD( "lr4-b-4f",     0x04000, 0x4000, 0x6f0403db );
+		ROM_LOAD( "lr4-b-3n",     0x08000, 0x4000, 0xad1fba1b );
+		ROM_LOAD( "lr4-b-4n",     0x0c000, 0x4000, 0x0e568fab );
+		ROM_LOAD( "lr4-b-4c",     0x10000, 0x4000, 0x82c53669 );
+		ROM_LOAD( "lr4-b-4e",     0x14000, 0x4000, 0x767a1352 );
 	
-		ROM_REGION( 0x0820, REGION_PROMS, 0 )
-		ROM_LOAD( "lr4-v-1m",     0x0000, 0x0100, 0xfe51bf1d ) /* character palette red component */
-		ROM_LOAD( "lr4-b-1m",     0x0100, 0x0100, 0x5d8d17d0 ) /* sprite palette red component */
-		ROM_LOAD( "lr4-v-1n",     0x0200, 0x0100, 0xda0658e5 ) /* character palette green component */
-		ROM_LOAD( "lr4-b-1n",     0x0300, 0x0100, 0xda1129d2 ) /* sprite palette green component */
-		ROM_LOAD( "lr4-v-1p",     0x0400, 0x0100, 0x0df23ebe ) /* character palette blue component */
-		ROM_LOAD( "lr4-b-1l",     0x0500, 0x0100, 0x0d89b692 ) /* sprite palette blue component */
-		ROM_LOAD( "lr4-b-5p",     0x0600, 0x0020, 0xe01f69e2 )	/* sprite height, one entry per 32 */
+		ROM_REGION( 0x0820, REGION_PROMS, 0 );
+		ROM_LOAD( "lr4-v-1m",     0x0000, 0x0100, 0xfe51bf1d );/* character palette red component */
+		ROM_LOAD( "lr4-b-1m",     0x0100, 0x0100, 0x5d8d17d0 );/* sprite palette red component */
+		ROM_LOAD( "lr4-v-1n",     0x0200, 0x0100, 0xda0658e5 );/* character palette green component */
+		ROM_LOAD( "lr4-b-1n",     0x0300, 0x0100, 0xda1129d2 );/* sprite palette green component */
+		ROM_LOAD( "lr4-v-1p",     0x0400, 0x0100, 0x0df23ebe );/* character palette blue component */
+		ROM_LOAD( "lr4-b-1l",     0x0500, 0x0100, 0x0d89b692 );/* sprite palette blue component */
+		ROM_LOAD( "lr4-b-5p",     0x0600, 0x0020, 0xe01f69e2 );/* sprite height, one entry per 32 */
 		                                                        /* sprites. Used at run time! */
-		ROM_LOAD( "lr4-v-4h",     0x0620, 0x0100, 0xdf674be9 )	/* unknown */
-		ROM_LOAD( "lr4-b-6f",     0x0720, 0x0100, 0x34d88d3c )	/* video timing - common to the other games */
-	ROM_END
+		ROM_LOAD( "lr4-v-4h",     0x0620, 0x0100, 0xdf674be9 );/* unknown */
+		ROM_LOAD( "lr4-b-6f",     0x0720, 0x0100, 0x34d88d3c );/* video timing - common to the other games */
+	ROM_END(); }}; 
 	
-	ROM_START( lotlot )
-		ROM_REGION( 0x10000, REGION_CPU1, 0 )	/* 64k for code */
-		ROM_LOAD( "lot-a-4e",     0x0000, 0x4000, 0x2913d08f )
-		ROM_LOAD( "lot-a-4d",     0x4000, 0x4000, 0x0443095f )
+	static RomLoadPtr rom_lotlot = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x10000, REGION_CPU1, 0 );/* 64k for code */
+		ROM_LOAD( "lot-a-4e",     0x0000, 0x4000, 0x2913d08f );
+		ROM_LOAD( "lot-a-4d",     0x4000, 0x4000, 0x0443095f );
 	
-		ROM_REGION( 0x10000, REGION_CPU2, 0 )	/* 64k for the audio CPU (6803) */
-		ROM_LOAD( "lot-a-3h",     0xe000, 0x2000, 0x0781cee7 )
+		ROM_REGION( 0x10000, REGION_CPU2, 0 );/* 64k for the audio CPU (6803) */
+		ROM_LOAD( "lot-a-3h",     0xe000, 0x2000, 0x0781cee7 );
 	
-		ROM_REGION( 0x6000, REGION_GFX1, ROMREGION_DISPOSE )
-		ROM_LOAD( "lot-k-4a",     0x00000, 0x2000, 0x1b3695f4 )	/* tiles */
-		ROM_LOAD( "lot-k-4c",     0x02000, 0x2000, 0xbd2b0730 )
-		ROM_LOAD( "lot-k-4b",     0x04000, 0x2000, 0x930ddd55 )
+		ROM_REGION( 0x6000, REGION_GFX1, ROMREGION_DISPOSE );
+		ROM_LOAD( "lot-k-4a",     0x00000, 0x2000, 0x1b3695f4 );/* tiles */
+		ROM_LOAD( "lot-k-4c",     0x02000, 0x2000, 0xbd2b0730 );
+		ROM_LOAD( "lot-k-4b",     0x04000, 0x2000, 0x930ddd55 );
 	
-		ROM_REGION( 0x6000, REGION_GFX2, ROMREGION_DISPOSE )
-		ROM_LOAD( "lot-b-4k",     0x00000, 0x2000, 0xfd27cb90 )	/* sprites */
-		ROM_LOAD( "lot-b-3n",     0x02000, 0x2000, 0xbd486fff )
-		ROM_LOAD( "lot-b-4c",     0x04000, 0x2000, 0x3026ee6c )
+		ROM_REGION( 0x6000, REGION_GFX2, ROMREGION_DISPOSE );
+		ROM_LOAD( "lot-b-4k",     0x00000, 0x2000, 0xfd27cb90 );/* sprites */
+		ROM_LOAD( "lot-b-3n",     0x02000, 0x2000, 0xbd486fff );
+		ROM_LOAD( "lot-b-4c",     0x04000, 0x2000, 0x3026ee6c );
 	
-		ROM_REGION( 0x6000, REGION_GFX3, ROMREGION_DISPOSE )
-		ROM_LOAD( "lot-k-4p",     0x00000, 0x2000, 0x3b7d95ba )	/* chars */
-		ROM_LOAD( "lot-k-4l",     0x02000, 0x2000, 0xf98dca1f )
-		ROM_LOAD( "lot-k-4n",     0x04000, 0x2000, 0xf0cd76a5 )
+		ROM_REGION( 0x6000, REGION_GFX3, ROMREGION_DISPOSE );
+		ROM_LOAD( "lot-k-4p",     0x00000, 0x2000, 0x3b7d95ba );/* chars */
+		ROM_LOAD( "lot-k-4l",     0x02000, 0x2000, 0xf98dca1f );
+		ROM_LOAD( "lot-k-4n",     0x04000, 0x2000, 0xf0cd76a5 );
 	
-		ROM_REGION( 0x0e20, REGION_PROMS, 0 )
-		ROM_LOAD( "lot-k-2f",     0x0000, 0x0100, 0xb820a05e ) /* tile palette red component */
-		ROM_LOAD( "lot-b-1m",     0x0100, 0x0100, 0xc146461d ) /* sprite palette red component */
-		ROM_LOAD( "lot-k-2l",     0x0200, 0x0100, 0xac3e230d ) /* character palette red component */
-		ROM_LOAD( "lot-k-2e",     0x0300, 0x0100, 0x9b1fa005 ) /* tile palette green component */
-		ROM_LOAD( "lot-b-1n",     0x0400, 0x0100, 0x01e07db6 ) /* sprite palette green component */
-		ROM_LOAD( "lot-k-2k",     0x0500, 0x0100, 0x1811ad2b ) /* character palette green component */
-		ROM_LOAD( "lot-k-2d",     0x0600, 0x0100, 0x315ed9a8 ) /* tile palette blue component */
-		ROM_LOAD( "lot-b-1l",     0x0700, 0x0100, 0x8b6fcde3 ) /* sprite palette blue component */
-		ROM_LOAD( "lot-k-2j",     0x0800, 0x0100, 0xe791ef2a ) /* character palette blue component */
-		ROM_LOAD( "lot-b-5p",     0x0900, 0x0020, 0x110b21fd )	/* sprite height, one entry per 32 */
+		ROM_REGION( 0x0e20, REGION_PROMS, 0 );
+		ROM_LOAD( "lot-k-2f",     0x0000, 0x0100, 0xb820a05e );/* tile palette red component */
+		ROM_LOAD( "lot-b-1m",     0x0100, 0x0100, 0xc146461d );/* sprite palette red component */
+		ROM_LOAD( "lot-k-2l",     0x0200, 0x0100, 0xac3e230d );/* character palette red component */
+		ROM_LOAD( "lot-k-2e",     0x0300, 0x0100, 0x9b1fa005 );/* tile palette green component */
+		ROM_LOAD( "lot-b-1n",     0x0400, 0x0100, 0x01e07db6 );/* sprite palette green component */
+		ROM_LOAD( "lot-k-2k",     0x0500, 0x0100, 0x1811ad2b );/* character palette green component */
+		ROM_LOAD( "lot-k-2d",     0x0600, 0x0100, 0x315ed9a8 );/* tile palette blue component */
+		ROM_LOAD( "lot-b-1l",     0x0700, 0x0100, 0x8b6fcde3 );/* sprite palette blue component */
+		ROM_LOAD( "lot-k-2j",     0x0800, 0x0100, 0xe791ef2a );/* character palette blue component */
+		ROM_LOAD( "lot-b-5p",     0x0900, 0x0020, 0x110b21fd );/* sprite height, one entry per 32 */
 		                                                        /* sprites. Used at run time! */
-		ROM_LOAD( "lot-k-7e",     0x0920, 0x0200, 0x6cef0fbd )	/* unknown */
-		ROM_LOAD( "lot-k-7h",     0x0b20, 0x0200, 0x04442bee )	/* unknown */
-		ROM_LOAD( "lot-b-6f",     0x0d20, 0x0100, 0x34d88d3c )	/* video timing - common to the other games */
-	ROM_END
+		ROM_LOAD( "lot-k-7e",     0x0920, 0x0200, 0x6cef0fbd );/* unknown */
+		ROM_LOAD( "lot-k-7h",     0x0b20, 0x0200, 0x04442bee );/* unknown */
+		ROM_LOAD( "lot-b-6f",     0x0d20, 0x0100, 0x34d88d3c );/* video timing - common to the other games */
+	ROM_END(); }}; 
 	
-	ROM_START( kidniki )
-		ROM_REGION( 0x30000, REGION_CPU1, 0 )	/* main CPU */
-		ROM_LOAD( "dr04.4e",      0x00000, 0x04000, 0x80431858 )
-		ROM_LOAD( "dr03.4cd",     0x04000, 0x04000, 0xdba20934 )
-		ROM_LOAD( "dr11.8k",      0x10000, 0x08000, 0x04d82d93 )	/* banked at 8000-9fff */
-		ROM_LOAD( "dr12.8l",      0x18000, 0x08000, 0xc0b255fd )
-		ROM_CONTINUE(             0x28000, 0x08000 )
+	static RomLoadPtr rom_kidniki = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x30000, REGION_CPU1, 0 );/* main CPU */
+		ROM_LOAD( "dr04.4e",      0x00000, 0x04000, 0x80431858 );
+		ROM_LOAD( "dr03.4cd",     0x04000, 0x04000, 0xdba20934 );
+		ROM_LOAD( "dr11.8k",      0x10000, 0x08000, 0x04d82d93 );/* banked at 8000-9fff */
+		ROM_LOAD( "dr12.8l",      0x18000, 0x08000, 0xc0b255fd );
+		ROM_CONTINUE(             0x28000, 0x08000 );
 	
-		ROM_REGION( 0x10000, REGION_CPU2, 0 )	/* sound CPU */
-		ROM_LOAD( "dr00.3a",      0x4000, 0x04000, 0x458309f7 )
-		ROM_LOAD( "dr01.3cd",     0x8000, 0x04000, 0xe66897bd )
-		ROM_LOAD( "dr02.3f",      0xc000, 0x04000, 0xf9e31e26 ) /* 6803 code */
+		ROM_REGION( 0x10000, REGION_CPU2, 0 );/* sound CPU */
+		ROM_LOAD( "dr00.3a",      0x4000, 0x04000, 0x458309f7 );
+		ROM_LOAD( "dr01.3cd",     0x8000, 0x04000, 0xe66897bd );
+		ROM_LOAD( "dr02.3f",      0xc000, 0x04000, 0xf9e31e26 );/* 6803 code */
 	
-		ROM_REGION( 0x18000, REGION_GFX1, ROMREGION_DISPOSE )
-		ROM_LOAD( "dr06.2b",      0x00000, 0x8000, 0x4d9a970f )	/* tiles */
-		ROM_LOAD( "dr07.2dc",     0x08000, 0x8000, 0xab59a4c4 )
-		ROM_LOAD( "dr05.2a",      0x10000, 0x8000, 0x2e6dad0c )
+		ROM_REGION( 0x18000, REGION_GFX1, ROMREGION_DISPOSE );
+		ROM_LOAD( "dr06.2b",      0x00000, 0x8000, 0x4d9a970f );/* tiles */
+		ROM_LOAD( "dr07.2dc",     0x08000, 0x8000, 0xab59a4c4 );
+		ROM_LOAD( "dr05.2a",      0x10000, 0x8000, 0x2e6dad0c );
 	
-		ROM_REGION( 0x30000, REGION_GFX2, ROMREGION_DISPOSE )
-		ROM_LOAD( "dr21.4k",      0x00000, 0x4000, 0xa06cea9a )	/* sprites */
-		ROM_LOAD( "dr19.4f",      0x04000, 0x4000, 0xb34605ad )
-		ROM_LOAD( "dr22.4l",      0x08000, 0x4000, 0x41303de8 )
-		ROM_LOAD( "dr20.4jh",     0x0c000, 0x4000, 0x5fbe6f61 )
-		ROM_LOAD( "dr14.3p",      0x10000, 0x4000, 0x76cfbcbc )
-		ROM_LOAD( "dr24.4p",      0x14000, 0x4000, 0xd51c8db5 )
-		ROM_LOAD( "dr23.4nm",     0x18000, 0x4000, 0x03469df8 )
-		ROM_LOAD( "dr13.3nm",     0x1c000, 0x4000, 0xd5c3dfe0 )
-		ROM_LOAD( "dr16.4cb",     0x20000, 0x4000, 0xf1d1bb93 )
-		ROM_LOAD( "dr18.4e",      0x24000, 0x4000, 0xedb7f25b )
-		ROM_LOAD( "dr17.4dc",     0x28000, 0x4000, 0x4fb87868 )
-		ROM_LOAD( "dr15.4a",      0x2c000, 0x4000, 0xe0b88de5 )
+		ROM_REGION( 0x30000, REGION_GFX2, ROMREGION_DISPOSE );
+		ROM_LOAD( "dr21.4k",      0x00000, 0x4000, 0xa06cea9a );/* sprites */
+		ROM_LOAD( "dr19.4f",      0x04000, 0x4000, 0xb34605ad );
+		ROM_LOAD( "dr22.4l",      0x08000, 0x4000, 0x41303de8 );
+		ROM_LOAD( "dr20.4jh",     0x0c000, 0x4000, 0x5fbe6f61 );
+		ROM_LOAD( "dr14.3p",      0x10000, 0x4000, 0x76cfbcbc );
+		ROM_LOAD( "dr24.4p",      0x14000, 0x4000, 0xd51c8db5 );
+		ROM_LOAD( "dr23.4nm",     0x18000, 0x4000, 0x03469df8 );
+		ROM_LOAD( "dr13.3nm",     0x1c000, 0x4000, 0xd5c3dfe0 );
+		ROM_LOAD( "dr16.4cb",     0x20000, 0x4000, 0xf1d1bb93 );
+		ROM_LOAD( "dr18.4e",      0x24000, 0x4000, 0xedb7f25b );
+		ROM_LOAD( "dr17.4dc",     0x28000, 0x4000, 0x4fb87868 );
+		ROM_LOAD( "dr15.4a",      0x2c000, 0x4000, 0xe0b88de5 );
 	
-		ROM_REGION( 0x0c000, REGION_GFX3, ROMREGION_DISPOSE )
-		ROM_LOAD( "dr08.4l",      0x00000, 0x4000, 0x32d50643 )	/* chars */
-		ROM_LOAD( "dr09.4m",      0x04000, 0x4000, 0x17df6f95 )
-		ROM_LOAD( "dr10.4n",      0x08000, 0x4000, 0x820ce252 )
+		ROM_REGION( 0x0c000, REGION_GFX3, ROMREGION_DISPOSE );
+		ROM_LOAD( "dr08.4l",      0x00000, 0x4000, 0x32d50643 );/* chars */
+		ROM_LOAD( "dr09.4m",      0x04000, 0x4000, 0x17df6f95 );
+		ROM_LOAD( "dr10.4n",      0x08000, 0x4000, 0x820ce252 );
 	
-		ROM_REGION( 0x0920, REGION_PROMS, 0 )
-		ROM_LOAD( "dr25.3f",      0x0000, 0x0100, 0x8e91430b )	/* character palette red component */
-		ROM_LOAD( "dr30.1m",      0x0100, 0x0100, 0x28c73263 )	/* sprite palette red component */
-		ROM_LOAD( "dr26.3h",      0x0200, 0x0100, 0xb563b93f )	/* character palette green component */
-		ROM_LOAD( "dr31.1n",      0x0300, 0x0100, 0x3529210e )	/* sprite palette green component */
-		ROM_LOAD( "dr27.3j",      0x0400, 0x0100, 0x70d668ef )	/* character palette blue component */
-		ROM_LOAD( "dr29.1l",      0x0500, 0x0100, 0x1173a754 )	/* sprite palette blue component */
-		ROM_LOAD( "dr32.5p",      0x0600, 0x0020, 0x11cd1f2e )	/* sprite height, one entry per 32 */
+		ROM_REGION( 0x0920, REGION_PROMS, 0 );
+		ROM_LOAD( "dr25.3f",      0x0000, 0x0100, 0x8e91430b );/* character palette red component */
+		ROM_LOAD( "dr30.1m",      0x0100, 0x0100, 0x28c73263 );/* sprite palette red component */
+		ROM_LOAD( "dr26.3h",      0x0200, 0x0100, 0xb563b93f );/* character palette green component */
+		ROM_LOAD( "dr31.1n",      0x0300, 0x0100, 0x3529210e );/* sprite palette green component */
+		ROM_LOAD( "dr27.3j",      0x0400, 0x0100, 0x70d668ef );/* character palette blue component */
+		ROM_LOAD( "dr29.1l",      0x0500, 0x0100, 0x1173a754 );/* sprite palette blue component */
+		ROM_LOAD( "dr32.5p",      0x0600, 0x0020, 0x11cd1f2e );/* sprite height, one entry per 32 */
 		                                                        /* sprites. Used at run time! */
-		ROM_LOAD( "dr28.8f",      0x0620, 0x0200, 0x6cef0fbd )	/* unknown */
-		ROM_LOAD( "dr33.6f",      0x0820, 0x0100, 0x34d88d3c )	/* video timing - common to the other games */
-	ROM_END
+		ROM_LOAD( "dr28.8f",      0x0620, 0x0200, 0x6cef0fbd );/* unknown */
+		ROM_LOAD( "dr33.6f",      0x0820, 0x0100, 0x34d88d3c );/* video timing - common to the other games */
+	ROM_END(); }}; 
 	
 	
-	ROM_START( yanchamr )
-		ROM_REGION( 0x30000, REGION_CPU1, 0 )	/* main CPU */
-		ROM_LOAD( "ky_a-4e-.bin", 0x00000, 0x04000, 0xc73ad2d6 )
-		ROM_LOAD( "ky_a-4d-.bin", 0x04000, 0x04000, 0x401af828 )
-		ROM_LOAD( "ky_t-8k-.bin", 0x10000, 0x08000, 0xe967de88 )	/* banked at 8000-9fff */
-		ROM_LOAD( "ky_t-8l-.bin", 0x18000, 0x08000, 0xa929110b )
-	/*	ROM_CONTINUE(             0x28000, 0x08000 ) */
+	static RomLoadPtr rom_yanchamr = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x30000, REGION_CPU1, 0 );/* main CPU */
+		ROM_LOAD( "ky_a-4e-.bin", 0x00000, 0x04000, 0xc73ad2d6 );
+		ROM_LOAD( "ky_a-4d-.bin", 0x04000, 0x04000, 0x401af828 );
+		ROM_LOAD( "ky_t-8k-.bin", 0x10000, 0x08000, 0xe967de88 );/* banked at 8000-9fff */
+		ROM_LOAD( "ky_t-8l-.bin", 0x18000, 0x08000, 0xa929110b );
+	/*	ROM_CONTINUE(             0x28000, 0x08000 );*/
 	
-		ROM_REGION( 0x10000, REGION_CPU2, 0 )	/* sound CPU */
-		ROM_LOAD( "ky_a-3a-.bin", 0x4000, 0x04000, 0xcb365f3b )
-		ROM_LOAD( "dr01.3cd",     0x8000, 0x04000, 0xe66897bd )
-		ROM_LOAD( "dr02.3f",      0xc000, 0x04000, 0xf9e31e26 ) /* 6803 code */
+		ROM_REGION( 0x10000, REGION_CPU2, 0 );/* sound CPU */
+		ROM_LOAD( "ky_a-3a-.bin", 0x4000, 0x04000, 0xcb365f3b );
+		ROM_LOAD( "dr01.3cd",     0x8000, 0x04000, 0xe66897bd );
+		ROM_LOAD( "dr02.3f",      0xc000, 0x04000, 0xf9e31e26 );/* 6803 code */
 	
-		ROM_REGION( 0x18000, REGION_GFX1, ROMREGION_DISPOSE )
-		ROM_LOAD( "ky_t-2c-.bin", 0x00000, 0x8000, 0xcb9761fc )	/* tiles */
-		ROM_LOAD( "ky_t-2d-.bin", 0x08000, 0x8000, 0x59732741 )
-		ROM_LOAD( "ky_t-2a-.bin", 0x10000, 0x8000, 0x0370fd82 )
+		ROM_REGION( 0x18000, REGION_GFX1, ROMREGION_DISPOSE );
+		ROM_LOAD( "ky_t-2c-.bin", 0x00000, 0x8000, 0xcb9761fc );/* tiles */
+		ROM_LOAD( "ky_t-2d-.bin", 0x08000, 0x8000, 0x59732741 );
+		ROM_LOAD( "ky_t-2a-.bin", 0x10000, 0x8000, 0x0370fd82 );
 	
-		ROM_REGION( 0x30000, REGION_GFX2, ROMREGION_DISPOSE )
-		ROM_LOAD( "ky_b-4k-.bin", 0x00000, 0x4000, 0x263a9d10 )	/* sprites */
-		ROM_LOAD( "ky_b-4f-.bin", 0x04000, 0x4000, 0x86e3d4a8 )
-		ROM_LOAD( "ky_b-4l-.bin", 0x08000, 0x4000, 0x19fa7558 )
-		ROM_LOAD( "ky_b-4h-.bin", 0x0c000, 0x4000, 0x93e6665c )
-		ROM_LOAD( "ky_b-3n-.bin", 0x10000, 0x4000, 0x0287c525 )
-		ROM_LOAD( "ky_b-4n-.bin", 0x14000, 0x4000, 0x764946e0 )
-		ROM_LOAD( "ky_b-4m-.bin", 0x18000, 0x4000, 0xeced5db9 )
-		ROM_LOAD( "ky_b-3m-.bin", 0x1c000, 0x4000, 0xbe6cee44 )
-		ROM_LOAD( "ky_b-4c-.bin", 0x20000, 0x4000, 0x84d6b65d )
-		ROM_LOAD( "ky_b-4e-.bin", 0x24000, 0x4000, 0xf91f9273 )
-		ROM_LOAD( "ky_b-4d-.bin", 0x28000, 0x4000, 0xa2fc15f0 )
-		ROM_LOAD( "ky_b-4a-.bin", 0x2c000, 0x4000, 0xff2b9c8a )
+		ROM_REGION( 0x30000, REGION_GFX2, ROMREGION_DISPOSE );
+		ROM_LOAD( "ky_b-4k-.bin", 0x00000, 0x4000, 0x263a9d10 );/* sprites */
+		ROM_LOAD( "ky_b-4f-.bin", 0x04000, 0x4000, 0x86e3d4a8 );
+		ROM_LOAD( "ky_b-4l-.bin", 0x08000, 0x4000, 0x19fa7558 );
+		ROM_LOAD( "ky_b-4h-.bin", 0x0c000, 0x4000, 0x93e6665c );
+		ROM_LOAD( "ky_b-3n-.bin", 0x10000, 0x4000, 0x0287c525 );
+		ROM_LOAD( "ky_b-4n-.bin", 0x14000, 0x4000, 0x764946e0 );
+		ROM_LOAD( "ky_b-4m-.bin", 0x18000, 0x4000, 0xeced5db9 );
+		ROM_LOAD( "ky_b-3m-.bin", 0x1c000, 0x4000, 0xbe6cee44 );
+		ROM_LOAD( "ky_b-4c-.bin", 0x20000, 0x4000, 0x84d6b65d );
+		ROM_LOAD( "ky_b-4e-.bin", 0x24000, 0x4000, 0xf91f9273 );
+		ROM_LOAD( "ky_b-4d-.bin", 0x28000, 0x4000, 0xa2fc15f0 );
+		ROM_LOAD( "ky_b-4a-.bin", 0x2c000, 0x4000, 0xff2b9c8a );
 	
-		ROM_REGION( 0x0c000, REGION_GFX3, ROMREGION_DISPOSE )
-		ROM_LOAD( "ky_t-4l-.bin", 0x00000, 0x4000, 0x1d0a9253 )	/* chars */
-		ROM_LOAD( "ky_t-4m-.bin", 0x04000, 0x4000, 0x4075c396 )
-		ROM_LOAD( "ky_t-4n-.bin", 0x08000, 0x4000, 0x7564f2ff )
+		ROM_REGION( 0x0c000, REGION_GFX3, ROMREGION_DISPOSE );
+		ROM_LOAD( "ky_t-4l-.bin", 0x00000, 0x4000, 0x1d0a9253 );/* chars */
+		ROM_LOAD( "ky_t-4m-.bin", 0x04000, 0x4000, 0x4075c396 );
+		ROM_LOAD( "ky_t-4n-.bin", 0x08000, 0x4000, 0x7564f2ff );
 	
-		ROM_REGION( 0x0920, REGION_PROMS, 0 )
-		ROM_LOAD( "dr25.3f",      0x0000, 0x0100, 0x8e91430b )	/* character palette red component */
-		ROM_LOAD( "dr30.1m",      0x0100, 0x0100, 0x28c73263 )	/* sprite palette red component */
-		ROM_LOAD( "dr26.3h",      0x0200, 0x0100, 0xb563b93f )	/* character palette green component */
-		ROM_LOAD( "dr31.1n",      0x0300, 0x0100, 0x3529210e )	/* sprite palette green component */
-		ROM_LOAD( "dr27.3j",      0x0400, 0x0100, 0x70d668ef )	/* character palette blue component */
-		ROM_LOAD( "dr29.1l",      0x0500, 0x0100, 0x1173a754 )	/* sprite palette blue component */
-		ROM_LOAD( "dr32.5p",      0x0600, 0x0020, 0x11cd1f2e )	/* sprite height, one entry per 32 */
+		ROM_REGION( 0x0920, REGION_PROMS, 0 );
+		ROM_LOAD( "dr25.3f",      0x0000, 0x0100, 0x8e91430b );/* character palette red component */
+		ROM_LOAD( "dr30.1m",      0x0100, 0x0100, 0x28c73263 );/* sprite palette red component */
+		ROM_LOAD( "dr26.3h",      0x0200, 0x0100, 0xb563b93f );/* character palette green component */
+		ROM_LOAD( "dr31.1n",      0x0300, 0x0100, 0x3529210e );/* sprite palette green component */
+		ROM_LOAD( "dr27.3j",      0x0400, 0x0100, 0x70d668ef );/* character palette blue component */
+		ROM_LOAD( "dr29.1l",      0x0500, 0x0100, 0x1173a754 );/* sprite palette blue component */
+		ROM_LOAD( "dr32.5p",      0x0600, 0x0020, 0x11cd1f2e );/* sprite height, one entry per 32 */
 		                                                        /* sprites. Used at run time! */
-		ROM_LOAD( "dr28.8f",      0x0620, 0x0200, 0x6cef0fbd )	/* unknown */
-		ROM_LOAD( "dr33.6f",      0x0820, 0x0100, 0x34d88d3c )	/* video timing - common to the other games */
-	ROM_END
+		ROM_LOAD( "dr28.8f",      0x0620, 0x0200, 0x6cef0fbd );/* unknown */
+		ROM_LOAD( "dr33.6f",      0x0820, 0x0100, 0x34d88d3c );/* video timing - common to the other games */
+	ROM_END(); }}; 
 	
-	ROM_START( spelunkr )
-		ROM_REGION( 0x18000, REGION_CPU1, 0 )	/* main CPU */
-		ROM_LOAD( "spra.4e",      0x00000, 0x4000, 0xcf811201 )
-		ROM_LOAD( "spra.4d",      0x04000, 0x4000, 0xbb4faa4f )
-		ROM_LOAD( "sprm.7c",      0x10000, 0x4000, 0xfb6197e2 )	/* banked at 8000-9fff */
-		ROM_LOAD( "sprm.7b",      0x14000, 0x4000, 0x26bb25a4 )
+	static RomLoadPtr rom_spelunkr = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x18000, REGION_CPU1, 0 );/* main CPU */
+		ROM_LOAD( "spra.4e",      0x00000, 0x4000, 0xcf811201 );
+		ROM_LOAD( "spra.4d",      0x04000, 0x4000, 0xbb4faa4f );
+		ROM_LOAD( "sprm.7c",      0x10000, 0x4000, 0xfb6197e2 );/* banked at 8000-9fff */
+		ROM_LOAD( "sprm.7b",      0x14000, 0x4000, 0x26bb25a4 );
 	
-		ROM_REGION( 0x10000, REGION_CPU2, 0 )	/* sound CPU */
-		ROM_LOAD( "spra.3d",      0x8000, 0x04000, 0x4110363c ) /* adpcm data */
-		ROM_LOAD( "spra.3f",      0xc000, 0x04000, 0x67a9d2e6 ) /* 6803 code */
+		ROM_REGION( 0x10000, REGION_CPU2, 0 );/* sound CPU */
+		ROM_LOAD( "spra.3d",      0x8000, 0x04000, 0x4110363c );/* adpcm data */
+		ROM_LOAD( "spra.3f",      0xc000, 0x04000, 0x67a9d2e6 );/* 6803 code */
 	
-		ROM_REGION( 0x18000, REGION_GFX1, ROMREGION_DISPOSE )
-		ROM_LOAD( "sprm.1d",      0x00000, 0x4000, 0x4ef7ae89 )	/* tiles */
-		ROM_LOAD( "sprm.1e",      0x04000, 0x4000, 0xa3755180 )
-		ROM_LOAD( "sprm.3c",      0x08000, 0x4000, 0xb4008e6a )
-		ROM_LOAD( "sprm.3b",      0x0c000, 0x4000, 0xf61cf012 )
-		ROM_LOAD( "sprm.1c",      0x10000, 0x4000, 0x58b21c76 )
-		ROM_LOAD( "sprm.1b",      0x14000, 0x4000, 0xa95cb3e5 )
+		ROM_REGION( 0x18000, REGION_GFX1, ROMREGION_DISPOSE );
+		ROM_LOAD( "sprm.1d",      0x00000, 0x4000, 0x4ef7ae89 );/* tiles */
+		ROM_LOAD( "sprm.1e",      0x04000, 0x4000, 0xa3755180 );
+		ROM_LOAD( "sprm.3c",      0x08000, 0x4000, 0xb4008e6a );
+		ROM_LOAD( "sprm.3b",      0x0c000, 0x4000, 0xf61cf012 );
+		ROM_LOAD( "sprm.1c",      0x10000, 0x4000, 0x58b21c76 );
+		ROM_LOAD( "sprm.1b",      0x14000, 0x4000, 0xa95cb3e5 );
 	
-		ROM_REGION( 0x18000, REGION_GFX2, ROMREGION_DISPOSE )
-		ROM_LOAD( "sprb.4k",      0x00000, 0x4000, 0xe7f0e861 )	/* sprites */
-		ROM_LOAD( "sprb.4f",      0x04000, 0x4000, 0x32663097 )
-		ROM_LOAD( "sprb.3p",      0x08000, 0x4000, 0x8fbaf373 )
-		ROM_LOAD( "sprb.4p",      0x0c000, 0x4000, 0x37069b76 )
-		ROM_LOAD( "sprb.4c",      0x10000, 0x4000, 0xcfe46a88 )
-		ROM_LOAD( "sprb.4e",      0x14000, 0x4000, 0x11c48979 )
+		ROM_REGION( 0x18000, REGION_GFX2, ROMREGION_DISPOSE );
+		ROM_LOAD( "sprb.4k",      0x00000, 0x4000, 0xe7f0e861 );/* sprites */
+		ROM_LOAD( "sprb.4f",      0x04000, 0x4000, 0x32663097 );
+		ROM_LOAD( "sprb.3p",      0x08000, 0x4000, 0x8fbaf373 );
+		ROM_LOAD( "sprb.4p",      0x0c000, 0x4000, 0x37069b76 );
+		ROM_LOAD( "sprb.4c",      0x10000, 0x4000, 0xcfe46a88 );
+		ROM_LOAD( "sprb.4e",      0x14000, 0x4000, 0x11c48979 );
 	
-		ROM_REGION( 0x0c000, REGION_GFX3, ROMREGION_DISPOSE )
-		ROM_LOAD( "sprm.4p",      0x00000, 0x0800, 0x4dfe2e63 )	/* chars */
-		ROM_CONTINUE(             0x02000, 0x0800 )			/* first and second half identical, */
-		ROM_CONTINUE(             0x00800, 0x0800 )			/* second half not used by the driver */
-		ROM_CONTINUE(             0x02800, 0x0800 )
-		ROM_CONTINUE(             0x00000, 0x0800 )
-		ROM_CONTINUE(             0x03000, 0x0800 )
-		ROM_CONTINUE(             0x00800, 0x0800 )
-		ROM_CONTINUE(             0x03800, 0x0800 )
-		ROM_LOAD( "sprm.4l",      0x04000, 0x0800, 0x239f2cd4 )
-		ROM_CONTINUE(             0x06000, 0x0800 )
-		ROM_CONTINUE(             0x04800, 0x0800 )
-		ROM_CONTINUE(             0x06800, 0x0800 )
-		ROM_CONTINUE(             0x05000, 0x0800 )
-		ROM_CONTINUE(             0x07000, 0x0800 )
-		ROM_CONTINUE(             0x05800, 0x0800 )
-		ROM_CONTINUE(             0x07800, 0x0800 )
-		ROM_LOAD( "sprm.4m",      0x08000, 0x0800, 0xd6d07d70 )
-		ROM_CONTINUE(             0x0a000, 0x0800 )
-		ROM_CONTINUE(             0x08800, 0x0800 )
-		ROM_CONTINUE(             0x0a800, 0x0800 )
-		ROM_CONTINUE(             0x09000, 0x0800 )
-		ROM_CONTINUE(             0x0b000, 0x0800 )
-		ROM_CONTINUE(             0x09800, 0x0800 )
-		ROM_CONTINUE(             0x0b800, 0x0800 )
+		ROM_REGION( 0x0c000, REGION_GFX3, ROMREGION_DISPOSE );
+		ROM_LOAD( "sprm.4p",      0x00000, 0x0800, 0x4dfe2e63 );/* chars */
+		ROM_CONTINUE(             0x02000, 0x0800 );		/* first and second half identical, */
+		ROM_CONTINUE(             0x00800, 0x0800 );		/* second half not used by the driver */
+		ROM_CONTINUE(             0x02800, 0x0800 );
+		ROM_CONTINUE(             0x00000, 0x0800 );
+		ROM_CONTINUE(             0x03000, 0x0800 );
+		ROM_CONTINUE(             0x00800, 0x0800 );
+		ROM_CONTINUE(             0x03800, 0x0800 );
+		ROM_LOAD( "sprm.4l",      0x04000, 0x0800, 0x239f2cd4 );
+		ROM_CONTINUE(             0x06000, 0x0800 );
+		ROM_CONTINUE(             0x04800, 0x0800 );
+		ROM_CONTINUE(             0x06800, 0x0800 );
+		ROM_CONTINUE(             0x05000, 0x0800 );
+		ROM_CONTINUE(             0x07000, 0x0800 );
+		ROM_CONTINUE(             0x05800, 0x0800 );
+		ROM_CONTINUE(             0x07800, 0x0800 );
+		ROM_LOAD( "sprm.4m",      0x08000, 0x0800, 0xd6d07d70 );
+		ROM_CONTINUE(             0x0a000, 0x0800 );
+		ROM_CONTINUE(             0x08800, 0x0800 );
+		ROM_CONTINUE(             0x0a800, 0x0800 );
+		ROM_CONTINUE(             0x09000, 0x0800 );
+		ROM_CONTINUE(             0x0b000, 0x0800 );
+		ROM_CONTINUE(             0x09800, 0x0800 );
+		ROM_CONTINUE(             0x0b800, 0x0800 );
 	
-		ROM_REGION( 0x0920, REGION_PROMS, 0 )
-		ROM_LOAD( "sprm.2k",      0x0000, 0x0100, 0xfd8fa991 )	/* character palette red component */
-		ROM_LOAD( "sprb.1m",      0x0100, 0x0100, 0x8d8cccad )	/* sprite palette red component */
-		ROM_LOAD( "sprm.2j",      0x0200, 0x0100, 0x0e3890b4 )	/* character palette green component */
-		ROM_LOAD( "sprb.1n",      0x0300, 0x0100, 0xc40e1cb2 )	/* sprite palette green component */
-		ROM_LOAD( "sprm.2h",      0x0400, 0x0100, 0x0478082b )	/* character palette blue component */
-		ROM_LOAD( "sprb.1l",      0x0500, 0x0100, 0x3ec46248 )	/* sprite palette blue component */
-		ROM_LOAD( "sprb.5p",      0x0600, 0x0020, 0x746c6238 )	/* sprite height, one entry per 32 */
+		ROM_REGION( 0x0920, REGION_PROMS, 0 );
+		ROM_LOAD( "sprm.2k",      0x0000, 0x0100, 0xfd8fa991 );/* character palette red component */
+		ROM_LOAD( "sprb.1m",      0x0100, 0x0100, 0x8d8cccad );/* sprite palette red component */
+		ROM_LOAD( "sprm.2j",      0x0200, 0x0100, 0x0e3890b4 );/* character palette green component */
+		ROM_LOAD( "sprb.1n",      0x0300, 0x0100, 0xc40e1cb2 );/* sprite palette green component */
+		ROM_LOAD( "sprm.2h",      0x0400, 0x0100, 0x0478082b );/* character palette blue component */
+		ROM_LOAD( "sprb.1l",      0x0500, 0x0100, 0x3ec46248 );/* sprite palette blue component */
+		ROM_LOAD( "sprb.5p",      0x0600, 0x0020, 0x746c6238 );/* sprite height, one entry per 32 */
 		                                                        /* sprites. Used at run time! */
-		ROM_LOAD( "sprm.8h",      0x0620, 0x0200, 0x875cc442 )	/* unknown */
-		ROM_LOAD( "sprb.6f",      0x0820, 0x0100, 0x34d88d3c )	/* video timing - common to the other games */
-	ROM_END
+		ROM_LOAD( "sprm.8h",      0x0620, 0x0200, 0x875cc442 );/* unknown */
+		ROM_LOAD( "sprb.6f",      0x0820, 0x0100, 0x34d88d3c );/* video timing - common to the other games */
+	ROM_END(); }}; 
 	
-	ROM_START( spelnkrj )
-		ROM_REGION( 0x18000, REGION_CPU1, 0 )	/* main CPU */
-		ROM_LOAD( "spr_a4ec.bin", 0x00000, 0x4000, 0x4e94a80c )
-		ROM_LOAD( "spr_a4dd.bin", 0x04000, 0x4000, 0xe7c0cbce )
-		ROM_LOAD( "spr_m7cc.bin", 0x10000, 0x4000, 0x57598a36 )	/* banked at 8000-9fff */
-		ROM_LOAD( "spr_m7bd.bin", 0x14000, 0x4000, 0xecf5137f )
+	static RomLoadPtr rom_spelnkrj = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x18000, REGION_CPU1, 0 );/* main CPU */
+		ROM_LOAD( "spr_a4ec.bin", 0x00000, 0x4000, 0x4e94a80c );
+		ROM_LOAD( "spr_a4dd.bin", 0x04000, 0x4000, 0xe7c0cbce );
+		ROM_LOAD( "spr_m7cc.bin", 0x10000, 0x4000, 0x57598a36 );/* banked at 8000-9fff */
+		ROM_LOAD( "spr_m7bd.bin", 0x14000, 0x4000, 0xecf5137f );
 	
-		ROM_REGION( 0x10000, REGION_CPU2, 0 )	/* sound CPU */
-		ROM_LOAD( "spra.3d",      0x8000, 0x04000, 0x4110363c ) /* adpcm data */
-		ROM_LOAD( "spra.3f",      0xc000, 0x04000, 0x67a9d2e6 ) /* 6803 code */
+		ROM_REGION( 0x10000, REGION_CPU2, 0 );/* sound CPU */
+		ROM_LOAD( "spra.3d",      0x8000, 0x04000, 0x4110363c );/* adpcm data */
+		ROM_LOAD( "spra.3f",      0xc000, 0x04000, 0x67a9d2e6 );/* 6803 code */
 	
-		ROM_REGION( 0x18000, REGION_GFX1, ROMREGION_DISPOSE )
-		ROM_LOAD( "sprm.1d",      0x00000, 0x4000, 0x4ef7ae89 )	/* tiles */
-		ROM_LOAD( "sprm.1e",      0x04000, 0x4000, 0xa3755180 )
-		ROM_LOAD( "sprm.3c",      0x08000, 0x4000, 0xb4008e6a )
-		ROM_LOAD( "sprm.3b",      0x0c000, 0x4000, 0xf61cf012 )
-		ROM_LOAD( "sprm.1c",      0x10000, 0x4000, 0x58b21c76 )
-		ROM_LOAD( "sprm.1b",      0x14000, 0x4000, 0xa95cb3e5 )
+		ROM_REGION( 0x18000, REGION_GFX1, ROMREGION_DISPOSE );
+		ROM_LOAD( "sprm.1d",      0x00000, 0x4000, 0x4ef7ae89 );/* tiles */
+		ROM_LOAD( "sprm.1e",      0x04000, 0x4000, 0xa3755180 );
+		ROM_LOAD( "sprm.3c",      0x08000, 0x4000, 0xb4008e6a );
+		ROM_LOAD( "sprm.3b",      0x0c000, 0x4000, 0xf61cf012 );
+		ROM_LOAD( "sprm.1c",      0x10000, 0x4000, 0x58b21c76 );
+		ROM_LOAD( "sprm.1b",      0x14000, 0x4000, 0xa95cb3e5 );
 	
-		ROM_REGION( 0x18000, REGION_GFX2, ROMREGION_DISPOSE )
-		ROM_LOAD( "sprb.4k",      0x00000, 0x4000, 0xe7f0e861 )	/* sprites */
-		ROM_LOAD( "sprb.4f",      0x04000, 0x4000, 0x32663097 )
-		ROM_LOAD( "sprb.3p",      0x08000, 0x4000, 0x8fbaf373 )
-		ROM_LOAD( "sprb.4p",      0x0c000, 0x4000, 0x37069b76 )
-		ROM_LOAD( "sprb.4c",      0x10000, 0x4000, 0xcfe46a88 )
-		ROM_LOAD( "sprb.4e",      0x14000, 0x4000, 0x11c48979 )
+		ROM_REGION( 0x18000, REGION_GFX2, ROMREGION_DISPOSE );
+		ROM_LOAD( "sprb.4k",      0x00000, 0x4000, 0xe7f0e861 );/* sprites */
+		ROM_LOAD( "sprb.4f",      0x04000, 0x4000, 0x32663097 );
+		ROM_LOAD( "sprb.3p",      0x08000, 0x4000, 0x8fbaf373 );
+		ROM_LOAD( "sprb.4p",      0x0c000, 0x4000, 0x37069b76 );
+		ROM_LOAD( "sprb.4c",      0x10000, 0x4000, 0xcfe46a88 );
+		ROM_LOAD( "sprb.4e",      0x14000, 0x4000, 0x11c48979 );
 	
-		ROM_REGION( 0x0c000, REGION_GFX3, ROMREGION_DISPOSE )
-		ROM_LOAD( "sprm.4p",      0x00000, 0x0800, 0x4dfe2e63 )	/* chars */
-		ROM_CONTINUE(             0x02000, 0x0800 )			/* first and second half identical, */
-		ROM_CONTINUE(             0x00800, 0x0800 )			/* second half not used by the driver */
-		ROM_CONTINUE(             0x02800, 0x0800 )
-		ROM_CONTINUE(             0x00000, 0x0800 )
-		ROM_CONTINUE(             0x03000, 0x0800 )
-		ROM_CONTINUE(             0x00800, 0x0800 )
-		ROM_CONTINUE(             0x03800, 0x0800 )
-		ROM_LOAD( "sprm.4l",      0x04000, 0x0800, 0x239f2cd4 )
-		ROM_CONTINUE(             0x06000, 0x0800 )
-		ROM_CONTINUE(             0x04800, 0x0800 )
-		ROM_CONTINUE(             0x06800, 0x0800 )
-		ROM_CONTINUE(             0x05000, 0x0800 )
-		ROM_CONTINUE(             0x07000, 0x0800 )
-		ROM_CONTINUE(             0x05800, 0x0800 )
-		ROM_CONTINUE(             0x07800, 0x0800 )
-		ROM_LOAD( "sprm.4m",      0x08000, 0x0800, 0xd6d07d70 )
-		ROM_CONTINUE(             0x0a000, 0x0800 )
-		ROM_CONTINUE(             0x08800, 0x0800 )
-		ROM_CONTINUE(             0x0a800, 0x0800 )
-		ROM_CONTINUE(             0x09000, 0x0800 )
-		ROM_CONTINUE(             0x0b000, 0x0800 )
-		ROM_CONTINUE(             0x09800, 0x0800 )
-		ROM_CONTINUE(             0x0b800, 0x0800 )
+		ROM_REGION( 0x0c000, REGION_GFX3, ROMREGION_DISPOSE );
+		ROM_LOAD( "sprm.4p",      0x00000, 0x0800, 0x4dfe2e63 );/* chars */
+		ROM_CONTINUE(             0x02000, 0x0800 );		/* first and second half identical, */
+		ROM_CONTINUE(             0x00800, 0x0800 );		/* second half not used by the driver */
+		ROM_CONTINUE(             0x02800, 0x0800 );
+		ROM_CONTINUE(             0x00000, 0x0800 );
+		ROM_CONTINUE(             0x03000, 0x0800 );
+		ROM_CONTINUE(             0x00800, 0x0800 );
+		ROM_CONTINUE(             0x03800, 0x0800 );
+		ROM_LOAD( "sprm.4l",      0x04000, 0x0800, 0x239f2cd4 );
+		ROM_CONTINUE(             0x06000, 0x0800 );
+		ROM_CONTINUE(             0x04800, 0x0800 );
+		ROM_CONTINUE(             0x06800, 0x0800 );
+		ROM_CONTINUE(             0x05000, 0x0800 );
+		ROM_CONTINUE(             0x07000, 0x0800 );
+		ROM_CONTINUE(             0x05800, 0x0800 );
+		ROM_CONTINUE(             0x07800, 0x0800 );
+		ROM_LOAD( "sprm.4m",      0x08000, 0x0800, 0xd6d07d70 );
+		ROM_CONTINUE(             0x0a000, 0x0800 );
+		ROM_CONTINUE(             0x08800, 0x0800 );
+		ROM_CONTINUE(             0x0a800, 0x0800 );
+		ROM_CONTINUE(             0x09000, 0x0800 );
+		ROM_CONTINUE(             0x0b000, 0x0800 );
+		ROM_CONTINUE(             0x09800, 0x0800 );
+		ROM_CONTINUE(             0x0b800, 0x0800 );
 	
-		ROM_REGION( 0x0920, REGION_PROMS, 0 )
-		ROM_LOAD( "sprm.2k",      0x0000, 0x0100, 0xfd8fa991 )	/* character palette red component */
-		ROM_LOAD( "sprb.1m",      0x0100, 0x0100, 0x8d8cccad )	/* sprite palette red component */
-		ROM_LOAD( "sprm.2j",      0x0200, 0x0100, 0x0e3890b4 )	/* character palette green component */
-		ROM_LOAD( "sprb.1n",      0x0300, 0x0100, 0xc40e1cb2 )	/* sprite palette green component */
-		ROM_LOAD( "sprm.2h",      0x0400, 0x0100, 0x0478082b )	/* character palette blue component */
-		ROM_LOAD( "sprb.1l",      0x0500, 0x0100, 0x3ec46248 )	/* sprite palette blue component */
-		ROM_LOAD( "sprb.5p",      0x0600, 0x0020, 0x746c6238 )	/* sprite height, one entry per 32 */
+		ROM_REGION( 0x0920, REGION_PROMS, 0 );
+		ROM_LOAD( "sprm.2k",      0x0000, 0x0100, 0xfd8fa991 );/* character palette red component */
+		ROM_LOAD( "sprb.1m",      0x0100, 0x0100, 0x8d8cccad );/* sprite palette red component */
+		ROM_LOAD( "sprm.2j",      0x0200, 0x0100, 0x0e3890b4 );/* character palette green component */
+		ROM_LOAD( "sprb.1n",      0x0300, 0x0100, 0xc40e1cb2 );/* sprite palette green component */
+		ROM_LOAD( "sprm.2h",      0x0400, 0x0100, 0x0478082b );/* character palette blue component */
+		ROM_LOAD( "sprb.1l",      0x0500, 0x0100, 0x3ec46248 );/* sprite palette blue component */
+		ROM_LOAD( "sprb.5p",      0x0600, 0x0020, 0x746c6238 );/* sprite height, one entry per 32 */
 		                                                        /* sprites. Used at run time! */
-		ROM_LOAD( "sprm.8h",      0x0620, 0x0200, 0x875cc442 )	/* unknown */
-		ROM_LOAD( "sprb.6f",      0x0820, 0x0100, 0x34d88d3c )	/* video timing - common to the other games */
-	ROM_END
+		ROM_LOAD( "sprm.8h",      0x0620, 0x0200, 0x875cc442 );/* unknown */
+		ROM_LOAD( "sprb.6f",      0x0820, 0x0100, 0x34d88d3c );/* video timing - common to the other games */
+	ROM_END(); }}; 
 	
-	ROM_START( spelunk2 )
-		ROM_REGION( 0x24000, REGION_CPU1, 0 )	/* main CPU */
-		ROM_LOAD( "sp2-a.4e",     0x00000, 0x4000, 0x96c04bbb )
-		ROM_LOAD( "sp2-a.4d",     0x04000, 0x4000, 0xcb38c2ff )
-		ROM_LOAD( "sp2-r.7d",     0x10000, 0x8000, 0x558837ea )	/* banked at 9000-9fff */
-		ROM_LOAD( "sp2-r.7c",     0x18000, 0x8000, 0x4b380162 )	/* banked at 9000-9fff */
-		ROM_LOAD( "sp2-r.7b",     0x20000, 0x4000, 0x7709a1fe )	/* banked at 8000-8fff */
+	static RomLoadPtr rom_spelunk2 = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x24000, REGION_CPU1, 0 );/* main CPU */
+		ROM_LOAD( "sp2-a.4e",     0x00000, 0x4000, 0x96c04bbb );
+		ROM_LOAD( "sp2-a.4d",     0x04000, 0x4000, 0xcb38c2ff );
+		ROM_LOAD( "sp2-r.7d",     0x10000, 0x8000, 0x558837ea );/* banked at 9000-9fff */
+		ROM_LOAD( "sp2-r.7c",     0x18000, 0x8000, 0x4b380162 );/* banked at 9000-9fff */
+		ROM_LOAD( "sp2-r.7b",     0x20000, 0x4000, 0x7709a1fe );/* banked at 8000-8fff */
 	
-		ROM_REGION( 0x10000, REGION_CPU2, 0 )	/* sound CPU */
-		ROM_LOAD( "sp2-a.3d",     0x8000, 0x04000, 0x839ec7e2 ) /* adpcm data */
-		ROM_LOAD( "sp2-a.3f",     0xc000, 0x04000, 0xad3ce898 ) /* 6803 code */
+		ROM_REGION( 0x10000, REGION_CPU2, 0 );/* sound CPU */
+		ROM_LOAD( "sp2-a.3d",     0x8000, 0x04000, 0x839ec7e2 );/* adpcm data */
+		ROM_LOAD( "sp2-a.3f",     0xc000, 0x04000, 0xad3ce898 );/* 6803 code */
 	
-		ROM_REGION( 0x18000, REGION_GFX1, ROMREGION_DISPOSE )
-		ROM_LOAD( "sp2-r.1d",     0x00000, 0x8000, 0xc19fa4c9 )	/* tiles */
-		ROM_LOAD( "sp2-r.3b",     0x08000, 0x8000, 0x366604af )
-		ROM_LOAD( "sp2-r.1b",     0x10000, 0x8000, 0x3a0c4d47 )
+		ROM_REGION( 0x18000, REGION_GFX1, ROMREGION_DISPOSE );
+		ROM_LOAD( "sp2-r.1d",     0x00000, 0x8000, 0xc19fa4c9 );/* tiles */
+		ROM_LOAD( "sp2-r.3b",     0x08000, 0x8000, 0x366604af );
+		ROM_LOAD( "sp2-r.1b",     0x10000, 0x8000, 0x3a0c4d47 );
 	
-		ROM_REGION( 0x18000, REGION_GFX2, ROMREGION_DISPOSE )
-		ROM_LOAD( "sp2-b.4k",     0x00000, 0x4000, 0x6cb67a17 )	/* sprites */
-		ROM_LOAD( "sp2-b.4f",     0x04000, 0x4000, 0xe4a1166f )
-		ROM_LOAD( "sp2-b.3n",     0x08000, 0x4000, 0xf59e8b76 )
-		ROM_LOAD( "sp2-b.4n",     0x0c000, 0x4000, 0xfa65bac9 )
-		ROM_LOAD( "sp2-b.4c",     0x10000, 0x4000, 0x1caf7013 )
-		ROM_LOAD( "sp2-b.4e",     0x14000, 0x4000, 0x780a463b )
+		ROM_REGION( 0x18000, REGION_GFX2, ROMREGION_DISPOSE );
+		ROM_LOAD( "sp2-b.4k",     0x00000, 0x4000, 0x6cb67a17 );/* sprites */
+		ROM_LOAD( "sp2-b.4f",     0x04000, 0x4000, 0xe4a1166f );
+		ROM_LOAD( "sp2-b.3n",     0x08000, 0x4000, 0xf59e8b76 );
+		ROM_LOAD( "sp2-b.4n",     0x0c000, 0x4000, 0xfa65bac9 );
+		ROM_LOAD( "sp2-b.4c",     0x10000, 0x4000, 0x1caf7013 );
+		ROM_LOAD( "sp2-b.4e",     0x14000, 0x4000, 0x780a463b );
 	
-		ROM_REGION( 0x0c000, REGION_GFX3, ROMREGION_DISPOSE )
-		ROM_LOAD( "sp2-r.4l",     0x00000, 0x0800, 0x6a4b2d8b )	/* chars */
-		ROM_CONTINUE(             0x02000, 0x0800 )			/* first and second half identical, */
-		ROM_CONTINUE(             0x00800, 0x0800 )			/* second half not used by the driver */
-		ROM_CONTINUE(             0x02800, 0x0800 )
-		ROM_CONTINUE(             0x00000, 0x0800 )
-		ROM_CONTINUE(             0x03000, 0x0800 )
-		ROM_CONTINUE(             0x00800, 0x0800 )
-		ROM_CONTINUE(             0x03800, 0x0800 )
-		ROM_LOAD( "sp2-r.4m",     0x04000, 0x0800, 0xe1368b61 )
-		ROM_CONTINUE(             0x06000, 0x0800 )
-		ROM_CONTINUE(             0x04800, 0x0800 )
-		ROM_CONTINUE(             0x06800, 0x0800 )
-		ROM_CONTINUE(             0x05000, 0x0800 )
-		ROM_CONTINUE(             0x07000, 0x0800 )
-		ROM_CONTINUE(             0x05800, 0x0800 )
-		ROM_CONTINUE(             0x07800, 0x0800 )
-		ROM_LOAD( "sp2-r.4p",     0x08000, 0x0800, 0xfc138e13 )
-		ROM_CONTINUE(             0x0a000, 0x0800 )
-		ROM_CONTINUE(             0x08800, 0x0800 )
-		ROM_CONTINUE(             0x0a800, 0x0800 )
-		ROM_CONTINUE(             0x09000, 0x0800 )
-		ROM_CONTINUE(             0x0b000, 0x0800 )
-		ROM_CONTINUE(             0x09800, 0x0800 )
-		ROM_CONTINUE(             0x0b800, 0x0800 )
+		ROM_REGION( 0x0c000, REGION_GFX3, ROMREGION_DISPOSE );
+		ROM_LOAD( "sp2-r.4l",     0x00000, 0x0800, 0x6a4b2d8b );/* chars */
+		ROM_CONTINUE(             0x02000, 0x0800 );		/* first and second half identical, */
+		ROM_CONTINUE(             0x00800, 0x0800 );		/* second half not used by the driver */
+		ROM_CONTINUE(             0x02800, 0x0800 );
+		ROM_CONTINUE(             0x00000, 0x0800 );
+		ROM_CONTINUE(             0x03000, 0x0800 );
+		ROM_CONTINUE(             0x00800, 0x0800 );
+		ROM_CONTINUE(             0x03800, 0x0800 );
+		ROM_LOAD( "sp2-r.4m",     0x04000, 0x0800, 0xe1368b61 );
+		ROM_CONTINUE(             0x06000, 0x0800 );
+		ROM_CONTINUE(             0x04800, 0x0800 );
+		ROM_CONTINUE(             0x06800, 0x0800 );
+		ROM_CONTINUE(             0x05000, 0x0800 );
+		ROM_CONTINUE(             0x07000, 0x0800 );
+		ROM_CONTINUE(             0x05800, 0x0800 );
+		ROM_CONTINUE(             0x07800, 0x0800 );
+		ROM_LOAD( "sp2-r.4p",     0x08000, 0x0800, 0xfc138e13 );
+		ROM_CONTINUE(             0x0a000, 0x0800 );
+		ROM_CONTINUE(             0x08800, 0x0800 );
+		ROM_CONTINUE(             0x0a800, 0x0800 );
+		ROM_CONTINUE(             0x09000, 0x0800 );
+		ROM_CONTINUE(             0x0b000, 0x0800 );
+		ROM_CONTINUE(             0x09800, 0x0800 );
+		ROM_CONTINUE(             0x0b800, 0x0800 );
 	
-		ROM_REGION( 0x0a20, REGION_PROMS, 0 )
-		ROM_LOAD( "sp2-r.1k",     0x0000, 0x0200, 0x31c1bcdc )	/* chars red and green component */
-		ROM_LOAD( "sp2-r.2k",     0x0200, 0x0100, 0x1cf5987e )	/* chars blue component */
-		ROM_LOAD( "sp2-r.2j",     0x0300, 0x0100, 0x1acbe2a5 )	/* chars blue component */
-		ROM_LOAD( "sp2-b.1m",     0x0400, 0x0100, 0x906104c7 )	/* sprites red component */
-		ROM_LOAD( "sp2-b.1n",     0x0500, 0x0100, 0x5a564c06 )	/* sprites green component */
-		ROM_LOAD( "sp2-b.1l",     0x0600, 0x0100, 0x8f4a2e3c )	/* sprites blue component */
-		ROM_LOAD( "sp2-b.5p",     0x0700, 0x0020, 0xcd126f6a )	/* sprite height, one entry per 32 */
+		ROM_REGION( 0x0a20, REGION_PROMS, 0 );
+		ROM_LOAD( "sp2-r.1k",     0x0000, 0x0200, 0x31c1bcdc );/* chars red and green component */
+		ROM_LOAD( "sp2-r.2k",     0x0200, 0x0100, 0x1cf5987e );/* chars blue component */
+		ROM_LOAD( "sp2-r.2j",     0x0300, 0x0100, 0x1acbe2a5 );/* chars blue component */
+		ROM_LOAD( "sp2-b.1m",     0x0400, 0x0100, 0x906104c7 );/* sprites red component */
+		ROM_LOAD( "sp2-b.1n",     0x0500, 0x0100, 0x5a564c06 );/* sprites green component */
+		ROM_LOAD( "sp2-b.1l",     0x0600, 0x0100, 0x8f4a2e3c );/* sprites blue component */
+		ROM_LOAD( "sp2-b.5p",     0x0700, 0x0020, 0xcd126f6a );/* sprite height, one entry per 32 */
 		                                                        /* sprites. Used at run time! */
-		ROM_LOAD( "sp2-r.8j",     0x0720, 0x0200, 0x875cc442 )	/* unknown */
-		ROM_LOAD( "sp2-b.6f",     0x0920, 0x0100, 0x34d88d3c )	/* video timing - common to the other games */
-	ROM_END
+		ROM_LOAD( "sp2-r.8j",     0x0720, 0x0200, 0x875cc442 );/* unknown */
+		ROM_LOAD( "sp2-b.6f",     0x0920, 0x0100, 0x34d88d3c );/* video timing - common to the other games */
+	ROM_END(); }}; 
 	
-	ROM_START( youjyudn )
-		ROM_REGION( 0x18000, REGION_CPU1, 0 )	/* main CPU */
-		ROM_LOAD( "yju_a4eb.bin", 0x00000, 0x4000, 0x0d356bdc )
-		ROM_LOAD( "yju_a4db.bin", 0x04000, 0x4000, 0xc169be13 )
-		ROM_LOAD( "yju_p4cb.0",   0x10000, 0x4000, 0x60baf3b1 )	/* banked at 8000-bfff */
-		ROM_LOAD( "yju_p4eb.1",   0x14000, 0x4000, 0x8d0521f8 )
+	static RomLoadPtr rom_youjyudn = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x18000, REGION_CPU1, 0 );/* main CPU */
+		ROM_LOAD( "yju_a4eb.bin", 0x00000, 0x4000, 0x0d356bdc );
+		ROM_LOAD( "yju_a4db.bin", 0x04000, 0x4000, 0xc169be13 );
+		ROM_LOAD( "yju_p4cb.0",   0x10000, 0x4000, 0x60baf3b1 );/* banked at 8000-bfff */
+		ROM_LOAD( "yju_p4eb.1",   0x14000, 0x4000, 0x8d0521f8 );
 	
-		ROM_REGION( 0x10000, REGION_CPU2, 0 )	/* sound CPU */
-		ROM_LOAD( "yju_a3fb.bin", 0xc000, 0x04000, 0xe15c8030 ) /* 6803 code */
+		ROM_REGION( 0x10000, REGION_CPU2, 0 );/* sound CPU */
+		ROM_LOAD( "yju_a3fb.bin", 0xc000, 0x04000, 0xe15c8030 );/* 6803 code */
 	
-		ROM_REGION( 0x0c000, REGION_GFX1, ROMREGION_DISPOSE )
-		ROM_LOAD( "yju_p3bb.0",   0x00000, 0x4000, 0xc017913c )	/* tiles (first half empty) */
-		ROM_CONTINUE(             0x00000, 0x4000 )
-		ROM_LOAD( "yju_p1bb.1",   0x04000, 0x4000, 0x94627523 )
-		ROM_CONTINUE(             0x04000, 0x4000 )
-		ROM_LOAD( "yju_p1cb.2",   0x08000, 0x4000, 0x6a378c56 )
-		ROM_CONTINUE(             0x08000, 0x4000 )
+		ROM_REGION( 0x0c000, REGION_GFX1, ROMREGION_DISPOSE );
+		ROM_LOAD( "yju_p3bb.0",   0x00000, 0x4000, 0xc017913c );/* tiles (first half empty) */
+		ROM_CONTINUE(             0x00000, 0x4000 );
+		ROM_LOAD( "yju_p1bb.1",   0x04000, 0x4000, 0x94627523 );
+		ROM_CONTINUE(             0x04000, 0x4000 );
+		ROM_LOAD( "yju_p1cb.2",   0x08000, 0x4000, 0x6a378c56 );
+		ROM_CONTINUE(             0x08000, 0x4000 );
 	
-		ROM_REGION( 0x18000, REGION_GFX2, ROMREGION_DISPOSE )
-		ROM_LOAD( "yju_b4ka.00",  0x00000, 0x4000, 0x1bbb864a )	/* sprites */
-		ROM_LOAD( "yju_b4fa.01",  0x04000, 0x4000, 0x14b4dd24 )
-		ROM_LOAD( "yju_b3na.10",  0x08000, 0x4000, 0x68879321 )
-		ROM_LOAD( "yju_b4na.11",  0x0c000, 0x4000, 0x2860a68b )
-		ROM_LOAD( "yju_b4ca.20",  0x10000, 0x4000, 0xab365829 )
-		ROM_LOAD( "yju_b4ea.21",  0x14000, 0x4000, 0xb36c31e4 )
+		ROM_REGION( 0x18000, REGION_GFX2, ROMREGION_DISPOSE );
+		ROM_LOAD( "yju_b4ka.00",  0x00000, 0x4000, 0x1bbb864a );/* sprites */
+		ROM_LOAD( "yju_b4fa.01",  0x04000, 0x4000, 0x14b4dd24 );
+		ROM_LOAD( "yju_b3na.10",  0x08000, 0x4000, 0x68879321 );
+		ROM_LOAD( "yju_b4na.11",  0x0c000, 0x4000, 0x2860a68b );
+		ROM_LOAD( "yju_b4ca.20",  0x10000, 0x4000, 0xab365829 );
+		ROM_LOAD( "yju_b4ea.21",  0x14000, 0x4000, 0xb36c31e4 );
 	
-		ROM_REGION( 0x0c000, REGION_GFX3, ROMREGION_DISPOSE )
-		ROM_LOAD( "yju_p4lb.2",   0x00000, 0x4000, 0x87878d9b )	/* chars */
-		ROM_LOAD( "yju_p4mb.1",   0x04000, 0x4000, 0x1e1a0d09 )
-		ROM_LOAD( "yju_p4pb.0",   0x08000, 0x4000, 0xb4ab520b )
+		ROM_REGION( 0x0c000, REGION_GFX3, ROMREGION_DISPOSE );
+		ROM_LOAD( "yju_p4lb.2",   0x00000, 0x4000, 0x87878d9b );/* chars */
+		ROM_LOAD( "yju_p4mb.1",   0x04000, 0x4000, 0x1e1a0d09 );
+		ROM_LOAD( "yju_p4pb.0",   0x08000, 0x4000, 0xb4ab520b );
 	
-		ROM_REGION( 0x0920, REGION_PROMS, 0 )
-		ROM_LOAD( "yju_p2jb.bpr", 0x0000, 0x0100, 0xa4483631 )	/* character palette red component */
-		ROM_LOAD( "yju_b1ma.r",   0x0100, 0x0100, 0xa8340e13 )	/* sprite palette red component */
-		ROM_LOAD( "yju_p2kb.bpr", 0x0200, 0x0100, 0x85481103 )	/* character palette green component */
-		ROM_LOAD( "yju_b1na.g",   0x0300, 0x0100, 0xf5b4bc41 )	/* sprite palette green component */
-		ROM_LOAD( "yju_p2hb.bpr", 0x0400, 0x0100, 0xa6fd355c )	/* character palette blue component */
-		ROM_LOAD( "yju_b1la.b",   0x0500, 0x0100, 0x45e10491 )	/* sprite palette blue component */
-		ROM_LOAD( "yju_b-5p.bpr", 0x0600, 0x0020, 0x2095e6a3 )	/* sprite height, one entry per 32 */
+		ROM_REGION( 0x0920, REGION_PROMS, 0 );
+		ROM_LOAD( "yju_p2jb.bpr", 0x0000, 0x0100, 0xa4483631 );/* character palette red component */
+		ROM_LOAD( "yju_b1ma.r",   0x0100, 0x0100, 0xa8340e13 );/* sprite palette red component */
+		ROM_LOAD( "yju_p2kb.bpr", 0x0200, 0x0100, 0x85481103 );/* character palette green component */
+		ROM_LOAD( "yju_b1na.g",   0x0300, 0x0100, 0xf5b4bc41 );/* sprite palette green component */
+		ROM_LOAD( "yju_p2hb.bpr", 0x0400, 0x0100, 0xa6fd355c );/* character palette blue component */
+		ROM_LOAD( "yju_b1la.b",   0x0500, 0x0100, 0x45e10491 );/* sprite palette blue component */
+		ROM_LOAD( "yju_b-5p.bpr", 0x0600, 0x0020, 0x2095e6a3 );/* sprite height, one entry per 32 */
 		                                                        /* sprites. Used at run time! */
-		ROM_LOAD( "yju_p-8d.bpr", 0x0620, 0x0200, 0x6cef0fbd )	/* unknown */
-		ROM_LOAD( "yju_b-6f.bpr", 0x0820, 0x0100, 0x82c20d12 )	/* video timing - same as kungfum */
-	ROM_END
+		ROM_LOAD( "yju_p-8d.bpr", 0x0620, 0x0200, 0x6cef0fbd );/* unknown */
+		ROM_LOAD( "yju_b-6f.bpr", 0x0820, 0x0100, 0x82c20d12 );/* video timing - same as kungfum */
+	ROM_END(); }}; 
 	
 	
 	

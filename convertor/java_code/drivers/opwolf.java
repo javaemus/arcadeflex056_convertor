@@ -601,74 +601,74 @@ public class opwolf
 						DRIVERS
 	***************************************************************************/
 	
-	ROM_START( opwolf )
-		ROM_REGION( 0x40000, REGION_CPU1, 0 )     /* 256k for 68000 code */
-		ROM_LOAD16_BYTE( "opwlf.40",  0x00000, 0x10000, 0x3ffbfe3a )
-		ROM_LOAD16_BYTE( "opwlf.30",  0x00001, 0x10000, 0xfdabd8a5 )
-		ROM_LOAD16_BYTE( "opwlf.39",  0x20000, 0x10000, 0x216b4838 )
-		ROM_LOAD16_BYTE( "opwlf.29",  0x20001, 0x10000, 0xb71bc44c )
+	static RomLoadPtr rom_opwolf = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x40000, REGION_CPU1, 0 );    /* 256k for 68000 code */
+		ROM_LOAD16_BYTE( "opwlf.40",  0x00000, 0x10000, 0x3ffbfe3a );
+		ROM_LOAD16_BYTE( "opwlf.30",  0x00001, 0x10000, 0xfdabd8a5 );
+		ROM_LOAD16_BYTE( "opwlf.39",  0x20000, 0x10000, 0x216b4838 );
+		ROM_LOAD16_BYTE( "opwlf.29",  0x20001, 0x10000, 0xb71bc44c );
 	
-		ROM_REGION( 0x20000, REGION_CPU2, 0 )      /* sound cpu */
-		ROM_LOAD( "opwlf_s.10",  0x00000, 0x04000, 0x45c7ace3 )
-		ROM_CONTINUE(            0x10000, 0x0c000 ) /* banked stuff */
+		ROM_REGION( 0x20000, REGION_CPU2, 0 );     /* sound cpu */
+		ROM_LOAD( "opwlf_s.10",  0x00000, 0x04000, 0x45c7ace3 );
+		ROM_CONTINUE(            0x10000, 0x0c000 );/* banked stuff */
 	
-		ROM_REGION( 0x10000, REGION_CPU3, 0 )      /* fake Z80 from the bootleg */
-		ROM_LOAD( "opwlfb.09",   0x00000, 0x08000, 0xab27a3dd )
+		ROM_REGION( 0x10000, REGION_CPU3, 0 );     /* fake Z80 from the bootleg */
+		ROM_LOAD( "opwlfb.09",   0x00000, 0x08000, 0xab27a3dd );
 	
-		ROM_REGION( 0x80000, REGION_GFX1, ROMREGION_DISPOSE )
-		ROM_LOAD( "opwlf.13",  0x00000, 0x80000, 0xf6acdab1 )	/* SCR tiles (8 x 8) */
+		ROM_REGION( 0x80000, REGION_GFX1, ROMREGION_DISPOSE );
+		ROM_LOAD( "opwlf.13",  0x00000, 0x80000, 0xf6acdab1 );/* SCR tiles (8 x 8) */
 	
-		ROM_REGION( 0x80000, REGION_GFX2, ROMREGION_DISPOSE )
-		ROM_LOAD( "opwlf.72",  0x00000, 0x80000, 0x89f889e5 )	/* Sprites (16 x 16) */
+		ROM_REGION( 0x80000, REGION_GFX2, ROMREGION_DISPOSE );
+		ROM_LOAD( "opwlf.72",  0x00000, 0x80000, 0x89f889e5 );/* Sprites (16 x 16) */
 	
-		ROM_REGION( 0x80000, REGION_SOUND1, 0 )	/* ADPCM samples */
-		ROM_LOAD( "opwlf_s.21",   0x00000, 0x80000, 0xf3e19c64 )
-	ROM_END
+		ROM_REGION( 0x80000, REGION_SOUND1, 0 );/* ADPCM samples */
+		ROM_LOAD( "opwlf_s.21",   0x00000, 0x80000, 0xf3e19c64 );
+	ROM_END(); }}; 
 	
-	ROM_START( opwolfb )
-		ROM_REGION( 0x40000, REGION_CPU1, 0 )     /* 256k for 68000 code */
-		ROM_LOAD16_BYTE( "opwlfb.12",  0x00000, 0x10000, 0xd87e4405 )
-		ROM_LOAD16_BYTE( "opwlfb.10",  0x00001, 0x10000, 0x9ab6f75c )
-		ROM_LOAD16_BYTE( "opwlfb.13",  0x20000, 0x10000, 0x61230c6e )
-		ROM_LOAD16_BYTE( "opwlfb.11",  0x20001, 0x10000, 0x342e318d )
+	static RomLoadPtr rom_opwolfb = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x40000, REGION_CPU1, 0 );    /* 256k for 68000 code */
+		ROM_LOAD16_BYTE( "opwlfb.12",  0x00000, 0x10000, 0xd87e4405 );
+		ROM_LOAD16_BYTE( "opwlfb.10",  0x00001, 0x10000, 0x9ab6f75c );
+		ROM_LOAD16_BYTE( "opwlfb.13",  0x20000, 0x10000, 0x61230c6e );
+		ROM_LOAD16_BYTE( "opwlfb.11",  0x20001, 0x10000, 0x342e318d );
 	
-		ROM_REGION( 0x20000, REGION_CPU2, 0 )      /* sound cpu */
-		ROM_LOAD( "opwlfb.30",  0x00000, 0x04000, 0x0669b94c )
-		ROM_CONTINUE(           0x10000, 0x04000 ) /* banked stuff */
+		ROM_REGION( 0x20000, REGION_CPU2, 0 );     /* sound cpu */
+		ROM_LOAD( "opwlfb.30",  0x00000, 0x04000, 0x0669b94c );
+		ROM_CONTINUE(           0x10000, 0x04000 );/* banked stuff */
 	
-		ROM_REGION( 0x10000, REGION_CPU3, 0 )      /* c-chip substitute Z80 */
-		ROM_LOAD( "opwlfb.09",   0x00000, 0x08000, 0xab27a3dd )
+		ROM_REGION( 0x10000, REGION_CPU3, 0 );     /* c-chip substitute Z80 */
+		ROM_LOAD( "opwlfb.09",   0x00000, 0x08000, 0xab27a3dd );
 	
-		ROM_REGION( 0x80000, REGION_GFX1, ROMREGION_DISPOSE )
-		ROM_LOAD16_BYTE( "opwlfb.08",   0x00000, 0x10000, 0x134d294e )	/* SCR tiles (8 x 8) */
-		ROM_LOAD16_BYTE( "opwlfb.06",   0x20000, 0x10000, 0x317d0e66 )
-		ROM_LOAD16_BYTE( "opwlfb.07",   0x40000, 0x10000, 0xe1c4095e )
-		ROM_LOAD16_BYTE( "opwlfb.05",   0x60000, 0x10000, 0xfd9e72c8 )
-		ROM_LOAD16_BYTE( "opwlfb.04",   0x00001, 0x10000, 0xde0ca98d )
-		ROM_LOAD16_BYTE( "opwlfb.02",   0x20001, 0x10000, 0x6231fdd0 )
-		ROM_LOAD16_BYTE( "opwlfb.03",   0x40001, 0x10000, 0xccf8ba80 )
-		ROM_LOAD16_BYTE( "opwlfb.01",   0x60001, 0x10000, 0x0a65f256 )
+		ROM_REGION( 0x80000, REGION_GFX1, ROMREGION_DISPOSE );
+		ROM_LOAD16_BYTE( "opwlfb.08",   0x00000, 0x10000, 0x134d294e );/* SCR tiles (8 x 8) */
+		ROM_LOAD16_BYTE( "opwlfb.06",   0x20000, 0x10000, 0x317d0e66 );
+		ROM_LOAD16_BYTE( "opwlfb.07",   0x40000, 0x10000, 0xe1c4095e );
+		ROM_LOAD16_BYTE( "opwlfb.05",   0x60000, 0x10000, 0xfd9e72c8 );
+		ROM_LOAD16_BYTE( "opwlfb.04",   0x00001, 0x10000, 0xde0ca98d );
+		ROM_LOAD16_BYTE( "opwlfb.02",   0x20001, 0x10000, 0x6231fdd0 );
+		ROM_LOAD16_BYTE( "opwlfb.03",   0x40001, 0x10000, 0xccf8ba80 );
+		ROM_LOAD16_BYTE( "opwlfb.01",   0x60001, 0x10000, 0x0a65f256 );
 	
-		ROM_REGION( 0x80000, REGION_GFX2, ROMREGION_DISPOSE )
-		ROM_LOAD16_BYTE( "opwlfb.14",   0x00000, 0x10000, 0x663786eb )	/* Sprites (16 x 16) */
-		ROM_LOAD16_BYTE( "opwlfb.15",   0x20000, 0x10000, 0x315b8aa9 )
-		ROM_LOAD16_BYTE( "opwlfb.16",   0x40000, 0x10000, 0xe01099e3 )
-		ROM_LOAD16_BYTE( "opwlfb.17",   0x60000, 0x10000, 0x56fbe61d )
-		ROM_LOAD16_BYTE( "opwlfb.18",   0x00001, 0x10000, 0xde9ab08e )
-		ROM_LOAD16_BYTE( "opwlfb.19",   0x20001, 0x10000, 0x645cf85e )
-		ROM_LOAD16_BYTE( "opwlfb.20",   0x40001, 0x10000, 0xd80b9cc6 )
-		ROM_LOAD16_BYTE( "opwlfb.21",   0x60001, 0x10000, 0x97d25157 )
+		ROM_REGION( 0x80000, REGION_GFX2, ROMREGION_DISPOSE );
+		ROM_LOAD16_BYTE( "opwlfb.14",   0x00000, 0x10000, 0x663786eb );/* Sprites (16 x 16) */
+		ROM_LOAD16_BYTE( "opwlfb.15",   0x20000, 0x10000, 0x315b8aa9 );
+		ROM_LOAD16_BYTE( "opwlfb.16",   0x40000, 0x10000, 0xe01099e3 );
+		ROM_LOAD16_BYTE( "opwlfb.17",   0x60000, 0x10000, 0x56fbe61d );
+		ROM_LOAD16_BYTE( "opwlfb.18",   0x00001, 0x10000, 0xde9ab08e );
+		ROM_LOAD16_BYTE( "opwlfb.19",   0x20001, 0x10000, 0x645cf85e );
+		ROM_LOAD16_BYTE( "opwlfb.20",   0x40001, 0x10000, 0xd80b9cc6 );
+		ROM_LOAD16_BYTE( "opwlfb.21",   0x60001, 0x10000, 0x97d25157 );
 	
-		ROM_REGION( 0x80000, REGION_SOUND1, 0 )	/* ADPCM samples (interleaved) */
-		ROM_LOAD16_BYTE( "opwlfb.29",   0x00000, 0x10000, 0x05a9eac0 )
-		ROM_LOAD16_BYTE( "opwlfb.28",   0x20000, 0x10000, 0x281b2175 )
-		ROM_LOAD16_BYTE( "opwlfb.27",   0x40000, 0x10000, 0x441211a6 )
-		ROM_LOAD16_BYTE( "opwlfb.26",   0x60000, 0x10000, 0x86d1d42d )
-		ROM_LOAD16_BYTE( "opwlfb.25",   0x00001, 0x10000, 0x85b87f58 )
-		ROM_LOAD16_BYTE( "opwlfb.24",   0x20001, 0x10000, 0x8efc5d4d )
-		ROM_LOAD16_BYTE( "opwlfb.23",   0x40001, 0x10000, 0xa874c703 )
-		ROM_LOAD16_BYTE( "opwlfb.22",   0x60001, 0x10000, 0x9228481f )
-	ROM_END
+		ROM_REGION( 0x80000, REGION_SOUND1, 0 );/* ADPCM samples (interleaved) */
+		ROM_LOAD16_BYTE( "opwlfb.29",   0x00000, 0x10000, 0x05a9eac0 );
+		ROM_LOAD16_BYTE( "opwlfb.28",   0x20000, 0x10000, 0x281b2175 );
+		ROM_LOAD16_BYTE( "opwlfb.27",   0x40000, 0x10000, 0x441211a6 );
+		ROM_LOAD16_BYTE( "opwlfb.26",   0x60000, 0x10000, 0x86d1d42d );
+		ROM_LOAD16_BYTE( "opwlfb.25",   0x00001, 0x10000, 0x85b87f58 );
+		ROM_LOAD16_BYTE( "opwlfb.24",   0x20001, 0x10000, 0x8efc5d4d );
+		ROM_LOAD16_BYTE( "opwlfb.23",   0x40001, 0x10000, 0xa874c703 );
+		ROM_LOAD16_BYTE( "opwlfb.22",   0x60001, 0x10000, 0x9228481f );
+	ROM_END(); }}; 
 	
 	
 	static void init_opwolf(void)

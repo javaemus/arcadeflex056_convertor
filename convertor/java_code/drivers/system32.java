@@ -153,41 +153,41 @@ public class system32
 		PORT_BIT( 0x80, IP_ACTIVE_HIGH, IPT_SPECIAL )	/* EEPROM data */
 	INPUT_PORTS_END
 	
-	ROM_START( ga2 )
-		ROM_REGION( 0x180000, REGION_CPU1, 0 ) /* 68000 code */
-		ROM_LOAD16_WORD( "epr14961.b", 0x000000, 0x20000, 0xd9cd8885 )
-		ROM_RELOAD     (               0x020000, 0x20000 )
-		ROM_RELOAD     (               0x040000, 0x20000 )
-		ROM_RELOAD     (               0x060000, 0x20000 )
-		ROM_LOAD16_WORD( "epr14958.b", 0x080000, 0x20000, 0x0be324a3 )
-		ROM_RELOAD     (               0x0a0000, 0x20000 )
-		ROM_RELOAD     (               0x0c0000, 0x20000 )
-		ROM_RELOAD     (               0x0e0000, 0x20000 )
-		ROM_LOAD16_BYTE( "epr15148.b", 0x100000, 0x40000, 0xc477a9fd )
-		ROM_LOAD16_BYTE( "epr15147.b", 0x100001, 0x40000, 0x1bb676ea )
+	static RomLoadPtr rom_ga2 = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x180000, REGION_CPU1, 0 );/* 68000 code */
+		ROM_LOAD16_WORD( "epr14961.b", 0x000000, 0x20000, 0xd9cd8885 );
+		ROM_RELOAD     (               0x020000, 0x20000 );
+		ROM_RELOAD     (               0x040000, 0x20000 );
+		ROM_RELOAD     (               0x060000, 0x20000 );
+		ROM_LOAD16_WORD( "epr14958.b", 0x080000, 0x20000, 0x0be324a3 );
+		ROM_RELOAD     (               0x0a0000, 0x20000 );
+		ROM_RELOAD     (               0x0c0000, 0x20000 );
+		ROM_RELOAD     (               0x0e0000, 0x20000 );
+		ROM_LOAD16_BYTE( "epr15148.b", 0x100000, 0x40000, 0xc477a9fd );
+		ROM_LOAD16_BYTE( "epr15147.b", 0x100001, 0x40000, 0x1bb676ea );
 	
-		ROM_REGION( 0x10000, REGION_CPU2, 0 ) /* sound CPU */
-		ROM_LOAD( "epr14945", 0x00000,  0x10000,  0x4781d4cb )
+		ROM_REGION( 0x10000, REGION_CPU2, 0 );/* sound CPU */
+		ROM_LOAD( "epr14945", 0x00000,  0x10000,  0x4781d4cb );
 	
-		ROM_REGION( 0x400000, REGION_GFX1, ROMREGION_DISPOSE ) /* tiles */
-		ROM_LOAD( "mpr14948", 0x000000, 0x200000, 0x75050d4a )
-		ROM_LOAD( "mpr14947", 0x200000, 0x200000, 0xb53e62f4 )
+		ROM_REGION( 0x400000, REGION_GFX1, ROMREGION_DISPOSE );/* tiles */
+		ROM_LOAD( "mpr14948", 0x000000, 0x200000, 0x75050d4a );
+		ROM_LOAD( "mpr14947", 0x200000, 0x200000, 0xb53e62f4 );
 	
-		ROM_REGION( 0x1000000, REGION_GFX2, 0 ) /* sprites */
-		ROM_LOAD( "mpr14949", 0x000000, 0x200000, 0x152c716c )
-		ROM_LOAD( "mpr14951", 0x200000, 0x200000, 0xfdb1a534 )
-		ROM_LOAD( "mpr14953", 0x400000, 0x200000, 0x33bd1c15 )
-		ROM_LOAD( "mpr14955", 0x600000, 0x200000, 0xe42684aa )
-		ROM_LOAD( "mpr14950", 0x800000, 0x200000, 0x15fd0026 )
-		ROM_LOAD( "mpr14952", 0xa00000, 0x200000, 0x96f96613 )
-		ROM_LOAD( "mpr14954", 0xc00000, 0x200000, 0x39b2ac9e )
-		ROM_LOAD( "mpr14956", 0xe00000, 0x200000, 0x298fca50 )
+		ROM_REGION( 0x1000000, REGION_GFX2, 0 );/* sprites */
+		ROM_LOAD( "mpr14949", 0x000000, 0x200000, 0x152c716c );
+		ROM_LOAD( "mpr14951", 0x200000, 0x200000, 0xfdb1a534 );
+		ROM_LOAD( "mpr14953", 0x400000, 0x200000, 0x33bd1c15 );
+		ROM_LOAD( "mpr14955", 0x600000, 0x200000, 0xe42684aa );
+		ROM_LOAD( "mpr14950", 0x800000, 0x200000, 0x15fd0026 );
+		ROM_LOAD( "mpr14952", 0xa00000, 0x200000, 0x96f96613 );
+		ROM_LOAD( "mpr14954", 0xc00000, 0x200000, 0x39b2ac9e );
+		ROM_LOAD( "mpr14956", 0xe00000, 0x200000, 0x298fca50 );
 	
-		ROM_REGION( 0x300000, REGION_SOUND1, 0 ) /* Sega PCM sound data */
-		ROM_LOAD( "mpr14944", 0x000000, 0x100000, 0xfd4d4b86 )
-		ROM_LOAD( "mpr14942", 0x100000, 0x100000, 0xa89b0e90 )
-		ROM_LOAD( "mpr14943", 0x200000, 0x100000, 0x24d40333 )
-	ROM_END
+		ROM_REGION( 0x300000, REGION_SOUND1, 0 );/* Sega PCM sound data */
+		ROM_LOAD( "mpr14944", 0x000000, 0x100000, 0xfd4d4b86 );
+		ROM_LOAD( "mpr14942", 0x100000, 0x100000, 0xa89b0e90 );
+		ROM_LOAD( "mpr14943", 0x200000, 0x100000, 0x24d40333 );
+	ROM_END(); }}; 
 	
 	int system32_vh_start(void)
 	{

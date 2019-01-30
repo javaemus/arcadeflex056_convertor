@@ -234,33 +234,33 @@ public class videopin
 	
 	***************************************************************************/
 	
-	ROM_START( videopin )
-		ROM_REGION( 0x10000, REGION_CPU1, 0 ) /* 64Kb code roms, the ROMs are nibble-wide */
-	    ROM_LOAD_NIB_LOW ( "34242-01.e0", 0x2000, 0x0400, 0xc6a83795 ) /*ROM0 */
-		ROM_LOAD_NIB_HIGH( "34237-01.k0", 0x2000, 0x0400, 0x9b5ef087 ) /*ROM0 */
-		ROM_LOAD_NIB_LOW ( "34243-01.d0", 0x2400, 0x0400, 0xdc87d023 ) /*ROM4 */
-		ROM_LOAD_NIB_HIGH( "34238-01.j0", 0x2400, 0x0400, 0x280d9e67 ) /*ROM4 */
-		ROM_LOAD_NIB_LOW ( "34250-01.h1", 0x2800, 0x0400, 0x26fdd5a3 ) /*ROM1 */
-		ROM_LOAD_NIB_HIGH( "34249-01.h1", 0x2800, 0x0400, 0x923b3609 ) /*ROM1 */
-		ROM_LOAD_NIB_LOW ( "34244-01.c0", 0x2c00, 0x0400, 0x4c12a4b1 ) /*ROM5 */
-		ROM_LOAD_NIB_HIGH( "34240-01.h0", 0x2c00, 0x0400, 0xd487eff5 ) /*ROM5 */
-		ROM_LOAD_NIB_LOW ( "34252-01.e1", 0x3000, 0x0400, 0x4858d87a ) /*ROM2 */
-		ROM_LOAD_NIB_HIGH( "34247-01.k1", 0x3000, 0x0400, 0xd3083368 ) /*ROM2 */
-		ROM_LOAD_NIB_LOW ( "34246-01.a0", 0x3400, 0x0400, 0x39ff2d49 ) /*ROM6 */
-		ROM_LOAD_NIB_HIGH( "34239-01.h0", 0x3400, 0x0400, 0x692de455 ) /*ROM6 */
-		ROM_LOAD_NIB_LOW ( "34251-01.f1", 0x3800, 0x0400, 0x5d416efc ) /*ROM3 */
-		ROM_LOAD_NIB_HIGH( "34248-01.j1", 0x3800, 0x0400, 0x9f120e95 ) /*ROM3 */
-		ROM_LOAD_NIB_LOW ( "34245-01.b0", 0x3c00, 0x0400, 0xda02c194 ) /*ROM7 */
-		ROM_RELOAD(                       0xfc00, 0x0400 ) /* for 6502 vectors */
-		ROM_LOAD_NIB_HIGH( "34241-01.f0", 0x3c00, 0x0400, 0x5bfb83da ) /*ROM7 */
-		ROM_RELOAD(                       0xfc00, 0x0400 ) /* for 6502 vectors */
+	static RomLoadPtr rom_videopin = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x10000, REGION_CPU1, 0 );/* 64Kb code roms, the ROMs are nibble-wide */
+	    ROM_LOAD_NIB_LOW ( "34242-01.e0", 0x2000, 0x0400, 0xc6a83795 );/*ROM0 */
+		ROM_LOAD_NIB_HIGH( "34237-01.k0", 0x2000, 0x0400, 0x9b5ef087 );/*ROM0 */
+		ROM_LOAD_NIB_LOW ( "34243-01.d0", 0x2400, 0x0400, 0xdc87d023 );/*ROM4 */
+		ROM_LOAD_NIB_HIGH( "34238-01.j0", 0x2400, 0x0400, 0x280d9e67 );/*ROM4 */
+		ROM_LOAD_NIB_LOW ( "34250-01.h1", 0x2800, 0x0400, 0x26fdd5a3 );/*ROM1 */
+		ROM_LOAD_NIB_HIGH( "34249-01.h1", 0x2800, 0x0400, 0x923b3609 );/*ROM1 */
+		ROM_LOAD_NIB_LOW ( "34244-01.c0", 0x2c00, 0x0400, 0x4c12a4b1 );/*ROM5 */
+		ROM_LOAD_NIB_HIGH( "34240-01.h0", 0x2c00, 0x0400, 0xd487eff5 );/*ROM5 */
+		ROM_LOAD_NIB_LOW ( "34252-01.e1", 0x3000, 0x0400, 0x4858d87a );/*ROM2 */
+		ROM_LOAD_NIB_HIGH( "34247-01.k1", 0x3000, 0x0400, 0xd3083368 );/*ROM2 */
+		ROM_LOAD_NIB_LOW ( "34246-01.a0", 0x3400, 0x0400, 0x39ff2d49 );/*ROM6 */
+		ROM_LOAD_NIB_HIGH( "34239-01.h0", 0x3400, 0x0400, 0x692de455 );/*ROM6 */
+		ROM_LOAD_NIB_LOW ( "34251-01.f1", 0x3800, 0x0400, 0x5d416efc );/*ROM3 */
+		ROM_LOAD_NIB_HIGH( "34248-01.j1", 0x3800, 0x0400, 0x9f120e95 );/*ROM3 */
+		ROM_LOAD_NIB_LOW ( "34245-01.b0", 0x3c00, 0x0400, 0xda02c194 );/*ROM7 */
+		ROM_RELOAD(                       0xfc00, 0x0400 );/* for 6502 vectors */
+		ROM_LOAD_NIB_HIGH( "34241-01.f0", 0x3c00, 0x0400, 0x5bfb83da );/*ROM7 */
+		ROM_RELOAD(                       0xfc00, 0x0400 );/* for 6502 vectors */
 	
-		ROM_REGION(0x520, REGION_GFX1, ROMREGION_DISPOSE )	  /* 1k for graphics: temporary space for graphics (disposed after conversion) */
-		ROM_LOAD( "34258-01.c5", 0x0000, 0x0200, 0x91a5f117 )
-		ROM_LOAD( "34259-01.d5", 0x0200, 0x0200, 0x6cd98c06 )
-		ROM_LOAD( "34257-01.m1", 0x0400, 0x0020, 0x50245866 ) /* 32bytes 16x16 space for 8x8 ball pix */
-		ROM_LOAD( "9402-01.h4",  0x0420, 0x0100, 0xb8094b4c ) /* sync (not used) */
-	ROM_END
+		ROM_REGION(0x520, REGION_GFX1, ROMREGION_DISPOSE );  /* 1k for graphics: temporary space for graphics (disposed after conversion) */
+		ROM_LOAD( "34258-01.c5", 0x0000, 0x0200, 0x91a5f117 );
+		ROM_LOAD( "34259-01.d5", 0x0200, 0x0200, 0x6cd98c06 );
+		ROM_LOAD( "34257-01.m1", 0x0400, 0x0020, 0x50245866 );/* 32bytes 16x16 space for 8x8 ball pix */
+		ROM_LOAD( "9402-01.h4",  0x0420, 0x0100, 0xb8094b4c );/* sync (not used) */
+	ROM_END(); }}; 
 	
 	
 	GAMEX( 1979, videopin, 0, videopin, videopin, 0, ROT270, "Atari", "Video Pinball", GAME_NOT_WORKING | GAME_NO_SOUND )

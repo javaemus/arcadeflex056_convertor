@@ -311,36 +311,36 @@ public class sgladiat
 		}
 	};
 	
-	ROM_START( sgladiat )
-		ROM_REGION( 0x10000, REGION_CPU1, 0 )	/* 64k for cpuA code */
-		ROM_LOAD( "glad.005",	0x0000, 0x4000, 0x4bc60f0b )
-		ROM_LOAD( "glad.004",	0x4000, 0x4000, 0xdb557f46 )
-		ROM_LOAD( "glad.003",	0x8000, 0x2000, 0x55ce82b4 )
+	static RomLoadPtr rom_sgladiat = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x10000, REGION_CPU1, 0 );/* 64k for cpuA code */
+		ROM_LOAD( "glad.005",	0x0000, 0x4000, 0x4bc60f0b );
+		ROM_LOAD( "glad.004",	0x4000, 0x4000, 0xdb557f46 );
+		ROM_LOAD( "glad.003",	0x8000, 0x2000, 0x55ce82b4 );
 	
-		ROM_REGION( 0x10000, REGION_CPU2, 0 )	/* 64k for cpuB code */
-		ROM_LOAD( "glad.002",	0x0000, 0x4000, 0x8350261c )
-		ROM_LOAD( "glad.001",	0x4000, 0x4000, 0x5ee9d3fb )
+		ROM_REGION( 0x10000, REGION_CPU2, 0 );/* 64k for cpuB code */
+		ROM_LOAD( "glad.002",	0x0000, 0x4000, 0x8350261c );
+		ROM_LOAD( "glad.001",	0x4000, 0x4000, 0x5ee9d3fb );
 	
-		ROM_REGION( 0x10000, REGION_CPU3, 0 )	/* 64k for sound code */
-		ROM_LOAD( "glad.007",  0x0000, 0x2000, 0xc25b6731 )
-		ROM_LOAD( "glad.006",  0x2000, 0x2000, 0x2024d716 )
+		ROM_REGION( 0x10000, REGION_CPU3, 0 );/* 64k for sound code */
+		ROM_LOAD( "glad.007",  0x0000, 0x2000, 0xc25b6731 );
+		ROM_LOAD( "glad.006",  0x2000, 0x2000, 0x2024d716 );
 	
-		ROM_REGION( 0x2000, REGION_GFX1, ROMREGION_DISPOSE )
-		ROM_LOAD( "glad.011",	0x0000, 0x2000, 0x305bb294 ) /* foreground tiles */
+		ROM_REGION( 0x2000, REGION_GFX1, ROMREGION_DISPOSE );
+		ROM_LOAD( "glad.011",	0x0000, 0x2000, 0x305bb294 );/* foreground tiles */
 	
-		ROM_REGION( 0x2000, REGION_GFX2, ROMREGION_DISPOSE ) /* background tiles */
-		ROM_LOAD( "glad.012",	0x0000, 0x2000, 0xb7dd519f )
+		ROM_REGION( 0x2000, REGION_GFX2, ROMREGION_DISPOSE );/* background tiles */
+		ROM_LOAD( "glad.012",	0x0000, 0x2000, 0xb7dd519f );
 	
-		ROM_REGION( 0x6000, REGION_GFX3, ROMREGION_DISPOSE ) /* 16x16 sprites */
-		ROM_LOAD( "glad.008", 0x0000, 0x2000, 0xbcf42587 )
-		ROM_LOAD( "glad.009", 0x2000, 0x2000, 0x912a20e0 )
-		ROM_LOAD( "glad.010", 0x4000, 0x2000, 0x8b1db3a5 )
+		ROM_REGION( 0x6000, REGION_GFX3, ROMREGION_DISPOSE );/* 16x16 sprites */
+		ROM_LOAD( "glad.008", 0x0000, 0x2000, 0xbcf42587 );
+		ROM_LOAD( "glad.009", 0x2000, 0x2000, 0x912a20e0 );
+		ROM_LOAD( "glad.010", 0x4000, 0x2000, 0x8b1db3a5 );
 	
-		ROM_REGION( 0xc00, REGION_PROMS, 0 )
-		ROM_LOAD( "82s137.001",  0x000, 0x400, 0xd9184823 )
-		ROM_LOAD( "82s137.002",  0x400, 0x400, 0x1a6b0953 )
-		ROM_LOAD( "82s137.003",  0x800, 0x400, 0xc0e70308 )
-	ROM_END
+		ROM_REGION( 0xc00, REGION_PROMS, 0 );
+		ROM_LOAD( "82s137.001",  0x000, 0x400, 0xd9184823 );
+		ROM_LOAD( "82s137.002",  0x400, 0x400, 0x1a6b0953 );
+		ROM_LOAD( "82s137.003",  0x800, 0x400, 0xc0e70308 );
+	ROM_END(); }}; 
 	
 	INPUT_PORTS_START( sgladiat )
 		PORT_START

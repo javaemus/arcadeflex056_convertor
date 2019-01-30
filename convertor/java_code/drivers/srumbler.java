@@ -335,143 +335,143 @@ public class srumbler
 	
 	***************************************************************************/
 	
-	ROM_START( srumbler )
-		ROM_REGION( 0x10000, REGION_CPU1, 0 )  /* 64k for code */
+	static RomLoadPtr rom_srumbler = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x10000, REGION_CPU1, 0 ); /* 64k for code */
 		/* empty, will be filled later */
 	
-		ROM_REGION( 0x40000, REGION_USER1, 0 ) /* Paged ROMs */
-		ROM_LOAD( "14e_sr04.bin", 0x00000, 0x08000, 0xa68ce89c )  /* RC4 */
-		ROM_LOAD( "13e_sr03.bin", 0x08000, 0x08000, 0x87bda812 )  /* RC3 */
-		ROM_LOAD( "12e_sr02.bin", 0x10000, 0x08000, 0xd8609cca )  /* RC2 */
-		ROM_LOAD( "11e_sr01.bin", 0x18000, 0x08000, 0x27ec4776 )  /* RC1 */
-		ROM_LOAD( "14f_sr09.bin", 0x20000, 0x08000, 0x2146101d )  /* RC9 */
-		ROM_LOAD( "13f_sr08.bin", 0x28000, 0x08000, 0x838369a6 )  /* RC8 */
-		ROM_LOAD( "12f_sr07.bin", 0x30000, 0x08000, 0xde785076 )  /* RC7 */
-		ROM_LOAD( "11f_sr06.bin", 0x38000, 0x08000, 0xa70f4fd4 )  /* RC6 */
+		ROM_REGION( 0x40000, REGION_USER1, 0 );/* Paged ROMs */
+		ROM_LOAD( "14e_sr04.bin", 0x00000, 0x08000, 0xa68ce89c ); /* RC4 */
+		ROM_LOAD( "13e_sr03.bin", 0x08000, 0x08000, 0x87bda812 ); /* RC3 */
+		ROM_LOAD( "12e_sr02.bin", 0x10000, 0x08000, 0xd8609cca ); /* RC2 */
+		ROM_LOAD( "11e_sr01.bin", 0x18000, 0x08000, 0x27ec4776 ); /* RC1 */
+		ROM_LOAD( "14f_sr09.bin", 0x20000, 0x08000, 0x2146101d ); /* RC9 */
+		ROM_LOAD( "13f_sr08.bin", 0x28000, 0x08000, 0x838369a6 ); /* RC8 */
+		ROM_LOAD( "12f_sr07.bin", 0x30000, 0x08000, 0xde785076 ); /* RC7 */
+		ROM_LOAD( "11f_sr06.bin", 0x38000, 0x08000, 0xa70f4fd4 ); /* RC6 */
 	
-		ROM_REGION( 0x10000, REGION_CPU2, 0 ) /* 64k for the audio CPU */
-		ROM_LOAD( "2f_sr05.bin",  0x0000, 0x8000, 0x0177cebe )
+		ROM_REGION( 0x10000, REGION_CPU2, 0 );/* 64k for the audio CPU */
+		ROM_LOAD( "2f_sr05.bin",  0x0000, 0x8000, 0x0177cebe );
 	
-		ROM_REGION( 0x04000, REGION_GFX1, ROMREGION_DISPOSE )
-		ROM_LOAD( "6g_sr10.bin",  0x00000, 0x4000, 0xadabe271 ) /* characters */
+		ROM_REGION( 0x04000, REGION_GFX1, ROMREGION_DISPOSE );
+		ROM_LOAD( "6g_sr10.bin",  0x00000, 0x4000, 0xadabe271 );/* characters */
 	
-		ROM_REGION( 0x40000, REGION_GFX2, ROMREGION_DISPOSE )
-		ROM_LOAD( "11a_sr11.bin", 0x00000, 0x8000, 0x5fa042ba ) /* tiles */
-		ROM_LOAD( "13a_sr12.bin", 0x08000, 0x8000, 0xa2db64af )
-		ROM_LOAD( "14a_sr13.bin", 0x10000, 0x8000, 0xf1df5499 )
-		ROM_LOAD( "15a_sr14.bin", 0x18000, 0x8000, 0xb22b31b3 )
-		ROM_LOAD( "11c_sr15.bin", 0x20000, 0x8000, 0xca3a3af3 )
-		ROM_LOAD( "13c_sr16.bin", 0x28000, 0x8000, 0xc49a4a11 )
-		ROM_LOAD( "14c_sr17.bin", 0x30000, 0x8000, 0xaa80aaab )
-		ROM_LOAD( "15c_sr18.bin", 0x38000, 0x8000, 0xce67868e )
+		ROM_REGION( 0x40000, REGION_GFX2, ROMREGION_DISPOSE );
+		ROM_LOAD( "11a_sr11.bin", 0x00000, 0x8000, 0x5fa042ba );/* tiles */
+		ROM_LOAD( "13a_sr12.bin", 0x08000, 0x8000, 0xa2db64af );
+		ROM_LOAD( "14a_sr13.bin", 0x10000, 0x8000, 0xf1df5499 );
+		ROM_LOAD( "15a_sr14.bin", 0x18000, 0x8000, 0xb22b31b3 );
+		ROM_LOAD( "11c_sr15.bin", 0x20000, 0x8000, 0xca3a3af3 );
+		ROM_LOAD( "13c_sr16.bin", 0x28000, 0x8000, 0xc49a4a11 );
+		ROM_LOAD( "14c_sr17.bin", 0x30000, 0x8000, 0xaa80aaab );
+		ROM_LOAD( "15c_sr18.bin", 0x38000, 0x8000, 0xce67868e );
 	
-		ROM_REGION( 0x40000, REGION_GFX3, ROMREGION_DISPOSE )
-		ROM_LOAD( "15e_sr20.bin", 0x00000, 0x8000, 0x3924c861 ) /* sprites */
-		ROM_LOAD( "14e_sr19.bin", 0x08000, 0x8000, 0xff8f9129 )
-		ROM_LOAD( "15f_sr22.bin", 0x10000, 0x8000, 0xab64161c )
-		ROM_LOAD( "14f_sr21.bin", 0x18000, 0x8000, 0xfd64bcd1 )
-		ROM_LOAD( "15h_sr24.bin", 0x20000, 0x8000, 0xc972af3e )
-		ROM_LOAD( "14h_sr23.bin", 0x28000, 0x8000, 0x8c9abf57 )
-		ROM_LOAD( "15j_sr26.bin", 0x30000, 0x8000, 0xd4f1732f )
-		ROM_LOAD( "14j_sr25.bin", 0x38000, 0x8000, 0xd2a4ea4f )
+		ROM_REGION( 0x40000, REGION_GFX3, ROMREGION_DISPOSE );
+		ROM_LOAD( "15e_sr20.bin", 0x00000, 0x8000, 0x3924c861 );/* sprites */
+		ROM_LOAD( "14e_sr19.bin", 0x08000, 0x8000, 0xff8f9129 );
+		ROM_LOAD( "15f_sr22.bin", 0x10000, 0x8000, 0xab64161c );
+		ROM_LOAD( "14f_sr21.bin", 0x18000, 0x8000, 0xfd64bcd1 );
+		ROM_LOAD( "15h_sr24.bin", 0x20000, 0x8000, 0xc972af3e );
+		ROM_LOAD( "14h_sr23.bin", 0x28000, 0x8000, 0x8c9abf57 );
+		ROM_LOAD( "15j_sr26.bin", 0x30000, 0x8000, 0xd4f1732f );
+		ROM_LOAD( "14j_sr25.bin", 0x38000, 0x8000, 0xd2a4ea4f );
 	
-		ROM_REGION( 0x0300, REGION_PROMS, 0 )
-		ROM_LOAD( "63s141.12a",   0x0000, 0x0100, 0x8421786f )	/* ROM banking */
-		ROM_LOAD( "63s141.13a",   0x0100, 0x0100, 0x6048583f )	/* ROM banking */
-		ROM_LOAD( "63s141.8j",    0x0200, 0x0100, 0x1a89a7ff )	/* priority (not used) */
-	ROM_END
+		ROM_REGION( 0x0300, REGION_PROMS, 0 );
+		ROM_LOAD( "63s141.12a",   0x0000, 0x0100, 0x8421786f );/* ROM banking */
+		ROM_LOAD( "63s141.13a",   0x0100, 0x0100, 0x6048583f );/* ROM banking */
+		ROM_LOAD( "63s141.8j",    0x0200, 0x0100, 0x1a89a7ff );/* priority (not used) */
+	ROM_END(); }}; 
 	
-	ROM_START( srumblr2 )
-		ROM_REGION( 0x10000, REGION_CPU1, 0 )  /* 64k for code */
+	static RomLoadPtr rom_srumblr2 = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x10000, REGION_CPU1, 0 ); /* 64k for code */
 		/* empty, will be filled later */
 	
-		ROM_REGION( 0x40000, REGION_USER1, 0 ) /* Paged ROMs */
-		ROM_LOAD( "14e_sr04.bin", 0x00000, 0x08000, 0xa68ce89c )  /* RC4 */
-		ROM_LOAD( "rc03.13e",     0x08000, 0x08000, 0xe82f78d4 )  /* RC3 (different) */
-		ROM_LOAD( "rc02.12e",     0x10000, 0x08000, 0x009a62d8 )  /* RC2 (different) */
-		ROM_LOAD( "rc01.11e",     0x18000, 0x08000, 0x2ac48d1d )  /* RC1 (different) */
-		ROM_LOAD( "rc09.14f",     0x20000, 0x08000, 0x64f23e72 )  /* RC9 (different) */
-		ROM_LOAD( "rc08.13f",     0x28000, 0x08000, 0x74c71007 )  /* RC8 (different) */
-		ROM_LOAD( "12f_sr07.bin", 0x30000, 0x08000, 0xde785076 )  /* RC7 */
-		ROM_LOAD( "11f_sr06.bin", 0x38000, 0x08000, 0xa70f4fd4 )  /* RC6 */
+		ROM_REGION( 0x40000, REGION_USER1, 0 );/* Paged ROMs */
+		ROM_LOAD( "14e_sr04.bin", 0x00000, 0x08000, 0xa68ce89c ); /* RC4 */
+		ROM_LOAD( "rc03.13e",     0x08000, 0x08000, 0xe82f78d4 ); /* RC3 (different) */
+		ROM_LOAD( "rc02.12e",     0x10000, 0x08000, 0x009a62d8 ); /* RC2 (different) */
+		ROM_LOAD( "rc01.11e",     0x18000, 0x08000, 0x2ac48d1d ); /* RC1 (different) */
+		ROM_LOAD( "rc09.14f",     0x20000, 0x08000, 0x64f23e72 ); /* RC9 (different) */
+		ROM_LOAD( "rc08.13f",     0x28000, 0x08000, 0x74c71007 ); /* RC8 (different) */
+		ROM_LOAD( "12f_sr07.bin", 0x30000, 0x08000, 0xde785076 ); /* RC7 */
+		ROM_LOAD( "11f_sr06.bin", 0x38000, 0x08000, 0xa70f4fd4 ); /* RC6 */
 	
-		ROM_REGION( 0x10000, REGION_CPU2, 0 ) /* 64k for the audio CPU */
-		ROM_LOAD( "rc05.2f",      0x0000, 0x8000, 0xea04fa07 )  /* AUDIO (different) */
+		ROM_REGION( 0x10000, REGION_CPU2, 0 );/* 64k for the audio CPU */
+		ROM_LOAD( "rc05.2f",      0x0000, 0x8000, 0xea04fa07 ); /* AUDIO (different) */
 	
-		ROM_REGION( 0x04000, REGION_GFX1, ROMREGION_DISPOSE )
-		ROM_LOAD( "6g_sr10.bin",  0x00000, 0x4000, 0xadabe271 ) /* characters */
+		ROM_REGION( 0x04000, REGION_GFX1, ROMREGION_DISPOSE );
+		ROM_LOAD( "6g_sr10.bin",  0x00000, 0x4000, 0xadabe271 );/* characters */
 	
-		ROM_REGION( 0x40000, REGION_GFX2, ROMREGION_DISPOSE )
-		ROM_LOAD( "11a_sr11.bin", 0x00000, 0x8000, 0x5fa042ba ) /* tiles */
-		ROM_LOAD( "13a_sr12.bin", 0x08000, 0x8000, 0xa2db64af )
-		ROM_LOAD( "14a_sr13.bin", 0x10000, 0x8000, 0xf1df5499 )
-		ROM_LOAD( "15a_sr14.bin", 0x18000, 0x8000, 0xb22b31b3 )
-		ROM_LOAD( "11c_sr15.bin", 0x20000, 0x8000, 0xca3a3af3 )
-		ROM_LOAD( "13c_sr16.bin", 0x28000, 0x8000, 0xc49a4a11 )
-		ROM_LOAD( "14c_sr17.bin", 0x30000, 0x8000, 0xaa80aaab )
-		ROM_LOAD( "15c_sr18.bin", 0x38000, 0x8000, 0xce67868e )
+		ROM_REGION( 0x40000, REGION_GFX2, ROMREGION_DISPOSE );
+		ROM_LOAD( "11a_sr11.bin", 0x00000, 0x8000, 0x5fa042ba );/* tiles */
+		ROM_LOAD( "13a_sr12.bin", 0x08000, 0x8000, 0xa2db64af );
+		ROM_LOAD( "14a_sr13.bin", 0x10000, 0x8000, 0xf1df5499 );
+		ROM_LOAD( "15a_sr14.bin", 0x18000, 0x8000, 0xb22b31b3 );
+		ROM_LOAD( "11c_sr15.bin", 0x20000, 0x8000, 0xca3a3af3 );
+		ROM_LOAD( "13c_sr16.bin", 0x28000, 0x8000, 0xc49a4a11 );
+		ROM_LOAD( "14c_sr17.bin", 0x30000, 0x8000, 0xaa80aaab );
+		ROM_LOAD( "15c_sr18.bin", 0x38000, 0x8000, 0xce67868e );
 	
-		ROM_REGION( 0x40000, REGION_GFX3, ROMREGION_DISPOSE )
-		ROM_LOAD( "15e_sr20.bin", 0x00000, 0x8000, 0x3924c861 ) /* sprites */
-		ROM_LOAD( "14e_sr19.bin", 0x08000, 0x8000, 0xff8f9129 )
-		ROM_LOAD( "15f_sr22.bin", 0x10000, 0x8000, 0xab64161c )
-		ROM_LOAD( "14f_sr21.bin", 0x18000, 0x8000, 0xfd64bcd1 )
-		ROM_LOAD( "15h_sr24.bin", 0x20000, 0x8000, 0xc972af3e )
-		ROM_LOAD( "14h_sr23.bin", 0x28000, 0x8000, 0x8c9abf57 )
-		ROM_LOAD( "15j_sr26.bin", 0x30000, 0x8000, 0xd4f1732f )
-		ROM_LOAD( "14j_sr25.bin", 0x38000, 0x8000, 0xd2a4ea4f )
+		ROM_REGION( 0x40000, REGION_GFX3, ROMREGION_DISPOSE );
+		ROM_LOAD( "15e_sr20.bin", 0x00000, 0x8000, 0x3924c861 );/* sprites */
+		ROM_LOAD( "14e_sr19.bin", 0x08000, 0x8000, 0xff8f9129 );
+		ROM_LOAD( "15f_sr22.bin", 0x10000, 0x8000, 0xab64161c );
+		ROM_LOAD( "14f_sr21.bin", 0x18000, 0x8000, 0xfd64bcd1 );
+		ROM_LOAD( "15h_sr24.bin", 0x20000, 0x8000, 0xc972af3e );
+		ROM_LOAD( "14h_sr23.bin", 0x28000, 0x8000, 0x8c9abf57 );
+		ROM_LOAD( "15j_sr26.bin", 0x30000, 0x8000, 0xd4f1732f );
+		ROM_LOAD( "14j_sr25.bin", 0x38000, 0x8000, 0xd2a4ea4f );
 	
-		ROM_REGION( 0x0300, REGION_PROMS, 0 )
-		ROM_LOAD( "63s141.12a",   0x0000, 0x0100, 0x8421786f )	/* ROM banking */
-		ROM_LOAD( "63s141.13a",   0x0100, 0x0100, 0x6048583f )	/* ROM banking */
-		ROM_LOAD( "63s141.8j",    0x0200, 0x0100, 0x1a89a7ff )	/* priority (not used) */
-	ROM_END
+		ROM_REGION( 0x0300, REGION_PROMS, 0 );
+		ROM_LOAD( "63s141.12a",   0x0000, 0x0100, 0x8421786f );/* ROM banking */
+		ROM_LOAD( "63s141.13a",   0x0100, 0x0100, 0x6048583f );/* ROM banking */
+		ROM_LOAD( "63s141.8j",    0x0200, 0x0100, 0x1a89a7ff );/* priority (not used) */
+	ROM_END(); }}; 
 	
-	ROM_START( rushcrsh )
-		ROM_REGION( 0x10000, REGION_CPU1, 0 )  /* 64k for code */
+	static RomLoadPtr rom_rushcrsh = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x10000, REGION_CPU1, 0 ); /* 64k for code */
 		/* empty, will be filled later */
 	
-		ROM_REGION( 0x40000, REGION_USER1, 0 ) /* Paged ROMs */
-		ROM_LOAD( "14e_sr04.bin", 0x00000, 0x08000, 0xa68ce89c )  /* RC4 */
-		ROM_LOAD( "rc03.bin",     0x08000, 0x08000, 0xa49c9be0 )  /* RC3 (different) */
-		ROM_LOAD( "rc02.12e",     0x10000, 0x08000, 0x009a62d8 )  /* RC2 (different) */
-		ROM_LOAD( "rc01.11e",     0x18000, 0x08000, 0x2ac48d1d )  /* RC1 (different) */
-		ROM_LOAD( "rc09.14f",     0x20000, 0x08000, 0x64f23e72 )  /* RC9 (different) */
-		ROM_LOAD( "rc08.bin",     0x28000, 0x08000, 0x2c25874b )  /* RC8 (different) */
-		ROM_LOAD( "12f_sr07.bin", 0x30000, 0x08000, 0xde785076 )  /* RC7 */
-		ROM_LOAD( "11f_sr06.bin", 0x38000, 0x08000, 0xa70f4fd4 )  /* RC6 */
+		ROM_REGION( 0x40000, REGION_USER1, 0 );/* Paged ROMs */
+		ROM_LOAD( "14e_sr04.bin", 0x00000, 0x08000, 0xa68ce89c ); /* RC4 */
+		ROM_LOAD( "rc03.bin",     0x08000, 0x08000, 0xa49c9be0 ); /* RC3 (different) */
+		ROM_LOAD( "rc02.12e",     0x10000, 0x08000, 0x009a62d8 ); /* RC2 (different) */
+		ROM_LOAD( "rc01.11e",     0x18000, 0x08000, 0x2ac48d1d ); /* RC1 (different) */
+		ROM_LOAD( "rc09.14f",     0x20000, 0x08000, 0x64f23e72 ); /* RC9 (different) */
+		ROM_LOAD( "rc08.bin",     0x28000, 0x08000, 0x2c25874b ); /* RC8 (different) */
+		ROM_LOAD( "12f_sr07.bin", 0x30000, 0x08000, 0xde785076 ); /* RC7 */
+		ROM_LOAD( "11f_sr06.bin", 0x38000, 0x08000, 0xa70f4fd4 ); /* RC6 */
 	
-		ROM_REGION( 0x10000, REGION_CPU2, 0 ) /* 64k for the audio CPU */
-		ROM_LOAD( "rc05.2f",      0x0000, 0x8000, 0xea04fa07 )  /* AUDIO (different) */
+		ROM_REGION( 0x10000, REGION_CPU2, 0 );/* 64k for the audio CPU */
+		ROM_LOAD( "rc05.2f",      0x0000, 0x8000, 0xea04fa07 ); /* AUDIO (different) */
 	
-		ROM_REGION( 0x04000, REGION_GFX1, ROMREGION_DISPOSE )
-		ROM_LOAD( "rc10.bin",     0x00000, 0x4000, 0x0a3c0b0d ) /* characters */
+		ROM_REGION( 0x04000, REGION_GFX1, ROMREGION_DISPOSE );
+		ROM_LOAD( "rc10.bin",     0x00000, 0x4000, 0x0a3c0b0d );/* characters */
 	
-		ROM_REGION( 0x40000, REGION_GFX2, ROMREGION_DISPOSE )
-		ROM_LOAD( "11a_sr11.bin", 0x00000, 0x8000, 0x5fa042ba ) /* tiles */
-		ROM_LOAD( "13a_sr12.bin", 0x08000, 0x8000, 0xa2db64af )
-		ROM_LOAD( "14a_sr13.bin", 0x10000, 0x8000, 0xf1df5499 )
-		ROM_LOAD( "15a_sr14.bin", 0x18000, 0x8000, 0xb22b31b3 )
-		ROM_LOAD( "11c_sr15.bin", 0x20000, 0x8000, 0xca3a3af3 )
-		ROM_LOAD( "13c_sr16.bin", 0x28000, 0x8000, 0xc49a4a11 )
-		ROM_LOAD( "14c_sr17.bin", 0x30000, 0x8000, 0xaa80aaab )
-		ROM_LOAD( "15c_sr18.bin", 0x38000, 0x8000, 0xce67868e )
+		ROM_REGION( 0x40000, REGION_GFX2, ROMREGION_DISPOSE );
+		ROM_LOAD( "11a_sr11.bin", 0x00000, 0x8000, 0x5fa042ba );/* tiles */
+		ROM_LOAD( "13a_sr12.bin", 0x08000, 0x8000, 0xa2db64af );
+		ROM_LOAD( "14a_sr13.bin", 0x10000, 0x8000, 0xf1df5499 );
+		ROM_LOAD( "15a_sr14.bin", 0x18000, 0x8000, 0xb22b31b3 );
+		ROM_LOAD( "11c_sr15.bin", 0x20000, 0x8000, 0xca3a3af3 );
+		ROM_LOAD( "13c_sr16.bin", 0x28000, 0x8000, 0xc49a4a11 );
+		ROM_LOAD( "14c_sr17.bin", 0x30000, 0x8000, 0xaa80aaab );
+		ROM_LOAD( "15c_sr18.bin", 0x38000, 0x8000, 0xce67868e );
 	
-		ROM_REGION( 0x40000, REGION_GFX3, ROMREGION_DISPOSE )
-		ROM_LOAD( "15e_sr20.bin", 0x00000, 0x8000, 0x3924c861 ) /* sprites */
-		ROM_LOAD( "14e_sr19.bin", 0x08000, 0x8000, 0xff8f9129 )
-		ROM_LOAD( "15f_sr22.bin", 0x10000, 0x8000, 0xab64161c )
-		ROM_LOAD( "14f_sr21.bin", 0x18000, 0x8000, 0xfd64bcd1 )
-		ROM_LOAD( "15h_sr24.bin", 0x20000, 0x8000, 0xc972af3e )
-		ROM_LOAD( "14h_sr23.bin", 0x28000, 0x8000, 0x8c9abf57 )
-		ROM_LOAD( "15j_sr26.bin", 0x30000, 0x8000, 0xd4f1732f )
-		ROM_LOAD( "14j_sr25.bin", 0x38000, 0x8000, 0xd2a4ea4f )
+		ROM_REGION( 0x40000, REGION_GFX3, ROMREGION_DISPOSE );
+		ROM_LOAD( "15e_sr20.bin", 0x00000, 0x8000, 0x3924c861 );/* sprites */
+		ROM_LOAD( "14e_sr19.bin", 0x08000, 0x8000, 0xff8f9129 );
+		ROM_LOAD( "15f_sr22.bin", 0x10000, 0x8000, 0xab64161c );
+		ROM_LOAD( "14f_sr21.bin", 0x18000, 0x8000, 0xfd64bcd1 );
+		ROM_LOAD( "15h_sr24.bin", 0x20000, 0x8000, 0xc972af3e );
+		ROM_LOAD( "14h_sr23.bin", 0x28000, 0x8000, 0x8c9abf57 );
+		ROM_LOAD( "15j_sr26.bin", 0x30000, 0x8000, 0xd4f1732f );
+		ROM_LOAD( "14j_sr25.bin", 0x38000, 0x8000, 0xd2a4ea4f );
 	
-		ROM_REGION( 0x0300, REGION_PROMS, 0 )
-		ROM_LOAD( "63s141.12a",   0x0000, 0x0100, 0x8421786f )	/* ROM banking */
-		ROM_LOAD( "63s141.13a",   0x0100, 0x0100, 0x6048583f )	/* ROM banking */
-		ROM_LOAD( "63s141.8j",    0x0200, 0x0100, 0x1a89a7ff )	/* priority (not used) */
-	ROM_END
+		ROM_REGION( 0x0300, REGION_PROMS, 0 );
+		ROM_LOAD( "63s141.12a",   0x0000, 0x0100, 0x8421786f );/* ROM banking */
+		ROM_LOAD( "63s141.13a",   0x0100, 0x0100, 0x6048583f );/* ROM banking */
+		ROM_LOAD( "63s141.8j",    0x0200, 0x0100, 0x1a89a7ff );/* priority (not used) */
+	ROM_END(); }}; 
 	
 	
 	

@@ -771,34 +771,34 @@ public class lasso
 	
 	***************************************************************************/
 	
-	ROM_START( chameleo )
-		ROM_REGION( 0x10000, REGION_CPU1, 0 )		/* 6502 Code (Main CPU) */
-		ROM_LOAD( "chamel4.bin", 0x4000, 0x2000, 0x97379c47 )
-		ROM_LOAD( "chamel5.bin", 0x6000, 0x2000, 0x0a2cadfd )
-		ROM_LOAD( "chamel6.bin", 0x8000, 0x2000, 0xb023c354 )
-		ROM_LOAD( "chamel7.bin", 0xa000, 0x2000, 0xa5a03375 )
-		ROM_RELOAD(              0xe000, 0x2000             )
+	static RomLoadPtr rom_chameleo = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x10000, REGION_CPU1, 0 );	/* 6502 Code (Main CPU) */
+		ROM_LOAD( "chamel4.bin", 0x4000, 0x2000, 0x97379c47 );
+		ROM_LOAD( "chamel5.bin", 0x6000, 0x2000, 0x0a2cadfd );
+		ROM_LOAD( "chamel6.bin", 0x8000, 0x2000, 0xb023c354 );
+		ROM_LOAD( "chamel7.bin", 0xa000, 0x2000, 0xa5a03375 );
+		ROM_RELOAD(              0xe000, 0x2000             );
 	
-		ROM_REGION( 0x10000, REGION_CPU2, 0 )		/* 6502 Code (Sound CPU) */
-		ROM_LOAD( "chamel3.bin", 0x1000, 0x1000, 0x52eab9ec )
-		ROM_LOAD( "chamel2.bin", 0x6000, 0x1000, 0x81dcc49c )
-		ROM_LOAD( "chamel1.bin", 0x7000, 0x1000, 0x96031d3b )
-		ROM_RELOAD(              0xf000, 0x1000             )
+		ROM_REGION( 0x10000, REGION_CPU2, 0 );	/* 6502 Code (Sound CPU) */
+		ROM_LOAD( "chamel3.bin", 0x1000, 0x1000, 0x52eab9ec );
+		ROM_LOAD( "chamel2.bin", 0x6000, 0x1000, 0x81dcc49c );
+		ROM_LOAD( "chamel1.bin", 0x7000, 0x1000, 0x96031d3b );
+		ROM_RELOAD(              0xf000, 0x1000             );
 	
-		ROM_REGION( 0x4000, REGION_GFX1, ROMREGION_DISPOSE )
-		ROM_LOAD( "chamel8.bin", 0x0800, 0x800, 0xdc67916b )	/* Tiles   */
-		ROM_CONTINUE(            0x1800, 0x800             )	/* Sprites */
-		ROM_CONTINUE(            0x0000, 0x800             )
-		ROM_CONTINUE(            0x1000, 0x800             )
-		ROM_LOAD( "chamel9.bin", 0x2800, 0x800, 0x6b559bf1 )	/* 2nd bitplane */
-		ROM_CONTINUE(            0x3800, 0x800             )
-		ROM_CONTINUE(            0x2000, 0x800             )
-		ROM_CONTINUE(            0x3000, 0x800             )
+		ROM_REGION( 0x4000, REGION_GFX1, ROMREGION_DISPOSE );
+		ROM_LOAD( "chamel8.bin", 0x0800, 0x800, 0xdc67916b );/* Tiles   */
+		ROM_CONTINUE(            0x1800, 0x800             );/* Sprites */
+		ROM_CONTINUE(            0x0000, 0x800             );
+		ROM_CONTINUE(            0x1000, 0x800             );
+		ROM_LOAD( "chamel9.bin", 0x2800, 0x800, 0x6b559bf1 );/* 2nd bitplane */
+		ROM_CONTINUE(            0x3800, 0x800             );
+		ROM_CONTINUE(            0x2000, 0x800             );
+		ROM_CONTINUE(            0x3000, 0x800             );
 	
-		ROM_REGION( 0x40, REGION_PROMS, ROMREGION_DISPOSE )	/* Colors */
-		ROM_LOAD( "chambprm.bin", 0x00, 0x20, 0xe3ad76df )
-		ROM_LOAD( "chamaprm.bin", 0x20, 0x20, 0xc7063b54 )
-	ROM_END
+		ROM_REGION( 0x40, REGION_PROMS, ROMREGION_DISPOSE );/* Colors */
+		ROM_LOAD( "chambprm.bin", 0x00, 0x20, 0xe3ad76df );
+		ROM_LOAD( "chamaprm.bin", 0x20, 0x20, 0xc7063b54 );
+	ROM_END(); }}; 
 	
 	/***************************************************************************
 	
@@ -821,37 +821,37 @@ public class lasso
 	
 	***************************************************************************/
 	
-	ROM_START( lasso )
-		ROM_REGION( 0x10000, REGION_CPU1, 0 ) /* 6502 code (main cpu) */
-		ROM_LOAD( "wm3",       0x8000, 0x2000, 0xf93addd6 )
-		ROM_RELOAD(            0xc000, 0x2000)
-		ROM_LOAD( "wm4",       0xe000, 0x2000, 0x77719859 )
-		ROM_RELOAD(            0xa000, 0x2000)
+	static RomLoadPtr rom_lasso = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x10000, REGION_CPU1, 0 );/* 6502 code (main cpu) */
+		ROM_LOAD( "wm3",       0x8000, 0x2000, 0xf93addd6 );
+		ROM_RELOAD(            0xc000, 0x2000);
+		ROM_LOAD( "wm4",       0xe000, 0x2000, 0x77719859 );
+		ROM_RELOAD(            0xa000, 0x2000);
 	
-		ROM_REGION( 0x10000, REGION_CPU2, 0 ) /* 6502 code (lasso image blitter) */
-		ROM_LOAD( "wm5",       0xf000, 0x1000, 0x7dc3ff07 )
-		ROM_RELOAD(            0x8000, 0x1000)
+		ROM_REGION( 0x10000, REGION_CPU2, 0 );/* 6502 code (lasso image blitter) */
+		ROM_LOAD( "wm5",       0xf000, 0x1000, 0x7dc3ff07 );
+		ROM_RELOAD(            0x8000, 0x1000);
 	
-		ROM_REGION( 0x10000, REGION_CPU3, 0 ) /* 6502 code (sound) */
-		ROM_LOAD( "wmc",       0x5000, 0x1000, 0x8b4eb242 )
-		ROM_LOAD( "wmb",       0x6000, 0x1000, 0x4658bcb9 )
-		ROM_LOAD( "wma",       0x7000, 0x1000, 0x2e7de3e9 )
-		ROM_RELOAD(            0xf000, 0x1000 )
+		ROM_REGION( 0x10000, REGION_CPU3, 0 );/* 6502 code (sound) */
+		ROM_LOAD( "wmc",       0x5000, 0x1000, 0x8b4eb242 );
+		ROM_LOAD( "wmb",       0x6000, 0x1000, 0x4658bcb9 );
+		ROM_LOAD( "wma",       0x7000, 0x1000, 0x2e7de3e9 );
+		ROM_RELOAD(            0xf000, 0x1000 );
 	
-		ROM_REGION( 0x4000, REGION_GFX1, ROMREGION_DISPOSE )
-		ROM_LOAD( "wm1",       0x0000, 0x0800, 0x7db77256 )	/* Tiles   */
-		ROM_CONTINUE(          0x1000, 0x0800             )	/* Sprites */
-		ROM_CONTINUE(          0x0800, 0x0800             )
-		ROM_CONTINUE(          0x1800, 0x0800             )
-		ROM_LOAD( "wm2",       0x2000, 0x0800, 0x9e7d0b6f )	/* 2nd bitplane */
-		ROM_CONTINUE(          0x3000, 0x0800             )
-		ROM_CONTINUE(          0x2800, 0x0800             )
-		ROM_CONTINUE(          0x3800, 0x0800             )
+		ROM_REGION( 0x4000, REGION_GFX1, ROMREGION_DISPOSE );
+		ROM_LOAD( "wm1",       0x0000, 0x0800, 0x7db77256 );/* Tiles   */
+		ROM_CONTINUE(          0x1000, 0x0800             );/* Sprites */
+		ROM_CONTINUE(          0x0800, 0x0800             );
+		ROM_CONTINUE(          0x1800, 0x0800             );
+		ROM_LOAD( "wm2",       0x2000, 0x0800, 0x9e7d0b6f );/* 2nd bitplane */
+		ROM_CONTINUE(          0x3000, 0x0800             );
+		ROM_CONTINUE(          0x2800, 0x0800             );
+		ROM_CONTINUE(          0x3800, 0x0800             );
 	
-		ROM_REGION( 0x40, REGION_PROMS, 0 )
-		ROM_LOAD( "82s123.69", 0x0000, 0x0020, 0x1eabb04d )
-		ROM_LOAD( "82s123.70", 0x0020, 0x0020, 0x09060f8c )
-	ROM_END
+		ROM_REGION( 0x40, REGION_PROMS, 0 );
+		ROM_LOAD( "82s123.69", 0x0000, 0x0020, 0x1eabb04d );
+		ROM_LOAD( "82s123.70", 0x0020, 0x0020, 0x09060f8c );
+	ROM_END(); }}; 
 	
 	/***************************************************************************
 	
@@ -948,46 +948,46 @@ public class lasso
 	
 	***************************************************************************/
 	
-	ROM_START( wwjgtin )
-		ROM_REGION( 0x10000, REGION_CPU1, 0 )		/* 6502 Code (Main CPU) */
-		ROM_LOAD( "ic2.6", 0x4000, 0x4000, 0x744ba45b )
-		ROM_LOAD( "ic5.5", 0x8000, 0x4000, 0xaf751614 )
-		ROM_RELOAD(        0xc000, 0x4000             )
+	static RomLoadPtr rom_wwjgtin = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x10000, REGION_CPU1, 0 );	/* 6502 Code (Main CPU) */
+		ROM_LOAD( "ic2.6", 0x4000, 0x4000, 0x744ba45b );
+		ROM_LOAD( "ic5.5", 0x8000, 0x4000, 0xaf751614 );
+		ROM_RELOAD(        0xc000, 0x4000             );
 	
-		ROM_REGION( 0x10000, REGION_CPU2, 0 )		/* 6502 Code (Sound CPU) */
-		ROM_LOAD( "ic59.9", 0x4000, 0x4000, 0x2ecb4d98 )
-		ROM_RELOAD(         0xc000, 0x4000             )
+		ROM_REGION( 0x10000, REGION_CPU2, 0 );	/* 6502 Code (Sound CPU) */
+		ROM_LOAD( "ic59.9", 0x4000, 0x4000, 0x2ecb4d98 );
+		ROM_RELOAD(         0xc000, 0x4000             );
 	
-		ROM_REGION( 0x8000, REGION_GFX1, ROMREGION_DISPOSE )
-		ROM_LOAD( "ic81.7", 0x0000, 0x800, 0xa27f1a63 )	/* Tiles   */
-		ROM_CONTINUE(       0x2000, 0x800             )	/* Sprites */
-		ROM_CONTINUE(       0x0800, 0x800             )
-		ROM_CONTINUE(       0x2800, 0x800             )
-		ROM_CONTINUE(       0x1000, 0x800             )
-		ROM_CONTINUE(       0x3000, 0x800             )
-		ROM_CONTINUE(       0x1800, 0x800             )
-		ROM_CONTINUE(       0x3800, 0x800             )
-		ROM_LOAD( "ic82.8", 0x4000, 0x800, 0xea2862b3 )	/* 2nd bitplane */
-		ROM_CONTINUE(       0x6000, 0x800             )	/* Sprites */
-		ROM_CONTINUE(       0x4800, 0x800             )
-		ROM_CONTINUE(       0x6800, 0x800             )
-		ROM_CONTINUE(       0x5000, 0x800             )
-		ROM_CONTINUE(       0x7000, 0x800             )
-		ROM_CONTINUE(       0x5800, 0x800             )
-		ROM_CONTINUE(       0x7800, 0x800             )
+		ROM_REGION( 0x8000, REGION_GFX1, ROMREGION_DISPOSE );
+		ROM_LOAD( "ic81.7", 0x0000, 0x800, 0xa27f1a63 );/* Tiles   */
+		ROM_CONTINUE(       0x2000, 0x800             );/* Sprites */
+		ROM_CONTINUE(       0x0800, 0x800             );
+		ROM_CONTINUE(       0x2800, 0x800             );
+		ROM_CONTINUE(       0x1000, 0x800             );
+		ROM_CONTINUE(       0x3000, 0x800             );
+		ROM_CONTINUE(       0x1800, 0x800             );
+		ROM_CONTINUE(       0x3800, 0x800             );
+		ROM_LOAD( "ic82.8", 0x4000, 0x800, 0xea2862b3 );/* 2nd bitplane */
+		ROM_CONTINUE(       0x6000, 0x800             );/* Sprites */
+		ROM_CONTINUE(       0x4800, 0x800             );
+		ROM_CONTINUE(       0x6800, 0x800             );
+		ROM_CONTINUE(       0x5000, 0x800             );
+		ROM_CONTINUE(       0x7000, 0x800             );
+		ROM_CONTINUE(       0x5800, 0x800             );
+		ROM_CONTINUE(       0x7800, 0x800             );
 	
-		ROM_REGION( 0x4000, REGION_GFX2, ROMREGION_DISPOSE )	/* Gfx */
-		ROM_LOAD( "ic47.3", 0x0000, 0x2000, 0x40594c59 )	// 1xxxxxxxxxxxx = 0xFF
-		ROM_LOAD( "ic46.4", 0x2000, 0x2000, 0xd1921348 )
+		ROM_REGION( 0x4000, REGION_GFX2, ROMREGION_DISPOSE );/* Gfx */
+		ROM_LOAD( "ic47.3", 0x0000, 0x2000, 0x40594c59 );// 1xxxxxxxxxxxx = 0xFF
+		ROM_LOAD( "ic46.4", 0x2000, 0x2000, 0xd1921348 );
 	
-		ROM_REGION( 0x4000, REGION_GFX3, 0 )	/* TILEMAP */
-		ROM_LOAD( "ic48.2", 0x0000, 0x2000, 0xa4a7df77 )
-		ROM_LOAD( "ic49.1", 0x2000, 0x2000, 0xe480fbba )	// FIXED BITS (1111xxxx)
+		ROM_REGION( 0x4000, REGION_GFX3, 0 );/* TILEMAP */
+		ROM_LOAD( "ic48.2", 0x0000, 0x2000, 0xa4a7df77 );
+		ROM_LOAD( "ic49.1", 0x2000, 0x2000, 0xe480fbba );// FIXED BITS (1111xxxx)
 	
-		ROM_REGION( 0x40, REGION_PROMS, ROMREGION_DISPOSE )	/* Colors */
-		ROM_LOAD( "2.bpr", 0x00, 0x20, 0x79adda5d )
-		ROM_LOAD( "1.bpr", 0x20, 0x20, 0xc1a93cc8 )
-	ROM_END
+		ROM_REGION( 0x40, REGION_PROMS, ROMREGION_DISPOSE );/* Colors */
+		ROM_LOAD( "2.bpr", 0x00, 0x20, 0x79adda5d );
+		ROM_LOAD( "1.bpr", 0x20, 0x20, 0xc1a93cc8 );
+	ROM_END(); }}; 
 	
 	
 	

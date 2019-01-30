@@ -277,34 +277,34 @@ public class timelimt
 	
 	***************************************************************************/
 	
-	ROM_START( timelimt )
-		ROM_REGION( 0x10000, REGION_CPU1, 0 )	/* ROMs */
-		ROM_LOAD( "t8",     0x0000, 0x2000, 0x006767ca )
-		ROM_LOAD( "t7",     0x2000, 0x2000, 0xcbe7cd86 )
-		ROM_LOAD( "t6",     0x4000, 0x2000, 0xf5f17e39 )
-		ROM_LOAD( "t9",     0x6000, 0x2000, 0x2d72ab45 )
+	static RomLoadPtr rom_timelimt = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x10000, REGION_CPU1, 0 );/* ROMs */
+		ROM_LOAD( "t8",     0x0000, 0x2000, 0x006767ca );
+		ROM_LOAD( "t7",     0x2000, 0x2000, 0xcbe7cd86 );
+		ROM_LOAD( "t6",     0x4000, 0x2000, 0xf5f17e39 );
+		ROM_LOAD( "t9",     0x6000, 0x2000, 0x2d72ab45 );
 	
-		ROM_REGION( 0x10000, REGION_CPU2, 0 )	/* ROMs */
-		ROM_LOAD( "tl5",    0x0000, 0x1000, 0x5b782e4a )
-		ROM_LOAD( "tl4",    0x1000, 0x1000, 0xa32883a9 )
+		ROM_REGION( 0x10000, REGION_CPU2, 0 );/* ROMs */
+		ROM_LOAD( "tl5",    0x0000, 0x1000, 0x5b782e4a );
+		ROM_LOAD( "tl4",    0x1000, 0x1000, 0xa32883a9 );
 	
-		ROM_REGION( 0x2000, REGION_GFX1, ROMREGION_DISPOSE )	/* tiles */
-		ROM_LOAD( "tl11",   0x0000, 0x1000, 0x46676307 )
-		ROM_LOAD( "tl10",   0x1000, 0x1000, 0x2336908a )
+		ROM_REGION( 0x2000, REGION_GFX1, ROMREGION_DISPOSE );/* tiles */
+		ROM_LOAD( "tl11",   0x0000, 0x1000, 0x46676307 );
+		ROM_LOAD( "tl10",   0x1000, 0x1000, 0x2336908a );
 	
-		ROM_REGION( 0x2000, REGION_GFX2, ROMREGION_DISPOSE )	/* tiles */
-		ROM_LOAD( "tl13",   0x0000, 0x1000, 0x072e4053 )
-		ROM_LOAD( "tl12",   0x1000, 0x1000, 0xce960389 )
+		ROM_REGION( 0x2000, REGION_GFX2, ROMREGION_DISPOSE );/* tiles */
+		ROM_LOAD( "tl13",   0x0000, 0x1000, 0x072e4053 );
+		ROM_LOAD( "tl12",   0x1000, 0x1000, 0xce960389 );
 	
-		ROM_REGION( 0x6000, REGION_GFX3, ROMREGION_DISPOSE )	/* sprites */
-		ROM_LOAD( "tl3",    0x0000, 0x2000, 0x01a9fd95 )
-		ROM_LOAD( "tl2",    0x2000, 0x2000, 0x4693b849 )
-		ROM_LOAD( "tl1",    0x4000, 0x2000, 0xc4007caf )
+		ROM_REGION( 0x6000, REGION_GFX3, ROMREGION_DISPOSE );/* sprites */
+		ROM_LOAD( "tl3",    0x0000, 0x2000, 0x01a9fd95 );
+		ROM_LOAD( "tl2",    0x2000, 0x2000, 0x4693b849 );
+		ROM_LOAD( "tl1",    0x4000, 0x2000, 0xc4007caf );
 	
-		ROM_REGION( 0x0040, REGION_PROMS, 0 )
-		ROM_LOAD( "clr.35", 0x0000, 0x0020, 0x9c9e6073 )
-		ROM_LOAD( "clr.48", 0x0020, 0x0020, BADCRC( 0xa0bcac59 ) )	/* FIXED BITS (xxxxxx1x) */
-	ROM_END
+		ROM_REGION( 0x0040, REGION_PROMS, 0 );
+		ROM_LOAD( "clr.35", 0x0000, 0x0020, 0x9c9e6073 );
+		ROM_LOAD( "clr.48", 0x0020, 0x0020, BADCRC( 0xa0bcac59 ));	/* FIXED BITS (xxxxxx1x) */
+	ROM_END(); }}; 
 	
 	
 	

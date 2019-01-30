@@ -186,23 +186,23 @@ public class mole
 		}
 	};
 	
-	ROM_START( mole ) /* ALL ROMS ARE 2732 */
-		ROM_REGION( 0x10000, REGION_CPU1, 0 )	/* 64k for 6502 code */
-		ROM_LOAD( "m3a.5h",	0x5000, 0x1000, 0x5fbbdfef )
-		ROM_RELOAD(			0xd000, 0x1000)
-		ROM_LOAD( "m2a.7h",	0x6000, 0x1000, 0xf2a90642 )
-		ROM_RELOAD(			0xe000, 0x1000 )
-		ROM_LOAD( "m1a.8h",	0x7000, 0x1000, 0xcff0119a )
-		ROM_RELOAD(			0xf000, 0x1000 )
+	static RomLoadPtr rom_mole = new RomLoadPtr(){ public void handler(){  /* ALL ROMS ARE 2732 */
+		ROM_REGION( 0x10000, REGION_CPU1, 0 );/* 64k for 6502 code */
+		ROM_LOAD( "m3a.5h",	0x5000, 0x1000, 0x5fbbdfef );
+		ROM_RELOAD(			0xd000, 0x1000);
+		ROM_LOAD( "m2a.7h",	0x6000, 0x1000, 0xf2a90642 );
+		ROM_RELOAD(			0xe000, 0x1000 );
+		ROM_LOAD( "m1a.8h",	0x7000, 0x1000, 0xcff0119a );
+		ROM_RELOAD(			0xf000, 0x1000 );
 	
-		ROM_REGION( 0x6000, REGION_GFX1, ROMREGION_DISPOSE )
-		ROM_LOAD( "mea.4a",	0x0000, 0x1000, 0x49d89116 )
-		ROM_LOAD( "mca.6a",	0x1000, 0x1000, 0x04e90300 )
-		ROM_LOAD( "maa.9a",	0x2000, 0x1000, 0x6ce9442b )
-		ROM_LOAD( "mfa.3a",	0x3000, 0x1000, 0x0d0c7d13 )
-		ROM_LOAD( "mda.5a",	0x4000, 0x1000, 0x41ae1842 )
-		ROM_LOAD( "mba.8a",	0x5000, 0x1000, 0x50c43fc9 )
-	ROM_END
+		ROM_REGION( 0x6000, REGION_GFX1, ROMREGION_DISPOSE );
+		ROM_LOAD( "mea.4a",	0x0000, 0x1000, 0x49d89116 );
+		ROM_LOAD( "mca.6a",	0x1000, 0x1000, 0x04e90300 );
+		ROM_LOAD( "maa.9a",	0x2000, 0x1000, 0x6ce9442b );
+		ROM_LOAD( "mfa.3a",	0x3000, 0x1000, 0x0d0c7d13 );
+		ROM_LOAD( "mda.5a",	0x4000, 0x1000, 0x41ae1842 );
+		ROM_LOAD( "mba.8a",	0x5000, 0x1000, 0x50c43fc9 );
+	ROM_END(); }}; 
 	
 	INPUT_PORTS_START( mole )
 		PORT_START // 0x8d00

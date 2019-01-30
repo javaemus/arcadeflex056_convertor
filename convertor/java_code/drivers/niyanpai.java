@@ -590,24 +590,24 @@ public class niyanpai
 	};
 	
 	
-	ROM_START( niyanpai )
-		ROM_REGION( 0x40000, REGION_CPU1, 0 ) /* TMP68301 main program */
-		ROM_LOAD16_BYTE( "npai_01.bin", 0x00000, 0x20000, 0xa904e8a1 )
-		ROM_LOAD16_BYTE( "npai_02.bin", 0x00001, 0x20000, 0x244f9d6f )
+	static RomLoadPtr rom_niyanpai = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x40000, REGION_CPU1, 0 );/* TMP68301 main program */
+		ROM_LOAD16_BYTE( "npai_01.bin", 0x00000, 0x20000, 0xa904e8a1 );
+		ROM_LOAD16_BYTE( "npai_02.bin", 0x00001, 0x20000, 0x244f9d6f );
 	
-		ROM_REGION( 0x20000, REGION_CPU2, 0 ) /* TMPZ84C011 sound program */
-		ROM_LOAD( "npai_03.bin", 0x000000, 0x20000, 0xd154306b )
+		ROM_REGION( 0x20000, REGION_CPU2, 0 );/* TMPZ84C011 sound program */
+		ROM_LOAD( "npai_03.bin", 0x000000, 0x20000, 0xd154306b );
 	
-		ROM_REGION( 0x400000, REGION_GFX1, 0 ) /* gfx */
-		ROM_LOAD( "npai_04.bin", 0x000000, 0x80000, 0xbec845b5 )
-		ROM_LOAD( "npai_05.bin", 0x080000, 0x80000, 0x3300ce07 )
-		ROM_LOAD( "npai_06.bin", 0x100000, 0x80000, 0x448e4e39 )
-		ROM_LOAD( "npai_07.bin", 0x180000, 0x80000, 0x2ad47e55 )
-		ROM_LOAD( "npai_08.bin", 0x200000, 0x80000, 0x2ff980a0 )
-		ROM_LOAD( "npai_09.bin", 0x280000, 0x80000, 0x74037ee3 )
-		ROM_LOAD( "npai_10.bin", 0x300000, 0x80000, 0xd35a9af6 )
-		ROM_LOAD( "npai_11.bin", 0x380000, 0x80000, 0x0748eb73 )
-	ROM_END
+		ROM_REGION( 0x400000, REGION_GFX1, 0 );/* gfx */
+		ROM_LOAD( "npai_04.bin", 0x000000, 0x80000, 0xbec845b5 );
+		ROM_LOAD( "npai_05.bin", 0x080000, 0x80000, 0x3300ce07 );
+		ROM_LOAD( "npai_06.bin", 0x100000, 0x80000, 0x448e4e39 );
+		ROM_LOAD( "npai_07.bin", 0x180000, 0x80000, 0x2ad47e55 );
+		ROM_LOAD( "npai_08.bin", 0x200000, 0x80000, 0x2ff980a0 );
+		ROM_LOAD( "npai_09.bin", 0x280000, 0x80000, 0x74037ee3 );
+		ROM_LOAD( "npai_10.bin", 0x300000, 0x80000, 0xd35a9af6 );
+		ROM_LOAD( "npai_11.bin", 0x380000, 0x80000, 0x0748eb73 );
+	ROM_END(); }}; 
 	
 	
 	GAME( 1996, niyanpai, 0, niyanpai, niyanpai, niyanpai, ROT0, "Nichibutsu", "Niyanpai (Japan)" )

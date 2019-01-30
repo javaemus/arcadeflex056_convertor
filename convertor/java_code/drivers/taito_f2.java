@@ -4941,1322 +4941,1322 @@ public class taito_f2
 	                                  DRIVERS
 	***************************************************************************/
 	
-	ROM_START( finalb )
-		ROM_REGION( 0x40000, REGION_CPU1, 0 )     /* 256k for 68000 code */
-		ROM_LOAD16_BYTE( "b82_09.10",  0x00000, 0x20000, 0x632f1ecd )
-		ROM_LOAD16_BYTE( "b82_17.11",  0x00001, 0x20000, 0xe91b2ec9 )
+	static RomLoadPtr rom_finalb = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x40000, REGION_CPU1, 0 );    /* 256k for 68000 code */
+		ROM_LOAD16_BYTE( "b82_09.10",  0x00000, 0x20000, 0x632f1ecd );
+		ROM_LOAD16_BYTE( "b82_17.11",  0x00001, 0x20000, 0xe91b2ec9 );
 	
-		ROM_REGION( 0x040000, REGION_GFX1, ROMREGION_DISPOSE )	/* SCR */
-		ROM_LOAD16_BYTE( "b82-06.19",  0x00000, 0x20000, 0xfc450a25 )
-		ROM_LOAD16_BYTE( "b82-07.18",  0x00001, 0x20000, 0xec3df577 )
+		ROM_REGION( 0x040000, REGION_GFX1, ROMREGION_DISPOSE );/* SCR */
+		ROM_LOAD16_BYTE( "b82-06.19",  0x00000, 0x20000, 0xfc450a25 );
+		ROM_LOAD16_BYTE( "b82-07.18",  0x00001, 0x20000, 0xec3df577 );
 	
-		ROM_REGION( 0x200000, REGION_GFX2, ROMREGION_DISPOSE )	/* OBJ */
-		ROM_LOAD16_BYTE( "b82-04.4",   0x000000, 0x80000, 0x6346f98e ) /* sprites 4-bit format*/
-		ROM_LOAD16_BYTE( "b82-03.5",   0x000001, 0x80000, 0xdaa11561 ) /* sprites 4-bit format*/
-	
-		/* Note: this is intentional to load at 0x180000, not at 0x100000
-		   because finalb_driver_init will move some bits around before data
-		   will be 'gfxdecoded'. The whole thing is because this data is 2bits-
-		   while above is 4bits-packed format, for a total of 6 bits per pixel. */
-	
-		ROM_LOAD( "b82-05.3",    0x180000, 0x80000, 0xaa90b93a ) /* sprites 2-bit format */
-	
-		ROM_REGION( 0x1c000, REGION_CPU2, 0 )      /* sound cpu */
-		ROM_LOAD( "b82_10.16",   0x00000, 0x04000, 0xa38aaaed )
-		ROM_CONTINUE(            0x10000, 0x0c000 ) /* banked stuff */
-	
-		ROM_REGION( 0x80000, REGION_SOUND1, 0 )	/* ADPCM samples */
-		ROM_LOAD( "b82-02.1",    0x00000, 0x80000, 0x5dd06bdd )
-	
-		ROM_REGION( 0x80000, REGION_SOUND2, 0 )	/* Delta-T samples */
-		ROM_LOAD( "b82-01.2",    0x00000, 0x80000, 0xf0eb6846 )
-	ROM_END
-	
-	ROM_START( finalbj )
-		ROM_REGION( 0x40000, REGION_CPU1, 0 )     /* 256k for 68000 code */
-		ROM_LOAD16_BYTE( "b82_09.10",  0x00000, 0x20000, 0x632f1ecd )
-		ROM_LOAD16_BYTE( "b82_08.11",  0x00001, 0x20000, 0x07154fe5 )
-	
-		ROM_REGION( 0x040000, REGION_GFX1, ROMREGION_DISPOSE )	/* SCR */
-		ROM_LOAD16_BYTE( "b82-06.19",  0x00000, 0x20000, 0xfc450a25 )
-		ROM_LOAD16_BYTE( "b82-07.18",  0x00001, 0x20000, 0xec3df577 )
-	
-		ROM_REGION( 0x200000, REGION_GFX2, ROMREGION_DISPOSE )	/* OBJ */
-		ROM_LOAD16_BYTE( "b82-04.4",   0x000000, 0x80000, 0x6346f98e ) /* sprites 4-bit format*/
-		ROM_LOAD16_BYTE( "b82-03.5",   0x000001, 0x80000, 0xdaa11561 ) /* sprites 4-bit format*/
+		ROM_REGION( 0x200000, REGION_GFX2, ROMREGION_DISPOSE );/* OBJ */
+		ROM_LOAD16_BYTE( "b82-04.4",   0x000000, 0x80000, 0x6346f98e );/* sprites 4-bit format*/
+		ROM_LOAD16_BYTE( "b82-03.5",   0x000001, 0x80000, 0xdaa11561 );/* sprites 4-bit format*/
 	
 		/* Note: this is intentional to load at 0x180000, not at 0x100000
 		   because finalb_driver_init will move some bits around before data
 		   will be 'gfxdecoded'. The whole thing is because this data is 2bits-
 		   while above is 4bits-packed format, for a total of 6 bits per pixel. */
 	
-		ROM_LOAD( "b82-05.3",    0x180000, 0x80000, 0xaa90b93a ) /* sprites 2-bit format */
+		ROM_LOAD( "b82-05.3",    0x180000, 0x80000, 0xaa90b93a );/* sprites 2-bit format */
 	
-		ROM_REGION( 0x1c000, REGION_CPU2, 0 )      /* sound cpu */
-		ROM_LOAD( "b82_10.16",   0x00000, 0x04000, 0xa38aaaed )
-		ROM_CONTINUE(            0x10000, 0x0c000 ) /* banked stuff */
+		ROM_REGION( 0x1c000, REGION_CPU2, 0 );     /* sound cpu */
+		ROM_LOAD( "b82_10.16",   0x00000, 0x04000, 0xa38aaaed );
+		ROM_CONTINUE(            0x10000, 0x0c000 );/* banked stuff */
 	
-		ROM_REGION( 0x80000, REGION_SOUND1, 0 )	/* ADPCM samples */
-		ROM_LOAD( "b82-02.1",    0x00000, 0x80000, 0x5dd06bdd )
+		ROM_REGION( 0x80000, REGION_SOUND1, 0 );/* ADPCM samples */
+		ROM_LOAD( "b82-02.1",    0x00000, 0x80000, 0x5dd06bdd );
 	
-		ROM_REGION( 0x80000, REGION_SOUND2, 0 )	/* Delta-T samples */
-		ROM_LOAD( "b82-01.2",    0x00000, 0x80000, 0xf0eb6846 )
-	ROM_END
+		ROM_REGION( 0x80000, REGION_SOUND2, 0 );/* Delta-T samples */
+		ROM_LOAD( "b82-01.2",    0x00000, 0x80000, 0xf0eb6846 );
+	ROM_END(); }}; 
 	
-	ROM_START( dondokod )
-		ROM_REGION( 0x80000, REGION_CPU1, 0 )     /* 512k for 68000 code */
-		ROM_LOAD16_BYTE( "b95-12.bin",   0x00000, 0x20000, 0xd0fce87a )
-		ROM_LOAD16_BYTE( "b95-11-1.bin", 0x00001, 0x20000, 0xdad40cd3 )
-		ROM_LOAD16_BYTE( "b95-10.bin",   0x40000, 0x20000, 0xa46e1f0b )
-		ROM_LOAD16_BYTE( "b95-wrld.7",   0x40001, 0x20000, 0x6e4e1351 )	// needs correct name
+	static RomLoadPtr rom_finalbj = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x40000, REGION_CPU1, 0 );    /* 256k for 68000 code */
+		ROM_LOAD16_BYTE( "b82_09.10",  0x00000, 0x20000, 0x632f1ecd );
+		ROM_LOAD16_BYTE( "b82_08.11",  0x00001, 0x20000, 0x07154fe5 );
 	
-		ROM_REGION( 0x080000, REGION_GFX1, ROMREGION_DISPOSE )	/* SCR */
-		ROM_LOAD( "b95-02.bin", 0x00000, 0x80000, 0x67b4e979 )
+		ROM_REGION( 0x040000, REGION_GFX1, ROMREGION_DISPOSE );/* SCR */
+		ROM_LOAD16_BYTE( "b82-06.19",  0x00000, 0x20000, 0xfc450a25 );
+		ROM_LOAD16_BYTE( "b82-07.18",  0x00001, 0x20000, 0xec3df577 );
 	
-		ROM_REGION( 0x080000, REGION_GFX2, ROMREGION_DISPOSE )	/* OBJ */
-		ROM_LOAD( "b95-01.bin", 0x00000, 0x80000, 0x51c176ce )
+		ROM_REGION( 0x200000, REGION_GFX2, ROMREGION_DISPOSE );/* OBJ */
+		ROM_LOAD16_BYTE( "b82-04.4",   0x000000, 0x80000, 0x6346f98e );/* sprites 4-bit format*/
+		ROM_LOAD16_BYTE( "b82-03.5",   0x000001, 0x80000, 0xdaa11561 );/* sprites 4-bit format*/
 	
-		ROM_REGION( 0x080000, REGION_GFX3, ROMREGION_DISPOSE )	/* pivot gfx */
-		ROM_LOAD( "b95-03.bin", 0x00000, 0x80000, 0x543aa0d1 )
+		/* Note: this is intentional to load at 0x180000, not at 0x100000
+		   because finalb_driver_init will move some bits around before data
+		   will be 'gfxdecoded'. The whole thing is because this data is 2bits-
+		   while above is 4bits-packed format, for a total of 6 bits per pixel. */
 	
-		ROM_REGION( 0x1c000, REGION_CPU2, 0 )      /* sound cpu */
-		ROM_LOAD( "b95-08.bin",  0x00000, 0x04000, 0xb5aa49e1 )
-		ROM_CONTINUE(            0x10000, 0x0c000 ) /* banked stuff */
+		ROM_LOAD( "b82-05.3",    0x180000, 0x80000, 0xaa90b93a );/* sprites 2-bit format */
 	
-		ROM_REGION( 0x80000, REGION_SOUND1, 0 )	/* ADPCM samples */
-		ROM_LOAD( "b95-04.bin",  0x00000, 0x80000, 0xac4c1716 )
+		ROM_REGION( 0x1c000, REGION_CPU2, 0 );     /* sound cpu */
+		ROM_LOAD( "b82_10.16",   0x00000, 0x04000, 0xa38aaaed );
+		ROM_CONTINUE(            0x10000, 0x0c000 );/* banked stuff */
 	
-		/* no Delta-T samples */
-	ROM_END
+		ROM_REGION( 0x80000, REGION_SOUND1, 0 );/* ADPCM samples */
+		ROM_LOAD( "b82-02.1",    0x00000, 0x80000, 0x5dd06bdd );
 	
-	ROM_START( dondokdu )
-		ROM_REGION( 0x80000, REGION_CPU1, 0 )     /* 512k for 68000 code */
-		ROM_LOAD16_BYTE( "b95-12.bin",   0x00000, 0x20000, 0xd0fce87a )
-		ROM_LOAD16_BYTE( "b95-11-1.bin", 0x00001, 0x20000, 0xdad40cd3 )
-		ROM_LOAD16_BYTE( "b95-10.bin",   0x40000, 0x20000, 0xa46e1f0b )
-		ROM_LOAD16_BYTE( "b95-us.7",     0x40001, 0x20000, 0x350d2c65 )	// needs correct name
+		ROM_REGION( 0x80000, REGION_SOUND2, 0 );/* Delta-T samples */
+		ROM_LOAD( "b82-01.2",    0x00000, 0x80000, 0xf0eb6846 );
+	ROM_END(); }}; 
 	
-		ROM_REGION( 0x080000, REGION_GFX1, ROMREGION_DISPOSE )	/* SCR */
-		ROM_LOAD( "b95-02.bin", 0x00000, 0x80000, 0x67b4e979 )
+	static RomLoadPtr rom_dondokod = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x80000, REGION_CPU1, 0 );    /* 512k for 68000 code */
+		ROM_LOAD16_BYTE( "b95-12.bin",   0x00000, 0x20000, 0xd0fce87a );
+		ROM_LOAD16_BYTE( "b95-11-1.bin", 0x00001, 0x20000, 0xdad40cd3 );
+		ROM_LOAD16_BYTE( "b95-10.bin",   0x40000, 0x20000, 0xa46e1f0b );
+		ROM_LOAD16_BYTE( "b95-wrld.7",   0x40001, 0x20000, 0x6e4e1351 );// needs correct name
 	
-		ROM_REGION( 0x080000, REGION_GFX2, ROMREGION_DISPOSE )	/* OBJ */
-		ROM_LOAD( "b95-01.bin", 0x00000, 0x80000, 0x51c176ce )
+		ROM_REGION( 0x080000, REGION_GFX1, ROMREGION_DISPOSE );/* SCR */
+		ROM_LOAD( "b95-02.bin", 0x00000, 0x80000, 0x67b4e979 );
 	
-		ROM_REGION( 0x080000, REGION_GFX3, ROMREGION_DISPOSE )	/* pivot gfx */
-		ROM_LOAD( "b95-03.bin", 0x00000, 0x80000, 0x543aa0d1 )
+		ROM_REGION( 0x080000, REGION_GFX2, ROMREGION_DISPOSE );/* OBJ */
+		ROM_LOAD( "b95-01.bin", 0x00000, 0x80000, 0x51c176ce );
 	
-		ROM_REGION( 0x1c000, REGION_CPU2, 0 )      /* sound cpu */
-		ROM_LOAD( "b95-08.bin",  0x00000, 0x04000, 0xb5aa49e1 )
-		ROM_CONTINUE(            0x10000, 0x0c000 ) /* banked stuff */
+		ROM_REGION( 0x080000, REGION_GFX3, ROMREGION_DISPOSE );/* pivot gfx */
+		ROM_LOAD( "b95-03.bin", 0x00000, 0x80000, 0x543aa0d1 );
 	
-		ROM_REGION( 0x80000, REGION_SOUND1, 0 )	/* ADPCM samples */
-		ROM_LOAD( "b95-04.bin",  0x00000, 0x80000, 0xac4c1716 )
+		ROM_REGION( 0x1c000, REGION_CPU2, 0 );     /* sound cpu */
+		ROM_LOAD( "b95-08.bin",  0x00000, 0x04000, 0xb5aa49e1 );
+		ROM_CONTINUE(            0x10000, 0x0c000 );/* banked stuff */
 	
-		/* no Delta-T samples */
-	ROM_END
-	
-	ROM_START( dondokdj )
-		ROM_REGION( 0x80000, REGION_CPU1, 0 )     /* 512k for 68000 code */
-		ROM_LOAD16_BYTE( "b95-12.bin",   0x00000, 0x20000, 0xd0fce87a )
-		ROM_LOAD16_BYTE( "b95-11-1.bin", 0x00001, 0x20000, 0xdad40cd3 )
-		ROM_LOAD16_BYTE( "b95-10.bin",   0x40000, 0x20000, 0xa46e1f0b )
-		ROM_LOAD16_BYTE( "b95-09.bin",   0x40001, 0x20000, 0xd8c86d39 )
-	
-		ROM_REGION( 0x080000, REGION_GFX1, ROMREGION_DISPOSE )	/* SCR */
-		ROM_LOAD( "b95-02.bin", 0x00000, 0x80000, 0x67b4e979 )
-	
-		ROM_REGION( 0x080000, REGION_GFX2, ROMREGION_DISPOSE )	/* OBJ */
-		ROM_LOAD( "b95-01.bin", 0x00000, 0x80000, 0x51c176ce )
-	
-		ROM_REGION( 0x080000, REGION_GFX3, ROMREGION_DISPOSE )	/* pivot gfx */
-		ROM_LOAD( "b95-03.bin", 0x00000, 0x80000, 0x543aa0d1 )
-	
-		ROM_REGION( 0x1c000, REGION_CPU2, 0 )      /* sound cpu */
-		ROM_LOAD( "b95-08.bin",  0x00000, 0x04000, 0xb5aa49e1 )
-		ROM_CONTINUE(            0x10000, 0x0c000 ) /* banked stuff */
-	
-		ROM_REGION( 0x80000, REGION_SOUND1, 0 )	/* ADPCM samples */
-		ROM_LOAD( "b95-04.bin",  0x00000, 0x80000, 0xac4c1716 )
+		ROM_REGION( 0x80000, REGION_SOUND1, 0 );/* ADPCM samples */
+		ROM_LOAD( "b95-04.bin",  0x00000, 0x80000, 0xac4c1716 );
 	
 		/* no Delta-T samples */
-	ROM_END
+	ROM_END(); }}; 
 	
-	ROM_START( megab )
-		ROM_REGION( 0x80000, REGION_CPU1, 0 )     /* 256k for 68000 code */
-		ROM_LOAD16_BYTE( "c11-07.55",  0x00000, 0x20000, 0x11d228b6 )
-		ROM_LOAD16_BYTE( "c11-08.39",  0x00001, 0x20000, 0xa79d4dca )
-		ROM_LOAD16_BYTE( "c11-06.54",  0x40000, 0x20000, 0x7c249894 )
-		ROM_LOAD16_BYTE( "c11-11.38",  0x40001, 0x20000, 0x263ecbf9 )
+	static RomLoadPtr rom_dondokdu = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x80000, REGION_CPU1, 0 );    /* 512k for 68000 code */
+		ROM_LOAD16_BYTE( "b95-12.bin",   0x00000, 0x20000, 0xd0fce87a );
+		ROM_LOAD16_BYTE( "b95-11-1.bin", 0x00001, 0x20000, 0xdad40cd3 );
+		ROM_LOAD16_BYTE( "b95-10.bin",   0x40000, 0x20000, 0xa46e1f0b );
+		ROM_LOAD16_BYTE( "b95-us.7",     0x40001, 0x20000, 0x350d2c65 );// needs correct name
 	
-		ROM_REGION( 0x080000, REGION_GFX1, ROMREGION_DISPOSE )	/* SCR */
-		ROM_LOAD( "c11-05.58", 0x00000, 0x80000, 0x733e6d8e )
+		ROM_REGION( 0x080000, REGION_GFX1, ROMREGION_DISPOSE );/* SCR */
+		ROM_LOAD( "b95-02.bin", 0x00000, 0x80000, 0x67b4e979 );
 	
-		ROM_REGION( 0x100000, REGION_GFX2, ROMREGION_DISPOSE )	/* OBJ */
-		ROM_LOAD16_BYTE( "c11-03.32", 0x00000, 0x80000, 0x46718c7a )
-		ROM_LOAD16_BYTE( "c11-04.31", 0x00001, 0x80000, 0x663f33cc )
+		ROM_REGION( 0x080000, REGION_GFX2, ROMREGION_DISPOSE );/* OBJ */
+		ROM_LOAD( "b95-01.bin", 0x00000, 0x80000, 0x51c176ce );
 	
-		ROM_REGION( 0x1c000, REGION_CPU2, 0 )	/* sound cpu */
-		ROM_LOAD( "c11-12.3", 0x00000, 0x04000, 0xb11094f1 )
-		ROM_CONTINUE(       0x10000, 0x0c000 )	/* banked stuff */
+		ROM_REGION( 0x080000, REGION_GFX3, ROMREGION_DISPOSE );/* pivot gfx */
+		ROM_LOAD( "b95-03.bin", 0x00000, 0x80000, 0x543aa0d1 );
 	
-		ROM_REGION( 0x80000, REGION_SOUND1, 0 )	/* ADPCM samples */
-		ROM_LOAD( "c11-01.29", 0x00000, 0x80000, 0xfd1ea532 )
+		ROM_REGION( 0x1c000, REGION_CPU2, 0 );     /* sound cpu */
+		ROM_LOAD( "b95-08.bin",  0x00000, 0x04000, 0xb5aa49e1 );
+		ROM_CONTINUE(            0x10000, 0x0c000 );/* banked stuff */
 	
-		ROM_REGION( 0x80000, REGION_SOUND2, 0 )	/* Delta-T samples */
-		ROM_LOAD( "c11-02.30", 0x00000, 0x80000, 0x451cc187 )
+		ROM_REGION( 0x80000, REGION_SOUND1, 0 );/* ADPCM samples */
+		ROM_LOAD( "b95-04.bin",  0x00000, 0x80000, 0xac4c1716 );
+	
+		/* no Delta-T samples */
+	ROM_END(); }}; 
+	
+	static RomLoadPtr rom_dondokdj = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x80000, REGION_CPU1, 0 );    /* 512k for 68000 code */
+		ROM_LOAD16_BYTE( "b95-12.bin",   0x00000, 0x20000, 0xd0fce87a );
+		ROM_LOAD16_BYTE( "b95-11-1.bin", 0x00001, 0x20000, 0xdad40cd3 );
+		ROM_LOAD16_BYTE( "b95-10.bin",   0x40000, 0x20000, 0xa46e1f0b );
+		ROM_LOAD16_BYTE( "b95-09.bin",   0x40001, 0x20000, 0xd8c86d39 );
+	
+		ROM_REGION( 0x080000, REGION_GFX1, ROMREGION_DISPOSE );/* SCR */
+		ROM_LOAD( "b95-02.bin", 0x00000, 0x80000, 0x67b4e979 );
+	
+		ROM_REGION( 0x080000, REGION_GFX2, ROMREGION_DISPOSE );/* OBJ */
+		ROM_LOAD( "b95-01.bin", 0x00000, 0x80000, 0x51c176ce );
+	
+		ROM_REGION( 0x080000, REGION_GFX3, ROMREGION_DISPOSE );/* pivot gfx */
+		ROM_LOAD( "b95-03.bin", 0x00000, 0x80000, 0x543aa0d1 );
+	
+		ROM_REGION( 0x1c000, REGION_CPU2, 0 );     /* sound cpu */
+		ROM_LOAD( "b95-08.bin",  0x00000, 0x04000, 0xb5aa49e1 );
+		ROM_CONTINUE(            0x10000, 0x0c000 );/* banked stuff */
+	
+		ROM_REGION( 0x80000, REGION_SOUND1, 0 );/* ADPCM samples */
+		ROM_LOAD( "b95-04.bin",  0x00000, 0x80000, 0xac4c1716 );
+	
+		/* no Delta-T samples */
+	ROM_END(); }}; 
+	
+	static RomLoadPtr rom_megab = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x80000, REGION_CPU1, 0 );    /* 256k for 68000 code */
+		ROM_LOAD16_BYTE( "c11-07.55",  0x00000, 0x20000, 0x11d228b6 );
+		ROM_LOAD16_BYTE( "c11-08.39",  0x00001, 0x20000, 0xa79d4dca );
+		ROM_LOAD16_BYTE( "c11-06.54",  0x40000, 0x20000, 0x7c249894 );
+		ROM_LOAD16_BYTE( "c11-11.38",  0x40001, 0x20000, 0x263ecbf9 );
+	
+		ROM_REGION( 0x080000, REGION_GFX1, ROMREGION_DISPOSE );/* SCR */
+		ROM_LOAD( "c11-05.58", 0x00000, 0x80000, 0x733e6d8e );
+	
+		ROM_REGION( 0x100000, REGION_GFX2, ROMREGION_DISPOSE );/* OBJ */
+		ROM_LOAD16_BYTE( "c11-03.32", 0x00000, 0x80000, 0x46718c7a );
+		ROM_LOAD16_BYTE( "c11-04.31", 0x00001, 0x80000, 0x663f33cc );
+	
+		ROM_REGION( 0x1c000, REGION_CPU2, 0 );/* sound cpu */
+		ROM_LOAD( "c11-12.3", 0x00000, 0x04000, 0xb11094f1 );
+		ROM_CONTINUE(       0x10000, 0x0c000 );/* banked stuff */
+	
+		ROM_REGION( 0x80000, REGION_SOUND1, 0 );/* ADPCM samples */
+		ROM_LOAD( "c11-01.29", 0x00000, 0x80000, 0xfd1ea532 );
+	
+		ROM_REGION( 0x80000, REGION_SOUND2, 0 );/* Delta-T samples */
+		ROM_LOAD( "c11-02.30", 0x00000, 0x80000, 0x451cc187 );
 	
 	//Pals  b89-01.8  b89-02.28  b89-04.27  c11-13.13  c11-14.23
-	ROM_END
+	ROM_END(); }}; 
 	
-	ROM_START( megabj )
-		ROM_REGION( 0x80000, REGION_CPU1, 0 )     /* 256k for 68000 code */
-		ROM_LOAD16_BYTE( "c11-07.55",  0x00000, 0x20000, 0x11d228b6 )	// c11-07.17
-		ROM_LOAD16_BYTE( "c11-08.39",  0x00001, 0x20000, 0xa79d4dca )	// c11-08.19
-		ROM_LOAD16_BYTE( "c11-06.54",  0x40000, 0x20000, 0x7c249894 )	// c11-06.16
-		ROM_LOAD16_BYTE( "c11-09.18",  0x40001, 0x20000, 0xc830aad5 )	// c11-09.18
+	static RomLoadPtr rom_megabj = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x80000, REGION_CPU1, 0 );    /* 256k for 68000 code */
+		ROM_LOAD16_BYTE( "c11-07.55",  0x00000, 0x20000, 0x11d228b6 );// c11-07.17
+		ROM_LOAD16_BYTE( "c11-08.39",  0x00001, 0x20000, 0xa79d4dca );// c11-08.19
+		ROM_LOAD16_BYTE( "c11-06.54",  0x40000, 0x20000, 0x7c249894 );// c11-06.16
+		ROM_LOAD16_BYTE( "c11-09.18",  0x40001, 0x20000, 0xc830aad5 );// c11-09.18
 	
-		ROM_REGION( 0x080000, REGION_GFX1, ROMREGION_DISPOSE )	/* SCR */
-		ROM_LOAD( "c11-05.58", 0x00000, 0x80000, 0x733e6d8e )
+		ROM_REGION( 0x080000, REGION_GFX1, ROMREGION_DISPOSE );/* SCR */
+		ROM_LOAD( "c11-05.58", 0x00000, 0x80000, 0x733e6d8e );
 	
-		ROM_REGION( 0x100000, REGION_GFX2, ROMREGION_DISPOSE )	/* OBJ */
-		ROM_LOAD16_BYTE( "c11-03.32", 0x00000, 0x80000, 0x46718c7a )
-		ROM_LOAD16_BYTE( "c11-04.31", 0x00001, 0x80000, 0x663f33cc )
+		ROM_REGION( 0x100000, REGION_GFX2, ROMREGION_DISPOSE );/* OBJ */
+		ROM_LOAD16_BYTE( "c11-03.32", 0x00000, 0x80000, 0x46718c7a );
+		ROM_LOAD16_BYTE( "c11-04.31", 0x00001, 0x80000, 0x663f33cc );
 	
-		ROM_REGION( 0x1c000, REGION_CPU2, 0 )	/* sound cpu */
-		ROM_LOAD( "c11-12.3", 0x00000, 0x04000, 0xb11094f1 )
-		ROM_CONTINUE(       0x10000, 0x0c000 )	/* banked stuff */
+		ROM_REGION( 0x1c000, REGION_CPU2, 0 );/* sound cpu */
+		ROM_LOAD( "c11-12.3", 0x00000, 0x04000, 0xb11094f1 );
+		ROM_CONTINUE(       0x10000, 0x0c000 );/* banked stuff */
 	
-		ROM_REGION( 0x80000, REGION_SOUND1, 0 )	/* ADPCM samples */
-		ROM_LOAD( "c11-01.29", 0x00000, 0x80000, 0xfd1ea532 )
+		ROM_REGION( 0x80000, REGION_SOUND1, 0 );/* ADPCM samples */
+		ROM_LOAD( "c11-01.29", 0x00000, 0x80000, 0xfd1ea532 );
 	
-		ROM_REGION( 0x80000, REGION_SOUND2, 0 )	/* Delta-T samples */
-		ROM_LOAD( "c11-02.30", 0x00000, 0x80000, 0x451cc187 )
-	ROM_END
+		ROM_REGION( 0x80000, REGION_SOUND2, 0 );/* Delta-T samples */
+		ROM_LOAD( "c11-02.30", 0x00000, 0x80000, 0x451cc187 );
+	ROM_END(); }}; 
 	
-	ROM_START( thundfox )		/* Thunder Fox */
-		ROM_REGION( 0x80000, REGION_CPU1, 0 )     /* 512k for 68000 code */
-		ROM_LOAD16_BYTE( "c28-13-1.51",  0x00000, 0x20000, 0xacb07013 )
-		ROM_LOAD16_BYTE( "c28-16-1.40",  0x00001, 0x20000, 0x1e43d55b )
-		ROM_LOAD16_BYTE( "c28-08.50",    0x40000, 0x20000, 0x38e038f1 )
-		ROM_LOAD16_BYTE( "c28-07.39",    0x40001, 0x20000, 0x24419abb )
+	static RomLoadPtr rom_thundfox = new RomLoadPtr(){ public void handler(){ 		/* Thunder Fox */
+		ROM_REGION( 0x80000, REGION_CPU1, 0 );    /* 512k for 68000 code */
+		ROM_LOAD16_BYTE( "c28-13-1.51",  0x00000, 0x20000, 0xacb07013 );
+		ROM_LOAD16_BYTE( "c28-16-1.40",  0x00001, 0x20000, 0x1e43d55b );
+		ROM_LOAD16_BYTE( "c28-08.50",    0x40000, 0x20000, 0x38e038f1 );
+		ROM_LOAD16_BYTE( "c28-07.39",    0x40001, 0x20000, 0x24419abb );
 	
-		ROM_REGION( 0x080000, REGION_GFX1, ROMREGION_DISPOSE )	/* SCR */
-		ROM_LOAD( "c28-02.61", 0x000000, 0x80000, 0x6230a09d )	/* TC0100SCN #1 */
+		ROM_REGION( 0x080000, REGION_GFX1, ROMREGION_DISPOSE );/* SCR */
+		ROM_LOAD( "c28-02.61", 0x000000, 0x80000, 0x6230a09d );/* TC0100SCN #1 */
 	
-		ROM_REGION( 0x100000, REGION_GFX2, ROMREGION_DISPOSE )	/* OBJ */
-		ROM_LOAD16_BYTE( "c28-03.29", 0x00000, 0x80000, 0x51bdc7af )
-		ROM_LOAD16_BYTE( "c28-04.28", 0x00001, 0x80000, 0xba7ed535 )
+		ROM_REGION( 0x100000, REGION_GFX2, ROMREGION_DISPOSE );/* OBJ */
+		ROM_LOAD16_BYTE( "c28-03.29", 0x00000, 0x80000, 0x51bdc7af );
+		ROM_LOAD16_BYTE( "c28-04.28", 0x00001, 0x80000, 0xba7ed535 );
 	
-		ROM_REGION( 0x080000, REGION_GFX3, ROMREGION_DISPOSE )	/* SCR */
-		ROM_LOAD( "c28-01.63", 0x000000, 0x80000, 0x44552b25 )	/* TC0100SCN #2 */
+		ROM_REGION( 0x080000, REGION_GFX3, ROMREGION_DISPOSE );/* SCR */
+		ROM_LOAD( "c28-01.63", 0x000000, 0x80000, 0x44552b25 );/* TC0100SCN #2 */
 	
-		ROM_REGION( 0x1c000, REGION_CPU2, 0 )      /* sound cpu */
-		ROM_LOAD( "c28-14.3",  0x00000, 0x04000, 0x45ef3616 )
-		ROM_CONTINUE(          0x10000, 0x0c000 ) /* banked stuff */
+		ROM_REGION( 0x1c000, REGION_CPU2, 0 );     /* sound cpu */
+		ROM_LOAD( "c28-14.3",  0x00000, 0x04000, 0x45ef3616 );
+		ROM_CONTINUE(          0x10000, 0x0c000 );/* banked stuff */
 	
-		ROM_REGION( 0x80000, REGION_SOUND1, 0 )	/* ADPCM samples */
-		ROM_LOAD( "c28-06.41", 0x00000, 0x80000, 0xdb6983db )
+		ROM_REGION( 0x80000, REGION_SOUND1, 0 );/* ADPCM samples */
+		ROM_LOAD( "c28-06.41", 0x00000, 0x80000, 0xdb6983db );
 	
-		ROM_REGION( 0x80000, REGION_SOUND2, 0 )	/* Delta-T samples */
-		ROM_LOAD( "c28-05.42", 0x00000, 0x80000, 0xd3b238fa )
-	
-	// Pals: c28-09.25  c28-10.26  c28-11.35  b89-01.19  b89-03.37  b89-04.33
-	ROM_END
-	
-	ROM_START( thndfoxu )		/* Thunder Fox */
-		ROM_REGION( 0x80000, REGION_CPU1, 0 )     /* 512k for 68000 code */
-		ROM_LOAD16_BYTE( "c28-13-1.51",  0x00000, 0x20000, 0xacb07013 )
-		ROM_LOAD16_BYTE( "c28-15-1.40",  0x00001, 0x20000, 0x874a84e1 )
-		ROM_LOAD16_BYTE( "c28-08.50",    0x40000, 0x20000, 0x38e038f1 )
-		ROM_LOAD16_BYTE( "c28-07.39",    0x40001, 0x20000, 0x24419abb )
-	
-		ROM_REGION( 0x080000, REGION_GFX1, ROMREGION_DISPOSE )	/* SCR */
-		ROM_LOAD( "c28-02.61", 0x000000, 0x80000, 0x6230a09d )	/* TC0100SCN #1 */
-	
-		ROM_REGION( 0x100000, REGION_GFX2, ROMREGION_DISPOSE )	/* OBJ */
-		ROM_LOAD16_BYTE( "c28-03.29", 0x00000, 0x80000, 0x51bdc7af )
-		ROM_LOAD16_BYTE( "c28-04.28", 0x00001, 0x80000, 0xba7ed535 )
-	
-		ROM_REGION( 0x080000, REGION_GFX3, ROMREGION_DISPOSE )	/* SCR */
-		ROM_LOAD( "c28-01.63", 0x000000, 0x80000, 0x44552b25 )	/* TC0100SCN #2 */
-	
-		ROM_REGION( 0x1c000, REGION_CPU2, 0 )      /* sound cpu */
-		ROM_LOAD( "c28-14.3",  0x00000, 0x04000, 0x45ef3616 )
-		ROM_CONTINUE(          0x10000, 0x0c000 ) /* banked stuff */
-	
-		ROM_REGION( 0x80000, REGION_SOUND1, 0 )	/* ADPCM samples */
-		ROM_LOAD( "c28-06.41", 0x00000, 0x80000, 0xdb6983db )
-	
-		ROM_REGION( 0x80000, REGION_SOUND2, 0 )	/* Delta-T samples */
-		ROM_LOAD( "c28-05.42", 0x00000, 0x80000, 0xd3b238fa )
+		ROM_REGION( 0x80000, REGION_SOUND2, 0 );/* Delta-T samples */
+		ROM_LOAD( "c28-05.42", 0x00000, 0x80000, 0xd3b238fa );
 	
 	// Pals: c28-09.25  c28-10.26  c28-11.35  b89-01.19  b89-03.37  b89-04.33
-	ROM_END
+	ROM_END(); }}; 
 	
-	ROM_START( thndfoxj )		/* Thunder Fox */
-		ROM_REGION( 0x80000, REGION_CPU1, 0 )     /* 512k for 68000 code */
-		ROM_LOAD16_BYTE( "c28-13-1.51",  0x00000, 0x20000, 0xacb07013 )
-		ROM_LOAD16_BYTE( "c28-12-1.40",  0x00001, 0x20000, 0xf04db477 )
-		ROM_LOAD16_BYTE( "c28-08.50",    0x40000, 0x20000, 0x38e038f1 )
-		ROM_LOAD16_BYTE( "c28-07.39",    0x40001, 0x20000, 0x24419abb )
+	static RomLoadPtr rom_thndfoxu = new RomLoadPtr(){ public void handler(){ 		/* Thunder Fox */
+		ROM_REGION( 0x80000, REGION_CPU1, 0 );    /* 512k for 68000 code */
+		ROM_LOAD16_BYTE( "c28-13-1.51",  0x00000, 0x20000, 0xacb07013 );
+		ROM_LOAD16_BYTE( "c28-15-1.40",  0x00001, 0x20000, 0x874a84e1 );
+		ROM_LOAD16_BYTE( "c28-08.50",    0x40000, 0x20000, 0x38e038f1 );
+		ROM_LOAD16_BYTE( "c28-07.39",    0x40001, 0x20000, 0x24419abb );
 	
-		ROM_REGION( 0x080000, REGION_GFX1, ROMREGION_DISPOSE )	/* SCR */
-		ROM_LOAD( "c28-02.61", 0x000000, 0x80000, 0x6230a09d )	/* TC0100SCN #1 */
+		ROM_REGION( 0x080000, REGION_GFX1, ROMREGION_DISPOSE );/* SCR */
+		ROM_LOAD( "c28-02.61", 0x000000, 0x80000, 0x6230a09d );/* TC0100SCN #1 */
 	
-		ROM_REGION( 0x100000, REGION_GFX2, ROMREGION_DISPOSE )	/* OBJ */
-		ROM_LOAD16_BYTE( "c28-03.29", 0x00000, 0x80000, 0x51bdc7af )
-		ROM_LOAD16_BYTE( "c28-04.28", 0x00001, 0x80000, 0xba7ed535 )
+		ROM_REGION( 0x100000, REGION_GFX2, ROMREGION_DISPOSE );/* OBJ */
+		ROM_LOAD16_BYTE( "c28-03.29", 0x00000, 0x80000, 0x51bdc7af );
+		ROM_LOAD16_BYTE( "c28-04.28", 0x00001, 0x80000, 0xba7ed535 );
 	
-		ROM_REGION( 0x080000, REGION_GFX3, ROMREGION_DISPOSE )	/* SCR */
-		ROM_LOAD( "c28-01.63", 0x000000, 0x80000, 0x44552b25 )	/* TC0100SCN #2 */
+		ROM_REGION( 0x080000, REGION_GFX3, ROMREGION_DISPOSE );/* SCR */
+		ROM_LOAD( "c28-01.63", 0x000000, 0x80000, 0x44552b25 );/* TC0100SCN #2 */
 	
-		ROM_REGION( 0x1c000, REGION_CPU2, 0 )      /* sound cpu */
-		ROM_LOAD( "c28-14.3",  0x00000, 0x04000, 0x45ef3616 )
-		ROM_CONTINUE(          0x10000, 0x0c000 ) /* banked stuff */
+		ROM_REGION( 0x1c000, REGION_CPU2, 0 );     /* sound cpu */
+		ROM_LOAD( "c28-14.3",  0x00000, 0x04000, 0x45ef3616 );
+		ROM_CONTINUE(          0x10000, 0x0c000 );/* banked stuff */
 	
-		ROM_REGION( 0x80000, REGION_SOUND1, 0 )	/* ADPCM samples */
-		ROM_LOAD( "c28-06.41", 0x00000, 0x80000, 0xdb6983db )
+		ROM_REGION( 0x80000, REGION_SOUND1, 0 );/* ADPCM samples */
+		ROM_LOAD( "c28-06.41", 0x00000, 0x80000, 0xdb6983db );
 	
-		ROM_REGION( 0x80000, REGION_SOUND2, 0 )	/* Delta-T samples */
-		ROM_LOAD( "c28-05.42", 0x00000, 0x80000, 0xd3b238fa )
-	ROM_END
+		ROM_REGION( 0x80000, REGION_SOUND2, 0 );/* Delta-T samples */
+		ROM_LOAD( "c28-05.42", 0x00000, 0x80000, 0xd3b238fa );
 	
-	ROM_START( cameltry )
-		ROM_REGION( 0x40000, REGION_CPU1, 0 )     /* 256k for 68000 code */
-		ROM_LOAD16_BYTE( "c38-11", 0x00000, 0x20000, 0xbe172da0 )
-		ROM_LOAD16_BYTE( "c38-14", 0x00001, 0x20000, 0xffa430de )
+	// Pals: c28-09.25  c28-10.26  c28-11.35  b89-01.19  b89-03.37  b89-04.33
+	ROM_END(); }}; 
 	
-		ROM_REGION( 0x100000, REGION_GFX1, ROMREGION_DISPOSE )
+	static RomLoadPtr rom_thndfoxj = new RomLoadPtr(){ public void handler(){ 		/* Thunder Fox */
+		ROM_REGION( 0x80000, REGION_CPU1, 0 );    /* 512k for 68000 code */
+		ROM_LOAD16_BYTE( "c28-13-1.51",  0x00000, 0x20000, 0xacb07013 );
+		ROM_LOAD16_BYTE( "c28-12-1.40",  0x00001, 0x20000, 0xf04db477 );
+		ROM_LOAD16_BYTE( "c28-08.50",    0x40000, 0x20000, 0x38e038f1 );
+		ROM_LOAD16_BYTE( "c28-07.39",    0x40001, 0x20000, 0x24419abb );
+	
+		ROM_REGION( 0x080000, REGION_GFX1, ROMREGION_DISPOSE );/* SCR */
+		ROM_LOAD( "c28-02.61", 0x000000, 0x80000, 0x6230a09d );/* TC0100SCN #1 */
+	
+		ROM_REGION( 0x100000, REGION_GFX2, ROMREGION_DISPOSE );/* OBJ */
+		ROM_LOAD16_BYTE( "c28-03.29", 0x00000, 0x80000, 0x51bdc7af );
+		ROM_LOAD16_BYTE( "c28-04.28", 0x00001, 0x80000, 0xba7ed535 );
+	
+		ROM_REGION( 0x080000, REGION_GFX3, ROMREGION_DISPOSE );/* SCR */
+		ROM_LOAD( "c28-01.63", 0x000000, 0x80000, 0x44552b25 );/* TC0100SCN #2 */
+	
+		ROM_REGION( 0x1c000, REGION_CPU2, 0 );     /* sound cpu */
+		ROM_LOAD( "c28-14.3",  0x00000, 0x04000, 0x45ef3616 );
+		ROM_CONTINUE(          0x10000, 0x0c000 );/* banked stuff */
+	
+		ROM_REGION( 0x80000, REGION_SOUND1, 0 );/* ADPCM samples */
+		ROM_LOAD( "c28-06.41", 0x00000, 0x80000, 0xdb6983db );
+	
+		ROM_REGION( 0x80000, REGION_SOUND2, 0 );/* Delta-T samples */
+		ROM_LOAD( "c28-05.42", 0x00000, 0x80000, 0xd3b238fa );
+	ROM_END(); }}; 
+	
+	static RomLoadPtr rom_cameltry = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x40000, REGION_CPU1, 0 );    /* 256k for 68000 code */
+		ROM_LOAD16_BYTE( "c38-11", 0x00000, 0x20000, 0xbe172da0 );
+		ROM_LOAD16_BYTE( "c38-14", 0x00001, 0x20000, 0xffa430de );
+	
+		ROM_REGION( 0x100000, REGION_GFX1, ROMREGION_DISPOSE );
 		/* empty! */
 	
-		ROM_REGION( 0x080000, REGION_GFX2, ROMREGION_DISPOSE )	/* OBJ */
-		ROM_LOAD( "c38-01.bin", 0x00000, 0x80000, 0xc170ff36 )
+		ROM_REGION( 0x080000, REGION_GFX2, ROMREGION_DISPOSE );/* OBJ */
+		ROM_LOAD( "c38-01.bin", 0x00000, 0x80000, 0xc170ff36 );
 	
-		ROM_REGION( 0x080000, REGION_GFX3, ROMREGION_DISPOSE )	/* pivot gfx */
-		ROM_LOAD( "c38-02.bin", 0x00000, 0x20000, 0x1a11714b )
+		ROM_REGION( 0x080000, REGION_GFX3, ROMREGION_DISPOSE );/* pivot gfx */
+		ROM_LOAD( "c38-02.bin", 0x00000, 0x20000, 0x1a11714b );
 	
-		ROM_REGION( 0x1c000, REGION_CPU2, 0 )      /* sound cpu */
-		ROM_LOAD( "c38-08.bin", 0x00000, 0x04000, 0x7ff78873 )
-		ROM_CONTINUE(           0x10000, 0x0c000 ) /* banked stuff */
+		ROM_REGION( 0x1c000, REGION_CPU2, 0 );     /* sound cpu */
+		ROM_LOAD( "c38-08.bin", 0x00000, 0x04000, 0x7ff78873 );
+		ROM_CONTINUE(           0x10000, 0x0c000 );/* banked stuff */
 	
-		ROM_REGION( 0x100000, REGION_SOUND1, 0 )	/* ADPCM samples */
-		ROM_LOAD( "c38-03.bin", 0x000000, 0x020000, 0x59fa59a7 )
+		ROM_REGION( 0x100000, REGION_SOUND1, 0 );/* ADPCM samples */
+		ROM_LOAD( "c38-03.bin", 0x000000, 0x020000, 0x59fa59a7 );
 	
 		/* no Delta-T samples */
-	ROM_END
+	ROM_END(); }}; 
 	
-	ROM_START( camltrua )
-		ROM_REGION( 0x40000, REGION_CPU1, 0 )     /* 256k for 68000 code */
-		ROM_LOAD16_BYTE( "c38-11", 0x00000, 0x20000, 0xbe172da0 )
-		ROM_LOAD16_BYTE( "c38-14", 0x00001, 0x20000, 0xffa430de )
+	static RomLoadPtr rom_camltrua = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x40000, REGION_CPU1, 0 );    /* 256k for 68000 code */
+		ROM_LOAD16_BYTE( "c38-11", 0x00000, 0x20000, 0xbe172da0 );
+		ROM_LOAD16_BYTE( "c38-14", 0x00001, 0x20000, 0xffa430de );
 	
-		ROM_REGION( 0x100000, REGION_GFX1, ROMREGION_DISPOSE )
+		ROM_REGION( 0x100000, REGION_GFX1, ROMREGION_DISPOSE );
 		/* empty! */
 	
-		ROM_REGION( 0x080000, REGION_GFX2, ROMREGION_DISPOSE )	/* OBJ */
-		ROM_LOAD( "c38-01.bin", 0x00000, 0x80000, 0xc170ff36 )
+		ROM_REGION( 0x080000, REGION_GFX2, ROMREGION_DISPOSE );/* OBJ */
+		ROM_LOAD( "c38-01.bin", 0x00000, 0x80000, 0xc170ff36 );
 	
-		ROM_REGION( 0x080000, REGION_GFX3, ROMREGION_DISPOSE )	/* pivot gfx */
-		ROM_LOAD( "c38-02.bin", 0x00000, 0x20000, 0x1a11714b )
+		ROM_REGION( 0x080000, REGION_GFX3, ROMREGION_DISPOSE );/* pivot gfx */
+		ROM_LOAD( "c38-02.bin", 0x00000, 0x20000, 0x1a11714b );
 	
-		ROM_REGION( 0x1c000, REGION_CPU2, 0 )      /* sound cpu (revised prog!?) */
-		ROM_LOAD( "c38-us.15", 0x00000, 0x10000, 0x0e60faac )
+		ROM_REGION( 0x1c000, REGION_CPU2, 0 );     /* sound cpu (revised prog!?) */
+		ROM_LOAD( "c38-us.15", 0x00000, 0x10000, 0x0e60faac );
 	
-		ROM_REGION( 0x100000, REGION_SOUND1, 0 )	/* ADPCM samples */
-		ROM_LOAD( "c38-03.bin", 0x000000, 0x020000, 0x59fa59a7 )
+		ROM_REGION( 0x100000, REGION_SOUND1, 0 );/* ADPCM samples */
+		ROM_LOAD( "c38-03.bin", 0x000000, 0x020000, 0x59fa59a7 );
 	
 		/* no Delta-T samples */
-	ROM_END
+	ROM_END(); }}; 
 	
-	ROM_START( cameltrj )
-		ROM_REGION( 0x40000, REGION_CPU1, 0 )     /* 256k for 68000 code */
-		ROM_LOAD16_BYTE( "c38-09.bin", 0x00000, 0x20000, 0x2ae01120 )
-		ROM_LOAD16_BYTE( "c38-10.bin", 0x00001, 0x20000, 0x48d8ff56 )
+	static RomLoadPtr rom_cameltrj = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x40000, REGION_CPU1, 0 );    /* 256k for 68000 code */
+		ROM_LOAD16_BYTE( "c38-09.bin", 0x00000, 0x20000, 0x2ae01120 );
+		ROM_LOAD16_BYTE( "c38-10.bin", 0x00001, 0x20000, 0x48d8ff56 );
 	
-		ROM_REGION( 0x100000, REGION_GFX1, ROMREGION_DISPOSE )
+		ROM_REGION( 0x100000, REGION_GFX1, ROMREGION_DISPOSE );
 		/* empty! */
 	
-		ROM_REGION( 0x080000, REGION_GFX2, ROMREGION_DISPOSE )	/* OBJ */
-		ROM_LOAD( "c38-01.bin", 0x00000, 0x80000, 0xc170ff36 )
+		ROM_REGION( 0x080000, REGION_GFX2, ROMREGION_DISPOSE );/* OBJ */
+		ROM_LOAD( "c38-01.bin", 0x00000, 0x80000, 0xc170ff36 );
 	
-		ROM_REGION( 0x080000, REGION_GFX3, ROMREGION_DISPOSE )	/* pivot gfx */
-		ROM_LOAD( "c38-02.bin", 0x00000, 0x20000, 0x1a11714b )
+		ROM_REGION( 0x080000, REGION_GFX3, ROMREGION_DISPOSE );/* pivot gfx */
+		ROM_LOAD( "c38-02.bin", 0x00000, 0x20000, 0x1a11714b );
 	
-		ROM_REGION( 0x1c000, REGION_CPU2, 0 )      /* sound cpu */
-		ROM_LOAD( "c38-08.bin", 0x00000, 0x04000, 0x7ff78873 )
-		ROM_CONTINUE(           0x10000, 0x0c000 ) /* banked stuff */
+		ROM_REGION( 0x1c000, REGION_CPU2, 0 );     /* sound cpu */
+		ROM_LOAD( "c38-08.bin", 0x00000, 0x04000, 0x7ff78873 );
+		ROM_CONTINUE(           0x10000, 0x0c000 );/* banked stuff */
 	
-		ROM_REGION( 0x100000, REGION_SOUND1, 0 )	/* ADPCM samples */
-		ROM_LOAD( "c38-03.bin", 0x000000, 0x020000, 0x59fa59a7 )
+		ROM_REGION( 0x100000, REGION_SOUND1, 0 );/* ADPCM samples */
+		ROM_LOAD( "c38-03.bin", 0x000000, 0x020000, 0x59fa59a7 );
 	
 		/* no Delta-T samples */
-	ROM_END
+	ROM_END(); }}; 
 	
-	ROM_START( qtorimon )	/* Quiz Torimonochou */
-		ROM_REGION( 0x80000, REGION_CPU1, 0 )     /* 256k for 68000 code */
-		ROM_LOAD16_BYTE( "c41-04.bin",  0x00000, 0x20000, 0x0fbf5223 )
-		ROM_LOAD16_BYTE( "c41-05.bin",  0x00001, 0x20000, 0x174bd5db )
-		ROM_LOAD16_BYTE( "mask-51.bin", 0x40000, 0x20000, 0x12e14aca ) /* char defs, read by cpu */
-		ROM_LOAD16_BYTE( "mask-52.bin", 0x40001, 0X20000, 0xb3ef66f3 ) /* char defs, read by cpu */
+	static RomLoadPtr rom_qtorimon = new RomLoadPtr(){ public void handler(){ 	/* Quiz Torimonochou */
+		ROM_REGION( 0x80000, REGION_CPU1, 0 );    /* 256k for 68000 code */
+		ROM_LOAD16_BYTE( "c41-04.bin",  0x00000, 0x20000, 0x0fbf5223 );
+		ROM_LOAD16_BYTE( "c41-05.bin",  0x00001, 0x20000, 0x174bd5db );
+		ROM_LOAD16_BYTE( "mask-51.bin", 0x40000, 0x20000, 0x12e14aca );/* char defs, read by cpu */
+		ROM_LOAD16_BYTE( "mask-52.bin", 0x40001, 0X20000, 0xb3ef66f3 );/* char defs, read by cpu */
 	
-		ROM_REGION( 0x100000, REGION_GFX1, ROMREGION_DISPOSE )
+		ROM_REGION( 0x100000, REGION_GFX1, ROMREGION_DISPOSE );
 		/* empty! */
 	
-		ROM_REGION( 0x040000, REGION_GFX2, ROMREGION_DISPOSE )	/* OBJ */
-		ROM_LOAD16_BYTE( "c41-02.bin",  0x00000, 0x20000, 0x05dcd36d )
-		ROM_LOAD16_BYTE( "c41-01.bin",  0x00001, 0x20000, 0x39ff043c )
+		ROM_REGION( 0x040000, REGION_GFX2, ROMREGION_DISPOSE );/* OBJ */
+		ROM_LOAD16_BYTE( "c41-02.bin",  0x00000, 0x20000, 0x05dcd36d );
+		ROM_LOAD16_BYTE( "c41-01.bin",  0x00001, 0x20000, 0x39ff043c );
 	
-		ROM_REGION( 0x1c000, REGION_CPU2, 0 )      /* sound cpu */
-		ROM_LOAD( "c41-06.bin",    0x00000, 0x04000, 0x753a98d8 )
-		ROM_CONTINUE(          0x10000, 0x0c000 ) /* banked stuff */
+		ROM_REGION( 0x1c000, REGION_CPU2, 0 );     /* sound cpu */
+		ROM_LOAD( "c41-06.bin",    0x00000, 0x04000, 0x753a98d8 );
+		ROM_CONTINUE(          0x10000, 0x0c000 );/* banked stuff */
 	
-		ROM_REGION( 0x080000, REGION_SOUND1, 0 )	/* ADPCM samples */
-		ROM_LOAD( "c41-03.bin",  0x000000, 0x020000, 0xb2c18e89 )
-	
-		/* no Delta-T samples */
-	ROM_END
-	
-	ROM_START( liquidk )
-		ROM_REGION( 0x80000, REGION_CPU1, 0 )     /* 512k for 68000 code */
-		ROM_LOAD16_BYTE( "c49_09.12",  0x00000, 0x20000, 0x6ae09eb9 )
-		ROM_LOAD16_BYTE( "c49_11.14",  0x00001, 0x20000, 0x42d2be6e )
-		ROM_LOAD16_BYTE( "c49_10.13",  0x40000, 0x20000, 0x50bef2e0 )
-		ROM_LOAD16_BYTE( "c49_12.15",  0x40001, 0x20000, 0xcb16bad5 )
-	
-		ROM_REGION( 0x080000, REGION_GFX1, ROMREGION_DISPOSE )	/* SCR */
-		ROM_LOAD( "lk_scr.bin",  0x00000, 0x80000, 0xc3364f9b )
-	
-		ROM_REGION( 0x100000, REGION_GFX2, ROMREGION_DISPOSE )	/* OBJ */
-		ROM_LOAD( "lk_obj0.bin", 0x00000, 0x80000, 0x67cc3163 )
-		ROM_LOAD( "lk_obj1.bin", 0x80000, 0x80000, 0xd2400710 )
-	
-		ROM_REGION( 0x1c000, REGION_CPU2, 0 )		/* sound cpu */
-		ROM_LOAD( "c49_08.9",    0x00000, 0x04000, 0x413c310c )
-		ROM_CONTINUE(            0x10000, 0x0c000 )	/* banked stuff */
-	
-		ROM_REGION( 0x80000, REGION_SOUND1, 0 )	/* ADPCM samples */
-		ROM_LOAD( "lk_snd.bin",  0x00000, 0x80000, 0x474d45a4 )
+		ROM_REGION( 0x080000, REGION_SOUND1, 0 );/* ADPCM samples */
+		ROM_LOAD( "c41-03.bin",  0x000000, 0x020000, 0xb2c18e89 );
 	
 		/* no Delta-T samples */
-	ROM_END
+	ROM_END(); }}; 
 	
-	ROM_START( liquidku )
-		ROM_REGION( 0x80000, REGION_CPU1, 0 )     /* 512k for 68000 code */
-		ROM_LOAD16_BYTE( "c49_09.12",  0x00000, 0x20000, 0x6ae09eb9 )
-		ROM_LOAD16_BYTE( "c49_11.14",  0x00001, 0x20000, 0x42d2be6e )
-		ROM_LOAD16_BYTE( "c49_10.13",  0x40000, 0x20000, 0x50bef2e0 )
-		ROM_LOAD16_BYTE( "c49_14.15",  0x40001, 0x20000, 0xbc118a43 )
+	static RomLoadPtr rom_liquidk = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x80000, REGION_CPU1, 0 );    /* 512k for 68000 code */
+		ROM_LOAD16_BYTE( "c49_09.12",  0x00000, 0x20000, 0x6ae09eb9 );
+		ROM_LOAD16_BYTE( "c49_11.14",  0x00001, 0x20000, 0x42d2be6e );
+		ROM_LOAD16_BYTE( "c49_10.13",  0x40000, 0x20000, 0x50bef2e0 );
+		ROM_LOAD16_BYTE( "c49_12.15",  0x40001, 0x20000, 0xcb16bad5 );
 	
-		ROM_REGION( 0x080000, REGION_GFX1, ROMREGION_DISPOSE )	/* SCR */
-		ROM_LOAD( "lk_scr.bin",  0x00000, 0x80000, 0xc3364f9b )
+		ROM_REGION( 0x080000, REGION_GFX1, ROMREGION_DISPOSE );/* SCR */
+		ROM_LOAD( "lk_scr.bin",  0x00000, 0x80000, 0xc3364f9b );
 	
-		ROM_REGION( 0x100000, REGION_GFX2, ROMREGION_DISPOSE )	/* OBJ */
-		ROM_LOAD( "lk_obj0.bin", 0x00000, 0x80000, 0x67cc3163 )
-		ROM_LOAD( "lk_obj1.bin", 0x80000, 0x80000, 0xd2400710 )
+		ROM_REGION( 0x100000, REGION_GFX2, ROMREGION_DISPOSE );/* OBJ */
+		ROM_LOAD( "lk_obj0.bin", 0x00000, 0x80000, 0x67cc3163 );
+		ROM_LOAD( "lk_obj1.bin", 0x80000, 0x80000, 0xd2400710 );
 	
-		ROM_REGION( 0x1c000, REGION_CPU2, 0 )		/* sound cpu */
-		ROM_LOAD( "c49_08.9",    0x00000, 0x04000, 0x413c310c )
-		ROM_CONTINUE(            0x10000, 0x0c000 )	/* banked stuff */
+		ROM_REGION( 0x1c000, REGION_CPU2, 0 );	/* sound cpu */
+		ROM_LOAD( "c49_08.9",    0x00000, 0x04000, 0x413c310c );
+		ROM_CONTINUE(            0x10000, 0x0c000 );/* banked stuff */
 	
-		ROM_REGION( 0x80000, REGION_SOUND1, 0 )	/* ADPCM samples */
-		ROM_LOAD( "lk_snd.bin",  0x00000, 0x80000, 0x474d45a4 )
-	
-		/* no Delta-T samples */
-	ROM_END
-	
-	ROM_START( mizubaku )
-		ROM_REGION( 0x80000, REGION_CPU1, 0 )     /* 512k for 68000 code */
-		ROM_LOAD16_BYTE( "c49_09.12",  0x00000, 0x20000, 0x6ae09eb9 )
-		ROM_LOAD16_BYTE( "c49_11.14",  0x00001, 0x20000, 0x42d2be6e )
-		ROM_LOAD16_BYTE( "c49_10.13",  0x40000, 0x20000, 0x50bef2e0 )
-		ROM_LOAD16_BYTE( "c49_13.15",  0x40001, 0x20000, 0x2518dbf9 )
-	
-		ROM_REGION( 0x080000, REGION_GFX1, ROMREGION_DISPOSE )	/* SCR */
-		ROM_LOAD( "lk_scr.bin",  0x00000, 0x80000, 0xc3364f9b )
-	
-		ROM_REGION( 0x100000, REGION_GFX2, ROMREGION_DISPOSE )	/* OBJ */
-		ROM_LOAD( "lk_obj0.bin", 0x00000, 0x80000, 0x67cc3163 )
-		ROM_LOAD( "lk_obj1.bin", 0x80000, 0x80000, 0xd2400710 )
-	
-		ROM_REGION( 0x1c000, REGION_CPU2, 0 )		/* sound cpu */
-		ROM_LOAD( "c49_08.9",    0x00000, 0x04000, 0x413c310c )
-		ROM_CONTINUE(            0x10000, 0x0c000 )	/* banked stuff */
-	
-		ROM_REGION( 0x80000, REGION_SOUND1, 0 )	/* ADPCM samples */
-		ROM_LOAD( "lk_snd.bin",  0x00000, 0x80000, 0x474d45a4 )
+		ROM_REGION( 0x80000, REGION_SOUND1, 0 );/* ADPCM samples */
+		ROM_LOAD( "lk_snd.bin",  0x00000, 0x80000, 0x474d45a4 );
 	
 		/* no Delta-T samples */
-	ROM_END
+	ROM_END(); }}; 
 	
-	ROM_START( quizhq )	/* Quiz HQ */
-		ROM_REGION( 0xc0000, REGION_CPU1, 0 )     /* 256k for 68000 code */
-		ROM_LOAD16_BYTE( "c53-05.bin",  0x00000, 0x20000, 0xc798fc20 )
-		ROM_LOAD16_BYTE( "c53-01.bin",  0x00001, 0x20000, 0xbf44c93e )
-		ROM_LOAD16_BYTE( "c53-52.bin",  0x80000, 0x20000, 0x12e14aca ) /* char defs, read by cpu */
-		ROM_LOAD16_BYTE( "c53-51.bin",  0x80001, 0X20000, 0xb3ef66f3 ) /* char defs, read by cpu */
+	static RomLoadPtr rom_liquidku = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x80000, REGION_CPU1, 0 );    /* 512k for 68000 code */
+		ROM_LOAD16_BYTE( "c49_09.12",  0x00000, 0x20000, 0x6ae09eb9 );
+		ROM_LOAD16_BYTE( "c49_11.14",  0x00001, 0x20000, 0x42d2be6e );
+		ROM_LOAD16_BYTE( "c49_10.13",  0x40000, 0x20000, 0x50bef2e0 );
+		ROM_LOAD16_BYTE( "c49_14.15",  0x40001, 0x20000, 0xbc118a43 );
 	
-		ROM_REGION( 0x100000, REGION_GFX1, ROMREGION_DISPOSE )
+		ROM_REGION( 0x080000, REGION_GFX1, ROMREGION_DISPOSE );/* SCR */
+		ROM_LOAD( "lk_scr.bin",  0x00000, 0x80000, 0xc3364f9b );
+	
+		ROM_REGION( 0x100000, REGION_GFX2, ROMREGION_DISPOSE );/* OBJ */
+		ROM_LOAD( "lk_obj0.bin", 0x00000, 0x80000, 0x67cc3163 );
+		ROM_LOAD( "lk_obj1.bin", 0x80000, 0x80000, 0xd2400710 );
+	
+		ROM_REGION( 0x1c000, REGION_CPU2, 0 );	/* sound cpu */
+		ROM_LOAD( "c49_08.9",    0x00000, 0x04000, 0x413c310c );
+		ROM_CONTINUE(            0x10000, 0x0c000 );/* banked stuff */
+	
+		ROM_REGION( 0x80000, REGION_SOUND1, 0 );/* ADPCM samples */
+		ROM_LOAD( "lk_snd.bin",  0x00000, 0x80000, 0x474d45a4 );
+	
+		/* no Delta-T samples */
+	ROM_END(); }}; 
+	
+	static RomLoadPtr rom_mizubaku = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x80000, REGION_CPU1, 0 );    /* 512k for 68000 code */
+		ROM_LOAD16_BYTE( "c49_09.12",  0x00000, 0x20000, 0x6ae09eb9 );
+		ROM_LOAD16_BYTE( "c49_11.14",  0x00001, 0x20000, 0x42d2be6e );
+		ROM_LOAD16_BYTE( "c49_10.13",  0x40000, 0x20000, 0x50bef2e0 );
+		ROM_LOAD16_BYTE( "c49_13.15",  0x40001, 0x20000, 0x2518dbf9 );
+	
+		ROM_REGION( 0x080000, REGION_GFX1, ROMREGION_DISPOSE );/* SCR */
+		ROM_LOAD( "lk_scr.bin",  0x00000, 0x80000, 0xc3364f9b );
+	
+		ROM_REGION( 0x100000, REGION_GFX2, ROMREGION_DISPOSE );/* OBJ */
+		ROM_LOAD( "lk_obj0.bin", 0x00000, 0x80000, 0x67cc3163 );
+		ROM_LOAD( "lk_obj1.bin", 0x80000, 0x80000, 0xd2400710 );
+	
+		ROM_REGION( 0x1c000, REGION_CPU2, 0 );	/* sound cpu */
+		ROM_LOAD( "c49_08.9",    0x00000, 0x04000, 0x413c310c );
+		ROM_CONTINUE(            0x10000, 0x0c000 );/* banked stuff */
+	
+		ROM_REGION( 0x80000, REGION_SOUND1, 0 );/* ADPCM samples */
+		ROM_LOAD( "lk_snd.bin",  0x00000, 0x80000, 0x474d45a4 );
+	
+		/* no Delta-T samples */
+	ROM_END(); }}; 
+	
+	static RomLoadPtr rom_quizhq = new RomLoadPtr(){ public void handler(){ 	/* Quiz HQ */
+		ROM_REGION( 0xc0000, REGION_CPU1, 0 );    /* 256k for 68000 code */
+		ROM_LOAD16_BYTE( "c53-05.bin",  0x00000, 0x20000, 0xc798fc20 );
+		ROM_LOAD16_BYTE( "c53-01.bin",  0x00001, 0x20000, 0xbf44c93e );
+		ROM_LOAD16_BYTE( "c53-52.bin",  0x80000, 0x20000, 0x12e14aca );/* char defs, read by cpu */
+		ROM_LOAD16_BYTE( "c53-51.bin",  0x80001, 0X20000, 0xb3ef66f3 );/* char defs, read by cpu */
+	
+		ROM_REGION( 0x100000, REGION_GFX1, ROMREGION_DISPOSE );
 		/* empty */
 	
-		ROM_REGION( 0x080000, REGION_GFX2, ROMREGION_DISPOSE )	/* OBJ */
-		ROM_LOAD16_BYTE( "c53-03.bin",  0x00000, 0x20000, 0x47596e70 )
-		ROM_LOAD16_BYTE( "c53-07.bin",  0x00001, 0x20000, 0x4f9fa82f )
-		ROM_LOAD16_BYTE( "c53-02.bin",  0x40000, 0x20000, 0xd704c6f4 )
-		ROM_LOAD16_BYTE( "c53-06.bin",  0x40001, 0x20000, 0xf77f63fc )
+		ROM_REGION( 0x080000, REGION_GFX2, ROMREGION_DISPOSE );/* OBJ */
+		ROM_LOAD16_BYTE( "c53-03.bin",  0x00000, 0x20000, 0x47596e70 );
+		ROM_LOAD16_BYTE( "c53-07.bin",  0x00001, 0x20000, 0x4f9fa82f );
+		ROM_LOAD16_BYTE( "c53-02.bin",  0x40000, 0x20000, 0xd704c6f4 );
+		ROM_LOAD16_BYTE( "c53-06.bin",  0x40001, 0x20000, 0xf77f63fc );
 	
-		ROM_REGION( 0x1c000, REGION_CPU2, 0 )	 /* sound cpu */
-		ROM_LOAD( "c53-08.bin",    0x00000, 0x04000, 0x25187e81 )
-		ROM_CONTINUE(          0x10000, 0x0c000 )	/* banked stuff */
+		ROM_REGION( 0x1c000, REGION_CPU2, 0 ); /* sound cpu */
+		ROM_LOAD( "c53-08.bin",    0x00000, 0x04000, 0x25187e81 );
+		ROM_CONTINUE(          0x10000, 0x0c000 );/* banked stuff */
 	
-		ROM_REGION( 0x080000, REGION_SOUND1, 0 )	/* ADPCM samples */
-		ROM_LOAD( "c53-04.bin",  0x000000, 0x020000, 0x99890ad4 )
+		ROM_REGION( 0x080000, REGION_SOUND1, 0 );/* ADPCM samples */
+		ROM_LOAD( "c53-04.bin",  0x000000, 0x020000, 0x99890ad4 );
 	
 		/* no Delta-T samples */
-	ROM_END
+	ROM_END(); }}; 
 	
-	ROM_START( ssi )
-		ROM_REGION( 0x80000, REGION_CPU1, 0 )     /* 512k for 68000 code */
-		ROM_LOAD16_BYTE( "c64_15-1.bin", 0x00000, 0x40000, 0xce9308a6 )
-		ROM_LOAD16_BYTE( "c64_16-1.bin", 0x00001, 0x40000, 0x470a483a )
+	static RomLoadPtr rom_ssi = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x80000, REGION_CPU1, 0 );    /* 512k for 68000 code */
+		ROM_LOAD16_BYTE( "c64_15-1.bin", 0x00000, 0x40000, 0xce9308a6 );
+		ROM_LOAD16_BYTE( "c64_16-1.bin", 0x00001, 0x40000, 0x470a483a );
 	
-		ROM_REGION( 0x100000, REGION_GFX1, ROMREGION_DISPOSE )
+		ROM_REGION( 0x100000, REGION_GFX1, ROMREGION_DISPOSE );
 		/* empty! */
 	
-		ROM_REGION( 0x100000, REGION_GFX2, ROMREGION_DISPOSE )	/* OBJ */
-		ROM_LOAD( "c64-01.1",     0x000000, 0x100000, 0xa1b4f486 )
+		ROM_REGION( 0x100000, REGION_GFX2, ROMREGION_DISPOSE );/* OBJ */
+		ROM_LOAD( "c64-01.1",     0x000000, 0x100000, 0xa1b4f486 );
 	
-		ROM_REGION( 0x1c000, REGION_CPU2, 0 )		/* sound cpu */
-		ROM_LOAD( "c64_09.13",    0x00000, 0x04000, 0x88d7f65c )
-		ROM_CONTINUE(             0x10000, 0x0c000 )	/* banked stuff */
+		ROM_REGION( 0x1c000, REGION_CPU2, 0 );	/* sound cpu */
+		ROM_LOAD( "c64_09.13",    0x00000, 0x04000, 0x88d7f65c );
+		ROM_CONTINUE(             0x10000, 0x0c000 );/* banked stuff */
 	
-		ROM_REGION( 0x20000, REGION_SOUND1, 0 )	/* ADPCM samples */
-		ROM_LOAD( "c64-02.2",     0x00000, 0x20000, 0x3cb0b907 )
+		ROM_REGION( 0x20000, REGION_SOUND1, 0 );/* ADPCM samples */
+		ROM_LOAD( "c64-02.2",     0x00000, 0x20000, 0x3cb0b907 );
 	
 		/* no Delta-T samples */
-	ROM_END
+	ROM_END(); }}; 
 	
-	ROM_START( majest12 )
-		ROM_REGION( 0x80000, REGION_CPU1, 0 )     /* 512k for 68000 code */
-		ROM_LOAD16_BYTE( "c64_07.10", 0x00000, 0x20000, 0xf29ed5c9 )
-		ROM_LOAD16_BYTE( "c64_06.4",  0x40000, 0x20000, 0x18dc71ac )
-		ROM_LOAD16_BYTE( "c64_08.11", 0x00001, 0x20000, 0xddfd33d5 )
-		ROM_LOAD16_BYTE( "c64_05.5",  0x40001, 0x20000, 0xb61866c0 )
+	static RomLoadPtr rom_majest12 = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x80000, REGION_CPU1, 0 );    /* 512k for 68000 code */
+		ROM_LOAD16_BYTE( "c64_07.10", 0x00000, 0x20000, 0xf29ed5c9 );
+		ROM_LOAD16_BYTE( "c64_06.4",  0x40000, 0x20000, 0x18dc71ac );
+		ROM_LOAD16_BYTE( "c64_08.11", 0x00001, 0x20000, 0xddfd33d5 );
+		ROM_LOAD16_BYTE( "c64_05.5",  0x40001, 0x20000, 0xb61866c0 );
 	
-		ROM_REGION( 0x100000, REGION_GFX1, ROMREGION_DISPOSE )
+		ROM_REGION( 0x100000, REGION_GFX1, ROMREGION_DISPOSE );
 		/* empty! */
 	
-		ROM_REGION( 0x100000, REGION_GFX2, ROMREGION_DISPOSE )	/* OBJ */
-		ROM_LOAD( "c64-01.1",     0x000000, 0x100000, 0xa1b4f486 )
+		ROM_REGION( 0x100000, REGION_GFX2, ROMREGION_DISPOSE );/* OBJ */
+		ROM_LOAD( "c64-01.1",     0x000000, 0x100000, 0xa1b4f486 );
 	
-		ROM_REGION( 0x1c000, REGION_CPU2, 0 )		/* sound cpu */
-		ROM_LOAD( "c64_09.13",    0x00000, 0x04000, 0x88d7f65c )
-		ROM_CONTINUE(             0x10000, 0x0c000 )	/* banked stuff */
+		ROM_REGION( 0x1c000, REGION_CPU2, 0 );	/* sound cpu */
+		ROM_LOAD( "c64_09.13",    0x00000, 0x04000, 0x88d7f65c );
+		ROM_CONTINUE(             0x10000, 0x0c000 );/* banked stuff */
 	
-		ROM_REGION( 0x20000, REGION_SOUND1, 0 )	/* ADPCM samples */
-		ROM_LOAD( "c64-02.2",     0x00000, 0x20000, 0x3cb0b907 )
+		ROM_REGION( 0x20000, REGION_SOUND1, 0 );/* ADPCM samples */
+		ROM_LOAD( "c64-02.2",     0x00000, 0x20000, 0x3cb0b907 );
 	
 		/* no Delta-T samples */
-	ROM_END
+	ROM_END(); }}; 
 	
-	ROM_START( gunfront )
-		ROM_REGION( 0xc0000, REGION_CPU1, 0 )     /* 768k for 68000 code */
-		ROM_LOAD16_BYTE( "c71-09.42",  0x00000, 0x20000, 0x10a544a2 )
-		ROM_LOAD16_BYTE( "c71-08.41",  0x00001, 0x20000, 0xc17dc0a0 )
-		ROM_LOAD16_BYTE( "c71-10.40",  0x40000, 0x20000, 0xf39c0a06 )
-		ROM_LOAD16_BYTE( "c71-14.39",  0x40001, 0x20000, 0x312da036 )
-		ROM_LOAD16_BYTE( "c71-16.38",  0x80000, 0x20000, 0x1bbcc2d4 )
-		ROM_LOAD16_BYTE( "c71-15.37",  0x80001, 0x20000, 0xdf3e00bb )
+	static RomLoadPtr rom_gunfront = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0xc0000, REGION_CPU1, 0 );    /* 768k for 68000 code */
+		ROM_LOAD16_BYTE( "c71-09.42",  0x00000, 0x20000, 0x10a544a2 );
+		ROM_LOAD16_BYTE( "c71-08.41",  0x00001, 0x20000, 0xc17dc0a0 );
+		ROM_LOAD16_BYTE( "c71-10.40",  0x40000, 0x20000, 0xf39c0a06 );
+		ROM_LOAD16_BYTE( "c71-14.39",  0x40001, 0x20000, 0x312da036 );
+		ROM_LOAD16_BYTE( "c71-16.38",  0x80000, 0x20000, 0x1bbcc2d4 );
+		ROM_LOAD16_BYTE( "c71-15.37",  0x80001, 0x20000, 0xdf3e00bb );
 	
-		ROM_REGION( 0x100000, REGION_GFX1, ROMREGION_DISPOSE )	/* SCR */
-		ROM_LOAD( "c71-02.59", 0x000000, 0x100000, 0x2a600c92 )
+		ROM_REGION( 0x100000, REGION_GFX1, ROMREGION_DISPOSE );/* SCR */
+		ROM_LOAD( "c71-02.59", 0x000000, 0x100000, 0x2a600c92 );
 	
-		ROM_REGION( 0x100000, REGION_GFX2, ROMREGION_DISPOSE )	/* OBJ */
-		ROM_LOAD( "c71-03.19", 0x000000, 0x100000, 0x9133c605 )
+		ROM_REGION( 0x100000, REGION_GFX2, ROMREGION_DISPOSE );/* OBJ */
+		ROM_LOAD( "c71-03.19", 0x000000, 0x100000, 0x9133c605 );
 	
-		ROM_REGION( 0x1c000, REGION_CPU2, 0 )	 /* sound cpu */
-		ROM_LOAD( "c71-12.49", 0x00000, 0x04000, 0x0038c7f8 )
-		ROM_CONTINUE(          0x10000, 0x0c000 ) /* banked stuff */
+		ROM_REGION( 0x1c000, REGION_CPU2, 0 ); /* sound cpu */
+		ROM_LOAD( "c71-12.49", 0x00000, 0x04000, 0x0038c7f8 );
+		ROM_CONTINUE(          0x10000, 0x0c000 );/* banked stuff */
 	
-		ROM_REGION( 0x100000, REGION_SOUND1, 0 )	/* ADPCM samples */
-		ROM_LOAD( "c71-01.29", 0x000000, 0x100000, 0x0e73105a )
+		ROM_REGION( 0x100000, REGION_SOUND1, 0 );/* ADPCM samples */
+		ROM_LOAD( "c71-01.29", 0x000000, 0x100000, 0x0e73105a );
 	
 		/* no Delta-T samples */
 	
 	// Pals c71-16.28  c71-07.27
-	ROM_END
+	ROM_END(); }}; 
 	
-	ROM_START( gunfronj )
-		ROM_REGION( 0xc0000, REGION_CPU1, 0 )     /* 768k for 68000 code */
-		ROM_LOAD16_BYTE( "c71-09.42",  0x00000, 0x20000, 0x10a544a2 )	// c71-09.9
-		ROM_LOAD16_BYTE( "c71-08.41",  0x00001, 0x20000, 0xc17dc0a0 )	// c71-08.2
-		ROM_LOAD16_BYTE( "c71-10.40",  0x40000, 0x20000, 0xf39c0a06 )	// c71-10.10
-		ROM_LOAD16_BYTE( "c71-11.3",   0x40001, 0x20000, 0xdf23c11a )
-		ROM_LOAD16_BYTE( "c71-16.38",  0x80000, 0x20000, 0x1bbcc2d4 )	// c71-05.11
-		ROM_LOAD16_BYTE( "c71-15.37",  0x80001, 0x20000, 0xdf3e00bb )	// c71-04.4
+	static RomLoadPtr rom_gunfronj = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0xc0000, REGION_CPU1, 0 );    /* 768k for 68000 code */
+		ROM_LOAD16_BYTE( "c71-09.42",  0x00000, 0x20000, 0x10a544a2 );// c71-09.9
+		ROM_LOAD16_BYTE( "c71-08.41",  0x00001, 0x20000, 0xc17dc0a0 );// c71-08.2
+		ROM_LOAD16_BYTE( "c71-10.40",  0x40000, 0x20000, 0xf39c0a06 );// c71-10.10
+		ROM_LOAD16_BYTE( "c71-11.3",   0x40001, 0x20000, 0xdf23c11a );
+		ROM_LOAD16_BYTE( "c71-16.38",  0x80000, 0x20000, 0x1bbcc2d4 );// c71-05.11
+		ROM_LOAD16_BYTE( "c71-15.37",  0x80001, 0x20000, 0xdf3e00bb );// c71-04.4
 	
-		ROM_REGION( 0x100000, REGION_GFX1, ROMREGION_DISPOSE )	/* SCR */
-		ROM_LOAD( "c71-02.59", 0x000000, 0x100000, 0x2a600c92 )	// c71-02.7
+		ROM_REGION( 0x100000, REGION_GFX1, ROMREGION_DISPOSE );/* SCR */
+		ROM_LOAD( "c71-02.59", 0x000000, 0x100000, 0x2a600c92 );// c71-02.7
 	
-		ROM_REGION( 0x100000, REGION_GFX2, ROMREGION_DISPOSE )	/* OBJ */
-		ROM_LOAD( "c71-03.19", 0x000000, 0x100000, 0x9133c605 )	// c71-03.8
+		ROM_REGION( 0x100000, REGION_GFX2, ROMREGION_DISPOSE );/* OBJ */
+		ROM_LOAD( "c71-03.19", 0x000000, 0x100000, 0x9133c605 );// c71-03.8
 	
-		ROM_REGION( 0x1c000, REGION_CPU2, 0 )	 /* sound cpu */
-		ROM_LOAD( "c71-12.49", 0x00000, 0x04000, 0x0038c7f8 )	// c71-12.5
-		ROM_CONTINUE(          0x10000, 0x0c000 ) /* banked stuff */
+		ROM_REGION( 0x1c000, REGION_CPU2, 0 ); /* sound cpu */
+		ROM_LOAD( "c71-12.49", 0x00000, 0x04000, 0x0038c7f8 );// c71-12.5
+		ROM_CONTINUE(          0x10000, 0x0c000 );/* banked stuff */
 	
-		ROM_REGION( 0x100000, REGION_SOUND1, 0 )	/* ADPCM samples */
-		ROM_LOAD( "c71-01.29", 0x000000, 0x100000, 0x0e73105a )	// c71-01.1
+		ROM_REGION( 0x100000, REGION_SOUND1, 0 );/* ADPCM samples */
+		ROM_LOAD( "c71-01.29", 0x000000, 0x100000, 0x0e73105a );// c71-01.1
 	
 		/* no Delta-T samples */
-	ROM_END
+	ROM_END(); }}; 
 	
-	ROM_START( growl )
-		ROM_REGION( 0x100000, REGION_CPU1, 0 )     /* 1024k for 68000 code */
-		ROM_LOAD16_BYTE( "c74-10.59",  0x00000, 0x40000, 0xca81a20b )
-		ROM_LOAD16_BYTE( "c74-08.61",  0x00001, 0x40000, 0xaa35dd9e )
-		ROM_LOAD16_BYTE( "c74-11.58",  0x80000, 0x40000, 0xee3bd6d5 )
-		ROM_LOAD16_BYTE( "c74-14.60",  0x80001, 0x40000, 0xb6c24ec7 )
+	static RomLoadPtr rom_growl = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x100000, REGION_CPU1, 0 );    /* 1024k for 68000 code */
+		ROM_LOAD16_BYTE( "c74-10.59",  0x00000, 0x40000, 0xca81a20b );
+		ROM_LOAD16_BYTE( "c74-08.61",  0x00001, 0x40000, 0xaa35dd9e );
+		ROM_LOAD16_BYTE( "c74-11.58",  0x80000, 0x40000, 0xee3bd6d5 );
+		ROM_LOAD16_BYTE( "c74-14.60",  0x80001, 0x40000, 0xb6c24ec7 );
 	
-		ROM_REGION( 0x100000, REGION_GFX1, ROMREGION_DISPOSE )	/* SCR */
-		ROM_LOAD( "c74-01.34",   0x000000, 0x100000, 0x3434ce80 )
+		ROM_REGION( 0x100000, REGION_GFX1, ROMREGION_DISPOSE );/* SCR */
+		ROM_LOAD( "c74-01.34",   0x000000, 0x100000, 0x3434ce80 );
 	
-		ROM_REGION( 0x200000, REGION_GFX2, ROMREGION_DISPOSE )	/* OBJ */
-		ROM_LOAD( "c74-03.12",   0x000000, 0x100000, 0x1a0d8951 )
-		ROM_LOAD( "c74-02.11",   0x100000, 0x100000, 0x15a21506 )
+		ROM_REGION( 0x200000, REGION_GFX2, ROMREGION_DISPOSE );/* OBJ */
+		ROM_LOAD( "c74-03.12",   0x000000, 0x100000, 0x1a0d8951 );
+		ROM_LOAD( "c74-02.11",   0x100000, 0x100000, 0x15a21506 );
 	
-		ROM_REGION( 0x1c000, REGION_CPU2, 0 )      /* sound cpu */
-		ROM_LOAD( "c74-12.62",   0x00000, 0x04000, 0xbb6ed668 )
-		ROM_CONTINUE(            0x10000, 0x0c000 ) /* banked stuff */
+		ROM_REGION( 0x1c000, REGION_CPU2, 0 );     /* sound cpu */
+		ROM_LOAD( "c74-12.62",   0x00000, 0x04000, 0xbb6ed668 );
+		ROM_CONTINUE(            0x10000, 0x0c000 );/* banked stuff */
 	
-		ROM_REGION( 0x100000, REGION_SOUND1, 0 )	/* ADPCM samples */
-		ROM_LOAD( "c74-04.28",   0x000000, 0x100000, 0x2d97edf2 )
+		ROM_REGION( 0x100000, REGION_SOUND1, 0 );/* ADPCM samples */
+		ROM_LOAD( "c74-04.28",   0x000000, 0x100000, 0x2d97edf2 );
 	
-		ROM_REGION( 0x080000, REGION_SOUND2, 0 )	/* Delta-T samples */
-		ROM_LOAD( "c74-05.29",   0x000000, 0x080000, 0xe29c0828 )
+		ROM_REGION( 0x080000, REGION_SOUND2, 0 );/* Delta-T samples */
+		ROM_LOAD( "c74-05.29",   0x000000, 0x080000, 0xe29c0828 );
 	
 	//Pals c74-06.48  c74-07.47
-	ROM_END
+	ROM_END(); }}; 
 	
-	ROM_START( growlu )
-		ROM_REGION( 0x100000, REGION_CPU1, 0 )     /* 1024k for 68000 code */
-		ROM_LOAD16_BYTE( "c74-10.59",  0x00000, 0x40000, 0xca81a20b )
-		ROM_LOAD16_BYTE( "c74-08.61",  0x00001, 0x40000, 0xaa35dd9e )
-		ROM_LOAD16_BYTE( "c74-11.58",  0x80000, 0x40000, 0xee3bd6d5 )
-		ROM_LOAD16_BYTE( "c74-13.60",  0x80001, 0x40000, 0xc1c57e51 )
+	static RomLoadPtr rom_growlu = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x100000, REGION_CPU1, 0 );    /* 1024k for 68000 code */
+		ROM_LOAD16_BYTE( "c74-10.59",  0x00000, 0x40000, 0xca81a20b );
+		ROM_LOAD16_BYTE( "c74-08.61",  0x00001, 0x40000, 0xaa35dd9e );
+		ROM_LOAD16_BYTE( "c74-11.58",  0x80000, 0x40000, 0xee3bd6d5 );
+		ROM_LOAD16_BYTE( "c74-13.60",  0x80001, 0x40000, 0xc1c57e51 );
 	
-		ROM_REGION( 0x100000, REGION_GFX1, ROMREGION_DISPOSE )	/* SCR */
-		ROM_LOAD( "c74-01.34",   0x000000, 0x100000, 0x3434ce80 )
+		ROM_REGION( 0x100000, REGION_GFX1, ROMREGION_DISPOSE );/* SCR */
+		ROM_LOAD( "c74-01.34",   0x000000, 0x100000, 0x3434ce80 );
 	
-		ROM_REGION( 0x200000, REGION_GFX2, ROMREGION_DISPOSE )	/* OBJ */
-		ROM_LOAD( "c74-03.12",   0x000000, 0x100000, 0x1a0d8951 )
-		ROM_LOAD( "c74-02.11",   0x100000, 0x100000, 0x15a21506 )
+		ROM_REGION( 0x200000, REGION_GFX2, ROMREGION_DISPOSE );/* OBJ */
+		ROM_LOAD( "c74-03.12",   0x000000, 0x100000, 0x1a0d8951 );
+		ROM_LOAD( "c74-02.11",   0x100000, 0x100000, 0x15a21506 );
 	
-		ROM_REGION( 0x1c000, REGION_CPU2, 0 )      /* sound cpu */
-		ROM_LOAD( "c74-12.62",   0x00000, 0x04000, 0xbb6ed668 )
-		ROM_CONTINUE(            0x10000, 0x0c000 ) /* banked stuff */
+		ROM_REGION( 0x1c000, REGION_CPU2, 0 );     /* sound cpu */
+		ROM_LOAD( "c74-12.62",   0x00000, 0x04000, 0xbb6ed668 );
+		ROM_CONTINUE(            0x10000, 0x0c000 );/* banked stuff */
 	
-		ROM_REGION( 0x100000, REGION_SOUND1, 0 )	/* ADPCM samples */
-		ROM_LOAD( "c74-04.28",   0x000000, 0x100000, 0x2d97edf2 )
+		ROM_REGION( 0x100000, REGION_SOUND1, 0 );/* ADPCM samples */
+		ROM_LOAD( "c74-04.28",   0x000000, 0x100000, 0x2d97edf2 );
 	
-		ROM_REGION( 0x080000, REGION_SOUND2, 0 )	/* Delta-T samples */
-		ROM_LOAD( "c74-05.29",   0x000000, 0x080000, 0xe29c0828 )
-	ROM_END
+		ROM_REGION( 0x080000, REGION_SOUND2, 0 );/* Delta-T samples */
+		ROM_LOAD( "c74-05.29",   0x000000, 0x080000, 0xe29c0828 );
+	ROM_END(); }}; 
 	
-	ROM_START( runark )
-		ROM_REGION( 0x100000, REGION_CPU1, 0 )     /* 1024k for 68000 code */
-		ROM_LOAD16_BYTE( "c74-10.59",  0x00000, 0x40000, 0xca81a20b )	// c74-10.15
-		ROM_LOAD16_BYTE( "c74-08.61",  0x00001, 0x40000, 0xaa35dd9e )	// c74-08.13
-		ROM_LOAD16_BYTE( "c74-11.58",  0x80000, 0x40000, 0xee3bd6d5 )	// c74-11.16
-		ROM_LOAD16_BYTE( "c74-09.14",  0x80001, 0x40000, 0x58cc2feb )
+	static RomLoadPtr rom_runark = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x100000, REGION_CPU1, 0 );    /* 1024k for 68000 code */
+		ROM_LOAD16_BYTE( "c74-10.59",  0x00000, 0x40000, 0xca81a20b );// c74-10.15
+		ROM_LOAD16_BYTE( "c74-08.61",  0x00001, 0x40000, 0xaa35dd9e );// c74-08.13
+		ROM_LOAD16_BYTE( "c74-11.58",  0x80000, 0x40000, 0xee3bd6d5 );// c74-11.16
+		ROM_LOAD16_BYTE( "c74-09.14",  0x80001, 0x40000, 0x58cc2feb );
 	
-		ROM_REGION( 0x100000, REGION_GFX1, ROMREGION_DISPOSE )	/* SCR */
-		ROM_LOAD( "c74-01.34",   0x000000, 0x100000, 0x3434ce80 )	// c74-01.1
+		ROM_REGION( 0x100000, REGION_GFX1, ROMREGION_DISPOSE );/* SCR */
+		ROM_LOAD( "c74-01.34",   0x000000, 0x100000, 0x3434ce80 );// c74-01.1
 	
-		ROM_REGION( 0x200000, REGION_GFX2, ROMREGION_DISPOSE )	/* OBJ */
-		ROM_LOAD( "c74-03.12",   0x000000, 0x100000, 0x1a0d8951 )	// c74-03.9
-		ROM_LOAD( "c74-02.11",   0x100000, 0x100000, 0x15a21506 )	// c74-02.8
+		ROM_REGION( 0x200000, REGION_GFX2, ROMREGION_DISPOSE );/* OBJ */
+		ROM_LOAD( "c74-03.12",   0x000000, 0x100000, 0x1a0d8951 );// c74-03.9
+		ROM_LOAD( "c74-02.11",   0x100000, 0x100000, 0x15a21506 );// c74-02.8
 	
-		ROM_REGION( 0x1c000, REGION_CPU2, 0 )	/* sound cpu */
-		ROM_LOAD( "c74-12.62",   0x00000, 0x04000, 0xbb6ed668 )	// c74-12.3
-		ROM_CONTINUE(            0x10000, 0x0c000 ) /* banked stuff */
+		ROM_REGION( 0x1c000, REGION_CPU2, 0 );/* sound cpu */
+		ROM_LOAD( "c74-12.62",   0x00000, 0x04000, 0xbb6ed668 );// c74-12.3
+		ROM_CONTINUE(            0x10000, 0x0c000 );/* banked stuff */
 	
-		ROM_REGION( 0x100000, REGION_SOUND1, 0 )	/* ADPCM samples */
-		ROM_LOAD( "c74-04.28",   0x000000, 0x100000, 0x2d97edf2 )	// c74-04.10
+		ROM_REGION( 0x100000, REGION_SOUND1, 0 );/* ADPCM samples */
+		ROM_LOAD( "c74-04.28",   0x000000, 0x100000, 0x2d97edf2 );// c74-04.10
 	
-		ROM_REGION( 0x080000, REGION_SOUND2, 0 )	/* Delta-T samples */
-		ROM_LOAD( "c74-05.29",   0x000000, 0x080000, 0xe29c0828 )	// c74-05.2
-	ROM_END
+		ROM_REGION( 0x080000, REGION_SOUND2, 0 );/* Delta-T samples */
+		ROM_LOAD( "c74-05.29",   0x000000, 0x080000, 0xe29c0828 );// c74-05.2
+	ROM_END(); }}; 
 	
-	ROM_START( mjnquest )	/* Mahjong Quest */
-		ROM_REGION( 0x100000, REGION_CPU1, 0 )     /* 256k for 68000 code */
-		ROM_LOAD16_BYTE( "c77-09",  0x000000, 0x020000, 0x0a005d01 )
-		ROM_LOAD16_BYTE( "c77-08",  0x000001, 0x020000, 0x4244f775 )
+	static RomLoadPtr rom_mjnquest = new RomLoadPtr(){ public void handler(){ 	/* Mahjong Quest */
+		ROM_REGION( 0x100000, REGION_CPU1, 0 );    /* 256k for 68000 code */
+		ROM_LOAD16_BYTE( "c77-09",  0x000000, 0x020000, 0x0a005d01 );
+		ROM_LOAD16_BYTE( "c77-08",  0x000001, 0x020000, 0x4244f775 );
 		ROM_LOAD16_WORD_SWAP( "c77-04",  0x080000, 0x080000, 0xc2e7e038 )	/* data rom */
 	
-		ROM_REGION( 0x200000, REGION_GFX1, ROMREGION_DISPOSE )	/* SCR */
-		ROM_LOAD( "c77-01", 0x000000, 0x100000, 0x5ba51205 )
-		ROM_LOAD( "c77-02", 0x100000, 0x100000, 0x6a6f3040 )
+		ROM_REGION( 0x200000, REGION_GFX1, ROMREGION_DISPOSE );/* SCR */
+		ROM_LOAD( "c77-01", 0x000000, 0x100000, 0x5ba51205 );
+		ROM_LOAD( "c77-02", 0x100000, 0x100000, 0x6a6f3040 );
 	
-		ROM_REGION( 0x080000, REGION_GFX2, ROMREGION_DISPOSE )	/* OBJ */
-		ROM_LOAD( "c77-05", 0x00000, 0x80000, 0xc5a54678 )
+		ROM_REGION( 0x080000, REGION_GFX2, ROMREGION_DISPOSE );/* OBJ */
+		ROM_LOAD( "c77-05", 0x00000, 0x80000, 0xc5a54678 );
 	
-		ROM_REGION( 0x1c000, REGION_CPU2, 0 )	/* sound cpu */
-		ROM_LOAD( "c77-10",    0x00000, 0x04000, 0xf16b2c1e )
-		ROM_CONTINUE(          0x10000, 0x0c000 )	/* banked stuff */
+		ROM_REGION( 0x1c000, REGION_CPU2, 0 );/* sound cpu */
+		ROM_LOAD( "c77-10",    0x00000, 0x04000, 0xf16b2c1e );
+		ROM_CONTINUE(          0x10000, 0x0c000 );/* banked stuff */
 	
-		ROM_REGION( 0x080000, REGION_SOUND1, 0 )	/* ADPCM samples */
-		ROM_LOAD( "c77-03",  0x000000, 0x080000, 0x312f17b1 )
+		ROM_REGION( 0x080000, REGION_SOUND1, 0 );/* ADPCM samples */
+		ROM_LOAD( "c77-03",  0x000000, 0x080000, 0x312f17b1 );
 	
 		/* no Delta-T samples */
-	ROM_END
+	ROM_END(); }}; 
 	
-	ROM_START( mjnquesb )	/* Mahjong Quest (No Nudity) */
-		ROM_REGION( 0x100000, REGION_CPU1, 0 )     /* 256k for 68000 code */
-		ROM_LOAD16_BYTE( "c77-09a", 0x000000, 0x020000, 0xfc17f1c2 )
-		ROM_LOAD16_BYTE( "c77-08",  0x000001, 0x020000, 0x4244f775 )
+	static RomLoadPtr rom_mjnquesb = new RomLoadPtr(){ public void handler(){ 	/* Mahjong Quest (No Nudity) */
+		ROM_REGION( 0x100000, REGION_CPU1, 0 );    /* 256k for 68000 code */
+		ROM_LOAD16_BYTE( "c77-09a", 0x000000, 0x020000, 0xfc17f1c2 );
+		ROM_LOAD16_BYTE( "c77-08",  0x000001, 0x020000, 0x4244f775 );
 		ROM_LOAD16_WORD_SWAP( "c77-04",  0x080000, 0x080000, 0xc2e7e038 )	/* data rom */
 	
-		ROM_REGION( 0x200000, REGION_GFX1, ROMREGION_DISPOSE )	/* SCR */
-		ROM_LOAD( "c77-01", 0x000000, 0x100000, 0x5ba51205 )
-		ROM_LOAD( "c77-02", 0x100000, 0x100000, 0x6a6f3040 )
+		ROM_REGION( 0x200000, REGION_GFX1, ROMREGION_DISPOSE );/* SCR */
+		ROM_LOAD( "c77-01", 0x000000, 0x100000, 0x5ba51205 );
+		ROM_LOAD( "c77-02", 0x100000, 0x100000, 0x6a6f3040 );
 	
-		ROM_REGION( 0x080000, REGION_GFX2, ROMREGION_DISPOSE )	/* OBJ */
-		ROM_LOAD( "c77-05", 0x00000, 0x80000, 0xc5a54678 )
+		ROM_REGION( 0x080000, REGION_GFX2, ROMREGION_DISPOSE );/* OBJ */
+		ROM_LOAD( "c77-05", 0x00000, 0x80000, 0xc5a54678 );
 	
-		ROM_REGION( 0x1c000, REGION_CPU2, 0 )	/* sound cpu */
-		ROM_LOAD( "c77-10",    0x00000, 0x04000, 0xf16b2c1e )
-		ROM_CONTINUE(          0x10000, 0x0c000 )	/* banked stuff */
+		ROM_REGION( 0x1c000, REGION_CPU2, 0 );/* sound cpu */
+		ROM_LOAD( "c77-10",    0x00000, 0x04000, 0xf16b2c1e );
+		ROM_CONTINUE(          0x10000, 0x0c000 );/* banked stuff */
 	
-		ROM_REGION( 0x080000, REGION_SOUND1, 0 )	/* ADPCM samples */
-		ROM_LOAD( "c77-03",  0x000000, 0x080000, 0x312f17b1 )
+		ROM_REGION( 0x080000, REGION_SOUND1, 0 );/* ADPCM samples */
+		ROM_LOAD( "c77-03",  0x000000, 0x080000, 0x312f17b1 );
 	
 		/* no Delta-T samples */
-	ROM_END
+	ROM_END(); }}; 
 	
-	ROM_START( footchmp )
-		ROM_REGION( 0x80000, REGION_CPU1, 0 )     /* 512k for 68000 code */
-		ROM_LOAD16_BYTE( "c80-11.6",     0x00000, 0x20000, 0xf78630fb )
-		ROM_LOAD16_BYTE( "c80-10.4",     0x00001, 0x20000, 0x32c109cb )
-		ROM_LOAD16_BYTE( "c80-12.7",     0x40000, 0x20000, 0x80d46fef )
-		ROM_LOAD16_BYTE( "c80-14.5",     0x40001, 0x20000, 0x40ac4828 )
+	static RomLoadPtr rom_footchmp = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x80000, REGION_CPU1, 0 );    /* 512k for 68000 code */
+		ROM_LOAD16_BYTE( "c80-11.6",     0x00000, 0x20000, 0xf78630fb );
+		ROM_LOAD16_BYTE( "c80-10.4",     0x00001, 0x20000, 0x32c109cb );
+		ROM_LOAD16_BYTE( "c80-12.7",     0x40000, 0x20000, 0x80d46fef );
+		ROM_LOAD16_BYTE( "c80-14.5",     0x40001, 0x20000, 0x40ac4828 );
 	
-		ROM_REGION( 0x100000, REGION_GFX1, ROMREGION_DISPOSE )	/* SCR */
-		ROM_LOAD16_BYTE( "c80-04.1", 0x00000, 0x80000, 0x9a17fe8c )
-		ROM_LOAD16_BYTE( "c80-05.2", 0x00001, 0x80000, 0xacde7071 )
+		ROM_REGION( 0x100000, REGION_GFX1, ROMREGION_DISPOSE );/* SCR */
+		ROM_LOAD16_BYTE( "c80-04.1", 0x00000, 0x80000, 0x9a17fe8c );
+		ROM_LOAD16_BYTE( "c80-05.2", 0x00001, 0x80000, 0xacde7071 );
 	
-		ROM_REGION( 0x200000, REGION_GFX2, ROMREGION_DISPOSE )	/* OBJ */
-		ROM_LOAD( "c80-01.9",  0x000000, 0x100000, 0xf43782e6 )
-		ROM_LOAD( "c80-02.10", 0x100000, 0x100000, 0x060a8b61 )
+		ROM_REGION( 0x200000, REGION_GFX2, ROMREGION_DISPOSE );/* OBJ */
+		ROM_LOAD( "c80-01.9",  0x000000, 0x100000, 0xf43782e6 );
+		ROM_LOAD( "c80-02.10", 0x100000, 0x100000, 0x060a8b61 );
 	
-		ROM_REGION( 0x1c000, REGION_CPU2, 0 )	/* 64k for Z80 code */
-		ROM_LOAD( "c80-15.70", 0x00000, 0x04000, 0x05aa7fd7 )
-		ROM_CONTINUE(          0x10000, 0x0c000 )	/* banked stuff */
+		ROM_REGION( 0x1c000, REGION_CPU2, 0 );/* 64k for Z80 code */
+		ROM_LOAD( "c80-15.70", 0x00000, 0x04000, 0x05aa7fd7 );
+		ROM_CONTINUE(          0x10000, 0x0c000 );/* banked stuff */
 	
-		ROM_REGION( 0x100000, REGION_SOUND1, 0 )     /* YM2610 samples */
-		ROM_LOAD( "c80-03.57", 0x000000, 0x100000, 0x609938d5 )
+		ROM_REGION( 0x100000, REGION_SOUND1, 0 );    /* YM2610 samples */
+		ROM_LOAD( "c80-03.57", 0x000000, 0x100000, 0x609938d5 );
 	
 		/* no Delta-T samples */
 	
 	// Pals c80-08.45  c80-09.46
-	ROM_END
+	ROM_END(); }}; 
 	
-	ROM_START( hthero )
-		ROM_REGION( 0x80000, REGION_CPU1, 0 )     /* 512k for 68000 code */
-		ROM_LOAD16_BYTE( "c80-16.6",  0x00000, 0x20000, 0x4e795b52 )
-		ROM_LOAD16_BYTE( "c80-17.4",  0x00001, 0x20000, 0x42c0a838 )
-		ROM_LOAD16_BYTE( "c80-12.7",  0x40000, 0x20000, 0x80d46fef )
-		ROM_LOAD16_BYTE( "c80-18.5",  0x40001, 0x20000, 0xaea22904 )
+	static RomLoadPtr rom_hthero = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x80000, REGION_CPU1, 0 );    /* 512k for 68000 code */
+		ROM_LOAD16_BYTE( "c80-16.6",  0x00000, 0x20000, 0x4e795b52 );
+		ROM_LOAD16_BYTE( "c80-17.4",  0x00001, 0x20000, 0x42c0a838 );
+		ROM_LOAD16_BYTE( "c80-12.7",  0x40000, 0x20000, 0x80d46fef );
+		ROM_LOAD16_BYTE( "c80-18.5",  0x40001, 0x20000, 0xaea22904 );
 	
-		ROM_REGION( 0x100000, REGION_GFX1, ROMREGION_DISPOSE )	/* SCR */
-		ROM_LOAD16_BYTE( "c80-04.1", 0x00000, 0x80000, 0x9a17fe8c )
-		ROM_LOAD16_BYTE( "c80-05.2", 0x00001, 0x80000, 0xacde7071 )
+		ROM_REGION( 0x100000, REGION_GFX1, ROMREGION_DISPOSE );/* SCR */
+		ROM_LOAD16_BYTE( "c80-04.1", 0x00000, 0x80000, 0x9a17fe8c );
+		ROM_LOAD16_BYTE( "c80-05.2", 0x00001, 0x80000, 0xacde7071 );
 	
-		ROM_REGION( 0x200000, REGION_GFX2, ROMREGION_DISPOSE )	/* OBJ */
-		ROM_LOAD( "c80-01.9",  0x000000, 0x100000, 0xf43782e6 )
-		ROM_LOAD( "c80-02.10", 0x100000, 0x100000, 0x060a8b61 )
+		ROM_REGION( 0x200000, REGION_GFX2, ROMREGION_DISPOSE );/* OBJ */
+		ROM_LOAD( "c80-01.9",  0x000000, 0x100000, 0xf43782e6 );
+		ROM_LOAD( "c80-02.10", 0x100000, 0x100000, 0x060a8b61 );
 	
-		ROM_REGION( 0x1c000, REGION_CPU2, 0 )	/* sound cpu */
-		ROM_LOAD( "c80-15.70", 0x00000, 0x04000, 0x05aa7fd7 )
-		ROM_CONTINUE(          0x10000, 0x0c000 )	/* banked stuff */
+		ROM_REGION( 0x1c000, REGION_CPU2, 0 );/* sound cpu */
+		ROM_LOAD( "c80-15.70", 0x00000, 0x04000, 0x05aa7fd7 );
+		ROM_CONTINUE(          0x10000, 0x0c000 );/* banked stuff */
 	
-		ROM_REGION( 0x100000, REGION_SOUND1, 0 )	/* ADPCM samples */
-		ROM_LOAD( "c80-03.57", 0x000000, 0x100000, 0x609938d5 )
-	
-		/* no Delta-T samples */
-	ROM_END
-	
-	ROM_START( euroch92 )
-		ROM_REGION( 0x80000, REGION_CPU1, 0 )     /* 512k for 68000 code */
-		ROM_LOAD16_BYTE( "ec92_25.rom", 0x00000, 0x20000, 0x98482202 )
-		ROM_LOAD16_BYTE( "ec92_23.rom", 0x00001, 0x20000, 0xae5e75e9 )
-		ROM_LOAD16_BYTE( "ec92_26.rom", 0x40000, 0x20000, 0xb986ccb2 )
-		ROM_LOAD16_BYTE( "ec92_24.rom", 0x40001, 0x20000, 0xb31d94ac )
-	
-		ROM_REGION( 0x100000, REGION_GFX1, ROMREGION_DISPOSE )	/* SCR */
-		ROM_LOAD16_BYTE( "ec92_21.rom", 0x00000, 0x80000, 0x5759ed37 )
-		ROM_LOAD16_BYTE( "ec92_22.rom", 0x00001, 0x80000, 0xd9a0d38e )
-	
-		ROM_REGION( 0x200000, REGION_GFX2, ROMREGION_DISPOSE )	/* OBJ */
-		ROM_LOAD( "ec92_19.rom", 0x000000, 0x100000, 0x219141a5 )
-		ROM_LOAD( "c80-02.10",   0x100000, 0x100000, 0x060a8b61 )	// ec92_20.rom
-	
-		ROM_REGION( 0x1c000, REGION_CPU2, 0 )	/* 64k for Z80 code */
-		ROM_LOAD( "ec92_27.rom", 0x00000, 0x04000, 0x2db48e65 )
-		ROM_CONTINUE(            0x10000, 0x0c000 )
-	
-		ROM_REGION( 0x100000, REGION_SOUND1, 0 )	/* YM2610 samples */
-		ROM_LOAD( "c80-03.57", 0x000000, 0x100000, 0x609938d5 )	// ec92_03.rom
+		ROM_REGION( 0x100000, REGION_SOUND1, 0 );/* ADPCM samples */
+		ROM_LOAD( "c80-03.57", 0x000000, 0x100000, 0x609938d5 );
 	
 		/* no Delta-T samples */
-	ROM_END
+	ROM_END(); }}; 
 	
-	ROM_START( koshien )	/* Ah Eikou no Koshien */
-		ROM_REGION( 0x100000, REGION_CPU1, 0 )     /* 256k for 68000 code */
-		ROM_LOAD16_BYTE( "c81-11.bin", 0x000000, 0x020000, 0xb44ea8c9 )
-		ROM_LOAD16_BYTE( "c81-10.bin", 0x000001, 0x020000, 0x8f98c40a )
+	static RomLoadPtr rom_euroch92 = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x80000, REGION_CPU1, 0 );    /* 512k for 68000 code */
+		ROM_LOAD16_BYTE( "ec92_25.rom", 0x00000, 0x20000, 0x98482202 );
+		ROM_LOAD16_BYTE( "ec92_23.rom", 0x00001, 0x20000, 0xae5e75e9 );
+		ROM_LOAD16_BYTE( "ec92_26.rom", 0x40000, 0x20000, 0xb986ccb2 );
+		ROM_LOAD16_BYTE( "ec92_24.rom", 0x40001, 0x20000, 0xb31d94ac );
+	
+		ROM_REGION( 0x100000, REGION_GFX1, ROMREGION_DISPOSE );/* SCR */
+		ROM_LOAD16_BYTE( "ec92_21.rom", 0x00000, 0x80000, 0x5759ed37 );
+		ROM_LOAD16_BYTE( "ec92_22.rom", 0x00001, 0x80000, 0xd9a0d38e );
+	
+		ROM_REGION( 0x200000, REGION_GFX2, ROMREGION_DISPOSE );/* OBJ */
+		ROM_LOAD( "ec92_19.rom", 0x000000, 0x100000, 0x219141a5 );
+		ROM_LOAD( "c80-02.10",   0x100000, 0x100000, 0x060a8b61 );// ec92_20.rom
+	
+		ROM_REGION( 0x1c000, REGION_CPU2, 0 );/* 64k for Z80 code */
+		ROM_LOAD( "ec92_27.rom", 0x00000, 0x04000, 0x2db48e65 );
+		ROM_CONTINUE(            0x10000, 0x0c000 );
+	
+		ROM_REGION( 0x100000, REGION_SOUND1, 0 );/* YM2610 samples */
+		ROM_LOAD( "c80-03.57", 0x000000, 0x100000, 0x609938d5 );// ec92_03.rom
+	
+		/* no Delta-T samples */
+	ROM_END(); }}; 
+	
+	static RomLoadPtr rom_koshien = new RomLoadPtr(){ public void handler(){ 	/* Ah Eikou no Koshien */
+		ROM_REGION( 0x100000, REGION_CPU1, 0 );    /* 256k for 68000 code */
+		ROM_LOAD16_BYTE( "c81-11.bin", 0x000000, 0x020000, 0xb44ea8c9 );
+		ROM_LOAD16_BYTE( "c81-10.bin", 0x000001, 0x020000, 0x8f98c40a );
 		ROM_LOAD16_WORD_SWAP( "c81-04.bin", 0x080000, 0x080000, 0x1592b460 )	/* data rom */
 	
-		ROM_REGION( 0x100000, REGION_GFX1, ROMREGION_DISPOSE )	/* SCR */
-		ROM_LOAD( "c81-03.bin", 0x000000, 0x100000, 0x29bbf492 )
+		ROM_REGION( 0x100000, REGION_GFX1, ROMREGION_DISPOSE );/* SCR */
+		ROM_LOAD( "c81-03.bin", 0x000000, 0x100000, 0x29bbf492 );
 	
-		ROM_REGION( 0x200000, REGION_GFX2, ROMREGION_DISPOSE )	/* OBJ */
-		ROM_LOAD( "c81-01.bin", 0x000000, 0x100000, 0x64b15d2a )
-		ROM_LOAD( "c81-02.bin", 0x100000, 0x100000, 0x962461e8 )
+		ROM_REGION( 0x200000, REGION_GFX2, ROMREGION_DISPOSE );/* OBJ */
+		ROM_LOAD( "c81-01.bin", 0x000000, 0x100000, 0x64b15d2a );
+		ROM_LOAD( "c81-02.bin", 0x100000, 0x100000, 0x962461e8 );
 	
-		ROM_REGION( 0x1c000, REGION_CPU2, 0 )      /* sound cpu */
-		ROM_LOAD( "c81-12.bin", 0x00000, 0x04000, 0x6e8625b6 )
-		ROM_CONTINUE(           0x10000, 0x0c000 ) /* banked stuff */
+		ROM_REGION( 0x1c000, REGION_CPU2, 0 );     /* sound cpu */
+		ROM_LOAD( "c81-12.bin", 0x00000, 0x04000, 0x6e8625b6 );
+		ROM_CONTINUE(           0x10000, 0x0c000 );/* banked stuff */
 	
-		ROM_REGION( 0x080000, REGION_SOUND1, 0 )	/* ADPCM samples */
-		ROM_LOAD( "c81-05.bin",  0x00000, 0x80000, 0x9c3d71be )
+		ROM_REGION( 0x080000, REGION_SOUND1, 0 );/* ADPCM samples */
+		ROM_LOAD( "c81-05.bin",  0x00000, 0x80000, 0x9c3d71be );
 	
-		ROM_REGION( 0x080000, REGION_SOUND2, 0 )	/* Delta-T samples */
-		ROM_LOAD( "c81-06.bin",  0x00000, 0x80000, 0x927833b4 )
-	ROM_END
+		ROM_REGION( 0x080000, REGION_SOUND2, 0 );/* Delta-T samples */
+		ROM_LOAD( "c81-06.bin",  0x00000, 0x80000, 0x927833b4 );
+	ROM_END(); }}; 
 	
-	ROM_START( yuyugogo )	/* Yuuyu no QUIZ de GO!GO! */
-		ROM_REGION( 0x40000, REGION_CPU1, 0 )     /* 256k for 68000 code */
-		ROM_LOAD16_BYTE( "c83_10.3",  0x00000,  0x20000, 0x4d185d03 )
-		ROM_LOAD16_BYTE( "c83_09.2",  0x00001,  0x20000, 0xf9892792 )
+	static RomLoadPtr rom_yuyugogo = new RomLoadPtr(){ public void handler(){ 	/* Yuuyu no QUIZ de GO!GO! */
+		ROM_REGION( 0x40000, REGION_CPU1, 0 );    /* 256k for 68000 code */
+		ROM_LOAD16_BYTE( "c83_10.3",  0x00000,  0x20000, 0x4d185d03 );
+		ROM_LOAD16_BYTE( "c83_09.2",  0x00001,  0x20000, 0xf9892792 );
 	
-		ROM_REGION16_BE( 0x100000, REGION_USER1, 0 )
+		ROM_REGION16_BE( 0x100000, REGION_USER1, 0 );
 		/* extra ROM mapped at d00000 */
 		ROM_LOAD16_WORD_SWAP( "c83-03.10", 0x000000, 0x100000, 0xeed9acc2 )	/* data rom */
 	
-		ROM_REGION( 0x020000, REGION_GFX1, ROMREGION_DISPOSE )	/* SCR */
-		ROM_LOAD( "c83-05.21", 0x00000, 0x20000, 0xeca57fb1 )
+		ROM_REGION( 0x020000, REGION_GFX1, ROMREGION_DISPOSE );/* SCR */
+		ROM_LOAD( "c83-05.21", 0x00000, 0x20000, 0xeca57fb1 );
 	
-		ROM_REGION( 0x200000, REGION_GFX2, ROMREGION_DISPOSE )	/* OBJ */
-		ROM_LOAD16_BYTE( "c83-01.12",  0x000000, 0x100000, 0x8bf0d416 )
-		ROM_LOAD16_BYTE( "c83-02.11",  0x000001, 0x100000, 0x20bb1c15 )
+		ROM_REGION( 0x200000, REGION_GFX2, ROMREGION_DISPOSE );/* OBJ */
+		ROM_LOAD16_BYTE( "c83-01.12",  0x000000, 0x100000, 0x8bf0d416 );
+		ROM_LOAD16_BYTE( "c83-02.11",  0x000001, 0x100000, 0x20bb1c15 );
 	
-		ROM_REGION( 0x1c000, REGION_CPU2, 0 )	 /* sound cpu */
-		ROM_LOAD( "c83_11.1"  , 0x00000, 0x04000, 0x461e702a )
-		ROM_CONTINUE(           0x10000, 0x0c000 ) /* banked stuff */
+		ROM_REGION( 0x1c000, REGION_CPU2, 0 ); /* sound cpu */
+		ROM_LOAD( "c83_11.1"  , 0x00000, 0x04000, 0x461e702a );
+		ROM_CONTINUE(           0x10000, 0x0c000 );/* banked stuff */
 	
-		ROM_REGION( 0x100000, REGION_SOUND1, 0 )	/* ADPCM samples */
-		ROM_LOAD( "c83-04.5",  0x000000, 0x100000, 0x2600093a )
+		ROM_REGION( 0x100000, REGION_SOUND1, 0 );/* ADPCM samples */
+		ROM_LOAD( "c83-04.5",  0x000000, 0x100000, 0x2600093a );
 	
 		/* no Delta-T samples */
-	ROM_END
+	ROM_END(); }}; 
 	
-	ROM_START( ninjak )
-		ROM_REGION( 0x80000, REGION_CPU1, 0 )     /* 512k for 68000 code */
-		ROM_LOAD16_BYTE( "c85_10x.19",  0x00000, 0x20000, 0xba7e6e74 )
-		ROM_LOAD16_BYTE( "c85_xx.5",    0x00001, 0x20000, 0x0ac2cba2 )
-		ROM_LOAD16_BYTE( "c85_07.18",   0x40000, 0x20000, 0x3eccfd0a )
-		ROM_LOAD16_BYTE( "c85_06.4",    0x40001, 0x20000, 0xd126ded1 )
+	static RomLoadPtr rom_ninjak = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x80000, REGION_CPU1, 0 );    /* 512k for 68000 code */
+		ROM_LOAD16_BYTE( "c85_10x.19",  0x00000, 0x20000, 0xba7e6e74 );
+		ROM_LOAD16_BYTE( "c85_xx.5",    0x00001, 0x20000, 0x0ac2cba2 );
+		ROM_LOAD16_BYTE( "c85_07.18",   0x40000, 0x20000, 0x3eccfd0a );
+		ROM_LOAD16_BYTE( "c85_06.4",    0x40001, 0x20000, 0xd126ded1 );
 	
-		ROM_REGION( 0x080000, REGION_GFX1, ROMREGION_DISPOSE )	/* SCR */
-		ROM_LOAD( "c85-03.10",    0x00000, 0x80000, 0x4cc7b9df )
+		ROM_REGION( 0x080000, REGION_GFX1, ROMREGION_DISPOSE );/* SCR */
+		ROM_LOAD( "c85-03.10",    0x00000, 0x80000, 0x4cc7b9df );
 	
-		ROM_REGION( 0x200000, REGION_GFX2, ROMREGION_DISPOSE )	/* OBJ */
-		ROM_LOAD( "c85-01.16",    0x000000, 0x100000, 0xa711977c )
-		ROM_LOAD( "c85-02.15",    0x100000, 0x100000, 0xa6ad0f3d )
+		ROM_REGION( 0x200000, REGION_GFX2, ROMREGION_DISPOSE );/* OBJ */
+		ROM_LOAD( "c85-01.16",    0x000000, 0x100000, 0xa711977c );
+		ROM_LOAD( "c85-02.15",    0x100000, 0x100000, 0xa6ad0f3d );
 	
-		ROM_REGION( 0x1c000, REGION_CPU2, 0 )      /* sound cpu */
-		ROM_LOAD( "c85-14.6",     0x00000, 0x04000, 0xf2a52a51 )
-		ROM_CONTINUE(             0x10000, 0x0c000 ) /* banked stuff */
+		ROM_REGION( 0x1c000, REGION_CPU2, 0 );     /* sound cpu */
+		ROM_LOAD( "c85-14.6",     0x00000, 0x04000, 0xf2a52a51 );
+		ROM_CONTINUE(             0x10000, 0x0c000 );/* banked stuff */
 	
-		ROM_REGION( 0x80000, REGION_SOUND1, 0 )	/* ADPCM samples */
-		ROM_LOAD( "c85-04.1",     0x00000, 0x80000, 0x5afb747e )
+		ROM_REGION( 0x80000, REGION_SOUND1, 0 );/* ADPCM samples */
+		ROM_LOAD( "c85-04.1",     0x00000, 0x80000, 0x5afb747e );
 	
-		ROM_REGION( 0x80000, REGION_SOUND2, 0 )	/* Delta-T samples */
-		ROM_LOAD( "c85-05.11",    0x00000, 0x80000, 0x3c1b0ed0 )
-	ROM_END
+		ROM_REGION( 0x80000, REGION_SOUND2, 0 );/* Delta-T samples */
+		ROM_LOAD( "c85-05.11",    0x00000, 0x80000, 0x3c1b0ed0 );
+	ROM_END(); }}; 
 	
-	ROM_START( ninjakj )
-		ROM_REGION( 0x80000, REGION_CPU1, 0 )     /* 512k for 68000 code */
-		ROM_LOAD16_BYTE( "c85_10x.19",  0x00000, 0x20000, 0xba7e6e74 )
-		ROM_LOAD16_BYTE( "c85-11x.5",   0x00001, 0x20000, 0xe4ccaa8e )
-		ROM_LOAD16_BYTE( "c85_07.18",   0x40000, 0x20000, 0x3eccfd0a )
-		ROM_LOAD16_BYTE( "c85_06.4",    0x40001, 0x20000, 0xd126ded1 )
+	static RomLoadPtr rom_ninjakj = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x80000, REGION_CPU1, 0 );    /* 512k for 68000 code */
+		ROM_LOAD16_BYTE( "c85_10x.19",  0x00000, 0x20000, 0xba7e6e74 );
+		ROM_LOAD16_BYTE( "c85-11x.5",   0x00001, 0x20000, 0xe4ccaa8e );
+		ROM_LOAD16_BYTE( "c85_07.18",   0x40000, 0x20000, 0x3eccfd0a );
+		ROM_LOAD16_BYTE( "c85_06.4",    0x40001, 0x20000, 0xd126ded1 );
 	
-		ROM_REGION( 0x080000, REGION_GFX1, ROMREGION_DISPOSE )	/* SCR */
-		ROM_LOAD( "c85-03.10",    0x00000, 0x80000, 0x4cc7b9df )
+		ROM_REGION( 0x080000, REGION_GFX1, ROMREGION_DISPOSE );/* SCR */
+		ROM_LOAD( "c85-03.10",    0x00000, 0x80000, 0x4cc7b9df );
 	
-		ROM_REGION( 0x200000, REGION_GFX2, ROMREGION_DISPOSE )	/* OBJ */
-		ROM_LOAD( "c85-01.16",    0x000000, 0x100000, 0xa711977c )
-		ROM_LOAD( "c85-02.15",    0x100000, 0x100000, 0xa6ad0f3d )
+		ROM_REGION( 0x200000, REGION_GFX2, ROMREGION_DISPOSE );/* OBJ */
+		ROM_LOAD( "c85-01.16",    0x000000, 0x100000, 0xa711977c );
+		ROM_LOAD( "c85-02.15",    0x100000, 0x100000, 0xa6ad0f3d );
 	
-		ROM_REGION( 0x1c000, REGION_CPU2, 0 )      /* sound cpu */
-		ROM_LOAD( "c85-14.6",     0x00000, 0x04000, 0xf2a52a51 )
-		ROM_CONTINUE(             0x10000, 0x0c000 ) /* banked stuff */
+		ROM_REGION( 0x1c000, REGION_CPU2, 0 );     /* sound cpu */
+		ROM_LOAD( "c85-14.6",     0x00000, 0x04000, 0xf2a52a51 );
+		ROM_CONTINUE(             0x10000, 0x0c000 );/* banked stuff */
 	
-		ROM_REGION( 0x80000, REGION_SOUND1, 0 )	/* ADPCM samples */
-		ROM_LOAD( "c85-04.1",     0x00000, 0x80000, 0x5afb747e )
+		ROM_REGION( 0x80000, REGION_SOUND1, 0 );/* ADPCM samples */
+		ROM_LOAD( "c85-04.1",     0x00000, 0x80000, 0x5afb747e );
 	
-		ROM_REGION( 0x80000, REGION_SOUND2, 0 )	/* Delta-T samples */
-		ROM_LOAD( "c85-05.11",    0x00000, 0x80000, 0x3c1b0ed0 )
-	ROM_END
+		ROM_REGION( 0x80000, REGION_SOUND2, 0 );/* Delta-T samples */
+		ROM_LOAD( "c85-05.11",    0x00000, 0x80000, 0x3c1b0ed0 );
+	ROM_END(); }}; 
 	
-	ROM_START( solfigtr )	/* Solitary Fighter */
-		ROM_REGION( 0x80000, REGION_CPU1, 0 )     /* 512k for 68000 code */
-		ROM_LOAD16_BYTE( "c91-05.59",  0x00000, 0x40000, 0xc1260e7c )
-		ROM_LOAD16_BYTE( "c91-09.61",  0x00001, 0x40000, 0xd82b5266 )
+	static RomLoadPtr rom_solfigtr = new RomLoadPtr(){ public void handler(){ 	/* Solitary Fighter */
+		ROM_REGION( 0x80000, REGION_CPU1, 0 );    /* 512k for 68000 code */
+		ROM_LOAD16_BYTE( "c91-05.59",  0x00000, 0x40000, 0xc1260e7c );
+		ROM_LOAD16_BYTE( "c91-09.61",  0x00001, 0x40000, 0xd82b5266 );
 	
-		ROM_REGION( 0x100000, REGION_GFX1, ROMREGION_DISPOSE )	/* SCR */
-		ROM_LOAD( "c91-03.34", 0x000000, 0x100000, 0x8965da12 )
+		ROM_REGION( 0x100000, REGION_GFX1, ROMREGION_DISPOSE );/* SCR */
+		ROM_LOAD( "c91-03.34", 0x000000, 0x100000, 0x8965da12 );
 	
-		ROM_REGION( 0x200000, REGION_GFX2, ROMREGION_DISPOSE )	/* OBJ */
-		ROM_LOAD( "c91-01.12", 0x000000, 0x100000, 0x0f3f4e00 )
-		ROM_LOAD( "c91-02.11", 0x100000, 0x100000, 0xe14ab98e )
+		ROM_REGION( 0x200000, REGION_GFX2, ROMREGION_DISPOSE );/* OBJ */
+		ROM_LOAD( "c91-01.12", 0x000000, 0x100000, 0x0f3f4e00 );
+		ROM_LOAD( "c91-02.11", 0x100000, 0x100000, 0xe14ab98e );
 	
-		ROM_REGION( 0x1c000, REGION_CPU2, 0 )      /* sound cpu */
-		ROM_LOAD( "c91-07.62", 0x00000, 0x04000, 0xe471a05a )
-		ROM_CONTINUE(          0x10000, 0x0c000 ) /* banked stuff */
+		ROM_REGION( 0x1c000, REGION_CPU2, 0 );     /* sound cpu */
+		ROM_LOAD( "c91-07.62", 0x00000, 0x04000, 0xe471a05a );
+		ROM_CONTINUE(          0x10000, 0x0c000 );/* banked stuff */
 	
-		ROM_REGION( 0x80000, REGION_SOUND1, 0 )	/* ADPCM samples */
-		ROM_LOAD( "c91-04.28", 0x00000, 0x80000, 0x390b1065 )	/* Channel A */
+		ROM_REGION( 0x80000, REGION_SOUND1, 0 );/* ADPCM samples */
+		ROM_LOAD( "c91-04.28", 0x00000, 0x80000, 0x390b1065 );/* Channel A */
 	
 		/* no Delta-T samples */
 	
 	//Pals c74-06.48
-	ROM_END
+	ROM_END(); }}; 
 	
-	ROM_START( qzquest )	/* Quiz Quest */
-		ROM_REGION( 0x180000, REGION_CPU1, 0 )     /* 256k for 68000 code */
-		ROM_LOAD16_BYTE( "c92_06.8", 0x000000, 0x020000, 0x424be722 )
-		ROM_LOAD16_BYTE( "c92_05.7", 0x000001, 0x020000, 0xda470f93 )
+	static RomLoadPtr rom_qzquest = new RomLoadPtr(){ public void handler(){ 	/* Quiz Quest */
+		ROM_REGION( 0x180000, REGION_CPU1, 0 );    /* 256k for 68000 code */
+		ROM_LOAD16_BYTE( "c92_06.8", 0x000000, 0x020000, 0x424be722 );
+		ROM_LOAD16_BYTE( "c92_05.7", 0x000001, 0x020000, 0xda470f93 );
 		ROM_LOAD16_WORD_SWAP( "c92-03.6", 0x100000, 0x080000, 0x1d697606 )	/* data rom */
 	
-		ROM_REGION( 0x100000, REGION_GFX1, ROMREGION_DISPOSE )	/* SCR */
-		ROM_LOAD( "c92-02.10", 0x000000, 0x100000, 0x2daccecf )
+		ROM_REGION( 0x100000, REGION_GFX1, ROMREGION_DISPOSE );/* SCR */
+		ROM_LOAD( "c92-02.10", 0x000000, 0x100000, 0x2daccecf );
 	
-		ROM_REGION( 0x100000, REGION_GFX2, ROMREGION_DISPOSE )	/* OBJ */
-		ROM_LOAD( "c92-01.21", 0x000000, 0x100000, 0x9976a285 )
+		ROM_REGION( 0x100000, REGION_GFX2, ROMREGION_DISPOSE );/* OBJ */
+		ROM_LOAD( "c92-01.21", 0x000000, 0x100000, 0x9976a285 );
 	
-		ROM_REGION( 0x1c000, REGION_CPU2, 0 )      /* sound cpu */
-		ROM_LOAD( "c92_07.5",  0x00000, 0x04000, 0x3e313db9 )
-		ROM_CONTINUE(          0x10000, 0x0c000 ) /* banked stuff */
+		ROM_REGION( 0x1c000, REGION_CPU2, 0 );     /* sound cpu */
+		ROM_LOAD( "c92_07.5",  0x00000, 0x04000, 0x3e313db9 );
+		ROM_CONTINUE(          0x10000, 0x0c000 );/* banked stuff */
 	
-		ROM_REGION( 0x080000, REGION_SOUND1, 0 )	/* ADPCM samples */
-		ROM_LOAD( "c92-04.9",  0x000000, 0x080000, 0xe421bb43 )
-	
-		/* no Delta-T samples */
-	ROM_END
-	
-	ROM_START( pulirula )
-		ROM_REGION( 0xc0000, REGION_CPU1, 0 )     /* 768k for 68000 code */
-		ROM_LOAD16_BYTE( "c98-12.rom", 0x00000, 0x40000, 0x816d6cde )
-		ROM_LOAD16_BYTE( "c98-16.rom", 0x00001, 0x40000, 0x59df5c77 )
-		ROM_LOAD16_BYTE( "c98-06.rom", 0x80000, 0x20000, 0x64a71b45 )
-		ROM_LOAD16_BYTE( "c98-07.rom", 0x80001, 0x20000, 0x90195bc0 )
-	
-		ROM_REGION( 0x100000, REGION_GFX1, ROMREGION_DISPOSE )	/* SCR */
-		ROM_LOAD( "c98-04.rom", 0x000000, 0x100000, 0x0e1fe3b2 )
-	
-		ROM_REGION( 0x200000, REGION_GFX2, ROMREGION_DISPOSE )	/* OBJ */
-		ROM_LOAD( "c98-02.rom", 0x000000, 0x100000, 0x4a2ad2b3 )
-		ROM_LOAD( "c98-03.rom", 0x100000, 0x100000, 0x589a678f )
-	
-		ROM_REGION( 0x080000, REGION_GFX3, ROMREGION_DISPOSE )	/* pivot gfx */
-		ROM_LOAD( "c98-05.rom", 0x000000, 0x080000, 0x9ddd9c39 )
-	
-		ROM_REGION( 0x2c000, REGION_CPU2, 0 )      /* sound cpu */
-		ROM_LOAD( "c98-14.rom", 0x00000, 0x04000, 0xa858e17c )
-		ROM_CONTINUE(           0x10000, 0x1c000 ) /* banked stuff */
-	
-		ROM_REGION( 0x100000, REGION_SOUND1, 0 )	/* ADPCM samples */
-		ROM_LOAD( "c98-01.rom", 0x000000, 0x100000, 0x197f66f5 )
+		ROM_REGION( 0x080000, REGION_SOUND1, 0 );/* ADPCM samples */
+		ROM_LOAD( "c92-04.9",  0x000000, 0x080000, 0xe421bb43 );
 	
 		/* no Delta-T samples */
-	ROM_END
+	ROM_END(); }}; 
 	
-	ROM_START( pulirulj )
-		ROM_REGION( 0xc0000, REGION_CPU1, 0 )     /* 768k for 68000 code */
-		ROM_LOAD16_BYTE( "c98-12.rom", 0x00000, 0x40000, 0x816d6cde )
-		ROM_LOAD16_BYTE( "c98-13",     0x00001, 0x40000, 0xb7d13d5b )
-		ROM_LOAD16_BYTE( "c98-06.rom", 0x80000, 0x20000, 0x64a71b45 )
-		ROM_LOAD16_BYTE( "c98-07.rom", 0x80001, 0x20000, 0x90195bc0 )
+	static RomLoadPtr rom_pulirula = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0xc0000, REGION_CPU1, 0 );    /* 768k for 68000 code */
+		ROM_LOAD16_BYTE( "c98-12.rom", 0x00000, 0x40000, 0x816d6cde );
+		ROM_LOAD16_BYTE( "c98-16.rom", 0x00001, 0x40000, 0x59df5c77 );
+		ROM_LOAD16_BYTE( "c98-06.rom", 0x80000, 0x20000, 0x64a71b45 );
+		ROM_LOAD16_BYTE( "c98-07.rom", 0x80001, 0x20000, 0x90195bc0 );
 	
-		ROM_REGION( 0x100000, REGION_GFX1, ROMREGION_DISPOSE )	/* SCR */
-		ROM_LOAD( "c98-04.rom", 0x000000, 0x100000, 0x0e1fe3b2 )
+		ROM_REGION( 0x100000, REGION_GFX1, ROMREGION_DISPOSE );/* SCR */
+		ROM_LOAD( "c98-04.rom", 0x000000, 0x100000, 0x0e1fe3b2 );
 	
-		ROM_REGION( 0x200000, REGION_GFX2, ROMREGION_DISPOSE )	/* OBJ */
-		ROM_LOAD( "c98-02.rom", 0x000000, 0x100000, 0x4a2ad2b3 )
-		ROM_LOAD( "c98-03.rom", 0x100000, 0x100000, 0x589a678f )
+		ROM_REGION( 0x200000, REGION_GFX2, ROMREGION_DISPOSE );/* OBJ */
+		ROM_LOAD( "c98-02.rom", 0x000000, 0x100000, 0x4a2ad2b3 );
+		ROM_LOAD( "c98-03.rom", 0x100000, 0x100000, 0x589a678f );
 	
-		ROM_REGION( 0x080000, REGION_GFX3, ROMREGION_DISPOSE )	/* pivot gfx */
-		ROM_LOAD( "c98-05.rom", 0x000000, 0x080000, 0x9ddd9c39 )
+		ROM_REGION( 0x080000, REGION_GFX3, ROMREGION_DISPOSE );/* pivot gfx */
+		ROM_LOAD( "c98-05.rom", 0x000000, 0x080000, 0x9ddd9c39 );
 	
-		ROM_REGION( 0x2c000, REGION_CPU2, 0 )      /* sound cpu */
-		ROM_LOAD( "c98-14.rom", 0x00000, 0x04000, 0xa858e17c )
-		ROM_CONTINUE(           0x10000, 0x1c000 ) /* banked stuff */
+		ROM_REGION( 0x2c000, REGION_CPU2, 0 );     /* sound cpu */
+		ROM_LOAD( "c98-14.rom", 0x00000, 0x04000, 0xa858e17c );
+		ROM_CONTINUE(           0x10000, 0x1c000 );/* banked stuff */
 	
-		ROM_REGION( 0x100000, REGION_SOUND1, 0 )	/* ADPCM samples */
-		ROM_LOAD( "c98-01.rom", 0x000000, 0x100000, 0x197f66f5 )
+		ROM_REGION( 0x100000, REGION_SOUND1, 0 );/* ADPCM samples */
+		ROM_LOAD( "c98-01.rom", 0x000000, 0x100000, 0x197f66f5 );
 	
 		/* no Delta-T samples */
-	ROM_END
+	ROM_END(); }}; 
 	
-	ROM_START( metalb )
-		ROM_REGION( 0xc0000, REGION_CPU1, 0 )     /* 768k for 68000 code */
-		ROM_LOAD16_BYTE( "d16-16.8",   0x00000, 0x40000, 0x3150be61 )
-		ROM_LOAD16_BYTE( "d16-18.7",   0x00001, 0x40000, 0x5216d092 )
-		ROM_LOAD16_BYTE( "d12-07.9",   0x80000, 0x20000, 0xe07f5136 )
-		ROM_LOAD16_BYTE( "d12-06.6",   0x80001, 0x20000, 0x131df731 )
+	static RomLoadPtr rom_pulirulj = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0xc0000, REGION_CPU1, 0 );    /* 768k for 68000 code */
+		ROM_LOAD16_BYTE( "c98-12.rom", 0x00000, 0x40000, 0x816d6cde );
+		ROM_LOAD16_BYTE( "c98-13",     0x00001, 0x40000, 0xb7d13d5b );
+		ROM_LOAD16_BYTE( "c98-06.rom", 0x80000, 0x20000, 0x64a71b45 );
+		ROM_LOAD16_BYTE( "c98-07.rom", 0x80001, 0x20000, 0x90195bc0 );
 	
-		ROM_REGION( 0x100000, REGION_GFX1, ROMREGION_DISPOSE )	/* SCR */
-		ROM_LOAD16_BYTE( "d12-03.14",  0x00000, 0x80000, 0x46b498c0 )
-		ROM_LOAD16_BYTE( "d12-04.13",  0x00001, 0x80000, 0xab66d141 )
+		ROM_REGION( 0x100000, REGION_GFX1, ROMREGION_DISPOSE );/* SCR */
+		ROM_LOAD( "c98-04.rom", 0x000000, 0x100000, 0x0e1fe3b2 );
 	
-		ROM_REGION( 0x100000, REGION_GFX2, ROMREGION_DISPOSE )	/* OBJ */
-		ROM_LOAD( "d12-01.20", 0x000000, 0x100000, 0xb81523b9 )
+		ROM_REGION( 0x200000, REGION_GFX2, ROMREGION_DISPOSE );/* OBJ */
+		ROM_LOAD( "c98-02.rom", 0x000000, 0x100000, 0x4a2ad2b3 );
+		ROM_LOAD( "c98-03.rom", 0x100000, 0x100000, 0x589a678f );
 	
-		ROM_REGION( 0x2c000, REGION_CPU2, 0 )      /* sound cpu */
-		ROM_LOAD( "d12-13.5", 0x00000, 0x04000, 0xbcca2649 )
-		ROM_CONTINUE(         0x10000, 0x1c000 ) /* banked stuff */
+		ROM_REGION( 0x080000, REGION_GFX3, ROMREGION_DISPOSE );/* pivot gfx */
+		ROM_LOAD( "c98-05.rom", 0x000000, 0x080000, 0x9ddd9c39 );
 	
-		ROM_REGION( 0x100000, REGION_SOUND1, 0 )	/* ADPCM samples */
-		ROM_LOAD( "d12-02.10", 0x000000, 0x100000, 0x79263e74 )
+		ROM_REGION( 0x2c000, REGION_CPU2, 0 );     /* sound cpu */
+		ROM_LOAD( "c98-14.rom", 0x00000, 0x04000, 0xa858e17c );
+		ROM_CONTINUE(           0x10000, 0x1c000 );/* banked stuff */
 	
-		ROM_REGION( 0x080000, REGION_SOUND2, 0 )   /* Delta-T samples */
-		ROM_LOAD( "d12-05.16", 0x000000, 0x080000, 0x7fd036c5 )
-	ROM_END
+		ROM_REGION( 0x100000, REGION_SOUND1, 0 );/* ADPCM samples */
+		ROM_LOAD( "c98-01.rom", 0x000000, 0x100000, 0x197f66f5 );
 	
-	ROM_START( metalbj )
-		ROM_REGION( 0xc0000, REGION_CPU1, 0 )     /* 768k for 68000 code */
-		ROM_LOAD16_BYTE( "d12-12.8",   0x00000, 0x40000, 0x556f82b2 )
-		ROM_LOAD16_BYTE( "d12-11.7",   0x00001, 0x40000, 0xaf9ee28d )
-		ROM_LOAD16_BYTE( "d12-07.9",   0x80000, 0x20000, 0xe07f5136 )
-		ROM_LOAD16_BYTE( "d12-06.6",   0x80001, 0x20000, 0x131df731 )
+		/* no Delta-T samples */
+	ROM_END(); }}; 
 	
-		ROM_REGION( 0x100000, REGION_GFX1, ROMREGION_DISPOSE )	/* SCR */
-		ROM_LOAD16_BYTE( "d12-03.14",  0x00000, 0x80000, 0x46b498c0 )
-		ROM_LOAD16_BYTE( "d12-04.13",  0x00001, 0x80000, 0xab66d141 )
+	static RomLoadPtr rom_metalb = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0xc0000, REGION_CPU1, 0 );    /* 768k for 68000 code */
+		ROM_LOAD16_BYTE( "d16-16.8",   0x00000, 0x40000, 0x3150be61 );
+		ROM_LOAD16_BYTE( "d16-18.7",   0x00001, 0x40000, 0x5216d092 );
+		ROM_LOAD16_BYTE( "d12-07.9",   0x80000, 0x20000, 0xe07f5136 );
+		ROM_LOAD16_BYTE( "d12-06.6",   0x80001, 0x20000, 0x131df731 );
 	
-		ROM_REGION( 0x100000, REGION_GFX2, ROMREGION_DISPOSE )	/* OBJ */
-		ROM_LOAD( "d12-01.20", 0x000000, 0x100000, 0xb81523b9 )
+		ROM_REGION( 0x100000, REGION_GFX1, ROMREGION_DISPOSE );/* SCR */
+		ROM_LOAD16_BYTE( "d12-03.14",  0x00000, 0x80000, 0x46b498c0 );
+		ROM_LOAD16_BYTE( "d12-04.13",  0x00001, 0x80000, 0xab66d141 );
 	
-		ROM_REGION( 0x2c000, REGION_CPU2, 0 )      /* sound cpu */
-		ROM_LOAD( "d12-13.5", 0x00000, 0x04000, 0xbcca2649 )
-		ROM_CONTINUE(         0x10000, 0x1c000 ) /* banked stuff */
+		ROM_REGION( 0x100000, REGION_GFX2, ROMREGION_DISPOSE );/* OBJ */
+		ROM_LOAD( "d12-01.20", 0x000000, 0x100000, 0xb81523b9 );
 	
-		ROM_REGION( 0x100000, REGION_SOUND1, 0 )	/* ADPCM samples */
-		ROM_LOAD( "d12-02.10", 0x000000, 0x100000, 0x79263e74 )
+		ROM_REGION( 0x2c000, REGION_CPU2, 0 );     /* sound cpu */
+		ROM_LOAD( "d12-13.5", 0x00000, 0x04000, 0xbcca2649 );
+		ROM_CONTINUE(         0x10000, 0x1c000 );/* banked stuff */
 	
-		ROM_REGION( 0x080000, REGION_SOUND2, 0 )   /* Delta-T samples */
-		ROM_LOAD( "d12-05.16", 0x000000, 0x080000, 0x7fd036c5 )
-	ROM_END
+		ROM_REGION( 0x100000, REGION_SOUND1, 0 );/* ADPCM samples */
+		ROM_LOAD( "d12-02.10", 0x000000, 0x100000, 0x79263e74 );
 	
-	ROM_START( qzchikyu )
-		ROM_REGION( 0x180000, REGION_CPU1, 0 )     /* 256k for 68000 code */
-		ROM_LOAD16_BYTE( "d19_06.8",	0x000000, 0x020000, 0xde8c8e55 )
-		ROM_LOAD16_BYTE( "d19_05.7",	0x000001, 0x020000, 0xc6d099d0 )
+		ROM_REGION( 0x080000, REGION_SOUND2, 0 );  /* Delta-T samples */
+		ROM_LOAD( "d12-05.16", 0x000000, 0x080000, 0x7fd036c5 );
+	ROM_END(); }}; 
+	
+	static RomLoadPtr rom_metalbj = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0xc0000, REGION_CPU1, 0 );    /* 768k for 68000 code */
+		ROM_LOAD16_BYTE( "d12-12.8",   0x00000, 0x40000, 0x556f82b2 );
+		ROM_LOAD16_BYTE( "d12-11.7",   0x00001, 0x40000, 0xaf9ee28d );
+		ROM_LOAD16_BYTE( "d12-07.9",   0x80000, 0x20000, 0xe07f5136 );
+		ROM_LOAD16_BYTE( "d12-06.6",   0x80001, 0x20000, 0x131df731 );
+	
+		ROM_REGION( 0x100000, REGION_GFX1, ROMREGION_DISPOSE );/* SCR */
+		ROM_LOAD16_BYTE( "d12-03.14",  0x00000, 0x80000, 0x46b498c0 );
+		ROM_LOAD16_BYTE( "d12-04.13",  0x00001, 0x80000, 0xab66d141 );
+	
+		ROM_REGION( 0x100000, REGION_GFX2, ROMREGION_DISPOSE );/* OBJ */
+		ROM_LOAD( "d12-01.20", 0x000000, 0x100000, 0xb81523b9 );
+	
+		ROM_REGION( 0x2c000, REGION_CPU2, 0 );     /* sound cpu */
+		ROM_LOAD( "d12-13.5", 0x00000, 0x04000, 0xbcca2649 );
+		ROM_CONTINUE(         0x10000, 0x1c000 );/* banked stuff */
+	
+		ROM_REGION( 0x100000, REGION_SOUND1, 0 );/* ADPCM samples */
+		ROM_LOAD( "d12-02.10", 0x000000, 0x100000, 0x79263e74 );
+	
+		ROM_REGION( 0x080000, REGION_SOUND2, 0 );  /* Delta-T samples */
+		ROM_LOAD( "d12-05.16", 0x000000, 0x080000, 0x7fd036c5 );
+	ROM_END(); }}; 
+	
+	static RomLoadPtr rom_qzchikyu = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x180000, REGION_CPU1, 0 );    /* 256k for 68000 code */
+		ROM_LOAD16_BYTE( "d19_06.8",	0x000000, 0x020000, 0xde8c8e55 );
+		ROM_LOAD16_BYTE( "d19_05.7",	0x000001, 0x020000, 0xc6d099d0 );
 		ROM_LOAD16_WORD_SWAP( "d19-03.6",	0x100000, 0x080000, 0x5c1b92c0 )	/* data rom */
 	
-		ROM_REGION( 0x100000, REGION_GFX1, ROMREGION_DISPOSE )	/* SCR */
-		ROM_LOAD( "d19-02.10",	0x000000, 0x100000, 0xf2dce2f2 )
+		ROM_REGION( 0x100000, REGION_GFX1, ROMREGION_DISPOSE );/* SCR */
+		ROM_LOAD( "d19-02.10",	0x000000, 0x100000, 0xf2dce2f2 );
 	
-		ROM_REGION( 0x100000, REGION_GFX2, ROMREGION_DISPOSE )	/* OBJ */
-		ROM_LOAD( "d19-01.21",	0x000000, 0x100000, 0x6c4342d0 )
+		ROM_REGION( 0x100000, REGION_GFX2, ROMREGION_DISPOSE );/* OBJ */
+		ROM_LOAD( "d19-01.21",	0x000000, 0x100000, 0x6c4342d0 );
 	
-		ROM_REGION( 0x1c000, REGION_CPU2, 0 )      /* sound cpu */
-		ROM_LOAD( "d19_07.5",	0x00000, 0x04000, 0xa8935f84 )
-		ROM_CONTINUE(			0x10000, 0x0c000 ) /* banked stuff */
+		ROM_REGION( 0x1c000, REGION_CPU2, 0 );     /* sound cpu */
+		ROM_LOAD( "d19_07.5",	0x00000, 0x04000, 0xa8935f84 );
+		ROM_CONTINUE(			0x10000, 0x0c000 );/* banked stuff */
 	
-		ROM_REGION( 0x100000, REGION_SOUND1, 0 )	/* ADPCM samples */
-		ROM_LOAD( "d19-04.9",	0x000000, 0x080000, 0xd3c44905 )
+		ROM_REGION( 0x100000, REGION_SOUND1, 0 );/* ADPCM samples */
+		ROM_LOAD( "d19-04.9",	0x000000, 0x080000, 0xd3c44905 );
 	
 		/* no Delta-T samples */
-	ROM_END
+	ROM_END(); }}; 
 	
-	ROM_START( yesnoj )	/* Yes/No Sinri Tokimeki Chart */
-		ROM_REGION( 0x80000, REGION_CPU1, 0 )     /* 512k for 68000 code */
-		ROM_LOAD16_BYTE( "d20-05-2.2",  0x00000, 0x40000, 0x68adb929 )
-		ROM_LOAD16_BYTE( "d20-04-2.4",  0x00001, 0x40000, 0xa84762f8 )
+	static RomLoadPtr rom_yesnoj = new RomLoadPtr(){ public void handler(){ 	/* Yes/No Sinri Tokimeki Chart */
+		ROM_REGION( 0x80000, REGION_CPU1, 0 );    /* 512k for 68000 code */
+		ROM_LOAD16_BYTE( "d20-05-2.2",  0x00000, 0x40000, 0x68adb929 );
+		ROM_LOAD16_BYTE( "d20-04-2.4",  0x00001, 0x40000, 0xa84762f8 );
 	
-		ROM_REGION( 0x080000, REGION_GFX1, ROMREGION_DISPOSE )	/* SCR */
-		ROM_LOAD( "d20-01.11", 0x00000, 0x80000, 0x9d8a4d57 )
+		ROM_REGION( 0x080000, REGION_GFX1, ROMREGION_DISPOSE );/* SCR */
+		ROM_LOAD( "d20-01.11", 0x00000, 0x80000, 0x9d8a4d57 );
 	
-		ROM_REGION( 0x100000, REGION_GFX2, ROMREGION_DISPOSE )	/* OBJ */
-		ROM_LOAD16_BYTE( "d20-02.12",  0x00000, 0x80000, 0xe71a8e40 )
-		ROM_LOAD16_BYTE( "d20-03.13",  0x00001, 0x80000, 0x6a51a1b4 )
+		ROM_REGION( 0x100000, REGION_GFX2, ROMREGION_DISPOSE );/* OBJ */
+		ROM_LOAD16_BYTE( "d20-02.12",  0x00000, 0x80000, 0xe71a8e40 );
+		ROM_LOAD16_BYTE( "d20-03.13",  0x00001, 0x80000, 0x6a51a1b4 );
 	
-		ROM_REGION( 0x1c000, REGION_CPU2, 0 )      /* sound cpu */
-		ROM_LOAD( "d20-06.5",  0x00000, 0x04000, 0x3eb537dc )
-		ROM_CONTINUE(          0x10000, 0x0c000 ) /* banked stuff */
+		ROM_REGION( 0x1c000, REGION_CPU2, 0 );     /* sound cpu */
+		ROM_LOAD( "d20-06.5",  0x00000, 0x04000, 0x3eb537dc );
+		ROM_CONTINUE(          0x10000, 0x0c000 );/* banked stuff */
 	
 		/* no ADPCM samples */
 	
 		/* no Delta-T samples */
-	ROM_END
+	ROM_END(); }}; 
 	
-	ROM_START( deadconx )
-		ROM_REGION( 0x100000, REGION_CPU1, 0 )     /* 1024k for 68000 code */
-		ROM_LOAD16_BYTE( "d28_06.3",  0x00000, 0x40000, 0x5b4bff51 )
-		ROM_LOAD16_BYTE( "d28_12.5",  0x00001, 0x40000, 0x9b74e631 )
-		ROM_LOAD16_BYTE( "d28_09.2",  0x80000, 0x40000, 0x143a0cc1 )
-		ROM_LOAD16_BYTE( "d28_08.4",  0x80001, 0x40000, 0x4c872bd9 )
+	static RomLoadPtr rom_deadconx = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x100000, REGION_CPU1, 0 );    /* 1024k for 68000 code */
+		ROM_LOAD16_BYTE( "d28_06.3",  0x00000, 0x40000, 0x5b4bff51 );
+		ROM_LOAD16_BYTE( "d28_12.5",  0x00001, 0x40000, 0x9b74e631 );
+		ROM_LOAD16_BYTE( "d28_09.2",  0x80000, 0x40000, 0x143a0cc1 );
+		ROM_LOAD16_BYTE( "d28_08.4",  0x80001, 0x40000, 0x4c872bd9 );
 	
-		ROM_REGION( 0x100000, REGION_GFX1, ROMREGION_DISPOSE )	/* SCR */
-		ROM_LOAD16_BYTE( "d28_04.16", 0x00000, 0x80000, 0xdcabc26b )
-		ROM_LOAD16_BYTE( "d28_05.17", 0x00001, 0x80000, 0x862f9665 )
+		ROM_REGION( 0x100000, REGION_GFX1, ROMREGION_DISPOSE );/* SCR */
+		ROM_LOAD16_BYTE( "d28_04.16", 0x00000, 0x80000, 0xdcabc26b );
+		ROM_LOAD16_BYTE( "d28_05.17", 0x00001, 0x80000, 0x862f9665 );
 	
-		ROM_REGION( 0x200000, REGION_GFX2, ROMREGION_DISPOSE )	/* OBJ */
-		ROM_LOAD( "d28_01.8", 0x000000, 0x100000, 0x181d7b69 )
-		ROM_LOAD( "d28_02.9", 0x100000, 0x100000, 0xd301771c )
+		ROM_REGION( 0x200000, REGION_GFX2, ROMREGION_DISPOSE );/* OBJ */
+		ROM_LOAD( "d28_01.8", 0x000000, 0x100000, 0x181d7b69 );
+		ROM_LOAD( "d28_02.9", 0x100000, 0x100000, 0xd301771c );
 	
-		ROM_REGION( 0x1c000, REGION_CPU2, 0 )	 /* sound cpu */
-		ROM_LOAD( "d28_10.6", 0x00000, 0x04000, 0x40805d74 )
-		ROM_CONTINUE(         0x10000, 0x0c000 )	/* banked stuff */
+		ROM_REGION( 0x1c000, REGION_CPU2, 0 ); /* sound cpu */
+		ROM_LOAD( "d28_10.6", 0x00000, 0x04000, 0x40805d74 );
+		ROM_CONTINUE(         0x10000, 0x0c000 );/* banked stuff */
 	
-		ROM_REGION( 0x100000, REGION_SOUND1, 0 )	/* ADPCM samples */
-		ROM_LOAD( "d28_03.10", 0x000000, 0x100000, 0xa1804b52 )
-	
-		/* no Delta-T samples */
-	ROM_END
-	
-	ROM_START( deadconj )
-		ROM_REGION( 0x100000, REGION_CPU1, 0 )     /* 1024k for 68000 code */
-		ROM_LOAD16_BYTE( "d28_06.3",  0x00000, 0x40000, 0x5b4bff51 )
-		ROM_LOAD16_BYTE( "d28_07.5",  0x00001, 0x40000, 0x3fb8954c )
-		ROM_LOAD16_BYTE( "d28_09.2",  0x80000, 0x40000, 0x143a0cc1 )
-		ROM_LOAD16_BYTE( "d28_08.4",  0x80001, 0x40000, 0x4c872bd9 )
-	
-		ROM_REGION( 0x100000, REGION_GFX1, ROMREGION_DISPOSE )	/* SCR */
-		ROM_LOAD16_BYTE( "d28_04.16", 0x00000, 0x80000, 0xdcabc26b )
-		ROM_LOAD16_BYTE( "d28_05.17", 0x00001, 0x80000, 0x862f9665 )
-	
-		ROM_REGION( 0x200000, REGION_GFX2, ROMREGION_DISPOSE )	/* OBJ */
-		ROM_LOAD( "d28_01.8", 0x000000, 0x100000, 0x181d7b69 )
-		ROM_LOAD( "d28_02.9", 0x100000, 0x100000, 0xd301771c )
-	
-		ROM_REGION( 0x1c000, REGION_CPU2, 0 )	 /* sound cpu */
-		ROM_LOAD( "d28_10.6", 0x00000, 0x04000, 0x40805d74 )
-		ROM_CONTINUE(         0x10000, 0x0c000 )	/* banked stuff */
-	
-		ROM_REGION( 0x100000, REGION_SOUND1, 0 )	/* ADPCM samples */
-		ROM_LOAD( "d28_03.10", 0x000000, 0x100000, 0xa1804b52 )
+		ROM_REGION( 0x100000, REGION_SOUND1, 0 );/* ADPCM samples */
+		ROM_LOAD( "d28_03.10", 0x000000, 0x100000, 0xa1804b52 );
 	
 		/* no Delta-T samples */
-	ROM_END
+	ROM_END(); }}; 
 	
-	ROM_START( dinorex )
-		ROM_REGION( 0x300000, REGION_CPU1, 0 )     /* 1Mb for 68000 code */
-		ROM_LOAD16_BYTE( "d39_14.9",	0x000000, 0x080000, 0xe6aafdac )
-		ROM_LOAD16_BYTE( "d39_16.8",	0x000001, 0x080000, 0xcedc8537 )
+	static RomLoadPtr rom_deadconj = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x100000, REGION_CPU1, 0 );    /* 1024k for 68000 code */
+		ROM_LOAD16_BYTE( "d28_06.3",  0x00000, 0x40000, 0x5b4bff51 );
+		ROM_LOAD16_BYTE( "d28_07.5",  0x00001, 0x40000, 0x3fb8954c );
+		ROM_LOAD16_BYTE( "d28_09.2",  0x80000, 0x40000, 0x143a0cc1 );
+		ROM_LOAD16_BYTE( "d28_08.4",  0x80001, 0x40000, 0x4c872bd9 );
+	
+		ROM_REGION( 0x100000, REGION_GFX1, ROMREGION_DISPOSE );/* SCR */
+		ROM_LOAD16_BYTE( "d28_04.16", 0x00000, 0x80000, 0xdcabc26b );
+		ROM_LOAD16_BYTE( "d28_05.17", 0x00001, 0x80000, 0x862f9665 );
+	
+		ROM_REGION( 0x200000, REGION_GFX2, ROMREGION_DISPOSE );/* OBJ */
+		ROM_LOAD( "d28_01.8", 0x000000, 0x100000, 0x181d7b69 );
+		ROM_LOAD( "d28_02.9", 0x100000, 0x100000, 0xd301771c );
+	
+		ROM_REGION( 0x1c000, REGION_CPU2, 0 ); /* sound cpu */
+		ROM_LOAD( "d28_10.6", 0x00000, 0x04000, 0x40805d74 );
+		ROM_CONTINUE(         0x10000, 0x0c000 );/* banked stuff */
+	
+		ROM_REGION( 0x100000, REGION_SOUND1, 0 );/* ADPCM samples */
+		ROM_LOAD( "d28_03.10", 0x000000, 0x100000, 0xa1804b52 );
+	
+		/* no Delta-T samples */
+	ROM_END(); }}; 
+	
+	static RomLoadPtr rom_dinorex = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x300000, REGION_CPU1, 0 );    /* 1Mb for 68000 code */
+		ROM_LOAD16_BYTE( "d39_14.9",	0x000000, 0x080000, 0xe6aafdac );
+		ROM_LOAD16_BYTE( "d39_16.8",	0x000001, 0x080000, 0xcedc8537 );
 		ROM_LOAD16_WORD_SWAP( "d39-04.6",	0x100000, 0x100000, 0x3800506d )	/* data rom */
 		ROM_LOAD16_WORD_SWAP( "d39-05.7",	0x200000, 0x100000, 0xe2ec3b5d )	/* data rom */
 	
-		ROM_REGION( 0x100000, REGION_GFX1, ROMREGION_DISPOSE )	/* SCR */
-		ROM_LOAD( "d39-06.2",	0x000000, 0x100000, 0x52f62835 )
+		ROM_REGION( 0x100000, REGION_GFX1, ROMREGION_DISPOSE );/* SCR */
+		ROM_LOAD( "d39-06.2",	0x000000, 0x100000, 0x52f62835 );
 	
-		ROM_REGION( 0x600000, REGION_GFX2, ROMREGION_DISPOSE )	/* OBJ */
-		ROM_LOAD( "d39-01.29",	0x000000, 0x200000, 0xd10e9c7d )
-		ROM_LOAD( "d39-02.28",	0x200000, 0x200000, 0x6c304403 )
-		ROM_LOAD( "d39-03.27",	0x400000, 0x200000, 0xfc9cdab4 )
+		ROM_REGION( 0x600000, REGION_GFX2, ROMREGION_DISPOSE );/* OBJ */
+		ROM_LOAD( "d39-01.29",	0x000000, 0x200000, 0xd10e9c7d );
+		ROM_LOAD( "d39-02.28",	0x200000, 0x200000, 0x6c304403 );
+		ROM_LOAD( "d39-03.27",	0x400000, 0x200000, 0xfc9cdab4 );
 	
-		ROM_REGION( 0x1c000, REGION_CPU2, 0 )		 /* sound cpu */
-		ROM_LOAD( "d39_12.5",	0x00000, 0x04000, 0x8292c7c1 )
-		ROM_CONTINUE(             0x10000, 0x0c000 )	/* banked stuff */
+		ROM_REGION( 0x1c000, REGION_CPU2, 0 );	 /* sound cpu */
+		ROM_LOAD( "d39_12.5",	0x00000, 0x04000, 0x8292c7c1 );
+		ROM_CONTINUE(             0x10000, 0x0c000 );/* banked stuff */
 	
-		ROM_REGION( 0x100000, REGION_SOUND1, 0 )	/* ADPCM samples */
-		ROM_LOAD( "d39-07.10",	0x000000, 0x100000, 0x28262816 )
+		ROM_REGION( 0x100000, REGION_SOUND1, 0 );/* ADPCM samples */
+		ROM_LOAD( "d39-07.10",	0x000000, 0x100000, 0x28262816 );
 	
-		ROM_REGION( 0x080000, REGION_SOUND2, 0 )	/* Delta-T samples */
-		ROM_LOAD( "d39-08.4",	0x000000, 0x080000, 0x377b8b7b )
-	ROM_END
+		ROM_REGION( 0x080000, REGION_SOUND2, 0 );/* Delta-T samples */
+		ROM_LOAD( "d39-08.4",	0x000000, 0x080000, 0x377b8b7b );
+	ROM_END(); }}; 
 	
-	ROM_START( dinorexj )
-		ROM_REGION( 0x300000, REGION_CPU1, 0 )     /* 1Mb for 68000 code */
-		ROM_LOAD16_BYTE( "d39_14.9",	0x000000, 0x080000, 0xe6aafdac )
-		ROM_LOAD16_BYTE( "d39_13.8",	0x000001, 0x080000, 0xae496b2f )
+	static RomLoadPtr rom_dinorexj = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x300000, REGION_CPU1, 0 );    /* 1Mb for 68000 code */
+		ROM_LOAD16_BYTE( "d39_14.9",	0x000000, 0x080000, 0xe6aafdac );
+		ROM_LOAD16_BYTE( "d39_13.8",	0x000001, 0x080000, 0xae496b2f );
 		ROM_LOAD16_WORD_SWAP( "d39-04.6",	0x100000, 0x100000, 0x3800506d )	/* data rom */
 		ROM_LOAD16_WORD_SWAP( "d39-05.7",	0x200000, 0x100000, 0xe2ec3b5d )	/* data rom */
 	
-		ROM_REGION( 0x100000, REGION_GFX1, ROMREGION_DISPOSE )	/* SCR */
-		ROM_LOAD( "d39-06.2",	0x000000, 0x100000, 0x52f62835 )
+		ROM_REGION( 0x100000, REGION_GFX1, ROMREGION_DISPOSE );/* SCR */
+		ROM_LOAD( "d39-06.2",	0x000000, 0x100000, 0x52f62835 );
 	
-		ROM_REGION( 0x600000, REGION_GFX2, ROMREGION_DISPOSE )	/* OBJ */
-		ROM_LOAD( "d39-01.29",	0x000000, 0x200000, 0xd10e9c7d )
-		ROM_LOAD( "d39-02.28",	0x200000, 0x200000, 0x6c304403 )
-		ROM_LOAD( "d39-03.27",	0x400000, 0x200000, 0xfc9cdab4 )
+		ROM_REGION( 0x600000, REGION_GFX2, ROMREGION_DISPOSE );/* OBJ */
+		ROM_LOAD( "d39-01.29",	0x000000, 0x200000, 0xd10e9c7d );
+		ROM_LOAD( "d39-02.28",	0x200000, 0x200000, 0x6c304403 );
+		ROM_LOAD( "d39-03.27",	0x400000, 0x200000, 0xfc9cdab4 );
 	
-		ROM_REGION( 0x1c000, REGION_CPU2, 0 )		 /* sound cpu */
-		ROM_LOAD( "d39_12.5",	0x00000, 0x04000, 0x8292c7c1 )
-		ROM_CONTINUE(             0x10000, 0x0c000 )	/* banked stuff */
+		ROM_REGION( 0x1c000, REGION_CPU2, 0 );	 /* sound cpu */
+		ROM_LOAD( "d39_12.5",	0x00000, 0x04000, 0x8292c7c1 );
+		ROM_CONTINUE(             0x10000, 0x0c000 );/* banked stuff */
 	
-		ROM_REGION( 0x100000, REGION_SOUND1, 0 )	/* ADPCM samples */
-		ROM_LOAD( "d39-07.10",	0x000000, 0x100000, 0x28262816 )
+		ROM_REGION( 0x100000, REGION_SOUND1, 0 );/* ADPCM samples */
+		ROM_LOAD( "d39-07.10",	0x000000, 0x100000, 0x28262816 );
 	
-		ROM_REGION( 0x080000, REGION_SOUND2, 0 )	/* Delta-T samples */
-		ROM_LOAD( "d39-08.4",	0x000000, 0x080000, 0x377b8b7b )
-	ROM_END
+		ROM_REGION( 0x080000, REGION_SOUND2, 0 );/* Delta-T samples */
+		ROM_LOAD( "d39-08.4",	0x000000, 0x080000, 0x377b8b7b );
+	ROM_END(); }}; 
 	
-	ROM_START( dinorexu )
-		ROM_REGION( 0x300000, REGION_CPU1, 0 )	/* 1Mb for 68000 code */
-		ROM_LOAD16_BYTE( "d39_14.9",	0x000000, 0x080000, 0xe6aafdac )
-		ROM_LOAD16_BYTE( "d39_15.8",	0x000001, 0x080000, 0xfe96723b )
+	static RomLoadPtr rom_dinorexu = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x300000, REGION_CPU1, 0 );/* 1Mb for 68000 code */
+		ROM_LOAD16_BYTE( "d39_14.9",	0x000000, 0x080000, 0xe6aafdac );
+		ROM_LOAD16_BYTE( "d39_15.8",	0x000001, 0x080000, 0xfe96723b );
 		ROM_LOAD16_WORD_SWAP( "d39-04.6",	0x100000, 0x100000, 0x3800506d )	/* data rom */
 		ROM_LOAD16_WORD_SWAP( "d39-05.7",	0x200000, 0x100000, 0xe2ec3b5d )	/* data rom */
 	
-		ROM_REGION( 0x100000, REGION_GFX1, ROMREGION_DISPOSE )	/* SCR */
-		ROM_LOAD( "d39-06.2",	0x000000, 0x100000, 0x52f62835 )
+		ROM_REGION( 0x100000, REGION_GFX1, ROMREGION_DISPOSE );/* SCR */
+		ROM_LOAD( "d39-06.2",	0x000000, 0x100000, 0x52f62835 );
 	
-		ROM_REGION( 0x600000, REGION_GFX2, ROMREGION_DISPOSE )	/* OBJ */
-		ROM_LOAD( "d39-01.29",	0x000000, 0x200000, 0xd10e9c7d )
-		ROM_LOAD( "d39-02.28",	0x200000, 0x200000, 0x6c304403 )
-		ROM_LOAD( "d39-03.27",	0x400000, 0x200000, 0xfc9cdab4 )
+		ROM_REGION( 0x600000, REGION_GFX2, ROMREGION_DISPOSE );/* OBJ */
+		ROM_LOAD( "d39-01.29",	0x000000, 0x200000, 0xd10e9c7d );
+		ROM_LOAD( "d39-02.28",	0x200000, 0x200000, 0x6c304403 );
+		ROM_LOAD( "d39-03.27",	0x400000, 0x200000, 0xfc9cdab4 );
 	
-		ROM_REGION( 0x1c000, REGION_CPU2, 0 )		 /* sound cpu */
-		ROM_LOAD( "d39_12.5",	0x00000, 0x04000, 0x8292c7c1 )
-		ROM_CONTINUE(             0x10000, 0x0c000 )	/* banked stuff */
+		ROM_REGION( 0x1c000, REGION_CPU2, 0 );	 /* sound cpu */
+		ROM_LOAD( "d39_12.5",	0x00000, 0x04000, 0x8292c7c1 );
+		ROM_CONTINUE(             0x10000, 0x0c000 );/* banked stuff */
 	
-		ROM_REGION( 0x100000, REGION_SOUND1, 0 )	/* ADPCM samples */
-		ROM_LOAD( "d39-07.10",	0x000000, 0x100000, 0x28262816 )
+		ROM_REGION( 0x100000, REGION_SOUND1, 0 );/* ADPCM samples */
+		ROM_LOAD( "d39-07.10",	0x000000, 0x100000, 0x28262816 );
 	
-		ROM_REGION( 0x080000, REGION_SOUND2, 0 )	/* Delta-T samples */
-		ROM_LOAD( "d39-08.4",	0x000000, 0x080000, 0x377b8b7b )
-	ROM_END
+		ROM_REGION( 0x080000, REGION_SOUND2, 0 );/* Delta-T samples */
+		ROM_LOAD( "d39-08.4",	0x000000, 0x080000, 0x377b8b7b );
+	ROM_END(); }}; 
 	
-	ROM_START( qjinsei )	/* Quiz Jinsei Gekijoh */
-		ROM_REGION( 0x200000, REGION_CPU1, 0 )     /* 512k for 68000 code */
-		ROM_LOAD16_BYTE( "d48-09",  0x000000, 0x040000, 0xa573b68d )
-		ROM_LOAD16_BYTE( "d48-10",  0x000001, 0x040000, 0x37143a5b )
+	static RomLoadPtr rom_qjinsei = new RomLoadPtr(){ public void handler(){ 	/* Quiz Jinsei Gekijoh */
+		ROM_REGION( 0x200000, REGION_CPU1, 0 );    /* 512k for 68000 code */
+		ROM_LOAD16_BYTE( "d48-09",  0x000000, 0x040000, 0xa573b68d );
+		ROM_LOAD16_BYTE( "d48-10",  0x000001, 0x040000, 0x37143a5b );
 		ROM_LOAD16_WORD_SWAP( "d48-03",  0x100000, 0x100000, 0xfb5ea8dc )	/* data rom */
 	
-		ROM_REGION( 0x100000, REGION_GFX1, ROMREGION_DISPOSE )	/* SCR */
-		ROM_LOAD( "d48-04", 0x000000, 0x100000, 0x61e4b078 )
+		ROM_REGION( 0x100000, REGION_GFX1, ROMREGION_DISPOSE );/* SCR */
+		ROM_LOAD( "d48-04", 0x000000, 0x100000, 0x61e4b078 );
 	
-		ROM_REGION( 0x200000, REGION_GFX2, ROMREGION_DISPOSE )	/* OBJ */
-		ROM_LOAD16_BYTE( "d48-02", 0x000000, 0x100000, 0xa7b68e63 )
-		ROM_LOAD16_BYTE( "d48-01", 0x000001, 0x100000, 0x72a94b73 )
+		ROM_REGION( 0x200000, REGION_GFX2, ROMREGION_DISPOSE );/* OBJ */
+		ROM_LOAD16_BYTE( "d48-02", 0x000000, 0x100000, 0xa7b68e63 );
+		ROM_LOAD16_BYTE( "d48-01", 0x000001, 0x100000, 0x72a94b73 );
 	
-		ROM_REGION( 0x1c000, REGION_CPU2, 0 )      /* sound cpu */
-		ROM_LOAD( "d48-11",    0x00000, 0x04000, 0x656c5b54 )
-		ROM_CONTINUE(          0x10000, 0x0c000 ) /* banked stuff */
+		ROM_REGION( 0x1c000, REGION_CPU2, 0 );     /* sound cpu */
+		ROM_LOAD( "d48-11",    0x00000, 0x04000, 0x656c5b54 );
+		ROM_CONTINUE(          0x10000, 0x0c000 );/* banked stuff */
 	
-		ROM_REGION( 0x080000, REGION_SOUND1, 0 )	/* ADPCM samples */
-		ROM_LOAD( "d48-05",  0x000000, 0x080000, 0x3fefd058 )
+		ROM_REGION( 0x080000, REGION_SOUND1, 0 );/* ADPCM samples */
+		ROM_LOAD( "d48-05",  0x000000, 0x080000, 0x3fefd058 );
 	
 		/* no Delta-T samples */
-	ROM_END
+	ROM_END(); }}; 
 	
-	ROM_START( qcrayon )	/* Quiz Crayon */
-		ROM_REGION( 0x80000, REGION_CPU1, 0 )     /* 512k for 68000 code */
-		ROM_LOAD16_BYTE( "d55-13",  0x00000, 0x40000, 0x16afbfc7 )
-		ROM_LOAD16_BYTE( "d55-14",  0x00001, 0x40000, 0x2fb3057f )
+	static RomLoadPtr rom_qcrayon = new RomLoadPtr(){ public void handler(){ 	/* Quiz Crayon */
+		ROM_REGION( 0x80000, REGION_CPU1, 0 );    /* 512k for 68000 code */
+		ROM_LOAD16_BYTE( "d55-13",  0x00000, 0x40000, 0x16afbfc7 );
+		ROM_LOAD16_BYTE( "d55-14",  0x00001, 0x40000, 0x2fb3057f );
 	
-		ROM_REGION16_BE( 0x100000, REGION_USER1, 0 )
+		ROM_REGION16_BE( 0x100000, REGION_USER1, 0 );
 		/* extra ROM mapped 0x300000 */
 		ROM_LOAD16_WORD_SWAP( "d55-03", 0x000000, 0x100000, 0x4d161e76 )   /* data rom */
 	
-		ROM_REGION( 0x100000, REGION_GFX1, ROMREGION_DISPOSE )	/* SCR */
-		ROM_LOAD( "d55-02", 0x000000, 0x100000, 0xf3db2f1c )
+		ROM_REGION( 0x100000, REGION_GFX1, ROMREGION_DISPOSE );/* SCR */
+		ROM_LOAD( "d55-02", 0x000000, 0x100000, 0xf3db2f1c );
 	
-		ROM_REGION( 0x200000, REGION_GFX2, ROMREGION_DISPOSE )	/* OBJ */
-		ROM_LOAD16_BYTE( "d55-05", 0x000000, 0x100000, 0xf0e59902 )
-		ROM_LOAD16_BYTE( "d55-04", 0x000001, 0x100000, 0x412975ce )
+		ROM_REGION( 0x200000, REGION_GFX2, ROMREGION_DISPOSE );/* OBJ */
+		ROM_LOAD16_BYTE( "d55-05", 0x000000, 0x100000, 0xf0e59902 );
+		ROM_LOAD16_BYTE( "d55-04", 0x000001, 0x100000, 0x412975ce );
 	
-		ROM_REGION( 0x1c000, REGION_CPU2, 0 )	 /* sound cpu */
-		ROM_LOAD( "d55-15",  0x00000, 0x04000, 0xba782eff )
-		ROM_CONTINUE(        0x10000, 0x0c000 )	/* banked stuff */
+		ROM_REGION( 0x1c000, REGION_CPU2, 0 ); /* sound cpu */
+		ROM_LOAD( "d55-15",  0x00000, 0x04000, 0xba782eff );
+		ROM_CONTINUE(        0x10000, 0x0c000 );/* banked stuff */
 	
-		ROM_REGION( 0x100000, REGION_SOUND1, 0 )	/* ADPCM samples */
-		ROM_LOAD( "d55-01",  0x000000, 0x100000, 0xa8309af4 )
+		ROM_REGION( 0x100000, REGION_SOUND1, 0 );/* ADPCM samples */
+		ROM_LOAD( "d55-01",  0x000000, 0x100000, 0xa8309af4 );
 	
 		/* no Delta-T samples */
-	ROM_END
+	ROM_END(); }}; 
 	
-	ROM_START( qcrayon2 )	/* Quiz Crayon 2 */
-		ROM_REGION( 0x80000, REGION_CPU1, 0 )     /* 512k for 68000 code */
-		ROM_LOAD16_BYTE( "d63-12",  0x00000, 0x40000, 0x0f445a38 )
-		ROM_LOAD16_BYTE( "d63-13",  0x00001, 0x40000, 0x74455752 )
+	static RomLoadPtr rom_qcrayon2 = new RomLoadPtr(){ public void handler(){ 	/* Quiz Crayon 2 */
+		ROM_REGION( 0x80000, REGION_CPU1, 0 );    /* 512k for 68000 code */
+		ROM_LOAD16_BYTE( "d63-12",  0x00000, 0x40000, 0x0f445a38 );
+		ROM_LOAD16_BYTE( "d63-13",  0x00001, 0x40000, 0x74455752 );
 	
-		ROM_REGION16_BE( 0x080000, REGION_USER1, 0 )
+		ROM_REGION16_BE( 0x080000, REGION_USER1, 0 );
 		/* extra ROM mapped at 600000 */
 		ROM_LOAD16_WORD_SWAP( "d63-01", 0x00000, 0x80000, 0x872e38b4 )   /* data rom */
 	
-		ROM_REGION( 0x100000, REGION_GFX1, ROMREGION_DISPOSE )    /* SCR */
-		ROM_LOAD( "d63-03", 0x000000, 0x100000, 0xd24843af )
+		ROM_REGION( 0x100000, REGION_GFX1, ROMREGION_DISPOSE );   /* SCR */
+		ROM_LOAD( "d63-03", 0x000000, 0x100000, 0xd24843af );
 	
-		ROM_REGION( 0x200000, REGION_GFX2, ROMREGION_DISPOSE )    /* OBJ */
-		ROM_LOAD( "d63-06", 0x000000, 0x200000, 0x58b1e4a8 )
+		ROM_REGION( 0x200000, REGION_GFX2, ROMREGION_DISPOSE );   /* OBJ */
+		ROM_LOAD( "d63-06", 0x000000, 0x200000, 0x58b1e4a8 );
 	
-		ROM_REGION( 0x1c000, REGION_CPU2, 0 )      /* sound cpu */
-		ROM_LOAD( "d63-11",    0x00000, 0x04000, 0x2c7ac9e5 )
-		ROM_CONTINUE(          0x10000, 0x0c000 ) /* banked stuff */
+		ROM_REGION( 0x1c000, REGION_CPU2, 0 );     /* sound cpu */
+		ROM_LOAD( "d63-11",    0x00000, 0x04000, 0x2c7ac9e5 );
+		ROM_CONTINUE(          0x10000, 0x0c000 );/* banked stuff */
 	
-		ROM_REGION( 0x100000, REGION_SOUND1, 0 )	/* ADPCM samples */
-		ROM_LOAD( "d63-02",  0x000000, 0x100000, 0x162ae165 )
-	
-		/* no Delta-T samples */
-	ROM_END
-	
-	ROM_START( driftout )
-		ROM_REGION( 0x100000, REGION_CPU1, 0 )     /* 1024k for 68000 code */
-		ROM_LOAD16_BYTE( "do_46.rom",  0x00000, 0x80000, 0xf960363e )
-		ROM_LOAD16_BYTE( "do_45.rom",  0x00001, 0x80000, 0xe3fe66b9 )
-	
-		ROM_REGION( 0x080000, REGION_GFX1, ROMREGION_DISPOSE )
-		/* empty */
-	
-		ROM_REGION( 0x080000, REGION_GFX2, ROMREGION_DISPOSE )      /* OBJ */
-		ROM_LOAD( "do_obj.rom", 0x00000, 0x80000, 0x5491f1c4 )
-	
-		ROM_REGION( 0x080000, REGION_GFX3, ROMREGION_DISPOSE )      /* pivot gfx */
-		ROM_LOAD( "do_piv.rom", 0x00000, 0x80000, 0xc4f012f7 )
-	
-		ROM_REGION( 0x1c000, REGION_CPU2, 0 )		/* sound cpu */
-		ROM_LOAD( "do_50.rom",  0x00000, 0x04000, 0xffe10124 )
-		ROM_CONTINUE(           0x10000, 0x0c000 )	/* banked stuff */
-	
-		ROM_REGION( 0x80000, REGION_SOUND1, 0 )	/* ADPCM samples */
-		ROM_LOAD( "do_snd.rom", 0x00000, 0x80000, 0xf2deb82b )
+		ROM_REGION( 0x100000, REGION_SOUND1, 0 );/* ADPCM samples */
+		ROM_LOAD( "d63-02",  0x000000, 0x100000, 0x162ae165 );
 	
 		/* no Delta-T samples */
-	ROM_END
+	ROM_END(); }}; 
 	
-	ROM_START( driveout )
-		ROM_REGION( 0x100000, REGION_CPU1, 0 )     /* 1024k for 68000 code */
-		ROM_LOAD16_BYTE( "driveout.003", 0x00000, 0x80000, 0xdc431e4e )
-		ROM_LOAD16_BYTE( "driveout.002", 0x00001, 0x80000, 0x6f9063f4 )
+	static RomLoadPtr rom_driftout = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x100000, REGION_CPU1, 0 );    /* 1024k for 68000 code */
+		ROM_LOAD16_BYTE( "do_46.rom",  0x00000, 0x80000, 0xf960363e );
+		ROM_LOAD16_BYTE( "do_45.rom",  0x00001, 0x80000, 0xe3fe66b9 );
 	
-		ROM_REGION( 0x080000, REGION_GFX1, ROMREGION_DISPOSE )
+		ROM_REGION( 0x080000, REGION_GFX1, ROMREGION_DISPOSE );
 		/* empty */
 	
-		ROM_REGION( 0x080000, REGION_GFX2, ROMREGION_DISPOSE )      /* OBJ */
-		ROM_LOAD16_BYTE( "driveout.084", 0x00000, 0x40000, 0x530ac420 )
-		ROM_LOAD16_BYTE( "driveout.081", 0x00001, 0x40000, 0x0e9a3e9e )
+		ROM_REGION( 0x080000, REGION_GFX2, ROMREGION_DISPOSE );     /* OBJ */
+		ROM_LOAD( "do_obj.rom", 0x00000, 0x80000, 0x5491f1c4 );
 	
-		ROM_REGION( 0x080000, REGION_GFX3, ROMREGION_DISPOSE )      /* pivot gfx */
-		ROM_LOAD( "do_piv.rom",    0x00000, 0x80000, 0xc4f012f7 )
+		ROM_REGION( 0x080000, REGION_GFX3, ROMREGION_DISPOSE );     /* pivot gfx */
+		ROM_LOAD( "do_piv.rom", 0x00000, 0x80000, 0xc4f012f7 );
 	
-		ROM_REGION( 0x10000, REGION_CPU2, 0 )	 /* sound cpu */
-		ROM_LOAD( "driveout.020",  0x0000,  0x8000, 0x99aaeb2e )
+		ROM_REGION( 0x1c000, REGION_CPU2, 0 );	/* sound cpu */
+		ROM_LOAD( "do_50.rom",  0x00000, 0x04000, 0xffe10124 );
+		ROM_CONTINUE(           0x10000, 0x0c000 );/* banked stuff */
 	
-		ROM_REGION( 0x100000, REGION_SOUND1, 0 )	/* ADPCM samples */
-		ROM_LOAD( "driveout.028",  0x00000, 0x20000, 0xcbde0b66 )	/* banked */
-		ROM_CONTINUE(              0x40000, 0x20000 )
-		ROM_CONTINUE(              0x80000, 0x20000 )
-		ROM_CONTINUE(              0xc0000, 0x20000 )
-		ROM_LOAD( "driveout.029",  0x20000, 0x20000, 0x0aba2026 )	/* sandwiched */
-		ROM_RELOAD(                0x60000, 0x20000 )
-		ROM_RELOAD(                0xa0000, 0x20000 )
-		ROM_RELOAD(                0xe0000, 0x20000 )
-	ROM_END
+		ROM_REGION( 0x80000, REGION_SOUND1, 0 );/* ADPCM samples */
+		ROM_LOAD( "do_snd.rom", 0x00000, 0x80000, 0xf2deb82b );
+	
+		/* no Delta-T samples */
+	ROM_END(); }}; 
+	
+	static RomLoadPtr rom_driveout = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x100000, REGION_CPU1, 0 );    /* 1024k for 68000 code */
+		ROM_LOAD16_BYTE( "driveout.003", 0x00000, 0x80000, 0xdc431e4e );
+		ROM_LOAD16_BYTE( "driveout.002", 0x00001, 0x80000, 0x6f9063f4 );
+	
+		ROM_REGION( 0x080000, REGION_GFX1, ROMREGION_DISPOSE );
+		/* empty */
+	
+		ROM_REGION( 0x080000, REGION_GFX2, ROMREGION_DISPOSE );     /* OBJ */
+		ROM_LOAD16_BYTE( "driveout.084", 0x00000, 0x40000, 0x530ac420 );
+		ROM_LOAD16_BYTE( "driveout.081", 0x00001, 0x40000, 0x0e9a3e9e );
+	
+		ROM_REGION( 0x080000, REGION_GFX3, ROMREGION_DISPOSE );     /* pivot gfx */
+		ROM_LOAD( "do_piv.rom",    0x00000, 0x80000, 0xc4f012f7 );
+	
+		ROM_REGION( 0x10000, REGION_CPU2, 0 ); /* sound cpu */
+		ROM_LOAD( "driveout.020",  0x0000,  0x8000, 0x99aaeb2e );
+	
+		ROM_REGION( 0x100000, REGION_SOUND1, 0 );/* ADPCM samples */
+		ROM_LOAD( "driveout.028",  0x00000, 0x20000, 0xcbde0b66 );/* banked */
+		ROM_CONTINUE(              0x40000, 0x20000 );
+		ROM_CONTINUE(              0x80000, 0x20000 );
+		ROM_CONTINUE(              0xc0000, 0x20000 );
+		ROM_LOAD( "driveout.029",  0x20000, 0x20000, 0x0aba2026 );/* sandwiched */
+		ROM_RELOAD(                0x60000, 0x20000 );
+		ROM_RELOAD(                0xa0000, 0x20000 );
+		ROM_RELOAD(                0xe0000, 0x20000 );
+	ROM_END(); }}; 
 	
 	
 	void init_f2( void)

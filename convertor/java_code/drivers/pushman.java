@@ -356,35 +356,35 @@ public class pushman
 	/***************************************************************************/
 	
 	
-	ROM_START( pushman )
-		ROM_REGION( 0x20000, REGION_CPU1, 0 )
-		ROM_LOAD16_BYTE( "pman-12.212", 0x000000, 0x10000, 0x4251109d )
-		ROM_LOAD16_BYTE( "pman-11.197", 0x000001, 0x10000, 0x1167ed9f )
+	static RomLoadPtr rom_pushman = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x20000, REGION_CPU1, 0 );
+		ROM_LOAD16_BYTE( "pman-12.212", 0x000000, 0x10000, 0x4251109d );
+		ROM_LOAD16_BYTE( "pman-11.197", 0x000001, 0x10000, 0x1167ed9f );
 	
-		ROM_REGION( 0x01000, REGION_CPU2, 0 )
-		ROM_LOAD( "pushman.uc",  0x00000, 0x01000, 0xd7916657 )
+		ROM_REGION( 0x01000, REGION_CPU2, 0 );
+		ROM_LOAD( "pushman.uc",  0x00000, 0x01000, 0xd7916657 );
 	
-		ROM_REGION( 0x10000, REGION_CPU3, 0 )
-		ROM_LOAD( "pman-13.216", 0x00000, 0x08000, 0xbc03827a )
+		ROM_REGION( 0x10000, REGION_CPU3, 0 );
+		ROM_LOAD( "pman-13.216", 0x00000, 0x08000, 0xbc03827a );
 	
-		ROM_REGION( 0x10000, REGION_GFX1, ROMREGION_DISPOSE )
-		ROM_LOAD( "pman-1.130",  0x00000, 0x08000, 0x14497754 )
+		ROM_REGION( 0x10000, REGION_GFX1, ROMREGION_DISPOSE );
+		ROM_LOAD( "pman-1.130",  0x00000, 0x08000, 0x14497754 );
 	
-		ROM_REGION( 0x40000, REGION_GFX2, ROMREGION_DISPOSE )
-		ROM_LOAD( "pman-4.58", 0x00000, 0x10000, 0x16e5ce6b )
-		ROM_LOAD( "pman-5.59", 0x10000, 0x10000, 0xb82140b8 )
-		ROM_LOAD( "pman-2.56", 0x20000, 0x10000, 0x2cb2ac29 )
-		ROM_LOAD( "pman-3.57", 0x30000, 0x10000, 0x8ab957c8 )
+		ROM_REGION( 0x40000, REGION_GFX2, ROMREGION_DISPOSE );
+		ROM_LOAD( "pman-4.58", 0x00000, 0x10000, 0x16e5ce6b );
+		ROM_LOAD( "pman-5.59", 0x10000, 0x10000, 0xb82140b8 );
+		ROM_LOAD( "pman-2.56", 0x20000, 0x10000, 0x2cb2ac29 );
+		ROM_LOAD( "pman-3.57", 0x30000, 0x10000, 0x8ab957c8 );
 	
-		ROM_REGION( 0x40000, REGION_GFX3, ROMREGION_DISPOSE )
-		ROM_LOAD( "pman-6.131", 0x00000, 0x10000, 0xbd0f9025 )
-		ROM_LOAD( "pman-8.148", 0x10000, 0x10000, 0x591bd5c0 )
-		ROM_LOAD( "pman-7.132", 0x20000, 0x10000, 0x208cb197 )
-		ROM_LOAD( "pman-9.149", 0x30000, 0x10000, 0x77ee8577 )
+		ROM_REGION( 0x40000, REGION_GFX3, ROMREGION_DISPOSE );
+		ROM_LOAD( "pman-6.131", 0x00000, 0x10000, 0xbd0f9025 );
+		ROM_LOAD( "pman-8.148", 0x10000, 0x10000, 0x591bd5c0 );
+		ROM_LOAD( "pman-7.132", 0x20000, 0x10000, 0x208cb197 );
+		ROM_LOAD( "pman-9.149", 0x30000, 0x10000, 0x77ee8577 );
 	
-		ROM_REGION( 0x10000, REGION_GFX4, 0 )	/* bg tilemaps */
-		ROM_LOAD( "pman-10.189", 0x00000, 0x08000, 0x5f9ae9a1 )
-	ROM_END
+		ROM_REGION( 0x10000, REGION_GFX4, 0 );/* bg tilemaps */
+		ROM_LOAD( "pman-10.189", 0x00000, 0x08000, 0x5f9ae9a1 );
+	ROM_END(); }}; 
 	
 	
 	GAME( 1990, pushman, 0, pushman, pushman, 0, ROT0, "Comad (American Sammy license)", "Pushman" )

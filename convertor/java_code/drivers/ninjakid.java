@@ -241,28 +241,28 @@ public class ninjakid
 	 Rom Definitions
 	*******************************************************************************/
 	
-	ROM_START( ninjakun ) /* Original Board? */
-		ROM_REGION( 0x10000, REGION_CPU1, 0 ) /* Main CPU */
-		ROM_LOAD( "ninja-1.7a",  0x0000, 0x02000, 0x1c1dc141 )
-		ROM_LOAD( "ninja-2.7b",  0x2000, 0x02000, 0x39cc7d37 )
-		ROM_LOAD( "ninja-3.7d",  0x4000, 0x02000, 0xd542bfe3 )
-		ROM_LOAD( "ninja-4.7e",  0x6000, 0x02000, 0xa57385c6 )
+	static RomLoadPtr rom_ninjakun = new RomLoadPtr(){ public void handler(){  /* Original Board? */
+		ROM_REGION( 0x10000, REGION_CPU1, 0 );/* Main CPU */
+		ROM_LOAD( "ninja-1.7a",  0x0000, 0x02000, 0x1c1dc141 );
+		ROM_LOAD( "ninja-2.7b",  0x2000, 0x02000, 0x39cc7d37 );
+		ROM_LOAD( "ninja-3.7d",  0x4000, 0x02000, 0xd542bfe3 );
+		ROM_LOAD( "ninja-4.7e",  0x6000, 0x02000, 0xa57385c6 );
 	
-		ROM_REGION( 0x10000, REGION_CPU2, 0 ) /* Secondary CPU */
-		ROM_LOAD( "ninja-5.7h",  0x0000, 0x02000, 0x164a42c4 )
+		ROM_REGION( 0x10000, REGION_CPU2, 0 );/* Secondary CPU */
+		ROM_LOAD( "ninja-5.7h",  0x0000, 0x02000, 0x164a42c4 );
 	
-		ROM_REGION( 0x08000, REGION_GFX1, ROMREGION_DISPOSE ) /* Graphics */
-		ROM_LOAD16_BYTE( "ninja-6.7n",  0x0000, 0x02000, 0xa74c4297 )
-		ROM_LOAD16_BYTE( "ninja-7.7p",  0x0001, 0x02000, 0x53a72039 )
-		ROM_LOAD16_BYTE( "ninja-8.7s",  0x4000, 0x02000, 0x4a99d857 )
-		ROM_LOAD16_BYTE( "ninja-9.7t",  0x4001, 0x02000, 0xdede49e4 )
+		ROM_REGION( 0x08000, REGION_GFX1, ROMREGION_DISPOSE );/* Graphics */
+		ROM_LOAD16_BYTE( "ninja-6.7n",  0x0000, 0x02000, 0xa74c4297 );
+		ROM_LOAD16_BYTE( "ninja-7.7p",  0x0001, 0x02000, 0x53a72039 );
+		ROM_LOAD16_BYTE( "ninja-8.7s",  0x4000, 0x02000, 0x4a99d857 );
+		ROM_LOAD16_BYTE( "ninja-9.7t",  0x4001, 0x02000, 0xdede49e4 );
 	
-		ROM_REGION( 0x08000, REGION_GFX2, ROMREGION_DISPOSE ) /* Graphics */
-		ROM_LOAD16_BYTE( "ninja-10.2c", 0x0000, 0x02000, 0x0d55664a )
-		ROM_LOAD16_BYTE( "ninja-11.2d", 0x0001, 0x02000, 0x12ff9597 )
-		ROM_LOAD16_BYTE( "ninja-12.4c", 0x4000, 0x02000, 0xe9b75807 )
-		ROM_LOAD16_BYTE( "ninja-13.4d", 0x4001, 0x02000, 0x1760ed2c )
-	ROM_END
+		ROM_REGION( 0x08000, REGION_GFX2, ROMREGION_DISPOSE );/* Graphics */
+		ROM_LOAD16_BYTE( "ninja-10.2c", 0x0000, 0x02000, 0x0d55664a );
+		ROM_LOAD16_BYTE( "ninja-11.2d", 0x0001, 0x02000, 0x12ff9597 );
+		ROM_LOAD16_BYTE( "ninja-12.4c", 0x4000, 0x02000, 0xe9b75807 );
+		ROM_LOAD16_BYTE( "ninja-13.4d", 0x4001, 0x02000, 0x1760ed2c );
+	ROM_END(); }}; 
 	
 	/*******************************************************************************
 	 Input Ports

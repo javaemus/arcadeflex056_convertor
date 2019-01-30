@@ -1075,299 +1075,299 @@ public class exidy
 	 *
 	 *************************************/
 	
-	ROM_START( sidetrac )
-		ROM_REGION( 0x10000, REGION_CPU1, 0 ) /* 64k for code */
-		ROM_LOAD( "stl8a-1",     0x2800, 0x0800, 0xe41750ff )
-		ROM_LOAD( "stl7a-2",     0x3000, 0x0800, 0x57fb28dc )
-		ROM_LOAD( "stl6a-2",     0x3800, 0x0800, 0x4226d469 )
-		ROM_RELOAD(              0xf800, 0x0800 ) /* for the reset/interrupt vectors */
-		ROM_LOAD( "stl9c-1",     0x4800, 0x0400, 0x08710a84 ) /* prom instead of ram chr gen*/
+	static RomLoadPtr rom_sidetrac = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x10000, REGION_CPU1, 0 );/* 64k for code */
+		ROM_LOAD( "stl8a-1",     0x2800, 0x0800, 0xe41750ff );
+		ROM_LOAD( "stl7a-2",     0x3000, 0x0800, 0x57fb28dc );
+		ROM_LOAD( "stl6a-2",     0x3800, 0x0800, 0x4226d469 );
+		ROM_RELOAD(              0xf800, 0x0800 );/* for the reset/interrupt vectors */
+		ROM_LOAD( "stl9c-1",     0x4800, 0x0400, 0x08710a84 );/* prom instead of ram chr gen*/
 	
-		ROM_REGION( 0x0200, REGION_GFX1, ROMREGION_DISPOSE )
-		ROM_LOAD( "stl11d",      0x0000, 0x0200, 0x3bd1acc1 )
-	ROM_END
-	
-	
-	ROM_START( targ )
-		ROM_REGION( 0x10000, REGION_CPU1, 0 ) /* 64k for code */
-		ROM_LOAD( "targ10a1",    0x1800, 0x0800, 0x969744e1 )
-		ROM_LOAD( "targ09a1",    0x2000, 0x0800, 0xa177a72d )
-		ROM_LOAD( "targ08a1",    0x2800, 0x0800, 0x6e6928a5 )
-		ROM_LOAD( "targ07a4",    0x3000, 0x0800, 0xe2f37f93 )
-		ROM_LOAD( "targ06a3",    0x3800, 0x0800, 0xa60a1bfc )
-		ROM_RELOAD(              0xf800, 0x0800 ) /* for the reset/interrupt vectors */
-	
-		ROM_REGION( 0x0400, REGION_GFX1, ROMREGION_DISPOSE )
-		ROM_LOAD( "targ11d1",    0x0000, 0x0400, 0x9f03513e )
-	ROM_END
+		ROM_REGION( 0x0200, REGION_GFX1, ROMREGION_DISPOSE );
+		ROM_LOAD( "stl11d",      0x0000, 0x0200, 0x3bd1acc1 );
+	ROM_END(); }}; 
 	
 	
-	ROM_START( spectar )
-		ROM_REGION( 0x10000, REGION_CPU1, 0 ) /* 64k for code */
-		ROM_LOAD( "spl11a-3",    0x1000, 0x0800, 0x08880aff )
-		ROM_LOAD( "spl10a-2",    0x1800, 0x0800, 0xfca667c1 )
-		ROM_LOAD( "spl9a-3",     0x2000, 0x0800, 0x9d4ce8ba )
-		ROM_LOAD( "spl8a-2",     0x2800, 0x0800, 0xcfacbadf )
-		ROM_LOAD( "spl7a-2",     0x3000, 0x0800, 0x4c4741ff )
-		ROM_LOAD( "spl6a-2",     0x3800, 0x0800, 0x0cb46b25 )
-		ROM_RELOAD(              0xf800, 0x0800 )  /* for the reset/interrupt vectors */
+	static RomLoadPtr rom_targ = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x10000, REGION_CPU1, 0 );/* 64k for code */
+		ROM_LOAD( "targ10a1",    0x1800, 0x0800, 0x969744e1 );
+		ROM_LOAD( "targ09a1",    0x2000, 0x0800, 0xa177a72d );
+		ROM_LOAD( "targ08a1",    0x2800, 0x0800, 0x6e6928a5 );
+		ROM_LOAD( "targ07a4",    0x3000, 0x0800, 0xe2f37f93 );
+		ROM_LOAD( "targ06a3",    0x3800, 0x0800, 0xa60a1bfc );
+		ROM_RELOAD(              0xf800, 0x0800 );/* for the reset/interrupt vectors */
 	
-		ROM_REGION( 0x0400, REGION_GFX1, ROMREGION_DISPOSE )
-		ROM_LOAD( "hrl11d-2",    0x0000, 0x0400, 0xc55b645d )  /* this is actually not used (all FF) */
-		ROM_CONTINUE(            0x0000, 0x0400 )  /* overwrite with the real one */
-	ROM_END
-	
-	ROM_START( spectar1 )
-		ROM_REGION( 0x10000, REGION_CPU1, 0 ) /* 64k for code */
-		ROM_LOAD( "spl12a1",     0x0800, 0x0800, 0x7002efb4 )
-		ROM_LOAD( "spl11a1",     0x1000, 0x0800, 0x8eb8526a )
-		ROM_LOAD( "spl10a1",     0x1800, 0x0800, 0x9d169b3d )
-		ROM_LOAD( "spl9a1",      0x2000, 0x0800, 0x40e3eba1 )
-		ROM_LOAD( "spl8a1",      0x2800, 0x0800, 0x64d8eb84 )
-		ROM_LOAD( "spl7a1",      0x3000, 0x0800, 0xe08b0d8d )
-		ROM_LOAD( "spl6a1",      0x3800, 0x0800, 0xf0e4e71a )
-		ROM_RELOAD(              0xf800, 0x0800 )   /* for the reset/interrupt vectors */
-	
-		ROM_REGION( 0x0400, REGION_GFX1, ROMREGION_DISPOSE )
-		ROM_LOAD( "hrl11d-2",    0x0000, 0x0400, 0xc55b645d )  /* this is actually not used (all FF) */
-		ROM_CONTINUE(            0x0000, 0x0400 )  /* overwrite with the real one */
-	ROM_END
+		ROM_REGION( 0x0400, REGION_GFX1, ROMREGION_DISPOSE );
+		ROM_LOAD( "targ11d1",    0x0000, 0x0400, 0x9f03513e );
+	ROM_END(); }}; 
 	
 	
-	ROM_START( mtrap )
-		ROM_REGION( 0x10000, REGION_CPU1, 0 ) /* 64k for code */
-		ROM_LOAD( "mtl11a.bin",  0xa000, 0x1000, 0xbd6c3eb5 )
-		ROM_LOAD( "mtl10a.bin",  0xb000, 0x1000, 0x75b0593e )
-		ROM_LOAD( "mtl9a.bin",   0xc000, 0x1000, 0x28dd20ff )
-		ROM_LOAD( "mtl8a.bin",   0xd000, 0x1000, 0xcc09f7a4 )
-		ROM_LOAD( "mtl7a.bin",   0xe000, 0x1000, 0xcaafbb6d )
-		ROM_LOAD( "mtl6a.bin",   0xf000, 0x1000, 0xd85e52ca )
+	static RomLoadPtr rom_spectar = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x10000, REGION_CPU1, 0 );/* 64k for code */
+		ROM_LOAD( "spl11a-3",    0x1000, 0x0800, 0x08880aff );
+		ROM_LOAD( "spl10a-2",    0x1800, 0x0800, 0xfca667c1 );
+		ROM_LOAD( "spl9a-3",     0x2000, 0x0800, 0x9d4ce8ba );
+		ROM_LOAD( "spl8a-2",     0x2800, 0x0800, 0xcfacbadf );
+		ROM_LOAD( "spl7a-2",     0x3000, 0x0800, 0x4c4741ff );
+		ROM_LOAD( "spl6a-2",     0x3800, 0x0800, 0x0cb46b25 );
+		ROM_RELOAD(              0xf800, 0x0800 ); /* for the reset/interrupt vectors */
 	
-		ROM_REGION( 0x10000, REGION_CPU2, 0 ) /* 64k for audio */
-		ROM_LOAD( "mta5a.bin",   0x6800, 0x0800, 0xdbe4ec02 )
-		ROM_LOAD( "mta6a.bin",   0x7000, 0x0800, 0xc00f0c05 )
-		ROM_LOAD( "mta7a.bin",   0x7800, 0x0800, 0xf3f16ca7 )
-		ROM_RELOAD(              0xf800, 0x0800 )
+		ROM_REGION( 0x0400, REGION_GFX1, ROMREGION_DISPOSE );
+		ROM_LOAD( "hrl11d-2",    0x0000, 0x0400, 0xc55b645d ); /* this is actually not used (all FF) */
+		ROM_CONTINUE(            0x0000, 0x0400 ); /* overwrite with the real one */
+	ROM_END(); }}; 
 	
-		ROM_REGION( 0x10000, REGION_CPU3, 0 ) /* 64k for digital sound processor */
-		ROM_LOAD( "mta2a.bin", 0x0000, 0x1000, 0x13db8ed3 )
-		ROM_LOAD( "mta3a.bin", 0x1000, 0x1000, 0x31bdfe5c )
-		ROM_LOAD( "mta4a.bin", 0x2000, 0x1000, 0x1502d0e8 )
-		ROM_LOAD( "mta1a.bin", 0x3000, 0x1000, 0x658482a6 )
+	static RomLoadPtr rom_spectar1 = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x10000, REGION_CPU1, 0 );/* 64k for code */
+		ROM_LOAD( "spl12a1",     0x0800, 0x0800, 0x7002efb4 );
+		ROM_LOAD( "spl11a1",     0x1000, 0x0800, 0x8eb8526a );
+		ROM_LOAD( "spl10a1",     0x1800, 0x0800, 0x9d169b3d );
+		ROM_LOAD( "spl9a1",      0x2000, 0x0800, 0x40e3eba1 );
+		ROM_LOAD( "spl8a1",      0x2800, 0x0800, 0x64d8eb84 );
+		ROM_LOAD( "spl7a1",      0x3000, 0x0800, 0xe08b0d8d );
+		ROM_LOAD( "spl6a1",      0x3800, 0x0800, 0xf0e4e71a );
+		ROM_RELOAD(              0xf800, 0x0800 );  /* for the reset/interrupt vectors */
 	
-		ROM_REGION( 0x0800, REGION_GFX1, ROMREGION_DISPOSE )
-		ROM_LOAD( "mtl11d.bin",  0x0000, 0x0800, 0xc6e4d339 )
-	ROM_END
-	
-	ROM_START( mtrap3 )
-		ROM_REGION( 0x10000, REGION_CPU1, 0 ) /* 64k for code */
-		ROM_LOAD( "mtl-3.11a",   0xa000, 0x1000, 0x4091be6e )
-		ROM_LOAD( "mtl-3.10a",   0xb000, 0x1000, 0x38250c2f )
-		ROM_LOAD( "mtl-3.9a",    0xc000, 0x1000, 0x2eec988e )
-		ROM_LOAD( "mtl-3.8a",    0xd000, 0x1000, 0x744b4b1c )
-		ROM_LOAD( "mtl-3.7a",    0xe000, 0x1000, 0xea8ec479 )
-		ROM_LOAD( "mtl-3.6a",    0xf000, 0x1000, 0xd72ba72d )
-	
-		ROM_REGION( 0x10000, REGION_CPU2, 0 ) /* 64k for audio */
-		ROM_LOAD( "mta5a.bin",   0x6800, 0x0800, 0xdbe4ec02 )
-		ROM_LOAD( "mta6a.bin",   0x7000, 0x0800, 0xc00f0c05 )
-		ROM_LOAD( "mta7a.bin",   0x7800, 0x0800, 0xf3f16ca7 )
-		ROM_RELOAD(              0xf800, 0x0800 )
-	
-		ROM_REGION( 0x10000, REGION_CPU3, 0 ) /* 64k for digital sound processor */
-		ROM_LOAD( "mta2a.bin", 0x0000, 0x1000, 0x13db8ed3 )
-		ROM_LOAD( "mta3a.bin", 0x1000, 0x1000, 0x31bdfe5c )
-		ROM_LOAD( "mta4a.bin", 0x2000, 0x1000, 0x1502d0e8 )
-		ROM_LOAD( "mta1a.bin", 0x3000, 0x1000, 0x658482a6 )
-	
-		ROM_REGION( 0x0800, REGION_GFX1, ROMREGION_DISPOSE )
-		ROM_LOAD( "mtl11d.bin",  0x0000, 0x0800, 0xc6e4d339 )
-	ROM_END
-	
-	ROM_START( mtrap4 )
-		ROM_REGION( 0x10000, REGION_CPU1, 0 ) /* 64k for code */
-		ROM_LOAD( "mta411a.bin",  0xa000, 0x1000, 0x2879cb8d )
-		ROM_LOAD( "mta410a.bin",  0xb000, 0x1000, 0xd7378af9 )
-		ROM_LOAD( "mta49.bin",    0xc000, 0x1000, 0xbe667e64 )
-		ROM_LOAD( "mta48a.bin",   0xd000, 0x1000, 0xde0442f8 )
-		ROM_LOAD( "mta47a.bin",   0xe000, 0x1000, 0xcdf8c6a8 )
-		ROM_LOAD( "mta46a.bin",   0xf000, 0x1000, 0x77d3f2e6 )
-	
-		ROM_REGION( 0x10000, REGION_CPU2, 0 ) /* 64k for audio */
-		ROM_LOAD( "mta5a.bin",    0x6800, 0x0800, 0xdbe4ec02 )
-		ROM_LOAD( "mta6a.bin",    0x7000, 0x0800, 0xc00f0c05 )
-		ROM_LOAD( "mta7a.bin",    0x7800, 0x0800, 0xf3f16ca7 )
-		ROM_RELOAD(               0xf800, 0x0800 )
-	
-		ROM_REGION( 0x10000, REGION_CPU3, 0 ) /* 64k for digital sound processor */
-		ROM_LOAD( "mta2a.bin", 0x0000,0x1000,0x13db8ed3 )
-		ROM_LOAD( "mta3a.bin", 0x1000,0x1000,0x31bdfe5c )
-		ROM_LOAD( "mta4a.bin", 0x2000,0x1000,0x1502d0e8 )
-		ROM_LOAD( "mta1a.bin", 0x3000,0x1000,0x658482a6 )
-	
-		ROM_REGION( 0x0800, REGION_GFX1, ROMREGION_DISPOSE )
-		ROM_LOAD( "mtl11d.bin",   0x0000, 0x0800, 0xc6e4d339 )
-	ROM_END
+		ROM_REGION( 0x0400, REGION_GFX1, ROMREGION_DISPOSE );
+		ROM_LOAD( "hrl11d-2",    0x0000, 0x0400, 0xc55b645d ); /* this is actually not used (all FF) */
+		ROM_CONTINUE(            0x0000, 0x0400 ); /* overwrite with the real one */
+	ROM_END(); }}; 
 	
 	
-	ROM_START( venture )
-		ROM_REGION( 0x10000, REGION_CPU1, 0 ) /* 64k for code */
-		ROM_LOAD( "13a-cpu",      0x8000, 0x1000, 0xf4e4d991 )
-		ROM_LOAD( "12a-cpu",      0x9000, 0x1000, 0xc6d8cb04 )
-		ROM_LOAD( "11a-cpu",      0xa000, 0x1000, 0x3bdb01f4 )
-		ROM_LOAD( "10a-cpu",      0xb000, 0x1000, 0x0da769e9 )
-		ROM_LOAD( "9a-cpu",       0xc000, 0x1000, 0x0ae05855 )
-		ROM_LOAD( "8a-cpu",       0xd000, 0x1000, 0x4ae59676 )
-		ROM_LOAD( "7a-cpu",       0xe000, 0x1000, 0x48d66220 )
-		ROM_LOAD( "6a-cpu",       0xf000, 0x1000, 0x7b78cf49 )
+	static RomLoadPtr rom_mtrap = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x10000, REGION_CPU1, 0 );/* 64k for code */
+		ROM_LOAD( "mtl11a.bin",  0xa000, 0x1000, 0xbd6c3eb5 );
+		ROM_LOAD( "mtl10a.bin",  0xb000, 0x1000, 0x75b0593e );
+		ROM_LOAD( "mtl9a.bin",   0xc000, 0x1000, 0x28dd20ff );
+		ROM_LOAD( "mtl8a.bin",   0xd000, 0x1000, 0xcc09f7a4 );
+		ROM_LOAD( "mtl7a.bin",   0xe000, 0x1000, 0xcaafbb6d );
+		ROM_LOAD( "mtl6a.bin",   0xf000, 0x1000, 0xd85e52ca );
 	
-		ROM_REGION( 0x10000, REGION_CPU2, 0 ) /* 64k for audio */
-		ROM_LOAD( "3a-ac",        0x5800, 0x0800, 0x4ea1c3d9 )
-		ROM_LOAD( "4a-ac",        0x6000, 0x0800, 0x5154c39e )
-		ROM_LOAD( "5a-ac",        0x6800, 0x0800, 0x1e1e3916 )
-		ROM_LOAD( "6a-ac",        0x7000, 0x0800, 0x80f3357a )
-		ROM_LOAD( "7a-ac",        0x7800, 0x0800, 0x466addc7 )
-		ROM_RELOAD(               0xf800, 0x0800 )
+		ROM_REGION( 0x10000, REGION_CPU2, 0 );/* 64k for audio */
+		ROM_LOAD( "mta5a.bin",   0x6800, 0x0800, 0xdbe4ec02 );
+		ROM_LOAD( "mta6a.bin",   0x7000, 0x0800, 0xc00f0c05 );
+		ROM_LOAD( "mta7a.bin",   0x7800, 0x0800, 0xf3f16ca7 );
+		ROM_RELOAD(              0xf800, 0x0800 );
 	
-		ROM_REGION( 0x0800, REGION_GFX1, ROMREGION_DISPOSE )
-		ROM_LOAD( "11d-cpu",      0x0000, 0x0800, 0xb4bb2503 )
-	ROM_END
+		ROM_REGION( 0x10000, REGION_CPU3, 0 );/* 64k for digital sound processor */
+		ROM_LOAD( "mta2a.bin", 0x0000, 0x1000, 0x13db8ed3 );
+		ROM_LOAD( "mta3a.bin", 0x1000, 0x1000, 0x31bdfe5c );
+		ROM_LOAD( "mta4a.bin", 0x2000, 0x1000, 0x1502d0e8 );
+		ROM_LOAD( "mta1a.bin", 0x3000, 0x1000, 0x658482a6 );
 	
-	ROM_START( venture2 )
-		ROM_REGION( 0x10000, REGION_CPU1, 0 ) /* 64k for code */
-		ROM_LOAD( "vent_a13.cpu", 0x8000, 0x1000, 0x4c833f99 )
-		ROM_LOAD( "vent_a12.cpu", 0x9000, 0x1000, 0x8163cefc )
-		ROM_LOAD( "vent_a11.cpu", 0xa000, 0x1000, 0x324a5054 )
-		ROM_LOAD( "vent_a10.cpu", 0xb000, 0x1000, 0x24358203 )
-		ROM_LOAD( "vent_a9.cpu",  0xc000, 0x1000, 0x04428165 )
-		ROM_LOAD( "vent_a8.cpu",  0xd000, 0x1000, 0x4c1a702a )
-		ROM_LOAD( "vent_a7.cpu",  0xe000, 0x1000, 0x1aab27c2 )
-		ROM_LOAD( "vent_a6.cpu",  0xf000, 0x1000, 0x767bdd71 )
+		ROM_REGION( 0x0800, REGION_GFX1, ROMREGION_DISPOSE );
+		ROM_LOAD( "mtl11d.bin",  0x0000, 0x0800, 0xc6e4d339 );
+	ROM_END(); }}; 
 	
-		ROM_REGION( 0x10000, REGION_CPU2, 0 ) /* 64k for audio */
-		ROM_LOAD( "3a-ac",        0x5800, 0x0800, 0x4ea1c3d9 )
-		ROM_LOAD( "4a-ac",        0x6000, 0x0800, 0x5154c39e )
-		ROM_LOAD( "5a-ac",        0x6800, 0x0800, 0x1e1e3916 )
-		ROM_LOAD( "6a-ac",        0x7000, 0x0800, 0x80f3357a )
-		ROM_LOAD( "7a-ac",        0x7800, 0x0800, 0x466addc7 )
-		ROM_RELOAD(               0xf800, 0x0800 )
+	static RomLoadPtr rom_mtrap3 = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x10000, REGION_CPU1, 0 );/* 64k for code */
+		ROM_LOAD( "mtl-3.11a",   0xa000, 0x1000, 0x4091be6e );
+		ROM_LOAD( "mtl-3.10a",   0xb000, 0x1000, 0x38250c2f );
+		ROM_LOAD( "mtl-3.9a",    0xc000, 0x1000, 0x2eec988e );
+		ROM_LOAD( "mtl-3.8a",    0xd000, 0x1000, 0x744b4b1c );
+		ROM_LOAD( "mtl-3.7a",    0xe000, 0x1000, 0xea8ec479 );
+		ROM_LOAD( "mtl-3.6a",    0xf000, 0x1000, 0xd72ba72d );
 	
-		ROM_REGION( 0x0800, REGION_GFX1, ROMREGION_DISPOSE )
-		ROM_LOAD( "11d-cpu",      0x0000, 0x0800, 0xb4bb2503 )
-	ROM_END
+		ROM_REGION( 0x10000, REGION_CPU2, 0 );/* 64k for audio */
+		ROM_LOAD( "mta5a.bin",   0x6800, 0x0800, 0xdbe4ec02 );
+		ROM_LOAD( "mta6a.bin",   0x7000, 0x0800, 0xc00f0c05 );
+		ROM_LOAD( "mta7a.bin",   0x7800, 0x0800, 0xf3f16ca7 );
+		ROM_RELOAD(              0xf800, 0x0800 );
 	
-	ROM_START( venture4 )
-		ROM_REGION( 0x10000, REGION_CPU1, 0 ) /* 64k for code */
-		ROM_LOAD( "vel13a-4",     0x8000, 0x1000, 0x1c5448f9 )
-		ROM_LOAD( "vel12a-4",     0x9000, 0x1000, 0xe62491cc )
-		ROM_LOAD( "vel11a-4",     0xa000, 0x1000, 0xe91faeaf )
-		ROM_LOAD( "vel10a-4",     0xb000, 0x1000, 0xda3a2991 )
-		ROM_LOAD( "vel9a-4",      0xc000, 0x1000, 0xd1887b11 )
-		ROM_LOAD( "vel8a-4",      0xd000, 0x1000, 0x8e8153fc )
-		ROM_LOAD( "vel7a-4",      0xe000, 0x1000, 0x0a091701 )
-		ROM_LOAD( "vel6a-4",      0xf000, 0x1000, 0x7b165f67 )
+		ROM_REGION( 0x10000, REGION_CPU3, 0 );/* 64k for digital sound processor */
+		ROM_LOAD( "mta2a.bin", 0x0000, 0x1000, 0x13db8ed3 );
+		ROM_LOAD( "mta3a.bin", 0x1000, 0x1000, 0x31bdfe5c );
+		ROM_LOAD( "mta4a.bin", 0x2000, 0x1000, 0x1502d0e8 );
+		ROM_LOAD( "mta1a.bin", 0x3000, 0x1000, 0x658482a6 );
 	
-		ROM_REGION( 0x10000, REGION_CPU2, 0 ) /* 64k for audio */
-		ROM_LOAD( "vea3a-2",      0x5800, 0x0800, 0x83b8836f )
-		ROM_LOAD( "4a-ac",        0x6000, 0x0800, 0x5154c39e )
-		ROM_LOAD( "5a-ac",        0x6800, 0x0800, 0x1e1e3916 )
-		ROM_LOAD( "6a-ac",        0x7000, 0x0800, 0x80f3357a )
-		ROM_LOAD( "7a-ac",        0x7800, 0x0800, 0x466addc7 )
-		ROM_RELOAD(               0xf800, 0x0800 )
+		ROM_REGION( 0x0800, REGION_GFX1, ROMREGION_DISPOSE );
+		ROM_LOAD( "mtl11d.bin",  0x0000, 0x0800, 0xc6e4d339 );
+	ROM_END(); }}; 
 	
-		ROM_REGION( 0x0800, REGION_GFX1, ROMREGION_DISPOSE )
-		ROM_LOAD( "vel11d-2",     0x0000, 0x0800, 0xea6fd981 )
-	ROM_END
+	static RomLoadPtr rom_mtrap4 = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x10000, REGION_CPU1, 0 );/* 64k for code */
+		ROM_LOAD( "mta411a.bin",  0xa000, 0x1000, 0x2879cb8d );
+		ROM_LOAD( "mta410a.bin",  0xb000, 0x1000, 0xd7378af9 );
+		ROM_LOAD( "mta49.bin",    0xc000, 0x1000, 0xbe667e64 );
+		ROM_LOAD( "mta48a.bin",   0xd000, 0x1000, 0xde0442f8 );
+		ROM_LOAD( "mta47a.bin",   0xe000, 0x1000, 0xcdf8c6a8 );
+		ROM_LOAD( "mta46a.bin",   0xf000, 0x1000, 0x77d3f2e6 );
 	
+		ROM_REGION( 0x10000, REGION_CPU2, 0 );/* 64k for audio */
+		ROM_LOAD( "mta5a.bin",    0x6800, 0x0800, 0xdbe4ec02 );
+		ROM_LOAD( "mta6a.bin",    0x7000, 0x0800, 0xc00f0c05 );
+		ROM_LOAD( "mta7a.bin",    0x7800, 0x0800, 0xf3f16ca7 );
+		ROM_RELOAD(               0xf800, 0x0800 );
 	
-	ROM_START( pepper2 )
-		ROM_REGION( 0x10000, REGION_CPU1, 0 ) /* 64k for code */
-		ROM_LOAD( "main_12a",     0x9000, 0x1000, 0x33db4737 )
-		ROM_LOAD( "main_11a",     0xa000, 0x1000, 0xa1f43b1f )
-		ROM_LOAD( "main_10a",     0xb000, 0x1000, 0x4d7d7786 )
-		ROM_LOAD( "main_9a",      0xc000, 0x1000, 0xb3362298 )
-		ROM_LOAD( "main_8a",      0xd000, 0x1000, 0x64d106ed )
-		ROM_LOAD( "main_7a",      0xe000, 0x1000, 0xb1c6f07c )
-		ROM_LOAD( "main_6a",      0xf000, 0x1000, 0x515b1046 )
+		ROM_REGION( 0x10000, REGION_CPU3, 0 );/* 64k for digital sound processor */
+		ROM_LOAD( "mta2a.bin", 0x0000,0x1000,0x13db8ed3 );
+		ROM_LOAD( "mta3a.bin", 0x1000,0x1000,0x31bdfe5c );
+		ROM_LOAD( "mta4a.bin", 0x2000,0x1000,0x1502d0e8 );
+		ROM_LOAD( "mta1a.bin", 0x3000,0x1000,0x658482a6 );
 	
-		ROM_REGION( 0x10000, REGION_CPU2, 0 ) /* 64k for audio */
-		ROM_LOAD( "audio_5a",     0x6800, 0x0800, 0x90e3c781 )
-		ROM_LOAD( "audio_6a",     0x7000, 0x0800, 0xdd343e34 )
-		ROM_LOAD( "audio_7a",     0x7800, 0x0800, 0xe02b4356 )
-		ROM_RELOAD(               0xf800, 0x0800 )
-	
-		ROM_REGION( 0x0800, REGION_GFX1, ROMREGION_DISPOSE )
-		ROM_LOAD( "main_11d",     0x0000, 0x0800, 0xb25160cd )
-	ROM_END
+		ROM_REGION( 0x0800, REGION_GFX1, ROMREGION_DISPOSE );
+		ROM_LOAD( "mtl11d.bin",   0x0000, 0x0800, 0xc6e4d339 );
+	ROM_END(); }}; 
 	
 	
-	ROM_START( hardhat )
-		ROM_REGION( 0x10000, REGION_CPU1, 0 ) /* 64k for code */
-		ROM_LOAD( "hhl-2.11a",    0xa000, 0x1000, 0x7623deea )
-		ROM_LOAD( "hhl-2.10a",    0xb000, 0x1000, 0xe6bf2fb1 )
-		ROM_LOAD( "hhl-2.9a",     0xc000, 0x1000, 0xacc2bce5 )
-		ROM_LOAD( "hhl-2.8a",     0xd000, 0x1000, 0x23c7a2f8 )
-		ROM_LOAD( "hhl-2.7a",     0xe000, 0x1000, 0x6f7ce1c2 )
-		ROM_LOAD( "hhl-2.6a",     0xf000, 0x1000, 0x2a20cf10 )
+	static RomLoadPtr rom_venture = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x10000, REGION_CPU1, 0 );/* 64k for code */
+		ROM_LOAD( "13a-cpu",      0x8000, 0x1000, 0xf4e4d991 );
+		ROM_LOAD( "12a-cpu",      0x9000, 0x1000, 0xc6d8cb04 );
+		ROM_LOAD( "11a-cpu",      0xa000, 0x1000, 0x3bdb01f4 );
+		ROM_LOAD( "10a-cpu",      0xb000, 0x1000, 0x0da769e9 );
+		ROM_LOAD( "9a-cpu",       0xc000, 0x1000, 0x0ae05855 );
+		ROM_LOAD( "8a-cpu",       0xd000, 0x1000, 0x4ae59676 );
+		ROM_LOAD( "7a-cpu",       0xe000, 0x1000, 0x48d66220 );
+		ROM_LOAD( "6a-cpu",       0xf000, 0x1000, 0x7b78cf49 );
 	
-		ROM_REGION( 0x10000, REGION_CPU2, 0 ) /* 64k for audio */
-		ROM_LOAD( "hha-1.5a",     0x6800, 0x0800, 0x16a5a183 )
-		ROM_LOAD( "hha-1.6a",     0x7000, 0x0800, 0xbde64021 )
-		ROM_LOAD( "hha-1.7a",     0x7800, 0x0800, 0x505ee5d3 )
-		ROM_RELOAD(               0xf800, 0x0800 )
+		ROM_REGION( 0x10000, REGION_CPU2, 0 );/* 64k for audio */
+		ROM_LOAD( "3a-ac",        0x5800, 0x0800, 0x4ea1c3d9 );
+		ROM_LOAD( "4a-ac",        0x6000, 0x0800, 0x5154c39e );
+		ROM_LOAD( "5a-ac",        0x6800, 0x0800, 0x1e1e3916 );
+		ROM_LOAD( "6a-ac",        0x7000, 0x0800, 0x80f3357a );
+		ROM_LOAD( "7a-ac",        0x7800, 0x0800, 0x466addc7 );
+		ROM_RELOAD(               0xf800, 0x0800 );
 	
-		ROM_REGION( 0x0800, REGION_GFX1, ROMREGION_DISPOSE )
-		ROM_LOAD( "hhl-1.11d",    0x0000, 0x0800, 0xdbcdf353 )
-	ROM_END
+		ROM_REGION( 0x0800, REGION_GFX1, ROMREGION_DISPOSE );
+		ROM_LOAD( "11d-cpu",      0x0000, 0x0800, 0xb4bb2503 );
+	ROM_END(); }}; 
+	
+	static RomLoadPtr rom_venture2 = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x10000, REGION_CPU1, 0 );/* 64k for code */
+		ROM_LOAD( "vent_a13.cpu", 0x8000, 0x1000, 0x4c833f99 );
+		ROM_LOAD( "vent_a12.cpu", 0x9000, 0x1000, 0x8163cefc );
+		ROM_LOAD( "vent_a11.cpu", 0xa000, 0x1000, 0x324a5054 );
+		ROM_LOAD( "vent_a10.cpu", 0xb000, 0x1000, 0x24358203 );
+		ROM_LOAD( "vent_a9.cpu",  0xc000, 0x1000, 0x04428165 );
+		ROM_LOAD( "vent_a8.cpu",  0xd000, 0x1000, 0x4c1a702a );
+		ROM_LOAD( "vent_a7.cpu",  0xe000, 0x1000, 0x1aab27c2 );
+		ROM_LOAD( "vent_a6.cpu",  0xf000, 0x1000, 0x767bdd71 );
+	
+		ROM_REGION( 0x10000, REGION_CPU2, 0 );/* 64k for audio */
+		ROM_LOAD( "3a-ac",        0x5800, 0x0800, 0x4ea1c3d9 );
+		ROM_LOAD( "4a-ac",        0x6000, 0x0800, 0x5154c39e );
+		ROM_LOAD( "5a-ac",        0x6800, 0x0800, 0x1e1e3916 );
+		ROM_LOAD( "6a-ac",        0x7000, 0x0800, 0x80f3357a );
+		ROM_LOAD( "7a-ac",        0x7800, 0x0800, 0x466addc7 );
+		ROM_RELOAD(               0xf800, 0x0800 );
+	
+		ROM_REGION( 0x0800, REGION_GFX1, ROMREGION_DISPOSE );
+		ROM_LOAD( "11d-cpu",      0x0000, 0x0800, 0xb4bb2503 );
+	ROM_END(); }}; 
+	
+	static RomLoadPtr rom_venture4 = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x10000, REGION_CPU1, 0 );/* 64k for code */
+		ROM_LOAD( "vel13a-4",     0x8000, 0x1000, 0x1c5448f9 );
+		ROM_LOAD( "vel12a-4",     0x9000, 0x1000, 0xe62491cc );
+		ROM_LOAD( "vel11a-4",     0xa000, 0x1000, 0xe91faeaf );
+		ROM_LOAD( "vel10a-4",     0xb000, 0x1000, 0xda3a2991 );
+		ROM_LOAD( "vel9a-4",      0xc000, 0x1000, 0xd1887b11 );
+		ROM_LOAD( "vel8a-4",      0xd000, 0x1000, 0x8e8153fc );
+		ROM_LOAD( "vel7a-4",      0xe000, 0x1000, 0x0a091701 );
+		ROM_LOAD( "vel6a-4",      0xf000, 0x1000, 0x7b165f67 );
+	
+		ROM_REGION( 0x10000, REGION_CPU2, 0 );/* 64k for audio */
+		ROM_LOAD( "vea3a-2",      0x5800, 0x0800, 0x83b8836f );
+		ROM_LOAD( "4a-ac",        0x6000, 0x0800, 0x5154c39e );
+		ROM_LOAD( "5a-ac",        0x6800, 0x0800, 0x1e1e3916 );
+		ROM_LOAD( "6a-ac",        0x7000, 0x0800, 0x80f3357a );
+		ROM_LOAD( "7a-ac",        0x7800, 0x0800, 0x466addc7 );
+		ROM_RELOAD(               0xf800, 0x0800 );
+	
+		ROM_REGION( 0x0800, REGION_GFX1, ROMREGION_DISPOSE );
+		ROM_LOAD( "vel11d-2",     0x0000, 0x0800, 0xea6fd981 );
+	ROM_END(); }}; 
 	
 	
-	ROM_START( fax )
-		ROM_REGION( 0x40000, REGION_CPU1, 0 ) /* 64k for code + 192k for extra memory */
-		ROM_LOAD( "fxl8-13a.32",  0x8000, 0x1000, 0x8e30bf6b )
-		ROM_LOAD( "fxl8-12a.32",  0x9000, 0x1000, 0x60a41ff1 )
-		ROM_LOAD( "fxl8-11a.32",  0xA000, 0x1000, 0x2c9cee8a )
-		ROM_LOAD( "fxl8-10a.32",  0xB000, 0x1000, 0x9b03938f )
-		ROM_LOAD( "fxl8-9a.32",   0xC000, 0x1000, 0xfb869f62 )
-		ROM_LOAD( "fxl8-8a.32",   0xD000, 0x1000, 0xdb3470bc )
-		ROM_LOAD( "fxl8-7a.32",   0xE000, 0x1000, 0x1471fef5 )
-		ROM_LOAD( "fxl8-6a.32",   0xF000, 0x1000, 0x812e39f3 )
+	static RomLoadPtr rom_pepper2 = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x10000, REGION_CPU1, 0 );/* 64k for code */
+		ROM_LOAD( "main_12a",     0x9000, 0x1000, 0x33db4737 );
+		ROM_LOAD( "main_11a",     0xa000, 0x1000, 0xa1f43b1f );
+		ROM_LOAD( "main_10a",     0xb000, 0x1000, 0x4d7d7786 );
+		ROM_LOAD( "main_9a",      0xc000, 0x1000, 0xb3362298 );
+		ROM_LOAD( "main_8a",      0xd000, 0x1000, 0x64d106ed );
+		ROM_LOAD( "main_7a",      0xe000, 0x1000, 0xb1c6f07c );
+		ROM_LOAD( "main_6a",      0xf000, 0x1000, 0x515b1046 );
+	
+		ROM_REGION( 0x10000, REGION_CPU2, 0 );/* 64k for audio */
+		ROM_LOAD( "audio_5a",     0x6800, 0x0800, 0x90e3c781 );
+		ROM_LOAD( "audio_6a",     0x7000, 0x0800, 0xdd343e34 );
+		ROM_LOAD( "audio_7a",     0x7800, 0x0800, 0xe02b4356 );
+		ROM_RELOAD(               0xf800, 0x0800 );
+	
+		ROM_REGION( 0x0800, REGION_GFX1, ROMREGION_DISPOSE );
+		ROM_LOAD( "main_11d",     0x0000, 0x0800, 0xb25160cd );
+	ROM_END(); }}; 
+	
+	
+	static RomLoadPtr rom_hardhat = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x10000, REGION_CPU1, 0 );/* 64k for code */
+		ROM_LOAD( "hhl-2.11a",    0xa000, 0x1000, 0x7623deea );
+		ROM_LOAD( "hhl-2.10a",    0xb000, 0x1000, 0xe6bf2fb1 );
+		ROM_LOAD( "hhl-2.9a",     0xc000, 0x1000, 0xacc2bce5 );
+		ROM_LOAD( "hhl-2.8a",     0xd000, 0x1000, 0x23c7a2f8 );
+		ROM_LOAD( "hhl-2.7a",     0xe000, 0x1000, 0x6f7ce1c2 );
+		ROM_LOAD( "hhl-2.6a",     0xf000, 0x1000, 0x2a20cf10 );
+	
+		ROM_REGION( 0x10000, REGION_CPU2, 0 );/* 64k for audio */
+		ROM_LOAD( "hha-1.5a",     0x6800, 0x0800, 0x16a5a183 );
+		ROM_LOAD( "hha-1.6a",     0x7000, 0x0800, 0xbde64021 );
+		ROM_LOAD( "hha-1.7a",     0x7800, 0x0800, 0x505ee5d3 );
+		ROM_RELOAD(               0xf800, 0x0800 );
+	
+		ROM_REGION( 0x0800, REGION_GFX1, ROMREGION_DISPOSE );
+		ROM_LOAD( "hhl-1.11d",    0x0000, 0x0800, 0xdbcdf353 );
+	ROM_END(); }}; 
+	
+	
+	static RomLoadPtr rom_fax = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x40000, REGION_CPU1, 0 );/* 64k for code + 192k for extra memory */
+		ROM_LOAD( "fxl8-13a.32",  0x8000, 0x1000, 0x8e30bf6b );
+		ROM_LOAD( "fxl8-12a.32",  0x9000, 0x1000, 0x60a41ff1 );
+		ROM_LOAD( "fxl8-11a.32",  0xA000, 0x1000, 0x2c9cee8a );
+		ROM_LOAD( "fxl8-10a.32",  0xB000, 0x1000, 0x9b03938f );
+		ROM_LOAD( "fxl8-9a.32",   0xC000, 0x1000, 0xfb869f62 );
+		ROM_LOAD( "fxl8-8a.32",   0xD000, 0x1000, 0xdb3470bc );
+		ROM_LOAD( "fxl8-7a.32",   0xE000, 0x1000, 0x1471fef5 );
+		ROM_LOAD( "fxl8-6a.32",   0xF000, 0x1000, 0x812e39f3 );
 		/* Banks of question ROMs */
-		ROM_LOAD( "fxd-1c.64",  0x10000, 0x2000, 0xfd7e3137 )
-		ROM_LOAD( "fxd-2c.64",  0x12000, 0x2000, 0xe78cb16f )
-		ROM_LOAD( "fxd-3c.64",  0x14000, 0x2000, 0x57a94c6f )
-		ROM_LOAD( "fxd-4c.64",  0x16000, 0x2000, 0x9036c5a2 )
-		ROM_LOAD( "fxd-5c.64",  0x18000, 0x2000, 0x38c03405 )
-		ROM_LOAD( "fxd-6c.64",  0x1A000, 0x2000, 0xf48fc308 )
-		ROM_LOAD( "fxd-7c.64",  0x1C000, 0x2000, 0xcf93b924 )
-		ROM_LOAD( "fxd-8c.64",  0x1E000, 0x2000, 0x607b48da )
-		ROM_LOAD( "fxd-1b.64",  0x20000, 0x2000, 0x62872d4f )
-		ROM_LOAD( "fxd-2b.64",  0x22000, 0x2000, 0x625778d0 )
-		ROM_LOAD( "fxd-3b.64",  0x24000, 0x2000, 0xc3473dee )
-		ROM_LOAD( "fxd-4b.64",  0x26000, 0x2000, 0xe39a15f5 )
-		ROM_LOAD( "fxd-5b.64",  0x28000, 0x2000, 0x101a9d70 )
-		ROM_LOAD( "fxd-6b.64",  0x2A000, 0x2000, 0x374a8f05 )
-		ROM_LOAD( "fxd-7b.64",  0x2C000, 0x2000, 0xf7e7f824 )
-		ROM_LOAD( "fxd-8b.64",  0x2E000, 0x2000, 0x8f1a5287 )
-		ROM_LOAD( "fxd-1a.64",  0x30000, 0x2000, 0xfc5e6344 )
-		ROM_LOAD( "fxd-2a.64",  0x32000, 0x2000, 0x43cf60b3 )
-		ROM_LOAD( "fxd-3a.64",  0x34000, 0x2000, 0x6b7d29cb )
-		ROM_LOAD( "fxd-4a.64",  0x36000, 0x2000, 0xb9de3c2d )
-		ROM_LOAD( "fxd-5a.64",  0x38000, 0x2000, 0x67285bc6 )
-		ROM_LOAD( "fxd-6a.64",  0x3A000, 0x2000, 0xba67b7b2 )
+		ROM_LOAD( "fxd-1c.64",  0x10000, 0x2000, 0xfd7e3137 );
+		ROM_LOAD( "fxd-2c.64",  0x12000, 0x2000, 0xe78cb16f );
+		ROM_LOAD( "fxd-3c.64",  0x14000, 0x2000, 0x57a94c6f );
+		ROM_LOAD( "fxd-4c.64",  0x16000, 0x2000, 0x9036c5a2 );
+		ROM_LOAD( "fxd-5c.64",  0x18000, 0x2000, 0x38c03405 );
+		ROM_LOAD( "fxd-6c.64",  0x1A000, 0x2000, 0xf48fc308 );
+		ROM_LOAD( "fxd-7c.64",  0x1C000, 0x2000, 0xcf93b924 );
+		ROM_LOAD( "fxd-8c.64",  0x1E000, 0x2000, 0x607b48da );
+		ROM_LOAD( "fxd-1b.64",  0x20000, 0x2000, 0x62872d4f );
+		ROM_LOAD( "fxd-2b.64",  0x22000, 0x2000, 0x625778d0 );
+		ROM_LOAD( "fxd-3b.64",  0x24000, 0x2000, 0xc3473dee );
+		ROM_LOAD( "fxd-4b.64",  0x26000, 0x2000, 0xe39a15f5 );
+		ROM_LOAD( "fxd-5b.64",  0x28000, 0x2000, 0x101a9d70 );
+		ROM_LOAD( "fxd-6b.64",  0x2A000, 0x2000, 0x374a8f05 );
+		ROM_LOAD( "fxd-7b.64",  0x2C000, 0x2000, 0xf7e7f824 );
+		ROM_LOAD( "fxd-8b.64",  0x2E000, 0x2000, 0x8f1a5287 );
+		ROM_LOAD( "fxd-1a.64",  0x30000, 0x2000, 0xfc5e6344 );
+		ROM_LOAD( "fxd-2a.64",  0x32000, 0x2000, 0x43cf60b3 );
+		ROM_LOAD( "fxd-3a.64",  0x34000, 0x2000, 0x6b7d29cb );
+		ROM_LOAD( "fxd-4a.64",  0x36000, 0x2000, 0xb9de3c2d );
+		ROM_LOAD( "fxd-5a.64",  0x38000, 0x2000, 0x67285bc6 );
+		ROM_LOAD( "fxd-6a.64",  0x3A000, 0x2000, 0xba67b7b2 );
 		/* The last two ROM sockets were apparently never populated */
-	//	ROM_LOAD( "fxd-7a.64",  0x3C000, 0x2000, 0x00000000 )
-	//	ROM_LOAD( "fxd-8a.64",  0x3E000, 0x2000, 0x00000000 )
+	//	ROM_LOAD( "fxd-7a.64",  0x3C000, 0x2000, 0x00000000 );
+	//	ROM_LOAD( "fxd-8a.64",  0x3E000, 0x2000, 0x00000000 );
 	
-		ROM_REGION( 0x10000, REGION_CPU2, 0 ) /* 64k for audio */
-		ROM_LOAD( "fxa2-5a.16",   0x6800, 0x0800, 0x7c525aec )
-		ROM_LOAD( "fxa2-6a.16",   0x7000, 0x0800, 0x2b3bfc44 )
-		ROM_LOAD( "fxa2-7a.16",   0x7800, 0x0800, 0x578c62b7 )
-		ROM_RELOAD(               0xf800, 0x0800 )
+		ROM_REGION( 0x10000, REGION_CPU2, 0 );/* 64k for audio */
+		ROM_LOAD( "fxa2-5a.16",   0x6800, 0x0800, 0x7c525aec );
+		ROM_LOAD( "fxa2-6a.16",   0x7000, 0x0800, 0x2b3bfc44 );
+		ROM_LOAD( "fxa2-7a.16",   0x7800, 0x0800, 0x578c62b7 );
+		ROM_RELOAD(               0xf800, 0x0800 );
 	
-		ROM_REGION( 0x0800, REGION_GFX1, ROMREGION_DISPOSE )
-		ROM_LOAD( "fxl1-11d.32",  0x0000, 0x0800, 0x54fc873d )
-		ROM_CONTINUE(             0x0000, 0x0800 )       /* overwrite with the real one - should be a 2716? */
-	ROM_END
+		ROM_REGION( 0x0800, REGION_GFX1, ROMREGION_DISPOSE );
+		ROM_LOAD( "fxl1-11d.32",  0x0000, 0x0800, 0x54fc873d );
+		ROM_CONTINUE(             0x0000, 0x0800 );      /* overwrite with the real one - should be a 2716? */
+	ROM_END(); }}; 
 	
 	
 	

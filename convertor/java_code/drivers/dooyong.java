@@ -1206,369 +1206,369 @@ public class dooyong
 	
 	
 	
-	ROM_START( lastday )
-		ROM_REGION( 0x30000, REGION_CPU1, 0 )	/* 64k for code + 128k for banks */
-		ROM_LOAD( "lday3.bin",    0x00000, 0x10000, 0xa06dfb1e )
-		ROM_RELOAD(               0x10000, 0x10000 )				/* banked at 0x8000-0xbfff */
-		ROM_LOAD( "lday4.bin",    0x20000, 0x10000, 0x70961ea6 )	/* banked at 0x8000-0xbfff */
+	static RomLoadPtr rom_lastday = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x30000, REGION_CPU1, 0 );/* 64k for code + 128k for banks */
+		ROM_LOAD( "lday3.bin",    0x00000, 0x10000, 0xa06dfb1e );
+		ROM_RELOAD(               0x10000, 0x10000 );			/* banked at 0x8000-0xbfff */
+		ROM_LOAD( "lday4.bin",    0x20000, 0x10000, 0x70961ea6 );/* banked at 0x8000-0xbfff */
 	
-		ROM_REGION( 0x10000, REGION_CPU2, 0 )	/* sound */
-		ROM_LOAD( "lday1.bin",    0x0000, 0x8000, 0xdd4316fd )	/* empty */
-		ROM_CONTINUE(             0x0000, 0x8000 )
+		ROM_REGION( 0x10000, REGION_CPU2, 0 );/* sound */
+		ROM_LOAD( "lday1.bin",    0x0000, 0x8000, 0xdd4316fd );/* empty */
+		ROM_CONTINUE(             0x0000, 0x8000 );
 	
-		ROM_REGION( 0x8000, REGION_GFX1, ROMREGION_DISPOSE )	/* chars */
-		ROM_LOAD( "lday2.bin",    0x0000, 0x8000, 0x83eb572c )	/* empty */
-		ROM_CONTINUE(             0x0000, 0x8000 )
+		ROM_REGION( 0x8000, REGION_GFX1, ROMREGION_DISPOSE );/* chars */
+		ROM_LOAD( "lday2.bin",    0x0000, 0x8000, 0x83eb572c );/* empty */
+		ROM_CONTINUE(             0x0000, 0x8000 );
 	
-		ROM_REGION( 0x40000, REGION_GFX2, ROMREGION_DISPOSE )	/* sprites */
-		ROM_LOAD16_BYTE( "lday16.bin",   0x00000, 0x20000, 0xdf503504 )
-		ROM_LOAD16_BYTE( "lday15.bin",   0x00001, 0x20000, 0xcd990442 )
+		ROM_REGION( 0x40000, REGION_GFX2, ROMREGION_DISPOSE );/* sprites */
+		ROM_LOAD16_BYTE( "lday16.bin",   0x00000, 0x20000, 0xdf503504 );
+		ROM_LOAD16_BYTE( "lday15.bin",   0x00001, 0x20000, 0xcd990442 );
 	
-		ROM_REGION( 0x80000, REGION_GFX3, ROMREGION_DISPOSE )	/* tiles */
-		ROM_LOAD16_BYTE( "lday6.bin",    0x00000, 0x20000, 0x1054361d )
-		ROM_LOAD16_BYTE( "lday9.bin",    0x00001, 0x20000, 0x6952ef4d )
-		ROM_LOAD16_BYTE( "lday7.bin",    0x40000, 0x20000, 0x6e57a888 )
-		ROM_LOAD16_BYTE( "lday10.bin",   0x40001, 0x20000, 0xa5548dca )
+		ROM_REGION( 0x80000, REGION_GFX3, ROMREGION_DISPOSE );/* tiles */
+		ROM_LOAD16_BYTE( "lday6.bin",    0x00000, 0x20000, 0x1054361d );
+		ROM_LOAD16_BYTE( "lday9.bin",    0x00001, 0x20000, 0x6952ef4d );
+		ROM_LOAD16_BYTE( "lday7.bin",    0x40000, 0x20000, 0x6e57a888 );
+		ROM_LOAD16_BYTE( "lday10.bin",   0x40001, 0x20000, 0xa5548dca );
 	
-		ROM_REGION( 0x40000, REGION_GFX4, ROMREGION_DISPOSE )	/* tiles */
-		ROM_LOAD16_BYTE( "lday12.bin",   0x00000, 0x20000, 0x992bc4af )
-		ROM_LOAD16_BYTE( "lday14.bin",   0x00001, 0x20000, 0xa79abc85 )
+		ROM_REGION( 0x40000, REGION_GFX4, ROMREGION_DISPOSE );/* tiles */
+		ROM_LOAD16_BYTE( "lday12.bin",   0x00000, 0x20000, 0x992bc4af );
+		ROM_LOAD16_BYTE( "lday14.bin",   0x00001, 0x20000, 0xa79abc85 );
 	
-		ROM_REGION( 0x20000, REGION_GFX5, 0 )	/* background tilemaps */
-		ROM_LOAD16_BYTE( "lday5.bin",    0x00000, 0x10000, 0x4789bae8 )
-		ROM_LOAD16_BYTE( "lday8.bin",    0x00001, 0x10000, 0x92402b9a )
+		ROM_REGION( 0x20000, REGION_GFX5, 0 );/* background tilemaps */
+		ROM_LOAD16_BYTE( "lday5.bin",    0x00000, 0x10000, 0x4789bae8 );
+		ROM_LOAD16_BYTE( "lday8.bin",    0x00001, 0x10000, 0x92402b9a );
 	
-		ROM_REGION( 0x20000, REGION_GFX6, 0 )	/* fg tilemaps */
-		ROM_LOAD16_BYTE( "lday11.bin",   0x00000, 0x10000, 0x04b961de )
-		ROM_LOAD16_BYTE( "lday13.bin",   0x00001, 0x10000, 0x6bdbd887 )
-	ROM_END
+		ROM_REGION( 0x20000, REGION_GFX6, 0 );/* fg tilemaps */
+		ROM_LOAD16_BYTE( "lday11.bin",   0x00000, 0x10000, 0x04b961de );
+		ROM_LOAD16_BYTE( "lday13.bin",   0x00001, 0x10000, 0x6bdbd887 );
+	ROM_END(); }}; 
 	
-	ROM_START( lastdaya )
-		ROM_REGION( 0x30000, REGION_CPU1, 0 )	/* 64k for code + 128k for banks */
-		ROM_LOAD( "lday3.bin",    0x00000, 0x10000, 0xa06dfb1e )
-		ROM_RELOAD(               0x10000, 0x10000 )				/* banked at 0x8000-0xbfff */
-		ROM_LOAD( "lday4.bin",    0x20000, 0x10000, 0x70961ea6 )	/* banked at 0x8000-0xbfff */
+	static RomLoadPtr rom_lastdaya = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x30000, REGION_CPU1, 0 );/* 64k for code + 128k for banks */
+		ROM_LOAD( "lday3.bin",    0x00000, 0x10000, 0xa06dfb1e );
+		ROM_RELOAD(               0x10000, 0x10000 );			/* banked at 0x8000-0xbfff */
+		ROM_LOAD( "lday4.bin",    0x20000, 0x10000, 0x70961ea6 );/* banked at 0x8000-0xbfff */
 	
-		ROM_REGION( 0x10000, REGION_CPU2, 0 )	/* sound */
-		ROM_LOAD( "e1",           0x0000, 0x8000, 0xce96e106 )	/* empty */
-		ROM_CONTINUE(             0x0000, 0x8000 )
+		ROM_REGION( 0x10000, REGION_CPU2, 0 );/* sound */
+		ROM_LOAD( "e1",           0x0000, 0x8000, 0xce96e106 );/* empty */
+		ROM_CONTINUE(             0x0000, 0x8000 );
 	
-		ROM_REGION( 0x8000, REGION_GFX1, ROMREGION_DISPOSE )	/* chars */
-		ROM_LOAD( "lday2.bin",    0x0000, 0x8000, 0x83eb572c )	/* empty */
-		ROM_CONTINUE(             0x0000, 0x8000 )
+		ROM_REGION( 0x8000, REGION_GFX1, ROMREGION_DISPOSE );/* chars */
+		ROM_LOAD( "lday2.bin",    0x0000, 0x8000, 0x83eb572c );/* empty */
+		ROM_CONTINUE(             0x0000, 0x8000 );
 	
-		ROM_REGION( 0x40000, REGION_GFX2, ROMREGION_DISPOSE )	/* sprites */
-		ROM_LOAD16_BYTE( "lday16.bin",   0x00000, 0x20000, 0xdf503504 )
-		ROM_LOAD16_BYTE( "lday15.bin",   0x00001, 0x20000, 0xcd990442 )
+		ROM_REGION( 0x40000, REGION_GFX2, ROMREGION_DISPOSE );/* sprites */
+		ROM_LOAD16_BYTE( "lday16.bin",   0x00000, 0x20000, 0xdf503504 );
+		ROM_LOAD16_BYTE( "lday15.bin",   0x00001, 0x20000, 0xcd990442 );
 	
-		ROM_REGION( 0x80000, REGION_GFX3, ROMREGION_DISPOSE )	/* tiles */
-		ROM_LOAD16_BYTE( "e6",           0x00000, 0x20000, 0x7623c443 )
-		ROM_LOAD16_BYTE( "e9",           0x00001, 0x20000, 0x717f6a0e )
-		ROM_LOAD16_BYTE( "lday7.bin",    0x40000, 0x20000, 0x6e57a888 )
-		ROM_LOAD16_BYTE( "lday10.bin",   0x40001, 0x20000, 0xa5548dca )
+		ROM_REGION( 0x80000, REGION_GFX3, ROMREGION_DISPOSE );/* tiles */
+		ROM_LOAD16_BYTE( "e6",           0x00000, 0x20000, 0x7623c443 );
+		ROM_LOAD16_BYTE( "e9",           0x00001, 0x20000, 0x717f6a0e );
+		ROM_LOAD16_BYTE( "lday7.bin",    0x40000, 0x20000, 0x6e57a888 );
+		ROM_LOAD16_BYTE( "lday10.bin",   0x40001, 0x20000, 0xa5548dca );
 	
-		ROM_REGION( 0x40000, REGION_GFX4, ROMREGION_DISPOSE )	/* tiles */
-		ROM_LOAD16_BYTE( "lday12.bin",   0x00000, 0x20000, 0x992bc4af )
-		ROM_LOAD16_BYTE( "lday14.bin",   0x00001, 0x20000, 0xa79abc85 )
+		ROM_REGION( 0x40000, REGION_GFX4, ROMREGION_DISPOSE );/* tiles */
+		ROM_LOAD16_BYTE( "lday12.bin",   0x00000, 0x20000, 0x992bc4af );
+		ROM_LOAD16_BYTE( "lday14.bin",   0x00001, 0x20000, 0xa79abc85 );
 	
-		ROM_REGION( 0x20000, REGION_GFX5, 0 )	/* bg tilemaps */
-		ROM_LOAD16_BYTE( "e5",           0x00000, 0x10000, 0x5f801410 )
-		ROM_LOAD16_BYTE( "e8",           0x00001, 0x10000, 0xa7b8250b )
+		ROM_REGION( 0x20000, REGION_GFX5, 0 );/* bg tilemaps */
+		ROM_LOAD16_BYTE( "e5",           0x00000, 0x10000, 0x5f801410 );
+		ROM_LOAD16_BYTE( "e8",           0x00001, 0x10000, 0xa7b8250b );
 	
-		ROM_REGION( 0x20000, REGION_GFX6, 0 )	/* fg tilemaps */
-		ROM_LOAD16_BYTE( "lday11.bin",   0x00000, 0x10000, 0x04b961de )
-		ROM_LOAD16_BYTE( "lday13.bin",   0x00001, 0x10000, 0x6bdbd887 )
-	ROM_END
+		ROM_REGION( 0x20000, REGION_GFX6, 0 );/* fg tilemaps */
+		ROM_LOAD16_BYTE( "lday11.bin",   0x00000, 0x10000, 0x04b961de );
+		ROM_LOAD16_BYTE( "lday13.bin",   0x00001, 0x10000, 0x6bdbd887 );
+	ROM_END(); }}; 
 	
-	ROM_START( gulfstrm )
-		ROM_REGION( 0x30000, REGION_CPU1, 0 )	/* 64k for code + 128k for banks */
-		ROM_LOAD( "1.l4",         0x00000, 0x20000, 0x59e0478b )
-		ROM_RELOAD(               0x10000, 0x20000 )				/* banked at 0x8000-0xbfff */
+	static RomLoadPtr rom_gulfstrm = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x30000, REGION_CPU1, 0 );/* 64k for code + 128k for banks */
+		ROM_LOAD( "1.l4",         0x00000, 0x20000, 0x59e0478b );
+		ROM_RELOAD(               0x10000, 0x20000 );			/* banked at 0x8000-0xbfff */
 	
-		ROM_REGION( 0x10000, REGION_CPU2, 0 )	/* sound */
-		ROM_LOAD( "3.c5",         0x00000, 0x10000, 0xc029b015 )
+		ROM_REGION( 0x10000, REGION_CPU2, 0 );/* sound */
+		ROM_LOAD( "3.c5",         0x00000, 0x10000, 0xc029b015 );
 	
-		ROM_REGION( 0x8000, REGION_GFX1, ROMREGION_DISPOSE )	/* chars */
-		ROM_LOAD( "2.s4",         0x0000, 0x8000, 0xc2d65a25 )	/* empty */
-		ROM_CONTINUE(             0x0000, 0x8000 )
+		ROM_REGION( 0x8000, REGION_GFX1, ROMREGION_DISPOSE );/* chars */
+		ROM_LOAD( "2.s4",         0x0000, 0x8000, 0xc2d65a25 );/* empty */
+		ROM_CONTINUE(             0x0000, 0x8000 );
 	
-		ROM_REGION( 0x80000, REGION_GFX2, ROMREGION_DISPOSE )	/* sprites */
-		ROM_LOAD16_BYTE( "14.b1",        0x00000, 0x20000, 0x67bdf73d )
-		ROM_LOAD16_BYTE( "16.c1",        0x00001, 0x20000, 0x7770a76f )
-		ROM_LOAD16_BYTE( "15.b1",        0x40000, 0x20000, 0x84803f7e )
-		ROM_LOAD16_BYTE( "17.e1",        0x40001, 0x20000, 0x94706500 )
+		ROM_REGION( 0x80000, REGION_GFX2, ROMREGION_DISPOSE );/* sprites */
+		ROM_LOAD16_BYTE( "14.b1",        0x00000, 0x20000, 0x67bdf73d );
+		ROM_LOAD16_BYTE( "16.c1",        0x00001, 0x20000, 0x7770a76f );
+		ROM_LOAD16_BYTE( "15.b1",        0x40000, 0x20000, 0x84803f7e );
+		ROM_LOAD16_BYTE( "17.e1",        0x40001, 0x20000, 0x94706500 );
 	
-		ROM_REGION( 0x80000, REGION_GFX3, ROMREGION_DISPOSE )	/* tiles */
-		ROM_LOAD16_BYTE( "4.d8",         0x00000, 0x20000, 0x858fdbb6 )
-		ROM_LOAD16_BYTE( "5.b9",         0x00001, 0x20000, 0xc0a552e8 )
-		ROM_LOAD16_BYTE( "6.d8",         0x40000, 0x20000, 0x20eedda3 )
-		ROM_LOAD16_BYTE( "7.d9",         0x40001, 0x20000, 0x294f8c40 )
+		ROM_REGION( 0x80000, REGION_GFX3, ROMREGION_DISPOSE );/* tiles */
+		ROM_LOAD16_BYTE( "4.d8",         0x00000, 0x20000, 0x858fdbb6 );
+		ROM_LOAD16_BYTE( "5.b9",         0x00001, 0x20000, 0xc0a552e8 );
+		ROM_LOAD16_BYTE( "6.d8",         0x40000, 0x20000, 0x20eedda3 );
+		ROM_LOAD16_BYTE( "7.d9",         0x40001, 0x20000, 0x294f8c40 );
 	
-		ROM_REGION( 0x40000, REGION_GFX4, ROMREGION_DISPOSE )	/* tiles */
-		ROM_LOAD16_BYTE( "12.r8",        0x00000, 0x20000, 0xec3ad3e7 )
-		ROM_LOAD16_BYTE( "13.r9",        0x00001, 0x20000, 0xc64090cb )
+		ROM_REGION( 0x40000, REGION_GFX4, ROMREGION_DISPOSE );/* tiles */
+		ROM_LOAD16_BYTE( "12.r8",        0x00000, 0x20000, 0xec3ad3e7 );
+		ROM_LOAD16_BYTE( "13.r9",        0x00001, 0x20000, 0xc64090cb );
 	
-		ROM_REGION( 0x20000, REGION_GFX5, 0 )	/* background tilemaps */
-		ROM_LOAD16_BYTE( "8.e8",         0x00000, 0x10000, 0x8d7f4693 )
-		ROM_LOAD16_BYTE( "9.e9",         0x00001, 0x10000, 0x34d440c4 )
+		ROM_REGION( 0x20000, REGION_GFX5, 0 );/* background tilemaps */
+		ROM_LOAD16_BYTE( "8.e8",         0x00000, 0x10000, 0x8d7f4693 );
+		ROM_LOAD16_BYTE( "9.e9",         0x00001, 0x10000, 0x34d440c4 );
 	
-		ROM_REGION( 0x20000, REGION_GFX6, 0 )	/* fg tilemaps */
-		ROM_LOAD16_BYTE( "10.n8",        0x00000, 0x10000, 0xb4f15bf4 )
-		ROM_LOAD16_BYTE( "11.n9",        0x00001, 0x10000, 0x7dfe4a9c )
-	ROM_END
+		ROM_REGION( 0x20000, REGION_GFX6, 0 );/* fg tilemaps */
+		ROM_LOAD16_BYTE( "10.n8",        0x00000, 0x10000, 0xb4f15bf4 );
+		ROM_LOAD16_BYTE( "11.n9",        0x00001, 0x10000, 0x7dfe4a9c );
+	ROM_END(); }}; 
 	
-	ROM_START( gulfstr2 )
-		ROM_REGION( 0x30000, REGION_CPU1, 0 )	/* 64k for code + 128k for banks */
-		ROM_LOAD( "18.1",         0x00000, 0x20000, 0xd38e2667 )
-		ROM_RELOAD(               0x10000, 0x20000 )				/* banked at 0x8000-0xbfff */
+	static RomLoadPtr rom_gulfstr2 = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x30000, REGION_CPU1, 0 );/* 64k for code + 128k for banks */
+		ROM_LOAD( "18.1",         0x00000, 0x20000, 0xd38e2667 );
+		ROM_RELOAD(               0x10000, 0x20000 );			/* banked at 0x8000-0xbfff */
 	
-		ROM_REGION( 0x10000, REGION_CPU2, 0 )	/* sound */
-		ROM_LOAD( "3.c5",         0x00000, 0x10000, 0xc029b015 )
+		ROM_REGION( 0x10000, REGION_CPU2, 0 );/* sound */
+		ROM_LOAD( "3.c5",         0x00000, 0x10000, 0xc029b015 );
 	
-		ROM_REGION( 0x8000, REGION_GFX1, ROMREGION_DISPOSE )	/* chars */
-		ROM_LOAD( "2.bin",        0x0000, 0x8000, 0xcb555d96 )	/* empty */
-		ROM_CONTINUE(             0x0000, 0x8000 )
+		ROM_REGION( 0x8000, REGION_GFX1, ROMREGION_DISPOSE );/* chars */
+		ROM_LOAD( "2.bin",        0x0000, 0x8000, 0xcb555d96 );/* empty */
+		ROM_CONTINUE(             0x0000, 0x8000 );
 	
-		ROM_REGION( 0x80000, REGION_GFX2, ROMREGION_DISPOSE )	/* sprites */
-		ROM_LOAD16_BYTE( "14.b1",        0x00000, 0x20000, 0x67bdf73d )
-		ROM_LOAD16_BYTE( "16.c1",        0x00001, 0x20000, 0x7770a76f )
-		ROM_LOAD16_BYTE( "15.b1",        0x40000, 0x20000, 0x84803f7e )
-		ROM_LOAD16_BYTE( "17.e1",        0x40001, 0x20000, 0x94706500 )
+		ROM_REGION( 0x80000, REGION_GFX2, ROMREGION_DISPOSE );/* sprites */
+		ROM_LOAD16_BYTE( "14.b1",        0x00000, 0x20000, 0x67bdf73d );
+		ROM_LOAD16_BYTE( "16.c1",        0x00001, 0x20000, 0x7770a76f );
+		ROM_LOAD16_BYTE( "15.b1",        0x40000, 0x20000, 0x84803f7e );
+		ROM_LOAD16_BYTE( "17.e1",        0x40001, 0x20000, 0x94706500 );
 	
-		ROM_REGION( 0x80000, REGION_GFX3, ROMREGION_DISPOSE )	/* tiles */
-		ROM_LOAD16_BYTE( "4.d8",         0x00000, 0x20000, 0x858fdbb6 )
-		ROM_LOAD16_BYTE( "5.b9",         0x00001, 0x20000, 0xc0a552e8 )
-		ROM_LOAD16_BYTE( "6.d8",         0x40000, 0x20000, 0x20eedda3 )
-		ROM_LOAD16_BYTE( "7.d9",         0x40001, 0x20000, 0x294f8c40 )
+		ROM_REGION( 0x80000, REGION_GFX3, ROMREGION_DISPOSE );/* tiles */
+		ROM_LOAD16_BYTE( "4.d8",         0x00000, 0x20000, 0x858fdbb6 );
+		ROM_LOAD16_BYTE( "5.b9",         0x00001, 0x20000, 0xc0a552e8 );
+		ROM_LOAD16_BYTE( "6.d8",         0x40000, 0x20000, 0x20eedda3 );
+		ROM_LOAD16_BYTE( "7.d9",         0x40001, 0x20000, 0x294f8c40 );
 	
-		ROM_REGION( 0x40000, REGION_GFX4, ROMREGION_DISPOSE )	/* tiles */
-		ROM_LOAD16_BYTE( "12.bin",       0x00000, 0x20000, 0x3e3d3b57 )
-		ROM_LOAD16_BYTE( "13.bin",       0x00001, 0x20000, 0x66fcce80 )
+		ROM_REGION( 0x40000, REGION_GFX4, ROMREGION_DISPOSE );/* tiles */
+		ROM_LOAD16_BYTE( "12.bin",       0x00000, 0x20000, 0x3e3d3b57 );
+		ROM_LOAD16_BYTE( "13.bin",       0x00001, 0x20000, 0x66fcce80 );
 	
-		ROM_REGION( 0x20000, REGION_GFX5, 0 )	/* background tilemaps */
-		ROM_LOAD16_BYTE( "8.e8",         0x00000, 0x10000, 0x8d7f4693 )
-		ROM_LOAD16_BYTE( "9.e9",         0x00001, 0x10000, 0x34d440c4 )
+		ROM_REGION( 0x20000, REGION_GFX5, 0 );/* background tilemaps */
+		ROM_LOAD16_BYTE( "8.e8",         0x00000, 0x10000, 0x8d7f4693 );
+		ROM_LOAD16_BYTE( "9.e9",         0x00001, 0x10000, 0x34d440c4 );
 	
-		ROM_REGION( 0x20000, REGION_GFX6, 0 )	/* fg tilemaps */
-		ROM_LOAD16_BYTE( "10.bin",       0x00000, 0x10000, 0x08149140 )
-		ROM_LOAD16_BYTE( "11.bin",       0x00001, 0x10000, 0x2ed7545b )
-	ROM_END
+		ROM_REGION( 0x20000, REGION_GFX6, 0 );/* fg tilemaps */
+		ROM_LOAD16_BYTE( "10.bin",       0x00000, 0x10000, 0x08149140 );
+		ROM_LOAD16_BYTE( "11.bin",       0x00001, 0x10000, 0x2ed7545b );
+	ROM_END(); }}; 
 	
-	ROM_START( pollux )
-		ROM_REGION( 0x30000, REGION_CPU1, 0 )	/* 64k for code + 128k for banks */
-		ROM_LOAD( "pollux2.bin",  0x00000, 0x10000, 0x45e10d4e )
-		ROM_RELOAD(               0x10000, 0x10000 )	/* banked at 0x8000-0xbfff */
+	static RomLoadPtr rom_pollux = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x30000, REGION_CPU1, 0 );/* 64k for code + 128k for banks */
+		ROM_LOAD( "pollux2.bin",  0x00000, 0x10000, 0x45e10d4e );
+		ROM_RELOAD(               0x10000, 0x10000 );/* banked at 0x8000-0xbfff */
 	
-		ROM_REGION( 0x10000, REGION_CPU2, 0 )	/* sound */
-		ROM_LOAD( "pollux3.bin",  0x00000, 0x10000, 0x85a9dc98 )
+		ROM_REGION( 0x10000, REGION_CPU2, 0 );/* sound */
+		ROM_LOAD( "pollux3.bin",  0x00000, 0x10000, 0x85a9dc98 );
 	
-		ROM_REGION( 0x10000, REGION_GFX1, ROMREGION_DISPOSE )	/* chars */
-		ROM_LOAD( "pollux1.bin",  0x08000, 0x08000, 0x7f7135da )
-		ROM_CONTINUE(             0x00000, 0x08000 )
+		ROM_REGION( 0x10000, REGION_GFX1, ROMREGION_DISPOSE );/* chars */
+		ROM_LOAD( "pollux1.bin",  0x08000, 0x08000, 0x7f7135da );
+		ROM_CONTINUE(             0x00000, 0x08000 );
 	
-		ROM_REGION( 0x80000, REGION_GFX2, ROMREGION_DISPOSE )	/* sprites */
+		ROM_REGION( 0x80000, REGION_GFX2, ROMREGION_DISPOSE );/* sprites */
 		ROM_LOAD16_WORD_SWAP( "polluxm2.bin", 0x00000, 0x80000, 0xbdea6f7d )
 	
-		ROM_REGION( 0x80000, REGION_GFX3, ROMREGION_DISPOSE )	/* tiles */
+		ROM_REGION( 0x80000, REGION_GFX3, ROMREGION_DISPOSE );/* tiles */
 		ROM_LOAD16_WORD_SWAP( "polluxm1.bin", 0x00000, 0x80000, 0x1d2dedd2 )
 	
-		ROM_REGION( 0x80000, REGION_GFX4, ROMREGION_DISPOSE )	/* tiles */
-		ROM_LOAD16_BYTE( "pollux6.bin",  0x00000, 0x20000, 0xb0391db5 )
-		ROM_LOAD16_BYTE( "pollux7.bin",  0x00001, 0x20000, 0x632f6e10 )
-		ROM_FILL(                        0x40000, 0x40000, 0xff )
+		ROM_REGION( 0x80000, REGION_GFX4, ROMREGION_DISPOSE );/* tiles */
+		ROM_LOAD16_BYTE( "pollux6.bin",  0x00000, 0x20000, 0xb0391db5 );
+		ROM_LOAD16_BYTE( "pollux7.bin",  0x00001, 0x20000, 0x632f6e10 );
+		ROM_FILL(                        0x40000, 0x40000, 0xff );
 	
-		ROM_REGION( 0x20000, REGION_GFX5, 0 )	/* bg tilemaps */
-		ROM_LOAD16_BYTE( "pollux9.bin",  0x00000, 0x10000, 0x378d8914 )
-		ROM_LOAD16_BYTE( "pollux8.bin",  0x00001, 0x10000, 0x8859fa70 )
+		ROM_REGION( 0x20000, REGION_GFX5, 0 );/* bg tilemaps */
+		ROM_LOAD16_BYTE( "pollux9.bin",  0x00000, 0x10000, 0x378d8914 );
+		ROM_LOAD16_BYTE( "pollux8.bin",  0x00001, 0x10000, 0x8859fa70 );
 	
-		ROM_REGION( 0x20000, REGION_GFX6, 0 )	/* fg tilemaps */
-		ROM_LOAD16_BYTE( "pollux5.bin",  0x00000, 0x10000, 0xac090d34 )
-		ROM_LOAD16_BYTE( "pollux4.bin",  0x00001, 0x10000, 0x2c6bd3be )
-	ROM_END
+		ROM_REGION( 0x20000, REGION_GFX6, 0 );/* fg tilemaps */
+		ROM_LOAD16_BYTE( "pollux5.bin",  0x00000, 0x10000, 0xac090d34 );
+		ROM_LOAD16_BYTE( "pollux4.bin",  0x00001, 0x10000, 0x2c6bd3be );
+	ROM_END(); }}; 
 	
-	ROM_START( bluehawk )
-		ROM_REGION( 0x30000, REGION_CPU1, 0 )	/* 64k for code + 128k for banks */
-		ROM_LOAD( "rom19",        0x00000, 0x20000, 0x24149246 )
-		ROM_RELOAD(               0x10000, 0x20000 )	/* banked at 0x8000-0xbfff */
+	static RomLoadPtr rom_bluehawk = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x30000, REGION_CPU1, 0 );/* 64k for code + 128k for banks */
+		ROM_LOAD( "rom19",        0x00000, 0x20000, 0x24149246 );
+		ROM_RELOAD(               0x10000, 0x20000 );/* banked at 0x8000-0xbfff */
 	
-		ROM_REGION( 0x10000, REGION_CPU2, 0 )	/* sound */
-		ROM_LOAD( "rom1",         0x00000, 0x10000, 0xeef22920 )
+		ROM_REGION( 0x10000, REGION_CPU2, 0 );/* sound */
+		ROM_LOAD( "rom1",         0x00000, 0x10000, 0xeef22920 );
 	
-		ROM_REGION( 0x10000, REGION_GFX1, ROMREGION_DISPOSE )	/* chars */
-		ROM_LOAD( "rom3",         0x00000, 0x10000, 0xc192683f )
+		ROM_REGION( 0x10000, REGION_GFX1, ROMREGION_DISPOSE );/* chars */
+		ROM_LOAD( "rom3",         0x00000, 0x10000, 0xc192683f );
 	
-		ROM_REGION( 0x80000, REGION_GFX2, ROMREGION_DISPOSE )	/* sprites */
+		ROM_REGION( 0x80000, REGION_GFX2, ROMREGION_DISPOSE );/* sprites */
 		ROM_LOAD16_WORD_SWAP( "dy-bh-m3",     0x00000, 0x80000, 0x8809d157 )
 	
-		ROM_REGION( 0x80000, REGION_GFX3, 0 )	/* tiles + tilemaps (together!) */
+		ROM_REGION( 0x80000, REGION_GFX3, 0 );/* tiles + tilemaps (together!) */
 		ROM_LOAD16_WORD_SWAP( "dy-bh-m1",     0x00000, 0x80000, 0x51816b2c )
 	
-		ROM_REGION( 0x80000, REGION_GFX4, 0 )	/* tiles + tilemaps (together!) */
+		ROM_REGION( 0x80000, REGION_GFX4, 0 );/* tiles + tilemaps (together!) */
 		ROM_LOAD16_WORD_SWAP( "dy-bh-m2",     0x00000, 0x80000, 0xf9daace6 )
 	
-		ROM_REGION( 0x40000, REGION_GFX5, 0 )	/* tiles + tilemaps (together!) */
-		ROM_LOAD16_BYTE( "rom6",         0x00000, 0x20000, 0xe6bd9daa )
-		ROM_LOAD16_BYTE( "rom5",         0x00001, 0x20000, 0x5c654dc6 )
+		ROM_REGION( 0x40000, REGION_GFX5, 0 );/* tiles + tilemaps (together!) */
+		ROM_LOAD16_BYTE( "rom6",         0x00000, 0x20000, 0xe6bd9daa );
+		ROM_LOAD16_BYTE( "rom5",         0x00001, 0x20000, 0x5c654dc6 );
 	
-		ROM_REGION( 0x20000, REGION_SOUND1, 0 )	/* OKI6295 samples */
-		ROM_LOAD( "rom4",         0x00000, 0x20000, 0xf7318919 )
-	ROM_END
+		ROM_REGION( 0x20000, REGION_SOUND1, 0 );/* OKI6295 samples */
+		ROM_LOAD( "rom4",         0x00000, 0x20000, 0xf7318919 );
+	ROM_END(); }}; 
 	
-	ROM_START( bluehawn )
-		ROM_REGION( 0x30000, REGION_CPU1, 0 )	/* 64k for code + 128k for banks */
-		ROM_LOAD( "rom19",        0x00000, 0x20000, 0x24149246 )	// ROM2
-		ROM_RELOAD(               0x10000, 0x20000 )	/* banked at 0x8000-0xbfff */
+	static RomLoadPtr rom_bluehawn = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x30000, REGION_CPU1, 0 );/* 64k for code + 128k for banks */
+		ROM_LOAD( "rom19",        0x00000, 0x20000, 0x24149246 );// ROM2
+		ROM_RELOAD(               0x10000, 0x20000 );/* banked at 0x8000-0xbfff */
 	
-		ROM_REGION( 0x10000, REGION_CPU2, 0 )	/* sound */
-		ROM_LOAD( "rom1",         0x00000, 0x10000, 0xeef22920 )
+		ROM_REGION( 0x10000, REGION_CPU2, 0 );/* sound */
+		ROM_LOAD( "rom1",         0x00000, 0x10000, 0xeef22920 );
 	
-		ROM_REGION( 0x10000, REGION_GFX1, ROMREGION_DISPOSE )	/* chars */
-		ROM_LOAD( "rom3ntc",      0x00000, 0x10000, 0x31eb221a )
+		ROM_REGION( 0x10000, REGION_GFX1, ROMREGION_DISPOSE );/* chars */
+		ROM_LOAD( "rom3ntc",      0x00000, 0x10000, 0x31eb221a );
 	
-		ROM_REGION( 0x80000, REGION_GFX2, ROMREGION_DISPOSE )	/* sprites */
+		ROM_REGION( 0x80000, REGION_GFX2, ROMREGION_DISPOSE );/* sprites */
 		ROM_LOAD16_WORD_SWAP( "dy-bh-m3",     0x00000, 0x80000, 0x8809d157 )	// ROM7+ROM8+ROM13+ROM14
 	
-		ROM_REGION( 0x80000, REGION_GFX3, 0 )	/* tiles + tilemaps (together!) */
+		ROM_REGION( 0x80000, REGION_GFX3, 0 );/* tiles + tilemaps (together!) */
 		ROM_LOAD16_WORD_SWAP( "dy-bh-m1",     0x00000, 0x80000, 0x51816b2c )	// ROM9+ROM10+ROM15+ROM16
 	
-		ROM_REGION( 0x80000, REGION_GFX4, 0 )	/* tiles + tilemaps (together!) */
+		ROM_REGION( 0x80000, REGION_GFX4, 0 );/* tiles + tilemaps (together!) */
 		ROM_LOAD16_WORD_SWAP( "dy-bh-m2",     0x00000, 0x80000, 0xf9daace6 )	// ROM11+ROM12+ROM17+ROM18
 	
-		ROM_REGION( 0x40000, REGION_GFX5, 0 )	/* tiles + tilemaps (together!) */
-		ROM_LOAD16_BYTE( "rom6",         0x00000, 0x20000, 0xe6bd9daa )
-		ROM_LOAD16_BYTE( "rom5",         0x00001, 0x20000, 0x5c654dc6 )
+		ROM_REGION( 0x40000, REGION_GFX5, 0 );/* tiles + tilemaps (together!) */
+		ROM_LOAD16_BYTE( "rom6",         0x00000, 0x20000, 0xe6bd9daa );
+		ROM_LOAD16_BYTE( "rom5",         0x00001, 0x20000, 0x5c654dc6 );
 	
-		ROM_REGION( 0x20000, REGION_SOUND1, 0 )	/* OKI6295 samples */
-		ROM_LOAD( "rom4",         0x00000, 0x20000, 0xf7318919 )
-	ROM_END
+		ROM_REGION( 0x20000, REGION_SOUND1, 0 );/* OKI6295 samples */
+		ROM_LOAD( "rom4",         0x00000, 0x20000, 0xf7318919 );
+	ROM_END(); }}; 
 	
-	ROM_START( sadari )
-		ROM_REGION( 0x30000, REGION_CPU1, 0 )	/* 64k for code + 128k for banks */
-		ROM_LOAD( "1.3d",         0x00000, 0x20000, 0xbd953217 )
-		ROM_RELOAD(               0x10000, 0x20000 )				/* banked at 0x8000-0xbfff */
+	static RomLoadPtr rom_sadari = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x30000, REGION_CPU1, 0 );/* 64k for code + 128k for banks */
+		ROM_LOAD( "1.3d",         0x00000, 0x20000, 0xbd953217 );
+		ROM_RELOAD(               0x10000, 0x20000 );			/* banked at 0x8000-0xbfff */
 	
-		ROM_REGION( 0x10000, REGION_CPU2, 0 )	/* sound */
-		ROM_LOAD( "3.6r",         0x0000, 0x10000, 0x4786fca6 )
+		ROM_REGION( 0x10000, REGION_CPU2, 0 );/* sound */
+		ROM_LOAD( "3.6r",         0x0000, 0x10000, 0x4786fca6 );
 	
-		ROM_REGION( 0x20000, REGION_GFX1, ROMREGION_DISPOSE )	/* chars */
-		ROM_LOAD( "2.4c",         0x0000, 0x20000, 0xb2a3f1c6 )
-	
-		/* no sprites */
-	
-		ROM_REGION( 0x80000, REGION_GFX2, 0 )	/* tiles + tilemaps (together!) */
-		ROM_LOAD16_BYTE( "10.10l",       0x00000, 0x20000, 0x70269ab1 )
-		ROM_LOAD16_BYTE( "5.8l",         0x00001, 0x20000, 0xceceb4c3 )
-		ROM_LOAD16_BYTE( "9.10n",        0x40000, 0x20000, 0x21bd1bda )
-		ROM_LOAD16_BYTE( "4.8n",         0x40001, 0x20000, 0xcd318ae5 )
-	
-		ROM_REGION( 0x80000, REGION_GFX3, 0 )	/* tiles + tilemaps (together!) */
-		ROM_LOAD16_BYTE( "11.10j",       0x00000, 0x20000, 0x62a1d580 )
-		ROM_LOAD16_BYTE( "6.8j",         0x00001, 0x20000, 0xc4b13ed7 )
-		ROM_LOAD16_BYTE( "12.10g",       0x40000, 0x20000, 0x547b7645 )
-		ROM_LOAD16_BYTE( "7.8g",         0x40001, 0x20000, 0x14f20fa3 )
-	
-		ROM_REGION( 0x20000, REGION_SOUND1, 0 )	/* OKI6295 samples */
-		ROM_LOAD( "8.10r",        0x00000, 0x20000, 0x9c29a093 )
-	ROM_END
-	
-	ROM_START( gundl94 )
-		ROM_REGION( 0x30000, REGION_CPU1, 0 )	/* 64k for code + 128k for banks */
-		ROM_LOAD( "gd94_001.d3",  0x00000, 0x20000, 0x3a5cc045 )
-		ROM_RELOAD(               0x10000, 0x20000 )				/* banked at 0x8000-0xbfff */
-	
-		ROM_REGION( 0x10000, REGION_CPU2, 0 )	/* sound */
-		ROM_LOAD( "gd94_003.r6",  0x0000, 0x10000, 0xea41c4ad )
-	
-		ROM_REGION( 0x20000, REGION_GFX1, ROMREGION_DISPOSE )	/* chars */
-		ROM_LOAD( "gd94_002.c5",  0x0000, 0x20000, 0x8575e64b )
+		ROM_REGION( 0x20000, REGION_GFX1, ROMREGION_DISPOSE );/* chars */
+		ROM_LOAD( "2.4c",         0x0000, 0x20000, 0xb2a3f1c6 );
 	
 		/* no sprites */
 	
-		ROM_REGION( 0x40000, REGION_GFX2, 0 )	/* tiles + tilemaps (together!) */
-		ROM_LOAD16_BYTE( "gd94_009.n9",  0x00000, 0x20000, 0x40eabf55 )
-		ROM_LOAD16_BYTE( "gd94_004.n7",  0x00001, 0x20000, 0x0654abb9 )
+		ROM_REGION( 0x80000, REGION_GFX2, 0 );/* tiles + tilemaps (together!) */
+		ROM_LOAD16_BYTE( "10.10l",       0x00000, 0x20000, 0x70269ab1 );
+		ROM_LOAD16_BYTE( "5.8l",         0x00001, 0x20000, 0xceceb4c3 );
+		ROM_LOAD16_BYTE( "9.10n",        0x40000, 0x20000, 0x21bd1bda );
+		ROM_LOAD16_BYTE( "4.8n",         0x40001, 0x20000, 0xcd318ae5 );
 	
-		ROM_REGION( 0x40000, REGION_GFX3, 0 )	/* tiles + tilemaps (together!) */
-		ROM_LOAD16_BYTE( "gd94_012.g9",  0x00000, 0x20000, 0x117c693c )
-		ROM_LOAD16_BYTE( "gd94_007.g7",  0x00001, 0x20000, 0x96a72c6d )
+		ROM_REGION( 0x80000, REGION_GFX3, 0 );/* tiles + tilemaps (together!) */
+		ROM_LOAD16_BYTE( "11.10j",       0x00000, 0x20000, 0x62a1d580 );
+		ROM_LOAD16_BYTE( "6.8j",         0x00001, 0x20000, 0xc4b13ed7 );
+		ROM_LOAD16_BYTE( "12.10g",       0x40000, 0x20000, 0x547b7645 );
+		ROM_LOAD16_BYTE( "7.8g",         0x40001, 0x20000, 0x14f20fa3 );
 	
-		ROM_REGION( 0x20000, REGION_SOUND1, 0 )	/* OKI6295 samples */
-		ROM_LOAD( "gd94_008.r9",  0x00000, 0x20000, 0xf92e5803 )
+		ROM_REGION( 0x20000, REGION_SOUND1, 0 );/* OKI6295 samples */
+		ROM_LOAD( "8.10r",        0x00000, 0x20000, 0x9c29a093 );
+	ROM_END(); }}; 
 	
-		ROM_REGION( 0x30000, REGION_CPU3, 0 )	/* extra z80 rom? this doesn't seem to belong to this game! */
-		ROM_LOAD( "gd94_011.j9",  0x00000, 0x20000, 0xd8ad0208 )
-		ROM_RELOAD(               0x10000, 0x20000 )				/* banked at 0x8000-0xbfff */
+	static RomLoadPtr rom_gundl94 = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x30000, REGION_CPU1, 0 );/* 64k for code + 128k for banks */
+		ROM_LOAD( "gd94_001.d3",  0x00000, 0x20000, 0x3a5cc045 );
+		ROM_RELOAD(               0x10000, 0x20000 );			/* banked at 0x8000-0xbfff */
 	
-		ROM_REGION( 0x40000, REGION_GFX4, ROMREGION_DISPOSE )	/* more tiles? they don't seem to belong to this game! */
-		ROM_LOAD16_BYTE( "gd94_006.j7",  0x00000, 0x20000, 0x1d9536fe )
-		ROM_LOAD16_BYTE( "gd94_010.l7",  0x00001, 0x20000, 0x4b74857f )
-	ROM_END
+		ROM_REGION( 0x10000, REGION_CPU2, 0 );/* sound */
+		ROM_LOAD( "gd94_003.r6",  0x0000, 0x10000, 0xea41c4ad );
 	
-	ROM_START( primella )
-		ROM_REGION( 0x30000, REGION_CPU1, 0 )	/* 64k for code + 128k for banks */
-		ROM_LOAD( "1_d3.bin",     0x00000, 0x20000, 0x82fea4e0 )
-		ROM_RELOAD(               0x10000, 0x20000 )				/* banked at 0x8000-0xbfff */
-	
-		ROM_REGION( 0x10000, REGION_CPU2, 0 )	/* sound */
-		ROM_LOAD( "gd94_003.r6",  0x0000, 0x10000, 0xea41c4ad )
-	
-		ROM_REGION( 0x20000, REGION_GFX1, ROMREGION_DISPOSE )	/* chars */
-		ROM_LOAD( "gd94_002.c5",  0x0000, 0x20000, 0x8575e64b )
+		ROM_REGION( 0x20000, REGION_GFX1, ROMREGION_DISPOSE );/* chars */
+		ROM_LOAD( "gd94_002.c5",  0x0000, 0x20000, 0x8575e64b );
 	
 		/* no sprites */
 	
-		ROM_REGION( 0x40000, REGION_GFX2, 0 )	/* tiles + tilemaps (together!) */
-		ROM_LOAD16_BYTE( "7_n9.bin",     0x00000, 0x20000, 0x20b6a574 )
-		ROM_LOAD16_BYTE( "4_n7.bin",     0x00001, 0x20000, 0xfe593666 )
+		ROM_REGION( 0x40000, REGION_GFX2, 0 );/* tiles + tilemaps (together!) */
+		ROM_LOAD16_BYTE( "gd94_009.n9",  0x00000, 0x20000, 0x40eabf55 );
+		ROM_LOAD16_BYTE( "gd94_004.n7",  0x00001, 0x20000, 0x0654abb9 );
 	
-		ROM_REGION( 0x40000, REGION_GFX3, 0 )	/* tiles + tilemaps (together!) */
-		ROM_LOAD16_BYTE( "8_g9.bin",     0x00000, 0x20000, 0x542ecb83 )
-		ROM_LOAD16_BYTE( "5_g7.bin",     0x00001, 0x20000, 0x058ecac6 )
+		ROM_REGION( 0x40000, REGION_GFX3, 0 );/* tiles + tilemaps (together!) */
+		ROM_LOAD16_BYTE( "gd94_012.g9",  0x00000, 0x20000, 0x117c693c );
+		ROM_LOAD16_BYTE( "gd94_007.g7",  0x00001, 0x20000, 0x96a72c6d );
 	
-		ROM_REGION( 0x20000, REGION_SOUND1, 0 )	/* OKI6295 samples */
-		ROM_LOAD( "gd94_008.r9",  0x00000, 0x20000, 0xf92e5803 )	/* 6_r9 */
-	ROM_END
+		ROM_REGION( 0x20000, REGION_SOUND1, 0 );/* OKI6295 samples */
+		ROM_LOAD( "gd94_008.r9",  0x00000, 0x20000, 0xf92e5803 );
 	
-	ROM_START( rshark )
-		ROM_REGION( 0x40000, REGION_CPU1, 0 )	/* 64k for code + 128k for banks */
-		ROM_LOAD16_BYTE( "rspl00.bin",   0x00000, 0x20000, 0x40356b9d )
-		ROM_LOAD16_BYTE( "rspu00.bin",   0x00001, 0x20000, 0x6635c668 )
+		ROM_REGION( 0x30000, REGION_CPU3, 0 );/* extra z80 rom? this doesn't seem to belong to this game! */
+		ROM_LOAD( "gd94_011.j9",  0x00000, 0x20000, 0xd8ad0208 );
+		ROM_RELOAD(               0x10000, 0x20000 );			/* banked at 0x8000-0xbfff */
 	
-		ROM_REGION( 0x10000, REGION_CPU2, 0 )	/* sound */
-		ROM_LOAD( "rse3.bin",     0x0000, 0x10000, 0x03c8fd17 )
+		ROM_REGION( 0x40000, REGION_GFX4, ROMREGION_DISPOSE );/* more tiles? they don't seem to belong to this game! */
+		ROM_LOAD16_BYTE( "gd94_006.j7",  0x00000, 0x20000, 0x1d9536fe );
+		ROM_LOAD16_BYTE( "gd94_010.l7",  0x00001, 0x20000, 0x4b74857f );
+	ROM_END(); }}; 
 	
-		ROM_REGION( 0x200000, REGION_GFX1, ROMREGION_DISPOSE )	/* sprite */
-		ROM_LOAD16_BYTE( "rse4.bin",     0x000000, 0x80000, 0xb857e411 )
-		ROM_LOAD16_BYTE( "rse5.bin",     0x000001, 0x80000, 0x7822d77a )
-		ROM_LOAD16_BYTE( "rse6.bin",     0x100000, 0x80000, 0x80215c52 )
-		ROM_LOAD16_BYTE( "rse7.bin",     0x100001, 0x80000, 0xbd28bbdc )
+	static RomLoadPtr rom_primella = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x30000, REGION_CPU1, 0 );/* 64k for code + 128k for banks */
+		ROM_LOAD( "1_d3.bin",     0x00000, 0x20000, 0x82fea4e0 );
+		ROM_RELOAD(               0x10000, 0x20000 );			/* banked at 0x8000-0xbfff */
 	
-		ROM_REGION( 0x100000, REGION_GFX2, 0 )	/* tiles + tilemaps (together!) */
-		ROM_LOAD16_BYTE( "rse11.bin",    0x00000, 0x80000, 0x8a0c572f )
-		ROM_LOAD16_BYTE( "rse10.bin",    0x00001, 0x80000, 0x139d5947 )
+		ROM_REGION( 0x10000, REGION_CPU2, 0 );/* sound */
+		ROM_LOAD( "gd94_003.r6",  0x0000, 0x10000, 0xea41c4ad );
 	
-		ROM_REGION( 0x100000, REGION_GFX3, 0 )	/* tiles + tilemaps (together!) */
-		ROM_LOAD16_BYTE( "rse15.bin",    0x00000, 0x80000, 0xd188134d )
-		ROM_LOAD16_BYTE( "rse14.bin",    0x00001, 0x80000, 0x0ef637a7 )
+		ROM_REGION( 0x20000, REGION_GFX1, ROMREGION_DISPOSE );/* chars */
+		ROM_LOAD( "gd94_002.c5",  0x0000, 0x20000, 0x8575e64b );
 	
-		ROM_REGION( 0x100000, REGION_GFX4, 0 )	/* tiles + tilemaps (together!) */
-		ROM_LOAD16_BYTE( "rse17.bin",    0x00000, 0x80000, 0x7ff0f3c7 )
-		ROM_LOAD16_BYTE( "rse16.bin",    0x00001, 0x80000, 0xc176c8bc )
+		/* no sprites */
 	
-		ROM_REGION( 0x100000, REGION_GFX5, 0 )	/* tiles + tilemaps (together!) */
-		ROM_LOAD16_BYTE( "rse21.bin",    0x00000, 0x80000, 0x2ea665af )
-		ROM_LOAD16_BYTE( "rse20.bin",    0x00001, 0x80000, 0xef93e3ac )
+		ROM_REGION( 0x40000, REGION_GFX2, 0 );/* tiles + tilemaps (together!) */
+		ROM_LOAD16_BYTE( "7_n9.bin",     0x00000, 0x20000, 0x20b6a574 );
+		ROM_LOAD16_BYTE( "4_n7.bin",     0x00001, 0x20000, 0xfe593666 );
 	
-		ROM_REGION( 0x80000, REGION_GFX6, 0 )	/* top 4 bits of tilemaps */
-		ROM_LOAD( "rse12.bin",    0x00000, 0x20000, 0xfadbf947 )
-		ROM_LOAD( "rse13.bin",    0x20000, 0x20000, 0x323d4df6 )
-		ROM_LOAD( "rse18.bin",    0x40000, 0x20000, 0xe00c9171 )
-		ROM_LOAD( "rse19.bin",    0x60000, 0x20000, 0xd214d1d0 )
+		ROM_REGION( 0x40000, REGION_GFX3, 0 );/* tiles + tilemaps (together!) */
+		ROM_LOAD16_BYTE( "8_g9.bin",     0x00000, 0x20000, 0x542ecb83 );
+		ROM_LOAD16_BYTE( "5_g7.bin",     0x00001, 0x20000, 0x058ecac6 );
 	
-		ROM_REGION( 0x40000, REGION_SOUND1, 0 )	/* OKI6295 samples */
-		ROM_LOAD( "rse1.bin",     0x00000, 0x20000, 0x0291166f )
-		ROM_LOAD( "rse2.bin",     0x20000, 0x20000, 0x5a26ee72 )
-	ROM_END
+		ROM_REGION( 0x20000, REGION_SOUND1, 0 );/* OKI6295 samples */
+		ROM_LOAD( "gd94_008.r9",  0x00000, 0x20000, 0xf92e5803 );/* 6_r9 */
+	ROM_END(); }}; 
+	
+	static RomLoadPtr rom_rshark = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x40000, REGION_CPU1, 0 );/* 64k for code + 128k for banks */
+		ROM_LOAD16_BYTE( "rspl00.bin",   0x00000, 0x20000, 0x40356b9d );
+		ROM_LOAD16_BYTE( "rspu00.bin",   0x00001, 0x20000, 0x6635c668 );
+	
+		ROM_REGION( 0x10000, REGION_CPU2, 0 );/* sound */
+		ROM_LOAD( "rse3.bin",     0x0000, 0x10000, 0x03c8fd17 );
+	
+		ROM_REGION( 0x200000, REGION_GFX1, ROMREGION_DISPOSE );/* sprite */
+		ROM_LOAD16_BYTE( "rse4.bin",     0x000000, 0x80000, 0xb857e411 );
+		ROM_LOAD16_BYTE( "rse5.bin",     0x000001, 0x80000, 0x7822d77a );
+		ROM_LOAD16_BYTE( "rse6.bin",     0x100000, 0x80000, 0x80215c52 );
+		ROM_LOAD16_BYTE( "rse7.bin",     0x100001, 0x80000, 0xbd28bbdc );
+	
+		ROM_REGION( 0x100000, REGION_GFX2, 0 );/* tiles + tilemaps (together!) */
+		ROM_LOAD16_BYTE( "rse11.bin",    0x00000, 0x80000, 0x8a0c572f );
+		ROM_LOAD16_BYTE( "rse10.bin",    0x00001, 0x80000, 0x139d5947 );
+	
+		ROM_REGION( 0x100000, REGION_GFX3, 0 );/* tiles + tilemaps (together!) */
+		ROM_LOAD16_BYTE( "rse15.bin",    0x00000, 0x80000, 0xd188134d );
+		ROM_LOAD16_BYTE( "rse14.bin",    0x00001, 0x80000, 0x0ef637a7 );
+	
+		ROM_REGION( 0x100000, REGION_GFX4, 0 );/* tiles + tilemaps (together!) */
+		ROM_LOAD16_BYTE( "rse17.bin",    0x00000, 0x80000, 0x7ff0f3c7 );
+		ROM_LOAD16_BYTE( "rse16.bin",    0x00001, 0x80000, 0xc176c8bc );
+	
+		ROM_REGION( 0x100000, REGION_GFX5, 0 );/* tiles + tilemaps (together!) */
+		ROM_LOAD16_BYTE( "rse21.bin",    0x00000, 0x80000, 0x2ea665af );
+		ROM_LOAD16_BYTE( "rse20.bin",    0x00001, 0x80000, 0xef93e3ac );
+	
+		ROM_REGION( 0x80000, REGION_GFX6, 0 );/* top 4 bits of tilemaps */
+		ROM_LOAD( "rse12.bin",    0x00000, 0x20000, 0xfadbf947 );
+		ROM_LOAD( "rse13.bin",    0x20000, 0x20000, 0x323d4df6 );
+		ROM_LOAD( "rse18.bin",    0x40000, 0x20000, 0xe00c9171 );
+		ROM_LOAD( "rse19.bin",    0x60000, 0x20000, 0xd214d1d0 );
+	
+		ROM_REGION( 0x40000, REGION_SOUND1, 0 );/* OKI6295 samples */
+		ROM_LOAD( "rse1.bin",     0x00000, 0x20000, 0x0291166f );
+		ROM_LOAD( "rse2.bin",     0x20000, 0x20000, 0x5a26ee72 );
+	ROM_END(); }}; 
 	
 	
 	

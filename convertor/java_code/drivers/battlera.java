@@ -347,47 +347,47 @@ public class battlera
 	
 	/******************************************************************************/
 	
-	ROM_START( bldwolf )
-		ROM_REGION( 0x100000, REGION_CPU1, 0 ) /* Main cpu code */
-		ROM_LOAD( "es00-1.rom", 0x00000, 0x10000, 0xff4aa252 )
-		ROM_LOAD( "es01.rom",   0x10000, 0x10000, 0x9fea3189 )
-		ROM_LOAD( "es02-1.rom", 0x20000, 0x10000, 0x49792753 )
+	static RomLoadPtr rom_bldwolf = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x100000, REGION_CPU1, 0 );/* Main cpu code */
+		ROM_LOAD( "es00-1.rom", 0x00000, 0x10000, 0xff4aa252 );
+		ROM_LOAD( "es01.rom",   0x10000, 0x10000, 0x9fea3189 );
+		ROM_LOAD( "es02-1.rom", 0x20000, 0x10000, 0x49792753 );
 		/* Rom sockets 0x30000 - 0x70000 are unused */
-		ROM_LOAD( "es05.rom",   0x80000, 0x10000, 0x551fa331 )
-		ROM_LOAD( "es06.rom",   0x90000, 0x10000, 0xab91aac8 )
-		ROM_LOAD( "es07.rom",   0xa0000, 0x10000, 0x8d15a3d0 )
-		ROM_LOAD( "es08.rom",   0xb0000, 0x10000, 0x38f06039 )
-		ROM_LOAD( "es09.rom",   0xc0000, 0x10000, 0xb718c47d )
-		ROM_LOAD( "es10-1.rom", 0xd0000, 0x10000, 0xd3cddc02 )
+		ROM_LOAD( "es05.rom",   0x80000, 0x10000, 0x551fa331 );
+		ROM_LOAD( "es06.rom",   0x90000, 0x10000, 0xab91aac8 );
+		ROM_LOAD( "es07.rom",   0xa0000, 0x10000, 0x8d15a3d0 );
+		ROM_LOAD( "es08.rom",   0xb0000, 0x10000, 0x38f06039 );
+		ROM_LOAD( "es09.rom",   0xc0000, 0x10000, 0xb718c47d );
+		ROM_LOAD( "es10-1.rom", 0xd0000, 0x10000, 0xd3cddc02 );
 		/* Rom sockets 0xe0000 - 0x100000 are unused */
 	
-		ROM_REGION( 0x10000, REGION_CPU2, 0 ) /* Sound CPU */
-		ROM_LOAD( "es11.rom",   0x00000, 0x10000, 0xf5b29c9c )
+		ROM_REGION( 0x10000, REGION_CPU2, 0 );/* Sound CPU */
+		ROM_LOAD( "es11.rom",   0x00000, 0x10000, 0xf5b29c9c );
 	
-		ROM_REGION( 0x80000, REGION_GFX1, 0 )
+		ROM_REGION( 0x80000, REGION_GFX1, 0 );
 		/* Nothing */
-	ROM_END
+	ROM_END(); }}; 
 	
-	ROM_START( battlera )
-		ROM_REGION( 0x100000, REGION_CPU1, 0 ) /* Main cpu code */
-		ROM_LOAD( "00_e1.bin", 0x00000, 0x10000, 0xaa1cbe69 ) /* ET00 */
-		ROM_LOAD( "es01.rom",  0x10000, 0x10000, 0x9fea3189 ) /* ET01 */
-		ROM_LOAD( "02_e4.bin", 0x20000, 0x10000, 0xcd72f580 ) /* ET02, etc */
+	static RomLoadPtr rom_battlera = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x100000, REGION_CPU1, 0 );/* Main cpu code */
+		ROM_LOAD( "00_e1.bin", 0x00000, 0x10000, 0xaa1cbe69 );/* ET00 */
+		ROM_LOAD( "es01.rom",  0x10000, 0x10000, 0x9fea3189 );/* ET01 */
+		ROM_LOAD( "02_e4.bin", 0x20000, 0x10000, 0xcd72f580 );/* ET02, etc */
 		/* Rom sockets 0x30000 - 0x70000 are unused */
-		ROM_LOAD( "es05.rom",  0x80000, 0x10000, 0x551fa331 )
-		ROM_LOAD( "es06.rom",  0x90000, 0x10000, 0xab91aac8 )
-		ROM_LOAD( "es07.rom",  0xa0000, 0x10000, 0x8d15a3d0 )
-		ROM_LOAD( "es08.rom",  0xb0000, 0x10000, 0x38f06039 )
-		ROM_LOAD( "es09.rom",  0xc0000, 0x10000, 0xb718c47d )
-		ROM_LOAD( "es10-1.rom",0xd0000, 0x10000, 0xd3cddc02 )
+		ROM_LOAD( "es05.rom",  0x80000, 0x10000, 0x551fa331 );
+		ROM_LOAD( "es06.rom",  0x90000, 0x10000, 0xab91aac8 );
+		ROM_LOAD( "es07.rom",  0xa0000, 0x10000, 0x8d15a3d0 );
+		ROM_LOAD( "es08.rom",  0xb0000, 0x10000, 0x38f06039 );
+		ROM_LOAD( "es09.rom",  0xc0000, 0x10000, 0xb718c47d );
+		ROM_LOAD( "es10-1.rom",0xd0000, 0x10000, 0xd3cddc02 );
 		/* Rom sockets 0xe0000 - 0x100000 are unused */
 	
-		ROM_REGION( 0x10000, REGION_CPU2, 0 ) /* Sound CPU */
-		ROM_LOAD( "es11.rom",  0x00000, 0x10000, 0xf5b29c9c )
+		ROM_REGION( 0x10000, REGION_CPU2, 0 );/* Sound CPU */
+		ROM_LOAD( "es11.rom",  0x00000, 0x10000, 0xf5b29c9c );
 	
-		ROM_REGION( 0x80000, REGION_GFX1, 0 )
+		ROM_REGION( 0x80000, REGION_GFX1, 0 );
 		/* Nothing */
-	ROM_END
+	ROM_END(); }}; 
 	
 	/******************************************************************************/
 	

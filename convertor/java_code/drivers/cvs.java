@@ -505,56 +505,56 @@ public class cvs
 	
 	***************************************************************************/
 	
-	ROM_START( cvs )
-		ROM_REGION( 0x8000, REGION_CPU3, 0 )
-		ROM_LOAD( "5b.bin",            0x0000, 0x0800, 0xf055a624)
+	static RomLoadPtr rom_cvs = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x8000, REGION_CPU3, 0 );
+		ROM_LOAD( "5b.bin",            0x0000, 0x0800, 0xf055a624);
 	
-		ROM_REGION( 0x0800, REGION_PROMS, 0 )
-	    ROM_LOAD( "82s185.10h",        0x0000, 0x0800, 0xc205bca6)
-	ROM_END
+		ROM_REGION( 0x0800, REGION_PROMS, 0 );
+	    ROM_LOAD( "82s185.10h",        0x0000, 0x0800, 0xc205bca6);
+	ROM_END(); }}; 
 	
 	
 	#define CVS_ROM(name,p1,gp1,p2,gp2,p3,gp3,p4,gp4,p5,gp5,p6,cp1,p7,cp2,p8,cp3,p9,sdp1,size1,p10,sp1,size2) \
-	ROM_START( name )                                               \
-		ROM_REGION( 0x10000, REGION_CPU1, 0 ) 						\
-		ROM_LOAD( #p1"-gp1.bin",   0x0000, 0x0400, gp1 )        	\
-		ROM_CONTINUE(                  0x2000, 0x0400 )             \
-		ROM_CONTINUE(                  0x4000, 0x0400 )             \
-		ROM_CONTINUE(                  0x6000, 0x0400 )             \
-		ROM_LOAD( #p2"-gp2.bin",   0x0400, 0x0400, gp2 )        	\
-		ROM_CONTINUE(                  0x2400, 0x0400 )             \
-		ROM_CONTINUE(                  0x4400, 0x0400 )             \
-		ROM_CONTINUE(                  0x6400, 0x0400 )             \
-		ROM_LOAD( #p3"-gp3.bin",   0x0800, 0x0400, gp3 )        	\
-		ROM_CONTINUE(                  0x2800, 0x0400 )             \
-		ROM_CONTINUE(                  0x4800, 0x0400 )             \
-		ROM_CONTINUE(                  0x6800, 0x0400 )             \
-		ROM_LOAD( #p4"-gp4.bin",   0x0C00, 0x0400, gp4 )        	\
-		ROM_CONTINUE(                  0x2C00, 0x0400 )             \
-		ROM_CONTINUE(                  0x4C00, 0x0400 )             \
-		ROM_CONTINUE(                  0x6C00, 0x0400 )             \
-		ROM_LOAD( #p5"-gp5.bin",   0x1000, 0x0400, gp5 )        	\
-		ROM_CONTINUE(                  0x3000, 0x0400 )             \
-		ROM_CONTINUE(                  0x5000, 0x0400 )             \
-		ROM_CONTINUE(                  0x7000, 0x0400 )             \
+	static RomLoadPtr rom_name = new RomLoadPtr(){ public void handler(){                                                \
+		ROM_REGION( 0x10000, REGION_CPU1, 0 );						\
+		ROM_LOAD( #p1"-gp1.bin",   0x0000, 0x0400, gp1 );       	\
+		ROM_CONTINUE(                  0x2000, 0x0400 );            \
+		ROM_CONTINUE(                  0x4000, 0x0400 );            \
+		ROM_CONTINUE(                  0x6000, 0x0400 );            \
+		ROM_LOAD( #p2"-gp2.bin",   0x0400, 0x0400, gp2 );       	\
+		ROM_CONTINUE(                  0x2400, 0x0400 );            \
+		ROM_CONTINUE(                  0x4400, 0x0400 );            \
+		ROM_CONTINUE(                  0x6400, 0x0400 );            \
+		ROM_LOAD( #p3"-gp3.bin",   0x0800, 0x0400, gp3 );       	\
+		ROM_CONTINUE(                  0x2800, 0x0400 );            \
+		ROM_CONTINUE(                  0x4800, 0x0400 );            \
+		ROM_CONTINUE(                  0x6800, 0x0400 );            \
+		ROM_LOAD( #p4"-gp4.bin",   0x0C00, 0x0400, gp4 );       	\
+		ROM_CONTINUE(                  0x2C00, 0x0400 );            \
+		ROM_CONTINUE(                  0x4C00, 0x0400 );            \
+		ROM_CONTINUE(                  0x6C00, 0x0400 );            \
+		ROM_LOAD( #p5"-gp5.bin",   0x1000, 0x0400, gp5 );       	\
+		ROM_CONTINUE(                  0x3000, 0x0400 );            \
+		ROM_CONTINUE(                  0x5000, 0x0400 );            \
+		ROM_CONTINUE(                  0x7000, 0x0400 );            \
 	                                                                \
-		ROM_REGION( 0x2000, REGION_CPU2, 0 ) 						\
-		ROM_LOAD( #p9"-sdp1.bin",  0x0000, size1, sdp1)  			\
+		ROM_REGION( 0x2000, REGION_CPU2, 0 );						\
+		ROM_LOAD( #p9"-sdp1.bin",  0x0000, size1, sdp1); 			\
 	                                                                \
-		ROM_REGION( 0x0800, REGION_CPU3, 0 ) 						\
-		ROM_LOAD( "5b.bin",            0x0000, 0x0800, 0xf055a624)  \
+		ROM_REGION( 0x0800, REGION_CPU3, 0 );						\
+		ROM_LOAD( "5b.bin",            0x0000, 0x0800, 0xf055a624); \
 	                                                                \
-		ROM_REGION( 0x1000, REGION_SOUND1, 0 ) 						\
-	    ROM_LOAD( #p10"-sp1.bin",   0x0000, size2, sp1)  			\
+		ROM_REGION( 0x1000, REGION_SOUND1, 0 );						\
+	    ROM_LOAD( #p10"-sp1.bin",   0x0000, size2, sp1); 			\
 	                                                                \
-		ROM_REGION( 0x1800, REGION_GFX1, ROMREGION_DISPOSE )        \
-		ROM_LOAD( #p6"-cp1.bin",   0x0000, 0x0800, cp1 )        	\
-		ROM_LOAD( #p7"-cp2.bin",   0x0800, 0x0800, cp2 )        	\
-		ROM_LOAD( #p8"-cp3.bin",   0x1000, 0x0800, cp3 )        	\
+		ROM_REGION( 0x1800, REGION_GFX1, ROMREGION_DISPOSE );       \
+		ROM_LOAD( #p6"-cp1.bin",   0x0000, 0x0800, cp1 );       	\
+		ROM_LOAD( #p7"-cp2.bin",   0x0800, 0x0800, cp2 );       	\
+		ROM_LOAD( #p8"-cp3.bin",   0x1000, 0x0800, cp3 );       	\
 	                                                                \
-		ROM_REGION( 0x0800, REGION_PROMS, ROMREGION_DISPOSE  )      \
-	    ROM_LOAD( "82s185.10h",        0x0000, 0x0800, 0xc205bca6 ) \
-	ROM_END
+		ROM_REGION( 0x0800, REGION_PROMS, ROMREGION_DISPOSE  );     \
+	    ROM_LOAD( "82s185.10h",        0x0000, 0x0800, 0xc205bca6 );\
+	ROM_END(); }}; 
 	
 	CVS_ROM(huncholy,ho,0x4f17cda7,ho,0x70fa52c7,ho,0x931934b1,ho,0xaf5cd501,ho,0x658e8974,ho,0xc6c73d46,ho,0xe596371c,ho,0x11fae1cf,ho,0x3efb3ffd,0x1000,ho,0x3fd39b1e,0x1000)
 	CVS_ROM(darkwar ,dw,0xf10ccf24,dw,0xb77d0483,dw,0xc01c3281,dw,0x0b0bffaf,dw,0x7fdbcaff,dw,0x7a0f9f3e,dw,0x232e5120,dw,0x573e0a17,dw,0xb385b669,0x0800,dw,0xce815074,0x1000)

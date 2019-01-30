@@ -310,105 +310,105 @@ public class dynduke
 	
 	/***************************************************************************/
 	
-	ROM_START( dynduke )
-		ROM_REGION( 0x100000, REGION_CPU1, 0 ) /* v30 main cpu */
-		ROM_LOAD16_BYTE("dd1.cd8",   0x0a0000, 0x10000, 0xa5e2a95a )
-		ROM_LOAD16_BYTE("dd2.cd7",   0x0a0001, 0x10000, 0x7e51af22 )
-		ROM_LOAD16_BYTE("dd3.ef8",   0x0c0000, 0x20000, 0xa56f8692 )
-		ROM_LOAD16_BYTE("dd4.ef7",   0x0c0001, 0x20000, 0xee4b87b3 )
+	static RomLoadPtr rom_dynduke = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x100000, REGION_CPU1, 0 );/* v30 main cpu */
+		ROM_LOAD16_BYTE("dd1.cd8",   0x0a0000, 0x10000, 0xa5e2a95a );
+		ROM_LOAD16_BYTE("dd2.cd7",   0x0a0001, 0x10000, 0x7e51af22 );
+		ROM_LOAD16_BYTE("dd3.ef8",   0x0c0000, 0x20000, 0xa56f8692 );
+		ROM_LOAD16_BYTE("dd4.ef7",   0x0c0001, 0x20000, 0xee4b87b3 );
 	
-		ROM_REGION( 0x100000, REGION_CPU2, 0 ) /* v30 sub cpu */
-		ROM_LOAD16_BYTE("dd5.p8",  0x0e0000, 0x10000, 0x883d319c )
-		ROM_LOAD16_BYTE("dd6.p7",  0x0e0001, 0x10000, 0xd94cb4ff )
+		ROM_REGION( 0x100000, REGION_CPU2, 0 );/* v30 sub cpu */
+		ROM_LOAD16_BYTE("dd5.p8",  0x0e0000, 0x10000, 0x883d319c );
+		ROM_LOAD16_BYTE("dd6.p7",  0x0e0001, 0x10000, 0xd94cb4ff );
 	
-		ROM_REGION( 0x20000*2, REGION_CPU3, 0 ) /* sound Z80 */
-		ROM_LOAD( "dd8.w8",       0x000000, 0x08000, 0x3c29480b )
-		ROM_CONTINUE(             0x010000, 0x08000 )
-		ROM_COPY( REGION_CPU3, 0, 0x018000, 0x08000 )
+		ROM_REGION( 0x20000*2, REGION_CPU3, 0 );/* sound Z80 */
+		ROM_LOAD( "dd8.w8",       0x000000, 0x08000, 0x3c29480b );
+		ROM_CONTINUE(             0x010000, 0x08000 );
+		ROM_COPY( REGION_CPU3, 0, 0x018000, 0x08000 );
 	
-		ROM_REGION( 0x020000, REGION_GFX1, ROMREGION_DISPOSE )
-		ROM_LOAD( "dd9.jk5",	0x000000, 0x04000, 0xf2bc9af4 ) /* chars */
-		ROM_LOAD( "dd10.jk3",	0x010000, 0x04000, 0xc2a9f19b )
+		ROM_REGION( 0x020000, REGION_GFX1, ROMREGION_DISPOSE );
+		ROM_LOAD( "dd9.jk5",	0x000000, 0x04000, 0xf2bc9af4 );/* chars */
+		ROM_LOAD( "dd10.jk3",	0x010000, 0x04000, 0xc2a9f19b );
 	
-		ROM_REGION( 0x180000, REGION_GFX2, ROMREGION_DISPOSE )
-		ROM_LOAD( "dd.a2",		0x000000, 0x40000, 0x598f343f ) /* background */
-		ROM_LOAD( "dd.b2",		0x040000, 0x40000, 0x41a9088d )
-		ROM_LOAD( "dd.c2",		0x080000, 0x40000, 0xcc341b42 )
-		ROM_LOAD( "dd.d2",		0x0c0000, 0x40000, 0x4752b4d7 )
-		ROM_LOAD( "dd.de3",		0x100000, 0x40000, 0x44a4cb62 )
-		ROM_LOAD( "dd.ef3",		0x140000, 0x40000, 0xaa8aee1a )
+		ROM_REGION( 0x180000, REGION_GFX2, ROMREGION_DISPOSE );
+		ROM_LOAD( "dd.a2",		0x000000, 0x40000, 0x598f343f );/* background */
+		ROM_LOAD( "dd.b2",		0x040000, 0x40000, 0x41a9088d );
+		ROM_LOAD( "dd.c2",		0x080000, 0x40000, 0xcc341b42 );
+		ROM_LOAD( "dd.d2",		0x0c0000, 0x40000, 0x4752b4d7 );
+		ROM_LOAD( "dd.de3",		0x100000, 0x40000, 0x44a4cb62 );
+		ROM_LOAD( "dd.ef3",		0x140000, 0x40000, 0xaa8aee1a );
 	
-		ROM_REGION( 0x100000, REGION_GFX3, ROMREGION_DISPOSE )
-		ROM_LOAD( "dd.mn3",		0x000000, 0x40000, 0x2ee0ca98 ) /* foreground */
-		ROM_LOAD( "dd.mn4",		0x040000, 0x40000, 0x6c71e2df )
-		ROM_LOAD( "dd.n45",		0x080000, 0x40000, 0x85d918e1 )
-		ROM_LOAD( "dd.mn5",		0x0c0000, 0x40000, 0xe71e34df )
+		ROM_REGION( 0x100000, REGION_GFX3, ROMREGION_DISPOSE );
+		ROM_LOAD( "dd.mn3",		0x000000, 0x40000, 0x2ee0ca98 );/* foreground */
+		ROM_LOAD( "dd.mn4",		0x040000, 0x40000, 0x6c71e2df );
+		ROM_LOAD( "dd.n45",		0x080000, 0x40000, 0x85d918e1 );
+		ROM_LOAD( "dd.mn5",		0x0c0000, 0x40000, 0xe71e34df );
 	
-		ROM_REGION( 0x200000, REGION_GFX4, ROMREGION_DISPOSE )
-		ROM_LOAD16_BYTE(  "dd.n1", 0x000000, 0x40000, 0xcf1db927 ) /* sprites */
-		ROM_LOAD16_BYTE(  "dd.n2", 0x000001, 0x40000, 0x5328150f )
-		ROM_LOAD16_BYTE(  "dd.m1", 0x080000, 0x40000, 0x80776452 )
-		ROM_LOAD16_BYTE(  "dd.m2", 0x080001, 0x40000, 0xff61a573 )
-		ROM_LOAD16_BYTE(  "dd.e1", 0x100000, 0x40000, 0x84a0b87c )
-		ROM_LOAD16_BYTE(  "dd.e2", 0x100001, 0x40000, 0xa9585df2 )
-		ROM_LOAD16_BYTE(  "dd.f1", 0x180000, 0x40000, 0x9aed24ba )
-		ROM_LOAD16_BYTE(  "dd.f2", 0x180001, 0x40000, 0x3eb5783f )
+		ROM_REGION( 0x200000, REGION_GFX4, ROMREGION_DISPOSE );
+		ROM_LOAD16_BYTE(  "dd.n1", 0x000000, 0x40000, 0xcf1db927 );/* sprites */
+		ROM_LOAD16_BYTE(  "dd.n2", 0x000001, 0x40000, 0x5328150f );
+		ROM_LOAD16_BYTE(  "dd.m1", 0x080000, 0x40000, 0x80776452 );
+		ROM_LOAD16_BYTE(  "dd.m2", 0x080001, 0x40000, 0xff61a573 );
+		ROM_LOAD16_BYTE(  "dd.e1", 0x100000, 0x40000, 0x84a0b87c );
+		ROM_LOAD16_BYTE(  "dd.e2", 0x100001, 0x40000, 0xa9585df2 );
+		ROM_LOAD16_BYTE(  "dd.f1", 0x180000, 0x40000, 0x9aed24ba );
+		ROM_LOAD16_BYTE(  "dd.f2", 0x180001, 0x40000, 0x3eb5783f );
 	
-		ROM_REGION( 0x10000, REGION_SOUND1, 0 )	/* ADPCM samples */
-		ROM_LOAD( "dd7.x10", 0x000000, 0x10000, 0x9cbc7b41 )
-	ROM_END
+		ROM_REGION( 0x10000, REGION_SOUND1, 0 );/* ADPCM samples */
+		ROM_LOAD( "dd7.x10", 0x000000, 0x10000, 0x9cbc7b41 );
+	ROM_END(); }}; 
 	
-	ROM_START( dbldyn )
-		ROM_REGION( 0x100000, REGION_CPU1, 0 ) /* v30 main cpu */
-		ROM_LOAD16_BYTE("dd1.cd8", 0x0a0000, 0x10000, 0xa5e2a95a )
-		ROM_LOAD16_BYTE("dd2.cd7", 0x0a0001, 0x10000, 0x7e51af22 )
-		ROM_LOAD16_BYTE("3.8e",    0x0c0000, 0x20000, 0x9b785028 )
-		ROM_LOAD16_BYTE("4.7e",    0x0c0001, 0x20000, 0x0d0f6350 )
+	static RomLoadPtr rom_dbldyn = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x100000, REGION_CPU1, 0 );/* v30 main cpu */
+		ROM_LOAD16_BYTE("dd1.cd8", 0x0a0000, 0x10000, 0xa5e2a95a );
+		ROM_LOAD16_BYTE("dd2.cd7", 0x0a0001, 0x10000, 0x7e51af22 );
+		ROM_LOAD16_BYTE("3.8e",    0x0c0000, 0x20000, 0x9b785028 );
+		ROM_LOAD16_BYTE("4.7e",    0x0c0001, 0x20000, 0x0d0f6350 );
 	
-		ROM_REGION( 0x100000, REGION_CPU2, 0 ) /* v30 sub cpu */
-		ROM_LOAD16_BYTE("5.8p",  0x0e0000, 0x10000, 0xea56d719 )
-		ROM_LOAD16_BYTE("6.7p",  0x0e0001, 0x10000, 0x9ffa0ecd )
+		ROM_REGION( 0x100000, REGION_CPU2, 0 );/* v30 sub cpu */
+		ROM_LOAD16_BYTE("5.8p",  0x0e0000, 0x10000, 0xea56d719 );
+		ROM_LOAD16_BYTE("6.7p",  0x0e0001, 0x10000, 0x9ffa0ecd );
 	
-		ROM_REGION( 0x20000*2, REGION_CPU3, 0 ) /* sound Z80 */
-		ROM_LOAD( "8.8w",         0x000000, 0x08000, 0xf4066081 )
-		ROM_CONTINUE(             0x010000, 0x08000 )
-		ROM_COPY( REGION_CPU3, 0, 0x018000, 0x08000 )
+		ROM_REGION( 0x20000*2, REGION_CPU3, 0 );/* sound Z80 */
+		ROM_LOAD( "8.8w",         0x000000, 0x08000, 0xf4066081 );
+		ROM_CONTINUE(             0x010000, 0x08000 );
+		ROM_COPY( REGION_CPU3, 0, 0x018000, 0x08000 );
 	
-		ROM_REGION( 0x020000, REGION_GFX1, ROMREGION_DISPOSE )
-		ROM_LOAD( "9.5k",	    0x004000, 0x4000, 0x16bec703 ) /* chars */
-		ROM_CONTINUE(           0x000000, 0x4000 )
-		ROM_CONTINUE(           0x008000, 0x8000 )
-		ROM_LOAD( "10.4k",	    0x014000, 0x4000, 0x719f909d )
-		ROM_CONTINUE(           0x010000, 0x4000 )
-		ROM_CONTINUE(           0x008000, 0x8000 )
+		ROM_REGION( 0x020000, REGION_GFX1, ROMREGION_DISPOSE );
+		ROM_LOAD( "9.5k",	    0x004000, 0x4000, 0x16bec703 );/* chars */
+		ROM_CONTINUE(           0x000000, 0x4000 );
+		ROM_CONTINUE(           0x008000, 0x8000 );
+		ROM_LOAD( "10.4k",	    0x014000, 0x4000, 0x719f909d );
+		ROM_CONTINUE(           0x010000, 0x4000 );
+		ROM_CONTINUE(           0x008000, 0x8000 );
 	
-		ROM_REGION( 0x180000, REGION_GFX2, ROMREGION_DISPOSE )
-		ROM_LOAD( "dd.a2",		0x000000, 0x40000, 0x598f343f ) /* background */
-		ROM_LOAD( "dd.b2",		0x040000, 0x40000, 0x41a9088d )
-		ROM_LOAD( "dd.c2",		0x080000, 0x40000, 0xcc341b42 )
-		ROM_LOAD( "dd.d2",		0x0c0000, 0x40000, 0x4752b4d7 )
-		ROM_LOAD( "dd.de3",		0x100000, 0x40000, 0x44a4cb62 )
-		ROM_LOAD( "dd.ef3",		0x140000, 0x40000, 0xaa8aee1a )
+		ROM_REGION( 0x180000, REGION_GFX2, ROMREGION_DISPOSE );
+		ROM_LOAD( "dd.a2",		0x000000, 0x40000, 0x598f343f );/* background */
+		ROM_LOAD( "dd.b2",		0x040000, 0x40000, 0x41a9088d );
+		ROM_LOAD( "dd.c2",		0x080000, 0x40000, 0xcc341b42 );
+		ROM_LOAD( "dd.d2",		0x0c0000, 0x40000, 0x4752b4d7 );
+		ROM_LOAD( "dd.de3",		0x100000, 0x40000, 0x44a4cb62 );
+		ROM_LOAD( "dd.ef3",		0x140000, 0x40000, 0xaa8aee1a );
 	
-		ROM_REGION( 0x100000, REGION_GFX3, ROMREGION_DISPOSE )
-		ROM_LOAD( "dd.mn3",		0x000000, 0x40000, 0x2ee0ca98 ) /* foreground */
-		ROM_LOAD( "dd.mn4",		0x040000, 0x40000, 0x6c71e2df )
-		ROM_LOAD( "dd.n45",		0x080000, 0x40000, 0x85d918e1 )
-		ROM_LOAD( "dd.mn5",		0x0c0000, 0x40000, 0xe71e34df )
+		ROM_REGION( 0x100000, REGION_GFX3, ROMREGION_DISPOSE );
+		ROM_LOAD( "dd.mn3",		0x000000, 0x40000, 0x2ee0ca98 );/* foreground */
+		ROM_LOAD( "dd.mn4",		0x040000, 0x40000, 0x6c71e2df );
+		ROM_LOAD( "dd.n45",		0x080000, 0x40000, 0x85d918e1 );
+		ROM_LOAD( "dd.mn5",		0x0c0000, 0x40000, 0xe71e34df );
 	
-		ROM_REGION( 0x200000, REGION_GFX4, ROMREGION_DISPOSE )
-		ROM_LOAD16_BYTE(  "dd.n1", 0x000000, 0x40000, 0xcf1db927 ) /* sprites */
-		ROM_LOAD16_BYTE(  "dd.n2", 0x000001, 0x40000, 0x5328150f )
-		ROM_LOAD16_BYTE(  "dd.m1", 0x080000, 0x40000, 0x80776452 )
-		ROM_LOAD16_BYTE(  "dd.m2", 0x080001, 0x40000, 0xff61a573 )
-		ROM_LOAD16_BYTE(  "dd.e1", 0x100000, 0x40000, 0x84a0b87c )
-		ROM_LOAD16_BYTE(  "dd.e2", 0x100001, 0x40000, 0xa9585df2 )
-		ROM_LOAD16_BYTE(  "dd.f1", 0x180000, 0x40000, 0x9aed24ba )
-		ROM_LOAD16_BYTE(  "dd.f2", 0x180001, 0x40000, 0x3eb5783f )
+		ROM_REGION( 0x200000, REGION_GFX4, ROMREGION_DISPOSE );
+		ROM_LOAD16_BYTE(  "dd.n1", 0x000000, 0x40000, 0xcf1db927 );/* sprites */
+		ROM_LOAD16_BYTE(  "dd.n2", 0x000001, 0x40000, 0x5328150f );
+		ROM_LOAD16_BYTE(  "dd.m1", 0x080000, 0x40000, 0x80776452 );
+		ROM_LOAD16_BYTE(  "dd.m2", 0x080001, 0x40000, 0xff61a573 );
+		ROM_LOAD16_BYTE(  "dd.e1", 0x100000, 0x40000, 0x84a0b87c );
+		ROM_LOAD16_BYTE(  "dd.e2", 0x100001, 0x40000, 0xa9585df2 );
+		ROM_LOAD16_BYTE(  "dd.f1", 0x180000, 0x40000, 0x9aed24ba );
+		ROM_LOAD16_BYTE(  "dd.f2", 0x180001, 0x40000, 0x3eb5783f );
 	
-		ROM_REGION( 0x10000, REGION_SOUND1, 0 )	/* ADPCM samples */
-		ROM_LOAD( "dd7.x10", 0x000000, 0x10000, 0x9cbc7b41 )
-	ROM_END
+		ROM_REGION( 0x10000, REGION_SOUND1, 0 );/* ADPCM samples */
+		ROM_LOAD( "dd7.x10", 0x000000, 0x10000, 0x9cbc7b41 );
+	ROM_END(); }}; 
 	
 	/***************************************************************************/
 	

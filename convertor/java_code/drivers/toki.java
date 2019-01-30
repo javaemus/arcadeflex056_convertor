@@ -556,169 +556,169 @@ public class toki
 	
 	***************************************************************************/
 	
-	ROM_START( tokij )
-		ROM_REGION( 0x60000, REGION_CPU1, 0 )	/* 6*64k for 68000 code */
-		ROM_LOAD16_BYTE( "tokijp.006",   0x00000, 0x20000, 0x03d726b1 )
-		ROM_LOAD16_BYTE( "tokijp.004",   0x00001, 0x20000, 0x54a45e12 )
-		ROM_LOAD16_BYTE( "tokijp.005",   0x40000, 0x10000, 0xd6a82808 )
-		ROM_LOAD16_BYTE( "tokijp.003",   0x40001, 0x10000, 0xa01a5b10 )
+	static RomLoadPtr rom_tokij = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x60000, REGION_CPU1, 0 );/* 6*64k for 68000 code */
+		ROM_LOAD16_BYTE( "tokijp.006",   0x00000, 0x20000, 0x03d726b1 );
+		ROM_LOAD16_BYTE( "tokijp.004",   0x00001, 0x20000, 0x54a45e12 );
+		ROM_LOAD16_BYTE( "tokijp.005",   0x40000, 0x10000, 0xd6a82808 );
+		ROM_LOAD16_BYTE( "tokijp.003",   0x40001, 0x10000, 0xa01a5b10 );
 	
-		ROM_REGION( 0x20000*2, REGION_CPU2, 0 )	/* Z80 code, banked data */
-		ROM_LOAD( "tokijp.008",   0x00000, 0x02000, 0x6c87c4c5 )	/* encrypted */
-		ROM_LOAD( "tokijp.007",   0x10000, 0x10000, 0xa67969c4 )	/* banked stuff */
+		ROM_REGION( 0x20000*2, REGION_CPU2, 0 );/* Z80 code, banked data */
+		ROM_LOAD( "tokijp.008",   0x00000, 0x02000, 0x6c87c4c5 );/* encrypted */
+		ROM_LOAD( "tokijp.007",   0x10000, 0x10000, 0xa67969c4 );/* banked stuff */
 	
-		ROM_REGION( 0x020000, REGION_GFX1, ROMREGION_DISPOSE )
-		ROM_LOAD( "tokijp.001",   0x000000, 0x10000, 0x8aa964a2 )   /* chars */
-		ROM_LOAD( "tokijp.002",   0x010000, 0x10000, 0x86e87e48 )
+		ROM_REGION( 0x020000, REGION_GFX1, ROMREGION_DISPOSE );
+		ROM_LOAD( "tokijp.001",   0x000000, 0x10000, 0x8aa964a2 );  /* chars */
+		ROM_LOAD( "tokijp.002",   0x010000, 0x10000, 0x86e87e48 );
 	
-		ROM_REGION( 0x100000, REGION_GFX2, ROMREGION_DISPOSE )
-		ROM_LOAD( "toki.ob1",     0x000000, 0x80000, 0xa27a80ba )   /* sprites */
-		ROM_LOAD( "toki.ob2",     0x080000, 0x80000, 0xfa687718 )
+		ROM_REGION( 0x100000, REGION_GFX2, ROMREGION_DISPOSE );
+		ROM_LOAD( "toki.ob1",     0x000000, 0x80000, 0xa27a80ba );  /* sprites */
+		ROM_LOAD( "toki.ob2",     0x080000, 0x80000, 0xfa687718 );
 	
-		ROM_REGION( 0x080000, REGION_GFX3, ROMREGION_DISPOSE )
-		ROM_LOAD( "toki.bk1",     0x000000, 0x80000, 0xfdaa5f4b )   /* tiles 1 */
+		ROM_REGION( 0x080000, REGION_GFX3, ROMREGION_DISPOSE );
+		ROM_LOAD( "toki.bk1",     0x000000, 0x80000, 0xfdaa5f4b );  /* tiles 1 */
 	
-		ROM_REGION( 0x080000, REGION_GFX4, ROMREGION_DISPOSE )
-		ROM_LOAD( "toki.bk2",     0x000000, 0x80000, 0xd86ac664 )   /* tiles 2 */
+		ROM_REGION( 0x080000, REGION_GFX4, ROMREGION_DISPOSE );
+		ROM_LOAD( "toki.bk2",     0x000000, 0x80000, 0xd86ac664 );  /* tiles 2 */
 	
-		ROM_REGION( 0x20000, REGION_SOUND1, 0 )	/* ADPCM samples */
-		ROM_LOAD( "tokijp.009",   0x00000, 0x20000, 0xae7a6b8b )
-	ROM_END
+		ROM_REGION( 0x20000, REGION_SOUND1, 0 );/* ADPCM samples */
+		ROM_LOAD( "tokijp.009",   0x00000, 0x20000, 0xae7a6b8b );
+	ROM_END(); }}; 
 	
-	ROM_START( tokia )
-		ROM_REGION( 0x60000, REGION_CPU1, 0 )	/* 6*64k for 68000 code */
-		ROM_LOAD16_BYTE( "tokijp.006",   0x00000, 0x20000, 0x03d726b1 )
-		ROM_LOAD16_BYTE( "4c.10k",       0x00001, 0x20000, 0xb2c345c5 )
-		ROM_LOAD16_BYTE( "tokijp.005",   0x40000, 0x10000, 0xd6a82808 )
-		ROM_LOAD16_BYTE( "tokijp.003",   0x40001, 0x10000, 0xa01a5b10 )
+	static RomLoadPtr rom_tokia = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x60000, REGION_CPU1, 0 );/* 6*64k for 68000 code */
+		ROM_LOAD16_BYTE( "tokijp.006",   0x00000, 0x20000, 0x03d726b1 );
+		ROM_LOAD16_BYTE( "4c.10k",       0x00001, 0x20000, 0xb2c345c5 );
+		ROM_LOAD16_BYTE( "tokijp.005",   0x40000, 0x10000, 0xd6a82808 );
+		ROM_LOAD16_BYTE( "tokijp.003",   0x40001, 0x10000, 0xa01a5b10 );
 	
-		ROM_REGION( 0x20000*2, REGION_CPU2, 0 )	/* Z80 code, banked data */
-		ROM_LOAD( "tokijp.008",   0x00000, 0x02000, 0x6c87c4c5 )	/* encrypted */
-		ROM_LOAD( "tokijp.007",   0x10000, 0x10000, 0xa67969c4 )	/* banked stuff */
+		ROM_REGION( 0x20000*2, REGION_CPU2, 0 );/* Z80 code, banked data */
+		ROM_LOAD( "tokijp.008",   0x00000, 0x02000, 0x6c87c4c5 );/* encrypted */
+		ROM_LOAD( "tokijp.007",   0x10000, 0x10000, 0xa67969c4 );/* banked stuff */
 	
-		ROM_REGION( 0x020000, REGION_GFX1, ROMREGION_DISPOSE )
-		ROM_LOAD( "tokijp.001",   0x000000, 0x10000, 0x8aa964a2 )   /* chars */
-		ROM_LOAD( "tokijp.002",   0x010000, 0x10000, 0x86e87e48 )
+		ROM_REGION( 0x020000, REGION_GFX1, ROMREGION_DISPOSE );
+		ROM_LOAD( "tokijp.001",   0x000000, 0x10000, 0x8aa964a2 );  /* chars */
+		ROM_LOAD( "tokijp.002",   0x010000, 0x10000, 0x86e87e48 );
 	
-		ROM_REGION( 0x100000, REGION_GFX2, ROMREGION_DISPOSE )
-		ROM_LOAD( "toki.ob1",     0x000000, 0x80000, 0xa27a80ba )   /* sprites */
-		ROM_LOAD( "toki.ob2",     0x080000, 0x80000, 0xfa687718 )
+		ROM_REGION( 0x100000, REGION_GFX2, ROMREGION_DISPOSE );
+		ROM_LOAD( "toki.ob1",     0x000000, 0x80000, 0xa27a80ba );  /* sprites */
+		ROM_LOAD( "toki.ob2",     0x080000, 0x80000, 0xfa687718 );
 	
-		ROM_REGION( 0x080000, REGION_GFX3, ROMREGION_DISPOSE )
-		ROM_LOAD( "toki.bk1",     0x000000, 0x80000, 0xfdaa5f4b )   /* tiles 1 */
+		ROM_REGION( 0x080000, REGION_GFX3, ROMREGION_DISPOSE );
+		ROM_LOAD( "toki.bk1",     0x000000, 0x80000, 0xfdaa5f4b );  /* tiles 1 */
 	
-		ROM_REGION( 0x080000, REGION_GFX4, ROMREGION_DISPOSE )
-		ROM_LOAD( "toki.bk2",     0x000000, 0x80000, 0xd86ac664 )   /* tiles 2 */
+		ROM_REGION( 0x080000, REGION_GFX4, ROMREGION_DISPOSE );
+		ROM_LOAD( "toki.bk2",     0x000000, 0x80000, 0xd86ac664 );  /* tiles 2 */
 	
-		ROM_REGION( 0x20000, REGION_SOUND1, 0 )	/* ADPCM samples */
-		ROM_LOAD( "tokijp.009",   0x00000, 0x20000, 0xae7a6b8b )
-	ROM_END
+		ROM_REGION( 0x20000, REGION_SOUND1, 0 );/* ADPCM samples */
+		ROM_LOAD( "tokijp.009",   0x00000, 0x20000, 0xae7a6b8b );
+	ROM_END(); }}; 
 	
-	ROM_START( toki )
-		ROM_REGION( 0x60000, REGION_CPU1, 0 )	/* 6*64k for 68000 code */
-		ROM_LOAD16_BYTE( "l10_6.bin",    0x00000, 0x20000, 0x94015d91 )
-		ROM_LOAD16_BYTE( "k10_4e.bin",   0x00001, 0x20000, 0x531bd3ef )
-		ROM_LOAD16_BYTE( "tokijp.005",   0x40000, 0x10000, 0xd6a82808 )
-		ROM_LOAD16_BYTE( "tokijp.003",   0x40001, 0x10000, 0xa01a5b10 )
+	static RomLoadPtr rom_toki = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x60000, REGION_CPU1, 0 );/* 6*64k for 68000 code */
+		ROM_LOAD16_BYTE( "l10_6.bin",    0x00000, 0x20000, 0x94015d91 );
+		ROM_LOAD16_BYTE( "k10_4e.bin",   0x00001, 0x20000, 0x531bd3ef );
+		ROM_LOAD16_BYTE( "tokijp.005",   0x40000, 0x10000, 0xd6a82808 );
+		ROM_LOAD16_BYTE( "tokijp.003",   0x40001, 0x10000, 0xa01a5b10 );
 	
-		ROM_REGION( 0x20000*2, REGION_CPU2, 0 )	/* Z80 code, banked data */
-		ROM_LOAD( "tokijp.008",   0x00000, 0x02000, 0x6c87c4c5 )	/* encrypted */
-		ROM_LOAD( "tokijp.007",   0x10000, 0x10000, 0xa67969c4 )	/* banked stuff */
+		ROM_REGION( 0x20000*2, REGION_CPU2, 0 );/* Z80 code, banked data */
+		ROM_LOAD( "tokijp.008",   0x00000, 0x02000, 0x6c87c4c5 );/* encrypted */
+		ROM_LOAD( "tokijp.007",   0x10000, 0x10000, 0xa67969c4 );/* banked stuff */
 	
-		ROM_REGION( 0x020000, REGION_GFX1, ROMREGION_DISPOSE )
-		ROM_LOAD( "tokijp.001",   0x000000, 0x10000, 0x8aa964a2 )   /* chars */
-		ROM_LOAD( "tokijp.002",   0x010000, 0x10000, 0x86e87e48 )
+		ROM_REGION( 0x020000, REGION_GFX1, ROMREGION_DISPOSE );
+		ROM_LOAD( "tokijp.001",   0x000000, 0x10000, 0x8aa964a2 );  /* chars */
+		ROM_LOAD( "tokijp.002",   0x010000, 0x10000, 0x86e87e48 );
 	
-		ROM_REGION( 0x100000, REGION_GFX2, ROMREGION_DISPOSE )
-		ROM_LOAD( "toki.ob1",     0x000000, 0x80000, 0xa27a80ba )   /* sprites */
-		ROM_LOAD( "toki.ob2",     0x080000, 0x80000, 0xfa687718 )
+		ROM_REGION( 0x100000, REGION_GFX2, ROMREGION_DISPOSE );
+		ROM_LOAD( "toki.ob1",     0x000000, 0x80000, 0xa27a80ba );  /* sprites */
+		ROM_LOAD( "toki.ob2",     0x080000, 0x80000, 0xfa687718 );
 	
-		ROM_REGION( 0x080000, REGION_GFX3, ROMREGION_DISPOSE )
-		ROM_LOAD( "toki.bk1",     0x000000, 0x80000, 0xfdaa5f4b )   /* tiles 1 */
+		ROM_REGION( 0x080000, REGION_GFX3, ROMREGION_DISPOSE );
+		ROM_LOAD( "toki.bk1",     0x000000, 0x80000, 0xfdaa5f4b );  /* tiles 1 */
 	
-		ROM_REGION( 0x080000, REGION_GFX4, ROMREGION_DISPOSE )
-		ROM_LOAD( "toki.bk2",     0x000000, 0x80000, 0xd86ac664 )   /* tiles 2 */
+		ROM_REGION( 0x080000, REGION_GFX4, ROMREGION_DISPOSE );
+		ROM_LOAD( "toki.bk2",     0x000000, 0x80000, 0xd86ac664 );  /* tiles 2 */
 	
-		ROM_REGION( 0x20000, REGION_SOUND1, 0 )	/* ADPCM samples */
-		ROM_LOAD( "tokijp.009",   0x00000, 0x20000, 0xae7a6b8b )
-	ROM_END
+		ROM_REGION( 0x20000, REGION_SOUND1, 0 );/* ADPCM samples */
+		ROM_LOAD( "tokijp.009",   0x00000, 0x20000, 0xae7a6b8b );
+	ROM_END(); }}; 
 	
-	ROM_START( tokiu )
-		ROM_REGION( 0x60000, REGION_CPU1, 0 )	/* 6*64k for 68000 code */
-		ROM_LOAD16_BYTE( "6b.10m",       0x00000, 0x20000, 0x3674d9fe )
-		ROM_LOAD16_BYTE( "14.10k",       0x00001, 0x20000, 0xbfdd48af )
-		ROM_LOAD16_BYTE( "tokijp.005",   0x40000, 0x10000, 0xd6a82808 )
-		ROM_LOAD16_BYTE( "tokijp.003",   0x40001, 0x10000, 0xa01a5b10 )
+	static RomLoadPtr rom_tokiu = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x60000, REGION_CPU1, 0 );/* 6*64k for 68000 code */
+		ROM_LOAD16_BYTE( "6b.10m",       0x00000, 0x20000, 0x3674d9fe );
+		ROM_LOAD16_BYTE( "14.10k",       0x00001, 0x20000, 0xbfdd48af );
+		ROM_LOAD16_BYTE( "tokijp.005",   0x40000, 0x10000, 0xd6a82808 );
+		ROM_LOAD16_BYTE( "tokijp.003",   0x40001, 0x10000, 0xa01a5b10 );
 	
-		ROM_REGION( 0x20000*2, REGION_CPU2, 0 )	/* Z80 code, banked data */
-		ROM_LOAD( "tokijp.008",   0x00000, 0x02000, 0x6c87c4c5 )	/* encrypted */
-		ROM_LOAD( "tokijp.007",   0x10000, 0x10000, 0xa67969c4 )	/* banked stuff */
+		ROM_REGION( 0x20000*2, REGION_CPU2, 0 );/* Z80 code, banked data */
+		ROM_LOAD( "tokijp.008",   0x00000, 0x02000, 0x6c87c4c5 );/* encrypted */
+		ROM_LOAD( "tokijp.007",   0x10000, 0x10000, 0xa67969c4 );/* banked stuff */
 	
-		ROM_REGION( 0x020000, REGION_GFX1, ROMREGION_DISPOSE )
-		ROM_LOAD( "tokijp.001",   0x000000, 0x10000, 0x8aa964a2 )   /* chars */
-		ROM_LOAD( "tokijp.002",   0x010000, 0x10000, 0x86e87e48 )
+		ROM_REGION( 0x020000, REGION_GFX1, ROMREGION_DISPOSE );
+		ROM_LOAD( "tokijp.001",   0x000000, 0x10000, 0x8aa964a2 );  /* chars */
+		ROM_LOAD( "tokijp.002",   0x010000, 0x10000, 0x86e87e48 );
 	
-		ROM_REGION( 0x100000, REGION_GFX2, ROMREGION_DISPOSE )
-		ROM_LOAD( "toki.ob1",     0x000000, 0x80000, 0xa27a80ba )   /* sprites */
-		ROM_LOAD( "toki.ob2",     0x080000, 0x80000, 0xfa687718 )
+		ROM_REGION( 0x100000, REGION_GFX2, ROMREGION_DISPOSE );
+		ROM_LOAD( "toki.ob1",     0x000000, 0x80000, 0xa27a80ba );  /* sprites */
+		ROM_LOAD( "toki.ob2",     0x080000, 0x80000, 0xfa687718 );
 	
-		ROM_REGION( 0x080000, REGION_GFX3, ROMREGION_DISPOSE )
-		ROM_LOAD( "toki.bk1",     0x000000, 0x80000, 0xfdaa5f4b )   /* tiles 1 */
+		ROM_REGION( 0x080000, REGION_GFX3, ROMREGION_DISPOSE );
+		ROM_LOAD( "toki.bk1",     0x000000, 0x80000, 0xfdaa5f4b );  /* tiles 1 */
 	
-		ROM_REGION( 0x080000, REGION_GFX4, ROMREGION_DISPOSE )
-		ROM_LOAD( "toki.bk2",     0x000000, 0x80000, 0xd86ac664 )   /* tiles 2 */
+		ROM_REGION( 0x080000, REGION_GFX4, ROMREGION_DISPOSE );
+		ROM_LOAD( "toki.bk2",     0x000000, 0x80000, 0xd86ac664 );  /* tiles 2 */
 	
-		ROM_REGION( 0x20000, REGION_SOUND1, 0 )	/* ADPCM samples */
-		ROM_LOAD( "tokijp.009",   0x00000, 0x20000, 0xae7a6b8b )
-	ROM_END
+		ROM_REGION( 0x20000, REGION_SOUND1, 0 );/* ADPCM samples */
+		ROM_LOAD( "tokijp.009",   0x00000, 0x20000, 0xae7a6b8b );
+	ROM_END(); }}; 
 	
-	ROM_START( tokib )
-		ROM_REGION( 0x60000, REGION_CPU1, 0 )	/* 6*64k for 68000 code */
-		ROM_LOAD16_BYTE( "toki.e3",      0x00000, 0x20000, 0xae9b3da4 )
-		ROM_LOAD16_BYTE( "toki.e5",      0x00001, 0x20000, 0x66a5a1d6 )
-		ROM_LOAD16_BYTE( "tokijp.005",   0x40000, 0x10000, 0xd6a82808 )
-		ROM_LOAD16_BYTE( "tokijp.003",   0x40001, 0x10000, 0xa01a5b10 )
+	static RomLoadPtr rom_tokib = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x60000, REGION_CPU1, 0 );/* 6*64k for 68000 code */
+		ROM_LOAD16_BYTE( "toki.e3",      0x00000, 0x20000, 0xae9b3da4 );
+		ROM_LOAD16_BYTE( "toki.e5",      0x00001, 0x20000, 0x66a5a1d6 );
+		ROM_LOAD16_BYTE( "tokijp.005",   0x40000, 0x10000, 0xd6a82808 );
+		ROM_LOAD16_BYTE( "tokijp.003",   0x40001, 0x10000, 0xa01a5b10 );
 	
-		ROM_REGION( 0x18000, REGION_CPU2, 0 )	/* 64k for code + 32k for banked data */
-		ROM_LOAD( "toki.e1",      0x00000, 0x8000, 0x2832ef75 )
-		ROM_CONTINUE(             0x10000, 0x8000 ) /* banked at 8000-bfff */
+		ROM_REGION( 0x18000, REGION_CPU2, 0 );/* 64k for code + 32k for banked data */
+		ROM_LOAD( "toki.e1",      0x00000, 0x8000, 0x2832ef75 );
+		ROM_CONTINUE(             0x10000, 0x8000 );/* banked at 8000-bfff */
 	
-		ROM_REGION( 0x020000, REGION_GFX1, ROMREGION_DISPOSE )
-		ROM_LOAD( "toki.e21",     0x000000, 0x08000, 0xbb8cacbd )   /* chars */
-		ROM_LOAD( "toki.e13",     0x008000, 0x08000, 0x052ad275 )
-		ROM_LOAD( "toki.e22",     0x010000, 0x08000, 0x04dcdc21 )
-		ROM_LOAD( "toki.e7",      0x018000, 0x08000, 0x70729106 )
+		ROM_REGION( 0x020000, REGION_GFX1, ROMREGION_DISPOSE );
+		ROM_LOAD( "toki.e21",     0x000000, 0x08000, 0xbb8cacbd );  /* chars */
+		ROM_LOAD( "toki.e13",     0x008000, 0x08000, 0x052ad275 );
+		ROM_LOAD( "toki.e22",     0x010000, 0x08000, 0x04dcdc21 );
+		ROM_LOAD( "toki.e7",      0x018000, 0x08000, 0x70729106 );
 	
-		ROM_REGION( 0x100000, REGION_GFX2, ROMREGION_DISPOSE )
-		ROM_LOAD( "toki.e26",     0x000000, 0x20000, 0xa8ba71fc )   /* sprites */
-		ROM_LOAD( "toki.e28",     0x020000, 0x20000, 0x29784948 )
-		ROM_LOAD( "toki.e34",     0x040000, 0x20000, 0xe5f6e19b )
-		ROM_LOAD( "toki.e36",     0x060000, 0x20000, 0x96e8db8b )
-		ROM_LOAD( "toki.e30",     0x080000, 0x20000, 0x770d2b1b )
-		ROM_LOAD( "toki.e32",     0x0a0000, 0x20000, 0xc289d246 )
-		ROM_LOAD( "toki.e38",     0x0c0000, 0x20000, 0x87f4e7fb )
-		ROM_LOAD( "toki.e40",     0x0e0000, 0x20000, 0x96e87350 )
+		ROM_REGION( 0x100000, REGION_GFX2, ROMREGION_DISPOSE );
+		ROM_LOAD( "toki.e26",     0x000000, 0x20000, 0xa8ba71fc );  /* sprites */
+		ROM_LOAD( "toki.e28",     0x020000, 0x20000, 0x29784948 );
+		ROM_LOAD( "toki.e34",     0x040000, 0x20000, 0xe5f6e19b );
+		ROM_LOAD( "toki.e36",     0x060000, 0x20000, 0x96e8db8b );
+		ROM_LOAD( "toki.e30",     0x080000, 0x20000, 0x770d2b1b );
+		ROM_LOAD( "toki.e32",     0x0a0000, 0x20000, 0xc289d246 );
+		ROM_LOAD( "toki.e38",     0x0c0000, 0x20000, 0x87f4e7fb );
+		ROM_LOAD( "toki.e40",     0x0e0000, 0x20000, 0x96e87350 );
 	
-		ROM_REGION( 0x080000, REGION_GFX3, ROMREGION_DISPOSE )
-		ROM_LOAD( "toki.e23",     0x000000, 0x10000, 0xfeb13d35 )   /* tiles 1 */
-		ROM_LOAD( "toki.e24",     0x010000, 0x10000, 0x5b365637 )
-		ROM_LOAD( "toki.e15",     0x020000, 0x10000, 0x617c32e6 )
-		ROM_LOAD( "toki.e16",     0x030000, 0x10000, 0x2a11c0f0 )
-		ROM_LOAD( "toki.e17",     0x040000, 0x10000, 0xfbc3d456 )
-		ROM_LOAD( "toki.e18",     0x050000, 0x10000, 0x4c2a72e1 )
-		ROM_LOAD( "toki.e8",      0x060000, 0x10000, 0x46a1b821 )
-		ROM_LOAD( "toki.e9",      0x070000, 0x10000, 0x82ce27f6 )
+		ROM_REGION( 0x080000, REGION_GFX3, ROMREGION_DISPOSE );
+		ROM_LOAD( "toki.e23",     0x000000, 0x10000, 0xfeb13d35 );  /* tiles 1 */
+		ROM_LOAD( "toki.e24",     0x010000, 0x10000, 0x5b365637 );
+		ROM_LOAD( "toki.e15",     0x020000, 0x10000, 0x617c32e6 );
+		ROM_LOAD( "toki.e16",     0x030000, 0x10000, 0x2a11c0f0 );
+		ROM_LOAD( "toki.e17",     0x040000, 0x10000, 0xfbc3d456 );
+		ROM_LOAD( "toki.e18",     0x050000, 0x10000, 0x4c2a72e1 );
+		ROM_LOAD( "toki.e8",      0x060000, 0x10000, 0x46a1b821 );
+		ROM_LOAD( "toki.e9",      0x070000, 0x10000, 0x82ce27f6 );
 	
-		ROM_REGION( 0x080000, REGION_GFX4, ROMREGION_DISPOSE )
-		ROM_LOAD( "toki.e25",     0x000000, 0x10000, 0x63026cad )   /* tiles 2 */
-		ROM_LOAD( "toki.e20",     0x010000, 0x10000, 0xa7f2ce26 )
-		ROM_LOAD( "toki.e11",     0x020000, 0x10000, 0x48989aa0 )
-		ROM_LOAD( "toki.e12",     0x030000, 0x10000, 0xc2ad9342 )
-		ROM_LOAD( "toki.e19",     0x040000, 0x10000, 0x6cd22b18 )
-		ROM_LOAD( "toki.e14",     0x050000, 0x10000, 0x859e313a )
-		ROM_LOAD( "toki.e10",     0x060000, 0x10000, 0xe15c1d0f )
-		ROM_LOAD( "toki.e6",      0x070000, 0x10000, 0x6f4b878a )
-	ROM_END
+		ROM_REGION( 0x080000, REGION_GFX4, ROMREGION_DISPOSE );
+		ROM_LOAD( "toki.e25",     0x000000, 0x10000, 0x63026cad );  /* tiles 2 */
+		ROM_LOAD( "toki.e20",     0x010000, 0x10000, 0xa7f2ce26 );
+		ROM_LOAD( "toki.e11",     0x020000, 0x10000, 0x48989aa0 );
+		ROM_LOAD( "toki.e12",     0x030000, 0x10000, 0xc2ad9342 );
+		ROM_LOAD( "toki.e19",     0x040000, 0x10000, 0x6cd22b18 );
+		ROM_LOAD( "toki.e14",     0x050000, 0x10000, 0x859e313a );
+		ROM_LOAD( "toki.e10",     0x060000, 0x10000, 0xe15c1d0f );
+		ROM_LOAD( "toki.e6",      0x070000, 0x10000, 0x6f4b878a );
+	ROM_END(); }}; 
 	
 	
 	static void init_toki(void)

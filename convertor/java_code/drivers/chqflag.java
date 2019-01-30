@@ -418,65 +418,65 @@ public class chqflag
 	
 	
 	
-	ROM_START( chqflag )
-		ROM_REGION( 0x58800, REGION_CPU1, 0 )	/* 052001 code */
-		ROM_LOAD( "717h02",		0x050000, 0x008000, 0xf5bd4e78 )	/* banked ROM */
-		ROM_CONTINUE(			0x008000, 0x008000 )				/* fixed ROM */
-		ROM_LOAD( "717e10",		0x010000, 0x040000, 0x72fc56f6 )	/* banked ROM */
+	static RomLoadPtr rom_chqflag = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x58800, REGION_CPU1, 0 );/* 052001 code */
+		ROM_LOAD( "717h02",		0x050000, 0x008000, 0xf5bd4e78 );/* banked ROM */
+		ROM_CONTINUE(			0x008000, 0x008000 );			/* fixed ROM */
+		ROM_LOAD( "717e10",		0x010000, 0x040000, 0x72fc56f6 );/* banked ROM */
 		/* extra memory for banked RAM */
 	
-		ROM_REGION( 0x10000, REGION_CPU2, 0 )	/* 64k for the SOUND CPU */
-		ROM_LOAD( "717e01",		0x000000, 0x008000, 0x966b8ba8 )
+		ROM_REGION( 0x10000, REGION_CPU2, 0 );/* 64k for the SOUND CPU */
+		ROM_LOAD( "717e01",		0x000000, 0x008000, 0x966b8ba8 );
 	
-	    ROM_REGION( 0x100000, REGION_GFX1, 0 )	/* graphics (addressable by the main CPU) */
-		ROM_LOAD( "717e04",		0x000000, 0x080000, 0x1a50a1cc )	/* sprites */
-		ROM_LOAD( "717e05",		0x080000, 0x080000, 0x46ccb506 )	/* sprites */
+	    ROM_REGION( 0x100000, REGION_GFX1, 0 );/* graphics (addressable by the main CPU) */
+		ROM_LOAD( "717e04",		0x000000, 0x080000, 0x1a50a1cc );/* sprites */
+		ROM_LOAD( "717e05",		0x080000, 0x080000, 0x46ccb506 );/* sprites */
 	
-		ROM_REGION( 0x020000, REGION_GFX2, 0 )	/* graphics (addressable by the main CPU) */
-		ROM_LOAD( "717e06",		0x000000, 0x020000, 0x1ec26c7a )	/* zoom/rotate (N16) */
+		ROM_REGION( 0x020000, REGION_GFX2, 0 );/* graphics (addressable by the main CPU) */
+		ROM_LOAD( "717e06",		0x000000, 0x020000, 0x1ec26c7a );/* zoom/rotate (N16) */
 	
-		ROM_REGION( 0x100000, REGION_GFX3, 0 )	/* graphics (addressable by the main CPU) */
-		ROM_LOAD( "717e07",		0x000000, 0x040000, 0xb9a565a8 )	/* zoom/rotate (L20) */
-		ROM_LOAD( "717e08",		0x040000, 0x040000, 0xb68a212e )	/* zoom/rotate (L22) */
-		ROM_LOAD( "717e11",		0x080000, 0x040000, 0xebb171ec )	/* zoom/rotate (N20) */
-		ROM_LOAD( "717e12",		0x0c0000, 0x040000, 0x9269335d )	/* zoom/rotate (N22) */
+		ROM_REGION( 0x100000, REGION_GFX3, 0 );/* graphics (addressable by the main CPU) */
+		ROM_LOAD( "717e07",		0x000000, 0x040000, 0xb9a565a8 );/* zoom/rotate (L20) */
+		ROM_LOAD( "717e08",		0x040000, 0x040000, 0xb68a212e );/* zoom/rotate (L22) */
+		ROM_LOAD( "717e11",		0x080000, 0x040000, 0xebb171ec );/* zoom/rotate (N20) */
+		ROM_LOAD( "717e12",		0x0c0000, 0x040000, 0x9269335d );/* zoom/rotate (N22) */
 	
-		ROM_REGION( 0x080000, REGION_SOUND1, 0 )	/* 007232 data (chip 1) */
-		ROM_LOAD( "717e03",		0x000000, 0x080000, 0xebe73c22 )
+		ROM_REGION( 0x080000, REGION_SOUND1, 0 );/* 007232 data (chip 1) */
+		ROM_LOAD( "717e03",		0x000000, 0x080000, 0xebe73c22 );
 	
-		ROM_REGION( 0x080000, REGION_SOUND2, 0 )	/* 007232 data (chip 2) */
-		ROM_LOAD( "717e09",		0x000000, 0x080000, 0xd74e857d )
-	ROM_END
+		ROM_REGION( 0x080000, REGION_SOUND2, 0 );/* 007232 data (chip 2) */
+		ROM_LOAD( "717e09",		0x000000, 0x080000, 0xd74e857d );
+	ROM_END(); }}; 
 	
-	ROM_START( chqflagj )
-		ROM_REGION( 0x58800, REGION_CPU1, 0 )	/* 052001 code */
-		ROM_LOAD( "717j02.bin",	0x050000, 0x008000, 0x05355daa )	/* banked ROM */
-		ROM_CONTINUE(			0x008000, 0x008000 )				/* fixed ROM */
-		ROM_LOAD( "717e10",		0x010000, 0x040000, 0x72fc56f6 )	/* banked ROM */
+	static RomLoadPtr rom_chqflagj = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x58800, REGION_CPU1, 0 );/* 052001 code */
+		ROM_LOAD( "717j02.bin",	0x050000, 0x008000, 0x05355daa );/* banked ROM */
+		ROM_CONTINUE(			0x008000, 0x008000 );			/* fixed ROM */
+		ROM_LOAD( "717e10",		0x010000, 0x040000, 0x72fc56f6 );/* banked ROM */
 		/* extra memory for banked RAM */
 	
-		ROM_REGION( 0x10000, REGION_CPU2, 0 )	/* 64k for the SOUND CPU */
-		ROM_LOAD( "717e01",		0x000000, 0x008000, 0x966b8ba8 )
+		ROM_REGION( 0x10000, REGION_CPU2, 0 );/* 64k for the SOUND CPU */
+		ROM_LOAD( "717e01",		0x000000, 0x008000, 0x966b8ba8 );
 	
-	    ROM_REGION( 0x100000, REGION_GFX1, 0 )	/* graphics (addressable by the main CPU) */
-		ROM_LOAD( "717e04",		0x000000, 0x080000, 0x1a50a1cc )	/* sprites */
-		ROM_LOAD( "717e05",		0x080000, 0x080000, 0x46ccb506 )	/* sprites */
+	    ROM_REGION( 0x100000, REGION_GFX1, 0 );/* graphics (addressable by the main CPU) */
+		ROM_LOAD( "717e04",		0x000000, 0x080000, 0x1a50a1cc );/* sprites */
+		ROM_LOAD( "717e05",		0x080000, 0x080000, 0x46ccb506 );/* sprites */
 	
-		ROM_REGION( 0x020000, REGION_GFX2, 0 )	/* graphics (addressable by the main CPU) */
-		ROM_LOAD( "717e06",		0x000000, 0x020000, 0x1ec26c7a )	/* zoom/rotate (N16) */
+		ROM_REGION( 0x020000, REGION_GFX2, 0 );/* graphics (addressable by the main CPU) */
+		ROM_LOAD( "717e06",		0x000000, 0x020000, 0x1ec26c7a );/* zoom/rotate (N16) */
 	
-		ROM_REGION( 0x100000, REGION_GFX3, 0 )	/* graphics (addressable by the main CPU) */
-		ROM_LOAD( "717e07",		0x000000, 0x040000, 0xb9a565a8 )	/* zoom/rotate (L20) */
-		ROM_LOAD( "717e08",		0x040000, 0x040000, 0xb68a212e )	/* zoom/rotate (L22) */
-		ROM_LOAD( "717e11",		0x080000, 0x040000, 0xebb171ec )	/* zoom/rotate (N20) */
-		ROM_LOAD( "717e12",		0x0c0000, 0x040000, 0x9269335d )	/* zoom/rotate (N22) */
+		ROM_REGION( 0x100000, REGION_GFX3, 0 );/* graphics (addressable by the main CPU) */
+		ROM_LOAD( "717e07",		0x000000, 0x040000, 0xb9a565a8 );/* zoom/rotate (L20) */
+		ROM_LOAD( "717e08",		0x040000, 0x040000, 0xb68a212e );/* zoom/rotate (L22) */
+		ROM_LOAD( "717e11",		0x080000, 0x040000, 0xebb171ec );/* zoom/rotate (N20) */
+		ROM_LOAD( "717e12",		0x0c0000, 0x040000, 0x9269335d );/* zoom/rotate (N22) */
 	
-		ROM_REGION( 0x080000, REGION_SOUND1, 0 )	/* 007232 data (chip 1) */
-		ROM_LOAD( "717e03",		0x000000, 0x080000, 0xebe73c22 )
+		ROM_REGION( 0x080000, REGION_SOUND1, 0 );/* 007232 data (chip 1) */
+		ROM_LOAD( "717e03",		0x000000, 0x080000, 0xebe73c22 );
 	
-		ROM_REGION( 0x080000, REGION_SOUND2, 0 )	/* 007232 data (chip 2) */
-		ROM_LOAD( "717e09",		0x000000, 0x080000, 0xd74e857d )
-	ROM_END
+		ROM_REGION( 0x080000, REGION_SOUND2, 0 );/* 007232 data (chip 2) */
+		ROM_LOAD( "717e09",		0x000000, 0x080000, 0xd74e857d );
+	ROM_END(); }}; 
 	
 	
 	

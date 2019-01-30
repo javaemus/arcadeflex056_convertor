@@ -886,671 +886,671 @@ public class wmsyunit
 	 *
 	 *************************************/
 	
-	ROM_START( narc )
-		ROM_REGION( 0x10, REGION_CPU1, 0 )		/* 34010 dummy region */
-	
-		ROM_REGION( 0x30000, REGION_CPU2, 0 )	/* sound CPU */
-		ROM_LOAD ( "u4-snd", 0x10000, 0x10000, 0x450a591a )
-		ROM_LOAD ( "u5-snd", 0x20000, 0x10000, 0xe551e5e3 )
-	
-		ROM_REGION( 0x50000, REGION_CPU3, 0 )	/* slave sound CPU */
-		ROM_LOAD ( "u35-snd", 0x10000, 0x10000, 0x81295892 )
-		ROM_LOAD ( "u36-snd", 0x20000, 0x10000, 0x16cdbb13 )
-		ROM_LOAD ( "u37-snd", 0x30000, 0x10000, 0x29dbeffd )
-		ROM_LOAD ( "u38-snd", 0x40000, 0x10000, 0x09b03b80 )
-	
-		ROM_REGION16_LE( 0x100000, REGION_USER1, ROMREGION_DISPOSE )	/* 34010 code */
-		ROM_LOAD16_BYTE( "u42",  0x80000, 0x20000, 0xd1111b76 )
-		ROM_LOAD16_BYTE( "u24",  0x80001, 0x20000, 0xaa0d3082 )
-		ROM_LOAD16_BYTE( "u41",  0xc0000, 0x20000, 0x3903191f )
-		ROM_LOAD16_BYTE( "u23",  0xc0001, 0x20000, 0x7a316582 )
-	
-		ROM_REGION( 0x800000, REGION_GFX1, ROMREGION_DISPOSE )
-		ROM_LOAD ( "u94",  0x000000, 0x10000, 0xca3194e4 )
-		ROM_LOAD ( "u76",  0x200000, 0x10000, 0x1cd897f4 )
-		ROM_LOAD ( "u93",  0x010000, 0x10000, 0x0ed7f7f5 )
-		ROM_LOAD ( "u75",  0x210000, 0x10000, 0x78abfa01 )
-		ROM_LOAD ( "u92",  0x020000, 0x10000, 0x40d2fc66 )
-		ROM_LOAD ( "u74",  0x220000, 0x10000, 0x66d2a234 )
-		ROM_LOAD ( "u91",  0x030000, 0x10000, 0xf39325e0 )
-		ROM_LOAD ( "u73",  0x230000, 0x10000, 0xefa5cd4e )
-		ROM_LOAD ( "u90",  0x040000, 0x10000, 0x0132aefa )
-		ROM_LOAD ( "u72",  0x240000, 0x10000, 0x70638eb5 )
-		ROM_LOAD ( "u89",  0x050000, 0x10000, 0xf7260c9e )
-		ROM_LOAD ( "u71",  0x250000, 0x10000, 0x61226883 )
-		ROM_LOAD ( "u88",  0x060000, 0x10000, 0xedc19f42 )
-		ROM_LOAD ( "u70",  0x260000, 0x10000, 0xc808849f )
-		ROM_LOAD ( "u87",  0x070000, 0x10000, 0xd9b42ff9 )
-		ROM_LOAD ( "u69",  0x270000, 0x10000, 0xe7f9c34f )
-		ROM_LOAD ( "u86",  0x080000, 0x10000, 0xaf7daad3 )
-		ROM_LOAD ( "u68",  0x280000, 0x10000, 0x88a634d5 )
-		ROM_LOAD ( "u85",  0x090000, 0x10000, 0x095fae6b )
-		ROM_LOAD ( "u67",  0x290000, 0x10000, 0x4ab8b69e )
-		ROM_LOAD ( "u84",  0x0a0000, 0x10000, 0x3fdf2057 )
-		ROM_LOAD ( "u66",  0x2a0000, 0x10000, 0xe1da4b25 )
-		ROM_LOAD ( "u83",  0x0b0000, 0x10000, 0xf2d27c9f )
-		ROM_LOAD ( "u65",  0x2b0000, 0x10000, 0x6df0d125 )
-		ROM_LOAD ( "u82",  0x0c0000, 0x10000, 0x962ce47c )
-		ROM_LOAD ( "u64",  0x2c0000, 0x10000, 0xabab1b16 )
-		ROM_LOAD ( "u81",  0x0d0000, 0x10000, 0x00fe59ec )
-		ROM_LOAD ( "u63",  0x2d0000, 0x10000, 0x80602f31 )
-		ROM_LOAD ( "u80",  0x0e0000, 0x10000, 0x147ba8e9 )
-		ROM_LOAD ( "u62",  0x2e0000, 0x10000, 0xc2a476d1 )
-	
-		ROM_LOAD ( "u58",  0x400000, 0x10000, 0x8a7501e3 )
-		ROM_LOAD ( "u40",  0x600000, 0x10000, 0x7fcaebc7 )
-		ROM_LOAD ( "u57",  0x410000, 0x10000, 0xa504735f )
-		ROM_LOAD ( "u39",  0x610000, 0x10000, 0x7db5cf52 )
-		ROM_LOAD ( "u56",  0x420000, 0x10000, 0x55f8cca7 )
-		ROM_LOAD ( "u38",  0x620000, 0x10000, 0x3f9f3ef7 )
-		ROM_LOAD ( "u55",  0x430000, 0x10000, 0xd3c932c1 )
-		ROM_LOAD ( "u37",  0x630000, 0x10000, 0xed81826c )
-		ROM_LOAD ( "u54",  0x440000, 0x10000, 0xc7f4134b )
-		ROM_LOAD ( "u36",  0x640000, 0x10000, 0xe5d855c0 )
-		ROM_LOAD ( "u53",  0x450000, 0x10000, 0x6be4da56 )
-		ROM_LOAD ( "u35",  0x650000, 0x10000, 0x3a7b1329 )
-		ROM_LOAD ( "u52",  0x460000, 0x10000, 0x1ea36a4a )
-		ROM_LOAD ( "u34",  0x660000, 0x10000, 0xfe982b0e )
-		ROM_LOAD ( "u51",  0x470000, 0x10000, 0x9d4b0324 )
-		ROM_LOAD ( "u33",  0x670000, 0x10000, 0x6bc7eb0f )
-		ROM_LOAD ( "u50",  0x480000, 0x10000, 0x6f9f0c26 )
-		ROM_LOAD ( "u32",  0x680000, 0x10000, 0x5875a6d3 )
-		ROM_LOAD ( "u49",  0x490000, 0x10000, 0x80386fce )
-		ROM_LOAD ( "u31",  0x690000, 0x10000, 0x2fa4b8e5 )
-		ROM_LOAD ( "u48",  0x4a0000, 0x10000, 0x05c16185 )
-		ROM_LOAD ( "u30",  0x6a0000, 0x10000, 0x7e4bb8ee )
-		ROM_LOAD ( "u47",  0x4b0000, 0x10000, 0x4c0151f1 )
-		ROM_LOAD ( "u29",  0x6b0000, 0x10000, 0x45136fd9 )
-		ROM_LOAD ( "u46",  0x4c0000, 0x10000, 0x5670bfcb )
-		ROM_LOAD ( "u28",  0x6c0000, 0x10000, 0xd6cdac24 )
-		ROM_LOAD ( "u45",  0x4d0000, 0x10000, 0x27f10d98 )
-		ROM_LOAD ( "u27",  0x6d0000, 0x10000, 0x4d33bbec )
-		ROM_LOAD ( "u44",  0x4e0000, 0x10000, 0x93b8eaa4 )
-		ROM_LOAD ( "u26",  0x6e0000, 0x10000, 0xcb19f784 )
-	ROM_END
-	
-	ROM_START( narc3 )
-		ROM_REGION( 0x10, REGION_CPU1, 0 )		/* 34010 dummy region */
-	
-		ROM_REGION( 0x30000, REGION_CPU2, 0 )     /* sound CPU */
-		ROM_LOAD ( "u4-snd", 0x10000, 0x10000, 0x450a591a )
-		ROM_LOAD ( "u5-snd", 0x20000, 0x10000, 0xe551e5e3 )
-	
-		ROM_REGION( 0x50000, REGION_CPU3, 0 )     /* slave sound CPU */
-		ROM_LOAD ( "u35-snd", 0x10000, 0x10000, 0x81295892 )
-		ROM_LOAD ( "u36-snd", 0x20000, 0x10000, 0x16cdbb13 )
-		ROM_LOAD ( "u37-snd", 0x30000, 0x10000, 0x29dbeffd )
-		ROM_LOAD ( "u38-snd", 0x40000, 0x10000, 0x09b03b80 )
-	
-		ROM_REGION16_LE( 0x100000, REGION_USER1, ROMREGION_DISPOSE )	/* 34010 code */
-		ROM_LOAD16_BYTE( "narcrev3.u78",  0x00000, 0x10000, 0x388581b0 )
-		ROM_LOAD16_BYTE( "narcrev3.u60",  0x00001, 0x10000, 0xf273bc04 )
-		ROM_LOAD16_BYTE( "narcrev3.u77",  0x40000, 0x10000, 0xbdafaccc )
-		ROM_LOAD16_BYTE( "narcrev3.u59",  0x40001, 0x10000, 0x96314a99 )
-		ROM_LOAD16_BYTE( "narcrev3.u42",  0x80000, 0x10000, 0x56aebc81 )
-		ROM_LOAD16_BYTE( "narcrev3.u24",  0x80001, 0x10000, 0x11d7e143 )
-		ROM_LOAD16_BYTE( "narcrev3.u41",  0xc0000, 0x10000, 0x6142fab7 )
-		ROM_LOAD16_BYTE( "narcrev3.u23",  0xc0001, 0x10000, 0x98cdd178 )
-	
-		ROM_REGION( 0x800000, REGION_GFX1, ROMREGION_DISPOSE )
-		ROM_LOAD ( "u94",  0x000000, 0x10000, 0xca3194e4 )
-		ROM_LOAD ( "u76",  0x200000, 0x10000, 0x1cd897f4 )
-		ROM_LOAD ( "u93",  0x010000, 0x10000, 0x0ed7f7f5 )
-		ROM_LOAD ( "u75",  0x210000, 0x10000, 0x78abfa01 )
-		ROM_LOAD ( "u92",  0x020000, 0x10000, 0x40d2fc66 )
-		ROM_LOAD ( "u74",  0x220000, 0x10000, 0x66d2a234 )
-		ROM_LOAD ( "u91",  0x030000, 0x10000, 0xf39325e0 )
-		ROM_LOAD ( "u73",  0x230000, 0x10000, 0xefa5cd4e )
-		ROM_LOAD ( "u90",  0x040000, 0x10000, 0x0132aefa )
-		ROM_LOAD ( "u72",  0x240000, 0x10000, 0x70638eb5 )
-		ROM_LOAD ( "u89",  0x050000, 0x10000, 0xf7260c9e )
-		ROM_LOAD ( "u71",  0x250000, 0x10000, 0x61226883 )
-		ROM_LOAD ( "u88",  0x060000, 0x10000, 0xedc19f42 )
-		ROM_LOAD ( "u70",  0x260000, 0x10000, 0xc808849f )
-		ROM_LOAD ( "u87",  0x070000, 0x10000, 0xd9b42ff9 )
-		ROM_LOAD ( "u69",  0x270000, 0x10000, 0xe7f9c34f )
-		ROM_LOAD ( "u86",  0x080000, 0x10000, 0xaf7daad3 )
-		ROM_LOAD ( "u68",  0x280000, 0x10000, 0x88a634d5 )
-		ROM_LOAD ( "u85",  0x090000, 0x10000, 0x095fae6b )
-		ROM_LOAD ( "u67",  0x290000, 0x10000, 0x4ab8b69e )
-		ROM_LOAD ( "u84",  0x0a0000, 0x10000, 0x3fdf2057 )
-		ROM_LOAD ( "u66",  0x2a0000, 0x10000, 0xe1da4b25 )
-		ROM_LOAD ( "u83",  0x0b0000, 0x10000, 0xf2d27c9f )
-		ROM_LOAD ( "u65",  0x2b0000, 0x10000, 0x6df0d125 )
-		ROM_LOAD ( "u82",  0x0c0000, 0x10000, 0x962ce47c )
-		ROM_LOAD ( "u64",  0x2c0000, 0x10000, 0xabab1b16 )
-		ROM_LOAD ( "u81",  0x0d0000, 0x10000, 0x00fe59ec )
-		ROM_LOAD ( "u63",  0x2d0000, 0x10000, 0x80602f31 )
-		ROM_LOAD ( "u80",  0x0e0000, 0x10000, 0x147ba8e9 )
-		ROM_LOAD ( "u62",  0x2e0000, 0x10000, 0xc2a476d1 )
-	
-		ROM_LOAD ( "u58",  0x400000, 0x10000, 0x8a7501e3 )
-		ROM_LOAD ( "u40",  0x600000, 0x10000, 0x7fcaebc7 )
-		ROM_LOAD ( "u57",  0x410000, 0x10000, 0xa504735f )
-		ROM_LOAD ( "u39",  0x610000, 0x10000, 0x7db5cf52 )
-		ROM_LOAD ( "u56",  0x420000, 0x10000, 0x55f8cca7 )
-		ROM_LOAD ( "u38",  0x620000, 0x10000, 0x3f9f3ef7 )
-		ROM_LOAD ( "u55",  0x430000, 0x10000, 0xd3c932c1 )
-		ROM_LOAD ( "u37",  0x630000, 0x10000, 0xed81826c )
-		ROM_LOAD ( "u54",  0x440000, 0x10000, 0xc7f4134b )
-		ROM_LOAD ( "u36",  0x640000, 0x10000, 0xe5d855c0 )
-		ROM_LOAD ( "u53",  0x450000, 0x10000, 0x6be4da56 )
-		ROM_LOAD ( "u35",  0x650000, 0x10000, 0x3a7b1329 )
-		ROM_LOAD ( "u52",  0x460000, 0x10000, 0x1ea36a4a )
-		ROM_LOAD ( "u34",  0x660000, 0x10000, 0xfe982b0e )
-		ROM_LOAD ( "u51",  0x470000, 0x10000, 0x9d4b0324 )
-		ROM_LOAD ( "u33",  0x670000, 0x10000, 0x6bc7eb0f )
-		ROM_LOAD ( "u50",  0x480000, 0x10000, 0x6f9f0c26 )
-		ROM_LOAD ( "u32",  0x680000, 0x10000, 0x5875a6d3 )
-		ROM_LOAD ( "u49",  0x490000, 0x10000, 0x80386fce )
-		ROM_LOAD ( "u31",  0x690000, 0x10000, 0x2fa4b8e5 )
-		ROM_LOAD ( "u48",  0x4a0000, 0x10000, 0x05c16185 )
-		ROM_LOAD ( "u30",  0x6a0000, 0x10000, 0x7e4bb8ee )
-		ROM_LOAD ( "u47",  0x4b0000, 0x10000, 0x4c0151f1 )
-		ROM_LOAD ( "u29",  0x6b0000, 0x10000, 0x45136fd9 )
-		ROM_LOAD ( "u46",  0x4c0000, 0x10000, 0x5670bfcb )
-		ROM_LOAD ( "u28",  0x6c0000, 0x10000, 0xd6cdac24 )
-		ROM_LOAD ( "u45",  0x4d0000, 0x10000, 0x27f10d98 )
-		ROM_LOAD ( "u27",  0x6d0000, 0x10000, 0x4d33bbec )
-		ROM_LOAD ( "u44",  0x4e0000, 0x10000, 0x93b8eaa4 )
-		ROM_LOAD ( "u26",  0x6e0000, 0x10000, 0xcb19f784 )
-	ROM_END
-	
-	ROM_START( trog )
-		ROM_REGION( 0x10, REGION_CPU1, 0 )		/* 34010 dummy region */
-	
-		ROM_REGION( 0x70000, REGION_CPU2, 0 )	/* sound CPU */
-		ROM_LOAD (   "trogu4.bin", 0x10000, 0x10000, 0x759d0bf4 )
-		ROM_LOAD (  "trogu19.bin", 0x30000, 0x10000, 0x960c333d )
-		ROM_LOAD (  "trogu20.bin", 0x50000, 0x10000, 0x67f1658a )
-	
-		ROM_REGION16_LE( 0x100000, REGION_USER1, ROMREGION_DISPOSE )	/* 34010 code */
-		ROM_LOAD16_BYTE( "trogu105.bin",  0xc0000, 0x20000, 0xe6095189 )
-		ROM_LOAD16_BYTE( "trogu89.bin",   0xc0001, 0x20000, 0xfdd7cc65 )
-	
-		ROM_REGION( 0x800000, REGION_GFX1, ROMREGION_DISPOSE )
-		ROM_LOAD ( "trogu111.bin",  0x000000, 0x20000, 0x9ded08c1 )
-		ROM_LOAD ( "trogu112.bin",  0x020000, 0x20000, 0x42293843 )
-		ROM_LOAD ( "trogu113.bin",  0x040000, 0x20000, 0x77f50cbb )
-	
-		ROM_LOAD (  "trogu95.bin",  0x200000, 0x20000, 0xf3ba2838 )
-		ROM_LOAD (  "trogu96.bin",  0x220000, 0x20000, 0xcfed2e77 )
-		ROM_LOAD (  "trogu97.bin",  0x240000, 0x20000, 0x3262d1f8 )
-	
-		ROM_LOAD ( "trogu106.bin",  0x080000, 0x20000, 0xaf2eb0d8 )
-	 	ROM_LOAD ( "trogu107.bin",  0x0a0000, 0x20000, 0x88a7b3f6 )
-	
-		ROM_LOAD (  "trogu90.bin",  0x280000, 0x20000, 0x16e06753 )
-		ROM_LOAD (  "trogu91.bin",  0x2a0000, 0x20000, 0x880a02c7 )
-	ROM_END
-	
-	ROM_START( trog3 )
-		ROM_REGION( 0x10, REGION_CPU1, 0 )		/* 34010 dummy region */
-	
-		ROM_REGION( 0x70000, REGION_CPU2, 0 )	/* sound CPU */
-		ROM_LOAD (   "trogu4.bin", 0x10000, 0x10000, 0x759d0bf4 )
-		ROM_LOAD (  "trogu19.bin", 0x30000, 0x10000, 0x960c333d )
-		ROM_LOAD (  "trogu20.bin", 0x50000, 0x10000, 0x67f1658a )
-	
-		ROM_REGION16_LE( 0x100000, REGION_USER1, ROMREGION_DISPOSE )	/* 34010 code */
-		ROM_LOAD16_BYTE( "u105-la3",  0xc0000, 0x20000, 0xd09cea97 )
-		ROM_LOAD16_BYTE( "u89-la3",   0xc0001, 0x20000, 0xa61e3572 )
-	
-		ROM_REGION( 0x800000, REGION_GFX1, ROMREGION_DISPOSE )
-		ROM_LOAD ( "trogu111.bin",  0x000000, 0x20000, 0x9ded08c1 )
-		ROM_LOAD ( "trogu112.bin",  0x020000, 0x20000, 0x42293843 )
-		ROM_LOAD ( "trogu113.bin",  0x040000, 0x20000, 0x77f50cbb )
-	
-		ROM_LOAD (  "trogu95.bin",  0x200000, 0x20000, 0xf3ba2838 )
-		ROM_LOAD (  "trogu96.bin",  0x220000, 0x20000, 0xcfed2e77 )
-		ROM_LOAD (  "trogu97.bin",  0x240000, 0x20000, 0x3262d1f8 )
-	
-		ROM_LOAD ( "trogu106.bin",  0x080000, 0x20000, 0xaf2eb0d8 )
-	 	ROM_LOAD ( "trogu107.bin",  0x0a0000, 0x20000, 0x88a7b3f6 )
-	
-		ROM_LOAD (  "trogu90.bin",  0x280000, 0x20000, 0x16e06753 )
-		ROM_LOAD (  "trogu91.bin",  0x2a0000, 0x20000, 0x880a02c7 )
-	ROM_END
-	
-	ROM_START( trogp )
-		ROM_REGION( 0x10, REGION_CPU1, 0 )		/* 34010 dummy region */
-	
-		ROM_REGION( 0x70000, REGION_CPU2, 0 )	/* sound CPU */
-		ROM_LOAD (   "trogu4.bin", 0x10000, 0x10000, 0x759d0bf4 )
-		ROM_LOAD (  "trogu19.bin", 0x30000, 0x10000, 0x960c333d )
-		ROM_LOAD (  "trogu20.bin", 0x50000, 0x10000, 0x67f1658a )
-	
-		ROM_REGION16_LE( 0x100000, REGION_USER1, ROMREGION_DISPOSE )	/* 34010 code */
-		ROM_LOAD16_BYTE( "trog105.dat",  0xc0000, 0x20000, 0x526a3f5b )
-		ROM_LOAD16_BYTE( "trog89.dat",   0xc0001, 0x20000, 0x38d68685 )
-	
-		ROM_REGION( 0x800000, REGION_GFX1, ROMREGION_DISPOSE )
-		ROM_LOAD ( "trogu111.bin",  0x000000, 0x20000, 0x9ded08c1 )
-		ROM_LOAD ( "trogu112.bin",  0x020000, 0x20000, 0x42293843 )
-		ROM_LOAD ( "trog113.dat",   0x040000, 0x20000, 0x2980a56f )
-	
-		ROM_LOAD (  "trogu95.bin",  0x200000, 0x20000, 0xf3ba2838 )
-		ROM_LOAD (  "trogu96.bin",  0x220000, 0x20000, 0xcfed2e77 )
-		ROM_LOAD (  "trog97.dat",   0x240000, 0x20000, 0xf94b77c1 )
-	
-		ROM_LOAD ( "trogu106.bin",  0x080000, 0x20000, 0xaf2eb0d8 )
-	 	ROM_LOAD ( "trogu107.bin",  0x0a0000, 0x20000, 0x88a7b3f6 )
-	
-		ROM_LOAD (  "trogu90.bin",  0x280000, 0x20000, 0x16e06753 )
-		ROM_LOAD (  "trogu91.bin",  0x2a0000, 0x20000, 0x880a02c7 )
-	ROM_END
-	
-	ROM_START( smashtv )
-		ROM_REGION( 0x10, REGION_CPU1, 0 )		/* 34010 dummy region */
-	
-		ROM_REGION( 0x70000, REGION_CPU2, 0 )	/* sound CPU */
-		ROM_LOAD (  "u4.snd", 0x10000, 0x10000, 0x29d3f6c8 )
-		ROM_LOAD ( "u19.snd", 0x30000, 0x10000, 0xac5a402a )
-		ROM_LOAD ( "u20.snd", 0x50000, 0x10000, 0x875c66d9 )
-	
-		ROM_REGION16_LE( 0x100000, REGION_USER1, ROMREGION_DISPOSE )	/* 34010 code */
-		ROM_LOAD16_BYTE( "u105.l8",  0xc0000, 0x20000, 0x48cd793f )
-		ROM_LOAD16_BYTE( "u89.l8",   0xc0001, 0x20000, 0x8e7fe463 )
-	
-		ROM_REGION( 0x800000, REGION_GFX1, ROMREGION_DISPOSE )
-		ROM_LOAD ( "u111.gam",  0x000000, 0x20000, 0x72f0ba84 )
-		ROM_LOAD ( "u112.gam",  0x020000, 0x20000, 0x436f0283 )
-		ROM_LOAD ( "u113.gam",  0x040000, 0x20000, 0x4a4b8110 )
-	
-		ROM_LOAD (  "u95.gam",  0x200000, 0x20000, 0xe864a44b )
-		ROM_LOAD (  "u96.gam",  0x220000, 0x20000, 0x15555ea7 )
-		ROM_LOAD (  "u97.gam",  0x240000, 0x20000, 0xccac9d9e )
-	
-	 	ROM_LOAD ( "u106.gam",  0x400000, 0x20000, 0x5c718361 )
-	 	ROM_LOAD ( "u107.gam",  0x420000, 0x20000, 0x0fba1e36 )
-	 	ROM_LOAD ( "u108.gam",  0x440000, 0x20000, 0xcb0a092f )
-	ROM_END
-	
-	ROM_START( smashtv6 )
-		ROM_REGION( 0x10, REGION_CPU1, 0 )		/* 34010 dummy region */
-	
-		ROM_REGION( 0x70000, REGION_CPU2, 0 )	/* sound CPU */
-		ROM_LOAD (  "u4.snd", 0x10000, 0x10000, 0x29d3f6c8 )
-		ROM_LOAD ( "u19.snd", 0x30000, 0x10000, 0xac5a402a )
-		ROM_LOAD ( "u20.snd", 0x50000, 0x10000, 0x875c66d9 )
-	
-		ROM_REGION16_LE( 0x100000, REGION_USER1, ROMREGION_DISPOSE )	/* 34010 code */
-		ROM_LOAD16_BYTE( "la6-u105",  0xc0000, 0x20000, 0xf1666017 )
-		ROM_LOAD16_BYTE( "la6-u89",   0xc0001, 0x20000, 0x908aca5d )
-	
-		ROM_REGION( 0x800000, REGION_GFX1, ROMREGION_DISPOSE )
-		ROM_LOAD ( "u111.gam",  0x000000, 0x20000, 0x72f0ba84 )
-		ROM_LOAD ( "u112.gam",  0x020000, 0x20000, 0x436f0283 )
-		ROM_LOAD ( "u113.gam",  0x040000, 0x20000, 0x4a4b8110 )
-	
-		ROM_LOAD (  "u95.gam",  0x200000, 0x20000, 0xe864a44b )
-		ROM_LOAD (  "u96.gam",  0x220000, 0x20000, 0x15555ea7 )
-		ROM_LOAD (  "u97.gam",  0x240000, 0x20000, 0xccac9d9e )
-	
-	 	ROM_LOAD ( "u106.gam",  0x400000, 0x20000, 0x5c718361 )
-	 	ROM_LOAD ( "u107.gam",  0x420000, 0x20000, 0x0fba1e36 )
-	 	ROM_LOAD ( "u108.gam",  0x440000, 0x20000, 0xcb0a092f )
-	ROM_END
-	
-	ROM_START( smashtv5 )
-		ROM_REGION( 0x10, REGION_CPU1, 0 )		/* 34010 dummy region */
-	
-		ROM_REGION( 0x70000, REGION_CPU2, 0 ) /* sound CPU */
-		ROM_LOAD (  "u4.snd", 0x10000, 0x10000, 0x29d3f6c8 )
-		ROM_LOAD ( "u19.snd", 0x30000, 0x10000, 0xac5a402a )
-		ROM_LOAD ( "u20.snd", 0x50000, 0x10000, 0x875c66d9 )
-	
-		ROM_REGION16_LE( 0x100000, REGION_USER1, ROMREGION_DISPOSE )	/* 34010 code */
-		ROM_LOAD16_BYTE( "u105-v5",  0xc0000, 0x20000, 0x81f564b9 )
-		ROM_LOAD16_BYTE( "u89-v5",   0xc0001, 0x20000, 0xe5017d25 )
-	
-		ROM_REGION( 0x800000, REGION_GFX1, ROMREGION_DISPOSE )
-		ROM_LOAD ( "u111.gam",  0x000000, 0x20000, 0x72f0ba84 )
-		ROM_LOAD ( "u112.gam",  0x020000, 0x20000, 0x436f0283 )
-		ROM_LOAD ( "u113.gam",  0x040000, 0x20000, 0x4a4b8110 )
-	
-		ROM_LOAD (  "u95.gam",  0x200000, 0x20000, 0xe864a44b )
-		ROM_LOAD (  "u96.gam",  0x220000, 0x20000, 0x15555ea7 )
-		ROM_LOAD (  "u97.gam",  0x240000, 0x20000, 0xccac9d9e )
-	
-	 	ROM_LOAD ( "u106.gam",  0x400000, 0x20000, 0x5c718361 )
-	 	ROM_LOAD ( "u107.gam",  0x420000, 0x20000, 0x0fba1e36 )
-	 	ROM_LOAD ( "u108.gam",  0x440000, 0x20000, 0xcb0a092f )
-	ROM_END
-	
-	ROM_START( smashtv4 )
-		ROM_REGION( 0x10, REGION_CPU1, 0 )		/* 34010 dummy region */
-	
-		ROM_REGION( 0x70000, REGION_CPU2, 0 )	/* sound CPU */
-		ROM_LOAD (  "u4.snd", 0x10000, 0x10000, 0x29d3f6c8 )
-		ROM_LOAD ( "u19.snd", 0x30000, 0x10000, 0xac5a402a )
-		ROM_LOAD ( "u20.snd", 0x50000, 0x10000, 0x875c66d9 )
-	
-		ROM_REGION16_LE( 0x100000, REGION_USER1, ROMREGION_DISPOSE )	/* 34010 code */
-		ROM_LOAD16_BYTE( "la4-u105",  0xc0000, 0x20000, 0xa50ccb71 )
-		ROM_LOAD16_BYTE( "la4-u89",   0xc0001, 0x20000, 0xef0b0279 )
-	
-		ROM_REGION( 0x800000, REGION_GFX1, ROMREGION_DISPOSE )
-		ROM_LOAD ( "u111.gam",  0x000000, 0x20000, 0x72f0ba84 )
-		ROM_LOAD ( "u112.gam",  0x020000, 0x20000, 0x436f0283 )
-		ROM_LOAD ( "u113.gam",  0x040000, 0x20000, 0x4a4b8110 )
-	
-		ROM_LOAD (  "u95.gam",  0x200000, 0x20000, 0xe864a44b )
-		ROM_LOAD (  "u96.gam",  0x220000, 0x20000, 0x15555ea7 )
-		ROM_LOAD (  "u97.gam",  0x240000, 0x20000, 0xccac9d9e )
-	
-	 	ROM_LOAD ( "u106.gam",  0x400000, 0x20000, 0x5c718361 )
-	 	ROM_LOAD ( "u107.gam",  0x420000, 0x20000, 0x0fba1e36 )
-	 	ROM_LOAD ( "u108.gam",  0x440000, 0x20000, 0xcb0a092f )
-	ROM_END
-	
-	ROM_START( hiimpact )
-		ROM_REGION( 0x10, REGION_CPU1, 0 )		/* 34010 dummy region */
-	
-		ROM_REGION( 0x70000, REGION_CPU2, 0 )	/* sound CPU */
-		ROM_LOAD (  "sl1u4.bin", 0x10000, 0x20000, 0x28effd6a )
-		ROM_LOAD ( "sl1u19.bin", 0x30000, 0x20000, 0x0ea22c89 )
-		ROM_LOAD ( "sl1u20.bin", 0x50000, 0x20000, 0x4e747ab5 )
-	
-		ROM_REGION16_LE( 0x100000, REGION_USER1, ROMREGION_DISPOSE )	/* 34010 code */
-		ROM_LOAD16_BYTE( "la3u105.bin",  0xc0000, 0x20000, 0xb9190c4a )
-		ROM_LOAD16_BYTE( "la3u89.bin",   0xc0001, 0x20000, 0x1cbc72a5 )
-	
-		ROM_REGION( 0x800000, REGION_GFX1, ROMREGION_DISPOSE )
-		ROM_LOAD ( "la1u111.bin",  0x000000, 0x20000, 0x49560560 )
-		ROM_LOAD ( "la1u112.bin",  0x020000, 0x20000, 0x4dd879dc )
-		ROM_LOAD ( "la1u113.bin",  0x040000, 0x20000, 0xb67aeb70 )
-		ROM_LOAD ( "la1u114.bin",  0x060000, 0x20000, 0x9a4bc44b )
-	
-		ROM_LOAD (  "la1u95.bin",  0x200000, 0x20000, 0xe1352dc0 )
-		ROM_LOAD (  "la1u96.bin",  0x220000, 0x20000, 0x197d0f34 )
-		ROM_LOAD (  "la1u97.bin",  0x240000, 0x20000, 0x908ea575 )
-		ROM_LOAD (  "la1u98.bin",  0x260000, 0x20000, 0x6dcbab11 )
-	
-	 	ROM_LOAD ( "la1u106.bin",  0x400000, 0x20000, 0x7d0ead0d )
-		ROM_LOAD ( "la1u107.bin",  0x420000, 0x20000, 0xef48e8fa )
-		ROM_LOAD ( "la1u108.bin",  0x440000, 0x20000, 0x5f363e12 )
-		ROM_LOAD ( "la1u109.bin",  0x460000, 0x20000, 0x3689fbbc )
-	ROM_END
-	
-	ROM_START( shimpact )
-		ROM_REGION( 0x10, REGION_CPU1, 0 )		/* 34010 dummy region */
-	
-		ROM_REGION( 0x70000, REGION_CPU2, 0 )	/* sound CPU */
-		ROM_LOAD (   "shiu4.bin", 0x10000, 0x20000, 0x1e5a012c )
-		ROM_LOAD (  "shiu19.bin", 0x30000, 0x20000, 0x10f9684e )
-		ROM_LOAD (  "shiu20.bin", 0x50000, 0x20000, 0x1b4a71c1 )
-	
-		ROM_REGION16_LE( 0x100000, REGION_USER1, ROMREGION_DISPOSE )	/* 34010 code */
-		ROM_LOAD16_BYTE( "shiu105.bin",  0xc0000, 0x20000, 0xf2cf8de3 )
-		ROM_LOAD16_BYTE( "shiu89.bin",   0xc0001, 0x20000, 0xf97d9b01 )
-	
-		ROM_REGION( 0x800000, REGION_GFX1, ROMREGION_DISPOSE )
-		ROM_LOAD ( "shiu111.bin",  0x000000, 0x40000, 0x80ae2a86 )
-		ROM_LOAD ( "shiu112.bin",  0x040000, 0x40000, 0x3ffc27e9 )
-		ROM_LOAD ( "shiu113.bin",  0x080000, 0x40000, 0x01549d00 )
-		ROM_LOAD ( "shiu114.bin",  0x0c0000, 0x40000, 0xa68af319 )
-	
-		ROM_LOAD (  "shiu95.bin",  0x200000, 0x40000, 0xe8f56ef5 )
-		ROM_LOAD (  "shiu96.bin",  0x240000, 0x40000, 0x24ed04f9 )
-		ROM_LOAD (  "shiu97.bin",  0x280000, 0x40000, 0xdd7f41a9 )
-		ROM_LOAD (  "shiu98.bin",  0x2c0000, 0x40000, 0x23ef65dd )
-	
-		ROM_LOAD ( "shiu106.bin",  0x400000, 0x40000, 0x6f5bf337 )
-		ROM_LOAD ( "shiu107.bin",  0x440000, 0x40000, 0xa8815dad )
-		ROM_LOAD ( "shiu108.bin",  0x480000, 0x40000, 0xd39685a3 )
-		ROM_LOAD ( "shiu109.bin",  0x4c0000, 0x40000, 0x36e0b2b2 )
-	ROM_END
-	
-	ROM_START( strkforc )
-		ROM_REGION( 0x10, REGION_CPU1, 0 )		/* 34010 dummy region */
-	
-		ROM_REGION( 0x70000, REGION_CPU2, 0 )	/* sound CPU */
-		ROM_LOAD (  "sfu4.bin", 0x10000, 0x10000, 0x8f747312 )
-		ROM_LOAD ( "sfu19.bin", 0x30000, 0x10000, 0xafb29926 )
-		ROM_LOAD ( "sfu20.bin", 0x50000, 0x10000, 0x1bc9b746 )
-	
-		ROM_REGION16_LE( 0x100000, REGION_USER1, ROMREGION_DISPOSE )	/* 34010 code */
-		ROM_LOAD16_BYTE( "sfu105.bin",  0xc0000, 0x20000, 0x7895e0e3 )
-		ROM_LOAD16_BYTE( "sfu89.bin",   0xc0001, 0x20000, 0x26114d9e )
-	
-		ROM_REGION( 0x800000, REGION_GFX1, ROMREGION_DISPOSE )
-		ROM_LOAD ( "sfu111.bin",  0x000000, 0x20000, 0x878efc80 )
-		ROM_LOAD ( "sfu112.bin",  0x020000, 0x20000, 0x93394399 )
-		ROM_LOAD ( "sfu113.bin",  0x040000, 0x20000, 0x9565a79b )
-		ROM_LOAD ( "sfu114.bin",  0x060000, 0x20000, 0xb71152da )
-	
-		ROM_LOAD (  "sfu95.bin",  0x200000, 0x20000, 0x519cb2b4 )
-		ROM_LOAD (  "sfu96.bin",  0x220000, 0x20000, 0x61214796 )
-		ROM_LOAD (  "sfu97.bin",  0x240000, 0x20000, 0xeb5dee5f )
-		ROM_LOAD (  "sfu98.bin",  0x260000, 0x20000, 0xc5c079e7 )
-	
-	 	ROM_LOAD ( "sfu106.bin",  0x080000, 0x20000, 0xa394d4cf )
-	 	ROM_LOAD ( "sfu107.bin",  0x0a0000, 0x20000, 0xedef1419 )
-	
-		ROM_LOAD (  "sfu90.bin",  0x280000, 0x20000, 0x607bcdc0 )
-		ROM_LOAD (  "sfu91.bin",  0x2a0000, 0x20000, 0xda02547e )
-	ROM_END
-	
-	ROM_START( mkla1 )
-		ROM_REGION( 0x10, REGION_CPU1, 0 )		/* 34010 dummy region */
-	
-		ROM_REGION( 0x50000, REGION_CPU2, 0 )	/* sound CPU */
-		ROM_LOAD (  "mks-u3.rom", 0x10000, 0x40000, 0xc615844c )
-	
-		ROM_REGION( 0xc0000, REGION_SOUND1, 0 )	/* ADPCM */
-		ROM_LOAD ( "mks-u12.rom", 0x00000, 0x40000, 0x258bd7f9 )
-		ROM_LOAD ( "mks-u13.rom", 0x40000, 0x40000, 0x7b7ec3b6 )
-	
-		ROM_REGION16_LE( 0x100000, REGION_USER1, ROMREGION_DISPOSE )	/* 34010 code */
-		ROM_LOAD16_BYTE( "mkg-u105.la1",  0x00000, 0x80000, 0xe1f7b4c9 )
-		ROM_LOAD16_BYTE(  "mkg-u89.la1",  0x00001, 0x80000, 0x9d38ac75 )
-	
-		ROM_REGION( 0x800000, REGION_GFX1, ROMREGION_DISPOSE )
-		ROM_LOAD ( "mkg-u111.rom",  0x000000, 0x80000, 0xd17096c4 )
-		ROM_LOAD ( "mkg-u112.rom",  0x080000, 0x80000, 0x993bc2e4 )
-		ROM_LOAD ( "mkg-u113.rom",  0x100000, 0x80000, 0x6fb91ede )
-		ROM_LOAD ( "mkg-u114.rom",  0x180000, 0x80000, 0xed1ff88a )
-	
-	 	ROM_LOAD (  "mkg-u95.rom",  0x200000, 0x80000, 0xa002a155 )
-	 	ROM_LOAD (  "mkg-u96.rom",  0x280000, 0x80000, 0xdcee8492 )
-		ROM_LOAD (  "mkg-u97.rom",  0x300000, 0x80000, 0xde88caef )
-		ROM_LOAD (  "mkg-u98.rom",  0x380000, 0x80000, 0x37eb01b4 )
-	
-		ROM_LOAD ( "mkg-u106.rom",  0x400000, 0x80000, 0x45acaf21 )
-	 	ROM_LOAD ( "mkg-u107.rom",  0x480000, 0x80000, 0x2a6c10a0 )
-	  	ROM_LOAD ( "mkg-u108.rom",  0x500000, 0x80000, 0x23308979 )
-	 	ROM_LOAD ( "mkg-u109.rom",  0x580000, 0x80000, 0xcafc47bb )
-	ROM_END
-	
-	ROM_START( mkla2 )
-		ROM_REGION( 0x10, REGION_CPU1, 0 )		/* 34010 dummy region */
-	
-		ROM_REGION( 0x50000, REGION_CPU2, 0 )	/* sound CPU */
-		ROM_LOAD (  "mks-u3.rom", 0x10000, 0x40000, 0xc615844c )
-	
-		ROM_REGION( 0xc0000, REGION_SOUND1, 0 )	/* ADPCM */
-		ROM_LOAD ( "mks-u12.rom", 0x00000, 0x40000, 0x258bd7f9 )
-		ROM_LOAD ( "mks-u13.rom", 0x40000, 0x40000, 0x7b7ec3b6 )
-	
-		ROM_REGION16_LE( 0x100000, REGION_USER1, ROMREGION_DISPOSE )	/* 34010 code */
-		ROM_LOAD16_BYTE( "mkg-u105.la2",  0x00000, 0x80000, 0x8531d44e )
-		ROM_LOAD16_BYTE(  "mkg-u89.la2",  0x00001, 0x80000, 0xb88dc26e )
-	
-		ROM_REGION( 0x800000, REGION_GFX1, ROMREGION_DISPOSE )
-		ROM_LOAD ( "mkg-u111.rom",  0x000000, 0x80000, 0xd17096c4 )
-		ROM_LOAD ( "mkg-u112.rom",  0x080000, 0x80000, 0x993bc2e4 )
-		ROM_LOAD ( "mkg-u113.rom",  0x100000, 0x80000, 0x6fb91ede )
-		ROM_LOAD ( "mkg-u114.rom",  0x180000, 0x80000, 0xed1ff88a )
-	
-	 	ROM_LOAD (  "mkg-u95.rom",  0x200000, 0x80000, 0xa002a155 )
-	 	ROM_LOAD (  "mkg-u96.rom",  0x280000, 0x80000, 0xdcee8492 )
-		ROM_LOAD (  "mkg-u97.rom",  0x300000, 0x80000, 0xde88caef )
-		ROM_LOAD (  "mkg-u98.rom",  0x380000, 0x80000, 0x37eb01b4 )
-	
-		ROM_LOAD ( "mkg-u106.rom",  0x400000, 0x80000, 0x45acaf21 )
-	 	ROM_LOAD ( "mkg-u107.rom",  0x480000, 0x80000, 0x2a6c10a0 )
-	  	ROM_LOAD ( "mkg-u108.rom",  0x500000, 0x80000, 0x23308979 )
-	 	ROM_LOAD ( "mkg-u109.rom",  0x580000, 0x80000, 0xcafc47bb )
-	ROM_END
-	
-	ROM_START( mkla3 )
-		ROM_REGION( 0x10, REGION_CPU1, 0 )		/* 34010 dummy region */
-	
-		ROM_REGION( 0x50000, REGION_CPU2, 0 )	/* sound CPU */
-		ROM_LOAD (  "mks-u3.rom", 0x10000, 0x40000, 0xc615844c )
-	
-		ROM_REGION( 0xc0000, REGION_SOUND1, 0 )	/* ADPCM */
-		ROM_LOAD ( "mks-u12.rom", 0x00000, 0x40000, 0x258bd7f9 )
-		ROM_LOAD ( "mks-u13.rom", 0x40000, 0x40000, 0x7b7ec3b6 )
-	
-		ROM_REGION16_LE( 0x100000, REGION_USER1, ROMREGION_DISPOSE )	/* 34010 code */
-		ROM_LOAD16_BYTE( "mkg-u105.la3",  0x00000, 0x80000, 0x2ce843c5 )
-		ROM_LOAD16_BYTE(  "mkg-u89.la3",  0x00001, 0x80000, 0x49a46e10 )
-	
-		ROM_REGION( 0x800000, REGION_GFX1, ROMREGION_DISPOSE )
-		ROM_LOAD ( "mkg-u111.rom",  0x000000, 0x80000, 0xd17096c4 )
-		ROM_LOAD ( "mkg-u112.rom",  0x080000, 0x80000, 0x993bc2e4 )
-		ROM_LOAD ( "mkg-u113.rom",  0x100000, 0x80000, 0x6fb91ede )
-		ROM_LOAD ( "mkg-u114.rom",  0x180000, 0x80000, 0xed1ff88a )
-	
-	 	ROM_LOAD (  "mkg-u95.rom",  0x200000, 0x80000, 0xa002a155 )
-	 	ROM_LOAD (  "mkg-u96.rom",  0x280000, 0x80000, 0xdcee8492 )
-		ROM_LOAD (  "mkg-u97.rom",  0x300000, 0x80000, 0xde88caef )
-		ROM_LOAD (  "mkg-u98.rom",  0x380000, 0x80000, 0x37eb01b4 )
-	
-		ROM_LOAD ( "mkg-u106.rom",  0x400000, 0x80000, 0x45acaf21 )
-	 	ROM_LOAD ( "mkg-u107.rom",  0x480000, 0x80000, 0x2a6c10a0 )
-	  	ROM_LOAD ( "mkg-u108.rom",  0x500000, 0x80000, 0x23308979 )
-	 	ROM_LOAD ( "mkg-u109.rom",  0x580000, 0x80000, 0xcafc47bb )
-	ROM_END
-	
-	ROM_START( mkla4 )
-		ROM_REGION( 0x10, REGION_CPU1, 0 )		/* 34010 dummy region */
-	
-		ROM_REGION( 0x50000, REGION_CPU2, 0 )	/* sound CPU */
-		ROM_LOAD (  "mks-u3.rom", 0x10000, 0x40000, 0xc615844c )
-	
-		ROM_REGION( 0xc0000, REGION_SOUND1, 0 )	/* ADPCM */
-		ROM_LOAD ( "mks-u12.rom", 0x00000, 0x40000, 0x258bd7f9 )
-		ROM_LOAD ( "mks-u13.rom", 0x40000, 0x40000, 0x7b7ec3b6 )
-	
-		ROM_REGION16_LE( 0x100000, REGION_USER1, ROMREGION_DISPOSE )	/* 34010 code */
-		ROM_LOAD16_BYTE( "mkg-u105.la4",  0x00000, 0x80000, 0x29af348f )
-		ROM_LOAD16_BYTE(  "mkg-u89.la4",  0x00001, 0x80000, 0x1ad76662 )
-	
-		ROM_REGION( 0x800000, REGION_GFX1, ROMREGION_DISPOSE )
-		ROM_LOAD ( "mkg-u111.rom",  0x000000, 0x80000, 0xd17096c4 )
-		ROM_LOAD ( "mkg-u112.rom",  0x080000, 0x80000, 0x993bc2e4 )
-		ROM_LOAD ( "mkg-u113.rom",  0x100000, 0x80000, 0x6fb91ede )
-		ROM_LOAD ( "mkg-u114.rom",  0x180000, 0x80000, 0xed1ff88a )
-	
-	 	ROM_LOAD (  "mkg-u95.rom",  0x200000, 0x80000, 0xa002a155 )
-	 	ROM_LOAD (  "mkg-u96.rom",  0x280000, 0x80000, 0xdcee8492 )
-		ROM_LOAD (  "mkg-u97.rom",  0x300000, 0x80000, 0xde88caef )
-		ROM_LOAD (  "mkg-u98.rom",  0x380000, 0x80000, 0x37eb01b4 )
-	
-		ROM_LOAD ( "mkg-u106.rom",  0x400000, 0x80000, 0x45acaf21 )
-	 	ROM_LOAD ( "mkg-u107.rom",  0x480000, 0x80000, 0x2a6c10a0 )
-	  	ROM_LOAD ( "mkg-u108.rom",  0x500000, 0x80000, 0x23308979 )
-	 	ROM_LOAD ( "mkg-u109.rom",  0x580000, 0x80000, 0xcafc47bb )
-	ROM_END
-	
-	ROM_START( term2 )
-		ROM_REGION( 0x10, REGION_CPU1, 0 )		/* 34010 dummy region */
-	
-		ROM_REGION( 0x50000, REGION_CPU2, 0 )	/* sound CPU */
-		ROM_LOAD (  "t2_snd.3", 0x10000, 0x20000, 0x73c3f5c4 )
-		ROM_RELOAD (            0x30000, 0x20000 )
-	
-		ROM_REGION( 0xc0000, REGION_SOUND1, 0 )	/* ADPCM */
-		ROM_LOAD ( "t2_snd.12", 0x00000, 0x40000, 0xe192a40d )
-		ROM_LOAD ( "t2_snd.13", 0x40000, 0x40000, 0x956fa80b )
-	
-		ROM_REGION16_LE( 0x100000, REGION_USER1, ROMREGION_DISPOSE )	/* 34010 code */
-		ROM_LOAD16_BYTE( "t2.105",  0x00000, 0x80000, 0x34142b28 )
-		ROM_LOAD16_BYTE( "t2.89",   0x00001, 0x80000, 0x5ffea427 )
-	
-		ROM_REGION( 0x800000, REGION_GFX1, ROMREGION_DISPOSE )
-		ROM_LOAD ( "t2.111",  0x000000, 0x80000, 0x916d0197 )
-		ROM_LOAD ( "t2.112",  0x080000, 0x80000, 0x39ae1c87 )
-		ROM_LOAD ( "t2.113",  0x100000, 0x80000, 0xcb5084e5 )
-		ROM_LOAD ( "t2.114",  0x180000, 0x80000, 0x53c516ec )
-	
-		ROM_LOAD (  "t2.95",  0x200000, 0x80000, 0xdd39cf73 )
-		ROM_LOAD (  "t2.96",  0x280000, 0x80000, 0x31f4fd36 )
-		ROM_LOAD (  "t2.97",  0x300000, 0x80000, 0x7f72e775 )
-		ROM_LOAD (  "t2.98",  0x380000, 0x80000, 0x1a20ce29 )
-	
-		ROM_LOAD ( "t2.106",  0x400000, 0x80000, 0xf08a9536 )
-	 	ROM_LOAD ( "t2.107",  0x480000, 0x80000, 0x268d4035 )
-	 	ROM_LOAD ( "t2.108",  0x500000, 0x80000, 0x379fdaed )
-	 	ROM_LOAD ( "t2.109",  0x580000, 0x80000, 0x306a9366 )
-	ROM_END
-	
-	ROM_START( totcarn )
-		ROM_REGION( 0x10, REGION_CPU1, 0 )		/* 34010 dummy region */
-	
-		ROM_REGION( 0x50000, REGION_CPU2, 0 )	/* sound CPU */
-		ROM_LOAD (  "tcu3.bin", 0x10000, 0x20000, 0x5bdb4665 )
-		ROM_RELOAD (            0x30000, 0x20000 )
-	
-		ROM_REGION( 0xc0000, REGION_SOUND1, 0 )	/* ADPCM */
-		ROM_LOAD ( "tcu12.bin", 0x00000, 0x40000, 0xd0000ac7 )
-		ROM_LOAD ( "tcu13.bin", 0x40000, 0x40000, 0xe48e6f0c )
-	
-		ROM_REGION16_LE( 0x100000, REGION_USER1, ROMREGION_DISPOSE )	/* 34010 code */
-		ROM_LOAD16_BYTE( "tcu105.bin",  0x80000, 0x40000, 0x7c651047 )
-		ROM_LOAD16_BYTE( "tcu89.bin",   0x80001, 0x40000, 0x6761daf3 )
-	
-		ROM_REGION( 0x800000, REGION_GFX1, ROMREGION_DISPOSE )
-		ROM_LOAD ( "tcu111.bin",  0x000000, 0x40000, 0x13f3f231 )
-		ROM_LOAD ( "tcu112.bin",  0x040000, 0x40000, 0x72e45007 )
-		ROM_LOAD ( "tcu113.bin",  0x080000, 0x40000, 0x2c8ec753 )
-		ROM_LOAD ( "tcu114.bin",  0x0c0000, 0x40000, 0x6210c36c )
-	
-		ROM_LOAD (  "tcu95.bin",  0x200000, 0x40000, 0x579caeba )
-		ROM_LOAD (  "tcu96.bin",  0x240000, 0x40000, 0xf43f1ffe )
-		ROM_LOAD (  "tcu97.bin",  0x280000, 0x40000, 0x1675e50d )
-		ROM_LOAD (  "tcu98.bin",  0x2c0000, 0x40000, 0xab06c885 )
-	
-		ROM_LOAD ( "tcu106.bin",  0x400000, 0x40000, 0x146e3863 )
-	 	ROM_LOAD ( "tcu107.bin",  0x440000, 0x40000, 0x95323320 )
-	 	ROM_LOAD ( "tcu108.bin",  0x480000, 0x40000, 0xed152acc )
-	 	ROM_LOAD ( "tcu109.bin",  0x4c0000, 0x40000, 0x80715252 )
-	ROM_END
-	
-	ROM_START( totcarnp )
-		ROM_REGION( 0x10, REGION_CPU1, 0 )		/* 34010 dummy region */
-	
-		ROM_REGION( 0x50000, REGION_CPU2, 0 )	/* sound CPU */
-		ROM_LOAD (  "tcu3.bin", 0x10000, 0x20000, 0x5bdb4665 )
-		ROM_RELOAD (            0x30000, 0x20000 )
-	
-		ROM_REGION( 0xc0000, REGION_SOUND1, 0 )	/* ADPCM */
-		ROM_LOAD ( "tcu12.bin", 0x00000, 0x40000, 0xd0000ac7 )
-		ROM_LOAD ( "tcu13.bin", 0x40000, 0x40000, 0xe48e6f0c )
-	
-		ROM_REGION16_LE( 0x100000, REGION_USER1, ROMREGION_DISPOSE )	/* 34010 code */
-		ROM_LOAD16_BYTE( "u105",  0x80000, 0x40000, 0x7a782cae )
-		ROM_LOAD16_BYTE( "u89",   0x80001, 0x40000, 0x1c899a8d )
-	
-		ROM_REGION( 0x800000, REGION_GFX1, ROMREGION_DISPOSE )
-		ROM_LOAD ( "tcu111.bin",  0x000000, 0x40000, 0x13f3f231 )
-		ROM_LOAD ( "tcu112.bin",  0x040000, 0x40000, 0x72e45007 )
-		ROM_LOAD ( "tcu113.bin",  0x080000, 0x40000, 0x2c8ec753 )
-		ROM_LOAD ( "tcu114.bin",  0x0c0000, 0x40000, 0x6210c36c )
-	
-		ROM_LOAD (  "tcu95.bin",  0x200000, 0x40000, 0x579caeba )
-		ROM_LOAD (  "tcu96.bin",  0x240000, 0x40000, 0xf43f1ffe )
-		ROM_LOAD (  "tcu97.bin",  0x280000, 0x40000, 0x1675e50d )
-		ROM_LOAD (  "tcu98.bin",  0x2c0000, 0x40000, 0xab06c885 )
-	
-		ROM_LOAD ( "tcu106.bin",  0x400000, 0x40000, 0x146e3863 )
-	 	ROM_LOAD ( "tcu107.bin",  0x440000, 0x40000, 0x95323320 )
-	 	ROM_LOAD ( "tcu108.bin",  0x480000, 0x40000, 0xed152acc )
-	 	ROM_LOAD ( "tcu109.bin",  0x4c0000, 0x40000, 0x80715252 )
-	ROM_END
+	static RomLoadPtr rom_narc = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x10, REGION_CPU1, 0 );	/* 34010 dummy region */
+	
+		ROM_REGION( 0x30000, REGION_CPU2, 0 );/* sound CPU */
+		ROM_LOAD ( "u4-snd", 0x10000, 0x10000, 0x450a591a );
+		ROM_LOAD ( "u5-snd", 0x20000, 0x10000, 0xe551e5e3 );
+	
+		ROM_REGION( 0x50000, REGION_CPU3, 0 );/* slave sound CPU */
+		ROM_LOAD ( "u35-snd", 0x10000, 0x10000, 0x81295892 );
+		ROM_LOAD ( "u36-snd", 0x20000, 0x10000, 0x16cdbb13 );
+		ROM_LOAD ( "u37-snd", 0x30000, 0x10000, 0x29dbeffd );
+		ROM_LOAD ( "u38-snd", 0x40000, 0x10000, 0x09b03b80 );
+	
+		ROM_REGION16_LE( 0x100000, REGION_USER1, ROMREGION_DISPOSE );/* 34010 code */
+		ROM_LOAD16_BYTE( "u42",  0x80000, 0x20000, 0xd1111b76 );
+		ROM_LOAD16_BYTE( "u24",  0x80001, 0x20000, 0xaa0d3082 );
+		ROM_LOAD16_BYTE( "u41",  0xc0000, 0x20000, 0x3903191f );
+		ROM_LOAD16_BYTE( "u23",  0xc0001, 0x20000, 0x7a316582 );
+	
+		ROM_REGION( 0x800000, REGION_GFX1, ROMREGION_DISPOSE );
+		ROM_LOAD ( "u94",  0x000000, 0x10000, 0xca3194e4 );
+		ROM_LOAD ( "u76",  0x200000, 0x10000, 0x1cd897f4 );
+		ROM_LOAD ( "u93",  0x010000, 0x10000, 0x0ed7f7f5 );
+		ROM_LOAD ( "u75",  0x210000, 0x10000, 0x78abfa01 );
+		ROM_LOAD ( "u92",  0x020000, 0x10000, 0x40d2fc66 );
+		ROM_LOAD ( "u74",  0x220000, 0x10000, 0x66d2a234 );
+		ROM_LOAD ( "u91",  0x030000, 0x10000, 0xf39325e0 );
+		ROM_LOAD ( "u73",  0x230000, 0x10000, 0xefa5cd4e );
+		ROM_LOAD ( "u90",  0x040000, 0x10000, 0x0132aefa );
+		ROM_LOAD ( "u72",  0x240000, 0x10000, 0x70638eb5 );
+		ROM_LOAD ( "u89",  0x050000, 0x10000, 0xf7260c9e );
+		ROM_LOAD ( "u71",  0x250000, 0x10000, 0x61226883 );
+		ROM_LOAD ( "u88",  0x060000, 0x10000, 0xedc19f42 );
+		ROM_LOAD ( "u70",  0x260000, 0x10000, 0xc808849f );
+		ROM_LOAD ( "u87",  0x070000, 0x10000, 0xd9b42ff9 );
+		ROM_LOAD ( "u69",  0x270000, 0x10000, 0xe7f9c34f );
+		ROM_LOAD ( "u86",  0x080000, 0x10000, 0xaf7daad3 );
+		ROM_LOAD ( "u68",  0x280000, 0x10000, 0x88a634d5 );
+		ROM_LOAD ( "u85",  0x090000, 0x10000, 0x095fae6b );
+		ROM_LOAD ( "u67",  0x290000, 0x10000, 0x4ab8b69e );
+		ROM_LOAD ( "u84",  0x0a0000, 0x10000, 0x3fdf2057 );
+		ROM_LOAD ( "u66",  0x2a0000, 0x10000, 0xe1da4b25 );
+		ROM_LOAD ( "u83",  0x0b0000, 0x10000, 0xf2d27c9f );
+		ROM_LOAD ( "u65",  0x2b0000, 0x10000, 0x6df0d125 );
+		ROM_LOAD ( "u82",  0x0c0000, 0x10000, 0x962ce47c );
+		ROM_LOAD ( "u64",  0x2c0000, 0x10000, 0xabab1b16 );
+		ROM_LOAD ( "u81",  0x0d0000, 0x10000, 0x00fe59ec );
+		ROM_LOAD ( "u63",  0x2d0000, 0x10000, 0x80602f31 );
+		ROM_LOAD ( "u80",  0x0e0000, 0x10000, 0x147ba8e9 );
+		ROM_LOAD ( "u62",  0x2e0000, 0x10000, 0xc2a476d1 );
+	
+		ROM_LOAD ( "u58",  0x400000, 0x10000, 0x8a7501e3 );
+		ROM_LOAD ( "u40",  0x600000, 0x10000, 0x7fcaebc7 );
+		ROM_LOAD ( "u57",  0x410000, 0x10000, 0xa504735f );
+		ROM_LOAD ( "u39",  0x610000, 0x10000, 0x7db5cf52 );
+		ROM_LOAD ( "u56",  0x420000, 0x10000, 0x55f8cca7 );
+		ROM_LOAD ( "u38",  0x620000, 0x10000, 0x3f9f3ef7 );
+		ROM_LOAD ( "u55",  0x430000, 0x10000, 0xd3c932c1 );
+		ROM_LOAD ( "u37",  0x630000, 0x10000, 0xed81826c );
+		ROM_LOAD ( "u54",  0x440000, 0x10000, 0xc7f4134b );
+		ROM_LOAD ( "u36",  0x640000, 0x10000, 0xe5d855c0 );
+		ROM_LOAD ( "u53",  0x450000, 0x10000, 0x6be4da56 );
+		ROM_LOAD ( "u35",  0x650000, 0x10000, 0x3a7b1329 );
+		ROM_LOAD ( "u52",  0x460000, 0x10000, 0x1ea36a4a );
+		ROM_LOAD ( "u34",  0x660000, 0x10000, 0xfe982b0e );
+		ROM_LOAD ( "u51",  0x470000, 0x10000, 0x9d4b0324 );
+		ROM_LOAD ( "u33",  0x670000, 0x10000, 0x6bc7eb0f );
+		ROM_LOAD ( "u50",  0x480000, 0x10000, 0x6f9f0c26 );
+		ROM_LOAD ( "u32",  0x680000, 0x10000, 0x5875a6d3 );
+		ROM_LOAD ( "u49",  0x490000, 0x10000, 0x80386fce );
+		ROM_LOAD ( "u31",  0x690000, 0x10000, 0x2fa4b8e5 );
+		ROM_LOAD ( "u48",  0x4a0000, 0x10000, 0x05c16185 );
+		ROM_LOAD ( "u30",  0x6a0000, 0x10000, 0x7e4bb8ee );
+		ROM_LOAD ( "u47",  0x4b0000, 0x10000, 0x4c0151f1 );
+		ROM_LOAD ( "u29",  0x6b0000, 0x10000, 0x45136fd9 );
+		ROM_LOAD ( "u46",  0x4c0000, 0x10000, 0x5670bfcb );
+		ROM_LOAD ( "u28",  0x6c0000, 0x10000, 0xd6cdac24 );
+		ROM_LOAD ( "u45",  0x4d0000, 0x10000, 0x27f10d98 );
+		ROM_LOAD ( "u27",  0x6d0000, 0x10000, 0x4d33bbec );
+		ROM_LOAD ( "u44",  0x4e0000, 0x10000, 0x93b8eaa4 );
+		ROM_LOAD ( "u26",  0x6e0000, 0x10000, 0xcb19f784 );
+	ROM_END(); }}; 
+	
+	static RomLoadPtr rom_narc3 = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x10, REGION_CPU1, 0 );	/* 34010 dummy region */
+	
+		ROM_REGION( 0x30000, REGION_CPU2, 0 );    /* sound CPU */
+		ROM_LOAD ( "u4-snd", 0x10000, 0x10000, 0x450a591a );
+		ROM_LOAD ( "u5-snd", 0x20000, 0x10000, 0xe551e5e3 );
+	
+		ROM_REGION( 0x50000, REGION_CPU3, 0 );    /* slave sound CPU */
+		ROM_LOAD ( "u35-snd", 0x10000, 0x10000, 0x81295892 );
+		ROM_LOAD ( "u36-snd", 0x20000, 0x10000, 0x16cdbb13 );
+		ROM_LOAD ( "u37-snd", 0x30000, 0x10000, 0x29dbeffd );
+		ROM_LOAD ( "u38-snd", 0x40000, 0x10000, 0x09b03b80 );
+	
+		ROM_REGION16_LE( 0x100000, REGION_USER1, ROMREGION_DISPOSE );/* 34010 code */
+		ROM_LOAD16_BYTE( "narcrev3.u78",  0x00000, 0x10000, 0x388581b0 );
+		ROM_LOAD16_BYTE( "narcrev3.u60",  0x00001, 0x10000, 0xf273bc04 );
+		ROM_LOAD16_BYTE( "narcrev3.u77",  0x40000, 0x10000, 0xbdafaccc );
+		ROM_LOAD16_BYTE( "narcrev3.u59",  0x40001, 0x10000, 0x96314a99 );
+		ROM_LOAD16_BYTE( "narcrev3.u42",  0x80000, 0x10000, 0x56aebc81 );
+		ROM_LOAD16_BYTE( "narcrev3.u24",  0x80001, 0x10000, 0x11d7e143 );
+		ROM_LOAD16_BYTE( "narcrev3.u41",  0xc0000, 0x10000, 0x6142fab7 );
+		ROM_LOAD16_BYTE( "narcrev3.u23",  0xc0001, 0x10000, 0x98cdd178 );
+	
+		ROM_REGION( 0x800000, REGION_GFX1, ROMREGION_DISPOSE );
+		ROM_LOAD ( "u94",  0x000000, 0x10000, 0xca3194e4 );
+		ROM_LOAD ( "u76",  0x200000, 0x10000, 0x1cd897f4 );
+		ROM_LOAD ( "u93",  0x010000, 0x10000, 0x0ed7f7f5 );
+		ROM_LOAD ( "u75",  0x210000, 0x10000, 0x78abfa01 );
+		ROM_LOAD ( "u92",  0x020000, 0x10000, 0x40d2fc66 );
+		ROM_LOAD ( "u74",  0x220000, 0x10000, 0x66d2a234 );
+		ROM_LOAD ( "u91",  0x030000, 0x10000, 0xf39325e0 );
+		ROM_LOAD ( "u73",  0x230000, 0x10000, 0xefa5cd4e );
+		ROM_LOAD ( "u90",  0x040000, 0x10000, 0x0132aefa );
+		ROM_LOAD ( "u72",  0x240000, 0x10000, 0x70638eb5 );
+		ROM_LOAD ( "u89",  0x050000, 0x10000, 0xf7260c9e );
+		ROM_LOAD ( "u71",  0x250000, 0x10000, 0x61226883 );
+		ROM_LOAD ( "u88",  0x060000, 0x10000, 0xedc19f42 );
+		ROM_LOAD ( "u70",  0x260000, 0x10000, 0xc808849f );
+		ROM_LOAD ( "u87",  0x070000, 0x10000, 0xd9b42ff9 );
+		ROM_LOAD ( "u69",  0x270000, 0x10000, 0xe7f9c34f );
+		ROM_LOAD ( "u86",  0x080000, 0x10000, 0xaf7daad3 );
+		ROM_LOAD ( "u68",  0x280000, 0x10000, 0x88a634d5 );
+		ROM_LOAD ( "u85",  0x090000, 0x10000, 0x095fae6b );
+		ROM_LOAD ( "u67",  0x290000, 0x10000, 0x4ab8b69e );
+		ROM_LOAD ( "u84",  0x0a0000, 0x10000, 0x3fdf2057 );
+		ROM_LOAD ( "u66",  0x2a0000, 0x10000, 0xe1da4b25 );
+		ROM_LOAD ( "u83",  0x0b0000, 0x10000, 0xf2d27c9f );
+		ROM_LOAD ( "u65",  0x2b0000, 0x10000, 0x6df0d125 );
+		ROM_LOAD ( "u82",  0x0c0000, 0x10000, 0x962ce47c );
+		ROM_LOAD ( "u64",  0x2c0000, 0x10000, 0xabab1b16 );
+		ROM_LOAD ( "u81",  0x0d0000, 0x10000, 0x00fe59ec );
+		ROM_LOAD ( "u63",  0x2d0000, 0x10000, 0x80602f31 );
+		ROM_LOAD ( "u80",  0x0e0000, 0x10000, 0x147ba8e9 );
+		ROM_LOAD ( "u62",  0x2e0000, 0x10000, 0xc2a476d1 );
+	
+		ROM_LOAD ( "u58",  0x400000, 0x10000, 0x8a7501e3 );
+		ROM_LOAD ( "u40",  0x600000, 0x10000, 0x7fcaebc7 );
+		ROM_LOAD ( "u57",  0x410000, 0x10000, 0xa504735f );
+		ROM_LOAD ( "u39",  0x610000, 0x10000, 0x7db5cf52 );
+		ROM_LOAD ( "u56",  0x420000, 0x10000, 0x55f8cca7 );
+		ROM_LOAD ( "u38",  0x620000, 0x10000, 0x3f9f3ef7 );
+		ROM_LOAD ( "u55",  0x430000, 0x10000, 0xd3c932c1 );
+		ROM_LOAD ( "u37",  0x630000, 0x10000, 0xed81826c );
+		ROM_LOAD ( "u54",  0x440000, 0x10000, 0xc7f4134b );
+		ROM_LOAD ( "u36",  0x640000, 0x10000, 0xe5d855c0 );
+		ROM_LOAD ( "u53",  0x450000, 0x10000, 0x6be4da56 );
+		ROM_LOAD ( "u35",  0x650000, 0x10000, 0x3a7b1329 );
+		ROM_LOAD ( "u52",  0x460000, 0x10000, 0x1ea36a4a );
+		ROM_LOAD ( "u34",  0x660000, 0x10000, 0xfe982b0e );
+		ROM_LOAD ( "u51",  0x470000, 0x10000, 0x9d4b0324 );
+		ROM_LOAD ( "u33",  0x670000, 0x10000, 0x6bc7eb0f );
+		ROM_LOAD ( "u50",  0x480000, 0x10000, 0x6f9f0c26 );
+		ROM_LOAD ( "u32",  0x680000, 0x10000, 0x5875a6d3 );
+		ROM_LOAD ( "u49",  0x490000, 0x10000, 0x80386fce );
+		ROM_LOAD ( "u31",  0x690000, 0x10000, 0x2fa4b8e5 );
+		ROM_LOAD ( "u48",  0x4a0000, 0x10000, 0x05c16185 );
+		ROM_LOAD ( "u30",  0x6a0000, 0x10000, 0x7e4bb8ee );
+		ROM_LOAD ( "u47",  0x4b0000, 0x10000, 0x4c0151f1 );
+		ROM_LOAD ( "u29",  0x6b0000, 0x10000, 0x45136fd9 );
+		ROM_LOAD ( "u46",  0x4c0000, 0x10000, 0x5670bfcb );
+		ROM_LOAD ( "u28",  0x6c0000, 0x10000, 0xd6cdac24 );
+		ROM_LOAD ( "u45",  0x4d0000, 0x10000, 0x27f10d98 );
+		ROM_LOAD ( "u27",  0x6d0000, 0x10000, 0x4d33bbec );
+		ROM_LOAD ( "u44",  0x4e0000, 0x10000, 0x93b8eaa4 );
+		ROM_LOAD ( "u26",  0x6e0000, 0x10000, 0xcb19f784 );
+	ROM_END(); }}; 
+	
+	static RomLoadPtr rom_trog = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x10, REGION_CPU1, 0 );	/* 34010 dummy region */
+	
+		ROM_REGION( 0x70000, REGION_CPU2, 0 );/* sound CPU */
+		ROM_LOAD (   "trogu4.bin", 0x10000, 0x10000, 0x759d0bf4 );
+		ROM_LOAD (  "trogu19.bin", 0x30000, 0x10000, 0x960c333d );
+		ROM_LOAD (  "trogu20.bin", 0x50000, 0x10000, 0x67f1658a );
+	
+		ROM_REGION16_LE( 0x100000, REGION_USER1, ROMREGION_DISPOSE );/* 34010 code */
+		ROM_LOAD16_BYTE( "trogu105.bin",  0xc0000, 0x20000, 0xe6095189 );
+		ROM_LOAD16_BYTE( "trogu89.bin",   0xc0001, 0x20000, 0xfdd7cc65 );
+	
+		ROM_REGION( 0x800000, REGION_GFX1, ROMREGION_DISPOSE );
+		ROM_LOAD ( "trogu111.bin",  0x000000, 0x20000, 0x9ded08c1 );
+		ROM_LOAD ( "trogu112.bin",  0x020000, 0x20000, 0x42293843 );
+		ROM_LOAD ( "trogu113.bin",  0x040000, 0x20000, 0x77f50cbb );
+	
+		ROM_LOAD (  "trogu95.bin",  0x200000, 0x20000, 0xf3ba2838 );
+		ROM_LOAD (  "trogu96.bin",  0x220000, 0x20000, 0xcfed2e77 );
+		ROM_LOAD (  "trogu97.bin",  0x240000, 0x20000, 0x3262d1f8 );
+	
+		ROM_LOAD ( "trogu106.bin",  0x080000, 0x20000, 0xaf2eb0d8 );
+	 	ROM_LOAD ( "trogu107.bin",  0x0a0000, 0x20000, 0x88a7b3f6 );
+	
+		ROM_LOAD (  "trogu90.bin",  0x280000, 0x20000, 0x16e06753 );
+		ROM_LOAD (  "trogu91.bin",  0x2a0000, 0x20000, 0x880a02c7 );
+	ROM_END(); }}; 
+	
+	static RomLoadPtr rom_trog3 = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x10, REGION_CPU1, 0 );	/* 34010 dummy region */
+	
+		ROM_REGION( 0x70000, REGION_CPU2, 0 );/* sound CPU */
+		ROM_LOAD (   "trogu4.bin", 0x10000, 0x10000, 0x759d0bf4 );
+		ROM_LOAD (  "trogu19.bin", 0x30000, 0x10000, 0x960c333d );
+		ROM_LOAD (  "trogu20.bin", 0x50000, 0x10000, 0x67f1658a );
+	
+		ROM_REGION16_LE( 0x100000, REGION_USER1, ROMREGION_DISPOSE );/* 34010 code */
+		ROM_LOAD16_BYTE( "u105-la3",  0xc0000, 0x20000, 0xd09cea97 );
+		ROM_LOAD16_BYTE( "u89-la3",   0xc0001, 0x20000, 0xa61e3572 );
+	
+		ROM_REGION( 0x800000, REGION_GFX1, ROMREGION_DISPOSE );
+		ROM_LOAD ( "trogu111.bin",  0x000000, 0x20000, 0x9ded08c1 );
+		ROM_LOAD ( "trogu112.bin",  0x020000, 0x20000, 0x42293843 );
+		ROM_LOAD ( "trogu113.bin",  0x040000, 0x20000, 0x77f50cbb );
+	
+		ROM_LOAD (  "trogu95.bin",  0x200000, 0x20000, 0xf3ba2838 );
+		ROM_LOAD (  "trogu96.bin",  0x220000, 0x20000, 0xcfed2e77 );
+		ROM_LOAD (  "trogu97.bin",  0x240000, 0x20000, 0x3262d1f8 );
+	
+		ROM_LOAD ( "trogu106.bin",  0x080000, 0x20000, 0xaf2eb0d8 );
+	 	ROM_LOAD ( "trogu107.bin",  0x0a0000, 0x20000, 0x88a7b3f6 );
+	
+		ROM_LOAD (  "trogu90.bin",  0x280000, 0x20000, 0x16e06753 );
+		ROM_LOAD (  "trogu91.bin",  0x2a0000, 0x20000, 0x880a02c7 );
+	ROM_END(); }}; 
+	
+	static RomLoadPtr rom_trogp = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x10, REGION_CPU1, 0 );	/* 34010 dummy region */
+	
+		ROM_REGION( 0x70000, REGION_CPU2, 0 );/* sound CPU */
+		ROM_LOAD (   "trogu4.bin", 0x10000, 0x10000, 0x759d0bf4 );
+		ROM_LOAD (  "trogu19.bin", 0x30000, 0x10000, 0x960c333d );
+		ROM_LOAD (  "trogu20.bin", 0x50000, 0x10000, 0x67f1658a );
+	
+		ROM_REGION16_LE( 0x100000, REGION_USER1, ROMREGION_DISPOSE );/* 34010 code */
+		ROM_LOAD16_BYTE( "trog105.dat",  0xc0000, 0x20000, 0x526a3f5b );
+		ROM_LOAD16_BYTE( "trog89.dat",   0xc0001, 0x20000, 0x38d68685 );
+	
+		ROM_REGION( 0x800000, REGION_GFX1, ROMREGION_DISPOSE );
+		ROM_LOAD ( "trogu111.bin",  0x000000, 0x20000, 0x9ded08c1 );
+		ROM_LOAD ( "trogu112.bin",  0x020000, 0x20000, 0x42293843 );
+		ROM_LOAD ( "trog113.dat",   0x040000, 0x20000, 0x2980a56f );
+	
+		ROM_LOAD (  "trogu95.bin",  0x200000, 0x20000, 0xf3ba2838 );
+		ROM_LOAD (  "trogu96.bin",  0x220000, 0x20000, 0xcfed2e77 );
+		ROM_LOAD (  "trog97.dat",   0x240000, 0x20000, 0xf94b77c1 );
+	
+		ROM_LOAD ( "trogu106.bin",  0x080000, 0x20000, 0xaf2eb0d8 );
+	 	ROM_LOAD ( "trogu107.bin",  0x0a0000, 0x20000, 0x88a7b3f6 );
+	
+		ROM_LOAD (  "trogu90.bin",  0x280000, 0x20000, 0x16e06753 );
+		ROM_LOAD (  "trogu91.bin",  0x2a0000, 0x20000, 0x880a02c7 );
+	ROM_END(); }}; 
+	
+	static RomLoadPtr rom_smashtv = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x10, REGION_CPU1, 0 );	/* 34010 dummy region */
+	
+		ROM_REGION( 0x70000, REGION_CPU2, 0 );/* sound CPU */
+		ROM_LOAD (  "u4.snd", 0x10000, 0x10000, 0x29d3f6c8 );
+		ROM_LOAD ( "u19.snd", 0x30000, 0x10000, 0xac5a402a );
+		ROM_LOAD ( "u20.snd", 0x50000, 0x10000, 0x875c66d9 );
+	
+		ROM_REGION16_LE( 0x100000, REGION_USER1, ROMREGION_DISPOSE );/* 34010 code */
+		ROM_LOAD16_BYTE( "u105.l8",  0xc0000, 0x20000, 0x48cd793f );
+		ROM_LOAD16_BYTE( "u89.l8",   0xc0001, 0x20000, 0x8e7fe463 );
+	
+		ROM_REGION( 0x800000, REGION_GFX1, ROMREGION_DISPOSE );
+		ROM_LOAD ( "u111.gam",  0x000000, 0x20000, 0x72f0ba84 );
+		ROM_LOAD ( "u112.gam",  0x020000, 0x20000, 0x436f0283 );
+		ROM_LOAD ( "u113.gam",  0x040000, 0x20000, 0x4a4b8110 );
+	
+		ROM_LOAD (  "u95.gam",  0x200000, 0x20000, 0xe864a44b );
+		ROM_LOAD (  "u96.gam",  0x220000, 0x20000, 0x15555ea7 );
+		ROM_LOAD (  "u97.gam",  0x240000, 0x20000, 0xccac9d9e );
+	
+	 	ROM_LOAD ( "u106.gam",  0x400000, 0x20000, 0x5c718361 );
+	 	ROM_LOAD ( "u107.gam",  0x420000, 0x20000, 0x0fba1e36 );
+	 	ROM_LOAD ( "u108.gam",  0x440000, 0x20000, 0xcb0a092f );
+	ROM_END(); }}; 
+	
+	static RomLoadPtr rom_smashtv6 = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x10, REGION_CPU1, 0 );	/* 34010 dummy region */
+	
+		ROM_REGION( 0x70000, REGION_CPU2, 0 );/* sound CPU */
+		ROM_LOAD (  "u4.snd", 0x10000, 0x10000, 0x29d3f6c8 );
+		ROM_LOAD ( "u19.snd", 0x30000, 0x10000, 0xac5a402a );
+		ROM_LOAD ( "u20.snd", 0x50000, 0x10000, 0x875c66d9 );
+	
+		ROM_REGION16_LE( 0x100000, REGION_USER1, ROMREGION_DISPOSE );/* 34010 code */
+		ROM_LOAD16_BYTE( "la6-u105",  0xc0000, 0x20000, 0xf1666017 );
+		ROM_LOAD16_BYTE( "la6-u89",   0xc0001, 0x20000, 0x908aca5d );
+	
+		ROM_REGION( 0x800000, REGION_GFX1, ROMREGION_DISPOSE );
+		ROM_LOAD ( "u111.gam",  0x000000, 0x20000, 0x72f0ba84 );
+		ROM_LOAD ( "u112.gam",  0x020000, 0x20000, 0x436f0283 );
+		ROM_LOAD ( "u113.gam",  0x040000, 0x20000, 0x4a4b8110 );
+	
+		ROM_LOAD (  "u95.gam",  0x200000, 0x20000, 0xe864a44b );
+		ROM_LOAD (  "u96.gam",  0x220000, 0x20000, 0x15555ea7 );
+		ROM_LOAD (  "u97.gam",  0x240000, 0x20000, 0xccac9d9e );
+	
+	 	ROM_LOAD ( "u106.gam",  0x400000, 0x20000, 0x5c718361 );
+	 	ROM_LOAD ( "u107.gam",  0x420000, 0x20000, 0x0fba1e36 );
+	 	ROM_LOAD ( "u108.gam",  0x440000, 0x20000, 0xcb0a092f );
+	ROM_END(); }}; 
+	
+	static RomLoadPtr rom_smashtv5 = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x10, REGION_CPU1, 0 );	/* 34010 dummy region */
+	
+		ROM_REGION( 0x70000, REGION_CPU2, 0 );/* sound CPU */
+		ROM_LOAD (  "u4.snd", 0x10000, 0x10000, 0x29d3f6c8 );
+		ROM_LOAD ( "u19.snd", 0x30000, 0x10000, 0xac5a402a );
+		ROM_LOAD ( "u20.snd", 0x50000, 0x10000, 0x875c66d9 );
+	
+		ROM_REGION16_LE( 0x100000, REGION_USER1, ROMREGION_DISPOSE );/* 34010 code */
+		ROM_LOAD16_BYTE( "u105-v5",  0xc0000, 0x20000, 0x81f564b9 );
+		ROM_LOAD16_BYTE( "u89-v5",   0xc0001, 0x20000, 0xe5017d25 );
+	
+		ROM_REGION( 0x800000, REGION_GFX1, ROMREGION_DISPOSE );
+		ROM_LOAD ( "u111.gam",  0x000000, 0x20000, 0x72f0ba84 );
+		ROM_LOAD ( "u112.gam",  0x020000, 0x20000, 0x436f0283 );
+		ROM_LOAD ( "u113.gam",  0x040000, 0x20000, 0x4a4b8110 );
+	
+		ROM_LOAD (  "u95.gam",  0x200000, 0x20000, 0xe864a44b );
+		ROM_LOAD (  "u96.gam",  0x220000, 0x20000, 0x15555ea7 );
+		ROM_LOAD (  "u97.gam",  0x240000, 0x20000, 0xccac9d9e );
+	
+	 	ROM_LOAD ( "u106.gam",  0x400000, 0x20000, 0x5c718361 );
+	 	ROM_LOAD ( "u107.gam",  0x420000, 0x20000, 0x0fba1e36 );
+	 	ROM_LOAD ( "u108.gam",  0x440000, 0x20000, 0xcb0a092f );
+	ROM_END(); }}; 
+	
+	static RomLoadPtr rom_smashtv4 = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x10, REGION_CPU1, 0 );	/* 34010 dummy region */
+	
+		ROM_REGION( 0x70000, REGION_CPU2, 0 );/* sound CPU */
+		ROM_LOAD (  "u4.snd", 0x10000, 0x10000, 0x29d3f6c8 );
+		ROM_LOAD ( "u19.snd", 0x30000, 0x10000, 0xac5a402a );
+		ROM_LOAD ( "u20.snd", 0x50000, 0x10000, 0x875c66d9 );
+	
+		ROM_REGION16_LE( 0x100000, REGION_USER1, ROMREGION_DISPOSE );/* 34010 code */
+		ROM_LOAD16_BYTE( "la4-u105",  0xc0000, 0x20000, 0xa50ccb71 );
+		ROM_LOAD16_BYTE( "la4-u89",   0xc0001, 0x20000, 0xef0b0279 );
+	
+		ROM_REGION( 0x800000, REGION_GFX1, ROMREGION_DISPOSE );
+		ROM_LOAD ( "u111.gam",  0x000000, 0x20000, 0x72f0ba84 );
+		ROM_LOAD ( "u112.gam",  0x020000, 0x20000, 0x436f0283 );
+		ROM_LOAD ( "u113.gam",  0x040000, 0x20000, 0x4a4b8110 );
+	
+		ROM_LOAD (  "u95.gam",  0x200000, 0x20000, 0xe864a44b );
+		ROM_LOAD (  "u96.gam",  0x220000, 0x20000, 0x15555ea7 );
+		ROM_LOAD (  "u97.gam",  0x240000, 0x20000, 0xccac9d9e );
+	
+	 	ROM_LOAD ( "u106.gam",  0x400000, 0x20000, 0x5c718361 );
+	 	ROM_LOAD ( "u107.gam",  0x420000, 0x20000, 0x0fba1e36 );
+	 	ROM_LOAD ( "u108.gam",  0x440000, 0x20000, 0xcb0a092f );
+	ROM_END(); }}; 
+	
+	static RomLoadPtr rom_hiimpact = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x10, REGION_CPU1, 0 );	/* 34010 dummy region */
+	
+		ROM_REGION( 0x70000, REGION_CPU2, 0 );/* sound CPU */
+		ROM_LOAD (  "sl1u4.bin", 0x10000, 0x20000, 0x28effd6a );
+		ROM_LOAD ( "sl1u19.bin", 0x30000, 0x20000, 0x0ea22c89 );
+		ROM_LOAD ( "sl1u20.bin", 0x50000, 0x20000, 0x4e747ab5 );
+	
+		ROM_REGION16_LE( 0x100000, REGION_USER1, ROMREGION_DISPOSE );/* 34010 code */
+		ROM_LOAD16_BYTE( "la3u105.bin",  0xc0000, 0x20000, 0xb9190c4a );
+		ROM_LOAD16_BYTE( "la3u89.bin",   0xc0001, 0x20000, 0x1cbc72a5 );
+	
+		ROM_REGION( 0x800000, REGION_GFX1, ROMREGION_DISPOSE );
+		ROM_LOAD ( "la1u111.bin",  0x000000, 0x20000, 0x49560560 );
+		ROM_LOAD ( "la1u112.bin",  0x020000, 0x20000, 0x4dd879dc );
+		ROM_LOAD ( "la1u113.bin",  0x040000, 0x20000, 0xb67aeb70 );
+		ROM_LOAD ( "la1u114.bin",  0x060000, 0x20000, 0x9a4bc44b );
+	
+		ROM_LOAD (  "la1u95.bin",  0x200000, 0x20000, 0xe1352dc0 );
+		ROM_LOAD (  "la1u96.bin",  0x220000, 0x20000, 0x197d0f34 );
+		ROM_LOAD (  "la1u97.bin",  0x240000, 0x20000, 0x908ea575 );
+		ROM_LOAD (  "la1u98.bin",  0x260000, 0x20000, 0x6dcbab11 );
+	
+	 	ROM_LOAD ( "la1u106.bin",  0x400000, 0x20000, 0x7d0ead0d );
+		ROM_LOAD ( "la1u107.bin",  0x420000, 0x20000, 0xef48e8fa );
+		ROM_LOAD ( "la1u108.bin",  0x440000, 0x20000, 0x5f363e12 );
+		ROM_LOAD ( "la1u109.bin",  0x460000, 0x20000, 0x3689fbbc );
+	ROM_END(); }}; 
+	
+	static RomLoadPtr rom_shimpact = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x10, REGION_CPU1, 0 );	/* 34010 dummy region */
+	
+		ROM_REGION( 0x70000, REGION_CPU2, 0 );/* sound CPU */
+		ROM_LOAD (   "shiu4.bin", 0x10000, 0x20000, 0x1e5a012c );
+		ROM_LOAD (  "shiu19.bin", 0x30000, 0x20000, 0x10f9684e );
+		ROM_LOAD (  "shiu20.bin", 0x50000, 0x20000, 0x1b4a71c1 );
+	
+		ROM_REGION16_LE( 0x100000, REGION_USER1, ROMREGION_DISPOSE );/* 34010 code */
+		ROM_LOAD16_BYTE( "shiu105.bin",  0xc0000, 0x20000, 0xf2cf8de3 );
+		ROM_LOAD16_BYTE( "shiu89.bin",   0xc0001, 0x20000, 0xf97d9b01 );
+	
+		ROM_REGION( 0x800000, REGION_GFX1, ROMREGION_DISPOSE );
+		ROM_LOAD ( "shiu111.bin",  0x000000, 0x40000, 0x80ae2a86 );
+		ROM_LOAD ( "shiu112.bin",  0x040000, 0x40000, 0x3ffc27e9 );
+		ROM_LOAD ( "shiu113.bin",  0x080000, 0x40000, 0x01549d00 );
+		ROM_LOAD ( "shiu114.bin",  0x0c0000, 0x40000, 0xa68af319 );
+	
+		ROM_LOAD (  "shiu95.bin",  0x200000, 0x40000, 0xe8f56ef5 );
+		ROM_LOAD (  "shiu96.bin",  0x240000, 0x40000, 0x24ed04f9 );
+		ROM_LOAD (  "shiu97.bin",  0x280000, 0x40000, 0xdd7f41a9 );
+		ROM_LOAD (  "shiu98.bin",  0x2c0000, 0x40000, 0x23ef65dd );
+	
+		ROM_LOAD ( "shiu106.bin",  0x400000, 0x40000, 0x6f5bf337 );
+		ROM_LOAD ( "shiu107.bin",  0x440000, 0x40000, 0xa8815dad );
+		ROM_LOAD ( "shiu108.bin",  0x480000, 0x40000, 0xd39685a3 );
+		ROM_LOAD ( "shiu109.bin",  0x4c0000, 0x40000, 0x36e0b2b2 );
+	ROM_END(); }}; 
+	
+	static RomLoadPtr rom_strkforc = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x10, REGION_CPU1, 0 );	/* 34010 dummy region */
+	
+		ROM_REGION( 0x70000, REGION_CPU2, 0 );/* sound CPU */
+		ROM_LOAD (  "sfu4.bin", 0x10000, 0x10000, 0x8f747312 );
+		ROM_LOAD ( "sfu19.bin", 0x30000, 0x10000, 0xafb29926 );
+		ROM_LOAD ( "sfu20.bin", 0x50000, 0x10000, 0x1bc9b746 );
+	
+		ROM_REGION16_LE( 0x100000, REGION_USER1, ROMREGION_DISPOSE );/* 34010 code */
+		ROM_LOAD16_BYTE( "sfu105.bin",  0xc0000, 0x20000, 0x7895e0e3 );
+		ROM_LOAD16_BYTE( "sfu89.bin",   0xc0001, 0x20000, 0x26114d9e );
+	
+		ROM_REGION( 0x800000, REGION_GFX1, ROMREGION_DISPOSE );
+		ROM_LOAD ( "sfu111.bin",  0x000000, 0x20000, 0x878efc80 );
+		ROM_LOAD ( "sfu112.bin",  0x020000, 0x20000, 0x93394399 );
+		ROM_LOAD ( "sfu113.bin",  0x040000, 0x20000, 0x9565a79b );
+		ROM_LOAD ( "sfu114.bin",  0x060000, 0x20000, 0xb71152da );
+	
+		ROM_LOAD (  "sfu95.bin",  0x200000, 0x20000, 0x519cb2b4 );
+		ROM_LOAD (  "sfu96.bin",  0x220000, 0x20000, 0x61214796 );
+		ROM_LOAD (  "sfu97.bin",  0x240000, 0x20000, 0xeb5dee5f );
+		ROM_LOAD (  "sfu98.bin",  0x260000, 0x20000, 0xc5c079e7 );
+	
+	 	ROM_LOAD ( "sfu106.bin",  0x080000, 0x20000, 0xa394d4cf );
+	 	ROM_LOAD ( "sfu107.bin",  0x0a0000, 0x20000, 0xedef1419 );
+	
+		ROM_LOAD (  "sfu90.bin",  0x280000, 0x20000, 0x607bcdc0 );
+		ROM_LOAD (  "sfu91.bin",  0x2a0000, 0x20000, 0xda02547e );
+	ROM_END(); }}; 
+	
+	static RomLoadPtr rom_mkla1 = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x10, REGION_CPU1, 0 );	/* 34010 dummy region */
+	
+		ROM_REGION( 0x50000, REGION_CPU2, 0 );/* sound CPU */
+		ROM_LOAD (  "mks-u3.rom", 0x10000, 0x40000, 0xc615844c );
+	
+		ROM_REGION( 0xc0000, REGION_SOUND1, 0 );/* ADPCM */
+		ROM_LOAD ( "mks-u12.rom", 0x00000, 0x40000, 0x258bd7f9 );
+		ROM_LOAD ( "mks-u13.rom", 0x40000, 0x40000, 0x7b7ec3b6 );
+	
+		ROM_REGION16_LE( 0x100000, REGION_USER1, ROMREGION_DISPOSE );/* 34010 code */
+		ROM_LOAD16_BYTE( "mkg-u105.la1",  0x00000, 0x80000, 0xe1f7b4c9 );
+		ROM_LOAD16_BYTE(  "mkg-u89.la1",  0x00001, 0x80000, 0x9d38ac75 );
+	
+		ROM_REGION( 0x800000, REGION_GFX1, ROMREGION_DISPOSE );
+		ROM_LOAD ( "mkg-u111.rom",  0x000000, 0x80000, 0xd17096c4 );
+		ROM_LOAD ( "mkg-u112.rom",  0x080000, 0x80000, 0x993bc2e4 );
+		ROM_LOAD ( "mkg-u113.rom",  0x100000, 0x80000, 0x6fb91ede );
+		ROM_LOAD ( "mkg-u114.rom",  0x180000, 0x80000, 0xed1ff88a );
+	
+	 	ROM_LOAD (  "mkg-u95.rom",  0x200000, 0x80000, 0xa002a155 );
+	 	ROM_LOAD (  "mkg-u96.rom",  0x280000, 0x80000, 0xdcee8492 );
+		ROM_LOAD (  "mkg-u97.rom",  0x300000, 0x80000, 0xde88caef );
+		ROM_LOAD (  "mkg-u98.rom",  0x380000, 0x80000, 0x37eb01b4 );
+	
+		ROM_LOAD ( "mkg-u106.rom",  0x400000, 0x80000, 0x45acaf21 );
+	 	ROM_LOAD ( "mkg-u107.rom",  0x480000, 0x80000, 0x2a6c10a0 );
+	  	ROM_LOAD ( "mkg-u108.rom",  0x500000, 0x80000, 0x23308979 );
+	 	ROM_LOAD ( "mkg-u109.rom",  0x580000, 0x80000, 0xcafc47bb );
+	ROM_END(); }}; 
+	
+	static RomLoadPtr rom_mkla2 = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x10, REGION_CPU1, 0 );	/* 34010 dummy region */
+	
+		ROM_REGION( 0x50000, REGION_CPU2, 0 );/* sound CPU */
+		ROM_LOAD (  "mks-u3.rom", 0x10000, 0x40000, 0xc615844c );
+	
+		ROM_REGION( 0xc0000, REGION_SOUND1, 0 );/* ADPCM */
+		ROM_LOAD ( "mks-u12.rom", 0x00000, 0x40000, 0x258bd7f9 );
+		ROM_LOAD ( "mks-u13.rom", 0x40000, 0x40000, 0x7b7ec3b6 );
+	
+		ROM_REGION16_LE( 0x100000, REGION_USER1, ROMREGION_DISPOSE );/* 34010 code */
+		ROM_LOAD16_BYTE( "mkg-u105.la2",  0x00000, 0x80000, 0x8531d44e );
+		ROM_LOAD16_BYTE(  "mkg-u89.la2",  0x00001, 0x80000, 0xb88dc26e );
+	
+		ROM_REGION( 0x800000, REGION_GFX1, ROMREGION_DISPOSE );
+		ROM_LOAD ( "mkg-u111.rom",  0x000000, 0x80000, 0xd17096c4 );
+		ROM_LOAD ( "mkg-u112.rom",  0x080000, 0x80000, 0x993bc2e4 );
+		ROM_LOAD ( "mkg-u113.rom",  0x100000, 0x80000, 0x6fb91ede );
+		ROM_LOAD ( "mkg-u114.rom",  0x180000, 0x80000, 0xed1ff88a );
+	
+	 	ROM_LOAD (  "mkg-u95.rom",  0x200000, 0x80000, 0xa002a155 );
+	 	ROM_LOAD (  "mkg-u96.rom",  0x280000, 0x80000, 0xdcee8492 );
+		ROM_LOAD (  "mkg-u97.rom",  0x300000, 0x80000, 0xde88caef );
+		ROM_LOAD (  "mkg-u98.rom",  0x380000, 0x80000, 0x37eb01b4 );
+	
+		ROM_LOAD ( "mkg-u106.rom",  0x400000, 0x80000, 0x45acaf21 );
+	 	ROM_LOAD ( "mkg-u107.rom",  0x480000, 0x80000, 0x2a6c10a0 );
+	  	ROM_LOAD ( "mkg-u108.rom",  0x500000, 0x80000, 0x23308979 );
+	 	ROM_LOAD ( "mkg-u109.rom",  0x580000, 0x80000, 0xcafc47bb );
+	ROM_END(); }}; 
+	
+	static RomLoadPtr rom_mkla3 = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x10, REGION_CPU1, 0 );	/* 34010 dummy region */
+	
+		ROM_REGION( 0x50000, REGION_CPU2, 0 );/* sound CPU */
+		ROM_LOAD (  "mks-u3.rom", 0x10000, 0x40000, 0xc615844c );
+	
+		ROM_REGION( 0xc0000, REGION_SOUND1, 0 );/* ADPCM */
+		ROM_LOAD ( "mks-u12.rom", 0x00000, 0x40000, 0x258bd7f9 );
+		ROM_LOAD ( "mks-u13.rom", 0x40000, 0x40000, 0x7b7ec3b6 );
+	
+		ROM_REGION16_LE( 0x100000, REGION_USER1, ROMREGION_DISPOSE );/* 34010 code */
+		ROM_LOAD16_BYTE( "mkg-u105.la3",  0x00000, 0x80000, 0x2ce843c5 );
+		ROM_LOAD16_BYTE(  "mkg-u89.la3",  0x00001, 0x80000, 0x49a46e10 );
+	
+		ROM_REGION( 0x800000, REGION_GFX1, ROMREGION_DISPOSE );
+		ROM_LOAD ( "mkg-u111.rom",  0x000000, 0x80000, 0xd17096c4 );
+		ROM_LOAD ( "mkg-u112.rom",  0x080000, 0x80000, 0x993bc2e4 );
+		ROM_LOAD ( "mkg-u113.rom",  0x100000, 0x80000, 0x6fb91ede );
+		ROM_LOAD ( "mkg-u114.rom",  0x180000, 0x80000, 0xed1ff88a );
+	
+	 	ROM_LOAD (  "mkg-u95.rom",  0x200000, 0x80000, 0xa002a155 );
+	 	ROM_LOAD (  "mkg-u96.rom",  0x280000, 0x80000, 0xdcee8492 );
+		ROM_LOAD (  "mkg-u97.rom",  0x300000, 0x80000, 0xde88caef );
+		ROM_LOAD (  "mkg-u98.rom",  0x380000, 0x80000, 0x37eb01b4 );
+	
+		ROM_LOAD ( "mkg-u106.rom",  0x400000, 0x80000, 0x45acaf21 );
+	 	ROM_LOAD ( "mkg-u107.rom",  0x480000, 0x80000, 0x2a6c10a0 );
+	  	ROM_LOAD ( "mkg-u108.rom",  0x500000, 0x80000, 0x23308979 );
+	 	ROM_LOAD ( "mkg-u109.rom",  0x580000, 0x80000, 0xcafc47bb );
+	ROM_END(); }}; 
+	
+	static RomLoadPtr rom_mkla4 = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x10, REGION_CPU1, 0 );	/* 34010 dummy region */
+	
+		ROM_REGION( 0x50000, REGION_CPU2, 0 );/* sound CPU */
+		ROM_LOAD (  "mks-u3.rom", 0x10000, 0x40000, 0xc615844c );
+	
+		ROM_REGION( 0xc0000, REGION_SOUND1, 0 );/* ADPCM */
+		ROM_LOAD ( "mks-u12.rom", 0x00000, 0x40000, 0x258bd7f9 );
+		ROM_LOAD ( "mks-u13.rom", 0x40000, 0x40000, 0x7b7ec3b6 );
+	
+		ROM_REGION16_LE( 0x100000, REGION_USER1, ROMREGION_DISPOSE );/* 34010 code */
+		ROM_LOAD16_BYTE( "mkg-u105.la4",  0x00000, 0x80000, 0x29af348f );
+		ROM_LOAD16_BYTE(  "mkg-u89.la4",  0x00001, 0x80000, 0x1ad76662 );
+	
+		ROM_REGION( 0x800000, REGION_GFX1, ROMREGION_DISPOSE );
+		ROM_LOAD ( "mkg-u111.rom",  0x000000, 0x80000, 0xd17096c4 );
+		ROM_LOAD ( "mkg-u112.rom",  0x080000, 0x80000, 0x993bc2e4 );
+		ROM_LOAD ( "mkg-u113.rom",  0x100000, 0x80000, 0x6fb91ede );
+		ROM_LOAD ( "mkg-u114.rom",  0x180000, 0x80000, 0xed1ff88a );
+	
+	 	ROM_LOAD (  "mkg-u95.rom",  0x200000, 0x80000, 0xa002a155 );
+	 	ROM_LOAD (  "mkg-u96.rom",  0x280000, 0x80000, 0xdcee8492 );
+		ROM_LOAD (  "mkg-u97.rom",  0x300000, 0x80000, 0xde88caef );
+		ROM_LOAD (  "mkg-u98.rom",  0x380000, 0x80000, 0x37eb01b4 );
+	
+		ROM_LOAD ( "mkg-u106.rom",  0x400000, 0x80000, 0x45acaf21 );
+	 	ROM_LOAD ( "mkg-u107.rom",  0x480000, 0x80000, 0x2a6c10a0 );
+	  	ROM_LOAD ( "mkg-u108.rom",  0x500000, 0x80000, 0x23308979 );
+	 	ROM_LOAD ( "mkg-u109.rom",  0x580000, 0x80000, 0xcafc47bb );
+	ROM_END(); }}; 
+	
+	static RomLoadPtr rom_term2 = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x10, REGION_CPU1, 0 );	/* 34010 dummy region */
+	
+		ROM_REGION( 0x50000, REGION_CPU2, 0 );/* sound CPU */
+		ROM_LOAD (  "t2_snd.3", 0x10000, 0x20000, 0x73c3f5c4 );
+		ROM_RELOAD (            0x30000, 0x20000 );
+	
+		ROM_REGION( 0xc0000, REGION_SOUND1, 0 );/* ADPCM */
+		ROM_LOAD ( "t2_snd.12", 0x00000, 0x40000, 0xe192a40d );
+		ROM_LOAD ( "t2_snd.13", 0x40000, 0x40000, 0x956fa80b );
+	
+		ROM_REGION16_LE( 0x100000, REGION_USER1, ROMREGION_DISPOSE );/* 34010 code */
+		ROM_LOAD16_BYTE( "t2.105",  0x00000, 0x80000, 0x34142b28 );
+		ROM_LOAD16_BYTE( "t2.89",   0x00001, 0x80000, 0x5ffea427 );
+	
+		ROM_REGION( 0x800000, REGION_GFX1, ROMREGION_DISPOSE );
+		ROM_LOAD ( "t2.111",  0x000000, 0x80000, 0x916d0197 );
+		ROM_LOAD ( "t2.112",  0x080000, 0x80000, 0x39ae1c87 );
+		ROM_LOAD ( "t2.113",  0x100000, 0x80000, 0xcb5084e5 );
+		ROM_LOAD ( "t2.114",  0x180000, 0x80000, 0x53c516ec );
+	
+		ROM_LOAD (  "t2.95",  0x200000, 0x80000, 0xdd39cf73 );
+		ROM_LOAD (  "t2.96",  0x280000, 0x80000, 0x31f4fd36 );
+		ROM_LOAD (  "t2.97",  0x300000, 0x80000, 0x7f72e775 );
+		ROM_LOAD (  "t2.98",  0x380000, 0x80000, 0x1a20ce29 );
+	
+		ROM_LOAD ( "t2.106",  0x400000, 0x80000, 0xf08a9536 );
+	 	ROM_LOAD ( "t2.107",  0x480000, 0x80000, 0x268d4035 );
+	 	ROM_LOAD ( "t2.108",  0x500000, 0x80000, 0x379fdaed );
+	 	ROM_LOAD ( "t2.109",  0x580000, 0x80000, 0x306a9366 );
+	ROM_END(); }}; 
+	
+	static RomLoadPtr rom_totcarn = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x10, REGION_CPU1, 0 );	/* 34010 dummy region */
+	
+		ROM_REGION( 0x50000, REGION_CPU2, 0 );/* sound CPU */
+		ROM_LOAD (  "tcu3.bin", 0x10000, 0x20000, 0x5bdb4665 );
+		ROM_RELOAD (            0x30000, 0x20000 );
+	
+		ROM_REGION( 0xc0000, REGION_SOUND1, 0 );/* ADPCM */
+		ROM_LOAD ( "tcu12.bin", 0x00000, 0x40000, 0xd0000ac7 );
+		ROM_LOAD ( "tcu13.bin", 0x40000, 0x40000, 0xe48e6f0c );
+	
+		ROM_REGION16_LE( 0x100000, REGION_USER1, ROMREGION_DISPOSE );/* 34010 code */
+		ROM_LOAD16_BYTE( "tcu105.bin",  0x80000, 0x40000, 0x7c651047 );
+		ROM_LOAD16_BYTE( "tcu89.bin",   0x80001, 0x40000, 0x6761daf3 );
+	
+		ROM_REGION( 0x800000, REGION_GFX1, ROMREGION_DISPOSE );
+		ROM_LOAD ( "tcu111.bin",  0x000000, 0x40000, 0x13f3f231 );
+		ROM_LOAD ( "tcu112.bin",  0x040000, 0x40000, 0x72e45007 );
+		ROM_LOAD ( "tcu113.bin",  0x080000, 0x40000, 0x2c8ec753 );
+		ROM_LOAD ( "tcu114.bin",  0x0c0000, 0x40000, 0x6210c36c );
+	
+		ROM_LOAD (  "tcu95.bin",  0x200000, 0x40000, 0x579caeba );
+		ROM_LOAD (  "tcu96.bin",  0x240000, 0x40000, 0xf43f1ffe );
+		ROM_LOAD (  "tcu97.bin",  0x280000, 0x40000, 0x1675e50d );
+		ROM_LOAD (  "tcu98.bin",  0x2c0000, 0x40000, 0xab06c885 );
+	
+		ROM_LOAD ( "tcu106.bin",  0x400000, 0x40000, 0x146e3863 );
+	 	ROM_LOAD ( "tcu107.bin",  0x440000, 0x40000, 0x95323320 );
+	 	ROM_LOAD ( "tcu108.bin",  0x480000, 0x40000, 0xed152acc );
+	 	ROM_LOAD ( "tcu109.bin",  0x4c0000, 0x40000, 0x80715252 );
+	ROM_END(); }}; 
+	
+	static RomLoadPtr rom_totcarnp = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x10, REGION_CPU1, 0 );	/* 34010 dummy region */
+	
+		ROM_REGION( 0x50000, REGION_CPU2, 0 );/* sound CPU */
+		ROM_LOAD (  "tcu3.bin", 0x10000, 0x20000, 0x5bdb4665 );
+		ROM_RELOAD (            0x30000, 0x20000 );
+	
+		ROM_REGION( 0xc0000, REGION_SOUND1, 0 );/* ADPCM */
+		ROM_LOAD ( "tcu12.bin", 0x00000, 0x40000, 0xd0000ac7 );
+		ROM_LOAD ( "tcu13.bin", 0x40000, 0x40000, 0xe48e6f0c );
+	
+		ROM_REGION16_LE( 0x100000, REGION_USER1, ROMREGION_DISPOSE );/* 34010 code */
+		ROM_LOAD16_BYTE( "u105",  0x80000, 0x40000, 0x7a782cae );
+		ROM_LOAD16_BYTE( "u89",   0x80001, 0x40000, 0x1c899a8d );
+	
+		ROM_REGION( 0x800000, REGION_GFX1, ROMREGION_DISPOSE );
+		ROM_LOAD ( "tcu111.bin",  0x000000, 0x40000, 0x13f3f231 );
+		ROM_LOAD ( "tcu112.bin",  0x040000, 0x40000, 0x72e45007 );
+		ROM_LOAD ( "tcu113.bin",  0x080000, 0x40000, 0x2c8ec753 );
+		ROM_LOAD ( "tcu114.bin",  0x0c0000, 0x40000, 0x6210c36c );
+	
+		ROM_LOAD (  "tcu95.bin",  0x200000, 0x40000, 0x579caeba );
+		ROM_LOAD (  "tcu96.bin",  0x240000, 0x40000, 0xf43f1ffe );
+		ROM_LOAD (  "tcu97.bin",  0x280000, 0x40000, 0x1675e50d );
+		ROM_LOAD (  "tcu98.bin",  0x2c0000, 0x40000, 0xab06c885 );
+	
+		ROM_LOAD ( "tcu106.bin",  0x400000, 0x40000, 0x146e3863 );
+	 	ROM_LOAD ( "tcu107.bin",  0x440000, 0x40000, 0x95323320 );
+	 	ROM_LOAD ( "tcu108.bin",  0x480000, 0x40000, 0xed152acc );
+	 	ROM_LOAD ( "tcu109.bin",  0x4c0000, 0x40000, 0x80715252 );
+	ROM_END(); }}; 
 	
 	
 	

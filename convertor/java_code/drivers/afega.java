@@ -516,28 +516,28 @@ public class afega
 	
 	***************************************************************************/
 	
-	ROM_START( stagger1 )
-		ROM_REGION( 0x40000, REGION_CPU1, 0 )		/* 68000 Code */
-		ROM_LOAD16_BYTE( "2.bin", 0x000000, 0x020000, 0x8555929b )
-		ROM_LOAD16_BYTE( "3.bin", 0x000001, 0x020000, 0x5b0b63ac )
+	static RomLoadPtr rom_stagger1 = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x40000, REGION_CPU1, 0 );	/* 68000 Code */
+		ROM_LOAD16_BYTE( "2.bin", 0x000000, 0x020000, 0x8555929b );
+		ROM_LOAD16_BYTE( "3.bin", 0x000001, 0x020000, 0x5b0b63ac );
 	
-		ROM_REGION( 0x10000, REGION_CPU2, 0 )		/* Z80 Code */
-		ROM_LOAD( "1.bin", 0x00000, 0x10000, 0x5d8cf28e )
+		ROM_REGION( 0x10000, REGION_CPU2, 0 );	/* Z80 Code */
+		ROM_LOAD( "1.bin", 0x00000, 0x10000, 0x5d8cf28e );
 	
-		ROM_REGION( 0x100000, REGION_GFX1, ROMREGION_DISPOSE )	/* Sprites, 16x16x4 */
-		ROM_LOAD16_BYTE( "7.bin", 0x00000, 0x80000, 0x048f7683 )
-		ROM_LOAD16_BYTE( "6.bin", 0x00001, 0x80000, 0x051d4a77 )
+		ROM_REGION( 0x100000, REGION_GFX1, ROMREGION_DISPOSE );/* Sprites, 16x16x4 */
+		ROM_LOAD16_BYTE( "7.bin", 0x00000, 0x80000, 0x048f7683 );
+		ROM_LOAD16_BYTE( "6.bin", 0x00001, 0x80000, 0x051d4a77 );
 	
-		ROM_REGION( 0x080000, REGION_GFX2, ROMREGION_DISPOSE )	/* Layer 0, 16x16x4 */
-		ROM_LOAD( "4.bin", 0x00000, 0x80000, 0x46463d36 )
+		ROM_REGION( 0x080000, REGION_GFX2, ROMREGION_DISPOSE );/* Layer 0, 16x16x4 */
+		ROM_LOAD( "4.bin", 0x00000, 0x80000, 0x46463d36 );
 	
-		ROM_REGION( 0x00100, REGION_GFX3, ROMREGION_DISPOSE | ROMREGION_ERASEFF )	/* Layer 1, 8x8x4 */
+		ROM_REGION( 0x00100, REGION_GFX3, ROMREGION_DISPOSE | ROMREGION_ERASEFF );/* Layer 1, 8x8x4 */
 		// Unused
 	
-		ROM_REGION( 0x40000, REGION_SOUND1, ROMREGION_SOUNDONLY )	/* Samples */
-		ROM_LOAD( "5.bin", 0x00000, 0x40000, 0x525eec4a )	// FIRST AND SECOND HALF IDENTICAL
-		ROM_CONTINUE(      0x00000, 0x40000             )
-	ROM_END
+		ROM_REGION( 0x40000, REGION_SOUND1, ROMREGION_SOUNDONLY );/* Samples */
+		ROM_LOAD( "5.bin", 0x00000, 0x40000, 0x525eec4a );// FIRST AND SECOND HALF IDENTICAL
+		ROM_CONTINUE(      0x00000, 0x40000             );
+	ROM_END(); }}; 
 	
 	void init_stagger1(void)
 	{
@@ -588,27 +588,27 @@ public class afega
 	
 	***************************************************************************/
 	
-	ROM_START( grdnstrm )
-		ROM_REGION( 0x80000, REGION_CPU1, 0 )		/* 68000 Code */
-		ROM_LOAD16_BYTE( "gst-04.112", 0x000000, 0x040000, 0x922c931a )
-		ROM_LOAD16_BYTE( "gst-05.107", 0x000001, 0x040000, 0xd22ca2dc )
+	static RomLoadPtr rom_grdnstrm = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x80000, REGION_CPU1, 0 );	/* 68000 Code */
+		ROM_LOAD16_BYTE( "gst-04.112", 0x000000, 0x040000, 0x922c931a );
+		ROM_LOAD16_BYTE( "gst-05.107", 0x000001, 0x040000, 0xd22ca2dc );
 	
-		ROM_REGION( 0x10000, REGION_CPU2, 0 )		/* Z80 Code */
-		ROM_LOAD( "gst-01.u92", 0x00000, 0x10000, 0x5d8cf28e )
+		ROM_REGION( 0x10000, REGION_CPU2, 0 );	/* Z80 Code */
+		ROM_LOAD( "gst-01.u92", 0x00000, 0x10000, 0x5d8cf28e );
 	
-		ROM_REGION( 0x200000, REGION_GFX1, ROMREGION_DISPOSE )	/* Sprites, 16x16x4 */
-		ROM_LOAD( "gst-06.c13", 0x000000, 0x200000, 0x7d4d4985 )
+		ROM_REGION( 0x200000, REGION_GFX1, ROMREGION_DISPOSE );/* Sprites, 16x16x4 */
+		ROM_LOAD( "gst-06.c13", 0x000000, 0x200000, 0x7d4d4985 );
 	
-		ROM_REGION( 0x400000, REGION_GFX2, ROMREGION_DISPOSE )	/* Layer 0, 16x16x8 */
-		ROM_LOAD( "gst-07.c08", 0x000000, 0x200000, 0xd68588c2 )
-		ROM_LOAD( "gst-08.c03", 0x200000, 0x200000, 0xf8b200a8 )
+		ROM_REGION( 0x400000, REGION_GFX2, ROMREGION_DISPOSE );/* Layer 0, 16x16x8 */
+		ROM_LOAD( "gst-07.c08", 0x000000, 0x200000, 0xd68588c2 );
+		ROM_LOAD( "gst-08.c03", 0x200000, 0x200000, 0xf8b200a8 );
 	
-		ROM_REGION( 0x10000, REGION_GFX3, ROMREGION_DISPOSE )	/* Layer 1, 8x8x4 */
-		ROM_LOAD( "gst-03.u4",  0x00000, 0x10000, 0xa1347297 )
+		ROM_REGION( 0x10000, REGION_GFX3, ROMREGION_DISPOSE );/* Layer 1, 8x8x4 */
+		ROM_LOAD( "gst-03.u4",  0x00000, 0x10000, 0xa1347297 );
 	
-		ROM_REGION( 0x40000, REGION_SOUND1, ROMREGION_SOUNDONLY )	/* Samples */
-		ROM_LOAD( "gst-02.u95", 0x00000, 0x40000, 0xe911ce33 )
-	ROM_END
+		ROM_REGION( 0x40000, REGION_SOUND1, ROMREGION_SOUNDONLY );/* Samples */
+		ROM_LOAD( "gst-02.u95", 0x00000, 0x40000, 0xe911ce33 );
+	ROM_END(); }}; 
 	
 	/* Address lines scrambling + Protection */
 	void init_grdnstrm(void)

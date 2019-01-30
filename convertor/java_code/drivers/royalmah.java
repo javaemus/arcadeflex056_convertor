@@ -352,18 +352,18 @@ public class royalmah
 	
 	***************************************************************************/
 	
-	ROM_START( royalmah )
-		ROM_REGION( 0x10000, REGION_CPU1, 0 )     /* 64k for main CPU */
-		ROM_LOAD( "rom1",   	0x0000, 0x1000, 0x69b37a62 )
-		ROM_LOAD( "rom2",   	0x1000, 0x1000, 0x0c8351b6 )
-		ROM_LOAD( "rom3",   	0x2000, 0x1000, 0xb7736596 )
-		ROM_LOAD( "rom4",   	0x3000, 0x1000, 0xe3c7c15c )
-		ROM_LOAD( "rom5",   	0x4000, 0x1000, 0x16c09c73 )
-		ROM_LOAD( "rom6",   	0x5000, 0x1000, 0x92687327 )
+	static RomLoadPtr rom_royalmah = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x10000, REGION_CPU1, 0 );    /* 64k for main CPU */
+		ROM_LOAD( "rom1",   	0x0000, 0x1000, 0x69b37a62 );
+		ROM_LOAD( "rom2",   	0x1000, 0x1000, 0x0c8351b6 );
+		ROM_LOAD( "rom3",   	0x2000, 0x1000, 0xb7736596 );
+		ROM_LOAD( "rom4",   	0x3000, 0x1000, 0xe3c7c15c );
+		ROM_LOAD( "rom5",   	0x4000, 0x1000, 0x16c09c73 );
+		ROM_LOAD( "rom6",   	0x5000, 0x1000, 0x92687327 );
 	
-		ROM_REGION( 0x0020, REGION_PROMS, 0 )
-		ROM_LOAD( "f-rom.bpr",  0x0000, 0x0020, 0xd3007282 )
-	ROM_END
+		ROM_REGION( 0x0020, REGION_PROMS, 0 );
+		ROM_LOAD( "f-rom.bpr",  0x0000, 0x0020, 0xd3007282 );
+	ROM_END(); }}; 
 	
 	
 	GAME( 1982, royalmah, 0, royalmah, royalmah, 0, ROT180, "Falcon", "Royal Mahjong" )

@@ -527,72 +527,72 @@ public class vball
 	
 	***************************************************************************/
 	
-	ROM_START( vball )
-		ROM_REGION( 0x18000, REGION_CPU1, 0 )	/* Main CPU: 64k for code */
-		ROM_LOAD( "vball.124",  0x10000, 0x08000, 0xbe04c2b5 )/* Bankswitched */
-		ROM_CONTINUE(		0x08000, 0x08000 )		 /* Static code  */
+	static RomLoadPtr rom_vball = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x18000, REGION_CPU1, 0 );/* Main CPU: 64k for code */
+		ROM_LOAD( "vball.124",  0x10000, 0x08000, 0xbe04c2b5 );* Bankswitched */
+		ROM_CONTINUE(		0x08000, 0x08000 );	 /* Static code  */
 	
-		ROM_REGION( 0x10000, REGION_CPU2, 0 ) /* region#2: music CPU, 64kb */
-		ROM_LOAD( "vball.47",  0x00000, 0x8000,  0x10ca79ad )
+		ROM_REGION( 0x10000, REGION_CPU2, 0 );/* region#2: music CPU, 64kb */
+		ROM_LOAD( "vball.47",  0x00000, 0x8000,  0x10ca79ad );
 	
 		/* These are from the bootleg; the original doesn't seem to have them?? */
-		ROM_REGION(0x80000, REGION_GFX1, ROMREGION_DISPOSE )	 /* fg tiles */
-		ROM_LOAD( "vball13.bin",  0x00000, 0x10000, 0xf26df8e1 ) /* 0,1,2,3 */
-		ROM_LOAD( "vball14.bin",  0x10000, 0x10000, 0xc9798d0e ) /* 0,1,2,3 */
-		ROM_LOAD( "vball15.bin",  0x20000, 0x10000, 0x68e69c4b ) /* 0,1,2,3 */
-		ROM_LOAD( "vball16.bin",  0x30000, 0x10000, 0x936457ba ) /* 0,1,2,3 */
-		ROM_LOAD( "vball09.bin",  0x40000, 0x10000, 0x42874924 ) /* 0,1,2,3 */
-		ROM_LOAD( "vball10.bin",  0x50000, 0x10000, 0x6cc676ee ) /* 0,1,2,3 */
-		ROM_LOAD( "vball11.bin",  0x60000, 0x10000, 0x4754b303 ) /* 0,1,2,3 */
-		ROM_LOAD( "vball12.bin",  0x70000, 0x10000, 0x21294a84 ) /* 0,1,2,3 */
+		ROM_REGION(0x80000, REGION_GFX1, ROMREGION_DISPOSE ); /* fg tiles */
+		ROM_LOAD( "vball13.bin",  0x00000, 0x10000, 0xf26df8e1 );/* 0,1,2,3 */
+		ROM_LOAD( "vball14.bin",  0x10000, 0x10000, 0xc9798d0e );/* 0,1,2,3 */
+		ROM_LOAD( "vball15.bin",  0x20000, 0x10000, 0x68e69c4b );/* 0,1,2,3 */
+		ROM_LOAD( "vball16.bin",  0x30000, 0x10000, 0x936457ba );/* 0,1,2,3 */
+		ROM_LOAD( "vball09.bin",  0x40000, 0x10000, 0x42874924 );/* 0,1,2,3 */
+		ROM_LOAD( "vball10.bin",  0x50000, 0x10000, 0x6cc676ee );/* 0,1,2,3 */
+		ROM_LOAD( "vball11.bin",  0x60000, 0x10000, 0x4754b303 );/* 0,1,2,3 */
+		ROM_LOAD( "vball12.bin",  0x70000, 0x10000, 0x21294a84 );/* 0,1,2,3 */
 	
-		ROM_REGION(0x40000, REGION_GFX2, ROMREGION_DISPOSE )	 /* sprites */
-		ROM_LOAD( "vball.35",  0x00000, 0x20000, 0x877826d8 ) /* 0,1,2,3 */
-		ROM_LOAD( "vball.5",   0x20000, 0x20000, 0xc6afb4fa ) /* 0,1,2,3 */
+		ROM_REGION(0x40000, REGION_GFX2, ROMREGION_DISPOSE ); /* sprites */
+		ROM_LOAD( "vball.35",  0x00000, 0x20000, 0x877826d8 );/* 0,1,2,3 */
+		ROM_LOAD( "vball.5",   0x20000, 0x20000, 0xc6afb4fa );/* 0,1,2,3 */
 	
-		ROM_REGION(0x20000, REGION_SOUND1, 0 ) /* Sound region#1: adpcm */
-		ROM_LOAD( "vball.78a",  0x00000, 0x10000, 0xf3e63b76 )
-		ROM_LOAD( "vball.78b",  0x10000, 0x10000, 0x7ad9d338 )
+		ROM_REGION(0x20000, REGION_SOUND1, 0 );/* Sound region#1: adpcm */
+		ROM_LOAD( "vball.78a",  0x00000, 0x10000, 0xf3e63b76 );
+		ROM_LOAD( "vball.78b",  0x10000, 0x10000, 0x7ad9d338 );
 	
-		ROM_REGION(0x1000, REGION_PROMS, 0 )	/* color PROMs */
-		ROM_LOAD_NIB_LOW ( "vball.44",   0x0000, 0x00800, 0xa317240f )
-		ROM_LOAD_NIB_HIGH( "vball.43",   0x0000, 0x00800, 0x1ff70b4f )
-		ROM_LOAD( "vball.160",  0x0800, 0x00800, 0x2ffb68b3 )
-	ROM_END
+		ROM_REGION(0x1000, REGION_PROMS, 0 );/* color PROMs */
+		ROM_LOAD_NIB_LOW ( "vball.44",   0x0000, 0x00800, 0xa317240f );
+		ROM_LOAD_NIB_HIGH( "vball.43",   0x0000, 0x00800, 0x1ff70b4f );
+		ROM_LOAD( "vball.160",  0x0800, 0x00800, 0x2ffb68b3 );
+	ROM_END(); }}; 
 	
-	ROM_START( vball2pj )
-		ROM_REGION( 0x18000, REGION_CPU1, 0 )	/* Main CPU */
-		ROM_LOAD( "vball01.bin",  0x10000, 0x08000,  0x432509c4 )/* Bankswitched */
-		ROM_CONTINUE(		  0x08000, 0x08000 )		 /* Static code  */
+	static RomLoadPtr rom_vball2pj = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x18000, REGION_CPU1, 0 );/* Main CPU */
+		ROM_LOAD( "vball01.bin",  0x10000, 0x08000,  0x432509c4 );* Bankswitched */
+		ROM_CONTINUE(		  0x08000, 0x08000 );	 /* Static code  */
 	
-		ROM_REGION( 0x10000, REGION_CPU2, 0 ) /* region#2: music CPU, 64kb */
-		ROM_LOAD( "vball04.bin",  0x00000, 0x8000,  0x534dfbd9 )
+		ROM_REGION( 0x10000, REGION_CPU2, 0 );/* region#2: music CPU, 64kb */
+		ROM_LOAD( "vball04.bin",  0x00000, 0x8000,  0x534dfbd9 );
 	
-		ROM_REGION(0x80000, REGION_GFX1, ROMREGION_DISPOSE )	 /* fg tiles */
-		ROM_LOAD( "vball13.bin",  0x00000, 0x10000, 0xf26df8e1 ) /* 0,1,2,3 */
-		ROM_LOAD( "vball14.bin",  0x10000, 0x10000, 0xc9798d0e ) /* 0,1,2,3 */
-		ROM_LOAD( "vball15.bin",  0x20000, 0x10000, 0x68e69c4b ) /* 0,1,2,3 */
-		ROM_LOAD( "vball16.bin",  0x30000, 0x10000, 0x936457ba ) /* 0,1,2,3 */
-		ROM_LOAD( "vball09.bin",  0x40000, 0x10000, 0x42874924 ) /* 0,1,2,3 */
-		ROM_LOAD( "vball10.bin",  0x50000, 0x10000, 0x6cc676ee ) /* 0,1,2,3 */
-		ROM_LOAD( "vball11.bin",  0x60000, 0x10000, 0x4754b303 ) /* 0,1,2,3 */
-		ROM_LOAD( "vball12.bin",  0x70000, 0x10000, 0x21294a84 ) /* 0,1,2,3 */
+		ROM_REGION(0x80000, REGION_GFX1, ROMREGION_DISPOSE ); /* fg tiles */
+		ROM_LOAD( "vball13.bin",  0x00000, 0x10000, 0xf26df8e1 );/* 0,1,2,3 */
+		ROM_LOAD( "vball14.bin",  0x10000, 0x10000, 0xc9798d0e );/* 0,1,2,3 */
+		ROM_LOAD( "vball15.bin",  0x20000, 0x10000, 0x68e69c4b );/* 0,1,2,3 */
+		ROM_LOAD( "vball16.bin",  0x30000, 0x10000, 0x936457ba );/* 0,1,2,3 */
+		ROM_LOAD( "vball09.bin",  0x40000, 0x10000, 0x42874924 );/* 0,1,2,3 */
+		ROM_LOAD( "vball10.bin",  0x50000, 0x10000, 0x6cc676ee );/* 0,1,2,3 */
+		ROM_LOAD( "vball11.bin",  0x60000, 0x10000, 0x4754b303 );/* 0,1,2,3 */
+		ROM_LOAD( "vball12.bin",  0x70000, 0x10000, 0x21294a84 );/* 0,1,2,3 */
 	
-		ROM_REGION(0x40000, REGION_GFX2, ROMREGION_DISPOSE )	 /* sprites */
-		ROM_LOAD( "vball08.bin",  0x00000, 0x10000, 0xb18d083c ) /* 0,1,2,3 */
-		ROM_LOAD( "vball07.bin",  0x10000, 0x10000, 0x79a35321 ) /* 0,1,2,3 */
-		ROM_LOAD( "vball06.bin",  0x20000, 0x10000, 0x49c6aad7 ) /* 0,1,2,3 */
-		ROM_LOAD( "vball05.bin",  0x30000, 0x10000, 0x9bb95651 ) /* 0,1,2,3 */
+		ROM_REGION(0x40000, REGION_GFX2, ROMREGION_DISPOSE ); /* sprites */
+		ROM_LOAD( "vball08.bin",  0x00000, 0x10000, 0xb18d083c );/* 0,1,2,3 */
+		ROM_LOAD( "vball07.bin",  0x10000, 0x10000, 0x79a35321 );/* 0,1,2,3 */
+		ROM_LOAD( "vball06.bin",  0x20000, 0x10000, 0x49c6aad7 );/* 0,1,2,3 */
+		ROM_LOAD( "vball05.bin",  0x30000, 0x10000, 0x9bb95651 );/* 0,1,2,3 */
 	
-		ROM_REGION(0x20000, REGION_SOUND1, 0 ) /* Sound region#1: adpcm */
-		ROM_LOAD( "vball.78a",  0x00000, 0x10000, 0xf3e63b76 )
-		ROM_LOAD( "vball.78b",  0x10000, 0x10000, 0x7ad9d338 )
+		ROM_REGION(0x20000, REGION_SOUND1, 0 );/* Sound region#1: adpcm */
+		ROM_LOAD( "vball.78a",  0x00000, 0x10000, 0xf3e63b76 );
+		ROM_LOAD( "vball.78b",  0x10000, 0x10000, 0x7ad9d338 );
 	
-		ROM_REGION(0x1000, REGION_PROMS, 0 )	/* color PROMs */
-		ROM_LOAD_NIB_LOW ( "vball.44",   0x0000, 0x00800, 0xa317240f )
-		ROM_LOAD_NIB_HIGH( "vball.43",   0x0000, 0x00800, 0x1ff70b4f )
-		ROM_LOAD( "vball.160",  0x0800, 0x00800, 0x2ffb68b3 )
-	ROM_END
+		ROM_REGION(0x1000, REGION_PROMS, 0 );/* color PROMs */
+		ROM_LOAD_NIB_LOW ( "vball.44",   0x0000, 0x00800, 0xa317240f );
+		ROM_LOAD_NIB_HIGH( "vball.43",   0x0000, 0x00800, 0x1ff70b4f );
+		ROM_LOAD( "vball.160",  0x0800, 0x00800, 0x2ffb68b3 );
+	ROM_END(); }}; 
 	
 	
 	GAMEX( 1988, vball,    0,     vball,    vball,    0, ROT0, "Technos", "U.S. Championship V'ball (set 1)", GAME_NO_COCKTAIL )

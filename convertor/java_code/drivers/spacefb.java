@@ -424,131 +424,131 @@ public class spacefb
 	
 	
 	
-	ROM_START( spacefb )
-		ROM_REGION( 0x10000, REGION_CPU1, 0 )	/* 64k for code */
-		ROM_LOAD( "5e.cpu",       0x0000, 0x0800, 0x2d406678 )         /* Code */
-		ROM_LOAD( "5f.cpu",       0x0800, 0x0800, 0x89f0c34a )
-		ROM_LOAD( "5h.cpu",       0x1000, 0x0800, 0xc4bcac3e )
-		ROM_LOAD( "5i.cpu",       0x1800, 0x0800, 0x61c00a65 )
-		ROM_LOAD( "5j.cpu",       0x2000, 0x0800, 0x598420b9 )
-		ROM_LOAD( "5k.cpu",       0x2800, 0x0800, 0x1713300c )
-		ROM_LOAD( "5m.cpu",       0x3000, 0x0800, 0x6286f534 )
-		ROM_LOAD( "5n.cpu",       0x3800, 0x0800, 0x1c9f91ee )
+	static RomLoadPtr rom_spacefb = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x10000, REGION_CPU1, 0 );/* 64k for code */
+		ROM_LOAD( "5e.cpu",       0x0000, 0x0800, 0x2d406678 );        /* Code */
+		ROM_LOAD( "5f.cpu",       0x0800, 0x0800, 0x89f0c34a );
+		ROM_LOAD( "5h.cpu",       0x1000, 0x0800, 0xc4bcac3e );
+		ROM_LOAD( "5i.cpu",       0x1800, 0x0800, 0x61c00a65 );
+		ROM_LOAD( "5j.cpu",       0x2000, 0x0800, 0x598420b9 );
+		ROM_LOAD( "5k.cpu",       0x2800, 0x0800, 0x1713300c );
+		ROM_LOAD( "5m.cpu",       0x3000, 0x0800, 0x6286f534 );
+		ROM_LOAD( "5n.cpu",       0x3800, 0x0800, 0x1c9f91ee );
 	
-		ROM_REGION( 0x1000, REGION_CPU2, 0 )	/* sound */
-	    ROM_LOAD( "ic20.snd",     0x0000, 0x0400, 0x1c8670b3 )
+		ROM_REGION( 0x1000, REGION_CPU2, 0 );/* sound */
+	    ROM_LOAD( "ic20.snd",     0x0000, 0x0400, 0x1c8670b3 );
 	
-		ROM_REGION( 0x1000, REGION_GFX1, ROMREGION_DISPOSE )
-		ROM_LOAD( "5k.vid",       0x0000, 0x0800, 0x236e1ff7 )
-		ROM_LOAD( "6k.vid",       0x0800, 0x0800, 0xbf901a4e )
+		ROM_REGION( 0x1000, REGION_GFX1, ROMREGION_DISPOSE );
+		ROM_LOAD( "5k.vid",       0x0000, 0x0800, 0x236e1ff7 );
+		ROM_LOAD( "6k.vid",       0x0800, 0x0800, 0xbf901a4e );
 	
-		ROM_REGION( 0x0100, REGION_GFX2, ROMREGION_DISPOSE )
-		ROM_LOAD( "4i.vid",       0x0000, 0x0100, 0x528e8533 )
+		ROM_REGION( 0x0100, REGION_GFX2, ROMREGION_DISPOSE );
+		ROM_LOAD( "4i.vid",       0x0000, 0x0100, 0x528e8533 );
 	
-		ROM_REGION( 0x0020, REGION_PROMS, 0 )
-		ROM_LOAD( "mb7051.3n",    0x0000, 0x0020, 0x465d07af )
-	ROM_END
+		ROM_REGION( 0x0020, REGION_PROMS, 0 );
+		ROM_LOAD( "mb7051.3n",    0x0000, 0x0020, 0x465d07af );
+	ROM_END(); }}; 
 	
-	ROM_START( spacefbg )
-		ROM_REGION( 0x10000, REGION_CPU1, 0 )	/* 64k for code */
-		ROM_LOAD( "tst-c.5e",     0x0000, 0x0800, 0x07949110 )         /* Code */
-		ROM_LOAD( "tst-c.5f",     0x0800, 0x0800, 0xce591929 )
-		ROM_LOAD( "tst-c.5h",     0x1000, 0x0800, 0x55d34ea5 )
-		ROM_LOAD( "tst-c.5i",     0x1800, 0x0800, 0xa11e2881 )
-		ROM_LOAD( "tst-c.5j",     0x2000, 0x0800, 0xa6aff352 )
-		ROM_LOAD( "tst-c.5k",     0x2800, 0x0800, 0xf4213603 )
-		ROM_LOAD( "5m.cpu",       0x3000, 0x0800, 0x6286f534 )
-		ROM_LOAD( "5n.cpu",       0x3800, 0x0800, 0x1c9f91ee )
+	static RomLoadPtr rom_spacefbg = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x10000, REGION_CPU1, 0 );/* 64k for code */
+		ROM_LOAD( "tst-c.5e",     0x0000, 0x0800, 0x07949110 );        /* Code */
+		ROM_LOAD( "tst-c.5f",     0x0800, 0x0800, 0xce591929 );
+		ROM_LOAD( "tst-c.5h",     0x1000, 0x0800, 0x55d34ea5 );
+		ROM_LOAD( "tst-c.5i",     0x1800, 0x0800, 0xa11e2881 );
+		ROM_LOAD( "tst-c.5j",     0x2000, 0x0800, 0xa6aff352 );
+		ROM_LOAD( "tst-c.5k",     0x2800, 0x0800, 0xf4213603 );
+		ROM_LOAD( "5m.cpu",       0x3000, 0x0800, 0x6286f534 );
+		ROM_LOAD( "5n.cpu",       0x3800, 0x0800, 0x1c9f91ee );
 	
-		ROM_REGION( 0x1000, REGION_CPU2, 0 )	/* sound */
-	    ROM_LOAD( "ic20.snd",     0x0000, 0x0400, 0x1c8670b3 )
+		ROM_REGION( 0x1000, REGION_CPU2, 0 );/* sound */
+	    ROM_LOAD( "ic20.snd",     0x0000, 0x0400, 0x1c8670b3 );
 	
-		ROM_REGION( 0x1000, REGION_GFX1, ROMREGION_DISPOSE )
-		ROM_LOAD( "tst-v.5k",     0x0000, 0x0800, 0xbacc780d )
-		ROM_LOAD( "tst-v.6k",     0x0800, 0x0800, 0x1645ff26 )
+		ROM_REGION( 0x1000, REGION_GFX1, ROMREGION_DISPOSE );
+		ROM_LOAD( "tst-v.5k",     0x0000, 0x0800, 0xbacc780d );
+		ROM_LOAD( "tst-v.6k",     0x0800, 0x0800, 0x1645ff26 );
 	
-		ROM_REGION( 0x0100, REGION_GFX2, ROMREGION_DISPOSE )
-		ROM_LOAD( "4i.vid",       0x0000, 0x0100, 0x528e8533 )
+		ROM_REGION( 0x0100, REGION_GFX2, ROMREGION_DISPOSE );
+		ROM_LOAD( "4i.vid",       0x0000, 0x0100, 0x528e8533 );
 	
-		ROM_REGION( 0x0020, REGION_PROMS, 0 )
-		ROM_LOAD( "mb7051.3n",    0x0000, 0x0020, 0x465d07af )
-	ROM_END
+		ROM_REGION( 0x0020, REGION_PROMS, 0 );
+		ROM_LOAD( "mb7051.3n",    0x0000, 0x0020, 0x465d07af );
+	ROM_END(); }}; 
 	
-	ROM_START( spacebrd )
-		ROM_REGION( 0x10000, REGION_CPU1, 0 )	/* 64k for code */
-		ROM_LOAD( "sb5e.cpu",     0x0000, 0x0800, 0x232d66b8 )         /* Code */
-		ROM_LOAD( "sb5f.cpu",     0x0800, 0x0800, 0x99504327 )
-		ROM_LOAD( "sb5h.cpu",     0x1000, 0x0800, 0x49a26fe5 )
-		ROM_LOAD( "sb5i.cpu",     0x1800, 0x0800, 0xc23025da )
-		ROM_LOAD( "sb5j.cpu",     0x2000, 0x0800, 0x5e97baf0 )
-		ROM_LOAD( "5k.cpu",       0x2800, 0x0800, 0x1713300c )
-		ROM_LOAD( "sb5m.cpu",     0x3000, 0x0800, 0x4cbe92fc )
-		ROM_LOAD( "sb5n.cpu",     0x3800, 0x0800, 0x1a798fbf )
+	static RomLoadPtr rom_spacebrd = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x10000, REGION_CPU1, 0 );/* 64k for code */
+		ROM_LOAD( "sb5e.cpu",     0x0000, 0x0800, 0x232d66b8 );        /* Code */
+		ROM_LOAD( "sb5f.cpu",     0x0800, 0x0800, 0x99504327 );
+		ROM_LOAD( "sb5h.cpu",     0x1000, 0x0800, 0x49a26fe5 );
+		ROM_LOAD( "sb5i.cpu",     0x1800, 0x0800, 0xc23025da );
+		ROM_LOAD( "sb5j.cpu",     0x2000, 0x0800, 0x5e97baf0 );
+		ROM_LOAD( "5k.cpu",       0x2800, 0x0800, 0x1713300c );
+		ROM_LOAD( "sb5m.cpu",     0x3000, 0x0800, 0x4cbe92fc );
+		ROM_LOAD( "sb5n.cpu",     0x3800, 0x0800, 0x1a798fbf );
 	
-		ROM_REGION( 0x1000, REGION_CPU2, 0 )	/* sound */
-	    ROM_LOAD( "ic20.snd",     0x0000, 0x0400, 0x1c8670b3 )
+		ROM_REGION( 0x1000, REGION_CPU2, 0 );/* sound */
+	    ROM_LOAD( "ic20.snd",     0x0000, 0x0400, 0x1c8670b3 );
 	
-		ROM_REGION( 0x1000, REGION_GFX1, ROMREGION_DISPOSE )
-		ROM_LOAD( "5k.vid",       0x0000, 0x0800, 0x236e1ff7 )
-		ROM_LOAD( "6k.vid",       0x0800, 0x0800, 0xbf901a4e )
+		ROM_REGION( 0x1000, REGION_GFX1, ROMREGION_DISPOSE );
+		ROM_LOAD( "5k.vid",       0x0000, 0x0800, 0x236e1ff7 );
+		ROM_LOAD( "6k.vid",       0x0800, 0x0800, 0xbf901a4e );
 	
-		ROM_REGION( 0x0100, REGION_GFX2, ROMREGION_DISPOSE )
-		ROM_LOAD( "4i.vid",       0x0000, 0x0100, 0x528e8533 )
+		ROM_REGION( 0x0100, REGION_GFX2, ROMREGION_DISPOSE );
+		ROM_LOAD( "4i.vid",       0x0000, 0x0100, 0x528e8533 );
 	
-		ROM_REGION( 0x0020, REGION_PROMS, 0 )
-		ROM_LOAD( "spcbird.clr",  0x0000, 0x0020, 0x25c79518 )
-	ROM_END
+		ROM_REGION( 0x0020, REGION_PROMS, 0 );
+		ROM_LOAD( "spcbird.clr",  0x0000, 0x0020, 0x25c79518 );
+	ROM_END(); }}; 
 	
 	/* only a few bytes are different between this and spacebrd above */
-	ROM_START( spacefbb )
-		ROM_REGION( 0x10000, REGION_CPU1, 0 )	/* 64k for code */
-		ROM_LOAD( "fc51",         0x0000, 0x0800, 0x5657bd2f )         /* Code */
-		ROM_LOAD( "fc52",         0x0800, 0x0800, 0x303b0294 )
-		ROM_LOAD( "sb5h.cpu",     0x1000, 0x0800, 0x49a26fe5 )
-		ROM_LOAD( "sb5i.cpu",     0x1800, 0x0800, 0xc23025da )
-		ROM_LOAD( "fc55",         0x2000, 0x0800, 0x946bee5d )
-		ROM_LOAD( "5k.cpu",       0x2800, 0x0800, 0x1713300c )
-		ROM_LOAD( "sb5m.cpu",     0x3000, 0x0800, 0x4cbe92fc )
-		ROM_LOAD( "sb5n.cpu",     0x3800, 0x0800, 0x1a798fbf )
+	static RomLoadPtr rom_spacefbb = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x10000, REGION_CPU1, 0 );/* 64k for code */
+		ROM_LOAD( "fc51",         0x0000, 0x0800, 0x5657bd2f );        /* Code */
+		ROM_LOAD( "fc52",         0x0800, 0x0800, 0x303b0294 );
+		ROM_LOAD( "sb5h.cpu",     0x1000, 0x0800, 0x49a26fe5 );
+		ROM_LOAD( "sb5i.cpu",     0x1800, 0x0800, 0xc23025da );
+		ROM_LOAD( "fc55",         0x2000, 0x0800, 0x946bee5d );
+		ROM_LOAD( "5k.cpu",       0x2800, 0x0800, 0x1713300c );
+		ROM_LOAD( "sb5m.cpu",     0x3000, 0x0800, 0x4cbe92fc );
+		ROM_LOAD( "sb5n.cpu",     0x3800, 0x0800, 0x1a798fbf );
 	
-		ROM_REGION( 0x1000, REGION_CPU2, 0 )	/* sound */
-	    ROM_LOAD( "fb.snd",       0x0000, 0x0400, 0xf7a59492 )
+		ROM_REGION( 0x1000, REGION_CPU2, 0 );/* sound */
+	    ROM_LOAD( "fb.snd",       0x0000, 0x0400, 0xf7a59492 );
 	
-		ROM_REGION( 0x1000, REGION_GFX1, ROMREGION_DISPOSE )
-		ROM_LOAD( "fc59",         0x0000, 0x0800, 0xa00ad16c )
-		ROM_LOAD( "6k.vid",       0x0800, 0x0800, 0xbf901a4e )
+		ROM_REGION( 0x1000, REGION_GFX1, ROMREGION_DISPOSE );
+		ROM_LOAD( "fc59",         0x0000, 0x0800, 0xa00ad16c );
+		ROM_LOAD( "6k.vid",       0x0800, 0x0800, 0xbf901a4e );
 	
-		ROM_REGION( 0x0100, REGION_GFX2, ROMREGION_DISPOSE )
-		ROM_LOAD( "4i.vid",       0x0000, 0x0100, 0x528e8533 )
+		ROM_REGION( 0x0100, REGION_GFX2, ROMREGION_DISPOSE );
+		ROM_LOAD( "4i.vid",       0x0000, 0x0100, 0x528e8533 );
 	
-		ROM_REGION( 0x0020, REGION_PROMS, 0 )
-		ROM_LOAD( "mb7051.3n",    0x0000, 0x0020, 0x465d07af )
-	ROM_END
+		ROM_REGION( 0x0020, REGION_PROMS, 0 );
+		ROM_LOAD( "mb7051.3n",    0x0000, 0x0020, 0x465d07af );
+	ROM_END(); }}; 
 	
-	ROM_START( spacedem )
-		ROM_REGION( 0x10000, REGION_CPU1, 0 )	/* 64k for code */
-		ROM_LOAD( "sdm-c-5e",     0x0000, 0x0800, 0xbe4b9cbb )         /* Code */
-		ROM_LOAD( "sdm-c-5f",     0x0800, 0x0800, 0x0814f964 )
-		ROM_LOAD( "sdm-c-5h",     0x1000, 0x0800, 0xebfff682 )
-		ROM_LOAD( "sdm-c-5i",     0x1800, 0x0800, 0xdd7e1378 )
-		ROM_LOAD( "sdm-c-5j",     0x2000, 0x0800, 0x98334fda )
-		ROM_LOAD( "sdm-c-5k",     0x2800, 0x0800, 0xba4933b2 )
-		ROM_LOAD( "sdm-c-5m",     0x3000, 0x0800, 0x14d3c656 )
-		ROM_LOAD( "sdm-c-5n",     0x3800, 0x0800, 0x7e0e41b0 )
+	static RomLoadPtr rom_spacedem = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x10000, REGION_CPU1, 0 );/* 64k for code */
+		ROM_LOAD( "sdm-c-5e",     0x0000, 0x0800, 0xbe4b9cbb );        /* Code */
+		ROM_LOAD( "sdm-c-5f",     0x0800, 0x0800, 0x0814f964 );
+		ROM_LOAD( "sdm-c-5h",     0x1000, 0x0800, 0xebfff682 );
+		ROM_LOAD( "sdm-c-5i",     0x1800, 0x0800, 0xdd7e1378 );
+		ROM_LOAD( "sdm-c-5j",     0x2000, 0x0800, 0x98334fda );
+		ROM_LOAD( "sdm-c-5k",     0x2800, 0x0800, 0xba4933b2 );
+		ROM_LOAD( "sdm-c-5m",     0x3000, 0x0800, 0x14d3c656 );
+		ROM_LOAD( "sdm-c-5n",     0x3800, 0x0800, 0x7e0e41b0 );
 	
-		ROM_REGION( 0x1000, REGION_CPU2, 0 )	/* sound */
-	    ROM_LOAD( "sdm-e-20",     0x0000, 0x0400, 0x55f40a0b )
+		ROM_REGION( 0x1000, REGION_CPU2, 0 );/* sound */
+	    ROM_LOAD( "sdm-e-20",     0x0000, 0x0400, 0x55f40a0b );
 	
-		ROM_REGION( 0x1000, REGION_GFX1, ROMREGION_DISPOSE )
-		ROM_LOAD( "sdm-v-5k",     0x0000, 0x0800, 0x55758e4d )
-		ROM_LOAD( "sdm-v-6k",     0x0800, 0x0800, 0x3fcbb20c )
+		ROM_REGION( 0x1000, REGION_GFX1, ROMREGION_DISPOSE );
+		ROM_LOAD( "sdm-v-5k",     0x0000, 0x0800, 0x55758e4d );
+		ROM_LOAD( "sdm-v-6k",     0x0800, 0x0800, 0x3fcbb20c );
 	
-		ROM_REGION( 0x0100, REGION_GFX2, ROMREGION_DISPOSE )
-		ROM_LOAD( "4i.vid",       0x0000, 0x0100, 0x528e8533 )
+		ROM_REGION( 0x0100, REGION_GFX2, ROMREGION_DISPOSE );
+		ROM_LOAD( "4i.vid",       0x0000, 0x0100, 0x528e8533 );
 	
-		ROM_REGION( 0x0020, REGION_PROMS, 0 )
-		ROM_LOAD( "sdm-v-3n",     0x0000, 0x0020, 0x6d8ad169 )
-	ROM_END
+		ROM_REGION( 0x0020, REGION_PROMS, 0 );
+		ROM_LOAD( "sdm-v-3n",     0x0000, 0x0020, 0x6d8ad169 );
+	ROM_END(); }}; 
 	
 	
 	GAMEX( 1980, spacefb,  0,       spacefb, spacefb,  0, ROT90, "Nintendo", "Space Firebird (Nintendo)", GAME_IMPERFECT_COLORS | GAME_IMPERFECT_SOUND )

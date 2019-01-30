@@ -992,74 +992,74 @@ public class psikyo
 	
 	***************************************************************************/
 	
-	ROM_START( gunbird )
+	static RomLoadPtr rom_gunbird = new RomLoadPtr(){ public void handler(){ 
 	
-		ROM_REGION( 0x080000, REGION_CPU1, 0 )		/* Main CPU Code */
-		ROM_LOAD32_WORD_SWAP( "1-u46.bin", 0x000000, 0x040000, 0x474abd69 ) // 1&0
-		ROM_LOAD32_WORD_SWAP( "2-u39.bin", 0x000002, 0x040000, 0x3e3e661f ) // 3&2
+		ROM_REGION( 0x080000, REGION_CPU1, 0 );	/* Main CPU Code */
+		ROM_LOAD32_WORD_SWAP( "1-u46.bin", 0x000000, 0x040000, 0x474abd69 );// 1&0
+		ROM_LOAD32_WORD_SWAP( "2-u39.bin", 0x000002, 0x040000, 0x3e3e661f );// 3&2
 	
-		ROM_REGION( 0x030000, REGION_CPU2, 0 )		/* Sound CPU Code */
-		ROM_LOAD( "3-u71.bin", 0x00000, 0x20000, 0x2168e4ba )
-		ROM_RELOAD(            0x10000, 0x20000             )
+		ROM_REGION( 0x030000, REGION_CPU2, 0 );	/* Sound CPU Code */
+		ROM_LOAD( "3-u71.bin", 0x00000, 0x20000, 0x2168e4ba );
+		ROM_RELOAD(            0x10000, 0x20000             );
 	
-		ROM_REGION( 0x700000, REGION_GFX1, ROMREGION_DISPOSE )	/* Sprites */
-		ROM_LOAD( "u14.bin",  0x000000, 0x200000, 0x7d7e8a00 )
-		ROM_LOAD( "u24.bin",  0x200000, 0x200000, 0x5e3ffc9d )
-		ROM_LOAD( "u15.bin",  0x400000, 0x200000, 0xa827bfb5 )
-		ROM_LOAD( "u25.bin",  0x600000, 0x100000, 0xef652e0c )
+		ROM_REGION( 0x700000, REGION_GFX1, ROMREGION_DISPOSE );/* Sprites */
+		ROM_LOAD( "u14.bin",  0x000000, 0x200000, 0x7d7e8a00 );
+		ROM_LOAD( "u24.bin",  0x200000, 0x200000, 0x5e3ffc9d );
+		ROM_LOAD( "u15.bin",  0x400000, 0x200000, 0xa827bfb5 );
+		ROM_LOAD( "u25.bin",  0x600000, 0x100000, 0xef652e0c );
 	
-		ROM_REGION( 0x200000, REGION_GFX2, ROMREGION_DISPOSE )	/* Layer 0 */
-		ROM_LOAD( "u33.bin",  0x000000, 0x200000, 0x54494e6b )
+		ROM_REGION( 0x200000, REGION_GFX2, ROMREGION_DISPOSE );/* Layer 0 */
+		ROM_LOAD( "u33.bin",  0x000000, 0x200000, 0x54494e6b );
 	
-		ROM_REGION( 0x100000, REGION_GFX3, ROMREGION_DISPOSE )	/* Layer 1 */
-		ROM_LOAD( "u33.bin",  0x000000, 0x100000, 0x54494e6b )
-		ROM_CONTINUE(         0x000000, 0x100000             )
+		ROM_REGION( 0x100000, REGION_GFX3, ROMREGION_DISPOSE );/* Layer 1 */
+		ROM_LOAD( "u33.bin",  0x000000, 0x100000, 0x54494e6b );
+		ROM_CONTINUE(         0x000000, 0x100000             );
 	
-		ROM_REGION( 0x080000, REGION_SOUND1, ROMREGION_SOUNDONLY )	/* DELTA-T Samples */
-		ROM_LOAD( "u64.bin",  0x000000, 0x080000, 0xe187ed4f )
+		ROM_REGION( 0x080000, REGION_SOUND1, ROMREGION_SOUNDONLY );/* DELTA-T Samples */
+		ROM_LOAD( "u64.bin",  0x000000, 0x080000, 0xe187ed4f );
 	
-		ROM_REGION( 0x100000, REGION_SOUND2, ROMREGION_SOUNDONLY )	/* ADPCM Samples */
-		ROM_LOAD( "u56.bin",  0x000000, 0x100000, 0x9e07104d )
+		ROM_REGION( 0x100000, REGION_SOUND2, ROMREGION_SOUNDONLY );/* ADPCM Samples */
+		ROM_LOAD( "u56.bin",  0x000000, 0x100000, 0x9e07104d );
 	
-		ROM_REGION( 0x040000, REGION_USER1, 0 )	/* Sprites LUT */
-		ROM_LOAD( "u3.bin",  0x000000, 0x040000, 0x0905aeb2 )
+		ROM_REGION( 0x040000, REGION_USER1, 0 );/* Sprites LUT */
+		ROM_LOAD( "u3.bin",  0x000000, 0x040000, 0x0905aeb2 );
 	
-	ROM_END
+	ROM_END(); }}; 
 	
 	
-	ROM_START( btlkrodj )
+	static RomLoadPtr rom_btlkrodj = new RomLoadPtr(){ public void handler(){ 
 	
-		ROM_REGION( 0x080000, REGION_CPU1, 0 )		/* Main CPU Code */
-		ROM_LOAD32_WORD_SWAP( "4-u46.bin", 0x000000, 0x040000, 0x8a7a28b4 ) // 1&0
-		ROM_LOAD32_WORD_SWAP( "5-u39.bin", 0x000002, 0x040000, 0x933561fa ) // 3&2
+		ROM_REGION( 0x080000, REGION_CPU1, 0 );	/* Main CPU Code */
+		ROM_LOAD32_WORD_SWAP( "4-u46.bin", 0x000000, 0x040000, 0x8a7a28b4 );// 1&0
+		ROM_LOAD32_WORD_SWAP( "5-u39.bin", 0x000002, 0x040000, 0x933561fa );// 3&2
 	
-		ROM_REGION( 0x030000, REGION_CPU2, 0 )		/* Sound CPU Code */
-		ROM_LOAD( "3-u71.bin", 0x00000, 0x20000, 0x22411fab )
-		ROM_RELOAD(            0x10000, 0x20000             )
+		ROM_REGION( 0x030000, REGION_CPU2, 0 );	/* Sound CPU Code */
+		ROM_LOAD( "3-u71.bin", 0x00000, 0x20000, 0x22411fab );
+		ROM_RELOAD(            0x10000, 0x20000             );
 	
-		ROM_REGION( 0x700000, REGION_GFX1, ROMREGION_DISPOSE )	/* Sprites */
-		ROM_LOAD( "u14.bin",  0x000000, 0x200000, 0x282d89c3 )
-		ROM_LOAD( "u24.bin",  0x200000, 0x200000, 0xbbe9d3d1 )
-		ROM_LOAD( "u15.bin",  0x400000, 0x200000, 0xd4d1b07c )
+		ROM_REGION( 0x700000, REGION_GFX1, ROMREGION_DISPOSE );/* Sprites */
+		ROM_LOAD( "u14.bin",  0x000000, 0x200000, 0x282d89c3 );
+		ROM_LOAD( "u24.bin",  0x200000, 0x200000, 0xbbe9d3d1 );
+		ROM_LOAD( "u15.bin",  0x400000, 0x200000, 0xd4d1b07c );
 	//	ROM_LOAD( "u25.bin",  0x600000, 0x100000	NOT PRESENT
 	
-		ROM_REGION( 0x200000, REGION_GFX2, ROMREGION_DISPOSE )	/* Layer 0 */
-		ROM_LOAD( "u33.bin",  0x000000, 0x200000, 0x4c8577f1 )
+		ROM_REGION( 0x200000, REGION_GFX2, ROMREGION_DISPOSE );/* Layer 0 */
+		ROM_LOAD( "u33.bin",  0x000000, 0x200000, 0x4c8577f1 );
 	
-		ROM_REGION( 0x100000, REGION_GFX3, ROMREGION_DISPOSE )	/* Layer 1 */
-		ROM_LOAD( "u33.bin",  0x000000, 0x100000, 0x4c8577f1 )
-		ROM_CONTINUE(         0x000000, 0x100000             )
+		ROM_REGION( 0x100000, REGION_GFX3, ROMREGION_DISPOSE );/* Layer 1 */
+		ROM_LOAD( "u33.bin",  0x000000, 0x100000, 0x4c8577f1 );
+		ROM_CONTINUE(         0x000000, 0x100000             );
 	
-		ROM_REGION( 0x080000, REGION_SOUND1, ROMREGION_SOUNDONLY )	/* DELTA-T Samples */
-		ROM_LOAD( "u64.bin",  0x000000, 0x080000, 0x0f33049f )
+		ROM_REGION( 0x080000, REGION_SOUND1, ROMREGION_SOUNDONLY );/* DELTA-T Samples */
+		ROM_LOAD( "u64.bin",  0x000000, 0x080000, 0x0f33049f );
 	
-		ROM_REGION( 0x100000, REGION_SOUND2, ROMREGION_SOUNDONLY )	/* ADPCM Samples */
-		ROM_LOAD( "u56.bin",  0x000000, 0x100000, 0x51d73682 )
+		ROM_REGION( 0x100000, REGION_SOUND2, ROMREGION_SOUNDONLY );/* ADPCM Samples */
+		ROM_LOAD( "u56.bin",  0x000000, 0x100000, 0x51d73682 );
 	
-		ROM_REGION( 0x040000, REGION_USER1, 0 )	/* Sprites LUT */
-		ROM_LOAD( "u3.bin",  0x000000, 0x040000, 0x30d541ed )
+		ROM_REGION( 0x040000, REGION_USER1, 0 );/* Sprites LUT */
+		ROM_LOAD( "u3.bin",  0x000000, 0x040000, 0x30d541ed );
 	
-	ROM_END
+	ROM_END(); }}; 
 	
 	
 	
@@ -1088,33 +1088,33 @@ public class psikyo
 	
 	***************************************************************************/
 	
-	ROM_START( sngkace )
+	static RomLoadPtr rom_sngkace = new RomLoadPtr(){ public void handler(){ 
 	
-		ROM_REGION( 0x080000, REGION_CPU1, 0 )		/* Main CPU Code */
-		ROM_LOAD32_WORD_SWAP( "1-u127.bin", 0x000000, 0x040000, 0x6c45b2f8 ) // 1&0
-		ROM_LOAD32_WORD_SWAP( "2-u126.bin", 0x000002, 0x040000, 0x845a6760 ) // 3&2
+		ROM_REGION( 0x080000, REGION_CPU1, 0 );	/* Main CPU Code */
+		ROM_LOAD32_WORD_SWAP( "1-u127.bin", 0x000000, 0x040000, 0x6c45b2f8 );// 1&0
+		ROM_LOAD32_WORD_SWAP( "2-u126.bin", 0x000002, 0x040000, 0x845a6760 );// 3&2
 	
-		ROM_REGION( 0x030000, REGION_CPU2, 0 )		/* Sound CPU Code */
-		ROM_LOAD( "3-u58.bin", 0x00000, 0x20000, 0x310f5c76 )
-		ROM_RELOAD(            0x10000, 0x20000             )
+		ROM_REGION( 0x030000, REGION_CPU2, 0 );	/* Sound CPU Code */
+		ROM_LOAD( "3-u58.bin", 0x00000, 0x20000, 0x310f5c76 );
+		ROM_RELOAD(            0x10000, 0x20000             );
 	
-		ROM_REGION( 0x200000, REGION_GFX1, ROMREGION_DISPOSE )	/* Sprites */
-		ROM_LOAD( "u14.bin",  0x000000, 0x200000, 0x00a546cb )
+		ROM_REGION( 0x200000, REGION_GFX1, ROMREGION_DISPOSE );/* Sprites */
+		ROM_LOAD( "u14.bin",  0x000000, 0x200000, 0x00a546cb );
 	
-		ROM_REGION( 0x100000, REGION_GFX2, ROMREGION_DISPOSE )	/* Layer 0 */
-		ROM_LOAD( "u34.bin",  0x000000, 0x100000, 0xe6a75bd8 )
+		ROM_REGION( 0x100000, REGION_GFX2, ROMREGION_DISPOSE );/* Layer 0 */
+		ROM_LOAD( "u34.bin",  0x000000, 0x100000, 0xe6a75bd8 );
 	
-		ROM_REGION( 0x100000, REGION_GFX3, ROMREGION_DISPOSE )	/* Layer 1 */
-		ROM_LOAD( "u35.bin",  0x000000, 0x100000, 0xc4ca0164 )
+		ROM_REGION( 0x100000, REGION_GFX3, ROMREGION_DISPOSE );/* Layer 1 */
+		ROM_LOAD( "u35.bin",  0x000000, 0x100000, 0xc4ca0164 );
 	
-	//	ROM_REGION( 0x100000, REGION_SOUND1, ROMREGION_SOUNDONLY )	/* Samples */
-		ROM_REGION( 0x100000, REGION_SOUND1, 0 )	/* Samples */
-		ROM_LOAD( "u68.bin",  0x000000, 0x100000, 0x9a7f6c34 )
+	//	ROM_REGION( 0x100000, REGION_SOUND1, ROMREGION_SOUNDONLY );/* Samples */
+		ROM_REGION( 0x100000, REGION_SOUND1, 0 );/* Samples */
+		ROM_LOAD( "u68.bin",  0x000000, 0x100000, 0x9a7f6c34 );
 	
-		ROM_REGION( 0x040000, REGION_USER1, 0 )	/* Sprites LUT */
-		ROM_LOAD( "u11.bin",  0x000000, 0x040000, 0x11a04d91 ) // x1xxxxxxxxxxxxxxxx = 0xFF
+		ROM_REGION( 0x040000, REGION_USER1, 0 );/* Sprites LUT */
+		ROM_LOAD( "u11.bin",  0x000000, 0x040000, 0x11a04d91 );// x1xxxxxxxxxxxxxxxx = 0xFF
 	
-	ROM_END
+	ROM_END(); }}; 
 	
 	
 	void init_sngkace(void)
@@ -1154,39 +1154,39 @@ public class psikyo
 	
 	***************************************************************************/
 	
-	ROM_START( sngkblad )
+	static RomLoadPtr rom_sngkblad = new RomLoadPtr(){ public void handler(){ 
 	
-		ROM_REGION( 0x100000, REGION_CPU1, 0 )		/* Main CPU Code */
-		ROM_LOAD32_WORD_SWAP( "2-u40.bin", 0x000000, 0x080000, 0xab6fe58a ) // 1&0
-		ROM_LOAD32_WORD_SWAP( "3-u41.bin", 0x000002, 0x080000, 0x02e42e39 ) // 3&2
+		ROM_REGION( 0x100000, REGION_CPU1, 0 );	/* Main CPU Code */
+		ROM_LOAD32_WORD_SWAP( "2-u40.bin", 0x000000, 0x080000, 0xab6fe58a );// 1&0
+		ROM_LOAD32_WORD_SWAP( "3-u41.bin", 0x000002, 0x080000, 0x02e42e39 );// 3&2
 	
-		ROM_REGION( 0x030000, REGION_CPU2, 0 )		/* Sound CPU Code */
-		ROM_LOAD( "1-u63.bin", 0x00000, 0x20000, 0x2025e387 )
-		ROM_RELOAD(            0x10000, 0x20000             )
+		ROM_REGION( 0x030000, REGION_CPU2, 0 );	/* Sound CPU Code */
+		ROM_LOAD( "1-u63.bin", 0x00000, 0x20000, 0x2025e387 );
+		ROM_RELOAD(            0x10000, 0x20000             );
 	
-		ROM_REGION( 0x000100, REGION_CPU3, 0 )		/* MCU? */
-		ROM_LOAD( "4-u59.bin", 0x00000, 0x00100, 0x00000000 )
+		ROM_REGION( 0x000100, REGION_CPU3, 0 );	/* MCU? */
+		ROM_LOAD( "4-u59.bin", 0x00000, 0x00100, 0x00000000 );
 	
-		ROM_REGION( 0x600000, REGION_GFX1, ROMREGION_DISPOSE )	/* Sprites */
+		ROM_REGION( 0x600000, REGION_GFX1, ROMREGION_DISPOSE );/* Sprites */
 		ROM_LOAD16_WORD_SWAP( "u20.bin",  0x000000, 0x200000, 0xed42ef73 )
 		ROM_LOAD16_WORD_SWAP( "u21.bin",  0x200000, 0x200000, 0xefe34eed )
 		ROM_LOAD16_WORD_SWAP( "u22.bin",  0x400000, 0x200000, 0x8d21caee )
 	
-		ROM_REGION( 0x400000, REGION_GFX2, ROMREGION_DISPOSE )	/* Layer 0 */
+		ROM_REGION( 0x400000, REGION_GFX2, ROMREGION_DISPOSE );/* Layer 0 */
 		ROM_LOAD16_WORD_SWAP( "u34.bin",  0x000000, 0x400000, 0x2a2e2eeb )
 	
-		ROM_REGION( 0x200000, REGION_GFX3, ROMREGION_DISPOSE )	/* Layer 1 */
+		ROM_REGION( 0x200000, REGION_GFX3, ROMREGION_DISPOSE );/* Layer 1 */
 		ROM_LOAD16_WORD_SWAP( "u34.bin",  0x000000, 0x200000, 0x2a2e2eeb )
 		ROM_LOAD16_WORD_SWAP( 0,          0x000000, 0x200000, 0          )	/* CONTINUE */
 	
-		ROM_REGION( 0x400000, REGION_SOUND1, ROMREGION_SOUNDONLY )	/* Samples */
-		ROM_LOAD( "u61.bin",  0x000000, 0x200000, 0xa63633c5 )	// 8 bit signed pcm (16KHz)
-		ROM_LOAD( "u62.bin",  0x200000, 0x200000, 0x3ad0c357 )
+		ROM_REGION( 0x400000, REGION_SOUND1, ROMREGION_SOUNDONLY );/* Samples */
+		ROM_LOAD( "u61.bin",  0x000000, 0x200000, 0xa63633c5 );// 8 bit signed pcm (16KHz)
+		ROM_LOAD( "u62.bin",  0x200000, 0x200000, 0x3ad0c357 );
 	
-		ROM_REGION( 0x040000, REGION_USER1, 0 )	/* Sprites LUT */
-		ROM_LOAD( "u1.bin",  0x000000, 0x040000, 0x681d7d55 )
+		ROM_REGION( 0x040000, REGION_USER1, 0 );/* Sprites LUT */
+		ROM_LOAD( "u1.bin",  0x000000, 0x040000, 0x681d7d55 );
 	
-	ROM_END
+	ROM_END(); }}; 
 	
 	void init_sngkblad(void)
 	{
@@ -1228,39 +1228,39 @@ public class psikyo
 	
 	***************************************************************************/
 	
-	ROM_START( s1945 )
+	static RomLoadPtr rom_s1945 = new RomLoadPtr(){ public void handler(){ 
 	
-		ROM_REGION( 0x080000, REGION_CPU1, 0 )		/* Main CPU Code */
-		ROM_LOAD32_WORD_SWAP( "1-u40.bin", 0x000000, 0x040000, 0xc00eb012 ) // 1&0
-		ROM_LOAD32_WORD_SWAP( "2-u41.bin", 0x000002, 0x040000, 0x3f5a134b ) // 3&2
+		ROM_REGION( 0x080000, REGION_CPU1, 0 );	/* Main CPU Code */
+		ROM_LOAD32_WORD_SWAP( "1-u40.bin", 0x000000, 0x040000, 0xc00eb012 );// 1&0
+		ROM_LOAD32_WORD_SWAP( "2-u41.bin", 0x000002, 0x040000, 0x3f5a134b );// 3&2
 	
-		ROM_REGION( 0x030000, REGION_CPU2, 0 )		/* Sound CPU Code */
-		ROM_LOAD( "3-u63.bin", 0x00000, 0x20000, 0x42d40ae1 )
-		ROM_RELOAD(            0x10000, 0x20000             )
+		ROM_REGION( 0x030000, REGION_CPU2, 0 );	/* Sound CPU Code */
+		ROM_LOAD( "3-u63.bin", 0x00000, 0x20000, 0x42d40ae1 );
+		ROM_RELOAD(            0x10000, 0x20000             );
 	
-		ROM_REGION( 0x000100, REGION_CPU3, 0 )		/* MCU? */
-		ROM_LOAD( "4-u59.bin", 0x00000, 0x00100, 0x00000000 )
+		ROM_REGION( 0x000100, REGION_CPU3, 0 );	/* MCU? */
+		ROM_LOAD( "4-u59.bin", 0x00000, 0x00100, 0x00000000 );
 	
-		ROM_REGION( 0x800000, REGION_GFX1, ROMREGION_DISPOSE )	/* Sprites */
-		ROM_LOAD( "u20.bin",  0x000000, 0x200000, 0x28a27fee )
-		ROM_LOAD( "u21.bin",  0x200000, 0x200000, 0xc5d60ea9 )
-		ROM_LOAD( "u22.bin",  0x400000, 0x200000, 0xca152a32 )
-		ROM_LOAD( "u23.bin",  0x600000, 0x200000, 0x48710332 )
+		ROM_REGION( 0x800000, REGION_GFX1, ROMREGION_DISPOSE );/* Sprites */
+		ROM_LOAD( "u20.bin",  0x000000, 0x200000, 0x28a27fee );
+		ROM_LOAD( "u21.bin",  0x200000, 0x200000, 0xc5d60ea9 );
+		ROM_LOAD( "u22.bin",  0x400000, 0x200000, 0xca152a32 );
+		ROM_LOAD( "u23.bin",  0x600000, 0x200000, 0x48710332 );
 	
-		ROM_REGION( 0x200000, REGION_GFX2, ROMREGION_DISPOSE )	/* Layer 0 */
-		ROM_LOAD( "u34.bin",  0x000000, 0x200000, 0xaaf83e23 )
+		ROM_REGION( 0x200000, REGION_GFX2, ROMREGION_DISPOSE );/* Layer 0 */
+		ROM_LOAD( "u34.bin",  0x000000, 0x200000, 0xaaf83e23 );
 	
-		ROM_REGION( 0x100000, REGION_GFX3, ROMREGION_DISPOSE )	/* Layer 1 */
-		ROM_LOAD( "u34.bin",  0x000000, 0x100000, 0xaaf83e23 )
-		ROM_CONTINUE(         0x000000, 0x100000             )
+		ROM_REGION( 0x100000, REGION_GFX3, ROMREGION_DISPOSE );/* Layer 1 */
+		ROM_LOAD( "u34.bin",  0x000000, 0x100000, 0xaaf83e23 );
+		ROM_CONTINUE(         0x000000, 0x100000             );
 	
-		ROM_REGION( 0x200000, REGION_SOUND1, ROMREGION_SOUNDONLY )	/* Samples */
-		ROM_LOAD( "u61.bin",  0x000000, 0x200000, 0xa839cf47 )	// 8 bit signed pcm (16KHz)
+		ROM_REGION( 0x200000, REGION_SOUND1, ROMREGION_SOUNDONLY );/* Samples */
+		ROM_LOAD( "u61.bin",  0x000000, 0x200000, 0xa839cf47 );// 8 bit signed pcm (16KHz)
 	
-		ROM_REGION( 0x040000, REGION_USER1, 0 )	/* */
-		ROM_LOAD( "u1.bin",  0x000000, 0x040000, 0xdee22654 )
+		ROM_REGION( 0x040000, REGION_USER1, 0 );/* */
+		ROM_LOAD( "u1.bin",  0x000000, 0x040000, 0xdee22654 );
 	
-	ROM_END
+	ROM_END(); }}; 
 	
 	
 	void init_s1945(void)

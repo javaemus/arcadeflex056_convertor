@@ -605,68 +605,68 @@ public class gameplan
 	there are three 6522 VIAs, at 2000, 2800, and 3000
 	*/
 	
-	ROM_START( kaos )
-	    ROM_REGION( 0x10000, REGION_CPU1, 0 )
-	    ROM_LOAD( "kaosab.g2",    0x9000, 0x0800, 0xb23d858f )
-	    ROM_CONTINUE(		   	  0xd000, 0x0800			 )
-	    ROM_LOAD( "kaosab.j2",    0x9800, 0x0800, 0x4861e5dc )
-	    ROM_CONTINUE(		   	  0xd800, 0x0800			 )
-	    ROM_LOAD( "kaosab.j1",    0xa000, 0x0800, 0xe055db3f )
-	    ROM_CONTINUE(		   	  0xe000, 0x0800			 )
-	    ROM_LOAD( "kaosab.g1",    0xa800, 0x0800, 0x35d7c467 )
-	    ROM_CONTINUE(		   	  0xe800, 0x0800			 )
-	    ROM_LOAD( "kaosab.f1",    0xb000, 0x0800, 0x995b9260 )
-	    ROM_CONTINUE(		   	  0xf000, 0x0800			 )
-	    ROM_LOAD( "kaosab.e1",    0xb800, 0x0800, 0x3da5202a )
-	    ROM_CONTINUE(		   	  0xf800, 0x0800			 )
+	static RomLoadPtr rom_kaos = new RomLoadPtr(){ public void handler(){ 
+	    ROM_REGION( 0x10000, REGION_CPU1, 0 );
+	    ROM_LOAD( "kaosab.g2",    0x9000, 0x0800, 0xb23d858f );
+	    ROM_CONTINUE(		   	  0xd000, 0x0800			 );
+	    ROM_LOAD( "kaosab.j2",    0x9800, 0x0800, 0x4861e5dc );
+	    ROM_CONTINUE(		   	  0xd800, 0x0800			 );
+	    ROM_LOAD( "kaosab.j1",    0xa000, 0x0800, 0xe055db3f );
+	    ROM_CONTINUE(		   	  0xe000, 0x0800			 );
+	    ROM_LOAD( "kaosab.g1",    0xa800, 0x0800, 0x35d7c467 );
+	    ROM_CONTINUE(		   	  0xe800, 0x0800			 );
+	    ROM_LOAD( "kaosab.f1",    0xb000, 0x0800, 0x995b9260 );
+	    ROM_CONTINUE(		   	  0xf000, 0x0800			 );
+	    ROM_LOAD( "kaosab.e1",    0xb800, 0x0800, 0x3da5202a );
+	    ROM_CONTINUE(		   	  0xf800, 0x0800			 );
 	
-	    ROM_REGION( 0x10000, REGION_CPU2, 0 )
-		ROM_LOAD( "kaossnd.e1",   0xf800, 0x800, 0xab23d52a )
-	ROM_END
+	    ROM_REGION( 0x10000, REGION_CPU2, 0 );
+		ROM_LOAD( "kaossnd.e1",   0xf800, 0x800, 0xab23d52a );
+	ROM_END(); }}; 
 	
 	
-	ROM_START( killcom )
-	    ROM_REGION( 0x10000, REGION_CPU1, 0 )
-	    ROM_LOAD( "killcom.e2",   0xc000, 0x800, 0xa01cbb9a )
-	    ROM_LOAD( "killcom.f2",   0xc800, 0x800, 0xbb3b4a93 )
-	    ROM_LOAD( "killcom.g2",   0xd000, 0x800, 0x86ec68b2 )
-	    ROM_LOAD( "killcom.j2",   0xd800, 0x800, 0x28d8c6a1 )
-	    ROM_LOAD( "killcom.j1",   0xe000, 0x800, 0x33ef5ac5 )
-	    ROM_LOAD( "killcom.g1",   0xe800, 0x800, 0x49cb13e2 )
-	    ROM_LOAD( "killcom.f1",   0xf000, 0x800, 0xef652762 )
-	    ROM_LOAD( "killcom.e1",   0xf800, 0x800, 0xbc19dcb7 )
+	static RomLoadPtr rom_killcom = new RomLoadPtr(){ public void handler(){ 
+	    ROM_REGION( 0x10000, REGION_CPU1, 0 );
+	    ROM_LOAD( "killcom.e2",   0xc000, 0x800, 0xa01cbb9a );
+	    ROM_LOAD( "killcom.f2",   0xc800, 0x800, 0xbb3b4a93 );
+	    ROM_LOAD( "killcom.g2",   0xd000, 0x800, 0x86ec68b2 );
+	    ROM_LOAD( "killcom.j2",   0xd800, 0x800, 0x28d8c6a1 );
+	    ROM_LOAD( "killcom.j1",   0xe000, 0x800, 0x33ef5ac5 );
+	    ROM_LOAD( "killcom.g1",   0xe800, 0x800, 0x49cb13e2 );
+	    ROM_LOAD( "killcom.f1",   0xf000, 0x800, 0xef652762 );
+	    ROM_LOAD( "killcom.e1",   0xf800, 0x800, 0xbc19dcb7 );
 	
-	    ROM_REGION( 0x10000, REGION_CPU2, 0 )
-		ROM_LOAD( "killsnd.e1",   0xf800, 0x800, 0x77d4890d )
-	ROM_END
+	    ROM_REGION( 0x10000, REGION_CPU2, 0 );
+		ROM_LOAD( "killsnd.e1",   0xf800, 0x800, 0x77d4890d );
+	ROM_END(); }}; 
 	
-	ROM_START( megatack )
-	    ROM_REGION( 0x10000, REGION_CPU1, 0 )
-	    ROM_LOAD( "megattac.e2",  0xc000, 0x800, 0x33fa5104 )
-	    ROM_LOAD( "megattac.f2",  0xc800, 0x800, 0xaf5e96b1 )
-	    ROM_LOAD( "megattac.g2",  0xd000, 0x800, 0x670103ea )
-	    ROM_LOAD( "megattac.j2",  0xd800, 0x800, 0x4573b798 )
-	    ROM_LOAD( "megattac.j1",  0xe000, 0x800, 0x3b1d01a1 )
-	    ROM_LOAD( "megattac.g1",  0xe800, 0x800, 0xeed75ef4 )
-	    ROM_LOAD( "megattac.f1",  0xf000, 0x800, 0xc93a8ed4 )
-	    ROM_LOAD( "megattac.e1",  0xf800, 0x800, 0xd9996b9f )
+	static RomLoadPtr rom_megatack = new RomLoadPtr(){ public void handler(){ 
+	    ROM_REGION( 0x10000, REGION_CPU1, 0 );
+	    ROM_LOAD( "megattac.e2",  0xc000, 0x800, 0x33fa5104 );
+	    ROM_LOAD( "megattac.f2",  0xc800, 0x800, 0xaf5e96b1 );
+	    ROM_LOAD( "megattac.g2",  0xd000, 0x800, 0x670103ea );
+	    ROM_LOAD( "megattac.j2",  0xd800, 0x800, 0x4573b798 );
+	    ROM_LOAD( "megattac.j1",  0xe000, 0x800, 0x3b1d01a1 );
+	    ROM_LOAD( "megattac.g1",  0xe800, 0x800, 0xeed75ef4 );
+	    ROM_LOAD( "megattac.f1",  0xf000, 0x800, 0xc93a8ed4 );
+	    ROM_LOAD( "megattac.e1",  0xf800, 0x800, 0xd9996b9f );
 	
-	    ROM_REGION( 0x10000, REGION_CPU2, 0 )
-		ROM_LOAD( "megatsnd.e1",  0xf800, 0x800, 0x0c186bdb )
-	ROM_END
+	    ROM_REGION( 0x10000, REGION_CPU2, 0 );
+		ROM_LOAD( "megatsnd.e1",  0xf800, 0x800, 0x0c186bdb );
+	ROM_END(); }}; 
 	
-	ROM_START( challeng )
-	    ROM_REGION( 0x10000, REGION_CPU1, 0 )
-	    ROM_LOAD( "chall.6",      0xa000, 0x1000, 0xb30fe7f5 )
-	    ROM_LOAD( "chall.5",      0xb000, 0x1000, 0x34c6a88e )
-	    ROM_LOAD( "chall.4",      0xc000, 0x1000, 0x0ddc18ef )
-	    ROM_LOAD( "chall.3",      0xd000, 0x1000, 0x6ce03312 )
-	    ROM_LOAD( "chall.2",      0xe000, 0x1000, 0x948912ad )
-	    ROM_LOAD( "chall.1",      0xf000, 0x1000, 0x7c71a9dc )
+	static RomLoadPtr rom_challeng = new RomLoadPtr(){ public void handler(){ 
+	    ROM_REGION( 0x10000, REGION_CPU1, 0 );
+	    ROM_LOAD( "chall.6",      0xa000, 0x1000, 0xb30fe7f5 );
+	    ROM_LOAD( "chall.5",      0xb000, 0x1000, 0x34c6a88e );
+	    ROM_LOAD( "chall.4",      0xc000, 0x1000, 0x0ddc18ef );
+	    ROM_LOAD( "chall.3",      0xd000, 0x1000, 0x6ce03312 );
+	    ROM_LOAD( "chall.2",      0xe000, 0x1000, 0x948912ad );
+	    ROM_LOAD( "chall.1",      0xf000, 0x1000, 0x7c71a9dc );
 	
-	    ROM_REGION( 0x10000, REGION_CPU2, 0 )
-		ROM_LOAD( "chall.snd",    0xf800, 0x800, 0x1b2bffd2 )
-	ROM_END
+	    ROM_REGION( 0x10000, REGION_CPU2, 0 );
+		ROM_LOAD( "chall.snd",    0xf800, 0x800, 0x1b2bffd2 );
+	ROM_END(); }}; 
 	
 	
 	

@@ -309,55 +309,55 @@ public class jailbrek
 	
 	***************************************************************************/
 	
-	ROM_START( jailbrek )
-	    ROM_REGION( 2*0x10000, REGION_CPU1, 0 )     /* 64k for code + 64k for decrypted opcodes */
-		ROM_LOAD( "jailb11d.bin", 0x8000, 0x4000, 0xa0b88dfd )
-		ROM_LOAD( "jailb9d.bin",  0xc000, 0x4000, 0x444b7d8e )
+	static RomLoadPtr rom_jailbrek = new RomLoadPtr(){ public void handler(){ 
+	    ROM_REGION( 2*0x10000, REGION_CPU1, 0 );    /* 64k for code + 64k for decrypted opcodes */
+		ROM_LOAD( "jailb11d.bin", 0x8000, 0x4000, 0xa0b88dfd );
+		ROM_LOAD( "jailb9d.bin",  0xc000, 0x4000, 0x444b7d8e );
 	
-	    ROM_REGION( 0x08000, REGION_GFX1, ROMREGION_DISPOSE )
-		ROM_LOAD( "jailb4f.bin",  0x00000, 0x4000, 0xe3b7a226 )	/* characters */
-	    ROM_LOAD( "jailb5f.bin",  0x04000, 0x4000, 0x504f0912 )
+	    ROM_REGION( 0x08000, REGION_GFX1, ROMREGION_DISPOSE );
+		ROM_LOAD( "jailb4f.bin",  0x00000, 0x4000, 0xe3b7a226 );/* characters */
+	    ROM_LOAD( "jailb5f.bin",  0x04000, 0x4000, 0x504f0912 );
 	
-	    ROM_REGION( 0x10000, REGION_GFX2, ROMREGION_DISPOSE )
-	    ROM_LOAD( "jailb3e.bin",  0x00000, 0x4000, 0x0d269524 )	/* sprites */
-	    ROM_LOAD( "jailb4e.bin",  0x04000, 0x4000, 0x27d4f6f4 )
-	    ROM_LOAD( "jailb5e.bin",  0x08000, 0x4000, 0x717485cb )
-	    ROM_LOAD( "jailb3f.bin",  0x0c000, 0x4000, 0xe933086f )
+	    ROM_REGION( 0x10000, REGION_GFX2, ROMREGION_DISPOSE );
+	    ROM_LOAD( "jailb3e.bin",  0x00000, 0x4000, 0x0d269524 );/* sprites */
+	    ROM_LOAD( "jailb4e.bin",  0x04000, 0x4000, 0x27d4f6f4 );
+	    ROM_LOAD( "jailb5e.bin",  0x08000, 0x4000, 0x717485cb );
+	    ROM_LOAD( "jailb3f.bin",  0x0c000, 0x4000, 0xe933086f );
 	
-		ROM_REGION( 0x0240, REGION_PROMS, 0 )
-		ROM_LOAD( "jailbbl.cl2",  0x0000, 0x0020, 0xf1909605 ) /* red & green */
-		ROM_LOAD( "jailbbl.cl1",  0x0020, 0x0020, 0xf70bb122 ) /* blue */
-		ROM_LOAD( "jailbbl.bp2",  0x0040, 0x0100, 0xd4fe5c97 ) /* char lookup */
-		ROM_LOAD( "jailbbl.bp1",  0x0140, 0x0100, 0x0266c7db ) /* sprites lookup */
+		ROM_REGION( 0x0240, REGION_PROMS, 0 );
+		ROM_LOAD( "jailbbl.cl2",  0x0000, 0x0020, 0xf1909605 );/* red & green */
+		ROM_LOAD( "jailbbl.cl1",  0x0020, 0x0020, 0xf70bb122 );/* blue */
+		ROM_LOAD( "jailbbl.bp2",  0x0040, 0x0100, 0xd4fe5c97 );/* char lookup */
+		ROM_LOAD( "jailbbl.bp1",  0x0140, 0x0100, 0x0266c7db );/* sprites lookup */
 	
-		ROM_REGION( 0x2000, REGION_SOUND1, 0 ) /* speech rom */
-		ROM_LOAD( "jailb8c.bin",  0x0000, 0x2000, 0xd91d15e3 )
-	ROM_END
+		ROM_REGION( 0x2000, REGION_SOUND1, 0 );/* speech rom */
+		ROM_LOAD( "jailb8c.bin",  0x0000, 0x2000, 0xd91d15e3 );
+	ROM_END(); }}; 
 	
-	ROM_START( manhatan )
-	    ROM_REGION( 2*0x10000, REGION_CPU1, 0 )     /* 64k for code + 64k for decrypted opcodes */
-		ROM_LOAD( "507n03.9d",    0x8000, 0x4000, 0xe5039f7e )
-		ROM_LOAD( "507n02.11d",   0xc000, 0x4000, 0x143cc62c )
+	static RomLoadPtr rom_manhatan = new RomLoadPtr(){ public void handler(){ 
+	    ROM_REGION( 2*0x10000, REGION_CPU1, 0 );    /* 64k for code + 64k for decrypted opcodes */
+		ROM_LOAD( "507n03.9d",    0x8000, 0x4000, 0xe5039f7e );
+		ROM_LOAD( "507n02.11d",   0xc000, 0x4000, 0x143cc62c );
 	
-	    ROM_REGION( 0x08000, REGION_GFX1, ROMREGION_DISPOSE )
-		ROM_LOAD( "507j08.4f",    0x00000, 0x4000, 0x175e1b49 )	/* characters */
-	    ROM_LOAD( "jailb5f.bin",  0x04000, 0x4000, 0x504f0912 )
+	    ROM_REGION( 0x08000, REGION_GFX1, ROMREGION_DISPOSE );
+		ROM_LOAD( "507j08.4f",    0x00000, 0x4000, 0x175e1b49 );/* characters */
+	    ROM_LOAD( "jailb5f.bin",  0x04000, 0x4000, 0x504f0912 );
 	
-	    ROM_REGION( 0x10000, REGION_GFX2, ROMREGION_DISPOSE )
-	    ROM_LOAD( "jailb3e.bin",  0x00000, 0x4000, 0x0d269524 )	/* sprites */
-	    ROM_LOAD( "jailb4e.bin",  0x04000, 0x4000, 0x27d4f6f4 )
-	    ROM_LOAD( "jailb5e.bin",  0x08000, 0x4000, 0x717485cb )
-	    ROM_LOAD( "jailb3f.bin",  0x0c000, 0x4000, 0xe933086f )
+	    ROM_REGION( 0x10000, REGION_GFX2, ROMREGION_DISPOSE );
+	    ROM_LOAD( "jailb3e.bin",  0x00000, 0x4000, 0x0d269524 );/* sprites */
+	    ROM_LOAD( "jailb4e.bin",  0x04000, 0x4000, 0x27d4f6f4 );
+	    ROM_LOAD( "jailb5e.bin",  0x08000, 0x4000, 0x717485cb );
+	    ROM_LOAD( "jailb3f.bin",  0x0c000, 0x4000, 0xe933086f );
 	
-		ROM_REGION( 0x0240, REGION_PROMS, 0 )
-		ROM_LOAD( "jailbbl.cl2",  0x0000, 0x0020, 0xf1909605 ) /* red & green */
-		ROM_LOAD( "jailbbl.cl1",  0x0020, 0x0020, 0xf70bb122 ) /* blue */
-		ROM_LOAD( "jailbbl.bp2",  0x0040, 0x0100, 0xd4fe5c97 ) /* char lookup */
-		ROM_LOAD( "jailbbl.bp1",  0x0140, 0x0100, 0x0266c7db ) /* sprites lookup */
+		ROM_REGION( 0x0240, REGION_PROMS, 0 );
+		ROM_LOAD( "jailbbl.cl2",  0x0000, 0x0020, 0xf1909605 );/* red & green */
+		ROM_LOAD( "jailbbl.cl1",  0x0020, 0x0020, 0xf70bb122 );/* blue */
+		ROM_LOAD( "jailbbl.bp2",  0x0040, 0x0100, 0xd4fe5c97 );/* char lookup */
+		ROM_LOAD( "jailbbl.bp1",  0x0140, 0x0100, 0x0266c7db );/* sprites lookup */
 	
-		ROM_REGION( 0x2000, REGION_SOUND1, 0 ) /* speech rom */
-		ROM_LOAD( "507p01.8c",    0x0000, 0x2000, 0x4a1da0b7 )
-	ROM_END
+		ROM_REGION( 0x2000, REGION_SOUND1, 0 );/* speech rom */
+		ROM_LOAD( "507p01.8c",    0x0000, 0x2000, 0x4a1da0b7 );
+	ROM_END(); }}; 
 	
 	
 	static void init_jailbrek(void)

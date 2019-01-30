@@ -305,197 +305,197 @@ public class gunsmoke
 	
 	***************************************************************************/
 	
-	ROM_START( gunsmoke )
-		ROM_REGION( 0x20000, REGION_CPU1, 0 )     /* 2*64k for code */
-		ROM_LOAD( "09n_gs03.bin", 0x00000, 0x8000, 0x40a06cef ) /* Code 0000-7fff */
-		ROM_LOAD( "10n_gs04.bin", 0x10000, 0x8000, 0x8d4b423f ) /* Paged code */
-		ROM_LOAD( "12n_gs05.bin", 0x18000, 0x8000, 0x2b5667fb ) /* Paged code */
+	static RomLoadPtr rom_gunsmoke = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x20000, REGION_CPU1, 0 );    /* 2*64k for code */
+		ROM_LOAD( "09n_gs03.bin", 0x00000, 0x8000, 0x40a06cef );/* Code 0000-7fff */
+		ROM_LOAD( "10n_gs04.bin", 0x10000, 0x8000, 0x8d4b423f );/* Paged code */
+		ROM_LOAD( "12n_gs05.bin", 0x18000, 0x8000, 0x2b5667fb );/* Paged code */
 	
-		ROM_REGION( 0x10000, REGION_CPU2, 0 )	/* 64k for the audio CPU */
-		ROM_LOAD( "14h_gs02.bin", 0x00000, 0x8000, 0xcd7a2c38 )
+		ROM_REGION( 0x10000, REGION_CPU2, 0 );/* 64k for the audio CPU */
+		ROM_LOAD( "14h_gs02.bin", 0x00000, 0x8000, 0xcd7a2c38 );
 	
-		ROM_REGION( 0x04000, REGION_GFX1, ROMREGION_DISPOSE )
-		ROM_LOAD( "11f_gs01.bin", 0x00000, 0x4000, 0xb61ece9b ) /* Characters */
+		ROM_REGION( 0x04000, REGION_GFX1, ROMREGION_DISPOSE );
+		ROM_LOAD( "11f_gs01.bin", 0x00000, 0x4000, 0xb61ece9b );/* Characters */
 	
-		ROM_REGION( 0x40000, REGION_GFX2, ROMREGION_DISPOSE )
-		ROM_LOAD( "06c_gs13.bin", 0x00000, 0x8000, 0xf6769fc5 ) /* 32x32 tiles planes 2-3 */
-		ROM_LOAD( "05c_gs12.bin", 0x08000, 0x8000, 0xd997b78c )
-		ROM_LOAD( "04c_gs11.bin", 0x10000, 0x8000, 0x125ba58e )
-		ROM_LOAD( "02c_gs10.bin", 0x18000, 0x8000, 0xf469c13c )
-		ROM_LOAD( "06a_gs09.bin", 0x20000, 0x8000, 0x539f182d ) /* 32x32 tiles planes 0-1 */
-		ROM_LOAD( "05a_gs08.bin", 0x28000, 0x8000, 0xe87e526d )
-		ROM_LOAD( "04a_gs07.bin", 0x30000, 0x8000, 0x4382c0d2 )
-		ROM_LOAD( "02a_gs06.bin", 0x38000, 0x8000, 0x4cafe7a6 )
+		ROM_REGION( 0x40000, REGION_GFX2, ROMREGION_DISPOSE );
+		ROM_LOAD( "06c_gs13.bin", 0x00000, 0x8000, 0xf6769fc5 );/* 32x32 tiles planes 2-3 */
+		ROM_LOAD( "05c_gs12.bin", 0x08000, 0x8000, 0xd997b78c );
+		ROM_LOAD( "04c_gs11.bin", 0x10000, 0x8000, 0x125ba58e );
+		ROM_LOAD( "02c_gs10.bin", 0x18000, 0x8000, 0xf469c13c );
+		ROM_LOAD( "06a_gs09.bin", 0x20000, 0x8000, 0x539f182d );/* 32x32 tiles planes 0-1 */
+		ROM_LOAD( "05a_gs08.bin", 0x28000, 0x8000, 0xe87e526d );
+		ROM_LOAD( "04a_gs07.bin", 0x30000, 0x8000, 0x4382c0d2 );
+		ROM_LOAD( "02a_gs06.bin", 0x38000, 0x8000, 0x4cafe7a6 );
 	
-		ROM_REGION( 0x40000, REGION_GFX3, ROMREGION_DISPOSE )
-		ROM_LOAD( "06n_gs22.bin", 0x00000, 0x8000, 0xdc9c508c ) /* Sprites planes 2-3 */
-		ROM_LOAD( "04n_gs21.bin", 0x08000, 0x8000, 0x68883749 ) /* Sprites planes 2-3 */
-		ROM_LOAD( "03n_gs20.bin", 0x10000, 0x8000, 0x0be932ed ) /* Sprites planes 2-3 */
-		ROM_LOAD( "01n_gs19.bin", 0x18000, 0x8000, 0x63072f93 ) /* Sprites planes 2-3 */
-		ROM_LOAD( "06l_gs18.bin", 0x20000, 0x8000, 0xf69a3c7c ) /* Sprites planes 0-1 */
-		ROM_LOAD( "04l_gs17.bin", 0x28000, 0x8000, 0x4e98562a ) /* Sprites planes 0-1 */
-		ROM_LOAD( "03l_gs16.bin", 0x30000, 0x8000, 0x0d99c3b3 ) /* Sprites planes 0-1 */
-		ROM_LOAD( "01l_gs15.bin", 0x38000, 0x8000, 0x7f14270e ) /* Sprites planes 0-1 */
+		ROM_REGION( 0x40000, REGION_GFX3, ROMREGION_DISPOSE );
+		ROM_LOAD( "06n_gs22.bin", 0x00000, 0x8000, 0xdc9c508c );/* Sprites planes 2-3 */
+		ROM_LOAD( "04n_gs21.bin", 0x08000, 0x8000, 0x68883749 );/* Sprites planes 2-3 */
+		ROM_LOAD( "03n_gs20.bin", 0x10000, 0x8000, 0x0be932ed );/* Sprites planes 2-3 */
+		ROM_LOAD( "01n_gs19.bin", 0x18000, 0x8000, 0x63072f93 );/* Sprites planes 2-3 */
+		ROM_LOAD( "06l_gs18.bin", 0x20000, 0x8000, 0xf69a3c7c );/* Sprites planes 0-1 */
+		ROM_LOAD( "04l_gs17.bin", 0x28000, 0x8000, 0x4e98562a );/* Sprites planes 0-1 */
+		ROM_LOAD( "03l_gs16.bin", 0x30000, 0x8000, 0x0d99c3b3 );/* Sprites planes 0-1 */
+		ROM_LOAD( "01l_gs15.bin", 0x38000, 0x8000, 0x7f14270e );/* Sprites planes 0-1 */
 	
-		ROM_REGION( 0x8000, REGION_GFX4, 0 )	/* background tilemaps */
-		ROM_LOAD( "11c_gs14.bin", 0x00000, 0x8000, 0x0af4f7eb )
+		ROM_REGION( 0x8000, REGION_GFX4, 0 );/* background tilemaps */
+		ROM_LOAD( "11c_gs14.bin", 0x00000, 0x8000, 0x0af4f7eb );
 	
-		ROM_REGION( 0x0a00, REGION_PROMS, 0 )
-		ROM_LOAD( "03b_g-01.bin", 0x0000, 0x0100, 0x02f55589 )	/* red component */
-		ROM_LOAD( "04b_g-02.bin", 0x0100, 0x0100, 0xe1e36dd9 )	/* green component */
-		ROM_LOAD( "05b_g-03.bin", 0x0200, 0x0100, 0x989399c0 )	/* blue component */
-		ROM_LOAD( "09d_g-04.bin", 0x0300, 0x0100, 0x906612b5 )	/* char lookup table */
-		ROM_LOAD( "14a_g-06.bin", 0x0400, 0x0100, 0x4a9da18b )	/* tile lookup table */
-		ROM_LOAD( "15a_g-07.bin", 0x0500, 0x0100, 0xcb9394fc )	/* tile palette bank */
-		ROM_LOAD( "09f_g-09.bin", 0x0600, 0x0100, 0x3cee181e )	/* sprite lookup table */
-		ROM_LOAD( "08f_g-08.bin", 0x0700, 0x0100, 0xef91cdd2 )	/* sprite palette bank */
-		ROM_LOAD( "02j_g-10.bin", 0x0800, 0x0100, 0x0eaf5158 )	/* video timing (not used) */
-		ROM_LOAD( "01f_g-05.bin", 0x0900, 0x0100, 0x25c90c2a )	/* priority? (not used) */
-	ROM_END
+		ROM_REGION( 0x0a00, REGION_PROMS, 0 );
+		ROM_LOAD( "03b_g-01.bin", 0x0000, 0x0100, 0x02f55589 );/* red component */
+		ROM_LOAD( "04b_g-02.bin", 0x0100, 0x0100, 0xe1e36dd9 );/* green component */
+		ROM_LOAD( "05b_g-03.bin", 0x0200, 0x0100, 0x989399c0 );/* blue component */
+		ROM_LOAD( "09d_g-04.bin", 0x0300, 0x0100, 0x906612b5 );/* char lookup table */
+		ROM_LOAD( "14a_g-06.bin", 0x0400, 0x0100, 0x4a9da18b );/* tile lookup table */
+		ROM_LOAD( "15a_g-07.bin", 0x0500, 0x0100, 0xcb9394fc );/* tile palette bank */
+		ROM_LOAD( "09f_g-09.bin", 0x0600, 0x0100, 0x3cee181e );/* sprite lookup table */
+		ROM_LOAD( "08f_g-08.bin", 0x0700, 0x0100, 0xef91cdd2 );/* sprite palette bank */
+		ROM_LOAD( "02j_g-10.bin", 0x0800, 0x0100, 0x0eaf5158 );/* video timing (not used) */
+		ROM_LOAD( "01f_g-05.bin", 0x0900, 0x0100, 0x25c90c2a );/* priority? (not used) */
+	ROM_END(); }}; 
 	
-	ROM_START( gunsmrom )
-		ROM_REGION( 0x20000, REGION_CPU1, 0 )     /* 2*64k for code */
-		ROM_LOAD( "9n_gs03.bin",  0x00000, 0x8000, 0x592f211b ) /* Code 0000-7fff */
-		ROM_LOAD( "10n_gs04.bin", 0x10000, 0x8000, 0x8d4b423f ) /* Paged code */
-		ROM_LOAD( "12n_gs05.bin", 0x18000, 0x8000, 0x2b5667fb ) /* Paged code */
+	static RomLoadPtr rom_gunsmrom = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x20000, REGION_CPU1, 0 );    /* 2*64k for code */
+		ROM_LOAD( "9n_gs03.bin",  0x00000, 0x8000, 0x592f211b );/* Code 0000-7fff */
+		ROM_LOAD( "10n_gs04.bin", 0x10000, 0x8000, 0x8d4b423f );/* Paged code */
+		ROM_LOAD( "12n_gs05.bin", 0x18000, 0x8000, 0x2b5667fb );/* Paged code */
 	
-		ROM_REGION( 0x10000, REGION_CPU2, 0 )	/* 64k for the audio CPU */
-		ROM_LOAD( "14h_gs02.bin", 0x00000, 0x8000, 0xcd7a2c38 )
+		ROM_REGION( 0x10000, REGION_CPU2, 0 );/* 64k for the audio CPU */
+		ROM_LOAD( "14h_gs02.bin", 0x00000, 0x8000, 0xcd7a2c38 );
 	
-		ROM_REGION( 0x04000, REGION_GFX1, ROMREGION_DISPOSE )
-		ROM_LOAD( "11f_gs01.bin", 0x00000, 0x4000, 0xb61ece9b ) /* Characters */
+		ROM_REGION( 0x04000, REGION_GFX1, ROMREGION_DISPOSE );
+		ROM_LOAD( "11f_gs01.bin", 0x00000, 0x4000, 0xb61ece9b );/* Characters */
 	
-		ROM_REGION( 0x40000, REGION_GFX2, ROMREGION_DISPOSE )
-		ROM_LOAD( "06c_gs13.bin", 0x00000, 0x8000, 0xf6769fc5 ) /* 32x32 tiles planes 2-3 */
-		ROM_LOAD( "05c_gs12.bin", 0x08000, 0x8000, 0xd997b78c )
-		ROM_LOAD( "04c_gs11.bin", 0x10000, 0x8000, 0x125ba58e )
-		ROM_LOAD( "02c_gs10.bin", 0x18000, 0x8000, 0xf469c13c )
-		ROM_LOAD( "06a_gs09.bin", 0x20000, 0x8000, 0x539f182d ) /* 32x32 tiles planes 0-1 */
-		ROM_LOAD( "05a_gs08.bin", 0x28000, 0x8000, 0xe87e526d )
-		ROM_LOAD( "04a_gs07.bin", 0x30000, 0x8000, 0x4382c0d2 )
-		ROM_LOAD( "02a_gs06.bin", 0x38000, 0x8000, 0x4cafe7a6 )
+		ROM_REGION( 0x40000, REGION_GFX2, ROMREGION_DISPOSE );
+		ROM_LOAD( "06c_gs13.bin", 0x00000, 0x8000, 0xf6769fc5 );/* 32x32 tiles planes 2-3 */
+		ROM_LOAD( "05c_gs12.bin", 0x08000, 0x8000, 0xd997b78c );
+		ROM_LOAD( "04c_gs11.bin", 0x10000, 0x8000, 0x125ba58e );
+		ROM_LOAD( "02c_gs10.bin", 0x18000, 0x8000, 0xf469c13c );
+		ROM_LOAD( "06a_gs09.bin", 0x20000, 0x8000, 0x539f182d );/* 32x32 tiles planes 0-1 */
+		ROM_LOAD( "05a_gs08.bin", 0x28000, 0x8000, 0xe87e526d );
+		ROM_LOAD( "04a_gs07.bin", 0x30000, 0x8000, 0x4382c0d2 );
+		ROM_LOAD( "02a_gs06.bin", 0x38000, 0x8000, 0x4cafe7a6 );
 	
-		ROM_REGION( 0x40000, REGION_GFX3, ROMREGION_DISPOSE )
-		ROM_LOAD( "06n_gs22.bin", 0x00000, 0x8000, 0xdc9c508c ) /* Sprites planes 2-3 */
-		ROM_LOAD( "04n_gs21.bin", 0x08000, 0x8000, 0x68883749 ) /* Sprites planes 2-3 */
-		ROM_LOAD( "03n_gs20.bin", 0x10000, 0x8000, 0x0be932ed ) /* Sprites planes 2-3 */
-		ROM_LOAD( "01n_gs19.bin", 0x18000, 0x8000, 0x63072f93 ) /* Sprites planes 2-3 */
-		ROM_LOAD( "06l_gs18.bin", 0x20000, 0x8000, 0xf69a3c7c ) /* Sprites planes 0-1 */
-		ROM_LOAD( "04l_gs17.bin", 0x28000, 0x8000, 0x4e98562a ) /* Sprites planes 0-1 */
-		ROM_LOAD( "03l_gs16.bin", 0x30000, 0x8000, 0x0d99c3b3 ) /* Sprites planes 0-1 */
-		ROM_LOAD( "01l_gs15.bin", 0x38000, 0x8000, 0x7f14270e ) /* Sprites planes 0-1 */
+		ROM_REGION( 0x40000, REGION_GFX3, ROMREGION_DISPOSE );
+		ROM_LOAD( "06n_gs22.bin", 0x00000, 0x8000, 0xdc9c508c );/* Sprites planes 2-3 */
+		ROM_LOAD( "04n_gs21.bin", 0x08000, 0x8000, 0x68883749 );/* Sprites planes 2-3 */
+		ROM_LOAD( "03n_gs20.bin", 0x10000, 0x8000, 0x0be932ed );/* Sprites planes 2-3 */
+		ROM_LOAD( "01n_gs19.bin", 0x18000, 0x8000, 0x63072f93 );/* Sprites planes 2-3 */
+		ROM_LOAD( "06l_gs18.bin", 0x20000, 0x8000, 0xf69a3c7c );/* Sprites planes 0-1 */
+		ROM_LOAD( "04l_gs17.bin", 0x28000, 0x8000, 0x4e98562a );/* Sprites planes 0-1 */
+		ROM_LOAD( "03l_gs16.bin", 0x30000, 0x8000, 0x0d99c3b3 );/* Sprites planes 0-1 */
+		ROM_LOAD( "01l_gs15.bin", 0x38000, 0x8000, 0x7f14270e );/* Sprites planes 0-1 */
 	
-		ROM_REGION( 0x8000, REGION_GFX4, 0 )	/* background tilemaps */
-		ROM_LOAD( "11c_gs14.bin", 0x00000, 0x8000, 0x0af4f7eb )
+		ROM_REGION( 0x8000, REGION_GFX4, 0 );/* background tilemaps */
+		ROM_LOAD( "11c_gs14.bin", 0x00000, 0x8000, 0x0af4f7eb );
 	
-		ROM_REGION( 0x0a00, REGION_PROMS, 0 )
-		ROM_LOAD( "03b_g-01.bin", 0x0000, 0x0100, 0x02f55589 )	/* red component */
-		ROM_LOAD( "04b_g-02.bin", 0x0100, 0x0100, 0xe1e36dd9 )	/* green component */
-		ROM_LOAD( "05b_g-03.bin", 0x0200, 0x0100, 0x989399c0 )	/* blue component */
-		ROM_LOAD( "09d_g-04.bin", 0x0300, 0x0100, 0x906612b5 )	/* char lookup table */
-		ROM_LOAD( "14a_g-06.bin", 0x0400, 0x0100, 0x4a9da18b )	/* tile lookup table */
-		ROM_LOAD( "15a_g-07.bin", 0x0500, 0x0100, 0xcb9394fc )	/* tile palette bank */
-		ROM_LOAD( "09f_g-09.bin", 0x0600, 0x0100, 0x3cee181e )	/* sprite lookup table */
-		ROM_LOAD( "08f_g-08.bin", 0x0700, 0x0100, 0xef91cdd2 )	/* sprite palette bank */
-		ROM_LOAD( "02j_g-10.bin", 0x0800, 0x0100, 0x0eaf5158 )	/* video timing (not used) */
-		ROM_LOAD( "01f_g-05.bin", 0x0900, 0x0100, 0x25c90c2a )	/* priority? (not used) */
-	ROM_END
+		ROM_REGION( 0x0a00, REGION_PROMS, 0 );
+		ROM_LOAD( "03b_g-01.bin", 0x0000, 0x0100, 0x02f55589 );/* red component */
+		ROM_LOAD( "04b_g-02.bin", 0x0100, 0x0100, 0xe1e36dd9 );/* green component */
+		ROM_LOAD( "05b_g-03.bin", 0x0200, 0x0100, 0x989399c0 );/* blue component */
+		ROM_LOAD( "09d_g-04.bin", 0x0300, 0x0100, 0x906612b5 );/* char lookup table */
+		ROM_LOAD( "14a_g-06.bin", 0x0400, 0x0100, 0x4a9da18b );/* tile lookup table */
+		ROM_LOAD( "15a_g-07.bin", 0x0500, 0x0100, 0xcb9394fc );/* tile palette bank */
+		ROM_LOAD( "09f_g-09.bin", 0x0600, 0x0100, 0x3cee181e );/* sprite lookup table */
+		ROM_LOAD( "08f_g-08.bin", 0x0700, 0x0100, 0xef91cdd2 );/* sprite palette bank */
+		ROM_LOAD( "02j_g-10.bin", 0x0800, 0x0100, 0x0eaf5158 );/* video timing (not used) */
+		ROM_LOAD( "01f_g-05.bin", 0x0900, 0x0100, 0x25c90c2a );/* priority? (not used) */
+	ROM_END(); }}; 
 	
-	ROM_START( gunsmokj )
-		ROM_REGION( 0x20000, REGION_CPU1, 0 )     /* 2*64k for code */
-		ROM_LOAD( "gs03_9n.rom",  0x00000, 0x8000, 0xb56b5df6 ) /* Code 0000-7fff */
-		ROM_LOAD( "10n_gs04.bin", 0x10000, 0x8000, 0x8d4b423f ) /* Paged code */
-		ROM_LOAD( "12n_gs05.bin", 0x18000, 0x8000, 0x2b5667fb ) /* Paged code */
+	static RomLoadPtr rom_gunsmokj = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x20000, REGION_CPU1, 0 );    /* 2*64k for code */
+		ROM_LOAD( "gs03_9n.rom",  0x00000, 0x8000, 0xb56b5df6 );/* Code 0000-7fff */
+		ROM_LOAD( "10n_gs04.bin", 0x10000, 0x8000, 0x8d4b423f );/* Paged code */
+		ROM_LOAD( "12n_gs05.bin", 0x18000, 0x8000, 0x2b5667fb );/* Paged code */
 	
-		ROM_REGION( 0x10000, REGION_CPU2, 0 )	/* 64k for the audio CPU */
-		ROM_LOAD( "14h_gs02.bin", 0x00000, 0x8000, 0xcd7a2c38 )
+		ROM_REGION( 0x10000, REGION_CPU2, 0 );/* 64k for the audio CPU */
+		ROM_LOAD( "14h_gs02.bin", 0x00000, 0x8000, 0xcd7a2c38 );
 	
-		ROM_REGION( 0x04000, REGION_GFX1, ROMREGION_DISPOSE )
-		ROM_LOAD( "11f_gs01.bin", 0x00000, 0x4000, 0xb61ece9b ) /* Characters */
+		ROM_REGION( 0x04000, REGION_GFX1, ROMREGION_DISPOSE );
+		ROM_LOAD( "11f_gs01.bin", 0x00000, 0x4000, 0xb61ece9b );/* Characters */
 	
-		ROM_REGION( 0x40000, REGION_GFX2, ROMREGION_DISPOSE )
-		ROM_LOAD( "06c_gs13.bin", 0x00000, 0x8000, 0xf6769fc5 ) /* 32x32 tiles planes 2-3 */
-		ROM_LOAD( "05c_gs12.bin", 0x08000, 0x8000, 0xd997b78c )
-		ROM_LOAD( "04c_gs11.bin", 0x10000, 0x8000, 0x125ba58e )
-		ROM_LOAD( "02c_gs10.bin", 0x18000, 0x8000, 0xf469c13c )
-		ROM_LOAD( "06a_gs09.bin", 0x20000, 0x8000, 0x539f182d ) /* 32x32 tiles planes 0-1 */
-		ROM_LOAD( "05a_gs08.bin", 0x28000, 0x8000, 0xe87e526d )
-		ROM_LOAD( "04a_gs07.bin", 0x30000, 0x8000, 0x4382c0d2 )
-		ROM_LOAD( "02a_gs06.bin", 0x38000, 0x8000, 0x4cafe7a6 )
+		ROM_REGION( 0x40000, REGION_GFX2, ROMREGION_DISPOSE );
+		ROM_LOAD( "06c_gs13.bin", 0x00000, 0x8000, 0xf6769fc5 );/* 32x32 tiles planes 2-3 */
+		ROM_LOAD( "05c_gs12.bin", 0x08000, 0x8000, 0xd997b78c );
+		ROM_LOAD( "04c_gs11.bin", 0x10000, 0x8000, 0x125ba58e );
+		ROM_LOAD( "02c_gs10.bin", 0x18000, 0x8000, 0xf469c13c );
+		ROM_LOAD( "06a_gs09.bin", 0x20000, 0x8000, 0x539f182d );/* 32x32 tiles planes 0-1 */
+		ROM_LOAD( "05a_gs08.bin", 0x28000, 0x8000, 0xe87e526d );
+		ROM_LOAD( "04a_gs07.bin", 0x30000, 0x8000, 0x4382c0d2 );
+		ROM_LOAD( "02a_gs06.bin", 0x38000, 0x8000, 0x4cafe7a6 );
 	
-		ROM_REGION( 0x40000, REGION_GFX3, ROMREGION_DISPOSE )
-		ROM_LOAD( "06n_gs22.bin", 0x00000, 0x8000, 0xdc9c508c ) /* Sprites planes 2-3 */
-		ROM_LOAD( "04n_gs21.bin", 0x08000, 0x8000, 0x68883749 ) /* Sprites planes 2-3 */
-		ROM_LOAD( "03n_gs20.bin", 0x10000, 0x8000, 0x0be932ed ) /* Sprites planes 2-3 */
-		ROM_LOAD( "01n_gs19.bin", 0x18000, 0x8000, 0x63072f93 ) /* Sprites planes 2-3 */
-		ROM_LOAD( "06l_gs18.bin", 0x20000, 0x8000, 0xf69a3c7c ) /* Sprites planes 0-1 */
-		ROM_LOAD( "04l_gs17.bin", 0x28000, 0x8000, 0x4e98562a ) /* Sprites planes 0-1 */
-		ROM_LOAD( "03l_gs16.bin", 0x30000, 0x8000, 0x0d99c3b3 ) /* Sprites planes 0-1 */
-		ROM_LOAD( "01l_gs15.bin", 0x38000, 0x8000, 0x7f14270e ) /* Sprites planes 0-1 */
+		ROM_REGION( 0x40000, REGION_GFX3, ROMREGION_DISPOSE );
+		ROM_LOAD( "06n_gs22.bin", 0x00000, 0x8000, 0xdc9c508c );/* Sprites planes 2-3 */
+		ROM_LOAD( "04n_gs21.bin", 0x08000, 0x8000, 0x68883749 );/* Sprites planes 2-3 */
+		ROM_LOAD( "03n_gs20.bin", 0x10000, 0x8000, 0x0be932ed );/* Sprites planes 2-3 */
+		ROM_LOAD( "01n_gs19.bin", 0x18000, 0x8000, 0x63072f93 );/* Sprites planes 2-3 */
+		ROM_LOAD( "06l_gs18.bin", 0x20000, 0x8000, 0xf69a3c7c );/* Sprites planes 0-1 */
+		ROM_LOAD( "04l_gs17.bin", 0x28000, 0x8000, 0x4e98562a );/* Sprites planes 0-1 */
+		ROM_LOAD( "03l_gs16.bin", 0x30000, 0x8000, 0x0d99c3b3 );/* Sprites planes 0-1 */
+		ROM_LOAD( "01l_gs15.bin", 0x38000, 0x8000, 0x7f14270e );/* Sprites planes 0-1 */
 	
-		ROM_REGION( 0x8000, REGION_GFX4, 0 )	/* background tilemaps */
-		ROM_LOAD( "11c_gs14.bin", 0x00000, 0x8000, 0x0af4f7eb )
+		ROM_REGION( 0x8000, REGION_GFX4, 0 );/* background tilemaps */
+		ROM_LOAD( "11c_gs14.bin", 0x00000, 0x8000, 0x0af4f7eb );
 	
-		ROM_REGION( 0x0a00, REGION_PROMS, 0 )
-		ROM_LOAD( "03b_g-01.bin", 0x0000, 0x0100, 0x02f55589 )	/* red component */
-		ROM_LOAD( "04b_g-02.bin", 0x0100, 0x0100, 0xe1e36dd9 )	/* green component */
-		ROM_LOAD( "05b_g-03.bin", 0x0200, 0x0100, 0x989399c0 )	/* blue component */
-		ROM_LOAD( "09d_g-04.bin", 0x0300, 0x0100, 0x906612b5 )	/* char lookup table */
-		ROM_LOAD( "14a_g-06.bin", 0x0400, 0x0100, 0x4a9da18b )	/* tile lookup table */
-		ROM_LOAD( "15a_g-07.bin", 0x0500, 0x0100, 0xcb9394fc )	/* tile palette bank */
-		ROM_LOAD( "09f_g-09.bin", 0x0600, 0x0100, 0x3cee181e )	/* sprite lookup table */
-		ROM_LOAD( "08f_g-08.bin", 0x0700, 0x0100, 0xef91cdd2 )	/* sprite palette bank */
-		ROM_LOAD( "02j_g-10.bin", 0x0800, 0x0100, 0x0eaf5158 )	/* video timing (not used) */
-		ROM_LOAD( "01f_g-05.bin", 0x0900, 0x0100, 0x25c90c2a )	/* priority? (not used) */
-	ROM_END
+		ROM_REGION( 0x0a00, REGION_PROMS, 0 );
+		ROM_LOAD( "03b_g-01.bin", 0x0000, 0x0100, 0x02f55589 );/* red component */
+		ROM_LOAD( "04b_g-02.bin", 0x0100, 0x0100, 0xe1e36dd9 );/* green component */
+		ROM_LOAD( "05b_g-03.bin", 0x0200, 0x0100, 0x989399c0 );/* blue component */
+		ROM_LOAD( "09d_g-04.bin", 0x0300, 0x0100, 0x906612b5 );/* char lookup table */
+		ROM_LOAD( "14a_g-06.bin", 0x0400, 0x0100, 0x4a9da18b );/* tile lookup table */
+		ROM_LOAD( "15a_g-07.bin", 0x0500, 0x0100, 0xcb9394fc );/* tile palette bank */
+		ROM_LOAD( "09f_g-09.bin", 0x0600, 0x0100, 0x3cee181e );/* sprite lookup table */
+		ROM_LOAD( "08f_g-08.bin", 0x0700, 0x0100, 0xef91cdd2 );/* sprite palette bank */
+		ROM_LOAD( "02j_g-10.bin", 0x0800, 0x0100, 0x0eaf5158 );/* video timing (not used) */
+		ROM_LOAD( "01f_g-05.bin", 0x0900, 0x0100, 0x25c90c2a );/* priority? (not used) */
+	ROM_END(); }}; 
 	
-	ROM_START( gunsmoka )
-		ROM_REGION( 0x20000, REGION_CPU1, 0 )     /* 2*64k for code */
-		ROM_LOAD( "gs03.9n",      0x00000, 0x8000, 0x51dc3f76 ) /* Code 0000-7fff */
-		ROM_LOAD( "gs04.10n",     0x10000, 0x8000, 0x5ecf31b8 ) /* Paged code */
-		ROM_LOAD( "gs05.12n",     0x18000, 0x8000, 0x1c9aca13 ) /* Paged code */
+	static RomLoadPtr rom_gunsmoka = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x20000, REGION_CPU1, 0 );    /* 2*64k for code */
+		ROM_LOAD( "gs03.9n",      0x00000, 0x8000, 0x51dc3f76 );/* Code 0000-7fff */
+		ROM_LOAD( "gs04.10n",     0x10000, 0x8000, 0x5ecf31b8 );/* Paged code */
+		ROM_LOAD( "gs05.12n",     0x18000, 0x8000, 0x1c9aca13 );/* Paged code */
 	
-		ROM_REGION( 0x10000, REGION_CPU2, 0 )	/* 64k for the audio CPU */
-		ROM_LOAD( "14h_gs02.bin", 0x00000, 0x8000, 0xcd7a2c38 )
+		ROM_REGION( 0x10000, REGION_CPU2, 0 );/* 64k for the audio CPU */
+		ROM_LOAD( "14h_gs02.bin", 0x00000, 0x8000, 0xcd7a2c38 );
 	
-		ROM_REGION( 0x04000, REGION_GFX1, ROMREGION_DISPOSE )
-		ROM_LOAD( "11f_gs01.bin", 0x00000, 0x4000, 0xb61ece9b ) /* Characters */
+		ROM_REGION( 0x04000, REGION_GFX1, ROMREGION_DISPOSE );
+		ROM_LOAD( "11f_gs01.bin", 0x00000, 0x4000, 0xb61ece9b );/* Characters */
 	
-		ROM_REGION( 0x40000, REGION_GFX2, ROMREGION_DISPOSE )
-		ROM_LOAD( "06c_gs13.bin", 0x00000, 0x8000, 0xf6769fc5 ) /* 32x32 tiles planes 2-3 */
-		ROM_LOAD( "05c_gs12.bin", 0x08000, 0x8000, 0xd997b78c )
-		ROM_LOAD( "04c_gs11.bin", 0x10000, 0x8000, 0x125ba58e )
-		ROM_LOAD( "02c_gs10.bin", 0x18000, 0x8000, 0xf469c13c )
-		ROM_LOAD( "06a_gs09.bin", 0x20000, 0x8000, 0x539f182d ) /* 32x32 tiles planes 0-1 */
-		ROM_LOAD( "05a_gs08.bin", 0x28000, 0x8000, 0xe87e526d )
-		ROM_LOAD( "04a_gs07.bin", 0x30000, 0x8000, 0x4382c0d2 )
-		ROM_LOAD( "02a_gs06.bin", 0x38000, 0x8000, 0x4cafe7a6 )
+		ROM_REGION( 0x40000, REGION_GFX2, ROMREGION_DISPOSE );
+		ROM_LOAD( "06c_gs13.bin", 0x00000, 0x8000, 0xf6769fc5 );/* 32x32 tiles planes 2-3 */
+		ROM_LOAD( "05c_gs12.bin", 0x08000, 0x8000, 0xd997b78c );
+		ROM_LOAD( "04c_gs11.bin", 0x10000, 0x8000, 0x125ba58e );
+		ROM_LOAD( "02c_gs10.bin", 0x18000, 0x8000, 0xf469c13c );
+		ROM_LOAD( "06a_gs09.bin", 0x20000, 0x8000, 0x539f182d );/* 32x32 tiles planes 0-1 */
+		ROM_LOAD( "05a_gs08.bin", 0x28000, 0x8000, 0xe87e526d );
+		ROM_LOAD( "04a_gs07.bin", 0x30000, 0x8000, 0x4382c0d2 );
+		ROM_LOAD( "02a_gs06.bin", 0x38000, 0x8000, 0x4cafe7a6 );
 	
-		ROM_REGION( 0x40000, REGION_GFX3, ROMREGION_DISPOSE )
-		ROM_LOAD( "06n_gs22.bin", 0x00000, 0x8000, 0xdc9c508c ) /* Sprites planes 2-3 */
-		ROM_LOAD( "04n_gs21.bin", 0x08000, 0x8000, 0x68883749 ) /* Sprites planes 2-3 */
-		ROM_LOAD( "03n_gs20.bin", 0x10000, 0x8000, 0x0be932ed ) /* Sprites planes 2-3 */
-		ROM_LOAD( "01n_gs19.bin", 0x18000, 0x8000, 0x63072f93 ) /* Sprites planes 2-3 */
-		ROM_LOAD( "06l_gs18.bin", 0x20000, 0x8000, 0xf69a3c7c ) /* Sprites planes 0-1 */
-		ROM_LOAD( "04l_gs17.bin", 0x28000, 0x8000, 0x4e98562a ) /* Sprites planes 0-1 */
-		ROM_LOAD( "03l_gs16.bin", 0x30000, 0x8000, 0x0d99c3b3 ) /* Sprites planes 0-1 */
-		ROM_LOAD( "01l_gs15.bin", 0x38000, 0x8000, 0x7f14270e ) /* Sprites planes 0-1 */
+		ROM_REGION( 0x40000, REGION_GFX3, ROMREGION_DISPOSE );
+		ROM_LOAD( "06n_gs22.bin", 0x00000, 0x8000, 0xdc9c508c );/* Sprites planes 2-3 */
+		ROM_LOAD( "04n_gs21.bin", 0x08000, 0x8000, 0x68883749 );/* Sprites planes 2-3 */
+		ROM_LOAD( "03n_gs20.bin", 0x10000, 0x8000, 0x0be932ed );/* Sprites planes 2-3 */
+		ROM_LOAD( "01n_gs19.bin", 0x18000, 0x8000, 0x63072f93 );/* Sprites planes 2-3 */
+		ROM_LOAD( "06l_gs18.bin", 0x20000, 0x8000, 0xf69a3c7c );/* Sprites planes 0-1 */
+		ROM_LOAD( "04l_gs17.bin", 0x28000, 0x8000, 0x4e98562a );/* Sprites planes 0-1 */
+		ROM_LOAD( "03l_gs16.bin", 0x30000, 0x8000, 0x0d99c3b3 );/* Sprites planes 0-1 */
+		ROM_LOAD( "01l_gs15.bin", 0x38000, 0x8000, 0x7f14270e );/* Sprites planes 0-1 */
 	
-		ROM_REGION( 0x8000, REGION_GFX4, 0 )	/* background tilemaps */
-		ROM_LOAD( "11c_gs14.bin", 0x00000, 0x8000, 0x0af4f7eb )
+		ROM_REGION( 0x8000, REGION_GFX4, 0 );/* background tilemaps */
+		ROM_LOAD( "11c_gs14.bin", 0x00000, 0x8000, 0x0af4f7eb );
 	
-		ROM_REGION( 0x0a00, REGION_PROMS, 0 )
-		ROM_LOAD( "03b_g-01.bin", 0x0000, 0x0100, 0x02f55589 )	/* red component */
-		ROM_LOAD( "04b_g-02.bin", 0x0100, 0x0100, 0xe1e36dd9 )	/* green component */
-		ROM_LOAD( "05b_g-03.bin", 0x0200, 0x0100, 0x989399c0 )	/* blue component */
-		ROM_LOAD( "09d_g-04.bin", 0x0300, 0x0100, 0x906612b5 )	/* char lookup table */
-		ROM_LOAD( "14a_g-06.bin", 0x0400, 0x0100, 0x4a9da18b )	/* tile lookup table */
-		ROM_LOAD( "15a_g-07.bin", 0x0500, 0x0100, 0xcb9394fc )	/* tile palette bank */
-		ROM_LOAD( "09f_g-09.bin", 0x0600, 0x0100, 0x3cee181e )	/* sprite lookup table */
-		ROM_LOAD( "08f_g-08.bin", 0x0700, 0x0100, 0xef91cdd2 )	/* sprite palette bank */
-		ROM_LOAD( "02j_g-10.bin", 0x0800, 0x0100, 0x0eaf5158 )	/* video timing (not used) */
-		ROM_LOAD( "01f_g-05.bin", 0x0900, 0x0100, 0x25c90c2a )	/* priority? (not used) */
-	ROM_END
+		ROM_REGION( 0x0a00, REGION_PROMS, 0 );
+		ROM_LOAD( "03b_g-01.bin", 0x0000, 0x0100, 0x02f55589 );/* red component */
+		ROM_LOAD( "04b_g-02.bin", 0x0100, 0x0100, 0xe1e36dd9 );/* green component */
+		ROM_LOAD( "05b_g-03.bin", 0x0200, 0x0100, 0x989399c0 );/* blue component */
+		ROM_LOAD( "09d_g-04.bin", 0x0300, 0x0100, 0x906612b5 );/* char lookup table */
+		ROM_LOAD( "14a_g-06.bin", 0x0400, 0x0100, 0x4a9da18b );/* tile lookup table */
+		ROM_LOAD( "15a_g-07.bin", 0x0500, 0x0100, 0xcb9394fc );/* tile palette bank */
+		ROM_LOAD( "09f_g-09.bin", 0x0600, 0x0100, 0x3cee181e );/* sprite lookup table */
+		ROM_LOAD( "08f_g-08.bin", 0x0700, 0x0100, 0xef91cdd2 );/* sprite palette bank */
+		ROM_LOAD( "02j_g-10.bin", 0x0800, 0x0100, 0x0eaf5158 );/* video timing (not used) */
+		ROM_LOAD( "01f_g-05.bin", 0x0900, 0x0100, 0x25c90c2a );/* priority? (not used) */
+	ROM_END(); }}; 
 	
 	
 	

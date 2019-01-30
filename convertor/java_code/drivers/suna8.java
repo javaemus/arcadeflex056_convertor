@@ -2062,62 +2062,62 @@ public class suna8
 	
 	***************************************************************************/
 	
-	ROM_START( hardhead )
-		ROM_REGION( 0x48000, REGION_CPU1, 0 ) /* Main Z80 Code */
-		ROM_LOAD( "p1",  0x00000, 0x8000, 0xc6147926 )	// 1988,9,14
-		ROM_LOAD( "p2",  0x10000, 0x8000, 0xfaa2cf9a )
-		ROM_LOAD( "p3",  0x18000, 0x8000, 0x3d24755e )
-		ROM_LOAD( "p4",  0x20000, 0x8000, 0x0241ac79 )
-		ROM_LOAD( "p7",  0x28000, 0x8000, 0xbeba8313 )
-		ROM_LOAD( "p8",  0x30000, 0x8000, 0x211a9342 )
-		ROM_LOAD( "p9",  0x38000, 0x8000, 0x2ad430c4 )
-		ROM_LOAD( "p10", 0x40000, 0x8000, 0xb6894517 )
+	static RomLoadPtr rom_hardhead = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x48000, REGION_CPU1, 0 );/* Main Z80 Code */
+		ROM_LOAD( "p1",  0x00000, 0x8000, 0xc6147926 );// 1988,9,14
+		ROM_LOAD( "p2",  0x10000, 0x8000, 0xfaa2cf9a );
+		ROM_LOAD( "p3",  0x18000, 0x8000, 0x3d24755e );
+		ROM_LOAD( "p4",  0x20000, 0x8000, 0x0241ac79 );
+		ROM_LOAD( "p7",  0x28000, 0x8000, 0xbeba8313 );
+		ROM_LOAD( "p8",  0x30000, 0x8000, 0x211a9342 );
+		ROM_LOAD( "p9",  0x38000, 0x8000, 0x2ad430c4 );
+		ROM_LOAD( "p10", 0x40000, 0x8000, 0xb6894517 );
 	
-		ROM_REGION( 0x10000, REGION_CPU2, 0 )		/* Sound Z80 Code */
-		ROM_LOAD( "p13", 0x0000, 0x8000, 0x493c0b41 )
+		ROM_REGION( 0x10000, REGION_CPU2, 0 );	/* Sound Z80 Code */
+		ROM_LOAD( "p13", 0x0000, 0x8000, 0x493c0b41 );
 	
-		ROM_REGION( 0x40000, REGION_GFX1, ROMREGION_DISPOSE | ROMREGION_INVERT )	/* Sprites */
-		ROM_LOAD( "p5",  0x00000, 0x8000, 0xe9aa6fba )
-		ROM_RELOAD(      0x08000, 0x8000             )
-		ROM_LOAD( "p6",  0x10000, 0x8000, 0x15d5f5dd )
-		ROM_RELOAD(      0x18000, 0x8000             )
-		ROM_LOAD( "p11", 0x20000, 0x8000, 0x055f4c29 )
-		ROM_RELOAD(      0x28000, 0x8000             )
-		ROM_LOAD( "p12", 0x30000, 0x8000, 0x9582e6db )
-		ROM_RELOAD(      0x38000, 0x8000             )
+		ROM_REGION( 0x40000, REGION_GFX1, ROMREGION_DISPOSE | ROMREGION_INVERT );/* Sprites */
+		ROM_LOAD( "p5",  0x00000, 0x8000, 0xe9aa6fba );
+		ROM_RELOAD(      0x08000, 0x8000             );
+		ROM_LOAD( "p6",  0x10000, 0x8000, 0x15d5f5dd );
+		ROM_RELOAD(      0x18000, 0x8000             );
+		ROM_LOAD( "p11", 0x20000, 0x8000, 0x055f4c29 );
+		ROM_RELOAD(      0x28000, 0x8000             );
+		ROM_LOAD( "p12", 0x30000, 0x8000, 0x9582e6db );
+		ROM_RELOAD(      0x38000, 0x8000             );
 	
-		ROM_REGION( 0x8000, REGION_SOUND1, ROMREGION_SOUNDONLY )	/* Samples */
-		ROM_LOAD( "p14", 0x0000, 0x8000, 0x41314ac1 )
-	ROM_END
+		ROM_REGION( 0x8000, REGION_SOUND1, ROMREGION_SOUNDONLY );/* Samples */
+		ROM_LOAD( "p14", 0x0000, 0x8000, 0x41314ac1 );
+	ROM_END(); }}; 
 	
-	ROM_START( hardhedb )
-		ROM_REGION( 0x48000, REGION_CPU1, 0 ) /* Main Z80 Code */
-		ROM_LOAD( "9_1_6l.rom", 0x00000, 0x8000, 0x750e6aee )	// 1988,9,14 (already decrypted)
-		ROM_LOAD( "p2",  0x10000, 0x8000, 0xfaa2cf9a )
-		ROM_LOAD( "p3",  0x18000, 0x8000, 0x3d24755e )
-		ROM_LOAD( "p4",  0x20000, 0x8000, 0x0241ac79 )
-		ROM_LOAD( "p7",  0x28000, 0x8000, 0xbeba8313 )
-		ROM_LOAD( "p8",  0x30000, 0x8000, 0x211a9342 )
-		ROM_LOAD( "p9",  0x38000, 0x8000, 0x2ad430c4 )
-		ROM_LOAD( "p10", 0x40000, 0x8000, 0xb6894517 )
+	static RomLoadPtr rom_hardhedb = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x48000, REGION_CPU1, 0 );/* Main Z80 Code */
+		ROM_LOAD( "9_1_6l.rom", 0x00000, 0x8000, 0x750e6aee );// 1988,9,14 (already decrypted)
+		ROM_LOAD( "p2",  0x10000, 0x8000, 0xfaa2cf9a );
+		ROM_LOAD( "p3",  0x18000, 0x8000, 0x3d24755e );
+		ROM_LOAD( "p4",  0x20000, 0x8000, 0x0241ac79 );
+		ROM_LOAD( "p7",  0x28000, 0x8000, 0xbeba8313 );
+		ROM_LOAD( "p8",  0x30000, 0x8000, 0x211a9342 );
+		ROM_LOAD( "p9",  0x38000, 0x8000, 0x2ad430c4 );
+		ROM_LOAD( "p10", 0x40000, 0x8000, 0xb6894517 );
 	
-		ROM_REGION( 0x10000, REGION_CPU2, 0 )		/* Sound Z80 Code */
-		ROM_LOAD( "p13", 0x0000, 0x8000, 0x493c0b41 )
-	//	ROM_LOAD( "2_13_9h.rom", 0x00000, 0x8000, 0x1b20e5ec )
+		ROM_REGION( 0x10000, REGION_CPU2, 0 );	/* Sound Z80 Code */
+		ROM_LOAD( "p13", 0x0000, 0x8000, 0x493c0b41 );
+	//	ROM_LOAD( "2_13_9h.rom", 0x00000, 0x8000, 0x1b20e5ec );
 	
-		ROM_REGION( 0x40000, REGION_GFX1, ROMREGION_DISPOSE | ROMREGION_INVERT )	/* Sprites */
-		ROM_LOAD( "p5",  0x00000, 0x8000, 0xe9aa6fba )
-		ROM_RELOAD(      0x08000, 0x8000             )
-		ROM_LOAD( "p6",  0x10000, 0x8000, 0x15d5f5dd )
-		ROM_RELOAD(      0x18000, 0x8000             )
-		ROM_LOAD( "p11", 0x20000, 0x8000, 0x055f4c29 )
-		ROM_RELOAD(      0x28000, 0x8000             )
-		ROM_LOAD( "p12", 0x30000, 0x8000, 0x9582e6db )
-		ROM_RELOAD(      0x38000, 0x8000             )
+		ROM_REGION( 0x40000, REGION_GFX1, ROMREGION_DISPOSE | ROMREGION_INVERT );/* Sprites */
+		ROM_LOAD( "p5",  0x00000, 0x8000, 0xe9aa6fba );
+		ROM_RELOAD(      0x08000, 0x8000             );
+		ROM_LOAD( "p6",  0x10000, 0x8000, 0x15d5f5dd );
+		ROM_RELOAD(      0x18000, 0x8000             );
+		ROM_LOAD( "p11", 0x20000, 0x8000, 0x055f4c29 );
+		ROM_RELOAD(      0x28000, 0x8000             );
+		ROM_LOAD( "p12", 0x30000, 0x8000, 0x9582e6db );
+		ROM_RELOAD(      0x38000, 0x8000             );
 	
-		ROM_REGION( 0x8000, REGION_SOUND1, ROMREGION_SOUNDONLY )	/* Samples */
-		ROM_LOAD( "p14", 0x0000, 0x8000, 0x41314ac1 )
-	ROM_END
+		ROM_REGION( 0x8000, REGION_SOUND1, ROMREGION_SOUNDONLY );/* Samples */
+		ROM_LOAD( "p14", 0x0000, 0x8000, 0x41314ac1 );
+	ROM_END(); }}; 
 	
 	
 	/***************************************************************************
@@ -2177,114 +2177,114 @@ public class suna8
 	
 	***************************************************************************/
 	
-	ROM_START( rranger )
-		ROM_REGION( 0x48000, REGION_CPU1, 0 )		/* Main Z80 Code */
-		ROM_LOAD( "1",  0x00000, 0x8000, 0x4fb4f096 )	// V 2.0 1988,4,15
-		ROM_LOAD( "2",  0x10000, 0x8000, 0xff65af29 )
-		ROM_LOAD( "3",  0x18000, 0x8000, 0x64e09436 )
-		ROM_LOAD( "r4", 0x30000, 0x8000, 0x4346fae6 )
-		ROM_CONTINUE(   0x20000, 0x8000             )
-		ROM_LOAD( "r5", 0x38000, 0x8000, 0x6a7ca1c3 )
-		ROM_CONTINUE(   0x28000, 0x8000             )
+	static RomLoadPtr rom_rranger = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x48000, REGION_CPU1, 0 );	/* Main Z80 Code */
+		ROM_LOAD( "1",  0x00000, 0x8000, 0x4fb4f096 );// V 2.0 1988,4,15
+		ROM_LOAD( "2",  0x10000, 0x8000, 0xff65af29 );
+		ROM_LOAD( "3",  0x18000, 0x8000, 0x64e09436 );
+		ROM_LOAD( "r4", 0x30000, 0x8000, 0x4346fae6 );
+		ROM_CONTINUE(   0x20000, 0x8000             );
+		ROM_LOAD( "r5", 0x38000, 0x8000, 0x6a7ca1c3 );
+		ROM_CONTINUE(   0x28000, 0x8000             );
 	
-		ROM_REGION( 0x10000, REGION_CPU2, 0 )		/* Sound Z80 Code */
-		ROM_LOAD( "14", 0x0000, 0x8000, 0x11c83aa1 )
+		ROM_REGION( 0x10000, REGION_CPU2, 0 );	/* Sound Z80 Code */
+		ROM_LOAD( "14", 0x0000, 0x8000, 0x11c83aa1 );
 	
-		ROM_REGION( 0x8000, REGION_SOUND1, ROMREGION_SOUNDONLY )	/* Samples */
-		ROM_LOAD( "15", 0x0000, 0x8000, 0x28c2c87e )
+		ROM_REGION( 0x8000, REGION_SOUND1, ROMREGION_SOUNDONLY );/* Samples */
+		ROM_LOAD( "15", 0x0000, 0x8000, 0x28c2c87e );
 	
-		ROM_REGION( 0x40000, REGION_GFX1, ROMREGION_DISPOSE | ROMREGION_INVERT )	/* Sprites */
-		ROM_LOAD( "6",  0x00000, 0x8000, 0x57543643 )
-		ROM_LOAD( "7",  0x08000, 0x8000, 0x9f35dbfa )
-		ROM_LOAD( "8",  0x10000, 0x8000, 0xf400db89 )
-		ROM_LOAD( "9",  0x18000, 0x8000, 0xfa2a11ea )
-		ROM_LOAD( "10", 0x20000, 0x8000, 0x42c4fdbf )
-		ROM_LOAD( "11", 0x28000, 0x8000, 0x19037a7b )
-		ROM_LOAD( "12", 0x30000, 0x8000, 0xc59c0ec7 )
-		ROM_LOAD( "13", 0x38000, 0x8000, 0x9809fee8 )
-	ROM_END
+		ROM_REGION( 0x40000, REGION_GFX1, ROMREGION_DISPOSE | ROMREGION_INVERT );/* Sprites */
+		ROM_LOAD( "6",  0x00000, 0x8000, 0x57543643 );
+		ROM_LOAD( "7",  0x08000, 0x8000, 0x9f35dbfa );
+		ROM_LOAD( "8",  0x10000, 0x8000, 0xf400db89 );
+		ROM_LOAD( "9",  0x18000, 0x8000, 0xfa2a11ea );
+		ROM_LOAD( "10", 0x20000, 0x8000, 0x42c4fdbf );
+		ROM_LOAD( "11", 0x28000, 0x8000, 0x19037a7b );
+		ROM_LOAD( "12", 0x30000, 0x8000, 0xc59c0ec7 );
+		ROM_LOAD( "13", 0x38000, 0x8000, 0x9809fee8 );
+	ROM_END(); }}; 
 	
-	ROM_START( sranger )
-		ROM_REGION( 0x48000, REGION_CPU1, 0 )		/* Main Z80 Code */
-		ROM_LOAD( "r1", 0x00000, 0x8000, 0x4eef1ede )	// V 2.0 1988,4,15
-		ROM_LOAD( "2",  0x10000, 0x8000, 0xff65af29 )
-		ROM_LOAD( "3",  0x18000, 0x8000, 0x64e09436 )
-		ROM_LOAD( "r4", 0x30000, 0x8000, 0x4346fae6 )
-		ROM_CONTINUE(   0x20000, 0x8000             )
-		ROM_LOAD( "r5", 0x38000, 0x8000, 0x6a7ca1c3 )
-		ROM_CONTINUE(   0x28000, 0x8000             )
+	static RomLoadPtr rom_sranger = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x48000, REGION_CPU1, 0 );	/* Main Z80 Code */
+		ROM_LOAD( "r1", 0x00000, 0x8000, 0x4eef1ede );// V 2.0 1988,4,15
+		ROM_LOAD( "2",  0x10000, 0x8000, 0xff65af29 );
+		ROM_LOAD( "3",  0x18000, 0x8000, 0x64e09436 );
+		ROM_LOAD( "r4", 0x30000, 0x8000, 0x4346fae6 );
+		ROM_CONTINUE(   0x20000, 0x8000             );
+		ROM_LOAD( "r5", 0x38000, 0x8000, 0x6a7ca1c3 );
+		ROM_CONTINUE(   0x28000, 0x8000             );
 	
-		ROM_REGION( 0x10000, REGION_CPU2, 0 )		/* Sound Z80 Code */
-		ROM_LOAD( "14", 0x0000, 0x8000, 0x11c83aa1 )
+		ROM_REGION( 0x10000, REGION_CPU2, 0 );	/* Sound Z80 Code */
+		ROM_LOAD( "14", 0x0000, 0x8000, 0x11c83aa1 );
 	
-		ROM_REGION( 0x8000, REGION_SOUND1, ROMREGION_SOUNDONLY )	/* Samples */
-		ROM_LOAD( "15", 0x0000, 0x8000, 0x28c2c87e )
+		ROM_REGION( 0x8000, REGION_SOUND1, ROMREGION_SOUNDONLY );/* Samples */
+		ROM_LOAD( "15", 0x0000, 0x8000, 0x28c2c87e );
 	
-		ROM_REGION( 0x40000, REGION_GFX1, ROMREGION_DISPOSE | ROMREGION_INVERT )	/* Sprites */
-		ROM_LOAD( "r6",  0x00000, 0x8000, 0x4f11fef3 )
-		ROM_LOAD( "7",   0x08000, 0x8000, 0x9f35dbfa )
-		ROM_LOAD( "8",   0x10000, 0x8000, 0xf400db89 )
-		ROM_LOAD( "9",   0x18000, 0x8000, 0xfa2a11ea )
-		ROM_LOAD( "r10", 0x20000, 0x8000, 0x1b204d6b )
-		ROM_LOAD( "11",  0x28000, 0x8000, 0x19037a7b )
-		ROM_LOAD( "12",  0x30000, 0x8000, 0xc59c0ec7 )
-		ROM_LOAD( "13",  0x38000, 0x8000, 0x9809fee8 )
-	ROM_END
+		ROM_REGION( 0x40000, REGION_GFX1, ROMREGION_DISPOSE | ROMREGION_INVERT );/* Sprites */
+		ROM_LOAD( "r6",  0x00000, 0x8000, 0x4f11fef3 );
+		ROM_LOAD( "7",   0x08000, 0x8000, 0x9f35dbfa );
+		ROM_LOAD( "8",   0x10000, 0x8000, 0xf400db89 );
+		ROM_LOAD( "9",   0x18000, 0x8000, 0xfa2a11ea );
+		ROM_LOAD( "r10", 0x20000, 0x8000, 0x1b204d6b );
+		ROM_LOAD( "11",  0x28000, 0x8000, 0x19037a7b );
+		ROM_LOAD( "12",  0x30000, 0x8000, 0xc59c0ec7 );
+		ROM_LOAD( "13",  0x38000, 0x8000, 0x9809fee8 );
+	ROM_END(); }}; 
 	
-	ROM_START( srangerb )
-		ROM_REGION( 0x48000, REGION_CPU1, 0 )		/* Main Z80 Code */
-		ROM_LOAD( "r1bt", 0x00000, 0x8000, 0x40635e7c )	// NYWACORPORATION LTD 88-1-07
-		ROM_LOAD( "2",    0x10000, 0x8000, 0xff65af29 )
-		ROM_LOAD( "3",    0x18000, 0x8000, 0x64e09436 )
-		ROM_LOAD( "r4",   0x30000, 0x8000, 0x4346fae6 )
-		ROM_CONTINUE(     0x20000, 0x8000             )
-		ROM_LOAD( "r5",   0x38000, 0x8000, 0x6a7ca1c3 )
-		ROM_CONTINUE(     0x28000, 0x8000             )
-		ROM_LOAD( "r5bt", 0x28000, 0x8000, BADCRC(0xf7f391b5) )	// wrong length
+	static RomLoadPtr rom_srangerb = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x48000, REGION_CPU1, 0 );	/* Main Z80 Code */
+		ROM_LOAD( "r1bt", 0x00000, 0x8000, 0x40635e7c );// NYWACORPORATION LTD 88-1-07
+		ROM_LOAD( "2",    0x10000, 0x8000, 0xff65af29 );
+		ROM_LOAD( "3",    0x18000, 0x8000, 0x64e09436 );
+		ROM_LOAD( "r4",   0x30000, 0x8000, 0x4346fae6 );
+		ROM_CONTINUE(     0x20000, 0x8000             );
+		ROM_LOAD( "r5",   0x38000, 0x8000, 0x6a7ca1c3 );
+		ROM_CONTINUE(     0x28000, 0x8000             );
+		ROM_LOAD( "r5bt", 0x28000, 0x8000, BADCRC(0xf7f391b5));	// wrong length
 	
-		ROM_REGION( 0x10000, REGION_CPU2, 0 )		/* Sound Z80 Code */
-		ROM_LOAD( "14", 0x0000, 0x8000, 0x11c83aa1 )
+		ROM_REGION( 0x10000, REGION_CPU2, 0 );	/* Sound Z80 Code */
+		ROM_LOAD( "14", 0x0000, 0x8000, 0x11c83aa1 );
 	
-		ROM_REGION( 0x8000, REGION_SOUND1, ROMREGION_SOUNDONLY )	/* Samples */
-		ROM_LOAD( "15", 0x0000, 0x8000, 0x28c2c87e )
+		ROM_REGION( 0x8000, REGION_SOUND1, ROMREGION_SOUNDONLY );/* Samples */
+		ROM_LOAD( "15", 0x0000, 0x8000, 0x28c2c87e );
 	
-		ROM_REGION( 0x40000, REGION_GFX1, ROMREGION_DISPOSE | ROMREGION_INVERT )	/* Sprites */
-		ROM_LOAD( "r6",  0x00000, 0x8000, 0x4f11fef3 )
-		ROM_LOAD( "7",   0x08000, 0x8000, 0x9f35dbfa )
-		ROM_LOAD( "8",   0x10000, 0x8000, 0xf400db89 )
-		ROM_LOAD( "9",   0x18000, 0x8000, 0xfa2a11ea )
-		ROM_LOAD( "r10", 0x20000, 0x8000, 0x1b204d6b )
-		ROM_LOAD( "11",  0x28000, 0x8000, 0x19037a7b )
-		ROM_LOAD( "12",  0x30000, 0x8000, 0xc59c0ec7 )
-		ROM_LOAD( "13",  0x38000, 0x8000, 0x9809fee8 )
-	ROM_END
+		ROM_REGION( 0x40000, REGION_GFX1, ROMREGION_DISPOSE | ROMREGION_INVERT );/* Sprites */
+		ROM_LOAD( "r6",  0x00000, 0x8000, 0x4f11fef3 );
+		ROM_LOAD( "7",   0x08000, 0x8000, 0x9f35dbfa );
+		ROM_LOAD( "8",   0x10000, 0x8000, 0xf400db89 );
+		ROM_LOAD( "9",   0x18000, 0x8000, 0xfa2a11ea );
+		ROM_LOAD( "r10", 0x20000, 0x8000, 0x1b204d6b );
+		ROM_LOAD( "11",  0x28000, 0x8000, 0x19037a7b );
+		ROM_LOAD( "12",  0x30000, 0x8000, 0xc59c0ec7 );
+		ROM_LOAD( "13",  0x38000, 0x8000, 0x9809fee8 );
+	ROM_END(); }}; 
 	
-	ROM_START( srangerw )
-		ROM_REGION( 0x48000, REGION_CPU1, 0 )		/* Main Z80 Code */
-		ROM_LOAD( "1",  0x00000, 0x8000, 0x2287d3fc )	// 88,2,28
-		ROM_LOAD( "2",  0x10000, 0x8000, 0xff65af29 )
-		ROM_LOAD( "3",  0x18000, 0x8000, 0x64e09436 )
-		ROM_LOAD( "r4", 0x30000, 0x8000, 0x4346fae6 )
-		ROM_CONTINUE(   0x20000, 0x8000             )
-		ROM_LOAD( "r5", 0x38000, 0x8000, 0x6a7ca1c3 )
-		ROM_CONTINUE(   0x28000, 0x8000             )
+	static RomLoadPtr rom_srangerw = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x48000, REGION_CPU1, 0 );	/* Main Z80 Code */
+		ROM_LOAD( "1",  0x00000, 0x8000, 0x2287d3fc );// 88,2,28
+		ROM_LOAD( "2",  0x10000, 0x8000, 0xff65af29 );
+		ROM_LOAD( "3",  0x18000, 0x8000, 0x64e09436 );
+		ROM_LOAD( "r4", 0x30000, 0x8000, 0x4346fae6 );
+		ROM_CONTINUE(   0x20000, 0x8000             );
+		ROM_LOAD( "r5", 0x38000, 0x8000, 0x6a7ca1c3 );
+		ROM_CONTINUE(   0x28000, 0x8000             );
 	
-		ROM_REGION( 0x10000, REGION_CPU2, 0 )		/* Sound Z80 Code */
-		ROM_LOAD( "14", 0x0000, 0x8000, 0x11c83aa1 )
+		ROM_REGION( 0x10000, REGION_CPU2, 0 );	/* Sound Z80 Code */
+		ROM_LOAD( "14", 0x0000, 0x8000, 0x11c83aa1 );
 	
-		ROM_REGION( 0x8000, REGION_SOUND1, ROMREGION_SOUNDONLY )	/* Samples */
-		ROM_LOAD( "15", 0x0000, 0x8000, 0x28c2c87e )
+		ROM_REGION( 0x8000, REGION_SOUND1, ROMREGION_SOUNDONLY );/* Samples */
+		ROM_LOAD( "15", 0x0000, 0x8000, 0x28c2c87e );
 	
-		ROM_REGION( 0x40000, REGION_GFX1, ROMREGION_DISPOSE | ROMREGION_INVERT )	/* Sprites */
-		ROM_LOAD( "6",  0x00000, 0x8000, 0x312ecda6 )
-		ROM_LOAD( "7",  0x08000, 0x8000, 0x9f35dbfa )
-		ROM_LOAD( "8",  0x10000, 0x8000, 0xf400db89 )
-		ROM_LOAD( "9",  0x18000, 0x8000, 0xfa2a11ea )
-		ROM_LOAD( "10", 0x20000, 0x8000, 0x8731abc6 )
-		ROM_LOAD( "11", 0x28000, 0x8000, 0x19037a7b )
-		ROM_LOAD( "12", 0x30000, 0x8000, 0xc59c0ec7 )
-		ROM_LOAD( "13", 0x38000, 0x8000, 0x9809fee8 )
-	ROM_END
+		ROM_REGION( 0x40000, REGION_GFX1, ROMREGION_DISPOSE | ROMREGION_INVERT );/* Sprites */
+		ROM_LOAD( "6",  0x00000, 0x8000, 0x312ecda6 );
+		ROM_LOAD( "7",  0x08000, 0x8000, 0x9f35dbfa );
+		ROM_LOAD( "8",  0x10000, 0x8000, 0xf400db89 );
+		ROM_LOAD( "9",  0x18000, 0x8000, 0xfa2a11ea );
+		ROM_LOAD( "10", 0x20000, 0x8000, 0x8731abc6 );
+		ROM_LOAD( "11", 0x28000, 0x8000, 0x19037a7b );
+		ROM_LOAD( "12", 0x30000, 0x8000, 0xc59c0ec7 );
+		ROM_LOAD( "13", 0x38000, 0x8000, 0x9809fee8 );
+	ROM_END(); }}; 
 	
 	
 	/***************************************************************************
@@ -2316,59 +2316,59 @@ public class suna8
 	
 	***************************************************************************/
 	
-	ROM_START( brickzn )
-		ROM_REGION( 0x50000 * 2, REGION_CPU1, 0 )		/* Main Z80 Code */
-		ROM_LOAD( "brickzon.009", 0x00000, 0x08000, 0x1ea68dea )	// V5.0 1992,3,3
-		ROM_RELOAD(               0x50000, 0x08000             )
-		ROM_LOAD( "brickzon.008", 0x10000, 0x20000, 0xc61540ba )
-		ROM_RELOAD(               0x60000, 0x20000             )
-		ROM_LOAD( "brickzon.007", 0x30000, 0x20000, 0xceed12f1 )
-		ROM_RELOAD(               0x80000, 0x20000             )
+	static RomLoadPtr rom_brickzn = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x50000 * 2, REGION_CPU1, 0 );	/* Main Z80 Code */
+		ROM_LOAD( "brickzon.009", 0x00000, 0x08000, 0x1ea68dea );// V5.0 1992,3,3
+		ROM_RELOAD(               0x50000, 0x08000             );
+		ROM_LOAD( "brickzon.008", 0x10000, 0x20000, 0xc61540ba );
+		ROM_RELOAD(               0x60000, 0x20000             );
+		ROM_LOAD( "brickzon.007", 0x30000, 0x20000, 0xceed12f1 );
+		ROM_RELOAD(               0x80000, 0x20000             );
 	
-		ROM_REGION( 0x10000, REGION_CPU2, 0 )		/* Music Z80 Code */
-		ROM_LOAD( "brickzon.010", 0x00000, 0x10000, 0x4eba8178 )
+		ROM_REGION( 0x10000, REGION_CPU2, 0 );	/* Music Z80 Code */
+		ROM_LOAD( "brickzon.010", 0x00000, 0x10000, 0x4eba8178 );
 	
-		ROM_REGION( 0x10000, REGION_CPU3, 0 )		/* PCM Z80 Code */
-		ROM_LOAD( "brickzon.011", 0x00000, 0x10000, 0x6c54161a )
+		ROM_REGION( 0x10000, REGION_CPU3, 0 );	/* PCM Z80 Code */
+		ROM_LOAD( "brickzon.011", 0x00000, 0x10000, 0x6c54161a );
 	
-		ROM_REGION( 0xc0000, REGION_GFX1, ROMREGION_DISPOSE | ROMREGION_INVERT )	/* Sprites */
-		ROM_LOAD( "brickzon.002", 0x00000, 0x20000, 0x241f0659 )
-		ROM_LOAD( "brickzon.001", 0x20000, 0x20000, 0x6970ada9 )
-		ROM_LOAD( "brickzon.003", 0x40000, 0x20000, 0x2e4f194b )
-		ROM_LOAD( "brickzon.005", 0x60000, 0x20000, 0x118f8392 )
-		ROM_LOAD( "brickzon.004", 0x80000, 0x20000, 0x2be5f335 )
-		ROM_LOAD( "brickzon.006", 0xa0000, 0x20000, 0xbbf31081 )
+		ROM_REGION( 0xc0000, REGION_GFX1, ROMREGION_DISPOSE | ROMREGION_INVERT );/* Sprites */
+		ROM_LOAD( "brickzon.002", 0x00000, 0x20000, 0x241f0659 );
+		ROM_LOAD( "brickzon.001", 0x20000, 0x20000, 0x6970ada9 );
+		ROM_LOAD( "brickzon.003", 0x40000, 0x20000, 0x2e4f194b );
+		ROM_LOAD( "brickzon.005", 0x60000, 0x20000, 0x118f8392 );
+		ROM_LOAD( "brickzon.004", 0x80000, 0x20000, 0x2be5f335 );
+		ROM_LOAD( "brickzon.006", 0xa0000, 0x20000, 0xbbf31081 );
 	
-		ROM_REGION( 0x0200 * 2, REGION_USER1, 0 )	/* Palette RAM Banks */
-		ROM_REGION( 0x2000 * 2, REGION_USER2, 0 )	/* Sprite  RAM Banks */
-	ROM_END
+		ROM_REGION( 0x0200 * 2, REGION_USER1, 0 );/* Palette RAM Banks */
+		ROM_REGION( 0x2000 * 2, REGION_USER2, 0 );/* Sprite  RAM Banks */
+	ROM_END(); }}; 
 	
-	ROM_START( brickzn3 )
-		ROM_REGION( 0x50000 * 2, REGION_CPU1, 0 )		/* Main Z80 Code */
-		ROM_LOAD( "39",           0x00000, 0x08000, 0x043380bd )	// V3.0 1992,1,23
-		ROM_RELOAD(               0x50000, 0x08000             )
-		ROM_LOAD( "38",           0x10000, 0x20000, 0xe16216e8 )
-		ROM_RELOAD(               0x60000, 0x20000             )
-		ROM_LOAD( "brickzon.007", 0x30000, 0x20000, 0xceed12f1 )
-		ROM_RELOAD(               0x80000, 0x20000             )
+	static RomLoadPtr rom_brickzn3 = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x50000 * 2, REGION_CPU1, 0 );	/* Main Z80 Code */
+		ROM_LOAD( "39",           0x00000, 0x08000, 0x043380bd );// V3.0 1992,1,23
+		ROM_RELOAD(               0x50000, 0x08000             );
+		ROM_LOAD( "38",           0x10000, 0x20000, 0xe16216e8 );
+		ROM_RELOAD(               0x60000, 0x20000             );
+		ROM_LOAD( "brickzon.007", 0x30000, 0x20000, 0xceed12f1 );
+		ROM_RELOAD(               0x80000, 0x20000             );
 	
-		ROM_REGION( 0x10000, REGION_CPU2, 0 )		/* Music Z80 Code */
-		ROM_LOAD( "brickzon.010", 0x00000, 0x10000, 0x4eba8178 )
+		ROM_REGION( 0x10000, REGION_CPU2, 0 );	/* Music Z80 Code */
+		ROM_LOAD( "brickzon.010", 0x00000, 0x10000, 0x4eba8178 );
 	
-		ROM_REGION( 0x10000, REGION_CPU3, 0 )		/* PCM Z80 Code */
-		ROM_LOAD( "brickzon.011", 0x00000, 0x10000, 0x6c54161a )
+		ROM_REGION( 0x10000, REGION_CPU3, 0 );	/* PCM Z80 Code */
+		ROM_LOAD( "brickzon.011", 0x00000, 0x10000, 0x6c54161a );
 	
-		ROM_REGION( 0xc0000, REGION_GFX1, ROMREGION_DISPOSE | ROMREGION_INVERT )	/* Sprites */
-		ROM_LOAD( "35",           0x00000, 0x20000, 0xb463dfcf )
-		ROM_LOAD( "brickzon.004", 0x20000, 0x20000, 0x2be5f335 )
-		ROM_LOAD( "brickzon.006", 0x40000, 0x20000, 0xbbf31081 )
-		ROM_LOAD( "32",           0x60000, 0x20000, 0x32dbf2dd )
-		ROM_LOAD( "brickzon.001", 0x80000, 0x20000, 0x6970ada9 )
-		ROM_LOAD( "brickzon.003", 0xa0000, 0x20000, 0x2e4f194b )
+		ROM_REGION( 0xc0000, REGION_GFX1, ROMREGION_DISPOSE | ROMREGION_INVERT );/* Sprites */
+		ROM_LOAD( "35",           0x00000, 0x20000, 0xb463dfcf );
+		ROM_LOAD( "brickzon.004", 0x20000, 0x20000, 0x2be5f335 );
+		ROM_LOAD( "brickzon.006", 0x40000, 0x20000, 0xbbf31081 );
+		ROM_LOAD( "32",           0x60000, 0x20000, 0x32dbf2dd );
+		ROM_LOAD( "brickzon.001", 0x80000, 0x20000, 0x6970ada9 );
+		ROM_LOAD( "brickzon.003", 0xa0000, 0x20000, 0x2e4f194b );
 	
-		ROM_REGION( 0x0200 * 2, REGION_USER1, 0 )	/* Palette RAM Banks */
-		ROM_REGION( 0x2000 * 2, REGION_USER2, 0 )	/* Sprite  RAM Banks */
-	ROM_END
+		ROM_REGION( 0x0200 * 2, REGION_USER1, 0 );/* Palette RAM Banks */
+		ROM_REGION( 0x2000 * 2, REGION_USER2, 0 );/* Sprite  RAM Banks */
+	ROM_END(); }}; 
 	
 	
 	
@@ -2408,38 +2408,38 @@ public class suna8
 	
 	***************************************************************************/
 	
-	ROM_START( hardhea2 )
-		ROM_REGION( 0x50000 * 2, REGION_CPU1, 0 )		/* Main Z80 Code */
-		ROM_LOAD( "hrd-hd9",  0x00000, 0x08000, 0x69c4c307 )	// V 2.0 1991,2,12
-		ROM_RELOAD(           0x50000, 0x08000             )
-		ROM_LOAD( "hrd-hd10", 0x10000, 0x10000, 0x77ec5b0a )
-		ROM_RELOAD(           0x60000, 0x10000             )
-		ROM_LOAD( "hrd-hd11", 0x20000, 0x10000, 0x12af8f8e )
-		ROM_RELOAD(           0x70000, 0x10000             )
-		ROM_LOAD( "hrd-hd12", 0x30000, 0x10000, 0x35d13212 )
-		ROM_RELOAD(           0x80000, 0x10000             )
-		ROM_LOAD( "hrd-hd13", 0x40000, 0x10000, 0x3225e7d7 )
-		ROM_RELOAD(           0x90000, 0x10000             )
+	static RomLoadPtr rom_hardhea2 = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x50000 * 2, REGION_CPU1, 0 );	/* Main Z80 Code */
+		ROM_LOAD( "hrd-hd9",  0x00000, 0x08000, 0x69c4c307 );// V 2.0 1991,2,12
+		ROM_RELOAD(           0x50000, 0x08000             );
+		ROM_LOAD( "hrd-hd10", 0x10000, 0x10000, 0x77ec5b0a );
+		ROM_RELOAD(           0x60000, 0x10000             );
+		ROM_LOAD( "hrd-hd11", 0x20000, 0x10000, 0x12af8f8e );
+		ROM_RELOAD(           0x70000, 0x10000             );
+		ROM_LOAD( "hrd-hd12", 0x30000, 0x10000, 0x35d13212 );
+		ROM_RELOAD(           0x80000, 0x10000             );
+		ROM_LOAD( "hrd-hd13", 0x40000, 0x10000, 0x3225e7d7 );
+		ROM_RELOAD(           0x90000, 0x10000             );
 	
-		ROM_REGION( 0x10000, REGION_CPU2, 0 )		/* Music Z80 Code */
-		ROM_LOAD( "hrd-hd14", 0x00000, 0x08000, 0x79a3be51 )
+		ROM_REGION( 0x10000, REGION_CPU2, 0 );	/* Music Z80 Code */
+		ROM_LOAD( "hrd-hd14", 0x00000, 0x08000, 0x79a3be51 );
 	
-		ROM_REGION( 0x10000, REGION_CPU3, 0 )		/* PCM Z80 Code */
-		ROM_LOAD( "hrd-hd15", 0x00000, 0x10000, 0xbcbd88c3 )
+		ROM_REGION( 0x10000, REGION_CPU3, 0 );	/* PCM Z80 Code */
+		ROM_LOAD( "hrd-hd15", 0x00000, 0x10000, 0xbcbd88c3 );
 	
-		ROM_REGION( 0x80000, REGION_GFX1, ROMREGION_DISPOSE | ROMREGION_INVERT )	/* Sprites */
-		ROM_LOAD( "hrd-hd1",  0x00000, 0x10000, 0x7e7b7a58 )
-		ROM_LOAD( "hrd-hd2",  0x10000, 0x10000, 0x303ec802 )
-		ROM_LOAD( "hrd-hd3",  0x20000, 0x10000, 0x3353b2c7 )
-		ROM_LOAD( "hrd-hd4",  0x30000, 0x10000, 0xdbc1f9c1 )
-		ROM_LOAD( "hrd-hd5",  0x40000, 0x10000, 0xf738c0af )
-		ROM_LOAD( "hrd-hd6",  0x50000, 0x10000, 0xbf90d3ca )
-		ROM_LOAD( "hrd-hd7",  0x60000, 0x10000, 0x992ce8cb )
-		ROM_LOAD( "hrd-hd8",  0x70000, 0x10000, 0x359597a4 )
+		ROM_REGION( 0x80000, REGION_GFX1, ROMREGION_DISPOSE | ROMREGION_INVERT );/* Sprites */
+		ROM_LOAD( "hrd-hd1",  0x00000, 0x10000, 0x7e7b7a58 );
+		ROM_LOAD( "hrd-hd2",  0x10000, 0x10000, 0x303ec802 );
+		ROM_LOAD( "hrd-hd3",  0x20000, 0x10000, 0x3353b2c7 );
+		ROM_LOAD( "hrd-hd4",  0x30000, 0x10000, 0xdbc1f9c1 );
+		ROM_LOAD( "hrd-hd5",  0x40000, 0x10000, 0xf738c0af );
+		ROM_LOAD( "hrd-hd6",  0x50000, 0x10000, 0xbf90d3ca );
+		ROM_LOAD( "hrd-hd7",  0x60000, 0x10000, 0x992ce8cb );
+		ROM_LOAD( "hrd-hd8",  0x70000, 0x10000, 0x359597a4 );
 	
-		ROM_REGION( 0x0200 * 2, REGION_USER1, 0 )	/* Palette RAM Banks */
-		ROM_REGION( 0x2000 * 2, REGION_USER2, 0 )	/* Sprite  RAM Banks */
-	ROM_END
+		ROM_REGION( 0x0200 * 2, REGION_USER1, 0 );/* Palette RAM Banks */
+		ROM_REGION( 0x2000 * 2, REGION_USER2, 0 );/* Sprite  RAM Banks */
+	ROM_END(); }}; 
 	
 	
 	/***************************************************************************
@@ -2448,46 +2448,46 @@ public class suna8
 	
 	***************************************************************************/
 	
-	ROM_START( starfigh )
-		ROM_REGION( 0x50000 * 2, REGION_CPU1, 0 )		/* Main Z80 Code */
-		ROM_LOAD( "suna3.bin", 0x00000, 0x08000, 0xf93802c6 )	// V.1
-		ROM_RELOAD(            0x50000, 0x08000             )
-		ROM_LOAD( "suna2.bin", 0x10000, 0x10000, 0xfcfcf08a )
-		ROM_RELOAD(            0x60000, 0x10000             )
-		ROM_LOAD( "suna1.bin", 0x20000, 0x10000, 0x6935fcdb )
-		ROM_RELOAD(            0x70000, 0x10000             )
-		ROM_LOAD( "suna5.bin", 0x30000, 0x10000, 0x50c072a4 )	// 0xxxxxxxxxxxxxxx = 0xFF (ROM Test: OK)
-		ROM_RELOAD(            0x80000, 0x10000             )
-		ROM_LOAD( "suna4.bin", 0x40000, 0x10000, 0x3fe3c714 )	// clear text here
-		ROM_RELOAD(            0x90000, 0x10000             )
+	static RomLoadPtr rom_starfigh = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x50000 * 2, REGION_CPU1, 0 );	/* Main Z80 Code */
+		ROM_LOAD( "suna3.bin", 0x00000, 0x08000, 0xf93802c6 );// V.1
+		ROM_RELOAD(            0x50000, 0x08000             );
+		ROM_LOAD( "suna2.bin", 0x10000, 0x10000, 0xfcfcf08a );
+		ROM_RELOAD(            0x60000, 0x10000             );
+		ROM_LOAD( "suna1.bin", 0x20000, 0x10000, 0x6935fcdb );
+		ROM_RELOAD(            0x70000, 0x10000             );
+		ROM_LOAD( "suna5.bin", 0x30000, 0x10000, 0x50c072a4 );// 0xxxxxxxxxxxxxxx = 0xFF (ROM Test: OK)
+		ROM_RELOAD(            0x80000, 0x10000             );
+		ROM_LOAD( "suna4.bin", 0x40000, 0x10000, 0x3fe3c714 );// clear text here
+		ROM_RELOAD(            0x90000, 0x10000             );
 	
-		ROM_REGION( 0x10000, REGION_CPU2, 0 )		/* Music Z80 Code */
-		ROM_LOAD( "suna14.bin", 0x0000, 0x8000, 0xae3b0691 )
+		ROM_REGION( 0x10000, REGION_CPU2, 0 );	/* Music Z80 Code */
+		ROM_LOAD( "suna14.bin", 0x0000, 0x8000, 0xae3b0691 );
 	
-		ROM_REGION( 0x8000, REGION_SOUND1, ROMREGION_SOUNDONLY )	/* Samples */
-		ROM_LOAD( "suna15.bin", 0x0000, 0x8000, 0xfa510e94 )
+		ROM_REGION( 0x8000, REGION_SOUND1, ROMREGION_SOUNDONLY );/* Samples */
+		ROM_LOAD( "suna15.bin", 0x0000, 0x8000, 0xfa510e94 );
 	
-		ROM_REGION( 0x100000, REGION_GFX1, ROMREGION_DISPOSE | ROMREGION_INVERT )	/* Sprites */
-		ROM_LOAD( "suna9.bin",  0x00000, 0x10000, 0x54c0ca3d )
-		ROM_RELOAD(             0x20000, 0x10000             )
-		ROM_LOAD( "suna8.bin",  0x10000, 0x10000, 0x4313ba40 )
-		ROM_RELOAD(             0x30000, 0x10000             )
-		ROM_LOAD( "suna7.bin",  0x40000, 0x10000, 0xad8d0f21 )
-		ROM_RELOAD(             0x60000, 0x10000             )
-		ROM_LOAD( "suna6.bin",  0x50000, 0x10000, 0x6d8f74c8 )
-		ROM_RELOAD(             0x70000, 0x10000             )
-		ROM_LOAD( "suna13.bin", 0x80000, 0x10000, 0xceff00ff )
-		ROM_RELOAD(             0xa0000, 0x10000             )
-		ROM_LOAD( "suna12.bin", 0x90000, 0x10000, 0x7aaa358a )
-		ROM_RELOAD(             0xb0000, 0x10000             )
-		ROM_LOAD( "suna11.bin", 0xc0000, 0x10000, 0x47d6049c )
-		ROM_RELOAD(             0xe0000, 0x10000             )
-		ROM_LOAD( "suna10.bin", 0xd0000, 0x10000, 0x4a33f6f3 )
-		ROM_RELOAD(             0xf0000, 0x10000             )
+		ROM_REGION( 0x100000, REGION_GFX1, ROMREGION_DISPOSE | ROMREGION_INVERT );/* Sprites */
+		ROM_LOAD( "suna9.bin",  0x00000, 0x10000, 0x54c0ca3d );
+		ROM_RELOAD(             0x20000, 0x10000             );
+		ROM_LOAD( "suna8.bin",  0x10000, 0x10000, 0x4313ba40 );
+		ROM_RELOAD(             0x30000, 0x10000             );
+		ROM_LOAD( "suna7.bin",  0x40000, 0x10000, 0xad8d0f21 );
+		ROM_RELOAD(             0x60000, 0x10000             );
+		ROM_LOAD( "suna6.bin",  0x50000, 0x10000, 0x6d8f74c8 );
+		ROM_RELOAD(             0x70000, 0x10000             );
+		ROM_LOAD( "suna13.bin", 0x80000, 0x10000, 0xceff00ff );
+		ROM_RELOAD(             0xa0000, 0x10000             );
+		ROM_LOAD( "suna12.bin", 0x90000, 0x10000, 0x7aaa358a );
+		ROM_RELOAD(             0xb0000, 0x10000             );
+		ROM_LOAD( "suna11.bin", 0xc0000, 0x10000, 0x47d6049c );
+		ROM_RELOAD(             0xe0000, 0x10000             );
+		ROM_LOAD( "suna10.bin", 0xd0000, 0x10000, 0x4a33f6f3 );
+		ROM_RELOAD(             0xf0000, 0x10000             );
 	
-		ROM_REGION( 0x0200 * 2, REGION_USER1, 0 )	/* Palette RAM Banks */
-		ROM_REGION( 0x2000 * 2, REGION_USER2, 0 )	/* Sprite  RAM Banks */
-	ROM_END
+		ROM_REGION( 0x0200 * 2, REGION_USER1, 0 );/* Palette RAM Banks */
+		ROM_REGION( 0x2000 * 2, REGION_USER2, 0 );/* Sprite  RAM Banks */
+	ROM_END(); }}; 
 	
 	
 	/***************************************************************************

@@ -434,30 +434,30 @@ public class arcadecl
 	 *
 	 *************************************/
 	
-	ROM_START( arcadecl )
-		ROM_REGION( 0x100000, REGION_CPU1, 0 )
-		ROM_LOAD16_BYTE( "pgm0",  0x00000, 0x80000, 0xb5b93623 )
-		ROM_LOAD16_BYTE( "prog1", 0x00001, 0x80000, 0xe7efef85 )
+	static RomLoadPtr rom_arcadecl = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x100000, REGION_CPU1, 0 );
+		ROM_LOAD16_BYTE( "pgm0",  0x00000, 0x80000, 0xb5b93623 );
+		ROM_LOAD16_BYTE( "prog1", 0x00001, 0x80000, 0xe7efef85 );
 	
-		ROM_REGION( 0x80000, REGION_GFX1, ROMREGION_DISPOSE )
-		ROM_LOAD( "atcl_mob",   0x00000, 0x80000, 0x0e9b3930 )
+		ROM_REGION( 0x80000, REGION_GFX1, ROMREGION_DISPOSE );
+		ROM_LOAD( "atcl_mob",   0x00000, 0x80000, 0x0e9b3930 );
 	
-		ROM_REGION( 0x80000, REGION_SOUND1, 0 )
-		ROM_LOAD( "adpcm",      0x00000, 0x80000, 0x03ca7f03 )
-	ROM_END
+		ROM_REGION( 0x80000, REGION_SOUND1, 0 );
+		ROM_LOAD( "adpcm",      0x00000, 0x80000, 0x03ca7f03 );
+	ROM_END(); }}; 
 	
 	
-	ROM_START( sparkz )
-		ROM_REGION( 0x100000, REGION_CPU1, 0 )
-		ROM_LOAD16_BYTE( "sparkzpg.0", 0x00000, 0x80000, 0xa75c331c )
-		ROM_LOAD16_BYTE( "sparkzpg.1", 0x00001, 0x80000, 0x1af1fc04 )
+	static RomLoadPtr rom_sparkz = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x100000, REGION_CPU1, 0 );
+		ROM_LOAD16_BYTE( "sparkzpg.0", 0x00000, 0x80000, 0xa75c331c );
+		ROM_LOAD16_BYTE( "sparkzpg.1", 0x00001, 0x80000, 0x1af1fc04 );
 	
-		ROM_REGION( 0x20, REGION_GFX1, ROMREGION_DISPOSE )
+		ROM_REGION( 0x20, REGION_GFX1, ROMREGION_DISPOSE );
 		/* empty */
 	
-		ROM_REGION( 0x80000, REGION_SOUND1, 0 )
-		ROM_LOAD( "sparkzsn",      0x00000, 0x80000, 0x87097ce2 )
-	ROM_END
+		ROM_REGION( 0x80000, REGION_SOUND1, 0 );
+		ROM_LOAD( "sparkzsn",      0x00000, 0x80000, 0x87097ce2 );
+	ROM_END(); }}; 
 	
 	
 	

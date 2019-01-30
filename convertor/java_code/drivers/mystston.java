@@ -287,34 +287,34 @@ public class mystston
 	
 	***************************************************************************/
 	
-	ROM_START( mystston )
-		ROM_REGION( 0x10000, REGION_CPU1, 0 )	/* 64k for code */
-		ROM_LOAD( "ms0",          0x4000, 0x2000, 0x6dacc05f )
-		ROM_LOAD( "ms1",          0x6000, 0x2000, 0xa3546df7 )
-		ROM_LOAD( "ms2",          0x8000, 0x2000, 0x43bc6182 )
-		ROM_LOAD( "ms3",          0xa000, 0x2000, 0x9322222b )
-		ROM_LOAD( "ms4",          0xc000, 0x2000, 0x47cefe9b )
-		ROM_LOAD( "ms5",          0xe000, 0x2000, 0xb37ae12b )
+	static RomLoadPtr rom_mystston = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x10000, REGION_CPU1, 0 );/* 64k for code */
+		ROM_LOAD( "ms0",          0x4000, 0x2000, 0x6dacc05f );
+		ROM_LOAD( "ms1",          0x6000, 0x2000, 0xa3546df7 );
+		ROM_LOAD( "ms2",          0x8000, 0x2000, 0x43bc6182 );
+		ROM_LOAD( "ms3",          0xa000, 0x2000, 0x9322222b );
+		ROM_LOAD( "ms4",          0xc000, 0x2000, 0x47cefe9b );
+		ROM_LOAD( "ms5",          0xe000, 0x2000, 0xb37ae12b );
 	
-		ROM_REGION( 0x0c000, REGION_GFX1, ROMREGION_DISPOSE )
-		ROM_LOAD( "ms6",          0x00000, 0x2000, 0x85c83806 )
-		ROM_LOAD( "ms9",          0x02000, 0x2000, 0xb146c6ab )
-		ROM_LOAD( "ms7",          0x04000, 0x2000, 0xd025f84d )
-		ROM_LOAD( "ms10",         0x06000, 0x2000, 0xd85015b5 )
-		ROM_LOAD( "ms8",          0x08000, 0x2000, 0x53765d89 )
-		ROM_LOAD( "ms11",         0x0a000, 0x2000, 0x919ee527 )
+		ROM_REGION( 0x0c000, REGION_GFX1, ROMREGION_DISPOSE );
+		ROM_LOAD( "ms6",          0x00000, 0x2000, 0x85c83806 );
+		ROM_LOAD( "ms9",          0x02000, 0x2000, 0xb146c6ab );
+		ROM_LOAD( "ms7",          0x04000, 0x2000, 0xd025f84d );
+		ROM_LOAD( "ms10",         0x06000, 0x2000, 0xd85015b5 );
+		ROM_LOAD( "ms8",          0x08000, 0x2000, 0x53765d89 );
+		ROM_LOAD( "ms11",         0x0a000, 0x2000, 0x919ee527 );
 	
-		ROM_REGION( 0x0c000, REGION_GFX2, ROMREGION_DISPOSE )
-		ROM_LOAD( "ms12",         0x00000, 0x2000, 0x72d8331d )
-		ROM_LOAD( "ms13",         0x02000, 0x2000, 0x845a1f9b )
-		ROM_LOAD( "ms14",         0x04000, 0x2000, 0x822874b0 )
-		ROM_LOAD( "ms15",         0x06000, 0x2000, 0x4594e53c )
-		ROM_LOAD( "ms16",         0x08000, 0x2000, 0x2f470b0f )
-		ROM_LOAD( "ms17",         0x0a000, 0x2000, 0x38966d1b )
+		ROM_REGION( 0x0c000, REGION_GFX2, ROMREGION_DISPOSE );
+		ROM_LOAD( "ms12",         0x00000, 0x2000, 0x72d8331d );
+		ROM_LOAD( "ms13",         0x02000, 0x2000, 0x845a1f9b );
+		ROM_LOAD( "ms14",         0x04000, 0x2000, 0x822874b0 );
+		ROM_LOAD( "ms15",         0x06000, 0x2000, 0x4594e53c );
+		ROM_LOAD( "ms16",         0x08000, 0x2000, 0x2f470b0f );
+		ROM_LOAD( "ms17",         0x0a000, 0x2000, 0x38966d1b );
 	
-		ROM_REGION( 0x0020, REGION_PROMS, 0 )
-		ROM_LOAD( "ic61",         0x0000, 0x0020, 0xe802d6cf )
-	ROM_END
+		ROM_REGION( 0x0020, REGION_PROMS, 0 );
+		ROM_LOAD( "ic61",         0x0000, 0x0020, 0xe802d6cf );
+	ROM_END(); }}; 
 	
 	
 	

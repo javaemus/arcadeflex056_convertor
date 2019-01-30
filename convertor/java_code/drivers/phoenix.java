@@ -652,221 +652,221 @@ public class phoenix
 	
 	***************************************************************************/
 	
-	ROM_START( phoenix )
-		ROM_REGION( 0x10000, REGION_CPU1, 0 )	/* 64k for code */
-		ROM_LOAD( "ic45",         0x0000, 0x0800, 0x9f68086b )
-		ROM_LOAD( "ic46",         0x0800, 0x0800, 0x273a4a82 )
-		ROM_LOAD( "ic47",         0x1000, 0x0800, 0x3d4284b9 )
-		ROM_LOAD( "ic48",         0x1800, 0x0800, 0xcb5d9915 )
-		ROM_LOAD( "ic49",         0x2000, 0x0800, 0xa105e4e7 )
-		ROM_LOAD( "ic50",         0x2800, 0x0800, 0xac5e9ec1 )
-		ROM_LOAD( "ic51",         0x3000, 0x0800, 0x2eab35b4 )
-		ROM_LOAD( "ic52",         0x3800, 0x0800, 0xaff8e9c5 )
+	static RomLoadPtr rom_phoenix = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x10000, REGION_CPU1, 0 );/* 64k for code */
+		ROM_LOAD( "ic45",         0x0000, 0x0800, 0x9f68086b );
+		ROM_LOAD( "ic46",         0x0800, 0x0800, 0x273a4a82 );
+		ROM_LOAD( "ic47",         0x1000, 0x0800, 0x3d4284b9 );
+		ROM_LOAD( "ic48",         0x1800, 0x0800, 0xcb5d9915 );
+		ROM_LOAD( "ic49",         0x2000, 0x0800, 0xa105e4e7 );
+		ROM_LOAD( "ic50",         0x2800, 0x0800, 0xac5e9ec1 );
+		ROM_LOAD( "ic51",         0x3000, 0x0800, 0x2eab35b4 );
+		ROM_LOAD( "ic52",         0x3800, 0x0800, 0xaff8e9c5 );
 	
-		ROM_REGION( 0x1000, REGION_GFX1, ROMREGION_DISPOSE )
-		ROM_LOAD( "ic23",         0x0000, 0x0800, 0x3c7e623f )
-		ROM_LOAD( "ic24",         0x0800, 0x0800, 0x59916d3b )
+		ROM_REGION( 0x1000, REGION_GFX1, ROMREGION_DISPOSE );
+		ROM_LOAD( "ic23",         0x0000, 0x0800, 0x3c7e623f );
+		ROM_LOAD( "ic24",         0x0800, 0x0800, 0x59916d3b );
 	
-		ROM_REGION( 0x1000, REGION_GFX2, ROMREGION_DISPOSE )
-		ROM_LOAD( "ic39",         0x0000, 0x0800, 0x53413e8f )
-		ROM_LOAD( "ic40",         0x0800, 0x0800, 0x0be2ba91 )
+		ROM_REGION( 0x1000, REGION_GFX2, ROMREGION_DISPOSE );
+		ROM_LOAD( "ic39",         0x0000, 0x0800, 0x53413e8f );
+		ROM_LOAD( "ic40",         0x0800, 0x0800, 0x0be2ba91 );
 	
-		ROM_REGION( 0x0200, REGION_PROMS, 0 )
-		ROM_LOAD( "ic40_b.bin",   0x0000, 0x0100, 0x79350b25 )  /* palette low bits */
-		ROM_LOAD( "ic41_a.bin",   0x0100, 0x0100, 0xe176b768 )  /* palette high bits */
-	ROM_END
+		ROM_REGION( 0x0200, REGION_PROMS, 0 );
+		ROM_LOAD( "ic40_b.bin",   0x0000, 0x0100, 0x79350b25 ); /* palette low bits */
+		ROM_LOAD( "ic41_a.bin",   0x0100, 0x0100, 0xe176b768 ); /* palette high bits */
+	ROM_END(); }}; 
 	
-	ROM_START( phoenixa )
-		ROM_REGION( 0x10000, REGION_CPU1, 0 )	/* 64k for code */
-		ROM_LOAD( "ic45.k1",      0x0000, 0x0800, 0xc7a9b499 )
-		ROM_LOAD( "ic46.k2",      0x0800, 0x0800, 0xd0e6ae1b )
-		ROM_LOAD( "ic47.k3",      0x1000, 0x0800, 0x64bf463a )
-		ROM_LOAD( "ic48.k4",      0x1800, 0x0800, 0x1b20fe62 )
-		ROM_LOAD( "phoenixc.49",  0x2000, 0x0800, 0x1a1ce0d0 )
-		ROM_LOAD( "ic50",         0x2800, 0x0800, 0xac5e9ec1 )
-		ROM_LOAD( "ic51",         0x3000, 0x0800, 0x2eab35b4 )
-		ROM_LOAD( "ic52",         0x3800, 0x0800, 0xaff8e9c5 )
+	static RomLoadPtr rom_phoenixa = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x10000, REGION_CPU1, 0 );/* 64k for code */
+		ROM_LOAD( "ic45.k1",      0x0000, 0x0800, 0xc7a9b499 );
+		ROM_LOAD( "ic46.k2",      0x0800, 0x0800, 0xd0e6ae1b );
+		ROM_LOAD( "ic47.k3",      0x1000, 0x0800, 0x64bf463a );
+		ROM_LOAD( "ic48.k4",      0x1800, 0x0800, 0x1b20fe62 );
+		ROM_LOAD( "phoenixc.49",  0x2000, 0x0800, 0x1a1ce0d0 );
+		ROM_LOAD( "ic50",         0x2800, 0x0800, 0xac5e9ec1 );
+		ROM_LOAD( "ic51",         0x3000, 0x0800, 0x2eab35b4 );
+		ROM_LOAD( "ic52",         0x3800, 0x0800, 0xaff8e9c5 );
 	
-		ROM_REGION( 0x1000, REGION_GFX1, ROMREGION_DISPOSE )
-		ROM_LOAD( "ic23",         0x0000, 0x0800, 0x3c7e623f )
-		ROM_LOAD( "ic24",         0x0800, 0x0800, 0x59916d3b )
+		ROM_REGION( 0x1000, REGION_GFX1, ROMREGION_DISPOSE );
+		ROM_LOAD( "ic23",         0x0000, 0x0800, 0x3c7e623f );
+		ROM_LOAD( "ic24",         0x0800, 0x0800, 0x59916d3b );
 	
-		ROM_REGION( 0x1000, REGION_GFX2, ROMREGION_DISPOSE )
-		ROM_LOAD( "phoenixc.39",  0x0000, 0x0800, 0xbb0525ed )
-		ROM_LOAD( "phoenixc.40",  0x0800, 0x0800, 0x4178aa4f )
+		ROM_REGION( 0x1000, REGION_GFX2, ROMREGION_DISPOSE );
+		ROM_LOAD( "phoenixc.39",  0x0000, 0x0800, 0xbb0525ed );
+		ROM_LOAD( "phoenixc.40",  0x0800, 0x0800, 0x4178aa4f );
 	
-		ROM_REGION( 0x0200, REGION_PROMS, 0 )
-		ROM_LOAD( "ic40_b.bin",   0x0000, 0x0100, 0x79350b25 )  /* palette low bits */
-		ROM_LOAD( "ic41_a.bin",   0x0100, 0x0100, 0xe176b768 )  /* palette high bits */
-	ROM_END
+		ROM_REGION( 0x0200, REGION_PROMS, 0 );
+		ROM_LOAD( "ic40_b.bin",   0x0000, 0x0100, 0x79350b25 ); /* palette low bits */
+		ROM_LOAD( "ic41_a.bin",   0x0100, 0x0100, 0xe176b768 ); /* palette high bits */
+	ROM_END(); }}; 
 	
-	ROM_START( phoenixt )
-		ROM_REGION( 0x10000, REGION_CPU1, 0 )	/* 64k for code */
-		ROM_LOAD( "phoenix.45",   0x0000, 0x0800, 0x5b8c55a8 )
-		ROM_LOAD( "phoenix.46",   0x0800, 0x0800, 0xdbc942fa )
-		ROM_LOAD( "phoenix.47",   0x1000, 0x0800, 0xcbbb8839 )
-		ROM_LOAD( "phoenix.48",   0x1800, 0x0800, 0xcb65eff8 )
-		ROM_LOAD( "phoenix.49",   0x2000, 0x0800, 0xc8a5d6d6 )
-		ROM_LOAD( "ic50",         0x2800, 0x0800, 0xac5e9ec1 )
-		ROM_LOAD( "ic51",         0x3000, 0x0800, 0x2eab35b4 )
-		ROM_LOAD( "phoenix.52",   0x3800, 0x0800, 0xb9915263 )
+	static RomLoadPtr rom_phoenixt = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x10000, REGION_CPU1, 0 );/* 64k for code */
+		ROM_LOAD( "phoenix.45",   0x0000, 0x0800, 0x5b8c55a8 );
+		ROM_LOAD( "phoenix.46",   0x0800, 0x0800, 0xdbc942fa );
+		ROM_LOAD( "phoenix.47",   0x1000, 0x0800, 0xcbbb8839 );
+		ROM_LOAD( "phoenix.48",   0x1800, 0x0800, 0xcb65eff8 );
+		ROM_LOAD( "phoenix.49",   0x2000, 0x0800, 0xc8a5d6d6 );
+		ROM_LOAD( "ic50",         0x2800, 0x0800, 0xac5e9ec1 );
+		ROM_LOAD( "ic51",         0x3000, 0x0800, 0x2eab35b4 );
+		ROM_LOAD( "phoenix.52",   0x3800, 0x0800, 0xb9915263 );
 	
-		ROM_REGION( 0x1000, REGION_GFX1, ROMREGION_DISPOSE )
-		ROM_LOAD( "ic23",         0x0000, 0x0800, 0x3c7e623f )
-		ROM_LOAD( "ic24",         0x0800, 0x0800, 0x59916d3b )
+		ROM_REGION( 0x1000, REGION_GFX1, ROMREGION_DISPOSE );
+		ROM_LOAD( "ic23",         0x0000, 0x0800, 0x3c7e623f );
+		ROM_LOAD( "ic24",         0x0800, 0x0800, 0x59916d3b );
 	
-		ROM_REGION( 0x1000, REGION_GFX2, ROMREGION_DISPOSE )
-		ROM_LOAD( "ic39",         0x0000, 0x0800, 0x53413e8f )
-		ROM_LOAD( "ic40",         0x0800, 0x0800, 0x0be2ba91 )
+		ROM_REGION( 0x1000, REGION_GFX2, ROMREGION_DISPOSE );
+		ROM_LOAD( "ic39",         0x0000, 0x0800, 0x53413e8f );
+		ROM_LOAD( "ic40",         0x0800, 0x0800, 0x0be2ba91 );
 	
-		ROM_REGION( 0x0200, REGION_PROMS, 0 )
-		ROM_LOAD( "ic40_b.bin",   0x0000, 0x0100, 0x79350b25 )  /* palette low bits */
-		ROM_LOAD( "ic41_a.bin",   0x0100, 0x0100, 0xe176b768 )  /* palette high bits */
-	ROM_END
+		ROM_REGION( 0x0200, REGION_PROMS, 0 );
+		ROM_LOAD( "ic40_b.bin",   0x0000, 0x0100, 0x79350b25 ); /* palette low bits */
+		ROM_LOAD( "ic41_a.bin",   0x0100, 0x0100, 0xe176b768 ); /* palette high bits */
+	ROM_END(); }}; 
 	
-	ROM_START( phoenix3 )
-		ROM_REGION( 0x10000, REGION_CPU1, 0 )	/* 64k for code */
-		ROM_LOAD( "phoenix3.45",  0x0000, 0x0800, 0xa362cda0 )
-		ROM_LOAD( "phoenix3.46",  0x0800, 0x0800, 0x5748f486 )
-		ROM_LOAD( "phoenix.47",   0x1000, 0x0800, 0xcbbb8839 )
-		ROM_LOAD( "phoenix3.48",  0x1800, 0x0800, 0xb5d97a4d )
-		ROM_LOAD( "ic49",         0x2000, 0x0800, 0xa105e4e7 )
-		ROM_LOAD( "ic50",         0x2800, 0x0800, 0xac5e9ec1 )
-		ROM_LOAD( "ic51",         0x3000, 0x0800, 0x2eab35b4 )
-		ROM_LOAD( "phoenix3.52",  0x3800, 0x0800, 0xd2c5c984 )
+	static RomLoadPtr rom_phoenix3 = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x10000, REGION_CPU1, 0 );/* 64k for code */
+		ROM_LOAD( "phoenix3.45",  0x0000, 0x0800, 0xa362cda0 );
+		ROM_LOAD( "phoenix3.46",  0x0800, 0x0800, 0x5748f486 );
+		ROM_LOAD( "phoenix.47",   0x1000, 0x0800, 0xcbbb8839 );
+		ROM_LOAD( "phoenix3.48",  0x1800, 0x0800, 0xb5d97a4d );
+		ROM_LOAD( "ic49",         0x2000, 0x0800, 0xa105e4e7 );
+		ROM_LOAD( "ic50",         0x2800, 0x0800, 0xac5e9ec1 );
+		ROM_LOAD( "ic51",         0x3000, 0x0800, 0x2eab35b4 );
+		ROM_LOAD( "phoenix3.52",  0x3800, 0x0800, 0xd2c5c984 );
 	
-		ROM_REGION( 0x1000, REGION_GFX1, ROMREGION_DISPOSE )
-		ROM_LOAD( "ic23",         0x0000, 0x0800, 0x3c7e623f )
-		ROM_LOAD( "ic24",         0x0800, 0x0800, 0x59916d3b )
+		ROM_REGION( 0x1000, REGION_GFX1, ROMREGION_DISPOSE );
+		ROM_LOAD( "ic23",         0x0000, 0x0800, 0x3c7e623f );
+		ROM_LOAD( "ic24",         0x0800, 0x0800, 0x59916d3b );
 	
-		ROM_REGION( 0x1000, REGION_GFX2, ROMREGION_DISPOSE )
-		ROM_LOAD( "ic39",         0x0000, 0x0800, 0x53413e8f )
-		ROM_LOAD( "ic40",         0x0800, 0x0800, 0x0be2ba91 )
+		ROM_REGION( 0x1000, REGION_GFX2, ROMREGION_DISPOSE );
+		ROM_LOAD( "ic39",         0x0000, 0x0800, 0x53413e8f );
+		ROM_LOAD( "ic40",         0x0800, 0x0800, 0x0be2ba91 );
 	
-		ROM_REGION( 0x0200, REGION_PROMS, 0 )
-		ROM_LOAD( "ic40_b.bin",   0x0000, 0x0100, 0x79350b25 )  /* palette low bits */
-		ROM_LOAD( "ic41_a.bin",   0x0100, 0x0100, 0xe176b768 )  /* palette high bits */
-	ROM_END
+		ROM_REGION( 0x0200, REGION_PROMS, 0 );
+		ROM_LOAD( "ic40_b.bin",   0x0000, 0x0100, 0x79350b25 ); /* palette low bits */
+		ROM_LOAD( "ic41_a.bin",   0x0100, 0x0100, 0xe176b768 ); /* palette high bits */
+	ROM_END(); }}; 
 	
-	ROM_START( phoenixc )
-		ROM_REGION( 0x10000, REGION_CPU1, 0 )	/* 64k for code */
-		ROM_LOAD( "phoenix.45",   0x0000, 0x0800, 0x5b8c55a8 )
-		ROM_LOAD( "phoenix.46",   0x0800, 0x0800, 0xdbc942fa )
-		ROM_LOAD( "phoenix.47",   0x1000, 0x0800, 0xcbbb8839 )
-		ROM_LOAD( "phoenixc.48",  0x1800, 0x0800, 0x5ae0b215 )
-		ROM_LOAD( "phoenixc.49",  0x2000, 0x0800, 0x1a1ce0d0 )
-		ROM_LOAD( "ic50",         0x2800, 0x0800, 0xac5e9ec1 )
-		ROM_LOAD( "ic51",         0x3000, 0x0800, 0x2eab35b4 )
-		ROM_LOAD( "phoenixc.52",  0x3800, 0x0800, 0x8424d7c4 )
+	static RomLoadPtr rom_phoenixc = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x10000, REGION_CPU1, 0 );/* 64k for code */
+		ROM_LOAD( "phoenix.45",   0x0000, 0x0800, 0x5b8c55a8 );
+		ROM_LOAD( "phoenix.46",   0x0800, 0x0800, 0xdbc942fa );
+		ROM_LOAD( "phoenix.47",   0x1000, 0x0800, 0xcbbb8839 );
+		ROM_LOAD( "phoenixc.48",  0x1800, 0x0800, 0x5ae0b215 );
+		ROM_LOAD( "phoenixc.49",  0x2000, 0x0800, 0x1a1ce0d0 );
+		ROM_LOAD( "ic50",         0x2800, 0x0800, 0xac5e9ec1 );
+		ROM_LOAD( "ic51",         0x3000, 0x0800, 0x2eab35b4 );
+		ROM_LOAD( "phoenixc.52",  0x3800, 0x0800, 0x8424d7c4 );
 	
-		ROM_REGION( 0x1000, REGION_GFX1, ROMREGION_DISPOSE )
-		ROM_LOAD( "ic23",         0x0000, 0x0800, 0x3c7e623f )
-		ROM_LOAD( "ic24",         0x0800, 0x0800, 0x59916d3b )
+		ROM_REGION( 0x1000, REGION_GFX1, ROMREGION_DISPOSE );
+		ROM_LOAD( "ic23",         0x0000, 0x0800, 0x3c7e623f );
+		ROM_LOAD( "ic24",         0x0800, 0x0800, 0x59916d3b );
 	
-		ROM_REGION( 0x1000, REGION_GFX2, ROMREGION_DISPOSE )
-		ROM_LOAD( "phoenixc.39",  0x0000, 0x0800, 0xbb0525ed )
-		ROM_LOAD( "phoenixc.40",  0x0800, 0x0800, 0x4178aa4f )
+		ROM_REGION( 0x1000, REGION_GFX2, ROMREGION_DISPOSE );
+		ROM_LOAD( "phoenixc.39",  0x0000, 0x0800, 0xbb0525ed );
+		ROM_LOAD( "phoenixc.40",  0x0800, 0x0800, 0x4178aa4f );
 	
-		ROM_REGION( 0x0200, REGION_PROMS, 0 )
-		ROM_LOAD( "ic40_b.bin",   0x0000, 0x0100, 0x79350b25 )  /* palette low bits */
-		ROM_LOAD( "ic41_a.bin",   0x0100, 0x0100, 0xe176b768 )  /* palette high bits */
-	ROM_END
+		ROM_REGION( 0x0200, REGION_PROMS, 0 );
+		ROM_LOAD( "ic40_b.bin",   0x0000, 0x0100, 0x79350b25 ); /* palette low bits */
+		ROM_LOAD( "ic41_a.bin",   0x0100, 0x0100, 0xe176b768 ); /* palette high bits */
+	ROM_END(); }}; 
 	
-	ROM_START( pleiads )
-		ROM_REGION( 0x10000, REGION_CPU1, 0 )	/* 64k for code */
-		ROM_LOAD( "ic47.r1",      0x0000, 0x0800, 0x960212c8 )
-		ROM_LOAD( "ic48.r2",      0x0800, 0x0800, 0xb254217c )
-		ROM_LOAD( "ic47.bin",     0x1000, 0x0800, 0x87e700bb ) /* IC 49 on real board */
-		ROM_LOAD( "ic48.bin",     0x1800, 0x0800, 0x2d5198d0 ) /* IC 50 on real board */
-		ROM_LOAD( "ic51.r5",      0x2000, 0x0800, 0x49c629bc )
-		ROM_LOAD( "ic50.bin",     0x2800, 0x0800, 0xf1a8a00d ) /* IC 52 on real board */
-		ROM_LOAD( "ic53.r7",      0x3000, 0x0800, 0xb5f07fbc )
-		ROM_LOAD( "ic52.bin",     0x3800, 0x0800, 0xb1b5a8a6 ) /* IC 54 on real board */
+	static RomLoadPtr rom_pleiads = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x10000, REGION_CPU1, 0 );/* 64k for code */
+		ROM_LOAD( "ic47.r1",      0x0000, 0x0800, 0x960212c8 );
+		ROM_LOAD( "ic48.r2",      0x0800, 0x0800, 0xb254217c );
+		ROM_LOAD( "ic47.bin",     0x1000, 0x0800, 0x87e700bb );/* IC 49 on real board */
+		ROM_LOAD( "ic48.bin",     0x1800, 0x0800, 0x2d5198d0 );/* IC 50 on real board */
+		ROM_LOAD( "ic51.r5",      0x2000, 0x0800, 0x49c629bc );
+		ROM_LOAD( "ic50.bin",     0x2800, 0x0800, 0xf1a8a00d );/* IC 52 on real board */
+		ROM_LOAD( "ic53.r7",      0x3000, 0x0800, 0xb5f07fbc );
+		ROM_LOAD( "ic52.bin",     0x3800, 0x0800, 0xb1b5a8a6 );/* IC 54 on real board */
 	
-		ROM_REGION( 0x1000, REGION_GFX1, ROMREGION_DISPOSE )
-		ROM_LOAD( "ic23.bin",     0x0000, 0x0800, 0x4e30f9e7 ) /* IC 45 on real board */
-		ROM_LOAD( "ic24.bin",     0x0800, 0x0800, 0x5188fc29 ) /* IC 44 on real board */
+		ROM_REGION( 0x1000, REGION_GFX1, ROMREGION_DISPOSE );
+		ROM_LOAD( "ic23.bin",     0x0000, 0x0800, 0x4e30f9e7 );/* IC 45 on real board */
+		ROM_LOAD( "ic24.bin",     0x0800, 0x0800, 0x5188fc29 );/* IC 44 on real board */
 	
-		ROM_REGION( 0x1000, REGION_GFX2, ROMREGION_DISPOSE )
-		ROM_LOAD( "ic39.bin",     0x0000, 0x0800, 0x85866607 ) /* IC 27 on real board */
-		ROM_LOAD( "ic40.bin",     0x0800, 0x0800, 0xa841d511 ) /* IC 26 on real board */
+		ROM_REGION( 0x1000, REGION_GFX2, ROMREGION_DISPOSE );
+		ROM_LOAD( "ic39.bin",     0x0000, 0x0800, 0x85866607 );/* IC 27 on real board */
+		ROM_LOAD( "ic40.bin",     0x0800, 0x0800, 0xa841d511 );/* IC 26 on real board */
 	
-		ROM_REGION( 0x0200, REGION_PROMS, 0 )
-		ROM_LOAD( "7611-5.26",    0x0000, 0x0100, 0x7a1bcb1e )   /* palette low bits */
-		ROM_LOAD( "7611-5.33",    0x0100, 0x0100, 0xe38eeb83 )   /* palette high bits */
-	ROM_END
+		ROM_REGION( 0x0200, REGION_PROMS, 0 );
+		ROM_LOAD( "7611-5.26",    0x0000, 0x0100, 0x7a1bcb1e );  /* palette low bits */
+		ROM_LOAD( "7611-5.33",    0x0100, 0x0100, 0xe38eeb83 );  /* palette high bits */
+	ROM_END(); }}; 
 	
-	ROM_START( pleiadbl )
-		ROM_REGION( 0x10000, REGION_CPU1, 0 )	/* 64k for code */
-		ROM_LOAD( "ic45.bin",     0x0000, 0x0800, 0x93fc2958 )
-		ROM_LOAD( "ic46.bin",     0x0800, 0x0800, 0xe2b5b8cd )
-		ROM_LOAD( "ic47.bin",     0x1000, 0x0800, 0x87e700bb )
-		ROM_LOAD( "ic48.bin",     0x1800, 0x0800, 0x2d5198d0 )
-		ROM_LOAD( "ic49.bin",     0x2000, 0x0800, 0x9dc73e63 )
-		ROM_LOAD( "ic50.bin",     0x2800, 0x0800, 0xf1a8a00d )
-		ROM_LOAD( "ic51.bin",     0x3000, 0x0800, 0x6f56f317 )
-		ROM_LOAD( "ic52.bin",     0x3800, 0x0800, 0xb1b5a8a6 )
+	static RomLoadPtr rom_pleiadbl = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x10000, REGION_CPU1, 0 );/* 64k for code */
+		ROM_LOAD( "ic45.bin",     0x0000, 0x0800, 0x93fc2958 );
+		ROM_LOAD( "ic46.bin",     0x0800, 0x0800, 0xe2b5b8cd );
+		ROM_LOAD( "ic47.bin",     0x1000, 0x0800, 0x87e700bb );
+		ROM_LOAD( "ic48.bin",     0x1800, 0x0800, 0x2d5198d0 );
+		ROM_LOAD( "ic49.bin",     0x2000, 0x0800, 0x9dc73e63 );
+		ROM_LOAD( "ic50.bin",     0x2800, 0x0800, 0xf1a8a00d );
+		ROM_LOAD( "ic51.bin",     0x3000, 0x0800, 0x6f56f317 );
+		ROM_LOAD( "ic52.bin",     0x3800, 0x0800, 0xb1b5a8a6 );
 	
-		ROM_REGION( 0x1000, REGION_GFX1, ROMREGION_DISPOSE )
-		ROM_LOAD( "ic23.bin",     0x0000, 0x0800, 0x4e30f9e7 )
-		ROM_LOAD( "ic24.bin",     0x0800, 0x0800, 0x5188fc29 )
+		ROM_REGION( 0x1000, REGION_GFX1, ROMREGION_DISPOSE );
+		ROM_LOAD( "ic23.bin",     0x0000, 0x0800, 0x4e30f9e7 );
+		ROM_LOAD( "ic24.bin",     0x0800, 0x0800, 0x5188fc29 );
 	
-		ROM_REGION( 0x1000, REGION_GFX2, ROMREGION_DISPOSE )
-		ROM_LOAD( "ic39.bin",     0x0000, 0x0800, 0x85866607 )
-		ROM_LOAD( "ic40.bin",     0x0800, 0x0800, 0xa841d511 )
+		ROM_REGION( 0x1000, REGION_GFX2, ROMREGION_DISPOSE );
+		ROM_LOAD( "ic39.bin",     0x0000, 0x0800, 0x85866607 );
+		ROM_LOAD( "ic40.bin",     0x0800, 0x0800, 0xa841d511 );
 	
-		ROM_REGION( 0x0200, REGION_PROMS, 0 )
-		ROM_LOAD( "7611-5.26",    0x0000, 0x0100, 0x7a1bcb1e )   /* palette low bits */
-		ROM_LOAD( "7611-5.33",    0x0100, 0x0100, 0xe38eeb83 )   /* palette high bits */
-	ROM_END
+		ROM_REGION( 0x0200, REGION_PROMS, 0 );
+		ROM_LOAD( "7611-5.26",    0x0000, 0x0100, 0x7a1bcb1e );  /* palette low bits */
+		ROM_LOAD( "7611-5.33",    0x0100, 0x0100, 0xe38eeb83 );  /* palette high bits */
+	ROM_END(); }}; 
 	
-	ROM_START( pleiadce )
-		ROM_REGION( 0x10000, REGION_CPU1, 0 )	/* 64k for code */
-		ROM_LOAD( "pleiades.47",  0x0000, 0x0800, 0x711e2ba0 )
-		ROM_LOAD( "pleiades.48",  0x0800, 0x0800, 0x93a36943 )
-		ROM_LOAD( "ic47.bin",     0x1000, 0x0800, 0x87e700bb )
-		ROM_LOAD( "pleiades.50",  0x1800, 0x0800, 0x5a9beba0 )
-		ROM_LOAD( "pleiades.51",  0x2000, 0x0800, 0x1d828719 )
-		ROM_LOAD( "ic50.bin",     0x2800, 0x0800, 0xf1a8a00d )
-		ROM_LOAD( "pleiades.53",  0x3000, 0x0800, 0x037b319c )
-		ROM_LOAD( "pleiades.54",  0x3800, 0x0800, 0xca264c7c )
+	static RomLoadPtr rom_pleiadce = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x10000, REGION_CPU1, 0 );/* 64k for code */
+		ROM_LOAD( "pleiades.47",  0x0000, 0x0800, 0x711e2ba0 );
+		ROM_LOAD( "pleiades.48",  0x0800, 0x0800, 0x93a36943 );
+		ROM_LOAD( "ic47.bin",     0x1000, 0x0800, 0x87e700bb );
+		ROM_LOAD( "pleiades.50",  0x1800, 0x0800, 0x5a9beba0 );
+		ROM_LOAD( "pleiades.51",  0x2000, 0x0800, 0x1d828719 );
+		ROM_LOAD( "ic50.bin",     0x2800, 0x0800, 0xf1a8a00d );
+		ROM_LOAD( "pleiades.53",  0x3000, 0x0800, 0x037b319c );
+		ROM_LOAD( "pleiades.54",  0x3800, 0x0800, 0xca264c7c );
 	
-		ROM_REGION( 0x1000, REGION_GFX1, ROMREGION_DISPOSE )
-		ROM_LOAD( "pleiades.45",  0x0000, 0x0800, 0x8dbd3785 )
-		ROM_LOAD( "pleiades.44",  0x0800, 0x0800, 0x0db3e436 )
+		ROM_REGION( 0x1000, REGION_GFX1, ROMREGION_DISPOSE );
+		ROM_LOAD( "pleiades.45",  0x0000, 0x0800, 0x8dbd3785 );
+		ROM_LOAD( "pleiades.44",  0x0800, 0x0800, 0x0db3e436 );
 	
-		ROM_REGION( 0x1000, REGION_GFX2, ROMREGION_DISPOSE )
-		ROM_LOAD( "ic39.bin",     0x0000, 0x0800, 0x85866607 )
-		ROM_LOAD( "ic40.bin",     0x0800, 0x0800, 0xa841d511 )
+		ROM_REGION( 0x1000, REGION_GFX2, ROMREGION_DISPOSE );
+		ROM_LOAD( "ic39.bin",     0x0000, 0x0800, 0x85866607 );
+		ROM_LOAD( "ic40.bin",     0x0800, 0x0800, 0xa841d511 );
 	
-		ROM_REGION( 0x0200, REGION_PROMS, 0 )
-		ROM_LOAD( "7611-5.26",    0x0000, 0x0100, 0x7a1bcb1e )   /* palette low bits */
-		ROM_LOAD( "7611-5.33",    0x0100, 0x0100, 0xe38eeb83 )   /* palette high bits */
-	ROM_END
+		ROM_REGION( 0x0200, REGION_PROMS, 0 );
+		ROM_LOAD( "7611-5.26",    0x0000, 0x0100, 0x7a1bcb1e );  /* palette low bits */
+		ROM_LOAD( "7611-5.33",    0x0100, 0x0100, 0xe38eeb83 );  /* palette high bits */
+	ROM_END(); }}; 
 	
-	ROM_START( survival )
-		ROM_REGION( 0x10000, REGION_CPU1, 0 )	/* 64k for code */
-		ROM_LOAD( "g959-32a.u45", 0x0000, 0x0800, 0x0bc53541 )
-		ROM_LOAD( "g959-33a.u46", 0x0800, 0x0800, 0x726e9428 )
-		ROM_LOAD( "g959-34a.u47", 0x1000, 0x0800, 0x78f166ff )
-		ROM_LOAD( "g959-35a.u48", 0x1800, 0x0800, 0x59dbe099 )
-		ROM_LOAD( "g959-36a.u49", 0x2000, 0x0800, 0xbd5e586e )
-		ROM_LOAD( "g959-37a.u50", 0x2800, 0x0800, 0xb2de1094 )
-		ROM_LOAD( "g959-38a.u51", 0x3000, 0x0800, 0x131c4440 )
-		ROM_LOAD( "g959-39a.u52", 0x3800, 0x0800, 0x213bc910 )
+	static RomLoadPtr rom_survival = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x10000, REGION_CPU1, 0 );/* 64k for code */
+		ROM_LOAD( "g959-32a.u45", 0x0000, 0x0800, 0x0bc53541 );
+		ROM_LOAD( "g959-33a.u46", 0x0800, 0x0800, 0x726e9428 );
+		ROM_LOAD( "g959-34a.u47", 0x1000, 0x0800, 0x78f166ff );
+		ROM_LOAD( "g959-35a.u48", 0x1800, 0x0800, 0x59dbe099 );
+		ROM_LOAD( "g959-36a.u49", 0x2000, 0x0800, 0xbd5e586e );
+		ROM_LOAD( "g959-37a.u50", 0x2800, 0x0800, 0xb2de1094 );
+		ROM_LOAD( "g959-38a.u51", 0x3000, 0x0800, 0x131c4440 );
+		ROM_LOAD( "g959-39a.u52", 0x3800, 0x0800, 0x213bc910 );
 	
-		ROM_REGION( 0x1000, REGION_GFX1, ROMREGION_DISPOSE )
-		ROM_LOAD( "g959-42.u23",  0x0000, 0x0800, 0x3d1ce38d )
-		ROM_LOAD( "g959-43.u24",  0x0800, 0x0800, 0xcd150da9 )
+		ROM_REGION( 0x1000, REGION_GFX1, ROMREGION_DISPOSE );
+		ROM_LOAD( "g959-42.u23",  0x0000, 0x0800, 0x3d1ce38d );
+		ROM_LOAD( "g959-43.u24",  0x0800, 0x0800, 0xcd150da9 );
 	
-		ROM_REGION( 0x1000, REGION_GFX2, ROMREGION_DISPOSE )
-		ROM_LOAD( "g959-40.u39",  0x0000, 0x0800, 0x41dee996 )
-		ROM_LOAD( "g959-41.u40",  0x0800, 0x0800, 0xa255d6dc )
+		ROM_REGION( 0x1000, REGION_GFX2, ROMREGION_DISPOSE );
+		ROM_LOAD( "g959-40.u39",  0x0000, 0x0800, 0x41dee996 );
+		ROM_LOAD( "g959-41.u40",  0x0800, 0x0800, 0xa255d6dc );
 	
-		ROM_REGION( 0x0200, REGION_PROMS, 0 )
-		ROM_LOAD( "clr.u40",      0x0000, 0x0100, 0xb3e20669 )   /* palette low bits */
-		ROM_LOAD( "clr.u41",      0x0100, 0x0100, 0xabddf69a )   /* palette high bits */
-	ROM_END
+		ROM_REGION( 0x0200, REGION_PROMS, 0 );
+		ROM_LOAD( "clr.u40",      0x0000, 0x0100, 0xb3e20669 );  /* palette low bits */
+		ROM_LOAD( "clr.u41",      0x0100, 0x0100, 0xabddf69a );  /* palette high bits */
+	ROM_END(); }}; 
 	
 	
 	static void init_survival(void)

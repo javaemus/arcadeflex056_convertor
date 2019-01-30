@@ -888,21 +888,21 @@ public class seta2
 	
 	***************************************************************************/
 	
-	ROM_START( pzlbowl )
-		ROM_REGION( 0x100000, REGION_CPU1, 0 )		/* TMP68301 Code */
-		ROM_LOAD16_BYTE( "kup-u06.i03", 0x000000, 0x080000, 0x314e03ac )
-		ROM_LOAD16_BYTE( "kup-u07.i03", 0x000001, 0x080000, 0xa0423a04 )
+	static RomLoadPtr rom_pzlbowl = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x100000, REGION_CPU1, 0 );	/* TMP68301 Code */
+		ROM_LOAD16_BYTE( "kup-u06.i03", 0x000000, 0x080000, 0x314e03ac );
+		ROM_LOAD16_BYTE( "kup-u07.i03", 0x000001, 0x080000, 0xa0423a04 );
 	
-		ROM_REGION( 0x1000000, REGION_GFX1, ROMREGION_DISPOSE )	/* Sprites */
-		ROM_LOAD( "kuc-u38.i00", 0x000000, 0x400000, 0x3db24172 )
-		ROM_LOAD( "kuc-u39.i00", 0x400000, 0x400000, 0x9b26619b )
-		ROM_LOAD( "kuc-u40.i00", 0x800000, 0x400000, 0x7e49a2cf )
-		ROM_LOAD( "kuc-u41.i00", 0xc00000, 0x400000, 0x2febf19b )
+		ROM_REGION( 0x1000000, REGION_GFX1, ROMREGION_DISPOSE );/* Sprites */
+		ROM_LOAD( "kuc-u38.i00", 0x000000, 0x400000, 0x3db24172 );
+		ROM_LOAD( "kuc-u39.i00", 0x400000, 0x400000, 0x9b26619b );
+		ROM_LOAD( "kuc-u40.i00", 0x800000, 0x400000, 0x7e49a2cf );
+		ROM_LOAD( "kuc-u41.i00", 0xc00000, 0x400000, 0x2febf19b );
 	
-		ROM_REGION( 0x500000, REGION_SOUND1, ROMREGION_SOUNDONLY )	/* Samples */
+		ROM_REGION( 0x500000, REGION_SOUND1, ROMREGION_SOUNDONLY );/* Samples */
 		/* Leave 1MB empty (addressable by the chip) */
-		ROM_LOAD( "kus-u18.i00", 0x100000, 0x400000, 0xe2b1dfcf )
-	ROM_END
+		ROM_LOAD( "kus-u18.i00", 0x100000, 0x400000, 0xe2b1dfcf );
+	ROM_END(); }}; 
 	
 	void init_pzlbowl(void)
 	{
@@ -928,27 +928,27 @@ public class seta2
 	
 	***************************************************************************/
 	
-	ROM_START( myangel )
-		ROM_REGION( 0x200000, REGION_CPU1, 0 )		/* TMP68301 Code */
-		ROM_LOAD16_BYTE( "kq1-prge.u2", 0x000000, 0x080000, 0x6137d4c0 )
-		ROM_LOAD16_BYTE( "kq1-prgo.u3", 0x000001, 0x080000, 0x4aad10d8 )
-		ROM_LOAD16_BYTE( "kq1-tble.u4", 0x100000, 0x080000, 0xe332a514 )
-		ROM_LOAD16_BYTE( "kq1-tblo.u5", 0x100001, 0x080000, 0x760cab15 )
+	static RomLoadPtr rom_myangel = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x200000, REGION_CPU1, 0 );	/* TMP68301 Code */
+		ROM_LOAD16_BYTE( "kq1-prge.u2", 0x000000, 0x080000, 0x6137d4c0 );
+		ROM_LOAD16_BYTE( "kq1-prgo.u3", 0x000001, 0x080000, 0x4aad10d8 );
+		ROM_LOAD16_BYTE( "kq1-tble.u4", 0x100000, 0x080000, 0xe332a514 );
+		ROM_LOAD16_BYTE( "kq1-tblo.u5", 0x100001, 0x080000, 0x760cab15 );
 	
-		ROM_REGION( 0x1000000, REGION_GFX1, ROMREGION_DISPOSE )	/* Sprites */
-		ROM_LOAD( "kq1-cg2.u20", 0x000000, 0x200000, 0x80b4e8de )
-		ROM_LOAD( "kq1-cg0.u16", 0x200000, 0x200000, 0xf8ae9a05 )
-		ROM_LOAD( "kq1-cg3.u19", 0x400000, 0x200000, 0x9bdc35c9 )
-		ROM_LOAD( "kq1-cg1.u15", 0x600000, 0x200000, 0x23bd7ea4 )
-		ROM_LOAD( "kq1-cg6.u22", 0x800000, 0x200000, 0xb25acf12 )
-		ROM_LOAD( "kq1-cg4.u18", 0xa00000, 0x200000, 0xdca7f8f2 )
-		ROM_LOAD( "kq1-cg7.u21", 0xc00000, 0x200000, 0x9f48382c )
-		ROM_LOAD( "kq1-cg5.u17", 0xe00000, 0x200000, 0xa4bc4516 )
+		ROM_REGION( 0x1000000, REGION_GFX1, ROMREGION_DISPOSE );/* Sprites */
+		ROM_LOAD( "kq1-cg2.u20", 0x000000, 0x200000, 0x80b4e8de );
+		ROM_LOAD( "kq1-cg0.u16", 0x200000, 0x200000, 0xf8ae9a05 );
+		ROM_LOAD( "kq1-cg3.u19", 0x400000, 0x200000, 0x9bdc35c9 );
+		ROM_LOAD( "kq1-cg1.u15", 0x600000, 0x200000, 0x23bd7ea4 );
+		ROM_LOAD( "kq1-cg6.u22", 0x800000, 0x200000, 0xb25acf12 );
+		ROM_LOAD( "kq1-cg4.u18", 0xa00000, 0x200000, 0xdca7f8f2 );
+		ROM_LOAD( "kq1-cg7.u21", 0xc00000, 0x200000, 0x9f48382c );
+		ROM_LOAD( "kq1-cg5.u17", 0xe00000, 0x200000, 0xa4bc4516 );
 	
-		ROM_REGION( 0x300000, REGION_SOUND1, ROMREGION_SOUNDONLY )	/* Samples */
+		ROM_REGION( 0x300000, REGION_SOUND1, ROMREGION_SOUNDONLY );/* Samples */
 		/* Leave 1MB empty (addressable by the chip) */
-		ROM_LOAD( "kq1-snd.u32", 0x100000, 0x200000, 0x8ca1b449 )
-	ROM_END
+		ROM_LOAD( "kq1-snd.u32", 0x100000, 0x200000, 0x8ca1b449 );
+	ROM_END(); }}; 
 	
 	
 	/***************************************************************************
@@ -966,27 +966,27 @@ public class seta2
 	
 	***************************************************************************/
 	
-	ROM_START( myangel2 )
-		ROM_REGION( 0x200000, REGION_CPU1, 0 )		/* TMP68301 Code */
-		ROM_LOAD16_BYTE( "kqs1ezpr.u2", 0x000000, 0x080000, 0x2469aac2 )
-		ROM_LOAD16_BYTE( "kqs1ozpr.u3", 0x000001, 0x080000, 0x6336375c )
-		ROM_LOAD16_BYTE( "kqs1e-tb.u4", 0x100000, 0x080000, 0xe759b4cc )
-		ROM_LOAD16_BYTE( "kqs1o-tb.u5", 0x100001, 0x080000, 0xb6168737 )
+	static RomLoadPtr rom_myangel2 = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x200000, REGION_CPU1, 0 );	/* TMP68301 Code */
+		ROM_LOAD16_BYTE( "kqs1ezpr.u2", 0x000000, 0x080000, 0x2469aac2 );
+		ROM_LOAD16_BYTE( "kqs1ozpr.u3", 0x000001, 0x080000, 0x6336375c );
+		ROM_LOAD16_BYTE( "kqs1e-tb.u4", 0x100000, 0x080000, 0xe759b4cc );
+		ROM_LOAD16_BYTE( "kqs1o-tb.u5", 0x100001, 0x080000, 0xb6168737 );
 	
-		ROM_REGION( 0x1800000, REGION_GFX1, ROMREGION_DISPOSE )	/* Sprites */
-		ROM_LOAD( "kqs1-cg4.u20", 0x0000000, 0x200000, 0xd1802241 )
-		ROM_LOAD( "kqs1-cg0.u16", 0x0200000, 0x400000, 0xc21a33a7 )
-		ROM_LOAD( "kqs1-cg5.u19", 0x0600000, 0x200000, 0xd86cf19c )
-		ROM_LOAD( "kqs1-cg1.u15", 0x0800000, 0x400000, 0xdca799ba )
-		ROM_LOAD( "kqs1-cg6.u22", 0x0c00000, 0x200000, 0x3f08886b )
-		ROM_LOAD( "kqs1-cg2.u18", 0x0e00000, 0x400000, 0xf7f92c7e )
-		ROM_LOAD( "kqs1-cg7.u21", 0x1200000, 0x200000, 0x2c977904 )
-		ROM_LOAD( "kqs1-cg3.u17", 0x1400000, 0x400000, 0xde3b2191 )
+		ROM_REGION( 0x1800000, REGION_GFX1, ROMREGION_DISPOSE );/* Sprites */
+		ROM_LOAD( "kqs1-cg4.u20", 0x0000000, 0x200000, 0xd1802241 );
+		ROM_LOAD( "kqs1-cg0.u16", 0x0200000, 0x400000, 0xc21a33a7 );
+		ROM_LOAD( "kqs1-cg5.u19", 0x0600000, 0x200000, 0xd86cf19c );
+		ROM_LOAD( "kqs1-cg1.u15", 0x0800000, 0x400000, 0xdca799ba );
+		ROM_LOAD( "kqs1-cg6.u22", 0x0c00000, 0x200000, 0x3f08886b );
+		ROM_LOAD( "kqs1-cg2.u18", 0x0e00000, 0x400000, 0xf7f92c7e );
+		ROM_LOAD( "kqs1-cg7.u21", 0x1200000, 0x200000, 0x2c977904 );
+		ROM_LOAD( "kqs1-cg3.u17", 0x1400000, 0x400000, 0xde3b2191 );
 	
-		ROM_REGION( 0x500000, REGION_SOUND1, ROMREGION_SOUNDONLY )	/* Samples */
+		ROM_REGION( 0x500000, REGION_SOUND1, ROMREGION_SOUNDONLY );/* Samples */
 		/* Leave 1MB empty (addressable by the chip) */
-		ROM_LOAD( "kqs1-snd.u32", 0x100000, 0x400000, 0x792a6b49 )
-	ROM_END
+		ROM_LOAD( "kqs1-snd.u32", 0x100000, 0x400000, 0x792a6b49 );
+	ROM_END(); }}; 
 	
 	
 	/***************************************************************************

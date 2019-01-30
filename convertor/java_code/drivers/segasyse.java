@@ -841,69 +841,69 @@ public class segasyse
 	 opaopa	  - Opa Opa				   *Roms Encrypted/Bad?*
 	*******************************************************************************/
 	
-	ROM_START( hangonjr )
-		ROM_REGION( 0x30000, REGION_CPU1, 0 )
-		ROM_LOAD( "rom5.ic7",	0x00000, 0x08000, 0xd63925a7 ) /* Fixed Code */
+	static RomLoadPtr rom_hangonjr = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x30000, REGION_CPU1, 0 );
+		ROM_LOAD( "rom5.ic7",	0x00000, 0x08000, 0xd63925a7 );/* Fixed Code */
 	
 		/* The following are 8 0x4000 banks that get mapped to reads from 0x8000 - 0xbfff */
-		ROM_LOAD( "rom4.ic5",	0x10000, 0x08000, 0xee3caab3 )
-		ROM_LOAD( "rom3.ic4",	0x18000, 0x08000, 0xd2ba9bc9 )
-		ROM_LOAD( "rom2.ic3",	0x20000, 0x08000, 0xe14da070 )
-		ROM_LOAD( "rom1.ic2",	0x28000, 0x08000, 0x3810cbf5 )
-	ROM_END
+		ROM_LOAD( "rom4.ic5",	0x10000, 0x08000, 0xee3caab3 );
+		ROM_LOAD( "rom3.ic4",	0x18000, 0x08000, 0xd2ba9bc9 );
+		ROM_LOAD( "rom2.ic3",	0x20000, 0x08000, 0xe14da070 );
+		ROM_LOAD( "rom1.ic2",	0x28000, 0x08000, 0x3810cbf5 );
+	ROM_END(); }}; 
 	
-	ROM_START( ridleofp )
-		ROM_REGION( 0x30000, REGION_CPU1, 0 )
-		ROM_LOAD( "epr10426.bin",	0x00000, 0x08000, 0x4404c7e7 ) /* Fixed Code */
-	
-		/* The following are 8 0x4000 banks that get mapped to reads from 0x8000 - 0xbfff */
-		ROM_LOAD( "epr10425.bin",	0x10000, 0x08000, 0x35964109 )
-		ROM_LOAD( "epr10424.bin",	0x18000, 0x08000, 0xfcda1dfa )
-		ROM_LOAD( "epr10423.bin",	0x20000, 0x08000, 0x0b87244f )
-		ROM_LOAD( "epr10422.bin",	0x28000, 0x08000, 0x14781e56 )
-	ROM_END
-	
-	ROM_START( transfrm )
-		ROM_REGION( 0x30000, REGION_CPU1, 0 )
-		ROM_LOAD( "ic7.top",	0x00000, 0x08000, 0xccf1d123 ) /* Fixed Code */
+	static RomLoadPtr rom_ridleofp = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x30000, REGION_CPU1, 0 );
+		ROM_LOAD( "epr10426.bin",	0x00000, 0x08000, 0x4404c7e7 );/* Fixed Code */
 	
 		/* The following are 8 0x4000 banks that get mapped to reads from 0x8000 - 0xbfff */
-		ROM_LOAD( "epr-7347.ic5",	0x10000, 0x08000, 0xdf0f639f )
-		ROM_LOAD( "epr-7348.ic4",	0x18000, 0x08000, 0x0f38ea96 )
-		ROM_LOAD( "ic3.top",		0x20000, 0x08000, 0x9d485df6 )
-		ROM_LOAD( "epr-7350.ic2",	0x28000, 0x08000, 0x0052165d )
-	ROM_END
+		ROM_LOAD( "epr10425.bin",	0x10000, 0x08000, 0x35964109 );
+		ROM_LOAD( "epr10424.bin",	0x18000, 0x08000, 0xfcda1dfa );
+		ROM_LOAD( "epr10423.bin",	0x20000, 0x08000, 0x0b87244f );
+		ROM_LOAD( "epr10422.bin",	0x28000, 0x08000, 0x14781e56 );
+	ROM_END(); }}; 
 	
-	ROM_START( astrofl )
-		ROM_REGION( 2*0x30000, REGION_CPU1, 0 )
-		ROM_LOAD( "epr-7723.ic7",	0x00000, 0x08000, 0x66061137 ) /* encrypted */
-	
-		/* The following are 8 0x4000 banks that get mapped to reads from 0x8000 - 0xbfff */
-		ROM_LOAD( "epr-7347.ic5",	0x10000, 0x08000, 0xdf0f639f )
-		ROM_LOAD( "epr-7348.ic4",	0x18000, 0x08000, 0x0f38ea96 )
-		ROM_LOAD( "epr-7349.ic3",	0x20000, 0x08000, 0xf8c352d5 )
-		ROM_LOAD( "epr-7350.ic2",	0x28000, 0x08000, 0x0052165d )
-	ROM_END
-	
-	ROM_START( fantzn2 )
-		ROM_REGION( 0x50000, REGION_CPU1, 0 )
-		ROM_LOAD( "fz2_ic7.rom",	0x00000, 0x08000, 0x76db7b7b )
-		ROM_LOAD( "fz2_ic5.rom",	0x10000, 0x10000, 0x57b45681 )
-		ROM_LOAD( "fz2_ic4.rom",	0x20000, 0x10000, 0x6f7a9f5f )
-		ROM_LOAD( "fz2_ic3.rom",	0x30000, 0x10000, 0xa231dc85 )
-		ROM_LOAD( "fz2_ic2.rom",	0x40000, 0x10000, 0xb14db5af )
-	ROM_END
-	
-	ROM_START( opaopa )
-		ROM_REGION( 0x30000, REGION_USER1, 0 )
-		ROM_LOAD( "epr11224.ic7",	0x00000, 0x08000, 0x024b1244 ) /* Fixed Code */
+	static RomLoadPtr rom_transfrm = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x30000, REGION_CPU1, 0 );
+		ROM_LOAD( "ic7.top",	0x00000, 0x08000, 0xccf1d123 );/* Fixed Code */
 	
 		/* The following are 8 0x4000 banks that get mapped to reads from 0x8000 - 0xbfff */
-		ROM_LOAD( "epr11223.ic5",	0x10000, 0x08000, 0x6bc41d6e )
-		ROM_LOAD( "epr11222.ic4",	0x18000, 0x08000, 0x395c1d0a )
-		ROM_LOAD( "epr11221.ic3",	0x20000, 0x08000, 0x4ca132a2 )
-		ROM_LOAD( "epr11220.ic2",	0x28000, 0x08000, 0xa165e2ef )
-	ROM_END
+		ROM_LOAD( "epr-7347.ic5",	0x10000, 0x08000, 0xdf0f639f );
+		ROM_LOAD( "epr-7348.ic4",	0x18000, 0x08000, 0x0f38ea96 );
+		ROM_LOAD( "ic3.top",		0x20000, 0x08000, 0x9d485df6 );
+		ROM_LOAD( "epr-7350.ic2",	0x28000, 0x08000, 0x0052165d );
+	ROM_END(); }}; 
+	
+	static RomLoadPtr rom_astrofl = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 2*0x30000, REGION_CPU1, 0 );
+		ROM_LOAD( "epr-7723.ic7",	0x00000, 0x08000, 0x66061137 );/* encrypted */
+	
+		/* The following are 8 0x4000 banks that get mapped to reads from 0x8000 - 0xbfff */
+		ROM_LOAD( "epr-7347.ic5",	0x10000, 0x08000, 0xdf0f639f );
+		ROM_LOAD( "epr-7348.ic4",	0x18000, 0x08000, 0x0f38ea96 );
+		ROM_LOAD( "epr-7349.ic3",	0x20000, 0x08000, 0xf8c352d5 );
+		ROM_LOAD( "epr-7350.ic2",	0x28000, 0x08000, 0x0052165d );
+	ROM_END(); }}; 
+	
+	static RomLoadPtr rom_fantzn2 = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x50000, REGION_CPU1, 0 );
+		ROM_LOAD( "fz2_ic7.rom",	0x00000, 0x08000, 0x76db7b7b );
+		ROM_LOAD( "fz2_ic5.rom",	0x10000, 0x10000, 0x57b45681 );
+		ROM_LOAD( "fz2_ic4.rom",	0x20000, 0x10000, 0x6f7a9f5f );
+		ROM_LOAD( "fz2_ic3.rom",	0x30000, 0x10000, 0xa231dc85 );
+		ROM_LOAD( "fz2_ic2.rom",	0x40000, 0x10000, 0xb14db5af );
+	ROM_END(); }}; 
+	
+	static RomLoadPtr rom_opaopa = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x30000, REGION_USER1, 0 );
+		ROM_LOAD( "epr11224.ic7",	0x00000, 0x08000, 0x024b1244 );/* Fixed Code */
+	
+		/* The following are 8 0x4000 banks that get mapped to reads from 0x8000 - 0xbfff */
+		ROM_LOAD( "epr11223.ic5",	0x10000, 0x08000, 0x6bc41d6e );
+		ROM_LOAD( "epr11222.ic4",	0x18000, 0x08000, 0x395c1d0a );
+		ROM_LOAD( "epr11221.ic3",	0x20000, 0x08000, 0x4ca132a2 );
+		ROM_LOAD( "epr11220.ic2",	0x28000, 0x08000, 0xa165e2ef );
+	ROM_END(); }}; 
 	
 	/*-- Game Drivers --*/
 	

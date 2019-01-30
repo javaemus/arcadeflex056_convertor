@@ -221,45 +221,45 @@ public class pkunwar
 	
 	***************************************************************************/
 	
-	ROM_START( pkunwar )
-		ROM_REGION( 0x10000, REGION_CPU1, 0 )	/* 64k for code */
-		ROM_LOAD( "pkwar.01r",    0x0000, 0x4000, 0xce2d2c7b )
-		ROM_LOAD( "pkwar.02r",    0x4000, 0x4000, 0xabc1f661 )
-		ROM_LOAD( "pkwar.03r",    0xe000, 0x2000, 0x56faebea )
+	static RomLoadPtr rom_pkunwar = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x10000, REGION_CPU1, 0 );/* 64k for code */
+		ROM_LOAD( "pkwar.01r",    0x0000, 0x4000, 0xce2d2c7b );
+		ROM_LOAD( "pkwar.02r",    0x4000, 0x4000, 0xabc1f661 );
+		ROM_LOAD( "pkwar.03r",    0xe000, 0x2000, 0x56faebea );
 	
-		ROM_REGION( 0x10000, REGION_GFX1, ROMREGION_DISPOSE )
-		ROM_LOAD( "pkwar.01y",    0x0000, 0x2000, 0x428d3b92 )
-		ROM_CONTINUE(             0x8000, 0x2000 )
-		ROM_LOAD( "pkwar.02y",    0x2000, 0x2000, 0xce1da7bc )
-		ROM_CONTINUE(             0xa000, 0x2000 )
-		ROM_LOAD( "pkwar.03y",    0x4000, 0x2000, 0x63204400 )
-		ROM_CONTINUE(             0xc000, 0x2000 )
-		ROM_LOAD( "pkwar.04y",    0x6000, 0x2000, 0x061dfca8 )
-		ROM_CONTINUE(             0xe000, 0x2000 )
+		ROM_REGION( 0x10000, REGION_GFX1, ROMREGION_DISPOSE );
+		ROM_LOAD( "pkwar.01y",    0x0000, 0x2000, 0x428d3b92 );
+		ROM_CONTINUE(             0x8000, 0x2000 );
+		ROM_LOAD( "pkwar.02y",    0x2000, 0x2000, 0xce1da7bc );
+		ROM_CONTINUE(             0xa000, 0x2000 );
+		ROM_LOAD( "pkwar.03y",    0x4000, 0x2000, 0x63204400 );
+		ROM_CONTINUE(             0xc000, 0x2000 );
+		ROM_LOAD( "pkwar.04y",    0x6000, 0x2000, 0x061dfca8 );
+		ROM_CONTINUE(             0xe000, 0x2000 );
 	
-		ROM_REGION( 0x0020, REGION_PROMS, 0 )
-		ROM_LOAD( "pkwar.col",    0x0000, 0x0020, 0xaf0fc5e2 )
-	ROM_END
+		ROM_REGION( 0x0020, REGION_PROMS, 0 );
+		ROM_LOAD( "pkwar.col",    0x0000, 0x0020, 0xaf0fc5e2 );
+	ROM_END(); }}; 
 	
-	ROM_START( pkunwarj )
-		ROM_REGION( 0x10000, REGION_CPU1, 0 )	/* 64k for code */
-		ROM_LOAD( "pgunwar.6",    0x0000, 0x4000, 0x357f3ef3 )
-		ROM_LOAD( "pgunwar.5",    0x4000, 0x4000, 0x0092e49e )
-		ROM_LOAD( "pkwar.03r",    0xe000, 0x2000, 0x56faebea )
+	static RomLoadPtr rom_pkunwarj = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x10000, REGION_CPU1, 0 );/* 64k for code */
+		ROM_LOAD( "pgunwar.6",    0x0000, 0x4000, 0x357f3ef3 );
+		ROM_LOAD( "pgunwar.5",    0x4000, 0x4000, 0x0092e49e );
+		ROM_LOAD( "pkwar.03r",    0xe000, 0x2000, 0x56faebea );
 	
-		ROM_REGION( 0x10000, REGION_GFX1, ROMREGION_DISPOSE )
-		ROM_LOAD( "pkwar.01y",    0x0000, 0x2000, 0x428d3b92 )
-		ROM_CONTINUE(             0x8000, 0x2000 )
-		ROM_LOAD( "pkwar.02y",    0x2000, 0x2000, 0xce1da7bc )
-		ROM_CONTINUE(             0xa000, 0x2000 )
-		ROM_LOAD( "pgunwar.2",    0x4000, 0x2000, 0xa2a43443 )
-		ROM_CONTINUE(             0xc000, 0x2000 )
-		ROM_LOAD( "pkwar.04y",    0x6000, 0x2000, 0x061dfca8 )
-		ROM_CONTINUE(             0xe000, 0x2000 )
+		ROM_REGION( 0x10000, REGION_GFX1, ROMREGION_DISPOSE );
+		ROM_LOAD( "pkwar.01y",    0x0000, 0x2000, 0x428d3b92 );
+		ROM_CONTINUE(             0x8000, 0x2000 );
+		ROM_LOAD( "pkwar.02y",    0x2000, 0x2000, 0xce1da7bc );
+		ROM_CONTINUE(             0xa000, 0x2000 );
+		ROM_LOAD( "pgunwar.2",    0x4000, 0x2000, 0xa2a43443 );
+		ROM_CONTINUE(             0xc000, 0x2000 );
+		ROM_LOAD( "pkwar.04y",    0x6000, 0x2000, 0x061dfca8 );
+		ROM_CONTINUE(             0xe000, 0x2000 );
 	
-		ROM_REGION( 0x0020, REGION_PROMS, 0 )
-		ROM_LOAD( "pkwar.col",    0x0000, 0x0020, 0xaf0fc5e2 )
-	ROM_END
+		ROM_REGION( 0x0020, REGION_PROMS, 0 );
+		ROM_LOAD( "pkwar.col",    0x0000, 0x0020, 0xaf0fc5e2 );
+	ROM_END(); }}; 
 	
 	
 	

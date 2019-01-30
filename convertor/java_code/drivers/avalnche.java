@@ -161,20 +161,20 @@ public class avalnche
 	
 	***************************************************************************/
 	
-	ROM_START( avalnche )
-		ROM_REGION( 0x10000, REGION_CPU1, 0 ) /* 64k for code */
+	static RomLoadPtr rom_avalnche = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x10000, REGION_CPU1, 0 );/* 64k for code */
 		/* Note: These are being loaded into a bogus location, */
 		/*		 They are nibble wide rom images which will be */
 		/*		 merged and loaded into the proper place by    */
 		/*		 orbit_rom_init()							   */
-		ROM_LOAD( "30612.d2",     	0x8800, 0x0800, 0x3f975171 )
-		ROM_LOAD( "30613.e2",     	0x9000, 0x0800, 0x47a224d3 )
-		ROM_LOAD( "30611.c2",     	0x9800, 0x0800, 0x0ad07f85 )
+		ROM_LOAD( "30612.d2",     	0x8800, 0x0800, 0x3f975171 );
+		ROM_LOAD( "30613.e2",     	0x9000, 0x0800, 0x47a224d3 );
+		ROM_LOAD( "30611.c2",     	0x9800, 0x0800, 0x0ad07f85 );
 	
-		ROM_LOAD( "30615.d3",     	0xa800, 0x0800, 0x3e1a86b4 )
-		ROM_LOAD( "30616.e3",     	0xb000, 0x0800, 0xf620f0f8 )
-		ROM_LOAD( "30614.c3",     	0xb800, 0x0800, 0xa12d5d64 )
-	ROM_END
+		ROM_LOAD( "30615.d3",     	0xa800, 0x0800, 0x3e1a86b4 );
+		ROM_LOAD( "30616.e3",     	0xb000, 0x0800, 0xf620f0f8 );
+		ROM_LOAD( "30614.c3",     	0xb800, 0x0800, 0xa12d5d64 );
+	ROM_END(); }}; 
 	
 	
 	

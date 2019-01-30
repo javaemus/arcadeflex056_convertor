@@ -220,82 +220,82 @@ public class namcond1
 	};
 	
 	
-	ROM_START( ncv1 )
-		ROM_REGION( 0x100000,REGION_CPU1, 0 )		/* 16MB for Main CPU */
-		ROM_LOAD16_WORD( "nc1-eng.14d", 0x00000, 0x80000, 0x4ffc530b )
-		ROM_LOAD16_WORD( "nc1-eng.13d", 0x80000, 0x80000, 0x26499a4e )
+	static RomLoadPtr rom_ncv1 = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x100000,REGION_CPU1, 0 );	/* 16MB for Main CPU */
+		ROM_LOAD16_WORD( "nc1-eng.14d", 0x00000, 0x80000, 0x4ffc530b );
+		ROM_LOAD16_WORD( "nc1-eng.13d", 0x80000, 0x80000, 0x26499a4e );
 	
-		ROM_REGION( 0x80000,REGION_CPU2, 0 )		/* sub CPU */
-		ROM_LOAD( "nc1.1c",          0x00000, 0x80000, 0x48ea0de2 )
+		ROM_REGION( 0x80000,REGION_CPU2, 0 );	/* sub CPU */
+		ROM_LOAD( "nc1.1c",          0x00000, 0x80000, 0x48ea0de2 );
 	
-		ROM_REGION( 0x200000,REGION_GFX1, ROMREGION_DISPOSE )	/* 2MB character generator */
-		ROM_LOAD( "cg0.10c",         0x000000, 0x200000, 0x355e7f29 )
+		ROM_REGION( 0x200000,REGION_GFX1, ROMREGION_DISPOSE );/* 2MB character generator */
+		ROM_LOAD( "cg0.10c",         0x000000, 0x200000, 0x355e7f29 );
 	
-		ROM_REGION( 0x200000,REGION_SOUND1, 0 ) 	/* 2MB sound data */
-	    ROM_LOAD( "nc1-voic.7b",     0x000000, 0x200000, NODUMPKNOWN )
-	ROM_END
+		ROM_REGION( 0x200000,REGION_SOUND1, 0 );	/* 2MB sound data */
+	    ROM_LOAD( "nc1-voic.7b",     0x000000, 0x200000, NODUMPKNOWN );
+	ROM_END(); }}; 
 	
-	ROM_START( ncv1j )
-		ROM_REGION( 0x100000,REGION_CPU1, 0 )		/* 16MB for Main CPU */
-		ROM_LOAD16_WORD( "nc1-jpn.14d",  0x00000, 0x80000, 0x48ce0b2b )
-		ROM_LOAD16_WORD( "nc1-jpn.13d",  0x80000, 0x80000, 0x49f99235 )
+	static RomLoadPtr rom_ncv1j = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x100000,REGION_CPU1, 0 );	/* 16MB for Main CPU */
+		ROM_LOAD16_WORD( "nc1-jpn.14d",  0x00000, 0x80000, 0x48ce0b2b );
+		ROM_LOAD16_WORD( "nc1-jpn.13d",  0x80000, 0x80000, 0x49f99235 );
 	
-		ROM_REGION( 0x80000,REGION_CPU2, 0 )		/* sub CPU */
-		ROM_LOAD( "nc1.1c",          0x00000, 0x80000, 0x48ea0de2 )
+		ROM_REGION( 0x80000,REGION_CPU2, 0 );	/* sub CPU */
+		ROM_LOAD( "nc1.1c",          0x00000, 0x80000, 0x48ea0de2 );
 	
-		ROM_REGION( 0x200000,REGION_GFX1, ROMREGION_DISPOSE )	/* 2MB character generator */
-		ROM_LOAD( "cg0.10c",         0x000000, 0x200000, 0x355e7f29 )
+		ROM_REGION( 0x200000,REGION_GFX1, ROMREGION_DISPOSE );/* 2MB character generator */
+		ROM_LOAD( "cg0.10c",         0x000000, 0x200000, 0x355e7f29 );
 	
-		ROM_REGION( 0x200000,REGION_SOUND1, 0 ) 	/* 2MB sound data */
-	    ROM_LOAD( "nc1-voic.7b",     0x000000, 0x200000, NODUMPKNOWN )
-	ROM_END
+		ROM_REGION( 0x200000,REGION_SOUND1, 0 );	/* 2MB sound data */
+	    ROM_LOAD( "nc1-voic.7b",     0x000000, 0x200000, NODUMPKNOWN );
+	ROM_END(); }}; 
 	
-	ROM_START( ncv1j2 )
-		ROM_REGION( 0x100000,REGION_CPU1, 0 )		/* 16MB for Main CPU */
-		ROM_LOAD16_WORD( "nc1-jpn2.14d", 0x00000, 0x80000, 0x7207469d )
-		ROM_LOAD16_WORD( "nc1-jpn2.13d", 0x80000, 0x80000, 0x52401b17 )
+	static RomLoadPtr rom_ncv1j2 = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x100000,REGION_CPU1, 0 );	/* 16MB for Main CPU */
+		ROM_LOAD16_WORD( "nc1-jpn2.14d", 0x00000, 0x80000, 0x7207469d );
+		ROM_LOAD16_WORD( "nc1-jpn2.13d", 0x80000, 0x80000, 0x52401b17 );
 	
-		ROM_REGION( 0x80000,REGION_CPU2, 0 )		/* sub CPU */
-		ROM_LOAD( "nc1.1c",          0x00000, 0x80000, 0x48ea0de2 )
+		ROM_REGION( 0x80000,REGION_CPU2, 0 );	/* sub CPU */
+		ROM_LOAD( "nc1.1c",          0x00000, 0x80000, 0x48ea0de2 );
 	
-		ROM_REGION( 0x200000,REGION_GFX1, ROMREGION_DISPOSE )	/* 2MB character generator */
-		ROM_LOAD( "cg0.10c",         0x000000, 0x200000, 0x355e7f29 )
+		ROM_REGION( 0x200000,REGION_GFX1, ROMREGION_DISPOSE );/* 2MB character generator */
+		ROM_LOAD( "cg0.10c",         0x000000, 0x200000, 0x355e7f29 );
 	
-		ROM_REGION( 0x200000,REGION_SOUND1, 0 ) 	/* 2MB sound data */
-	    ROM_LOAD( "nc1-voic.7b",     0x000000, 0x200000, NODUMPKNOWN )
-	ROM_END
+		ROM_REGION( 0x200000,REGION_SOUND1, 0 );	/* 2MB sound data */
+	    ROM_LOAD( "nc1-voic.7b",     0x000000, 0x200000, NODUMPKNOWN );
+	ROM_END(); }}; 
 	
-	ROM_START( ncv2 )
-		ROM_REGION( 0x100000,REGION_CPU1, 0 )		/* 16MB for Main CPU */
-		ROM_LOAD16_WORD( "nc2-eng.14e", 0x00000, 0x80000, 0xfb8a4123 )
-		ROM_LOAD16_WORD( "nc2-eng.13e", 0x80000, 0x80000, 0x7a5ef23b )
+	static RomLoadPtr rom_ncv2 = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x100000,REGION_CPU1, 0 );	/* 16MB for Main CPU */
+		ROM_LOAD16_WORD( "nc2-eng.14e", 0x00000, 0x80000, 0xfb8a4123 );
+		ROM_LOAD16_WORD( "nc2-eng.13e", 0x80000, 0x80000, 0x7a5ef23b );
 	
-		ROM_REGION( 0x80000,REGION_CPU2, 0 )		/* sub CPU */
-		ROM_LOAD( "nc2.1d",          0x00000, 0x80000, 0x365cadbf )
+		ROM_REGION( 0x80000,REGION_CPU2, 0 );	/* sub CPU */
+		ROM_LOAD( "nc2.1d",          0x00000, 0x80000, 0x365cadbf );
 	
-		ROM_REGION( 0x400000,REGION_GFX1, ROMREGION_DISPOSE )	/* 4MB character generator */
-		ROM_LOAD( "cg0.10e",         0x000000, 0x200000, 0xfdd24dbe )
-		ROM_LOAD( "cg1.10e",         0x200000, 0x200000, 0x007b19de )
+		ROM_REGION( 0x400000,REGION_GFX1, ROMREGION_DISPOSE );/* 4MB character generator */
+		ROM_LOAD( "cg0.10e",         0x000000, 0x200000, 0xfdd24dbe );
+		ROM_LOAD( "cg1.10e",         0x200000, 0x200000, 0x007b19de );
 	
-		ROM_REGION( 0x200000,REGION_SOUND1, 0 ) 	/* 2MB sound data */
-	    ROM_LOAD( "nc2-voic.7c",     0x000000, 0x200000, 0xed05fd88 )
-	ROM_END
+		ROM_REGION( 0x200000,REGION_SOUND1, 0 );	/* 2MB sound data */
+	    ROM_LOAD( "nc2-voic.7c",     0x000000, 0x200000, 0xed05fd88 );
+	ROM_END(); }}; 
 	
-	ROM_START( ncv2j )
-		ROM_REGION( 0x100000,REGION_CPU1, 0 )		/* 16MB for Main CPU */
-		ROM_LOAD16_WORD( "nc2-jpn.14e", 0x00000, 0x80000, 0x99991192 )
-		ROM_LOAD16_WORD( "nc2-jpn.13e", 0x80000, 0x80000, 0xaf4ba4f6 )
+	static RomLoadPtr rom_ncv2j = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x100000,REGION_CPU1, 0 );	/* 16MB for Main CPU */
+		ROM_LOAD16_WORD( "nc2-jpn.14e", 0x00000, 0x80000, 0x99991192 );
+		ROM_LOAD16_WORD( "nc2-jpn.13e", 0x80000, 0x80000, 0xaf4ba4f6 );
 	
-		ROM_REGION( 0x80000,REGION_CPU2, 0 )		/* sub CPU */
-		ROM_LOAD( "nc2.1d",          0x00000, 0x80000, 0x365cadbf )
+		ROM_REGION( 0x80000,REGION_CPU2, 0 );	/* sub CPU */
+		ROM_LOAD( "nc2.1d",          0x00000, 0x80000, 0x365cadbf );
 	
-		ROM_REGION( 0x400000,REGION_GFX1, ROMREGION_DISPOSE )	/* 4MB character generator */
-		ROM_LOAD( "cg0.10e",         0x000000, 0x200000, 0xfdd24dbe )
-		ROM_LOAD( "cg1.10e",         0x200000, 0x200000, 0x007b19de )
+		ROM_REGION( 0x400000,REGION_GFX1, ROMREGION_DISPOSE );/* 4MB character generator */
+		ROM_LOAD( "cg0.10e",         0x000000, 0x200000, 0xfdd24dbe );
+		ROM_LOAD( "cg1.10e",         0x200000, 0x200000, 0x007b19de );
 	
-		ROM_REGION( 0x200000,REGION_SOUND1, 0 ) 	/* 2MB sound data */
-	    ROM_LOAD( "nc2-voic.7c",     0x000000, 0x200000, 0xed05fd88 )
-	ROM_END
+		ROM_REGION( 0x200000,REGION_SOUND1, 0 );	/* 2MB sound data */
+	    ROM_LOAD( "nc2-voic.7c",     0x000000, 0x200000, 0xed05fd88 );
+	ROM_END(); }}; 
 	
 	#if 0
 	

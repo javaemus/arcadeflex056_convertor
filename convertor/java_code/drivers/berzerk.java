@@ -498,35 +498,35 @@ public class berzerk
 	
 	***************************************************************************/
 	
-	ROM_START( berzerk )
-		ROM_REGION( 0x10000, REGION_CPU1, 0 )
-		ROM_LOAD( "1c-0",         0x0000, 0x0800, 0xca566dbc )
-		ROM_LOAD( "1d-1",         0x1000, 0x0800, 0x7ba69fde )
-		ROM_LOAD( "3d-2",         0x1800, 0x0800, 0xa1d5248b )
-		ROM_LOAD( "5d-3",         0x2000, 0x0800, 0xfcaefa95 )
-		ROM_LOAD( "6d-4",         0x2800, 0x0800, 0x1e35b9a0 )
-		ROM_LOAD( "5c-5",         0x3000, 0x0800, 0xc8c665e5 )
-	ROM_END
+	static RomLoadPtr rom_berzerk = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x10000, REGION_CPU1, 0 );
+		ROM_LOAD( "1c-0",         0x0000, 0x0800, 0xca566dbc );
+		ROM_LOAD( "1d-1",         0x1000, 0x0800, 0x7ba69fde );
+		ROM_LOAD( "3d-2",         0x1800, 0x0800, 0xa1d5248b );
+		ROM_LOAD( "5d-3",         0x2000, 0x0800, 0xfcaefa95 );
+		ROM_LOAD( "6d-4",         0x2800, 0x0800, 0x1e35b9a0 );
+		ROM_LOAD( "5c-5",         0x3000, 0x0800, 0xc8c665e5 );
+	ROM_END(); }}; 
 	
-	ROM_START( berzerk1 )
-		ROM_REGION( 0x10000, REGION_CPU1, 0 )
-		ROM_LOAD( "rom0.1c",      0x0000, 0x0800, 0x5b7eb77d )
-		ROM_LOAD( "rom1.1d",      0x1000, 0x0800, 0xe58c8678 )
-		ROM_LOAD( "rom2.3d",      0x1800, 0x0800, 0x705bb339 )
-		ROM_LOAD( "rom3.5d",      0x2000, 0x0800, 0x6a1936b4 )
-		ROM_LOAD( "rom4.6d",      0x2800, 0x0800, 0xfa5dce40 )
-		ROM_LOAD( "rom5.5c",      0x3000, 0x0800, 0x2579b9f4 )
-	ROM_END
+	static RomLoadPtr rom_berzerk1 = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x10000, REGION_CPU1, 0 );
+		ROM_LOAD( "rom0.1c",      0x0000, 0x0800, 0x5b7eb77d );
+		ROM_LOAD( "rom1.1d",      0x1000, 0x0800, 0xe58c8678 );
+		ROM_LOAD( "rom2.3d",      0x1800, 0x0800, 0x705bb339 );
+		ROM_LOAD( "rom3.5d",      0x2000, 0x0800, 0x6a1936b4 );
+		ROM_LOAD( "rom4.6d",      0x2800, 0x0800, 0xfa5dce40 );
+		ROM_LOAD( "rom5.5c",      0x3000, 0x0800, 0x2579b9f4 );
+	ROM_END(); }}; 
 	
-	ROM_START( frenzy )
-		ROM_REGION( 0x10000, REGION_CPU1, 0 )
-		ROM_LOAD( "1c-0",         0x0000, 0x1000, 0xabdd25b8 )
-		ROM_LOAD( "1d-1",         0x1000, 0x1000, 0x536e4ae8 )
-		ROM_LOAD( "3d-2",         0x2000, 0x1000, 0x3eb9bc9b )
-		ROM_LOAD( "5d-3",         0x3000, 0x1000, 0xe1d3133c )
-		ROM_LOAD( "6d-4",         0xc000, 0x1000, 0x5581a7b1 )
+	static RomLoadPtr rom_frenzy = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x10000, REGION_CPU1, 0 );
+		ROM_LOAD( "1c-0",         0x0000, 0x1000, 0xabdd25b8 );
+		ROM_LOAD( "1d-1",         0x1000, 0x1000, 0x536e4ae8 );
+		ROM_LOAD( "3d-2",         0x2000, 0x1000, 0x3eb9bc9b );
+		ROM_LOAD( "5d-3",         0x3000, 0x1000, 0xe1d3133c );
+		ROM_LOAD( "6d-4",         0xc000, 0x1000, 0x5581a7b1 );
 		/* 1c & 2c are the voice ROMs */
-	ROM_END
+	ROM_END(); }}; 
 	
 	
 	

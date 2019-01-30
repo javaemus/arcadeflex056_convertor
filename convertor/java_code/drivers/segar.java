@@ -1467,304 +1467,304 @@ public class segar
 	
 	
 	
-	ROM_START( astrob )
-		ROM_REGION( 0x10000, REGION_CPU1, 0 )     /* 64k for code */
-		ROM_LOAD( "829b",	  0x0000, 0x0800, 0x14ae953c ) /* U25 */
-		ROM_LOAD( "907a",     0x0800, 0x0800, 0xa9aaaf38 ) /* U1 */
-		ROM_LOAD( "908a",     0x1000, 0x0800, 0x897f2b87 ) /* U2 */
-		ROM_LOAD( "909a",     0x1800, 0x0800, 0x55a339e6 ) /* U3 */
-		ROM_LOAD( "910a",     0x2000, 0x0800, 0x7972b60a ) /* U4 */
-		ROM_LOAD( "911a",     0x2800, 0x0800, 0xaf87520f ) /* U5 */
-		ROM_LOAD( "912a",     0x3000, 0x0800, 0xb656f929 ) /* U6 */
-		ROM_LOAD( "913a",     0x3800, 0x0800, 0x321074b3 ) /* U7 */
-		ROM_LOAD( "914a",     0x4000, 0x0800, 0x90d2493e ) /* U8 */
-		ROM_LOAD( "915a",     0x4800, 0x0800, 0xaaf828d1 ) /* U9 */
-		ROM_LOAD( "916a",     0x5000, 0x0800, 0x56d92ab9 ) /* U10 */
-		ROM_LOAD( "917a",     0x5800, 0x0800, 0x9dcdaf2d ) /* U11 */
-		ROM_LOAD( "918a",     0x6000, 0x0800, 0xc9d09655 ) /* U12 */
-		ROM_LOAD( "919a",     0x6800, 0x0800, 0x448bd318 ) /* U13 */
-		ROM_LOAD( "920a",     0x7000, 0x0800, 0x3524a383 ) /* U14 */
-		ROM_LOAD( "921a",     0x7800, 0x0800, 0x98c14834 ) /* U15 */
-		ROM_LOAD( "922a",     0x8000, 0x0800, 0x4311513c ) /* U16 */
-		ROM_LOAD( "923a",     0x8800, 0x0800, 0x50f0462c ) /* U17 */
-		ROM_LOAD( "924a",     0x9000, 0x0800, 0x120a39c7 ) /* U18 */
-		ROM_LOAD( "925a",     0x9800, 0x0800, 0x790a7f4e ) /* U19 */
+	static RomLoadPtr rom_astrob = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x10000, REGION_CPU1, 0 );    /* 64k for code */
+		ROM_LOAD( "829b",	  0x0000, 0x0800, 0x14ae953c );/* U25 */
+		ROM_LOAD( "907a",     0x0800, 0x0800, 0xa9aaaf38 );/* U1 */
+		ROM_LOAD( "908a",     0x1000, 0x0800, 0x897f2b87 );/* U2 */
+		ROM_LOAD( "909a",     0x1800, 0x0800, 0x55a339e6 );/* U3 */
+		ROM_LOAD( "910a",     0x2000, 0x0800, 0x7972b60a );/* U4 */
+		ROM_LOAD( "911a",     0x2800, 0x0800, 0xaf87520f );/* U5 */
+		ROM_LOAD( "912a",     0x3000, 0x0800, 0xb656f929 );/* U6 */
+		ROM_LOAD( "913a",     0x3800, 0x0800, 0x321074b3 );/* U7 */
+		ROM_LOAD( "914a",     0x4000, 0x0800, 0x90d2493e );/* U8 */
+		ROM_LOAD( "915a",     0x4800, 0x0800, 0xaaf828d1 );/* U9 */
+		ROM_LOAD( "916a",     0x5000, 0x0800, 0x56d92ab9 );/* U10 */
+		ROM_LOAD( "917a",     0x5800, 0x0800, 0x9dcdaf2d );/* U11 */
+		ROM_LOAD( "918a",     0x6000, 0x0800, 0xc9d09655 );/* U12 */
+		ROM_LOAD( "919a",     0x6800, 0x0800, 0x448bd318 );/* U13 */
+		ROM_LOAD( "920a",     0x7000, 0x0800, 0x3524a383 );/* U14 */
+		ROM_LOAD( "921a",     0x7800, 0x0800, 0x98c14834 );/* U15 */
+		ROM_LOAD( "922a",     0x8000, 0x0800, 0x4311513c );/* U16 */
+		ROM_LOAD( "923a",     0x8800, 0x0800, 0x50f0462c );/* U17 */
+		ROM_LOAD( "924a",     0x9000, 0x0800, 0x120a39c7 );/* U18 */
+		ROM_LOAD( "925a",     0x9800, 0x0800, 0x790a7f4e );/* U19 */
 	
-		ROM_REGION( 0x10000, REGION_CPU2, 0 )     /* 64k for speech code */
-		ROM_LOAD( "808b",     0x0000, 0x0800, 0x5988c767 ) /* U7 */
-		ROM_LOAD( "809a",     0x0800, 0x0800, 0x893f228d ) /* U6 */
-		ROM_LOAD( "810",      0x1000, 0x0800, 0xff0163c5 ) /* U5 */
-		ROM_LOAD( "811",      0x1800, 0x0800, 0x219f3978 ) /* U4 */
-		ROM_LOAD( "812a",     0x2000, 0x0800, 0x410ad0d2 ) /* U3 */
-	ROM_END
+		ROM_REGION( 0x10000, REGION_CPU2, 0 );    /* 64k for speech code */
+		ROM_LOAD( "808b",     0x0000, 0x0800, 0x5988c767 );/* U7 */
+		ROM_LOAD( "809a",     0x0800, 0x0800, 0x893f228d );/* U6 */
+		ROM_LOAD( "810",      0x1000, 0x0800, 0xff0163c5 );/* U5 */
+		ROM_LOAD( "811",      0x1800, 0x0800, 0x219f3978 );/* U4 */
+		ROM_LOAD( "812a",     0x2000, 0x0800, 0x410ad0d2 );/* U3 */
+	ROM_END(); }}; 
 	
-	ROM_START( astrob2 )
-		ROM_REGION( 0x10000, REGION_CPU1, 0 )     /* 64k for code */
-		ROM_LOAD( "829b",     0x0000, 0x0800, 0x14ae953c ) /* U25 */
-		ROM_LOAD( "888",      0x0800, 0x0800, 0x42601744 ) /* U1 */
-		ROM_LOAD( "889",      0x1000, 0x0800, 0xdd9ab173 ) /* U2 */
-		ROM_LOAD( "890",      0x1800, 0x0800, 0x26f5b4cf ) /* U3 */
-		ROM_LOAD( "891",      0x2000, 0x0800, 0x6437c95f ) /* U4 */
-		ROM_LOAD( "892",      0x2800, 0x0800, 0x2d3c949b ) /* U5 */
-		ROM_LOAD( "893",      0x3000, 0x0800, 0xccdb1a76 ) /* U6 */
-		ROM_LOAD( "894",      0x3800, 0x0800, 0x66ae5ced ) /* U7 */
-		ROM_LOAD( "895",      0x4000, 0x0800, 0x202cf3a3 ) /* U8 */
-		ROM_LOAD( "896",      0x4800, 0x0800, 0xb603fe23 ) /* U9 */
-		ROM_LOAD( "897",      0x5000, 0x0800, 0x989198c6 ) /* U10 */
-		ROM_LOAD( "898",      0x5800, 0x0800, 0xef2bab04 ) /* U11 */
-		ROM_LOAD( "899",      0x6000, 0x0800, 0xe0d189ee ) /* U12 */
-		ROM_LOAD( "900",      0x6800, 0x0800, 0x682d4604 ) /* U13 */
-		ROM_LOAD( "901",      0x7000, 0x0800, 0x9ed11c61 ) /* U14 */
-		ROM_LOAD( "902",      0x7800, 0x0800, 0xb4d6c330 ) /* U15 */
-		ROM_LOAD( "903",      0x8000, 0x0800, 0x84acc38c ) /* U16 */
-		ROM_LOAD( "904",      0x8800, 0x0800, 0x5eba3097 ) /* U17 */
-		ROM_LOAD( "905",      0x9000, 0x0800, 0x4f08f9f4 ) /* U18 */
-		ROM_LOAD( "906",      0x9800, 0x0800, 0x58149df1 ) /* U19 */
+	static RomLoadPtr rom_astrob2 = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x10000, REGION_CPU1, 0 );    /* 64k for code */
+		ROM_LOAD( "829b",     0x0000, 0x0800, 0x14ae953c );/* U25 */
+		ROM_LOAD( "888",      0x0800, 0x0800, 0x42601744 );/* U1 */
+		ROM_LOAD( "889",      0x1000, 0x0800, 0xdd9ab173 );/* U2 */
+		ROM_LOAD( "890",      0x1800, 0x0800, 0x26f5b4cf );/* U3 */
+		ROM_LOAD( "891",      0x2000, 0x0800, 0x6437c95f );/* U4 */
+		ROM_LOAD( "892",      0x2800, 0x0800, 0x2d3c949b );/* U5 */
+		ROM_LOAD( "893",      0x3000, 0x0800, 0xccdb1a76 );/* U6 */
+		ROM_LOAD( "894",      0x3800, 0x0800, 0x66ae5ced );/* U7 */
+		ROM_LOAD( "895",      0x4000, 0x0800, 0x202cf3a3 );/* U8 */
+		ROM_LOAD( "896",      0x4800, 0x0800, 0xb603fe23 );/* U9 */
+		ROM_LOAD( "897",      0x5000, 0x0800, 0x989198c6 );/* U10 */
+		ROM_LOAD( "898",      0x5800, 0x0800, 0xef2bab04 );/* U11 */
+		ROM_LOAD( "899",      0x6000, 0x0800, 0xe0d189ee );/* U12 */
+		ROM_LOAD( "900",      0x6800, 0x0800, 0x682d4604 );/* U13 */
+		ROM_LOAD( "901",      0x7000, 0x0800, 0x9ed11c61 );/* U14 */
+		ROM_LOAD( "902",      0x7800, 0x0800, 0xb4d6c330 );/* U15 */
+		ROM_LOAD( "903",      0x8000, 0x0800, 0x84acc38c );/* U16 */
+		ROM_LOAD( "904",      0x8800, 0x0800, 0x5eba3097 );/* U17 */
+		ROM_LOAD( "905",      0x9000, 0x0800, 0x4f08f9f4 );/* U18 */
+		ROM_LOAD( "906",      0x9800, 0x0800, 0x58149df1 );/* U19 */
 	
-		ROM_REGION( 0x10000, REGION_CPU2, 0 )     /* 64k for speech code */
-		ROM_LOAD( "808b",     0x0000, 0x0800, 0x5988c767 ) /* U7 */
-		ROM_LOAD( "809a",     0x0800, 0x0800, 0x893f228d ) /* U6 */
-		ROM_LOAD( "810",      0x1000, 0x0800, 0xff0163c5 ) /* U5 */
-		ROM_LOAD( "811",      0x1800, 0x0800, 0x219f3978 ) /* U4 */
-		ROM_LOAD( "812a",     0x2000, 0x0800, 0x410ad0d2 ) /* U3 */
-	ROM_END
+		ROM_REGION( 0x10000, REGION_CPU2, 0 );    /* 64k for speech code */
+		ROM_LOAD( "808b",     0x0000, 0x0800, 0x5988c767 );/* U7 */
+		ROM_LOAD( "809a",     0x0800, 0x0800, 0x893f228d );/* U6 */
+		ROM_LOAD( "810",      0x1000, 0x0800, 0xff0163c5 );/* U5 */
+		ROM_LOAD( "811",      0x1800, 0x0800, 0x219f3978 );/* U4 */
+		ROM_LOAD( "812a",     0x2000, 0x0800, 0x410ad0d2 );/* U3 */
+	ROM_END(); }}; 
 	
-	ROM_START( astrob1 )
-		ROM_REGION( 0x10000, REGION_CPU1, 0 )     /* 64k for code */
-		ROM_LOAD( "829",      0x0000, 0x0800, 0x5f66046e ) /* U25 */
-		ROM_LOAD( "837",      0x0800, 0x0800, 0xce9c3763 ) /* U1 */
-		ROM_LOAD( "838",      0x1000, 0x0800, 0x3557289e ) /* U2 */
-		ROM_LOAD( "839",      0x1800, 0x0800, 0xc88bda24 ) /* U3 */
-		ROM_LOAD( "840",      0x2000, 0x0800, 0x24c9fe23 ) /* U4 */
-		ROM_LOAD( "841",      0x2800, 0x0800, 0xf153c683 ) /* U5 */
-		ROM_LOAD( "842",      0x3000, 0x0800, 0x4c5452b2 ) /* U6 */
-		ROM_LOAD( "843",      0x3800, 0x0800, 0x673161a6 ) /* U7 */
-		ROM_LOAD( "844",      0x4000, 0x0800, 0x6bfc59fd ) /* U8 */
-		ROM_LOAD( "845",      0x4800, 0x0800, 0x018623f3 ) /* U9 */
-		ROM_LOAD( "846",      0x5000, 0x0800, 0x4d7c5fb3 ) /* U10 */
-		ROM_LOAD( "847",      0x5800, 0x0800, 0x24d1d50a ) /* U11 */
-		ROM_LOAD( "848",      0x6000, 0x0800, 0x1c145541 ) /* U12 */
-		ROM_LOAD( "849",      0x6800, 0x0800, 0xd378c169 ) /* U13 */
-		ROM_LOAD( "850",      0x7000, 0x0800, 0x9da673ae ) /* U14 */
-		ROM_LOAD( "851",      0x7800, 0x0800, 0x3d4cf9f0 ) /* U15 */
-		ROM_LOAD( "852",      0x8000, 0x0800, 0xaf88a97e ) /* U16 */
+	static RomLoadPtr rom_astrob1 = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x10000, REGION_CPU1, 0 );    /* 64k for code */
+		ROM_LOAD( "829",      0x0000, 0x0800, 0x5f66046e );/* U25 */
+		ROM_LOAD( "837",      0x0800, 0x0800, 0xce9c3763 );/* U1 */
+		ROM_LOAD( "838",      0x1000, 0x0800, 0x3557289e );/* U2 */
+		ROM_LOAD( "839",      0x1800, 0x0800, 0xc88bda24 );/* U3 */
+		ROM_LOAD( "840",      0x2000, 0x0800, 0x24c9fe23 );/* U4 */
+		ROM_LOAD( "841",      0x2800, 0x0800, 0xf153c683 );/* U5 */
+		ROM_LOAD( "842",      0x3000, 0x0800, 0x4c5452b2 );/* U6 */
+		ROM_LOAD( "843",      0x3800, 0x0800, 0x673161a6 );/* U7 */
+		ROM_LOAD( "844",      0x4000, 0x0800, 0x6bfc59fd );/* U8 */
+		ROM_LOAD( "845",      0x4800, 0x0800, 0x018623f3 );/* U9 */
+		ROM_LOAD( "846",      0x5000, 0x0800, 0x4d7c5fb3 );/* U10 */
+		ROM_LOAD( "847",      0x5800, 0x0800, 0x24d1d50a );/* U11 */
+		ROM_LOAD( "848",      0x6000, 0x0800, 0x1c145541 );/* U12 */
+		ROM_LOAD( "849",      0x6800, 0x0800, 0xd378c169 );/* U13 */
+		ROM_LOAD( "850",      0x7000, 0x0800, 0x9da673ae );/* U14 */
+		ROM_LOAD( "851",      0x7800, 0x0800, 0x3d4cf9f0 );/* U15 */
+		ROM_LOAD( "852",      0x8000, 0x0800, 0xaf88a97e );/* U16 */
 	
-		ROM_REGION( 0x10000, REGION_CPU2, 0 )     /* 64k for speech code */
-		ROM_LOAD( "808b",     0x0000, 0x0800, 0x5988c767 ) /* U7 */
-		ROM_LOAD( "809a",     0x0800, 0x0800, 0x893f228d ) /* U6 */
-		ROM_LOAD( "810",      0x1000, 0x0800, 0xff0163c5 ) /* U5 */
-		ROM_LOAD( "811",      0x1800, 0x0800, 0x219f3978 ) /* U4 */
-		ROM_LOAD( "812a",     0x2000, 0x0800, 0x410ad0d2 ) /* U3 */
-	ROM_END
+		ROM_REGION( 0x10000, REGION_CPU2, 0 );    /* 64k for speech code */
+		ROM_LOAD( "808b",     0x0000, 0x0800, 0x5988c767 );/* U7 */
+		ROM_LOAD( "809a",     0x0800, 0x0800, 0x893f228d );/* U6 */
+		ROM_LOAD( "810",      0x1000, 0x0800, 0xff0163c5 );/* U5 */
+		ROM_LOAD( "811",      0x1800, 0x0800, 0x219f3978 );/* U4 */
+		ROM_LOAD( "812a",     0x2000, 0x0800, 0x410ad0d2 );/* U3 */
+	ROM_END(); }}; 
 	
-	ROM_START( 005 )
-		ROM_REGION( 0x10000, REGION_CPU1, 0 )     /* 64k for code */
-		ROM_LOAD( "1346b.u25",    0x0000, 0x0800, 0x8e68533e ) /* U25 */
-		ROM_LOAD( "5092.u1",      0x0800, 0x0800, 0x29e10a81 ) /* U1 */
-		ROM_LOAD( "5093.u2",      0x1000, 0x0800, 0xe1edc3df ) /* U2 */
-		ROM_LOAD( "5094.u3",      0x1800, 0x0800, 0x995773bb ) /* U3 */
-		ROM_LOAD( "5095.u4",      0x2000, 0x0800, 0xf887f575 ) /* U4 */
-		ROM_LOAD( "5096.u5",      0x2800, 0x0800, 0x5545241e ) /* U5 */
-		ROM_LOAD( "5097.u6",      0x3000, 0x0800, 0x428edb54 ) /* U6 */
-		ROM_LOAD( "5098.u7",      0x3800, 0x0800, 0x5bcb9d63 ) /* U7 */
-		ROM_LOAD( "5099.u8",      0x4000, 0x0800, 0x0ea24ba3 ) /* U8 */
-		ROM_LOAD( "5100.u9",      0x4800, 0x0800, 0xa79af131 ) /* U9 */
-		ROM_LOAD( "5101.u10",     0x5000, 0x0800, 0x8a1cdae0 ) /* U10 */
-		ROM_LOAD( "5102.u11",     0x5800, 0x0800, 0x70826a15 ) /* U11 */
-		ROM_LOAD( "5103.u12",     0x6000, 0x0800, 0x7f80c5b0 ) /* U12 */
-		ROM_LOAD( "5104.u13",     0x6800, 0x0800, 0x0140930e ) /* U13 */
-		ROM_LOAD( "5105.u14",     0x7000, 0x0800, 0x17807a05 ) /* U14 */
-		ROM_LOAD( "5106.u15",     0x7800, 0x0800, 0xc7cdfa9d ) /* U15 */
-		ROM_LOAD( "5107.u16",     0x8000, 0x0800, 0x95f8a2e6 ) /* U16 */
-		ROM_LOAD( "5108.u17",     0x8800, 0x0800, 0xd371cacd ) /* U17 */
-		ROM_LOAD( "5109.u18",     0x9000, 0x0800, 0x48a20617 ) /* U18 */
-		ROM_LOAD( "5110.u19",     0x9800, 0x0800, 0x7d26111a ) /* U19 */
-		ROM_LOAD( "5111.u20",     0xa000, 0x0800, 0xa888e175 ) /* U20 */
+	static RomLoadPtr rom_005 = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x10000, REGION_CPU1, 0 );    /* 64k for code */
+		ROM_LOAD( "1346b.u25",    0x0000, 0x0800, 0x8e68533e );/* U25 */
+		ROM_LOAD( "5092.u1",      0x0800, 0x0800, 0x29e10a81 );/* U1 */
+		ROM_LOAD( "5093.u2",      0x1000, 0x0800, 0xe1edc3df );/* U2 */
+		ROM_LOAD( "5094.u3",      0x1800, 0x0800, 0x995773bb );/* U3 */
+		ROM_LOAD( "5095.u4",      0x2000, 0x0800, 0xf887f575 );/* U4 */
+		ROM_LOAD( "5096.u5",      0x2800, 0x0800, 0x5545241e );/* U5 */
+		ROM_LOAD( "5097.u6",      0x3000, 0x0800, 0x428edb54 );/* U6 */
+		ROM_LOAD( "5098.u7",      0x3800, 0x0800, 0x5bcb9d63 );/* U7 */
+		ROM_LOAD( "5099.u8",      0x4000, 0x0800, 0x0ea24ba3 );/* U8 */
+		ROM_LOAD( "5100.u9",      0x4800, 0x0800, 0xa79af131 );/* U9 */
+		ROM_LOAD( "5101.u10",     0x5000, 0x0800, 0x8a1cdae0 );/* U10 */
+		ROM_LOAD( "5102.u11",     0x5800, 0x0800, 0x70826a15 );/* U11 */
+		ROM_LOAD( "5103.u12",     0x6000, 0x0800, 0x7f80c5b0 );/* U12 */
+		ROM_LOAD( "5104.u13",     0x6800, 0x0800, 0x0140930e );/* U13 */
+		ROM_LOAD( "5105.u14",     0x7000, 0x0800, 0x17807a05 );/* U14 */
+		ROM_LOAD( "5106.u15",     0x7800, 0x0800, 0xc7cdfa9d );/* U15 */
+		ROM_LOAD( "5107.u16",     0x8000, 0x0800, 0x95f8a2e6 );/* U16 */
+		ROM_LOAD( "5108.u17",     0x8800, 0x0800, 0xd371cacd );/* U17 */
+		ROM_LOAD( "5109.u18",     0x9000, 0x0800, 0x48a20617 );/* U18 */
+		ROM_LOAD( "5110.u19",     0x9800, 0x0800, 0x7d26111a );/* U19 */
+		ROM_LOAD( "5111.u20",     0xa000, 0x0800, 0xa888e175 );/* U20 */
 	
-		ROM_REGION( 0x0800, REGION_SOUND1, 0 )      /* 2k for sound */
-		ROM_LOAD( "epr-1286.16",  0x0000, 0x0800, 0xfbe0d501 )
-	ROM_END
+		ROM_REGION( 0x0800, REGION_SOUND1, 0 );     /* 2k for sound */
+		ROM_LOAD( "epr-1286.16",  0x0000, 0x0800, 0xfbe0d501 );
+	ROM_END(); }}; 
 	
-	ROM_START( monsterb )
-		ROM_REGION( 0x14000, REGION_CPU1, 0 )     /* 64k for code + space for background */
-		ROM_LOAD( "1778cpu.bin",  0x0000, 0x0800, 0x19761be3 ) /* U25 */
-		ROM_LOAD( "1779.bin",     0x0800, 0x0800, 0x5b67dc4c ) /* U1 */
-		ROM_LOAD( "1780.bin",     0x1000, 0x0800, 0xfac5aac6 ) /* U2 */
-		ROM_LOAD( "1781.bin",     0x1800, 0x0800, 0x3b104103 ) /* U3 */
-		ROM_LOAD( "1782.bin",     0x2000, 0x0800, 0xc1523553 ) /* U4 */
-		ROM_LOAD( "1783.bin",     0x2800, 0x0800, 0xe0ea08c5 ) /* U5 */
-		ROM_LOAD( "1784.bin",     0x3000, 0x0800, 0x48976d11 ) /* U6 */
-		ROM_LOAD( "1785.bin",     0x3800, 0x0800, 0x297d33ae ) /* U7 */
-		ROM_LOAD( "1786.bin",     0x4000, 0x0800, 0xef94c8f4 ) /* U8 */
-		ROM_LOAD( "1787.bin",     0x4800, 0x0800, 0x1b62994e ) /* U9 */
-		ROM_LOAD( "1788.bin",     0x5000, 0x0800, 0xa2e32d91 ) /* U10 */
-		ROM_LOAD( "1789.bin",     0x5800, 0x0800, 0x08a172dc ) /* U11 */
-		ROM_LOAD( "1790.bin",     0x6000, 0x0800, 0x4e320f9d ) /* U12 */
-		ROM_LOAD( "1791.bin",     0x6800, 0x0800, 0x3b4cba31 ) /* U13 */
-		ROM_LOAD( "1792.bin",     0x7000, 0x0800, 0x7707b9f8 ) /* U14 */
-		ROM_LOAD( "1793.bin",     0x7800, 0x0800, 0xa5d05155 ) /* U15 */
-		ROM_LOAD( "1794.bin",     0x8000, 0x0800, 0xe4813da9 ) /* U16 */
-		ROM_LOAD( "1795.bin",     0x8800, 0x0800, 0x4cd6ed88 ) /* U17 */
-		ROM_LOAD( "1796.bin",     0x9000, 0x0800, 0x9f141a42 ) /* U18 */
-		ROM_LOAD( "1797.bin",     0x9800, 0x0800, 0xec14ad16 ) /* U19 */
-		ROM_LOAD( "1798.bin",     0xa000, 0x0800, 0x86743a4f ) /* U20 */
-		ROM_LOAD( "1799.bin",     0xa800, 0x0800, 0x41198a83 ) /* U21 */
-		ROM_LOAD( "1800.bin",     0xb000, 0x0800, 0x6a062a04 ) /* U22 */
-		ROM_LOAD( "1801.bin",     0xb800, 0x0800, 0xf38488fe ) /* U23 */
+	static RomLoadPtr rom_monsterb = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x14000, REGION_CPU1, 0 );    /* 64k for code + space for background */
+		ROM_LOAD( "1778cpu.bin",  0x0000, 0x0800, 0x19761be3 );/* U25 */
+		ROM_LOAD( "1779.bin",     0x0800, 0x0800, 0x5b67dc4c );/* U1 */
+		ROM_LOAD( "1780.bin",     0x1000, 0x0800, 0xfac5aac6 );/* U2 */
+		ROM_LOAD( "1781.bin",     0x1800, 0x0800, 0x3b104103 );/* U3 */
+		ROM_LOAD( "1782.bin",     0x2000, 0x0800, 0xc1523553 );/* U4 */
+		ROM_LOAD( "1783.bin",     0x2800, 0x0800, 0xe0ea08c5 );/* U5 */
+		ROM_LOAD( "1784.bin",     0x3000, 0x0800, 0x48976d11 );/* U6 */
+		ROM_LOAD( "1785.bin",     0x3800, 0x0800, 0x297d33ae );/* U7 */
+		ROM_LOAD( "1786.bin",     0x4000, 0x0800, 0xef94c8f4 );/* U8 */
+		ROM_LOAD( "1787.bin",     0x4800, 0x0800, 0x1b62994e );/* U9 */
+		ROM_LOAD( "1788.bin",     0x5000, 0x0800, 0xa2e32d91 );/* U10 */
+		ROM_LOAD( "1789.bin",     0x5800, 0x0800, 0x08a172dc );/* U11 */
+		ROM_LOAD( "1790.bin",     0x6000, 0x0800, 0x4e320f9d );/* U12 */
+		ROM_LOAD( "1791.bin",     0x6800, 0x0800, 0x3b4cba31 );/* U13 */
+		ROM_LOAD( "1792.bin",     0x7000, 0x0800, 0x7707b9f8 );/* U14 */
+		ROM_LOAD( "1793.bin",     0x7800, 0x0800, 0xa5d05155 );/* U15 */
+		ROM_LOAD( "1794.bin",     0x8000, 0x0800, 0xe4813da9 );/* U16 */
+		ROM_LOAD( "1795.bin",     0x8800, 0x0800, 0x4cd6ed88 );/* U17 */
+		ROM_LOAD( "1796.bin",     0x9000, 0x0800, 0x9f141a42 );/* U18 */
+		ROM_LOAD( "1797.bin",     0x9800, 0x0800, 0xec14ad16 );/* U19 */
+		ROM_LOAD( "1798.bin",     0xa000, 0x0800, 0x86743a4f );/* U20 */
+		ROM_LOAD( "1799.bin",     0xa800, 0x0800, 0x41198a83 );/* U21 */
+		ROM_LOAD( "1800.bin",     0xb000, 0x0800, 0x6a062a04 );/* U22 */
+		ROM_LOAD( "1801.bin",     0xb800, 0x0800, 0xf38488fe );/* U23 */
 	
-		ROM_REGION( 0x1000, REGION_CPU2, 0 )      /* 4k for 7751 onboard ROM */
-		ROM_LOAD( "7751.bin",     0x0000, 0x0400, 0x6a9534fc ) /* 7751 - U34 */
+		ROM_REGION( 0x1000, REGION_CPU2, 0 );     /* 4k for 7751 onboard ROM */
+		ROM_LOAD( "7751.bin",     0x0000, 0x0400, 0x6a9534fc );/* 7751 - U34 */
 	
-		ROM_REGION( 0x4000, REGION_GFX1, ROMREGION_DISPOSE ) /* background graphics */
-		ROM_LOAD( "1516.bin",     0x0000, 0x2000, 0xe93a2281 ) /* ??? */
-		ROM_LOAD( "1517.bin",     0x2000, 0x2000, 0x1e589101 ) /* ??? */
+		ROM_REGION( 0x4000, REGION_GFX1, ROMREGION_DISPOSE );/* background graphics */
+		ROM_LOAD( "1516.bin",     0x0000, 0x2000, 0xe93a2281 );/* ??? */
+		ROM_LOAD( "1517.bin",     0x2000, 0x2000, 0x1e589101 );/* ??? */
 	
-		ROM_REGION( 0x2000, REGION_SOUND1, 0 )      /* 8k for sound */
-		ROM_LOAD( "1543snd.bin",  0x0000, 0x1000, 0xb525ce8f ) /* U19 */
-		ROM_LOAD( "1544snd.bin",  0x1000, 0x1000, 0x56c79fb0 ) /* U23 */
+		ROM_REGION( 0x2000, REGION_SOUND1, 0 );     /* 8k for sound */
+		ROM_LOAD( "1543snd.bin",  0x0000, 0x1000, 0xb525ce8f );/* U19 */
+		ROM_LOAD( "1544snd.bin",  0x1000, 0x1000, 0x56c79fb0 );/* U23 */
 	
-		ROM_REGION( 0x0020, REGION_SOUND2, 0 )      /* 32 bytes for sound PROM */
-		ROM_LOAD( "pr1512.u31",   0x0000, 0x0020, 0x414ebe9b )  /* U31 */
+		ROM_REGION( 0x0020, REGION_SOUND2, 0 );     /* 32 bytes for sound PROM */
+		ROM_LOAD( "pr1512.u31",   0x0000, 0x0020, 0x414ebe9b ); /* U31 */
 	
-		ROM_REGION( 0x2000, REGION_USER1, 0 )		      /* background charmaps */
-		ROM_LOAD( "1518a.bin",    0x0000, 0x2000, 0x2d5932fe ) /* ??? */
-	ROM_END
+		ROM_REGION( 0x2000, REGION_USER1, 0 );	      /* background charmaps */
+		ROM_LOAD( "1518a.bin",    0x0000, 0x2000, 0x2d5932fe );/* ??? */
+	ROM_END(); }}; 
 	
-	ROM_START( spaceod )
-		ROM_REGION( 0x10000, REGION_CPU1, 0 )     /* 64k for code */
-		ROM_LOAD( "so-959.dat",   0x0000, 0x0800, 0xbbae3cd1 ) /* U25 */
-		ROM_LOAD( "so-941.dat",   0x0800, 0x0800, 0x8b63585a ) /* U1 */
-		ROM_LOAD( "so-942.dat",   0x1000, 0x0800, 0x93e7d900 ) /* U2 */
-		ROM_LOAD( "so-943.dat",   0x1800, 0x0800, 0xe2f5dc10 ) /* U3 */
-		ROM_LOAD( "so-944.dat",   0x2000, 0x0800, 0xb5ab01e9 ) /* U4 */
-		ROM_LOAD( "so-945.dat",   0x2800, 0x0800, 0x6c5fa1b1 ) /* U5 */
-		ROM_LOAD( "so-946.dat",   0x3000, 0x0800, 0x4cef25d6 ) /* U6 */
-		ROM_LOAD( "so-947.dat",   0x3800, 0x0800, 0x7220fc42 ) /* U7 */
-		ROM_LOAD( "so-948.dat",   0x4000, 0x0800, 0x94bcd726 ) /* U8 */
-		ROM_LOAD( "so-949.dat",   0x4800, 0x0800, 0xe11e7034 ) /* U9 */
-		ROM_LOAD( "so-950.dat",   0x5000, 0x0800, 0x70a7a3b4 ) /* U10 */
-		ROM_LOAD( "so-951.dat",   0x5800, 0x0800, 0xf5f0d3f9 ) /* U11 */
-		ROM_LOAD( "so-952.dat",   0x6000, 0x0800, 0x5bf19a12 ) /* U12 */
-		ROM_LOAD( "so-953.dat",   0x6800, 0x0800, 0x8066ac83 ) /* U13 */
-		ROM_LOAD( "so-954.dat",   0x7000, 0x0800, 0x44ed6a0d ) /* U14 */
-		ROM_LOAD( "so-955.dat",   0x7800, 0x0800, 0xb5e2748d ) /* U15 */
-		ROM_LOAD( "so-956.dat",   0x8000, 0x0800, 0x97de45a9 ) /* U16 */
-		ROM_LOAD( "so-957.dat",   0x8800, 0x0800, 0xc14b98c4 ) /* U17 */
-		ROM_LOAD( "so-958.dat",   0x9000, 0x0800, 0x4c0a7242 ) /* U18 */
+	static RomLoadPtr rom_spaceod = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x10000, REGION_CPU1, 0 );    /* 64k for code */
+		ROM_LOAD( "so-959.dat",   0x0000, 0x0800, 0xbbae3cd1 );/* U25 */
+		ROM_LOAD( "so-941.dat",   0x0800, 0x0800, 0x8b63585a );/* U1 */
+		ROM_LOAD( "so-942.dat",   0x1000, 0x0800, 0x93e7d900 );/* U2 */
+		ROM_LOAD( "so-943.dat",   0x1800, 0x0800, 0xe2f5dc10 );/* U3 */
+		ROM_LOAD( "so-944.dat",   0x2000, 0x0800, 0xb5ab01e9 );/* U4 */
+		ROM_LOAD( "so-945.dat",   0x2800, 0x0800, 0x6c5fa1b1 );/* U5 */
+		ROM_LOAD( "so-946.dat",   0x3000, 0x0800, 0x4cef25d6 );/* U6 */
+		ROM_LOAD( "so-947.dat",   0x3800, 0x0800, 0x7220fc42 );/* U7 */
+		ROM_LOAD( "so-948.dat",   0x4000, 0x0800, 0x94bcd726 );/* U8 */
+		ROM_LOAD( "so-949.dat",   0x4800, 0x0800, 0xe11e7034 );/* U9 */
+		ROM_LOAD( "so-950.dat",   0x5000, 0x0800, 0x70a7a3b4 );/* U10 */
+		ROM_LOAD( "so-951.dat",   0x5800, 0x0800, 0xf5f0d3f9 );/* U11 */
+		ROM_LOAD( "so-952.dat",   0x6000, 0x0800, 0x5bf19a12 );/* U12 */
+		ROM_LOAD( "so-953.dat",   0x6800, 0x0800, 0x8066ac83 );/* U13 */
+		ROM_LOAD( "so-954.dat",   0x7000, 0x0800, 0x44ed6a0d );/* U14 */
+		ROM_LOAD( "so-955.dat",   0x7800, 0x0800, 0xb5e2748d );/* U15 */
+		ROM_LOAD( "so-956.dat",   0x8000, 0x0800, 0x97de45a9 );/* U16 */
+		ROM_LOAD( "so-957.dat",   0x8800, 0x0800, 0xc14b98c4 );/* U17 */
+		ROM_LOAD( "so-958.dat",   0x9000, 0x0800, 0x4c0a7242 );/* U18 */
 	
-		ROM_REGION( 0x6000, REGION_GFX1, ROMREGION_DISPOSE ) /* background graphics */
-		ROM_LOAD( "epr-13.dat",   0x0000, 0x1000, 0x74bd7f9a )
-		ROM_LOAD( "epr-14.dat",   0x1000, 0x1000, 0xd2ebd915 )
-		ROM_LOAD( "epr-15.dat",   0x2000, 0x1000, 0xae0e5d71 )
-		ROM_LOAD( "epr-16.dat",   0x3000, 0x1000, 0xacdf203e )
-		ROM_LOAD( "epr-17.dat",   0x4000, 0x1000, 0x6c7490c0 )
-		ROM_LOAD( "epr-18.dat",   0x5000, 0x1000, 0x24a81c04 )
+		ROM_REGION( 0x6000, REGION_GFX1, ROMREGION_DISPOSE );/* background graphics */
+		ROM_LOAD( "epr-13.dat",   0x0000, 0x1000, 0x74bd7f9a );
+		ROM_LOAD( "epr-14.dat",   0x1000, 0x1000, 0xd2ebd915 );
+		ROM_LOAD( "epr-15.dat",   0x2000, 0x1000, 0xae0e5d71 );
+		ROM_LOAD( "epr-16.dat",   0x3000, 0x1000, 0xacdf203e );
+		ROM_LOAD( "epr-17.dat",   0x4000, 0x1000, 0x6c7490c0 );
+		ROM_LOAD( "epr-18.dat",   0x5000, 0x1000, 0x24a81c04 );
 	
-		ROM_REGION( 0x4000, REGION_USER1, 0 )		      /* background charmaps */
-		ROM_LOAD( "epr-09.dat",  0x0000, 0x1000, 0xa87bfc0a )
-		ROM_LOAD( "epr-10.dat",  0x1000, 0x1000, 0x8ce88100 )
-		ROM_LOAD( "epr-11.dat",  0x2000, 0x1000, 0x1bdbdab5 )
-		ROM_LOAD( "epr-12.dat",  0x3000, 0x1000, 0x629a4a1f )
-	ROM_END
+		ROM_REGION( 0x4000, REGION_USER1, 0 );	      /* background charmaps */
+		ROM_LOAD( "epr-09.dat",  0x0000, 0x1000, 0xa87bfc0a );
+		ROM_LOAD( "epr-10.dat",  0x1000, 0x1000, 0x8ce88100 );
+		ROM_LOAD( "epr-11.dat",  0x2000, 0x1000, 0x1bdbdab5 );
+		ROM_LOAD( "epr-12.dat",  0x3000, 0x1000, 0x629a4a1f );
+	ROM_END(); }}; 
 	
-	ROM_START( pignewt )
-		ROM_REGION( 0x10000, REGION_CPU1, 0 )     /* 64k for code */
-		ROM_LOAD( "cpu.u25",    0x0000, 0x0800, 0x00000000 ) /* U25 */
-		ROM_LOAD( "1888c",      0x0800, 0x0800, 0xfd18ed09 ) /* U1 */
-		ROM_LOAD( "1889c",      0x1000, 0x0800, 0xf633f5ff ) /* U2 */
-		ROM_LOAD( "1890c",      0x1800, 0x0800, 0x22009d7f ) /* U3 */
-		ROM_LOAD( "1891c",      0x2000, 0x0800, 0x1540a7d6 ) /* U4 */
-		ROM_LOAD( "1892c",      0x2800, 0x0800, 0x960385d0 ) /* U5 */
-		ROM_LOAD( "1893c",      0x3000, 0x0800, 0x58c5c461 ) /* U6 */
-		ROM_LOAD( "1894c",      0x3800, 0x0800, 0x5817a59d ) /* U7 */
-		ROM_LOAD( "1895c",      0x4000, 0x0800, 0x812f67d7 ) /* U8 */
-		ROM_LOAD( "1896c",      0x4800, 0x0800, 0xcc0ecdd0 ) /* U9 */
-		ROM_LOAD( "1897c",      0x5000, 0x0800, 0x7820e93b ) /* U10 */
-		ROM_LOAD( "1898c",      0x5800, 0x0800, 0xe9a10ded ) /* U11 */
-		ROM_LOAD( "1899c",      0x6000, 0x0800, 0xd7ddf02b ) /* U12 */
-		ROM_LOAD( "1900c",      0x6800, 0x0800, 0x8deff4e5 ) /* U13 */
-		ROM_LOAD( "1901c",      0x7000, 0x0800, 0x46051305 ) /* U14 */
-		ROM_LOAD( "1902c",      0x7800, 0x0800, 0xcb937e19 ) /* U15 */
-		ROM_LOAD( "1903c",      0x8000, 0x0800, 0x53239f12 ) /* U16 */
-		ROM_LOAD( "1913c",      0x8800, 0x0800, 0x4652cb0c ) /* U17 */
-		ROM_LOAD( "1914c",      0x9000, 0x0800, 0xcb758697 ) /* U18 */
-		ROM_LOAD( "1915c",      0x9800, 0x0800, 0x9f3bad66 ) /* U19 */
-		ROM_LOAD( "1916c",      0xa000, 0x0800, 0x5bb6f61e ) /* U20 */
-		ROM_LOAD( "1917c",      0xa800, 0x0800, 0x725e2c87 ) /* U21 */
+	static RomLoadPtr rom_pignewt = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x10000, REGION_CPU1, 0 );    /* 64k for code */
+		ROM_LOAD( "cpu.u25",    0x0000, 0x0800, 0x00000000 );/* U25 */
+		ROM_LOAD( "1888c",      0x0800, 0x0800, 0xfd18ed09 );/* U1 */
+		ROM_LOAD( "1889c",      0x1000, 0x0800, 0xf633f5ff );/* U2 */
+		ROM_LOAD( "1890c",      0x1800, 0x0800, 0x22009d7f );/* U3 */
+		ROM_LOAD( "1891c",      0x2000, 0x0800, 0x1540a7d6 );/* U4 */
+		ROM_LOAD( "1892c",      0x2800, 0x0800, 0x960385d0 );/* U5 */
+		ROM_LOAD( "1893c",      0x3000, 0x0800, 0x58c5c461 );/* U6 */
+		ROM_LOAD( "1894c",      0x3800, 0x0800, 0x5817a59d );/* U7 */
+		ROM_LOAD( "1895c",      0x4000, 0x0800, 0x812f67d7 );/* U8 */
+		ROM_LOAD( "1896c",      0x4800, 0x0800, 0xcc0ecdd0 );/* U9 */
+		ROM_LOAD( "1897c",      0x5000, 0x0800, 0x7820e93b );/* U10 */
+		ROM_LOAD( "1898c",      0x5800, 0x0800, 0xe9a10ded );/* U11 */
+		ROM_LOAD( "1899c",      0x6000, 0x0800, 0xd7ddf02b );/* U12 */
+		ROM_LOAD( "1900c",      0x6800, 0x0800, 0x8deff4e5 );/* U13 */
+		ROM_LOAD( "1901c",      0x7000, 0x0800, 0x46051305 );/* U14 */
+		ROM_LOAD( "1902c",      0x7800, 0x0800, 0xcb937e19 );/* U15 */
+		ROM_LOAD( "1903c",      0x8000, 0x0800, 0x53239f12 );/* U16 */
+		ROM_LOAD( "1913c",      0x8800, 0x0800, 0x4652cb0c );/* U17 */
+		ROM_LOAD( "1914c",      0x9000, 0x0800, 0xcb758697 );/* U18 */
+		ROM_LOAD( "1915c",      0x9800, 0x0800, 0x9f3bad66 );/* U19 */
+		ROM_LOAD( "1916c",      0xa000, 0x0800, 0x5bb6f61e );/* U20 */
+		ROM_LOAD( "1917c",      0xa800, 0x0800, 0x725e2c87 );/* U21 */
 	
-		ROM_REGION( 0x4000, REGION_GFX1, ROMREGION_DISPOSE ) /* background graphics */
-		ROM_LOAD( "1904c.bg",   0x0000, 0x2000, 0xe9de2c8b ) /* ??? */
-		ROM_LOAD( "1905c.bg",   0x2000, 0x2000, 0xaf7cfe0b ) /* ??? */
+		ROM_REGION( 0x4000, REGION_GFX1, ROMREGION_DISPOSE );/* background graphics */
+		ROM_LOAD( "1904c.bg",   0x0000, 0x2000, 0xe9de2c8b );/* ??? */
+		ROM_LOAD( "1905c.bg",   0x2000, 0x2000, 0xaf7cfe0b );/* ??? */
 	
-		ROM_REGION( 0x4000, REGION_USER1, 0 )		      /* background charmaps */
-		ROM_LOAD( "1906c.bg",  0x0000, 0x1000, 0xc79d33ce ) /* ??? */
-		ROM_LOAD( "1907c.bg",  0x1000, 0x1000, 0xbc839d3c ) /* ??? */
-		ROM_LOAD( "1908c.bg",  0x2000, 0x1000, 0x92cb14da ) /* ??? */
+		ROM_REGION( 0x4000, REGION_USER1, 0 );	      /* background charmaps */
+		ROM_LOAD( "1906c.bg",  0x0000, 0x1000, 0xc79d33ce );/* ??? */
+		ROM_LOAD( "1907c.bg",  0x1000, 0x1000, 0xbc839d3c );/* ??? */
+		ROM_LOAD( "1908c.bg",  0x2000, 0x1000, 0x92cb14da );/* ??? */
 	
 		/* SOUND ROMS ARE PROBABLY MISSING! */
-	ROM_END
+	ROM_END(); }}; 
 	
-	ROM_START( pignewta )
-		ROM_REGION( 0x10000, REGION_CPU1, 0 )     /* 64k for code */
-		ROM_LOAD( "cpu.u25",    0x0000, 0x0800, 0x00000000 ) /* U25 */
-		ROM_LOAD( "1888a",      0x0800, 0x0800, 0x491c0835 ) /* U1 */
-		ROM_LOAD( "1889a",      0x1000, 0x0800, 0x0dcf0af2 ) /* U2 */
-		ROM_LOAD( "1890a",      0x1800, 0x0800, 0x640b8b2e ) /* U3 */
-		ROM_LOAD( "1891a",      0x2000, 0x0800, 0x7b8aa07f ) /* U4 */
-		ROM_LOAD( "1892a",      0x2800, 0x0800, 0xafc545cb ) /* U5 */
-		ROM_LOAD( "1893a",      0x3000, 0x0800, 0x82448619 ) /* U6 */
-		ROM_LOAD( "1894a",      0x3800, 0x0800, 0x4302dbfb ) /* U7 */
-		ROM_LOAD( "1895a",      0x4000, 0x0800, 0x137ebaaf ) /* U8 */
-		ROM_LOAD( "1896",       0x4800, 0x0800, 0x1604c811 ) /* U9 */
-		ROM_LOAD( "1897",       0x5000, 0x0800, 0x3abee406 ) /* U10 */
-		ROM_LOAD( "1898",       0x5800, 0x0800, 0xa96410dc ) /* U11 */
-		ROM_LOAD( "1899",       0x6000, 0x0800, 0x612568a5 ) /* U12 */
-		ROM_LOAD( "1900",       0x6800, 0x0800, 0x5b231cea ) /* U13 */
-		ROM_LOAD( "1901",       0x7000, 0x0800, 0x3fd74b05 ) /* U14 */
-		ROM_LOAD( "1902",       0x7800, 0x0800, 0xd568fc22 ) /* U15 */
-		ROM_LOAD( "1903",       0x8000, 0x0800, 0x7d16633b ) /* U16 */
-		ROM_LOAD( "1913",       0x8800, 0x0800, 0xfa4be04f ) /* U17 */
-		ROM_LOAD( "1914",       0x9000, 0x0800, 0x08253c50 ) /* U18 */
-		ROM_LOAD( "1915",       0x9800, 0x0800, 0xde786c3b ) /* U19 */
+	static RomLoadPtr rom_pignewta = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x10000, REGION_CPU1, 0 );    /* 64k for code */
+		ROM_LOAD( "cpu.u25",    0x0000, 0x0800, 0x00000000 );/* U25 */
+		ROM_LOAD( "1888a",      0x0800, 0x0800, 0x491c0835 );/* U1 */
+		ROM_LOAD( "1889a",      0x1000, 0x0800, 0x0dcf0af2 );/* U2 */
+		ROM_LOAD( "1890a",      0x1800, 0x0800, 0x640b8b2e );/* U3 */
+		ROM_LOAD( "1891a",      0x2000, 0x0800, 0x7b8aa07f );/* U4 */
+		ROM_LOAD( "1892a",      0x2800, 0x0800, 0xafc545cb );/* U5 */
+		ROM_LOAD( "1893a",      0x3000, 0x0800, 0x82448619 );/* U6 */
+		ROM_LOAD( "1894a",      0x3800, 0x0800, 0x4302dbfb );/* U7 */
+		ROM_LOAD( "1895a",      0x4000, 0x0800, 0x137ebaaf );/* U8 */
+		ROM_LOAD( "1896",       0x4800, 0x0800, 0x1604c811 );/* U9 */
+		ROM_LOAD( "1897",       0x5000, 0x0800, 0x3abee406 );/* U10 */
+		ROM_LOAD( "1898",       0x5800, 0x0800, 0xa96410dc );/* U11 */
+		ROM_LOAD( "1899",       0x6000, 0x0800, 0x612568a5 );/* U12 */
+		ROM_LOAD( "1900",       0x6800, 0x0800, 0x5b231cea );/* U13 */
+		ROM_LOAD( "1901",       0x7000, 0x0800, 0x3fd74b05 );/* U14 */
+		ROM_LOAD( "1902",       0x7800, 0x0800, 0xd568fc22 );/* U15 */
+		ROM_LOAD( "1903",       0x8000, 0x0800, 0x7d16633b );/* U16 */
+		ROM_LOAD( "1913",       0x8800, 0x0800, 0xfa4be04f );/* U17 */
+		ROM_LOAD( "1914",       0x9000, 0x0800, 0x08253c50 );/* U18 */
+		ROM_LOAD( "1915",       0x9800, 0x0800, 0xde786c3b );/* U19 */
 	
-		ROM_REGION( 0x4000, REGION_GFX1, ROMREGION_DISPOSE ) /* background graphics */
-		ROM_LOAD( "1904a.bg",   0x0000, 0x2000, 0x00000000 ) /* ??? */
-		ROM_LOAD( "1905a.bg",   0x2000, 0x2000, 0x00000000 ) /* ??? */
+		ROM_REGION( 0x4000, REGION_GFX1, ROMREGION_DISPOSE );/* background graphics */
+		ROM_LOAD( "1904a.bg",   0x0000, 0x2000, 0x00000000 );/* ??? */
+		ROM_LOAD( "1905a.bg",   0x2000, 0x2000, 0x00000000 );/* ??? */
 	
-		ROM_REGION( 0x4000, REGION_USER1, 0 )		      /* background charmaps */
+		ROM_REGION( 0x4000, REGION_USER1, 0 );	      /* background charmaps */
 		/* NOTE: No background ROMs for set A have been dumped, so the
 		ROMs from set C have been copied and renamed. This is to
 		provide a reminder that these ROMs still need to be dumped. */
-		ROM_LOAD( "1906a.bg",  0x0000, 0x1000, BADCRC(0xc79d33ce) ) /* ??? */
-		ROM_LOAD( "1907a.bg",  0x1000, 0x1000, BADCRC(0xbc839d3c) ) /* ??? */
-		ROM_LOAD( "1908a.bg",  0x2000, 0x1000, BADCRC(0x92cb14da) ) /* ??? */
+		ROM_LOAD( "1906a.bg",  0x0000, 0x1000, BADCRC(0xc79d33ce)); /* ??? */
+		ROM_LOAD( "1907a.bg",  0x1000, 0x1000, BADCRC(0xbc839d3c)); /* ??? */
+		ROM_LOAD( "1908a.bg",  0x2000, 0x1000, BADCRC(0x92cb14da)); /* ??? */
 	
 		/* SOUND ROMS ARE PROBABLY MISSING! */
-	ROM_END
+	ROM_END(); }}; 
 	
 	
-	ROM_START( sindbadm )
-		ROM_REGION( 2*0x10000, REGION_CPU1, 0 )	/* 64k for code + 64k for decrypted opcodes */
-		ROM_LOAD( "epr5393.new",  0x0000, 0x2000, 0x51f2e51e )
-		ROM_LOAD( "epr5394.new",  0x2000, 0x2000, 0xd39ce2ee )
-		ROM_LOAD( "epr5395.new",  0x4000, 0x2000, 0xb1d15c82 )
-		ROM_LOAD( "epr5396.new",  0x6000, 0x2000, 0xea9d40bf )
-		ROM_LOAD( "epr5397.new",  0x8000, 0x2000, 0x595d16dc )
-		ROM_LOAD( "epr5398.new",  0xa000, 0x2000, 0xe57ff63c )
+	static RomLoadPtr rom_sindbadm = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 2*0x10000, REGION_CPU1, 0 );/* 64k for code + 64k for decrypted opcodes */
+		ROM_LOAD( "epr5393.new",  0x0000, 0x2000, 0x51f2e51e );
+		ROM_LOAD( "epr5394.new",  0x2000, 0x2000, 0xd39ce2ee );
+		ROM_LOAD( "epr5395.new",  0x4000, 0x2000, 0xb1d15c82 );
+		ROM_LOAD( "epr5396.new",  0x6000, 0x2000, 0xea9d40bf );
+		ROM_LOAD( "epr5397.new",  0x8000, 0x2000, 0x595d16dc );
+		ROM_LOAD( "epr5398.new",  0xa000, 0x2000, 0xe57ff63c );
 	
-		ROM_REGION( 0x10000, REGION_CPU2, 0 )     /* 64k for sound cpu (Z80) */
-		ROM_LOAD( "epr5400.new",  0x0000, 0x2000, 0x5114f18e )
+		ROM_REGION( 0x10000, REGION_CPU2, 0 );    /* 64k for sound cpu (Z80) */
+		ROM_LOAD( "epr5400.new",  0x0000, 0x2000, 0x5114f18e );
 	
-		ROM_REGION( 0x4000, REGION_GFX1, ROMREGION_DISPOSE ) /* background graphics */
-		ROM_LOAD( "epr5428.new",  0x0000, 0x2000, 0xf6044a1e )
-		ROM_LOAD( "epr5429.new",  0x2000, 0x2000, 0xb23eca10 )
+		ROM_REGION( 0x4000, REGION_GFX1, ROMREGION_DISPOSE );/* background graphics */
+		ROM_LOAD( "epr5428.new",  0x0000, 0x2000, 0xf6044a1e );
+		ROM_LOAD( "epr5429.new",  0x2000, 0x2000, 0xb23eca10 );
 	
-		ROM_REGION( 0x8000, REGION_USER1, 0 )		      /* background charmaps */
-		ROM_LOAD( "epr5424.new",  0x0000, 0x2000, 0x4bfc2e95 )
-		ROM_LOAD( "epr5425.new",  0x2000, 0x2000, 0xb654841a )
-		ROM_LOAD( "epr5426.new",  0x4000, 0x2000, 0x9de0da28 )
-		ROM_LOAD( "epr5427.new",  0x6000, 0x2000, 0xa94f4d41 )
-	ROM_END
+		ROM_REGION( 0x8000, REGION_USER1, 0 );	      /* background charmaps */
+		ROM_LOAD( "epr5424.new",  0x0000, 0x2000, 0x4bfc2e95 );
+		ROM_LOAD( "epr5425.new",  0x2000, 0x2000, 0xb654841a );
+		ROM_LOAD( "epr5426.new",  0x4000, 0x2000, 0x9de0da28 );
+		ROM_LOAD( "epr5427.new",  0x6000, 0x2000, 0xa94f4d41 );
+	ROM_END(); }}; 
 	
 	
 	/***************************************************************************

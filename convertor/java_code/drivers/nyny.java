@@ -430,73 +430,73 @@ public class nyny
 	***************************************************************************/
 	
 	
-	ROM_START( nyny )
-		ROM_REGION(0x10000, REGION_CPU1, 0)	/* 64k for code for the first CPU (Video) */
-		ROM_LOAD( "nyny01s.100",  0xa800, 0x800, 0xa2b76eca )
-		ROM_LOAD( "nyny02s.099",  0xb000, 0x800, 0xef2d4dae )
-		ROM_LOAD( "nyny03s.098",  0xb800, 0x800, 0x2734c229 )
-		ROM_LOAD( "nyny04s.097",  0xe000, 0x800, 0xbd94087f )
-		ROM_LOAD( "nyny05s.096",  0xe800, 0x800, 0x248b22c4 )
-		ROM_LOAD( "nyny06s.095",  0xf000, 0x800, 0x8c073052 )
-		ROM_LOAD( "nyny07s.094",  0xf800, 0x800, 0xd49d7429 )
+	static RomLoadPtr rom_nyny = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION(0x10000, REGION_CPU1, 0);/* 64k for code for the first CPU (Video) */
+		ROM_LOAD( "nyny01s.100",  0xa800, 0x800, 0xa2b76eca );
+		ROM_LOAD( "nyny02s.099",  0xb000, 0x800, 0xef2d4dae );
+		ROM_LOAD( "nyny03s.098",  0xb800, 0x800, 0x2734c229 );
+		ROM_LOAD( "nyny04s.097",  0xe000, 0x800, 0xbd94087f );
+		ROM_LOAD( "nyny05s.096",  0xe800, 0x800, 0x248b22c4 );
+		ROM_LOAD( "nyny06s.095",  0xf000, 0x800, 0x8c073052 );
+		ROM_LOAD( "nyny07s.094",  0xf800, 0x800, 0xd49d7429 );
 	
-		ROM_REGION(0x10000, REGION_CPU2, 0)	/* 64k for code for the second CPU (sound) */
-		ROM_LOAD( "nyny08.093",   0xd000, 0x800, 0x19ddb6c3 )
-		ROM_RELOAD(               0xd800, 0x800 ) /*  needed high bit not wired */
-		ROM_LOAD( "nyny09.092",   0xe000, 0x800, 0xa359c6f1 )
-		ROM_RELOAD(               0xe800, 0x800 )
-		ROM_LOAD( "nyny10.091",   0xf000, 0x800, 0xa72a70fa )
-		ROM_RELOAD(               0xf800, 0x800 )
+		ROM_REGION(0x10000, REGION_CPU2, 0);/* 64k for code for the second CPU (sound) */
+		ROM_LOAD( "nyny08.093",   0xd000, 0x800, 0x19ddb6c3 );
+		ROM_RELOAD(               0xd800, 0x800 );/*  needed high bit not wired */
+		ROM_LOAD( "nyny09.092",   0xe000, 0x800, 0xa359c6f1 );
+		ROM_RELOAD(               0xe800, 0x800 );
+		ROM_LOAD( "nyny10.091",   0xf000, 0x800, 0xa72a70fa );
+		ROM_RELOAD(               0xf800, 0x800 );
 	
-		ROM_REGION(0x10000, REGION_CPU3, 0) 	/* 64k for code for the third CPU (sound) */
-		ROM_LOAD( "nyny11.snd",   0xf800, 0x800, 0x650450fc )
-	ROM_END
+		ROM_REGION(0x10000, REGION_CPU3, 0);	/* 64k for code for the third CPU (sound) */
+		ROM_LOAD( "nyny11.snd",   0xf800, 0x800, 0x650450fc );
+	ROM_END(); }}; 
 	
-	ROM_START( nynyg )
-		ROM_REGION(0x10000, REGION_CPU1, 0)	/* 64k for code for the first CPU (Video) */
-		ROM_LOAD( "gny1.cpu",     0xa800, 0x800, 0xfb5b8f17 )
-		ROM_LOAD( "gny2.cpu",     0xb000, 0x800, 0xd248dd93 )
-		ROM_LOAD( "gny3.cpu",     0xb800, 0x800, 0x223a9d09 )
-		ROM_LOAD( "gny4.cpu",     0xe000, 0x800, 0x7964ec1f )
-		ROM_LOAD( "gny5.cpu",     0xe800, 0x800, 0x4799dcfc )
-		ROM_LOAD( "gny6.cpu",     0xf000, 0x800, 0x4839d4d2 )
-		ROM_LOAD( "gny7.cpu",     0xf800, 0x800, 0xb7564c5b )
+	static RomLoadPtr rom_nynyg = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION(0x10000, REGION_CPU1, 0);/* 64k for code for the first CPU (Video) */
+		ROM_LOAD( "gny1.cpu",     0xa800, 0x800, 0xfb5b8f17 );
+		ROM_LOAD( "gny2.cpu",     0xb000, 0x800, 0xd248dd93 );
+		ROM_LOAD( "gny3.cpu",     0xb800, 0x800, 0x223a9d09 );
+		ROM_LOAD( "gny4.cpu",     0xe000, 0x800, 0x7964ec1f );
+		ROM_LOAD( "gny5.cpu",     0xe800, 0x800, 0x4799dcfc );
+		ROM_LOAD( "gny6.cpu",     0xf000, 0x800, 0x4839d4d2 );
+		ROM_LOAD( "gny7.cpu",     0xf800, 0x800, 0xb7564c5b );
 	
-		ROM_REGION(0x10000, REGION_CPU2, 0)	/* 64k for code for the second CPU (sound) */
-		ROM_LOAD( "gny8.cpu",     0xd000, 0x800, 0xe0bf7d00 )
-		ROM_RELOAD(               0xd800, 0x800 ) /* reload needed high bit not wired */
-		ROM_LOAD( "gny9.cpu",     0xe000, 0x800, 0x639bc81a )
-		ROM_RELOAD(               0xe800, 0x800 )
-		ROM_LOAD( "gny10.cpu",    0xf000, 0x800, 0x73764021 )
-		ROM_RELOAD(               0xf800, 0x800 )
+		ROM_REGION(0x10000, REGION_CPU2, 0);/* 64k for code for the second CPU (sound) */
+		ROM_LOAD( "gny8.cpu",     0xd000, 0x800, 0xe0bf7d00 );
+		ROM_RELOAD(               0xd800, 0x800 );/* reload needed high bit not wired */
+		ROM_LOAD( "gny9.cpu",     0xe000, 0x800, 0x639bc81a );
+		ROM_RELOAD(               0xe800, 0x800 );
+		ROM_LOAD( "gny10.cpu",    0xf000, 0x800, 0x73764021 );
+		ROM_RELOAD(               0xf800, 0x800 );
 	
-		ROM_REGION(0x10000, REGION_CPU3, 0) 	/* 64k for code for the third CPU (sound) */
+		ROM_REGION(0x10000, REGION_CPU3, 0);	/* 64k for code for the third CPU (sound) */
 		/* The original dump of this ROM was bad [FIXED BITS (x1xxxxxx)] */
 		/* Since what's left is identical to the Sigma version, I'm assuming it's the same. */
-		ROM_LOAD( "nyny11.snd",   0xf800, 0x800, 0x650450fc )
-	ROM_END
+		ROM_LOAD( "nyny11.snd",   0xf800, 0x800, 0x650450fc );
+	ROM_END(); }}; 
 	
-	ROM_START( arcadia )
-		ROM_REGION(0x10000, REGION_CPU1, 0)	/* 64k for code for the first CPU (Video) */
-		ROM_LOAD( "ar-01",        0xa800, 0x800, 0x7b7e8f27 )
-		ROM_LOAD( "ar-02",        0xb000, 0x800, 0x81d9e172 )
-		ROM_LOAD( "ar-03",        0xb800, 0x800, 0x2c5feb05 )
-		ROM_LOAD( "ar-04",        0xe000, 0x800, 0x66fcbd7f )
-		ROM_LOAD( "ar-05",        0xe800, 0x800, 0xb2320e20 )
-		ROM_LOAD( "ar-06",        0xf000, 0x800, 0x27b79cc0 )
-		ROM_LOAD( "ar-07",        0xf800, 0x800, 0xbe77a477 )
+	static RomLoadPtr rom_arcadia = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION(0x10000, REGION_CPU1, 0);/* 64k for code for the first CPU (Video) */
+		ROM_LOAD( "ar-01",        0xa800, 0x800, 0x7b7e8f27 );
+		ROM_LOAD( "ar-02",        0xb000, 0x800, 0x81d9e172 );
+		ROM_LOAD( "ar-03",        0xb800, 0x800, 0x2c5feb05 );
+		ROM_LOAD( "ar-04",        0xe000, 0x800, 0x66fcbd7f );
+		ROM_LOAD( "ar-05",        0xe800, 0x800, 0xb2320e20 );
+		ROM_LOAD( "ar-06",        0xf000, 0x800, 0x27b79cc0 );
+		ROM_LOAD( "ar-07",        0xf800, 0x800, 0xbe77a477 );
 	
-		ROM_REGION(0x10000, REGION_CPU2, 0)	/* 64k for code for the second CPU (sound) */
-		ROM_LOAD( "ar-08",        0xd000, 0x800, 0x38569b25 )
-		ROM_RELOAD(               0xd800, 0x800 ) /*  needed high bit not wired */
-		ROM_LOAD( "nyny09.092",   0xe000, 0x800, 0xa359c6f1 )
-		ROM_RELOAD(               0xe800, 0x800 )
-		ROM_LOAD( "nyny10.091",   0xf000, 0x800, 0xa72a70fa )
-		ROM_RELOAD(               0xf800, 0x800 )
+		ROM_REGION(0x10000, REGION_CPU2, 0);/* 64k for code for the second CPU (sound) */
+		ROM_LOAD( "ar-08",        0xd000, 0x800, 0x38569b25 );
+		ROM_RELOAD(               0xd800, 0x800 );/*  needed high bit not wired */
+		ROM_LOAD( "nyny09.092",   0xe000, 0x800, 0xa359c6f1 );
+		ROM_RELOAD(               0xe800, 0x800 );
+		ROM_LOAD( "nyny10.091",   0xf000, 0x800, 0xa72a70fa );
+		ROM_RELOAD(               0xf800, 0x800 );
 	
-		ROM_REGION(0x10000, REGION_CPU3, 0) 	/* 64k for code for the third CPU (sound) */
-		ROM_LOAD( "ar-11",        0xf800, 0x800, 0x208f4488 )
-	ROM_END
+		ROM_REGION(0x10000, REGION_CPU3, 0);	/* 64k for code for the third CPU (sound) */
+		ROM_LOAD( "ar-11",        0xf800, 0x800, 0x208f4488 );
+	ROM_END(); }}; 
 	
 	
 	GAMEX( 1980, nyny,    0,    nyny, nyny, 0, ROT270, "Sigma Ent. Inc.", "New York New York", GAME_IMPERFECT_GRAPHICS | GAME_IMPERFECT_SOUND )

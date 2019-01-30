@@ -461,51 +461,51 @@ public class tecmo16
 	
 	/******************************************************************************/
 	
-	ROM_START( fstarfrc )
-		ROM_REGION( 0x80000, REGION_CPU1, 0 )
-		ROM_LOAD16_BYTE( "fstarf01.rom",      0x00000, 0x40000, 0x94c71de6 )
-		ROM_LOAD16_BYTE( "fstarf02.rom",      0x00001, 0x40000, 0xb1a07761 )
+	static RomLoadPtr rom_fstarfrc = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x80000, REGION_CPU1, 0 );
+		ROM_LOAD16_BYTE( "fstarf01.rom",      0x00000, 0x40000, 0x94c71de6 );
+		ROM_LOAD16_BYTE( "fstarf02.rom",      0x00001, 0x40000, 0xb1a07761 );
 	
-		ROM_REGION( 0x10000, REGION_CPU2, 0 )
-		ROM_LOAD( "fstarf07.rom",           0x00000, 0x10000, 0xe0ad5de1 )
+		ROM_REGION( 0x10000, REGION_CPU2, 0 );
+		ROM_LOAD( "fstarf07.rom",           0x00000, 0x10000, 0xe0ad5de1 );
 	
-		ROM_REGION( 0x20000, REGION_GFX1, ROMREGION_DISPOSE )
-		ROM_LOAD( "fstarf03.rom",           0x00000, 0x20000, 0x54375335 )
+		ROM_REGION( 0x20000, REGION_GFX1, ROMREGION_DISPOSE );
+		ROM_LOAD( "fstarf03.rom",           0x00000, 0x20000, 0x54375335 );
 	
-		ROM_REGION( 0x100000, REGION_GFX2, ROMREGION_DISPOSE )
-		ROM_LOAD16_BYTE( "fstarf05.rom",  0x00000, 0x80000, 0x77a281e7 )
-		ROM_LOAD16_BYTE( "fstarf04.rom",  0x00001, 0x80000, 0x398a920d )
+		ROM_REGION( 0x100000, REGION_GFX2, ROMREGION_DISPOSE );
+		ROM_LOAD16_BYTE( "fstarf05.rom",  0x00000, 0x80000, 0x77a281e7 );
+		ROM_LOAD16_BYTE( "fstarf04.rom",  0x00001, 0x80000, 0x398a920d );
 	
-		ROM_REGION( 0x100000, REGION_GFX3, ROMREGION_DISPOSE )
-		ROM_LOAD16_BYTE( "fstarf09.rom",  0x00000, 0x80000, 0xd51341d2 )
-		ROM_LOAD16_BYTE( "fstarf06.rom",  0x00001, 0x80000, 0x07e40e87 )
+		ROM_REGION( 0x100000, REGION_GFX3, ROMREGION_DISPOSE );
+		ROM_LOAD16_BYTE( "fstarf09.rom",  0x00000, 0x80000, 0xd51341d2 );
+		ROM_LOAD16_BYTE( "fstarf06.rom",  0x00001, 0x80000, 0x07e40e87 );
 	
-		ROM_REGION( 0x20000, REGION_SOUND1, 0 )
-		ROM_LOAD( "fstarf08.rom",           0x00000, 0x20000, 0xf0ad5693 )
-	ROM_END
+		ROM_REGION( 0x20000, REGION_SOUND1, 0 );
+		ROM_LOAD( "fstarf08.rom",           0x00000, 0x20000, 0xf0ad5693 );
+	ROM_END(); }}; 
 	
-	ROM_START( ginkun )
-		ROM_REGION( 0x80000, REGION_CPU1, 0 )
-		ROM_LOAD16_BYTE( "ginkun01.i01",      0x00000, 0x40000, 0x98946fd5 )
-		ROM_LOAD16_BYTE( "ginkun02.i02",      0x00001, 0x40000, 0xe98757f6 )
+	static RomLoadPtr rom_ginkun = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x80000, REGION_CPU1, 0 );
+		ROM_LOAD16_BYTE( "ginkun01.i01",      0x00000, 0x40000, 0x98946fd5 );
+		ROM_LOAD16_BYTE( "ginkun02.i02",      0x00001, 0x40000, 0xe98757f6 );
 	
-		ROM_REGION( 0x10000, REGION_CPU2, 0 )
-		ROM_LOAD( "ginkun07.i17",           0x00000, 0x10000, 0x8836b1aa )
+		ROM_REGION( 0x10000, REGION_CPU2, 0 );
+		ROM_LOAD( "ginkun07.i17",           0x00000, 0x10000, 0x8836b1aa );
 	
-		ROM_REGION( 0x20000, REGION_GFX1, ROMREGION_DISPOSE )
-		ROM_LOAD( "ginkun03.i03",           0x00000, 0x20000, 0x4456e0df )
+		ROM_REGION( 0x20000, REGION_GFX1, ROMREGION_DISPOSE );
+		ROM_LOAD( "ginkun03.i03",           0x00000, 0x20000, 0x4456e0df );
 	
-		ROM_REGION( 0x100000, REGION_GFX2, ROMREGION_DISPOSE )
-		ROM_LOAD16_BYTE( "ginkun05.i09",  0x00000, 0x80000, 0x1263bd42 )
-		ROM_LOAD16_BYTE( "ginkun04.i05",  0x00001, 0x80000, 0x9e4cf611 )
+		ROM_REGION( 0x100000, REGION_GFX2, ROMREGION_DISPOSE );
+		ROM_LOAD16_BYTE( "ginkun05.i09",  0x00000, 0x80000, 0x1263bd42 );
+		ROM_LOAD16_BYTE( "ginkun04.i05",  0x00001, 0x80000, 0x9e4cf611 );
 	
-		ROM_REGION( 0x100000, REGION_GFX3, ROMREGION_DISPOSE )
-		ROM_LOAD16_BYTE( "ginkun09.i22",  0x00000, 0x80000, 0x233384b9 )
-		ROM_LOAD16_BYTE( "ginkun06.i16",  0x00001, 0x80000, 0xf8589184 )
+		ROM_REGION( 0x100000, REGION_GFX3, ROMREGION_DISPOSE );
+		ROM_LOAD16_BYTE( "ginkun09.i22",  0x00000, 0x80000, 0x233384b9 );
+		ROM_LOAD16_BYTE( "ginkun06.i16",  0x00001, 0x80000, 0xf8589184 );
 	
-		ROM_REGION( 0x20000, REGION_SOUND1, 0 )
-		ROM_LOAD( "ginkun08.i18",           0x00000, 0x20000, 0x8b7583c7 )
-	ROM_END
+		ROM_REGION( 0x20000, REGION_SOUND1, 0 );
+		ROM_LOAD( "ginkun08.i18",           0x00000, 0x20000, 0x8b7583c7 );
+	ROM_END(); }}; 
 	
 	/******************************************************************************/
 	

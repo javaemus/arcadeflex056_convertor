@@ -1049,148 +1049,148 @@ public class fromance
 	 *
 	 *************************************/
 	
-	ROM_START( idolmj )
-		ROM_REGION( 0x010000, REGION_CPU1, 0 )
-		ROM_LOAD( "3-13g.bin", 0x000000, 0x008000, 0x910e9e7a )
+	static RomLoadPtr rom_idolmj = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x010000, REGION_CPU1, 0 );
+		ROM_LOAD( "3-13g.bin", 0x000000, 0x008000, 0x910e9e7a );
 	
-		ROM_REGION( 0x410000, REGION_CPU2, 0 )
-		ROM_LOAD( "5-13e.bin", 0x000000, 0x008000, 0xcda33264 )
-		ROM_LOAD( "18e.bin",   0x010000, 0x080000, 0x7ee5aaf3 )
-		ROM_LOAD( "17e.bin",   0x090000, 0x080000, 0x38055f94 )
-		ROM_LOAD( "4-14e.bin", 0x190000, 0x010000, 0x84d80b43 )
+		ROM_REGION( 0x410000, REGION_CPU2, 0 );
+		ROM_LOAD( "5-13e.bin", 0x000000, 0x008000, 0xcda33264 );
+		ROM_LOAD( "18e.bin",   0x010000, 0x080000, 0x7ee5aaf3 );
+		ROM_LOAD( "17e.bin",   0x090000, 0x080000, 0x38055f94 );
+		ROM_LOAD( "4-14e.bin", 0x190000, 0x010000, 0x84d80b43 );
 	
-		ROM_REGION( 0x200000, REGION_GFX1, ROMREGION_DISPOSE )
-		ROM_LOAD( "6e.bin",    0x000000, 0x080000, 0x51dadedd )
-		ROM_LOAD( "2-8e.bin",  0x080000, 0x008000, 0xa1a62c4c )
-		ROM_FILL(              0x088000, 0x008000, 0xff )
-		ROM_FILL(              0x090000, 0x170000, 0xff )
+		ROM_REGION( 0x200000, REGION_GFX1, ROMREGION_DISPOSE );
+		ROM_LOAD( "6e.bin",    0x000000, 0x080000, 0x51dadedd );
+		ROM_LOAD( "2-8e.bin",  0x080000, 0x008000, 0xa1a62c4c );
+		ROM_FILL(              0x088000, 0x008000, 0xff );
+		ROM_FILL(              0x090000, 0x170000, 0xff );
 	
-		ROM_REGION( 0x200000, REGION_GFX2, ROMREGION_DISPOSE )
-		ROM_LOAD( "3e.bin",    0x000000, 0x080000, 0xeff9b562 )
-		ROM_LOAD( "1-1e.bin",  0x080000, 0x008000, 0xabf03c62 )
-		ROM_FILL(              0x088000, 0x008000, 0xff )
-		ROM_FILL(              0x090000, 0x170000, 0xff )
-	ROM_END
-	
-	
-	ROM_START( mjnatsu )
-		ROM_REGION( 0x010000, REGION_CPU1, 0 )
-		ROM_LOAD( "3-ic70.bin", 0x000000, 0x008000, 0x543eb9e1 )
-	
-		ROM_REGION( 0x410000, REGION_CPU2, 0 )
-		ROM_LOAD( "4-ic47.bin", 0x000000, 0x008000, 0x27a61dc7 )
-		ROM_LOAD( "ic87.bin",   0x010000, 0x080000, 0xcaec9310 )
-		ROM_LOAD( "ic78.bin",   0x090000, 0x080000, 0x2b291006 )
-		ROM_LOAD( "ic72.bin",   0x110000, 0x020000, 0x42464fba )
-		ROM_LOAD( "5-ic48.bin", 0x210000, 0x010000, 0xd3c06cd9 )
-	
-		ROM_REGION( 0x200000, REGION_GFX1, ROMREGION_DISPOSE )
-		ROM_LOAD( "ic58.bin",   0x000000, 0x080000, 0x257a8075 )
-		ROM_LOAD( "ic63.bin",   0x080000, 0x020000, 0xb54c7d3a )
-		ROM_LOAD( "1-ic74.bin", 0x0a0000, 0x008000, 0xfbafa46b )
-		ROM_FILL(               0x0a8000, 0x008000, 0xff )
-		ROM_FILL(               0x0b0000, 0x150000, 0xff )
-	
-		ROM_REGION( 0x200000, REGION_GFX2, ROMREGION_DISPOSE )
-		ROM_LOAD( "ic59.bin",   0x000000, 0x080000, 0x03983ac7 )
-		ROM_LOAD( "ic64.bin",   0x080000, 0x040000, 0x9bd8e855 )
-		ROM_FILL(               0x0c0000, 0x140000, 0xff )
-	ROM_END
+		ROM_REGION( 0x200000, REGION_GFX2, ROMREGION_DISPOSE );
+		ROM_LOAD( "3e.bin",    0x000000, 0x080000, 0xeff9b562 );
+		ROM_LOAD( "1-1e.bin",  0x080000, 0x008000, 0xabf03c62 );
+		ROM_FILL(              0x088000, 0x008000, 0xff );
+		ROM_FILL(              0x090000, 0x170000, 0xff );
+	ROM_END(); }}; 
 	
 	
-	ROM_START( mfunclub )
-		ROM_REGION( 0x010000, REGION_CPU1, 0 )
-		ROM_LOAD( "3.70",        0x000000, 0x008000, 0xe6f76ca3 )
+	static RomLoadPtr rom_mjnatsu = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x010000, REGION_CPU1, 0 );
+		ROM_LOAD( "3-ic70.bin", 0x000000, 0x008000, 0x543eb9e1 );
 	
-		ROM_REGION( 0x410000, REGION_CPU2, 0 )
-		ROM_LOAD( "4.47",        0x000000, 0x008000, 0xd71ee0e3 )
-		ROM_LOAD( "586.87",      0x010000, 0x080000, 0xe197af4a )
-		ROM_LOAD( "587.78",      0x090000, 0x080000, 0x08ff39c3 )
-		ROM_LOAD( "5.57",        0x290000, 0x010000, 0xbf988bde )
+		ROM_REGION( 0x410000, REGION_CPU2, 0 );
+		ROM_LOAD( "4-ic47.bin", 0x000000, 0x008000, 0x27a61dc7 );
+		ROM_LOAD( "ic87.bin",   0x010000, 0x080000, 0xcaec9310 );
+		ROM_LOAD( "ic78.bin",   0x090000, 0x080000, 0x2b291006 );
+		ROM_LOAD( "ic72.bin",   0x110000, 0x020000, 0x42464fba );
+		ROM_LOAD( "5-ic48.bin", 0x210000, 0x010000, 0xd3c06cd9 );
 	
-		ROM_REGION( 0x200000, REGION_GFX1, ROMREGION_DISPOSE )
-		ROM_LOAD( "584.58",      0x000000, 0x080000, 0xd65af431 )
-		ROM_LOAD( "lh634a14.63", 0x080000, 0x080000, 0xcdda9b9e )
-		ROM_FILL(                0x100000, 0x080000, 0xff )
-		ROM_LOAD( "1.74",        0x180000, 0x008000, 0x5b0b2efc )
-		ROM_FILL(                0x188000, 0x078000, 0xff )
+		ROM_REGION( 0x200000, REGION_GFX1, ROMREGION_DISPOSE );
+		ROM_LOAD( "ic58.bin",   0x000000, 0x080000, 0x257a8075 );
+		ROM_LOAD( "ic63.bin",   0x080000, 0x020000, 0xb54c7d3a );
+		ROM_LOAD( "1-ic74.bin", 0x0a0000, 0x008000, 0xfbafa46b );
+		ROM_FILL(               0x0a8000, 0x008000, 0xff );
+		ROM_FILL(               0x0b0000, 0x150000, 0xff );
 	
-		ROM_REGION( 0x200000, REGION_GFX2, ROMREGION_DISPOSE )
-		ROM_LOAD( "585.59",      0x000000, 0x080000, 0x58ce0937 )
-		ROM_FILL(                0x080000, 0x100000, 0xff )
-		ROM_LOAD( "2.75",        0x180000, 0x010000, 0x4dd4f786 )
-		ROM_FILL(                0x190000, 0x070000, 0xff )
-	ROM_END
-	
-	
-	ROM_START( daiyogen )
-		ROM_REGION( 0x010000, REGION_CPU1, 0 )
-		ROM_LOAD( "n1-ic70.bin", 0x000000, 0x008000, 0x29af632b )
-	
-		ROM_REGION( 0x130000, REGION_CPU2, 0 )
-		ROM_LOAD( "n2-ic47.bin", 0x000000, 0x008000, 0x8896604c )
-		ROM_LOAD( "ic87.bin",    0x010000, 0x080000, 0x4f86ffe2 )
-		ROM_LOAD( "ic78.bin",    0x090000, 0x080000, 0xae52bccd )
-		ROM_LOAD( "7-ic72.bin",  0x110000, 0x020000, 0x30279296 )
-	
-		ROM_REGION( 0x0c0000, REGION_GFX1, ROMREGION_DISPOSE )
-		ROM_LOAD( "ic58.bin",    0x000000, 0x080000, 0x8cf3d5f5 )
-		ROM_LOAD( "ic63.bin",    0x080000, 0x040000, 0x64611070 )
-	
-		ROM_REGION( 0x100000, REGION_GFX2, ROMREGION_DISPOSE )
-		ROM_LOAD( "ic59.bin",    0x000000, 0x080000, 0x715f2f8c )
-		ROM_LOAD( "ic64.bin",    0x080000, 0x080000, 0xe5a41864 )
-	ROM_END
+		ROM_REGION( 0x200000, REGION_GFX2, ROMREGION_DISPOSE );
+		ROM_LOAD( "ic59.bin",   0x000000, 0x080000, 0x03983ac7 );
+		ROM_LOAD( "ic64.bin",   0x080000, 0x040000, 0x9bd8e855 );
+		ROM_FILL(               0x0c0000, 0x140000, 0xff );
+	ROM_END(); }}; 
 	
 	
-	ROM_START( nmsengen )
-		ROM_REGION( 0x010000, REGION_CPU1, 0 )
-		ROM_LOAD( "3-ic70.bin",   0x000000, 0x008000, 0x4e6edbbb )
+	static RomLoadPtr rom_mfunclub = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x010000, REGION_CPU1, 0 );
+		ROM_LOAD( "3.70",        0x000000, 0x008000, 0xe6f76ca3 );
 	
-		ROM_REGION( 0x410000, REGION_CPU2, 0 )
-		ROM_LOAD( "4-ic47.bin",   0x000000, 0x008000, 0xd31c596e )
-		ROM_LOAD( "vsj-ic87.bin", 0x010000, 0x100000, 0xd3e8bd73 )
-		ROM_LOAD( "j5-ic72.bin",  0x210000, 0x020000, 0xdb937253 )
+		ROM_REGION( 0x410000, REGION_CPU2, 0 );
+		ROM_LOAD( "4.47",        0x000000, 0x008000, 0xd71ee0e3 );
+		ROM_LOAD( "586.87",      0x010000, 0x080000, 0xe197af4a );
+		ROM_LOAD( "587.78",      0x090000, 0x080000, 0x08ff39c3 );
+		ROM_LOAD( "5.57",        0x290000, 0x010000, 0xbf988bde );
 	
-		ROM_REGION( 0x200000, REGION_GFX1, ROMREGION_DISPOSE )
-		ROM_LOAD( "vsk-ic63.bin", 0x000000, 0x100000, 0xf95f9c67 )
-		ROM_LOAD( "ic58.bin",     0x100000, 0x040000, 0xc66dcf18 )
-		ROM_FILL(                 0x140000, 0x080000, 0xff )
-		ROM_LOAD( "1-ic68.bin",   0x1c0000, 0x020000, 0xa944a8d6 )
-		ROM_FILL(                 0x1e0000, 0x020000, 0xff )
+		ROM_REGION( 0x200000, REGION_GFX1, ROMREGION_DISPOSE );
+		ROM_LOAD( "584.58",      0x000000, 0x080000, 0xd65af431 );
+		ROM_LOAD( "lh634a14.63", 0x080000, 0x080000, 0xcdda9b9e );
+		ROM_FILL(                0x100000, 0x080000, 0xff );
+		ROM_LOAD( "1.74",        0x180000, 0x008000, 0x5b0b2efc );
+		ROM_FILL(                0x188000, 0x078000, 0xff );
 	
-		ROM_REGION( 0x200000, REGION_GFX2, ROMREGION_DISPOSE )
-		ROM_LOAD( "vsh-ic64.bin", 0x000000, 0x100000, 0xf546ffaf )
-		ROM_LOAD( "vsg-ic59.bin", 0x100000, 0x080000, 0x25bae018 )
-		ROM_LOAD( "ic69.bin",     0x180000, 0x040000, 0xdc867ccd )
-		ROM_LOAD( "2-ic75.bin",   0x1c0000, 0x020000, 0xe2fad82e )
-		ROM_FILL(                 0x1e0000, 0x020000, 0xff )
-	ROM_END
+		ROM_REGION( 0x200000, REGION_GFX2, ROMREGION_DISPOSE );
+		ROM_LOAD( "585.59",      0x000000, 0x080000, 0x58ce0937 );
+		ROM_FILL(                0x080000, 0x100000, 0xff );
+		ROM_LOAD( "2.75",        0x180000, 0x010000, 0x4dd4f786 );
+		ROM_FILL(                0x190000, 0x070000, 0xff );
+	ROM_END(); }}; 
 	
 	
-	ROM_START( fromance )
-		ROM_REGION( 0x010000, REGION_CPU1, 0 )
-		ROM_LOAD( "2-ic70.bin", 0x000000, 0x008000, 0xa0866e26 )
+	static RomLoadPtr rom_daiyogen = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x010000, REGION_CPU1, 0 );
+		ROM_LOAD( "n1-ic70.bin", 0x000000, 0x008000, 0x29af632b );
 	
-		ROM_REGION( 0x410000, REGION_CPU2, 0 )
-		ROM_LOAD( "1-ic47.bin", 0x000000, 0x008000, 0xac859917 )
-		ROM_LOAD( "ic87.bin",   0x010000, 0x100000, 0xbb0d224e )
-		ROM_LOAD( "ic78.bin",   0x110000, 0x040000, 0xba2dba83 )
-		ROM_LOAD( "5-ic72.bin", 0x210000, 0x020000, 0x377cd57c )
+		ROM_REGION( 0x130000, REGION_CPU2, 0 );
+		ROM_LOAD( "n2-ic47.bin", 0x000000, 0x008000, 0x8896604c );
+		ROM_LOAD( "ic87.bin",    0x010000, 0x080000, 0x4f86ffe2 );
+		ROM_LOAD( "ic78.bin",    0x090000, 0x080000, 0xae52bccd );
+		ROM_LOAD( "7-ic72.bin",  0x110000, 0x020000, 0x30279296 );
 	
-		ROM_REGION( 0x200000, REGION_GFX1, ROMREGION_DISPOSE )
-		ROM_LOAD( "ic63.bin",   0x000000, 0x100000, 0xfaa9cdf3 )
-		ROM_FILL(               0x100000, 0x0c0000, 0xff )
-		ROM_LOAD( "4-ic68.bin", 0x1c0000, 0x020000, 0x9b35cea3 )
-		ROM_FILL(               0x1e0000, 0x020000, 0xff )
+		ROM_REGION( 0x0c0000, REGION_GFX1, ROMREGION_DISPOSE );
+		ROM_LOAD( "ic58.bin",    0x000000, 0x080000, 0x8cf3d5f5 );
+		ROM_LOAD( "ic63.bin",    0x080000, 0x040000, 0x64611070 );
 	
-		ROM_REGION( 0x200000, REGION_GFX2, ROMREGION_DISPOSE )
-		ROM_LOAD( "ic64.bin",   0x000000, 0x100000, 0x23b9a484 )
-		ROM_FILL(               0x100000, 0x080000, 0xff )
-		ROM_LOAD( "ic69.bin",   0x180000, 0x040000, 0xd06a0fc0 )
-		ROM_LOAD( "3-ic75.bin", 0x1c0000, 0x020000, 0xbb314e78 )
-		ROM_FILL(               0x1e0000, 0x020000, 0xff )
-	ROM_END
+		ROM_REGION( 0x100000, REGION_GFX2, ROMREGION_DISPOSE );
+		ROM_LOAD( "ic59.bin",    0x000000, 0x080000, 0x715f2f8c );
+		ROM_LOAD( "ic64.bin",    0x080000, 0x080000, 0xe5a41864 );
+	ROM_END(); }}; 
+	
+	
+	static RomLoadPtr rom_nmsengen = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x010000, REGION_CPU1, 0 );
+		ROM_LOAD( "3-ic70.bin",   0x000000, 0x008000, 0x4e6edbbb );
+	
+		ROM_REGION( 0x410000, REGION_CPU2, 0 );
+		ROM_LOAD( "4-ic47.bin",   0x000000, 0x008000, 0xd31c596e );
+		ROM_LOAD( "vsj-ic87.bin", 0x010000, 0x100000, 0xd3e8bd73 );
+		ROM_LOAD( "j5-ic72.bin",  0x210000, 0x020000, 0xdb937253 );
+	
+		ROM_REGION( 0x200000, REGION_GFX1, ROMREGION_DISPOSE );
+		ROM_LOAD( "vsk-ic63.bin", 0x000000, 0x100000, 0xf95f9c67 );
+		ROM_LOAD( "ic58.bin",     0x100000, 0x040000, 0xc66dcf18 );
+		ROM_FILL(                 0x140000, 0x080000, 0xff );
+		ROM_LOAD( "1-ic68.bin",   0x1c0000, 0x020000, 0xa944a8d6 );
+		ROM_FILL(                 0x1e0000, 0x020000, 0xff );
+	
+		ROM_REGION( 0x200000, REGION_GFX2, ROMREGION_DISPOSE );
+		ROM_LOAD( "vsh-ic64.bin", 0x000000, 0x100000, 0xf546ffaf );
+		ROM_LOAD( "vsg-ic59.bin", 0x100000, 0x080000, 0x25bae018 );
+		ROM_LOAD( "ic69.bin",     0x180000, 0x040000, 0xdc867ccd );
+		ROM_LOAD( "2-ic75.bin",   0x1c0000, 0x020000, 0xe2fad82e );
+		ROM_FILL(                 0x1e0000, 0x020000, 0xff );
+	ROM_END(); }}; 
+	
+	
+	static RomLoadPtr rom_fromance = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x010000, REGION_CPU1, 0 );
+		ROM_LOAD( "2-ic70.bin", 0x000000, 0x008000, 0xa0866e26 );
+	
+		ROM_REGION( 0x410000, REGION_CPU2, 0 );
+		ROM_LOAD( "1-ic47.bin", 0x000000, 0x008000, 0xac859917 );
+		ROM_LOAD( "ic87.bin",   0x010000, 0x100000, 0xbb0d224e );
+		ROM_LOAD( "ic78.bin",   0x110000, 0x040000, 0xba2dba83 );
+		ROM_LOAD( "5-ic72.bin", 0x210000, 0x020000, 0x377cd57c );
+	
+		ROM_REGION( 0x200000, REGION_GFX1, ROMREGION_DISPOSE );
+		ROM_LOAD( "ic63.bin",   0x000000, 0x100000, 0xfaa9cdf3 );
+		ROM_FILL(               0x100000, 0x0c0000, 0xff );
+		ROM_LOAD( "4-ic68.bin", 0x1c0000, 0x020000, 0x9b35cea3 );
+		ROM_FILL(               0x1e0000, 0x020000, 0xff );
+	
+		ROM_REGION( 0x200000, REGION_GFX2, ROMREGION_DISPOSE );
+		ROM_LOAD( "ic64.bin",   0x000000, 0x100000, 0x23b9a484 );
+		ROM_FILL(               0x100000, 0x080000, 0xff );
+		ROM_LOAD( "ic69.bin",   0x180000, 0x040000, 0xd06a0fc0 );
+		ROM_LOAD( "3-ic75.bin", 0x1c0000, 0x020000, 0xbb314e78 );
+		ROM_FILL(               0x1e0000, 0x020000, 0xff );
+	ROM_END(); }}; 
 	
 	
 	

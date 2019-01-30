@@ -744,76 +744,76 @@ public class bwidow
 	
 	***************************************************************************/
 	
-	ROM_START( bwidow )
-		ROM_REGION( 0x10000, REGION_CPU1, 0 )	/* 64k for code */
+	static RomLoadPtr rom_bwidow = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x10000, REGION_CPU1, 0 );/* 64k for code */
 		/* Vector ROM */
-		ROM_LOAD( "136017.107",   0x2800, 0x0800, 0x97f6000c )
-		ROM_LOAD( "136017.108",   0x3000, 0x1000, 0x3da354ed )
-		ROM_LOAD( "136017.109",   0x4000, 0x1000, 0x2fc4ce79 )
-		ROM_LOAD( "136017.110",   0x5000, 0x1000, 0x0dd52987 )
+		ROM_LOAD( "136017.107",   0x2800, 0x0800, 0x97f6000c );
+		ROM_LOAD( "136017.108",   0x3000, 0x1000, 0x3da354ed );
+		ROM_LOAD( "136017.109",   0x4000, 0x1000, 0x2fc4ce79 );
+		ROM_LOAD( "136017.110",   0x5000, 0x1000, 0x0dd52987 );
 		/* Program ROM */
-		ROM_LOAD( "136017.101",   0x9000, 0x1000, 0xfe3febb7 )
-		ROM_LOAD( "136017.102",   0xa000, 0x1000, 0x10ad0376 )
-		ROM_LOAD( "136017.103",   0xb000, 0x1000, 0x8a1430ee )
-		ROM_LOAD( "136017.104",   0xc000, 0x1000, 0x44f9943f )
-		ROM_LOAD( "136017.105",   0xd000, 0x1000, 0xa046a2e2 )
-		ROM_LOAD( "136017.106",   0xe000, 0x1000, 0x4dc28b22 )
-		ROM_RELOAD(              0xf000, 0x1000 )	/* for reset/interrupt vectors */
-	ROM_END
+		ROM_LOAD( "136017.101",   0x9000, 0x1000, 0xfe3febb7 );
+		ROM_LOAD( "136017.102",   0xa000, 0x1000, 0x10ad0376 );
+		ROM_LOAD( "136017.103",   0xb000, 0x1000, 0x8a1430ee );
+		ROM_LOAD( "136017.104",   0xc000, 0x1000, 0x44f9943f );
+		ROM_LOAD( "136017.105",   0xd000, 0x1000, 0xa046a2e2 );
+		ROM_LOAD( "136017.106",   0xe000, 0x1000, 0x4dc28b22 );
+		ROM_RELOAD(              0xf000, 0x1000 );/* for reset/interrupt vectors */
+	ROM_END(); }}; 
 	
-	ROM_START( gravitar )
-		ROM_REGION( 0x10000, REGION_CPU1, 0 )	/* 64k for code */
+	static RomLoadPtr rom_gravitar = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x10000, REGION_CPU1, 0 );/* 64k for code */
 		/* Vector ROM */
-		ROM_LOAD( "136010.210",   0x2800, 0x0800, 0xdebcb243 )
-		ROM_LOAD( "136010.207",   0x3000, 0x1000, 0x4135629a )
-		ROM_LOAD( "136010.208",   0x4000, 0x1000, 0x358f25d9 )
-		ROM_LOAD( "136010.309",   0x5000, 0x1000, 0x4ac78df4 )
+		ROM_LOAD( "136010.210",   0x2800, 0x0800, 0xdebcb243 );
+		ROM_LOAD( "136010.207",   0x3000, 0x1000, 0x4135629a );
+		ROM_LOAD( "136010.208",   0x4000, 0x1000, 0x358f25d9 );
+		ROM_LOAD( "136010.309",   0x5000, 0x1000, 0x4ac78df4 );
 		/* Program ROM */
-		ROM_LOAD( "136010.301",   0x9000, 0x1000, 0xa2a55013 )
-		ROM_LOAD( "136010.302",   0xa000, 0x1000, 0xd3700b3c )
-		ROM_LOAD( "136010.303",   0xb000, 0x1000, 0x8e12e3e0 )
-		ROM_LOAD( "136010.304",   0xc000, 0x1000, 0x467ad5da )
-		ROM_LOAD( "136010.305",   0xd000, 0x1000, 0x840603af )
-		ROM_LOAD( "136010.306",   0xe000, 0x1000, 0x3f3805ad )
-		ROM_RELOAD(              0xf000, 0x1000 )	/* for reset/interrupt vectors */
-	ROM_END
+		ROM_LOAD( "136010.301",   0x9000, 0x1000, 0xa2a55013 );
+		ROM_LOAD( "136010.302",   0xa000, 0x1000, 0xd3700b3c );
+		ROM_LOAD( "136010.303",   0xb000, 0x1000, 0x8e12e3e0 );
+		ROM_LOAD( "136010.304",   0xc000, 0x1000, 0x467ad5da );
+		ROM_LOAD( "136010.305",   0xd000, 0x1000, 0x840603af );
+		ROM_LOAD( "136010.306",   0xe000, 0x1000, 0x3f3805ad );
+		ROM_RELOAD(              0xf000, 0x1000 );/* for reset/interrupt vectors */
+	ROM_END(); }}; 
 	
-	ROM_START( gravitr2 )
-		ROM_REGION( 0x10000, REGION_CPU1, 0 )	/* 64k for code */
+	static RomLoadPtr rom_gravitr2 = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x10000, REGION_CPU1, 0 );/* 64k for code */
 		/* Vector ROM */
-		ROM_LOAD( "136010.210",   0x2800, 0x0800, 0xdebcb243 )
-		ROM_LOAD( "136010.207",   0x3000, 0x1000, 0x4135629a )
-		ROM_LOAD( "136010.208",   0x4000, 0x1000, 0x358f25d9 )
-		ROM_LOAD( "136010.209",   0x5000, 0x1000, 0x37034287 )
+		ROM_LOAD( "136010.210",   0x2800, 0x0800, 0xdebcb243 );
+		ROM_LOAD( "136010.207",   0x3000, 0x1000, 0x4135629a );
+		ROM_LOAD( "136010.208",   0x4000, 0x1000, 0x358f25d9 );
+		ROM_LOAD( "136010.209",   0x5000, 0x1000, 0x37034287 );
 		/* Program ROM */
-		ROM_LOAD( "136010.201",   0x9000, 0x1000, 0x167315e4 )
-		ROM_LOAD( "136010.202",   0xa000, 0x1000, 0xaaa9e62c )
-		ROM_LOAD( "136010.203",   0xb000, 0x1000, 0xae437253 )
-		ROM_LOAD( "136010.204",   0xc000, 0x1000, 0x5d6bc29e )
-		ROM_LOAD( "136010.205",   0xd000, 0x1000, 0x0db1ff34 )
-		ROM_LOAD( "136010.206",   0xe000, 0x1000, 0x4521ca48 )
-		ROM_RELOAD(              0xf000, 0x1000 )	/* for reset/interrupt vectors */
-	ROM_END
+		ROM_LOAD( "136010.201",   0x9000, 0x1000, 0x167315e4 );
+		ROM_LOAD( "136010.202",   0xa000, 0x1000, 0xaaa9e62c );
+		ROM_LOAD( "136010.203",   0xb000, 0x1000, 0xae437253 );
+		ROM_LOAD( "136010.204",   0xc000, 0x1000, 0x5d6bc29e );
+		ROM_LOAD( "136010.205",   0xd000, 0x1000, 0x0db1ff34 );
+		ROM_LOAD( "136010.206",   0xe000, 0x1000, 0x4521ca48 );
+		ROM_RELOAD(              0xf000, 0x1000 );/* for reset/interrupt vectors */
+	ROM_END(); }}; 
 	
-	ROM_START( spacduel )
-		ROM_REGION( 0x10000, REGION_CPU1, 0 )	/* 64k for code */
+	static RomLoadPtr rom_spacduel = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x10000, REGION_CPU1, 0 );/* 64k for code */
 		/* Vector ROM */
-		ROM_LOAD( "136006.106",   0x2800, 0x0800, 0x691122fe )
-		ROM_LOAD( "136006.107",   0x3000, 0x1000, 0xd8dd0461 )
+		ROM_LOAD( "136006.106",   0x2800, 0x0800, 0x691122fe );
+		ROM_LOAD( "136006.107",   0x3000, 0x1000, 0xd8dd0461 );
 		/* Program ROM */
-		ROM_LOAD( "136006.201",   0x4000, 0x1000, 0xf4037b6e )
-		ROM_LOAD( "136006.102",   0x5000, 0x1000, 0x4c451e8a )
-		ROM_LOAD( "136006.103",   0x6000, 0x1000, 0xee72da63 )
-		ROM_LOAD( "136006.104",   0x7000, 0x1000, 0xe41b38a3 )
-		ROM_LOAD( "136006.105",   0x8000, 0x1000, 0x5652710f )
-		ROM_RELOAD(              0x9000, 0x1000 )
-		ROM_RELOAD(              0xa000, 0x1000 )
-		ROM_RELOAD(              0xb000, 0x1000 )
-		ROM_RELOAD(              0xc000, 0x1000 )
-		ROM_RELOAD(              0xd000, 0x1000 )
-		ROM_RELOAD(              0xe000, 0x1000 )
-		ROM_RELOAD(              0xf000, 0x1000 )	/* for reset/interrupt vectors */
-	ROM_END
+		ROM_LOAD( "136006.201",   0x4000, 0x1000, 0xf4037b6e );
+		ROM_LOAD( "136006.102",   0x5000, 0x1000, 0x4c451e8a );
+		ROM_LOAD( "136006.103",   0x6000, 0x1000, 0xee72da63 );
+		ROM_LOAD( "136006.104",   0x7000, 0x1000, 0xe41b38a3 );
+		ROM_LOAD( "136006.105",   0x8000, 0x1000, 0x5652710f );
+		ROM_RELOAD(              0x9000, 0x1000 );
+		ROM_RELOAD(              0xa000, 0x1000 );
+		ROM_RELOAD(              0xb000, 0x1000 );
+		ROM_RELOAD(              0xc000, 0x1000 );
+		ROM_RELOAD(              0xd000, 0x1000 );
+		ROM_RELOAD(              0xe000, 0x1000 );
+		ROM_RELOAD(              0xf000, 0x1000 );/* for reset/interrupt vectors */
+	ROM_END(); }}; 
 	
 	
 	

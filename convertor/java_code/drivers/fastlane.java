@@ -323,23 +323,23 @@ public class fastlane
 	
 	***************************************************************************/
 	
-	ROM_START( fastlane )
-		ROM_REGION( 0x21000, REGION_CPU1, 0 ) /* code + banked roms */
-		ROM_LOAD( "752_m02.9h",  0x08000, 0x08000, 0xe1004489 )  /* fixed ROM */
-		ROM_LOAD( "752_e01.10h", 0x10000, 0x10000, 0xff4d6029 )  /* banked ROM */
+	static RomLoadPtr rom_fastlane = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x21000, REGION_CPU1, 0 );/* code + banked roms */
+		ROM_LOAD( "752_m02.9h",  0x08000, 0x08000, 0xe1004489 ); /* fixed ROM */
+		ROM_LOAD( "752_e01.10h", 0x10000, 0x10000, 0xff4d6029 ); /* banked ROM */
 	
-		ROM_REGION( 0x80000, REGION_GFX1, ROMREGION_DISPOSE )
-		ROM_LOAD( "752e04.2i",   0x00000, 0x80000, 0xa126e82d )  /* tiles + sprites */
+		ROM_REGION( 0x80000, REGION_GFX1, ROMREGION_DISPOSE );
+		ROM_LOAD( "752e04.2i",   0x00000, 0x80000, 0xa126e82d ); /* tiles + sprites */
 	
-		ROM_REGION( 0x0100, REGION_PROMS, 0 )
-		ROM_LOAD( "752e03.6h",   0x0000, 0x0100, 0x44300aeb )
+		ROM_REGION( 0x0100, REGION_PROMS, 0 );
+		ROM_LOAD( "752e03.6h",   0x0000, 0x0100, 0x44300aeb );
 	
-		ROM_REGION( 0x20000, REGION_SOUND1, 0 )	/* 007232 data */
-		ROM_LOAD( "752e06.4c",   0x00000, 0x20000, 0x85d691ed ) /* chip 1 */
+		ROM_REGION( 0x20000, REGION_SOUND1, 0 );/* 007232 data */
+		ROM_LOAD( "752e06.4c",   0x00000, 0x20000, 0x85d691ed );/* chip 1 */
 	
-		ROM_REGION( 0x80000, REGION_SOUND2, 0 )	/* 007232 data */
-		ROM_LOAD( "752e05.12b",  0x00000, 0x80000, 0x119e9cbf ) /* chip 2 */
-	ROM_END
+		ROM_REGION( 0x80000, REGION_SOUND2, 0 );/* 007232 data */
+		ROM_LOAD( "752e05.12b",  0x00000, 0x80000, 0x119e9cbf );/* chip 2 */
+	ROM_END(); }}; 
 	
 	
 	

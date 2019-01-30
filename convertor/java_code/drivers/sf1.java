@@ -1027,197 +1027,197 @@ public class sf1
 	};
 	
 	
-	ROM_START( sf1 )
-		ROM_REGION( 0x60000, REGION_CPU1, 0 )
-		ROM_LOAD16_BYTE("sfe-19", 0x00000, 0x10000, 0x8346c3ca )
-		ROM_LOAD16_BYTE("sfe-22", 0x00001, 0x10000, 0x3a4bfaa8 )
-		ROM_LOAD16_BYTE("sfe-20", 0x20000, 0x10000, 0xb40e67ee )
-		ROM_LOAD16_BYTE("sfe-23", 0x20001, 0x10000, 0x477c3d5b )
-		ROM_LOAD16_BYTE("sfe-21", 0x40000, 0x10000, 0x2547192b )
-		ROM_LOAD16_BYTE("sfe-24", 0x40001, 0x10000, 0x79680f4e )
+	static RomLoadPtr rom_sf1 = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x60000, REGION_CPU1, 0 );
+		ROM_LOAD16_BYTE("sfe-19", 0x00000, 0x10000, 0x8346c3ca );
+		ROM_LOAD16_BYTE("sfe-22", 0x00001, 0x10000, 0x3a4bfaa8 );
+		ROM_LOAD16_BYTE("sfe-20", 0x20000, 0x10000, 0xb40e67ee );
+		ROM_LOAD16_BYTE("sfe-23", 0x20001, 0x10000, 0x477c3d5b );
+		ROM_LOAD16_BYTE("sfe-21", 0x40000, 0x10000, 0x2547192b );
+		ROM_LOAD16_BYTE("sfe-24", 0x40001, 0x10000, 0x79680f4e );
 	
-		ROM_REGION( 0x10000, REGION_CPU2, 0 )	/* 64k for the music CPU */
-		ROM_LOAD( "sf-02.bin", 0x0000, 0x8000, 0x4a9ac534 )
+		ROM_REGION( 0x10000, REGION_CPU2, 0 );/* 64k for the music CPU */
+		ROM_LOAD( "sf-02.bin", 0x0000, 0x8000, 0x4a9ac534 );
 	
-		ROM_REGION( 0x40000, REGION_CPU3, 0 )	/* 256k for the samples CPU */
-		ROM_LOAD( "sfu-00",    0x00000, 0x20000, 0xa7cce903 )
-		ROM_LOAD( "sf-01.bin", 0x20000, 0x20000, 0x86e0f0d5 )
+		ROM_REGION( 0x40000, REGION_CPU3, 0 );/* 256k for the samples CPU */
+		ROM_LOAD( "sfu-00",    0x00000, 0x20000, 0xa7cce903 );
+		ROM_LOAD( "sf-01.bin", 0x20000, 0x20000, 0x86e0f0d5 );
 	
-		ROM_REGION( 0x080000, REGION_GFX1, ROMREGION_DISPOSE )
-		ROM_LOAD( "sf-39.bin", 0x000000, 0x020000, 0xcee3d292 ) /* Background b planes 0-1*/
-		ROM_LOAD( "sf-38.bin", 0x020000, 0x020000, 0x2ea99676 )
-		ROM_LOAD( "sf-41.bin", 0x040000, 0x020000, 0xe0280495 ) /* planes 2-3 */
-		ROM_LOAD( "sf-40.bin", 0x060000, 0x020000, 0xc70b30de )
+		ROM_REGION( 0x080000, REGION_GFX1, ROMREGION_DISPOSE );
+		ROM_LOAD( "sf-39.bin", 0x000000, 0x020000, 0xcee3d292 );/* Background b planes 0-1*/
+		ROM_LOAD( "sf-38.bin", 0x020000, 0x020000, 0x2ea99676 );
+		ROM_LOAD( "sf-41.bin", 0x040000, 0x020000, 0xe0280495 );/* planes 2-3 */
+		ROM_LOAD( "sf-40.bin", 0x060000, 0x020000, 0xc70b30de );
 	
-		ROM_REGION( 0x100000, REGION_GFX2, ROMREGION_DISPOSE )
-		ROM_LOAD( "sf-25.bin", 0x000000, 0x020000, 0x7f23042e )	/* Background m planes 0-1 */
-		ROM_LOAD( "sf-28.bin", 0x020000, 0x020000, 0x92f8b91c )
-		ROM_LOAD( "sf-30.bin", 0x040000, 0x020000, 0xb1399856 )
-		ROM_LOAD( "sf-34.bin", 0x060000, 0x020000, 0x96b6ae2e )
-		ROM_LOAD( "sf-26.bin", 0x080000, 0x020000, 0x54ede9f5 ) /* planes 2-3 */
-		ROM_LOAD( "sf-29.bin", 0x0a0000, 0x020000, 0xf0649a67 )
-		ROM_LOAD( "sf-31.bin", 0x0c0000, 0x020000, 0x8f4dd71a )
-		ROM_LOAD( "sf-35.bin", 0x0e0000, 0x020000, 0x70c00fb4 )
+		ROM_REGION( 0x100000, REGION_GFX2, ROMREGION_DISPOSE );
+		ROM_LOAD( "sf-25.bin", 0x000000, 0x020000, 0x7f23042e );/* Background m planes 0-1 */
+		ROM_LOAD( "sf-28.bin", 0x020000, 0x020000, 0x92f8b91c );
+		ROM_LOAD( "sf-30.bin", 0x040000, 0x020000, 0xb1399856 );
+		ROM_LOAD( "sf-34.bin", 0x060000, 0x020000, 0x96b6ae2e );
+		ROM_LOAD( "sf-26.bin", 0x080000, 0x020000, 0x54ede9f5 );/* planes 2-3 */
+		ROM_LOAD( "sf-29.bin", 0x0a0000, 0x020000, 0xf0649a67 );
+		ROM_LOAD( "sf-31.bin", 0x0c0000, 0x020000, 0x8f4dd71a );
+		ROM_LOAD( "sf-35.bin", 0x0e0000, 0x020000, 0x70c00fb4 );
 	
-		ROM_REGION( 0x1c0000, REGION_GFX3, ROMREGION_DISPOSE )
-		ROM_LOAD( "sf-15.bin", 0x000000, 0x020000, 0xfc0113db ) /* Sprites planes 1-2 */
-		ROM_LOAD( "sf-16.bin", 0x020000, 0x020000, 0x82e4a6d3 )
-		ROM_LOAD( "sf-11.bin", 0x040000, 0x020000, 0xe112df1b )
-		ROM_LOAD( "sf-12.bin", 0x060000, 0x020000, 0x42d52299 )
-		ROM_LOAD( "sf-07.bin", 0x080000, 0x020000, 0x49f340d9 )
-		ROM_LOAD( "sf-08.bin", 0x0a0000, 0x020000, 0x95ece9b1 )
-		ROM_LOAD( "sf-03.bin", 0x0c0000, 0x020000, 0x5ca05781 )
-		ROM_LOAD( "sf-17.bin", 0x0e0000, 0x020000, 0x69fac48e ) /* planes 2-3 */
-		ROM_LOAD( "sf-18.bin", 0x100000, 0x020000, 0x71cfd18d )
-		ROM_LOAD( "sf-13.bin", 0x120000, 0x020000, 0xfa2eb24b )
-		ROM_LOAD( "sf-14.bin", 0x140000, 0x020000, 0xad955c95 )
-		ROM_LOAD( "sf-09.bin", 0x160000, 0x020000, 0x41b73a31 )
-		ROM_LOAD( "sf-10.bin", 0x180000, 0x020000, 0x91c41c50 )
-		ROM_LOAD( "sf-05.bin", 0x1a0000, 0x020000, 0x538c7cbe )
+		ROM_REGION( 0x1c0000, REGION_GFX3, ROMREGION_DISPOSE );
+		ROM_LOAD( "sf-15.bin", 0x000000, 0x020000, 0xfc0113db );/* Sprites planes 1-2 */
+		ROM_LOAD( "sf-16.bin", 0x020000, 0x020000, 0x82e4a6d3 );
+		ROM_LOAD( "sf-11.bin", 0x040000, 0x020000, 0xe112df1b );
+		ROM_LOAD( "sf-12.bin", 0x060000, 0x020000, 0x42d52299 );
+		ROM_LOAD( "sf-07.bin", 0x080000, 0x020000, 0x49f340d9 );
+		ROM_LOAD( "sf-08.bin", 0x0a0000, 0x020000, 0x95ece9b1 );
+		ROM_LOAD( "sf-03.bin", 0x0c0000, 0x020000, 0x5ca05781 );
+		ROM_LOAD( "sf-17.bin", 0x0e0000, 0x020000, 0x69fac48e );/* planes 2-3 */
+		ROM_LOAD( "sf-18.bin", 0x100000, 0x020000, 0x71cfd18d );
+		ROM_LOAD( "sf-13.bin", 0x120000, 0x020000, 0xfa2eb24b );
+		ROM_LOAD( "sf-14.bin", 0x140000, 0x020000, 0xad955c95 );
+		ROM_LOAD( "sf-09.bin", 0x160000, 0x020000, 0x41b73a31 );
+		ROM_LOAD( "sf-10.bin", 0x180000, 0x020000, 0x91c41c50 );
+		ROM_LOAD( "sf-05.bin", 0x1a0000, 0x020000, 0x538c7cbe );
 	
-		ROM_REGION( 0x004000, REGION_GFX4, ROMREGION_DISPOSE )
-		ROM_LOAD( "sf-27.bin", 0x000000, 0x004000, 0x2b09b36d ) /* Characters planes 1-2 */
+		ROM_REGION( 0x004000, REGION_GFX4, ROMREGION_DISPOSE );
+		ROM_LOAD( "sf-27.bin", 0x000000, 0x004000, 0x2b09b36d );/* Characters planes 1-2 */
 	
-		ROM_REGION( 0x40000, REGION_GFX5, 0 )	/* background tilemaps */
-		ROM_LOAD( "sf-37.bin", 0x000000, 0x010000, 0x23d09d3d )
-		ROM_LOAD( "sf-36.bin", 0x010000, 0x010000, 0xea16df6c )
-		ROM_LOAD( "sf-32.bin", 0x020000, 0x010000, 0x72df2bd9 )
-		ROM_LOAD( "sf-33.bin", 0x030000, 0x010000, 0x3e99d3d5 )
+		ROM_REGION( 0x40000, REGION_GFX5, 0 );/* background tilemaps */
+		ROM_LOAD( "sf-37.bin", 0x000000, 0x010000, 0x23d09d3d );
+		ROM_LOAD( "sf-36.bin", 0x010000, 0x010000, 0xea16df6c );
+		ROM_LOAD( "sf-32.bin", 0x020000, 0x010000, 0x72df2bd9 );
+		ROM_LOAD( "sf-33.bin", 0x030000, 0x010000, 0x3e99d3d5 );
 	
-		ROM_REGION( 0x0320, REGION_PROMS, 0 )
-		ROM_LOAD( "mb7114h.12k",  0x0000, 0x0100, 0x75af3553 )	/* unknown */
-		ROM_LOAD( "mb7114h.11h",  0x0100, 0x0100, 0xc0e56586 )	/* unknown */
-		ROM_LOAD( "mb7114h.12j",  0x0200, 0x0100, 0x4c734b64 )	/* unknown */
-		ROM_LOAD( "mmi-7603.13h", 0x0300, 0x0020, 0x06bcda53 )	/* unknown */
-	ROM_END
+		ROM_REGION( 0x0320, REGION_PROMS, 0 );
+		ROM_LOAD( "mb7114h.12k",  0x0000, 0x0100, 0x75af3553 );/* unknown */
+		ROM_LOAD( "mb7114h.11h",  0x0100, 0x0100, 0xc0e56586 );/* unknown */
+		ROM_LOAD( "mb7114h.12j",  0x0200, 0x0100, 0x4c734b64 );/* unknown */
+		ROM_LOAD( "mmi-7603.13h", 0x0300, 0x0020, 0x06bcda53 );/* unknown */
+	ROM_END(); }}; 
 	
-	ROM_START( sf1us )
-		ROM_REGION( 0x60000, REGION_CPU1, 0 )
-		ROM_LOAD16_BYTE("sfd-19", 0x00000, 0x10000, 0xfaaf6255 )
-		ROM_LOAD16_BYTE("sfd-22", 0x00001, 0x10000, 0xe1fe3519 )
-		ROM_LOAD16_BYTE("sfd-20", 0x20000, 0x10000, 0x44b915bd )
-		ROM_LOAD16_BYTE("sfd-23", 0x20001, 0x10000, 0x79c43ff8 )
-		ROM_LOAD16_BYTE("sfd-21", 0x40000, 0x10000, 0xe8db799b )
-		ROM_LOAD16_BYTE("sfd-24", 0x40001, 0x10000, 0x466a3440 )
+	static RomLoadPtr rom_sf1us = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x60000, REGION_CPU1, 0 );
+		ROM_LOAD16_BYTE("sfd-19", 0x00000, 0x10000, 0xfaaf6255 );
+		ROM_LOAD16_BYTE("sfd-22", 0x00001, 0x10000, 0xe1fe3519 );
+		ROM_LOAD16_BYTE("sfd-20", 0x20000, 0x10000, 0x44b915bd );
+		ROM_LOAD16_BYTE("sfd-23", 0x20001, 0x10000, 0x79c43ff8 );
+		ROM_LOAD16_BYTE("sfd-21", 0x40000, 0x10000, 0xe8db799b );
+		ROM_LOAD16_BYTE("sfd-24", 0x40001, 0x10000, 0x466a3440 );
 	
-		ROM_REGION( 0x10000, REGION_CPU2, 0 )	/* 64k for the music CPU */
-		ROM_LOAD( "sf-02.bin", 0x0000, 0x8000, 0x4a9ac534 )
+		ROM_REGION( 0x10000, REGION_CPU2, 0 );/* 64k for the music CPU */
+		ROM_LOAD( "sf-02.bin", 0x0000, 0x8000, 0x4a9ac534 );
 	
-		ROM_REGION( 0x40000, REGION_CPU3, 0 )	/* 256k for the samples CPU */
-		ROM_LOAD( "sfu-00",    0x00000, 0x20000, 0xa7cce903 )
-		ROM_LOAD( "sf-01.bin", 0x20000, 0x20000, 0x86e0f0d5 )
+		ROM_REGION( 0x40000, REGION_CPU3, 0 );/* 256k for the samples CPU */
+		ROM_LOAD( "sfu-00",    0x00000, 0x20000, 0xa7cce903 );
+		ROM_LOAD( "sf-01.bin", 0x20000, 0x20000, 0x86e0f0d5 );
 	
-		ROM_REGION( 0x080000, REGION_GFX1, ROMREGION_DISPOSE )
-		ROM_LOAD( "sf-39.bin", 0x000000, 0x020000, 0xcee3d292 ) /* Background b planes 0-1*/
-		ROM_LOAD( "sf-38.bin", 0x020000, 0x020000, 0x2ea99676 )
-		ROM_LOAD( "sf-41.bin", 0x040000, 0x020000, 0xe0280495 ) /* planes 2-3 */
-		ROM_LOAD( "sf-40.bin", 0x060000, 0x020000, 0xc70b30de )
+		ROM_REGION( 0x080000, REGION_GFX1, ROMREGION_DISPOSE );
+		ROM_LOAD( "sf-39.bin", 0x000000, 0x020000, 0xcee3d292 );/* Background b planes 0-1*/
+		ROM_LOAD( "sf-38.bin", 0x020000, 0x020000, 0x2ea99676 );
+		ROM_LOAD( "sf-41.bin", 0x040000, 0x020000, 0xe0280495 );/* planes 2-3 */
+		ROM_LOAD( "sf-40.bin", 0x060000, 0x020000, 0xc70b30de );
 	
-		ROM_REGION( 0x100000, REGION_GFX2, ROMREGION_DISPOSE )
-		ROM_LOAD( "sf-25.bin", 0x000000, 0x020000, 0x7f23042e )	/* Background m planes 0-1 */
-		ROM_LOAD( "sf-28.bin", 0x020000, 0x020000, 0x92f8b91c )
-		ROM_LOAD( "sf-30.bin", 0x040000, 0x020000, 0xb1399856 )
-		ROM_LOAD( "sf-34.bin", 0x060000, 0x020000, 0x96b6ae2e )
-		ROM_LOAD( "sf-26.bin", 0x080000, 0x020000, 0x54ede9f5 ) /* planes 2-3 */
-		ROM_LOAD( "sf-29.bin", 0x0a0000, 0x020000, 0xf0649a67 )
-		ROM_LOAD( "sf-31.bin", 0x0c0000, 0x020000, 0x8f4dd71a )
-		ROM_LOAD( "sf-35.bin", 0x0e0000, 0x020000, 0x70c00fb4 )
+		ROM_REGION( 0x100000, REGION_GFX2, ROMREGION_DISPOSE );
+		ROM_LOAD( "sf-25.bin", 0x000000, 0x020000, 0x7f23042e );/* Background m planes 0-1 */
+		ROM_LOAD( "sf-28.bin", 0x020000, 0x020000, 0x92f8b91c );
+		ROM_LOAD( "sf-30.bin", 0x040000, 0x020000, 0xb1399856 );
+		ROM_LOAD( "sf-34.bin", 0x060000, 0x020000, 0x96b6ae2e );
+		ROM_LOAD( "sf-26.bin", 0x080000, 0x020000, 0x54ede9f5 );/* planes 2-3 */
+		ROM_LOAD( "sf-29.bin", 0x0a0000, 0x020000, 0xf0649a67 );
+		ROM_LOAD( "sf-31.bin", 0x0c0000, 0x020000, 0x8f4dd71a );
+		ROM_LOAD( "sf-35.bin", 0x0e0000, 0x020000, 0x70c00fb4 );
 	
-		ROM_REGION( 0x1c0000, REGION_GFX3, ROMREGION_DISPOSE )
-		ROM_LOAD( "sf-15.bin", 0x000000, 0x020000, 0xfc0113db ) /* Sprites planes 1-2 */
-		ROM_LOAD( "sf-16.bin", 0x020000, 0x020000, 0x82e4a6d3 )
-		ROM_LOAD( "sf-11.bin", 0x040000, 0x020000, 0xe112df1b )
-		ROM_LOAD( "sf-12.bin", 0x060000, 0x020000, 0x42d52299 )
-		ROM_LOAD( "sf-07.bin", 0x080000, 0x020000, 0x49f340d9 )
-		ROM_LOAD( "sf-08.bin", 0x0a0000, 0x020000, 0x95ece9b1 )
-		ROM_LOAD( "sf-03.bin", 0x0c0000, 0x020000, 0x5ca05781 )
-		ROM_LOAD( "sf-17.bin", 0x0e0000, 0x020000, 0x69fac48e ) /* planes 2-3 */
-		ROM_LOAD( "sf-18.bin", 0x100000, 0x020000, 0x71cfd18d )
-		ROM_LOAD( "sf-13.bin", 0x120000, 0x020000, 0xfa2eb24b )
-		ROM_LOAD( "sf-14.bin", 0x140000, 0x020000, 0xad955c95 )
-		ROM_LOAD( "sf-09.bin", 0x160000, 0x020000, 0x41b73a31 )
-		ROM_LOAD( "sf-10.bin", 0x180000, 0x020000, 0x91c41c50 )
-		ROM_LOAD( "sf-05.bin", 0x1a0000, 0x020000, 0x538c7cbe )
+		ROM_REGION( 0x1c0000, REGION_GFX3, ROMREGION_DISPOSE );
+		ROM_LOAD( "sf-15.bin", 0x000000, 0x020000, 0xfc0113db );/* Sprites planes 1-2 */
+		ROM_LOAD( "sf-16.bin", 0x020000, 0x020000, 0x82e4a6d3 );
+		ROM_LOAD( "sf-11.bin", 0x040000, 0x020000, 0xe112df1b );
+		ROM_LOAD( "sf-12.bin", 0x060000, 0x020000, 0x42d52299 );
+		ROM_LOAD( "sf-07.bin", 0x080000, 0x020000, 0x49f340d9 );
+		ROM_LOAD( "sf-08.bin", 0x0a0000, 0x020000, 0x95ece9b1 );
+		ROM_LOAD( "sf-03.bin", 0x0c0000, 0x020000, 0x5ca05781 );
+		ROM_LOAD( "sf-17.bin", 0x0e0000, 0x020000, 0x69fac48e );/* planes 2-3 */
+		ROM_LOAD( "sf-18.bin", 0x100000, 0x020000, 0x71cfd18d );
+		ROM_LOAD( "sf-13.bin", 0x120000, 0x020000, 0xfa2eb24b );
+		ROM_LOAD( "sf-14.bin", 0x140000, 0x020000, 0xad955c95 );
+		ROM_LOAD( "sf-09.bin", 0x160000, 0x020000, 0x41b73a31 );
+		ROM_LOAD( "sf-10.bin", 0x180000, 0x020000, 0x91c41c50 );
+		ROM_LOAD( "sf-05.bin", 0x1a0000, 0x020000, 0x538c7cbe );
 	
-		ROM_REGION( 0x004000, REGION_GFX4, ROMREGION_DISPOSE )
-		ROM_LOAD( "sf-27.bin", 0x000000, 0x004000, 0x2b09b36d ) /* Characters planes 1-2 */
+		ROM_REGION( 0x004000, REGION_GFX4, ROMREGION_DISPOSE );
+		ROM_LOAD( "sf-27.bin", 0x000000, 0x004000, 0x2b09b36d );/* Characters planes 1-2 */
 	
-		ROM_REGION( 0x40000, REGION_GFX5, 0 )	/* background tilemaps */
-		ROM_LOAD( "sf-37.bin", 0x000000, 0x010000, 0x23d09d3d )
-		ROM_LOAD( "sf-36.bin", 0x010000, 0x010000, 0xea16df6c )
-		ROM_LOAD( "sf-32.bin", 0x020000, 0x010000, 0x72df2bd9 )
-		ROM_LOAD( "sf-33.bin", 0x030000, 0x010000, 0x3e99d3d5 )
+		ROM_REGION( 0x40000, REGION_GFX5, 0 );/* background tilemaps */
+		ROM_LOAD( "sf-37.bin", 0x000000, 0x010000, 0x23d09d3d );
+		ROM_LOAD( "sf-36.bin", 0x010000, 0x010000, 0xea16df6c );
+		ROM_LOAD( "sf-32.bin", 0x020000, 0x010000, 0x72df2bd9 );
+		ROM_LOAD( "sf-33.bin", 0x030000, 0x010000, 0x3e99d3d5 );
 	
-		ROM_REGION( 0x0320, REGION_PROMS, 0 )
-		ROM_LOAD( "mb7114h.12k",  0x0000, 0x0100, 0x75af3553 )	/* unknown */
-		ROM_LOAD( "mb7114h.11h",  0x0100, 0x0100, 0xc0e56586 )	/* unknown */
-		ROM_LOAD( "mb7114h.12j",  0x0200, 0x0100, 0x4c734b64 )	/* unknown */
-		ROM_LOAD( "mmi-7603.13h", 0x0300, 0x0020, 0x06bcda53 )	/* unknown */
-	ROM_END
+		ROM_REGION( 0x0320, REGION_PROMS, 0 );
+		ROM_LOAD( "mb7114h.12k",  0x0000, 0x0100, 0x75af3553 );/* unknown */
+		ROM_LOAD( "mb7114h.11h",  0x0100, 0x0100, 0xc0e56586 );/* unknown */
+		ROM_LOAD( "mb7114h.12j",  0x0200, 0x0100, 0x4c734b64 );/* unknown */
+		ROM_LOAD( "mmi-7603.13h", 0x0300, 0x0020, 0x06bcda53 );/* unknown */
+	ROM_END(); }}; 
 	
-	ROM_START( sf1jp )
-		ROM_REGION( 0x60000, REGION_CPU1, 0 )
-		ROM_LOAD16_BYTE("sf-19.bin", 0x00000, 0x10000, 0x116027d7 )
-		ROM_LOAD16_BYTE("sf-22.bin", 0x00001, 0x10000, 0xd3cbd09e )
-		ROM_LOAD16_BYTE("sf-20.bin", 0x20000, 0x10000, 0xfe07e83f )
-		ROM_LOAD16_BYTE("sf-23.bin", 0x20001, 0x10000, 0x1e435d33 )
-		ROM_LOAD16_BYTE("sf-21.bin", 0x40000, 0x10000, 0xe086bc4c )
-		ROM_LOAD16_BYTE("sf-24.bin", 0x40001, 0x10000, 0x13a6696b )
+	static RomLoadPtr rom_sf1jp = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x60000, REGION_CPU1, 0 );
+		ROM_LOAD16_BYTE("sf-19.bin", 0x00000, 0x10000, 0x116027d7 );
+		ROM_LOAD16_BYTE("sf-22.bin", 0x00001, 0x10000, 0xd3cbd09e );
+		ROM_LOAD16_BYTE("sf-20.bin", 0x20000, 0x10000, 0xfe07e83f );
+		ROM_LOAD16_BYTE("sf-23.bin", 0x20001, 0x10000, 0x1e435d33 );
+		ROM_LOAD16_BYTE("sf-21.bin", 0x40000, 0x10000, 0xe086bc4c );
+		ROM_LOAD16_BYTE("sf-24.bin", 0x40001, 0x10000, 0x13a6696b );
 	
-		ROM_REGION( 0x10000, REGION_CPU2, 0 )	/* 64k for the music CPU */
-		ROM_LOAD( "sf-02.bin", 0x0000, 0x8000, 0x4a9ac534 )
+		ROM_REGION( 0x10000, REGION_CPU2, 0 );/* 64k for the music CPU */
+		ROM_LOAD( "sf-02.bin", 0x0000, 0x8000, 0x4a9ac534 );
 	
-		ROM_REGION( 0x40000, REGION_CPU3, 0 )	/* 256k for the samples CPU */
-		ROM_LOAD( "sf-00.bin", 0x00000, 0x20000, 0x4b733845 )
-		ROM_LOAD( "sf-01.bin", 0x20000, 0x20000, 0x86e0f0d5 )
+		ROM_REGION( 0x40000, REGION_CPU3, 0 );/* 256k for the samples CPU */
+		ROM_LOAD( "sf-00.bin", 0x00000, 0x20000, 0x4b733845 );
+		ROM_LOAD( "sf-01.bin", 0x20000, 0x20000, 0x86e0f0d5 );
 	
-		ROM_REGION( 0x080000, REGION_GFX1, ROMREGION_DISPOSE )
-		ROM_LOAD( "sf-39.bin", 0x000000, 0x020000, 0xcee3d292 ) /* Background b planes 0-1*/
-		ROM_LOAD( "sf-38.bin", 0x020000, 0x020000, 0x2ea99676 )
-		ROM_LOAD( "sf-41.bin", 0x040000, 0x020000, 0xe0280495 ) /* planes 2-3 */
-		ROM_LOAD( "sf-40.bin", 0x060000, 0x020000, 0xc70b30de )
+		ROM_REGION( 0x080000, REGION_GFX1, ROMREGION_DISPOSE );
+		ROM_LOAD( "sf-39.bin", 0x000000, 0x020000, 0xcee3d292 );/* Background b planes 0-1*/
+		ROM_LOAD( "sf-38.bin", 0x020000, 0x020000, 0x2ea99676 );
+		ROM_LOAD( "sf-41.bin", 0x040000, 0x020000, 0xe0280495 );/* planes 2-3 */
+		ROM_LOAD( "sf-40.bin", 0x060000, 0x020000, 0xc70b30de );
 	
-		ROM_REGION( 0x100000, REGION_GFX2, ROMREGION_DISPOSE )
-		ROM_LOAD( "sf-25.bin", 0x000000, 0x020000, 0x7f23042e )	/* Background m planes 0-1 */
-		ROM_LOAD( "sf-28.bin", 0x020000, 0x020000, 0x92f8b91c )
-		ROM_LOAD( "sf-30.bin", 0x040000, 0x020000, 0xb1399856 )
-		ROM_LOAD( "sf-34.bin", 0x060000, 0x020000, 0x96b6ae2e )
-		ROM_LOAD( "sf-26.bin", 0x080000, 0x020000, 0x54ede9f5 ) /* planes 2-3 */
-		ROM_LOAD( "sf-29.bin", 0x0a0000, 0x020000, 0xf0649a67 )
-		ROM_LOAD( "sf-31.bin", 0x0c0000, 0x020000, 0x8f4dd71a )
-		ROM_LOAD( "sf-35.bin", 0x0e0000, 0x020000, 0x70c00fb4 )
+		ROM_REGION( 0x100000, REGION_GFX2, ROMREGION_DISPOSE );
+		ROM_LOAD( "sf-25.bin", 0x000000, 0x020000, 0x7f23042e );/* Background m planes 0-1 */
+		ROM_LOAD( "sf-28.bin", 0x020000, 0x020000, 0x92f8b91c );
+		ROM_LOAD( "sf-30.bin", 0x040000, 0x020000, 0xb1399856 );
+		ROM_LOAD( "sf-34.bin", 0x060000, 0x020000, 0x96b6ae2e );
+		ROM_LOAD( "sf-26.bin", 0x080000, 0x020000, 0x54ede9f5 );/* planes 2-3 */
+		ROM_LOAD( "sf-29.bin", 0x0a0000, 0x020000, 0xf0649a67 );
+		ROM_LOAD( "sf-31.bin", 0x0c0000, 0x020000, 0x8f4dd71a );
+		ROM_LOAD( "sf-35.bin", 0x0e0000, 0x020000, 0x70c00fb4 );
 	
-		ROM_REGION( 0x1c0000, REGION_GFX3, ROMREGION_DISPOSE )
-		ROM_LOAD( "sf-15.bin", 0x000000, 0x020000, 0xfc0113db ) /* Sprites planes 1-2 */
-		ROM_LOAD( "sf-16.bin", 0x020000, 0x020000, 0x82e4a6d3 )
-		ROM_LOAD( "sf-11.bin", 0x040000, 0x020000, 0xe112df1b )
-		ROM_LOAD( "sf-12.bin", 0x060000, 0x020000, 0x42d52299 )
-		ROM_LOAD( "sf-07.bin", 0x080000, 0x020000, 0x49f340d9 )
-		ROM_LOAD( "sf-08.bin", 0x0a0000, 0x020000, 0x95ece9b1 )
-		ROM_LOAD( "sf-03.bin", 0x0c0000, 0x020000, 0x5ca05781 )
-		ROM_LOAD( "sf-17.bin", 0x0e0000, 0x020000, 0x69fac48e ) /* planes 2-3 */
-		ROM_LOAD( "sf-18.bin", 0x100000, 0x020000, 0x71cfd18d )
-		ROM_LOAD( "sf-13.bin", 0x120000, 0x020000, 0xfa2eb24b )
-		ROM_LOAD( "sf-14.bin", 0x140000, 0x020000, 0xad955c95 )
-		ROM_LOAD( "sf-09.bin", 0x160000, 0x020000, 0x41b73a31 )
-		ROM_LOAD( "sf-10.bin", 0x180000, 0x020000, 0x91c41c50 )
-		ROM_LOAD( "sf-05.bin", 0x1a0000, 0x020000, 0x538c7cbe )
+		ROM_REGION( 0x1c0000, REGION_GFX3, ROMREGION_DISPOSE );
+		ROM_LOAD( "sf-15.bin", 0x000000, 0x020000, 0xfc0113db );/* Sprites planes 1-2 */
+		ROM_LOAD( "sf-16.bin", 0x020000, 0x020000, 0x82e4a6d3 );
+		ROM_LOAD( "sf-11.bin", 0x040000, 0x020000, 0xe112df1b );
+		ROM_LOAD( "sf-12.bin", 0x060000, 0x020000, 0x42d52299 );
+		ROM_LOAD( "sf-07.bin", 0x080000, 0x020000, 0x49f340d9 );
+		ROM_LOAD( "sf-08.bin", 0x0a0000, 0x020000, 0x95ece9b1 );
+		ROM_LOAD( "sf-03.bin", 0x0c0000, 0x020000, 0x5ca05781 );
+		ROM_LOAD( "sf-17.bin", 0x0e0000, 0x020000, 0x69fac48e );/* planes 2-3 */
+		ROM_LOAD( "sf-18.bin", 0x100000, 0x020000, 0x71cfd18d );
+		ROM_LOAD( "sf-13.bin", 0x120000, 0x020000, 0xfa2eb24b );
+		ROM_LOAD( "sf-14.bin", 0x140000, 0x020000, 0xad955c95 );
+		ROM_LOAD( "sf-09.bin", 0x160000, 0x020000, 0x41b73a31 );
+		ROM_LOAD( "sf-10.bin", 0x180000, 0x020000, 0x91c41c50 );
+		ROM_LOAD( "sf-05.bin", 0x1a0000, 0x020000, 0x538c7cbe );
 	
-		ROM_REGION( 0x004000, REGION_GFX4, ROMREGION_DISPOSE )
-		ROM_LOAD( "sf-27.bin", 0x000000, 0x004000, 0x2b09b36d ) /* Characters planes 1-2 */
+		ROM_REGION( 0x004000, REGION_GFX4, ROMREGION_DISPOSE );
+		ROM_LOAD( "sf-27.bin", 0x000000, 0x004000, 0x2b09b36d );/* Characters planes 1-2 */
 	
-		ROM_REGION( 0x40000, REGION_GFX5, 0 )	/* background tilemaps */
-		ROM_LOAD( "sf-37.bin", 0x000000, 0x010000, 0x23d09d3d )
-		ROM_LOAD( "sf-36.bin", 0x010000, 0x010000, 0xea16df6c )
-		ROM_LOAD( "sf-32.bin", 0x020000, 0x010000, 0x72df2bd9 )
-		ROM_LOAD( "sf-33.bin", 0x030000, 0x010000, 0x3e99d3d5 )
+		ROM_REGION( 0x40000, REGION_GFX5, 0 );/* background tilemaps */
+		ROM_LOAD( "sf-37.bin", 0x000000, 0x010000, 0x23d09d3d );
+		ROM_LOAD( "sf-36.bin", 0x010000, 0x010000, 0xea16df6c );
+		ROM_LOAD( "sf-32.bin", 0x020000, 0x010000, 0x72df2bd9 );
+		ROM_LOAD( "sf-33.bin", 0x030000, 0x010000, 0x3e99d3d5 );
 	
-		ROM_REGION( 0x0320, REGION_PROMS, 0 )
-		ROM_LOAD( "sfb05.bin",    0x0000, 0x0100, 0x864199ad )	/* unknown */
-		ROM_LOAD( "sfb00.bin",    0x0100, 0x0100, 0xbd3f8c5d )	/* unknown */
-		ROM_LOAD( "mb7114h.12j",  0x0200, 0x0100, 0x4c734b64 )	/* unknown */
-		ROM_LOAD( "mmi-7603.13h", 0x0300, 0x0020, 0x06bcda53 )	/* unknown */
-	ROM_END
+		ROM_REGION( 0x0320, REGION_PROMS, 0 );
+		ROM_LOAD( "sfb05.bin",    0x0000, 0x0100, 0x864199ad );/* unknown */
+		ROM_LOAD( "sfb00.bin",    0x0100, 0x0100, 0xbd3f8c5d );/* unknown */
+		ROM_LOAD( "mb7114h.12j",  0x0200, 0x0100, 0x4c734b64 );/* unknown */
+		ROM_LOAD( "mmi-7603.13h", 0x0300, 0x0020, 0x06bcda53 );/* unknown */
+	ROM_END(); }}; 
 	
 	
 	

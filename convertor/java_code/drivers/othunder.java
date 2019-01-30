@@ -616,71 +616,71 @@ public class othunder
 						DRIVERS
 	***************************************************************************/
 	
-	ROM_START( othunder )
-		ROM_REGION( 0x80000, REGION_CPU1, 0 )	/* 512K for 68000 code */
-		ROM_LOAD16_BYTE( "b67-20",    0x00000, 0x20000, 0x21439ea2 )
-		ROM_LOAD16_BYTE( "b67-23",    0x00001, 0x20000, 0x789e9daa )
-		ROM_LOAD16_BYTE( "b67-14.61", 0x40000, 0x20000, 0x7f3dd724 )
-		ROM_LOAD16_BYTE( "b67-15.62", 0x40001, 0x20000, 0xe84f62d0 )
+	static RomLoadPtr rom_othunder = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x80000, REGION_CPU1, 0 );/* 512K for 68000 code */
+		ROM_LOAD16_BYTE( "b67-20",    0x00000, 0x20000, 0x21439ea2 );
+		ROM_LOAD16_BYTE( "b67-23",    0x00001, 0x20000, 0x789e9daa );
+		ROM_LOAD16_BYTE( "b67-14.61", 0x40000, 0x20000, 0x7f3dd724 );
+		ROM_LOAD16_BYTE( "b67-15.62", 0x40001, 0x20000, 0xe84f62d0 );
 	
-		ROM_REGION( 0x1c000, REGION_CPU2, 0 )	/* sound cpu */
-		ROM_LOAD( "b67-13.40",   0x00000, 0x04000, 0x2936b4b1 )
-		ROM_CONTINUE(            0x10000, 0x0c000 ) /* banked stuff */
+		ROM_REGION( 0x1c000, REGION_CPU2, 0 );/* sound cpu */
+		ROM_LOAD( "b67-13.40",   0x00000, 0x04000, 0x2936b4b1 );
+		ROM_CONTINUE(            0x10000, 0x0c000 );/* banked stuff */
 	
-		ROM_REGION( 0x80000, REGION_GFX1, ROMREGION_DISPOSE )
-		ROM_LOAD( "b67-06", 0x00000, 0x80000, 0xb9a38d64 )		/* SCR */
+		ROM_REGION( 0x80000, REGION_GFX1, ROMREGION_DISPOSE );
+		ROM_LOAD( "b67-06", 0x00000, 0x80000, 0xb9a38d64 );	/* SCR */
 	
-		ROM_REGION( 0x200000, REGION_GFX2, ROMREGION_DISPOSE )
-		ROM_LOAD32_BYTE( "b67-01", 0x00000, 0x80000, 0x81ad9acb )	/* OBJ: each rom has 1 bitplane, forming 16x8 tiles */
-		ROM_LOAD32_BYTE( "b67-02", 0x00001, 0x80000, 0xc20cd2fb )
-		ROM_LOAD32_BYTE( "b67-03", 0x00002, 0x80000, 0xbc9019ed )
-		ROM_LOAD32_BYTE( "b67-04", 0x00003, 0x80000, 0x2af4c8af )
+		ROM_REGION( 0x200000, REGION_GFX2, ROMREGION_DISPOSE );
+		ROM_LOAD32_BYTE( "b67-01", 0x00000, 0x80000, 0x81ad9acb );/* OBJ: each rom has 1 bitplane, forming 16x8 tiles */
+		ROM_LOAD32_BYTE( "b67-02", 0x00001, 0x80000, 0xc20cd2fb );
+		ROM_LOAD32_BYTE( "b67-03", 0x00002, 0x80000, 0xbc9019ed );
+		ROM_LOAD32_BYTE( "b67-04", 0x00003, 0x80000, 0x2af4c8af );
 	
-		ROM_REGION16_LE( 0x80000, REGION_USER1, 0 )
-		ROM_LOAD16_WORD( "b67-05", 0x00000, 0x80000, 0x9593e42b )	/* STY, index used to create 64x64 sprites on the fly */
+		ROM_REGION16_LE( 0x80000, REGION_USER1, 0 );
+		ROM_LOAD16_WORD( "b67-05", 0x00000, 0x80000, 0x9593e42b );/* STY, index used to create 64x64 sprites on the fly */
 	
-		ROM_REGION( 0x80000, REGION_SOUND1, 0 )	/* ADPCM samples */
-		ROM_LOAD( "b67-08", 0x00000, 0x80000, 0x458f41fb )
+		ROM_REGION( 0x80000, REGION_SOUND1, 0 );/* ADPCM samples */
+		ROM_LOAD( "b67-08", 0x00000, 0x80000, 0x458f41fb );
 	
-		ROM_REGION( 0x80000, REGION_SOUND2, 0 )	/* Delta-T samples */
-		ROM_LOAD( "b67-07", 0x00000, 0x80000, 0x4f834357 )
+		ROM_REGION( 0x80000, REGION_SOUND2, 0 );/* Delta-T samples */
+		ROM_LOAD( "b67-07", 0x00000, 0x80000, 0x4f834357 );
 	
-		ROM_REGION( 0x10000, REGION_USER2, 0 )
-	//	ROM_LOAD( "b67-09", 0x00000, 0xd56, 0x130fd2ab )	/* pals ? */
-	//	ROM_LOAD( "b67-10", 0x00000, 0xcd5, 0x312f9e2a )
-	//	ROM_LOAD( "b67-11", 0x00000, 0xada, 0xf863b864 )
-	//	ROM_LOAD( "b67-12", 0x00000, 0xcd5, 0x653d86bb )
-	ROM_END
+		ROM_REGION( 0x10000, REGION_USER2, 0 );
+	//	ROM_LOAD( "b67-09", 0x00000, 0xd56, 0x130fd2ab );/* pals ? */
+	//	ROM_LOAD( "b67-10", 0x00000, 0xcd5, 0x312f9e2a );
+	//	ROM_LOAD( "b67-11", 0x00000, 0xada, 0xf863b864 );
+	//	ROM_LOAD( "b67-12", 0x00000, 0xcd5, 0x653d86bb );
+	ROM_END(); }}; 
 	
-	ROM_START( othundu )
-		ROM_REGION( 0x80000, REGION_CPU1, 0 )	/* 512K for 68000 code */
-		ROM_LOAD16_BYTE( "b67-20-1.63", 0x00000, 0x20000, 0x851a453b )
-		ROM_LOAD16_BYTE( "b67-22-1.64", 0x00001, 0x20000, 0x19480dc0 )
-		ROM_LOAD16_BYTE( "b67-14.61",   0x40000, 0x20000, 0x7f3dd724 )
-		ROM_LOAD16_BYTE( "b67-15.62",   0x40001, 0x20000, 0xe84f62d0 )
+	static RomLoadPtr rom_othundu = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x80000, REGION_CPU1, 0 );/* 512K for 68000 code */
+		ROM_LOAD16_BYTE( "b67-20-1.63", 0x00000, 0x20000, 0x851a453b );
+		ROM_LOAD16_BYTE( "b67-22-1.64", 0x00001, 0x20000, 0x19480dc0 );
+		ROM_LOAD16_BYTE( "b67-14.61",   0x40000, 0x20000, 0x7f3dd724 );
+		ROM_LOAD16_BYTE( "b67-15.62",   0x40001, 0x20000, 0xe84f62d0 );
 	
-		ROM_REGION( 0x1c000, REGION_CPU2, 0 )	/* sound cpu */
-		ROM_LOAD( "b67-13.40",   0x00000, 0x04000, 0x2936b4b1 )
-		ROM_CONTINUE(            0x10000, 0x0c000 ) /* banked stuff */
+		ROM_REGION( 0x1c000, REGION_CPU2, 0 );/* sound cpu */
+		ROM_LOAD( "b67-13.40",   0x00000, 0x04000, 0x2936b4b1 );
+		ROM_CONTINUE(            0x10000, 0x0c000 );/* banked stuff */
 	
-		ROM_REGION( 0x80000, REGION_GFX1, ROMREGION_DISPOSE )
-		ROM_LOAD( "b67-06", 0x00000, 0x80000, 0xb9a38d64 )		/* SCR */
+		ROM_REGION( 0x80000, REGION_GFX1, ROMREGION_DISPOSE );
+		ROM_LOAD( "b67-06", 0x00000, 0x80000, 0xb9a38d64 );	/* SCR */
 	
-		ROM_REGION( 0x200000, REGION_GFX2, ROMREGION_DISPOSE )
-		ROM_LOAD32_BYTE( "b67-01", 0x00000, 0x80000, 0x81ad9acb )	/* OBJ: each rom has 1 bitplane, forming 16x8 tiles */
-		ROM_LOAD32_BYTE( "b67-02", 0x00001, 0x80000, 0xc20cd2fb )
-		ROM_LOAD32_BYTE( "b67-03", 0x00002, 0x80000, 0xbc9019ed )
-		ROM_LOAD32_BYTE( "b67-04", 0x00003, 0x80000, 0x2af4c8af )
+		ROM_REGION( 0x200000, REGION_GFX2, ROMREGION_DISPOSE );
+		ROM_LOAD32_BYTE( "b67-01", 0x00000, 0x80000, 0x81ad9acb );/* OBJ: each rom has 1 bitplane, forming 16x8 tiles */
+		ROM_LOAD32_BYTE( "b67-02", 0x00001, 0x80000, 0xc20cd2fb );
+		ROM_LOAD32_BYTE( "b67-03", 0x00002, 0x80000, 0xbc9019ed );
+		ROM_LOAD32_BYTE( "b67-04", 0x00003, 0x80000, 0x2af4c8af );
 	
-		ROM_REGION16_LE( 0x80000, REGION_USER1, 0 )
-		ROM_LOAD16_WORD( "b67-05", 0x00000, 0x80000, 0x9593e42b )	/* STY, index used to create 64x64 sprites on the fly */
+		ROM_REGION16_LE( 0x80000, REGION_USER1, 0 );
+		ROM_LOAD16_WORD( "b67-05", 0x00000, 0x80000, 0x9593e42b );/* STY, index used to create 64x64 sprites on the fly */
 	
-		ROM_REGION( 0x80000, REGION_SOUND1, 0 )	/* ADPCM samples */
-		ROM_LOAD( "b67-08", 0x00000, 0x80000, 0x458f41fb )
+		ROM_REGION( 0x80000, REGION_SOUND1, 0 );/* ADPCM samples */
+		ROM_LOAD( "b67-08", 0x00000, 0x80000, 0x458f41fb );
 	
-		ROM_REGION( 0x80000, REGION_SOUND2, 0 )	/* Delta-T samples */
-		ROM_LOAD( "b67-07", 0x00000, 0x80000, 0x4f834357 )
-	ROM_END
+		ROM_REGION( 0x80000, REGION_SOUND2, 0 );/* Delta-T samples */
+		ROM_LOAD( "b67-07", 0x00000, 0x80000, 0x4f834357 );
+	ROM_END(); }}; 
 	
 	
 	static void init_othunder(void)

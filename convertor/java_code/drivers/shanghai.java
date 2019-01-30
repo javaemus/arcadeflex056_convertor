@@ -1107,23 +1107,23 @@ public class shanghai
 	
 	***************************************************************************/
 	
-	ROM_START( shanghai )
-		ROM_REGION( 0x100000, REGION_CPU1, 0 )
-		ROM_LOAD16_BYTE( "shg-22a.rom", 0xa0001, 0x10000, 0xe0a085be )
-		ROM_LOAD16_BYTE( "shg-21a.rom", 0xa0000, 0x10000, 0x4ab06d32 )
-		ROM_LOAD16_BYTE( "shg-28a.rom", 0xc0001, 0x10000, 0x983ec112 )
-		ROM_LOAD16_BYTE( "shg-27a.rom", 0xc0000, 0x10000, 0x41af0945 )
-		ROM_LOAD16_BYTE( "shg-37b.rom", 0xe0001, 0x10000, 0x3f192da0 )
-		ROM_LOAD16_BYTE( "shg-36b.rom", 0xe0000, 0x10000, 0xa1d6af96 )
-	ROM_END
+	static RomLoadPtr rom_shanghai = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x100000, REGION_CPU1, 0 );
+		ROM_LOAD16_BYTE( "shg-22a.rom", 0xa0001, 0x10000, 0xe0a085be );
+		ROM_LOAD16_BYTE( "shg-21a.rom", 0xa0000, 0x10000, 0x4ab06d32 );
+		ROM_LOAD16_BYTE( "shg-28a.rom", 0xc0001, 0x10000, 0x983ec112 );
+		ROM_LOAD16_BYTE( "shg-27a.rom", 0xc0000, 0x10000, 0x41af0945 );
+		ROM_LOAD16_BYTE( "shg-37b.rom", 0xe0001, 0x10000, 0x3f192da0 );
+		ROM_LOAD16_BYTE( "shg-36b.rom", 0xe0000, 0x10000, 0xa1d6af96 );
+	ROM_END(); }}; 
 	
-	ROM_START( shangha2 )
-		ROM_REGION( 0x100000, REGION_CPU1, 0 )
-		ROM_LOAD16_BYTE( "sht-27j", 0x80001, 0x20000, 0x969cbf00 )
-		ROM_LOAD16_BYTE( "sht-26j", 0x80000, 0x20000, 0x4bf01ab4 )
-		ROM_LOAD16_BYTE( "sht-31j", 0xc0001, 0x20000, 0x312e3b9d )
-		ROM_LOAD16_BYTE( "sht-30j", 0xc0000, 0x20000, 0x2861a894 )
-	ROM_END
+	static RomLoadPtr rom_shangha2 = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x100000, REGION_CPU1, 0 );
+		ROM_LOAD16_BYTE( "sht-27j", 0x80001, 0x20000, 0x969cbf00 );
+		ROM_LOAD16_BYTE( "sht-26j", 0x80000, 0x20000, 0x4bf01ab4 );
+		ROM_LOAD16_BYTE( "sht-31j", 0xc0001, 0x20000, 0x312e3b9d );
+		ROM_LOAD16_BYTE( "sht-30j", 0xc0000, 0x20000, 0x2861a894 );
+	ROM_END(); }}; 
 	
 	
 	

@@ -273,63 +273,63 @@ public class skychut
 	
 	***************************************************************************/
 	
-	ROM_START( iremm10 )
-		ROM_REGION( 0x10000, REGION_CPU1, 0 )
-		ROM_LOAD( "b1r",  0x1000, 0x0400, 0xf9a7eb9b ) // code, ok
-		ROM_LOAD( "b2r",  0x1400, 0x0400, 0xaf11c1aa ) // code ok
-		ROM_LOAD( "b3r",  0x1800, 0x0400, 0xed49e481 ) // code, ok
-		ROM_LOAD( "b4r",  0x1c00, 0x0400, 0x6d5db95b ) // code, vectors ok,
-		ROM_RELOAD(       0xfc00, 0x0400 )	/* for the reset and interrupt vectors */
-		ROM_LOAD( "b5r",  0x2000, 0x0400, 0xeabba7aa ) // graphic
-		ROM_LOAD( "b6r",  0x2400, 0x0400, BADCRC( 0x9b7d6e77 ) ) // ?? bad dump
-		ROM_LOAD( "b7r",  0x2800, 0x0400, 0x32045580 ) // code, graphic ok,
+	static RomLoadPtr rom_iremm10 = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x10000, REGION_CPU1, 0 );
+		ROM_LOAD( "b1r",  0x1000, 0x0400, 0xf9a7eb9b );// code, ok
+		ROM_LOAD( "b2r",  0x1400, 0x0400, 0xaf11c1aa );// code ok
+		ROM_LOAD( "b3r",  0x1800, 0x0400, 0xed49e481 );// code, ok
+		ROM_LOAD( "b4r",  0x1c00, 0x0400, 0x6d5db95b );// code, vectors ok,
+		ROM_RELOAD(       0xfc00, 0x0400 );/* for the reset and interrupt vectors */
+		ROM_LOAD( "b5r",  0x2000, 0x0400, 0xeabba7aa );// graphic
+		ROM_LOAD( "b6r",  0x2400, 0x0400, BADCRC( 0x9b7d6e77 )); // ?? bad dump
+		ROM_LOAD( "b7r",  0x2800, 0x0400, 0x32045580 );// code, graphic ok,
 	
-		ROM_REGION( 0x0800, REGION_GFX1, ROMREGION_DISPOSE )
-		ROM_LOAD( "b9r",  0x0000, 0x0400, 0x56942cab ) // ok
-		ROM_LOAD( "b10r", 0x0400, 0x0400, 0xbe4b8585 ) // ok
-	ROM_END
+		ROM_REGION( 0x0800, REGION_GFX1, ROMREGION_DISPOSE );
+		ROM_LOAD( "b9r",  0x0000, 0x0400, 0x56942cab );// ok
+		ROM_LOAD( "b10r", 0x0400, 0x0400, 0xbe4b8585 );// ok
+	ROM_END(); }}; 
 	
-	ROM_START( skychut )
-		ROM_REGION( 0x10000, REGION_CPU1, 0 )	/* 64k for code */
-		ROM_LOAD( "sc1d",  0x1000, 0x0400, 0x30b5ded1 )
-		ROM_LOAD( "sc2d",  0x1400, 0x0400, 0xfd1f4b9e )
-		ROM_LOAD( "sc3d",  0x1800, 0x0400, 0x67ed201e )
-		ROM_LOAD( "sc4d",  0x1c00, 0x0400, 0x9b23a679 )
-		ROM_RELOAD(        0xfc00, 0x0400 )	/* for the reset and interrupt vectors */
-		ROM_LOAD( "sc5a",  0x2000, 0x0400, 0x51d975e6 )
-		ROM_LOAD( "sc6e",  0x2400, 0x0400, 0x617f302f )
-		ROM_LOAD( "sc7",   0x2800, 0x0400, 0xdd4c8e1a )
-		ROM_LOAD( "sc8d",  0x2c00, 0x0400, 0xaca8b798 )
+	static RomLoadPtr rom_skychut = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x10000, REGION_CPU1, 0 );/* 64k for code */
+		ROM_LOAD( "sc1d",  0x1000, 0x0400, 0x30b5ded1 );
+		ROM_LOAD( "sc2d",  0x1400, 0x0400, 0xfd1f4b9e );
+		ROM_LOAD( "sc3d",  0x1800, 0x0400, 0x67ed201e );
+		ROM_LOAD( "sc4d",  0x1c00, 0x0400, 0x9b23a679 );
+		ROM_RELOAD(        0xfc00, 0x0400 );/* for the reset and interrupt vectors */
+		ROM_LOAD( "sc5a",  0x2000, 0x0400, 0x51d975e6 );
+		ROM_LOAD( "sc6e",  0x2400, 0x0400, 0x617f302f );
+		ROM_LOAD( "sc7",   0x2800, 0x0400, 0xdd4c8e1a );
+		ROM_LOAD( "sc8d",  0x2c00, 0x0400, 0xaca8b798 );
 	
-		ROM_REGION( 0x0800, REGION_GFX1, ROMREGION_DISPOSE )
-		ROM_LOAD( "sc9d",  0x0000, 0x0400, 0x2101029e )
-		ROM_LOAD( "sc10d", 0x0400, 0x0400, 0x2f81c70c )
-	ROM_END
+		ROM_REGION( 0x0800, REGION_GFX1, ROMREGION_DISPOSE );
+		ROM_LOAD( "sc9d",  0x0000, 0x0400, 0x2101029e );
+		ROM_LOAD( "sc10d", 0x0400, 0x0400, 0x2f81c70c );
+	ROM_END(); }}; 
 	
-	ROM_START( spacbeam )
-		ROM_REGION( 0x10000, REGION_CPU1, 0 )
-		ROM_LOAD( "m1b", 0x1000, 0x0400, 0x5a1c3e0b )
-		ROM_LOAD( "m2b", 0x1400, 0x0400, 0xa02bd9d7 )
-		ROM_LOAD( "m3b", 0x1800, 0x0400, 0x78040843 )
-		ROM_LOAD( "m4b", 0x1c00, 0x0400, 0x74705a44 )
-		ROM_RELOAD(      0xfc00, 0x0400 )	/* for the reset and interrupt vectors */
-		ROM_LOAD( "m5b", 0x2000, 0x0400, 0xafdf1242 )
-		ROM_LOAD( "m6b", 0x2400, 0x0400, 0x12afb0c2 )
-	ROM_END
+	static RomLoadPtr rom_spacbeam = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x10000, REGION_CPU1, 0 );
+		ROM_LOAD( "m1b", 0x1000, 0x0400, 0x5a1c3e0b );
+		ROM_LOAD( "m2b", 0x1400, 0x0400, 0xa02bd9d7 );
+		ROM_LOAD( "m3b", 0x1800, 0x0400, 0x78040843 );
+		ROM_LOAD( "m4b", 0x1c00, 0x0400, 0x74705a44 );
+		ROM_RELOAD(      0xfc00, 0x0400 );/* for the reset and interrupt vectors */
+		ROM_LOAD( "m5b", 0x2000, 0x0400, 0xafdf1242 );
+		ROM_LOAD( "m6b", 0x2400, 0x0400, 0x12afb0c2 );
+	ROM_END(); }}; 
 	
-	ROM_START( greenber )
-		ROM_REGION( 0x10000, REGION_CPU1, 0 )
-		ROM_LOAD( "gb1", 0x1000, 0x0400, 0x018ff672 ) // ok
-		ROM_LOAD( "gb2", 0x1400, 0x0400, 0xea8f2267 ) // ok
-		ROM_LOAD( "gb3", 0x1800, 0x0400, 0x8f337920 ) // ok
-		ROM_LOAD( "gb4", 0x1c00, 0x0400, 0x7eeac4eb ) // ok
-		ROM_RELOAD(      0xfc00, 0x0400 )	/* for the reset and interrupt vectors */
-		ROM_LOAD( "gb5", 0x2000, 0x0400, 0xb2f8e69a )
-		ROM_LOAD( "gb6", 0x2400, 0x0400, 0x50ea8bd3 )
-		ROM_LOAD( "gb7", 0x2800, 0x0400, 0x00000000 ) // 2be8 entry
-		ROM_LOAD( "gb8", 0x2c00, 0x0400, 0x34700b31 )
-		ROM_LOAD( "gb9", 0x3000, 0x0400, 0xc27b9ba3 ) // ok ?
-	ROM_END
+	static RomLoadPtr rom_greenber = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x10000, REGION_CPU1, 0 );
+		ROM_LOAD( "gb1", 0x1000, 0x0400, 0x018ff672 );// ok
+		ROM_LOAD( "gb2", 0x1400, 0x0400, 0xea8f2267 );// ok
+		ROM_LOAD( "gb3", 0x1800, 0x0400, 0x8f337920 );// ok
+		ROM_LOAD( "gb4", 0x1c00, 0x0400, 0x7eeac4eb );// ok
+		ROM_RELOAD(      0xfc00, 0x0400 );/* for the reset and interrupt vectors */
+		ROM_LOAD( "gb5", 0x2000, 0x0400, 0xb2f8e69a );
+		ROM_LOAD( "gb6", 0x2400, 0x0400, 0x50ea8bd3 );
+		ROM_LOAD( "gb7", 0x2800, 0x0400, 0x00000000 );// 2be8 entry
+		ROM_LOAD( "gb8", 0x2c00, 0x0400, 0x34700b31 );
+		ROM_LOAD( "gb9", 0x3000, 0x0400, 0xc27b9ba3 );// ok ?
+	ROM_END(); }}; 
 	
 	
 	

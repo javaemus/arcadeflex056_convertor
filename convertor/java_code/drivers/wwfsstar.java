@@ -407,66 +407,66 @@ public class wwfsstar
 	 just the 1 sets supported
 	*******************************************************************************/
 	
-	ROM_START( wwfsstar )
-		ROM_REGION( 0x40000, REGION_CPU1, 0 ) /* Main CPU  (68000) */
-		ROM_LOAD16_BYTE( "24ac-04.34", 0x00000, 0x20000, 0xee9b850e )
-		ROM_LOAD16_BYTE( "24ad-04.35", 0x00001, 0x20000, 0x057c2eef )
+	static RomLoadPtr rom_wwfsstar = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x40000, REGION_CPU1, 0 );/* Main CPU  (68000) */
+		ROM_LOAD16_BYTE( "24ac-04.34", 0x00000, 0x20000, 0xee9b850e );
+		ROM_LOAD16_BYTE( "24ad-04.35", 0x00001, 0x20000, 0x057c2eef );
 	
-		ROM_REGION( 0x10000, REGION_CPU2, 0 ) /* Sound CPU (Z80)  */
-		ROM_LOAD( "b.12",    0x00000, 0x08000, 0x1e44f8aa )
+		ROM_REGION( 0x10000, REGION_CPU2, 0 );/* Sound CPU (Z80)  */
+		ROM_LOAD( "b.12",    0x00000, 0x08000, 0x1e44f8aa );
 	
-		ROM_REGION( 0x40000, REGION_SOUND1, 0 )	/* ADPCM samples */
-		ROM_LOAD( "24a9.46",	   0x00000, 0x20000, 0x703ff08f )
-		ROM_LOAD( "wwfs03.bin",    0x20000, 0x10000, 0x8a35a20e )
-		ROM_LOAD( "wwfs05.bin",    0x30000, 0x10000, 0x6df08962 )
+		ROM_REGION( 0x40000, REGION_SOUND1, 0 );/* ADPCM samples */
+		ROM_LOAD( "24a9.46",	   0x00000, 0x20000, 0x703ff08f );
+		ROM_LOAD( "wwfs03.bin",    0x20000, 0x10000, 0x8a35a20e );
+		ROM_LOAD( "wwfs05.bin",    0x30000, 0x10000, 0x6df08962 );
 	
-		ROM_REGION( 0x20000, REGION_GFX1, ROMREGION_DISPOSE ) /* FG0 Tiles (8x8) */
-		ROM_LOAD( "24a4-0.58",    0x00000, 0x20000, 0xcb12ba40 )
+		ROM_REGION( 0x20000, REGION_GFX1, ROMREGION_DISPOSE );/* FG0 Tiles (8x8) */
+		ROM_LOAD( "24a4-0.58",    0x00000, 0x20000, 0xcb12ba40 );
 	
-		ROM_REGION( 0x200000, REGION_GFX2, ROMREGION_DISPOSE ) /* SPR Tiles (16x16) */
-		ROM_LOAD( "wwfs39.bin",    0x000000, 0x010000, 0xd807b09a )
-		ROM_LOAD( "wwfs38.bin",    0x010000, 0x010000, 0xd8ea94d3 )
-		ROM_LOAD( "wwfs37.bin",    0x020000, 0x010000, 0x5e8d7407 )
-		ROM_LOAD( "wwfs36.bin",    0x030000, 0x010000, 0x9005e942 )
-		ROM_LOAD( "wwfs43.bin",    0x040000, 0x010000, 0xaafc4a38 )
-		ROM_LOAD( "wwfs42.bin",    0x050000, 0x010000, 0xe48b88fb )
-		ROM_LOAD( "wwfs41.bin",    0x060000, 0x010000, 0xed7f69d5 )
-		ROM_LOAD( "wwfs40.bin",    0x070000, 0x010000, 0x4d75fd89 )
-		ROM_LOAD( "wwfs19.bin",    0x080000, 0x010000, 0x7426d444 )
-		ROM_LOAD( "wwfs18.bin",    0x090000, 0x010000, 0xaf11ad2a )
-		ROM_LOAD( "wwfs17.bin",    0x0a0000, 0x010000, 0xef12069f )
-		ROM_LOAD( "wwfs16.bin",    0x0b0000, 0x010000, 0x08343e7f )
-		ROM_LOAD( "wwfs15.bin",    0x0c0000, 0x010000, 0xaac5a928 )
-		ROM_LOAD( "wwfs14.bin",    0x0d0000, 0x010000, 0x67eb7bea )
-		ROM_LOAD( "wwfs13.bin",    0x0e0000, 0x010000, 0x970b6e76 )
-		ROM_LOAD( "wwfs12.bin",    0x0f0000, 0x010000, 0x242caff5 )
-		ROM_LOAD( "wwfs27.bin",    0x100000, 0x010000, 0xf3eb8ab9 )
-		ROM_LOAD( "wwfs26.bin",    0x110000, 0x010000, 0x2ca91eaf )
-		ROM_LOAD( "wwfs25.bin",    0x120000, 0x010000, 0xbbf69c6a )
-		ROM_LOAD( "wwfs24.bin",    0x130000, 0x010000, 0x76b08bcd )
-		ROM_LOAD( "wwfs23.bin",    0x140000, 0x010000, 0x681f5b5e )
-		ROM_LOAD( "wwfs22.bin",    0x150000, 0x010000, 0x81fe1bf7 )
-		ROM_LOAD( "wwfs21.bin",    0x160000, 0x010000, 0xc52eee5e )
-		ROM_LOAD( "wwfs20.bin",    0x170000, 0x010000, 0xb2a8050e )
-		ROM_LOAD( "wwfs35.bin",    0x180000, 0x010000, 0x9d648d82 )
-		ROM_LOAD( "wwfs34.bin",    0x190000, 0x010000, 0x742a79db )
-		ROM_LOAD( "wwfs33.bin",    0x1a0000, 0x010000, 0xf6923db6 )
-		ROM_LOAD( "wwfs32.bin",    0x1b0000, 0x010000, 0x9becd621 )
-		ROM_LOAD( "wwfs31.bin",    0x1c0000, 0x010000, 0xf94c74d5 )
-		ROM_LOAD( "wwfs30.bin",    0x1d0000, 0x010000, 0x94094518 )
-		ROM_LOAD( "wwfs29.bin",    0x1e0000, 0x010000, 0x7b5b9d83 )
-		ROM_LOAD( "wwfs28.bin",    0x1f0000, 0x010000, 0x70fda626 )
+		ROM_REGION( 0x200000, REGION_GFX2, ROMREGION_DISPOSE );/* SPR Tiles (16x16) */
+		ROM_LOAD( "wwfs39.bin",    0x000000, 0x010000, 0xd807b09a );
+		ROM_LOAD( "wwfs38.bin",    0x010000, 0x010000, 0xd8ea94d3 );
+		ROM_LOAD( "wwfs37.bin",    0x020000, 0x010000, 0x5e8d7407 );
+		ROM_LOAD( "wwfs36.bin",    0x030000, 0x010000, 0x9005e942 );
+		ROM_LOAD( "wwfs43.bin",    0x040000, 0x010000, 0xaafc4a38 );
+		ROM_LOAD( "wwfs42.bin",    0x050000, 0x010000, 0xe48b88fb );
+		ROM_LOAD( "wwfs41.bin",    0x060000, 0x010000, 0xed7f69d5 );
+		ROM_LOAD( "wwfs40.bin",    0x070000, 0x010000, 0x4d75fd89 );
+		ROM_LOAD( "wwfs19.bin",    0x080000, 0x010000, 0x7426d444 );
+		ROM_LOAD( "wwfs18.bin",    0x090000, 0x010000, 0xaf11ad2a );
+		ROM_LOAD( "wwfs17.bin",    0x0a0000, 0x010000, 0xef12069f );
+		ROM_LOAD( "wwfs16.bin",    0x0b0000, 0x010000, 0x08343e7f );
+		ROM_LOAD( "wwfs15.bin",    0x0c0000, 0x010000, 0xaac5a928 );
+		ROM_LOAD( "wwfs14.bin",    0x0d0000, 0x010000, 0x67eb7bea );
+		ROM_LOAD( "wwfs13.bin",    0x0e0000, 0x010000, 0x970b6e76 );
+		ROM_LOAD( "wwfs12.bin",    0x0f0000, 0x010000, 0x242caff5 );
+		ROM_LOAD( "wwfs27.bin",    0x100000, 0x010000, 0xf3eb8ab9 );
+		ROM_LOAD( "wwfs26.bin",    0x110000, 0x010000, 0x2ca91eaf );
+		ROM_LOAD( "wwfs25.bin",    0x120000, 0x010000, 0xbbf69c6a );
+		ROM_LOAD( "wwfs24.bin",    0x130000, 0x010000, 0x76b08bcd );
+		ROM_LOAD( "wwfs23.bin",    0x140000, 0x010000, 0x681f5b5e );
+		ROM_LOAD( "wwfs22.bin",    0x150000, 0x010000, 0x81fe1bf7 );
+		ROM_LOAD( "wwfs21.bin",    0x160000, 0x010000, 0xc52eee5e );
+		ROM_LOAD( "wwfs20.bin",    0x170000, 0x010000, 0xb2a8050e );
+		ROM_LOAD( "wwfs35.bin",    0x180000, 0x010000, 0x9d648d82 );
+		ROM_LOAD( "wwfs34.bin",    0x190000, 0x010000, 0x742a79db );
+		ROM_LOAD( "wwfs33.bin",    0x1a0000, 0x010000, 0xf6923db6 );
+		ROM_LOAD( "wwfs32.bin",    0x1b0000, 0x010000, 0x9becd621 );
+		ROM_LOAD( "wwfs31.bin",    0x1c0000, 0x010000, 0xf94c74d5 );
+		ROM_LOAD( "wwfs30.bin",    0x1d0000, 0x010000, 0x94094518 );
+		ROM_LOAD( "wwfs29.bin",    0x1e0000, 0x010000, 0x7b5b9d83 );
+		ROM_LOAD( "wwfs28.bin",    0x1f0000, 0x010000, 0x70fda626 );
 	
-		ROM_REGION( 0x80000, REGION_GFX3, ROMREGION_DISPOSE ) /* BG0 Tiles (16x16) */
-		ROM_LOAD( "wwfs51.bin",    0x00000, 0x10000, 0x51157385 )
-		ROM_LOAD( "wwfs50.bin",    0x10000, 0x10000, 0x7fc79df5 )
-		ROM_LOAD( "wwfs49.bin",    0x20000, 0x10000, 0xa14076b0 )
-		ROM_LOAD( "wwfs48.bin",    0x30000, 0x10000, 0x251372fd )
-		ROM_LOAD( "wwfs47.bin",    0x40000, 0x10000, 0x6fd7b6ea )
-		ROM_LOAD( "wwfs46.bin",    0x50000, 0x10000, 0x985e5180 )
-		ROM_LOAD( "wwfs45.bin",    0x60000, 0x10000, 0xb2fad792 )
-		ROM_LOAD( "wwfs44.bin",    0x70000, 0x10000, 0x4f965fa9 )
-	ROM_END
+		ROM_REGION( 0x80000, REGION_GFX3, ROMREGION_DISPOSE );/* BG0 Tiles (16x16) */
+		ROM_LOAD( "wwfs51.bin",    0x00000, 0x10000, 0x51157385 );
+		ROM_LOAD( "wwfs50.bin",    0x10000, 0x10000, 0x7fc79df5 );
+		ROM_LOAD( "wwfs49.bin",    0x20000, 0x10000, 0xa14076b0 );
+		ROM_LOAD( "wwfs48.bin",    0x30000, 0x10000, 0x251372fd );
+		ROM_LOAD( "wwfs47.bin",    0x40000, 0x10000, 0x6fd7b6ea );
+		ROM_LOAD( "wwfs46.bin",    0x50000, 0x10000, 0x985e5180 );
+		ROM_LOAD( "wwfs45.bin",    0x60000, 0x10000, 0xb2fad792 );
+		ROM_LOAD( "wwfs44.bin",    0x70000, 0x10000, 0x4f965fa9 );
+	ROM_END(); }}; 
 	
 	
 	GAME( 1989, wwfsstar, 0, wwfsstar, wwfsstar,  0, ROT0, "Technos Japan", "WWF Superstars (US)" )

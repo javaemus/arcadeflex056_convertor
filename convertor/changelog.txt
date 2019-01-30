@@ -9,6 +9,7 @@
 -Implemented WRITEHANDLER for 8 bit writes
 -Implemented GFXLayout support
 -Implemented GFXDecode support
+-ROM Macros conversion support
 
 29/01/2019
 ==========

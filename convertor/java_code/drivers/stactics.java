@@ -308,25 +308,25 @@ public class stactics
 	
 	***************************************************************************/
 	
-	ROM_START( stactics )
-		ROM_REGION( 0x10000, REGION_CPU1, 0 ) /* 64k for code */
-		ROM_LOAD( "epr-218x",     0x0000, 0x0800, 0xb1186ad2 )
-		ROM_LOAD( "epr-219x",     0x0800, 0x0800, 0x3b86036d )
-		ROM_LOAD( "epr-220x",     0x1000, 0x0800, 0xc58702da )
-		ROM_LOAD( "epr-221x",     0x1800, 0x0800, 0xe327639e )
-		ROM_LOAD( "epr-222y",     0x2000, 0x0800, 0x24dd2bcc )
-		ROM_LOAD( "epr-223x",     0x2800, 0x0800, 0x7fef0940 )
+	static RomLoadPtr rom_stactics = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x10000, REGION_CPU1, 0 );/* 64k for code */
+		ROM_LOAD( "epr-218x",     0x0000, 0x0800, 0xb1186ad2 );
+		ROM_LOAD( "epr-219x",     0x0800, 0x0800, 0x3b86036d );
+		ROM_LOAD( "epr-220x",     0x1000, 0x0800, 0xc58702da );
+		ROM_LOAD( "epr-221x",     0x1800, 0x0800, 0xe327639e );
+		ROM_LOAD( "epr-222y",     0x2000, 0x0800, 0x24dd2bcc );
+		ROM_LOAD( "epr-223x",     0x2800, 0x0800, 0x7fef0940 );
 	
-		ROM_REGION( 0x1060, REGION_GFX1, ROMREGION_DISPOSE )	/* gfx decoded in vh_start */
-		ROM_LOAD( "epr-217",      0x0000, 0x0800, 0x38259f5f )      /* LED fire beam data      */
-		ROM_LOAD( "pr55",         0x0800, 0x0800, 0xf162673b )      /* timing PROM (unused)    */
-		ROM_LOAD( "pr65",         0x1000, 0x0020, 0xa1506b9d )      /* timing PROM (unused)    */
-		ROM_LOAD( "pr66",         0x1020, 0x0020, 0x78dcf300 )      /* timing PROM (unused)    */
-		ROM_LOAD( "pr67",         0x1040, 0x0020, 0xb27874e7 )      /* LED timing ROM (unused) */
+		ROM_REGION( 0x1060, REGION_GFX1, ROMREGION_DISPOSE );/* gfx decoded in vh_start */
+		ROM_LOAD( "epr-217",      0x0000, 0x0800, 0x38259f5f );     /* LED fire beam data      */
+		ROM_LOAD( "pr55",         0x0800, 0x0800, 0xf162673b );     /* timing PROM (unused)    */
+		ROM_LOAD( "pr65",         0x1000, 0x0020, 0xa1506b9d );     /* timing PROM (unused)    */
+		ROM_LOAD( "pr66",         0x1020, 0x0020, 0x78dcf300 );     /* timing PROM (unused)    */
+		ROM_LOAD( "pr67",         0x1040, 0x0020, 0xb27874e7 );     /* LED timing ROM (unused) */
 	
-		ROM_REGION( 0x0800, REGION_PROMS, 0 )
-		ROM_LOAD( "pr54",         0x0000, 0x0800, 0x9640bd6e )         /* color/priority prom */
-	ROM_END
+		ROM_REGION( 0x0800, REGION_PROMS, 0 );
+		ROM_LOAD( "pr54",         0x0000, 0x0800, 0x9640bd6e );        /* color/priority prom */
+	ROM_END(); }}; 
 	
 	
 	

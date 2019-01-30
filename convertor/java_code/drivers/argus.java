@@ -981,97 +981,97 @@ public class argus
 	
 	***************************************************************************/
 	
-	ROM_START( argus )
-		ROM_REGION( 0x28000, REGION_CPU1, 0 ) 					/* Main CPU */
-		ROM_LOAD( "ag_02.bin", 0x00000, 0x08000, 0x278a3f3d )
-		ROM_LOAD( "ag_03.bin", 0x10000, 0x08000, 0x3a7f3bfa )
-		ROM_LOAD( "ag_04.bin", 0x18000, 0x08000, 0x76adc9f6 )
-		ROM_LOAD( "ag_05.bin", 0x20000, 0x08000, 0xf76692d6 )
+	static RomLoadPtr rom_argus = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x28000, REGION_CPU1, 0 );					/* Main CPU */
+		ROM_LOAD( "ag_02.bin", 0x00000, 0x08000, 0x278a3f3d );
+		ROM_LOAD( "ag_03.bin", 0x10000, 0x08000, 0x3a7f3bfa );
+		ROM_LOAD( "ag_04.bin", 0x18000, 0x08000, 0x76adc9f6 );
+		ROM_LOAD( "ag_05.bin", 0x20000, 0x08000, 0xf76692d6 );
 	
-		ROM_REGION( 0x10000, REGION_CPU2, 0 )					/* Sound CPU */
-		ROM_LOAD( "ag_01.bin", 0x00000, 0x04000, 0x769e3f57 )
+		ROM_REGION( 0x10000, REGION_CPU2, 0 );				/* Sound CPU */
+		ROM_LOAD( "ag_01.bin", 0x00000, 0x04000, 0x769e3f57 );
 	
-		ROM_REGION( 0x20000, REGION_GFX1, ROMREGION_DISPOSE )	/* Sprite */
-		ROM_LOAD( "ag_09.bin", 0x00000, 0x08000, 0x6dbc1c58 )
-		ROM_LOAD( "ag_08.bin", 0x08000, 0x08000, 0xce6e987e )
-		ROM_LOAD( "ag_07.bin", 0x10000, 0x08000, 0xbbb9638d )
-		ROM_LOAD( "ag_06.bin", 0x18000, 0x08000, 0x655b48f8 )
+		ROM_REGION( 0x20000, REGION_GFX1, ROMREGION_DISPOSE );/* Sprite */
+		ROM_LOAD( "ag_09.bin", 0x00000, 0x08000, 0x6dbc1c58 );
+		ROM_LOAD( "ag_08.bin", 0x08000, 0x08000, 0xce6e987e );
+		ROM_LOAD( "ag_07.bin", 0x10000, 0x08000, 0xbbb9638d );
+		ROM_LOAD( "ag_06.bin", 0x18000, 0x08000, 0x655b48f8 );
 	
-		ROM_REGION( 0x20000, REGION_GFX2, ROMREGION_DISPOSE )	/* BG0 */
-		ROM_LOAD( "ag_13.bin", 0x00000, 0x08000, 0x20274268 )
-		ROM_LOAD( "ag_14.bin", 0x08000, 0x08000, 0xceb8860b )
-		ROM_LOAD( "ag_11.bin", 0x10000, 0x08000, 0x99ce8556 )
-		ROM_LOAD( "ag_12.bin", 0x18000, 0x08000, 0xe0e5377c )
+		ROM_REGION( 0x20000, REGION_GFX2, ROMREGION_DISPOSE );/* BG0 */
+		ROM_LOAD( "ag_13.bin", 0x00000, 0x08000, 0x20274268 );
+		ROM_LOAD( "ag_14.bin", 0x08000, 0x08000, 0xceb8860b );
+		ROM_LOAD( "ag_11.bin", 0x10000, 0x08000, 0x99ce8556 );
+		ROM_LOAD( "ag_12.bin", 0x18000, 0x08000, 0xe0e5377c );
 	
-		ROM_REGION( 0x08000, REGION_GFX3, ROMREGION_DISPOSE )	/* BG1 */
-		ROM_LOAD( "ag_17.bin", 0x00000, 0x08000, 0x0f12d09b )
+		ROM_REGION( 0x08000, REGION_GFX3, ROMREGION_DISPOSE );/* BG1 */
+		ROM_LOAD( "ag_17.bin", 0x00000, 0x08000, 0x0f12d09b );
 	
-		ROM_REGION( 0x08000, REGION_GFX4, ROMREGION_DISPOSE )	/* Text */
-		ROM_LOAD( "ag_10.bin", 0x00000, 0x04000, 0x2de696c4 )
+		ROM_REGION( 0x08000, REGION_GFX4, ROMREGION_DISPOSE );/* Text */
+		ROM_LOAD( "ag_10.bin", 0x00000, 0x04000, 0x2de696c4 );
 	
-		ROM_REGION( 0x08000, REGION_USER1, 0 )					/* Map */
-		ROM_LOAD( "ag_15.bin", 0x00000, 0x08000, 0x99834c1b )
+		ROM_REGION( 0x08000, REGION_USER1, 0 );				/* Map */
+		ROM_LOAD( "ag_15.bin", 0x00000, 0x08000, 0x99834c1b );
 	
-		ROM_REGION( 0x08000, REGION_USER2, 0 )					/* Pattern */
-		ROM_LOAD( "ag_16.bin", 0x00000, 0x08000, 0x39a51714 )
-	ROM_END
+		ROM_REGION( 0x08000, REGION_USER2, 0 );				/* Pattern */
+		ROM_LOAD( "ag_16.bin", 0x00000, 0x08000, 0x39a51714 );
+	ROM_END(); }}; 
 	
-	ROM_START( valtric )
-		ROM_REGION( 0x30000, REGION_CPU1, 0 ) 					/* Main CPU */
-		ROM_LOAD( "vt_04.bin",    0x00000, 0x08000, 0x709c705f )
-		ROM_LOAD( "vt_06.bin",    0x10000, 0x10000, 0xc9cbb4e4 )
-		ROM_LOAD( "vt_05.bin",    0x20000, 0x10000, 0x7ab2684b )
+	static RomLoadPtr rom_valtric = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x30000, REGION_CPU1, 0 );					/* Main CPU */
+		ROM_LOAD( "vt_04.bin",    0x00000, 0x08000, 0x709c705f );
+		ROM_LOAD( "vt_06.bin",    0x10000, 0x10000, 0xc9cbb4e4 );
+		ROM_LOAD( "vt_05.bin",    0x20000, 0x10000, 0x7ab2684b );
 	
-		ROM_REGION( 0x10000, REGION_CPU2, 0 )					/* Sound CPU */
-		ROM_LOAD( "vt_01.bin",    0x00000, 0x08000, 0x4616484f )
+		ROM_REGION( 0x10000, REGION_CPU2, 0 );				/* Sound CPU */
+		ROM_LOAD( "vt_01.bin",    0x00000, 0x08000, 0x4616484f );
 	
-		ROM_REGION( 0x20000, REGION_GFX1, ROMREGION_DISPOSE )	/* Sprite */
-		ROM_LOAD( "vt_02.bin",    0x00000, 0x10000, 0x66401977 )
-		ROM_LOAD( "vt_03.bin",    0x10000, 0x10000, 0x9203bbce )
+		ROM_REGION( 0x20000, REGION_GFX1, ROMREGION_DISPOSE );/* Sprite */
+		ROM_LOAD( "vt_02.bin",    0x00000, 0x10000, 0x66401977 );
+		ROM_LOAD( "vt_03.bin",    0x10000, 0x10000, 0x9203bbce );
 	
-		ROM_REGION( 0x40000, REGION_GFX2, ROMREGION_DISPOSE )	/* BG */
-		ROM_LOAD( "vt_08.bin",    0x00000, 0x10000, 0x661dd338 )
-		ROM_LOAD( "vt_09.bin",    0x10000, 0x10000, 0x085a35b1 )
-		ROM_LOAD( "vt_10.bin",    0x20000, 0x10000, 0x09c47323 )
-		ROM_LOAD( "vt_11.bin",    0x30000, 0x10000, 0x4cf800b5 )
+		ROM_REGION( 0x40000, REGION_GFX2, ROMREGION_DISPOSE );/* BG */
+		ROM_LOAD( "vt_08.bin",    0x00000, 0x10000, 0x661dd338 );
+		ROM_LOAD( "vt_09.bin",    0x10000, 0x10000, 0x085a35b1 );
+		ROM_LOAD( "vt_10.bin",    0x20000, 0x10000, 0x09c47323 );
+		ROM_LOAD( "vt_11.bin",    0x30000, 0x10000, 0x4cf800b5 );
 	
-		ROM_REGION( 0x08000, REGION_GFX3, ROMREGION_DISPOSE )	/* Text */
-		ROM_LOAD( "vt_07.bin",    0x00000, 0x08000, 0xd5f9bfb9 )
-	ROM_END
+		ROM_REGION( 0x08000, REGION_GFX3, ROMREGION_DISPOSE );/* Text */
+		ROM_LOAD( "vt_07.bin",    0x00000, 0x08000, 0xd5f9bfb9 );
+	ROM_END(); }}; 
 	
-	ROM_START( butasan )
-		ROM_REGION( 0x30000, REGION_CPU1, 0 ) 					/* Main CPU */
-		ROM_LOAD( "buta-04.bin",  0x00000, 0x08000, 0x47ff4ca9 )
-		ROM_LOAD( "buta-03.bin",  0x10000, 0x10000, 0x69fd88c7 )
-		ROM_LOAD( "buta-02.bin",  0x20000, 0x10000, 0x519dc412 )
+	static RomLoadPtr rom_butasan = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x30000, REGION_CPU1, 0 );					/* Main CPU */
+		ROM_LOAD( "buta-04.bin",  0x00000, 0x08000, 0x47ff4ca9 );
+		ROM_LOAD( "buta-03.bin",  0x10000, 0x10000, 0x69fd88c7 );
+		ROM_LOAD( "buta-02.bin",  0x20000, 0x10000, 0x519dc412 );
 	
-		ROM_REGION( 0x10000, REGION_CPU2, 0 )					/* Sound CPU */
-		ROM_LOAD( "buta-01.bin",  0x00000, 0x10000, 0xc9d23e2d )
+		ROM_REGION( 0x10000, REGION_CPU2, 0 );				/* Sound CPU */
+		ROM_LOAD( "buta-01.bin",  0x00000, 0x10000, 0xc9d23e2d );
 	
-		ROM_REGION( 0x80000, REGION_GFX1, ROMREGION_DISPOSE )	/* Sprite */
-		ROM_LOAD( "buta-16.bin",  0x00000, 0x10000, 0xe0ce51b6 )
-		ROM_LOAD( "buta-15.bin",  0x10000, 0x10000, 0x3ed19daa )
-		ROM_LOAD( "buta-14.bin",  0x20000, 0x10000, 0x8ec891c1 )
-		ROM_LOAD( "buta-13.bin",  0x30000, 0x10000, 0x5023e74d )
-		ROM_LOAD( "buta-12.bin",  0x40000, 0x10000, 0x44f59905 )
-		ROM_LOAD( "buta-11.bin",  0x50000, 0x10000, 0xb8929f1d )
-		ROM_LOAD( "buta-10.bin",  0x60000, 0x10000, 0xfd4d3baf )
-		ROM_LOAD( "buta-09.bin",  0x70000, 0x10000, 0x7da4c0fd )
+		ROM_REGION( 0x80000, REGION_GFX1, ROMREGION_DISPOSE );/* Sprite */
+		ROM_LOAD( "buta-16.bin",  0x00000, 0x10000, 0xe0ce51b6 );
+		ROM_LOAD( "buta-15.bin",  0x10000, 0x10000, 0x3ed19daa );
+		ROM_LOAD( "buta-14.bin",  0x20000, 0x10000, 0x8ec891c1 );
+		ROM_LOAD( "buta-13.bin",  0x30000, 0x10000, 0x5023e74d );
+		ROM_LOAD( "buta-12.bin",  0x40000, 0x10000, 0x44f59905 );
+		ROM_LOAD( "buta-11.bin",  0x50000, 0x10000, 0xb8929f1d );
+		ROM_LOAD( "buta-10.bin",  0x60000, 0x10000, 0xfd4d3baf );
+		ROM_LOAD( "buta-09.bin",  0x70000, 0x10000, 0x7da4c0fd );
 	
-		ROM_REGION( 0x20000, REGION_GFX2, ROMREGION_DISPOSE )	/* BG0 */
-		ROM_LOAD( "buta-05.bin",  0x00000, 0x10000, 0xb8e026b0 )
-		ROM_LOAD( "buta-06.bin",  0x10000, 0x10000, 0x8bbacb81 )
+		ROM_REGION( 0x20000, REGION_GFX2, ROMREGION_DISPOSE );/* BG0 */
+		ROM_LOAD( "buta-05.bin",  0x00000, 0x10000, 0xb8e026b0 );
+		ROM_LOAD( "buta-06.bin",  0x10000, 0x10000, 0x8bbacb81 );
 	
-		ROM_REGION( 0x10000, REGION_GFX3, ROMREGION_DISPOSE )	/* BG1 */
-		ROM_LOAD( "buta-07.bin",  0x00000, 0x10000, 0x3a48d531 )
+		ROM_REGION( 0x10000, REGION_GFX3, ROMREGION_DISPOSE );/* BG1 */
+		ROM_LOAD( "buta-07.bin",  0x00000, 0x10000, 0x3a48d531 );
 	
-		ROM_REGION( 0x08000, REGION_GFX4, ROMREGION_DISPOSE )	/* Text */
-		ROM_LOAD( "buta-08.bin",  0x00000, 0x08000, 0x5d45ce9c )
+		ROM_REGION( 0x08000, REGION_GFX4, ROMREGION_DISPOSE );/* Text */
+		ROM_LOAD( "buta-08.bin",  0x00000, 0x08000, 0x5d45ce9c );
 	
-		ROM_REGION( 0x00200, REGION_PROMS, 0 )					/* Data proms ??? */
-		ROM_LOAD( "buta-01.prm",  0x00000, 0x00100, 0x45baedd0 )
-		ROM_LOAD( "buta-02.prm",  0x00100, 0x00100, 0x0dcb18fc )
-	ROM_END
+		ROM_REGION( 0x00200, REGION_PROMS, 0 );				/* Data proms ??? */
+		ROM_LOAD( "buta-01.prm",  0x00000, 0x00100, 0x45baedd0 );
+		ROM_LOAD( "buta-02.prm",  0x00100, 0x00100, 0x0dcb18fc );
+	ROM_END(); }}; 
 	
 	
 	/*  ( YEAR   NAME     PARENT  MACHINE   INPUT     INIT  MONITOR  COMPANY                 FULLNAME ) */

@@ -1109,327 +1109,327 @@ public class tsamurai
 	
 	/*******************************************************************************/
 	
-	ROM_START( tsamurai )
-		ROM_REGION( 0x10000, REGION_CPU1, 0 ) /* Z80 code  - main CPU */
-		ROM_LOAD( "01.3r",      0x0000, 0x4000, 0xd09c8609 )
-		ROM_LOAD( "02.3t",      0x4000, 0x4000, 0xd0f2221c )
-		ROM_LOAD( "03.3v",      0x8000, 0x4000, 0xeee8b0c9 )
-	
-		ROM_REGION( 0x10000, REGION_CPU2, 0 ) /* Z80 code - sample player#1 */
-		ROM_LOAD( "14.4e",      0x0000, 0x2000, 0x220e9c04 )
-		ROM_LOAD( "a35-15.4c",  0x2000, 0x2000, 0x1e0d1e33 )
-	
-		ROM_REGION( 0x10000, REGION_CPU3, 0 ) /* Z80 code - sample player#2 */
-		ROM_LOAD( "13.4j",      0x0000, 0x2000, 0x73feb0e2 )
-	
-		ROM_REGION( 0xC000, REGION_GFX1, ROMREGION_DISPOSE )
-		ROM_LOAD( "a35-04.10a", 0x0000, 0x2000, 0xb97ce9b1 ) // tiles
-		ROM_RELOAD( 			0x2000, 0x2000 )
-		ROM_LOAD( "a35-05.10b", 0x4000, 0x2000, 0x55a17b08 )
-		ROM_RELOAD( 			0x6000, 0x2000 )
-		ROM_LOAD( "a35-06.10d", 0x8000, 0x2000, 0xf5ee6f8f )
-		ROM_RELOAD( 			0xa000, 0x2000 )
-	
-		ROM_REGION( 0x6000, REGION_GFX2, ROMREGION_DISPOSE )
-		ROM_LOAD( "a35-10.11n", 0x0000, 0x1000, 0x0b5a0c45 ) // characters
-		ROM_LOAD( "a35-11.11q", 0x2000, 0x1000, 0x93346d75 )
-		ROM_LOAD( "a35-12.11r", 0x4000, 0x1000, 0xf4c69d8a )
-	
-		ROM_REGION( 0xc000, REGION_GFX3, ROMREGION_DISPOSE )
-		ROM_LOAD( "a35-07.12h", 0x0000, 0x4000, 0x38fc349f ) // sprites
-		ROM_LOAD( "a35-08.12j", 0x4000, 0x4000, 0xa07d6dc3 )
-		ROM_LOAD( "a35-09.12k", 0x8000, 0x4000, 0xc0784a0e )
-	
-		ROM_REGION( 0x300, REGION_PROMS, 0 )
-		ROM_LOAD( "a35-16.2j",  0x000, 0x0100, 0x72d8b332 )
-		ROM_LOAD( "a35-17.2l",  0x100, 0x0100, 0x9bf1829e )
-		ROM_LOAD( "a35-18.2m",  0x200, 0x0100, 0x918e4732 )
-	ROM_END
-	
-	ROM_START( tsamura2 )
-		ROM_REGION( 0x10000, REGION_CPU1, 0 ) /* Z80 code  - main CPU */
-		ROM_LOAD( "a35-01.3r",  0x0000, 0x4000, 0x282d96ad )
-		ROM_LOAD( "a35-02.3t",  0x4000, 0x4000, 0xe3fa0cfa )
-		ROM_LOAD( "a35-03.3v",  0x8000, 0x4000, 0x2fff1e0a )
-	
-		ROM_REGION( 0x10000, REGION_CPU2, 0 ) /* Z80 code - sample player#1 */
-		ROM_LOAD( "a35-14.4e",  0x0000, 0x2000, 0xf10aee3b )
-		ROM_LOAD( "a35-15.4c",  0x2000, 0x2000, 0x1e0d1e33 )
-	
-		ROM_REGION( 0x10000, REGION_CPU3, 0 ) /* Z80 code - sample player#2 */
-		ROM_LOAD( "a35-13.4j",  0x0000, 0x2000, 0x3828f4d2 )
-	
-		ROM_REGION( 0xC000, REGION_GFX1, ROMREGION_DISPOSE )
-		ROM_LOAD( "a35-04.10a", 0x0000, 0x2000, 0xb97ce9b1 ) // tiles
-		ROM_RELOAD( 			0x2000, 0x2000 )
-		ROM_LOAD( "a35-05.10b", 0x4000, 0x2000, 0x55a17b08 )
-		ROM_RELOAD( 			0x6000, 0x2000 )
-		ROM_LOAD( "a35-06.10d", 0x8000, 0x2000, 0xf5ee6f8f )
-		ROM_RELOAD( 			0xa000, 0x2000 )
-	
-		ROM_REGION( 0x6000, REGION_GFX2, ROMREGION_DISPOSE )
-		ROM_LOAD( "a35-10.11n", 0x0000, 0x1000, 0x0b5a0c45 ) // characters
-		ROM_LOAD( "a35-11.11q", 0x2000, 0x1000, 0x93346d75 )
-		ROM_LOAD( "a35-12.11r", 0x4000, 0x1000, 0xf4c69d8a )
-	
-		ROM_REGION( 0xC000, REGION_GFX3, ROMREGION_DISPOSE )
-		ROM_LOAD( "a35-07.12h", 0x0000, 0x4000, 0x38fc349f ) // sprites
-		ROM_LOAD( "a35-08.12j", 0x4000, 0x4000, 0xa07d6dc3 )
-		ROM_LOAD( "a35-09.12k", 0x8000, 0x4000, 0xc0784a0e )
-	
-		ROM_REGION( 0x300, REGION_PROMS, 0 )
-		ROM_LOAD( "a35-16.2j",  0x000, 0x0100, 0x72d8b332 )
-		ROM_LOAD( "a35-17.2l",  0x100, 0x0100, 0x9bf1829e )
-		ROM_LOAD( "a35-18.2m",  0x200, 0x0100, 0x918e4732 )
-	ROM_END
-	
-	ROM_START( nunchaku )
-		ROM_REGION( 0x10000, REGION_CPU1, 0 ) /* Z80 code  - main CPU */
-		ROM_LOAD( "nunchack.p1", 0x0000, 0x4000, 0x4385aca6 )
-		ROM_LOAD( "nunchack.p2", 0x4000, 0x4000, 0xf9beb72c )
-		ROM_LOAD( "nunchack.p3", 0x8000, 0x4000, 0xcde5d674 )
-	
-		ROM_REGION( 0x10000, REGION_CPU2, 0 ) /* Z80 code - sample player */
-		ROM_LOAD( "nunchack.m3", 0x0000, 0x2000, 0x9036c945 )
-		ROM_LOAD( "nunchack.m4", 0x2000, 0x2000, 0xe7206724 )
-	
-		ROM_REGION( 0x10000, REGION_CPU3, 0 ) /* Z80 code - sample player */
-		ROM_LOAD( "nunchack.m1", 0x0000, 0x2000, 0xb53d73f6 )
-		ROM_LOAD( "nunchack.m2", 0x2000, 0x2000, 0xf37d7c49 )
-	
-		ROM_REGION( 0x0C000, REGION_GFX1, ROMREGION_DISPOSE )
-		ROM_LOAD( "nunchack.b1", 0x0000, 0x2000, 0x48c88fea ) // tiles
-		ROM_RELOAD( 			 0x2000, 0x2000 )
-		ROM_LOAD( "nunchack.b2", 0x4000, 0x2000, 0xeec818e4 )
-		ROM_RELOAD( 			 0x6000, 0x2000 )
-		ROM_LOAD( "nunchack.b3", 0x8000, 0x2000, 0x5f16473f )
-		ROM_RELOAD( 			 0xa000, 0x2000 )
-	
-		ROM_REGION( 0x06000, REGION_GFX2, ROMREGION_DISPOSE )
-		ROM_LOAD( "nunchack.v1", 0x0000, 0x1000, 0x358a3714 ) // characters
-		ROM_LOAD( "nunchack.v2", 0x2000, 0x1000, 0x54c18d8e )
-		ROM_LOAD( "nunchack.v3", 0x4000, 0x1000, 0xf7ac203a )
-	
-		ROM_REGION( 0x0C000, REGION_GFX3, ROMREGION_DISPOSE )
-		ROM_LOAD( "nunchack.c1", 0x0000, 0x4000, 0x797cbc8a ) // sprites
-		ROM_LOAD( "nunchack.c2", 0x4000, 0x4000, 0x701a0cc3 )
-		ROM_LOAD( "nunchack.c3", 0x8000, 0x4000, 0xffb841fc )
-	
-		ROM_REGION( 0x0300, REGION_PROMS, 0 )
-		ROM_LOAD( "nunchack.016", 0x000, 0x100, 0xa7b077d4 )
-		ROM_LOAD( "nunchack.017", 0x100, 0x100, 0x1c04c087 )
-		ROM_LOAD( "nunchack.018", 0x200, 0x100, 0xf5ce3c45 )
-	ROM_END
-	
-	ROM_START( yamagchi )
-		ROM_REGION( 0x10000, REGION_CPU1, 0 ) /* Z80 code  - main CPU */
-		ROM_LOAD( "a38-01.3s", 0x0000, 0x4000, 0x1a6c8498 )
-		ROM_LOAD( "a38-02.3t", 0x4000, 0x4000, 0xfa66b396 )
-		ROM_LOAD( "a38-03.3v", 0x8000, 0x4000, 0x6a4239cf )
-	
-		ROM_REGION( 0x10000, REGION_CPU2, 0 ) /* Z80 code - sample player */
-		ROM_LOAD( "a38-14.4e", 0x0000, 0x2000, 0x5a758992 )
-	
-		ROM_REGION( 0x10000, REGION_CPU3, 0 ) /* Z80 code - sample player */
-		ROM_LOAD( "a38-13.4j", 0x0000, 0x2000, 0xa26445bb )
-	
-		ROM_REGION( 0x0C000, REGION_GFX1, ROMREGION_DISPOSE )
-		ROM_LOAD( "a38-04.10a", 0x0000, 0x2000, 0x6bc69d4d ) // tiles
-		ROM_RELOAD( 			0x2000, 0x2000 )
-		ROM_LOAD( "a38-05.10b", 0x4000, 0x2000, 0x047fb315 )
-		ROM_RELOAD( 			0x6000, 0x2000 )
-		ROM_LOAD( "a38-06.10d", 0x8000, 0x2000, 0xa636afb2 )
-		ROM_RELOAD( 			0xa000, 0x2000 )
-	
-		ROM_REGION( 0x06000, REGION_GFX2, ROMREGION_DISPOSE )
-		ROM_LOAD( "a38-10.11n", 0x0000, 0x1000, 0x51ab4671 ) // characters
-		ROM_LOAD( "a38-11.11p", 0x2000, 0x1000, 0x27890169 )
-		ROM_LOAD( "a38-12.11r", 0x4000, 0x1000, 0xc98d5cf2 )
-	
-		ROM_REGION( 0x0C000, REGION_GFX3, ROMREGION_DISPOSE )
-		ROM_LOAD( "a38-07.12h", 0x0000, 0x4000, 0xa3a521b6 ) // sprites
-		ROM_LOAD( "a38-08.12j", 0x4000, 0x4000, 0x553afc66 )
-		ROM_LOAD( "a38-09.12l", 0x8000, 0x4000, 0x574156ae )
-	
-		ROM_REGION( 0x0300, REGION_PROMS, 0 )
-		ROM_LOAD( "mb7114e.2k", 0x000, 0x100, 0xe7648110 )
-		ROM_LOAD( "mb7114e.2l", 0x100, 0x100, 0x7b874ee6 )
-		ROM_LOAD( "mb7114e.2m", 0x200, 0x100, 0x938d0fce )
-	ROM_END
-	
-	ROM_START( m660 )
-		ROM_REGION( 0x10000, REGION_CPU1, 0 ) /* Z80 code  - main CPU */
-		ROM_LOAD( "660l.bin",    0x0000, 0x4000, 0x57c0d1cc )
-		ROM_LOAD( "660m.bin",    0x4000, 0x4000, 0x628c6686 )
-		ROM_LOAD( "660n.bin",    0x8000, 0x4000, 0x1b418a97 )
-	
-		ROM_REGION( 0x10000, REGION_CPU2, 0 ) /* Z80 code - sample player */
-		ROM_LOAD( "14.4n",       0x0000, 0x4000, 0x5734db5a )
-	
-		ROM_REGION( 0x10000, REGION_CPU3, 0 ) /* Z80 code - sample player */
-		ROM_LOAD( "13.4j",       0x0000, 0x4000, 0xfba51cf7 )
-	
-		ROM_REGION( 0x10000, REGION_CPU4, 0 ) /* Z80 code AY driver */
-		ROM_LOAD( "660x.bin",    0x0000, 0x8000, 0xb82f0cfa )
-	
-		ROM_REGION( 0x0C000, REGION_GFX1, ROMREGION_DISPOSE )
-		ROM_LOAD( "4.7k",        0x0000, 0x4000, 0xe24e431a ) // tiles
-		ROM_LOAD( "5.6k",        0x4000, 0x4000, 0xb2c93d46 )
-		ROM_LOAD( "6.5k",        0x8000, 0x4000, 0x763c5983 )
-	
-		ROM_REGION( 0x06000, REGION_GFX2, ROMREGION_DISPOSE )
-		ROM_LOAD( "660u.bin",    0x0000, 0x2000, 0x030af716 ) // characters
-		ROM_LOAD( "660v.bin",    0x2000, 0x2000, 0x51a6e160 )
-		ROM_LOAD( "660w.bin",    0x4000, 0x2000, 0x8a45b469 )
-	
-		ROM_REGION( 0x0C000, REGION_GFX3, ROMREGION_DISPOSE )
-		ROM_LOAD( "7.15e",       0x0000, 0x4000, 0x990c0cee ) // sprites
-		ROM_LOAD( "8.15d",       0x4000, 0x4000, 0xd9aa7834 )
-		ROM_LOAD( "9.15b",       0x8000, 0x4000, 0x27b26905 )
-	
-		ROM_REGION( 0x0300, REGION_PROMS, 0 )
-		ROM_LOAD( "4r.bpr",      0x000, 0x100, 0xcd16d0f1 )
-		ROM_LOAD( "4p.bpr",      0x100, 0x100, 0x22e8b22c )
-		ROM_LOAD( "5r.bpr",      0x200, 0x100, 0xb7d6fdb5 )
-	ROM_END
-	
-	ROM_START( m660j )
-		ROM_REGION( 0x10000, REGION_CPU1, 0 ) /* Z80 code  - main CPU */
-		ROM_LOAD( "1.3c",        0x0000, 0x4000, 0x4c8f96aa )
-		ROM_LOAD( "2.3d",        0x4000, 0x4000, 0xe6661504 )
-		ROM_LOAD( "3.3f",        0x8000, 0x4000, 0x3a389ccd )
-	
-		ROM_REGION( 0x10000, REGION_CPU2, 0 ) /* Z80 code - sample player */
-		ROM_LOAD( "14.4n",       0x0000, 0x4000, 0x5734db5a )
-	
-		ROM_REGION( 0x10000, REGION_CPU3, 0 ) /* Z80 code - sample player */
-		ROM_LOAD( "13.4j",       0x0000, 0x4000, 0xfba51cf7 )
-	
-		ROM_REGION( 0x10000, REGION_CPU4, 0 ) /* Z80 code AY driver */
-		ROM_LOAD( "d.4e",        0x0000, 0x4000, 0x93f3d852 )
-		ROM_LOAD( "e.4d",        0x4000, 0x4000, 0x12f5c077 )
-	
-		ROM_REGION( 0x0C000, REGION_GFX1, ROMREGION_DISPOSE )
-		ROM_LOAD( "4.7k",        0x0000, 0x4000, 0xe24e431a ) // tiles
-		ROM_LOAD( "5.6k",        0x4000, 0x4000, 0xb2c93d46 )
-		ROM_LOAD( "6.5k",        0x8000, 0x4000, 0x763c5983 )
-	
-		ROM_REGION( 0x06000, REGION_GFX2, ROMREGION_DISPOSE )
-		ROM_LOAD( "a.16j",       0x0000, 0x2000, 0x06f44c8c ) // characters
-		ROM_LOAD( "b.16k",       0x2000, 0x2000, 0x94b8b69f )
-		ROM_LOAD( "c.16m",       0x4000, 0x2000, 0xd6768c68 )
-	
-		ROM_REGION( 0x0C000, REGION_GFX3, ROMREGION_DISPOSE )
-		ROM_LOAD( "7.15e",       0x0000, 0x4000, 0x990c0cee ) // sprites
-		ROM_LOAD( "8.15d",       0x4000, 0x4000, 0xd9aa7834 )
-		ROM_LOAD( "9.15b",       0x8000, 0x4000, 0x27b26905 )
-	
-		ROM_REGION( 0x0300, REGION_PROMS, 0 )
-		ROM_LOAD( "4r.bpr",      0x000, 0x100, 0xcd16d0f1 )
-		ROM_LOAD( "4p.bpr",      0x100, 0x100, 0x22e8b22c )
-		ROM_LOAD( "5r.bpr",      0x200, 0x100, 0xb7d6fdb5 )
-	ROM_END
-	
-	ROM_START( m660b )
-		ROM_REGION( 0x10000, REGION_CPU1, 0 ) /* Z80 code  - main CPU */
-		ROM_LOAD( "m660-1.bin",  0x0000, 0x4000, 0x18f6c4be )
-		ROM_LOAD( "2.3d",        0x4000, 0x4000, 0xe6661504 )
-		ROM_LOAD( "3.3f",        0x8000, 0x4000, 0x3a389ccd )
-	
-		ROM_REGION( 0x10000, REGION_CPU2, 0 ) /* Z80 code - sample player */
-		ROM_LOAD( "14.4n",       0x0000, 0x4000, 0x5734db5a )
-	
-		ROM_REGION( 0x10000, REGION_CPU3, 0 ) /* Z80 code - sample player */
-		ROM_LOAD( "13.4j",       0x0000, 0x4000, 0xfba51cf7 )
-	
-		ROM_REGION( 0x10000, REGION_CPU4, 0 ) /* Z80 code AY driver */
-		ROM_LOAD( "660x.bin",    0x0000, 0x8000, 0xb82f0cfa )
-	
-		ROM_REGION( 0x0C000, REGION_GFX1, ROMREGION_DISPOSE )
-		ROM_LOAD( "4.7k",        0x0000, 0x4000, 0xe24e431a ) // tiles
-		ROM_LOAD( "5.6k",        0x4000, 0x4000, 0xb2c93d46 )
-		ROM_LOAD( "6.5k",        0x8000, 0x4000, 0x763c5983 )
-	
-		ROM_REGION( 0x06000, REGION_GFX2, ROMREGION_DISPOSE )
-		ROM_LOAD( "m660-10.bin", 0x0000, 0x2000, 0xb11405a6 ) // characters
-		ROM_LOAD( "b.16k",       0x2000, 0x2000, 0x94b8b69f )
-		ROM_LOAD( "c.16m",       0x4000, 0x2000, 0xd6768c68 )
-	
-		ROM_REGION( 0x0C000, REGION_GFX3, ROMREGION_DISPOSE )
-		ROM_LOAD( "7.15e",       0x0000, 0x4000, 0x990c0cee ) // sprites
-		ROM_LOAD( "8.15d",       0x4000, 0x4000, 0xd9aa7834 )
-		ROM_LOAD( "9.15b",       0x8000, 0x4000, 0x27b26905 )
-	
-		ROM_REGION( 0x300, REGION_PROMS, 0 )
-		ROM_LOAD( "4r.bpr",      0x000, 0x100, 0xcd16d0f1 )
-		ROM_LOAD( "4p.bpr",      0x100, 0x100, 0x22e8b22c )
-		ROM_LOAD( "5r.bpr",      0x200, 0x100, 0xb7d6fdb5 )
-	ROM_END
-	
-	ROM_START( alphaxz )
-		ROM_REGION( 0x10000, REGION_CPU1, 0 ) /* Z80 code  - main CPU */
-		ROM_LOAD( "az-01.bin",   0x0000, 0x4000, 0x5336f842 )
-		ROM_LOAD( "az-02.bin",   0x4000, 0x4000, 0xa0779b6b )
-		ROM_LOAD( "az-03.bin",   0x8000, 0x4000, 0x2797bc7b )
-	
-		ROM_REGION( 0x10000, REGION_CPU2, 0 ) /* Z80 code - sample player */
-		ROM_LOAD( "14.4n",       0x0000, 0x4000, 0x5734db5a )
-	
-		ROM_REGION( 0x10000, REGION_CPU3, 0 ) /* Z80 code - sample player */
-		ROM_LOAD( "13.4j",       0x0000, 0x4000, 0xfba51cf7 )
-	
-		ROM_REGION( 0x10000, REGION_CPU4, 0 ) /* Z80 code AY driver */
-		ROM_LOAD( "660x.bin",    0x0000, 0x8000, 0xb82f0cfa )
-	
-		ROM_REGION( 0xC000, REGION_GFX1, ROMREGION_DISPOSE )
-		ROM_LOAD( "az-04.bin",   0x00000, 0x4000, 0x23da4e3d ) // tiles
-		ROM_LOAD( "az-05.bin",   0x04000, 0x4000, 0x8746ff69 )
-		ROM_LOAD( "az-06.bin",   0x08000, 0x4000, 0x6e494964 )
-	
-		ROM_REGION( 0x6000, REGION_GFX2, ROMREGION_DISPOSE )
-		ROM_LOAD( "az-10.bin",   0x00000, 0x2000, 0x10b499bb ) // characters
-		ROM_LOAD( "az-11.bin",   0x02000, 0x2000, 0xd91993f6 )
-		ROM_LOAD( "az-12.bin",   0x04000, 0x2000, 0x8ea48ef3 )
-	
-		ROM_REGION( 0xC000, REGION_GFX3, ROMREGION_DISPOSE )
-		ROM_LOAD( "az-07.bin",   0x00000, 0x4000, 0x5f9cc65e ) // sprites
-		ROM_LOAD( "az-08.bin",   0x04000, 0x4000, 0x23e3a6ba )
-		ROM_LOAD( "az-09.bin",   0x08000, 0x4000, 0x7096fa71 )
-	
-		ROM_REGION( 0x300, REGION_PROMS, 0 )
-		ROM_LOAD( "4r.bpr",      0x000, 0x100, 0xcd16d0f1 )
-		ROM_LOAD( "4p.bpr",      0x100, 0x100, 0x22e8b22c )
-		ROM_LOAD( "5r.bpr",      0x200, 0x100, 0xb7d6fdb5 )
-	ROM_END
-	
-	ROM_START( vsgongf )
-		ROM_REGION( 0x10000, REGION_CPU1, 0 ) /* Z80 code  - main CPU */
-		ROM_LOAD( "1.5a",	0x0000, 0x2000, 0x2c056dee ) /* good? */
-		ROM_LOAD( "2",		0x2000, 0x2000, 0x1a634daf ) /* good? */
-		ROM_LOAD( "3.5d",	0x4000, 0x2000, 0x5ac16861 )
-		ROM_LOAD( "4.5f",	0x6000, 0x2000, 0x1d1baf7b )
-	
-		ROM_REGION( 0x10000, REGION_CPU2, 0 ) /* Z80 code - sound CPU */
-		ROM_LOAD( "6.5n",	0x0000, 0x2000, 0x785b9000 )
-		ROM_LOAD( "5.5l",	0x2000, 0x2000, 0x76dbfde9 )
-	
-		ROM_REGION( 0xc000, REGION_GFX1, ROMREGION_DISPOSE ) /* tiles (N/A) */
-	
-		ROM_REGION( 0x6000, REGION_GFX2, ROMREGION_DISPOSE ) /* characters */
-		ROM_LOAD( "7.6f",	0x0000, 0x1000, 0x6ec68692 )
-		ROM_LOAD( "8.7f",	0x2000, 0x1000, 0xafba16c8 )
-		ROM_LOAD( "9.8f",	0x4000, 0x1000, 0x536bf710 )
-	
-		ROM_REGION( 0xc000, REGION_GFX3, ROMREGION_DISPOSE ) /* sprites */
-		ROM_LOAD( "13.15j",  0x0000, 0x2000, 0xa2451a31 )
-		ROM_LOAD( "14.15h",  0x4000, 0x2000, 0xb387403e )
-		ROM_LOAD( "15.15f",  0x8000, 0x2000, 0x0e649334 )
-	
-		ROM_REGION( 0x300, REGION_PROMS, 0 )
-		ROM_LOAD( "clr.6s",  0x000, 0x0100, 0x578bfbea )
-		ROM_LOAD( "clr.6r",  0x100, 0x0100, 0x3ec00739 )
-		ROM_LOAD( "clr.6p",  0x200, 0x0100, 0x0e4fd17a )
-	ROM_END
+	static RomLoadPtr rom_tsamurai = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x10000, REGION_CPU1, 0 );/* Z80 code  - main CPU */
+		ROM_LOAD( "01.3r",      0x0000, 0x4000, 0xd09c8609 );
+		ROM_LOAD( "02.3t",      0x4000, 0x4000, 0xd0f2221c );
+		ROM_LOAD( "03.3v",      0x8000, 0x4000, 0xeee8b0c9 );
+	
+		ROM_REGION( 0x10000, REGION_CPU2, 0 );/* Z80 code - sample player#1 */
+		ROM_LOAD( "14.4e",      0x0000, 0x2000, 0x220e9c04 );
+		ROM_LOAD( "a35-15.4c",  0x2000, 0x2000, 0x1e0d1e33 );
+	
+		ROM_REGION( 0x10000, REGION_CPU3, 0 );/* Z80 code - sample player#2 */
+		ROM_LOAD( "13.4j",      0x0000, 0x2000, 0x73feb0e2 );
+	
+		ROM_REGION( 0xC000, REGION_GFX1, ROMREGION_DISPOSE );
+		ROM_LOAD( "a35-04.10a", 0x0000, 0x2000, 0xb97ce9b1 );// tiles
+		ROM_RELOAD( 			0x2000, 0x2000 );
+		ROM_LOAD( "a35-05.10b", 0x4000, 0x2000, 0x55a17b08 );
+		ROM_RELOAD( 			0x6000, 0x2000 );
+		ROM_LOAD( "a35-06.10d", 0x8000, 0x2000, 0xf5ee6f8f );
+		ROM_RELOAD( 			0xa000, 0x2000 );
+	
+		ROM_REGION( 0x6000, REGION_GFX2, ROMREGION_DISPOSE );
+		ROM_LOAD( "a35-10.11n", 0x0000, 0x1000, 0x0b5a0c45 );// characters
+		ROM_LOAD( "a35-11.11q", 0x2000, 0x1000, 0x93346d75 );
+		ROM_LOAD( "a35-12.11r", 0x4000, 0x1000, 0xf4c69d8a );
+	
+		ROM_REGION( 0xc000, REGION_GFX3, ROMREGION_DISPOSE );
+		ROM_LOAD( "a35-07.12h", 0x0000, 0x4000, 0x38fc349f );// sprites
+		ROM_LOAD( "a35-08.12j", 0x4000, 0x4000, 0xa07d6dc3 );
+		ROM_LOAD( "a35-09.12k", 0x8000, 0x4000, 0xc0784a0e );
+	
+		ROM_REGION( 0x300, REGION_PROMS, 0 );
+		ROM_LOAD( "a35-16.2j",  0x000, 0x0100, 0x72d8b332 );
+		ROM_LOAD( "a35-17.2l",  0x100, 0x0100, 0x9bf1829e );
+		ROM_LOAD( "a35-18.2m",  0x200, 0x0100, 0x918e4732 );
+	ROM_END(); }}; 
+	
+	static RomLoadPtr rom_tsamura2 = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x10000, REGION_CPU1, 0 );/* Z80 code  - main CPU */
+		ROM_LOAD( "a35-01.3r",  0x0000, 0x4000, 0x282d96ad );
+		ROM_LOAD( "a35-02.3t",  0x4000, 0x4000, 0xe3fa0cfa );
+		ROM_LOAD( "a35-03.3v",  0x8000, 0x4000, 0x2fff1e0a );
+	
+		ROM_REGION( 0x10000, REGION_CPU2, 0 );/* Z80 code - sample player#1 */
+		ROM_LOAD( "a35-14.4e",  0x0000, 0x2000, 0xf10aee3b );
+		ROM_LOAD( "a35-15.4c",  0x2000, 0x2000, 0x1e0d1e33 );
+	
+		ROM_REGION( 0x10000, REGION_CPU3, 0 );/* Z80 code - sample player#2 */
+		ROM_LOAD( "a35-13.4j",  0x0000, 0x2000, 0x3828f4d2 );
+	
+		ROM_REGION( 0xC000, REGION_GFX1, ROMREGION_DISPOSE );
+		ROM_LOAD( "a35-04.10a", 0x0000, 0x2000, 0xb97ce9b1 );// tiles
+		ROM_RELOAD( 			0x2000, 0x2000 );
+		ROM_LOAD( "a35-05.10b", 0x4000, 0x2000, 0x55a17b08 );
+		ROM_RELOAD( 			0x6000, 0x2000 );
+		ROM_LOAD( "a35-06.10d", 0x8000, 0x2000, 0xf5ee6f8f );
+		ROM_RELOAD( 			0xa000, 0x2000 );
+	
+		ROM_REGION( 0x6000, REGION_GFX2, ROMREGION_DISPOSE );
+		ROM_LOAD( "a35-10.11n", 0x0000, 0x1000, 0x0b5a0c45 );// characters
+		ROM_LOAD( "a35-11.11q", 0x2000, 0x1000, 0x93346d75 );
+		ROM_LOAD( "a35-12.11r", 0x4000, 0x1000, 0xf4c69d8a );
+	
+		ROM_REGION( 0xC000, REGION_GFX3, ROMREGION_DISPOSE );
+		ROM_LOAD( "a35-07.12h", 0x0000, 0x4000, 0x38fc349f );// sprites
+		ROM_LOAD( "a35-08.12j", 0x4000, 0x4000, 0xa07d6dc3 );
+		ROM_LOAD( "a35-09.12k", 0x8000, 0x4000, 0xc0784a0e );
+	
+		ROM_REGION( 0x300, REGION_PROMS, 0 );
+		ROM_LOAD( "a35-16.2j",  0x000, 0x0100, 0x72d8b332 );
+		ROM_LOAD( "a35-17.2l",  0x100, 0x0100, 0x9bf1829e );
+		ROM_LOAD( "a35-18.2m",  0x200, 0x0100, 0x918e4732 );
+	ROM_END(); }}; 
+	
+	static RomLoadPtr rom_nunchaku = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x10000, REGION_CPU1, 0 );/* Z80 code  - main CPU */
+		ROM_LOAD( "nunchack.p1", 0x0000, 0x4000, 0x4385aca6 );
+		ROM_LOAD( "nunchack.p2", 0x4000, 0x4000, 0xf9beb72c );
+		ROM_LOAD( "nunchack.p3", 0x8000, 0x4000, 0xcde5d674 );
+	
+		ROM_REGION( 0x10000, REGION_CPU2, 0 );/* Z80 code - sample player */
+		ROM_LOAD( "nunchack.m3", 0x0000, 0x2000, 0x9036c945 );
+		ROM_LOAD( "nunchack.m4", 0x2000, 0x2000, 0xe7206724 );
+	
+		ROM_REGION( 0x10000, REGION_CPU3, 0 );/* Z80 code - sample player */
+		ROM_LOAD( "nunchack.m1", 0x0000, 0x2000, 0xb53d73f6 );
+		ROM_LOAD( "nunchack.m2", 0x2000, 0x2000, 0xf37d7c49 );
+	
+		ROM_REGION( 0x0C000, REGION_GFX1, ROMREGION_DISPOSE );
+		ROM_LOAD( "nunchack.b1", 0x0000, 0x2000, 0x48c88fea );// tiles
+		ROM_RELOAD( 			 0x2000, 0x2000 );
+		ROM_LOAD( "nunchack.b2", 0x4000, 0x2000, 0xeec818e4 );
+		ROM_RELOAD( 			 0x6000, 0x2000 );
+		ROM_LOAD( "nunchack.b3", 0x8000, 0x2000, 0x5f16473f );
+		ROM_RELOAD( 			 0xa000, 0x2000 );
+	
+		ROM_REGION( 0x06000, REGION_GFX2, ROMREGION_DISPOSE );
+		ROM_LOAD( "nunchack.v1", 0x0000, 0x1000, 0x358a3714 );// characters
+		ROM_LOAD( "nunchack.v2", 0x2000, 0x1000, 0x54c18d8e );
+		ROM_LOAD( "nunchack.v3", 0x4000, 0x1000, 0xf7ac203a );
+	
+		ROM_REGION( 0x0C000, REGION_GFX3, ROMREGION_DISPOSE );
+		ROM_LOAD( "nunchack.c1", 0x0000, 0x4000, 0x797cbc8a );// sprites
+		ROM_LOAD( "nunchack.c2", 0x4000, 0x4000, 0x701a0cc3 );
+		ROM_LOAD( "nunchack.c3", 0x8000, 0x4000, 0xffb841fc );
+	
+		ROM_REGION( 0x0300, REGION_PROMS, 0 );
+		ROM_LOAD( "nunchack.016", 0x000, 0x100, 0xa7b077d4 );
+		ROM_LOAD( "nunchack.017", 0x100, 0x100, 0x1c04c087 );
+		ROM_LOAD( "nunchack.018", 0x200, 0x100, 0xf5ce3c45 );
+	ROM_END(); }}; 
+	
+	static RomLoadPtr rom_yamagchi = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x10000, REGION_CPU1, 0 );/* Z80 code  - main CPU */
+		ROM_LOAD( "a38-01.3s", 0x0000, 0x4000, 0x1a6c8498 );
+		ROM_LOAD( "a38-02.3t", 0x4000, 0x4000, 0xfa66b396 );
+		ROM_LOAD( "a38-03.3v", 0x8000, 0x4000, 0x6a4239cf );
+	
+		ROM_REGION( 0x10000, REGION_CPU2, 0 );/* Z80 code - sample player */
+		ROM_LOAD( "a38-14.4e", 0x0000, 0x2000, 0x5a758992 );
+	
+		ROM_REGION( 0x10000, REGION_CPU3, 0 );/* Z80 code - sample player */
+		ROM_LOAD( "a38-13.4j", 0x0000, 0x2000, 0xa26445bb );
+	
+		ROM_REGION( 0x0C000, REGION_GFX1, ROMREGION_DISPOSE );
+		ROM_LOAD( "a38-04.10a", 0x0000, 0x2000, 0x6bc69d4d );// tiles
+		ROM_RELOAD( 			0x2000, 0x2000 );
+		ROM_LOAD( "a38-05.10b", 0x4000, 0x2000, 0x047fb315 );
+		ROM_RELOAD( 			0x6000, 0x2000 );
+		ROM_LOAD( "a38-06.10d", 0x8000, 0x2000, 0xa636afb2 );
+		ROM_RELOAD( 			0xa000, 0x2000 );
+	
+		ROM_REGION( 0x06000, REGION_GFX2, ROMREGION_DISPOSE );
+		ROM_LOAD( "a38-10.11n", 0x0000, 0x1000, 0x51ab4671 );// characters
+		ROM_LOAD( "a38-11.11p", 0x2000, 0x1000, 0x27890169 );
+		ROM_LOAD( "a38-12.11r", 0x4000, 0x1000, 0xc98d5cf2 );
+	
+		ROM_REGION( 0x0C000, REGION_GFX3, ROMREGION_DISPOSE );
+		ROM_LOAD( "a38-07.12h", 0x0000, 0x4000, 0xa3a521b6 );// sprites
+		ROM_LOAD( "a38-08.12j", 0x4000, 0x4000, 0x553afc66 );
+		ROM_LOAD( "a38-09.12l", 0x8000, 0x4000, 0x574156ae );
+	
+		ROM_REGION( 0x0300, REGION_PROMS, 0 );
+		ROM_LOAD( "mb7114e.2k", 0x000, 0x100, 0xe7648110 );
+		ROM_LOAD( "mb7114e.2l", 0x100, 0x100, 0x7b874ee6 );
+		ROM_LOAD( "mb7114e.2m", 0x200, 0x100, 0x938d0fce );
+	ROM_END(); }}; 
+	
+	static RomLoadPtr rom_m660 = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x10000, REGION_CPU1, 0 );/* Z80 code  - main CPU */
+		ROM_LOAD( "660l.bin",    0x0000, 0x4000, 0x57c0d1cc );
+		ROM_LOAD( "660m.bin",    0x4000, 0x4000, 0x628c6686 );
+		ROM_LOAD( "660n.bin",    0x8000, 0x4000, 0x1b418a97 );
+	
+		ROM_REGION( 0x10000, REGION_CPU2, 0 );/* Z80 code - sample player */
+		ROM_LOAD( "14.4n",       0x0000, 0x4000, 0x5734db5a );
+	
+		ROM_REGION( 0x10000, REGION_CPU3, 0 );/* Z80 code - sample player */
+		ROM_LOAD( "13.4j",       0x0000, 0x4000, 0xfba51cf7 );
+	
+		ROM_REGION( 0x10000, REGION_CPU4, 0 );/* Z80 code AY driver */
+		ROM_LOAD( "660x.bin",    0x0000, 0x8000, 0xb82f0cfa );
+	
+		ROM_REGION( 0x0C000, REGION_GFX1, ROMREGION_DISPOSE );
+		ROM_LOAD( "4.7k",        0x0000, 0x4000, 0xe24e431a );// tiles
+		ROM_LOAD( "5.6k",        0x4000, 0x4000, 0xb2c93d46 );
+		ROM_LOAD( "6.5k",        0x8000, 0x4000, 0x763c5983 );
+	
+		ROM_REGION( 0x06000, REGION_GFX2, ROMREGION_DISPOSE );
+		ROM_LOAD( "660u.bin",    0x0000, 0x2000, 0x030af716 );// characters
+		ROM_LOAD( "660v.bin",    0x2000, 0x2000, 0x51a6e160 );
+		ROM_LOAD( "660w.bin",    0x4000, 0x2000, 0x8a45b469 );
+	
+		ROM_REGION( 0x0C000, REGION_GFX3, ROMREGION_DISPOSE );
+		ROM_LOAD( "7.15e",       0x0000, 0x4000, 0x990c0cee );// sprites
+		ROM_LOAD( "8.15d",       0x4000, 0x4000, 0xd9aa7834 );
+		ROM_LOAD( "9.15b",       0x8000, 0x4000, 0x27b26905 );
+	
+		ROM_REGION( 0x0300, REGION_PROMS, 0 );
+		ROM_LOAD( "4r.bpr",      0x000, 0x100, 0xcd16d0f1 );
+		ROM_LOAD( "4p.bpr",      0x100, 0x100, 0x22e8b22c );
+		ROM_LOAD( "5r.bpr",      0x200, 0x100, 0xb7d6fdb5 );
+	ROM_END(); }}; 
+	
+	static RomLoadPtr rom_m660j = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x10000, REGION_CPU1, 0 );/* Z80 code  - main CPU */
+		ROM_LOAD( "1.3c",        0x0000, 0x4000, 0x4c8f96aa );
+		ROM_LOAD( "2.3d",        0x4000, 0x4000, 0xe6661504 );
+		ROM_LOAD( "3.3f",        0x8000, 0x4000, 0x3a389ccd );
+	
+		ROM_REGION( 0x10000, REGION_CPU2, 0 );/* Z80 code - sample player */
+		ROM_LOAD( "14.4n",       0x0000, 0x4000, 0x5734db5a );
+	
+		ROM_REGION( 0x10000, REGION_CPU3, 0 );/* Z80 code - sample player */
+		ROM_LOAD( "13.4j",       0x0000, 0x4000, 0xfba51cf7 );
+	
+		ROM_REGION( 0x10000, REGION_CPU4, 0 );/* Z80 code AY driver */
+		ROM_LOAD( "d.4e",        0x0000, 0x4000, 0x93f3d852 );
+		ROM_LOAD( "e.4d",        0x4000, 0x4000, 0x12f5c077 );
+	
+		ROM_REGION( 0x0C000, REGION_GFX1, ROMREGION_DISPOSE );
+		ROM_LOAD( "4.7k",        0x0000, 0x4000, 0xe24e431a );// tiles
+		ROM_LOAD( "5.6k",        0x4000, 0x4000, 0xb2c93d46 );
+		ROM_LOAD( "6.5k",        0x8000, 0x4000, 0x763c5983 );
+	
+		ROM_REGION( 0x06000, REGION_GFX2, ROMREGION_DISPOSE );
+		ROM_LOAD( "a.16j",       0x0000, 0x2000, 0x06f44c8c );// characters
+		ROM_LOAD( "b.16k",       0x2000, 0x2000, 0x94b8b69f );
+		ROM_LOAD( "c.16m",       0x4000, 0x2000, 0xd6768c68 );
+	
+		ROM_REGION( 0x0C000, REGION_GFX3, ROMREGION_DISPOSE );
+		ROM_LOAD( "7.15e",       0x0000, 0x4000, 0x990c0cee );// sprites
+		ROM_LOAD( "8.15d",       0x4000, 0x4000, 0xd9aa7834 );
+		ROM_LOAD( "9.15b",       0x8000, 0x4000, 0x27b26905 );
+	
+		ROM_REGION( 0x0300, REGION_PROMS, 0 );
+		ROM_LOAD( "4r.bpr",      0x000, 0x100, 0xcd16d0f1 );
+		ROM_LOAD( "4p.bpr",      0x100, 0x100, 0x22e8b22c );
+		ROM_LOAD( "5r.bpr",      0x200, 0x100, 0xb7d6fdb5 );
+	ROM_END(); }}; 
+	
+	static RomLoadPtr rom_m660b = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x10000, REGION_CPU1, 0 );/* Z80 code  - main CPU */
+		ROM_LOAD( "m660-1.bin",  0x0000, 0x4000, 0x18f6c4be );
+		ROM_LOAD( "2.3d",        0x4000, 0x4000, 0xe6661504 );
+		ROM_LOAD( "3.3f",        0x8000, 0x4000, 0x3a389ccd );
+	
+		ROM_REGION( 0x10000, REGION_CPU2, 0 );/* Z80 code - sample player */
+		ROM_LOAD( "14.4n",       0x0000, 0x4000, 0x5734db5a );
+	
+		ROM_REGION( 0x10000, REGION_CPU3, 0 );/* Z80 code - sample player */
+		ROM_LOAD( "13.4j",       0x0000, 0x4000, 0xfba51cf7 );
+	
+		ROM_REGION( 0x10000, REGION_CPU4, 0 );/* Z80 code AY driver */
+		ROM_LOAD( "660x.bin",    0x0000, 0x8000, 0xb82f0cfa );
+	
+		ROM_REGION( 0x0C000, REGION_GFX1, ROMREGION_DISPOSE );
+		ROM_LOAD( "4.7k",        0x0000, 0x4000, 0xe24e431a );// tiles
+		ROM_LOAD( "5.6k",        0x4000, 0x4000, 0xb2c93d46 );
+		ROM_LOAD( "6.5k",        0x8000, 0x4000, 0x763c5983 );
+	
+		ROM_REGION( 0x06000, REGION_GFX2, ROMREGION_DISPOSE );
+		ROM_LOAD( "m660-10.bin", 0x0000, 0x2000, 0xb11405a6 );// characters
+		ROM_LOAD( "b.16k",       0x2000, 0x2000, 0x94b8b69f );
+		ROM_LOAD( "c.16m",       0x4000, 0x2000, 0xd6768c68 );
+	
+		ROM_REGION( 0x0C000, REGION_GFX3, ROMREGION_DISPOSE );
+		ROM_LOAD( "7.15e",       0x0000, 0x4000, 0x990c0cee );// sprites
+		ROM_LOAD( "8.15d",       0x4000, 0x4000, 0xd9aa7834 );
+		ROM_LOAD( "9.15b",       0x8000, 0x4000, 0x27b26905 );
+	
+		ROM_REGION( 0x300, REGION_PROMS, 0 );
+		ROM_LOAD( "4r.bpr",      0x000, 0x100, 0xcd16d0f1 );
+		ROM_LOAD( "4p.bpr",      0x100, 0x100, 0x22e8b22c );
+		ROM_LOAD( "5r.bpr",      0x200, 0x100, 0xb7d6fdb5 );
+	ROM_END(); }}; 
+	
+	static RomLoadPtr rom_alphaxz = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x10000, REGION_CPU1, 0 );/* Z80 code  - main CPU */
+		ROM_LOAD( "az-01.bin",   0x0000, 0x4000, 0x5336f842 );
+		ROM_LOAD( "az-02.bin",   0x4000, 0x4000, 0xa0779b6b );
+		ROM_LOAD( "az-03.bin",   0x8000, 0x4000, 0x2797bc7b );
+	
+		ROM_REGION( 0x10000, REGION_CPU2, 0 );/* Z80 code - sample player */
+		ROM_LOAD( "14.4n",       0x0000, 0x4000, 0x5734db5a );
+	
+		ROM_REGION( 0x10000, REGION_CPU3, 0 );/* Z80 code - sample player */
+		ROM_LOAD( "13.4j",       0x0000, 0x4000, 0xfba51cf7 );
+	
+		ROM_REGION( 0x10000, REGION_CPU4, 0 );/* Z80 code AY driver */
+		ROM_LOAD( "660x.bin",    0x0000, 0x8000, 0xb82f0cfa );
+	
+		ROM_REGION( 0xC000, REGION_GFX1, ROMREGION_DISPOSE );
+		ROM_LOAD( "az-04.bin",   0x00000, 0x4000, 0x23da4e3d );// tiles
+		ROM_LOAD( "az-05.bin",   0x04000, 0x4000, 0x8746ff69 );
+		ROM_LOAD( "az-06.bin",   0x08000, 0x4000, 0x6e494964 );
+	
+		ROM_REGION( 0x6000, REGION_GFX2, ROMREGION_DISPOSE );
+		ROM_LOAD( "az-10.bin",   0x00000, 0x2000, 0x10b499bb );// characters
+		ROM_LOAD( "az-11.bin",   0x02000, 0x2000, 0xd91993f6 );
+		ROM_LOAD( "az-12.bin",   0x04000, 0x2000, 0x8ea48ef3 );
+	
+		ROM_REGION( 0xC000, REGION_GFX3, ROMREGION_DISPOSE );
+		ROM_LOAD( "az-07.bin",   0x00000, 0x4000, 0x5f9cc65e );// sprites
+		ROM_LOAD( "az-08.bin",   0x04000, 0x4000, 0x23e3a6ba );
+		ROM_LOAD( "az-09.bin",   0x08000, 0x4000, 0x7096fa71 );
+	
+		ROM_REGION( 0x300, REGION_PROMS, 0 );
+		ROM_LOAD( "4r.bpr",      0x000, 0x100, 0xcd16d0f1 );
+		ROM_LOAD( "4p.bpr",      0x100, 0x100, 0x22e8b22c );
+		ROM_LOAD( "5r.bpr",      0x200, 0x100, 0xb7d6fdb5 );
+	ROM_END(); }}; 
+	
+	static RomLoadPtr rom_vsgongf = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x10000, REGION_CPU1, 0 );/* Z80 code  - main CPU */
+		ROM_LOAD( "1.5a",	0x0000, 0x2000, 0x2c056dee );/* good? */
+		ROM_LOAD( "2",		0x2000, 0x2000, 0x1a634daf );/* good? */
+		ROM_LOAD( "3.5d",	0x4000, 0x2000, 0x5ac16861 );
+		ROM_LOAD( "4.5f",	0x6000, 0x2000, 0x1d1baf7b );
+	
+		ROM_REGION( 0x10000, REGION_CPU2, 0 );/* Z80 code - sound CPU */
+		ROM_LOAD( "6.5n",	0x0000, 0x2000, 0x785b9000 );
+		ROM_LOAD( "5.5l",	0x2000, 0x2000, 0x76dbfde9 );
+	
+		ROM_REGION( 0xc000, REGION_GFX1, ROMREGION_DISPOSE );/* tiles (N/A) */
+	
+		ROM_REGION( 0x6000, REGION_GFX2, ROMREGION_DISPOSE );/* characters */
+		ROM_LOAD( "7.6f",	0x0000, 0x1000, 0x6ec68692 );
+		ROM_LOAD( "8.7f",	0x2000, 0x1000, 0xafba16c8 );
+		ROM_LOAD( "9.8f",	0x4000, 0x1000, 0x536bf710 );
+	
+		ROM_REGION( 0xc000, REGION_GFX3, ROMREGION_DISPOSE );/* sprites */
+		ROM_LOAD( "13.15j",  0x0000, 0x2000, 0xa2451a31 );
+		ROM_LOAD( "14.15h",  0x4000, 0x2000, 0xb387403e );
+		ROM_LOAD( "15.15f",  0x8000, 0x2000, 0x0e649334 );
+	
+		ROM_REGION( 0x300, REGION_PROMS, 0 );
+		ROM_LOAD( "clr.6s",  0x000, 0x0100, 0x578bfbea );
+		ROM_LOAD( "clr.6r",  0x100, 0x0100, 0x3ec00739 );
+		ROM_LOAD( "clr.6p",  0x200, 0x0100, 0x0e4fd17a );
+	ROM_END(); }}; 
 	
 	GAMEX(1984, vsgongf,  0,        vsgongf,  vsgongf,  0, ROT90, "Kaneko", "VS Gong Fight", GAME_IMPERFECT_COLORS )
 	GAME( 1985, tsamurai, 0,        tsamurai, tsamurai, 0, ROT90, "Taito", "Samurai Nihon-ichi (set 1)" )

@@ -459,55 +459,55 @@ public class finalizr
 	
 	***************************************************************************/
 	
-	ROM_START( finalizr )
-		ROM_REGION( 2*0x10000, REGION_CPU1, 0 )	/* 64k for code + 64k for decrypted opcodes */
-		ROM_LOAD( "523k01.9c",    0x4000, 0x4000, 0x716633cb )
-		ROM_LOAD( "523k02.12c",   0x8000, 0x4000, 0x1bccc696 )
-		ROM_LOAD( "523k03.13c",   0xc000, 0x4000, 0xc48927c6 )
+	static RomLoadPtr rom_finalizr = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 2*0x10000, REGION_CPU1, 0 );/* 64k for code + 64k for decrypted opcodes */
+		ROM_LOAD( "523k01.9c",    0x4000, 0x4000, 0x716633cb );
+		ROM_LOAD( "523k02.12c",   0x8000, 0x4000, 0x1bccc696 );
+		ROM_LOAD( "523k03.13c",   0xc000, 0x4000, 0xc48927c6 );
 	
-		ROM_REGION( 0x1000, REGION_CPU2, 0 )	/* 8039 */
-		ROM_LOAD( "d8749hd.bin",  0x0000, 0x0800, 0x978dfc33 )	/* this comes from the bootleg, */
+		ROM_REGION( 0x1000, REGION_CPU2, 0 );/* 8039 */
+		ROM_LOAD( "d8749hd.bin",  0x0000, 0x0800, 0x978dfc33 );/* this comes from the bootleg, */
 																/* the original has a custom IC */
 	
-		ROM_REGION( 0x20000, REGION_GFX1, ROMREGION_DISPOSE )
-		ROM_LOAD16_BYTE( "523h04.5e",    0x00000, 0x4000, 0xc056d710 )
-		ROM_LOAD16_BYTE( "523h07.5f",    0x00001, 0x4000, 0x50e512ba )
-		ROM_LOAD16_BYTE( "523h05.6e",    0x08000, 0x4000, 0xae0d0f76 )
-		ROM_LOAD16_BYTE( "523h08.6f",    0x08001, 0x4000, 0x79f44e17 )
-		ROM_LOAD16_BYTE( "523h06.7e",    0x10000, 0x4000, 0xd2db9689 )
-		ROM_LOAD16_BYTE( "523h09.7f",    0x10001, 0x4000, 0x8896dc85 )
+		ROM_REGION( 0x20000, REGION_GFX1, ROMREGION_DISPOSE );
+		ROM_LOAD16_BYTE( "523h04.5e",    0x00000, 0x4000, 0xc056d710 );
+		ROM_LOAD16_BYTE( "523h07.5f",    0x00001, 0x4000, 0x50e512ba );
+		ROM_LOAD16_BYTE( "523h05.6e",    0x08000, 0x4000, 0xae0d0f76 );
+		ROM_LOAD16_BYTE( "523h08.6f",    0x08001, 0x4000, 0x79f44e17 );
+		ROM_LOAD16_BYTE( "523h06.7e",    0x10000, 0x4000, 0xd2db9689 );
+		ROM_LOAD16_BYTE( "523h09.7f",    0x10001, 0x4000, 0x8896dc85 );
 		/* 18000-1ffff empty */
 	
-		ROM_REGION( 0x0240, REGION_PROMS, 0 )
-		ROM_LOAD( "523h10.2f",    0x0000, 0x0020, 0xec15dd15 ) /* palette */
-		ROM_LOAD( "523h11.3f",    0x0020, 0x0020, 0x54be2e83 ) /* palette */
-		ROM_LOAD( "523h12.10f",   0x0040, 0x0100, 0x53166a2a ) /* sprites */
-		ROM_LOAD( "523h13.11f",   0x0140, 0x0100, 0x4e0647a0 ) /* characters */
-	ROM_END
+		ROM_REGION( 0x0240, REGION_PROMS, 0 );
+		ROM_LOAD( "523h10.2f",    0x0000, 0x0020, 0xec15dd15 );/* palette */
+		ROM_LOAD( "523h11.3f",    0x0020, 0x0020, 0x54be2e83 );/* palette */
+		ROM_LOAD( "523h12.10f",   0x0040, 0x0100, 0x53166a2a );/* sprites */
+		ROM_LOAD( "523h13.11f",   0x0140, 0x0100, 0x4e0647a0 );/* characters */
+	ROM_END(); }}; 
 	
-	ROM_START( finalizb )
-		ROM_REGION( 2*0x10000, REGION_CPU1, 0 )	/* 64k for code + 64k for decrypted opcodes */
-		ROM_LOAD( "finalizr.5",   0x4000, 0x8000, 0xa55e3f14 )
-		ROM_LOAD( "finalizr.6",   0xc000, 0x4000, 0xce177f6e )
+	static RomLoadPtr rom_finalizb = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 2*0x10000, REGION_CPU1, 0 );/* 64k for code + 64k for decrypted opcodes */
+		ROM_LOAD( "finalizr.5",   0x4000, 0x8000, 0xa55e3f14 );
+		ROM_LOAD( "finalizr.6",   0xc000, 0x4000, 0xce177f6e );
 	
-		ROM_REGION( 0x1000, REGION_CPU2, 0 )	/* 8039 */
-		ROM_LOAD( "d8749hd.bin",  0x0000, 0x0800, 0x978dfc33 )
+		ROM_REGION( 0x1000, REGION_CPU2, 0 );/* 8039 */
+		ROM_LOAD( "d8749hd.bin",  0x0000, 0x0800, 0x978dfc33 );
 	
-		ROM_REGION( 0x20000, REGION_GFX1, ROMREGION_DISPOSE )
-		ROM_LOAD16_BYTE( "523h04.5e",    0x00000, 0x4000, 0xc056d710 )
-		ROM_LOAD16_BYTE( "523h07.5f",    0x00001, 0x4000, 0x50e512ba )
-		ROM_LOAD16_BYTE( "523h05.6e",    0x08000, 0x4000, 0xae0d0f76 )
-		ROM_LOAD16_BYTE( "523h08.6f",    0x08001, 0x4000, 0x79f44e17 )
-		ROM_LOAD16_BYTE( "523h06.7e",    0x10000, 0x4000, 0xd2db9689 )
-		ROM_LOAD16_BYTE( "523h09.7f",    0x10001, 0x4000, 0x8896dc85 )
+		ROM_REGION( 0x20000, REGION_GFX1, ROMREGION_DISPOSE );
+		ROM_LOAD16_BYTE( "523h04.5e",    0x00000, 0x4000, 0xc056d710 );
+		ROM_LOAD16_BYTE( "523h07.5f",    0x00001, 0x4000, 0x50e512ba );
+		ROM_LOAD16_BYTE( "523h05.6e",    0x08000, 0x4000, 0xae0d0f76 );
+		ROM_LOAD16_BYTE( "523h08.6f",    0x08001, 0x4000, 0x79f44e17 );
+		ROM_LOAD16_BYTE( "523h06.7e",    0x10000, 0x4000, 0xd2db9689 );
+		ROM_LOAD16_BYTE( "523h09.7f",    0x10001, 0x4000, 0x8896dc85 );
 		/* 18000-1ffff empty */
 	
-		ROM_REGION( 0x0240, REGION_PROMS, 0 )
-		ROM_LOAD( "523h10.2f",    0x0000, 0x0020, 0xec15dd15 ) /* palette */
-		ROM_LOAD( "523h11.3f",    0x0020, 0x0020, 0x54be2e83 ) /* palette */
-		ROM_LOAD( "523h12.10f",   0x0040, 0x0100, 0x53166a2a ) /* sprites */
-		ROM_LOAD( "523h13.11f",   0x0140, 0x0100, 0x4e0647a0 ) /* characters */
-	ROM_END
+		ROM_REGION( 0x0240, REGION_PROMS, 0 );
+		ROM_LOAD( "523h10.2f",    0x0000, 0x0020, 0xec15dd15 );/* palette */
+		ROM_LOAD( "523h11.3f",    0x0020, 0x0020, 0x54be2e83 );/* palette */
+		ROM_LOAD( "523h12.10f",   0x0040, 0x0100, 0x53166a2a );/* sprites */
+		ROM_LOAD( "523h13.11f",   0x0140, 0x0100, 0x4e0647a0 );/* characters */
+	ROM_END(); }}; 
 	
 	
 	static void init_finalizr(void)

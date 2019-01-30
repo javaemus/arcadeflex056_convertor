@@ -410,97 +410,97 @@ public class mnight
 	};
 	
 	
-	ROM_START( mnight )
-		ROM_REGION( 0x30000, REGION_CPU1, 0 )
-		ROM_LOAD( "mn6-j19.bin",  0x00000, 0x8000, 0x56678d14 )
-		ROM_LOAD( "mn5-j17.bin",  0x10000, 0x8000, 0x2a73f88e )
-		ROM_LOAD( "mn4-j16.bin",  0x18000, 0x8000, 0xc5e42bb4 )
-		ROM_LOAD( "mn3-j14.bin",  0x20000, 0x8000, 0xdf6a4f7a )
-		ROM_LOAD( "mn2-j12.bin",  0x28000, 0x8000, 0x9c391d1b )
+	static RomLoadPtr rom_mnight = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x30000, REGION_CPU1, 0 );
+		ROM_LOAD( "mn6-j19.bin",  0x00000, 0x8000, 0x56678d14 );
+		ROM_LOAD( "mn5-j17.bin",  0x10000, 0x8000, 0x2a73f88e );
+		ROM_LOAD( "mn4-j16.bin",  0x18000, 0x8000, 0xc5e42bb4 );
+		ROM_LOAD( "mn3-j14.bin",  0x20000, 0x8000, 0xdf6a4f7a );
+		ROM_LOAD( "mn2-j12.bin",  0x28000, 0x8000, 0x9c391d1b );
 	
-		ROM_REGION( 0x10000, REGION_CPU2, 0 )
-		ROM_LOAD( "mn1-j7.bin",   0x00000, 0x10000, 0xa0782a31 )
+		ROM_REGION( 0x10000, REGION_CPU2, 0 );
+		ROM_LOAD( "mn1-j7.bin",   0x00000, 0x10000, 0xa0782a31 );
 	
-		ROM_REGION( 0x30000, REGION_GFX1, ROMREGION_DISPOSE )
-		ROM_LOAD( "mn11-b20.bin", 0x00000, 0x4000, 0x4d37e0f4 )   // background tiles
-		ROM_CONTINUE(             0x18000, 0x4000 )
-		ROM_CONTINUE(             0x04000, 0x4000 )
-		ROM_CONTINUE(             0x1c000, 0x4000 )
-		ROM_LOAD( "mn12-b22.bin", 0x08000, 0x4000, 0xb22cbbd3 )
-		ROM_CONTINUE(             0x20000, 0x4000 )
-		ROM_CONTINUE(             0x0c000, 0x4000 )
-		ROM_CONTINUE(             0x24000, 0x4000 )
-		ROM_LOAD( "mn13-b23.bin", 0x10000, 0x4000, 0x65714070 )
-		ROM_CONTINUE(             0x28000, 0x4000 )
-		ROM_CONTINUE(             0x14000, 0x4000 )
-		ROM_CONTINUE(             0x2c000, 0x4000 )
+		ROM_REGION( 0x30000, REGION_GFX1, ROMREGION_DISPOSE );
+		ROM_LOAD( "mn11-b20.bin", 0x00000, 0x4000, 0x4d37e0f4 );  // background tiles
+		ROM_CONTINUE(             0x18000, 0x4000 );
+		ROM_CONTINUE(             0x04000, 0x4000 );
+		ROM_CONTINUE(             0x1c000, 0x4000 );
+		ROM_LOAD( "mn12-b22.bin", 0x08000, 0x4000, 0xb22cbbd3 );
+		ROM_CONTINUE(             0x20000, 0x4000 );
+		ROM_CONTINUE(             0x0c000, 0x4000 );
+		ROM_CONTINUE(             0x24000, 0x4000 );
+		ROM_LOAD( "mn13-b23.bin", 0x10000, 0x4000, 0x65714070 );
+		ROM_CONTINUE(             0x28000, 0x4000 );
+		ROM_CONTINUE(             0x14000, 0x4000 );
+		ROM_CONTINUE(             0x2c000, 0x4000 );
 	
-		ROM_REGION( 0x30000, REGION_GFX2, ROMREGION_DISPOSE )
-		ROM_LOAD( "mn7-e11.bin",  0x00000, 0x4000, 0x4883059c )	  // sprites tiles
-		ROM_CONTINUE(             0x18000, 0x4000 )
-		ROM_CONTINUE(             0x04000, 0x4000 )
-		ROM_CONTINUE(             0x1c000, 0x4000 )
-		ROM_LOAD( "mn8-e12.bin",  0x08000, 0x4000, 0x2b91445 )
-		ROM_CONTINUE(             0x20000, 0x4000 )
-		ROM_CONTINUE(             0x0c000, 0x4000 )
-		ROM_CONTINUE(             0x24000, 0x4000 )
-		ROM_LOAD( "mn9-e14.bin",  0x10000, 0x4000, 0x9f08d160 )
-		ROM_CONTINUE(             0x28000, 0x4000 )
-		ROM_CONTINUE(             0x14000, 0x4000 )
-		ROM_CONTINUE(             0x2c000, 0x4000 )
+		ROM_REGION( 0x30000, REGION_GFX2, ROMREGION_DISPOSE );
+		ROM_LOAD( "mn7-e11.bin",  0x00000, 0x4000, 0x4883059c );  // sprites tiles
+		ROM_CONTINUE(             0x18000, 0x4000 );
+		ROM_CONTINUE(             0x04000, 0x4000 );
+		ROM_CONTINUE(             0x1c000, 0x4000 );
+		ROM_LOAD( "mn8-e12.bin",  0x08000, 0x4000, 0x2b91445 );
+		ROM_CONTINUE(             0x20000, 0x4000 );
+		ROM_CONTINUE(             0x0c000, 0x4000 );
+		ROM_CONTINUE(             0x24000, 0x4000 );
+		ROM_LOAD( "mn9-e14.bin",  0x10000, 0x4000, 0x9f08d160 );
+		ROM_CONTINUE(             0x28000, 0x4000 );
+		ROM_CONTINUE(             0x14000, 0x4000 );
+		ROM_CONTINUE(             0x2c000, 0x4000 );
 	
-		ROM_REGION( 0x08000, REGION_GFX3, ROMREGION_DISPOSE )
-		ROM_LOAD( "mn10-b10.bin", 0x00000, 0x2000, 0x37b8221f )	// foreground tiles OK
-		ROM_CONTINUE(             0x04000, 0x2000 )
-		ROM_CONTINUE(             0x02000, 0x2000 )
-		ROM_CONTINUE(             0x06000, 0x2000 )
-	ROM_END
+		ROM_REGION( 0x08000, REGION_GFX3, ROMREGION_DISPOSE );
+		ROM_LOAD( "mn10-b10.bin", 0x00000, 0x2000, 0x37b8221f );// foreground tiles OK
+		ROM_CONTINUE(             0x04000, 0x2000 );
+		ROM_CONTINUE(             0x02000, 0x2000 );
+		ROM_CONTINUE(             0x06000, 0x2000 );
+	ROM_END(); }}; 
 	
-	ROM_START( arkarea )
-		ROM_REGION( 0x30000, REGION_CPU1, 0 )
-		ROM_LOAD( "arkarea.008",  0x00000, 0x8000, 0x1ce1b5b9 )
-		ROM_LOAD( "arkarea.009",  0x10000, 0x8000, 0xdb1c81d1 )
-		ROM_LOAD( "arkarea.010",  0x18000, 0x8000, 0x5a460dae )
-		ROM_LOAD( "arkarea.011",  0x20000, 0x8000, 0x63f022c9 )
-		ROM_LOAD( "arkarea.012",  0x28000, 0x8000, 0x3c4c65d5 )
+	static RomLoadPtr rom_arkarea = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x30000, REGION_CPU1, 0 );
+		ROM_LOAD( "arkarea.008",  0x00000, 0x8000, 0x1ce1b5b9 );
+		ROM_LOAD( "arkarea.009",  0x10000, 0x8000, 0xdb1c81d1 );
+		ROM_LOAD( "arkarea.010",  0x18000, 0x8000, 0x5a460dae );
+		ROM_LOAD( "arkarea.011",  0x20000, 0x8000, 0x63f022c9 );
+		ROM_LOAD( "arkarea.012",  0x28000, 0x8000, 0x3c4c65d5 );
 	
-		ROM_REGION( 0x10000, REGION_CPU2, 0 )
-		ROM_LOAD( "arkarea.013",  0x00000, 0x8000, 0x2d409d58 )
+		ROM_REGION( 0x10000, REGION_CPU2, 0 );
+		ROM_LOAD( "arkarea.013",  0x00000, 0x8000, 0x2d409d58 );
 	
-		ROM_REGION( 0x30000, REGION_GFX1, ROMREGION_DISPOSE )
-		ROM_LOAD( "arkarea.003",  0x00000, 0x4000, 0x6f45a308 )   // background tiles
-		ROM_CONTINUE(             0x18000, 0x4000 )
-		ROM_CONTINUE(             0x04000, 0x4000 )
-		ROM_CONTINUE(             0x1c000, 0x4000 )
-		ROM_LOAD( "arkarea.002",  0x08000, 0x4000, 0x051d3482 )
-		ROM_CONTINUE(             0x20000, 0x4000 )
-		ROM_CONTINUE(             0x0c000, 0x4000 )
-		ROM_CONTINUE(             0x24000, 0x4000 )
-		ROM_LOAD( "arkarea.001",  0x10000, 0x4000, 0x09d11ab7 )
-		ROM_CONTINUE(             0x28000, 0x4000 )
-		ROM_CONTINUE(             0x14000, 0x4000 )
-		ROM_CONTINUE(             0x2c000, 0x4000 )
+		ROM_REGION( 0x30000, REGION_GFX1, ROMREGION_DISPOSE );
+		ROM_LOAD( "arkarea.003",  0x00000, 0x4000, 0x6f45a308 );  // background tiles
+		ROM_CONTINUE(             0x18000, 0x4000 );
+		ROM_CONTINUE(             0x04000, 0x4000 );
+		ROM_CONTINUE(             0x1c000, 0x4000 );
+		ROM_LOAD( "arkarea.002",  0x08000, 0x4000, 0x051d3482 );
+		ROM_CONTINUE(             0x20000, 0x4000 );
+		ROM_CONTINUE(             0x0c000, 0x4000 );
+		ROM_CONTINUE(             0x24000, 0x4000 );
+		ROM_LOAD( "arkarea.001",  0x10000, 0x4000, 0x09d11ab7 );
+		ROM_CONTINUE(             0x28000, 0x4000 );
+		ROM_CONTINUE(             0x14000, 0x4000 );
+		ROM_CONTINUE(             0x2c000, 0x4000 );
 	
-		ROM_REGION( 0x30000, REGION_GFX2, ROMREGION_DISPOSE )
-		ROM_LOAD( "arkarea.007",  0x00000, 0x4000, 0xd5684a27 )   // sprites tiles
-		ROM_CONTINUE(             0x18000, 0x4000 )
-		ROM_CONTINUE(             0x04000, 0x4000 )
-		ROM_CONTINUE(             0x1c000, 0x4000 )
-		ROM_LOAD( "arkarea.006",  0x08000, 0x4000, 0x2c0567d6)
-		ROM_CONTINUE(             0x20000, 0x4000 )
-		ROM_CONTINUE(             0x0c000, 0x4000 )
-		ROM_CONTINUE(             0x24000, 0x4000 )
-		ROM_LOAD( "arkarea.005",  0x10000, 0x4000, 0x9886004d )
-		ROM_CONTINUE(             0x28000, 0x4000 )
-		ROM_CONTINUE(             0x14000, 0x4000 )
-		ROM_CONTINUE(             0x2c000, 0x4000 )
+		ROM_REGION( 0x30000, REGION_GFX2, ROMREGION_DISPOSE );
+		ROM_LOAD( "arkarea.007",  0x00000, 0x4000, 0xd5684a27 );  // sprites tiles
+		ROM_CONTINUE(             0x18000, 0x4000 );
+		ROM_CONTINUE(             0x04000, 0x4000 );
+		ROM_CONTINUE(             0x1c000, 0x4000 );
+		ROM_LOAD( "arkarea.006",  0x08000, 0x4000, 0x2c0567d6);
+		ROM_CONTINUE(             0x20000, 0x4000 );
+		ROM_CONTINUE(             0x0c000, 0x4000 );
+		ROM_CONTINUE(             0x24000, 0x4000 );
+		ROM_LOAD( "arkarea.005",  0x10000, 0x4000, 0x9886004d );
+		ROM_CONTINUE(             0x28000, 0x4000 );
+		ROM_CONTINUE(             0x14000, 0x4000 );
+		ROM_CONTINUE(             0x2c000, 0x4000 );
 	
-		ROM_REGION( 0x08000, REGION_GFX3, ROMREGION_DISPOSE )
-		ROM_LOAD( "arkarea.004",  0x00000, 0x2000, 0x69e36af2 ) // foreground tiles OK
-		ROM_CONTINUE(             0x04000, 0x2000 )
-		ROM_CONTINUE(             0x02000, 0x2000 )
-		ROM_CONTINUE(             0x06000, 0x2000 )
-	ROM_END
+		ROM_REGION( 0x08000, REGION_GFX3, ROMREGION_DISPOSE );
+		ROM_LOAD( "arkarea.004",  0x00000, 0x2000, 0x69e36af2 );// foreground tiles OK
+		ROM_CONTINUE(             0x04000, 0x2000 );
+		ROM_CONTINUE(             0x02000, 0x2000 );
+		ROM_CONTINUE(             0x06000, 0x2000 );
+	ROM_END(); }}; 
 	
 	
 	

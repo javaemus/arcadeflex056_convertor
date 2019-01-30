@@ -541,31 +541,31 @@ public class tetrisp2
 	
 	***************************************************************************/
 	
-	ROM_START( tetrisp2 )
+	static RomLoadPtr rom_tetrisp2 = new RomLoadPtr(){ public void handler(){ 
 	
-		ROM_REGION( 0x100000, REGION_CPU1, 0 )		/* 68000 Code */
-		ROM_LOAD16_BYTE( "t2p_04.rom", 0x000000, 0x080000, 0xe67f9c51 )
-		ROM_LOAD16_BYTE( "t2p_01.rom", 0x000001, 0x080000, 0x5020a4ed )
+		ROM_REGION( 0x100000, REGION_CPU1, 0 );	/* 68000 Code */
+		ROM_LOAD16_BYTE( "t2p_04.rom", 0x000000, 0x080000, 0xe67f9c51 );
+		ROM_LOAD16_BYTE( "t2p_01.rom", 0x000001, 0x080000, 0x5020a4ed );
 	
-		ROM_REGION( 0x800000, REGION_GFX1, ROMREGION_DISPOSE )	/* 8x8x8 (Sprites) */
-		ROM_LOAD32_WORD( "96019-01.9", 0x000000, 0x400000, 0x06f7dc64 )
-		ROM_LOAD32_WORD( "96019-02.8", 0x000002, 0x400000, 0x3e613bed )
+		ROM_REGION( 0x800000, REGION_GFX1, ROMREGION_DISPOSE );/* 8x8x8 (Sprites) */
+		ROM_LOAD32_WORD( "96019-01.9", 0x000000, 0x400000, 0x06f7dc64 );
+		ROM_LOAD32_WORD( "96019-02.8", 0x000002, 0x400000, 0x3e613bed );
 		/* If t2p_m01&2 from this board were correctly read, since they
 		   hold the same data of the above but with swapped halves, it
 		   means they had to invert the top bit of the "page select"
 		   register in the sprite's hardware on this board! */
 	
-		ROM_REGION( 0x800000, REGION_GFX2, ROMREGION_DISPOSE )	/* 16x16x8 (Background) */
-		ROM_LOAD( "96019-06.13", 0x000000, 0x400000, 0x16f7093c )
-		ROM_LOAD( "96019-04.6",  0x400000, 0x100000, 0xb849dec9 )
+		ROM_REGION( 0x800000, REGION_GFX2, ROMREGION_DISPOSE );/* 16x16x8 (Background) */
+		ROM_LOAD( "96019-06.13", 0x000000, 0x400000, 0x16f7093c );
+		ROM_LOAD( "96019-04.6",  0x400000, 0x100000, 0xb849dec9 );
 	
-		ROM_REGION( 0x080000, REGION_GFX3, ROMREGION_DISPOSE )	/* 8x8x8 (Foreground) */
-		ROM_LOAD( "tetp2-10.bin", 0x000000, 0x080000, 0x34dd1bad )	// 11111xxxxxxxxxxxxxx = 0xFF
+		ROM_REGION( 0x080000, REGION_GFX3, ROMREGION_DISPOSE );/* 8x8x8 (Foreground) */
+		ROM_LOAD( "tetp2-10.bin", 0x000000, 0x080000, 0x34dd1bad );// 11111xxxxxxxxxxxxxx = 0xFF
 	
-		ROM_REGION( 0x400000, REGION_SOUND1, ROMREGION_SOUNDONLY )	/* Samples */
-		ROM_LOAD( "96019-07.7", 0x000000, 0x400000, 0xa8a61954 )
+		ROM_REGION( 0x400000, REGION_SOUND1, ROMREGION_SOUNDONLY );/* Samples */
+		ROM_LOAD( "96019-07.7", 0x000000, 0x400000, 0xa8a61954 );
 	
-	ROM_END
+	ROM_END(); }}; 
 	
 	
 	/***************************************************************************
@@ -590,27 +590,27 @@ public class tetrisp2
 	
 	***************************************************************************/
 	
-	ROM_START( teplus2j )
+	static RomLoadPtr rom_teplus2j = new RomLoadPtr(){ public void handler(){ 
 	
-		ROM_REGION( 0x100000, REGION_CPU1, 0 )		/* 68000 Code */
-		ROM_LOAD16_BYTE( "tet2-4v2.2", 0x000000, 0x080000, 0x5bfa32c8 )	// v2.2
-		ROM_LOAD16_BYTE( "tet2-1v2.2", 0x000001, 0x080000, 0x919116d0 )
+		ROM_REGION( 0x100000, REGION_CPU1, 0 );	/* 68000 Code */
+		ROM_LOAD16_BYTE( "tet2-4v2.2", 0x000000, 0x080000, 0x5bfa32c8 );// v2.2
+		ROM_LOAD16_BYTE( "tet2-1v2.2", 0x000001, 0x080000, 0x919116d0 );
 	
-		ROM_REGION( 0x800000, REGION_GFX1, ROMREGION_DISPOSE )	/* 8x8x8 (Sprites) */
-		ROM_LOAD32_WORD( "96019-01.9", 0x000000, 0x400000, 0x06f7dc64 )
-		ROM_LOAD32_WORD( "96019-02.8", 0x000002, 0x400000, 0x3e613bed )
+		ROM_REGION( 0x800000, REGION_GFX1, ROMREGION_DISPOSE );/* 8x8x8 (Sprites) */
+		ROM_LOAD32_WORD( "96019-01.9", 0x000000, 0x400000, 0x06f7dc64 );
+		ROM_LOAD32_WORD( "96019-02.8", 0x000002, 0x400000, 0x3e613bed );
 	
-		ROM_REGION( 0x800000, REGION_GFX2, ROMREGION_DISPOSE )	/* 16x16x8 (Background) */
-		ROM_LOAD( "96019-06.13", 0x000000, 0x400000, 0x16f7093c )
-		ROM_LOAD( "96019-04.6",  0x400000, 0x100000, 0xb849dec9 )
+		ROM_REGION( 0x800000, REGION_GFX2, ROMREGION_DISPOSE );/* 16x16x8 (Background) */
+		ROM_LOAD( "96019-06.13", 0x000000, 0x400000, 0x16f7093c );
+		ROM_LOAD( "96019-04.6",  0x400000, 0x100000, 0xb849dec9 );
 	
-		ROM_REGION( 0x080000, REGION_GFX3, ROMREGION_DISPOSE )	/* 8x8x8 (Foreground) */
-		ROM_LOAD( "tetp2-10.bin", 0x000000, 0x080000, 0x34dd1bad )	// 11111xxxxxxxxxxxxxx = 0xFF
+		ROM_REGION( 0x080000, REGION_GFX3, ROMREGION_DISPOSE );/* 8x8x8 (Foreground) */
+		ROM_LOAD( "tetp2-10.bin", 0x000000, 0x080000, 0x34dd1bad );// 11111xxxxxxxxxxxxxx = 0xFF
 	
-		ROM_REGION( 0x400000, REGION_SOUND1, ROMREGION_SOUNDONLY )	/* Samples */
-		ROM_LOAD( "96019-07.7", 0x000000, 0x400000, 0xa8a61954 )
+		ROM_REGION( 0x400000, REGION_SOUND1, ROMREGION_SOUNDONLY );/* Samples */
+		ROM_LOAD( "96019-07.7", 0x000000, 0x400000, 0xa8a61954 );
 	
-	ROM_END
+	ROM_END(); }}; 
 	
 	/***************************************************************************
 	

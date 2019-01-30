@@ -389,28 +389,28 @@ public class xxmissio
 	
 	/****************************************************************************/
 	
-	ROM_START( xxmissio )
-		ROM_REGION( 0x10000, REGION_CPU1, 0 ) /* CPU1 */
-		ROM_LOAD( "xx1.4l", 0x0000,  0x8000, 0x86e07709 )
+	static RomLoadPtr rom_xxmissio = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x10000, REGION_CPU1, 0 );/* CPU1 */
+		ROM_LOAD( "xx1.4l", 0x0000,  0x8000, 0x86e07709 );
 	
-		ROM_REGION( 0x10000, REGION_CPU2, 0 ) /* CPU2 */
-		ROM_LOAD( "xx2.4b", 0x0000,  0x4000, 0x13fa7049 )
+		ROM_REGION( 0x10000, REGION_CPU2, 0 );/* CPU2 */
+		ROM_LOAD( "xx2.4b", 0x0000,  0x4000, 0x13fa7049 );
 	
-		ROM_REGION( 0x18000, REGION_USER1, 0 ) /* BANK */
-		ROM_LOAD( "xx3.6a", 0x00000,  0x8000, 0x16fdacab )
-		ROM_LOAD( "xx4.6b", 0x08000,  0x8000, 0x274bd4d2)
-		ROM_LOAD( "xx5.6d", 0x10000,  0x8000, 0xc5f35535 )
+		ROM_REGION( 0x18000, REGION_USER1, 0 );/* BANK */
+		ROM_LOAD( "xx3.6a", 0x00000,  0x8000, 0x16fdacab );
+		ROM_LOAD( "xx4.6b", 0x08000,  0x8000, 0x274bd4d2);
+		ROM_LOAD( "xx5.6d", 0x10000,  0x8000, 0xc5f35535 );
 	
-		ROM_REGION( 0x20000, REGION_GFX1, ROMREGION_DISPOSE ) /* FG/sprites */
-		ROM_LOAD16_BYTE( "xx6.8j", 0x00001, 0x8000, 0xdc954d01 )
-		ROM_LOAD16_BYTE( "xx8.8f", 0x00000, 0x8000, 0xa9587cc6 )
-		ROM_LOAD16_BYTE( "xx7.8h", 0x10001, 0x8000, 0xabe9cd68 )
-		ROM_LOAD16_BYTE( "xx9.8e", 0x10000, 0x8000, 0x854e0e5f )
+		ROM_REGION( 0x20000, REGION_GFX1, ROMREGION_DISPOSE );/* FG/sprites */
+		ROM_LOAD16_BYTE( "xx6.8j", 0x00001, 0x8000, 0xdc954d01 );
+		ROM_LOAD16_BYTE( "xx8.8f", 0x00000, 0x8000, 0xa9587cc6 );
+		ROM_LOAD16_BYTE( "xx7.8h", 0x10001, 0x8000, 0xabe9cd68 );
+		ROM_LOAD16_BYTE( "xx9.8e", 0x10000, 0x8000, 0x854e0e5f );
 	
-		ROM_REGION( 0x10000, REGION_GFX2, ROMREGION_DISPOSE ) /* BG */
-		ROM_LOAD16_BYTE( "xx10.4c", 0x0000,  0x8000, 0xd27d7834 )
-		ROM_LOAD16_BYTE( "xx11.4b", 0x0001,  0x8000, 0xd9dd827c )
-	ROM_END
+		ROM_REGION( 0x10000, REGION_GFX2, ROMREGION_DISPOSE );/* BG */
+		ROM_LOAD16_BYTE( "xx10.4c", 0x0000,  0x8000, 0xd27d7834 );
+		ROM_LOAD16_BYTE( "xx11.4b", 0x0001,  0x8000, 0xd9dd827c );
+	ROM_END(); }}; 
 	
 	GAME( 1986, xxmissio, 0, xxmissio, xxmissio, 0, ROT90, "UPL", "XX Mission" )
 }

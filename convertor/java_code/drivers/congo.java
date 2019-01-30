@@ -482,79 +482,79 @@ public class congo
 	
 	***************************************************************************/
 	
-	ROM_START( congo )
-		ROM_REGION( 0x10000, REGION_CPU1, 0 )	/* 64k for code */
-		ROM_LOAD( "congo1.bin",   0x0000, 0x2000, 0x09355b5b )
-		ROM_LOAD( "congo2.bin",   0x2000, 0x2000, 0x1c5e30ae )
-		ROM_LOAD( "congo3.bin",   0x4000, 0x2000, 0x5ee1132c )
-		ROM_LOAD( "congo4.bin",   0x6000, 0x2000, 0x5332b9bf )
+	static RomLoadPtr rom_congo = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x10000, REGION_CPU1, 0 );/* 64k for code */
+		ROM_LOAD( "congo1.bin",   0x0000, 0x2000, 0x09355b5b );
+		ROM_LOAD( "congo2.bin",   0x2000, 0x2000, 0x1c5e30ae );
+		ROM_LOAD( "congo3.bin",   0x4000, 0x2000, 0x5ee1132c );
+		ROM_LOAD( "congo4.bin",   0x6000, 0x2000, 0x5332b9bf );
 	
-		ROM_REGION( 0x10000, REGION_CPU2, 0 ) /*64K for the sound cpu*/
-		ROM_LOAD( "congo17.bin",  0x0000, 0x2000, 0x5024e673 )
+		ROM_REGION( 0x10000, REGION_CPU2, 0 );/*64K for the sound cpu*/
+		ROM_LOAD( "congo17.bin",  0x0000, 0x2000, 0x5024e673 );
 	
-		ROM_REGION( 0x1800, REGION_GFX1, ROMREGION_DISPOSE )
-		ROM_LOAD( "congo5.bin",   0x00000, 0x1000, 0x7bf6ba2b ) /* characters */
+		ROM_REGION( 0x1800, REGION_GFX1, ROMREGION_DISPOSE );
+		ROM_LOAD( "congo5.bin",   0x00000, 0x1000, 0x7bf6ba2b );/* characters */
 		/* 1000-1800 empty space to convert the characters as 3bpp instead of 2 */
 	
-		ROM_REGION( 0x6000, REGION_GFX2, ROMREGION_DISPOSE )
-		ROM_LOAD( "congo8.bin",   0x00000, 0x2000, 0xdb99a619 ) /* background tiles */
-		ROM_LOAD( "congo9.bin",   0x02000, 0x2000, 0x93e2309e )
-		ROM_LOAD( "congo10.bin",  0x04000, 0x2000, 0xf27a9407 )
+		ROM_REGION( 0x6000, REGION_GFX2, ROMREGION_DISPOSE );
+		ROM_LOAD( "congo8.bin",   0x00000, 0x2000, 0xdb99a619 );/* background tiles */
+		ROM_LOAD( "congo9.bin",   0x02000, 0x2000, 0x93e2309e );
+		ROM_LOAD( "congo10.bin",  0x04000, 0x2000, 0xf27a9407 );
 	
-		ROM_REGION( 0xc000, REGION_GFX3, ROMREGION_DISPOSE )
-		ROM_LOAD( "congo12.bin",  0x00000, 0x2000, 0x15e3377a ) /* sprites */
-		ROM_LOAD( "congo13.bin",  0x02000, 0x2000, 0x1d1321c8 )
-		ROM_LOAD( "congo11.bin",  0x04000, 0x2000, 0x73e2709f )
-		ROM_LOAD( "congo14.bin",  0x06000, 0x2000, 0xbf9169fe )
-		ROM_LOAD( "congo16.bin",  0x08000, 0x2000, 0xcb6d5775 )
-		ROM_LOAD( "congo15.bin",  0x0a000, 0x2000, 0x7b15a7a4 )
+		ROM_REGION( 0xc000, REGION_GFX3, ROMREGION_DISPOSE );
+		ROM_LOAD( "congo12.bin",  0x00000, 0x2000, 0x15e3377a );/* sprites */
+		ROM_LOAD( "congo13.bin",  0x02000, 0x2000, 0x1d1321c8 );
+		ROM_LOAD( "congo11.bin",  0x04000, 0x2000, 0x73e2709f );
+		ROM_LOAD( "congo14.bin",  0x06000, 0x2000, 0xbf9169fe );
+		ROM_LOAD( "congo16.bin",  0x08000, 0x2000, 0xcb6d5775 );
+		ROM_LOAD( "congo15.bin",  0x0a000, 0x2000, 0x7b15a7a4 );
 	
-		ROM_REGION( 0x8000, REGION_GFX4, ROMREGION_DISPOSE )	/* background tilemaps converted in vh_start */
-		ROM_LOAD( "congo6.bin",   0x0000, 0x2000, 0xd637f02b )
+		ROM_REGION( 0x8000, REGION_GFX4, ROMREGION_DISPOSE );/* background tilemaps converted in vh_start */
+		ROM_LOAD( "congo6.bin",   0x0000, 0x2000, 0xd637f02b );
 		/* 2000-3fff empty space to match Zaxxon */
-		ROM_LOAD( "congo7.bin",   0x4000, 0x2000, 0x80927943 )
+		ROM_LOAD( "congo7.bin",   0x4000, 0x2000, 0x80927943 );
 		/* 6000-7fff empty space to match Zaxxon */
 	
-		ROM_REGION( 0x0100, REGION_PROMS, 0 )
-		ROM_LOAD( "congo.u68",    0x0000, 0x100, 0xb788d8ae ) /* palette */
-	ROM_END
+		ROM_REGION( 0x0100, REGION_PROMS, 0 );
+		ROM_LOAD( "congo.u68",    0x0000, 0x100, 0xb788d8ae );/* palette */
+	ROM_END(); }}; 
 	
-	ROM_START( tiptop )
-		ROM_REGION( 0x10000, REGION_CPU1, 0 )	/* 64k for code */
-		ROM_LOAD( "tiptop1.bin",  0x0000, 0x2000, 0xe19dc77b )
-		ROM_LOAD( "tiptop2.bin",  0x2000, 0x2000, 0x3fcd3b6e )
-		ROM_LOAD( "tiptop3.bin",  0x4000, 0x2000, 0x1c94250b )
-		ROM_LOAD( "tiptop4.bin",  0x6000, 0x2000, 0x577b501b )
+	static RomLoadPtr rom_tiptop = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x10000, REGION_CPU1, 0 );/* 64k for code */
+		ROM_LOAD( "tiptop1.bin",  0x0000, 0x2000, 0xe19dc77b );
+		ROM_LOAD( "tiptop2.bin",  0x2000, 0x2000, 0x3fcd3b6e );
+		ROM_LOAD( "tiptop3.bin",  0x4000, 0x2000, 0x1c94250b );
+		ROM_LOAD( "tiptop4.bin",  0x6000, 0x2000, 0x577b501b );
 	
-		ROM_REGION( 0x10000, REGION_CPU2, 0 ) /*64K for the sound cpu*/
-		ROM_LOAD( "congo17.bin",  0x0000, 0x2000, 0x5024e673 )
+		ROM_REGION( 0x10000, REGION_CPU2, 0 );/*64K for the sound cpu*/
+		ROM_LOAD( "congo17.bin",  0x0000, 0x2000, 0x5024e673 );
 	
-		ROM_REGION( 0x1800, REGION_GFX1, ROMREGION_DISPOSE )
-		ROM_LOAD( "congo5.bin",   0x00000, 0x1000, 0x7bf6ba2b ) /* characters */
+		ROM_REGION( 0x1800, REGION_GFX1, ROMREGION_DISPOSE );
+		ROM_LOAD( "congo5.bin",   0x00000, 0x1000, 0x7bf6ba2b );/* characters */
 		/* 1000-1800 empty space to convert the characters as 3bpp instead of 2 */
 	
-		ROM_REGION( 0x6000, REGION_GFX2, ROMREGION_DISPOSE )
-		ROM_LOAD( "congo8.bin",   0x00000, 0x2000, 0xdb99a619 ) /* background tiles */
-		ROM_LOAD( "congo9.bin",   0x02000, 0x2000, 0x93e2309e )
-		ROM_LOAD( "congo10.bin",  0x04000, 0x2000, 0xf27a9407 )
+		ROM_REGION( 0x6000, REGION_GFX2, ROMREGION_DISPOSE );
+		ROM_LOAD( "congo8.bin",   0x00000, 0x2000, 0xdb99a619 );/* background tiles */
+		ROM_LOAD( "congo9.bin",   0x02000, 0x2000, 0x93e2309e );
+		ROM_LOAD( "congo10.bin",  0x04000, 0x2000, 0xf27a9407 );
 	
-		ROM_REGION( 0xc000, REGION_GFX3, ROMREGION_DISPOSE )
-		ROM_LOAD( "congo12.bin",  0x00000, 0x2000, 0x15e3377a ) /* sprites */
-		ROM_LOAD( "congo13.bin",  0x02000, 0x2000, 0x1d1321c8 )
-		ROM_LOAD( "congo11.bin",  0x04000, 0x2000, 0x73e2709f )
-		ROM_LOAD( "congo14.bin",  0x06000, 0x2000, 0xbf9169fe )
-		ROM_LOAD( "congo16.bin",  0x08000, 0x2000, 0xcb6d5775 )
-		ROM_LOAD( "congo15.bin",  0x0a000, 0x2000, 0x7b15a7a4 )
+		ROM_REGION( 0xc000, REGION_GFX3, ROMREGION_DISPOSE );
+		ROM_LOAD( "congo12.bin",  0x00000, 0x2000, 0x15e3377a );/* sprites */
+		ROM_LOAD( "congo13.bin",  0x02000, 0x2000, 0x1d1321c8 );
+		ROM_LOAD( "congo11.bin",  0x04000, 0x2000, 0x73e2709f );
+		ROM_LOAD( "congo14.bin",  0x06000, 0x2000, 0xbf9169fe );
+		ROM_LOAD( "congo16.bin",  0x08000, 0x2000, 0xcb6d5775 );
+		ROM_LOAD( "congo15.bin",  0x0a000, 0x2000, 0x7b15a7a4 );
 	
-		ROM_REGION( 0x8000, REGION_GFX4, ROMREGION_DISPOSE )	/* background tilemaps converted in vh_start */
-		ROM_LOAD( "congo6.bin",   0x0000, 0x2000, 0xd637f02b )
+		ROM_REGION( 0x8000, REGION_GFX4, ROMREGION_DISPOSE );/* background tilemaps converted in vh_start */
+		ROM_LOAD( "congo6.bin",   0x0000, 0x2000, 0xd637f02b );
 		/* 2000-3fff empty space to match Zaxxon */
-		ROM_LOAD( "congo7.bin",   0x4000, 0x2000, 0x80927943 )
+		ROM_LOAD( "congo7.bin",   0x4000, 0x2000, 0x80927943 );
 		/* 6000-7fff empty space to match Zaxxon */
 	
-		ROM_REGION( 0x0100, REGION_PROMS, 0 )
-		ROM_LOAD( "congo.u68",    0x0000, 0x100, 0xb788d8ae ) /* palette */
-	ROM_END
+		ROM_REGION( 0x0100, REGION_PROMS, 0 );
+		ROM_LOAD( "congo.u68",    0x0000, 0x100, 0xb788d8ae );/* palette */
+	ROM_END(); }}; 
 	
 	
 	

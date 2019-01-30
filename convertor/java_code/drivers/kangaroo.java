@@ -397,81 +397,81 @@ public class kangaroo
 	
 	***************************************************************************/
 	
-	ROM_START( fnkyfish )
-		ROM_REGION( 0x14000, REGION_CPU1, 0 ) /* 64k for code + 16k for banked ROMs */
-		ROM_LOAD( "tvg_64.0",    0x0000,  0x1000, 0xaf728803 )
-		ROM_LOAD( "tvg_65.1",    0x1000,  0x1000, 0x71959e6b )
-		ROM_LOAD( "tvg_66.2",    0x2000,  0x1000, 0x5ccf68d4 )
-		ROM_LOAD( "tvg_67.3",    0x3000,  0x1000, 0x938ff36f )
+	static RomLoadPtr rom_fnkyfish = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x14000, REGION_CPU1, 0 );/* 64k for code + 16k for banked ROMs */
+		ROM_LOAD( "tvg_64.0",    0x0000,  0x1000, 0xaf728803 );
+		ROM_LOAD( "tvg_65.1",    0x1000,  0x1000, 0x71959e6b );
+		ROM_LOAD( "tvg_66.2",    0x2000,  0x1000, 0x5ccf68d4 );
+		ROM_LOAD( "tvg_67.3",    0x3000,  0x1000, 0x938ff36f );
 	
-		ROM_LOAD( "tvg_69.v0",   0x10000, 0x1000, 0xcd532d0b ) /* graphics ROMs */
-		ROM_LOAD( "tvg_71.v2",   0x11000, 0x1000, 0xa59c9713 )
-		ROM_LOAD( "tvg_70.v1",   0x12000, 0x1000, 0xfd308ef1 )
-		ROM_LOAD( "tvg_72.v3",   0x13000, 0x1000, 0x6ae9b584 )
+		ROM_LOAD( "tvg_69.v0",   0x10000, 0x1000, 0xcd532d0b );/* graphics ROMs */
+		ROM_LOAD( "tvg_71.v2",   0x11000, 0x1000, 0xa59c9713 );
+		ROM_LOAD( "tvg_70.v1",   0x12000, 0x1000, 0xfd308ef1 );
+		ROM_LOAD( "tvg_72.v3",   0x13000, 0x1000, 0x6ae9b584 );
 	
-		ROM_REGION( 0x10000, REGION_CPU2, 0 ) /* sound */
-		ROM_LOAD( "tvg_68.8",    0x0000,  0x1000, 0xd36bb2be )
-	ROM_END
+		ROM_REGION( 0x10000, REGION_CPU2, 0 );/* sound */
+		ROM_LOAD( "tvg_68.8",    0x0000,  0x1000, 0xd36bb2be );
+	ROM_END(); }}; 
 	
-	ROM_START( kangaroo )
-		ROM_REGION( 0x14000, REGION_CPU1, 0 ) /* 64k for code + 16k for banked ROMs */
-		ROM_LOAD( "tvg_75.0",    0x0000,  0x1000, 0x0d18c581 )
-		ROM_LOAD( "tvg_76.1",    0x1000,  0x1000, 0x5978d37a )
-		ROM_LOAD( "tvg_77.2",    0x2000,  0x1000, 0x522d1097 )
-		ROM_LOAD( "tvg_78.3",    0x3000,  0x1000, 0x063da970 )
-		ROM_LOAD( "tvg_79.4",    0x4000,  0x1000, 0x9e5cf8ca )
-		ROM_LOAD( "tvg_80.5",    0x5000,  0x1000, 0x2fc18049 )
+	static RomLoadPtr rom_kangaroo = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x14000, REGION_CPU1, 0 );/* 64k for code + 16k for banked ROMs */
+		ROM_LOAD( "tvg_75.0",    0x0000,  0x1000, 0x0d18c581 );
+		ROM_LOAD( "tvg_76.1",    0x1000,  0x1000, 0x5978d37a );
+		ROM_LOAD( "tvg_77.2",    0x2000,  0x1000, 0x522d1097 );
+		ROM_LOAD( "tvg_78.3",    0x3000,  0x1000, 0x063da970 );
+		ROM_LOAD( "tvg_79.4",    0x4000,  0x1000, 0x9e5cf8ca );
+		ROM_LOAD( "tvg_80.5",    0x5000,  0x1000, 0x2fc18049 );
 	
-		ROM_LOAD( "tvg_83.v0",   0x10000, 0x1000, 0xc0446ca6 ) /* graphics ROMs */
-		ROM_LOAD( "tvg_85.v2",   0x11000, 0x1000, 0x72c52695 )
-		ROM_LOAD( "tvg_84.v1",   0x12000, 0x1000, 0xe4cb26c2 )
-		ROM_LOAD( "tvg_86.v3",   0x13000, 0x1000, 0x9e6a599f )
+		ROM_LOAD( "tvg_83.v0",   0x10000, 0x1000, 0xc0446ca6 );/* graphics ROMs */
+		ROM_LOAD( "tvg_85.v2",   0x11000, 0x1000, 0x72c52695 );
+		ROM_LOAD( "tvg_84.v1",   0x12000, 0x1000, 0xe4cb26c2 );
+		ROM_LOAD( "tvg_86.v3",   0x13000, 0x1000, 0x9e6a599f );
 	
-		ROM_REGION( 0x10000, REGION_CPU2, 0 ) /* sound */
-		ROM_LOAD( "tvg_81.8",    0x0000,  0x1000, 0xfb449bfd )
+		ROM_REGION( 0x10000, REGION_CPU2, 0 );/* sound */
+		ROM_LOAD( "tvg_81.8",    0x0000,  0x1000, 0xfb449bfd );
 	
-		ROM_REGION( 0x0800, REGION_CPU3, 0 )  /* 8k for the MB8841 custom microcontroller (currently not emulated) */
-		ROM_LOAD( "tvg_82.12",   0x0000,  0x0800, 0x57766f69 )
-	ROM_END
+		ROM_REGION( 0x0800, REGION_CPU3, 0 ); /* 8k for the MB8841 custom microcontroller (currently not emulated) */
+		ROM_LOAD( "tvg_82.12",   0x0000,  0x0800, 0x57766f69 );
+	ROM_END(); }}; 
 	
-	ROM_START( kangaroa )
-		ROM_REGION( 0x14000, REGION_CPU1, 0 ) /* 64k for code + 16k for banked ROMs */
-		ROM_LOAD( "tvg_75.0",    0x0000,  0x1000, 0x0d18c581 )
-		ROM_LOAD( "tvg_76.1",    0x1000,  0x1000, 0x5978d37a )
-		ROM_LOAD( "tvg_77.2",    0x2000,  0x1000, 0x522d1097 )
-		ROM_LOAD( "tvg_78.3",    0x3000,  0x1000, 0x063da970 )
-		ROM_LOAD( "tvg79.bin",   0x4000,  0x1000, 0x82a26c7d )
-		ROM_LOAD( "tvg80.bin",   0x5000,  0x1000, 0x3dead542 )
+	static RomLoadPtr rom_kangaroa = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x14000, REGION_CPU1, 0 );/* 64k for code + 16k for banked ROMs */
+		ROM_LOAD( "tvg_75.0",    0x0000,  0x1000, 0x0d18c581 );
+		ROM_LOAD( "tvg_76.1",    0x1000,  0x1000, 0x5978d37a );
+		ROM_LOAD( "tvg_77.2",    0x2000,  0x1000, 0x522d1097 );
+		ROM_LOAD( "tvg_78.3",    0x3000,  0x1000, 0x063da970 );
+		ROM_LOAD( "tvg79.bin",   0x4000,  0x1000, 0x82a26c7d );
+		ROM_LOAD( "tvg80.bin",   0x5000,  0x1000, 0x3dead542 );
 	
-		ROM_LOAD( "tvg_83.v0",   0x10000, 0x1000, 0xc0446ca6 ) /* graphics ROMs */
-		ROM_LOAD( "tvg_85.v2",   0x11000, 0x1000, 0x72c52695 )
-		ROM_LOAD( "tvg_84.v1",   0x12000, 0x1000, 0xe4cb26c2 )
-		ROM_LOAD( "tvg_86.v3",   0x13000, 0x1000, 0x9e6a599f )
+		ROM_LOAD( "tvg_83.v0",   0x10000, 0x1000, 0xc0446ca6 );/* graphics ROMs */
+		ROM_LOAD( "tvg_85.v2",   0x11000, 0x1000, 0x72c52695 );
+		ROM_LOAD( "tvg_84.v1",   0x12000, 0x1000, 0xe4cb26c2 );
+		ROM_LOAD( "tvg_86.v3",   0x13000, 0x1000, 0x9e6a599f );
 	
-		ROM_REGION( 0x10000, REGION_CPU2, 0 ) /* sound */
-		ROM_LOAD( "tvg_81.8",    0x0000,  0x1000, 0xfb449bfd )
+		ROM_REGION( 0x10000, REGION_CPU2, 0 );/* sound */
+		ROM_LOAD( "tvg_81.8",    0x0000,  0x1000, 0xfb449bfd );
 	
-		ROM_REGION( 0x0800, REGION_CPU3, 0 )  /* 8k for the MB8841 custom microcontroller (currently not emulated) */
-		ROM_LOAD( "tvg_82.12",   0x0000,  0x0800, 0x57766f69 )
-	ROM_END
+		ROM_REGION( 0x0800, REGION_CPU3, 0 ); /* 8k for the MB8841 custom microcontroller (currently not emulated) */
+		ROM_LOAD( "tvg_82.12",   0x0000,  0x0800, 0x57766f69 );
+	ROM_END(); }}; 
 	
-	ROM_START( kangarob )
-		ROM_REGION( 0x14000, REGION_CPU1, 0 ) /* 64k for code + 16k for banked ROMs */
-		ROM_LOAD( "tvg_75.0",    0x0000,  0x1000, 0x0d18c581 )
-		ROM_LOAD( "tvg_76.1",    0x1000,  0x1000, 0x5978d37a )
-		ROM_LOAD( "tvg_77.2",    0x2000,  0x1000, 0x522d1097 )
-		ROM_LOAD( "tvg_78.3",    0x3000,  0x1000, 0x063da970 )
-		ROM_LOAD( "tvg_79.4",    0x4000,  0x1000, 0x9e5cf8ca )
-		ROM_LOAD( "k6",          0x5000,  0x1000, 0x7644504a )
+	static RomLoadPtr rom_kangarob = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x14000, REGION_CPU1, 0 );/* 64k for code + 16k for banked ROMs */
+		ROM_LOAD( "tvg_75.0",    0x0000,  0x1000, 0x0d18c581 );
+		ROM_LOAD( "tvg_76.1",    0x1000,  0x1000, 0x5978d37a );
+		ROM_LOAD( "tvg_77.2",    0x2000,  0x1000, 0x522d1097 );
+		ROM_LOAD( "tvg_78.3",    0x3000,  0x1000, 0x063da970 );
+		ROM_LOAD( "tvg_79.4",    0x4000,  0x1000, 0x9e5cf8ca );
+		ROM_LOAD( "k6",          0x5000,  0x1000, 0x7644504a );
 	
-		ROM_LOAD( "tvg_83.v0",   0x10000, 0x1000, 0xc0446ca6 ) /* graphics ROMs */
-		ROM_LOAD( "tvg_85.v2",   0x11000, 0x1000, 0x72c52695 )
-		ROM_LOAD( "tvg_84.v1",   0x12000, 0x1000, 0xe4cb26c2 )
-		ROM_LOAD( "tvg_86.v3",   0x13000, 0x1000, 0x9e6a599f )
+		ROM_LOAD( "tvg_83.v0",   0x10000, 0x1000, 0xc0446ca6 );/* graphics ROMs */
+		ROM_LOAD( "tvg_85.v2",   0x11000, 0x1000, 0x72c52695 );
+		ROM_LOAD( "tvg_84.v1",   0x12000, 0x1000, 0xe4cb26c2 );
+		ROM_LOAD( "tvg_86.v3",   0x13000, 0x1000, 0x9e6a599f );
 	
-		ROM_REGION( 0x10000, REGION_CPU2, 0 ) /* sound */
-		ROM_LOAD( "tvg_81.8",    0x0000,  0x1000, 0xfb449bfd )
-	ROM_END
+		ROM_REGION( 0x10000, REGION_CPU2, 0 );/* sound */
+		ROM_LOAD( "tvg_81.8",    0x0000,  0x1000, 0xfb449bfd );
+	ROM_END(); }}; 
 	
 	
 	

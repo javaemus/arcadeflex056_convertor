@@ -550,31 +550,31 @@ public class yunsun16
 	
 	***************************************************************************/
 	
-	ROM_START( magicbub )
+	static RomLoadPtr rom_magicbub = new RomLoadPtr(){ public void handler(){ 
 	
-		ROM_REGION( 0x080000, REGION_CPU1, 0 )		/* 68000 Code */
-		ROM_LOAD16_BYTE( "magbuble.u33", 0x000000, 0x040000, 0x18fdd582 )
-		ROM_LOAD16_BYTE( "magbuble.u32", 0x000001, 0x040000, 0xf6ea7004 )
+		ROM_REGION( 0x080000, REGION_CPU1, 0 );	/* 68000 Code */
+		ROM_LOAD16_BYTE( "magbuble.u33", 0x000000, 0x040000, 0x18fdd582 );
+		ROM_LOAD16_BYTE( "magbuble.u32", 0x000001, 0x040000, 0xf6ea7004 );
 	
-		ROM_REGION( 0x10000, REGION_CPU2, 0 )		/* Z80 Code */
-		ROM_LOAD( "magbuble.143", 0x00000, 0x10000, 0x04192753 )
+		ROM_REGION( 0x10000, REGION_CPU2, 0 );	/* Z80 Code */
+		ROM_LOAD( "magbuble.143", 0x00000, 0x10000, 0x04192753 );
 	
-		ROM_REGION( 0x200000, REGION_GFX1, ROMREGION_DISPOSE )	/* 16x16x8 */
+		ROM_REGION( 0x200000, REGION_GFX1, ROMREGION_DISPOSE );/* 16x16x8 */
 		ROMX_LOAD( "magbuble.u67", 0x000000, 0x080000, 0x6355e57d, ROM_GROUPWORD | ROM_SKIP(6))
 		ROMX_LOAD( "magbuble.u68", 0x000002, 0x080000, 0x53ae6c2b, ROM_GROUPWORD | ROM_SKIP(6))
 		ROMX_LOAD( "magbuble.u69", 0x000004, 0x080000, 0xb892e64c, ROM_GROUPWORD | ROM_SKIP(6))
 		ROMX_LOAD( "magbuble.u70", 0x000006, 0x080000, 0x37794837, ROM_GROUPWORD | ROM_SKIP(6))
 	
-		ROM_REGION( 0x080000, REGION_GFX2, ROMREGION_DISPOSE )	/* 16x16x4 */
-		ROM_LOAD( "magbuble.u20", 0x000000, 0x020000, 0xf70e3b8c )
-		ROM_LOAD( "magbuble.u21", 0x020000, 0x020000, 0xad082cf3 )
-		ROM_LOAD( "magbuble.u22", 0x040000, 0x020000, 0x7c68df7a )
-		ROM_LOAD( "magbuble.u23", 0x060000, 0x020000, 0xc7763fc1 )
+		ROM_REGION( 0x080000, REGION_GFX2, ROMREGION_DISPOSE );/* 16x16x4 */
+		ROM_LOAD( "magbuble.u20", 0x000000, 0x020000, 0xf70e3b8c );
+		ROM_LOAD( "magbuble.u21", 0x020000, 0x020000, 0xad082cf3 );
+		ROM_LOAD( "magbuble.u22", 0x040000, 0x020000, 0x7c68df7a );
+		ROM_LOAD( "magbuble.u23", 0x060000, 0x020000, 0xc7763fc1 );
 	
-		ROM_REGION( 0x020000, REGION_SOUND1, ROMREGION_SOUNDONLY )	/* Samples */
-		ROM_LOAD( "magbuble.131", 0x000000, 0x020000, 0x03e04e89 )
+		ROM_REGION( 0x020000, REGION_SOUND1, ROMREGION_SOUNDONLY );/* Samples */
+		ROM_LOAD( "magbuble.131", 0x000000, 0x020000, 0x03e04e89 );
 	
-	ROM_END
+	ROM_END(); }}; 
 	
 	
 	/***************************************************************************
@@ -583,29 +583,29 @@ public class yunsun16
 	
 	***************************************************************************/
 	
-	ROM_START( shocking )
+	static RomLoadPtr rom_shocking = new RomLoadPtr(){ public void handler(){ 
 	
-		ROM_REGION( 0x080000, REGION_CPU1, 0 )		/* 68000 Code */
-		ROM_LOAD16_BYTE( "yunsun16.u33", 0x000000, 0x040000, 0x8a155521 )
-		ROM_LOAD16_BYTE( "yunsun16.u32", 0x000001, 0x040000, 0xc4998c10 )
+		ROM_REGION( 0x080000, REGION_CPU1, 0 );	/* 68000 Code */
+		ROM_LOAD16_BYTE( "yunsun16.u33", 0x000000, 0x040000, 0x8a155521 );
+		ROM_LOAD16_BYTE( "yunsun16.u32", 0x000001, 0x040000, 0xc4998c10 );
 	
-		ROM_REGION( 0x200000, REGION_GFX1, ROMREGION_DISPOSE )	/* 16x16x8 */
+		ROM_REGION( 0x200000, REGION_GFX1, ROMREGION_DISPOSE );/* 16x16x8 */
 		ROMX_LOAD( "yunsun16.u67", 0x000000, 0x080000, 0xe30fb2c4, ROM_GROUPWORD | ROM_SKIP(6))
 		ROMX_LOAD( "yunsun16.u68", 0x000002, 0x080000, 0x7d702538, ROM_GROUPWORD | ROM_SKIP(6))
 		ROMX_LOAD( "yunsun16.u69", 0x000004, 0x080000, 0x97447fec, ROM_GROUPWORD | ROM_SKIP(6))
 		ROMX_LOAD( "yunsun16.u70", 0x000006, 0x080000, 0x1b1f7895, ROM_GROUPWORD | ROM_SKIP(6))
 	
-		ROM_REGION( 0x100000, REGION_GFX2, ROMREGION_DISPOSE )	/* 16x16x4 */
-		ROM_LOAD( "yunsun16.u20", 0x000000, 0x040000, 0x124699d0 )
-		ROM_LOAD( "yunsun16.u21", 0x040000, 0x040000, 0x4eea29a2 )
-		ROM_LOAD( "yunsun16.u22", 0x080000, 0x040000, 0xd6db0388 )
-		ROM_LOAD( "yunsun16.u23", 0x0c0000, 0x040000, 0x1fa33b2e )
+		ROM_REGION( 0x100000, REGION_GFX2, ROMREGION_DISPOSE );/* 16x16x4 */
+		ROM_LOAD( "yunsun16.u20", 0x000000, 0x040000, 0x124699d0 );
+		ROM_LOAD( "yunsun16.u21", 0x040000, 0x040000, 0x4eea29a2 );
+		ROM_LOAD( "yunsun16.u22", 0x080000, 0x040000, 0xd6db0388 );
+		ROM_LOAD( "yunsun16.u23", 0x0c0000, 0x040000, 0x1fa33b2e );
 	
-		ROM_REGION( 0x080000 * 2, REGION_SOUND1, ROMREGION_SOUNDONLY )	/* Samples */
-		ROM_LOAD( "yunsun16.131", 0x000000, 0x080000, 0xd0a1bb8c )
-		ROM_RELOAD(               0x080000, 0x080000             )
+		ROM_REGION( 0x080000 * 2, REGION_SOUND1, ROMREGION_SOUNDONLY );/* Samples */
+		ROM_LOAD( "yunsun16.131", 0x000000, 0x080000, 0xd0a1bb8c );
+		ROM_RELOAD(               0x080000, 0x080000             );
 	
-	ROM_END
+	ROM_END(); }}; 
 	
 	
 	/***************************************************************************

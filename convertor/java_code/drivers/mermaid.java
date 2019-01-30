@@ -214,35 +214,35 @@ public class mermaid
 	  Game driver(s)
 	
 	***************************************************************************/
-	ROM_START( mermaid )
-		ROM_REGION( 0x10000, REGION_CPU1, 0 )       /* 64k for code */
-		ROM_LOAD( "g960_32.15",	  0x0000, 0x1000, 0x8311f090 )
-		ROM_LOAD( "g960_33.16",	  0x1000, 0x1000, 0x9f274fc4 )
-		ROM_LOAD( "g960_34.17",	  0x2000, 0x1000, 0x5f910179 )
-		ROM_LOAD( "g960_35.18",	  0x3000, 0x1000, 0xdb1868a1 )
-		ROM_LOAD( "g960_36.19",	  0x4000, 0x1000, 0x178a3567 )
-		ROM_LOAD( "g960_37.20",	  0x5000, 0x1000, 0x7d602527 )
-		ROM_LOAD( "g960_38.21",	  0x6000, 0x1000, 0xbf9f623c )
-		ROM_LOAD( "g960_39.22",	  0x7000, 0x1000, 0xdf0db390 )
-		ROM_LOAD( "g960_40.23",	  0x8000, 0x1000, 0xfb7aba3f )
-		ROM_LOAD( "g960_41.24",	  0x9000, 0x1000, 0xd022981d )
+	static RomLoadPtr rom_mermaid = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x10000, REGION_CPU1, 0 );      /* 64k for code */
+		ROM_LOAD( "g960_32.15",	  0x0000, 0x1000, 0x8311f090 );
+		ROM_LOAD( "g960_33.16",	  0x1000, 0x1000, 0x9f274fc4 );
+		ROM_LOAD( "g960_34.17",	  0x2000, 0x1000, 0x5f910179 );
+		ROM_LOAD( "g960_35.18",	  0x3000, 0x1000, 0xdb1868a1 );
+		ROM_LOAD( "g960_36.19",	  0x4000, 0x1000, 0x178a3567 );
+		ROM_LOAD( "g960_37.20",	  0x5000, 0x1000, 0x7d602527 );
+		ROM_LOAD( "g960_38.21",	  0x6000, 0x1000, 0xbf9f623c );
+		ROM_LOAD( "g960_39.22",	  0x7000, 0x1000, 0xdf0db390 );
+		ROM_LOAD( "g960_40.23",	  0x8000, 0x1000, 0xfb7aba3f );
+		ROM_LOAD( "g960_41.24",	  0x9000, 0x1000, 0xd022981d );
 	
-		ROM_REGION( 0x4000, REGION_GFX1, ROMREGION_DISPOSE )
-		ROM_LOAD( "g960_45.77",	  0x0000, 0x1000, 0x1f6b735e )
-		ROM_LOAD( "g960_44.76",	  0x1000, 0x1000, 0xfd76074e )
-		ROM_LOAD( "g960_47.79",	  0x2000, 0x1000, 0x3b7d4ad0 )
-		ROM_LOAD( "g960_46.78",	  0x3000, 0x1000, 0x50c117cd )
+		ROM_REGION( 0x4000, REGION_GFX1, ROMREGION_DISPOSE );
+		ROM_LOAD( "g960_45.77",	  0x0000, 0x1000, 0x1f6b735e );
+		ROM_LOAD( "g960_44.76",	  0x1000, 0x1000, 0xfd76074e );
+		ROM_LOAD( "g960_47.79",	  0x2000, 0x1000, 0x3b7d4ad0 );
+		ROM_LOAD( "g960_46.78",	  0x3000, 0x1000, 0x50c117cd );
 	
-		ROM_REGION( 0x1000, REGION_GFX2, ROMREGION_DISPOSE )
-		ROM_LOAD( "g960_43.26",	  0x0000, 0x1000, 0x6f077417 )
+		ROM_REGION( 0x1000, REGION_GFX2, ROMREGION_DISPOSE );
+		ROM_LOAD( "g960_43.26",	  0x0000, 0x1000, 0x6f077417 );
 	
-		ROM_REGION( 0x0040, REGION_PROMS, 0 )
-		ROM_LOAD( "col_a", 	      0x0000, 0x0020, 0xef87bcd6 )
-		ROM_LOAD( "col_b", 	      0x0020, 0x0020, 0xca48abdd )
+		ROM_REGION( 0x0040, REGION_PROMS, 0 );
+		ROM_LOAD( "col_a", 	      0x0000, 0x0020, 0xef87bcd6 );
+		ROM_LOAD( "col_b", 	      0x0020, 0x0020, 0xca48abdd );
 	
-		ROM_REGION( 0x1000, REGION_USER1, 0 )	/* unknown */
-		ROM_LOAD( "g960_42.39",	  0x0000, 0x1000, 0x287840bb )
-	ROM_END
+		ROM_REGION( 0x1000, REGION_USER1, 0 );/* unknown */
+		ROM_LOAD( "g960_42.39",	  0x0000, 0x1000, 0x287840bb );
+	ROM_END(); }}; 
 	
 	
 	GAMEX( 1982, mermaid, 0, mermaid, mermaid, 0, ROT0, "Rock-ola", "Mermaid", GAME_NOT_WORKING )

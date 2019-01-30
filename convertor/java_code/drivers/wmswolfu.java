@@ -726,425 +726,425 @@ public class wmswolfu
 	 *
 	 *************************************/
 	
-	ROM_START( mk3 )
-		ROM_REGION( 0x10, REGION_CPU1, 0 )		/* 34010 dummy region */
-	
-		ROM_REGION( ADSP2100_SIZE + 0x400000, REGION_CPU2, 0 )	/* ADSP-2105 data */
-		ROM_LOAD( "umk3-u2.bin",  ADSP2100_SIZE + 0x000000, 0x100000, 0x3838cfe5 )
-		ROM_LOAD( "umk3-u3.bin",  ADSP2100_SIZE + 0x100000, 0x100000, 0x856fe411 )
-		ROM_LOAD( "umk3-u4.bin",  ADSP2100_SIZE + 0x200000, 0x100000, 0x428a406f )
-		ROM_LOAD( "umk3-u5.bin",  ADSP2100_SIZE + 0x300000, 0x100000, 0x3b98a09f )
-	
-		ROM_REGION16_LE( 0x100000, REGION_USER1, ROMREGION_DISPOSE )	/* 34010 code */
-		ROM_LOAD16_BYTE( "mk321u54.bin",  0x00000, 0x80000, 0x9e344401 )
-		ROM_LOAD16_BYTE( "mk321u63.bin",  0x00001, 0x80000, 0x64d34776 )
-	
-		ROM_REGION( 0x2000000, REGION_GFX1, 0 )
-		ROM_LOAD( "umk-u133.bin",  0x0000000, 0x100000, 0x79b94667 )
-		ROM_LOAD( "umk-u132.bin",  0x0100000, 0x100000, 0x13e95228 )
-		ROM_LOAD( "umk-u131.bin",  0x0200000, 0x100000, 0x41001e30 )
-		ROM_LOAD( "umk-u130.bin",  0x0300000, 0x100000, 0x49379dd7 )
-	
-		ROM_LOAD( "umk-u129.bin",  0x0400000, 0x100000, 0xa8b41803 )
-		ROM_LOAD( "umk-u128.bin",  0x0500000, 0x100000, 0xb410d72f )
-		ROM_LOAD( "umk-u127.bin",  0x0600000, 0x100000, 0xbd985be7 )
-		ROM_LOAD( "umk-u126.bin",  0x0700000, 0x100000, 0xe7c32cf4 )
-	
-		ROM_LOAD( "umk-u125.bin",  0x0800000, 0x100000, 0x9a52227e )
-		ROM_LOAD( "umk-u124.bin",  0x0900000, 0x100000, 0x5c750ebc )
-		ROM_LOAD( "umk-u123.bin",  0x0a00000, 0x100000, 0xf0ab88a8 )
-		ROM_LOAD( "umk-u122.bin",  0x0b00000, 0x100000, 0x9b87cdac )
-	
-		ROM_LOAD( "mk3-u121.bin",  0x0c00000, 0x100000, 0xb6c6296a )
-		ROM_LOAD( "mk3-u120.bin",  0x0d00000, 0x100000, 0x8d1ccc3b )
-		ROM_LOAD( "mk3-u119.bin",  0x0e00000, 0x100000, 0x63215b59 )
-		ROM_LOAD( "mk3-u118.bin",  0x0f00000, 0x100000, 0x8b681e34 )
-	
-		ROM_LOAD( "mk3-u117.bin",  0x1000000, 0x080000, 0x1ab20377 )
-		ROM_LOAD( "mk3-u116.bin",  0x1100000, 0x080000, 0xba246ad0 )
-		ROM_LOAD( "mk3-u115.bin",  0x1200000, 0x080000, 0x3ee8b124 )
-		ROM_LOAD( "mk3-u114.bin",  0x1300000, 0x080000, 0xa8d99922 )
-	ROM_END
-	
-	ROM_START( mk3r20 )
-		ROM_REGION( 0x10, REGION_CPU1, 0 )		/* 34010 dummy region */
-	
-		ROM_REGION( ADSP2100_SIZE + 0x400000, REGION_CPU2, 0 )	/* ADSP-2105 data */
-		ROM_LOAD( "umk3-u2.bin",  ADSP2100_SIZE + 0x000000, 0x100000, 0x3838cfe5 )
-		ROM_LOAD( "umk3-u3.bin",  ADSP2100_SIZE + 0x100000, 0x100000, 0x856fe411 )
-		ROM_LOAD( "umk3-u4.bin",  ADSP2100_SIZE + 0x200000, 0x100000, 0x428a406f )
-		ROM_LOAD( "umk3-u5.bin",  ADSP2100_SIZE + 0x300000, 0x100000, 0x3b98a09f )
-	
-		ROM_REGION16_LE( 0x100000, REGION_USER1, ROMREGION_DISPOSE )	/* 34010 code */
-		ROM_LOAD16_BYTE( "mk320u54.bin",  0x00000, 0x80000, 0x453da302 )
-		ROM_LOAD16_BYTE( "mk320u63.bin",  0x00001, 0x80000, 0xf8dc0600 )
-	
-		ROM_REGION( 0x2000000, REGION_GFX1, 0 )
-		ROM_LOAD( "umk-u133.bin",  0x0000000, 0x100000, 0x79b94667 )
-		ROM_LOAD( "umk-u132.bin",  0x0100000, 0x100000, 0x13e95228 )
-		ROM_LOAD( "umk-u131.bin",  0x0200000, 0x100000, 0x41001e30 )
-		ROM_LOAD( "umk-u130.bin",  0x0300000, 0x100000, 0x49379dd7 )
-	
-		ROM_LOAD( "umk-u129.bin",  0x0400000, 0x100000, 0xa8b41803 )
-		ROM_LOAD( "umk-u128.bin",  0x0500000, 0x100000, 0xb410d72f )
-		ROM_LOAD( "umk-u127.bin",  0x0600000, 0x100000, 0xbd985be7 )
-		ROM_LOAD( "umk-u126.bin",  0x0700000, 0x100000, 0xe7c32cf4 )
-	
-		ROM_LOAD( "umk-u125.bin",  0x0800000, 0x100000, 0x9a52227e )
-		ROM_LOAD( "umk-u124.bin",  0x0900000, 0x100000, 0x5c750ebc )
-		ROM_LOAD( "umk-u123.bin",  0x0a00000, 0x100000, 0xf0ab88a8 )
-		ROM_LOAD( "umk-u122.bin",  0x0b00000, 0x100000, 0x9b87cdac )
-	
-		ROM_LOAD( "mk3-u121.bin",  0x0c00000, 0x100000, 0xb6c6296a )
-		ROM_LOAD( "mk3-u120.bin",  0x0d00000, 0x100000, 0x8d1ccc3b )
-		ROM_LOAD( "mk3-u119.bin",  0x0e00000, 0x100000, 0x63215b59 )
-		ROM_LOAD( "mk3-u118.bin",  0x0f00000, 0x100000, 0x8b681e34 )
-	
-		ROM_LOAD( "mk3-u117.bin",  0x1000000, 0x080000, 0x1ab20377 )
-		ROM_LOAD( "mk3-u116.bin",  0x1100000, 0x080000, 0xba246ad0 )
-		ROM_LOAD( "mk3-u115.bin",  0x1200000, 0x080000, 0x3ee8b124 )
-		ROM_LOAD( "mk3-u114.bin",  0x1300000, 0x080000, 0xa8d99922 )
-	ROM_END
-	
-	ROM_START( mk3r10 )
-		ROM_REGION( 0x10, REGION_CPU1, 0 )		/* 34010 dummy region */
-	
-		ROM_REGION( ADSP2100_SIZE + 0x400000, REGION_CPU2, 0 )	/* ADSP-2105 data */
-		ROM_LOAD( "umk3-u2.bin",  ADSP2100_SIZE + 0x000000, 0x100000, 0x3838cfe5 )
-		ROM_LOAD( "umk3-u3.bin",  ADSP2100_SIZE + 0x100000, 0x100000, 0x856fe411 )
-		ROM_LOAD( "umk3-u4.bin",  ADSP2100_SIZE + 0x200000, 0x100000, 0x428a406f )
-		ROM_LOAD( "umk3-u5.bin",  ADSP2100_SIZE + 0x300000, 0x100000, 0x3b98a09f )
-	
-		ROM_REGION16_LE( 0x100000, REGION_USER1, ROMREGION_DISPOSE )	/* 34010 code */
-		ROM_LOAD16_BYTE( "mk310u54.bin",  0x00000, 0x80000, 0x41829228 )
-		ROM_LOAD16_BYTE( "mk310u63.bin",  0x00001, 0x80000, 0xb074e1e8 )
-	
-		ROM_REGION( 0x2000000, REGION_GFX1, 0 )
-		ROM_LOAD( "umk-u133.bin",  0x0000000, 0x100000, 0x79b94667 )
-		ROM_LOAD( "umk-u132.bin",  0x0100000, 0x100000, 0x13e95228 )
-		ROM_LOAD( "umk-u131.bin",  0x0200000, 0x100000, 0x41001e30 )
-		ROM_LOAD( "umk-u130.bin",  0x0300000, 0x100000, 0x49379dd7 )
-	
-		ROM_LOAD( "umk-u129.bin",  0x0400000, 0x100000, 0xa8b41803 )
-		ROM_LOAD( "umk-u128.bin",  0x0500000, 0x100000, 0xb410d72f )
-		ROM_LOAD( "umk-u127.bin",  0x0600000, 0x100000, 0xbd985be7 )
-		ROM_LOAD( "umk-u126.bin",  0x0700000, 0x100000, 0xe7c32cf4 )
-	
-		ROM_LOAD( "umk-u125.bin",  0x0800000, 0x100000, 0x9a52227e )
-		ROM_LOAD( "umk-u124.bin",  0x0900000, 0x100000, 0x5c750ebc )
-		ROM_LOAD( "umk-u123.bin",  0x0a00000, 0x100000, 0xf0ab88a8 )
-		ROM_LOAD( "umk-u122.bin",  0x0b00000, 0x100000, 0x9b87cdac )
-	
-		ROM_LOAD( "mk3-u121.bin",  0x0c00000, 0x100000, 0xb6c6296a )
-		ROM_LOAD( "mk3-u120.bin",  0x0d00000, 0x100000, 0x8d1ccc3b )
-		ROM_LOAD( "mk3-u119.bin",  0x0e00000, 0x100000, 0x63215b59 )
-		ROM_LOAD( "mk3-u118.bin",  0x0f00000, 0x100000, 0x8b681e34 )
-	
-		ROM_LOAD( "mk3-u117.bin",  0x1000000, 0x080000, 0x1ab20377 )
-		ROM_LOAD( "mk3-u116.bin",  0x1100000, 0x080000, 0xba246ad0 )
-		ROM_LOAD( "mk3-u115.bin",  0x1200000, 0x080000, 0x3ee8b124 )
-		ROM_LOAD( "mk3-u114.bin",  0x1300000, 0x080000, 0xa8d99922 )
-	ROM_END
-	
-	ROM_START( umk3 )
-		ROM_REGION( 0x10, REGION_CPU1, 0 )		/* 34010 dummy region */
-	
-		ROM_REGION( ADSP2100_SIZE + 0x400000, REGION_CPU2, 0 )	/* ADSP-2105 data */
-		ROM_LOAD( "umk3-u2.bin",  ADSP2100_SIZE + 0x000000, 0x100000, 0x3838cfe5 )
-		ROM_LOAD( "umk3-u3.bin",  ADSP2100_SIZE + 0x100000, 0x100000, 0x856fe411 )
-		ROM_LOAD( "umk3-u4.bin",  ADSP2100_SIZE + 0x200000, 0x100000, 0x428a406f )
-		ROM_LOAD( "umk3-u5.bin",  ADSP2100_SIZE + 0x300000, 0x100000, 0x3b98a09f )
-	
-		ROM_REGION16_LE( 0x100000, REGION_USER1, ROMREGION_DISPOSE )	/* 34010 code */
-		ROM_LOAD16_BYTE( "um312u54.bin",  0x00000, 0x80000, 0x712b4db6 )
-		ROM_LOAD16_BYTE( "um312u63.bin",  0x00001, 0x80000, 0x6d301faf )
-	
-		ROM_REGION( 0x2000000, REGION_GFX1, 0 )
-		ROM_LOAD( "umk-u133.bin",  0x0000000, 0x100000, 0x79b94667 )
-		ROM_LOAD( "umk-u132.bin",  0x0100000, 0x100000, 0x13e95228 )
-		ROM_LOAD( "umk-u131.bin",  0x0200000, 0x100000, 0x41001e30 )
-		ROM_LOAD( "umk-u130.bin",  0x0300000, 0x100000, 0x49379dd7 )
-	
-		ROM_LOAD( "umk-u129.bin",  0x0400000, 0x100000, 0xa8b41803 )
-		ROM_LOAD( "umk-u128.bin",  0x0500000, 0x100000, 0xb410d72f )
-		ROM_LOAD( "umk-u127.bin",  0x0600000, 0x100000, 0xbd985be7 )
-		ROM_LOAD( "umk-u126.bin",  0x0700000, 0x100000, 0xe7c32cf4 )
-	
-		ROM_LOAD( "umk-u125.bin",  0x0800000, 0x100000, 0x9a52227e )
-		ROM_LOAD( "umk-u124.bin",  0x0900000, 0x100000, 0x5c750ebc )
-		ROM_LOAD( "umk-u123.bin",  0x0a00000, 0x100000, 0xf0ab88a8 )
-		ROM_LOAD( "umk-u122.bin",  0x0b00000, 0x100000, 0x9b87cdac )
-	
-		ROM_LOAD( "umk-u121.bin",  0x0c00000, 0x100000, 0xcc4b95db )
-		ROM_LOAD( "umk-u120.bin",  0x0d00000, 0x100000, 0x1c8144cd )
-		ROM_LOAD( "umk-u119.bin",  0x0e00000, 0x100000, 0x5f10c543 )
-		ROM_LOAD( "umk-u118.bin",  0x0f00000, 0x100000, 0xde0c4488 )
-	
-		ROM_LOAD( "umk-u113.bin",  0x1400000, 0x100000, 0x99d74a1e )
-		ROM_LOAD( "umk-u112.bin",  0x1500000, 0x100000, 0xb5a46488 )
-		ROM_LOAD( "umk-u111.bin",  0x1600000, 0x100000, 0xa87523c8 )
-		ROM_LOAD( "umk-u110.bin",  0x1700000, 0x100000, 0x0038f205 )
-	ROM_END
-	
-	ROM_START( umk3r11 )
-		ROM_REGION( 0x10, REGION_CPU1, 0 )		/* 34010 dummy region */
-	
-		ROM_REGION( ADSP2100_SIZE + 0x400000, REGION_CPU2, 0 )	/* ADSP-2105 data */
-		ROM_LOAD( "umk3-u2.bin",  ADSP2100_SIZE + 0x000000, 0x100000, 0x3838cfe5 )
-		ROM_LOAD( "umk3-u3.bin",  ADSP2100_SIZE + 0x100000, 0x100000, 0x856fe411 )
-		ROM_LOAD( "umk3-u4.bin",  ADSP2100_SIZE + 0x200000, 0x100000, 0x428a406f )
-		ROM_LOAD( "umk3-u5.bin",  ADSP2100_SIZE + 0x300000, 0x100000, 0x3b98a09f )
-	
-		ROM_REGION16_LE( 0x100000, REGION_USER1, ROMREGION_DISPOSE )	/* 34010 code */
-		ROM_LOAD16_BYTE( "um311u54.bin",  0x00000, 0x80000, 0x8bb27659 )
-		ROM_LOAD16_BYTE( "um311u63.bin",  0x00001, 0x80000, 0xea731783 )
-	
-		ROM_REGION( 0x2000000, REGION_GFX1, 0 )
-		ROM_LOAD( "umk-u133.bin",  0x0000000, 0x100000, 0x79b94667 )
-		ROM_LOAD( "umk-u132.bin",  0x0100000, 0x100000, 0x13e95228 )
-		ROM_LOAD( "umk-u131.bin",  0x0200000, 0x100000, 0x41001e30 )
-		ROM_LOAD( "umk-u130.bin",  0x0300000, 0x100000, 0x49379dd7 )
-	
-		ROM_LOAD( "umk-u129.bin",  0x0400000, 0x100000, 0xa8b41803 )
-		ROM_LOAD( "umk-u128.bin",  0x0500000, 0x100000, 0xb410d72f )
-		ROM_LOAD( "umk-u127.bin",  0x0600000, 0x100000, 0xbd985be7 )
-		ROM_LOAD( "umk-u126.bin",  0x0700000, 0x100000, 0xe7c32cf4 )
-	
-		ROM_LOAD( "umk-u125.bin",  0x0800000, 0x100000, 0x9a52227e )
-		ROM_LOAD( "umk-u124.bin",  0x0900000, 0x100000, 0x5c750ebc )
-		ROM_LOAD( "umk-u123.bin",  0x0a00000, 0x100000, 0xf0ab88a8 )
-		ROM_LOAD( "umk-u122.bin",  0x0b00000, 0x100000, 0x9b87cdac )
-	
-		ROM_LOAD( "umk-u121.bin",  0x0c00000, 0x100000, 0xcc4b95db )
-		ROM_LOAD( "umk-u120.bin",  0x0d00000, 0x100000, 0x1c8144cd )
-		ROM_LOAD( "umk-u119.bin",  0x0e00000, 0x100000, 0x5f10c543 )
-		ROM_LOAD( "umk-u118.bin",  0x0f00000, 0x100000, 0xde0c4488 )
-	
-		ROM_LOAD( "umk-u113.bin",  0x1400000, 0x100000, 0x99d74a1e )
-		ROM_LOAD( "umk-u112.bin",  0x1500000, 0x100000, 0xb5a46488 )
-		ROM_LOAD( "umk-u111.bin",  0x1600000, 0x100000, 0xa87523c8 )
-		ROM_LOAD( "umk-u110.bin",  0x1700000, 0x100000, 0x0038f205 )
-	ROM_END
-	
-	ROM_START( openice )
-		ROM_REGION( 0x10, REGION_CPU1, 0 )		/* 34010 dummy region */
-	
-		ROM_REGION( ADSP2100_SIZE + 0x400000, REGION_CPU2, 0 )	/* ADSP-2105 data */
-		ROM_LOAD( "oiceu2.bin",  ADSP2100_SIZE + 0x000000, 0x100000, 0x8adb5aab )
-		ROM_LOAD( "oiceu3.bin",  ADSP2100_SIZE + 0x100000, 0x100000, 0x11c61ad6 )
-		ROM_LOAD( "oiceu4.bin",  ADSP2100_SIZE + 0x200000, 0x100000, 0x04279290 )
-		ROM_LOAD( "oiceu5.bin",  ADSP2100_SIZE + 0x300000, 0x100000, 0xe90ad61f )
-	
-		ROM_REGION16_LE( 0x100000, REGION_USER1, ROMREGION_DISPOSE )	/* 34010 code */
-		ROM_LOAD16_BYTE( "oiceu54.bin",  0x00000, 0x80000, 0xe4225284 )
-		ROM_LOAD16_BYTE( "oiceu63.bin",  0x00001, 0x80000, 0x97d308a3 )
-	
-		ROM_REGION( 0x2000000, REGION_GFX1, 0 )
-		ROM_LOAD( "oiceu133.bin",  0x0000000, 0x100000, 0x8a81605c )
-		ROM_LOAD( "oiceu132.bin",  0x0100000, 0x100000, 0xcfdd6702 )
-		ROM_LOAD( "oiceu131.bin",  0x0200000, 0x100000, 0xcc428eb7 )
-		ROM_LOAD( "oiceu130.bin",  0x0300000, 0x100000, 0x74c2d50c )
-	
-		ROM_LOAD( "oiceu129.bin",  0x0400000, 0x100000, 0x9e2ff012 )
-		ROM_LOAD( "oiceu128.bin",  0x0500000, 0x100000, 0x35d2e610 )
-		ROM_LOAD( "oiceu127.bin",  0x0600000, 0x100000, 0xbcbf19fe )
-		ROM_LOAD( "oiceu126.bin",  0x0700000, 0x100000, 0x8e3106ae )
-	
-		ROM_LOAD( "oiceu125.bin",  0x0800000, 0x100000, 0xa7b54550 )
-		ROM_LOAD( "oiceu124.bin",  0x0900000, 0x100000, 0x7c02cb50 )
-		ROM_LOAD( "oiceu123.bin",  0x0a00000, 0x100000, 0xd543bd9d )
-		ROM_LOAD( "oiceu122.bin",  0x0b00000, 0x100000, 0x3744d291 )
-	
-		ROM_LOAD( "oiceu121.bin",  0x0c00000, 0x100000, 0xacd2f7c7 )
-		ROM_LOAD( "oiceu120.bin",  0x0d00000, 0x100000, 0x4295686a )
-		ROM_LOAD( "oiceu119.bin",  0x0e00000, 0x100000, 0x948b9b27 )
-		ROM_LOAD( "oiceu118.bin",  0x0f00000, 0x100000, 0x9eaaf93e )
-	ROM_END
-	
-	ROM_START( nbahangt )
-		ROM_REGION( 0x10, REGION_CPU1, 0 )		/* 34010 dummy region */
-	
-		ROM_REGION( ADSP2100_SIZE + 0x400000, REGION_CPU2, 0 )	/* ADSP-2105 data */
-		ROM_LOAD( "mhtu2.bin",  ADSP2100_SIZE + 0x000000, 0x100000, 0x3f0b0d0a )
-		ROM_LOAD( "mhtu3.bin",  ADSP2100_SIZE + 0x100000, 0x100000, 0xec1db988 )
-		ROM_LOAD( "mhtu4.bin",  ADSP2100_SIZE + 0x200000, 0x100000, 0xc7f847a3 )
-		ROM_LOAD( "mhtu5.bin",  ADSP2100_SIZE + 0x300000, 0x100000, 0xef19316a )
-	
-		ROM_REGION16_LE( 0x100000, REGION_USER1, ROMREGION_DISPOSE )	/* 34010 code */
-		ROM_LOAD16_BYTE( "htime54.bin",  0x00000, 0x80000, 0xc2875d98 )
-		ROM_LOAD16_BYTE( "htime63.bin",  0x00001, 0x80000, 0x6f4728c3 )
-	
-		ROM_REGION( 0x2000000, REGION_GFX1, 0 )
-		ROM_LOAD( "mhtu133.bin",  0x0000000, 0x100000, 0x3163feed )
-		ROM_LOAD( "mhtu132.bin",  0x0100000, 0x100000, 0x428eaf44 )
-		ROM_LOAD( "mhtu131.bin",  0x0200000, 0x100000, 0x5f7c5111 )
-		ROM_LOAD( "mhtu130.bin",  0x0300000, 0x100000, 0xc7c0c514 )
-	
-		ROM_LOAD( "mhtu129.bin",  0x0400000, 0x100000, 0xb3d0daa0 )
-		ROM_LOAD( "mhtu128.bin",  0x0500000, 0x100000, 0x3704ee69 )
-		ROM_LOAD( "mhtu127.bin",  0x0600000, 0x100000, 0x4ea64d5a )
-		ROM_LOAD( "mhtu126.bin",  0x0700000, 0x100000, 0x0c5c19b7 )
-	
-		ROM_LOAD( "mhtu125.bin",  0x0800000, 0x100000, 0x46c43d67 )
-		ROM_LOAD( "mhtu124.bin",  0x0900000, 0x100000, 0xed495156 )
-		ROM_LOAD( "mhtu123.bin",  0x0a00000, 0x100000, 0xb48aa5da )
-		ROM_LOAD( "mhtu122.bin",  0x0b00000, 0x100000, 0xb18cd181 )
-	
-		ROM_LOAD( "mhtu121.bin",  0x0c00000, 0x100000, 0x5acb267a )
-		ROM_LOAD( "mhtu120.bin",  0x0d00000, 0x100000, 0x28e05f86 )
-		ROM_LOAD( "mhtu119.bin",  0x0e00000, 0x100000, 0xb4f604ea )
-		ROM_LOAD( "mhtu118.bin",  0x0f00000, 0x100000, 0xa257b973 )
-	
-		ROM_LOAD( "mhtu113.bin",  0x1400000, 0x100000, 0xd712a779 )
-		ROM_LOAD( "mhtu112.bin",  0x1500000, 0x100000, 0x644e1bca )
-		ROM_LOAD( "mhtu111.bin",  0x1600000, 0x100000, 0x10d3b768 )
-		ROM_LOAD( "mhtu110.bin",  0x1700000, 0x100000, 0x8575aeb2 )
-	ROM_END
-	
-	ROM_START( nbamaxht )
-		ROM_REGION( 0x10, REGION_CPU1, 0 )		/* 34010 dummy region */
-	
-		ROM_REGION( ADSP2100_SIZE + 0x400000, REGION_CPU2, 0 )	/* ADSP-2105 data */
-		ROM_LOAD( "mhtu2.bin",  ADSP2100_SIZE + 0x000000, 0x100000, 0x3f0b0d0a )
-		ROM_LOAD( "mhtu3.bin",  ADSP2100_SIZE + 0x100000, 0x100000, 0xec1db988 )
-		ROM_LOAD( "mhtu4.bin",  ADSP2100_SIZE + 0x200000, 0x100000, 0xc7f847a3 )
-		ROM_LOAD( "mhtu5.bin",  ADSP2100_SIZE + 0x300000, 0x100000, 0xef19316a )
-	
-		ROM_REGION16_LE( 0x100000, REGION_USER1, ROMREGION_DISPOSE )	/* 34010 code */
-		ROM_LOAD16_BYTE( "mhtu54.bin",  0x00000, 0x80000, 0xdfb6b3ae )
-		ROM_LOAD16_BYTE( "mhtu63.bin",  0x00001, 0x80000, 0x78da472c )
-	
-		ROM_REGION( 0x2000000, REGION_GFX1, 0 )
-		ROM_LOAD( "mhtu133.bin",  0x0000000, 0x100000, 0x3163feed )
-		ROM_LOAD( "mhtu132.bin",  0x0100000, 0x100000, 0x428eaf44 )
-		ROM_LOAD( "mhtu131.bin",  0x0200000, 0x100000, 0x5f7c5111 )
-		ROM_LOAD( "mhtu130.bin",  0x0300000, 0x100000, 0xc7c0c514 )
-	
-		ROM_LOAD( "mhtu129.bin",  0x0400000, 0x100000, 0xb3d0daa0 )
-		ROM_LOAD( "mhtu128.bin",  0x0500000, 0x100000, 0x3704ee69 )
-		ROM_LOAD( "mhtu127.bin",  0x0600000, 0x100000, 0x4ea64d5a )
-		ROM_LOAD( "mhtu126.bin",  0x0700000, 0x100000, 0x0c5c19b7 )
-	
-		ROM_LOAD( "mhtu125.bin",  0x0800000, 0x100000, 0x46c43d67 )
-		ROM_LOAD( "mhtu124.bin",  0x0900000, 0x100000, 0xed495156 )
-		ROM_LOAD( "mhtu123.bin",  0x0a00000, 0x100000, 0xb48aa5da )
-		ROM_LOAD( "mhtu122.bin",  0x0b00000, 0x100000, 0xb18cd181 )
-	
-		ROM_LOAD( "mhtu121.bin",  0x0c00000, 0x100000, 0x5acb267a )
-		ROM_LOAD( "mhtu120.bin",  0x0d00000, 0x100000, 0x28e05f86 )
-		ROM_LOAD( "mhtu119.bin",  0x0e00000, 0x100000, 0xb4f604ea )
-		ROM_LOAD( "mhtu118.bin",  0x0f00000, 0x100000, 0xa257b973 )
-	
-		ROM_LOAD( "mhtu113.bin",  0x1400000, 0x100000, 0xd712a779 )
-		ROM_LOAD( "mhtu112.bin",  0x1500000, 0x100000, 0x644e1bca )
-		ROM_LOAD( "mhtu111.bin",  0x1600000, 0x100000, 0x10d3b768 )
-		ROM_LOAD( "mhtu110.bin",  0x1700000, 0x100000, 0x8575aeb2 )
-	ROM_END
-	
-	ROM_START( rmpgwt )
-		ROM_REGION( 0x10, REGION_CPU1, 0 )		/* 34010 dummy region */
-	
-		ROM_REGION( ADSP2100_SIZE + 0x400000, REGION_CPU2, 0 )	/* ADSP-2105 data */
-		ROM_LOAD( "rwt.2",  ADSP2100_SIZE + 0x000000, 0x100000, 0x0e82f83d )
-		ROM_LOAD( "rwt.3",  ADSP2100_SIZE + 0x100000, 0x100000, 0x3ff54d15 )
-		ROM_LOAD( "rwt.4",  ADSP2100_SIZE + 0x200000, 0x100000, 0x5c7f5656 )
-		ROM_LOAD( "rwt.5",  ADSP2100_SIZE + 0x300000, 0x100000, 0xfd9aaf24 )
-	
-		ROM_REGION16_LE( 0x100000, REGION_USER1, ROMREGION_DISPOSE )	/* 34010 code */
-		ROM_LOAD16_BYTE( "rwtr13.54",  0x00000, 0x80000, 0x2a8f6e1e )
-		ROM_LOAD16_BYTE( "rwtr13.63",  0x00001, 0x80000, 0x403ae41e )
-	
-		ROM_REGION( 0x2000000, REGION_GFX1, 0 )
-		ROM_LOAD( "rwt.133",  0x0000000, 0x100000, 0x5b5ac449 )
-		ROM_LOAD( "rwt.132",  0x0100000, 0x100000, 0x7b3f09c6 )
-		ROM_LOAD( "rwt.131",  0x0200000, 0x100000, 0xfdecf12e )
-		ROM_LOAD( "rwt.130",  0x0300000, 0x100000, 0x4a983b05 )
-	
-		ROM_LOAD( "rwt.129",  0x0400000, 0x100000, 0xdc495c6e )
-		ROM_LOAD( "rwt.128",  0x0500000, 0x100000, 0x5545503d )
-		ROM_LOAD( "rwt.127",  0x0600000, 0x100000, 0x6e1756ba )
-		ROM_LOAD( "rwt.126",  0x0700000, 0x100000, 0xc300eb1b )
-	
-		ROM_LOAD( "rwt.125",  0x0800000, 0x100000, 0x7369bf5d )
-		ROM_LOAD( "rwt.124",  0x0900000, 0x100000, 0xc0bf88c8 )
-		ROM_LOAD( "rwt.123",  0x0a00000, 0x100000, 0xac4c712a )
-		ROM_LOAD( "rwt.122",  0x0b00000, 0x100000, 0x609862a2 )
-	
-		ROM_LOAD( "rwt.121",  0x0c00000, 0x100000, 0xf65119b7 )
-		ROM_LOAD( "rwt.120",  0x0d00000, 0x100000, 0x6d643dee )
-		ROM_LOAD( "rwt.119",  0x0e00000, 0x100000, 0x4e49c133 )
-		ROM_LOAD( "rwt.118",  0x0f00000, 0x100000, 0x43a6f51e )
-	ROM_END
-	
-	ROM_START( rmpgwt11 )
-		ROM_REGION( 0x10, REGION_CPU1, 0 )		/* 34010 dummy region */
-	
-		ROM_REGION( ADSP2100_SIZE + 0x400000, REGION_CPU2, 0 )	/* ADSP-2105 data */
-		ROM_LOAD( "rwt.2",  ADSP2100_SIZE + 0x000000, 0x100000, 0x0e82f83d )
-		ROM_LOAD( "rwt.3",  ADSP2100_SIZE + 0x100000, 0x100000, 0x3ff54d15 )
-		ROM_LOAD( "rwt.4",  ADSP2100_SIZE + 0x200000, 0x100000, 0x5c7f5656 )
-		ROM_LOAD( "rwt.5",  ADSP2100_SIZE + 0x300000, 0x100000, 0xfd9aaf24 )
-	
-		ROM_REGION16_LE( 0x100000, REGION_USER1, ROMREGION_DISPOSE )	/* 34010 code */
-		ROM_LOAD16_BYTE( "rwtr11.54",  0x00000, 0x80000, 0x3aa514eb )
-		ROM_LOAD16_BYTE( "rwtr11.63",  0x00001, 0x80000, 0x031c908f )
-	
-		ROM_REGION( 0x2000000, REGION_GFX1, 0 )
-		ROM_LOAD( "rwt.133",  0x0000000, 0x100000, 0x5b5ac449 )
-		ROM_LOAD( "rwt.132",  0x0100000, 0x100000, 0x7b3f09c6 )
-		ROM_LOAD( "rwt.131",  0x0200000, 0x100000, 0xfdecf12e )
-		ROM_LOAD( "rwt.130",  0x0300000, 0x100000, 0x4a983b05 )
-	
-		ROM_LOAD( "rwt.129",  0x0400000, 0x100000, 0xdc495c6e )
-		ROM_LOAD( "rwt.128",  0x0500000, 0x100000, 0x5545503d )
-		ROM_LOAD( "rwt.127",  0x0600000, 0x100000, 0x6e1756ba )
-		ROM_LOAD( "rwt.126",  0x0700000, 0x100000, 0xc300eb1b )
-	
-		ROM_LOAD( "rwt.125",  0x0800000, 0x100000, 0x7369bf5d )
-		ROM_LOAD( "rwt.124",  0x0900000, 0x100000, 0xc0bf88c8 )
-		ROM_LOAD( "rwt.123",  0x0a00000, 0x100000, 0xac4c712a )
-		ROM_LOAD( "rwt.122",  0x0b00000, 0x100000, 0x609862a2 )
-	
-		ROM_LOAD( "rwt.121",  0x0c00000, 0x100000, 0xf65119b7 )
-		ROM_LOAD( "rwt.120",  0x0d00000, 0x100000, 0x6d643dee )
-		ROM_LOAD( "rwt.119",  0x0e00000, 0x100000, 0x4e49c133 )
-		ROM_LOAD( "rwt.118",  0x0f00000, 0x100000, 0x43a6f51e )
-	ROM_END
-	
-	ROM_START( wwfmania )
-		ROM_REGION( 0x10, REGION_CPU1, 0 )		/* 34010 dummy region */
-	
-		ROM_REGION( ADSP2100_SIZE + 0x400000, REGION_CPU2, 0 )	/* ADSP-2105 data */
-		ROM_LOAD( "wwf.2",  ADSP2100_SIZE + 0x000000, 0x100000, 0xa9acb250 )
-		ROM_LOAD( "wwf.3",  ADSP2100_SIZE + 0x100000, 0x100000, 0x9442b6c9 )
-		ROM_LOAD( "wwf.4",  ADSP2100_SIZE + 0x200000, 0x100000, 0xcee78fac )
-		ROM_LOAD( "wwf.5",  ADSP2100_SIZE + 0x300000, 0x100000, 0x5b31fd40 )
-	
-		ROM_REGION16_LE( 0x100000, REGION_USER1, ROMREGION_DISPOSE )	/* 34010 code */
-		ROM_LOAD16_BYTE( "wwf.54",  0x00000, 0x80000, 0xeeb7bf58 )
-		ROM_LOAD16_BYTE( "wwf.63",  0x00001, 0x80000, 0x09759529 )
-	
-		ROM_REGION( 0x2000000, REGION_GFX1, 0 )
-		ROM_LOAD( "wwf.133",  0x0000000, 0x100000, 0x5e1b1e3d )
-		ROM_LOAD( "wwf.132",  0x0100000, 0x100000, 0x5943b3b2 )
-		ROM_LOAD( "wwf.131",  0x0200000, 0x100000, 0x0815db22 )
-		ROM_LOAD( "wwf.130",  0x0300000, 0x100000, 0x9ee9a145 )
-	
-		ROM_LOAD( "wwf.129",  0x0400000, 0x100000, 0xc644c2f4 )
-		ROM_LOAD( "wwf.128",  0x0500000, 0x100000, 0xfcda4e9a )
-		ROM_LOAD( "wwf.127",  0x0600000, 0x100000, 0x45be7428 )
-		ROM_LOAD( "wwf.126",  0x0700000, 0x100000, 0xeaa276a8 )
-	
-		ROM_LOAD( "wwf.125",  0x0800000, 0x100000, 0xa19ebeed )
-		ROM_LOAD( "wwf.124",  0x0900000, 0x100000, 0xdc7d3dbb )
-		ROM_LOAD( "wwf.123",  0x0a00000, 0x100000, 0xe0ade56f )
-		ROM_LOAD( "wwf.122",  0x0b00000, 0x100000, 0x2800c78d )
-	
-		ROM_LOAD( "wwf.121",  0x0c00000, 0x100000, 0xa28ffcba )
-		ROM_LOAD( "wwf.120",  0x0d00000, 0x100000, 0x3a05d371 )
-		ROM_LOAD( "wwf.119",  0x0e00000, 0x100000, 0x97ffa659 )
-		ROM_LOAD( "wwf.118",  0x0f00000, 0x100000, 0x46668e97 )
-	ROM_END
+	static RomLoadPtr rom_mk3 = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x10, REGION_CPU1, 0 );	/* 34010 dummy region */
+	
+		ROM_REGION( ADSP2100_SIZE + 0x400000, REGION_CPU2, 0 );/* ADSP-2105 data */
+		ROM_LOAD( "umk3-u2.bin",  ADSP2100_SIZE + 0x000000, 0x100000, 0x3838cfe5 );
+		ROM_LOAD( "umk3-u3.bin",  ADSP2100_SIZE + 0x100000, 0x100000, 0x856fe411 );
+		ROM_LOAD( "umk3-u4.bin",  ADSP2100_SIZE + 0x200000, 0x100000, 0x428a406f );
+		ROM_LOAD( "umk3-u5.bin",  ADSP2100_SIZE + 0x300000, 0x100000, 0x3b98a09f );
+	
+		ROM_REGION16_LE( 0x100000, REGION_USER1, ROMREGION_DISPOSE );/* 34010 code */
+		ROM_LOAD16_BYTE( "mk321u54.bin",  0x00000, 0x80000, 0x9e344401 );
+		ROM_LOAD16_BYTE( "mk321u63.bin",  0x00001, 0x80000, 0x64d34776 );
+	
+		ROM_REGION( 0x2000000, REGION_GFX1, 0 );
+		ROM_LOAD( "umk-u133.bin",  0x0000000, 0x100000, 0x79b94667 );
+		ROM_LOAD( "umk-u132.bin",  0x0100000, 0x100000, 0x13e95228 );
+		ROM_LOAD( "umk-u131.bin",  0x0200000, 0x100000, 0x41001e30 );
+		ROM_LOAD( "umk-u130.bin",  0x0300000, 0x100000, 0x49379dd7 );
+	
+		ROM_LOAD( "umk-u129.bin",  0x0400000, 0x100000, 0xa8b41803 );
+		ROM_LOAD( "umk-u128.bin",  0x0500000, 0x100000, 0xb410d72f );
+		ROM_LOAD( "umk-u127.bin",  0x0600000, 0x100000, 0xbd985be7 );
+		ROM_LOAD( "umk-u126.bin",  0x0700000, 0x100000, 0xe7c32cf4 );
+	
+		ROM_LOAD( "umk-u125.bin",  0x0800000, 0x100000, 0x9a52227e );
+		ROM_LOAD( "umk-u124.bin",  0x0900000, 0x100000, 0x5c750ebc );
+		ROM_LOAD( "umk-u123.bin",  0x0a00000, 0x100000, 0xf0ab88a8 );
+		ROM_LOAD( "umk-u122.bin",  0x0b00000, 0x100000, 0x9b87cdac );
+	
+		ROM_LOAD( "mk3-u121.bin",  0x0c00000, 0x100000, 0xb6c6296a );
+		ROM_LOAD( "mk3-u120.bin",  0x0d00000, 0x100000, 0x8d1ccc3b );
+		ROM_LOAD( "mk3-u119.bin",  0x0e00000, 0x100000, 0x63215b59 );
+		ROM_LOAD( "mk3-u118.bin",  0x0f00000, 0x100000, 0x8b681e34 );
+	
+		ROM_LOAD( "mk3-u117.bin",  0x1000000, 0x080000, 0x1ab20377 );
+		ROM_LOAD( "mk3-u116.bin",  0x1100000, 0x080000, 0xba246ad0 );
+		ROM_LOAD( "mk3-u115.bin",  0x1200000, 0x080000, 0x3ee8b124 );
+		ROM_LOAD( "mk3-u114.bin",  0x1300000, 0x080000, 0xa8d99922 );
+	ROM_END(); }}; 
+	
+	static RomLoadPtr rom_mk3r20 = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x10, REGION_CPU1, 0 );	/* 34010 dummy region */
+	
+		ROM_REGION( ADSP2100_SIZE + 0x400000, REGION_CPU2, 0 );/* ADSP-2105 data */
+		ROM_LOAD( "umk3-u2.bin",  ADSP2100_SIZE + 0x000000, 0x100000, 0x3838cfe5 );
+		ROM_LOAD( "umk3-u3.bin",  ADSP2100_SIZE + 0x100000, 0x100000, 0x856fe411 );
+		ROM_LOAD( "umk3-u4.bin",  ADSP2100_SIZE + 0x200000, 0x100000, 0x428a406f );
+		ROM_LOAD( "umk3-u5.bin",  ADSP2100_SIZE + 0x300000, 0x100000, 0x3b98a09f );
+	
+		ROM_REGION16_LE( 0x100000, REGION_USER1, ROMREGION_DISPOSE );/* 34010 code */
+		ROM_LOAD16_BYTE( "mk320u54.bin",  0x00000, 0x80000, 0x453da302 );
+		ROM_LOAD16_BYTE( "mk320u63.bin",  0x00001, 0x80000, 0xf8dc0600 );
+	
+		ROM_REGION( 0x2000000, REGION_GFX1, 0 );
+		ROM_LOAD( "umk-u133.bin",  0x0000000, 0x100000, 0x79b94667 );
+		ROM_LOAD( "umk-u132.bin",  0x0100000, 0x100000, 0x13e95228 );
+		ROM_LOAD( "umk-u131.bin",  0x0200000, 0x100000, 0x41001e30 );
+		ROM_LOAD( "umk-u130.bin",  0x0300000, 0x100000, 0x49379dd7 );
+	
+		ROM_LOAD( "umk-u129.bin",  0x0400000, 0x100000, 0xa8b41803 );
+		ROM_LOAD( "umk-u128.bin",  0x0500000, 0x100000, 0xb410d72f );
+		ROM_LOAD( "umk-u127.bin",  0x0600000, 0x100000, 0xbd985be7 );
+		ROM_LOAD( "umk-u126.bin",  0x0700000, 0x100000, 0xe7c32cf4 );
+	
+		ROM_LOAD( "umk-u125.bin",  0x0800000, 0x100000, 0x9a52227e );
+		ROM_LOAD( "umk-u124.bin",  0x0900000, 0x100000, 0x5c750ebc );
+		ROM_LOAD( "umk-u123.bin",  0x0a00000, 0x100000, 0xf0ab88a8 );
+		ROM_LOAD( "umk-u122.bin",  0x0b00000, 0x100000, 0x9b87cdac );
+	
+		ROM_LOAD( "mk3-u121.bin",  0x0c00000, 0x100000, 0xb6c6296a );
+		ROM_LOAD( "mk3-u120.bin",  0x0d00000, 0x100000, 0x8d1ccc3b );
+		ROM_LOAD( "mk3-u119.bin",  0x0e00000, 0x100000, 0x63215b59 );
+		ROM_LOAD( "mk3-u118.bin",  0x0f00000, 0x100000, 0x8b681e34 );
+	
+		ROM_LOAD( "mk3-u117.bin",  0x1000000, 0x080000, 0x1ab20377 );
+		ROM_LOAD( "mk3-u116.bin",  0x1100000, 0x080000, 0xba246ad0 );
+		ROM_LOAD( "mk3-u115.bin",  0x1200000, 0x080000, 0x3ee8b124 );
+		ROM_LOAD( "mk3-u114.bin",  0x1300000, 0x080000, 0xa8d99922 );
+	ROM_END(); }}; 
+	
+	static RomLoadPtr rom_mk3r10 = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x10, REGION_CPU1, 0 );	/* 34010 dummy region */
+	
+		ROM_REGION( ADSP2100_SIZE + 0x400000, REGION_CPU2, 0 );/* ADSP-2105 data */
+		ROM_LOAD( "umk3-u2.bin",  ADSP2100_SIZE + 0x000000, 0x100000, 0x3838cfe5 );
+		ROM_LOAD( "umk3-u3.bin",  ADSP2100_SIZE + 0x100000, 0x100000, 0x856fe411 );
+		ROM_LOAD( "umk3-u4.bin",  ADSP2100_SIZE + 0x200000, 0x100000, 0x428a406f );
+		ROM_LOAD( "umk3-u5.bin",  ADSP2100_SIZE + 0x300000, 0x100000, 0x3b98a09f );
+	
+		ROM_REGION16_LE( 0x100000, REGION_USER1, ROMREGION_DISPOSE );/* 34010 code */
+		ROM_LOAD16_BYTE( "mk310u54.bin",  0x00000, 0x80000, 0x41829228 );
+		ROM_LOAD16_BYTE( "mk310u63.bin",  0x00001, 0x80000, 0xb074e1e8 );
+	
+		ROM_REGION( 0x2000000, REGION_GFX1, 0 );
+		ROM_LOAD( "umk-u133.bin",  0x0000000, 0x100000, 0x79b94667 );
+		ROM_LOAD( "umk-u132.bin",  0x0100000, 0x100000, 0x13e95228 );
+		ROM_LOAD( "umk-u131.bin",  0x0200000, 0x100000, 0x41001e30 );
+		ROM_LOAD( "umk-u130.bin",  0x0300000, 0x100000, 0x49379dd7 );
+	
+		ROM_LOAD( "umk-u129.bin",  0x0400000, 0x100000, 0xa8b41803 );
+		ROM_LOAD( "umk-u128.bin",  0x0500000, 0x100000, 0xb410d72f );
+		ROM_LOAD( "umk-u127.bin",  0x0600000, 0x100000, 0xbd985be7 );
+		ROM_LOAD( "umk-u126.bin",  0x0700000, 0x100000, 0xe7c32cf4 );
+	
+		ROM_LOAD( "umk-u125.bin",  0x0800000, 0x100000, 0x9a52227e );
+		ROM_LOAD( "umk-u124.bin",  0x0900000, 0x100000, 0x5c750ebc );
+		ROM_LOAD( "umk-u123.bin",  0x0a00000, 0x100000, 0xf0ab88a8 );
+		ROM_LOAD( "umk-u122.bin",  0x0b00000, 0x100000, 0x9b87cdac );
+	
+		ROM_LOAD( "mk3-u121.bin",  0x0c00000, 0x100000, 0xb6c6296a );
+		ROM_LOAD( "mk3-u120.bin",  0x0d00000, 0x100000, 0x8d1ccc3b );
+		ROM_LOAD( "mk3-u119.bin",  0x0e00000, 0x100000, 0x63215b59 );
+		ROM_LOAD( "mk3-u118.bin",  0x0f00000, 0x100000, 0x8b681e34 );
+	
+		ROM_LOAD( "mk3-u117.bin",  0x1000000, 0x080000, 0x1ab20377 );
+		ROM_LOAD( "mk3-u116.bin",  0x1100000, 0x080000, 0xba246ad0 );
+		ROM_LOAD( "mk3-u115.bin",  0x1200000, 0x080000, 0x3ee8b124 );
+		ROM_LOAD( "mk3-u114.bin",  0x1300000, 0x080000, 0xa8d99922 );
+	ROM_END(); }}; 
+	
+	static RomLoadPtr rom_umk3 = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x10, REGION_CPU1, 0 );	/* 34010 dummy region */
+	
+		ROM_REGION( ADSP2100_SIZE + 0x400000, REGION_CPU2, 0 );/* ADSP-2105 data */
+		ROM_LOAD( "umk3-u2.bin",  ADSP2100_SIZE + 0x000000, 0x100000, 0x3838cfe5 );
+		ROM_LOAD( "umk3-u3.bin",  ADSP2100_SIZE + 0x100000, 0x100000, 0x856fe411 );
+		ROM_LOAD( "umk3-u4.bin",  ADSP2100_SIZE + 0x200000, 0x100000, 0x428a406f );
+		ROM_LOAD( "umk3-u5.bin",  ADSP2100_SIZE + 0x300000, 0x100000, 0x3b98a09f );
+	
+		ROM_REGION16_LE( 0x100000, REGION_USER1, ROMREGION_DISPOSE );/* 34010 code */
+		ROM_LOAD16_BYTE( "um312u54.bin",  0x00000, 0x80000, 0x712b4db6 );
+		ROM_LOAD16_BYTE( "um312u63.bin",  0x00001, 0x80000, 0x6d301faf );
+	
+		ROM_REGION( 0x2000000, REGION_GFX1, 0 );
+		ROM_LOAD( "umk-u133.bin",  0x0000000, 0x100000, 0x79b94667 );
+		ROM_LOAD( "umk-u132.bin",  0x0100000, 0x100000, 0x13e95228 );
+		ROM_LOAD( "umk-u131.bin",  0x0200000, 0x100000, 0x41001e30 );
+		ROM_LOAD( "umk-u130.bin",  0x0300000, 0x100000, 0x49379dd7 );
+	
+		ROM_LOAD( "umk-u129.bin",  0x0400000, 0x100000, 0xa8b41803 );
+		ROM_LOAD( "umk-u128.bin",  0x0500000, 0x100000, 0xb410d72f );
+		ROM_LOAD( "umk-u127.bin",  0x0600000, 0x100000, 0xbd985be7 );
+		ROM_LOAD( "umk-u126.bin",  0x0700000, 0x100000, 0xe7c32cf4 );
+	
+		ROM_LOAD( "umk-u125.bin",  0x0800000, 0x100000, 0x9a52227e );
+		ROM_LOAD( "umk-u124.bin",  0x0900000, 0x100000, 0x5c750ebc );
+		ROM_LOAD( "umk-u123.bin",  0x0a00000, 0x100000, 0xf0ab88a8 );
+		ROM_LOAD( "umk-u122.bin",  0x0b00000, 0x100000, 0x9b87cdac );
+	
+		ROM_LOAD( "umk-u121.bin",  0x0c00000, 0x100000, 0xcc4b95db );
+		ROM_LOAD( "umk-u120.bin",  0x0d00000, 0x100000, 0x1c8144cd );
+		ROM_LOAD( "umk-u119.bin",  0x0e00000, 0x100000, 0x5f10c543 );
+		ROM_LOAD( "umk-u118.bin",  0x0f00000, 0x100000, 0xde0c4488 );
+	
+		ROM_LOAD( "umk-u113.bin",  0x1400000, 0x100000, 0x99d74a1e );
+		ROM_LOAD( "umk-u112.bin",  0x1500000, 0x100000, 0xb5a46488 );
+		ROM_LOAD( "umk-u111.bin",  0x1600000, 0x100000, 0xa87523c8 );
+		ROM_LOAD( "umk-u110.bin",  0x1700000, 0x100000, 0x0038f205 );
+	ROM_END(); }}; 
+	
+	static RomLoadPtr rom_umk3r11 = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x10, REGION_CPU1, 0 );	/* 34010 dummy region */
+	
+		ROM_REGION( ADSP2100_SIZE + 0x400000, REGION_CPU2, 0 );/* ADSP-2105 data */
+		ROM_LOAD( "umk3-u2.bin",  ADSP2100_SIZE + 0x000000, 0x100000, 0x3838cfe5 );
+		ROM_LOAD( "umk3-u3.bin",  ADSP2100_SIZE + 0x100000, 0x100000, 0x856fe411 );
+		ROM_LOAD( "umk3-u4.bin",  ADSP2100_SIZE + 0x200000, 0x100000, 0x428a406f );
+		ROM_LOAD( "umk3-u5.bin",  ADSP2100_SIZE + 0x300000, 0x100000, 0x3b98a09f );
+	
+		ROM_REGION16_LE( 0x100000, REGION_USER1, ROMREGION_DISPOSE );/* 34010 code */
+		ROM_LOAD16_BYTE( "um311u54.bin",  0x00000, 0x80000, 0x8bb27659 );
+		ROM_LOAD16_BYTE( "um311u63.bin",  0x00001, 0x80000, 0xea731783 );
+	
+		ROM_REGION( 0x2000000, REGION_GFX1, 0 );
+		ROM_LOAD( "umk-u133.bin",  0x0000000, 0x100000, 0x79b94667 );
+		ROM_LOAD( "umk-u132.bin",  0x0100000, 0x100000, 0x13e95228 );
+		ROM_LOAD( "umk-u131.bin",  0x0200000, 0x100000, 0x41001e30 );
+		ROM_LOAD( "umk-u130.bin",  0x0300000, 0x100000, 0x49379dd7 );
+	
+		ROM_LOAD( "umk-u129.bin",  0x0400000, 0x100000, 0xa8b41803 );
+		ROM_LOAD( "umk-u128.bin",  0x0500000, 0x100000, 0xb410d72f );
+		ROM_LOAD( "umk-u127.bin",  0x0600000, 0x100000, 0xbd985be7 );
+		ROM_LOAD( "umk-u126.bin",  0x0700000, 0x100000, 0xe7c32cf4 );
+	
+		ROM_LOAD( "umk-u125.bin",  0x0800000, 0x100000, 0x9a52227e );
+		ROM_LOAD( "umk-u124.bin",  0x0900000, 0x100000, 0x5c750ebc );
+		ROM_LOAD( "umk-u123.bin",  0x0a00000, 0x100000, 0xf0ab88a8 );
+		ROM_LOAD( "umk-u122.bin",  0x0b00000, 0x100000, 0x9b87cdac );
+	
+		ROM_LOAD( "umk-u121.bin",  0x0c00000, 0x100000, 0xcc4b95db );
+		ROM_LOAD( "umk-u120.bin",  0x0d00000, 0x100000, 0x1c8144cd );
+		ROM_LOAD( "umk-u119.bin",  0x0e00000, 0x100000, 0x5f10c543 );
+		ROM_LOAD( "umk-u118.bin",  0x0f00000, 0x100000, 0xde0c4488 );
+	
+		ROM_LOAD( "umk-u113.bin",  0x1400000, 0x100000, 0x99d74a1e );
+		ROM_LOAD( "umk-u112.bin",  0x1500000, 0x100000, 0xb5a46488 );
+		ROM_LOAD( "umk-u111.bin",  0x1600000, 0x100000, 0xa87523c8 );
+		ROM_LOAD( "umk-u110.bin",  0x1700000, 0x100000, 0x0038f205 );
+	ROM_END(); }}; 
+	
+	static RomLoadPtr rom_openice = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x10, REGION_CPU1, 0 );	/* 34010 dummy region */
+	
+		ROM_REGION( ADSP2100_SIZE + 0x400000, REGION_CPU2, 0 );/* ADSP-2105 data */
+		ROM_LOAD( "oiceu2.bin",  ADSP2100_SIZE + 0x000000, 0x100000, 0x8adb5aab );
+		ROM_LOAD( "oiceu3.bin",  ADSP2100_SIZE + 0x100000, 0x100000, 0x11c61ad6 );
+		ROM_LOAD( "oiceu4.bin",  ADSP2100_SIZE + 0x200000, 0x100000, 0x04279290 );
+		ROM_LOAD( "oiceu5.bin",  ADSP2100_SIZE + 0x300000, 0x100000, 0xe90ad61f );
+	
+		ROM_REGION16_LE( 0x100000, REGION_USER1, ROMREGION_DISPOSE );/* 34010 code */
+		ROM_LOAD16_BYTE( "oiceu54.bin",  0x00000, 0x80000, 0xe4225284 );
+		ROM_LOAD16_BYTE( "oiceu63.bin",  0x00001, 0x80000, 0x97d308a3 );
+	
+		ROM_REGION( 0x2000000, REGION_GFX1, 0 );
+		ROM_LOAD( "oiceu133.bin",  0x0000000, 0x100000, 0x8a81605c );
+		ROM_LOAD( "oiceu132.bin",  0x0100000, 0x100000, 0xcfdd6702 );
+		ROM_LOAD( "oiceu131.bin",  0x0200000, 0x100000, 0xcc428eb7 );
+		ROM_LOAD( "oiceu130.bin",  0x0300000, 0x100000, 0x74c2d50c );
+	
+		ROM_LOAD( "oiceu129.bin",  0x0400000, 0x100000, 0x9e2ff012 );
+		ROM_LOAD( "oiceu128.bin",  0x0500000, 0x100000, 0x35d2e610 );
+		ROM_LOAD( "oiceu127.bin",  0x0600000, 0x100000, 0xbcbf19fe );
+		ROM_LOAD( "oiceu126.bin",  0x0700000, 0x100000, 0x8e3106ae );
+	
+		ROM_LOAD( "oiceu125.bin",  0x0800000, 0x100000, 0xa7b54550 );
+		ROM_LOAD( "oiceu124.bin",  0x0900000, 0x100000, 0x7c02cb50 );
+		ROM_LOAD( "oiceu123.bin",  0x0a00000, 0x100000, 0xd543bd9d );
+		ROM_LOAD( "oiceu122.bin",  0x0b00000, 0x100000, 0x3744d291 );
+	
+		ROM_LOAD( "oiceu121.bin",  0x0c00000, 0x100000, 0xacd2f7c7 );
+		ROM_LOAD( "oiceu120.bin",  0x0d00000, 0x100000, 0x4295686a );
+		ROM_LOAD( "oiceu119.bin",  0x0e00000, 0x100000, 0x948b9b27 );
+		ROM_LOAD( "oiceu118.bin",  0x0f00000, 0x100000, 0x9eaaf93e );
+	ROM_END(); }}; 
+	
+	static RomLoadPtr rom_nbahangt = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x10, REGION_CPU1, 0 );	/* 34010 dummy region */
+	
+		ROM_REGION( ADSP2100_SIZE + 0x400000, REGION_CPU2, 0 );/* ADSP-2105 data */
+		ROM_LOAD( "mhtu2.bin",  ADSP2100_SIZE + 0x000000, 0x100000, 0x3f0b0d0a );
+		ROM_LOAD( "mhtu3.bin",  ADSP2100_SIZE + 0x100000, 0x100000, 0xec1db988 );
+		ROM_LOAD( "mhtu4.bin",  ADSP2100_SIZE + 0x200000, 0x100000, 0xc7f847a3 );
+		ROM_LOAD( "mhtu5.bin",  ADSP2100_SIZE + 0x300000, 0x100000, 0xef19316a );
+	
+		ROM_REGION16_LE( 0x100000, REGION_USER1, ROMREGION_DISPOSE );/* 34010 code */
+		ROM_LOAD16_BYTE( "htime54.bin",  0x00000, 0x80000, 0xc2875d98 );
+		ROM_LOAD16_BYTE( "htime63.bin",  0x00001, 0x80000, 0x6f4728c3 );
+	
+		ROM_REGION( 0x2000000, REGION_GFX1, 0 );
+		ROM_LOAD( "mhtu133.bin",  0x0000000, 0x100000, 0x3163feed );
+		ROM_LOAD( "mhtu132.bin",  0x0100000, 0x100000, 0x428eaf44 );
+		ROM_LOAD( "mhtu131.bin",  0x0200000, 0x100000, 0x5f7c5111 );
+		ROM_LOAD( "mhtu130.bin",  0x0300000, 0x100000, 0xc7c0c514 );
+	
+		ROM_LOAD( "mhtu129.bin",  0x0400000, 0x100000, 0xb3d0daa0 );
+		ROM_LOAD( "mhtu128.bin",  0x0500000, 0x100000, 0x3704ee69 );
+		ROM_LOAD( "mhtu127.bin",  0x0600000, 0x100000, 0x4ea64d5a );
+		ROM_LOAD( "mhtu126.bin",  0x0700000, 0x100000, 0x0c5c19b7 );
+	
+		ROM_LOAD( "mhtu125.bin",  0x0800000, 0x100000, 0x46c43d67 );
+		ROM_LOAD( "mhtu124.bin",  0x0900000, 0x100000, 0xed495156 );
+		ROM_LOAD( "mhtu123.bin",  0x0a00000, 0x100000, 0xb48aa5da );
+		ROM_LOAD( "mhtu122.bin",  0x0b00000, 0x100000, 0xb18cd181 );
+	
+		ROM_LOAD( "mhtu121.bin",  0x0c00000, 0x100000, 0x5acb267a );
+		ROM_LOAD( "mhtu120.bin",  0x0d00000, 0x100000, 0x28e05f86 );
+		ROM_LOAD( "mhtu119.bin",  0x0e00000, 0x100000, 0xb4f604ea );
+		ROM_LOAD( "mhtu118.bin",  0x0f00000, 0x100000, 0xa257b973 );
+	
+		ROM_LOAD( "mhtu113.bin",  0x1400000, 0x100000, 0xd712a779 );
+		ROM_LOAD( "mhtu112.bin",  0x1500000, 0x100000, 0x644e1bca );
+		ROM_LOAD( "mhtu111.bin",  0x1600000, 0x100000, 0x10d3b768 );
+		ROM_LOAD( "mhtu110.bin",  0x1700000, 0x100000, 0x8575aeb2 );
+	ROM_END(); }}; 
+	
+	static RomLoadPtr rom_nbamaxht = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x10, REGION_CPU1, 0 );	/* 34010 dummy region */
+	
+		ROM_REGION( ADSP2100_SIZE + 0x400000, REGION_CPU2, 0 );/* ADSP-2105 data */
+		ROM_LOAD( "mhtu2.bin",  ADSP2100_SIZE + 0x000000, 0x100000, 0x3f0b0d0a );
+		ROM_LOAD( "mhtu3.bin",  ADSP2100_SIZE + 0x100000, 0x100000, 0xec1db988 );
+		ROM_LOAD( "mhtu4.bin",  ADSP2100_SIZE + 0x200000, 0x100000, 0xc7f847a3 );
+		ROM_LOAD( "mhtu5.bin",  ADSP2100_SIZE + 0x300000, 0x100000, 0xef19316a );
+	
+		ROM_REGION16_LE( 0x100000, REGION_USER1, ROMREGION_DISPOSE );/* 34010 code */
+		ROM_LOAD16_BYTE( "mhtu54.bin",  0x00000, 0x80000, 0xdfb6b3ae );
+		ROM_LOAD16_BYTE( "mhtu63.bin",  0x00001, 0x80000, 0x78da472c );
+	
+		ROM_REGION( 0x2000000, REGION_GFX1, 0 );
+		ROM_LOAD( "mhtu133.bin",  0x0000000, 0x100000, 0x3163feed );
+		ROM_LOAD( "mhtu132.bin",  0x0100000, 0x100000, 0x428eaf44 );
+		ROM_LOAD( "mhtu131.bin",  0x0200000, 0x100000, 0x5f7c5111 );
+		ROM_LOAD( "mhtu130.bin",  0x0300000, 0x100000, 0xc7c0c514 );
+	
+		ROM_LOAD( "mhtu129.bin",  0x0400000, 0x100000, 0xb3d0daa0 );
+		ROM_LOAD( "mhtu128.bin",  0x0500000, 0x100000, 0x3704ee69 );
+		ROM_LOAD( "mhtu127.bin",  0x0600000, 0x100000, 0x4ea64d5a );
+		ROM_LOAD( "mhtu126.bin",  0x0700000, 0x100000, 0x0c5c19b7 );
+	
+		ROM_LOAD( "mhtu125.bin",  0x0800000, 0x100000, 0x46c43d67 );
+		ROM_LOAD( "mhtu124.bin",  0x0900000, 0x100000, 0xed495156 );
+		ROM_LOAD( "mhtu123.bin",  0x0a00000, 0x100000, 0xb48aa5da );
+		ROM_LOAD( "mhtu122.bin",  0x0b00000, 0x100000, 0xb18cd181 );
+	
+		ROM_LOAD( "mhtu121.bin",  0x0c00000, 0x100000, 0x5acb267a );
+		ROM_LOAD( "mhtu120.bin",  0x0d00000, 0x100000, 0x28e05f86 );
+		ROM_LOAD( "mhtu119.bin",  0x0e00000, 0x100000, 0xb4f604ea );
+		ROM_LOAD( "mhtu118.bin",  0x0f00000, 0x100000, 0xa257b973 );
+	
+		ROM_LOAD( "mhtu113.bin",  0x1400000, 0x100000, 0xd712a779 );
+		ROM_LOAD( "mhtu112.bin",  0x1500000, 0x100000, 0x644e1bca );
+		ROM_LOAD( "mhtu111.bin",  0x1600000, 0x100000, 0x10d3b768 );
+		ROM_LOAD( "mhtu110.bin",  0x1700000, 0x100000, 0x8575aeb2 );
+	ROM_END(); }}; 
+	
+	static RomLoadPtr rom_rmpgwt = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x10, REGION_CPU1, 0 );	/* 34010 dummy region */
+	
+		ROM_REGION( ADSP2100_SIZE + 0x400000, REGION_CPU2, 0 );/* ADSP-2105 data */
+		ROM_LOAD( "rwt.2",  ADSP2100_SIZE + 0x000000, 0x100000, 0x0e82f83d );
+		ROM_LOAD( "rwt.3",  ADSP2100_SIZE + 0x100000, 0x100000, 0x3ff54d15 );
+		ROM_LOAD( "rwt.4",  ADSP2100_SIZE + 0x200000, 0x100000, 0x5c7f5656 );
+		ROM_LOAD( "rwt.5",  ADSP2100_SIZE + 0x300000, 0x100000, 0xfd9aaf24 );
+	
+		ROM_REGION16_LE( 0x100000, REGION_USER1, ROMREGION_DISPOSE );/* 34010 code */
+		ROM_LOAD16_BYTE( "rwtr13.54",  0x00000, 0x80000, 0x2a8f6e1e );
+		ROM_LOAD16_BYTE( "rwtr13.63",  0x00001, 0x80000, 0x403ae41e );
+	
+		ROM_REGION( 0x2000000, REGION_GFX1, 0 );
+		ROM_LOAD( "rwt.133",  0x0000000, 0x100000, 0x5b5ac449 );
+		ROM_LOAD( "rwt.132",  0x0100000, 0x100000, 0x7b3f09c6 );
+		ROM_LOAD( "rwt.131",  0x0200000, 0x100000, 0xfdecf12e );
+		ROM_LOAD( "rwt.130",  0x0300000, 0x100000, 0x4a983b05 );
+	
+		ROM_LOAD( "rwt.129",  0x0400000, 0x100000, 0xdc495c6e );
+		ROM_LOAD( "rwt.128",  0x0500000, 0x100000, 0x5545503d );
+		ROM_LOAD( "rwt.127",  0x0600000, 0x100000, 0x6e1756ba );
+		ROM_LOAD( "rwt.126",  0x0700000, 0x100000, 0xc300eb1b );
+	
+		ROM_LOAD( "rwt.125",  0x0800000, 0x100000, 0x7369bf5d );
+		ROM_LOAD( "rwt.124",  0x0900000, 0x100000, 0xc0bf88c8 );
+		ROM_LOAD( "rwt.123",  0x0a00000, 0x100000, 0xac4c712a );
+		ROM_LOAD( "rwt.122",  0x0b00000, 0x100000, 0x609862a2 );
+	
+		ROM_LOAD( "rwt.121",  0x0c00000, 0x100000, 0xf65119b7 );
+		ROM_LOAD( "rwt.120",  0x0d00000, 0x100000, 0x6d643dee );
+		ROM_LOAD( "rwt.119",  0x0e00000, 0x100000, 0x4e49c133 );
+		ROM_LOAD( "rwt.118",  0x0f00000, 0x100000, 0x43a6f51e );
+	ROM_END(); }}; 
+	
+	static RomLoadPtr rom_rmpgwt11 = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x10, REGION_CPU1, 0 );	/* 34010 dummy region */
+	
+		ROM_REGION( ADSP2100_SIZE + 0x400000, REGION_CPU2, 0 );/* ADSP-2105 data */
+		ROM_LOAD( "rwt.2",  ADSP2100_SIZE + 0x000000, 0x100000, 0x0e82f83d );
+		ROM_LOAD( "rwt.3",  ADSP2100_SIZE + 0x100000, 0x100000, 0x3ff54d15 );
+		ROM_LOAD( "rwt.4",  ADSP2100_SIZE + 0x200000, 0x100000, 0x5c7f5656 );
+		ROM_LOAD( "rwt.5",  ADSP2100_SIZE + 0x300000, 0x100000, 0xfd9aaf24 );
+	
+		ROM_REGION16_LE( 0x100000, REGION_USER1, ROMREGION_DISPOSE );/* 34010 code */
+		ROM_LOAD16_BYTE( "rwtr11.54",  0x00000, 0x80000, 0x3aa514eb );
+		ROM_LOAD16_BYTE( "rwtr11.63",  0x00001, 0x80000, 0x031c908f );
+	
+		ROM_REGION( 0x2000000, REGION_GFX1, 0 );
+		ROM_LOAD( "rwt.133",  0x0000000, 0x100000, 0x5b5ac449 );
+		ROM_LOAD( "rwt.132",  0x0100000, 0x100000, 0x7b3f09c6 );
+		ROM_LOAD( "rwt.131",  0x0200000, 0x100000, 0xfdecf12e );
+		ROM_LOAD( "rwt.130",  0x0300000, 0x100000, 0x4a983b05 );
+	
+		ROM_LOAD( "rwt.129",  0x0400000, 0x100000, 0xdc495c6e );
+		ROM_LOAD( "rwt.128",  0x0500000, 0x100000, 0x5545503d );
+		ROM_LOAD( "rwt.127",  0x0600000, 0x100000, 0x6e1756ba );
+		ROM_LOAD( "rwt.126",  0x0700000, 0x100000, 0xc300eb1b );
+	
+		ROM_LOAD( "rwt.125",  0x0800000, 0x100000, 0x7369bf5d );
+		ROM_LOAD( "rwt.124",  0x0900000, 0x100000, 0xc0bf88c8 );
+		ROM_LOAD( "rwt.123",  0x0a00000, 0x100000, 0xac4c712a );
+		ROM_LOAD( "rwt.122",  0x0b00000, 0x100000, 0x609862a2 );
+	
+		ROM_LOAD( "rwt.121",  0x0c00000, 0x100000, 0xf65119b7 );
+		ROM_LOAD( "rwt.120",  0x0d00000, 0x100000, 0x6d643dee );
+		ROM_LOAD( "rwt.119",  0x0e00000, 0x100000, 0x4e49c133 );
+		ROM_LOAD( "rwt.118",  0x0f00000, 0x100000, 0x43a6f51e );
+	ROM_END(); }}; 
+	
+	static RomLoadPtr rom_wwfmania = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x10, REGION_CPU1, 0 );	/* 34010 dummy region */
+	
+		ROM_REGION( ADSP2100_SIZE + 0x400000, REGION_CPU2, 0 );/* ADSP-2105 data */
+		ROM_LOAD( "wwf.2",  ADSP2100_SIZE + 0x000000, 0x100000, 0xa9acb250 );
+		ROM_LOAD( "wwf.3",  ADSP2100_SIZE + 0x100000, 0x100000, 0x9442b6c9 );
+		ROM_LOAD( "wwf.4",  ADSP2100_SIZE + 0x200000, 0x100000, 0xcee78fac );
+		ROM_LOAD( "wwf.5",  ADSP2100_SIZE + 0x300000, 0x100000, 0x5b31fd40 );
+	
+		ROM_REGION16_LE( 0x100000, REGION_USER1, ROMREGION_DISPOSE );/* 34010 code */
+		ROM_LOAD16_BYTE( "wwf.54",  0x00000, 0x80000, 0xeeb7bf58 );
+		ROM_LOAD16_BYTE( "wwf.63",  0x00001, 0x80000, 0x09759529 );
+	
+		ROM_REGION( 0x2000000, REGION_GFX1, 0 );
+		ROM_LOAD( "wwf.133",  0x0000000, 0x100000, 0x5e1b1e3d );
+		ROM_LOAD( "wwf.132",  0x0100000, 0x100000, 0x5943b3b2 );
+		ROM_LOAD( "wwf.131",  0x0200000, 0x100000, 0x0815db22 );
+		ROM_LOAD( "wwf.130",  0x0300000, 0x100000, 0x9ee9a145 );
+	
+		ROM_LOAD( "wwf.129",  0x0400000, 0x100000, 0xc644c2f4 );
+		ROM_LOAD( "wwf.128",  0x0500000, 0x100000, 0xfcda4e9a );
+		ROM_LOAD( "wwf.127",  0x0600000, 0x100000, 0x45be7428 );
+		ROM_LOAD( "wwf.126",  0x0700000, 0x100000, 0xeaa276a8 );
+	
+		ROM_LOAD( "wwf.125",  0x0800000, 0x100000, 0xa19ebeed );
+		ROM_LOAD( "wwf.124",  0x0900000, 0x100000, 0xdc7d3dbb );
+		ROM_LOAD( "wwf.123",  0x0a00000, 0x100000, 0xe0ade56f );
+		ROM_LOAD( "wwf.122",  0x0b00000, 0x100000, 0x2800c78d );
+	
+		ROM_LOAD( "wwf.121",  0x0c00000, 0x100000, 0xa28ffcba );
+		ROM_LOAD( "wwf.120",  0x0d00000, 0x100000, 0x3a05d371 );
+		ROM_LOAD( "wwf.119",  0x0e00000, 0x100000, 0x97ffa659 );
+		ROM_LOAD( "wwf.118",  0x0f00000, 0x100000, 0x46668e97 );
+	ROM_END(); }}; 
 	
 	
 	

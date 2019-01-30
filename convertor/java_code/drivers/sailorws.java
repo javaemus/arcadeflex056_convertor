@@ -3912,432 +3912,432 @@ public class sailorws
 	NBMJDRV3(  mjegolf,  mjegolf,  mjegolf,  mjegolf,  mjegolf, 0 )
 	
 	
-	ROM_START( mjuraden )
-		ROM_REGION( 0x10000, REGION_CPU1, 0 ) /* main program */
-		ROM_LOAD( "1.7c",   0x00000,  0x10000, 0x3b142791 )
-	
-		ROM_REGION( 0x20000, REGION_CPU2, 0 ) /* sound program */
-		ROM_LOAD( "2.13e",  0x00000,  0x20000, 0x3a230c22 )
-	
-		ROM_REGION( 0x400000, REGION_GFX1, 0 ) /* gfx */
-		ROM_LOAD( "3.1h",   0x000000, 0x80000, 0x6face365 )
-		ROM_LOAD( "4.3h",   0x080000, 0x80000, 0x6b7b0518 )
-		ROM_LOAD( "5.5h",   0x100000, 0x80000, 0x43396517 )
-		ROM_LOAD( "6.6h",   0x180000, 0x80000, 0x32cd3450 )
-		ROM_LOAD( "9.11h",  0x240000, 0x20000, 0x585998bd )
-		ROM_LOAD( "10.12h", 0x260000, 0x20000, 0x58220c2a )
-	ROM_END
-	
-	ROM_START( koinomp )
-		ROM_REGION( 0x10000, REGION_CPU1, 0 ) /* main program */
-		ROM_LOAD( "1.7c",   0x00000,  0x10000, 0xe4d626fc )
-	
-		ROM_REGION( 0x20000, REGION_CPU2, 0 ) /* sound program */
-		ROM_LOAD( "2.13e",  0x00000,  0x20000, 0x4a5c814b )
-	
-		ROM_REGION( 0x400000, REGION_GFX1, 0 ) /* gfx */
-		ROM_LOAD( "3.1h",   0x000000, 0x80000, 0x1f16d3a1 )
-		ROM_LOAD( "4.3h",   0x080000, 0x80000, 0xf00b1a11 )
-		ROM_LOAD( "5.5h",   0x100000, 0x80000, 0xb1ae17b3 )
-		ROM_LOAD( "6.6h",   0x180000, 0x80000, 0xbb863b58 )
-		ROM_LOAD( "7.7h",   0x200000, 0x80000, 0x2a3acd8c )
-		ROM_LOAD( "8.9h",   0x280000, 0x80000, 0x595a643a )
-		ROM_LOAD( "9.10h",  0x300000, 0x80000, 0x28e68e7b )
-		ROM_LOAD( "10.12h", 0x380000, 0x80000, 0xa598f152 )
-	ROM_END
-	
-	ROM_START( patimono )
-		ROM_REGION( 0x10000, REGION_CPU1, 0 ) /* main program */
-		ROM_LOAD( "1.7c",   0x00000,  0x10000, 0xe4860829 )
-	
-		ROM_REGION( 0x20000, REGION_CPU2, 0 ) /* sound program */
-		ROM_LOAD( "2.13e",  0x00000,  0x20000, 0x30770363 )
-	
-		ROM_REGION( 0x400000, REGION_GFX1, 0 ) /* gfx */
-		ROM_LOAD( "3.1h",   0x000000, 0x80000, 0x56cbf448 )
-		ROM_LOAD( "4.3h",   0x080000, 0x80000, 0x4dd19093 )
-		ROM_LOAD( "5.5h",   0x100000, 0x80000, 0x63cdc4fe )
-		ROM_LOAD( "6.6h",   0x180000, 0x80000, 0x6057cb66 )
-		ROM_LOAD( "7.7h",   0x200000, 0x80000, 0x309ea3d5 )
-		ROM_LOAD( "8.9h",   0x280000, 0x80000, 0x6da16cdd )
-		ROM_LOAD( "9.10h",  0x300000, 0x80000, 0xc6064b3b )
-	ROM_END
-	
-	ROM_START( mjanbari )
-		ROM_REGION( 0x10000, REGION_CPU1, 0 ) /* main program */
-		ROM_LOAD( "11.7c",  0x00000,  0x10000, 0x1edde2ef )
-	
-		ROM_REGION( 0x20000, REGION_CPU2, 0 ) /* sound program */
-		ROM_LOAD( "2.13e",  0x00000,  0x20000, 0x30770363 )
-	
-		ROM_REGION( 0x400000, REGION_GFX1, 0 ) /* gfx */
-		ROM_LOAD( "3.1h",   0x000000, 0x80000, 0x0fb21d13 )
-		ROM_LOAD( "4.3h",   0x080000, 0x80000, 0x4dd19093 )
-		ROM_LOAD( "5.5h",   0x100000, 0x80000, 0xf5748587 )
-		ROM_LOAD( "6.6h",   0x180000, 0x80000, 0x9aaf6aa4 )
-		ROM_LOAD( "7.7h",   0x200000, 0x80000, 0x34df5475 )
-		ROM_LOAD( "8.9h",   0x280000, 0x80000, 0xd4d74ec3 )
-		ROM_LOAD( "9.10h",  0x300000, 0x80000, 0xf7958466 )
-	ROM_END
-	
-	ROM_START( mmehyou )
-		ROM_REGION( 0x10000, REGION_CPU1, 0 ) /* main program */
-		ROM_LOAD( "1.7c",  0x00000,  0x10000, 0x29d51130 )
-	
-		ROM_REGION( 0x20000, REGION_CPU2, 0 ) /* sound program */
-		ROM_LOAD( "2.13e", 0x00000,  0x20000, 0xd193a2e1 )
-	
-		ROM_REGION( 0x260000, REGION_GFX1, 0 ) /* gfx */
-		ROM_LOAD( "3.1h",  0x000000, 0x80000, 0xe4caab61 )
-		ROM_LOAD( "4.3h",  0x080000, 0x80000, 0xbbb20aef )
-		ROM_LOAD( "5.5h",  0x100000, 0x80000, 0xff59c4c9 )
-		ROM_LOAD( "6.6h",  0x180000, 0x80000, 0xd20f9b92 )
-		ROM_LOAD( "7.7h",  0x200000, 0x20000, 0xd78dfbe2 )
-		ROM_LOAD( "8.9h",  0x220000, 0x20000, 0x92160e9b )
-		ROM_LOAD( "9.10h", 0x240000, 0x20000, 0x18a72f2e )
-	ROM_END
-	
-	ROM_START( gal10ren )
-		ROM_REGION( 0x10000, REGION_CPU1, 0 ) /* main program */
-		ROM_LOAD( "gl10_01.bin",  0x00000,  0x10000, 0xf63f81b4 )
-	
-		ROM_REGION( 0x20000, REGION_CPU2, 0 ) /* sound program */
-		ROM_LOAD( "gl10_02.bin",  0x00000,  0x20000, 0x1317b788 )
-	
-		ROM_REGION( 0x400000, REGION_GFX1, 0 ) /* gfx */
-		ROM_LOAD( "gl10_03.bin",  0x000000, 0x80000, 0xee7853ff )
-		ROM_LOAD( "gl10_04.bin",  0x080000, 0x80000, 0xe17e4fb5 )
-		ROM_LOAD( "gl10_05.bin",  0x100000, 0x80000, 0x0167f589 )
-		ROM_LOAD( "gl10_06.bin",  0x180000, 0x80000, 0xa31a3ab8 )
-		ROM_LOAD( "gl10_07.bin",  0x200000, 0x80000, 0x0d96419f )
-		ROM_LOAD( "gl10_08.bin",  0x280000, 0x80000, 0x777857d0 )
-		ROM_LOAD( "gl10_09.bin",  0x300000, 0x80000, 0xb1dba049 )
-		ROM_LOAD( "gl10_10.bin",  0x380000, 0x80000, 0xa9806b00 )
-	ROM_END
-	
-	ROM_START( mjlaman )
-		ROM_REGION( 0x10000, REGION_CPU1, 0 ) /* main program */
-		ROM_LOAD( "mlmn_01.bin",  0x00000,  0x10000, 0x5974740d )
-	
-		ROM_REGION( 0x20000, REGION_CPU2, 0 ) /* sound program */
-		ROM_LOAD( "mlmn_02.bin",  0x00000,  0x20000, 0x90adede6 )
-	
-		ROM_REGION( 0x400000, REGION_GFX1, 0 ) /* gfx */
-		ROM_LOAD( "mlmn_03.bin",  0x000000, 0x80000, 0xf9c4cda2 )
-		ROM_LOAD( "mlmn_04.bin",  0x080000, 0x80000, 0x576c54d4 )
-		ROM_LOAD( "mlmn_05.bin",  0x100000, 0x80000, 0x0318a070 )
-		ROM_LOAD( "mlmn_06.bin",  0x180000, 0x80000, 0x9ee76f86 )
-	ROM_END
-	
-	ROM_START( mkeibaou )
-		ROM_REGION( 0x10000, REGION_CPU1, 0 ) /* main program */
-		ROM_LOAD( "mkbo_01.bin",  0x00000,  0x10000, 0x2e37b1fb )
-	
-		ROM_REGION( 0x20000, REGION_CPU2, 0 ) /* sound program */
-		ROM_LOAD( "mkbo_02.bin",  0x00000,  0x20000, 0xc9a3109e )
-	
-		ROM_REGION( 0x400000, REGION_GFX1, 0 ) /* gfx */
-		ROM_LOAD( "mkbo_03.bin",  0x000000, 0x80000, 0x671e2fd9 )
-		ROM_LOAD( "mkbo_04.bin",  0x080000, 0x80000, 0x6ae5d3de )
-		ROM_LOAD( "mkbo_05.bin",  0x100000, 0x80000, 0xc57f4532 )
-		ROM_LOAD( "mkbo_06.bin",  0x180000, 0x80000, 0x4b7edeea )
-		ROM_LOAD( "mkbo_07.bin",  0x200000, 0x80000, 0x6cb2e7f4 )
-		ROM_LOAD( "mkbo_08.bin",  0x280000, 0x80000, 0x45ca7512 )
-		ROM_LOAD( "mkbo_09.bin",  0x300000, 0x80000, 0xabc47929 )
-	ROM_END
-	
-	ROM_START( pachiten )
-		ROM_REGION( 0x10000, REGION_CPU1, 0 ) /* main program */
-		ROM_LOAD( "pctn_01.bin",  0x00000,  0x10000, 0xc033d7c6 )
-	
-		ROM_REGION( 0x20000, REGION_CPU2, 0 ) /* sound program */
-		ROM_LOAD( "pctn_02.bin",  0x00000,  0x20000, 0xfe2f0dfa )
-	
-		ROM_REGION( 0x400000, REGION_GFX1, 0 ) /* gfx */
-		ROM_LOAD( "pctn_03.bin",  0x000000, 0x80000, 0x9d9c5956 )
-		ROM_LOAD( "pctn_04.bin",  0x080000, 0x80000, 0x73765b76 )
-		ROM_LOAD( "pctn_05.bin",  0x100000, 0x80000, 0xdb929225 )
-		ROM_LOAD( "pctn_06.bin",  0x180000, 0x80000, 0x4c817293 )
-		ROM_LOAD( "pctn_07.bin",  0x200000, 0x80000, 0x34df5475 )
-		ROM_LOAD( "pctn_08.bin",  0x280000, 0x80000, 0x227a73e5 )
-		ROM_LOAD( "pctn_09.bin",  0x300000, 0x80000, 0x600c738f )
-	ROM_END
-	
-	ROM_START( sailorws )
-		ROM_REGION( 0x10000, REGION_CPU1, 0 ) /* main program */
-		ROM_LOAD( "slws_01.bin",  0x00000,  0x10000, 0x33191e48 )
-	
-		ROM_REGION( 0x20000, REGION_CPU2, 0 ) /* sound program */
-		ROM_LOAD( "slws_02.bin",  0x00000,  0x20000, 0x582f3f29 )
-	
-		ROM_REGION( 0x400000, REGION_GFX1, 0 ) /* gfx */
-		ROM_LOAD( "slws_03.bin",  0x000000, 0x80000, 0x7fe44b0f )
-		ROM_LOAD( "slws_04.bin",  0x080000, 0x80000, 0x8b78a009 )
-		ROM_LOAD( "slws_05.bin",  0x100000, 0x80000, 0x6408aa82 )
-		ROM_LOAD( "slws_06.bin",  0x180000, 0x80000, 0xe01d17f5 )
-		ROM_LOAD( "slws_07.bin",  0x200000, 0x80000, 0xf8f13876 )
-		ROM_LOAD( "slws_08.bin",  0x280000, 0x80000, 0x97ef333d )
-		ROM_LOAD( "slws_09.bin",  0x300000, 0x80000, 0x06cadf34 )
-		ROM_LOAD( "slws_10.bin",  0x380000, 0x80000, 0xdd944b9c )
-	ROM_END
-	
-	ROM_START( sailorwr )
-		ROM_REGION( 0x10000, REGION_CPU1, 0 ) /* main program */
-		ROM_LOAD( "slwr_01.bin",  0x00000,  0x10000, 0xa0d65cd5 )
-	
-		ROM_REGION( 0x20000, REGION_CPU2, 0 ) /* sound program */
-		ROM_LOAD( "slws_02.bin",  0x00000,  0x20000, 0x582f3f29 )
-	
-		ROM_REGION( 0x400000, REGION_GFX1, 0 ) /* gfx */
-		ROM_LOAD( "slwr_03.bin",  0x000000, 0x80000, 0x03c865ae )
-		ROM_LOAD( "slws_04.bin",  0x080000, 0x80000, 0x8b78a009 )
-		ROM_LOAD( "slws_05.bin",  0x100000, 0x80000, 0x6408aa82 )
-		ROM_LOAD( "slws_06.bin",  0x180000, 0x80000, 0xe01d17f5 )
-		ROM_LOAD( "slwr_07.bin",  0x200000, 0x80000, 0x2ee65c0b )
-		ROM_LOAD( "slwr_08.bin",  0x280000, 0x80000, 0xfe72a7fb )
-		ROM_LOAD( "slwr_09.bin",  0x300000, 0x80000, 0x149ec899 )
-		ROM_LOAD( "slwr_10.bin",  0x380000, 0x80000, 0x0cf3da5a )
-	ROM_END
-	
-	ROM_START( psailor1 )
-		ROM_REGION( 0x10000, REGION_CPU1, 0 ) /* main program */
-		ROM_LOAD( "pts1_01.bin",  0x00000,  0x10000, 0xa93dab87 )
-	
-		ROM_REGION( 0x20000, REGION_CPU2, 0 ) /* sound program */
-		ROM_LOAD( "pts1_02.bin",  0x00000,  0x20000, 0x0bcc1a89 )
-	
-		ROM_REGION( 0x400000, REGION_GFX1, 0 ) /* gfx */
-		ROM_LOAD( "pts1_03.bin",  0x000000, 0x80000, 0x4f1c2726 )
-		ROM_LOAD( "pts1_04.bin",  0x080000, 0x80000, 0x52e813e0 )
-		ROM_LOAD( "pts1_05.bin",  0x100000, 0x80000, 0xc7de2894 )
-		ROM_LOAD( "pts1_06.bin",  0x180000, 0x80000, 0xba6617f1 )
-		ROM_LOAD( "pts1_07.bin",  0x200000, 0x80000, 0xa67fc71e )
-		ROM_LOAD( "pts1_08.bin",  0x280000, 0x80000, 0xeb6e20b6 )
-		ROM_LOAD( "pts1_09.bin",  0x300000, 0x80000, 0xea05b513 )
-		ROM_LOAD( "pts1_10.bin",  0x380000, 0x80000, 0x2e50d1e7 )
-	ROM_END
-	
-	ROM_START( psailor2 )
-		ROM_REGION( 0x10000, REGION_CPU1, 0 ) /* main program */
-		ROM_LOAD( "pts2_01.bin",  0x00000,  0x10000, 0x5a94677f )
-	
-		ROM_REGION( 0x20000, REGION_CPU2, 0 ) /* sound program */
-		ROM_LOAD( "pts2_02.bin",  0x00000,  0x20000, 0x3432de51 )
-	
-		ROM_REGION( 0x400000, REGION_GFX1, 0 ) /* gfx */
-		ROM_LOAD( "pts2_03.bin",  0x000000, 0x80000, 0x2b8c992e )
-		ROM_LOAD( "pts2_04.bin",  0x080000, 0x80000, 0xfea2d719 )
-		ROM_LOAD( "pts2_05.bin",  0x100000, 0x80000, 0xbab4bcb5 )
-		ROM_LOAD( "pts2_06.bin",  0x180000, 0x80000, 0x0bc750e2 )
-		ROM_LOAD( "pts2_07.bin",  0x200000, 0x80000, 0x9a0f2cc5 )
-		ROM_LOAD( "pts2_08.bin",  0x280000, 0x80000, 0xed617dda )
-		ROM_LOAD( "pts2_09.bin",  0x300000, 0x80000, 0x7dded702 )
-		ROM_LOAD( "pts2_10.bin",  0x380000, 0x80000, 0x7c0863c7 )
-	ROM_END
-	
-	ROM_START( otatidai )
-		ROM_REGION( 0x10000, REGION_CPU1, 0 ) /* main program */
-		ROM_LOAD( "otcd_01.bin",  0x00000,  0x10000, 0xa68acf90 )
-	
-		ROM_REGION( 0x20000, REGION_CPU2, 0 ) /* sound program */
-		ROM_LOAD( "otcd_02.bin",  0x00000,  0x20000, 0x30ed0e78 )
-	
-		ROM_REGION( 0x400000, REGION_GFX1, 0 ) /* gfx */
-		ROM_LOAD( "otcd_03.bin",  0x000000, 0x80000, 0xbf2cfc6b )
-		ROM_LOAD( "otcd_04.bin",  0x080000, 0x80000, 0x76e9b597 )
-		ROM_LOAD( "otcd_05.bin",  0x100000, 0x80000, 0x4e30e3b5 )
-		ROM_LOAD( "otcd_06.bin",  0x180000, 0x80000, 0x5523d26e )
-		ROM_LOAD( "otcd_07.bin",  0x200000, 0x80000, 0x8e86cc54 )
-		ROM_LOAD( "otcd_08.bin",  0x280000, 0x80000, 0x8f92bc5c )
-		ROM_LOAD( "otcd_09.bin",  0x300000, 0x80000, 0xe1c6c345 )
-		ROM_LOAD( "otcd_10.bin",  0x380000, 0x80000, 0x20f74d5b )
-	ROM_END
-	
-	ROM_START( ngpgal )
-		ROM_REGION( 0x10000, REGION_CPU1, 0 ) /* main program */
-		ROM_LOAD( "ngpg_01.bin",  0x00000,  0x10000, 0xc766378b )
-	
-		ROM_REGION( 0x20000, REGION_CPU2, 0 ) /* sound program */
-		ROM_LOAD( "ngpg_02.bin",  0x00000,  0x20000, 0xd193a2e1 )
-	
-		ROM_REGION( 0x280000, REGION_GFX1, 0 ) /* gfx */
-		ROM_LOAD( "ngpg_03.bin",  0x000000, 0x20000, 0x1f7bd813 )
-		ROM_LOAD( "ngpg_04.bin",  0x020000, 0x20000, 0x4f5bd948 )
-		ROM_LOAD( "ngpg_05.bin",  0x040000, 0x20000, 0xab65bcc9 )
-		ROM_LOAD( "ngpg_06.bin",  0x060000, 0x20000, 0x0f469db1 )
-		ROM_LOAD( "ngpg_07.bin",  0x080000, 0x20000, 0x637098a9 )
-		ROM_LOAD( "ngpg_08.bin",  0x0a0000, 0x20000, 0x2452d06e )
-		ROM_LOAD( "ngpg_09.bin",  0x0c0000, 0x20000, 0xda5dded0 )
-		ROM_LOAD( "ngpg_10.bin",  0x0e0000, 0x20000, 0x94201d03 )
-		ROM_LOAD( "ngpg_11.bin",  0x100000, 0x20000, 0x2bfc5d06 )
-		ROM_LOAD( "ngpg_12.bin",  0x120000, 0x20000, 0xa7e6ecc2 )
-		ROM_LOAD( "ngpg_13.bin",  0x140000, 0x20000, 0x5c43e71b )
-		ROM_LOAD( "ngpg_14.bin",  0x160000, 0x20000, 0xe8b6802f )
-		ROM_LOAD( "ngpg_15.bin",  0x180000, 0x20000, 0x7294b5ee )
-		ROM_LOAD( "ngpg_16.bin",  0x1a0000, 0x20000, 0x3a1f7366 )
-		ROM_LOAD( "ngpg_17.bin",  0x1c0000, 0x20000, 0x0b44f64e )
-	ROM_END
-	
-	ROM_START( mjgottsu )
-		ROM_REGION( 0x10000, REGION_CPU1, 0 ) /* main program */
-		ROM_LOAD( "mgek_01.bin",  0x00000,  0x10000, 0x949676d7 )
-	
-		ROM_REGION( 0x20000, REGION_CPU2, 0 ) /* sound program */
-		ROM_LOAD( "2.8d",  0x00000,  0x20000, 0x52c6a1a1 )
-	
-		ROM_REGION( 0x280000, REGION_GFX1, 0 ) /* gfx */
-		ROM_LOAD( "3.1k",         0x000000, 0x20000, 0x58528909 )
-		ROM_LOAD( "4.2k",         0x020000, 0x20000, 0xd09ad54d )
-		ROM_LOAD( "5.3k",         0x040000, 0x20000, 0x40346785 )
-		ROM_LOAD( "mgek_06.bin",  0x060000, 0x20000, 0xe96635e1 )
-		ROM_LOAD( "mgek_07.bin",  0x080000, 0x20000, 0x174d7ad6 )
-		ROM_LOAD( "mgek_08.bin",  0x0a0000, 0x20000, 0x65fd9c90 )
-		ROM_LOAD( "mgek_09.bin",  0x0c0000, 0x20000, 0x417cd914 )
-		ROM_LOAD( "mgek_10.bin",  0x0e0000, 0x20000, 0x1151414e )
-		ROM_LOAD( "mgek_11.bin",  0x100000, 0x20000, 0x2ffd55be )
-		ROM_LOAD( "mgek_12.bin",  0x120000, 0x20000, 0x7a731fa9 )
-		ROM_LOAD( "mgek_13.bin",  0x140000, 0x20000, 0x6d4e56f7 )
-		ROM_LOAD( "mgek_14.bin",  0x160000, 0x20000, 0xde3a675c )
-		ROM_LOAD( "mgek_15.bin",  0x180000, 0x20000, 0xe1d6d504 )
-		ROM_LOAD( "mgek_16.bin",  0x1a0000, 0x20000, 0xca1bca8d )
-		ROM_LOAD( "mgek_17.bin",  0x1c0000, 0x20000, 0xa69973ad )
-		ROM_LOAD( "mgek_18.bin",  0x1e0000, 0x20000, 0xd7ad46da )
-	ROM_END
-	
-	ROM_START( bakuhatu )
-		ROM_REGION( 0x10000, REGION_CPU1, 0 ) /* main program */
-		ROM_LOAD( "1.4c",  0x00000,  0x10000, 0x687900ed )
-	
-		ROM_REGION( 0x20000, REGION_CPU2, 0 ) /* sound program */
-		ROM_LOAD( "2.8d",  0x00000,  0x20000, 0x52c6a1a1 )
-	
-		ROM_REGION( 0x280000, REGION_GFX1, 0 ) /* gfx */
-		ROM_LOAD( "3.1k",   0x000000, 0x20000, 0x58528909 )
-		ROM_LOAD( "4.2k",   0x020000, 0x20000, 0xd09ad54d )
-		ROM_LOAD( "5.3k",   0x040000, 0x20000, 0x40346785 )
-		ROM_LOAD( "6.4k",   0x060000, 0x20000, 0x772a6753 )
-		ROM_LOAD( "7.5k",   0x080000, 0x20000, 0x3ab6b0b5 )
-		ROM_LOAD( "8.6k",   0x0a0000, 0x20000, 0x5b1ca742 )
-		ROM_LOAD( "9.7k",   0x0c0000, 0x20000, 0xf177fae1 )
-		ROM_LOAD( "10.8k",  0x0e0000, 0x20000, 0xe9003e4d )
-		ROM_LOAD( "11.10k", 0x100000, 0x20000, 0xc08d835e )
-		ROM_LOAD( "12.11k", 0x120000, 0x20000, 0xae3cbba7 )
-		ROM_LOAD( "13.1l",  0x140000, 0x20000, 0x1c402b12 )
-		ROM_LOAD( "14.2l",  0x160000, 0x20000, 0x7bb49eaf )
-		ROM_LOAD( "15.3l",  0x180000, 0x20000, 0xd0844179 )
-		ROM_LOAD( "16.4l",  0x1a0000, 0x20000, 0x5fe47077 )
-		ROM_LOAD( "17.5l",  0x1c0000, 0x20000, 0x9eab0682 )
-		ROM_LOAD( "18.6l",  0x1e0000, 0x20000, 0x2b14cd5e )
-	ROM_END
-	
-	ROM_START( cmehyou )
-		ROM_REGION( 0x10000, REGION_CPU1, 0 ) /* main program */
-		ROM_LOAD( "cmhy_01.bin",  0x00000,  0x10000, 0x436dfa6c )
-	
-		ROM_REGION( 0x20000, REGION_CPU2, 0 ) /* sound program */
-		ROM_LOAD( "cmhy_02.bin",  0x00000,  0x20000, 0xd193a2e1 )
-	
-		ROM_REGION( 0x280000, REGION_GFX1, 0 ) /* gfx */
-		ROM_LOAD( "cmhy_03.bin",  0x000000, 0x20000, 0x1f7bd813 )
-		ROM_LOAD( "cmhy_04.bin",  0x020000, 0x20000, 0xbdb3de8b )
-		ROM_LOAD( "cmhy_05.bin",  0x040000, 0x20000, 0x4f686de2 )
-		ROM_LOAD( "cmhy_06.bin",  0x060000, 0x20000, 0xddd1ac23 )
-		ROM_LOAD( "cmhy_07.bin",  0x080000, 0x20000, 0xf7c5367f )
-		ROM_LOAD( "cmhy_08.bin",  0x0a0000, 0x20000, 0xf8eecdb5 )
-		ROM_LOAD( "cmhy_09.bin",  0x0c0000, 0x20000, 0x11e2bbdf )
-		ROM_LOAD( "cmhy_10.bin",  0x0e0000, 0x20000, 0xbbe489ae )
-		ROM_LOAD( "cmhy_11.bin",  0x100000, 0x20000, 0x338efc1f )
-		ROM_LOAD( "cmhy_12.bin",  0x120000, 0x20000, 0x6d9f9359 )
-		ROM_LOAD( "cmhy_13.bin",  0x140000, 0x20000, 0x5c43e71b )
-		ROM_LOAD( "cmhy_14.bin",  0x160000, 0x20000, 0xe8b6802f )
-		ROM_LOAD( "cmhy_15.bin",  0x180000, 0x20000, 0xf7674a64 )
-		ROM_LOAD( "cmhy_16.bin",  0x1a0000, 0x20000, 0x3a1f7366 )
-		ROM_LOAD( "cmhy_17.bin",  0x1c0000, 0x20000, 0x1b8f6e4c )
-		ROM_LOAD( "cmhy_18.bin",  0x1e0000, 0x20000, 0xfb86f955 )
-		ROM_LOAD( "cmhy_19.bin",  0x200000, 0x20000, 0xfc89fa4f )
-	ROM_END
-	
-	ROM_START( mjkoiura )
-		ROM_REGION( 0x10000, REGION_CPU1, 0 ) /* main program */
-		ROM_LOAD( "mjku_01.bin",  0x00000,  0x10000, 0xef9ae73e )
-	
-		ROM_REGION( 0x20000, REGION_CPU2, 0 ) /* sound program */
-		ROM_LOAD( "mjku_02.bin",  0x00000,  0x20000, 0x3a230c22 )
-	
-		ROM_REGION( 0x280000, REGION_GFX1, 0 ) /* gfx */
-		ROM_LOAD( "mjku_03.bin",  0x000000, 0x20000, 0x59432ccf )
-		ROM_LOAD( "mjku_04.bin",  0x020000, 0x20000, 0xdf5816cb )
-		ROM_LOAD( "mjku_05.bin",  0x040000, 0x20000, 0xbf01b952 )
-		ROM_LOAD( "mjku_06.bin",  0x060000, 0x20000, 0x2dea05ef )
-		ROM_LOAD( "mjku_07.bin",  0x080000, 0x20000, 0xc7843126 )
-		ROM_LOAD( "mjku_08.bin",  0x0a0000, 0x20000, 0xc7f2fc2d )
-		ROM_LOAD( "mjku_09.bin",  0x0c0000, 0x20000, 0x816b2a36 )
-		ROM_LOAD( "mjku_10.bin",  0x0e0000, 0x20000, 0xc417fe11 )
-		ROM_LOAD( "mjku_11.bin",  0x100000, 0x20000, 0x9e1914e2 )
-		ROM_LOAD( "mjku_12.bin",  0x120000, 0x20000, 0x03607cec )
-		ROM_LOAD( "mjku_13.bin",  0x140000, 0x20000, 0x18018e08 )
-		ROM_LOAD( "mjku_14.bin",  0x160000, 0x20000, 0x4e835fc0 )
-		ROM_LOAD( "mjku_15.bin",  0x180000, 0x20000, 0x8fe50109 )
-		ROM_LOAD( "mjku_16.bin",  0x1a0000, 0x20000, 0xdc5b8688 )
-		ROM_LOAD( "mjku_17.bin",  0x1c0000, 0x20000, 0x8579a7b8 )
-		ROM_LOAD( "mjku_18.bin",  0x1e0000, 0x20000, 0xc5e330a4 )
-		ROM_LOAD( "mjku_21.bin",  0x240000, 0x20000, 0x585998bd )
-		ROM_LOAD( "mjku_22.bin",  0x260000, 0x20000, 0x64af3e5d )
-	ROM_END
-	
-	ROM_START( mscoutm )
-		ROM_REGION( 0x10000, REGION_CPU1, 0 ) /* main program */
-		ROM_LOAD( "mscm_01.bin",  0x00000,  0x10000, 0x9840ccd8 )
-	
-		ROM_REGION( 0x20000, REGION_CPU2, 0 ) /* sound program */
-		ROM_LOAD( "mscm_02.bin",  0x00000,  0x20000, 0x4d2cbcab )
-	
-		ROM_REGION( 0x400000, REGION_GFX1, 0 ) /* gfx */
-		ROM_LOAD( "mscm_03.bin",  0x000000, 0x80000, 0xfae64c95 )
-		ROM_LOAD( "mscm_04.bin",  0x080000, 0x80000, 0x03c80712 )
-		ROM_LOAD( "mscm_05.bin",  0x100000, 0x80000, 0x107659f3 )
-		ROM_LOAD( "mscm_06.bin",  0x180000, 0x80000, 0x61f7fa86 )
-		ROM_LOAD( "mscm_07.bin",  0x200000, 0x80000, 0x10a71690 )
-		ROM_LOAD( "mscm_08.bin",  0x280000, 0x80000, 0x3b55ef93 )
-		ROM_LOAD( "mscm_09.bin",  0x300000, 0x80000, 0x5823d565 )
-		ROM_LOAD( "mscm_10.bin",  0x380000, 0x80000, 0xc6d44c0e )
-	ROM_END
-	
-	ROM_START( imekura )
-		ROM_REGION( 0x10000, REGION_CPU1, 0 ) /* main program */
-		ROM_LOAD( "1.103",  0x00000,  0x10000, 0x3491083b )
-	
-		ROM_REGION( 0x20000, REGION_CPU2, 0 ) /* sound program */
-		ROM_LOAD( "2.804",  0x00000,  0x20000, 0x1ef3e8f0 )
-	
-		ROM_REGION( 0x400000, REGION_GFX1, 0 ) /* gfx */
-		ROM_LOAD( "03.602",  0x000000, 0x80000, 0x1eb05df4 )
-		ROM_LOAD( "04.603",  0x080000, 0x80000, 0x48fefd7d )
-		ROM_LOAD( "05.604",  0x100000, 0x80000, 0x934699a8 )
-		ROM_LOAD( "06.605",  0x180000, 0x80000, 0xef97182d )
-		ROM_LOAD( "07.606",  0x200000, 0x80000, 0xe3c6e401 )
-		ROM_LOAD( "08.607",  0x280000, 0x80000, 0x08efb2bf )
-		ROM_LOAD( "09.608",  0x300000, 0x80000, 0x94606c32 )
-		ROM_LOAD( "10.609",  0x380000, 0x80000, 0x79958b86 )
-	ROM_END
-	
-	ROM_START( mjegolf )
-		ROM_REGION( 0x10000, REGION_CPU1, 0 ) /* main program */
-		ROM_LOAD( "metg_01.bin",  0x00000,  0x10000, 0x1d7c2fcc )
-	
-		ROM_REGION( 0x20000, REGION_CPU2, 0 ) /* sound program */
-		ROM_LOAD( "metg_02.bin",  0x00000,  0x20000, 0x99f419cf )
-	
-		ROM_REGION( 0x400000, REGION_GFX1, 0 ) /* gfx */
-		ROM_LOAD( "metg_03.bin",  0x000000, 0x80000, 0x99097d30 )
-		ROM_LOAD( "metg_04.bin",  0x080000, 0x80000, 0x9f1822b8 )
-		ROM_LOAD( "metg_05.bin",  0x100000, 0x80000, 0x44b88726 )
-		ROM_LOAD( "metg_06.bin",  0x180000, 0x80000, 0x59ad0d78 )
-		ROM_LOAD( "metg_07.bin",  0x200000, 0x80000, 0x2d8b02d6 )
-		ROM_LOAD( "metg_08.bin",  0x280000, 0x80000, 0xf64e16fb )
-		ROM_LOAD( "metg_09.bin",  0x300000, 0x80000, 0x4231de76 )
-		ROM_LOAD( "metg_10.bin",  0x380000, 0x80000, 0xe91c7adf )
-	ROM_END
+	static RomLoadPtr rom_mjuraden = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x10000, REGION_CPU1, 0 );/* main program */
+		ROM_LOAD( "1.7c",   0x00000,  0x10000, 0x3b142791 );
+	
+		ROM_REGION( 0x20000, REGION_CPU2, 0 );/* sound program */
+		ROM_LOAD( "2.13e",  0x00000,  0x20000, 0x3a230c22 );
+	
+		ROM_REGION( 0x400000, REGION_GFX1, 0 );/* gfx */
+		ROM_LOAD( "3.1h",   0x000000, 0x80000, 0x6face365 );
+		ROM_LOAD( "4.3h",   0x080000, 0x80000, 0x6b7b0518 );
+		ROM_LOAD( "5.5h",   0x100000, 0x80000, 0x43396517 );
+		ROM_LOAD( "6.6h",   0x180000, 0x80000, 0x32cd3450 );
+		ROM_LOAD( "9.11h",  0x240000, 0x20000, 0x585998bd );
+		ROM_LOAD( "10.12h", 0x260000, 0x20000, 0x58220c2a );
+	ROM_END(); }}; 
+	
+	static RomLoadPtr rom_koinomp = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x10000, REGION_CPU1, 0 );/* main program */
+		ROM_LOAD( "1.7c",   0x00000,  0x10000, 0xe4d626fc );
+	
+		ROM_REGION( 0x20000, REGION_CPU2, 0 );/* sound program */
+		ROM_LOAD( "2.13e",  0x00000,  0x20000, 0x4a5c814b );
+	
+		ROM_REGION( 0x400000, REGION_GFX1, 0 );/* gfx */
+		ROM_LOAD( "3.1h",   0x000000, 0x80000, 0x1f16d3a1 );
+		ROM_LOAD( "4.3h",   0x080000, 0x80000, 0xf00b1a11 );
+		ROM_LOAD( "5.5h",   0x100000, 0x80000, 0xb1ae17b3 );
+		ROM_LOAD( "6.6h",   0x180000, 0x80000, 0xbb863b58 );
+		ROM_LOAD( "7.7h",   0x200000, 0x80000, 0x2a3acd8c );
+		ROM_LOAD( "8.9h",   0x280000, 0x80000, 0x595a643a );
+		ROM_LOAD( "9.10h",  0x300000, 0x80000, 0x28e68e7b );
+		ROM_LOAD( "10.12h", 0x380000, 0x80000, 0xa598f152 );
+	ROM_END(); }}; 
+	
+	static RomLoadPtr rom_patimono = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x10000, REGION_CPU1, 0 );/* main program */
+		ROM_LOAD( "1.7c",   0x00000,  0x10000, 0xe4860829 );
+	
+		ROM_REGION( 0x20000, REGION_CPU2, 0 );/* sound program */
+		ROM_LOAD( "2.13e",  0x00000,  0x20000, 0x30770363 );
+	
+		ROM_REGION( 0x400000, REGION_GFX1, 0 );/* gfx */
+		ROM_LOAD( "3.1h",   0x000000, 0x80000, 0x56cbf448 );
+		ROM_LOAD( "4.3h",   0x080000, 0x80000, 0x4dd19093 );
+		ROM_LOAD( "5.5h",   0x100000, 0x80000, 0x63cdc4fe );
+		ROM_LOAD( "6.6h",   0x180000, 0x80000, 0x6057cb66 );
+		ROM_LOAD( "7.7h",   0x200000, 0x80000, 0x309ea3d5 );
+		ROM_LOAD( "8.9h",   0x280000, 0x80000, 0x6da16cdd );
+		ROM_LOAD( "9.10h",  0x300000, 0x80000, 0xc6064b3b );
+	ROM_END(); }}; 
+	
+	static RomLoadPtr rom_mjanbari = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x10000, REGION_CPU1, 0 );/* main program */
+		ROM_LOAD( "11.7c",  0x00000,  0x10000, 0x1edde2ef );
+	
+		ROM_REGION( 0x20000, REGION_CPU2, 0 );/* sound program */
+		ROM_LOAD( "2.13e",  0x00000,  0x20000, 0x30770363 );
+	
+		ROM_REGION( 0x400000, REGION_GFX1, 0 );/* gfx */
+		ROM_LOAD( "3.1h",   0x000000, 0x80000, 0x0fb21d13 );
+		ROM_LOAD( "4.3h",   0x080000, 0x80000, 0x4dd19093 );
+		ROM_LOAD( "5.5h",   0x100000, 0x80000, 0xf5748587 );
+		ROM_LOAD( "6.6h",   0x180000, 0x80000, 0x9aaf6aa4 );
+		ROM_LOAD( "7.7h",   0x200000, 0x80000, 0x34df5475 );
+		ROM_LOAD( "8.9h",   0x280000, 0x80000, 0xd4d74ec3 );
+		ROM_LOAD( "9.10h",  0x300000, 0x80000, 0xf7958466 );
+	ROM_END(); }}; 
+	
+	static RomLoadPtr rom_mmehyou = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x10000, REGION_CPU1, 0 );/* main program */
+		ROM_LOAD( "1.7c",  0x00000,  0x10000, 0x29d51130 );
+	
+		ROM_REGION( 0x20000, REGION_CPU2, 0 );/* sound program */
+		ROM_LOAD( "2.13e", 0x00000,  0x20000, 0xd193a2e1 );
+	
+		ROM_REGION( 0x260000, REGION_GFX1, 0 );/* gfx */
+		ROM_LOAD( "3.1h",  0x000000, 0x80000, 0xe4caab61 );
+		ROM_LOAD( "4.3h",  0x080000, 0x80000, 0xbbb20aef );
+		ROM_LOAD( "5.5h",  0x100000, 0x80000, 0xff59c4c9 );
+		ROM_LOAD( "6.6h",  0x180000, 0x80000, 0xd20f9b92 );
+		ROM_LOAD( "7.7h",  0x200000, 0x20000, 0xd78dfbe2 );
+		ROM_LOAD( "8.9h",  0x220000, 0x20000, 0x92160e9b );
+		ROM_LOAD( "9.10h", 0x240000, 0x20000, 0x18a72f2e );
+	ROM_END(); }}; 
+	
+	static RomLoadPtr rom_gal10ren = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x10000, REGION_CPU1, 0 );/* main program */
+		ROM_LOAD( "gl10_01.bin",  0x00000,  0x10000, 0xf63f81b4 );
+	
+		ROM_REGION( 0x20000, REGION_CPU2, 0 );/* sound program */
+		ROM_LOAD( "gl10_02.bin",  0x00000,  0x20000, 0x1317b788 );
+	
+		ROM_REGION( 0x400000, REGION_GFX1, 0 );/* gfx */
+		ROM_LOAD( "gl10_03.bin",  0x000000, 0x80000, 0xee7853ff );
+		ROM_LOAD( "gl10_04.bin",  0x080000, 0x80000, 0xe17e4fb5 );
+		ROM_LOAD( "gl10_05.bin",  0x100000, 0x80000, 0x0167f589 );
+		ROM_LOAD( "gl10_06.bin",  0x180000, 0x80000, 0xa31a3ab8 );
+		ROM_LOAD( "gl10_07.bin",  0x200000, 0x80000, 0x0d96419f );
+		ROM_LOAD( "gl10_08.bin",  0x280000, 0x80000, 0x777857d0 );
+		ROM_LOAD( "gl10_09.bin",  0x300000, 0x80000, 0xb1dba049 );
+		ROM_LOAD( "gl10_10.bin",  0x380000, 0x80000, 0xa9806b00 );
+	ROM_END(); }}; 
+	
+	static RomLoadPtr rom_mjlaman = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x10000, REGION_CPU1, 0 );/* main program */
+		ROM_LOAD( "mlmn_01.bin",  0x00000,  0x10000, 0x5974740d );
+	
+		ROM_REGION( 0x20000, REGION_CPU2, 0 );/* sound program */
+		ROM_LOAD( "mlmn_02.bin",  0x00000,  0x20000, 0x90adede6 );
+	
+		ROM_REGION( 0x400000, REGION_GFX1, 0 );/* gfx */
+		ROM_LOAD( "mlmn_03.bin",  0x000000, 0x80000, 0xf9c4cda2 );
+		ROM_LOAD( "mlmn_04.bin",  0x080000, 0x80000, 0x576c54d4 );
+		ROM_LOAD( "mlmn_05.bin",  0x100000, 0x80000, 0x0318a070 );
+		ROM_LOAD( "mlmn_06.bin",  0x180000, 0x80000, 0x9ee76f86 );
+	ROM_END(); }}; 
+	
+	static RomLoadPtr rom_mkeibaou = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x10000, REGION_CPU1, 0 );/* main program */
+		ROM_LOAD( "mkbo_01.bin",  0x00000,  0x10000, 0x2e37b1fb );
+	
+		ROM_REGION( 0x20000, REGION_CPU2, 0 );/* sound program */
+		ROM_LOAD( "mkbo_02.bin",  0x00000,  0x20000, 0xc9a3109e );
+	
+		ROM_REGION( 0x400000, REGION_GFX1, 0 );/* gfx */
+		ROM_LOAD( "mkbo_03.bin",  0x000000, 0x80000, 0x671e2fd9 );
+		ROM_LOAD( "mkbo_04.bin",  0x080000, 0x80000, 0x6ae5d3de );
+		ROM_LOAD( "mkbo_05.bin",  0x100000, 0x80000, 0xc57f4532 );
+		ROM_LOAD( "mkbo_06.bin",  0x180000, 0x80000, 0x4b7edeea );
+		ROM_LOAD( "mkbo_07.bin",  0x200000, 0x80000, 0x6cb2e7f4 );
+		ROM_LOAD( "mkbo_08.bin",  0x280000, 0x80000, 0x45ca7512 );
+		ROM_LOAD( "mkbo_09.bin",  0x300000, 0x80000, 0xabc47929 );
+	ROM_END(); }}; 
+	
+	static RomLoadPtr rom_pachiten = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x10000, REGION_CPU1, 0 );/* main program */
+		ROM_LOAD( "pctn_01.bin",  0x00000,  0x10000, 0xc033d7c6 );
+	
+		ROM_REGION( 0x20000, REGION_CPU2, 0 );/* sound program */
+		ROM_LOAD( "pctn_02.bin",  0x00000,  0x20000, 0xfe2f0dfa );
+	
+		ROM_REGION( 0x400000, REGION_GFX1, 0 );/* gfx */
+		ROM_LOAD( "pctn_03.bin",  0x000000, 0x80000, 0x9d9c5956 );
+		ROM_LOAD( "pctn_04.bin",  0x080000, 0x80000, 0x73765b76 );
+		ROM_LOAD( "pctn_05.bin",  0x100000, 0x80000, 0xdb929225 );
+		ROM_LOAD( "pctn_06.bin",  0x180000, 0x80000, 0x4c817293 );
+		ROM_LOAD( "pctn_07.bin",  0x200000, 0x80000, 0x34df5475 );
+		ROM_LOAD( "pctn_08.bin",  0x280000, 0x80000, 0x227a73e5 );
+		ROM_LOAD( "pctn_09.bin",  0x300000, 0x80000, 0x600c738f );
+	ROM_END(); }}; 
+	
+	static RomLoadPtr rom_sailorws = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x10000, REGION_CPU1, 0 );/* main program */
+		ROM_LOAD( "slws_01.bin",  0x00000,  0x10000, 0x33191e48 );
+	
+		ROM_REGION( 0x20000, REGION_CPU2, 0 );/* sound program */
+		ROM_LOAD( "slws_02.bin",  0x00000,  0x20000, 0x582f3f29 );
+	
+		ROM_REGION( 0x400000, REGION_GFX1, 0 );/* gfx */
+		ROM_LOAD( "slws_03.bin",  0x000000, 0x80000, 0x7fe44b0f );
+		ROM_LOAD( "slws_04.bin",  0x080000, 0x80000, 0x8b78a009 );
+		ROM_LOAD( "slws_05.bin",  0x100000, 0x80000, 0x6408aa82 );
+		ROM_LOAD( "slws_06.bin",  0x180000, 0x80000, 0xe01d17f5 );
+		ROM_LOAD( "slws_07.bin",  0x200000, 0x80000, 0xf8f13876 );
+		ROM_LOAD( "slws_08.bin",  0x280000, 0x80000, 0x97ef333d );
+		ROM_LOAD( "slws_09.bin",  0x300000, 0x80000, 0x06cadf34 );
+		ROM_LOAD( "slws_10.bin",  0x380000, 0x80000, 0xdd944b9c );
+	ROM_END(); }}; 
+	
+	static RomLoadPtr rom_sailorwr = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x10000, REGION_CPU1, 0 );/* main program */
+		ROM_LOAD( "slwr_01.bin",  0x00000,  0x10000, 0xa0d65cd5 );
+	
+		ROM_REGION( 0x20000, REGION_CPU2, 0 );/* sound program */
+		ROM_LOAD( "slws_02.bin",  0x00000,  0x20000, 0x582f3f29 );
+	
+		ROM_REGION( 0x400000, REGION_GFX1, 0 );/* gfx */
+		ROM_LOAD( "slwr_03.bin",  0x000000, 0x80000, 0x03c865ae );
+		ROM_LOAD( "slws_04.bin",  0x080000, 0x80000, 0x8b78a009 );
+		ROM_LOAD( "slws_05.bin",  0x100000, 0x80000, 0x6408aa82 );
+		ROM_LOAD( "slws_06.bin",  0x180000, 0x80000, 0xe01d17f5 );
+		ROM_LOAD( "slwr_07.bin",  0x200000, 0x80000, 0x2ee65c0b );
+		ROM_LOAD( "slwr_08.bin",  0x280000, 0x80000, 0xfe72a7fb );
+		ROM_LOAD( "slwr_09.bin",  0x300000, 0x80000, 0x149ec899 );
+		ROM_LOAD( "slwr_10.bin",  0x380000, 0x80000, 0x0cf3da5a );
+	ROM_END(); }}; 
+	
+	static RomLoadPtr rom_psailor1 = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x10000, REGION_CPU1, 0 );/* main program */
+		ROM_LOAD( "pts1_01.bin",  0x00000,  0x10000, 0xa93dab87 );
+	
+		ROM_REGION( 0x20000, REGION_CPU2, 0 );/* sound program */
+		ROM_LOAD( "pts1_02.bin",  0x00000,  0x20000, 0x0bcc1a89 );
+	
+		ROM_REGION( 0x400000, REGION_GFX1, 0 );/* gfx */
+		ROM_LOAD( "pts1_03.bin",  0x000000, 0x80000, 0x4f1c2726 );
+		ROM_LOAD( "pts1_04.bin",  0x080000, 0x80000, 0x52e813e0 );
+		ROM_LOAD( "pts1_05.bin",  0x100000, 0x80000, 0xc7de2894 );
+		ROM_LOAD( "pts1_06.bin",  0x180000, 0x80000, 0xba6617f1 );
+		ROM_LOAD( "pts1_07.bin",  0x200000, 0x80000, 0xa67fc71e );
+		ROM_LOAD( "pts1_08.bin",  0x280000, 0x80000, 0xeb6e20b6 );
+		ROM_LOAD( "pts1_09.bin",  0x300000, 0x80000, 0xea05b513 );
+		ROM_LOAD( "pts1_10.bin",  0x380000, 0x80000, 0x2e50d1e7 );
+	ROM_END(); }}; 
+	
+	static RomLoadPtr rom_psailor2 = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x10000, REGION_CPU1, 0 );/* main program */
+		ROM_LOAD( "pts2_01.bin",  0x00000,  0x10000, 0x5a94677f );
+	
+		ROM_REGION( 0x20000, REGION_CPU2, 0 );/* sound program */
+		ROM_LOAD( "pts2_02.bin",  0x00000,  0x20000, 0x3432de51 );
+	
+		ROM_REGION( 0x400000, REGION_GFX1, 0 );/* gfx */
+		ROM_LOAD( "pts2_03.bin",  0x000000, 0x80000, 0x2b8c992e );
+		ROM_LOAD( "pts2_04.bin",  0x080000, 0x80000, 0xfea2d719 );
+		ROM_LOAD( "pts2_05.bin",  0x100000, 0x80000, 0xbab4bcb5 );
+		ROM_LOAD( "pts2_06.bin",  0x180000, 0x80000, 0x0bc750e2 );
+		ROM_LOAD( "pts2_07.bin",  0x200000, 0x80000, 0x9a0f2cc5 );
+		ROM_LOAD( "pts2_08.bin",  0x280000, 0x80000, 0xed617dda );
+		ROM_LOAD( "pts2_09.bin",  0x300000, 0x80000, 0x7dded702 );
+		ROM_LOAD( "pts2_10.bin",  0x380000, 0x80000, 0x7c0863c7 );
+	ROM_END(); }}; 
+	
+	static RomLoadPtr rom_otatidai = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x10000, REGION_CPU1, 0 );/* main program */
+		ROM_LOAD( "otcd_01.bin",  0x00000,  0x10000, 0xa68acf90 );
+	
+		ROM_REGION( 0x20000, REGION_CPU2, 0 );/* sound program */
+		ROM_LOAD( "otcd_02.bin",  0x00000,  0x20000, 0x30ed0e78 );
+	
+		ROM_REGION( 0x400000, REGION_GFX1, 0 );/* gfx */
+		ROM_LOAD( "otcd_03.bin",  0x000000, 0x80000, 0xbf2cfc6b );
+		ROM_LOAD( "otcd_04.bin",  0x080000, 0x80000, 0x76e9b597 );
+		ROM_LOAD( "otcd_05.bin",  0x100000, 0x80000, 0x4e30e3b5 );
+		ROM_LOAD( "otcd_06.bin",  0x180000, 0x80000, 0x5523d26e );
+		ROM_LOAD( "otcd_07.bin",  0x200000, 0x80000, 0x8e86cc54 );
+		ROM_LOAD( "otcd_08.bin",  0x280000, 0x80000, 0x8f92bc5c );
+		ROM_LOAD( "otcd_09.bin",  0x300000, 0x80000, 0xe1c6c345 );
+		ROM_LOAD( "otcd_10.bin",  0x380000, 0x80000, 0x20f74d5b );
+	ROM_END(); }}; 
+	
+	static RomLoadPtr rom_ngpgal = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x10000, REGION_CPU1, 0 );/* main program */
+		ROM_LOAD( "ngpg_01.bin",  0x00000,  0x10000, 0xc766378b );
+	
+		ROM_REGION( 0x20000, REGION_CPU2, 0 );/* sound program */
+		ROM_LOAD( "ngpg_02.bin",  0x00000,  0x20000, 0xd193a2e1 );
+	
+		ROM_REGION( 0x280000, REGION_GFX1, 0 );/* gfx */
+		ROM_LOAD( "ngpg_03.bin",  0x000000, 0x20000, 0x1f7bd813 );
+		ROM_LOAD( "ngpg_04.bin",  0x020000, 0x20000, 0x4f5bd948 );
+		ROM_LOAD( "ngpg_05.bin",  0x040000, 0x20000, 0xab65bcc9 );
+		ROM_LOAD( "ngpg_06.bin",  0x060000, 0x20000, 0x0f469db1 );
+		ROM_LOAD( "ngpg_07.bin",  0x080000, 0x20000, 0x637098a9 );
+		ROM_LOAD( "ngpg_08.bin",  0x0a0000, 0x20000, 0x2452d06e );
+		ROM_LOAD( "ngpg_09.bin",  0x0c0000, 0x20000, 0xda5dded0 );
+		ROM_LOAD( "ngpg_10.bin",  0x0e0000, 0x20000, 0x94201d03 );
+		ROM_LOAD( "ngpg_11.bin",  0x100000, 0x20000, 0x2bfc5d06 );
+		ROM_LOAD( "ngpg_12.bin",  0x120000, 0x20000, 0xa7e6ecc2 );
+		ROM_LOAD( "ngpg_13.bin",  0x140000, 0x20000, 0x5c43e71b );
+		ROM_LOAD( "ngpg_14.bin",  0x160000, 0x20000, 0xe8b6802f );
+		ROM_LOAD( "ngpg_15.bin",  0x180000, 0x20000, 0x7294b5ee );
+		ROM_LOAD( "ngpg_16.bin",  0x1a0000, 0x20000, 0x3a1f7366 );
+		ROM_LOAD( "ngpg_17.bin",  0x1c0000, 0x20000, 0x0b44f64e );
+	ROM_END(); }}; 
+	
+	static RomLoadPtr rom_mjgottsu = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x10000, REGION_CPU1, 0 );/* main program */
+		ROM_LOAD( "mgek_01.bin",  0x00000,  0x10000, 0x949676d7 );
+	
+		ROM_REGION( 0x20000, REGION_CPU2, 0 );/* sound program */
+		ROM_LOAD( "2.8d",  0x00000,  0x20000, 0x52c6a1a1 );
+	
+		ROM_REGION( 0x280000, REGION_GFX1, 0 );/* gfx */
+		ROM_LOAD( "3.1k",         0x000000, 0x20000, 0x58528909 );
+		ROM_LOAD( "4.2k",         0x020000, 0x20000, 0xd09ad54d );
+		ROM_LOAD( "5.3k",         0x040000, 0x20000, 0x40346785 );
+		ROM_LOAD( "mgek_06.bin",  0x060000, 0x20000, 0xe96635e1 );
+		ROM_LOAD( "mgek_07.bin",  0x080000, 0x20000, 0x174d7ad6 );
+		ROM_LOAD( "mgek_08.bin",  0x0a0000, 0x20000, 0x65fd9c90 );
+		ROM_LOAD( "mgek_09.bin",  0x0c0000, 0x20000, 0x417cd914 );
+		ROM_LOAD( "mgek_10.bin",  0x0e0000, 0x20000, 0x1151414e );
+		ROM_LOAD( "mgek_11.bin",  0x100000, 0x20000, 0x2ffd55be );
+		ROM_LOAD( "mgek_12.bin",  0x120000, 0x20000, 0x7a731fa9 );
+		ROM_LOAD( "mgek_13.bin",  0x140000, 0x20000, 0x6d4e56f7 );
+		ROM_LOAD( "mgek_14.bin",  0x160000, 0x20000, 0xde3a675c );
+		ROM_LOAD( "mgek_15.bin",  0x180000, 0x20000, 0xe1d6d504 );
+		ROM_LOAD( "mgek_16.bin",  0x1a0000, 0x20000, 0xca1bca8d );
+		ROM_LOAD( "mgek_17.bin",  0x1c0000, 0x20000, 0xa69973ad );
+		ROM_LOAD( "mgek_18.bin",  0x1e0000, 0x20000, 0xd7ad46da );
+	ROM_END(); }}; 
+	
+	static RomLoadPtr rom_bakuhatu = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x10000, REGION_CPU1, 0 );/* main program */
+		ROM_LOAD( "1.4c",  0x00000,  0x10000, 0x687900ed );
+	
+		ROM_REGION( 0x20000, REGION_CPU2, 0 );/* sound program */
+		ROM_LOAD( "2.8d",  0x00000,  0x20000, 0x52c6a1a1 );
+	
+		ROM_REGION( 0x280000, REGION_GFX1, 0 );/* gfx */
+		ROM_LOAD( "3.1k",   0x000000, 0x20000, 0x58528909 );
+		ROM_LOAD( "4.2k",   0x020000, 0x20000, 0xd09ad54d );
+		ROM_LOAD( "5.3k",   0x040000, 0x20000, 0x40346785 );
+		ROM_LOAD( "6.4k",   0x060000, 0x20000, 0x772a6753 );
+		ROM_LOAD( "7.5k",   0x080000, 0x20000, 0x3ab6b0b5 );
+		ROM_LOAD( "8.6k",   0x0a0000, 0x20000, 0x5b1ca742 );
+		ROM_LOAD( "9.7k",   0x0c0000, 0x20000, 0xf177fae1 );
+		ROM_LOAD( "10.8k",  0x0e0000, 0x20000, 0xe9003e4d );
+		ROM_LOAD( "11.10k", 0x100000, 0x20000, 0xc08d835e );
+		ROM_LOAD( "12.11k", 0x120000, 0x20000, 0xae3cbba7 );
+		ROM_LOAD( "13.1l",  0x140000, 0x20000, 0x1c402b12 );
+		ROM_LOAD( "14.2l",  0x160000, 0x20000, 0x7bb49eaf );
+		ROM_LOAD( "15.3l",  0x180000, 0x20000, 0xd0844179 );
+		ROM_LOAD( "16.4l",  0x1a0000, 0x20000, 0x5fe47077 );
+		ROM_LOAD( "17.5l",  0x1c0000, 0x20000, 0x9eab0682 );
+		ROM_LOAD( "18.6l",  0x1e0000, 0x20000, 0x2b14cd5e );
+	ROM_END(); }}; 
+	
+	static RomLoadPtr rom_cmehyou = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x10000, REGION_CPU1, 0 );/* main program */
+		ROM_LOAD( "cmhy_01.bin",  0x00000,  0x10000, 0x436dfa6c );
+	
+		ROM_REGION( 0x20000, REGION_CPU2, 0 );/* sound program */
+		ROM_LOAD( "cmhy_02.bin",  0x00000,  0x20000, 0xd193a2e1 );
+	
+		ROM_REGION( 0x280000, REGION_GFX1, 0 );/* gfx */
+		ROM_LOAD( "cmhy_03.bin",  0x000000, 0x20000, 0x1f7bd813 );
+		ROM_LOAD( "cmhy_04.bin",  0x020000, 0x20000, 0xbdb3de8b );
+		ROM_LOAD( "cmhy_05.bin",  0x040000, 0x20000, 0x4f686de2 );
+		ROM_LOAD( "cmhy_06.bin",  0x060000, 0x20000, 0xddd1ac23 );
+		ROM_LOAD( "cmhy_07.bin",  0x080000, 0x20000, 0xf7c5367f );
+		ROM_LOAD( "cmhy_08.bin",  0x0a0000, 0x20000, 0xf8eecdb5 );
+		ROM_LOAD( "cmhy_09.bin",  0x0c0000, 0x20000, 0x11e2bbdf );
+		ROM_LOAD( "cmhy_10.bin",  0x0e0000, 0x20000, 0xbbe489ae );
+		ROM_LOAD( "cmhy_11.bin",  0x100000, 0x20000, 0x338efc1f );
+		ROM_LOAD( "cmhy_12.bin",  0x120000, 0x20000, 0x6d9f9359 );
+		ROM_LOAD( "cmhy_13.bin",  0x140000, 0x20000, 0x5c43e71b );
+		ROM_LOAD( "cmhy_14.bin",  0x160000, 0x20000, 0xe8b6802f );
+		ROM_LOAD( "cmhy_15.bin",  0x180000, 0x20000, 0xf7674a64 );
+		ROM_LOAD( "cmhy_16.bin",  0x1a0000, 0x20000, 0x3a1f7366 );
+		ROM_LOAD( "cmhy_17.bin",  0x1c0000, 0x20000, 0x1b8f6e4c );
+		ROM_LOAD( "cmhy_18.bin",  0x1e0000, 0x20000, 0xfb86f955 );
+		ROM_LOAD( "cmhy_19.bin",  0x200000, 0x20000, 0xfc89fa4f );
+	ROM_END(); }}; 
+	
+	static RomLoadPtr rom_mjkoiura = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x10000, REGION_CPU1, 0 );/* main program */
+		ROM_LOAD( "mjku_01.bin",  0x00000,  0x10000, 0xef9ae73e );
+	
+		ROM_REGION( 0x20000, REGION_CPU2, 0 );/* sound program */
+		ROM_LOAD( "mjku_02.bin",  0x00000,  0x20000, 0x3a230c22 );
+	
+		ROM_REGION( 0x280000, REGION_GFX1, 0 );/* gfx */
+		ROM_LOAD( "mjku_03.bin",  0x000000, 0x20000, 0x59432ccf );
+		ROM_LOAD( "mjku_04.bin",  0x020000, 0x20000, 0xdf5816cb );
+		ROM_LOAD( "mjku_05.bin",  0x040000, 0x20000, 0xbf01b952 );
+		ROM_LOAD( "mjku_06.bin",  0x060000, 0x20000, 0x2dea05ef );
+		ROM_LOAD( "mjku_07.bin",  0x080000, 0x20000, 0xc7843126 );
+		ROM_LOAD( "mjku_08.bin",  0x0a0000, 0x20000, 0xc7f2fc2d );
+		ROM_LOAD( "mjku_09.bin",  0x0c0000, 0x20000, 0x816b2a36 );
+		ROM_LOAD( "mjku_10.bin",  0x0e0000, 0x20000, 0xc417fe11 );
+		ROM_LOAD( "mjku_11.bin",  0x100000, 0x20000, 0x9e1914e2 );
+		ROM_LOAD( "mjku_12.bin",  0x120000, 0x20000, 0x03607cec );
+		ROM_LOAD( "mjku_13.bin",  0x140000, 0x20000, 0x18018e08 );
+		ROM_LOAD( "mjku_14.bin",  0x160000, 0x20000, 0x4e835fc0 );
+		ROM_LOAD( "mjku_15.bin",  0x180000, 0x20000, 0x8fe50109 );
+		ROM_LOAD( "mjku_16.bin",  0x1a0000, 0x20000, 0xdc5b8688 );
+		ROM_LOAD( "mjku_17.bin",  0x1c0000, 0x20000, 0x8579a7b8 );
+		ROM_LOAD( "mjku_18.bin",  0x1e0000, 0x20000, 0xc5e330a4 );
+		ROM_LOAD( "mjku_21.bin",  0x240000, 0x20000, 0x585998bd );
+		ROM_LOAD( "mjku_22.bin",  0x260000, 0x20000, 0x64af3e5d );
+	ROM_END(); }}; 
+	
+	static RomLoadPtr rom_mscoutm = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x10000, REGION_CPU1, 0 );/* main program */
+		ROM_LOAD( "mscm_01.bin",  0x00000,  0x10000, 0x9840ccd8 );
+	
+		ROM_REGION( 0x20000, REGION_CPU2, 0 );/* sound program */
+		ROM_LOAD( "mscm_02.bin",  0x00000,  0x20000, 0x4d2cbcab );
+	
+		ROM_REGION( 0x400000, REGION_GFX1, 0 );/* gfx */
+		ROM_LOAD( "mscm_03.bin",  0x000000, 0x80000, 0xfae64c95 );
+		ROM_LOAD( "mscm_04.bin",  0x080000, 0x80000, 0x03c80712 );
+		ROM_LOAD( "mscm_05.bin",  0x100000, 0x80000, 0x107659f3 );
+		ROM_LOAD( "mscm_06.bin",  0x180000, 0x80000, 0x61f7fa86 );
+		ROM_LOAD( "mscm_07.bin",  0x200000, 0x80000, 0x10a71690 );
+		ROM_LOAD( "mscm_08.bin",  0x280000, 0x80000, 0x3b55ef93 );
+		ROM_LOAD( "mscm_09.bin",  0x300000, 0x80000, 0x5823d565 );
+		ROM_LOAD( "mscm_10.bin",  0x380000, 0x80000, 0xc6d44c0e );
+	ROM_END(); }}; 
+	
+	static RomLoadPtr rom_imekura = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x10000, REGION_CPU1, 0 );/* main program */
+		ROM_LOAD( "1.103",  0x00000,  0x10000, 0x3491083b );
+	
+		ROM_REGION( 0x20000, REGION_CPU2, 0 );/* sound program */
+		ROM_LOAD( "2.804",  0x00000,  0x20000, 0x1ef3e8f0 );
+	
+		ROM_REGION( 0x400000, REGION_GFX1, 0 );/* gfx */
+		ROM_LOAD( "03.602",  0x000000, 0x80000, 0x1eb05df4 );
+		ROM_LOAD( "04.603",  0x080000, 0x80000, 0x48fefd7d );
+		ROM_LOAD( "05.604",  0x100000, 0x80000, 0x934699a8 );
+		ROM_LOAD( "06.605",  0x180000, 0x80000, 0xef97182d );
+		ROM_LOAD( "07.606",  0x200000, 0x80000, 0xe3c6e401 );
+		ROM_LOAD( "08.607",  0x280000, 0x80000, 0x08efb2bf );
+		ROM_LOAD( "09.608",  0x300000, 0x80000, 0x94606c32 );
+		ROM_LOAD( "10.609",  0x380000, 0x80000, 0x79958b86 );
+	ROM_END(); }}; 
+	
+	static RomLoadPtr rom_mjegolf = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x10000, REGION_CPU1, 0 );/* main program */
+		ROM_LOAD( "metg_01.bin",  0x00000,  0x10000, 0x1d7c2fcc );
+	
+		ROM_REGION( 0x20000, REGION_CPU2, 0 );/* sound program */
+		ROM_LOAD( "metg_02.bin",  0x00000,  0x20000, 0x99f419cf );
+	
+		ROM_REGION( 0x400000, REGION_GFX1, 0 );/* gfx */
+		ROM_LOAD( "metg_03.bin",  0x000000, 0x80000, 0x99097d30 );
+		ROM_LOAD( "metg_04.bin",  0x080000, 0x80000, 0x9f1822b8 );
+		ROM_LOAD( "metg_05.bin",  0x100000, 0x80000, 0x44b88726 );
+		ROM_LOAD( "metg_06.bin",  0x180000, 0x80000, 0x59ad0d78 );
+		ROM_LOAD( "metg_07.bin",  0x200000, 0x80000, 0x2d8b02d6 );
+		ROM_LOAD( "metg_08.bin",  0x280000, 0x80000, 0xf64e16fb );
+		ROM_LOAD( "metg_09.bin",  0x300000, 0x80000, 0x4231de76 );
+		ROM_LOAD( "metg_10.bin",  0x380000, 0x80000, 0xe91c7adf );
+	ROM_END(); }}; 
 	
 	
 	//     YEAR,     NAME,   PARENT,  MACHINE,    INPUT,     INIT,    MONITOR, COMPANY, FULLNAME, FLAGS

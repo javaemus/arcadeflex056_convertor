@@ -643,64 +643,64 @@ public class fuuki16
 	
 	***************************************************************************/
 	
-	ROM_START( gogomile )
-		ROM_REGION( 0x100000, REGION_CPU1, 0 )		/* 68000 Code */
-		ROM_LOAD16_BYTE( "fp2n", 0x000000, 0x080000, 0xe73583a0 )
-		ROM_LOAD16_BYTE( "fp1n", 0x000001, 0x080000, 0x7b110824 )
+	static RomLoadPtr rom_gogomile = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x100000, REGION_CPU1, 0 );	/* 68000 Code */
+		ROM_LOAD16_BYTE( "fp2n", 0x000000, 0x080000, 0xe73583a0 );
+		ROM_LOAD16_BYTE( "fp1n", 0x000001, 0x080000, 0x7b110824 );
 	
-		ROM_REGION( 0x28000, REGION_CPU2, 0 )		/* Z80 Code */
-		ROM_LOAD( "fs1.24", 0x00000, 0x08000, 0x4e4bd371 )	// same as japanese version
-		ROM_CONTINUE(       0x10000, 0x18000             )
+		ROM_REGION( 0x28000, REGION_CPU2, 0 );	/* Z80 Code */
+		ROM_LOAD( "fs1.24", 0x00000, 0x08000, 0x4e4bd371 );// same as japanese version
+		ROM_CONTINUE(       0x10000, 0x18000             );
 	
-		ROM_REGION( 0x200000, REGION_GFX1, ROMREGION_DISPOSE )	/* 16x16x4 Sprites */
-		ROM_LOAD( "lh537k2r.20", 0x000000, 0x200000, 0x525dbf51 )
+		ROM_REGION( 0x200000, REGION_GFX1, ROMREGION_DISPOSE );/* 16x16x4 Sprites */
+		ROM_LOAD( "lh537k2r.20", 0x000000, 0x200000, 0x525dbf51 );
 	
-		ROM_REGION( 0x800000, REGION_GFX2, ROMREGION_DISPOSE )	/* 16x16x8 Tiles */
-		ROM_LOAD( "lh5370h8.11", 0x000000, 0x200000, 0x9961c925 )
-		ROM_LOAD( "lh5370ha.12", 0x200000, 0x200000, 0x5f2a87de )
-		ROM_LOAD( "lh5370h7.15", 0x400000, 0x200000, 0x34921680 )
-		ROM_LOAD( "lh5370h9.16", 0x600000, 0x200000, 0xe0118483 )
+		ROM_REGION( 0x800000, REGION_GFX2, ROMREGION_DISPOSE );/* 16x16x8 Tiles */
+		ROM_LOAD( "lh5370h8.11", 0x000000, 0x200000, 0x9961c925 );
+		ROM_LOAD( "lh5370ha.12", 0x200000, 0x200000, 0x5f2a87de );
+		ROM_LOAD( "lh5370h7.15", 0x400000, 0x200000, 0x34921680 );
+		ROM_LOAD( "lh5370h9.16", 0x600000, 0x200000, 0xe0118483 );
 	
-		ROM_REGION( 0x200000, REGION_GFX3, ROMREGION_DISPOSE )	/* 16x16x4 Tiles */
-		ROM_LOAD( "lh5370h6.3", 0x000000, 0x200000, 0xe2ca7107 )	// x11xxxxxxxxxxxxxxxxxx = 0xFF
+		ROM_REGION( 0x200000, REGION_GFX3, ROMREGION_DISPOSE );/* 16x16x4 Tiles */
+		ROM_LOAD( "lh5370h6.3", 0x000000, 0x200000, 0xe2ca7107 );// x11xxxxxxxxxxxxxxxxxx = 0xFF
 	
-		ROM_REGION( 0x200000, REGION_GFX4, ROMREGION_DISPOSE )	/* 16x16x4 Tiles */
-		ROM_LOAD( "lh5370hb.19", 0x000000, 0x200000, 0xbd1e896f )	// FIRST AND SECOND HALF IDENTICAL
-	
-		/* 0x40000 * 4: sounds+speech (japanese),sounds+speech (english) */
-		ROM_REGION( 0x100000, REGION_SOUND1, ROMREGION_SOUNDONLY )	/* Samples */
-		ROM_LOAD( "lh538n1d.25", 0x000000, 0x080000, 0x01622a95 )
-		ROM_CONTINUE(            0x000000, 0x080000             )	// english half first
-	ROM_END
-	
-	ROM_START( gogomilj )
-		ROM_REGION( 0x100000, REGION_CPU1, 0 )		/* 68000 Code */
-		ROM_LOAD16_BYTE( "fp2.2", 0x000000, 0x080000, 0x28fd3e4e )	// 1xxxxxxxxxxxxxxxxxx = 0xFF
-		ROM_LOAD16_BYTE( "fp1.1", 0x000001, 0x080000, 0x35a5fc45 )	// 1xxxxxxxxxxxxxxxxxx = 0xFF
-	
-		ROM_REGION( 0x28000, REGION_CPU2, 0 )		/* Z80 Code */
-		ROM_LOAD( "fs1.24", 0x00000, 0x08000, 0x4e4bd371 )
-		ROM_CONTINUE(       0x10000, 0x18000             )
-	
-		ROM_REGION( 0x200000, REGION_GFX1, ROMREGION_DISPOSE )	/* 16x16x4 Sprites */
-		ROM_LOAD( "lh537k2r.20", 0x000000, 0x200000, 0x525dbf51 )
-	
-		ROM_REGION( 0x800000, REGION_GFX2, ROMREGION_DISPOSE )	/* 16x16x8 Tiles */
-		ROM_LOAD( "lh5370h8.11", 0x000000, 0x200000, 0x9961c925 )
-		ROM_LOAD( "lh5370ha.12", 0x200000, 0x200000, 0x5f2a87de )
-		ROM_LOAD( "lh5370h7.15", 0x400000, 0x200000, 0x34921680 )
-		ROM_LOAD( "lh5370h9.16", 0x600000, 0x200000, 0xe0118483 )
-	
-		ROM_REGION( 0x200000, REGION_GFX3, ROMREGION_DISPOSE )	/* 16x16x4 Tiles */
-		ROM_LOAD( "lh5370h6.3", 0x000000, 0x200000, 0xe2ca7107 )	// x11xxxxxxxxxxxxxxxxxx = 0xFF
-	
-		ROM_REGION( 0x200000, REGION_GFX4, ROMREGION_DISPOSE )	/* 16x16x4 Tiles */
-		ROM_LOAD( "lh5370hb.19", 0x000000, 0x200000, 0xbd1e896f )	// FIRST AND SECOND HALF IDENTICAL
+		ROM_REGION( 0x200000, REGION_GFX4, ROMREGION_DISPOSE );/* 16x16x4 Tiles */
+		ROM_LOAD( "lh5370hb.19", 0x000000, 0x200000, 0xbd1e896f );// FIRST AND SECOND HALF IDENTICAL
 	
 		/* 0x40000 * 4: sounds+speech (japanese),sounds+speech (english) */
-		ROM_REGION( 0x100000, REGION_SOUND1, ROMREGION_SOUNDONLY )	/* Samples */
-		ROM_LOAD( "lh538n1d.25", 0x000000, 0x100000, 0x01622a95 )	// 0x40000 * 4
-	ROM_END
+		ROM_REGION( 0x100000, REGION_SOUND1, ROMREGION_SOUNDONLY );/* Samples */
+		ROM_LOAD( "lh538n1d.25", 0x000000, 0x080000, 0x01622a95 );
+		ROM_CONTINUE(            0x000000, 0x080000             );// english half first
+	ROM_END(); }}; 
+	
+	static RomLoadPtr rom_gogomilj = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x100000, REGION_CPU1, 0 );	/* 68000 Code */
+		ROM_LOAD16_BYTE( "fp2.2", 0x000000, 0x080000, 0x28fd3e4e );// 1xxxxxxxxxxxxxxxxxx = 0xFF
+		ROM_LOAD16_BYTE( "fp1.1", 0x000001, 0x080000, 0x35a5fc45 );// 1xxxxxxxxxxxxxxxxxx = 0xFF
+	
+		ROM_REGION( 0x28000, REGION_CPU2, 0 );	/* Z80 Code */
+		ROM_LOAD( "fs1.24", 0x00000, 0x08000, 0x4e4bd371 );
+		ROM_CONTINUE(       0x10000, 0x18000             );
+	
+		ROM_REGION( 0x200000, REGION_GFX1, ROMREGION_DISPOSE );/* 16x16x4 Sprites */
+		ROM_LOAD( "lh537k2r.20", 0x000000, 0x200000, 0x525dbf51 );
+	
+		ROM_REGION( 0x800000, REGION_GFX2, ROMREGION_DISPOSE );/* 16x16x8 Tiles */
+		ROM_LOAD( "lh5370h8.11", 0x000000, 0x200000, 0x9961c925 );
+		ROM_LOAD( "lh5370ha.12", 0x200000, 0x200000, 0x5f2a87de );
+		ROM_LOAD( "lh5370h7.15", 0x400000, 0x200000, 0x34921680 );
+		ROM_LOAD( "lh5370h9.16", 0x600000, 0x200000, 0xe0118483 );
+	
+		ROM_REGION( 0x200000, REGION_GFX3, ROMREGION_DISPOSE );/* 16x16x4 Tiles */
+		ROM_LOAD( "lh5370h6.3", 0x000000, 0x200000, 0xe2ca7107 );// x11xxxxxxxxxxxxxxxxxx = 0xFF
+	
+		ROM_REGION( 0x200000, REGION_GFX4, ROMREGION_DISPOSE );/* 16x16x4 Tiles */
+		ROM_LOAD( "lh5370hb.19", 0x000000, 0x200000, 0xbd1e896f );// FIRST AND SECOND HALF IDENTICAL
+	
+		/* 0x40000 * 4: sounds+speech (japanese),sounds+speech (english) */
+		ROM_REGION( 0x100000, REGION_SOUND1, ROMREGION_SOUNDONLY );/* Samples */
+		ROM_LOAD( "lh538n1d.25", 0x000000, 0x100000, 0x01622a95 );// 0x40000 * 4
+	ROM_END(); }}; 
 	
 	
 	
@@ -736,33 +736,33 @@ public class fuuki16
 	
 	***************************************************************************/
 	
-	ROM_START( pbancho )
+	static RomLoadPtr rom_pbancho = new RomLoadPtr(){ public void handler(){ 
 	
-		ROM_REGION( 0x100000, REGION_CPU1, 0 )		/* 68000 Code */
-		ROM_LOAD16_BYTE( "rom2.no1", 0x000000, 0x080000, 0x1b4fd178 )	// 1xxxxxxxxxxxxxxxxxx = 0xFF
-		ROM_LOAD16_BYTE( "rom1.no2", 0x000001, 0x080000, 0x9cf510a5 )	// 1xxxxxxxxxxxxxxxxxx = 0xFF
+		ROM_REGION( 0x100000, REGION_CPU1, 0 );	/* 68000 Code */
+		ROM_LOAD16_BYTE( "rom2.no1", 0x000000, 0x080000, 0x1b4fd178 );// 1xxxxxxxxxxxxxxxxxx = 0xFF
+		ROM_LOAD16_BYTE( "rom1.no2", 0x000001, 0x080000, 0x9cf510a5 );// 1xxxxxxxxxxxxxxxxxx = 0xFF
 	
-		ROM_REGION( 0x28000, REGION_CPU2, 0 )		/* Z80 Code */
-		ROM_LOAD( "rom24.no4", 0x00000, 0x08000, 0xdfbfdb81 )
-		ROM_CONTINUE(          0x10000, 0x18000             )
+		ROM_REGION( 0x28000, REGION_CPU2, 0 );	/* Z80 Code */
+		ROM_LOAD( "rom24.no4", 0x00000, 0x08000, 0xdfbfdb81 );
+		ROM_CONTINUE(          0x10000, 0x18000             );
 	
-		ROM_REGION( 0x200000, REGION_GFX1, ROMREGION_DISPOSE )	/* 16x16x4 Sprites */
-		ROM_LOAD( "rom20.58", 0x000000, 0x200000, 0x4dad0a2e )
+		ROM_REGION( 0x200000, REGION_GFX1, ROMREGION_DISPOSE );/* 16x16x4 Sprites */
+		ROM_LOAD( "rom20.58", 0x000000, 0x200000, 0x4dad0a2e );
 	
-		ROM_REGION( 0x400000, REGION_GFX2, ROMREGION_DISPOSE )	/* 16x16x8 Tiles */
-		ROM_LOAD( "rom11.61", 0x000000, 0x200000, 0x7f1213b9 )
-		ROM_LOAD( "rom15.59", 0x200000, 0x200000, 0xb83dcb70 )
+		ROM_REGION( 0x400000, REGION_GFX2, ROMREGION_DISPOSE );/* 16x16x8 Tiles */
+		ROM_LOAD( "rom11.61", 0x000000, 0x200000, 0x7f1213b9 );
+		ROM_LOAD( "rom15.59", 0x200000, 0x200000, 0xb83dcb70 );
 	
-		ROM_REGION( 0x200000, REGION_GFX3, ROMREGION_DISPOSE )	/* 16x16x4 Tiles */
-		ROM_LOAD( "rom3.60",  0x000000, 0x200000, 0xa50a3c1b )
+		ROM_REGION( 0x200000, REGION_GFX3, ROMREGION_DISPOSE );/* 16x16x4 Tiles */
+		ROM_LOAD( "rom3.60",  0x000000, 0x200000, 0xa50a3c1b );
 	
-		ROM_REGION( 0x200000, REGION_GFX4, ROMREGION_DISPOSE )	/* 16x16x4 Tiles */
-		ROM_LOAD( "rom3.60",  0x000000, 0x200000, 0xa50a3c1b )	// ?maybe?
+		ROM_REGION( 0x200000, REGION_GFX4, ROMREGION_DISPOSE );/* 16x16x4 Tiles */
+		ROM_LOAD( "rom3.60",  0x000000, 0x200000, 0xa50a3c1b );// ?maybe?
 	
-		ROM_REGION( 0x040000, REGION_SOUND1, ROMREGION_SOUNDONLY )	/* Samples */
-		ROM_LOAD( "rom25.no3", 0x000000, 0x040000, 0xa7bfb5ea )
+		ROM_REGION( 0x040000, REGION_SOUND1, ROMREGION_SOUNDONLY );/* Samples */
+		ROM_LOAD( "rom25.no3", 0x000000, 0x040000, 0xa7bfb5ea );
 	
-	ROM_END
+	ROM_END(); }}; 
 	
 	
 	/***************************************************************************

@@ -1277,176 +1277,176 @@ public class sega
 	
 	
 	
-	ROM_START( spacfury ) /* Revision C */
-		ROM_REGION( 0x10000, REGION_CPU1, 0 )	/* 64k for code */
-			ROM_LOAD( "969c.u25",     0x0000, 0x0800, 0x411207f2 )
-			ROM_LOAD( "960c.u1",      0x0800, 0x0800, 0xd071ab7e )
-			ROM_LOAD( "961c.u2",      0x1000, 0x0800, 0xaebc7b97 )
-			ROM_LOAD( "962c.u3",      0x1800, 0x0800, 0xdbbba35e )
-			ROM_LOAD( "963c.u4",      0x2000, 0x0800, 0xd9e9eadc )
-			ROM_LOAD( "964c.u5",      0x2800, 0x0800, 0x7ed947b6 )
-			ROM_LOAD( "965c.u6",      0x3000, 0x0800, 0xd2443a22 )
-			ROM_LOAD( "966c.u7",      0x3800, 0x0800, 0x1985ccfc )
-			ROM_LOAD( "967c.u8",      0x4000, 0x0800, 0x330f0751 )
-			ROM_LOAD( "968c.u9",      0x4800, 0x0800, 0x8366eadb )
-	ROM_END
+	static RomLoadPtr rom_spacfury = new RomLoadPtr(){ public void handler(){  /* Revision C */
+		ROM_REGION( 0x10000, REGION_CPU1, 0 );/* 64k for code */
+			ROM_LOAD( "969c.u25",     0x0000, 0x0800, 0x411207f2 );
+			ROM_LOAD( "960c.u1",      0x0800, 0x0800, 0xd071ab7e );
+			ROM_LOAD( "961c.u2",      0x1000, 0x0800, 0xaebc7b97 );
+			ROM_LOAD( "962c.u3",      0x1800, 0x0800, 0xdbbba35e );
+			ROM_LOAD( "963c.u4",      0x2000, 0x0800, 0xd9e9eadc );
+			ROM_LOAD( "964c.u5",      0x2800, 0x0800, 0x7ed947b6 );
+			ROM_LOAD( "965c.u6",      0x3000, 0x0800, 0xd2443a22 );
+			ROM_LOAD( "966c.u7",      0x3800, 0x0800, 0x1985ccfc );
+			ROM_LOAD( "967c.u8",      0x4000, 0x0800, 0x330f0751 );
+			ROM_LOAD( "968c.u9",      0x4800, 0x0800, 0x8366eadb );
+	ROM_END(); }}; 
 	
-	ROM_START( spacfura ) /* Revision A */
-		ROM_REGION( 0x10000, REGION_CPU1, 0 )	/* 64k for code */
-			ROM_LOAD( "969a.u25",     0x0000, 0x0800, 0x896a615c )
-			ROM_LOAD( "960a.u1",      0x0800, 0x0800, 0xe1ea7964 )
-			ROM_LOAD( "961a.u2",      0x1000, 0x0800, 0xcdb04233 )
-			ROM_LOAD( "962a.u3",      0x1800, 0x0800, 0x5f03e632 )
-			ROM_LOAD( "963a.u4",      0x2000, 0x0800, 0x45a77b44 )
-			ROM_LOAD( "964a.u5",      0x2800, 0x0800, 0xba008f8b )
-			ROM_LOAD( "965a.u6",      0x3000, 0x0800, 0x78677d31 )
-			ROM_LOAD( "966a.u7",      0x3800, 0x0800, 0xa8a51105 )
-			ROM_LOAD( "967a.u8",      0x4000, 0x0800, 0xd60f667d )
-			ROM_LOAD( "968a.u9",      0x4800, 0x0800, 0xaea85b6a )
-	ROM_END
+	static RomLoadPtr rom_spacfura = new RomLoadPtr(){ public void handler(){  /* Revision A */
+		ROM_REGION( 0x10000, REGION_CPU1, 0 );/* 64k for code */
+			ROM_LOAD( "969a.u25",     0x0000, 0x0800, 0x896a615c );
+			ROM_LOAD( "960a.u1",      0x0800, 0x0800, 0xe1ea7964 );
+			ROM_LOAD( "961a.u2",      0x1000, 0x0800, 0xcdb04233 );
+			ROM_LOAD( "962a.u3",      0x1800, 0x0800, 0x5f03e632 );
+			ROM_LOAD( "963a.u4",      0x2000, 0x0800, 0x45a77b44 );
+			ROM_LOAD( "964a.u5",      0x2800, 0x0800, 0xba008f8b );
+			ROM_LOAD( "965a.u6",      0x3000, 0x0800, 0x78677d31 );
+			ROM_LOAD( "966a.u7",      0x3800, 0x0800, 0xa8a51105 );
+			ROM_LOAD( "967a.u8",      0x4000, 0x0800, 0xd60f667d );
+			ROM_LOAD( "968a.u9",      0x4800, 0x0800, 0xaea85b6a );
+	ROM_END(); }}; 
 	
-	ROM_START( zektor )
-		ROM_REGION( 0x10000, REGION_CPU1, 0 )	/* 64k for code */
-		ROM_LOAD( "1611.cpu",     0x0000, 0x0800, 0x6245aa23 )
-		ROM_LOAD( "1586.rom",     0x0800, 0x0800, 0xefeb4fb5 )
-		ROM_LOAD( "1587.rom",     0x1000, 0x0800, 0xdaa6c25c )
-		ROM_LOAD( "1588.rom",     0x1800, 0x0800, 0x62b67dde )
-		ROM_LOAD( "1589.rom",     0x2000, 0x0800, 0xc2db0ba4 )
-		ROM_LOAD( "1590.rom",     0x2800, 0x0800, 0x4d948414 )
-		ROM_LOAD( "1591.rom",     0x3000, 0x0800, 0xb0556a6c )
-		ROM_LOAD( "1592.rom",     0x3800, 0x0800, 0x750ecadf )
-		ROM_LOAD( "1593.rom",     0x4000, 0x0800, 0x34f8850f )
-		ROM_LOAD( "1594.rom",     0x4800, 0x0800, 0x52b22ab2 )
-		ROM_LOAD( "1595.rom",     0x5000, 0x0800, 0xa704d142 )
-		ROM_LOAD( "1596.rom",     0x5800, 0x0800, 0x6975e33d )
-		ROM_LOAD( "1597.rom",     0x6000, 0x0800, 0xd48ab5c2 )
-		ROM_LOAD( "1598.rom",     0x6800, 0x0800, 0xab54a94c )
-		ROM_LOAD( "1599.rom",     0x7000, 0x0800, 0xc9d4f3a5 )
-		ROM_LOAD( "1600.rom",     0x7800, 0x0800, 0x893b7dbc )
-		ROM_LOAD( "1601.rom",     0x8000, 0x0800, 0x867bdf4f )
-		ROM_LOAD( "1602.rom",     0x8800, 0x0800, 0xbd447623 )
-		ROM_LOAD( "1603.rom",     0x9000, 0x0800, 0x9f8f10e8 )
-		ROM_LOAD( "1604.rom",     0x9800, 0x0800, 0xad2f0f6c )
-		ROM_LOAD( "1605.rom",     0xa000, 0x0800, 0xe27d7144 )
-		ROM_LOAD( "1606.rom",     0xa800, 0x0800, 0x7965f636 )
-	ROM_END
+	static RomLoadPtr rom_zektor = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x10000, REGION_CPU1, 0 );/* 64k for code */
+		ROM_LOAD( "1611.cpu",     0x0000, 0x0800, 0x6245aa23 );
+		ROM_LOAD( "1586.rom",     0x0800, 0x0800, 0xefeb4fb5 );
+		ROM_LOAD( "1587.rom",     0x1000, 0x0800, 0xdaa6c25c );
+		ROM_LOAD( "1588.rom",     0x1800, 0x0800, 0x62b67dde );
+		ROM_LOAD( "1589.rom",     0x2000, 0x0800, 0xc2db0ba4 );
+		ROM_LOAD( "1590.rom",     0x2800, 0x0800, 0x4d948414 );
+		ROM_LOAD( "1591.rom",     0x3000, 0x0800, 0xb0556a6c );
+		ROM_LOAD( "1592.rom",     0x3800, 0x0800, 0x750ecadf );
+		ROM_LOAD( "1593.rom",     0x4000, 0x0800, 0x34f8850f );
+		ROM_LOAD( "1594.rom",     0x4800, 0x0800, 0x52b22ab2 );
+		ROM_LOAD( "1595.rom",     0x5000, 0x0800, 0xa704d142 );
+		ROM_LOAD( "1596.rom",     0x5800, 0x0800, 0x6975e33d );
+		ROM_LOAD( "1597.rom",     0x6000, 0x0800, 0xd48ab5c2 );
+		ROM_LOAD( "1598.rom",     0x6800, 0x0800, 0xab54a94c );
+		ROM_LOAD( "1599.rom",     0x7000, 0x0800, 0xc9d4f3a5 );
+		ROM_LOAD( "1600.rom",     0x7800, 0x0800, 0x893b7dbc );
+		ROM_LOAD( "1601.rom",     0x8000, 0x0800, 0x867bdf4f );
+		ROM_LOAD( "1602.rom",     0x8800, 0x0800, 0xbd447623 );
+		ROM_LOAD( "1603.rom",     0x9000, 0x0800, 0x9f8f10e8 );
+		ROM_LOAD( "1604.rom",     0x9800, 0x0800, 0xad2f0f6c );
+		ROM_LOAD( "1605.rom",     0xa000, 0x0800, 0xe27d7144 );
+		ROM_LOAD( "1606.rom",     0xa800, 0x0800, 0x7965f636 );
+	ROM_END(); }}; 
 	
-	ROM_START( tacscan )
-		ROM_REGION( 0x10000, REGION_CPU1, 0 )	/* 64k for code */
-		ROM_LOAD( "1711a",        0x0000, 0x0800, 0x0da13158 )
-		ROM_LOAD( "1670c",        0x0800, 0x0800, 0x98de6fd5 )
-		ROM_LOAD( "1671a",        0x1000, 0x0800, 0xdc400074 )
-		ROM_LOAD( "1672a",        0x1800, 0x0800, 0x2caf6f7e )
-		ROM_LOAD( "1673a",        0x2000, 0x0800, 0x1495ce3d )
-		ROM_LOAD( "1674a",        0x2800, 0x0800, 0xab7fc5d9 )
-		ROM_LOAD( "1675a",        0x3000, 0x0800, 0xcf5e5016 )
-		ROM_LOAD( "1676a",        0x3800, 0x0800, 0xb61a3ab3 )
-		ROM_LOAD( "1677a",        0x4000, 0x0800, 0xbc0273b1 )
-		ROM_LOAD( "1678b",        0x4800, 0x0800, 0x7894da98 )
-		ROM_LOAD( "1679a",        0x5000, 0x0800, 0xdb865654 )
-		ROM_LOAD( "1680a",        0x5800, 0x0800, 0x2c2454de )
-		ROM_LOAD( "1681a",        0x6000, 0x0800, 0x77028885 )
-		ROM_LOAD( "1682a",        0x6800, 0x0800, 0xbabe5cf1 )
-		ROM_LOAD( "1683a",        0x7000, 0x0800, 0x1b98b618 )
-		ROM_LOAD( "1684a",        0x7800, 0x0800, 0xcb3ded3b )
-		ROM_LOAD( "1685a",        0x8000, 0x0800, 0x43016a79 )
-		ROM_LOAD( "1686a",        0x8800, 0x0800, 0xa4397772 )
-		ROM_LOAD( "1687a",        0x9000, 0x0800, 0x002f3bc4 )
-		ROM_LOAD( "1688a",        0x9800, 0x0800, 0x0326d87a )
-		ROM_LOAD( "1709a",        0xa000, 0x0800, 0xf35ed1ec )
-		ROM_LOAD( "1710a",        0xa800, 0x0800, 0x6203be22 )
-	ROM_END
+	static RomLoadPtr rom_tacscan = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x10000, REGION_CPU1, 0 );/* 64k for code */
+		ROM_LOAD( "1711a",        0x0000, 0x0800, 0x0da13158 );
+		ROM_LOAD( "1670c",        0x0800, 0x0800, 0x98de6fd5 );
+		ROM_LOAD( "1671a",        0x1000, 0x0800, 0xdc400074 );
+		ROM_LOAD( "1672a",        0x1800, 0x0800, 0x2caf6f7e );
+		ROM_LOAD( "1673a",        0x2000, 0x0800, 0x1495ce3d );
+		ROM_LOAD( "1674a",        0x2800, 0x0800, 0xab7fc5d9 );
+		ROM_LOAD( "1675a",        0x3000, 0x0800, 0xcf5e5016 );
+		ROM_LOAD( "1676a",        0x3800, 0x0800, 0xb61a3ab3 );
+		ROM_LOAD( "1677a",        0x4000, 0x0800, 0xbc0273b1 );
+		ROM_LOAD( "1678b",        0x4800, 0x0800, 0x7894da98 );
+		ROM_LOAD( "1679a",        0x5000, 0x0800, 0xdb865654 );
+		ROM_LOAD( "1680a",        0x5800, 0x0800, 0x2c2454de );
+		ROM_LOAD( "1681a",        0x6000, 0x0800, 0x77028885 );
+		ROM_LOAD( "1682a",        0x6800, 0x0800, 0xbabe5cf1 );
+		ROM_LOAD( "1683a",        0x7000, 0x0800, 0x1b98b618 );
+		ROM_LOAD( "1684a",        0x7800, 0x0800, 0xcb3ded3b );
+		ROM_LOAD( "1685a",        0x8000, 0x0800, 0x43016a79 );
+		ROM_LOAD( "1686a",        0x8800, 0x0800, 0xa4397772 );
+		ROM_LOAD( "1687a",        0x9000, 0x0800, 0x002f3bc4 );
+		ROM_LOAD( "1688a",        0x9800, 0x0800, 0x0326d87a );
+		ROM_LOAD( "1709a",        0xa000, 0x0800, 0xf35ed1ec );
+		ROM_LOAD( "1710a",        0xa800, 0x0800, 0x6203be22 );
+	ROM_END(); }}; 
 	
-	ROM_START( elim2 )
-		ROM_REGION( 0x10000, REGION_CPU1, 0 )	/* 64k for code */
-		ROM_LOAD( "cpu_u25.969",  0x0000, 0x0800, 0x411207f2 )
-		ROM_LOAD( "1333",         0x0800, 0x0800, 0xfd2a2916 )
-		ROM_LOAD( "1334",         0x1000, 0x0800, 0x79eb5548 )
-		ROM_LOAD( "1335",         0x1800, 0x0800, 0x3944972e )
-		ROM_LOAD( "1336",         0x2000, 0x0800, 0x852f7b4d )
-		ROM_LOAD( "1337",         0x2800, 0x0800, 0xcf932b08 )
-		ROM_LOAD( "1338",         0x3000, 0x0800, 0x99a3f3c9 )
-		ROM_LOAD( "1339",         0x3800, 0x0800, 0xd35f0fa3 )
-		ROM_LOAD( "1340",         0x4000, 0x0800, 0x8fd4da21 )
-		ROM_LOAD( "1341",         0x4800, 0x0800, 0x629c9a28 )
-		ROM_LOAD( "1342",         0x5000, 0x0800, 0x643df651 )
-		ROM_LOAD( "1343",         0x5800, 0x0800, 0xd29d70d2 )
-		ROM_LOAD( "1344",         0x6000, 0x0800, 0xc5e153a3 )
-		ROM_LOAD( "1345",         0x6800, 0x0800, 0x40597a92 )
-	ROM_END
+	static RomLoadPtr rom_elim2 = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x10000, REGION_CPU1, 0 );/* 64k for code */
+		ROM_LOAD( "cpu_u25.969",  0x0000, 0x0800, 0x411207f2 );
+		ROM_LOAD( "1333",         0x0800, 0x0800, 0xfd2a2916 );
+		ROM_LOAD( "1334",         0x1000, 0x0800, 0x79eb5548 );
+		ROM_LOAD( "1335",         0x1800, 0x0800, 0x3944972e );
+		ROM_LOAD( "1336",         0x2000, 0x0800, 0x852f7b4d );
+		ROM_LOAD( "1337",         0x2800, 0x0800, 0xcf932b08 );
+		ROM_LOAD( "1338",         0x3000, 0x0800, 0x99a3f3c9 );
+		ROM_LOAD( "1339",         0x3800, 0x0800, 0xd35f0fa3 );
+		ROM_LOAD( "1340",         0x4000, 0x0800, 0x8fd4da21 );
+		ROM_LOAD( "1341",         0x4800, 0x0800, 0x629c9a28 );
+		ROM_LOAD( "1342",         0x5000, 0x0800, 0x643df651 );
+		ROM_LOAD( "1343",         0x5800, 0x0800, 0xd29d70d2 );
+		ROM_LOAD( "1344",         0x6000, 0x0800, 0xc5e153a3 );
+		ROM_LOAD( "1345",         0x6800, 0x0800, 0x40597a92 );
+	ROM_END(); }}; 
 	
-	ROM_START( elim2a )
-		ROM_REGION( 0x10000, REGION_CPU1, 0 )	/* 64k for code */
-		ROM_LOAD( "cpu_u25.969",  0x0000, 0x0800, 0x411207f2 )
-		ROM_LOAD( "1158",         0x0800, 0x0800, 0xa40ac3a5 )
-		ROM_LOAD( "1159",         0x1000, 0x0800, 0xff100604 )
-		ROM_LOAD( "1160a",        0x1800, 0x0800, 0xebfe33bd )
-		ROM_LOAD( "1161a",        0x2000, 0x0800, 0x03d41db3 )
-		ROM_LOAD( "1162a",        0x2800, 0x0800, 0xf2c7ece3 )
-		ROM_LOAD( "1163a",        0x3000, 0x0800, 0x1fc58b00 )
-		ROM_LOAD( "1164a",        0x3800, 0x0800, 0xf37480d1 )
-		ROM_LOAD( "1165a",        0x4000, 0x0800, 0x328819f8 )
-		ROM_LOAD( "1166a",        0x4800, 0x0800, 0x1b8e8380 )
-		ROM_LOAD( "1167a",        0x5000, 0x0800, 0x16aa3156 )
-		ROM_LOAD( "1168a",        0x5800, 0x0800, 0x3c7c893a )
-		ROM_LOAD( "1169a",        0x6000, 0x0800, 0x5cee23b1 )
-		ROM_LOAD( "1170a",        0x6800, 0x0800, 0x8cdacd35 )
-	ROM_END
+	static RomLoadPtr rom_elim2a = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x10000, REGION_CPU1, 0 );/* 64k for code */
+		ROM_LOAD( "cpu_u25.969",  0x0000, 0x0800, 0x411207f2 );
+		ROM_LOAD( "1158",         0x0800, 0x0800, 0xa40ac3a5 );
+		ROM_LOAD( "1159",         0x1000, 0x0800, 0xff100604 );
+		ROM_LOAD( "1160a",        0x1800, 0x0800, 0xebfe33bd );
+		ROM_LOAD( "1161a",        0x2000, 0x0800, 0x03d41db3 );
+		ROM_LOAD( "1162a",        0x2800, 0x0800, 0xf2c7ece3 );
+		ROM_LOAD( "1163a",        0x3000, 0x0800, 0x1fc58b00 );
+		ROM_LOAD( "1164a",        0x3800, 0x0800, 0xf37480d1 );
+		ROM_LOAD( "1165a",        0x4000, 0x0800, 0x328819f8 );
+		ROM_LOAD( "1166a",        0x4800, 0x0800, 0x1b8e8380 );
+		ROM_LOAD( "1167a",        0x5000, 0x0800, 0x16aa3156 );
+		ROM_LOAD( "1168a",        0x5800, 0x0800, 0x3c7c893a );
+		ROM_LOAD( "1169a",        0x6000, 0x0800, 0x5cee23b1 );
+		ROM_LOAD( "1170a",        0x6800, 0x0800, 0x8cdacd35 );
+	ROM_END(); }}; 
 	
-	ROM_START( elim4 )
-		ROM_REGION( 0x10000, REGION_CPU1, 0 )	/* 64k for code */
-		ROM_LOAD( "1390_cpu.u25", 0x0000, 0x0800, 0x97010c3e )
-		ROM_LOAD( "1347",         0x0800, 0x0800, 0x657d7320 )
-		ROM_LOAD( "1348",         0x1000, 0x0800, 0xb15fe578 )
-		ROM_LOAD( "1349",         0x1800, 0x0800, 0x0702b586 )
-		ROM_LOAD( "1350",         0x2000, 0x0800, 0x4168dd3b )
-		ROM_LOAD( "1351",         0x2800, 0x0800, 0xc950f24c )
-		ROM_LOAD( "1352",         0x3000, 0x0800, 0xdc8c91cc )
-		ROM_LOAD( "1353",         0x3800, 0x0800, 0x11eda631 )
-		ROM_LOAD( "1354",         0x4000, 0x0800, 0xb9dd6e7a )
-		ROM_LOAD( "1355",         0x4800, 0x0800, 0xc92c7237 )
-		ROM_LOAD( "1356",         0x5000, 0x0800, 0x889b98e3 )
-		ROM_LOAD( "1357",         0x5800, 0x0800, 0xd79248a5 )
-		ROM_LOAD( "1358",         0x6000, 0x0800, 0xc5dabc77 )
-		ROM_LOAD( "1359",         0x6800, 0x0800, 0x24c8e5d8 )
-		ROM_LOAD( "1360",         0x7000, 0x0800, 0x96d48238 )
-	ROM_END
+	static RomLoadPtr rom_elim4 = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x10000, REGION_CPU1, 0 );/* 64k for code */
+		ROM_LOAD( "1390_cpu.u25", 0x0000, 0x0800, 0x97010c3e );
+		ROM_LOAD( "1347",         0x0800, 0x0800, 0x657d7320 );
+		ROM_LOAD( "1348",         0x1000, 0x0800, 0xb15fe578 );
+		ROM_LOAD( "1349",         0x1800, 0x0800, 0x0702b586 );
+		ROM_LOAD( "1350",         0x2000, 0x0800, 0x4168dd3b );
+		ROM_LOAD( "1351",         0x2800, 0x0800, 0xc950f24c );
+		ROM_LOAD( "1352",         0x3000, 0x0800, 0xdc8c91cc );
+		ROM_LOAD( "1353",         0x3800, 0x0800, 0x11eda631 );
+		ROM_LOAD( "1354",         0x4000, 0x0800, 0xb9dd6e7a );
+		ROM_LOAD( "1355",         0x4800, 0x0800, 0xc92c7237 );
+		ROM_LOAD( "1356",         0x5000, 0x0800, 0x889b98e3 );
+		ROM_LOAD( "1357",         0x5800, 0x0800, 0xd79248a5 );
+		ROM_LOAD( "1358",         0x6000, 0x0800, 0xc5dabc77 );
+		ROM_LOAD( "1359",         0x6800, 0x0800, 0x24c8e5d8 );
+		ROM_LOAD( "1360",         0x7000, 0x0800, 0x96d48238 );
+	ROM_END(); }}; 
 	
-	ROM_START( startrek )
-		ROM_REGION( 0x10000, REGION_CPU1, 0 )	/* 64k for code */
-		ROM_LOAD( "cpu1873",      0x0000, 0x0800, 0xbe46f5d9 )
-		ROM_LOAD( "1848",         0x0800, 0x0800, 0x65e3baf3 )
-		ROM_LOAD( "1849",         0x1000, 0x0800, 0x8169fd3d )
-		ROM_LOAD( "1850",         0x1800, 0x0800, 0x78fd68dc )
-		ROM_LOAD( "1851",         0x2000, 0x0800, 0x3f55ab86 )
-		ROM_LOAD( "1852",         0x2800, 0x0800, 0x2542ecfb )
-		ROM_LOAD( "1853",         0x3000, 0x0800, 0x75c2526a )
-		ROM_LOAD( "1854",         0x3800, 0x0800, 0x096d75d0 )
-		ROM_LOAD( "1855",         0x4000, 0x0800, 0xbc7b9a12 )
-		ROM_LOAD( "1856",         0x4800, 0x0800, 0xed9fe2fb )
-		ROM_LOAD( "1857",         0x5000, 0x0800, 0x28699d45 )
-		ROM_LOAD( "1858",         0x5800, 0x0800, 0x3a7593cb )
-		ROM_LOAD( "1859",         0x6000, 0x0800, 0x5b11886b )
-		ROM_LOAD( "1860",         0x6800, 0x0800, 0x62eb96e6 )
-		ROM_LOAD( "1861",         0x7000, 0x0800, 0x99852d1d )
-		ROM_LOAD( "1862",         0x7800, 0x0800, 0x76ce27b2 )
-		ROM_LOAD( "1863",         0x8000, 0x0800, 0xdd92d187 )
-		ROM_LOAD( "1864",         0x8800, 0x0800, 0xe37d3a1e )
-		ROM_LOAD( "1865",         0x9000, 0x0800, 0xb2ec8125 )
-		ROM_LOAD( "1866",         0x9800, 0x0800, 0x6f188354 )
-		ROM_LOAD( "1867",         0xa000, 0x0800, 0xb0a3eae8 )
-		ROM_LOAD( "1868",         0xa800, 0x0800, 0x8b4e2e07 )
-		ROM_LOAD( "1869",         0xb000, 0x0800, 0xe5663070 )
-		ROM_LOAD( "1870",         0xb800, 0x0800, 0x4340616d )
+	static RomLoadPtr rom_startrek = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x10000, REGION_CPU1, 0 );/* 64k for code */
+		ROM_LOAD( "cpu1873",      0x0000, 0x0800, 0xbe46f5d9 );
+		ROM_LOAD( "1848",         0x0800, 0x0800, 0x65e3baf3 );
+		ROM_LOAD( "1849",         0x1000, 0x0800, 0x8169fd3d );
+		ROM_LOAD( "1850",         0x1800, 0x0800, 0x78fd68dc );
+		ROM_LOAD( "1851",         0x2000, 0x0800, 0x3f55ab86 );
+		ROM_LOAD( "1852",         0x2800, 0x0800, 0x2542ecfb );
+		ROM_LOAD( "1853",         0x3000, 0x0800, 0x75c2526a );
+		ROM_LOAD( "1854",         0x3800, 0x0800, 0x096d75d0 );
+		ROM_LOAD( "1855",         0x4000, 0x0800, 0xbc7b9a12 );
+		ROM_LOAD( "1856",         0x4800, 0x0800, 0xed9fe2fb );
+		ROM_LOAD( "1857",         0x5000, 0x0800, 0x28699d45 );
+		ROM_LOAD( "1858",         0x5800, 0x0800, 0x3a7593cb );
+		ROM_LOAD( "1859",         0x6000, 0x0800, 0x5b11886b );
+		ROM_LOAD( "1860",         0x6800, 0x0800, 0x62eb96e6 );
+		ROM_LOAD( "1861",         0x7000, 0x0800, 0x99852d1d );
+		ROM_LOAD( "1862",         0x7800, 0x0800, 0x76ce27b2 );
+		ROM_LOAD( "1863",         0x8000, 0x0800, 0xdd92d187 );
+		ROM_LOAD( "1864",         0x8800, 0x0800, 0xe37d3a1e );
+		ROM_LOAD( "1865",         0x9000, 0x0800, 0xb2ec8125 );
+		ROM_LOAD( "1866",         0x9800, 0x0800, 0x6f188354 );
+		ROM_LOAD( "1867",         0xa000, 0x0800, 0xb0a3eae8 );
+		ROM_LOAD( "1868",         0xa800, 0x0800, 0x8b4e2e07 );
+		ROM_LOAD( "1869",         0xb000, 0x0800, 0xe5663070 );
+		ROM_LOAD( "1870",         0xb800, 0x0800, 0x4340616d );
 	
 	/* I'm not sure where these roms are supposed to go, but they are speech */
 	/* related (from what I've read), so I just took a wild guess here, */
 	/* until their location is determined and speech is emulated, plus, it */
 	/* helps make sure everyone has them for the future... MRH */
-		ROM_LOAD ("1670",         0xc000, 0x0800, 0xb779884b )
-		ROM_LOAD ("1871",         0xc800, 0x1000, 0x03713920 )
-		ROM_LOAD ("1872",         0xd800, 0x1000, 0xebb5c3a9 )
-	ROM_END
+		ROM_LOAD ("1670",         0xc000, 0x0800, 0xb779884b );
+		ROM_LOAD ("1871",         0xc800, 0x1000, 0x03713920 );
+		ROM_LOAD ("1872",         0xd800, 0x1000, 0xebb5c3a9 );
+	ROM_END(); }}; 
 	
 	
 	

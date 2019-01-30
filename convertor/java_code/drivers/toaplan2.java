@@ -3855,370 +3855,370 @@ public class toaplan2
 	***************************************************************************/
 	
 	/* -------------------------- Toaplan games ------------------------- */
-	ROM_START( tekipaki )
-		ROM_REGION( 0x020000, REGION_CPU1, 0 )			/* Main 68K code */
-		ROM_LOAD16_BYTE( "tp020-1.bin", 0x000000, 0x010000, 0xd8420bd5 )
-		ROM_LOAD16_BYTE( "tp020-2.bin", 0x000001, 0x010000, 0x7222de8e )
+	static RomLoadPtr rom_tekipaki = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x020000, REGION_CPU1, 0 );		/* Main 68K code */
+		ROM_LOAD16_BYTE( "tp020-1.bin", 0x000000, 0x010000, 0xd8420bd5 );
+		ROM_LOAD16_BYTE( "tp020-2.bin", 0x000001, 0x010000, 0x7222de8e );
 	
 	#if HD64x180
-		ROM_REGION( 0x10000, REGION_CPU2, 0 )			/* Sound HD647180 code */
+		ROM_REGION( 0x10000, REGION_CPU2, 0 );		/* Sound HD647180 code */
 		/* sound CPU is a HD647180 (Z180) with internal ROM - not yet supported */
-		ROM_LOAD( "hd647180.020", 0x00000, 0x08000, 0x00000000 )
+		ROM_LOAD( "hd647180.020", 0x00000, 0x08000, 0x00000000 );
 	#endif
 	
-		ROM_REGION( 0x100000, REGION_GFX1, ROMREGION_DISPOSE )
-		ROM_LOAD( "tp020-4.bin", 0x000000, 0x080000, 0x3ebbe41e )
-		ROM_LOAD( "tp020-3.bin", 0x080000, 0x080000, 0x2d5e2201 )
-	ROM_END
+		ROM_REGION( 0x100000, REGION_GFX1, ROMREGION_DISPOSE );
+		ROM_LOAD( "tp020-4.bin", 0x000000, 0x080000, 0x3ebbe41e );
+		ROM_LOAD( "tp020-3.bin", 0x080000, 0x080000, 0x2d5e2201 );
+	ROM_END(); }}; 
 	
-	ROM_START( ghox )
-		ROM_REGION( 0x040000, REGION_CPU1, 0 )			/* Main 68K code */
-		ROM_LOAD16_BYTE( "tp021-01.u10", 0x000000, 0x020000, 0x9e56ac67 )
-		ROM_LOAD16_BYTE( "tp021-02.u11", 0x000001, 0x020000, 0x15cac60f )
+	static RomLoadPtr rom_ghox = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x040000, REGION_CPU1, 0 );		/* Main 68K code */
+		ROM_LOAD16_BYTE( "tp021-01.u10", 0x000000, 0x020000, 0x9e56ac67 );
+		ROM_LOAD16_BYTE( "tp021-02.u11", 0x000001, 0x020000, 0x15cac60f );
 	
 	#if HD64x180
-		ROM_REGION( 0x10000, REGION_CPU2, 0 )			/* Sound HD647180 code */
+		ROM_REGION( 0x10000, REGION_CPU2, 0 );		/* Sound HD647180 code */
 		/* sound CPU is a HD647180 (Z180) with internal ROM - not yet supported */
-		ROM_LOAD( "hd647180.021", 0x00000, 0x08000, 0x00000000 )
+		ROM_LOAD( "hd647180.021", 0x00000, 0x08000, 0x00000000 );
 	#endif
 	
-		ROM_REGION( 0x100000, REGION_GFX1, ROMREGION_DISPOSE )
-		ROM_LOAD( "tp021-03.u36", 0x000000, 0x080000, 0xa15d8e9d )
-		ROM_LOAD( "tp021-04.u37", 0x080000, 0x080000, 0x26ed1c9a )
-	ROM_END
+		ROM_REGION( 0x100000, REGION_GFX1, ROMREGION_DISPOSE );
+		ROM_LOAD( "tp021-03.u36", 0x000000, 0x080000, 0xa15d8e9d );
+		ROM_LOAD( "tp021-04.u37", 0x080000, 0x080000, 0x26ed1c9a );
+	ROM_END(); }}; 
 	
-	ROM_START( dogyuun )
-		ROM_REGION( 0x080000, REGION_CPU1, 0 )			/* Main 68K code */
-		ROM_LOAD16_WORD( "tp022_1.r16", 0x000000, 0x080000, 0x72f18907 )
+	static RomLoadPtr rom_dogyuun = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x080000, REGION_CPU1, 0 );		/* Main 68K code */
+		ROM_LOAD16_WORD( "tp022_1.r16", 0x000000, 0x080000, 0x72f18907 );
 	
 	#if Zx80
-		ROM_REGION( 0x10000, REGION_CPU2, 0 )			/* Secondary CPU code */
+		ROM_REGION( 0x10000, REGION_CPU2, 0 );		/* Secondary CPU code */
 		/* Secondary CPU is a Toaplan marked chip ??? */
-	//	ROM_LOAD( "tp022.mcu", 0x00000, 0x08000, 0x00000000 )
+	//	ROM_LOAD( "tp022.mcu", 0x00000, 0x08000, 0x00000000 );
 	#endif
 	
-		ROM_REGION( 0x200000, REGION_GFX1, ROMREGION_DISPOSE )
+		ROM_REGION( 0x200000, REGION_GFX1, ROMREGION_DISPOSE );
 		ROM_LOAD16_WORD_SWAP( "tp022_3.r16", 0x000000, 0x100000, 0x191b595f )
 		ROM_LOAD16_WORD_SWAP( "tp022_4.r16", 0x100000, 0x100000, 0xd58d29ca )
 	
-		ROM_REGION( 0x400000, REGION_GFX2, ROMREGION_DISPOSE )
+		ROM_REGION( 0x400000, REGION_GFX2, ROMREGION_DISPOSE );
 		ROM_LOAD16_WORD_SWAP( "tp022_5.r16", 0x000000, 0x200000, 0xd4c1db45 )
 		ROM_LOAD16_WORD_SWAP( "tp022_6.r16", 0x200000, 0x200000, 0xd48dc74f )
 	
-		ROM_REGION( 0x40000, REGION_SOUND1, 0 )		/* ADPCM Samples */
-		ROM_LOAD( "tp022_2.rom", 0x00000, 0x40000, 0x043271b3 )
-	ROM_END
+		ROM_REGION( 0x40000, REGION_SOUND1, 0 );	/* ADPCM Samples */
+		ROM_LOAD( "tp022_2.rom", 0x00000, 0x40000, 0x043271b3 );
+	ROM_END(); }}; 
 	
-	ROM_START( kbash )
-		ROM_REGION( 0x080000, REGION_CPU1, 0 )			/* Main 68K code */
+	static RomLoadPtr rom_kbash = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x080000, REGION_CPU1, 0 );		/* Main 68K code */
 		ROM_LOAD16_WORD_SWAP( "kbash01.bin", 0x000000, 0x080000, 0x2965f81d )
 	
 		/* Secondary CPU is a Toaplan marked chip, (TS-004-Dash  TOA PLAN) */
 		/* Its a Z?80 of some sort - 94 pin chip. */
 	#if Zx80
-		ROM_REGION( 0x88000, REGION_CPU2, 0 )			/* Sound Z?80 code */
-		ROM_LOAD( "kbash02.bin", 0x80000, 0x08000, 0x4cd882a1 )
+		ROM_REGION( 0x88000, REGION_CPU2, 0 );		/* Sound Z?80 code */
+		ROM_LOAD( "kbash02.bin", 0x80000, 0x08000, 0x4cd882a1 );
 	#else
-		ROM_REGION( 0x08000, REGION_USER1, 0 )
-		ROM_LOAD( "kbash02.bin", 0x00200, 0x07e00, 0x4cd882a1 )
-		ROM_CONTINUE(			 0x00000, 0x00200 )
+		ROM_REGION( 0x08000, REGION_USER1, 0 );
+		ROM_LOAD( "kbash02.bin", 0x00200, 0x07e00, 0x4cd882a1 );
+		ROM_CONTINUE(			 0x00000, 0x00200 );
 	#endif
 	
-		ROM_REGION( 0x800000, REGION_GFX1, ROMREGION_DISPOSE )
-		ROM_LOAD( "kbash03.bin", 0x000000, 0x200000, 0x32ad508b )
-		ROM_LOAD( "kbash05.bin", 0x200000, 0x200000, 0xb84c90eb )
-		ROM_LOAD( "kbash04.bin", 0x400000, 0x200000, 0xe493c077 )
-		ROM_LOAD( "kbash06.bin", 0x600000, 0x200000, 0x9084b50a )
+		ROM_REGION( 0x800000, REGION_GFX1, ROMREGION_DISPOSE );
+		ROM_LOAD( "kbash03.bin", 0x000000, 0x200000, 0x32ad508b );
+		ROM_LOAD( "kbash05.bin", 0x200000, 0x200000, 0xb84c90eb );
+		ROM_LOAD( "kbash04.bin", 0x400000, 0x200000, 0xe493c077 );
+		ROM_LOAD( "kbash06.bin", 0x600000, 0x200000, 0x9084b50a );
 	
-		ROM_REGION( 0x40000, REGION_SOUND1, 0 )		/* ADPCM Samples */
-		ROM_LOAD( "kbash07.bin", 0x00000, 0x40000, 0x3732318f )
-	ROM_END
+		ROM_REGION( 0x40000, REGION_SOUND1, 0 );	/* ADPCM Samples */
+		ROM_LOAD( "kbash07.bin", 0x00000, 0x40000, 0x3732318f );
+	ROM_END(); }}; 
 	
-	ROM_START( truxton2 )
-		ROM_REGION( 0x080000, REGION_CPU1, 0 )			/* Main 68K code */
-		ROM_LOAD16_WORD( "tp024_1.bin", 0x000000, 0x080000, 0xf5cfe6ee )
+	static RomLoadPtr rom_truxton2 = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x080000, REGION_CPU1, 0 );		/* Main 68K code */
+		ROM_LOAD16_WORD( "tp024_1.bin", 0x000000, 0x080000, 0xf5cfe6ee );
 	
-		ROM_REGION( 0x200000, REGION_GFX1, ROMREGION_DISPOSE )
-		ROM_LOAD( "tp024_4.bin", 0x000000, 0x100000, 0x805c449e )
-		ROM_LOAD( "tp024_3.bin", 0x100000, 0x100000, 0x47587164 )
+		ROM_REGION( 0x200000, REGION_GFX1, ROMREGION_DISPOSE );
+		ROM_LOAD( "tp024_4.bin", 0x000000, 0x100000, 0x805c449e );
+		ROM_LOAD( "tp024_3.bin", 0x100000, 0x100000, 0x47587164 );
 	
-		ROM_REGION( 0x80000, REGION_SOUND1, 0 )			/* ADPCM Samples */
-		ROM_LOAD( "tp024_2.bin", 0x00000, 0x80000, 0xf2f6cae4 )
-	ROM_END
+		ROM_REGION( 0x80000, REGION_SOUND1, 0 );		/* ADPCM Samples */
+		ROM_LOAD( "tp024_2.bin", 0x00000, 0x80000, 0xf2f6cae4 );
+	ROM_END(); }}; 
 	
-	ROM_START( pipibibs )
-		ROM_REGION( 0x040000, REGION_CPU1, 0 )			/* Main 68K code */
-		ROM_LOAD16_BYTE( "tp025-1.bin", 0x000000, 0x020000, 0xb2ea8659 )
-		ROM_LOAD16_BYTE( "tp025-2.bin", 0x000001, 0x020000, 0xdc53b939 )
+	static RomLoadPtr rom_pipibibs = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x040000, REGION_CPU1, 0 );		/* Main 68K code */
+		ROM_LOAD16_BYTE( "tp025-1.bin", 0x000000, 0x020000, 0xb2ea8659 );
+		ROM_LOAD16_BYTE( "tp025-2.bin", 0x000001, 0x020000, 0xdc53b939 );
 	
-		ROM_REGION( 0x10000, REGION_CPU2, 0 )			/* Sound Z80 code */
-		ROM_LOAD( "tp025-5.bin", 0x0000, 0x8000, 0xbf8ffde5 )
+		ROM_REGION( 0x10000, REGION_CPU2, 0 );		/* Sound Z80 code */
+		ROM_LOAD( "tp025-5.bin", 0x0000, 0x8000, 0xbf8ffde5 );
 	
-		ROM_REGION( 0x200000, REGION_GFX1, ROMREGION_DISPOSE )
-		ROM_LOAD( "tp025-4.bin", 0x000000, 0x100000, 0xab97f744 )
-		ROM_LOAD( "tp025-3.bin", 0x100000, 0x100000, 0x7b16101e )
-	ROM_END
+		ROM_REGION( 0x200000, REGION_GFX1, ROMREGION_DISPOSE );
+		ROM_LOAD( "tp025-4.bin", 0x000000, 0x100000, 0xab97f744 );
+		ROM_LOAD( "tp025-3.bin", 0x100000, 0x100000, 0x7b16101e );
+	ROM_END(); }}; 
 	
-	ROM_START( whoopee )
-		ROM_REGION( 0x040000, REGION_CPU1, 0 )			/* Main 68K code */
-		ROM_LOAD16_BYTE( "whoopee.1", 0x000000, 0x020000, 0x28882e7e )
-		ROM_LOAD16_BYTE( "whoopee.2", 0x000001, 0x020000, 0x6796f133 )
+	static RomLoadPtr rom_whoopee = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x040000, REGION_CPU1, 0 );		/* Main 68K code */
+		ROM_LOAD16_BYTE( "whoopee.1", 0x000000, 0x020000, 0x28882e7e );
+		ROM_LOAD16_BYTE( "whoopee.2", 0x000001, 0x020000, 0x6796f133 );
 	
-		ROM_REGION( 0x10000, REGION_CPU2, 0 )			/* Sound Z80 code */
+		ROM_REGION( 0x10000, REGION_CPU2, 0 );		/* Sound Z80 code */
 		/* sound CPU is a HD647180 (Z180) with internal ROM - not yet supported */
 		/* use the Z80 version from the bootleg Pipi & Bibis set for now */
-		ROM_LOAD( "hd647180.025", 0x00000, 0x08000, BADCRC( 0x101c0358 ) )
+		ROM_LOAD( "hd647180.025", 0x00000, 0x08000, BADCRC( 0x101c0358 ));
 	
-		ROM_REGION( 0x200000, REGION_GFX1, ROMREGION_DISPOSE )
-		ROM_LOAD( "tp025-4.bin", 0x000000, 0x100000, 0xab97f744 )
-		ROM_LOAD( "tp025-3.bin", 0x100000, 0x100000, 0x7b16101e )
-	ROM_END
+		ROM_REGION( 0x200000, REGION_GFX1, ROMREGION_DISPOSE );
+		ROM_LOAD( "tp025-4.bin", 0x000000, 0x100000, 0xab97f744 );
+		ROM_LOAD( "tp025-3.bin", 0x100000, 0x100000, 0x7b16101e );
+	ROM_END(); }}; 
 	
-	ROM_START( pipibibi )
-		ROM_REGION( 0x040000, REGION_CPU1, 0 )			/* Main 68K code */
-		ROM_LOAD16_BYTE( "ppbb06.bin", 0x000000, 0x020000, 0x14c92515 )
-		ROM_LOAD16_BYTE( "ppbb05.bin", 0x000001, 0x020000, 0x3d51133c )
+	static RomLoadPtr rom_pipibibi = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x040000, REGION_CPU1, 0 );		/* Main 68K code */
+		ROM_LOAD16_BYTE( "ppbb06.bin", 0x000000, 0x020000, 0x14c92515 );
+		ROM_LOAD16_BYTE( "ppbb05.bin", 0x000001, 0x020000, 0x3d51133c );
 	
-		ROM_REGION( 0x10000, REGION_CPU2, 0 )			/* Sound Z80 code */
-		ROM_LOAD( "ppbb08.bin", 0x0000, 0x8000, 0x101c0358 )
+		ROM_REGION( 0x10000, REGION_CPU2, 0 );		/* Sound Z80 code */
+		ROM_LOAD( "ppbb08.bin", 0x0000, 0x8000, 0x101c0358 );
 	
-		ROM_REGION( 0x200000, REGION_GFX1, ROMREGION_DISPOSE )
+		ROM_REGION( 0x200000, REGION_GFX1, ROMREGION_DISPOSE );
 		/* GFX data differs slightly from Toaplan boards ??? */
-		ROM_LOAD16_BYTE( "ppbb01.bin", 0x000000, 0x080000, 0x0fcae44b )
-		ROM_LOAD16_BYTE( "ppbb02.bin", 0x000001, 0x080000, 0x8bfcdf87 )
-		ROM_LOAD16_BYTE( "ppbb03.bin", 0x100000, 0x080000, 0xabdd2b8b )
-		ROM_LOAD16_BYTE( "ppbb04.bin", 0x100001, 0x080000, 0x70faa734 )
+		ROM_LOAD16_BYTE( "ppbb01.bin", 0x000000, 0x080000, 0x0fcae44b );
+		ROM_LOAD16_BYTE( "ppbb02.bin", 0x000001, 0x080000, 0x8bfcdf87 );
+		ROM_LOAD16_BYTE( "ppbb03.bin", 0x100000, 0x080000, 0xabdd2b8b );
+		ROM_LOAD16_BYTE( "ppbb04.bin", 0x100001, 0x080000, 0x70faa734 );
 	
-		ROM_REGION( 0x8000, REGION_USER1, 0 )			/* ??? Some sort of table */
-		ROM_LOAD( "ppbb07.bin", 0x0000, 0x8000, 0x456dd16e )
-	ROM_END
+		ROM_REGION( 0x8000, REGION_USER1, 0 );		/* ??? Some sort of table */
+		ROM_LOAD( "ppbb07.bin", 0x0000, 0x8000, 0x456dd16e );
+	ROM_END(); }}; 
 	
-	ROM_START( fixeight )
-		ROM_REGION( 0x080000, REGION_CPU1, 0 )			/* Main 68K code */
+	static RomLoadPtr rom_fixeight = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x080000, REGION_CPU1, 0 );		/* Main 68K code */
 		ROM_LOAD16_WORD_SWAP( "tp-026-1", 0x000000, 0x080000, 0xf7b1746a )
 	
 	#if Zx80
-		ROM_REGION( 0x10000, REGION_CPU2, 0 )			/* Secondary CPU code */
+		ROM_REGION( 0x10000, REGION_CPU2, 0 );		/* Secondary CPU code */
 		/* Secondary CPU is a Toaplan marked chip, (TS-001-Turbo  TOA PLAN) */
 		/* Its a Z?80 of some sort - 94 pin chip. */
-	//	ROM_LOAD( "tp-026.mcu", 0x0000, 0x8000, 0x00000000 )
+	//	ROM_LOAD( "tp-026.mcu", 0x0000, 0x8000, 0x00000000 );
 	#endif
 	
-		ROM_REGION( 0x400000, REGION_GFX1, ROMREGION_DISPOSE )
-		ROM_LOAD( "tp-026-3", 0x000000, 0x200000, 0xe5578d98 )
-		ROM_LOAD( "tp-026-4", 0x200000, 0x200000, 0xb760cb53 )
+		ROM_REGION( 0x400000, REGION_GFX1, ROMREGION_DISPOSE );
+		ROM_LOAD( "tp-026-3", 0x000000, 0x200000, 0xe5578d98 );
+		ROM_LOAD( "tp-026-4", 0x200000, 0x200000, 0xb760cb53 );
 	
-		ROM_REGION( 0x40000, REGION_SOUND1, 0 )			/* ADPCM Samples */
-		ROM_LOAD( "tp-026-2", 0x00000, 0x40000, 0x85063f1f )
+		ROM_REGION( 0x40000, REGION_SOUND1, 0 );		/* ADPCM Samples */
+		ROM_LOAD( "tp-026-2", 0x00000, 0x40000, 0x85063f1f );
 	
-		ROM_REGION( 0x80, REGION_USER1, 0 )
+		ROM_REGION( 0x80, REGION_USER1, 0 );
 		/* Serial EEPROM (93C45) connected to Secondary CPU */
-		ROM_LOAD( "93c45.u21", 0x00, 0x80, 0x40d75df0 )
-	ROM_END
+		ROM_LOAD( "93c45.u21", 0x00, 0x80, 0x40d75df0 );
+	ROM_END(); }}; 
 	
-	ROM_START( grindstm )
-		ROM_REGION( 0x080000, REGION_CPU1, 0 )			/* Main 68K code */
+	static RomLoadPtr rom_grindstm = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x080000, REGION_CPU1, 0 );		/* Main 68K code */
 		ROM_LOAD16_WORD_SWAP( "01.bin", 0x000000, 0x080000, 0x4923f790 )
 	
 	#if Zx80
-		ROM_REGION( 0x10000, REGION_CPU2, 0 )			/* Sound CPU code */
+		ROM_REGION( 0x10000, REGION_CPU2, 0 );		/* Sound CPU code */
 		/* Secondary CPU is a Toaplan marked chip, (TS-007-Spy  TOA PLAN) */
 		/* Its a Z?80 of some sort - 94 pin chip. */
-	//	ROM_LOAD( "tp027.mcu", 0x8000, 0x8000, 0x00000000 )
+	//	ROM_LOAD( "tp027.mcu", 0x8000, 0x8000, 0x00000000 );
 	#endif
 	
-		ROM_REGION( 0x200000, REGION_GFX1, ROMREGION_DISPOSE )
-		ROM_LOAD( "tp027_02.bin", 0x000000, 0x100000, 0x877b45e8 )
-		ROM_LOAD( "tp027_03.bin", 0x100000, 0x100000, 0xb1fc6362 )
-	ROM_END
+		ROM_REGION( 0x200000, REGION_GFX1, ROMREGION_DISPOSE );
+		ROM_LOAD( "tp027_02.bin", 0x000000, 0x100000, 0x877b45e8 );
+		ROM_LOAD( "tp027_03.bin", 0x100000, 0x100000, 0xb1fc6362 );
+	ROM_END(); }}; 
 	
-	ROM_START( vfive )
-		ROM_REGION( 0x080000, REGION_CPU1, 0 )			/* Main 68K code */
+	static RomLoadPtr rom_vfive = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x080000, REGION_CPU1, 0 );		/* Main 68K code */
 		ROM_LOAD16_WORD_SWAP( "tp027_01.bin", 0x000000, 0x080000, 0x731d50f4 )
 	
 	#if Zx80
-		ROM_REGION( 0x10000, REGION_CPU2, 0 )			/* Sound CPU code */
+		ROM_REGION( 0x10000, REGION_CPU2, 0 );		/* Sound CPU code */
 		/* Secondary CPU is a Toaplan marked chip, (TS-007-Spy  TOA PLAN) */
 		/* Its a Z?80 of some sort - 94 pin chip. */
-	//	ROM_LOAD( "tp027.mcu", 0x8000, 0x8000, 0x00000000 )
+	//	ROM_LOAD( "tp027.mcu", 0x8000, 0x8000, 0x00000000 );
 	#endif
 	
-		ROM_REGION( 0x200000, REGION_GFX1, ROMREGION_DISPOSE )
-		ROM_LOAD( "tp027_02.bin", 0x000000, 0x100000, 0x877b45e8 )
-		ROM_LOAD( "tp027_03.bin", 0x100000, 0x100000, 0xb1fc6362 )
-	ROM_END
+		ROM_REGION( 0x200000, REGION_GFX1, ROMREGION_DISPOSE );
+		ROM_LOAD( "tp027_02.bin", 0x000000, 0x100000, 0x877b45e8 );
+		ROM_LOAD( "tp027_03.bin", 0x100000, 0x100000, 0xb1fc6362 );
+	ROM_END(); }}; 
 	
-	ROM_START( batsugun )
-		ROM_REGION( 0x080000, REGION_CPU1, 0 )			/* Main 68K code */
+	static RomLoadPtr rom_batsugun = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x080000, REGION_CPU1, 0 );		/* Main 68K code */
 		ROM_LOAD16_WORD_SWAP( "tp030_01.bin", 0x000000, 0x080000, 0x3873d7dd )
 	
 	#if Zx80
-		ROM_REGION( 0x10000, REGION_CPU2, 0 )			/* Sound CPU code */
+		ROM_REGION( 0x10000, REGION_CPU2, 0 );		/* Sound CPU code */
 		/* Secondary CPU is a Toaplan marked chip, (TS-007-Spy  TOA PLAN) */
 		/* Its a Z?80 of some sort - 94 pin chip. */
-	//	ROM_LOAD( "tp030.mcu", 0x8000, 0x8000, 0x00000000 )
+	//	ROM_LOAD( "tp030.mcu", 0x8000, 0x8000, 0x00000000 );
 	#endif
 	
-		ROM_REGION( 0x400000, REGION_GFX1, ROMREGION_DISPOSE )
-		ROM_LOAD( "tp030_3l.bin", 0x000000, 0x100000, 0x3024b793 )
-		ROM_LOAD( "tp030_3h.bin", 0x100000, 0x100000, 0xed75730b )
-		ROM_LOAD( "tp030_4l.bin", 0x200000, 0x100000, 0xfedb9861 )
-		ROM_LOAD( "tp030_4h.bin", 0x300000, 0x100000, 0xd482948b )
+		ROM_REGION( 0x400000, REGION_GFX1, ROMREGION_DISPOSE );
+		ROM_LOAD( "tp030_3l.bin", 0x000000, 0x100000, 0x3024b793 );
+		ROM_LOAD( "tp030_3h.bin", 0x100000, 0x100000, 0xed75730b );
+		ROM_LOAD( "tp030_4l.bin", 0x200000, 0x100000, 0xfedb9861 );
+		ROM_LOAD( "tp030_4h.bin", 0x300000, 0x100000, 0xd482948b );
 	
-		ROM_REGION( 0x200000, REGION_GFX2, ROMREGION_DISPOSE )
-		ROM_LOAD( "tp030_5.bin",  0x000000, 0x100000, 0xbcf5ba05 )
-		ROM_LOAD( "tp030_6.bin",  0x100000, 0x100000, 0x0666fecd )
+		ROM_REGION( 0x200000, REGION_GFX2, ROMREGION_DISPOSE );
+		ROM_LOAD( "tp030_5.bin",  0x000000, 0x100000, 0xbcf5ba05 );
+		ROM_LOAD( "tp030_6.bin",  0x100000, 0x100000, 0x0666fecd );
 	
-		ROM_REGION( 0x40000, REGION_SOUND1, 0 )			/* ADPCM Samples */
-		ROM_LOAD( "tp030_2.bin", 0x00000, 0x40000, 0x276146f5 )
-	ROM_END
+		ROM_REGION( 0x40000, REGION_SOUND1, 0 );		/* ADPCM Samples */
+		ROM_LOAD( "tp030_2.bin", 0x00000, 0x40000, 0x276146f5 );
+	ROM_END(); }}; 
 	
-	ROM_START( batugnsp )
-		ROM_REGION( 0x080000, REGION_CPU1, 0 )			/* Main 68K code */
+	static RomLoadPtr rom_batugnsp = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x080000, REGION_CPU1, 0 );		/* Main 68K code */
 		ROM_LOAD16_WORD_SWAP( "tp030-sp.u69", 0x000000, 0x080000, 0x8072a0cd )
 	
 	#if Zx80
-		ROM_REGION( 0x10000, REGION_CPU2, 0 )			/* Sound CPU code */
+		ROM_REGION( 0x10000, REGION_CPU2, 0 );		/* Sound CPU code */
 		/* Secondary CPU is a Toaplan marked chip, (TS-007-Spy  TOA PLAN) */
 		/* Its a Z?80 of some sort - 94 pin chip. */
-	//	ROM_LOAD( "tp030.mcu", 0x8000, 0x8000, 0x00000000 )
+	//	ROM_LOAD( "tp030.mcu", 0x8000, 0x8000, 0x00000000 );
 	#endif
 	
-		ROM_REGION( 0x400000, REGION_GFX1, ROMREGION_DISPOSE )
-		ROM_LOAD( "tp030_3l.bin", 0x000000, 0x100000, 0x3024b793 )
-		ROM_LOAD( "tp030_3h.bin", 0x100000, 0x100000, 0xed75730b )
-		ROM_LOAD( "tp030_4l.bin", 0x200000, 0x100000, 0xfedb9861 )
-		ROM_LOAD( "tp030_4h.bin", 0x300000, 0x100000, 0xd482948b )
+		ROM_REGION( 0x400000, REGION_GFX1, ROMREGION_DISPOSE );
+		ROM_LOAD( "tp030_3l.bin", 0x000000, 0x100000, 0x3024b793 );
+		ROM_LOAD( "tp030_3h.bin", 0x100000, 0x100000, 0xed75730b );
+		ROM_LOAD( "tp030_4l.bin", 0x200000, 0x100000, 0xfedb9861 );
+		ROM_LOAD( "tp030_4h.bin", 0x300000, 0x100000, 0xd482948b );
 	
-		ROM_REGION( 0x200000, REGION_GFX2, ROMREGION_DISPOSE )
-		ROM_LOAD( "tp030_5.bin",  0x000000, 0x100000, 0xbcf5ba05 )
-		ROM_LOAD( "tp030_6.bin",  0x100000, 0x100000, 0x0666fecd )
+		ROM_REGION( 0x200000, REGION_GFX2, ROMREGION_DISPOSE );
+		ROM_LOAD( "tp030_5.bin",  0x000000, 0x100000, 0xbcf5ba05 );
+		ROM_LOAD( "tp030_6.bin",  0x100000, 0x100000, 0x0666fecd );
 	
-		ROM_REGION( 0x40000, REGION_SOUND1, 0 )			/* ADPCM Samples */
-		ROM_LOAD( "tp030_2.bin", 0x00000, 0x40000, 0x276146f5 )
-	ROM_END
+		ROM_REGION( 0x40000, REGION_SOUND1, 0 );		/* ADPCM Samples */
+		ROM_LOAD( "tp030_2.bin", 0x00000, 0x40000, 0x276146f5 );
+	ROM_END(); }}; 
 	
-	ROM_START( snowbro2 )
-		ROM_REGION( 0x080000, REGION_CPU1, 0 )			/* Main 68K code */
+	static RomLoadPtr rom_snowbro2 = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x080000, REGION_CPU1, 0 );		/* Main 68K code */
 		ROM_LOAD16_WORD_SWAP( "pro-4", 0x000000, 0x080000, 0x4c7ee341 )
 	
-		ROM_REGION( 0x300000, REGION_GFX1, ROMREGION_DISPOSE )
-		ROM_LOAD( "rom2-l", 0x000000, 0x100000, 0xe9d366a9 )
-		ROM_LOAD( "rom2-h", 0x100000, 0x080000, 0x9aab7a62 )
-		ROM_LOAD( "rom3-l", 0x180000, 0x100000, 0xeb06e332 )
-		ROM_LOAD( "rom3-h", 0x280000, 0x080000, 0xdf4a952a )
+		ROM_REGION( 0x300000, REGION_GFX1, ROMREGION_DISPOSE );
+		ROM_LOAD( "rom2-l", 0x000000, 0x100000, 0xe9d366a9 );
+		ROM_LOAD( "rom2-h", 0x100000, 0x080000, 0x9aab7a62 );
+		ROM_LOAD( "rom3-l", 0x180000, 0x100000, 0xeb06e332 );
+		ROM_LOAD( "rom3-h", 0x280000, 0x080000, 0xdf4a952a );
 	
-		ROM_REGION( 0x80000, REGION_SOUND1, 0 )			/* ADPCM Samples */
-		ROM_LOAD( "rom4", 0x00000, 0x80000, 0x638f341e )
-	ROM_END
+		ROM_REGION( 0x80000, REGION_SOUND1, 0 );		/* ADPCM Samples */
+		ROM_LOAD( "rom4", 0x00000, 0x80000, 0x638f341e );
+	ROM_END(); }}; 
 	
 	/* -------------------------- Raizing games ------------------------- */
-	ROM_START( mahoudai )
-		ROM_REGION( 0x080000, REGION_CPU1, 0 )			/* Main 68K code */
+	static RomLoadPtr rom_mahoudai = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x080000, REGION_CPU1, 0 );		/* Main 68K code */
 		ROM_LOAD16_WORD_SWAP( "ra_ma_01.01", 0x000000, 0x080000, 0x970ccc5c )
 	
-		ROM_REGION( 0x10000, REGION_CPU2, 0 )			/* Sound Z80 code */
-		ROM_LOAD( "ra_ma_01.02", 0x00000, 0x10000, 0xeabfa46d )
+		ROM_REGION( 0x10000, REGION_CPU2, 0 );		/* Sound Z80 code */
+		ROM_LOAD( "ra_ma_01.02", 0x00000, 0x10000, 0xeabfa46d );
 	
-		ROM_REGION( 0x200000, REGION_GFX1, ROMREGION_DISPOSE )
-		ROM_LOAD( "ra_ma_01.03",  0x000000, 0x100000, 0x54e2bd95 )
-		ROM_LOAD( "ra_ma_01.04",  0x100000, 0x100000, 0x21cd378f )
+		ROM_REGION( 0x200000, REGION_GFX1, ROMREGION_DISPOSE );
+		ROM_LOAD( "ra_ma_01.03",  0x000000, 0x100000, 0x54e2bd95 );
+		ROM_LOAD( "ra_ma_01.04",  0x100000, 0x100000, 0x21cd378f );
 	
-		ROM_REGION( 0x008000, REGION_GFX2, ROMREGION_DISPOSE )
-		ROM_LOAD( "ra_ma_01.05",  0x000000, 0x008000, 0xc00d1e80 )
+		ROM_REGION( 0x008000, REGION_GFX2, ROMREGION_DISPOSE );
+		ROM_LOAD( "ra_ma_01.05",  0x000000, 0x008000, 0xc00d1e80 );
 	
-		ROM_REGION( 0x40000, REGION_SOUND1, 0 )			/* ADPCM Samples */
-		ROM_LOAD( "ra_ma_01.06", 0x00000, 0x40000, 0x6edb2ab8 )
-	ROM_END
+		ROM_REGION( 0x40000, REGION_SOUND1, 0 );		/* ADPCM Samples */
+		ROM_LOAD( "ra_ma_01.06", 0x00000, 0x40000, 0x6edb2ab8 );
+	ROM_END(); }}; 
 	
-	ROM_START( shippumd )
-		ROM_REGION( 0x100000, REGION_CPU1, 0 )			/* Main 68K code */
-		ROM_LOAD16_BYTE( "ma02rom1.bin", 0x000000, 0x080000, 0xa678b149 )
-		ROM_LOAD16_BYTE( "ma02rom0.bin", 0x000001, 0x080000, 0xf226a212 )
+	static RomLoadPtr rom_shippumd = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x100000, REGION_CPU1, 0 );		/* Main 68K code */
+		ROM_LOAD16_BYTE( "ma02rom1.bin", 0x000000, 0x080000, 0xa678b149 );
+		ROM_LOAD16_BYTE( "ma02rom0.bin", 0x000001, 0x080000, 0xf226a212 );
 	
-		ROM_REGION( 0x10000, REGION_CPU2, 0 )			/* Sound Z80 code */
-		ROM_LOAD( "ma02rom2.bin", 0x00000, 0x10000, 0xdde8a57e )
+		ROM_REGION( 0x10000, REGION_CPU2, 0 );		/* Sound Z80 code */
+		ROM_LOAD( "ma02rom2.bin", 0x00000, 0x10000, 0xdde8a57e );
 	
-		ROM_REGION( 0x400000, REGION_GFX1, ROMREGION_DISPOSE )
-		ROM_LOAD( "ma02rom3.bin",  0x000000, 0x200000, 0x0e797142 )
-		ROM_LOAD( "ma02rom4.bin",  0x200000, 0x200000, 0x72a6fa53 )
+		ROM_REGION( 0x400000, REGION_GFX1, ROMREGION_DISPOSE );
+		ROM_LOAD( "ma02rom3.bin",  0x000000, 0x200000, 0x0e797142 );
+		ROM_LOAD( "ma02rom4.bin",  0x200000, 0x200000, 0x72a6fa53 );
 	
-		ROM_REGION( 0x008000, REGION_GFX2, ROMREGION_DISPOSE )
-		ROM_LOAD( "ma02rom5.bin",  0x000000, 0x008000, 0x116ae559 )
+		ROM_REGION( 0x008000, REGION_GFX2, ROMREGION_DISPOSE );
+		ROM_LOAD( "ma02rom5.bin",  0x000000, 0x008000, 0x116ae559 );
 	
-		ROM_REGION( 0x80000, REGION_SOUND1, 0 )			/* ADPCM Samples */
-		ROM_LOAD( "ma02rom6.bin", 0x00000, 0x80000, 0x199e7cae )
-	ROM_END
+		ROM_REGION( 0x80000, REGION_SOUND1, 0 );		/* ADPCM Samples */
+		ROM_LOAD( "ma02rom6.bin", 0x00000, 0x80000, 0x199e7cae );
+	ROM_END(); }}; 
 	
-	ROM_START( battleg )
-		ROM_REGION( 0x100000, REGION_CPU1, 0 )			/* Main 68K code */
-		ROM_LOAD16_BYTE( "prg0.bin", 0x000000, 0x080000, 0xf80c2fc2 )
-		ROM_LOAD16_BYTE( "prg1.bin", 0x000001, 0x080000, 0x2ccfdd1e )
+	static RomLoadPtr rom_battleg = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x100000, REGION_CPU1, 0 );		/* Main 68K code */
+		ROM_LOAD16_BYTE( "prg0.bin", 0x000000, 0x080000, 0xf80c2fc2 );
+		ROM_LOAD16_BYTE( "prg1.bin", 0x000001, 0x080000, 0x2ccfdd1e );
 	
-		ROM_REGION( 0x28000, REGION_CPU2, 0 )			/* Sound Z80 code + bank */
-		ROM_LOAD( "snd.bin", 0x00000, 0x08000, 0x68632952 )
-		ROM_CONTINUE(        0x10000, 0x18000 )
+		ROM_REGION( 0x28000, REGION_CPU2, 0 );		/* Sound Z80 code + bank */
+		ROM_LOAD( "snd.bin", 0x00000, 0x08000, 0x68632952 );
+		ROM_CONTINUE(        0x10000, 0x18000 );
 	
-		ROM_REGION( 0x800000, REGION_GFX1, ROMREGION_DISPOSE )
-		ROM_LOAD( "rom4.bin",  0x000000, 0x200000, 0xb333d81f )
-		ROM_LOAD( "rom3.bin",  0x200000, 0x200000, 0x51b9ebfb )
-		ROM_LOAD( "rom2.bin",  0x400000, 0x200000, 0xb330e5e2 )
-		ROM_LOAD( "rom1.bin",  0x600000, 0x200000, 0x7eafdd70 )
+		ROM_REGION( 0x800000, REGION_GFX1, ROMREGION_DISPOSE );
+		ROM_LOAD( "rom4.bin",  0x000000, 0x200000, 0xb333d81f );
+		ROM_LOAD( "rom3.bin",  0x200000, 0x200000, 0x51b9ebfb );
+		ROM_LOAD( "rom2.bin",  0x400000, 0x200000, 0xb330e5e2 );
+		ROM_LOAD( "rom1.bin",  0x600000, 0x200000, 0x7eafdd70 );
 	
-		ROM_REGION( 0x010000, REGION_GFX2, ROMREGION_DISPOSE )
-		ROM_LOAD( "text.bin", 0x000000, 0x010000, 0xb239cd05 )
+		ROM_REGION( 0x010000, REGION_GFX2, ROMREGION_DISPOSE );
+		ROM_LOAD( "text.bin", 0x000000, 0x010000, 0xb239cd05 );
 	
-		ROM_REGION( 0x140000, REGION_SOUND1, 0 )		/* ADPCM Samples */
-		ROM_LOAD( "rom5.bin", 0x040000, 0x100000, 0xf6d49863 )
-	ROM_END
+		ROM_REGION( 0x140000, REGION_SOUND1, 0 );	/* ADPCM Samples */
+		ROM_LOAD( "rom5.bin", 0x040000, 0x100000, 0xf6d49863 );
+	ROM_END(); }}; 
 	
-	ROM_START( batrider )
-		ROM_REGION( 0x200000, REGION_CPU1, 0 )			/* Main 68k code */
-		ROM_LOAD16_BYTE( "prg0.u22" , 0x000000, 0x080000, 0x4f3fc729 )
-		ROM_LOAD16_BYTE( "prg1b.u23", 0x000001, 0x080000, 0x8e70b492 )
-		ROM_LOAD16_BYTE( "prg2.u21" , 0x100000, 0x080000, 0xbdaa5fbf )
-		ROM_LOAD16_BYTE( "prg3.u24" , 0x100001, 0x080000, 0x7aa9f941 )
+	static RomLoadPtr rom_batrider = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x200000, REGION_CPU1, 0 );		/* Main 68k code */
+		ROM_LOAD16_BYTE( "prg0.u22" , 0x000000, 0x080000, 0x4f3fc729 );
+		ROM_LOAD16_BYTE( "prg1b.u23", 0x000001, 0x080000, 0x8e70b492 );
+		ROM_LOAD16_BYTE( "prg2.u21" , 0x100000, 0x080000, 0xbdaa5fbf );
+		ROM_LOAD16_BYTE( "prg3.u24" , 0x100001, 0x080000, 0x7aa9f941 );
 	
-		ROM_REGION( 0x48000, REGION_CPU2, 0 )			/* Sound Z80 code + bank */
-		ROM_LOAD( "snd.u77", 0x00000, 0x08000, 0x56682696 )
-		ROM_CONTINUE(        0x10000, 0x38000 )
+		ROM_REGION( 0x48000, REGION_CPU2, 0 );		/* Sound Z80 code + bank */
+		ROM_LOAD( "snd.u77", 0x00000, 0x08000, 0x56682696 );
+		ROM_CONTINUE(        0x10000, 0x38000 );
 	
-		ROM_REGION( 0x1000000, REGION_GFX1, ROMREGION_DISPOSE )
-		ROM_LOAD( "rom-1.bin", 0x000000, 0x400000, 0x0df69ca2 )
-		ROM_LOAD( "rom-3.bin", 0x400000, 0x400000, 0x60167d38 )
-		ROM_LOAD( "rom-2.bin", 0x800000, 0x400000, 0x1bfea593 )
-		ROM_LOAD( "rom-4.bin", 0xc00000, 0x400000, 0xbee03c94 )
+		ROM_REGION( 0x1000000, REGION_GFX1, ROMREGION_DISPOSE );
+		ROM_LOAD( "rom-1.bin", 0x000000, 0x400000, 0x0df69ca2 );
+		ROM_LOAD( "rom-3.bin", 0x400000, 0x400000, 0x60167d38 );
+		ROM_LOAD( "rom-2.bin", 0x800000, 0x400000, 0x1bfea593 );
+		ROM_LOAD( "rom-4.bin", 0xc00000, 0x400000, 0xbee03c94 );
 	
-		ROM_REGION( 0x140000, REGION_SOUND1, 0 )		/* ADPCM Samples 1 */
-		ROM_LOAD( "rom-5.bin", 0x040000, 0x100000, 0x4274daf6 )
+		ROM_REGION( 0x140000, REGION_SOUND1, 0 );	/* ADPCM Samples 1 */
+		ROM_LOAD( "rom-5.bin", 0x040000, 0x100000, 0x4274daf6 );
 	
-		ROM_REGION( 0x140000, REGION_SOUND2, 0 )		/* ADPCM Samples 2 */
-		ROM_LOAD( "rom-6.bin", 0x040000, 0x100000, 0x2a1c2426 )
-	ROM_END
+		ROM_REGION( 0x140000, REGION_SOUND2, 0 );	/* ADPCM Samples 2 */
+		ROM_LOAD( "rom-6.bin", 0x040000, 0x100000, 0x2a1c2426 );
+	ROM_END(); }}; 
 	
-	ROM_START( batridra )
-		ROM_REGION( 0x200000, REGION_CPU1, 0 )			/* Main 68k code */
-		ROM_LOAD16_BYTE( "prg0.bin", 0x000000, 0x080000, 0xf93ea27c )
-		ROM_LOAD16_BYTE( "prg1.bin", 0x000001, 0x080000, 0x8ae7f592 )
-		ROM_LOAD16_BYTE( "prg2.u21", 0x100000, 0x080000, 0xbdaa5fbf )
-		ROM_LOAD16_BYTE( "prg3.u24", 0x100001, 0x080000, 0x7aa9f941 )
+	static RomLoadPtr rom_batridra = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x200000, REGION_CPU1, 0 );		/* Main 68k code */
+		ROM_LOAD16_BYTE( "prg0.bin", 0x000000, 0x080000, 0xf93ea27c );
+		ROM_LOAD16_BYTE( "prg1.bin", 0x000001, 0x080000, 0x8ae7f592 );
+		ROM_LOAD16_BYTE( "prg2.u21", 0x100000, 0x080000, 0xbdaa5fbf );
+		ROM_LOAD16_BYTE( "prg3.u24", 0x100001, 0x080000, 0x7aa9f941 );
 	
-		ROM_REGION( 0x48000, REGION_CPU2, 0 )			/* Sound Z80 code + bank */
-		ROM_LOAD( "snd.u77", 0x00000, 0x08000, 0x56682696 )
-		ROM_CONTINUE(        0x10000, 0x38000 )
+		ROM_REGION( 0x48000, REGION_CPU2, 0 );		/* Sound Z80 code + bank */
+		ROM_LOAD( "snd.u77", 0x00000, 0x08000, 0x56682696 );
+		ROM_CONTINUE(        0x10000, 0x38000 );
 	
-		ROM_REGION( 0x1000000, REGION_GFX1, ROMREGION_DISPOSE )
-		ROM_LOAD( "rom-1.bin", 0x000000, 0x400000, 0x0df69ca2 )
-		ROM_LOAD( "rom-3.bin", 0x400000, 0x400000, 0x60167d38 )
-		ROM_LOAD( "rom-2.bin", 0x800000, 0x400000, 0x1bfea593 )
-		ROM_LOAD( "rom-4.bin", 0xc00000, 0x400000, 0xbee03c94 )
+		ROM_REGION( 0x1000000, REGION_GFX1, ROMREGION_DISPOSE );
+		ROM_LOAD( "rom-1.bin", 0x000000, 0x400000, 0x0df69ca2 );
+		ROM_LOAD( "rom-3.bin", 0x400000, 0x400000, 0x60167d38 );
+		ROM_LOAD( "rom-2.bin", 0x800000, 0x400000, 0x1bfea593 );
+		ROM_LOAD( "rom-4.bin", 0xc00000, 0x400000, 0xbee03c94 );
 	
-		ROM_REGION( 0x140000, REGION_SOUND1, 0 )		/* ADPCM Samples 1 */
-		ROM_LOAD( "rom-5.bin", 0x040000, 0x100000, 0x4274daf6 )
+		ROM_REGION( 0x140000, REGION_SOUND1, 0 );	/* ADPCM Samples 1 */
+		ROM_LOAD( "rom-5.bin", 0x040000, 0x100000, 0x4274daf6 );
 	
-		ROM_REGION( 0x140000, REGION_SOUND2, 0 )		/* ADPCM Samples 2 */
-		ROM_LOAD( "rom-6.bin", 0x040000, 0x100000, 0x2a1c2426 )
-	ROM_END
+		ROM_REGION( 0x140000, REGION_SOUND2, 0 );	/* ADPCM Samples 2 */
+		ROM_LOAD( "rom-6.bin", 0x040000, 0x100000, 0x2a1c2426 );
+	ROM_END(); }}; 
 	
 	
 	/* The following is in order of Toaplan Board/game numbers */

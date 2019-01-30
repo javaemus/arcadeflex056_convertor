@@ -503,34 +503,34 @@ public class legionna
 	
 	***************************************************************************/
 	
-	ROM_START( legionna )
-		ROM_REGION( 0x80000, REGION_CPU1, 0 )	/* 68000 code */
-		ROM_LOAD32_BYTE( "1",   0x00000, 0x20000, 0x9e2d3ec8 )
-		ROM_LOAD32_BYTE( "2",   0x00001, 0x20000, 0x35c8a28f )
-		ROM_LOAD32_BYTE( "3",   0x00002, 0x20000, 0x553fc7c0 )
-		ROM_LOAD32_BYTE( "4",   0x00003, 0x20000, 0x91fd4648 )
+	static RomLoadPtr rom_legionna = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x80000, REGION_CPU1, 0 );/* 68000 code */
+		ROM_LOAD32_BYTE( "1",   0x00000, 0x20000, 0x9e2d3ec8 );
+		ROM_LOAD32_BYTE( "2",   0x00001, 0x20000, 0x35c8a28f );
+		ROM_LOAD32_BYTE( "3",   0x00002, 0x20000, 0x553fc7c0 );
+		ROM_LOAD32_BYTE( "4",   0x00003, 0x20000, 0x91fd4648 );
 	
-		ROM_REGION( 0x20000*2, REGION_CPU2, 0 )	/* Z80 code, banked data */
-		ROM_LOAD( "6",   0x00000, 0x08000, 0xfe7b8d06 )
-		ROM_CONTINUE(    0x10000, 0x08000 )	/* banked stuff ?? */
+		ROM_REGION( 0x20000*2, REGION_CPU2, 0 );/* Z80 code, banked data */
+		ROM_LOAD( "6",   0x00000, 0x08000, 0xfe7b8d06 );
+		ROM_CONTINUE(    0x10000, 0x08000 );/* banked stuff ?? */
 	
-		ROM_REGION( 0x020000, REGION_GFX1, ROMREGION_DISPOSE )
-		ROM_LOAD( "7",   0x000000, 0x10000, 0x88e26809 )	/* chars */
-		ROM_LOAD( "8",   0x010000, 0x10000, 0x06e35407 )	/* chars */
+		ROM_REGION( 0x020000, REGION_GFX1, ROMREGION_DISPOSE );
+		ROM_LOAD( "7",   0x000000, 0x10000, 0x88e26809 );/* chars */
+		ROM_LOAD( "8",   0x010000, 0x10000, 0x06e35407 );/* chars */
 	
-		ROM_REGION( 0x200000, REGION_GFX2, ROMREGION_DISPOSE )
-		ROM_LOAD( "obj1",     0x000000, 0x100000, 0xd35602f5 )	/* sprites */
-		ROM_LOAD( "obj2",     0x100000, 0x100000, 0x351d3917 )
+		ROM_REGION( 0x200000, REGION_GFX2, ROMREGION_DISPOSE );
+		ROM_LOAD( "obj1",     0x000000, 0x100000, 0xd35602f5 );/* sprites */
+		ROM_LOAD( "obj2",     0x100000, 0x100000, 0x351d3917 );
 	
-		ROM_REGION( 0x100000, REGION_GFX3, ROMREGION_DISPOSE )
-		ROM_LOAD( "back",     0x000000, 0x100000, 0x58280989 )	/* tiles... (a BK3 set at end) */
+		ROM_REGION( 0x100000, REGION_GFX3, ROMREGION_DISPOSE );
+		ROM_LOAD( "back",     0x000000, 0x100000, 0x58280989 );/* tiles... (a BK3 set at end) */
 	
-		ROM_REGION( 0x020000, REGION_GFX4, ROMREGION_DISPOSE )	/* for BK3 decode */
-		ROM_COPY( REGION_GFX1, 0x00000, 0x00000, 0x20000)
+		ROM_REGION( 0x020000, REGION_GFX4, ROMREGION_DISPOSE );/* for BK3 decode */
+		ROM_COPY( REGION_GFX1, 0x00000, 0x00000, 0x20000);
 	
-		ROM_REGION( 0x020000, REGION_SOUND1, 0 )	/* ADPCM samples */
-		ROM_LOAD( "5",   0x00000, 0x20000, 0x21d09bde )
-	ROM_END
+		ROM_REGION( 0x020000, REGION_SOUND1, 0 );/* ADPCM samples */
+		ROM_LOAD( "5",   0x00000, 0x20000, 0x21d09bde );
+	ROM_END(); }}; 
 	
 	
 	

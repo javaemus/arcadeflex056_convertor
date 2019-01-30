@@ -555,56 +555,56 @@ public class playmark
 	
 	***************************************************************************/
 	
-	ROM_START( bigtwin )
-		ROM_REGION( 0x100000, REGION_CPU1, 0 )	/* 68000 code */
-		ROM_LOAD16_BYTE( "bt_02.bin",    0x000000, 0x80000, 0xe6767f60 )
-		ROM_LOAD16_BYTE( "bt_03.bin",    0x000001, 0x80000, 0x5aba6990 )
+	static RomLoadPtr rom_bigtwin = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x100000, REGION_CPU1, 0 );/* 68000 code */
+		ROM_LOAD16_BYTE( "bt_02.bin",    0x000000, 0x80000, 0xe6767f60 );
+		ROM_LOAD16_BYTE( "bt_03.bin",    0x000001, 0x80000, 0x5aba6990 );
 	
-		ROM_REGION( 0x0800, REGION_CPU2, 0 )	/* sound (missing) */
-		ROM_LOAD( "pic16c57",     0x0000, 0x0800, 0x00000000 )
+		ROM_REGION( 0x0800, REGION_CPU2, 0 );/* sound (missing) */
+		ROM_LOAD( "pic16c57",     0x0000, 0x0800, 0x00000000 );
 	
-		ROM_REGION( 0x100000, REGION_GFX1, ROMREGION_DISPOSE )
-		ROM_LOAD( "bt_04.bin",    0x00000, 0x40000, 0x6f628fbc )
-		ROM_LOAD( "bt_05.bin",    0x40000, 0x40000, 0x6a9b1752 )
-		ROM_LOAD( "bt_06.bin",    0x80000, 0x40000, 0x411cf852 )
-		ROM_LOAD( "bt_07.bin",    0xc0000, 0x40000, 0x635c81fd )
+		ROM_REGION( 0x100000, REGION_GFX1, ROMREGION_DISPOSE );
+		ROM_LOAD( "bt_04.bin",    0x00000, 0x40000, 0x6f628fbc );
+		ROM_LOAD( "bt_05.bin",    0x40000, 0x40000, 0x6a9b1752 );
+		ROM_LOAD( "bt_06.bin",    0x80000, 0x40000, 0x411cf852 );
+		ROM_LOAD( "bt_07.bin",    0xc0000, 0x40000, 0x635c81fd );
 	
-		ROM_REGION( 0x80000, REGION_GFX2, ROMREGION_DISPOSE )
-		ROM_LOAD( "bt_08.bin",    0x00000, 0x20000, 0x2749644d )
-		ROM_LOAD( "bt_09.bin",    0x20000, 0x20000, 0x1d1897af )
-		ROM_LOAD( "bt_10.bin",    0x40000, 0x20000, 0x2a03432e )
-		ROM_LOAD( "bt_11.bin",    0x60000, 0x20000, 0x2c980c4c )
+		ROM_REGION( 0x80000, REGION_GFX2, ROMREGION_DISPOSE );
+		ROM_LOAD( "bt_08.bin",    0x00000, 0x20000, 0x2749644d );
+		ROM_LOAD( "bt_09.bin",    0x20000, 0x20000, 0x1d1897af );
+		ROM_LOAD( "bt_10.bin",    0x40000, 0x20000, 0x2a03432e );
+		ROM_LOAD( "bt_11.bin",    0x60000, 0x20000, 0x2c980c4c );
 	
-		ROM_REGION( 0x40000, REGION_SOUND1, 0 )	/* OKIM6295 samples */
-		ROM_LOAD( "bt_01.bin",    0x00000, 0x40000, 0xff6671dc )
-	ROM_END
+		ROM_REGION( 0x40000, REGION_SOUND1, 0 );/* OKIM6295 samples */
+		ROM_LOAD( "bt_01.bin",    0x00000, 0x40000, 0xff6671dc );
+	ROM_END(); }}; 
 	
-	ROM_START( wbeachvl )
-		ROM_REGION( 0x80000, REGION_CPU1, 0 )	/* 68000 code */
-		ROM_LOAD16_BYTE( "wbv_02.bin",   0x000000, 0x40000, 0xc7cca29e )
-		ROM_LOAD16_BYTE( "wbv_03.bin",   0x000001, 0x40000, 0xdb4e69d5 )
+	static RomLoadPtr rom_wbeachvl = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x80000, REGION_CPU1, 0 );/* 68000 code */
+		ROM_LOAD16_BYTE( "wbv_02.bin",   0x000000, 0x40000, 0xc7cca29e );
+		ROM_LOAD16_BYTE( "wbv_03.bin",   0x000001, 0x40000, 0xdb4e69d5 );
 	
-		ROM_REGION( 0x0800, REGION_CPU2, 0 )	/* sound (missing) */
-		ROM_LOAD( "pic16c57",     0x0000, 0x0800, 0x00000000 )
+		ROM_REGION( 0x0800, REGION_CPU2, 0 );/* sound (missing) */
+		ROM_LOAD( "pic16c57",     0x0000, 0x0800, 0x00000000 );
 	
-		ROM_REGION( 0x600000, REGION_GFX1, ROMREGION_DISPOSE )
-		ROM_LOAD( "wbv_10.bin",   0x000000, 0x80000, 0x50680f0b )
-		ROM_LOAD( "wbv_04.bin",   0x080000, 0x80000, 0xdf9cbff1 )
-		ROM_LOAD( "wbv_11.bin",   0x100000, 0x80000, 0xe59ad0d1 )
-		ROM_LOAD( "wbv_05.bin",   0x180000, 0x80000, 0x51245c3c )
-		ROM_LOAD( "wbv_12.bin",   0x200000, 0x80000, 0x36b87d0b )
-		ROM_LOAD( "wbv_06.bin",   0x280000, 0x80000, 0x9eb808ef )
-		ROM_LOAD( "wbv_13.bin",   0x300000, 0x80000, 0x7021107b )
-		ROM_LOAD( "wbv_07.bin",   0x380000, 0x80000, 0x4fff9fe8 )
-		ROM_LOAD( "wbv_14.bin",   0x400000, 0x80000, 0x0595e675 )
-		ROM_LOAD( "wbv_08.bin",   0x480000, 0x80000, 0x07e4b416 )
-		ROM_LOAD( "wbv_15.bin",   0x500000, 0x80000, 0x4e1a82d2 )
-		ROM_LOAD( "wbv_09.bin",   0x580000, 0x20000, 0x894ce354 )
+		ROM_REGION( 0x600000, REGION_GFX1, ROMREGION_DISPOSE );
+		ROM_LOAD( "wbv_10.bin",   0x000000, 0x80000, 0x50680f0b );
+		ROM_LOAD( "wbv_04.bin",   0x080000, 0x80000, 0xdf9cbff1 );
+		ROM_LOAD( "wbv_11.bin",   0x100000, 0x80000, 0xe59ad0d1 );
+		ROM_LOAD( "wbv_05.bin",   0x180000, 0x80000, 0x51245c3c );
+		ROM_LOAD( "wbv_12.bin",   0x200000, 0x80000, 0x36b87d0b );
+		ROM_LOAD( "wbv_06.bin",   0x280000, 0x80000, 0x9eb808ef );
+		ROM_LOAD( "wbv_13.bin",   0x300000, 0x80000, 0x7021107b );
+		ROM_LOAD( "wbv_07.bin",   0x380000, 0x80000, 0x4fff9fe8 );
+		ROM_LOAD( "wbv_14.bin",   0x400000, 0x80000, 0x0595e675 );
+		ROM_LOAD( "wbv_08.bin",   0x480000, 0x80000, 0x07e4b416 );
+		ROM_LOAD( "wbv_15.bin",   0x500000, 0x80000, 0x4e1a82d2 );
+		ROM_LOAD( "wbv_09.bin",   0x580000, 0x20000, 0x894ce354 );
 		/* 5a0000-5fffff is empty */
 	
-		ROM_REGION( 0x100000, REGION_SOUND1, 0 )	/* OKIM6295 samples */
-		ROM_LOAD( "wbv_01.bin",   0x00000, 0x100000, 0xac33f25f )
-	ROM_END
+		ROM_REGION( 0x100000, REGION_SOUND1, 0 );/* OKIM6295 samples */
+		ROM_LOAD( "wbv_01.bin",   0x00000, 0x100000, 0xac33f25f );
+	ROM_END(); }}; 
 	
 	
 	

@@ -490,43 +490,43 @@ public class funkyjet
 	
 	/******************************************************************************/
 	
-	ROM_START( funkyjet )
-		ROM_REGION( 0x80000, REGION_CPU1, 0 ) /* 68000 code */
-		ROM_LOAD16_BYTE( "jk00.12f", 0x00000, 0x40000, 0x712089c1 )
-		ROM_LOAD16_BYTE( "jk01.13f", 0x00001, 0x40000, 0xbe3920d7 )
+	static RomLoadPtr rom_funkyjet = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x80000, REGION_CPU1, 0 );/* 68000 code */
+		ROM_LOAD16_BYTE( "jk00.12f", 0x00000, 0x40000, 0x712089c1 );
+		ROM_LOAD16_BYTE( "jk01.13f", 0x00001, 0x40000, 0xbe3920d7 );
 	
-		ROM_REGION( 0x10000, REGION_CPU2, 0 )	/* Sound CPU */
-		ROM_LOAD( "jk02.16f",    0x00000, 0x10000, 0x748c0bd8 )
+		ROM_REGION( 0x10000, REGION_CPU2, 0 );/* Sound CPU */
+		ROM_LOAD( "jk02.16f",    0x00000, 0x10000, 0x748c0bd8 );
 	
-		ROM_REGION( 0x080000, REGION_GFX1, ROMREGION_DISPOSE )
-		ROM_LOAD( "mat02", 0x000000, 0x80000, 0xe4b94c7e ) /* Encrypted chars */
+		ROM_REGION( 0x080000, REGION_GFX1, ROMREGION_DISPOSE );
+		ROM_LOAD( "mat02", 0x000000, 0x80000, 0xe4b94c7e );/* Encrypted chars */
 	
-		ROM_REGION( 0x100000, REGION_GFX2, ROMREGION_DISPOSE )
-		ROM_LOAD( "mat01", 0x000000, 0x80000, 0x24093a8d ) /* sprites */
-	  	ROM_LOAD( "mat00", 0x080000, 0x80000, 0xfbda0228 )
+		ROM_REGION( 0x100000, REGION_GFX2, ROMREGION_DISPOSE );
+		ROM_LOAD( "mat01", 0x000000, 0x80000, 0x24093a8d );/* sprites */
+	  	ROM_LOAD( "mat00", 0x080000, 0x80000, 0xfbda0228 );
 	
-		ROM_REGION( 0x20000, REGION_SOUND1, 0 )	/* ADPCM samples */
-	  	ROM_LOAD( "jk03.15h",    0x00000, 0x20000, 0x69a0eaf7 )
-	ROM_END
+		ROM_REGION( 0x20000, REGION_SOUND1, 0 );/* ADPCM samples */
+	  	ROM_LOAD( "jk03.15h",    0x00000, 0x20000, 0x69a0eaf7 );
+	ROM_END(); }}; 
 	
-	ROM_START( sotsugyo )
-		ROM_REGION( 0x80000, REGION_CPU1, 0 ) /* 68000 code */
-		ROM_LOAD16_BYTE( "03.12f", 0x00000, 0x40000, 0xd175dfd1 )
-		ROM_LOAD16_BYTE( "04.13f", 0x00001, 0x40000, 0x2072477c )
+	static RomLoadPtr rom_sotsugyo = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x80000, REGION_CPU1, 0 );/* 68000 code */
+		ROM_LOAD16_BYTE( "03.12f", 0x00000, 0x40000, 0xd175dfd1 );
+		ROM_LOAD16_BYTE( "04.13f", 0x00001, 0x40000, 0x2072477c );
 	
-		ROM_REGION( 0x10000, REGION_CPU2, 0 )	/* Sound CPU */
-		ROM_LOAD( "sb020.16f",    0x00000, 0x10000, 0xbaf5ec93 )
+		ROM_REGION( 0x10000, REGION_CPU2, 0 );/* Sound CPU */
+		ROM_LOAD( "sb020.16f",    0x00000, 0x10000, 0xbaf5ec93 );
 	
-		ROM_REGION( 0x080000, REGION_GFX1, ROMREGION_DISPOSE )
-		ROM_LOAD( "02.2f", 0x000000, 0x80000, 0x337b1451 ) /* chars */
+		ROM_REGION( 0x080000, REGION_GFX1, ROMREGION_DISPOSE );
+		ROM_LOAD( "02.2f", 0x000000, 0x80000, 0x337b1451 );/* chars */
 	
-		ROM_REGION( 0x100000, REGION_GFX2, ROMREGION_DISPOSE )
-		ROM_LOAD( "01.4a", 0x000000, 0x80000, 0xfa10dd54 ) /* sprites */
-	  	ROM_LOAD( "00.2a", 0x080000, 0x80000, 0xd35a14ef )
+		ROM_REGION( 0x100000, REGION_GFX2, ROMREGION_DISPOSE );
+		ROM_LOAD( "01.4a", 0x000000, 0x80000, 0xfa10dd54 );/* sprites */
+	  	ROM_LOAD( "00.2a", 0x080000, 0x80000, 0xd35a14ef );
 	
-		ROM_REGION( 0x20000, REGION_SOUND1, 0 )	/* ADPCM samples */
-	  	ROM_LOAD( "sb030.15h",    0x00000, 0x20000, 0x1ea43f48 )
-	ROM_END
+		ROM_REGION( 0x20000, REGION_SOUND1, 0 );/* ADPCM samples */
+	  	ROM_LOAD( "sb030.15h",    0x00000, 0x20000, 0x1ea43f48 );
+	ROM_END(); }}; 
 	
 	
 	static void init_funkyjet(void)

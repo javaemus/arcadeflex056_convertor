@@ -910,585 +910,585 @@ public class atarisy1
 	 *
 	 *************************************/
 	
-	ROM_START( marble )
-		ROM_REGION( 0x88000, REGION_CPU1, 0 )	/* 8.5*64k for 68000 code & slapstic ROM */
-		ROM_LOAD16_BYTE( "136032.205",   0x00000, 0x04000, 0x88d0be26 )
-		ROM_LOAD16_BYTE( "136032.206",   0x00001, 0x04000, 0x3c79ef05 )
-		ROM_LOAD16_BYTE( "136033.623",   0x10000, 0x04000, 0x284ed2e9 )
-		ROM_LOAD16_BYTE( "136033.624",   0x10001, 0x04000, 0xd541b021 )
-		ROM_LOAD16_BYTE( "136033.625",   0x18000, 0x04000, 0x563755c7 )
-		ROM_LOAD16_BYTE( "136033.626",   0x18001, 0x04000, 0x860feeb3 )
-		ROM_LOAD16_BYTE( "136033.627",   0x20000, 0x04000, 0xd1dbd439 )
-		ROM_LOAD16_BYTE( "136033.628",   0x20001, 0x04000, 0x957d6801 )
-		ROM_LOAD16_BYTE( "136033.229",   0x28000, 0x04000, 0xc81d5c14 )
-		ROM_LOAD16_BYTE( "136033.630",   0x28001, 0x04000, 0x687a09f7 )
-		ROM_LOAD16_BYTE( "136033.107",   0x80000, 0x04000, 0xf3b8745b )
-		ROM_LOAD16_BYTE( "136033.108",   0x80001, 0x04000, 0xe51eecaa )
-	
-		ROM_REGION( 0x10000, REGION_CPU2, 0 )	/* 64k for 6502 code */
-		ROM_LOAD( "136033.421",   0x8000, 0x4000, 0x78153dc3 )
-		ROM_LOAD( "136033.422",   0xc000, 0x4000, 0x2e66300e )
-	
-		ROM_REGION( 0x2000, REGION_GFX1, ROMREGION_DISPOSE )
-		ROM_LOAD( "136032.107",   0x00000, 0x02000, 0x7a29dc07 )  /* alpha font */
-	
-		ROM_REGION( 0x60000, REGION_GFX2, ROMREGION_DISPOSE | ROMREGION_INVERT )
-		ROM_LOAD( "136033.137",   0x00000, 0x04000, 0x7a45f5c1 )  /* bank 1, plane 0 */
-		ROM_LOAD( "136033.138",   0x04000, 0x04000, 0x7e954a88 )
-		ROM_LOAD( "136033.139",   0x08000, 0x04000, 0x1eb1bb5f )  /* bank 1, plane 1 */
-		ROM_LOAD( "136033.140",   0x0c000, 0x04000, 0x8a82467b )
-		ROM_LOAD( "136033.141",   0x10000, 0x04000, 0x52448965 )  /* bank 1, plane 2 */
-		ROM_LOAD( "136033.142",   0x14000, 0x04000, 0xb4a70e4f )
-		ROM_LOAD( "136033.143",   0x18000, 0x04000, 0x7156e449 )  /* bank 1, plane 3 */
-		ROM_LOAD( "136033.144",   0x1c000, 0x04000, 0x4c3e4c79 )
-		ROM_LOAD( "136033.145",   0x20000, 0x04000, 0x9062be7f )  /* bank 1, plane 4 */
-		ROM_LOAD( "136033.146",   0x24000, 0x04000, 0x14566dca )
-	
-		ROM_FILL(                 0x30000, 0x30000, 0xff )
-		ROM_LOAD( "136033.149",   0x34000, 0x04000, 0xb6658f06 )  /* bank 2, plane 0 */
-		ROM_LOAD( "136033.151",   0x3c000, 0x04000, 0x84ee1c80 )  /* bank 2, plane 1 */
-		ROM_LOAD( "136033.153",   0x44000, 0x04000, 0xdaa02926 )  /* bank 2, plane 2 */
-	
-		ROM_REGION( 0x400, REGION_PROMS, 0 )	/* graphics mapping PROMs */
-		ROM_LOAD( "136033.118",   0x000, 0x200, 0x2101b0ed )  /* remap */
-		ROM_LOAD( "136033.119",   0x200, 0x200, 0x19f6e767 )  /* color */
-	ROM_END
-	
-	
-	ROM_START( marble2 )
-		ROM_REGION( 0x88000, REGION_CPU1, 0 )	/* 8.5*64k for 68000 code & slapstic ROM */
-		ROM_LOAD16_BYTE( "136032.205",   0x00000, 0x04000, 0x88d0be26 )
-		ROM_LOAD16_BYTE( "136032.206",   0x00001, 0x04000, 0x3c79ef05 )
-		ROM_LOAD16_BYTE( "136033.401",   0x10000, 0x08000, 0xecfc25a2 )
-		ROM_LOAD16_BYTE( "136033.402",   0x10001, 0x08000, 0x7ce9bf53 )
-		ROM_LOAD16_BYTE( "136033.403",   0x20000, 0x08000, 0xdafee7a2 )
-		ROM_LOAD16_BYTE( "136033.404",   0x20001, 0x08000, 0xb59ffcf6 )
-		ROM_LOAD16_BYTE( "136033.107",   0x80000, 0x04000, 0xf3b8745b )
-		ROM_LOAD16_BYTE( "136033.108",   0x80001, 0x04000, 0xe51eecaa )
-	
-		ROM_REGION( 0x10000, REGION_CPU2, 0 )	/* 64k for 6502 code */
-		ROM_LOAD( "136033.421",   0x8000, 0x4000, 0x78153dc3 )
-		ROM_LOAD( "136033.422",   0xc000, 0x4000, 0x2e66300e )
-	
-		ROM_REGION( 0x2000, REGION_GFX1, ROMREGION_DISPOSE )
-		ROM_LOAD( "136032.107",   0x00000, 0x02000, 0x7a29dc07 )  /* alpha font */
-	
-		ROM_REGION( 0x60000, REGION_GFX2, ROMREGION_DISPOSE | ROMREGION_INVERT )
-		ROM_LOAD( "136033.137",   0x00000, 0x04000, 0x7a45f5c1 )  /* bank 1, plane 0 */
-		ROM_LOAD( "136033.138",   0x04000, 0x04000, 0x7e954a88 )
-		ROM_LOAD( "136033.139",   0x08000, 0x04000, 0x1eb1bb5f )  /* bank 1, plane 1 */
-		ROM_LOAD( "136033.140",   0x0c000, 0x04000, 0x8a82467b )
-		ROM_LOAD( "136033.141",   0x10000, 0x04000, 0x52448965 )  /* bank 1, plane 2 */
-		ROM_LOAD( "136033.142",   0x14000, 0x04000, 0xb4a70e4f )
-		ROM_LOAD( "136033.143",   0x18000, 0x04000, 0x7156e449 )  /* bank 1, plane 3 */
-		ROM_LOAD( "136033.144",   0x1c000, 0x04000, 0x4c3e4c79 )
-		ROM_LOAD( "136033.145",   0x20000, 0x04000, 0x9062be7f )  /* bank 1, plane 4 */
-		ROM_LOAD( "136033.146",   0x24000, 0x04000, 0x14566dca )
-	
-		ROM_FILL(                 0x30000, 0x30000, 0xff )
-		ROM_LOAD( "136033.149",   0x34000, 0x04000, 0xb6658f06 )  /* bank 2, plane 0 */
-		ROM_LOAD( "136033.151",   0x3c000, 0x04000, 0x84ee1c80 )  /* bank 2, plane 1 */
-		ROM_LOAD( "136033.153",   0x44000, 0x04000, 0xdaa02926 )  /* bank 2, plane 2 */
-	
-		ROM_REGION( 0x400, REGION_PROMS, 0 )	/* graphics mapping PROMs */
-		ROM_LOAD( "136033.118",   0x000, 0x200, 0x2101b0ed )  /* remap */
-		ROM_LOAD( "136033.119",   0x200, 0x200, 0x19f6e767 )  /* color */
-	ROM_END
-	
-	
-	ROM_START( marble3 )
-		ROM_REGION( 0x88000, REGION_CPU1, 0 )	/* 8.5*64k for 68000 code & slapstic ROM */
-		ROM_LOAD16_BYTE( "136032.205",   0x00000, 0x04000, 0x88d0be26 )
-		ROM_LOAD16_BYTE( "136032.206",   0x00001, 0x04000, 0x3c79ef05 )
-		ROM_LOAD16_BYTE( "136033.201",   0x10000, 0x08000, 0x9395804d )
-		ROM_LOAD16_BYTE( "136033.202",   0x10001, 0x08000, 0xedd313f5 )
-		ROM_LOAD16_BYTE( "136033.403",   0x20000, 0x08000, 0xdafee7a2 )
-		ROM_LOAD16_BYTE( "136033.204",   0x20001, 0x08000, 0x4d621731 )
-		ROM_LOAD16_BYTE( "136033.107",   0x80000, 0x04000, 0xf3b8745b )
-		ROM_LOAD16_BYTE( "136033.108",   0x80001, 0x04000, 0xe51eecaa )
-	
-		ROM_REGION( 0x10000, REGION_CPU2, 0 )	/* 64k for 6502 code */
-		ROM_LOAD( "136033.121",   0x8000, 0x4000, 0x73fe2b46 )
-		ROM_LOAD( "136033.122",   0xc000, 0x4000, 0x03bf65c3 )
-	
-		ROM_REGION( 0x2000, REGION_GFX1, ROMREGION_DISPOSE )
-		ROM_LOAD( "136032.107",   0x00000, 0x02000, 0x7a29dc07 )  /* alpha font */
-	
-		ROM_REGION( 0x60000, REGION_GFX2, ROMREGION_DISPOSE | ROMREGION_INVERT )
-		ROM_LOAD( "136033.137",   0x00000, 0x04000, 0x7a45f5c1 )  /* bank 1, plane 0 */
-		ROM_LOAD( "136033.138",   0x04000, 0x04000, 0x7e954a88 )
-		ROM_LOAD( "136033.139",   0x08000, 0x04000, 0x1eb1bb5f )  /* bank 1, plane 1 */
-		ROM_LOAD( "136033.140",   0x0c000, 0x04000, 0x8a82467b )
-		ROM_LOAD( "136033.141",   0x10000, 0x04000, 0x52448965 )  /* bank 1, plane 2 */
-		ROM_LOAD( "136033.142",   0x14000, 0x04000, 0xb4a70e4f )
-		ROM_LOAD( "136033.143",   0x18000, 0x04000, 0x7156e449 )  /* bank 1, plane 3 */
-		ROM_LOAD( "136033.144",   0x1c000, 0x04000, 0x4c3e4c79 )
-		ROM_LOAD( "136033.145",   0x20000, 0x04000, 0x9062be7f )  /* bank 1, plane 4 */
-		ROM_LOAD( "136033.146",   0x24000, 0x04000, 0x14566dca )
-	
-		ROM_FILL(                 0x30000, 0x30000, 0xff )
-		ROM_LOAD( "136033.149",   0x34000, 0x04000, 0xb6658f06 )  /* bank 2, plane 0 */
-		ROM_LOAD( "136033.151",   0x3c000, 0x04000, 0x84ee1c80 )  /* bank 2, plane 1 */
-		ROM_LOAD( "136033.153",   0x44000, 0x04000, 0xdaa02926 )  /* bank 2, plane 2 */
-	
-		ROM_REGION( 0x400, REGION_PROMS, 0 )	/* graphics mapping PROMs */
-		ROM_LOAD( "136033.118",   0x000, 0x200, 0x2101b0ed )  /* remap */
-		ROM_LOAD( "136033.119",   0x200, 0x200, 0x19f6e767 )  /* color */
-	ROM_END
-	
-	
-	ROM_START( marble4 )
-		ROM_REGION( 0x88000, REGION_CPU1, 0 )	/* 8.5*64k for 68000 code & slapstic ROM */
-		ROM_LOAD16_BYTE( "136032.205",   0x00000, 0x04000, 0x88d0be26 )
-		ROM_LOAD16_BYTE( "136032.206",   0x00001, 0x04000, 0x3c79ef05 )
-		ROM_LOAD16_BYTE( "136033.323",   0x10000, 0x04000, 0x4dc2987a )
-		ROM_LOAD16_BYTE( "136033.324",   0x10001, 0x04000, 0xe22e6e11 )
-		ROM_LOAD16_BYTE( "136033.225",   0x18000, 0x04000, 0x743f6c5c )
-		ROM_LOAD16_BYTE( "136033.226",   0x18001, 0x04000, 0xaeb711e3 )
-		ROM_LOAD16_BYTE( "136033.227",   0x20000, 0x04000, 0xd06d2c22 )
-		ROM_LOAD16_BYTE( "136033.228",   0x20001, 0x04000, 0xe69cec16 )
-		ROM_LOAD16_BYTE( "136033.229",   0x28000, 0x04000, 0xc81d5c14 )
-		ROM_LOAD16_BYTE( "136033.230",   0x28001, 0x04000, 0x526ce8ad )
-		ROM_LOAD16_BYTE( "136033.107",   0x80000, 0x04000, 0xf3b8745b )
-		ROM_LOAD16_BYTE( "136033.108",   0x80001, 0x04000, 0xe51eecaa )
-	
-		ROM_REGION( 0x10000, REGION_CPU2, 0 )	/* 64k for 6502 code */
-		ROM_LOAD( "136033.257",   0x8000, 0x4000, 0x2e2e0df8 )
-		ROM_LOAD( "136033.258",   0xc000, 0x4000, 0x1b9655cd )
-	
-		ROM_REGION( 0x2000, REGION_GFX1, ROMREGION_DISPOSE )
-		ROM_LOAD( "136032.107",   0x00000, 0x02000, 0x7a29dc07 )  /* alpha font */
-	
-		ROM_REGION( 0x60000, REGION_GFX2, ROMREGION_DISPOSE | ROMREGION_INVERT )
-		ROM_LOAD( "136033.137",   0x00000, 0x04000, 0x7a45f5c1 )  /* bank 1, plane 0 */
-		ROM_LOAD( "136033.138",   0x04000, 0x04000, 0x7e954a88 )
-		ROM_LOAD( "136033.139",   0x08000, 0x04000, 0x1eb1bb5f )  /* bank 1, plane 1 */
-		ROM_LOAD( "136033.140",   0x0c000, 0x04000, 0x8a82467b )
-		ROM_LOAD( "136033.141",   0x10000, 0x04000, 0x52448965 )  /* bank 1, plane 2 */
-		ROM_LOAD( "136033.142",   0x14000, 0x04000, 0xb4a70e4f )
-		ROM_LOAD( "136033.143",   0x18000, 0x04000, 0x7156e449 )  /* bank 1, plane 3 */
-		ROM_LOAD( "136033.144",   0x1c000, 0x04000, 0x4c3e4c79 )
-		ROM_LOAD( "136033.145",   0x20000, 0x04000, 0x9062be7f )  /* bank 1, plane 4 */
-		ROM_LOAD( "136033.146",   0x24000, 0x04000, 0x14566dca )
-	
-		ROM_FILL(                 0x30000, 0x30000, 0xff )
-		ROM_LOAD( "136033.149",   0x34000, 0x04000, 0xb6658f06 )  /* bank 2, plane 0 */
-		ROM_LOAD( "136033.151",   0x3c000, 0x04000, 0x84ee1c80 )  /* bank 2, plane 1 */
-		ROM_LOAD( "136033.153",   0x44000, 0x04000, 0xdaa02926 )  /* bank 2, plane 2 */
-	
-		ROM_REGION( 0x400, REGION_PROMS, 0 )	/* graphics mapping PROMs */
-		ROM_LOAD( "136033.118",   0x000, 0x200, 0x2101b0ed )  /* remap */
-		ROM_LOAD( "136033.119",   0x200, 0x200, 0x19f6e767 )  /* color */
-	ROM_END
-	
-	
-	ROM_START( peterpak )
-		ROM_REGION( 0x88000, REGION_CPU1, 0 )	/* 8.5*64k for 68000 code & slapstic ROM */
-		ROM_LOAD16_BYTE( "136032.205",   0x00000, 0x04000, 0x88d0be26 )
-		ROM_LOAD16_BYTE( "136032.206",   0x00001, 0x04000, 0x3c79ef05 )
-		ROM_LOAD16_BYTE( "136028.142",   0x10000, 0x04000, 0x4f9fc020 )
-		ROM_LOAD16_BYTE( "136028.143",   0x10001, 0x04000, 0x9fb257cc )
-		ROM_LOAD16_BYTE( "136028.144",   0x18000, 0x04000, 0x50267619 )
-		ROM_LOAD16_BYTE( "136028.145",   0x18001, 0x04000, 0x7b6a5004 )
-		ROM_LOAD16_BYTE( "136028.146",   0x20000, 0x04000, 0x4183a67a )
-		ROM_LOAD16_BYTE( "136028.147",   0x20001, 0x04000, 0x14e2d97b )
-		ROM_LOAD16_BYTE( "136028.148",   0x80000, 0x04000, 0x230e8ba9 )
-		ROM_LOAD16_BYTE( "136028.149",   0x80001, 0x04000, 0x0ff0c13a )
-	
-		ROM_REGION( 0x10000, REGION_CPU2, 0 )	/* 64k for 6502 code */
-		ROM_LOAD( "136028.101",   0x8000, 0x4000, 0xff712aa2 )
-		ROM_LOAD( "136028.102",   0xc000, 0x4000, 0x89ea21a1 )
-	
-		ROM_REGION( 0x2000, REGION_GFX1, ROMREGION_DISPOSE )
-		ROM_LOAD( "136032.107",   0x00000, 0x02000, 0x7a29dc07 )  /* alpha font */
-	
-		ROM_REGION( 0x90000, REGION_GFX2, ROMREGION_DISPOSE | ROMREGION_INVERT )
-		ROM_LOAD( "136028.138",   0x00000, 0x08000, 0x53eaa018 )  /* bank 1, plane 0 */
-		ROM_LOAD( "136028.139",   0x08000, 0x08000, 0x354a19cb )  /* bank 1, plane 1 */
-		ROM_LOAD( "136028.140",   0x10000, 0x08000, 0x8d2c4717 )  /* bank 1, plane 2 */
-		ROM_LOAD( "136028.141",   0x18000, 0x08000, 0xbf59ea19 )  /* bank 1, plane 3 */
-	
-		ROM_LOAD( "136028.150",   0x30000, 0x08000, 0x83362483 )  /* bank 2, plane 0 */
-		ROM_LOAD( "136028.151",   0x38000, 0x08000, 0x6e95094e )  /* bank 2, plane 1 */
-		ROM_LOAD( "136028.152",   0x40000, 0x08000, 0x9553f084 )  /* bank 2, plane 2 */
-		ROM_LOAD( "136028.153",   0x48000, 0x08000, 0xc2a9b028 )  /* bank 2, plane 3 */
-	
-		ROM_LOAD( "136028.105",   0x64000, 0x04000, 0xac9a5a44 )  /* bank 3, plane 0 */
-		ROM_LOAD( "136028.108",   0x6c000, 0x04000, 0x51941e64 )  /* bank 3, plane 1 */
-		ROM_LOAD( "136028.111",   0x74000, 0x04000, 0x246599f3 )  /* bank 3, plane 2 */
-		ROM_LOAD( "136028.114",   0x7c000, 0x04000, 0x918a5082 )  /* bank 3, plane 3 */
-	
-		ROM_REGION( 0x400, REGION_PROMS, 0 )	/* graphics mapping PROMs */
-		ROM_LOAD( "136028.136",   0x000, 0x200, 0x861cfa36 )  /* remap */
-		ROM_LOAD( "136028.137",   0x200, 0x200, 0x8507e5ea )  /* color */
-	ROM_END
-	
-	
-	ROM_START( indytemp )
-		ROM_REGION( 0x88000, REGION_CPU1, 0 )	/* 8.5*64k for 68000 code & slapstic ROM */
-		ROM_LOAD16_BYTE( "136032.205",   0x00000, 0x04000, 0x88d0be26 )
-		ROM_LOAD16_BYTE( "136032.206",   0x00001, 0x04000, 0x3c79ef05 )
-		ROM_LOAD16_BYTE( "136036.432",   0x10000, 0x08000, 0xd888cdf1 )
-		ROM_LOAD16_BYTE( "136036.431",   0x10001, 0x08000, 0xb7ac7431 )
-		ROM_LOAD16_BYTE( "136036.434",   0x20000, 0x08000, 0x802495fd )
-		ROM_LOAD16_BYTE( "136036.433",   0x20001, 0x08000, 0x3a914e5c )
-		ROM_LOAD16_BYTE( "136036.456",   0x30000, 0x04000, 0xec146b09 )
-		ROM_LOAD16_BYTE( "136036.457",   0x30001, 0x04000, 0x6628de01 )
-		ROM_LOAD16_BYTE( "136036.358",   0x80000, 0x04000, 0xd9351106 )
-		ROM_LOAD16_BYTE( "136036.359",   0x80001, 0x04000, 0xe731caea )
-	
-		ROM_REGION( 0x10000, REGION_CPU2, 0 )	/* 64k for 6502 code */
-		ROM_LOAD( "136036.153",   0x4000, 0x4000, 0x95294641 )
-		ROM_LOAD( "136036.154",   0x8000, 0x4000, 0xcbfc6adb )
-		ROM_LOAD( "136036.155",   0xc000, 0x4000, 0x4c8233ac )
-	
-		ROM_REGION( 0x2000, REGION_GFX1, ROMREGION_DISPOSE )
-		ROM_LOAD( "136032.107",   0x00000, 0x02000, 0x7a29dc07 )  /* alpha font */
-	
-		ROM_REGION( 0xc0000, REGION_GFX2, ROMREGION_DISPOSE | ROMREGION_INVERT )
-		ROM_LOAD( "136036.135",   0x00000, 0x08000, 0xffa8749c )  /* bank 1, plane 0 */
-		ROM_LOAD( "136036.139",   0x08000, 0x08000, 0xb682bfca )  /* bank 1, plane 1 */
-		ROM_LOAD( "136036.143",   0x10000, 0x08000, 0x7697da26 )  /* bank 1, plane 2 */
-		ROM_LOAD( "136036.147",   0x18000, 0x08000, 0x4e9d664c )  /* bank 1, plane 3 */
-	
-		ROM_LOAD( "136036.136",   0x30000, 0x08000, 0xb2b403aa )  /* bank 2, plane 0 */
-		ROM_LOAD( "136036.140",   0x38000, 0x08000, 0xec0c19ca )  /* bank 2, plane 1 */
-		ROM_LOAD( "136036.144",   0x40000, 0x08000, 0x4407df98 )  /* bank 2, plane 2 */
-		ROM_LOAD( "136036.148",   0x48000, 0x08000, 0x70dce06d )  /* bank 2, plane 3 */
-	
-		ROM_LOAD( "136036.137",   0x60000, 0x08000, 0x3f352547 )  /* bank 3, plane 0 */
-		ROM_LOAD( "136036.141",   0x68000, 0x08000, 0x9cbdffd0 )  /* bank 3, plane 1 */
-		ROM_LOAD( "136036.145",   0x70000, 0x08000, 0xe828e64b )  /* bank 3, plane 2 */
-		ROM_LOAD( "136036.149",   0x78000, 0x08000, 0x81503a23 )  /* bank 3, plane 3 */
-	
-		ROM_LOAD( "136036.138",   0x90000, 0x08000, 0x48c4d79d )  /* bank 4, plane 0 */
-		ROM_LOAD( "136036.142",   0x98000, 0x08000, 0x7faae75f )  /* bank 4, plane 1 */
-		ROM_LOAD( "136036.146",   0xa0000, 0x08000, 0x8ae5a7b5 )  /* bank 4, plane 2 */
-		ROM_LOAD( "136036.150",   0xa8000, 0x08000, 0xa10c4bd9 )  /* bank 4, plane 3 */
-	
-		ROM_REGION( 0x400, REGION_PROMS, 0 )	/* graphics mapping PROMs */
-		ROM_LOAD( "136036.152",   0x000, 0x200, 0x4f96e57c )  /* remap */
-		ROM_LOAD( "136036.151",   0x200, 0x200, 0x7daf351f )  /* color */
-	ROM_END
-	
-	
-	ROM_START( indytem2 )
-		ROM_REGION( 0x88000, REGION_CPU1, 0 )	/* 8.5*64k for 68000 code & slapstic ROM */
-		ROM_LOAD16_BYTE( "136032.205",   0x00000, 0x04000, 0x88d0be26 )
-		ROM_LOAD16_BYTE( "136032.206",   0x00001, 0x04000, 0x3c79ef05 )
-		ROM_LOAD16_BYTE( "136036.470",   0x10000, 0x08000, 0x7fac1dd8 )
-		ROM_LOAD16_BYTE( "136036.471",   0x10001, 0x08000, 0xe93272fb )
-		ROM_LOAD16_BYTE( "136036.434",   0x20000, 0x08000, 0x802495fd )
-		ROM_LOAD16_BYTE( "136036.433",   0x20001, 0x08000, 0x3a914e5c )
-		ROM_LOAD16_BYTE( "136036.456",   0x30000, 0x04000, 0xec146b09 )
-		ROM_LOAD16_BYTE( "136036.457",   0x30001, 0x04000, 0x6628de01 )
-		ROM_LOAD16_BYTE( "136036.358",   0x80000, 0x04000, 0xd9351106 )
-		ROM_LOAD16_BYTE( "136036.359",   0x80001, 0x04000, 0xe731caea )
-	
-		ROM_REGION( 0x10000, REGION_CPU2, 0 )	/* 64k for 6502 code */
-		ROM_LOAD( "136036.153",   0x4000, 0x4000, 0x95294641 )
-		ROM_LOAD( "136036.154",   0x8000, 0x4000, 0xcbfc6adb )
-		ROM_LOAD( "136036.155",   0xc000, 0x4000, 0x4c8233ac )
-	
-		ROM_REGION( 0x2000, REGION_GFX1, ROMREGION_DISPOSE )
-		ROM_LOAD( "136032.107",   0x00000, 0x02000, 0x7a29dc07 )  /* alpha font */
-	
-		ROM_REGION( 0xc0000, REGION_GFX2, ROMREGION_DISPOSE | ROMREGION_INVERT )
-		ROM_LOAD( "136036.135",   0x00000, 0x08000, 0xffa8749c )  /* bank 1, plane 0 */
-		ROM_LOAD( "136036.139",   0x08000, 0x08000, 0xb682bfca )  /* bank 1, plane 1 */
-		ROM_LOAD( "136036.143",   0x10000, 0x08000, 0x7697da26 )  /* bank 1, plane 2 */
-		ROM_LOAD( "136036.147",   0x18000, 0x08000, 0x4e9d664c )  /* bank 1, plane 3 */
-	
-		ROM_LOAD( "136036.136",   0x30000, 0x08000, 0xb2b403aa )  /* bank 2, plane 0 */
-		ROM_LOAD( "136036.140",   0x38000, 0x08000, 0xec0c19ca )  /* bank 2, plane 1 */
-		ROM_LOAD( "136036.144",   0x40000, 0x08000, 0x4407df98 )  /* bank 2, plane 2 */
-		ROM_LOAD( "136036.148",   0x48000, 0x08000, 0x70dce06d )  /* bank 2, plane 3 */
-	
-		ROM_LOAD( "136036.137",   0x60000, 0x08000, 0x3f352547 )  /* bank 3, plane 0 */
-		ROM_LOAD( "136036.141",   0x68000, 0x08000, 0x9cbdffd0 )  /* bank 3, plane 1 */
-		ROM_LOAD( "136036.145",   0x70000, 0x08000, 0xe828e64b )  /* bank 3, plane 2 */
-		ROM_LOAD( "136036.149",   0x78000, 0x08000, 0x81503a23 )  /* bank 3, plane 3 */
-	
-		ROM_LOAD( "136036.138",   0x90000, 0x08000, 0x48c4d79d )  /* bank 4, plane 0 */
-		ROM_LOAD( "136036.142",   0x98000, 0x08000, 0x7faae75f )  /* bank 4, plane 1 */
-		ROM_LOAD( "136036.146",   0xa0000, 0x08000, 0x8ae5a7b5 )  /* bank 4, plane 2 */
-		ROM_LOAD( "136036.150",   0xa8000, 0x08000, 0xa10c4bd9 )  /* bank 4, plane 3 */
-	
-		ROM_REGION( 0x400, REGION_PROMS, 0 )	/* graphics mapping PROMs */
-		ROM_LOAD( "136036.152",   0x000, 0x200, 0x4f96e57c )  /* remap */
-		ROM_LOAD( "136036.151",   0x200, 0x200, 0x7daf351f )  /* color */
-	ROM_END
-	
-	
-	ROM_START( indytem3 )
-		ROM_REGION( 0x88000, REGION_CPU1, 0 )	/* 8.5*64k for 68000 code & slapstic ROM */
-		ROM_LOAD16_BYTE( "136032.205",   0x00000, 0x04000, 0x88d0be26 )
-		ROM_LOAD16_BYTE( "136032.206",   0x00001, 0x04000, 0x3c79ef05 )
-		ROM_LOAD16_BYTE( "232.10b",      0x10000, 0x08000, 0x1e80108f )
-		ROM_LOAD16_BYTE( "231.10a",      0x10001, 0x08000, 0x8ae54c0c )
-		ROM_LOAD16_BYTE( "234.12b",      0x20000, 0x08000, 0x86be7e07 )
-		ROM_LOAD16_BYTE( "233.12a",      0x20001, 0x08000, 0xbfcea7ae )
-		ROM_LOAD16_BYTE( "256.15b",      0x30000, 0x04000, 0x3a076fd2 )
-		ROM_LOAD16_BYTE( "257.15a",      0x30001, 0x04000, 0x15293606 )
-		ROM_LOAD16_BYTE( "158.16b",      0x80000, 0x04000, 0x10372888 )
-		ROM_LOAD16_BYTE( "159.16a",      0x80001, 0x04000, 0x50f890a8 )
-	
-		ROM_REGION( 0x10000, REGION_CPU2, 0 )	/* 64k for 6502 code */
-		ROM_LOAD( "136036.153",   0x4000, 0x4000, 0x95294641 )
-		ROM_LOAD( "136036.154",   0x8000, 0x4000, 0xcbfc6adb )
-		ROM_LOAD( "136036.155",   0xc000, 0x4000, 0x4c8233ac )
-	
-		ROM_REGION( 0x2000, REGION_GFX1, ROMREGION_DISPOSE )
-		ROM_LOAD( "136032.107",   0x00000, 0x02000, 0x7a29dc07 )  /* alpha font */
-	
-		ROM_REGION( 0xc0000, REGION_GFX2, ROMREGION_DISPOSE | ROMREGION_INVERT )
-		ROM_LOAD( "136036.135",   0x00000, 0x08000, 0xffa8749c )  /* bank 1, plane 0 */
-		ROM_LOAD( "136036.139",   0x08000, 0x08000, 0xb682bfca )  /* bank 1, plane 1 */
-		ROM_LOAD( "136036.143",   0x10000, 0x08000, 0x7697da26 )  /* bank 1, plane 2 */
-		ROM_LOAD( "136036.147",   0x18000, 0x08000, 0x4e9d664c )  /* bank 1, plane 3 */
-	
-		ROM_LOAD( "136036.136",   0x30000, 0x08000, 0xb2b403aa )  /* bank 2, plane 0 */
-		ROM_LOAD( "136036.140",   0x38000, 0x08000, 0xec0c19ca )  /* bank 2, plane 1 */
-		ROM_LOAD( "136036.144",   0x40000, 0x08000, 0x4407df98 )  /* bank 2, plane 2 */
-		ROM_LOAD( "136036.148",   0x48000, 0x08000, 0x70dce06d )  /* bank 2, plane 3 */
-	
-		ROM_LOAD( "136036.137",   0x60000, 0x08000, 0x3f352547 )  /* bank 3, plane 0 */
-		ROM_LOAD( "136036.141",   0x68000, 0x08000, 0x9cbdffd0 )  /* bank 3, plane 1 */
-		ROM_LOAD( "136036.145",   0x70000, 0x08000, 0xe828e64b )  /* bank 3, plane 2 */
-		ROM_LOAD( "136036.149",   0x78000, 0x08000, 0x81503a23 )  /* bank 3, plane 3 */
-	
-		ROM_LOAD( "136036.138",   0x90000, 0x08000, 0x48c4d79d )  /* bank 4, plane 0 */
-		ROM_LOAD( "136036.142",   0x98000, 0x08000, 0x7faae75f )  /* bank 4, plane 1 */
-		ROM_LOAD( "136036.146",   0xa0000, 0x08000, 0x8ae5a7b5 )  /* bank 4, plane 2 */
-		ROM_LOAD( "136036.150",   0xa8000, 0x08000, 0xa10c4bd9 )  /* bank 4, plane 3 */
-	
-		ROM_REGION( 0x400, REGION_PROMS, 0 )	/* graphics mapping PROMs */
-		ROM_LOAD( "136036.152",   0x000, 0x200, 0x4f96e57c )  /* remap */
-		ROM_LOAD( "136036.151",   0x200, 0x200, 0x7daf351f )  /* color */
-	ROM_END
-	
-	
-	ROM_START( indytem4 )
-		ROM_REGION( 0x88000, REGION_CPU1, 0 )	/* 8.5*64k for 68000 code & slapstic ROM */
-		ROM_LOAD16_BYTE( "136032.205",   0x00000, 0x04000, 0x88d0be26 )
-		ROM_LOAD16_BYTE( "136032.206",   0x00001, 0x04000, 0x3c79ef05 )
-		ROM_LOAD16_BYTE( "136036.332",   0x10000, 0x08000, 0xa5563773 )
-		ROM_LOAD16_BYTE( "136036.331",   0x10001, 0x08000, 0x7d562141 )
-		ROM_LOAD16_BYTE( "136036.334",   0x20000, 0x08000, 0xe40828e5 )
-		ROM_LOAD16_BYTE( "136036.333",   0x20001, 0x08000, 0x96e1f1aa )
-		ROM_LOAD16_BYTE( "136036.356",   0x30000, 0x04000, 0x5eba2ac7 )
-		ROM_LOAD16_BYTE( "136036.357",   0x30001, 0x04000, 0x26e84b5c )
-		ROM_LOAD16_BYTE( "136036.358",   0x80000, 0x04000, 0xd9351106 )
-		ROM_LOAD16_BYTE( "136036.359",   0x80001, 0x04000, 0xe731caea )
-	
-		ROM_REGION( 0x10000, REGION_CPU2, 0 )	/* 64k for 6502 code */
-		ROM_LOAD( "136036.153",   0x4000, 0x4000, 0x95294641 )
-		ROM_LOAD( "136036.154",   0x8000, 0x4000, 0xcbfc6adb )
-		ROM_LOAD( "136036.155",   0xc000, 0x4000, 0x4c8233ac )
-	
-		ROM_REGION( 0x2000, REGION_GFX1, ROMREGION_DISPOSE )
-		ROM_LOAD( "136032.107",   0x00000, 0x02000, 0x7a29dc07 )  /* alpha font */
-	
-		ROM_REGION( 0xc0000, REGION_GFX2, ROMREGION_DISPOSE | ROMREGION_INVERT )
-		ROM_LOAD( "136036.135",   0x00000, 0x08000, 0xffa8749c )  /* bank 1, plane 0 */
-		ROM_LOAD( "136036.139",   0x08000, 0x08000, 0xb682bfca )  /* bank 1, plane 1 */
-		ROM_LOAD( "136036.143",   0x10000, 0x08000, 0x7697da26 )  /* bank 1, plane 2 */
-		ROM_LOAD( "136036.147",   0x18000, 0x08000, 0x4e9d664c )  /* bank 1, plane 3 */
-	
-		ROM_LOAD( "136036.136",   0x30000, 0x08000, 0xb2b403aa )  /* bank 2, plane 0 */
-		ROM_LOAD( "136036.140",   0x38000, 0x08000, 0xec0c19ca )  /* bank 2, plane 1 */
-		ROM_LOAD( "136036.144",   0x40000, 0x08000, 0x4407df98 )  /* bank 2, plane 2 */
-		ROM_LOAD( "136036.148",   0x48000, 0x08000, 0x70dce06d )  /* bank 2, plane 3 */
-	
-		ROM_LOAD( "136036.137",   0x60000, 0x08000, 0x3f352547 )  /* bank 3, plane 0 */
-		ROM_LOAD( "136036.141",   0x68000, 0x08000, 0x9cbdffd0 )  /* bank 3, plane 1 */
-		ROM_LOAD( "136036.145",   0x70000, 0x08000, 0xe828e64b )  /* bank 3, plane 2 */
-		ROM_LOAD( "136036.149",   0x78000, 0x08000, 0x81503a23 )  /* bank 3, plane 3 */
-	
-		ROM_LOAD( "136036.138",   0x90000, 0x08000, 0x48c4d79d )  /* bank 4, plane 0 */
-		ROM_LOAD( "136036.142",   0x98000, 0x08000, 0x7faae75f )  /* bank 4, plane 1 */
-		ROM_LOAD( "136036.146",   0xa0000, 0x08000, 0x8ae5a7b5 )  /* bank 4, plane 2 */
-		ROM_LOAD( "136036.150",   0xa8000, 0x08000, 0xa10c4bd9 )  /* bank 4, plane 3 */
-	
-		ROM_REGION( 0x400, REGION_PROMS, 0 )	/* graphics mapping PROMs */
-		ROM_LOAD( "136036.152",   0x000, 0x200, 0x4f96e57c )  /* remap */
-		ROM_LOAD( "136036.151",   0x200, 0x200, 0x7daf351f )  /* color */
-	ROM_END
-	
-	
-	ROM_START( indytemd )
-		ROM_REGION( 0x88000, REGION_CPU1, 0 )	/* 8.5*64k for 68000 code & slapstic ROM */
-		ROM_LOAD16_BYTE( "136032.205",   0x00000, 0x04000, 0x88d0be26 )
-		ROM_LOAD16_BYTE( "136032.206",   0x00001, 0x04000, 0x3c79ef05 )
-		ROM_LOAD16_BYTE( "136036.462",   0x10000, 0x08000, 0x317dc430 )
-		ROM_LOAD16_BYTE( "136036.461",   0x10001, 0x08000, 0x8c73f974 )
-		ROM_LOAD16_BYTE( "136036.464",   0x20000, 0x08000, 0x3fcb199f )
-		ROM_LOAD16_BYTE( "136036.463",   0x20001, 0x08000, 0xd6bda19a )
-		ROM_LOAD16_BYTE( "136036.466",   0x30000, 0x04000, 0xfaa7f23a )
-		ROM_LOAD16_BYTE( "136036.467",   0x30001, 0x04000, 0xee9fd91a )
-		ROM_LOAD16_BYTE( "136036.358",   0x80000, 0x04000, 0xd9351106 )
-		ROM_LOAD16_BYTE( "136036.359",   0x80001, 0x04000, 0xe731caea )
-	
-		ROM_REGION( 0x10000, REGION_CPU2, 0 )	/* 64k for 6502 code */
-		ROM_LOAD( "136036.153",   0x4000, 0x4000, 0x95294641 )
-		ROM_LOAD( "136036.154",   0x8000, 0x4000, 0xcbfc6adb )
-		ROM_LOAD( "136036.155",   0xc000, 0x4000, 0x4c8233ac )
-	
-		ROM_REGION( 0x2000, REGION_GFX1, ROMREGION_DISPOSE )
-		ROM_LOAD( "136032.107",   0x00000, 0x02000, 0x7a29dc07 )  /* alpha font */
-	
-		ROM_REGION( 0xc0000, REGION_GFX2, ROMREGION_DISPOSE | ROMREGION_INVERT )
-		ROM_LOAD( "136036.135",   0x00000, 0x08000, 0xffa8749c )  /* bank 1, plane 0 */
-		ROM_LOAD( "136036.139",   0x08000, 0x08000, 0xb682bfca )  /* bank 1, plane 1 */
-		ROM_LOAD( "136036.143",   0x10000, 0x08000, 0x7697da26 )  /* bank 1, plane 2 */
-		ROM_LOAD( "136036.147",   0x18000, 0x08000, 0x4e9d664c )  /* bank 1, plane 3 */
-	
-		ROM_LOAD( "136036.136",   0x30000, 0x08000, 0xb2b403aa )  /* bank 2, plane 0 */
-		ROM_LOAD( "136036.140",   0x38000, 0x08000, 0xec0c19ca )  /* bank 2, plane 1 */
-		ROM_LOAD( "136036.144",   0x40000, 0x08000, 0x4407df98 )  /* bank 2, plane 2 */
-		ROM_LOAD( "136036.148",   0x48000, 0x08000, 0x70dce06d )  /* bank 2, plane 3 */
-	
-		ROM_LOAD( "136036.137",   0x60000, 0x08000, 0x3f352547 )  /* bank 3, plane 0 */
-		ROM_LOAD( "136036.141",   0x68000, 0x08000, 0x9cbdffd0 )  /* bank 3, plane 1 */
-		ROM_LOAD( "136036.145",   0x70000, 0x08000, 0xe828e64b )  /* bank 3, plane 2 */
-		ROM_LOAD( "136036.149",   0x78000, 0x08000, 0x81503a23 )  /* bank 3, plane 3 */
-	
-		ROM_LOAD( "136036.138",   0x90000, 0x08000, 0x48c4d79d )  /* bank 4, plane 0 */
-		ROM_LOAD( "136036.142",   0x98000, 0x08000, 0x7faae75f )  /* bank 4, plane 1 */
-		ROM_LOAD( "136036.146",   0xa0000, 0x08000, 0x8ae5a7b5 )  /* bank 4, plane 2 */
-		ROM_LOAD( "136036.150",   0xa8000, 0x08000, 0xa10c4bd9 )  /* bank 4, plane 3 */
-	
-		ROM_REGION( 0x400, REGION_PROMS, 0 )	/* graphics mapping PROMs */
-		ROM_LOAD( "136036.152",   0x000, 0x200, 0x4f96e57c )  /* remap */
-		ROM_LOAD( "136036.151",   0x200, 0x200, 0x7daf351f )  /* color */
-	ROM_END
-	
-	
-	ROM_START( roadrunn )
-		ROM_REGION( 0x88000, REGION_CPU1, 0 )	/* 8.5*64k for 68000 code & slapstic ROM */
-		ROM_LOAD16_BYTE( "136032.205",   0x00000, 0x04000, 0x88d0be26 )
-		ROM_LOAD16_BYTE( "136032.206",   0x00001, 0x04000, 0x3c79ef05 )
-		ROM_LOAD16_BYTE( "136040.228",   0x10000, 0x08000, 0xb66c629a )
-		ROM_LOAD16_BYTE( "136040.229",   0x10001, 0x08000, 0x5638959f )
-		ROM_LOAD16_BYTE( "136040.230",   0x20000, 0x08000, 0xcd7956a3 )
-		ROM_LOAD16_BYTE( "136040.231",   0x20001, 0x08000, 0x722f2d3b )
-		ROM_LOAD16_BYTE( "136040.134",   0x50000, 0x08000, 0x18f431fe )
-		ROM_LOAD16_BYTE( "136040.135",   0x50001, 0x08000, 0xcb06f9ab )
-		ROM_LOAD16_BYTE( "136040.136",   0x60000, 0x08000, 0x8050bce4 )
-		ROM_LOAD16_BYTE( "136040.137",   0x60001, 0x08000, 0x3372a5cf )
-		ROM_LOAD16_BYTE( "136040.138",   0x70000, 0x08000, 0xa83155ee )
-		ROM_LOAD16_BYTE( "136040.139",   0x70001, 0x08000, 0x23aead1c )
-		ROM_LOAD16_BYTE( "136040.140",   0x80000, 0x04000, 0xd1464c88 )
-		ROM_LOAD16_BYTE( "136040.141",   0x80001, 0x04000, 0xf8f2acdf )
-	
-		ROM_REGION( 0x10000, REGION_CPU2, 0 )	/* 64k for 6502 code */
-		ROM_LOAD( "136040.143",   0x8000, 0x4000, 0x62b9878e )
-		ROM_LOAD( "136040.144",   0xc000, 0x4000, 0x6ef1b804 )
-	
-		ROM_REGION( 0x2000, REGION_GFX1, ROMREGION_DISPOSE )
-		ROM_LOAD( "136032.107",   0x00000, 0x02000, 0x7a29dc07 )  /* alpha font */
-	
-		ROM_REGION( 0x100000, REGION_GFX2, ROMREGION_DISPOSE | ROMREGION_INVERT )
-		ROM_LOAD( "136040.101",   0x00000, 0x08000, 0x26d9f29c )  /* bank 1, plane 0 */
-		ROM_LOAD( "136040.107",   0x08000, 0x08000, 0x8aac0ba4 )  /* bank 1, plane 1 */
-		ROM_LOAD( "136040.113",   0x10000, 0x08000, 0x48b74c52 )  /* bank 1, plane 2 */
-		ROM_LOAD( "136040.119",   0x18000, 0x08000, 0x17a6510c )  /* bank 1, plane 3 */
-	
-		ROM_LOAD( "136040.102",   0x30000, 0x08000, 0xae88f54b )  /* bank 2, plane 0 */
-		ROM_LOAD( "136040.108",   0x38000, 0x08000, 0xa2ac13d4 )  /* bank 2, plane 1 */
-		ROM_LOAD( "136040.114",   0x40000, 0x08000, 0xc91c3fcb )  /* bank 2, plane 2 */
-		ROM_LOAD( "136040.120",   0x48000, 0x08000, 0x42d25859 )  /* bank 2, plane 3 */
-	
-		ROM_LOAD( "136040.103",   0x60000, 0x08000, 0xf2d7ef55 )  /* bank 3, plane 0 */
-		ROM_LOAD( "136040.109",   0x68000, 0x08000, 0x11a843dc )  /* bank 3, plane 1 */
-		ROM_LOAD( "136040.115",   0x70000, 0x08000, 0x8b1fa5bc )  /* bank 3, plane 2 */
-		ROM_LOAD( "136040.121",   0x78000, 0x08000, 0xecf278f2 )  /* bank 3, plane 3 */
-	
-		ROM_LOAD( "136040.104",   0x90000, 0x08000, 0x0203d89c )  /* bank 4, plane 0 */
-		ROM_LOAD( "136040.110",   0x98000, 0x08000, 0x64801601 )  /* bank 4, plane 1 */
-		ROM_LOAD( "136040.116",   0xa0000, 0x08000, 0x52b23a36 )  /* bank 4, plane 2 */
-		ROM_LOAD( "136040.122",   0xa8000, 0x08000, 0xb1137a9d )  /* bank 4, plane 3 */
-	
-		ROM_LOAD( "136040.105",   0xc0000, 0x08000, 0x398a36f8 )  /* bank 5, plane 0 */
-		ROM_LOAD( "136040.111",   0xc8000, 0x08000, 0xf08b418b )  /* bank 5, plane 1 */
-		ROM_LOAD( "136040.117",   0xd0000, 0x08000, 0xc4394834 )  /* bank 5, plane 2 */
-		ROM_LOAD( "136040.123",   0xd8000, 0x08000, 0xdafd3dbe )  /* bank 5, plane 3 */
-	
-		ROM_LOAD( "136040.106",   0xe0000, 0x08000, 0x36a77bc5 )  /* bank 6, plane 0 */
-		ROM_LOAD( "136040.112",   0xe8000, 0x08000, 0xb6624f3c )  /* bank 6, plane 1 */
-		ROM_LOAD( "136040.118",   0xf0000, 0x08000, 0xf489a968 )  /* bank 6, plane 2 */
-		ROM_LOAD( "136040.124",   0xf8000, 0x08000, 0x524d65f7 )  /* bank 6, plane 3 */
-	
-		ROM_REGION( 0x400, REGION_PROMS, 0 )	/* graphics mapping PROMs */
-		ROM_LOAD( "136040.126",   0x000, 0x200, 0x1713c0cd )  /* remap */
-		ROM_LOAD( "136040.125",   0x200, 0x200, 0xa9ca8795 )  /* color */
-	ROM_END
-	
-	
-	ROM_START( roadblst )
-		ROM_REGION( 0x88000, REGION_CPU1, 0 )	/* 8.5*64k for 68000 code & slapstic ROM */
-		ROM_LOAD16_BYTE( "136032.205",   0x00000, 0x04000, 0x88d0be26 )
-		ROM_LOAD16_BYTE( "136032.206",   0x00001, 0x04000, 0x3c79ef05 )
-		ROM_LOAD16_BYTE( "048-1139.rom", 0x10000, 0x08000, 0xb73c1bd5 )
-		ROM_CONTINUE(                    0x50000, 0x08000 )
-		ROM_LOAD16_BYTE( "048-1140.rom", 0x10001, 0x08000, 0x6305429b )
-		ROM_CONTINUE(                    0x50001, 0x08000 )
-		ROM_LOAD16_BYTE( "048-1155.rom", 0x20000, 0x08000, 0xe95fc7d2 )
-		ROM_CONTINUE(                    0x60000, 0x08000 )
-		ROM_LOAD16_BYTE( "048-1156.rom", 0x20001, 0x08000, 0x727510f9 )
-		ROM_CONTINUE(                    0x60001, 0x08000 )
-		ROM_LOAD16_BYTE( "048-1167.rom", 0x70000, 0x08000, 0xc6d30d6f )
-		ROM_LOAD16_BYTE( "048-1168.rom", 0x70001, 0x08000, 0x16951020 )
-		ROM_LOAD16_BYTE( "048-2147.rom", 0x80000, 0x04000, 0x5c1adf67 )
-		ROM_LOAD16_BYTE( "048-2148.rom", 0x80001, 0x04000, 0xd9ac8966 )
-	
-		ROM_REGION( 0x10000, REGION_CPU2, 0 )	/* 64k for 6502 code */
-		ROM_LOAD( "048-1149.rom", 0x4000, 0x4000, 0x2e54f95e )
-		ROM_LOAD( "048-1169.rom", 0x8000, 0x4000, 0xee318052 )
-		ROM_LOAD( "048-1170.rom", 0xc000, 0x4000, 0x75dfec33 )
-	
-		ROM_REGION( 0x2000, REGION_GFX1, ROMREGION_DISPOSE )
-		ROM_LOAD( "136032.107",   0x00000, 0x02000, 0x7a29dc07 )  /* alpha font */
-	
-		ROM_REGION( 0x120000, REGION_GFX2, ROMREGION_DISPOSE | ROMREGION_INVERT )
-		ROM_LOAD( "048-1101.rom", 0x000000, 0x08000, 0xfe342d27 )  /* bank 1, plane 0 */
-		ROM_LOAD( "048-1102.rom", 0x008000, 0x08000, 0x17c7e780 )  /* bank 1, plane 1 */
-		ROM_LOAD( "048-1103.rom", 0x010000, 0x08000, 0x39688e01 )  /* bank 1, plane 2 */
-		ROM_LOAD( "048-1104.rom", 0x018000, 0x08000, 0xc8f9bd8e )  /* bank 1, plane 3 */
-		ROM_LOAD( "048-1105.rom", 0x020000, 0x08000, 0xc69e439e )  /* bank 1, plane 4 */
-		ROM_LOAD( "048-1106.rom", 0x028000, 0x08000, 0x4ee55796 )  /* bank 1, plane 5 */
-	
-		ROM_LOAD( "048-1107.rom", 0x030000, 0x08000, 0x02117c58 )  /* bank 2, plane 0 */
-		ROM_CONTINUE(             0x060000, 0x08000 )			   /* bank 3, plane 0 */
-		ROM_LOAD( "048-1108.rom", 0x038000, 0x08000, 0x1e148525 )  /* bank 2, plane 1 */
-		ROM_CONTINUE(             0x068000, 0x08000 )			   /* bank 3, plane 1 */
-		ROM_LOAD( "048-1109.rom", 0x040000, 0x08000, 0x110ce07e )  /* bank 2, plane 2 */
-		ROM_CONTINUE(             0x070000, 0x08000 )			   /* bank 3, plane 2 */
-		ROM_LOAD( "048-1110.rom", 0x048000, 0x08000, 0xc00aa0f4 )  /* bank 2, plane 3 */
-		ROM_CONTINUE(             0x078000, 0x08000 )			   /* bank 3, plane 3 */
-	
-		ROM_LOAD( "048-1111.rom", 0x090000, 0x08000, 0xc951d014 )  /* bank 4, plane 0 */
-		ROM_CONTINUE(             0x0c0000, 0x08000 )			   /* bank 5, plane 0 */
-		ROM_LOAD( "048-1112.rom", 0x098000, 0x08000, 0x95c5a006 )  /* bank 4, plane 1 */
-		ROM_CONTINUE(             0x0c8000, 0x08000 )			   /* bank 5, plane 1 */
-		ROM_LOAD( "048-1113.rom", 0x0a0000, 0x08000, 0xf61f2370 )  /* bank 4, plane 2 */
-		ROM_CONTINUE(             0x0d0000, 0x08000 )			   /* bank 5, plane 2 */
-		ROM_LOAD( "048-1114.rom", 0x0a8000, 0x08000, 0x774a36a8 )  /* bank 4, plane 3 */
-		ROM_CONTINUE(             0x0d8000, 0x08000 )			   /* bank 5, plane 3 */
-	
-		ROM_LOAD( "048-1115.rom", 0x100000, 0x08000, 0xa47bc79d )  /* bank 7, plane 0 */
-		ROM_CONTINUE(             0x0e0000, 0x08000 )			   /* bank 6, plane 0 */
-		ROM_LOAD( "048-1116.rom", 0x108000, 0x08000, 0xb8a5c215 )  /* bank 7, plane 1 */
-		ROM_CONTINUE(             0x0e8000, 0x08000 )			   /* bank 6, plane 1 */
-		ROM_LOAD( "048-1117.rom", 0x110000, 0x08000, 0x2d1c1f64 )  /* bank 7, plane 2 */
-		ROM_CONTINUE(             0x0f0000, 0x08000 )			   /* bank 6, plane 2 */
-		ROM_LOAD( "048-1118.rom", 0x118000, 0x08000, 0xbe879b8e )  /* bank 7, plane 3 */
-		ROM_CONTINUE(             0x0f8000, 0x08000 )			   /* bank 6, plane 3 */
-	
-		ROM_REGION( 0x400, REGION_PROMS, 0 )	/* graphics mapping PROMs */
-		ROM_LOAD( "048-1174.bpr", 0x000, 0x200, 0xdb4a4d53 )  /* remap */
-		ROM_LOAD( "048-1173.bpr", 0x200, 0x200, 0xc80574af )  /* color */
-	ROM_END
+	static RomLoadPtr rom_marble = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x88000, REGION_CPU1, 0 );/* 8.5*64k for 68000 code & slapstic ROM */
+		ROM_LOAD16_BYTE( "136032.205",   0x00000, 0x04000, 0x88d0be26 );
+		ROM_LOAD16_BYTE( "136032.206",   0x00001, 0x04000, 0x3c79ef05 );
+		ROM_LOAD16_BYTE( "136033.623",   0x10000, 0x04000, 0x284ed2e9 );
+		ROM_LOAD16_BYTE( "136033.624",   0x10001, 0x04000, 0xd541b021 );
+		ROM_LOAD16_BYTE( "136033.625",   0x18000, 0x04000, 0x563755c7 );
+		ROM_LOAD16_BYTE( "136033.626",   0x18001, 0x04000, 0x860feeb3 );
+		ROM_LOAD16_BYTE( "136033.627",   0x20000, 0x04000, 0xd1dbd439 );
+		ROM_LOAD16_BYTE( "136033.628",   0x20001, 0x04000, 0x957d6801 );
+		ROM_LOAD16_BYTE( "136033.229",   0x28000, 0x04000, 0xc81d5c14 );
+		ROM_LOAD16_BYTE( "136033.630",   0x28001, 0x04000, 0x687a09f7 );
+		ROM_LOAD16_BYTE( "136033.107",   0x80000, 0x04000, 0xf3b8745b );
+		ROM_LOAD16_BYTE( "136033.108",   0x80001, 0x04000, 0xe51eecaa );
+	
+		ROM_REGION( 0x10000, REGION_CPU2, 0 );/* 64k for 6502 code */
+		ROM_LOAD( "136033.421",   0x8000, 0x4000, 0x78153dc3 );
+		ROM_LOAD( "136033.422",   0xc000, 0x4000, 0x2e66300e );
+	
+		ROM_REGION( 0x2000, REGION_GFX1, ROMREGION_DISPOSE );
+		ROM_LOAD( "136032.107",   0x00000, 0x02000, 0x7a29dc07 ); /* alpha font */
+	
+		ROM_REGION( 0x60000, REGION_GFX2, ROMREGION_DISPOSE | ROMREGION_INVERT );
+		ROM_LOAD( "136033.137",   0x00000, 0x04000, 0x7a45f5c1 ); /* bank 1, plane 0 */
+		ROM_LOAD( "136033.138",   0x04000, 0x04000, 0x7e954a88 );
+		ROM_LOAD( "136033.139",   0x08000, 0x04000, 0x1eb1bb5f ); /* bank 1, plane 1 */
+		ROM_LOAD( "136033.140",   0x0c000, 0x04000, 0x8a82467b );
+		ROM_LOAD( "136033.141",   0x10000, 0x04000, 0x52448965 ); /* bank 1, plane 2 */
+		ROM_LOAD( "136033.142",   0x14000, 0x04000, 0xb4a70e4f );
+		ROM_LOAD( "136033.143",   0x18000, 0x04000, 0x7156e449 ); /* bank 1, plane 3 */
+		ROM_LOAD( "136033.144",   0x1c000, 0x04000, 0x4c3e4c79 );
+		ROM_LOAD( "136033.145",   0x20000, 0x04000, 0x9062be7f ); /* bank 1, plane 4 */
+		ROM_LOAD( "136033.146",   0x24000, 0x04000, 0x14566dca );
+	
+		ROM_FILL(                 0x30000, 0x30000, 0xff );
+		ROM_LOAD( "136033.149",   0x34000, 0x04000, 0xb6658f06 ); /* bank 2, plane 0 */
+		ROM_LOAD( "136033.151",   0x3c000, 0x04000, 0x84ee1c80 ); /* bank 2, plane 1 */
+		ROM_LOAD( "136033.153",   0x44000, 0x04000, 0xdaa02926 ); /* bank 2, plane 2 */
+	
+		ROM_REGION( 0x400, REGION_PROMS, 0 );/* graphics mapping PROMs */
+		ROM_LOAD( "136033.118",   0x000, 0x200, 0x2101b0ed ); /* remap */
+		ROM_LOAD( "136033.119",   0x200, 0x200, 0x19f6e767 ); /* color */
+	ROM_END(); }}; 
+	
+	
+	static RomLoadPtr rom_marble2 = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x88000, REGION_CPU1, 0 );/* 8.5*64k for 68000 code & slapstic ROM */
+		ROM_LOAD16_BYTE( "136032.205",   0x00000, 0x04000, 0x88d0be26 );
+		ROM_LOAD16_BYTE( "136032.206",   0x00001, 0x04000, 0x3c79ef05 );
+		ROM_LOAD16_BYTE( "136033.401",   0x10000, 0x08000, 0xecfc25a2 );
+		ROM_LOAD16_BYTE( "136033.402",   0x10001, 0x08000, 0x7ce9bf53 );
+		ROM_LOAD16_BYTE( "136033.403",   0x20000, 0x08000, 0xdafee7a2 );
+		ROM_LOAD16_BYTE( "136033.404",   0x20001, 0x08000, 0xb59ffcf6 );
+		ROM_LOAD16_BYTE( "136033.107",   0x80000, 0x04000, 0xf3b8745b );
+		ROM_LOAD16_BYTE( "136033.108",   0x80001, 0x04000, 0xe51eecaa );
+	
+		ROM_REGION( 0x10000, REGION_CPU2, 0 );/* 64k for 6502 code */
+		ROM_LOAD( "136033.421",   0x8000, 0x4000, 0x78153dc3 );
+		ROM_LOAD( "136033.422",   0xc000, 0x4000, 0x2e66300e );
+	
+		ROM_REGION( 0x2000, REGION_GFX1, ROMREGION_DISPOSE );
+		ROM_LOAD( "136032.107",   0x00000, 0x02000, 0x7a29dc07 ); /* alpha font */
+	
+		ROM_REGION( 0x60000, REGION_GFX2, ROMREGION_DISPOSE | ROMREGION_INVERT );
+		ROM_LOAD( "136033.137",   0x00000, 0x04000, 0x7a45f5c1 ); /* bank 1, plane 0 */
+		ROM_LOAD( "136033.138",   0x04000, 0x04000, 0x7e954a88 );
+		ROM_LOAD( "136033.139",   0x08000, 0x04000, 0x1eb1bb5f ); /* bank 1, plane 1 */
+		ROM_LOAD( "136033.140",   0x0c000, 0x04000, 0x8a82467b );
+		ROM_LOAD( "136033.141",   0x10000, 0x04000, 0x52448965 ); /* bank 1, plane 2 */
+		ROM_LOAD( "136033.142",   0x14000, 0x04000, 0xb4a70e4f );
+		ROM_LOAD( "136033.143",   0x18000, 0x04000, 0x7156e449 ); /* bank 1, plane 3 */
+		ROM_LOAD( "136033.144",   0x1c000, 0x04000, 0x4c3e4c79 );
+		ROM_LOAD( "136033.145",   0x20000, 0x04000, 0x9062be7f ); /* bank 1, plane 4 */
+		ROM_LOAD( "136033.146",   0x24000, 0x04000, 0x14566dca );
+	
+		ROM_FILL(                 0x30000, 0x30000, 0xff );
+		ROM_LOAD( "136033.149",   0x34000, 0x04000, 0xb6658f06 ); /* bank 2, plane 0 */
+		ROM_LOAD( "136033.151",   0x3c000, 0x04000, 0x84ee1c80 ); /* bank 2, plane 1 */
+		ROM_LOAD( "136033.153",   0x44000, 0x04000, 0xdaa02926 ); /* bank 2, plane 2 */
+	
+		ROM_REGION( 0x400, REGION_PROMS, 0 );/* graphics mapping PROMs */
+		ROM_LOAD( "136033.118",   0x000, 0x200, 0x2101b0ed ); /* remap */
+		ROM_LOAD( "136033.119",   0x200, 0x200, 0x19f6e767 ); /* color */
+	ROM_END(); }}; 
+	
+	
+	static RomLoadPtr rom_marble3 = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x88000, REGION_CPU1, 0 );/* 8.5*64k for 68000 code & slapstic ROM */
+		ROM_LOAD16_BYTE( "136032.205",   0x00000, 0x04000, 0x88d0be26 );
+		ROM_LOAD16_BYTE( "136032.206",   0x00001, 0x04000, 0x3c79ef05 );
+		ROM_LOAD16_BYTE( "136033.201",   0x10000, 0x08000, 0x9395804d );
+		ROM_LOAD16_BYTE( "136033.202",   0x10001, 0x08000, 0xedd313f5 );
+		ROM_LOAD16_BYTE( "136033.403",   0x20000, 0x08000, 0xdafee7a2 );
+		ROM_LOAD16_BYTE( "136033.204",   0x20001, 0x08000, 0x4d621731 );
+		ROM_LOAD16_BYTE( "136033.107",   0x80000, 0x04000, 0xf3b8745b );
+		ROM_LOAD16_BYTE( "136033.108",   0x80001, 0x04000, 0xe51eecaa );
+	
+		ROM_REGION( 0x10000, REGION_CPU2, 0 );/* 64k for 6502 code */
+		ROM_LOAD( "136033.121",   0x8000, 0x4000, 0x73fe2b46 );
+		ROM_LOAD( "136033.122",   0xc000, 0x4000, 0x03bf65c3 );
+	
+		ROM_REGION( 0x2000, REGION_GFX1, ROMREGION_DISPOSE );
+		ROM_LOAD( "136032.107",   0x00000, 0x02000, 0x7a29dc07 ); /* alpha font */
+	
+		ROM_REGION( 0x60000, REGION_GFX2, ROMREGION_DISPOSE | ROMREGION_INVERT );
+		ROM_LOAD( "136033.137",   0x00000, 0x04000, 0x7a45f5c1 ); /* bank 1, plane 0 */
+		ROM_LOAD( "136033.138",   0x04000, 0x04000, 0x7e954a88 );
+		ROM_LOAD( "136033.139",   0x08000, 0x04000, 0x1eb1bb5f ); /* bank 1, plane 1 */
+		ROM_LOAD( "136033.140",   0x0c000, 0x04000, 0x8a82467b );
+		ROM_LOAD( "136033.141",   0x10000, 0x04000, 0x52448965 ); /* bank 1, plane 2 */
+		ROM_LOAD( "136033.142",   0x14000, 0x04000, 0xb4a70e4f );
+		ROM_LOAD( "136033.143",   0x18000, 0x04000, 0x7156e449 ); /* bank 1, plane 3 */
+		ROM_LOAD( "136033.144",   0x1c000, 0x04000, 0x4c3e4c79 );
+		ROM_LOAD( "136033.145",   0x20000, 0x04000, 0x9062be7f ); /* bank 1, plane 4 */
+		ROM_LOAD( "136033.146",   0x24000, 0x04000, 0x14566dca );
+	
+		ROM_FILL(                 0x30000, 0x30000, 0xff );
+		ROM_LOAD( "136033.149",   0x34000, 0x04000, 0xb6658f06 ); /* bank 2, plane 0 */
+		ROM_LOAD( "136033.151",   0x3c000, 0x04000, 0x84ee1c80 ); /* bank 2, plane 1 */
+		ROM_LOAD( "136033.153",   0x44000, 0x04000, 0xdaa02926 ); /* bank 2, plane 2 */
+	
+		ROM_REGION( 0x400, REGION_PROMS, 0 );/* graphics mapping PROMs */
+		ROM_LOAD( "136033.118",   0x000, 0x200, 0x2101b0ed ); /* remap */
+		ROM_LOAD( "136033.119",   0x200, 0x200, 0x19f6e767 ); /* color */
+	ROM_END(); }}; 
+	
+	
+	static RomLoadPtr rom_marble4 = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x88000, REGION_CPU1, 0 );/* 8.5*64k for 68000 code & slapstic ROM */
+		ROM_LOAD16_BYTE( "136032.205",   0x00000, 0x04000, 0x88d0be26 );
+		ROM_LOAD16_BYTE( "136032.206",   0x00001, 0x04000, 0x3c79ef05 );
+		ROM_LOAD16_BYTE( "136033.323",   0x10000, 0x04000, 0x4dc2987a );
+		ROM_LOAD16_BYTE( "136033.324",   0x10001, 0x04000, 0xe22e6e11 );
+		ROM_LOAD16_BYTE( "136033.225",   0x18000, 0x04000, 0x743f6c5c );
+		ROM_LOAD16_BYTE( "136033.226",   0x18001, 0x04000, 0xaeb711e3 );
+		ROM_LOAD16_BYTE( "136033.227",   0x20000, 0x04000, 0xd06d2c22 );
+		ROM_LOAD16_BYTE( "136033.228",   0x20001, 0x04000, 0xe69cec16 );
+		ROM_LOAD16_BYTE( "136033.229",   0x28000, 0x04000, 0xc81d5c14 );
+		ROM_LOAD16_BYTE( "136033.230",   0x28001, 0x04000, 0x526ce8ad );
+		ROM_LOAD16_BYTE( "136033.107",   0x80000, 0x04000, 0xf3b8745b );
+		ROM_LOAD16_BYTE( "136033.108",   0x80001, 0x04000, 0xe51eecaa );
+	
+		ROM_REGION( 0x10000, REGION_CPU2, 0 );/* 64k for 6502 code */
+		ROM_LOAD( "136033.257",   0x8000, 0x4000, 0x2e2e0df8 );
+		ROM_LOAD( "136033.258",   0xc000, 0x4000, 0x1b9655cd );
+	
+		ROM_REGION( 0x2000, REGION_GFX1, ROMREGION_DISPOSE );
+		ROM_LOAD( "136032.107",   0x00000, 0x02000, 0x7a29dc07 ); /* alpha font */
+	
+		ROM_REGION( 0x60000, REGION_GFX2, ROMREGION_DISPOSE | ROMREGION_INVERT );
+		ROM_LOAD( "136033.137",   0x00000, 0x04000, 0x7a45f5c1 ); /* bank 1, plane 0 */
+		ROM_LOAD( "136033.138",   0x04000, 0x04000, 0x7e954a88 );
+		ROM_LOAD( "136033.139",   0x08000, 0x04000, 0x1eb1bb5f ); /* bank 1, plane 1 */
+		ROM_LOAD( "136033.140",   0x0c000, 0x04000, 0x8a82467b );
+		ROM_LOAD( "136033.141",   0x10000, 0x04000, 0x52448965 ); /* bank 1, plane 2 */
+		ROM_LOAD( "136033.142",   0x14000, 0x04000, 0xb4a70e4f );
+		ROM_LOAD( "136033.143",   0x18000, 0x04000, 0x7156e449 ); /* bank 1, plane 3 */
+		ROM_LOAD( "136033.144",   0x1c000, 0x04000, 0x4c3e4c79 );
+		ROM_LOAD( "136033.145",   0x20000, 0x04000, 0x9062be7f ); /* bank 1, plane 4 */
+		ROM_LOAD( "136033.146",   0x24000, 0x04000, 0x14566dca );
+	
+		ROM_FILL(                 0x30000, 0x30000, 0xff );
+		ROM_LOAD( "136033.149",   0x34000, 0x04000, 0xb6658f06 ); /* bank 2, plane 0 */
+		ROM_LOAD( "136033.151",   0x3c000, 0x04000, 0x84ee1c80 ); /* bank 2, plane 1 */
+		ROM_LOAD( "136033.153",   0x44000, 0x04000, 0xdaa02926 ); /* bank 2, plane 2 */
+	
+		ROM_REGION( 0x400, REGION_PROMS, 0 );/* graphics mapping PROMs */
+		ROM_LOAD( "136033.118",   0x000, 0x200, 0x2101b0ed ); /* remap */
+		ROM_LOAD( "136033.119",   0x200, 0x200, 0x19f6e767 ); /* color */
+	ROM_END(); }}; 
+	
+	
+	static RomLoadPtr rom_peterpak = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x88000, REGION_CPU1, 0 );/* 8.5*64k for 68000 code & slapstic ROM */
+		ROM_LOAD16_BYTE( "136032.205",   0x00000, 0x04000, 0x88d0be26 );
+		ROM_LOAD16_BYTE( "136032.206",   0x00001, 0x04000, 0x3c79ef05 );
+		ROM_LOAD16_BYTE( "136028.142",   0x10000, 0x04000, 0x4f9fc020 );
+		ROM_LOAD16_BYTE( "136028.143",   0x10001, 0x04000, 0x9fb257cc );
+		ROM_LOAD16_BYTE( "136028.144",   0x18000, 0x04000, 0x50267619 );
+		ROM_LOAD16_BYTE( "136028.145",   0x18001, 0x04000, 0x7b6a5004 );
+		ROM_LOAD16_BYTE( "136028.146",   0x20000, 0x04000, 0x4183a67a );
+		ROM_LOAD16_BYTE( "136028.147",   0x20001, 0x04000, 0x14e2d97b );
+		ROM_LOAD16_BYTE( "136028.148",   0x80000, 0x04000, 0x230e8ba9 );
+		ROM_LOAD16_BYTE( "136028.149",   0x80001, 0x04000, 0x0ff0c13a );
+	
+		ROM_REGION( 0x10000, REGION_CPU2, 0 );/* 64k for 6502 code */
+		ROM_LOAD( "136028.101",   0x8000, 0x4000, 0xff712aa2 );
+		ROM_LOAD( "136028.102",   0xc000, 0x4000, 0x89ea21a1 );
+	
+		ROM_REGION( 0x2000, REGION_GFX1, ROMREGION_DISPOSE );
+		ROM_LOAD( "136032.107",   0x00000, 0x02000, 0x7a29dc07 ); /* alpha font */
+	
+		ROM_REGION( 0x90000, REGION_GFX2, ROMREGION_DISPOSE | ROMREGION_INVERT );
+		ROM_LOAD( "136028.138",   0x00000, 0x08000, 0x53eaa018 ); /* bank 1, plane 0 */
+		ROM_LOAD( "136028.139",   0x08000, 0x08000, 0x354a19cb ); /* bank 1, plane 1 */
+		ROM_LOAD( "136028.140",   0x10000, 0x08000, 0x8d2c4717 ); /* bank 1, plane 2 */
+		ROM_LOAD( "136028.141",   0x18000, 0x08000, 0xbf59ea19 ); /* bank 1, plane 3 */
+	
+		ROM_LOAD( "136028.150",   0x30000, 0x08000, 0x83362483 ); /* bank 2, plane 0 */
+		ROM_LOAD( "136028.151",   0x38000, 0x08000, 0x6e95094e ); /* bank 2, plane 1 */
+		ROM_LOAD( "136028.152",   0x40000, 0x08000, 0x9553f084 ); /* bank 2, plane 2 */
+		ROM_LOAD( "136028.153",   0x48000, 0x08000, 0xc2a9b028 ); /* bank 2, plane 3 */
+	
+		ROM_LOAD( "136028.105",   0x64000, 0x04000, 0xac9a5a44 ); /* bank 3, plane 0 */
+		ROM_LOAD( "136028.108",   0x6c000, 0x04000, 0x51941e64 ); /* bank 3, plane 1 */
+		ROM_LOAD( "136028.111",   0x74000, 0x04000, 0x246599f3 ); /* bank 3, plane 2 */
+		ROM_LOAD( "136028.114",   0x7c000, 0x04000, 0x918a5082 ); /* bank 3, plane 3 */
+	
+		ROM_REGION( 0x400, REGION_PROMS, 0 );/* graphics mapping PROMs */
+		ROM_LOAD( "136028.136",   0x000, 0x200, 0x861cfa36 ); /* remap */
+		ROM_LOAD( "136028.137",   0x200, 0x200, 0x8507e5ea ); /* color */
+	ROM_END(); }}; 
+	
+	
+	static RomLoadPtr rom_indytemp = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x88000, REGION_CPU1, 0 );/* 8.5*64k for 68000 code & slapstic ROM */
+		ROM_LOAD16_BYTE( "136032.205",   0x00000, 0x04000, 0x88d0be26 );
+		ROM_LOAD16_BYTE( "136032.206",   0x00001, 0x04000, 0x3c79ef05 );
+		ROM_LOAD16_BYTE( "136036.432",   0x10000, 0x08000, 0xd888cdf1 );
+		ROM_LOAD16_BYTE( "136036.431",   0x10001, 0x08000, 0xb7ac7431 );
+		ROM_LOAD16_BYTE( "136036.434",   0x20000, 0x08000, 0x802495fd );
+		ROM_LOAD16_BYTE( "136036.433",   0x20001, 0x08000, 0x3a914e5c );
+		ROM_LOAD16_BYTE( "136036.456",   0x30000, 0x04000, 0xec146b09 );
+		ROM_LOAD16_BYTE( "136036.457",   0x30001, 0x04000, 0x6628de01 );
+		ROM_LOAD16_BYTE( "136036.358",   0x80000, 0x04000, 0xd9351106 );
+		ROM_LOAD16_BYTE( "136036.359",   0x80001, 0x04000, 0xe731caea );
+	
+		ROM_REGION( 0x10000, REGION_CPU2, 0 );/* 64k for 6502 code */
+		ROM_LOAD( "136036.153",   0x4000, 0x4000, 0x95294641 );
+		ROM_LOAD( "136036.154",   0x8000, 0x4000, 0xcbfc6adb );
+		ROM_LOAD( "136036.155",   0xc000, 0x4000, 0x4c8233ac );
+	
+		ROM_REGION( 0x2000, REGION_GFX1, ROMREGION_DISPOSE );
+		ROM_LOAD( "136032.107",   0x00000, 0x02000, 0x7a29dc07 ); /* alpha font */
+	
+		ROM_REGION( 0xc0000, REGION_GFX2, ROMREGION_DISPOSE | ROMREGION_INVERT );
+		ROM_LOAD( "136036.135",   0x00000, 0x08000, 0xffa8749c ); /* bank 1, plane 0 */
+		ROM_LOAD( "136036.139",   0x08000, 0x08000, 0xb682bfca ); /* bank 1, plane 1 */
+		ROM_LOAD( "136036.143",   0x10000, 0x08000, 0x7697da26 ); /* bank 1, plane 2 */
+		ROM_LOAD( "136036.147",   0x18000, 0x08000, 0x4e9d664c ); /* bank 1, plane 3 */
+	
+		ROM_LOAD( "136036.136",   0x30000, 0x08000, 0xb2b403aa ); /* bank 2, plane 0 */
+		ROM_LOAD( "136036.140",   0x38000, 0x08000, 0xec0c19ca ); /* bank 2, plane 1 */
+		ROM_LOAD( "136036.144",   0x40000, 0x08000, 0x4407df98 ); /* bank 2, plane 2 */
+		ROM_LOAD( "136036.148",   0x48000, 0x08000, 0x70dce06d ); /* bank 2, plane 3 */
+	
+		ROM_LOAD( "136036.137",   0x60000, 0x08000, 0x3f352547 ); /* bank 3, plane 0 */
+		ROM_LOAD( "136036.141",   0x68000, 0x08000, 0x9cbdffd0 ); /* bank 3, plane 1 */
+		ROM_LOAD( "136036.145",   0x70000, 0x08000, 0xe828e64b ); /* bank 3, plane 2 */
+		ROM_LOAD( "136036.149",   0x78000, 0x08000, 0x81503a23 ); /* bank 3, plane 3 */
+	
+		ROM_LOAD( "136036.138",   0x90000, 0x08000, 0x48c4d79d ); /* bank 4, plane 0 */
+		ROM_LOAD( "136036.142",   0x98000, 0x08000, 0x7faae75f ); /* bank 4, plane 1 */
+		ROM_LOAD( "136036.146",   0xa0000, 0x08000, 0x8ae5a7b5 ); /* bank 4, plane 2 */
+		ROM_LOAD( "136036.150",   0xa8000, 0x08000, 0xa10c4bd9 ); /* bank 4, plane 3 */
+	
+		ROM_REGION( 0x400, REGION_PROMS, 0 );/* graphics mapping PROMs */
+		ROM_LOAD( "136036.152",   0x000, 0x200, 0x4f96e57c ); /* remap */
+		ROM_LOAD( "136036.151",   0x200, 0x200, 0x7daf351f ); /* color */
+	ROM_END(); }}; 
+	
+	
+	static RomLoadPtr rom_indytem2 = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x88000, REGION_CPU1, 0 );/* 8.5*64k for 68000 code & slapstic ROM */
+		ROM_LOAD16_BYTE( "136032.205",   0x00000, 0x04000, 0x88d0be26 );
+		ROM_LOAD16_BYTE( "136032.206",   0x00001, 0x04000, 0x3c79ef05 );
+		ROM_LOAD16_BYTE( "136036.470",   0x10000, 0x08000, 0x7fac1dd8 );
+		ROM_LOAD16_BYTE( "136036.471",   0x10001, 0x08000, 0xe93272fb );
+		ROM_LOAD16_BYTE( "136036.434",   0x20000, 0x08000, 0x802495fd );
+		ROM_LOAD16_BYTE( "136036.433",   0x20001, 0x08000, 0x3a914e5c );
+		ROM_LOAD16_BYTE( "136036.456",   0x30000, 0x04000, 0xec146b09 );
+		ROM_LOAD16_BYTE( "136036.457",   0x30001, 0x04000, 0x6628de01 );
+		ROM_LOAD16_BYTE( "136036.358",   0x80000, 0x04000, 0xd9351106 );
+		ROM_LOAD16_BYTE( "136036.359",   0x80001, 0x04000, 0xe731caea );
+	
+		ROM_REGION( 0x10000, REGION_CPU2, 0 );/* 64k for 6502 code */
+		ROM_LOAD( "136036.153",   0x4000, 0x4000, 0x95294641 );
+		ROM_LOAD( "136036.154",   0x8000, 0x4000, 0xcbfc6adb );
+		ROM_LOAD( "136036.155",   0xc000, 0x4000, 0x4c8233ac );
+	
+		ROM_REGION( 0x2000, REGION_GFX1, ROMREGION_DISPOSE );
+		ROM_LOAD( "136032.107",   0x00000, 0x02000, 0x7a29dc07 ); /* alpha font */
+	
+		ROM_REGION( 0xc0000, REGION_GFX2, ROMREGION_DISPOSE | ROMREGION_INVERT );
+		ROM_LOAD( "136036.135",   0x00000, 0x08000, 0xffa8749c ); /* bank 1, plane 0 */
+		ROM_LOAD( "136036.139",   0x08000, 0x08000, 0xb682bfca ); /* bank 1, plane 1 */
+		ROM_LOAD( "136036.143",   0x10000, 0x08000, 0x7697da26 ); /* bank 1, plane 2 */
+		ROM_LOAD( "136036.147",   0x18000, 0x08000, 0x4e9d664c ); /* bank 1, plane 3 */
+	
+		ROM_LOAD( "136036.136",   0x30000, 0x08000, 0xb2b403aa ); /* bank 2, plane 0 */
+		ROM_LOAD( "136036.140",   0x38000, 0x08000, 0xec0c19ca ); /* bank 2, plane 1 */
+		ROM_LOAD( "136036.144",   0x40000, 0x08000, 0x4407df98 ); /* bank 2, plane 2 */
+		ROM_LOAD( "136036.148",   0x48000, 0x08000, 0x70dce06d ); /* bank 2, plane 3 */
+	
+		ROM_LOAD( "136036.137",   0x60000, 0x08000, 0x3f352547 ); /* bank 3, plane 0 */
+		ROM_LOAD( "136036.141",   0x68000, 0x08000, 0x9cbdffd0 ); /* bank 3, plane 1 */
+		ROM_LOAD( "136036.145",   0x70000, 0x08000, 0xe828e64b ); /* bank 3, plane 2 */
+		ROM_LOAD( "136036.149",   0x78000, 0x08000, 0x81503a23 ); /* bank 3, plane 3 */
+	
+		ROM_LOAD( "136036.138",   0x90000, 0x08000, 0x48c4d79d ); /* bank 4, plane 0 */
+		ROM_LOAD( "136036.142",   0x98000, 0x08000, 0x7faae75f ); /* bank 4, plane 1 */
+		ROM_LOAD( "136036.146",   0xa0000, 0x08000, 0x8ae5a7b5 ); /* bank 4, plane 2 */
+		ROM_LOAD( "136036.150",   0xa8000, 0x08000, 0xa10c4bd9 ); /* bank 4, plane 3 */
+	
+		ROM_REGION( 0x400, REGION_PROMS, 0 );/* graphics mapping PROMs */
+		ROM_LOAD( "136036.152",   0x000, 0x200, 0x4f96e57c ); /* remap */
+		ROM_LOAD( "136036.151",   0x200, 0x200, 0x7daf351f ); /* color */
+	ROM_END(); }}; 
+	
+	
+	static RomLoadPtr rom_indytem3 = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x88000, REGION_CPU1, 0 );/* 8.5*64k for 68000 code & slapstic ROM */
+		ROM_LOAD16_BYTE( "136032.205",   0x00000, 0x04000, 0x88d0be26 );
+		ROM_LOAD16_BYTE( "136032.206",   0x00001, 0x04000, 0x3c79ef05 );
+		ROM_LOAD16_BYTE( "232.10b",      0x10000, 0x08000, 0x1e80108f );
+		ROM_LOAD16_BYTE( "231.10a",      0x10001, 0x08000, 0x8ae54c0c );
+		ROM_LOAD16_BYTE( "234.12b",      0x20000, 0x08000, 0x86be7e07 );
+		ROM_LOAD16_BYTE( "233.12a",      0x20001, 0x08000, 0xbfcea7ae );
+		ROM_LOAD16_BYTE( "256.15b",      0x30000, 0x04000, 0x3a076fd2 );
+		ROM_LOAD16_BYTE( "257.15a",      0x30001, 0x04000, 0x15293606 );
+		ROM_LOAD16_BYTE( "158.16b",      0x80000, 0x04000, 0x10372888 );
+		ROM_LOAD16_BYTE( "159.16a",      0x80001, 0x04000, 0x50f890a8 );
+	
+		ROM_REGION( 0x10000, REGION_CPU2, 0 );/* 64k for 6502 code */
+		ROM_LOAD( "136036.153",   0x4000, 0x4000, 0x95294641 );
+		ROM_LOAD( "136036.154",   0x8000, 0x4000, 0xcbfc6adb );
+		ROM_LOAD( "136036.155",   0xc000, 0x4000, 0x4c8233ac );
+	
+		ROM_REGION( 0x2000, REGION_GFX1, ROMREGION_DISPOSE );
+		ROM_LOAD( "136032.107",   0x00000, 0x02000, 0x7a29dc07 ); /* alpha font */
+	
+		ROM_REGION( 0xc0000, REGION_GFX2, ROMREGION_DISPOSE | ROMREGION_INVERT );
+		ROM_LOAD( "136036.135",   0x00000, 0x08000, 0xffa8749c ); /* bank 1, plane 0 */
+		ROM_LOAD( "136036.139",   0x08000, 0x08000, 0xb682bfca ); /* bank 1, plane 1 */
+		ROM_LOAD( "136036.143",   0x10000, 0x08000, 0x7697da26 ); /* bank 1, plane 2 */
+		ROM_LOAD( "136036.147",   0x18000, 0x08000, 0x4e9d664c ); /* bank 1, plane 3 */
+	
+		ROM_LOAD( "136036.136",   0x30000, 0x08000, 0xb2b403aa ); /* bank 2, plane 0 */
+		ROM_LOAD( "136036.140",   0x38000, 0x08000, 0xec0c19ca ); /* bank 2, plane 1 */
+		ROM_LOAD( "136036.144",   0x40000, 0x08000, 0x4407df98 ); /* bank 2, plane 2 */
+		ROM_LOAD( "136036.148",   0x48000, 0x08000, 0x70dce06d ); /* bank 2, plane 3 */
+	
+		ROM_LOAD( "136036.137",   0x60000, 0x08000, 0x3f352547 ); /* bank 3, plane 0 */
+		ROM_LOAD( "136036.141",   0x68000, 0x08000, 0x9cbdffd0 ); /* bank 3, plane 1 */
+		ROM_LOAD( "136036.145",   0x70000, 0x08000, 0xe828e64b ); /* bank 3, plane 2 */
+		ROM_LOAD( "136036.149",   0x78000, 0x08000, 0x81503a23 ); /* bank 3, plane 3 */
+	
+		ROM_LOAD( "136036.138",   0x90000, 0x08000, 0x48c4d79d ); /* bank 4, plane 0 */
+		ROM_LOAD( "136036.142",   0x98000, 0x08000, 0x7faae75f ); /* bank 4, plane 1 */
+		ROM_LOAD( "136036.146",   0xa0000, 0x08000, 0x8ae5a7b5 ); /* bank 4, plane 2 */
+		ROM_LOAD( "136036.150",   0xa8000, 0x08000, 0xa10c4bd9 ); /* bank 4, plane 3 */
+	
+		ROM_REGION( 0x400, REGION_PROMS, 0 );/* graphics mapping PROMs */
+		ROM_LOAD( "136036.152",   0x000, 0x200, 0x4f96e57c ); /* remap */
+		ROM_LOAD( "136036.151",   0x200, 0x200, 0x7daf351f ); /* color */
+	ROM_END(); }}; 
+	
+	
+	static RomLoadPtr rom_indytem4 = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x88000, REGION_CPU1, 0 );/* 8.5*64k for 68000 code & slapstic ROM */
+		ROM_LOAD16_BYTE( "136032.205",   0x00000, 0x04000, 0x88d0be26 );
+		ROM_LOAD16_BYTE( "136032.206",   0x00001, 0x04000, 0x3c79ef05 );
+		ROM_LOAD16_BYTE( "136036.332",   0x10000, 0x08000, 0xa5563773 );
+		ROM_LOAD16_BYTE( "136036.331",   0x10001, 0x08000, 0x7d562141 );
+		ROM_LOAD16_BYTE( "136036.334",   0x20000, 0x08000, 0xe40828e5 );
+		ROM_LOAD16_BYTE( "136036.333",   0x20001, 0x08000, 0x96e1f1aa );
+		ROM_LOAD16_BYTE( "136036.356",   0x30000, 0x04000, 0x5eba2ac7 );
+		ROM_LOAD16_BYTE( "136036.357",   0x30001, 0x04000, 0x26e84b5c );
+		ROM_LOAD16_BYTE( "136036.358",   0x80000, 0x04000, 0xd9351106 );
+		ROM_LOAD16_BYTE( "136036.359",   0x80001, 0x04000, 0xe731caea );
+	
+		ROM_REGION( 0x10000, REGION_CPU2, 0 );/* 64k for 6502 code */
+		ROM_LOAD( "136036.153",   0x4000, 0x4000, 0x95294641 );
+		ROM_LOAD( "136036.154",   0x8000, 0x4000, 0xcbfc6adb );
+		ROM_LOAD( "136036.155",   0xc000, 0x4000, 0x4c8233ac );
+	
+		ROM_REGION( 0x2000, REGION_GFX1, ROMREGION_DISPOSE );
+		ROM_LOAD( "136032.107",   0x00000, 0x02000, 0x7a29dc07 ); /* alpha font */
+	
+		ROM_REGION( 0xc0000, REGION_GFX2, ROMREGION_DISPOSE | ROMREGION_INVERT );
+		ROM_LOAD( "136036.135",   0x00000, 0x08000, 0xffa8749c ); /* bank 1, plane 0 */
+		ROM_LOAD( "136036.139",   0x08000, 0x08000, 0xb682bfca ); /* bank 1, plane 1 */
+		ROM_LOAD( "136036.143",   0x10000, 0x08000, 0x7697da26 ); /* bank 1, plane 2 */
+		ROM_LOAD( "136036.147",   0x18000, 0x08000, 0x4e9d664c ); /* bank 1, plane 3 */
+	
+		ROM_LOAD( "136036.136",   0x30000, 0x08000, 0xb2b403aa ); /* bank 2, plane 0 */
+		ROM_LOAD( "136036.140",   0x38000, 0x08000, 0xec0c19ca ); /* bank 2, plane 1 */
+		ROM_LOAD( "136036.144",   0x40000, 0x08000, 0x4407df98 ); /* bank 2, plane 2 */
+		ROM_LOAD( "136036.148",   0x48000, 0x08000, 0x70dce06d ); /* bank 2, plane 3 */
+	
+		ROM_LOAD( "136036.137",   0x60000, 0x08000, 0x3f352547 ); /* bank 3, plane 0 */
+		ROM_LOAD( "136036.141",   0x68000, 0x08000, 0x9cbdffd0 ); /* bank 3, plane 1 */
+		ROM_LOAD( "136036.145",   0x70000, 0x08000, 0xe828e64b ); /* bank 3, plane 2 */
+		ROM_LOAD( "136036.149",   0x78000, 0x08000, 0x81503a23 ); /* bank 3, plane 3 */
+	
+		ROM_LOAD( "136036.138",   0x90000, 0x08000, 0x48c4d79d ); /* bank 4, plane 0 */
+		ROM_LOAD( "136036.142",   0x98000, 0x08000, 0x7faae75f ); /* bank 4, plane 1 */
+		ROM_LOAD( "136036.146",   0xa0000, 0x08000, 0x8ae5a7b5 ); /* bank 4, plane 2 */
+		ROM_LOAD( "136036.150",   0xa8000, 0x08000, 0xa10c4bd9 ); /* bank 4, plane 3 */
+	
+		ROM_REGION( 0x400, REGION_PROMS, 0 );/* graphics mapping PROMs */
+		ROM_LOAD( "136036.152",   0x000, 0x200, 0x4f96e57c ); /* remap */
+		ROM_LOAD( "136036.151",   0x200, 0x200, 0x7daf351f ); /* color */
+	ROM_END(); }}; 
+	
+	
+	static RomLoadPtr rom_indytemd = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x88000, REGION_CPU1, 0 );/* 8.5*64k for 68000 code & slapstic ROM */
+		ROM_LOAD16_BYTE( "136032.205",   0x00000, 0x04000, 0x88d0be26 );
+		ROM_LOAD16_BYTE( "136032.206",   0x00001, 0x04000, 0x3c79ef05 );
+		ROM_LOAD16_BYTE( "136036.462",   0x10000, 0x08000, 0x317dc430 );
+		ROM_LOAD16_BYTE( "136036.461",   0x10001, 0x08000, 0x8c73f974 );
+		ROM_LOAD16_BYTE( "136036.464",   0x20000, 0x08000, 0x3fcb199f );
+		ROM_LOAD16_BYTE( "136036.463",   0x20001, 0x08000, 0xd6bda19a );
+		ROM_LOAD16_BYTE( "136036.466",   0x30000, 0x04000, 0xfaa7f23a );
+		ROM_LOAD16_BYTE( "136036.467",   0x30001, 0x04000, 0xee9fd91a );
+		ROM_LOAD16_BYTE( "136036.358",   0x80000, 0x04000, 0xd9351106 );
+		ROM_LOAD16_BYTE( "136036.359",   0x80001, 0x04000, 0xe731caea );
+	
+		ROM_REGION( 0x10000, REGION_CPU2, 0 );/* 64k for 6502 code */
+		ROM_LOAD( "136036.153",   0x4000, 0x4000, 0x95294641 );
+		ROM_LOAD( "136036.154",   0x8000, 0x4000, 0xcbfc6adb );
+		ROM_LOAD( "136036.155",   0xc000, 0x4000, 0x4c8233ac );
+	
+		ROM_REGION( 0x2000, REGION_GFX1, ROMREGION_DISPOSE );
+		ROM_LOAD( "136032.107",   0x00000, 0x02000, 0x7a29dc07 ); /* alpha font */
+	
+		ROM_REGION( 0xc0000, REGION_GFX2, ROMREGION_DISPOSE | ROMREGION_INVERT );
+		ROM_LOAD( "136036.135",   0x00000, 0x08000, 0xffa8749c ); /* bank 1, plane 0 */
+		ROM_LOAD( "136036.139",   0x08000, 0x08000, 0xb682bfca ); /* bank 1, plane 1 */
+		ROM_LOAD( "136036.143",   0x10000, 0x08000, 0x7697da26 ); /* bank 1, plane 2 */
+		ROM_LOAD( "136036.147",   0x18000, 0x08000, 0x4e9d664c ); /* bank 1, plane 3 */
+	
+		ROM_LOAD( "136036.136",   0x30000, 0x08000, 0xb2b403aa ); /* bank 2, plane 0 */
+		ROM_LOAD( "136036.140",   0x38000, 0x08000, 0xec0c19ca ); /* bank 2, plane 1 */
+		ROM_LOAD( "136036.144",   0x40000, 0x08000, 0x4407df98 ); /* bank 2, plane 2 */
+		ROM_LOAD( "136036.148",   0x48000, 0x08000, 0x70dce06d ); /* bank 2, plane 3 */
+	
+		ROM_LOAD( "136036.137",   0x60000, 0x08000, 0x3f352547 ); /* bank 3, plane 0 */
+		ROM_LOAD( "136036.141",   0x68000, 0x08000, 0x9cbdffd0 ); /* bank 3, plane 1 */
+		ROM_LOAD( "136036.145",   0x70000, 0x08000, 0xe828e64b ); /* bank 3, plane 2 */
+		ROM_LOAD( "136036.149",   0x78000, 0x08000, 0x81503a23 ); /* bank 3, plane 3 */
+	
+		ROM_LOAD( "136036.138",   0x90000, 0x08000, 0x48c4d79d ); /* bank 4, plane 0 */
+		ROM_LOAD( "136036.142",   0x98000, 0x08000, 0x7faae75f ); /* bank 4, plane 1 */
+		ROM_LOAD( "136036.146",   0xa0000, 0x08000, 0x8ae5a7b5 ); /* bank 4, plane 2 */
+		ROM_LOAD( "136036.150",   0xa8000, 0x08000, 0xa10c4bd9 ); /* bank 4, plane 3 */
+	
+		ROM_REGION( 0x400, REGION_PROMS, 0 );/* graphics mapping PROMs */
+		ROM_LOAD( "136036.152",   0x000, 0x200, 0x4f96e57c ); /* remap */
+		ROM_LOAD( "136036.151",   0x200, 0x200, 0x7daf351f ); /* color */
+	ROM_END(); }}; 
+	
+	
+	static RomLoadPtr rom_roadrunn = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x88000, REGION_CPU1, 0 );/* 8.5*64k for 68000 code & slapstic ROM */
+		ROM_LOAD16_BYTE( "136032.205",   0x00000, 0x04000, 0x88d0be26 );
+		ROM_LOAD16_BYTE( "136032.206",   0x00001, 0x04000, 0x3c79ef05 );
+		ROM_LOAD16_BYTE( "136040.228",   0x10000, 0x08000, 0xb66c629a );
+		ROM_LOAD16_BYTE( "136040.229",   0x10001, 0x08000, 0x5638959f );
+		ROM_LOAD16_BYTE( "136040.230",   0x20000, 0x08000, 0xcd7956a3 );
+		ROM_LOAD16_BYTE( "136040.231",   0x20001, 0x08000, 0x722f2d3b );
+		ROM_LOAD16_BYTE( "136040.134",   0x50000, 0x08000, 0x18f431fe );
+		ROM_LOAD16_BYTE( "136040.135",   0x50001, 0x08000, 0xcb06f9ab );
+		ROM_LOAD16_BYTE( "136040.136",   0x60000, 0x08000, 0x8050bce4 );
+		ROM_LOAD16_BYTE( "136040.137",   0x60001, 0x08000, 0x3372a5cf );
+		ROM_LOAD16_BYTE( "136040.138",   0x70000, 0x08000, 0xa83155ee );
+		ROM_LOAD16_BYTE( "136040.139",   0x70001, 0x08000, 0x23aead1c );
+		ROM_LOAD16_BYTE( "136040.140",   0x80000, 0x04000, 0xd1464c88 );
+		ROM_LOAD16_BYTE( "136040.141",   0x80001, 0x04000, 0xf8f2acdf );
+	
+		ROM_REGION( 0x10000, REGION_CPU2, 0 );/* 64k for 6502 code */
+		ROM_LOAD( "136040.143",   0x8000, 0x4000, 0x62b9878e );
+		ROM_LOAD( "136040.144",   0xc000, 0x4000, 0x6ef1b804 );
+	
+		ROM_REGION( 0x2000, REGION_GFX1, ROMREGION_DISPOSE );
+		ROM_LOAD( "136032.107",   0x00000, 0x02000, 0x7a29dc07 ); /* alpha font */
+	
+		ROM_REGION( 0x100000, REGION_GFX2, ROMREGION_DISPOSE | ROMREGION_INVERT );
+		ROM_LOAD( "136040.101",   0x00000, 0x08000, 0x26d9f29c ); /* bank 1, plane 0 */
+		ROM_LOAD( "136040.107",   0x08000, 0x08000, 0x8aac0ba4 ); /* bank 1, plane 1 */
+		ROM_LOAD( "136040.113",   0x10000, 0x08000, 0x48b74c52 ); /* bank 1, plane 2 */
+		ROM_LOAD( "136040.119",   0x18000, 0x08000, 0x17a6510c ); /* bank 1, plane 3 */
+	
+		ROM_LOAD( "136040.102",   0x30000, 0x08000, 0xae88f54b ); /* bank 2, plane 0 */
+		ROM_LOAD( "136040.108",   0x38000, 0x08000, 0xa2ac13d4 ); /* bank 2, plane 1 */
+		ROM_LOAD( "136040.114",   0x40000, 0x08000, 0xc91c3fcb ); /* bank 2, plane 2 */
+		ROM_LOAD( "136040.120",   0x48000, 0x08000, 0x42d25859 ); /* bank 2, plane 3 */
+	
+		ROM_LOAD( "136040.103",   0x60000, 0x08000, 0xf2d7ef55 ); /* bank 3, plane 0 */
+		ROM_LOAD( "136040.109",   0x68000, 0x08000, 0x11a843dc ); /* bank 3, plane 1 */
+		ROM_LOAD( "136040.115",   0x70000, 0x08000, 0x8b1fa5bc ); /* bank 3, plane 2 */
+		ROM_LOAD( "136040.121",   0x78000, 0x08000, 0xecf278f2 ); /* bank 3, plane 3 */
+	
+		ROM_LOAD( "136040.104",   0x90000, 0x08000, 0x0203d89c ); /* bank 4, plane 0 */
+		ROM_LOAD( "136040.110",   0x98000, 0x08000, 0x64801601 ); /* bank 4, plane 1 */
+		ROM_LOAD( "136040.116",   0xa0000, 0x08000, 0x52b23a36 ); /* bank 4, plane 2 */
+		ROM_LOAD( "136040.122",   0xa8000, 0x08000, 0xb1137a9d ); /* bank 4, plane 3 */
+	
+		ROM_LOAD( "136040.105",   0xc0000, 0x08000, 0x398a36f8 ); /* bank 5, plane 0 */
+		ROM_LOAD( "136040.111",   0xc8000, 0x08000, 0xf08b418b ); /* bank 5, plane 1 */
+		ROM_LOAD( "136040.117",   0xd0000, 0x08000, 0xc4394834 ); /* bank 5, plane 2 */
+		ROM_LOAD( "136040.123",   0xd8000, 0x08000, 0xdafd3dbe ); /* bank 5, plane 3 */
+	
+		ROM_LOAD( "136040.106",   0xe0000, 0x08000, 0x36a77bc5 ); /* bank 6, plane 0 */
+		ROM_LOAD( "136040.112",   0xe8000, 0x08000, 0xb6624f3c ); /* bank 6, plane 1 */
+		ROM_LOAD( "136040.118",   0xf0000, 0x08000, 0xf489a968 ); /* bank 6, plane 2 */
+		ROM_LOAD( "136040.124",   0xf8000, 0x08000, 0x524d65f7 ); /* bank 6, plane 3 */
+	
+		ROM_REGION( 0x400, REGION_PROMS, 0 );/* graphics mapping PROMs */
+		ROM_LOAD( "136040.126",   0x000, 0x200, 0x1713c0cd ); /* remap */
+		ROM_LOAD( "136040.125",   0x200, 0x200, 0xa9ca8795 ); /* color */
+	ROM_END(); }}; 
+	
+	
+	static RomLoadPtr rom_roadblst = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x88000, REGION_CPU1, 0 );/* 8.5*64k for 68000 code & slapstic ROM */
+		ROM_LOAD16_BYTE( "136032.205",   0x00000, 0x04000, 0x88d0be26 );
+		ROM_LOAD16_BYTE( "136032.206",   0x00001, 0x04000, 0x3c79ef05 );
+		ROM_LOAD16_BYTE( "048-1139.rom", 0x10000, 0x08000, 0xb73c1bd5 );
+		ROM_CONTINUE(                    0x50000, 0x08000 );
+		ROM_LOAD16_BYTE( "048-1140.rom", 0x10001, 0x08000, 0x6305429b );
+		ROM_CONTINUE(                    0x50001, 0x08000 );
+		ROM_LOAD16_BYTE( "048-1155.rom", 0x20000, 0x08000, 0xe95fc7d2 );
+		ROM_CONTINUE(                    0x60000, 0x08000 );
+		ROM_LOAD16_BYTE( "048-1156.rom", 0x20001, 0x08000, 0x727510f9 );
+		ROM_CONTINUE(                    0x60001, 0x08000 );
+		ROM_LOAD16_BYTE( "048-1167.rom", 0x70000, 0x08000, 0xc6d30d6f );
+		ROM_LOAD16_BYTE( "048-1168.rom", 0x70001, 0x08000, 0x16951020 );
+		ROM_LOAD16_BYTE( "048-2147.rom", 0x80000, 0x04000, 0x5c1adf67 );
+		ROM_LOAD16_BYTE( "048-2148.rom", 0x80001, 0x04000, 0xd9ac8966 );
+	
+		ROM_REGION( 0x10000, REGION_CPU2, 0 );/* 64k for 6502 code */
+		ROM_LOAD( "048-1149.rom", 0x4000, 0x4000, 0x2e54f95e );
+		ROM_LOAD( "048-1169.rom", 0x8000, 0x4000, 0xee318052 );
+		ROM_LOAD( "048-1170.rom", 0xc000, 0x4000, 0x75dfec33 );
+	
+		ROM_REGION( 0x2000, REGION_GFX1, ROMREGION_DISPOSE );
+		ROM_LOAD( "136032.107",   0x00000, 0x02000, 0x7a29dc07 ); /* alpha font */
+	
+		ROM_REGION( 0x120000, REGION_GFX2, ROMREGION_DISPOSE | ROMREGION_INVERT );
+		ROM_LOAD( "048-1101.rom", 0x000000, 0x08000, 0xfe342d27 ); /* bank 1, plane 0 */
+		ROM_LOAD( "048-1102.rom", 0x008000, 0x08000, 0x17c7e780 ); /* bank 1, plane 1 */
+		ROM_LOAD( "048-1103.rom", 0x010000, 0x08000, 0x39688e01 ); /* bank 1, plane 2 */
+		ROM_LOAD( "048-1104.rom", 0x018000, 0x08000, 0xc8f9bd8e ); /* bank 1, plane 3 */
+		ROM_LOAD( "048-1105.rom", 0x020000, 0x08000, 0xc69e439e ); /* bank 1, plane 4 */
+		ROM_LOAD( "048-1106.rom", 0x028000, 0x08000, 0x4ee55796 ); /* bank 1, plane 5 */
+	
+		ROM_LOAD( "048-1107.rom", 0x030000, 0x08000, 0x02117c58 ); /* bank 2, plane 0 */
+		ROM_CONTINUE(             0x060000, 0x08000 );		   /* bank 3, plane 0 */
+		ROM_LOAD( "048-1108.rom", 0x038000, 0x08000, 0x1e148525 ); /* bank 2, plane 1 */
+		ROM_CONTINUE(             0x068000, 0x08000 );		   /* bank 3, plane 1 */
+		ROM_LOAD( "048-1109.rom", 0x040000, 0x08000, 0x110ce07e ); /* bank 2, plane 2 */
+		ROM_CONTINUE(             0x070000, 0x08000 );		   /* bank 3, plane 2 */
+		ROM_LOAD( "048-1110.rom", 0x048000, 0x08000, 0xc00aa0f4 ); /* bank 2, plane 3 */
+		ROM_CONTINUE(             0x078000, 0x08000 );		   /* bank 3, plane 3 */
+	
+		ROM_LOAD( "048-1111.rom", 0x090000, 0x08000, 0xc951d014 ); /* bank 4, plane 0 */
+		ROM_CONTINUE(             0x0c0000, 0x08000 );		   /* bank 5, plane 0 */
+		ROM_LOAD( "048-1112.rom", 0x098000, 0x08000, 0x95c5a006 ); /* bank 4, plane 1 */
+		ROM_CONTINUE(             0x0c8000, 0x08000 );		   /* bank 5, plane 1 */
+		ROM_LOAD( "048-1113.rom", 0x0a0000, 0x08000, 0xf61f2370 ); /* bank 4, plane 2 */
+		ROM_CONTINUE(             0x0d0000, 0x08000 );		   /* bank 5, plane 2 */
+		ROM_LOAD( "048-1114.rom", 0x0a8000, 0x08000, 0x774a36a8 ); /* bank 4, plane 3 */
+		ROM_CONTINUE(             0x0d8000, 0x08000 );		   /* bank 5, plane 3 */
+	
+		ROM_LOAD( "048-1115.rom", 0x100000, 0x08000, 0xa47bc79d ); /* bank 7, plane 0 */
+		ROM_CONTINUE(             0x0e0000, 0x08000 );		   /* bank 6, plane 0 */
+		ROM_LOAD( "048-1116.rom", 0x108000, 0x08000, 0xb8a5c215 ); /* bank 7, plane 1 */
+		ROM_CONTINUE(             0x0e8000, 0x08000 );		   /* bank 6, plane 1 */
+		ROM_LOAD( "048-1117.rom", 0x110000, 0x08000, 0x2d1c1f64 ); /* bank 7, plane 2 */
+		ROM_CONTINUE(             0x0f0000, 0x08000 );		   /* bank 6, plane 2 */
+		ROM_LOAD( "048-1118.rom", 0x118000, 0x08000, 0xbe879b8e ); /* bank 7, plane 3 */
+		ROM_CONTINUE(             0x0f8000, 0x08000 );		   /* bank 6, plane 3 */
+	
+		ROM_REGION( 0x400, REGION_PROMS, 0 );/* graphics mapping PROMs */
+		ROM_LOAD( "048-1174.bpr", 0x000, 0x200, 0xdb4a4d53 ); /* remap */
+		ROM_LOAD( "048-1173.bpr", 0x200, 0x200, 0xc80574af ); /* color */
+	ROM_END(); }}; 
 	
 	
 	

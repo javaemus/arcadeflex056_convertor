@@ -263,21 +263,21 @@ public class safarir
 	
 	***************************************************************************/
 	
-	ROM_START( safarir )
-		ROM_REGION( 0x10000, REGION_CPU1, 0 )     /* 64k for main CPU */
-		ROM_LOAD( "rl01",		0x0000, 0x0400, 0xcf7703c9 )
-		ROM_LOAD( "rl02",		0x0400, 0x0400, 0x1013ecd3 )
-		ROM_LOAD( "rl03",		0x0800, 0x0400, 0x84545894 )
-		ROM_LOAD( "rl04",		0x0c00, 0x0400, 0x5dd12f96 )
-		ROM_LOAD( "rl05",		0x1000, 0x0400, 0x935ed469 )
-		ROM_LOAD( "rl06",		0x1400, 0x0400, 0x24c1cd42 )
+	static RomLoadPtr rom_safarir = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x10000, REGION_CPU1, 0 );    /* 64k for main CPU */
+		ROM_LOAD( "rl01",		0x0000, 0x0400, 0xcf7703c9 );
+		ROM_LOAD( "rl02",		0x0400, 0x0400, 0x1013ecd3 );
+		ROM_LOAD( "rl03",		0x0800, 0x0400, 0x84545894 );
+		ROM_LOAD( "rl04",		0x0c00, 0x0400, 0x5dd12f96 );
+		ROM_LOAD( "rl05",		0x1000, 0x0400, 0x935ed469 );
+		ROM_LOAD( "rl06",		0x1400, 0x0400, 0x24c1cd42 );
 	
-		ROM_REGION( 0x0400, REGION_GFX1, ROMREGION_DISPOSE )
-		ROM_LOAD( "rl08",		0x0000, 0x0400, 0xd6a50aac )
+		ROM_REGION( 0x0400, REGION_GFX1, ROMREGION_DISPOSE );
+		ROM_LOAD( "rl08",		0x0000, 0x0400, 0xd6a50aac );
 	
-		ROM_REGION( 0x0400, REGION_GFX2, ROMREGION_DISPOSE )
-		ROM_LOAD( "rl07",		0x0000, 0x0400, 0xba525203 )
-	ROM_END
+		ROM_REGION( 0x0400, REGION_GFX2, ROMREGION_DISPOSE );
+		ROM_LOAD( "rl07",		0x0000, 0x0400, 0xba525203 );
+	ROM_END(); }}; 
 	
 	
 	GAMEX( 19??, safarir, 0, safarir, safarir, 0, ROT90, "SNK", "Safari Rally", GAME_NO_SOUND | GAME_IMPERFECT_COLORS )

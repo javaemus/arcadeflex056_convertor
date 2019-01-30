@@ -93,10 +93,10 @@ public class minivadr
 	
 	***************************************************************************/
 	
-	ROM_START( minivadr )
-		ROM_REGION( 0x10000, REGION_CPU1, 0 )	/* 64k for code */
-		ROM_LOAD( "d26-01.bin",	0x0000, 0x2000, 0xa96c823d )
-	ROM_END
+	static RomLoadPtr rom_minivadr = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x10000, REGION_CPU1, 0 );/* 64k for code */
+		ROM_LOAD( "d26-01.bin",	0x0000, 0x2000, 0xa96c823d );
+	ROM_END(); }}; 
 	
 	
 	GAME( 1990, minivadr, 0, minivadr, minivadr, 0, ROT0, "Taito Corporation", "Minivader" )

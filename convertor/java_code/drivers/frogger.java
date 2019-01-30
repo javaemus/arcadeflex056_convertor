@@ -404,82 +404,82 @@ public class frogger
 	***************************************************************************/
 	
 	
-	ROM_START( frogger )
-		ROM_REGION( 0x10000, REGION_CPU1, 0 )	/* 64k for code */
-		ROM_LOAD( "frogger.26",   0x0000, 0x1000, 0x597696d6 )
-		ROM_LOAD( "frogger.27",   0x1000, 0x1000, 0xb6e6fcc3 )
-		ROM_LOAD( "frsm3.7",      0x2000, 0x1000, 0xaca22ae0 )
+	static RomLoadPtr rom_frogger = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x10000, REGION_CPU1, 0 );/* 64k for code */
+		ROM_LOAD( "frogger.26",   0x0000, 0x1000, 0x597696d6 );
+		ROM_LOAD( "frogger.27",   0x1000, 0x1000, 0xb6e6fcc3 );
+		ROM_LOAD( "frsm3.7",      0x2000, 0x1000, 0xaca22ae0 );
 	
-		ROM_REGION( 0x10000, REGION_CPU2, 0 )	/* 64k for the audio CPU */
-		ROM_LOAD( "frogger.608",  0x0000, 0x0800, 0xe8ab0256 )
-		ROM_LOAD( "frogger.609",  0x0800, 0x0800, 0x7380a48f )
-		ROM_LOAD( "frogger.610",  0x1000, 0x0800, 0x31d7eb27 )
+		ROM_REGION( 0x10000, REGION_CPU2, 0 );/* 64k for the audio CPU */
+		ROM_LOAD( "frogger.608",  0x0000, 0x0800, 0xe8ab0256 );
+		ROM_LOAD( "frogger.609",  0x0800, 0x0800, 0x7380a48f );
+		ROM_LOAD( "frogger.610",  0x1000, 0x0800, 0x31d7eb27 );
 	
-		ROM_REGION( 0x1000, REGION_GFX1, ROMREGION_DISPOSE )
-		ROM_LOAD( "frogger.607",  0x0000, 0x0800, 0x05f7d883 )
-		ROM_LOAD( "frogger.606",  0x0800, 0x0800, 0xf524ee30 )
+		ROM_REGION( 0x1000, REGION_GFX1, ROMREGION_DISPOSE );
+		ROM_LOAD( "frogger.607",  0x0000, 0x0800, 0x05f7d883 );
+		ROM_LOAD( "frogger.606",  0x0800, 0x0800, 0xf524ee30 );
 	
-		ROM_REGION( 0x0020, REGION_PROMS, 0 )
-		ROM_LOAD( "pr-91.6l",     0x0000, 0x0020, 0x413703bf )
-	ROM_END
+		ROM_REGION( 0x0020, REGION_PROMS, 0 );
+		ROM_LOAD( "pr-91.6l",     0x0000, 0x0020, 0x413703bf );
+	ROM_END(); }}; 
 	
-	ROM_START( frogseg1 )
-		ROM_REGION( 0x10000, REGION_CPU1, 0 )	/* 64k for code */
-		ROM_LOAD( "frogger.26",   0x0000, 0x1000, 0x597696d6 )
-		ROM_LOAD( "frogger.27",   0x1000, 0x1000, 0xb6e6fcc3 )
-		ROM_LOAD( "frogger.34",   0x2000, 0x1000, 0xed866bab )
+	static RomLoadPtr rom_frogseg1 = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x10000, REGION_CPU1, 0 );/* 64k for code */
+		ROM_LOAD( "frogger.26",   0x0000, 0x1000, 0x597696d6 );
+		ROM_LOAD( "frogger.27",   0x1000, 0x1000, 0xb6e6fcc3 );
+		ROM_LOAD( "frogger.34",   0x2000, 0x1000, 0xed866bab );
 	
-		ROM_REGION( 0x10000, REGION_CPU2, 0 )	/* 64k for the audio CPU */
-		ROM_LOAD( "frogger.608",  0x0000, 0x0800, 0xe8ab0256 )
-		ROM_LOAD( "frogger.609",  0x0800, 0x0800, 0x7380a48f )
-		ROM_LOAD( "frogger.610",  0x1000, 0x0800, 0x31d7eb27 )
+		ROM_REGION( 0x10000, REGION_CPU2, 0 );/* 64k for the audio CPU */
+		ROM_LOAD( "frogger.608",  0x0000, 0x0800, 0xe8ab0256 );
+		ROM_LOAD( "frogger.609",  0x0800, 0x0800, 0x7380a48f );
+		ROM_LOAD( "frogger.610",  0x1000, 0x0800, 0x31d7eb27 );
 	
-		ROM_REGION( 0x1000, REGION_GFX1, ROMREGION_DISPOSE )
-		ROM_LOAD( "frogger.607",  0x0000, 0x0800, 0x05f7d883 )
-		ROM_LOAD( "frogger.606",  0x0800, 0x0800, 0xf524ee30 )
+		ROM_REGION( 0x1000, REGION_GFX1, ROMREGION_DISPOSE );
+		ROM_LOAD( "frogger.607",  0x0000, 0x0800, 0x05f7d883 );
+		ROM_LOAD( "frogger.606",  0x0800, 0x0800, 0xf524ee30 );
 	
-		ROM_REGION( 0x0020, REGION_PROMS, 0 )
-		ROM_LOAD( "pr-91.6l",     0x0000, 0x0020, 0x413703bf )
-	ROM_END
+		ROM_REGION( 0x0020, REGION_PROMS, 0 );
+		ROM_LOAD( "pr-91.6l",     0x0000, 0x0020, 0x413703bf );
+	ROM_END(); }}; 
 	
-	ROM_START( frogseg2 )
-		ROM_REGION( 0x10000, REGION_CPU1, 0 )	/* 64k for code */
-		ROM_LOAD( "frogger.ic5",  0x0000, 0x1000, 0xefab0c79 )
-		ROM_LOAD( "frogger.ic6",  0x1000, 0x1000, 0xaeca9c13 )
-		ROM_LOAD( "frogger.ic7",  0x2000, 0x1000, 0xdd251066 )
-		ROM_LOAD( "frogger.ic8",  0x3000, 0x1000, 0xbf293a02 )
+	static RomLoadPtr rom_frogseg2 = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x10000, REGION_CPU1, 0 );/* 64k for code */
+		ROM_LOAD( "frogger.ic5",  0x0000, 0x1000, 0xefab0c79 );
+		ROM_LOAD( "frogger.ic6",  0x1000, 0x1000, 0xaeca9c13 );
+		ROM_LOAD( "frogger.ic7",  0x2000, 0x1000, 0xdd251066 );
+		ROM_LOAD( "frogger.ic8",  0x3000, 0x1000, 0xbf293a02 );
 	
-		ROM_REGION( 0x10000, REGION_CPU2, 0 )	/* 64k for the audio CPU */
-		ROM_LOAD( "frogger.608",  0x0000, 0x0800, 0xe8ab0256 )
-		ROM_LOAD( "frogger.609",  0x0800, 0x0800, 0x7380a48f )
-		ROM_LOAD( "frogger.610",  0x1000, 0x0800, 0x31d7eb27 )
+		ROM_REGION( 0x10000, REGION_CPU2, 0 );/* 64k for the audio CPU */
+		ROM_LOAD( "frogger.608",  0x0000, 0x0800, 0xe8ab0256 );
+		ROM_LOAD( "frogger.609",  0x0800, 0x0800, 0x7380a48f );
+		ROM_LOAD( "frogger.610",  0x1000, 0x0800, 0x31d7eb27 );
 	
-		ROM_REGION( 0x1000, REGION_GFX1, ROMREGION_DISPOSE )
-		ROM_LOAD( "frogger.607",  0x0000, 0x0800, 0x05f7d883 )
-		ROM_LOAD( "frogger.606",  0x0800, 0x0800, 0xf524ee30 )
+		ROM_REGION( 0x1000, REGION_GFX1, ROMREGION_DISPOSE );
+		ROM_LOAD( "frogger.607",  0x0000, 0x0800, 0x05f7d883 );
+		ROM_LOAD( "frogger.606",  0x0800, 0x0800, 0xf524ee30 );
 	
-		ROM_REGION( 0x0020, REGION_PROMS, 0 )
-		ROM_LOAD( "pr-91.6l",     0x0000, 0x0020, 0x413703bf )
-	ROM_END
+		ROM_REGION( 0x0020, REGION_PROMS, 0 );
+		ROM_LOAD( "pr-91.6l",     0x0000, 0x0020, 0x413703bf );
+	ROM_END(); }}; 
 	
-	ROM_START( froggrmc )
-		ROM_REGION( 0x10000, REGION_CPU1, 0 )	/* 64k for code */
-		ROM_LOAD( "epr-1031.15",  0x0000, 0x1000, 0x4b7c8d11 )
-		ROM_LOAD( "epr-1032.16",  0x1000, 0x1000, 0xac00b9d9 )
-		ROM_LOAD( "epr-1033.33",  0x2000, 0x1000, 0xbc1d6fbc )
-		ROM_LOAD( "epr-1034.34",  0x3000, 0x1000, 0x9efe7399 )
+	static RomLoadPtr rom_froggrmc = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x10000, REGION_CPU1, 0 );/* 64k for code */
+		ROM_LOAD( "epr-1031.15",  0x0000, 0x1000, 0x4b7c8d11 );
+		ROM_LOAD( "epr-1032.16",  0x1000, 0x1000, 0xac00b9d9 );
+		ROM_LOAD( "epr-1033.33",  0x2000, 0x1000, 0xbc1d6fbc );
+		ROM_LOAD( "epr-1034.34",  0x3000, 0x1000, 0x9efe7399 );
 	
-		ROM_REGION( 0x10000, REGION_CPU2, 0 )	/* 64k for the audio CPU */
-		ROM_LOAD( "epr-1082.42",  0x0000, 0x1000, 0x802843c2 )
-		ROM_LOAD( "epr-1035.43",  0x1000, 0x0800, 0x14e74148 )
+		ROM_REGION( 0x10000, REGION_CPU2, 0 );/* 64k for the audio CPU */
+		ROM_LOAD( "epr-1082.42",  0x0000, 0x1000, 0x802843c2 );
+		ROM_LOAD( "epr-1035.43",  0x1000, 0x0800, 0x14e74148 );
 	
-		ROM_REGION( 0x1000, REGION_GFX1, ROMREGION_DISPOSE )
-		ROM_LOAD( "frogger.607",  0x0000, 0x0800, 0x05f7d883 )
-		ROM_LOAD( "epr-1036.1k",  0x0800, 0x0800, 0x658745f8 )
+		ROM_REGION( 0x1000, REGION_GFX1, ROMREGION_DISPOSE );
+		ROM_LOAD( "frogger.607",  0x0000, 0x0800, 0x05f7d883 );
+		ROM_LOAD( "epr-1036.1k",  0x0800, 0x0800, 0x658745f8 );
 	
-		ROM_REGION( 0x0020, REGION_PROMS, 0 )
-		ROM_LOAD( "pr-91.6l",     0x0000, 0x0020, 0x413703bf )
-	ROM_END
+		ROM_REGION( 0x0020, REGION_PROMS, 0 );
+		ROM_LOAD( "pr-91.6l",     0x0000, 0x0020, 0x413703bf );
+	ROM_END(); }}; 
 	
 	
 	

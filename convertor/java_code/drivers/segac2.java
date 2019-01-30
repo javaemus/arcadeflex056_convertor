@@ -1562,223 +1562,223 @@ public class segac2
 	
 	/* ----- System C Games ----- */
 	
-	ROM_START( bloxeedc ) /* Bloxeed (C System Version)  (c)1989 Sega / Elorg */
-		ROM_REGION( 0x200000, REGION_CPU1, 0 )
-		ROM_LOAD16_BYTE( "12908.bin", 0x000000, 0x020000, 0xfc77cb91 )
-		ROM_LOAD16_BYTE( "12907.bin", 0x000001, 0x020000, 0xe5fcbac6 )
-		ROM_LOAD16_BYTE( "12993.bin", 0x040000, 0x020000, 0x487bc8fc )
-		ROM_LOAD16_BYTE( "12992.bin", 0x040001, 0x020000, 0x19b0084c )
-	ROM_END
+	static RomLoadPtr rom_bloxeedc = new RomLoadPtr(){ public void handler(){  /* Bloxeed (C System Version)  (c)1989 Sega / Elorg */
+		ROM_REGION( 0x200000, REGION_CPU1, 0 );
+		ROM_LOAD16_BYTE( "12908.bin", 0x000000, 0x020000, 0xfc77cb91 );
+		ROM_LOAD16_BYTE( "12907.bin", 0x000001, 0x020000, 0xe5fcbac6 );
+		ROM_LOAD16_BYTE( "12993.bin", 0x040000, 0x020000, 0x487bc8fc );
+		ROM_LOAD16_BYTE( "12992.bin", 0x040001, 0x020000, 0x19b0084c );
+	ROM_END(); }}; 
 	
 	
-	ROM_START( columns ) /* Columns (US) (c)1990 Sega */
-		ROM_REGION( 0x200000, REGION_CPU1, 0 )
-		ROM_LOAD16_BYTE( "ic32.bin", 0x000000, 0x020000, 0xff78f740 )
-		ROM_LOAD16_BYTE( "ic31.bin", 0x000001, 0x020000, 0x9a426d9b )
-	ROM_END
+	static RomLoadPtr rom_columns = new RomLoadPtr(){ public void handler(){  /* Columns (US) (c)1990 Sega */
+		ROM_REGION( 0x200000, REGION_CPU1, 0 );
+		ROM_LOAD16_BYTE( "ic32.bin", 0x000000, 0x020000, 0xff78f740 );
+		ROM_LOAD16_BYTE( "ic31.bin", 0x000001, 0x020000, 0x9a426d9b );
+	ROM_END(); }}; 
 	
 	
-	ROM_START( columnsj ) /* Columns (Jpn) (c)1990 Sega */
-		ROM_REGION( 0x200000, REGION_CPU1, 0 )
-		ROM_LOAD16_BYTE( "epr13112.32", 0x000000, 0x020000, 0xbae6e53e )
-		ROM_LOAD16_BYTE( "epr13111.31", 0x000001, 0x020000, 0xaa5ccd6d )
-	ROM_END
+	static RomLoadPtr rom_columnsj = new RomLoadPtr(){ public void handler(){  /* Columns (Jpn) (c)1990 Sega */
+		ROM_REGION( 0x200000, REGION_CPU1, 0 );
+		ROM_LOAD16_BYTE( "epr13112.32", 0x000000, 0x020000, 0xbae6e53e );
+		ROM_LOAD16_BYTE( "epr13111.31", 0x000001, 0x020000, 0xaa5ccd6d );
+	ROM_END(); }}; 
 	
 	
-	ROM_START( columns2 ) /* Columns II - The Voyage Through Time (Jpn)  (c)1990 Sega */
-		ROM_REGION( 0x200000, REGION_CPU1, 0 )
-		ROM_LOAD16_BYTE( "epr13361.rom", 0x000000, 0x020000, 0xb54b5f12 )
-		ROM_LOAD16_BYTE( "epr13360.rom", 0x000001, 0x020000, 0xa59b1d4f )
-	ROM_END
+	static RomLoadPtr rom_columns2 = new RomLoadPtr(){ public void handler(){  /* Columns II - The Voyage Through Time (Jpn)  (c)1990 Sega */
+		ROM_REGION( 0x200000, REGION_CPU1, 0 );
+		ROM_LOAD16_BYTE( "epr13361.rom", 0x000000, 0x020000, 0xb54b5f12 );
+		ROM_LOAD16_BYTE( "epr13360.rom", 0x000001, 0x020000, 0xa59b1d4f );
+	ROM_END(); }}; 
 	
-	ROM_START( tantrbl2 ) /* Tant-R (Puzzle & Action) (Alt Bootleg Running on C Board?, No Samples) */
-		ROM_REGION( 0x200000, REGION_CPU1, 0 )
-		ROM_LOAD16_BYTE( "trb2_2.32",    0x000000, 0x080000, 0x8fc99c48 )
-		ROM_LOAD16_BYTE( "trb2_1.31",    0x000001, 0x080000, 0xc318d00d )
-		ROM_LOAD16_BYTE( "mpr15616.34",  0x100000, 0x080000, 0x17b80202 )
-		ROM_LOAD16_BYTE( "mpr15615.33",  0x100001, 0x080000, 0x36a88bd4 )
-	ROM_END
+	static RomLoadPtr rom_tantrbl2 = new RomLoadPtr(){ public void handler(){  /* Tant-R (Puzzle & Action) (Alt Bootleg Running on C Board?, No Samples) */
+		ROM_REGION( 0x200000, REGION_CPU1, 0 );
+		ROM_LOAD16_BYTE( "trb2_2.32",    0x000000, 0x080000, 0x8fc99c48 );
+		ROM_LOAD16_BYTE( "trb2_1.31",    0x000001, 0x080000, 0xc318d00d );
+		ROM_LOAD16_BYTE( "mpr15616.34",  0x100000, 0x080000, 0x17b80202 );
+		ROM_LOAD16_BYTE( "mpr15615.33",  0x100001, 0x080000, 0x36a88bd4 );
+	ROM_END(); }}; 
 	
 	/* ----- System C-2 Games ----- */
 	
-	ROM_START( borench ) /* Borench  (c)1990 Sega */
-		ROM_REGION( 0x200000, REGION_CPU1, 0 )
-		ROM_LOAD16_BYTE( "ic32.bin", 0x000000, 0x040000, 0x2c54457d )
-		ROM_LOAD16_BYTE( "ic31.bin", 0x000001, 0x040000, 0xb46445fc )
+	static RomLoadPtr rom_borench = new RomLoadPtr(){ public void handler(){  /* Borench  (c)1990 Sega */
+		ROM_REGION( 0x200000, REGION_CPU1, 0 );
+		ROM_LOAD16_BYTE( "ic32.bin", 0x000000, 0x040000, 0x2c54457d );
+		ROM_LOAD16_BYTE( "ic31.bin", 0x000001, 0x040000, 0xb46445fc );
 	
-		ROM_REGION( 0x020000, REGION_SOUND1, 0 )
-		ROM_LOAD( "ic4.bin", 0x000000, 0x020000, 0x62b85e56 )
-	ROM_END
+		ROM_REGION( 0x020000, REGION_SOUND1, 0 );
+		ROM_LOAD( "ic4.bin", 0x000000, 0x020000, 0x62b85e56 );
+	ROM_END(); }}; 
 	
 	
-	ROM_START( tfrceac ) /* ThunderForce AC  (c)1990 Technosoft / Sega */
-		ROM_REGION( 0x200000, REGION_CPU1, 0 )
-		ROM_LOAD16_BYTE( "ic32.bin", 0x000000, 0x040000, 0x95ecf202 )
-		ROM_LOAD16_BYTE( "ic31.bin", 0x000001, 0x040000, 0xe63d7f1a )
+	static RomLoadPtr rom_tfrceac = new RomLoadPtr(){ public void handler(){  /* ThunderForce AC  (c)1990 Technosoft / Sega */
+		ROM_REGION( 0x200000, REGION_CPU1, 0 );
+		ROM_LOAD16_BYTE( "ic32.bin", 0x000000, 0x040000, 0x95ecf202 );
+		ROM_LOAD16_BYTE( "ic31.bin", 0x000001, 0x040000, 0xe63d7f1a );
 		/* 0x080000 - 0x100000 Empty */
-		ROM_LOAD16_BYTE( "ic34.bin", 0x100000, 0x040000, 0x29f23461 )
-		ROM_LOAD16_BYTE( "ic33.bin", 0x100001, 0x040000, 0x9e23734f )
+		ROM_LOAD16_BYTE( "ic34.bin", 0x100000, 0x040000, 0x29f23461 );
+		ROM_LOAD16_BYTE( "ic33.bin", 0x100001, 0x040000, 0x9e23734f );
 	
-		ROM_REGION( 0x040000, REGION_SOUND1, 0 )
-		ROM_LOAD( "ic4.bin", 0x000000, 0x040000, 0xe09961f6 )
-	ROM_END
+		ROM_REGION( 0x040000, REGION_SOUND1, 0 );
+		ROM_LOAD( "ic4.bin", 0x000000, 0x040000, 0xe09961f6 );
+	ROM_END(); }}; 
 	
 	
-	ROM_START( tfrceacj ) /* ThunderForce AC (Jpn)  (c)1990 Technosoft / Sega */
-		ROM_REGION( 0x200000, REGION_CPU1, 0 )
-		ROM_LOAD16_BYTE( "epr13657.32", 0x000000, 0x040000, 0xa0f38ffd )
-		ROM_LOAD16_BYTE( "epr13656.31", 0x000001, 0x040000, 0xb9438d1e )
+	static RomLoadPtr rom_tfrceacj = new RomLoadPtr(){ public void handler(){  /* ThunderForce AC (Jpn)  (c)1990 Technosoft / Sega */
+		ROM_REGION( 0x200000, REGION_CPU1, 0 );
+		ROM_LOAD16_BYTE( "epr13657.32", 0x000000, 0x040000, 0xa0f38ffd );
+		ROM_LOAD16_BYTE( "epr13656.31", 0x000001, 0x040000, 0xb9438d1e );
 		/* 0x080000 - 0x100000 Empty */
-		ROM_LOAD16_BYTE( "ic34.bin",    0x100000, 0x040000, 0x29f23461 )
-		ROM_LOAD16_BYTE( "ic33.bin",    0x100001, 0x040000, 0x9e23734f )
+		ROM_LOAD16_BYTE( "ic34.bin",    0x100000, 0x040000, 0x29f23461 );
+		ROM_LOAD16_BYTE( "ic33.bin",    0x100001, 0x040000, 0x9e23734f );
 	
-		ROM_REGION( 0x040000, REGION_SOUND1, 0 )
-		ROM_LOAD( "ic4.bin", 0x000000, 0x040000, 0xe09961f6 )
-	ROM_END
+		ROM_REGION( 0x040000, REGION_SOUND1, 0 );
+		ROM_LOAD( "ic4.bin", 0x000000, 0x040000, 0xe09961f6 );
+	ROM_END(); }}; 
 	
 	
-	ROM_START( tfrceacb ) /* ThunderForce AC (Bootleg)  (c)1990 Technosoft / Sega */
-		ROM_REGION( 0x200000, REGION_CPU1, 0 )
-		ROM_LOAD16_BYTE( "4.bin",    0x000000, 0x040000, 0xeba059d3 )
-		ROM_LOAD16_BYTE( "3.bin",    0x000001, 0x040000, 0x3e5dc542 )
+	static RomLoadPtr rom_tfrceacb = new RomLoadPtr(){ public void handler(){  /* ThunderForce AC (Bootleg)  (c)1990 Technosoft / Sega */
+		ROM_REGION( 0x200000, REGION_CPU1, 0 );
+		ROM_LOAD16_BYTE( "4.bin",    0x000000, 0x040000, 0xeba059d3 );
+		ROM_LOAD16_BYTE( "3.bin",    0x000001, 0x040000, 0x3e5dc542 );
 		/* 0x080000 - 0x100000 Empty */
-		ROM_LOAD16_BYTE( "ic34.bin", 0x100000, 0x040000, 0x29f23461 )
-		ROM_LOAD16_BYTE( "ic33.bin", 0x100001, 0x040000, 0x9e23734f )
+		ROM_LOAD16_BYTE( "ic34.bin", 0x100000, 0x040000, 0x29f23461 );
+		ROM_LOAD16_BYTE( "ic33.bin", 0x100001, 0x040000, 0x9e23734f );
 	
-		ROM_REGION( 0x040000, REGION_SOUND1, 0 )
-		ROM_LOAD( "2.bin", 0x000000, 0x020000, 0x00000000 )
-		ROM_LOAD( "1.bin", 0x020000, 0x020000, 0x4e2ca65a )
-	ROM_END
-	
-	
-	ROM_START( tantr ) /* Tant-R (Puzzle & Action)  (c)1992 Sega */
-		ROM_REGION( 0x200000, REGION_CPU1, 0 )
-		ROM_LOAD16_BYTE( "epr15614.32", 0x000000, 0x080000, 0x557782bc )
-		ROM_LOAD16_BYTE( "epr15613.31", 0x000001, 0x080000, 0x14bbb235 )
-		ROM_LOAD16_BYTE( "mpr15616.34", 0x100000, 0x080000, 0x17b80202 )
-		ROM_LOAD16_BYTE( "mpr15615.33", 0x100001, 0x080000, 0x36a88bd4 )
-	
-		ROM_REGION( 0x040000, REGION_SOUND1, 0 )
-		ROM_LOAD( "epr15617.4", 0x000000, 0x040000, 0x338324a1 )
-	ROM_END
+		ROM_REGION( 0x040000, REGION_SOUND1, 0 );
+		ROM_LOAD( "2.bin", 0x000000, 0x020000, 0x00000000 );
+		ROM_LOAD( "1.bin", 0x020000, 0x020000, 0x4e2ca65a );
+	ROM_END(); }}; 
 	
 	
-	ROM_START( tantrbl ) /* Tant-R (Puzzle & Action) (Bootleg)  (c)1992 Sega */
-		ROM_REGION( 0x200000, REGION_CPU1, 0 )
-		ROM_LOAD16_BYTE( "pa_e10.bin",  0x000000, 0x080000, 0x6c3f711f )
-		ROM_LOAD16_BYTE( "pa_f10.bin",  0x000001, 0x080000, 0x75526786 )
-		ROM_LOAD16_BYTE( "mpr15616.34", 0x100000, 0x080000, 0x17b80202 )
-		ROM_LOAD16_BYTE( "mpr15615.33", 0x100001, 0x080000, 0x36a88bd4 )
+	static RomLoadPtr rom_tantr = new RomLoadPtr(){ public void handler(){  /* Tant-R (Puzzle & Action)  (c)1992 Sega */
+		ROM_REGION( 0x200000, REGION_CPU1, 0 );
+		ROM_LOAD16_BYTE( "epr15614.32", 0x000000, 0x080000, 0x557782bc );
+		ROM_LOAD16_BYTE( "epr15613.31", 0x000001, 0x080000, 0x14bbb235 );
+		ROM_LOAD16_BYTE( "mpr15616.34", 0x100000, 0x080000, 0x17b80202 );
+		ROM_LOAD16_BYTE( "mpr15615.33", 0x100001, 0x080000, 0x36a88bd4 );
 	
-		ROM_REGION( 0x040000, REGION_SOUND1, 0 )
-		ROM_LOAD( "pa_e03.bin", 0x000000, 0x020000, 0x72918c58 )
-		ROM_LOAD( "pa_e02.bin", 0x020000, 0x020000, 0x4e85b2a3 )
-	ROM_END
+		ROM_REGION( 0x040000, REGION_SOUND1, 0 );
+		ROM_LOAD( "epr15617.4", 0x000000, 0x040000, 0x338324a1 );
+	ROM_END(); }}; 
 	
 	
-	ROM_START( puyopuyo	) /* Puyo Puyo  (c)1992 Sega / Compile */
-		ROM_REGION( 0x200000, REGION_CPU1, 0 )
-		ROM_LOAD16_BYTE( "epr15036", 0x000000, 0x020000, 0x5310ca1b )
-		ROM_LOAD16_BYTE( "epr15035", 0x000001, 0x020000, 0xbc62e400 )
+	static RomLoadPtr rom_tantrbl = new RomLoadPtr(){ public void handler(){  /* Tant-R (Puzzle & Action) (Bootleg)  (c)1992 Sega */
+		ROM_REGION( 0x200000, REGION_CPU1, 0 );
+		ROM_LOAD16_BYTE( "pa_e10.bin",  0x000000, 0x080000, 0x6c3f711f );
+		ROM_LOAD16_BYTE( "pa_f10.bin",  0x000001, 0x080000, 0x75526786 );
+		ROM_LOAD16_BYTE( "mpr15616.34", 0x100000, 0x080000, 0x17b80202 );
+		ROM_LOAD16_BYTE( "mpr15615.33", 0x100001, 0x080000, 0x36a88bd4 );
+	
+		ROM_REGION( 0x040000, REGION_SOUND1, 0 );
+		ROM_LOAD( "pa_e03.bin", 0x000000, 0x020000, 0x72918c58 );
+		ROM_LOAD( "pa_e02.bin", 0x020000, 0x020000, 0x4e85b2a3 );
+	ROM_END(); }}; 
+	
+	
+	static RomLoadPtr rom_puyopuyo = new RomLoadPtr(){ public void handler(){  /* Puyo Puyo  (c)1992 Sega / Compile */
+		ROM_REGION( 0x200000, REGION_CPU1, 0 );
+		ROM_LOAD16_BYTE( "epr15036", 0x000000, 0x020000, 0x5310ca1b );
+		ROM_LOAD16_BYTE( "epr15035", 0x000001, 0x020000, 0xbc62e400 );
 		/* 0x040000 - 0x100000 Empty */
-		ROM_LOAD16_BYTE( "epr15038", 0x100000, 0x020000, 0x3b9eea0c )
-		ROM_LOAD16_BYTE( "epr15037", 0x100001, 0x020000, 0xbe2f7974 )
+		ROM_LOAD16_BYTE( "epr15038", 0x100000, 0x020000, 0x3b9eea0c );
+		ROM_LOAD16_BYTE( "epr15037", 0x100001, 0x020000, 0xbe2f7974 );
 	
-		ROM_REGION( 0x020000, REGION_SOUND1, 0 )
-		ROM_LOAD( "epr15034", 0x000000, 0x020000, 0x5688213b )
-	ROM_END
+		ROM_REGION( 0x020000, REGION_SOUND1, 0 );
+		ROM_LOAD( "epr15034", 0x000000, 0x020000, 0x5688213b );
+	ROM_END(); }}; 
 	
 	
-	ROM_START( puyopuya	) /* Puyo Puyo (Rev A)  (c)1992 Sega / Compile */
-		ROM_REGION( 0x200000, REGION_CPU1, 0 )
-		ROM_LOAD16_BYTE( "ep15036a.32", 0x000000, 0x020000, 0x61b35257 )
-		ROM_LOAD16_BYTE( "ep15035a.31", 0x000001, 0x020000, 0xdfebb6d9 )
+	static RomLoadPtr rom_puyopuya = new RomLoadPtr(){ public void handler(){  /* Puyo Puyo (Rev A)  (c)1992 Sega / Compile */
+		ROM_REGION( 0x200000, REGION_CPU1, 0 );
+		ROM_LOAD16_BYTE( "ep15036a.32", 0x000000, 0x020000, 0x61b35257 );
+		ROM_LOAD16_BYTE( "ep15035a.31", 0x000001, 0x020000, 0xdfebb6d9 );
 		/* 0x040000 - 0x100000 Empty */
-		ROM_LOAD16_BYTE( "epr15038",    0x100000, 0x020000, 0x3b9eea0c )
-		ROM_LOAD16_BYTE( "epr15037",    0x100001, 0x020000, 0xbe2f7974 )
+		ROM_LOAD16_BYTE( "epr15038",    0x100000, 0x020000, 0x3b9eea0c );
+		ROM_LOAD16_BYTE( "epr15037",    0x100001, 0x020000, 0xbe2f7974 );
 	
-		ROM_REGION( 0x020000, REGION_SOUND1, 0 )
-		ROM_LOAD( "epr15034", 0x000000, 0x020000, 0x5688213b )
-	ROM_END
+		ROM_REGION( 0x020000, REGION_SOUND1, 0 );
+		ROM_LOAD( "epr15034", 0x000000, 0x020000, 0x5688213b );
+	ROM_END(); }}; 
 	
-	ROM_START( puyopuyb ) /* Puyo Puyo  (c)1992 Sega / Compile  Bootleg */
-	 ROM_REGION( 0x200000, REGION_CPU1, 0 )
-	 ROM_LOAD16_BYTE( "puyopuyb.4bo", 0x000000, 0x020000, 0x89ea4d33 )
-	 ROM_LOAD16_BYTE( "puyopuyb.3bo", 0x000001, 0x020000, 0xc002e545 )
+	static RomLoadPtr rom_puyopuyb = new RomLoadPtr(){ public void handler(){  /* Puyo Puyo  (c)1992 Sega / Compile  Bootleg */
+	 ROM_REGION( 0x200000, REGION_CPU1, 0 );
+	 ROM_LOAD16_BYTE( "puyopuyb.4bo", 0x000000, 0x020000, 0x89ea4d33 );
+	 ROM_LOAD16_BYTE( "puyopuyb.3bo", 0x000001, 0x020000, 0xc002e545 );
 	 /* 0x040000 - 0x100000 Empty */
-	 ROM_LOAD16_BYTE( "puyopuyb.6bo", 0x100000, 0x020000, 0xa0692e5 )
-	 ROM_LOAD16_BYTE( "puyopuyb.5bo", 0x100001, 0x020000, 0x353109b8 )
+	 ROM_LOAD16_BYTE( "puyopuyb.6bo", 0x100000, 0x020000, 0xa0692e5 );
+	 ROM_LOAD16_BYTE( "puyopuyb.5bo", 0x100001, 0x020000, 0x353109b8 );
 	
-	 ROM_REGION( 0x020000, REGION_SOUND1, 0 )
-	 ROM_LOAD( "puyopuyb.abo", 0x000000, 0x020000, 0x79112b3b )
-	ROM_END
+	 ROM_REGION( 0x020000, REGION_SOUND1, 0 );
+	 ROM_LOAD( "puyopuyb.abo", 0x000000, 0x020000, 0x79112b3b );
+	ROM_END(); }}; 
 	
-	ROM_START( ichidant ) /* Ichident-R (Puzzle & Action 2)  (c)1994 Sega */
-		ROM_REGION( 0x200000, REGION_CPU1, 0 )
-		ROM_LOAD16_BYTE( "epr16886", 0x000000, 0x080000, 0x38208e28 )
-		ROM_LOAD16_BYTE( "epr16885", 0x000001, 0x080000, 0x1ce4e837 )
-		ROM_LOAD16_BYTE( "epr16888", 0x100000, 0x080000, 0x85d73722 )
-		ROM_LOAD16_BYTE( "epr16887", 0x100001, 0x080000, 0xbc3bbf25 )
+	static RomLoadPtr rom_ichidant = new RomLoadPtr(){ public void handler(){  /* Ichident-R (Puzzle & Action 2)  (c)1994 Sega */
+		ROM_REGION( 0x200000, REGION_CPU1, 0 );
+		ROM_LOAD16_BYTE( "epr16886", 0x000000, 0x080000, 0x38208e28 );
+		ROM_LOAD16_BYTE( "epr16885", 0x000001, 0x080000, 0x1ce4e837 );
+		ROM_LOAD16_BYTE( "epr16888", 0x100000, 0x080000, 0x85d73722 );
+		ROM_LOAD16_BYTE( "epr16887", 0x100001, 0x080000, 0xbc3bbf25 );
 	
-		ROM_REGION( 0x080000, REGION_SOUND1, 0 )
-		ROM_LOAD( "epr16884", 0x000000, 0x080000, 0xfd9dcdd6)
-	ROM_END
-	
-	
-	ROM_START( ichidnte ) /* Ichident-R (Puzzle & Action 2)  (c)1994 Sega */
-		ROM_REGION( 0x200000, REGION_CPU1, 0 )
-		ROM_LOAD16_BYTE( "pa2_32.bin", 0x000000, 0x080000, 0x7ba0c025 )
-		ROM_LOAD16_BYTE( "pa2_31.bin", 0x000001, 0x080000, 0x5f86e5cc )
-		ROM_LOAD16_BYTE( "epr16888",   0x100000, 0x080000, 0x85d73722 )
-		ROM_LOAD16_BYTE( "epr16887",   0x100001, 0x080000, 0xbc3bbf25 )
-	
-		ROM_REGION( 0x080000, REGION_SOUND1, 0 )
-		ROM_LOAD( "pa2_02.bin", 0x000000, 0x080000, 0xfc7b0da5 )
-	ROM_END
+		ROM_REGION( 0x080000, REGION_SOUND1, 0 );
+		ROM_LOAD( "epr16884", 0x000000, 0x080000, 0xfd9dcdd6);
+	ROM_END(); }}; 
 	
 	
-	ROM_START( stkclmns ) /* Stack Columns  (c)1994 Sega */
-		ROM_REGION( 0x200000, REGION_CPU1, 0 )
-		ROM_LOAD16_BYTE( "epr16795.32", 0x000000, 0x080000, 0xb478fd02 )
-		ROM_LOAD16_BYTE( "epr16794.31", 0x000001, 0x080000, 0x6d0e8c56 )
-		ROM_LOAD16_BYTE( "mpr16797.34", 0x100000, 0x080000, 0xb28e9bd5 )
-		ROM_LOAD16_BYTE( "mpr16796.33", 0x100001, 0x080000, 0xec7de52d )
+	static RomLoadPtr rom_ichidnte = new RomLoadPtr(){ public void handler(){  /* Ichident-R (Puzzle & Action 2)  (c)1994 Sega */
+		ROM_REGION( 0x200000, REGION_CPU1, 0 );
+		ROM_LOAD16_BYTE( "pa2_32.bin", 0x000000, 0x080000, 0x7ba0c025 );
+		ROM_LOAD16_BYTE( "pa2_31.bin", 0x000001, 0x080000, 0x5f86e5cc );
+		ROM_LOAD16_BYTE( "epr16888",   0x100000, 0x080000, 0x85d73722 );
+		ROM_LOAD16_BYTE( "epr16887",   0x100001, 0x080000, 0xbc3bbf25 );
 	
-		ROM_REGION( 0x020000, REGION_SOUND1, 0 )
-		ROM_LOAD( "epr16793.4", 0x000000, 0x020000, 0xebb2d057 )
-	ROM_END
-	
-	
-	ROM_START( puyopuy2 ) /* Puyo Puyo 2  (c)1994 Compile */
-		ROM_REGION( 0x200000, REGION_CPU1, 0 )
-		ROM_LOAD16_BYTE( "pp2.eve", 0x000000, 0x080000, 0x1cad1149 )
-		ROM_LOAD16_BYTE( "pp2.odd", 0x000001, 0x080000, 0xbeecf96d )
-	
-		ROM_REGION( 0x080000, REGION_SOUND1, 0 )
-		ROM_LOAD( "pp2.snd", 0x000000, 0x080000, 0x020ff6ef )
-	ROM_END
+		ROM_REGION( 0x080000, REGION_SOUND1, 0 );
+		ROM_LOAD( "pa2_02.bin", 0x000000, 0x080000, 0xfc7b0da5 );
+	ROM_END(); }}; 
 	
 	
-	ROM_START( potopoto ) /* Poto Poto  (c)1994 Sega */
-		ROM_REGION( 0x200000, REGION_CPU1, 0 )
-		ROM_LOAD16_BYTE( "epr16662", 0x000000, 0x040000, 0xbbd305d6 )
-		ROM_LOAD16_BYTE( "epr16661", 0x000001, 0x040000, 0x5a7d14f4 )
+	static RomLoadPtr rom_stkclmns = new RomLoadPtr(){ public void handler(){  /* Stack Columns  (c)1994 Sega */
+		ROM_REGION( 0x200000, REGION_CPU1, 0 );
+		ROM_LOAD16_BYTE( "epr16795.32", 0x000000, 0x080000, 0xb478fd02 );
+		ROM_LOAD16_BYTE( "epr16794.31", 0x000001, 0x080000, 0x6d0e8c56 );
+		ROM_LOAD16_BYTE( "mpr16797.34", 0x100000, 0x080000, 0xb28e9bd5 );
+		ROM_LOAD16_BYTE( "mpr16796.33", 0x100001, 0x080000, 0xec7de52d );
 	
-		ROM_REGION( 0x040000, REGION_SOUND1, 0 )
-		ROM_LOAD( "epr16660", 0x000000, 0x040000, 0x8251c61c )
-	ROM_END
+		ROM_REGION( 0x020000, REGION_SOUND1, 0 );
+		ROM_LOAD( "epr16793.4", 0x000000, 0x020000, 0xebb2d057 );
+	ROM_END(); }}; 
 	
 	
-	ROM_START( zunkyou ) /* Zunzunkyou No Yabou  (c)1994 Sega */
-		ROM_REGION( 0x200000, REGION_CPU1, 0 )
-		ROM_LOAD16_BYTE( "epr16812.32", 0x000000, 0x080000, 0xeb088fb0 )
-		ROM_LOAD16_BYTE( "epr16811.31", 0x000001, 0x080000, 0x9ac7035b )
-		ROM_LOAD16_BYTE( "epr16814.34", 0x100000, 0x080000, 0x821b3b77 )
-		ROM_LOAD16_BYTE( "epr16813.33", 0x100001, 0x080000, 0x3cba9e8f )
+	static RomLoadPtr rom_puyopuy2 = new RomLoadPtr(){ public void handler(){  /* Puyo Puyo 2  (c)1994 Compile */
+		ROM_REGION( 0x200000, REGION_CPU1, 0 );
+		ROM_LOAD16_BYTE( "pp2.eve", 0x000000, 0x080000, 0x1cad1149 );
+		ROM_LOAD16_BYTE( "pp2.odd", 0x000001, 0x080000, 0xbeecf96d );
 	
-		ROM_REGION( 0x080000, REGION_SOUND1, 0 )
-		ROM_LOAD( "epr16810.4", 0x000000, 0x080000, 0xd542f0fe )
-	ROM_END
+		ROM_REGION( 0x080000, REGION_SOUND1, 0 );
+		ROM_LOAD( "pp2.snd", 0x000000, 0x080000, 0x020ff6ef );
+	ROM_END(); }}; 
+	
+	
+	static RomLoadPtr rom_potopoto = new RomLoadPtr(){ public void handler(){  /* Poto Poto  (c)1994 Sega */
+		ROM_REGION( 0x200000, REGION_CPU1, 0 );
+		ROM_LOAD16_BYTE( "epr16662", 0x000000, 0x040000, 0xbbd305d6 );
+		ROM_LOAD16_BYTE( "epr16661", 0x000001, 0x040000, 0x5a7d14f4 );
+	
+		ROM_REGION( 0x040000, REGION_SOUND1, 0 );
+		ROM_LOAD( "epr16660", 0x000000, 0x040000, 0x8251c61c );
+	ROM_END(); }}; 
+	
+	
+	static RomLoadPtr rom_zunkyou = new RomLoadPtr(){ public void handler(){  /* Zunzunkyou No Yabou  (c)1994 Sega */
+		ROM_REGION( 0x200000, REGION_CPU1, 0 );
+		ROM_LOAD16_BYTE( "epr16812.32", 0x000000, 0x080000, 0xeb088fb0 );
+		ROM_LOAD16_BYTE( "epr16811.31", 0x000001, 0x080000, 0x9ac7035b );
+		ROM_LOAD16_BYTE( "epr16814.34", 0x100000, 0x080000, 0x821b3b77 );
+		ROM_LOAD16_BYTE( "epr16813.33", 0x100001, 0x080000, 0x3cba9e8f );
+	
+		ROM_REGION( 0x080000, REGION_SOUND1, 0 );
+		ROM_LOAD( "epr16810.4", 0x000000, 0x080000, 0xd542f0fe );
+	ROM_END(); }}; 
 	
 	
 	

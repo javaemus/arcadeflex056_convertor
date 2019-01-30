@@ -413,35 +413,35 @@ public class esd16
 	
 	***************************************************************************/
 	
-	ROM_START( multchmp )
-		ROM_REGION( 0x080000, REGION_CPU1, 0 )		/* 68000 Code */
-		ROM_LOAD16_BYTE( "multchmp.u02", 0x000000, 0x040000, 0x7da8c0df )
-		ROM_LOAD16_BYTE( "multchmp.u03", 0x000001, 0x040000, 0x5dc62799 )
+	static RomLoadPtr rom_multchmp = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x080000, REGION_CPU1, 0 );	/* 68000 Code */
+		ROM_LOAD16_BYTE( "multchmp.u02", 0x000000, 0x040000, 0x7da8c0df );
+		ROM_LOAD16_BYTE( "multchmp.u03", 0x000001, 0x040000, 0x5dc62799 );
 	
-		ROM_REGION( 0x24000, REGION_CPU2, 0 )		/* Z80 Code */
-		ROM_LOAD( "multchmp.u06", 0x00000, 0x0c000, 0x7c178bd7 )
-		ROM_CONTINUE(             0x10000, 0x14000             )
+		ROM_REGION( 0x24000, REGION_CPU2, 0 );	/* Z80 Code */
+		ROM_LOAD( "multchmp.u06", 0x00000, 0x0c000, 0x7c178bd7 );
+		ROM_CONTINUE(             0x10000, 0x14000             );
 	
-		ROM_REGION( 0x140000, REGION_GFX1, ROMREGION_DISPOSE )	/* Sprites, 16x16x5 */
-		ROM_LOAD( "multchmp.u36", 0x000000, 0x040000, 0xd8f06fa8 )
-		ROM_LOAD( "multchmp.u37", 0x040000, 0x040000, 0xb1ae7f08 )
-		ROM_LOAD( "multchmp.u38", 0x080000, 0x040000, 0x88e252e8 )
-		ROM_LOAD( "multchmp.u39", 0x0c0000, 0x040000, 0x51f01067 )
-		ROM_LOAD( "multchmp.u35", 0x100000, 0x040000, 0x9d1590a6 )
+		ROM_REGION( 0x140000, REGION_GFX1, ROMREGION_DISPOSE );/* Sprites, 16x16x5 */
+		ROM_LOAD( "multchmp.u36", 0x000000, 0x040000, 0xd8f06fa8 );
+		ROM_LOAD( "multchmp.u37", 0x040000, 0x040000, 0xb1ae7f08 );
+		ROM_LOAD( "multchmp.u38", 0x080000, 0x040000, 0x88e252e8 );
+		ROM_LOAD( "multchmp.u39", 0x0c0000, 0x040000, 0x51f01067 );
+		ROM_LOAD( "multchmp.u35", 0x100000, 0x040000, 0x9d1590a6 );
 	
-		ROM_REGION( 0x400000, REGION_GFX2, ROMREGION_DISPOSE )	/* Layers, 16x16x8 */
-		ROM_LOAD( "multchmp.u27", 0x000000, 0x080000, 0xdc42704e )
-		ROM_LOAD( "multchmp.u28", 0x080000, 0x080000, 0x449991fa )
-		ROM_LOAD( "multchmp.u33", 0x100000, 0x080000, 0xe4c0ec96 )
-		ROM_LOAD( "multchmp.u34", 0x180000, 0x080000, 0xbffaaccc )
-		ROM_LOAD( "multchmp.u29", 0x200000, 0x080000, 0x01bd1399 )
-		ROM_LOAD( "multchmp.u30", 0x280000, 0x080000, 0xc6b4cc18 )
-		ROM_LOAD( "multchmp.u31", 0x300000, 0x080000, 0xb1e4e9e3 )
-		ROM_LOAD( "multchmp.u32", 0x380000, 0x080000, 0xf05cb5b4 )
+		ROM_REGION( 0x400000, REGION_GFX2, ROMREGION_DISPOSE );/* Layers, 16x16x8 */
+		ROM_LOAD( "multchmp.u27", 0x000000, 0x080000, 0xdc42704e );
+		ROM_LOAD( "multchmp.u28", 0x080000, 0x080000, 0x449991fa );
+		ROM_LOAD( "multchmp.u33", 0x100000, 0x080000, 0xe4c0ec96 );
+		ROM_LOAD( "multchmp.u34", 0x180000, 0x080000, 0xbffaaccc );
+		ROM_LOAD( "multchmp.u29", 0x200000, 0x080000, 0x01bd1399 );
+		ROM_LOAD( "multchmp.u30", 0x280000, 0x080000, 0xc6b4cc18 );
+		ROM_LOAD( "multchmp.u31", 0x300000, 0x080000, 0xb1e4e9e3 );
+		ROM_LOAD( "multchmp.u32", 0x380000, 0x080000, 0xf05cb5b4 );
 	
-		ROM_REGION( 0x20000, REGION_SOUND1, ROMREGION_SOUNDONLY )	/* Samples */
-		ROM_LOAD( "multchmp.u10", 0x00000, 0x20000, 0x6e741fcd )
-	ROM_END
+		ROM_REGION( 0x20000, REGION_SOUND1, ROMREGION_SOUNDONLY );/* Samples */
+		ROM_LOAD( "multchmp.u10", 0x00000, 0x20000, 0x6e741fcd );
+	ROM_END(); }}; 
 	
 	
 	/***************************************************************************

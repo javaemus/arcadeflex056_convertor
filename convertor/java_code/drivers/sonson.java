@@ -308,66 +308,66 @@ public class sonson
 	
 	***************************************************************************/
 	
-	ROM_START( sonson )
-		ROM_REGION( 0x10000, REGION_CPU1, 0 )	/* 64k for code + 3*16k for the banked ROMs images */
-		ROM_LOAD( "ss.01e",       0x4000, 0x4000, 0xcd40cc54 )
-		ROM_LOAD( "ss.02e",       0x8000, 0x4000, 0xc3476527 )
-		ROM_LOAD( "ss.03e",       0xc000, 0x4000, 0x1fd0e729 )
+	static RomLoadPtr rom_sonson = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x10000, REGION_CPU1, 0 );/* 64k for code + 3*16k for the banked ROMs images */
+		ROM_LOAD( "ss.01e",       0x4000, 0x4000, 0xcd40cc54 );
+		ROM_LOAD( "ss.02e",       0x8000, 0x4000, 0xc3476527 );
+		ROM_LOAD( "ss.03e",       0xc000, 0x4000, 0x1fd0e729 );
 	
-		ROM_REGION( 0x10000, REGION_CPU2, 0 )	/* 64k for the audio CPU */
-		ROM_LOAD( "ss_6.c11",     0xe000, 0x2000, 0x1135c48a )
+		ROM_REGION( 0x10000, REGION_CPU2, 0 );/* 64k for the audio CPU */
+		ROM_LOAD( "ss_6.c11",     0xe000, 0x2000, 0x1135c48a );
 	
-		ROM_REGION( 0x04000, REGION_GFX1, ROMREGION_DISPOSE )
-		ROM_LOAD( "ss_7.b6",      0x00000, 0x2000, 0x990890b1 )	/* characters */
-		ROM_LOAD( "ss_8.b5",      0x02000, 0x2000, 0x9388ff82 )
+		ROM_REGION( 0x04000, REGION_GFX1, ROMREGION_DISPOSE );
+		ROM_LOAD( "ss_7.b6",      0x00000, 0x2000, 0x990890b1 );/* characters */
+		ROM_LOAD( "ss_8.b5",      0x02000, 0x2000, 0x9388ff82 );
 	
-		ROM_REGION( 0x0c000, REGION_GFX2, ROMREGION_DISPOSE )
-		ROM_LOAD( "ss_9.m5",      0x00000, 0x2000, 0x8cb1cacf )	/* sprites */
-		ROM_LOAD( "ss_10.m6",     0x02000, 0x2000, 0xf802815e )
-		ROM_LOAD( "ss_11.m3",     0x04000, 0x2000, 0x4dbad88a )
-		ROM_LOAD( "ss_12.m4",     0x06000, 0x2000, 0xaa05e687 )
-		ROM_LOAD( "ss_13.m1",     0x08000, 0x2000, 0x66119bfa )
-		ROM_LOAD( "ss_14.m2",     0x0a000, 0x2000, 0xe14ef54e )
+		ROM_REGION( 0x0c000, REGION_GFX2, ROMREGION_DISPOSE );
+		ROM_LOAD( "ss_9.m5",      0x00000, 0x2000, 0x8cb1cacf );/* sprites */
+		ROM_LOAD( "ss_10.m6",     0x02000, 0x2000, 0xf802815e );
+		ROM_LOAD( "ss_11.m3",     0x04000, 0x2000, 0x4dbad88a );
+		ROM_LOAD( "ss_12.m4",     0x06000, 0x2000, 0xaa05e687 );
+		ROM_LOAD( "ss_13.m1",     0x08000, 0x2000, 0x66119bfa );
+		ROM_LOAD( "ss_14.m2",     0x0a000, 0x2000, 0xe14ef54e );
 	
-		ROM_REGION( 0x0340, REGION_PROMS, 0 )
-		ROM_LOAD( "ssb4.b2",      0x0000, 0x0020, 0xc8eaf234 )	/* red/green component */
-		ROM_LOAD( "ssb5.b1",      0x0020, 0x0020, 0x0e434add )	/* blue component */
-		ROM_LOAD( "ssb2.c4",      0x0040, 0x0100, 0xc53321c6 )	/* character lookup table */
-		ROM_LOAD( "ssb3.h7",      0x0140, 0x0100, 0x7d2c324a )	/* sprite lookup table */
-		ROM_LOAD( "ssb1.k11",     0x0240, 0x0100, 0xa04b0cfe )	/* unknown (not used) */
-	ROM_END
+		ROM_REGION( 0x0340, REGION_PROMS, 0 );
+		ROM_LOAD( "ssb4.b2",      0x0000, 0x0020, 0xc8eaf234 );/* red/green component */
+		ROM_LOAD( "ssb5.b1",      0x0020, 0x0020, 0x0e434add );/* blue component */
+		ROM_LOAD( "ssb2.c4",      0x0040, 0x0100, 0xc53321c6 );/* character lookup table */
+		ROM_LOAD( "ssb3.h7",      0x0140, 0x0100, 0x7d2c324a );/* sprite lookup table */
+		ROM_LOAD( "ssb1.k11",     0x0240, 0x0100, 0xa04b0cfe );/* unknown (not used) */
+	ROM_END(); }}; 
 	
-	ROM_START( sonsonj )
-		ROM_REGION( 0x10000, REGION_CPU1, 0 )	/* 64k for code + 3*16k for the banked ROMs images */
-		ROM_LOAD( "ss_0.l9",      0x4000, 0x2000, 0x705c168f )
-		ROM_LOAD( "ss_1.j9",      0x6000, 0x2000, 0x0f03b57d )
-		ROM_LOAD( "ss_2.l8",      0x8000, 0x2000, 0xa243a15d )
-		ROM_LOAD( "ss_3.j8",      0xa000, 0x2000, 0xcb64681a )
-		ROM_LOAD( "ss_4.l7",      0xc000, 0x2000, 0x4c3e9441 )
-		ROM_LOAD( "ss_5.j7",      0xe000, 0x2000, 0x847f660c )
+	static RomLoadPtr rom_sonsonj = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x10000, REGION_CPU1, 0 );/* 64k for code + 3*16k for the banked ROMs images */
+		ROM_LOAD( "ss_0.l9",      0x4000, 0x2000, 0x705c168f );
+		ROM_LOAD( "ss_1.j9",      0x6000, 0x2000, 0x0f03b57d );
+		ROM_LOAD( "ss_2.l8",      0x8000, 0x2000, 0xa243a15d );
+		ROM_LOAD( "ss_3.j8",      0xa000, 0x2000, 0xcb64681a );
+		ROM_LOAD( "ss_4.l7",      0xc000, 0x2000, 0x4c3e9441 );
+		ROM_LOAD( "ss_5.j7",      0xe000, 0x2000, 0x847f660c );
 	
-		ROM_REGION( 0x10000, REGION_CPU2, 0 )	/* 64k for the audio CPU */
-		ROM_LOAD( "ss_6.c11",     0xe000, 0x2000, 0x1135c48a )
+		ROM_REGION( 0x10000, REGION_CPU2, 0 );/* 64k for the audio CPU */
+		ROM_LOAD( "ss_6.c11",     0xe000, 0x2000, 0x1135c48a );
 	
-		ROM_REGION( 0x04000, REGION_GFX1, ROMREGION_DISPOSE )
-		ROM_LOAD( "ss_7.b6",      0x00000, 0x2000, 0x990890b1 )	/* characters */
-		ROM_LOAD( "ss_8.b5",      0x02000, 0x2000, 0x9388ff82 )
+		ROM_REGION( 0x04000, REGION_GFX1, ROMREGION_DISPOSE );
+		ROM_LOAD( "ss_7.b6",      0x00000, 0x2000, 0x990890b1 );/* characters */
+		ROM_LOAD( "ss_8.b5",      0x02000, 0x2000, 0x9388ff82 );
 	
-		ROM_REGION( 0x0c000, REGION_GFX2, ROMREGION_DISPOSE )
-		ROM_LOAD( "ss_9.m5",      0x00000, 0x2000, 0x8cb1cacf )	/* sprites */
-		ROM_LOAD( "ss_10.m6",     0x02000, 0x2000, 0xf802815e )
-		ROM_LOAD( "ss_11.m3",     0x04000, 0x2000, 0x4dbad88a )
-		ROM_LOAD( "ss_12.m4",     0x06000, 0x2000, 0xaa05e687 )
-		ROM_LOAD( "ss_13.m1",     0x08000, 0x2000, 0x66119bfa )
-		ROM_LOAD( "ss_14.m2",     0x0a000, 0x2000, 0xe14ef54e )
+		ROM_REGION( 0x0c000, REGION_GFX2, ROMREGION_DISPOSE );
+		ROM_LOAD( "ss_9.m5",      0x00000, 0x2000, 0x8cb1cacf );/* sprites */
+		ROM_LOAD( "ss_10.m6",     0x02000, 0x2000, 0xf802815e );
+		ROM_LOAD( "ss_11.m3",     0x04000, 0x2000, 0x4dbad88a );
+		ROM_LOAD( "ss_12.m4",     0x06000, 0x2000, 0xaa05e687 );
+		ROM_LOAD( "ss_13.m1",     0x08000, 0x2000, 0x66119bfa );
+		ROM_LOAD( "ss_14.m2",     0x0a000, 0x2000, 0xe14ef54e );
 	
-		ROM_REGION( 0x0340, REGION_PROMS, 0 )
-		ROM_LOAD( "ssb4.b2",      0x0000, 0x0020, 0xc8eaf234 )	/* red/green component */
-		ROM_LOAD( "ssb5.b1",      0x0020, 0x0020, 0x0e434add )	/* blue component */
-		ROM_LOAD( "ssb2.c4",      0x0040, 0x0100, 0xc53321c6 )	/* character lookup table */
-		ROM_LOAD( "ssb3.h7",      0x0140, 0x0100, 0x7d2c324a )	/* sprite lookup table */
-		ROM_LOAD( "ssb1.k11",     0x0240, 0x0100, 0xa04b0cfe )	/* unknown (not used) */
-	ROM_END
+		ROM_REGION( 0x0340, REGION_PROMS, 0 );
+		ROM_LOAD( "ssb4.b2",      0x0000, 0x0020, 0xc8eaf234 );/* red/green component */
+		ROM_LOAD( "ssb5.b1",      0x0020, 0x0020, 0x0e434add );/* blue component */
+		ROM_LOAD( "ssb2.c4",      0x0040, 0x0100, 0xc53321c6 );/* character lookup table */
+		ROM_LOAD( "ssb3.h7",      0x0140, 0x0100, 0x7d2c324a );/* sprite lookup table */
+		ROM_LOAD( "ssb1.k11",     0x0240, 0x0100, 0xa04b0cfe );/* unknown (not used) */
+	ROM_END(); }}; 
 	
 	
 	GAMEX( 1984, sonson,  0,      sonson, sonson, 0, ROT0, "Capcom", "Son Son", GAME_NO_COCKTAIL )

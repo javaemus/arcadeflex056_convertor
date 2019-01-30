@@ -919,108 +919,108 @@ public class astrocde
 	
 	
 	
-	ROM_START( seawolf2 )
-		ROM_REGION( 0x10000, REGION_CPU1, 0 )
-		ROM_LOAD( "sw2x1.bin",    0x0000, 0x0800, 0xad0103f6 )
-		ROM_LOAD( "sw2x2.bin",    0x0800, 0x0800, 0xe0430f0a )
-		ROM_LOAD( "sw2x3.bin",    0x1000, 0x0800, 0x05ad1619 )
-		ROM_LOAD( "sw2x4.bin",    0x1800, 0x0800, 0x1a1a14a2 )
-	ROM_END
+	static RomLoadPtr rom_seawolf2 = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x10000, REGION_CPU1, 0 );
+		ROM_LOAD( "sw2x1.bin",    0x0000, 0x0800, 0xad0103f6 );
+		ROM_LOAD( "sw2x2.bin",    0x0800, 0x0800, 0xe0430f0a );
+		ROM_LOAD( "sw2x3.bin",    0x1000, 0x0800, 0x05ad1619 );
+		ROM_LOAD( "sw2x4.bin",    0x1800, 0x0800, 0x1a1a14a2 );
+	ROM_END(); }}; 
 	
-	ROM_START( spacezap )
-		ROM_REGION( 0x10000, REGION_CPU1, 0 )
-		ROM_LOAD( "0662.01",      0x0000, 0x1000, 0xa92de312 )
-		ROM_LOAD( "0663.xx",      0x1000, 0x1000, 0x4836ebf1 )
-		ROM_LOAD( "0664.xx",      0x2000, 0x1000, 0xd8193a80 )
-		ROM_LOAD( "0665.xx",      0x3000, 0x1000, 0x3784228d )
-	ROM_END
+	static RomLoadPtr rom_spacezap = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x10000, REGION_CPU1, 0 );
+		ROM_LOAD( "0662.01",      0x0000, 0x1000, 0xa92de312 );
+		ROM_LOAD( "0663.xx",      0x1000, 0x1000, 0x4836ebf1 );
+		ROM_LOAD( "0664.xx",      0x2000, 0x1000, 0xd8193a80 );
+		ROM_LOAD( "0665.xx",      0x3000, 0x1000, 0x3784228d );
+	ROM_END(); }}; 
 	
-	ROM_START( ebases )
-		ROM_REGION( 0x10000, REGION_CPU1, 0 )
-		ROM_LOAD( "m761a",        0x0000, 0x1000, 0x34422147 )
-		ROM_LOAD( "m761b",        0x1000, 0x1000, 0x4f28dfd6 )
-		ROM_LOAD( "m761c",        0x2000, 0x1000, 0xbff6c97e )
-		ROM_LOAD( "m761d",        0x3000, 0x1000, 0x5173781a )
-	ROM_END
+	static RomLoadPtr rom_ebases = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x10000, REGION_CPU1, 0 );
+		ROM_LOAD( "m761a",        0x0000, 0x1000, 0x34422147 );
+		ROM_LOAD( "m761b",        0x1000, 0x1000, 0x4f28dfd6 );
+		ROM_LOAD( "m761c",        0x2000, 0x1000, 0xbff6c97e );
+		ROM_LOAD( "m761d",        0x3000, 0x1000, 0x5173781a );
+	ROM_END(); }}; 
 	
-	ROM_START( wow )
-		ROM_REGION( 0x10000, REGION_CPU1, 0 )
-		ROM_LOAD( "wow.x1",       0x0000, 0x1000, 0xc1295786 )
-		ROM_LOAD( "wow.x2",       0x1000, 0x1000, 0x9be93215 )
-		ROM_LOAD( "wow.x3",       0x2000, 0x1000, 0x75e5a22e )
-		ROM_LOAD( "wow.x4",       0x3000, 0x1000, 0xef28eb84 )
-		ROM_LOAD( "wow.x5",       0x8000, 0x1000, 0x16912c2b )
-		ROM_LOAD( "wow.x6",       0x9000, 0x1000, 0x35797f82 )
-		ROM_LOAD( "wow.x7",       0xa000, 0x1000, 0xce404305 )
-	/*	ROM_LOAD( "wow.x8",       0xc000, 0x1000, ? )	here would go the foreign language ROM */
-	ROM_END
+	static RomLoadPtr rom_wow = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x10000, REGION_CPU1, 0 );
+		ROM_LOAD( "wow.x1",       0x0000, 0x1000, 0xc1295786 );
+		ROM_LOAD( "wow.x2",       0x1000, 0x1000, 0x9be93215 );
+		ROM_LOAD( "wow.x3",       0x2000, 0x1000, 0x75e5a22e );
+		ROM_LOAD( "wow.x4",       0x3000, 0x1000, 0xef28eb84 );
+		ROM_LOAD( "wow.x5",       0x8000, 0x1000, 0x16912c2b );
+		ROM_LOAD( "wow.x6",       0x9000, 0x1000, 0x35797f82 );
+		ROM_LOAD( "wow.x7",       0xa000, 0x1000, 0xce404305 );
+	/*	ROM_LOAD( "wow.x8",       0xc000, 0x1000, ? );here would go the foreign language ROM */
+	ROM_END(); }}; 
 	
-	ROM_START( gorf )
-		ROM_REGION( 0x10000, REGION_CPU1, 0 )
-		ROM_LOAD( "gorf-a.bin",   0x0000, 0x1000, 0x5b348321 )
-		ROM_LOAD( "gorf-b.bin",   0x1000, 0x1000, 0x62d6de77 )
-		ROM_LOAD( "gorf-c.bin",   0x2000, 0x1000, 0x1d3bc9c9 )
-		ROM_LOAD( "gorf-d.bin",   0x3000, 0x1000, 0x70046e56 )
-		ROM_LOAD( "gorf-e.bin",   0x8000, 0x1000, 0x2d456eb5 )
-		ROM_LOAD( "gorf-f.bin",   0x9000, 0x1000, 0xf7e4e155 )
-		ROM_LOAD( "gorf-g.bin",   0xa000, 0x1000, 0x4e2bd9b9 )
-		ROM_LOAD( "gorf-h.bin",   0xb000, 0x1000, 0xfe7b863d )
-	ROM_END
+	static RomLoadPtr rom_gorf = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x10000, REGION_CPU1, 0 );
+		ROM_LOAD( "gorf-a.bin",   0x0000, 0x1000, 0x5b348321 );
+		ROM_LOAD( "gorf-b.bin",   0x1000, 0x1000, 0x62d6de77 );
+		ROM_LOAD( "gorf-c.bin",   0x2000, 0x1000, 0x1d3bc9c9 );
+		ROM_LOAD( "gorf-d.bin",   0x3000, 0x1000, 0x70046e56 );
+		ROM_LOAD( "gorf-e.bin",   0x8000, 0x1000, 0x2d456eb5 );
+		ROM_LOAD( "gorf-f.bin",   0x9000, 0x1000, 0xf7e4e155 );
+		ROM_LOAD( "gorf-g.bin",   0xa000, 0x1000, 0x4e2bd9b9 );
+		ROM_LOAD( "gorf-h.bin",   0xb000, 0x1000, 0xfe7b863d );
+	ROM_END(); }}; 
 	
-	ROM_START( gorfpgm1 )
-		ROM_REGION( 0x10000, REGION_CPU1, 0 )
-		ROM_LOAD( "873a",         0x0000, 0x1000, 0x97cb4a6a )
-		ROM_LOAD( "873b",         0x1000, 0x1000, 0x257236f8 )
-		ROM_LOAD( "873c",         0x2000, 0x1000, 0x16b0638b )
-		ROM_LOAD( "873d",         0x3000, 0x1000, 0xb5e821dc )
-		ROM_LOAD( "873e",         0x8000, 0x1000, 0x8e82804b )
-		ROM_LOAD( "873f",         0x9000, 0x1000, 0x715fb4d9 )
-		ROM_LOAD( "873g",         0xa000, 0x1000, 0x8a066456 )
-		ROM_LOAD( "873h",         0xb000, 0x1000, 0x56d40c7c )
-	ROM_END
+	static RomLoadPtr rom_gorfpgm1 = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x10000, REGION_CPU1, 0 );
+		ROM_LOAD( "873a",         0x0000, 0x1000, 0x97cb4a6a );
+		ROM_LOAD( "873b",         0x1000, 0x1000, 0x257236f8 );
+		ROM_LOAD( "873c",         0x2000, 0x1000, 0x16b0638b );
+		ROM_LOAD( "873d",         0x3000, 0x1000, 0xb5e821dc );
+		ROM_LOAD( "873e",         0x8000, 0x1000, 0x8e82804b );
+		ROM_LOAD( "873f",         0x9000, 0x1000, 0x715fb4d9 );
+		ROM_LOAD( "873g",         0xa000, 0x1000, 0x8a066456 );
+		ROM_LOAD( "873h",         0xb000, 0x1000, 0x56d40c7c );
+	ROM_END(); }}; 
 	
-	ROM_START( robby )
-		ROM_REGION( 0x10000, REGION_CPU1, 0 )
-		ROM_LOAD( "rotox1.bin",   0x0000, 0x1000, 0xa431b85a )
-		ROM_LOAD( "rotox2.bin",   0x1000, 0x1000, 0x33cdda83 )
-		ROM_LOAD( "rotox3.bin",   0x2000, 0x1000, 0xdbf97491 )
-		ROM_LOAD( "rotox4.bin",   0x3000, 0x1000, 0xa3b90ac8 )
-		ROM_LOAD( "rotox5.bin",   0x8000, 0x1000, 0x46ae8a94 )
-		ROM_LOAD( "rotox6.bin",   0x9000, 0x1000, 0x7916b730 )
-		ROM_LOAD( "rotox7.bin",   0xa000, 0x1000, 0x276dc4a5 )
-		ROM_LOAD( "rotox8.bin",   0xb000, 0x1000, 0x1ef13457 )
-	  	ROM_LOAD( "rotox9.bin",   0xc000, 0x1000, 0x370352bf )
-		ROM_LOAD( "rotox10.bin",  0xd000, 0x1000, 0xe762cbda )
-	ROM_END
+	static RomLoadPtr rom_robby = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x10000, REGION_CPU1, 0 );
+		ROM_LOAD( "rotox1.bin",   0x0000, 0x1000, 0xa431b85a );
+		ROM_LOAD( "rotox2.bin",   0x1000, 0x1000, 0x33cdda83 );
+		ROM_LOAD( "rotox3.bin",   0x2000, 0x1000, 0xdbf97491 );
+		ROM_LOAD( "rotox4.bin",   0x3000, 0x1000, 0xa3b90ac8 );
+		ROM_LOAD( "rotox5.bin",   0x8000, 0x1000, 0x46ae8a94 );
+		ROM_LOAD( "rotox6.bin",   0x9000, 0x1000, 0x7916b730 );
+		ROM_LOAD( "rotox7.bin",   0xa000, 0x1000, 0x276dc4a5 );
+		ROM_LOAD( "rotox8.bin",   0xb000, 0x1000, 0x1ef13457 );
+	  	ROM_LOAD( "rotox9.bin",   0xc000, 0x1000, 0x370352bf );
+		ROM_LOAD( "rotox10.bin",  0xd000, 0x1000, 0xe762cbda );
+	ROM_END(); }}; 
 	
-	ROM_START( profpac )
-		ROM_REGION( 0x10000, REGION_CPU1, 0 )
-		ROM_LOAD( "pps1",         0x0000, 0x2000, 0xa244a62d )
-		ROM_LOAD( "pps2",         0x2000, 0x2000, 0x8a9a6653 )
-		ROM_LOAD( "pps7",         0x8000, 0x2000, 0xf9c26aba )
-		ROM_LOAD( "pps8",         0xa000, 0x2000, 0x4d201e41 )
-		ROM_LOAD( "pps9",         0xc000, 0x2000, 0x17a0b418 )
+	static RomLoadPtr rom_profpac = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x10000, REGION_CPU1, 0 );
+		ROM_LOAD( "pps1",         0x0000, 0x2000, 0xa244a62d );
+		ROM_LOAD( "pps2",         0x2000, 0x2000, 0x8a9a6653 );
+		ROM_LOAD( "pps7",         0x8000, 0x2000, 0xf9c26aba );
+		ROM_LOAD( "pps8",         0xa000, 0x2000, 0x4d201e41 );
+		ROM_LOAD( "pps9",         0xc000, 0x2000, 0x17a0b418 );
 	
-		ROM_REGION( 0x04000, REGION_USER1, 0 )
-		ROM_LOAD( "pps3",         0x0000, 0x2000, 0x15717fd8 )
-		ROM_LOAD( "pps4",         0x0000, 0x2000, 0x36540598 )
-		ROM_LOAD( "pps5",         0x0000, 0x2000, 0x8dc89a59 )
-		ROM_LOAD( "pps6",         0x0000, 0x2000, 0x5a2186c3 )
-		ROM_LOAD( "ppq1",         0x0000, 0x4000, 0xdddc2ccc )
-		ROM_LOAD( "ppq2",         0x0000, 0x4000, 0x33bbcabe )
-		ROM_LOAD( "ppq3",         0x0000, 0x4000, 0x3534d895 )
-		ROM_LOAD( "ppq4",         0x0000, 0x4000, 0x17e3581d )
-		ROM_LOAD( "ppq5",         0x0000, 0x4000, 0x80882a93 )
-		ROM_LOAD( "ppq6",         0x0000, 0x4000, 0xe5ddaee5 )
-		ROM_LOAD( "ppq7",         0x0000, 0x4000, 0xc029cd34 )
-		ROM_LOAD( "ppq8",         0x0000, 0x4000, 0xfb3a1ac9 )
-		ROM_LOAD( "ppq9",         0x0000, 0x4000, 0x5e944488 )
-		ROM_LOAD( "ppq10",        0x0000, 0x4000, 0xed72a81f )
-		ROM_LOAD( "ppq11",        0x0000, 0x4000, 0x98295020 )
-		ROM_LOAD( "ppq12",        0x0000, 0x4000, 0xe01a8dbe )
-		ROM_LOAD( "ppq13",        0x0000, 0x4000, 0x87165d4f )
-		ROM_LOAD( "ppq14",        0x0000, 0x4000, 0xecb861de )
-	ROM_END
+		ROM_REGION( 0x04000, REGION_USER1, 0 );
+		ROM_LOAD( "pps3",         0x0000, 0x2000, 0x15717fd8 );
+		ROM_LOAD( "pps4",         0x0000, 0x2000, 0x36540598 );
+		ROM_LOAD( "pps5",         0x0000, 0x2000, 0x8dc89a59 );
+		ROM_LOAD( "pps6",         0x0000, 0x2000, 0x5a2186c3 );
+		ROM_LOAD( "ppq1",         0x0000, 0x4000, 0xdddc2ccc );
+		ROM_LOAD( "ppq2",         0x0000, 0x4000, 0x33bbcabe );
+		ROM_LOAD( "ppq3",         0x0000, 0x4000, 0x3534d895 );
+		ROM_LOAD( "ppq4",         0x0000, 0x4000, 0x17e3581d );
+		ROM_LOAD( "ppq5",         0x0000, 0x4000, 0x80882a93 );
+		ROM_LOAD( "ppq6",         0x0000, 0x4000, 0xe5ddaee5 );
+		ROM_LOAD( "ppq7",         0x0000, 0x4000, 0xc029cd34 );
+		ROM_LOAD( "ppq8",         0x0000, 0x4000, 0xfb3a1ac9 );
+		ROM_LOAD( "ppq9",         0x0000, 0x4000, 0x5e944488 );
+		ROM_LOAD( "ppq10",        0x0000, 0x4000, 0xed72a81f );
+		ROM_LOAD( "ppq11",        0x0000, 0x4000, 0x98295020 );
+		ROM_LOAD( "ppq12",        0x0000, 0x4000, 0xe01a8dbe );
+		ROM_LOAD( "ppq13",        0x0000, 0x4000, 0x87165d4f );
+		ROM_LOAD( "ppq14",        0x0000, 0x4000, 0xecb861de );
+	ROM_END(); }}; 
 	
 	
 	

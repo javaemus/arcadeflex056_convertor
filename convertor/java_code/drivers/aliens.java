@@ -329,133 +329,133 @@ public class aliens
 	
 	***************************************************************************/
 	
-	ROM_START( aliens )
-		ROM_REGION( 0x38000, REGION_CPU1, 0 ) /* code + banked roms */
-		ROM_LOAD( "e24_j02.bin", 0x10000, 0x08000, 0x56c20971 )
-		ROM_CONTINUE(            0x08000, 0x08000 )
-		ROM_LOAD( "c24_j01.bin", 0x18000, 0x20000, 0x6a529cd6 )
+	static RomLoadPtr rom_aliens = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x38000, REGION_CPU1, 0 );/* code + banked roms */
+		ROM_LOAD( "e24_j02.bin", 0x10000, 0x08000, 0x56c20971 );
+		ROM_CONTINUE(            0x08000, 0x08000 );
+		ROM_LOAD( "c24_j01.bin", 0x18000, 0x20000, 0x6a529cd6 );
 	
-		ROM_REGION( 0x10000, REGION_CPU2, 0 ) /* 64k for the sound CPU */
-		ROM_LOAD( "g04_b03.bin", 0x00000, 0x08000, 0x1ac4d283 )
+		ROM_REGION( 0x10000, REGION_CPU2, 0 );/* 64k for the sound CPU */
+		ROM_LOAD( "g04_b03.bin", 0x00000, 0x08000, 0x1ac4d283 );
 	
-		ROM_REGION( 0x200000, REGION_GFX1, 0 ) /* graphics */
-		ROM_LOAD( "k13_b11.bin", 0x000000, 0x80000, 0x89c5c885 )	/* characters (set 1) */
-		ROM_LOAD( "j13_b07.bin", 0x080000, 0x40000, 0xe9c56d66 )	/* characters (set 2) */
+		ROM_REGION( 0x200000, REGION_GFX1, 0 );/* graphics */
+		ROM_LOAD( "k13_b11.bin", 0x000000, 0x80000, 0x89c5c885 );/* characters (set 1) */
+		ROM_LOAD( "j13_b07.bin", 0x080000, 0x40000, 0xe9c56d66 );/* characters (set 2) */
 		/* second half empty */
-		ROM_LOAD( "k19_b12.bin", 0x100000, 0x80000, 0xea6bdc17 )	/* characters (set 1) */
-		ROM_LOAD( "j19_b08.bin", 0x180000, 0x40000, 0xf9387966 )	/* characters (set 2) */
-		/* second half empty */
-	
-		ROM_REGION( 0x200000, REGION_GFX2, 0 ) /* graphics */
-		ROM_LOAD( "k08_b10.bin", 0x000000, 0x80000, 0x0b1035b1 )	/* sprites (set 1) */
-		ROM_LOAD( "j08_b06.bin", 0x080000, 0x40000, 0x081a0566 )	/* sprites (set 2) */
-		/* second half empty */
-		ROM_LOAD( "k02_b09.bin", 0x100000, 0x80000, 0xe76b3c19 )	/* sprites (set 1) */
-		ROM_LOAD( "j02_b05.bin", 0x180000, 0x40000, 0x19a261f2 )	/* sprites (set 2) */
+		ROM_LOAD( "k19_b12.bin", 0x100000, 0x80000, 0xea6bdc17 );/* characters (set 1) */
+		ROM_LOAD( "j19_b08.bin", 0x180000, 0x40000, 0xf9387966 );/* characters (set 2) */
 		/* second half empty */
 	
-		ROM_REGION( 0x0100, REGION_PROMS, 0 )
-		ROM_LOAD( "821a08.h14",  0x0000, 0x0100, 0x7da55800 )	/* priority encoder (not used) */
-	
-		ROM_REGION( 0x40000, REGION_SOUND1, 0 ) /* samples for 007232 */
-		ROM_LOAD( "875b04.bin",  0x00000, 0x40000, 0x4e209ac8 )
-	ROM_END
-	
-	ROM_START( aliens2 )
-		ROM_REGION( 0x38000, REGION_CPU1, 0 ) /* code + banked roms */
-		ROM_LOAD( "e24_p02.bin", 0x10000, 0x08000, 0x4edd707d )
-		ROM_CONTINUE(            0x08000, 0x08000 )
-		ROM_LOAD( "c24_n01.bin", 0x18000, 0x20000, 0x106cf59c )
-	
-		ROM_REGION( 0x10000, REGION_CPU2, 0 ) /* 64k for the sound CPU */
-		ROM_LOAD( "g04_b03.bin", 0x00000, 0x08000, 0x1ac4d283 )
-	
-		ROM_REGION( 0x200000, REGION_GFX1, 0 ) /* graphics */
-		ROM_LOAD( "k13_b11.bin", 0x000000, 0x80000, 0x89c5c885 )	/* characters (set 1) */
-		ROM_LOAD( "j13_b07.bin", 0x080000, 0x40000, 0xe9c56d66 )	/* characters (set 2) */
+		ROM_REGION( 0x200000, REGION_GFX2, 0 );/* graphics */
+		ROM_LOAD( "k08_b10.bin", 0x000000, 0x80000, 0x0b1035b1 );/* sprites (set 1) */
+		ROM_LOAD( "j08_b06.bin", 0x080000, 0x40000, 0x081a0566 );/* sprites (set 2) */
 		/* second half empty */
-		ROM_LOAD( "k19_b12.bin", 0x100000, 0x80000, 0xea6bdc17 )	/* characters (set 1) */
-		ROM_LOAD( "j19_b08.bin", 0x180000, 0x40000, 0xf9387966 )	/* characters (set 2) */
+		ROM_LOAD( "k02_b09.bin", 0x100000, 0x80000, 0xe76b3c19 );/* sprites (set 1) */
+		ROM_LOAD( "j02_b05.bin", 0x180000, 0x40000, 0x19a261f2 );/* sprites (set 2) */
 		/* second half empty */
 	
-		ROM_REGION( 0x200000, REGION_GFX2, 0 ) /* graphics */
-		ROM_LOAD( "k08_b10.bin", 0x000000, 0x80000, 0x0b1035b1 )	/* sprites (set 1) */
-		ROM_LOAD( "j08_b06.bin", 0x080000, 0x40000, 0x081a0566 )	/* sprites (set 2) */
+		ROM_REGION( 0x0100, REGION_PROMS, 0 );
+		ROM_LOAD( "821a08.h14",  0x0000, 0x0100, 0x7da55800 );/* priority encoder (not used) */
+	
+		ROM_REGION( 0x40000, REGION_SOUND1, 0 );/* samples for 007232 */
+		ROM_LOAD( "875b04.bin",  0x00000, 0x40000, 0x4e209ac8 );
+	ROM_END(); }}; 
+	
+	static RomLoadPtr rom_aliens2 = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x38000, REGION_CPU1, 0 );/* code + banked roms */
+		ROM_LOAD( "e24_p02.bin", 0x10000, 0x08000, 0x4edd707d );
+		ROM_CONTINUE(            0x08000, 0x08000 );
+		ROM_LOAD( "c24_n01.bin", 0x18000, 0x20000, 0x106cf59c );
+	
+		ROM_REGION( 0x10000, REGION_CPU2, 0 );/* 64k for the sound CPU */
+		ROM_LOAD( "g04_b03.bin", 0x00000, 0x08000, 0x1ac4d283 );
+	
+		ROM_REGION( 0x200000, REGION_GFX1, 0 );/* graphics */
+		ROM_LOAD( "k13_b11.bin", 0x000000, 0x80000, 0x89c5c885 );/* characters (set 1) */
+		ROM_LOAD( "j13_b07.bin", 0x080000, 0x40000, 0xe9c56d66 );/* characters (set 2) */
 		/* second half empty */
-		ROM_LOAD( "k02_b09.bin", 0x100000, 0x80000, 0xe76b3c19 )	/* sprites (set 1) */
-		ROM_LOAD( "j02_b05.bin", 0x180000, 0x40000, 0x19a261f2 )	/* sprites (set 2) */
-		/* second half empty */
-	
-		ROM_REGION( 0x0100, REGION_PROMS, 0 )
-		ROM_LOAD( "821a08.h14",  0x0000, 0x0100, 0x7da55800 )	/* priority encoder (not used) */
-	
-		ROM_REGION( 0x40000, REGION_SOUND1, 0 ) /* samples for 007232 */
-		ROM_LOAD( "875b04.bin",  0x00000, 0x40000, 0x4e209ac8 )
-	ROM_END
-	
-	ROM_START( aliensu )
-		ROM_REGION( 0x38000, REGION_CPU1, 0 ) /* code + banked roms */
-		ROM_LOAD( "e24_n02.bin", 0x10000, 0x08000, 0x24dd612e )
-		ROM_CONTINUE(            0x08000, 0x08000 )
-		ROM_LOAD( "c24_n01.bin", 0x18000, 0x20000, 0x106cf59c )
-	
-		ROM_REGION( 0x10000, REGION_CPU2, 0 ) /* 64k for the sound CPU */
-		ROM_LOAD( "g04_b03.bin", 0x00000, 0x08000, 0x1ac4d283 )
-	
-		ROM_REGION( 0x200000, REGION_GFX1, 0 ) /* graphics */
-		ROM_LOAD( "k13_b11.bin", 0x000000, 0x80000, 0x89c5c885 )	/* characters (set 1) */
-		ROM_LOAD( "j13_b07.bin", 0x080000, 0x40000, 0xe9c56d66 )	/* characters (set 2) */
-		/* second half empty */
-		ROM_LOAD( "k19_b12.bin", 0x100000, 0x80000, 0xea6bdc17 )	/* characters (set 1) */
-		ROM_LOAD( "j19_b08.bin", 0x180000, 0x40000, 0xf9387966 )	/* characters (set 2) */
+		ROM_LOAD( "k19_b12.bin", 0x100000, 0x80000, 0xea6bdc17 );/* characters (set 1) */
+		ROM_LOAD( "j19_b08.bin", 0x180000, 0x40000, 0xf9387966 );/* characters (set 2) */
 		/* second half empty */
 	
-		ROM_REGION( 0x200000, REGION_GFX2, 0 ) /* graphics */
-		ROM_LOAD( "k08_b10.bin", 0x000000, 0x80000, 0x0b1035b1 )	/* sprites (set 1) */
-		ROM_LOAD( "j08_b06.bin", 0x080000, 0x40000, 0x081a0566 )	/* sprites (set 2) */
+		ROM_REGION( 0x200000, REGION_GFX2, 0 );/* graphics */
+		ROM_LOAD( "k08_b10.bin", 0x000000, 0x80000, 0x0b1035b1 );/* sprites (set 1) */
+		ROM_LOAD( "j08_b06.bin", 0x080000, 0x40000, 0x081a0566 );/* sprites (set 2) */
 		/* second half empty */
-		ROM_LOAD( "k02_b09.bin", 0x100000, 0x80000, 0xe76b3c19 )	/* sprites (set 1) */
-		ROM_LOAD( "j02_b05.bin", 0x180000, 0x40000, 0x19a261f2 )	/* sprites (set 2) */
-		/* second half empty */
-	
-		ROM_REGION( 0x0100, REGION_PROMS, 0 )
-		ROM_LOAD( "821a08.h14",  0x0000, 0x0100, 0x7da55800 )	/* priority encoder (not used) */
-	
-		ROM_REGION( 0x40000, REGION_SOUND1, 0 ) /* samples for 007232 */
-		ROM_LOAD( "875b04.bin",  0x00000, 0x40000, 0x4e209ac8 )
-	ROM_END
-	
-	ROM_START( aliensj )
-		ROM_REGION( 0x38000, REGION_CPU1, 0 ) /* code + banked roms */
-		ROM_LOAD( "875m02.e24",  0x10000, 0x08000, 0x54a774e5 )
-		ROM_CONTINUE(            0x08000, 0x08000 )
-		ROM_LOAD( "875m01.c24",  0x18000, 0x20000, 0x1663d3dc )
-	
-		ROM_REGION( 0x10000, REGION_CPU2, 0 ) /* 64k for the sound CPU */
-		ROM_LOAD( "875k03.g4",   0x00000, 0x08000, 0xbd86264d )
-	
-		ROM_REGION( 0x200000, REGION_GFX1, 0 ) /* graphics */
-		ROM_LOAD( "k13_b11.bin", 0x000000, 0x80000, 0x89c5c885 )	/* characters (set 1) */
-		ROM_LOAD( "j13_b07.bin", 0x080000, 0x40000, 0xe9c56d66 )	/* characters (set 2) */
-		/* second half empty */
-		ROM_LOAD( "k19_b12.bin", 0x100000, 0x80000, 0xea6bdc17 )	/* characters (set 1) */
-		ROM_LOAD( "j19_b08.bin", 0x180000, 0x40000, 0xf9387966 )	/* characters (set 2) */
+		ROM_LOAD( "k02_b09.bin", 0x100000, 0x80000, 0xe76b3c19 );/* sprites (set 1) */
+		ROM_LOAD( "j02_b05.bin", 0x180000, 0x40000, 0x19a261f2 );/* sprites (set 2) */
 		/* second half empty */
 	
-		ROM_REGION( 0x200000, REGION_GFX2, 0 ) /* graphics */
-		ROM_LOAD( "k08_b10.bin", 0x000000, 0x80000, 0x0b1035b1 )	/* sprites (set 1) */
-		ROM_LOAD( "j08_b06.bin", 0x080000, 0x40000, 0x081a0566 )	/* sprites (set 2) */
+		ROM_REGION( 0x0100, REGION_PROMS, 0 );
+		ROM_LOAD( "821a08.h14",  0x0000, 0x0100, 0x7da55800 );/* priority encoder (not used) */
+	
+		ROM_REGION( 0x40000, REGION_SOUND1, 0 );/* samples for 007232 */
+		ROM_LOAD( "875b04.bin",  0x00000, 0x40000, 0x4e209ac8 );
+	ROM_END(); }}; 
+	
+	static RomLoadPtr rom_aliensu = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x38000, REGION_CPU1, 0 );/* code + banked roms */
+		ROM_LOAD( "e24_n02.bin", 0x10000, 0x08000, 0x24dd612e );
+		ROM_CONTINUE(            0x08000, 0x08000 );
+		ROM_LOAD( "c24_n01.bin", 0x18000, 0x20000, 0x106cf59c );
+	
+		ROM_REGION( 0x10000, REGION_CPU2, 0 );/* 64k for the sound CPU */
+		ROM_LOAD( "g04_b03.bin", 0x00000, 0x08000, 0x1ac4d283 );
+	
+		ROM_REGION( 0x200000, REGION_GFX1, 0 );/* graphics */
+		ROM_LOAD( "k13_b11.bin", 0x000000, 0x80000, 0x89c5c885 );/* characters (set 1) */
+		ROM_LOAD( "j13_b07.bin", 0x080000, 0x40000, 0xe9c56d66 );/* characters (set 2) */
 		/* second half empty */
-		ROM_LOAD( "k02_b09.bin", 0x100000, 0x80000, 0xe76b3c19 )	/* sprites (set 1) */
-		ROM_LOAD( "j02_b05.bin", 0x180000, 0x40000, 0x19a261f2 )	/* sprites (set 2) */
+		ROM_LOAD( "k19_b12.bin", 0x100000, 0x80000, 0xea6bdc17 );/* characters (set 1) */
+		ROM_LOAD( "j19_b08.bin", 0x180000, 0x40000, 0xf9387966 );/* characters (set 2) */
 		/* second half empty */
 	
-		ROM_REGION( 0x0100, REGION_PROMS, 0 )
-		ROM_LOAD( "821a08.h14",  0x0000, 0x0100, 0x7da55800 )	/* priority encoder (not used) */
+		ROM_REGION( 0x200000, REGION_GFX2, 0 );/* graphics */
+		ROM_LOAD( "k08_b10.bin", 0x000000, 0x80000, 0x0b1035b1 );/* sprites (set 1) */
+		ROM_LOAD( "j08_b06.bin", 0x080000, 0x40000, 0x081a0566 );/* sprites (set 2) */
+		/* second half empty */
+		ROM_LOAD( "k02_b09.bin", 0x100000, 0x80000, 0xe76b3c19 );/* sprites (set 1) */
+		ROM_LOAD( "j02_b05.bin", 0x180000, 0x40000, 0x19a261f2 );/* sprites (set 2) */
+		/* second half empty */
 	
-		ROM_REGION( 0x40000, REGION_SOUND1, 0 ) /* samples for 007232 */
-		ROM_LOAD( "875b04.bin",  0x00000, 0x40000, 0x4e209ac8 )
-	ROM_END
+		ROM_REGION( 0x0100, REGION_PROMS, 0 );
+		ROM_LOAD( "821a08.h14",  0x0000, 0x0100, 0x7da55800 );/* priority encoder (not used) */
+	
+		ROM_REGION( 0x40000, REGION_SOUND1, 0 );/* samples for 007232 */
+		ROM_LOAD( "875b04.bin",  0x00000, 0x40000, 0x4e209ac8 );
+	ROM_END(); }}; 
+	
+	static RomLoadPtr rom_aliensj = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x38000, REGION_CPU1, 0 );/* code + banked roms */
+		ROM_LOAD( "875m02.e24",  0x10000, 0x08000, 0x54a774e5 );
+		ROM_CONTINUE(            0x08000, 0x08000 );
+		ROM_LOAD( "875m01.c24",  0x18000, 0x20000, 0x1663d3dc );
+	
+		ROM_REGION( 0x10000, REGION_CPU2, 0 );/* 64k for the sound CPU */
+		ROM_LOAD( "875k03.g4",   0x00000, 0x08000, 0xbd86264d );
+	
+		ROM_REGION( 0x200000, REGION_GFX1, 0 );/* graphics */
+		ROM_LOAD( "k13_b11.bin", 0x000000, 0x80000, 0x89c5c885 );/* characters (set 1) */
+		ROM_LOAD( "j13_b07.bin", 0x080000, 0x40000, 0xe9c56d66 );/* characters (set 2) */
+		/* second half empty */
+		ROM_LOAD( "k19_b12.bin", 0x100000, 0x80000, 0xea6bdc17 );/* characters (set 1) */
+		ROM_LOAD( "j19_b08.bin", 0x180000, 0x40000, 0xf9387966 );/* characters (set 2) */
+		/* second half empty */
+	
+		ROM_REGION( 0x200000, REGION_GFX2, 0 );/* graphics */
+		ROM_LOAD( "k08_b10.bin", 0x000000, 0x80000, 0x0b1035b1 );/* sprites (set 1) */
+		ROM_LOAD( "j08_b06.bin", 0x080000, 0x40000, 0x081a0566 );/* sprites (set 2) */
+		/* second half empty */
+		ROM_LOAD( "k02_b09.bin", 0x100000, 0x80000, 0xe76b3c19 );/* sprites (set 1) */
+		ROM_LOAD( "j02_b05.bin", 0x180000, 0x40000, 0x19a261f2 );/* sprites (set 2) */
+		/* second half empty */
+	
+		ROM_REGION( 0x0100, REGION_PROMS, 0 );
+		ROM_LOAD( "821a08.h14",  0x0000, 0x0100, 0x7da55800 );/* priority encoder (not used) */
+	
+		ROM_REGION( 0x40000, REGION_SOUND1, 0 );/* samples for 007232 */
+		ROM_LOAD( "875b04.bin",  0x00000, 0x40000, 0x4e209ac8 );
+	ROM_END(); }}; 
 	
 	
 	/***************************************************************************

@@ -207,25 +207,25 @@ public class aztarac
 	
 	***************************************************************************/
 	
-	ROM_START( aztarac )
-		ROM_REGION( 0xc000, REGION_CPU1, 0 )
-		ROM_LOAD16_BYTE( "l8_6.bin", 0x000000, 0x001000, 0x25f8da18 )
-		ROM_LOAD16_BYTE( "n8_0.bin", 0x000001, 0x001000, 0x04e20626 )
-		ROM_LOAD16_BYTE( "l7_7.bin", 0x002000, 0x001000, 0x230e244c )
-		ROM_LOAD16_BYTE( "n7_1.bin", 0x002001, 0x001000, 0x37b12697 )
-		ROM_LOAD16_BYTE( "l6_8.bin", 0x004000, 0x001000, 0x1293fb9d )
-		ROM_LOAD16_BYTE( "n6_2.bin", 0x004001, 0x001000, 0x712c206a )
-		ROM_LOAD16_BYTE( "l5_9.bin", 0x006000, 0x001000, 0x743a6501 )
-		ROM_LOAD16_BYTE( "n5_3.bin", 0x006001, 0x001000, 0xa65cbf99 )
-		ROM_LOAD16_BYTE( "l4_a.bin", 0x008000, 0x001000, 0x9cf1b0a1 )
-		ROM_LOAD16_BYTE( "n4_4.bin", 0x008001, 0x001000, 0x5f0080d5 )
-		ROM_LOAD16_BYTE( "l3_b.bin", 0x00a000, 0x001000, 0x8cc7f7fa )
-		ROM_LOAD16_BYTE( "n3_5.bin", 0x00a001, 0x001000, 0x40452376 )
+	static RomLoadPtr rom_aztarac = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0xc000, REGION_CPU1, 0 );
+		ROM_LOAD16_BYTE( "l8_6.bin", 0x000000, 0x001000, 0x25f8da18 );
+		ROM_LOAD16_BYTE( "n8_0.bin", 0x000001, 0x001000, 0x04e20626 );
+		ROM_LOAD16_BYTE( "l7_7.bin", 0x002000, 0x001000, 0x230e244c );
+		ROM_LOAD16_BYTE( "n7_1.bin", 0x002001, 0x001000, 0x37b12697 );
+		ROM_LOAD16_BYTE( "l6_8.bin", 0x004000, 0x001000, 0x1293fb9d );
+		ROM_LOAD16_BYTE( "n6_2.bin", 0x004001, 0x001000, 0x712c206a );
+		ROM_LOAD16_BYTE( "l5_9.bin", 0x006000, 0x001000, 0x743a6501 );
+		ROM_LOAD16_BYTE( "n5_3.bin", 0x006001, 0x001000, 0xa65cbf99 );
+		ROM_LOAD16_BYTE( "l4_a.bin", 0x008000, 0x001000, 0x9cf1b0a1 );
+		ROM_LOAD16_BYTE( "n4_4.bin", 0x008001, 0x001000, 0x5f0080d5 );
+		ROM_LOAD16_BYTE( "l3_b.bin", 0x00a000, 0x001000, 0x8cc7f7fa );
+		ROM_LOAD16_BYTE( "n3_5.bin", 0x00a001, 0x001000, 0x40452376 );
 	
-		ROM_REGION( 0x10000, REGION_CPU2, 0 )
-		ROM_LOAD( "j4_c.bin", 0x0000, 0x1000, 0xe897dfcd )
-		ROM_LOAD( "j3_d.bin", 0x1000, 0x1000, 0x4016de77 )
-	ROM_END
+		ROM_REGION( 0x10000, REGION_CPU2, 0 );
+		ROM_LOAD( "j4_c.bin", 0x0000, 0x1000, 0xe897dfcd );
+		ROM_LOAD( "j3_d.bin", 0x1000, 0x1000, 0x4016de77 );
+	ROM_END(); }}; 
 	
 	
 	GAME( 1983, aztarac, 0, aztarac, aztarac, 0, ROT0, "Centuri", "Aztarac" )

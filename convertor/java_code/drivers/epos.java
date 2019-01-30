@@ -235,80 +235,80 @@ public class epos
 	  Game driver(s)
 	
 	***************************************************************************/
-	ROM_START( suprglob )
-		ROM_REGION( 0x10000, REGION_CPU1, 0 )       /* 64k for code */
-		ROM_LOAD( "u10",			0x0000, 0x1000, 0xc0141324 )
-		ROM_LOAD( "u9",				0x1000, 0x1000, 0x58be8128 )
-		ROM_LOAD( "u8",				0x2000, 0x1000, 0x6d088c16 )
-		ROM_LOAD( "u7",				0x3000, 0x1000, 0xb2768203 )
-		ROM_LOAD( "u6",				0x4000, 0x1000, 0x976c8f46 )
-		ROM_LOAD( "u5",				0x5000, 0x1000, 0x340f5290 )
-		ROM_LOAD( "u4",				0x6000, 0x1000, 0x173bd589 )
-		ROM_LOAD( "u11",			0x7000, 0x0800, 0xd45b740d )
+	static RomLoadPtr rom_suprglob = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x10000, REGION_CPU1, 0 );      /* 64k for code */
+		ROM_LOAD( "u10",			0x0000, 0x1000, 0xc0141324 );
+		ROM_LOAD( "u9",				0x1000, 0x1000, 0x58be8128 );
+		ROM_LOAD( "u8",				0x2000, 0x1000, 0x6d088c16 );
+		ROM_LOAD( "u7",				0x3000, 0x1000, 0xb2768203 );
+		ROM_LOAD( "u6",				0x4000, 0x1000, 0x976c8f46 );
+		ROM_LOAD( "u5",				0x5000, 0x1000, 0x340f5290 );
+		ROM_LOAD( "u4",				0x6000, 0x1000, 0x173bd589 );
+		ROM_LOAD( "u11",			0x7000, 0x0800, 0xd45b740d );
 	
-		ROM_REGION( 0x0020, REGION_PROMS, 0 )
-		ROM_LOAD( "82s123.u66",		0x0000, 0x0020, 0xf4f6ddc5 )
-	ROM_END
+		ROM_REGION( 0x0020, REGION_PROMS, 0 );
+		ROM_LOAD( "82s123.u66",		0x0000, 0x0020, 0xf4f6ddc5 );
+	ROM_END(); }}; 
 	
-	ROM_START( theglob )
-		ROM_REGION( 0x10000, REGION_CPU1, 0 )       /* 64k for code */
-		ROM_LOAD( "globu10.bin",	0x0000, 0x1000, 0x08fdb495 )
-		ROM_LOAD( "globu9.bin",		0x1000, 0x1000, 0x827cd56c )
-		ROM_LOAD( "globu8.bin",		0x2000, 0x1000, 0xd1219966 )
-		ROM_LOAD( "globu7.bin",		0x3000, 0x1000, 0xb1649da7 )
-		ROM_LOAD( "globu6.bin",		0x4000, 0x1000, 0xb3457e67 )
-		ROM_LOAD( "globu5.bin",		0x5000, 0x1000, 0x89d582cd )
-		ROM_LOAD( "globu4.bin",		0x6000, 0x1000, 0x7ee9fdeb )
-		ROM_LOAD( "globu11.bin",	0x7000, 0x0800, 0x9e05dee3 )
+	static RomLoadPtr rom_theglob = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x10000, REGION_CPU1, 0 );      /* 64k for code */
+		ROM_LOAD( "globu10.bin",	0x0000, 0x1000, 0x08fdb495 );
+		ROM_LOAD( "globu9.bin",		0x1000, 0x1000, 0x827cd56c );
+		ROM_LOAD( "globu8.bin",		0x2000, 0x1000, 0xd1219966 );
+		ROM_LOAD( "globu7.bin",		0x3000, 0x1000, 0xb1649da7 );
+		ROM_LOAD( "globu6.bin",		0x4000, 0x1000, 0xb3457e67 );
+		ROM_LOAD( "globu5.bin",		0x5000, 0x1000, 0x89d582cd );
+		ROM_LOAD( "globu4.bin",		0x6000, 0x1000, 0x7ee9fdeb );
+		ROM_LOAD( "globu11.bin",	0x7000, 0x0800, 0x9e05dee3 );
 	
-		ROM_REGION( 0x0020, REGION_PROMS, 0 )
-		ROM_LOAD( "82s123.u66",		0x0000, 0x0020, 0xf4f6ddc5 )
-	ROM_END
+		ROM_REGION( 0x0020, REGION_PROMS, 0 );
+		ROM_LOAD( "82s123.u66",		0x0000, 0x0020, 0xf4f6ddc5 );
+	ROM_END(); }}; 
 	
-	ROM_START( theglob2 )
-		ROM_REGION( 0x10000, REGION_CPU1, 0 )       /* 64k for code */
-		ROM_LOAD( "611293.u10",		0x0000, 0x1000, 0x870af7ce )
-		ROM_LOAD( "611293.u9",		0x1000, 0x1000, 0xa3679782 )
-		ROM_LOAD( "611293.u8",		0x2000, 0x1000, 0x67499d1a )
-		ROM_LOAD( "611293.u7",		0x3000, 0x1000, 0x55e53aac )
-		ROM_LOAD( "611293.u6",		0x4000, 0x1000, 0xc64ad743 )
-		ROM_LOAD( "611293.u5",		0x5000, 0x1000, 0xf93c3203 )
-		ROM_LOAD( "611293.u4",		0x6000, 0x1000, 0xceea0018 )
-		ROM_LOAD( "611293.u11",		0x7000, 0x0800, 0x6ac83f9b )
+	static RomLoadPtr rom_theglob2 = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x10000, REGION_CPU1, 0 );      /* 64k for code */
+		ROM_LOAD( "611293.u10",		0x0000, 0x1000, 0x870af7ce );
+		ROM_LOAD( "611293.u9",		0x1000, 0x1000, 0xa3679782 );
+		ROM_LOAD( "611293.u8",		0x2000, 0x1000, 0x67499d1a );
+		ROM_LOAD( "611293.u7",		0x3000, 0x1000, 0x55e53aac );
+		ROM_LOAD( "611293.u6",		0x4000, 0x1000, 0xc64ad743 );
+		ROM_LOAD( "611293.u5",		0x5000, 0x1000, 0xf93c3203 );
+		ROM_LOAD( "611293.u4",		0x6000, 0x1000, 0xceea0018 );
+		ROM_LOAD( "611293.u11",		0x7000, 0x0800, 0x6ac83f9b );
 	
-		ROM_REGION( 0x0020, REGION_PROMS, 0 )
-		ROM_LOAD( "82s123.u66",		0x0000, 0x0020, 0xf4f6ddc5 )
-	ROM_END
+		ROM_REGION( 0x0020, REGION_PROMS, 0 );
+		ROM_LOAD( "82s123.u66",		0x0000, 0x0020, 0xf4f6ddc5 );
+	ROM_END(); }}; 
 	
-	ROM_START( theglob3 )
-		ROM_REGION( 0x10000, REGION_CPU1, 0 )       /* 64k for code */
-		ROM_LOAD( "theglob3.u10",	0x0000, 0x1000, 0x969cfaf6 )
-		ROM_LOAD( "theglob3.u9",	0x1000, 0x1000, 0x00000000 )	/* bad, all 0xff's */
-		ROM_LOAD( "theglob3.u8",	0x2000, 0x1000, 0x1c1ca5c8 )
-		ROM_LOAD( "theglob3.u7",	0x3000, 0x1000, 0xa54b9d22 )
-		ROM_LOAD( "theglob3.u6",	0x4000, 0x1000, 0x5a6f82a9 )
-		ROM_LOAD( "theglob3.u5",	0x5000, 0x1000, 0x72f935db )
-		ROM_LOAD( "theglob3.u4",	0x6000, 0x1000, 0x81db53ad )
-		ROM_LOAD( "theglob3.u11",	0x7000, 0x0800, 0x0e2e6359 )
+	static RomLoadPtr rom_theglob3 = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x10000, REGION_CPU1, 0 );      /* 64k for code */
+		ROM_LOAD( "theglob3.u10",	0x0000, 0x1000, 0x969cfaf6 );
+		ROM_LOAD( "theglob3.u9",	0x1000, 0x1000, 0x00000000 );/* bad, all 0xff's */
+		ROM_LOAD( "theglob3.u8",	0x2000, 0x1000, 0x1c1ca5c8 );
+		ROM_LOAD( "theglob3.u7",	0x3000, 0x1000, 0xa54b9d22 );
+		ROM_LOAD( "theglob3.u6",	0x4000, 0x1000, 0x5a6f82a9 );
+		ROM_LOAD( "theglob3.u5",	0x5000, 0x1000, 0x72f935db );
+		ROM_LOAD( "theglob3.u4",	0x6000, 0x1000, 0x81db53ad );
+		ROM_LOAD( "theglob3.u11",	0x7000, 0x0800, 0x0e2e6359 );
 	
-		ROM_REGION( 0x0020, REGION_PROMS, 0 )
-		ROM_LOAD( "82s123.u66",		0x0000, 0x0020, 0xf4f6ddc5 )
-	ROM_END
+		ROM_REGION( 0x0020, REGION_PROMS, 0 );
+		ROM_LOAD( "82s123.u66",		0x0000, 0x0020, 0xf4f6ddc5 );
+	ROM_END(); }}; 
 	
-	ROM_START( igmo )
-		ROM_REGION( 0x10000, REGION_CPU1, 0 )       /* 64k for code */
-		ROM_LOAD( "igmo-u10.732",	0x0000, 0x1000, 0xa9f691a4 )
-		ROM_LOAD( "igmo-u9.732",	0x1000, 0x1000, 0x3c133c97 )
-		ROM_LOAD( "igmo-u8.732",	0x2000, 0x1000, 0x5692f8d8 )
-		ROM_LOAD( "igmo-u7.732",	0x3000, 0x1000, 0x630ae2ed )
-		ROM_LOAD( "igmo-u6.732",	0x4000, 0x1000, 0xd3f20e1d )
-		ROM_LOAD( "igmo-u5.732",	0x5000, 0x1000, 0xe26bb391 )
-		ROM_LOAD( "igmo-u4.732",	0x6000, 0x1000, 0x762a4417 )
-		ROM_LOAD( "igmo-u11.716",	0x7000, 0x0800, 0x8c675837 )
+	static RomLoadPtr rom_igmo = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x10000, REGION_CPU1, 0 );      /* 64k for code */
+		ROM_LOAD( "igmo-u10.732",	0x0000, 0x1000, 0xa9f691a4 );
+		ROM_LOAD( "igmo-u9.732",	0x1000, 0x1000, 0x3c133c97 );
+		ROM_LOAD( "igmo-u8.732",	0x2000, 0x1000, 0x5692f8d8 );
+		ROM_LOAD( "igmo-u7.732",	0x3000, 0x1000, 0x630ae2ed );
+		ROM_LOAD( "igmo-u6.732",	0x4000, 0x1000, 0xd3f20e1d );
+		ROM_LOAD( "igmo-u5.732",	0x5000, 0x1000, 0xe26bb391 );
+		ROM_LOAD( "igmo-u4.732",	0x6000, 0x1000, 0x762a4417 );
+		ROM_LOAD( "igmo-u11.716",	0x7000, 0x0800, 0x8c675837 );
 	
-		ROM_REGION( 0x0020, REGION_PROMS, 0 )
-		ROM_LOAD( "82s123.u66",		0x0000, 0x0020, 0x00000000 )	/* missing */
-	ROM_END
+		ROM_REGION( 0x0020, REGION_PROMS, 0 );
+		ROM_LOAD( "82s123.u66",		0x0000, 0x0020, 0x00000000 );/* missing */
+	ROM_END(); }}; 
 	
 	
 	

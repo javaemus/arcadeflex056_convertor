@@ -458,70 +458,70 @@ public class victory
 	 *
 	 *************************************/
 	
-	ROM_START( victory )
-		ROM_REGION( 0x10000, REGION_CPU1, 0 )
-		ROM_LOAD( "vic3.j2",  0x0000, 0x1000, 0x4b614440 )
-		ROM_LOAD( "vic3.k2",  0x1000, 0x1000, 0x9f9eb12b )
-		ROM_LOAD( "vic3.kl2", 0x2000, 0x1000, 0xa0db4bf9 )
-		ROM_LOAD( "vic3.l2",  0x3000, 0x1000, 0x69855b46 )
-		ROM_LOAD( "vic3.m2",  0x4000, 0x1000, 0x1ddbe9d4 )
-		ROM_LOAD( "vic3.n2",  0x5000, 0x1000, 0xdbb53f1f )
-		ROM_LOAD( "vic3.p2",  0x6000, 0x1000, 0x9959e1c4 )
-		ROM_LOAD( "vic3.t2",  0x7000, 0x1000, 0x8f1b997a )
-		ROM_LOAD( "vic3.j1",  0x8000, 0x1000, 0x27e9e87b )
-		ROM_LOAD( "vic3.k1",  0x9000, 0x1000, 0x418d9b80 )
-		ROM_LOAD( "vic3.kl1", 0xa000, 0x1000, 0x2b7e626f )
-		ROM_LOAD( "vic3.l1",  0xb000, 0x1000, 0x7bb8e1f5 )
+	static RomLoadPtr rom_victory = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x10000, REGION_CPU1, 0 );
+		ROM_LOAD( "vic3.j2",  0x0000, 0x1000, 0x4b614440 );
+		ROM_LOAD( "vic3.k2",  0x1000, 0x1000, 0x9f9eb12b );
+		ROM_LOAD( "vic3.kl2", 0x2000, 0x1000, 0xa0db4bf9 );
+		ROM_LOAD( "vic3.l2",  0x3000, 0x1000, 0x69855b46 );
+		ROM_LOAD( "vic3.m2",  0x4000, 0x1000, 0x1ddbe9d4 );
+		ROM_LOAD( "vic3.n2",  0x5000, 0x1000, 0xdbb53f1f );
+		ROM_LOAD( "vic3.p2",  0x6000, 0x1000, 0x9959e1c4 );
+		ROM_LOAD( "vic3.t2",  0x7000, 0x1000, 0x8f1b997a );
+		ROM_LOAD( "vic3.j1",  0x8000, 0x1000, 0x27e9e87b );
+		ROM_LOAD( "vic3.k1",  0x9000, 0x1000, 0x418d9b80 );
+		ROM_LOAD( "vic3.kl1", 0xa000, 0x1000, 0x2b7e626f );
+		ROM_LOAD( "vic3.l1",  0xb000, 0x1000, 0x7bb8e1f5 );
 	
-		ROM_REGION( 0x10000, REGION_CPU2, 0 )
-		ROM_LOAD( "vic1.7bc", 0xc000, 0x1000, 0xd4927560 )
-		ROM_LOAD( "vic1.7c",  0xd000, 0x1000, 0x059efab5 )
-		ROM_LOAD( "vic1.7d",  0xe000, 0x1000, 0x82c4767c )
-		ROM_LOAD( "vic1.7e",  0xf000, 0x1000, 0xa19be034 )
+		ROM_REGION( 0x10000, REGION_CPU2, 0 );
+		ROM_LOAD( "vic1.7bc", 0xc000, 0x1000, 0xd4927560 );
+		ROM_LOAD( "vic1.7c",  0xd000, 0x1000, 0x059efab5 );
+		ROM_LOAD( "vic1.7d",  0xe000, 0x1000, 0x82c4767c );
+		ROM_LOAD( "vic1.7e",  0xf000, 0x1000, 0xa19be034 );
 	
-		ROM_REGION( 0x1e0, REGION_PROMS, 0 )
-		ROM_LOAD( "hsc17l",   0x0000, 0x0100, 0xb2c75dee )
-		ROM_LOAD( "hsc13e",   0x0100, 0x0020, 0xa107c4f5 )
-		ROM_LOAD( "hsc16a",   0x0120, 0x0020, 0x5f06ad26 )
-		ROM_LOAD( "hsc19b",   0x0140, 0x0020, 0x86165f1e )
-		ROM_LOAD( "hsc19c",   0x0160, 0x0020, 0xfd27a57a )
-		ROM_LOAD( "hsc19d",   0x0180, 0x0020, 0x09c4dbf6 )
-		ROM_LOAD( "hsc19e",   0x01a0, 0x0020, 0xce1464f4 )
-		ROM_LOAD( "3j",       0x01c0, 0x0020, 0x5fb6b158 )
-	ROM_END
+		ROM_REGION( 0x1e0, REGION_PROMS, 0 );
+		ROM_LOAD( "hsc17l",   0x0000, 0x0100, 0xb2c75dee );
+		ROM_LOAD( "hsc13e",   0x0100, 0x0020, 0xa107c4f5 );
+		ROM_LOAD( "hsc16a",   0x0120, 0x0020, 0x5f06ad26 );
+		ROM_LOAD( "hsc19b",   0x0140, 0x0020, 0x86165f1e );
+		ROM_LOAD( "hsc19c",   0x0160, 0x0020, 0xfd27a57a );
+		ROM_LOAD( "hsc19d",   0x0180, 0x0020, 0x09c4dbf6 );
+		ROM_LOAD( "hsc19e",   0x01a0, 0x0020, 0xce1464f4 );
+		ROM_LOAD( "3j",       0x01c0, 0x0020, 0x5fb6b158 );
+	ROM_END(); }}; 
 	
 	
-	ROM_START( victorba )
-		ROM_REGION( 0x10000, REGION_CPU1, 0 )
-		ROM_LOAD( "j2.rom",  0x0000, 0x1000, 0xdd788e93 )
-		ROM_LOAD( "k2.rom",  0x1000, 0x1000, 0xf47bf046 )
-		ROM_LOAD( "kl2.rom", 0x2000, 0x1000, 0xbaef885e )
-		ROM_LOAD( "l2.rom",  0x3000, 0x1000, 0x739e4799 )
-		ROM_LOAD( "m2.rom",  0x4000, 0x1000, 0xa88185e6 )
-		ROM_LOAD( "n2.rom",  0x5000, 0x1000, 0x6724eb01 )
-		ROM_LOAD( "p2.rom",  0x6000, 0x1000, 0x2cf34ad7 )
-		ROM_LOAD( "t2.rom",  0x7000, 0x1000, 0x89bb0359 )
-		ROM_LOAD( "j1.rom",  0x8000, 0x1000, 0x5e415084 )
-		ROM_LOAD( "k1.rom",  0x9000, 0x1000, 0x3f327dff )
-		ROM_LOAD( "kl1.rom", 0xa000, 0x1000, 0x6c82ebca )
-		ROM_LOAD( "l1.rom",  0xb000, 0x1000, 0x03b89d8a )
+	static RomLoadPtr rom_victorba = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x10000, REGION_CPU1, 0 );
+		ROM_LOAD( "j2.rom",  0x0000, 0x1000, 0xdd788e93 );
+		ROM_LOAD( "k2.rom",  0x1000, 0x1000, 0xf47bf046 );
+		ROM_LOAD( "kl2.rom", 0x2000, 0x1000, 0xbaef885e );
+		ROM_LOAD( "l2.rom",  0x3000, 0x1000, 0x739e4799 );
+		ROM_LOAD( "m2.rom",  0x4000, 0x1000, 0xa88185e6 );
+		ROM_LOAD( "n2.rom",  0x5000, 0x1000, 0x6724eb01 );
+		ROM_LOAD( "p2.rom",  0x6000, 0x1000, 0x2cf34ad7 );
+		ROM_LOAD( "t2.rom",  0x7000, 0x1000, 0x89bb0359 );
+		ROM_LOAD( "j1.rom",  0x8000, 0x1000, 0x5e415084 );
+		ROM_LOAD( "k1.rom",  0x9000, 0x1000, 0x3f327dff );
+		ROM_LOAD( "kl1.rom", 0xa000, 0x1000, 0x6c82ebca );
+		ROM_LOAD( "l1.rom",  0xb000, 0x1000, 0x03b89d8a );
 	
-		ROM_REGION( 0x10000, REGION_CPU2, 0 )
-		ROM_LOAD( "vic1.7bc", 0xc000, 0x1000, 0xd4927560 )
-		ROM_LOAD( "vic1.7c",  0xd000, 0x1000, 0x059efab5 )
-		ROM_LOAD( "vic1.7d",  0xe000, 0x1000, 0x82c4767c )
-		ROM_LOAD( "vic1.7e",  0xf000, 0x1000, 0xa19be034 )
+		ROM_REGION( 0x10000, REGION_CPU2, 0 );
+		ROM_LOAD( "vic1.7bc", 0xc000, 0x1000, 0xd4927560 );
+		ROM_LOAD( "vic1.7c",  0xd000, 0x1000, 0x059efab5 );
+		ROM_LOAD( "vic1.7d",  0xe000, 0x1000, 0x82c4767c );
+		ROM_LOAD( "vic1.7e",  0xf000, 0x1000, 0xa19be034 );
 	
-		ROM_REGION( 0x1e0, REGION_PROMS, 0 )
-		ROM_LOAD( "hsc17l",   0x0000, 0x0100, 0xb2c75dee )
-		ROM_LOAD( "hsc13e",   0x0100, 0x0020, 0xa107c4f5 )
-		ROM_LOAD( "hsc16a",   0x0120, 0x0020, 0x5f06ad26 )
-		ROM_LOAD( "hsc19b",   0x0140, 0x0020, 0x86165f1e )
-		ROM_LOAD( "hsc19c",   0x0160, 0x0020, 0xfd27a57a )
-		ROM_LOAD( "hsc19d",   0x0180, 0x0020, 0x09c4dbf6 )
-		ROM_LOAD( "hsc19e",   0x01a0, 0x0020, 0xce1464f4 )
-		ROM_LOAD( "3j",       0x01c0, 0x0020, 0x5fb6b158 )
-	ROM_END
+		ROM_REGION( 0x1e0, REGION_PROMS, 0 );
+		ROM_LOAD( "hsc17l",   0x0000, 0x0100, 0xb2c75dee );
+		ROM_LOAD( "hsc13e",   0x0100, 0x0020, 0xa107c4f5 );
+		ROM_LOAD( "hsc16a",   0x0120, 0x0020, 0x5f06ad26 );
+		ROM_LOAD( "hsc19b",   0x0140, 0x0020, 0x86165f1e );
+		ROM_LOAD( "hsc19c",   0x0160, 0x0020, 0xfd27a57a );
+		ROM_LOAD( "hsc19d",   0x0180, 0x0020, 0x09c4dbf6 );
+		ROM_LOAD( "hsc19e",   0x01a0, 0x0020, 0xce1464f4 );
+		ROM_LOAD( "3j",       0x01c0, 0x0020, 0x5fb6b158 );
+	ROM_END(); }}; 
 	
 	
 	

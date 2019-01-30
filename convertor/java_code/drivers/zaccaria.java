@@ -749,145 +749,145 @@ public class zaccaria
 	
 	***************************************************************************/
 	
-	ROM_START( monymony )
-		ROM_REGION( 0x10000, REGION_CPU1, 0 )     /* 64k for code */
-		ROM_LOAD( "1a",           0x0000, 0x1000, 0x13c227ca )
-		ROM_CONTINUE(             0x8000, 0x1000 )
-		ROM_LOAD( "1b",           0x1000, 0x1000, 0x87372545 )
-		ROM_CONTINUE(             0x9000, 0x1000 )
-		ROM_LOAD( "1c",           0x2000, 0x1000, 0x6aea9c01 )
-		ROM_CONTINUE(             0xa000, 0x1000 )
-		ROM_LOAD( "1d",           0x3000, 0x1000, 0x5fdec451 )
-		ROM_CONTINUE(             0xb000, 0x1000 )
-		ROM_LOAD( "2a",           0x4000, 0x1000, 0xaf830e3c )
-		ROM_CONTINUE(             0xc000, 0x1000 )
-		ROM_LOAD( "2c",           0x5000, 0x1000, 0x31da62b1 )
-		ROM_CONTINUE(             0xd000, 0x1000 )
+	static RomLoadPtr rom_monymony = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x10000, REGION_CPU1, 0 );    /* 64k for code */
+		ROM_LOAD( "1a",           0x0000, 0x1000, 0x13c227ca );
+		ROM_CONTINUE(             0x8000, 0x1000 );
+		ROM_LOAD( "1b",           0x1000, 0x1000, 0x87372545 );
+		ROM_CONTINUE(             0x9000, 0x1000 );
+		ROM_LOAD( "1c",           0x2000, 0x1000, 0x6aea9c01 );
+		ROM_CONTINUE(             0xa000, 0x1000 );
+		ROM_LOAD( "1d",           0x3000, 0x1000, 0x5fdec451 );
+		ROM_CONTINUE(             0xb000, 0x1000 );
+		ROM_LOAD( "2a",           0x4000, 0x1000, 0xaf830e3c );
+		ROM_CONTINUE(             0xc000, 0x1000 );
+		ROM_LOAD( "2c",           0x5000, 0x1000, 0x31da62b1 );
+		ROM_CONTINUE(             0xd000, 0x1000 );
 	
-		ROM_REGION( 0x10000, REGION_CPU2, 0 ) /* 64k for first 6802 */
-		ROM_LOAD( "2g",           0xa000, 0x2000, 0x78b01b98 )
-		ROM_LOAD( "1i",           0xe000, 0x2000, 0x94e3858b )
+		ROM_REGION( 0x10000, REGION_CPU2, 0 );/* 64k for first 6802 */
+		ROM_LOAD( "2g",           0xa000, 0x2000, 0x78b01b98 );
+		ROM_LOAD( "1i",           0xe000, 0x2000, 0x94e3858b );
 	
-		ROM_REGION( 0x10000, REGION_CPU3, 0 ) /* 64k for second 6802 */
-		ROM_LOAD( "1h",           0xa000, 0x1000, 0xaad76193 )
-		ROM_CONTINUE(             0xe000, 0x1000 )
-		ROM_LOAD( "1g",           0xb000, 0x1000, 0x1e8ffe3e )
-		ROM_CONTINUE(             0xf000, 0x1000 )
+		ROM_REGION( 0x10000, REGION_CPU3, 0 );/* 64k for second 6802 */
+		ROM_LOAD( "1h",           0xa000, 0x1000, 0xaad76193 );
+		ROM_CONTINUE(             0xe000, 0x1000 );
+		ROM_LOAD( "1g",           0xb000, 0x1000, 0x1e8ffe3e );
+		ROM_CONTINUE(             0xf000, 0x1000 );
 	
-		ROM_REGION( 0x6000, REGION_GFX1, ROMREGION_DISPOSE )
-		ROM_LOAD( "2d",           0x0000, 0x2000, 0x82ab4d1a )
-		ROM_LOAD( "1f",           0x2000, 0x2000, 0x40d4e4d1 )
-		ROM_LOAD( "1e",           0x4000, 0x2000, 0x36980455 )
+		ROM_REGION( 0x6000, REGION_GFX1, ROMREGION_DISPOSE );
+		ROM_LOAD( "2d",           0x0000, 0x2000, 0x82ab4d1a );
+		ROM_LOAD( "1f",           0x2000, 0x2000, 0x40d4e4d1 );
+		ROM_LOAD( "1e",           0x4000, 0x2000, 0x36980455 );
 	
-		ROM_REGION( 0x0400, REGION_PROMS, 0 )
-		ROM_LOAD( "monymony.9g",  0x0000, 0x0200, 0xfc9a0f21 )
-		ROM_LOAD( "monymony.9f",  0x0200, 0x0200, 0x93106704 )
-	ROM_END
+		ROM_REGION( 0x0400, REGION_PROMS, 0 );
+		ROM_LOAD( "monymony.9g",  0x0000, 0x0200, 0xfc9a0f21 );
+		ROM_LOAD( "monymony.9f",  0x0200, 0x0200, 0x93106704 );
+	ROM_END(); }}; 
 	
-	ROM_START( jackrabt )
-		ROM_REGION( 0x10000, REGION_CPU1, 0 )     /* 64k for code */
-		ROM_LOAD( "cpu-01.1a",    0x0000, 0x1000, 0x499efe97 )
-		ROM_CONTINUE(             0x8000, 0x1000 )
-		ROM_LOAD( "cpu-01.2l",    0x1000, 0x1000, 0x4772e557 )
-		ROM_LOAD( "cpu-01.3l",    0x2000, 0x1000, 0x1e844228 )
-		ROM_LOAD( "cpu-01.4l",    0x3000, 0x1000, 0xebffcc38 )
-		ROM_LOAD( "cpu-01.5l",    0x4000, 0x1000, 0x275e0ed6 )
-		ROM_LOAD( "cpu-01.6l",    0x5000, 0x1000, 0x8a20977a )
-		ROM_LOAD( "cpu-01.2h",    0x9000, 0x1000, 0x21f2be2a )
-		ROM_LOAD( "cpu-01.3h",    0xa000, 0x1000, 0x59077027 )
-		ROM_LOAD( "cpu-01.4h",    0xb000, 0x1000, 0x0b9db007 )
-		ROM_LOAD( "cpu-01.5h",    0xc000, 0x1000, 0x785e1a01 )
-		ROM_LOAD( "cpu-01.6h",    0xd000, 0x1000, 0xdd5979cf )
+	static RomLoadPtr rom_jackrabt = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x10000, REGION_CPU1, 0 );    /* 64k for code */
+		ROM_LOAD( "cpu-01.1a",    0x0000, 0x1000, 0x499efe97 );
+		ROM_CONTINUE(             0x8000, 0x1000 );
+		ROM_LOAD( "cpu-01.2l",    0x1000, 0x1000, 0x4772e557 );
+		ROM_LOAD( "cpu-01.3l",    0x2000, 0x1000, 0x1e844228 );
+		ROM_LOAD( "cpu-01.4l",    0x3000, 0x1000, 0xebffcc38 );
+		ROM_LOAD( "cpu-01.5l",    0x4000, 0x1000, 0x275e0ed6 );
+		ROM_LOAD( "cpu-01.6l",    0x5000, 0x1000, 0x8a20977a );
+		ROM_LOAD( "cpu-01.2h",    0x9000, 0x1000, 0x21f2be2a );
+		ROM_LOAD( "cpu-01.3h",    0xa000, 0x1000, 0x59077027 );
+		ROM_LOAD( "cpu-01.4h",    0xb000, 0x1000, 0x0b9db007 );
+		ROM_LOAD( "cpu-01.5h",    0xc000, 0x1000, 0x785e1a01 );
+		ROM_LOAD( "cpu-01.6h",    0xd000, 0x1000, 0xdd5979cf );
 	
-		ROM_REGION( 0x10000, REGION_CPU2, 0 ) /* 64k for first 6802 */
-		ROM_LOAD( "13snd.2g",     0xa000, 0x2000, 0xfc05654e )
-		ROM_LOAD( "9snd.1i",      0xe000, 0x2000, 0x3dab977f )
+		ROM_REGION( 0x10000, REGION_CPU2, 0 );/* 64k for first 6802 */
+		ROM_LOAD( "13snd.2g",     0xa000, 0x2000, 0xfc05654e );
+		ROM_LOAD( "9snd.1i",      0xe000, 0x2000, 0x3dab977f );
 	
-		ROM_REGION( 0x10000, REGION_CPU3, 0 ) /* 64k for second 6802 */
-		ROM_LOAD( "8snd.1h",      0xa000, 0x1000, 0xf4507111 )
-		ROM_CONTINUE(             0xe000, 0x1000 )
-		ROM_LOAD( "7snd.1g",      0xb000, 0x1000, 0xc722eff8 )
-		ROM_CONTINUE(             0xf000, 0x1000 )
+		ROM_REGION( 0x10000, REGION_CPU3, 0 );/* 64k for second 6802 */
+		ROM_LOAD( "8snd.1h",      0xa000, 0x1000, 0xf4507111 );
+		ROM_CONTINUE(             0xe000, 0x1000 );
+		ROM_LOAD( "7snd.1g",      0xb000, 0x1000, 0xc722eff8 );
+		ROM_CONTINUE(             0xf000, 0x1000 );
 	
-		ROM_REGION( 0x6000, REGION_GFX1, ROMREGION_DISPOSE )
-		ROM_LOAD( "1bg.2d",       0x0000, 0x2000, 0x9f880ef5 )
-		ROM_LOAD( "2bg.1f",       0x2000, 0x2000, 0xafc04cd7 )
-		ROM_LOAD( "3bg.1e",       0x4000, 0x2000, 0x14f23cdd )
+		ROM_REGION( 0x6000, REGION_GFX1, ROMREGION_DISPOSE );
+		ROM_LOAD( "1bg.2d",       0x0000, 0x2000, 0x9f880ef5 );
+		ROM_LOAD( "2bg.1f",       0x2000, 0x2000, 0xafc04cd7 );
+		ROM_LOAD( "3bg.1e",       0x4000, 0x2000, 0x14f23cdd );
 	
-		ROM_REGION( 0x0400, REGION_PROMS, 0 )
-		ROM_LOAD( "jr-ic9g",      0x0000, 0x0200, 0x85577107 )
-		ROM_LOAD( "jr-ic9f",      0x0200, 0x0200, 0x085914d1 )
-	ROM_END
+		ROM_REGION( 0x0400, REGION_PROMS, 0 );
+		ROM_LOAD( "jr-ic9g",      0x0000, 0x0200, 0x85577107 );
+		ROM_LOAD( "jr-ic9f",      0x0200, 0x0200, 0x085914d1 );
+	ROM_END(); }}; 
 	
-	ROM_START( jackrab2 )
-		ROM_REGION( 0x10000, REGION_CPU1, 0 )     /* 64k for code */
-		ROM_LOAD( "1cpu2.1a",     0x0000, 0x1000, 0xf9374113 )
-		ROM_CONTINUE(             0x8000, 0x1000 )
-		ROM_LOAD( "2cpu2.1b",     0x1000, 0x1000, 0x0a0eea4a )
-		ROM_CONTINUE(             0x9000, 0x1000 )
-		ROM_LOAD( "3cpu2.1c",     0x2000, 0x1000, 0x291f5772 )
-		ROM_CONTINUE(             0xa000, 0x1000 )
-		ROM_LOAD( "4cpu2.1d",     0x3000, 0x1000, 0x10972cfb )
-		ROM_CONTINUE(             0xb000, 0x1000 )
-		ROM_LOAD( "5cpu2.2a",     0x4000, 0x1000, 0xaa95d06d )
-		ROM_CONTINUE(             0xc000, 0x1000 )
-		ROM_LOAD( "6cpu2.2c",     0x5000, 0x1000, 0x404496eb )
-		ROM_CONTINUE(             0xd000, 0x1000 )
+	static RomLoadPtr rom_jackrab2 = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x10000, REGION_CPU1, 0 );    /* 64k for code */
+		ROM_LOAD( "1cpu2.1a",     0x0000, 0x1000, 0xf9374113 );
+		ROM_CONTINUE(             0x8000, 0x1000 );
+		ROM_LOAD( "2cpu2.1b",     0x1000, 0x1000, 0x0a0eea4a );
+		ROM_CONTINUE(             0x9000, 0x1000 );
+		ROM_LOAD( "3cpu2.1c",     0x2000, 0x1000, 0x291f5772 );
+		ROM_CONTINUE(             0xa000, 0x1000 );
+		ROM_LOAD( "4cpu2.1d",     0x3000, 0x1000, 0x10972cfb );
+		ROM_CONTINUE(             0xb000, 0x1000 );
+		ROM_LOAD( "5cpu2.2a",     0x4000, 0x1000, 0xaa95d06d );
+		ROM_CONTINUE(             0xc000, 0x1000 );
+		ROM_LOAD( "6cpu2.2c",     0x5000, 0x1000, 0x404496eb );
+		ROM_CONTINUE(             0xd000, 0x1000 );
 	
-		ROM_REGION( 0x10000, REGION_CPU2, 0 ) /* 64k for first 6802 */
-		ROM_LOAD( "13snd.2g",     0xa000, 0x2000, 0xfc05654e )
-		ROM_LOAD( "9snd.1i",      0xe000, 0x2000, 0x3dab977f )
+		ROM_REGION( 0x10000, REGION_CPU2, 0 );/* 64k for first 6802 */
+		ROM_LOAD( "13snd.2g",     0xa000, 0x2000, 0xfc05654e );
+		ROM_LOAD( "9snd.1i",      0xe000, 0x2000, 0x3dab977f );
 	
-		ROM_REGION( 0x10000, REGION_CPU3, 0 ) /* 64k for second 6802 */
-		ROM_LOAD( "8snd.1h",      0xa000, 0x1000, 0xf4507111 )
-		ROM_CONTINUE(             0xe000, 0x1000 )
-		ROM_LOAD( "7snd.1g",      0xb000, 0x1000, 0xc722eff8 )
-		ROM_CONTINUE(             0xf000, 0x1000 )
+		ROM_REGION( 0x10000, REGION_CPU3, 0 );/* 64k for second 6802 */
+		ROM_LOAD( "8snd.1h",      0xa000, 0x1000, 0xf4507111 );
+		ROM_CONTINUE(             0xe000, 0x1000 );
+		ROM_LOAD( "7snd.1g",      0xb000, 0x1000, 0xc722eff8 );
+		ROM_CONTINUE(             0xf000, 0x1000 );
 	
-		ROM_REGION( 0x6000, REGION_GFX1, ROMREGION_DISPOSE )
-		ROM_LOAD( "1bg.2d",       0x0000, 0x2000, 0x9f880ef5 )
-		ROM_LOAD( "2bg.1f",       0x2000, 0x2000, 0xafc04cd7 )
-		ROM_LOAD( "3bg.1e",       0x4000, 0x2000, 0x14f23cdd )
+		ROM_REGION( 0x6000, REGION_GFX1, ROMREGION_DISPOSE );
+		ROM_LOAD( "1bg.2d",       0x0000, 0x2000, 0x9f880ef5 );
+		ROM_LOAD( "2bg.1f",       0x2000, 0x2000, 0xafc04cd7 );
+		ROM_LOAD( "3bg.1e",       0x4000, 0x2000, 0x14f23cdd );
 	
-		ROM_REGION( 0x0400, REGION_PROMS, 0 )
-		ROM_LOAD( "jr-ic9g",      0x0000, 0x0200, 0x85577107 )
-		ROM_LOAD( "jr-ic9f",      0x0200, 0x0200, 0x085914d1 )
-	ROM_END
+		ROM_REGION( 0x0400, REGION_PROMS, 0 );
+		ROM_LOAD( "jr-ic9g",      0x0000, 0x0200, 0x85577107 );
+		ROM_LOAD( "jr-ic9f",      0x0200, 0x0200, 0x085914d1 );
+	ROM_END(); }}; 
 	
-	ROM_START( jackrabs )
-		ROM_REGION( 0x10000, REGION_CPU1, 0 )     /* 64k for code */
-		ROM_LOAD( "1cpu.1a",      0x0000, 0x1000, 0x6698dc65 )
-		ROM_CONTINUE(             0x8000, 0x1000 )
-		ROM_LOAD( "2cpu.1b",      0x1000, 0x1000, 0x42b32929 )
-		ROM_CONTINUE(             0x9000, 0x1000 )
-		ROM_LOAD( "3cpu.1c",      0x2000, 0x1000, 0x89b50c9a )
-		ROM_CONTINUE(             0xa000, 0x1000 )
-		ROM_LOAD( "4cpu.1d",      0x3000, 0x1000, 0xd5520665 )
-		ROM_CONTINUE(             0xb000, 0x1000 )
-		ROM_LOAD( "5cpu.2a",      0x4000, 0x1000, 0x0f9a093c )
-		ROM_CONTINUE(             0xc000, 0x1000 )
-		ROM_LOAD( "6cpu.2c",      0x5000, 0x1000, 0xf53d6356 )
-		ROM_CONTINUE(             0xd000, 0x1000 )
+	static RomLoadPtr rom_jackrabs = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x10000, REGION_CPU1, 0 );    /* 64k for code */
+		ROM_LOAD( "1cpu.1a",      0x0000, 0x1000, 0x6698dc65 );
+		ROM_CONTINUE(             0x8000, 0x1000 );
+		ROM_LOAD( "2cpu.1b",      0x1000, 0x1000, 0x42b32929 );
+		ROM_CONTINUE(             0x9000, 0x1000 );
+		ROM_LOAD( "3cpu.1c",      0x2000, 0x1000, 0x89b50c9a );
+		ROM_CONTINUE(             0xa000, 0x1000 );
+		ROM_LOAD( "4cpu.1d",      0x3000, 0x1000, 0xd5520665 );
+		ROM_CONTINUE(             0xb000, 0x1000 );
+		ROM_LOAD( "5cpu.2a",      0x4000, 0x1000, 0x0f9a093c );
+		ROM_CONTINUE(             0xc000, 0x1000 );
+		ROM_LOAD( "6cpu.2c",      0x5000, 0x1000, 0xf53d6356 );
+		ROM_CONTINUE(             0xd000, 0x1000 );
 	
-		ROM_REGION( 0x10000, REGION_CPU2, 0 ) /* 64k for first 6802 */
-		ROM_LOAD( "13snd.2g",     0xa000, 0x2000, 0xfc05654e )
-		ROM_LOAD( "9snd.1i",      0xe000, 0x2000, 0x3dab977f )
+		ROM_REGION( 0x10000, REGION_CPU2, 0 );/* 64k for first 6802 */
+		ROM_LOAD( "13snd.2g",     0xa000, 0x2000, 0xfc05654e );
+		ROM_LOAD( "9snd.1i",      0xe000, 0x2000, 0x3dab977f );
 	
-		ROM_REGION( 0x10000, REGION_CPU3, 0 ) /* 64k for second 6802 */
-		ROM_LOAD( "8snd.1h",      0xa000, 0x1000, 0xf4507111 )
-		ROM_CONTINUE(             0xe000, 0x1000 )
-		ROM_LOAD( "7snd.1g",      0xb000, 0x1000, 0xc722eff8 )
-		ROM_CONTINUE(             0xf000, 0x1000 )
+		ROM_REGION( 0x10000, REGION_CPU3, 0 );/* 64k for second 6802 */
+		ROM_LOAD( "8snd.1h",      0xa000, 0x1000, 0xf4507111 );
+		ROM_CONTINUE(             0xe000, 0x1000 );
+		ROM_LOAD( "7snd.1g",      0xb000, 0x1000, 0xc722eff8 );
+		ROM_CONTINUE(             0xf000, 0x1000 );
 	
-		ROM_REGION( 0x6000, REGION_GFX1, ROMREGION_DISPOSE )
-		ROM_LOAD( "1bg.2d",       0x0000, 0x2000, 0x9f880ef5 )
-		ROM_LOAD( "2bg.1f",       0x2000, 0x2000, 0xafc04cd7 )
-		ROM_LOAD( "3bg.1e",       0x4000, 0x2000, 0x14f23cdd )
+		ROM_REGION( 0x6000, REGION_GFX1, ROMREGION_DISPOSE );
+		ROM_LOAD( "1bg.2d",       0x0000, 0x2000, 0x9f880ef5 );
+		ROM_LOAD( "2bg.1f",       0x2000, 0x2000, 0xafc04cd7 );
+		ROM_LOAD( "3bg.1e",       0x4000, 0x2000, 0x14f23cdd );
 	
-		ROM_REGION( 0x0400, REGION_PROMS, 0 )
-		ROM_LOAD( "jr-ic9g",      0x0000, 0x0200, 0x85577107 )
-		ROM_LOAD( "jr-ic9f",      0x0200, 0x0200, 0x085914d1 )
-	ROM_END
+		ROM_REGION( 0x0400, REGION_PROMS, 0 );
+		ROM_LOAD( "jr-ic9g",      0x0000, 0x0200, 0x85577107 );
+		ROM_LOAD( "jr-ic9f",      0x0200, 0x0200, 0x085914d1 );
+	ROM_END(); }}; 
 	
 	
 	

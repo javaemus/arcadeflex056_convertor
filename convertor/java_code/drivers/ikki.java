@@ -278,38 +278,38 @@ public class ikki
 	
 	/****************************************************************************/
 	
-	ROM_START( ikki )
-		ROM_REGION( 0x10000, REGION_CPU1, 0 ) /* main CPU */
-		ROM_LOAD( "tvg17_1",  0x0000,  0x2000, 0xcb28167c )
-		ROM_CONTINUE(         0x8000,  0x2000 )
-		ROM_LOAD( "tvg17_2",  0x2000,  0x2000, 0x756c7450 )
-		ROM_LOAD( "tvg17_3",  0x4000,  0x2000, 0x91f0a8b6 )
-		ROM_LOAD( "tvg17_4",  0x6000,  0x2000, 0x696fcf7d )
+	static RomLoadPtr rom_ikki = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x10000, REGION_CPU1, 0 );/* main CPU */
+		ROM_LOAD( "tvg17_1",  0x0000,  0x2000, 0xcb28167c );
+		ROM_CONTINUE(         0x8000,  0x2000 );
+		ROM_LOAD( "tvg17_2",  0x2000,  0x2000, 0x756c7450 );
+		ROM_LOAD( "tvg17_3",  0x4000,  0x2000, 0x91f0a8b6 );
+		ROM_LOAD( "tvg17_4",  0x6000,  0x2000, 0x696fcf7d );
 	
-		ROM_REGION( 0x10000, REGION_CPU2, 0 ) /* sub CPU */
-		ROM_LOAD( "tvg17_5",  0x0000,  0x2000, 0x22bdb40e )
+		ROM_REGION( 0x10000, REGION_CPU2, 0 );/* sub CPU */
+		ROM_LOAD( "tvg17_5",  0x0000,  0x2000, 0x22bdb40e );
 	
-		ROM_REGION( 0xc000, REGION_GFX1, ROMREGION_DISPOSE ) /* sprite */
-		ROM_LOAD( "tvg17_6",  0x0000,  0x4000, 0xdc8aa269 )
-		ROM_LOAD( "tvg17_7",  0x4000,  0x4000, 0x0e9efeba )
-		ROM_LOAD( "tvg17_8",  0x8000,  0x4000, 0x45c9087a )
+		ROM_REGION( 0xc000, REGION_GFX1, ROMREGION_DISPOSE );/* sprite */
+		ROM_LOAD( "tvg17_6",  0x0000,  0x4000, 0xdc8aa269 );
+		ROM_LOAD( "tvg17_7",  0x4000,  0x4000, 0x0e9efeba );
+		ROM_LOAD( "tvg17_8",  0x8000,  0x4000, 0x45c9087a );
 	
-		ROM_REGION( 0xc000, REGION_GFX2, ROMREGION_DISPOSE ) /* bg */
-		ROM_LOAD( "tvg17_9",  0x8000,  0x4000, 0xc594f3c5 )
-		ROM_LOAD( "tvg17_10", 0x4000,  0x4000, 0x2e510b4e )
-		ROM_LOAD( "tvg17_11", 0x0000,  0x4000, 0x35012775 )
+		ROM_REGION( 0xc000, REGION_GFX2, ROMREGION_DISPOSE );/* bg */
+		ROM_LOAD( "tvg17_9",  0x8000,  0x4000, 0xc594f3c5 );
+		ROM_LOAD( "tvg17_10", 0x4000,  0x4000, 0x2e510b4e );
+		ROM_LOAD( "tvg17_11", 0x0000,  0x4000, 0x35012775 );
 	
-		ROM_REGION( 0x0700, REGION_PROMS, 0 ) /* color PROMs */
-		ROM_LOAD( "prom17_3", 0x0000,  0x0100, 0xdbcd3bec ) /* R */
-		ROM_LOAD( "prom17_4", 0x0100,  0x0100, 0x9eb7b6cf ) /* G */
-		ROM_LOAD( "prom17_5", 0x0200,  0x0100, 0x9b30a7f3 ) /* B */
-		ROM_LOAD( "prom17_6", 0x0300,  0x0200, 0x962e619d ) /* sprite */
-		ROM_LOAD( "prom17_7", 0x0500,  0x0200, 0xb1f5148c ) /* bg */
+		ROM_REGION( 0x0700, REGION_PROMS, 0 );/* color PROMs */
+		ROM_LOAD( "prom17_3", 0x0000,  0x0100, 0xdbcd3bec );/* R */
+		ROM_LOAD( "prom17_4", 0x0100,  0x0100, 0x9eb7b6cf );/* G */
+		ROM_LOAD( "prom17_5", 0x0200,  0x0100, 0x9b30a7f3 );/* B */
+		ROM_LOAD( "prom17_6", 0x0300,  0x0200, 0x962e619d );/* sprite */
+		ROM_LOAD( "prom17_7", 0x0500,  0x0200, 0xb1f5148c );/* bg */
 	
-		ROM_REGION( 0x0200, REGION_USER1, 0 )
-		ROM_LOAD( "prom17_1", 0x0000,  0x0100, 0xca0af30c ) /* video attribute */
-		ROM_LOAD( "prom17_2", 0x0100,  0x0100, 0xf3c55174 ) /* unknown */
-	ROM_END
+		ROM_REGION( 0x0200, REGION_USER1, 0 );
+		ROM_LOAD( "prom17_1", 0x0000,  0x0100, 0xca0af30c );/* video attribute */
+		ROM_LOAD( "prom17_2", 0x0100,  0x0100, 0xf3c55174 );/* unknown */
+	ROM_END(); }}; 
 	
 	GAME( 1985, ikki, 0, ikki, ikki, 0, ROT0, "Sun Electronics", "Ikki (Japan)" )
 }

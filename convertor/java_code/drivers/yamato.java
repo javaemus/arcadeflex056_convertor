@@ -398,79 +398,79 @@ public class yamato
 	
 	
 	
-	ROM_START( yamato )
-		ROM_REGION( 2*0x10000, REGION_CPU1, 0 )	/* 64k for code + 64k for decrypted opcodes */
-		ROM_LOAD( "2.5de",        0x0000, 0x2000, 0x20895096 )
-		ROM_LOAD( "3.5f",         0x2000, 0x2000, 0x57a696f9 )
-		ROM_LOAD( "4.5jh",        0x4000, 0x2000, 0x59a468e8 )
+	static RomLoadPtr rom_yamato = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 2*0x10000, REGION_CPU1, 0 );/* 64k for code + 64k for decrypted opcodes */
+		ROM_LOAD( "2.5de",        0x0000, 0x2000, 0x20895096 );
+		ROM_LOAD( "3.5f",         0x2000, 0x2000, 0x57a696f9 );
+		ROM_LOAD( "4.5jh",        0x4000, 0x2000, 0x59a468e8 );
 		/* hole at 6000-6fff */
-		ROM_LOAD( "11.5a",        0x7000, 0x1000, 0x35987485 )
+		ROM_LOAD( "11.5a",        0x7000, 0x1000, 0x35987485 );
 	
 		/* I don't know what the following ROMs are! */
-		ROM_LOAD( "5.5lm",        0xf000, 0x1000, 0x7761ad24 )	/* ?? */
-		ROM_LOAD( "6.5n",         0xf000, 0x1000, 0xda48444c )	/* ?? */
+		ROM_LOAD( "5.5lm",        0xf000, 0x1000, 0x7761ad24 );/* ?? */
+		ROM_LOAD( "6.5n",         0xf000, 0x1000, 0xda48444c );/* ?? */
 	
-		ROM_REGION( 0x10000, REGION_CPU2, 0 )	/* 64k for sound cpu */
-		ROM_LOAD( "1.5v",         0x0000, 0x0800, 0x3aad9e3c )
+		ROM_REGION( 0x10000, REGION_CPU2, 0 );/* 64k for sound cpu */
+		ROM_LOAD( "1.5v",         0x0000, 0x0800, 0x3aad9e3c );
 	
-		ROM_REGION( 0x4000, REGION_GFX1, ROMREGION_DISPOSE )
-		ROM_LOAD( "10.11k",       0x0000, 0x1000, 0x161121f5 )
-		ROM_CONTINUE(             0x2000, 0x1000 )
-		ROM_LOAD( "9.11h",        0x1000, 0x1000, 0x56e84cc4 )
-		ROM_CONTINUE(             0x3000, 0x1000 )
+		ROM_REGION( 0x4000, REGION_GFX1, ROMREGION_DISPOSE );
+		ROM_LOAD( "10.11k",       0x0000, 0x1000, 0x161121f5 );
+		ROM_CONTINUE(             0x2000, 0x1000 );
+		ROM_LOAD( "9.11h",        0x1000, 0x1000, 0x56e84cc4 );
+		ROM_CONTINUE(             0x3000, 0x1000 );
 	
-		ROM_REGION( 0x2000, REGION_GFX2, ROMREGION_DISPOSE )
+		ROM_REGION( 0x2000, REGION_GFX2, ROMREGION_DISPOSE );
 		/* TODO: I'm swapping the two halves of the ROMs to use only the bottom */
 		/* 256 chars. There must be a way for the game to address both halves */
-		ROM_LOAD( "8.11c",        0x0800, 0x0800, 0x28024d9a )
-		ROM_CONTINUE(             0x0000, 0x0800 )
-		ROM_LOAD( "7.11a",        0x1800, 0x0800, 0x4a179790 )
-		ROM_CONTINUE(             0x1000, 0x0800 )
+		ROM_LOAD( "8.11c",        0x0800, 0x0800, 0x28024d9a );
+		ROM_CONTINUE(             0x0000, 0x0800 );
+		ROM_LOAD( "7.11a",        0x1800, 0x0800, 0x4a179790 );
+		ROM_CONTINUE(             0x1000, 0x0800 );
 	
-		ROM_REGION( 0x00a0, REGION_PROMS, 0 )
-		ROM_LOAD( "1.bpr",        0x0000, 0x0020, 0xef2053ab )
-		ROM_LOAD( "2.bpr",        0x0020, 0x0020, 0x2281d39f )
-		ROM_LOAD( "3.bpr",        0x0040, 0x0020, 0x9e6341e3 )
-		ROM_LOAD( "4.bpr",        0x0060, 0x0020, 0x1c97dc0b )
-		ROM_LOAD( "5.bpr",        0x0080, 0x0020, 0xedd6c05f )
-	ROM_END
+		ROM_REGION( 0x00a0, REGION_PROMS, 0 );
+		ROM_LOAD( "1.bpr",        0x0000, 0x0020, 0xef2053ab );
+		ROM_LOAD( "2.bpr",        0x0020, 0x0020, 0x2281d39f );
+		ROM_LOAD( "3.bpr",        0x0040, 0x0020, 0x9e6341e3 );
+		ROM_LOAD( "4.bpr",        0x0060, 0x0020, 0x1c97dc0b );
+		ROM_LOAD( "5.bpr",        0x0080, 0x0020, 0xedd6c05f );
+	ROM_END(); }}; 
 	
-	ROM_START( yamato2 )
-		ROM_REGION( 2*0x10000, REGION_CPU1, 0 )	/* 64k for code + 64k for decrypted opcodes */
-		ROM_LOAD( "2-2.5de",      0x0000, 0x2000, 0x93da1d52 )
-		ROM_LOAD( "3-2.5f",       0x2000, 0x2000, 0x31e73821 )
-		ROM_LOAD( "4-2.5jh",      0x4000, 0x2000, 0xfd7bcfc3 )
+	static RomLoadPtr rom_yamato2 = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 2*0x10000, REGION_CPU1, 0 );/* 64k for code + 64k for decrypted opcodes */
+		ROM_LOAD( "2-2.5de",      0x0000, 0x2000, 0x93da1d52 );
+		ROM_LOAD( "3-2.5f",       0x2000, 0x2000, 0x31e73821 );
+		ROM_LOAD( "4-2.5jh",      0x4000, 0x2000, 0xfd7bcfc3 );
 		/* hole at 6000-6fff */
 		/* 7000-7fff not present here */
 	
 		/* I don't know what the following ROMs are! */
-		ROM_LOAD( "5.5lm",        0xf000, 0x1000, 0x7761ad24 )	/* ?? */
-		ROM_LOAD( "6.5n",         0xf000, 0x1000, 0xda48444c )	/* ?? */
+		ROM_LOAD( "5.5lm",        0xf000, 0x1000, 0x7761ad24 );/* ?? */
+		ROM_LOAD( "6.5n",         0xf000, 0x1000, 0xda48444c );/* ?? */
 	
-		ROM_REGION( 0x10000, REGION_CPU2, 0 )	/* 64k for sound cpu */
-		ROM_LOAD( "1.5v",         0x0000, 0x0800, 0x3aad9e3c )
+		ROM_REGION( 0x10000, REGION_CPU2, 0 );/* 64k for sound cpu */
+		ROM_LOAD( "1.5v",         0x0000, 0x0800, 0x3aad9e3c );
 	
-		ROM_REGION( 0x4000, REGION_GFX1, ROMREGION_DISPOSE )
-		ROM_LOAD( "10.11k",       0x0000, 0x1000, 0x161121f5 )
-		ROM_CONTINUE(             0x2000, 0x1000 )
-		ROM_LOAD( "9.11h",        0x1000, 0x1000, 0x56e84cc4 )
-		ROM_CONTINUE(             0x3000, 0x1000 )
+		ROM_REGION( 0x4000, REGION_GFX1, ROMREGION_DISPOSE );
+		ROM_LOAD( "10.11k",       0x0000, 0x1000, 0x161121f5 );
+		ROM_CONTINUE(             0x2000, 0x1000 );
+		ROM_LOAD( "9.11h",        0x1000, 0x1000, 0x56e84cc4 );
+		ROM_CONTINUE(             0x3000, 0x1000 );
 	
-		ROM_REGION( 0x2000, REGION_GFX2, ROMREGION_DISPOSE )
+		ROM_REGION( 0x2000, REGION_GFX2, ROMREGION_DISPOSE );
 		/* TODO: I'm swapping the two halves of the ROMs to use only the bottom */
 		/* 256 chars. There must be a way for the game to address both halves */
-		ROM_LOAD( "8.11c",        0x0800, 0x0800, 0x28024d9a )
-		ROM_CONTINUE(             0x0000, 0x0800 )
-		ROM_LOAD( "7.11a",        0x1800, 0x0800, 0x4a179790 )
-		ROM_CONTINUE(             0x1000, 0x0800 )
+		ROM_LOAD( "8.11c",        0x0800, 0x0800, 0x28024d9a );
+		ROM_CONTINUE(             0x0000, 0x0800 );
+		ROM_LOAD( "7.11a",        0x1800, 0x0800, 0x4a179790 );
+		ROM_CONTINUE(             0x1000, 0x0800 );
 	
-		ROM_REGION( 0x00a0, REGION_PROMS, 0 )
-		ROM_LOAD( "1.bpr",        0x0000, 0x0020, 0xef2053ab )
-		ROM_LOAD( "2.bpr",        0x0020, 0x0020, 0x2281d39f )
-		ROM_LOAD( "3.bpr",        0x0040, 0x0020, 0x9e6341e3 )
-		ROM_LOAD( "4.bpr",        0x0060, 0x0020, 0x1c97dc0b )
-		ROM_LOAD( "5.bpr",        0x0080, 0x0020, 0xedd6c05f )
-	ROM_END
+		ROM_REGION( 0x00a0, REGION_PROMS, 0 );
+		ROM_LOAD( "1.bpr",        0x0000, 0x0020, 0xef2053ab );
+		ROM_LOAD( "2.bpr",        0x0020, 0x0020, 0x2281d39f );
+		ROM_LOAD( "3.bpr",        0x0040, 0x0020, 0x9e6341e3 );
+		ROM_LOAD( "4.bpr",        0x0060, 0x0020, 0x1c97dc0b );
+		ROM_LOAD( "5.bpr",        0x0080, 0x0020, 0xedd6c05f );
+	ROM_END(); }}; 
 	
 	
 	static void init_yamato(void)

@@ -1295,126 +1295,126 @@ public class cinemat
 	
 	
 	
-	ROM_START( spacewar )
-		ROM_REGION( 0x10000, REGION_CPU1, 0 )	/* 4k for code */
-		ROM_LOAD16_BYTE( "spacewar.1l", 0x8000, 0x0800, 0xedf0fd53 )
-		ROM_LOAD16_BYTE( "spacewar.2r", 0x8001, 0x0800, 0x4f21328b )
-	ROM_END
+	static RomLoadPtr rom_spacewar = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x10000, REGION_CPU1, 0 );/* 4k for code */
+		ROM_LOAD16_BYTE( "spacewar.1l", 0x8000, 0x0800, 0xedf0fd53 );
+		ROM_LOAD16_BYTE( "spacewar.2r", 0x8001, 0x0800, 0x4f21328b );
+	ROM_END(); }}; 
 	
-	ROM_START( barrier )
-		ROM_REGION( 0x10000, REGION_CPU1, 0 )	/* 4k for code */
-		ROM_LOAD16_BYTE( "barrier.t7", 0x8000, 0x0800, 0x7c3d68c8 )
-		ROM_LOAD16_BYTE( "barrier.p7", 0x8001, 0x0800, 0xaec142b5 )
-	ROM_END
+	static RomLoadPtr rom_barrier = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x10000, REGION_CPU1, 0 );/* 4k for code */
+		ROM_LOAD16_BYTE( "barrier.t7", 0x8000, 0x0800, 0x7c3d68c8 );
+		ROM_LOAD16_BYTE( "barrier.p7", 0x8001, 0x0800, 0xaec142b5 );
+	ROM_END(); }}; 
 	
-	ROM_START( starhawk )
-		ROM_REGION( 0x10000, REGION_CPU1, 0 )	/* 4k for code */
-		ROM_LOAD16_BYTE( "u7", 0x8000, 0x0800, 0x376e6c5c )
-		ROM_LOAD16_BYTE( "r7", 0x8001, 0x0800, 0xbb71144f )
-	ROM_END
+	static RomLoadPtr rom_starhawk = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x10000, REGION_CPU1, 0 );/* 4k for code */
+		ROM_LOAD16_BYTE( "u7", 0x8000, 0x0800, 0x376e6c5c );
+		ROM_LOAD16_BYTE( "r7", 0x8001, 0x0800, 0xbb71144f );
+	ROM_END(); }}; 
 	
-	ROM_START( starcas )
-		ROM_REGION( 0x10000, REGION_CPU1, 0 )	/* 8k for code */
-		ROM_LOAD16_BYTE( "starcas3.t7", 0x8000, 0x0800, 0xb5838b5d )
-		ROM_LOAD16_BYTE( "starcas3.p7", 0x8001, 0x0800, 0xf6bc2f4d )
-		ROM_LOAD16_BYTE( "starcas3.u7", 0x9000, 0x0800, 0x188cd97c )
-		ROM_LOAD16_BYTE( "starcas3.r7", 0x9001, 0x0800, 0xc367b69d )
-	ROM_END
+	static RomLoadPtr rom_starcas = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x10000, REGION_CPU1, 0 );/* 8k for code */
+		ROM_LOAD16_BYTE( "starcas3.t7", 0x8000, 0x0800, 0xb5838b5d );
+		ROM_LOAD16_BYTE( "starcas3.p7", 0x8001, 0x0800, 0xf6bc2f4d );
+		ROM_LOAD16_BYTE( "starcas3.u7", 0x9000, 0x0800, 0x188cd97c );
+		ROM_LOAD16_BYTE( "starcas3.r7", 0x9001, 0x0800, 0xc367b69d );
+	ROM_END(); }}; 
 	
-	ROM_START( starcas1 )
-		ROM_REGION( 0x10000, REGION_CPU1, 0 )	/* 8k for code */
-		ROM_LOAD16_BYTE( "starcast.t7", 0x8000, 0x0800, 0x65d0a225 )
-		ROM_LOAD16_BYTE( "starcast.p7", 0x8001, 0x0800, 0xd8f58d9a )
-		ROM_LOAD16_BYTE( "starcast.u7", 0x9000, 0x0800, 0xd4f35b82 )
-		ROM_LOAD16_BYTE( "starcast.r7", 0x9001, 0x0800, 0x9fd3de54 )
-	ROM_END
+	static RomLoadPtr rom_starcas1 = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x10000, REGION_CPU1, 0 );/* 8k for code */
+		ROM_LOAD16_BYTE( "starcast.t7", 0x8000, 0x0800, 0x65d0a225 );
+		ROM_LOAD16_BYTE( "starcast.p7", 0x8001, 0x0800, 0xd8f58d9a );
+		ROM_LOAD16_BYTE( "starcast.u7", 0x9000, 0x0800, 0xd4f35b82 );
+		ROM_LOAD16_BYTE( "starcast.r7", 0x9001, 0x0800, 0x9fd3de54 );
+	ROM_END(); }}; 
 	
-	ROM_START( tailg )
-		ROM_REGION( 0x10000, REGION_CPU1, 0 )	/* 8k for code */
-		ROM_LOAD16_BYTE( "tgunner.t70", 0x8000, 0x0800, 0x21ec9a04 )
-		ROM_LOAD16_BYTE( "tgunner.p70", 0x8001, 0x0800, 0x8d7410b3 )
-		ROM_LOAD16_BYTE( "tgunner.t71", 0x9000, 0x0800, 0x2c954ab6 )
-		ROM_LOAD16_BYTE( "tgunner.p71", 0x9001, 0x0800, 0x8e2c8494 )
-	ROM_END
+	static RomLoadPtr rom_tailg = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x10000, REGION_CPU1, 0 );/* 8k for code */
+		ROM_LOAD16_BYTE( "tgunner.t70", 0x8000, 0x0800, 0x21ec9a04 );
+		ROM_LOAD16_BYTE( "tgunner.p70", 0x8001, 0x0800, 0x8d7410b3 );
+		ROM_LOAD16_BYTE( "tgunner.t71", 0x9000, 0x0800, 0x2c954ab6 );
+		ROM_LOAD16_BYTE( "tgunner.p71", 0x9001, 0x0800, 0x8e2c8494 );
+	ROM_END(); }}; 
 	
-	ROM_START( ripoff )
-		ROM_REGION( 0x10000, REGION_CPU1, 0 )	/* 8k for code */
-		ROM_LOAD16_BYTE( "ripoff.t7", 0x8000, 0x0800, 0x40c2c5b8 )
-		ROM_LOAD16_BYTE( "ripoff.p7", 0x8001, 0x0800, 0xa9208afb )
-		ROM_LOAD16_BYTE( "ripoff.u7", 0x9000, 0x0800, 0x29c13701 )
-		ROM_LOAD16_BYTE( "ripoff.r7", 0x9001, 0x0800, 0x150bd4c8 )
-	ROM_END
+	static RomLoadPtr rom_ripoff = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x10000, REGION_CPU1, 0 );/* 8k for code */
+		ROM_LOAD16_BYTE( "ripoff.t7", 0x8000, 0x0800, 0x40c2c5b8 );
+		ROM_LOAD16_BYTE( "ripoff.p7", 0x8001, 0x0800, 0xa9208afb );
+		ROM_LOAD16_BYTE( "ripoff.u7", 0x9000, 0x0800, 0x29c13701 );
+		ROM_LOAD16_BYTE( "ripoff.r7", 0x9001, 0x0800, 0x150bd4c8 );
+	ROM_END(); }}; 
 	
-	ROM_START( speedfrk )
-		ROM_REGION( 0x10000, REGION_CPU1, 0 )	/* 8k for code */
-		ROM_LOAD16_BYTE( "speedfrk.t7", 0x8000, 0x0800, 0x3552c03f )
-		ROM_LOAD16_BYTE( "speedfrk.p7", 0x8001, 0x0800, 0x4b90cdec )
-		ROM_LOAD16_BYTE( "speedfrk.u7", 0x9000, 0x0800, 0x616c7cf9 )
-		ROM_LOAD16_BYTE( "speedfrk.r7", 0x9001, 0x0800, 0xfbe90d63 )
-	ROM_END
+	static RomLoadPtr rom_speedfrk = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x10000, REGION_CPU1, 0 );/* 8k for code */
+		ROM_LOAD16_BYTE( "speedfrk.t7", 0x8000, 0x0800, 0x3552c03f );
+		ROM_LOAD16_BYTE( "speedfrk.p7", 0x8001, 0x0800, 0x4b90cdec );
+		ROM_LOAD16_BYTE( "speedfrk.u7", 0x9000, 0x0800, 0x616c7cf9 );
+		ROM_LOAD16_BYTE( "speedfrk.r7", 0x9001, 0x0800, 0xfbe90d63 );
+	ROM_END(); }}; 
 	
-	ROM_START( sundance )
-		ROM_REGION( 0x10000, REGION_CPU1, 0 )	/* 8k for code */
-		ROM_LOAD16_BYTE( "sundance.t7", 0x8000, 0x0800, 0xd5b9cb19 )
-		ROM_LOAD16_BYTE( "sundance.p7", 0x8001, 0x0800, 0x445c4f20 )
-		ROM_LOAD16_BYTE( "sundance.u7", 0x9000, 0x0800, 0x67887d48 )
-		ROM_LOAD16_BYTE( "sundance.r7", 0x9001, 0x0800, 0x10b77ebd )
-	ROM_END
+	static RomLoadPtr rom_sundance = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x10000, REGION_CPU1, 0 );/* 8k for code */
+		ROM_LOAD16_BYTE( "sundance.t7", 0x8000, 0x0800, 0xd5b9cb19 );
+		ROM_LOAD16_BYTE( "sundance.p7", 0x8001, 0x0800, 0x445c4f20 );
+		ROM_LOAD16_BYTE( "sundance.u7", 0x9000, 0x0800, 0x67887d48 );
+		ROM_LOAD16_BYTE( "sundance.r7", 0x9001, 0x0800, 0x10b77ebd );
+	ROM_END(); }}; 
 	
-	ROM_START( warrior )
-		ROM_REGION( 0x10000, REGION_CPU1, 0 )	/* 8k for code */
-		ROM_LOAD16_BYTE( "warrior.t7", 0x8000, 0x0800, 0xac3646f9 )
-		ROM_LOAD16_BYTE( "warrior.p7", 0x8001, 0x0800, 0x517d3021 )
-		ROM_LOAD16_BYTE( "warrior.u7", 0x9000, 0x0800, 0x2e39340f )
-		ROM_LOAD16_BYTE( "warrior.r7", 0x9001, 0x0800, 0x8e91b502 )
-	ROM_END
+	static RomLoadPtr rom_warrior = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x10000, REGION_CPU1, 0 );/* 8k for code */
+		ROM_LOAD16_BYTE( "warrior.t7", 0x8000, 0x0800, 0xac3646f9 );
+		ROM_LOAD16_BYTE( "warrior.p7", 0x8001, 0x0800, 0x517d3021 );
+		ROM_LOAD16_BYTE( "warrior.u7", 0x9000, 0x0800, 0x2e39340f );
+		ROM_LOAD16_BYTE( "warrior.r7", 0x9001, 0x0800, 0x8e91b502 );
+	ROM_END(); }}; 
 	
-	ROM_START( armora )
-		ROM_REGION( 0x10000, REGION_CPU1, 0 )	/* 16k for code */
-		ROM_LOAD16_BYTE( "ar414le.t6", 0x8000, 0x1000, 0xd7e71f84 )
-		ROM_LOAD16_BYTE( "ar414lo.p6", 0x8001, 0x1000, 0xdf1c2370 )
-		ROM_LOAD16_BYTE( "ar414ue.u6", 0xa000, 0x1000, 0xb0276118 )
-		ROM_LOAD16_BYTE( "ar414uo.r6", 0xa001, 0x1000, 0x229d779f )
-	ROM_END
+	static RomLoadPtr rom_armora = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x10000, REGION_CPU1, 0 );/* 16k for code */
+		ROM_LOAD16_BYTE( "ar414le.t6", 0x8000, 0x1000, 0xd7e71f84 );
+		ROM_LOAD16_BYTE( "ar414lo.p6", 0x8001, 0x1000, 0xdf1c2370 );
+		ROM_LOAD16_BYTE( "ar414ue.u6", 0xa000, 0x1000, 0xb0276118 );
+		ROM_LOAD16_BYTE( "ar414uo.r6", 0xa001, 0x1000, 0x229d779f );
+	ROM_END(); }}; 
 	
-	ROM_START( solarq )
-		ROM_REGION( 0x10000, REGION_CPU1, 0 )	/* 16k for code */
-		ROM_LOAD16_BYTE( "solar.6t", 0x8000, 0x1000, 0x1f3c5333 )
-		ROM_LOAD16_BYTE( "solar.6p", 0x8001, 0x1000, 0xd6c16bcc )
-		ROM_LOAD16_BYTE( "solar.6u", 0xa000, 0x1000, 0xa5970e5c )
-		ROM_LOAD16_BYTE( "solar.6r", 0xa001, 0x1000, 0xb763fff2 )
-	ROM_END
+	static RomLoadPtr rom_solarq = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x10000, REGION_CPU1, 0 );/* 16k for code */
+		ROM_LOAD16_BYTE( "solar.6t", 0x8000, 0x1000, 0x1f3c5333 );
+		ROM_LOAD16_BYTE( "solar.6p", 0x8001, 0x1000, 0xd6c16bcc );
+		ROM_LOAD16_BYTE( "solar.6u", 0xa000, 0x1000, 0xa5970e5c );
+		ROM_LOAD16_BYTE( "solar.6r", 0xa001, 0x1000, 0xb763fff2 );
+	ROM_END(); }}; 
 	
-	ROM_START( demon )
-		ROM_REGION( 0x10000, REGION_CPU1, 0 )	/* 16k for code */
-		ROM_LOAD16_BYTE( "demon.7t",  0x8000, 0x1000, 0x866596c1 )
-		ROM_LOAD16_BYTE( "demon.7p",  0x8001, 0x1000, 0x1109e2f1 )
-		ROM_LOAD16_BYTE( "demon.7u",  0xa000, 0x1000, 0xd447a3c3 )
-		ROM_LOAD16_BYTE( "demon.7r",  0xa001, 0x1000, 0x64b515f0 )
+	static RomLoadPtr rom_demon = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x10000, REGION_CPU1, 0 );/* 16k for code */
+		ROM_LOAD16_BYTE( "demon.7t",  0x8000, 0x1000, 0x866596c1 );
+		ROM_LOAD16_BYTE( "demon.7p",  0x8001, 0x1000, 0x1109e2f1 );
+		ROM_LOAD16_BYTE( "demon.7u",  0xa000, 0x1000, 0xd447a3c3 );
+		ROM_LOAD16_BYTE( "demon.7r",  0xa001, 0x1000, 0x64b515f0 );
 	
-		ROM_REGION( 0x10000, REGION_CPU2, 0 )	/* 64k for code */
-		ROM_LOAD         ( "demon.snd", 0x0000, 0x1000, 0x1e2cc262 )
-	ROM_END
+		ROM_REGION( 0x10000, REGION_CPU2, 0 );/* 64k for code */
+		ROM_LOAD         ( "demon.snd", 0x0000, 0x1000, 0x1e2cc262 );
+	ROM_END(); }}; 
 	
-	ROM_START( wotw )
-		ROM_REGION( 0x10000, REGION_CPU1, 0 )	/* 16k for code */
-		ROM_LOAD16_BYTE( "wow_le.t7", 0x8000, 0x1000, 0xb16440f9 )
-		ROM_LOAD16_BYTE( "wow_lo.p7", 0x8001, 0x1000, 0xbfdf4a5a )
-		ROM_LOAD16_BYTE( "wow_ue.u7", 0xa000, 0x1000, 0x9b5cea48 )
-		ROM_LOAD16_BYTE( "wow_uo.r7", 0xa001, 0x1000, 0xc9d3c866 )
-	ROM_END
+	static RomLoadPtr rom_wotw = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x10000, REGION_CPU1, 0 );/* 16k for code */
+		ROM_LOAD16_BYTE( "wow_le.t7", 0x8000, 0x1000, 0xb16440f9 );
+		ROM_LOAD16_BYTE( "wow_lo.p7", 0x8001, 0x1000, 0xbfdf4a5a );
+		ROM_LOAD16_BYTE( "wow_ue.u7", 0xa000, 0x1000, 0x9b5cea48 );
+		ROM_LOAD16_BYTE( "wow_uo.r7", 0xa001, 0x1000, 0xc9d3c866 );
+	ROM_END(); }}; 
 	
-	ROM_START( boxingb )
-		ROM_REGION( 0x10000, REGION_CPU1, 0 )	/* 32k for code */
-		ROM_LOAD16_BYTE( "u1a", 0x8000, 0x1000, 0xd3115b0f )
-		ROM_LOAD16_BYTE( "u1b", 0x8001, 0x1000, 0x3a44268d )
-		ROM_LOAD16_BYTE( "u2a", 0xa000, 0x1000, 0xc97a9cbb )
-		ROM_LOAD16_BYTE( "u2b", 0xa001, 0x1000, 0x98d34ff5 )
-		ROM_LOAD16_BYTE( "u3a", 0xc000, 0x1000, 0x5bb3269b )
-		ROM_LOAD16_BYTE( "u3b", 0xc001, 0x1000, 0x85bf83ad )
-		ROM_LOAD16_BYTE( "u4a", 0xe000, 0x1000, 0x25b51799 )
-		ROM_LOAD16_BYTE( "u4b", 0xe001, 0x1000, 0x7f41de6a )
-	ROM_END
+	static RomLoadPtr rom_boxingb = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x10000, REGION_CPU1, 0 );/* 32k for code */
+		ROM_LOAD16_BYTE( "u1a", 0x8000, 0x1000, 0xd3115b0f );
+		ROM_LOAD16_BYTE( "u1b", 0x8001, 0x1000, 0x3a44268d );
+		ROM_LOAD16_BYTE( "u2a", 0xa000, 0x1000, 0xc97a9cbb );
+		ROM_LOAD16_BYTE( "u2b", 0xa001, 0x1000, 0x98d34ff5 );
+		ROM_LOAD16_BYTE( "u3a", 0xc000, 0x1000, 0x5bb3269b );
+		ROM_LOAD16_BYTE( "u3b", 0xc001, 0x1000, 0x85bf83ad );
+		ROM_LOAD16_BYTE( "u4a", 0xe000, 0x1000, 0x25b51799 );
+		ROM_LOAD16_BYTE( "u4b", 0xe001, 0x1000, 0x7f41de6a );
+	ROM_END(); }}; 
 	
 	
 	

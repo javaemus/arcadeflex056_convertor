@@ -359,81 +359,81 @@ public class redclash
 	
 	***************************************************************************/
 	
-	ROM_START( zerohour )
-		ROM_REGION( 0x10000, REGION_CPU1, 0 )	/* 64k for code */
-		ROM_LOAD( "zerohour.1",   0x0000, 0x0800, 0x0dff4b48 )
-		ROM_LOAD( "zerohour.2",   0x0800, 0x0800, 0xcf41b6ac )
-		ROM_LOAD( "zerohour.3",	  0x1000, 0x0800, 0x5ef48b67 )
-		ROM_LOAD( "zerohour.4",	  0x1800, 0x0800, 0x25c5872d )
-		ROM_LOAD( "zerohour.5",	  0x2000, 0x0800, 0xd7ce3add )
-		ROM_LOAD( "zerohour.6",	  0x2800, 0x0800, 0x8a93ae6e )
+	static RomLoadPtr rom_zerohour = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x10000, REGION_CPU1, 0 );/* 64k for code */
+		ROM_LOAD( "zerohour.1",   0x0000, 0x0800, 0x0dff4b48 );
+		ROM_LOAD( "zerohour.2",   0x0800, 0x0800, 0xcf41b6ac );
+		ROM_LOAD( "zerohour.3",	  0x1000, 0x0800, 0x5ef48b67 );
+		ROM_LOAD( "zerohour.4",	  0x1800, 0x0800, 0x25c5872d );
+		ROM_LOAD( "zerohour.5",	  0x2000, 0x0800, 0xd7ce3add );
+		ROM_LOAD( "zerohour.6",	  0x2800, 0x0800, 0x8a93ae6e );
 	
-		ROM_REGION( 0x0800, REGION_GFX1, ROMREGION_DISPOSE )
-		ROM_LOAD( "zerohour.9",   0x0000, 0x0800, 0x17ae6f13 )
+		ROM_REGION( 0x0800, REGION_GFX1, ROMREGION_DISPOSE );
+		ROM_LOAD( "zerohour.9",   0x0000, 0x0800, 0x17ae6f13 );
 	
-		ROM_REGION( 0x1000, REGION_GFX2, ROMREGION_DISPOSE )
-		ROM_LOAD( "zerohour.7",	  0x0000, 0x0800, 0x4c12f59d )
-		ROM_LOAD( "zerohour.8",	  0x0800, 0x0800, 0x6b9a6b6e )
+		ROM_REGION( 0x1000, REGION_GFX2, ROMREGION_DISPOSE );
+		ROM_LOAD( "zerohour.7",	  0x0000, 0x0800, 0x4c12f59d );
+		ROM_LOAD( "zerohour.8",	  0x0800, 0x0800, 0x6b9a6b6e );
 	
-		ROM_REGION( 0x1000, REGION_GFX3, ROMREGION_DISPOSE )
+		ROM_REGION( 0x1000, REGION_GFX3, ROMREGION_DISPOSE );
 		/* gfx data will be rearranged here for 8x8 sprites */
 	
-		ROM_REGION( 0x0600, REGION_PROMS, 0 )
-		ROM_LOAD( "zerohour.ic2", 0x0000, 0x0020, 0xb55aee56 ) /* palette */
-		ROM_LOAD( "zerohour.n2",  0x0020, 0x0020, 0x9adabf46 ) /* sprite color lookup table */
-		ROM_LOAD( "zerohour.u6",  0x0040, 0x0020, 0x27fa3a50 ) /* ?? */
-	ROM_END
+		ROM_REGION( 0x0600, REGION_PROMS, 0 );
+		ROM_LOAD( "zerohour.ic2", 0x0000, 0x0020, 0xb55aee56 );/* palette */
+		ROM_LOAD( "zerohour.n2",  0x0020, 0x0020, 0x9adabf46 );/* sprite color lookup table */
+		ROM_LOAD( "zerohour.u6",  0x0040, 0x0020, 0x27fa3a50 );/* ?? */
+	ROM_END(); }}; 
 	
-	ROM_START( redclash )
-		ROM_REGION(0x10000, REGION_CPU1, 0 ) /* 64k for code */
-		ROM_LOAD( "rc1.11c",      0x0000, 0x1000, 0x5b62ff5a )
-		ROM_LOAD( "rc3.7c",       0x1000, 0x1000, 0x409c4ee7 )
-		ROM_LOAD( "rc2.9c",       0x2000, 0x1000, 0x5f215c9a )
+	static RomLoadPtr rom_redclash = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION(0x10000, REGION_CPU1, 0 );/* 64k for code */
+		ROM_LOAD( "rc1.11c",      0x0000, 0x1000, 0x5b62ff5a );
+		ROM_LOAD( "rc3.7c",       0x1000, 0x1000, 0x409c4ee7 );
+		ROM_LOAD( "rc2.9c",       0x2000, 0x1000, 0x5f215c9a );
 	
-		ROM_REGION(0x0800, REGION_GFX1, ROMREGION_DISPOSE )
-		ROM_LOAD( "rc6.12a",      0x0000, 0x0800, 0xda9bbcc2 )
+		ROM_REGION(0x0800, REGION_GFX1, ROMREGION_DISPOSE );
+		ROM_LOAD( "rc6.12a",      0x0000, 0x0800, 0xda9bbcc2 );
 	
-		ROM_REGION( 0x2000, REGION_GFX2, ROMREGION_DISPOSE )
-		ROM_LOAD( "rc4.3e",       0x0000, 0x0800, 0x64ca8b63 )
-		ROM_CONTINUE(             0x1000, 0x0800 )
-		ROM_LOAD( "rc5.3d",       0x0800, 0x0800, 0xfce610a2 )
-		ROM_CONTINUE(             0x1800, 0x0800 )
+		ROM_REGION( 0x2000, REGION_GFX2, ROMREGION_DISPOSE );
+		ROM_LOAD( "rc4.3e",       0x0000, 0x0800, 0x64ca8b63 );
+		ROM_CONTINUE(             0x1000, 0x0800 );
+		ROM_LOAD( "rc5.3d",       0x0800, 0x0800, 0xfce610a2 );
+		ROM_CONTINUE(             0x1800, 0x0800 );
 	
-		ROM_REGION( 0x2000, REGION_GFX3, ROMREGION_DISPOSE )
+		ROM_REGION( 0x2000, REGION_GFX3, ROMREGION_DISPOSE );
 		/* gfx data will be rearranged here for 8x8 sprites */
 	
-		ROM_REGION( 0x0060, REGION_PROMS, 0 )
-		ROM_LOAD( "6331-1.12f",   0x0000, 0x0020, 0x43989681 ) /* palette */
-		ROM_LOAD( "6331-2.4a",    0x0020, 0x0020, 0x9adabf46 ) /* sprite color lookup table */
-		ROM_LOAD( "6331-3.11e",   0x0040, 0x0020, 0x27fa3a50 ) /* ?? */
-	ROM_END
+		ROM_REGION( 0x0060, REGION_PROMS, 0 );
+		ROM_LOAD( "6331-1.12f",   0x0000, 0x0020, 0x43989681 );/* palette */
+		ROM_LOAD( "6331-2.4a",    0x0020, 0x0020, 0x9adabf46 );/* sprite color lookup table */
+		ROM_LOAD( "6331-3.11e",   0x0040, 0x0020, 0x27fa3a50 );/* ?? */
+	ROM_END(); }}; 
 	
-	ROM_START( redclask )
-		ROM_REGION(0x10000, REGION_CPU1, 0 ) /* 64k for code */
-		ROM_LOAD( "rc1.8c",       0x0000, 0x0800, 0xfd90622a )
-		ROM_LOAD( "rc2.7c",       0x0800, 0x0800, 0xc8f33440 )
-		ROM_LOAD( "rc3.6c",       0x1000, 0x0800, 0x2172b1e9 )
-		ROM_LOAD( "rc4.5c",       0x1800, 0x0800, 0x55c0d1b5 )
-		ROM_LOAD( "rc5.4c",       0x2000, 0x0800, 0x744b5261 )
-		ROM_LOAD( "rc6.3c",       0x2800, 0x0800, 0xfa507e17 )
+	static RomLoadPtr rom_redclask = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION(0x10000, REGION_CPU1, 0 );/* 64k for code */
+		ROM_LOAD( "rc1.8c",       0x0000, 0x0800, 0xfd90622a );
+		ROM_LOAD( "rc2.7c",       0x0800, 0x0800, 0xc8f33440 );
+		ROM_LOAD( "rc3.6c",       0x1000, 0x0800, 0x2172b1e9 );
+		ROM_LOAD( "rc4.5c",       0x1800, 0x0800, 0x55c0d1b5 );
+		ROM_LOAD( "rc5.4c",       0x2000, 0x0800, 0x744b5261 );
+		ROM_LOAD( "rc6.3c",       0x2800, 0x0800, 0xfa507e17 );
 	
-		ROM_REGION( 0x0800, REGION_GFX1, ROMREGION_DISPOSE )
-		ROM_LOAD( "rc6.12a",      0x0000, 0x0800, 0xda9bbcc2 ) /* rc9.7m */
+		ROM_REGION( 0x0800, REGION_GFX1, ROMREGION_DISPOSE );
+		ROM_LOAD( "rc6.12a",      0x0000, 0x0800, 0xda9bbcc2 );/* rc9.7m */
 	
-		ROM_REGION( 0x2000, REGION_GFX2, ROMREGION_DISPOSE )
-		ROM_LOAD( "rc4.4m",       0x0000, 0x0800, 0x483a1293 )
-		ROM_CONTINUE(             0x1000, 0x0800 )
-		ROM_LOAD( "rc5.5m",       0x0800, 0x0800, 0xc45d9601 )
-		ROM_CONTINUE(             0x1800, 0x0800 )
+		ROM_REGION( 0x2000, REGION_GFX2, ROMREGION_DISPOSE );
+		ROM_LOAD( "rc4.4m",       0x0000, 0x0800, 0x483a1293 );
+		ROM_CONTINUE(             0x1000, 0x0800 );
+		ROM_LOAD( "rc5.5m",       0x0800, 0x0800, 0xc45d9601 );
+		ROM_CONTINUE(             0x1800, 0x0800 );
 	
-		ROM_REGION( 0x2000, REGION_GFX3, ROMREGION_DISPOSE )
+		ROM_REGION( 0x2000, REGION_GFX3, ROMREGION_DISPOSE );
 		/* gfx data will be rearranged here for 8x8 sprites */
 	
-		ROM_REGION( 0x0060, REGION_PROMS, 0 )
-		ROM_LOAD( "6331-1.12f",   0x0000, 0x0020, 0x43989681 ) /* 6331.7e */
-		ROM_LOAD( "6331-2.4a",    0x0020, 0x0020, 0x9adabf46 ) /* 6331.2r */
-		ROM_LOAD( "6331-3.11e",   0x0040, 0x0020, 0x27fa3a50 ) /* 6331.6w */
-	ROM_END
+		ROM_REGION( 0x0060, REGION_PROMS, 0 );
+		ROM_LOAD( "6331-1.12f",   0x0000, 0x0020, 0x43989681 );/* 6331.7e */
+		ROM_LOAD( "6331-2.4a",    0x0020, 0x0020, 0x9adabf46 );/* 6331.2r */
+		ROM_LOAD( "6331-3.11e",   0x0040, 0x0020, 0x27fa3a50 );/* 6331.6w */
+	ROM_END(); }}; 
 	
 	static void init_redclash(void)
 	{

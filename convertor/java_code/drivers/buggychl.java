@@ -498,65 +498,65 @@ public class buggychl
 	
 	***************************************************************************/
 	
-	ROM_START( buggychl )
-	    ROM_REGION( 0x1c000, REGION_CPU1, 0 )  /* 64k for code */
-		ROM_LOAD( "a22-04-2.23", 0x00000, 0x4000, 0x16445a6a )
-		ROM_LOAD( "a22-05-2.22", 0x04000, 0x4000, 0xd57430b2 )
-		ROM_LOAD( "a22-01.3",    0x10000, 0x4000, 0xaf3b7554 ) /* banked */
-		ROM_LOAD( "a22-02.2",    0x14000, 0x4000, 0xb8a645fb ) /* banked */
-		ROM_LOAD( "a22-03.1",    0x18000, 0x4000, 0x5f45d469 ) /* banked */
+	static RomLoadPtr rom_buggychl = new RomLoadPtr(){ public void handler(){ 
+	    ROM_REGION( 0x1c000, REGION_CPU1, 0 ); /* 64k for code */
+		ROM_LOAD( "a22-04-2.23", 0x00000, 0x4000, 0x16445a6a );
+		ROM_LOAD( "a22-05-2.22", 0x04000, 0x4000, 0xd57430b2 );
+		ROM_LOAD( "a22-01.3",    0x10000, 0x4000, 0xaf3b7554 );/* banked */
+		ROM_LOAD( "a22-02.2",    0x14000, 0x4000, 0xb8a645fb );/* banked */
+		ROM_LOAD( "a22-03.1",    0x18000, 0x4000, 0x5f45d469 );/* banked */
 	
-	    ROM_REGION( 0x10000, REGION_CPU2, 0 )  /* sound Z80 */
-		ROM_LOAD( "a22-24.28",   0x00000, 0x4000, 0x1e7f841f )
+	    ROM_REGION( 0x10000, REGION_CPU2, 0 ); /* sound Z80 */
+		ROM_LOAD( "a22-24.28",   0x00000, 0x4000, 0x1e7f841f );
 	
-		ROM_REGION( 0x0800, REGION_CPU3, 0 )	/* 8k for the microcontroller */
-		ROM_LOAD( "a22-19.31",   0x00000, 0x0800, 0x06a71df0 )
+		ROM_REGION( 0x0800, REGION_CPU3, 0 );/* 8k for the microcontroller */
+		ROM_LOAD( "a22-19.31",   0x00000, 0x0800, 0x06a71df0 );
 	
-	    ROM_REGION( 0x20000, REGION_GFX1, ROMREGION_DISPOSE )	/* sprites */
-	    ROM_LOAD( "a22-06.111",  0x00000, 0x4000, 0x1df91b17 )
-	    ROM_LOAD( "a22-07.110",  0x04000, 0x4000, 0x2f0ab9b7 )
-	    ROM_LOAD( "a22-08.109",  0x08000, 0x4000, 0x49cb2134 )
-	    ROM_LOAD( "a22-09.108",  0x0c000, 0x4000, 0xe682e200 )
-	    ROM_LOAD( "a22-10.107",  0x10000, 0x4000, 0x653b7e25 )
-	    ROM_LOAD( "a22-11.106",  0x14000, 0x4000, 0x8057b55c )
-	    ROM_LOAD( "a22-12.105",  0x18000, 0x4000, 0x8b365b24 )
-	    ROM_LOAD( "a22-13.104",  0x1c000, 0x4000, 0x2c6d68fe )
+	    ROM_REGION( 0x20000, REGION_GFX1, ROMREGION_DISPOSE );/* sprites */
+	    ROM_LOAD( "a22-06.111",  0x00000, 0x4000, 0x1df91b17 );
+	    ROM_LOAD( "a22-07.110",  0x04000, 0x4000, 0x2f0ab9b7 );
+	    ROM_LOAD( "a22-08.109",  0x08000, 0x4000, 0x49cb2134 );
+	    ROM_LOAD( "a22-09.108",  0x0c000, 0x4000, 0xe682e200 );
+	    ROM_LOAD( "a22-10.107",  0x10000, 0x4000, 0x653b7e25 );
+	    ROM_LOAD( "a22-11.106",  0x14000, 0x4000, 0x8057b55c );
+	    ROM_LOAD( "a22-12.105",  0x18000, 0x4000, 0x8b365b24 );
+	    ROM_LOAD( "a22-13.104",  0x1c000, 0x4000, 0x2c6d68fe );
 	
-	    ROM_REGION( 0x4000, REGION_GFX2, 0 )	/* sprite zoom tables */
-	    ROM_LOAD( "a22-14.59",   0x0000, 0x2000, 0xa450b3ef )	/* vertical */
-	    ROM_LOAD( "a22-15.115",  0x2000, 0x1000, 0x337a0c14 )	/* horizontal */
-	    ROM_LOAD( "a22-16.116",  0x3000, 0x1000, 0x337a0c14 )	/* horizontal */
-	ROM_END
+	    ROM_REGION( 0x4000, REGION_GFX2, 0 );/* sprite zoom tables */
+	    ROM_LOAD( "a22-14.59",   0x0000, 0x2000, 0xa450b3ef );/* vertical */
+	    ROM_LOAD( "a22-15.115",  0x2000, 0x1000, 0x337a0c14 );/* horizontal */
+	    ROM_LOAD( "a22-16.116",  0x3000, 0x1000, 0x337a0c14 );/* horizontal */
+	ROM_END(); }}; 
 	
-	ROM_START( buggycht )
-	    ROM_REGION( 0x1c000, REGION_CPU1, 0 )  /* 64k for code */
-		ROM_LOAD( "bu04.bin",    0x00000, 0x4000, 0xf90ab854 )
-		ROM_LOAD( "bu05.bin",    0x04000, 0x4000, 0x543d0949 )
-		ROM_LOAD( "a22-01.3",    0x10000, 0x4000, 0xaf3b7554 ) /* banked */
-		ROM_LOAD( "a22-02.2",    0x14000, 0x4000, 0xb8a645fb ) /* banked */
-		ROM_LOAD( "a22-03.1",    0x18000, 0x4000, 0x5f45d469 ) /* banked */
+	static RomLoadPtr rom_buggycht = new RomLoadPtr(){ public void handler(){ 
+	    ROM_REGION( 0x1c000, REGION_CPU1, 0 ); /* 64k for code */
+		ROM_LOAD( "bu04.bin",    0x00000, 0x4000, 0xf90ab854 );
+		ROM_LOAD( "bu05.bin",    0x04000, 0x4000, 0x543d0949 );
+		ROM_LOAD( "a22-01.3",    0x10000, 0x4000, 0xaf3b7554 );/* banked */
+		ROM_LOAD( "a22-02.2",    0x14000, 0x4000, 0xb8a645fb );/* banked */
+		ROM_LOAD( "a22-03.1",    0x18000, 0x4000, 0x5f45d469 );/* banked */
 	
-	    ROM_REGION( 0x10000, REGION_CPU2, 0 )  /* sound Z80 */
-		ROM_LOAD( "a22-24.28",   0x00000, 0x4000, 0x1e7f841f )
+	    ROM_REGION( 0x10000, REGION_CPU2, 0 ); /* sound Z80 */
+		ROM_LOAD( "a22-24.28",   0x00000, 0x4000, 0x1e7f841f );
 	
-		ROM_REGION( 0x0800, REGION_CPU3, 0 )	/* 8k for the microcontroller */
-		ROM_LOAD( "a22-19.31",   0x00000, 0x0800, 0x06a71df0 )
+		ROM_REGION( 0x0800, REGION_CPU3, 0 );/* 8k for the microcontroller */
+		ROM_LOAD( "a22-19.31",   0x00000, 0x0800, 0x06a71df0 );
 	
-	    ROM_REGION( 0x20000, REGION_GFX1, ROMREGION_DISPOSE )	/* sprites */
-	    ROM_LOAD( "a22-06.111",  0x00000, 0x4000, 0x1df91b17 )
-	    ROM_LOAD( "a22-07.110",  0x04000, 0x4000, 0x2f0ab9b7 )
-	    ROM_LOAD( "a22-08.109",  0x08000, 0x4000, 0x49cb2134 )
-	    ROM_LOAD( "a22-09.108",  0x0c000, 0x4000, 0xe682e200 )
-	    ROM_LOAD( "a22-10.107",  0x10000, 0x4000, 0x653b7e25 )
-	    ROM_LOAD( "a22-11.106",  0x14000, 0x4000, 0x8057b55c )
-	    ROM_LOAD( "a22-12.105",  0x18000, 0x4000, 0x8b365b24 )
-	    ROM_LOAD( "a22-13.104",  0x1c000, 0x4000, 0x2c6d68fe )
+	    ROM_REGION( 0x20000, REGION_GFX1, ROMREGION_DISPOSE );/* sprites */
+	    ROM_LOAD( "a22-06.111",  0x00000, 0x4000, 0x1df91b17 );
+	    ROM_LOAD( "a22-07.110",  0x04000, 0x4000, 0x2f0ab9b7 );
+	    ROM_LOAD( "a22-08.109",  0x08000, 0x4000, 0x49cb2134 );
+	    ROM_LOAD( "a22-09.108",  0x0c000, 0x4000, 0xe682e200 );
+	    ROM_LOAD( "a22-10.107",  0x10000, 0x4000, 0x653b7e25 );
+	    ROM_LOAD( "a22-11.106",  0x14000, 0x4000, 0x8057b55c );
+	    ROM_LOAD( "a22-12.105",  0x18000, 0x4000, 0x8b365b24 );
+	    ROM_LOAD( "a22-13.104",  0x1c000, 0x4000, 0x2c6d68fe );
 	
-	    ROM_REGION( 0x4000, REGION_GFX2, 0 )	/* sprite zoom tables */
-	    ROM_LOAD( "a22-14.59",   0x0000, 0x2000, 0xa450b3ef )	/* vertical */
-	    ROM_LOAD( "a22-15.115",  0x2000, 0x1000, 0x337a0c14 )	/* horizontal */
-	    ROM_LOAD( "a22-16.116",  0x3000, 0x1000, 0x337a0c14 )	/* horizontal */
-	ROM_END
+	    ROM_REGION( 0x4000, REGION_GFX2, 0 );/* sprite zoom tables */
+	    ROM_LOAD( "a22-14.59",   0x0000, 0x2000, 0xa450b3ef );/* vertical */
+	    ROM_LOAD( "a22-15.115",  0x2000, 0x1000, 0x337a0c14 );/* horizontal */
+	    ROM_LOAD( "a22-16.116",  0x3000, 0x1000, 0x337a0c14 );/* horizontal */
+	ROM_END(); }}; 
 	
 	
 	

@@ -342,40 +342,40 @@ public class mrflea
 		}
 	};
 	
-	ROM_START( mrflea )
-		ROM_REGION( 0x10000, REGION_CPU1, 0 ) /* Z80 code; main CPU */
-		ROM_LOAD( "cpu_d1",	0x0000, 0x2000, 0xd286217c )
-		ROM_LOAD( "cpu_d3",	0x2000, 0x2000, 0x95cf94bc )
-		ROM_LOAD( "cpu_d5",	0x4000, 0x2000, 0x466ca77e )
-		ROM_LOAD( "cpu_b1",	0x6000, 0x2000, 0x721477d6 )
-		ROM_LOAD( "cpu_b3",	0x8000, 0x2000, 0xf55b01e4 )
-		ROM_LOAD( "cpu_b5",	0xa000, 0x2000, 0x79f560aa )
+	static RomLoadPtr rom_mrflea = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x10000, REGION_CPU1, 0 );/* Z80 code; main CPU */
+		ROM_LOAD( "cpu_d1",	0x0000, 0x2000, 0xd286217c );
+		ROM_LOAD( "cpu_d3",	0x2000, 0x2000, 0x95cf94bc );
+		ROM_LOAD( "cpu_d5",	0x4000, 0x2000, 0x466ca77e );
+		ROM_LOAD( "cpu_b1",	0x6000, 0x2000, 0x721477d6 );
+		ROM_LOAD( "cpu_b3",	0x8000, 0x2000, 0xf55b01e4 );
+		ROM_LOAD( "cpu_b5",	0xa000, 0x2000, 0x79f560aa );
 	
-		ROM_REGION( 0x10000, REGION_CPU2, 0 ) /* Z80 code; IO CPU */
-		ROM_LOAD( "io_a11",	0x0000, 0x1000, 0x7a20c3ee )
-		ROM_LOAD( "io_c11",	0x2000, 0x1000, 0x8d26e0c8 )
-		ROM_LOAD( "io_d11",	0x3000, 0x1000, 0xabd9afc0 )
+		ROM_REGION( 0x10000, REGION_CPU2, 0 );/* Z80 code; IO CPU */
+		ROM_LOAD( "io_a11",	0x0000, 0x1000, 0x7a20c3ee );
+		ROM_LOAD( "io_c11",	0x2000, 0x1000, 0x8d26e0c8 );
+		ROM_LOAD( "io_d11",	0x3000, 0x1000, 0xabd9afc0 );
 	
-		ROM_REGION( 0x10000, REGION_GFX1, 0 ) /* sprites */
-		ROM_LOAD( "vd_l10",	0x0000, 0x2000, 0x48b2adf9 )
-		ROM_LOAD( "vd_l11",	0x2000, 0x2000, 0x2ff168c0 )
-		ROM_LOAD( "vd_l6",	0x4000, 0x2000, 0x100158ca )
-		ROM_LOAD( "vd_l7",	0x6000, 0x2000, 0x34501577 )
-		ROM_LOAD( "vd_j10",	0x8000, 0x2000, 0x3f29b8c3 )
-		ROM_LOAD( "vd_j11",	0xa000, 0x2000, 0x39380bea )
-		ROM_LOAD( "vd_j6",	0xc000, 0x2000, 0x2b4b110e )
-		ROM_LOAD( "vd_j7",	0xe000, 0x2000, 0x3a3c8b1e )
+		ROM_REGION( 0x10000, REGION_GFX1, 0 );/* sprites */
+		ROM_LOAD( "vd_l10",	0x0000, 0x2000, 0x48b2adf9 );
+		ROM_LOAD( "vd_l11",	0x2000, 0x2000, 0x2ff168c0 );
+		ROM_LOAD( "vd_l6",	0x4000, 0x2000, 0x100158ca );
+		ROM_LOAD( "vd_l7",	0x6000, 0x2000, 0x34501577 );
+		ROM_LOAD( "vd_j10",	0x8000, 0x2000, 0x3f29b8c3 );
+		ROM_LOAD( "vd_j11",	0xa000, 0x2000, 0x39380bea );
+		ROM_LOAD( "vd_j6",	0xc000, 0x2000, 0x2b4b110e );
+		ROM_LOAD( "vd_j7",	0xe000, 0x2000, 0x3a3c8b1e );
 	
-		ROM_REGION( 0x10000, REGION_GFX2, 0 ) /* characters */
-		ROM_LOAD( "vd_k1",	0x0000, 0x2000, 0x7540e3a7 )
-		ROM_LOAD( "vd_k2",	0x2000, 0x2000, 0x6c688219 )
-		ROM_LOAD( "vd_k3",	0x4000, 0x2000, 0x15e96f3c )
-		ROM_LOAD( "vd_k4",	0x6000, 0x2000, 0xfe5100df )
-		ROM_LOAD( "vd_l1",	0x8000, 0x2000, 0xd1e3d056 )
-		ROM_LOAD( "vd_l2",	0xa000, 0x2000, 0x4d7fb925 )
-		ROM_LOAD( "vd_l3",	0xc000, 0x2000, 0x6d81588a )
-		ROM_LOAD( "vd_l4",	0xe000, 0x2000, 0x423735a5 )
-	ROM_END
+		ROM_REGION( 0x10000, REGION_GFX2, 0 );/* characters */
+		ROM_LOAD( "vd_k1",	0x0000, 0x2000, 0x7540e3a7 );
+		ROM_LOAD( "vd_k2",	0x2000, 0x2000, 0x6c688219 );
+		ROM_LOAD( "vd_k3",	0x4000, 0x2000, 0x15e96f3c );
+		ROM_LOAD( "vd_k4",	0x6000, 0x2000, 0xfe5100df );
+		ROM_LOAD( "vd_l1",	0x8000, 0x2000, 0xd1e3d056 );
+		ROM_LOAD( "vd_l2",	0xa000, 0x2000, 0x4d7fb925 );
+		ROM_LOAD( "vd_l3",	0xc000, 0x2000, 0x6d81588a );
+		ROM_LOAD( "vd_l4",	0xe000, 0x2000, 0x423735a5 );
+	ROM_END(); }}; 
 	
 	INPUT_PORTS_START( mrflea )
 		PORT_START

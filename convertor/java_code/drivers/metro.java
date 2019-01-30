@@ -3758,23 +3758,23 @@ public class metro
 	
 	***************************************************************************/
 	
-	ROM_START( balcube )
-		ROM_REGION( 0x080000, REGION_CPU1, 0 )		/* 68000 Code */
-		ROM_LOAD16_BYTE( "6", 0x000000, 0x040000, 0xc400f84d )
-		ROM_LOAD16_BYTE( "5", 0x000001, 0x040000, 0x15313e3f )
+	static RomLoadPtr rom_balcube = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x080000, REGION_CPU1, 0 );	/* 68000 Code */
+		ROM_LOAD16_BYTE( "6", 0x000000, 0x040000, 0xc400f84d );
+		ROM_LOAD16_BYTE( "5", 0x000001, 0x040000, 0x15313e3f );
 	
-		ROM_REGION( 0x200000, REGION_GFX1, 0 )	/* Gfx + Data (Addressable by CPU & Blitter) */
+		ROM_REGION( 0x200000, REGION_GFX1, 0 );/* Gfx + Data (Addressable by CPU & Blitter) */
 		ROMX_LOAD( "2", 0x000000, 0x080000, 0x492ca8f0, ROM_GROUPWORD | ROM_SKIP(6))
 		ROMX_LOAD( "4", 0x000002, 0x080000, 0xd1acda2c, ROM_GROUPWORD | ROM_SKIP(6))
 		ROMX_LOAD( "1", 0x000004, 0x080000, 0x0ea3d161, ROM_GROUPWORD | ROM_SKIP(6))
 		ROMX_LOAD( "3", 0x000006, 0x080000, 0xeef1d3b4, ROM_GROUPWORD | ROM_SKIP(6))
 	
-		ROM_REGION( 0x080000, REGION_SOUND1, ROMREGION_SOUNDONLY )	/* Samples */
-		ROM_LOAD( "7", 0x000000, 0x080000, 0xf769287d )	// PCM 16 Bit (Signed)
+		ROM_REGION( 0x080000, REGION_SOUND1, ROMREGION_SOUNDONLY );/* Samples */
+		ROM_LOAD( "7", 0x000000, 0x080000, 0xf769287d );// PCM 16 Bit (Signed)
 	
-		ROM_REGION( 0x200000, REGION_SOUND2, ROMREGION_SOUNDONLY )	/* ? YRW801-M ? */
-		ROM_LOAD( "yrw801m", 0x000000, 0x200000, 0x00000000 )	// Yamaha YRW801 2MB ROM with samples for the OPL4.
-	ROM_END
+		ROM_REGION( 0x200000, REGION_SOUND2, ROMREGION_SOUNDONLY );/* ? YRW801-M ? */
+		ROM_LOAD( "yrw801m", 0x000000, 0x200000, 0x00000000 );// Yamaha YRW801 2MB ROM with samples for the OPL4.
+	ROM_END(); }}; 
 	
 	
 	/***************************************************************************
@@ -3806,23 +3806,23 @@ public class metro
 	
 	***************************************************************************/
 	
-	ROM_START( bangball )
-		ROM_REGION( 0x080000, REGION_CPU1, 0 )		/* 68000 Code */
-		ROM_LOAD16_BYTE( "rom#006.u18", 0x000000, 0x040000, 0x0e4124bc )
-		ROM_LOAD16_BYTE( "rom#005.u19", 0x000001, 0x040000, 0x3fa08587 )
+	static RomLoadPtr rom_bangball = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x080000, REGION_CPU1, 0 );	/* 68000 Code */
+		ROM_LOAD16_BYTE( "rom#006.u18", 0x000000, 0x040000, 0x0e4124bc );
+		ROM_LOAD16_BYTE( "rom#005.u19", 0x000001, 0x040000, 0x3fa08587 );
 	
-		ROM_REGION( 0x400000, REGION_GFX1, 0 )	/* Gfx + Data (Addressable by CPU & Blitter) */
+		ROM_REGION( 0x400000, REGION_GFX1, 0 );/* Gfx + Data (Addressable by CPU & Blitter) */
 		ROMX_LOAD( "bp963a.u30", 0x000000, 0x100000, 0xb0ca8e39, ROM_GROUPWORD | ROM_SKIP(6))
 		ROMX_LOAD( "bp963a.u29", 0x000002, 0x100000, 0xd934468f, ROM_GROUPWORD | ROM_SKIP(6))
 		ROMX_LOAD( "bp963a.u28", 0x000004, 0x100000, 0x96d03c6a, ROM_GROUPWORD | ROM_SKIP(6))
 		ROMX_LOAD( "bp963a.u27", 0x000006, 0x100000, 0x5e3c7732, ROM_GROUPWORD | ROM_SKIP(6))
 	
-		ROM_REGION( 0x080000, REGION_SOUND1, ROMREGION_SOUNDONLY )	/* Samples */
-		ROM_LOAD( "rom#007.u49", 0x000000, 0x080000, 0x04cc91a9 )
+		ROM_REGION( 0x080000, REGION_SOUND1, ROMREGION_SOUNDONLY );/* Samples */
+		ROM_LOAD( "rom#007.u49", 0x000000, 0x080000, 0x04cc91a9 );
 	
-		ROM_REGION( 0x200000, REGION_SOUND2, ROMREGION_SOUNDONLY )	/* Samples */
-		ROM_LOAD( "yrw801-m", 0x000000, 0x200000, 0x0000000 )
-	ROM_END
+		ROM_REGION( 0x200000, REGION_SOUND2, ROMREGION_SOUNDONLY );/* Samples */
+		ROM_LOAD( "yrw801-m", 0x000000, 0x200000, 0x0000000 );
+	ROM_END(); }}; 
 	
 	
 	/***************************************************************************
@@ -3840,17 +3840,17 @@ public class metro
 	
 	***************************************************************************/
 	
-	ROM_START( blzntrnd )
-		ROM_REGION( 0x200000, REGION_CPU1, 0 )	/* 68000 */
-		ROM_LOAD16_BYTE( "1k.bin", 0x000000, 0x80000, 0xb007893b )
-		ROM_LOAD16_BYTE( "2k.bin", 0x000001, 0x80000, 0xec173252 )
-		ROM_LOAD16_BYTE( "3k.bin", 0x100000, 0x80000, 0x1e230ba2 )
-		ROM_LOAD16_BYTE( "4k.bin", 0x100001, 0x80000, 0xe98ca99e )
+	static RomLoadPtr rom_blzntrnd = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x200000, REGION_CPU1, 0 );/* 68000 */
+		ROM_LOAD16_BYTE( "1k.bin", 0x000000, 0x80000, 0xb007893b );
+		ROM_LOAD16_BYTE( "2k.bin", 0x000001, 0x80000, 0xec173252 );
+		ROM_LOAD16_BYTE( "3k.bin", 0x100000, 0x80000, 0x1e230ba2 );
+		ROM_LOAD16_BYTE( "4k.bin", 0x100001, 0x80000, 0xe98ca99e );
 	
-		ROM_REGION( 0x20000, REGION_CPU2, 0 )	/* Z80 */
-		ROM_LOAD( "rom5.bin", 0x0000, 0x20000, 0x7e90b774 )
+		ROM_REGION( 0x20000, REGION_CPU2, 0 );/* Z80 */
+		ROM_LOAD( "rom5.bin", 0x0000, 0x20000, 0x7e90b774 );
 	
-		ROM_REGION( 0x1800000, REGION_GFX1, 0 )	/* Gfx + Data (Addressable by CPU & Blitter) */
+		ROM_REGION( 0x1800000, REGION_GFX1, 0 );/* Gfx + Data (Addressable by CPU & Blitter) */
 		ROMX_LOAD( "rom142.bin", 0x0000000, 0x200000, 0xa7200598, ROM_GROUPWORD | ROM_SKIP(6))
 		ROMX_LOAD( "rom186.bin", 0x0000002, 0x200000, 0x6ee28ea7, ROM_GROUPWORD | ROM_SKIP(6))
 		ROMX_LOAD( "rom131.bin", 0x0000004, 0x200000, 0xc77e75d3, ROM_GROUPWORD | ROM_SKIP(6))
@@ -3864,16 +3864,16 @@ public class metro
 		ROMX_LOAD( "rom331.bin", 0x1000004, 0x200000, 0x4d909c28, ROM_GROUPWORD | ROM_SKIP(6))
 		ROMX_LOAD( "rom375.bin", 0x1000006, 0x200000, 0x6eb4f97c, ROM_GROUPWORD | ROM_SKIP(6))
 	
-		ROM_REGION( 0x200000, REGION_GFX3, ROMREGION_DISPOSE )	/* 053936 gfx data */
-		ROM_LOAD( "rom9.bin", 0x000000, 0x200000, 0x37ca3570 )
+		ROM_REGION( 0x200000, REGION_GFX3, ROMREGION_DISPOSE );/* 053936 gfx data */
+		ROM_LOAD( "rom9.bin", 0x000000, 0x200000, 0x37ca3570 );
 	
-		ROM_REGION( 0x080000, REGION_SOUND1, ROMREGION_SOUNDONLY )	/* Samples */
-		ROM_LOAD( "rom8.bin", 0x000000, 0x080000, 0x565a4086 )
+		ROM_REGION( 0x080000, REGION_SOUND1, ROMREGION_SOUNDONLY );/* Samples */
+		ROM_LOAD( "rom8.bin", 0x000000, 0x080000, 0x565a4086 );
 	
-		ROM_REGION( 0x400000, REGION_SOUND2, ROMREGION_SOUNDONLY )	/* ? YRW801-M ? */
-		ROM_LOAD( "rom6.bin", 0x000000, 0x200000, 0x8b8819fc )
-		ROM_LOAD( "rom7.bin", 0x200000, 0x200000, 0x0089a52b )
-	ROM_END
+		ROM_REGION( 0x400000, REGION_SOUND2, ROMREGION_SOUNDONLY );/* ? YRW801-M ? */
+		ROM_LOAD( "rom6.bin", 0x000000, 0x200000, 0x8b8819fc );
+		ROM_LOAD( "rom7.bin", 0x200000, 0x200000, 0x0089a52b );
+	ROM_END(); }}; 
 	
 	
 	/***************************************************************************
@@ -3897,23 +3897,23 @@ public class metro
 	
 	***************************************************************************/
 	
-	ROM_START( daitorid )
-		ROM_REGION( 0x040000, REGION_CPU1, 0 )		/* 68000 Code */
-		ROM_LOAD16_BYTE( "dt-ja-5.19e", 0x000000, 0x020000, 0x441efd77 )
-		ROM_LOAD16_BYTE( "dt-ja-6.19c", 0x000001, 0x020000, 0x494f9cc3 )
+	static RomLoadPtr rom_daitorid = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x040000, REGION_CPU1, 0 );	/* 68000 Code */
+		ROM_LOAD16_BYTE( "dt-ja-5.19e", 0x000000, 0x020000, 0x441efd77 );
+		ROM_LOAD16_BYTE( "dt-ja-6.19c", 0x000001, 0x020000, 0x494f9cc3 );
 	
-		ROM_REGION( 0x020000, REGION_CPU2, 0 )		/* NEC78C10 Code */
-		ROM_LOAD( "dt-ja-8.3h", 0x000000, 0x020000, 0x0351ad5b )
+		ROM_REGION( 0x020000, REGION_CPU2, 0 );	/* NEC78C10 Code */
+		ROM_LOAD( "dt-ja-8.3h", 0x000000, 0x020000, 0x0351ad5b );
 	
-		ROM_REGION( 0x200000, REGION_GFX1, 0 )	/* Gfx + Data (Addressable by CPU & Blitter) */
+		ROM_REGION( 0x200000, REGION_GFX1, 0 );/* Gfx + Data (Addressable by CPU & Blitter) */
 		ROMX_LOAD( "dt-ja-2.14h", 0x000000, 0x080000, 0x56881062, ROM_GROUPWORD | ROM_SKIP(6))
 		ROMX_LOAD( "dt-ja-4.18h", 0x000002, 0x080000, 0x85522e3b, ROM_GROUPWORD | ROM_SKIP(6))
 		ROMX_LOAD( "dt-ja-1.12h", 0x000004, 0x080000, 0x2a220bf2, ROM_GROUPWORD | ROM_SKIP(6))
 		ROMX_LOAD( "dt-ja-3.16h", 0x000006, 0x080000, 0xfd1f58e0, ROM_GROUPWORD | ROM_SKIP(6))
 	
-		ROM_REGION( 0x040000, REGION_SOUND1, ROMREGION_SOUNDONLY )	/* Samples */
-		ROM_LOAD( "dt-ja-7.3f", 0x000000, 0x040000, 0x0d888cde )
-	ROM_END
+		ROM_REGION( 0x040000, REGION_SOUND1, ROMREGION_SOUNDONLY );/* Samples */
+		ROM_LOAD( "dt-ja-7.3f", 0x000000, 0x040000, 0x0d888cde );
+	ROM_END(); }}; 
 	
 	
 	/***************************************************************************
@@ -3939,23 +3939,23 @@ public class metro
 	
 	***************************************************************************/
 	
-	ROM_START( dharma )
-		ROM_REGION( 0x040000, REGION_CPU1, 0 )		/* 68000 Code */
-		ROM_LOAD16_BYTE( "jc-5", 0x000000, 0x020000, 0xb5d44426 )
-		ROM_LOAD16_BYTE( "jc-6", 0x000001, 0x020000, 0xbc5a202e )
+	static RomLoadPtr rom_dharma = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x040000, REGION_CPU1, 0 );	/* 68000 Code */
+		ROM_LOAD16_BYTE( "jc-5", 0x000000, 0x020000, 0xb5d44426 );
+		ROM_LOAD16_BYTE( "jc-6", 0x000001, 0x020000, 0xbc5a202e );
 	
-		ROM_REGION( 0x020000, REGION_CPU2, 0 )		/* NEC78C10 Code */
-		ROM_LOAD( "ja-8", 0x000000, 0x020000, 0xaf7ebc4c )	// (c)1992 Imagetek (11xxxxxxxxxxxxxxx = 0xFF)
+		ROM_REGION( 0x020000, REGION_CPU2, 0 );	/* NEC78C10 Code */
+		ROM_LOAD( "ja-8", 0x000000, 0x020000, 0xaf7ebc4c );// (c)1992 Imagetek (11xxxxxxxxxxxxxxx = 0xFF)
 	
-		ROM_REGION( 0x200000, REGION_GFX1, 0 )	/* Gfx + Data (Addressable by CPU & Blitter) */
+		ROM_REGION( 0x200000, REGION_GFX1, 0 );/* Gfx + Data (Addressable by CPU & Blitter) */
 		ROMX_LOAD( "jb-2", 0x000000, 0x080000, 0x2c07c29b, ROM_GROUPWORD | ROM_SKIP(6))
 		ROMX_LOAD( "jb-4", 0x000002, 0x080000, 0xfe15538e, ROM_GROUPWORD | ROM_SKIP(6))
 		ROMX_LOAD( "jb-1", 0x000004, 0x080000, 0xe6ca9bf6, ROM_GROUPWORD | ROM_SKIP(6))
 		ROMX_LOAD( "jb-3", 0x000006, 0x080000, 0x6ecbe193, ROM_GROUPWORD | ROM_SKIP(6))
 	
-		ROM_REGION( 0x040000, REGION_SOUND1, ROMREGION_SOUNDONLY )	/* Samples */
-		ROM_LOAD( "ja-7", 0x000000, 0x040000, 0x7ce817eb )
-	ROM_END
+		ROM_REGION( 0x040000, REGION_SOUND1, ROMREGION_SOUNDONLY );/* Samples */
+		ROM_LOAD( "ja-7", 0x000000, 0x040000, 0x7ce817eb );
+	ROM_END(); }}; 
 	
 	
 	/***************************************************************************
@@ -3994,26 +3994,26 @@ public class metro
 	
 	***************************************************************************/
 	
-	ROM_START( karatour )
-		ROM_REGION( 0x080000, REGION_CPU1, 0 )		/* 68000 Code */
-		ROM_LOAD16_BYTE( "kt002.8g",  0x000000, 0x040000, 0x316a97ec )
-		ROM_LOAD16_BYTE( "kt003.10g", 0x000001, 0x040000, 0xabe1b991 )
+	static RomLoadPtr rom_karatour = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x080000, REGION_CPU1, 0 );	/* 68000 Code */
+		ROM_LOAD16_BYTE( "kt002.8g",  0x000000, 0x040000, 0x316a97ec );
+		ROM_LOAD16_BYTE( "kt003.10g", 0x000001, 0x040000, 0xabe1b991 );
 	
-		ROM_REGION( 0x020000, REGION_CPU2, 0 )		/* NEC78C10 Code */
-		ROM_LOAD( "kt001.1i", 0x000000, 0x020000, 0x1dd2008c )	// 11xxxxxxxxxxxxxxx = 0xFF
+		ROM_REGION( 0x020000, REGION_CPU2, 0 );	/* NEC78C10 Code */
+		ROM_LOAD( "kt001.1i", 0x000000, 0x020000, 0x1dd2008c );// 11xxxxxxxxxxxxxxx = 0xFF
 	
-		ROM_REGION( 0x400000, REGION_GFX1, 0 )	/* Gfx + Data (Addressable by CPU & Blitter) */
+		ROM_REGION( 0x400000, REGION_GFX1, 0 );/* Gfx + Data (Addressable by CPU & Blitter) */
 		ROMX_LOAD( "ktmask.15f", 0x000000, 0x100000, 0xf6bf20a5, ROM_GROUPWORD | ROM_SKIP(6))
 		ROMX_LOAD( "ktmask.17d", 0x000002, 0x100000, 0x794cc1c0, ROM_GROUPWORD | ROM_SKIP(6))
 		ROMX_LOAD( "ktmask.17f", 0x000004, 0x100000, 0xea9c11fc, ROM_GROUPWORD | ROM_SKIP(6))
 		ROMX_LOAD( "ktmask.15d", 0x000006, 0x100000, 0x7e15f058, ROM_GROUPWORD | ROM_SKIP(6))
 	
-		ROM_REGION( 0x040000, REGION_SOUND1, ROMREGION_SOUNDONLY )	/* Samples */
-		ROM_LOAD( "kt008.1d", 0x000000, 0x040000, 0x47cf9fa1 )
+		ROM_REGION( 0x040000, REGION_SOUND1, ROMREGION_SOUNDONLY );/* Samples */
+		ROM_LOAD( "kt008.1d", 0x000000, 0x040000, 0x47cf9fa1 );
 	
 		/* Additional memory for the layers' ram */
-		ROM_REGION( 0x20000*3, REGION_USER1, 0 )
-	ROM_END
+		ROM_REGION( 0x20000*3, REGION_USER1, 0 );
+	ROM_END(); }}; 
 	
 	
 	/***************************************************************************
@@ -4044,47 +4044,47 @@ public class metro
 	
 	***************************************************************************/
 	
-	ROM_START( ladykill )
-		ROM_REGION( 0x080000, REGION_CPU1, 0 )		/* 68000 Code */
-		ROM_LOAD16_BYTE( "e2.bin",    0x000000, 0x040000, 0x211a4865 )
-		ROM_LOAD16_BYTE( "e3.bin",    0x000001, 0x040000, 0x581a55ea )
+	static RomLoadPtr rom_ladykill = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x080000, REGION_CPU1, 0 );	/* 68000 Code */
+		ROM_LOAD16_BYTE( "e2.bin",    0x000000, 0x040000, 0x211a4865 );
+		ROM_LOAD16_BYTE( "e3.bin",    0x000001, 0x040000, 0x581a55ea );
 	
-		ROM_REGION( 0x020000, REGION_CPU2, 0 )		/* NEC78C10 Code */
-		ROM_LOAD( "e1.1i",    0x000000, 0x020000, 0xa4d95cfb )	// 11xxxxxxxxxxxxxxx = 0xFF
+		ROM_REGION( 0x020000, REGION_CPU2, 0 );	/* NEC78C10 Code */
+		ROM_LOAD( "e1.1i",    0x000000, 0x020000, 0xa4d95cfb );// 11xxxxxxxxxxxxxxx = 0xFF
 	
-		ROM_REGION( 0x400000, REGION_GFX1, 0 )	/* Gfx + Data (Addressable by CPU & Blitter) */
+		ROM_REGION( 0x400000, REGION_GFX1, 0 );/* Gfx + Data (Addressable by CPU & Blitter) */
 		ROMX_LOAD( "ladyj-4.15f", 0x000000, 0x100000, 0x65e5906c, ROM_GROUPWORD | ROM_SKIP(6))
 		ROMX_LOAD( "ladyj-7.17d", 0x000002, 0x100000, 0x56bd64a5, ROM_GROUPWORD | ROM_SKIP(6))
 		ROMX_LOAD( "ladyj-5.17f", 0x000004, 0x100000, 0xa81ffaa3, ROM_GROUPWORD | ROM_SKIP(6))
 		ROMX_LOAD( "ladyj-6.15d", 0x000006, 0x100000, 0x3a34913a, ROM_GROUPWORD | ROM_SKIP(6))
 	
-		ROM_REGION( 0x040000, REGION_SOUND1, ROMREGION_SOUNDONLY )	/* Samples */
-		ROM_LOAD( "e8.bin",   0x000000, 0x040000, 0xda88244d )
+		ROM_REGION( 0x040000, REGION_SOUND1, ROMREGION_SOUNDONLY );/* Samples */
+		ROM_LOAD( "e8.bin",   0x000000, 0x040000, 0xda88244d );
 	
 		/* Additional memory for the layers' ram */
-		ROM_REGION( 0x20000*3, REGION_USER1, 0 )
-	ROM_END
+		ROM_REGION( 0x20000*3, REGION_USER1, 0 );
+	ROM_END(); }}; 
 	
-	ROM_START( moegonta )
-		ROM_REGION( 0x080000, REGION_CPU1, 0 )		/* 68000 Code */
-		ROM_LOAD16_BYTE( "j2.8g",     0x000000, 0x040000, 0xaa18d130 )
-		ROM_LOAD16_BYTE( "j3.10g",    0x000001, 0x040000, 0xb555e6ab )
+	static RomLoadPtr rom_moegonta = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x080000, REGION_CPU1, 0 );	/* 68000 Code */
+		ROM_LOAD16_BYTE( "j2.8g",     0x000000, 0x040000, 0xaa18d130 );
+		ROM_LOAD16_BYTE( "j3.10g",    0x000001, 0x040000, 0xb555e6ab );
 	
-		ROM_REGION( 0x020000, REGION_CPU2, 0 )		/* NEC78C10 Code */
-		ROM_LOAD( "e1.1i",    0x000000, 0x020000, 0xa4d95cfb )	// 11xxxxxxxxxxxxxxx = 0xFF
+		ROM_REGION( 0x020000, REGION_CPU2, 0 );	/* NEC78C10 Code */
+		ROM_LOAD( "e1.1i",    0x000000, 0x020000, 0xa4d95cfb );// 11xxxxxxxxxxxxxxx = 0xFF
 	
-		ROM_REGION( 0x400000, REGION_GFX1, 0 )	/* Gfx + Data (Addressable by CPU & Blitter) */
+		ROM_REGION( 0x400000, REGION_GFX1, 0 );/* Gfx + Data (Addressable by CPU & Blitter) */
 		ROMX_LOAD( "ladyj-4.15f", 0x000000, 0x100000, 0x65e5906c, ROM_GROUPWORD | ROM_SKIP(6))
 		ROMX_LOAD( "ladyj-7.17d", 0x000002, 0x100000, 0x56bd64a5, ROM_GROUPWORD | ROM_SKIP(6))
 		ROMX_LOAD( "ladyj-5.17f", 0x000004, 0x100000, 0xa81ffaa3, ROM_GROUPWORD | ROM_SKIP(6))
 		ROMX_LOAD( "ladyj-6.15d", 0x000006, 0x100000, 0x3a34913a, ROM_GROUPWORD | ROM_SKIP(6))
 	
-		ROM_REGION( 0x040000, REGION_SOUND1, ROMREGION_SOUNDONLY )	/* Samples */
-		ROM_LOAD( "e8j.1d",   0x000000, 0x040000, 0xf66c2a80 )
+		ROM_REGION( 0x040000, REGION_SOUND1, ROMREGION_SOUNDONLY );/* Samples */
+		ROM_LOAD( "e8j.1d",   0x000000, 0x040000, 0xf66c2a80 );
 	
 		/* Additional memory for the layers' ram */
-		ROM_REGION( 0x20000*3, REGION_USER1, 0 )
-	ROM_END
+		ROM_REGION( 0x20000*3, REGION_USER1, 0 );
+	ROM_END(); }}; 
 	
 	
 	/***************************************************************************
@@ -4109,15 +4109,15 @@ public class metro
 	
 	***************************************************************************/
 	
-	ROM_START( lastfort )
-		ROM_REGION( 0x040000, REGION_CPU1, 0 )		/* 68000 Code */
-		ROM_LOAD16_BYTE( "tr_jc09", 0x000000, 0x020000, 0x8b98a49a )
-		ROM_LOAD16_BYTE( "tr_jc10", 0x000001, 0x020000, 0x8d04da04 )
+	static RomLoadPtr rom_lastfort = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x040000, REGION_CPU1, 0 );	/* 68000 Code */
+		ROM_LOAD16_BYTE( "tr_jc09", 0x000000, 0x020000, 0x8b98a49a );
+		ROM_LOAD16_BYTE( "tr_jc10", 0x000001, 0x020000, 0x8d04da04 );
 	
-		ROM_REGION( 0x020000, REGION_CPU2, 0 )		/* NEC78C10 Code */
-		ROM_LOAD( "tr_jb12", 0x000000, 0x020000, 0x8a8f5fef )	// (c)1992 Imagetek (11xxxxxxxxxxxxxxx = 0xFF)
+		ROM_REGION( 0x020000, REGION_CPU2, 0 );	/* NEC78C10 Code */
+		ROM_LOAD( "tr_jb12", 0x000000, 0x020000, 0x8a8f5fef );// (c)1992 Imagetek (11xxxxxxxxxxxxxxx = 0xFF)
 	
-		ROM_REGION( 0x100000, REGION_GFX1, 0 )	/* Gfx + Data (Addressable by CPU & Blitter) */
+		ROM_REGION( 0x100000, REGION_GFX1, 0 );/* Gfx + Data (Addressable by CPU & Blitter) */
 		ROMX_LOAD( "tr_jc02", 0x000000, 0x020000, 0xdb3c5b79, ROM_SKIP(7))
 		ROMX_LOAD( "tr_jc04", 0x000001, 0x020000, 0xf8ab2f9b, ROM_SKIP(7))
 		ROMX_LOAD( "tr_jc06", 0x000002, 0x020000, 0x47a7f397, ROM_SKIP(7))
@@ -4127,9 +4127,9 @@ public class metro
 		ROMX_LOAD( "tr_jc05", 0x000006, 0x020000, 0x3fbbe49c, ROM_SKIP(7))
 		ROMX_LOAD( "tr_jc07", 0x000007, 0x020000, 0x05e1456b, ROM_SKIP(7))
 	
-		ROM_REGION( 0x020000, REGION_SOUND1, ROMREGION_SOUNDONLY )	/* Samples */
-		ROM_LOAD( "tr_jb11", 0x000000, 0x020000, 0x83786a09 )
-	ROM_END
+		ROM_REGION( 0x020000, REGION_SOUND1, ROMREGION_SOUNDONLY );/* Samples */
+		ROM_LOAD( "tr_jb11", 0x000000, 0x020000, 0x83786a09 );
+	ROM_END(); }}; 
 	
 	
 	/***************************************************************************
@@ -4146,15 +4146,15 @@ public class metro
 	
 	***************************************************************************/
 	
-	ROM_START( lastfero )
-		ROM_REGION( 0x040000, REGION_CPU1, 0 )		/* 68000 Code */
-		ROM_LOAD16_BYTE( "tre_jc09", 0x000000, 0x020000, 0x32f43390 )
-		ROM_LOAD16_BYTE( "tre_jc10", 0x000001, 0x020000, 0x9536369c )
+	static RomLoadPtr rom_lastfero = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x040000, REGION_CPU1, 0 );	/* 68000 Code */
+		ROM_LOAD16_BYTE( "tre_jc09", 0x000000, 0x020000, 0x32f43390 );
+		ROM_LOAD16_BYTE( "tre_jc10", 0x000001, 0x020000, 0x9536369c );
 	
-		ROM_REGION( 0x020000, REGION_CPU2, 0 )		/* NEC78C10 Code */
-		ROM_LOAD( "tr_jb12", 0x000000, 0x020000, 0x8a8f5fef )	// (c)1992 Imagetek (11xxxxxxxxxxxxxxx = 0xFF)
+		ROM_REGION( 0x020000, REGION_CPU2, 0 );	/* NEC78C10 Code */
+		ROM_LOAD( "tr_jb12", 0x000000, 0x020000, 0x8a8f5fef );// (c)1992 Imagetek (11xxxxxxxxxxxxxxx = 0xFF)
 	
-		ROM_REGION( 0x100000, REGION_GFX1, 0 )	/* Gfx + Data (Addressable by CPU & Blitter) */
+		ROM_REGION( 0x100000, REGION_GFX1, 0 );/* Gfx + Data (Addressable by CPU & Blitter) */
 		ROMX_LOAD( "tre_jc02", 0x000000, 0x020000, 0x11cfbc84, ROM_SKIP(7))
 		ROMX_LOAD( "tre_jc04", 0x000001, 0x020000, 0x32bf9c26, ROM_SKIP(7))
 		ROMX_LOAD( "tre_jc06", 0x000002, 0x020000, 0x16937977, ROM_SKIP(7))
@@ -4164,9 +4164,9 @@ public class metro
 		ROMX_LOAD( "tre_jc05", 0x000006, 0x020000, 0x79f769dd, ROM_SKIP(7))
 		ROMX_LOAD( "tre_jc07", 0x000007, 0x020000, 0xb6feacb2, ROM_SKIP(7))
 	
-		ROM_REGION( 0x020000, REGION_SOUND1, ROMREGION_SOUNDONLY )	/* Samples */
-		ROM_LOAD( "tr_jb11", 0x000000, 0x020000, 0x83786a09 )
-	ROM_END
+		ROM_REGION( 0x020000, REGION_SOUND1, ROMREGION_SOUNDONLY );/* Samples */
+		ROM_LOAD( "tr_jb11", 0x000000, 0x020000, 0x83786a09 );
+	ROM_END(); }}; 
 	
 	
 	/***************************************************************************
@@ -4183,20 +4183,20 @@ public class metro
 	
 	***************************************************************************/
 	
-	ROM_START( dokyusei )
-		ROM_REGION( 0x040000, REGION_CPU1, 0 )		/* 68000 Code */
-		ROM_LOAD16_BYTE( "330_a06.bin", 0x000000, 0x020000, 0x36157c2e )
-		ROM_LOAD16_BYTE( "330_a05.bin", 0x000001, 0x020000, 0x177f50d2 )
+	static RomLoadPtr rom_dokyusei = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x040000, REGION_CPU1, 0 );	/* 68000 Code */
+		ROM_LOAD16_BYTE( "330_a06.bin", 0x000000, 0x020000, 0x36157c2e );
+		ROM_LOAD16_BYTE( "330_a05.bin", 0x000001, 0x020000, 0x177f50d2 );
 	
-		ROM_REGION( 0x800000, REGION_GFX1, 0 )	/* Gfx + Data (Addressable by CPU & Blitter) */
+		ROM_REGION( 0x800000, REGION_GFX1, 0 );/* Gfx + Data (Addressable by CPU & Blitter) */
 		ROMX_LOAD( "2.bin", 0x000000, 0x200000, 0x075bface, ROM_GROUPWORD | ROM_SKIP(6))
 		ROMX_LOAD( "4.bin", 0x000002, 0x200000, 0xbc631438, ROM_GROUPWORD | ROM_SKIP(6))
 		ROMX_LOAD( "1.bin", 0x000004, 0x200000, 0x4566c29b, ROM_GROUPWORD | ROM_SKIP(6))
 		ROMX_LOAD( "3.bin", 0x000006, 0x200000, 0x5f6d7969, ROM_GROUPWORD | ROM_SKIP(6))
 	
-		ROM_REGION( 0x100000, REGION_SOUND1, ROMREGION_SOUNDONLY )	/* Samples */
-		ROM_LOAD( "7.bin", 0x000000, 0x100000, 0xc572aee1 )	// 4 x 0x40000
-	ROM_END
+		ROM_REGION( 0x100000, REGION_SOUND1, ROMREGION_SOUNDONLY );/* Samples */
+		ROM_LOAD( "7.bin", 0x000000, 0x100000, 0xc572aee1 );// 4 x 0x40000
+	ROM_END(); }}; 
 	
 	
 	/***************************************************************************
@@ -4216,20 +4216,20 @@ public class metro
 	
 	***************************************************************************/
 	
-	ROM_START( dokyusp )
-		ROM_REGION( 0x040000, REGION_CPU1, 0 )		/* 68000 Code */
-		ROM_LOAD16_BYTE( "6.bin", 0x000000, 0x020000, 0x01729b7f )
-		ROM_LOAD16_BYTE( "5.bin", 0x000001, 0x020000, 0x57770776 )
+	static RomLoadPtr rom_dokyusp = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x040000, REGION_CPU1, 0 );	/* 68000 Code */
+		ROM_LOAD16_BYTE( "6.bin", 0x000000, 0x020000, 0x01729b7f );
+		ROM_LOAD16_BYTE( "5.bin", 0x000001, 0x020000, 0x57770776 );
 	
-		ROM_REGION( 0x1000000, REGION_GFX1, 0 )	/* Gfx + Data (Addressable by CPU & Blitter) */
+		ROM_REGION( 0x1000000, REGION_GFX1, 0 );/* Gfx + Data (Addressable by CPU & Blitter) */
 		ROMX_LOAD( "2l.bin", 0x0000000, 0x400000, 0x4bed184d, ROM_GROUPWORD | ROM_SKIP(6))
 		ROMX_LOAD( "4l.bin", 0x0000002, 0x400000, 0x2ee468e6, ROM_GROUPWORD | ROM_SKIP(6))
 		ROMX_LOAD( "1l.bin", 0x0000004, 0x400000, 0x510ace14, ROM_GROUPWORD | ROM_SKIP(6))
 		ROMX_LOAD( "3l.bin", 0x0000006, 0x400000, 0x82ea562e, ROM_GROUPWORD | ROM_SKIP(6))
 	
-		ROM_REGION( 0x200000, REGION_SOUND1, ROMREGION_SOUNDONLY )	/* Samples */
-		ROM_LOAD( "7.bin", 0x000000, 0x200000, 0x763985e1 )
-	ROM_END
+		ROM_REGION( 0x200000, REGION_SOUND1, ROMREGION_SOUNDONLY );/* Samples */
+		ROM_LOAD( "7.bin", 0x000000, 0x200000, 0x763985e1 );
+	ROM_END(); }}; 
 	
 	
 	/***************************************************************************
@@ -4249,12 +4249,12 @@ public class metro
 	
 	***************************************************************************/
 	
-	ROM_START( gakusai )
-		ROM_REGION( 0x080000, REGION_CPU1, 0 )		/* 68000 Code */
-		ROM_LOAD16_BYTE( "6.bin", 0x000000, 0x040000, 0x6f8ab082 )
-		ROM_LOAD16_BYTE( "5.bin", 0x000001, 0x040000, 0x010176c4 )
+	static RomLoadPtr rom_gakusai = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x080000, REGION_CPU1, 0 );	/* 68000 Code */
+		ROM_LOAD16_BYTE( "6.bin", 0x000000, 0x040000, 0x6f8ab082 );
+		ROM_LOAD16_BYTE( "5.bin", 0x000001, 0x040000, 0x010176c4 );
 	
-		ROM_REGION( 0x2000000, REGION_GFX1, 0 )	/* Gfx + Data (Addressable by CPU & Blitter) */
+		ROM_REGION( 0x2000000, REGION_GFX1, 0 );/* Gfx + Data (Addressable by CPU & Blitter) */
 		ROMX_LOAD( "2l.bin", 0x0000000, 0x400000, 0x45dfb5c7, ROM_GROUPWORD | ROM_SKIP(6))
 		ROMX_LOAD( "4l.bin", 0x0000002, 0x400000, 0x7ab64f49, ROM_GROUPWORD | ROM_SKIP(6))
 		ROMX_LOAD( "1l.bin", 0x0000004, 0x400000, 0x75093421, ROM_GROUPWORD | ROM_SKIP(6))
@@ -4264,9 +4264,9 @@ public class metro
 		ROMX_LOAD( "1u.bin", 0x1000004, 0x400000, 0x28b386d9, ROM_GROUPWORD | ROM_SKIP(6))
 		ROMX_LOAD( "3u.bin", 0x1000006, 0x400000, 0x87f3c5e6, ROM_GROUPWORD | ROM_SKIP(6))
 	
-		ROM_REGION( 0x400000, REGION_SOUND1, ROMREGION_SOUNDONLY )	/* Samples */
-		ROM_LOAD( "7.bin", 0x000000, 0x400000, 0x34575a14 )
-	ROM_END
+		ROM_REGION( 0x400000, REGION_SOUND1, ROMREGION_SOUNDONLY );/* Samples */
+		ROM_LOAD( "7.bin", 0x000000, 0x400000, 0x34575a14 );
+	ROM_END(); }}; 
 	
 	
 	/***************************************************************************
@@ -4286,12 +4286,12 @@ public class metro
 	
 	***************************************************************************/
 	
-	ROM_START( gakusai2 )
-		ROM_REGION( 0x040000, REGION_CPU1, 0 )		/* 68000 Code */
-		ROM_LOAD16_BYTE( "mg2a06.bin", 0x000000, 0x020000, 0x8b006dd4 )
-		ROM_LOAD16_BYTE( "mg2a05.bin", 0x000001, 0x020000, 0x7702b9ac )
+	static RomLoadPtr rom_gakusai2 = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x040000, REGION_CPU1, 0 );	/* 68000 Code */
+		ROM_LOAD16_BYTE( "mg2a06.bin", 0x000000, 0x020000, 0x8b006dd4 );
+		ROM_LOAD16_BYTE( "mg2a05.bin", 0x000001, 0x020000, 0x7702b9ac );
 	
-		ROM_REGION( 0x2000000, REGION_GFX1, 0 )	/* Gfx + Data (Addressable by CPU & Blitter) */
+		ROM_REGION( 0x2000000, REGION_GFX1, 0 );/* Gfx + Data (Addressable by CPU & Blitter) */
 		ROMX_LOAD( "mg22l.bin", 0x0000000, 0x400000, 0x28366708, ROM_GROUPWORD | ROM_SKIP(6))
 		ROMX_LOAD( "mg24l.bin", 0x0000002, 0x400000, 0x9e003bb0, ROM_GROUPWORD | ROM_SKIP(6))
 		ROMX_LOAD( "mg21l.bin", 0x0000004, 0x400000, 0x3827098d, ROM_GROUPWORD | ROM_SKIP(6))
@@ -4301,9 +4301,9 @@ public class metro
 		ROMX_LOAD( "mg21u.bin", 0x1000004, 0x400000, 0x385495e5, ROM_GROUPWORD | ROM_SKIP(6))
 		ROMX_LOAD( "mg23u.bin", 0x1000006, 0x400000, 0xd8315923, ROM_GROUPWORD | ROM_SKIP(6))
 	
-		ROM_REGION( 0x400000, REGION_SOUND1, ROMREGION_SOUNDONLY )	/* Samples */
-		ROM_LOAD( "mg2-7.bin", 0x000000, 0x400000, 0x2f1c041e )
-	ROM_END
+		ROM_REGION( 0x400000, REGION_SOUND1, ROMREGION_SOUNDONLY );/* Samples */
+		ROM_LOAD( "mg2-7.bin", 0x000000, 0x400000, 0x2f1c041e );
+	ROM_END(); }}; 
 	
 	
 	/***************************************************************************
@@ -4319,20 +4319,20 @@ public class metro
 	
 	***************************************************************************/
 	
-	ROM_START( mouja )
-		ROM_REGION( 0x080000, REGION_CPU1, 0 )		/* 68000 Code */
-		ROM_LOAD16_BYTE( "10.bin",      0x000000, 0x040000, 0xf9742b69 )
-		ROM_LOAD16_BYTE( "9.bin",       0x000001, 0x040000, 0xdc77216f )
+	static RomLoadPtr rom_mouja = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x080000, REGION_CPU1, 0 );	/* 68000 Code */
+		ROM_LOAD16_BYTE( "10.bin",      0x000000, 0x040000, 0xf9742b69 );
+		ROM_LOAD16_BYTE( "9.bin",       0x000001, 0x040000, 0xdc77216f );
 	
-		ROM_REGION( 0x400000, REGION_GFX1, 0 )	/* Gfx + Data (Addressable by CPU & Blitter) */
+		ROM_REGION( 0x400000, REGION_GFX1, 0 );/* Gfx + Data (Addressable by CPU & Blitter) */
 		ROMX_LOAD( "42.bin",      0x000000, 0x100000, 0xc4dd3194, ROM_GROUPWORD | ROM_SKIP(6))
 		ROMX_LOAD( "86.bin",      0x000002, 0x100000, 0x09530f9d, ROM_GROUPWORD | ROM_SKIP(6))
 		ROMX_LOAD( "31.bin",      0x000004, 0x100000, 0x5dd7a7b2, ROM_GROUPWORD | ROM_SKIP(6))
 		ROMX_LOAD( "75.bin",      0x000006, 0x100000, 0x430c3925, ROM_GROUPWORD | ROM_SKIP(6))
 	
-		ROM_REGION( 0x100000, REGION_SOUND1, ROMREGION_SOUNDONLY )	/* Samples */
-		ROM_LOAD( "11.bin",     0x000000, 0x100000, 0xfe3df432 )
-	ROM_END
+		ROM_REGION( 0x100000, REGION_SOUND1, ROMREGION_SOUNDONLY );/* Samples */
+		ROM_LOAD( "11.bin",     0x000000, 0x100000, 0xfe3df432 );
+	ROM_END(); }}; 
 	
 	
 	/***************************************************************************
@@ -4349,15 +4349,15 @@ public class metro
 	
 	***************************************************************************/
 	
-	ROM_START( pangpoms )
-		ROM_REGION( 0x040000, REGION_CPU1, 0 )		/* 68000 Code */
-		ROM_LOAD16_BYTE( "ppoms09.bin", 0x000000, 0x020000, 0x0c292dbc )
-		ROM_LOAD16_BYTE( "ppoms10.bin", 0x000001, 0x020000, 0x0bc18853 )
+	static RomLoadPtr rom_pangpoms = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x040000, REGION_CPU1, 0 );	/* 68000 Code */
+		ROM_LOAD16_BYTE( "ppoms09.bin", 0x000000, 0x020000, 0x0c292dbc );
+		ROM_LOAD16_BYTE( "ppoms10.bin", 0x000001, 0x020000, 0x0bc18853 );
 	
-		ROM_REGION( 0x020000, REGION_CPU2, 0 )		/* NEC78C10 Code */
-		ROM_LOAD( "ppoms12.bin", 0x000000, 0x020000, 0xa749357b )
+		ROM_REGION( 0x020000, REGION_CPU2, 0 );	/* NEC78C10 Code */
+		ROM_LOAD( "ppoms12.bin", 0x000000, 0x020000, 0xa749357b );
 	
-		ROM_REGION( 0x100000, REGION_GFX1, 0 )	/* Gfx + Data (Addressable by CPU & Blitter) */
+		ROM_REGION( 0x100000, REGION_GFX1, 0 );/* Gfx + Data (Addressable by CPU & Blitter) */
 		ROMX_LOAD( "ppoms02.bin", 0x000000, 0x020000, 0x88f902f7, ROM_SKIP(7))
 		ROMX_LOAD( "ppoms04.bin", 0x000001, 0x020000, 0x9190c2a0, ROM_SKIP(7))
 		ROMX_LOAD( "ppoms06.bin", 0x000002, 0x020000, 0xed15c93d, ROM_SKIP(7))
@@ -4367,19 +4367,19 @@ public class metro
 		ROMX_LOAD( "ppoms05.bin", 0x000006, 0x020000, 0x02226214, ROM_SKIP(7))
 		ROMX_LOAD( "ppoms07.bin", 0x000007, 0x020000, 0x48471c87, ROM_SKIP(7))
 	
-		ROM_REGION( 0x020000, REGION_SOUND1, ROMREGION_SOUNDONLY )	/* Samples */
-		ROM_LOAD( "ppoms11.bin", 0x000000, 0x020000, 0xe89bd565 )
-	ROM_END
+		ROM_REGION( 0x020000, REGION_SOUND1, ROMREGION_SOUNDONLY );/* Samples */
+		ROM_LOAD( "ppoms11.bin", 0x000000, 0x020000, 0xe89bd565 );
+	ROM_END(); }}; 
 	
-	ROM_START( pangpomm )
-		ROM_REGION( 0x040000, REGION_CPU1, 0 )		/* 68000 Code */
-		ROM_LOAD16_BYTE( "pa.c09", 0x000000, 0x020000, 0xe01a7a08 )
-		ROM_LOAD16_BYTE( "pa.c10", 0x000001, 0x020000, 0x5e509cee )
+	static RomLoadPtr rom_pangpomm = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x040000, REGION_CPU1, 0 );	/* 68000 Code */
+		ROM_LOAD16_BYTE( "pa.c09", 0x000000, 0x020000, 0xe01a7a08 );
+		ROM_LOAD16_BYTE( "pa.c10", 0x000001, 0x020000, 0x5e509cee );
 	
-		ROM_REGION( 0x020000, REGION_CPU2, 0 )		/* NEC78C10 Code */
-		ROM_LOAD( "ppoms12.bin", 0x000000, 0x020000, 0xa749357b )
+		ROM_REGION( 0x020000, REGION_CPU2, 0 );	/* NEC78C10 Code */
+		ROM_LOAD( "ppoms12.bin", 0x000000, 0x020000, 0xa749357b );
 	
-		ROM_REGION( 0x100000, REGION_GFX1, 0 )	/* Gfx + Data (Addressable by CPU & Blitter) */
+		ROM_REGION( 0x100000, REGION_GFX1, 0 );/* Gfx + Data (Addressable by CPU & Blitter) */
 		ROMX_LOAD( "ppoms02.bin", 0x000000, 0x020000, 0x88f902f7, ROM_SKIP(7))
 		ROMX_LOAD( "pj.e04",      0x000001, 0x020000, 0x54bf2f10, ROM_SKIP(7))
 		ROMX_LOAD( "pj.e06",      0x000002, 0x020000, 0xc8b6347d, ROM_SKIP(7))
@@ -4389,9 +4389,9 @@ public class metro
 		ROMX_LOAD( "pj.e05",      0x000006, 0x020000, 0x79c0ec1e, ROM_SKIP(7))
 		ROMX_LOAD( "ppoms07.bin", 0x000007, 0x020000, 0x48471c87, ROM_SKIP(7))
 	
-		ROM_REGION( 0x020000, REGION_SOUND1, ROMREGION_SOUNDONLY )	/* Samples */
-		ROM_LOAD( "ppoms11.bin", 0x000000, 0x020000, 0xe89bd565 )
-	ROM_END
+		ROM_REGION( 0x020000, REGION_SOUND1, ROMREGION_SOUNDONLY );/* Samples */
+		ROM_LOAD( "ppoms11.bin", 0x000000, 0x020000, 0xe89bd565 );
+	ROM_END(); }}; 
 	
 	
 	/***************************************************************************
@@ -4425,23 +4425,23 @@ public class metro
 	
 	***************************************************************************/
 	
-	ROM_START( poitto )
-		ROM_REGION( 0x040000, REGION_CPU1, 0 )		/* 68000 Code */
-		ROM_LOAD16_BYTE( "pt-jd05.20e", 0x000000, 0x020000, 0x6b1be034 )
-		ROM_LOAD16_BYTE( "pt-jd06.20c", 0x000001, 0x020000, 0x3092d9d4 )
+	static RomLoadPtr rom_poitto = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x040000, REGION_CPU1, 0 );	/* 68000 Code */
+		ROM_LOAD16_BYTE( "pt-jd05.20e", 0x000000, 0x020000, 0x6b1be034 );
+		ROM_LOAD16_BYTE( "pt-jd06.20c", 0x000001, 0x020000, 0x3092d9d4 );
 	
-		ROM_REGION( 0x020000, REGION_CPU2, 0 )		/* NEC78C10 Code */
-		ROM_LOAD( "pt-jc08.3i", 0x000000, 0x020000, 0xf32d386a )	// 1xxxxxxxxxxxxxxxx = 0xFF
+		ROM_REGION( 0x020000, REGION_CPU2, 0 );	/* NEC78C10 Code */
+		ROM_LOAD( "pt-jc08.3i", 0x000000, 0x020000, 0xf32d386a );// 1xxxxxxxxxxxxxxxx = 0xFF
 	
-		ROM_REGION( 0x200000, REGION_GFX1, 0 )	/* Gfx + Data (Addressable by CPU & Blitter) */
+		ROM_REGION( 0x200000, REGION_GFX1, 0 );/* Gfx + Data (Addressable by CPU & Blitter) */
 		ROMX_LOAD( "pt-2.15i", 0x000000, 0x080000, 0x05d15d01, ROM_GROUPWORD | ROM_SKIP(6))
 		ROMX_LOAD( "pt-4.19i", 0x000002, 0x080000, 0x8a39edb5, ROM_GROUPWORD | ROM_SKIP(6))
 		ROMX_LOAD( "pt-1.13i", 0x000004, 0x080000, 0xea6e2289, ROM_GROUPWORD | ROM_SKIP(6))
 		ROMX_LOAD( "pt-3.17i", 0x000006, 0x080000, 0x522917c1, ROM_GROUPWORD | ROM_SKIP(6))
 	
-		ROM_REGION( 0x040000, REGION_SOUND1, ROMREGION_SOUNDONLY )	/* Samples */
-		ROM_LOAD( "pt-jc07.3g", 0x000000, 0x040000, 0x5ae28b8d )
-	ROM_END
+		ROM_REGION( 0x040000, REGION_SOUND1, ROMREGION_SOUNDONLY );/* Samples */
+		ROM_LOAD( "pt-jc07.3g", 0x000000, 0x040000, 0x5ae28b8d );
+	ROM_END(); }}; 
 	
 	
 	/***************************************************************************
@@ -4466,23 +4466,23 @@ public class metro
 	
 	***************************************************************************/
 	
-	ROM_START( puzzli )
-		ROM_REGION( 0x040000, REGION_CPU1, 0 )		/* 68000 Code */
-		ROM_LOAD16_BYTE( "pz.jb5",       0x000000, 0x020000, 0x33bbbd28 )
-		ROM_LOAD16_BYTE( "pz.jb6",       0x000001, 0x020000, 0xe0bdea18 )
+	static RomLoadPtr rom_puzzli = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x040000, REGION_CPU1, 0 );	/* 68000 Code */
+		ROM_LOAD16_BYTE( "pz.jb5",       0x000000, 0x020000, 0x33bbbd28 );
+		ROM_LOAD16_BYTE( "pz.jb6",       0x000001, 0x020000, 0xe0bdea18 );
 	
-		ROM_REGION( 0x020000, REGION_CPU2, 0 )		/* NEC78C10 Code */
-		ROM_LOAD( "pz.jb8",      0x000000, 0x020000, 0xc652da32 )
+		ROM_REGION( 0x020000, REGION_CPU2, 0 );	/* NEC78C10 Code */
+		ROM_LOAD( "pz.jb8",      0x000000, 0x020000, 0xc652da32 );
 	
-		ROM_REGION( 0x200000, REGION_GFX1, 0 )	/* Gfx + Data (Addressable by CPU & Blitter) */
+		ROM_REGION( 0x200000, REGION_GFX1, 0 );/* Gfx + Data (Addressable by CPU & Blitter) */
 		ROMX_LOAD( "pz.jb2",       0x000000, 0x080000, 0x0c0997d4, ROM_GROUPWORD | ROM_SKIP(6))
 		ROMX_LOAD( "pz.jb4",       0x000002, 0x080000, 0x576bc5c2, ROM_GROUPWORD | ROM_SKIP(6))
 		ROMX_LOAD( "pz.jb1",       0x000004, 0x080000, 0x29f01eb3, ROM_GROUPWORD | ROM_SKIP(6))
 		ROMX_LOAD( "pz.jb3",       0x000006, 0x080000, 0x6753e282, ROM_GROUPWORD | ROM_SKIP(6))
 	
-		ROM_REGION( 0x040000, REGION_SOUND1, ROMREGION_SOUNDONLY )	/* Samples */
-		ROM_LOAD( "pz.jb7",      0x000000, 0x040000, 0xb3aab610 )
-	ROM_END
+		ROM_REGION( 0x040000, REGION_SOUND1, ROMREGION_SOUNDONLY );/* Samples */
+		ROM_LOAD( "pz.jb7",      0x000000, 0x040000, 0xb3aab610 );
+	ROM_END(); }}; 
 	
 	
 	/***************************************************************************
@@ -4516,23 +4516,23 @@ public class metro
 	
 	***************************************************************************/
 	
-	ROM_START( pururun )
-		ROM_REGION( 0x040000, REGION_CPU1, 0 )		/* 68000 Code */
-		ROM_LOAD16_BYTE( "pu9-19-5.20e", 0x000000, 0x020000, 0x5a466a1b )
-		ROM_LOAD16_BYTE( "pu9-19-6.20c", 0x000001, 0x020000, 0xd155a53c )
+	static RomLoadPtr rom_pururun = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x040000, REGION_CPU1, 0 );	/* 68000 Code */
+		ROM_LOAD16_BYTE( "pu9-19-5.20e", 0x000000, 0x020000, 0x5a466a1b );
+		ROM_LOAD16_BYTE( "pu9-19-6.20c", 0x000001, 0x020000, 0xd155a53c );
 	
-		ROM_REGION( 0x020000, REGION_CPU2, 0 )		/* NEC78C10 Code */
-		ROM_LOAD( "pu9-19-8.3i", 0x000000, 0x020000, 0xedc3830b )
+		ROM_REGION( 0x020000, REGION_CPU2, 0 );	/* NEC78C10 Code */
+		ROM_LOAD( "pu9-19-8.3i", 0x000000, 0x020000, 0xedc3830b );
 	
-		ROM_REGION( 0x200000, REGION_GFX1, 0 )	/* Gfx + Data (Addressable by CPU & Blitter) */
+		ROM_REGION( 0x200000, REGION_GFX1, 0 );/* Gfx + Data (Addressable by CPU & Blitter) */
 		ROMX_LOAD( "pu9-19-2.14i", 0x000000, 0x080000, 0x21550b26, ROM_GROUPWORD | ROM_SKIP(6))
 		ROMX_LOAD( "pu9-19-4.18i", 0x000002, 0x080000, 0x3f3e216d, ROM_GROUPWORD | ROM_SKIP(6))
 		ROMX_LOAD( "pu9-19-1.12i", 0x000004, 0x080000, 0x7e83a75f, ROM_GROUPWORD | ROM_SKIP(6))
 		ROMX_LOAD( "pu9-19-3.16i", 0x000006, 0x080000, 0xd15485c5, ROM_GROUPWORD | ROM_SKIP(6))
 	
-		ROM_REGION( 0x040000, REGION_SOUND1, ROMREGION_SOUNDONLY )	/* Samples */
-		ROM_LOAD( "pu9-19-7.3g", 0x000000, 0x040000, 0x51ae4926 )
-	ROM_END
+		ROM_REGION( 0x040000, REGION_SOUND1, ROMREGION_SOUNDONLY );/* Samples */
+		ROM_LOAD( "pu9-19-7.3g", 0x000000, 0x040000, 0x51ae4926 );
+	ROM_END(); }}; 
 	
 	
 	/***************************************************************************
@@ -4548,15 +4548,15 @@ public class metro
 	
 	***************************************************************************/
 	
-	ROM_START( skyalert )
-		ROM_REGION( 0x040000, REGION_CPU1, 0 )		/* 68000 Code */
-		ROM_LOAD16_BYTE( "sa_c_09.bin", 0x000000, 0x020000, 0x6f14d9ae )
-		ROM_LOAD16_BYTE( "sa_c_10.bin", 0x000001, 0x020000, 0xf10bb216 )
+	static RomLoadPtr rom_skyalert = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x040000, REGION_CPU1, 0 );	/* 68000 Code */
+		ROM_LOAD16_BYTE( "sa_c_09.bin", 0x000000, 0x020000, 0x6f14d9ae );
+		ROM_LOAD16_BYTE( "sa_c_10.bin", 0x000001, 0x020000, 0xf10bb216 );
 	
-		ROM_REGION( 0x020000, REGION_CPU2, 0 )		/* NEC78C10 Code */
-		ROM_LOAD( "sa_b_12.bin", 0x000000, 0x020000, 0xf358175d )	// (c)1992 Imagetek (1xxxxxxxxxxxxxxxx = 0xFF)
+		ROM_REGION( 0x020000, REGION_CPU2, 0 );	/* NEC78C10 Code */
+		ROM_LOAD( "sa_b_12.bin", 0x000000, 0x020000, 0xf358175d );// (c)1992 Imagetek (1xxxxxxxxxxxxxxxx = 0xFF)
 	
-		ROM_REGION( 0x200000, REGION_GFX1, 0 )	/* Gfx + Data (Addressable by CPU & Blitter) */
+		ROM_REGION( 0x200000, REGION_GFX1, 0 );/* Gfx + Data (Addressable by CPU & Blitter) */
 		ROMX_LOAD( "sa_a_02.bin", 0x000000, 0x040000, 0xf4f81d41, ROM_SKIP(7))
 		ROMX_LOAD( "sa_a_04.bin", 0x000001, 0x040000, 0x7d071e7e, ROM_SKIP(7))
 		ROMX_LOAD( "sa_a_06.bin", 0x000002, 0x040000, 0x77e4d5e1, ROM_SKIP(7))
@@ -4566,9 +4566,9 @@ public class metro
 		ROMX_LOAD( "sa_a_05.bin", 0x000006, 0x040000, 0x62169d31, ROM_SKIP(7))
 		ROMX_LOAD( "sa_a_07.bin", 0x000007, 0x040000, 0xa6f5966f, ROM_SKIP(7))
 	
-		ROM_REGION( 0x020000, REGION_SOUND1, ROMREGION_SOUNDONLY )	/* Samples */
-		ROM_LOAD( "sa_a_11.bin", 0x000000, 0x020000, 0x04842a60 )
-	ROM_END
+		ROM_REGION( 0x020000, REGION_SOUND1, ROMREGION_SOUNDONLY );/* Samples */
+		ROM_LOAD( "sa_a_11.bin", 0x000000, 0x020000, 0x04842a60 );
+	ROM_END(); }}; 
 	
 	
 	/***************************************************************************
@@ -4602,23 +4602,23 @@ public class metro
 	
 	***************************************************************************/
 	
-	ROM_START( toride2g )
-		ROM_REGION( 0x080000, REGION_CPU1, 0 )		/* 68000 Code */
-		ROM_LOAD16_BYTE( "tr2aja-5.20e", 0x000000, 0x040000, 0xb96a52f6 )
-		ROM_LOAD16_BYTE( "tr2aja-6.20c", 0x000001, 0x040000, 0x2918b6b4 )
+	static RomLoadPtr rom_toride2g = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x080000, REGION_CPU1, 0 );	/* 68000 Code */
+		ROM_LOAD16_BYTE( "tr2aja-5.20e", 0x000000, 0x040000, 0xb96a52f6 );
+		ROM_LOAD16_BYTE( "tr2aja-6.20c", 0x000001, 0x040000, 0x2918b6b4 );
 	
-		ROM_REGION( 0x020000, REGION_CPU2, 0 )		/* NEC78C10 Code */
-		ROM_LOAD( "tr2aja-8.3i", 0x000000, 0x020000, 0xfdd29146 )
+		ROM_REGION( 0x020000, REGION_CPU2, 0 );	/* NEC78C10 Code */
+		ROM_LOAD( "tr2aja-8.3i", 0x000000, 0x020000, 0xfdd29146 );
 	
-		ROM_REGION( 0x200000, REGION_GFX1, 0 )	/* Gfx + Data (Addressable by CPU & Blitter) */
+		ROM_REGION( 0x200000, REGION_GFX1, 0 );/* Gfx + Data (Addressable by CPU & Blitter) */
 		ROMX_LOAD( "tr2aja-2.14i", 0x000000, 0x080000, 0x5c73f629, ROM_GROUPWORD | ROM_SKIP(6))
 		ROMX_LOAD( "tr2aja-4.18i", 0x000002, 0x080000, 0x67ebaf1b, ROM_GROUPWORD | ROM_SKIP(6))
 		ROMX_LOAD( "tr2aja-1.12i", 0x000004, 0x080000, 0x96245a5c, ROM_GROUPWORD | ROM_SKIP(6))
 		ROMX_LOAD( "tr2aja-3.16i", 0x000006, 0x080000, 0x49013f5d, ROM_GROUPWORD | ROM_SKIP(6))
 	
-		ROM_REGION( 0x020000, REGION_SOUND1, ROMREGION_SOUNDONLY )	/* Samples */
-		ROM_LOAD( "tr2aja-7.3g", 0x000000, 0x020000, 0x630c6193 )
-	ROM_END
+		ROM_REGION( 0x020000, REGION_SOUND1, ROMREGION_SOUNDONLY );/* Samples */
+		ROM_LOAD( "tr2aja-7.3g", 0x000000, 0x020000, 0x630c6193 );
+	ROM_END(); }}; 
 	
 	
 	/***************************************************************************

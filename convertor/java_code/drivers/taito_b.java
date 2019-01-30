@@ -3375,521 +3375,521 @@ public class taito_b
 	
 	***************************************************************************/
 	
-	ROM_START( rastsag2 )
-		ROM_REGION( 0x80000, REGION_CPU1, 0 )     /* 512k for 68000 code */
-		ROM_LOAD16_BYTE( "b81-08.50" , 0x00000, 0x20000, 0xd6da9169 )
-		ROM_LOAD16_BYTE( "b81-07.bin", 0x00001, 0x20000, 0x8edf17d7 )
-		ROM_LOAD16_BYTE( "b81-10.49" , 0x40000, 0x20000, 0x53f34344 )
-		ROM_LOAD16_BYTE( "b81-09.30" , 0x40001, 0x20000, 0x630d34af )
+	static RomLoadPtr rom_rastsag2 = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x80000, REGION_CPU1, 0 );    /* 512k for 68000 code */
+		ROM_LOAD16_BYTE( "b81-08.50" , 0x00000, 0x20000, 0xd6da9169 );
+		ROM_LOAD16_BYTE( "b81-07.bin", 0x00001, 0x20000, 0x8edf17d7 );
+		ROM_LOAD16_BYTE( "b81-10.49" , 0x40000, 0x20000, 0x53f34344 );
+		ROM_LOAD16_BYTE( "b81-09.30" , 0x40001, 0x20000, 0x630d34af );
 	
-		ROM_REGION( 0x1c000, REGION_CPU2, 0 )     /* 64k for Z80 code */
-		ROM_LOAD( "b81-11.bin", 0x00000, 0x4000, 0x3704bf09 )
-		ROM_CONTINUE(           0x10000, 0xc000 ) /* banked stuff */
+		ROM_REGION( 0x1c000, REGION_CPU2, 0 );    /* 64k for Z80 code */
+		ROM_LOAD( "b81-11.bin", 0x00000, 0x4000, 0x3704bf09 );
+		ROM_CONTINUE(           0x10000, 0xc000 );/* banked stuff */
 	
-		ROM_REGION( 0x100000, REGION_GFX1, ROMREGION_DISPOSE )
-		ROM_LOAD( "b81-03.bin", 0x000000, 0x080000, 0x551b75e6 )
-		ROM_LOAD( "b81-04.bin", 0x080000, 0x080000, 0xcf734e12 )
+		ROM_REGION( 0x100000, REGION_GFX1, ROMREGION_DISPOSE );
+		ROM_LOAD( "b81-03.bin", 0x000000, 0x080000, 0x551b75e6 );
+		ROM_LOAD( "b81-04.bin", 0x080000, 0x080000, 0xcf734e12 );
 	
-		ROM_REGION( 0x80000, REGION_SOUND1, 0 )
-		ROM_LOAD( "b81-01.bin", 0x00000, 0x80000, 0xb33f796b )
+		ROM_REGION( 0x80000, REGION_SOUND1, 0 );
+		ROM_LOAD( "b81-01.bin", 0x00000, 0x80000, 0xb33f796b );
 	
-		ROM_REGION( 0x80000, REGION_SOUND2, 0 )
-		ROM_LOAD( "b81-02.bin", 0x00000, 0x80000, 0x20ec3b86 )
-	ROM_END
+		ROM_REGION( 0x80000, REGION_SOUND2, 0 );
+		ROM_LOAD( "b81-02.bin", 0x00000, 0x80000, 0x20ec3b86 );
+	ROM_END(); }}; 
 	
-	ROM_START( nastarw )
-		ROM_REGION( 0x80000, REGION_CPU1, 0 )     /* 512k for 68000 code */
-		ROM_LOAD16_BYTE( "b81-08.50" , 0x00000, 0x20000, 0xd6da9169 )
-		ROM_LOAD16_BYTE( "b81-12.31",  0x00001, 0x20000, 0xf9d82741 )
-		ROM_LOAD16_BYTE( "b81-10.49" , 0x40000, 0x20000, 0x53f34344 )
-		ROM_LOAD16_BYTE( "b81-09.30" , 0x40001, 0x20000, 0x630d34af )
+	static RomLoadPtr rom_nastarw = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x80000, REGION_CPU1, 0 );    /* 512k for 68000 code */
+		ROM_LOAD16_BYTE( "b81-08.50" , 0x00000, 0x20000, 0xd6da9169 );
+		ROM_LOAD16_BYTE( "b81-12.31",  0x00001, 0x20000, 0xf9d82741 );
+		ROM_LOAD16_BYTE( "b81-10.49" , 0x40000, 0x20000, 0x53f34344 );
+		ROM_LOAD16_BYTE( "b81-09.30" , 0x40001, 0x20000, 0x630d34af );
 	
-		ROM_REGION( 0x1c000, REGION_CPU2, 0 )     /* 64k for Z80 code */
-		ROM_LOAD( "b81-11.bin", 0x00000, 0x4000, 0x3704bf09 )
-		ROM_CONTINUE(           0x10000, 0xc000 ) /* banked stuff */
+		ROM_REGION( 0x1c000, REGION_CPU2, 0 );    /* 64k for Z80 code */
+		ROM_LOAD( "b81-11.bin", 0x00000, 0x4000, 0x3704bf09 );
+		ROM_CONTINUE(           0x10000, 0xc000 );/* banked stuff */
 	
-		ROM_REGION( 0x100000, REGION_GFX1, ROMREGION_DISPOSE )
-		ROM_LOAD( "b81-03.bin", 0x000000, 0x080000, 0x551b75e6 )
-		ROM_LOAD( "b81-04.bin", 0x080000, 0x080000, 0xcf734e12 )
+		ROM_REGION( 0x100000, REGION_GFX1, ROMREGION_DISPOSE );
+		ROM_LOAD( "b81-03.bin", 0x000000, 0x080000, 0x551b75e6 );
+		ROM_LOAD( "b81-04.bin", 0x080000, 0x080000, 0xcf734e12 );
 	
-		ROM_REGION( 0x80000, REGION_SOUND1, 0 )
-		ROM_LOAD( "b81-01.bin", 0x00000, 0x80000, 0xb33f796b )
+		ROM_REGION( 0x80000, REGION_SOUND1, 0 );
+		ROM_LOAD( "b81-01.bin", 0x00000, 0x80000, 0xb33f796b );
 	
-		ROM_REGION( 0x80000, REGION_SOUND2, 0 )
-		ROM_LOAD( "b81-02.bin", 0x00000, 0x80000, 0x20ec3b86 )
-	ROM_END
+		ROM_REGION( 0x80000, REGION_SOUND2, 0 );
+		ROM_LOAD( "b81-02.bin", 0x00000, 0x80000, 0x20ec3b86 );
+	ROM_END(); }}; 
 	
-	ROM_START( nastar )
-		ROM_REGION( 0x80000, REGION_CPU1, 0 )     /* 512k for 68000 code */
-		ROM_LOAD16_BYTE( "b81-08.50" , 0x00000, 0x20000, 0xd6da9169 )
-		ROM_LOAD16_BYTE( "b81-13.bin", 0x00001, 0x20000, 0x60d176fb )
-		ROM_LOAD16_BYTE( "b81-10.49" , 0x40000, 0x20000, 0x53f34344 )
-		ROM_LOAD16_BYTE( "b81-09.30" , 0x40001, 0x20000, 0x630d34af )
+	static RomLoadPtr rom_nastar = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x80000, REGION_CPU1, 0 );    /* 512k for 68000 code */
+		ROM_LOAD16_BYTE( "b81-08.50" , 0x00000, 0x20000, 0xd6da9169 );
+		ROM_LOAD16_BYTE( "b81-13.bin", 0x00001, 0x20000, 0x60d176fb );
+		ROM_LOAD16_BYTE( "b81-10.49" , 0x40000, 0x20000, 0x53f34344 );
+		ROM_LOAD16_BYTE( "b81-09.30" , 0x40001, 0x20000, 0x630d34af );
 	
-		ROM_REGION( 0x1c000, REGION_CPU2, 0 )     /* 64k for Z80 code */
-		ROM_LOAD( "b81-11.bin", 0x00000, 0x4000, 0x3704bf09 )
-		ROM_CONTINUE(           0x10000, 0xc000 ) /* banked stuff */
+		ROM_REGION( 0x1c000, REGION_CPU2, 0 );    /* 64k for Z80 code */
+		ROM_LOAD( "b81-11.bin", 0x00000, 0x4000, 0x3704bf09 );
+		ROM_CONTINUE(           0x10000, 0xc000 );/* banked stuff */
 	
-		ROM_REGION( 0x100000, REGION_GFX1, ROMREGION_DISPOSE )
-		ROM_LOAD( "b81-03.bin", 0x000000, 0x080000, 0x551b75e6 )
-		ROM_LOAD( "b81-04.bin", 0x080000, 0x080000, 0xcf734e12 )
+		ROM_REGION( 0x100000, REGION_GFX1, ROMREGION_DISPOSE );
+		ROM_LOAD( "b81-03.bin", 0x000000, 0x080000, 0x551b75e6 );
+		ROM_LOAD( "b81-04.bin", 0x080000, 0x080000, 0xcf734e12 );
 	
-		ROM_REGION( 0x80000, REGION_SOUND1, 0 )
-		ROM_LOAD( "b81-01.bin", 0x00000, 0x80000, 0xb33f796b )
+		ROM_REGION( 0x80000, REGION_SOUND1, 0 );
+		ROM_LOAD( "b81-01.bin", 0x00000, 0x80000, 0xb33f796b );
 	
-		ROM_REGION( 0x80000, REGION_SOUND2, 0 )
-		ROM_LOAD( "b81-02.bin", 0x00000, 0x80000, 0x20ec3b86 )
-	ROM_END
+		ROM_REGION( 0x80000, REGION_SOUND2, 0 );
+		ROM_LOAD( "b81-02.bin", 0x00000, 0x80000, 0x20ec3b86 );
+	ROM_END(); }}; 
 	
-	ROM_START( crimec )
-		ROM_REGION( 0x80000, REGION_CPU1, 0 )     /* 512k for 68000 code */
-		ROM_LOAD16_BYTE( "b99_07.40",    0x00000, 0x20000, 0x26e886e6 )
-		ROM_LOAD16_BYTE( "b99_05.29",    0x00001, 0x20000, 0xff7f9a9d )
-		ROM_LOAD16_BYTE( "b99_06.39",    0x40000, 0x20000, 0x1f26aa92 )
-		ROM_LOAD16_BYTE( "b99_14.28",    0x40001, 0x20000, 0x71c8b4d7 )
+	static RomLoadPtr rom_crimec = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x80000, REGION_CPU1, 0 );    /* 512k for 68000 code */
+		ROM_LOAD16_BYTE( "b99_07.40",    0x00000, 0x20000, 0x26e886e6 );
+		ROM_LOAD16_BYTE( "b99_05.29",    0x00001, 0x20000, 0xff7f9a9d );
+		ROM_LOAD16_BYTE( "b99_06.39",    0x40000, 0x20000, 0x1f26aa92 );
+		ROM_LOAD16_BYTE( "b99_14.28",    0x40001, 0x20000, 0x71c8b4d7 );
 	
-		ROM_REGION( 0x1c000, REGION_CPU2, 0 )     /* 64k for Z80 code */
-		ROM_LOAD( "b99_08.45", 0x00000, 0x4000, 0x26135451 )
-		ROM_CONTINUE(          0x10000, 0xc000 ) /* banked stuff */
+		ROM_REGION( 0x1c000, REGION_CPU2, 0 );    /* 64k for Z80 code */
+		ROM_LOAD( "b99_08.45", 0x00000, 0x4000, 0x26135451 );
+		ROM_CONTINUE(          0x10000, 0xc000 );/* banked stuff */
 	
-		ROM_REGION( 0x100000, REGION_GFX1, ROMREGION_DISPOSE )
-		ROM_LOAD( "b99_02.18", 0x000000, 0x080000, 0x2a5d4a26 )
-		ROM_LOAD( "b99_01.19", 0x080000, 0x080000, 0xa19e373a )
+		ROM_REGION( 0x100000, REGION_GFX1, ROMREGION_DISPOSE );
+		ROM_LOAD( "b99_02.18", 0x000000, 0x080000, 0x2a5d4a26 );
+		ROM_LOAD( "b99_01.19", 0x080000, 0x080000, 0xa19e373a );
 	
-		ROM_REGION( 0x80000, REGION_SOUND1, 0 )
-		ROM_LOAD( "b99_03.37", 0x000000, 0x080000, 0xdda10df7 )
-	ROM_END
+		ROM_REGION( 0x80000, REGION_SOUND1, 0 );
+		ROM_LOAD( "b99_03.37", 0x000000, 0x080000, 0xdda10df7 );
+	ROM_END(); }}; 
 	
-	ROM_START( crimecu )
-		ROM_REGION( 0x80000, REGION_CPU1, 0 )     /* 512k for 68000 code */
-		ROM_LOAD16_BYTE( "b99_07.40",    0x00000, 0x20000, 0x26e886e6 )
-		ROM_LOAD16_BYTE( "b99_05.29",    0x00001, 0x20000, 0xff7f9a9d )
-		ROM_LOAD16_BYTE( "b99_06.39",    0x40000, 0x20000, 0x1f26aa92 )
-		ROM_LOAD16_BYTE( "b99_13.28",    0x40001, 0x20000, 0x06cf8441 )
+	static RomLoadPtr rom_crimecu = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x80000, REGION_CPU1, 0 );    /* 512k for 68000 code */
+		ROM_LOAD16_BYTE( "b99_07.40",    0x00000, 0x20000, 0x26e886e6 );
+		ROM_LOAD16_BYTE( "b99_05.29",    0x00001, 0x20000, 0xff7f9a9d );
+		ROM_LOAD16_BYTE( "b99_06.39",    0x40000, 0x20000, 0x1f26aa92 );
+		ROM_LOAD16_BYTE( "b99_13.28",    0x40001, 0x20000, 0x06cf8441 );
 	
-		ROM_REGION( 0x1c000, REGION_CPU2, 0 )     /* 64k for Z80 code */
-		ROM_LOAD( "b99_08.45", 0x00000, 0x4000, 0x26135451 )
-		ROM_CONTINUE(          0x10000, 0xc000 ) /* banked stuff */
+		ROM_REGION( 0x1c000, REGION_CPU2, 0 );    /* 64k for Z80 code */
+		ROM_LOAD( "b99_08.45", 0x00000, 0x4000, 0x26135451 );
+		ROM_CONTINUE(          0x10000, 0xc000 );/* banked stuff */
 	
-		ROM_REGION( 0x100000, REGION_GFX1, ROMREGION_DISPOSE )
-		ROM_LOAD( "b99_02.18", 0x000000, 0x080000, 0x2a5d4a26 )
-		ROM_LOAD( "b99_01.19", 0x080000, 0x080000, 0xa19e373a )
+		ROM_REGION( 0x100000, REGION_GFX1, ROMREGION_DISPOSE );
+		ROM_LOAD( "b99_02.18", 0x000000, 0x080000, 0x2a5d4a26 );
+		ROM_LOAD( "b99_01.19", 0x080000, 0x080000, 0xa19e373a );
 	
-		ROM_REGION( 0x80000, REGION_SOUND1, 0 )
-		ROM_LOAD( "b99_03.37", 0x000000, 0x080000, 0xdda10df7 )
-	ROM_END
+		ROM_REGION( 0x80000, REGION_SOUND1, 0 );
+		ROM_LOAD( "b99_03.37", 0x000000, 0x080000, 0xdda10df7 );
+	ROM_END(); }}; 
 	
-	ROM_START( crimecj )
-		ROM_REGION( 0x80000, REGION_CPU1, 0 )     /* 512k for 68000 code */
-		ROM_LOAD16_BYTE( "b99_07.40", 0x00000, 0x20000, 0x26e886e6 )
-		ROM_LOAD16_BYTE( "b99_05.29", 0x00001, 0x20000, 0xff7f9a9d )
-		ROM_LOAD16_BYTE( "b99_06.39", 0x40000, 0x20000, 0x1f26aa92 )
-		ROM_LOAD16_BYTE( "b99_15.28", 0x40001, 0x20000, 0xe8c1e56d )
+	static RomLoadPtr rom_crimecj = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x80000, REGION_CPU1, 0 );    /* 512k for 68000 code */
+		ROM_LOAD16_BYTE( "b99_07.40", 0x00000, 0x20000, 0x26e886e6 );
+		ROM_LOAD16_BYTE( "b99_05.29", 0x00001, 0x20000, 0xff7f9a9d );
+		ROM_LOAD16_BYTE( "b99_06.39", 0x40000, 0x20000, 0x1f26aa92 );
+		ROM_LOAD16_BYTE( "b99_15.28", 0x40001, 0x20000, 0xe8c1e56d );
 	
-		ROM_REGION( 0x1c000, REGION_CPU2, 0 )     /* 64k for Z80 code */
-		ROM_LOAD( "b99_08.45", 0x00000, 0x4000, 0x26135451 )
-		ROM_CONTINUE(          0x10000, 0xc000 ) /* banked stuff */
+		ROM_REGION( 0x1c000, REGION_CPU2, 0 );    /* 64k for Z80 code */
+		ROM_LOAD( "b99_08.45", 0x00000, 0x4000, 0x26135451 );
+		ROM_CONTINUE(          0x10000, 0xc000 );/* banked stuff */
 	
-		ROM_REGION( 0x100000, REGION_GFX1, ROMREGION_DISPOSE )
-		ROM_LOAD( "b99_02.18", 0x000000, 0x080000, 0x2a5d4a26 )
-		ROM_LOAD( "b99_01.19", 0x080000, 0x080000, 0xa19e373a )
+		ROM_REGION( 0x100000, REGION_GFX1, ROMREGION_DISPOSE );
+		ROM_LOAD( "b99_02.18", 0x000000, 0x080000, 0x2a5d4a26 );
+		ROM_LOAD( "b99_01.19", 0x080000, 0x080000, 0xa19e373a );
 	
-		ROM_REGION( 0x80000, REGION_SOUND1, 0 )
-		ROM_LOAD( "b99_03.37", 0x000000, 0x080000, 0xdda10df7 )
-	ROM_END
+		ROM_REGION( 0x80000, REGION_SOUND1, 0 );
+		ROM_LOAD( "b99_03.37", 0x000000, 0x080000, 0xdda10df7 );
+	ROM_END(); }}; 
 	
-	ROM_START( ashura )
-		ROM_REGION( 0x80000, REGION_CPU1, 0 )     /* 512k for 68000 code */
-		ROM_LOAD16_BYTE( "c4307-1.50", 0x00000, 0x20000, 0xd5ceb20f )
-		ROM_LOAD16_BYTE( "c4305-1.31", 0x00001, 0x20000, 0xa6f3bb37 )
-		ROM_LOAD16_BYTE( "c4306-1.49", 0x40000, 0x20000, 0x0f331802 )
-		ROM_LOAD16_BYTE( "c4304-1.30", 0x40001, 0x20000, 0xe06a2414 )
+	static RomLoadPtr rom_ashura = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x80000, REGION_CPU1, 0 );    /* 512k for 68000 code */
+		ROM_LOAD16_BYTE( "c4307-1.50", 0x00000, 0x20000, 0xd5ceb20f );
+		ROM_LOAD16_BYTE( "c4305-1.31", 0x00001, 0x20000, 0xa6f3bb37 );
+		ROM_LOAD16_BYTE( "c4306-1.49", 0x40000, 0x20000, 0x0f331802 );
+		ROM_LOAD16_BYTE( "c4304-1.30", 0x40001, 0x20000, 0xe06a2414 );
 	
-		ROM_REGION( 0x1c000, REGION_CPU2, 0 )     /* 64k for Z80 code */
-		ROM_LOAD( "c43-16",  0x00000, 0x4000, 0xcb26fce1 )
-		ROM_CONTINUE(        0x10000, 0xc000 ) /* banked stuff */
+		ROM_REGION( 0x1c000, REGION_CPU2, 0 );    /* 64k for Z80 code */
+		ROM_LOAD( "c43-16",  0x00000, 0x4000, 0xcb26fce1 );
+		ROM_CONTINUE(        0x10000, 0xc000 );/* banked stuff */
 	
-		ROM_REGION( 0x100000, REGION_GFX1, ROMREGION_DISPOSE )
-		ROM_LOAD( "c43-02",  0x00000, 0x80000, 0x105722ae )
-		ROM_LOAD( "c43-03",  0x80000, 0x80000, 0x426606ba )
+		ROM_REGION( 0x100000, REGION_GFX1, ROMREGION_DISPOSE );
+		ROM_LOAD( "c43-02",  0x00000, 0x80000, 0x105722ae );
+		ROM_LOAD( "c43-03",  0x80000, 0x80000, 0x426606ba );
 	
-		ROM_REGION( 0x80000, REGION_SOUND1, 0 )
-		ROM_LOAD( "c43-01",  0x00000, 0x80000, 0xdb953f37 )
-	ROM_END
+		ROM_REGION( 0x80000, REGION_SOUND1, 0 );
+		ROM_LOAD( "c43-01",  0x00000, 0x80000, 0xdb953f37 );
+	ROM_END(); }}; 
 	
-	ROM_START( ashurau )
-		ROM_REGION( 0x80000, REGION_CPU1, 0 )     /* 512k for 68000 code */
-		ROM_LOAD16_BYTE( "c43-11", 0x00000, 0x20000, 0xd5aefc9b )
-		ROM_LOAD16_BYTE( "c43-09", 0x00001, 0x20000, 0xe91d0ab1 )
-		ROM_LOAD16_BYTE( "c43-10", 0x40000, 0x20000, 0xc218e7ea )
-		ROM_LOAD16_BYTE( "c43-08", 0x40001, 0x20000, 0x5ef4f19f )
+	static RomLoadPtr rom_ashurau = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x80000, REGION_CPU1, 0 );    /* 512k for 68000 code */
+		ROM_LOAD16_BYTE( "c43-11", 0x00000, 0x20000, 0xd5aefc9b );
+		ROM_LOAD16_BYTE( "c43-09", 0x00001, 0x20000, 0xe91d0ab1 );
+		ROM_LOAD16_BYTE( "c43-10", 0x40000, 0x20000, 0xc218e7ea );
+		ROM_LOAD16_BYTE( "c43-08", 0x40001, 0x20000, 0x5ef4f19f );
 	
-		ROM_REGION( 0x1c000, REGION_CPU2, 0 )     /* 64k for Z80 code */
-		ROM_LOAD( "c43-16",  0x00000, 0x4000, 0xcb26fce1 )
-		ROM_CONTINUE(        0x10000, 0xc000 ) /* banked stuff */
+		ROM_REGION( 0x1c000, REGION_CPU2, 0 );    /* 64k for Z80 code */
+		ROM_LOAD( "c43-16",  0x00000, 0x4000, 0xcb26fce1 );
+		ROM_CONTINUE(        0x10000, 0xc000 );/* banked stuff */
 	
-		ROM_REGION( 0x100000, REGION_GFX1, ROMREGION_DISPOSE )
-		ROM_LOAD( "c43-02",  0x00000, 0x80000, 0x105722ae )
-		ROM_LOAD( "c43-03",  0x80000, 0x80000, 0x426606ba )
+		ROM_REGION( 0x100000, REGION_GFX1, ROMREGION_DISPOSE );
+		ROM_LOAD( "c43-02",  0x00000, 0x80000, 0x105722ae );
+		ROM_LOAD( "c43-03",  0x80000, 0x80000, 0x426606ba );
 	
-		ROM_REGION( 0x80000, REGION_SOUND1, 0 )
-		ROM_LOAD( "c43-01",  0x00000, 0x80000, 0xdb953f37 )
-	ROM_END
+		ROM_REGION( 0x80000, REGION_SOUND1, 0 );
+		ROM_LOAD( "c43-01",  0x00000, 0x80000, 0xdb953f37 );
+	ROM_END(); }}; 
 	
-	ROM_START( tetrist )
-		ROM_REGION( 0x80000, REGION_CPU1, 0 )     /* 512k for 68000 code */
-		ROM_LOAD16_BYTE( "c12-03.bin", 0x000000, 0x020000, 0x38f1ed41 )
-		ROM_LOAD16_BYTE( "c12-02.bin", 0x000001, 0x020000, 0xed9530bc )
-		ROM_LOAD16_BYTE( "c12-05.bin", 0x040000, 0x020000, 0x128e9927 )
-		ROM_LOAD16_BYTE( "c12-04.bin", 0x040001, 0x020000, 0x5da7a319 )
+	static RomLoadPtr rom_tetrist = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x80000, REGION_CPU1, 0 );    /* 512k for 68000 code */
+		ROM_LOAD16_BYTE( "c12-03.bin", 0x000000, 0x020000, 0x38f1ed41 );
+		ROM_LOAD16_BYTE( "c12-02.bin", 0x000001, 0x020000, 0xed9530bc );
+		ROM_LOAD16_BYTE( "c12-05.bin", 0x040000, 0x020000, 0x128e9927 );
+		ROM_LOAD16_BYTE( "c12-04.bin", 0x040001, 0x020000, 0x5da7a319 );
 	
-		ROM_REGION( 0x1c000, REGION_CPU2, 0 )     /* 64k for Z80 code */
-		ROM_LOAD( "c12-06.bin", 0x00000, 0x4000, 0xf2814b38 )
-		ROM_CONTINUE(           0x10000, 0xc000 ) /* banked stuff */
+		ROM_REGION( 0x1c000, REGION_CPU2, 0 );    /* 64k for Z80 code */
+		ROM_LOAD( "c12-06.bin", 0x00000, 0x4000, 0xf2814b38 );
+		ROM_CONTINUE(           0x10000, 0xc000 );/* banked stuff */
 	
-		ROM_REGION( 0x100000, REGION_GFX1, ROMREGION_DISPOSE )
+		ROM_REGION( 0x100000, REGION_GFX1, ROMREGION_DISPOSE );
 		/* empty (uses only pixel layer) */
 	
-		ROM_REGION( 0x80000, REGION_SOUND1, 0 )	/* adpcm samples */
+		ROM_REGION( 0x80000, REGION_SOUND1, 0 );/* adpcm samples */
 		/* empty */
 	
-		ROM_REGION( 0x80000, REGION_SOUND2, 0 )	/* DELTA-T samples */
+		ROM_REGION( 0x80000, REGION_SOUND2, 0 );/* DELTA-T samples */
 		/* empty */
-	ROM_END
+	ROM_END(); }}; 
 	
-	ROM_START( hitice )
-		ROM_REGION( 0x80000, REGION_CPU1, 0 )     /* 512k for 68000 code */
-		ROM_LOAD16_BYTE( "c59-10", 0x00000, 0x20000, 0xe4ffad15 )
-		ROM_LOAD16_BYTE( "c59-12", 0x00001, 0x20000, 0xa080d7af )
-		ROM_LOAD16_BYTE( "c59-09", 0x40000, 0x10000, 0xe243e3b0 )
-		ROM_LOAD16_BYTE( "c59-11", 0x40001, 0x10000, 0x4d4dfa52 )
+	static RomLoadPtr rom_hitice = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x80000, REGION_CPU1, 0 );    /* 512k for 68000 code */
+		ROM_LOAD16_BYTE( "c59-10", 0x00000, 0x20000, 0xe4ffad15 );
+		ROM_LOAD16_BYTE( "c59-12", 0x00001, 0x20000, 0xa080d7af );
+		ROM_LOAD16_BYTE( "c59-09", 0x40000, 0x10000, 0xe243e3b0 );
+		ROM_LOAD16_BYTE( "c59-11", 0x40001, 0x10000, 0x4d4dfa52 );
 	
-		ROM_REGION( 0x1c000, REGION_CPU2, 0 )     /* 64k for Z80 code */
-		ROM_LOAD( "c59-08",  0x00000, 0x4000, 0xd3cbc10b )
-		ROM_CONTINUE(        0x10000, 0xc000 ) /* banked stuff */
+		ROM_REGION( 0x1c000, REGION_CPU2, 0 );    /* 64k for Z80 code */
+		ROM_LOAD( "c59-08",  0x00000, 0x4000, 0xd3cbc10b );
+		ROM_CONTINUE(        0x10000, 0xc000 );/* banked stuff */
 	
-		ROM_REGION( 0x100000, REGION_GFX1, ROMREGION_DISPOSE )
-		ROM_LOAD( "c59-03",  0x00000, 0x80000, 0x9e513048 )
-		ROM_LOAD( "c59-02",  0x80000, 0x80000, 0xaffb5e07 )
+		ROM_REGION( 0x100000, REGION_GFX1, ROMREGION_DISPOSE );
+		ROM_LOAD( "c59-03",  0x00000, 0x80000, 0x9e513048 );
+		ROM_LOAD( "c59-02",  0x80000, 0x80000, 0xaffb5e07 );
 	
-		ROM_REGION( 0x80000, REGION_SOUND1, 0 )
-		ROM_LOAD( "c59-01",  0x00000, 0x20000, 0x46ae291d )
-	ROM_END
+		ROM_REGION( 0x80000, REGION_SOUND1, 0 );
+		ROM_LOAD( "c59-01",  0x00000, 0x20000, 0x46ae291d );
+	ROM_END(); }}; 
 	
-	ROM_START( rambo3 )
-		ROM_REGION( 0x80000, REGION_CPU1, 0 )     /* 512k for 68000 code */
-		ROM_LOAD16_BYTE( "r3-0e.rom",  0x00000, 0x10000, 0x3efa4177 )
-		ROM_LOAD16_BYTE( "r3-0o.rom",  0x00001, 0x10000, 0x55c38d92 )
+	static RomLoadPtr rom_rambo3 = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x80000, REGION_CPU1, 0 );    /* 512k for 68000 code */
+		ROM_LOAD16_BYTE( "r3-0e.rom",  0x00000, 0x10000, 0x3efa4177 );
+		ROM_LOAD16_BYTE( "r3-0o.rom",  0x00001, 0x10000, 0x55c38d92 );
 	
 	/*NOTE: there is a hole in address space here */
 	
-		ROM_LOAD16_BYTE( "r3-1e.rom" , 0x40000, 0x20000, 0x40e363c7 )
-		ROM_LOAD16_BYTE( "r3-1o.rom" , 0x40001, 0x20000, 0x7f1fe6ab )
+		ROM_LOAD16_BYTE( "r3-1e.rom" , 0x40000, 0x20000, 0x40e363c7 );
+		ROM_LOAD16_BYTE( "r3-1o.rom" , 0x40001, 0x20000, 0x7f1fe6ab );
 	
-		ROM_REGION( 0x1c000, REGION_CPU2, 0 )     /* 64k for Z80 code */
-		ROM_LOAD( "r3-00.rom", 0x00000, 0x4000, 0xdf7a6ed6 )
-		ROM_CONTINUE(          0x10000, 0xc000 ) /* banked stuff */
+		ROM_REGION( 0x1c000, REGION_CPU2, 0 );    /* 64k for Z80 code */
+		ROM_LOAD( "r3-00.rom", 0x00000, 0x4000, 0xdf7a6ed6 );
+		ROM_CONTINUE(          0x10000, 0xc000 );/* banked stuff */
 	
-		ROM_REGION( 0x200000, REGION_GFX1, ROMREGION_DISPOSE )
-		ROM_LOAD( "r3-ch1ll.rom", 0x000000, 0x020000, 0xc86ea5fc )
-		ROM_LOAD( "r3-ch1hl.rom", 0x020000, 0x020000, 0x7525eb92 )
-		ROM_LOAD( "r3-ch3ll.rom", 0x040000, 0x020000, 0xabe54b1e )
-		ROM_LOAD( "r3-ch3hl.rom", 0x060000, 0x020000, 0x80e5647e )
+		ROM_REGION( 0x200000, REGION_GFX1, ROMREGION_DISPOSE );
+		ROM_LOAD( "r3-ch1ll.rom", 0x000000, 0x020000, 0xc86ea5fc );
+		ROM_LOAD( "r3-ch1hl.rom", 0x020000, 0x020000, 0x7525eb92 );
+		ROM_LOAD( "r3-ch3ll.rom", 0x040000, 0x020000, 0xabe54b1e );
+		ROM_LOAD( "r3-ch3hl.rom", 0x060000, 0x020000, 0x80e5647e );
 	
-		ROM_LOAD( "r3-ch1lh.rom", 0x080000, 0x020000, 0x75568cf0 )
-		ROM_LOAD( "r3-ch1hh.rom", 0x0a0000, 0x020000, 0xe39cff37 )
-		ROM_LOAD( "r3-ch3lh.rom", 0x0c0000, 0x020000, 0x5a155c04 )
-		ROM_LOAD( "r3-ch3hh.rom", 0x0e0000, 0x020000, 0xabe58fdb )
+		ROM_LOAD( "r3-ch1lh.rom", 0x080000, 0x020000, 0x75568cf0 );
+		ROM_LOAD( "r3-ch1hh.rom", 0x0a0000, 0x020000, 0xe39cff37 );
+		ROM_LOAD( "r3-ch3lh.rom", 0x0c0000, 0x020000, 0x5a155c04 );
+		ROM_LOAD( "r3-ch3hh.rom", 0x0e0000, 0x020000, 0xabe58fdb );
 	
-		ROM_LOAD( "r3-ch0ll.rom", 0x100000, 0x020000, 0xb416f1bf )
-		ROM_LOAD( "r3-ch0hl.rom", 0x120000, 0x020000, 0xa4cad36d )
-		ROM_LOAD( "r3-ch2ll.rom", 0x140000, 0x020000, 0xd0ce3051 )
-		ROM_LOAD( "r3-ch2hl.rom", 0x160000, 0x020000, 0x837d8677 )
+		ROM_LOAD( "r3-ch0ll.rom", 0x100000, 0x020000, 0xb416f1bf );
+		ROM_LOAD( "r3-ch0hl.rom", 0x120000, 0x020000, 0xa4cad36d );
+		ROM_LOAD( "r3-ch2ll.rom", 0x140000, 0x020000, 0xd0ce3051 );
+		ROM_LOAD( "r3-ch2hl.rom", 0x160000, 0x020000, 0x837d8677 );
 	
-		ROM_LOAD( "r3-ch0lh.rom", 0x180000, 0x020000, 0x76a330a2 )
-		ROM_LOAD( "r3-ch0hh.rom", 0x1a0000, 0x020000, 0x4dc69751 )
-		ROM_LOAD( "r3-ch2lh.rom", 0x1c0000, 0x020000, 0xdf3bc48f )
-		ROM_LOAD( "r3-ch2hh.rom", 0x1e0000, 0x020000, 0xbf37dfac )
+		ROM_LOAD( "r3-ch0lh.rom", 0x180000, 0x020000, 0x76a330a2 );
+		ROM_LOAD( "r3-ch0hh.rom", 0x1a0000, 0x020000, 0x4dc69751 );
+		ROM_LOAD( "r3-ch2lh.rom", 0x1c0000, 0x020000, 0xdf3bc48f );
+		ROM_LOAD( "r3-ch2hh.rom", 0x1e0000, 0x020000, 0xbf37dfac );
 	
-		ROM_REGION( 0x80000, REGION_SOUND1, 0 )
-		ROM_LOAD( "r3-a1.rom", 0x00000, 0x20000, 0x4396fa19 )
-		ROM_LOAD( "r3-a2.rom", 0x20000, 0x20000, 0x41fe53a8 )
-		ROM_LOAD( "r3-a3.rom", 0x40000, 0x20000, 0xe89249ba )
-		ROM_LOAD( "r3-a4.rom", 0x60000, 0x20000, 0x9cf4c21b )
-	ROM_END
+		ROM_REGION( 0x80000, REGION_SOUND1, 0 );
+		ROM_LOAD( "r3-a1.rom", 0x00000, 0x20000, 0x4396fa19 );
+		ROM_LOAD( "r3-a2.rom", 0x20000, 0x20000, 0x41fe53a8 );
+		ROM_LOAD( "r3-a3.rom", 0x40000, 0x20000, 0xe89249ba );
+		ROM_LOAD( "r3-a4.rom", 0x60000, 0x20000, 0x9cf4c21b );
+	ROM_END(); }}; 
 	
-	ROM_START( rambo3a )
-		ROM_REGION( 0x80000, REGION_CPU1, 0 )     /* 512k for 68000 code */
-		ROM_LOAD16_BYTE( "ramb3-11.bin",  0x00000, 0x20000, 0x1cc42247 )
-		ROM_LOAD16_BYTE( "ramb3-13.bin",  0x00001, 0x20000, 0x0a964cb7 )
-		ROM_LOAD16_BYTE( "ramb3-07.bin",  0x40000, 0x20000, 0xc973ff6f )
-		ROM_LOAD16_BYTE( "ramb3-06.bin",  0x40001, 0x20000, 0xa83d3fd5 )
+	static RomLoadPtr rom_rambo3a = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x80000, REGION_CPU1, 0 );    /* 512k for 68000 code */
+		ROM_LOAD16_BYTE( "ramb3-11.bin",  0x00000, 0x20000, 0x1cc42247 );
+		ROM_LOAD16_BYTE( "ramb3-13.bin",  0x00001, 0x20000, 0x0a964cb7 );
+		ROM_LOAD16_BYTE( "ramb3-07.bin",  0x40000, 0x20000, 0xc973ff6f );
+		ROM_LOAD16_BYTE( "ramb3-06.bin",  0x40001, 0x20000, 0xa83d3fd5 );
 	
-		ROM_REGION( 0x1c000, REGION_CPU2, 0 )     /* 64k for Z80 code */
-		ROM_LOAD( "ramb3-10.bin", 0x00000, 0x4000, 0xb18bc020 )
-		ROM_CONTINUE(             0x10000, 0xc000 ) /* banked stuff */
+		ROM_REGION( 0x1c000, REGION_CPU2, 0 );    /* 64k for Z80 code */
+		ROM_LOAD( "ramb3-10.bin", 0x00000, 0x4000, 0xb18bc020 );
+		ROM_CONTINUE(             0x10000, 0xc000 );/* banked stuff */
 	
-		ROM_REGION( 0x200000, REGION_GFX1, ROMREGION_DISPOSE )
-		ROM_LOAD( "ramb3-03.bin",  0x000000, 0x80000, 0xf5808c41 )
-		ROM_LOAD( "ramb3-04.bin",  0x080000, 0x80000, 0xc57831ce )
-		ROM_LOAD( "ramb3-01.bin",  0x100000, 0x80000, 0xc55fcf54 )
-		ROM_LOAD( "ramb3-02.bin",  0x180000, 0x80000, 0x9dd014c6 )
+		ROM_REGION( 0x200000, REGION_GFX1, ROMREGION_DISPOSE );
+		ROM_LOAD( "ramb3-03.bin",  0x000000, 0x80000, 0xf5808c41 );
+		ROM_LOAD( "ramb3-04.bin",  0x080000, 0x80000, 0xc57831ce );
+		ROM_LOAD( "ramb3-01.bin",  0x100000, 0x80000, 0xc55fcf54 );
+		ROM_LOAD( "ramb3-02.bin",  0x180000, 0x80000, 0x9dd014c6 );
 	
-		ROM_REGION( 0x80000, REGION_SOUND1, 0 )
-		ROM_LOAD( "ramb3-05.bin", 0x00000, 0x80000, 0x0179dc40 )
-	ROM_END
+		ROM_REGION( 0x80000, REGION_SOUND1, 0 );
+		ROM_LOAD( "ramb3-05.bin", 0x00000, 0x80000, 0x0179dc40 );
+	ROM_END(); }}; 
 	
-	ROM_START( rambo3ae )
-		ROM_REGION( 0x80000, REGION_CPU1, 0 )     /* 512k for 68000 code */
-		ROM_LOAD16_BYTE( "ramb3-11.bin",  0x00000, 0x20000, 0x1cc42247 )
-		ROM_LOAD16_BYTE( "ramb3-14.bin",  0x00001, 0x20000, 0x7d917c21 )
-		ROM_LOAD16_BYTE( "ramb3-07.bin",  0x40000, 0x20000, 0xc973ff6f )
-		ROM_LOAD16_BYTE( "ramb3-06.bin",  0x40001, 0x20000, 0xa83d3fd5 )
+	static RomLoadPtr rom_rambo3ae = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x80000, REGION_CPU1, 0 );    /* 512k for 68000 code */
+		ROM_LOAD16_BYTE( "ramb3-11.bin",  0x00000, 0x20000, 0x1cc42247 );
+		ROM_LOAD16_BYTE( "ramb3-14.bin",  0x00001, 0x20000, 0x7d917c21 );
+		ROM_LOAD16_BYTE( "ramb3-07.bin",  0x40000, 0x20000, 0xc973ff6f );
+		ROM_LOAD16_BYTE( "ramb3-06.bin",  0x40001, 0x20000, 0xa83d3fd5 );
 	
-		ROM_REGION( 0x1c000, REGION_CPU2, 0 )     /* 64k for Z80 code */
-		ROM_LOAD( "ramb3-10.bin", 0x00000, 0x4000, 0xb18bc020 )
-		ROM_CONTINUE(             0x10000, 0xc000 ) /* banked stuff */
+		ROM_REGION( 0x1c000, REGION_CPU2, 0 );    /* 64k for Z80 code */
+		ROM_LOAD( "ramb3-10.bin", 0x00000, 0x4000, 0xb18bc020 );
+		ROM_CONTINUE(             0x10000, 0xc000 );/* banked stuff */
 	
-		ROM_REGION( 0x200000, REGION_GFX1, ROMREGION_DISPOSE )
-		ROM_LOAD( "ramb3-03.bin",  0x000000, 0x80000, 0xf5808c41 )
-		ROM_LOAD( "ramb3-04.bin",  0x080000, 0x80000, 0xc57831ce )
-		ROM_LOAD( "ramb3-01.bin",  0x100000, 0x80000, 0xc55fcf54 )
-		ROM_LOAD( "ramb3-02.bin",  0x180000, 0x80000, 0x9dd014c6 )
+		ROM_REGION( 0x200000, REGION_GFX1, ROMREGION_DISPOSE );
+		ROM_LOAD( "ramb3-03.bin",  0x000000, 0x80000, 0xf5808c41 );
+		ROM_LOAD( "ramb3-04.bin",  0x080000, 0x80000, 0xc57831ce );
+		ROM_LOAD( "ramb3-01.bin",  0x100000, 0x80000, 0xc55fcf54 );
+		ROM_LOAD( "ramb3-02.bin",  0x180000, 0x80000, 0x9dd014c6 );
 	
-		ROM_REGION( 0x80000, REGION_SOUND1, 0 )
-		ROM_LOAD( "ramb3-05.bin", 0x00000, 0x80000, 0x0179dc40 )
-	ROM_END
+		ROM_REGION( 0x80000, REGION_SOUND1, 0 );
+		ROM_LOAD( "ramb3-05.bin", 0x00000, 0x80000, 0x0179dc40 );
+	ROM_END(); }}; 
 	
-	ROM_START( pbobble )
-		ROM_REGION( 0x80000, REGION_CPU1, 0 )     /* 512k for 68000 code */
-		ROM_LOAD16_BYTE( "pb-1c18.bin", 0x00000, 0x40000, 0x5de14f49 )
-		ROM_LOAD16_BYTE( "pb-ic2.bin",  0x00001, 0x40000, 0x2abe07d1 )
+	static RomLoadPtr rom_pbobble = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x80000, REGION_CPU1, 0 );    /* 512k for 68000 code */
+		ROM_LOAD16_BYTE( "pb-1c18.bin", 0x00000, 0x40000, 0x5de14f49 );
+		ROM_LOAD16_BYTE( "pb-ic2.bin",  0x00001, 0x40000, 0x2abe07d1 );
 	
-		ROM_REGION( 0x2c000, REGION_CPU2, 0 )     /* 128k for Z80 code */
-		ROM_LOAD( "pb-ic27.bin", 0x00000, 0x04000, 0x26efa4c4 )
-		ROM_CONTINUE(            0x10000, 0x1c000 ) /* banked stuff */
+		ROM_REGION( 0x2c000, REGION_CPU2, 0 );    /* 128k for Z80 code */
+		ROM_LOAD( "pb-ic27.bin", 0x00000, 0x04000, 0x26efa4c4 );
+		ROM_CONTINUE(            0x10000, 0x1c000 );/* banked stuff */
 	
-		ROM_REGION( 0x100000, REGION_GFX1, ROMREGION_DISPOSE )
-		ROM_LOAD( "pb-ic14.bin", 0x00000, 0x80000, 0x55f90ea4 )
-		ROM_LOAD( "pb-ic9.bin",  0x80000, 0x80000, 0x3253aac9 )
+		ROM_REGION( 0x100000, REGION_GFX1, ROMREGION_DISPOSE );
+		ROM_LOAD( "pb-ic14.bin", 0x00000, 0x80000, 0x55f90ea4 );
+		ROM_LOAD( "pb-ic9.bin",  0x80000, 0x80000, 0x3253aac9 );
 	
-		ROM_REGION( 0x100000, REGION_SOUND1, 0 )
-		ROM_LOAD( "pb-ic15.bin", 0x000000, 0x100000, 0x0840cbc4 )
-	ROM_END
+		ROM_REGION( 0x100000, REGION_SOUND1, 0 );
+		ROM_LOAD( "pb-ic15.bin", 0x000000, 0x100000, 0x0840cbc4 );
+	ROM_END(); }}; 
 	
-	ROM_START( spacedx )
-		ROM_REGION( 0x80000, REGION_CPU1, 0 )     /* 512k for 68000 code */
-		ROM_LOAD16_BYTE( "d89-06",       0x00000, 0x40000, 0x7122751e )
-		ROM_LOAD16_BYTE( "si-dxusa.ic2", 0x00001, 0x40000, 0x50a4b8d1 )
+	static RomLoadPtr rom_spacedx = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x80000, REGION_CPU1, 0 );    /* 512k for 68000 code */
+		ROM_LOAD16_BYTE( "d89-06",       0x00000, 0x40000, 0x7122751e );
+		ROM_LOAD16_BYTE( "si-dxusa.ic2", 0x00001, 0x40000, 0x50a4b8d1 );
 	
-		ROM_REGION( 0x1c000, REGION_CPU2, 0 )     /* 64k for Z80 code */
-		ROM_LOAD( "d89-07.27", 0x00000, 0x4000, 0xbd743401 )
-		ROM_CONTINUE(          0x10000, 0xc000 ) /* banked stuff */
+		ROM_REGION( 0x1c000, REGION_CPU2, 0 );    /* 64k for Z80 code */
+		ROM_LOAD( "d89-07.27", 0x00000, 0x4000, 0xbd743401 );
+		ROM_CONTINUE(          0x10000, 0xc000 );/* banked stuff */
 	
-		ROM_REGION( 0x100000, REGION_GFX1, ROMREGION_DISPOSE )
-		ROM_LOAD( "d89-02.14", 0x00000, 0x80000, 0xc36544b9 )
-		ROM_LOAD( "d89-01.9",  0x80000, 0x80000, 0xfffa0660 )
+		ROM_REGION( 0x100000, REGION_GFX1, ROMREGION_DISPOSE );
+		ROM_LOAD( "d89-02.14", 0x00000, 0x80000, 0xc36544b9 );
+		ROM_LOAD( "d89-01.9",  0x80000, 0x80000, 0xfffa0660 );
 	
-		ROM_REGION( 0x80000, REGION_SOUND1, 0 )	/* adpcm samples */
-		ROM_LOAD( "d89-03.15", 0x00000, 0x80000, 0x218f31a4 )
-	ROM_END
+		ROM_REGION( 0x80000, REGION_SOUND1, 0 );/* adpcm samples */
+		ROM_LOAD( "d89-03.15", 0x00000, 0x80000, 0x218f31a4 );
+	ROM_END(); }}; 
 	
-	ROM_START( spacedxj )
-		ROM_REGION( 0x80000, REGION_CPU1, 0 )     /* 512k for 68000 code */
-		ROM_LOAD16_BYTE( "d89-06", 0x00000, 0x40000, 0x7122751e )
-		ROM_LOAD16_BYTE( "d89-05", 0x00001, 0x40000, 0xbe1638af )
+	static RomLoadPtr rom_spacedxj = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x80000, REGION_CPU1, 0 );    /* 512k for 68000 code */
+		ROM_LOAD16_BYTE( "d89-06", 0x00000, 0x40000, 0x7122751e );
+		ROM_LOAD16_BYTE( "d89-05", 0x00001, 0x40000, 0xbe1638af );
 	
-		ROM_REGION( 0x1c000, REGION_CPU2, 0 )     /* 64k for Z80 code */
-		ROM_LOAD( "d89-07.27", 0x00000, 0x4000, 0xbd743401 )
-		ROM_CONTINUE(          0x10000, 0xc000 ) /* banked stuff */
+		ROM_REGION( 0x1c000, REGION_CPU2, 0 );    /* 64k for Z80 code */
+		ROM_LOAD( "d89-07.27", 0x00000, 0x4000, 0xbd743401 );
+		ROM_CONTINUE(          0x10000, 0xc000 );/* banked stuff */
 	
-		ROM_REGION( 0x100000, REGION_GFX1, ROMREGION_DISPOSE )
-		ROM_LOAD( "d89-02.14", 0x00000, 0x80000, 0xc36544b9 )
-		ROM_LOAD( "d89-01.9" , 0x80000, 0x80000, 0xfffa0660 )
+		ROM_REGION( 0x100000, REGION_GFX1, ROMREGION_DISPOSE );
+		ROM_LOAD( "d89-02.14", 0x00000, 0x80000, 0xc36544b9 );
+		ROM_LOAD( "d89-01.9" , 0x80000, 0x80000, 0xfffa0660 );
 	
-		ROM_REGION( 0x80000, REGION_SOUND1, 0 )	/* adpcm samples */
-		ROM_LOAD( "d89-03.15", 0x00000, 0x80000, 0x218f31a4 )
-	ROM_END
+		ROM_REGION( 0x80000, REGION_SOUND1, 0 );/* adpcm samples */
+		ROM_LOAD( "d89-03.15", 0x00000, 0x80000, 0x218f31a4 );
+	ROM_END(); }}; 
 	
-	ROM_START( spacedxo )
-		ROM_REGION( 0x80000, REGION_CPU1, 0 )     /* 256k for 68000 code */
-		ROM_LOAD16_BYTE( "d89-08.bin",  0x00000, 0x20000, 0x0c2fe7f9 )
-		ROM_LOAD16_BYTE( "d89-09j.bin", 0x00001, 0x20000, 0x7f0a0ba4 )
+	static RomLoadPtr rom_spacedxo = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x80000, REGION_CPU1, 0 );    /* 256k for 68000 code */
+		ROM_LOAD16_BYTE( "d89-08.bin",  0x00000, 0x20000, 0x0c2fe7f9 );
+		ROM_LOAD16_BYTE( "d89-09j.bin", 0x00001, 0x20000, 0x7f0a0ba4 );
 	
-		ROM_REGION( 0x1c000, REGION_CPU2, 0 )     /* 64k for Z80 code */
-		ROM_LOAD( "d89-07.27", 0x00000, 0x4000, 0xbd743401 )
-		ROM_CONTINUE(          0x10000, 0xc000 ) /* banked stuff */
+		ROM_REGION( 0x1c000, REGION_CPU2, 0 );    /* 64k for Z80 code */
+		ROM_LOAD( "d89-07.27", 0x00000, 0x4000, 0xbd743401 );
+		ROM_CONTINUE(          0x10000, 0xc000 );/* banked stuff */
 	
-		ROM_REGION( 0x100000, REGION_GFX1, ROMREGION_DISPOSE )
-		ROM_LOAD( "d89-12.bin",0x00000, 0x80000, 0x53df86f1 )
-		ROM_LOAD( "d89-13.bin",0x80000, 0x80000, 0xc44c1352 )
+		ROM_REGION( 0x100000, REGION_GFX1, ROMREGION_DISPOSE );
+		ROM_LOAD( "d89-12.bin",0x00000, 0x80000, 0x53df86f1 );
+		ROM_LOAD( "d89-13.bin",0x80000, 0x80000, 0xc44c1352 );
 	
-		ROM_REGION( 0x80000, REGION_SOUND1, 0 )	/* adpcm samples */
-		ROM_LOAD( "d89-03.15", 0x00000, 0x80000, 0x218f31a4 )
-	ROM_END
+		ROM_REGION( 0x80000, REGION_SOUND1, 0 );/* adpcm samples */
+		ROM_LOAD( "d89-03.15", 0x00000, 0x80000, 0x218f31a4 );
+	ROM_END(); }}; 
 	
-	ROM_START( qzshowby )
-		ROM_REGION( 0x100000, REGION_CPU1, 0 )     /* 1M for 68000 code */
-		ROM_LOAD16_BYTE( "d72-13.bin", 0x00000, 0x80000, 0xa867759f )
-		ROM_LOAD16_BYTE( "d72-12.bin", 0x00001, 0x80000, 0x522c09a7 )
+	static RomLoadPtr rom_qzshowby = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x100000, REGION_CPU1, 0 );    /* 1M for 68000 code */
+		ROM_LOAD16_BYTE( "d72-13.bin", 0x00000, 0x80000, 0xa867759f );
+		ROM_LOAD16_BYTE( "d72-12.bin", 0x00001, 0x80000, 0x522c09a7 );
 	
-		ROM_REGION( 0x2c000, REGION_CPU2, 0 )     /* 128k for Z80 code */
-		ROM_LOAD(  "d72-11.bin", 0x00000, 0x04000, 0x2ca046e2 )
-		ROM_CONTINUE(            0x10000, 0x1c000 ) /* banked stuff */
+		ROM_REGION( 0x2c000, REGION_CPU2, 0 );    /* 128k for Z80 code */
+		ROM_LOAD(  "d72-11.bin", 0x00000, 0x04000, 0x2ca046e2 );
+		ROM_CONTINUE(            0x10000, 0x1c000 );/* banked stuff */
 	
-		ROM_REGION( 0x400000, REGION_GFX1, ROMREGION_DISPOSE )
-		ROM_LOAD( "d72-03.bin", 0x000000, 0x200000, 0x1de257d0 )
-		ROM_LOAD( "d72-02.bin", 0x200000, 0x200000, 0xbf0da640 )
+		ROM_REGION( 0x400000, REGION_GFX1, ROMREGION_DISPOSE );
+		ROM_LOAD( "d72-03.bin", 0x000000, 0x200000, 0x1de257d0 );
+		ROM_LOAD( "d72-02.bin", 0x200000, 0x200000, 0xbf0da640 );
 	
-		ROM_REGION( 0x200000, REGION_SOUND1, 0 )
-		ROM_LOAD( "d72-01.bin", 0x00000, 0x200000, 0xb82b8830 )
-	ROM_END
+		ROM_REGION( 0x200000, REGION_SOUND1, 0 );
+		ROM_LOAD( "d72-01.bin", 0x00000, 0x200000, 0xb82b8830 );
+	ROM_END(); }}; 
 	
-	ROM_START( viofight )
-		ROM_REGION( 0x080000, REGION_CPU1, 0 )     /* 1M for 68000 code */
-		ROM_LOAD16_BYTE( "c16-11.rom", 0x00000, 0x10000, 0x23dbd388 )
-		ROM_LOAD16_BYTE( "c16-14.rom", 0x00001, 0x10000, 0xdc934f6a )
-		ROM_LOAD16_BYTE( "c16-07.rom", 0x40000, 0x20000, 0x64d1d059 )
-		ROM_LOAD16_BYTE( "c16-06.rom", 0x40001, 0x20000, 0x043761d8 )
+	static RomLoadPtr rom_viofight = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x080000, REGION_CPU1, 0 );    /* 1M for 68000 code */
+		ROM_LOAD16_BYTE( "c16-11.rom", 0x00000, 0x10000, 0x23dbd388 );
+		ROM_LOAD16_BYTE( "c16-14.rom", 0x00001, 0x10000, 0xdc934f6a );
+		ROM_LOAD16_BYTE( "c16-07.rom", 0x40000, 0x20000, 0x64d1d059 );
+		ROM_LOAD16_BYTE( "c16-06.rom", 0x40001, 0x20000, 0x043761d8 );
 	
-		ROM_REGION( 0x1c000, REGION_CPU2, 0 )     /* 128k for Z80 code */
-		ROM_LOAD(  "c16-12.rom", 0x00000, 0x04000, 0x6fb028c7 )
-		ROM_CONTINUE(            0x10000, 0x0c000 ) /* banked stuff */
+		ROM_REGION( 0x1c000, REGION_CPU2, 0 );    /* 128k for Z80 code */
+		ROM_LOAD(  "c16-12.rom", 0x00000, 0x04000, 0x6fb028c7 );
+		ROM_CONTINUE(            0x10000, 0x0c000 );/* banked stuff */
 	
-		ROM_REGION( 0x200000, REGION_GFX1, ROMREGION_DISPOSE )
-		ROM_LOAD( "c16-01.rom", 0x000000, 0x080000, 0x7059ce83 )
-		ROM_LOAD( "c16-02.rom", 0x080000, 0x080000, 0xb458e905 )
-		ROM_LOAD( "c16-03.rom", 0x100000, 0x080000, 0x515a9431 )
-		ROM_LOAD( "c16-04.rom", 0x180000, 0x080000, 0xebf285e2 )
+		ROM_REGION( 0x200000, REGION_GFX1, ROMREGION_DISPOSE );
+		ROM_LOAD( "c16-01.rom", 0x000000, 0x080000, 0x7059ce83 );
+		ROM_LOAD( "c16-02.rom", 0x080000, 0x080000, 0xb458e905 );
+		ROM_LOAD( "c16-03.rom", 0x100000, 0x080000, 0x515a9431 );
+		ROM_LOAD( "c16-04.rom", 0x180000, 0x080000, 0xebf285e2 );
 	
-		ROM_REGION( 0x80000, REGION_SOUND1, 0 )
-		ROM_LOAD( "c16-05.rom", 0x000000, 0x80000, 0xa49d064a )
-	ROM_END
+		ROM_REGION( 0x80000, REGION_SOUND1, 0 );
+		ROM_LOAD( "c16-05.rom", 0x000000, 0x80000, 0xa49d064a );
+	ROM_END(); }}; 
 	
-	ROM_START( masterw )
-		ROM_REGION( 0x80000, REGION_CPU1, 0 )     /* 512k for 68000 code */
-		ROM_LOAD16_BYTE( "b72-06.rom"   , 0x00000, 0x20000, 0xae848eff )
-		ROM_LOAD16_BYTE( "b72-12.rom"   , 0x00001, 0x20000, 0x7176ce70 )
-		ROM_LOAD16_BYTE( "b72-04.rom"   , 0x40000, 0x20000, 0x141e964c )
-		ROM_LOAD16_BYTE( "b72-03.rom"   , 0x40001, 0x20000, 0xf4523496 )
+	static RomLoadPtr rom_masterw = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x80000, REGION_CPU1, 0 );    /* 512k for 68000 code */
+		ROM_LOAD16_BYTE( "b72-06.rom"   , 0x00000, 0x20000, 0xae848eff );
+		ROM_LOAD16_BYTE( "b72-12.rom"   , 0x00001, 0x20000, 0x7176ce70 );
+		ROM_LOAD16_BYTE( "b72-04.rom"   , 0x40000, 0x20000, 0x141e964c );
+		ROM_LOAD16_BYTE( "b72-03.rom"   , 0x40001, 0x20000, 0xf4523496 );
 	
-		ROM_REGION( 0x1c000, REGION_CPU2, 0 )     /* 64k for Z80 code */
-		ROM_LOAD( "b72-07.rom", 0x00000, 0x4000, 0x2b1a946f )
-		ROM_CONTINUE(           0x10000, 0xc000 ) /* banked stuff */
+		ROM_REGION( 0x1c000, REGION_CPU2, 0 );    /* 64k for Z80 code */
+		ROM_LOAD( "b72-07.rom", 0x00000, 0x4000, 0x2b1a946f );
+		ROM_CONTINUE(           0x10000, 0xc000 );/* banked stuff */
 	
-		ROM_REGION( 0x100000, REGION_GFX1, ROMREGION_DISPOSE )
-		ROM_LOAD( "mow-m02.rom", 0x000000, 0x080000, 0xc519f65a )
-		ROM_LOAD( "mow-m01.rom", 0x080000, 0x080000, 0xa24ac26e )
-	ROM_END
+		ROM_REGION( 0x100000, REGION_GFX1, ROMREGION_DISPOSE );
+		ROM_LOAD( "mow-m02.rom", 0x000000, 0x080000, 0xc519f65a );
+		ROM_LOAD( "mow-m01.rom", 0x080000, 0x080000, 0xa24ac26e );
+	ROM_END(); }}; 
 	
-	ROM_START( silentd )
-		ROM_REGION( 0x80000, REGION_CPU1, 0 )     /* 256k for 68000 code */
-		ROM_LOAD16_BYTE( "sr_12-1.rom", 0x00000, 0x20000, 0x5883d362 )
-		ROM_LOAD16_BYTE( "sr_15-1.rom", 0x00001, 0x20000, 0x8c0a72ae )
-		ROM_LOAD16_BYTE( "sr_11.rom",   0x40000, 0x20000, 0x35da4428 )
-		ROM_LOAD16_BYTE( "sr_09.rom",   0x40001, 0x20000, 0x2f05b14a )
+	static RomLoadPtr rom_silentd = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x80000, REGION_CPU1, 0 );    /* 256k for 68000 code */
+		ROM_LOAD16_BYTE( "sr_12-1.rom", 0x00000, 0x20000, 0x5883d362 );
+		ROM_LOAD16_BYTE( "sr_15-1.rom", 0x00001, 0x20000, 0x8c0a72ae );
+		ROM_LOAD16_BYTE( "sr_11.rom",   0x40000, 0x20000, 0x35da4428 );
+		ROM_LOAD16_BYTE( "sr_09.rom",   0x40001, 0x20000, 0x2f05b14a );
 	
-		ROM_REGION( 0x1c000, REGION_CPU2, 0 )     /* 64k for Z80 code */
-		ROM_LOAD(  "sr_13.rom", 0x00000, 0x04000, 0x651861ab )
-		ROM_CONTINUE(           0x10000, 0x0c000 ) /* banked stuff */
+		ROM_REGION( 0x1c000, REGION_CPU2, 0 );    /* 64k for Z80 code */
+		ROM_LOAD(  "sr_13.rom", 0x00000, 0x04000, 0x651861ab );
+		ROM_CONTINUE(           0x10000, 0x0c000 );/* banked stuff */
 	
-		ROM_REGION( 0x400000, REGION_GFX1, ROMREGION_DISPOSE )
-		ROM_LOAD( "sd_m04.rom", 0x000000, 0x100000, 0x53237217 )
-		ROM_LOAD( "sd_m06.rom", 0x100000, 0x100000, 0xe6e6dfa7 )
-		ROM_LOAD( "sd_m03.rom", 0x200000, 0x100000, 0x1b9b2846 )
-		ROM_LOAD( "sd_m05.rom", 0x300000, 0x100000, 0xe02472c5 )
+		ROM_REGION( 0x400000, REGION_GFX1, ROMREGION_DISPOSE );
+		ROM_LOAD( "sd_m04.rom", 0x000000, 0x100000, 0x53237217 );
+		ROM_LOAD( "sd_m06.rom", 0x100000, 0x100000, 0xe6e6dfa7 );
+		ROM_LOAD( "sd_m03.rom", 0x200000, 0x100000, 0x1b9b2846 );
+		ROM_LOAD( "sd_m05.rom", 0x300000, 0x100000, 0xe02472c5 );
 	
-		ROM_REGION( 0x80000, REGION_SOUND1, 0 )
-		ROM_LOAD( "sd_m02.rom", 0x00000, 0x80000, 0xe0de5c39 )
+		ROM_REGION( 0x80000, REGION_SOUND1, 0 );
+		ROM_LOAD( "sd_m02.rom", 0x00000, 0x80000, 0xe0de5c39 );
 	
-		ROM_REGION( 0x80000, REGION_SOUND2, 0 )
-		ROM_LOAD( "sd_m01.rom", 0x00000, 0x80000, 0xb41fff1a )
-	ROM_END
+		ROM_REGION( 0x80000, REGION_SOUND2, 0 );
+		ROM_LOAD( "sd_m01.rom", 0x00000, 0x80000, 0xb41fff1a );
+	ROM_END(); }}; 
 	
-	ROM_START( silentdj )
-		ROM_REGION( 0x80000, REGION_CPU1, 0 )     /* 256k for 68000 code */
-		ROM_LOAD16_BYTE( "sr_12-1.rom", 0x00000, 0x20000, 0x5883d362 )
-		ROM_LOAD16_BYTE( "10-1.10",     0x00001, 0x20000, 0x584306fc )
-		ROM_LOAD16_BYTE( "sr_11.rom",   0x40000, 0x20000, 0x35da4428 )
-		ROM_LOAD16_BYTE( "sr_09.rom",   0x40001, 0x20000, 0x2f05b14a )
+	static RomLoadPtr rom_silentdj = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x80000, REGION_CPU1, 0 );    /* 256k for 68000 code */
+		ROM_LOAD16_BYTE( "sr_12-1.rom", 0x00000, 0x20000, 0x5883d362 );
+		ROM_LOAD16_BYTE( "10-1.10",     0x00001, 0x20000, 0x584306fc );
+		ROM_LOAD16_BYTE( "sr_11.rom",   0x40000, 0x20000, 0x35da4428 );
+		ROM_LOAD16_BYTE( "sr_09.rom",   0x40001, 0x20000, 0x2f05b14a );
 	
-		ROM_REGION( 0x1c000, REGION_CPU2, 0 )     /* 64k for Z80 code */
-		ROM_LOAD(  "sr_13.rom", 0x00000, 0x04000, 0x651861ab )
-		ROM_CONTINUE(           0x10000, 0x0c000 ) /* banked stuff */
+		ROM_REGION( 0x1c000, REGION_CPU2, 0 );    /* 64k for Z80 code */
+		ROM_LOAD(  "sr_13.rom", 0x00000, 0x04000, 0x651861ab );
+		ROM_CONTINUE(           0x10000, 0x0c000 );/* banked stuff */
 	
-		ROM_REGION( 0x400000, REGION_GFX1, ROMREGION_DISPOSE )
-		ROM_LOAD( "sd_m04.rom", 0x000000, 0x100000, 0x53237217 )
-		ROM_LOAD( "sd_m06.rom", 0x100000, 0x100000, 0xe6e6dfa7 )
-		ROM_LOAD( "sd_m03.rom", 0x200000, 0x100000, 0x1b9b2846 )
-		ROM_LOAD( "sd_m05.rom", 0x300000, 0x100000, 0xe02472c5 )
+		ROM_REGION( 0x400000, REGION_GFX1, ROMREGION_DISPOSE );
+		ROM_LOAD( "sd_m04.rom", 0x000000, 0x100000, 0x53237217 );
+		ROM_LOAD( "sd_m06.rom", 0x100000, 0x100000, 0xe6e6dfa7 );
+		ROM_LOAD( "sd_m03.rom", 0x200000, 0x100000, 0x1b9b2846 );
+		ROM_LOAD( "sd_m05.rom", 0x300000, 0x100000, 0xe02472c5 );
 	
-		ROM_REGION( 0x80000, REGION_SOUND1, 0 )
-		ROM_LOAD( "sd_m02.rom", 0x00000, 0x80000, 0xe0de5c39 )
+		ROM_REGION( 0x80000, REGION_SOUND1, 0 );
+		ROM_LOAD( "sd_m02.rom", 0x00000, 0x80000, 0xe0de5c39 );
 	
-		ROM_REGION( 0x80000, REGION_SOUND2, 0 )
-		ROM_LOAD( "sd_m01.rom", 0x00000, 0x80000, 0xb41fff1a )
-	ROM_END
+		ROM_REGION( 0x80000, REGION_SOUND2, 0 );
+		ROM_LOAD( "sd_m01.rom", 0x00000, 0x80000, 0xb41fff1a );
+	ROM_END(); }}; 
 	
-	ROM_START( selfeena )
-		ROM_REGION( 0x80000, REGION_CPU1, 0 )     /* 256k for 68000 code */
-		ROM_LOAD16_BYTE( "se-02.27", 0x00000, 0x20000, 0x08f0c8e3 )
-		ROM_LOAD16_BYTE( "se-01.26", 0x00001, 0x20000, 0xa06ca64b )
+	static RomLoadPtr rom_selfeena = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x80000, REGION_CPU1, 0 );    /* 256k for 68000 code */
+		ROM_LOAD16_BYTE( "se-02.27", 0x00000, 0x20000, 0x08f0c8e3 );
+		ROM_LOAD16_BYTE( "se-01.26", 0x00001, 0x20000, 0xa06ca64b );
 	
-		ROM_REGION( 0x1c000, REGION_CPU2, 0 )     /* 64k for Z80 code */
-		ROM_LOAD( "se-03.39",0x00000, 0x4000, 0x675998be )
-		ROM_CONTINUE(        0x10000, 0xc000 ) /* banked stuff */
+		ROM_REGION( 0x1c000, REGION_CPU2, 0 );    /* 64k for Z80 code */
+		ROM_LOAD( "se-03.39",0x00000, 0x4000, 0x675998be );
+		ROM_CONTINUE(        0x10000, 0xc000 );/* banked stuff */
 	
-		ROM_REGION( 0x100000, REGION_GFX1, ROMREGION_DISPOSE )
-		ROM_LOAD( "se-04.2",  0x000000, 0x80000, 0x920ad100 )
-		ROM_LOAD( "se-05.1",  0x080000, 0x80000, 0xd297c995 )
+		ROM_REGION( 0x100000, REGION_GFX1, ROMREGION_DISPOSE );
+		ROM_LOAD( "se-04.2",  0x000000, 0x80000, 0x920ad100 );
+		ROM_LOAD( "se-05.1",  0x080000, 0x80000, 0xd297c995 );
 	
-		ROM_REGION( 0x80000, REGION_SOUND1, 0 )	/* adpcm samples */
-		ROM_LOAD( "se-06.11", 0x00000, 0x80000, 0x80d5e772 )
-	ROM_END
+		ROM_REGION( 0x80000, REGION_SOUND1, 0 );/* adpcm samples */
+		ROM_LOAD( "se-06.11", 0x00000, 0x80000, 0x80d5e772 );
+	ROM_END(); }}; 
 	
-	ROM_START( ryujin )
-		ROM_REGION( 0x80000, REGION_CPU1, 0 )     /* 256k for 68000 code */
-		ROM_LOAD16_BYTE( "ruj02.27", 0x00000, 0x20000, 0x0d223aee )
-		ROM_LOAD16_BYTE( "ruj01.26", 0x00001, 0x20000, 0xc6bcdd1e )
-		ROM_LOAD16_BYTE( "ruj04.29", 0x40000, 0x20000, 0x0c153cab )
-		ROM_LOAD16_BYTE( "ruj03.28", 0x40001, 0x20000, 0x7695f89c )
+	static RomLoadPtr rom_ryujin = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x80000, REGION_CPU1, 0 );    /* 256k for 68000 code */
+		ROM_LOAD16_BYTE( "ruj02.27", 0x00000, 0x20000, 0x0d223aee );
+		ROM_LOAD16_BYTE( "ruj01.26", 0x00001, 0x20000, 0xc6bcdd1e );
+		ROM_LOAD16_BYTE( "ruj04.29", 0x40000, 0x20000, 0x0c153cab );
+		ROM_LOAD16_BYTE( "ruj03.28", 0x40001, 0x20000, 0x7695f89c );
 	
-		ROM_REGION( 0x1c000, REGION_CPU2, 0 )     /* 64k for Z80 code */
-		ROM_LOAD( "ruj05.39",0x00000, 0x4000, 0x95270b16 )
-		ROM_CONTINUE(        0x10000, 0xc000 ) /* banked stuff */
+		ROM_REGION( 0x1c000, REGION_CPU2, 0 );    /* 64k for Z80 code */
+		ROM_LOAD( "ruj05.39",0x00000, 0x4000, 0x95270b16 );
+		ROM_CONTINUE(        0x10000, 0xc000 );/* banked stuff */
 	
-		ROM_REGION( 0x200000, REGION_GFX1, ROMREGION_DISPOSE )
-		ROM_LOAD( "ryujin07.2", 0x000000, 0x100000, 0x34f50980 )
-		ROM_LOAD( "ryujin06.1", 0x100000, 0x100000, 0x1b85ff34 )
+		ROM_REGION( 0x200000, REGION_GFX1, ROMREGION_DISPOSE );
+		ROM_LOAD( "ryujin07.2", 0x000000, 0x100000, 0x34f50980 );
+		ROM_LOAD( "ryujin06.1", 0x100000, 0x100000, 0x1b85ff34 );
 	
-		ROM_REGION( 0x80000, REGION_SOUND1, 0 )	/* adpcm samples */
-		ROM_LOAD( "ryujin08.11", 0x00000, 0x80000, 0x480d040d )
-	ROM_END
+		ROM_REGION( 0x80000, REGION_SOUND1, 0 );/* adpcm samples */
+		ROM_LOAD( "ryujin08.11", 0x00000, 0x80000, 0x480d040d );
+	ROM_END(); }}; 
 	
-	ROM_START( sbm )
-		ROM_REGION( 0x80000, REGION_CPU1, 0 )     /* 256k for 68000 code */
-		ROM_LOAD16_BYTE( "c69-20-1.10", 0x00000, 0x20000, 0xb40e4910 )
-		ROM_LOAD16_BYTE( "c69-22-1.12", 0x00001, 0x20000, 0xecbcf830 )
-		ROM_LOAD16_BYTE( "c69-19-1.9" , 0x40000, 0x20000, 0x5719c158 )
-		ROM_LOAD16_BYTE( "c69-21-1.11", 0x40001, 0x20000, 0x73562394 )
+	static RomLoadPtr rom_sbm = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x80000, REGION_CPU1, 0 );    /* 256k for 68000 code */
+		ROM_LOAD16_BYTE( "c69-20-1.10", 0x00000, 0x20000, 0xb40e4910 );
+		ROM_LOAD16_BYTE( "c69-22-1.12", 0x00001, 0x20000, 0xecbcf830 );
+		ROM_LOAD16_BYTE( "c69-19-1.9" , 0x40000, 0x20000, 0x5719c158 );
+		ROM_LOAD16_BYTE( "c69-21-1.11", 0x40001, 0x20000, 0x73562394 );
 	
-		ROM_REGION( 0x1c000, REGION_CPU2, 0 )     /* 64k for Z80 code */
-		ROM_LOAD( "c69-23.28",0x00000, 0x4000, 0xb2fce13e )
-		ROM_CONTINUE(         0x10000, 0xc000 ) /* banked stuff */
+		ROM_REGION( 0x1c000, REGION_CPU2, 0 );    /* 64k for Z80 code */
+		ROM_LOAD( "c69-23.28",0x00000, 0x4000, 0xb2fce13e );
+		ROM_CONTINUE(         0x10000, 0xc000 );/* banked stuff */
 	
-		ROM_REGION( 0x400000, REGION_GFX1, ROMREGION_DISPOSE )
-		ROM_LOAD       ( "c69-01.ic5", 0x000000, 0x100000, 0x521fabe3 )
-		ROM_LOAD16_BYTE( "c69-13.ic2", 0x100000, 0x020000, 0xd1550884 )
-		ROM_LOAD16_BYTE( "c69-12.ic1", 0x100001, 0x020000, 0xeb56582c )
+		ROM_REGION( 0x400000, REGION_GFX1, ROMREGION_DISPOSE );
+		ROM_LOAD       ( "c69-01.ic5", 0x000000, 0x100000, 0x521fabe3 );
+		ROM_LOAD16_BYTE( "c69-13.ic2", 0x100000, 0x020000, 0xd1550884 );
+		ROM_LOAD16_BYTE( "c69-12.ic1", 0x100001, 0x020000, 0xeb56582c );
 		/* 140000-1fffff empty */
-		ROM_LOAD       ( "c69-02.ic6", 0x200000, 0x100000, 0xf0e20d35 )
-		ROM_LOAD16_BYTE( "c69-15.ic4", 0x300000, 0x020000, 0x9761d316 )
-		ROM_LOAD16_BYTE( "c69-14.ic3", 0x300001, 0x020000, 0x0ed0272a )
+		ROM_LOAD       ( "c69-02.ic6", 0x200000, 0x100000, 0xf0e20d35 );
+		ROM_LOAD16_BYTE( "c69-15.ic4", 0x300000, 0x020000, 0x9761d316 );
+		ROM_LOAD16_BYTE( "c69-14.ic3", 0x300001, 0x020000, 0x0ed0272a );
 		/* 340000-3fffff empty */
 	
-		ROM_REGION( 0x80000, REGION_SOUND1, 0 )	/* adpcm samples */
-		ROM_LOAD( "c69-03.36", 0x00000, 0x80000, 0x63e6b6e7 )
-	ROM_END
+		ROM_REGION( 0x80000, REGION_SOUND1, 0 );/* adpcm samples */
+		ROM_LOAD( "c69-03.36", 0x00000, 0x80000, 0x63e6b6e7 );
+	ROM_END(); }}; 
 	
 	
 	GAMEX( 1989, masterw,  0,       masterw,  masterw,  0, ROT270, "Taito Corporation Japan", "Master of Weapon (World)", GAME_NO_COCKTAIL)

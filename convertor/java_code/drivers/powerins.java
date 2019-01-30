@@ -359,28 +359,28 @@ public class powerins
 	
 	***************************************************************************/
 	
-	ROM_START( powerins )
-		ROM_REGION( 0x100000, REGION_CPU1, 0 )		/* 68000 Code */
+	static RomLoadPtr rom_powerins = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x100000, REGION_CPU1, 0 );	/* 68000 Code */
 		ROM_LOAD16_WORD_SWAP( "rom1", 0x000000, 0x080000, 0xb86c84d6 )
 		ROM_LOAD16_WORD_SWAP( "rom2", 0x080000, 0x080000, 0xd3d7a782 )
 	
-		ROM_REGION( 0x280000, REGION_GFX1, ROMREGION_DISPOSE )	/* Layer 0 */
-		ROM_LOAD( "rom6",  0x000000, 0x200000, 0xb6c10f80 )
-		ROM_LOAD( "rom4",  0x200000, 0x080000, 0x2dd76149 )
+		ROM_REGION( 0x280000, REGION_GFX1, ROMREGION_DISPOSE );/* Layer 0 */
+		ROM_LOAD( "rom6",  0x000000, 0x200000, 0xb6c10f80 );
+		ROM_LOAD( "rom4",  0x200000, 0x080000, 0x2dd76149 );
 	
-		ROM_REGION( 0x100000, REGION_GFX2, ROMREGION_DISPOSE )	/* Layer 1 */
-		ROM_LOAD( "rom3",  0x000000, 0x020000, 0x6a579ee0 )
+		ROM_REGION( 0x100000, REGION_GFX2, ROMREGION_DISPOSE );/* Layer 1 */
+		ROM_LOAD( "rom3",  0x000000, 0x020000, 0x6a579ee0 );
 	
-		ROM_REGION( 0x800000, REGION_GFX3, ROMREGION_DISPOSE )	/* Sprites */
-		ROM_LOAD( "rom10", 0x000000, 0x200000, 0xefad50e8 )
-		ROM_LOAD( "rom9",  0x200000, 0x200000, 0x08229592 )
-		ROM_LOAD( "rom8",  0x400000, 0x200000, 0xb02fdd6d )
-		ROM_LOAD( "rom7",  0x600000, 0x200000, 0x92ab9996 )
+		ROM_REGION( 0x800000, REGION_GFX3, ROMREGION_DISPOSE );/* Sprites */
+		ROM_LOAD( "rom10", 0x000000, 0x200000, 0xefad50e8 );
+		ROM_LOAD( "rom9",  0x200000, 0x200000, 0x08229592 );
+		ROM_LOAD( "rom8",  0x400000, 0x200000, 0xb02fdd6d );
+		ROM_LOAD( "rom7",  0x600000, 0x200000, 0x92ab9996 );
 	
-		ROM_REGION( 0x090000, REGION_SOUND1, 0 )	/* 8 bit adpcm (banked) */
-		ROM_LOAD( "rom5", 0x000000, 0x030000, 0x88579c8f )
-		ROM_CONTINUE(     0x040000, 0x050000 )
-	ROM_END
+		ROM_REGION( 0x090000, REGION_SOUND1, 0 );/* 8 bit adpcm (banked) */
+		ROM_LOAD( "rom5", 0x000000, 0x030000, 0x88579c8f );
+		ROM_CONTINUE(     0x040000, 0x050000 );
+	ROM_END(); }}; 
 	
 	
 	GAME( 1993, powerins, 0, powerins, powerins, 0, ROT0, "Atlus", "Power Instinct (USA bootleg)" )

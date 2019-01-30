@@ -631,63 +631,63 @@ public class bzone
 	
 	***************************************************************************/
 	
-	ROM_START( bzone )
-		ROM_REGION( 0x10000, REGION_CPU1, 0 )	/* 64k for code */
-		ROM_LOAD( "036414.01",  0x5000, 0x0800, 0xefbc3fa0 )
-		ROM_LOAD( "036413.01",  0x5800, 0x0800, 0x5d9d9111 )
-		ROM_LOAD( "036412.01",  0x6000, 0x0800, 0xab55cbd2 )
-		ROM_LOAD( "036411.01",  0x6800, 0x0800, 0xad281297 )
-		ROM_LOAD( "036410.01",  0x7000, 0x0800, 0x0b7bfaa4 )
-		ROM_LOAD( "036409.01",  0x7800, 0x0800, 0x1e14e919 )
-		ROM_RELOAD(             0xf800, 0x0800 )	/* for reset/interrupt vectors */
+	static RomLoadPtr rom_bzone = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x10000, REGION_CPU1, 0 );/* 64k for code */
+		ROM_LOAD( "036414.01",  0x5000, 0x0800, 0xefbc3fa0 );
+		ROM_LOAD( "036413.01",  0x5800, 0x0800, 0x5d9d9111 );
+		ROM_LOAD( "036412.01",  0x6000, 0x0800, 0xab55cbd2 );
+		ROM_LOAD( "036411.01",  0x6800, 0x0800, 0xad281297 );
+		ROM_LOAD( "036410.01",  0x7000, 0x0800, 0x0b7bfaa4 );
+		ROM_LOAD( "036409.01",  0x7800, 0x0800, 0x1e14e919 );
+		ROM_RELOAD(             0xf800, 0x0800 );/* for reset/interrupt vectors */
 		/* Mathbox ROMs */
-		ROM_LOAD( "036422.01",  0x3000, 0x0800, 0x7414177b )
-		ROM_LOAD( "036421.01",  0x3800, 0x0800, 0x8ea8f939 )
-	ROM_END
+		ROM_LOAD( "036422.01",  0x3000, 0x0800, 0x7414177b );
+		ROM_LOAD( "036421.01",  0x3800, 0x0800, 0x8ea8f939 );
+	ROM_END(); }}; 
 	
-	ROM_START( bzone2 )
-		ROM_REGION( 0x10000, REGION_CPU1, 0 )	/* 64k for code */
-		ROM_LOAD( "036414a.01", 0x5000, 0x0800, 0x13de36d5 )
-		ROM_LOAD( "036413.01",  0x5800, 0x0800, 0x5d9d9111 )
-		ROM_LOAD( "036412.01",  0x6000, 0x0800, 0xab55cbd2 )
-		ROM_LOAD( "036411.01",  0x6800, 0x0800, 0xad281297 )
-		ROM_LOAD( "036410.01",  0x7000, 0x0800, 0x0b7bfaa4 )
-		ROM_LOAD( "036409.01",  0x7800, 0x0800, 0x1e14e919 )
-		ROM_RELOAD(             0xf800, 0x0800 )	/* for reset/interrupt vectors */
+	static RomLoadPtr rom_bzone2 = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x10000, REGION_CPU1, 0 );/* 64k for code */
+		ROM_LOAD( "036414a.01", 0x5000, 0x0800, 0x13de36d5 );
+		ROM_LOAD( "036413.01",  0x5800, 0x0800, 0x5d9d9111 );
+		ROM_LOAD( "036412.01",  0x6000, 0x0800, 0xab55cbd2 );
+		ROM_LOAD( "036411.01",  0x6800, 0x0800, 0xad281297 );
+		ROM_LOAD( "036410.01",  0x7000, 0x0800, 0x0b7bfaa4 );
+		ROM_LOAD( "036409.01",  0x7800, 0x0800, 0x1e14e919 );
+		ROM_RELOAD(             0xf800, 0x0800 );/* for reset/interrupt vectors */
 		/* Mathbox ROMs */
-		ROM_LOAD( "036422.01",  0x3000, 0x0800, 0x7414177b )
-		ROM_LOAD( "036421.01",  0x3800, 0x0800, 0x8ea8f939 )
-	ROM_END
+		ROM_LOAD( "036422.01",  0x3000, 0x0800, 0x7414177b );
+		ROM_LOAD( "036421.01",  0x3800, 0x0800, 0x8ea8f939 );
+	ROM_END(); }}; 
 	
-	ROM_START( bzonec ) /* cocktail version */
-		ROM_REGION( 0x10000, REGION_CPU1, 0 )	/* 64k for code */
-		ROM_LOAD( "bz1g4800",   0x4800, 0x0800, 0xe228dd64 )
-		ROM_LOAD( "bz1f5000",   0x5000, 0x0800, 0xdddfac9a )
-		ROM_LOAD( "bz1e5800",   0x5800, 0x0800, 0x7e00e823 )
-		ROM_LOAD( "bz1d6000",   0x6000, 0x0800, 0xc0f8c068 )
-		ROM_LOAD( "bz1c6800",   0x6800, 0x0800, 0x5adc64bd )
-		ROM_LOAD( "bz1b7000",   0x7000, 0x0800, 0xed8a860e )
-		ROM_LOAD( "bz1a7800",   0x7800, 0x0800, 0x04babf45 )
-		ROM_RELOAD(             0xf800, 0x0800 )	/* for reset/interrupt vectors */
+	static RomLoadPtr rom_bzonec = new RomLoadPtr(){ public void handler(){  /* cocktail version */
+		ROM_REGION( 0x10000, REGION_CPU1, 0 );/* 64k for code */
+		ROM_LOAD( "bz1g4800",   0x4800, 0x0800, 0xe228dd64 );
+		ROM_LOAD( "bz1f5000",   0x5000, 0x0800, 0xdddfac9a );
+		ROM_LOAD( "bz1e5800",   0x5800, 0x0800, 0x7e00e823 );
+		ROM_LOAD( "bz1d6000",   0x6000, 0x0800, 0xc0f8c068 );
+		ROM_LOAD( "bz1c6800",   0x6800, 0x0800, 0x5adc64bd );
+		ROM_LOAD( "bz1b7000",   0x7000, 0x0800, 0xed8a860e );
+		ROM_LOAD( "bz1a7800",   0x7800, 0x0800, 0x04babf45 );
+		ROM_RELOAD(             0xf800, 0x0800 );/* for reset/interrupt vectors */
 		/* Mathbox ROMs */
-		ROM_LOAD( "036422.01",  0x3000, 0x0800, 0x7414177b )	// bz3a3000
-		ROM_LOAD( "bz3b3800",   0x3800, 0x0800, 0x76cf57f6 )
-	ROM_END
+		ROM_LOAD( "036422.01",  0x3000, 0x0800, 0x7414177b );// bz3a3000
+		ROM_LOAD( "bz3b3800",   0x3800, 0x0800, 0x76cf57f6 );
+	ROM_END(); }}; 
 	
-	ROM_START( redbaron )
-		ROM_REGION( 0x10000, REGION_CPU1, 0 )	/* 64k for code */
-		ROM_LOAD( "037587.01",  0x4800, 0x0800, 0x60f23983 )
-		ROM_CONTINUE(           0x5800, 0x0800 )
-		ROM_LOAD( "037000.01e", 0x5000, 0x0800, 0x69bed808 )
-		ROM_LOAD( "036998.01e", 0x6000, 0x0800, 0xd1104dd7 )
-		ROM_LOAD( "036997.01e", 0x6800, 0x0800, 0x7434acb4 )
-		ROM_LOAD( "036996.01e", 0x7000, 0x0800, 0xc0e7589e )
-		ROM_LOAD( "036995.01e", 0x7800, 0x0800, 0xad81d1da )
-		ROM_RELOAD(             0xf800, 0x0800 )	/* for reset/interrupt vectors */
+	static RomLoadPtr rom_redbaron = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x10000, REGION_CPU1, 0 );/* 64k for code */
+		ROM_LOAD( "037587.01",  0x4800, 0x0800, 0x60f23983 );
+		ROM_CONTINUE(           0x5800, 0x0800 );
+		ROM_LOAD( "037000.01e", 0x5000, 0x0800, 0x69bed808 );
+		ROM_LOAD( "036998.01e", 0x6000, 0x0800, 0xd1104dd7 );
+		ROM_LOAD( "036997.01e", 0x6800, 0x0800, 0x7434acb4 );
+		ROM_LOAD( "036996.01e", 0x7000, 0x0800, 0xc0e7589e );
+		ROM_LOAD( "036995.01e", 0x7800, 0x0800, 0xad81d1da );
+		ROM_RELOAD(             0xf800, 0x0800 );/* for reset/interrupt vectors */
 		/* Mathbox ROMs */
-		ROM_LOAD( "037006.01e", 0x3000, 0x0800, 0x9fcffea0 )
-		ROM_LOAD( "037007.01e", 0x3800, 0x0800, 0x60250ede )
-	ROM_END
+		ROM_LOAD( "037006.01e", 0x3000, 0x0800, 0x9fcffea0 );
+		ROM_LOAD( "037007.01e", 0x3800, 0x0800, 0x60250ede );
+	ROM_END(); }}; 
 	
 	
 	

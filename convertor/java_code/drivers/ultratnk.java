@@ -397,25 +397,25 @@ public class ultratnk
 	
 	
 	
-	ROM_START( ultratnk )
-		ROM_REGION( 0x12000, REGION_CPU1, 0 )
-		ROM_LOAD_NIB_LOW ( "030180.n1",	 0xb000, 0x0800, 0xb6aa6056 ) /* ROM 3 D0-D3 */
-		ROM_LOAD_NIB_HIGH( "030181.k1",	 0xb000, 0x0800, 0x17145c97 ) /* ROM 3 D4-D7 */
-		ROM_LOAD_NIB_LOW ( "030182.m1",	 0xb800, 0x0800, 0x034366a2 ) /* ROM 4 D0-D3 */
-		ROM_RELOAD(                      0xf800, 0x0800 ) /* for 6502 vectors */
-		ROM_LOAD_NIB_HIGH( "030183.l1",	 0xb800, 0x0800, 0xbe141602 ) /* ROM 4 D4-D7 */
-		ROM_RELOAD(                      0xf800, 0x0800 ) /* for 6502 vectors */
+	static RomLoadPtr rom_ultratnk = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x12000, REGION_CPU1, 0 );
+		ROM_LOAD_NIB_LOW ( "030180.n1",	 0xb000, 0x0800, 0xb6aa6056 );/* ROM 3 D0-D3 */
+		ROM_LOAD_NIB_HIGH( "030181.k1",	 0xb000, 0x0800, 0x17145c97 );/* ROM 3 D4-D7 */
+		ROM_LOAD_NIB_LOW ( "030182.m1",	 0xb800, 0x0800, 0x034366a2 );/* ROM 4 D0-D3 */
+		ROM_RELOAD(                      0xf800, 0x0800 );/* for 6502 vectors */
+		ROM_LOAD_NIB_HIGH( "030183.l1",	 0xb800, 0x0800, 0xbe141602 );/* ROM 4 D4-D7 */
+		ROM_RELOAD(                      0xf800, 0x0800 );/* for 6502 vectors */
 	
-		ROM_REGION( 0x0400, REGION_GFX1, ROMREGION_DISPOSE )
-		ROM_LOAD( "30172-01.j6", 0x0000, 0x0200, 0x1d364b23 )
-		ROM_LOAD( "30173-01.h6", 0x0200, 0x0200, 0x5c32f331 )
+		ROM_REGION( 0x0400, REGION_GFX1, ROMREGION_DISPOSE );
+		ROM_LOAD( "30172-01.j6", 0x0000, 0x0200, 0x1d364b23 );
+		ROM_LOAD( "30173-01.h6", 0x0200, 0x0200, 0x5c32f331 );
 	
-		ROM_REGION( 0x1000, REGION_GFX2, ROMREGION_DISPOSE )
-		ROM_LOAD( "30174-01.n6", 0x0000, 0x0400, 0xd0e20e73 )
-		ROM_LOAD( "30175-01.m6", 0x0400, 0x0400, 0xa47459c9 )
-		ROM_LOAD( "30176-01.l6", 0x0800, 0x0400, 0x1cc7c2dd )
-		ROM_LOAD( "30177-01.k6", 0x0c00, 0x0400, 0x3a91b09f )
-	ROM_END
+		ROM_REGION( 0x1000, REGION_GFX2, ROMREGION_DISPOSE );
+		ROM_LOAD( "30174-01.n6", 0x0000, 0x0400, 0xd0e20e73 );
+		ROM_LOAD( "30175-01.m6", 0x0400, 0x0400, 0xa47459c9 );
+		ROM_LOAD( "30176-01.l6", 0x0800, 0x0400, 0x1cc7c2dd );
+		ROM_LOAD( "30177-01.k6", 0x0c00, 0x0400, 0x3a91b09f );
+	ROM_END(); }}; 
 	
 	
 	GAMEX( 1978, ultratnk, 0, ultratnk, ultratnk, 0, 0, "Atari", "Ultra Tank", GAME_NO_SOUND )

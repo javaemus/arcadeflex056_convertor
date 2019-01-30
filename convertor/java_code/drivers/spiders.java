@@ -355,45 +355,45 @@ public class spiders
 	
 	
 	
-	ROM_START( spiders )
-		ROM_REGION( 0x10000, REGION_CPU1, 0 )
-		ROM_LOAD( "sp-ic74",      0xc000, 0x1000, 0x6a2578f6 )
-		ROM_LOAD( "sp-ic73",      0xd000, 0x1000, 0xd69b2f21 )
-		ROM_LOAD( "sp-ic72",      0xe000, 0x1000, 0x464125da )
-		ROM_LOAD( "sp-ic71",      0xf000, 0x1000, 0xa9539b18 )
+	static RomLoadPtr rom_spiders = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x10000, REGION_CPU1, 0 );
+		ROM_LOAD( "sp-ic74",      0xc000, 0x1000, 0x6a2578f6 );
+		ROM_LOAD( "sp-ic73",      0xd000, 0x1000, 0xd69b2f21 );
+		ROM_LOAD( "sp-ic72",      0xe000, 0x1000, 0x464125da );
+		ROM_LOAD( "sp-ic71",      0xf000, 0x1000, 0xa9539b18 );
 	
-		ROM_REGION( 0x10000, REGION_CPU2, 0 )     /* 64k for the audio CPU */
-		ROM_LOAD( "sp-ic3",       0xf800, 0x0800, 0x944d761e )
+		ROM_REGION( 0x10000, REGION_CPU2, 0 );    /* 64k for the audio CPU */
+		ROM_LOAD( "sp-ic3",       0xf800, 0x0800, 0x944d761e );
 	
-		ROM_REGION( 0x10000, REGION_GFX1, 0 )     /* 64k graphics block used at runtime */
-		ROM_LOAD( "sp-ic33",      0x0000, 0x1000, 0xb6731baa )
-		ROM_LOAD( "sp-ic25",      0x1000, 0x1000, 0xbaec64e7 )
-		ROM_LOAD( "sp-ic24",      0x2000, 0x1000, 0xa40a5517 )
-		ROM_LOAD( "sp-ic23",      0x3000, 0x1000, 0x3ca08053 )
-		ROM_LOAD( "sp-ic22",      0x4000, 0x1000, 0x07ea073c )
-		ROM_LOAD( "sp-ic21",      0x5000, 0x1000, 0x41b344b4 )
-		ROM_LOAD( "sp-ic20",      0x6000, 0x1000, 0x4d37da5a )
-	ROM_END
+		ROM_REGION( 0x10000, REGION_GFX1, 0 );    /* 64k graphics block used at runtime */
+		ROM_LOAD( "sp-ic33",      0x0000, 0x1000, 0xb6731baa );
+		ROM_LOAD( "sp-ic25",      0x1000, 0x1000, 0xbaec64e7 );
+		ROM_LOAD( "sp-ic24",      0x2000, 0x1000, 0xa40a5517 );
+		ROM_LOAD( "sp-ic23",      0x3000, 0x1000, 0x3ca08053 );
+		ROM_LOAD( "sp-ic22",      0x4000, 0x1000, 0x07ea073c );
+		ROM_LOAD( "sp-ic21",      0x5000, 0x1000, 0x41b344b4 );
+		ROM_LOAD( "sp-ic20",      0x6000, 0x1000, 0x4d37da5a );
+	ROM_END(); }}; 
 	
-	ROM_START( spiders2 )
-		ROM_REGION( 0x10000, REGION_CPU1, 0 )
-		ROM_LOAD( "sp-ic74",      0xc000, 0x1000, 0x6a2578f6 )
-		ROM_LOAD( "sp2.bin",      0xd000, 0x1000, 0xcf71d12b )
-		ROM_LOAD( "sp-ic72",      0xe000, 0x1000, 0x464125da )
-		ROM_LOAD( "sp4.bin",      0xf000, 0x1000, 0xf3d126bb )
+	static RomLoadPtr rom_spiders2 = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x10000, REGION_CPU1, 0 );
+		ROM_LOAD( "sp-ic74",      0xc000, 0x1000, 0x6a2578f6 );
+		ROM_LOAD( "sp2.bin",      0xd000, 0x1000, 0xcf71d12b );
+		ROM_LOAD( "sp-ic72",      0xe000, 0x1000, 0x464125da );
+		ROM_LOAD( "sp4.bin",      0xf000, 0x1000, 0xf3d126bb );
 	
-		ROM_REGION( 0x10000, REGION_CPU2, 0 )     /* 64k for the audio CPU */
-		ROM_LOAD( "sp-ic3",       0xf800, 0x0800, 0x944d761e )
+		ROM_REGION( 0x10000, REGION_CPU2, 0 );    /* 64k for the audio CPU */
+		ROM_LOAD( "sp-ic3",       0xf800, 0x0800, 0x944d761e );
 	
-		ROM_REGION( 0x10000, REGION_GFX1, 0 )     /* 64k graphics block used at runtime */
-		ROM_LOAD( "sp-ic33",      0x0000, 0x1000, 0xb6731baa )
-		ROM_LOAD( "sp-ic25",      0x1000, 0x1000, 0xbaec64e7 )
-		ROM_LOAD( "sp-ic24",      0x2000, 0x1000, 0xa40a5517 )
-		ROM_LOAD( "sp-ic23",      0x3000, 0x1000, 0x3ca08053 )
-		ROM_LOAD( "sp-ic22",      0x4000, 0x1000, 0x07ea073c )
-		ROM_LOAD( "sp-ic21",      0x5000, 0x1000, 0x41b344b4 )
-		ROM_LOAD( "sp-ic20",      0x6000, 0x1000, 0x4d37da5a )
-	ROM_END
+		ROM_REGION( 0x10000, REGION_GFX1, 0 );    /* 64k graphics block used at runtime */
+		ROM_LOAD( "sp-ic33",      0x0000, 0x1000, 0xb6731baa );
+		ROM_LOAD( "sp-ic25",      0x1000, 0x1000, 0xbaec64e7 );
+		ROM_LOAD( "sp-ic24",      0x2000, 0x1000, 0xa40a5517 );
+		ROM_LOAD( "sp-ic23",      0x3000, 0x1000, 0x3ca08053 );
+		ROM_LOAD( "sp-ic22",      0x4000, 0x1000, 0x07ea073c );
+		ROM_LOAD( "sp-ic21",      0x5000, 0x1000, 0x41b344b4 );
+		ROM_LOAD( "sp-ic20",      0x6000, 0x1000, 0x4d37da5a );
+	ROM_END(); }}; 
 	
 	
 	

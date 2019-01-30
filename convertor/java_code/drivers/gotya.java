@@ -240,61 +240,61 @@ public class gotya
 	
 	***************************************************************************/
 	
-	ROM_START( thehand )
-		ROM_REGION( 0x10000, REGION_CPU1, 0 )     /* 64k for main CPU */
-		ROM_LOAD( "hand6.bin",	0x0000, 0x1000, 0xa33b806c )
-		ROM_LOAD( "hand5.bin",	0x1000, 0x1000, 0x89bcde82 )
-		ROM_LOAD( "hand4.bin",	0x2000, 0x1000, 0xc6844a83 )
-		ROM_LOAD( "gb-03.bin",	0x3000, 0x1000, 0xf34d90ab )
+	static RomLoadPtr rom_thehand = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x10000, REGION_CPU1, 0 );    /* 64k for main CPU */
+		ROM_LOAD( "hand6.bin",	0x0000, 0x1000, 0xa33b806c );
+		ROM_LOAD( "hand5.bin",	0x1000, 0x1000, 0x89bcde82 );
+		ROM_LOAD( "hand4.bin",	0x2000, 0x1000, 0xc6844a83 );
+		ROM_LOAD( "gb-03.bin",	0x3000, 0x1000, 0xf34d90ab );
 	
-		ROM_REGION( 0x1000,  REGION_GFX1, ROMREGION_DISPOSE )	/* characters */
-		ROM_LOAD( "hand12.bin",	0x0000, 0x1000, 0x95773b46 )
+		ROM_REGION( 0x1000,  REGION_GFX1, ROMREGION_DISPOSE );/* characters */
+		ROM_LOAD( "hand12.bin",	0x0000, 0x1000, 0x95773b46 );
 	
-		ROM_REGION( 0x1000,  REGION_GFX2, ROMREGION_DISPOSE )	/* sprites */
-		ROM_LOAD( "gb-11.bin",	0x0000, 0x1000, 0x5d5eca1b )
+		ROM_REGION( 0x1000,  REGION_GFX2, ROMREGION_DISPOSE );/* sprites */
+		ROM_LOAD( "gb-11.bin",	0x0000, 0x1000, 0x5d5eca1b );
 	
-		ROM_REGION( 0x0120,  REGION_PROMS, 0 )
-		ROM_LOAD( "prom.1a",    0x0000, 0x0020, 0x4864a5a0 )    /* color PROM */
-		ROM_LOAD( "prom.4c",    0x0020, 0x0100, 0x4745b5f6 )    /* lookup table */
+		ROM_REGION( 0x0120,  REGION_PROMS, 0 );
+		ROM_LOAD( "prom.1a",    0x0000, 0x0020, 0x4864a5a0 );   /* color PROM */
+		ROM_LOAD( "prom.4c",    0x0020, 0x0100, 0x4745b5f6 );   /* lookup table */
 	
-		ROM_REGION( 0x1000,  REGION_USER1, 0 )		/* no idea what these are */
-		ROM_LOAD( "hand1.bin",	0x0000, 0x0800, 0xccc537e0 )
-		ROM_LOAD( "gb-02.bin",	0x0800, 0x0800, 0x65a7e284 )
+		ROM_REGION( 0x1000,  REGION_USER1, 0 );	/* no idea what these are */
+		ROM_LOAD( "hand1.bin",	0x0000, 0x0800, 0xccc537e0 );
+		ROM_LOAD( "gb-02.bin",	0x0800, 0x0800, 0x65a7e284 );
 	
-		ROM_REGION( 0x4000,  REGION_USER2, 0 )		/* HD38880 code? */
-		ROM_LOAD( "gb-10.bin",	0x0000, 0x1000, 0x8101915f )
-		ROM_LOAD( "gb-09.bin",	0x1000, 0x1000, 0x619bba76 )
-		ROM_LOAD( "gb-08.bin",	0x2000, 0x1000, 0x82f59528 )
-		ROM_LOAD( "hand7.bin",	0x3000, 0x1000, 0xfbf1c5de )
-	ROM_END
+		ROM_REGION( 0x4000,  REGION_USER2, 0 );	/* HD38880 code? */
+		ROM_LOAD( "gb-10.bin",	0x0000, 0x1000, 0x8101915f );
+		ROM_LOAD( "gb-09.bin",	0x1000, 0x1000, 0x619bba76 );
+		ROM_LOAD( "gb-08.bin",	0x2000, 0x1000, 0x82f59528 );
+		ROM_LOAD( "hand7.bin",	0x3000, 0x1000, 0xfbf1c5de );
+	ROM_END(); }}; 
 	
-	ROM_START( gotya )
-		ROM_REGION( 0x10000, REGION_CPU1, 0 )     /* 64k for main CPU */
-		ROM_LOAD( "gb-06.bin",	0x0000, 0x1000, 0x7793985a )
-		ROM_LOAD( "gb-05.bin",	0x1000, 0x1000, 0x683d188b )
-		ROM_LOAD( "gb-04.bin",	0x2000, 0x1000, 0x15b72f09 )
-		ROM_LOAD( "gb-03.bin",	0x3000, 0x1000, 0xf34d90ab )    /* this is the only ROM that passes the ROM test */
+	static RomLoadPtr rom_gotya = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x10000, REGION_CPU1, 0 );    /* 64k for main CPU */
+		ROM_LOAD( "gb-06.bin",	0x0000, 0x1000, 0x7793985a );
+		ROM_LOAD( "gb-05.bin",	0x1000, 0x1000, 0x683d188b );
+		ROM_LOAD( "gb-04.bin",	0x2000, 0x1000, 0x15b72f09 );
+		ROM_LOAD( "gb-03.bin",	0x3000, 0x1000, 0xf34d90ab );   /* this is the only ROM that passes the ROM test */
 	
-		ROM_REGION( 0x1000,  REGION_GFX1, ROMREGION_DISPOSE )	/* characters */
-		ROM_LOAD( "gb-12.bin",	0x0000, 0x1000, 0x4993d735 )
+		ROM_REGION( 0x1000,  REGION_GFX1, ROMREGION_DISPOSE );/* characters */
+		ROM_LOAD( "gb-12.bin",	0x0000, 0x1000, 0x4993d735 );
 	
-		ROM_REGION( 0x1000,  REGION_GFX2, ROMREGION_DISPOSE )	/* sprites */
-		ROM_LOAD( "gb-11.bin",	0x0000, 0x1000, 0x5d5eca1b )
+		ROM_REGION( 0x1000,  REGION_GFX2, ROMREGION_DISPOSE );/* sprites */
+		ROM_LOAD( "gb-11.bin",	0x0000, 0x1000, 0x5d5eca1b );
 	
-		ROM_REGION( 0x0120,  REGION_PROMS, 0 )
-		ROM_LOAD( "prom.1a",    0x0000, 0x0020, 0x4864a5a0 )    /* color PROM */
-		ROM_LOAD( "prom.4c",    0x0020, 0x0100, 0x4745b5f6 )    /* lookup table */
+		ROM_REGION( 0x0120,  REGION_PROMS, 0 );
+		ROM_LOAD( "prom.1a",    0x0000, 0x0020, 0x4864a5a0 );   /* color PROM */
+		ROM_LOAD( "prom.4c",    0x0020, 0x0100, 0x4745b5f6 );   /* lookup table */
 	
-		ROM_REGION( 0x1000,  REGION_USER1, 0 )		/* no idea what these are */
-		ROM_LOAD( "gb-01.bin",	0x0000, 0x0800, 0xc31dba64 )
-		ROM_LOAD( "gb-02.bin",	0x0800, 0x0800, 0x65a7e284 )
+		ROM_REGION( 0x1000,  REGION_USER1, 0 );	/* no idea what these are */
+		ROM_LOAD( "gb-01.bin",	0x0000, 0x0800, 0xc31dba64 );
+		ROM_LOAD( "gb-02.bin",	0x0800, 0x0800, 0x65a7e284 );
 	
-		ROM_REGION( 0x4000,  REGION_USER2, 0 )		/* HD38880 code? */
-		ROM_LOAD( "gb-10.bin",	0x0000, 0x1000, 0x8101915f )
-		ROM_LOAD( "gb-09.bin",	0x1000, 0x1000, 0x619bba76 )
-		ROM_LOAD( "gb-08.bin",	0x2000, 0x1000, 0x82f59528 )
-		ROM_LOAD( "gb-07.bin",	0x3000, 0x1000, 0x92a9f8bf )
-	ROM_END
+		ROM_REGION( 0x4000,  REGION_USER2, 0 );	/* HD38880 code? */
+		ROM_LOAD( "gb-10.bin",	0x0000, 0x1000, 0x8101915f );
+		ROM_LOAD( "gb-09.bin",	0x1000, 0x1000, 0x619bba76 );
+		ROM_LOAD( "gb-08.bin",	0x2000, 0x1000, 0x82f59528 );
+		ROM_LOAD( "gb-07.bin",	0x3000, 0x1000, 0x92a9f8bf );
+	ROM_END(); }}; 
 	
 	GAME( 1981, thehand, 0,       gotya, gotya, 0, ROT270, "T.I.C."     , "The Hand" )
 	GAME( 1981, gotya,   thehand, gotya, gotya, 0, ROT270, "Game-A-Tron", "Got-Ya (12/24/1981, prototype?)" )

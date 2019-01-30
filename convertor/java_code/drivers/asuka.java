@@ -963,187 +963,187 @@ public class asuka
 						DRIVERS
 	***************************************************************************/
 	
-	ROM_START( bonzeadv )
-		ROM_REGION( 0x100000, REGION_CPU1, 0 )     /* 68000 code */
-		ROM_LOAD16_BYTE( "b41-09-1", 0x00000, 0x10000, 0xaf821fbc )
-		ROM_LOAD16_BYTE( "b41-11-1", 0x00001, 0x10000, 0x823fff00 )
-		ROM_LOAD16_BYTE( "b41-10",   0x20000, 0x10000, 0x4ca94d77 )
-		ROM_LOAD16_BYTE( "b41-15",   0x20001, 0x10000, 0xaed7a0d0 )
+	static RomLoadPtr rom_bonzeadv = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x100000, REGION_CPU1, 0 );    /* 68000 code */
+		ROM_LOAD16_BYTE( "b41-09-1", 0x00000, 0x10000, 0xaf821fbc );
+		ROM_LOAD16_BYTE( "b41-11-1", 0x00001, 0x10000, 0x823fff00 );
+		ROM_LOAD16_BYTE( "b41-10",   0x20000, 0x10000, 0x4ca94d77 );
+		ROM_LOAD16_BYTE( "b41-15",   0x20001, 0x10000, 0xaed7a0d0 );
 		ROM_LOAD16_WORD_SWAP( "b41-01", 0x80000, 0x80000, 0x5d072fa4 )
 	
-		ROM_REGION( 0x80000, REGION_GFX1, ROMREGION_DISPOSE )
-		ROM_LOAD( "b41-03",  0x00000, 0x80000, 0x736d35d0 )	/* SCR tiles (8 x 8) */
+		ROM_REGION( 0x80000, REGION_GFX1, ROMREGION_DISPOSE );
+		ROM_LOAD( "b41-03",  0x00000, 0x80000, 0x736d35d0 );/* SCR tiles (8 x 8) */
 	
-		ROM_REGION( 0x80000, REGION_GFX2, ROMREGION_DISPOSE )
-		ROM_LOAD( "b41-02",  0x00000, 0x80000, 0x29f205d9 )	/* Sprites (16 x 16) */
+		ROM_REGION( 0x80000, REGION_GFX2, ROMREGION_DISPOSE );
+		ROM_LOAD( "b41-02",  0x00000, 0x80000, 0x29f205d9 );/* Sprites (16 x 16) */
 	
-		ROM_REGION( 0x1c000, REGION_CPU2, 0 )     /* sound cpu */
-		ROM_LOAD( "b41-13",  0x00000, 0x04000, 0x9e464254 )
-		ROM_CONTINUE(        0x10000, 0x0c000 )
+		ROM_REGION( 0x1c000, REGION_CPU2, 0 );    /* sound cpu */
+		ROM_LOAD( "b41-13",  0x00000, 0x04000, 0x9e464254 );
+		ROM_CONTINUE(        0x10000, 0x0c000 );
 	
-		ROM_REGION( 0x80000, REGION_SOUND1, 0 )	  /* ADPCM samples */
-		ROM_LOAD( "b41-04",  0x00000, 0x80000, 0xc668638f )
-	ROM_END
+		ROM_REGION( 0x80000, REGION_SOUND1, 0 );  /* ADPCM samples */
+		ROM_LOAD( "b41-04",  0x00000, 0x80000, 0xc668638f );
+	ROM_END(); }}; 
 	
-	ROM_START( bonzeadu )
-		ROM_REGION( 0x100000, REGION_CPU1, 0 )     /* 68000 code */
-		ROM_LOAD16_BYTE( "b41-09-1", 0x00000, 0x10000, 0xaf821fbc )
-		ROM_LOAD16_BYTE( "b41-11-1", 0x00001, 0x10000, 0x823fff00 )
-		ROM_LOAD16_BYTE( "b41-10",   0x20000, 0x10000, 0x4ca94d77 )
-		ROM_LOAD16_BYTE( "b41-14",   0x20001, 0x10000, 0x37def16a )
+	static RomLoadPtr rom_bonzeadu = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x100000, REGION_CPU1, 0 );    /* 68000 code */
+		ROM_LOAD16_BYTE( "b41-09-1", 0x00000, 0x10000, 0xaf821fbc );
+		ROM_LOAD16_BYTE( "b41-11-1", 0x00001, 0x10000, 0x823fff00 );
+		ROM_LOAD16_BYTE( "b41-10",   0x20000, 0x10000, 0x4ca94d77 );
+		ROM_LOAD16_BYTE( "b41-14",   0x20001, 0x10000, 0x37def16a );
 		ROM_LOAD16_WORD_SWAP( "b41-01", 0x80000, 0x80000, 0x5d072fa4 )
 	
-		ROM_REGION( 0x80000, REGION_GFX1, ROMREGION_DISPOSE )
-		ROM_LOAD( "b41-03",  0x00000, 0x80000, 0x736d35d0 )	/* SCR tiles (8 x 8) */
+		ROM_REGION( 0x80000, REGION_GFX1, ROMREGION_DISPOSE );
+		ROM_LOAD( "b41-03",  0x00000, 0x80000, 0x736d35d0 );/* SCR tiles (8 x 8) */
 	
-		ROM_REGION( 0x80000, REGION_GFX2, ROMREGION_DISPOSE )
-		ROM_LOAD( "b41-02",  0x00000, 0x80000, 0x29f205d9 )	/* Sprites (16 x 16) */
+		ROM_REGION( 0x80000, REGION_GFX2, ROMREGION_DISPOSE );
+		ROM_LOAD( "b41-02",  0x00000, 0x80000, 0x29f205d9 );/* Sprites (16 x 16) */
 	
-		ROM_REGION( 0x1c000, REGION_CPU2, 0 )     /* sound cpu */
-		ROM_LOAD( "b41-13",  0x00000, 0x04000, 0x9e464254 )
-		ROM_CONTINUE(        0x10000, 0x0c000 )
+		ROM_REGION( 0x1c000, REGION_CPU2, 0 );    /* sound cpu */
+		ROM_LOAD( "b41-13",  0x00000, 0x04000, 0x9e464254 );
+		ROM_CONTINUE(        0x10000, 0x0c000 );
 	
-		ROM_REGION( 0x80000, REGION_SOUND1, 0 )	  /* ADPCM samples */
-		ROM_LOAD( "b41-04",  0x00000, 0x80000, 0xc668638f )
-	ROM_END
+		ROM_REGION( 0x80000, REGION_SOUND1, 0 );  /* ADPCM samples */
+		ROM_LOAD( "b41-04",  0x00000, 0x80000, 0xc668638f );
+	ROM_END(); }}; 
 	
-	ROM_START( jigkmgri )
-		ROM_REGION( 0x100000, REGION_CPU1, 0 )     /* 68000 code */
-		ROM_LOAD16_BYTE( "b41-09-1", 0x00000, 0x10000, 0xaf821fbc )
-		ROM_LOAD16_BYTE( "b41-11-1", 0x00001, 0x10000, 0x823fff00 )
-		ROM_LOAD16_BYTE( "b41-10",   0x20000, 0x10000, 0x4ca94d77 )
-		ROM_LOAD16_BYTE( "b41-12",   0x20001, 0x10000, 0x40d9c1fc )
+	static RomLoadPtr rom_jigkmgri = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x100000, REGION_CPU1, 0 );    /* 68000 code */
+		ROM_LOAD16_BYTE( "b41-09-1", 0x00000, 0x10000, 0xaf821fbc );
+		ROM_LOAD16_BYTE( "b41-11-1", 0x00001, 0x10000, 0x823fff00 );
+		ROM_LOAD16_BYTE( "b41-10",   0x20000, 0x10000, 0x4ca94d77 );
+		ROM_LOAD16_BYTE( "b41-12",   0x20001, 0x10000, 0x40d9c1fc );
 		ROM_LOAD16_WORD_SWAP( "b41-01", 0x80000, 0x80000, 0x5d072fa4 )
 	
-		ROM_REGION( 0x80000, REGION_GFX1, ROMREGION_DISPOSE )
-		ROM_LOAD( "b41-03",  0x00000, 0x80000, 0x736d35d0 )	/* Tiles (8 x 8) */
+		ROM_REGION( 0x80000, REGION_GFX1, ROMREGION_DISPOSE );
+		ROM_LOAD( "b41-03",  0x00000, 0x80000, 0x736d35d0 );/* Tiles (8 x 8) */
 	
-		ROM_REGION( 0x80000, REGION_GFX2, ROMREGION_DISPOSE )
-		ROM_LOAD( "b41-02",  0x00000, 0x80000, 0x29f205d9 )	/* Sprites (16 x 16) */
+		ROM_REGION( 0x80000, REGION_GFX2, ROMREGION_DISPOSE );
+		ROM_LOAD( "b41-02",  0x00000, 0x80000, 0x29f205d9 );/* Sprites (16 x 16) */
 	
-		ROM_REGION( 0x1c000, REGION_CPU2, 0 )     /* sound cpu */
-		ROM_LOAD( "b41-13",  0x00000, 0x04000, 0x9e464254 )
-		ROM_CONTINUE(        0x10000, 0x0c000 )   /* banked stuff */
+		ROM_REGION( 0x1c000, REGION_CPU2, 0 );    /* sound cpu */
+		ROM_LOAD( "b41-13",  0x00000, 0x04000, 0x9e464254 );
+		ROM_CONTINUE(        0x10000, 0x0c000 );  /* banked stuff */
 	
-		ROM_REGION( 0x80000, REGION_SOUND1, 0 )	  /* ADPCM samples */
-		ROM_LOAD( "b41-04",  0x00000, 0x80000, 0xc668638f )
-	ROM_END
+		ROM_REGION( 0x80000, REGION_SOUND1, 0 );  /* ADPCM samples */
+		ROM_LOAD( "b41-04",  0x00000, 0x80000, 0xc668638f );
+	ROM_END(); }}; 
 	
-	ROM_START( asuka )
-		ROM_REGION( 0x100000, REGION_CPU1, 0 )     /* 1024k for 68000 code */
-		ROM_LOAD16_BYTE( "asuka_13.rom",  0x00000, 0x20000, 0x855efb3e )
-		ROM_LOAD16_BYTE( "asuka_12.rom",  0x00001, 0x20000, 0x271eeee9 )
+	static RomLoadPtr rom_asuka = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x100000, REGION_CPU1, 0 );    /* 1024k for 68000 code */
+		ROM_LOAD16_BYTE( "asuka_13.rom",  0x00000, 0x20000, 0x855efb3e );
+		ROM_LOAD16_BYTE( "asuka_12.rom",  0x00001, 0x20000, 0x271eeee9 );
 	
 		/* 0x040000 - 0x7ffff is intentionally empty */
-		ROM_LOAD16_WORD( "asuka_03.rom",  0x80000, 0x80000, 0xd3a59b10 )	/* Fix ROM */
+		ROM_LOAD16_WORD( "asuka_03.rom",  0x80000, 0x80000, 0xd3a59b10 );/* Fix ROM */
 	
-		ROM_REGION( 0x80000, REGION_GFX1, ROMREGION_DISPOSE )
-		ROM_LOAD( "asuka_01.rom",  0x00000, 0x80000, 0x89f32c94 )	/* SCR tiles (8 x 8) */
+		ROM_REGION( 0x80000, REGION_GFX1, ROMREGION_DISPOSE );
+		ROM_LOAD( "asuka_01.rom",  0x00000, 0x80000, 0x89f32c94 );/* SCR tiles (8 x 8) */
 	
-		ROM_REGION( 0xa0000, REGION_GFX2, ROMREGION_DISPOSE )
-		ROM_LOAD       ( "asuka_02.rom", 0x00000, 0x80000, 0xf5018cd3 )	/* Sprites (16 x 16) */
-		ROM_LOAD16_BYTE( "asuka_07.rom", 0x80000, 0x10000, 0xc113acc8 )
-		ROM_LOAD16_BYTE( "asuka_06.rom", 0x80001, 0x10000, 0xf517e64d )
+		ROM_REGION( 0xa0000, REGION_GFX2, ROMREGION_DISPOSE );
+		ROM_LOAD       ( "asuka_02.rom", 0x00000, 0x80000, 0xf5018cd3 );/* Sprites (16 x 16) */
+		ROM_LOAD16_BYTE( "asuka_07.rom", 0x80000, 0x10000, 0xc113acc8 );
+		ROM_LOAD16_BYTE( "asuka_06.rom", 0x80001, 0x10000, 0xf517e64d );
 	
-		ROM_REGION( 0x1c000, REGION_CPU2, 0 )	/* sound cpu */
-		ROM_LOAD( "asuka_11.rom", 0x00000, 0x04000, 0xc378b508 )
-		ROM_CONTINUE(             0x10000, 0x0c000 )	/* banked stuff */
+		ROM_REGION( 0x1c000, REGION_CPU2, 0 );/* sound cpu */
+		ROM_LOAD( "asuka_11.rom", 0x00000, 0x04000, 0xc378b508 );
+		ROM_CONTINUE(             0x10000, 0x0c000 );/* banked stuff */
 	
-		ROM_REGION( 0x10000, REGION_SOUND1, 0 )	/* ADPCM samples */
-		ROM_LOAD( "asuka_10.rom", 0x00000, 0x10000, 0x387aaf40 )
-	ROM_END
+		ROM_REGION( 0x10000, REGION_SOUND1, 0 );/* ADPCM samples */
+		ROM_LOAD( "asuka_10.rom", 0x00000, 0x10000, 0x387aaf40 );
+	ROM_END(); }}; 
 	
-	ROM_START( mofflott )
-		ROM_REGION( 0x100000, REGION_CPU1, 0 )     /* 1024k for 68000 code */
-		ROM_LOAD16_BYTE( "c17-09.bin",  0x00000, 0x20000, 0x05ee110f )
-		ROM_LOAD16_BYTE( "c17-08.bin",  0x00001, 0x20000, 0xd0aacffd )
-	
-		/* 0x40000 - 0x7ffff is intentionally empty */
-		ROM_LOAD16_WORD( "c17-03.bin",  0x80000, 0x80000, 0x27047fc3 )	/* Fix ROM */
-	
-		ROM_REGION( 0x80000, REGION_GFX1, ROMREGION_DISPOSE )
-		ROM_LOAD( "c17-01.bin",  0x00000, 0x80000, 0xe9466d42 )	/* SCR tiles (8 x 8) */
-	
-		ROM_REGION( 0xa0000, REGION_GFX2, ROMREGION_DISPOSE )
-		ROM_LOAD       ( "c17-02.bin", 0x00000, 0x80000, 0x8860a8db )	/* Sprites (16 x 16) */
-		ROM_LOAD16_BYTE( "c17-05.bin", 0x80000, 0x10000, 0x57ac4741 )
-		ROM_LOAD16_BYTE( "c17-04.bin", 0x80001, 0x10000, 0xf4250410 )
-	
-		ROM_REGION( 0x1c000, REGION_CPU2, 0 )	/* sound cpu */
-		ROM_LOAD( "c17-07.bin", 0x00000, 0x04000, 0xcdb7bc2c )
-		ROM_CONTINUE(           0x10000, 0x0c000 )	/* banked stuff */
-	
-		ROM_REGION( 0x10000, REGION_SOUND1, 0 )	/* ADPCM samples */
-		ROM_LOAD( "c17-06.bin", 0x00000, 0x10000, 0x5c332125 )
-	ROM_END
-	
-	ROM_START( galmedes )
-		ROM_REGION( 0x100000, REGION_CPU1, 0 )     /* 1024k for 68000 code */
-		ROM_LOAD16_BYTE( "gm-prg1.bin",  0x00000, 0x20000, 0x32a70753 )
-		ROM_LOAD16_BYTE( "gm-prg0.bin",  0x00001, 0x20000, 0xfae546a4 )
+	static RomLoadPtr rom_mofflott = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x100000, REGION_CPU1, 0 );    /* 1024k for 68000 code */
+		ROM_LOAD16_BYTE( "c17-09.bin",  0x00000, 0x20000, 0x05ee110f );
+		ROM_LOAD16_BYTE( "c17-08.bin",  0x00001, 0x20000, 0xd0aacffd );
 	
 		/* 0x40000 - 0x7ffff is intentionally empty */
-		ROM_LOAD16_WORD( "gm-30.rom",    0x80000, 0x80000, 0x4da2a407 )	/* Fix ROM */
+		ROM_LOAD16_WORD( "c17-03.bin",  0x80000, 0x80000, 0x27047fc3 );/* Fix ROM */
 	
-		ROM_REGION( 0x80000, REGION_GFX1, ROMREGION_DISPOSE )
-		ROM_LOAD( "gm-scn.bin", 0x00000, 0x80000, 0x3bab0581 )	/* SCR tiles (8 x 8) */
+		ROM_REGION( 0x80000, REGION_GFX1, ROMREGION_DISPOSE );
+		ROM_LOAD( "c17-01.bin",  0x00000, 0x80000, 0xe9466d42 );/* SCR tiles (8 x 8) */
 	
-		ROM_REGION( 0x80000, REGION_GFX2, ROMREGION_DISPOSE )
-		ROM_LOAD( "gm-obj.bin", 0x00000, 0x80000, 0x7a4a1315 )	/* Sprites (16 x 16) */
+		ROM_REGION( 0xa0000, REGION_GFX2, ROMREGION_DISPOSE );
+		ROM_LOAD       ( "c17-02.bin", 0x00000, 0x80000, 0x8860a8db );/* Sprites (16 x 16) */
+		ROM_LOAD16_BYTE( "c17-05.bin", 0x80000, 0x10000, 0x57ac4741 );
+		ROM_LOAD16_BYTE( "c17-04.bin", 0x80001, 0x10000, 0xf4250410 );
 	
-		ROM_REGION( 0x1c000, REGION_CPU2, 0 )	/* sound cpu */
-		ROM_LOAD( "gm-snd.bin", 0x00000, 0x04000, 0xd6f56c21 )
-		ROM_CONTINUE(           0x10000, 0x0c000 )	/* banked stuff */
+		ROM_REGION( 0x1c000, REGION_CPU2, 0 );/* sound cpu */
+		ROM_LOAD( "c17-07.bin", 0x00000, 0x04000, 0xcdb7bc2c );
+		ROM_CONTINUE(           0x10000, 0x0c000 );/* banked stuff */
 	
-		ROM_REGION( 0x10000, REGION_SOUND1, 0 )
+		ROM_REGION( 0x10000, REGION_SOUND1, 0 );/* ADPCM samples */
+		ROM_LOAD( "c17-06.bin", 0x00000, 0x10000, 0x5c332125 );
+	ROM_END(); }}; 
+	
+	static RomLoadPtr rom_galmedes = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x100000, REGION_CPU1, 0 );    /* 1024k for 68000 code */
+		ROM_LOAD16_BYTE( "gm-prg1.bin",  0x00000, 0x20000, 0x32a70753 );
+		ROM_LOAD16_BYTE( "gm-prg0.bin",  0x00001, 0x20000, 0xfae546a4 );
+	
+		/* 0x40000 - 0x7ffff is intentionally empty */
+		ROM_LOAD16_WORD( "gm-30.rom",    0x80000, 0x80000, 0x4da2a407 );/* Fix ROM */
+	
+		ROM_REGION( 0x80000, REGION_GFX1, ROMREGION_DISPOSE );
+		ROM_LOAD( "gm-scn.bin", 0x00000, 0x80000, 0x3bab0581 );/* SCR tiles (8 x 8) */
+	
+		ROM_REGION( 0x80000, REGION_GFX2, ROMREGION_DISPOSE );
+		ROM_LOAD( "gm-obj.bin", 0x00000, 0x80000, 0x7a4a1315 );/* Sprites (16 x 16) */
+	
+		ROM_REGION( 0x1c000, REGION_CPU2, 0 );/* sound cpu */
+		ROM_LOAD( "gm-snd.bin", 0x00000, 0x04000, 0xd6f56c21 );
+		ROM_CONTINUE(           0x10000, 0x0c000 );/* banked stuff */
+	
+		ROM_REGION( 0x10000, REGION_SOUND1, 0 );
 		/* empty region */
-	ROM_END
+	ROM_END(); }}; 
 	
-	ROM_START( earthjkr )
-		ROM_REGION( 0x100000, REGION_CPU1, 0 )     /* 1024k for 68000 code */
-		ROM_LOAD16_BYTE( "ej_3b.rom",  0x00000, 0x20000, 0xbdd86fc2 )
-		ROM_LOAD16_BYTE( "ej_3a.rom",  0x00001, 0x20000, 0x9c8050c6 )
-	
-		/* 0x40000 - 0x7ffff is intentionally empty */
-		ROM_LOAD16_WORD( "ej_30e.rom", 0x80000, 0x80000, 0x49d1f77f )	/* Fix ROM */
-	
-		ROM_REGION( 0x80000, REGION_GFX1, ROMREGION_DISPOSE )
-		ROM_LOAD( "ej_chr.rom", 0x00000, 0x80000, 0xac675297 )	/* SCR tiles (8 x 8) */
-	
-		ROM_REGION( 0xa0000, REGION_GFX2, ROMREGION_DISPOSE )
-		ROM_LOAD       ( "ej_obj.rom", 0x00000, 0x80000, 0x5f21ac47 )	/* Sprites (16 x 16) */
-		ROM_LOAD16_BYTE( "ej_1.rom",   0x80000, 0x10000, 0xcb4891db )
-		ROM_LOAD16_BYTE( "ej_0.rom",   0x80001, 0x10000, 0xb612086f )
-	
-		ROM_REGION( 0x1c000, REGION_CPU2, 0 )	/* sound cpu */
-		ROM_LOAD( "ej_2.rom", 0x00000, 0x04000, 0x42ba2566 )
-		ROM_CONTINUE(         0x10000, 0x0c000 )	/* banked stuff */
-	
-		ROM_REGION( 0x10000, REGION_SOUND1, 0 )
-		/* empty region */
-	ROM_END
-	
-	ROM_START( eto )
-		ROM_REGION( 0x100000, REGION_CPU1, 0 )     /* 1024k for 68000 code */
-		ROM_LOAD16_BYTE( "eto-1.23",  0x00000, 0x20000, 0x44286597 )
-		ROM_LOAD16_BYTE( "eto-0.8",   0x00001, 0x20000, 0x57b79370 )
+	static RomLoadPtr rom_earthjkr = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x100000, REGION_CPU1, 0 );    /* 1024k for 68000 code */
+		ROM_LOAD16_BYTE( "ej_3b.rom",  0x00000, 0x20000, 0xbdd86fc2 );
+		ROM_LOAD16_BYTE( "ej_3a.rom",  0x00001, 0x20000, 0x9c8050c6 );
 	
 		/* 0x40000 - 0x7ffff is intentionally empty */
-		ROM_LOAD16_WORD( "eto-2.30",    0x80000, 0x80000, 0x12f46fb5 )	/* Fix ROM */
+		ROM_LOAD16_WORD( "ej_30e.rom", 0x80000, 0x80000, 0x49d1f77f );/* Fix ROM */
 	
-		ROM_REGION( 0x80000, REGION_GFX1, ROMREGION_DISPOSE )
-		ROM_LOAD( "eto-4.3", 0x00000, 0x80000, 0xa8768939 )	/* Sprites (16 x 16) */
+		ROM_REGION( 0x80000, REGION_GFX1, ROMREGION_DISPOSE );
+		ROM_LOAD( "ej_chr.rom", 0x00000, 0x80000, 0xac675297 );/* SCR tiles (8 x 8) */
 	
-		ROM_REGION( 0x80000, REGION_GFX2, ROMREGION_DISPOSE )
-		ROM_LOAD( "eto-3.6", 0x00000, 0x80000, 0xdd247397 )	/* SCR tiles (8 x 8) */
+		ROM_REGION( 0xa0000, REGION_GFX2, ROMREGION_DISPOSE );
+		ROM_LOAD       ( "ej_obj.rom", 0x00000, 0x80000, 0x5f21ac47 );/* Sprites (16 x 16) */
+		ROM_LOAD16_BYTE( "ej_1.rom",   0x80000, 0x10000, 0xcb4891db );
+		ROM_LOAD16_BYTE( "ej_0.rom",   0x80001, 0x10000, 0xb612086f );
 	
-		ROM_REGION( 0x1c000, REGION_CPU2, 0 )	/* sound cpu */
-		ROM_LOAD( "eto-5.27", 0x00000, 0x04000, 0xb3689da0 )
-		ROM_CONTINUE(         0x10000, 0x0c000 )	/* banked stuff */
+		ROM_REGION( 0x1c000, REGION_CPU2, 0 );/* sound cpu */
+		ROM_LOAD( "ej_2.rom", 0x00000, 0x04000, 0x42ba2566 );
+		ROM_CONTINUE(         0x10000, 0x0c000 );/* banked stuff */
 	
-		ROM_REGION( 0x10000, REGION_SOUND1, 0 )
+		ROM_REGION( 0x10000, REGION_SOUND1, 0 );
 		/* empty region */
-	ROM_END
+	ROM_END(); }}; 
+	
+	static RomLoadPtr rom_eto = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x100000, REGION_CPU1, 0 );    /* 1024k for 68000 code */
+		ROM_LOAD16_BYTE( "eto-1.23",  0x00000, 0x20000, 0x44286597 );
+		ROM_LOAD16_BYTE( "eto-0.8",   0x00001, 0x20000, 0x57b79370 );
+	
+		/* 0x40000 - 0x7ffff is intentionally empty */
+		ROM_LOAD16_WORD( "eto-2.30",    0x80000, 0x80000, 0x12f46fb5 );/* Fix ROM */
+	
+		ROM_REGION( 0x80000, REGION_GFX1, ROMREGION_DISPOSE );
+		ROM_LOAD( "eto-4.3", 0x00000, 0x80000, 0xa8768939 );/* Sprites (16 x 16) */
+	
+		ROM_REGION( 0x80000, REGION_GFX2, ROMREGION_DISPOSE );
+		ROM_LOAD( "eto-3.6", 0x00000, 0x80000, 0xdd247397 );/* SCR tiles (8 x 8) */
+	
+		ROM_REGION( 0x1c000, REGION_CPU2, 0 );/* sound cpu */
+		ROM_LOAD( "eto-5.27", 0x00000, 0x04000, 0xb3689da0 );
+		ROM_CONTINUE(         0x10000, 0x0c000 );/* banked stuff */
+	
+		ROM_REGION( 0x10000, REGION_SOUND1, 0 );
+		/* empty region */
+	ROM_END(); }}; 
 	
 	
 	static void init_asuka(void)

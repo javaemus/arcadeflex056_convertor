@@ -465,38 +465,38 @@ public class slapshot
 						DRIVERS
 	***************************************************************************/
 	
-	ROM_START( slapshot )
-		ROM_REGION( 0x100000, REGION_CPU1, 0 )	/* 1024K for 68000 code */
-		ROM_LOAD16_BYTE( "d71-15.3",  0x00000, 0x80000, 0x1470153f )
-		ROM_LOAD16_BYTE( "d71-16.1",  0x00001, 0x80000, 0xf13666e0 )
+	static RomLoadPtr rom_slapshot = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x100000, REGION_CPU1, 0 );/* 1024K for 68000 code */
+		ROM_LOAD16_BYTE( "d71-15.3",  0x00000, 0x80000, 0x1470153f );
+		ROM_LOAD16_BYTE( "d71-16.1",  0x00001, 0x80000, 0xf13666e0 );
 	
-		ROM_REGION( 0x1c000, REGION_CPU2, 0 )	/* sound cpu */
-		ROM_LOAD    ( "d71-07.77",    0x00000, 0x4000, 0xdd5f670c )
-		ROM_CONTINUE(                 0x10000, 0xc000 )	/* banked stuff */
+		ROM_REGION( 0x1c000, REGION_CPU2, 0 );/* sound cpu */
+		ROM_LOAD    ( "d71-07.77",    0x00000, 0x4000, 0xdd5f670c );
+		ROM_CONTINUE(                 0x10000, 0xc000 );/* banked stuff */
 	
-		ROM_REGION( 0x100000, REGION_GFX1, ROMREGION_DISPOSE )
-		ROM_LOAD16_BYTE( "d71-04.79", 0x00000, 0x80000, 0xb727b81c )	/* SCR */
-		ROM_LOAD16_BYTE( "d71-05.80", 0x00001, 0x80000, 0x7b0f5d6d )
+		ROM_REGION( 0x100000, REGION_GFX1, ROMREGION_DISPOSE );
+		ROM_LOAD16_BYTE( "d71-04.79", 0x00000, 0x80000, 0xb727b81c );/* SCR */
+		ROM_LOAD16_BYTE( "d71-05.80", 0x00001, 0x80000, 0x7b0f5d6d );
 	
-		ROM_REGION( 0x400000, REGION_GFX2, ROMREGION_DISPOSE )
-		ROM_LOAD16_BYTE( "d71-01.23", 0x000000, 0x100000, 0x0b1e8c27 )	/* OBJ 6bpp */
-		ROM_LOAD16_BYTE( "d71-02.24", 0x000001, 0x100000, 0xccaaea2d )
-		ROM_LOAD       ( "d71-03.25", 0x300000, 0x100000, 0xdccef9ec )
-		ROM_FILL       (              0x200000, 0x100000, 0 )
+		ROM_REGION( 0x400000, REGION_GFX2, ROMREGION_DISPOSE );
+		ROM_LOAD16_BYTE( "d71-01.23", 0x000000, 0x100000, 0x0b1e8c27 );/* OBJ 6bpp */
+		ROM_LOAD16_BYTE( "d71-02.24", 0x000001, 0x100000, 0xccaaea2d );
+		ROM_LOAD       ( "d71-03.25", 0x300000, 0x100000, 0xdccef9ec );
+		ROM_FILL       (              0x200000, 0x100000, 0 );
 	
-		ROM_REGION( 0x80000, REGION_SOUND1, 0 )	/* ADPCM samples */
-		ROM_LOAD( "d71-06.37", 0x00000, 0x80000, 0xf3324188 )
+		ROM_REGION( 0x80000, REGION_SOUND1, 0 );/* ADPCM samples */
+		ROM_LOAD( "d71-06.37", 0x00000, 0x80000, 0xf3324188 );
 	
 		/* no Delta-T samples */
 	
 	//	Pals (not dumped)
-	//	ROM_LOAD( "d71-08.40",  0x00000, 0x00???, 0x00000000 )
-	//	ROM_LOAD( "d71-09.57",  0x00000, 0x00???, 0x00000000 )
-	//	ROM_LOAD( "d71-10.60",  0x00000, 0x00???, 0x00000000 )
-	//	ROM_LOAD( "d71-11.42",  0x00000, 0x00???, 0x00000000 )
-	//	ROM_LOAD( "d71-12.59",  0x00000, 0x00???, 0x00000000 )
-	//	ROM_LOAD( "d71-13.8",   0x00000, 0x00???, 0x00000000 )
-	ROM_END
+	//	ROM_LOAD( "d71-08.40",  0x00000, 0x00???, 0x00000000 );
+	//	ROM_LOAD( "d71-09.57",  0x00000, 0x00???, 0x00000000 );
+	//	ROM_LOAD( "d71-10.60",  0x00000, 0x00???, 0x00000000 );
+	//	ROM_LOAD( "d71-11.42",  0x00000, 0x00???, 0x00000000 );
+	//	ROM_LOAD( "d71-12.59",  0x00000, 0x00???, 0x00000000 );
+	//	ROM_LOAD( "d71-13.8",   0x00000, 0x00???, 0x00000000 );
+	ROM_END(); }}; 
 	
 	static void init_slapshot(void)
 	{

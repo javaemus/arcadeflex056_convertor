@@ -742,157 +742,157 @@ public class combatsc
 	
 	
 	
-	ROM_START( combasc )
-		ROM_REGION( 0x40000, REGION_CPU1, 0 ) /* 6309 code */
-		ROM_LOAD( "611g01.rom", 0x30000, 0x08000, 0x857ffffe )
-		ROM_CONTINUE(           0x08000, 0x08000 )
-		ROM_LOAD( "611g02.rom", 0x10000, 0x20000, 0x9ba05327 )
+	static RomLoadPtr rom_combasc = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x40000, REGION_CPU1, 0 );/* 6309 code */
+		ROM_LOAD( "611g01.rom", 0x30000, 0x08000, 0x857ffffe );
+		ROM_CONTINUE(           0x08000, 0x08000 );
+		ROM_LOAD( "611g02.rom", 0x10000, 0x20000, 0x9ba05327 );
 		/* extra 0x8000 for banked RAM */
 	
-		ROM_REGION( 0x10000 , REGION_CPU2, 0 ) /* sound CPU */
-		ROM_LOAD( "611g03.rom", 0x00000, 0x08000, 0x2a544db5 )
+		ROM_REGION( 0x10000 , REGION_CPU2, 0 );/* sound CPU */
+		ROM_LOAD( "611g03.rom", 0x00000, 0x08000, 0x2a544db5 );
 	
-		ROM_REGION( 0x80000, REGION_GFX1, ROMREGION_DISPOSE )
-		ROM_LOAD16_BYTE( "611g07.rom",    0x00000, 0x40000, 0x73b38720 )
-		ROM_LOAD16_BYTE( "611g08.rom",    0x00001, 0x40000, 0x46e7d28c )
+		ROM_REGION( 0x80000, REGION_GFX1, ROMREGION_DISPOSE );
+		ROM_LOAD16_BYTE( "611g07.rom",    0x00000, 0x40000, 0x73b38720 );
+		ROM_LOAD16_BYTE( "611g08.rom",    0x00001, 0x40000, 0x46e7d28c );
 	
-		ROM_REGION( 0x80000, REGION_GFX2, ROMREGION_DISPOSE )
-		ROM_LOAD16_BYTE( "611g11.rom",    0x00000, 0x40000, 0x69687538 )
-		ROM_LOAD16_BYTE( "611g12.rom",    0x00001, 0x40000, 0x9c6bf898 )
+		ROM_REGION( 0x80000, REGION_GFX2, ROMREGION_DISPOSE );
+		ROM_LOAD16_BYTE( "611g11.rom",    0x00000, 0x40000, 0x69687538 );
+		ROM_LOAD16_BYTE( "611g12.rom",    0x00001, 0x40000, 0x9c6bf898 );
 	
-		ROM_REGION( 0x0400, REGION_PROMS, 0 )
-		ROM_LOAD( "611g06.h14",  0x0000, 0x0100, 0xf916129a ) /* sprites lookup table */
-		ROM_LOAD( "611g05.h15",  0x0100, 0x0100, 0x207a7b07 ) /* chars lookup table */
-		ROM_LOAD( "611g10.h6",   0x0200, 0x0100, 0xf916129a ) /* sprites lookup table */
-		ROM_LOAD( "611g09.h7",   0x0300, 0x0100, 0x207a7b07 ) /* chars lookup table */
+		ROM_REGION( 0x0400, REGION_PROMS, 0 );
+		ROM_LOAD( "611g06.h14",  0x0000, 0x0100, 0xf916129a );/* sprites lookup table */
+		ROM_LOAD( "611g05.h15",  0x0100, 0x0100, 0x207a7b07 );/* chars lookup table */
+		ROM_LOAD( "611g10.h6",   0x0200, 0x0100, 0xf916129a );/* sprites lookup table */
+		ROM_LOAD( "611g09.h7",   0x0300, 0x0100, 0x207a7b07 );/* chars lookup table */
 	
-		ROM_REGION( 0x20000, REGION_SOUND1, 0 )	/* uPD7759 data */
-		ROM_LOAD( "611g04.rom",  0x00000, 0x20000, 0x2987e158 )
-	ROM_END
+		ROM_REGION( 0x20000, REGION_SOUND1, 0 );/* uPD7759 data */
+		ROM_LOAD( "611g04.rom",  0x00000, 0x20000, 0x2987e158 );
+	ROM_END(); }}; 
 	
-	ROM_START( combasct )
-		ROM_REGION( 0x40000, REGION_CPU1, 0 ) /* 6309 code */
-		ROM_LOAD( "g01.rom",     0x30000, 0x08000, 0x489c132f )
-		ROM_CONTINUE(            0x08000, 0x08000 )
-		ROM_LOAD( "611g02.rom",  0x10000, 0x20000, 0x9ba05327 )
+	static RomLoadPtr rom_combasct = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x40000, REGION_CPU1, 0 );/* 6309 code */
+		ROM_LOAD( "g01.rom",     0x30000, 0x08000, 0x489c132f );
+		ROM_CONTINUE(            0x08000, 0x08000 );
+		ROM_LOAD( "611g02.rom",  0x10000, 0x20000, 0x9ba05327 );
 		/* extra 0x8000 for banked RAM */
 	
-		ROM_REGION( 0x10000 , REGION_CPU2, 0 ) /* sound CPU */
-		ROM_LOAD( "611g03.rom", 0x00000, 0x08000, 0x2a544db5 )
+		ROM_REGION( 0x10000 , REGION_CPU2, 0 );/* sound CPU */
+		ROM_LOAD( "611g03.rom", 0x00000, 0x08000, 0x2a544db5 );
 	
-		ROM_REGION( 0x80000, REGION_GFX1, ROMREGION_DISPOSE )
-		ROM_LOAD16_BYTE( "611g07.rom",    0x00000, 0x40000, 0x73b38720 )
-		ROM_LOAD16_BYTE( "611g08.rom",    0x00001, 0x40000, 0x46e7d28c )
+		ROM_REGION( 0x80000, REGION_GFX1, ROMREGION_DISPOSE );
+		ROM_LOAD16_BYTE( "611g07.rom",    0x00000, 0x40000, 0x73b38720 );
+		ROM_LOAD16_BYTE( "611g08.rom",    0x00001, 0x40000, 0x46e7d28c );
 	
-		ROM_REGION( 0x80000, REGION_GFX2, ROMREGION_DISPOSE )
-		ROM_LOAD16_BYTE( "611g11.rom",    0x00000, 0x40000, 0x69687538 )
-		ROM_LOAD16_BYTE( "611g12.rom",    0x00001, 0x40000, 0x9c6bf898 )
+		ROM_REGION( 0x80000, REGION_GFX2, ROMREGION_DISPOSE );
+		ROM_LOAD16_BYTE( "611g11.rom",    0x00000, 0x40000, 0x69687538 );
+		ROM_LOAD16_BYTE( "611g12.rom",    0x00001, 0x40000, 0x9c6bf898 );
 	
-		ROM_REGION( 0x0400, REGION_PROMS, 0 )
-		ROM_LOAD( "611g06.h14",  0x0000, 0x0100, 0xf916129a ) /* sprites lookup table */
-		ROM_LOAD( "611g05.h15",  0x0100, 0x0100, 0x207a7b07 ) /* chars lookup table */
-		ROM_LOAD( "611g10.h6",   0x0200, 0x0100, 0xf916129a ) /* sprites lookup table */
-		ROM_LOAD( "611g09.h7",   0x0300, 0x0100, 0x207a7b07 ) /* chars lookup table */
+		ROM_REGION( 0x0400, REGION_PROMS, 0 );
+		ROM_LOAD( "611g06.h14",  0x0000, 0x0100, 0xf916129a );/* sprites lookup table */
+		ROM_LOAD( "611g05.h15",  0x0100, 0x0100, 0x207a7b07 );/* chars lookup table */
+		ROM_LOAD( "611g10.h6",   0x0200, 0x0100, 0xf916129a );/* sprites lookup table */
+		ROM_LOAD( "611g09.h7",   0x0300, 0x0100, 0x207a7b07 );/* chars lookup table */
 	
-		ROM_REGION( 0x20000, REGION_SOUND1, 0 )	/* uPD7759 data */
-		ROM_LOAD( "611g04.rom",  0x00000, 0x20000, 0x2987e158 )
-	ROM_END
+		ROM_REGION( 0x20000, REGION_SOUND1, 0 );/* uPD7759 data */
+		ROM_LOAD( "611g04.rom",  0x00000, 0x20000, 0x2987e158 );
+	ROM_END(); }}; 
 	
-	ROM_START( combascj )
-		ROM_REGION( 0x40000, REGION_CPU1, 0 ) /* 6309 code */
-		ROM_LOAD( "611p01.a14",  0x30000, 0x08000, 0xd748268e )
-		ROM_CONTINUE(            0x08000, 0x08000 )
-		ROM_LOAD( "611g02.rom",  0x10000, 0x20000, 0x9ba05327 )
+	static RomLoadPtr rom_combascj = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x40000, REGION_CPU1, 0 );/* 6309 code */
+		ROM_LOAD( "611p01.a14",  0x30000, 0x08000, 0xd748268e );
+		ROM_CONTINUE(            0x08000, 0x08000 );
+		ROM_LOAD( "611g02.rom",  0x10000, 0x20000, 0x9ba05327 );
 		/* extra 0x8000 for banked RAM */
 	
-		ROM_REGION( 0x10000 , REGION_CPU2, 0 ) /* sound CPU */
-		ROM_LOAD( "611g03.rom", 0x00000, 0x08000, 0x2a544db5 )
+		ROM_REGION( 0x10000 , REGION_CPU2, 0 );/* sound CPU */
+		ROM_LOAD( "611g03.rom", 0x00000, 0x08000, 0x2a544db5 );
 	
-		ROM_REGION( 0x80000, REGION_GFX1, ROMREGION_DISPOSE )
-		ROM_LOAD16_BYTE( "611g07.rom",    0x00000, 0x40000, 0x73b38720 )
-		ROM_LOAD16_BYTE( "611g08.rom",    0x00001, 0x40000, 0x46e7d28c )
+		ROM_REGION( 0x80000, REGION_GFX1, ROMREGION_DISPOSE );
+		ROM_LOAD16_BYTE( "611g07.rom",    0x00000, 0x40000, 0x73b38720 );
+		ROM_LOAD16_BYTE( "611g08.rom",    0x00001, 0x40000, 0x46e7d28c );
 	
-		ROM_REGION( 0x80000, REGION_GFX2, ROMREGION_DISPOSE )
-		ROM_LOAD16_BYTE( "611g11.rom",    0x00000, 0x40000, 0x69687538 )
-		ROM_LOAD16_BYTE( "611g12.rom",    0x00001, 0x40000, 0x9c6bf898 )
+		ROM_REGION( 0x80000, REGION_GFX2, ROMREGION_DISPOSE );
+		ROM_LOAD16_BYTE( "611g11.rom",    0x00000, 0x40000, 0x69687538 );
+		ROM_LOAD16_BYTE( "611g12.rom",    0x00001, 0x40000, 0x9c6bf898 );
 	
-		ROM_REGION( 0x0400, REGION_PROMS, 0 )
-		ROM_LOAD( "611g06.h14",  0x0000, 0x0100, 0xf916129a ) /* sprites lookup table */
-		ROM_LOAD( "611g05.h15",  0x0100, 0x0100, 0x207a7b07 ) /* chars lookup table */
-		ROM_LOAD( "611g10.h6",   0x0200, 0x0100, 0xf916129a ) /* sprites lookup table */
-		ROM_LOAD( "611g09.h7",   0x0300, 0x0100, 0x207a7b07 ) /* chars lookup table */
+		ROM_REGION( 0x0400, REGION_PROMS, 0 );
+		ROM_LOAD( "611g06.h14",  0x0000, 0x0100, 0xf916129a );/* sprites lookup table */
+		ROM_LOAD( "611g05.h15",  0x0100, 0x0100, 0x207a7b07 );/* chars lookup table */
+		ROM_LOAD( "611g10.h6",   0x0200, 0x0100, 0xf916129a );/* sprites lookup table */
+		ROM_LOAD( "611g09.h7",   0x0300, 0x0100, 0x207a7b07 );/* chars lookup table */
 	
-		ROM_REGION( 0x20000, REGION_SOUND1, 0 )	/* uPD7759 data */
-		ROM_LOAD( "611g04.rom",  0x00000, 0x20000, 0x2987e158 )
-	ROM_END
+		ROM_REGION( 0x20000, REGION_SOUND1, 0 );/* uPD7759 data */
+		ROM_LOAD( "611g04.rom",  0x00000, 0x20000, 0x2987e158 );
+	ROM_END(); }}; 
 	
-	ROM_START( bootcamp )
-		ROM_REGION( 0x40000, REGION_CPU1, 0 ) /* 6309 code */
-		ROM_LOAD( "xxx-v01.12a", 0x30000, 0x08000, 0xc10dca64 )
-		ROM_CONTINUE(            0x08000, 0x08000 )
-		ROM_LOAD( "611g02.rom",  0x10000, 0x20000, 0x9ba05327 )
+	static RomLoadPtr rom_bootcamp = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x40000, REGION_CPU1, 0 );/* 6309 code */
+		ROM_LOAD( "xxx-v01.12a", 0x30000, 0x08000, 0xc10dca64 );
+		ROM_CONTINUE(            0x08000, 0x08000 );
+		ROM_LOAD( "611g02.rom",  0x10000, 0x20000, 0x9ba05327 );
 		/* extra 0x8000 for banked RAM */
 	
-		ROM_REGION( 0x10000 , REGION_CPU2, 0 ) /* sound CPU */
-		ROM_LOAD( "611g03.rom", 0x00000, 0x08000, 0x2a544db5 )
+		ROM_REGION( 0x10000 , REGION_CPU2, 0 );/* sound CPU */
+		ROM_LOAD( "611g03.rom", 0x00000, 0x08000, 0x2a544db5 );
 	
-		ROM_REGION( 0x80000, REGION_GFX1, ROMREGION_DISPOSE )
-		ROM_LOAD16_BYTE( "611g07.rom",    0x00000, 0x40000, 0x73b38720 )
-		ROM_LOAD16_BYTE( "611g08.rom",    0x00001, 0x40000, 0x46e7d28c )
+		ROM_REGION( 0x80000, REGION_GFX1, ROMREGION_DISPOSE );
+		ROM_LOAD16_BYTE( "611g07.rom",    0x00000, 0x40000, 0x73b38720 );
+		ROM_LOAD16_BYTE( "611g08.rom",    0x00001, 0x40000, 0x46e7d28c );
 	
-		ROM_REGION( 0x80000, REGION_GFX2, ROMREGION_DISPOSE )
-		ROM_LOAD16_BYTE( "611g11.rom",    0x00000, 0x40000, 0x69687538 )
-		ROM_LOAD16_BYTE( "611g12.rom",    0x00001, 0x40000, 0x9c6bf898 )
+		ROM_REGION( 0x80000, REGION_GFX2, ROMREGION_DISPOSE );
+		ROM_LOAD16_BYTE( "611g11.rom",    0x00000, 0x40000, 0x69687538 );
+		ROM_LOAD16_BYTE( "611g12.rom",    0x00001, 0x40000, 0x9c6bf898 );
 	
-		ROM_REGION( 0x0400, REGION_PROMS, 0 )
-		ROM_LOAD( "611g06.h14",  0x0000, 0x0100, 0xf916129a ) /* sprites lookup table */
-		ROM_LOAD( "611g05.h15",  0x0100, 0x0100, 0x207a7b07 ) /* chars lookup table */
-		ROM_LOAD( "611g10.h6",   0x0200, 0x0100, 0xf916129a ) /* sprites lookup table */
-		ROM_LOAD( "611g09.h7",   0x0300, 0x0100, 0x207a7b07 ) /* chars lookup table */
+		ROM_REGION( 0x0400, REGION_PROMS, 0 );
+		ROM_LOAD( "611g06.h14",  0x0000, 0x0100, 0xf916129a );/* sprites lookup table */
+		ROM_LOAD( "611g05.h15",  0x0100, 0x0100, 0x207a7b07 );/* chars lookup table */
+		ROM_LOAD( "611g10.h6",   0x0200, 0x0100, 0xf916129a );/* sprites lookup table */
+		ROM_LOAD( "611g09.h7",   0x0300, 0x0100, 0x207a7b07 );/* chars lookup table */
 	
-	    ROM_REGION( 0x20000, REGION_SOUND1, 0 )	/* uPD7759 data */
-		ROM_LOAD( "611g04.rom",  0x00000, 0x20000, 0x2987e158 )
-	ROM_END
+	    ROM_REGION( 0x20000, REGION_SOUND1, 0 );/* uPD7759 data */
+		ROM_LOAD( "611g04.rom",  0x00000, 0x20000, 0x2987e158 );
+	ROM_END(); }}; 
 	
-	ROM_START( combascb )
-		ROM_REGION( 0x40000, REGION_CPU1, 0 ) /* 6809 code */
-		ROM_LOAD( "combat.002",	 0x30000, 0x08000, 0x0996755d )
-		ROM_CONTINUE(            0x08000, 0x08000 )
-		ROM_LOAD( "combat.003",	 0x10000, 0x10000, 0x229c93b2 )
-		ROM_LOAD( "combat.004",	 0x20000, 0x10000, 0xa069cb84 )
+	static RomLoadPtr rom_combascb = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x40000, REGION_CPU1, 0 );/* 6809 code */
+		ROM_LOAD( "combat.002",	 0x30000, 0x08000, 0x0996755d );
+		ROM_CONTINUE(            0x08000, 0x08000 );
+		ROM_LOAD( "combat.003",	 0x10000, 0x10000, 0x229c93b2 );
+		ROM_LOAD( "combat.004",	 0x20000, 0x10000, 0xa069cb84 );
 		/* extra 0x8000 for banked RAM */
 	
-		ROM_REGION( 0x10000 , REGION_CPU2, 0 ) /* sound CPU */
-		ROM_LOAD( "combat.001",  0x00000, 0x10000, 0x61456b3b )
-		ROM_LOAD( "611g03.rom",  0x00000, 0x08000, 0x2a544db5 ) /* FAKE - from Konami set! */
+		ROM_REGION( 0x10000 , REGION_CPU2, 0 );/* sound CPU */
+		ROM_LOAD( "combat.001",  0x00000, 0x10000, 0x61456b3b );
+		ROM_LOAD( "611g03.rom",  0x00000, 0x08000, 0x2a544db5 );/* FAKE - from Konami set! */
 	
-		ROM_REGION( 0x80000, REGION_GFX1, ROMREGION_DISPOSE )
-		ROM_LOAD( "combat.006",  0x00000, 0x10000, 0x8dc29a1f ) /* tiles, bank 0 */
-		ROM_LOAD( "combat.008",  0x10000, 0x10000, 0x61599f46 )
-		ROM_LOAD( "combat.010",  0x20000, 0x10000, 0xd5cda7cd )
-		ROM_LOAD( "combat.012",  0x30000, 0x10000, 0xca0a9f57 )
-		ROM_LOAD( "combat.005",  0x40000, 0x10000, 0x0803a223 ) /* tiles, bank 1 */
-		ROM_LOAD( "combat.007",  0x50000, 0x10000, 0x23caad0c )
-		ROM_LOAD( "combat.009",  0x60000, 0x10000, 0x5ac80383 )
-		ROM_LOAD( "combat.011",  0x70000, 0x10000, 0xcda83114 )
+		ROM_REGION( 0x80000, REGION_GFX1, ROMREGION_DISPOSE );
+		ROM_LOAD( "combat.006",  0x00000, 0x10000, 0x8dc29a1f );/* tiles, bank 0 */
+		ROM_LOAD( "combat.008",  0x10000, 0x10000, 0x61599f46 );
+		ROM_LOAD( "combat.010",  0x20000, 0x10000, 0xd5cda7cd );
+		ROM_LOAD( "combat.012",  0x30000, 0x10000, 0xca0a9f57 );
+		ROM_LOAD( "combat.005",  0x40000, 0x10000, 0x0803a223 );/* tiles, bank 1 */
+		ROM_LOAD( "combat.007",  0x50000, 0x10000, 0x23caad0c );
+		ROM_LOAD( "combat.009",  0x60000, 0x10000, 0x5ac80383 );
+		ROM_LOAD( "combat.011",  0x70000, 0x10000, 0xcda83114 );
 	
-		ROM_REGION( 0x80000, REGION_GFX2, ROMREGION_DISPOSE )
-		ROM_LOAD( "combat.013",  0x00000, 0x10000, 0x4bed2293 ) /* sprites, bank 0 */
-		ROM_LOAD( "combat.015",  0x10000, 0x10000, 0x26c41f31 )
-		ROM_LOAD( "combat.017",  0x20000, 0x10000, 0x6071e6da )
-		ROM_LOAD( "combat.019",  0x30000, 0x10000, 0x3b1cf1b8 )
-		ROM_LOAD( "combat.014",  0x40000, 0x10000, 0x82ea9555 ) /* sprites, bank 1 */
-		ROM_LOAD( "combat.016",  0x50000, 0x10000, 0x2e39bb70 )
-		ROM_LOAD( "combat.018",  0x60000, 0x10000, 0x575db729 )
-		ROM_LOAD( "combat.020",  0x70000, 0x10000, 0x8d748a1a )
+		ROM_REGION( 0x80000, REGION_GFX2, ROMREGION_DISPOSE );
+		ROM_LOAD( "combat.013",  0x00000, 0x10000, 0x4bed2293 );/* sprites, bank 0 */
+		ROM_LOAD( "combat.015",  0x10000, 0x10000, 0x26c41f31 );
+		ROM_LOAD( "combat.017",  0x20000, 0x10000, 0x6071e6da );
+		ROM_LOAD( "combat.019",  0x30000, 0x10000, 0x3b1cf1b8 );
+		ROM_LOAD( "combat.014",  0x40000, 0x10000, 0x82ea9555 );/* sprites, bank 1 */
+		ROM_LOAD( "combat.016",  0x50000, 0x10000, 0x2e39bb70 );
+		ROM_LOAD( "combat.018",  0x60000, 0x10000, 0x575db729 );
+		ROM_LOAD( "combat.020",  0x70000, 0x10000, 0x8d748a1a );
 	
-		ROM_REGION( 0x0200, REGION_PROMS, 0 )
-		ROM_LOAD( "prom.d10",    0x0000, 0x0100, 0x265f4c97 ) /* sprites lookup table */
-		ROM_LOAD( "prom.c11",    0x0100, 0x0100, 0xa7a5c0b4 ) /* priority? */
+		ROM_REGION( 0x0200, REGION_PROMS, 0 );
+		ROM_LOAD( "prom.d10",    0x0000, 0x0100, 0x265f4c97 );/* sprites lookup table */
+		ROM_LOAD( "prom.c11",    0x0100, 0x0100, 0xa7a5c0b4 );/* priority? */
 	
-		ROM_REGION( 0x20000, REGION_SOUND1, 0 )	/* uPD7759 data */
-		ROM_LOAD( "611g04.rom",  0x00000, 0x20000, 0x2987e158 )	/* FAKE - from Konami set! */
-	ROM_END
+		ROM_REGION( 0x20000, REGION_SOUND1, 0 );/* uPD7759 data */
+		ROM_LOAD( "611g04.rom",  0x00000, 0x20000, 0x2987e158 );/* FAKE - from Konami set! */
+	ROM_END(); }}; 
 	
 	
 	

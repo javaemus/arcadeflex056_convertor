@@ -287,66 +287,66 @@ public class scregg
 		}
 	};
 	
-	ROM_START( dommy )
-		ROM_REGION( 0x10000, REGION_CPU1, 0 )     /* 64k for code */
-		ROM_LOAD( "dommy.e01",  0xa000, 0x2000, 0x9ae064ed )
-		ROM_LOAD( "dommy.e11",  0xc000, 0x2000, 0x7c4fad5c )
-		ROM_LOAD( "dommy.e21",  0xe000, 0x2000, 0xcd1a4d55 )
+	static RomLoadPtr rom_dommy = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x10000, REGION_CPU1, 0 );    /* 64k for code */
+		ROM_LOAD( "dommy.e01",  0xa000, 0x2000, 0x9ae064ed );
+		ROM_LOAD( "dommy.e11",  0xc000, 0x2000, 0x7c4fad5c );
+		ROM_LOAD( "dommy.e21",  0xe000, 0x2000, 0xcd1a4d55 );
 	
-		ROM_REGION( 0x6000, REGION_GFX1, ROMREGION_DISPOSE )
-		ROM_LOAD( "dommy.e50",  0x0000, 0x2000, 0x5e9db0a4 )
-		ROM_LOAD( "dommy.e40",  0x2000, 0x2000, 0x4d1c36fb )
-		ROM_LOAD( "dommy.e30",  0x4000, 0x2000, 0x4e68bb12 )
+		ROM_REGION( 0x6000, REGION_GFX1, ROMREGION_DISPOSE );
+		ROM_LOAD( "dommy.e50",  0x0000, 0x2000, 0x5e9db0a4 );
+		ROM_LOAD( "dommy.e40",  0x2000, 0x2000, 0x4d1c36fb );
+		ROM_LOAD( "dommy.e30",  0x4000, 0x2000, 0x4e68bb12 );
 	
-		ROM_REGION( 0x0040, REGION_PROMS, 0 ) /* palette decoding is probably wrong */
-		ROM_LOAD( "dommy.e70",  0x0018, 0x0008, 0x50c1d86e )	/* palette */
-		ROM_CONTINUE(			  0x0000, 0x0018 )
-		ROM_LOAD( "dommy.e60",  0x0020, 0x0020, 0x24da2b63 )	/* unknown */
-	ROM_END
+		ROM_REGION( 0x0040, REGION_PROMS, 0 );/* palette decoding is probably wrong */
+		ROM_LOAD( "dommy.e70",  0x0018, 0x0008, 0x50c1d86e );/* palette */
+		ROM_CONTINUE(			  0x0000, 0x0018 );
+		ROM_LOAD( "dommy.e60",  0x0020, 0x0020, 0x24da2b63 );/* unknown */
+	ROM_END(); }}; 
 	
-	ROM_START( scregg )
-		ROM_REGION( 0x10000, REGION_CPU1, 0 )     /* 64k for code */
-		ROM_LOAD( "scregg.e14",   0x3000, 0x1000, 0x29226d77 )
-		ROM_LOAD( "scregg.d14",   0x4000, 0x1000, 0xeb143880 )
-		ROM_LOAD( "scregg.c14",   0x5000, 0x1000, 0x4455f262 )
-		ROM_LOAD( "scregg.b14",   0x6000, 0x1000, 0x044ac5d2 )
-		ROM_LOAD( "scregg.a14",   0x7000, 0x1000, 0xb5a0814a )
-		ROM_RELOAD(               0xf000, 0x1000 )        /* for reset/interrupt vectors */
+	static RomLoadPtr rom_scregg = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x10000, REGION_CPU1, 0 );    /* 64k for code */
+		ROM_LOAD( "scregg.e14",   0x3000, 0x1000, 0x29226d77 );
+		ROM_LOAD( "scregg.d14",   0x4000, 0x1000, 0xeb143880 );
+		ROM_LOAD( "scregg.c14",   0x5000, 0x1000, 0x4455f262 );
+		ROM_LOAD( "scregg.b14",   0x6000, 0x1000, 0x044ac5d2 );
+		ROM_LOAD( "scregg.a14",   0x7000, 0x1000, 0xb5a0814a );
+		ROM_RELOAD(               0xf000, 0x1000 );       /* for reset/interrupt vectors */
 	
-		ROM_REGION( 0x6000, REGION_GFX1, ROMREGION_DISPOSE )
-		ROM_LOAD( "scregg.j12",   0x0000, 0x1000, 0xa485c10c )
-		ROM_LOAD( "scregg.j10",   0x1000, 0x1000, 0x1fd4e539 )
-		ROM_LOAD( "scregg.h12",   0x2000, 0x1000, 0x8454f4b2 )
-		ROM_LOAD( "scregg.h10",   0x3000, 0x1000, 0x72bd89ee )
-		ROM_LOAD( "scregg.g12",   0x4000, 0x1000, 0xff3c2894 )
-		ROM_LOAD( "scregg.g10",   0x5000, 0x1000, 0x9c20214a )
+		ROM_REGION( 0x6000, REGION_GFX1, ROMREGION_DISPOSE );
+		ROM_LOAD( "scregg.j12",   0x0000, 0x1000, 0xa485c10c );
+		ROM_LOAD( "scregg.j10",   0x1000, 0x1000, 0x1fd4e539 );
+		ROM_LOAD( "scregg.h12",   0x2000, 0x1000, 0x8454f4b2 );
+		ROM_LOAD( "scregg.h10",   0x3000, 0x1000, 0x72bd89ee );
+		ROM_LOAD( "scregg.g12",   0x4000, 0x1000, 0xff3c2894 );
+		ROM_LOAD( "scregg.g10",   0x5000, 0x1000, 0x9c20214a );
 	
-		ROM_REGION( 0x0040, REGION_PROMS, 0 )
-		ROM_LOAD( "screggco.c6",  0x0000, 0x0020, 0xff23bdd6 )	/* palette */
-		ROM_LOAD( "screggco.b4",  0x0020, 0x0020, 0x7cc4824b )	/* unknown */
-	ROM_END
+		ROM_REGION( 0x0040, REGION_PROMS, 0 );
+		ROM_LOAD( "screggco.c6",  0x0000, 0x0020, 0xff23bdd6 );/* palette */
+		ROM_LOAD( "screggco.b4",  0x0020, 0x0020, 0x7cc4824b );/* unknown */
+	ROM_END(); }}; 
 	
-	ROM_START( eggs )
-		ROM_REGION( 0x10000, REGION_CPU1, 0 )     /* 64k for code */
-		ROM_LOAD( "e14.bin",      0x3000, 0x1000, 0x4e216f9d )
-		ROM_LOAD( "d14.bin",      0x4000, 0x1000, 0x4edb267f )
-		ROM_LOAD( "c14.bin",      0x5000, 0x1000, 0x15a5c48c )
-		ROM_LOAD( "b14.bin",      0x6000, 0x1000, 0x5c11c00e )
-		ROM_LOAD( "a14.bin",      0x7000, 0x1000, 0x953faf07 )
-		ROM_RELOAD(               0xf000, 0x1000 )   /* for reset/interrupt vectors */
+	static RomLoadPtr rom_eggs = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x10000, REGION_CPU1, 0 );    /* 64k for code */
+		ROM_LOAD( "e14.bin",      0x3000, 0x1000, 0x4e216f9d );
+		ROM_LOAD( "d14.bin",      0x4000, 0x1000, 0x4edb267f );
+		ROM_LOAD( "c14.bin",      0x5000, 0x1000, 0x15a5c48c );
+		ROM_LOAD( "b14.bin",      0x6000, 0x1000, 0x5c11c00e );
+		ROM_LOAD( "a14.bin",      0x7000, 0x1000, 0x953faf07 );
+		ROM_RELOAD(               0xf000, 0x1000 );  /* for reset/interrupt vectors */
 	
-		ROM_REGION( 0x6000, REGION_GFX1, ROMREGION_DISPOSE )
-		ROM_LOAD( "j12.bin",      0x0000, 0x1000, 0xce4a2e46 )
-		ROM_LOAD( "j10.bin",      0x1000, 0x1000, 0xa1bcaffc )
-		ROM_LOAD( "h12.bin",      0x2000, 0x1000, 0x9562836d )
-		ROM_LOAD( "h10.bin",      0x3000, 0x1000, 0x3cfb3a8e )
-		ROM_LOAD( "g12.bin",      0x4000, 0x1000, 0x679f8af7 )
-		ROM_LOAD( "g10.bin",      0x5000, 0x1000, 0x5b58d3b5 )
+		ROM_REGION( 0x6000, REGION_GFX1, ROMREGION_DISPOSE );
+		ROM_LOAD( "j12.bin",      0x0000, 0x1000, 0xce4a2e46 );
+		ROM_LOAD( "j10.bin",      0x1000, 0x1000, 0xa1bcaffc );
+		ROM_LOAD( "h12.bin",      0x2000, 0x1000, 0x9562836d );
+		ROM_LOAD( "h10.bin",      0x3000, 0x1000, 0x3cfb3a8e );
+		ROM_LOAD( "g12.bin",      0x4000, 0x1000, 0x679f8af7 );
+		ROM_LOAD( "g10.bin",      0x5000, 0x1000, 0x5b58d3b5 );
 	
-		ROM_REGION( 0x0040, REGION_PROMS, 0 )
-		ROM_LOAD( "eggs.c6",      0x0000, 0x0020, 0xe8408c81 )	/* palette */
-		ROM_LOAD( "screggco.b4",  0x0020, 0x0020, 0x7cc4824b )	/* unknown */
-	ROM_END
+		ROM_REGION( 0x0040, REGION_PROMS, 0 );
+		ROM_LOAD( "eggs.c6",      0x0000, 0x0020, 0xe8408c81 );/* palette */
+		ROM_LOAD( "screggco.b4",  0x0020, 0x0020, 0x7cc4824b );/* unknown */
+	ROM_END(); }}; 
 	
 	
 	GAME( 198?, dommy,  0,      dommy,  scregg, 0, ROT270, "Technos", "Dommy" )

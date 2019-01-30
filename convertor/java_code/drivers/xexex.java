@@ -409,63 +409,63 @@ public class xexex
 	};
 	
 	
-	ROM_START( xexex )
-		ROM_REGION( 0x180000, REGION_CPU1, 0 )
-		ROM_LOAD16_BYTE( "xex_a01.rom",  0x000000, 0x40000, 0x3ebcb066 )
-		ROM_LOAD16_BYTE( "xex_a02.rom",  0x000001, 0x40000, 0x36ea7a48 )
-		ROM_LOAD16_BYTE( "xex_b03.rom",  0x100000, 0x40000, 0x97833086 )
-		ROM_LOAD16_BYTE( "xex_b04.rom",  0x100001, 0x40000, 0x26ec5dc8 )
+	static RomLoadPtr rom_xexex = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x180000, REGION_CPU1, 0 );
+		ROM_LOAD16_BYTE( "xex_a01.rom",  0x000000, 0x40000, 0x3ebcb066 );
+		ROM_LOAD16_BYTE( "xex_a02.rom",  0x000001, 0x40000, 0x36ea7a48 );
+		ROM_LOAD16_BYTE( "xex_b03.rom",  0x100000, 0x40000, 0x97833086 );
+		ROM_LOAD16_BYTE( "xex_b04.rom",  0x100001, 0x40000, 0x26ec5dc8 );
 	
-		ROM_REGION( 0x030000, REGION_CPU2, 0 )
-		ROM_LOAD( "xex_a05.rom", 0x000000, 0x020000, 0x0e33d6ec )
-		ROM_RELOAD(              0x010000, 0x020000 )
+		ROM_REGION( 0x030000, REGION_CPU2, 0 );
+		ROM_LOAD( "xex_a05.rom", 0x000000, 0x020000, 0x0e33d6ec );
+		ROM_RELOAD(              0x010000, 0x020000 );
 	
-		ROM_REGION( 0x200000, REGION_GFX1, 0 )
-		ROM_LOAD( "xex_b14.rom", 0x000000, 0x100000, 0x02a44bfa )
-		ROM_LOAD( "xex_b13.rom", 0x100000, 0x100000, 0x633c8eb5 )
+		ROM_REGION( 0x200000, REGION_GFX1, 0 );
+		ROM_LOAD( "xex_b14.rom", 0x000000, 0x100000, 0x02a44bfa );
+		ROM_LOAD( "xex_b13.rom", 0x100000, 0x100000, 0x633c8eb5 );
 	
-		ROM_REGION( 0x400000, REGION_GFX2, 0 )
-		ROM_LOAD( "xex_b12.rom", 0x000000, 0x100000, 0x08d611b0 )
-		ROM_LOAD( "xex_b11.rom", 0x100000, 0x100000, 0xa26f7507 )
-		ROM_LOAD( "xex_b10.rom", 0x200000, 0x100000, 0xee31db8d )
-		ROM_LOAD( "xex_b09.rom", 0x300000, 0x100000, 0x88f072ef )
+		ROM_REGION( 0x400000, REGION_GFX2, 0 );
+		ROM_LOAD( "xex_b12.rom", 0x000000, 0x100000, 0x08d611b0 );
+		ROM_LOAD( "xex_b11.rom", 0x100000, 0x100000, 0xa26f7507 );
+		ROM_LOAD( "xex_b10.rom", 0x200000, 0x100000, 0xee31db8d );
+		ROM_LOAD( "xex_b09.rom", 0x300000, 0x100000, 0x88f072ef );
 	
-		ROM_REGION( 0x080000, REGION_GFX3, 0 )
-		ROM_LOAD( "xex_b08.rom", 0x000000, 0x080000, 0xca816b7b )
+		ROM_REGION( 0x080000, REGION_GFX3, 0 );
+		ROM_LOAD( "xex_b08.rom", 0x000000, 0x080000, 0xca816b7b );
 	
-		ROM_REGION( 0x300000, REGION_SOUND1, 0 )
-		ROM_LOAD( "xex_b06.rom", 0x000000, 0x200000, 0x3b12fce4 )
-		ROM_LOAD( "xex_b07.rom", 0x200000, 0x100000, 0xec87fe1b )
-	ROM_END
+		ROM_REGION( 0x300000, REGION_SOUND1, 0 );
+		ROM_LOAD( "xex_b06.rom", 0x000000, 0x200000, 0x3b12fce4 );
+		ROM_LOAD( "xex_b07.rom", 0x200000, 0x100000, 0xec87fe1b );
+	ROM_END(); }}; 
 	
-	ROM_START( xexexj )
-		ROM_REGION( 0x180000, REGION_CPU1, 0 )
-		ROM_LOAD16_BYTE( "067jaa01.16d", 0x000000, 0x40000, 0x06e99784 )
-		ROM_LOAD16_BYTE( "067jaa02.16e", 0x000001, 0x40000, 0x30ae5bc4 )
-		ROM_LOAD16_BYTE( "xex_b03.rom",  0x100000, 0x40000, 0x97833086 )
-		ROM_LOAD16_BYTE( "xex_b04.rom",  0x100001, 0x40000, 0x26ec5dc8 )
+	static RomLoadPtr rom_xexexj = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x180000, REGION_CPU1, 0 );
+		ROM_LOAD16_BYTE( "067jaa01.16d", 0x000000, 0x40000, 0x06e99784 );
+		ROM_LOAD16_BYTE( "067jaa02.16e", 0x000001, 0x40000, 0x30ae5bc4 );
+		ROM_LOAD16_BYTE( "xex_b03.rom",  0x100000, 0x40000, 0x97833086 );
+		ROM_LOAD16_BYTE( "xex_b04.rom",  0x100001, 0x40000, 0x26ec5dc8 );
 	
-		ROM_REGION( 0x030000, REGION_CPU2, 0 )
-		ROM_LOAD( "067jaa05.4e", 0x000000, 0x020000, 0x2f4dd0a8 )
-		ROM_RELOAD(              0x010000, 0x020000 )
+		ROM_REGION( 0x030000, REGION_CPU2, 0 );
+		ROM_LOAD( "067jaa05.4e", 0x000000, 0x020000, 0x2f4dd0a8 );
+		ROM_RELOAD(              0x010000, 0x020000 );
 	
-		ROM_REGION( 0x200000, REGION_GFX1, 0 )
-		ROM_LOAD( "xex_b14.rom", 0x000000, 0x100000, 0x02a44bfa )
-		ROM_LOAD( "xex_b13.rom", 0x100000, 0x100000, 0x633c8eb5 )
+		ROM_REGION( 0x200000, REGION_GFX1, 0 );
+		ROM_LOAD( "xex_b14.rom", 0x000000, 0x100000, 0x02a44bfa );
+		ROM_LOAD( "xex_b13.rom", 0x100000, 0x100000, 0x633c8eb5 );
 	
-		ROM_REGION( 0x400000, REGION_GFX2, 0 )
-		ROM_LOAD( "xex_b12.rom", 0x000000, 0x100000, 0x08d611b0 )
-		ROM_LOAD( "xex_b11.rom", 0x100000, 0x100000, 0xa26f7507 )
-		ROM_LOAD( "xex_b10.rom", 0x200000, 0x100000, 0xee31db8d )
-		ROM_LOAD( "xex_b09.rom", 0x300000, 0x100000, 0x88f072ef )
+		ROM_REGION( 0x400000, REGION_GFX2, 0 );
+		ROM_LOAD( "xex_b12.rom", 0x000000, 0x100000, 0x08d611b0 );
+		ROM_LOAD( "xex_b11.rom", 0x100000, 0x100000, 0xa26f7507 );
+		ROM_LOAD( "xex_b10.rom", 0x200000, 0x100000, 0xee31db8d );
+		ROM_LOAD( "xex_b09.rom", 0x300000, 0x100000, 0x88f072ef );
 	
-		ROM_REGION( 0x080000, REGION_GFX3, 0 )
-		ROM_LOAD( "xex_b08.rom", 0x000000, 0x080000, 0xca816b7b )
+		ROM_REGION( 0x080000, REGION_GFX3, 0 );
+		ROM_LOAD( "xex_b08.rom", 0x000000, 0x080000, 0xca816b7b );
 	
-		ROM_REGION( 0x300000, REGION_SOUND1, 0 )
-		ROM_LOAD( "xex_b06.rom", 0x000000, 0x200000, 0x3b12fce4 )
-		ROM_LOAD( "xex_b07.rom", 0x200000, 0x100000, 0xec87fe1b )
-	ROM_END
+		ROM_REGION( 0x300000, REGION_SOUND1, 0 );
+		ROM_LOAD( "xex_b06.rom", 0x000000, 0x200000, 0x3b12fce4 );
+		ROM_LOAD( "xex_b07.rom", 0x200000, 0x100000, 0xec87fe1b );
+	ROM_END(); }}; 
 	
 	
 	static void init_xexex(void)

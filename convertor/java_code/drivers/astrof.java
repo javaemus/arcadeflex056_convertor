@@ -269,88 +269,88 @@ public class astrof
 	
 	***************************************************************************/
 	
-	ROM_START( astrof )
-		ROM_REGION( 0x10000, REGION_CPU1, 0 )	/* 64k for code */
-		ROM_LOAD( "afii.6",       0xd000, 0x0800, 0xd6cd13a4 )
-		ROM_LOAD( "afii.5",       0xd800, 0x0800, 0x6fd3c4df )
-		ROM_LOAD( "afii.4",       0xe000, 0x0800, 0x9612dae3 )
-		ROM_LOAD( "afii.3",       0xe800, 0x0800, 0x5a0fef42 )
-		ROM_LOAD( "afii.2",       0xf000, 0x0800, 0x69f8a4fc )
-		ROM_LOAD( "afii.1",       0xf800, 0x0800, 0x322c09d2 )
+	static RomLoadPtr rom_astrof = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x10000, REGION_CPU1, 0 );/* 64k for code */
+		ROM_LOAD( "afii.6",       0xd000, 0x0800, 0xd6cd13a4 );
+		ROM_LOAD( "afii.5",       0xd800, 0x0800, 0x6fd3c4df );
+		ROM_LOAD( "afii.4",       0xe000, 0x0800, 0x9612dae3 );
+		ROM_LOAD( "afii.3",       0xe800, 0x0800, 0x5a0fef42 );
+		ROM_LOAD( "afii.2",       0xf000, 0x0800, 0x69f8a4fc );
+		ROM_LOAD( "afii.1",       0xf800, 0x0800, 0x322c09d2 );
 	
-		ROM_REGION( 0x0020, REGION_PROMS, 0 )
-		ROM_LOAD( "astrf.clr",    0x0000, 0x0020, 0x61329fd1 )
-	ROM_END
+		ROM_REGION( 0x0020, REGION_PROMS, 0 );
+		ROM_LOAD( "astrf.clr",    0x0000, 0x0020, 0x61329fd1 );
+	ROM_END(); }}; 
 	
-	ROM_START( astrof2 )
-		ROM_REGION( 0x10000, REGION_CPU1, 0 )	/* 64k for code */
-		ROM_LOAD( "kei2",         0xd000, 0x0400, 0x9f0bd355 )
-		ROM_LOAD( "keii",         0xd400, 0x0400, 0x71f229f0 )
-		ROM_LOAD( "kei0",         0xd800, 0x0400, 0x88114f7c )
-		ROM_LOAD( "af579.08",     0xdc00, 0x0400, 0x9793c124 )
-		ROM_LOAD( "ke8",          0xe000, 0x0400, 0x08e44b12 )
-		ROM_LOAD( "ke7",          0xe400, 0x0400, 0x8a42d62c )
-		ROM_LOAD( "ke6",          0xe800, 0x0400, 0x3e9aa743 )
-		ROM_LOAD( "ke5",          0xec00, 0x0400, 0x712a4557 )
-		ROM_LOAD( "ke4",          0xf000, 0x0400, 0xad06f306 )
-		ROM_LOAD( "ke3",          0xf400, 0x0400, 0x680b91b4 )
-		ROM_LOAD( "ke2",          0xf800, 0x0400, 0x2c4cab1a )
-		ROM_LOAD( "af583.00",     0xfc00, 0x0400, 0xf699dda3 )
+	static RomLoadPtr rom_astrof2 = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x10000, REGION_CPU1, 0 );/* 64k for code */
+		ROM_LOAD( "kei2",         0xd000, 0x0400, 0x9f0bd355 );
+		ROM_LOAD( "keii",         0xd400, 0x0400, 0x71f229f0 );
+		ROM_LOAD( "kei0",         0xd800, 0x0400, 0x88114f7c );
+		ROM_LOAD( "af579.08",     0xdc00, 0x0400, 0x9793c124 );
+		ROM_LOAD( "ke8",          0xe000, 0x0400, 0x08e44b12 );
+		ROM_LOAD( "ke7",          0xe400, 0x0400, 0x8a42d62c );
+		ROM_LOAD( "ke6",          0xe800, 0x0400, 0x3e9aa743 );
+		ROM_LOAD( "ke5",          0xec00, 0x0400, 0x712a4557 );
+		ROM_LOAD( "ke4",          0xf000, 0x0400, 0xad06f306 );
+		ROM_LOAD( "ke3",          0xf400, 0x0400, 0x680b91b4 );
+		ROM_LOAD( "ke2",          0xf800, 0x0400, 0x2c4cab1a );
+		ROM_LOAD( "af583.00",     0xfc00, 0x0400, 0xf699dda3 );
 	
-		ROM_REGION( 0x0020, REGION_PROMS, 0 )
-		ROM_LOAD( "astrf.clr",    0x0000, 0x0020, 0x61329fd1 )
-	ROM_END
+		ROM_REGION( 0x0020, REGION_PROMS, 0 );
+		ROM_LOAD( "astrf.clr",    0x0000, 0x0020, 0x61329fd1 );
+	ROM_END(); }}; 
 	
-	ROM_START( astrof3 )
-		ROM_REGION( 0x10000, REGION_CPU1, 0 )	/* 64k for code */
-		ROM_LOAD( "kei2",         0xd000, 0x0400, 0x9f0bd355 )
-		ROM_LOAD( "keii",         0xd400, 0x0400, 0x71f229f0 )
-		ROM_LOAD( "kei0",         0xd800, 0x0400, 0x88114f7c )
-		ROM_LOAD( "ke9",          0xdc00, 0x0400, 0x29cbaea6 )
-		ROM_LOAD( "ke8",          0xe000, 0x0400, 0x08e44b12 )
-		ROM_LOAD( "ke7",          0xe400, 0x0400, 0x8a42d62c )
-		ROM_LOAD( "ke6",          0xe800, 0x0400, 0x3e9aa743 )
-		ROM_LOAD( "ke5",          0xec00, 0x0400, 0x712a4557 )
-		ROM_LOAD( "ke4",          0xf000, 0x0400, 0xad06f306 )
-		ROM_LOAD( "ke3",          0xf400, 0x0400, 0x680b91b4 )
-		ROM_LOAD( "ke2",          0xf800, 0x0400, 0x2c4cab1a )
-		ROM_LOAD( "kei",          0xfc00, 0x0400, 0xfce4718d )
+	static RomLoadPtr rom_astrof3 = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x10000, REGION_CPU1, 0 );/* 64k for code */
+		ROM_LOAD( "kei2",         0xd000, 0x0400, 0x9f0bd355 );
+		ROM_LOAD( "keii",         0xd400, 0x0400, 0x71f229f0 );
+		ROM_LOAD( "kei0",         0xd800, 0x0400, 0x88114f7c );
+		ROM_LOAD( "ke9",          0xdc00, 0x0400, 0x29cbaea6 );
+		ROM_LOAD( "ke8",          0xe000, 0x0400, 0x08e44b12 );
+		ROM_LOAD( "ke7",          0xe400, 0x0400, 0x8a42d62c );
+		ROM_LOAD( "ke6",          0xe800, 0x0400, 0x3e9aa743 );
+		ROM_LOAD( "ke5",          0xec00, 0x0400, 0x712a4557 );
+		ROM_LOAD( "ke4",          0xf000, 0x0400, 0xad06f306 );
+		ROM_LOAD( "ke3",          0xf400, 0x0400, 0x680b91b4 );
+		ROM_LOAD( "ke2",          0xf800, 0x0400, 0x2c4cab1a );
+		ROM_LOAD( "kei",          0xfc00, 0x0400, 0xfce4718d );
 	
-		ROM_REGION( 0x0020, REGION_PROMS, 0 )
-		ROM_LOAD( "astrf.clr",    0x0000, 0x0020, 0x61329fd1 )
-	ROM_END
+		ROM_REGION( 0x0020, REGION_PROMS, 0 );
+		ROM_LOAD( "astrf.clr",    0x0000, 0x0020, 0x61329fd1 );
+	ROM_END(); }}; 
 	
-	ROM_START( tomahawk )
-		ROM_REGION( 0x10000, REGION_CPU1, 0 )	/* 64k for code */
-		ROM_LOAD( "l8-1",         0xdc00, 0x0400, 0x7c911661 )
-		ROM_LOAD( "l7-1",         0xe000, 0x0400, 0xadeffb69 )
-		ROM_LOAD( "l6-1",         0xe400, 0x0400, 0x9116e59d )
-		ROM_LOAD( "l5-1",         0xe800, 0x0400, 0x01e4c7c4 )
-		ROM_LOAD( "l4-1",         0xec00, 0x0400, 0xd9f69cb0 )
-		ROM_LOAD( "l3-1",         0xf000, 0x0400, 0x7ce7183f )
-		ROM_LOAD( "l2-1",         0xf400, 0x0400, 0x43fea29d )
-		ROM_LOAD( "l1-1",         0xf800, 0x0400, 0xf2096ba9 )
-		ROM_LOAD( "l0-1",         0xfc00, 0x0400, 0x42edbc28 )
+	static RomLoadPtr rom_tomahawk = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x10000, REGION_CPU1, 0 );/* 64k for code */
+		ROM_LOAD( "l8-1",         0xdc00, 0x0400, 0x7c911661 );
+		ROM_LOAD( "l7-1",         0xe000, 0x0400, 0xadeffb69 );
+		ROM_LOAD( "l6-1",         0xe400, 0x0400, 0x9116e59d );
+		ROM_LOAD( "l5-1",         0xe800, 0x0400, 0x01e4c7c4 );
+		ROM_LOAD( "l4-1",         0xec00, 0x0400, 0xd9f69cb0 );
+		ROM_LOAD( "l3-1",         0xf000, 0x0400, 0x7ce7183f );
+		ROM_LOAD( "l2-1",         0xf400, 0x0400, 0x43fea29d );
+		ROM_LOAD( "l1-1",         0xf800, 0x0400, 0xf2096ba9 );
+		ROM_LOAD( "l0-1",         0xfc00, 0x0400, 0x42edbc28 );
 	
-		ROM_REGION( 0x0020, REGION_PROMS, 0 )
-		ROM_LOAD( "t777.clr",     0x0000, 0x0020, 0xd6a528fd )
-	ROM_END
+		ROM_REGION( 0x0020, REGION_PROMS, 0 );
+		ROM_LOAD( "t777.clr",     0x0000, 0x0020, 0xd6a528fd );
+	ROM_END(); }}; 
 	
-	ROM_START( tomahaw5 )
-		ROM_REGION( 0x10000, REGION_CPU1, 0 )	/* 64k for code */
-		ROM_LOAD( "thawk.l8",     0xdc00, 0x0400, 0xb01dab4b )
-		ROM_LOAD( "thawk.l7",     0xe000, 0x0400, 0x3a6549e8 )
-		ROM_LOAD( "thawk.l6",     0xe400, 0x0400, 0x863e47f7 )
-		ROM_LOAD( "thawk.l5",     0xe800, 0x0400, 0xde0183bc )
-		ROM_LOAD( "thawk.l4",     0xec00, 0x0400, 0x11e9c7ea )
-		ROM_LOAD( "thawk.l3",     0xf000, 0x0400, 0xec44d388 )
-		ROM_LOAD( "thawk.l2",     0xf400, 0x0400, 0xdc0a0f54 )
-		ROM_LOAD( "thawk.l1",     0xf800, 0x0400, 0x1d9dab9c )
-		ROM_LOAD( "thawk.l0",     0xfc00, 0x0400, 0xd21a1eba )
+	static RomLoadPtr rom_tomahaw5 = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x10000, REGION_CPU1, 0 );/* 64k for code */
+		ROM_LOAD( "thawk.l8",     0xdc00, 0x0400, 0xb01dab4b );
+		ROM_LOAD( "thawk.l7",     0xe000, 0x0400, 0x3a6549e8 );
+		ROM_LOAD( "thawk.l6",     0xe400, 0x0400, 0x863e47f7 );
+		ROM_LOAD( "thawk.l5",     0xe800, 0x0400, 0xde0183bc );
+		ROM_LOAD( "thawk.l4",     0xec00, 0x0400, 0x11e9c7ea );
+		ROM_LOAD( "thawk.l3",     0xf000, 0x0400, 0xec44d388 );
+		ROM_LOAD( "thawk.l2",     0xf400, 0x0400, 0xdc0a0f54 );
+		ROM_LOAD( "thawk.l1",     0xf800, 0x0400, 0x1d9dab9c );
+		ROM_LOAD( "thawk.l0",     0xfc00, 0x0400, 0xd21a1eba );
 	
-		ROM_REGION( 0x0020, REGION_PROMS, 0 )
-		ROM_LOAD( "t777.clr",     0x0000, 0x0020, 0xd6a528fd )
-	ROM_END
+		ROM_REGION( 0x0020, REGION_PROMS, 0 );
+		ROM_LOAD( "t777.clr",     0x0000, 0x0020, 0xd6a528fd );
+	ROM_END(); }}; 
 	
 	
 	

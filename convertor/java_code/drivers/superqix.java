@@ -272,40 +272,40 @@ public class superqix
 	
 	***************************************************************************/
 	
-	ROM_START( superqix )
-		ROM_REGION( 0x20000, REGION_CPU1, 0 )	/* 64k for code */
-		ROM_LOAD( "sq01.97",      0x00000, 0x08000, 0x0888b7de )
-		ROM_LOAD( "sq02.96",      0x10000, 0x10000, 0x9c23cb64 )
+	static RomLoadPtr rom_superqix = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x20000, REGION_CPU1, 0 );/* 64k for code */
+		ROM_LOAD( "sq01.97",      0x00000, 0x08000, 0x0888b7de );
+		ROM_LOAD( "sq02.96",      0x10000, 0x10000, 0x9c23cb64 );
 	
-		ROM_REGION( 0x08000, REGION_GFX1, ROMREGION_DISPOSE )
-		ROM_LOAD( "sq04.2",       0x00000, 0x08000, 0xf815ef45 )
+		ROM_REGION( 0x08000, REGION_GFX1, ROMREGION_DISPOSE );
+		ROM_LOAD( "sq04.2",       0x00000, 0x08000, 0xf815ef45 );
 	
-		ROM_REGION( 0x20000, REGION_GFX2, ROMREGION_DISPOSE )
-		ROM_LOAD( "sq03.3",       0x00000, 0x10000, 0x6e8b6a67 )
-		ROM_LOAD( "sq06.14",      0x10000, 0x10000, 0x38154517 )
+		ROM_REGION( 0x20000, REGION_GFX2, ROMREGION_DISPOSE );
+		ROM_LOAD( "sq03.3",       0x00000, 0x10000, 0x6e8b6a67 );
+		ROM_LOAD( "sq06.14",      0x10000, 0x10000, 0x38154517 );
 	
-		ROM_REGION( 0x10000, REGION_GFX3, ROMREGION_DISPOSE )
-		ROM_LOAD( "sq05.1",       0x00000, 0x10000, 0xdf326540 )
+		ROM_REGION( 0x10000, REGION_GFX3, ROMREGION_DISPOSE );
+		ROM_LOAD( "sq05.1",       0x00000, 0x10000, 0xdf326540 );
 	
-		ROM_REGION( 0x1000, REGION_USER1, 0 )	/* Unknown (protection related?) */
-		ROM_LOAD( "sq07.108",     0x00000, 0x1000, 0x071a598c )
-	ROM_END
+		ROM_REGION( 0x1000, REGION_USER1, 0 );/* Unknown (protection related?) */
+		ROM_LOAD( "sq07.108",     0x00000, 0x1000, 0x071a598c );
+	ROM_END(); }}; 
 	
-	ROM_START( sqixbl )
-		ROM_REGION( 0x20000, REGION_CPU1, 0 )	/* 64k for code */
-		ROM_LOAD( "cpu.2",        0x00000, 0x08000, 0x682e28e3 )
-		ROM_LOAD( "sq02.96",      0x10000, 0x10000, 0x9c23cb64 )
+	static RomLoadPtr rom_sqixbl = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x20000, REGION_CPU1, 0 );/* 64k for code */
+		ROM_LOAD( "cpu.2",        0x00000, 0x08000, 0x682e28e3 );
+		ROM_LOAD( "sq02.96",      0x10000, 0x10000, 0x9c23cb64 );
 	
-		ROM_REGION( 0x08000, REGION_GFX1, ROMREGION_DISPOSE )
-		ROM_LOAD( "sq04.2",       0x00000, 0x08000, 0xf815ef45 )
+		ROM_REGION( 0x08000, REGION_GFX1, ROMREGION_DISPOSE );
+		ROM_LOAD( "sq04.2",       0x00000, 0x08000, 0xf815ef45 );
 	
-		ROM_REGION( 0x20000, REGION_GFX2, ROMREGION_DISPOSE )
-		ROM_LOAD( "sq03.3",       0x00000, 0x10000, 0x6e8b6a67 )
-		ROM_LOAD( "sq06.14",      0x10000, 0x10000, 0x38154517 )
+		ROM_REGION( 0x20000, REGION_GFX2, ROMREGION_DISPOSE );
+		ROM_LOAD( "sq03.3",       0x00000, 0x10000, 0x6e8b6a67 );
+		ROM_LOAD( "sq06.14",      0x10000, 0x10000, 0x38154517 );
 	
-		ROM_REGION( 0x10000, REGION_GFX3, ROMREGION_DISPOSE )
-		ROM_LOAD( "sq05.1",       0x00000, 0x10000, 0xdf326540 )
-	ROM_END
+		ROM_REGION( 0x10000, REGION_GFX3, ROMREGION_DISPOSE );
+		ROM_LOAD( "sq05.1",       0x00000, 0x10000, 0xdf326540 );
+	ROM_END(); }}; 
 	
 	
 	

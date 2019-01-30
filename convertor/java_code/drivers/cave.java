@@ -2131,27 +2131,27 @@ public class cave
 	
 	***************************************************************************/
 	
-	ROM_START( dfeveron )
-		ROM_REGION( 0x100000, REGION_CPU1, 0 )		/* 68000 Code */
-		ROM_LOAD16_BYTE( "cv01-u34.bin", 0x000000, 0x080000, 0xbe87f19d )
-		ROM_LOAD16_BYTE( "cv01-u33.bin", 0x000001, 0x080000, 0xe53a7db3 )
+	static RomLoadPtr rom_dfeveron = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x100000, REGION_CPU1, 0 );	/* 68000 Code */
+		ROM_LOAD16_BYTE( "cv01-u34.bin", 0x000000, 0x080000, 0xbe87f19d );
+		ROM_LOAD16_BYTE( "cv01-u33.bin", 0x000001, 0x080000, 0xe53a7db3 );
 	
-		ROM_REGION( 0x200000, REGION_GFX1, ROMREGION_DISPOSE )	/* Layer 0 */
-		ROM_LOAD( "cv01-u50.bin", 0x000000, 0x200000, 0x7a344417 )
+		ROM_REGION( 0x200000, REGION_GFX1, ROMREGION_DISPOSE );/* Layer 0 */
+		ROM_LOAD( "cv01-u50.bin", 0x000000, 0x200000, 0x7a344417 );
 	
-		ROM_REGION( 0x200000, REGION_GFX2, ROMREGION_DISPOSE )	/* Layer 1 */
-		ROM_LOAD( "cv01-u49.bin", 0x000000, 0x200000, 0xd21cdda7 )
+		ROM_REGION( 0x200000, REGION_GFX2, ROMREGION_DISPOSE );/* Layer 1 */
+		ROM_LOAD( "cv01-u49.bin", 0x000000, 0x200000, 0xd21cdda7 );
 	
-	//	ROM_REGION( 0x200000, REGION_GFX3, ROMREGION_DISPOSE )	/* Layer 2 */
+	//	ROM_REGION( 0x200000, REGION_GFX3, ROMREGION_DISPOSE );/* Layer 2 */
 	//	empty
 	
-		ROM_REGION( 0x800000 * 2, REGION_GFX4, 0 )		/* Sprites: * 2 , do not dispose */
-		ROM_LOAD( "cv01-u25.bin", 0x000000, 0x400000, 0xa6f6a95d )
-		ROM_LOAD( "cv01-u26.bin", 0x400000, 0x400000, 0x32edb62a )
+		ROM_REGION( 0x800000 * 2, REGION_GFX4, 0 );	/* Sprites: * 2 , do not dispose */
+		ROM_LOAD( "cv01-u25.bin", 0x000000, 0x400000, 0xa6f6a95d );
+		ROM_LOAD( "cv01-u26.bin", 0x400000, 0x400000, 0x32edb62a );
 	
-		ROM_REGION( 0x400000, REGION_SOUND1, ROMREGION_SOUNDONLY )	/* Samples */
-		ROM_LOAD( "cv01-u19.bin", 0x000000, 0x400000, 0x5f5514da )
-	ROM_END
+		ROM_REGION( 0x400000, REGION_SOUND1, ROMREGION_SOUNDONLY );/* Samples */
+		ROM_LOAD( "cv01-u19.bin", 0x000000, 0x400000, 0x5f5514da );
+	ROM_END(); }}; 
 	
 	
 	/***************************************************************************
@@ -2167,30 +2167,30 @@ public class cave
 	
 	***************************************************************************/
 	
-	ROM_START( ddonpach )
-		ROM_REGION( 0x100000, REGION_CPU1, 0 )		/* 68000 Code */
-		ROM_LOAD16_BYTE( "u27.bin", 0x000000, 0x080000, 0x2432ff9b )
-		ROM_LOAD16_BYTE( "u26.bin", 0x000001, 0x080000, 0x4f3a914a )
+	static RomLoadPtr rom_ddonpach = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x100000, REGION_CPU1, 0 );	/* 68000 Code */
+		ROM_LOAD16_BYTE( "u27.bin", 0x000000, 0x080000, 0x2432ff9b );
+		ROM_LOAD16_BYTE( "u26.bin", 0x000001, 0x080000, 0x4f3a914a );
 	
-		ROM_REGION( 0x200000, REGION_GFX1, ROMREGION_DISPOSE )	/* Layer 0 */
-		ROM_LOAD( "u60.bin", 0x000000, 0x200000, 0x903096a7 )
+		ROM_REGION( 0x200000, REGION_GFX1, ROMREGION_DISPOSE );/* Layer 0 */
+		ROM_LOAD( "u60.bin", 0x000000, 0x200000, 0x903096a7 );
 	
-		ROM_REGION( 0x200000, REGION_GFX2, ROMREGION_DISPOSE )	/* Layer 1 */
-		ROM_LOAD( "u61.bin", 0x000000, 0x200000, 0xd89b7631 )
+		ROM_REGION( 0x200000, REGION_GFX2, ROMREGION_DISPOSE );/* Layer 1 */
+		ROM_LOAD( "u61.bin", 0x000000, 0x200000, 0xd89b7631 );
 	
-		ROM_REGION( 0x200000, REGION_GFX3, ROMREGION_DISPOSE )	/* Layer 2 */
-		ROM_LOAD( "u62.bin", 0x000000, 0x200000, 0x292bfb6b )
+		ROM_REGION( 0x200000, REGION_GFX3, ROMREGION_DISPOSE );/* Layer 2 */
+		ROM_LOAD( "u62.bin", 0x000000, 0x200000, 0x292bfb6b );
 	
-		ROM_REGION( 0x800000 * 2, REGION_GFX4, 0 )		/* Sprites: * 2, do not dispose */
-		ROM_LOAD( "u50.bin", 0x000000, 0x200000, 0x14b260ec )
-		ROM_LOAD( "u51.bin", 0x200000, 0x200000, 0xe7ba8cce )
-		ROM_LOAD( "u52.bin", 0x400000, 0x200000, 0x02492ee0 )
-		ROM_LOAD( "u53.bin", 0x600000, 0x200000, 0xcb4c10f0 )
+		ROM_REGION( 0x800000 * 2, REGION_GFX4, 0 );	/* Sprites: * 2, do not dispose */
+		ROM_LOAD( "u50.bin", 0x000000, 0x200000, 0x14b260ec );
+		ROM_LOAD( "u51.bin", 0x200000, 0x200000, 0xe7ba8cce );
+		ROM_LOAD( "u52.bin", 0x400000, 0x200000, 0x02492ee0 );
+		ROM_LOAD( "u53.bin", 0x600000, 0x200000, 0xcb4c10f0 );
 	
-		ROM_REGION( 0x400000, REGION_SOUND1, ROMREGION_SOUNDONLY )	/* Samples */
-		ROM_LOAD( "u6.bin", 0x000000, 0x200000, 0x9dfdafaf )
-		ROM_LOAD( "u7.bin", 0x200000, 0x200000, 0x795b17d5 )
-	ROM_END
+		ROM_REGION( 0x400000, REGION_SOUND1, ROMREGION_SOUNDONLY );/* Samples */
+		ROM_LOAD( "u6.bin", 0x000000, 0x200000, 0x9dfdafaf );
+		ROM_LOAD( "u7.bin", 0x200000, 0x200000, 0x795b17d5 );
+	ROM_END(); }}; 
 	
 	
 	/***************************************************************************
@@ -2219,32 +2219,32 @@ public class cave
 	
 	***************************************************************************/
 	
-	ROM_START( donpachi )
-		ROM_REGION( 0x080000, REGION_CPU1, 0 )		/* 68000 code */
+	static RomLoadPtr rom_donpachi = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x080000, REGION_CPU1, 0 );	/* 68000 code */
 		ROM_LOAD16_WORD_SWAP( "prg.u29",     0x00000, 0x80000, 0x6be14af6 )
 	
-		ROM_REGION( 0x100000, REGION_GFX1, ROMREGION_DISPOSE )	/* Layer 0 */
-		ROM_LOAD( "atdp.u54", 0x000000, 0x100000, 0x6bda6b66 )
+		ROM_REGION( 0x100000, REGION_GFX1, ROMREGION_DISPOSE );/* Layer 0 */
+		ROM_LOAD( "atdp.u54", 0x000000, 0x100000, 0x6bda6b66 );
 	
-		ROM_REGION( 0x100000, REGION_GFX2, ROMREGION_DISPOSE )	/* Layer 1 */
-		ROM_LOAD( "atdp.u57", 0x000000, 0x100000, 0x0a0e72b9 )
+		ROM_REGION( 0x100000, REGION_GFX2, ROMREGION_DISPOSE );/* Layer 1 */
+		ROM_LOAD( "atdp.u57", 0x000000, 0x100000, 0x0a0e72b9 );
 	
-		ROM_REGION( 0x040000, REGION_GFX3, ROMREGION_DISPOSE )	/* Layer 2 */
-		ROM_LOAD( "u58.bin", 0x000000, 0x040000, 0x285379ff )
+		ROM_REGION( 0x040000, REGION_GFX3, ROMREGION_DISPOSE );/* Layer 2 */
+		ROM_LOAD( "u58.bin", 0x000000, 0x040000, 0x285379ff );
 	
-		ROM_REGION( 0x400000 * 2, REGION_GFX4, 0 )		/* Sprites (do not dispose) */
-		ROM_LOAD( "atdp.u44", 0x000000, 0x200000, 0x7189e953 )
-		ROM_LOAD( "atdp.u45", 0x200000, 0x200000, 0x6984173f )
+		ROM_REGION( 0x400000 * 2, REGION_GFX4, 0 );	/* Sprites (do not dispose) */
+		ROM_LOAD( "atdp.u44", 0x000000, 0x200000, 0x7189e953 );
+		ROM_LOAD( "atdp.u45", 0x200000, 0x200000, 0x6984173f );
 	
-		ROM_REGION( 0x240000, REGION_SOUND1, ROMREGION_SOUNDONLY )	/* OKIM6295 #1 Samples */
+		ROM_REGION( 0x240000, REGION_SOUND1, ROMREGION_SOUNDONLY );/* OKIM6295 #1 Samples */
 		/* Leave the 0x40000 bytes addressable by the chip empty */
-		ROM_LOAD( "atdp.u33", 0x040000, 0x200000, 0xd749de00 )
+		ROM_LOAD( "atdp.u33", 0x040000, 0x200000, 0xd749de00 );
 	
-		ROM_REGION( 0x340000, REGION_SOUND2, ROMREGION_SOUNDONLY )	/* OKIM6295 #2 Samples */
+		ROM_REGION( 0x340000, REGION_SOUND2, ROMREGION_SOUNDONLY );/* OKIM6295 #2 Samples */
 		/* Leave the 0x40000 bytes addressable by the chip empty */
-		ROM_LOAD( "atdp.u32", 0x040000, 0x100000, 0x0d89fcca )
-		ROM_LOAD( "atdp.u33", 0x140000, 0x200000, 0xd749de00 )
-	ROM_END
+		ROM_LOAD( "atdp.u32", 0x040000, 0x100000, 0x0d89fcca );
+		ROM_LOAD( "atdp.u33", 0x140000, 0x200000, 0xd749de00 );
+	ROM_END(); }}; 
 	
 	
 	/***************************************************************************
@@ -2256,31 +2256,31 @@ public class cave
 	
 	***************************************************************************/
 	
-	ROM_START( esprade )
-		ROM_REGION( 0x100000, REGION_CPU1, 0 )		/* 68000 Code */
-		ROM_LOAD16_BYTE( "u42.bin", 0x000000, 0x080000, 0x0718c7e5 )
-		ROM_LOAD16_BYTE( "u41.bin", 0x000001, 0x080000, 0xdef30539 )
+	static RomLoadPtr rom_esprade = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x100000, REGION_CPU1, 0 );	/* 68000 Code */
+		ROM_LOAD16_BYTE( "u42.bin", 0x000000, 0x080000, 0x0718c7e5 );
+		ROM_LOAD16_BYTE( "u41.bin", 0x000001, 0x080000, 0xdef30539 );
 	
-		ROM_REGION( 0x800000, REGION_GFX1, ROMREGION_DISPOSE )	/* Layer 0 */
-		ROM_LOAD( "u54.bin", 0x000000, 0x400000, 0xe7ca6936 )
-		ROM_LOAD( "u55.bin", 0x400000, 0x400000, 0xf53bd94f )
+		ROM_REGION( 0x800000, REGION_GFX1, ROMREGION_DISPOSE );/* Layer 0 */
+		ROM_LOAD( "u54.bin", 0x000000, 0x400000, 0xe7ca6936 );
+		ROM_LOAD( "u55.bin", 0x400000, 0x400000, 0xf53bd94f );
 	
-		ROM_REGION( 0x800000, REGION_GFX2, ROMREGION_DISPOSE )	/* Layer 1 */
-		ROM_LOAD( "u52.bin", 0x000000, 0x400000, 0xe7abe7b4 )
-		ROM_LOAD( "u53.bin", 0x400000, 0x400000, 0x51a0f391 )
+		ROM_REGION( 0x800000, REGION_GFX2, ROMREGION_DISPOSE );/* Layer 1 */
+		ROM_LOAD( "u52.bin", 0x000000, 0x400000, 0xe7abe7b4 );
+		ROM_LOAD( "u53.bin", 0x400000, 0x400000, 0x51a0f391 );
 	
-		ROM_REGION( 0x400000, REGION_GFX3, ROMREGION_DISPOSE )	/* Layer 2 */
-		ROM_LOAD( "u51.bin", 0x000000, 0x400000, 0x0b9b875c )
+		ROM_REGION( 0x400000, REGION_GFX3, ROMREGION_DISPOSE );/* Layer 2 */
+		ROM_LOAD( "u51.bin", 0x000000, 0x400000, 0x0b9b875c );
 	
-		ROM_REGION( 0x1000000, REGION_GFX4, 0 )		/* Sprites (do not dispose) */
-		ROM_LOAD16_BYTE( "u63.bin", 0x000000, 0x400000, 0x2f2fe92c )
-		ROM_LOAD16_BYTE( "u64.bin", 0x000001, 0x400000, 0x491a3da4 )
-		ROM_LOAD16_BYTE( "u65.bin", 0x800000, 0x400000, 0x06563efe )
-		ROM_LOAD16_BYTE( "u66.bin", 0x800001, 0x400000, 0x7bbe4cfc )
+		ROM_REGION( 0x1000000, REGION_GFX4, 0 );	/* Sprites (do not dispose) */
+		ROM_LOAD16_BYTE( "u63.bin", 0x000000, 0x400000, 0x2f2fe92c );
+		ROM_LOAD16_BYTE( "u64.bin", 0x000001, 0x400000, 0x491a3da4 );
+		ROM_LOAD16_BYTE( "u65.bin", 0x800000, 0x400000, 0x06563efe );
+		ROM_LOAD16_BYTE( "u66.bin", 0x800001, 0x400000, 0x7bbe4cfc );
 	
-		ROM_REGION( 0x400000, REGION_SOUND1, ROMREGION_SOUNDONLY )	/* Samples */
-		ROM_LOAD( "u19.bin", 0x000000, 0x400000, 0xf54b1cab )
-	ROM_END
+		ROM_REGION( 0x400000, REGION_SOUND1, ROMREGION_SOUNDONLY );/* Samples */
+		ROM_LOAD( "u19.bin", 0x000000, 0x400000, 0xf54b1cab );
+	ROM_END(); }}; 
 	
 	
 	/***************************************************************************
@@ -2296,38 +2296,38 @@ public class cave
 	
 	***************************************************************************/
 	
-	ROM_START( guwange )
-		ROM_REGION( 0x100000, REGION_CPU1, 0 )		/* 68000 Code */
-		ROM_LOAD16_BYTE( "gu-u0127.bin", 0x000000, 0x080000, 0xf86b5293 )
-		ROM_LOAD16_BYTE( "gu-u0129.bin", 0x000001, 0x080000, 0x6c0e3b93 )
+	static RomLoadPtr rom_guwange = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x100000, REGION_CPU1, 0 );	/* 68000 Code */
+		ROM_LOAD16_BYTE( "gu-u0127.bin", 0x000000, 0x080000, 0xf86b5293 );
+		ROM_LOAD16_BYTE( "gu-u0129.bin", 0x000001, 0x080000, 0x6c0e3b93 );
 	
-		ROM_REGION( 0x800000, REGION_GFX1, ROMREGION_DISPOSE )	/* Layer 0 */
-		ROM_LOAD( "u101.bin", 0x000000, 0x800000, 0x0369491f )
+		ROM_REGION( 0x800000, REGION_GFX1, ROMREGION_DISPOSE );/* Layer 0 */
+		ROM_LOAD( "u101.bin", 0x000000, 0x800000, 0x0369491f );
 	
-		ROM_REGION( 0x400000, REGION_GFX2, ROMREGION_DISPOSE )	/* Layer 1 */
-		ROM_LOAD( "u10102.bin", 0x000000, 0x400000, 0xe28d6855 )
+		ROM_REGION( 0x400000, REGION_GFX2, ROMREGION_DISPOSE );/* Layer 1 */
+		ROM_LOAD( "u10102.bin", 0x000000, 0x400000, 0xe28d6855 );
 	
-		ROM_REGION( 0x400000, REGION_GFX3, ROMREGION_DISPOSE )	/* Layer 2 */
-		ROM_LOAD( "u10103.bin", 0x000000, 0x400000, 0x0fe91b8e )
+		ROM_REGION( 0x400000, REGION_GFX3, ROMREGION_DISPOSE );/* Layer 2 */
+		ROM_LOAD( "u10103.bin", 0x000000, 0x400000, 0x0fe91b8e );
 	
-		ROM_REGION( 0x2000000, REGION_GFX4, 0 )		/* Sprites (do not dispose) */		//ks
-		ROM_LOAD16_BYTE( "u083.bin", 0x0000000, 0x800000, 0xadc4b9c4 )
-		ROM_LOAD16_BYTE( "u082.bin", 0x0000001, 0x800000, 0x3d75876c )
-		ROM_LOAD16_BYTE( "u086.bin", 0x1000000, 0x400000, 0x188e4f81 )
-		ROM_LOAD16_BYTE( "u085.bin", 0x1000001, 0x400000, 0xa7d5659e )
+		ROM_REGION( 0x2000000, REGION_GFX4, 0 );	/* Sprites (do not dispose) */		//ks
+		ROM_LOAD16_BYTE( "u083.bin", 0x0000000, 0x800000, 0xadc4b9c4 );
+		ROM_LOAD16_BYTE( "u082.bin", 0x0000001, 0x800000, 0x3d75876c );
+		ROM_LOAD16_BYTE( "u086.bin", 0x1000000, 0x400000, 0x188e4f81 );
+		ROM_LOAD16_BYTE( "u085.bin", 0x1000001, 0x400000, 0xa7d5659e );
 	//ks s
 	#if 0		//sprite bug fix?
-		ROM_FILL(                    0x1800000, 0x400000, 0xff )
-		ROM_FILL(                    0x1800001, 0x400000, 0xff )
+		ROM_FILL(                    0x1800000, 0x400000, 0xff );
+		ROM_FILL(                    0x1800001, 0x400000, 0xff );
 	#else
-		ROM_RELOAD(                  0x1800000, 0x400000 )
-		ROM_RELOAD(                  0x1800001, 0x400000 )
+		ROM_RELOAD(                  0x1800000, 0x400000 );
+		ROM_RELOAD(                  0x1800001, 0x400000 );
 	#endif
 	//ks e
 	
-		ROM_REGION( 0x400000, REGION_SOUND1, ROMREGION_SOUNDONLY )	/* Samples */
-		ROM_LOAD( "u0462.bin", 0x000000, 0x400000, 0xb3d75691 )
-	ROM_END
+		ROM_REGION( 0x400000, REGION_SOUND1, ROMREGION_SOUNDONLY );/* Samples */
+		ROM_LOAD( "u0462.bin", 0x000000, 0x400000, 0xb3d75691 );
+	ROM_END(); }}; 
 	
 	
 	/***************************************************************************
@@ -2351,32 +2351,32 @@ public class cave
 	
 	***************************************************************************/
 	
-	ROM_START( hotdogst )
-		ROM_REGION( 0x100000, REGION_CPU1, 0 )	/* 68000 code */
-		ROM_LOAD16_BYTE( "mp3u29", 0x00000, 0x80000, 0x1f4e5479 )
-		ROM_LOAD16_BYTE( "mp4u28", 0x00001, 0x80000, 0x6f1c3c4b )
+	static RomLoadPtr rom_hotdogst = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x100000, REGION_CPU1, 0 );/* 68000 code */
+		ROM_LOAD16_BYTE( "mp3u29", 0x00000, 0x80000, 0x1f4e5479 );
+		ROM_LOAD16_BYTE( "mp4u28", 0x00001, 0x80000, 0x6f1c3c4b );
 	
-		ROM_REGION( 0x48000, REGION_CPU2, 0 )	/* Z80 code */
-		ROM_LOAD( "mp2u19", 0x00000, 0x08000, 0xff979ebe )	// FIRST AND SECOND HALF IDENTICAL
-		ROM_CONTINUE(       0x10000, 0x38000             )
+		ROM_REGION( 0x48000, REGION_CPU2, 0 );/* Z80 code */
+		ROM_LOAD( "mp2u19", 0x00000, 0x08000, 0xff979ebe );// FIRST AND SECOND HALF IDENTICAL
+		ROM_CONTINUE(       0x10000, 0x38000             );
 	
-		ROM_REGION( 0x80000, REGION_GFX1, ROMREGION_DISPOSE )	/* Layer 0 */
-		ROM_LOAD( "mp7u56", 0x00000, 0x80000, 0x87c21c50 )
+		ROM_REGION( 0x80000, REGION_GFX1, ROMREGION_DISPOSE );/* Layer 0 */
+		ROM_LOAD( "mp7u56", 0x00000, 0x80000, 0x87c21c50 );
 	
-		ROM_REGION( 0x80000, REGION_GFX2, ROMREGION_DISPOSE )	/* Layer 1 */
-		ROM_LOAD( "mp6u61", 0x00000, 0x80000, 0x4dafb288 )
+		ROM_REGION( 0x80000, REGION_GFX2, ROMREGION_DISPOSE );/* Layer 1 */
+		ROM_LOAD( "mp6u61", 0x00000, 0x80000, 0x4dafb288 );
 	
-		ROM_REGION( 0x80000, REGION_GFX3, ROMREGION_DISPOSE )	/* Layer 2 */
-		ROM_LOAD( "mp5u64", 0x00000, 0x80000, 0x9b26458c )
+		ROM_REGION( 0x80000, REGION_GFX3, ROMREGION_DISPOSE );/* Layer 2 */
+		ROM_LOAD( "mp5u64", 0x00000, 0x80000, 0x9b26458c );
 	
-		ROM_REGION( 0x400000 * 2, REGION_GFX4, 0 )		/* Sprites: * 2 , do not dispose */
-		ROM_LOAD( "mp9u55", 0x000000, 0x200000, 0x258d49ec )
-		ROM_LOAD( "mp8u54", 0x200000, 0x200000, 0xbdb4d7b8 )
+		ROM_REGION( 0x400000 * 2, REGION_GFX4, 0 );	/* Sprites: * 2 , do not dispose */
+		ROM_LOAD( "mp9u55", 0x000000, 0x200000, 0x258d49ec );
+		ROM_LOAD( "mp8u54", 0x200000, 0x200000, 0xbdb4d7b8 );
 	
-		ROM_REGION( 0xc0000, REGION_SOUND1, ROMREGION_SOUNDONLY )	/* Samples */
+		ROM_REGION( 0xc0000, REGION_SOUND1, ROMREGION_SOUNDONLY );/* Samples */
 		/* Leave the 0x40000 bytes addressable by the chip empty */
-		ROM_LOAD( "mp1u65", 0x40000, 0x80000, 0x4868be1b )	// 1xxxxxxxxxxxxxxxxxx = 0xFF, 4 x 0x20000
-	ROM_END
+		ROM_LOAD( "mp1u65", 0x40000, 0x80000, 0x4868be1b );// 1xxxxxxxxxxxxxxxxxx = 0xFF, 4 x 0x20000
+	ROM_END(); }}; 
 	
 	
 	/***************************************************************************
@@ -2404,34 +2404,34 @@ public class cave
 	
 	***************************************************************************/
 	
-	ROM_START( mazinger )
-		ROM_REGION( 0x80000, REGION_CPU1, 0 )		/* 68000 code */
+	static RomLoadPtr rom_mazinger = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x80000, REGION_CPU1, 0 );	/* 68000 code */
 		ROM_LOAD16_WORD_SWAP( "mzp-0.u24", 0x00000, 0x80000, 0x43a4279f )
 	
-		ROM_REGION16_BE( 0x80000, REGION_USER1, 0 )		/* 68000 code (mapped at d00000) */
+		ROM_REGION16_BE( 0x80000, REGION_USER1, 0 );	/* 68000 code (mapped at d00000) */
 		ROM_LOAD16_WORD_SWAP( "mzp-1.924", 0x00000, 0x80000, 0xdb40acba )
 	
-		ROM_REGION( 0x28000, REGION_CPU2, 0 )		/* Z80 code */
-		ROM_LOAD( "mzs.u21", 0x00000, 0x08000, 0xc5b4f7ed )
-		ROM_CONTINUE(        0x10000, 0x18000             )
+		ROM_REGION( 0x28000, REGION_CPU2, 0 );	/* Z80 code */
+		ROM_LOAD( "mzs.u21", 0x00000, 0x08000, 0xc5b4f7ed );
+		ROM_CONTINUE(        0x10000, 0x18000             );
 	
-		ROM_REGION( 0x200000, REGION_GFX1, ROMREGION_DISPOSE )	/* Layer 0 */
-		ROM_LOAD( "bp943a-1.u60", 0x000000, 0x200000, 0x46327415 )
+		ROM_REGION( 0x200000, REGION_GFX1, ROMREGION_DISPOSE );/* Layer 0 */
+		ROM_LOAD( "bp943a-1.u60", 0x000000, 0x200000, 0x46327415 );
 	
-		ROM_REGION( 0x200000, REGION_GFX2, ROMREGION_DISPOSE )	/* Layer 1 */
-		ROM_LOAD( "bp943a-0.u63", 0x000000, 0x200000, 0xc1fed98a )	// FIXED BITS (xxxxxxxx00000000)
+		ROM_REGION( 0x200000, REGION_GFX2, ROMREGION_DISPOSE );/* Layer 1 */
+		ROM_LOAD( "bp943a-0.u63", 0x000000, 0x200000, 0xc1fed98a );// FIXED BITS (xxxxxxxx00000000)
 	
-	//	ROM_REGION( 0x200000, REGION_GFX3, ROMREGION_DISPOSE )	/* Layer 2 */
+	//	ROM_REGION( 0x200000, REGION_GFX3, ROMREGION_DISPOSE );/* Layer 2 */
 	//	empty
 	
-		ROM_REGION( 0x400000 * 2, REGION_GFX4, ROMREGION_ERASEFF )		/* Sprites: * 2 , do not dispose */
-		ROM_LOAD( "bp943a-2.u56", 0x000000, 0x200000, 0x97e13959 )
-		ROM_LOAD( "bp943a-3.u55", 0x200000, 0x080000, 0x9c4957dd )
+		ROM_REGION( 0x400000 * 2, REGION_GFX4, ROMREGION_ERASEFF );	/* Sprites: * 2 , do not dispose */
+		ROM_LOAD( "bp943a-2.u56", 0x000000, 0x200000, 0x97e13959 );
+		ROM_LOAD( "bp943a-3.u55", 0x200000, 0x080000, 0x9c4957dd );
 	
-		ROM_REGION( 0x0c0000, REGION_SOUND1, ROMREGION_SOUNDONLY )	/* Samples */
+		ROM_REGION( 0x0c0000, REGION_SOUND1, ROMREGION_SOUNDONLY );/* Samples */
 		/* Leave the 0x40000 bytes addressable by the chip empty */
-		ROM_LOAD( "bp943a-4.u64", 0x040000, 0x080000, 0x3fc7f29a )	// 4 x $20000
-	ROM_END
+		ROM_LOAD( "bp943a-4.u64", 0x040000, 0x080000, 0x3fc7f29a );// 4 x $20000
+	ROM_END(); }}; 
 	
 	
 	/***************************************************************************
@@ -2481,44 +2481,44 @@ public class cave
 	
 	***************************************************************************/
 	
-	ROM_START( metmqstr )
-		ROM_REGION( 0x280000, REGION_CPU1, 0 )		/* 68000 code */
+	static RomLoadPtr rom_metmqstr = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x280000, REGION_CPU1, 0 );	/* 68000 code */
 		ROM_LOAD16_WORD_SWAP( "bp947a.u25", 0x000000, 0x80000, 0x0a5c3442 )
 		ROM_LOAD16_WORD_SWAP( "bp947a.u28", 0x100000, 0x80000, 0x8c55decf )
 		ROM_LOAD16_WORD_SWAP( "bp947a.u29", 0x200000, 0x80000, 0xcf0f3f3b )
 	
-		ROM_REGION( 0x48000, REGION_CPU2, 0 )		/* Z80 code */
-		ROM_LOAD( "bp947a.u20",  0x00000, 0x08000, 0xa4a36170 )
-		ROM_CONTINUE(            0x10000, 0x38000             )
+		ROM_REGION( 0x48000, REGION_CPU2, 0 );	/* Z80 code */
+		ROM_LOAD( "bp947a.u20",  0x00000, 0x08000, 0xa4a36170 );
+		ROM_CONTINUE(            0x10000, 0x38000             );
 	
-		ROM_REGION( 0x100000, REGION_GFX1, ROMREGION_DISPOSE )	/* Layer 0 */
-		ROM_LOAD( "bp947a.u48", 0x000000, 0x100000, 0x04ff6a3d )	// FIRST AND SECOND HALF IDENTICAL
-		ROM_CONTINUE(           0x000000, 0x100000             )
+		ROM_REGION( 0x100000, REGION_GFX1, ROMREGION_DISPOSE );/* Layer 0 */
+		ROM_LOAD( "bp947a.u48", 0x000000, 0x100000, 0x04ff6a3d );// FIRST AND SECOND HALF IDENTICAL
+		ROM_CONTINUE(           0x000000, 0x100000             );
 	
-		ROM_REGION( 0x100000, REGION_GFX2, ROMREGION_DISPOSE )	/* Layer 1 */
-		ROM_LOAD( "bp947a.u47", 0x000000, 0x100000, 0x0de42827 )	// FIRST AND SECOND HALF IDENTICAL
-		ROM_CONTINUE(           0x000000, 0x100000             )
+		ROM_REGION( 0x100000, REGION_GFX2, ROMREGION_DISPOSE );/* Layer 1 */
+		ROM_LOAD( "bp947a.u47", 0x000000, 0x100000, 0x0de42827 );// FIRST AND SECOND HALF IDENTICAL
+		ROM_CONTINUE(           0x000000, 0x100000             );
 	
-		ROM_REGION( 0x100000, REGION_GFX3, ROMREGION_DISPOSE )	/* Layer 2 */
-		ROM_LOAD( "bp947a.u46", 0x000000, 0x100000, 0x0f9c906e )	// FIRST AND SECOND HALF IDENTICAL
-		ROM_CONTINUE(           0x000000, 0x100000             )
+		ROM_REGION( 0x100000, REGION_GFX3, ROMREGION_DISPOSE );/* Layer 2 */
+		ROM_LOAD( "bp947a.u46", 0x000000, 0x100000, 0x0f9c906e );// FIRST AND SECOND HALF IDENTICAL
+		ROM_CONTINUE(           0x000000, 0x100000             );
 	
-		ROM_REGION( 0x800000 * 2, REGION_GFX4, 0 )		/* Sprites (do not dispose) */
-		ROM_LOAD( "bp947a.u49", 0x000000, 0x200000, 0x09749531 )
-		ROM_LOAD( "bp947a.u50", 0x200000, 0x200000, 0x19cea8b2 )
-		ROM_LOAD( "bp947a.u51", 0x400000, 0x200000, 0xc19bed67 )
-		ROM_LOAD( "bp947a.u52", 0x600000, 0x200000, 0x70c64875 )
+		ROM_REGION( 0x800000 * 2, REGION_GFX4, 0 );	/* Sprites (do not dispose) */
+		ROM_LOAD( "bp947a.u49", 0x000000, 0x200000, 0x09749531 );
+		ROM_LOAD( "bp947a.u50", 0x200000, 0x200000, 0x19cea8b2 );
+		ROM_LOAD( "bp947a.u51", 0x400000, 0x200000, 0xc19bed67 );
+		ROM_LOAD( "bp947a.u52", 0x600000, 0x200000, 0x70c64875 );
 	
-		ROM_REGION( 0x140000, REGION_SOUND1, ROMREGION_SOUNDONLY )	/* OKIM6295 #1 Samples */
+		ROM_REGION( 0x140000, REGION_SOUND1, ROMREGION_SOUNDONLY );/* OKIM6295 #1 Samples */
 		/* Leave the 0x40000 bytes addressable by the chip empty */
-		ROM_LOAD( "bp947a.u42", 0x040000, 0x100000, 0x2ce8ff2a )	// FIRST AND SECOND HALF IDENTICAL
-		ROM_CONTINUE(           0x040000, 0x100000             )
+		ROM_LOAD( "bp947a.u42", 0x040000, 0x100000, 0x2ce8ff2a );// FIRST AND SECOND HALF IDENTICAL
+		ROM_CONTINUE(           0x040000, 0x100000             );
 	
-		ROM_REGION( 0x140000, REGION_SOUND2, ROMREGION_SOUNDONLY )	/* OKIM6295 #2 Samples */
+		ROM_REGION( 0x140000, REGION_SOUND2, ROMREGION_SOUNDONLY );/* OKIM6295 #2 Samples */
 		/* Leave the 0x40000 bytes addressable by the chip empty */
-		ROM_LOAD( "bp947a.u37", 0x040000, 0x100000, 0xc3077c8f )	// FIRST AND SECOND HALF IDENTICAL
-		ROM_CONTINUE(           0x040000, 0x100000             )
-	ROM_END
+		ROM_LOAD( "bp947a.u37", 0x040000, 0x100000, 0xc3077c8f );// FIRST AND SECOND HALF IDENTICAL
+		ROM_CONTINUE(           0x040000, 0x100000             );
+	ROM_END(); }}; 
 	
 	
 	/***************************************************************************
@@ -2569,46 +2569,46 @@ public class cave
 	
 	***************************************************************************/
 	
-	ROM_START( sailormn )
-		ROM_REGION( 0x400000, REGION_CPU1, 0 )		/* 68000 code */
+	static RomLoadPtr rom_sailormn = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x400000, REGION_CPU1, 0 );	/* 68000 code */
 		ROM_LOAD16_WORD_SWAP( "bpsm945a.u45", 0x000000, 0x080000, 0x898c9515 )
 		ROM_LOAD16_WORD_SWAP( "bpsm.u46",     0x200000, 0x200000, 0x32084e80 )
 	
-		ROM_REGION( 0x88000, REGION_CPU2, 0 )	/* Z80 code */
-		ROM_LOAD( "bpsm945a.u9",  0x00000, 0x08000, 0x438de548 )
-		ROM_CONTINUE(             0x10000, 0x78000             )
+		ROM_REGION( 0x88000, REGION_CPU2, 0 );/* Z80 code */
+		ROM_LOAD( "bpsm945a.u9",  0x00000, 0x08000, 0x438de548 );
+		ROM_CONTINUE(             0x10000, 0x78000             );
 	
-		ROM_REGION( 0x200000, REGION_GFX1, ROMREGION_DISPOSE )	/* Layer 0 */
-		ROM_LOAD( "bpsm.u53", 0x000000, 0x200000, 0xb9b15f83 )
+		ROM_REGION( 0x200000, REGION_GFX1, ROMREGION_DISPOSE );/* Layer 0 */
+		ROM_LOAD( "bpsm.u53", 0x000000, 0x200000, 0xb9b15f83 );
 	
-		ROM_REGION( 0x200000, REGION_GFX2, ROMREGION_DISPOSE )	/* Layer 1 */
-		ROM_LOAD( "bpsm.u54", 0x000000, 0x200000, 0x8f00679d )
+		ROM_REGION( 0x200000, REGION_GFX2, ROMREGION_DISPOSE );/* Layer 1 */
+		ROM_LOAD( "bpsm.u54", 0x000000, 0x200000, 0x8f00679d );
 	
-		ROM_REGION( (5*0x200000)*2, REGION_GFX3, ROMREGION_DISPOSE )	/* Layer 2 */
+		ROM_REGION( (5*0x200000);2, REGION_GFX3, ROMREGION_DISPOSE )	/* Layer 2 */
 		/* 4 bit part */
-		ROM_LOAD( "bpsm.u57", 0x000000, 0x200000, 0x86be7b63 )
-		ROM_LOAD( "bpsm.u58", 0x200000, 0x200000, 0xe0bba83b )
-		ROM_LOAD( "bpsm.u62", 0x400000, 0x200000, 0xa1e3bfac )
-		ROM_LOAD( "bpsm.u61", 0x600000, 0x200000, 0x6a014b52 )
-		ROM_LOAD( "bpsm.u60", 0x800000, 0x200000, 0x992468c0 )
+		ROM_LOAD( "bpsm.u57", 0x000000, 0x200000, 0x86be7b63 );
+		ROM_LOAD( "bpsm.u58", 0x200000, 0x200000, 0xe0bba83b );
+		ROM_LOAD( "bpsm.u62", 0x400000, 0x200000, 0xa1e3bfac );
+		ROM_LOAD( "bpsm.u61", 0x600000, 0x200000, 0x6a014b52 );
+		ROM_LOAD( "bpsm.u60", 0x800000, 0x200000, 0x992468c0 );
 		/* 2 bit part */
-		ROM_LOAD( "bpsm.u65", 0xa00000, 0x200000, 0xf60fb7b5 )
-		ROM_LOAD( "bpsm.u64", 0xc00000, 0x200000, 0x6559d31c )
-		ROM_LOAD( "bpsm.u63", 0xe00000, 0x100000, 0xd57a56b4 )	// FIRST AND SECOND HALF IDENTICAL
-		ROM_CONTINUE(         0xe00000, 0x100000             )
+		ROM_LOAD( "bpsm.u65", 0xa00000, 0x200000, 0xf60fb7b5 );
+		ROM_LOAD( "bpsm.u64", 0xc00000, 0x200000, 0x6559d31c );
+		ROM_LOAD( "bpsm.u63", 0xe00000, 0x100000, 0xd57a56b4 );// FIRST AND SECOND HALF IDENTICAL
+		ROM_CONTINUE(         0xe00000, 0x100000             );
 	
-		ROM_REGION( 0x400000 * 2, REGION_GFX4, 0 )		/* Sprites (do not dispose) */
-		ROM_LOAD( "bpsm.u76", 0x000000, 0x200000, 0xa243a5ba )
-		ROM_LOAD( "bpsm.u77", 0x200000, 0x200000, 0x5179a4ac )
+		ROM_REGION( 0x400000 * 2, REGION_GFX4, 0 );	/* Sprites (do not dispose) */
+		ROM_LOAD( "bpsm.u76", 0x000000, 0x200000, 0xa243a5ba );
+		ROM_LOAD( "bpsm.u77", 0x200000, 0x200000, 0x5179a4ac );
 	
-		ROM_REGION( 0x240000, REGION_SOUND1, ROMREGION_SOUNDONLY )	/* OKIM6295 #0 Samples */
+		ROM_REGION( 0x240000, REGION_SOUND1, ROMREGION_SOUNDONLY );/* OKIM6295 #0 Samples */
 		/* Leave the 0x40000 bytes addressable by the chip empty */
-		ROM_LOAD( "bpsm.u48", 0x040000, 0x200000, 0x498e4ed1 )	// 16 x $20000
+		ROM_LOAD( "bpsm.u48", 0x040000, 0x200000, 0x498e4ed1 );// 16 x $20000
 	
-		ROM_REGION( 0x0c0000, REGION_SOUND2, ROMREGION_SOUNDONLY )	/* OKIM6295 #1 Samples */
+		ROM_REGION( 0x0c0000, REGION_SOUND2, ROMREGION_SOUNDONLY );/* OKIM6295 #1 Samples */
 		/* Leave the 0x40000 bytes addressable by the chip empty */
-		ROM_LOAD( "bpsm.u47", 0x040000, 0x080000, 0x0f2901b9 )	// 4 x $20000
-	ROM_END
+		ROM_LOAD( "bpsm.u47", 0x040000, 0x080000, 0x0f2901b9 );// 4 x $20000
+	ROM_END(); }}; 
 	
 	
 	/***************************************************************************
@@ -2619,26 +2619,26 @@ public class cave
 	
 	***************************************************************************/
 	
-	ROM_START( uopoko )
-		ROM_REGION( 0x100000, REGION_CPU1, 0 )		/* 68000 Code */
-		ROM_LOAD16_BYTE( "u26j.bin", 0x000000, 0x080000, 0xe7eec050 )
-		ROM_LOAD16_BYTE( "u25j.bin", 0x000001, 0x080000, 0x68cb6211 )
+	static RomLoadPtr rom_uopoko = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x100000, REGION_CPU1, 0 );	/* 68000 Code */
+		ROM_LOAD16_BYTE( "u26j.bin", 0x000000, 0x080000, 0xe7eec050 );
+		ROM_LOAD16_BYTE( "u25j.bin", 0x000001, 0x080000, 0x68cb6211 );
 	
-		ROM_REGION( 0x400000, REGION_GFX1, ROMREGION_DISPOSE )	/* Layer 0 */
-		ROM_LOAD( "u49.bin", 0x000000, 0x400000, 0x12fb11bb )
+		ROM_REGION( 0x400000, REGION_GFX1, ROMREGION_DISPOSE );/* Layer 0 */
+		ROM_LOAD( "u49.bin", 0x000000, 0x400000, 0x12fb11bb );
 	
-	//	ROM_REGION( 0x200000, REGION_GFX2, ROMREGION_DISPOSE )	/* Layer 1 */
+	//	ROM_REGION( 0x200000, REGION_GFX2, ROMREGION_DISPOSE );/* Layer 1 */
 	//	empty
 	
-	//	ROM_REGION( 0x200000, REGION_GFX3, ROMREGION_DISPOSE )	/* Layer 2 */
+	//	ROM_REGION( 0x200000, REGION_GFX3, ROMREGION_DISPOSE );/* Layer 2 */
 	//	empty
 	
-		ROM_REGION( 0x400000 * 2, REGION_GFX4, 0 )		/* Sprites: * 2 , do not dispose */
-		ROM_LOAD( "u33.bin", 0x000000, 0x400000, 0x5d142ad2 )
+		ROM_REGION( 0x400000 * 2, REGION_GFX4, 0 );	/* Sprites: * 2 , do not dispose */
+		ROM_LOAD( "u33.bin", 0x000000, 0x400000, 0x5d142ad2 );
 	
-		ROM_REGION( 0x200000, REGION_SOUND1, ROMREGION_SOUNDONLY )	/* Samples */
-		ROM_LOAD( "u4.bin", 0x000000, 0x200000, 0xa2d0d755 )
-	ROM_END
+		ROM_REGION( 0x200000, REGION_SOUND1, ROMREGION_SOUNDONLY );/* Samples */
+		ROM_LOAD( "u4.bin", 0x000000, 0x200000, 0xa2d0d755 );
+	ROM_END(); }}; 
 	
 	
 	

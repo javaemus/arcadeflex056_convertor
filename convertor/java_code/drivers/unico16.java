@@ -575,29 +575,29 @@ public class unico16
 	
 	***************************************************************************/
 	
-	ROM_START( zeropnt )
+	static RomLoadPtr rom_zeropnt = new RomLoadPtr(){ public void handler(){ 
 	
-		ROM_REGION( 0x100000, REGION_CPU1, 0 )		/* 68000 Code */
-		ROM_LOAD16_BYTE( "zero1.bin", 0x000000, 0x080000, 0x1e599509 )
-		ROM_LOAD16_BYTE( "zero2.bin", 0x000001, 0x080000, 0x588aeef7 )
+		ROM_REGION( 0x100000, REGION_CPU1, 0 );	/* 68000 Code */
+		ROM_LOAD16_BYTE( "zero1.bin", 0x000000, 0x080000, 0x1e599509 );
+		ROM_LOAD16_BYTE( "zero2.bin", 0x000001, 0x080000, 0x588aeef7 );
 	
-		ROM_REGION( 0x800000, REGION_GFX1, ROMREGION_INVERT | ROMREGION_DISPOSE )	/* 16x16x8 Sprites */
-		ROM_LOAD( "zeromsk1.bin", 0x000000, 0x200000, 0x1f2768a3 )
-		ROM_LOAD( "zeromsk2.bin", 0x200000, 0x200000, 0xde34f33a )
-		ROM_LOAD( "zeromsk3.bin", 0x400000, 0x200000, 0xd7a657f7 )
-		ROM_LOAD( "zeromsk4.bin", 0x600000, 0x200000, 0x3aec2f8d )
+		ROM_REGION( 0x800000, REGION_GFX1, ROMREGION_INVERT | ROMREGION_DISPOSE );/* 16x16x8 Sprites */
+		ROM_LOAD( "zeromsk1.bin", 0x000000, 0x200000, 0x1f2768a3 );
+		ROM_LOAD( "zeromsk2.bin", 0x200000, 0x200000, 0xde34f33a );
+		ROM_LOAD( "zeromsk3.bin", 0x400000, 0x200000, 0xd7a657f7 );
+		ROM_LOAD( "zeromsk4.bin", 0x600000, 0x200000, 0x3aec2f8d );
 	
-		ROM_REGION( 0x800000, REGION_GFX2, ROMREGION_INVERT | ROMREGION_DISPOSE )	/* 16x16x8 Layers */
-		ROM_LOAD( "zeromsk6.bin", 0x000000, 0x200000, 0xe1e53cf0 )
-		ROM_LOAD( "zeromsk5.bin", 0x200000, 0x200000, 0x0d7d4850 )
-		ROM_LOAD( "zeromsk7.bin", 0x400000, 0x200000, 0xbb178f32 )
-		ROM_LOAD( "zeromsk8.bin", 0x600000, 0x200000, 0x672f02e5 )
+		ROM_REGION( 0x800000, REGION_GFX2, ROMREGION_INVERT | ROMREGION_DISPOSE );/* 16x16x8 Layers */
+		ROM_LOAD( "zeromsk6.bin", 0x000000, 0x200000, 0xe1e53cf0 );
+		ROM_LOAD( "zeromsk5.bin", 0x200000, 0x200000, 0x0d7d4850 );
+		ROM_LOAD( "zeromsk7.bin", 0x400000, 0x200000, 0xbb178f32 );
+		ROM_LOAD( "zeromsk8.bin", 0x600000, 0x200000, 0x672f02e5 );
 	
-		ROM_REGION( 0x80000 * 2, REGION_SOUND1, ROMREGION_SOUNDONLY )	/* Samples */
-		ROM_LOAD( "zero3.bin", 0x000000, 0x080000, 0xfd2384fa )
-		ROM_RELOAD(            0x080000, 0x080000             )
+		ROM_REGION( 0x80000 * 2, REGION_SOUND1, ROMREGION_SOUNDONLY );/* Samples */
+		ROM_LOAD( "zero3.bin", 0x000000, 0x080000, 0xfd2384fa );
+		ROM_RELOAD(            0x080000, 0x080000             );
 	
-	ROM_END
+	ROM_END(); }}; 
 	
 	
 	
@@ -612,37 +612,37 @@ public class unico16
 	
 	***************************************************************************/
 	
-	ROM_START( burglarx )
+	static RomLoadPtr rom_burglarx = new RomLoadPtr(){ public void handler(){ 
 	
-		ROM_REGION( 0x100000, REGION_CPU1, 0 )		/* 68000 Code */
-		ROM_LOAD16_BYTE( "bx-rom2.pgm", 0x000000, 0x080000, 0xf81120c8 )
-		ROM_LOAD16_BYTE( "bx-rom3.pgm", 0x000001, 0x080000, 0x080b4e82 )
+		ROM_REGION( 0x100000, REGION_CPU1, 0 );	/* 68000 Code */
+		ROM_LOAD16_BYTE( "bx-rom2.pgm", 0x000000, 0x080000, 0xf81120c8 );
+		ROM_LOAD16_BYTE( "bx-rom3.pgm", 0x000001, 0x080000, 0x080b4e82 );
 	
 		/* Notice the weird ROMs order? Pretty much bit scrambling */
-		ROM_REGION( 0x400000, REGION_GFX1, ROMREGION_INVERT | ROMREGION_DISPOSE )	/* 16x16x8 Sprites */
-		ROM_LOAD16_BYTE( "bx-rom4",  0x000000, 0x080000, 0xf74ce31f )
-		ROM_LOAD16_BYTE( "bx-rom10", 0x000001, 0x080000, 0x6f56ca23 )
-		ROM_LOAD16_BYTE( "bx-rom9",  0x100000, 0x080000, 0x33f29d79 )
-		ROM_LOAD16_BYTE( "bx-rom8",  0x100001, 0x080000, 0x24367092 )
-		ROM_LOAD16_BYTE( "bx-rom7",  0x200000, 0x080000, 0xaff6bdea )
-		ROM_LOAD16_BYTE( "bx-rom6",  0x200001, 0x080000, 0x246afed2 )
-		ROM_LOAD16_BYTE( "bx-rom11", 0x300000, 0x080000, 0x898d176a )
-		ROM_LOAD16_BYTE( "bx-rom5",  0x300001, 0x080000, 0xfdee1423 )
+		ROM_REGION( 0x400000, REGION_GFX1, ROMREGION_INVERT | ROMREGION_DISPOSE );/* 16x16x8 Sprites */
+		ROM_LOAD16_BYTE( "bx-rom4",  0x000000, 0x080000, 0xf74ce31f );
+		ROM_LOAD16_BYTE( "bx-rom10", 0x000001, 0x080000, 0x6f56ca23 );
+		ROM_LOAD16_BYTE( "bx-rom9",  0x100000, 0x080000, 0x33f29d79 );
+		ROM_LOAD16_BYTE( "bx-rom8",  0x100001, 0x080000, 0x24367092 );
+		ROM_LOAD16_BYTE( "bx-rom7",  0x200000, 0x080000, 0xaff6bdea );
+		ROM_LOAD16_BYTE( "bx-rom6",  0x200001, 0x080000, 0x246afed2 );
+		ROM_LOAD16_BYTE( "bx-rom11", 0x300000, 0x080000, 0x898d176a );
+		ROM_LOAD16_BYTE( "bx-rom5",  0x300001, 0x080000, 0xfdee1423 );
 	
-		ROM_REGION( 0x400000, REGION_GFX2, ROMREGION_INVERT | ROMREGION_DISPOSE )	/* 16x16x8 Layers */
-		ROM_LOAD16_BYTE( "bx-rom14", 0x000000, 0x080000, 0x30413373 )
-		ROM_LOAD16_BYTE( "bx-rom18", 0x000001, 0x080000, 0x8e7fc99f )
-		ROM_LOAD16_BYTE( "bx-rom19", 0x100000, 0x080000, 0xd40eabcd )
-		ROM_LOAD16_BYTE( "bx-rom15", 0x100001, 0x080000, 0x78833c75 )
-		ROM_LOAD16_BYTE( "bx-rom17", 0x200000, 0x080000, 0xf169633f )
-		ROM_LOAD16_BYTE( "bx-rom12", 0x200001, 0x080000, 0x71eb160f )
-		ROM_LOAD16_BYTE( "bx-rom13", 0x300000, 0x080000, 0xda34bbb5 )
-		ROM_LOAD16_BYTE( "bx-rom16", 0x300001, 0x080000, 0x55b28ef9 )
+		ROM_REGION( 0x400000, REGION_GFX2, ROMREGION_INVERT | ROMREGION_DISPOSE );/* 16x16x8 Layers */
+		ROM_LOAD16_BYTE( "bx-rom14", 0x000000, 0x080000, 0x30413373 );
+		ROM_LOAD16_BYTE( "bx-rom18", 0x000001, 0x080000, 0x8e7fc99f );
+		ROM_LOAD16_BYTE( "bx-rom19", 0x100000, 0x080000, 0xd40eabcd );
+		ROM_LOAD16_BYTE( "bx-rom15", 0x100001, 0x080000, 0x78833c75 );
+		ROM_LOAD16_BYTE( "bx-rom17", 0x200000, 0x080000, 0xf169633f );
+		ROM_LOAD16_BYTE( "bx-rom12", 0x200001, 0x080000, 0x71eb160f );
+		ROM_LOAD16_BYTE( "bx-rom13", 0x300000, 0x080000, 0xda34bbb5 );
+		ROM_LOAD16_BYTE( "bx-rom16", 0x300001, 0x080000, 0x55b28ef9 );
 	
-		ROM_REGION( 0x80000, REGION_SOUND1, ROMREGION_SOUNDONLY )	/* Samples */
-		ROM_LOAD( "bx-rom1.snd", 0x000000, 0x080000, 0x8ae67138 )	// 2 x 40000
+		ROM_REGION( 0x80000, REGION_SOUND1, ROMREGION_SOUNDONLY );/* Samples */
+		ROM_LOAD( "bx-rom1.snd", 0x000000, 0x080000, 0x8ae67138 );// 2 x 40000
 	
-	ROM_END
+	ROM_END(); }}; 
 	
 	
 	

@@ -384,123 +384,123 @@ public class terracre
 	
 	
 	
-	ROM_START( terracre )
-		ROM_REGION( 0x20000, REGION_CPU1, 0 )	/* 128K for 68000 code */
-		ROM_LOAD16_BYTE( "1a_4b.rom",    0x00001, 0x4000, 0x76f17479 )
-		ROM_LOAD16_BYTE( "1a_4d.rom",    0x00000, 0x4000, 0x8119f06e )
-		ROM_LOAD16_BYTE( "1a_6b.rom",    0x08001, 0x4000, 0xba4b5822 )
-		ROM_LOAD16_BYTE( "1a_6d.rom",    0x08000, 0x4000, 0xca4852f6 )
-		ROM_LOAD16_BYTE( "1a_7b.rom",    0x10001, 0x4000, 0xd0771bba )
-		ROM_LOAD16_BYTE( "1a_7d.rom",    0x10000, 0x4000, 0x029d59d9 )
-		ROM_LOAD16_BYTE( "1a_9b.rom",    0x18001, 0x4000, 0x69227b56 )
-		ROM_LOAD16_BYTE( "1a_9d.rom",    0x18000, 0x4000, 0x5a672942 )
+	static RomLoadPtr rom_terracre = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x20000, REGION_CPU1, 0 );/* 128K for 68000 code */
+		ROM_LOAD16_BYTE( "1a_4b.rom",    0x00001, 0x4000, 0x76f17479 );
+		ROM_LOAD16_BYTE( "1a_4d.rom",    0x00000, 0x4000, 0x8119f06e );
+		ROM_LOAD16_BYTE( "1a_6b.rom",    0x08001, 0x4000, 0xba4b5822 );
+		ROM_LOAD16_BYTE( "1a_6d.rom",    0x08000, 0x4000, 0xca4852f6 );
+		ROM_LOAD16_BYTE( "1a_7b.rom",    0x10001, 0x4000, 0xd0771bba );
+		ROM_LOAD16_BYTE( "1a_7d.rom",    0x10000, 0x4000, 0x029d59d9 );
+		ROM_LOAD16_BYTE( "1a_9b.rom",    0x18001, 0x4000, 0x69227b56 );
+		ROM_LOAD16_BYTE( "1a_9d.rom",    0x18000, 0x4000, 0x5a672942 );
 	
-		ROM_REGION( 0x10000, REGION_CPU2, 0 )	/* 64k for sound cpu */
-		ROM_LOAD( "2a_15b.rom",   0x0000, 0x4000, 0x604c3b11 )
-		ROM_LOAD( "2a_17b.rom",   0x4000, 0x4000, 0xaffc898d )
-		ROM_LOAD( "2a_18b.rom",   0x8000, 0x4000, 0x302dc0ab )
+		ROM_REGION( 0x10000, REGION_CPU2, 0 );/* 64k for sound cpu */
+		ROM_LOAD( "2a_15b.rom",   0x0000, 0x4000, 0x604c3b11 );
+		ROM_LOAD( "2a_17b.rom",   0x4000, 0x4000, 0xaffc898d );
+		ROM_LOAD( "2a_18b.rom",   0x8000, 0x4000, 0x302dc0ab );
 	
-		ROM_REGION( 0x02000, REGION_GFX1, ROMREGION_DISPOSE )
-		ROM_LOAD( "2a_16b.rom",   0x00000, 0x2000, 0x591a3804 ) /* tiles */
+		ROM_REGION( 0x02000, REGION_GFX1, ROMREGION_DISPOSE );
+		ROM_LOAD( "2a_16b.rom",   0x00000, 0x2000, 0x591a3804 );/* tiles */
 	
-		ROM_REGION( 0x10000, REGION_GFX2, ROMREGION_DISPOSE )
-		ROM_LOAD( "1a_15f.rom",   0x00000, 0x8000, 0x984a597f ) /* Background */
-		ROM_LOAD( "1a_17f.rom",   0x08000, 0x8000, 0x30e297ff )
+		ROM_REGION( 0x10000, REGION_GFX2, ROMREGION_DISPOSE );
+		ROM_LOAD( "1a_15f.rom",   0x00000, 0x8000, 0x984a597f );/* Background */
+		ROM_LOAD( "1a_17f.rom",   0x08000, 0x8000, 0x30e297ff );
 	
-		ROM_REGION( 0x10000, REGION_GFX3, ROMREGION_DISPOSE )
-		ROM_LOAD( "2a_6e.rom",    0x00000, 0x4000, 0xbcf7740b ) /* Sprites */
-		ROM_LOAD( "2a_7e.rom",    0x04000, 0x4000, 0xa70b565c )
-		ROM_LOAD( "2a_6g.rom",    0x08000, 0x4000, 0x4a9ec3e6 )
-		ROM_LOAD( "2a_7g.rom",    0x0c000, 0x4000, 0x450749fc )
+		ROM_REGION( 0x10000, REGION_GFX3, ROMREGION_DISPOSE );
+		ROM_LOAD( "2a_6e.rom",    0x00000, 0x4000, 0xbcf7740b );/* Sprites */
+		ROM_LOAD( "2a_7e.rom",    0x04000, 0x4000, 0xa70b565c );
+		ROM_LOAD( "2a_6g.rom",    0x08000, 0x4000, 0x4a9ec3e6 );
+		ROM_LOAD( "2a_7g.rom",    0x0c000, 0x4000, 0x450749fc );
 	
-		ROM_REGION( 0x0500, REGION_PROMS, 0 )
-		ROM_LOAD( "tc1a_10f.bin", 0x0000, 0x0100, 0xce07c544 )	/* red component */
-		ROM_LOAD( "tc1a_11f.bin", 0x0100, 0x0100, 0x566d323a )	/* green component */
-		ROM_LOAD( "tc1a_12f.bin", 0x0200, 0x0100, 0x7ea63946 )	/* blue component */
-		ROM_LOAD( "tc2a_2g.bin",  0x0300, 0x0100, 0x08609bad )	/* sprite lookup table */
-		ROM_LOAD( "tc2a_4e.bin",  0x0400, 0x0100, 0x2c43991f )	/* sprite palette bank */
-	ROM_END
-	
-	/**********************************************************/
-	/* Notes: All the roms are the same except the SOUND ROMs */
-	/**********************************************************/
-	
-	ROM_START( terracrb )
-		ROM_REGION( 0x20000, REGION_CPU1, 0 )	/* 128K for 68000 code */
-		ROM_LOAD16_BYTE( "1a_4b.rom",    0x00001, 0x4000, 0x76f17479 )
-		ROM_LOAD16_BYTE( "1a_4d.rom",    0x00000, 0x4000, 0x8119f06e )
-		ROM_LOAD16_BYTE( "1a_6b.rom",    0x08001, 0x4000, 0xba4b5822 )
-		ROM_LOAD16_BYTE( "1a_6d.rom",    0x08000, 0x4000, 0xca4852f6 )
-		ROM_LOAD16_BYTE( "1a_7b.rom",    0x10001, 0x4000, 0xd0771bba )
-		ROM_LOAD16_BYTE( "1a_7d.rom",    0x10000, 0x4000, 0x029d59d9 )
-		ROM_LOAD16_BYTE( "1a_9b.rom",    0x18001, 0x4000, 0x69227b56 )
-		ROM_LOAD16_BYTE( "1a_9d.rom",    0x18000, 0x4000, 0x5a672942 )
-	
-		ROM_REGION( 0x10000, REGION_CPU2, 0 )	/* 64k for sound cpu */
-		ROM_LOAD( "2a_15b.rom",   0x0000, 0x4000, 0x604c3b11 )
-		ROM_LOAD( "dg.12",        0x4000, 0x4000, 0x9e9b3808 )
-		ROM_LOAD( "2a_18b.rom",   0x8000, 0x4000, 0x302dc0ab )
-	
-		ROM_REGION( 0x02000, REGION_GFX1, ROMREGION_DISPOSE )
-		ROM_LOAD( "2a_16b.rom",   0x00000, 0x2000, 0x591a3804 ) /* tiles */
-	
-		ROM_REGION( 0x10000, REGION_GFX2, ROMREGION_DISPOSE )
-		ROM_LOAD( "1a_15f.rom",   0x00000, 0x8000, 0x984a597f ) /* Background */
-		ROM_LOAD( "1a_17f.rom",   0x08000, 0x8000, 0x30e297ff )
-	
-		ROM_REGION( 0x10000, REGION_GFX3, ROMREGION_DISPOSE )
-		ROM_LOAD( "2a_6e.rom",    0x00000, 0x4000, 0xbcf7740b ) /* Sprites */
-		ROM_LOAD( "2a_7e.rom",    0x04000, 0x4000, 0xa70b565c )
-		ROM_LOAD( "2a_6g.rom",    0x08000, 0x4000, 0x4a9ec3e6 )
-		ROM_LOAD( "2a_7g.rom",    0x0c000, 0x4000, 0x450749fc )
-	
-		ROM_REGION( 0x0500, REGION_PROMS, 0 )
-		ROM_LOAD( "tc1a_10f.bin", 0x0000, 0x0100, 0xce07c544 )	/* red component */
-		ROM_LOAD( "tc1a_11f.bin", 0x0100, 0x0100, 0x566d323a )	/* green component */
-		ROM_LOAD( "tc1a_12f.bin", 0x0200, 0x0100, 0x7ea63946 )	/* blue component */
-		ROM_LOAD( "tc2a_2g.bin",  0x0300, 0x0100, 0x08609bad )	/* sprite lookup table */
-		ROM_LOAD( "tc2a_4e.bin",  0x0400, 0x0100, 0x2c43991f )	/* sprite palette bank */
-	ROM_END
+		ROM_REGION( 0x0500, REGION_PROMS, 0 );
+		ROM_LOAD( "tc1a_10f.bin", 0x0000, 0x0100, 0xce07c544 );/* red component */
+		ROM_LOAD( "tc1a_11f.bin", 0x0100, 0x0100, 0x566d323a );/* green component */
+		ROM_LOAD( "tc1a_12f.bin", 0x0200, 0x0100, 0x7ea63946 );/* blue component */
+		ROM_LOAD( "tc2a_2g.bin",  0x0300, 0x0100, 0x08609bad );/* sprite lookup table */
+		ROM_LOAD( "tc2a_4e.bin",  0x0400, 0x0100, 0x2c43991f );/* sprite palette bank */
+	ROM_END(); }}; 
 	
 	/**********************************************************/
 	/* Notes: All the roms are the same except the SOUND ROMs */
 	/**********************************************************/
 	
-	ROM_START( terracra )
-		ROM_REGION( 0x20000, REGION_CPU1, 0 )	/* 128K for 68000 code */
-		ROM_LOAD16_BYTE( "1a_4b.rom",    0x00001, 0x4000, 0x76f17479 )
-		ROM_LOAD16_BYTE( "1a_4d.rom",    0x00000, 0x4000, 0x8119f06e )
-		ROM_LOAD16_BYTE( "1a_6b.rom",    0x08001, 0x4000, 0xba4b5822 )
-		ROM_LOAD16_BYTE( "1a_6d.rom",    0x08000, 0x4000, 0xca4852f6 )
-		ROM_LOAD16_BYTE( "1a_7b.rom",    0x10001, 0x4000, 0xd0771bba )
-		ROM_LOAD16_BYTE( "1a_7d.rom",    0x10000, 0x4000, 0x029d59d9 )
-		ROM_LOAD16_BYTE( "1a_9b.rom",    0x18001, 0x4000, 0x69227b56 )
-		ROM_LOAD16_BYTE( "1a_9d.rom",    0x18000, 0x4000, 0x5a672942 )
+	static RomLoadPtr rom_terracrb = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x20000, REGION_CPU1, 0 );/* 128K for 68000 code */
+		ROM_LOAD16_BYTE( "1a_4b.rom",    0x00001, 0x4000, 0x76f17479 );
+		ROM_LOAD16_BYTE( "1a_4d.rom",    0x00000, 0x4000, 0x8119f06e );
+		ROM_LOAD16_BYTE( "1a_6b.rom",    0x08001, 0x4000, 0xba4b5822 );
+		ROM_LOAD16_BYTE( "1a_6d.rom",    0x08000, 0x4000, 0xca4852f6 );
+		ROM_LOAD16_BYTE( "1a_7b.rom",    0x10001, 0x4000, 0xd0771bba );
+		ROM_LOAD16_BYTE( "1a_7d.rom",    0x10000, 0x4000, 0x029d59d9 );
+		ROM_LOAD16_BYTE( "1a_9b.rom",    0x18001, 0x4000, 0x69227b56 );
+		ROM_LOAD16_BYTE( "1a_9d.rom",    0x18000, 0x4000, 0x5a672942 );
 	
-		ROM_REGION( 0x10000, REGION_CPU2, 0 )	/* 64k to sound cpu */
-		ROM_LOAD( "tc2a_15b.bin", 0x0000, 0x4000, 0x790ddfa9 )
-		ROM_LOAD( "tc2a_17b.bin", 0x4000, 0x4000, 0xd4531113 )
+		ROM_REGION( 0x10000, REGION_CPU2, 0 );/* 64k for sound cpu */
+		ROM_LOAD( "2a_15b.rom",   0x0000, 0x4000, 0x604c3b11 );
+		ROM_LOAD( "dg.12",        0x4000, 0x4000, 0x9e9b3808 );
+		ROM_LOAD( "2a_18b.rom",   0x8000, 0x4000, 0x302dc0ab );
 	
-		ROM_REGION( 0x02000, REGION_GFX1, ROMREGION_DISPOSE )
-		ROM_LOAD( "2a_16b.rom",   0x00000, 0x2000, 0x591a3804 ) /* tiles */
+		ROM_REGION( 0x02000, REGION_GFX1, ROMREGION_DISPOSE );
+		ROM_LOAD( "2a_16b.rom",   0x00000, 0x2000, 0x591a3804 );/* tiles */
 	
-		ROM_REGION( 0x10000, REGION_GFX2, ROMREGION_DISPOSE )
-		ROM_LOAD( "1a_15f.rom",   0x00000, 0x8000, 0x984a597f ) /* Background */
-		ROM_LOAD( "1a_17f.rom",   0x08000, 0x8000, 0x30e297ff )
+		ROM_REGION( 0x10000, REGION_GFX2, ROMREGION_DISPOSE );
+		ROM_LOAD( "1a_15f.rom",   0x00000, 0x8000, 0x984a597f );/* Background */
+		ROM_LOAD( "1a_17f.rom",   0x08000, 0x8000, 0x30e297ff );
 	
-		ROM_REGION( 0x10000, REGION_GFX3, ROMREGION_DISPOSE )
-		ROM_LOAD( "2a_6e.rom",    0x00000, 0x4000, 0xbcf7740b ) /* Sprites */
-		ROM_LOAD( "2a_7e.rom",    0x04000, 0x4000, 0xa70b565c )
-		ROM_LOAD( "2a_6g.rom",    0x08000, 0x4000, 0x4a9ec3e6 )
-		ROM_LOAD( "2a_7g.rom",    0x0c000, 0x4000, 0x450749fc )
+		ROM_REGION( 0x10000, REGION_GFX3, ROMREGION_DISPOSE );
+		ROM_LOAD( "2a_6e.rom",    0x00000, 0x4000, 0xbcf7740b );/* Sprites */
+		ROM_LOAD( "2a_7e.rom",    0x04000, 0x4000, 0xa70b565c );
+		ROM_LOAD( "2a_6g.rom",    0x08000, 0x4000, 0x4a9ec3e6 );
+		ROM_LOAD( "2a_7g.rom",    0x0c000, 0x4000, 0x450749fc );
 	
-		ROM_REGION( 0x0500, REGION_PROMS, 0 )
-		ROM_LOAD( "tc1a_10f.bin", 0x0000, 0x0100, 0xce07c544 )	/* red component */
-		ROM_LOAD( "tc1a_11f.bin", 0x0100, 0x0100, 0x566d323a )	/* green component */
-		ROM_LOAD( "tc1a_12f.bin", 0x0200, 0x0100, 0x7ea63946 )	/* blue component */
-		ROM_LOAD( "tc2a_2g.bin",  0x0300, 0x0100, 0x08609bad )	/* sprite lookup table */
-		ROM_LOAD( "tc2a_4e.bin",  0x0400, 0x0100, 0x2c43991f )	/* sprite palette bank */
-	ROM_END
+		ROM_REGION( 0x0500, REGION_PROMS, 0 );
+		ROM_LOAD( "tc1a_10f.bin", 0x0000, 0x0100, 0xce07c544 );/* red component */
+		ROM_LOAD( "tc1a_11f.bin", 0x0100, 0x0100, 0x566d323a );/* green component */
+		ROM_LOAD( "tc1a_12f.bin", 0x0200, 0x0100, 0x7ea63946 );/* blue component */
+		ROM_LOAD( "tc2a_2g.bin",  0x0300, 0x0100, 0x08609bad );/* sprite lookup table */
+		ROM_LOAD( "tc2a_4e.bin",  0x0400, 0x0100, 0x2c43991f );/* sprite palette bank */
+	ROM_END(); }}; 
+	
+	/**********************************************************/
+	/* Notes: All the roms are the same except the SOUND ROMs */
+	/**********************************************************/
+	
+	static RomLoadPtr rom_terracra = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x20000, REGION_CPU1, 0 );/* 128K for 68000 code */
+		ROM_LOAD16_BYTE( "1a_4b.rom",    0x00001, 0x4000, 0x76f17479 );
+		ROM_LOAD16_BYTE( "1a_4d.rom",    0x00000, 0x4000, 0x8119f06e );
+		ROM_LOAD16_BYTE( "1a_6b.rom",    0x08001, 0x4000, 0xba4b5822 );
+		ROM_LOAD16_BYTE( "1a_6d.rom",    0x08000, 0x4000, 0xca4852f6 );
+		ROM_LOAD16_BYTE( "1a_7b.rom",    0x10001, 0x4000, 0xd0771bba );
+		ROM_LOAD16_BYTE( "1a_7d.rom",    0x10000, 0x4000, 0x029d59d9 );
+		ROM_LOAD16_BYTE( "1a_9b.rom",    0x18001, 0x4000, 0x69227b56 );
+		ROM_LOAD16_BYTE( "1a_9d.rom",    0x18000, 0x4000, 0x5a672942 );
+	
+		ROM_REGION( 0x10000, REGION_CPU2, 0 );/* 64k to sound cpu */
+		ROM_LOAD( "tc2a_15b.bin", 0x0000, 0x4000, 0x790ddfa9 );
+		ROM_LOAD( "tc2a_17b.bin", 0x4000, 0x4000, 0xd4531113 );
+	
+		ROM_REGION( 0x02000, REGION_GFX1, ROMREGION_DISPOSE );
+		ROM_LOAD( "2a_16b.rom",   0x00000, 0x2000, 0x591a3804 );/* tiles */
+	
+		ROM_REGION( 0x10000, REGION_GFX2, ROMREGION_DISPOSE );
+		ROM_LOAD( "1a_15f.rom",   0x00000, 0x8000, 0x984a597f );/* Background */
+		ROM_LOAD( "1a_17f.rom",   0x08000, 0x8000, 0x30e297ff );
+	
+		ROM_REGION( 0x10000, REGION_GFX3, ROMREGION_DISPOSE );
+		ROM_LOAD( "2a_6e.rom",    0x00000, 0x4000, 0xbcf7740b );/* Sprites */
+		ROM_LOAD( "2a_7e.rom",    0x04000, 0x4000, 0xa70b565c );
+		ROM_LOAD( "2a_6g.rom",    0x08000, 0x4000, 0x4a9ec3e6 );
+		ROM_LOAD( "2a_7g.rom",    0x0c000, 0x4000, 0x450749fc );
+	
+		ROM_REGION( 0x0500, REGION_PROMS, 0 );
+		ROM_LOAD( "tc1a_10f.bin", 0x0000, 0x0100, 0xce07c544 );/* red component */
+		ROM_LOAD( "tc1a_11f.bin", 0x0100, 0x0100, 0x566d323a );/* green component */
+		ROM_LOAD( "tc1a_12f.bin", 0x0200, 0x0100, 0x7ea63946 );/* blue component */
+		ROM_LOAD( "tc2a_2g.bin",  0x0300, 0x0100, 0x08609bad );/* sprite lookup table */
+		ROM_LOAD( "tc2a_4e.bin",  0x0400, 0x0100, 0x2c43991f );/* sprite palette bank */
+	ROM_END(); }}; 
 	
 	
 	

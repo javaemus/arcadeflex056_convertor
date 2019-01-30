@@ -392,57 +392,57 @@ public class galspnbl
 	
 	***************************************************************************/
 	
-	ROM_START( galspnbl )
-		ROM_REGION( 0x400000, REGION_CPU1, 0 )	/* 68000 code */
-		ROM_LOAD16_BYTE( "7.rom",        0x000000, 0x80000, 0xce0189bf )
-		ROM_LOAD16_BYTE( "3.rom",        0x000001, 0x80000, 0x9b0a8744 )
-		ROM_LOAD16_BYTE( "8.rom",        0x100000, 0x80000, 0xeee2f087 )
-		ROM_LOAD16_BYTE( "4.rom",        0x100001, 0x80000, 0x56298489 )
-		ROM_LOAD16_BYTE( "9.rom",        0x200000, 0x80000, 0xd9e4964c )
-		ROM_LOAD16_BYTE( "5.rom",        0x200001, 0x80000, 0xa5e71ee4 )
-		ROM_LOAD16_BYTE( "10.rom",       0x300000, 0x80000, 0x3a20e1e5 )
-		ROM_LOAD16_BYTE( "6.rom",        0x300001, 0x80000, 0x94927d20 )
+	static RomLoadPtr rom_galspnbl = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x400000, REGION_CPU1, 0 );/* 68000 code */
+		ROM_LOAD16_BYTE( "7.rom",        0x000000, 0x80000, 0xce0189bf );
+		ROM_LOAD16_BYTE( "3.rom",        0x000001, 0x80000, 0x9b0a8744 );
+		ROM_LOAD16_BYTE( "8.rom",        0x100000, 0x80000, 0xeee2f087 );
+		ROM_LOAD16_BYTE( "4.rom",        0x100001, 0x80000, 0x56298489 );
+		ROM_LOAD16_BYTE( "9.rom",        0x200000, 0x80000, 0xd9e4964c );
+		ROM_LOAD16_BYTE( "5.rom",        0x200001, 0x80000, 0xa5e71ee4 );
+		ROM_LOAD16_BYTE( "10.rom",       0x300000, 0x80000, 0x3a20e1e5 );
+		ROM_LOAD16_BYTE( "6.rom",        0x300001, 0x80000, 0x94927d20 );
 	
-		ROM_REGION( 0x10000, REGION_CPU2, 0 )	/* Z80 code */
-		ROM_LOAD( "2.rom",        0x0000, 0x10000, 0xfae688a7 )
+		ROM_REGION( 0x10000, REGION_CPU2, 0 );/* Z80 code */
+		ROM_LOAD( "2.rom",        0x0000, 0x10000, 0xfae688a7 );
 	
-		ROM_REGION( 0x80000, REGION_GFX1, ROMREGION_DISPOSE )
-		ROM_LOAD( "17.rom",       0x00000, 0x40000, 0x7d435701 )
-		ROM_LOAD( "18.rom",       0x40000, 0x40000, 0x136adaac )
+		ROM_REGION( 0x80000, REGION_GFX1, ROMREGION_DISPOSE );
+		ROM_LOAD( "17.rom",       0x00000, 0x40000, 0x7d435701 );
+		ROM_LOAD( "18.rom",       0x40000, 0x40000, 0x136adaac );
 	
-		ROM_REGION( 0x40000, REGION_GFX2, ROMREGION_DISPOSE )
-		ROM_LOAD( "15.rom",       0x00000, 0x20000, 0x4beb840d )
-		ROM_LOAD( "16.rom",       0x20000, 0x20000, 0x93d3c610 )
+		ROM_REGION( 0x40000, REGION_GFX2, ROMREGION_DISPOSE );
+		ROM_LOAD( "15.rom",       0x00000, 0x20000, 0x4beb840d );
+		ROM_LOAD( "16.rom",       0x20000, 0x20000, 0x93d3c610 );
 	
-		ROM_REGION( 0x40000, REGION_SOUND1, 0 )	/* OKIM6295 samples */
-		ROM_LOAD( "1.rom",        0x00000, 0x40000, 0x93c06d3d )
-	ROM_END
+		ROM_REGION( 0x40000, REGION_SOUND1, 0 );/* OKIM6295 samples */
+		ROM_LOAD( "1.rom",        0x00000, 0x40000, 0x93c06d3d );
+	ROM_END(); }}; 
 	
-	ROM_START( hotpinbl )
-		ROM_REGION( 0x400000, REGION_CPU1, 0 )	/* 68000 code */
-		ROM_LOAD16_BYTE( "hp_07.bin",    0x000000, 0x80000, 0x978cc13e )
-		ROM_LOAD16_BYTE( "hp_03.bin",    0x000001, 0x80000, 0x68388726 )
-		ROM_LOAD16_BYTE( "hp_08.bin",    0x100000, 0x80000, 0xbd16be12 )
-		ROM_LOAD16_BYTE( "hp_04.bin",    0x100001, 0x80000, 0x655b0cf0 )
-		ROM_LOAD16_BYTE( "hp_09.bin",    0x200000, 0x80000, 0xa6368624 )
-		ROM_LOAD16_BYTE( "hp_05.bin",    0x200001, 0x80000, 0x48efd028 )
-		ROM_LOAD16_BYTE( "hp_10.bin",    0x300000, 0x80000, 0xa5c63e34 )
-		ROM_LOAD16_BYTE( "hp_06.bin",    0x300001, 0x80000, 0x513eda91 )
+	static RomLoadPtr rom_hotpinbl = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x400000, REGION_CPU1, 0 );/* 68000 code */
+		ROM_LOAD16_BYTE( "hp_07.bin",    0x000000, 0x80000, 0x978cc13e );
+		ROM_LOAD16_BYTE( "hp_03.bin",    0x000001, 0x80000, 0x68388726 );
+		ROM_LOAD16_BYTE( "hp_08.bin",    0x100000, 0x80000, 0xbd16be12 );
+		ROM_LOAD16_BYTE( "hp_04.bin",    0x100001, 0x80000, 0x655b0cf0 );
+		ROM_LOAD16_BYTE( "hp_09.bin",    0x200000, 0x80000, 0xa6368624 );
+		ROM_LOAD16_BYTE( "hp_05.bin",    0x200001, 0x80000, 0x48efd028 );
+		ROM_LOAD16_BYTE( "hp_10.bin",    0x300000, 0x80000, 0xa5c63e34 );
+		ROM_LOAD16_BYTE( "hp_06.bin",    0x300001, 0x80000, 0x513eda91 );
 	
-		ROM_REGION( 0x10000, REGION_CPU2, 0 )	/* Z80 code */
-		ROM_LOAD( "hp_02.bin",    0x0000, 0x10000, 0x82698269 )
+		ROM_REGION( 0x10000, REGION_CPU2, 0 );/* Z80 code */
+		ROM_LOAD( "hp_02.bin",    0x0000, 0x10000, 0x82698269 );
 	
-		ROM_REGION( 0x80000, REGION_GFX1, ROMREGION_DISPOSE )
-		ROM_LOAD( "hp_13.bin",    0x00000, 0x40000, 0xd53b64b9 )
-		ROM_LOAD( "hp_14.bin",    0x40000, 0x40000, 0x2fe3fcee )
+		ROM_REGION( 0x80000, REGION_GFX1, ROMREGION_DISPOSE );
+		ROM_LOAD( "hp_13.bin",    0x00000, 0x40000, 0xd53b64b9 );
+		ROM_LOAD( "hp_14.bin",    0x40000, 0x40000, 0x2fe3fcee );
 	
-		ROM_REGION( 0x40000, REGION_GFX2, ROMREGION_DISPOSE )
-		ROM_LOAD( "hp_11.bin",    0x00000, 0x20000, 0xdeecd7f1 )
-		ROM_LOAD( "hp_12.bin",    0x20000, 0x20000, 0x5fd603c2 )
+		ROM_REGION( 0x40000, REGION_GFX2, ROMREGION_DISPOSE );
+		ROM_LOAD( "hp_11.bin",    0x00000, 0x20000, 0xdeecd7f1 );
+		ROM_LOAD( "hp_12.bin",    0x20000, 0x20000, 0x5fd603c2 );
 	
-		ROM_REGION( 0x40000, REGION_SOUND1, 0 )	/* OKIM6295 samples */
-		ROM_LOAD( "hp_01.bin",    0x00000, 0x40000, 0x93c06d3d )
-	ROM_END
+		ROM_REGION( 0x40000, REGION_SOUND1, 0 );/* OKIM6295 samples */
+		ROM_LOAD( "hp_01.bin",    0x00000, 0x40000, 0x93c06d3d );
+	ROM_END(); }}; 
 	
 	
 	

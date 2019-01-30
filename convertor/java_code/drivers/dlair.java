@@ -269,16 +269,16 @@ public class dlair
 	
 	***************************************************************************/
 	
-	ROM_START( dlair )
-		ROM_REGION( 0x10000, REGION_CPU1, 0 )	/* 64k for code */
-		ROM_LOAD( "u45",          0x0000, 0x2000, 0x329b354a )
-		ROM_LOAD( "u46",          0x2000, 0x2000, 0x8479612b )
-		ROM_LOAD( "u47",          0x4000, 0x2000, 0x6a66f6b4 )
-		ROM_LOAD( "u48",          0x6000, 0x2000, 0x36575106 )
+	static RomLoadPtr rom_dlair = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x10000, REGION_CPU1, 0 );/* 64k for code */
+		ROM_LOAD( "u45",          0x0000, 0x2000, 0x329b354a );
+		ROM_LOAD( "u46",          0x2000, 0x2000, 0x8479612b );
+		ROM_LOAD( "u47",          0x4000, 0x2000, 0x6a66f6b4 );
+		ROM_LOAD( "u48",          0x6000, 0x2000, 0x36575106 );
 	
-		ROM_REGION( 0x2000, REGION_GFX1, ROMREGION_DISPOSE )
-		ROM_LOAD( "u33",          0x0000, 0x2000, 0xe7506d96 )
-	ROM_END
+		ROM_REGION( 0x2000, REGION_GFX1, ROMREGION_DISPOSE );
+		ROM_LOAD( "u33",          0x0000, 0x2000, 0xe7506d96 );
+	ROM_END(); }}; 
 	
 	
 	

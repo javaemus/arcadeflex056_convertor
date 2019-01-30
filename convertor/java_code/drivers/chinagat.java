@@ -739,208 +739,208 @@ public class chinagat
 	
 	***************************************************************************/
 	
-	ROM_START( chinagat )
-		ROM_REGION( 0x28000, REGION_CPU1, 0 )	/* Main CPU: 128KB for code (bankswitched using $3F01) */
-		ROM_LOAD( "cgate51.bin", 0x10000, 0x18000, 0x439a3b19 )	/* Banks 0x4000 long @ 0x4000 */
-		ROM_CONTINUE(            0x08000, 0x08000 )				/* Static code */
+	static RomLoadPtr rom_chinagat = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x28000, REGION_CPU1, 0 );/* Main CPU: 128KB for code (bankswitched using $3F01) */
+		ROM_LOAD( "cgate51.bin", 0x10000, 0x18000, 0x439a3b19 );/* Banks 0x4000 long @ 0x4000 */
+		ROM_CONTINUE(            0x08000, 0x08000 );			/* Static code */
 	
-		ROM_REGION( 0x28000, REGION_CPU2, 0 )	/* Slave CPU: 128KB for code (bankswitched using $2000) */
-		ROM_LOAD( "23j4-0.48",   0x10000, 0x18000, 0x2914af38 ) /* Banks 0x4000 long @ 0x4000 */
-		ROM_CONTINUE(            0x08000, 0x08000 )				/* Static code */
+		ROM_REGION( 0x28000, REGION_CPU2, 0 );/* Slave CPU: 128KB for code (bankswitched using $2000) */
+		ROM_LOAD( "23j4-0.48",   0x10000, 0x18000, 0x2914af38 );/* Banks 0x4000 long @ 0x4000 */
+		ROM_CONTINUE(            0x08000, 0x08000 );			/* Static code */
 	
-		ROM_REGION( 0x10000, REGION_CPU3, 0 )	/* Music CPU, 64KB */
-		ROM_LOAD( "23j0-0.40",   0x00000, 0x08000, 0x9ffcadb6 )
+		ROM_REGION( 0x10000, REGION_CPU3, 0 );/* Music CPU, 64KB */
+		ROM_LOAD( "23j0-0.40",   0x00000, 0x08000, 0x9ffcadb6 );
 	
-		ROM_REGION(0x20000, REGION_GFX1, ROMREGION_DISPOSE )	/* Text */
-		ROM_LOAD( "cgate18.bin", 0x00000, 0x20000, 0x8d88d64d )	/* 0,1,2,3 */
+		ROM_REGION(0x20000, REGION_GFX1, ROMREGION_DISPOSE );/* Text */
+		ROM_LOAD( "cgate18.bin", 0x00000, 0x20000, 0x8d88d64d );/* 0,1,2,3 */
 	
-		ROM_REGION(0x80000, REGION_GFX2, ROMREGION_DISPOSE )	/* Sprites */
-		ROM_LOAD( "23j7-0.103",  0x00000, 0x20000, 0x2f445030 )	/* 2,3 */
-		ROM_LOAD( "23j8-0.102",  0x20000, 0x20000, 0x237f725a )	/* 2,3 */
-		ROM_LOAD( "23j9-0.101",  0x40000, 0x20000, 0x8caf6097 )	/* 0,1 */
-		ROM_LOAD( "23ja-0.100",  0x60000, 0x20000, 0xf678594f )	/* 0,1 */
+		ROM_REGION(0x80000, REGION_GFX2, ROMREGION_DISPOSE );/* Sprites */
+		ROM_LOAD( "23j7-0.103",  0x00000, 0x20000, 0x2f445030 );/* 2,3 */
+		ROM_LOAD( "23j8-0.102",  0x20000, 0x20000, 0x237f725a );/* 2,3 */
+		ROM_LOAD( "23j9-0.101",  0x40000, 0x20000, 0x8caf6097 );/* 0,1 */
+		ROM_LOAD( "23ja-0.100",  0x60000, 0x20000, 0xf678594f );/* 0,1 */
 	
-		ROM_REGION(0x40000, REGION_GFX3, ROMREGION_DISPOSE )	/* Background */
-		ROM_LOAD( "a-13", 0x00000, 0x10000, 0x00000000 )		/* Where are    */
-		ROM_LOAD( "a-12", 0x10000, 0x10000, 0x00000000 )		/* these on the */
-		ROM_LOAD( "a-15", 0x20000, 0x10000, 0x00000000 )		/* real board ? */
-		ROM_LOAD( "a-14", 0x30000, 0x10000, 0x00000000 )
+		ROM_REGION(0x40000, REGION_GFX3, ROMREGION_DISPOSE );/* Background */
+		ROM_LOAD( "a-13", 0x00000, 0x10000, 0x00000000 );	/* Where are    */
+		ROM_LOAD( "a-12", 0x10000, 0x10000, 0x00000000 );	/* these on the */
+		ROM_LOAD( "a-15", 0x20000, 0x10000, 0x00000000 );	/* real board ? */
+		ROM_LOAD( "a-14", 0x30000, 0x10000, 0x00000000 );
 	
-		ROM_REGION(0x40000, REGION_SOUND1, 0 )	/* ADPCM */
-		ROM_LOAD( "23j1-0.53", 0x00000, 0x20000, 0xf91f1001 )
-		ROM_LOAD( "23j2-0.52", 0x20000, 0x20000, 0x8b6f26e9 )
+		ROM_REGION(0x40000, REGION_SOUND1, 0 );/* ADPCM */
+		ROM_LOAD( "23j1-0.53", 0x00000, 0x20000, 0xf91f1001 );
+		ROM_LOAD( "23j2-0.52", 0x20000, 0x20000, 0x8b6f26e9 );
 	
-		ROM_REGION(0x300, REGION_USER1, 0 )	/* Unknown Bipolar PROMs */
-		ROM_LOAD( "23jb-0.16", 0x000, 0x200, 0x46339529 )	/* 82S131 on video board */
-		ROM_LOAD( "23j5-0.45", 0x200, 0x100, 0xfdb130a9 )	/* 82S129 on main board */
-	ROM_END
+		ROM_REGION(0x300, REGION_USER1, 0 );/* Unknown Bipolar PROMs */
+		ROM_LOAD( "23jb-0.16", 0x000, 0x200, 0x46339529 );/* 82S131 on video board */
+		ROM_LOAD( "23j5-0.45", 0x200, 0x100, 0xfdb130a9 );/* 82S129 on main board */
+	ROM_END(); }}; 
 	
 	
-	ROM_START( saiyugou )
-		ROM_REGION( 0x28000, REGION_CPU1, 0 )	/* Main CPU: 128KB for code (bankswitched using $3F01) */
-		ROM_LOAD( "23j3-0.51",  0x10000, 0x18000, 0xaa8132a2 )	/* Banks 0x4000 long @ 0x4000 */
-		ROM_CONTINUE(           0x08000, 0x08000)				/* Static code */
+	static RomLoadPtr rom_saiyugou = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x28000, REGION_CPU1, 0 );/* Main CPU: 128KB for code (bankswitched using $3F01) */
+		ROM_LOAD( "23j3-0.51",  0x10000, 0x18000, 0xaa8132a2 );/* Banks 0x4000 long @ 0x4000 */
+		ROM_CONTINUE(           0x08000, 0x08000);			/* Static code */
 	
-		ROM_REGION( 0x28000, REGION_CPU2, 0 )	/* Slave CPU: 128KB for code (bankswitched using $2000) */
-		ROM_LOAD( "23j4-0.48",  0x10000, 0x18000, 0x2914af38 )	/* Banks 0x4000 long @ 0x4000 */
-		ROM_CONTINUE(           0x08000, 0x08000)				/* Static code */
+		ROM_REGION( 0x28000, REGION_CPU2, 0 );/* Slave CPU: 128KB for code (bankswitched using $2000) */
+		ROM_LOAD( "23j4-0.48",  0x10000, 0x18000, 0x2914af38 );/* Banks 0x4000 long @ 0x4000 */
+		ROM_CONTINUE(           0x08000, 0x08000);			/* Static code */
 	
-		ROM_REGION( 0x10000, REGION_CPU3, 0 )	/* Music CPU, 64KB */
-		ROM_LOAD( "23j0-0.40",  0x00000, 0x8000, 0x9ffcadb6 )
+		ROM_REGION( 0x10000, REGION_CPU3, 0 );/* Music CPU, 64KB */
+		ROM_LOAD( "23j0-0.40",  0x00000, 0x8000, 0x9ffcadb6 );
 	
-		ROM_REGION(0x20000, REGION_GFX1, ROMREGION_DISPOSE )	/* Text */
-		ROM_LOAD( "23j6-0.18",  0x00000, 0x20000, 0x86d33df0 )	/* 0,1,2,3 */
+		ROM_REGION(0x20000, REGION_GFX1, ROMREGION_DISPOSE );/* Text */
+		ROM_LOAD( "23j6-0.18",  0x00000, 0x20000, 0x86d33df0 );/* 0,1,2,3 */
 	
-		ROM_REGION(0x80000, REGION_GFX2, ROMREGION_DISPOSE )	/* Sprites */
-		ROM_LOAD( "23j7-0.103", 0x00000, 0x20000, 0x2f445030 )	/* 2,3 */
-		ROM_LOAD( "23j8-0.102", 0x20000, 0x20000, 0x237f725a )	/* 2,3 */
-		ROM_LOAD( "23j9-0.101", 0x40000, 0x20000, 0x8caf6097 )	/* 0,1 */
-		ROM_LOAD( "23ja-0.100", 0x60000, 0x20000, 0xf678594f )	/* 0,1 */
+		ROM_REGION(0x80000, REGION_GFX2, ROMREGION_DISPOSE );/* Sprites */
+		ROM_LOAD( "23j7-0.103", 0x00000, 0x20000, 0x2f445030 );/* 2,3 */
+		ROM_LOAD( "23j8-0.102", 0x20000, 0x20000, 0x237f725a );/* 2,3 */
+		ROM_LOAD( "23j9-0.101", 0x40000, 0x20000, 0x8caf6097 );/* 0,1 */
+		ROM_LOAD( "23ja-0.100", 0x60000, 0x20000, 0xf678594f );/* 0,1 */
 	
-		ROM_REGION(0x40000, REGION_GFX3, ROMREGION_DISPOSE )	/* Background */
-		ROM_LOAD( "a-13", 0x00000, 0x10000, 0x00000000 )
-		ROM_LOAD( "a-12", 0x10000, 0x10000, 0x00000000 )
-		ROM_LOAD( "a-15", 0x20000, 0x10000, 0x00000000 )
-		ROM_LOAD( "a-14", 0x30000, 0x10000, 0x00000000 )
+		ROM_REGION(0x40000, REGION_GFX3, ROMREGION_DISPOSE );/* Background */
+		ROM_LOAD( "a-13", 0x00000, 0x10000, 0x00000000 );
+		ROM_LOAD( "a-12", 0x10000, 0x10000, 0x00000000 );
+		ROM_LOAD( "a-15", 0x20000, 0x10000, 0x00000000 );
+		ROM_LOAD( "a-14", 0x30000, 0x10000, 0x00000000 );
 	
-		ROM_REGION(0x40000, REGION_SOUND1, 0 )	/* ADPCM */
-		ROM_LOAD( "23j1-0.53", 0x00000, 0x20000, 0xf91f1001 )
-		ROM_LOAD( "23j2-0.52", 0x20000, 0x20000, 0x8b6f26e9 )
+		ROM_REGION(0x40000, REGION_SOUND1, 0 );/* ADPCM */
+		ROM_LOAD( "23j1-0.53", 0x00000, 0x20000, 0xf91f1001 );
+		ROM_LOAD( "23j2-0.52", 0x20000, 0x20000, 0x8b6f26e9 );
 	
-		ROM_REGION(0x300, REGION_USER1, 0 )	/* Unknown Bipolar PROMs */
-		ROM_LOAD( "23jb-0.16", 0x000, 0x200, 0x46339529 )	/* 82S131 on video board */
-		ROM_LOAD( "23j5-0.45", 0x200, 0x100, 0xfdb130a9 )	/* 82S129 on main board */
-	ROM_END
+		ROM_REGION(0x300, REGION_USER1, 0 );/* Unknown Bipolar PROMs */
+		ROM_LOAD( "23jb-0.16", 0x000, 0x200, 0x46339529 );/* 82S131 on video board */
+		ROM_LOAD( "23j5-0.45", 0x200, 0x100, 0xfdb130a9 );/* 82S129 on main board */
+	ROM_END(); }}; 
 	
-	ROM_START( saiyugb1 )
-		ROM_REGION( 0x28000, REGION_CPU1, 0 )	/* Main CPU: 128KB for code (bankswitched using $3F01) */
-		ROM_LOAD( "23j3-0.51",  0x10000, 0x18000, 0xaa8132a2 )	/* Banks 0x4000 long @ 0x4000 */
+	static RomLoadPtr rom_saiyugb1 = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x28000, REGION_CPU1, 0 );/* Main CPU: 128KB for code (bankswitched using $3F01) */
+		ROM_LOAD( "23j3-0.51",  0x10000, 0x18000, 0xaa8132a2 );/* Banks 0x4000 long @ 0x4000 */
 		/* Orientation of bootleg ROMs which are split, but otherwise the same.
-		   ROM_LOAD( "a-5.bin", 0x10000, 0x10000, 0x39795aa5 )	   Banks 0x4000 long @ 0x4000
-		   ROM_LOAD( "a-9.bin", 0x20000, 0x08000, 0x051ebe92 )	   Banks 0x4000 long @ 0x4000
+		   ROM_LOAD( "a-5.bin", 0x10000, 0x10000, 0x39795aa5 );   Banks 0x4000 long @ 0x4000
+		   ROM_LOAD( "a-9.bin", 0x20000, 0x08000, 0x051ebe92 );   Banks 0x4000 long @ 0x4000
 		*/
-		ROM_CONTINUE(           0x08000, 0x08000 )				/* Static code */
+		ROM_CONTINUE(           0x08000, 0x08000 );			/* Static code */
 	
-		ROM_REGION( 0x28000, REGION_CPU2, 0 )	/* Slave CPU: 128KB for code (bankswitched using $2000) */
-		ROM_LOAD( "23j4-0.48",  0x10000, 0x18000, 0x2914af38 )	/* Banks 0x4000 long @ 0x4000 */
+		ROM_REGION( 0x28000, REGION_CPU2, 0 );/* Slave CPU: 128KB for code (bankswitched using $2000) */
+		ROM_LOAD( "23j4-0.48",  0x10000, 0x18000, 0x2914af38 );/* Banks 0x4000 long @ 0x4000 */
 		/* Orientation of bootleg ROMs which are split, but otherwise the same.
-		   ROM_LOAD( "a-4.bin", 0x10000, 0x10000, 0x9effddc1 )	   Banks 0x4000 long @ 0x4000
-		   ROM_LOAD( "a-8.bin", 0x20000, 0x08000, 0xa436edb8 )	   Banks 0x4000 long @ 0x4000
+		   ROM_LOAD( "a-4.bin", 0x10000, 0x10000, 0x9effddc1 );   Banks 0x4000 long @ 0x4000
+		   ROM_LOAD( "a-8.bin", 0x20000, 0x08000, 0xa436edb8 );   Banks 0x4000 long @ 0x4000
 		*/
-		ROM_CONTINUE(           0x08000, 0x08000 )				/* Static code */
+		ROM_CONTINUE(           0x08000, 0x08000 );			/* Static code */
 	
-		ROM_REGION( 0x10000, REGION_CPU3, 0 )	/* Music CPU, 64KB */
-		ROM_LOAD( "a-1.bin",  0x00000, 0x8000,  0x46e5a6d4 )
+		ROM_REGION( 0x10000, REGION_CPU3, 0 );/* Music CPU, 64KB */
+		ROM_LOAD( "a-1.bin",  0x00000, 0x8000,  0x46e5a6d4 );
 	
-		ROM_REGION( 0x800, REGION_CPU4, 0 )		/* ADPCM CPU, 1KB */
-		ROM_LOAD( "mcu8748.bin", 0x000, 0x400, 0x6d28d6c5 )
+		ROM_REGION( 0x800, REGION_CPU4, 0 );	/* ADPCM CPU, 1KB */
+		ROM_LOAD( "mcu8748.bin", 0x000, 0x400, 0x6d28d6c5 );
 	
-		ROM_REGION(0x20000, REGION_GFX1, ROMREGION_DISPOSE )	/* Text */
-		ROM_LOAD( "23j6-0.18",  0x00000, 0x20000, 0x86d33df0 )	/* 0,1,2,3 */
+		ROM_REGION(0x20000, REGION_GFX1, ROMREGION_DISPOSE );/* Text */
+		ROM_LOAD( "23j6-0.18",  0x00000, 0x20000, 0x86d33df0 );/* 0,1,2,3 */
 		/* Orientation of bootleg ROMs which are split, but otherwise the same.
-		   ROM_LOAD( "a-2.bin", 0x00000, 0x10000, 0xbaa5a3b9 )	   0,1
-		   ROM_LOAD( "a-3.bin", 0x10000, 0x10000, 0x532d59be )	   2,3
+		   ROM_LOAD( "a-2.bin", 0x00000, 0x10000, 0xbaa5a3b9 );   0,1
+		   ROM_LOAD( "a-3.bin", 0x10000, 0x10000, 0x532d59be );   2,3
 		*/
 	
-		ROM_REGION(0x80000, REGION_GFX2, ROMREGION_DISPOSE )	/* Sprites */
-		ROM_LOAD( "23j7-0.103",  0x00000, 0x20000, 0x2f445030 )	/* 2,3 */
-		ROM_LOAD( "23j8-0.102",  0x20000, 0x20000, 0x237f725a )	/* 2,3 */
-		ROM_LOAD( "23j9-0.101",  0x40000, 0x20000, 0x8caf6097 )	/* 0,1 */
-		ROM_LOAD( "23ja-0.100",  0x60000, 0x20000, 0xf678594f )	/* 0,1 */
+		ROM_REGION(0x80000, REGION_GFX2, ROMREGION_DISPOSE );/* Sprites */
+		ROM_LOAD( "23j7-0.103",  0x00000, 0x20000, 0x2f445030 );/* 2,3 */
+		ROM_LOAD( "23j8-0.102",  0x20000, 0x20000, 0x237f725a );/* 2,3 */
+		ROM_LOAD( "23j9-0.101",  0x40000, 0x20000, 0x8caf6097 );/* 0,1 */
+		ROM_LOAD( "23ja-0.100",  0x60000, 0x20000, 0xf678594f );/* 0,1 */
 		/* Orientation of bootleg ROMs which are split, but otherwise the same
-		   ROM_LOAD( "a-23.bin", 0x00000, 0x10000, 0x12b56225 )	   2,3
-		   ROM_LOAD( "a-22.bin", 0x10000, 0x10000, 0xb592aa9b )	   2,3
-		   ROM_LOAD( "a-21.bin", 0x20000, 0x10000, 0xa331ba3d )	   2,3
-		   ROM_LOAD( "a-20.bin", 0x30000, 0x10000, 0x2515d742 )	   2,3
-		   ROM_LOAD( "a-19.bin", 0x40000, 0x10000, 0xd796f2e4 )	   0,1
-		   ROM_LOAD( "a-18.bin", 0x50000, 0x10000, 0xc9e1c2f9 )	   0,1
-		   ROM_LOAD( "a-17.bin", 0x60000, 0x10000, 0x00b6db0a )	   0,1
-		   ROM_LOAD( "a-16.bin", 0x70000, 0x10000, 0xf196818b )	   0,1
+		   ROM_LOAD( "a-23.bin", 0x00000, 0x10000, 0x12b56225 );   2,3
+		   ROM_LOAD( "a-22.bin", 0x10000, 0x10000, 0xb592aa9b );   2,3
+		   ROM_LOAD( "a-21.bin", 0x20000, 0x10000, 0xa331ba3d );   2,3
+		   ROM_LOAD( "a-20.bin", 0x30000, 0x10000, 0x2515d742 );   2,3
+		   ROM_LOAD( "a-19.bin", 0x40000, 0x10000, 0xd796f2e4 );   0,1
+		   ROM_LOAD( "a-18.bin", 0x50000, 0x10000, 0xc9e1c2f9 );   0,1
+		   ROM_LOAD( "a-17.bin", 0x60000, 0x10000, 0x00b6db0a );   0,1
+		   ROM_LOAD( "a-16.bin", 0x70000, 0x10000, 0xf196818b );   0,1
 		*/
 	
-		ROM_REGION(0x40000, REGION_GFX3, ROMREGION_DISPOSE )	/* Background */
-		ROM_LOAD( "a-13", 0x00000, 0x10000, 0xb745cac4 )
-		ROM_LOAD( "a-12", 0x10000, 0x10000, 0x3c864299 )
-		ROM_LOAD( "a-15", 0x20000, 0x10000, 0x2f268f37 )
-		ROM_LOAD( "a-14", 0x30000, 0x10000, 0xaef814c8 )
+		ROM_REGION(0x40000, REGION_GFX3, ROMREGION_DISPOSE );/* Background */
+		ROM_LOAD( "a-13", 0x00000, 0x10000, 0xb745cac4 );
+		ROM_LOAD( "a-12", 0x10000, 0x10000, 0x3c864299 );
+		ROM_LOAD( "a-15", 0x20000, 0x10000, 0x2f268f37 );
+		ROM_LOAD( "a-14", 0x30000, 0x10000, 0xaef814c8 );
 	
 		/* Some bootlegs have incorrectly halved the ADPCM data ! */
 		/* These are same as the 128k sample except nibble-swapped */
-		ROM_REGION(0x40000, REGION_SOUND1, 0 )	/* ADPCM */		/* Bootleggers wrong data */
-		ROM_LOAD ( "a-6.bin",   0x00000, 0x10000, 0x4da4e935 )	/* 0x8000, 0x7cd47f01 */
-		ROM_LOAD ( "a-7.bin",   0x10000, 0x10000, 0x6284c254 )	/* 0x8000, 0x7091959c */
-		ROM_LOAD ( "a-10.bin",  0x20000, 0x10000, 0xb728ec6e )	/* 0x8000, 0x78349cb6 */
-		ROM_LOAD ( "a-11.bin",  0x30000, 0x10000, 0xa50d1895 )	/* 0x8000, 0xaa5b6834 */
+		ROM_REGION(0x40000, REGION_SOUND1, 0 );/* ADPCM */		/* Bootleggers wrong data */
+		ROM_LOAD ( "a-6.bin",   0x00000, 0x10000, 0x4da4e935 );/* 0x8000, 0x7cd47f01 */
+		ROM_LOAD ( "a-7.bin",   0x10000, 0x10000, 0x6284c254 );/* 0x8000, 0x7091959c */
+		ROM_LOAD ( "a-10.bin",  0x20000, 0x10000, 0xb728ec6e );/* 0x8000, 0x78349cb6 */
+		ROM_LOAD ( "a-11.bin",  0x30000, 0x10000, 0xa50d1895 );/* 0x8000, 0xaa5b6834 */
 	
-		ROM_REGION(0x300, REGION_USER1, 0 )	/* Unknown Bipolar PROMs */
-		ROM_LOAD( "23jb-0.16", 0x000, 0x200, 0x46339529 )	/* 82S131 on video board */
-		ROM_LOAD( "23j5-0.45", 0x200, 0x100, 0xfdb130a9 )	/* 82S129 on main board */
-	ROM_END
+		ROM_REGION(0x300, REGION_USER1, 0 );/* Unknown Bipolar PROMs */
+		ROM_LOAD( "23jb-0.16", 0x000, 0x200, 0x46339529 );/* 82S131 on video board */
+		ROM_LOAD( "23j5-0.45", 0x200, 0x100, 0xfdb130a9 );/* 82S129 on main board */
+	ROM_END(); }}; 
 	
-	ROM_START( saiyugb2 )
-		ROM_REGION( 0x28000, REGION_CPU1, 0 )	/* Main CPU: 128KB for code (bankswitched using $3F01) */
-		ROM_LOAD( "23j3-0.51",   0x10000, 0x18000, 0xaa8132a2 )	/* Banks 0x4000 long @ 0x4000 */
+	static RomLoadPtr rom_saiyugb2 = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x28000, REGION_CPU1, 0 );/* Main CPU: 128KB for code (bankswitched using $3F01) */
+		ROM_LOAD( "23j3-0.51",   0x10000, 0x18000, 0xaa8132a2 );/* Banks 0x4000 long @ 0x4000 */
 		/* Orientation of bootleg ROMs which are split, but otherwise the same.
-		   ROM_LOAD( "sai5.bin", 0x10000, 0x10000, 0x39795aa5 )	   Banks 0x4000 long @ 0x4000
-		   ROM_LOAD( "sai9.bin", 0x20000, 0x08000, 0x051ebe92 )	   Banks 0x4000 long @ 0x4000
+		   ROM_LOAD( "sai5.bin", 0x10000, 0x10000, 0x39795aa5 );   Banks 0x4000 long @ 0x4000
+		   ROM_LOAD( "sai9.bin", 0x20000, 0x08000, 0x051ebe92 );   Banks 0x4000 long @ 0x4000
 		*/
-		ROM_CONTINUE(            0x08000, 0x08000 )				/* Static code */
+		ROM_CONTINUE(            0x08000, 0x08000 );			/* Static code */
 	
-		ROM_REGION( 0x28000, REGION_CPU2, 0 )	/* Slave CPU: 128KB for code (bankswitched using $2000) */
-		ROM_LOAD( "23j4-0.48", 0x10000, 0x18000, 0x2914af38 )	/* Banks 0x4000 long @ 0x4000 */
+		ROM_REGION( 0x28000, REGION_CPU2, 0 );/* Slave CPU: 128KB for code (bankswitched using $2000) */
+		ROM_LOAD( "23j4-0.48", 0x10000, 0x18000, 0x2914af38 );/* Banks 0x4000 long @ 0x4000 */
 		/* Orientation of bootleg ROMs which are split, but otherwise the same.
-		   ROM_LOAD( "sai4.bin", 0x10000, 0x10000, 0x9effddc1 )	   Banks 0x4000 long @ 0x4000
-		   ROM_LOAD( "sai8.bin", 0x20000, 0x08000, 0xa436edb8 )	   Banks 0x4000 long @ 0x4000
+		   ROM_LOAD( "sai4.bin", 0x10000, 0x10000, 0x9effddc1 );   Banks 0x4000 long @ 0x4000
+		   ROM_LOAD( "sai8.bin", 0x20000, 0x08000, 0xa436edb8 );   Banks 0x4000 long @ 0x4000
 		*/
-		ROM_CONTINUE(         0x08000, 0x08000 )				/* Static code */
+		ROM_CONTINUE(         0x08000, 0x08000 );			/* Static code */
 	
-		ROM_REGION( 0x10000, REGION_CPU3, 0 )	/* Music CPU, 64KB */
-		ROM_LOAD( "sai-alt1.bin", 0x00000, 0x8000, 0x8d397a8d )
+		ROM_REGION( 0x10000, REGION_CPU3, 0 );/* Music CPU, 64KB */
+		ROM_LOAD( "sai-alt1.bin", 0x00000, 0x8000, 0x8d397a8d );
 	
-	//	ROM_REGION( 0x800, REGION_CPU4, 0 )		/* ADPCM CPU, 1KB */
-	//	ROM_LOAD( "sgr-8749.bin", 0x000, 0x800, 0x9237e8c5 ) /* same as above but padded with 00 for different mcu */
+	//	ROM_REGION( 0x800, REGION_CPU4, 0 );	/* ADPCM CPU, 1KB */
+	//	ROM_LOAD( "sgr-8749.bin", 0x000, 0x800, 0x9237e8c5 );/* same as above but padded with 00 for different mcu */
 	
-		ROM_REGION(0x20000, REGION_GFX1, ROMREGION_DISPOSE )	/* Text */
-		ROM_LOAD( "23j6-0.18", 0x00000, 0x20000, 0x86d33df0 )	/* 0,1,2,3 */
+		ROM_REGION(0x20000, REGION_GFX1, ROMREGION_DISPOSE );/* Text */
+		ROM_LOAD( "23j6-0.18", 0x00000, 0x20000, 0x86d33df0 );/* 0,1,2,3 */
 		/* Orientation of bootleg ROMs which are split, but otherwise the same.
-		   ROM_LOAD( "sai2.bin", 0x00000, 0x10000, 0xbaa5a3b9 )	   0,1
-		   ROM_LOAD( "sai3.bin", 0x10000, 0x10000, 0x532d59be )	   2,3
+		   ROM_LOAD( "sai2.bin", 0x00000, 0x10000, 0xbaa5a3b9 );   0,1
+		   ROM_LOAD( "sai3.bin", 0x10000, 0x10000, 0x532d59be );   2,3
 		*/
 	
-		ROM_REGION(0x80000, REGION_GFX2, ROMREGION_DISPOSE )	/* Sprites */
-		ROM_LOAD( "23j7-0.103",   0x00000, 0x20000, 0x2f445030 )	/* 2,3 */
-		ROM_LOAD( "23j8-0.102",   0x20000, 0x20000, 0x237f725a )	/* 2,3 */
-		ROM_LOAD( "23j9-0.101",   0x40000, 0x20000, 0x8caf6097 )	/* 0,1 */
-		ROM_LOAD( "23ja-0.100",   0x60000, 0x20000, 0xf678594f )	/* 0,1 */
+		ROM_REGION(0x80000, REGION_GFX2, ROMREGION_DISPOSE );/* Sprites */
+		ROM_LOAD( "23j7-0.103",   0x00000, 0x20000, 0x2f445030 );/* 2,3 */
+		ROM_LOAD( "23j8-0.102",   0x20000, 0x20000, 0x237f725a );/* 2,3 */
+		ROM_LOAD( "23j9-0.101",   0x40000, 0x20000, 0x8caf6097 );/* 0,1 */
+		ROM_LOAD( "23ja-0.100",   0x60000, 0x20000, 0xf678594f );/* 0,1 */
 		/* Orientation of bootleg ROMs which are split, but otherwise the same
-		   ROM_LOAD( "sai23.bin", 0x00000, 0x10000, 0x12b56225 )	   2,3
-		   ROM_LOAD( "sai22.bin", 0x10000, 0x10000, 0xb592aa9b )	   2,3
-		   ROM_LOAD( "sai21.bin", 0x20000, 0x10000, 0xa331ba3d )	   2,3
-		   ROM_LOAD( "sai20.bin", 0x30000, 0x10000, 0x2515d742 )	   2,3
-		   ROM_LOAD( "sai19.bin", 0x40000, 0x10000, 0xd796f2e4 )	   0,1
-		   ROM_LOAD( "sai18.bin", 0x50000, 0x10000, 0xc9e1c2f9 )	   0,1
-		   ROM_LOAD( "roku17.bin",0x60000, 0x10000, 0x00b6db0a )	   0,1
-		   ROM_LOAD( "sai16.bin", 0x70000, 0x10000, 0xf196818b )	   0,1
+		   ROM_LOAD( "sai23.bin", 0x00000, 0x10000, 0x12b56225 );   2,3
+		   ROM_LOAD( "sai22.bin", 0x10000, 0x10000, 0xb592aa9b );   2,3
+		   ROM_LOAD( "sai21.bin", 0x20000, 0x10000, 0xa331ba3d );   2,3
+		   ROM_LOAD( "sai20.bin", 0x30000, 0x10000, 0x2515d742 );   2,3
+		   ROM_LOAD( "sai19.bin", 0x40000, 0x10000, 0xd796f2e4 );   0,1
+		   ROM_LOAD( "sai18.bin", 0x50000, 0x10000, 0xc9e1c2f9 );   0,1
+		   ROM_LOAD( "roku17.bin",0x60000, 0x10000, 0x00b6db0a );   0,1
+		   ROM_LOAD( "sai16.bin", 0x70000, 0x10000, 0xf196818b );   0,1
 		*/
 	
-		ROM_REGION(0x40000, REGION_GFX3, ROMREGION_DISPOSE )	/* Background */
-		ROM_LOAD( "a-13", 0x00000, 0x10000, 0xb745cac4 )
-		ROM_LOAD( "a-12", 0x10000, 0x10000, 0x3c864299 )
-		ROM_LOAD( "a-15", 0x20000, 0x10000, 0x2f268f37 )
-		ROM_LOAD( "a-14", 0x30000, 0x10000, 0xaef814c8 )
+		ROM_REGION(0x40000, REGION_GFX3, ROMREGION_DISPOSE );/* Background */
+		ROM_LOAD( "a-13", 0x00000, 0x10000, 0xb745cac4 );
+		ROM_LOAD( "a-12", 0x10000, 0x10000, 0x3c864299 );
+		ROM_LOAD( "a-15", 0x20000, 0x10000, 0x2f268f37 );
+		ROM_LOAD( "a-14", 0x30000, 0x10000, 0xaef814c8 );
 	
-		ROM_REGION(0x40000, REGION_SOUND1, 0 )	/* ADPCM */
+		ROM_REGION(0x40000, REGION_SOUND1, 0 );/* ADPCM */
 		/* These are same as the 128k sample except nibble-swapped */
 		/* Some bootlegs have incorrectly halved the ADPCM data !  Bootleggers wrong data */
-		ROM_LOAD ( "a-6.bin",   0x00000, 0x10000, 0x4da4e935 )	/* 0x8000, 0x7cd47f01 */
-		ROM_LOAD ( "a-7.bin",   0x10000, 0x10000, 0x6284c254 )	/* 0x8000, 0x7091959c */
-		ROM_LOAD ( "a-10.bin",  0x20000, 0x10000, 0xb728ec6e )	/* 0x8000, 0x78349cb6 */
-		ROM_LOAD ( "a-11.bin",  0x30000, 0x10000, 0xa50d1895 )	/* 0x8000, 0xaa5b6834 */
+		ROM_LOAD ( "a-6.bin",   0x00000, 0x10000, 0x4da4e935 );/* 0x8000, 0x7cd47f01 */
+		ROM_LOAD ( "a-7.bin",   0x10000, 0x10000, 0x6284c254 );/* 0x8000, 0x7091959c */
+		ROM_LOAD ( "a-10.bin",  0x20000, 0x10000, 0xb728ec6e );/* 0x8000, 0x78349cb6 */
+		ROM_LOAD ( "a-11.bin",  0x30000, 0x10000, 0xa50d1895 );/* 0x8000, 0xaa5b6834 */
 	
-		ROM_REGION(0x300, REGION_USER1, 0 )	/* Unknown Bipolar PROMs */
-		ROM_LOAD( "23jb-0.16", 0x000, 0x200, 0x46339529 )	/* 82S131 on video board */
-		ROM_LOAD( "23j5-0.45", 0x200, 0x100, 0xfdb130a9 )	/* 82S129 on main board */
-	ROM_END
+		ROM_REGION(0x300, REGION_USER1, 0 );/* Unknown Bipolar PROMs */
+		ROM_LOAD( "23jb-0.16", 0x000, 0x200, 0x46339529 );/* 82S131 on video board */
+		ROM_LOAD( "23j5-0.45", 0x200, 0x100, 0xfdb130a9 );/* 82S129 on main board */
+	ROM_END(); }}; 
 	
 	
 	

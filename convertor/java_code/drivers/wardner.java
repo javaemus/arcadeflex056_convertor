@@ -651,164 +651,164 @@ public class wardner
 	***************************************************************************/
 	
 	
-	ROM_START( wardner )
-		ROM_REGION( 0x40000, REGION_CPU1, 0 )	/* Banked Main Z80 code */
-		ROM_LOAD( "wardner.17", 0x00000, 0x08000, 0xc5dd56fd )	/* Main Z80 code */
-		ROM_LOAD( "b25-18.rom", 0x10000, 0x10000, 0x9aab8ee2 )	/* OBJ ROMs */
-		ROM_LOAD( "b25-19.rom", 0x20000, 0x10000, 0x95b68813 )
-		ROM_LOAD( "wardner.20", 0x38000, 0x08000, 0x347f411b )
+	static RomLoadPtr rom_wardner = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x40000, REGION_CPU1, 0 );/* Banked Main Z80 code */
+		ROM_LOAD( "wardner.17", 0x00000, 0x08000, 0xc5dd56fd );/* Main Z80 code */
+		ROM_LOAD( "b25-18.rom", 0x10000, 0x10000, 0x9aab8ee2 );/* OBJ ROMs */
+		ROM_LOAD( "b25-19.rom", 0x20000, 0x10000, 0x95b68813 );
+		ROM_LOAD( "wardner.20", 0x38000, 0x08000, 0x347f411b );
 	
-		ROM_REGION( 0x10000, REGION_CPU2, 0 )	/* Sound Z80 code */
-		ROM_LOAD( "b25-16.rom", 0x00000, 0x08000, 0xe5202ff8 )
+		ROM_REGION( 0x10000, REGION_CPU2, 0 );/* Sound Z80 code */
+		ROM_LOAD( "b25-16.rom", 0x00000, 0x08000, 0xe5202ff8 );
 	
-		ROM_REGION( 0x10000, REGION_CPU3, 0 )	/* Space for Co-Processor TMS320C10 */
+		ROM_REGION( 0x10000, REGION_CPU3, 0 );/* Space for Co-Processor TMS320C10 */
 	
-		ROM_REGION( 0x1000, REGION_USER1, 0 )	/* Co-Processor TMS320C10 MCU code */
-		ROM_LOAD_NIB_HIGH( "82s137.1d",  0x0000, 0x0400, 0xcc5b3f53 ) /* msb */
-		ROM_LOAD_NIB_LOW ( "82s137.1e",  0x0000, 0x0400, 0x47351d55 )
-		ROM_LOAD_NIB_HIGH( "82s131.3b",  0x0400, 0x0200, 0x9dfffaff )
-		ROM_LOAD_NIB_LOW ( "82s131.3a",  0x0400, 0x0200, 0x712bad47 )
-		ROM_LOAD_NIB_HIGH( "82s137.3d",  0x0800, 0x0400, 0x70b537b9 ) /* lsb */
-		ROM_LOAD_NIB_LOW ( "82s137.3e",  0x0800, 0x0400, 0x6edb2de8 )
-		ROM_LOAD_NIB_HIGH( "82s131.2a",  0x0c00, 0x0200, 0xac843ca6 )
-		ROM_LOAD_NIB_LOW ( "82s131.1a",  0x0c00, 0x0200, 0x50452ff8 )
+		ROM_REGION( 0x1000, REGION_USER1, 0 );/* Co-Processor TMS320C10 MCU code */
+		ROM_LOAD_NIB_HIGH( "82s137.1d",  0x0000, 0x0400, 0xcc5b3f53 );/* msb */
+		ROM_LOAD_NIB_LOW ( "82s137.1e",  0x0000, 0x0400, 0x47351d55 );
+		ROM_LOAD_NIB_HIGH( "82s131.3b",  0x0400, 0x0200, 0x9dfffaff );
+		ROM_LOAD_NIB_LOW ( "82s131.3a",  0x0400, 0x0200, 0x712bad47 );
+		ROM_LOAD_NIB_HIGH( "82s137.3d",  0x0800, 0x0400, 0x70b537b9 );/* lsb */
+		ROM_LOAD_NIB_LOW ( "82s137.3e",  0x0800, 0x0400, 0x6edb2de8 );
+		ROM_LOAD_NIB_HIGH( "82s131.2a",  0x0c00, 0x0200, 0xac843ca6 );
+		ROM_LOAD_NIB_LOW ( "82s131.1a",  0x0c00, 0x0200, 0x50452ff8 );
 	
-		ROM_REGION( 0x0c000, REGION_GFX1, ROMREGION_DISPOSE )	/* chars */
-		ROM_LOAD( "wardner.07", 0x00000, 0x04000, 0x1392b60d )
-		ROM_LOAD( "wardner.06", 0x04000, 0x04000, 0x0ed848da )
-		ROM_LOAD( "wardner.05", 0x08000, 0x04000, 0x79792c86 )
+		ROM_REGION( 0x0c000, REGION_GFX1, ROMREGION_DISPOSE );/* chars */
+		ROM_LOAD( "wardner.07", 0x00000, 0x04000, 0x1392b60d );
+		ROM_LOAD( "wardner.06", 0x04000, 0x04000, 0x0ed848da );
+		ROM_LOAD( "wardner.05", 0x08000, 0x04000, 0x79792c86 );
 	
-		ROM_REGION( 0x20000, REGION_GFX2, ROMREGION_DISPOSE )	/* fg tiles */
-		ROM_LOAD( "b25-12.rom",  0x00000, 0x08000, 0x15d08848 )
-		ROM_LOAD( "b25-15.rom",  0x08000, 0x08000, 0xcdd2d408 )
-		ROM_LOAD( "b25-14.rom",  0x10000, 0x08000, 0x5a2aef4f )
-		ROM_LOAD( "b25-13.rom",  0x18000, 0x08000, 0xbe21db2b )
+		ROM_REGION( 0x20000, REGION_GFX2, ROMREGION_DISPOSE );/* fg tiles */
+		ROM_LOAD( "b25-12.rom",  0x00000, 0x08000, 0x15d08848 );
+		ROM_LOAD( "b25-15.rom",  0x08000, 0x08000, 0xcdd2d408 );
+		ROM_LOAD( "b25-14.rom",  0x10000, 0x08000, 0x5a2aef4f );
+		ROM_LOAD( "b25-13.rom",  0x18000, 0x08000, 0xbe21db2b );
 	
-		ROM_REGION( 0x20000, REGION_GFX3, ROMREGION_DISPOSE )	/* bg tiles */
-		ROM_LOAD( "b25-08.rom",  0x00000, 0x08000, 0x883ccaa3 )
-		ROM_LOAD( "b25-11.rom",  0x08000, 0x08000, 0xd6ebd510 )
-		ROM_LOAD( "b25-10.rom",  0x10000, 0x08000, 0xb9a61e81 )
-		ROM_LOAD( "b25-09.rom",  0x18000, 0x08000, 0x585411b7 )
+		ROM_REGION( 0x20000, REGION_GFX3, ROMREGION_DISPOSE );/* bg tiles */
+		ROM_LOAD( "b25-08.rom",  0x00000, 0x08000, 0x883ccaa3 );
+		ROM_LOAD( "b25-11.rom",  0x08000, 0x08000, 0xd6ebd510 );
+		ROM_LOAD( "b25-10.rom",  0x10000, 0x08000, 0xb9a61e81 );
+		ROM_LOAD( "b25-09.rom",  0x18000, 0x08000, 0x585411b7 );
 	
-		ROM_REGION( 0x40000, REGION_GFX4, ROMREGION_DISPOSE )	/* sprites */
-		ROM_LOAD( "b25-01.rom",  0x00000, 0x10000, 0x42ec01fb )
-		ROM_LOAD( "b25-02.rom",  0x10000, 0x10000, 0x6c0130b7 )
-		ROM_LOAD( "b25-03.rom",  0x20000, 0x10000, 0xb923db99 )
-		ROM_LOAD( "b25-04.rom",  0x30000, 0x10000, 0x8059573c )
+		ROM_REGION( 0x40000, REGION_GFX4, ROMREGION_DISPOSE );/* sprites */
+		ROM_LOAD( "b25-01.rom",  0x00000, 0x10000, 0x42ec01fb );
+		ROM_LOAD( "b25-02.rom",  0x10000, 0x10000, 0x6c0130b7 );
+		ROM_LOAD( "b25-03.rom",  0x20000, 0x10000, 0xb923db99 );
+		ROM_LOAD( "b25-04.rom",  0x30000, 0x10000, 0x8059573c );
 	
-		ROM_REGION( 0x260, REGION_PROMS, 0 )		/* nibble bproms, lo/hi order to be determined */
-		ROM_LOAD( "82s129.b19",  0x000, 0x100, 0x24e7d62f )	/* sprite priority control ?? */
-		ROM_LOAD( "82s129.b18",  0x100, 0x100, 0xa50cef09 )	/* sprite priority control ?? */
-		ROM_LOAD( "82s123.b21",  0x200, 0x020, 0xf72482db )	/* sprite control ?? */
-		ROM_LOAD( "82s123.c6",   0x220, 0x020, 0xbc88cced )	/* sprite attribute (flip/position) ?? */
-		ROM_LOAD( "82s123.f1",   0x240, 0x020, 0x4fb5df2a )	/* tile to sprite priority ?? */
-	ROM_END
+		ROM_REGION( 0x260, REGION_PROMS, 0 );	/* nibble bproms, lo/hi order to be determined */
+		ROM_LOAD( "82s129.b19",  0x000, 0x100, 0x24e7d62f );/* sprite priority control ?? */
+		ROM_LOAD( "82s129.b18",  0x100, 0x100, 0xa50cef09 );/* sprite priority control ?? */
+		ROM_LOAD( "82s123.b21",  0x200, 0x020, 0xf72482db );/* sprite control ?? */
+		ROM_LOAD( "82s123.c6",   0x220, 0x020, 0xbc88cced );/* sprite attribute (flip/position) ?? */
+		ROM_LOAD( "82s123.f1",   0x240, 0x020, 0x4fb5df2a );/* tile to sprite priority ?? */
+	ROM_END(); }}; 
 	
-	ROM_START( pyros )
-		ROM_REGION( 0x40000, REGION_CPU1, 0 )	/* Banked Z80 code */
-		ROM_LOAD( "b25-29.rom", 0x00000, 0x08000, 0xb568294d )	/* Main Z80 code */
-		ROM_LOAD( "b25-18.rom", 0x10000, 0x10000, 0x9aab8ee2 )	/* OBJ ROMs */
-		ROM_LOAD( "b25-19.rom", 0x20000, 0x10000, 0x95b68813 )
-		ROM_LOAD( "b25-30.rom", 0x38000, 0x08000, 0x5056c799 )
+	static RomLoadPtr rom_pyros = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x40000, REGION_CPU1, 0 );/* Banked Z80 code */
+		ROM_LOAD( "b25-29.rom", 0x00000, 0x08000, 0xb568294d );/* Main Z80 code */
+		ROM_LOAD( "b25-18.rom", 0x10000, 0x10000, 0x9aab8ee2 );/* OBJ ROMs */
+		ROM_LOAD( "b25-19.rom", 0x20000, 0x10000, 0x95b68813 );
+		ROM_LOAD( "b25-30.rom", 0x38000, 0x08000, 0x5056c799 );
 	
-		ROM_REGION( 0x10000, REGION_CPU2, 0 )	/* Sound Z80 code */
-		ROM_LOAD( "b25-16.rom", 0x00000, 0x08000, 0xe5202ff8 )
+		ROM_REGION( 0x10000, REGION_CPU2, 0 );/* Sound Z80 code */
+		ROM_LOAD( "b25-16.rom", 0x00000, 0x08000, 0xe5202ff8 );
 	
-		ROM_REGION( 0x10000, REGION_CPU3, 0 )	/* Space for Co-Processor TMS320C10 */
+		ROM_REGION( 0x10000, REGION_CPU3, 0 );/* Space for Co-Processor TMS320C10 */
 	
-		ROM_REGION( 0x1000, REGION_USER1, 0 )	/* Co-Processor TMS320C10 MCU code */
-		ROM_LOAD_NIB_HIGH( "82s137.1d",  0x0000, 0x0400, 0xcc5b3f53 ) /* msb */
-		ROM_LOAD_NIB_LOW ( "82s137.1e",  0x0000, 0x0400, 0x47351d55 )
-		ROM_LOAD_NIB_HIGH( "82s131.3b",  0x0400, 0x0200, 0x9dfffaff )
-		ROM_LOAD_NIB_LOW ( "82s131.3a",  0x0400, 0x0200, 0x712bad47 )
-		ROM_LOAD_NIB_HIGH( "82s137.3d",  0x0800, 0x0400, 0x70b537b9 ) /* lsb */
-		ROM_LOAD_NIB_LOW ( "82s137.3e",  0x0800, 0x0400, 0x6edb2de8 )
-		ROM_LOAD_NIB_HIGH( "82s131.2a",  0x0c00, 0x0200, 0xac843ca6 )
-		ROM_LOAD_NIB_LOW ( "82s131.1a",  0x0c00, 0x0200, 0x50452ff8 )
+		ROM_REGION( 0x1000, REGION_USER1, 0 );/* Co-Processor TMS320C10 MCU code */
+		ROM_LOAD_NIB_HIGH( "82s137.1d",  0x0000, 0x0400, 0xcc5b3f53 );/* msb */
+		ROM_LOAD_NIB_LOW ( "82s137.1e",  0x0000, 0x0400, 0x47351d55 );
+		ROM_LOAD_NIB_HIGH( "82s131.3b",  0x0400, 0x0200, 0x9dfffaff );
+		ROM_LOAD_NIB_LOW ( "82s131.3a",  0x0400, 0x0200, 0x712bad47 );
+		ROM_LOAD_NIB_HIGH( "82s137.3d",  0x0800, 0x0400, 0x70b537b9 );/* lsb */
+		ROM_LOAD_NIB_LOW ( "82s137.3e",  0x0800, 0x0400, 0x6edb2de8 );
+		ROM_LOAD_NIB_HIGH( "82s131.2a",  0x0c00, 0x0200, 0xac843ca6 );
+		ROM_LOAD_NIB_LOW ( "82s131.1a",  0x0c00, 0x0200, 0x50452ff8 );
 	
-		ROM_REGION( 0x0c000, REGION_GFX1, ROMREGION_DISPOSE )	/* chars */
-		ROM_LOAD( "b25-35.rom", 0x00000, 0x04000, 0xfec6f0c0 )
-		ROM_LOAD( "b25-34.rom", 0x04000, 0x04000, 0x02505dad )
-		ROM_LOAD( "b25-33.rom", 0x08000, 0x04000, 0x9a55fcb9 )
+		ROM_REGION( 0x0c000, REGION_GFX1, ROMREGION_DISPOSE );/* chars */
+		ROM_LOAD( "b25-35.rom", 0x00000, 0x04000, 0xfec6f0c0 );
+		ROM_LOAD( "b25-34.rom", 0x04000, 0x04000, 0x02505dad );
+		ROM_LOAD( "b25-33.rom", 0x08000, 0x04000, 0x9a55fcb9 );
 	
-		ROM_REGION( 0x20000, REGION_GFX2, ROMREGION_DISPOSE )	/* fg tiles */
-		ROM_LOAD( "b25-12.rom",  0x00000, 0x08000, 0x15d08848 )
-		ROM_LOAD( "b25-15.rom",  0x08000, 0x08000, 0xcdd2d408 )
-		ROM_LOAD( "b25-14.rom",  0x10000, 0x08000, 0x5a2aef4f )
-		ROM_LOAD( "b25-13.rom",  0x18000, 0x08000, 0xbe21db2b )
+		ROM_REGION( 0x20000, REGION_GFX2, ROMREGION_DISPOSE );/* fg tiles */
+		ROM_LOAD( "b25-12.rom",  0x00000, 0x08000, 0x15d08848 );
+		ROM_LOAD( "b25-15.rom",  0x08000, 0x08000, 0xcdd2d408 );
+		ROM_LOAD( "b25-14.rom",  0x10000, 0x08000, 0x5a2aef4f );
+		ROM_LOAD( "b25-13.rom",  0x18000, 0x08000, 0xbe21db2b );
 	
-		ROM_REGION( 0x20000, REGION_GFX3, ROMREGION_DISPOSE )	/* bg tiles */
-		ROM_LOAD( "b25-08.rom",  0x00000, 0x08000, 0x883ccaa3 )
-		ROM_LOAD( "b25-11.rom",  0x08000, 0x08000, 0xd6ebd510 )
-		ROM_LOAD( "b25-10.rom",  0x10000, 0x08000, 0xb9a61e81 )
-		ROM_LOAD( "b25-09.rom",  0x18000, 0x08000, 0x585411b7 )
+		ROM_REGION( 0x20000, REGION_GFX3, ROMREGION_DISPOSE );/* bg tiles */
+		ROM_LOAD( "b25-08.rom",  0x00000, 0x08000, 0x883ccaa3 );
+		ROM_LOAD( "b25-11.rom",  0x08000, 0x08000, 0xd6ebd510 );
+		ROM_LOAD( "b25-10.rom",  0x10000, 0x08000, 0xb9a61e81 );
+		ROM_LOAD( "b25-09.rom",  0x18000, 0x08000, 0x585411b7 );
 	
-		ROM_REGION( 0x40000, REGION_GFX4, ROMREGION_DISPOSE )	/* sprites */
-		ROM_LOAD( "b25-01.rom",  0x00000, 0x10000, 0x42ec01fb )
-		ROM_LOAD( "b25-02.rom",  0x10000, 0x10000, 0x6c0130b7 )
-		ROM_LOAD( "b25-03.rom",  0x20000, 0x10000, 0xb923db99 )
-		ROM_LOAD( "b25-04.rom",  0x30000, 0x10000, 0x8059573c )
+		ROM_REGION( 0x40000, REGION_GFX4, ROMREGION_DISPOSE );/* sprites */
+		ROM_LOAD( "b25-01.rom",  0x00000, 0x10000, 0x42ec01fb );
+		ROM_LOAD( "b25-02.rom",  0x10000, 0x10000, 0x6c0130b7 );
+		ROM_LOAD( "b25-03.rom",  0x20000, 0x10000, 0xb923db99 );
+		ROM_LOAD( "b25-04.rom",  0x30000, 0x10000, 0x8059573c );
 	
-		ROM_REGION( 0x260, REGION_PROMS, 0 )		/* nibble bproms, lo/hi order to be determined */
-		ROM_LOAD( "82s129.b19",  0x000, 0x100, 0x24e7d62f )	/* sprite priority control ?? */
-		ROM_LOAD( "82s129.b18",  0x100, 0x100, 0xa50cef09 )	/* sprite priority control ?? */
-		ROM_LOAD( "82s123.b21",  0x200, 0x020, 0xf72482db )	/* sprite control ?? */
-		ROM_LOAD( "82s123.c6",   0x220, 0x020, 0xbc88cced )	/* sprite attribute (flip/position) ?? */
-		ROM_LOAD( "82s123.f1",   0x240, 0x020, 0x4fb5df2a )	/* tile to sprite priority ?? */
-	ROM_END
+		ROM_REGION( 0x260, REGION_PROMS, 0 );	/* nibble bproms, lo/hi order to be determined */
+		ROM_LOAD( "82s129.b19",  0x000, 0x100, 0x24e7d62f );/* sprite priority control ?? */
+		ROM_LOAD( "82s129.b18",  0x100, 0x100, 0xa50cef09 );/* sprite priority control ?? */
+		ROM_LOAD( "82s123.b21",  0x200, 0x020, 0xf72482db );/* sprite control ?? */
+		ROM_LOAD( "82s123.c6",   0x220, 0x020, 0xbc88cced );/* sprite attribute (flip/position) ?? */
+		ROM_LOAD( "82s123.f1",   0x240, 0x020, 0x4fb5df2a );/* tile to sprite priority ?? */
+	ROM_END(); }}; 
 	
-	ROM_START( wardnerj )
-		ROM_REGION( 0x40000, REGION_CPU1, 0 )	/* Banked Z80 code */
-		ROM_LOAD( "b25-17.bin",  0x00000, 0x08000, 0x4164dca9 )	/* Main Z80 code */
-		ROM_LOAD( "b25-18.rom",  0x10000, 0x10000, 0x9aab8ee2 )	/* OBJ ROMs */
-		ROM_LOAD( "b25-19.rom",  0x20000, 0x10000, 0x95b68813 )
-		ROM_LOAD( "b25-20.bin",  0x38000, 0x08000, 0x1113ad38 )
+	static RomLoadPtr rom_wardnerj = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x40000, REGION_CPU1, 0 );/* Banked Z80 code */
+		ROM_LOAD( "b25-17.bin",  0x00000, 0x08000, 0x4164dca9 );/* Main Z80 code */
+		ROM_LOAD( "b25-18.rom",  0x10000, 0x10000, 0x9aab8ee2 );/* OBJ ROMs */
+		ROM_LOAD( "b25-19.rom",  0x20000, 0x10000, 0x95b68813 );
+		ROM_LOAD( "b25-20.bin",  0x38000, 0x08000, 0x1113ad38 );
 	
-		ROM_REGION( 0x10000, REGION_CPU2, 0 )	/* Sound Z80 code */
-		ROM_LOAD( "b25-16.rom", 0x00000, 0x08000, 0xe5202ff8 )
+		ROM_REGION( 0x10000, REGION_CPU2, 0 );/* Sound Z80 code */
+		ROM_LOAD( "b25-16.rom", 0x00000, 0x08000, 0xe5202ff8 );
 	
-		ROM_REGION( 0x10000, REGION_CPU3, 0 )	/* Space for Co-Processor TMS320C10 */
+		ROM_REGION( 0x10000, REGION_CPU3, 0 );/* Space for Co-Processor TMS320C10 */
 	
-		ROM_REGION( 0x1000, REGION_USER1, 0 )	/* Co-Processor TMS320C10 MCU code */
-		ROM_LOAD_NIB_HIGH( "82s137.1d",  0x0000, 0x0400, 0xcc5b3f53 ) /* msb */
-		ROM_LOAD_NIB_LOW ( "82s137.1e",  0x0000, 0x0400, 0x47351d55 )
-		ROM_LOAD_NIB_HIGH( "82s131.3b",  0x0400, 0x0200, 0x9dfffaff )
-		ROM_LOAD_NIB_LOW ( "82s131.3a",  0x0400, 0x0200, 0x712bad47 )
-		ROM_LOAD_NIB_HIGH( "82s137.3d",  0x0800, 0x0400, 0x70b537b9 ) /* lsb */
-		ROM_LOAD_NIB_LOW ( "82s137.3e",  0x0800, 0x0400, 0x6edb2de8 )
-		ROM_LOAD_NIB_HIGH( "82s131.2a",  0x0c00, 0x0200, 0xac843ca6 )
-		ROM_LOAD_NIB_LOW ( "82s131.1a",  0x0c00, 0x0200, 0x50452ff8 )
+		ROM_REGION( 0x1000, REGION_USER1, 0 );/* Co-Processor TMS320C10 MCU code */
+		ROM_LOAD_NIB_HIGH( "82s137.1d",  0x0000, 0x0400, 0xcc5b3f53 );/* msb */
+		ROM_LOAD_NIB_LOW ( "82s137.1e",  0x0000, 0x0400, 0x47351d55 );
+		ROM_LOAD_NIB_HIGH( "82s131.3b",  0x0400, 0x0200, 0x9dfffaff );
+		ROM_LOAD_NIB_LOW ( "82s131.3a",  0x0400, 0x0200, 0x712bad47 );
+		ROM_LOAD_NIB_HIGH( "82s137.3d",  0x0800, 0x0400, 0x70b537b9 );/* lsb */
+		ROM_LOAD_NIB_LOW ( "82s137.3e",  0x0800, 0x0400, 0x6edb2de8 );
+		ROM_LOAD_NIB_HIGH( "82s131.2a",  0x0c00, 0x0200, 0xac843ca6 );
+		ROM_LOAD_NIB_LOW ( "82s131.1a",  0x0c00, 0x0200, 0x50452ff8 );
 	
-		ROM_REGION( 0x0c000, REGION_GFX1, ROMREGION_DISPOSE )	/* chars */
-		ROM_LOAD( "b25-07.bin", 0x00000, 0x04000, 0x50e329e0 )
-		ROM_LOAD( "b25-06.bin", 0x04000, 0x04000, 0x3bfeb6ae )
-		ROM_LOAD( "b25-05.bin", 0x08000, 0x04000, 0xbe36a53e )
+		ROM_REGION( 0x0c000, REGION_GFX1, ROMREGION_DISPOSE );/* chars */
+		ROM_LOAD( "b25-07.bin", 0x00000, 0x04000, 0x50e329e0 );
+		ROM_LOAD( "b25-06.bin", 0x04000, 0x04000, 0x3bfeb6ae );
+		ROM_LOAD( "b25-05.bin", 0x08000, 0x04000, 0xbe36a53e );
 	
-		ROM_REGION( 0x20000, REGION_GFX2, ROMREGION_DISPOSE )	/* fg tiles */
-		ROM_LOAD( "b25-12.rom",  0x00000, 0x08000, 0x15d08848 )
-		ROM_LOAD( "b25-15.rom",  0x08000, 0x08000, 0xcdd2d408 )
-		ROM_LOAD( "b25-14.rom",  0x10000, 0x08000, 0x5a2aef4f )
-		ROM_LOAD( "b25-13.rom",  0x18000, 0x08000, 0xbe21db2b )
+		ROM_REGION( 0x20000, REGION_GFX2, ROMREGION_DISPOSE );/* fg tiles */
+		ROM_LOAD( "b25-12.rom",  0x00000, 0x08000, 0x15d08848 );
+		ROM_LOAD( "b25-15.rom",  0x08000, 0x08000, 0xcdd2d408 );
+		ROM_LOAD( "b25-14.rom",  0x10000, 0x08000, 0x5a2aef4f );
+		ROM_LOAD( "b25-13.rom",  0x18000, 0x08000, 0xbe21db2b );
 	
-		ROM_REGION( 0x20000, REGION_GFX3, ROMREGION_DISPOSE )	/* bg tiles */
-		ROM_LOAD( "b25-08.rom",  0x00000, 0x08000, 0x883ccaa3 )
-		ROM_LOAD( "b25-11.rom",  0x08000, 0x08000, 0xd6ebd510 )
-		ROM_LOAD( "b25-10.rom",  0x10000, 0x08000, 0xb9a61e81 )
-		ROM_LOAD( "b25-09.rom",  0x18000, 0x08000, 0x585411b7 )
+		ROM_REGION( 0x20000, REGION_GFX3, ROMREGION_DISPOSE );/* bg tiles */
+		ROM_LOAD( "b25-08.rom",  0x00000, 0x08000, 0x883ccaa3 );
+		ROM_LOAD( "b25-11.rom",  0x08000, 0x08000, 0xd6ebd510 );
+		ROM_LOAD( "b25-10.rom",  0x10000, 0x08000, 0xb9a61e81 );
+		ROM_LOAD( "b25-09.rom",  0x18000, 0x08000, 0x585411b7 );
 	
-		ROM_REGION( 0x40000, REGION_GFX4, ROMREGION_DISPOSE )	/* sprites */
-		ROM_LOAD( "b25-01.rom",  0x00000, 0x10000, 0x42ec01fb )
-		ROM_LOAD( "b25-02.rom",  0x10000, 0x10000, 0x6c0130b7 )
-		ROM_LOAD( "b25-03.rom",  0x20000, 0x10000, 0xb923db99 )
-		ROM_LOAD( "b25-04.rom",  0x30000, 0x10000, 0x8059573c )
+		ROM_REGION( 0x40000, REGION_GFX4, ROMREGION_DISPOSE );/* sprites */
+		ROM_LOAD( "b25-01.rom",  0x00000, 0x10000, 0x42ec01fb );
+		ROM_LOAD( "b25-02.rom",  0x10000, 0x10000, 0x6c0130b7 );
+		ROM_LOAD( "b25-03.rom",  0x20000, 0x10000, 0xb923db99 );
+		ROM_LOAD( "b25-04.rom",  0x30000, 0x10000, 0x8059573c );
 	
-		ROM_REGION( 0x260, REGION_PROMS, 0 )		/* nibble bproms, lo/hi order to be determined */
-		ROM_LOAD( "82s129.b19",  0x000, 0x100, 0x24e7d62f )	/* sprite priority control ?? */
-		ROM_LOAD( "82s129.b18",  0x100, 0x100, 0xa50cef09 )	/* sprite priority control ?? */
-		ROM_LOAD( "82s123.b21",  0x200, 0x020, 0xf72482db )	/* sprite control ?? */
-		ROM_LOAD( "82s123.c6",   0x220, 0x020, 0xbc88cced )	/* sprite attribute (flip/position) ?? */
-		ROM_LOAD( "82s123.f1",   0x240, 0x020, 0x4fb5df2a )	/* tile to sprite priority ?? */
-	ROM_END
+		ROM_REGION( 0x260, REGION_PROMS, 0 );	/* nibble bproms, lo/hi order to be determined */
+		ROM_LOAD( "82s129.b19",  0x000, 0x100, 0x24e7d62f );/* sprite priority control ?? */
+		ROM_LOAD( "82s129.b18",  0x100, 0x100, 0xa50cef09 );/* sprite priority control ?? */
+		ROM_LOAD( "82s123.b21",  0x200, 0x020, 0xf72482db );/* sprite control ?? */
+		ROM_LOAD( "82s123.c6",   0x220, 0x020, 0xbc88cced );/* sprite attribute (flip/position) ?? */
+		ROM_LOAD( "82s123.f1",   0x240, 0x020, 0x4fb5df2a );/* tile to sprite priority ?? */
+	ROM_END(); }}; 
 	
 	
 	static void init_wardner(void)

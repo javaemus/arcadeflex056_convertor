@@ -776,89 +776,89 @@ public class asteroid
 	
 	***************************************************************************/
 	
-	ROM_START( asteroid )
-		ROM_REGION( 0x10000, REGION_CPU1, 0 )	/* 64k for code */
-		ROM_LOAD( "035145.02",    0x6800, 0x0800, 0x0cc75459 )
-		ROM_LOAD( "035144.02",    0x7000, 0x0800, 0x096ed35c )
-		ROM_LOAD( "035143.02",    0x7800, 0x0800, 0x312caa02 )
-		ROM_RELOAD( 		   0xf800, 0x0800 ) /* for reset/interrupt vectors */
+	static RomLoadPtr rom_asteroid = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x10000, REGION_CPU1, 0 );/* 64k for code */
+		ROM_LOAD( "035145.02",    0x6800, 0x0800, 0x0cc75459 );
+		ROM_LOAD( "035144.02",    0x7000, 0x0800, 0x096ed35c );
+		ROM_LOAD( "035143.02",    0x7800, 0x0800, 0x312caa02 );
+		ROM_RELOAD( 		   0xf800, 0x0800 );/* for reset/interrupt vectors */
 		/* Vector ROM */
-		ROM_LOAD( "035127.02",    0x5000, 0x0800, 0x8b71fd9e )
-	ROM_END
+		ROM_LOAD( "035127.02",    0x5000, 0x0800, 0x8b71fd9e );
+	ROM_END(); }}; 
 	
-	ROM_START( asteroi1 )
-		ROM_REGION( 0x10000, REGION_CPU1, 0 )	/* 64k for code */
-		ROM_LOAD( "035145.01",    0x6800, 0x0800, 0xe9bfda64 )
-		ROM_LOAD( "035144.01",    0x7000, 0x0800, 0xe53c28a9 )
-		ROM_LOAD( "035143.01",    0x7800, 0x0800, 0x7d4e3d05 )
-		ROM_RELOAD( 		   0xf800, 0x0800 ) /* for reset/interrupt vectors */
+	static RomLoadPtr rom_asteroi1 = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x10000, REGION_CPU1, 0 );/* 64k for code */
+		ROM_LOAD( "035145.01",    0x6800, 0x0800, 0xe9bfda64 );
+		ROM_LOAD( "035144.01",    0x7000, 0x0800, 0xe53c28a9 );
+		ROM_LOAD( "035143.01",    0x7800, 0x0800, 0x7d4e3d05 );
+		ROM_RELOAD( 		   0xf800, 0x0800 );/* for reset/interrupt vectors */
 		/* Vector ROM */
-		ROM_LOAD( "035127.01",    0x5000, 0x0800, 0x99699366 )
-	ROM_END
+		ROM_LOAD( "035127.01",    0x5000, 0x0800, 0x99699366 );
+	ROM_END(); }}; 
 	
-	ROM_START( asteroib )
-		ROM_REGION( 0x10000, REGION_CPU1, 0 )	/* 64k for code */
-		ROM_LOAD( "035145ll.bin", 0x6800, 0x0800, 0x605fc0f2 )
-		ROM_LOAD( "035144ll.bin", 0x7000, 0x0800, 0xe106de77 )
-		ROM_LOAD( "035143ll.bin", 0x7800, 0x0800, 0x6b1d8594 )
-		ROM_RELOAD( 		   0xf800, 0x0800 ) /* for reset/interrupt vectors */
+	static RomLoadPtr rom_asteroib = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x10000, REGION_CPU1, 0 );/* 64k for code */
+		ROM_LOAD( "035145ll.bin", 0x6800, 0x0800, 0x605fc0f2 );
+		ROM_LOAD( "035144ll.bin", 0x7000, 0x0800, 0xe106de77 );
+		ROM_LOAD( "035143ll.bin", 0x7800, 0x0800, 0x6b1d8594 );
+		ROM_RELOAD( 		   0xf800, 0x0800 );/* for reset/interrupt vectors */
 		/* Vector ROM */
-		ROM_LOAD( "035127.02",    0x5000, 0x0800, 0x8b71fd9e )
-	ROM_END
+		ROM_LOAD( "035127.02",    0x5000, 0x0800, 0x8b71fd9e );
+	ROM_END(); }}; 
 	
-	ROM_START( astdelux )
-		ROM_REGION( 0x10000, REGION_CPU1, 0 )	/* 64k for code */
-		ROM_LOAD( "036430.02",    0x6000, 0x0800, 0xa4d7a525 )
-		ROM_LOAD( "036431.02",    0x6800, 0x0800, 0xd4004aae )
-		ROM_LOAD( "036432.02",    0x7000, 0x0800, 0x6d720c41 )
-		ROM_LOAD( "036433.03",    0x7800, 0x0800, 0x0dcc0be6 )
-		ROM_RELOAD( 			  0xf800, 0x0800 )	/* for reset/interrupt vectors */
+	static RomLoadPtr rom_astdelux = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x10000, REGION_CPU1, 0 );/* 64k for code */
+		ROM_LOAD( "036430.02",    0x6000, 0x0800, 0xa4d7a525 );
+		ROM_LOAD( "036431.02",    0x6800, 0x0800, 0xd4004aae );
+		ROM_LOAD( "036432.02",    0x7000, 0x0800, 0x6d720c41 );
+		ROM_LOAD( "036433.03",    0x7800, 0x0800, 0x0dcc0be6 );
+		ROM_RELOAD( 			  0xf800, 0x0800 );/* for reset/interrupt vectors */
 		/* Vector ROM */
-		ROM_LOAD( "036800.02",    0x4800, 0x0800, 0xbb8cabe1 )
-		ROM_LOAD( "036799.01",    0x5000, 0x0800, 0x7d511572 )
-	ROM_END
+		ROM_LOAD( "036800.02",    0x4800, 0x0800, 0xbb8cabe1 );
+		ROM_LOAD( "036799.01",    0x5000, 0x0800, 0x7d511572 );
+	ROM_END(); }}; 
 	
-	ROM_START( astdelu1 )
-		ROM_REGION( 0x10000, REGION_CPU1, 0 )	/* 64k for code */
-		ROM_LOAD( "036430.01",    0x6000, 0x0800, 0x8f5dabc6 )
-		ROM_LOAD( "036431.01",    0x6800, 0x0800, 0x157a8516 )
-		ROM_LOAD( "036432.01",    0x7000, 0x0800, 0xfdea913c )
-		ROM_LOAD( "036433.02",    0x7800, 0x0800, 0xd8db74e3 )
-		ROM_RELOAD( 			  0xf800, 0x0800 )	/* for reset/interrupt vectors */
+	static RomLoadPtr rom_astdelu1 = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x10000, REGION_CPU1, 0 );/* 64k for code */
+		ROM_LOAD( "036430.01",    0x6000, 0x0800, 0x8f5dabc6 );
+		ROM_LOAD( "036431.01",    0x6800, 0x0800, 0x157a8516 );
+		ROM_LOAD( "036432.01",    0x7000, 0x0800, 0xfdea913c );
+		ROM_LOAD( "036433.02",    0x7800, 0x0800, 0xd8db74e3 );
+		ROM_RELOAD( 			  0xf800, 0x0800 );/* for reset/interrupt vectors */
 		/* Vector ROM */
-		ROM_LOAD( "036800.01",    0x4800, 0x0800, 0x3b597407 )
-		ROM_LOAD( "036799.01",    0x5000, 0x0800, 0x7d511572 )
-	ROM_END
+		ROM_LOAD( "036800.01",    0x4800, 0x0800, 0x3b597407 );
+		ROM_LOAD( "036799.01",    0x5000, 0x0800, 0x7d511572 );
+	ROM_END(); }}; 
 	
-	ROM_START( llander )
-		ROM_REGION( 0x10000, REGION_CPU1, 0 )	/* 64k for code */
-		ROM_LOAD( "034572.02",    0x6000, 0x0800, 0xb8763eea )
-		ROM_LOAD( "034571.02",    0x6800, 0x0800, 0x77da4b2f )
-		ROM_LOAD( "034570.01",    0x7000, 0x0800, 0x2724e591 )
-		ROM_LOAD( "034569.02",    0x7800, 0x0800, 0x72837a4e )
-		ROM_RELOAD( 		   0xf800, 0x0800 ) /* for reset/interrupt vectors */
+	static RomLoadPtr rom_llander = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x10000, REGION_CPU1, 0 );/* 64k for code */
+		ROM_LOAD( "034572.02",    0x6000, 0x0800, 0xb8763eea );
+		ROM_LOAD( "034571.02",    0x6800, 0x0800, 0x77da4b2f );
+		ROM_LOAD( "034570.01",    0x7000, 0x0800, 0x2724e591 );
+		ROM_LOAD( "034569.02",    0x7800, 0x0800, 0x72837a4e );
+		ROM_RELOAD( 		   0xf800, 0x0800 );/* for reset/interrupt vectors */
 		/* Vector ROM */
-		ROM_LOAD( "034599.01",    0x4800, 0x0800, 0x355a9371 )
-		ROM_LOAD( "034598.01",    0x5000, 0x0800, 0x9c4ffa68 )
+		ROM_LOAD( "034599.01",    0x4800, 0x0800, 0x355a9371 );
+		ROM_LOAD( "034598.01",    0x5000, 0x0800, 0x9c4ffa68 );
 		/* This _should_ be the rom for international versions. */
 		/* Unfortunately, is it not currently available. */
-		ROM_LOAD( "034597.01",    0x5800, 0x0800, 0x00000000 )
-	ROM_END
+		ROM_LOAD( "034597.01",    0x5800, 0x0800, 0x00000000 );
+	ROM_END(); }}; 
 	
-	ROM_START( llander1 )
-		ROM_REGION( 0x10000, REGION_CPU1, 0 )	/* 64k for code */
-		ROM_LOAD( "034572.01",    0x6000, 0x0800, 0x2aff3140 )
-		ROM_LOAD( "034571.01",    0x6800, 0x0800, 0x493e24b7 )
-		ROM_LOAD( "034570.01",    0x7000, 0x0800, 0x2724e591 )
-		ROM_LOAD( "034569.01",    0x7800, 0x0800, 0xb11a7d01 )
-		ROM_RELOAD( 		   0xf800, 0x0800 ) /* for reset/interrupt vectors */
+	static RomLoadPtr rom_llander1 = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x10000, REGION_CPU1, 0 );/* 64k for code */
+		ROM_LOAD( "034572.01",    0x6000, 0x0800, 0x2aff3140 );
+		ROM_LOAD( "034571.01",    0x6800, 0x0800, 0x493e24b7 );
+		ROM_LOAD( "034570.01",    0x7000, 0x0800, 0x2724e591 );
+		ROM_LOAD( "034569.01",    0x7800, 0x0800, 0xb11a7d01 );
+		ROM_RELOAD( 		   0xf800, 0x0800 );/* for reset/interrupt vectors */
 		/* Vector ROM */
-		ROM_LOAD( "034599.01",    0x4800, 0x0800, 0x355a9371 )
-		ROM_LOAD( "034598.01",    0x5000, 0x0800, 0x9c4ffa68 )
+		ROM_LOAD( "034599.01",    0x4800, 0x0800, 0x355a9371 );
+		ROM_LOAD( "034598.01",    0x5000, 0x0800, 0x9c4ffa68 );
 		/* This _should_ be the rom for international versions. */
 		/* Unfortunately, is it not currently available. */
-		ROM_LOAD( "034597.01",    0x5800, 0x0800, 0x00000000 )
-	ROM_END
+		ROM_LOAD( "034597.01",    0x5800, 0x0800, 0x00000000 );
+	ROM_END(); }}; 
 	
 	
 	

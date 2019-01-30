@@ -243,27 +243,27 @@ public class starcrus
 	
 	***************************************************************************/
 	
-	ROM_START( starcrus )
-	    ROM_REGION( 0x10000, REGION_CPU1, 0 )  /* code */
-		ROM_LOAD( "starcrus.j1",   0x0000, 0x0200, 0x0ee60a50 )
-		ROM_LOAD( "starcrus.k1",   0x0200, 0x0200, 0xa7bc3bc4 )
-		ROM_LOAD( "starcrus.l1",   0x0400, 0x0200, 0x10d233ec )
-		ROM_LOAD( "starcrus.m1",   0x0600, 0x0200, 0x2facbfee )
-		ROM_LOAD( "starcrus.n1",   0x0800, 0x0200, 0x42083247 )
-		ROM_LOAD( "starcrus.p1",   0x0a00, 0x0200, 0x61dfe581 )
-		ROM_LOAD( "starcrus.r1",   0x0c00, 0x0200, 0x010cdcfe )
-		ROM_LOAD( "starcrus.s1",   0x0e00, 0x0200, 0xda4e276b )
+	static RomLoadPtr rom_starcrus = new RomLoadPtr(){ public void handler(){ 
+	    ROM_REGION( 0x10000, REGION_CPU1, 0 ); /* code */
+		ROM_LOAD( "starcrus.j1",   0x0000, 0x0200, 0x0ee60a50 );
+		ROM_LOAD( "starcrus.k1",   0x0200, 0x0200, 0xa7bc3bc4 );
+		ROM_LOAD( "starcrus.l1",   0x0400, 0x0200, 0x10d233ec );
+		ROM_LOAD( "starcrus.m1",   0x0600, 0x0200, 0x2facbfee );
+		ROM_LOAD( "starcrus.n1",   0x0800, 0x0200, 0x42083247 );
+		ROM_LOAD( "starcrus.p1",   0x0a00, 0x0200, 0x61dfe581 );
+		ROM_LOAD( "starcrus.r1",   0x0c00, 0x0200, 0x010cdcfe );
+		ROM_LOAD( "starcrus.s1",   0x0e00, 0x0200, 0xda4e276b );
 	
-	    ROM_REGION( 0x0200, REGION_GFX1, ROMREGION_DISPOSE )
-		ROM_LOAD( "starcrus.e6",   0x0000, 0x0200, 0x54887a25 )
+	    ROM_REGION( 0x0200, REGION_GFX1, ROMREGION_DISPOSE );
+		ROM_LOAD( "starcrus.e6",   0x0000, 0x0200, 0x54887a25 );
 	
-	    ROM_REGION( 0x0200, REGION_GFX2, ROMREGION_DISPOSE )
-		ROM_LOAD( "starcrus.l2",   0x0000, 0x0200, 0x54887a25 )
+	    ROM_REGION( 0x0200, REGION_GFX2, ROMREGION_DISPOSE );
+		ROM_LOAD( "starcrus.l2",   0x0000, 0x0200, 0x54887a25 );
 	
-	    ROM_REGION( 0x0400, REGION_GFX3, ROMREGION_DISPOSE )
-		ROM_LOAD( "starcrus.j4",   0x0000, 0x0200, 0x25f15ae1 )
-		ROM_LOAD( "starcrus.g5",   0x0200, 0x0200, 0x73b27f6e )
-	ROM_END
+	    ROM_REGION( 0x0400, REGION_GFX3, ROMREGION_DISPOSE );
+		ROM_LOAD( "starcrus.j4",   0x0000, 0x0200, 0x25f15ae1 );
+		ROM_LOAD( "starcrus.g5",   0x0200, 0x0200, 0x73b27f6e );
+	ROM_END(); }}; 
 	
 	
 	GAME( 1977, starcrus, 0, starcrus, starcrus, 0, ROT0, "Ramtek", "Star Cruiser" )

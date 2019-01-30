@@ -492,26 +492,26 @@ public class gridlee
 	 *
 	 *************************************/
 	
-	ROM_START( gridlee )
-		ROM_REGION( 0x10000, REGION_CPU1, 0 )
-		ROM_LOAD( "gridfnla.bin", 0xa000, 0x1000, 0x1c43539e )
-		ROM_LOAD( "gridfnlb.bin", 0xb000, 0x1000, 0xc48b91b8 )
-		ROM_LOAD( "gridfnlc.bin", 0xc000, 0x1000, 0x6ad436dd )
-		ROM_LOAD( "gridfnld.bin", 0xd000, 0x1000, 0xf7188ddb )
-		ROM_LOAD( "gridfnle.bin", 0xe000, 0x1000, 0xd5330bee )
-		ROM_LOAD( "gridfnlf.bin", 0xf000, 0x1000, 0x695d16a3 )
+	static RomLoadPtr rom_gridlee = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x10000, REGION_CPU1, 0 );
+		ROM_LOAD( "gridfnla.bin", 0xa000, 0x1000, 0x1c43539e );
+		ROM_LOAD( "gridfnlb.bin", 0xb000, 0x1000, 0xc48b91b8 );
+		ROM_LOAD( "gridfnlc.bin", 0xc000, 0x1000, 0x6ad436dd );
+		ROM_LOAD( "gridfnld.bin", 0xd000, 0x1000, 0xf7188ddb );
+		ROM_LOAD( "gridfnle.bin", 0xe000, 0x1000, 0xd5330bee );
+		ROM_LOAD( "gridfnlf.bin", 0xf000, 0x1000, 0x695d16a3 );
 	
-		ROM_REGION( 0x4000, REGION_GFX1, 0 )
-		ROM_LOAD( "gridpix0.bin", 0x0000, 0x1000, 0xe6ea15ae )
-		ROM_LOAD( "gridpix1.bin", 0x1000, 0x1000, 0xd722f459 )
-		ROM_LOAD( "gridpix2.bin", 0x2000, 0x1000, 0x1e99143c )
-		ROM_LOAD( "gridpix3.bin", 0x3000, 0x1000, 0x274342a0 )
+		ROM_REGION( 0x4000, REGION_GFX1, 0 );
+		ROM_LOAD( "gridpix0.bin", 0x0000, 0x1000, 0xe6ea15ae );
+		ROM_LOAD( "gridpix1.bin", 0x1000, 0x1000, 0xd722f459 );
+		ROM_LOAD( "gridpix2.bin", 0x2000, 0x1000, 0x1e99143c );
+		ROM_LOAD( "gridpix3.bin", 0x3000, 0x1000, 0x274342a0 );
 	
-		ROM_REGION( 0x1800, REGION_PROMS, 0 )
-		ROM_LOAD( "grdrprom.bin", 0x0000, 0x800, 0xf28f87ed )
-		ROM_LOAD( "grdgprom.bin", 0x0800, 0x800, 0x921b0328 )
-		ROM_LOAD( "grdbprom.bin", 0x1000, 0x800, 0x04350348 )
-	ROM_END
+		ROM_REGION( 0x1800, REGION_PROMS, 0 );
+		ROM_LOAD( "grdrprom.bin", 0x0000, 0x800, 0xf28f87ed );
+		ROM_LOAD( "grdgprom.bin", 0x0800, 0x800, 0x921b0328 );
+		ROM_LOAD( "grdbprom.bin", 0x1000, 0x800, 0x04350348 );
+	ROM_END(); }}; 
 	
 	
 	

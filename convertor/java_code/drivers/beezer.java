@@ -156,49 +156,49 @@ public class beezer
 	
 	***************************************************************************/
 	
-	ROM_START( beezer )
-		ROM_REGION( 0x20000, REGION_CPU1, 0 )     /* 64k for main CPU */
-		ROM_LOAD( "g1",   0x0d000, 0x1000, 0x3467a0ec )
-		ROM_LOAD( "g3",   0x0e000, 0x1000, 0x9950cdf2 )
-		ROM_LOAD( "g5",   0x0f000, 0x1000, 0xa4b09879 )
+	static RomLoadPtr rom_beezer = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x20000, REGION_CPU1, 0 );    /* 64k for main CPU */
+		ROM_LOAD( "g1",   0x0d000, 0x1000, 0x3467a0ec );
+		ROM_LOAD( "g3",   0x0e000, 0x1000, 0x9950cdf2 );
+		ROM_LOAD( "g5",   0x0f000, 0x1000, 0xa4b09879 );
 	
-		ROM_LOAD( "f1",   0x12000, 0x2000, 0xce1b0b8b )
-		ROM_LOAD( "f3",   0x14000, 0x2000, 0x6a11072a )
-		ROM_LOAD( "e1",   0x16000, 0x1000, 0x21e4ca9b )
-		ROM_LOAD( "e3",   0x18000, 0x1000, 0xa4f735d7 )
-		ROM_LOAD( "e5",   0x1a000, 0x1000, 0x0485575b )
-		ROM_LOAD( "f5",   0x1c000, 0x1000, 0x4b11f572 )
-		ROM_LOAD( "f7",   0x1e000, 0x1000, 0xbef67473 )
+		ROM_LOAD( "f1",   0x12000, 0x2000, 0xce1b0b8b );
+		ROM_LOAD( "f3",   0x14000, 0x2000, 0x6a11072a );
+		ROM_LOAD( "e1",   0x16000, 0x1000, 0x21e4ca9b );
+		ROM_LOAD( "e3",   0x18000, 0x1000, 0xa4f735d7 );
+		ROM_LOAD( "e5",   0x1a000, 0x1000, 0x0485575b );
+		ROM_LOAD( "f5",   0x1c000, 0x1000, 0x4b11f572 );
+		ROM_LOAD( "f7",   0x1e000, 0x1000, 0xbef67473 );
 	
-		ROM_REGION( 0x10000, REGION_CPU2, 0 )     /* 64k for sound CPU */
-		ROM_LOAD( "d7",   0xf000, 0x1000, 0x23b0782e )
+		ROM_REGION( 0x10000, REGION_CPU2, 0 );    /* 64k for sound CPU */
+		ROM_LOAD( "d7",   0xf000, 0x1000, 0x23b0782e );
 	
-		ROM_REGION( 0x0300, REGION_PROMS, 0 )
-		ROM_LOAD( "d1.cpu", 0x000, 0x0100, 0x8db17a40 )
-		ROM_LOAD( "e1.cpu", 0x100, 0x0100, 0x3c775c5e )
-	ROM_END
+		ROM_REGION( 0x0300, REGION_PROMS, 0 );
+		ROM_LOAD( "d1.cpu", 0x000, 0x0100, 0x8db17a40 );
+		ROM_LOAD( "e1.cpu", 0x100, 0x0100, 0x3c775c5e );
+	ROM_END(); }}; 
 	
-	ROM_START( beezer1 )
-		ROM_REGION( 0x20000, REGION_CPU1, 0 )     /* 64k for main CPU */
-		ROM_LOAD( "g1.32",   0x0d000, 0x1000, 0x3134cb93 )
-		ROM_LOAD( "g3.32",   0x0e000, 0x1000, 0xa3cb2c2d )
-		ROM_LOAD( "g5.32",   0x0f000, 0x1000, 0x5e559bf9 )
+	static RomLoadPtr rom_beezer1 = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x20000, REGION_CPU1, 0 );    /* 64k for main CPU */
+		ROM_LOAD( "g1.32",   0x0d000, 0x1000, 0x3134cb93 );
+		ROM_LOAD( "g3.32",   0x0e000, 0x1000, 0xa3cb2c2d );
+		ROM_LOAD( "g5.32",   0x0f000, 0x1000, 0x5e559bf9 );
 	
-		ROM_LOAD( "f1.64",   0x12000, 0x2000, 0xb8a78cca )
-		ROM_LOAD( "f3.32",   0x14000, 0x1000, 0xbfa023f5 )
-		ROM_LOAD( "e1",      0x16000, 0x1000, 0x21e4ca9b )
-		ROM_LOAD( "e3",      0x18000, 0x1000, 0xa4f735d7 )
-		ROM_LOAD( "e5",      0x1a000, 0x1000, 0x0485575b )
-		ROM_LOAD( "f5",      0x1c000, 0x1000, 0x4b11f572 )
-		ROM_LOAD( "f7",      0x1e000, 0x1000, 0xbef67473 )
+		ROM_LOAD( "f1.64",   0x12000, 0x2000, 0xb8a78cca );
+		ROM_LOAD( "f3.32",   0x14000, 0x1000, 0xbfa023f5 );
+		ROM_LOAD( "e1",      0x16000, 0x1000, 0x21e4ca9b );
+		ROM_LOAD( "e3",      0x18000, 0x1000, 0xa4f735d7 );
+		ROM_LOAD( "e5",      0x1a000, 0x1000, 0x0485575b );
+		ROM_LOAD( "f5",      0x1c000, 0x1000, 0x4b11f572 );
+		ROM_LOAD( "f7",      0x1e000, 0x1000, 0xbef67473 );
 	
-		ROM_REGION( 0x10000, REGION_CPU2, 0 )     /* 64k for sound CPU */
-		ROM_LOAD( "d7.32",   0xf000, 0x1000, 0xb11028b5 )
+		ROM_REGION( 0x10000, REGION_CPU2, 0 );    /* 64k for sound CPU */
+		ROM_LOAD( "d7.32",   0xf000, 0x1000, 0xb11028b5 );
 	
-		ROM_REGION( 0x0300, REGION_PROMS, 0 )
-		ROM_LOAD( "d1.cpu", 0x000, 0x0100, 0x8db17a40 )
-		ROM_LOAD( "e1.cpu", 0x100, 0x0100, 0x3c775c5e )
-	ROM_END
+		ROM_REGION( 0x0300, REGION_PROMS, 0 );
+		ROM_LOAD( "d1.cpu", 0x000, 0x0100, 0x8db17a40 );
+		ROM_LOAD( "e1.cpu", 0x100, 0x0100, 0x3c775c5e );
+	ROM_END(); }}; 
 	
 	GAMEX( 1982, beezer,  0,       beezer, beezer, beezer, ORIENTATION_FLIP_X, "Tong Electronic", "Beezer (set 1)", GAME_IMPERFECT_SOUND )
 	GAMEX( 1982, beezer1,  beezer, beezer, beezer, beezer, ORIENTATION_FLIP_X, "Tong Electronic", "Beezer (set 2)", GAME_IMPERFECT_SOUND )

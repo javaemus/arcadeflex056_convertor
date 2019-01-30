@@ -495,128 +495,128 @@ public class cadash
 						DRIVERS
 	***************************************************************************/
 	
-	ROM_START( cadash )
-		ROM_REGION( 0x80000, REGION_CPU1, 0 )     /* 512k for 68000 code */
-		ROM_LOAD16_BYTE( "c21-14",  0x00000, 0x20000, 0x5daf13fb )
-		ROM_LOAD16_BYTE( "c21-16",  0x00001, 0x20000, 0xcbaa2e75 )
-		ROM_LOAD16_BYTE( "c21-13",  0x40000, 0x20000, 0x6b9e0ee9 )
-		ROM_LOAD16_BYTE( "c21-17",  0x40001, 0x20000, 0xbf9a578a )
+	static RomLoadPtr rom_cadash = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x80000, REGION_CPU1, 0 );    /* 512k for 68000 code */
+		ROM_LOAD16_BYTE( "c21-14",  0x00000, 0x20000, 0x5daf13fb );
+		ROM_LOAD16_BYTE( "c21-16",  0x00001, 0x20000, 0xcbaa2e75 );
+		ROM_LOAD16_BYTE( "c21-13",  0x40000, 0x20000, 0x6b9e0ee9 );
+		ROM_LOAD16_BYTE( "c21-17",  0x40001, 0x20000, 0xbf9a578a );
 	
-		ROM_REGION( 0x80000, REGION_GFX1, ROMREGION_DISPOSE )
-		ROM_LOAD( "c21-02.9",  0x00000, 0x80000, 0x205883b9 )	/* SCR tiles (8 x 8) */
+		ROM_REGION( 0x80000, REGION_GFX1, ROMREGION_DISPOSE );
+		ROM_LOAD( "c21-02.9",  0x00000, 0x80000, 0x205883b9 );/* SCR tiles (8 x 8) */
 	
-		ROM_REGION( 0x80000, REGION_GFX2, ROMREGION_DISPOSE )
-		ROM_LOAD( "c21-01.1",  0x00000, 0x80000, 0x1ff6f39c )	/* Sprites (16 x 16) */
+		ROM_REGION( 0x80000, REGION_GFX2, ROMREGION_DISPOSE );
+		ROM_LOAD( "c21-01.1",  0x00000, 0x80000, 0x1ff6f39c );/* Sprites (16 x 16) */
 	
-		ROM_REGION( 0x1c000, REGION_CPU2, 0 )	/* sound cpu */
-		ROM_LOAD( "c21-08.38",   0x00000, 0x04000, 0xdca495a0 )
-		ROM_CONTINUE(            0x10000, 0x0c000 )	/* banked stuff */
+		ROM_REGION( 0x1c000, REGION_CPU2, 0 );/* sound cpu */
+		ROM_LOAD( "c21-08.38",   0x00000, 0x04000, 0xdca495a0 );
+		ROM_CONTINUE(            0x10000, 0x0c000 );/* banked stuff */
 	
-		ROM_REGION( 0x10000, REGION_SOUND1, 0 )	/* empty region */
+		ROM_REGION( 0x10000, REGION_SOUND1, 0 );/* empty region */
 	
-		ROM_REGION( 0x08000, REGION_USER1, 0 )	/* 2 machine interface mcu rom ? */
-		ROM_LOAD( "c21-07.57",   0x00000, 0x08000, 0xf02292bd )
+		ROM_REGION( 0x08000, REGION_USER1, 0 );/* 2 machine interface mcu rom ? */
+		ROM_LOAD( "c21-07.57",   0x00000, 0x08000, 0xf02292bd );
 	
-		ROM_REGION( 0x01000, REGION_USER2, 0 )	/* pals ? */
-	//	ROM_LOAD( "c21-09",   0x00000, 0x00ada, 0xf02292bd )
-	//	ROM_LOAD( "c21-10",   0x00000, 0x00ada, 0xf02292bd )
-	//	ROM_LOAD( "c21-11-1", 0x00000, 0x00ada, 0xf02292bd )
-	//	ROM_LOAD( "c21-12",   0x00000, 0x00cd5, 0xf02292bd )
-	ROM_END
+		ROM_REGION( 0x01000, REGION_USER2, 0 );/* pals ? */
+	//	ROM_LOAD( "c21-09",   0x00000, 0x00ada, 0xf02292bd );
+	//	ROM_LOAD( "c21-10",   0x00000, 0x00ada, 0xf02292bd );
+	//	ROM_LOAD( "c21-11-1", 0x00000, 0x00ada, 0xf02292bd );
+	//	ROM_LOAD( "c21-12",   0x00000, 0x00cd5, 0xf02292bd );
+	ROM_END(); }}; 
 	
-	ROM_START( cadashj )
-		ROM_REGION( 0x80000, REGION_CPU1, 0 )     /* 512k for 68000 code */
-		ROM_LOAD16_BYTE( "c21-04.11",  0x00000, 0x20000, 0xcc22ebe5 )
-		ROM_LOAD16_BYTE( "c21-06.15",  0x00001, 0x20000, 0x26e03304 )
-		ROM_LOAD16_BYTE( "c21-03.10",  0x40000, 0x20000, 0xc54888ed )
-		ROM_LOAD16_BYTE( "c21-05.14",  0x40001, 0x20000, 0x834018d2 )
+	static RomLoadPtr rom_cadashj = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x80000, REGION_CPU1, 0 );    /* 512k for 68000 code */
+		ROM_LOAD16_BYTE( "c21-04.11",  0x00000, 0x20000, 0xcc22ebe5 );
+		ROM_LOAD16_BYTE( "c21-06.15",  0x00001, 0x20000, 0x26e03304 );
+		ROM_LOAD16_BYTE( "c21-03.10",  0x40000, 0x20000, 0xc54888ed );
+		ROM_LOAD16_BYTE( "c21-05.14",  0x40001, 0x20000, 0x834018d2 );
 	
-		ROM_REGION( 0x80000, REGION_GFX1, ROMREGION_DISPOSE )
-		ROM_LOAD( "c21-02.9",  0x00000, 0x80000, 0x205883b9 )	/* SCR tiles (8 x 8) */
+		ROM_REGION( 0x80000, REGION_GFX1, ROMREGION_DISPOSE );
+		ROM_LOAD( "c21-02.9",  0x00000, 0x80000, 0x205883b9 );/* SCR tiles (8 x 8) */
 	
-		ROM_REGION( 0x80000, REGION_GFX2, ROMREGION_DISPOSE )
-		ROM_LOAD( "c21-01.1",  0x00000, 0x80000, 0x1ff6f39c )	/* Sprites (16 x 16) */
+		ROM_REGION( 0x80000, REGION_GFX2, ROMREGION_DISPOSE );
+		ROM_LOAD( "c21-01.1",  0x00000, 0x80000, 0x1ff6f39c );/* Sprites (16 x 16) */
 	
-		ROM_REGION( 0x1c000, REGION_CPU2, 0 )	/* sound cpu */
-		ROM_LOAD( "c21-08.38",   0x00000, 0x04000, 0xdca495a0 )
-		ROM_CONTINUE(            0x10000, 0x0c000 )	/* banked stuff */
+		ROM_REGION( 0x1c000, REGION_CPU2, 0 );/* sound cpu */
+		ROM_LOAD( "c21-08.38",   0x00000, 0x04000, 0xdca495a0 );
+		ROM_CONTINUE(            0x10000, 0x0c000 );/* banked stuff */
 	
-		ROM_REGION( 0x10000, REGION_SOUND1, 0 )	/* empty region */
+		ROM_REGION( 0x10000, REGION_SOUND1, 0 );/* empty region */
 	
-		ROM_REGION( 0x08000, REGION_USER1, 0 )	/* 2 machine interface mcu rom ? */
-		ROM_LOAD( "c21-07.57",   0x00000, 0x08000, 0xf02292bd )
-	ROM_END
+		ROM_REGION( 0x08000, REGION_USER1, 0 );/* 2 machine interface mcu rom ? */
+		ROM_LOAD( "c21-07.57",   0x00000, 0x08000, 0xf02292bd );
+	ROM_END(); }}; 
 	
-	ROM_START( cadashu )
-		ROM_REGION( 0x80000, REGION_CPU1, 0 )     /* 512k for 68000 code */
-		ROM_LOAD16_BYTE( "c21-14-2.11",  0x00000, 0x20000, 0xf823d418 )
-		ROM_LOAD16_BYTE( "c21-16-2.15",  0x00001, 0x20000, 0x90165577 )
-		ROM_LOAD16_BYTE( "c21-13-2.10",  0x40000, 0x20000, 0x92dcc3ae )
-		ROM_LOAD16_BYTE( "c21-15-2.14",  0x40001, 0x20000, 0xf915d26a )
+	static RomLoadPtr rom_cadashu = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x80000, REGION_CPU1, 0 );    /* 512k for 68000 code */
+		ROM_LOAD16_BYTE( "c21-14-2.11",  0x00000, 0x20000, 0xf823d418 );
+		ROM_LOAD16_BYTE( "c21-16-2.15",  0x00001, 0x20000, 0x90165577 );
+		ROM_LOAD16_BYTE( "c21-13-2.10",  0x40000, 0x20000, 0x92dcc3ae );
+		ROM_LOAD16_BYTE( "c21-15-2.14",  0x40001, 0x20000, 0xf915d26a );
 	
-		ROM_REGION( 0x80000, REGION_GFX1, ROMREGION_DISPOSE )
+		ROM_REGION( 0x80000, REGION_GFX1, ROMREGION_DISPOSE );
 		// bad dump so used checksum from other sets //
-		ROM_LOAD( "c21-02.9",  0x00000, 0x80000, 0x205883b9 )	/* SCR tiles (8 x 8) */
+		ROM_LOAD( "c21-02.9",  0x00000, 0x80000, 0x205883b9 );/* SCR tiles (8 x 8) */
 	
-		ROM_REGION( 0x80000, REGION_GFX2, ROMREGION_DISPOSE )
+		ROM_REGION( 0x80000, REGION_GFX2, ROMREGION_DISPOSE );
 		// bad dump so used checksum from other sets //
-		ROM_LOAD( "c21-01.1",  0x00000, 0x80000, 0x1ff6f39c )	/* Sprites (16 x 16) */
+		ROM_LOAD( "c21-01.1",  0x00000, 0x80000, 0x1ff6f39c );/* Sprites (16 x 16) */
 	
-		ROM_REGION( 0x1c000, REGION_CPU2, 0 )	/* sound cpu */
-		ROM_LOAD( "c21-08.38",   0x00000, 0x04000, 0xdca495a0 )
-		ROM_CONTINUE(            0x10000, 0x0c000 )	/* banked stuff */
+		ROM_REGION( 0x1c000, REGION_CPU2, 0 );/* sound cpu */
+		ROM_LOAD( "c21-08.38",   0x00000, 0x04000, 0xdca495a0 );
+		ROM_CONTINUE(            0x10000, 0x0c000 );/* banked stuff */
 	
-		ROM_REGION( 0x10000, REGION_SOUND1, 0 )	/* empty region */
+		ROM_REGION( 0x10000, REGION_SOUND1, 0 );/* empty region */
 	
-		ROM_REGION( 0x08000, REGION_USER1, 0 )	/* 2 machine interface mcu rom ? */
-		ROM_LOAD( "c21-07.57",   0x00000, 0x08000, 0xf02292bd )
-	ROM_END
+		ROM_REGION( 0x08000, REGION_USER1, 0 );/* 2 machine interface mcu rom ? */
+		ROM_LOAD( "c21-07.57",   0x00000, 0x08000, 0xf02292bd );
+	ROM_END(); }}; 
 	
-	ROM_START( cadashi )
-		ROM_REGION( 0x80000, REGION_CPU1, 0 )     /* 512k for 68000 code */
-		ROM_LOAD16_BYTE( "c21-14it",  0x00000, 0x20000, 0xd1d9e613 )
-		ROM_LOAD16_BYTE( "c21-16it",  0x00001, 0x20000, 0x142256ef )
-		ROM_LOAD16_BYTE( "c21-13it",  0x40000, 0x20000, 0xc9cf6e30 )
-		ROM_LOAD16_BYTE( "c21-17it",  0x40001, 0x20000, 0x641fc9dd )
+	static RomLoadPtr rom_cadashi = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x80000, REGION_CPU1, 0 );    /* 512k for 68000 code */
+		ROM_LOAD16_BYTE( "c21-14it",  0x00000, 0x20000, 0xd1d9e613 );
+		ROM_LOAD16_BYTE( "c21-16it",  0x00001, 0x20000, 0x142256ef );
+		ROM_LOAD16_BYTE( "c21-13it",  0x40000, 0x20000, 0xc9cf6e30 );
+		ROM_LOAD16_BYTE( "c21-17it",  0x40001, 0x20000, 0x641fc9dd );
 	
-		ROM_REGION( 0x80000, REGION_GFX1, ROMREGION_DISPOSE )
-		ROM_LOAD( "c21-02.9",  0x00000, 0x80000, 0x205883b9 )	/* SCR tiles (8 x 8) */
+		ROM_REGION( 0x80000, REGION_GFX1, ROMREGION_DISPOSE );
+		ROM_LOAD( "c21-02.9",  0x00000, 0x80000, 0x205883b9 );/* SCR tiles (8 x 8) */
 	
-		ROM_REGION( 0x80000, REGION_GFX2, ROMREGION_DISPOSE )
-		ROM_LOAD( "c21-01.1",  0x00000, 0x80000, 0x1ff6f39c )	/* Sprites (16 x 16) */
+		ROM_REGION( 0x80000, REGION_GFX2, ROMREGION_DISPOSE );
+		ROM_LOAD( "c21-01.1",  0x00000, 0x80000, 0x1ff6f39c );/* Sprites (16 x 16) */
 	
-		ROM_REGION( 0x1c000, REGION_CPU2, 0 )	/* sound cpu */
-		ROM_LOAD( "c21-08.38",   0x00000, 0x04000, 0xdca495a0 )
-		ROM_CONTINUE(            0x10000, 0x0c000 )	/* banked stuff */
+		ROM_REGION( 0x1c000, REGION_CPU2, 0 );/* sound cpu */
+		ROM_LOAD( "c21-08.38",   0x00000, 0x04000, 0xdca495a0 );
+		ROM_CONTINUE(            0x10000, 0x0c000 );/* banked stuff */
 	
-		ROM_REGION( 0x10000, REGION_SOUND1, 0 )	/* empty region */
+		ROM_REGION( 0x10000, REGION_SOUND1, 0 );/* empty region */
 	
-		ROM_REGION( 0x08000, REGION_USER1, 0 )	/* 2 machine interface mcu rom ? */
-		ROM_LOAD( "c21-07.57",   0x00000, 0x08000, 0xf02292bd )
-	ROM_END
+		ROM_REGION( 0x08000, REGION_USER1, 0 );/* 2 machine interface mcu rom ? */
+		ROM_LOAD( "c21-07.57",   0x00000, 0x08000, 0xf02292bd );
+	ROM_END(); }}; 
 	
-	ROM_START( cadashf )
-		ROM_REGION( 0x80000, REGION_CPU1, 0 )     /* 512k for 68000 code */
-		ROM_LOAD16_BYTE( "c21-19",  0x00000, 0x20000, 0x4d70543b )
-		ROM_LOAD16_BYTE( "c21-21",  0x00001, 0x20000, 0x0e5b9950 )
-		ROM_LOAD16_BYTE( "c21-18",  0x40000, 0x20000, 0x8a19e59b )
-		ROM_LOAD16_BYTE( "c21-20",  0x40001, 0x20000, 0xb96acfd9 )
+	static RomLoadPtr rom_cadashf = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x80000, REGION_CPU1, 0 );    /* 512k for 68000 code */
+		ROM_LOAD16_BYTE( "c21-19",  0x00000, 0x20000, 0x4d70543b );
+		ROM_LOAD16_BYTE( "c21-21",  0x00001, 0x20000, 0x0e5b9950 );
+		ROM_LOAD16_BYTE( "c21-18",  0x40000, 0x20000, 0x8a19e59b );
+		ROM_LOAD16_BYTE( "c21-20",  0x40001, 0x20000, 0xb96acfd9 );
 	
-		ROM_REGION( 0x80000, REGION_GFX1, ROMREGION_DISPOSE )
-		ROM_LOAD( "c21-02.9",  0x00000, 0x80000, 0x205883b9 )	/* SCR tiles (8 x 8) */
+		ROM_REGION( 0x80000, REGION_GFX1, ROMREGION_DISPOSE );
+		ROM_LOAD( "c21-02.9",  0x00000, 0x80000, 0x205883b9 );/* SCR tiles (8 x 8) */
 	
-		ROM_REGION( 0x80000, REGION_GFX2, ROMREGION_DISPOSE )
-		ROM_LOAD( "c21-01.1",  0x00000, 0x80000, 0x1ff6f39c )	/* Sprites (16 x 16) */
+		ROM_REGION( 0x80000, REGION_GFX2, ROMREGION_DISPOSE );
+		ROM_LOAD( "c21-01.1",  0x00000, 0x80000, 0x1ff6f39c );/* Sprites (16 x 16) */
 	
-		ROM_REGION( 0x1c000, REGION_CPU2, 0 )	/* sound cpu */
-		ROM_LOAD( "c21-08.38",   0x00000, 0x04000, 0xdca495a0 )
-		ROM_CONTINUE(            0x10000, 0x0c000 )	/* banked stuff */
+		ROM_REGION( 0x1c000, REGION_CPU2, 0 );/* sound cpu */
+		ROM_LOAD( "c21-08.38",   0x00000, 0x04000, 0xdca495a0 );
+		ROM_CONTINUE(            0x10000, 0x0c000 );/* banked stuff */
 	
-		ROM_REGION( 0x10000, REGION_SOUND1, 0 )	/* empty region */
+		ROM_REGION( 0x10000, REGION_SOUND1, 0 );/* empty region */
 	
-		ROM_REGION( 0x08000, REGION_USER1, 0 )	/* 2 machine interface mcu rom ? */
-		ROM_LOAD( "c21-07.57",   0x00000, 0x08000, 0xf02292bd )
-	ROM_END
+		ROM_REGION( 0x08000, REGION_USER1, 0 );/* 2 machine interface mcu rom ? */
+		ROM_LOAD( "c21-07.57",   0x00000, 0x08000, 0xf02292bd );
+	ROM_END(); }}; 
 	
 	
 	/* Working games */

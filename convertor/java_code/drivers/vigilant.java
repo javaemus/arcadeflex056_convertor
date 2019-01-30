@@ -541,122 +541,122 @@ public class vigilant
 	
 	***************************************************************************/
 	
-	ROM_START( vigilant )
-		ROM_REGION( 0x30000, REGION_CPU1, 0 ) /* 64k for code + 128k for bankswitching */
-		ROM_LOAD( "g07_c03.bin",  0x00000, 0x08000, 0x9dcca081 )
-		ROM_LOAD( "j07_c04.bin",  0x10000, 0x10000, 0xe0159105 )
+	static RomLoadPtr rom_vigilant = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x30000, REGION_CPU1, 0 );/* 64k for code + 128k for bankswitching */
+		ROM_LOAD( "g07_c03.bin",  0x00000, 0x08000, 0x9dcca081 );
+		ROM_LOAD( "j07_c04.bin",  0x10000, 0x10000, 0xe0159105 );
 		/* 0x20000-0x2ffff empty */
 	
-		ROM_REGION( 0x10000, REGION_CPU2, 0 ) /* 64k for sound */
-		ROM_LOAD( "g05_c02.bin",  0x00000, 0x10000, 0x10582b2d )
+		ROM_REGION( 0x10000, REGION_CPU2, 0 );/* 64k for sound */
+		ROM_LOAD( "g05_c02.bin",  0x00000, 0x10000, 0x10582b2d );
 	
-		ROM_REGION( 0x20000, REGION_GFX1, ROMREGION_DISPOSE )
-		ROM_LOAD( "f05_c08.bin",  0x00000, 0x10000, 0x01579d20 )
-		ROM_LOAD( "h05_c09.bin",  0x10000, 0x10000, 0x4f5872f0 )
+		ROM_REGION( 0x20000, REGION_GFX1, ROMREGION_DISPOSE );
+		ROM_LOAD( "f05_c08.bin",  0x00000, 0x10000, 0x01579d20 );
+		ROM_LOAD( "h05_c09.bin",  0x10000, 0x10000, 0x4f5872f0 );
 	
-		ROM_REGION( 0x80000, REGION_GFX2, ROMREGION_DISPOSE )
-		ROM_LOAD( "n07_c12.bin",  0x00000, 0x10000, 0x10af8eb2 )
-		ROM_LOAD( "k07_c10.bin",  0x10000, 0x10000, 0x9576f304 )
-		ROM_LOAD( "o07_c13.bin",  0x20000, 0x10000, 0xb1d9d4dc )
-		ROM_LOAD( "l07_c11.bin",  0x30000, 0x10000, 0x4598be4a )
-		ROM_LOAD( "t07_c16.bin",  0x40000, 0x10000, 0xf5425e42 )
-		ROM_LOAD( "p07_c14.bin",  0x50000, 0x10000, 0xcb50a17c )
-		ROM_LOAD( "v07_c17.bin",  0x60000, 0x10000, 0x959ba3c7 )
-		ROM_LOAD( "s07_c15.bin",  0x70000, 0x10000, 0x7f2e91c5 )
+		ROM_REGION( 0x80000, REGION_GFX2, ROMREGION_DISPOSE );
+		ROM_LOAD( "n07_c12.bin",  0x00000, 0x10000, 0x10af8eb2 );
+		ROM_LOAD( "k07_c10.bin",  0x10000, 0x10000, 0x9576f304 );
+		ROM_LOAD( "o07_c13.bin",  0x20000, 0x10000, 0xb1d9d4dc );
+		ROM_LOAD( "l07_c11.bin",  0x30000, 0x10000, 0x4598be4a );
+		ROM_LOAD( "t07_c16.bin",  0x40000, 0x10000, 0xf5425e42 );
+		ROM_LOAD( "p07_c14.bin",  0x50000, 0x10000, 0xcb50a17c );
+		ROM_LOAD( "v07_c17.bin",  0x60000, 0x10000, 0x959ba3c7 );
+		ROM_LOAD( "s07_c15.bin",  0x70000, 0x10000, 0x7f2e91c5 );
 	
-		ROM_REGION( 0x30000, REGION_GFX3, ROMREGION_DISPOSE )
-		ROM_LOAD( "d01_c05.bin",  0x00000, 0x10000, 0x81b1ee5c )
-		ROM_LOAD( "e01_c06.bin",  0x10000, 0x10000, 0xd0d33673 )
-		ROM_LOAD( "f01_c07.bin",  0x20000, 0x10000, 0xaae81695 )
+		ROM_REGION( 0x30000, REGION_GFX3, ROMREGION_DISPOSE );
+		ROM_LOAD( "d01_c05.bin",  0x00000, 0x10000, 0x81b1ee5c );
+		ROM_LOAD( "e01_c06.bin",  0x10000, 0x10000, 0xd0d33673 );
+		ROM_LOAD( "f01_c07.bin",  0x20000, 0x10000, 0xaae81695 );
 	
-		ROM_REGION( 0x10000, REGION_SOUND1, 0 ) /* samples */
-		ROM_LOAD( "d04_c01.bin",  0x00000, 0x10000, 0x9b85101d )
-	ROM_END
+		ROM_REGION( 0x10000, REGION_SOUND1, 0 );/* samples */
+		ROM_LOAD( "d04_c01.bin",  0x00000, 0x10000, 0x9b85101d );
+	ROM_END(); }}; 
 	
-	ROM_START( vigilntu )
-		ROM_REGION( 0x30000, REGION_CPU1, 0 ) /* 64k for code + 128k for bankswitching */
-		ROM_LOAD( "a-8h",  0x00000, 0x08000, 0x8d15109e )
-		ROM_LOAD( "a-8l",  0x10000, 0x10000, 0x7f95799b )
+	static RomLoadPtr rom_vigilntu = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x30000, REGION_CPU1, 0 );/* 64k for code + 128k for bankswitching */
+		ROM_LOAD( "a-8h",  0x00000, 0x08000, 0x8d15109e );
+		ROM_LOAD( "a-8l",  0x10000, 0x10000, 0x7f95799b );
 		/* 0x20000-0x2ffff empty */
 	
-		ROM_REGION( 0x10000, REGION_CPU2, 0 ) /* 64k for sound */
-		ROM_LOAD( "g05_c02.bin",  0x00000, 0x10000, 0x10582b2d )
+		ROM_REGION( 0x10000, REGION_CPU2, 0 );/* 64k for sound */
+		ROM_LOAD( "g05_c02.bin",  0x00000, 0x10000, 0x10582b2d );
 	
-		ROM_REGION( 0x20000, REGION_GFX1, ROMREGION_DISPOSE )
-		ROM_LOAD( "f05_c08.bin",  0x00000, 0x10000, 0x01579d20 )
-		ROM_LOAD( "h05_c09.bin",  0x10000, 0x10000, 0x4f5872f0 )
+		ROM_REGION( 0x20000, REGION_GFX1, ROMREGION_DISPOSE );
+		ROM_LOAD( "f05_c08.bin",  0x00000, 0x10000, 0x01579d20 );
+		ROM_LOAD( "h05_c09.bin",  0x10000, 0x10000, 0x4f5872f0 );
 	
-		ROM_REGION( 0x80000, REGION_GFX2, ROMREGION_DISPOSE )
-		ROM_LOAD( "n07_c12.bin",  0x00000, 0x10000, 0x10af8eb2 )
-		ROM_LOAD( "k07_c10.bin",  0x10000, 0x10000, 0x9576f304 )
-		ROM_LOAD( "o07_c13.bin",  0x20000, 0x10000, 0xb1d9d4dc )
-		ROM_LOAD( "l07_c11.bin",  0x30000, 0x10000, 0x4598be4a )
-		ROM_LOAD( "t07_c16.bin",  0x40000, 0x10000, 0xf5425e42 )
-		ROM_LOAD( "p07_c14.bin",  0x50000, 0x10000, 0xcb50a17c )
-		ROM_LOAD( "v07_c17.bin",  0x60000, 0x10000, 0x959ba3c7 )
-		ROM_LOAD( "s07_c15.bin",  0x70000, 0x10000, 0x7f2e91c5 )
+		ROM_REGION( 0x80000, REGION_GFX2, ROMREGION_DISPOSE );
+		ROM_LOAD( "n07_c12.bin",  0x00000, 0x10000, 0x10af8eb2 );
+		ROM_LOAD( "k07_c10.bin",  0x10000, 0x10000, 0x9576f304 );
+		ROM_LOAD( "o07_c13.bin",  0x20000, 0x10000, 0xb1d9d4dc );
+		ROM_LOAD( "l07_c11.bin",  0x30000, 0x10000, 0x4598be4a );
+		ROM_LOAD( "t07_c16.bin",  0x40000, 0x10000, 0xf5425e42 );
+		ROM_LOAD( "p07_c14.bin",  0x50000, 0x10000, 0xcb50a17c );
+		ROM_LOAD( "v07_c17.bin",  0x60000, 0x10000, 0x959ba3c7 );
+		ROM_LOAD( "s07_c15.bin",  0x70000, 0x10000, 0x7f2e91c5 );
 	
-		ROM_REGION( 0x30000, REGION_GFX3, ROMREGION_DISPOSE )
-		ROM_LOAD( "d01_c05.bin",  0x00000, 0x10000, 0x81b1ee5c )
-		ROM_LOAD( "e01_c06.bin",  0x10000, 0x10000, 0xd0d33673 )
-		ROM_LOAD( "f01_c07.bin",  0x20000, 0x10000, 0xaae81695 )
+		ROM_REGION( 0x30000, REGION_GFX3, ROMREGION_DISPOSE );
+		ROM_LOAD( "d01_c05.bin",  0x00000, 0x10000, 0x81b1ee5c );
+		ROM_LOAD( "e01_c06.bin",  0x10000, 0x10000, 0xd0d33673 );
+		ROM_LOAD( "f01_c07.bin",  0x20000, 0x10000, 0xaae81695 );
 	
-		ROM_REGION( 0x10000, REGION_SOUND1, 0 ) /* samples */
-		ROM_LOAD( "d04_c01.bin",  0x00000, 0x10000, 0x9b85101d )
-	ROM_END
+		ROM_REGION( 0x10000, REGION_SOUND1, 0 );/* samples */
+		ROM_LOAD( "d04_c01.bin",  0x00000, 0x10000, 0x9b85101d );
+	ROM_END(); }}; 
 	
-	ROM_START( vigilntj )
-		ROM_REGION( 0x30000, REGION_CPU1, 0 ) /* 64k for code + 128k for bankswitching */
-		ROM_LOAD( "vg_a-8h.rom",  0x00000, 0x08000, 0xba848713 )
-		ROM_LOAD( "vg_a-8l.rom",  0x10000, 0x10000, 0x3b12b1d8 )
+	static RomLoadPtr rom_vigilntj = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x30000, REGION_CPU1, 0 );/* 64k for code + 128k for bankswitching */
+		ROM_LOAD( "vg_a-8h.rom",  0x00000, 0x08000, 0xba848713 );
+		ROM_LOAD( "vg_a-8l.rom",  0x10000, 0x10000, 0x3b12b1d8 );
 		/* 0x20000-0x2ffff empty */
 	
-		ROM_REGION( 0x10000, REGION_CPU2, 0 ) /* 64k for sound */
-		ROM_LOAD( "g05_c02.bin",  0x00000, 0x10000, 0x10582b2d )
+		ROM_REGION( 0x10000, REGION_CPU2, 0 );/* 64k for sound */
+		ROM_LOAD( "g05_c02.bin",  0x00000, 0x10000, 0x10582b2d );
 	
-		ROM_REGION( 0x20000, REGION_GFX1, ROMREGION_DISPOSE )
-		ROM_LOAD( "f05_c08.bin",  0x00000, 0x10000, 0x01579d20 )
-		ROM_LOAD( "h05_c09.bin",  0x10000, 0x10000, 0x4f5872f0 )
+		ROM_REGION( 0x20000, REGION_GFX1, ROMREGION_DISPOSE );
+		ROM_LOAD( "f05_c08.bin",  0x00000, 0x10000, 0x01579d20 );
+		ROM_LOAD( "h05_c09.bin",  0x10000, 0x10000, 0x4f5872f0 );
 	
-		ROM_REGION( 0x80000, REGION_GFX2, ROMREGION_DISPOSE )
-		ROM_LOAD( "n07_c12.bin",  0x00000, 0x10000, 0x10af8eb2 )
-		ROM_LOAD( "k07_c10.bin",  0x10000, 0x10000, 0x9576f304 )
-		ROM_LOAD( "o07_c13.bin",  0x20000, 0x10000, 0xb1d9d4dc )
-		ROM_LOAD( "l07_c11.bin",  0x30000, 0x10000, 0x4598be4a )
-		ROM_LOAD( "t07_c16.bin",  0x40000, 0x10000, 0xf5425e42 )
-		ROM_LOAD( "p07_c14.bin",  0x50000, 0x10000, 0xcb50a17c )
-		ROM_LOAD( "v07_c17.bin",  0x60000, 0x10000, 0x959ba3c7 )
-		ROM_LOAD( "s07_c15.bin",  0x70000, 0x10000, 0x7f2e91c5 )
+		ROM_REGION( 0x80000, REGION_GFX2, ROMREGION_DISPOSE );
+		ROM_LOAD( "n07_c12.bin",  0x00000, 0x10000, 0x10af8eb2 );
+		ROM_LOAD( "k07_c10.bin",  0x10000, 0x10000, 0x9576f304 );
+		ROM_LOAD( "o07_c13.bin",  0x20000, 0x10000, 0xb1d9d4dc );
+		ROM_LOAD( "l07_c11.bin",  0x30000, 0x10000, 0x4598be4a );
+		ROM_LOAD( "t07_c16.bin",  0x40000, 0x10000, 0xf5425e42 );
+		ROM_LOAD( "p07_c14.bin",  0x50000, 0x10000, 0xcb50a17c );
+		ROM_LOAD( "v07_c17.bin",  0x60000, 0x10000, 0x959ba3c7 );
+		ROM_LOAD( "s07_c15.bin",  0x70000, 0x10000, 0x7f2e91c5 );
 	
-		ROM_REGION( 0x30000, REGION_GFX3, ROMREGION_DISPOSE )
-		ROM_LOAD( "d01_c05.bin",  0x00000, 0x10000, 0x81b1ee5c )
-		ROM_LOAD( "e01_c06.bin",  0x10000, 0x10000, 0xd0d33673 )
-		ROM_LOAD( "f01_c07.bin",  0x20000, 0x10000, 0xaae81695 )
+		ROM_REGION( 0x30000, REGION_GFX3, ROMREGION_DISPOSE );
+		ROM_LOAD( "d01_c05.bin",  0x00000, 0x10000, 0x81b1ee5c );
+		ROM_LOAD( "e01_c06.bin",  0x10000, 0x10000, 0xd0d33673 );
+		ROM_LOAD( "f01_c07.bin",  0x20000, 0x10000, 0xaae81695 );
 	
-		ROM_REGION( 0x10000, REGION_SOUND1, 0 ) /* samples */
-		ROM_LOAD( "d04_c01.bin",  0x00000, 0x10000, 0x9b85101d )
-	ROM_END
+		ROM_REGION( 0x10000, REGION_SOUND1, 0 );/* samples */
+		ROM_LOAD( "d04_c01.bin",  0x00000, 0x10000, 0x9b85101d );
+	ROM_END(); }}; 
 	
-	ROM_START( kikcubic )
-		ROM_REGION( 0x30000, REGION_CPU1, 0 ) /* 64k for code + 128k for bankswitching */
-		ROM_LOAD( "mqj-p0",       0x00000, 0x08000, 0x9cef394a )
-		ROM_LOAD( "mqj-b0",       0x10000, 0x10000, 0xd9bcf4cd )
-		ROM_LOAD( "mqj-b1",       0x20000, 0x10000, 0x54a0abe1 )
+	static RomLoadPtr rom_kikcubic = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x30000, REGION_CPU1, 0 );/* 64k for code + 128k for bankswitching */
+		ROM_LOAD( "mqj-p0",       0x00000, 0x08000, 0x9cef394a );
+		ROM_LOAD( "mqj-b0",       0x10000, 0x10000, 0xd9bcf4cd );
+		ROM_LOAD( "mqj-b1",       0x20000, 0x10000, 0x54a0abe1 );
 	
-		ROM_REGION( 0x10000, REGION_CPU2, 0 ) /* 64k for sound */
-		ROM_LOAD( "mqj-sp",       0x00000, 0x10000, 0xbbcf3582 )
+		ROM_REGION( 0x10000, REGION_CPU2, 0 );/* 64k for sound */
+		ROM_LOAD( "mqj-sp",       0x00000, 0x10000, 0xbbcf3582 );
 	
-		ROM_REGION( 0x20000, REGION_GFX1, ROMREGION_DISPOSE )
-		ROM_LOAD( "mqj-c0",       0x00000, 0x10000, 0x975585c5 )
-		ROM_LOAD( "mqj-c1",       0x10000, 0x10000, 0x49d9936d )
+		ROM_REGION( 0x20000, REGION_GFX1, ROMREGION_DISPOSE );
+		ROM_LOAD( "mqj-c0",       0x00000, 0x10000, 0x975585c5 );
+		ROM_LOAD( "mqj-c1",       0x10000, 0x10000, 0x49d9936d );
 	
-		ROM_REGION( 0x80000, REGION_GFX2, ROMREGION_DISPOSE )
-		ROM_LOAD( "mqj-00",       0x00000, 0x40000, 0x7fb0c58f )
-		ROM_LOAD( "mqj-10",       0x40000, 0x40000, 0x3a189205 )
+		ROM_REGION( 0x80000, REGION_GFX2, ROMREGION_DISPOSE );
+		ROM_LOAD( "mqj-00",       0x00000, 0x40000, 0x7fb0c58f );
+		ROM_LOAD( "mqj-10",       0x40000, 0x40000, 0x3a189205 );
 	
-		ROM_REGION( 0x10000, REGION_SOUND1, 0 ) /* samples */
-		ROM_LOAD( "mqj-v0",       0x00000, 0x10000, 0x54762956 )
-	ROM_END
+		ROM_REGION( 0x10000, REGION_SOUND1, 0 );/* samples */
+		ROM_LOAD( "mqj-v0",       0x00000, 0x10000, 0x54762956 );
+	ROM_END(); }}; 
 	
 	
 	

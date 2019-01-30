@@ -338,74 +338,74 @@ public class spcforce
 	  Game driver(s)
 	
 	***************************************************************************/
-	ROM_START( spcforce )
-		ROM_REGION( 0x10000, REGION_CPU1, 0 )       /* 64k for code */
-		ROM_LOAD( "m1v4f.1a",  	  0x0000, 0x0800, 0x7da0d1ed )
-		ROM_LOAD( "m2v4f.1c",  	  0x0800, 0x0800, 0x25605bff )
-		ROM_LOAD( "m3v5f.2a",  	  0x1000, 0x0800, 0x6f879366 )
-		ROM_LOAD( "m4v5f.2c",  	  0x1800, 0x0800, 0x7fbfabfa )
+	static RomLoadPtr rom_spcforce = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x10000, REGION_CPU1, 0 );      /* 64k for code */
+		ROM_LOAD( "m1v4f.1a",  	  0x0000, 0x0800, 0x7da0d1ed );
+		ROM_LOAD( "m2v4f.1c",  	  0x0800, 0x0800, 0x25605bff );
+		ROM_LOAD( "m3v5f.2a",  	  0x1000, 0x0800, 0x6f879366 );
+		ROM_LOAD( "m4v5f.2c",  	  0x1800, 0x0800, 0x7fbfabfa );
 								/*0x2000 empty */
-		ROM_LOAD( "m6v4f.3c",  	  0x2800, 0x0800, 0x12128e9e )
-		ROM_LOAD( "m7v4f.4a",  	  0x3000, 0x0800, 0x978ad452 )
-		ROM_LOAD( "m8v4f.4c",  	  0x3800, 0x0800, 0xf805c3cd )
+		ROM_LOAD( "m6v4f.3c",  	  0x2800, 0x0800, 0x12128e9e );
+		ROM_LOAD( "m7v4f.4a",  	  0x3000, 0x0800, 0x978ad452 );
+		ROM_LOAD( "m8v4f.4c",  	  0x3800, 0x0800, 0xf805c3cd );
 	
-		ROM_REGION( 0x1000, REGION_CPU2, 0 )		/* sound MCU */
-		ROM_LOAD( "spacefor.snd", 0x0000, 0x0800, 0x8820913c )
+		ROM_REGION( 0x1000, REGION_CPU2, 0 );	/* sound MCU */
+		ROM_LOAD( "spacefor.snd", 0x0000, 0x0800, 0x8820913c );
 	
-		ROM_REGION( 0x3000, REGION_GFX1, ROMREGION_DISPOSE )
-		ROM_LOAD( "rm1v2.6s",     0x0000, 0x0800, 0x8e3490d7 )
-		ROM_LOAD( "rm2v1.7s",     0x0800, 0x0800, 0xfbbfa05a )
-		ROM_LOAD( "gm1v2.6p",     0x1000, 0x0800, 0x4f574920 )
-		ROM_LOAD( "gm2v1.7p",     0x1800, 0x0800, 0x0cd89ce2 )
-		ROM_LOAD( "bm1v2.6m",     0x2000, 0x0800, 0x130869ce )
-		ROM_LOAD( "bm2v1.7m",     0x2800, 0x0800, 0x472f0a9b )
-	ROM_END
+		ROM_REGION( 0x3000, REGION_GFX1, ROMREGION_DISPOSE );
+		ROM_LOAD( "rm1v2.6s",     0x0000, 0x0800, 0x8e3490d7 );
+		ROM_LOAD( "rm2v1.7s",     0x0800, 0x0800, 0xfbbfa05a );
+		ROM_LOAD( "gm1v2.6p",     0x1000, 0x0800, 0x4f574920 );
+		ROM_LOAD( "gm2v1.7p",     0x1800, 0x0800, 0x0cd89ce2 );
+		ROM_LOAD( "bm1v2.6m",     0x2000, 0x0800, 0x130869ce );
+		ROM_LOAD( "bm2v1.7m",     0x2800, 0x0800, 0x472f0a9b );
+	ROM_END(); }}; 
 	
-	ROM_START( spcforc2 )
-		ROM_REGION( 0x10000, REGION_CPU1, 0 )       /* 64k for code */
-		ROM_LOAD( "spacefor.1a",  0x0000, 0x0800, 0xef6fdccb )
-		ROM_LOAD( "spacefor.1c",  0x0800, 0x0800, 0x44bd1cdd )
-		ROM_LOAD( "spacefor.2a",  0x1000, 0x0800, 0xfcbc7df7 )
-		ROM_LOAD( "vm4", 	      0x1800, 0x0800, 0xc5b073b9 )
+	static RomLoadPtr rom_spcforc2 = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x10000, REGION_CPU1, 0 );      /* 64k for code */
+		ROM_LOAD( "spacefor.1a",  0x0000, 0x0800, 0xef6fdccb );
+		ROM_LOAD( "spacefor.1c",  0x0800, 0x0800, 0x44bd1cdd );
+		ROM_LOAD( "spacefor.2a",  0x1000, 0x0800, 0xfcbc7df7 );
+		ROM_LOAD( "vm4", 	      0x1800, 0x0800, 0xc5b073b9 );
 								/*0x2000 empty */
-		ROM_LOAD( "spacefor.3c",  0x2800, 0x0800, 0x9fd52301 )
-		ROM_LOAD( "spacefor.4a",  0x3000, 0x0800, 0x89aefc0a )
-		ROM_LOAD( "m8v4f.4c",  	  0x3800, 0x0800, 0xf805c3cd )
+		ROM_LOAD( "spacefor.3c",  0x2800, 0x0800, 0x9fd52301 );
+		ROM_LOAD( "spacefor.4a",  0x3000, 0x0800, 0x89aefc0a );
+		ROM_LOAD( "m8v4f.4c",  	  0x3800, 0x0800, 0xf805c3cd );
 	
-		ROM_REGION( 0x1000, REGION_CPU2, 0 )		/* sound MCU */
-		ROM_LOAD( "spacefor.snd", 0x0000, 0x0800, 0x8820913c )
+		ROM_REGION( 0x1000, REGION_CPU2, 0 );	/* sound MCU */
+		ROM_LOAD( "spacefor.snd", 0x0000, 0x0800, 0x8820913c );
 	
-		ROM_REGION( 0x3000, REGION_GFX1, ROMREGION_DISPOSE )
-		ROM_LOAD( "spacefor.6s",  0x0000, 0x0800, 0x848ae522 )
-		ROM_LOAD( "rm2v1.7s",     0x0800, 0x0800, 0xfbbfa05a )
-		ROM_LOAD( "spacefor.6p",  0x1000, 0x0800, 0x95446911 )
-		ROM_LOAD( "gm2v1.7p",     0x1800, 0x0800, 0x0cd89ce2 )
-		ROM_LOAD( "bm1v2.6m",     0x2000, 0x0800, 0x130869ce )
-		ROM_LOAD( "bm2v1.7m",     0x2800, 0x0800, 0x472f0a9b )
-	ROM_END
+		ROM_REGION( 0x3000, REGION_GFX1, ROMREGION_DISPOSE );
+		ROM_LOAD( "spacefor.6s",  0x0000, 0x0800, 0x848ae522 );
+		ROM_LOAD( "rm2v1.7s",     0x0800, 0x0800, 0xfbbfa05a );
+		ROM_LOAD( "spacefor.6p",  0x1000, 0x0800, 0x95446911 );
+		ROM_LOAD( "gm2v1.7p",     0x1800, 0x0800, 0x0cd89ce2 );
+		ROM_LOAD( "bm1v2.6m",     0x2000, 0x0800, 0x130869ce );
+		ROM_LOAD( "bm2v1.7m",     0x2800, 0x0800, 0x472f0a9b );
+	ROM_END(); }}; 
 	
-	ROM_START( meteor )
-		ROM_REGION( 0x10000, REGION_CPU1, 0 )       /* 64k for code */
-		ROM_LOAD( "vm1", 	      0x0000, 0x0800, 0x894fe9b1 )
-		ROM_LOAD( "vm2", 	      0x0800, 0x0800, 0x28685a68 )
-		ROM_LOAD( "vm3", 	      0x1000, 0x0800, 0xc88fb12a )
-		ROM_LOAD( "vm4", 	      0x1800, 0x0800, 0xc5b073b9 )
+	static RomLoadPtr rom_meteor = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x10000, REGION_CPU1, 0 );      /* 64k for code */
+		ROM_LOAD( "vm1", 	      0x0000, 0x0800, 0x894fe9b1 );
+		ROM_LOAD( "vm2", 	      0x0800, 0x0800, 0x28685a68 );
+		ROM_LOAD( "vm3", 	      0x1000, 0x0800, 0xc88fb12a );
+		ROM_LOAD( "vm4", 	      0x1800, 0x0800, 0xc5b073b9 );
 								/*0x2000 empty */
-		ROM_LOAD( "vm6", 	      0x2800, 0x0800, 0x9969ec43 )
-		ROM_LOAD( "vm7", 	      0x3000, 0x0800, 0x39f43ac2 )
-		ROM_LOAD( "vm8", 	      0x3800, 0x0800, 0xa0508de3 )
+		ROM_LOAD( "vm6", 	      0x2800, 0x0800, 0x9969ec43 );
+		ROM_LOAD( "vm7", 	      0x3000, 0x0800, 0x39f43ac2 );
+		ROM_LOAD( "vm8", 	      0x3800, 0x0800, 0xa0508de3 );
 	
-		ROM_REGION( 0x1000, REGION_CPU2, 0 )		/* sound MCU */
-		ROM_LOAD( "vm5", 	      0x0000, 0x0800, 0xb14ccd57 )
+		ROM_REGION( 0x1000, REGION_CPU2, 0 );	/* sound MCU */
+		ROM_LOAD( "vm5", 	      0x0000, 0x0800, 0xb14ccd57 );
 	
-		ROM_REGION( 0x3000, REGION_GFX1, ROMREGION_DISPOSE )
-		ROM_LOAD( "rm1v",         0x0000, 0x0800, 0xd621fe96 )
-		ROM_LOAD( "rm2v",         0x0800, 0x0800, 0xb3981251 )
-		ROM_LOAD( "gm1v",         0x1000, 0x0800, 0xd44617e8 )
-		ROM_LOAD( "gm2v",         0x1800, 0x0800, 0x0997d945 )
-		ROM_LOAD( "bm1v",         0x2000, 0x0800, 0xcc97c890 )
-		ROM_LOAD( "bm2v",         0x2800, 0x0800, 0x2858cf5c )
-	ROM_END
+		ROM_REGION( 0x3000, REGION_GFX1, ROMREGION_DISPOSE );
+		ROM_LOAD( "rm1v",         0x0000, 0x0800, 0xd621fe96 );
+		ROM_LOAD( "rm2v",         0x0800, 0x0800, 0xb3981251 );
+		ROM_LOAD( "gm1v",         0x1000, 0x0800, 0xd44617e8 );
+		ROM_LOAD( "gm2v",         0x1800, 0x0800, 0x0997d945 );
+		ROM_LOAD( "bm1v",         0x2000, 0x0800, 0xcc97c890 );
+		ROM_LOAD( "bm2v",         0x2800, 0x0800, 0x2858cf5c );
+	ROM_END(); }}; 
 	
 	
 	GAMEX( 1980, spcforce, 0,        spcforce, spcforce, 0, ROT270, "Venture Line", "Space Force", GAME_IMPERFECT_COLORS )

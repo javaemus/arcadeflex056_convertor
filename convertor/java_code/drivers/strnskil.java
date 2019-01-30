@@ -395,106 +395,106 @@ public class strnskil
 	
 	/****************************************************************************/
 	
-	ROM_START( strnskil )
-		ROM_REGION( 0x10000, REGION_CPU1, 0 ) /* main CPU */
-		ROM_LOAD( "tvg3.7",  0x0000,  0x2000, 0x31fd793a )
-		ROM_CONTINUE(        0x8000,  0x2000 )
-		ROM_LOAD( "tvg4.8",  0x2000,  0x2000, 0xc58315b5 )
-		ROM_LOAD( "tvg5.9",  0x4000,  0x2000, 0x29e7ded5 )
-		ROM_LOAD( "tvg6.10", 0x6000,  0x2000, 0x8b126a4b )
+	static RomLoadPtr rom_strnskil = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x10000, REGION_CPU1, 0 );/* main CPU */
+		ROM_LOAD( "tvg3.7",  0x0000,  0x2000, 0x31fd793a );
+		ROM_CONTINUE(        0x8000,  0x2000 );
+		ROM_LOAD( "tvg4.8",  0x2000,  0x2000, 0xc58315b5 );
+		ROM_LOAD( "tvg5.9",  0x4000,  0x2000, 0x29e7ded5 );
+		ROM_LOAD( "tvg6.10", 0x6000,  0x2000, 0x8b126a4b );
 	
-		ROM_REGION( 0x10000, REGION_CPU2, 0 ) /* sub CPU */
-		ROM_LOAD( "tvg1.2",  0x0000,  0x2000, 0xb586b753 )
-		ROM_LOAD( "tvg2.3",  0x2000,  0x2000, 0x8bd71bb6 )
+		ROM_REGION( 0x10000, REGION_CPU2, 0 );/* sub CPU */
+		ROM_LOAD( "tvg1.2",  0x0000,  0x2000, 0xb586b753 );
+		ROM_LOAD( "tvg2.3",  0x2000,  0x2000, 0x8bd71bb6 );
 	
-		ROM_REGION( 0x6000, REGION_GFX1, ROMREGION_DISPOSE ) /* sprite */
-		ROM_LOAD( "tvg7.90",   0x0000,  0x2000, 0xee3bd593 )
-		ROM_LOAD( "tvg8.92",   0x2000,  0x2000, 0x1b265360 )
-		ROM_LOAD( "tvg9.94",   0x4000,  0x2000, 0x776c7ca6 )
+		ROM_REGION( 0x6000, REGION_GFX1, ROMREGION_DISPOSE );/* sprite */
+		ROM_LOAD( "tvg7.90",   0x0000,  0x2000, 0xee3bd593 );
+		ROM_LOAD( "tvg8.92",   0x2000,  0x2000, 0x1b265360 );
+		ROM_LOAD( "tvg9.94",   0x4000,  0x2000, 0x776c7ca6 );
 	
-		ROM_REGION( 0x6000, REGION_GFX2, ROMREGION_DISPOSE ) /* bg */
-		ROM_LOAD( "tvg12.102", 0x0000,  0x2000, 0x68b9d888 )
-		ROM_LOAD( "tvg11.101", 0x2000,  0x2000, 0x7f2179ff )
-		ROM_LOAD( "tvg10.100", 0x4000,  0x2000, 0x321ad963 )
+		ROM_REGION( 0x6000, REGION_GFX2, ROMREGION_DISPOSE );/* bg */
+		ROM_LOAD( "tvg12.102", 0x0000,  0x2000, 0x68b9d888 );
+		ROM_LOAD( "tvg11.101", 0x2000,  0x2000, 0x7f2179ff );
+		ROM_LOAD( "tvg10.100", 0x4000,  0x2000, 0x321ad963 );
 	
-		ROM_REGION( 0x0800, REGION_PROMS, 0 ) /* color PROMs */
-		ROM_LOAD( "15-3.prm", 0x0000,  0x0100, 0xdbcd3bec ) /* R */
-		ROM_LOAD( "15-4.prm", 0x0100,  0x0100, 0x9eb7b6cf ) /* G */
-		ROM_LOAD( "15-5.prm", 0x0200,  0x0100, 0x9b30a7f3 ) /* B */
-		ROM_LOAD( "15-1.prm", 0x0300,  0x0200, 0xd4f5b3d7 ) /* sprite */
-		ROM_LOAD( "15-2.prm", 0x0500,  0x0200, 0xcdffede9 ) /* bg */
+		ROM_REGION( 0x0800, REGION_PROMS, 0 );/* color PROMs */
+		ROM_LOAD( "15-3.prm", 0x0000,  0x0100, 0xdbcd3bec );/* R */
+		ROM_LOAD( "15-4.prm", 0x0100,  0x0100, 0x9eb7b6cf );/* G */
+		ROM_LOAD( "15-5.prm", 0x0200,  0x0100, 0x9b30a7f3 );/* B */
+		ROM_LOAD( "15-1.prm", 0x0300,  0x0200, 0xd4f5b3d7 );/* sprite */
+		ROM_LOAD( "15-2.prm", 0x0500,  0x0200, 0xcdffede9 );/* bg */
 	
-		ROM_REGION( 0x0100, REGION_USER1, 0 ) /* scroll control PROM */
-		ROM_LOAD( "15-6.prm", 0x0000,  0x0100, 0xec4faf5b )
-	ROM_END
+		ROM_REGION( 0x0100, REGION_USER1, 0 );/* scroll control PROM */
+		ROM_LOAD( "15-6.prm", 0x0000,  0x0100, 0xec4faf5b );
+	ROM_END(); }}; 
 	
-	ROM_START( guiness )
-		ROM_REGION( 0x10000, REGION_CPU1, 0 ) /* main CPU */
-		ROM_LOAD( "tvg3.15", 0x0000,  0x2000, 0x3a605ad8 )
-		ROM_CONTINUE(        0x8000,  0x2000 )
-		ROM_LOAD( "tvg4.8",  0x2000,  0x2000, 0xc58315b5 )
-		ROM_LOAD( "tvg5.9",  0x4000,  0x2000, 0x29e7ded5 )
-		ROM_LOAD( "tvg6.10", 0x6000,  0x2000, 0x8b126a4b )
+	static RomLoadPtr rom_guiness = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x10000, REGION_CPU1, 0 );/* main CPU */
+		ROM_LOAD( "tvg3.15", 0x0000,  0x2000, 0x3a605ad8 );
+		ROM_CONTINUE(        0x8000,  0x2000 );
+		ROM_LOAD( "tvg4.8",  0x2000,  0x2000, 0xc58315b5 );
+		ROM_LOAD( "tvg5.9",  0x4000,  0x2000, 0x29e7ded5 );
+		ROM_LOAD( "tvg6.10", 0x6000,  0x2000, 0x8b126a4b );
 	
-		ROM_REGION( 0x10000, REGION_CPU2, 0 ) /* sub CPU */
-		ROM_LOAD( "tvg1.2",  0x0000,  0x2000, 0xb586b753 )
-		ROM_LOAD( "tvg2.3",  0x2000,  0x2000, 0x8bd71bb6 )
+		ROM_REGION( 0x10000, REGION_CPU2, 0 );/* sub CPU */
+		ROM_LOAD( "tvg1.2",  0x0000,  0x2000, 0xb586b753 );
+		ROM_LOAD( "tvg2.3",  0x2000,  0x2000, 0x8bd71bb6 );
 	
-		ROM_REGION( 0x6000, REGION_GFX1, ROMREGION_DISPOSE ) /* sprite */
-		ROM_LOAD( "tvg7.90",   0x0000,  0x2000, 0xee3bd593 )
-		ROM_LOAD( "tvg8.92",   0x2000,  0x2000, 0x1b265360 )
-		ROM_LOAD( "tvg9.94",   0x4000,  0x2000, 0x776c7ca6 )
+		ROM_REGION( 0x6000, REGION_GFX1, ROMREGION_DISPOSE );/* sprite */
+		ROM_LOAD( "tvg7.90",   0x0000,  0x2000, 0xee3bd593 );
+		ROM_LOAD( "tvg8.92",   0x2000,  0x2000, 0x1b265360 );
+		ROM_LOAD( "tvg9.94",   0x4000,  0x2000, 0x776c7ca6 );
 	
-		ROM_REGION( 0x6000, REGION_GFX2, ROMREGION_DISPOSE ) /* bg */
-		ROM_LOAD( "tvg12.15", 0x0000,  0x2000, 0xa82c923d )
-		ROM_LOAD( "tvg11.15", 0x2000,  0x2000, 0xd432c96f )
-		ROM_LOAD( "tvg10.15", 0x4000,  0x2000, 0xa53959d6 )
+		ROM_REGION( 0x6000, REGION_GFX2, ROMREGION_DISPOSE );/* bg */
+		ROM_LOAD( "tvg12.15", 0x0000,  0x2000, 0xa82c923d );
+		ROM_LOAD( "tvg11.15", 0x2000,  0x2000, 0xd432c96f );
+		ROM_LOAD( "tvg10.15", 0x4000,  0x2000, 0xa53959d6 );
 	
-		ROM_REGION( 0x0800, REGION_PROMS, 0 ) /* color PROMs */
-		ROM_LOAD( "15-3.prm", 0x0000,  0x0100, 0xdbcd3bec ) /* R */
-		ROM_LOAD( "15-4.prm", 0x0100,  0x0100, 0x9eb7b6cf ) /* G */
-		ROM_LOAD( "15-5.prm", 0x0200,  0x0100, 0x9b30a7f3 ) /* B */
-		ROM_LOAD( "15-1.prm", 0x0300,  0x0200, 0xd4f5b3d7 ) /* sprite */
-		ROM_LOAD( "15-2.prm", 0x0500,  0x0200, 0xcdffede9 ) /* bg */
+		ROM_REGION( 0x0800, REGION_PROMS, 0 );/* color PROMs */
+		ROM_LOAD( "15-3.prm", 0x0000,  0x0100, 0xdbcd3bec );/* R */
+		ROM_LOAD( "15-4.prm", 0x0100,  0x0100, 0x9eb7b6cf );/* G */
+		ROM_LOAD( "15-5.prm", 0x0200,  0x0100, 0x9b30a7f3 );/* B */
+		ROM_LOAD( "15-1.prm", 0x0300,  0x0200, 0xd4f5b3d7 );/* sprite */
+		ROM_LOAD( "15-2.prm", 0x0500,  0x0200, 0xcdffede9 );/* bg */
 	
-		ROM_REGION( 0x0100, REGION_USER1, 0 ) /* scroll control PROM */
-		ROM_LOAD( "15-6.prm", 0x0000,  0x0100, 0xec4faf5b )
-	ROM_END
+		ROM_REGION( 0x0100, REGION_USER1, 0 );/* scroll control PROM */
+		ROM_LOAD( "15-6.prm", 0x0000,  0x0100, 0xec4faf5b );
+	ROM_END(); }}; 
 	
-	ROM_START( pettanp )
-		ROM_REGION( 0x10000, REGION_CPU1, 0 ) /* main CPU */
-		ROM_LOAD( "tvg2-16a.7",  0x0000,  0x2000, 0x4cbbbd01 )
-		ROM_CONTINUE(            0x8000,  0x2000 )
-		ROM_LOAD( "tvg3-16a.8",  0x2000,  0x2000, 0xaaa0420f )
-		ROM_LOAD( "tvg4-16a.9",  0x4000,  0x2000, 0x43306369 )
-		ROM_LOAD( "tvg5-16a.10", 0x6000,  0x2000, 0xda9c635f )
+	static RomLoadPtr rom_pettanp = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x10000, REGION_CPU1, 0 );/* main CPU */
+		ROM_LOAD( "tvg2-16a.7",  0x0000,  0x2000, 0x4cbbbd01 );
+		ROM_CONTINUE(            0x8000,  0x2000 );
+		ROM_LOAD( "tvg3-16a.8",  0x2000,  0x2000, 0xaaa0420f );
+		ROM_LOAD( "tvg4-16a.9",  0x4000,  0x2000, 0x43306369 );
+		ROM_LOAD( "tvg5-16a.10", 0x6000,  0x2000, 0xda9c635f );
 	
-		ROM_REGION( 0x10000, REGION_CPU2, 0 ) /* sub CPU */
-		ROM_LOAD( "tvg1-16.2",   0x0000,  0x2000, 0xe36009f6 )
+		ROM_REGION( 0x10000, REGION_CPU2, 0 );/* sub CPU */
+		ROM_LOAD( "tvg1-16.2",   0x0000,  0x2000, 0xe36009f6 );
 	
-		ROM_REGION( 0x6000, REGION_GFX1, ROMREGION_DISPOSE ) /* sprite */
-		ROM_LOAD( "tvg6-16.90",  0x0000,  0x2000, 0x6905d9d5 )
-		ROM_LOAD( "tvg7-16.92",  0x2000,  0x2000, 0x40d02bfd )
-		ROM_LOAD( "tvg8-16.94",  0x4000,  0x2000, 0xb18a2244 )
+		ROM_REGION( 0x6000, REGION_GFX1, ROMREGION_DISPOSE );/* sprite */
+		ROM_LOAD( "tvg6-16.90",  0x0000,  0x2000, 0x6905d9d5 );
+		ROM_LOAD( "tvg7-16.92",  0x2000,  0x2000, 0x40d02bfd );
+		ROM_LOAD( "tvg8-16.94",  0x4000,  0x2000, 0xb18a2244 );
 	
-		ROM_REGION( 0x6000, REGION_GFX2, ROMREGION_DISPOSE ) /* bg */
-		ROM_LOAD( "tvg11-16.102",0x0000,  0x2000, 0x327b7a29 )
-		ROM_LOAD( "tvg10-16.101",0x2000,  0x2000, 0x624ac061 )
-		ROM_LOAD( "tvg9-16.100", 0x4000,  0x2000, 0xc477e74c )
+		ROM_REGION( 0x6000, REGION_GFX2, ROMREGION_DISPOSE );/* bg */
+		ROM_LOAD( "tvg11-16.102",0x0000,  0x2000, 0x327b7a29 );
+		ROM_LOAD( "tvg10-16.101",0x2000,  0x2000, 0x624ac061 );
+		ROM_LOAD( "tvg9-16.100", 0x4000,  0x2000, 0xc477e74c );
 	
-		ROM_REGION( 0x0700, REGION_PROMS, 0 ) /* color PROMs */
-		ROM_LOAD( "16-3.66",  0x0000,  0x0100, 0xdbcd3bec ) /* R */
-		ROM_LOAD( "16-4.67",  0x0100,  0x0100, 0x9eb7b6cf ) /* G */
-		ROM_LOAD( "16-5.68",  0x0200,  0x0100, 0x9b30a7f3 ) /* B */
-		ROM_LOAD( "16-1.148", 0x0300,  0x0200, 0x777e2770 ) /* sprite */
-		ROM_LOAD( "16-2.97",  0x0500,  0x0200, 0x7f95d4b2 ) /* bg */
+		ROM_REGION( 0x0700, REGION_PROMS, 0 );/* color PROMs */
+		ROM_LOAD( "16-3.66",  0x0000,  0x0100, 0xdbcd3bec );/* R */
+		ROM_LOAD( "16-4.67",  0x0100,  0x0100, 0x9eb7b6cf );/* G */
+		ROM_LOAD( "16-5.68",  0x0200,  0x0100, 0x9b30a7f3 );/* B */
+		ROM_LOAD( "16-1.148", 0x0300,  0x0200, 0x777e2770 );/* sprite */
+		ROM_LOAD( "16-2.97",  0x0500,  0x0200, 0x7f95d4b2 );/* bg */
 	
-		ROM_REGION( 0x0100, REGION_USER1, 0 ) /* scroll control PROM */
-	//	ROM_LOAD( "16-6",     0x0000,  0x0100, 0x00000000 )
+		ROM_REGION( 0x0100, REGION_USER1, 0 );/* scroll control PROM */
+	//	ROM_LOAD( "16-6",     0x0000,  0x0100, 0x00000000 );
 	
-		ROM_REGION( 0x1000, REGION_USER2, 0 ) /* protection? */
-		ROM_LOAD( "tvg12-16.2", 0x0000,  0x1000, 0x3abc6ba8 )
-	ROM_END
+		ROM_REGION( 0x1000, REGION_USER2, 0 );/* protection? */
+		ROM_LOAD( "tvg12-16.2", 0x0000,  0x1000, 0x3abc6ba8 );
+	ROM_END(); }}; 
 	
 	GAME(  1984, strnskil, 0,        strnskil, strnskil, 0, ROT0, "Sun Electronics", "Strength & Skill" )
 	GAME(  1984, guiness,  strnskil, strnskil, strnskil, 0, ROT0, "Sun Electronics", "The Guiness (Japan)" )

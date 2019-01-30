@@ -782,29 +782,29 @@ public class airbustr
 	
 	***************************************************************************/
 	
-	ROM_START( airbustr )
-		ROM_REGION( 0x24000, REGION_CPU1, 0 )
-		ROM_LOAD( "pr-14j.bin", 0x00000, 0x0c000, 0x6b9805bd )
-		ROM_CONTINUE(           0x10000, 0x14000 )
+	static RomLoadPtr rom_airbustr = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x24000, REGION_CPU1, 0 );
+		ROM_LOAD( "pr-14j.bin", 0x00000, 0x0c000, 0x6b9805bd );
+		ROM_CONTINUE(           0x10000, 0x14000 );
 	
-		ROM_REGION( 0x24000, REGION_CPU2, 0 )
-		ROM_LOAD( "pr-11j.bin", 0x00000, 0x0c000, 0x85464124 )
-		ROM_CONTINUE(           0x10000, 0x14000 )
+		ROM_REGION( 0x24000, REGION_CPU2, 0 );
+		ROM_LOAD( "pr-11j.bin", 0x00000, 0x0c000, 0x85464124 );
+		ROM_CONTINUE(           0x10000, 0x14000 );
 	
-		ROM_REGION( 0x24000, REGION_CPU3, 0 )
-		ROM_LOAD( "pr-21.bin",  0x00000, 0x0c000, 0x6e0a5df0 )
-		ROM_CONTINUE(           0x10000, 0x14000 )
+		ROM_REGION( 0x24000, REGION_CPU3, 0 );
+		ROM_LOAD( "pr-21.bin",  0x00000, 0x0c000, 0x6e0a5df0 );
+		ROM_CONTINUE(           0x10000, 0x14000 );
 	
-		ROM_REGION( 0x080000, REGION_GFX1, ROMREGION_DISPOSE )
-		ROM_LOAD( "pr-000.bin", 0x000000, 0x80000, 0x8ca68f0d ) // scrolling layers
+		ROM_REGION( 0x080000, REGION_GFX1, ROMREGION_DISPOSE );
+		ROM_LOAD( "pr-000.bin", 0x000000, 0x80000, 0x8ca68f0d );// scrolling layers
 	
-		ROM_REGION( 0x100000, REGION_GFX2, ROMREGION_DISPOSE )
-		ROM_LOAD( "pr-001.bin", 0x000000, 0x80000, 0x7e6cb377 ) // sprites
-		ROM_LOAD( "pr-02.bin",  0x080000, 0x10000, 0x6bbd5e46 )
+		ROM_REGION( 0x100000, REGION_GFX2, ROMREGION_DISPOSE );
+		ROM_LOAD( "pr-001.bin", 0x000000, 0x80000, 0x7e6cb377 );// sprites
+		ROM_LOAD( "pr-02.bin",  0x080000, 0x10000, 0x6bbd5e46 );
 	
-		ROM_REGION( 0x40000, REGION_SOUND1, 0 )	/* OKI-M6295 samples */
-		ROM_LOAD( "pr-200.bin", 0x00000, 0x40000, 0xa4dd3390 )
-	ROM_END
+		ROM_REGION( 0x40000, REGION_SOUND1, 0 );/* OKI-M6295 samples */
+		ROM_LOAD( "pr-200.bin", 0x00000, 0x40000, 0xa4dd3390 );
+	ROM_END(); }}; 
 	
 	
 	

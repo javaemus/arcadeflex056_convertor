@@ -374,35 +374,35 @@ public class amspdwy
 	
 	***************************************************************************/
 	
-	ROM_START( amspdwy )
-		ROM_REGION( 0x18000, REGION_CPU1, 0 )		/* Main Z80 Code */
-		ROM_LOAD( "game5807.u33", 0x00000, 0x8000, 0x88233b59 )
-		ROM_LOAD( "trks6092.u34", 0x10000, 0x8000, 0x74a4e7b7 )
+	static RomLoadPtr rom_amspdwy = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x18000, REGION_CPU1, 0 );	/* Main Z80 Code */
+		ROM_LOAD( "game5807.u33", 0x00000, 0x8000, 0x88233b59 );
+		ROM_LOAD( "trks6092.u34", 0x10000, 0x8000, 0x74a4e7b7 );
 	
-		ROM_REGION( 0x10000, REGION_CPU2, 0 )		/* Sound Z80 Code */
-		ROM_LOAD( "audi9463.u2", 0x00000, 0x8000, 0x61b0467e )
+		ROM_REGION( 0x10000, REGION_CPU2, 0 );	/* Sound Z80 Code */
+		ROM_LOAD( "audi9463.u2", 0x00000, 0x8000, 0x61b0467e );
 	
-		ROM_REGION( 0x4000, REGION_GFX1, ROMREGION_DISPOSE )	/* Layer + Sprites */
-		ROM_LOAD( "hilo9b3c.5a", 0x0000, 0x1000, 0xf50f864c )
-		ROM_LOAD( "hihie12a.4a", 0x1000, 0x1000, 0x3d7497f3 )
-		ROM_LOAD( "lolo1d51.1a", 0x2000, 0x1000, 0x58701c1c )
-		ROM_LOAD( "lohi4644.2a", 0x3000, 0x1000, 0xa1d802b1 )
-	ROM_END
+		ROM_REGION( 0x4000, REGION_GFX1, ROMREGION_DISPOSE );/* Layer + Sprites */
+		ROM_LOAD( "hilo9b3c.5a", 0x0000, 0x1000, 0xf50f864c );
+		ROM_LOAD( "hihie12a.4a", 0x1000, 0x1000, 0x3d7497f3 );
+		ROM_LOAD( "lolo1d51.1a", 0x2000, 0x1000, 0x58701c1c );
+		ROM_LOAD( "lohi4644.2a", 0x3000, 0x1000, 0xa1d802b1 );
+	ROM_END(); }}; 
 	
-	ROM_START( amspdwya )
-		ROM_REGION( 0x18000, REGION_CPU1, 0 )		/* Main Z80 Code */
-		ROM_LOAD( "game.u33",     0x00000, 0x8000, 0xfacab102 )
-		ROM_LOAD( "trks6092.u34", 0x10000, 0x8000, 0x74a4e7b7 )
+	static RomLoadPtr rom_amspdwya = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x18000, REGION_CPU1, 0 );	/* Main Z80 Code */
+		ROM_LOAD( "game.u33",     0x00000, 0x8000, 0xfacab102 );
+		ROM_LOAD( "trks6092.u34", 0x10000, 0x8000, 0x74a4e7b7 );
 	
-		ROM_REGION( 0x10000, REGION_CPU2, 0 )		/* Sound Z80 Code */
-		ROM_LOAD( "audi9463.u2", 0x00000, 0x8000, 0x61b0467e )
+		ROM_REGION( 0x10000, REGION_CPU2, 0 );	/* Sound Z80 Code */
+		ROM_LOAD( "audi9463.u2", 0x00000, 0x8000, 0x61b0467e );
 	
-		ROM_REGION( 0x4000, REGION_GFX1, ROMREGION_DISPOSE )	/* Layer + Sprites */
-		ROM_LOAD( "hilo9b3c.5a", 0x0000, 0x1000, 0xf50f864c )
-		ROM_LOAD( "hihie12a.4a", 0x1000, 0x1000, 0x3d7497f3 )
-		ROM_LOAD( "lolo1d51.1a", 0x2000, 0x1000, 0x58701c1c )
-		ROM_LOAD( "lohi4644.2a", 0x3000, 0x1000, 0xa1d802b1 )
-	ROM_END
+		ROM_REGION( 0x4000, REGION_GFX1, ROMREGION_DISPOSE );/* Layer + Sprites */
+		ROM_LOAD( "hilo9b3c.5a", 0x0000, 0x1000, 0xf50f864c );
+		ROM_LOAD( "hihie12a.4a", 0x1000, 0x1000, 0x3d7497f3 );
+		ROM_LOAD( "lolo1d51.1a", 0x2000, 0x1000, 0x58701c1c );
+		ROM_LOAD( "lohi4644.2a", 0x3000, 0x1000, 0xa1d802b1 );
+	ROM_END(); }}; 
 	
 	
 	/* (C) 1987 ETI 8402 MAGNOLIA ST. #C SANTEE, CA 92071 */

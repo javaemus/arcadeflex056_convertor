@@ -419,69 +419,69 @@ public class megazone
 	
 	***************************************************************************/
 	
-	ROM_START( megazone )
-		ROM_REGION( 2*0x10000, REGION_CPU1, 0 )     /* 64k for code + 64k for decrypted opcodes */
-		ROM_LOAD( "319i07.bin",    0x6000, 0x2000, 0x94b22ea8 )
-		ROM_LOAD( "319i06.bin",    0x8000, 0x2000, 0x0468b619 )
-		ROM_LOAD( "319i05.bin",    0xa000, 0x2000, 0xac59000c )
-		ROM_LOAD( "319i04.bin",    0xc000, 0x2000, 0x1e968603 )
-		ROM_LOAD( "319i03.bin",    0xe000, 0x2000, 0x0888b803 )
+	static RomLoadPtr rom_megazone = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 2*0x10000, REGION_CPU1, 0 );    /* 64k for code + 64k for decrypted opcodes */
+		ROM_LOAD( "319i07.bin",    0x6000, 0x2000, 0x94b22ea8 );
+		ROM_LOAD( "319i06.bin",    0x8000, 0x2000, 0x0468b619 );
+		ROM_LOAD( "319i05.bin",    0xa000, 0x2000, 0xac59000c );
+		ROM_LOAD( "319i04.bin",    0xc000, 0x2000, 0x1e968603 );
+		ROM_LOAD( "319i03.bin",    0xe000, 0x2000, 0x0888b803 );
 	
-		ROM_REGION( 0x10000, REGION_CPU2, 0 )     /* 64k for the audio CPU */
-		ROM_LOAD( "319e02.bin",   0x0000, 0x2000, 0xd5d45edb )
+		ROM_REGION( 0x10000, REGION_CPU2, 0 );    /* 64k for the audio CPU */
+		ROM_LOAD( "319e02.bin",   0x0000, 0x2000, 0xd5d45edb );
 	
-		ROM_REGION( 0x1000, REGION_CPU3, 0 )     /* 4k for the 8039 DAC CPU */
-		ROM_LOAD( "319e01.bin",   0x0000, 0x1000, 0xed5725a0 )
+		ROM_REGION( 0x1000, REGION_CPU3, 0 );    /* 4k for the 8039 DAC CPU */
+		ROM_LOAD( "319e01.bin",   0x0000, 0x1000, 0xed5725a0 );
 	
-		ROM_REGION( 0x04000, REGION_GFX1, ROMREGION_DISPOSE )
-		ROM_LOAD( "319e12.bin",    0x0000, 0x2000, 0xe0fb7835 )
-		ROM_LOAD( "319e13.bin",    0x2000, 0x2000, 0x3d8f3743 )
+		ROM_REGION( 0x04000, REGION_GFX1, ROMREGION_DISPOSE );
+		ROM_LOAD( "319e12.bin",    0x0000, 0x2000, 0xe0fb7835 );
+		ROM_LOAD( "319e13.bin",    0x2000, 0x2000, 0x3d8f3743 );
 	
-		ROM_REGION( 0x08000, REGION_GFX2, ROMREGION_DISPOSE )
-		ROM_LOAD( "319e11.bin",    0x0000, 0x2000, 0x965a7ff6 )
-		ROM_LOAD( "319e09.bin",    0x2000, 0x2000, 0x5eaa7f3e )
-		ROM_LOAD( "319e10.bin",    0x4000, 0x2000, 0x7bb1aeee )
-		ROM_LOAD( "319e08.bin",    0x6000, 0x2000, 0x6add71b1 )
+		ROM_REGION( 0x08000, REGION_GFX2, ROMREGION_DISPOSE );
+		ROM_LOAD( "319e11.bin",    0x0000, 0x2000, 0x965a7ff6 );
+		ROM_LOAD( "319e09.bin",    0x2000, 0x2000, 0x5eaa7f3e );
+		ROM_LOAD( "319e10.bin",    0x4000, 0x2000, 0x7bb1aeee );
+		ROM_LOAD( "319e08.bin",    0x6000, 0x2000, 0x6add71b1 );
 	
-		ROM_REGION( 0x0260, REGION_PROMS, 0 )
-		ROM_LOAD( "319b18.a16",  0x0000, 0x020, 0x23cb02af ) /* palette */
-		ROM_LOAD( "319b16.c6",   0x0020, 0x100, 0x5748e933 ) /* sprite lookup table */
-		ROM_LOAD( "319b17.a11",  0x0120, 0x100, 0x1fbfce73 ) /* character lookup table */
-		ROM_LOAD( "319b14.e7",   0x0220, 0x020, 0x55044268 ) /* timing (not used) */
-		ROM_LOAD( "319b15.e8",   0x0240, 0x020, 0x31fd7ab9 ) /* timing (not used) */
-	ROM_END
+		ROM_REGION( 0x0260, REGION_PROMS, 0 );
+		ROM_LOAD( "319b18.a16",  0x0000, 0x020, 0x23cb02af );/* palette */
+		ROM_LOAD( "319b16.c6",   0x0020, 0x100, 0x5748e933 );/* sprite lookup table */
+		ROM_LOAD( "319b17.a11",  0x0120, 0x100, 0x1fbfce73 );/* character lookup table */
+		ROM_LOAD( "319b14.e7",   0x0220, 0x020, 0x55044268 );/* timing (not used) */
+		ROM_LOAD( "319b15.e8",   0x0240, 0x020, 0x31fd7ab9 );/* timing (not used) */
+	ROM_END(); }}; 
 	
-	ROM_START( megaznik )
-		ROM_REGION( 2*0x10000, REGION_CPU1, 0 )     /* 64k for code + 64k for decrypted opcodes */
-		ROM_LOAD( "ic59_cpu.bin",  0x6000, 0x2000, 0xf41922a0 )
-		ROM_LOAD( "ic58_cpu.bin",  0x8000, 0x2000, 0x7fd7277b )
-		ROM_LOAD( "ic57_cpu.bin",  0xa000, 0x2000, 0xa4b33b51 )
-		ROM_LOAD( "ic56_cpu.bin",  0xc000, 0x2000, 0x2aabcfbf )
-		ROM_LOAD( "ic55_cpu.bin",  0xe000, 0x2000, 0xb33a3c37 )
+	static RomLoadPtr rom_megaznik = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 2*0x10000, REGION_CPU1, 0 );    /* 64k for code + 64k for decrypted opcodes */
+		ROM_LOAD( "ic59_cpu.bin",  0x6000, 0x2000, 0xf41922a0 );
+		ROM_LOAD( "ic58_cpu.bin",  0x8000, 0x2000, 0x7fd7277b );
+		ROM_LOAD( "ic57_cpu.bin",  0xa000, 0x2000, 0xa4b33b51 );
+		ROM_LOAD( "ic56_cpu.bin",  0xc000, 0x2000, 0x2aabcfbf );
+		ROM_LOAD( "ic55_cpu.bin",  0xe000, 0x2000, 0xb33a3c37 );
 	
-		ROM_REGION( 0x10000, REGION_CPU2, 0 )     /* 64k for the audio CPU */
-		ROM_LOAD( "319e02.bin",   0x0000, 0x2000, 0xd5d45edb )
+		ROM_REGION( 0x10000, REGION_CPU2, 0 );    /* 64k for the audio CPU */
+		ROM_LOAD( "319e02.bin",   0x0000, 0x2000, 0xd5d45edb );
 	
-		ROM_REGION( 0x1000, REGION_CPU3, 0 )     /* 4k for the 8039 DAC CPU */
-		ROM_LOAD( "319e01.bin",   0x0000, 0x1000, 0xed5725a0 )
+		ROM_REGION( 0x1000, REGION_CPU3, 0 );    /* 4k for the 8039 DAC CPU */
+		ROM_LOAD( "319e01.bin",   0x0000, 0x1000, 0xed5725a0 );
 	
-		ROM_REGION( 0x04000, REGION_GFX1, ROMREGION_DISPOSE )
-		ROM_LOAD( "ic40_vid.bin",  0x0000, 0x2000, 0x07b8b24b )
-		ROM_LOAD( "319e13.bin",    0x2000, 0x2000, 0x3d8f3743 )
+		ROM_REGION( 0x04000, REGION_GFX1, ROMREGION_DISPOSE );
+		ROM_LOAD( "ic40_vid.bin",  0x0000, 0x2000, 0x07b8b24b );
+		ROM_LOAD( "319e13.bin",    0x2000, 0x2000, 0x3d8f3743 );
 	
-		ROM_REGION( 0x08000, REGION_GFX2, ROMREGION_DISPOSE )
-		ROM_LOAD( "319e11.bin",    0x0000, 0x2000, 0x965a7ff6 )
-		ROM_LOAD( "319e09.bin",    0x2000, 0x2000, 0x5eaa7f3e )
-		ROM_LOAD( "319e10.bin",    0x4000, 0x2000, 0x7bb1aeee )
-		ROM_LOAD( "319e08.bin",    0x6000, 0x2000, 0x6add71b1 )
+		ROM_REGION( 0x08000, REGION_GFX2, ROMREGION_DISPOSE );
+		ROM_LOAD( "319e11.bin",    0x0000, 0x2000, 0x965a7ff6 );
+		ROM_LOAD( "319e09.bin",    0x2000, 0x2000, 0x5eaa7f3e );
+		ROM_LOAD( "319e10.bin",    0x4000, 0x2000, 0x7bb1aeee );
+		ROM_LOAD( "319e08.bin",    0x6000, 0x2000, 0x6add71b1 );
 	
-		ROM_REGION( 0x0260, REGION_PROMS, 0 )
-		ROM_LOAD( "319b18.a16",  0x0000, 0x020, 0x23cb02af ) /* palette */
-		ROM_LOAD( "319b16.c6",   0x0020, 0x100, 0x5748e933 ) /* sprite lookup table */
-		ROM_LOAD( "319b17.a11",  0x0120, 0x100, 0x1fbfce73 ) /* character lookup table */
-		ROM_LOAD( "319b14.e7",   0x0220, 0x020, 0x55044268 ) /* timing (not used) */
-		ROM_LOAD( "319b15.e8",   0x0240, 0x020, 0x31fd7ab9 ) /* timing (not used) */
-	ROM_END
+		ROM_REGION( 0x0260, REGION_PROMS, 0 );
+		ROM_LOAD( "319b18.a16",  0x0000, 0x020, 0x23cb02af );/* palette */
+		ROM_LOAD( "319b16.c6",   0x0020, 0x100, 0x5748e933 );/* sprite lookup table */
+		ROM_LOAD( "319b17.a11",  0x0120, 0x100, 0x1fbfce73 );/* character lookup table */
+		ROM_LOAD( "319b14.e7",   0x0220, 0x020, 0x55044268 );/* timing (not used) */
+		ROM_LOAD( "319b15.e8",   0x0240, 0x020, 0x31fd7ab9 );/* timing (not used) */
+	ROM_END(); }}; 
 	
 	
 	static void init_megazone(void)

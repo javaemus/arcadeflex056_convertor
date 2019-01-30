@@ -2488,268 +2488,268 @@ public class nemesis
 	
 	***************************************************************************/
 	
-	ROM_START( nemesis )
-		ROM_REGION( 0x40000, REGION_CPU1, 0 )    /* 4 * 64k for code and rom */
-		ROM_LOAD16_BYTE( "12a_01.bin",   0x00000, 0x8000, 0x35ff1aaa )
-		ROM_LOAD16_BYTE( "12c_05.bin",   0x00001, 0x8000, 0x23155faa )
-		ROM_LOAD16_BYTE( "13a_02.bin",   0x10000, 0x8000, 0xac0cf163 )
-		ROM_LOAD16_BYTE( "13c_06.bin",   0x10001, 0x8000, 0x023f22a9 )
-		ROM_LOAD16_BYTE( "14a_03.bin",   0x20000, 0x8000, 0x8cefb25f )
-		ROM_LOAD16_BYTE( "14c_07.bin",   0x20001, 0x8000, 0xd50b82cb )
-		ROM_LOAD16_BYTE( "15a_04.bin",   0x30000, 0x8000, 0x9ca75592 )
-		ROM_LOAD16_BYTE( "15c_08.bin",   0x30001, 0x8000, 0x03c0b7f5 )
+	static RomLoadPtr rom_nemesis = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x40000, REGION_CPU1, 0 );   /* 4 * 64k for code and rom */
+		ROM_LOAD16_BYTE( "12a_01.bin",   0x00000, 0x8000, 0x35ff1aaa );
+		ROM_LOAD16_BYTE( "12c_05.bin",   0x00001, 0x8000, 0x23155faa );
+		ROM_LOAD16_BYTE( "13a_02.bin",   0x10000, 0x8000, 0xac0cf163 );
+		ROM_LOAD16_BYTE( "13c_06.bin",   0x10001, 0x8000, 0x023f22a9 );
+		ROM_LOAD16_BYTE( "14a_03.bin",   0x20000, 0x8000, 0x8cefb25f );
+		ROM_LOAD16_BYTE( "14c_07.bin",   0x20001, 0x8000, 0xd50b82cb );
+		ROM_LOAD16_BYTE( "15a_04.bin",   0x30000, 0x8000, 0x9ca75592 );
+		ROM_LOAD16_BYTE( "15c_08.bin",   0x30001, 0x8000, 0x03c0b7f5 );
 	
-		ROM_REGION( 0x10000, REGION_CPU2, 0 )    /* 64k for sound */
-		ROM_LOAD(      "09c_snd.bin",  0x00000, 0x4000, 0x26bf9636 )
+		ROM_REGION( 0x10000, REGION_CPU2, 0 );   /* 64k for sound */
+		ROM_LOAD(      "09c_snd.bin",  0x00000, 0x4000, 0x26bf9636 );
 	
-		ROM_REGION( 0x0200,  REGION_SOUND1, 0 )      /* 2x 256 byte for 0005289 wavetable data */
-		ROM_LOAD(      "400-a01.fse",  0x00000, 0x0100, 0x5827b1e8 )
-		ROM_LOAD(      "400-a02.fse",  0x00100, 0x0100, 0x2f44f970 )
-	ROM_END
+		ROM_REGION( 0x0200,  REGION_SOUND1, 0 );     /* 2x 256 byte for 0005289 wavetable data */
+		ROM_LOAD(      "400-a01.fse",  0x00000, 0x0100, 0x5827b1e8 );
+		ROM_LOAD(      "400-a02.fse",  0x00100, 0x0100, 0x2f44f970 );
+	ROM_END(); }}; 
 	
-	ROM_START( nemesuk )
-		ROM_REGION( 0x40000, REGION_CPU1, 0 )    /* 4 * 64k for code and rom */
-		ROM_LOAD16_BYTE( "12a_01.uk",    0x00000, 0x8000, 0xe1993f91 )
-		ROM_LOAD16_BYTE( "12c_05.uk",    0x00001, 0x8000, 0xc9761c78 )
-		ROM_LOAD16_BYTE( "13a_02.uk",    0x10000, 0x8000, 0xf6169c4b )
-		ROM_LOAD16_BYTE( "13c_06.uk",    0x10001, 0x8000, 0xaf58c548 )
-		ROM_LOAD16_BYTE( "14a_03.bin",   0x20000, 0x8000, 0x8cefb25f )
-		ROM_LOAD16_BYTE( "14c_07.bin",   0x20001, 0x8000, 0xd50b82cb )
-		ROM_LOAD16_BYTE( "15a_04.uk",    0x30000, 0x8000, 0x322423d0 )
-		ROM_LOAD16_BYTE( "15c_08.uk",    0x30001, 0x8000, 0xeb656266 )
+	static RomLoadPtr rom_nemesuk = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x40000, REGION_CPU1, 0 );   /* 4 * 64k for code and rom */
+		ROM_LOAD16_BYTE( "12a_01.uk",    0x00000, 0x8000, 0xe1993f91 );
+		ROM_LOAD16_BYTE( "12c_05.uk",    0x00001, 0x8000, 0xc9761c78 );
+		ROM_LOAD16_BYTE( "13a_02.uk",    0x10000, 0x8000, 0xf6169c4b );
+		ROM_LOAD16_BYTE( "13c_06.uk",    0x10001, 0x8000, 0xaf58c548 );
+		ROM_LOAD16_BYTE( "14a_03.bin",   0x20000, 0x8000, 0x8cefb25f );
+		ROM_LOAD16_BYTE( "14c_07.bin",   0x20001, 0x8000, 0xd50b82cb );
+		ROM_LOAD16_BYTE( "15a_04.uk",    0x30000, 0x8000, 0x322423d0 );
+		ROM_LOAD16_BYTE( "15c_08.uk",    0x30001, 0x8000, 0xeb656266 );
 	
-		ROM_REGION( 0x10000, REGION_CPU2, 0 )    /* 64k for sound */
-		ROM_LOAD(      "09c_snd.bin",  0x00000, 0x4000, 0x26bf9636 )
+		ROM_REGION( 0x10000, REGION_CPU2, 0 );   /* 64k for sound */
+		ROM_LOAD(      "09c_snd.bin",  0x00000, 0x4000, 0x26bf9636 );
 	
-		ROM_REGION( 0x0200,  REGION_SOUND1, 0 )      /* 2x 256 byte for 0005289 wavetable data */
-		ROM_LOAD(      "400-a01.fse",  0x00000, 0x0100, 0x5827b1e8 )
-		ROM_LOAD(      "400-a02.fse",  0x00100, 0x0100, 0x2f44f970 )
-	ROM_END
+		ROM_REGION( 0x0200,  REGION_SOUND1, 0 );     /* 2x 256 byte for 0005289 wavetable data */
+		ROM_LOAD(      "400-a01.fse",  0x00000, 0x0100, 0x5827b1e8 );
+		ROM_LOAD(      "400-a02.fse",  0x00100, 0x0100, 0x2f44f970 );
+	ROM_END(); }}; 
 	
-	ROM_START( konamigt )
-		ROM_REGION( 0x40000, REGION_CPU1, 0 )    /* 4 * 64k for code and rom */
-		ROM_LOAD16_BYTE( "c01.rom",      0x00000, 0x8000, 0x56245bfd )
-		ROM_LOAD16_BYTE( "c05.rom",      0x00001, 0x8000, 0x8d651f44 )
-		ROM_LOAD16_BYTE( "c02.rom",      0x10000, 0x8000, 0x3407b7cb )
-		ROM_LOAD16_BYTE( "c06.rom",      0x10001, 0x8000, 0x209942d4 )
-		ROM_LOAD16_BYTE( "b03.rom",      0x20000, 0x8000, 0xaef7df48 )
-		ROM_LOAD16_BYTE( "b07.rom",      0x20001, 0x8000, 0xe9bd6250 )
-		ROM_LOAD16_BYTE( "b04.rom",      0x30000, 0x8000, 0x94bd4bd7 )
-		ROM_LOAD16_BYTE( "b08.rom",      0x30001, 0x8000, 0xb7236567 )
+	static RomLoadPtr rom_konamigt = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x40000, REGION_CPU1, 0 );   /* 4 * 64k for code and rom */
+		ROM_LOAD16_BYTE( "c01.rom",      0x00000, 0x8000, 0x56245bfd );
+		ROM_LOAD16_BYTE( "c05.rom",      0x00001, 0x8000, 0x8d651f44 );
+		ROM_LOAD16_BYTE( "c02.rom",      0x10000, 0x8000, 0x3407b7cb );
+		ROM_LOAD16_BYTE( "c06.rom",      0x10001, 0x8000, 0x209942d4 );
+		ROM_LOAD16_BYTE( "b03.rom",      0x20000, 0x8000, 0xaef7df48 );
+		ROM_LOAD16_BYTE( "b07.rom",      0x20001, 0x8000, 0xe9bd6250 );
+		ROM_LOAD16_BYTE( "b04.rom",      0x30000, 0x8000, 0x94bd4bd7 );
+		ROM_LOAD16_BYTE( "b08.rom",      0x30001, 0x8000, 0xb7236567 );
 	
-		ROM_REGION( 0x10000, REGION_CPU2, 0 )    /* 64k for sound */
-		ROM_LOAD(       "b09.rom",      0x00000, 0x4000, 0x539d0c49 )
+		ROM_REGION( 0x10000, REGION_CPU2, 0 );   /* 64k for sound */
+		ROM_LOAD(       "b09.rom",      0x00000, 0x4000, 0x539d0c49 );
 	
-		ROM_REGION( 0x0200,  REGION_SOUND1, 0 )      /* 2x 256 byte for 0005289 wavetable data */
-		ROM_LOAD(      "400-a01.fse",  0x00000, 0x0100, 0x5827b1e8 )
-		ROM_LOAD(      "400-a02.fse",  0x00100, 0x0100, 0x2f44f970 )
-	ROM_END
+		ROM_REGION( 0x0200,  REGION_SOUND1, 0 );     /* 2x 256 byte for 0005289 wavetable data */
+		ROM_LOAD(      "400-a01.fse",  0x00000, 0x0100, 0x5827b1e8 );
+		ROM_LOAD(      "400-a02.fse",  0x00100, 0x0100, 0x2f44f970 );
+	ROM_END(); }}; 
 	
-	ROM_START( rf2 )
-		ROM_REGION( 0xc0000, REGION_CPU1, 0 )    /* 5 * 64k for code and rom */
-		ROM_LOAD16_BYTE( "400-a06.15l",  0x00000, 0x08000, 0xb99d8cff )
-		ROM_LOAD16_BYTE( "400-a04.10l",  0x00001, 0x08000, 0xd02c9552 )
-		ROM_LOAD16_BYTE( "561-a07.17l",  0x80000, 0x20000, 0xed6e7098 )
-		ROM_LOAD16_BYTE( "561-a05.12l",  0x80001, 0x20000, 0xdfe04425 )
+	static RomLoadPtr rom_rf2 = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0xc0000, REGION_CPU1, 0 );   /* 5 * 64k for code and rom */
+		ROM_LOAD16_BYTE( "400-a06.15l",  0x00000, 0x08000, 0xb99d8cff );
+		ROM_LOAD16_BYTE( "400-a04.10l",  0x00001, 0x08000, 0xd02c9552 );
+		ROM_LOAD16_BYTE( "561-a07.17l",  0x80000, 0x20000, 0xed6e7098 );
+		ROM_LOAD16_BYTE( "561-a05.12l",  0x80001, 0x20000, 0xdfe04425 );
 	
-		ROM_REGION( 0x10000, REGION_CPU2, 0 )    /* 64k for sound */
-		ROM_LOAD(      "400-e03.5l",   0x00000, 0x02000, 0xa5a8e57d )
+		ROM_REGION( 0x10000, REGION_CPU2, 0 );   /* 64k for sound */
+		ROM_LOAD(      "400-e03.5l",   0x00000, 0x02000, 0xa5a8e57d );
 	
-		ROM_REGION( 0x0200,  REGION_SOUND1, 0 )      /* 2x 256 byte for 0005289 wavetable data */
-		ROM_LOAD(      "400-a01.fse",  0x00000, 0x0100, 0x5827b1e8 )
-		ROM_LOAD(      "400-a02.fse",  0x00100, 0x0100, 0x2f44f970 )
-	ROM_END
+		ROM_REGION( 0x0200,  REGION_SOUND1, 0 );     /* 2x 256 byte for 0005289 wavetable data */
+		ROM_LOAD(      "400-a01.fse",  0x00000, 0x0100, 0x5827b1e8 );
+		ROM_LOAD(      "400-a02.fse",  0x00100, 0x0100, 0x2f44f970 );
+	ROM_END(); }}; 
 	
-	ROM_START( twinbee )
-		ROM_REGION( 0xc0000, REGION_CPU1, 0 )    /* 5 * 64k for code and rom */
-		ROM_LOAD16_BYTE( "400-a06.15l",  0x00000, 0x08000, 0xb99d8cff )
-		ROM_LOAD16_BYTE( "400-a04.10l",  0x00001, 0x08000, 0xd02c9552 )
-		ROM_LOAD16_BYTE( "412-a07.17l",  0x80000, 0x20000, 0xd93c5499 )
-		ROM_LOAD16_BYTE( "412-a05.12l",  0x80001, 0x20000, 0x2b357069 )
+	static RomLoadPtr rom_twinbee = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0xc0000, REGION_CPU1, 0 );   /* 5 * 64k for code and rom */
+		ROM_LOAD16_BYTE( "400-a06.15l",  0x00000, 0x08000, 0xb99d8cff );
+		ROM_LOAD16_BYTE( "400-a04.10l",  0x00001, 0x08000, 0xd02c9552 );
+		ROM_LOAD16_BYTE( "412-a07.17l",  0x80000, 0x20000, 0xd93c5499 );
+		ROM_LOAD16_BYTE( "412-a05.12l",  0x80001, 0x20000, 0x2b357069 );
 	
-		ROM_REGION( 0x10000, REGION_CPU2, 0 )    /* 64k for sound */
-		ROM_LOAD(      "400-e03.5l",   0x00000, 0x02000, 0xa5a8e57d )
+		ROM_REGION( 0x10000, REGION_CPU2, 0 );   /* 64k for sound */
+		ROM_LOAD(      "400-e03.5l",   0x00000, 0x02000, 0xa5a8e57d );
 	
-		ROM_REGION( 0x0200,  REGION_SOUND1, 0 )      /* 2x 256 byte for 0005289 wavetable data */
-		ROM_LOAD(      "400-a01.fse",  0x00000, 0x0100, 0x5827b1e8 )
-		ROM_LOAD(      "400-a02.fse",  0x00100, 0x0100, 0x2f44f970 )
-	ROM_END
+		ROM_REGION( 0x0200,  REGION_SOUND1, 0 );     /* 2x 256 byte for 0005289 wavetable data */
+		ROM_LOAD(      "400-a01.fse",  0x00000, 0x0100, 0x5827b1e8 );
+		ROM_LOAD(      "400-a02.fse",  0x00100, 0x0100, 0x2f44f970 );
+	ROM_END(); }}; 
 	
-	ROM_START( gradius )
-		ROM_REGION( 0xc0000, REGION_CPU1, 0 )    /* 5 * 64k for code and rom */
-		ROM_LOAD16_BYTE( "400-a06.15l",  0x00000, 0x08000, 0xb99d8cff )
-		ROM_LOAD16_BYTE( "400-a04.10l",  0x00001, 0x08000, 0xd02c9552 )
-		ROM_LOAD16_BYTE( "456-a07.17l",  0x80000, 0x20000, 0x92df792c )
-		ROM_LOAD16_BYTE( "456-a05.12l",  0x80001, 0x20000, 0x5cafb263 )
+	static RomLoadPtr rom_gradius = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0xc0000, REGION_CPU1, 0 );   /* 5 * 64k for code and rom */
+		ROM_LOAD16_BYTE( "400-a06.15l",  0x00000, 0x08000, 0xb99d8cff );
+		ROM_LOAD16_BYTE( "400-a04.10l",  0x00001, 0x08000, 0xd02c9552 );
+		ROM_LOAD16_BYTE( "456-a07.17l",  0x80000, 0x20000, 0x92df792c );
+		ROM_LOAD16_BYTE( "456-a05.12l",  0x80001, 0x20000, 0x5cafb263 );
 	
-		ROM_REGION( 0x10000, REGION_CPU2, 0 )    /* 64k for sound */
-		ROM_LOAD(      "400-e03.5l",   0x00000, 0x2000, 0xa5a8e57d )
+		ROM_REGION( 0x10000, REGION_CPU2, 0 );   /* 64k for sound */
+		ROM_LOAD(      "400-e03.5l",   0x00000, 0x2000, 0xa5a8e57d );
 	
-		ROM_REGION( 0x0200,  REGION_SOUND1, 0 )      /* 2x 256 byte for 0005289 wavetable data */
-		ROM_LOAD(      "400-a01.fse",  0x00000, 0x0100, 0x5827b1e8 )
-		ROM_LOAD(      "400-a02.fse",  0x00100, 0x0100, 0x2f44f970 )
-	ROM_END
+		ROM_REGION( 0x0200,  REGION_SOUND1, 0 );     /* 2x 256 byte for 0005289 wavetable data */
+		ROM_LOAD(      "400-a01.fse",  0x00000, 0x0100, 0x5827b1e8 );
+		ROM_LOAD(      "400-a02.fse",  0x00100, 0x0100, 0x2f44f970 );
+	ROM_END(); }}; 
 	
-	ROM_START( gwarrior )
-		ROM_REGION( 0xc0000, REGION_CPU1, 0 )    /* 5 * 64k for code and rom */
-		ROM_LOAD16_BYTE( "400-a06.15l",  0x00000, 0x08000, 0xb99d8cff )
-		ROM_LOAD16_BYTE( "400-a04.10l",  0x00001, 0x08000, 0xd02c9552 )
-		ROM_LOAD16_BYTE( "578-a07.17l",  0x80000, 0x20000, 0x0aedacb5 )
-		ROM_LOAD16_BYTE( "578-a05.12l",  0x80001, 0x20000, 0x76240e2e )
+	static RomLoadPtr rom_gwarrior = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0xc0000, REGION_CPU1, 0 );   /* 5 * 64k for code and rom */
+		ROM_LOAD16_BYTE( "400-a06.15l",  0x00000, 0x08000, 0xb99d8cff );
+		ROM_LOAD16_BYTE( "400-a04.10l",  0x00001, 0x08000, 0xd02c9552 );
+		ROM_LOAD16_BYTE( "578-a07.17l",  0x80000, 0x20000, 0x0aedacb5 );
+		ROM_LOAD16_BYTE( "578-a05.12l",  0x80001, 0x20000, 0x76240e2e );
 	
-		ROM_REGION( 0x10000, REGION_CPU2, 0 )    /* 64k for sound */
-		ROM_LOAD(      "400-e03.5l",   0x00000, 0x02000, 0xa5a8e57d )
+		ROM_REGION( 0x10000, REGION_CPU2, 0 );   /* 64k for sound */
+		ROM_LOAD(      "400-e03.5l",   0x00000, 0x02000, 0xa5a8e57d );
 	
-		ROM_REGION( 0x0200,  REGION_SOUND1, 0 )      /* 2x 256 byte for 0005289 wavetable data */
-		ROM_LOAD(      "400-a01.fse",  0x00000, 0x0100, 0x5827b1e8 )
-		ROM_LOAD(      "400-a02.fse",  0x00100, 0x0100, 0x2f44f970 )
-	ROM_END
+		ROM_REGION( 0x0200,  REGION_SOUND1, 0 );     /* 2x 256 byte for 0005289 wavetable data */
+		ROM_LOAD(      "400-a01.fse",  0x00000, 0x0100, 0x5827b1e8 );
+		ROM_LOAD(      "400-a02.fse",  0x00100, 0x0100, 0x2f44f970 );
+	ROM_END(); }}; 
 	
-	ROM_START( salamand )
-		ROM_REGION( 0x80000, REGION_CPU1, 0 )    /* 64k for code */
-		ROM_LOAD16_BYTE( "18b.bin",      0x00000, 0x10000, 0xa42297f9 )
-		ROM_LOAD16_BYTE( "18c.bin",      0x00001, 0x10000, 0xf9130b0a )
-		ROM_LOAD16_BYTE( "17b.bin",      0x40000, 0x20000, 0xe5caf6e6 )
-		ROM_LOAD16_BYTE( "17c.bin",      0x40001, 0x20000, 0xc2f567ea )
+	static RomLoadPtr rom_salamand = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x80000, REGION_CPU1, 0 );   /* 64k for code */
+		ROM_LOAD16_BYTE( "18b.bin",      0x00000, 0x10000, 0xa42297f9 );
+		ROM_LOAD16_BYTE( "18c.bin",      0x00001, 0x10000, 0xf9130b0a );
+		ROM_LOAD16_BYTE( "17b.bin",      0x40000, 0x20000, 0xe5caf6e6 );
+		ROM_LOAD16_BYTE( "17c.bin",      0x40001, 0x20000, 0xc2f567ea );
 	
-		ROM_REGION( 0x10000, REGION_CPU2, 0 )    /* 64k for sound */
-		ROM_LOAD(      "11j.bin",      0x00000, 0x08000, 0x5020972c )
+		ROM_REGION( 0x10000, REGION_CPU2, 0 );   /* 64k for sound */
+		ROM_LOAD(      "11j.bin",      0x00000, 0x08000, 0x5020972c );
 	
-		ROM_REGION( 0x04000, REGION_SOUND1, 0 )    /* VLM5030 data? */
-		ROM_LOAD(      "8g.bin",       0x00000, 0x04000, 0xf9ac6b82 )
+		ROM_REGION( 0x04000, REGION_SOUND1, 0 );   /* VLM5030 data? */
+		ROM_LOAD(      "8g.bin",       0x00000, 0x04000, 0xf9ac6b82 );
 	
-		ROM_REGION( 0x20000, REGION_SOUND2, 0 )    /* 007232 data */
-		ROM_LOAD(      "10a.bin",      0x00000, 0x20000, 0x09fe0632 )
-	ROM_END
+		ROM_REGION( 0x20000, REGION_SOUND2, 0 );   /* 007232 data */
+		ROM_LOAD(      "10a.bin",      0x00000, 0x20000, 0x09fe0632 );
+	ROM_END(); }}; 
 	
-	ROM_START( salamanj )
-		ROM_REGION( 0x80000, REGION_CPU1, 0 )    /* 64k for code */
-		ROM_LOAD16_BYTE( "587j02.18b",   0x00000, 0x10000, 0xf68ee99a )
-		ROM_LOAD16_BYTE( "587j05.18c",   0x00001, 0x10000, 0x72c16128 )
-		ROM_LOAD16_BYTE( "17b.bin",      0x40000, 0x20000, 0xe5caf6e6 )
-		ROM_LOAD16_BYTE( "17c.bin",      0x40001, 0x20000, 0xc2f567ea )
+	static RomLoadPtr rom_salamanj = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x80000, REGION_CPU1, 0 );   /* 64k for code */
+		ROM_LOAD16_BYTE( "587j02.18b",   0x00000, 0x10000, 0xf68ee99a );
+		ROM_LOAD16_BYTE( "587j05.18c",   0x00001, 0x10000, 0x72c16128 );
+		ROM_LOAD16_BYTE( "17b.bin",      0x40000, 0x20000, 0xe5caf6e6 );
+		ROM_LOAD16_BYTE( "17c.bin",      0x40001, 0x20000, 0xc2f567ea );
 	
-		ROM_REGION( 0x10000, REGION_CPU2, 0 )    /* 64k for sound */
-		ROM_LOAD(      "11j.bin",      0x00000, 0x08000, 0x5020972c )
+		ROM_REGION( 0x10000, REGION_CPU2, 0 );   /* 64k for sound */
+		ROM_LOAD(      "11j.bin",      0x00000, 0x08000, 0x5020972c );
 	
-		ROM_REGION( 0x04000, REGION_SOUND1, 0 )    /* VLM5030 data? */
-		ROM_LOAD(      "8g.bin",       0x00000, 0x04000, 0xf9ac6b82 )
+		ROM_REGION( 0x04000, REGION_SOUND1, 0 );   /* VLM5030 data? */
+		ROM_LOAD(      "8g.bin",       0x00000, 0x04000, 0xf9ac6b82 );
 	
-		ROM_REGION( 0x20000, REGION_SOUND2, 0 )    /* 007232 data */
-		ROM_LOAD(      "10a.bin",      0x00000, 0x20000, 0x09fe0632 )
-	ROM_END
+		ROM_REGION( 0x20000, REGION_SOUND2, 0 );   /* 007232 data */
+		ROM_LOAD(      "10a.bin",      0x00000, 0x20000, 0x09fe0632 );
+	ROM_END(); }}; 
 	
-	ROM_START( lifefrce )
-		ROM_REGION( 0x80000, REGION_CPU1, 0 )    /* 64k for code */
-		ROM_LOAD16_BYTE( "587-k02.bin",  0x00000, 0x10000, 0x4a44da18 )
-		ROM_LOAD16_BYTE( "587-k05.bin",  0x00001, 0x10000, 0x2f8c1cbd )
-		ROM_LOAD16_BYTE( "17b.bin",      0x40000, 0x20000, 0xe5caf6e6 )
-		ROM_LOAD16_BYTE( "17c.bin",      0x40001, 0x20000, 0xc2f567ea )
+	static RomLoadPtr rom_lifefrce = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x80000, REGION_CPU1, 0 );   /* 64k for code */
+		ROM_LOAD16_BYTE( "587-k02.bin",  0x00000, 0x10000, 0x4a44da18 );
+		ROM_LOAD16_BYTE( "587-k05.bin",  0x00001, 0x10000, 0x2f8c1cbd );
+		ROM_LOAD16_BYTE( "17b.bin",      0x40000, 0x20000, 0xe5caf6e6 );
+		ROM_LOAD16_BYTE( "17c.bin",      0x40001, 0x20000, 0xc2f567ea );
 	
-		ROM_REGION( 0x10000, REGION_CPU2, 0 )    /* 64k for sound */
-		ROM_LOAD(      "587-k09.bin",  0x00000, 0x08000, 0x2255fe8c )
+		ROM_REGION( 0x10000, REGION_CPU2, 0 );   /* 64k for sound */
+		ROM_LOAD(      "587-k09.bin",  0x00000, 0x08000, 0x2255fe8c );
 	
-		ROM_REGION( 0x04000, REGION_SOUND1, 0 )    /* VLM5030 data? */
-		ROM_LOAD(      "587-k08.bin",  0x00000, 0x04000, 0x7f0e9b41 )
+		ROM_REGION( 0x04000, REGION_SOUND1, 0 );   /* VLM5030 data? */
+		ROM_LOAD(      "587-k08.bin",  0x00000, 0x04000, 0x7f0e9b41 );
 	
-		ROM_REGION( 0x20000, REGION_SOUND2, 0 )    /* 007232 data */
-		ROM_LOAD(      "10a.bin",      0x00000, 0x20000, 0x09fe0632 )
-	ROM_END
+		ROM_REGION( 0x20000, REGION_SOUND2, 0 );   /* 007232 data */
+		ROM_LOAD(      "10a.bin",      0x00000, 0x20000, 0x09fe0632 );
+	ROM_END(); }}; 
 	
-	ROM_START( lifefrcj )
-		ROM_REGION( 0x80000, REGION_CPU1, 0 )    /* 64k for code */
-		ROM_LOAD16_BYTE( "587-n02.bin",  0x00000, 0x10000, 0x235dba71 )
-		ROM_LOAD16_BYTE( "587-n05.bin",  0x00001, 0x10000, 0x054e569f )
-		ROM_LOAD16_BYTE( "587-n03.bin",  0x40000, 0x20000, 0x9041f850 )
-		ROM_LOAD16_BYTE( "587-n06.bin",  0x40001, 0x20000, 0xfba8b6aa )
+	static RomLoadPtr rom_lifefrcj = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x80000, REGION_CPU1, 0 );   /* 64k for code */
+		ROM_LOAD16_BYTE( "587-n02.bin",  0x00000, 0x10000, 0x235dba71 );
+		ROM_LOAD16_BYTE( "587-n05.bin",  0x00001, 0x10000, 0x054e569f );
+		ROM_LOAD16_BYTE( "587-n03.bin",  0x40000, 0x20000, 0x9041f850 );
+		ROM_LOAD16_BYTE( "587-n06.bin",  0x40001, 0x20000, 0xfba8b6aa );
 	
-		ROM_REGION( 0x10000, REGION_CPU2, 0 )    /* 64k for sound */
-		ROM_LOAD(      "587-n09.bin",  0x00000, 0x08000, 0xe8496150 )
+		ROM_REGION( 0x10000, REGION_CPU2, 0 );   /* 64k for sound */
+		ROM_LOAD(      "587-n09.bin",  0x00000, 0x08000, 0xe8496150 );
 	
-		ROM_REGION( 0x04000, REGION_SOUND1, 0 )    /* VLM5030 data? */
-		ROM_LOAD(      "587-k08.bin",  0x00000, 0x04000, 0x7f0e9b41 )
+		ROM_REGION( 0x04000, REGION_SOUND1, 0 );   /* VLM5030 data? */
+		ROM_LOAD(      "587-k08.bin",  0x00000, 0x04000, 0x7f0e9b41 );
 	
-		ROM_REGION( 0x20000, REGION_SOUND2, 0 )    /* 007232 data */
-		ROM_LOAD(      "10a.bin",      0x00000, 0x20000, 0x09fe0632 )
-	ROM_END
+		ROM_REGION( 0x20000, REGION_SOUND2, 0 );   /* 007232 data */
+		ROM_LOAD(      "10a.bin",      0x00000, 0x20000, 0x09fe0632 );
+	ROM_END(); }}; 
 	
-	ROM_START( blkpnthr )
-		ROM_REGION( 0x80000, REGION_CPU1, 0 )    /* 64k for code */
-		ROM_LOAD16_BYTE( "604f02.18b",   0x00000, 0x10000, 0x487bf8da )
-		ROM_LOAD16_BYTE( "604f05.18c",   0x00001, 0x10000, 0xb08f8ca2 )
-		ROM_LOAD16_BYTE( "604c03.17b",   0x40000, 0x20000, 0x815bc3b0 )
-		ROM_LOAD16_BYTE( "604c06.17c",   0x40001, 0x20000, 0x4af6bf7f )
+	static RomLoadPtr rom_blkpnthr = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x80000, REGION_CPU1, 0 );   /* 64k for code */
+		ROM_LOAD16_BYTE( "604f02.18b",   0x00000, 0x10000, 0x487bf8da );
+		ROM_LOAD16_BYTE( "604f05.18c",   0x00001, 0x10000, 0xb08f8ca2 );
+		ROM_LOAD16_BYTE( "604c03.17b",   0x40000, 0x20000, 0x815bc3b0 );
+		ROM_LOAD16_BYTE( "604c06.17c",   0x40001, 0x20000, 0x4af6bf7f );
 	
-		ROM_REGION( 0x10000, REGION_CPU2, 0 )    /* 64k for sound */
-		ROM_LOAD(      "604a08.11j",   0x00000, 0x08000, 0xaff88a2b )
+		ROM_REGION( 0x10000, REGION_CPU2, 0 );   /* 64k for sound */
+		ROM_LOAD(      "604a08.11j",   0x00000, 0x08000, 0xaff88a2b );
 	
-		ROM_REGION( 0x20000, REGION_SOUND2, 0 )    /* 007232 data */
-		ROM_LOAD(      "604a01.10a",   0x00000, 0x20000, 0xeceb64a6 )
-	ROM_END
+		ROM_REGION( 0x20000, REGION_SOUND2, 0 );   /* 007232 data */
+		ROM_LOAD(      "604a01.10a",   0x00000, 0x20000, 0xeceb64a6 );
+	ROM_END(); }}; 
 	
-	ROM_START( citybomb )
-		ROM_REGION( 0x1c0000, REGION_CPU1, 0 )    /* 64k for code */
-		ROM_LOAD16_BYTE( "g10.rom",      0x000000, 0x10000, 0x26207530 )
-		ROM_LOAD16_BYTE( "g09.rom",      0x000001, 0x10000, 0xce7de262 )
-		ROM_LOAD16_BYTE( "787g08.15f",   0x100000, 0x20000, 0x6242ef35 )
-		ROM_LOAD16_BYTE( "787g07.15d",   0x100001, 0x20000, 0x21be5e9e )
-		ROM_LOAD16_BYTE( "787e06.14f",   0x140000, 0x20000, 0xc251154a )
-		ROM_LOAD16_BYTE( "787e05.14d",   0x140001, 0x20000, 0x0781e22d )
-		ROM_LOAD16_BYTE( "787g04.13f",   0x180000, 0x20000, 0x137cf39f )
-		ROM_LOAD16_BYTE( "787g03.13d",   0x180001, 0x20000, 0x0cc704dc )
+	static RomLoadPtr rom_citybomb = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x1c0000, REGION_CPU1, 0 );   /* 64k for code */
+		ROM_LOAD16_BYTE( "g10.rom",      0x000000, 0x10000, 0x26207530 );
+		ROM_LOAD16_BYTE( "g09.rom",      0x000001, 0x10000, 0xce7de262 );
+		ROM_LOAD16_BYTE( "787g08.15f",   0x100000, 0x20000, 0x6242ef35 );
+		ROM_LOAD16_BYTE( "787g07.15d",   0x100001, 0x20000, 0x21be5e9e );
+		ROM_LOAD16_BYTE( "787e06.14f",   0x140000, 0x20000, 0xc251154a );
+		ROM_LOAD16_BYTE( "787e05.14d",   0x140001, 0x20000, 0x0781e22d );
+		ROM_LOAD16_BYTE( "787g04.13f",   0x180000, 0x20000, 0x137cf39f );
+		ROM_LOAD16_BYTE( "787g03.13d",   0x180001, 0x20000, 0x0cc704dc );
 	
-		ROM_REGION( 0x10000, REGION_CPU2, 0 )    /* 64k for sound */
-		ROM_LOAD(      "787e02.4h",   0x00000, 0x08000, 0xf4591e46 )
+		ROM_REGION( 0x10000, REGION_CPU2, 0 );   /* 64k for sound */
+		ROM_LOAD(      "787e02.4h",   0x00000, 0x08000, 0xf4591e46 );
 	
-		ROM_REGION( 0x80000, REGION_SOUND2, 0 )    /* 007232 data */
-		ROM_LOAD(      "787e01.1k",   0x00000, 0x80000, 0xedc34d01 )
-	ROM_END
+		ROM_REGION( 0x80000, REGION_SOUND2, 0 );   /* 007232 data */
+		ROM_LOAD(      "787e01.1k",   0x00000, 0x80000, 0xedc34d01 );
+	ROM_END(); }}; 
 	
-	ROM_START( citybmrj )
-		ROM_REGION( 0x1c0000, REGION_CPU1, 0 )    /* 64k for code */
-		ROM_LOAD16_BYTE( "787h10.15k",   0x000000, 0x10000, 0x66fecf69 )
-		ROM_LOAD16_BYTE( "787h09.15h",   0x000001, 0x10000, 0xa0e29468 )
-		ROM_LOAD16_BYTE( "787g08.15f",   0x100000, 0x20000, 0x6242ef35 )
-		ROM_LOAD16_BYTE( "787g07.15d",   0x100001, 0x20000, 0x21be5e9e )
-		ROM_LOAD16_BYTE( "787e06.14f",   0x140000, 0x20000, 0xc251154a )
-		ROM_LOAD16_BYTE( "787e05.14d",   0x140001, 0x20000, 0x0781e22d )
-		ROM_LOAD16_BYTE( "787g04.13f",   0x180000, 0x20000, 0x137cf39f )
-		ROM_LOAD16_BYTE( "787g03.13d",   0x180001, 0x20000, 0x0cc704dc )
+	static RomLoadPtr rom_citybmrj = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x1c0000, REGION_CPU1, 0 );   /* 64k for code */
+		ROM_LOAD16_BYTE( "787h10.15k",   0x000000, 0x10000, 0x66fecf69 );
+		ROM_LOAD16_BYTE( "787h09.15h",   0x000001, 0x10000, 0xa0e29468 );
+		ROM_LOAD16_BYTE( "787g08.15f",   0x100000, 0x20000, 0x6242ef35 );
+		ROM_LOAD16_BYTE( "787g07.15d",   0x100001, 0x20000, 0x21be5e9e );
+		ROM_LOAD16_BYTE( "787e06.14f",   0x140000, 0x20000, 0xc251154a );
+		ROM_LOAD16_BYTE( "787e05.14d",   0x140001, 0x20000, 0x0781e22d );
+		ROM_LOAD16_BYTE( "787g04.13f",   0x180000, 0x20000, 0x137cf39f );
+		ROM_LOAD16_BYTE( "787g03.13d",   0x180001, 0x20000, 0x0cc704dc );
 	
-		ROM_REGION( 0x10000, REGION_CPU2, 0 )    /* 64k for sound */
-		ROM_LOAD(      "787e02.4h",   0x00000, 0x08000, 0xf4591e46 )
+		ROM_REGION( 0x10000, REGION_CPU2, 0 );   /* 64k for sound */
+		ROM_LOAD(      "787e02.4h",   0x00000, 0x08000, 0xf4591e46 );
 	
-		ROM_REGION( 0x80000, REGION_SOUND2, 0 )    /* 007232 data */
-		ROM_LOAD(      "787e01.1k",   0x00000, 0x80000, 0xedc34d01 )
-	ROM_END
+		ROM_REGION( 0x80000, REGION_SOUND2, 0 );   /* 007232 data */
+		ROM_LOAD(      "787e01.1k",   0x00000, 0x80000, 0xedc34d01 );
+	ROM_END(); }}; 
 	
-	ROM_START( kittenk )
-		ROM_REGION( 0x140000, REGION_CPU1, 0 )    /* 64k for code */
-		ROM_LOAD16_BYTE( "kitten.15k",   0x000000, 0x10000, 0x8267cb2b )
-		ROM_LOAD16_BYTE( "kitten.15h",   0x000001, 0x10000, 0xeb41cfa5 )
-		ROM_LOAD16_BYTE( "712b08.15f",   0x100000, 0x20000, 0xe6d71611 )
-		ROM_LOAD16_BYTE( "712b07.15d",   0x100001, 0x20000, 0x30f75c9f )
+	static RomLoadPtr rom_kittenk = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x140000, REGION_CPU1, 0 );   /* 64k for code */
+		ROM_LOAD16_BYTE( "kitten.15k",   0x000000, 0x10000, 0x8267cb2b );
+		ROM_LOAD16_BYTE( "kitten.15h",   0x000001, 0x10000, 0xeb41cfa5 );
+		ROM_LOAD16_BYTE( "712b08.15f",   0x100000, 0x20000, 0xe6d71611 );
+		ROM_LOAD16_BYTE( "712b07.15d",   0x100001, 0x20000, 0x30f75c9f );
 	
-		ROM_REGION( 0x10000, REGION_CPU2, 0 )    /* 64k for sound */
-		ROM_LOAD(      "712e02.4h",   0x00000, 0x08000, 0xba76f310 )
+		ROM_REGION( 0x10000, REGION_CPU2, 0 );   /* 64k for sound */
+		ROM_LOAD(      "712e02.4h",   0x00000, 0x08000, 0xba76f310 );
 	
-		ROM_REGION( 0x80000, REGION_SOUND2, 0 )    /* 007232 data */
-		ROM_LOAD(      "712b01.1k",   0x00000, 0x80000, 0xf65b5d95 )
-	ROM_END
+		ROM_REGION( 0x80000, REGION_SOUND2, 0 );   /* 007232 data */
+		ROM_LOAD(      "712b01.1k",   0x00000, 0x80000, 0xf65b5d95 );
+	ROM_END(); }}; 
 	
-	ROM_START( nyanpani )
-		ROM_REGION( 0x140000, REGION_CPU1, 0 )    /* 64k for code */
-		ROM_LOAD16_BYTE( "712j10.15k",   0x000000, 0x10000, 0x924b27ec )
-		ROM_LOAD16_BYTE( "712j09.15h",   0x000001, 0x10000, 0xa9862ea1 )
-		ROM_LOAD16_BYTE( "712b08.15f",   0x100000, 0x20000, 0xe6d71611 )
-		ROM_LOAD16_BYTE( "712b07.15d",   0x100001, 0x20000, 0x30f75c9f )
+	static RomLoadPtr rom_nyanpani = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x140000, REGION_CPU1, 0 );   /* 64k for code */
+		ROM_LOAD16_BYTE( "712j10.15k",   0x000000, 0x10000, 0x924b27ec );
+		ROM_LOAD16_BYTE( "712j09.15h",   0x000001, 0x10000, 0xa9862ea1 );
+		ROM_LOAD16_BYTE( "712b08.15f",   0x100000, 0x20000, 0xe6d71611 );
+		ROM_LOAD16_BYTE( "712b07.15d",   0x100001, 0x20000, 0x30f75c9f );
 	
-		ROM_REGION( 0x10000, REGION_CPU2, 0 )    /* 64k for sound */
-		ROM_LOAD(      "712e02.4h",   0x00000, 0x08000, 0xba76f310 )
+		ROM_REGION( 0x10000, REGION_CPU2, 0 );   /* 64k for sound */
+		ROM_LOAD(      "712e02.4h",   0x00000, 0x08000, 0xba76f310 );
 	
-		ROM_REGION( 0x80000, REGION_SOUND2, 0 )    /* 007232 data */
-		ROM_LOAD(      "712b01.1k",   0x00000, 0x80000, 0xf65b5d95 )
-	ROM_END
+		ROM_REGION( 0x80000, REGION_SOUND2, 0 );   /* 007232 data */
+		ROM_LOAD(      "712b01.1k",   0x00000, 0x80000, 0xf65b5d95 );
+	ROM_END(); }}; 
 	
 	
 	

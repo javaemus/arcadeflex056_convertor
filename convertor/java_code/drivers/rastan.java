@@ -391,121 +391,121 @@ public class rastan
 	
 	***************************************************************************/
 	
-	ROM_START( rastan )
-		ROM_REGION( 0x60000, REGION_CPU1, 0 )	/* 6*64k for 68000 code */
-		ROM_LOAD16_BYTE( "ic19_38.bin", 0x00000, 0x10000, 0x1c91dbb1 )
-		ROM_LOAD16_BYTE( "ic07_37.bin", 0x00001, 0x10000, 0xecf20bdd )
-		ROM_LOAD16_BYTE( "ic20_40.bin", 0x20000, 0x10000, 0x0930d4b3 )
-		ROM_LOAD16_BYTE( "ic08_39.bin", 0x20001, 0x10000, 0xd95ade5e )
-		ROM_LOAD16_BYTE( "ic21_42.bin", 0x40000, 0x10000, 0x1857a7cb )
-		ROM_LOAD16_BYTE( "ic09_43.bin", 0x40001, 0x10000, 0xc34b9152 )
+	static RomLoadPtr rom_rastan = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x60000, REGION_CPU1, 0 );/* 6*64k for 68000 code */
+		ROM_LOAD16_BYTE( "ic19_38.bin", 0x00000, 0x10000, 0x1c91dbb1 );
+		ROM_LOAD16_BYTE( "ic07_37.bin", 0x00001, 0x10000, 0xecf20bdd );
+		ROM_LOAD16_BYTE( "ic20_40.bin", 0x20000, 0x10000, 0x0930d4b3 );
+		ROM_LOAD16_BYTE( "ic08_39.bin", 0x20001, 0x10000, 0xd95ade5e );
+		ROM_LOAD16_BYTE( "ic21_42.bin", 0x40000, 0x10000, 0x1857a7cb );
+		ROM_LOAD16_BYTE( "ic09_43.bin", 0x40001, 0x10000, 0xc34b9152 );
 	
-		ROM_REGION( 0x1c000, REGION_CPU2, 0 )	/* 64k for the audio CPU */
-		ROM_LOAD( "ic49_19.bin", 0x00000, 0x4000, 0xee81fdd8 )
-		ROM_CONTINUE(            0x10000, 0xc000 )
+		ROM_REGION( 0x1c000, REGION_CPU2, 0 );/* 64k for the audio CPU */
+		ROM_LOAD( "ic49_19.bin", 0x00000, 0x4000, 0xee81fdd8 );
+		ROM_CONTINUE(            0x10000, 0xc000 );
 	
-		ROM_REGION( 0x080000, REGION_GFX1, ROMREGION_DISPOSE )
-		ROM_LOAD( "ic40_01.bin",  0x00000, 0x20000, 0xcd30de19 )        /* 8x8 0 */
-		ROM_LOAD( "ic39_03.bin",  0x20000, 0x20000, 0xab67e064 )        /* 8x8 0 */
-		ROM_LOAD( "ic67_02.bin",  0x40000, 0x20000, 0x54040fec )        /* 8x8 1 */
-		ROM_LOAD( "ic66_04.bin",  0x60000, 0x20000, 0x94737e93 )        /* 8x8 1 */
+		ROM_REGION( 0x080000, REGION_GFX1, ROMREGION_DISPOSE );
+		ROM_LOAD( "ic40_01.bin",  0x00000, 0x20000, 0xcd30de19 );       /* 8x8 0 */
+		ROM_LOAD( "ic39_03.bin",  0x20000, 0x20000, 0xab67e064 );       /* 8x8 0 */
+		ROM_LOAD( "ic67_02.bin",  0x40000, 0x20000, 0x54040fec );       /* 8x8 1 */
+		ROM_LOAD( "ic66_04.bin",  0x60000, 0x20000, 0x94737e93 );       /* 8x8 1 */
 	
-		ROM_REGION( 0x080000, REGION_GFX2, ROMREGION_DISPOSE )
-		ROM_LOAD( "ic15_05.bin",  0x00000, 0x20000, 0xc22d94ac )        /* sprites 1a */
-		ROM_LOAD( "ic14_07.bin",  0x20000, 0x20000, 0xb5632a51 )        /* sprites 3a */
-		ROM_LOAD( "ic28_06.bin",  0x40000, 0x20000, 0x002ccf39 )        /* sprites 1b */
-		ROM_LOAD( "ic27_08.bin",  0x60000, 0x20000, 0xfeafca05 )        /* sprites 3b */
+		ROM_REGION( 0x080000, REGION_GFX2, ROMREGION_DISPOSE );
+		ROM_LOAD( "ic15_05.bin",  0x00000, 0x20000, 0xc22d94ac );       /* sprites 1a */
+		ROM_LOAD( "ic14_07.bin",  0x20000, 0x20000, 0xb5632a51 );       /* sprites 3a */
+		ROM_LOAD( "ic28_06.bin",  0x40000, 0x20000, 0x002ccf39 );       /* sprites 1b */
+		ROM_LOAD( "ic27_08.bin",  0x60000, 0x20000, 0xfeafca05 );       /* sprites 3b */
 	
-		ROM_REGION( 0x10000, REGION_SOUND1, 0 )	/* 64k for the samples */
-		ROM_LOAD( "ic76_20.bin", 0x0000, 0x10000, 0xfd1a34cc ) /* samples are 4bit ADPCM */
-	ROM_END
+		ROM_REGION( 0x10000, REGION_SOUND1, 0 );/* 64k for the samples */
+		ROM_LOAD( "ic76_20.bin", 0x0000, 0x10000, 0xfd1a34cc );/* samples are 4bit ADPCM */
+	ROM_END(); }}; 
 	
-	ROM_START( rastanu )
-		ROM_REGION( 0x60000, REGION_CPU1, 0 )	/* 6*64k for 68000 code */
-		ROM_LOAD16_BYTE( "ic19_38.bin", 0x00000, 0x10000, 0x1c91dbb1 )
-		ROM_LOAD16_BYTE( "ic07_37.bin", 0x00001, 0x10000, 0xecf20bdd )
-		ROM_LOAD16_BYTE( "b04-45.20",   0x20000, 0x10000, 0x362812dd )
-		ROM_LOAD16_BYTE( "b04-44.8",    0x20001, 0x10000, 0x51cc5508 )
-		ROM_LOAD16_BYTE( "ic21_42.bin", 0x40000, 0x10000, 0x1857a7cb )
-		ROM_LOAD16_BYTE( "b04-41-1.9",  0x40001, 0x10000, 0xbd403269 )
+	static RomLoadPtr rom_rastanu = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x60000, REGION_CPU1, 0 );/* 6*64k for 68000 code */
+		ROM_LOAD16_BYTE( "ic19_38.bin", 0x00000, 0x10000, 0x1c91dbb1 );
+		ROM_LOAD16_BYTE( "ic07_37.bin", 0x00001, 0x10000, 0xecf20bdd );
+		ROM_LOAD16_BYTE( "b04-45.20",   0x20000, 0x10000, 0x362812dd );
+		ROM_LOAD16_BYTE( "b04-44.8",    0x20001, 0x10000, 0x51cc5508 );
+		ROM_LOAD16_BYTE( "ic21_42.bin", 0x40000, 0x10000, 0x1857a7cb );
+		ROM_LOAD16_BYTE( "b04-41-1.9",  0x40001, 0x10000, 0xbd403269 );
 	
-		ROM_REGION( 0x1c000, REGION_CPU2, 0 )	/* 64k for the audio CPU */
-		ROM_LOAD( "ic49_19.bin", 0x00000, 0x4000, 0xee81fdd8 )
-		ROM_CONTINUE(            0x10000, 0xc000 )
+		ROM_REGION( 0x1c000, REGION_CPU2, 0 );/* 64k for the audio CPU */
+		ROM_LOAD( "ic49_19.bin", 0x00000, 0x4000, 0xee81fdd8 );
+		ROM_CONTINUE(            0x10000, 0xc000 );
 	
-		ROM_REGION( 0x080000, REGION_GFX1, ROMREGION_DISPOSE )
-		ROM_LOAD( "ic40_01.bin",  0x00000, 0x20000, 0xcd30de19 )        /* 8x8 0 */
-		ROM_LOAD( "ic39_03.bin",  0x20000, 0x20000, 0xab67e064 )        /* 8x8 0 */
-		ROM_LOAD( "ic67_02.bin",  0x40000, 0x20000, 0x54040fec )        /* 8x8 1 */
-		ROM_LOAD( "ic66_04.bin",  0x60000, 0x20000, 0x94737e93 )        /* 8x8 1 */
+		ROM_REGION( 0x080000, REGION_GFX1, ROMREGION_DISPOSE );
+		ROM_LOAD( "ic40_01.bin",  0x00000, 0x20000, 0xcd30de19 );       /* 8x8 0 */
+		ROM_LOAD( "ic39_03.bin",  0x20000, 0x20000, 0xab67e064 );       /* 8x8 0 */
+		ROM_LOAD( "ic67_02.bin",  0x40000, 0x20000, 0x54040fec );       /* 8x8 1 */
+		ROM_LOAD( "ic66_04.bin",  0x60000, 0x20000, 0x94737e93 );       /* 8x8 1 */
 	
-		ROM_REGION( 0x080000, REGION_GFX2, ROMREGION_DISPOSE )
-		ROM_LOAD( "ic15_05.bin",  0x00000, 0x20000, 0xc22d94ac )        /* sprites 1a */
-		ROM_LOAD( "ic14_07.bin",  0x20000, 0x20000, 0xb5632a51 )        /* sprites 3a */
-		ROM_LOAD( "ic28_06.bin",  0x40000, 0x20000, 0x002ccf39 )        /* sprites 1b */
-		ROM_LOAD( "ic27_08.bin",  0x60000, 0x20000, 0xfeafca05 )        /* sprites 3b */
+		ROM_REGION( 0x080000, REGION_GFX2, ROMREGION_DISPOSE );
+		ROM_LOAD( "ic15_05.bin",  0x00000, 0x20000, 0xc22d94ac );       /* sprites 1a */
+		ROM_LOAD( "ic14_07.bin",  0x20000, 0x20000, 0xb5632a51 );       /* sprites 3a */
+		ROM_LOAD( "ic28_06.bin",  0x40000, 0x20000, 0x002ccf39 );       /* sprites 1b */
+		ROM_LOAD( "ic27_08.bin",  0x60000, 0x20000, 0xfeafca05 );       /* sprites 3b */
 	
-		ROM_REGION( 0x10000, REGION_SOUND1, 0 )	/* 64k for the samples */
-		ROM_LOAD( "ic76_20.bin", 0x0000, 0x10000, 0xfd1a34cc ) /* samples are 4bit ADPCM */
-	ROM_END
+		ROM_REGION( 0x10000, REGION_SOUND1, 0 );/* 64k for the samples */
+		ROM_LOAD( "ic76_20.bin", 0x0000, 0x10000, 0xfd1a34cc );/* samples are 4bit ADPCM */
+	ROM_END(); }}; 
 	
-	ROM_START( rastanu2 )
-		ROM_REGION( 0x60000, REGION_CPU1, 0 )	/* 6*64k for 68000 code */
-		ROM_LOAD16_BYTE( "rs19_38.bin", 0x00000, 0x10000, 0xa38ac909 )
-		ROM_LOAD16_BYTE( "b04-21.7",    0x00001, 0x10000, 0x7c8dde9a )
-		ROM_LOAD16_BYTE( "b04-23.20",   0x20000, 0x10000, 0x254b3dce )
-		ROM_LOAD16_BYTE( "b04-22.8",    0x20001, 0x10000, 0x98e8edcf )
-		ROM_LOAD16_BYTE( "b04-25.21",   0x40000, 0x10000, 0xd1e5adee )
-		ROM_LOAD16_BYTE( "b04-24.9",    0x40001, 0x10000, 0xa3dcc106 )
+	static RomLoadPtr rom_rastanu2 = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x60000, REGION_CPU1, 0 );/* 6*64k for 68000 code */
+		ROM_LOAD16_BYTE( "rs19_38.bin", 0x00000, 0x10000, 0xa38ac909 );
+		ROM_LOAD16_BYTE( "b04-21.7",    0x00001, 0x10000, 0x7c8dde9a );
+		ROM_LOAD16_BYTE( "b04-23.20",   0x20000, 0x10000, 0x254b3dce );
+		ROM_LOAD16_BYTE( "b04-22.8",    0x20001, 0x10000, 0x98e8edcf );
+		ROM_LOAD16_BYTE( "b04-25.21",   0x40000, 0x10000, 0xd1e5adee );
+		ROM_LOAD16_BYTE( "b04-24.9",    0x40001, 0x10000, 0xa3dcc106 );
 	
-		ROM_REGION( 0x1c000, REGION_CPU2, 0 )	/* 64k for the audio CPU */
-		ROM_LOAD( "ic49_19.bin", 0x00000, 0x4000, 0xee81fdd8 )
-		ROM_CONTINUE(            0x10000, 0xc000 )
+		ROM_REGION( 0x1c000, REGION_CPU2, 0 );/* 64k for the audio CPU */
+		ROM_LOAD( "ic49_19.bin", 0x00000, 0x4000, 0xee81fdd8 );
+		ROM_CONTINUE(            0x10000, 0xc000 );
 	
-		ROM_REGION( 0x080000, REGION_GFX1, ROMREGION_DISPOSE )
-		ROM_LOAD( "ic40_01.bin",  0x00000, 0x20000, 0xcd30de19 )        /* 8x8 0 */
-		ROM_LOAD( "ic39_03.bin",  0x20000, 0x20000, 0xab67e064 )        /* 8x8 0 */
-		ROM_LOAD( "ic67_02.bin",  0x40000, 0x20000, 0x54040fec )        /* 8x8 1 */
-		ROM_LOAD( "ic66_04.bin",  0x60000, 0x20000, 0x94737e93 )        /* 8x8 1 */
+		ROM_REGION( 0x080000, REGION_GFX1, ROMREGION_DISPOSE );
+		ROM_LOAD( "ic40_01.bin",  0x00000, 0x20000, 0xcd30de19 );       /* 8x8 0 */
+		ROM_LOAD( "ic39_03.bin",  0x20000, 0x20000, 0xab67e064 );       /* 8x8 0 */
+		ROM_LOAD( "ic67_02.bin",  0x40000, 0x20000, 0x54040fec );       /* 8x8 1 */
+		ROM_LOAD( "ic66_04.bin",  0x60000, 0x20000, 0x94737e93 );       /* 8x8 1 */
 	
-		ROM_REGION( 0x080000, REGION_GFX2, ROMREGION_DISPOSE )
-		ROM_LOAD( "ic15_05.bin",  0x00000, 0x20000, 0xc22d94ac )        /* sprites 1a */
-		ROM_LOAD( "ic14_07.bin",  0x20000, 0x20000, 0xb5632a51 )        /* sprites 3a */
-		ROM_LOAD( "ic28_06.bin",  0x40000, 0x20000, 0x002ccf39 )        /* sprites 1b */
-		ROM_LOAD( "ic27_08.bin",  0x60000, 0x20000, 0xfeafca05 )        /* sprites 3b */
+		ROM_REGION( 0x080000, REGION_GFX2, ROMREGION_DISPOSE );
+		ROM_LOAD( "ic15_05.bin",  0x00000, 0x20000, 0xc22d94ac );       /* sprites 1a */
+		ROM_LOAD( "ic14_07.bin",  0x20000, 0x20000, 0xb5632a51 );       /* sprites 3a */
+		ROM_LOAD( "ic28_06.bin",  0x40000, 0x20000, 0x002ccf39 );       /* sprites 1b */
+		ROM_LOAD( "ic27_08.bin",  0x60000, 0x20000, 0xfeafca05 );       /* sprites 3b */
 	
-		ROM_REGION( 0x10000, REGION_SOUND1, 0 )	/* 64k for the samples */
-		ROM_LOAD( "ic76_20.bin", 0x0000, 0x10000, 0xfd1a34cc ) /* samples are 4bit ADPCM */
-	ROM_END
+		ROM_REGION( 0x10000, REGION_SOUND1, 0 );/* 64k for the samples */
+		ROM_LOAD( "ic76_20.bin", 0x0000, 0x10000, 0xfd1a34cc );/* samples are 4bit ADPCM */
+	ROM_END(); }}; 
 	
-	ROM_START( rastsaga )
-		ROM_REGION( 0x60000, REGION_CPU1, 0 )	/* 6*64k for 68000 code */
-		ROM_LOAD16_BYTE( "rs19_38.bin", 0x00000, 0x10000, 0xa38ac909 )
-		ROM_LOAD16_BYTE( "rs07_37.bin", 0x00001, 0x10000, 0xbad60872 )
-		ROM_LOAD16_BYTE( "rs20_40.bin", 0x20000, 0x10000, 0x6bcf70dc )
-		ROM_LOAD16_BYTE( "rs08_39.bin", 0x20001, 0x10000, 0x8838ecc5 )
-		ROM_LOAD16_BYTE( "rs21_42.bin", 0x40000, 0x10000, 0xb626c439 )
-		ROM_LOAD16_BYTE( "rs09_43.bin", 0x40001, 0x10000, 0xc928a516 )
+	static RomLoadPtr rom_rastsaga = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x60000, REGION_CPU1, 0 );/* 6*64k for 68000 code */
+		ROM_LOAD16_BYTE( "rs19_38.bin", 0x00000, 0x10000, 0xa38ac909 );
+		ROM_LOAD16_BYTE( "rs07_37.bin", 0x00001, 0x10000, 0xbad60872 );
+		ROM_LOAD16_BYTE( "rs20_40.bin", 0x20000, 0x10000, 0x6bcf70dc );
+		ROM_LOAD16_BYTE( "rs08_39.bin", 0x20001, 0x10000, 0x8838ecc5 );
+		ROM_LOAD16_BYTE( "rs21_42.bin", 0x40000, 0x10000, 0xb626c439 );
+		ROM_LOAD16_BYTE( "rs09_43.bin", 0x40001, 0x10000, 0xc928a516 );
 	
-		ROM_REGION( 0x1c000, REGION_CPU2, 0 )	/* 64k for the audio CPU */
-		ROM_LOAD( "ic49_19.bin", 0x00000, 0x4000, 0xee81fdd8 )
-		ROM_CONTINUE(            0x10000, 0xc000 )
+		ROM_REGION( 0x1c000, REGION_CPU2, 0 );/* 64k for the audio CPU */
+		ROM_LOAD( "ic49_19.bin", 0x00000, 0x4000, 0xee81fdd8 );
+		ROM_CONTINUE(            0x10000, 0xc000 );
 	
-		ROM_REGION( 0x080000, REGION_GFX1, ROMREGION_DISPOSE )
-		ROM_LOAD( "ic40_01.bin",  0x00000, 0x20000, 0xcd30de19 )        /* 8x8 0 */
-		ROM_LOAD( "ic39_03.bin",  0x20000, 0x20000, 0xab67e064 )        /* 8x8 0 */
-		ROM_LOAD( "ic67_02.bin",  0x40000, 0x20000, 0x54040fec )        /* 8x8 1 */
-		ROM_LOAD( "ic66_04.bin",  0x60000, 0x20000, 0x94737e93 )        /* 8x8 1 */
+		ROM_REGION( 0x080000, REGION_GFX1, ROMREGION_DISPOSE );
+		ROM_LOAD( "ic40_01.bin",  0x00000, 0x20000, 0xcd30de19 );       /* 8x8 0 */
+		ROM_LOAD( "ic39_03.bin",  0x20000, 0x20000, 0xab67e064 );       /* 8x8 0 */
+		ROM_LOAD( "ic67_02.bin",  0x40000, 0x20000, 0x54040fec );       /* 8x8 1 */
+		ROM_LOAD( "ic66_04.bin",  0x60000, 0x20000, 0x94737e93 );       /* 8x8 1 */
 	
-		ROM_REGION( 0x080000, REGION_GFX2, ROMREGION_DISPOSE )
-		ROM_LOAD( "ic15_05.bin",  0x00000, 0x20000, 0xc22d94ac )        /* sprites 1a */
-		ROM_LOAD( "ic14_07.bin",  0x20000, 0x20000, 0xb5632a51 )        /* sprites 3a */
-		ROM_LOAD( "ic28_06.bin",  0x40000, 0x20000, 0x002ccf39 )        /* sprites 1b */
-		ROM_LOAD( "ic27_08.bin",  0x60000, 0x20000, 0xfeafca05 )        /* sprites 3b */
+		ROM_REGION( 0x080000, REGION_GFX2, ROMREGION_DISPOSE );
+		ROM_LOAD( "ic15_05.bin",  0x00000, 0x20000, 0xc22d94ac );       /* sprites 1a */
+		ROM_LOAD( "ic14_07.bin",  0x20000, 0x20000, 0xb5632a51 );       /* sprites 3a */
+		ROM_LOAD( "ic28_06.bin",  0x40000, 0x20000, 0x002ccf39 );       /* sprites 1b */
+		ROM_LOAD( "ic27_08.bin",  0x60000, 0x20000, 0xfeafca05 );       /* sprites 3b */
 	
-		ROM_REGION( 0x10000, REGION_SOUND1, 0 )	/* 64k for the samples */
-		ROM_LOAD( "ic76_20.bin", 0x0000, 0x10000, 0xfd1a34cc ) /* samples are 4bit ADPCM */
-	ROM_END
+		ROM_REGION( 0x10000, REGION_SOUND1, 0 );/* 64k for the samples */
+		ROM_LOAD( "ic76_20.bin", 0x0000, 0x10000, 0xfd1a34cc );/* samples are 4bit ADPCM */
+	ROM_END(); }}; 
 	
 	
 	static void init_rastan(void)

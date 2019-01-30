@@ -1458,519 +1458,519 @@ public class vsnes
 	/******************************************************************************/
 	
 	
-	ROM_START( suprmrio)
-		ROM_REGION( 0x10000,REGION_CPU1, 0 ) /* 6502 memory */
-		ROM_LOAD( "1d",  0x8000, 0x2000, 0xbe4d5436 )
-		ROM_LOAD( "1c",  0xa000, 0x2000, 0x0011fc5a )
-		ROM_LOAD( "1b",  0xc000, 0x2000, 0xb1b87893 )
-		ROM_LOAD( "1a",  0xe000, 0x2000, 0x1abf053c )
+	static RomLoadPtr rom_suprmrio = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x10000,REGION_CPU1, 0 );/* 6502 memory */
+		ROM_LOAD( "1d",  0x8000, 0x2000, 0xbe4d5436 );
+		ROM_LOAD( "1c",  0xa000, 0x2000, 0x0011fc5a );
+		ROM_LOAD( "1b",  0xc000, 0x2000, 0xb1b87893 );
+		ROM_LOAD( "1a",  0xe000, 0x2000, 0x1abf053c );
 	
-		ROM_REGION( 0x4000,REGION_GFX1, 0  ) /* PPU memory */
-		ROM_LOAD( "2b",  0x0000, 0x2000, 0x42418d40 )
-		ROM_LOAD( "2a",  0x2000, 0x2000, 0x15506b86 )
-	ROM_END
+		ROM_REGION( 0x4000,REGION_GFX1, 0  );/* PPU memory */
+		ROM_LOAD( "2b",  0x0000, 0x2000, 0x42418d40 );
+		ROM_LOAD( "2a",  0x2000, 0x2000, 0x15506b86 );
+	ROM_END(); }}; 
 	
 	
-	ROM_START( iceclimb )
-		ROM_REGION( 0x10000,REGION_CPU1, 0 ) /* 6502 memory */
-		ROM_LOAD( "ic-1d",  0x8000, 0x2000, 0x65e21765 )
-		ROM_LOAD( "ic-1c",  0xa000, 0x2000, 0xa7909c51 )
-		ROM_LOAD( "ic-1b",  0xc000, 0x2000, 0x7fb3cc21 )
-		ROM_LOAD( "ic-1a",  0xe000, 0x2000, 0xbf196bf7 )
+	static RomLoadPtr rom_iceclimb = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x10000,REGION_CPU1, 0 );/* 6502 memory */
+		ROM_LOAD( "ic-1d",  0x8000, 0x2000, 0x65e21765 );
+		ROM_LOAD( "ic-1c",  0xa000, 0x2000, 0xa7909c51 );
+		ROM_LOAD( "ic-1b",  0xc000, 0x2000, 0x7fb3cc21 );
+		ROM_LOAD( "ic-1a",  0xe000, 0x2000, 0xbf196bf7 );
 	
-		ROM_REGION( 0x4000,REGION_GFX1, 0 ) /* PPU memory */
-		ROM_LOAD( "ic-2b",  0x0000, 0x2000, 0x331460b4 )
-		ROM_LOAD( "ic-2a",  0x2000, 0x2000, 0x4ec44fb3 )
-	ROM_END
+		ROM_REGION( 0x4000,REGION_GFX1, 0 );/* PPU memory */
+		ROM_LOAD( "ic-2b",  0x0000, 0x2000, 0x331460b4 );
+		ROM_LOAD( "ic-2a",  0x2000, 0x2000, 0x4ec44fb3 );
+	ROM_END(); }}; 
 	
 	/* Gun games */
-	ROM_START( duckhunt )
-		ROM_REGION( 0x10000,REGION_CPU1, 0 ) /* 6502 memory */
-		ROM_LOAD( "1d",  0x8000, 0x2000, 0x3f51f0ed )
-		ROM_LOAD( "1c",  0xa000, 0x2000, 0x8bc7376c )
-		ROM_LOAD( "1b",  0xc000, 0x2000, 0xa042b6e1 )
-		ROM_LOAD( "1a",  0xe000, 0x2000, 0x1906e3ab )
+	static RomLoadPtr rom_duckhunt = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x10000,REGION_CPU1, 0 );/* 6502 memory */
+		ROM_LOAD( "1d",  0x8000, 0x2000, 0x3f51f0ed );
+		ROM_LOAD( "1c",  0xa000, 0x2000, 0x8bc7376c );
+		ROM_LOAD( "1b",  0xc000, 0x2000, 0xa042b6e1 );
+		ROM_LOAD( "1a",  0xe000, 0x2000, 0x1906e3ab );
 	
-		ROM_REGION( 0x4000, REGION_GFX1, 0 ) /* PPU memory */
-		ROM_LOAD( "2b",  0x0000, 0x2000, 0x0c52ec28 )
-		ROM_LOAD( "2a",  0x2000, 0x2000, 0x3d238df3 )
-	ROM_END
+		ROM_REGION( 0x4000, REGION_GFX1, 0 );/* PPU memory */
+		ROM_LOAD( "2b",  0x0000, 0x2000, 0x0c52ec28 );
+		ROM_LOAD( "2a",  0x2000, 0x2000, 0x3d238df3 );
+	ROM_END(); }}; 
 	
-	ROM_START( hogalley)
-		ROM_REGION( 0x10000, REGION_CPU1,0  ) /* 6502 memory */
-		ROM_LOAD( "1d",  0x8000, 0x2000, 0x2089e166 )
-		ROM_LOAD( "1c",  0xa000, 0x2000, 0xa85934ae )
-		ROM_LOAD( "1b",  0xc000, 0x2000, 0x718e25b3 )
-		ROM_LOAD( "1a",  0xe000, 0x2000, 0xf9526852 )
+	static RomLoadPtr rom_hogalley = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x10000, REGION_CPU1,0  );/* 6502 memory */
+		ROM_LOAD( "1d",  0x8000, 0x2000, 0x2089e166 );
+		ROM_LOAD( "1c",  0xa000, 0x2000, 0xa85934ae );
+		ROM_LOAD( "1b",  0xc000, 0x2000, 0x718e25b3 );
+		ROM_LOAD( "1a",  0xe000, 0x2000, 0xf9526852 );
 	
-		ROM_REGION( 0x4000,REGION_GFX1, 0 ) /* PPU memory */
-		ROM_LOAD( "2b",  0x0000, 0x2000, 0x7623e954 )
-		ROM_LOAD( "2a",  0x2000, 0x2000, 0x78c842b6 )
-	ROM_END
+		ROM_REGION( 0x4000,REGION_GFX1, 0 );/* PPU memory */
+		ROM_LOAD( "2b",  0x0000, 0x2000, 0x7623e954 );
+		ROM_LOAD( "2a",  0x2000, 0x2000, 0x78c842b6 );
+	ROM_END(); }}; 
 	
-	ROM_START( goonies )
-		ROM_REGION( 0x20000,REGION_CPU1, 0 ) /* 6502 memory */
-		ROM_LOAD( "prg.u7",  0x10000, 0x10000, 0x1e438d52 )
+	static RomLoadPtr rom_goonies = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x20000,REGION_CPU1, 0 );/* 6502 memory */
+		ROM_LOAD( "prg.u7",  0x10000, 0x10000, 0x1e438d52 );
 	
-		ROM_REGION( 0x10000,REGION_GFX1, 0 ) /* PPU memory */
-		ROM_LOAD( "chr.u4",  0x0000, 0x10000, 0x4c4b61b0 )
-	ROM_END
+		ROM_REGION( 0x10000,REGION_GFX1, 0 );/* PPU memory */
+		ROM_LOAD( "chr.u4",  0x0000, 0x10000, 0x4c4b61b0 );
+	ROM_END(); }}; 
 	
-	ROM_START( vsgradus )
-		ROM_REGION( 0x20000,REGION_CPU1, 0  ) /* 6502 memory */
-		ROM_LOAD( "prg.u7",  0x10000, 0x10000, 0xd99a2087 )
+	static RomLoadPtr rom_vsgradus = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x20000,REGION_CPU1, 0  );/* 6502 memory */
+		ROM_LOAD( "prg.u7",  0x10000, 0x10000, 0xd99a2087 );
 	
-		ROM_REGION( 0x10000,REGION_GFX1, 0 ) /* PPU memory */
-		ROM_LOAD( "chr.u4",  0x0000, 0x10000, 0x23cf2fc3 )
-	ROM_END
+		ROM_REGION( 0x10000,REGION_GFX1, 0 );/* PPU memory */
+		ROM_LOAD( "chr.u4",  0x0000, 0x10000, 0x23cf2fc3 );
+	ROM_END(); }}; 
 	
-	ROM_START( btlecity )
-		ROM_REGION( 0x10000,REGION_CPU1, 0 ) /* 6502 memory */
-		ROM_LOAD( "bc.1d",  0x8000, 0x2000, 0x6aa87037 )
-		ROM_LOAD( "bc.1c",  0xa000, 0x2000, 0xbdb317db )
-		ROM_LOAD( "bc.1b",  0xc000, 0x2000, 0x1a0088b8 )
-		ROM_LOAD( "bc.1a",  0xe000, 0x2000, 0x86307c89 )
+	static RomLoadPtr rom_btlecity = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x10000,REGION_CPU1, 0 );/* 6502 memory */
+		ROM_LOAD( "bc.1d",  0x8000, 0x2000, 0x6aa87037 );
+		ROM_LOAD( "bc.1c",  0xa000, 0x2000, 0xbdb317db );
+		ROM_LOAD( "bc.1b",  0xc000, 0x2000, 0x1a0088b8 );
+		ROM_LOAD( "bc.1a",  0xe000, 0x2000, 0x86307c89 );
 	
-		ROM_REGION( 0x4000, REGION_GFX1, 0 ) /* PPU memory */
-		ROM_LOAD( "bc.2b",  0x0000, 0x2000, 0x634f68bd )
-		ROM_LOAD( "bc.2a",  0x2000, 0x2000, 0xa9b49a05 )
-	ROM_END
+		ROM_REGION( 0x4000, REGION_GFX1, 0 );/* PPU memory */
+		ROM_LOAD( "bc.2b",  0x0000, 0x2000, 0x634f68bd );
+		ROM_LOAD( "bc.2a",  0x2000, 0x2000, 0xa9b49a05 );
+	ROM_END(); }}; 
 	
-	ROM_START( cluclu )
-		ROM_REGION( 0x10000,REGION_CPU1, 0  ) /* 6502 memory */
-		ROM_LOAD( "cl.6d",  0x8000, 0x2000, 0x1e9f97c9 )
-		ROM_LOAD( "cl.6c",  0xa000, 0x2000, 0xe8b843a7 )
-		ROM_LOAD( "cl.6b",  0xc000, 0x2000, 0x418ee9ea )
-		ROM_LOAD( "cl.6a",  0xe000, 0x2000, 0x5e8a8457 )
+	static RomLoadPtr rom_cluclu = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x10000,REGION_CPU1, 0  );/* 6502 memory */
+		ROM_LOAD( "cl.6d",  0x8000, 0x2000, 0x1e9f97c9 );
+		ROM_LOAD( "cl.6c",  0xa000, 0x2000, 0xe8b843a7 );
+		ROM_LOAD( "cl.6b",  0xc000, 0x2000, 0x418ee9ea );
+		ROM_LOAD( "cl.6a",  0xe000, 0x2000, 0x5e8a8457 );
 	
-		ROM_REGION( 0x4000, REGION_GFX1, 0 ) /* PPU memory */
-		ROM_LOAD( "cl.8b",  0x0000, 0x2000, 0x960d9a6c )
-		ROM_LOAD( "cl.8a",  0x2000, 0x2000, 0xe3139791 )
-	ROM_END
+		ROM_REGION( 0x4000, REGION_GFX1, 0 );/* PPU memory */
+		ROM_LOAD( "cl.8b",  0x0000, 0x2000, 0x960d9a6c );
+		ROM_LOAD( "cl.8a",  0x2000, 0x2000, 0xe3139791 );
+	ROM_END(); }}; 
 	
-	ROM_START( excitebk )
-		ROM_REGION( 0x10000,REGION_CPU1, 0 ) /* 6502 memory */
-		ROM_LOAD( "eb-1d",  0x8000, 0x2000, 0x7e54df1d )
-		ROM_LOAD( "eb-1c",  0xa000, 0x2000, 0x89baae91 )
-		ROM_LOAD( "eb-1b",  0xc000, 0x2000, 0x4c0c2098 )
-		ROM_LOAD( "eb-1a",  0xe000, 0x2000, 0xb9ab7110 )
+	static RomLoadPtr rom_excitebk = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x10000,REGION_CPU1, 0 );/* 6502 memory */
+		ROM_LOAD( "eb-1d",  0x8000, 0x2000, 0x7e54df1d );
+		ROM_LOAD( "eb-1c",  0xa000, 0x2000, 0x89baae91 );
+		ROM_LOAD( "eb-1b",  0xc000, 0x2000, 0x4c0c2098 );
+		ROM_LOAD( "eb-1a",  0xe000, 0x2000, 0xb9ab7110 );
 	
-		ROM_REGION( 0x4000,REGION_GFX1, 0 ) /* PPU memory */
-		ROM_LOAD( "eb-2b",  0x0000, 0x2000, 0x80be1f50 )
-		ROM_LOAD( "eb-2a",  0x2000, 0x2000, 0xa9b49a05 )
+		ROM_REGION( 0x4000,REGION_GFX1, 0 );/* PPU memory */
+		ROM_LOAD( "eb-2b",  0x0000, 0x2000, 0x80be1f50 );
+		ROM_LOAD( "eb-2a",  0x2000, 0x2000, 0xa9b49a05 );
 	
-	ROM_END
+	ROM_END(); }}; 
 	
-	ROM_START( excitbkj )
-		ROM_REGION( 0x10000,REGION_CPU1, 0 ) /* 6502 memory */
-		ROM_LOAD( "eb4-46da.bin",  0x8000, 0x2000, 0x6aa87037 )
-		ROM_LOAD( "eb4-46ca.bin",  0xa000, 0x2000, 0xbdb317db )
-		ROM_LOAD( "eb4-46ba.bin",  0xc000, 0x2000, 0xd1afe2dd )
-		ROM_LOAD( "eb4-46aa.bin",  0xe000, 0x2000, 0x46711d0e )
+	static RomLoadPtr rom_excitbkj = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x10000,REGION_CPU1, 0 );/* 6502 memory */
+		ROM_LOAD( "eb4-46da.bin",  0x8000, 0x2000, 0x6aa87037 );
+		ROM_LOAD( "eb4-46ca.bin",  0xa000, 0x2000, 0xbdb317db );
+		ROM_LOAD( "eb4-46ba.bin",  0xc000, 0x2000, 0xd1afe2dd );
+		ROM_LOAD( "eb4-46aa.bin",  0xe000, 0x2000, 0x46711d0e );
 	
-		ROM_REGION( 0x4000,REGION_GFX1, 0 ) /* PPU memory */
-		ROM_LOAD( "eb4-48ba.bin",  0x0000, 0x2000, 0x62a76c52 )
-	//	ROM_LOAD( "eb4-48aa.bin",  0x2000, 0x2000, 0xa9b49a05 )
-		ROM_LOAD( "eb-2a",         0x2000, 0x2000, 0xa9b49a05 )
+		ROM_REGION( 0x4000,REGION_GFX1, 0 );/* PPU memory */
+		ROM_LOAD( "eb4-48ba.bin",  0x0000, 0x2000, 0x62a76c52 );
+	//	ROM_LOAD( "eb4-48aa.bin",  0x2000, 0x2000, 0xa9b49a05 );
+		ROM_LOAD( "eb-2a",         0x2000, 0x2000, 0xa9b49a05 );
 	
-	ROM_END
-	
-	
-	ROM_START( jajamaru )
-		ROM_REGION( 0x10000,REGION_CPU1, 0 ) /* 6502 memory */
-		//ROM_LOAD( "10.bin", 0x8000, 0x2000, 0x16af1704)
-		//ROM_LOAD( "9.bin",  0xa000, 0x2000, 0xdb7d1814)
-	
-		ROM_LOAD( "8.bin",  0x8000, 0x2000, 0xce263271)
-		ROM_LOAD( "7.bin",  0xa000, 0x2000, 0xa406d0e4)
-		ROM_LOAD( "9.bin", 0xc000, 0x2000, 0xdb7d1814)
-		ROM_LOAD( "10.bin",  0xe000, 0x2000, 0x16af1704)
+	ROM_END(); }}; 
 	
 	
+	static RomLoadPtr rom_jajamaru = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x10000,REGION_CPU1, 0 );/* 6502 memory */
+		//ROM_LOAD( "10.bin", 0x8000, 0x2000, 0x16af1704);
+		//ROM_LOAD( "9.bin",  0xa000, 0x2000, 0xdb7d1814);
 	
-		ROM_REGION( 0x8000,REGION_GFX1, 0 ) /* PPU memory */
-		//ROM_LOAD( "12.bin",  0x0000, 0x2000, 0xc91d536a )
-		//ROM_LOAD( "11.bin",  0x2000, 0x2000, 0xf0034c04 )
-		//ROM_LOAD( "7.bin",   0x4000, 0x2000, 0xc91d536a )
-		//ROM_LOAD( "8.bin",  0x6000, 0x2000, 0xf0034c04 )
-	
-	ROM_END
-	
-	
-	ROM_START( ladygolf)
-		ROM_REGION( 0x10000,REGION_CPU1, 0  ) /* 6502 memory */
-		ROM_LOAD( "lg-1d",  0x8000, 0x2000, 0x8b2ab436 )
-		ROM_LOAD( "lg-1c",  0xa000, 0x2000, 0xbda6b432 )
-		ROM_LOAD( "lg-1b",  0xc000, 0x2000, 0xdcdd8220 )
-		ROM_LOAD( "lg-1a",  0xe000, 0x2000, 0x26a3cb3b )
-	
-		ROM_REGION( 0x4000,REGION_GFX1, 0 ) /* PPU memory */
-		ROM_LOAD( "lg-2b",  0x0000, 0x2000, 0x95618947 )
-		ROM_LOAD( "lg-2a",  0x2000, 0x2000, 0xd07407b1 )
-	ROM_END
-	
-	ROM_START( smgolfj )
-		ROM_REGION( 0x10000,REGION_CPU1, 0  ) /* 6502 memory */
-		ROM_LOAD( "gf3_6d_b.bin",  0x8000, 0x2000, 0x8ce375b6 )
-		ROM_LOAD( "gf3_6c_b.bin",  0xa000, 0x2000, 0x50a938d3 )
-		ROM_LOAD( "gf3_6b_b.bin",  0xc000, 0x2000, 0x7dc39f1f )
-		ROM_LOAD( "gf3_6a_b.bin",  0xe000, 0x2000, 0x9b8a2106 )
-	
-		ROM_REGION( 0x4000,REGION_GFX1, 0 ) /* PPU memory */
-		ROM_LOAD( "gf3_8b_b.bin",  0x0000, 0x2000, 0x7ef68029 )
-		ROM_LOAD( "gf3_8a_b.bin",  0x2000, 0x2000, 0xf2285878 )
-	ROM_END
-	
-	ROM_START( machridr )
-		ROM_REGION( 0x10000,REGION_CPU1,0 ) /* 6502 memory */
-		ROM_LOAD( "mr-1d",  0x8000, 0x2000, 0x379c44b9 )
-		ROM_LOAD( "mr-1c",  0xa000, 0x2000, 0xcb864802 )
-		ROM_LOAD( "mr-1b",  0xc000, 0x2000, 0x5547261f )
-		ROM_LOAD( "mr-1a",  0xe000, 0x2000, 0xe3e3900d )
-	
-		ROM_REGION( 0x4000,REGION_GFX1 , 0) /* PPU memory */
-		ROM_LOAD( "mr-2b",  0x0000, 0x2000, 0x33a2b41a )
-		ROM_LOAD( "mr-2a",  0x2000, 0x2000, 0x685899d8 )
-	ROM_END
-	
-	ROM_START(smgolf)
-		ROM_REGION( 0x10000,REGION_CPU1,0 ) /* 6502 memory */
-		ROM_LOAD( "golf-1d",  0x8000, 0x2000, 0xa3e286d3 )
-		ROM_LOAD( "golf-1c",  0xa000, 0x2000, 0xe477e48b )
-		ROM_LOAD( "golf-1b",  0xc000, 0x2000, 0x7d80b511 )
-		ROM_LOAD( "golf-1a",  0xe000, 0x2000, 0x7b767da6 )
-	
-		ROM_REGION( 0x4000, REGION_GFX1, 0 ) /* PPU memory */
-		ROM_LOAD( "golf-2b",  0x0000, 0x2000, 0x2782a3e5 )
-		ROM_LOAD( "golf-2a",  0x2000, 0x2000, 0x6e93fdef )
-	ROM_END
-	
-	ROM_START( vspinbal )
-		ROM_REGION( 0x10000, REGION_CPU1, 0 ) /* 6502 memory */
-		ROM_LOAD( "pb-6d",  0x8000, 0x2000, 0x69fc575e )
-		ROM_LOAD( "pb-6c",  0xa000, 0x2000, 0xfa9472d2 )
-		ROM_LOAD( "pb-6b",  0xc000, 0x2000, 0xf57d89c5 )
-		ROM_LOAD( "pb-6a",  0xe000, 0x2000, 0x640c4741 )
-	
-		ROM_REGION( 0x4000,REGION_GFX1, 0 ) /* PPU memory */
-		ROM_LOAD( "pb-8b",  0x0000, 0x2000, 0x8822ee9e )
-		ROM_LOAD( "pb-8a",  0x2000, 0x2000, 0xcbe98a28 )
-	ROM_END
+		ROM_LOAD( "8.bin",  0x8000, 0x2000, 0xce263271);
+		ROM_LOAD( "7.bin",  0xa000, 0x2000, 0xa406d0e4);
+		ROM_LOAD( "9.bin", 0xc000, 0x2000, 0xdb7d1814);
+		ROM_LOAD( "10.bin",  0xe000, 0x2000, 0x16af1704);
 	
 	
 	
+		ROM_REGION( 0x8000,REGION_GFX1, 0 );/* PPU memory */
+		//ROM_LOAD( "12.bin",  0x0000, 0x2000, 0xc91d536a );
+		//ROM_LOAD( "11.bin",  0x2000, 0x2000, 0xf0034c04 );
+		//ROM_LOAD( "7.bin",   0x4000, 0x2000, 0xc91d536a );
+		//ROM_LOAD( "8.bin",  0x6000, 0x2000, 0xf0034c04 );
 	
-	ROM_START( vspinblj )
-		ROM_REGION( 0x10000, REGION_CPU1, 0 ) /* 6502 memory */
-		ROM_LOAD( "pn3_6d_b.bin",  0x8000, 0x2000, 0xfd50c42e  )
-		ROM_LOAD( "pn3_6c_b.bin",  0xa000, 0x2000, 0x59beb9e5  )
-		ROM_LOAD( "pn3_6b_b.bin",  0xc000, 0x2000, 0xce7f47ce  )
-		ROM_LOAD( "pn3_6a_b.bin",  0xe000, 0x2000, 0x5685e2ee  )
-	
-		ROM_REGION( 0x4000,REGION_GFX1, 0 ) /* PPU memory */
-		ROM_LOAD( "pn3_8b_b.bin",  0x0000, 0x2000, 0x1e3fec3e )
-		ROM_LOAD( "pn3_8a_b.bin",  0x2000, 0x2000, 0x6f963a65 )
-	ROM_END
+	ROM_END(); }}; 
 	
 	
-	ROM_START( vsslalom )
-		ROM_REGION( 0x10000,REGION_CPU1, 0 ) /* 6502 memory */
-		ROM_LOAD( "slalom.1d",  0x8000, 0x2000, 0x6240a07d )
-		ROM_LOAD( "slalom.1c",  0xa000, 0x2000, 0x27c355e4 )
-		ROM_LOAD( "slalom.1b",  0xc000, 0x2000, 0xd4825fbf )
-		ROM_LOAD( "slalom.1a",  0xe000, 0x2000, 0x82333f80 )
+	static RomLoadPtr rom_ladygolf = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x10000,REGION_CPU1, 0  );/* 6502 memory */
+		ROM_LOAD( "lg-1d",  0x8000, 0x2000, 0x8b2ab436 );
+		ROM_LOAD( "lg-1c",  0xa000, 0x2000, 0xbda6b432 );
+		ROM_LOAD( "lg-1b",  0xc000, 0x2000, 0xdcdd8220 );
+		ROM_LOAD( "lg-1a",  0xe000, 0x2000, 0x26a3cb3b );
 	
-		ROM_REGION( 0x2000,REGION_GFX1, 0 ) /* PPU memory */
-		ROM_LOAD( "slalom.2a",  0x0000, 0x2000, 0x977bb126 )
+		ROM_REGION( 0x4000,REGION_GFX1, 0 );/* PPU memory */
+		ROM_LOAD( "lg-2b",  0x0000, 0x2000, 0x95618947 );
+		ROM_LOAD( "lg-2a",  0x2000, 0x2000, 0xd07407b1 );
+	ROM_END(); }}; 
 	
-	ROM_END
+	static RomLoadPtr rom_smgolfj = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x10000,REGION_CPU1, 0  );/* 6502 memory */
+		ROM_LOAD( "gf3_6d_b.bin",  0x8000, 0x2000, 0x8ce375b6 );
+		ROM_LOAD( "gf3_6c_b.bin",  0xa000, 0x2000, 0x50a938d3 );
+		ROM_LOAD( "gf3_6b_b.bin",  0xc000, 0x2000, 0x7dc39f1f );
+		ROM_LOAD( "gf3_6a_b.bin",  0xe000, 0x2000, 0x9b8a2106 );
 	
-	ROM_START( vssoccer )
-		ROM_REGION( 0x10000,REGION_CPU1, 0 ) /* 6502 memory */
-		ROM_LOAD( "soccer1d",  0x8000, 0x2000, 0x0ac52145 )
-		ROM_LOAD( "soccer1c",  0xa000, 0x2000, 0xf132e794 )
-		ROM_LOAD( "soccer1b",  0xc000, 0x2000, 0x26bb7325 )
-		ROM_LOAD( "soccer1a",  0xe000, 0x2000, 0xe731635a )
+		ROM_REGION( 0x4000,REGION_GFX1, 0 );/* PPU memory */
+		ROM_LOAD( "gf3_8b_b.bin",  0x0000, 0x2000, 0x7ef68029 );
+		ROM_LOAD( "gf3_8a_b.bin",  0x2000, 0x2000, 0xf2285878 );
+	ROM_END(); }}; 
 	
-		ROM_REGION( 0x4000,REGION_GFX1, 0 ) /* PPU memory */
-		ROM_LOAD( "soccer2b",  0x0000, 0x2000, 0x307b19ab )
-		ROM_LOAD( "soccer2a",  0x2000, 0x2000, 0x7263613a )
-	ROM_END
+	static RomLoadPtr rom_machridr = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x10000,REGION_CPU1,0 );/* 6502 memory */
+		ROM_LOAD( "mr-1d",  0x8000, 0x2000, 0x379c44b9 );
+		ROM_LOAD( "mr-1c",  0xa000, 0x2000, 0xcb864802 );
+		ROM_LOAD( "mr-1b",  0xc000, 0x2000, 0x5547261f );
+		ROM_LOAD( "mr-1a",  0xe000, 0x2000, 0xe3e3900d );
 	
-	ROM_START( starlstr )
-		ROM_REGION( 0x10000,REGION_CPU1, 0 ) /* 6502 memory */
-		ROM_LOAD( "sl_04.1d",  0x8000, 0x2000, 0x4fd5b385 )
-		ROM_LOAD( "sl_03.1c",  0xa000, 0x2000, 0xf26cd7ca )
-		ROM_LOAD( "sl_02.1b",  0xc000, 0x2000, 0x9308f34e )
-		ROM_LOAD( "sl_01.1a",  0xe000, 0x2000, 0xd87296e4 )
+		ROM_REGION( 0x4000,REGION_GFX1 , 0);/* PPU memory */
+		ROM_LOAD( "mr-2b",  0x0000, 0x2000, 0x33a2b41a );
+		ROM_LOAD( "mr-2a",  0x2000, 0x2000, 0x685899d8 );
+	ROM_END(); }}; 
 	
-		ROM_REGION( 0x4000,REGION_GFX1, 0 ) /* PPU memory */
-		ROM_LOAD( "sl_06.2b",  0x0000, 0x2000, 0x25f0e027 )
-		ROM_LOAD( "sl_05.2a",  0x2000, 0x2000, 0x2bbb45fd )
-	ROM_END
+	static RomLoadPtr rom_smgolf = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x10000,REGION_CPU1,0 );/* 6502 memory */
+		ROM_LOAD( "golf-1d",  0x8000, 0x2000, 0xa3e286d3 );
+		ROM_LOAD( "golf-1c",  0xa000, 0x2000, 0xe477e48b );
+		ROM_LOAD( "golf-1b",  0xc000, 0x2000, 0x7d80b511 );
+		ROM_LOAD( "golf-1a",  0xe000, 0x2000, 0x7b767da6 );
+	
+		ROM_REGION( 0x4000, REGION_GFX1, 0 );/* PPU memory */
+		ROM_LOAD( "golf-2b",  0x0000, 0x2000, 0x2782a3e5 );
+		ROM_LOAD( "golf-2a",  0x2000, 0x2000, 0x6e93fdef );
+	ROM_END(); }}; 
+	
+	static RomLoadPtr rom_vspinbal = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x10000, REGION_CPU1, 0 );/* 6502 memory */
+		ROM_LOAD( "pb-6d",  0x8000, 0x2000, 0x69fc575e );
+		ROM_LOAD( "pb-6c",  0xa000, 0x2000, 0xfa9472d2 );
+		ROM_LOAD( "pb-6b",  0xc000, 0x2000, 0xf57d89c5 );
+		ROM_LOAD( "pb-6a",  0xe000, 0x2000, 0x640c4741 );
+	
+		ROM_REGION( 0x4000,REGION_GFX1, 0 );/* PPU memory */
+		ROM_LOAD( "pb-8b",  0x0000, 0x2000, 0x8822ee9e );
+		ROM_LOAD( "pb-8a",  0x2000, 0x2000, 0xcbe98a28 );
+	ROM_END(); }}; 
 	
 	
-	ROM_START( vstetris )
-		ROM_REGION( 0x10000,REGION_CPU1, 0 ) /* 6502 memory */
-		ROM_LOAD( "a000.6c",  0xa000, 0x2000, 0x92a1cf10)
-		ROM_LOAD( "c000.6b",  0xc000, 0x2000, 0x9e9cda9d)
-		ROM_LOAD( "e000.6a",  0xe000, 0x2000, 0xbfeaf6c1)
 	
-		ROM_REGION( 0x2000,REGION_GFX1, 0 ) /* PPU memory */
-		ROM_LOAD( "char.8b",  0x0000, 0x2000, 0x51e8d403 )
 	
-	ROM_END
+	static RomLoadPtr rom_vspinblj = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x10000, REGION_CPU1, 0 );/* 6502 memory */
+		ROM_LOAD( "pn3_6d_b.bin",  0x8000, 0x2000, 0xfd50c42e  );
+		ROM_LOAD( "pn3_6c_b.bin",  0xa000, 0x2000, 0x59beb9e5  );
+		ROM_LOAD( "pn3_6b_b.bin",  0xc000, 0x2000, 0xce7f47ce  );
+		ROM_LOAD( "pn3_6a_b.bin",  0xe000, 0x2000, 0x5685e2ee  );
 	
-	ROM_START( drmario )
-		ROM_REGION( 0x20000,REGION_CPU1, 0 ) /* 6502 memory */
-		ROM_LOAD( "dm-uiprg",  0x10000, 0x10000, 0xd5d7eac4 )
+		ROM_REGION( 0x4000,REGION_GFX1, 0 );/* PPU memory */
+		ROM_LOAD( "pn3_8b_b.bin",  0x0000, 0x2000, 0x1e3fec3e );
+		ROM_LOAD( "pn3_8a_b.bin",  0x2000, 0x2000, 0x6f963a65 );
+	ROM_END(); }}; 
 	
-		ROM_REGION( 0x8000,REGION_GFX1, 0 ) /* PPU memory */
-		ROM_LOAD( "dm-u3chr",  0x0000, 0x8000, 0x91871aa5 )
-	ROM_END
 	
-	ROM_START( cstlevna )
-		ROM_REGION( 0x30000,REGION_CPU1, 0 ) /* 6502 memory */
-		ROM_LOAD( "mds-cv.prg",  0x10000, 0x20000, 0xffbef374 )
+	static RomLoadPtr rom_vsslalom = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x10000,REGION_CPU1, 0 );/* 6502 memory */
+		ROM_LOAD( "slalom.1d",  0x8000, 0x2000, 0x6240a07d );
+		ROM_LOAD( "slalom.1c",  0xa000, 0x2000, 0x27c355e4 );
+		ROM_LOAD( "slalom.1b",  0xc000, 0x2000, 0xd4825fbf );
+		ROM_LOAD( "slalom.1a",  0xe000, 0x2000, 0x82333f80 );
+	
+		ROM_REGION( 0x2000,REGION_GFX1, 0 );/* PPU memory */
+		ROM_LOAD( "slalom.2a",  0x0000, 0x2000, 0x977bb126 );
+	
+	ROM_END(); }}; 
+	
+	static RomLoadPtr rom_vssoccer = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x10000,REGION_CPU1, 0 );/* 6502 memory */
+		ROM_LOAD( "soccer1d",  0x8000, 0x2000, 0x0ac52145 );
+		ROM_LOAD( "soccer1c",  0xa000, 0x2000, 0xf132e794 );
+		ROM_LOAD( "soccer1b",  0xc000, 0x2000, 0x26bb7325 );
+		ROM_LOAD( "soccer1a",  0xe000, 0x2000, 0xe731635a );
+	
+		ROM_REGION( 0x4000,REGION_GFX1, 0 );/* PPU memory */
+		ROM_LOAD( "soccer2b",  0x0000, 0x2000, 0x307b19ab );
+		ROM_LOAD( "soccer2a",  0x2000, 0x2000, 0x7263613a );
+	ROM_END(); }}; 
+	
+	static RomLoadPtr rom_starlstr = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x10000,REGION_CPU1, 0 );/* 6502 memory */
+		ROM_LOAD( "sl_04.1d",  0x8000, 0x2000, 0x4fd5b385 );
+		ROM_LOAD( "sl_03.1c",  0xa000, 0x2000, 0xf26cd7ca );
+		ROM_LOAD( "sl_02.1b",  0xc000, 0x2000, 0x9308f34e );
+		ROM_LOAD( "sl_01.1a",  0xe000, 0x2000, 0xd87296e4 );
+	
+		ROM_REGION( 0x4000,REGION_GFX1, 0 );/* PPU memory */
+		ROM_LOAD( "sl_06.2b",  0x0000, 0x2000, 0x25f0e027 );
+		ROM_LOAD( "sl_05.2a",  0x2000, 0x2000, 0x2bbb45fd );
+	ROM_END(); }}; 
+	
+	
+	static RomLoadPtr rom_vstetris = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x10000,REGION_CPU1, 0 );/* 6502 memory */
+		ROM_LOAD( "a000.6c",  0xa000, 0x2000, 0x92a1cf10);
+		ROM_LOAD( "c000.6b",  0xc000, 0x2000, 0x9e9cda9d);
+		ROM_LOAD( "e000.6a",  0xe000, 0x2000, 0xbfeaf6c1);
+	
+		ROM_REGION( 0x2000,REGION_GFX1, 0 );/* PPU memory */
+		ROM_LOAD( "char.8b",  0x0000, 0x2000, 0x51e8d403 );
+	
+	ROM_END(); }}; 
+	
+	static RomLoadPtr rom_drmario = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x20000,REGION_CPU1, 0 );/* 6502 memory */
+		ROM_LOAD( "dm-uiprg",  0x10000, 0x10000, 0xd5d7eac4 );
+	
+		ROM_REGION( 0x8000,REGION_GFX1, 0 );/* PPU memory */
+		ROM_LOAD( "dm-u3chr",  0x0000, 0x8000, 0x91871aa5 );
+	ROM_END(); }}; 
+	
+	static RomLoadPtr rom_cstlevna = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x30000,REGION_CPU1, 0 );/* 6502 memory */
+		ROM_LOAD( "mds-cv.prg",  0x10000, 0x20000, 0xffbef374 );
 	
 		/* No cart gfx - uses vram */
-	ROM_END
+	ROM_END(); }}; 
 	
-	ROM_START( tkoboxng )
-		ROM_REGION( 0x20000,REGION_CPU1, 0 ) /* 6502 memory */
-		ROM_LOAD( "tkoprg.bin",  0x10000, 0x10000, 0xeb2dba63 )
+	static RomLoadPtr rom_tkoboxng = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x20000,REGION_CPU1, 0 );/* 6502 memory */
+		ROM_LOAD( "tkoprg.bin",  0x10000, 0x10000, 0xeb2dba63 );
 	
-		ROM_REGION( 0x10000,REGION_GFX1, 0 ) /* PPU memory */
-		ROM_LOAD( "tkochr.bin",  0x0000, 0x10000, 0x21275ba5 )
-	ROM_END
+		ROM_REGION( 0x10000,REGION_GFX1, 0 );/* PPU memory */
+		ROM_LOAD( "tkochr.bin",  0x0000, 0x10000, 0x21275ba5 );
+	ROM_END(); }}; 
 	
 	/* not working yet */
 	
-	ROM_START( topgun )
-		ROM_REGION( 0x30000,REGION_CPU1, 0 ) /* 6502 memory */
-		ROM_LOAD( "rc-003",  0x10000, 0x20000, 0x8c0c2df5 )
+	static RomLoadPtr rom_topgun = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x30000,REGION_CPU1, 0 );/* 6502 memory */
+		ROM_LOAD( "rc-003",  0x10000, 0x20000, 0x8c0c2df5 );
 	
 		/* No cart gfx - uses vram */
-	ROM_END
+	ROM_END(); }}; 
 	
-	ROM_START( rbibb )
-		ROM_REGION( 0x20000,REGION_CPU1,0 ) /* 6502 memory */
-		ROM_LOAD( "rbi-prg",  0x10000, 0x10000, 0x135adf7c )
+	static RomLoadPtr rom_rbibb = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x20000,REGION_CPU1,0 );/* 6502 memory */
+		ROM_LOAD( "rbi-prg",  0x10000, 0x10000, 0x135adf7c );
 	
-		ROM_REGION( 0x8000,REGION_GFX1, 0 ) /* PPU memory */
-		ROM_LOAD( "rbi-cha",  0x0000, 0x8000, 0xa3c14889 )
-	ROM_END
+		ROM_REGION( 0x8000,REGION_GFX1, 0 );/* PPU memory */
+		ROM_LOAD( "rbi-cha",  0x0000, 0x8000, 0xa3c14889 );
+	ROM_END(); }}; 
 	
-	ROM_START( vsskykid )
-		ROM_REGION( 0x10000,REGION_CPU1,0 ) /* 6502 memory */
-		ROM_LOAD( "sk-prg1",  0x08000, 0x08000, 0xcf36261e )
+	static RomLoadPtr rom_vsskykid = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x10000,REGION_CPU1,0 );/* 6502 memory */
+		ROM_LOAD( "sk-prg1",  0x08000, 0x08000, 0xcf36261e );
 	
-		ROM_REGION( 0x8000,REGION_GFX1 , 0) /* PPU memory */
-		ROM_LOAD( "sk-cha",  0x0000, 0x8000, 0x9bd44dad )
-	ROM_END
+		ROM_REGION( 0x8000,REGION_GFX1 , 0);/* PPU memory */
+		ROM_LOAD( "sk-cha",  0x0000, 0x8000, 0x9bd44dad );
+	ROM_END(); }}; 
 	
-	ROM_START( platoon )
-		ROM_REGION( 0x30000,REGION_CPU1, 0 ) /* 6502 memory */
-		ROM_LOAD( "prgver0.ic4",  0x10000, 0x20000, 0xe2c0a2be)
+	static RomLoadPtr rom_platoon = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x30000,REGION_CPU1, 0 );/* 6502 memory */
+		ROM_LOAD( "prgver0.ic4",  0x10000, 0x20000, 0xe2c0a2be);
 	
-		ROM_REGION( 0x20000,REGION_GFX1, 0 ) /* PPU memory */
-		ROM_LOAD( "chrver0.ic6",  0x00000, 0x20000, 0x689df57d )
-	ROM_END
-	
-	
-	ROM_START( vsxevus )
-		ROM_REGION( 0x30000,REGION_CPU1, 0 ) /* 6502 memory */
-		ROM_LOAD( "prg2n", 0x10000, 0x10000, 0xe2c0a2be)
-		ROM_LOAD( "prg1",  0x20000, 0x10000, 0xe2c0a2be)
+		ROM_REGION( 0x20000,REGION_GFX1, 0 );/* PPU memory */
+		ROM_LOAD( "chrver0.ic6",  0x00000, 0x20000, 0x689df57d );
+	ROM_END(); }}; 
 	
 	
-		ROM_REGION( 0x8000,REGION_GFX1, 0 ) /* PPU memory */
-		ROM_LOAD( "cha",  0x00000, 0x8000, 0x689df57d )
+	static RomLoadPtr rom_vsxevus = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x30000,REGION_CPU1, 0 );/* 6502 memory */
+		ROM_LOAD( "prg2n", 0x10000, 0x10000, 0xe2c0a2be);
+		ROM_LOAD( "prg1",  0x20000, 0x10000, 0xe2c0a2be);
 	
-	ROM_END
+	
+		ROM_REGION( 0x8000,REGION_GFX1, 0 );/* PPU memory */
+		ROM_LOAD( "cha",  0x00000, 0x8000, 0x689df57d );
+	
+	ROM_END(); }}; 
 	
 	
 	/* Dual System */
 	
-	ROM_START( balonfgt )
-		ROM_REGION( 0x10000,REGION_CPU1, 0 ) /* 6502 memory */
-		ROM_LOAD( "bf.1d",  0x08000, 0x02000, 0x1248a6d6 )
-		ROM_LOAD( "bf.1c",  0x0a000, 0x02000, 0x14af0e42 )
-		ROM_LOAD( "bf.1b",  0x0c000, 0x02000, 0xa420babf )
-		ROM_LOAD( "bf.1a",  0x0e000, 0x02000, 0x9c31f94d )
+	static RomLoadPtr rom_balonfgt = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x10000,REGION_CPU1, 0 );/* 6502 memory */
+		ROM_LOAD( "bf.1d",  0x08000, 0x02000, 0x1248a6d6 );
+		ROM_LOAD( "bf.1c",  0x0a000, 0x02000, 0x14af0e42 );
+		ROM_LOAD( "bf.1b",  0x0c000, 0x02000, 0xa420babf );
+		ROM_LOAD( "bf.1a",  0x0e000, 0x02000, 0x9c31f94d );
 	
-		ROM_REGION( 0x4000,REGION_GFX1, 0 ) /* PPU memory */
-		ROM_LOAD( "bf.2b",  0x0000, 0x2000, 0xf27d9aa0 )
-		ROM_LOAD( "bf.2a",  0x2000, 0x2000, 0x76e6bbf8 )
-	
-	
-		ROM_REGION( 0x10000,REGION_CPU2,0 ) /* 6502 memory */
-		ROM_LOAD( "bf.6d",  0x08000, 0x02000, 0xef4ebff1 )
-		ROM_LOAD( "bf.6c",  0x0a000, 0x02000, 0x14af0e42 )
-		ROM_LOAD( "bf.6b",  0x0c000, 0x02000, 0xa420babf )
-		ROM_LOAD( "bf.6a",  0x0e000, 0x02000, 0x3aa5c095 )
-	
-		ROM_REGION( 0x4000,REGION_GFX2, 0 ) /* PPU memory */
-		ROM_LOAD( "bf.8b",  0x0000, 0x2000, 0xf27d9aa0 )
-		ROM_LOAD( "bf.8a",  0x2000, 0x2000, 0x76e6bbf8 )
-	
-	ROM_END
-	
-	ROM_START( vsmahjng )
-		ROM_REGION( 0x10000,REGION_CPU1, 0 ) /* 6502 memory */
-		ROM_LOAD( "mj.1c",  0x0a000, 0x02000, 0xec77671f)
-		ROM_LOAD( "mj.1b",  0x0c000, 0x02000, 0xac53398b)
-		ROM_LOAD( "mj.1a",  0x0e000, 0x02000, 0x62f0df8e)
-	
-		ROM_REGION( 0x4000,REGION_GFX1, 0 ) /* PPU memory */
-		ROM_LOAD( "mj.2b",  0x0000, 0x2000, 0x9dae3502 )
+		ROM_REGION( 0x4000,REGION_GFX1, 0 );/* PPU memory */
+		ROM_LOAD( "bf.2b",  0x0000, 0x2000, 0xf27d9aa0 );
+		ROM_LOAD( "bf.2a",  0x2000, 0x2000, 0x76e6bbf8 );
 	
 	
-		ROM_REGION( 0x10000,REGION_CPU2,0 ) /* 6502 memory */
-		ROM_LOAD( "mj.6c",  0x0a000, 0x02000, 0x3cee11e9 )
-		ROM_LOAD( "mj.6b",  0x0c000, 0x02000, 0xe8341f7b )
-		ROM_LOAD( "mj.6a",  0x0e000, 0x02000, 0x0ee69f25 )
+		ROM_REGION( 0x10000,REGION_CPU2,0 );/* 6502 memory */
+		ROM_LOAD( "bf.6d",  0x08000, 0x02000, 0xef4ebff1 );
+		ROM_LOAD( "bf.6c",  0x0a000, 0x02000, 0x14af0e42 );
+		ROM_LOAD( "bf.6b",  0x0c000, 0x02000, 0xa420babf );
+		ROM_LOAD( "bf.6a",  0x0e000, 0x02000, 0x3aa5c095 );
 	
-		ROM_REGION( 0x4000,REGION_GFX2, 0 ) /* PPU memory */
-		ROM_LOAD( "mj.8b",  0x0000, 0x2000, 0x9dae3502)
+		ROM_REGION( 0x4000,REGION_GFX2, 0 );/* PPU memory */
+		ROM_LOAD( "bf.8b",  0x0000, 0x2000, 0xf27d9aa0 );
+		ROM_LOAD( "bf.8a",  0x2000, 0x2000, 0x76e6bbf8 );
 	
-	ROM_END
+	ROM_END(); }}; 
 	
-	ROM_START( vsbball )
-		ROM_REGION( 0x10000,REGION_CPU1, 0 ) /* 6502 memory */
-		ROM_LOAD( "bb-1d",  0x08000, 0x02000, 0x0cc5225f)
-		ROM_LOAD( "bb-1c",  0x0a000, 0x02000, 0x9856ac60)
-		ROM_LOAD( "bb-1b",  0x0c000, 0x02000, 0xd1312e63)
-		ROM_LOAD( "bb-1a",  0x0e000, 0x02000, 0x28199b4d)
+	static RomLoadPtr rom_vsmahjng = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x10000,REGION_CPU1, 0 );/* 6502 memory */
+		ROM_LOAD( "mj.1c",  0x0a000, 0x02000, 0xec77671f);
+		ROM_LOAD( "mj.1b",  0x0c000, 0x02000, 0xac53398b);
+		ROM_LOAD( "mj.1a",  0x0e000, 0x02000, 0x62f0df8e);
 	
-		ROM_REGION( 0x4000,REGION_GFX1, 0 ) /* PPU memory */
-		ROM_LOAD( "bb-2b",  0x0000, 0x2000, 0x3ff8bec3 )
-		ROM_LOAD( "bb-2a",  0x2000, 0x2000, 0xebb88502 )
-	
-		ROM_REGION( 0x10000,REGION_CPU2,0 ) /* 6502 memory */
-		ROM_LOAD( "bb-6d",  0x08000, 0x02000, 0x7ec792bc)
-		ROM_LOAD( "bb-6c",  0x0a000, 0x02000, 0xb631f8aa)
-		ROM_LOAD( "bb-6b",  0x0c000, 0x02000, 0xc856b45a)
-		ROM_LOAD( "bb-6a",  0x0e000, 0x02000, 0x06b74c18)
-	
-		ROM_REGION( 0x4000,REGION_GFX2, 0 ) /* PPU memory */
-		ROM_LOAD( "bb-8b",  0x0000, 0x2000, 0x3ff8bec3 )
-		ROM_LOAD( "bb-8a",  0x2000, 0x2000, 0x13b20cfd )
-	ROM_END
+		ROM_REGION( 0x4000,REGION_GFX1, 0 );/* PPU memory */
+		ROM_LOAD( "mj.2b",  0x0000, 0x2000, 0x9dae3502 );
 	
 	
-	ROM_START( vsbballj )
-		ROM_REGION( 0x10000,REGION_CPU1, 0 ) /* 6502 memory */
-		ROM_LOAD( "ba_1d_a1.bin",  0x08000, 0x02000, 0x6dbc129b)
-		ROM_LOAD( "ba_1c_a1.bin",  0x0a000, 0x02000, 0x2a684b3a)
-		ROM_LOAD( "ba_1b_a1.bin",  0x0c000, 0x02000, 0x7ca0f715)
-		ROM_LOAD( "ba_1a_a1.bin",  0x0e000, 0x02000, 0x926bb4fc)
+		ROM_REGION( 0x10000,REGION_CPU2,0 );/* 6502 memory */
+		ROM_LOAD( "mj.6c",  0x0a000, 0x02000, 0x3cee11e9 );
+		ROM_LOAD( "mj.6b",  0x0c000, 0x02000, 0xe8341f7b );
+		ROM_LOAD( "mj.6a",  0x0e000, 0x02000, 0x0ee69f25 );
 	
-		ROM_REGION( 0x4000,REGION_GFX1, 0 ) /* PPU memory */
-		ROM_LOAD( "ba_2b_a.bin",  0x0000, 0x2000, 0x919147d0 )
-		ROM_LOAD( "ba_2a_a.bin",  0x2000, 0x2000, 0x3f7edb00 )
+		ROM_REGION( 0x4000,REGION_GFX2, 0 );/* PPU memory */
+		ROM_LOAD( "mj.8b",  0x0000, 0x2000, 0x9dae3502);
 	
-		ROM_REGION( 0x10000,REGION_CPU2,0 ) /* 6502 memory */
-		ROM_LOAD( "ba_6d_a1.bin",  0x08000, 0x02000, 0xd534dca4)
-		ROM_LOAD( "ba_6c_a1.bin",  0x0a000, 0x02000, 0x73904bbc)
-		ROM_LOAD( "ba_6b_a1.bin",  0x0c000, 0x02000, 0x7c130724)
-		ROM_LOAD( "ba_6a_a1.bin",  0x0e000, 0x02000, 0xd938080e)
+	ROM_END(); }}; 
 	
-		ROM_REGION( 0x4000,REGION_GFX2, 0 ) /* PPU memory */
-		ROM_LOAD( "ba_8b_a.bin",  0x0000, 0x2000, 0x919147d0 )
-		ROM_LOAD( "ba_8a_a.bin",  0x2000, 0x2000, 0x3f7edb00 )
-	ROM_END
+	static RomLoadPtr rom_vsbball = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x10000,REGION_CPU1, 0 );/* 6502 memory */
+		ROM_LOAD( "bb-1d",  0x08000, 0x02000, 0x0cc5225f);
+		ROM_LOAD( "bb-1c",  0x0a000, 0x02000, 0x9856ac60);
+		ROM_LOAD( "bb-1b",  0x0c000, 0x02000, 0xd1312e63);
+		ROM_LOAD( "bb-1a",  0x0e000, 0x02000, 0x28199b4d);
 	
-	ROM_START( vsbbalja )
-		ROM_REGION( 0x10000,REGION_CPU1, 0 ) /* 6502 memory */
-		ROM_LOAD( "ba_1d_a2.bin",  0x08000, 0x02000, 0xf3820b70)
-		ROM_LOAD( "ba_1c_a2.bin",  0x0a000, 0x02000, 0x39fbbf28)
-		ROM_LOAD( "ba_1b_a2.bin",  0x0c000, 0x02000, 0xb1377b12)
-		ROM_LOAD( "ba_1a_a2.bin",  0x0e000, 0x02000, 0x08fab347)
+		ROM_REGION( 0x4000,REGION_GFX1, 0 );/* PPU memory */
+		ROM_LOAD( "bb-2b",  0x0000, 0x2000, 0x3ff8bec3 );
+		ROM_LOAD( "bb-2a",  0x2000, 0x2000, 0xebb88502 );
 	
-		ROM_REGION( 0x4000,REGION_GFX1, 0 ) /* PPU memory */
-		ROM_LOAD( "ba_2b_a.bin",  0x0000, 0x2000, 0x919147d0 )
-		ROM_LOAD( "ba_2a_a.bin",  0x2000, 0x2000, 0x3f7edb00 )
+		ROM_REGION( 0x10000,REGION_CPU2,0 );/* 6502 memory */
+		ROM_LOAD( "bb-6d",  0x08000, 0x02000, 0x7ec792bc);
+		ROM_LOAD( "bb-6c",  0x0a000, 0x02000, 0xb631f8aa);
+		ROM_LOAD( "bb-6b",  0x0c000, 0x02000, 0xc856b45a);
+		ROM_LOAD( "bb-6a",  0x0e000, 0x02000, 0x06b74c18);
 	
-		ROM_REGION( 0x10000,REGION_CPU2,0 ) /* 6502 memory */
-		ROM_LOAD( "ba_6d_a2.bin",  0x08000, 0x02000, 0xc69561b0)
-		ROM_LOAD( "ba_6c_a2.bin",  0x0a000, 0x02000, 0x17d1ca39)
-		ROM_LOAD( "ba_6b_a2.bin",  0x0c000, 0x02000, 0x37481900)
-		ROM_LOAD( "ba_6a_a2.bin",  0x0e000, 0x02000, 0xa44ffc4b)
-	
-		ROM_REGION( 0x4000,REGION_GFX2, 0 ) /* PPU memory */
-		ROM_LOAD( "ba_8b_a.bin",  0x0000, 0x2000, 0x919147d0 )
-		ROM_LOAD( "ba_8a_a.bin",  0x2000, 0x2000, 0x3f7edb00 )
-	ROM_END
+		ROM_REGION( 0x4000,REGION_GFX2, 0 );/* PPU memory */
+		ROM_LOAD( "bb-8b",  0x0000, 0x2000, 0x3ff8bec3 );
+		ROM_LOAD( "bb-8a",  0x2000, 0x2000, 0x13b20cfd );
+	ROM_END(); }}; 
 	
 	
-	ROM_START( vstennis )
-		ROM_REGION( 0x10000,REGION_CPU1, 0 ) /* 6502 memory */
-		ROM_LOAD( "vst-1d",  0x08000, 0x02000, 0xf4e9fca0 )
-		ROM_LOAD( "vst-1c",  0x0a000, 0x02000, 0x7e52df58 )
-		ROM_LOAD( "vst-1b",  0x0c000, 0x02000, 0x1a0d809a )
-		ROM_LOAD( "vst-1a",  0x0e000, 0x02000, 0x8483a612 )
+	static RomLoadPtr rom_vsbballj = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x10000,REGION_CPU1, 0 );/* 6502 memory */
+		ROM_LOAD( "ba_1d_a1.bin",  0x08000, 0x02000, 0x6dbc129b);
+		ROM_LOAD( "ba_1c_a1.bin",  0x0a000, 0x02000, 0x2a684b3a);
+		ROM_LOAD( "ba_1b_a1.bin",  0x0c000, 0x02000, 0x7ca0f715);
+		ROM_LOAD( "ba_1a_a1.bin",  0x0e000, 0x02000, 0x926bb4fc);
 	
-		ROM_REGION( 0x4000,REGION_GFX1, 0 ) /* PPU memory */
-		ROM_LOAD( "vst-2b",  0x0000, 0x2000, 0x9de19c9c )
-		ROM_LOAD( "vst-2a",  0x2000, 0x2000, 0x67a5800e )
+		ROM_REGION( 0x4000,REGION_GFX1, 0 );/* PPU memory */
+		ROM_LOAD( "ba_2b_a.bin",  0x0000, 0x2000, 0x919147d0 );
+		ROM_LOAD( "ba_2a_a.bin",  0x2000, 0x2000, 0x3f7edb00 );
 	
-		ROM_REGION( 0x10000,REGION_CPU2, 0 ) /* 6502 memory */
-		ROM_LOAD( "vst-6d",  0x08000, 0x02000, 0x3131b1bf )
-		ROM_LOAD( "vst-6c",  0x0a000, 0x02000, 0x27195d13 )
-		ROM_LOAD( "vst-6b",  0x0c000, 0x02000, 0x4b4e26ca )
-		ROM_LOAD( "vst-6a",  0x0e000, 0x02000, 0xb6bfee07 )
+		ROM_REGION( 0x10000,REGION_CPU2,0 );/* 6502 memory */
+		ROM_LOAD( "ba_6d_a1.bin",  0x08000, 0x02000, 0xd534dca4);
+		ROM_LOAD( "ba_6c_a1.bin",  0x0a000, 0x02000, 0x73904bbc);
+		ROM_LOAD( "ba_6b_a1.bin",  0x0c000, 0x02000, 0x7c130724);
+		ROM_LOAD( "ba_6a_a1.bin",  0x0e000, 0x02000, 0xd938080e);
 	
-		ROM_REGION( 0x4000,REGION_GFX2 , 0) /* PPU memory */
-		ROM_LOAD( "vst-8b",  0x0000, 0x2000, 0xc81e9260 )
-		ROM_LOAD( "vst-8a",  0x2000, 0x2000, 0xd91eb295 )
-	ROM_END
+		ROM_REGION( 0x4000,REGION_GFX2, 0 );/* PPU memory */
+		ROM_LOAD( "ba_8b_a.bin",  0x0000, 0x2000, 0x919147d0 );
+		ROM_LOAD( "ba_8a_a.bin",  0x2000, 0x2000, 0x3f7edb00 );
+	ROM_END(); }}; 
 	
-	ROM_START( wrecking )
-		ROM_REGION( 0x10000,REGION_CPU1, 0 ) /* 6502 memory */
-		ROM_LOAD( "wr.1d",  0x08000, 0x02000, 0x8897e1b9 )
-		ROM_LOAD( "wr.1c",  0x0a000, 0x02000, 0xd4dc5ebb )
-		ROM_LOAD( "wr.1b",  0x0c000, 0x02000, 0x8ee4a454 )
-		ROM_LOAD( "wr.1a",  0x0e000, 0x02000, 0x63d6490a )
+	static RomLoadPtr rom_vsbbalja = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x10000,REGION_CPU1, 0 );/* 6502 memory */
+		ROM_LOAD( "ba_1d_a2.bin",  0x08000, 0x02000, 0xf3820b70);
+		ROM_LOAD( "ba_1c_a2.bin",  0x0a000, 0x02000, 0x39fbbf28);
+		ROM_LOAD( "ba_1b_a2.bin",  0x0c000, 0x02000, 0xb1377b12);
+		ROM_LOAD( "ba_1a_a2.bin",  0x0e000, 0x02000, 0x08fab347);
 	
-		ROM_REGION( 0x4000,REGION_GFX1, 0 ) /* PPU memory */
-		ROM_LOAD( "wr.2b",  0x0000, 0x2000, 0x455d77ac )
-		ROM_LOAD( "wr.2a",  0x2000, 0x2000, 0x653350d8 )
+		ROM_REGION( 0x4000,REGION_GFX1, 0 );/* PPU memory */
+		ROM_LOAD( "ba_2b_a.bin",  0x0000, 0x2000, 0x919147d0 );
+		ROM_LOAD( "ba_2a_a.bin",  0x2000, 0x2000, 0x3f7edb00 );
 	
-		ROM_REGION( 0x10000,REGION_CPU2, 0 ) /* 6502 memory */
-		ROM_LOAD( "wr.6d",  0x08000, 0x02000, 0x90e49ce7 )
-		ROM_LOAD( "wr.6c",  0x0a000, 0x02000, 0xa12ae745 )
-		ROM_LOAD( "wr.6b",  0x0c000, 0x02000, 0x03947ca9 )
-		ROM_LOAD( "wr.6a",  0x0e000, 0x02000, 0x2c0a13ac )
+		ROM_REGION( 0x10000,REGION_CPU2,0 );/* 6502 memory */
+		ROM_LOAD( "ba_6d_a2.bin",  0x08000, 0x02000, 0xc69561b0);
+		ROM_LOAD( "ba_6c_a2.bin",  0x0a000, 0x02000, 0x17d1ca39);
+		ROM_LOAD( "ba_6b_a2.bin",  0x0c000, 0x02000, 0x37481900);
+		ROM_LOAD( "ba_6a_a2.bin",  0x0e000, 0x02000, 0xa44ffc4b);
 	
-		ROM_REGION( 0x4000,REGION_GFX2, 0 ) /* PPU memory */
-		ROM_LOAD( "wr.8b",  0x0000, 0x2000, 0x455d77ac )
-		ROM_LOAD( "wr.8a",  0x2000, 0x2000, 0x653350d8 )
-	ROM_END
+		ROM_REGION( 0x4000,REGION_GFX2, 0 );/* PPU memory */
+		ROM_LOAD( "ba_8b_a.bin",  0x0000, 0x2000, 0x919147d0 );
+		ROM_LOAD( "ba_8a_a.bin",  0x2000, 0x2000, 0x3f7edb00 );
+	ROM_END(); }}; 
 	
-	ROM_START( iceclmrj )
 	
-		ROM_REGION( 0x10000,REGION_CPU1, 0 ) /* 6502 memory */
-		ROM_LOAD( "ic4-41da.bin",  0x08000, 0x02000, 0x94e3197d )
-		ROM_LOAD( "ic4-41ca.bin",  0x0a000, 0x02000, 0xb253011e )
-		ROM_LOAD( "ic441ba1.bin",  0x0c000, 0x02000, 0xf3795874 )
-		ROM_LOAD( "ic4-41aa.bin",  0x0e000, 0x02000, 0x094c246c )
+	static RomLoadPtr rom_vstennis = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x10000,REGION_CPU1, 0 );/* 6502 memory */
+		ROM_LOAD( "vst-1d",  0x08000, 0x02000, 0xf4e9fca0 );
+		ROM_LOAD( "vst-1c",  0x0a000, 0x02000, 0x7e52df58 );
+		ROM_LOAD( "vst-1b",  0x0c000, 0x02000, 0x1a0d809a );
+		ROM_LOAD( "vst-1a",  0x0e000, 0x02000, 0x8483a612 );
 	
-		ROM_REGION( 0x4000,REGION_GFX1, 0 ) /* PPU memory */
-		ROM_LOAD( "ic4-42ba.bin",  0x0000, 0x2000, 0x331460b4 )
-		ROM_LOAD( "ic4-42aa.bin",  0x2000, 0x2000, 0x4ec44fb3 )
+		ROM_REGION( 0x4000,REGION_GFX1, 0 );/* PPU memory */
+		ROM_LOAD( "vst-2b",  0x0000, 0x2000, 0x9de19c9c );
+		ROM_LOAD( "vst-2a",  0x2000, 0x2000, 0x67a5800e );
 	
-		ROM_REGION( 0x10000,REGION_CPU2, 0 ) /* 6502 memory */
-		ROM_LOAD( "ic4-46da.bin",  0x08000, 0x02000, 0x94e3197d )
-		ROM_LOAD( "ic4-46ca.bin",  0x0a000, 0x02000, 0xb253011e )
-		ROM_LOAD( "ic4-46ba.bin",  0x0c000, 0x02000, 0x2ee9c1f9 )
-		ROM_LOAD( "ic4-46aa.bin",  0x0e000, 0x02000, 0x094c246c )
+		ROM_REGION( 0x10000,REGION_CPU2, 0 );/* 6502 memory */
+		ROM_LOAD( "vst-6d",  0x08000, 0x02000, 0x3131b1bf );
+		ROM_LOAD( "vst-6c",  0x0a000, 0x02000, 0x27195d13 );
+		ROM_LOAD( "vst-6b",  0x0c000, 0x02000, 0x4b4e26ca );
+		ROM_LOAD( "vst-6a",  0x0e000, 0x02000, 0xb6bfee07 );
 	
-		ROM_REGION( 0x4000,REGION_GFX2, 0 ) /* PPU memory */
-		ROM_LOAD( "ic4-48ba.bin",  0x0000, 0x2000, 0x331460b4 )
-		ROM_LOAD( "ic4-48aa.bin",  0x2000, 0x2000, 0x4ec44fb3 )
+		ROM_REGION( 0x4000,REGION_GFX2 , 0);/* PPU memory */
+		ROM_LOAD( "vst-8b",  0x0000, 0x2000, 0xc81e9260 );
+		ROM_LOAD( "vst-8a",  0x2000, 0x2000, 0xd91eb295 );
+	ROM_END(); }}; 
 	
-	ROM_END
+	static RomLoadPtr rom_wrecking = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x10000,REGION_CPU1, 0 );/* 6502 memory */
+		ROM_LOAD( "wr.1d",  0x08000, 0x02000, 0x8897e1b9 );
+		ROM_LOAD( "wr.1c",  0x0a000, 0x02000, 0xd4dc5ebb );
+		ROM_LOAD( "wr.1b",  0x0c000, 0x02000, 0x8ee4a454 );
+		ROM_LOAD( "wr.1a",  0x0e000, 0x02000, 0x63d6490a );
+	
+		ROM_REGION( 0x4000,REGION_GFX1, 0 );/* PPU memory */
+		ROM_LOAD( "wr.2b",  0x0000, 0x2000, 0x455d77ac );
+		ROM_LOAD( "wr.2a",  0x2000, 0x2000, 0x653350d8 );
+	
+		ROM_REGION( 0x10000,REGION_CPU2, 0 );/* 6502 memory */
+		ROM_LOAD( "wr.6d",  0x08000, 0x02000, 0x90e49ce7 );
+		ROM_LOAD( "wr.6c",  0x0a000, 0x02000, 0xa12ae745 );
+		ROM_LOAD( "wr.6b",  0x0c000, 0x02000, 0x03947ca9 );
+		ROM_LOAD( "wr.6a",  0x0e000, 0x02000, 0x2c0a13ac );
+	
+		ROM_REGION( 0x4000,REGION_GFX2, 0 );/* PPU memory */
+		ROM_LOAD( "wr.8b",  0x0000, 0x2000, 0x455d77ac );
+		ROM_LOAD( "wr.8a",  0x2000, 0x2000, 0x653350d8 );
+	ROM_END(); }}; 
+	
+	static RomLoadPtr rom_iceclmrj = new RomLoadPtr(){ public void handler(){ 
+	
+		ROM_REGION( 0x10000,REGION_CPU1, 0 );/* 6502 memory */
+		ROM_LOAD( "ic4-41da.bin",  0x08000, 0x02000, 0x94e3197d );
+		ROM_LOAD( "ic4-41ca.bin",  0x0a000, 0x02000, 0xb253011e );
+		ROM_LOAD( "ic441ba1.bin",  0x0c000, 0x02000, 0xf3795874 );
+		ROM_LOAD( "ic4-41aa.bin",  0x0e000, 0x02000, 0x094c246c );
+	
+		ROM_REGION( 0x4000,REGION_GFX1, 0 );/* PPU memory */
+		ROM_LOAD( "ic4-42ba.bin",  0x0000, 0x2000, 0x331460b4 );
+		ROM_LOAD( "ic4-42aa.bin",  0x2000, 0x2000, 0x4ec44fb3 );
+	
+		ROM_REGION( 0x10000,REGION_CPU2, 0 );/* 6502 memory */
+		ROM_LOAD( "ic4-46da.bin",  0x08000, 0x02000, 0x94e3197d );
+		ROM_LOAD( "ic4-46ca.bin",  0x0a000, 0x02000, 0xb253011e );
+		ROM_LOAD( "ic4-46ba.bin",  0x0c000, 0x02000, 0x2ee9c1f9 );
+		ROM_LOAD( "ic4-46aa.bin",  0x0e000, 0x02000, 0x094c246c );
+	
+		ROM_REGION( 0x4000,REGION_GFX2, 0 );/* PPU memory */
+		ROM_LOAD( "ic4-48ba.bin",  0x0000, 0x2000, 0x331460b4 );
+		ROM_LOAD( "ic4-48aa.bin",  0x2000, 0x2000, 0x4ec44fb3 );
+	
+	ROM_END(); }}; 
 	
 	/******************************************************************************/
 	

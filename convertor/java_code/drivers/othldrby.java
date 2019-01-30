@@ -303,17 +303,17 @@ public class othldrby
 	
 	***************************************************************************/
 	
-	ROM_START( othldrby )
-		ROM_REGION( 0x080000, REGION_CPU1, 0 )
+	static RomLoadPtr rom_othldrby = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x080000, REGION_CPU1, 0 );
 		ROM_LOAD16_WORD_SWAP( "db0.1",        0x00000, 0x80000, 0x6b4008d3 )
 	
-		ROM_REGION( 0x400000, REGION_GFX1, ROMREGION_DISPOSE )
-		ROM_LOAD( "db0-r2",       0x000000, 0x200000, 0x4efff265 )
-		ROM_LOAD( "db0-r3",       0x200000, 0x200000, 0x5c142b38 )
+		ROM_REGION( 0x400000, REGION_GFX1, ROMREGION_DISPOSE );
+		ROM_LOAD( "db0-r2",       0x000000, 0x200000, 0x4efff265 );
+		ROM_LOAD( "db0-r3",       0x200000, 0x200000, 0x5c142b38 );
 	
-		ROM_REGION( 0x080000, REGION_SOUND1, 0 )	/* OKIM6295 samples */
-		ROM_LOAD( "db0.4",        0x00000, 0x80000, 0xa9701868 )
-	ROM_END
+		ROM_REGION( 0x080000, REGION_SOUND1, 0 );/* OKIM6295 samples */
+		ROM_LOAD( "db0.4",        0x00000, 0x80000, 0xa9701868 );
+	ROM_END(); }}; 
 	
 	
 	GAME( 1995, othldrby, 0, othldrby, othldrby, 0, ROT0, "Sunwise", "Othello Derby (Japan)" )

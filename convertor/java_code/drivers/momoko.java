@@ -313,46 +313,46 @@ public class momoko
 	
 	/****************************************************************************/
 	
-	ROM_START( momoko )
-		ROM_REGION( 0x10000, REGION_CPU1, 0 ) /* main CPU */
-		ROM_LOAD( "momoko03.bin", 0x0000,  0x8000, 0x386e26ed )
-		ROM_LOAD( "momoko02.bin", 0x8000,  0x4000, 0x4255e351 )
+	static RomLoadPtr rom_momoko = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x10000, REGION_CPU1, 0 );/* main CPU */
+		ROM_LOAD( "momoko03.bin", 0x0000,  0x8000, 0x386e26ed );
+		ROM_LOAD( "momoko02.bin", 0x8000,  0x4000, 0x4255e351 );
 	
-		ROM_REGION( 0x10000, REGION_CPU2, 0 ) /* sound CPU */
-		ROM_LOAD( "momoko01.bin", 0x0000,  0x8000, 0xe8a6673c )
+		ROM_REGION( 0x10000, REGION_CPU2, 0 );/* sound CPU */
+		ROM_LOAD( "momoko01.bin", 0x0000,  0x8000, 0xe8a6673c );
 	
-		ROM_REGION( 0x2000, REGION_GFX1, ROMREGION_DISPOSE ) /* text */
-		ROM_LOAD( "momoko13.bin", 0x0000,  0x2000, 0x2745cf5a )
+		ROM_REGION( 0x2000, REGION_GFX1, ROMREGION_DISPOSE );/* text */
+		ROM_LOAD( "momoko13.bin", 0x0000,  0x2000, 0x2745cf5a );
 	
-		ROM_REGION( 0x2000, REGION_GFX3, ROMREGION_DISPOSE ) /* FG */
-		ROM_LOAD( "momoko14.bin", 0x0000,  0x2000, 0xcfccca05 )
+		ROM_REGION( 0x2000, REGION_GFX3, ROMREGION_DISPOSE );/* FG */
+		ROM_LOAD( "momoko14.bin", 0x0000,  0x2000, 0xcfccca05 );
 	
-		ROM_REGION( 0x10000, REGION_GFX4, ROMREGION_DISPOSE ) /* sprite */
-		ROM_LOAD16_BYTE( "momoko16.bin", 0x0000,  0x8000, 0xfc6876fc )
-		ROM_LOAD16_BYTE( "momoko17.bin", 0x0001,  0x8000, 0x45dc0247 )
+		ROM_REGION( 0x10000, REGION_GFX4, ROMREGION_DISPOSE );/* sprite */
+		ROM_LOAD16_BYTE( "momoko16.bin", 0x0000,  0x8000, 0xfc6876fc );
+		ROM_LOAD16_BYTE( "momoko17.bin", 0x0001,  0x8000, 0x45dc0247 );
 	
-		ROM_REGION( 0x20000, REGION_GFX2, 0 ) /* BG */
-		ROM_LOAD16_BYTE( "momoko09.bin", 0x00000, 0x8000, 0x9f5847c7 )
-		ROM_LOAD16_BYTE( "momoko11.bin", 0x00001, 0x8000, 0x9c9fbd43 )
-		ROM_LOAD16_BYTE( "momoko10.bin", 0x10000, 0x8000, 0xae17e74b )
-		ROM_LOAD16_BYTE( "momoko12.bin", 0x10001, 0x8000, 0x1e29c9c4 )
+		ROM_REGION( 0x20000, REGION_GFX2, 0 );/* BG */
+		ROM_LOAD16_BYTE( "momoko09.bin", 0x00000, 0x8000, 0x9f5847c7 );
+		ROM_LOAD16_BYTE( "momoko11.bin", 0x00001, 0x8000, 0x9c9fbd43 );
+		ROM_LOAD16_BYTE( "momoko10.bin", 0x10000, 0x8000, 0xae17e74b );
+		ROM_LOAD16_BYTE( "momoko12.bin", 0x10001, 0x8000, 0x1e29c9c4 );
 	
-		ROM_REGION( 0x20000, REGION_USER1, 0 ) /* BG map */
-		ROM_LOAD( "momoko04.bin", 0x0000,  0x8000, 0x3ab3c2c3 )
-		ROM_LOAD( "momoko05.bin", 0x8000,  0x8000, 0x757cdd2b )
-		ROM_LOAD( "momoko06.bin", 0x10000, 0x8000, 0x20cacf8b )
-		ROM_LOAD( "momoko07.bin", 0x18000, 0x8000, 0xb94b38db )
+		ROM_REGION( 0x20000, REGION_USER1, 0 );/* BG map */
+		ROM_LOAD( "momoko04.bin", 0x0000,  0x8000, 0x3ab3c2c3 );
+		ROM_LOAD( "momoko05.bin", 0x8000,  0x8000, 0x757cdd2b );
+		ROM_LOAD( "momoko06.bin", 0x10000, 0x8000, 0x20cacf8b );
+		ROM_LOAD( "momoko07.bin", 0x18000, 0x8000, 0xb94b38db );
 	
-		ROM_REGION( 0x2000, REGION_USER2, 0 ) /* BG color/priority table */
-		ROM_LOAD( "momoko08.bin", 0x0000,  0x2000, 0x69b41702 )
+		ROM_REGION( 0x2000, REGION_USER2, 0 );/* BG color/priority table */
+		ROM_LOAD( "momoko08.bin", 0x0000,  0x2000, 0x69b41702 );
 	
-		ROM_REGION( 0x4000, REGION_USER3, 0 ) /* FG map */
-		ROM_LOAD( "momoko15.bin", 0x0000,  0x4000, 0x8028f806 )
+		ROM_REGION( 0x4000, REGION_USER3, 0 );/* FG map */
+		ROM_LOAD( "momoko15.bin", 0x0000,  0x4000, 0x8028f806 );
 	
-		ROM_REGION( 0x0120, REGION_PROMS, 0 ) /* TEXT color */
-		ROM_LOAD( "momoko-c.bin", 0x0000,  0x0100, 0xf35ccae0 )
-		ROM_LOAD( "momoko-b.bin", 0x0100,  0x0020, 0x427b0e5c )
-	ROM_END
+		ROM_REGION( 0x0120, REGION_PROMS, 0 );/* TEXT color */
+		ROM_LOAD( "momoko-c.bin", 0x0000,  0x0100, 0xf35ccae0 );
+		ROM_LOAD( "momoko-b.bin", 0x0100,  0x0020, 0x427b0e5c );
+	ROM_END(); }}; 
 	
 	GAME( 1986, momoko, 0, momoko, momoko, 0, ROT0, "Jaleco", "Momoko 120%" )
 }

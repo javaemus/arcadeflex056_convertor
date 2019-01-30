@@ -727,838 +727,838 @@ public class playch10
 	***************************************************************************/
 	
 	#define BIOS_CPU											\
-		ROM_REGION( 0x10000, REGION_CPU1, 0 )						\
-	    ROM_LOAD( "pch1-c.8t",    0x00000, 0x4000, 0xd52fa07a )
+		ROM_REGION( 0x10000, REGION_CPU1, 0 );					\
+	    ROM_LOAD( "pch1-c.8t",    0x00000, 0x4000, 0xd52fa07a );
 	
 	#define BIOS_GFX											\
-		ROM_REGION( 0x6000, REGION_GFX1, ROMREGION_DISPOSE )	\
-		ROM_LOAD( "pch1-c.8p",    0x00000, 0x2000, 0x30c15e23 )	\
-	    ROM_LOAD( "pch1-c.8m",    0x02000, 0x2000, 0xc1232eee )	\
-	    ROM_LOAD( "pch1-c.8k",    0x04000, 0x2000, 0x9acffb30 )	\
-	    ROM_REGION( 0x0300, REGION_PROMS, 0 )						\
-	    ROM_LOAD( "82s129.6f",    0x0000, 0x0100, 0xe5414ca3 )	\
-	    ROM_LOAD( "82s129.6e",    0x0100, 0x0100, 0xa2625c6e )	\
-	    ROM_LOAD( "82s129.6d",    0x0200, 0x0100, 0x1213ebd4 )
+		ROM_REGION( 0x6000, REGION_GFX1, ROMREGION_DISPOSE );\
+		ROM_LOAD( "pch1-c.8p",    0x00000, 0x2000, 0x30c15e23 );\
+	    ROM_LOAD( "pch1-c.8m",    0x02000, 0x2000, 0xc1232eee );\
+	    ROM_LOAD( "pch1-c.8k",    0x04000, 0x2000, 0x9acffb30 );\
+	    ROM_REGION( 0x0300, REGION_PROMS, 0 );					\
+	    ROM_LOAD( "82s129.6f",    0x0000, 0x0100, 0xe5414ca3 );\
+	    ROM_LOAD( "82s129.6e",    0x0100, 0x0100, 0xa2625c6e );\
+	    ROM_LOAD( "82s129.6d",    0x0200, 0x0100, 0x1213ebd4 );
 	
 	/******************************************************************************/
 	
 	/* Standard Games */
-	ROM_START( pc_smb )		/* Super Mario Bros. */
+	static RomLoadPtr rom_pc_smb = new RomLoadPtr(){ public void handler(){ 		/* Super Mario Bros. */
 		BIOS_CPU
-		ROM_LOAD( "u3sm",    0x0c000, 0x2000, 0x4b5f717d ) /* extra bios code for this game */
+		ROM_LOAD( "u3sm",    0x0c000, 0x2000, 0x4b5f717d );/* extra bios code for this game */
 	    BIOS_GFX
 	
-	    ROM_REGION( 0x10000, REGION_CPU2, 0 )  /* 64k for code */
-	    ROM_LOAD( "u1sm",    0x08000, 0x8000, 0x5cf548d3 )
+	    ROM_REGION( 0x10000, REGION_CPU2, 0 ); /* 64k for code */
+	    ROM_LOAD( "u1sm",    0x08000, 0x8000, 0x5cf548d3 );
 	
-	    ROM_REGION( 0x02000, REGION_GFX2, 0 )	/* cart gfx */
-	    ROM_LOAD( "u2sm",    0x00000, 0x2000, 0x867b51ad )
+	    ROM_REGION( 0x02000, REGION_GFX2, 0 );/* cart gfx */
+	    ROM_LOAD( "u2sm",    0x00000, 0x2000, 0x867b51ad );
 	
-	    ROM_REGION( 0x0100,  REGION_USER1, 0 )	/* rp5h01 data */
-	    ROM_LOAD( "security.prm", 0x00000, 0x10, 0xbd82d775 )
-	ROM_END
+	    ROM_REGION( 0x0100,  REGION_USER1, 0 );/* rp5h01 data */
+	    ROM_LOAD( "security.prm", 0x00000, 0x10, 0xbd82d775 );
+	ROM_END(); }}; 
 	
-	ROM_START( pc_ebike )	/* Excite Bike */
+	static RomLoadPtr rom_pc_ebike = new RomLoadPtr(){ public void handler(){ 	/* Excite Bike */
 		BIOS_CPU
-		ROM_LOAD( "u3eb",    0x0c000, 0x2000, 0x8ff0e787 ) /* extra bios code for this game */
+		ROM_LOAD( "u3eb",    0x0c000, 0x2000, 0x8ff0e787 );/* extra bios code for this game */
 	    BIOS_GFX
 	
-	    ROM_REGION( 0x10000, REGION_CPU2, 0 )  /* 64k for code */
-	    ROM_LOAD( "u1eb",    0x0c000, 0x4000, 0x3a94fa0b )
+	    ROM_REGION( 0x10000, REGION_CPU2, 0 ); /* 64k for code */
+	    ROM_LOAD( "u1eb",    0x0c000, 0x4000, 0x3a94fa0b );
 	
-	    ROM_REGION( 0x02000, REGION_GFX2, 0 )	/* cart gfx */
-	    ROM_LOAD( "u2eb",    0x00000, 0x2000, 0xe5f72401 )
+	    ROM_REGION( 0x02000, REGION_GFX2, 0 );/* cart gfx */
+	    ROM_LOAD( "u2eb",    0x00000, 0x2000, 0xe5f72401 );
 	
-	    ROM_REGION( 0x0100,  REGION_USER1, 0 )	/* rp5h01 data */
-	    ROM_LOAD( "security.prm", 0x00000, 0x10, 0xa0263750 )
-	ROM_END
+	    ROM_REGION( 0x0100,  REGION_USER1, 0 );/* rp5h01 data */
+	    ROM_LOAD( "security.prm", 0x00000, 0x10, 0xa0263750 );
+	ROM_END(); }}; 
 	
-	ROM_START( pc_1942 )	/* 1942 */
+	static RomLoadPtr rom_pc_1942 = new RomLoadPtr(){ public void handler(){ 	/* 1942 */
 		BIOS_CPU
-		ROM_LOAD( "u3",      0x0c000, 0x2000, 0x415b8807 ) /* extra bios code for this game */
+		ROM_LOAD( "u3",      0x0c000, 0x2000, 0x415b8807 );/* extra bios code for this game */
 	    BIOS_GFX
 	
-	    ROM_REGION( 0x10000, REGION_CPU2, 0 )  /* 64k for code */
-	    ROM_LOAD( "u1",    	 0x08000, 0x8000, 0xc4e8c04a )
+	    ROM_REGION( 0x10000, REGION_CPU2, 0 ); /* 64k for code */
+	    ROM_LOAD( "u1",    	 0x08000, 0x8000, 0xc4e8c04a );
 	
-	    ROM_REGION( 0x02000, REGION_GFX2, 0 )	/* cart gfx */
-	    ROM_LOAD( "u2",		 0x00000, 0x2000, 0x03379b76 )
+	    ROM_REGION( 0x02000, REGION_GFX2, 0 );/* cart gfx */
+	    ROM_LOAD( "u2",		 0x00000, 0x2000, 0x03379b76 );
 	
-	    ROM_REGION( 0x0100,  REGION_USER1, 0 )	/* rp5h01 data */
-	    ROM_LOAD( "security.prm", 0x00000, 0x10, 0x29893c7f )
-	ROM_END
+	    ROM_REGION( 0x0100,  REGION_USER1, 0 );/* rp5h01 data */
+	    ROM_LOAD( "security.prm", 0x00000, 0x10, 0x29893c7f );
+	ROM_END(); }}; 
 	
-	ROM_START( pc_bfght )	/* Balloon Fight */
+	static RomLoadPtr rom_pc_bfght = new RomLoadPtr(){ public void handler(){ 	/* Balloon Fight */
 		BIOS_CPU
-		ROM_LOAD( "bf-u3",   0x0c000, 0x2000, 0xa9949544 ) /* extra bios code for this game */
+		ROM_LOAD( "bf-u3",   0x0c000, 0x2000, 0xa9949544 );/* extra bios code for this game */
 	    BIOS_GFX
 	
-	    ROM_REGION( 0x10000, REGION_CPU2, 0 )  /* 64k for code */
-	    ROM_LOAD( "bf-u1",   0x0c000, 0x4000, 0x575ed2fe )
+	    ROM_REGION( 0x10000, REGION_CPU2, 0 ); /* 64k for code */
+	    ROM_LOAD( "bf-u1",   0x0c000, 0x4000, 0x575ed2fe );
 	
-	    ROM_REGION( 0x02000, REGION_GFX2, 0 )	/* cart gfx */
-	    ROM_LOAD( "bf-u2",	 0x00000, 0x2000, 0xc642a1df )
+	    ROM_REGION( 0x02000, REGION_GFX2, 0 );/* cart gfx */
+	    ROM_LOAD( "bf-u2",	 0x00000, 0x2000, 0xc642a1df );
 	
-	    ROM_REGION( 0x0100,  REGION_USER1, 0 )	/* rp5h01 data */
-	    ROM_LOAD( "security.prm", 0x00000, 0x10, 0xbe3c42fb )
-	ROM_END
+	    ROM_REGION( 0x0100,  REGION_USER1, 0 );/* rp5h01 data */
+	    ROM_LOAD( "security.prm", 0x00000, 0x10, 0xbe3c42fb );
+	ROM_END(); }}; 
 	
-	ROM_START( pc_bball )	/* Baseball */
+	static RomLoadPtr rom_pc_bball = new RomLoadPtr(){ public void handler(){ 	/* Baseball */
 		BIOS_CPU
-		ROM_LOAD( "ba-u3",   0x0c000, 0x2000, 0x06861a0d ) /* extra bios code for this game */
+		ROM_LOAD( "ba-u3",   0x0c000, 0x2000, 0x06861a0d );/* extra bios code for this game */
 	    BIOS_GFX
 	
-	    ROM_REGION( 0x10000, REGION_CPU2, 0 )  /* 64k for code */
-	    ROM_LOAD( "ba-u1",   0x0c000, 0x4000, 0x39d1fa03 )
+	    ROM_REGION( 0x10000, REGION_CPU2, 0 ); /* 64k for code */
+	    ROM_LOAD( "ba-u1",   0x0c000, 0x4000, 0x39d1fa03 );
 	
-	    ROM_REGION( 0x02000, REGION_GFX2, 0 )	/* cart gfx */
-	    ROM_LOAD( "ba-u2",	 0x00000, 0x2000, 0xcde71b82 )
+	    ROM_REGION( 0x02000, REGION_GFX2, 0 );/* cart gfx */
+	    ROM_LOAD( "ba-u2",	 0x00000, 0x2000, 0xcde71b82 );
 	
-	    ROM_REGION( 0x0100,  REGION_USER1, 0 )	/* rp5h01 data */
-	    ROM_LOAD( "security.prm", 0x00000, 0x10, 0x7940cfc4 )
-	ROM_END
+	    ROM_REGION( 0x0100,  REGION_USER1, 0 );/* rp5h01 data */
+	    ROM_LOAD( "security.prm", 0x00000, 0x10, 0x7940cfc4 );
+	ROM_END(); }}; 
 	
-	ROM_START( pc_golf )	/* Golf */
+	static RomLoadPtr rom_pc_golf = new RomLoadPtr(){ public void handler(){ 	/* Golf */
 		BIOS_CPU
-		ROM_LOAD( "gf-u3",   0x0c000, 0x2000, 0x882dea87 ) /* extra bios code for this game */
+		ROM_LOAD( "gf-u3",   0x0c000, 0x2000, 0x882dea87 );/* extra bios code for this game */
 	    BIOS_GFX
 	
-	    ROM_REGION( 0x10000, REGION_CPU2, 0 )  /* 64k for code */
-	    ROM_LOAD( "gf-u1",   0x0c000, 0x4000, 0xf9622bfa )
+	    ROM_REGION( 0x10000, REGION_CPU2, 0 ); /* 64k for code */
+	    ROM_LOAD( "gf-u1",   0x0c000, 0x4000, 0xf9622bfa );
 	
-	    ROM_REGION( 0x02000, REGION_GFX2, 0 )	/* cart gfx */
-	    ROM_LOAD( "gf-u2",	 0x00000, 0x2000, 0xff6fc790 )
+	    ROM_REGION( 0x02000, REGION_GFX2, 0 );/* cart gfx */
+	    ROM_LOAD( "gf-u2",	 0x00000, 0x2000, 0xff6fc790 );
 	
-	    ROM_REGION( 0x0100,  REGION_USER1, 0 )	/* rp5h01 data */
-	    ROM_LOAD( "security.prm", 0x00000, 0x10, 0x2cd98ef6 )
-	ROM_END
+	    ROM_REGION( 0x0100,  REGION_USER1, 0 );/* rp5h01 data */
+	    ROM_LOAD( "security.prm", 0x00000, 0x10, 0x2cd98ef6 );
+	ROM_END(); }}; 
 	
-	ROM_START( pc_kngfu )	/* Kung Fu */
+	static RomLoadPtr rom_pc_kngfu = new RomLoadPtr(){ public void handler(){ 	/* Kung Fu */
 		BIOS_CPU
-		ROM_LOAD( "sx-u3",   0x0c000, 0x2000, 0xead71b7e ) /* extra bios code for this game */
+		ROM_LOAD( "sx-u3",   0x0c000, 0x2000, 0xead71b7e );/* extra bios code for this game */
 	    BIOS_GFX
 	
-	    ROM_REGION( 0x10000, REGION_CPU2, 0 )  /* 64k for code */
-	    ROM_LOAD( "sx-u1",   0x08000, 0x8000, 0x0516375e )
+	    ROM_REGION( 0x10000, REGION_CPU2, 0 ); /* 64k for code */
+	    ROM_LOAD( "sx-u1",   0x08000, 0x8000, 0x0516375e );
 	
-	    ROM_REGION( 0x02000, REGION_GFX2, 0 )	/* cart gfx */
-	    ROM_LOAD( "sx-u2",	 0x00000, 0x2000, 0x430b49a4 )
+	    ROM_REGION( 0x02000, REGION_GFX2, 0 );/* cart gfx */
+	    ROM_LOAD( "sx-u2",	 0x00000, 0x2000, 0x430b49a4 );
 	
-	    ROM_REGION( 0x0100,  REGION_USER1, 0 )	/* rp5h01 data */
-	    ROM_LOAD( "security.prm", 0x00000, 0x10, 0xa1687f01 )
-	ROM_END
+	    ROM_REGION( 0x0100,  REGION_USER1, 0 );/* rp5h01 data */
+	    ROM_LOAD( "security.prm", 0x00000, 0x10, 0xa1687f01 );
+	ROM_END(); }}; 
 	
-	ROM_START( pc_tenis )	/* Tennis */
+	static RomLoadPtr rom_pc_tenis = new RomLoadPtr(){ public void handler(){ 	/* Tennis */
 		BIOS_CPU
-		ROM_LOAD( "te-u3",   0x0c000, 0x2000, 0x6928e920 ) /* extra bios code for this game */
+		ROM_LOAD( "te-u3",   0x0c000, 0x2000, 0x6928e920 );/* extra bios code for this game */
 	    BIOS_GFX
 	
-	    ROM_REGION( 0x10000, REGION_CPU2, 0 )  /* 64k for code */
-	    ROM_LOAD( "te-u1",   0x0c000, 0x4000, 0x8b2e3e81 )
+	    ROM_REGION( 0x10000, REGION_CPU2, 0 ); /* 64k for code */
+	    ROM_LOAD( "te-u1",   0x0c000, 0x4000, 0x8b2e3e81 );
 	
-	    ROM_REGION( 0x02000, REGION_GFX2, 0 )	/* cart gfx */
-	    ROM_LOAD( "te-u2",	 0x00000, 0x2000, 0x3a34c45b )
+	    ROM_REGION( 0x02000, REGION_GFX2, 0 );/* cart gfx */
+	    ROM_LOAD( "te-u2",	 0x00000, 0x2000, 0x3a34c45b );
 	
-	    ROM_REGION( 0x0100,  REGION_USER1, 0 )	/* rp5h01 data */
-	    ROM_LOAD( "security.prm", 0x00000, 0x10, 0xbcc9a48e )
-	ROM_END
+	    ROM_REGION( 0x0100,  REGION_USER1, 0 );/* rp5h01 data */
+	    ROM_LOAD( "security.prm", 0x00000, 0x10, 0xbcc9a48e );
+	ROM_END(); }}; 
 	
-	ROM_START( pc_vball )	/* Volley Ball */
+	static RomLoadPtr rom_pc_vball = new RomLoadPtr(){ public void handler(){ 	/* Volley Ball */
 		BIOS_CPU
-		ROM_LOAD( "vb-u3",   0x0c000, 0x2000, 0x9104354e ) /* extra bios code for this game */
+		ROM_LOAD( "vb-u3",   0x0c000, 0x2000, 0x9104354e );/* extra bios code for this game */
 	    BIOS_GFX
 	
-	    ROM_REGION( 0x10000, REGION_CPU2, 0 )  /* 64k for code */
-	    ROM_LOAD( "vb-u1",   0x08000, 0x8000, 0x35226b99 )
+	    ROM_REGION( 0x10000, REGION_CPU2, 0 ); /* 64k for code */
+	    ROM_LOAD( "vb-u1",   0x08000, 0x8000, 0x35226b99 );
 	
-	    ROM_REGION( 0x02000, REGION_GFX2, 0 )	/* cart gfx */
-	    ROM_LOAD( "vb-u2",	 0x00000, 0x2000, 0x2415dce2 )
+	    ROM_REGION( 0x02000, REGION_GFX2, 0 );/* cart gfx */
+	    ROM_LOAD( "vb-u2",	 0x00000, 0x2000, 0x2415dce2 );
 	
-	    ROM_REGION( 0x0100,  REGION_USER1, 0 )	/* rp5h01 data */
-	    ROM_LOAD( "security.prm", 0x00000, 0x10, 0xf701863f )
-	ROM_END
+	    ROM_REGION( 0x0100,  REGION_USER1, 0 );/* rp5h01 data */
+	    ROM_LOAD( "security.prm", 0x00000, 0x10, 0xf701863f );
+	ROM_END(); }}; 
 	
-	ROM_START( pc_mario )	/* Mario Bros. */
+	static RomLoadPtr rom_pc_mario = new RomLoadPtr(){ public void handler(){ 	/* Mario Bros. */
 		BIOS_CPU
-		ROM_LOAD( "ma-u3",   0x0c000, 0x2000, 0xa426c5c0 ) /* extra bios code for this game */
+		ROM_LOAD( "ma-u3",   0x0c000, 0x2000, 0xa426c5c0 );/* extra bios code for this game */
 	    BIOS_GFX
 	
-	    ROM_REGION( 0x10000, REGION_CPU2, 0 )  /* 64k for code */
-	    ROM_LOAD( "ma-u1",   0x0c000, 0x4000, 0x75f6a9f3 )
+	    ROM_REGION( 0x10000, REGION_CPU2, 0 ); /* 64k for code */
+	    ROM_LOAD( "ma-u1",   0x0c000, 0x4000, 0x75f6a9f3 );
 	
-	    ROM_REGION( 0x02000, REGION_GFX2, 0 )	/* cart gfx */
-	    ROM_LOAD( "ma-u2",	 0x00000, 0x2000, 0x10f77435 )
+	    ROM_REGION( 0x02000, REGION_GFX2, 0 );/* cart gfx */
+	    ROM_LOAD( "ma-u2",	 0x00000, 0x2000, 0x10f77435 );
 	
-	    ROM_REGION( 0x0100,  REGION_USER1, 0 )	/* rp5h01 data */
-	    ROM_LOAD( "security.prm", 0x00000, 0x10, 0x79006635 )
-	ROM_END
+	    ROM_REGION( 0x0100,  REGION_USER1, 0 );/* rp5h01 data */
+	    ROM_LOAD( "security.prm", 0x00000, 0x10, 0x79006635 );
+	ROM_END(); }}; 
 	
 	/* Gun Games */
-	ROM_START( pc_duckh )	/* Duck Hunt */
+	static RomLoadPtr rom_pc_duckh = new RomLoadPtr(){ public void handler(){ 	/* Duck Hunt */
 		BIOS_CPU
-		ROM_LOAD( "u3",      0x0c000, 0x2000, 0x2f9ec5c6 ) /* extra bios code for this game */
+		ROM_LOAD( "u3",      0x0c000, 0x2000, 0x2f9ec5c6 );/* extra bios code for this game */
 	    BIOS_GFX
 	
-	    ROM_REGION( 0x10000, REGION_CPU2, 0 )  /* 64k for code */
-	    ROM_LOAD( "u1",      0x0c000, 0x4000, 0x90ca616d )
+	    ROM_REGION( 0x10000, REGION_CPU2, 0 ); /* 64k for code */
+	    ROM_LOAD( "u1",      0x0c000, 0x4000, 0x90ca616d );
 	
-	    ROM_REGION( 0x04000, REGION_GFX2, 0 )	/* cart gfx */
-	    ROM_LOAD( "u2",      0x00000, 0x2000, 0x4e049e03 )
+	    ROM_REGION( 0x04000, REGION_GFX2, 0 );/* cart gfx */
+	    ROM_LOAD( "u2",      0x00000, 0x2000, 0x4e049e03 );
 	
-	    ROM_REGION( 0x0100,  REGION_USER1, 0 )	/* rp5h01 data */
-	    ROM_LOAD( "security.prm", 0x00000, 0x10, 0x8cd6aad6 )
-	ROM_END
+	    ROM_REGION( 0x0100,  REGION_USER1, 0 );/* rp5h01 data */
+	    ROM_LOAD( "security.prm", 0x00000, 0x10, 0x8cd6aad6 );
+	ROM_END(); }}; 
 	
-	ROM_START( pc_hgaly )	/* Hogan's Alley */
+	static RomLoadPtr rom_pc_hgaly = new RomLoadPtr(){ public void handler(){ 	/* Hogan's Alley */
 		BIOS_CPU
-		ROM_LOAD( "ha-u3",   0x0c000, 0x2000, 0xa2525180 ) /* extra bios code for this game */
+		ROM_LOAD( "ha-u3",   0x0c000, 0x2000, 0xa2525180 );/* extra bios code for this game */
 	    BIOS_GFX
 	
-	    ROM_REGION( 0x10000, REGION_CPU2, 0 )  /* 64k for code */
-	    ROM_LOAD( "ha-u1",   0x0c000, 0x4000, 0x8963ae6e )
+	    ROM_REGION( 0x10000, REGION_CPU2, 0 ); /* 64k for code */
+	    ROM_LOAD( "ha-u1",   0x0c000, 0x4000, 0x8963ae6e );
 	
-	    ROM_REGION( 0x04000, REGION_GFX2, 0 )	/* cart gfx */
-	    ROM_LOAD( "ha-u2",   0x00000, 0x2000, 0x5df42fc4 )
+	    ROM_REGION( 0x04000, REGION_GFX2, 0 );/* cart gfx */
+	    ROM_LOAD( "ha-u2",   0x00000, 0x2000, 0x5df42fc4 );
 	
-	    ROM_REGION( 0x0100,  REGION_USER1, 0 )	/* rp5h01 data */
-	    ROM_LOAD( "security.prm", 0x00000, 0x10, 0x5ac61521 )
-	ROM_END
+	    ROM_REGION( 0x0100,  REGION_USER1, 0 );/* rp5h01 data */
+	    ROM_LOAD( "security.prm", 0x00000, 0x10, 0x5ac61521 );
+	ROM_END(); }}; 
 	
-	ROM_START( pc_wgnmn )	/* Wild Gunman */
+	static RomLoadPtr rom_pc_wgnmn = new RomLoadPtr(){ public void handler(){ 	/* Wild Gunman */
 		BIOS_CPU
-		ROM_LOAD( "wg-u3",   0x0c000, 0x2000, 0xda08afe5 ) /* extra bios code for this game */
+		ROM_LOAD( "wg-u3",   0x0c000, 0x2000, 0xda08afe5 );/* extra bios code for this game */
 	    BIOS_GFX
 	
-	    ROM_REGION( 0x10000, REGION_CPU2, 0 )  /* 64k for code */
-	    ROM_LOAD( "wg-u1",   0x0c000, 0x4000, 0x389960db )
+	    ROM_REGION( 0x10000, REGION_CPU2, 0 ); /* 64k for code */
+	    ROM_LOAD( "wg-u1",   0x0c000, 0x4000, 0x389960db );
 	
-	    ROM_REGION( 0x04000, REGION_GFX2, 0 )	/* cart gfx */
-	    ROM_LOAD( "wg-u2",   0x00000, 0x2000, 0xa5e04856 )
+	    ROM_REGION( 0x04000, REGION_GFX2, 0 );/* cart gfx */
+	    ROM_LOAD( "wg-u2",   0x00000, 0x2000, 0xa5e04856 );
 	
-	    ROM_REGION( 0x0100,  REGION_USER1, 0 )	/* rp5h01 data */
-	    ROM_LOAD( "security.prm", 0x00000, 0x10, 0xdef015a3 )
-	ROM_END
+	    ROM_REGION( 0x0100,  REGION_USER1, 0 );/* rp5h01 data */
+	    ROM_LOAD( "security.prm", 0x00000, 0x10, 0xdef015a3 );
+	ROM_END(); }}; 
 	
 	/* A-Board Games */
-	ROM_START( pc_tkfld )	/* Track & Field */
+	static RomLoadPtr rom_pc_tkfld = new RomLoadPtr(){ public void handler(){ 	/* Track & Field */
 		BIOS_CPU
-		ROM_LOAD( "u4tr",    0x0c000, 0x2000, 0x70184fd7 ) /* extra bios code for this game */
+		ROM_LOAD( "u4tr",    0x0c000, 0x2000, 0x70184fd7 );/* extra bios code for this game */
 	    BIOS_GFX
 	
-	    ROM_REGION( 0x10000, REGION_CPU2, 0 )  /* 64k for code */
-	    ROM_LOAD( "u2tr",    0x08000, 0x8000, 0xd7961e01 )
+	    ROM_REGION( 0x10000, REGION_CPU2, 0 ); /* 64k for code */
+	    ROM_LOAD( "u2tr",    0x08000, 0x8000, 0xd7961e01 );
 	
-	    ROM_REGION( 0x08000, REGION_GFX2, 0 )	/* cart gfx */
-	    ROM_LOAD( "u3tr",    0x00000, 0x8000, 0x03bfbc4b )
+	    ROM_REGION( 0x08000, REGION_GFX2, 0 );/* cart gfx */
+	    ROM_LOAD( "u3tr",    0x00000, 0x8000, 0x03bfbc4b );
 	
-	    ROM_REGION( 0x0100,  REGION_USER1, 0 )	/* rp5h01 data */
-	    ROM_LOAD( "security.prm", 0x00000, 0x10, 0x1e2e7f1e )
-	ROM_END
+	    ROM_REGION( 0x0100,  REGION_USER1, 0 );/* rp5h01 data */
+	    ROM_LOAD( "security.prm", 0x00000, 0x10, 0x1e2e7f1e );
+	ROM_END(); }}; 
 	
-	ROM_START( pc_grdus )	/* Gradius */
+	static RomLoadPtr rom_pc_grdus = new RomLoadPtr(){ public void handler(){ 	/* Gradius */
 		BIOS_CPU
-		ROM_LOAD( "gr-u4",   0x0c000, 0x2000, 0x27d76160 ) /* extra bios code for this game */
+		ROM_LOAD( "gr-u4",   0x0c000, 0x2000, 0x27d76160 );/* extra bios code for this game */
 	    BIOS_GFX
 	
-	    ROM_REGION( 0x10000, REGION_CPU2, 0 )  /* 64k for code */
-	    ROM_LOAD( "gr-u2",   0x08000, 0x8000, 0xaa96889c )
+	    ROM_REGION( 0x10000, REGION_CPU2, 0 ); /* 64k for code */
+	    ROM_LOAD( "gr-u2",   0x08000, 0x8000, 0xaa96889c );
 	
-	    ROM_REGION( 0x08000, REGION_GFX2, 0 )	/* cart gfx */
-	    ROM_LOAD( "gr-u3",   0x00000, 0x8000, 0xde963bec )
+	    ROM_REGION( 0x08000, REGION_GFX2, 0 );/* cart gfx */
+	    ROM_LOAD( "gr-u3",   0x00000, 0x8000, 0xde963bec );
 	
-	    ROM_REGION( 0x0100,  REGION_USER1, 0 )	/* rp5h01 data */
-	    ROM_LOAD( "security.prm", 0x00000, 0x10, 0xb8d5bf8a )
-	ROM_END
+	    ROM_REGION( 0x0100,  REGION_USER1, 0 );/* rp5h01 data */
+	    ROM_LOAD( "security.prm", 0x00000, 0x10, 0xb8d5bf8a );
+	ROM_END(); }}; 
 	
 	/* B-Board Games */
-	ROM_START( pc_rnatk )	/* Rush N' Attack */
+	static RomLoadPtr rom_pc_rnatk = new RomLoadPtr(){ public void handler(){ 	/* Rush N' Attack */
 		BIOS_CPU
-		ROM_LOAD( "ra-u4",   0x0c000, 0x2000, 0xebab7f8c ) /* extra bios code for this game */
+		ROM_LOAD( "ra-u4",   0x0c000, 0x2000, 0xebab7f8c );/* extra bios code for this game */
 	    BIOS_GFX
 	
-	    ROM_REGION( 0x30000, REGION_CPU2, 0 )  /* 64k for code */
-	    ROM_LOAD( "ra-u1",   0x10000, 0x10000, 0x5660b3a6 ) /* banked */
-	    ROM_LOAD( "ra-u2",   0x20000, 0x10000, 0x2a1bca39 ) /* banked */
+	    ROM_REGION( 0x30000, REGION_CPU2, 0 ); /* 64k for code */
+	    ROM_LOAD( "ra-u1",   0x10000, 0x10000, 0x5660b3a6 );/* banked */
+	    ROM_LOAD( "ra-u2",   0x20000, 0x10000, 0x2a1bca39 );/* banked */
 	
 		/* No cart gfx - uses vram */
 	
-	    ROM_REGION( 0x0100,  REGION_USER1, 0 )	/* rp5h01 data */
-	    ROM_LOAD( "security.prm", 0x00000, 0x10, 0x1f6596b2 )
-	ROM_END
+	    ROM_REGION( 0x0100,  REGION_USER1, 0 );/* rp5h01 data */
+	    ROM_LOAD( "security.prm", 0x00000, 0x10, 0x1f6596b2 );
+	ROM_END(); }}; 
 	
-	ROM_START( pc_cntra )	/* Contra */
+	static RomLoadPtr rom_pc_cntra = new RomLoadPtr(){ public void handler(){ 	/* Contra */
 		BIOS_CPU
-		ROM_LOAD( "u4ct",    0x0c000, 0x2000, 0x431486cf ) /* extra bios code for this game */
+		ROM_LOAD( "u4ct",    0x0c000, 0x2000, 0x431486cf );/* extra bios code for this game */
 	    BIOS_GFX
 	
-	    ROM_REGION( 0x30000, REGION_CPU2, 0 )  /* 64k for code */
-	    ROM_LOAD( "u1ct",    0x10000, 0x10000, 0x9fcc91d4 ) /* banked */
-	    ROM_LOAD( "u2ct",    0x20000, 0x10000, 0x612ad51d ) /* banked */
+	    ROM_REGION( 0x30000, REGION_CPU2, 0 ); /* 64k for code */
+	    ROM_LOAD( "u1ct",    0x10000, 0x10000, 0x9fcc91d4 );/* banked */
+	    ROM_LOAD( "u2ct",    0x20000, 0x10000, 0x612ad51d );/* banked */
 	
 		/* No cart gfx - uses vram */
 	
-	    ROM_REGION( 0x0100,  REGION_USER1, 0 )	/* rp5h01 data */
-	    ROM_LOAD( "security.prm", 0x00000, 0x10, 0x8ab3977a )
-	ROM_END
+	    ROM_REGION( 0x0100,  REGION_USER1, 0 );/* rp5h01 data */
+	    ROM_LOAD( "security.prm", 0x00000, 0x10, 0x8ab3977a );
+	ROM_END(); }}; 
 	
-	ROM_START( pc_pwrst )	/* Pro Wrestling */
+	static RomLoadPtr rom_pc_pwrst = new RomLoadPtr(){ public void handler(){ 	/* Pro Wrestling */
 		BIOS_CPU
-		ROM_LOAD( "pw-u4",   0x0c000, 0x2000, 0x0f03d71b ) /* extra bios code for this game */
+		ROM_LOAD( "pw-u4",   0x0c000, 0x2000, 0x0f03d71b );/* extra bios code for this game */
 	    BIOS_GFX
 	
-	    ROM_REGION( 0x30000, REGION_CPU2, 0 )  /* 64k for code */
-	    ROM_LOAD( "pw-u1",   0x10000, 0x08000, 0x6242c2ce ) /* banked */
-	    ROM_RELOAD(			 0x18000, 0x08000 )
-	    ROM_LOAD( "pw-u2",   0x20000, 0x10000, 0xef6aa17c ) /* banked */
+	    ROM_REGION( 0x30000, REGION_CPU2, 0 ); /* 64k for code */
+	    ROM_LOAD( "pw-u1",   0x10000, 0x08000, 0x6242c2ce );/* banked */
+	    ROM_RELOAD(			 0x18000, 0x08000 );
+	    ROM_LOAD( "pw-u2",   0x20000, 0x10000, 0xef6aa17c );/* banked */
 	
 		/* No cart gfx - uses vram */
 	
-	    ROM_REGION( 0x0100,  REGION_USER1, 0 )	/* rp5h01 data */
-	    ROM_LOAD( "security.prm", 0x00000, 0x10, 0x4c6b7983 )
-	ROM_END
+	    ROM_REGION( 0x0100,  REGION_USER1, 0 );/* rp5h01 data */
+	    ROM_LOAD( "security.prm", 0x00000, 0x10, 0x4c6b7983 );
+	ROM_END(); }}; 
 	
-	ROM_START( pc_cvnia )	/* Castlevania */
+	static RomLoadPtr rom_pc_cvnia = new RomLoadPtr(){ public void handler(){ 	/* Castlevania */
 		BIOS_CPU
-		ROM_LOAD( "u4cv",    0x0c000, 0x2000, 0xa2d4245d ) /* extra bios code for this game */
+		ROM_LOAD( "u4cv",    0x0c000, 0x2000, 0xa2d4245d );/* extra bios code for this game */
 	    BIOS_GFX
 	
-	    ROM_REGION( 0x30000, REGION_CPU2, 0 )  /* 64k for code */
-	    ROM_LOAD( "u1cv",    0x10000, 0x10000, 0xadd4fc52 ) /* banked */
-	    ROM_LOAD( "u2cv",    0x20000, 0x10000, 0x7885e567 ) /* banked */
+	    ROM_REGION( 0x30000, REGION_CPU2, 0 ); /* 64k for code */
+	    ROM_LOAD( "u1cv",    0x10000, 0x10000, 0xadd4fc52 );/* banked */
+	    ROM_LOAD( "u2cv",    0x20000, 0x10000, 0x7885e567 );/* banked */
 	
 		/* No cart gfx - uses vram */
 	
-	    ROM_REGION( 0x0100,  REGION_USER1, 0 )	/* rp5h01 data */
-	    ROM_LOAD( "security.prm", 0x00000, 0x10, 0x7da2f045 )
-	ROM_END
+	    ROM_REGION( 0x0100,  REGION_USER1, 0 );/* rp5h01 data */
+	    ROM_LOAD( "security.prm", 0x00000, 0x10, 0x7da2f045 );
+	ROM_END(); }}; 
 	
-	ROM_START( pc_dbldr )	/* Double Dribble */
+	static RomLoadPtr rom_pc_dbldr = new RomLoadPtr(){ public void handler(){ 	/* Double Dribble */
 		BIOS_CPU
-		ROM_LOAD( "dw-u4",    0x0c000, 0x2000, 0x5006eef8 ) /* extra bios code for this game */
+		ROM_LOAD( "dw-u4",    0x0c000, 0x2000, 0x5006eef8 );/* extra bios code for this game */
 	    BIOS_GFX
 	
-	    ROM_REGION( 0x30000, REGION_CPU2, 0 )  /* 64k for code */
-	    ROM_LOAD( "dw-u1",    0x10000, 0x10000, 0x78e08e61 ) /* banked */
-	    ROM_LOAD( "dw-u2",    0x20000, 0x10000, 0xab554cde ) /* banked */
+	    ROM_REGION( 0x30000, REGION_CPU2, 0 ); /* 64k for code */
+	    ROM_LOAD( "dw-u1",    0x10000, 0x10000, 0x78e08e61 );/* banked */
+	    ROM_LOAD( "dw-u2",    0x20000, 0x10000, 0xab554cde );/* banked */
 	
 		/* No cart gfx - uses vram */
 	
-	    ROM_REGION( 0x0100,  REGION_USER1, 0 )	/* rp5h01 data */
-	    ROM_LOAD( "security.prm", 0x00000, 0x10, 0x9b5f4bd2 )
-	ROM_END
+	    ROM_REGION( 0x0100,  REGION_USER1, 0 );/* rp5h01 data */
+	    ROM_LOAD( "security.prm", 0x00000, 0x10, 0x9b5f4bd2 );
+	ROM_END(); }}; 
 	
-	ROM_START( pc_rygar )	/* Rygar */
+	static RomLoadPtr rom_pc_rygar = new RomLoadPtr(){ public void handler(){ 	/* Rygar */
 		BIOS_CPU
-		ROM_LOAD( "ry-u4",    0x0c000, 0x2000, 0x7149071b ) /* extra bios code for this game */
+		ROM_LOAD( "ry-u4",    0x0c000, 0x2000, 0x7149071b );/* extra bios code for this game */
 	    BIOS_GFX
 	
-	    ROM_REGION( 0x30000, REGION_CPU2, 0 )  /* 64k for code */
-	    ROM_LOAD( "ry-u1",    0x10000, 0x10000, 0xaa2e54bc ) /* banked */
-	    ROM_LOAD( "ry-u2",    0x20000, 0x10000, 0x80cb158b ) /* banked */
+	    ROM_REGION( 0x30000, REGION_CPU2, 0 ); /* 64k for code */
+	    ROM_LOAD( "ry-u1",    0x10000, 0x10000, 0xaa2e54bc );/* banked */
+	    ROM_LOAD( "ry-u2",    0x20000, 0x10000, 0x80cb158b );/* banked */
 	
 		/* No cart gfx - uses vram */
 	
-	    ROM_REGION( 0x0100,  REGION_USER1, 0 )	/* rp5h01 data */
-	    ROM_LOAD( "security.prm", 0x00000, 0x10, 0xb69309ab )
-	ROM_END
+	    ROM_REGION( 0x0100,  REGION_USER1, 0 );/* rp5h01 data */
+	    ROM_LOAD( "security.prm", 0x00000, 0x10, 0xb69309ab );
+	ROM_END(); }}; 
 	
-	ROM_START( pc_trjan )	/* Trojan */
+	static RomLoadPtr rom_pc_trjan = new RomLoadPtr(){ public void handler(){ 	/* Trojan */
 		BIOS_CPU
-		ROM_LOAD( "tj-u4",    0x0c000, 0x2000, 0x10835e1d ) /* extra bios code for this game */
+		ROM_LOAD( "tj-u4",    0x0c000, 0x2000, 0x10835e1d );/* extra bios code for this game */
 	    BIOS_GFX
 	
-	    ROM_REGION( 0x30000, REGION_CPU2, 0 )  /* 64k for code */
-	    ROM_LOAD( "tj-u1",    0x10000, 0x10000, 0x335c0e62 ) /* banked */
-	    ROM_LOAD( "tj-u2",    0x20000, 0x10000, 0xc0ddc79e ) /* banked */
+	    ROM_REGION( 0x30000, REGION_CPU2, 0 ); /* 64k for code */
+	    ROM_LOAD( "tj-u1",    0x10000, 0x10000, 0x335c0e62 );/* banked */
+	    ROM_LOAD( "tj-u2",    0x20000, 0x10000, 0xc0ddc79e );/* banked */
 	
 		/* No cart gfx - uses vram */
 	
-	    ROM_REGION( 0x0100,  REGION_USER1, 0 )	/* rp5h01 data */
-	    ROM_LOAD( "security.prm", 0x00000, 0x10, 0x14df772f )
-	ROM_END
+	    ROM_REGION( 0x0100,  REGION_USER1, 0 );/* rp5h01 data */
+	    ROM_LOAD( "security.prm", 0x00000, 0x10, 0x14df772f );
+	ROM_END(); }}; 
 	
 	/* C-Board Games */
-	ROM_START( pc_goons )	/* The Goonies */
+	static RomLoadPtr rom_pc_goons = new RomLoadPtr(){ public void handler(){ 	/* The Goonies */
 		BIOS_CPU
-		ROM_LOAD( "gn-u3",   0x0c000, 0x2000, 0x33adedd2 ) /* extra bios code for this game */
+		ROM_LOAD( "gn-u3",   0x0c000, 0x2000, 0x33adedd2 );/* extra bios code for this game */
 	    BIOS_GFX
 	
-	    ROM_REGION( 0x10000, REGION_CPU2, 0 )  /* 64k for code */
-	    ROM_LOAD( "gn-u1",   0x08000, 0x8000, 0xefeb0c34 )
+	    ROM_REGION( 0x10000, REGION_CPU2, 0 ); /* 64k for code */
+	    ROM_LOAD( "gn-u1",   0x08000, 0x8000, 0xefeb0c34 );
 	
-	    ROM_REGION( 0x04000, REGION_GFX2, 0 )	/* cart gfx */
-	    ROM_LOAD( "gn-u2",   0x00000, 0x4000, 0x0f9c7f49 )
+	    ROM_REGION( 0x04000, REGION_GFX2, 0 );/* cart gfx */
+	    ROM_LOAD( "gn-u2",   0x00000, 0x4000, 0x0f9c7f49 );
 	
-	    ROM_REGION( 0x0100,  REGION_USER1, 0 )	/* rp5h01 data */
-	    ROM_LOAD( "security.prm", 0x00000, 0x10, 0xcdd62d08 )
-	ROM_END
+	    ROM_REGION( 0x0100,  REGION_USER1, 0 );/* rp5h01 data */
+	    ROM_LOAD( "security.prm", 0x00000, 0x10, 0xcdd62d08 );
+	ROM_END(); }}; 
 	
 	/* D-Board Games */
-	ROM_START( pc_radrc )	/* Rad Racer */
+	static RomLoadPtr rom_pc_radrc = new RomLoadPtr(){ public void handler(){ 	/* Rad Racer */
 		BIOS_CPU
-		ROM_LOAD( "rc-u5",   0x0c000, 0x2000, 0xae60fd08 ) /* extra bios code for this game */
+		ROM_LOAD( "rc-u5",   0x0c000, 0x2000, 0xae60fd08 );/* extra bios code for this game */
 	    BIOS_GFX
 	
-	    ROM_REGION( 0x30000, REGION_CPU2, 0 )  /* 64k for code */
-	    ROM_LOAD( "rc-u1",   0x10000, 0x10000, 0xdce369a7 )
-	    ROM_LOAD( "rc-u2",   0x20000, 0x10000, 0x389a79b5 ) /* banked */
+	    ROM_REGION( 0x30000, REGION_CPU2, 0 ); /* 64k for code */
+	    ROM_LOAD( "rc-u1",   0x10000, 0x10000, 0xdce369a7 );
+	    ROM_LOAD( "rc-u2",   0x20000, 0x10000, 0x389a79b5 );/* banked */
 	
 		/* No cart gfx - uses vram */
 	
-	    ROM_REGION( 0x0100,  REGION_USER1, 0 )	/* rp5h01 data */
-	    ROM_LOAD( "security.prm", 0x00000, 0x10, 0x17c880f9 )
-	ROM_END
+	    ROM_REGION( 0x0100,  REGION_USER1, 0 );/* rp5h01 data */
+	    ROM_LOAD( "security.prm", 0x00000, 0x10, 0x17c880f9 );
+	ROM_END(); }}; 
 	
-	ROM_START( pc_mtoid )	/* Metroid */
+	static RomLoadPtr rom_pc_mtoid = new RomLoadPtr(){ public void handler(){ 	/* Metroid */
 		BIOS_CPU
-		ROM_LOAD( "mt-u5",   0x0c000, 0x2000, 0x3dc25049 ) /* extra bios code for this game */
+		ROM_LOAD( "mt-u5",   0x0c000, 0x2000, 0x3dc25049 );/* extra bios code for this game */
 	    BIOS_GFX
 	
-	    ROM_REGION( 0x30000, REGION_CPU2, 0 )  /* 64k for code */
-	    ROM_LOAD( "mt-u1",   0x10000, 0x10000, 0x4006ff10 )
-	    ROM_LOAD( "mt-u2",   0x20000, 0x10000, 0xace6bbd8 ) /* banked */
+	    ROM_REGION( 0x30000, REGION_CPU2, 0 ); /* 64k for code */
+	    ROM_LOAD( "mt-u1",   0x10000, 0x10000, 0x4006ff10 );
+	    ROM_LOAD( "mt-u2",   0x20000, 0x10000, 0xace6bbd8 );/* banked */
 	
 		/* No cart gfx - uses vram */
 	
-	    ROM_REGION( 0x0100,  REGION_USER1, 0 )	/* rp5h01 data */
-	    ROM_LOAD( "security.prm", 0x00000, 0x10, 0xefab54c9 )
-	ROM_END
+	    ROM_REGION( 0x0100,  REGION_USER1, 0 );/* rp5h01 data */
+	    ROM_LOAD( "security.prm", 0x00000, 0x10, 0xefab54c9 );
+	ROM_END(); }}; 
 	
 	/* E-Board Games */
-	ROM_START( pc_miket )	/* Mike Tyson's Punchout */
+	static RomLoadPtr rom_pc_miket = new RomLoadPtr(){ public void handler(){ 	/* Mike Tyson's Punchout */
 		BIOS_CPU
-		ROM_LOAD( "u5pt",    0x0c000, 0x2000, 0xb434e567 ) /* extra bios code for this game */
+		ROM_LOAD( "u5pt",    0x0c000, 0x2000, 0xb434e567 );/* extra bios code for this game */
 	    BIOS_GFX
 	
-	    ROM_REGION( 0x30000, REGION_CPU2, 0 )  /* 64k for code */
-	    ROM_LOAD( "u1pt",    0x10000, 0x20000, 0xdfd9a2ee ) /* banked */
+	    ROM_REGION( 0x30000, REGION_CPU2, 0 ); /* 64k for code */
+	    ROM_LOAD( "u1pt",    0x10000, 0x20000, 0xdfd9a2ee );/* banked */
 	
-	    ROM_REGION( 0x20000, REGION_GFX2, 0 )	/* cart gfx */
-	    ROM_LOAD( "u3pt",    0x00000, 0x20000, 0x570b48ea )
+	    ROM_REGION( 0x20000, REGION_GFX2, 0 );/* cart gfx */
+	    ROM_LOAD( "u3pt",    0x00000, 0x20000, 0x570b48ea );
 	
-	    ROM_REGION( 0x0100,  REGION_USER1, 0 )	/* rp5h01 data */
-	    ROM_LOAD( "security.prm", 0x00000, 0x10, 0x60f7ea1d )
-	ROM_END
+	    ROM_REGION( 0x0100,  REGION_USER1, 0 );/* rp5h01 data */
+	    ROM_LOAD( "security.prm", 0x00000, 0x10, 0x60f7ea1d );
+	ROM_END(); }}; 
 	
 	/* F-Board Games */
-	ROM_START( pc_ngaid )	/* Ninja Gaiden */
+	static RomLoadPtr rom_pc_ngaid = new RomLoadPtr(){ public void handler(){ 	/* Ninja Gaiden */
 		BIOS_CPU
-		ROM_LOAD( "u2ng",    0x0c000, 0x2000, 0x7505de96 ) /* extra bios code for this game */
+		ROM_LOAD( "u2ng",    0x0c000, 0x2000, 0x7505de96 );/* extra bios code for this game */
 	    BIOS_GFX
 	
-	    ROM_REGION( 0x30000, REGION_CPU2, 0 )  /* 64k for code */
-		ROM_LOAD( "u4ng",    0x10000, 0x20000, 0x5f1e7b19 )	/* banked */
+	    ROM_REGION( 0x30000, REGION_CPU2, 0 ); /* 64k for code */
+		ROM_LOAD( "u4ng",    0x10000, 0x20000, 0x5f1e7b19 );/* banked */
 	
-	    ROM_REGION( 0x020000, REGION_GFX2, 0 )	/* cart gfx */
-	    ROM_LOAD( "u1ng",   0x00000, 0x20000, 0xeccd2dcb )	/* banked */
+	    ROM_REGION( 0x020000, REGION_GFX2, 0 );/* cart gfx */
+	    ROM_LOAD( "u1ng",   0x00000, 0x20000, 0xeccd2dcb );/* banked */
 	
-	    ROM_REGION( 0x0100,  REGION_USER1, 0 )	/* rp5h01 data */
-	    ROM_LOAD( "security.prm", 0x00000, 0x10, 0xec5641d6 )
-	ROM_END
+	    ROM_REGION( 0x0100,  REGION_USER1, 0 );/* rp5h01 data */
+	    ROM_LOAD( "security.prm", 0x00000, 0x10, 0xec5641d6 );
+	ROM_END(); }}; 
 	
-	ROM_START( pc_ddrgn )	/* Double Dragon */
+	static RomLoadPtr rom_pc_ddrgn = new RomLoadPtr(){ public void handler(){ 	/* Double Dragon */
 		BIOS_CPU
-		ROM_LOAD( "wd-u2",   0x0c000, 0x2000, 0xdfca1578 ) /* extra bios code for this game */
+		ROM_LOAD( "wd-u2",   0x0c000, 0x2000, 0xdfca1578 );/* extra bios code for this game */
 	    BIOS_GFX
 	
-	    ROM_REGION( 0x30000, REGION_CPU2, 0 )  /* 64k for code */
-		ROM_LOAD( "wd-u4",  0x10000, 0x20000, 0x05c97f64 )	/* banked */
+	    ROM_REGION( 0x30000, REGION_CPU2, 0 ); /* 64k for code */
+		ROM_LOAD( "wd-u4",  0x10000, 0x20000, 0x05c97f64 );/* banked */
 	
-	    ROM_REGION( 0x020000, REGION_GFX2, 0 )	/* cart gfx */
-		ROM_LOAD( "wd-u1",  0x00000, 0x20000, 0x5ebe0fd0 )
+	    ROM_REGION( 0x020000, REGION_GFX2, 0 );/* cart gfx */
+		ROM_LOAD( "wd-u1",  0x00000, 0x20000, 0x5ebe0fd0 );
 	
-	    ROM_REGION( 0x0100,  REGION_USER1, 0 )	/* rp5h01 data */
-	    ROM_LOAD( "security.prm", 0x00000, 0x10, 0xf9739d62 )
-	ROM_END
+	    ROM_REGION( 0x0100,  REGION_USER1, 0 );/* rp5h01 data */
+	    ROM_LOAD( "security.prm", 0x00000, 0x10, 0xf9739d62 );
+	ROM_END(); }}; 
 	
-	ROM_START( pc_drmro )	/* Dr Mario */
+	static RomLoadPtr rom_pc_drmro = new RomLoadPtr(){ public void handler(){ 	/* Dr Mario */
 		BIOS_CPU
-		ROM_LOAD( "vu-u2",   0x0c000, 0x2000, 0x4b7869ac ) /* extra bios code for this game */
+		ROM_LOAD( "vu-u2",   0x0c000, 0x2000, 0x4b7869ac );/* extra bios code for this game */
 	    BIOS_GFX
 	
-	    ROM_REGION( 0x30000, REGION_CPU2, 0 )  /* 64k for code */
-		ROM_LOAD( "vu-u4",  0x10000, 0x08000, 0xcb02a930 )	/* banked */
-		ROM_RELOAD(			0x18000, 0x08000 )
-		ROM_RELOAD(			0x20000, 0x08000 )
-		ROM_RELOAD(			0x28000, 0x08000 )
+	    ROM_REGION( 0x30000, REGION_CPU2, 0 ); /* 64k for code */
+		ROM_LOAD( "vu-u4",  0x10000, 0x08000, 0xcb02a930 );/* banked */
+		ROM_RELOAD(			0x18000, 0x08000 );
+		ROM_RELOAD(			0x20000, 0x08000 );
+		ROM_RELOAD(			0x28000, 0x08000 );
 	
-	    ROM_REGION( 0x020000, REGION_GFX2, 0 )	/* cart gfx */
-		ROM_LOAD( "vu-u1",  0x00000, 0x08000, 0x064d4ab3 )
-		ROM_RELOAD(			0x08000, 0x08000 )
-		ROM_RELOAD(			0x10000, 0x08000 )
-		ROM_RELOAD(			0x18000, 0x08000 )
+	    ROM_REGION( 0x020000, REGION_GFX2, 0 );/* cart gfx */
+		ROM_LOAD( "vu-u1",  0x00000, 0x08000, 0x064d4ab3 );
+		ROM_RELOAD(			0x08000, 0x08000 );
+		ROM_RELOAD(			0x10000, 0x08000 );
+		ROM_RELOAD(			0x18000, 0x08000 );
 	
-	    ROM_REGION( 0x0100,  REGION_USER1, 0 )	/* rp5h01 data */
-	    ROM_LOAD( "security.prm", 0x00000, 0x10, 0x1b26e58c )
-	ROM_END
+	    ROM_REGION( 0x0100,  REGION_USER1, 0 );/* rp5h01 data */
+	    ROM_LOAD( "security.prm", 0x00000, 0x10, 0x1b26e58c );
+	ROM_END(); }}; 
 	
-	ROM_START( pc_ftqst )	/* Fester's Quest */
+	static RomLoadPtr rom_pc_ftqst = new RomLoadPtr(){ public void handler(){ 	/* Fester's Quest */
 		BIOS_CPU
-		ROM_LOAD( "eq-u2",   0x0c000, 0x2000, 0x85326040 ) /* extra bios code for this game */
+		ROM_LOAD( "eq-u2",   0x0c000, 0x2000, 0x85326040 );/* extra bios code for this game */
 	    BIOS_GFX
 	
-	    ROM_REGION( 0x30000, REGION_CPU2, 0 )  /* 64k for code */
-		ROM_LOAD( "eq-u4",  0x10000, 0x20000, 0x953a3eaf )	/* banked */
+	    ROM_REGION( 0x30000, REGION_CPU2, 0 ); /* 64k for code */
+		ROM_LOAD( "eq-u4",  0x10000, 0x20000, 0x953a3eaf );/* banked */
 	
-	    ROM_REGION( 0x020000, REGION_GFX2, 0 )	/* cart gfx */
-		ROM_LOAD( "eq-u1",  0x00000, 0x20000, 0x0ca17ab5 )
+	    ROM_REGION( 0x020000, REGION_GFX2, 0 );/* cart gfx */
+		ROM_LOAD( "eq-u1",  0x00000, 0x20000, 0x0ca17ab5 );
 	
-	    ROM_REGION( 0x0100,  REGION_USER1, 0 )	/* rp5h01 data */
-	    ROM_LOAD( "security.prm", 0x00000, 0x10, 0x1c601cd7 )
-	ROM_END
+	    ROM_REGION( 0x0100,  REGION_USER1, 0 );/* rp5h01 data */
+	    ROM_LOAD( "security.prm", 0x00000, 0x10, 0x1c601cd7 );
+	ROM_END(); }}; 
 	
-	ROM_START( pc_rcpam )	/* RC Pro Am */
+	static RomLoadPtr rom_pc_rcpam = new RomLoadPtr(){ public void handler(){ 	/* RC Pro Am */
 		BIOS_CPU
-		ROM_LOAD( "pm-u2",   0x0c000, 0x2000, 0x358c2de7 ) /* extra bios code for this game */
+		ROM_LOAD( "pm-u2",   0x0c000, 0x2000, 0x358c2de7 );/* extra bios code for this game */
 	    BIOS_GFX
 	
-	    ROM_REGION( 0x30000, REGION_CPU2, 0 )  /* 64k for code */
-		ROM_LOAD( "pm-u4",  0x10000, 0x08000, 0x82cfde25 )	/* banked */
-		ROM_RELOAD(			0x18000, 0x08000 )
-		ROM_RELOAD(			0x20000, 0x08000 )
-		ROM_RELOAD(			0x28000, 0x08000 )
+	    ROM_REGION( 0x30000, REGION_CPU2, 0 ); /* 64k for code */
+		ROM_LOAD( "pm-u4",  0x10000, 0x08000, 0x82cfde25 );/* banked */
+		ROM_RELOAD(			0x18000, 0x08000 );
+		ROM_RELOAD(			0x20000, 0x08000 );
+		ROM_RELOAD(			0x28000, 0x08000 );
 	
-	    ROM_REGION( 0x020000, REGION_GFX2, 0 )	/* cart gfx */
-		ROM_LOAD( "pm-u1",  0x00000, 0x08000, 0x83c90d47 )
-		ROM_RELOAD(			0x08000, 0x08000 )
-		ROM_RELOAD(			0x10000, 0x08000 )
-		ROM_RELOAD(			0x18000, 0x08000 )
+	    ROM_REGION( 0x020000, REGION_GFX2, 0 );/* cart gfx */
+		ROM_LOAD( "pm-u1",  0x00000, 0x08000, 0x83c90d47 );
+		ROM_RELOAD(			0x08000, 0x08000 );
+		ROM_RELOAD(			0x10000, 0x08000 );
+		ROM_RELOAD(			0x18000, 0x08000 );
 	
-	    ROM_REGION( 0x0100,  REGION_USER1, 0 )	/* rp5h01 data */
-	    ROM_LOAD( "security.prm", 0x00000, 0x10, 0xd71d8085 )
-	ROM_END
+	    ROM_REGION( 0x0100,  REGION_USER1, 0 );/* rp5h01 data */
+	    ROM_LOAD( "security.prm", 0x00000, 0x10, 0xd71d8085 );
+	ROM_END(); }}; 
 	
-	ROM_START( pc_rrngr )	/* Rescue Rangers */
+	static RomLoadPtr rom_pc_rrngr = new RomLoadPtr(){ public void handler(){ 	/* Rescue Rangers */
 		BIOS_CPU
-		ROM_LOAD( "ru-u2",   0x0c000, 0x2000, 0x2a4bfc4b ) /* extra bios code for this game */
+		ROM_LOAD( "ru-u2",   0x0c000, 0x2000, 0x2a4bfc4b );/* extra bios code for this game */
 	    BIOS_GFX
 	
-	    ROM_REGION( 0x30000, REGION_CPU2, 0 )  /* 64k for code */
-		ROM_LOAD( "ru-u4",  0x10000, 0x20000, 0x02931525 )	/* banked */
+	    ROM_REGION( 0x30000, REGION_CPU2, 0 ); /* 64k for code */
+		ROM_LOAD( "ru-u4",  0x10000, 0x20000, 0x02931525 );/* banked */
 	
-	    ROM_REGION( 0x020000, REGION_GFX2, 0 )	/* cart gfx */
-		ROM_LOAD( "ru-u1",  0x00000, 0x20000, 0x218d4224 )
+	    ROM_REGION( 0x020000, REGION_GFX2, 0 );/* cart gfx */
+		ROM_LOAD( "ru-u1",  0x00000, 0x20000, 0x218d4224 );
 	
-	    ROM_REGION( 0x0100,  REGION_USER1, 0 )	/* rp5h01 data */
-	    ROM_LOAD( "security.prm", 0x00000, 0x10, 0x1c2e1865 )
-	ROM_END
+	    ROM_REGION( 0x0100,  REGION_USER1, 0 );/* rp5h01 data */
+	    ROM_LOAD( "security.prm", 0x00000, 0x10, 0x1c2e1865 );
+	ROM_END(); }}; 
 	
-	ROM_START( pc_ynoid )	/* Yo! Noid */
+	static RomLoadPtr rom_pc_ynoid = new RomLoadPtr(){ public void handler(){ 	/* Yo! Noid */
 		BIOS_CPU
-		ROM_LOAD( "yc-u2",   0x0c000, 0x2000, 0x0449805c ) /* extra bios code for this game */
+		ROM_LOAD( "yc-u2",   0x0c000, 0x2000, 0x0449805c );/* extra bios code for this game */
 	    BIOS_GFX
 	
-	    ROM_REGION( 0x30000, REGION_CPU2, 0 )  /* 64k for code */
-		ROM_LOAD( "yc-u4",  0x10000, 0x20000, 0x4affeee7 )	/* banked */
+	    ROM_REGION( 0x30000, REGION_CPU2, 0 ); /* 64k for code */
+		ROM_LOAD( "yc-u4",  0x10000, 0x20000, 0x4affeee7 );/* banked */
 	
-	    ROM_REGION( 0x020000, REGION_GFX2, 0 )	/* cart gfx */
-		ROM_LOAD( "yc-u1",  0x00000, 0x20000, 0x868f7343 )
+	    ROM_REGION( 0x020000, REGION_GFX2, 0 );/* cart gfx */
+		ROM_LOAD( "yc-u1",  0x00000, 0x20000, 0x868f7343 );
 	
-	    ROM_REGION( 0x0100,  REGION_USER1, 0 )	/* rp5h01 data */
-	    ROM_LOAD( "security.prm", 0x00000, 0x10, 0x8c376465 )
-	ROM_END
+	    ROM_REGION( 0x0100,  REGION_USER1, 0 );/* rp5h01 data */
+	    ROM_LOAD( "security.prm", 0x00000, 0x10, 0x8c376465 );
+	ROM_END(); }}; 
 	
-	ROM_START( pc_tmnt )	/* Teenage Mutant Ninja Turtles */
+	static RomLoadPtr rom_pc_tmnt = new RomLoadPtr(){ public void handler(){ 	/* Teenage Mutant Ninja Turtles */
 		BIOS_CPU
-		ROM_LOAD( "u2u2",   0x0c000, 0x2000, 0xbdce58c0 ) /* extra bios code for this game */
+		ROM_LOAD( "u2u2",   0x0c000, 0x2000, 0xbdce58c0 );/* extra bios code for this game */
 	    BIOS_GFX
 	
-	    ROM_REGION( 0x30000, REGION_CPU2, 0 )  /* 64k for code */
-		ROM_LOAD( "u4u2",   0x10000, 0x20000, 0x0ccd28d5 )	/* banked */
+	    ROM_REGION( 0x30000, REGION_CPU2, 0 ); /* 64k for code */
+		ROM_LOAD( "u4u2",   0x10000, 0x20000, 0x0ccd28d5 );/* banked */
 	
-	    ROM_REGION( 0x020000, REGION_GFX2, 0 )	/* cart gfx */
-		ROM_LOAD( "u1u2",   0x00000, 0x20000, 0x91f01f53 )
+	    ROM_REGION( 0x020000, REGION_GFX2, 0 );/* cart gfx */
+		ROM_LOAD( "u1u2",   0x00000, 0x20000, 0x91f01f53 );
 	
-	    ROM_REGION( 0x0100,  REGION_USER1, 0 )	/* rp5h01 data */
-	    ROM_LOAD( "security.prm", 0x00000, 0x10, 0xf5a38e98 )
-	ROM_END
+	    ROM_REGION( 0x0100,  REGION_USER1, 0 );/* rp5h01 data */
+	    ROM_LOAD( "security.prm", 0x00000, 0x10, 0xf5a38e98 );
+	ROM_END(); }}; 
 	
-	ROM_START( pc_bstar )	/* Baseball Stars */
+	static RomLoadPtr rom_pc_bstar = new RomLoadPtr(){ public void handler(){ 	/* Baseball Stars */
 		BIOS_CPU
-		ROM_LOAD( "b9-u2",   0x0c000, 0x2000, 0x69f3fd7c ) /* extra bios code for this game */
+		ROM_LOAD( "b9-u2",   0x0c000, 0x2000, 0x69f3fd7c );/* extra bios code for this game */
 	    BIOS_GFX
 	
-	    ROM_REGION( 0x30000, REGION_CPU2, 0 )  /* 64k for code */
-		ROM_LOAD( "b9-u4",   0x10000, 0x20000, 0xd007231a )	/* banked */
+	    ROM_REGION( 0x30000, REGION_CPU2, 0 ); /* 64k for code */
+		ROM_LOAD( "b9-u4",   0x10000, 0x20000, 0xd007231a );/* banked */
 	
-	    ROM_REGION( 0x020000, REGION_GFX2, 0 )	/* cart gfx */
-		ROM_LOAD( "b9-u1",   0x00000, 0x20000, 0xce149864 )
+	    ROM_REGION( 0x020000, REGION_GFX2, 0 );/* cart gfx */
+		ROM_LOAD( "b9-u1",   0x00000, 0x20000, 0xce149864 );
 	
-	    ROM_REGION( 0x0100,  REGION_USER1, 0 )	/* rp5h01 data */
-	    ROM_LOAD( "security.prm", 0x00000, 0x10, 0x3e871350 )
-	ROM_END
+	    ROM_REGION( 0x0100,  REGION_USER1, 0 );/* rp5h01 data */
+	    ROM_LOAD( "security.prm", 0x00000, 0x10, 0x3e871350 );
+	ROM_END(); }}; 
 	
-	ROM_START( pc_tbowl )	/* Tecmo Bowl */
+	static RomLoadPtr rom_pc_tbowl = new RomLoadPtr(){ public void handler(){ 	/* Tecmo Bowl */
 		BIOS_CPU
-		ROM_LOAD( "tw-u2",   0x0c000, 0x2000, 0x162aa313 ) /* extra bios code for this game */
+		ROM_LOAD( "tw-u2",   0x0c000, 0x2000, 0x162aa313 );/* extra bios code for this game */
 	    BIOS_GFX
 	
-	    ROM_REGION( 0x30000, REGION_CPU2, 0 )  /* 64k for code */
-		ROM_LOAD( "tw-u4",   0x10000, 0x20000, 0x4f0c69be )	/* banked */
+	    ROM_REGION( 0x30000, REGION_CPU2, 0 ); /* 64k for code */
+		ROM_LOAD( "tw-u4",   0x10000, 0x20000, 0x4f0c69be );/* banked */
 	
-	    ROM_REGION( 0x020000, REGION_GFX2, 0 )	/* cart gfx */
-		ROM_LOAD( "tw-u1",   0x00000, 0x20000, 0x44b078ef )
+	    ROM_REGION( 0x020000, REGION_GFX2, 0 );/* cart gfx */
+		ROM_LOAD( "tw-u1",   0x00000, 0x20000, 0x44b078ef );
 	
-	    ROM_REGION( 0x0100,  REGION_USER1, 0 )	/* rp5h01 data */
-	    ROM_LOAD( "security.prm", 0x00000, 0x10, 0x18b2d1d3 )
-	ROM_END
+	    ROM_REGION( 0x0100,  REGION_USER1, 0 );/* rp5h01 data */
+	    ROM_LOAD( "security.prm", 0x00000, 0x10, 0x18b2d1d3 );
+	ROM_END(); }}; 
 	
 	/* G-Board Games */
-	ROM_START( pc_smb3 )	/* Super Mario Bros 3 */
+	static RomLoadPtr rom_pc_smb3 = new RomLoadPtr(){ public void handler(){ 	/* Super Mario Bros 3 */
 		BIOS_CPU
-		ROM_LOAD( "u3um",    0x0c000, 0x2000, 0x45e92f7f ) /* extra bios code for this game */
+		ROM_LOAD( "u3um",    0x0c000, 0x2000, 0x45e92f7f );/* extra bios code for this game */
 	    BIOS_GFX
 	
-	    ROM_REGION( 0x50000, REGION_CPU2, 0 )  /* 64k for code */
-		ROM_LOAD( "u4um",    0x10000, 0x20000, 0x590b4d7c )	/* banked */
-		ROM_LOAD( "u5um",    0x30000, 0x20000, 0xbce25425 )	/* banked */
+	    ROM_REGION( 0x50000, REGION_CPU2, 0 ); /* 64k for code */
+		ROM_LOAD( "u4um",    0x10000, 0x20000, 0x590b4d7c );/* banked */
+		ROM_LOAD( "u5um",    0x30000, 0x20000, 0xbce25425 );/* banked */
 	
-	    ROM_REGION( 0x020000, REGION_GFX2, 0 )	/* cart gfx */
-	    ROM_LOAD( "u1um",    0x00000, 0x20000, 0xc2928c49 )
+	    ROM_REGION( 0x020000, REGION_GFX2, 0 );/* cart gfx */
+	    ROM_LOAD( "u1um",    0x00000, 0x20000, 0xc2928c49 );
 	
-	    ROM_REGION( 0x0100,  REGION_USER1, 0 )	/* rp5h01 data */
-	    ROM_LOAD( "security.prm", 0x00000, 0x10, 0xe48f4945 )
-	ROM_END
+	    ROM_REGION( 0x0100,  REGION_USER1, 0 );/* rp5h01 data */
+	    ROM_LOAD( "security.prm", 0x00000, 0x10, 0xe48f4945 );
+	ROM_END(); }}; 
 	
-	ROM_START( pc_gntlt )	/* Gauntlet */
+	static RomLoadPtr rom_pc_gntlt = new RomLoadPtr(){ public void handler(){ 	/* Gauntlet */
 		BIOS_CPU
-		ROM_LOAD( "u3gl",    0x0c000, 0x2000, 0x57575b92 ) /* extra bios code for this game */
+		ROM_LOAD( "u3gl",    0x0c000, 0x2000, 0x57575b92 );/* extra bios code for this game */
 	    BIOS_GFX
 	
-	    ROM_REGION( 0x50000, REGION_CPU2, 0 )  /* 64k for code */
-		ROM_LOAD( "gl-0.prg",0x10000, 0x20000, 0xb19c48a5 )	/* banked */
-		ROM_RELOAD(			 0x30000, 0x20000 )
+	    ROM_REGION( 0x50000, REGION_CPU2, 0 ); /* 64k for code */
+		ROM_LOAD( "gl-0.prg",0x10000, 0x20000, 0xb19c48a5 );/* banked */
+		ROM_RELOAD(			 0x30000, 0x20000 );
 	
-	    ROM_REGION( 0x010000, REGION_GFX2, 0 )	/* cart gfx */
-	    ROM_LOAD( "gl-0.chr", 0x00000, 0x10000, 0x22af8849 )
+	    ROM_REGION( 0x010000, REGION_GFX2, 0 );/* cart gfx */
+	    ROM_LOAD( "gl-0.chr", 0x00000, 0x10000, 0x22af8849 );
 	
-	    ROM_REGION( 0x0100,  REGION_USER1, 0 )	/* rp5h01 data */
-	    ROM_LOAD( "security.prm", 0x00000, 0x10, 0xba7f2e13 )
-	ROM_END
+	    ROM_REGION( 0x0100,  REGION_USER1, 0 );/* rp5h01 data */
+	    ROM_LOAD( "security.prm", 0x00000, 0x10, 0xba7f2e13 );
+	ROM_END(); }}; 
 	
-	ROM_START( pc_pwbld )	/* Power Blade */
+	static RomLoadPtr rom_pc_pwbld = new RomLoadPtr(){ public void handler(){ 	/* Power Blade */
 		BIOS_CPU
-		ROM_LOAD( "7t-u3",    0x0c000, 0x2000, 0xedcc21c6 ) /* extra bios code for this game */
+		ROM_LOAD( "7t-u3",    0x0c000, 0x2000, 0xedcc21c6 );/* extra bios code for this game */
 	    BIOS_GFX
 	
-	    ROM_REGION( 0x50000, REGION_CPU2, 0 )  /* 64k for code */
-		ROM_LOAD( "7t-u5",   0x10000, 0x20000, 0xfaa957b1 )	/* banked */
-		ROM_RELOAD(			 0x30000, 0x20000 )
+	    ROM_REGION( 0x50000, REGION_CPU2, 0 ); /* 64k for code */
+		ROM_LOAD( "7t-u5",   0x10000, 0x20000, 0xfaa957b1 );/* banked */
+		ROM_RELOAD(			 0x30000, 0x20000 );
 	
-	    ROM_REGION( 0x020000, REGION_GFX2, 0 )	/* cart gfx */
-	    ROM_LOAD( "7t-u1",    0x00000, 0x20000, 0x344be4a6 )
+	    ROM_REGION( 0x020000, REGION_GFX2, 0 );/* cart gfx */
+	    ROM_LOAD( "7t-u1",    0x00000, 0x20000, 0x344be4a6 );
 	
-	    ROM_REGION( 0x0100,  REGION_USER1, 0 )	/* rp5h01 data */
-	    ROM_LOAD( "security.prm", 0x00000, 0x10, 0x31a05a48 )
-	ROM_END
+	    ROM_REGION( 0x0100,  REGION_USER1, 0 );/* rp5h01 data */
+	    ROM_LOAD( "security.prm", 0x00000, 0x10, 0x31a05a48 );
+	ROM_END(); }}; 
 	
-	ROM_START( pc_ngai3 )	/* Ninja Gaiden 3 */
+	static RomLoadPtr rom_pc_ngai3 = new RomLoadPtr(){ public void handler(){ 	/* Ninja Gaiden 3 */
 		BIOS_CPU
-		ROM_LOAD( "u33n",    0x0c000, 0x2000, 0xc7ba0f59 ) /* extra bios code for this game */
+		ROM_LOAD( "u33n",    0x0c000, 0x2000, 0xc7ba0f59 );/* extra bios code for this game */
 	    BIOS_GFX
 	
-	    ROM_REGION( 0x50000, REGION_CPU2, 0 )  /* 64k for code */
-		ROM_LOAD( "u53n",    0x10000, 0x20000, 0xf0c77dcb )	/* banked */
-		ROM_RELOAD(			 0x30000, 0x20000 )
+	    ROM_REGION( 0x50000, REGION_CPU2, 0 ); /* 64k for code */
+		ROM_LOAD( "u53n",    0x10000, 0x20000, 0xf0c77dcb );/* banked */
+		ROM_RELOAD(			 0x30000, 0x20000 );
 	
-	    ROM_REGION( 0x020000, REGION_GFX2, 0 )	/* cart gfx */
-	    ROM_LOAD( "u13n",    0x00000, 0x20000, 0x584bcf5d )
+	    ROM_REGION( 0x020000, REGION_GFX2, 0 );/* cart gfx */
+	    ROM_LOAD( "u13n",    0x00000, 0x20000, 0x584bcf5d );
 	
-	    ROM_REGION( 0x0100,  REGION_USER1, 0 )	/* rp5h01 data */
-	    ROM_LOAD( "security.prm", 0x00000, 0x10, 0x13755943 )
-	ROM_END
+	    ROM_REGION( 0x0100,  REGION_USER1, 0 );/* rp5h01 data */
+	    ROM_LOAD( "security.prm", 0x00000, 0x10, 0x13755943 );
+	ROM_END(); }}; 
 	
-	ROM_START( pc_radr2 )	/* Rad Racer II */
+	static RomLoadPtr rom_pc_radr2 = new RomLoadPtr(){ public void handler(){ 	/* Rad Racer II */
 		BIOS_CPU
-		ROM_LOAD( "qr-u3",    0x0c000, 0x2000, 0x0c8fea63 ) /* extra bios code for this game */
+		ROM_LOAD( "qr-u3",    0x0c000, 0x2000, 0x0c8fea63 );/* extra bios code for this game */
 	    BIOS_GFX
 	
-	    ROM_REGION( 0x50000, REGION_CPU2, 0 )  /* 64k for code */
-		ROM_LOAD( "qr-u5",    0x10000, 0x10000, 0xab90e397 )	/* banked */
-		ROM_RELOAD(			  0x20000, 0x10000 )
-		ROM_RELOAD(			  0x30000, 0x10000 )
-		ROM_RELOAD(			  0x40000, 0x10000 )
+	    ROM_REGION( 0x50000, REGION_CPU2, 0 ); /* 64k for code */
+		ROM_LOAD( "qr-u5",    0x10000, 0x10000, 0xab90e397 );/* banked */
+		ROM_RELOAD(			  0x20000, 0x10000 );
+		ROM_RELOAD(			  0x30000, 0x10000 );
+		ROM_RELOAD(			  0x40000, 0x10000 );
 	
-	    ROM_REGION( 0x010000, REGION_GFX2, 0 )	/* cart gfx */
-	    ROM_LOAD( "qr-u1",    0x00000, 0x10000, 0x07df55d8 )
+	    ROM_REGION( 0x010000, REGION_GFX2, 0 );/* cart gfx */
+	    ROM_LOAD( "qr-u1",    0x00000, 0x10000, 0x07df55d8 );
 	
-	    ROM_REGION( 0x0100,  REGION_USER1, 0 )	/* rp5h01 data */
-	    ROM_LOAD( "security.prm", 0x00000, 0x10, 0x40c4f294 )
-	ROM_END
+	    ROM_REGION( 0x0100,  REGION_USER1, 0 );/* rp5h01 data */
+	    ROM_LOAD( "security.prm", 0x00000, 0x10, 0x40c4f294 );
+	ROM_END(); }}; 
 	
-	ROM_START( pc_rkats )	/* Rockin' Kats */
+	static RomLoadPtr rom_pc_rkats = new RomLoadPtr(){ public void handler(){ 	/* Rockin' Kats */
 		BIOS_CPU
-		ROM_LOAD( "7a-u3",    0x0c000, 0x2000, 0x352b1e3c ) /* extra bios code for this game */
+		ROM_LOAD( "7a-u3",    0x0c000, 0x2000, 0x352b1e3c );/* extra bios code for this game */
 	    BIOS_GFX
 	
-	    ROM_REGION( 0x50000, REGION_CPU2, 0 )  /* 64k for code */
-		ROM_LOAD( "7a-u5",    0x10000, 0x20000, 0x319ccfcc )	/* banked */
-		ROM_RELOAD(			  0x30000, 0x20000 )
+	    ROM_REGION( 0x50000, REGION_CPU2, 0 ); /* 64k for code */
+		ROM_LOAD( "7a-u5",    0x10000, 0x20000, 0x319ccfcc );/* banked */
+		ROM_RELOAD(			  0x30000, 0x20000 );
 	
-	    ROM_REGION( 0x020000, REGION_GFX2, 0 )	/* cart gfx */
-	    ROM_LOAD( "7a-u1",    0x00000, 0x20000, 0x487aa440 )
+	    ROM_REGION( 0x020000, REGION_GFX2, 0 );/* cart gfx */
+	    ROM_LOAD( "7a-u1",    0x00000, 0x20000, 0x487aa440 );
 	
-	    ROM_REGION( 0x0100,  REGION_USER1, 0 )	/* rp5h01 data */
-	    ROM_LOAD( "security.prm", 0x00000, 0x10, 0x56ab5bf9 )
-	ROM_END
+	    ROM_REGION( 0x0100,  REGION_USER1, 0 );/* rp5h01 data */
+	    ROM_LOAD( "security.prm", 0x00000, 0x10, 0x56ab5bf9 );
+	ROM_END(); }}; 
 	
-	ROM_START( pc_suprc )	/* Super C */
+	static RomLoadPtr rom_pc_suprc = new RomLoadPtr(){ public void handler(){ 	/* Super C */
 		BIOS_CPU
-		ROM_LOAD( "ue-u3",    0x0c000, 0x2000, 0xa30ca248 ) /* extra bios code for this game */
+		ROM_LOAD( "ue-u3",    0x0c000, 0x2000, 0xa30ca248 );/* extra bios code for this game */
 	    BIOS_GFX
 	
-	    ROM_REGION( 0x50000, REGION_CPU2, 0 )  /* 64k for code */
-		ROM_LOAD( "ue-u5",    0x10000, 0x20000, 0xc7fbecc3 )	/* banked */
-		ROM_RELOAD(			  0x30000, 0x20000 )
+	    ROM_REGION( 0x50000, REGION_CPU2, 0 ); /* 64k for code */
+		ROM_LOAD( "ue-u5",    0x10000, 0x20000, 0xc7fbecc3 );/* banked */
+		ROM_RELOAD(			  0x30000, 0x20000 );
 	
-	    ROM_REGION( 0x020000, REGION_GFX2, 0 )	/* cart gfx */
-	    ROM_LOAD( "ue-u1",    0x00000, 0x20000, 0x153295c1 )
+	    ROM_REGION( 0x020000, REGION_GFX2, 0 );/* cart gfx */
+	    ROM_LOAD( "ue-u1",    0x00000, 0x20000, 0x153295c1 );
 	
-	    ROM_REGION( 0x0100,  REGION_USER1, 0 )	/* rp5h01 data */
-	    ROM_LOAD( "security.prm", 0x00000, 0x10, 0xd477095e )
-	ROM_END
+	    ROM_REGION( 0x0100,  REGION_USER1, 0 );/* rp5h01 data */
+	    ROM_LOAD( "security.prm", 0x00000, 0x10, 0xd477095e );
+	ROM_END(); }}; 
 	
-	ROM_START( pc_tmnt2 )	/* Teenage Mutant Ninja Turtles II */
+	static RomLoadPtr rom_pc_tmnt2 = new RomLoadPtr(){ public void handler(){ 	/* Teenage Mutant Ninja Turtles II */
 		BIOS_CPU
-		ROM_LOAD( "2n-u3",    0x0c000, 0x2000, 0x65298370 ) /* extra bios code for this game */
+		ROM_LOAD( "2n-u3",    0x0c000, 0x2000, 0x65298370 );/* extra bios code for this game */
 	    BIOS_GFX
 	
-	    ROM_REGION( 0x50000, REGION_CPU2, 0 )  /* 64k for code */
-		ROM_LOAD( "2n-u5",    0x10000, 0x40000, 0x717e1c46 )	/* banked */
+	    ROM_REGION( 0x50000, REGION_CPU2, 0 ); /* 64k for code */
+		ROM_LOAD( "2n-u5",    0x10000, 0x40000, 0x717e1c46 );/* banked */
 	
-	    ROM_REGION( 0x040000, REGION_GFX2, 0 )	/* cart gfx */
-	    ROM_LOAD( "2n-u1",    0x00000, 0x40000, 0x0dbc575f )
+	    ROM_REGION( 0x040000, REGION_GFX2, 0 );/* cart gfx */
+	    ROM_LOAD( "2n-u1",    0x00000, 0x40000, 0x0dbc575f );
 	
-	    ROM_REGION( 0x0100,  REGION_USER1, 0 )	/* rp5h01 data */
-	    ROM_LOAD( "security.prm", 0x00000, 0x10, 0x237e8519 )
-	ROM_END
+	    ROM_REGION( 0x0100,  REGION_USER1, 0 );/* rp5h01 data */
+	    ROM_LOAD( "security.prm", 0x00000, 0x10, 0x237e8519 );
+	ROM_END(); }}; 
 	
-	ROM_START( pc_wcup )	/* Nintendo World Cup */
+	static RomLoadPtr rom_pc_wcup = new RomLoadPtr(){ public void handler(){ 	/* Nintendo World Cup */
 		BIOS_CPU
-		ROM_LOAD( "xz-u3",    0x0c000, 0x2000, 0xc26cb22f ) /* extra bios code for this game */
+		ROM_LOAD( "xz-u3",    0x0c000, 0x2000, 0xc26cb22f );/* extra bios code for this game */
 	    BIOS_GFX
 	
-	    ROM_REGION( 0x50000, REGION_CPU2, 0 )  /* 64k for code */
-		ROM_LOAD( "xz-u5",    0x10000, 0x20000, 0x314ee295 )	/* banked */
-		ROM_RELOAD(			  0x30000, 0x20000 )
+	    ROM_REGION( 0x50000, REGION_CPU2, 0 ); /* 64k for code */
+		ROM_LOAD( "xz-u5",    0x10000, 0x20000, 0x314ee295 );/* banked */
+		ROM_RELOAD(			  0x30000, 0x20000 );
 	
-	    ROM_REGION( 0x020000, REGION_GFX2, 0 )	/* cart gfx */
-	    ROM_LOAD( "xz-u1",    0x00000, 0x20000, 0x92477d53 )
+	    ROM_REGION( 0x020000, REGION_GFX2, 0 );/* cart gfx */
+	    ROM_LOAD( "xz-u1",    0x00000, 0x20000, 0x92477d53 );
 	
-	    ROM_REGION( 0x0100,  REGION_USER1, 0 )	/* rp5h01 data */
-	    ROM_LOAD( "security.prm", 0x00000, 0x10, 0xe17e1d76 )
-	ROM_END
+	    ROM_REGION( 0x0100,  REGION_USER1, 0 );/* rp5h01 data */
+	    ROM_LOAD( "security.prm", 0x00000, 0x10, 0xe17e1d76 );
+	ROM_END(); }}; 
 	
-	ROM_START( pc_mman3 )	/* Mega Man 3 */
+	static RomLoadPtr rom_pc_mman3 = new RomLoadPtr(){ public void handler(){ 	/* Mega Man 3 */
 		BIOS_CPU
-		ROM_LOAD( "xu-u3",   0x0c000, 0x2000, 0xc3984e09 ) /* extra bios code for this game */
+		ROM_LOAD( "xu-u3",   0x0c000, 0x2000, 0xc3984e09 );/* extra bios code for this game */
 	    BIOS_GFX
 	
-	    ROM_REGION( 0x50000, REGION_CPU2, 0 )  /* 64k for code */
-		ROM_LOAD( "xu-u4",   0x10000, 0x20000, 0x98a3263c )	/* banked */
-		ROM_LOAD( "xu-u5",   0x30000, 0x20000, 0xd365647a )	/* banked */
+	    ROM_REGION( 0x50000, REGION_CPU2, 0 ); /* 64k for code */
+		ROM_LOAD( "xu-u4",   0x10000, 0x20000, 0x98a3263c );/* banked */
+		ROM_LOAD( "xu-u5",   0x30000, 0x20000, 0xd365647a );/* banked */
 	
-	    ROM_REGION( 0x020000, REGION_GFX2, 0 )	/* cart gfx */
-	    ROM_LOAD( "xu-u1",    0x00000, 0x20000, 0x4028916e )
+	    ROM_REGION( 0x020000, REGION_GFX2, 0 );/* cart gfx */
+	    ROM_LOAD( "xu-u1",    0x00000, 0x20000, 0x4028916e );
 	
-	    ROM_REGION( 0x0100,  REGION_USER1, 0 )	/* rp5h01 data */
-	    ROM_LOAD( "security.prm", 0x00000, 0x10, 0x0fe6e900 )
-	ROM_END
+	    ROM_REGION( 0x0100,  REGION_USER1, 0 );/* rp5h01 data */
+	    ROM_LOAD( "security.prm", 0x00000, 0x10, 0x0fe6e900 );
+	ROM_END(); }}; 
 	
-	ROM_START( pc_smb2 )	/* Super Mario Bros 2 */
+	static RomLoadPtr rom_pc_smb2 = new RomLoadPtr(){ public void handler(){ 	/* Super Mario Bros 2 */
 		BIOS_CPU
-		ROM_LOAD( "mw-u3",   0x0c000, 0x2000, 0xbeaeb43a ) /* extra bios code for this game */
+		ROM_LOAD( "mw-u3",   0x0c000, 0x2000, 0xbeaeb43a );/* extra bios code for this game */
 	    BIOS_GFX
 	
-	    ROM_REGION( 0x50000, REGION_CPU2, 0 )  /* 64k for code */
-		ROM_LOAD( "mw-u5",   0x10000, 0x20000, 0x07854b3f )	/* banked */
-		ROM_RELOAD(			 0x30000, 0x20000 )
+	    ROM_REGION( 0x50000, REGION_CPU2, 0 ); /* 64k for code */
+		ROM_LOAD( "mw-u5",   0x10000, 0x20000, 0x07854b3f );/* banked */
+		ROM_RELOAD(			 0x30000, 0x20000 );
 	
-	    ROM_REGION( 0x020000, REGION_GFX2, 0 )	/* cart gfx */
-	    ROM_LOAD( "mw-u1",    0x00000, 0x20000, 0xf2ba1170 )
+	    ROM_REGION( 0x020000, REGION_GFX2, 0 );/* cart gfx */
+	    ROM_LOAD( "mw-u1",    0x00000, 0x20000, 0xf2ba1170 );
 	
-	    ROM_REGION( 0x0100,  REGION_USER1, 0 )	/* rp5h01 data */
-	    ROM_LOAD( "security.prm", 0x00000, 0x10, 0x372f4e84 )
-	ROM_END
+	    ROM_REGION( 0x0100,  REGION_USER1, 0 );/* rp5h01 data */
+	    ROM_LOAD( "security.prm", 0x00000, 0x10, 0x372f4e84 );
+	ROM_END(); }}; 
 	
-	ROM_START( pc_ngai2 )	/* Ninja Gaiden 2 */
+	static RomLoadPtr rom_pc_ngai2 = new RomLoadPtr(){ public void handler(){ 	/* Ninja Gaiden 2 */
 		BIOS_CPU
-		ROM_LOAD( "nw-u3",   0x0c000, 0x2000, 0xbc178cde ) /* extra bios code for this game */
+		ROM_LOAD( "nw-u3",   0x0c000, 0x2000, 0xbc178cde );/* extra bios code for this game */
 	    BIOS_GFX
 	
-	    ROM_REGION( 0x50000, REGION_CPU2, 0 )  /* 64k for code */
-		ROM_LOAD( "nw-u5",   0x10000, 0x20000, 0xc43da8e2 )	/* banked */
-		ROM_RELOAD(			 0x30000, 0x20000 )
+	    ROM_REGION( 0x50000, REGION_CPU2, 0 ); /* 64k for code */
+		ROM_LOAD( "nw-u5",   0x10000, 0x20000, 0xc43da8e2 );/* banked */
+		ROM_RELOAD(			 0x30000, 0x20000 );
 	
-	    ROM_REGION( 0x020000, REGION_GFX2, 0 )	/* cart gfx */
-	    ROM_LOAD( "nw-u1",    0x00000, 0x20000, 0x8e0c8bb0 )
+	    ROM_REGION( 0x020000, REGION_GFX2, 0 );/* cart gfx */
+	    ROM_LOAD( "nw-u1",    0x00000, 0x20000, 0x8e0c8bb0 );
 	
-	    ROM_REGION( 0x0100,  REGION_USER1, 0 )	/* rp5h01 data */
-	    ROM_LOAD( "security.prm", 0x00000, 0x10, 0x682dffd1 )
-	ROM_END
+	    ROM_REGION( 0x0100,  REGION_USER1, 0 );/* rp5h01 data */
+	    ROM_LOAD( "security.prm", 0x00000, 0x10, 0x682dffd1 );
+	ROM_END(); }}; 
 	
 	/* H-Board Games */
-	ROM_START( pc_pinbt )	/* PinBot */
+	static RomLoadPtr rom_pc_pinbt = new RomLoadPtr(){ public void handler(){ 	/* PinBot */
 		BIOS_CPU
-		ROM_LOAD( "io-u3",   0x0c000, 0x2000, 0x15ba8a2e ) /* extra bios code for this game */
+		ROM_LOAD( "io-u3",   0x0c000, 0x2000, 0x15ba8a2e );/* extra bios code for this game */
 	    BIOS_GFX
 	
-	    ROM_REGION( 0x50000, REGION_CPU2, 0 )  /* 64k for code */
-		ROM_LOAD( "io-u5",   0x10000, 0x20000, 0x9f75b83b )	/* banked */
-		ROM_RELOAD(			 0x30000, 0x20000 )	/* banked */
+	    ROM_REGION( 0x50000, REGION_CPU2, 0 ); /* 64k for code */
+		ROM_LOAD( "io-u5",   0x10000, 0x20000, 0x9f75b83b );/* banked */
+		ROM_RELOAD(			 0x30000, 0x20000 );/* banked */
 	
-	    ROM_REGION( 0x010000, REGION_GFX2, 0 )	/* cart gfx */
-	    ROM_LOAD( "io-u1",    0x00000, 0x10000, 0x9089fc24 )
+	    ROM_REGION( 0x010000, REGION_GFX2, 0 );/* cart gfx */
+	    ROM_LOAD( "io-u1",    0x00000, 0x10000, 0x9089fc24 );
 	
-	    ROM_REGION( 0x0100,  REGION_USER1, 0 )	/* rp5h01 data */
-	    ROM_LOAD( "security.prm", 0x00000, 0x10, 0x0 )
-	ROM_END
+	    ROM_REGION( 0x0100,  REGION_USER1, 0 );/* rp5h01 data */
+	    ROM_LOAD( "security.prm", 0x00000, 0x10, 0x0 );
+	ROM_END(); }}; 
 	
 	/* i-Board Games */
-	ROM_START( pc_cshwk )	/* Captain Sky Hawk */
+	static RomLoadPtr rom_pc_cshwk = new RomLoadPtr(){ public void handler(){ 	/* Captain Sky Hawk */
 		BIOS_CPU
-		ROM_LOAD( "yw-u3",   0x0c000, 0x2000, 0x9d988209 ) /* extra bios code for this game */
+		ROM_LOAD( "yw-u3",   0x0c000, 0x2000, 0x9d988209 );/* extra bios code for this game */
 	    BIOS_GFX
 	
-	    ROM_REGION( 0x50000, REGION_CPU2, 0 )  /* 64k for code */
-	    ROM_LOAD( "yw-u1",   0x10000, 0x20000, 0xa5e0208a ) /* banked */
-		ROM_RELOAD(			 0x30000, 0x20000 )
+	    ROM_REGION( 0x50000, REGION_CPU2, 0 ); /* 64k for code */
+	    ROM_LOAD( "yw-u1",   0x10000, 0x20000, 0xa5e0208a );/* banked */
+		ROM_RELOAD(			 0x30000, 0x20000 );
 	
 		/* No cart gfx - uses vram */
 	
-	    ROM_REGION( 0x0100,  REGION_USER1, 0 )	/* rp5h01 data */
-	    ROM_LOAD( "security.prm", 0x00000, 0x10, 0xeb1c794f )
-	ROM_END
+	    ROM_REGION( 0x0100,  REGION_USER1, 0 );/* rp5h01 data */
+	    ROM_LOAD( "security.prm", 0x00000, 0x10, 0xeb1c794f );
+	ROM_END(); }}; 
 	
-	ROM_START( pc_sjetm )	/* Solar Jetman */
+	static RomLoadPtr rom_pc_sjetm = new RomLoadPtr(){ public void handler(){ 	/* Solar Jetman */
 		BIOS_CPU
-		ROM_LOAD( "lj-u3",   0x0c000, 0x2000, 0x273d8e75 ) /* extra bios code for this game */
+		ROM_LOAD( "lj-u3",   0x0c000, 0x2000, 0x273d8e75 );/* extra bios code for this game */
 	    BIOS_GFX
 	
-	    ROM_REGION( 0x50000, REGION_CPU2, 0 )  /* 64k for code */
-	    ROM_LOAD( "lj-u1",   0x10000, 0x40000, 0x8111ba08 ) /* banked */
+	    ROM_REGION( 0x50000, REGION_CPU2, 0 ); /* 64k for code */
+	    ROM_LOAD( "lj-u1",   0x10000, 0x40000, 0x8111ba08 );/* banked */
 	
 		/* No cart gfx - uses vram */
 	
-	    ROM_REGION( 0x0100,  REGION_USER1, 0 )	/* rp5h01 data */
-	    ROM_LOAD( "security.prm", 0x00000, 0x10, 0xf3ae712a )
-	ROM_END
+	    ROM_REGION( 0x0100,  REGION_USER1, 0 );/* rp5h01 data */
+	    ROM_LOAD( "security.prm", 0x00000, 0x10, 0xf3ae712a );
+	ROM_END(); }}; 
 	
 	
 	/* K-Board Games */
-	ROM_START( pc_moglf )	/* Mario Open Golf */
+	static RomLoadPtr rom_pc_moglf = new RomLoadPtr(){ public void handler(){ 	/* Mario Open Golf */
 		BIOS_CPU
-		ROM_LOAD( "ug-u2",   0x0c000, 0x2000, 0xe932fe2b ) /* extra bios code for this game */
+		ROM_LOAD( "ug-u2",   0x0c000, 0x2000, 0xe932fe2b );/* extra bios code for this game */
 	    BIOS_GFX
 	
-	    ROM_REGION( 0x50000, REGION_CPU2, 0 )  /* 64k for code */
-	    ROM_LOAD( "ug-u4",   0x10000, 0x40000, 0x091a6a4c ) /* banked */
+	    ROM_REGION( 0x50000, REGION_CPU2, 0 ); /* 64k for code */
+	    ROM_LOAD( "ug-u4",   0x10000, 0x40000, 0x091a6a4c );/* banked */
 	
 		/* No cart gfx - uses vram */
 	
-	    ROM_REGION( 0x0100,  REGION_USER1, 0 )	/* rp5h01 data */
-	    ROM_LOAD( "security.prm", 0x00000, 0x10, 0x633766d5 )
-	ROM_END
+	    ROM_REGION( 0x0100,  REGION_USER1, 0 );/* rp5h01 data */
+	    ROM_LOAD( "security.prm", 0x00000, 0x10, 0x633766d5 );
+	ROM_END(); }}; 
 	
 	/***************************************************************************
 	
@@ -1566,10 +1566,10 @@ public class playch10
 	
 	***************************************************************************/
 	
-	ROM_START( playch10 )
+	static RomLoadPtr rom_playch10 = new RomLoadPtr(){ public void handler(){ 
 	    BIOS_CPU
 		BIOS_GFX
-	ROM_END
+	ROM_END(); }}; 
 	
 	/******************************************************************************/
 	

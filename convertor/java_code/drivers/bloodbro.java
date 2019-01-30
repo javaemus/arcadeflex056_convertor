@@ -628,103 +628,103 @@ public class bloodbro
 	
 	
 	
-	ROM_START( bloodbro )
-		ROM_REGION( 0x80000, REGION_CPU1, 0 )
-		ROM_LOAD16_BYTE( "bb_02.bin",    0x00001, 0x20000, 0xc0fdc3e4 )
-		ROM_LOAD16_BYTE( "bb_01.bin",    0x00000, 0x20000, 0x2d7e0fdf )
-		ROM_LOAD16_BYTE( "bb_04.bin",    0x40001, 0x20000, 0xfd951c2c )
-		ROM_LOAD16_BYTE( "bb_03.bin",    0x40000, 0x20000, 0x18d3c460 )
+	static RomLoadPtr rom_bloodbro = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x80000, REGION_CPU1, 0 );
+		ROM_LOAD16_BYTE( "bb_02.bin",    0x00001, 0x20000, 0xc0fdc3e4 );
+		ROM_LOAD16_BYTE( "bb_01.bin",    0x00000, 0x20000, 0x2d7e0fdf );
+		ROM_LOAD16_BYTE( "bb_04.bin",    0x40001, 0x20000, 0xfd951c2c );
+		ROM_LOAD16_BYTE( "bb_03.bin",    0x40000, 0x20000, 0x18d3c460 );
 	
-		ROM_REGION( 0x20000, REGION_CPU2, 0 )
-		ROM_LOAD( "bb_07.bin",    0x000000, 0x08000, 0x411b94e8 )
-		ROM_CONTINUE(             0x010000, 0x08000 )
-		ROM_COPY( REGION_CPU2, 0, 0x018000, 0x08000 )
+		ROM_REGION( 0x20000, REGION_CPU2, 0 );
+		ROM_LOAD( "bb_07.bin",    0x000000, 0x08000, 0x411b94e8 );
+		ROM_CONTINUE(             0x010000, 0x08000 );
+		ROM_COPY( REGION_CPU2, 0, 0x018000, 0x08000 );
 	
-		ROM_REGION( 0x20000, REGION_GFX1, ROMREGION_DISPOSE )
-		ROM_LOAD( "bb_05.bin",    0x00000, 0x10000, 0x04ba6d19 )	/* characters */
-		ROM_LOAD( "bb_06.bin",    0x10000, 0x10000, 0x7092e35b )
+		ROM_REGION( 0x20000, REGION_GFX1, ROMREGION_DISPOSE );
+		ROM_LOAD( "bb_05.bin",    0x00000, 0x10000, 0x04ba6d19 );/* characters */
+		ROM_LOAD( "bb_06.bin",    0x10000, 0x10000, 0x7092e35b );
 	
-		ROM_REGION( 0x100000, REGION_GFX2, ROMREGION_DISPOSE )
-		ROM_LOAD( "bloodb.bk",   0x00000, 0x100000, 0x1aa87ee6 )	/* Background+Foreground */
+		ROM_REGION( 0x100000, REGION_GFX2, ROMREGION_DISPOSE );
+		ROM_LOAD( "bloodb.bk",   0x00000, 0x100000, 0x1aa87ee6 );/* Background+Foreground */
 	
-		ROM_REGION( 0x100000, REGION_GFX3, ROMREGION_DISPOSE )
-		ROM_LOAD( "bloodb.obj",   0x00000, 0x100000, 0xd27c3952 )	/* sprites */
+		ROM_REGION( 0x100000, REGION_GFX3, ROMREGION_DISPOSE );
+		ROM_LOAD( "bloodb.obj",   0x00000, 0x100000, 0xd27c3952 );/* sprites */
 	
-		ROM_REGION( 0x20000, REGION_SOUND1, 0 )	/* ADPCM samples */
-		ROM_LOAD( "bb_08.bin",    0x00000, 0x20000, 0xdeb1b975 )
-	ROM_END
+		ROM_REGION( 0x20000, REGION_SOUND1, 0 );/* ADPCM samples */
+		ROM_LOAD( "bb_08.bin",    0x00000, 0x20000, 0xdeb1b975 );
+	ROM_END(); }}; 
 	
-	ROM_START( weststry )
-		ROM_REGION( 0x80000, REGION_CPU1, 0 )	/* 64k for cpu code */
-		ROM_LOAD16_BYTE( "ws13.bin",    0x00001, 0x20000, 0x158e302a )
-		ROM_LOAD16_BYTE( "ws15.bin",    0x00000, 0x20000, 0x672e9027 )
-		ROM_LOAD16_BYTE( "bb_04.bin",   0x40001, 0x20000, 0xfd951c2c )
-		ROM_LOAD16_BYTE( "bb_03.bin",   0x40000, 0x20000, 0x18d3c460 )
+	static RomLoadPtr rom_weststry = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x80000, REGION_CPU1, 0 );/* 64k for cpu code */
+		ROM_LOAD16_BYTE( "ws13.bin",    0x00001, 0x20000, 0x158e302a );
+		ROM_LOAD16_BYTE( "ws15.bin",    0x00000, 0x20000, 0x672e9027 );
+		ROM_LOAD16_BYTE( "bb_04.bin",   0x40001, 0x20000, 0xfd951c2c );
+		ROM_LOAD16_BYTE( "bb_03.bin",   0x40000, 0x20000, 0x18d3c460 );
 	
-		ROM_REGION( 0x20000, REGION_CPU2, 0 )	/* 64k for sound cpu code */
-		ROM_LOAD( "ws17.bin",    0x000000, 0x08000, 0xe00a8f09 )
-		ROM_CONTINUE(            0x010000, 0x08000 )
-		ROM_COPY( REGION_CPU2, 0, 0x018000, 0x08000 )
+		ROM_REGION( 0x20000, REGION_CPU2, 0 );/* 64k for sound cpu code */
+		ROM_LOAD( "ws17.bin",    0x000000, 0x08000, 0xe00a8f09 );
+		ROM_CONTINUE(            0x010000, 0x08000 );
+		ROM_COPY( REGION_CPU2, 0, 0x018000, 0x08000 );
 	
-		ROM_REGION( 0x20000, REGION_GFX1, ROMREGION_DISPOSE )
-		ROM_LOAD( "ws09.bin",    0x00000, 0x08000, 0xf05b2b3e )	/* characters */
-		ROM_CONTINUE(            0x00000, 0x8000 )
-		ROM_LOAD( "ws11.bin",    0x08000, 0x08000, 0x2b10e3d2 )
-		ROM_CONTINUE(            0x08000, 0x8000 )
-		ROM_LOAD( "ws10.bin",    0x10000, 0x08000, 0xefdf7c82 )
-		ROM_CONTINUE(            0x10000, 0x8000 )
-		ROM_LOAD( "ws12.bin",    0x18000, 0x08000, 0xaf993578 )
-		ROM_CONTINUE(            0x18000, 0x8000 )
+		ROM_REGION( 0x20000, REGION_GFX1, ROMREGION_DISPOSE );
+		ROM_LOAD( "ws09.bin",    0x00000, 0x08000, 0xf05b2b3e );/* characters */
+		ROM_CONTINUE(            0x00000, 0x8000 );
+		ROM_LOAD( "ws11.bin",    0x08000, 0x08000, 0x2b10e3d2 );
+		ROM_CONTINUE(            0x08000, 0x8000 );
+		ROM_LOAD( "ws10.bin",    0x10000, 0x08000, 0xefdf7c82 );
+		ROM_CONTINUE(            0x10000, 0x8000 );
+		ROM_LOAD( "ws12.bin",    0x18000, 0x08000, 0xaf993578 );
+		ROM_CONTINUE(            0x18000, 0x8000 );
 	
-		ROM_REGION( 0x100000, REGION_GFX2, ROMREGION_DISPOSE )
-		ROM_LOAD( "ws05.bin",    0x00000, 0x20000, 0x007c8dc0 )	/* Background */
-		ROM_LOAD( "ws07.bin",    0x20000, 0x20000, 0x0f0c8d9a )
-		ROM_LOAD( "ws06.bin",    0x40000, 0x20000, 0x459d075e )
-		ROM_LOAD( "ws08.bin",    0x60000, 0x20000, 0x4d6783b3 )
-		ROM_LOAD( "ws01.bin",    0x80000, 0x20000, 0x32bda4bc )	/* Foreground */
-		ROM_LOAD( "ws03.bin",    0xa0000, 0x20000, 0x046b51f8 )
-		ROM_LOAD( "ws02.bin",    0xc0000, 0x20000, 0xed9d682e )
-		ROM_LOAD( "ws04.bin",    0xe0000, 0x20000, 0x75f082e5 )
+		ROM_REGION( 0x100000, REGION_GFX2, ROMREGION_DISPOSE );
+		ROM_LOAD( "ws05.bin",    0x00000, 0x20000, 0x007c8dc0 );/* Background */
+		ROM_LOAD( "ws07.bin",    0x20000, 0x20000, 0x0f0c8d9a );
+		ROM_LOAD( "ws06.bin",    0x40000, 0x20000, 0x459d075e );
+		ROM_LOAD( "ws08.bin",    0x60000, 0x20000, 0x4d6783b3 );
+		ROM_LOAD( "ws01.bin",    0x80000, 0x20000, 0x32bda4bc );/* Foreground */
+		ROM_LOAD( "ws03.bin",    0xa0000, 0x20000, 0x046b51f8 );
+		ROM_LOAD( "ws02.bin",    0xc0000, 0x20000, 0xed9d682e );
+		ROM_LOAD( "ws04.bin",    0xe0000, 0x20000, 0x75f082e5 );
 	
-		ROM_REGION( 0x100000, REGION_GFX3, ROMREGION_DISPOSE )
-		ROM_LOAD( "ws25.bin",    0x00000, 0x20000, 0x8092e8e9 )	/* sprites */
-		ROM_LOAD( "ws26.bin",    0x20000, 0x20000, 0xf6a1f42c )
-		ROM_LOAD( "ws23.bin",    0x40000, 0x20000, 0x43d58e24 )
-		ROM_LOAD( "ws24.bin",    0x60000, 0x20000, 0x20a867ea )
-		ROM_LOAD( "ws21.bin",    0x80000, 0x20000, 0xe23d7296 )
-		ROM_LOAD( "ws22.bin",    0xa0000, 0x20000, 0x7150a060 )
-		ROM_LOAD( "ws19.bin",    0xc0000, 0x20000, 0xc5dd0a96 )
-		ROM_LOAD( "ws20.bin",    0xe0000, 0x20000, 0xf1245c16 )
+		ROM_REGION( 0x100000, REGION_GFX3, ROMREGION_DISPOSE );
+		ROM_LOAD( "ws25.bin",    0x00000, 0x20000, 0x8092e8e9 );/* sprites */
+		ROM_LOAD( "ws26.bin",    0x20000, 0x20000, 0xf6a1f42c );
+		ROM_LOAD( "ws23.bin",    0x40000, 0x20000, 0x43d58e24 );
+		ROM_LOAD( "ws24.bin",    0x60000, 0x20000, 0x20a867ea );
+		ROM_LOAD( "ws21.bin",    0x80000, 0x20000, 0xe23d7296 );
+		ROM_LOAD( "ws22.bin",    0xa0000, 0x20000, 0x7150a060 );
+		ROM_LOAD( "ws19.bin",    0xc0000, 0x20000, 0xc5dd0a96 );
+		ROM_LOAD( "ws20.bin",    0xe0000, 0x20000, 0xf1245c16 );
 	
-		ROM_REGION( 0x20000, REGION_SOUND1, 0 )	/* ADPCM samples */
-		ROM_LOAD( "bb_08.bin",    0x00000, 0x20000, 0xdeb1b975 )
-	ROM_END
+		ROM_REGION( 0x20000, REGION_SOUND1, 0 );/* ADPCM samples */
+		ROM_LOAD( "bb_08.bin",    0x00000, 0x20000, 0xdeb1b975 );
+	ROM_END(); }}; 
 	
-	ROM_START( skysmash )
-		ROM_REGION( 0x80000, REGION_CPU1, 0 )
-		ROM_LOAD16_BYTE( "rom5",    0x00000, 0x20000, 0x867f9897 )
-		ROM_LOAD16_BYTE( "rom6",    0x00001, 0x20000, 0xe9c1d308 )
-		ROM_LOAD16_BYTE( "rom7",    0x40000, 0x20000, 0xd209db4d )
-		ROM_LOAD16_BYTE( "rom8",    0x40001, 0x20000, 0xd3646728 )
+	static RomLoadPtr rom_skysmash = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x80000, REGION_CPU1, 0 );
+		ROM_LOAD16_BYTE( "rom5",    0x00000, 0x20000, 0x867f9897 );
+		ROM_LOAD16_BYTE( "rom6",    0x00001, 0x20000, 0xe9c1d308 );
+		ROM_LOAD16_BYTE( "rom7",    0x40000, 0x20000, 0xd209db4d );
+		ROM_LOAD16_BYTE( "rom8",    0x40001, 0x20000, 0xd3646728 );
 	
-		ROM_REGION( 0x20000, REGION_CPU2, 0 )
-		ROM_LOAD( "rom2",    0x000000, 0x08000, 0x75b194cf )
-		ROM_CONTINUE(        0x010000, 0x08000 )
-		ROM_COPY( REGION_CPU2, 0, 0x018000, 0x08000 )
+		ROM_REGION( 0x20000, REGION_CPU2, 0 );
+		ROM_LOAD( "rom2",    0x000000, 0x08000, 0x75b194cf );
+		ROM_CONTINUE(        0x010000, 0x08000 );
+		ROM_COPY( REGION_CPU2, 0, 0x018000, 0x08000 );
 	
-		ROM_REGION( 0x20000, REGION_GFX1, ROMREGION_DISPOSE )
-		ROM_LOAD( "rom3",    0x00000, 0x10000, 0xfbb241be )	/* characters */
-		ROM_LOAD( "rom4",    0x10000, 0x10000, 0xad3cde81 )
+		ROM_REGION( 0x20000, REGION_GFX1, ROMREGION_DISPOSE );
+		ROM_LOAD( "rom3",    0x00000, 0x10000, 0xfbb241be );/* characters */
+		ROM_LOAD( "rom4",    0x10000, 0x10000, 0xad3cde81 );
 	
-		ROM_REGION( 0x100000, REGION_GFX2, ROMREGION_DISPOSE )
-		ROM_LOAD( "rom9",    0x00000, 0x100000, 0xb0a5eecf )	/* Background + Foreground */
+		ROM_REGION( 0x100000, REGION_GFX2, ROMREGION_DISPOSE );
+		ROM_LOAD( "rom9",    0x00000, 0x100000, 0xb0a5eecf );/* Background + Foreground */
 	
-		ROM_REGION( 0x80000, REGION_GFX3, ROMREGION_DISPOSE )
-		ROM_LOAD( "rom10",   0x00000, 0x080000, 0x1bbcda5d )	/* sprites */
+		ROM_REGION( 0x80000, REGION_GFX3, ROMREGION_DISPOSE );
+		ROM_LOAD( "rom10",   0x00000, 0x080000, 0x1bbcda5d );/* sprites */
 	
-		ROM_REGION( 0x20000, REGION_SOUND1, 0 )	/* ADPCM samples */
-		ROM_LOAD( "rom1",    0x00000, 0x20000, 0xe69986f6 )
-	ROM_END
+		ROM_REGION( 0x20000, REGION_SOUND1, 0 );/* ADPCM samples */
+		ROM_LOAD( "rom1",    0x00000, 0x20000, 0xe69986f6 );
+	ROM_END(); }}; 
 	
 	
 	/***************************************************************************/

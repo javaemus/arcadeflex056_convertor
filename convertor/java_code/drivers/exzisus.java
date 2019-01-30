@@ -431,43 +431,43 @@ public class exzisus
 	
 	***************************************************************************/
 	
-	ROM_START( exzisus )
-		ROM_REGION( 0x48000, REGION_CPU1, 0 )     				/* Z80 CPU A */
-		ROM_LOAD( "b23-11.bin", 0x00000, 0x08000, 0xd6a79cef )
-		ROM_CONTINUE(           0x10000, 0x08000 )
-		ROM_LOAD( "b12-12.bin", 0x18000, 0x10000, 0xa662be67 )
-		ROM_LOAD( "b12-13.bin", 0x28000, 0x10000, 0x04a29633 )
+	static RomLoadPtr rom_exzisus = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x48000, REGION_CPU1, 0 );    				/* Z80 CPU A */
+		ROM_LOAD( "b23-11.bin", 0x00000, 0x08000, 0xd6a79cef );
+		ROM_CONTINUE(           0x10000, 0x08000 );
+		ROM_LOAD( "b12-12.bin", 0x18000, 0x10000, 0xa662be67 );
+		ROM_LOAD( "b12-13.bin", 0x28000, 0x10000, 0x04a29633 );
 	
-		ROM_REGION( 0x10000, REGION_CPU2, 0 )     				/* Z80 for Sound */
-		ROM_LOAD( "b23-14.bin",  0x00000, 0x08000, 0xf7ca7df2 )
+		ROM_REGION( 0x10000, REGION_CPU2, 0 );    				/* Z80 for Sound */
+		ROM_LOAD( "b23-14.bin",  0x00000, 0x08000, 0xf7ca7df2 );
 	
-		ROM_REGION( 0x10000, REGION_CPU3, 0 )     				/* Z80 CPU B */
-		ROM_LOAD( "b23-13.bin",  0x00000, 0x08000, 0x51110aa1 )
+		ROM_REGION( 0x10000, REGION_CPU3, 0 );    				/* Z80 CPU B */
+		ROM_LOAD( "b23-13.bin",  0x00000, 0x08000, 0x51110aa1 );
 	
-		ROM_REGION( 0x48000, REGION_CPU4, 0 ) 					/* Z80 CPU C */
-		ROM_LOAD( "b23-10.bin", 0x00000, 0x08000, 0xc80216fc )
-		ROM_CONTINUE(           0x10000, 0x08000 )
-		ROM_LOAD( "b23-12.bin", 0x18000, 0x10000, 0x13637f54 )
+		ROM_REGION( 0x48000, REGION_CPU4, 0 );					/* Z80 CPU C */
+		ROM_LOAD( "b23-10.bin", 0x00000, 0x08000, 0xc80216fc );
+		ROM_CONTINUE(           0x10000, 0x08000 );
+		ROM_LOAD( "b23-12.bin", 0x18000, 0x10000, 0x13637f54 );
 	
-		ROM_REGION( 0x80000, REGION_GFX1, ROMREGION_DISPOSE | ROMREGION_INVERT )	/* BG 0 */
-		ROM_LOAD( "b12-16.bin",  0x00000, 0x10000, 0x6fec6acb )
-		ROM_LOAD( "b12-18.bin",  0x10000, 0x10000, 0x64e358aa )
-		ROM_LOAD( "b12-20.bin",  0x20000, 0x10000, 0x87f52e89 )
-		ROM_LOAD( "b12-15.bin",  0x40000, 0x10000, 0xd81107c8 )
-		ROM_LOAD( "b12-17.bin",  0x50000, 0x10000, 0xdb1d5a6c )
-		ROM_LOAD( "b12-19.bin",  0x60000, 0x10000, 0x772b2641 )
+		ROM_REGION( 0x80000, REGION_GFX1, ROMREGION_DISPOSE | ROMREGION_INVERT );/* BG 0 */
+		ROM_LOAD( "b12-16.bin",  0x00000, 0x10000, 0x6fec6acb );
+		ROM_LOAD( "b12-18.bin",  0x10000, 0x10000, 0x64e358aa );
+		ROM_LOAD( "b12-20.bin",  0x20000, 0x10000, 0x87f52e89 );
+		ROM_LOAD( "b12-15.bin",  0x40000, 0x10000, 0xd81107c8 );
+		ROM_LOAD( "b12-17.bin",  0x50000, 0x10000, 0xdb1d5a6c );
+		ROM_LOAD( "b12-19.bin",  0x60000, 0x10000, 0x772b2641 );
 	
-		ROM_REGION( 0x80000, REGION_GFX2, ROMREGION_DISPOSE | ROMREGION_INVERT )	/* BG 1 */
-		ROM_LOAD( "b23-06.bin",  0x00000, 0x10000, 0x44f8f661 )
-		ROM_LOAD( "b23-08.bin",  0x10000, 0x10000, 0x1ce498c1 )
-		ROM_LOAD( "b23-07.bin",  0x40000, 0x10000, 0xd7f6ec89 )
-		ROM_LOAD( "b23-09.bin",  0x50000, 0x10000, 0x6651617f )
+		ROM_REGION( 0x80000, REGION_GFX2, ROMREGION_DISPOSE | ROMREGION_INVERT );/* BG 1 */
+		ROM_LOAD( "b23-06.bin",  0x00000, 0x10000, 0x44f8f661 );
+		ROM_LOAD( "b23-08.bin",  0x10000, 0x10000, 0x1ce498c1 );
+		ROM_LOAD( "b23-07.bin",  0x40000, 0x10000, 0xd7f6ec89 );
+		ROM_LOAD( "b23-09.bin",  0x50000, 0x10000, 0x6651617f );
 	
-		ROM_REGION( 0x00c00, REGION_PROMS, 0 )					/* PROMS */
-		ROM_LOAD( "b23-04.bin",  0x00000, 0x00400, 0x5042cffa )
-		ROM_LOAD( "b23-03.bin",  0x00400, 0x00400, 0x9458fd45 )
-		ROM_LOAD( "b23-05.bin",  0x00800, 0x00400, 0x87f0f69a )
-	ROM_END
+		ROM_REGION( 0x00c00, REGION_PROMS, 0 );				/* PROMS */
+		ROM_LOAD( "b23-04.bin",  0x00000, 0x00400, 0x5042cffa );
+		ROM_LOAD( "b23-03.bin",  0x00400, 0x00400, 0x9458fd45 );
+		ROM_LOAD( "b23-05.bin",  0x00800, 0x00400, 0x87f0f69a );
+	ROM_END(); }}; 
 	
 	
 	/*  ( YEAR      NAME  PARENT  MACHINE    INPUT     INIT  MONITOR  COMPANY              FULLNAME ) */

@@ -237,27 +237,27 @@ public class higemaru
 	
 	***************************************************************************/
 	
-	ROM_START( higemaru )
-		ROM_REGION( 0x1c000, REGION_CPU1, 0 )	/* 64k for code */
-		ROM_LOAD( "hg4",          0x0000, 0x2000, 0xdc67a7f9 )
-		ROM_LOAD( "hg5",          0x2000, 0x2000, 0xf65a4b68 )
-		ROM_LOAD( "hg6",          0x4000, 0x2000, 0x5f5296aa )
-		ROM_LOAD( "hg7",          0x6000, 0x2000, 0xdc5d455d )
+	static RomLoadPtr rom_higemaru = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x1c000, REGION_CPU1, 0 );/* 64k for code */
+		ROM_LOAD( "hg4",          0x0000, 0x2000, 0xdc67a7f9 );
+		ROM_LOAD( "hg5",          0x2000, 0x2000, 0xf65a4b68 );
+		ROM_LOAD( "hg6",          0x4000, 0x2000, 0x5f5296aa );
+		ROM_LOAD( "hg7",          0x6000, 0x2000, 0xdc5d455d );
 	
-		ROM_REGION( 0x2000, REGION_GFX1, ROMREGION_DISPOSE )
-		ROM_LOAD( "hg3",          0x0000, 0x2000, 0xb37b88c8 )	/* characters */
+		ROM_REGION( 0x2000, REGION_GFX1, ROMREGION_DISPOSE );
+		ROM_LOAD( "hg3",          0x0000, 0x2000, 0xb37b88c8 );/* characters */
 	
-		ROM_REGION( 0x4000, REGION_GFX2, ROMREGION_DISPOSE )
-		ROM_LOAD( "hg1",          0x0000, 0x2000, 0xef4c2f5d )	/* tiles */
-		ROM_LOAD( "hg2",          0x2000, 0x2000, 0x9133f804 )
+		ROM_REGION( 0x4000, REGION_GFX2, ROMREGION_DISPOSE );
+		ROM_LOAD( "hg1",          0x0000, 0x2000, 0xef4c2f5d );/* tiles */
+		ROM_LOAD( "hg2",          0x2000, 0x2000, 0x9133f804 );
 	
-		ROM_REGION( 0x0420, REGION_PROMS, 0 )
-		ROM_LOAD( "hgb3",         0x0000, 0x0020, 0x629cebd8 )	/* palette */
-		ROM_LOAD( "hgb5",         0x0020, 0x0100, 0xdbaa4443 )	/* char lookup table */
-		ROM_LOAD( "hgb1",         0x0120, 0x0100, 0x07c607ce )	/* sprite lookup table */
-		ROM_LOAD( "hgb4",         0x0220, 0x0100, 0x712ac508 )	/* interrupt timing (not used) */
-		ROM_LOAD( "hgb2",         0x0320, 0x0100, 0x4921635c )	/* video timing? (not used) */
-	ROM_END
+		ROM_REGION( 0x0420, REGION_PROMS, 0 );
+		ROM_LOAD( "hgb3",         0x0000, 0x0020, 0x629cebd8 );/* palette */
+		ROM_LOAD( "hgb5",         0x0020, 0x0100, 0xdbaa4443 );/* char lookup table */
+		ROM_LOAD( "hgb1",         0x0120, 0x0100, 0x07c607ce );/* sprite lookup table */
+		ROM_LOAD( "hgb4",         0x0220, 0x0100, 0x712ac508 );/* interrupt timing (not used) */
+		ROM_LOAD( "hgb2",         0x0320, 0x0100, 0x4921635c );/* video timing? (not used) */
+	ROM_END(); }}; 
 	
 	
 	

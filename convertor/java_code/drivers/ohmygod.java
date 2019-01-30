@@ -418,37 +418,37 @@ public class ohmygod
 	
 	***************************************************************************/
 	
-	ROM_START( ohmygod )
-		ROM_REGION( 0x80000, REGION_CPU1, 0 )
+	static RomLoadPtr rom_ohmygod = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x80000, REGION_CPU1, 0 );
 		ROM_LOAD16_WORD_SWAP( "omg-p.114", 0x00000, 0x80000, 0x48fa40ca )
 	
-		ROM_REGION( 0x80000, REGION_GFX1, ROMREGION_DISPOSE )
-		ROM_LOAD( "omg-b.117",    0x00000, 0x80000, 0x73621fa6 )
+		ROM_REGION( 0x80000, REGION_GFX1, ROMREGION_DISPOSE );
+		ROM_LOAD( "omg-b.117",    0x00000, 0x80000, 0x73621fa6 );
 	
-		ROM_REGION( 0x80000, REGION_GFX2, ROMREGION_DISPOSE )
-		ROM_LOAD( "omg-s.120",    0x00000, 0x80000, 0x6413bd36 )
+		ROM_REGION( 0x80000, REGION_GFX2, ROMREGION_DISPOSE );
+		ROM_LOAD( "omg-s.120",    0x00000, 0x80000, 0x6413bd36 );
 	
-		ROM_REGION( 0x240000, REGION_SOUND1, 0 )
-		ROM_LOAD( "omg-g.107",    0x00000, 0x200000, 0x7405573c )
+		ROM_REGION( 0x240000, REGION_SOUND1, 0 );
+		ROM_LOAD( "omg-g.107",    0x00000, 0x200000, 0x7405573c );
 		/* 00000-1ffff is fixed, 20000-3ffff is banked */
-		ROM_RELOAD(               0x40000, 0x200000 )
-	ROM_END
+		ROM_RELOAD(               0x40000, 0x200000 );
+	ROM_END(); }}; 
 	
-	ROM_START( naname )
-		ROM_REGION( 0x80000, REGION_CPU1, 0 )
+	static RomLoadPtr rom_naname = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x80000, REGION_CPU1, 0 );
 		ROM_LOAD16_WORD_SWAP( "036-prg.114", 0x00000, 0x80000, 0x3b7362f7 )
 	
-		ROM_REGION( 0x80000, REGION_GFX1, ROMREGION_DISPOSE )
-		ROM_LOAD( "036-bg.117",    0x00000, 0x80000, 0xf53e8da5 )
+		ROM_REGION( 0x80000, REGION_GFX1, ROMREGION_DISPOSE );
+		ROM_LOAD( "036-bg.117",    0x00000, 0x80000, 0xf53e8da5 );
 	
-		ROM_REGION( 0x80000, REGION_GFX2, ROMREGION_DISPOSE )
-		ROM_LOAD( "036-spr.120",   0x00000, 0x80000, 0xe36d8731 )
+		ROM_REGION( 0x80000, REGION_GFX2, ROMREGION_DISPOSE );
+		ROM_LOAD( "036-spr.120",   0x00000, 0x80000, 0xe36d8731 );
 	
-		ROM_REGION( 0x240000, REGION_SOUND1, 0 )
-		ROM_LOAD( "036-snd.107",  0x00000, 0x200000, 0xa3e0caf4 )
+		ROM_REGION( 0x240000, REGION_SOUND1, 0 );
+		ROM_LOAD( "036-snd.107",  0x00000, 0x200000, 0xa3e0caf4 );
 		/* 00000-1ffff is fixed, 20000-3ffff is banked */
-		ROM_RELOAD(               0x40000, 0x200000 )
-	ROM_END
+		ROM_RELOAD(               0x40000, 0x200000 );
+	ROM_END(); }}; 
 	
 	
 	

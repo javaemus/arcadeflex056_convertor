@@ -800,18 +800,18 @@ public class dynax
 	
 	***************************************************************************/
 	
-	ROM_START( sprtmtch )
-		ROM_REGION( 0x10000, REGION_CPU1, 0 )	/* Z80 Code */
-		ROM_LOAD( "3101.3d", 0x0000, 0x10000, 0xd8fa9638 )
+	static RomLoadPtr rom_sprtmtch = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x10000, REGION_CPU1, 0 );/* Z80 Code */
+		ROM_LOAD( "3101.3d", 0x0000, 0x10000, 0xd8fa9638 );
 	
-		ROM_REGION( 0x40000, REGION_GFX1, 0 )	/* Gfx Data (Do not dispose) */
-		ROM_LOAD( "3102.6c", 0x00000, 0x20000, 0x46f90e59 )
-		ROM_LOAD( "3103.5c", 0x20000, 0x20000, 0xad29d7bd )
+		ROM_REGION( 0x40000, REGION_GFX1, 0 );/* Gfx Data (Do not dispose) */
+		ROM_LOAD( "3102.6c", 0x00000, 0x20000, 0x46f90e59 );
+		ROM_LOAD( "3103.5c", 0x20000, 0x20000, 0xad29d7bd );
 	
-		ROM_REGION( 0x400, REGION_PROMS, ROMREGION_DISPOSE )	/* Color PROMs */
-		ROM_LOAD( "18g", 0x000, 0x200, 0xdcc4e0dd )	// FIXED BITS (0xxxxxxx)
-		ROM_LOAD( "17g", 0x200, 0x200, 0x5443ebfb )
-	ROM_END
+		ROM_REGION( 0x400, REGION_PROMS, ROMREGION_DISPOSE );/* Color PROMs */
+		ROM_LOAD( "18g", 0x000, 0x200, 0xdcc4e0dd );// FIXED BITS (0xxxxxxx)
+		ROM_LOAD( "17g", 0x200, 0x200, 0x5443ebfb );
+	ROM_END(); }}; 
 	
 	
 	
@@ -850,22 +850,22 @@ public class dynax
 	
 	***************************************************************************/
 	
-	ROM_START( ddenlovr )
-		ROM_REGION( 0x080000, REGION_CPU1, 0 )		/* 68000 Code */
-		ROM_LOAD16_BYTE( "1134h.1a", 0x000000, 0x040000, 0x43accdff )
-		ROM_LOAD16_BYTE( "1133h.1c", 0x000001, 0x040000, 0x361bf7b6 )
+	static RomLoadPtr rom_ddenlovr = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x080000, REGION_CPU1, 0 );	/* 68000 Code */
+		ROM_LOAD16_BYTE( "1134h.1a", 0x000000, 0x040000, 0x43accdff );
+		ROM_LOAD16_BYTE( "1133h.1c", 0x000001, 0x040000, 0x361bf7b6 );
 	
-		ROM_REGION( 0x280000, REGION_GFX1, 0 )	/* Gfx Data (Do not dispose) */
-		ROM_LOAD( "1135h.3h", 0x000000, 0x080000, 0xee143d8e )
-		ROM_LOAD( "1136h.3f", 0x080000, 0x080000, 0x58a662be )
-		ROM_LOAD( "1137h.3e", 0x100000, 0x080000, 0xf96e0708 )
-		ROM_LOAD( "1138h.3d", 0x180000, 0x080000, 0x633cff33 )
-		ROM_LOAD( "1139h.3c", 0x200000, 0x080000, 0xbe1189ca )
+		ROM_REGION( 0x280000, REGION_GFX1, 0 );/* Gfx Data (Do not dispose) */
+		ROM_LOAD( "1135h.3h", 0x000000, 0x080000, 0xee143d8e );
+		ROM_LOAD( "1136h.3f", 0x080000, 0x080000, 0x58a662be );
+		ROM_LOAD( "1137h.3e", 0x100000, 0x080000, 0xf96e0708 );
+		ROM_LOAD( "1138h.3d", 0x180000, 0x080000, 0x633cff33 );
+		ROM_LOAD( "1139h.3c", 0x200000, 0x080000, 0xbe1189ca );
 	
-		ROM_REGION( 0x100000, REGION_SOUND1, ROMREGION_SOUNDONLY )	/* Samples */
-		ROM_LOAD( "1131h.1f", 0x000000, 0x080000, 0x32f68241 )	// 4 x $40000
-		ROM_LOAD( "1132h.1e", 0x080000, 0x080000, 0x2de6363d )	//
-	ROM_END
+		ROM_REGION( 0x100000, REGION_SOUND1, ROMREGION_SOUNDONLY );/* Samples */
+		ROM_LOAD( "1131h.1f", 0x000000, 0x080000, 0x32f68241 );// 4 x $40000
+		ROM_LOAD( "1132h.1e", 0x080000, 0x080000, 0x2de6363d );//
+	ROM_END(); }}; 
 	
 	
 	/***************************************************************************
@@ -882,21 +882,21 @@ public class dynax
 	
 	***************************************************************************/
 	
-	ROM_START( rongrong )
-		ROM_REGION( 0x90000, REGION_CPU1, 0 )	/* Z80 Code */
-		ROM_LOAD( "rr_8002g.rom", 0x00000, 0x80000, 0x9a5d2885 )
-		ROM_RELOAD(               0x10000, 0x80000             )
+	static RomLoadPtr rom_rongrong = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x90000, REGION_CPU1, 0 );/* Z80 Code */
+		ROM_LOAD( "rr_8002g.rom", 0x00000, 0x80000, 0x9a5d2885 );
+		ROM_RELOAD(               0x10000, 0x80000             );
 	
-		ROM_REGION( 0x280000, REGION_GFX1, 0 )	/* Gfx Data (Do not dispose) */
-		ROM_LOAD( "rr_8003.rom",  0x000000, 0x80000, 0xf57192e5 )
-		ROM_LOAD( "rr_8004.rom",  0x080000, 0x80000, 0xc8c0b5cb )
-		ROM_LOAD( "rr_8005g.rom", 0x100000, 0x80000, 0x11c7a23c )
-		ROM_LOAD( "rr_8006g.rom", 0x180000, 0x80000, 0xf3de77e6 )
-		ROM_LOAD( "rr_8007g.rom", 0x200000, 0x80000, 0x38a8caa3 )
+		ROM_REGION( 0x280000, REGION_GFX1, 0 );/* Gfx Data (Do not dispose) */
+		ROM_LOAD( "rr_8003.rom",  0x000000, 0x80000, 0xf57192e5 );
+		ROM_LOAD( "rr_8004.rom",  0x080000, 0x80000, 0xc8c0b5cb );
+		ROM_LOAD( "rr_8005g.rom", 0x100000, 0x80000, 0x11c7a23c );
+		ROM_LOAD( "rr_8006g.rom", 0x180000, 0x80000, 0xf3de77e6 );
+		ROM_LOAD( "rr_8007g.rom", 0x200000, 0x80000, 0x38a8caa3 );
 	
-		ROM_REGION( 0x40000, REGION_SOUND1, ROMREGION_SOUNDONLY )	/* Samples */
-		ROM_LOAD( "rr_8001w.rom", 0x00000, 0x40000, 0x8edc87a2 )
-	ROM_END
+		ROM_REGION( 0x40000, REGION_SOUND1, ROMREGION_SOUNDONLY );/* Samples */
+		ROM_LOAD( "rr_8001w.rom", 0x00000, 0x40000, 0x8edc87a2 );
+	ROM_END(); }}; 
 	
 	
 	/***************************************************************************

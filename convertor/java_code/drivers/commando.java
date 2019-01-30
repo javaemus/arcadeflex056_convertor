@@ -388,149 +388,149 @@ public class commando
 	
 	***************************************************************************/
 	
-	ROM_START( commando )
-		ROM_REGION( 2*0x10000, REGION_CPU1, 0 )	/* 64k for code + 64k for decrypted opcodes */
-		ROM_LOAD( "m09_cm04.bin", 0x0000, 0x8000, 0x8438b694 )
-		ROM_LOAD( "m08_cm03.bin", 0x8000, 0x4000, 0x35486542 )
+	static RomLoadPtr rom_commando = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 2*0x10000, REGION_CPU1, 0 );/* 64k for code + 64k for decrypted opcodes */
+		ROM_LOAD( "m09_cm04.bin", 0x0000, 0x8000, 0x8438b694 );
+		ROM_LOAD( "m08_cm03.bin", 0x8000, 0x4000, 0x35486542 );
 	
-		ROM_REGION( 0x10000, REGION_CPU2, 0 )	/* 64k for the audio CPU */
-		ROM_LOAD( "f09_cm02.bin", 0x0000, 0x4000, 0xf9cc4a74 )
+		ROM_REGION( 0x10000, REGION_CPU2, 0 );/* 64k for the audio CPU */
+		ROM_LOAD( "f09_cm02.bin", 0x0000, 0x4000, 0xf9cc4a74 );
 	
-		ROM_REGION( 0x04000, REGION_GFX1, ROMREGION_DISPOSE )
-		ROM_LOAD( "d05_vt01.bin", 0x00000, 0x4000, 0x505726e0 )	/* characters */
+		ROM_REGION( 0x04000, REGION_GFX1, ROMREGION_DISPOSE );
+		ROM_LOAD( "d05_vt01.bin", 0x00000, 0x4000, 0x505726e0 );/* characters */
 	
-		ROM_REGION( 0x18000, REGION_GFX2, ROMREGION_DISPOSE )
-		ROM_LOAD( "a05_vt11.bin", 0x00000, 0x4000, 0x7b2e1b48 )	/* tiles */
-		ROM_LOAD( "a06_vt12.bin", 0x04000, 0x4000, 0x81b417d3 )
-		ROM_LOAD( "a07_vt13.bin", 0x08000, 0x4000, 0x5612dbd2 )
-		ROM_LOAD( "a08_vt14.bin", 0x0c000, 0x4000, 0x2b2dee36 )
-		ROM_LOAD( "a09_vt15.bin", 0x10000, 0x4000, 0xde70babf )
-		ROM_LOAD( "a10_vt16.bin", 0x14000, 0x4000, 0x14178237 )
+		ROM_REGION( 0x18000, REGION_GFX2, ROMREGION_DISPOSE );
+		ROM_LOAD( "a05_vt11.bin", 0x00000, 0x4000, 0x7b2e1b48 );/* tiles */
+		ROM_LOAD( "a06_vt12.bin", 0x04000, 0x4000, 0x81b417d3 );
+		ROM_LOAD( "a07_vt13.bin", 0x08000, 0x4000, 0x5612dbd2 );
+		ROM_LOAD( "a08_vt14.bin", 0x0c000, 0x4000, 0x2b2dee36 );
+		ROM_LOAD( "a09_vt15.bin", 0x10000, 0x4000, 0xde70babf );
+		ROM_LOAD( "a10_vt16.bin", 0x14000, 0x4000, 0x14178237 );
 	
-		ROM_REGION( 0x18000, REGION_GFX3, ROMREGION_DISPOSE )
-		ROM_LOAD( "e07_vt05.bin", 0x00000, 0x4000, 0x79f16e3d )	/* sprites */
-		ROM_LOAD( "e08_vt06.bin", 0x04000, 0x4000, 0x26fee521 )
-		ROM_LOAD( "e09_vt07.bin", 0x08000, 0x4000, 0xca88bdfd )
-		ROM_LOAD( "h07_vt08.bin", 0x0c000, 0x4000, 0x2019c883 )
-		ROM_LOAD( "h08_vt09.bin", 0x10000, 0x4000, 0x98703982 )
-		ROM_LOAD( "h09_vt10.bin", 0x14000, 0x4000, 0xf069d2f8 )
+		ROM_REGION( 0x18000, REGION_GFX3, ROMREGION_DISPOSE );
+		ROM_LOAD( "e07_vt05.bin", 0x00000, 0x4000, 0x79f16e3d );/* sprites */
+		ROM_LOAD( "e08_vt06.bin", 0x04000, 0x4000, 0x26fee521 );
+		ROM_LOAD( "e09_vt07.bin", 0x08000, 0x4000, 0xca88bdfd );
+		ROM_LOAD( "h07_vt08.bin", 0x0c000, 0x4000, 0x2019c883 );
+		ROM_LOAD( "h08_vt09.bin", 0x10000, 0x4000, 0x98703982 );
+		ROM_LOAD( "h09_vt10.bin", 0x14000, 0x4000, 0xf069d2f8 );
 	
-		ROM_REGION( 0x0600, REGION_PROMS, 0 )
-		ROM_LOAD( "01d_vtb1.bin", 0x0000, 0x0100, 0x3aba15a1 )	/* red */
-		ROM_LOAD( "02d_vtb2.bin", 0x0100, 0x0100, 0x88865754 )	/* green */
-		ROM_LOAD( "03d_vtb3.bin", 0x0200, 0x0100, 0x4c14c3f6 )	/* blue */
-		ROM_LOAD( "01h_vtb4.bin", 0x0300, 0x0100, 0xb388c246 )	/* palette selector (not used) */
-		ROM_LOAD( "06l_vtb5.bin", 0x0400, 0x0100, 0x712ac508 )	/* interrupt timing (not used) */
-		ROM_LOAD( "06e_vtb6.bin", 0x0500, 0x0100, 0x0eaf5158 )	/* video timing (not used) */
-	ROM_END
+		ROM_REGION( 0x0600, REGION_PROMS, 0 );
+		ROM_LOAD( "01d_vtb1.bin", 0x0000, 0x0100, 0x3aba15a1 );/* red */
+		ROM_LOAD( "02d_vtb2.bin", 0x0100, 0x0100, 0x88865754 );/* green */
+		ROM_LOAD( "03d_vtb3.bin", 0x0200, 0x0100, 0x4c14c3f6 );/* blue */
+		ROM_LOAD( "01h_vtb4.bin", 0x0300, 0x0100, 0xb388c246 );/* palette selector (not used) */
+		ROM_LOAD( "06l_vtb5.bin", 0x0400, 0x0100, 0x712ac508 );/* interrupt timing (not used) */
+		ROM_LOAD( "06e_vtb6.bin", 0x0500, 0x0100, 0x0eaf5158 );/* video timing (not used) */
+	ROM_END(); }}; 
 	
-	ROM_START( commandu )
-		ROM_REGION( 2*0x10000, REGION_CPU1, 0 )	/* 64k for code + 64k for decrypted opcodes */
-		ROM_LOAD( "u4-f",         0x0000, 0x8000, 0xa6118935 )
-		ROM_LOAD( "u3-f",         0x8000, 0x4000, 0x24f49684 )
+	static RomLoadPtr rom_commandu = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 2*0x10000, REGION_CPU1, 0 );/* 64k for code + 64k for decrypted opcodes */
+		ROM_LOAD( "u4-f",         0x0000, 0x8000, 0xa6118935 );
+		ROM_LOAD( "u3-f",         0x8000, 0x4000, 0x24f49684 );
 	
-		ROM_REGION( 0x10000, REGION_CPU2, 0 )	/* 64k for the audio CPU */
-		ROM_LOAD( "f09_cm02.bin", 0x0000, 0x4000, 0xf9cc4a74 )
+		ROM_REGION( 0x10000, REGION_CPU2, 0 );/* 64k for the audio CPU */
+		ROM_LOAD( "f09_cm02.bin", 0x0000, 0x4000, 0xf9cc4a74 );
 	
-		ROM_REGION( 0x04000, REGION_GFX1, ROMREGION_DISPOSE )
-		ROM_LOAD( "d05_vt01.bin", 0x00000, 0x4000, 0x505726e0 )	/* characters */
+		ROM_REGION( 0x04000, REGION_GFX1, ROMREGION_DISPOSE );
+		ROM_LOAD( "d05_vt01.bin", 0x00000, 0x4000, 0x505726e0 );/* characters */
 	
-		ROM_REGION( 0x18000, REGION_GFX2, ROMREGION_DISPOSE )
-		ROM_LOAD( "a05_vt11.bin", 0x00000, 0x4000, 0x7b2e1b48 )	/* tiles */
-		ROM_LOAD( "a06_vt12.bin", 0x04000, 0x4000, 0x81b417d3 )
-		ROM_LOAD( "a07_vt13.bin", 0x08000, 0x4000, 0x5612dbd2 )
-		ROM_LOAD( "a08_vt14.bin", 0x0c000, 0x4000, 0x2b2dee36 )
-		ROM_LOAD( "a09_vt15.bin", 0x10000, 0x4000, 0xde70babf )
-		ROM_LOAD( "a10_vt16.bin", 0x14000, 0x4000, 0x14178237 )
+		ROM_REGION( 0x18000, REGION_GFX2, ROMREGION_DISPOSE );
+		ROM_LOAD( "a05_vt11.bin", 0x00000, 0x4000, 0x7b2e1b48 );/* tiles */
+		ROM_LOAD( "a06_vt12.bin", 0x04000, 0x4000, 0x81b417d3 );
+		ROM_LOAD( "a07_vt13.bin", 0x08000, 0x4000, 0x5612dbd2 );
+		ROM_LOAD( "a08_vt14.bin", 0x0c000, 0x4000, 0x2b2dee36 );
+		ROM_LOAD( "a09_vt15.bin", 0x10000, 0x4000, 0xde70babf );
+		ROM_LOAD( "a10_vt16.bin", 0x14000, 0x4000, 0x14178237 );
 	
-		ROM_REGION( 0x18000, REGION_GFX3, ROMREGION_DISPOSE )
-		ROM_LOAD( "e07_vt05.bin", 0x00000, 0x4000, 0x79f16e3d )	/* sprites */
-		ROM_LOAD( "e08_vt06.bin", 0x04000, 0x4000, 0x26fee521 )
-		ROM_LOAD( "e09_vt07.bin", 0x08000, 0x4000, 0xca88bdfd )
-		ROM_LOAD( "h07_vt08.bin", 0x0c000, 0x4000, 0x2019c883 )
-		ROM_LOAD( "h08_vt09.bin", 0x10000, 0x4000, 0x98703982 )
-		ROM_LOAD( "h09_vt10.bin", 0x14000, 0x4000, 0xf069d2f8 )
+		ROM_REGION( 0x18000, REGION_GFX3, ROMREGION_DISPOSE );
+		ROM_LOAD( "e07_vt05.bin", 0x00000, 0x4000, 0x79f16e3d );/* sprites */
+		ROM_LOAD( "e08_vt06.bin", 0x04000, 0x4000, 0x26fee521 );
+		ROM_LOAD( "e09_vt07.bin", 0x08000, 0x4000, 0xca88bdfd );
+		ROM_LOAD( "h07_vt08.bin", 0x0c000, 0x4000, 0x2019c883 );
+		ROM_LOAD( "h08_vt09.bin", 0x10000, 0x4000, 0x98703982 );
+		ROM_LOAD( "h09_vt10.bin", 0x14000, 0x4000, 0xf069d2f8 );
 	
-		ROM_REGION( 0x0600, REGION_PROMS, 0 )
-		ROM_LOAD( "01d_vtb1.bin", 0x0000, 0x0100, 0x3aba15a1 )	/* red */
-		ROM_LOAD( "02d_vtb2.bin", 0x0100, 0x0100, 0x88865754 )	/* green */
-		ROM_LOAD( "03d_vtb3.bin", 0x0200, 0x0100, 0x4c14c3f6 )	/* blue */
-		ROM_LOAD( "01h_vtb4.bin", 0x0300, 0x0100, 0xb388c246 )	/* palette selector (not used) */
-		ROM_LOAD( "06l_vtb5.bin", 0x0400, 0x0100, 0x712ac508 )	/* interrupt timing (not used) */
-		ROM_LOAD( "06e_vtb6.bin", 0x0500, 0x0100, 0x0eaf5158 )	/* video timing (not used) */
-	ROM_END
+		ROM_REGION( 0x0600, REGION_PROMS, 0 );
+		ROM_LOAD( "01d_vtb1.bin", 0x0000, 0x0100, 0x3aba15a1 );/* red */
+		ROM_LOAD( "02d_vtb2.bin", 0x0100, 0x0100, 0x88865754 );/* green */
+		ROM_LOAD( "03d_vtb3.bin", 0x0200, 0x0100, 0x4c14c3f6 );/* blue */
+		ROM_LOAD( "01h_vtb4.bin", 0x0300, 0x0100, 0xb388c246 );/* palette selector (not used) */
+		ROM_LOAD( "06l_vtb5.bin", 0x0400, 0x0100, 0x712ac508 );/* interrupt timing (not used) */
+		ROM_LOAD( "06e_vtb6.bin", 0x0500, 0x0100, 0x0eaf5158 );/* video timing (not used) */
+	ROM_END(); }}; 
 	
-	ROM_START( commandj )
-		ROM_REGION( 2*0x10000, REGION_CPU1, 0 )	/* 64k for code + 64k for decrypted opcodes */
-		ROM_LOAD( "09m_so04.bin", 0x0000, 0x8000, 0xd3f2bfb3 )
-		ROM_LOAD( "08m_so03.bin", 0x8000, 0x4000, 0xed01f472 )
+	static RomLoadPtr rom_commandj = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 2*0x10000, REGION_CPU1, 0 );/* 64k for code + 64k for decrypted opcodes */
+		ROM_LOAD( "09m_so04.bin", 0x0000, 0x8000, 0xd3f2bfb3 );
+		ROM_LOAD( "08m_so03.bin", 0x8000, 0x4000, 0xed01f472 );
 	
-		ROM_REGION( 0x10000, REGION_CPU2, 0 )	/* 64k for the audio CPU */
-		ROM_LOAD( "09f_so02.bin", 0x0000, 0x4000, 0xca20aca5 )
+		ROM_REGION( 0x10000, REGION_CPU2, 0 );/* 64k for the audio CPU */
+		ROM_LOAD( "09f_so02.bin", 0x0000, 0x4000, 0xca20aca5 );
 	
-		ROM_REGION( 0x04000, REGION_GFX1, ROMREGION_DISPOSE )
-		ROM_LOAD( "d05_vt01.bin", 0x00000, 0x4000, 0x505726e0 )	/* characters */
+		ROM_REGION( 0x04000, REGION_GFX1, ROMREGION_DISPOSE );
+		ROM_LOAD( "d05_vt01.bin", 0x00000, 0x4000, 0x505726e0 );/* characters */
 	
-		ROM_REGION( 0x18000, REGION_GFX2, ROMREGION_DISPOSE )
-		ROM_LOAD( "a05_vt11.bin", 0x00000, 0x4000, 0x7b2e1b48 )	/* tiles */
-		ROM_LOAD( "a06_vt12.bin", 0x04000, 0x4000, 0x81b417d3 )
-		ROM_LOAD( "a07_vt13.bin", 0x08000, 0x4000, 0x5612dbd2 )
-		ROM_LOAD( "a08_vt14.bin", 0x0c000, 0x4000, 0x2b2dee36 )
-		ROM_LOAD( "a09_vt15.bin", 0x10000, 0x4000, 0xde70babf )
-		ROM_LOAD( "a10_vt16.bin", 0x14000, 0x4000, 0x14178237 )
+		ROM_REGION( 0x18000, REGION_GFX2, ROMREGION_DISPOSE );
+		ROM_LOAD( "a05_vt11.bin", 0x00000, 0x4000, 0x7b2e1b48 );/* tiles */
+		ROM_LOAD( "a06_vt12.bin", 0x04000, 0x4000, 0x81b417d3 );
+		ROM_LOAD( "a07_vt13.bin", 0x08000, 0x4000, 0x5612dbd2 );
+		ROM_LOAD( "a08_vt14.bin", 0x0c000, 0x4000, 0x2b2dee36 );
+		ROM_LOAD( "a09_vt15.bin", 0x10000, 0x4000, 0xde70babf );
+		ROM_LOAD( "a10_vt16.bin", 0x14000, 0x4000, 0x14178237 );
 	
-		ROM_REGION( 0x18000, REGION_GFX3, ROMREGION_DISPOSE )
-		ROM_LOAD( "e07_vt05.bin", 0x00000, 0x4000, 0x79f16e3d )	/* sprites */
-		ROM_LOAD( "e08_vt06.bin", 0x04000, 0x4000, 0x26fee521 )
-		ROM_LOAD( "e09_vt07.bin", 0x08000, 0x4000, 0xca88bdfd )
-		ROM_LOAD( "h07_vt08.bin", 0x0c000, 0x4000, 0x2019c883 )
-		ROM_LOAD( "h08_vt09.bin", 0x10000, 0x4000, 0x98703982 )
-		ROM_LOAD( "h09_vt10.bin", 0x14000, 0x4000, 0xf069d2f8 )
+		ROM_REGION( 0x18000, REGION_GFX3, ROMREGION_DISPOSE );
+		ROM_LOAD( "e07_vt05.bin", 0x00000, 0x4000, 0x79f16e3d );/* sprites */
+		ROM_LOAD( "e08_vt06.bin", 0x04000, 0x4000, 0x26fee521 );
+		ROM_LOAD( "e09_vt07.bin", 0x08000, 0x4000, 0xca88bdfd );
+		ROM_LOAD( "h07_vt08.bin", 0x0c000, 0x4000, 0x2019c883 );
+		ROM_LOAD( "h08_vt09.bin", 0x10000, 0x4000, 0x98703982 );
+		ROM_LOAD( "h09_vt10.bin", 0x14000, 0x4000, 0xf069d2f8 );
 	
-		ROM_REGION( 0x0600, REGION_PROMS, 0 )
-		ROM_LOAD( "01d_vtb1.bin", 0x0000, 0x0100, 0x3aba15a1 )	/* red */
-		ROM_LOAD( "02d_vtb2.bin", 0x0100, 0x0100, 0x88865754 )	/* green */
-		ROM_LOAD( "03d_vtb3.bin", 0x0200, 0x0100, 0x4c14c3f6 )	/* blue */
-		ROM_LOAD( "01h_vtb4.bin", 0x0300, 0x0100, 0xb388c246 )	/* palette selector (not used) */
-		ROM_LOAD( "06l_vtb5.bin", 0x0400, 0x0100, 0x712ac508 )	/* interrupt timing (not used) */
-		ROM_LOAD( "06e_vtb6.bin", 0x0500, 0x0100, 0x0eaf5158 )	/* video timing (not used) */
-	ROM_END
+		ROM_REGION( 0x0600, REGION_PROMS, 0 );
+		ROM_LOAD( "01d_vtb1.bin", 0x0000, 0x0100, 0x3aba15a1 );/* red */
+		ROM_LOAD( "02d_vtb2.bin", 0x0100, 0x0100, 0x88865754 );/* green */
+		ROM_LOAD( "03d_vtb3.bin", 0x0200, 0x0100, 0x4c14c3f6 );/* blue */
+		ROM_LOAD( "01h_vtb4.bin", 0x0300, 0x0100, 0xb388c246 );/* palette selector (not used) */
+		ROM_LOAD( "06l_vtb5.bin", 0x0400, 0x0100, 0x712ac508 );/* interrupt timing (not used) */
+		ROM_LOAD( "06e_vtb6.bin", 0x0500, 0x0100, 0x0eaf5158 );/* video timing (not used) */
+	ROM_END(); }}; 
 	
-	ROM_START( spaceinv )
-		ROM_REGION( 2*0x10000, REGION_CPU1, 0 )	/* 64k for code + 64k for decrypted opcodes */
-		ROM_LOAD( "u4",           0x0000, 0x8000, 0x834ba0de )
-		ROM_LOAD( "u3",           0x8000, 0x4000, 0x07e4ee3a )
+	static RomLoadPtr rom_spaceinv = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 2*0x10000, REGION_CPU1, 0 );/* 64k for code + 64k for decrypted opcodes */
+		ROM_LOAD( "u4",           0x0000, 0x8000, 0x834ba0de );
+		ROM_LOAD( "u3",           0x8000, 0x4000, 0x07e4ee3a );
 	
-		ROM_REGION( 0x10000, REGION_CPU2, 0 )	/* 64k for the audio CPU */
-		ROM_LOAD( "u2",           0x0000, 0x4000, 0xcbf8c40e )
+		ROM_REGION( 0x10000, REGION_CPU2, 0 );/* 64k for the audio CPU */
+		ROM_LOAD( "u2",           0x0000, 0x4000, 0xcbf8c40e );
 	
-		ROM_REGION( 0x04000, REGION_GFX1, ROMREGION_DISPOSE )
-		ROM_LOAD( "u1",           0x00000, 0x4000, 0xf477e13a )	/* characters */
+		ROM_REGION( 0x04000, REGION_GFX1, ROMREGION_DISPOSE );
+		ROM_LOAD( "u1",           0x00000, 0x4000, 0xf477e13a );/* characters */
 	
-		ROM_REGION( 0x18000, REGION_GFX2, ROMREGION_DISPOSE )
-		ROM_LOAD( "a05_vt11.bin", 0x00000, 0x4000, 0x7b2e1b48 )	/* tiles */
-		ROM_LOAD( "a06_vt12.bin", 0x04000, 0x4000, 0x81b417d3 )
-		ROM_LOAD( "a07_vt13.bin", 0x08000, 0x4000, 0x5612dbd2 )
-		ROM_LOAD( "a08_vt14.bin", 0x0c000, 0x4000, 0x2b2dee36 )
-		ROM_LOAD( "a09_vt15.bin", 0x10000, 0x4000, 0xde70babf )
-		ROM_LOAD( "a10_vt16.bin", 0x14000, 0x4000, 0x14178237 )
+		ROM_REGION( 0x18000, REGION_GFX2, ROMREGION_DISPOSE );
+		ROM_LOAD( "a05_vt11.bin", 0x00000, 0x4000, 0x7b2e1b48 );/* tiles */
+		ROM_LOAD( "a06_vt12.bin", 0x04000, 0x4000, 0x81b417d3 );
+		ROM_LOAD( "a07_vt13.bin", 0x08000, 0x4000, 0x5612dbd2 );
+		ROM_LOAD( "a08_vt14.bin", 0x0c000, 0x4000, 0x2b2dee36 );
+		ROM_LOAD( "a09_vt15.bin", 0x10000, 0x4000, 0xde70babf );
+		ROM_LOAD( "a10_vt16.bin", 0x14000, 0x4000, 0x14178237 );
 	
-		ROM_REGION( 0x18000, REGION_GFX3, ROMREGION_DISPOSE )
-		ROM_LOAD( "u5",           0x00000, 0x4000, 0x2a97c933 )	/* sprites */
-		ROM_LOAD( "e08_vt06.bin", 0x04000, 0x4000, 0x26fee521 )
-		ROM_LOAD( "e09_vt07.bin", 0x08000, 0x4000, 0xca88bdfd )
-		ROM_LOAD( "u8",           0x0c000, 0x4000, 0xd6b4aa2e )
-		ROM_LOAD( "h08_vt09.bin", 0x10000, 0x4000, 0x98703982 )
-		ROM_LOAD( "h09_vt10.bin", 0x14000, 0x4000, 0xf069d2f8 )
+		ROM_REGION( 0x18000, REGION_GFX3, ROMREGION_DISPOSE );
+		ROM_LOAD( "u5",           0x00000, 0x4000, 0x2a97c933 );/* sprites */
+		ROM_LOAD( "e08_vt06.bin", 0x04000, 0x4000, 0x26fee521 );
+		ROM_LOAD( "e09_vt07.bin", 0x08000, 0x4000, 0xca88bdfd );
+		ROM_LOAD( "u8",           0x0c000, 0x4000, 0xd6b4aa2e );
+		ROM_LOAD( "h08_vt09.bin", 0x10000, 0x4000, 0x98703982 );
+		ROM_LOAD( "h09_vt10.bin", 0x14000, 0x4000, 0xf069d2f8 );
 	
-		ROM_REGION( 0x0600, REGION_PROMS, 0 )
-		ROM_LOAD( "01d_vtb1.bin", 0x0000, 0x0100, 0x3aba15a1 )	/* red */
-		ROM_LOAD( "02d_vtb2.bin", 0x0100, 0x0100, 0x88865754 )	/* green */
-		ROM_LOAD( "03d_vtb3.bin", 0x0200, 0x0100, 0x4c14c3f6 )	/* blue */
-		ROM_LOAD( "01h_vtb4.bin", 0x0300, 0x0100, 0xb388c246 )	/* palette selector (not used) */
-		ROM_LOAD( "06l_vtb5.bin", 0x0400, 0x0100, 0x712ac508 )	/* interrupt timing (not used) */
-		ROM_LOAD( "06e_vtb6.bin", 0x0500, 0x0100, 0x0eaf5158 )	/* video timing (not used) */
-	ROM_END
+		ROM_REGION( 0x0600, REGION_PROMS, 0 );
+		ROM_LOAD( "01d_vtb1.bin", 0x0000, 0x0100, 0x3aba15a1 );/* red */
+		ROM_LOAD( "02d_vtb2.bin", 0x0100, 0x0100, 0x88865754 );/* green */
+		ROM_LOAD( "03d_vtb3.bin", 0x0200, 0x0100, 0x4c14c3f6 );/* blue */
+		ROM_LOAD( "01h_vtb4.bin", 0x0300, 0x0100, 0xb388c246 );/* palette selector (not used) */
+		ROM_LOAD( "06l_vtb5.bin", 0x0400, 0x0100, 0x712ac508 );/* interrupt timing (not used) */
+		ROM_LOAD( "06e_vtb6.bin", 0x0500, 0x0100, 0x0eaf5158 );/* video timing (not used) */
+	ROM_END(); }}; 
 	
 	
 	

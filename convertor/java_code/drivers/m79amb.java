@@ -182,25 +182,25 @@ public class m79amb
 	
 	
 	
-	ROM_START( m79amb )
-		ROM_REGION( 0x10000, REGION_CPU1, 0 )     /* 64k for code */
-		ROM_LOAD( "m79.10t",      0x0000, 0x0200, 0xccf30b1e )
-		ROM_LOAD( "m79.9t",       0x0200, 0x0200, 0xdaf807dd )
-		ROM_LOAD( "m79.8t",       0x0400, 0x0200, 0x79fafa02 )
-		ROM_LOAD( "m79.7t",       0x0600, 0x0200, 0x06f511f8 )
-		ROM_LOAD( "m79.6t",       0x0800, 0x0200, 0x24634390 )
-		ROM_LOAD( "m79.5t",       0x0a00, 0x0200, 0x95252aa6 )
-		ROM_LOAD( "m79.4t",       0x0c00, 0x0200, 0x54cffb0f )
-		ROM_LOAD( "m79.3ta",      0x0e00, 0x0200, 0x27db5ede )
-		ROM_LOAD( "m79.10u",      0x1000, 0x0200, 0xe41d13d2 )
-		ROM_LOAD( "m79.9u",       0x1200, 0x0200, 0xe35f5616 )
-		ROM_LOAD( "m79.8u",       0x1400, 0x0200, 0x14eafd7c )
-		ROM_LOAD( "m79.7u",       0x1600, 0x0200, 0xb9864f25 )
-		ROM_LOAD( "m79.6u",       0x1800, 0x0200, 0xdd25197f )
-		ROM_LOAD( "m79.5u",       0x1a00, 0x0200, 0x251545e2 )
-		ROM_LOAD( "m79.4u",       0x1c00, 0x0200, 0xb5f55c75 )
-		ROM_LOAD( "m79.3u",       0x1e00, 0x0200, 0xe968691a )
-	ROM_END
+	static RomLoadPtr rom_m79amb = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x10000, REGION_CPU1, 0 );    /* 64k for code */
+		ROM_LOAD( "m79.10t",      0x0000, 0x0200, 0xccf30b1e );
+		ROM_LOAD( "m79.9t",       0x0200, 0x0200, 0xdaf807dd );
+		ROM_LOAD( "m79.8t",       0x0400, 0x0200, 0x79fafa02 );
+		ROM_LOAD( "m79.7t",       0x0600, 0x0200, 0x06f511f8 );
+		ROM_LOAD( "m79.6t",       0x0800, 0x0200, 0x24634390 );
+		ROM_LOAD( "m79.5t",       0x0a00, 0x0200, 0x95252aa6 );
+		ROM_LOAD( "m79.4t",       0x0c00, 0x0200, 0x54cffb0f );
+		ROM_LOAD( "m79.3ta",      0x0e00, 0x0200, 0x27db5ede );
+		ROM_LOAD( "m79.10u",      0x1000, 0x0200, 0xe41d13d2 );
+		ROM_LOAD( "m79.9u",       0x1200, 0x0200, 0xe35f5616 );
+		ROM_LOAD( "m79.8u",       0x1400, 0x0200, 0x14eafd7c );
+		ROM_LOAD( "m79.7u",       0x1600, 0x0200, 0xb9864f25 );
+		ROM_LOAD( "m79.6u",       0x1800, 0x0200, 0xdd25197f );
+		ROM_LOAD( "m79.5u",       0x1a00, 0x0200, 0x251545e2 );
+		ROM_LOAD( "m79.4u",       0x1c00, 0x0200, 0xb5f55c75 );
+		ROM_LOAD( "m79.3u",       0x1e00, 0x0200, 0xe968691a );
+	ROM_END(); }}; 
 	
 	
 	

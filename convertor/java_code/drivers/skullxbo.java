@@ -318,140 +318,140 @@ public class skullxbo
 	 *
 	 *************************************/
 	
-	ROM_START( skullxbo )
-		ROM_REGION( 0x80000, REGION_CPU1, 0 )	/* 8*64k for 68000 code */
-		ROM_LOAD16_BYTE( "5150", 0x00000, 0x10000, 0x9546d88b )
-		ROM_LOAD16_BYTE( "5151", 0x00001, 0x10000, 0xb9ed8bd4 )
-		ROM_LOAD16_BYTE( "5152", 0x20000, 0x10000, 0xc07e44fc )
-		ROM_LOAD16_BYTE( "5153", 0x20001, 0x10000, 0xfef8297f )
-		ROM_LOAD16_BYTE( "5154", 0x40000, 0x10000, 0xde4101a3 )
-		ROM_LOAD16_BYTE( "5155", 0x40001, 0x10000, 0x78c0f6ad )
-		ROM_LOAD16_BYTE( "5156", 0x70000, 0x08000, 0xcde16b55 )
-		ROM_LOAD16_BYTE( "5157", 0x70001, 0x08000, 0x31c77376 )
+	static RomLoadPtr rom_skullxbo = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x80000, REGION_CPU1, 0 );/* 8*64k for 68000 code */
+		ROM_LOAD16_BYTE( "5150", 0x00000, 0x10000, 0x9546d88b );
+		ROM_LOAD16_BYTE( "5151", 0x00001, 0x10000, 0xb9ed8bd4 );
+		ROM_LOAD16_BYTE( "5152", 0x20000, 0x10000, 0xc07e44fc );
+		ROM_LOAD16_BYTE( "5153", 0x20001, 0x10000, 0xfef8297f );
+		ROM_LOAD16_BYTE( "5154", 0x40000, 0x10000, 0xde4101a3 );
+		ROM_LOAD16_BYTE( "5155", 0x40001, 0x10000, 0x78c0f6ad );
+		ROM_LOAD16_BYTE( "5156", 0x70000, 0x08000, 0xcde16b55 );
+		ROM_LOAD16_BYTE( "5157", 0x70001, 0x08000, 0x31c77376 );
 	
-		ROM_REGION( 0x14000, REGION_CPU2, 0 )	/* 64k for 6502 code */
-		ROM_LOAD( "1149",      0x10000, 0x4000, 0x8d730e7a )
-		ROM_CONTINUE(          0x04000, 0xc000 )
+		ROM_REGION( 0x14000, REGION_CPU2, 0 );/* 64k for 6502 code */
+		ROM_LOAD( "1149",      0x10000, 0x4000, 0x8d730e7a );
+		ROM_CONTINUE(          0x04000, 0xc000 );
 	
-		ROM_REGION( 0x190000, REGION_GFX1, ROMREGION_DISPOSE )
-		ROM_LOAD( "1102",     0x000000, 0x10000, 0x90becdfa ) /* MO */
-		ROM_LOAD( "1104",     0x010000, 0x10000, 0x33609071 ) /* MO */
-		ROM_LOAD( "1106",     0x020000, 0x10000, 0x71962e9f ) /* MO */
-		ROM_LOAD( "1101",     0x030000, 0x10000, 0x4d41701e ) /* MO */
-		ROM_LOAD( "1103",     0x040000, 0x10000, 0x3011da3b ) /* MO */
+		ROM_REGION( 0x190000, REGION_GFX1, ROMREGION_DISPOSE );
+		ROM_LOAD( "1102",     0x000000, 0x10000, 0x90becdfa );/* MO */
+		ROM_LOAD( "1104",     0x010000, 0x10000, 0x33609071 );/* MO */
+		ROM_LOAD( "1106",     0x020000, 0x10000, 0x71962e9f );/* MO */
+		ROM_LOAD( "1101",     0x030000, 0x10000, 0x4d41701e );/* MO */
+		ROM_LOAD( "1103",     0x040000, 0x10000, 0x3011da3b );/* MO */
 	
-		ROM_LOAD( "1108",     0x050000, 0x10000, 0x386c7edc ) /* MO */
-		ROM_LOAD( "1110",     0x060000, 0x10000, 0xa54d16e6 ) /* MO */
-		ROM_LOAD( "1112",     0x070000, 0x10000, 0x669411f6 ) /* MO */
-		ROM_LOAD( "1107",     0x080000, 0x10000, 0xcaaeb57a ) /* MO */
-		ROM_LOAD( "1109",     0x090000, 0x10000, 0x61cb4e28 ) /* MO */
+		ROM_LOAD( "1108",     0x050000, 0x10000, 0x386c7edc );/* MO */
+		ROM_LOAD( "1110",     0x060000, 0x10000, 0xa54d16e6 );/* MO */
+		ROM_LOAD( "1112",     0x070000, 0x10000, 0x669411f6 );/* MO */
+		ROM_LOAD( "1107",     0x080000, 0x10000, 0xcaaeb57a );/* MO */
+		ROM_LOAD( "1109",     0x090000, 0x10000, 0x61cb4e28 );/* MO */
 	
-		ROM_LOAD( "1114",     0x0a0000, 0x10000, 0xe340d5a1 ) /* MO */
-		ROM_LOAD( "1116",     0x0b0000, 0x10000, 0xf25b8aca ) /* MO */
-		ROM_LOAD( "1118",     0x0c0000, 0x10000, 0x8cf73585 ) /* MO */
-		ROM_LOAD( "1113",     0x0d0000, 0x10000, 0x899b59af ) /* MO */
-		ROM_LOAD( "1115",     0x0e0000, 0x10000, 0xcf4fd19a ) /* MO */
+		ROM_LOAD( "1114",     0x0a0000, 0x10000, 0xe340d5a1 );/* MO */
+		ROM_LOAD( "1116",     0x0b0000, 0x10000, 0xf25b8aca );/* MO */
+		ROM_LOAD( "1118",     0x0c0000, 0x10000, 0x8cf73585 );/* MO */
+		ROM_LOAD( "1113",     0x0d0000, 0x10000, 0x899b59af );/* MO */
+		ROM_LOAD( "1115",     0x0e0000, 0x10000, 0xcf4fd19a );/* MO */
 	
-		ROM_LOAD( "1120",     0x0f0000, 0x10000, 0xfde7c03d ) /* MO */
-		ROM_LOAD( "1122",     0x100000, 0x10000, 0x6ff6a9f2 ) /* MO */
-		ROM_LOAD( "1124",     0x110000, 0x10000, 0xf11909f1 ) /* MO */
-		ROM_LOAD( "1119",     0x120000, 0x10000, 0x6f8003a1 ) /* MO */
-		ROM_LOAD( "1121",     0x130000, 0x10000, 0x8ff0a1ec ) /* MO */
+		ROM_LOAD( "1120",     0x0f0000, 0x10000, 0xfde7c03d );/* MO */
+		ROM_LOAD( "1122",     0x100000, 0x10000, 0x6ff6a9f2 );/* MO */
+		ROM_LOAD( "1124",     0x110000, 0x10000, 0xf11909f1 );/* MO */
+		ROM_LOAD( "1119",     0x120000, 0x10000, 0x6f8003a1 );/* MO */
+		ROM_LOAD( "1121",     0x130000, 0x10000, 0x8ff0a1ec );/* MO */
 	
-		ROM_LOAD( "1125",     0x140000, 0x10000, 0x3aa7c756 ) /* MO */
-		ROM_LOAD( "1126",     0x150000, 0x10000, 0xcb82c9aa ) /* MO */
-		ROM_LOAD( "1128",     0x160000, 0x10000, 0xdce32863 ) /* MO */
+		ROM_LOAD( "1125",     0x140000, 0x10000, 0x3aa7c756 );/* MO */
+		ROM_LOAD( "1126",     0x150000, 0x10000, 0xcb82c9aa );/* MO */
+		ROM_LOAD( "1128",     0x160000, 0x10000, 0xdce32863 );/* MO */
 		/* 170000-18ffff empty */
 	
-		ROM_REGION( 0x0a0000, REGION_GFX2, ROMREGION_DISPOSE )
-		ROM_LOAD( "2129",     0x000000, 0x10000, 0x36b1a578 ) /* playfield */
-		ROM_LOAD( "2131",     0x010000, 0x10000, 0x7b7c04a1 ) /* playfield */
-		ROM_LOAD( "2133",     0x020000, 0x10000, 0xe03fe4d9 ) /* playfield */
-		ROM_LOAD( "2135",     0x030000, 0x10000, 0x7d497110 ) /* playfield */
-		ROM_LOAD( "2137",     0x040000, 0x10000, 0xf91e7872 ) /* playfield */
-		ROM_LOAD( "2130",     0x050000, 0x10000, 0xb25368cc ) /* playfield */
-		ROM_LOAD( "2132",     0x060000, 0x10000, 0x112f2d20 ) /* playfield */
-		ROM_LOAD( "2134",     0x070000, 0x10000, 0x84884ed6 ) /* playfield */
-		ROM_LOAD( "2136",     0x080000, 0x10000, 0xbc028690 ) /* playfield */
-		ROM_LOAD( "2138",     0x090000, 0x10000, 0x60cec955 ) /* playfield */
+		ROM_REGION( 0x0a0000, REGION_GFX2, ROMREGION_DISPOSE );
+		ROM_LOAD( "2129",     0x000000, 0x10000, 0x36b1a578 );/* playfield */
+		ROM_LOAD( "2131",     0x010000, 0x10000, 0x7b7c04a1 );/* playfield */
+		ROM_LOAD( "2133",     0x020000, 0x10000, 0xe03fe4d9 );/* playfield */
+		ROM_LOAD( "2135",     0x030000, 0x10000, 0x7d497110 );/* playfield */
+		ROM_LOAD( "2137",     0x040000, 0x10000, 0xf91e7872 );/* playfield */
+		ROM_LOAD( "2130",     0x050000, 0x10000, 0xb25368cc );/* playfield */
+		ROM_LOAD( "2132",     0x060000, 0x10000, 0x112f2d20 );/* playfield */
+		ROM_LOAD( "2134",     0x070000, 0x10000, 0x84884ed6 );/* playfield */
+		ROM_LOAD( "2136",     0x080000, 0x10000, 0xbc028690 );/* playfield */
+		ROM_LOAD( "2138",     0x090000, 0x10000, 0x60cec955 );/* playfield */
 	
-		ROM_REGION( 0x008000, REGION_GFX3, ROMREGION_DISPOSE )
-		ROM_LOAD( "2141",     0x000000, 0x08000, 0x60d6d6df ) /* alphanumerics */
+		ROM_REGION( 0x008000, REGION_GFX3, ROMREGION_DISPOSE );
+		ROM_LOAD( "2141",     0x000000, 0x08000, 0x60d6d6df );/* alphanumerics */
 	
-		ROM_REGION( 0x40000, REGION_SOUND1, 0 )	/* 256k for ADPCM samples */
-		ROM_LOAD( "1145",      0x00000, 0x10000, 0xd9475d58 )
-		ROM_LOAD( "1146",      0x10000, 0x10000, 0x133e6aef )
-		ROM_LOAD( "1147",      0x20000, 0x10000, 0xba4d556e )
-		ROM_LOAD( "1148",      0x30000, 0x10000, 0xc48df49a )
-	ROM_END
+		ROM_REGION( 0x40000, REGION_SOUND1, 0 );/* 256k for ADPCM samples */
+		ROM_LOAD( "1145",      0x00000, 0x10000, 0xd9475d58 );
+		ROM_LOAD( "1146",      0x10000, 0x10000, 0x133e6aef );
+		ROM_LOAD( "1147",      0x20000, 0x10000, 0xba4d556e );
+		ROM_LOAD( "1148",      0x30000, 0x10000, 0xc48df49a );
+	ROM_END(); }}; 
 	
 	
-	ROM_START( skullxb2 )
-		ROM_REGION( 0x80000, REGION_CPU1, 0 )	/* 8*64k for 68000 code */
-		ROM_LOAD16_BYTE( "sku0h.bin", 0x00000, 0x10000, 0x47083d59 )
-		ROM_LOAD16_BYTE( "sku0l.bin", 0x00001, 0x10000, 0x2c03feaf )
-		ROM_LOAD16_BYTE( "sku1h.bin", 0x20000, 0x10000, 0xaa0471de )
-		ROM_LOAD16_BYTE( "sku1l.bin", 0x20001, 0x10000, 0xa65386f9 )
-		ROM_LOAD16_BYTE( "5154",      0x40000, 0x10000, 0xde4101a3 )
-		ROM_LOAD16_BYTE( "5155",      0x40001, 0x10000, 0x78c0f6ad )
-		ROM_LOAD16_BYTE( "5156",      0x70000, 0x08000, 0xcde16b55 )
-		ROM_LOAD16_BYTE( "5157",      0x70001, 0x08000, 0x31c77376 )
+	static RomLoadPtr rom_skullxb2 = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x80000, REGION_CPU1, 0 );/* 8*64k for 68000 code */
+		ROM_LOAD16_BYTE( "sku0h.bin", 0x00000, 0x10000, 0x47083d59 );
+		ROM_LOAD16_BYTE( "sku0l.bin", 0x00001, 0x10000, 0x2c03feaf );
+		ROM_LOAD16_BYTE( "sku1h.bin", 0x20000, 0x10000, 0xaa0471de );
+		ROM_LOAD16_BYTE( "sku1l.bin", 0x20001, 0x10000, 0xa65386f9 );
+		ROM_LOAD16_BYTE( "5154",      0x40000, 0x10000, 0xde4101a3 );
+		ROM_LOAD16_BYTE( "5155",      0x40001, 0x10000, 0x78c0f6ad );
+		ROM_LOAD16_BYTE( "5156",      0x70000, 0x08000, 0xcde16b55 );
+		ROM_LOAD16_BYTE( "5157",      0x70001, 0x08000, 0x31c77376 );
 	
-		ROM_REGION( 0x14000, REGION_CPU2, 0 )	/* 64k for 6502 code */
-		ROM_LOAD( "1149",      0x10000, 0x4000, 0x8d730e7a )
-		ROM_CONTINUE(          0x04000, 0xc000 )
+		ROM_REGION( 0x14000, REGION_CPU2, 0 );/* 64k for 6502 code */
+		ROM_LOAD( "1149",      0x10000, 0x4000, 0x8d730e7a );
+		ROM_CONTINUE(          0x04000, 0xc000 );
 	
-		ROM_REGION( 0x190000, REGION_GFX1, ROMREGION_DISPOSE )
-		ROM_LOAD( "1102",     0x000000, 0x10000, 0x90becdfa ) /* MO */
-		ROM_LOAD( "1104",     0x010000, 0x10000, 0x33609071 ) /* MO */
-		ROM_LOAD( "1106",     0x020000, 0x10000, 0x71962e9f ) /* MO */
-		ROM_LOAD( "1101",     0x030000, 0x10000, 0x4d41701e ) /* MO */
-		ROM_LOAD( "1103",     0x040000, 0x10000, 0x3011da3b ) /* MO */
+		ROM_REGION( 0x190000, REGION_GFX1, ROMREGION_DISPOSE );
+		ROM_LOAD( "1102",     0x000000, 0x10000, 0x90becdfa );/* MO */
+		ROM_LOAD( "1104",     0x010000, 0x10000, 0x33609071 );/* MO */
+		ROM_LOAD( "1106",     0x020000, 0x10000, 0x71962e9f );/* MO */
+		ROM_LOAD( "1101",     0x030000, 0x10000, 0x4d41701e );/* MO */
+		ROM_LOAD( "1103",     0x040000, 0x10000, 0x3011da3b );/* MO */
 	
-		ROM_LOAD( "1108",     0x050000, 0x10000, 0x386c7edc ) /* MO */
-		ROM_LOAD( "1110",     0x060000, 0x10000, 0xa54d16e6 ) /* MO */
-		ROM_LOAD( "1112",     0x070000, 0x10000, 0x669411f6 ) /* MO */
-		ROM_LOAD( "1107",     0x080000, 0x10000, 0xcaaeb57a ) /* MO */
-		ROM_LOAD( "1109",     0x090000, 0x10000, 0x61cb4e28 ) /* MO */
+		ROM_LOAD( "1108",     0x050000, 0x10000, 0x386c7edc );/* MO */
+		ROM_LOAD( "1110",     0x060000, 0x10000, 0xa54d16e6 );/* MO */
+		ROM_LOAD( "1112",     0x070000, 0x10000, 0x669411f6 );/* MO */
+		ROM_LOAD( "1107",     0x080000, 0x10000, 0xcaaeb57a );/* MO */
+		ROM_LOAD( "1109",     0x090000, 0x10000, 0x61cb4e28 );/* MO */
 	
-		ROM_LOAD( "1114",     0x0a0000, 0x10000, 0xe340d5a1 ) /* MO */
-		ROM_LOAD( "1116",     0x0b0000, 0x10000, 0xf25b8aca ) /* MO */
-		ROM_LOAD( "1118",     0x0c0000, 0x10000, 0x8cf73585 ) /* MO */
-		ROM_LOAD( "1113",     0x0d0000, 0x10000, 0x899b59af ) /* MO */
-		ROM_LOAD( "1115",     0x0e0000, 0x10000, 0xcf4fd19a ) /* MO */
+		ROM_LOAD( "1114",     0x0a0000, 0x10000, 0xe340d5a1 );/* MO */
+		ROM_LOAD( "1116",     0x0b0000, 0x10000, 0xf25b8aca );/* MO */
+		ROM_LOAD( "1118",     0x0c0000, 0x10000, 0x8cf73585 );/* MO */
+		ROM_LOAD( "1113",     0x0d0000, 0x10000, 0x899b59af );/* MO */
+		ROM_LOAD( "1115",     0x0e0000, 0x10000, 0xcf4fd19a );/* MO */
 	
-		ROM_LOAD( "1120",     0x0f0000, 0x10000, 0xfde7c03d ) /* MO */
-		ROM_LOAD( "1122",     0x100000, 0x10000, 0x6ff6a9f2 ) /* MO */
-		ROM_LOAD( "1124",     0x110000, 0x10000, 0xf11909f1 ) /* MO */
-		ROM_LOAD( "1119",     0x120000, 0x10000, 0x6f8003a1 ) /* MO */
-		ROM_LOAD( "1121",     0x130000, 0x10000, 0x8ff0a1ec ) /* MO */
+		ROM_LOAD( "1120",     0x0f0000, 0x10000, 0xfde7c03d );/* MO */
+		ROM_LOAD( "1122",     0x100000, 0x10000, 0x6ff6a9f2 );/* MO */
+		ROM_LOAD( "1124",     0x110000, 0x10000, 0xf11909f1 );/* MO */
+		ROM_LOAD( "1119",     0x120000, 0x10000, 0x6f8003a1 );/* MO */
+		ROM_LOAD( "1121",     0x130000, 0x10000, 0x8ff0a1ec );/* MO */
 	
-		ROM_LOAD( "1125",     0x140000, 0x10000, 0x3aa7c756 ) /* MO */
-		ROM_LOAD( "1126",     0x150000, 0x10000, 0xcb82c9aa ) /* MO */
-		ROM_LOAD( "1128",     0x160000, 0x10000, 0xdce32863 ) /* MO */
+		ROM_LOAD( "1125",     0x140000, 0x10000, 0x3aa7c756 );/* MO */
+		ROM_LOAD( "1126",     0x150000, 0x10000, 0xcb82c9aa );/* MO */
+		ROM_LOAD( "1128",     0x160000, 0x10000, 0xdce32863 );/* MO */
 		/* 170000-18ffff empty */
 	
-		ROM_REGION( 0x0a0000, REGION_GFX2, ROMREGION_DISPOSE )
-		ROM_LOAD( "2129",     0x000000, 0x10000, 0x36b1a578 ) /* playfield */
-		ROM_LOAD( "2131",     0x010000, 0x10000, 0x7b7c04a1 ) /* playfield */
-		ROM_LOAD( "2133",     0x020000, 0x10000, 0xe03fe4d9 ) /* playfield */
-		ROM_LOAD( "2135",     0x030000, 0x10000, 0x7d497110 ) /* playfield */
-		ROM_LOAD( "2137",     0x040000, 0x10000, 0xf91e7872 ) /* playfield */
-		ROM_LOAD( "2130",     0x050000, 0x10000, 0xb25368cc ) /* playfield */
-		ROM_LOAD( "2132",     0x060000, 0x10000, 0x112f2d20 ) /* playfield */
-		ROM_LOAD( "2134",     0x070000, 0x10000, 0x84884ed6 ) /* playfield */
-		ROM_LOAD( "2136",     0x080000, 0x10000, 0xbc028690 ) /* playfield */
-		ROM_LOAD( "2138",     0x090000, 0x10000, 0x60cec955 ) /* playfield */
+		ROM_REGION( 0x0a0000, REGION_GFX2, ROMREGION_DISPOSE );
+		ROM_LOAD( "2129",     0x000000, 0x10000, 0x36b1a578 );/* playfield */
+		ROM_LOAD( "2131",     0x010000, 0x10000, 0x7b7c04a1 );/* playfield */
+		ROM_LOAD( "2133",     0x020000, 0x10000, 0xe03fe4d9 );/* playfield */
+		ROM_LOAD( "2135",     0x030000, 0x10000, 0x7d497110 );/* playfield */
+		ROM_LOAD( "2137",     0x040000, 0x10000, 0xf91e7872 );/* playfield */
+		ROM_LOAD( "2130",     0x050000, 0x10000, 0xb25368cc );/* playfield */
+		ROM_LOAD( "2132",     0x060000, 0x10000, 0x112f2d20 );/* playfield */
+		ROM_LOAD( "2134",     0x070000, 0x10000, 0x84884ed6 );/* playfield */
+		ROM_LOAD( "2136",     0x080000, 0x10000, 0xbc028690 );/* playfield */
+		ROM_LOAD( "2138",     0x090000, 0x10000, 0x60cec955 );/* playfield */
 	
-		ROM_REGION( 0x008000, REGION_GFX3, ROMREGION_DISPOSE )
-		ROM_LOAD( "2141",     0x000000, 0x08000, 0x60d6d6df ) /* alphanumerics */
+		ROM_REGION( 0x008000, REGION_GFX3, ROMREGION_DISPOSE );
+		ROM_LOAD( "2141",     0x000000, 0x08000, 0x60d6d6df );/* alphanumerics */
 	
-		ROM_REGION( 0x40000, REGION_SOUND1, 0 )	/* 256k for ADPCM samples */
-		ROM_LOAD( "1145",      0x00000, 0x10000, 0xd9475d58 )
-		ROM_LOAD( "1146",      0x10000, 0x10000, 0x133e6aef )
-		ROM_LOAD( "1147",      0x20000, 0x10000, 0xba4d556e )
-		ROM_LOAD( "1148",      0x30000, 0x10000, 0xc48df49a )
-	ROM_END
+		ROM_REGION( 0x40000, REGION_SOUND1, 0 );/* 256k for ADPCM samples */
+		ROM_LOAD( "1145",      0x00000, 0x10000, 0xd9475d58 );
+		ROM_LOAD( "1146",      0x10000, 0x10000, 0x133e6aef );
+		ROM_LOAD( "1147",      0x20000, 0x10000, 0xba4d556e );
+		ROM_LOAD( "1148",      0x30000, 0x10000, 0xc48df49a );
+	ROM_END(); }}; 
 	
 	
 	

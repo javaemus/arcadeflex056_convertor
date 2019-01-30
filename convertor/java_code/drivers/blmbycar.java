@@ -341,39 +341,39 @@ public class blmbycar
 	
 	***************************************************************************/
 	
-	ROM_START( blmbycar )
-		ROM_REGION( 0x100000, REGION_CPU1, 0 )		/* 68000 Code */
-		ROM_LOAD16_BYTE( "bcrom4.bin", 0x000000, 0x080000, 0x06d490ba )
-		ROM_LOAD16_BYTE( "bcrom6.bin", 0x000001, 0x080000, 0x33aca664 )
+	static RomLoadPtr rom_blmbycar = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x100000, REGION_CPU1, 0 );	/* 68000 Code */
+		ROM_LOAD16_BYTE( "bcrom4.bin", 0x000000, 0x080000, 0x06d490ba );
+		ROM_LOAD16_BYTE( "bcrom6.bin", 0x000001, 0x080000, 0x33aca664 );
 	
-		ROM_REGION( 0x200000, REGION_GFX1, ROMREGION_DISPOSE )	/* Sprites */
-		ROM_LOAD( "bc_rom7",   0x000000, 0x080000, 0xe55ca79b )
-		ROM_LOAD( "bc_rom8",   0x080000, 0x080000, 0xcdf38c96 )
-		ROM_LOAD( "bc_rom9",   0x100000, 0x080000, 0x0337ab3d )
-		ROM_LOAD( "bc_rom10",  0x180000, 0x080000, 0x5458917e )
+		ROM_REGION( 0x200000, REGION_GFX1, ROMREGION_DISPOSE );/* Sprites */
+		ROM_LOAD( "bc_rom7",   0x000000, 0x080000, 0xe55ca79b );
+		ROM_LOAD( "bc_rom8",   0x080000, 0x080000, 0xcdf38c96 );
+		ROM_LOAD( "bc_rom9",   0x100000, 0x080000, 0x0337ab3d );
+		ROM_LOAD( "bc_rom10",  0x180000, 0x080000, 0x5458917e );
 	
-		ROM_REGION( 0x140000, REGION_SOUND1, 0 )	/* 8 bit adpcm (banked) */
-		ROM_LOAD( "bc_rom1",     0x040000, 0x080000, 0xac6f8ba1 )
-		ROM_LOAD( "bc_rom2",     0x0c0000, 0x080000, 0xa4bc31bf )
-		ROM_COPY( REGION_SOUND1, 0x040000, 0x000000,   0x040000 )
-	ROM_END
+		ROM_REGION( 0x140000, REGION_SOUND1, 0 );/* 8 bit adpcm (banked) */
+		ROM_LOAD( "bc_rom1",     0x040000, 0x080000, 0xac6f8ba1 );
+		ROM_LOAD( "bc_rom2",     0x0c0000, 0x080000, 0xa4bc31bf );
+		ROM_COPY( REGION_SOUND1, 0x040000, 0x000000,   0x040000 );
+	ROM_END(); }}; 
 	
-	ROM_START( blmbycau )
-		ROM_REGION( 0x100000, REGION_CPU1, 0 )		/* 68000 Code */
-		ROM_LOAD16_BYTE( "bc_rom4", 0x000000, 0x080000, 0x76f054a2 )
-		ROM_LOAD16_BYTE( "bc_rom6", 0x000001, 0x080000, 0x2570b4c5 )
+	static RomLoadPtr rom_blmbycau = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x100000, REGION_CPU1, 0 );	/* 68000 Code */
+		ROM_LOAD16_BYTE( "bc_rom4", 0x000000, 0x080000, 0x76f054a2 );
+		ROM_LOAD16_BYTE( "bc_rom6", 0x000001, 0x080000, 0x2570b4c5 );
 	
-		ROM_REGION( 0x200000, REGION_GFX1, ROMREGION_DISPOSE )	/* Sprites */
-		ROM_LOAD( "bc_rom7",   0x000000, 0x080000, 0xe55ca79b )
-		ROM_LOAD( "bc_rom8",   0x080000, 0x080000, 0xcdf38c96 )
-		ROM_LOAD( "bc_rom9",   0x100000, 0x080000, 0x0337ab3d )
-		ROM_LOAD( "bc_rom10",  0x180000, 0x080000, 0x5458917e )
+		ROM_REGION( 0x200000, REGION_GFX1, ROMREGION_DISPOSE );/* Sprites */
+		ROM_LOAD( "bc_rom7",   0x000000, 0x080000, 0xe55ca79b );
+		ROM_LOAD( "bc_rom8",   0x080000, 0x080000, 0xcdf38c96 );
+		ROM_LOAD( "bc_rom9",   0x100000, 0x080000, 0x0337ab3d );
+		ROM_LOAD( "bc_rom10",  0x180000, 0x080000, 0x5458917e );
 	
-		ROM_REGION( 0x140000, REGION_SOUND1, 0 )	/* 8 bit adpcm (banked) */
-		ROM_LOAD( "bc_rom1",     0x040000, 0x080000, 0xac6f8ba1 )
-		ROM_LOAD( "bc_rom2",     0x0c0000, 0x080000, 0xa4bc31bf )
-		ROM_COPY( REGION_SOUND1, 0x040000, 0x000000,   0x040000 )
-	ROM_END
+		ROM_REGION( 0x140000, REGION_SOUND1, 0 );/* 8 bit adpcm (banked) */
+		ROM_LOAD( "bc_rom1",     0x040000, 0x080000, 0xac6f8ba1 );
+		ROM_LOAD( "bc_rom2",     0x0c0000, 0x080000, 0xa4bc31bf );
+		ROM_COPY( REGION_SOUND1, 0x040000, 0x000000,   0x040000 );
+	ROM_END(); }}; 
 	
 	
 	void init_blmbycar(void)

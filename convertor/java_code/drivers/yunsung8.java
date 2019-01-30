@@ -527,29 +527,29 @@ public class yunsung8
 	
 	***************************************************************************/
 	
-	ROM_START( magix )
+	static RomLoadPtr rom_magix = new RomLoadPtr(){ public void handler(){ 
 	
-		ROM_REGION( 0x24000+0x4000, REGION_CPU1, 0 )		/* Main Z80 Code */
-		ROM_LOAD( "yunsung8.07", 0x00000, 0x0c000, 0xd4d0b68b )
-		ROM_CONTINUE(         0x10000, 0x14000             )
+		ROM_REGION( 0x24000+0x4000, REGION_CPU1, 0 );	/* Main Z80 Code */
+		ROM_LOAD( "yunsung8.07", 0x00000, 0x0c000, 0xd4d0b68b );
+		ROM_CONTINUE(         0x10000, 0x14000             );
 		/* $2000 bytes for bank 0 of video ram (text) */
 		/* $2000 bytes for bank 1 of video ram (background) */
 	
-		ROM_REGION( 0x24000, REGION_CPU2, 0 )		/* Sound Z80 Code */
-		ROM_LOAD( "yunsung8.08", 0x00000, 0x0c000, 0x6fd60be9 )
-		ROM_CONTINUE(         0x10000, 0x14000             )
+		ROM_REGION( 0x24000, REGION_CPU2, 0 );	/* Sound Z80 Code */
+		ROM_LOAD( "yunsung8.08", 0x00000, 0x0c000, 0x6fd60be9 );
+		ROM_CONTINUE(         0x10000, 0x14000             );
 	
-		ROM_REGION( 0x200000, REGION_GFX1, ROMREGION_DISPOSE )	/* Background */
-		ROM_LOAD( "yunsung8.04",  0x000000, 0x80000, 0x0a100d2b )
-		ROM_LOAD( "yunsung8.03",  0x080000, 0x80000, 0xc8cb0373 )
-		ROM_LOAD( "yunsung8.02",  0x100000, 0x80000, 0x09efb8e5 )
-		ROM_LOAD( "yunsung8.01",  0x180000, 0x80000, 0x4590d782 )
+		ROM_REGION( 0x200000, REGION_GFX1, ROMREGION_DISPOSE );/* Background */
+		ROM_LOAD( "yunsung8.04",  0x000000, 0x80000, 0x0a100d2b );
+		ROM_LOAD( "yunsung8.03",  0x080000, 0x80000, 0xc8cb0373 );
+		ROM_LOAD( "yunsung8.02",  0x100000, 0x80000, 0x09efb8e5 );
+		ROM_LOAD( "yunsung8.01",  0x180000, 0x80000, 0x4590d782 );
 	
-		ROM_REGION( 0x40000, REGION_GFX2, ROMREGION_DISPOSE )	/* Text */
-		ROM_LOAD( "yunsung8.05", 0x00000, 0x20000, 0x862d378c )	// only first $8000 bytes != 0
-		ROM_LOAD( "yunsung8.06", 0x20000, 0x20000, 0x8b2ab901 )	// only first $8000 bytes != 0
+		ROM_REGION( 0x40000, REGION_GFX2, ROMREGION_DISPOSE );/* Text */
+		ROM_LOAD( "yunsung8.05", 0x00000, 0x20000, 0x862d378c );// only first $8000 bytes != 0
+		ROM_LOAD( "yunsung8.06", 0x20000, 0x20000, 0x8b2ab901 );// only first $8000 bytes != 0
 	
-	ROM_END
+	ROM_END(); }}; 
 	
 	
 	/***************************************************************************
@@ -567,29 +567,29 @@ public class yunsung8
 	
 	***************************************************************************/
 	
-	ROM_START( cannball )
+	static RomLoadPtr rom_cannball = new RomLoadPtr(){ public void handler(){ 
 	
-		ROM_REGION( 0x24000+0x4000, REGION_CPU1, 0 )		/* Main Z80 Code */
-		ROM_LOAD( "cannball.07", 0x00000, 0x0c000, 0x17db56b4 )
-		ROM_CONTINUE(            0x10000, 0x14000             )
+		ROM_REGION( 0x24000+0x4000, REGION_CPU1, 0 );	/* Main Z80 Code */
+		ROM_LOAD( "cannball.07", 0x00000, 0x0c000, 0x17db56b4 );
+		ROM_CONTINUE(            0x10000, 0x14000             );
 		/* $2000 bytes for bank 0 of video ram (text) */
 		/* $2000 bytes for bank 1 of video ram (background) */
 	
-		ROM_REGION( 0x24000, REGION_CPU2, 0 )		/* Sound Z80 Code */
-		ROM_LOAD( "cannball.08", 0x00000, 0x0c000, 0x11403875 )
-		ROM_CONTINUE(            0x10000, 0x14000             )
+		ROM_REGION( 0x24000, REGION_CPU2, 0 );	/* Sound Z80 Code */
+		ROM_LOAD( "cannball.08", 0x00000, 0x0c000, 0x11403875 );
+		ROM_CONTINUE(            0x10000, 0x14000             );
 	
-		ROM_REGION( 0x100000, REGION_GFX1, ROMREGION_DISPOSE )	/* Background */
-		ROM_LOAD( "cannball.01",  0x000000, 0x40000, 0x2d7785e4 )
-		ROM_LOAD( "cannball.02",  0x040000, 0x40000, 0x24df387e )
-		ROM_LOAD( "cannball.03",  0x080000, 0x40000, 0x4d62f192 )
-		ROM_LOAD( "cannball.04",  0x0c0000, 0x40000, 0x37cf8b12 )
+		ROM_REGION( 0x100000, REGION_GFX1, ROMREGION_DISPOSE );/* Background */
+		ROM_LOAD( "cannball.01",  0x000000, 0x40000, 0x2d7785e4 );
+		ROM_LOAD( "cannball.02",  0x040000, 0x40000, 0x24df387e );
+		ROM_LOAD( "cannball.03",  0x080000, 0x40000, 0x4d62f192 );
+		ROM_LOAD( "cannball.04",  0x0c0000, 0x40000, 0x37cf8b12 );
 	
-		ROM_REGION( 0x40000, REGION_GFX2, ROMREGION_DISPOSE )	/* Text */
-		ROM_LOAD( "cannball.05", 0x00000, 0x20000, 0x87c1f1fa )
-		ROM_LOAD( "cannball.06", 0x20000, 0x20000, 0xe722bee8 )
+		ROM_REGION( 0x40000, REGION_GFX2, ROMREGION_DISPOSE );/* Text */
+		ROM_LOAD( "cannball.05", 0x00000, 0x20000, 0x87c1f1fa );
+		ROM_LOAD( "cannball.06", 0x20000, 0x20000, 0xe722bee8 );
 	
-	ROM_END
+	ROM_END(); }}; 
 	
 	
 	/***************************************************************************

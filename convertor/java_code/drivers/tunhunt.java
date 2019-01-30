@@ -698,31 +698,31 @@ public class tunhunt
 	
 	/**************************************************************************/
 	
-	ROM_START( tunhunt )
-		ROM_REGION( 0x10000, REGION_CPU1, 0 )
-		ROM_LOAD( "001.lm1",	0x5000, 0x800, 0x2601a3a4 )
-		ROM_LOAD( "002.k1",		0x5800, 0x800, 0x29bbf3df )
-		ROM_LOAD( "003.j1",		0x6000, 0x800, 0x360c0f47 ) /* bad crc? fails self-test */
+	static RomLoadPtr rom_tunhunt = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x10000, REGION_CPU1, 0 );
+		ROM_LOAD( "001.lm1",	0x5000, 0x800, 0x2601a3a4 );
+		ROM_LOAD( "002.k1",		0x5800, 0x800, 0x29bbf3df );
+		ROM_LOAD( "003.j1",		0x6000, 0x800, 0x360c0f47 );/* bad crc? fails self-test */
 						/* 0xcaa6bb2a: alternate prom (re)dumped by Al also fails */
-		ROM_LOAD( "004.fh1",	0x6800, 0x800, 0x4d6c920e )
-		ROM_LOAD( "005.ef1",	0x7000, 0x800, 0xe17badf0 )
-		ROM_LOAD( "006.d1",		0x7800, 0x800, 0xc3ae8519 )
-		ROM_RELOAD( 		  	0xf800, 0x800 ) /* 6502 vectors  */
+		ROM_LOAD( "004.fh1",	0x6800, 0x800, 0x4d6c920e );
+		ROM_LOAD( "005.ef1",	0x7000, 0x800, 0xe17badf0 );
+		ROM_LOAD( "006.d1",		0x7800, 0x800, 0xc3ae8519 );
+		ROM_RELOAD( 		  	0xf800, 0x800 );/* 6502 vectors  */
 	
-		ROM_REGION( 0x400, REGION_GFX1, ROMREGION_DISPOSE ) /* alphanumeric characters */
-		ROM_LOAD( "019.c10",	0x000, 0x400, 0xd6fd45a9 )
+		ROM_REGION( 0x400, REGION_GFX1, ROMREGION_DISPOSE );/* alphanumeric characters */
+		ROM_LOAD( "019.c10",	0x000, 0x400, 0xd6fd45a9 );
 	
-		ROM_REGION( 0x400, REGION_GFX2, 0 ) /* "SHELL" objects (16x16 pixel sprites) */
-		ROM_LOAD( "016.a8",		0x000, 0x200, 0x830e6c34 )
-		ROM_LOAD( "017.b8",		0x200, 0x200, 0x5bef8b5a )
+		ROM_REGION( 0x400, REGION_GFX2, 0 );/* "SHELL" objects (16x16 pixel sprites) */
+		ROM_LOAD( "016.a8",		0x000, 0x200, 0x830e6c34 );
+		ROM_LOAD( "017.b8",		0x200, 0x200, 0x5bef8b5a );
 	
-		ROM_REGION( 0x540, REGION_PROMS, 0 )
-		ROM_LOAD( "013.d11",	0x000, 0x020, 0x66f1f5eb )	/* hue: BBBBGGGG? */
-		ROM_LOAD( "014.c11",	0x020, 0x020, 0x662444b2 )	/* hue: RRRR----? */
-		ROM_LOAD( "015.n4",		0x040, 0x100, 0x00e224a0 )	/* timing? */
-		ROM_LOAD( "018.h9",		0x140, 0x400, 0x6547c208 )	/* color lookup table? */
+		ROM_REGION( 0x540, REGION_PROMS, 0 );
+		ROM_LOAD( "013.d11",	0x000, 0x020, 0x66f1f5eb );/* hue: BBBBGGGG? */
+		ROM_LOAD( "014.c11",	0x020, 0x020, 0x662444b2 );/* hue: RRRR----? */
+		ROM_LOAD( "015.n4",		0x040, 0x100, 0x00e224a0 );/* timing? */
+		ROM_LOAD( "018.h9",		0x140, 0x400, 0x6547c208 );/* color lookup table? */
 	
-	ROM_END
+	ROM_END(); }}; 
 	
 	/*         rom   parent  machine    inp       	init */
 	GAME( 1981,tunhunt,   0, tunhunt,   tunhunt,	0,  ORIENTATION_SWAP_XY, "Atari", "Tunnel Hunt" )

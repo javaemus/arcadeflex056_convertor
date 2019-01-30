@@ -330,71 +330,71 @@ public class asterix
 	};
 	
 	
-	ROM_START( asterix )
-		ROM_REGION( 0x0c0000, REGION_CPU1, 0 )
-		ROM_LOAD16_BYTE( "aster8c.bin", 0x000000,  0x20000, 0x61d6621d )
-		ROM_LOAD16_BYTE( "aster8d.bin", 0x000001,  0x20000, 0x53aac057 )
-		ROM_LOAD16_BYTE( "aster7c.bin", 0x080000,  0x20000, 0x8223ebdc )
-		ROM_LOAD16_BYTE( "aster7d.bin", 0x080001,  0x20000, 0x9f351828 )
+	static RomLoadPtr rom_asterix = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x0c0000, REGION_CPU1, 0 );
+		ROM_LOAD16_BYTE( "aster8c.bin", 0x000000,  0x20000, 0x61d6621d );
+		ROM_LOAD16_BYTE( "aster8d.bin", 0x000001,  0x20000, 0x53aac057 );
+		ROM_LOAD16_BYTE( "aster7c.bin", 0x080000,  0x20000, 0x8223ebdc );
+		ROM_LOAD16_BYTE( "aster7d.bin", 0x080001,  0x20000, 0x9f351828 );
 	
-		ROM_REGION( 0x010000, REGION_CPU2, 0 )
-		ROM_LOAD( "aster5f.bin", 0x000000, 0x010000,  0xd3d0d77b  )
+		ROM_REGION( 0x010000, REGION_CPU2, 0 );
+		ROM_LOAD( "aster5f.bin", 0x000000, 0x010000,  0xd3d0d77b  );
 	
-		ROM_REGION( 0x100000, REGION_GFX1, 0 )
-		ROM_LOAD( "aster16k.bin", 0x000000, 0x080000, 0xb9da8e9c )
-		ROM_LOAD( "aster12k.bin", 0x080000, 0x080000, 0x7eb07a81 )
+		ROM_REGION( 0x100000, REGION_GFX1, 0 );
+		ROM_LOAD( "aster16k.bin", 0x000000, 0x080000, 0xb9da8e9c );
+		ROM_LOAD( "aster12k.bin", 0x080000, 0x080000, 0x7eb07a81 );
 	
-		ROM_REGION( 0x400000, REGION_GFX2, 0 )
-		ROM_LOAD( "aster7k.bin", 0x000000, 0x200000, 0xc41278fe )
-		ROM_LOAD( "aster3k.bin", 0x200000, 0x200000, 0x32efdbc4 )
+		ROM_REGION( 0x400000, REGION_GFX2, 0 );
+		ROM_LOAD( "aster7k.bin", 0x000000, 0x200000, 0xc41278fe );
+		ROM_LOAD( "aster3k.bin", 0x200000, 0x200000, 0x32efdbc4 );
 	
-		ROM_REGION( 0x200000, REGION_SOUND1, 0 )
-		ROM_LOAD( "aster1e.bin", 0x000000, 0x200000, 0x6df9ec0e )
-	ROM_END
+		ROM_REGION( 0x200000, REGION_SOUND1, 0 );
+		ROM_LOAD( "aster1e.bin", 0x000000, 0x200000, 0x6df9ec0e );
+	ROM_END(); }}; 
 	
-	ROM_START( astrxeac )
-		ROM_REGION( 0x0c0000, REGION_CPU1, 0 )
-		ROM_LOAD16_BYTE( "asterix.8c",  0x000000,  0x20000, 0x0ccd1feb )
-		ROM_LOAD16_BYTE( "asterix.8d",  0x000001,  0x20000, 0xb0805f47 )
-		ROM_LOAD16_BYTE( "aster7c.bin", 0x080000,  0x20000, 0x8223ebdc )
-		ROM_LOAD16_BYTE( "aster7d.bin", 0x080001,  0x20000, 0x9f351828 )
+	static RomLoadPtr rom_astrxeac = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x0c0000, REGION_CPU1, 0 );
+		ROM_LOAD16_BYTE( "asterix.8c",  0x000000,  0x20000, 0x0ccd1feb );
+		ROM_LOAD16_BYTE( "asterix.8d",  0x000001,  0x20000, 0xb0805f47 );
+		ROM_LOAD16_BYTE( "aster7c.bin", 0x080000,  0x20000, 0x8223ebdc );
+		ROM_LOAD16_BYTE( "aster7d.bin", 0x080001,  0x20000, 0x9f351828 );
 	
-		ROM_REGION( 0x010000, REGION_CPU2, 0 )
-		ROM_LOAD( "aster5f.bin", 0x000000, 0x010000,  0xd3d0d77b  )
+		ROM_REGION( 0x010000, REGION_CPU2, 0 );
+		ROM_LOAD( "aster5f.bin", 0x000000, 0x010000,  0xd3d0d77b  );
 	
-		ROM_REGION( 0x100000, REGION_GFX1, 0 )
-		ROM_LOAD( "aster16k.bin", 0x000000, 0x080000, 0xb9da8e9c )
-		ROM_LOAD( "aster12k.bin", 0x080000, 0x080000, 0x7eb07a81 )
+		ROM_REGION( 0x100000, REGION_GFX1, 0 );
+		ROM_LOAD( "aster16k.bin", 0x000000, 0x080000, 0xb9da8e9c );
+		ROM_LOAD( "aster12k.bin", 0x080000, 0x080000, 0x7eb07a81 );
 	
-		ROM_REGION( 0x400000, REGION_GFX2, 0 )
-		ROM_LOAD( "aster7k.bin", 0x000000, 0x200000, 0xc41278fe )
-		ROM_LOAD( "aster3k.bin", 0x200000, 0x200000, 0x32efdbc4 )
+		ROM_REGION( 0x400000, REGION_GFX2, 0 );
+		ROM_LOAD( "aster7k.bin", 0x000000, 0x200000, 0xc41278fe );
+		ROM_LOAD( "aster3k.bin", 0x200000, 0x200000, 0x32efdbc4 );
 	
-		ROM_REGION( 0x200000, REGION_SOUND1, 0 )
-		ROM_LOAD( "aster1e.bin", 0x000000, 0x200000, 0x6df9ec0e )
-	ROM_END
+		ROM_REGION( 0x200000, REGION_SOUND1, 0 );
+		ROM_LOAD( "aster1e.bin", 0x000000, 0x200000, 0x6df9ec0e );
+	ROM_END(); }}; 
 	
-	ROM_START( astrxeaa )
-		ROM_REGION( 0x0c0000, REGION_CPU1, 0 )
-		ROM_LOAD16_BYTE( "068eaa01.8c", 0x000000,  0x20000, 0x85b41d8e )
-		ROM_LOAD16_BYTE( "068eaa02.8d", 0x000001,  0x20000, 0x8e886305 )
-		ROM_LOAD16_BYTE( "aster7c.bin", 0x080000,  0x20000, 0x8223ebdc )
-		ROM_LOAD16_BYTE( "aster7d.bin", 0x080001,  0x20000, 0x9f351828 )
+	static RomLoadPtr rom_astrxeaa = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x0c0000, REGION_CPU1, 0 );
+		ROM_LOAD16_BYTE( "068eaa01.8c", 0x000000,  0x20000, 0x85b41d8e );
+		ROM_LOAD16_BYTE( "068eaa02.8d", 0x000001,  0x20000, 0x8e886305 );
+		ROM_LOAD16_BYTE( "aster7c.bin", 0x080000,  0x20000, 0x8223ebdc );
+		ROM_LOAD16_BYTE( "aster7d.bin", 0x080001,  0x20000, 0x9f351828 );
 	
-		ROM_REGION( 0x010000, REGION_CPU2, 0 )
-		ROM_LOAD( "aster5f.bin", 0x000000, 0x010000,  0xd3d0d77b  )
+		ROM_REGION( 0x010000, REGION_CPU2, 0 );
+		ROM_LOAD( "aster5f.bin", 0x000000, 0x010000,  0xd3d0d77b  );
 	
-		ROM_REGION( 0x100000, REGION_GFX1, 0 )
-		ROM_LOAD( "aster16k.bin", 0x000000, 0x080000, 0xb9da8e9c )
-		ROM_LOAD( "aster12k.bin", 0x080000, 0x080000, 0x7eb07a81 )
+		ROM_REGION( 0x100000, REGION_GFX1, 0 );
+		ROM_LOAD( "aster16k.bin", 0x000000, 0x080000, 0xb9da8e9c );
+		ROM_LOAD( "aster12k.bin", 0x080000, 0x080000, 0x7eb07a81 );
 	
-		ROM_REGION( 0x400000, REGION_GFX2, 0 )
-		ROM_LOAD( "aster7k.bin", 0x000000, 0x200000, 0xc41278fe )
-		ROM_LOAD( "aster3k.bin", 0x200000, 0x200000, 0x32efdbc4 )
+		ROM_REGION( 0x400000, REGION_GFX2, 0 );
+		ROM_LOAD( "aster7k.bin", 0x000000, 0x200000, 0xc41278fe );
+		ROM_LOAD( "aster3k.bin", 0x200000, 0x200000, 0x32efdbc4 );
 	
-		ROM_REGION( 0x200000, REGION_SOUND1, 0 )
-		ROM_LOAD( "aster1e.bin", 0x000000, 0x200000, 0x6df9ec0e )
-	ROM_END
+		ROM_REGION( 0x200000, REGION_SOUND1, 0 );
+		ROM_LOAD( "aster1e.bin", 0x000000, 0x200000, 0x6df9ec0e );
+	ROM_END(); }}; 
 	
 	
 	static void init_asterix(void)

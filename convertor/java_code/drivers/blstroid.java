@@ -259,115 +259,115 @@ public class blstroid
 	 *
 	 *************************************/
 	
-	ROM_START( blstroid )
-		ROM_REGION( 0x40000, REGION_CPU1, 0 )	/* 4*64k for 68000 code */
-		ROM_LOAD16_BYTE( "057-4123",  0x00000, 0x10000, 0xd14badc4 )
-		ROM_LOAD16_BYTE( "057-4121",  0x00001, 0x10000, 0xae3e93e8 )
-		ROM_LOAD16_BYTE( "057-4124",  0x20000, 0x10000, 0xfd2365df )
-		ROM_LOAD16_BYTE( "057-4122",  0x20001, 0x10000, 0xc364706e )
+	static RomLoadPtr rom_blstroid = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x40000, REGION_CPU1, 0 );/* 4*64k for 68000 code */
+		ROM_LOAD16_BYTE( "057-4123",  0x00000, 0x10000, 0xd14badc4 );
+		ROM_LOAD16_BYTE( "057-4121",  0x00001, 0x10000, 0xae3e93e8 );
+		ROM_LOAD16_BYTE( "057-4124",  0x20000, 0x10000, 0xfd2365df );
+		ROM_LOAD16_BYTE( "057-4122",  0x20001, 0x10000, 0xc364706e );
 	
-		ROM_REGION( 0x14000, REGION_CPU2, 0 )	/* 64k for 6502 code */
-		ROM_LOAD( "blstroid.snd", 0x10000, 0x4000, 0xbaa8b5fe )
-		ROM_CONTINUE(             0x04000, 0xc000 )
+		ROM_REGION( 0x14000, REGION_CPU2, 0 );/* 64k for 6502 code */
+		ROM_LOAD( "blstroid.snd", 0x10000, 0x4000, 0xbaa8b5fe );
+		ROM_CONTINUE(             0x04000, 0xc000 );
 	
-		ROM_REGION( 0x040000, REGION_GFX1, ROMREGION_DISPOSE )
-		ROM_LOAD( "blstroid.1l",  0x000000, 0x10000, 0x3c2daa5b ) /* playfield */
-		ROM_LOAD( "blstroid.1m",  0x010000, 0x10000, 0xf84f0b97 ) /* playfield */
-		ROM_LOAD( "blstroid.3l",  0x020000, 0x10000, 0xae5274f0 ) /* playfield */
-		ROM_LOAD( "blstroid.3m",  0x030000, 0x10000, 0x4bb72060 ) /* playfield */
+		ROM_REGION( 0x040000, REGION_GFX1, ROMREGION_DISPOSE );
+		ROM_LOAD( "blstroid.1l",  0x000000, 0x10000, 0x3c2daa5b );/* playfield */
+		ROM_LOAD( "blstroid.1m",  0x010000, 0x10000, 0xf84f0b97 );/* playfield */
+		ROM_LOAD( "blstroid.3l",  0x020000, 0x10000, 0xae5274f0 );/* playfield */
+		ROM_LOAD( "blstroid.3m",  0x030000, 0x10000, 0x4bb72060 );/* playfield */
 	
-		ROM_REGION( 0x100000, REGION_GFX2, ROMREGION_DISPOSE )
-		ROM_LOAD( "blstroid.5m",  0x000000, 0x10000, 0x50e0823f ) /* mo */
-		ROM_LOAD( "blstroid.6m",  0x010000, 0x10000, 0x729de7a9 ) /* mo */
-		ROM_LOAD( "blstroid.8m",  0x020000, 0x10000, 0x090e42ab ) /* mo */
-		ROM_LOAD( "blstroid.10m", 0x030000, 0x10000, 0x1ff79e67 ) /* mo */
-		ROM_LOAD( "blstroid.11m", 0x040000, 0x10000, 0x4be1d504 ) /* mo */
-		ROM_LOAD( "blstroid.13m", 0x050000, 0x10000, 0xe4409310 ) /* mo */
-		ROM_LOAD( "blstroid.14m", 0x060000, 0x10000, 0x7aaca15e ) /* mo */
-		ROM_LOAD( "blstroid.16m", 0x070000, 0x10000, 0x33690379 ) /* mo */
-		ROM_LOAD( "blstroid.5n",  0x080000, 0x10000, 0x2720ee71 ) /* mo */
-		ROM_LOAD( "blstroid.6n",  0x090000, 0x10000, 0x2faecd15 ) /* mo */
-		ROM_LOAD( "blstroid.8n",  0x0a0000, 0x10000, 0xf10e59ed ) /* mo */
-		ROM_LOAD( "blstroid.10n", 0x0b0000, 0x10000, 0x4d5fc284 ) /* mo */
-		ROM_LOAD( "blstroid.11n", 0x0c0000, 0x10000, 0xa70fc6e6 ) /* mo */
-		ROM_LOAD( "blstroid.13n", 0x0d0000, 0x10000, 0xf423b4f8 ) /* mo */
-		ROM_LOAD( "blstroid.14n", 0x0e0000, 0x10000, 0x56fa3d16 ) /* mo */
-		ROM_LOAD( "blstroid.16n", 0x0f0000, 0x10000, 0xf257f738 ) /* mo */
-	ROM_END
-	
-	
-	ROM_START( blstroi2 )
-		ROM_REGION( 0x40000, REGION_CPU1, 0 )	/* 4*64k for 68000 code */
-		ROM_LOAD16_BYTE( "blstroid.6c",  0x00000, 0x10000, 0x5a092513 )
-		ROM_LOAD16_BYTE( "blstroid.6b",  0x00001, 0x10000, 0x486aac51 )
-		ROM_LOAD16_BYTE( "blstroid.4c",  0x20000, 0x10000, 0xd0fa38fe )
-		ROM_LOAD16_BYTE( "blstroid.4b",  0x20001, 0x10000, 0x744bf921 )
-	
-		ROM_REGION( 0x14000, REGION_CPU2, 0 )	/* 64k for 6502 code */
-		ROM_LOAD( "blstroid.snd", 0x10000, 0x4000, 0xbaa8b5fe )
-		ROM_CONTINUE(             0x04000, 0xc000 )
-	
-		ROM_REGION( 0x040000, REGION_GFX1, ROMREGION_DISPOSE )
-		ROM_LOAD( "blstroid.1l",  0x000000, 0x10000, 0x3c2daa5b ) /* playfield */
-		ROM_LOAD( "blstroid.1m",  0x010000, 0x10000, 0xf84f0b97 ) /* playfield */
-		ROM_LOAD( "blstroid.3l",  0x020000, 0x10000, 0xae5274f0 ) /* playfield */
-		ROM_LOAD( "blstroid.3m",  0x030000, 0x10000, 0x4bb72060 ) /* playfield */
-	
-		ROM_REGION( 0x100000, REGION_GFX2, ROMREGION_DISPOSE )
-		ROM_LOAD( "blstroid.5m",  0x000000, 0x10000, 0x50e0823f ) /* mo */
-		ROM_LOAD( "blstroid.6m",  0x010000, 0x10000, 0x729de7a9 ) /* mo */
-		ROM_LOAD( "blstroid.8m",  0x020000, 0x10000, 0x090e42ab ) /* mo */
-		ROM_LOAD( "blstroid.10m", 0x030000, 0x10000, 0x1ff79e67 ) /* mo */
-		ROM_LOAD( "blstroid.11m", 0x040000, 0x10000, 0x4be1d504 ) /* mo */
-		ROM_LOAD( "blstroid.13m", 0x050000, 0x10000, 0xe4409310 ) /* mo */
-		ROM_LOAD( "blstroid.14m", 0x060000, 0x10000, 0x7aaca15e ) /* mo */
-		ROM_LOAD( "blstroid.16m", 0x070000, 0x10000, 0x33690379 ) /* mo */
-		ROM_LOAD( "blstroid.5n",  0x080000, 0x10000, 0x2720ee71 ) /* mo */
-		ROM_LOAD( "blstroid.6n",  0x090000, 0x10000, 0x2faecd15 ) /* mo */
-		ROM_LOAD( "blstroid.8n",  0x0a0000, 0x10000, 0xf10e59ed ) /* mo */
-		ROM_LOAD( "blstroid.10n", 0x0b0000, 0x10000, 0x4d5fc284 ) /* mo */
-		ROM_LOAD( "blstroid.11n", 0x0c0000, 0x10000, 0xa70fc6e6 ) /* mo */
-		ROM_LOAD( "blstroid.13n", 0x0d0000, 0x10000, 0xf423b4f8 ) /* mo */
-		ROM_LOAD( "blstroid.14n", 0x0e0000, 0x10000, 0x56fa3d16 ) /* mo */
-		ROM_LOAD( "blstroid.16n", 0x0f0000, 0x10000, 0xf257f738 ) /* mo */
-	ROM_END
+		ROM_REGION( 0x100000, REGION_GFX2, ROMREGION_DISPOSE );
+		ROM_LOAD( "blstroid.5m",  0x000000, 0x10000, 0x50e0823f );/* mo */
+		ROM_LOAD( "blstroid.6m",  0x010000, 0x10000, 0x729de7a9 );/* mo */
+		ROM_LOAD( "blstroid.8m",  0x020000, 0x10000, 0x090e42ab );/* mo */
+		ROM_LOAD( "blstroid.10m", 0x030000, 0x10000, 0x1ff79e67 );/* mo */
+		ROM_LOAD( "blstroid.11m", 0x040000, 0x10000, 0x4be1d504 );/* mo */
+		ROM_LOAD( "blstroid.13m", 0x050000, 0x10000, 0xe4409310 );/* mo */
+		ROM_LOAD( "blstroid.14m", 0x060000, 0x10000, 0x7aaca15e );/* mo */
+		ROM_LOAD( "blstroid.16m", 0x070000, 0x10000, 0x33690379 );/* mo */
+		ROM_LOAD( "blstroid.5n",  0x080000, 0x10000, 0x2720ee71 );/* mo */
+		ROM_LOAD( "blstroid.6n",  0x090000, 0x10000, 0x2faecd15 );/* mo */
+		ROM_LOAD( "blstroid.8n",  0x0a0000, 0x10000, 0xf10e59ed );/* mo */
+		ROM_LOAD( "blstroid.10n", 0x0b0000, 0x10000, 0x4d5fc284 );/* mo */
+		ROM_LOAD( "blstroid.11n", 0x0c0000, 0x10000, 0xa70fc6e6 );/* mo */
+		ROM_LOAD( "blstroid.13n", 0x0d0000, 0x10000, 0xf423b4f8 );/* mo */
+		ROM_LOAD( "blstroid.14n", 0x0e0000, 0x10000, 0x56fa3d16 );/* mo */
+		ROM_LOAD( "blstroid.16n", 0x0f0000, 0x10000, 0xf257f738 );/* mo */
+	ROM_END(); }}; 
 	
 	
-	ROM_START( blsthead )
-		ROM_REGION( 0x40000, REGION_CPU1, 0 )	/* 4*64k for 68000 code */
-		ROM_LOAD16_BYTE( "eheadh0.c6",  0x00000, 0x10000, 0x061f0898 )
-		ROM_LOAD16_BYTE( "eheadl0.b6",  0x00001, 0x10000, 0xae8df7cb )
-		ROM_LOAD16_BYTE( "eheadh1.c5",  0x20000, 0x10000, 0x0b7a3cb6 )
-		ROM_LOAD16_BYTE( "eheadl1.b5",  0x20001, 0x10000, 0x43971694 )
+	static RomLoadPtr rom_blstroi2 = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x40000, REGION_CPU1, 0 );/* 4*64k for 68000 code */
+		ROM_LOAD16_BYTE( "blstroid.6c",  0x00000, 0x10000, 0x5a092513 );
+		ROM_LOAD16_BYTE( "blstroid.6b",  0x00001, 0x10000, 0x486aac51 );
+		ROM_LOAD16_BYTE( "blstroid.4c",  0x20000, 0x10000, 0xd0fa38fe );
+		ROM_LOAD16_BYTE( "blstroid.4b",  0x20001, 0x10000, 0x744bf921 );
 	
-		ROM_REGION( 0x14000, REGION_CPU2, 0 )	/* 64k for 6502 code */
-		ROM_LOAD( "blstroid.snd", 0x10000, 0x4000, 0xbaa8b5fe )
-		ROM_CONTINUE(             0x04000, 0xc000 )
+		ROM_REGION( 0x14000, REGION_CPU2, 0 );/* 64k for 6502 code */
+		ROM_LOAD( "blstroid.snd", 0x10000, 0x4000, 0xbaa8b5fe );
+		ROM_CONTINUE(             0x04000, 0xc000 );
 	
-		ROM_REGION( 0x040000, REGION_GFX1, ROMREGION_DISPOSE )
-		ROM_LOAD( "blstroid.1l",  0x000000, 0x10000, 0x3c2daa5b ) /* playfield */
-		ROM_LOAD( "blstroid.1m",  0x010000, 0x10000, 0xf84f0b97 ) /* playfield */
-		ROM_LOAD( "blstroid.3l",  0x020000, 0x10000, 0xae5274f0 ) /* playfield */
-		ROM_LOAD( "blstroid.3m",  0x030000, 0x10000, 0x4bb72060 ) /* playfield */
+		ROM_REGION( 0x040000, REGION_GFX1, ROMREGION_DISPOSE );
+		ROM_LOAD( "blstroid.1l",  0x000000, 0x10000, 0x3c2daa5b );/* playfield */
+		ROM_LOAD( "blstroid.1m",  0x010000, 0x10000, 0xf84f0b97 );/* playfield */
+		ROM_LOAD( "blstroid.3l",  0x020000, 0x10000, 0xae5274f0 );/* playfield */
+		ROM_LOAD( "blstroid.3m",  0x030000, 0x10000, 0x4bb72060 );/* playfield */
 	
-		ROM_REGION( 0x100000, REGION_GFX2, ROMREGION_DISPOSE )
-		ROM_LOAD( "blstroid.5m",  0x000000, 0x10000, 0x50e0823f ) /* mo */
-		ROM_LOAD( "blstroid.6m",  0x010000, 0x10000, 0x729de7a9 ) /* mo */
-		ROM_LOAD( "blstroid.8m",  0x020000, 0x10000, 0x090e42ab ) /* mo */
-		ROM_LOAD( "blstroid.10m", 0x030000, 0x10000, 0x1ff79e67 ) /* mo */
-		ROM_LOAD( "mol4.m12",     0x040000, 0x10000, 0x571139ea ) /* mo */
-		ROM_LOAD( "blstroid.13m", 0x050000, 0x10000, 0xe4409310 ) /* mo */
-		ROM_LOAD( "blstroid.14m", 0x060000, 0x10000, 0x7aaca15e ) /* mo */
-		ROM_LOAD( "mol7.m16",     0x070000, 0x10000, 0xd27b2d91 ) /* mo */
-		ROM_LOAD( "blstroid.5n",  0x080000, 0x10000, 0x2720ee71 ) /* mo */
-		ROM_LOAD( "blstroid.6n",  0x090000, 0x10000, 0x2faecd15 ) /* mo */
-		ROM_LOAD( "moh2.n8",      0x0a0000, 0x10000, 0xa15e79e1 ) /* mo */
-		ROM_LOAD( "blstroid.10n", 0x0b0000, 0x10000, 0x4d5fc284 ) /* mo */
-		ROM_LOAD( "moh4.n12",     0x0c0000, 0x10000, 0x1a74e960 ) /* mo */
-		ROM_LOAD( "blstroid.13n", 0x0d0000, 0x10000, 0xf423b4f8 ) /* mo */
-		ROM_LOAD( "blstroid.14n", 0x0e0000, 0x10000, 0x56fa3d16 ) /* mo */
-		ROM_LOAD( "moh7.n16",     0x0f0000, 0x10000, 0xa93cbbe7 ) /* mo */
-	ROM_END
+		ROM_REGION( 0x100000, REGION_GFX2, ROMREGION_DISPOSE );
+		ROM_LOAD( "blstroid.5m",  0x000000, 0x10000, 0x50e0823f );/* mo */
+		ROM_LOAD( "blstroid.6m",  0x010000, 0x10000, 0x729de7a9 );/* mo */
+		ROM_LOAD( "blstroid.8m",  0x020000, 0x10000, 0x090e42ab );/* mo */
+		ROM_LOAD( "blstroid.10m", 0x030000, 0x10000, 0x1ff79e67 );/* mo */
+		ROM_LOAD( "blstroid.11m", 0x040000, 0x10000, 0x4be1d504 );/* mo */
+		ROM_LOAD( "blstroid.13m", 0x050000, 0x10000, 0xe4409310 );/* mo */
+		ROM_LOAD( "blstroid.14m", 0x060000, 0x10000, 0x7aaca15e );/* mo */
+		ROM_LOAD( "blstroid.16m", 0x070000, 0x10000, 0x33690379 );/* mo */
+		ROM_LOAD( "blstroid.5n",  0x080000, 0x10000, 0x2720ee71 );/* mo */
+		ROM_LOAD( "blstroid.6n",  0x090000, 0x10000, 0x2faecd15 );/* mo */
+		ROM_LOAD( "blstroid.8n",  0x0a0000, 0x10000, 0xf10e59ed );/* mo */
+		ROM_LOAD( "blstroid.10n", 0x0b0000, 0x10000, 0x4d5fc284 );/* mo */
+		ROM_LOAD( "blstroid.11n", 0x0c0000, 0x10000, 0xa70fc6e6 );/* mo */
+		ROM_LOAD( "blstroid.13n", 0x0d0000, 0x10000, 0xf423b4f8 );/* mo */
+		ROM_LOAD( "blstroid.14n", 0x0e0000, 0x10000, 0x56fa3d16 );/* mo */
+		ROM_LOAD( "blstroid.16n", 0x0f0000, 0x10000, 0xf257f738 );/* mo */
+	ROM_END(); }}; 
+	
+	
+	static RomLoadPtr rom_blsthead = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x40000, REGION_CPU1, 0 );/* 4*64k for 68000 code */
+		ROM_LOAD16_BYTE( "eheadh0.c6",  0x00000, 0x10000, 0x061f0898 );
+		ROM_LOAD16_BYTE( "eheadl0.b6",  0x00001, 0x10000, 0xae8df7cb );
+		ROM_LOAD16_BYTE( "eheadh1.c5",  0x20000, 0x10000, 0x0b7a3cb6 );
+		ROM_LOAD16_BYTE( "eheadl1.b5",  0x20001, 0x10000, 0x43971694 );
+	
+		ROM_REGION( 0x14000, REGION_CPU2, 0 );/* 64k for 6502 code */
+		ROM_LOAD( "blstroid.snd", 0x10000, 0x4000, 0xbaa8b5fe );
+		ROM_CONTINUE(             0x04000, 0xc000 );
+	
+		ROM_REGION( 0x040000, REGION_GFX1, ROMREGION_DISPOSE );
+		ROM_LOAD( "blstroid.1l",  0x000000, 0x10000, 0x3c2daa5b );/* playfield */
+		ROM_LOAD( "blstroid.1m",  0x010000, 0x10000, 0xf84f0b97 );/* playfield */
+		ROM_LOAD( "blstroid.3l",  0x020000, 0x10000, 0xae5274f0 );/* playfield */
+		ROM_LOAD( "blstroid.3m",  0x030000, 0x10000, 0x4bb72060 );/* playfield */
+	
+		ROM_REGION( 0x100000, REGION_GFX2, ROMREGION_DISPOSE );
+		ROM_LOAD( "blstroid.5m",  0x000000, 0x10000, 0x50e0823f );/* mo */
+		ROM_LOAD( "blstroid.6m",  0x010000, 0x10000, 0x729de7a9 );/* mo */
+		ROM_LOAD( "blstroid.8m",  0x020000, 0x10000, 0x090e42ab );/* mo */
+		ROM_LOAD( "blstroid.10m", 0x030000, 0x10000, 0x1ff79e67 );/* mo */
+		ROM_LOAD( "mol4.m12",     0x040000, 0x10000, 0x571139ea );/* mo */
+		ROM_LOAD( "blstroid.13m", 0x050000, 0x10000, 0xe4409310 );/* mo */
+		ROM_LOAD( "blstroid.14m", 0x060000, 0x10000, 0x7aaca15e );/* mo */
+		ROM_LOAD( "mol7.m16",     0x070000, 0x10000, 0xd27b2d91 );/* mo */
+		ROM_LOAD( "blstroid.5n",  0x080000, 0x10000, 0x2720ee71 );/* mo */
+		ROM_LOAD( "blstroid.6n",  0x090000, 0x10000, 0x2faecd15 );/* mo */
+		ROM_LOAD( "moh2.n8",      0x0a0000, 0x10000, 0xa15e79e1 );/* mo */
+		ROM_LOAD( "blstroid.10n", 0x0b0000, 0x10000, 0x4d5fc284 );/* mo */
+		ROM_LOAD( "moh4.n12",     0x0c0000, 0x10000, 0x1a74e960 );/* mo */
+		ROM_LOAD( "blstroid.13n", 0x0d0000, 0x10000, 0xf423b4f8 );/* mo */
+		ROM_LOAD( "blstroid.14n", 0x0e0000, 0x10000, 0x56fa3d16 );/* mo */
+		ROM_LOAD( "moh7.n16",     0x0f0000, 0x10000, 0xa93cbbe7 );/* mo */
+	ROM_END(); }}; 
 	
 	
 	

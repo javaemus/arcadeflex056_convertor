@@ -287,109 +287,109 @@ public class pengo
 	
 	***************************************************************************/
 	
-	ROM_START( pengo )
-		ROM_REGION( 2*0x10000, REGION_CPU1, 0 )     /* 64k for code + 64k for decrypted opcodes */
-		ROM_LOAD( "ic8",          0x0000, 0x1000, 0xf37066a8 )
-		ROM_LOAD( "ic7",          0x1000, 0x1000, 0xbaf48143 )
-		ROM_LOAD( "ic15",         0x2000, 0x1000, 0xadf0eba0 )
-		ROM_LOAD( "ic14",         0x3000, 0x1000, 0xa086d60f )
-		ROM_LOAD( "ic21",         0x4000, 0x1000, 0xb72084ec )
-		ROM_LOAD( "ic20",         0x5000, 0x1000, 0x94194a89 )
-		ROM_LOAD( "ic32",         0x6000, 0x1000, 0xaf7b12c4 )
-		ROM_LOAD( "ic31",         0x7000, 0x1000, 0x933950fe )
+	static RomLoadPtr rom_pengo = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 2*0x10000, REGION_CPU1, 0 );    /* 64k for code + 64k for decrypted opcodes */
+		ROM_LOAD( "ic8",          0x0000, 0x1000, 0xf37066a8 );
+		ROM_LOAD( "ic7",          0x1000, 0x1000, 0xbaf48143 );
+		ROM_LOAD( "ic15",         0x2000, 0x1000, 0xadf0eba0 );
+		ROM_LOAD( "ic14",         0x3000, 0x1000, 0xa086d60f );
+		ROM_LOAD( "ic21",         0x4000, 0x1000, 0xb72084ec );
+		ROM_LOAD( "ic20",         0x5000, 0x1000, 0x94194a89 );
+		ROM_LOAD( "ic32",         0x6000, 0x1000, 0xaf7b12c4 );
+		ROM_LOAD( "ic31",         0x7000, 0x1000, 0x933950fe );
 	
-		ROM_REGION( 0x2000, REGION_GFX1, ROMREGION_DISPOSE )
-		ROM_LOAD( "ic92",         0x0000, 0x2000, 0xd7eec6cd )
+		ROM_REGION( 0x2000, REGION_GFX1, ROMREGION_DISPOSE );
+		ROM_LOAD( "ic92",         0x0000, 0x2000, 0xd7eec6cd );
 	
-		ROM_REGION( 0x2000, REGION_GFX2, ROMREGION_DISPOSE )
-		ROM_LOAD( "ic105",        0x0000, 0x2000, 0x5bfd26e9 )
+		ROM_REGION( 0x2000, REGION_GFX2, ROMREGION_DISPOSE );
+		ROM_LOAD( "ic105",        0x0000, 0x2000, 0x5bfd26e9 );
 	
-		ROM_REGION( 0x0420, REGION_PROMS, 0 )
-		ROM_LOAD( "pr1633.078",   0x0000, 0x0020, 0x3a5844ec )
-		ROM_LOAD( "pr1634.088",   0x0020, 0x0400, 0x766b139b )
+		ROM_REGION( 0x0420, REGION_PROMS, 0 );
+		ROM_LOAD( "pr1633.078",   0x0000, 0x0020, 0x3a5844ec );
+		ROM_LOAD( "pr1634.088",   0x0020, 0x0400, 0x766b139b );
 	
-		ROM_REGION( 0x0200, REGION_SOUND1, 0 )	/* sound PROMs */
-		ROM_LOAD( "pr1635.051",   0x0000, 0x0100, 0xc29dea27 )
-		ROM_LOAD( "pr1636.070",   0x0100, 0x0100, 0x77245b66 )	/* timing - not used */
-	ROM_END
+		ROM_REGION( 0x0200, REGION_SOUND1, 0 );/* sound PROMs */
+		ROM_LOAD( "pr1635.051",   0x0000, 0x0100, 0xc29dea27 );
+		ROM_LOAD( "pr1636.070",   0x0100, 0x0100, 0x77245b66 );/* timing - not used */
+	ROM_END(); }}; 
 	
-	ROM_START( pengo2 )
-		ROM_REGION( 2*0x10000, REGION_CPU1, 0 )     /* 64k for code + 64k for decrypted opcodes */
-		ROM_LOAD( "ic8.2",        0x0000, 0x1000, 0xe4924b7b )
-		ROM_LOAD( "ic7.2",        0x1000, 0x1000, 0x72e7775d )
-		ROM_LOAD( "ic15.2",       0x2000, 0x1000, 0x7410ef1e )
-		ROM_LOAD( "ic14.2",       0x3000, 0x1000, 0x55b3f379 )
-		ROM_LOAD( "ic21",         0x4000, 0x1000, 0xb72084ec )
-		ROM_LOAD( "ic20.2",       0x5000, 0x1000, 0x770570cf )
-		ROM_LOAD( "ic32",         0x6000, 0x1000, 0xaf7b12c4 )
-		ROM_LOAD( "ic31.2",       0x7000, 0x1000, 0x669555c1 )
+	static RomLoadPtr rom_pengo2 = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 2*0x10000, REGION_CPU1, 0 );    /* 64k for code + 64k for decrypted opcodes */
+		ROM_LOAD( "ic8.2",        0x0000, 0x1000, 0xe4924b7b );
+		ROM_LOAD( "ic7.2",        0x1000, 0x1000, 0x72e7775d );
+		ROM_LOAD( "ic15.2",       0x2000, 0x1000, 0x7410ef1e );
+		ROM_LOAD( "ic14.2",       0x3000, 0x1000, 0x55b3f379 );
+		ROM_LOAD( "ic21",         0x4000, 0x1000, 0xb72084ec );
+		ROM_LOAD( "ic20.2",       0x5000, 0x1000, 0x770570cf );
+		ROM_LOAD( "ic32",         0x6000, 0x1000, 0xaf7b12c4 );
+		ROM_LOAD( "ic31.2",       0x7000, 0x1000, 0x669555c1 );
 	
-		ROM_REGION( 0x2000, REGION_GFX1, ROMREGION_DISPOSE )
-		ROM_LOAD( "ic92",         0x0000, 0x2000, 0xd7eec6cd )
+		ROM_REGION( 0x2000, REGION_GFX1, ROMREGION_DISPOSE );
+		ROM_LOAD( "ic92",         0x0000, 0x2000, 0xd7eec6cd );
 	
-		ROM_REGION( 0x2000, REGION_GFX2, ROMREGION_DISPOSE )
-		ROM_LOAD( "ic105",        0x0000, 0x2000, 0x5bfd26e9 )
+		ROM_REGION( 0x2000, REGION_GFX2, ROMREGION_DISPOSE );
+		ROM_LOAD( "ic105",        0x0000, 0x2000, 0x5bfd26e9 );
 	
-		ROM_REGION( 0x0420, REGION_PROMS, 0 )
-		ROM_LOAD( "pr1633.078",   0x0000, 0x0020, 0x3a5844ec )
-		ROM_LOAD( "pr1634.088",   0x0020, 0x0400, 0x766b139b )
+		ROM_REGION( 0x0420, REGION_PROMS, 0 );
+		ROM_LOAD( "pr1633.078",   0x0000, 0x0020, 0x3a5844ec );
+		ROM_LOAD( "pr1634.088",   0x0020, 0x0400, 0x766b139b );
 	
-		ROM_REGION( 0x0200, REGION_SOUND1, 0 )	/* sound PROMs */
-		ROM_LOAD( "pr1635.051",   0x0000, 0x0100, 0xc29dea27 )
-		ROM_LOAD( "pr1636.070",   0x0100, 0x0100, 0x77245b66 )	/* timing - not used */
-	ROM_END
+		ROM_REGION( 0x0200, REGION_SOUND1, 0 );/* sound PROMs */
+		ROM_LOAD( "pr1635.051",   0x0000, 0x0100, 0xc29dea27 );
+		ROM_LOAD( "pr1636.070",   0x0100, 0x0100, 0x77245b66 );/* timing - not used */
+	ROM_END(); }}; 
 	
-	ROM_START( pengo2u )
-		ROM_REGION( 0x10000, REGION_CPU1, 0 )	/* 64k for code */
-		ROM_LOAD( "pengo.u8",     0x0000, 0x1000, 0x3dfeb20e )
-		ROM_LOAD( "pengo.u7",     0x1000, 0x1000, 0x1db341bd )
-		ROM_LOAD( "pengo.u15",    0x2000, 0x1000, 0x7c2842d5 )
-		ROM_LOAD( "pengo.u14",    0x3000, 0x1000, 0x6e3c1f2f )
-		ROM_LOAD( "pengo.u21",    0x4000, 0x1000, 0x95f354ff )
-		ROM_LOAD( "pengo.u20",    0x5000, 0x1000, 0x0fdb04b8 )
-		ROM_LOAD( "pengo.u32",    0x6000, 0x1000, 0xe5920728 )
-		ROM_LOAD( "pengo.u31",    0x7000, 0x1000, 0x13de47ed )
+	static RomLoadPtr rom_pengo2u = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x10000, REGION_CPU1, 0 );/* 64k for code */
+		ROM_LOAD( "pengo.u8",     0x0000, 0x1000, 0x3dfeb20e );
+		ROM_LOAD( "pengo.u7",     0x1000, 0x1000, 0x1db341bd );
+		ROM_LOAD( "pengo.u15",    0x2000, 0x1000, 0x7c2842d5 );
+		ROM_LOAD( "pengo.u14",    0x3000, 0x1000, 0x6e3c1f2f );
+		ROM_LOAD( "pengo.u21",    0x4000, 0x1000, 0x95f354ff );
+		ROM_LOAD( "pengo.u20",    0x5000, 0x1000, 0x0fdb04b8 );
+		ROM_LOAD( "pengo.u32",    0x6000, 0x1000, 0xe5920728 );
+		ROM_LOAD( "pengo.u31",    0x7000, 0x1000, 0x13de47ed );
 	
-		ROM_REGION( 0x2000, REGION_GFX1, ROMREGION_DISPOSE )
-		ROM_LOAD( "ic92",         0x0000, 0x2000, 0xd7eec6cd )
+		ROM_REGION( 0x2000, REGION_GFX1, ROMREGION_DISPOSE );
+		ROM_LOAD( "ic92",         0x0000, 0x2000, 0xd7eec6cd );
 	
-		ROM_REGION( 0x2000, REGION_GFX2, ROMREGION_DISPOSE )
-		ROM_LOAD( "ic105",        0x0000, 0x2000, 0x5bfd26e9 )
+		ROM_REGION( 0x2000, REGION_GFX2, ROMREGION_DISPOSE );
+		ROM_LOAD( "ic105",        0x0000, 0x2000, 0x5bfd26e9 );
 	
-		ROM_REGION( 0x0420, REGION_PROMS, 0 )
-		ROM_LOAD( "pr1633.078",   0x0000, 0x0020, 0x3a5844ec )
-		ROM_LOAD( "pr1634.088",   0x0020, 0x0400, 0x766b139b )
+		ROM_REGION( 0x0420, REGION_PROMS, 0 );
+		ROM_LOAD( "pr1633.078",   0x0000, 0x0020, 0x3a5844ec );
+		ROM_LOAD( "pr1634.088",   0x0020, 0x0400, 0x766b139b );
 	
-		ROM_REGION( 0x0200, REGION_SOUND1, 0 )	/* sound PROMs */
-		ROM_LOAD( "pr1635.051",   0x0000, 0x0100, 0xc29dea27 )
-		ROM_LOAD( "pr1636.070",   0x0100, 0x0100, 0x77245b66 )	/* timing - not used */
-	ROM_END
+		ROM_REGION( 0x0200, REGION_SOUND1, 0 );/* sound PROMs */
+		ROM_LOAD( "pr1635.051",   0x0000, 0x0100, 0xc29dea27 );
+		ROM_LOAD( "pr1636.070",   0x0100, 0x0100, 0x77245b66 );/* timing - not used */
+	ROM_END(); }}; 
 	
-	ROM_START( penta )
-		ROM_REGION( 2*0x10000, REGION_CPU1, 0 )     /* 64k for code + 64k for decrypted opcodes */
-		ROM_LOAD( "008_pn01.bin", 0x0000, 0x1000, 0x22f328df )
-		ROM_LOAD( "007_pn05.bin", 0x1000, 0x1000, 0x15bbc7d3 )
-		ROM_LOAD( "015_pn02.bin", 0x2000, 0x1000, 0xde82b74a )
-		ROM_LOAD( "014_pn06.bin", 0x3000, 0x1000, 0x160f3836 )
-		ROM_LOAD( "021_pn03.bin", 0x4000, 0x1000, 0x7824e3ef )
-		ROM_LOAD( "020_pn07.bin", 0x5000, 0x1000, 0x377b9663 )
-		ROM_LOAD( "032_pn04.bin", 0x6000, 0x1000, 0xbfde44c1 )
-		ROM_LOAD( "031_pn08.bin", 0x7000, 0x1000, 0x64e8c30d )
+	static RomLoadPtr rom_penta = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 2*0x10000, REGION_CPU1, 0 );    /* 64k for code + 64k for decrypted opcodes */
+		ROM_LOAD( "008_pn01.bin", 0x0000, 0x1000, 0x22f328df );
+		ROM_LOAD( "007_pn05.bin", 0x1000, 0x1000, 0x15bbc7d3 );
+		ROM_LOAD( "015_pn02.bin", 0x2000, 0x1000, 0xde82b74a );
+		ROM_LOAD( "014_pn06.bin", 0x3000, 0x1000, 0x160f3836 );
+		ROM_LOAD( "021_pn03.bin", 0x4000, 0x1000, 0x7824e3ef );
+		ROM_LOAD( "020_pn07.bin", 0x5000, 0x1000, 0x377b9663 );
+		ROM_LOAD( "032_pn04.bin", 0x6000, 0x1000, 0xbfde44c1 );
+		ROM_LOAD( "031_pn08.bin", 0x7000, 0x1000, 0x64e8c30d );
 	
-		ROM_REGION( 0x2000, REGION_GFX1, ROMREGION_DISPOSE )
-		ROM_LOAD( "092_pn09.bin", 0x0000, 0x2000, 0x6afeba9d )
+		ROM_REGION( 0x2000, REGION_GFX1, ROMREGION_DISPOSE );
+		ROM_LOAD( "092_pn09.bin", 0x0000, 0x2000, 0x6afeba9d );
 	
-		ROM_REGION( 0x2000, REGION_GFX2, ROMREGION_DISPOSE )
-		ROM_LOAD( "ic105",        0x0000, 0x2000, 0x5bfd26e9 )
+		ROM_REGION( 0x2000, REGION_GFX2, ROMREGION_DISPOSE );
+		ROM_LOAD( "ic105",        0x0000, 0x2000, 0x5bfd26e9 );
 	
-		ROM_REGION( 0x0420, REGION_PROMS, 0 )
-		ROM_LOAD( "pr1633.078",   0x0000, 0x0020, 0x3a5844ec )
-		ROM_LOAD( "pr1634.088",   0x0020, 0x0400, 0x766b139b )
+		ROM_REGION( 0x0420, REGION_PROMS, 0 );
+		ROM_LOAD( "pr1633.078",   0x0000, 0x0020, 0x3a5844ec );
+		ROM_LOAD( "pr1634.088",   0x0020, 0x0400, 0x766b139b );
 	
-		ROM_REGION( 0x0200, REGION_SOUND1, 0 )	/* sound PROMs */
-		ROM_LOAD( "pr1635.051",   0x0000, 0x0100, 0xc29dea27 )
-		ROM_LOAD( "pr1636.070",   0x0100, 0x0100, 0x77245b66 )	/* timing - not used */
-	ROM_END
+		ROM_REGION( 0x0200, REGION_SOUND1, 0 );/* sound PROMs */
+		ROM_LOAD( "pr1635.051",   0x0000, 0x0100, 0xc29dea27 );
+		ROM_LOAD( "pr1636.070",   0x0100, 0x0100, 0x77245b66 );/* timing - not used */
+	ROM_END(); }}; 
 	
 	
 	

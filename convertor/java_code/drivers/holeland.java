@@ -394,51 +394,51 @@ public class holeland
 	
 	***************************************************************************/
 	
-	ROM_START( holeland )
-		ROM_REGION( 0x10000, REGION_CPU1, 0 )
-		ROM_LOAD( "holeland.0",  0x0000, 0x2000, 0xb640e12b )
-		ROM_LOAD( "holeland.1",  0x2000, 0x2000, 0x2f180851 )
-		ROM_LOAD( "holeland.2",  0x4000, 0x2000, 0x35cfde75 )
-		ROM_LOAD( "holeland.3",  0x6000, 0x2000, 0x5537c22e )
-		ROM_LOAD( "holeland.4",  0xa000, 0x2000, 0xc95c355d )
+	static RomLoadPtr rom_holeland = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x10000, REGION_CPU1, 0 );
+		ROM_LOAD( "holeland.0",  0x0000, 0x2000, 0xb640e12b );
+		ROM_LOAD( "holeland.1",  0x2000, 0x2000, 0x2f180851 );
+		ROM_LOAD( "holeland.2",  0x4000, 0x2000, 0x35cfde75 );
+		ROM_LOAD( "holeland.3",  0x6000, 0x2000, 0x5537c22e );
+		ROM_LOAD( "holeland.4",  0xa000, 0x2000, 0xc95c355d );
 	
-		ROM_REGION( 0x4000, REGION_GFX1, ROMREGION_DISPOSE | ROMREGION_INVERT )
-		ROM_LOAD( "holeland.5",  0x0000, 0x2000, 0x7f19e1f9 )
-		ROM_LOAD( "holeland.6",  0x2000, 0x2000, 0x844400e3 )
+		ROM_REGION( 0x4000, REGION_GFX1, ROMREGION_DISPOSE | ROMREGION_INVERT );
+		ROM_LOAD( "holeland.5",  0x0000, 0x2000, 0x7f19e1f9 );
+		ROM_LOAD( "holeland.6",  0x2000, 0x2000, 0x844400e3 );
 	
-		ROM_REGION( 0x8000, REGION_GFX2, ROMREGION_DISPOSE )
-		ROM_LOAD( "holeland.7",  0x0000, 0x2000, 0xd7feb25b )
-		ROM_LOAD( "holeland.8",  0x2000, 0x2000, 0x4b6eec16 )
-		ROM_LOAD( "holeland.9",  0x4000, 0x2000, 0x6fe7fcc0 )
-		ROM_LOAD( "holeland.10", 0x6000, 0x2000, 0xe1e11e8f )
+		ROM_REGION( 0x8000, REGION_GFX2, ROMREGION_DISPOSE );
+		ROM_LOAD( "holeland.7",  0x0000, 0x2000, 0xd7feb25b );
+		ROM_LOAD( "holeland.8",  0x2000, 0x2000, 0x4b6eec16 );
+		ROM_LOAD( "holeland.9",  0x4000, 0x2000, 0x6fe7fcc0 );
+		ROM_LOAD( "holeland.10", 0x6000, 0x2000, 0xe1e11e8f );
 	
-		ROM_REGION( 0x0300, REGION_PROMS, 0 )
-		ROM_LOAD( "3m",          0x0000, 0x0100, 0x9d6fef5a )  /* Red component */
-		ROM_LOAD( "3l",          0x0100, 0x0100, 0xf6682705 )  /* Green component */
-		ROM_LOAD( "3n",          0x0200, 0x0100, 0x3d7b3af6 )  /* Blue component */
-	ROM_END
+		ROM_REGION( 0x0300, REGION_PROMS, 0 );
+		ROM_LOAD( "3m",          0x0000, 0x0100, 0x9d6fef5a ); /* Red component */
+		ROM_LOAD( "3l",          0x0100, 0x0100, 0xf6682705 ); /* Green component */
+		ROM_LOAD( "3n",          0x0200, 0x0100, 0x3d7b3af6 ); /* Blue component */
+	ROM_END(); }}; 
 	
-	ROM_START( crzrally )
-		ROM_REGION( 0x10000, REGION_CPU1, 0 )
-		ROM_LOAD( "1.7g",        0x0000, 0x4000, 0x8fe01f86 )
-		ROM_LOAD( "2.7f",        0x4000, 0x4000, 0x67110f1d )
-		ROM_LOAD( "3.7d",        0x8000, 0x4000, 0x25c861c3 )
+	static RomLoadPtr rom_crzrally = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x10000, REGION_CPU1, 0 );
+		ROM_LOAD( "1.7g",        0x0000, 0x4000, 0x8fe01f86 );
+		ROM_LOAD( "2.7f",        0x4000, 0x4000, 0x67110f1d );
+		ROM_LOAD( "3.7d",        0x8000, 0x4000, 0x25c861c3 );
 	
-		ROM_REGION( 0x4000, REGION_GFX1, ROMREGION_DISPOSE | ROMREGION_INVERT )
-		ROM_LOAD( "4.5g",        0x0000, 0x2000, 0x29dece8b )
-		ROM_LOAD( "5.5f",        0x2000, 0x2000, 0xb34aa904 )
+		ROM_REGION( 0x4000, REGION_GFX1, ROMREGION_DISPOSE | ROMREGION_INVERT );
+		ROM_LOAD( "4.5g",        0x0000, 0x2000, 0x29dece8b );
+		ROM_LOAD( "5.5f",        0x2000, 0x2000, 0xb34aa904 );
 	
-		ROM_REGION( 0x8000, REGION_GFX2, ROMREGION_DISPOSE )
-		ROM_LOAD( "6.1f",        0x0000, 0x2000, 0xa909ff0f )
-		ROM_LOAD( "7.1l",        0x2000, 0x2000, 0x38fb0a16 )
-		ROM_LOAD( "8.1k",        0x4000, 0x2000, 0x660aa0f0 )
-		ROM_LOAD( "9.1i",        0x6000, 0x2000, 0x37d0790e )
+		ROM_REGION( 0x8000, REGION_GFX2, ROMREGION_DISPOSE );
+		ROM_LOAD( "6.1f",        0x0000, 0x2000, 0xa909ff0f );
+		ROM_LOAD( "7.1l",        0x2000, 0x2000, 0x38fb0a16 );
+		ROM_LOAD( "8.1k",        0x4000, 0x2000, 0x660aa0f0 );
+		ROM_LOAD( "9.1i",        0x6000, 0x2000, 0x37d0790e );
 	
-		ROM_REGION( 0x0300, REGION_PROMS, 0 )
-		ROM_LOAD( "82s129.9n",   0x0000, 0x0100, 0x98ff725a )  /* Red component */
-		ROM_LOAD( "82s129.9m",   0x0100, 0x0100, 0xd41f5800 )  /* Green component */
-		ROM_LOAD( "82s129.9l",   0x0200, 0x0100, 0x9ed49cb4 )  /* Blue component */
-	ROM_END
+		ROM_REGION( 0x0300, REGION_PROMS, 0 );
+		ROM_LOAD( "82s129.9n",   0x0000, 0x0100, 0x98ff725a ); /* Red component */
+		ROM_LOAD( "82s129.9m",   0x0100, 0x0100, 0xd41f5800 ); /* Green component */
+		ROM_LOAD( "82s129.9l",   0x0200, 0x0100, 0x9ed49cb4 ); /* Blue component */
+	ROM_END(); }}; 
 	
 	
 	

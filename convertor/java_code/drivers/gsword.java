@@ -721,77 +721,77 @@ public class gsword
 	
 	***************************************************************************/
 	
-	ROM_START( josvolly )
-		ROM_REGION( 0x10000, REGION_CPU1, 0 )	/* 64K for main CPU */
-		ROM_LOAD( "aa2-1.2c",     0x0000, 0x2000, 0x27f740a5 )
-		ROM_LOAD( "aa1-2.2d",     0x2000, 0x2000, 0x3e02e3e1 )
-		ROM_LOAD( "aa0-3.2e",     0x4000, 0x2000, 0x72843ffe )
-		ROM_LOAD( "aa1-4.2f",     0x6000, 0x2000, 0x22c1466e )
+	static RomLoadPtr rom_josvolly = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x10000, REGION_CPU1, 0 );/* 64K for main CPU */
+		ROM_LOAD( "aa2-1.2c",     0x0000, 0x2000, 0x27f740a5 );
+		ROM_LOAD( "aa1-2.2d",     0x2000, 0x2000, 0x3e02e3e1 );
+		ROM_LOAD( "aa0-3.2e",     0x4000, 0x2000, 0x72843ffe );
+		ROM_LOAD( "aa1-4.2f",     0x6000, 0x2000, 0x22c1466e );
 	
-		ROM_REGION( 0x10000, REGION_CPU2, 0 )	/* 64K for 2nd CPU */
-		ROM_LOAD( "aa3-12.2h",    0x0000, 0x1000, 0x3796bbf6 )
+		ROM_REGION( 0x10000, REGION_CPU2, 0 );/* 64K for 2nd CPU */
+		ROM_LOAD( "aa3-12.2h",    0x0000, 0x1000, 0x3796bbf6 );
 	
-		ROM_REGION( 0x04000, REGION_USER1, 0 )	/* music data and samples - not sure where it's mapped */
-		ROM_LOAD( "aa0-13.2j",    0x0000, 0x2000, 0x58cc89ac )
-		ROM_LOAD( "aa0-14.4j",    0x2000, 0x2000, 0x436fe91f )
+		ROM_REGION( 0x04000, REGION_USER1, 0 );/* music data and samples - not sure where it's mapped */
+		ROM_LOAD( "aa0-13.2j",    0x0000, 0x2000, 0x58cc89ac );
+		ROM_LOAD( "aa0-14.4j",    0x2000, 0x2000, 0x436fe91f );
 	
-		ROM_REGION( 0x4000, REGION_GFX1, ROMREGION_DISPOSE )
-		ROM_LOAD( "aa0-10.9n",    0x0000, 0x2000, 0x207c4f42 )	/* tiles */
-		ROM_LOAD( "aa1-11.9p",    0x2000, 0x1000, 0xc130464a )
+		ROM_REGION( 0x4000, REGION_GFX1, ROMREGION_DISPOSE );
+		ROM_LOAD( "aa0-10.9n",    0x0000, 0x2000, 0x207c4f42 );/* tiles */
+		ROM_LOAD( "aa1-11.9p",    0x2000, 0x1000, 0xc130464a );
 	
-		ROM_REGION( 0x2000, REGION_GFX2, ROMREGION_DISPOSE )
-		ROM_LOAD( "aa0-6.9e",     0x0000, 0x2000, 0xc2c2401a )	/* sprites */
+		ROM_REGION( 0x2000, REGION_GFX2, ROMREGION_DISPOSE );
+		ROM_LOAD( "aa0-6.9e",     0x0000, 0x2000, 0xc2c2401a );/* sprites */
 	
-		ROM_REGION( 0x4000, REGION_GFX3, ROMREGION_DISPOSE )
-		ROM_LOAD( "aa0-7.9f",     0x0000, 0x2000, 0xda836231 )
-		ROM_LOAD( "aa0-8.9h",     0x2000, 0x2000, 0xa0426d57 )
+		ROM_REGION( 0x4000, REGION_GFX3, ROMREGION_DISPOSE );
+		ROM_LOAD( "aa0-7.9f",     0x0000, 0x2000, 0xda836231 );
+		ROM_LOAD( "aa0-8.9h",     0x2000, 0x2000, 0xa0426d57 );
 	
-		ROM_REGION( 0x0460, REGION_PROMS, 0 )
-		ROM_LOAD( "a1.10k",       0x0000, 0x0100, 0x09f7b56a )	/* palette red? */
-		ROM_LOAD( "a2.9k",        0x0100, 0x0100, 0x852eceac )	/* palette green? */
-		ROM_LOAD( "a3.9j",        0x0200, 0x0100, 0x1312718b )	/* palette blue? */
-		ROM_LOAD( "a4.8c",        0x0300, 0x0100, 0x1dcec967 )	/* sprite lookup table */
-		ROM_LOAD( "003.4e",       0x0400, 0x0020, 0x43a548b8 )	/* address decoder? not used */
-		ROM_LOAD( "004.4d",       0x0420, 0x0020, 0x43a548b8 )	/* address decoder? not used */
-		ROM_LOAD( "005.3h",       0x0440, 0x0020, 0xe8d6dec0 )	/* address decoder? not used */
-	ROM_END
+		ROM_REGION( 0x0460, REGION_PROMS, 0 );
+		ROM_LOAD( "a1.10k",       0x0000, 0x0100, 0x09f7b56a );/* palette red? */
+		ROM_LOAD( "a2.9k",        0x0100, 0x0100, 0x852eceac );/* palette green? */
+		ROM_LOAD( "a3.9j",        0x0200, 0x0100, 0x1312718b );/* palette blue? */
+		ROM_LOAD( "a4.8c",        0x0300, 0x0100, 0x1dcec967 );/* sprite lookup table */
+		ROM_LOAD( "003.4e",       0x0400, 0x0020, 0x43a548b8 );/* address decoder? not used */
+		ROM_LOAD( "004.4d",       0x0420, 0x0020, 0x43a548b8 );/* address decoder? not used */
+		ROM_LOAD( "005.3h",       0x0440, 0x0020, 0xe8d6dec0 );/* address decoder? not used */
+	ROM_END(); }}; 
 	
-	ROM_START( gsword )
-		ROM_REGION( 0x10000, REGION_CPU1, 0 )	/* 64K for main CPU */
-		ROM_LOAD( "gs1",          0x0000, 0x2000, 0x565c4d9e )
-		ROM_LOAD( "gs2",          0x2000, 0x2000, 0xd772accf )
-		ROM_LOAD( "gs3",          0x4000, 0x2000, 0x2cee1871 )
-		ROM_LOAD( "gs4",          0x6000, 0x2000, 0xca9d206d )
-		ROM_LOAD( "gs5",          0x8000, 0x1000, 0x2a892326 )
+	static RomLoadPtr rom_gsword = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x10000, REGION_CPU1, 0 );/* 64K for main CPU */
+		ROM_LOAD( "gs1",          0x0000, 0x2000, 0x565c4d9e );
+		ROM_LOAD( "gs2",          0x2000, 0x2000, 0xd772accf );
+		ROM_LOAD( "gs3",          0x4000, 0x2000, 0x2cee1871 );
+		ROM_LOAD( "gs4",          0x6000, 0x2000, 0xca9d206d );
+		ROM_LOAD( "gs5",          0x8000, 0x1000, 0x2a892326 );
 	
-		ROM_REGION( 0x10000, REGION_CPU2, 0 )	/* 64K for 2nd CPU */
-		ROM_LOAD( "gs15",         0x0000, 0x2000, 0x1aa4690e )
-		ROM_LOAD( "gs16",         0x2000, 0x2000, 0x10accc10 )
+		ROM_REGION( 0x10000, REGION_CPU2, 0 );/* 64K for 2nd CPU */
+		ROM_LOAD( "gs15",         0x0000, 0x2000, 0x1aa4690e );
+		ROM_LOAD( "gs16",         0x2000, 0x2000, 0x10accc10 );
 	
-		ROM_REGION( 0x10000, REGION_CPU3, 0 )	/* 64K for 3nd z80 */
-		ROM_LOAD( "gs12",         0x0000, 0x2000, 0xa6589068 )
-		ROM_LOAD( "gs13",         0x2000, 0x2000, 0x4ee79796 )
-		ROM_LOAD( "gs14",         0x4000, 0x2000, 0x455364b6 )
+		ROM_REGION( 0x10000, REGION_CPU3, 0 );/* 64K for 3nd z80 */
+		ROM_LOAD( "gs12",         0x0000, 0x2000, 0xa6589068 );
+		ROM_LOAD( "gs13",         0x2000, 0x2000, 0x4ee79796 );
+		ROM_LOAD( "gs14",         0x4000, 0x2000, 0x455364b6 );
 	
-		ROM_REGION( 0x4000, REGION_GFX1, ROMREGION_DISPOSE )
-		ROM_LOAD( "gs10",         0x0000, 0x2000, 0x517c571b )	/* tiles */
-		ROM_LOAD( "gs11",         0x2000, 0x2000, 0x7a1d8a3a )
+		ROM_REGION( 0x4000, REGION_GFX1, ROMREGION_DISPOSE );
+		ROM_LOAD( "gs10",         0x0000, 0x2000, 0x517c571b );/* tiles */
+		ROM_LOAD( "gs11",         0x2000, 0x2000, 0x7a1d8a3a );
 	
-		ROM_REGION( 0x2000, REGION_GFX2, ROMREGION_DISPOSE )
-		ROM_LOAD( "gs6",          0x0000, 0x2000, 0x1b0a3cb7 )	/* sprites */
+		ROM_REGION( 0x2000, REGION_GFX2, ROMREGION_DISPOSE );
+		ROM_LOAD( "gs6",          0x0000, 0x2000, 0x1b0a3cb7 );/* sprites */
 	
-		ROM_REGION( 0x4000, REGION_GFX3, ROMREGION_DISPOSE )
-		ROM_LOAD( "gs7",          0x0000, 0x2000, 0xef5f28c6 )
-		ROM_LOAD( "gs8",          0x2000, 0x2000, 0x46824b30 )
+		ROM_REGION( 0x4000, REGION_GFX3, ROMREGION_DISPOSE );
+		ROM_LOAD( "gs7",          0x0000, 0x2000, 0xef5f28c6 );
+		ROM_LOAD( "gs8",          0x2000, 0x2000, 0x46824b30 );
 	
-		ROM_REGION( 0x0360, REGION_PROMS, 0 )
-		ROM_LOAD( "ac0-1.bpr",    0x0000, 0x0100, 0x5c4b2adc )	/* palette low bits */
-		ROM_LOAD( "ac0-2.bpr",    0x0100, 0x0100, 0x966bda66 )	/* palette high bits */
-		ROM_LOAD( "ac0-3.bpr",    0x0200, 0x0100, 0xdae13f77 )	/* sprite lookup table */
-		ROM_LOAD( "003",          0x0300, 0x0020, 0x43a548b8 )	/* address decoder? not used */
-		ROM_LOAD( "004",          0x0320, 0x0020, 0x43a548b8 )	/* address decoder? not used */
-		ROM_LOAD( "005",          0x0340, 0x0020, 0xe8d6dec0 )	/* address decoder? not used */
-	ROM_END
+		ROM_REGION( 0x0360, REGION_PROMS, 0 );
+		ROM_LOAD( "ac0-1.bpr",    0x0000, 0x0100, 0x5c4b2adc );/* palette low bits */
+		ROM_LOAD( "ac0-2.bpr",    0x0100, 0x0100, 0x966bda66 );/* palette high bits */
+		ROM_LOAD( "ac0-3.bpr",    0x0200, 0x0100, 0xdae13f77 );/* sprite lookup table */
+		ROM_LOAD( "003",          0x0300, 0x0020, 0x43a548b8 );/* address decoder? not used */
+		ROM_LOAD( "004",          0x0320, 0x0020, 0x43a548b8 );/* address decoder? not used */
+		ROM_LOAD( "005",          0x0340, 0x0020, 0xe8d6dec0 );/* address decoder? not used */
+	ROM_END(); }}; 
 	
 	
 	

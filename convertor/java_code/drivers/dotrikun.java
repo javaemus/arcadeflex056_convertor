@@ -116,15 +116,15 @@ public class dotrikun
 	
 	***************************************************************************/
 	
-	ROM_START( dotrikun )
-		ROM_REGION( 0x10000, REGION_CPU1, 0 )	/* 64k for code */
-		ROM_LOAD( "14479a.mpr",	0x0000, 0x4000, 0xb77a50db )
-	ROM_END
+	static RomLoadPtr rom_dotrikun = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x10000, REGION_CPU1, 0 );/* 64k for code */
+		ROM_LOAD( "14479a.mpr",	0x0000, 0x4000, 0xb77a50db );
+	ROM_END(); }}; 
 	
-	ROM_START( dotriku2 )
-		ROM_REGION( 0x10000, REGION_CPU1, 0 )	/* 64k for code */
-		ROM_LOAD( "14479.mpr",	0x0000, 0x4000, 0xa6aa7fa5 )
-	ROM_END
+	static RomLoadPtr rom_dotriku2 = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x10000, REGION_CPU1, 0 );/* 64k for code */
+		ROM_LOAD( "14479.mpr",	0x0000, 0x4000, 0xa6aa7fa5 );
+	ROM_END(); }}; 
 	
 	
 	GAME( 1990, dotrikun, 0,        dotrikun, dotrikun, 0, ROT0, "Sega", "Dottori Kun (new version)" )

@@ -516,29 +516,29 @@ public class beathead
 	 *
 	 *************************************/
 	
-	ROM_START( beathead )
-		ROM_REGION( 0x20000, REGION_CPU1, 0 )			/* dummy ASAP region */
+	static RomLoadPtr rom_beathead = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x20000, REGION_CPU1, 0 );		/* dummy ASAP region */
 	
-		ROM_REGION( 0x14000, REGION_CPU2, 0 )			/* 64k + 16k for 6502 code */
-		ROM_LOAD( "bhsnd.bin",  0x10000, 0x4000, 0xdfd33f02 )
-		ROM_CONTINUE(           0x04000, 0xc000 )
+		ROM_REGION( 0x14000, REGION_CPU2, 0 );		/* 64k + 16k for 6502 code */
+		ROM_LOAD( "bhsnd.bin",  0x10000, 0x4000, 0xdfd33f02 );
+		ROM_CONTINUE(           0x04000, 0xc000 );
 	
-		ROM_REGION32_LE( 0x400000, REGION_USER1, ROMREGION_DISPOSE )	/* 4MB for ASAP code */
-		ROM_LOAD32_BYTE( "bhprog0.bin", 0x000000, 0x80000, 0x87975721 )
-		ROM_LOAD32_BYTE( "bhprog1.bin", 0x000001, 0x80000, 0x25d89743 )
-		ROM_LOAD32_BYTE( "bhprog2.bin", 0x000002, 0x80000, 0x87722609 )
-		ROM_LOAD32_BYTE( "bhprog3.bin", 0x000003, 0x80000, 0xa795d616 )
-		ROM_LOAD32_BYTE( "bhpics0.bin", 0x200000, 0x80000, 0x926bf65d )
-		ROM_LOAD32_BYTE( "bhpics1.bin", 0x200001, 0x80000, 0xa8f12e41 )
-		ROM_LOAD32_BYTE( "bhpics2.bin", 0x200002, 0x80000, 0x00b96481 )
-		ROM_LOAD32_BYTE( "bhpics3.bin", 0x200003, 0x80000, 0x99c4f1db )
+		ROM_REGION32_LE( 0x400000, REGION_USER1, ROMREGION_DISPOSE );/* 4MB for ASAP code */
+		ROM_LOAD32_BYTE( "bhprog0.bin", 0x000000, 0x80000, 0x87975721 );
+		ROM_LOAD32_BYTE( "bhprog1.bin", 0x000001, 0x80000, 0x25d89743 );
+		ROM_LOAD32_BYTE( "bhprog2.bin", 0x000002, 0x80000, 0x87722609 );
+		ROM_LOAD32_BYTE( "bhprog3.bin", 0x000003, 0x80000, 0xa795d616 );
+		ROM_LOAD32_BYTE( "bhpics0.bin", 0x200000, 0x80000, 0x926bf65d );
+		ROM_LOAD32_BYTE( "bhpics1.bin", 0x200001, 0x80000, 0xa8f12e41 );
+		ROM_LOAD32_BYTE( "bhpics2.bin", 0x200002, 0x80000, 0x00b96481 );
+		ROM_LOAD32_BYTE( "bhpics3.bin", 0x200003, 0x80000, 0x99c4f1db );
 	
-		ROM_REGION( 0x100000, REGION_SOUND1, 0 )		/* 1MB for ADPCM */
-		ROM_LOAD( "bhpcm0.bin",  0x80000, 0x20000, 0x609ca626 )
-		ROM_LOAD( "bhpcm1.bin",  0xa0000, 0x20000, 0x35511509 )
-		ROM_LOAD( "bhpcm2.bin",  0xc0000, 0x20000, 0xf71a840a )
-		ROM_LOAD( "bhpcm3.bin",  0xe0000, 0x20000, 0xfedd4936 )
-	ROM_END
+		ROM_REGION( 0x100000, REGION_SOUND1, 0 );	/* 1MB for ADPCM */
+		ROM_LOAD( "bhpcm0.bin",  0x80000, 0x20000, 0x609ca626 );
+		ROM_LOAD( "bhpcm1.bin",  0xa0000, 0x20000, 0x35511509 );
+		ROM_LOAD( "bhpcm2.bin",  0xc0000, 0x20000, 0xf71a840a );
+		ROM_LOAD( "bhpcm3.bin",  0xe0000, 0x20000, 0xfedd4936 );
+	ROM_END(); }}; 
 	
 	
 	

@@ -1254,479 +1254,479 @@ public class dkong
 	
 	***************************************************************************/
 	
-	ROM_START( radarscp )
-		ROM_REGION( 0x10000, REGION_CPU1, 0 )	/* 64k for code */
-		ROM_LOAD( "trs2c5fc",     0x0000, 0x1000, 0x40949e0d )
-		ROM_LOAD( "trs2c5gc",     0x1000, 0x1000, 0xafa8c49f )
-		ROM_LOAD( "trs2c5hc",     0x2000, 0x1000, 0x51b8263d )
-		ROM_LOAD( "trs2c5kc",     0x3000, 0x1000, 0x1f0101f7 )
+	static RomLoadPtr rom_radarscp = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x10000, REGION_CPU1, 0 );/* 64k for code */
+		ROM_LOAD( "trs2c5fc",     0x0000, 0x1000, 0x40949e0d );
+		ROM_LOAD( "trs2c5gc",     0x1000, 0x1000, 0xafa8c49f );
+		ROM_LOAD( "trs2c5hc",     0x2000, 0x1000, 0x51b8263d );
+		ROM_LOAD( "trs2c5kc",     0x3000, 0x1000, 0x1f0101f7 );
 		/* space for diagnostic ROM */
 	
-		ROM_REGION( 0x1000, REGION_CPU2, 0 )	/* sound */
-		ROM_LOAD( "trs2s3i",      0x0000, 0x0800, 0x78034f14 )
+		ROM_REGION( 0x1000, REGION_CPU2, 0 );/* sound */
+		ROM_LOAD( "trs2s3i",      0x0000, 0x0800, 0x78034f14 );
 		/* socket 3J is empty */
 	
-		ROM_REGION( 0x1000, REGION_GFX1, ROMREGION_DISPOSE )
-		ROM_LOAD( "trs2v3gc",     0x0000, 0x0800, 0xf095330e )
-		ROM_LOAD( "trs2v3hc",     0x0800, 0x0800, 0x15a316f0 )
+		ROM_REGION( 0x1000, REGION_GFX1, ROMREGION_DISPOSE );
+		ROM_LOAD( "trs2v3gc",     0x0000, 0x0800, 0xf095330e );
+		ROM_LOAD( "trs2v3hc",     0x0800, 0x0800, 0x15a316f0 );
 	
-		ROM_REGION( 0x2000, REGION_GFX2, ROMREGION_DISPOSE )
-		ROM_LOAD( "trs2v3dc",     0x0000, 0x0800, 0xe0bb0db9 )
-		ROM_LOAD( "trs2v3cc",     0x0800, 0x0800, 0x6c4e7dad )
-		ROM_LOAD( "trs2v3bc",     0x1000, 0x0800, 0x6fdd63f1 )
-		ROM_LOAD( "trs2v3ac",     0x1800, 0x0800, 0xbbf62755 )
+		ROM_REGION( 0x2000, REGION_GFX2, ROMREGION_DISPOSE );
+		ROM_LOAD( "trs2v3dc",     0x0000, 0x0800, 0xe0bb0db9 );
+		ROM_LOAD( "trs2v3cc",     0x0800, 0x0800, 0x6c4e7dad );
+		ROM_LOAD( "trs2v3bc",     0x1000, 0x0800, 0x6fdd63f1 );
+		ROM_LOAD( "trs2v3ac",     0x1800, 0x0800, 0xbbf62755 );
 	
-		ROM_REGION( 0x0800, REGION_GFX3, 0 )	/* radar/star timing table */
-		ROM_LOAD( "trs2v3ec",     0x0000, 0x0800, 0x0eca8d6b )
+		ROM_REGION( 0x0800, REGION_GFX3, 0 );/* radar/star timing table */
+		ROM_LOAD( "trs2v3ec",     0x0000, 0x0800, 0x0eca8d6b );
 	
-		ROM_REGION( 0x0300, REGION_PROMS, 0 )
-		ROM_LOAD( "rs2-x.xxx",    0x0000, 0x0100, 0x54609d61 ) /* palette low 4 bits (inverted) */
-		ROM_LOAD( "rs2-c.xxx",    0x0100, 0x0100, 0x79a7d831 ) /* palette high 4 bits (inverted) */
-		ROM_LOAD( "rs2-v.1hc",    0x0200, 0x0100, 0x1b828315 ) /* character color codes on a per-column basis */
-	ROM_END
+		ROM_REGION( 0x0300, REGION_PROMS, 0 );
+		ROM_LOAD( "rs2-x.xxx",    0x0000, 0x0100, 0x54609d61 );/* palette low 4 bits (inverted) */
+		ROM_LOAD( "rs2-c.xxx",    0x0100, 0x0100, 0x79a7d831 );/* palette high 4 bits (inverted) */
+		ROM_LOAD( "rs2-v.1hc",    0x0200, 0x0100, 0x1b828315 );/* character color codes on a per-column basis */
+	ROM_END(); }}; 
 	
-	ROM_START( dkong )
-		ROM_REGION( 0x10000, REGION_CPU1, 0 )	/* 64k for code */
-		ROM_LOAD( "c_5et_g.bin",  0x0000, 0x1000, 0xba70b88b )
-		ROM_LOAD( "c_5ct_g.bin",  0x1000, 0x1000, 0x5ec461ec )
-		ROM_LOAD( "c_5bt_g.bin",  0x2000, 0x1000, 0x1c97d324 )
-		ROM_LOAD( "c_5at_g.bin",  0x3000, 0x1000, 0xb9005ac0 )
+	static RomLoadPtr rom_dkong = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x10000, REGION_CPU1, 0 );/* 64k for code */
+		ROM_LOAD( "c_5et_g.bin",  0x0000, 0x1000, 0xba70b88b );
+		ROM_LOAD( "c_5ct_g.bin",  0x1000, 0x1000, 0x5ec461ec );
+		ROM_LOAD( "c_5bt_g.bin",  0x2000, 0x1000, 0x1c97d324 );
+		ROM_LOAD( "c_5at_g.bin",  0x3000, 0x1000, 0xb9005ac0 );
 		/* space for diagnostic ROM */
 	
-		ROM_REGION( 0x1000, REGION_CPU2, 0 )	/* sound */
-		ROM_LOAD( "s_3i_b.bin",   0x0000, 0x0800, 0x45a4ed06 )
-		ROM_LOAD( "s_3j_b.bin",   0x0800, 0x0800, 0x4743fe92 )
+		ROM_REGION( 0x1000, REGION_CPU2, 0 );/* sound */
+		ROM_LOAD( "s_3i_b.bin",   0x0000, 0x0800, 0x45a4ed06 );
+		ROM_LOAD( "s_3j_b.bin",   0x0800, 0x0800, 0x4743fe92 );
 	
-		ROM_REGION( 0x1000, REGION_GFX1, ROMREGION_DISPOSE )
-		ROM_LOAD( "v_5h_b.bin",   0x0000, 0x0800, 0x12c8c95d )
-		ROM_LOAD( "v_3pt.bin",    0x0800, 0x0800, 0x15e9c5e9 )
+		ROM_REGION( 0x1000, REGION_GFX1, ROMREGION_DISPOSE );
+		ROM_LOAD( "v_5h_b.bin",   0x0000, 0x0800, 0x12c8c95d );
+		ROM_LOAD( "v_3pt.bin",    0x0800, 0x0800, 0x15e9c5e9 );
 	
-		ROM_REGION( 0x2000, REGION_GFX2, ROMREGION_DISPOSE )
-		ROM_LOAD( "l_4m_b.bin",   0x0000, 0x0800, 0x59f8054d )
-		ROM_LOAD( "l_4n_b.bin",   0x0800, 0x0800, 0x672e4714 )
-		ROM_LOAD( "l_4r_b.bin",   0x1000, 0x0800, 0xfeaa59ee )
-		ROM_LOAD( "l_4s_b.bin",   0x1800, 0x0800, 0x20f2ef7e )
+		ROM_REGION( 0x2000, REGION_GFX2, ROMREGION_DISPOSE );
+		ROM_LOAD( "l_4m_b.bin",   0x0000, 0x0800, 0x59f8054d );
+		ROM_LOAD( "l_4n_b.bin",   0x0800, 0x0800, 0x672e4714 );
+		ROM_LOAD( "l_4r_b.bin",   0x1000, 0x0800, 0xfeaa59ee );
+		ROM_LOAD( "l_4s_b.bin",   0x1800, 0x0800, 0x20f2ef7e );
 	
-		ROM_REGION( 0x0300, REGION_PROMS, 0 )
-		ROM_LOAD( "c-2k.bpr",     0x0000, 0x0100, 0xe273ede5 ) /* palette low 4 bits (inverted) */
-		ROM_LOAD( "c-2j.bpr",     0x0100, 0x0100, 0xd6412358 ) /* palette high 4 bits (inverted) */
-		ROM_LOAD( "v-5e.bpr",     0x0200, 0x0100, 0xb869b8f5 ) /* character color codes on a per-column basis */
-	
-	/*********************************************************
-	I use more appropreate filenames for color PROMs.
-		ROM_REGION( 0x0300, REGION_PROMS, 0 )
-		ROM_LOAD( "dkong.2k",     0x0000, 0x0100, 0x1e82d375 )
-		ROM_LOAD( "dkong.2j",     0x0100, 0x0100, 0x2ab01dc8 )
-		ROM_LOAD( "dkong.5f",     0x0200, 0x0100, 0x44988665 )
-	*********************************************************/
-	ROM_END
-	
-	ROM_START( dkongjp )
-		ROM_REGION( 0x10000, REGION_CPU1, 0 )	/* 64k for code */
-		ROM_LOAD( "c_5f_b.bin",   0x0000, 0x1000, 0x424f2b11 )
-		ROM_LOAD( "5g.cpu",       0x1000, 0x1000, 0xd326599b )
-		ROM_LOAD( "5h.cpu",       0x2000, 0x1000, 0xff31ac89 )
-		ROM_LOAD( "c_5k_b.bin",   0x3000, 0x1000, 0x394d6007 )
-	
-		ROM_REGION( 0x1000, REGION_CPU2, 0 )	/* sound */
-		ROM_LOAD( "s_3i_b.bin",   0x0000, 0x0800, 0x45a4ed06 )
-		ROM_LOAD( "s_3j_b.bin",   0x0800, 0x0800, 0x4743fe92 )
-	
-		ROM_REGION( 0x1000, REGION_GFX1, ROMREGION_DISPOSE )
-		ROM_LOAD( "v_5h_b.bin",   0x0000, 0x0800, 0x12c8c95d )
-		ROM_LOAD( "v_5k_b.bin",   0x0800, 0x0800, 0x3684f914 )
-	
-		ROM_REGION( 0x2000, REGION_GFX2, ROMREGION_DISPOSE )
-		ROM_LOAD( "l_4m_b.bin",   0x0000, 0x0800, 0x59f8054d )
-		ROM_LOAD( "l_4n_b.bin",   0x0800, 0x0800, 0x672e4714 )
-		ROM_LOAD( "l_4r_b.bin",   0x1000, 0x0800, 0xfeaa59ee )
-		ROM_LOAD( "l_4s_b.bin",   0x1800, 0x0800, 0x20f2ef7e )
-	
-		ROM_REGION( 0x0300, REGION_PROMS, 0 )
-		ROM_LOAD( "c-2k.bpr",     0x0000, 0x0100, 0xe273ede5 ) /* palette low 4 bits (inverted) */
-		ROM_LOAD( "c-2j.bpr",     0x0100, 0x0100, 0xd6412358 ) /* palette high 4 bits (inverted) */
-		ROM_LOAD( "v-5e.bpr",     0x0200, 0x0100, 0xb869b8f5 ) /* character color codes on a per-column basis */
+		ROM_REGION( 0x0300, REGION_PROMS, 0 );
+		ROM_LOAD( "c-2k.bpr",     0x0000, 0x0100, 0xe273ede5 );/* palette low 4 bits (inverted) */
+		ROM_LOAD( "c-2j.bpr",     0x0100, 0x0100, 0xd6412358 );/* palette high 4 bits (inverted) */
+		ROM_LOAD( "v-5e.bpr",     0x0200, 0x0100, 0xb869b8f5 );/* character color codes on a per-column basis */
 	
 	/*********************************************************
 	I use more appropreate filenames for color PROMs.
-		ROM_REGION( 0x0300, REGION_PROMS, 0 )
-		ROM_LOAD( "dkong.2k",     0x0000, 0x0100, 0x1e82d375 )
-		ROM_LOAD( "dkong.2j",     0x0100, 0x0100, 0x2ab01dc8 )
-		ROM_LOAD( "dkong.5f",     0x0200, 0x0100, 0x44988665 )
+		ROM_REGION( 0x0300, REGION_PROMS, 0 );
+		ROM_LOAD( "dkong.2k",     0x0000, 0x0100, 0x1e82d375 );
+		ROM_LOAD( "dkong.2j",     0x0100, 0x0100, 0x2ab01dc8 );
+		ROM_LOAD( "dkong.5f",     0x0200, 0x0100, 0x44988665 );
 	*********************************************************/
-	ROM_END
+	ROM_END(); }}; 
 	
-	ROM_START( dkongjo )
-		ROM_REGION( 0x10000, REGION_CPU1, 0 )	/* 64k for code */
-		ROM_LOAD( "c_5f_b.bin",   0x0000, 0x1000, 0x424f2b11 )
-		ROM_LOAD( "c_5g_b.bin",   0x1000, 0x1000, 0x3b2a6635 )
-		ROM_LOAD( "c_5h_b.bin",   0x2000, 0x1000, 0x1d28895d )
-		ROM_LOAD( "c_5k_b.bin",   0x3000, 0x1000, 0x394d6007 )
+	static RomLoadPtr rom_dkongjp = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x10000, REGION_CPU1, 0 );/* 64k for code */
+		ROM_LOAD( "c_5f_b.bin",   0x0000, 0x1000, 0x424f2b11 );
+		ROM_LOAD( "5g.cpu",       0x1000, 0x1000, 0xd326599b );
+		ROM_LOAD( "5h.cpu",       0x2000, 0x1000, 0xff31ac89 );
+		ROM_LOAD( "c_5k_b.bin",   0x3000, 0x1000, 0x394d6007 );
 	
-		ROM_REGION( 0x1000, REGION_CPU2, 0 )	/* sound */
-		ROM_LOAD( "s_3i_b.bin",   0x0000, 0x0800, 0x45a4ed06 )
-		ROM_LOAD( "s_3j_b.bin",   0x0800, 0x0800, 0x4743fe92 )
+		ROM_REGION( 0x1000, REGION_CPU2, 0 );/* sound */
+		ROM_LOAD( "s_3i_b.bin",   0x0000, 0x0800, 0x45a4ed06 );
+		ROM_LOAD( "s_3j_b.bin",   0x0800, 0x0800, 0x4743fe92 );
 	
-		ROM_REGION( 0x1000, REGION_GFX1, ROMREGION_DISPOSE )
-		ROM_LOAD( "v_5h_b.bin",   0x0000, 0x0800, 0x12c8c95d )
-		ROM_LOAD( "v_5k_b.bin",   0x0800, 0x0800, 0x3684f914 )
+		ROM_REGION( 0x1000, REGION_GFX1, ROMREGION_DISPOSE );
+		ROM_LOAD( "v_5h_b.bin",   0x0000, 0x0800, 0x12c8c95d );
+		ROM_LOAD( "v_5k_b.bin",   0x0800, 0x0800, 0x3684f914 );
 	
-		ROM_REGION( 0x2000, REGION_GFX2, ROMREGION_DISPOSE )
-		ROM_LOAD( "l_4m_b.bin",   0x0000, 0x0800, 0x59f8054d )
-		ROM_LOAD( "l_4n_b.bin",   0x0800, 0x0800, 0x672e4714 )
-		ROM_LOAD( "l_4r_b.bin",   0x1000, 0x0800, 0xfeaa59ee )
-		ROM_LOAD( "l_4s_b.bin",   0x1800, 0x0800, 0x20f2ef7e )
+		ROM_REGION( 0x2000, REGION_GFX2, ROMREGION_DISPOSE );
+		ROM_LOAD( "l_4m_b.bin",   0x0000, 0x0800, 0x59f8054d );
+		ROM_LOAD( "l_4n_b.bin",   0x0800, 0x0800, 0x672e4714 );
+		ROM_LOAD( "l_4r_b.bin",   0x1000, 0x0800, 0xfeaa59ee );
+		ROM_LOAD( "l_4s_b.bin",   0x1800, 0x0800, 0x20f2ef7e );
 	
-		ROM_REGION( 0x0300, REGION_PROMS, 0 )
-		ROM_LOAD( "c-2k.bpr",     0x0000, 0x0100, 0xe273ede5 ) /* palette low 4 bits (inverted) */
-		ROM_LOAD( "c-2j.bpr",     0x0100, 0x0100, 0xd6412358 ) /* palette high 4 bits (inverted) */
-		ROM_LOAD( "v-5e.bpr",     0x0200, 0x0100, 0xb869b8f5 ) /* character color codes on a per-column basis */
+		ROM_REGION( 0x0300, REGION_PROMS, 0 );
+		ROM_LOAD( "c-2k.bpr",     0x0000, 0x0100, 0xe273ede5 );/* palette low 4 bits (inverted) */
+		ROM_LOAD( "c-2j.bpr",     0x0100, 0x0100, 0xd6412358 );/* palette high 4 bits (inverted) */
+		ROM_LOAD( "v-5e.bpr",     0x0200, 0x0100, 0xb869b8f5 );/* character color codes on a per-column basis */
 	
 	/*********************************************************
 	I use more appropreate filenames for color PROMs.
-		ROM_REGION( 0x0300, REGION_PROMS, 0 )
-		ROM_LOAD( "dkong.2k",     0x0000, 0x0100, 0x1e82d375 )
-		ROM_LOAD( "dkong.2j",     0x0100, 0x0100, 0x2ab01dc8 )
-		ROM_LOAD( "dkong.5f",     0x0200, 0x0100, 0x44988665 )
+		ROM_REGION( 0x0300, REGION_PROMS, 0 );
+		ROM_LOAD( "dkong.2k",     0x0000, 0x0100, 0x1e82d375 );
+		ROM_LOAD( "dkong.2j",     0x0100, 0x0100, 0x2ab01dc8 );
+		ROM_LOAD( "dkong.5f",     0x0200, 0x0100, 0x44988665 );
 	*********************************************************/
-	ROM_END
+	ROM_END(); }}; 
 	
-	ROM_START( dkongjo1 )
-		ROM_REGION( 0x10000, REGION_CPU1, 0 )	/* 64k for code */
-		ROM_LOAD( "c_5f_b.bin",   0x0000, 0x1000, 0x424f2b11 )
-		ROM_LOAD( "5g.cpu",       0x1000, 0x1000, 0xd326599b )
-		ROM_LOAD( "c_5h_b.bin",   0x2000, 0x1000, 0x1d28895d )
-		ROM_LOAD( "5k.bin",       0x3000, 0x1000, 0x7961599c )
+	static RomLoadPtr rom_dkongjo = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x10000, REGION_CPU1, 0 );/* 64k for code */
+		ROM_LOAD( "c_5f_b.bin",   0x0000, 0x1000, 0x424f2b11 );
+		ROM_LOAD( "c_5g_b.bin",   0x1000, 0x1000, 0x3b2a6635 );
+		ROM_LOAD( "c_5h_b.bin",   0x2000, 0x1000, 0x1d28895d );
+		ROM_LOAD( "c_5k_b.bin",   0x3000, 0x1000, 0x394d6007 );
 	
-		ROM_REGION( 0x1000, REGION_CPU2, 0 )	/* sound */
-		ROM_LOAD( "s_3i_b.bin",   0x0000, 0x0800, 0x45a4ed06 )
-		ROM_LOAD( "s_3j_b.bin",   0x0800, 0x0800, 0x4743fe92 )
+		ROM_REGION( 0x1000, REGION_CPU2, 0 );/* sound */
+		ROM_LOAD( "s_3i_b.bin",   0x0000, 0x0800, 0x45a4ed06 );
+		ROM_LOAD( "s_3j_b.bin",   0x0800, 0x0800, 0x4743fe92 );
 	
-		ROM_REGION( 0x1000, REGION_GFX1, ROMREGION_DISPOSE )
-		ROM_LOAD( "v_5h_b.bin",   0x0000, 0x0800, 0x12c8c95d )
-		ROM_LOAD( "v_5k_b.bin",   0x0800, 0x0800, 0x3684f914 )
+		ROM_REGION( 0x1000, REGION_GFX1, ROMREGION_DISPOSE );
+		ROM_LOAD( "v_5h_b.bin",   0x0000, 0x0800, 0x12c8c95d );
+		ROM_LOAD( "v_5k_b.bin",   0x0800, 0x0800, 0x3684f914 );
 	
-		ROM_REGION( 0x2000, REGION_GFX2, ROMREGION_DISPOSE )
-		ROM_LOAD( "l_4m_b.bin",   0x0000, 0x0800, 0x59f8054d )
-		ROM_LOAD( "l_4n_b.bin",   0x0800, 0x0800, 0x672e4714 )
-		ROM_LOAD( "l_4r_b.bin",   0x1000, 0x0800, 0xfeaa59ee )
-		ROM_LOAD( "l_4s_b.bin",   0x1800, 0x0800, 0x20f2ef7e )
+		ROM_REGION( 0x2000, REGION_GFX2, ROMREGION_DISPOSE );
+		ROM_LOAD( "l_4m_b.bin",   0x0000, 0x0800, 0x59f8054d );
+		ROM_LOAD( "l_4n_b.bin",   0x0800, 0x0800, 0x672e4714 );
+		ROM_LOAD( "l_4r_b.bin",   0x1000, 0x0800, 0xfeaa59ee );
+		ROM_LOAD( "l_4s_b.bin",   0x1800, 0x0800, 0x20f2ef7e );
 	
-		ROM_REGION( 0x0300, REGION_PROMS, 0 )
-		ROM_LOAD( "c-2k.bpr",     0x0000, 0x0100, 0xe273ede5 ) /* palette low 4 bits (inverted) */
-		ROM_LOAD( "c-2j.bpr",     0x0100, 0x0100, 0xd6412358 ) /* palette high 4 bits (inverted) */
-		ROM_LOAD( "v-5e.bpr",     0x0200, 0x0100, 0xb869b8f5 ) /* character color codes on a per-column basis */
+		ROM_REGION( 0x0300, REGION_PROMS, 0 );
+		ROM_LOAD( "c-2k.bpr",     0x0000, 0x0100, 0xe273ede5 );/* palette low 4 bits (inverted) */
+		ROM_LOAD( "c-2j.bpr",     0x0100, 0x0100, 0xd6412358 );/* palette high 4 bits (inverted) */
+		ROM_LOAD( "v-5e.bpr",     0x0200, 0x0100, 0xb869b8f5 );/* character color codes on a per-column basis */
 	
 	/*********************************************************
 	I use more appropreate filenames for color PROMs.
-		ROM_REGION( 0x0300, REGION_PROMS, 0 )
-		ROM_LOAD( "dkong.2k",     0x0000, 0x0100, 0x1e82d375 )
-		ROM_LOAD( "dkong.2j",     0x0100, 0x0100, 0x2ab01dc8 )
-		ROM_LOAD( "dkong.5f",     0x0200, 0x0100, 0x44988665 )
+		ROM_REGION( 0x0300, REGION_PROMS, 0 );
+		ROM_LOAD( "dkong.2k",     0x0000, 0x0100, 0x1e82d375 );
+		ROM_LOAD( "dkong.2j",     0x0100, 0x0100, 0x2ab01dc8 );
+		ROM_LOAD( "dkong.5f",     0x0200, 0x0100, 0x44988665 );
 	*********************************************************/
-	ROM_END
+	ROM_END(); }}; 
 	
-	ROM_START( dkongjr )
-		ROM_REGION( 0x10000, REGION_CPU1, 0 )	/* 64k for code */
-		ROM_LOAD( "dkj.5b",       0x0000, 0x1000, 0xdea28158 )
-		ROM_CONTINUE(             0x3000, 0x1000 )
-		ROM_LOAD( "dkj.5c",       0x2000, 0x0800, 0x6fb5faf6 )
-		ROM_CONTINUE(             0x4800, 0x0800 )
-		ROM_CONTINUE(             0x1000, 0x0800 )
-		ROM_CONTINUE(             0x5800, 0x0800 )
-		ROM_LOAD( "dkj.5e",       0x4000, 0x0800, 0xd042b6a8 )
-		ROM_CONTINUE(             0x2800, 0x0800 )
-		ROM_CONTINUE(             0x5000, 0x0800 )
-		ROM_CONTINUE(             0x1800, 0x0800 )
+	static RomLoadPtr rom_dkongjo1 = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x10000, REGION_CPU1, 0 );/* 64k for code */
+		ROM_LOAD( "c_5f_b.bin",   0x0000, 0x1000, 0x424f2b11 );
+		ROM_LOAD( "5g.cpu",       0x1000, 0x1000, 0xd326599b );
+		ROM_LOAD( "c_5h_b.bin",   0x2000, 0x1000, 0x1d28895d );
+		ROM_LOAD( "5k.bin",       0x3000, 0x1000, 0x7961599c );
 	
-		ROM_REGION( 0x1000, REGION_CPU2, 0 )	/* sound */
-		ROM_LOAD( "c_3h.bin",       0x0000, 0x1000, 0x715da5f8 )
+		ROM_REGION( 0x1000, REGION_CPU2, 0 );/* sound */
+		ROM_LOAD( "s_3i_b.bin",   0x0000, 0x0800, 0x45a4ed06 );
+		ROM_LOAD( "s_3j_b.bin",   0x0800, 0x0800, 0x4743fe92 );
 	
-		ROM_REGION( 0x2000, REGION_GFX1, ROMREGION_DISPOSE )
-		ROM_LOAD( "dkj.3n",       0x0000, 0x1000, 0x8d51aca9 )
-		ROM_LOAD( "dkj.3p",       0x1000, 0x1000, 0x4ef64ba5 )
+		ROM_REGION( 0x1000, REGION_GFX1, ROMREGION_DISPOSE );
+		ROM_LOAD( "v_5h_b.bin",   0x0000, 0x0800, 0x12c8c95d );
+		ROM_LOAD( "v_5k_b.bin",   0x0800, 0x0800, 0x3684f914 );
 	
-		ROM_REGION( 0x2000, REGION_GFX2, ROMREGION_DISPOSE )
-		ROM_LOAD( "v_7c.bin",     0x0000, 0x0800, 0xdc7f4164 )
-		ROM_LOAD( "v_7d.bin",     0x0800, 0x0800, 0x0ce7dcf6 )
-		ROM_LOAD( "v_7e.bin",     0x1000, 0x0800, 0x24d1ff17 )
-		ROM_LOAD( "v_7f.bin",     0x1800, 0x0800, 0x0f8c083f )
+		ROM_REGION( 0x2000, REGION_GFX2, ROMREGION_DISPOSE );
+		ROM_LOAD( "l_4m_b.bin",   0x0000, 0x0800, 0x59f8054d );
+		ROM_LOAD( "l_4n_b.bin",   0x0800, 0x0800, 0x672e4714 );
+		ROM_LOAD( "l_4r_b.bin",   0x1000, 0x0800, 0xfeaa59ee );
+		ROM_LOAD( "l_4s_b.bin",   0x1800, 0x0800, 0x20f2ef7e );
 	
-		ROM_REGION( 0x0300, REGION_PROMS, 0 )
-		ROM_LOAD( "c-2e.bpr",  0x0000, 0x0100, 0x463dc7ad )	/* palette low 4 bits (inverted) */
-		ROM_LOAD( "c-2f.bpr",  0x0100, 0x0100, 0x47ba0042 )	/* palette high 4 bits (inverted) */
-		ROM_LOAD( "v-2n.bpr",  0x0200, 0x0100, 0xdbf185bf )	/* character color codes on a per-column basis */
-	ROM_END
+		ROM_REGION( 0x0300, REGION_PROMS, 0 );
+		ROM_LOAD( "c-2k.bpr",     0x0000, 0x0100, 0xe273ede5 );/* palette low 4 bits (inverted) */
+		ROM_LOAD( "c-2j.bpr",     0x0100, 0x0100, 0xd6412358 );/* palette high 4 bits (inverted) */
+		ROM_LOAD( "v-5e.bpr",     0x0200, 0x0100, 0xb869b8f5 );/* character color codes on a per-column basis */
 	
-	ROM_START( dkongjrj )
-		ROM_REGION( 0x10000, REGION_CPU1, 0 )	/* 64k for code */
-		ROM_LOAD( "c_5ba.bin",    0x0000, 0x1000, 0x50a015ce )
-		ROM_CONTINUE(             0x3000, 0x1000 )
-		ROM_LOAD( "c_5ca.bin",    0x2000, 0x0800, 0xc0a18f0d )
-		ROM_CONTINUE(             0x4800, 0x0800 )
-		ROM_CONTINUE(             0x1000, 0x0800 )
-		ROM_CONTINUE(             0x5800, 0x0800 )
-		ROM_LOAD( "c_5ea.bin",    0x4000, 0x0800, 0xa81dd00c )
-		ROM_CONTINUE(             0x2800, 0x0800 )
-		ROM_CONTINUE(             0x5000, 0x0800 )
-		ROM_CONTINUE(             0x1800, 0x0800 )
+	/*********************************************************
+	I use more appropreate filenames for color PROMs.
+		ROM_REGION( 0x0300, REGION_PROMS, 0 );
+		ROM_LOAD( "dkong.2k",     0x0000, 0x0100, 0x1e82d375 );
+		ROM_LOAD( "dkong.2j",     0x0100, 0x0100, 0x2ab01dc8 );
+		ROM_LOAD( "dkong.5f",     0x0200, 0x0100, 0x44988665 );
+	*********************************************************/
+	ROM_END(); }}; 
 	
-		ROM_REGION( 0x1000, REGION_CPU2, 0 )	/* sound */
-		ROM_LOAD( "c_3h.bin",     0x0000, 0x1000, 0x715da5f8 )
+	static RomLoadPtr rom_dkongjr = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x10000, REGION_CPU1, 0 );/* 64k for code */
+		ROM_LOAD( "dkj.5b",       0x0000, 0x1000, 0xdea28158 );
+		ROM_CONTINUE(             0x3000, 0x1000 );
+		ROM_LOAD( "dkj.5c",       0x2000, 0x0800, 0x6fb5faf6 );
+		ROM_CONTINUE(             0x4800, 0x0800 );
+		ROM_CONTINUE(             0x1000, 0x0800 );
+		ROM_CONTINUE(             0x5800, 0x0800 );
+		ROM_LOAD( "dkj.5e",       0x4000, 0x0800, 0xd042b6a8 );
+		ROM_CONTINUE(             0x2800, 0x0800 );
+		ROM_CONTINUE(             0x5000, 0x0800 );
+		ROM_CONTINUE(             0x1800, 0x0800 );
 	
-		ROM_REGION( 0x2000, REGION_GFX1, ROMREGION_DISPOSE )
-		ROM_LOAD( "v_3na.bin",    0x0000, 0x1000, 0xa95c4c63 )
-		ROM_LOAD( "v_3pa.bin",    0x1000, 0x1000, 0x4974ffef )
+		ROM_REGION( 0x1000, REGION_CPU2, 0 );/* sound */
+		ROM_LOAD( "c_3h.bin",       0x0000, 0x1000, 0x715da5f8 );
 	
-		ROM_REGION( 0x2000, REGION_GFX2, ROMREGION_DISPOSE )
-		ROM_LOAD( "v_7c.bin",     0x0000, 0x0800, 0xdc7f4164 )
-		ROM_LOAD( "v_7d.bin",     0x0800, 0x0800, 0x0ce7dcf6 )
-		ROM_LOAD( "v_7e.bin",     0x1000, 0x0800, 0x24d1ff17 )
-		ROM_LOAD( "v_7f.bin",     0x1800, 0x0800, 0x0f8c083f )
+		ROM_REGION( 0x2000, REGION_GFX1, ROMREGION_DISPOSE );
+		ROM_LOAD( "dkj.3n",       0x0000, 0x1000, 0x8d51aca9 );
+		ROM_LOAD( "dkj.3p",       0x1000, 0x1000, 0x4ef64ba5 );
 	
-		ROM_REGION( 0x0300, REGION_PROMS, 0 )
-		ROM_LOAD( "c-2e.bpr",  0x0000, 0x0100, 0x463dc7ad )	/* palette low 4 bits (inverted) */
-		ROM_LOAD( "c-2f.bpr",  0x0100, 0x0100, 0x47ba0042 )	/* palette high 4 bits (inverted) */
-		ROM_LOAD( "v-2n.bpr",  0x0200, 0x0100, 0xdbf185bf )	/* character color codes on a per-column basis */
-	ROM_END
+		ROM_REGION( 0x2000, REGION_GFX2, ROMREGION_DISPOSE );
+		ROM_LOAD( "v_7c.bin",     0x0000, 0x0800, 0xdc7f4164 );
+		ROM_LOAD( "v_7d.bin",     0x0800, 0x0800, 0x0ce7dcf6 );
+		ROM_LOAD( "v_7e.bin",     0x1000, 0x0800, 0x24d1ff17 );
+		ROM_LOAD( "v_7f.bin",     0x1800, 0x0800, 0x0f8c083f );
 	
-	ROM_START( dkngjnrj )
-		ROM_REGION( 0x10000, REGION_CPU1, 0 )	/* 64k for code */
-		ROM_LOAD( "dkjp.5b",      0x0000, 0x1000, 0x7b48870b )
-		ROM_CONTINUE(             0x3000, 0x1000 )
-		ROM_LOAD( "dkjp.5c",      0x2000, 0x0800, 0x12391665 )
-		ROM_CONTINUE(             0x4800, 0x0800 )
-		ROM_CONTINUE(             0x1000, 0x0800 )
-		ROM_CONTINUE(             0x5800, 0x0800 )
-		ROM_LOAD( "dkjp.5e",      0x4000, 0x0800, 0x6c9f9103 )
-		ROM_CONTINUE(             0x2800, 0x0800 )
-		ROM_CONTINUE(             0x5000, 0x0800 )
-		ROM_CONTINUE(             0x1800, 0x0800 )
+		ROM_REGION( 0x0300, REGION_PROMS, 0 );
+		ROM_LOAD( "c-2e.bpr",  0x0000, 0x0100, 0x463dc7ad );/* palette low 4 bits (inverted) */
+		ROM_LOAD( "c-2f.bpr",  0x0100, 0x0100, 0x47ba0042 );/* palette high 4 bits (inverted) */
+		ROM_LOAD( "v-2n.bpr",  0x0200, 0x0100, 0xdbf185bf );/* character color codes on a per-column basis */
+	ROM_END(); }}; 
 	
-		ROM_REGION( 0x1000, REGION_CPU2, 0 )	/* sound */
-		ROM_LOAD( "c_3h.bin",       0x0000, 0x1000, 0x715da5f8 )
+	static RomLoadPtr rom_dkongjrj = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x10000, REGION_CPU1, 0 );/* 64k for code */
+		ROM_LOAD( "c_5ba.bin",    0x0000, 0x1000, 0x50a015ce );
+		ROM_CONTINUE(             0x3000, 0x1000 );
+		ROM_LOAD( "c_5ca.bin",    0x2000, 0x0800, 0xc0a18f0d );
+		ROM_CONTINUE(             0x4800, 0x0800 );
+		ROM_CONTINUE(             0x1000, 0x0800 );
+		ROM_CONTINUE(             0x5800, 0x0800 );
+		ROM_LOAD( "c_5ea.bin",    0x4000, 0x0800, 0xa81dd00c );
+		ROM_CONTINUE(             0x2800, 0x0800 );
+		ROM_CONTINUE(             0x5000, 0x0800 );
+		ROM_CONTINUE(             0x1800, 0x0800 );
 	
-		ROM_REGION( 0x2000, REGION_GFX1, ROMREGION_DISPOSE )
-		ROM_LOAD( "dkj.3n",       0x0000, 0x1000, 0x8d51aca9 )
-		ROM_LOAD( "dkj.3p",       0x1000, 0x1000, 0x4ef64ba5 )
+		ROM_REGION( 0x1000, REGION_CPU2, 0 );/* sound */
+		ROM_LOAD( "c_3h.bin",     0x0000, 0x1000, 0x715da5f8 );
 	
-		ROM_REGION( 0x2000, REGION_GFX2, ROMREGION_DISPOSE )
-		ROM_LOAD( "v_7c.bin",     0x0000, 0x0800, 0xdc7f4164 )
-		ROM_LOAD( "v_7d.bin",     0x0800, 0x0800, 0x0ce7dcf6 )
-		ROM_LOAD( "v_7e.bin",     0x1000, 0x0800, 0x24d1ff17 )
-		ROM_LOAD( "v_7f.bin",     0x1800, 0x0800, 0x0f8c083f )
+		ROM_REGION( 0x2000, REGION_GFX1, ROMREGION_DISPOSE );
+		ROM_LOAD( "v_3na.bin",    0x0000, 0x1000, 0xa95c4c63 );
+		ROM_LOAD( "v_3pa.bin",    0x1000, 0x1000, 0x4974ffef );
 	
-		ROM_REGION( 0x0300, REGION_PROMS, 0 )
-		ROM_LOAD( "c-2e.bpr",  0x0000, 0x0100, 0x463dc7ad )	/* palette low 4 bits (inverted) */
-		ROM_LOAD( "c-2f.bpr",  0x0100, 0x0100, 0x47ba0042 )	/* palette high 4 bits (inverted) */
-		ROM_LOAD( "v-2n.bpr",  0x0200, 0x0100, 0xdbf185bf )	/* character color codes on a per-column basis */
-	ROM_END
+		ROM_REGION( 0x2000, REGION_GFX2, ROMREGION_DISPOSE );
+		ROM_LOAD( "v_7c.bin",     0x0000, 0x0800, 0xdc7f4164 );
+		ROM_LOAD( "v_7d.bin",     0x0800, 0x0800, 0x0ce7dcf6 );
+		ROM_LOAD( "v_7e.bin",     0x1000, 0x0800, 0x24d1ff17 );
+		ROM_LOAD( "v_7f.bin",     0x1800, 0x0800, 0x0f8c083f );
 	
-	ROM_START( dkongjrb )
-		ROM_REGION( 0x10000, REGION_CPU1, 0 )	/* 64k for code */
-		ROM_LOAD( "dkjr1",        0x0000, 0x1000, 0xec7e097f )
-		ROM_CONTINUE(             0x3000, 0x1000 )
-		ROM_LOAD( "c_5ca.bin",    0x2000, 0x0800, 0xc0a18f0d )
-		ROM_CONTINUE(             0x4800, 0x0800 )
-		ROM_CONTINUE(             0x1000, 0x0800 )
-		ROM_CONTINUE(             0x5800, 0x0800 )
-		ROM_LOAD( "c_5ea.bin",    0x4000, 0x0800, 0xa81dd00c )
-		ROM_CONTINUE(             0x2800, 0x0800 )
-		ROM_CONTINUE(             0x5000, 0x0800 )
-		ROM_CONTINUE(             0x1800, 0x0800 )
+		ROM_REGION( 0x0300, REGION_PROMS, 0 );
+		ROM_LOAD( "c-2e.bpr",  0x0000, 0x0100, 0x463dc7ad );/* palette low 4 bits (inverted) */
+		ROM_LOAD( "c-2f.bpr",  0x0100, 0x0100, 0x47ba0042 );/* palette high 4 bits (inverted) */
+		ROM_LOAD( "v-2n.bpr",  0x0200, 0x0100, 0xdbf185bf );/* character color codes on a per-column basis */
+	ROM_END(); }}; 
 	
-		ROM_REGION( 0x1000, REGION_CPU2, 0 )	/* sound */
-		ROM_LOAD( "c_3h.bin",       0x0000, 0x1000, 0x715da5f8 )
+	static RomLoadPtr rom_dkngjnrj = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x10000, REGION_CPU1, 0 );/* 64k for code */
+		ROM_LOAD( "dkjp.5b",      0x0000, 0x1000, 0x7b48870b );
+		ROM_CONTINUE(             0x3000, 0x1000 );
+		ROM_LOAD( "dkjp.5c",      0x2000, 0x0800, 0x12391665 );
+		ROM_CONTINUE(             0x4800, 0x0800 );
+		ROM_CONTINUE(             0x1000, 0x0800 );
+		ROM_CONTINUE(             0x5800, 0x0800 );
+		ROM_LOAD( "dkjp.5e",      0x4000, 0x0800, 0x6c9f9103 );
+		ROM_CONTINUE(             0x2800, 0x0800 );
+		ROM_CONTINUE(             0x5000, 0x0800 );
+		ROM_CONTINUE(             0x1800, 0x0800 );
 	
-		ROM_REGION( 0x2000, REGION_GFX1, ROMREGION_DISPOSE )
-		ROM_LOAD( "v_3na.bin",    0x0000, 0x1000, 0xa95c4c63 )
-		ROM_LOAD( "dkjr10",       0x1000, 0x1000, 0xadc11322 )
+		ROM_REGION( 0x1000, REGION_CPU2, 0 );/* sound */
+		ROM_LOAD( "c_3h.bin",       0x0000, 0x1000, 0x715da5f8 );
 	
-		ROM_REGION( 0x2000, REGION_GFX2, ROMREGION_DISPOSE )
-		ROM_LOAD( "v_7c.bin",     0x0000, 0x0800, 0xdc7f4164 )
-		ROM_LOAD( "v_7d.bin",     0x0800, 0x0800, 0x0ce7dcf6 )
-		ROM_LOAD( "v_7e.bin",     0x1000, 0x0800, 0x24d1ff17 )
-		ROM_LOAD( "v_7f.bin",     0x1800, 0x0800, 0x0f8c083f )
+		ROM_REGION( 0x2000, REGION_GFX1, ROMREGION_DISPOSE );
+		ROM_LOAD( "dkj.3n",       0x0000, 0x1000, 0x8d51aca9 );
+		ROM_LOAD( "dkj.3p",       0x1000, 0x1000, 0x4ef64ba5 );
 	
-		ROM_REGION( 0x0300, REGION_PROMS, 0 )
-		ROM_LOAD( "c-2e.bpr",  0x0000, 0x0100, 0x463dc7ad )	/* palette low 4 bits (inverted) */
-		ROM_LOAD( "c-2f.bpr",  0x0100, 0x0100, 0x47ba0042 )	/* palette high 4 bits (inverted) */
-		ROM_LOAD( "v-2n.bpr",  0x0200, 0x0100, 0xdbf185bf )	/* character color codes on a per-column basis */
-	ROM_END
+		ROM_REGION( 0x2000, REGION_GFX2, ROMREGION_DISPOSE );
+		ROM_LOAD( "v_7c.bin",     0x0000, 0x0800, 0xdc7f4164 );
+		ROM_LOAD( "v_7d.bin",     0x0800, 0x0800, 0x0ce7dcf6 );
+		ROM_LOAD( "v_7e.bin",     0x1000, 0x0800, 0x24d1ff17 );
+		ROM_LOAD( "v_7f.bin",     0x1800, 0x0800, 0x0f8c083f );
 	
-	ROM_START( dkngjnrb )
-		ROM_REGION( 0x10000, REGION_CPU1, 0 )	/* 64k for code */
-		ROM_LOAD( "djr1-c.5b",    0x0000, 0x1000, 0xffe9e1a5 )
-		ROM_CONTINUE(             0x3000, 0x1000 )
-		ROM_LOAD( "djr1-c.5c",    0x2000, 0x0800, 0x982e30e8 )
-		ROM_CONTINUE(             0x4800, 0x0800 )
-		ROM_CONTINUE(             0x1000, 0x0800 )
-		ROM_CONTINUE(             0x5800, 0x0800 )
-		ROM_LOAD( "djr1-c.5e",    0x4000, 0x0800, 0x24c3d325 )
-		ROM_CONTINUE(             0x2800, 0x0800 )
-		ROM_CONTINUE(             0x5000, 0x0800 )
-		ROM_CONTINUE(             0x1800, 0x0800 )
-		ROM_LOAD( "djr1-c.5a",    0x8000, 0x1000, 0xbb5f5180 )
+		ROM_REGION( 0x0300, REGION_PROMS, 0 );
+		ROM_LOAD( "c-2e.bpr",  0x0000, 0x0100, 0x463dc7ad );/* palette low 4 bits (inverted) */
+		ROM_LOAD( "c-2f.bpr",  0x0100, 0x0100, 0x47ba0042 );/* palette high 4 bits (inverted) */
+		ROM_LOAD( "v-2n.bpr",  0x0200, 0x0100, 0xdbf185bf );/* character color codes on a per-column basis */
+	ROM_END(); }}; 
 	
-		ROM_REGION( 0x1000, REGION_CPU2, 0 )	/* sound */
-		ROM_LOAD( "c_3h.bin",       0x0000, 0x1000, 0x715da5f8 )
+	static RomLoadPtr rom_dkongjrb = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x10000, REGION_CPU1, 0 );/* 64k for code */
+		ROM_LOAD( "dkjr1",        0x0000, 0x1000, 0xec7e097f );
+		ROM_CONTINUE(             0x3000, 0x1000 );
+		ROM_LOAD( "c_5ca.bin",    0x2000, 0x0800, 0xc0a18f0d );
+		ROM_CONTINUE(             0x4800, 0x0800 );
+		ROM_CONTINUE(             0x1000, 0x0800 );
+		ROM_CONTINUE(             0x5800, 0x0800 );
+		ROM_LOAD( "c_5ea.bin",    0x4000, 0x0800, 0xa81dd00c );
+		ROM_CONTINUE(             0x2800, 0x0800 );
+		ROM_CONTINUE(             0x5000, 0x0800 );
+		ROM_CONTINUE(             0x1800, 0x0800 );
 	
-		ROM_REGION( 0x2000, REGION_GFX1, ROMREGION_DISPOSE )
-		ROM_LOAD( "dkj.3n",       0x0000, 0x1000, 0x8d51aca9 )
-		ROM_LOAD( "dkj.3p",       0x1000, 0x1000, 0x4ef64ba5 )
+		ROM_REGION( 0x1000, REGION_CPU2, 0 );/* sound */
+		ROM_LOAD( "c_3h.bin",       0x0000, 0x1000, 0x715da5f8 );
 	
-		ROM_REGION( 0x2000, REGION_GFX2, ROMREGION_DISPOSE )
-		ROM_LOAD( "v_7c.bin",     0x0000, 0x0800, 0xdc7f4164 )
-		ROM_LOAD( "v_7d.bin",     0x0800, 0x0800, 0x0ce7dcf6 )
-		ROM_LOAD( "v_7e.bin",     0x1000, 0x0800, 0x24d1ff17 )
-		ROM_LOAD( "v_7f.bin",     0x1800, 0x0800, 0x0f8c083f )
+		ROM_REGION( 0x2000, REGION_GFX1, ROMREGION_DISPOSE );
+		ROM_LOAD( "v_3na.bin",    0x0000, 0x1000, 0xa95c4c63 );
+		ROM_LOAD( "dkjr10",       0x1000, 0x1000, 0xadc11322 );
 	
-		ROM_REGION( 0x0300, REGION_PROMS, 0 )
-		ROM_LOAD( "c-2e.bpr",  0x0000, 0x0100, 0x463dc7ad )	/* palette low 4 bits (inverted) */
-		ROM_LOAD( "c-2f.bpr",  0x0100, 0x0100, 0x47ba0042 )	/* palette high 4 bits (inverted) */
-		ROM_LOAD( "v-2n.bpr",  0x0200, 0x0100, 0xdbf185bf )	/* character color codes on a per-column basis */
-	ROM_END
+		ROM_REGION( 0x2000, REGION_GFX2, ROMREGION_DISPOSE );
+		ROM_LOAD( "v_7c.bin",     0x0000, 0x0800, 0xdc7f4164 );
+		ROM_LOAD( "v_7d.bin",     0x0800, 0x0800, 0x0ce7dcf6 );
+		ROM_LOAD( "v_7e.bin",     0x1000, 0x0800, 0x24d1ff17 );
+		ROM_LOAD( "v_7f.bin",     0x1800, 0x0800, 0x0f8c083f );
 	
-	ROM_START( dkong3 )
-		ROM_REGION( 0x10000, REGION_CPU1, 0 )	/* 64k for code */
-		ROM_LOAD( "dk3c.7b",      0x0000, 0x2000, 0x38d5f38e )
-		ROM_LOAD( "dk3c.7c",      0x2000, 0x2000, 0xc9134379 )
-		ROM_LOAD( "dk3c.7d",      0x4000, 0x2000, 0xd22e2921 )
-		ROM_LOAD( "dk3c.7e",      0x8000, 0x2000, 0x615f14b7 )
+		ROM_REGION( 0x0300, REGION_PROMS, 0 );
+		ROM_LOAD( "c-2e.bpr",  0x0000, 0x0100, 0x463dc7ad );/* palette low 4 bits (inverted) */
+		ROM_LOAD( "c-2f.bpr",  0x0100, 0x0100, 0x47ba0042 );/* palette high 4 bits (inverted) */
+		ROM_LOAD( "v-2n.bpr",  0x0200, 0x0100, 0xdbf185bf );/* character color codes on a per-column basis */
+	ROM_END(); }}; 
 	
-		ROM_REGION( 0x10000, REGION_CPU2, 0 )	/* sound #1 */
-		ROM_LOAD( "dk3c.5l",      0xe000, 0x2000, 0x7ff88885 )
+	static RomLoadPtr rom_dkngjnrb = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x10000, REGION_CPU1, 0 );/* 64k for code */
+		ROM_LOAD( "djr1-c.5b",    0x0000, 0x1000, 0xffe9e1a5 );
+		ROM_CONTINUE(             0x3000, 0x1000 );
+		ROM_LOAD( "djr1-c.5c",    0x2000, 0x0800, 0x982e30e8 );
+		ROM_CONTINUE(             0x4800, 0x0800 );
+		ROM_CONTINUE(             0x1000, 0x0800 );
+		ROM_CONTINUE(             0x5800, 0x0800 );
+		ROM_LOAD( "djr1-c.5e",    0x4000, 0x0800, 0x24c3d325 );
+		ROM_CONTINUE(             0x2800, 0x0800 );
+		ROM_CONTINUE(             0x5000, 0x0800 );
+		ROM_CONTINUE(             0x1800, 0x0800 );
+		ROM_LOAD( "djr1-c.5a",    0x8000, 0x1000, 0xbb5f5180 );
 	
-		ROM_REGION( 0x10000, REGION_CPU3, 0 )	/* sound #2 */
-		ROM_LOAD( "dk3c.6h",      0xe000, 0x2000, 0x36d7200c )
+		ROM_REGION( 0x1000, REGION_CPU2, 0 );/* sound */
+		ROM_LOAD( "c_3h.bin",       0x0000, 0x1000, 0x715da5f8 );
 	
-		ROM_REGION( 0x2000, REGION_GFX1, ROMREGION_DISPOSE )
-		ROM_LOAD( "dk3v.3n",      0x0000, 0x1000, 0x415a99c7 )
-		ROM_LOAD( "dk3v.3p",      0x1000, 0x1000, 0x25744ea0 )
+		ROM_REGION( 0x2000, REGION_GFX1, ROMREGION_DISPOSE );
+		ROM_LOAD( "dkj.3n",       0x0000, 0x1000, 0x8d51aca9 );
+		ROM_LOAD( "dkj.3p",       0x1000, 0x1000, 0x4ef64ba5 );
 	
-		ROM_REGION( 0x4000, REGION_GFX2, ROMREGION_DISPOSE )
-		ROM_LOAD( "dk3v.7c",      0x0000, 0x1000, 0x8ffa1737 )
-		ROM_LOAD( "dk3v.7d",      0x1000, 0x1000, 0x9ac84686 )
-		ROM_LOAD( "dk3v.7e",      0x2000, 0x1000, 0x0c0af3fb )
-		ROM_LOAD( "dk3v.7f",      0x3000, 0x1000, 0x55c58662 )
+		ROM_REGION( 0x2000, REGION_GFX2, ROMREGION_DISPOSE );
+		ROM_LOAD( "v_7c.bin",     0x0000, 0x0800, 0xdc7f4164 );
+		ROM_LOAD( "v_7d.bin",     0x0800, 0x0800, 0x0ce7dcf6 );
+		ROM_LOAD( "v_7e.bin",     0x1000, 0x0800, 0x24d1ff17 );
+		ROM_LOAD( "v_7f.bin",     0x1800, 0x0800, 0x0f8c083f );
 	
-		ROM_REGION( 0x0300, REGION_PROMS, 0 )
-		ROM_LOAD( "dkc1-c.1d",    0x0000, 0x0200, 0xdf54befc ) /* palette red & green component */
-		ROM_LOAD( "dkc1-c.1c",    0x0100, 0x0200, 0x66a77f40 ) /* palette blue component */
-		ROM_LOAD( "dkc1-v.2n",    0x0200, 0x0100, 0x50e33434 )	/* character color codes on a per-column basis */
-	ROM_END
+		ROM_REGION( 0x0300, REGION_PROMS, 0 );
+		ROM_LOAD( "c-2e.bpr",  0x0000, 0x0100, 0x463dc7ad );/* palette low 4 bits (inverted) */
+		ROM_LOAD( "c-2f.bpr",  0x0100, 0x0100, 0x47ba0042 );/* palette high 4 bits (inverted) */
+		ROM_LOAD( "v-2n.bpr",  0x0200, 0x0100, 0xdbf185bf );/* character color codes on a per-column basis */
+	ROM_END(); }}; 
 	
-	ROM_START( dkong3j )
-		ROM_REGION( 0x10000, REGION_CPU1, 0 )	/* 64k for code */
-		ROM_LOAD( "dk3c.7b",      0x0000, 0x2000, 0x38d5f38e )
-		ROM_LOAD( "dk3c.7c",      0x2000, 0x2000, 0xc9134379 )
-		ROM_LOAD( "dk3c.7d",      0x4000, 0x2000, 0xd22e2921 )
-		ROM_LOAD( "dk3cj.7e",     0x8000, 0x2000, 0x25b5be23 )
+	static RomLoadPtr rom_dkong3 = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x10000, REGION_CPU1, 0 );/* 64k for code */
+		ROM_LOAD( "dk3c.7b",      0x0000, 0x2000, 0x38d5f38e );
+		ROM_LOAD( "dk3c.7c",      0x2000, 0x2000, 0xc9134379 );
+		ROM_LOAD( "dk3c.7d",      0x4000, 0x2000, 0xd22e2921 );
+		ROM_LOAD( "dk3c.7e",      0x8000, 0x2000, 0x615f14b7 );
 	
-		ROM_REGION( 0x10000, REGION_CPU2, 0 )	/* sound #1 */
-		ROM_LOAD( "dk3c.5l",      0xe000, 0x2000, 0x7ff88885 )
+		ROM_REGION( 0x10000, REGION_CPU2, 0 );/* sound #1 */
+		ROM_LOAD( "dk3c.5l",      0xe000, 0x2000, 0x7ff88885 );
 	
-		ROM_REGION( 0x10000, REGION_CPU3, 0 )	/* sound #2 */
-		ROM_LOAD( "dk3c.6h",      0xe000, 0x2000, 0x36d7200c )
+		ROM_REGION( 0x10000, REGION_CPU3, 0 );/* sound #2 */
+		ROM_LOAD( "dk3c.6h",      0xe000, 0x2000, 0x36d7200c );
 	
-		ROM_REGION( 0x2000, REGION_GFX1, ROMREGION_DISPOSE )
-		ROM_LOAD( "dk3v.3n",      0x0000, 0x1000, 0x415a99c7 )
-		ROM_LOAD( "dk3v.3p",      0x1000, 0x1000, 0x25744ea0 )
+		ROM_REGION( 0x2000, REGION_GFX1, ROMREGION_DISPOSE );
+		ROM_LOAD( "dk3v.3n",      0x0000, 0x1000, 0x415a99c7 );
+		ROM_LOAD( "dk3v.3p",      0x1000, 0x1000, 0x25744ea0 );
 	
-		ROM_REGION( 0x4000, REGION_GFX2, ROMREGION_DISPOSE )
-		ROM_LOAD( "dk3v.7c",      0x0000, 0x1000, 0x8ffa1737 )
-		ROM_LOAD( "dk3v.7d",      0x1000, 0x1000, 0x9ac84686 )
-		ROM_LOAD( "dk3v.7e",      0x2000, 0x1000, 0x0c0af3fb )
-		ROM_LOAD( "dk3v.7f",      0x3000, 0x1000, 0x55c58662 )
+		ROM_REGION( 0x4000, REGION_GFX2, ROMREGION_DISPOSE );
+		ROM_LOAD( "dk3v.7c",      0x0000, 0x1000, 0x8ffa1737 );
+		ROM_LOAD( "dk3v.7d",      0x1000, 0x1000, 0x9ac84686 );
+		ROM_LOAD( "dk3v.7e",      0x2000, 0x1000, 0x0c0af3fb );
+		ROM_LOAD( "dk3v.7f",      0x3000, 0x1000, 0x55c58662 );
 	
-		ROM_REGION( 0x0300, REGION_PROMS, 0 )
-		ROM_LOAD( "dkc1-c.1d",    0x0000, 0x0200, 0xdf54befc ) /* palette red & green component */
-		ROM_LOAD( "dkc1-c.1c",    0x0100, 0x0200, 0x66a77f40 ) /* palette blue component */
-		ROM_LOAD( "dkc1-v.2n",    0x0200, 0x0100, 0x50e33434 )	/* character color codes on a per-column basis */
-	ROM_END
+		ROM_REGION( 0x0300, REGION_PROMS, 0 );
+		ROM_LOAD( "dkc1-c.1d",    0x0000, 0x0200, 0xdf54befc );/* palette red & green component */
+		ROM_LOAD( "dkc1-c.1c",    0x0100, 0x0200, 0x66a77f40 );/* palette blue component */
+		ROM_LOAD( "dkc1-v.2n",    0x0200, 0x0100, 0x50e33434 );/* character color codes on a per-column basis */
+	ROM_END(); }}; 
 	
-	ROM_START( hunchbkd )
-		ROM_REGION( 0x8000, REGION_CPU1, 0 )	/* 32k for code */
-		ROM_LOAD( "hb.5e",        0x0000, 0x1000, 0x4c3ac070 )
-		ROM_LOAD( "hbsc-1.5c",    0x2000, 0x1000, 0x9b0e6234 )
-		ROM_LOAD( "hb.5b",        0x4000, 0x1000, 0x4cde80f3 )
-		ROM_LOAD( "hb.5a",        0x6000, 0x1000, 0xd60ef5b2 )
+	static RomLoadPtr rom_dkong3j = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x10000, REGION_CPU1, 0 );/* 64k for code */
+		ROM_LOAD( "dk3c.7b",      0x0000, 0x2000, 0x38d5f38e );
+		ROM_LOAD( "dk3c.7c",      0x2000, 0x2000, 0xc9134379 );
+		ROM_LOAD( "dk3c.7d",      0x4000, 0x2000, 0xd22e2921 );
+		ROM_LOAD( "dk3cj.7e",     0x8000, 0x2000, 0x25b5be23 );
 	
-		ROM_REGION( 0x1000, REGION_CPU2, 0 )	/* sound */
-		ROM_LOAD( "hb.3h",        0x0000, 0x0800, 0xa3c240d4 )
+		ROM_REGION( 0x10000, REGION_CPU2, 0 );/* sound #1 */
+		ROM_LOAD( "dk3c.5l",      0xe000, 0x2000, 0x7ff88885 );
 	
-		ROM_REGION( 0x1000, REGION_GFX1, ROMREGION_DISPOSE )
-		ROM_LOAD( "hb.3n",        0x0000, 0x0800, 0x443ed5ac )
-		ROM_LOAD( "hb.3p",        0x0800, 0x0800, 0x073e7b0c )
+		ROM_REGION( 0x10000, REGION_CPU3, 0 );/* sound #2 */
+		ROM_LOAD( "dk3c.6h",      0xe000, 0x2000, 0x36d7200c );
 	
-		ROM_REGION( 0x2000, REGION_GFX2, ROMREGION_DISPOSE )
-		ROM_LOAD( "hb.7c",        0x0000, 0x0800, 0x3ba71686 )
-		ROM_LOAD( "hb.7d",        0x0800, 0x0800, 0x5786948d )
-		ROM_LOAD( "hb.7e",        0x1000, 0x0800, 0xf845e8ca )
-		ROM_LOAD( "hb.7f",        0x1800, 0x0800, 0x52d20fea )
+		ROM_REGION( 0x2000, REGION_GFX1, ROMREGION_DISPOSE );
+		ROM_LOAD( "dk3v.3n",      0x0000, 0x1000, 0x415a99c7 );
+		ROM_LOAD( "dk3v.3p",      0x1000, 0x1000, 0x25744ea0 );
 	
-		ROM_REGION( 0x0300, REGION_PROMS, 0 )
-		ROM_LOAD( "hbprom.2e",    0x0000, 0x0100, 0x37aab98f )	/* palette low 4 bits (inverted) */
-		ROM_LOAD( "hbprom.2f",    0x0100, 0x0100, 0x845b8dcc )	/* palette high 4 bits (inverted) */
-		ROM_LOAD( "hbprom.2n",    0x0200, 0x0100, 0xdff9070a )	/* character color codes on a per-column basis */
-	ROM_END
+		ROM_REGION( 0x4000, REGION_GFX2, ROMREGION_DISPOSE );
+		ROM_LOAD( "dk3v.7c",      0x0000, 0x1000, 0x8ffa1737 );
+		ROM_LOAD( "dk3v.7d",      0x1000, 0x1000, 0x9ac84686 );
+		ROM_LOAD( "dk3v.7e",      0x2000, 0x1000, 0x0c0af3fb );
+		ROM_LOAD( "dk3v.7f",      0x3000, 0x1000, 0x55c58662 );
 	
-	ROM_START( herbiedk )
-		ROM_REGION( 0x8000, REGION_CPU1, 0 )	/* 32k for code */
-		ROM_LOAD( "5f.cpu",        0x0000, 0x1000, 0xc7ab3ac6 )
-		ROM_LOAD( "5g.cpu",        0x2000, 0x1000, 0xd1031aa6 )
-		ROM_LOAD( "5h.cpu",        0x4000, 0x1000, 0xc0daf551 )
-		ROM_LOAD( "5k.cpu",        0x6000, 0x1000, 0x67442242 )
+		ROM_REGION( 0x0300, REGION_PROMS, 0 );
+		ROM_LOAD( "dkc1-c.1d",    0x0000, 0x0200, 0xdf54befc );/* palette red & green component */
+		ROM_LOAD( "dkc1-c.1c",    0x0100, 0x0200, 0x66a77f40 );/* palette blue component */
+		ROM_LOAD( "dkc1-v.2n",    0x0200, 0x0100, 0x50e33434 );/* character color codes on a per-column basis */
+	ROM_END(); }}; 
 	
-		ROM_REGION( 0x1000, REGION_CPU2, 0 )	/* sound */
-		ROM_LOAD( "3i.snd",        0x0000, 0x0800, 0x20e30406 )
+	static RomLoadPtr rom_hunchbkd = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x8000, REGION_CPU1, 0 );/* 32k for code */
+		ROM_LOAD( "hb.5e",        0x0000, 0x1000, 0x4c3ac070 );
+		ROM_LOAD( "hbsc-1.5c",    0x2000, 0x1000, 0x9b0e6234 );
+		ROM_LOAD( "hb.5b",        0x4000, 0x1000, 0x4cde80f3 );
+		ROM_LOAD( "hb.5a",        0x6000, 0x1000, 0xd60ef5b2 );
 	
-		ROM_REGION( 0x1000, REGION_GFX1, ROMREGION_DISPOSE )
-		ROM_LOAD( "5h.vid",        0x0000, 0x0800, 0xea2a2547 )
-		ROM_LOAD( "5k.vid",        0x0800, 0x0800, 0xa8d421c9 )
+		ROM_REGION( 0x1000, REGION_CPU2, 0 );/* sound */
+		ROM_LOAD( "hb.3h",        0x0000, 0x0800, 0xa3c240d4 );
 	
-		ROM_REGION( 0x2000, REGION_GFX2, ROMREGION_DISPOSE )
-		ROM_LOAD( "7c.clk",        0x0000, 0x0800, 0xaf646166 )
-		ROM_LOAD( "7d.clk",        0x0800, 0x0800, 0xd8e15832 )
-		ROM_LOAD( "7e.clk",        0x1000, 0x0800, 0x2f7e65fa )
-		ROM_LOAD( "7f.clk",        0x1800, 0x0800, 0xad32d5ae )
+		ROM_REGION( 0x1000, REGION_GFX1, ROMREGION_DISPOSE );
+		ROM_LOAD( "hb.3n",        0x0000, 0x0800, 0x443ed5ac );
+		ROM_LOAD( "hb.3p",        0x0800, 0x0800, 0x073e7b0c );
 	
-		ROM_REGION( 0x0300, REGION_PROMS, 0 )
-		ROM_LOAD( "74s287.2k",     0x0000, 0x0100, 0x7dc0a381 ) /* palette high 4 bits (inverted) */
-		ROM_LOAD( "74s287.2j",     0x0100, 0x0100, 0x0a440c00 ) /* palette low 4 bits (inverted) */
-		ROM_LOAD( "74s287.vid",    0x0200, 0x0100, 0x5a3446cc ) /* character color codes on a per-column basis */
-	ROM_END
+		ROM_REGION( 0x2000, REGION_GFX2, ROMREGION_DISPOSE );
+		ROM_LOAD( "hb.7c",        0x0000, 0x0800, 0x3ba71686 );
+		ROM_LOAD( "hb.7d",        0x0800, 0x0800, 0x5786948d );
+		ROM_LOAD( "hb.7e",        0x1000, 0x0800, 0xf845e8ca );
+		ROM_LOAD( "hb.7f",        0x1800, 0x0800, 0x52d20fea );
 	
-	ROM_START( herocast )
-		ROM_REGION( 0x10000, REGION_CPU1, 0 )	/* 64k for code */
+		ROM_REGION( 0x0300, REGION_PROMS, 0 );
+		ROM_LOAD( "hbprom.2e",    0x0000, 0x0100, 0x37aab98f );/* palette low 4 bits (inverted) */
+		ROM_LOAD( "hbprom.2f",    0x0100, 0x0100, 0x845b8dcc );/* palette high 4 bits (inverted) */
+		ROM_LOAD( "hbprom.2n",    0x0200, 0x0100, 0xdff9070a );/* character color codes on a per-column basis */
+	ROM_END(); }}; 
+	
+	static RomLoadPtr rom_herbiedk = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x8000, REGION_CPU1, 0 );/* 32k for code */
+		ROM_LOAD( "5f.cpu",        0x0000, 0x1000, 0xc7ab3ac6 );
+		ROM_LOAD( "5g.cpu",        0x2000, 0x1000, 0xd1031aa6 );
+		ROM_LOAD( "5h.cpu",        0x4000, 0x1000, 0xc0daf551 );
+		ROM_LOAD( "5k.cpu",        0x6000, 0x1000, 0x67442242 );
+	
+		ROM_REGION( 0x1000, REGION_CPU2, 0 );/* sound */
+		ROM_LOAD( "3i.snd",        0x0000, 0x0800, 0x20e30406 );
+	
+		ROM_REGION( 0x1000, REGION_GFX1, ROMREGION_DISPOSE );
+		ROM_LOAD( "5h.vid",        0x0000, 0x0800, 0xea2a2547 );
+		ROM_LOAD( "5k.vid",        0x0800, 0x0800, 0xa8d421c9 );
+	
+		ROM_REGION( 0x2000, REGION_GFX2, ROMREGION_DISPOSE );
+		ROM_LOAD( "7c.clk",        0x0000, 0x0800, 0xaf646166 );
+		ROM_LOAD( "7d.clk",        0x0800, 0x0800, 0xd8e15832 );
+		ROM_LOAD( "7e.clk",        0x1000, 0x0800, 0x2f7e65fa );
+		ROM_LOAD( "7f.clk",        0x1800, 0x0800, 0xad32d5ae );
+	
+		ROM_REGION( 0x0300, REGION_PROMS, 0 );
+		ROM_LOAD( "74s287.2k",     0x0000, 0x0100, 0x7dc0a381 );/* palette high 4 bits (inverted) */
+		ROM_LOAD( "74s287.2j",     0x0100, 0x0100, 0x0a440c00 );/* palette low 4 bits (inverted) */
+		ROM_LOAD( "74s287.vid",    0x0200, 0x0100, 0x5a3446cc );/* character color codes on a per-column basis */
+	ROM_END(); }}; 
+	
+	static RomLoadPtr rom_herocast = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x10000, REGION_CPU1, 0 );/* 64k for code */
 		/* the loading addresses are most likely wrong */
 		/* the ROMs are probably not contiguous. */
 		/* For example there's a table which suddenly stops at */
 		/* 1dff and resumes at 3e00 */
-		ROM_LOAD( "red-dot.rgt",  0x0000, 0x2000, 0x9c4af229 )	/* encrypted */
-		ROM_LOAD( "wht-dot.lft",  0x2000, 0x2000, 0xc10f9235 )	/* encrypted */
+		ROM_LOAD( "red-dot.rgt",  0x0000, 0x2000, 0x9c4af229 );/* encrypted */
+		ROM_LOAD( "wht-dot.lft",  0x2000, 0x2000, 0xc10f9235 );/* encrypted */
 		/* space for diagnostic ROM */
-		ROM_LOAD( "2532.3f",      0x4000, 0x1000, 0x553b89bb )	/* ??? contains unencrypted */
+		ROM_LOAD( "2532.3f",      0x4000, 0x1000, 0x553b89bb );/* ??? contains unencrypted */
 														/* code mapped at 3000 */
 	
-		ROM_REGION( 0x1000, REGION_CPU2, 0 )	/* sound */
-		ROM_LOAD( "silver.3h",    0x0000, 0x0800, 0x67863ce9 )
+		ROM_REGION( 0x1000, REGION_CPU2, 0 );/* sound */
+		ROM_LOAD( "silver.3h",    0x0000, 0x0800, 0x67863ce9 );
 	
-		ROM_REGION( 0x1000, REGION_GFX1, ROMREGION_DISPOSE )
-		ROM_LOAD( "pnk.3n",       0x0000, 0x0800, 0x574dfd7a )
-		ROM_LOAD( "blk.3p",       0x0800, 0x0800, 0x16f7c040 )
+		ROM_REGION( 0x1000, REGION_GFX1, ROMREGION_DISPOSE );
+		ROM_LOAD( "pnk.3n",       0x0000, 0x0800, 0x574dfd7a );
+		ROM_LOAD( "blk.3p",       0x0800, 0x0800, 0x16f7c040 );
 	
-		ROM_REGION( 0x2000, REGION_GFX2, ROMREGION_DISPOSE )
-		ROM_LOAD( "gold.7c",      0x0000, 0x0800, 0x5f5282ed )
-		ROM_LOAD( "orange.7d",    0x0800, 0x0800, 0x075d99f5 )
-		ROM_LOAD( "yellow.7e",    0x1000, 0x0800, 0xf6272e96 )
-		ROM_LOAD( "violet.7f",    0x1800, 0x0800, 0xca020685 )
+		ROM_REGION( 0x2000, REGION_GFX2, ROMREGION_DISPOSE );
+		ROM_LOAD( "gold.7c",      0x0000, 0x0800, 0x5f5282ed );
+		ROM_LOAD( "orange.7d",    0x0800, 0x0800, 0x075d99f5 );
+		ROM_LOAD( "yellow.7e",    0x1000, 0x0800, 0xf6272e96 );
+		ROM_LOAD( "violet.7f",    0x1800, 0x0800, 0xca020685 );
 	
-		ROM_REGION( 0x0300, REGION_PROMS, 0 )
-		ROM_LOAD( "82s126.2e",    0x0000, 0x0100, 0x463dc7ad )	/* palette low 4 bits (inverted) */
-		ROM_LOAD( "82s126.2f",    0x0100, 0x0100, 0x47ba0042 )	/* palette high 4 bits (inverted) */
-		ROM_LOAD( "82s126.2n",    0x0200, 0x0100, 0x37aece4b )	/* character color codes on a per-column basis */
-	ROM_END
+		ROM_REGION( 0x0300, REGION_PROMS, 0 );
+		ROM_LOAD( "82s126.2e",    0x0000, 0x0100, 0x463dc7ad );/* palette low 4 bits (inverted) */
+		ROM_LOAD( "82s126.2f",    0x0100, 0x0100, 0x47ba0042 );/* palette high 4 bits (inverted) */
+		ROM_LOAD( "82s126.2n",    0x0200, 0x0100, 0x37aece4b );/* character color codes on a per-column basis */
+	ROM_END(); }}; 
 	
 	
 	static void init_herocast(void)

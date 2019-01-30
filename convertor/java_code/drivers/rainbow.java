@@ -627,122 +627,122 @@ public class rainbow
 						DRIVERS
 	***************************************************************************/
 	
-	ROM_START( rainbow )
-		ROM_REGION( 0x80000, REGION_CPU1, 0 )	/* 8*64k for 68000 code */
-		ROM_LOAD16_BYTE( "b22-10",     0x00000, 0x10000, 0x3b013495 )
-		ROM_LOAD16_BYTE( "b22-11",     0x00001, 0x10000, 0x80041a3d )
-		ROM_LOAD16_BYTE( "b22-08",     0x20000, 0x10000, 0x962fb845 )
-		ROM_LOAD16_BYTE( "b22-09",     0x20001, 0x10000, 0xf43efa27 )
-		ROM_LOAD16_BYTE( "ri_m03.rom", 0x40000, 0x20000, 0x3ebb0fb8 )
-		ROM_LOAD16_BYTE( "ri_m04.rom", 0x40001, 0x20000, 0x91625e7f )
+	static RomLoadPtr rom_rainbow = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x80000, REGION_CPU1, 0 );/* 8*64k for 68000 code */
+		ROM_LOAD16_BYTE( "b22-10",     0x00000, 0x10000, 0x3b013495 );
+		ROM_LOAD16_BYTE( "b22-11",     0x00001, 0x10000, 0x80041a3d );
+		ROM_LOAD16_BYTE( "b22-08",     0x20000, 0x10000, 0x962fb845 );
+		ROM_LOAD16_BYTE( "b22-09",     0x20001, 0x10000, 0xf43efa27 );
+		ROM_LOAD16_BYTE( "ri_m03.rom", 0x40000, 0x20000, 0x3ebb0fb8 );
+		ROM_LOAD16_BYTE( "ri_m04.rom", 0x40001, 0x20000, 0x91625e7f );
 	
-		ROM_REGION( 0x1c000, REGION_CPU2, 0 )	/* 64k for the audio CPU */
-		ROM_LOAD( "b22-14",     	 0x00000, 0x4000, 0x113c1a5b )
-		ROM_CONTINUE(           	 0x10000, 0xc000 )
+		ROM_REGION( 0x1c000, REGION_CPU2, 0 );/* 64k for the audio CPU */
+		ROM_LOAD( "b22-14",     	 0x00000, 0x4000, 0x113c1a5b );
+		ROM_CONTINUE(           	 0x10000, 0xc000 );
 	
-		ROM_REGION( 0x80000, REGION_GFX1, ROMREGION_DISPOSE )
-		ROM_LOAD( "ri_m01.rom", 	 0x00000, 0x80000, 0xb76c9168 )	/* 8x8 gfx */
+		ROM_REGION( 0x80000, REGION_GFX1, ROMREGION_DISPOSE );
+		ROM_LOAD( "ri_m01.rom", 	 0x00000, 0x80000, 0xb76c9168 );/* 8x8 gfx */
 	
-		ROM_REGION( 0xa0000, REGION_GFX2, ROMREGION_DISPOSE )
-	  	ROM_LOAD( "ri_m02.rom", 	 0x00000, 0x80000, 0x1b87ecf0 )	/* sprites */
-		ROM_LOAD( "b22-13",     	 0x80000, 0x10000, 0x2fda099f )
-		ROM_LOAD( "b22-12",     	 0x90000, 0x10000, 0x67a76dc6 )
+		ROM_REGION( 0xa0000, REGION_GFX2, ROMREGION_DISPOSE );
+	  	ROM_LOAD( "ri_m02.rom", 	 0x00000, 0x80000, 0x1b87ecf0 );/* sprites */
+		ROM_LOAD( "b22-13",     	 0x80000, 0x10000, 0x2fda099f );
+		ROM_LOAD( "b22-12",     	 0x90000, 0x10000, 0x67a76dc6 );
 	
-		ROM_REGION( 0x10000, REGION_USER1, 0 )	/* Dump of C-Chip */
-		ROM_LOAD( "jb1_f89",    	 0x00000, 0x10000, 0x0810d327 )
-	ROM_END
+		ROM_REGION( 0x10000, REGION_USER1, 0 );/* Dump of C-Chip */
+		ROM_LOAD( "jb1_f89",    	 0x00000, 0x10000, 0x0810d327 );
+	ROM_END(); }}; 
 	
-	ROM_START( rainbowa )
-		ROM_REGION( 0x80000, REGION_CPU1, 0 )	/* 8*64k for 68000 code */
-		ROM_LOAD16_BYTE( "b22_10-1",   0x00000, 0x10000, 0xe34a50ca )
-		ROM_LOAD16_BYTE( "b22_11-1",   0x00001, 0x10000, 0x6a31a093 )
-		ROM_LOAD16_BYTE( "b22_08-1",   0x20000, 0x10000, 0x15d6e17a )
-		ROM_LOAD16_BYTE( "b22_09-1",   0x20001, 0x10000, 0x454e66bc )
-		ROM_LOAD16_BYTE( "ri_m03.rom", 0x40000, 0x20000, 0x3ebb0fb8 )
-		ROM_LOAD16_BYTE( "ri_m04.rom", 0x40001, 0x20000, 0x91625e7f )
+	static RomLoadPtr rom_rainbowa = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x80000, REGION_CPU1, 0 );/* 8*64k for 68000 code */
+		ROM_LOAD16_BYTE( "b22_10-1",   0x00000, 0x10000, 0xe34a50ca );
+		ROM_LOAD16_BYTE( "b22_11-1",   0x00001, 0x10000, 0x6a31a093 );
+		ROM_LOAD16_BYTE( "b22_08-1",   0x20000, 0x10000, 0x15d6e17a );
+		ROM_LOAD16_BYTE( "b22_09-1",   0x20001, 0x10000, 0x454e66bc );
+		ROM_LOAD16_BYTE( "ri_m03.rom", 0x40000, 0x20000, 0x3ebb0fb8 );
+		ROM_LOAD16_BYTE( "ri_m04.rom", 0x40001, 0x20000, 0x91625e7f );
 	
-		ROM_REGION( 0x1c000, REGION_CPU2, 0 )	/* 64k for the audio CPU */
-		ROM_LOAD( "b22-14",     	 0x00000, 0x4000, 0x113c1a5b )
-		ROM_CONTINUE(           	 0x10000, 0xc000 )
+		ROM_REGION( 0x1c000, REGION_CPU2, 0 );/* 64k for the audio CPU */
+		ROM_LOAD( "b22-14",     	 0x00000, 0x4000, 0x113c1a5b );
+		ROM_CONTINUE(           	 0x10000, 0xc000 );
 	
-		ROM_REGION( 0x80000, REGION_GFX1, ROMREGION_DISPOSE )
-		ROM_LOAD( "ri_m01.rom", 	 0x00000, 0x80000, 0xb76c9168 )	/* 8x8 gfx */
+		ROM_REGION( 0x80000, REGION_GFX1, ROMREGION_DISPOSE );
+		ROM_LOAD( "ri_m01.rom", 	 0x00000, 0x80000, 0xb76c9168 );/* 8x8 gfx */
 	
-		ROM_REGION( 0xa0000, REGION_GFX2, ROMREGION_DISPOSE )
-	  	ROM_LOAD( "ri_m02.rom", 	 0x00000, 0x80000, 0x1b87ecf0 )	/* sprites */
-		ROM_LOAD( "b22-13",     	 0x80000, 0x10000, 0x2fda099f )
-		ROM_LOAD( "b22-12",     	 0x90000, 0x10000, 0x67a76dc6 )
+		ROM_REGION( 0xa0000, REGION_GFX2, ROMREGION_DISPOSE );
+	  	ROM_LOAD( "ri_m02.rom", 	 0x00000, 0x80000, 0x1b87ecf0 );/* sprites */
+		ROM_LOAD( "b22-13",     	 0x80000, 0x10000, 0x2fda099f );
+		ROM_LOAD( "b22-12",     	 0x90000, 0x10000, 0x67a76dc6 );
 	
-		ROM_REGION( 0x10000, REGION_USER1, 0 )	/* Dump of C-Chip */
-		ROM_LOAD( "jb1_f89",    	 0x00000, 0x10000, 0x0810d327 )
-	ROM_END
+		ROM_REGION( 0x10000, REGION_USER1, 0 );/* Dump of C-Chip */
+		ROM_LOAD( "jb1_f89",    	 0x00000, 0x10000, 0x0810d327 );
+	ROM_END(); }}; 
 	
-	ROM_START( rainbowe )
-		ROM_REGION( 0x80000, REGION_CPU1, 0 )	/* 8*64k for 68000 code */
-		ROM_LOAD16_BYTE( "ri_01.rom",    0x00000, 0x10000, 0x50690880 )
-		ROM_LOAD16_BYTE( "ri_02.rom",    0x00001, 0x10000, 0x4dead71f )
-		ROM_LOAD16_BYTE( "ri_03.rom",    0x20000, 0x10000, 0x4a4cb785 )
-		ROM_LOAD16_BYTE( "ri_04.rom",    0x20001, 0x10000, 0x4caa53bd )
-		ROM_LOAD16_BYTE( "ri_m03.rom",   0x40000, 0x20000, 0x3ebb0fb8 )
-		ROM_LOAD16_BYTE( "ri_m04.rom",   0x40001, 0x20000, 0x91625e7f )
+	static RomLoadPtr rom_rainbowe = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x80000, REGION_CPU1, 0 );/* 8*64k for 68000 code */
+		ROM_LOAD16_BYTE( "ri_01.rom",    0x00000, 0x10000, 0x50690880 );
+		ROM_LOAD16_BYTE( "ri_02.rom",    0x00001, 0x10000, 0x4dead71f );
+		ROM_LOAD16_BYTE( "ri_03.rom",    0x20000, 0x10000, 0x4a4cb785 );
+		ROM_LOAD16_BYTE( "ri_04.rom",    0x20001, 0x10000, 0x4caa53bd );
+		ROM_LOAD16_BYTE( "ri_m03.rom",   0x40000, 0x20000, 0x3ebb0fb8 );
+		ROM_LOAD16_BYTE( "ri_m04.rom",   0x40001, 0x20000, 0x91625e7f );
 	
-		ROM_REGION( 0x1c000, REGION_CPU2, 0 )	/* 64k for the audio CPU */
-		ROM_LOAD( "b22-14",              0x00000, 0x4000, 0x113c1a5b )
-		ROM_CONTINUE(                    0x10000, 0xc000 )
+		ROM_REGION( 0x1c000, REGION_CPU2, 0 );/* 64k for the audio CPU */
+		ROM_LOAD( "b22-14",              0x00000, 0x4000, 0x113c1a5b );
+		ROM_CONTINUE(                    0x10000, 0xc000 );
 	
-		ROM_REGION( 0x80000, REGION_GFX1, ROMREGION_DISPOSE )
-		ROM_LOAD( "ri_m01.rom",          0x00000, 0x80000, 0xb76c9168 )	/* 8x8 gfx */
+		ROM_REGION( 0x80000, REGION_GFX1, ROMREGION_DISPOSE );
+		ROM_LOAD( "ri_m01.rom",          0x00000, 0x80000, 0xb76c9168 );/* 8x8 gfx */
 	
-		ROM_REGION( 0xa0000, REGION_GFX2, ROMREGION_DISPOSE )
-	  	ROM_LOAD( "ri_m02.rom",          0x00000, 0x80000, 0x1b87ecf0 )	/* sprites */
-		ROM_LOAD( "b22-13",              0x80000, 0x10000, 0x2fda099f )
-		ROM_LOAD( "b22-12",              0x90000, 0x10000, 0x67a76dc6 )
+		ROM_REGION( 0xa0000, REGION_GFX2, ROMREGION_DISPOSE );
+	  	ROM_LOAD( "ri_m02.rom",          0x00000, 0x80000, 0x1b87ecf0 );/* sprites */
+		ROM_LOAD( "b22-13",              0x80000, 0x10000, 0x2fda099f );
+		ROM_LOAD( "b22-12",              0x90000, 0x10000, 0x67a76dc6 );
 	
 		/* C-Chip is missing: until it is dumped, we fall back on rom from Jumping */
 	
-		ROM_REGION( 0x10000, REGION_USER1, 0 )
-		ROM_LOAD( "jb1_f89",             0x00000, 0x10000, 0x0810d327 )	/* WRONG C-Chip */
-	ROM_END
+		ROM_REGION( 0x10000, REGION_USER1, 0 );
+		ROM_LOAD( "jb1_f89",             0x00000, 0x10000, 0x0810d327 );/* WRONG C-Chip */
+	ROM_END(); }}; 
 	
-	ROM_START( jumping )
-		ROM_REGION( 0xa0000, REGION_CPU1, 0 )	/* 8*64k for code, 64k*2 for protection chip */
-		ROM_LOAD16_BYTE( "jb1_h4",       0x00000, 0x10000, 0x3fab6b31 )
-		ROM_LOAD16_BYTE( "jb1_h8",       0x00001, 0x10000, 0x8c878827 )
-		ROM_LOAD16_BYTE( "jb1_i4",       0x20000, 0x10000, 0x443492cf )
-		ROM_LOAD16_BYTE( "jb1_i8",       0x20001, 0x10000, 0xed33bae1 )
-		ROM_LOAD16_BYTE( "ri_m03.rom",   0x40000, 0x20000, 0x3ebb0fb8 )
-		ROM_LOAD16_BYTE( "ri_m04.rom",   0x40001, 0x20000, 0x91625e7f )
-		ROM_LOAD16_BYTE( "jb1_f89",      0x80001, 0x10000, 0x0810d327 )	/* Dump of C-Chip */
+	static RomLoadPtr rom_jumping = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0xa0000, REGION_CPU1, 0 );/* 8*64k for code, 64k*2 for protection chip */
+		ROM_LOAD16_BYTE( "jb1_h4",       0x00000, 0x10000, 0x3fab6b31 );
+		ROM_LOAD16_BYTE( "jb1_h8",       0x00001, 0x10000, 0x8c878827 );
+		ROM_LOAD16_BYTE( "jb1_i4",       0x20000, 0x10000, 0x443492cf );
+		ROM_LOAD16_BYTE( "jb1_i8",       0x20001, 0x10000, 0xed33bae1 );
+		ROM_LOAD16_BYTE( "ri_m03.rom",   0x40000, 0x20000, 0x3ebb0fb8 );
+		ROM_LOAD16_BYTE( "ri_m04.rom",   0x40001, 0x20000, 0x91625e7f );
+		ROM_LOAD16_BYTE( "jb1_f89",      0x80001, 0x10000, 0x0810d327 );/* Dump of C-Chip */
 	
-		ROM_REGION( 0x14000, REGION_CPU2, 0 )	/* 64k for the audio CPU */
-		ROM_LOAD( "jb1_cd67",      0x00000, 0x8000, 0x8527c00e )
-		ROM_CONTINUE(              0x10000, 0x4000 )
-		ROM_CONTINUE(              0x0c000, 0x4000 )
+		ROM_REGION( 0x14000, REGION_CPU2, 0 );/* 64k for the audio CPU */
+		ROM_LOAD( "jb1_cd67",      0x00000, 0x8000, 0x8527c00e );
+		ROM_CONTINUE(              0x10000, 0x4000 );
+		ROM_CONTINUE(              0x0c000, 0x4000 );
 	
-		ROM_REGION( 0x80000, REGION_GFX1, ROMREGION_DISPOSE )
-		ROM_LOAD( "jb2_ic8",           0x00000, 0x10000, 0x65b76309 )	/* 8x8 characters */
-		ROM_LOAD( "jb2_ic7",           0x10000, 0x10000, 0x43a94283 )
-		ROM_LOAD( "jb2_ic10",          0x20000, 0x10000, 0xe61933fb )
-		ROM_LOAD( "jb2_ic9",           0x30000, 0x10000, 0xed031eb2 )
-		ROM_LOAD( "jb2_ic12",          0x40000, 0x10000, 0x312700ca )
-		ROM_LOAD( "jb2_ic11",          0x50000, 0x10000, 0xde3b0b88 )
-		ROM_LOAD( "jb2_ic14",          0x60000, 0x10000, 0x9fdc6c8e )
-		ROM_LOAD( "jb2_ic13",          0x70000, 0x10000, 0x06226492 )
+		ROM_REGION( 0x80000, REGION_GFX1, ROMREGION_DISPOSE );
+		ROM_LOAD( "jb2_ic8",           0x00000, 0x10000, 0x65b76309 );/* 8x8 characters */
+		ROM_LOAD( "jb2_ic7",           0x10000, 0x10000, 0x43a94283 );
+		ROM_LOAD( "jb2_ic10",          0x20000, 0x10000, 0xe61933fb );
+		ROM_LOAD( "jb2_ic9",           0x30000, 0x10000, 0xed031eb2 );
+		ROM_LOAD( "jb2_ic12",          0x40000, 0x10000, 0x312700ca );
+		ROM_LOAD( "jb2_ic11",          0x50000, 0x10000, 0xde3b0b88 );
+		ROM_LOAD( "jb2_ic14",          0x60000, 0x10000, 0x9fdc6c8e );
+		ROM_LOAD( "jb2_ic13",          0x70000, 0x10000, 0x06226492 );
 	
-		ROM_REGION( 0xa0000, REGION_GFX2, ROMREGION_DISPOSE )
-		ROM_LOAD( "jb2_ic62",          0x00000, 0x10000, 0x8548db6c )	/* 16x16 sprites */
-		ROM_LOAD( "jb2_ic61",          0x10000, 0x10000, 0x37c5923b )
-		ROM_LOAD( "jb2_ic60",          0x20000, 0x08000, 0x662a2f1e )
-		ROM_LOAD( "jb2_ic78",          0x28000, 0x10000, 0x925865e1 )
-		ROM_LOAD( "jb2_ic77",          0x38000, 0x10000, 0xb09695d1 )
-		ROM_LOAD( "jb2_ic76",          0x48000, 0x08000, 0x41937743 )
-		ROM_LOAD( "jb2_ic93",          0x50000, 0x10000, 0xf644eeab )
-		ROM_LOAD( "jb2_ic92",          0x60000, 0x10000, 0x3fbccd33 )
-		ROM_LOAD( "jb2_ic91",          0x70000, 0x08000, 0xd886c014 )
-		ROM_LOAD( "jb2_i121",          0x78000, 0x10000, 0x93df1e4d )
-		ROM_LOAD( "jb2_i120",          0x88000, 0x10000, 0x7c4e893b )
-		ROM_LOAD( "jb2_i119",          0x98000, 0x08000, 0x7e1d58d8 )
-	ROM_END
+		ROM_REGION( 0xa0000, REGION_GFX2, ROMREGION_DISPOSE );
+		ROM_LOAD( "jb2_ic62",          0x00000, 0x10000, 0x8548db6c );/* 16x16 sprites */
+		ROM_LOAD( "jb2_ic61",          0x10000, 0x10000, 0x37c5923b );
+		ROM_LOAD( "jb2_ic60",          0x20000, 0x08000, 0x662a2f1e );
+		ROM_LOAD( "jb2_ic78",          0x28000, 0x10000, 0x925865e1 );
+		ROM_LOAD( "jb2_ic77",          0x38000, 0x10000, 0xb09695d1 );
+		ROM_LOAD( "jb2_ic76",          0x48000, 0x08000, 0x41937743 );
+		ROM_LOAD( "jb2_ic93",          0x50000, 0x10000, 0xf644eeab );
+		ROM_LOAD( "jb2_ic92",          0x60000, 0x10000, 0x3fbccd33 );
+		ROM_LOAD( "jb2_ic91",          0x70000, 0x08000, 0xd886c014 );
+		ROM_LOAD( "jb2_i121",          0x78000, 0x10000, 0x93df1e4d );
+		ROM_LOAD( "jb2_i120",          0x88000, 0x10000, 0x7c4e893b );
+		ROM_LOAD( "jb2_i119",          0x98000, 0x08000, 0x7e1d58d8 );
+	ROM_END(); }}; 
 	
 	
 	

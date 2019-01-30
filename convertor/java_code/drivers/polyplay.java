@@ -356,45 +356,45 @@ public class polyplay
 	
 	
 	/* ROM loading and mapping */
-	ROM_START( polyplay )
-		ROM_REGION( 0x10000, REGION_CPU1, 0 )	/* 64k for code */
-		ROM_LOAD( "cpu_0000.37",       0x0000, 0x0400, 0x87884c5f )
-		ROM_LOAD( "cpu_0400.36",       0x0400, 0x0400, 0xd5c84829 )
-		ROM_LOAD( "cpu_0800.35",       0x0800, 0x0400, 0x5f36d08e )
-		ROM_LOAD( "2_-_1000.14",       0x1000, 0x0400, 0x950dfcdb )
-		ROM_LOAD( "2_-_1400.10",       0x1400, 0x0400, 0x829f74ca )
-		ROM_LOAD( "2_-_1800.6",        0x1800, 0x0400, 0xb69306f5 )
-		ROM_LOAD( "2_-_1c00.2",        0x1c00, 0x0400, 0xaede2280 )
-		ROM_LOAD( "2_-_2000.15",       0x2000, 0x0400, 0x6c7ad0d8 )
-		ROM_LOAD( "2_-_2400.11",       0x2400, 0x0400, 0xbc7462f0 )
-		ROM_LOAD( "2_-_2800.7",        0x2800, 0x0400, 0x9ccf1958 )
-		ROM_LOAD( "2_-_2c00.3",        0x2c00, 0x0400, 0x21827930 )
-		ROM_LOAD( "2_-_3000.16",       0x3000, 0x0400, 0xb3b3c0ec )
-		ROM_LOAD( "2_-_3400.12",       0x3400, 0x0400, 0xbd416cd0 )
-		ROM_LOAD( "2_-_3800.8",        0x3800, 0x0400, 0x1c470b7c )
-		ROM_LOAD( "2_-_3c00.4",        0x3c00, 0x0400, 0xb8354a19 )
-		ROM_LOAD( "2_-_4000.17",       0x4000, 0x0400, 0x1e01041e )
-		ROM_LOAD( "2_-_4400.13",       0x4400, 0x0400, 0xfe4d8959 )
-		ROM_LOAD( "2_-_4800.9",        0x4800, 0x0400, 0xc45f1d9d )
-		ROM_LOAD( "2_-_4c00.5",        0x4c00, 0x0400, 0x26950ad6 )
-		ROM_LOAD( "1_-_5000.30",       0x5000, 0x0400, 0x9f5e2ba1 )
-		ROM_LOAD( "1_-_5400.26",       0x5400, 0x0400, 0xb5f9a780 )
-		ROM_LOAD( "1_-_5800.22",       0x5800, 0x0400, 0xd973ad12 )
-		ROM_LOAD( "1_-_5c00.18",       0x5c00, 0x0400, 0x9c22ea79 )
-		ROM_LOAD( "1_-_6000.31",       0x6000, 0x0400, 0x245c49ca )
-		ROM_LOAD( "1_-_6400.27",       0x6400, 0x0400, 0x181e427e )
-		ROM_LOAD( "1_-_6800.23",       0x6800, 0x0400, 0x8a6c1f97 )
-		ROM_LOAD( "1_-_6c00.19",       0x6c00, 0x0400, 0x77901dc9 )
-		ROM_LOAD( "1_-_7000.32",       0x7000, 0x0400, 0x83ffbe57 )
-		ROM_LOAD( "1_-_7400.28",       0x7400, 0x0400, 0xe2a66531 )
-		ROM_LOAD( "1_-_7800.24",       0x7800, 0x0400, 0x1d0803ef )
-		ROM_LOAD( "1_-_7c00.20",       0x7c00, 0x0400, 0x17dfa7e4 )
-		ROM_LOAD( "1_-_8000.33",       0x8000, 0x0400, 0x6ee02375 )
-		ROM_LOAD( "1_-_8400.29",       0x8400, 0x0400, 0x9db09598 )
-		ROM_LOAD( "1_-_8800.25",       0x8800, 0x0400, 0xca2f963f )
-		ROM_LOAD( "1_-_8c00.21",       0x8c00, 0x0400, 0x0c7dec2d )
-		ROM_LOAD( "char.1",            0xe800, 0x0400, 0x5242dd6b )
-	ROM_END
+	static RomLoadPtr rom_polyplay = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x10000, REGION_CPU1, 0 );/* 64k for code */
+		ROM_LOAD( "cpu_0000.37",       0x0000, 0x0400, 0x87884c5f );
+		ROM_LOAD( "cpu_0400.36",       0x0400, 0x0400, 0xd5c84829 );
+		ROM_LOAD( "cpu_0800.35",       0x0800, 0x0400, 0x5f36d08e );
+		ROM_LOAD( "2_-_1000.14",       0x1000, 0x0400, 0x950dfcdb );
+		ROM_LOAD( "2_-_1400.10",       0x1400, 0x0400, 0x829f74ca );
+		ROM_LOAD( "2_-_1800.6",        0x1800, 0x0400, 0xb69306f5 );
+		ROM_LOAD( "2_-_1c00.2",        0x1c00, 0x0400, 0xaede2280 );
+		ROM_LOAD( "2_-_2000.15",       0x2000, 0x0400, 0x6c7ad0d8 );
+		ROM_LOAD( "2_-_2400.11",       0x2400, 0x0400, 0xbc7462f0 );
+		ROM_LOAD( "2_-_2800.7",        0x2800, 0x0400, 0x9ccf1958 );
+		ROM_LOAD( "2_-_2c00.3",        0x2c00, 0x0400, 0x21827930 );
+		ROM_LOAD( "2_-_3000.16",       0x3000, 0x0400, 0xb3b3c0ec );
+		ROM_LOAD( "2_-_3400.12",       0x3400, 0x0400, 0xbd416cd0 );
+		ROM_LOAD( "2_-_3800.8",        0x3800, 0x0400, 0x1c470b7c );
+		ROM_LOAD( "2_-_3c00.4",        0x3c00, 0x0400, 0xb8354a19 );
+		ROM_LOAD( "2_-_4000.17",       0x4000, 0x0400, 0x1e01041e );
+		ROM_LOAD( "2_-_4400.13",       0x4400, 0x0400, 0xfe4d8959 );
+		ROM_LOAD( "2_-_4800.9",        0x4800, 0x0400, 0xc45f1d9d );
+		ROM_LOAD( "2_-_4c00.5",        0x4c00, 0x0400, 0x26950ad6 );
+		ROM_LOAD( "1_-_5000.30",       0x5000, 0x0400, 0x9f5e2ba1 );
+		ROM_LOAD( "1_-_5400.26",       0x5400, 0x0400, 0xb5f9a780 );
+		ROM_LOAD( "1_-_5800.22",       0x5800, 0x0400, 0xd973ad12 );
+		ROM_LOAD( "1_-_5c00.18",       0x5c00, 0x0400, 0x9c22ea79 );
+		ROM_LOAD( "1_-_6000.31",       0x6000, 0x0400, 0x245c49ca );
+		ROM_LOAD( "1_-_6400.27",       0x6400, 0x0400, 0x181e427e );
+		ROM_LOAD( "1_-_6800.23",       0x6800, 0x0400, 0x8a6c1f97 );
+		ROM_LOAD( "1_-_6c00.19",       0x6c00, 0x0400, 0x77901dc9 );
+		ROM_LOAD( "1_-_7000.32",       0x7000, 0x0400, 0x83ffbe57 );
+		ROM_LOAD( "1_-_7400.28",       0x7400, 0x0400, 0xe2a66531 );
+		ROM_LOAD( "1_-_7800.24",       0x7800, 0x0400, 0x1d0803ef );
+		ROM_LOAD( "1_-_7c00.20",       0x7c00, 0x0400, 0x17dfa7e4 );
+		ROM_LOAD( "1_-_8000.33",       0x8000, 0x0400, 0x6ee02375 );
+		ROM_LOAD( "1_-_8400.29",       0x8400, 0x0400, 0x9db09598 );
+		ROM_LOAD( "1_-_8800.25",       0x8800, 0x0400, 0xca2f963f );
+		ROM_LOAD( "1_-_8c00.21",       0x8c00, 0x0400, 0x0c7dec2d );
+		ROM_LOAD( "char.1",            0xe800, 0x0400, 0x5242dd6b );
+	ROM_END(); }}; 
 	
 	
 	/* interrupt handling, the game runs in IM 2 */

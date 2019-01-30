@@ -531,46 +531,46 @@ public class grchamp
 		//mask,default,type,sensitivity,delta,min,max
 	INPUT_PORTS_END
 	
-	ROM_START( grchamp )
-		ROM_REGION( 0x10000, REGION_CPU1, 0 )
-		ROM_LOAD( "gm03",   0x0000, 0x1000, 0x47fda76e )
-		ROM_LOAD( "gm04",   0x1000, 0x1000, 0x07a623dc )
-		ROM_LOAD( "gm05",	0x2000, 0x1000, 0x716e1fba )
-		ROM_LOAD( "gm06",	0x3000, 0x1000, 0x157db30b )
+	static RomLoadPtr rom_grchamp = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x10000, REGION_CPU1, 0 );
+		ROM_LOAD( "gm03",   0x0000, 0x1000, 0x47fda76e );
+		ROM_LOAD( "gm04",   0x1000, 0x1000, 0x07a623dc );
+		ROM_LOAD( "gm05",	0x2000, 0x1000, 0x716e1fba );
+		ROM_LOAD( "gm06",	0x3000, 0x1000, 0x157db30b );
 	
-		ROM_REGION( 0x10000, REGION_CPU2, 0 )
-		ROM_LOAD( "gm09",	0x0000, 0x1000, 0xd57bd109 )
-		ROM_LOAD( "gm10",	0x1000, 0x1000, 0x41ba07f1 )
-		ROM_LOAD( "gr16",	0x5000, 0x1000, 0x885d708e )
-		ROM_LOAD( "gr15",	0x6000, 0x1000, 0xa822430b )
+		ROM_REGION( 0x10000, REGION_CPU2, 0 );
+		ROM_LOAD( "gm09",	0x0000, 0x1000, 0xd57bd109 );
+		ROM_LOAD( "gm10",	0x1000, 0x1000, 0x41ba07f1 );
+		ROM_LOAD( "gr16",	0x5000, 0x1000, 0x885d708e );
+		ROM_LOAD( "gr15",	0x6000, 0x1000, 0xa822430b );
 	
-		ROM_REGION( 0x10000, REGION_CPU3, 0 )
-		ROM_LOAD( "gm07",	0x0000, 0x1000, 0x65dcc572 )
-		ROM_LOAD( "gm08",	0x1000, 0x1000, 0x224d880c )
+		ROM_REGION( 0x10000, REGION_CPU3, 0 );
+		ROM_LOAD( "gm07",	0x0000, 0x1000, 0x65dcc572 );
+		ROM_LOAD( "gm08",	0x1000, 0x1000, 0x224d880c );
 	
-		ROM_REGION( 0x3000, REGION_GFX1, ROMREGION_DISPOSE ) /* characters */
-		ROM_LOAD( "gm01",	0x0000, 0x1000, 0x846f8e89 )
-		ROM_LOAD( "gm02",	0x1000, 0x1000, 0x5911948d )
-		ROM_LOAD( "gr11",	0x2000, 0x1000, 0x54eb3ec9 )
+		ROM_REGION( 0x3000, REGION_GFX1, ROMREGION_DISPOSE );/* characters */
+		ROM_LOAD( "gm01",	0x0000, 0x1000, 0x846f8e89 );
+		ROM_LOAD( "gm02",	0x1000, 0x1000, 0x5911948d );
+		ROM_LOAD( "gr11",	0x2000, 0x1000, 0x54eb3ec9 );
 	
-		ROM_REGION( 0x6000, REGION_GFX2, ROMREGION_DISPOSE ) /* tiles */
-		ROM_LOAD( "gr20",	0x0000, 0x1000, 0x88ba2c03 )
-		ROM_LOAD( "gr21",	0x1000, 0x1000, 0x2f77a9f3 )
-		ROM_LOAD( "gr13",	0x2000, 0x1000, 0xd5e19ebd )
-		ROM_LOAD( "gr19",	0x3000, 0x1000, 0xff34b444 )
-		ROM_LOAD( "gr22",	0x4000, 0x1000, 0x31bb5fc7 )
-		ROM_LOAD( "gr14",	0x5000, 0x1000, 0xd129b8e4 )
+		ROM_REGION( 0x6000, REGION_GFX2, ROMREGION_DISPOSE );/* tiles */
+		ROM_LOAD( "gr20",	0x0000, 0x1000, 0x88ba2c03 );
+		ROM_LOAD( "gr21",	0x1000, 0x1000, 0x2f77a9f3 );
+		ROM_LOAD( "gr13",	0x2000, 0x1000, 0xd5e19ebd );
+		ROM_LOAD( "gr19",	0x3000, 0x1000, 0xff34b444 );
+		ROM_LOAD( "gr22",	0x4000, 0x1000, 0x31bb5fc7 );
+		ROM_LOAD( "gr14",	0x5000, 0x1000, 0xd129b8e4 );
 	
-		ROM_REGION( 0x0800, REGION_GFX3, ROMREGION_DISPOSE ) /* rain */
-		ROM_LOAD( "gr10",	0x0000, 0x0800, 0xb1f0a873 )
+		ROM_REGION( 0x0800, REGION_GFX3, ROMREGION_DISPOSE );/* rain */
+		ROM_LOAD( "gr10",	0x0000, 0x0800, 0xb1f0a873 );
 	
-		ROM_REGION( 0x0800, REGION_GFX4, 0 ) /* headlights */
-		ROM_LOAD( "gr12",	0x0000, 0x0800, 0xf3bc599e )
+		ROM_REGION( 0x0800, REGION_GFX4, 0 );/* headlights */
+		ROM_LOAD( "gr12",	0x0000, 0x0800, 0xf3bc599e );
 	
-		ROM_REGION( 0x0040, REGION_PROMS, 0 )
-		ROM_LOAD( "gr23.bpr", 0x00, 0x20, 0x41c6c48d ) /* background colors */
-		ROM_LOAD( "gr09.bpr", 0x20, 0x20, 0x260fb2b9 ) /* sprite/text colors */
-	ROM_END
+		ROM_REGION( 0x0040, REGION_PROMS, 0 );
+		ROM_LOAD( "gr23.bpr", 0x00, 0x20, 0x41c6c48d );/* background colors */
+		ROM_LOAD( "gr09.bpr", 0x20, 0x20, 0x260fb2b9 );/* sprite/text colors */
+	ROM_END(); }}; 
 	
 	/***************************************************************************/
 	

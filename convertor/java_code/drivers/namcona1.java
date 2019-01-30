@@ -858,133 +858,133 @@ public class namcona1
 	void init_numanath( void ){ init_namcona1( 0x200000 ); custom_key = key_numanath; }
 	void init_fa(       void ){ init_namcona1( 0x200000 ); custom_key = key_fa; }
 	
-	ROM_START( bkrtmaq )
-		ROM_REGION( 0x680000, REGION_CPU1, 0 )
-		ROM_LOAD16_BYTE( "mq1_ep0l.bin", 0x080001, 0x080000, 0xf029bc57 ) /* 0xc00000 */
-		ROM_LOAD16_BYTE( "mq1_ep0u.bin", 0x080000, 0x080000, 0x4cff62b8 )
-		ROM_LOAD16_BYTE( "mq1_ep1l.bin", 0x180001, 0x080000, 0xe3be6f4b )
-		ROM_LOAD16_BYTE( "mq1_ep1u.bin", 0x180000, 0x080000, 0xb44e31b2 )
-		ROM_LOAD16_BYTE( "mq1_ma0l.bin", 0x280001, 0x100000, 0x11fed35f ) /* 0x400000 */
-		ROM_LOAD16_BYTE( "mq1_ma0u.bin", 0x280000, 0x100000, 0x23442ac0 )
-		ROM_LOAD16_BYTE( "mq1_ma1l.bin", 0x480001, 0x100000, 0xfe82205f )
-		ROM_LOAD16_BYTE( "mq1_ma1u.bin", 0x480000, 0x100000, 0x0cdb6bd0 )
-	ROM_END
+	static RomLoadPtr rom_bkrtmaq = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x680000, REGION_CPU1, 0 );
+		ROM_LOAD16_BYTE( "mq1_ep0l.bin", 0x080001, 0x080000, 0xf029bc57 );/* 0xc00000 */
+		ROM_LOAD16_BYTE( "mq1_ep0u.bin", 0x080000, 0x080000, 0x4cff62b8 );
+		ROM_LOAD16_BYTE( "mq1_ep1l.bin", 0x180001, 0x080000, 0xe3be6f4b );
+		ROM_LOAD16_BYTE( "mq1_ep1u.bin", 0x180000, 0x080000, 0xb44e31b2 );
+		ROM_LOAD16_BYTE( "mq1_ma0l.bin", 0x280001, 0x100000, 0x11fed35f );/* 0x400000 */
+		ROM_LOAD16_BYTE( "mq1_ma0u.bin", 0x280000, 0x100000, 0x23442ac0 );
+		ROM_LOAD16_BYTE( "mq1_ma1l.bin", 0x480001, 0x100000, 0xfe82205f );
+		ROM_LOAD16_BYTE( "mq1_ma1u.bin", 0x480000, 0x100000, 0x0cdb6bd0 );
+	ROM_END(); }}; 
 	
-	ROM_START( cgangpzl )
-		ROM_REGION( 0x180000, REGION_CPU1, 0 )
-		ROM_LOAD16_BYTE( "274001l.bin", 0x080001, 0x80000, 0x8f5cdcc5 )
-		ROM_LOAD16_BYTE( "274001u.bin", 0x080000, 0x80000, 0x3a816140 )
-	ROM_END
+	static RomLoadPtr rom_cgangpzl = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x180000, REGION_CPU1, 0 );
+		ROM_LOAD16_BYTE( "274001l.bin", 0x080001, 0x80000, 0x8f5cdcc5 );
+		ROM_LOAD16_BYTE( "274001u.bin", 0x080000, 0x80000, 0x3a816140 );
+	ROM_END(); }}; 
 	
-	ROM_START( cgangpzj )
-		ROM_REGION( 0x180000, REGION_CPU1, 0 )
-		ROM_LOAD16_BYTE( "cp2-ep0l.bin", 0x080001, 0x80000, 0x2825f7ba ) /* 0xc00000 */
-		ROM_LOAD16_BYTE( "cp2-ep0u.bin", 0x080000, 0x80000, 0x94d7d6fc )
-	ROM_END
+	static RomLoadPtr rom_cgangpzj = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x180000, REGION_CPU1, 0 );
+		ROM_LOAD16_BYTE( "cp2-ep0l.bin", 0x080001, 0x80000, 0x2825f7ba );/* 0xc00000 */
+		ROM_LOAD16_BYTE( "cp2-ep0u.bin", 0x080000, 0x80000, 0x94d7d6fc );
+	ROM_END(); }}; 
 	
-	ROM_START( emeralda )
-		ROM_REGION( 0x280000, REGION_CPU1, 0 )
-		ROM_LOAD16_BYTE( "ep0lb", 0x080001, 0x080000, 0xfcd55293 ) /* 0xc00000 */
-		ROM_LOAD16_BYTE( "ep0ub", 0x080000, 0x080000, 0xa52f00d5 )
-		ROM_LOAD16_BYTE( "ep1l",  0x180001, 0x080000, 0x373c1c59 )
-		ROM_LOAD16_BYTE( "ep1u",  0x180000, 0x080000, 0x4e969152 )
-	ROM_END
+	static RomLoadPtr rom_emeralda = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x280000, REGION_CPU1, 0 );
+		ROM_LOAD16_BYTE( "ep0lb", 0x080001, 0x080000, 0xfcd55293 );/* 0xc00000 */
+		ROM_LOAD16_BYTE( "ep0ub", 0x080000, 0x080000, 0xa52f00d5 );
+		ROM_LOAD16_BYTE( "ep1l",  0x180001, 0x080000, 0x373c1c59 );
+		ROM_LOAD16_BYTE( "ep1u",  0x180000, 0x080000, 0x4e969152 );
+	ROM_END(); }}; 
 	
-	ROM_START( exvania )
-		ROM_REGION( 0x580000, REGION_CPU1, 0 )
-		ROM_LOAD16_BYTE( "ex1-ep0l.bin", 0x080001, 0x080000, 0x18c12015 ) /* 0xc00000 */
-		ROM_LOAD16_BYTE( "ex1-ep0u.bin", 0x080000, 0x080000, 0x07d054d1 )
-		ROM_LOAD16_BYTE( "ex1-ma0l.bin", 0x180001, 0x100000, 0x17922cd4 ) /* 0x400000 */
-		ROM_LOAD16_BYTE( "ex1-ma0u.bin", 0x180000, 0x100000, 0x93d66106 )
-		ROM_LOAD16_BYTE( "ex1-ma1l.bin", 0x380001, 0x100000, 0xe4bba6ed )
-		ROM_LOAD16_BYTE( "ex1-ma1u.bin", 0x380000, 0x100000, 0x04e7c4b0 )
-	ROM_END
+	static RomLoadPtr rom_exvania = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x580000, REGION_CPU1, 0 );
+		ROM_LOAD16_BYTE( "ex1-ep0l.bin", 0x080001, 0x080000, 0x18c12015 );/* 0xc00000 */
+		ROM_LOAD16_BYTE( "ex1-ep0u.bin", 0x080000, 0x080000, 0x07d054d1 );
+		ROM_LOAD16_BYTE( "ex1-ma0l.bin", 0x180001, 0x100000, 0x17922cd4 );/* 0x400000 */
+		ROM_LOAD16_BYTE( "ex1-ma0u.bin", 0x180000, 0x100000, 0x93d66106 );
+		ROM_LOAD16_BYTE( "ex1-ma1l.bin", 0x380001, 0x100000, 0xe4bba6ed );
+		ROM_LOAD16_BYTE( "ex1-ma1u.bin", 0x380000, 0x100000, 0x04e7c4b0 );
+	ROM_END(); }}; 
 	
-	ROM_START( knckhead )
-		ROM_REGION( 0xa80000, REGION_CPU1, 0 )
-		ROM_LOAD16_BYTE( "kh1-ep0l.bin", 0x080001, 0x080000, 0x94660bec ) /* 0xc00000 */
-		ROM_LOAD16_BYTE( "kh1-ep0u.bin", 0x080000, 0x080000, 0xad640d69 )
-		ROM_LOAD16_BYTE( "kh1-ep1l.bin", 0x180001, 0x080000, 0x27e6ab4e )
-		ROM_LOAD16_BYTE( "kh1-ep1u.bin", 0x180000, 0x080000, 0x487b2434 )
-		ROM_LOAD16_BYTE( "kh1-ma0l.bin", 0x280001, 0x100000, 0x7b2db5df ) /* 0x400000 */
-		ROM_LOAD16_BYTE( "kh1-ma0u.bin", 0x280000, 0x100000, 0x6983228b )
-		ROM_LOAD16_BYTE( "kh1-ma1l.bin", 0x480001, 0x100000, 0xb24f93e6 )
-		ROM_LOAD16_BYTE( "kh1-ma1u.bin", 0x480000, 0x100000, 0x18a60348 )
-		ROM_LOAD16_BYTE( "kh1-ma2l.bin", 0x680001, 0x100000, 0x82064ee9 )
-		ROM_LOAD16_BYTE( "kh1-ma2u.bin", 0x680000, 0x100000, 0x17fe8c3d )
-		ROM_LOAD16_BYTE( "kh1-ma3l.bin", 0x880001, 0x100000, 0xad9a7807 )
-		ROM_LOAD16_BYTE( "kh1-ma3u.bin", 0x880000, 0x100000, 0xefeb768d )
-	ROM_END
+	static RomLoadPtr rom_knckhead = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0xa80000, REGION_CPU1, 0 );
+		ROM_LOAD16_BYTE( "kh1-ep0l.bin", 0x080001, 0x080000, 0x94660bec );/* 0xc00000 */
+		ROM_LOAD16_BYTE( "kh1-ep0u.bin", 0x080000, 0x080000, 0xad640d69 );
+		ROM_LOAD16_BYTE( "kh1-ep1l.bin", 0x180001, 0x080000, 0x27e6ab4e );
+		ROM_LOAD16_BYTE( "kh1-ep1u.bin", 0x180000, 0x080000, 0x487b2434 );
+		ROM_LOAD16_BYTE( "kh1-ma0l.bin", 0x280001, 0x100000, 0x7b2db5df );/* 0x400000 */
+		ROM_LOAD16_BYTE( "kh1-ma0u.bin", 0x280000, 0x100000, 0x6983228b );
+		ROM_LOAD16_BYTE( "kh1-ma1l.bin", 0x480001, 0x100000, 0xb24f93e6 );
+		ROM_LOAD16_BYTE( "kh1-ma1u.bin", 0x480000, 0x100000, 0x18a60348 );
+		ROM_LOAD16_BYTE( "kh1-ma2l.bin", 0x680001, 0x100000, 0x82064ee9 );
+		ROM_LOAD16_BYTE( "kh1-ma2u.bin", 0x680000, 0x100000, 0x17fe8c3d );
+		ROM_LOAD16_BYTE( "kh1-ma3l.bin", 0x880001, 0x100000, 0xad9a7807 );
+		ROM_LOAD16_BYTE( "kh1-ma3u.bin", 0x880000, 0x100000, 0xefeb768d );
+	ROM_END(); }}; 
 	
-	ROM_START( numanath )
-		ROM_REGION( 0xa80000, REGION_CPU1, 0 )
-		ROM_LOAD16_BYTE( "nm1_ep0l.bin", 0x080001, 0x080000, 0x4398b898 ) /* 0xc00000 */
-		ROM_LOAD16_BYTE( "nm1_ep0u.bin", 0x080000, 0x080000, 0xbe90aa79 )
-		ROM_LOAD16_BYTE( "nm1_ep1l.bin", 0x180001, 0x080000, 0x4581dcb4 )
-		ROM_LOAD16_BYTE( "nm1_ep1u.bin", 0x180000, 0x080000, 0x30cd589a )
-		ROM_LOAD16_BYTE( "nm1_ma0l.bin", 0x280001, 0x100000, 0x20faaa57 ) /* 0x400000 */
-		ROM_LOAD16_BYTE( "nm1_ma0u.bin", 0x280000, 0x100000, 0xed7c37f2 )
-		ROM_LOAD16_BYTE( "nm1_ma1l.bin", 0x480001, 0x100000, 0x2232e3b4 )
-		ROM_LOAD16_BYTE( "nm1_ma1u.bin", 0x480000, 0x100000, 0x6cc9675c )
-		ROM_LOAD16_BYTE( "nm1_ma2l.bin", 0x680001, 0x100000, 0x208abb39 )
-		ROM_LOAD16_BYTE( "nm1_ma2u.bin", 0x680000, 0x100000, 0x03a3f204 )
-		ROM_LOAD16_BYTE( "nm1_ma3l.bin", 0x880001, 0x100000, 0x42a539e9 )
-		ROM_LOAD16_BYTE( "nm1_ma3u.bin", 0x880000, 0x100000, 0xf79e2112 )
-	ROM_END
+	static RomLoadPtr rom_numanath = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0xa80000, REGION_CPU1, 0 );
+		ROM_LOAD16_BYTE( "nm1_ep0l.bin", 0x080001, 0x080000, 0x4398b898 );/* 0xc00000 */
+		ROM_LOAD16_BYTE( "nm1_ep0u.bin", 0x080000, 0x080000, 0xbe90aa79 );
+		ROM_LOAD16_BYTE( "nm1_ep1l.bin", 0x180001, 0x080000, 0x4581dcb4 );
+		ROM_LOAD16_BYTE( "nm1_ep1u.bin", 0x180000, 0x080000, 0x30cd589a );
+		ROM_LOAD16_BYTE( "nm1_ma0l.bin", 0x280001, 0x100000, 0x20faaa57 );/* 0x400000 */
+		ROM_LOAD16_BYTE( "nm1_ma0u.bin", 0x280000, 0x100000, 0xed7c37f2 );
+		ROM_LOAD16_BYTE( "nm1_ma1l.bin", 0x480001, 0x100000, 0x2232e3b4 );
+		ROM_LOAD16_BYTE( "nm1_ma1u.bin", 0x480000, 0x100000, 0x6cc9675c );
+		ROM_LOAD16_BYTE( "nm1_ma2l.bin", 0x680001, 0x100000, 0x208abb39 );
+		ROM_LOAD16_BYTE( "nm1_ma2u.bin", 0x680000, 0x100000, 0x03a3f204 );
+		ROM_LOAD16_BYTE( "nm1_ma3l.bin", 0x880001, 0x100000, 0x42a539e9 );
+		ROM_LOAD16_BYTE( "nm1_ma3u.bin", 0x880000, 0x100000, 0xf79e2112 );
+	ROM_END(); }}; 
 	
-	ROM_START( quiztou )
-		ROM_REGION( 0xa80000, REGION_CPU1, 0 )
-		ROM_LOAD16_BYTE( "qt1_ep0l.bin", 0x080001, 0x080000, 0xb680e543 ) /* 0xc00000 */
-		ROM_LOAD16_BYTE( "qt1_ep0u.bin", 0x080000, 0x080000, 0x143c5e4d )
-		ROM_LOAD16_BYTE( "qt1_ep1l.bin", 0x180001, 0x080000, 0x33a72242 )
-		ROM_LOAD16_BYTE( "qt1_ep1u.bin", 0x180000, 0x080000, 0x69f876cb )
-		ROM_LOAD16_BYTE( "qt1_ma0l.bin", 0x280001, 0x100000, 0x5597f2b9 ) /* 0x400000 */
-		ROM_LOAD16_BYTE( "qt1_ma0u.bin", 0x280000, 0x100000, 0xf0a4cb7d )
-		ROM_LOAD16_BYTE( "qt1_ma1l.bin", 0x480001, 0x100000, 0x1b9ce7a6 )
-		ROM_LOAD16_BYTE( "qt1_ma1u.bin", 0x480000, 0x100000, 0x58910872 )
-		ROM_LOAD16_BYTE( "qt1_ma2l.bin", 0x680001, 0x100000, 0x94739917 )
-		ROM_LOAD16_BYTE( "qt1_ma2u.bin", 0x680000, 0x100000, 0x6ba5b893 )
-		ROM_LOAD16_BYTE( "qt1_ma3l.bin", 0x880001, 0x100000, 0xaa9dc6ff )
-		ROM_LOAD16_BYTE( "qt1_ma3u.bin", 0x880000, 0x100000, 0x14a5a163 )
-	ROM_END
+	static RomLoadPtr rom_quiztou = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0xa80000, REGION_CPU1, 0 );
+		ROM_LOAD16_BYTE( "qt1_ep0l.bin", 0x080001, 0x080000, 0xb680e543 );/* 0xc00000 */
+		ROM_LOAD16_BYTE( "qt1_ep0u.bin", 0x080000, 0x080000, 0x143c5e4d );
+		ROM_LOAD16_BYTE( "qt1_ep1l.bin", 0x180001, 0x080000, 0x33a72242 );
+		ROM_LOAD16_BYTE( "qt1_ep1u.bin", 0x180000, 0x080000, 0x69f876cb );
+		ROM_LOAD16_BYTE( "qt1_ma0l.bin", 0x280001, 0x100000, 0x5597f2b9 );/* 0x400000 */
+		ROM_LOAD16_BYTE( "qt1_ma0u.bin", 0x280000, 0x100000, 0xf0a4cb7d );
+		ROM_LOAD16_BYTE( "qt1_ma1l.bin", 0x480001, 0x100000, 0x1b9ce7a6 );
+		ROM_LOAD16_BYTE( "qt1_ma1u.bin", 0x480000, 0x100000, 0x58910872 );
+		ROM_LOAD16_BYTE( "qt1_ma2l.bin", 0x680001, 0x100000, 0x94739917 );
+		ROM_LOAD16_BYTE( "qt1_ma2u.bin", 0x680000, 0x100000, 0x6ba5b893 );
+		ROM_LOAD16_BYTE( "qt1_ma3l.bin", 0x880001, 0x100000, 0xaa9dc6ff );
+		ROM_LOAD16_BYTE( "qt1_ma3u.bin", 0x880000, 0x100000, 0x14a5a163 );
+	ROM_END(); }}; 
 	
-	ROM_START( swcourt )
-		ROM_REGION( 0x680000, REGION_CPU1, 0 )
-		ROM_LOAD16_BYTE( "sc1-ep0l.bin", 0x080001, 0x080000, 0x145111dd ) /* 0xc00000 */
-		ROM_LOAD16_BYTE( "sc1-ep0u.bin", 0x080000, 0x080000, 0xc721c138 )
-		ROM_LOAD16_BYTE( "sc1-ep1l.bin", 0x180001, 0x080000, 0xfb45cf5f )
-		ROM_LOAD16_BYTE( "sc1-ep1u.bin", 0x180000, 0x080000, 0x1ce07b15 )
-		ROM_LOAD16_BYTE( "sc1-ma0l.bin", 0x280001, 0x100000, 0x3e531f5e ) /* 0x400000 */
-		ROM_LOAD16_BYTE( "sc1-ma0u.bin", 0x280000, 0x100000, 0x31e76a45 )
-		ROM_LOAD16_BYTE( "sc1-ma1l.bin", 0x480001, 0x100000, 0x8ba3a4ec )
-		ROM_LOAD16_BYTE( "sc1-ma1u.bin", 0x480000, 0x100000, 0x252dc4b7 )
-	ROM_END
+	static RomLoadPtr rom_swcourt = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x680000, REGION_CPU1, 0 );
+		ROM_LOAD16_BYTE( "sc1-ep0l.bin", 0x080001, 0x080000, 0x145111dd );/* 0xc00000 */
+		ROM_LOAD16_BYTE( "sc1-ep0u.bin", 0x080000, 0x080000, 0xc721c138 );
+		ROM_LOAD16_BYTE( "sc1-ep1l.bin", 0x180001, 0x080000, 0xfb45cf5f );
+		ROM_LOAD16_BYTE( "sc1-ep1u.bin", 0x180000, 0x080000, 0x1ce07b15 );
+		ROM_LOAD16_BYTE( "sc1-ma0l.bin", 0x280001, 0x100000, 0x3e531f5e );/* 0x400000 */
+		ROM_LOAD16_BYTE( "sc1-ma0u.bin", 0x280000, 0x100000, 0x31e76a45 );
+		ROM_LOAD16_BYTE( "sc1-ma1l.bin", 0x480001, 0x100000, 0x8ba3a4ec );
+		ROM_LOAD16_BYTE( "sc1-ma1u.bin", 0x480000, 0x100000, 0x252dc4b7 );
+	ROM_END(); }}; 
 	
-	ROM_START( tinklpit )
-		ROM_REGION( 0x880000, REGION_CPU1, 0 )
-		ROM_LOAD16_BYTE( "tk1-ep0l.bin", 0x080001, 0x080000, 0xfdccae42 ) /* 0xc00000 */
-		ROM_LOAD16_BYTE( "tk1-ep0u.bin", 0x080000, 0x080000, 0x62cdb48c )
-		ROM_LOAD16_BYTE( "tk1-ep1l.bin", 0x180001, 0x080000, 0x7e90f104 )
-		ROM_LOAD16_BYTE( "tk1-ep1u.bin", 0x180000, 0x080000, 0x9c0b70d6 )
-		ROM_LOAD16_BYTE( "tk1-ma0l.bin", 0x280001, 0x100000, 0xc6b4e15d ) /* 0x400000 */
-		ROM_LOAD16_BYTE( "tk1-ma0u.bin", 0x280000, 0x100000, 0xa3ad6f67 )
-		ROM_LOAD16_BYTE( "tk1-ma1l.bin", 0x480001, 0x100000, 0x61cfb92a )
-		ROM_LOAD16_BYTE( "tk1-ma1u.bin", 0x480000, 0x100000, 0x54b77816 )
-		ROM_LOAD16_BYTE( "tk1-ma2l.bin", 0x680001, 0x100000, 0x087311d2 )
-		ROM_LOAD16_BYTE( "tk1-ma2u.bin", 0x680000, 0x100000, 0x5ce20c2c )
-	ROM_END
+	static RomLoadPtr rom_tinklpit = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x880000, REGION_CPU1, 0 );
+		ROM_LOAD16_BYTE( "tk1-ep0l.bin", 0x080001, 0x080000, 0xfdccae42 );/* 0xc00000 */
+		ROM_LOAD16_BYTE( "tk1-ep0u.bin", 0x080000, 0x080000, 0x62cdb48c );
+		ROM_LOAD16_BYTE( "tk1-ep1l.bin", 0x180001, 0x080000, 0x7e90f104 );
+		ROM_LOAD16_BYTE( "tk1-ep1u.bin", 0x180000, 0x080000, 0x9c0b70d6 );
+		ROM_LOAD16_BYTE( "tk1-ma0l.bin", 0x280001, 0x100000, 0xc6b4e15d );/* 0x400000 */
+		ROM_LOAD16_BYTE( "tk1-ma0u.bin", 0x280000, 0x100000, 0xa3ad6f67 );
+		ROM_LOAD16_BYTE( "tk1-ma1l.bin", 0x480001, 0x100000, 0x61cfb92a );
+		ROM_LOAD16_BYTE( "tk1-ma1u.bin", 0x480000, 0x100000, 0x54b77816 );
+		ROM_LOAD16_BYTE( "tk1-ma2l.bin", 0x680001, 0x100000, 0x087311d2 );
+		ROM_LOAD16_BYTE( "tk1-ma2u.bin", 0x680000, 0x100000, 0x5ce20c2c );
+	ROM_END(); }}; 
 	
-	ROM_START( fa )
-		ROM_REGION( 0x680000, REGION_CPU1, 0 )
-		ROM_LOAD16_BYTE( "fa1_ep0l.bin", 0x080001, 0x080000, 0x182eee5c ) /* 0xc00000 */
-		ROM_LOAD16_BYTE( "fa1_ep0u.bin", 0x080000, 0x080000, 0x7ea7830e )
-		ROM_LOAD16_BYTE( "fa1_ep1l.bin", 0x180001, 0x080000, 0xb23a5b01 )
-		ROM_LOAD16_BYTE( "fa1_ep1u.bin", 0x180000, 0x080000, 0xde2eb129 )
-		ROM_LOAD16_BYTE( "fa1_ma0l.bin", 0x280001, 0x100000, 0xa0a95e54 ) /* 0x400000 */
-		ROM_LOAD16_BYTE( "fa1_ma0u.bin", 0x280000, 0x100000, 0x1d0135bd )
-		ROM_LOAD16_BYTE( "fa1_ma1l.bin", 0x480001, 0x100000, 0xc4adf0a2 )
-		ROM_LOAD16_BYTE( "fa1_ma1u.bin", 0x480000, 0x100000, 0x900297be )
-	ROM_END
+	static RomLoadPtr rom_fa = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x680000, REGION_CPU1, 0 );
+		ROM_LOAD16_BYTE( "fa1_ep0l.bin", 0x080001, 0x080000, 0x182eee5c );/* 0xc00000 */
+		ROM_LOAD16_BYTE( "fa1_ep0u.bin", 0x080000, 0x080000, 0x7ea7830e );
+		ROM_LOAD16_BYTE( "fa1_ep1l.bin", 0x180001, 0x080000, 0xb23a5b01 );
+		ROM_LOAD16_BYTE( "fa1_ep1u.bin", 0x180000, 0x080000, 0xde2eb129 );
+		ROM_LOAD16_BYTE( "fa1_ma0l.bin", 0x280001, 0x100000, 0xa0a95e54 );/* 0x400000 */
+		ROM_LOAD16_BYTE( "fa1_ma0u.bin", 0x280000, 0x100000, 0x1d0135bd );
+		ROM_LOAD16_BYTE( "fa1_ma1l.bin", 0x480001, 0x100000, 0xc4adf0a2 );
+		ROM_LOAD16_BYTE( "fa1_ma1u.bin", 0x480000, 0x100000, 0x900297be );
+	ROM_END(); }}; 
 	
 	
 	GAMEX( 1992,bkrtmaq,  0,        namcona1w, namcona1_quiz,	bkrtmaq,  ROT0, "Namco", "Bakuretsu Quiz Ma-Q Dai Bouken (Japan)", GAME_NO_SOUND )

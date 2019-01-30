@@ -645,81 +645,81 @@ public class blockade
 	
 	***************************************************************************/
 	
-	ROM_START( blockade )
-	    ROM_REGION( 0x10000, REGION_CPU1, 0 ) /* 64k for code */
+	static RomLoadPtr rom_blockade = new RomLoadPtr(){ public void handler(){ 
+	    ROM_REGION( 0x10000, REGION_CPU1, 0 );/* 64k for code */
 	    /* Note: These are being loaded into a bogus location, */
 	    /*       They are nibble wide rom images which will be */
 	    /*       merged and loaded into the proper place by    */
 	    /*       blockade_rom_init()                           */
-	    ROM_LOAD( "316-04.u2", 0x1000, 0x0400, 0xa93833e9 )
-	    ROM_LOAD( "316-03.u3", 0x1400, 0x0400, 0x85960d3b )
+	    ROM_LOAD( "316-04.u2", 0x1000, 0x0400, 0xa93833e9 );
+	    ROM_LOAD( "316-03.u3", 0x1400, 0x0400, 0x85960d3b );
 	
-	    ROM_REGION( 0x200, REGION_GFX1, ROMREGION_DISPOSE )
-	    ROM_LOAD( "316-02.u29", 0x0000, 0x0100, 0x409f610f )
-	    ROM_LOAD( "316-01.u43", 0x0100, 0x0100, 0x41a00b28 )
-	ROM_END
+	    ROM_REGION( 0x200, REGION_GFX1, ROMREGION_DISPOSE );
+	    ROM_LOAD( "316-02.u29", 0x0000, 0x0100, 0x409f610f );
+	    ROM_LOAD( "316-01.u43", 0x0100, 0x0100, 0x41a00b28 );
+	ROM_END(); }}; 
 	
-	ROM_START( comotion )
-	    ROM_REGION( 0x10000, REGION_CPU1, 0 ) /* 64k for code */
+	static RomLoadPtr rom_comotion = new RomLoadPtr(){ public void handler(){ 
+	    ROM_REGION( 0x10000, REGION_CPU1, 0 );/* 64k for code */
 	    /* Note: These are being loaded into a bogus location, */
 	    /*       They are nibble wide rom images which will be */
 	    /*       merged and loaded into the proper place by    */
 	    /*       comotion_rom_init()                           */
-	    ROM_LOAD( "316-07.u2", 0x1000, 0x0400, 0x5b9bd054 )
-	    ROM_LOAD( "316-08.u3", 0x1400, 0x0400, 0x1a856042 )
-	    ROM_LOAD( "316-09.u4", 0x1800, 0x0400, 0x2590f87c )
-	    ROM_LOAD( "316-10.u5", 0x1c00, 0x0400, 0xfb49a69b )
+	    ROM_LOAD( "316-07.u2", 0x1000, 0x0400, 0x5b9bd054 );
+	    ROM_LOAD( "316-08.u3", 0x1400, 0x0400, 0x1a856042 );
+	    ROM_LOAD( "316-09.u4", 0x1800, 0x0400, 0x2590f87c );
+	    ROM_LOAD( "316-10.u5", 0x1c00, 0x0400, 0xfb49a69b );
 	
-	    ROM_REGION( 0x200, REGION_GFX1, ROMREGION_DISPOSE )
-	    ROM_LOAD( "316-06.u43", 0x0000, 0x0100, 0x8f071297 )  /* Note: these are reversed */
-	    ROM_LOAD( "316-05.u29", 0x0100, 0x0100, 0x53fb8821 )
-	ROM_END
+	    ROM_REGION( 0x200, REGION_GFX1, ROMREGION_DISPOSE );
+	    ROM_LOAD( "316-06.u43", 0x0000, 0x0100, 0x8f071297 ); /* Note: these are reversed */
+	    ROM_LOAD( "316-05.u29", 0x0100, 0x0100, 0x53fb8821 );
+	ROM_END(); }}; 
 	
-	ROM_START( blasto )
-	    ROM_REGION( 0x10000, REGION_CPU1, 0 ) /* 64k for code */
+	static RomLoadPtr rom_blasto = new RomLoadPtr(){ public void handler(){ 
+	    ROM_REGION( 0x10000, REGION_CPU1, 0 );/* 64k for code */
 	    /* Note: These are being loaded into a bogus location, */
 	    /*       They are nibble wide rom images which will be */
 	    /*       merged and loaded into the proper place by    */
 	    /*       comotion_rom_init()                           */
-	    ROM_LOAD( "blasto.u2", 0x1000, 0x0400, 0xec99d043 )
-	    ROM_LOAD( "blasto.u3", 0x1400, 0x0400, 0xbe333415 )
-	    ROM_LOAD( "blasto.u4", 0x1800, 0x0400, 0x1c889993 )
-	    ROM_LOAD( "blasto.u5", 0x1c00, 0x0400, 0xefb640cb )
+	    ROM_LOAD( "blasto.u2", 0x1000, 0x0400, 0xec99d043 );
+	    ROM_LOAD( "blasto.u3", 0x1400, 0x0400, 0xbe333415 );
+	    ROM_LOAD( "blasto.u4", 0x1800, 0x0400, 0x1c889993 );
+	    ROM_LOAD( "blasto.u5", 0x1c00, 0x0400, 0xefb640cb );
 	
-	    ROM_REGION( 0x400, REGION_GFX1, ROMREGION_DISPOSE )
-	    ROM_LOAD( "blasto.u29", 0x0000, 0x0200, 0x4dd69499 )
-	    ROM_LOAD( "blasto.u43", 0x0200, 0x0200, 0x104051a4 )
-	ROM_END
+	    ROM_REGION( 0x400, REGION_GFX1, ROMREGION_DISPOSE );
+	    ROM_LOAD( "blasto.u29", 0x0000, 0x0200, 0x4dd69499 );
+	    ROM_LOAD( "blasto.u43", 0x0200, 0x0200, 0x104051a4 );
+	ROM_END(); }}; 
 	
-	ROM_START( hustle )
-	    ROM_REGION( 0x10000, REGION_CPU1, 0 ) /* 64k for code */
+	static RomLoadPtr rom_hustle = new RomLoadPtr(){ public void handler(){ 
+	    ROM_REGION( 0x10000, REGION_CPU1, 0 );/* 64k for code */
 	    /* Note: These are being loaded into a bogus location, */
 	    /*       They are nibble wide rom images which will be */
 	    /*       merged and loaded into the proper place by    */
 	    /*       comotion_rom_init()                           */
-	    ROM_LOAD( "3160016.u2", 0x1000, 0x0400, 0xd983de7c )
-	    ROM_LOAD( "3160017.u3", 0x1400, 0x0400, 0xedec9cb9 )
-	    ROM_LOAD( "3160018.u4", 0x1800, 0x0400, 0xf599b9c0 )
-	    ROM_LOAD( "3160019.u5", 0x1c00, 0x0400, 0x7794bc7e )
+	    ROM_LOAD( "3160016.u2", 0x1000, 0x0400, 0xd983de7c );
+	    ROM_LOAD( "3160017.u3", 0x1400, 0x0400, 0xedec9cb9 );
+	    ROM_LOAD( "3160018.u4", 0x1800, 0x0400, 0xf599b9c0 );
+	    ROM_LOAD( "3160019.u5", 0x1c00, 0x0400, 0x7794bc7e );
 	
-	    ROM_REGION( 0x400, REGION_GFX1, ROMREGION_DISPOSE )
-	    ROM_LOAD( "3160020.u29", 0x0000, 0x0200, 0x541d2c67 )
-	    ROM_LOAD( "3160021.u43", 0x0200, 0x0200, 0xb5083128 )
-	ROM_END
+	    ROM_REGION( 0x400, REGION_GFX1, ROMREGION_DISPOSE );
+	    ROM_LOAD( "3160020.u29", 0x0000, 0x0200, 0x541d2c67 );
+	    ROM_LOAD( "3160021.u43", 0x0200, 0x0200, 0xb5083128 );
+	ROM_END(); }}; 
 	
-	ROM_START( mineswpr )
-	    ROM_REGION( 0x10000, REGION_CPU1, 0 ) /* 64k for code */
+	static RomLoadPtr rom_mineswpr = new RomLoadPtr(){ public void handler(){ 
+	    ROM_REGION( 0x10000, REGION_CPU1, 0 );/* 64k for code */
 	    /* Note: These are being loaded into a bogus location, */
 	    /*       They are nibble wide rom images which will be */
 	    /*       merged and loaded into the proper place by    */
 	    /*       blockade_rom_init()                           */
-	    ROM_LOAD( "mineswee.h0p", 0x1000, 0x0400, 0x5850a4ba )
-	    ROM_LOAD( "mineswee.l0p", 0x1400, 0x0400, 0x05961379 )
+	    ROM_LOAD( "mineswee.h0p", 0x1000, 0x0400, 0x5850a4ba );
+	    ROM_LOAD( "mineswee.l0p", 0x1400, 0x0400, 0x05961379 );
 	
-	    ROM_REGION( 0x400, REGION_GFX1, ROMREGION_DISPOSE )
-	    ROM_LOAD( "mineswee.ums", 0x0000, 0x0200, 0x0e1c5c37 )
-	    ROM_LOAD( "mineswee.uls", 0x0200, 0x0200, 0x3a4f66e1 )
-	ROM_END
+	    ROM_REGION( 0x400, REGION_GFX1, ROMREGION_DISPOSE );
+	    ROM_LOAD( "mineswee.ums", 0x0000, 0x0200, 0x0e1c5c37 );
+	    ROM_LOAD( "mineswee.uls", 0x0200, 0x0200, 0x3a4f66e1 );
+	ROM_END(); }}; 
 	
 	GAMEX( 1976, blockade, 0, blockade, blockade, blockade, ROT0, "Gremlin", "Blockade", GAME_IMPERFECT_SOUND | GAME_NO_COCKTAIL )
 	GAMEX( 1976, comotion, 0, comotion, comotion, comotion, ROT0, "Gremlin", "Comotion", GAME_IMPERFECT_SOUND | GAME_NO_COCKTAIL )

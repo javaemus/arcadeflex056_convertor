@@ -433,40 +433,40 @@ public class wc90b
 		}
 	};
 	
-	ROM_START( wc90b )
-		ROM_REGION( 0x20000, REGION_CPU1, 0 )	/* 128k for code */
-		ROM_LOAD( "a02.bin",      0x00000, 0x10000, 0x192a03dd )	/* c000-ffff is not used */
-		ROM_LOAD( "a03.bin",      0x10000, 0x10000, 0xf54ff17a )	/* banked at f000-f7ff */
+	static RomLoadPtr rom_wc90b = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x20000, REGION_CPU1, 0 );/* 128k for code */
+		ROM_LOAD( "a02.bin",      0x00000, 0x10000, 0x192a03dd );/* c000-ffff is not used */
+		ROM_LOAD( "a03.bin",      0x10000, 0x10000, 0xf54ff17a );/* banked at f000-f7ff */
 	
-		ROM_REGION( 0x20000, REGION_CPU2, 0 )	/* 96k for code */  /* Second CPU */
-		ROM_LOAD( "a04.bin",      0x00000, 0x10000, 0x3d535e2f )	/* c000-ffff is not used */
-		ROM_LOAD( "a05.bin",      0x10000, 0x10000, 0x9e421c4b )	/* banked at f000-f7ff */
+		ROM_REGION( 0x20000, REGION_CPU2, 0 );/* 96k for code */  /* Second CPU */
+		ROM_LOAD( "a04.bin",      0x00000, 0x10000, 0x3d535e2f );/* c000-ffff is not used */
+		ROM_LOAD( "a05.bin",      0x10000, 0x10000, 0x9e421c4b );/* banked at f000-f7ff */
 	
-		ROM_REGION( 0x10000, REGION_CPU3, 0 )	/* 192k for the audio CPU */
-		ROM_LOAD( "a01.bin",      0x00000, 0x10000, 0x3d317622 )
+		ROM_REGION( 0x10000, REGION_CPU3, 0 );/* 192k for the audio CPU */
+		ROM_LOAD( "a01.bin",      0x00000, 0x10000, 0x3d317622 );
 	
-		ROM_REGION( 0x010000, REGION_GFX1, ROMREGION_DISPOSE )
-		ROM_LOAD( "a06.bin",      0x000000, 0x04000, 0x3b5387b7 )
-		ROM_LOAD( "a08.bin",      0x004000, 0x04000, 0xc622a5a3 )
-		ROM_LOAD( "a10.bin",      0x008000, 0x04000, 0x0923d9f6 )
-		ROM_LOAD( "a20.bin",      0x00c000, 0x04000, 0xb8dec83e )
+		ROM_REGION( 0x010000, REGION_GFX1, ROMREGION_DISPOSE );
+		ROM_LOAD( "a06.bin",      0x000000, 0x04000, 0x3b5387b7 );
+		ROM_LOAD( "a08.bin",      0x004000, 0x04000, 0xc622a5a3 );
+		ROM_LOAD( "a10.bin",      0x008000, 0x04000, 0x0923d9f6 );
+		ROM_LOAD( "a20.bin",      0x00c000, 0x04000, 0xb8dec83e );
 	
-		ROM_REGION( 0x080000, REGION_GFX2, ROMREGION_DISPOSE )
-		ROM_LOAD( "a07.bin",      0x000000, 0x20000, 0x38c31817 )
-		ROM_LOAD( "a09.bin",      0x020000, 0x20000, 0x32e39e29 )
-		ROM_LOAD( "a11.bin",      0x040000, 0x20000, 0x5ccec796 )
-		ROM_LOAD( "a21.bin",      0x060000, 0x20000, 0x0c54a091 )
+		ROM_REGION( 0x080000, REGION_GFX2, ROMREGION_DISPOSE );
+		ROM_LOAD( "a07.bin",      0x000000, 0x20000, 0x38c31817 );
+		ROM_LOAD( "a09.bin",      0x020000, 0x20000, 0x32e39e29 );
+		ROM_LOAD( "a11.bin",      0x040000, 0x20000, 0x5ccec796 );
+		ROM_LOAD( "a21.bin",      0x060000, 0x20000, 0x0c54a091 );
 	
-		ROM_REGION( 0x080000, REGION_GFX3, ROMREGION_DISPOSE )
-		ROM_LOAD( "146_a12.bin",  0x000000, 0x10000, 0xd5a60096 )
-		ROM_LOAD( "147_a13.bin",  0x010000, 0x10000, 0x36bbf467 )
-		ROM_LOAD( "148_a14.bin",  0x020000, 0x10000, 0x26371c18 )
-		ROM_LOAD( "149_a15.bin",  0x030000, 0x10000, 0x75aa9b86 )
-		ROM_LOAD( "150_a16.bin",  0x040000, 0x10000, 0x0da825f9 )
-		ROM_LOAD( "151_a17.bin",  0x050000, 0x10000, 0x228429d8 )
-		ROM_LOAD( "152_a18.bin",  0x060000, 0x10000, 0x516b6c09 )
-		ROM_LOAD( "153_a19.bin",  0x070000, 0x10000, 0xf36390a9 )
-	ROM_END
+		ROM_REGION( 0x080000, REGION_GFX3, ROMREGION_DISPOSE );
+		ROM_LOAD( "146_a12.bin",  0x000000, 0x10000, 0xd5a60096 );
+		ROM_LOAD( "147_a13.bin",  0x010000, 0x10000, 0x36bbf467 );
+		ROM_LOAD( "148_a14.bin",  0x020000, 0x10000, 0x26371c18 );
+		ROM_LOAD( "149_a15.bin",  0x030000, 0x10000, 0x75aa9b86 );
+		ROM_LOAD( "150_a16.bin",  0x040000, 0x10000, 0x0da825f9 );
+		ROM_LOAD( "151_a17.bin",  0x050000, 0x10000, 0x228429d8 );
+		ROM_LOAD( "152_a18.bin",  0x060000, 0x10000, 0x516b6c09 );
+		ROM_LOAD( "153_a19.bin",  0x070000, 0x10000, 0xf36390a9 );
+	ROM_END(); }}; 
 	
 	
 	void init_wc90b(void)

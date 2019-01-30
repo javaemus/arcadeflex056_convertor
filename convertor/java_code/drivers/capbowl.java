@@ -420,52 +420,52 @@ public class capbowl
 	 *
 	 *************************************/
 	
-	ROM_START( capbowl )
-		ROM_REGION( 0x28000, REGION_CPU1, 0 )
-		ROM_LOAD( "u6",           0x08000, 0x8000, 0x14924c96 )
-		ROM_LOAD( "gr0",          0x10000, 0x8000, 0xef53ca7a )
-		ROM_LOAD( "gr1",          0x18000, 0x8000, 0x27ede6ce )
-		ROM_LOAD( "gr2",          0x20000, 0x8000, 0xe49238f4 )
+	static RomLoadPtr rom_capbowl = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x28000, REGION_CPU1, 0 );
+		ROM_LOAD( "u6",           0x08000, 0x8000, 0x14924c96 );
+		ROM_LOAD( "gr0",          0x10000, 0x8000, 0xef53ca7a );
+		ROM_LOAD( "gr1",          0x18000, 0x8000, 0x27ede6ce );
+		ROM_LOAD( "gr2",          0x20000, 0x8000, 0xe49238f4 );
 	
-		ROM_REGION( 0x10000, REGION_CPU2, 0 )
-		ROM_LOAD( "sound",        0x8000, 0x8000, 0x8c9c3b8a )
-	ROM_END
-	
-	
-	ROM_START( capbowl2 )
-		ROM_REGION( 0x28000, REGION_CPU1, 0 )
-		ROM_LOAD( "progrev3.u6",  0x08000, 0x8000, 0x9162934a )
-		ROM_LOAD( "gr0",          0x10000, 0x8000, 0xef53ca7a )
-		ROM_LOAD( "gr1",          0x18000, 0x8000, 0x27ede6ce )
-		ROM_LOAD( "gr2",          0x20000, 0x8000, 0xe49238f4 )
-	
-		ROM_REGION( 0x10000, REGION_CPU2, 0 )
-		ROM_LOAD( "sound",        0x8000, 0x8000, 0x8c9c3b8a )
-	ROM_END
+		ROM_REGION( 0x10000, REGION_CPU2, 0 );
+		ROM_LOAD( "sound",        0x8000, 0x8000, 0x8c9c3b8a );
+	ROM_END(); }}; 
 	
 	
-	ROM_START( clbowl )
-		ROM_REGION( 0x28000, REGION_CPU1, 0 )
-		ROM_LOAD( "u6.cl",        0x08000, 0x8000, 0x91e06bc4 )
-		ROM_LOAD( "gr0.cl",       0x10000, 0x8000, 0x899c8f15 )
-		ROM_LOAD( "gr1.cl",       0x18000, 0x8000, 0x0ac0dc4c )
-		ROM_LOAD( "gr2.cl",       0x20000, 0x8000, 0x251f5da5 )
+	static RomLoadPtr rom_capbowl2 = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x28000, REGION_CPU1, 0 );
+		ROM_LOAD( "progrev3.u6",  0x08000, 0x8000, 0x9162934a );
+		ROM_LOAD( "gr0",          0x10000, 0x8000, 0xef53ca7a );
+		ROM_LOAD( "gr1",          0x18000, 0x8000, 0x27ede6ce );
+		ROM_LOAD( "gr2",          0x20000, 0x8000, 0xe49238f4 );
 	
-		ROM_REGION( 0x10000, REGION_CPU2, 0 )
-		ROM_LOAD( "sound.cl",     0x8000, 0x8000, 0x1eba501e )
-	ROM_END
+		ROM_REGION( 0x10000, REGION_CPU2, 0 );
+		ROM_LOAD( "sound",        0x8000, 0x8000, 0x8c9c3b8a );
+	ROM_END(); }}; 
 	
 	
-	ROM_START( bowlrama )
-		ROM_REGION( 0x10000, REGION_CPU1, 0 )
-		ROM_LOAD( "u6",           0x08000, 0x08000, 0x7103ad55 )
+	static RomLoadPtr rom_clbowl = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x28000, REGION_CPU1, 0 );
+		ROM_LOAD( "u6.cl",        0x08000, 0x8000, 0x91e06bc4 );
+		ROM_LOAD( "gr0.cl",       0x10000, 0x8000, 0x899c8f15 );
+		ROM_LOAD( "gr1.cl",       0x18000, 0x8000, 0x0ac0dc4c );
+		ROM_LOAD( "gr2.cl",       0x20000, 0x8000, 0x251f5da5 );
 	
-		ROM_REGION( 0x10000, REGION_CPU2, 0 )
-		ROM_LOAD( "u30",          0x8000, 0x8000, 0xf3168834 )
+		ROM_REGION( 0x10000, REGION_CPU2, 0 );
+		ROM_LOAD( "sound.cl",     0x8000, 0x8000, 0x1eba501e );
+	ROM_END(); }}; 
 	
-		ROM_REGION( 0x40000, REGION_GFX1, 0 )
-		ROM_LOAD( "ux7",          0x00000, 0x40000, 0x8727432a )
-	ROM_END
+	
+	static RomLoadPtr rom_bowlrama = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x10000, REGION_CPU1, 0 );
+		ROM_LOAD( "u6",           0x08000, 0x08000, 0x7103ad55 );
+	
+		ROM_REGION( 0x10000, REGION_CPU2, 0 );
+		ROM_LOAD( "u30",          0x8000, 0x8000, 0xf3168834 );
+	
+		ROM_REGION( 0x40000, REGION_GFX1, 0 );
+		ROM_LOAD( "ux7",          0x00000, 0x40000, 0x8727432a );
+	ROM_END(); }}; 
 	
 	
 	

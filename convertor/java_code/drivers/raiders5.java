@@ -312,33 +312,33 @@ public class raiders5
 	/****************************************************************************/
 	
 	
-	ROM_START( raiders5 )
-		ROM_REGION( 0x10000, REGION_CPU1, 0 ) /* CPU1 */
-		ROM_LOAD( "raiders5.1", 0x0000,  0x4000, 0x47cea11f )
-		ROM_LOAD( "raiders5.2", 0x4000,  0x4000, 0xeb2ff410 )
+	static RomLoadPtr rom_raiders5 = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x10000, REGION_CPU1, 0 );/* CPU1 */
+		ROM_LOAD( "raiders5.1", 0x0000,  0x4000, 0x47cea11f );
+		ROM_LOAD( "raiders5.2", 0x4000,  0x4000, 0xeb2ff410 );
 	
-		ROM_REGION( 0x10000, REGION_CPU2, 0 ) /* CPU2 */
-		ROM_LOAD( "raiders5.2", 0x0000,  0x4000, 0xeb2ff410 )
+		ROM_REGION( 0x10000, REGION_CPU2, 0 );/* CPU2 */
+		ROM_LOAD( "raiders5.2", 0x0000,  0x4000, 0xeb2ff410 );
 	
-		ROM_REGION( 0x20000, REGION_GFX1, ROMREGION_DISPOSE )
-		ROM_LOAD( "raiders3.11f", 0x0000,  0x4000, 0x30041d58 )
-		ROM_LOAD( "raiders4.11g", 0x4000,  0x4000, 0xe441931c )
-		ROM_LOAD( "raiders5.11n", 0x8000,  0x4000, 0xc0895090 )
-	ROM_END
+		ROM_REGION( 0x20000, REGION_GFX1, ROMREGION_DISPOSE );
+		ROM_LOAD( "raiders3.11f", 0x0000,  0x4000, 0x30041d58 );
+		ROM_LOAD( "raiders4.11g", 0x4000,  0x4000, 0xe441931c );
+		ROM_LOAD( "raiders5.11n", 0x8000,  0x4000, 0xc0895090 );
+	ROM_END(); }}; 
 	
-	ROM_START( raidrs5t )
-		ROM_REGION( 0x10000, REGION_CPU1, 0 ) /* CPU1 */
-		ROM_LOAD( "raiders1.4c", 0x0000,  0x4000, 0x4e2d5679 )
-		ROM_LOAD( "raiders2.4d", 0x4000,  0x4000, 0xc8604be1 )
+	static RomLoadPtr rom_raidrs5t = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x10000, REGION_CPU1, 0 );/* CPU1 */
+		ROM_LOAD( "raiders1.4c", 0x0000,  0x4000, 0x4e2d5679 );
+		ROM_LOAD( "raiders2.4d", 0x4000,  0x4000, 0xc8604be1 );
 	
-		ROM_REGION( 0x10000, REGION_CPU2, 0 ) /* CPU2 */
-		ROM_LOAD( "raiders2.4d", 0x0000,  0x4000, 0xc8604be1 )
+		ROM_REGION( 0x10000, REGION_CPU2, 0 );/* CPU2 */
+		ROM_LOAD( "raiders2.4d", 0x0000,  0x4000, 0xc8604be1 );
 	
-		ROM_REGION( 0x20000, REGION_GFX1, ROMREGION_DISPOSE )
-		ROM_LOAD( "raiders3.11f", 0x0000,  0x4000, 0x30041d58 )
-		ROM_LOAD( "raiders4.11g", 0x4000,  0x4000, 0xe441931c )
-		ROM_LOAD( "raiders5.11n", 0x8000,  0x4000, 0xc0895090 )
-	ROM_END
+		ROM_REGION( 0x20000, REGION_GFX1, ROMREGION_DISPOSE );
+		ROM_LOAD( "raiders3.11f", 0x0000,  0x4000, 0x30041d58 );
+		ROM_LOAD( "raiders4.11g", 0x4000,  0x4000, 0xe441931c );
+		ROM_LOAD( "raiders5.11n", 0x8000,  0x4000, 0xc0895090 );
+	ROM_END(); }}; 
 	
 	
 	GAME( 1985, raiders5, 0,        raiders5, raiders5, 0, ROT0, "UPL", "Raiders5" )

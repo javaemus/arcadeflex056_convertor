@@ -503,92 +503,92 @@ public class wwfwfest
 	  31J9_IC15    61C16-35 61C16-35     Z80      YM2151
 	
 	*******************************************************************************/
-	ROM_START( wwfwfest )
-		ROM_REGION( 0x80000, REGION_CPU1, 0 ) /* Main CPU  (68000) */
-		ROM_LOAD16_BYTE( "31a13-2.19", 0x00001, 0x40000, 0x7175bca7 )
-		ROM_LOAD16_BYTE( "31a14-2.18", 0x00000, 0x40000, 0x5d06bfd1 )
+	static RomLoadPtr rom_wwfwfest = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x80000, REGION_CPU1, 0 );/* Main CPU  (68000) */
+		ROM_LOAD16_BYTE( "31a13-2.19", 0x00001, 0x40000, 0x7175bca7 );
+		ROM_LOAD16_BYTE( "31a14-2.18", 0x00000, 0x40000, 0x5d06bfd1 );
 	
-		ROM_REGION( 0x10000, REGION_CPU2, 0 ) /* Sound CPU (Z80)  */
-		ROM_LOAD( "31a11-2.42",    0x00000, 0x10000, 0x5ddebfea )
+		ROM_REGION( 0x10000, REGION_CPU2, 0 );/* Sound CPU (Z80)  */
+		ROM_LOAD( "31a11-2.42",    0x00000, 0x10000, 0x5ddebfea );
 	
-		ROM_REGION( 0x80000, REGION_SOUND1, 0 )	/* ADPCM samples */
-		ROM_LOAD( "wf_73a.rom",    0x00000, 0x80000, 0x6c522edb )
+		ROM_REGION( 0x80000, REGION_SOUND1, 0 );/* ADPCM samples */
+		ROM_LOAD( "wf_73a.rom",    0x00000, 0x80000, 0x6c522edb );
 	
-		ROM_REGION( 0x20000, REGION_GFX1, ROMREGION_DISPOSE ) /* FG0 Tiles (8x8) */
-		ROM_LOAD( "31a12-0.33",    0x00000, 0x20000, 0xd0803e20 )
+		ROM_REGION( 0x20000, REGION_GFX1, ROMREGION_DISPOSE );/* FG0 Tiles (8x8) */
+		ROM_LOAD( "31a12-0.33",    0x00000, 0x20000, 0xd0803e20 );
 	
-		ROM_REGION( 0x800000, REGION_GFX2, ROMREGION_DISPOSE ) /* SPR Tiles (16x16) */
-		ROM_LOAD( "wf_09.rom",    0x000000, 0x100000, 0xe395cf1d ) /* Tiles 0 */
-		ROM_LOAD( "wf_08.rom",    0x100000, 0x100000, 0xb5a97465 ) /* Tiles 1 */
-		ROM_LOAD( "wf_11.rom",    0x200000, 0x100000, 0x2ce545e8 ) /* Tiles 0 */
-		ROM_LOAD( "wf_10.rom",    0x300000, 0x100000, 0x00edb66a ) /* Tiles 1 */
-		ROM_LOAD( "wf_12.rom",    0x400000, 0x100000, 0x79956cf8 ) /* Tiles 0 */
-		ROM_LOAD( "wf_13.rom",    0x500000, 0x100000, 0x74d774c3 ) /* Tiles 1 */
-		ROM_LOAD( "wf_15.rom",    0x600000, 0x100000, 0xdd387289 ) /* Tiles 0 */
-		ROM_LOAD( "wf_14.rom",    0x700000, 0x100000, 0x44abe127 ) /* Tiles 1 */
+		ROM_REGION( 0x800000, REGION_GFX2, ROMREGION_DISPOSE );/* SPR Tiles (16x16) */
+		ROM_LOAD( "wf_09.rom",    0x000000, 0x100000, 0xe395cf1d );/* Tiles 0 */
+		ROM_LOAD( "wf_08.rom",    0x100000, 0x100000, 0xb5a97465 );/* Tiles 1 */
+		ROM_LOAD( "wf_11.rom",    0x200000, 0x100000, 0x2ce545e8 );/* Tiles 0 */
+		ROM_LOAD( "wf_10.rom",    0x300000, 0x100000, 0x00edb66a );/* Tiles 1 */
+		ROM_LOAD( "wf_12.rom",    0x400000, 0x100000, 0x79956cf8 );/* Tiles 0 */
+		ROM_LOAD( "wf_13.rom",    0x500000, 0x100000, 0x74d774c3 );/* Tiles 1 */
+		ROM_LOAD( "wf_15.rom",    0x600000, 0x100000, 0xdd387289 );/* Tiles 0 */
+		ROM_LOAD( "wf_14.rom",    0x700000, 0x100000, 0x44abe127 );/* Tiles 1 */
 	
-		ROM_REGION( 0x80000, REGION_GFX3, ROMREGION_DISPOSE ) /* BG0 / BG1 Tiles (16x16) */
-		ROM_LOAD( "wf_01.rom",    0x40000, 0x40000, 0x8a12b450 ) /* 0,1 */
-		ROM_LOAD( "wf_02.rom",    0x00000, 0x40000, 0x82ed7155 ) /* 2,3 */
-	ROM_END
+		ROM_REGION( 0x80000, REGION_GFX3, ROMREGION_DISPOSE );/* BG0 / BG1 Tiles (16x16) */
+		ROM_LOAD( "wf_01.rom",    0x40000, 0x40000, 0x8a12b450 );/* 0,1 */
+		ROM_LOAD( "wf_02.rom",    0x00000, 0x40000, 0x82ed7155 );/* 2,3 */
+	ROM_END(); }}; 
 	
-	ROM_START( wwfwfsta )
-		ROM_REGION( 0x80000, REGION_CPU1, 0 ) /* Main CPU  (68000) */
-		ROM_LOAD16_BYTE( "wf_18.rom", 0x00000, 0x40000, 0x933ea1a0 )
-		ROM_LOAD16_BYTE( "wf_19.rom", 0x00001, 0x40000, 0xbd02e3c4 )
+	static RomLoadPtr rom_wwfwfsta = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x80000, REGION_CPU1, 0 );/* Main CPU  (68000) */
+		ROM_LOAD16_BYTE( "wf_18.rom", 0x00000, 0x40000, 0x933ea1a0 );
+		ROM_LOAD16_BYTE( "wf_19.rom", 0x00001, 0x40000, 0xbd02e3c4 );
 	
-		ROM_REGION( 0x10000, REGION_CPU2, 0 ) /* Sound CPU (Z80)  */
-		ROM_LOAD( "31a11-2.42",    0x00000, 0x10000, 0x5ddebfea )
+		ROM_REGION( 0x10000, REGION_CPU2, 0 );/* Sound CPU (Z80)  */
+		ROM_LOAD( "31a11-2.42",    0x00000, 0x10000, 0x5ddebfea );
 	
-		ROM_REGION( 0x80000, REGION_SOUND1, 0 )	/* ADPCM samples */
-		ROM_LOAD( "wf_73a.rom",    0x00000, 0x80000, 0x6c522edb )
+		ROM_REGION( 0x80000, REGION_SOUND1, 0 );/* ADPCM samples */
+		ROM_LOAD( "wf_73a.rom",    0x00000, 0x80000, 0x6c522edb );
 	
-		ROM_REGION( 0x20000, REGION_GFX1, ROMREGION_DISPOSE ) /* FG0 Tiles (8x8) */
-		ROM_LOAD( "wf_33.rom",    0x00000, 0x20000, 0x06f22615 )
+		ROM_REGION( 0x20000, REGION_GFX1, ROMREGION_DISPOSE );/* FG0 Tiles (8x8) */
+		ROM_LOAD( "wf_33.rom",    0x00000, 0x20000, 0x06f22615 );
 	
-		ROM_REGION( 0x800000, REGION_GFX2, ROMREGION_DISPOSE ) /* SPR Tiles (16x16) */
-		ROM_LOAD( "wf_09.rom",    0x000000, 0x100000, 0xe395cf1d ) /* Tiles 0 */
-		ROM_LOAD( "wf_08.rom",    0x100000, 0x100000, 0xb5a97465 ) /* Tiles 1 */
-		ROM_LOAD( "wf_11.rom",    0x200000, 0x100000, 0x2ce545e8 ) /* Tiles 0 */
-		ROM_LOAD( "wf_10.rom",    0x300000, 0x100000, 0x00edb66a ) /* Tiles 1 */
-		ROM_LOAD( "wf_12.rom",    0x400000, 0x100000, 0x79956cf8 ) /* Tiles 0 */
-		ROM_LOAD( "wf_13.rom",    0x500000, 0x100000, 0x74d774c3 ) /* Tiles 1 */
-		ROM_LOAD( "wf_15.rom",    0x600000, 0x100000, 0xdd387289 ) /* Tiles 0 */
-		ROM_LOAD( "wf_14.rom",    0x700000, 0x100000, 0x44abe127 ) /* Tiles 1 */
+		ROM_REGION( 0x800000, REGION_GFX2, ROMREGION_DISPOSE );/* SPR Tiles (16x16) */
+		ROM_LOAD( "wf_09.rom",    0x000000, 0x100000, 0xe395cf1d );/* Tiles 0 */
+		ROM_LOAD( "wf_08.rom",    0x100000, 0x100000, 0xb5a97465 );/* Tiles 1 */
+		ROM_LOAD( "wf_11.rom",    0x200000, 0x100000, 0x2ce545e8 );/* Tiles 0 */
+		ROM_LOAD( "wf_10.rom",    0x300000, 0x100000, 0x00edb66a );/* Tiles 1 */
+		ROM_LOAD( "wf_12.rom",    0x400000, 0x100000, 0x79956cf8 );/* Tiles 0 */
+		ROM_LOAD( "wf_13.rom",    0x500000, 0x100000, 0x74d774c3 );/* Tiles 1 */
+		ROM_LOAD( "wf_15.rom",    0x600000, 0x100000, 0xdd387289 );/* Tiles 0 */
+		ROM_LOAD( "wf_14.rom",    0x700000, 0x100000, 0x44abe127 );/* Tiles 1 */
 	
-		ROM_REGION( 0x80000, REGION_GFX3, ROMREGION_DISPOSE ) /* BG0 / BG1 Tiles (16x16) */
-		ROM_LOAD( "wf_01.rom",    0x40000, 0x40000, 0x8a12b450 ) /* 0,1 */
-		ROM_LOAD( "wf_02.rom",    0x00000, 0x40000, 0x82ed7155 ) /* 2,3 */
-	ROM_END
+		ROM_REGION( 0x80000, REGION_GFX3, ROMREGION_DISPOSE );/* BG0 / BG1 Tiles (16x16) */
+		ROM_LOAD( "wf_01.rom",    0x40000, 0x40000, 0x8a12b450 );/* 0,1 */
+		ROM_LOAD( "wf_02.rom",    0x00000, 0x40000, 0x82ed7155 );/* 2,3 */
+	ROM_END(); }}; 
 	
-	ROM_START( wwfwfstj )
-		ROM_REGION( 0x80000, REGION_CPU1, 0 ) /* Main CPU  (68000) */
-		ROM_LOAD16_BYTE( "31j13-0.bin", 0x00001, 0x40000, 0x2147780d )
-		ROM_LOAD16_BYTE( "31j14-0.bin", 0x00000, 0x40000, 0xd76fc747 )
+	static RomLoadPtr rom_wwfwfstj = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x80000, REGION_CPU1, 0 );/* Main CPU  (68000) */
+		ROM_LOAD16_BYTE( "31j13-0.bin", 0x00001, 0x40000, 0x2147780d );
+		ROM_LOAD16_BYTE( "31j14-0.bin", 0x00000, 0x40000, 0xd76fc747 );
 	
-		ROM_REGION( 0x10000, REGION_CPU2, 0 ) /* Sound CPU (Z80)  */
-		ROM_LOAD( "31a11-2.42",    0x00000, 0x10000, 0x5ddebfea )
+		ROM_REGION( 0x10000, REGION_CPU2, 0 );/* Sound CPU (Z80)  */
+		ROM_LOAD( "31a11-2.42",    0x00000, 0x10000, 0x5ddebfea );
 	
-		ROM_REGION( 0x80000, REGION_SOUND1, 0 )	/* ADPCM samples */
-		ROM_LOAD( "wf_73a.rom",    0x00000, 0x80000, 0x6c522edb )
+		ROM_REGION( 0x80000, REGION_SOUND1, 0 );/* ADPCM samples */
+		ROM_LOAD( "wf_73a.rom",    0x00000, 0x80000, 0x6c522edb );
 	
-		ROM_REGION( 0x20000, REGION_GFX1, ROMREGION_DISPOSE ) /* FG0 Tiles (8x8) */
-		ROM_LOAD( "31j12-0.bin",    0x00000, 0x20000, 0xf4821fe0 )
+		ROM_REGION( 0x20000, REGION_GFX1, ROMREGION_DISPOSE );/* FG0 Tiles (8x8) */
+		ROM_LOAD( "31j12-0.bin",    0x00000, 0x20000, 0xf4821fe0 );
 	
-		ROM_REGION( 0x800000, REGION_GFX2, ROMREGION_DISPOSE ) /* SPR Tiles (16x16) */
-		ROM_LOAD( "wf_09.rom",    0x000000, 0x100000, 0xe395cf1d ) /* Tiles 0 */
-		ROM_LOAD( "wf_08.rom",    0x100000, 0x100000, 0xb5a97465 ) /* Tiles 1 */
-		ROM_LOAD( "wf_11.rom",    0x200000, 0x100000, 0x2ce545e8 ) /* Tiles 0 */
-		ROM_LOAD( "wf_10.rom",    0x300000, 0x100000, 0x00edb66a ) /* Tiles 1 */
-		ROM_LOAD( "wf_12.rom",    0x400000, 0x100000, 0x79956cf8 ) /* Tiles 0 */
-		ROM_LOAD( "wf_13.rom",    0x500000, 0x100000, 0x74d774c3 ) /* Tiles 1 */
-		ROM_LOAD( "wf_15.rom",    0x600000, 0x100000, 0xdd387289 ) /* Tiles 0 */
-		ROM_LOAD( "wf_14.rom",    0x700000, 0x100000, 0x44abe127 ) /* Tiles 1 */
+		ROM_REGION( 0x800000, REGION_GFX2, ROMREGION_DISPOSE );/* SPR Tiles (16x16) */
+		ROM_LOAD( "wf_09.rom",    0x000000, 0x100000, 0xe395cf1d );/* Tiles 0 */
+		ROM_LOAD( "wf_08.rom",    0x100000, 0x100000, 0xb5a97465 );/* Tiles 1 */
+		ROM_LOAD( "wf_11.rom",    0x200000, 0x100000, 0x2ce545e8 );/* Tiles 0 */
+		ROM_LOAD( "wf_10.rom",    0x300000, 0x100000, 0x00edb66a );/* Tiles 1 */
+		ROM_LOAD( "wf_12.rom",    0x400000, 0x100000, 0x79956cf8 );/* Tiles 0 */
+		ROM_LOAD( "wf_13.rom",    0x500000, 0x100000, 0x74d774c3 );/* Tiles 1 */
+		ROM_LOAD( "wf_15.rom",    0x600000, 0x100000, 0xdd387289 );/* Tiles 0 */
+		ROM_LOAD( "wf_14.rom",    0x700000, 0x100000, 0x44abe127 );/* Tiles 1 */
 	
-		ROM_REGION( 0x80000, REGION_GFX3, ROMREGION_DISPOSE ) /* BG0 / BG1 Tiles (16x16) */
-		ROM_LOAD( "wf_01.rom",    0x40000, 0x40000, 0x8a12b450 ) /* 0,1 */
-		ROM_LOAD( "wf_02.rom",    0x00000, 0x40000, 0x82ed7155 ) /* 2,3 */
-	ROM_END
+		ROM_REGION( 0x80000, REGION_GFX3, ROMREGION_DISPOSE );/* BG0 / BG1 Tiles (16x16) */
+		ROM_LOAD( "wf_01.rom",    0x40000, 0x40000, 0x8a12b450 );/* 0,1 */
+		ROM_LOAD( "wf_02.rom",    0x00000, 0x40000, 0x82ed7155 );/* 2,3 */
+	ROM_END(); }}; 
 	
 	GAME( 1991, wwfwfest, 0,        wwfwfest, wwfwfest, 0, ROT0, "Technos Japan", "WWF WrestleFest (US)" )
 	GAME( 1991, wwfwfsta, wwfwfest, wwfwfest, wwfwfest, 0, ROT0, "Technos Japan (Tecmo license)", "WWF WrestleFest (US Tecmo)" )

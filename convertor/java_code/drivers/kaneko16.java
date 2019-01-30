@@ -2609,29 +2609,29 @@ public class kaneko16
 	
 	***************************************************************************/
 	
-	ROM_START( bakubrkr )
-	 	ROM_REGION( 0x080000, REGION_CPU1, 0 )			/* 68000 Code */
-		ROM_LOAD16_BYTE( "u18", 0x000000, 0x040000, 0x8cc0a4fd )
-		ROM_LOAD16_BYTE( "u19", 0x000001, 0x040000, 0xaea92195 )
+	static RomLoadPtr rom_bakubrkr = new RomLoadPtr(){ public void handler(){ 
+	 	ROM_REGION( 0x080000, REGION_CPU1, 0 );		/* 68000 Code */
+		ROM_LOAD16_BYTE( "u18", 0x000000, 0x040000, 0x8cc0a4fd );
+		ROM_LOAD16_BYTE( "u19", 0x000001, 0x040000, 0xaea92195 );
 	
-		ROM_REGION( 0x240000, REGION_GFX1, ROMREGION_DISPOSE )	/* Sprites */
-		ROM_LOAD( "u37",  0x000000, 0x080000, 0x70b66e7e )
-		ROM_RELOAD(       0x100000, 0x080000             )
-		ROM_LOAD( "u38",  0x080000, 0x080000, 0xa7a94143 )
-		ROM_RELOAD(       0x180000, 0x080000             )
-		ROM_LOAD( "u36",  0x200000, 0x040000, 0x611271e6 )
+		ROM_REGION( 0x240000, REGION_GFX1, ROMREGION_DISPOSE );/* Sprites */
+		ROM_LOAD( "u37",  0x000000, 0x080000, 0x70b66e7e );
+		ROM_RELOAD(       0x100000, 0x080000             );
+		ROM_LOAD( "u38",  0x080000, 0x080000, 0xa7a94143 );
+		ROM_RELOAD(       0x180000, 0x080000             );
+		ROM_LOAD( "u36",  0x200000, 0x040000, 0x611271e6 );
 	
-		ROM_REGION( 0x40000, REGION_GFX2, ROMREGION_DISPOSE )	/* Tiles */
-		ROM_LOAD( "layer1", 0x000000, 0x040000, 0x00000000 )
-		ROM_FILL(           0x000000, 0x040000, 0x00 )
+		ROM_REGION( 0x40000, REGION_GFX2, ROMREGION_DISPOSE );/* Tiles */
+		ROM_LOAD( "layer1", 0x000000, 0x040000, 0x00000000 );
+		ROM_FILL(           0x000000, 0x040000, 0x00 );
 	
-		ROM_REGION( 0x40000, REGION_GFX3, ROMREGION_DISPOSE )	/* Tiles */
-		ROM_LOAD( "layer2", 0x000000, 0x040000, 0x00000000 )
-		ROM_FILL(           0x000000, 0x040000, 0x00 )
+		ROM_REGION( 0x40000, REGION_GFX3, ROMREGION_DISPOSE );/* Tiles */
+		ROM_LOAD( "layer2", 0x000000, 0x040000, 0x00000000 );
+		ROM_FILL(           0x000000, 0x040000, 0x00 );
 	
-		ROM_REGION( 0x040000, REGION_SOUND1, 0 )	/* Samples */
-		ROM_LOAD( "samples", 0x000000, 0x040000, 0x00000000 )
-	ROM_END
+		ROM_REGION( 0x040000, REGION_SOUND1, 0 );/* Samples */
+		ROM_LOAD( "samples", 0x000000, 0x040000, 0x00000000 );
+	ROM_END(); }}; 
 	
 	
 	/***************************************************************************
@@ -2667,59 +2667,59 @@ public class kaneko16
 	
 	***************************************************************************/
 	
-	ROM_START( berlwall )
-	 	ROM_REGION( 0x040000, REGION_CPU1, 0 )			/* 68000 Code */
-		ROM_LOAD16_BYTE( "bw100a", 0x000000, 0x020000, 0xe6bcb4eb )
-		ROM_LOAD16_BYTE( "bw101a", 0x000001, 0x020000, 0x38056fb2 )
+	static RomLoadPtr rom_berlwall = new RomLoadPtr(){ public void handler(){ 
+	 	ROM_REGION( 0x040000, REGION_CPU1, 0 );		/* 68000 Code */
+		ROM_LOAD16_BYTE( "bw100a", 0x000000, 0x020000, 0xe6bcb4eb );
+		ROM_LOAD16_BYTE( "bw101a", 0x000001, 0x020000, 0x38056fb2 );
 	
-		ROM_REGION( 0x120000, REGION_GFX1, ROMREGION_DISPOSE )	/* Sprites */
-		ROM_LOAD( "bw001",  0x000000, 0x080000, 0xbc927260 )
-		ROM_LOAD( "bw002",  0x080000, 0x080000, 0x223f5465 )
-		ROM_LOAD( "bw300",  0x100000, 0x020000, 0xb258737a )
+		ROM_REGION( 0x120000, REGION_GFX1, ROMREGION_DISPOSE );/* Sprites */
+		ROM_LOAD( "bw001",  0x000000, 0x080000, 0xbc927260 );
+		ROM_LOAD( "bw002",  0x080000, 0x080000, 0x223f5465 );
+		ROM_LOAD( "bw300",  0x100000, 0x020000, 0xb258737a );
 	
-		ROM_REGION( 0x080000, REGION_GFX2, ROMREGION_DISPOSE )	/* Tiles (Scrambled) */
-		ROM_LOAD( "bw003",  0x000000, 0x080000, 0xfbb4b72d )
+		ROM_REGION( 0x080000, REGION_GFX2, ROMREGION_DISPOSE );/* Tiles (Scrambled) */
+		ROM_LOAD( "bw003",  0x000000, 0x080000, 0xfbb4b72d );
 	
-		ROM_REGION( 0x400000, REGION_GFX3, ROMREGION_DISPOSE )	/* High Color Background */
-		ROM_LOAD16_BYTE( "bw004",  0x000000, 0x080000, 0x5300c34d )
-		ROM_LOAD16_BYTE( "bw008",  0x000001, 0x080000, 0x9aaf2f2f ) // FIXED BITS (xxxxxxx0)
-		ROM_LOAD16_BYTE( "bw005",  0x100000, 0x080000, 0x16db6d43 )
-		ROM_LOAD16_BYTE( "bw009",  0x100001, 0x080000, 0x1151a0b0 ) // FIXED BITS (xxxxxxx0)
-		ROM_LOAD16_BYTE( "bw006",  0x200000, 0x080000, 0x73a35d1f )
-		ROM_LOAD16_BYTE( "bw00a",  0x200001, 0x080000, 0xf447dfc2 ) // FIXED BITS (xxxxxxx0)
-		ROM_LOAD16_BYTE( "bw007",  0x300000, 0x080000, 0x97f85c87 )
-		ROM_LOAD16_BYTE( "bw00b",  0x300001, 0x080000, 0xb0a48225 ) // FIXED BITS (xxxxxxx0)
+		ROM_REGION( 0x400000, REGION_GFX3, ROMREGION_DISPOSE );/* High Color Background */
+		ROM_LOAD16_BYTE( "bw004",  0x000000, 0x080000, 0x5300c34d );
+		ROM_LOAD16_BYTE( "bw008",  0x000001, 0x080000, 0x9aaf2f2f );// FIXED BITS (xxxxxxx0)
+		ROM_LOAD16_BYTE( "bw005",  0x100000, 0x080000, 0x16db6d43 );
+		ROM_LOAD16_BYTE( "bw009",  0x100001, 0x080000, 0x1151a0b0 );// FIXED BITS (xxxxxxx0)
+		ROM_LOAD16_BYTE( "bw006",  0x200000, 0x080000, 0x73a35d1f );
+		ROM_LOAD16_BYTE( "bw00a",  0x200001, 0x080000, 0xf447dfc2 );// FIXED BITS (xxxxxxx0)
+		ROM_LOAD16_BYTE( "bw007",  0x300000, 0x080000, 0x97f85c87 );
+		ROM_LOAD16_BYTE( "bw00b",  0x300001, 0x080000, 0xb0a48225 );// FIXED BITS (xxxxxxx0)
 	
-		ROM_REGION( 0x040000, REGION_SOUND1, 0 )	/* Samples */
-		ROM_LOAD( "bw000",  0x000000, 0x040000, 0xd8fe869d )
-	ROM_END
+		ROM_REGION( 0x040000, REGION_SOUND1, 0 );/* Samples */
+		ROM_LOAD( "bw000",  0x000000, 0x040000, 0xd8fe869d );
+	ROM_END(); }}; 
 	
-	ROM_START( berlwalt )
-	 	ROM_REGION( 0x040000, REGION_CPU1, 0 )			/* 68000 Code */
-		ROM_LOAD16_BYTE( "u23_01.bin", 0x000000, 0x020000, 0x76b526ce )
-		ROM_LOAD16_BYTE( "u39_01.bin", 0x000001, 0x020000, 0x78fa7ef2 )
+	static RomLoadPtr rom_berlwalt = new RomLoadPtr(){ public void handler(){ 
+	 	ROM_REGION( 0x040000, REGION_CPU1, 0 );		/* 68000 Code */
+		ROM_LOAD16_BYTE( "u23_01.bin", 0x000000, 0x020000, 0x76b526ce );
+		ROM_LOAD16_BYTE( "u39_01.bin", 0x000001, 0x020000, 0x78fa7ef2 );
 	
-		ROM_REGION( 0x120000, REGION_GFX1, ROMREGION_DISPOSE )	/* Sprites */
-		ROM_LOAD( "bw001",  0x000000, 0x080000, 0xbc927260 )
-		ROM_LOAD( "bw002",  0x080000, 0x080000, 0x223f5465 )
-		ROM_LOAD( "bw300",  0x100000, 0x020000, 0xb258737a )
+		ROM_REGION( 0x120000, REGION_GFX1, ROMREGION_DISPOSE );/* Sprites */
+		ROM_LOAD( "bw001",  0x000000, 0x080000, 0xbc927260 );
+		ROM_LOAD( "bw002",  0x080000, 0x080000, 0x223f5465 );
+		ROM_LOAD( "bw300",  0x100000, 0x020000, 0xb258737a );
 	
-		ROM_REGION( 0x080000, REGION_GFX2, ROMREGION_DISPOSE )	/* Tiles (Scrambled) */
-		ROM_LOAD( "bw003",  0x000000, 0x080000, 0xfbb4b72d )
+		ROM_REGION( 0x080000, REGION_GFX2, ROMREGION_DISPOSE );/* Tiles (Scrambled) */
+		ROM_LOAD( "bw003",  0x000000, 0x080000, 0xfbb4b72d );
 	
-		ROM_REGION( 0x400000, REGION_GFX3, ROMREGION_DISPOSE )	/* High Color Background */
-		ROM_LOAD16_BYTE( "bw004",  0x000000, 0x080000, 0x5300c34d )
-		ROM_LOAD16_BYTE( "bw008",  0x000001, 0x080000, 0x9aaf2f2f ) // FIXED BITS (xxxxxxx0)
-		ROM_LOAD16_BYTE( "bw005",  0x100000, 0x080000, 0x16db6d43 )
-		ROM_LOAD16_BYTE( "bw009",  0x100001, 0x080000, 0x1151a0b0 ) // FIXED BITS (xxxxxxx0)
-		ROM_LOAD16_BYTE( "bw006",  0x200000, 0x080000, 0x73a35d1f )
-		ROM_LOAD16_BYTE( "bw00a",  0x200001, 0x080000, 0xf447dfc2 ) // FIXED BITS (xxxxxxx0)
-		ROM_LOAD16_BYTE( "bw007",  0x300000, 0x080000, 0x97f85c87 )
-		ROM_LOAD16_BYTE( "bw00b",  0x300001, 0x080000, 0xb0a48225 ) // FIXED BITS (xxxxxxx0)
+		ROM_REGION( 0x400000, REGION_GFX3, ROMREGION_DISPOSE );/* High Color Background */
+		ROM_LOAD16_BYTE( "bw004",  0x000000, 0x080000, 0x5300c34d );
+		ROM_LOAD16_BYTE( "bw008",  0x000001, 0x080000, 0x9aaf2f2f );// FIXED BITS (xxxxxxx0)
+		ROM_LOAD16_BYTE( "bw005",  0x100000, 0x080000, 0x16db6d43 );
+		ROM_LOAD16_BYTE( "bw009",  0x100001, 0x080000, 0x1151a0b0 );// FIXED BITS (xxxxxxx0)
+		ROM_LOAD16_BYTE( "bw006",  0x200000, 0x080000, 0x73a35d1f );
+		ROM_LOAD16_BYTE( "bw00a",  0x200001, 0x080000, 0xf447dfc2 );// FIXED BITS (xxxxxxx0)
+		ROM_LOAD16_BYTE( "bw007",  0x300000, 0x080000, 0x97f85c87 );
+		ROM_LOAD16_BYTE( "bw00b",  0x300001, 0x080000, 0xb0a48225 );// FIXED BITS (xxxxxxx0)
 	
-		ROM_REGION( 0x040000, REGION_SOUND1, 0 )	/* Samples */
-		ROM_LOAD( "bw000",  0x000000, 0x040000, 0xd8fe869d )
-	ROM_END
+		ROM_REGION( 0x040000, REGION_SOUND1, 0 );/* Samples */
+		ROM_LOAD( "bw000",  0x000000, 0x040000, 0xd8fe869d );
+	ROM_END(); }}; 
 	
 	
 	/***************************************************************************
@@ -2748,21 +2748,21 @@ public class kaneko16
 	
 	***************************************************************************/
 	
-	ROM_START( blazeon )
-	 	ROM_REGION( 0x080000, REGION_CPU1, 0 )			/* 68000 Code */
-		ROM_LOAD16_BYTE( "bz_prg1.u80", 0x000000, 0x040000, 0x8409e31d )
-		ROM_LOAD16_BYTE( "bz_prg2.u81", 0x000001, 0x040000, 0xb8a0a08b )
+	static RomLoadPtr rom_blazeon = new RomLoadPtr(){ public void handler(){ 
+	 	ROM_REGION( 0x080000, REGION_CPU1, 0 );		/* 68000 Code */
+		ROM_LOAD16_BYTE( "bz_prg1.u80", 0x000000, 0x040000, 0x8409e31d );
+		ROM_LOAD16_BYTE( "bz_prg2.u81", 0x000001, 0x040000, 0xb8a0a08b );
 	
-	 	ROM_REGION( 0x020000, REGION_CPU2, 0 )			/* Z80 Code */
-		ROM_LOAD( "3.u45", 0x000000, 0x020000, 0x52fe4c94 )	// 1xxxxxxxxxxxxxxxx = 0xFF
+	 	ROM_REGION( 0x020000, REGION_CPU2, 0 );		/* Z80 Code */
+		ROM_LOAD( "3.u45", 0x000000, 0x020000, 0x52fe4c94 );// 1xxxxxxxxxxxxxxxx = 0xFF
 	
-		ROM_REGION( 0x200000, REGION_GFX1, ROMREGION_DISPOSE )	/* Sprites */
-		ROM_LOAD( "bz_sp1.u20", 0x000000, 0x100000, 0x0d5809a1 )
-		ROM_LOAD( "bz_sp2.u21", 0x100000, 0x100000, 0x56ead2bd )
+		ROM_REGION( 0x200000, REGION_GFX1, ROMREGION_DISPOSE );/* Sprites */
+		ROM_LOAD( "bz_sp1.u20", 0x000000, 0x100000, 0x0d5809a1 );
+		ROM_LOAD( "bz_sp2.u21", 0x100000, 0x100000, 0x56ead2bd );
 	
-		ROM_REGION( 0x100000, REGION_GFX2, ROMREGION_DISPOSE )	/* Tiles (Scrambled) */
-		ROM_LOAD( "bz_bg.u2", 0x000000, 0x100000, 0xfc67f19f )
-	ROM_END
+		ROM_REGION( 0x100000, REGION_GFX2, ROMREGION_DISPOSE );/* Tiles (Scrambled) */
+		ROM_LOAD( "bz_bg.u2", 0x000000, 0x100000, 0xfc67f19f );
+	ROM_END(); }}; 
 	
 	
 	/***************************************************************************
@@ -2856,38 +2856,38 @@ public class kaneko16
 		tb05mm-eu "1000 miglia"
 		master up= 94/07/18 15:12:35			*/
 	
-	ROM_START( gtmr )
-	 	ROM_REGION( 0x100000, REGION_CPU1, 0 )			/* 68000 Code */
-		ROM_LOAD16_BYTE( "u2.bin", 0x000000, 0x080000, 0x031799f7 )
-		ROM_LOAD16_BYTE( "u1.bin", 0x000001, 0x080000, 0x6238790a )
+	static RomLoadPtr rom_gtmr = new RomLoadPtr(){ public void handler(){ 
+	 	ROM_REGION( 0x100000, REGION_CPU1, 0 );		/* 68000 Code */
+		ROM_LOAD16_BYTE( "u2.bin", 0x000000, 0x080000, 0x031799f7 );
+		ROM_LOAD16_BYTE( "u1.bin", 0x000001, 0x080000, 0x6238790a );
 	
-	 	ROM_REGION( 0x020000, REGION_CPU2, 0 )			/* MCU Code */
-		ROM_LOAD( "mcu_code.u12",  0x000000, 0x020000, 0x00000000 )
+	 	ROM_REGION( 0x020000, REGION_CPU2, 0 );		/* MCU Code */
+		ROM_LOAD( "mcu_code.u12",  0x000000, 0x020000, 0x00000000 );
 	
-		ROM_REGION( 0x800000, REGION_GFX1, ROMREGION_DISPOSE )	/* Sprites */
+		ROM_REGION( 0x800000, REGION_GFX1, ROMREGION_DISPOSE );/* Sprites */
 		/* fill the 0x700000-7fffff range first, with the second of the identical halves */
-	//	ROM_LOAD16_BYTE( "gmmu64.bin",  0x600000, 0x100000, 0x57d77b33 )	// HALVES IDENTICAL
-	//	ROM_LOAD16_BYTE( "gmmu65.bin",  0x600001, 0x100000, 0x05b8bdca )	// HALVES IDENTICAL
-		ROM_LOAD( "gmmu27.bin",  0x000000, 0x200000, 0xc0ab3efc )
-		ROM_LOAD( "gmmu28.bin",  0x200000, 0x200000, 0xcf6b23dc )
-		ROM_LOAD( "gmmu29.bin",  0x400000, 0x200000, 0x8f27f5d3 )
-		ROM_LOAD( "gmmu30.bin",  0x600000, 0x080000, 0xe9747c8c )
+	//	ROM_LOAD16_BYTE( "gmmu64.bin",  0x600000, 0x100000, 0x57d77b33 );// HALVES IDENTICAL
+	//	ROM_LOAD16_BYTE( "gmmu65.bin",  0x600001, 0x100000, 0x05b8bdca );// HALVES IDENTICAL
+		ROM_LOAD( "gmmu27.bin",  0x000000, 0x200000, 0xc0ab3efc );
+		ROM_LOAD( "gmmu28.bin",  0x200000, 0x200000, 0xcf6b23dc );
+		ROM_LOAD( "gmmu29.bin",  0x400000, 0x200000, 0x8f27f5d3 );
+		ROM_LOAD( "gmmu30.bin",  0x600000, 0x080000, 0xe9747c8c );
 		/* codes 6800-7fff are explicitly skipped */
 		/* wrong tiles: 	gtmr	77e0 ; gtmralt	81c4 81e0 81c4 */
-		ROM_LOAD( "sprites",     0x700000, 0x100000, 0x00000000 )
+		ROM_LOAD( "sprites",     0x700000, 0x100000, 0x00000000 );
 	
-		ROM_REGION( 0x200000, REGION_GFX2, ROMREGION_DISPOSE )	/* Tiles (scrambled) */
-		ROM_LOAD( "gmmu52.bin",  0x000000, 0x200000, 0xb15f6b7f )
+		ROM_REGION( 0x200000, REGION_GFX2, ROMREGION_DISPOSE );/* Tiles (scrambled) */
+		ROM_LOAD( "gmmu52.bin",  0x000000, 0x200000, 0xb15f6b7f );
 	
-		ROM_REGION( 0x200000, REGION_GFX3, ROMREGION_DISPOSE )	/* Tiles (scrambled) */
-		ROM_LOAD( "gmmu52.bin",  0x000000, 0x200000, 0xb15f6b7f )
+		ROM_REGION( 0x200000, REGION_GFX3, ROMREGION_DISPOSE );/* Tiles (scrambled) */
+		ROM_LOAD( "gmmu52.bin",  0x000000, 0x200000, 0xb15f6b7f );
 	
-		ROM_REGION( 0x100000, REGION_SOUND1, 0 )	/* Samples */
-		ROM_LOAD( "gmmu23.bin",  0x000000, 0x100000, 0xb9cbfbee )	// 16 x $10000
+		ROM_REGION( 0x100000, REGION_SOUND1, 0 );/* Samples */
+		ROM_LOAD( "gmmu23.bin",  0x000000, 0x100000, 0xb9cbfbee );// 16 x $10000
 	
-		ROM_REGION( 0x100000, REGION_SOUND2, 0 )	/* Samples */
-		ROM_LOAD( "gmmu24.bin",  0x000000, 0x100000, 0x380cdc7c )	//  2 x $40000 - HALVES IDENTICAL
-	ROM_END
+		ROM_REGION( 0x100000, REGION_SOUND2, 0 );/* Samples */
+		ROM_LOAD( "gmmu24.bin",  0x000000, 0x100000, 0x380cdc7c );//  2 x $40000 - HALVES IDENTICAL
+	ROM_END(); }}; 
 	
 	
 	/*	This version displays:
@@ -2895,36 +2895,36 @@ public class kaneko16
 		tb05mm-eu "1000 miglia"
 		master up= 94/09/06 14:49:19			*/
 	
-	ROM_START( gtmre )
-	 	ROM_REGION( 0x100000, REGION_CPU1, 0 )			/* 68000 Code */
-		ROM_LOAD16_BYTE( "gmmu2.bin", 0x000000, 0x080000, 0x36dc4aa9 )
-		ROM_LOAD16_BYTE( "gmmu1.bin", 0x000001, 0x080000, 0x8653c144 )
+	static RomLoadPtr rom_gtmre = new RomLoadPtr(){ public void handler(){ 
+	 	ROM_REGION( 0x100000, REGION_CPU1, 0 );		/* 68000 Code */
+		ROM_LOAD16_BYTE( "gmmu2.bin", 0x000000, 0x080000, 0x36dc4aa9 );
+		ROM_LOAD16_BYTE( "gmmu1.bin", 0x000001, 0x080000, 0x8653c144 );
 	
-	 	ROM_REGION( 0x020000, REGION_CPU2, 0 )			/* MCU Code */
-		ROM_LOAD( "mcu_code.u12",  0x000000, 0x020000, 0x00000000 )
+	 	ROM_REGION( 0x020000, REGION_CPU2, 0 );		/* MCU Code */
+		ROM_LOAD( "mcu_code.u12",  0x000000, 0x020000, 0x00000000 );
 	
-		ROM_REGION( 0x800000, REGION_GFX1, ROMREGION_DISPOSE )	/* Sprites */
+		ROM_REGION( 0x800000, REGION_GFX1, ROMREGION_DISPOSE );/* Sprites */
 		/* fill the 0x700000-7fffff range first, with the second of the identical halves */
-		ROM_LOAD16_BYTE( "gmmu64.bin",  0x600000, 0x100000, 0x57d77b33 )	// HALVES IDENTICAL
-		ROM_LOAD16_BYTE( "gmmu65.bin",  0x600001, 0x100000, 0x05b8bdca )	// HALVES IDENTICAL
-		ROM_LOAD( "gmmu27.bin",  0x000000, 0x200000, 0xc0ab3efc )
-		ROM_LOAD( "gmmu28.bin",  0x200000, 0x200000, 0xcf6b23dc )
-		ROM_LOAD( "gmmu29.bin",  0x400000, 0x200000, 0x8f27f5d3 )
-		ROM_LOAD( "gmmu30.bin",  0x600000, 0x080000, 0xe9747c8c )
+		ROM_LOAD16_BYTE( "gmmu64.bin",  0x600000, 0x100000, 0x57d77b33 );// HALVES IDENTICAL
+		ROM_LOAD16_BYTE( "gmmu65.bin",  0x600001, 0x100000, 0x05b8bdca );// HALVES IDENTICAL
+		ROM_LOAD( "gmmu27.bin",  0x000000, 0x200000, 0xc0ab3efc );
+		ROM_LOAD( "gmmu28.bin",  0x200000, 0x200000, 0xcf6b23dc );
+		ROM_LOAD( "gmmu29.bin",  0x400000, 0x200000, 0x8f27f5d3 );
+		ROM_LOAD( "gmmu30.bin",  0x600000, 0x080000, 0xe9747c8c );
 		/* codes 6800-6fff are explicitly skipped */
 	
-		ROM_REGION( 0x200000, REGION_GFX2, ROMREGION_DISPOSE )	/* Tiles (scrambled) */
-		ROM_LOAD( "gmmu52.bin",  0x000000, 0x200000, 0xb15f6b7f )
+		ROM_REGION( 0x200000, REGION_GFX2, ROMREGION_DISPOSE );/* Tiles (scrambled) */
+		ROM_LOAD( "gmmu52.bin",  0x000000, 0x200000, 0xb15f6b7f );
 	
-		ROM_REGION( 0x200000, REGION_GFX3, ROMREGION_DISPOSE )	/* Tiles (scrambled) */
-		ROM_LOAD( "gmmu52.bin",  0x000000, 0x200000, 0xb15f6b7f )
+		ROM_REGION( 0x200000, REGION_GFX3, ROMREGION_DISPOSE );/* Tiles (scrambled) */
+		ROM_LOAD( "gmmu52.bin",  0x000000, 0x200000, 0xb15f6b7f );
 	
-		ROM_REGION( 0x100000, REGION_SOUND1, 0 )	/* Samples */
-		ROM_LOAD( "gmmu23.bin",  0x000000, 0x100000, 0xb9cbfbee )	// 16 x $10000
+		ROM_REGION( 0x100000, REGION_SOUND1, 0 );/* Samples */
+		ROM_LOAD( "gmmu23.bin",  0x000000, 0x100000, 0xb9cbfbee );// 16 x $10000
 	
-		ROM_REGION( 0x100000, REGION_SOUND2, 0 )	/* Samples */
-		ROM_LOAD( "gmmu24.bin",  0x000000, 0x100000, 0x380cdc7c )	//  2 x $40000 - HALVES IDENTICAL
-	ROM_END
+		ROM_REGION( 0x100000, REGION_SOUND2, 0 );/* Samples */
+		ROM_LOAD( "gmmu24.bin",  0x000000, 0x100000, 0x380cdc7c );//  2 x $40000 - HALVES IDENTICAL
+	ROM_END(); }}; 
 	
 	
 	/*	This version displays:
@@ -2932,36 +2932,36 @@ public class kaneko16
 		tb05mm-eu "1000 miglia"
 		master up= 94/09/06 20:30:39			*/
 	
-	ROM_START( gtmrusa )
-	 	ROM_REGION( 0x100000, REGION_CPU1, 0 )			/* 68000 Code */
-		ROM_LOAD16_BYTE( "gtmrusa.u2", 0x000000, 0x080000, 0x5be615c4 )
-		ROM_LOAD16_BYTE( "gtmrusa.u1", 0x000001, 0x080000, 0xae853e4e )
+	static RomLoadPtr rom_gtmrusa = new RomLoadPtr(){ public void handler(){ 
+	 	ROM_REGION( 0x100000, REGION_CPU1, 0 );		/* 68000 Code */
+		ROM_LOAD16_BYTE( "gtmrusa.u2", 0x000000, 0x080000, 0x5be615c4 );
+		ROM_LOAD16_BYTE( "gtmrusa.u1", 0x000001, 0x080000, 0xae853e4e );
 	
-	 	ROM_REGION( 0x020000, REGION_CPU2, 0 )			/* MCU Code? */
-		ROM_LOAD( "gtmrusa.u12",  0x000000, 0x020000, 0x2e1a06ff )
+	 	ROM_REGION( 0x020000, REGION_CPU2, 0 );		/* MCU Code? */
+		ROM_LOAD( "gtmrusa.u12",  0x000000, 0x020000, 0x2e1a06ff );
 	
-		ROM_REGION( 0x800000, REGION_GFX1, ROMREGION_DISPOSE )	/* Sprites */
+		ROM_REGION( 0x800000, REGION_GFX1, ROMREGION_DISPOSE );/* Sprites */
 		/* fill the 0x700000-7fffff range first, with the second of the identical halves */
-		ROM_LOAD16_BYTE( "gmmu64.bin",  0x600000, 0x100000, 0x57d77b33 )	// HALVES IDENTICAL
-		ROM_LOAD16_BYTE( "gmmu65.bin",  0x600001, 0x100000, 0x05b8bdca )	// HALVES IDENTICAL
-		ROM_LOAD( "gmmu27.bin",  0x000000, 0x200000, 0xc0ab3efc )
-		ROM_LOAD( "gmmu28.bin",  0x200000, 0x200000, 0xcf6b23dc )
-		ROM_LOAD( "gmmu29.bin",  0x400000, 0x200000, 0x8f27f5d3 )
-		ROM_LOAD( "gmmu30.bin",  0x600000, 0x080000, 0xe9747c8c )
+		ROM_LOAD16_BYTE( "gmmu64.bin",  0x600000, 0x100000, 0x57d77b33 );// HALVES IDENTICAL
+		ROM_LOAD16_BYTE( "gmmu65.bin",  0x600001, 0x100000, 0x05b8bdca );// HALVES IDENTICAL
+		ROM_LOAD( "gmmu27.bin",  0x000000, 0x200000, 0xc0ab3efc );
+		ROM_LOAD( "gmmu28.bin",  0x200000, 0x200000, 0xcf6b23dc );
+		ROM_LOAD( "gmmu29.bin",  0x400000, 0x200000, 0x8f27f5d3 );
+		ROM_LOAD( "gmmu30.bin",  0x600000, 0x080000, 0xe9747c8c );
 		/* codes 6800-6fff are explicitly skipped */
 	
-		ROM_REGION( 0x200000, REGION_GFX2, ROMREGION_DISPOSE )	/* Tiles (scrambled) */
-		ROM_LOAD( "gmmu52.bin",  0x000000, 0x200000, 0xb15f6b7f )
+		ROM_REGION( 0x200000, REGION_GFX2, ROMREGION_DISPOSE );/* Tiles (scrambled) */
+		ROM_LOAD( "gmmu52.bin",  0x000000, 0x200000, 0xb15f6b7f );
 	
-		ROM_REGION( 0x200000, REGION_GFX3, ROMREGION_DISPOSE )	/* Tiles (scrambled) */
-		ROM_LOAD( "gmmu52.bin",  0x000000, 0x200000, 0xb15f6b7f )
+		ROM_REGION( 0x200000, REGION_GFX3, ROMREGION_DISPOSE );/* Tiles (scrambled) */
+		ROM_LOAD( "gmmu52.bin",  0x000000, 0x200000, 0xb15f6b7f );
 	
-		ROM_REGION( 0x100000, REGION_SOUND1, 0 )	/* Samples */
-		ROM_LOAD( "gmmu23.bin",  0x000000, 0x100000, 0xb9cbfbee )	// 16 x $10000
+		ROM_REGION( 0x100000, REGION_SOUND1, 0 );/* Samples */
+		ROM_LOAD( "gmmu23.bin",  0x000000, 0x100000, 0xb9cbfbee );// 16 x $10000
 	
-		ROM_REGION( 0x100000, REGION_SOUND2, 0 )	/* Samples */
-		ROM_LOAD( "gmmu24.bin",  0x000000, 0x100000, 0x380cdc7c )	//  2 x $40000 - HALVES IDENTICAL
-	ROM_END
+		ROM_REGION( 0x100000, REGION_SOUND2, 0 );/* Samples */
+		ROM_LOAD( "gmmu24.bin",  0x000000, 0x100000, 0x380cdc7c );//  2 x $40000 - HALVES IDENTICAL
+	ROM_END(); }}; 
 	
 	
 	/***************************************************************************
@@ -2980,29 +2980,29 @@ public class kaneko16
 	
 	***************************************************************************/
 	
-	ROM_START( gtmr2 )
-	 	ROM_REGION( 0x100000, REGION_CPU1, 0 )			/* 68000 Code */
-		ROM_LOAD16_BYTE( "maincode.1", 0x000000, 0x080000, 0x00000000 )
-		ROM_LOAD16_BYTE( "maincode.2", 0x000001, 0x080000, 0x00000000 )
+	static RomLoadPtr rom_gtmr2 = new RomLoadPtr(){ public void handler(){ 
+	 	ROM_REGION( 0x100000, REGION_CPU1, 0 );		/* 68000 Code */
+		ROM_LOAD16_BYTE( "maincode.1", 0x000000, 0x080000, 0x00000000 );
+		ROM_LOAD16_BYTE( "maincode.2", 0x000001, 0x080000, 0x00000000 );
 	
-		ROM_REGION( 0x800000, REGION_GFX1, ROMREGION_DISPOSE )	/* Sprites */
-		ROM_LOAD( "gmr2u49.bin",  0x000000, 0x200000, 0xd50f9d80 )
-		ROM_LOAD( "gmr2u50.bin",  0x200000, 0x200000, 0x39b60a83 )
-		ROM_LOAD( "gmr2u51.bin",  0x400000, 0x200000, 0xfd06b339 )
-		ROM_LOAD( "gmr2u89.bin",  0x600000, 0x200000, 0x4dc42fbb )
+		ROM_REGION( 0x800000, REGION_GFX1, ROMREGION_DISPOSE );/* Sprites */
+		ROM_LOAD( "gmr2u49.bin",  0x000000, 0x200000, 0xd50f9d80 );
+		ROM_LOAD( "gmr2u50.bin",  0x200000, 0x200000, 0x39b60a83 );
+		ROM_LOAD( "gmr2u51.bin",  0x400000, 0x200000, 0xfd06b339 );
+		ROM_LOAD( "gmr2u89.bin",  0x600000, 0x200000, 0x4dc42fbb );
 	
-		ROM_REGION( 0x200000, REGION_GFX2, ROMREGION_DISPOSE )	/* Tiles (scrambled) */
-		ROM_LOAD( "gmr1u90.bin", 0x000000, 0x200000, 0xf4e894f2 )
+		ROM_REGION( 0x200000, REGION_GFX2, ROMREGION_DISPOSE );/* Tiles (scrambled) */
+		ROM_LOAD( "gmr1u90.bin", 0x000000, 0x200000, 0xf4e894f2 );
 	
-		ROM_REGION( 0x200000, REGION_GFX3, ROMREGION_DISPOSE )	/* Tiles (scrambled) */
-		ROM_LOAD( "gmr2u90.bin", 0x000000, 0x200000, 0xf4e894f2 )	// IDENTICAL to gmr1u90
+		ROM_REGION( 0x200000, REGION_GFX3, ROMREGION_DISPOSE );/* Tiles (scrambled) */
+		ROM_LOAD( "gmr2u90.bin", 0x000000, 0x200000, 0xf4e894f2 );// IDENTICAL to gmr1u90
 	
-		ROM_REGION( 0x100000, REGION_SOUND1, 0 )	/* Samples */
-		ROM_LOAD( "gmr2u48.bin", 0x000000, 0x100000, 0x1 )
+		ROM_REGION( 0x100000, REGION_SOUND1, 0 );/* Samples */
+		ROM_LOAD( "gmr2u48.bin", 0x000000, 0x100000, 0x1 );
 	
-		ROM_REGION( 0x100000, REGION_SOUND2, 0 )	/* Samples */
-		ROM_LOAD( "samples",  0x000000, 0x100000, 0x00000000 )
-	ROM_END
+		ROM_REGION( 0x100000, REGION_SOUND2, 0 );/* Samples */
+		ROM_LOAD( "samples",  0x000000, 0x100000, 0x00000000 );
+	ROM_END(); }}; 
 	
 	
 	/***************************************************************************
@@ -3054,29 +3054,29 @@ public class kaneko16
 	
 	***************************************************************************/
 	
-	ROM_START( mgcrystl )
-	 	ROM_REGION( 0x040000*2, REGION_CPU1, ROMREGION_ERASE )			/* 68000 Code */
-		ROM_LOAD16_BYTE( "mc100j.u18", 0x000000, 0x020000, 0xafe5882d )
-		ROM_LOAD16_BYTE( "mc101j.u19", 0x000001, 0x040000, 0x60da5492 )	//!!
+	static RomLoadPtr rom_mgcrystl = new RomLoadPtr(){ public void handler(){ 
+	 	ROM_REGION( 0x040000*2, REGION_CPU1, ROMREGION_ERASE );		/* 68000 Code */
+		ROM_LOAD16_BYTE( "mc100j.u18", 0x000000, 0x020000, 0xafe5882d );
+		ROM_LOAD16_BYTE( "mc101j.u19", 0x000001, 0x040000, 0x60da5492 );//!!
 	
-		ROM_REGION( 0x280000, REGION_GFX1, ROMREGION_DISPOSE )	/* Sprites */
-		ROM_LOAD( "mc000.u38",  0x000000, 0x100000, 0x28acf6f4 )
-		ROM_LOAD( "mc001.u37",  0x100000, 0x080000, 0x005bc43d )
-		ROM_RELOAD(             0x180000, 0x080000             )
-		ROM_LOAD( "mc002j.u36", 0x200000, 0x020000, 0x27ac1056 )
-		ROM_RELOAD(             0x220000, 0x020000             )
-		ROM_RELOAD(             0x240000, 0x020000             )
-		ROM_RELOAD(             0x260000, 0x020000             )
+		ROM_REGION( 0x280000, REGION_GFX1, ROMREGION_DISPOSE );/* Sprites */
+		ROM_LOAD( "mc000.u38",  0x000000, 0x100000, 0x28acf6f4 );
+		ROM_LOAD( "mc001.u37",  0x100000, 0x080000, 0x005bc43d );
+		ROM_RELOAD(             0x180000, 0x080000             );
+		ROM_LOAD( "mc002j.u36", 0x200000, 0x020000, 0x27ac1056 );
+		ROM_RELOAD(             0x220000, 0x020000             );
+		ROM_RELOAD(             0x240000, 0x020000             );
+		ROM_RELOAD(             0x260000, 0x020000             );
 	
-		ROM_REGION( 0x100000, REGION_GFX2, ROMREGION_DISPOSE )	/* Tiles (Scrambled) */
-		ROM_LOAD( "mc010.u04",  0x000000, 0x100000, 0x85072772 )
+		ROM_REGION( 0x100000, REGION_GFX2, ROMREGION_DISPOSE );/* Tiles (Scrambled) */
+		ROM_LOAD( "mc010.u04",  0x000000, 0x100000, 0x85072772 );
 	
-		ROM_REGION( 0x100000, REGION_GFX3, ROMREGION_DISPOSE )	/* Tiles (Scrambled) */
-		ROM_LOAD( "mc020.u34",  0x000000, 0x100000, 0x1ea92ff1 )
+		ROM_REGION( 0x100000, REGION_GFX3, ROMREGION_DISPOSE );/* Tiles (Scrambled) */
+		ROM_LOAD( "mc020.u34",  0x000000, 0x100000, 0x1ea92ff1 );
 	
-		ROM_REGION( 0x040000, REGION_SOUND1, 0 )	/* Samples */
-		ROM_LOAD( "mc030.u32",  0x000000, 0x040000, 0xc165962e )
-	ROM_END
+		ROM_REGION( 0x040000, REGION_SOUND1, 0 );/* Samples */
+		ROM_LOAD( "mc030.u32",  0x000000, 0x040000, 0xc165962e );
+	ROM_END(); }}; 
 	
 	
 	/***************************************************************************
@@ -3100,26 +3100,26 @@ public class kaneko16
 	
 	***************************************************************************/
 	
-	ROM_START( sandscrp )
-		ROM_REGION( 0x080000, REGION_CPU1, 0 )		/* 68000 Code */
-		ROM_LOAD16_BYTE( "sandsc11.bin", 0x000000, 0x040000, 0x9b24ab40 )
-		ROM_LOAD16_BYTE( "sandsc12.bin", 0x000001, 0x040000, 0xad12caee )
+	static RomLoadPtr rom_sandscrp = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x080000, REGION_CPU1, 0 );	/* 68000 Code */
+		ROM_LOAD16_BYTE( "sandsc11.bin", 0x000000, 0x040000, 0x9b24ab40 );
+		ROM_LOAD16_BYTE( "sandsc12.bin", 0x000001, 0x040000, 0xad12caee );
 	
-		ROM_REGION( 0x24000, REGION_CPU2, 0 )		/* Z80 Code */
-		ROM_LOAD( "sandsc08.bin", 0x00000, 0x0c000, 0x6f3e9db1 )
-		ROM_CONTINUE(             0x10000, 0x14000             )
+		ROM_REGION( 0x24000, REGION_CPU2, 0 );	/* Z80 Code */
+		ROM_LOAD( "sandsc08.bin", 0x00000, 0x0c000, 0x6f3e9db1 );
+		ROM_CONTINUE(             0x10000, 0x14000             );
 	
-		ROM_REGION( 0x100000, REGION_GFX1, ROMREGION_DISPOSE )	/* Sprites */
-		ROM_LOAD( "sandsc05.bin", 0x000000, 0x080000, 0x9bb675f6 )
-		ROM_LOAD( "sandsc06.bin", 0x080000, 0x080000, 0x7df2f219 )
+		ROM_REGION( 0x100000, REGION_GFX1, ROMREGION_DISPOSE );/* Sprites */
+		ROM_LOAD( "sandsc05.bin", 0x000000, 0x080000, 0x9bb675f6 );
+		ROM_LOAD( "sandsc06.bin", 0x080000, 0x080000, 0x7df2f219 );
 	
-		ROM_REGION( 0x100000, REGION_GFX2, ROMREGION_DISPOSE )	/* Layers */
-		ROM_LOAD16_BYTE( "sandsc04.bin", 0x000000, 0x080000, 0xb9222ff2 )
-		ROM_LOAD16_BYTE( "sandsc03.bin", 0x000001, 0x080000, 0xadf20fa0 )
+		ROM_REGION( 0x100000, REGION_GFX2, ROMREGION_DISPOSE );/* Layers */
+		ROM_LOAD16_BYTE( "sandsc04.bin", 0x000000, 0x080000, 0xb9222ff2 );
+		ROM_LOAD16_BYTE( "sandsc03.bin", 0x000001, 0x080000, 0xadf20fa0 );
 	
-		ROM_REGION( 0x040000, REGION_SOUND1, 0 )	/* Samples */
-		ROM_LOAD( "sandsc07.bin", 0x000000, 0x040000, 0x9870ab12 )
-	ROM_END
+		ROM_REGION( 0x040000, REGION_SOUND1, 0 );/* Samples */
+		ROM_LOAD( "sandsc07.bin", 0x000000, 0x040000, 0x9870ab12 );
+	ROM_END(); }}; 
 	
 	
 	/***************************************************************************
@@ -3163,37 +3163,37 @@ public class kaneko16
 	
 	***************************************************************************/
 	
-	ROM_START( shogwarr )
-	 	ROM_REGION( 0x040000, REGION_CPU1, 0 )			/* 68000 Code */
-		ROM_LOAD16_BYTE( "fb030a.u61", 0x000000, 0x020000, 0xa04106c6 )
-		ROM_LOAD16_BYTE( "fb031a.u62", 0x000001, 0x020000, 0xd1def5e2 )
+	static RomLoadPtr rom_shogwarr = new RomLoadPtr(){ public void handler(){ 
+	 	ROM_REGION( 0x040000, REGION_CPU1, 0 );		/* 68000 Code */
+		ROM_LOAD16_BYTE( "fb030a.u61", 0x000000, 0x020000, 0xa04106c6 );
+		ROM_LOAD16_BYTE( "fb031a.u62", 0x000001, 0x020000, 0xd1def5e2 );
 	
-	 	ROM_REGION( 0x020000, REGION_CPU2, 0 )			/* MCU Code */
-		ROM_LOAD( "fb040a.u33",  0x000000, 0x020000, 0x4b62c4d9 )
+	 	ROM_REGION( 0x020000, REGION_CPU2, 0 );		/* MCU Code */
+		ROM_LOAD( "fb040a.u33",  0x000000, 0x020000, 0x4b62c4d9 );
 	
-		ROM_REGION( 0x600000, REGION_GFX1, ROMREGION_DISPOSE )	/* Sprites */
-		ROM_LOAD( "fb020a.u1",  0x000000, 0x080000, 0xda1b7373 )
-		ROM_LOAD( "fb022a.u5",  0x080000, 0x080000, 0x60aa1282 )
-		ROM_LOAD( "fb020b.u2",  0x100000, 0x100000, 0x276b9d7b )
-		ROM_LOAD( "fb021a.u3",  0x200000, 0x100000, 0x7da15d37 )
-		ROM_LOAD( "fb021b.u4",  0x300000, 0x100000, 0x6a512d7b )
-		ROM_LOAD( "fb023.u7",   0x400000, 0x100000, 0x132794bd )
-		ROM_LOAD( "fb022b.u6",  0x500000, 0x080000, 0xcd05a5c8 )
+		ROM_REGION( 0x600000, REGION_GFX1, ROMREGION_DISPOSE );/* Sprites */
+		ROM_LOAD( "fb020a.u1",  0x000000, 0x080000, 0xda1b7373 );
+		ROM_LOAD( "fb022a.u5",  0x080000, 0x080000, 0x60aa1282 );
+		ROM_LOAD( "fb020b.u2",  0x100000, 0x100000, 0x276b9d7b );
+		ROM_LOAD( "fb021a.u3",  0x200000, 0x100000, 0x7da15d37 );
+		ROM_LOAD( "fb021b.u4",  0x300000, 0x100000, 0x6a512d7b );
+		ROM_LOAD( "fb023.u7",   0x400000, 0x100000, 0x132794bd );
+		ROM_LOAD( "fb022b.u6",  0x500000, 0x080000, 0xcd05a5c8 );
 	
-		ROM_REGION( 0x400000, REGION_GFX2, ROMREGION_DISPOSE )	/* Tiles (scrambled) */
-		ROM_LOAD( "fb010.u65",  0x000000, 0x100000, 0x296ffd92 )
-		ROM_LOAD( "fb011.u66",  0x100000, 0x080000, 0x500a0367 )	// ?!
-		ROM_LOAD( "rb012.u67",  0x200000, 0x100000, 0xbfdbe0d1 )
-		ROM_LOAD( "rb013.u68",  0x300000, 0x100000, 0x28c37fe8 )
+		ROM_REGION( 0x400000, REGION_GFX2, ROMREGION_DISPOSE );/* Tiles (scrambled) */
+		ROM_LOAD( "fb010.u65",  0x000000, 0x100000, 0x296ffd92 );
+		ROM_LOAD( "fb011.u66",  0x100000, 0x080000, 0x500a0367 );// ?!
+		ROM_LOAD( "rb012.u67",  0x200000, 0x100000, 0xbfdbe0d1 );
+		ROM_LOAD( "rb013.u68",  0x300000, 0x100000, 0x28c37fe8 );
 	
-		ROM_REGION( 0x100000, REGION_SOUND1, 0 )	/* Samples */
-		ROM_LOAD( "fb000e.u42",  0x000000, 0x080000, 0x969f1465 )	// 2 x $40000
-		ROM_LOAD( "fb001e.u43",  0x080000, 0x080000, 0xf524aaa1 )	// 2 x $40000
+		ROM_REGION( 0x100000, REGION_SOUND1, 0 );/* Samples */
+		ROM_LOAD( "fb000e.u42",  0x000000, 0x080000, 0x969f1465 );// 2 x $40000
+		ROM_LOAD( "fb001e.u43",  0x080000, 0x080000, 0xf524aaa1 );// 2 x $40000
 	
-		ROM_REGION( 0x100000, REGION_SOUND2, 0 )	/* Samples */
-		ROM_LOAD( "fb002.u44",   0x000000, 0x080000, 0x05d7c2a9 )	// 2 x $40000
-		ROM_LOAD( "fb003.u45",   0x080000, 0x080000, 0x405722e9 )	// 2 x $40000
-	ROM_END
+		ROM_REGION( 0x100000, REGION_SOUND2, 0 );/* Samples */
+		ROM_LOAD( "fb002.u44",   0x000000, 0x080000, 0x05d7c2a9 );// 2 x $40000
+		ROM_LOAD( "fb003.u45",   0x080000, 0x080000, 0x405722e9 );// 2 x $40000
+	ROM_END(); }}; 
 	
 	
 	void init_shogwarr(void)

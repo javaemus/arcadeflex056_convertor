@@ -1160,120 +1160,120 @@ public class taito_x
 	
 	***************************************************************************/
 	
-	ROM_START( superman )
-		ROM_REGION( 0x80000, REGION_CPU1, 0 )     /* 512k for 68000 code */
-		ROM_LOAD16_BYTE( "a10_09.bin", 0x00000, 0x20000, 0x640f1d58 )
-		ROM_LOAD16_BYTE( "a05_07.bin", 0x00001, 0x20000, 0xfddb9953 )
-		ROM_LOAD16_BYTE( "a08_08.bin", 0x40000, 0x20000, 0x79fc028e )
-		ROM_LOAD16_BYTE( "a03_13.bin", 0x40001, 0x20000, 0x9f446a44 )
+	static RomLoadPtr rom_superman = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x80000, REGION_CPU1, 0 );    /* 512k for 68000 code */
+		ROM_LOAD16_BYTE( "a10_09.bin", 0x00000, 0x20000, 0x640f1d58 );
+		ROM_LOAD16_BYTE( "a05_07.bin", 0x00001, 0x20000, 0xfddb9953 );
+		ROM_LOAD16_BYTE( "a08_08.bin", 0x40000, 0x20000, 0x79fc028e );
+		ROM_LOAD16_BYTE( "a03_13.bin", 0x40001, 0x20000, 0x9f446a44 );
 	
-		ROM_REGION( 0x1c000, REGION_CPU2, 0 )     /* 64k for Z80 code */
-		ROM_LOAD( "d18_10.bin", 0x00000, 0x4000, 0x6efe79e8 )
-		ROM_CONTINUE(           0x10000, 0xc000 ) /* banked stuff */
+		ROM_REGION( 0x1c000, REGION_CPU2, 0 );    /* 64k for Z80 code */
+		ROM_LOAD( "d18_10.bin", 0x00000, 0x4000, 0x6efe79e8 );
+		ROM_CONTINUE(           0x10000, 0xc000 );/* banked stuff */
 	
-		ROM_REGION( 0x200000, REGION_GFX1, ROMREGION_DISPOSE )
-		ROM_LOAD( "f01_14.bin", 0x000000, 0x80000, 0x89368c3e ) /* Plane 0, 1 */
-		ROM_LOAD( "h01_15.bin", 0x080000, 0x80000, 0x910cc4f9 )
-		ROM_LOAD( "j01_16.bin", 0x100000, 0x80000, 0x3622ed2f ) /* Plane 2, 3 */
-		ROM_LOAD( "k01_17.bin", 0x180000, 0x80000, 0xc34f27e0 )
+		ROM_REGION( 0x200000, REGION_GFX1, ROMREGION_DISPOSE );
+		ROM_LOAD( "f01_14.bin", 0x000000, 0x80000, 0x89368c3e );/* Plane 0, 1 */
+		ROM_LOAD( "h01_15.bin", 0x080000, 0x80000, 0x910cc4f9 );
+		ROM_LOAD( "j01_16.bin", 0x100000, 0x80000, 0x3622ed2f );/* Plane 2, 3 */
+		ROM_LOAD( "k01_17.bin", 0x180000, 0x80000, 0xc34f27e0 );
 	
-		ROM_REGION( 0x80000, REGION_SOUND1, 0 )	/* ADPCM samples */
-		ROM_LOAD( "e18_01.bin", 0x00000, 0x80000, 0x3cf99786 )
-	ROM_END
+		ROM_REGION( 0x80000, REGION_SOUND1, 0 );/* ADPCM samples */
+		ROM_LOAD( "e18_01.bin", 0x00000, 0x80000, 0x3cf99786 );
+	ROM_END(); }}; 
 	
-	ROM_START( twinhawk )
-		ROM_REGION( 0x40000, REGION_CPU1, 0 )     /* 256k for 68000 code */
-		ROM_LOAD16_BYTE( "b87-11.bin", 0x00000, 0x20000, 0xfc84a399 )
-		ROM_LOAD16_BYTE( "b87-10.bin", 0x00001, 0x20000, 0x17181706 )
+	static RomLoadPtr rom_twinhawk = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x40000, REGION_CPU1, 0 );    /* 256k for 68000 code */
+		ROM_LOAD16_BYTE( "b87-11.bin", 0x00000, 0x20000, 0xfc84a399 );
+		ROM_LOAD16_BYTE( "b87-10.bin", 0x00001, 0x20000, 0x17181706 );
 	
-		ROM_REGION( 0x14000, REGION_CPU2, 0 )     /* 32k for Z80 code */
-		ROM_LOAD( "b87-07", 0x00000, 0x4000, 0xe2e0efa0)
-		ROM_CONTINUE(       0x10000, 0x4000 ) /* banked stuff */
+		ROM_REGION( 0x14000, REGION_CPU2, 0 );    /* 32k for Z80 code */
+		ROM_LOAD( "b87-07", 0x00000, 0x4000, 0xe2e0efa0);
+		ROM_CONTINUE(       0x10000, 0x4000 );/* banked stuff */
 	
-		ROM_REGION( 0x200000, REGION_GFX1, ROMREGION_DISPOSE )
-		ROM_LOAD( "b87-02", 0x000000, 0x80000, 0x89ad43a0 ) /* Plane 0, 1 */
-		ROM_LOAD( "b87-01", 0x080000, 0x80000, 0x81e82ae1)
-		ROM_LOAD( "b87-04", 0x100000, 0x80000, 0x958434b6 ) /* Plane 2, 3 */
-		ROM_LOAD( "b87-03", 0x180000, 0x80000, 0xce155ae0 )
-	ROM_END
+		ROM_REGION( 0x200000, REGION_GFX1, ROMREGION_DISPOSE );
+		ROM_LOAD( "b87-02", 0x000000, 0x80000, 0x89ad43a0 );/* Plane 0, 1 */
+		ROM_LOAD( "b87-01", 0x080000, 0x80000, 0x81e82ae1);
+		ROM_LOAD( "b87-04", 0x100000, 0x80000, 0x958434b6 );/* Plane 2, 3 */
+		ROM_LOAD( "b87-03", 0x180000, 0x80000, 0xce155ae0 );
+	ROM_END(); }}; 
 	
-	ROM_START( twinhwku )
-		ROM_REGION( 0x40000, REGION_CPU1, 0 )     /* 256k for 68000 code */
-		ROM_LOAD16_BYTE( "b87-09.u6", 0x00000, 0x20000, 0x7e6267c7 )
-		ROM_LOAD16_BYTE( "b87-08.u4", 0x00001, 0x20000, 0x31d9916f )
+	static RomLoadPtr rom_twinhwku = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x40000, REGION_CPU1, 0 );    /* 256k for 68000 code */
+		ROM_LOAD16_BYTE( "b87-09.u6", 0x00000, 0x20000, 0x7e6267c7 );
+		ROM_LOAD16_BYTE( "b87-08.u4", 0x00001, 0x20000, 0x31d9916f );
 	
-		ROM_REGION( 0x14000, REGION_CPU2, 0 )     /* 32k for Z80 code */
-		ROM_LOAD( "b87-07", 0x00000, 0x4000, 0xe2e0efa0)
-		ROM_CONTINUE(       0x10000, 0x4000 ) /* banked stuff */
+		ROM_REGION( 0x14000, REGION_CPU2, 0 );    /* 32k for Z80 code */
+		ROM_LOAD( "b87-07", 0x00000, 0x4000, 0xe2e0efa0);
+		ROM_CONTINUE(       0x10000, 0x4000 );/* banked stuff */
 	
-		ROM_REGION( 0x200000, REGION_GFX1, ROMREGION_DISPOSE )
-		ROM_LOAD( "b87-02", 0x000000, 0x80000, 0x89ad43a0 ) /* Plane 0, 1 */
-		ROM_LOAD( "b87-01", 0x080000, 0x80000, 0x81e82ae1)
-		ROM_LOAD( "b87-04", 0x100000, 0x80000, 0x958434b6 ) /* Plane 2, 3 */
-		ROM_LOAD( "b87-03", 0x180000, 0x80000, 0xce155ae0 )
-	ROM_END
+		ROM_REGION( 0x200000, REGION_GFX1, ROMREGION_DISPOSE );
+		ROM_LOAD( "b87-02", 0x000000, 0x80000, 0x89ad43a0 );/* Plane 0, 1 */
+		ROM_LOAD( "b87-01", 0x080000, 0x80000, 0x81e82ae1);
+		ROM_LOAD( "b87-04", 0x100000, 0x80000, 0x958434b6 );/* Plane 2, 3 */
+		ROM_LOAD( "b87-03", 0x180000, 0x80000, 0xce155ae0 );
+	ROM_END(); }}; 
 	
-	ROM_START( daisenpu )
-		ROM_REGION( 0x40000, REGION_CPU1, 0 )     /* 256k for 68000 code */
-		ROM_LOAD16_BYTE( "b87-06", 0x00000, 0x20000, 0xcf236100 )
-		ROM_LOAD16_BYTE( "b87-05", 0x00001, 0x20000, 0x7f15edc7 )
+	static RomLoadPtr rom_daisenpu = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x40000, REGION_CPU1, 0 );    /* 256k for 68000 code */
+		ROM_LOAD16_BYTE( "b87-06", 0x00000, 0x20000, 0xcf236100 );
+		ROM_LOAD16_BYTE( "b87-05", 0x00001, 0x20000, 0x7f15edc7 );
 	
-		ROM_REGION( 0x14000, REGION_CPU2, 0 )     /* 32k for Z80 code */
-		ROM_LOAD( "b87-07", 0x00000, 0x4000, 0xe2e0efa0)
-		ROM_CONTINUE(       0x10000, 0x4000 ) /* banked stuff */
+		ROM_REGION( 0x14000, REGION_CPU2, 0 );    /* 32k for Z80 code */
+		ROM_LOAD( "b87-07", 0x00000, 0x4000, 0xe2e0efa0);
+		ROM_CONTINUE(       0x10000, 0x4000 );/* banked stuff */
 	
-		ROM_REGION( 0x200000, REGION_GFX1, ROMREGION_DISPOSE )
-		ROM_LOAD( "b87-02", 0x000000, 0x80000, 0x89ad43a0 ) /* Plane 0, 1 */
-		ROM_LOAD( "b87-01", 0x080000, 0x80000, 0x81e82ae1)
-		ROM_LOAD( "b87-04", 0x100000, 0x80000, 0x958434b6 ) /* Plane 2, 3 */
-		ROM_LOAD( "b87-03", 0x180000, 0x80000, 0xce155ae0 )
-	ROM_END
+		ROM_REGION( 0x200000, REGION_GFX1, ROMREGION_DISPOSE );
+		ROM_LOAD( "b87-02", 0x000000, 0x80000, 0x89ad43a0 );/* Plane 0, 1 */
+		ROM_LOAD( "b87-01", 0x080000, 0x80000, 0x81e82ae1);
+		ROM_LOAD( "b87-04", 0x100000, 0x80000, 0x958434b6 );/* Plane 2, 3 */
+		ROM_LOAD( "b87-03", 0x180000, 0x80000, 0xce155ae0 );
+	ROM_END(); }}; 
 	
-	ROM_START( gigandes )
-		ROM_REGION( 0x80000, REGION_CPU1, 0 )     /* 512k for 68000 code */
-		ROM_LOAD16_BYTE( "1", 0x00000, 0x20000, 0x290c50e0 )
-		ROM_LOAD16_BYTE( "3", 0x00001, 0x20000, 0x9cef82af )
-		ROM_LOAD16_BYTE( "2", 0x40000, 0x20000, 0xdd94b4d0 )
-		ROM_LOAD16_BYTE( "4", 0x40001, 0x20000, 0xa647310a )
+	static RomLoadPtr rom_gigandes = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x80000, REGION_CPU1, 0 );    /* 512k for 68000 code */
+		ROM_LOAD16_BYTE( "1", 0x00000, 0x20000, 0x290c50e0 );
+		ROM_LOAD16_BYTE( "3", 0x00001, 0x20000, 0x9cef82af );
+		ROM_LOAD16_BYTE( "2", 0x40000, 0x20000, 0xdd94b4d0 );
+		ROM_LOAD16_BYTE( "4", 0x40001, 0x20000, 0xa647310a );
 	
-		ROM_REGION( 0x1c000, REGION_CPU2, 0 )     /* 64k for Z80 code */
-		ROM_LOAD( "5", 0x00000, 0x4000, 0xb24ab5f4 )
-		ROM_CONTINUE(           0x10000, 0xc000 ) /* banked stuff */
+		ROM_REGION( 0x1c000, REGION_CPU2, 0 );    /* 64k for Z80 code */
+		ROM_LOAD( "5", 0x00000, 0x4000, 0xb24ab5f4 );
+		ROM_CONTINUE(           0x10000, 0xc000 );/* banked stuff */
 	
-		ROM_REGION( 0x200000, REGION_GFX1, ROMREGION_DISPOSE )
-		ROM_LOAD( "6", 0x000000, 0x80000, 0x75eece28 ) /* Plane 0, 1 */
-		ROM_LOAD( "7", 0x080000, 0x80000, 0xb179a76a )
-		ROM_LOAD( "9", 0x100000, 0x80000, 0x5c5e6898 ) /* Plane 2, 3 */
-		ROM_LOAD( "8", 0x180000, 0x80000, 0x52db30e9 )
+		ROM_REGION( 0x200000, REGION_GFX1, ROMREGION_DISPOSE );
+		ROM_LOAD( "6", 0x000000, 0x80000, 0x75eece28 );/* Plane 0, 1 */
+		ROM_LOAD( "7", 0x080000, 0x80000, 0xb179a76a );
+		ROM_LOAD( "9", 0x100000, 0x80000, 0x5c5e6898 );/* Plane 2, 3 */
+		ROM_LOAD( "8", 0x180000, 0x80000, 0x52db30e9 );
 	
-		ROM_REGION( 0x80000, REGION_SOUND1, 0 )	/* ADPCM samples */
-		ROM_LOAD( "11", 0x00000, 0x80000, 0x92111f96 )
+		ROM_REGION( 0x80000, REGION_SOUND1, 0 );/* ADPCM samples */
+		ROM_LOAD( "11", 0x00000, 0x80000, 0x92111f96 );
 	
-		ROM_REGION( 0x80000, REGION_SOUND2, 0 )	/* Delta-T samples */
-		ROM_LOAD( "10", 0x00000, 0x80000, 0xca0ac419 )
-	ROM_END
+		ROM_REGION( 0x80000, REGION_SOUND2, 0 );/* Delta-T samples */
+		ROM_LOAD( "10", 0x00000, 0x80000, 0xca0ac419 );
+	ROM_END(); }}; 
 	
-	ROM_START( ballbros )
-		ROM_REGION( 0x40000, REGION_CPU1, 0 )     /* 256k for 68000 code */
-		ROM_LOAD16_BYTE( "10a", 0x00000, 0x20000, 0x4af0e858 )
-		ROM_LOAD16_BYTE( "5a",  0x00001, 0x20000, 0x0b983a69 )
+	static RomLoadPtr rom_ballbros = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x40000, REGION_CPU1, 0 );    /* 256k for 68000 code */
+		ROM_LOAD16_BYTE( "10a", 0x00000, 0x20000, 0x4af0e858 );
+		ROM_LOAD16_BYTE( "5a",  0x00001, 0x20000, 0x0b983a69 );
 	
-		ROM_REGION( 0x1c000, REGION_CPU2, 0 )     /* 64k for Z80 code */
-		ROM_LOAD( "8d", 0x00000, 0x4000, 0xd1c515af)
-		ROM_CONTINUE(   0x10000, 0xc000 ) /* banked stuff */
+		ROM_REGION( 0x1c000, REGION_CPU2, 0 );    /* 64k for Z80 code */
+		ROM_LOAD( "8d", 0x00000, 0x4000, 0xd1c515af);
+		ROM_CONTINUE(   0x10000, 0xc000 );/* banked stuff */
 	
-		ROM_REGION( 0x080000, REGION_GFX1, ROMREGION_DISPOSE )
-		ROM_LOAD( "3", 0x000000, 0x20000, 0xec3e0537 ) /* Plane 0, 1 */
-		ROM_LOAD( "2", 0x020000, 0x20000, 0xbb441717 )
-		ROM_LOAD( "1", 0x040000, 0x20000, 0x8196d624 )
-		ROM_LOAD( "0", 0x060000, 0x20000, 0x1cc584e5 )
+		ROM_REGION( 0x080000, REGION_GFX1, ROMREGION_DISPOSE );
+		ROM_LOAD( "3", 0x000000, 0x20000, 0xec3e0537 );/* Plane 0, 1 */
+		ROM_LOAD( "2", 0x020000, 0x20000, 0xbb441717 );
+		ROM_LOAD( "1", 0x040000, 0x20000, 0x8196d624 );
+		ROM_LOAD( "0", 0x060000, 0x20000, 0x1cc584e5 );
 	
-		ROM_REGION( 0x80000, REGION_SOUND1, 0 )	/* ADPCM samples */
-		ROM_LOAD( "east-11", 0x00000, 0x80000, 0x92111f96 )
+		ROM_REGION( 0x80000, REGION_SOUND1, 0 );/* ADPCM samples */
+		ROM_LOAD( "east-11", 0x00000, 0x80000, 0x92111f96 );
 	
-		ROM_REGION( 0x80000, REGION_SOUND2, 0 )	/* Delta-T samples */
-		ROM_LOAD( "east-10", 0x00000, 0x80000, 0xca0ac419 )
-	ROM_END
+		ROM_REGION( 0x80000, REGION_SOUND2, 0 );/* Delta-T samples */
+		ROM_LOAD( "east-10", 0x00000, 0x80000, 0xca0ac419 );
+	ROM_END(); }}; 
 	
 	
 	void init_taitox( void)

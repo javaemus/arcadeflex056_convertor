@@ -272,38 +272,38 @@ enum
 ***************************************************************************/
 
 /* ----- start/stop macros ----- */
-#define ROM_START(name)								static const struct RomModule rom_##name[] = {
-#define ROM_END										{ ROMENTRY_END, 0, 0, 0 } };
+#define static RomLoadPtr rom_name = new RomLoadPtr(){ public void handler(){ 								static const struct RomModule rom_##name[] = {
+#define ROM_END(); }}; 										{ ROMENTRY_END, 0, 0, 0 } };
 
 /* ----- ROM region macros ----- */
-#define ROM_REGION(length,type,flags)				{ ROMENTRY_REGION, flags, length, type },
-#define ROM_REGION16_LE(length,type,flags)			ROM_REGION(length, type, (flags) | ROMREGION_16BIT | ROMREGION_LE)
-#define ROM_REGION16_BE(length,type,flags)			ROM_REGION(length, type, (flags) | ROMREGION_16BIT | ROMREGION_BE)
-#define ROM_REGION32_LE(length,type,flags)			ROM_REGION(length, type, (flags) | ROMREGION_32BIT | ROMREGION_LE)
-#define ROM_REGION32_BE(length,type,flags)			ROM_REGION(length, type, (flags) | ROMREGION_32BIT | ROMREGION_BE)
+#define ROM_REGION(length,type,flags);			{ ROMENTRY_REGION, flags, length, type },
+#define ROM_REGION16_LE(length,type,flags);		ROM_REGION(length, type, (flags);| ROMREGION_16BIT | ROMREGION_LE)
+#define ROM_REGION16_BE(length,type,flags);		ROM_REGION(length, type, (flags);| ROMREGION_16BIT | ROMREGION_BE)
+#define ROM_REGION32_LE(length,type,flags);		ROM_REGION(length, type, (flags);| ROMREGION_32BIT | ROMREGION_LE)
+#define ROM_REGION32_BE(length,type,flags);		ROM_REGION(length, type, (flags);| ROMREGION_32BIT | ROMREGION_BE)
 
 /* ----- core ROM loading macros ----- */
 #define ROMX_LOAD(name,offset,length,crc,flags)		{ name, offset, (flags) | COMPACT_LENGTH(length), crc },
-#define ROM_LOAD(name,offset,length,crc)			ROMX_LOAD(name, offset, length, crc, 0)
+#define ROM_LOAD(name,offset,length,crc);		ROMX_LOAD(name, offset, length, crc, 0)
 #define ROM_LOAD_OPTIONAL(name,offset,length,crc)	ROMX_LOAD(name, offset, length, crc, ROM_OPTIONAL)
-#define ROM_CONTINUE(offset,length)					ROMX_LOAD(ROMENTRY_CONTINUE, offset, length, 0, ROM_INHERITFLAGS)
-#define ROM_RELOAD(offset,length)					ROMX_LOAD(ROMENTRY_RELOAD, offset, length, 0, ROM_INHERITFLAGS)
-#define ROM_FILL(offset,length,value)				ROM_LOAD(ROMENTRY_FILL, offset, length, value)
-#define ROM_COPY(rgn,srcoffset,offset,length)		ROMX_LOAD(ROMENTRY_COPY, offset, length, srcoffset, (rgn) << 24)
+#define ROM_CONTINUE(offset,length);				ROMX_LOAD(ROMENTRY_CONTINUE, offset, length, 0, ROM_INHERITFLAGS)
+#define ROM_RELOAD(offset,length);				ROMX_LOAD(ROMENTRY_RELOAD, offset, length, 0, ROM_INHERITFLAGS)
+#define ROM_FILL(offset,length,value);			ROM_LOAD(ROMENTRY_FILL, offset, length, value);
+#define ROM_COPY(rgn,srcoffset,offset,length);	ROMX_LOAD(ROMENTRY_COPY, offset, length, srcoffset, (rgn) << 24)
 
 /* ----- nibble loading macros ----- */
-#define ROM_LOAD_NIB_HIGH(name,offset,length,crc)	ROMX_LOAD(name, offset, length, crc, ROM_NIBBLE | ROM_SHIFT_NIBBLE_HI)
-#define ROM_LOAD_NIB_LOW(name,offset,length,crc)	ROMX_LOAD(name, offset, length, crc, ROM_NIBBLE | ROM_SHIFT_NIBBLE_LO)
+#define ROM_LOAD_NIB_HIGH(name,offset,length,crc);ROMX_LOAD(name, offset, length, crc, ROM_NIBBLE | ROM_SHIFT_NIBBLE_HI)
+#define ROM_LOAD_NIB_LOW(name,offset,length,crc);ROMX_LOAD(name, offset, length, crc, ROM_NIBBLE | ROM_SHIFT_NIBBLE_LO)
 
 /* ----- new-style 16-bit loading macros ----- */
-#define ROM_LOAD16_BYTE(name,offset,length,crc)		ROMX_LOAD(name, offset, length, crc, ROM_SKIP(1))
-#define ROM_LOAD16_WORD(name,offset,length,crc)		ROM_LOAD(name, offset, length, crc)
+#define ROM_LOAD16_BYTE(name,offset,length,crc);	ROMX_LOAD(name, offset, length, crc, ROM_SKIP(1))
+#define ROM_LOAD16_WORD(name,offset,length,crc);	ROM_LOAD(name, offset, length, crc);
 #define ROM_LOAD16_WORD_SWAP(name,offset,length,crc)ROMX_LOAD(name, offset, length, crc, ROM_GROUPWORD | ROM_REVERSE)
 
 /* ----- new-style 32-bit loading macros ----- */
-#define ROM_LOAD32_BYTE(name,offset,length,crc)		ROMX_LOAD(name, offset, length, crc, ROM_SKIP(3))
-#define ROM_LOAD32_WORD(name,offset,length,crc)		ROMX_LOAD(name, offset, length, crc, ROM_GROUPWORD | ROM_SKIP(2))
-#define ROM_LOAD32_WORD_SWAP(name,offset,length,crc)ROMX_LOAD(name, offset, length, crc, ROM_GROUPWORD | ROM_REVERSE | ROM_SKIP(2))
+#define ROM_LOAD32_BYTE(name,offset,length,crc);	ROMX_LOAD(name, offset, length, crc, ROM_SKIP(3))
+#define ROM_LOAD32_WORD(name,offset,length,crc);	ROMX_LOAD(name, offset, length, crc, ROM_GROUPWORD | ROM_SKIP(2))
+#define ROM_LOAD32_WORD_SWAP(name,offset,length,crc);OMX_LOAD(name, offset, length, crc, ROM_GROUPWORD | ROM_REVERSE | ROM_SKIP(2))
 
 
 

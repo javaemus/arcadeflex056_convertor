@@ -1074,241 +1074,241 @@ public class ataxx
 	 *
 	 *************************************/
 	
-	ROM_START( ataxx )
-		ROM_REGION( 0x30000, REGION_CPU1, 0 )
-		ROM_LOAD( "ataxx.038",   0x00000, 0x20000, 0x0e1cf6236 )
-		ROM_RELOAD(              0x10000, 0x20000 )
+	static RomLoadPtr rom_ataxx = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x30000, REGION_CPU1, 0 );
+		ROM_LOAD( "ataxx.038",   0x00000, 0x20000, 0x0e1cf6236 );
+		ROM_RELOAD(              0x10000, 0x20000 );
 	
-		ROM_REGION( 0x60000, REGION_CPU2, 0 )
-		ROM_LOAD( "ataxx.111",  0x00000, 0x20000, 0x09a3297cc )
-		ROM_LOAD( "ataxx.112",  0x20000, 0x20000, 0x07e7c3e2f )
-		ROM_LOAD( "ataxx.113",  0x40000, 0x20000, 0x08cf3e101 )
+		ROM_REGION( 0x60000, REGION_CPU2, 0 );
+		ROM_LOAD( "ataxx.111",  0x00000, 0x20000, 0x09a3297cc );
+		ROM_LOAD( "ataxx.112",  0x20000, 0x20000, 0x07e7c3e2f );
+		ROM_LOAD( "ataxx.113",  0x40000, 0x20000, 0x08cf3e101 );
 	
-		ROM_REGION( 0x100000, REGION_CPU3, 0 )
-		ROM_LOAD16_BYTE( "ataxx.015",  0x20001, 0x20000, 0x08bb3233b )
-		ROM_LOAD16_BYTE( "ataxx.001",  0x20000, 0x20000, 0x0728d75f2 )
-		ROM_LOAD16_BYTE( "ataxx.016",  0x60001, 0x20000, 0x0f2bdff48 )
-		ROM_RELOAD(                    0xc0001, 0x20000 )
-		ROM_LOAD16_BYTE( "ataxx.002",  0x60000, 0x20000, 0x0ca06a394 )
-		ROM_RELOAD(                    0xc0000, 0x20000 )
+		ROM_REGION( 0x100000, REGION_CPU3, 0 );
+		ROM_LOAD16_BYTE( "ataxx.015",  0x20001, 0x20000, 0x08bb3233b );
+		ROM_LOAD16_BYTE( "ataxx.001",  0x20000, 0x20000, 0x0728d75f2 );
+		ROM_LOAD16_BYTE( "ataxx.016",  0x60001, 0x20000, 0x0f2bdff48 );
+		ROM_RELOAD(                    0xc0001, 0x20000 );
+		ROM_LOAD16_BYTE( "ataxx.002",  0x60000, 0x20000, 0x0ca06a394 );
+		ROM_RELOAD(                    0xc0000, 0x20000 );
 	
-		ROM_REGION( 0xc0000, REGION_GFX1, ROMREGION_DISPOSE )
-		ROM_LOAD( "ataxx.098",  0x00000, 0x20000, 0x059d0f2ae )
-		ROM_LOAD( "ataxx.099",  0x20000, 0x20000, 0x06ab7db25 )
-		ROM_LOAD( "ataxx.100",  0x40000, 0x20000, 0x02352849e )
-		ROM_LOAD( "ataxx.101",  0x60000, 0x20000, 0x04c31e02b )
-		ROM_LOAD( "ataxx.102",  0x80000, 0x20000, 0x0a951228c )
-		ROM_LOAD( "ataxx.103",  0xa0000, 0x20000, 0x0ed326164 )
+		ROM_REGION( 0xc0000, REGION_GFX1, ROMREGION_DISPOSE );
+		ROM_LOAD( "ataxx.098",  0x00000, 0x20000, 0x059d0f2ae );
+		ROM_LOAD( "ataxx.099",  0x20000, 0x20000, 0x06ab7db25 );
+		ROM_LOAD( "ataxx.100",  0x40000, 0x20000, 0x02352849e );
+		ROM_LOAD( "ataxx.101",  0x60000, 0x20000, 0x04c31e02b );
+		ROM_LOAD( "ataxx.102",  0x80000, 0x20000, 0x0a951228c );
+		ROM_LOAD( "ataxx.103",  0xa0000, 0x20000, 0x0ed326164 );
 	
-		ROM_REGION( 0x00001, REGION_USER1, 0 ) /* X-ROM (data used by main processor) */
+		ROM_REGION( 0x00001, REGION_USER1, 0 );/* X-ROM (data used by main processor) */
 	    /* Empty / not used */
 	
-		ROM_REGION( battery_ram_size + extra_tram_size, REGION_USER2, 0 ) /* extra RAM regions */
-	ROM_END
+		ROM_REGION( battery_ram_size + extra_tram_size, REGION_USER2, 0 );/* extra RAM regions */
+	ROM_END(); }}; 
 	
-	ROM_START( ataxxa )
-		ROM_REGION( 0x30000, REGION_CPU1, 0 )
-		ROM_LOAD( "u38",   0x00000, 0x20000, 0x3378937d )
-		ROM_RELOAD(        0x10000, 0x20000 )
+	static RomLoadPtr rom_ataxxa = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x30000, REGION_CPU1, 0 );
+		ROM_LOAD( "u38",   0x00000, 0x20000, 0x3378937d );
+		ROM_RELOAD(        0x10000, 0x20000 );
 	
-		ROM_REGION( 0x60000, REGION_CPU2, 0 )
-		ROM_LOAD( "ataxx.111",  0x00000, 0x20000, 0x09a3297cc )
-		ROM_LOAD( "ataxx.112",  0x20000, 0x20000, 0x07e7c3e2f )
-		ROM_LOAD( "ataxx.113",  0x40000, 0x20000, 0x08cf3e101 )
+		ROM_REGION( 0x60000, REGION_CPU2, 0 );
+		ROM_LOAD( "ataxx.111",  0x00000, 0x20000, 0x09a3297cc );
+		ROM_LOAD( "ataxx.112",  0x20000, 0x20000, 0x07e7c3e2f );
+		ROM_LOAD( "ataxx.113",  0x40000, 0x20000, 0x08cf3e101 );
 	
-		ROM_REGION( 0x100000, REGION_CPU3, 0 )
-		ROM_LOAD16_BYTE( "ataxx.015",  0x20001, 0x20000, 0x08bb3233b )
-		ROM_LOAD16_BYTE( "ataxx.001",  0x20000, 0x20000, 0x0728d75f2 )
-		ROM_LOAD16_BYTE( "ataxx.016",  0x60001, 0x20000, 0x0f2bdff48 )
-		ROM_RELOAD(                    0xc0001, 0x20000 )
-		ROM_LOAD16_BYTE( "ataxx.002",  0x60000, 0x20000, 0x0ca06a394 )
-		ROM_RELOAD(                    0xc0000, 0x20000 )
+		ROM_REGION( 0x100000, REGION_CPU3, 0 );
+		ROM_LOAD16_BYTE( "ataxx.015",  0x20001, 0x20000, 0x08bb3233b );
+		ROM_LOAD16_BYTE( "ataxx.001",  0x20000, 0x20000, 0x0728d75f2 );
+		ROM_LOAD16_BYTE( "ataxx.016",  0x60001, 0x20000, 0x0f2bdff48 );
+		ROM_RELOAD(                    0xc0001, 0x20000 );
+		ROM_LOAD16_BYTE( "ataxx.002",  0x60000, 0x20000, 0x0ca06a394 );
+		ROM_RELOAD(                    0xc0000, 0x20000 );
 	
-		ROM_REGION( 0xc0000, REGION_GFX1, ROMREGION_DISPOSE )
-		ROM_LOAD( "ataxx.098",  0x00000, 0x20000, 0x059d0f2ae )
-		ROM_LOAD( "ataxx.099",  0x20000, 0x20000, 0x06ab7db25 )
-		ROM_LOAD( "ataxx.100",  0x40000, 0x20000, 0x02352849e )
-		ROM_LOAD( "ataxx.101",  0x60000, 0x20000, 0x04c31e02b )
-		ROM_LOAD( "ataxx.102",  0x80000, 0x20000, 0x0a951228c )
-		ROM_LOAD( "ataxx.103",  0xa0000, 0x20000, 0x0ed326164 )
+		ROM_REGION( 0xc0000, REGION_GFX1, ROMREGION_DISPOSE );
+		ROM_LOAD( "ataxx.098",  0x00000, 0x20000, 0x059d0f2ae );
+		ROM_LOAD( "ataxx.099",  0x20000, 0x20000, 0x06ab7db25 );
+		ROM_LOAD( "ataxx.100",  0x40000, 0x20000, 0x02352849e );
+		ROM_LOAD( "ataxx.101",  0x60000, 0x20000, 0x04c31e02b );
+		ROM_LOAD( "ataxx.102",  0x80000, 0x20000, 0x0a951228c );
+		ROM_LOAD( "ataxx.103",  0xa0000, 0x20000, 0x0ed326164 );
 	
-		ROM_REGION( 0x00001, REGION_USER1, 0 ) /* X-ROM (data used by main processor) */
+		ROM_REGION( 0x00001, REGION_USER1, 0 );/* X-ROM (data used by main processor) */
 	    /* Empty / not used */
 	
-		ROM_REGION( battery_ram_size + extra_tram_size, REGION_USER2, 0 ) /* extra RAM regions */
-	ROM_END
+		ROM_REGION( battery_ram_size + extra_tram_size, REGION_USER2, 0 );/* extra RAM regions */
+	ROM_END(); }}; 
 	
-	ROM_START( ataxxj )
-		ROM_REGION( 0x30000, REGION_CPU1, 0 )
-		ROM_LOAD( "ataxxj.038", 0x00000, 0x20000, 0x513fa7d4 )
-		ROM_RELOAD(             0x10000, 0x20000 )
+	static RomLoadPtr rom_ataxxj = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x30000, REGION_CPU1, 0 );
+		ROM_LOAD( "ataxxj.038", 0x00000, 0x20000, 0x513fa7d4 );
+		ROM_RELOAD(             0x10000, 0x20000 );
 	
-		ROM_REGION( 0x60000, REGION_CPU2, 0 )
-		ROM_LOAD( "ataxx.111",  0x00000, 0x20000, 0x09a3297cc )
-		ROM_LOAD( "ataxx.112",  0x20000, 0x20000, 0x07e7c3e2f )
-		ROM_LOAD( "ataxx.113",  0x40000, 0x20000, 0x08cf3e101 )
+		ROM_REGION( 0x60000, REGION_CPU2, 0 );
+		ROM_LOAD( "ataxx.111",  0x00000, 0x20000, 0x09a3297cc );
+		ROM_LOAD( "ataxx.112",  0x20000, 0x20000, 0x07e7c3e2f );
+		ROM_LOAD( "ataxx.113",  0x40000, 0x20000, 0x08cf3e101 );
 	
-		ROM_REGION( 0x100000, REGION_CPU3, 0 )
-		ROM_LOAD16_BYTE( "ataxxj.015", 0x20001, 0x20000, 0xdb266d3f )
-		ROM_LOAD16_BYTE( "ataxxj.001", 0x20000, 0x20000, 0xd6db2724 )
-		ROM_LOAD16_BYTE( "ataxxj.016", 0x60001, 0x20000, 0x2b127f56 )
-		ROM_RELOAD(                    0xc0001, 0x20000 )
-		ROM_LOAD16_BYTE( "ataxxj.002", 0x60000, 0x20000, 0x1b63b882 )
-		ROM_RELOAD(                    0xc0000, 0x20000 )
+		ROM_REGION( 0x100000, REGION_CPU3, 0 );
+		ROM_LOAD16_BYTE( "ataxxj.015", 0x20001, 0x20000, 0xdb266d3f );
+		ROM_LOAD16_BYTE( "ataxxj.001", 0x20000, 0x20000, 0xd6db2724 );
+		ROM_LOAD16_BYTE( "ataxxj.016", 0x60001, 0x20000, 0x2b127f56 );
+		ROM_RELOAD(                    0xc0001, 0x20000 );
+		ROM_LOAD16_BYTE( "ataxxj.002", 0x60000, 0x20000, 0x1b63b882 );
+		ROM_RELOAD(                    0xc0000, 0x20000 );
 	
-		ROM_REGION( 0xc0000, REGION_GFX1, ROMREGION_DISPOSE )
-		ROM_LOAD( "ataxx.098",  0x00000, 0x20000, 0x059d0f2ae )
-		ROM_LOAD( "ataxx.099",  0x20000, 0x20000, 0x06ab7db25 )
-		ROM_LOAD( "ataxx.100",  0x40000, 0x20000, 0x02352849e )
-		ROM_LOAD( "ataxx.101",  0x60000, 0x20000, 0x04c31e02b )
-		ROM_LOAD( "ataxx.102",  0x80000, 0x20000, 0x0a951228c )
-		ROM_LOAD( "ataxx.103",  0xa0000, 0x20000, 0x0ed326164 )
+		ROM_REGION( 0xc0000, REGION_GFX1, ROMREGION_DISPOSE );
+		ROM_LOAD( "ataxx.098",  0x00000, 0x20000, 0x059d0f2ae );
+		ROM_LOAD( "ataxx.099",  0x20000, 0x20000, 0x06ab7db25 );
+		ROM_LOAD( "ataxx.100",  0x40000, 0x20000, 0x02352849e );
+		ROM_LOAD( "ataxx.101",  0x60000, 0x20000, 0x04c31e02b );
+		ROM_LOAD( "ataxx.102",  0x80000, 0x20000, 0x0a951228c );
+		ROM_LOAD( "ataxx.103",  0xa0000, 0x20000, 0x0ed326164 );
 	
-		ROM_REGION( 0x00001, REGION_USER1, 0 ) /* X-ROM (data used by main processor) */
+		ROM_REGION( 0x00001, REGION_USER1, 0 );/* X-ROM (data used by main processor) */
 	    /* Empty / not used */
 	
-		ROM_REGION( battery_ram_size + extra_tram_size, REGION_USER2, 0 ) /* extra RAM regions */
-	ROM_END
+		ROM_REGION( battery_ram_size + extra_tram_size, REGION_USER2, 0 );/* extra RAM regions */
+	ROM_END(); }}; 
 	
-	ROM_START( wsf )
-		ROM_REGION( 0x50000, REGION_CPU1, 0 )
-		ROM_LOAD( "30022-03.u64",  0x00000, 0x20000, 0x2e7faa96 )
-		ROM_RELOAD(                0x10000, 0x20000 )
-		ROM_LOAD( "30023-03.u65",  0x30000, 0x20000, 0x7146328f )
+	static RomLoadPtr rom_wsf = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x50000, REGION_CPU1, 0 );
+		ROM_LOAD( "30022-03.u64",  0x00000, 0x20000, 0x2e7faa96 );
+		ROM_RELOAD(                0x10000, 0x20000 );
+		ROM_LOAD( "30023-03.u65",  0x30000, 0x20000, 0x7146328f );
 	
-		ROM_REGION( 0x100000, REGION_CPU2, 0 )
-		ROM_LOAD( "30001-01.151",  0x00000, 0x20000, 0x31c63af5 )
-		ROM_LOAD( "30002-01.152",  0x20000, 0x20000, 0xa53e88a6 )
-		ROM_LOAD( "30003-01.153",  0x40000, 0x20000, 0x12afad1d )
-		ROM_LOAD( "30004-01.154",  0x60000, 0x20000, 0xb8b3d59c )
-		ROM_LOAD( "30005-01.155",  0x80000, 0x20000, 0x505724b9 )
-		ROM_LOAD( "30006-01.156",  0xa0000, 0x20000, 0xc86b5c4d )
-		ROM_LOAD( "30007-01.157",  0xc0000, 0x20000, 0x451321ae )
-		ROM_LOAD( "30008-01.158",  0xe0000, 0x20000, 0x4d23836f )
+		ROM_REGION( 0x100000, REGION_CPU2, 0 );
+		ROM_LOAD( "30001-01.151",  0x00000, 0x20000, 0x31c63af5 );
+		ROM_LOAD( "30002-01.152",  0x20000, 0x20000, 0xa53e88a6 );
+		ROM_LOAD( "30003-01.153",  0x40000, 0x20000, 0x12afad1d );
+		ROM_LOAD( "30004-01.154",  0x60000, 0x20000, 0xb8b3d59c );
+		ROM_LOAD( "30005-01.155",  0x80000, 0x20000, 0x505724b9 );
+		ROM_LOAD( "30006-01.156",  0xa0000, 0x20000, 0xc86b5c4d );
+		ROM_LOAD( "30007-01.157",  0xc0000, 0x20000, 0x451321ae );
+		ROM_LOAD( "30008-01.158",  0xe0000, 0x20000, 0x4d23836f );
 	
-		ROM_REGION( 0x100000, REGION_CPU3, 0 )
-		ROM_LOAD16_BYTE( "30017-01.u3",  0x20001, 0x20000, 0x39ec13c1 )
-		ROM_LOAD16_BYTE( "30020-01.u6",  0x20000, 0x20000, 0x532c02bf )
-		ROM_LOAD16_BYTE( "30018-01.u4",  0x60001, 0x20000, 0x1ec16735 )
-		ROM_RELOAD(                      0xc0001, 0x20000 )
-		ROM_LOAD16_BYTE( "30019-01.u5",  0x60000, 0x20000, 0x2881f73b )
-		ROM_RELOAD(                      0xc0000, 0x20000 )
+		ROM_REGION( 0x100000, REGION_CPU3, 0 );
+		ROM_LOAD16_BYTE( "30017-01.u3",  0x20001, 0x20000, 0x39ec13c1 );
+		ROM_LOAD16_BYTE( "30020-01.u6",  0x20000, 0x20000, 0x532c02bf );
+		ROM_LOAD16_BYTE( "30018-01.u4",  0x60001, 0x20000, 0x1ec16735 );
+		ROM_RELOAD(                      0xc0001, 0x20000 );
+		ROM_LOAD16_BYTE( "30019-01.u5",  0x60000, 0x20000, 0x2881f73b );
+		ROM_RELOAD(                      0xc0000, 0x20000 );
 	
-		ROM_REGION( 0x60000, REGION_GFX1, ROMREGION_DISPOSE )
-		ROM_LOAD( "30011-02.145",  0x00000, 0x10000, 0x6153569b )
-		ROM_LOAD( "30012-02.146",  0x10000, 0x10000, 0x52d65e21 )
-		ROM_LOAD( "30013-02.147",  0x20000, 0x10000, 0xb3afda12 )
-		ROM_LOAD( "30014-02.148",  0x30000, 0x10000, 0x624e6c64 )
-		ROM_LOAD( "30015-01.149",  0x40000, 0x10000, 0x5d9064f2 )
-		ROM_LOAD( "30016-01.150",  0x50000, 0x10000, 0xd76389cd )
+		ROM_REGION( 0x60000, REGION_GFX1, ROMREGION_DISPOSE );
+		ROM_LOAD( "30011-02.145",  0x00000, 0x10000, 0x6153569b );
+		ROM_LOAD( "30012-02.146",  0x10000, 0x10000, 0x52d65e21 );
+		ROM_LOAD( "30013-02.147",  0x20000, 0x10000, 0xb3afda12 );
+		ROM_LOAD( "30014-02.148",  0x30000, 0x10000, 0x624e6c64 );
+		ROM_LOAD( "30015-01.149",  0x40000, 0x10000, 0x5d9064f2 );
+		ROM_LOAD( "30016-01.150",  0x50000, 0x10000, 0xd76389cd );
 	
-		ROM_REGION( 0x20000, REGION_USER1, 0 ) /* X-ROM (data used by main processor) */
-		ROM_LOAD( "30009-01.u68",  0x00000, 0x10000, 0xf2fbfc15 )
-		ROM_LOAD( "30010-01.u69",  0x10000, 0x10000, 0xb4ed2d3b )
+		ROM_REGION( 0x20000, REGION_USER1, 0 );/* X-ROM (data used by main processor) */
+		ROM_LOAD( "30009-01.u68",  0x00000, 0x10000, 0xf2fbfc15 );
+		ROM_LOAD( "30010-01.u69",  0x10000, 0x10000, 0xb4ed2d3b );
 	
-		ROM_REGION( 0x20000, REGION_SOUND1, 0 ) /* externally clocked DAC data */
-		ROM_LOAD( "30021-01.u8",   0x00000, 0x20000, 0xbb91dc10 )
+		ROM_REGION( 0x20000, REGION_SOUND1, 0 );/* externally clocked DAC data */
+		ROM_LOAD( "30021-01.u8",   0x00000, 0x20000, 0xbb91dc10 );
 	
-		ROM_REGION( battery_ram_size + extra_tram_size, REGION_USER2, 0 ) /* extra RAM regions */
-	ROM_END
+		ROM_REGION( battery_ram_size + extra_tram_size, REGION_USER2, 0 );/* extra RAM regions */
+	ROM_END(); }}; 
 	
-	ROM_START( indyheat )
-		ROM_REGION( 0x90000, REGION_CPU1, 0 )
-		ROM_LOAD( "u64_27c.010",   0x00000, 0x20000, 0x2b97a347 )
-		ROM_RELOAD(                0x10000, 0x20000 )
-		ROM_LOAD( "u65_27c.010",   0x30000, 0x20000, 0x71301d74 )
-		ROM_LOAD( "u66_27c.010",   0x50000, 0x20000, 0xc9612072 )
-		ROM_LOAD( "u67_27c.010",   0x70000, 0x20000, 0x4c4b25e0 )
+	static RomLoadPtr rom_indyheat = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x90000, REGION_CPU1, 0 );
+		ROM_LOAD( "u64_27c.010",   0x00000, 0x20000, 0x2b97a347 );
+		ROM_RELOAD(                0x10000, 0x20000 );
+		ROM_LOAD( "u65_27c.010",   0x30000, 0x20000, 0x71301d74 );
+		ROM_LOAD( "u66_27c.010",   0x50000, 0x20000, 0xc9612072 );
+		ROM_LOAD( "u67_27c.010",   0x70000, 0x20000, 0x4c4b25e0 );
 	
-		ROM_REGION( 0x160000, REGION_CPU2, 0 )
-		ROM_LOAD( "u151_27c.010",  0x00000, 0x20000, 0x2622dfa4 )
-		ROM_LOAD( "u152_27c.020",  0x20000, 0x20000, 0xad40e4e2 )
-		ROM_CONTINUE(             0x120000, 0x20000 )
-		ROM_LOAD( "u153_27c.020",  0x40000, 0x20000, 0x1e3803f7 )
-		ROM_CONTINUE(             0x140000, 0x20000 )
-		ROM_LOAD( "u154_27c.010",  0x60000, 0x20000, 0x76d3c235 )
-		ROM_LOAD( "u155_27c.010",  0x80000, 0x20000, 0xd5d866b3 )
-		ROM_LOAD( "u156_27c.010",  0xa0000, 0x20000, 0x7fe71842 )
-		ROM_LOAD( "u157_27c.010",  0xc0000, 0x20000, 0xa6462adc )
-		ROM_LOAD( "u158_27c.010",  0xe0000, 0x20000, 0xd6ef27a3 )
+		ROM_REGION( 0x160000, REGION_CPU2, 0 );
+		ROM_LOAD( "u151_27c.010",  0x00000, 0x20000, 0x2622dfa4 );
+		ROM_LOAD( "u152_27c.020",  0x20000, 0x20000, 0xad40e4e2 );
+		ROM_CONTINUE(             0x120000, 0x20000 );
+		ROM_LOAD( "u153_27c.020",  0x40000, 0x20000, 0x1e3803f7 );
+		ROM_CONTINUE(             0x140000, 0x20000 );
+		ROM_LOAD( "u154_27c.010",  0x60000, 0x20000, 0x76d3c235 );
+		ROM_LOAD( "u155_27c.010",  0x80000, 0x20000, 0xd5d866b3 );
+		ROM_LOAD( "u156_27c.010",  0xa0000, 0x20000, 0x7fe71842 );
+		ROM_LOAD( "u157_27c.010",  0xc0000, 0x20000, 0xa6462adc );
+		ROM_LOAD( "u158_27c.010",  0xe0000, 0x20000, 0xd6ef27a3 );
 	
-		ROM_REGION( 0x100000, REGION_CPU3, 0 )
-		ROM_LOAD16_BYTE( "u3_27c.010",  0x20001, 0x20000, 0x97413818 )
-		ROM_LOAD16_BYTE( "u6_27c.010",  0x20000, 0x20000, 0x15a89962 )
-		ROM_LOAD16_BYTE( "u4_27c.010",  0x60001, 0x20000, 0xfa7bfa04 )
-		ROM_RELOAD(                     0xc0001, 0x20000 )
-		ROM_LOAD16_BYTE( "u5_27c.010",  0x60000, 0x20000, 0x198285d4 )
-		ROM_RELOAD(                     0xc0000, 0x20000 )
+		ROM_REGION( 0x100000, REGION_CPU3, 0 );
+		ROM_LOAD16_BYTE( "u3_27c.010",  0x20001, 0x20000, 0x97413818 );
+		ROM_LOAD16_BYTE( "u6_27c.010",  0x20000, 0x20000, 0x15a89962 );
+		ROM_LOAD16_BYTE( "u4_27c.010",  0x60001, 0x20000, 0xfa7bfa04 );
+		ROM_RELOAD(                     0xc0001, 0x20000 );
+		ROM_LOAD16_BYTE( "u5_27c.010",  0x60000, 0x20000, 0x198285d4 );
+		ROM_RELOAD(                     0xc0000, 0x20000 );
 	
-		ROM_REGION( 0xc0000, REGION_GFX1, ROMREGION_DISPOSE )
-		ROM_LOAD( "u145_27c.010",  0x00000, 0x20000, 0x612d4bf8 )
-		ROM_LOAD( "u146_27c.010",  0x20000, 0x20000, 0x77a725f6 )
-		ROM_LOAD( "u147_27c.010",  0x40000, 0x20000, 0xd6aac372 )
-		ROM_LOAD( "u148_27c.010",  0x60000, 0x20000, 0x5d19723e )
-		ROM_LOAD( "u149_27c.010",  0x80000, 0x20000, 0x29056791 )
-		ROM_LOAD( "u150_27c.010",  0xa0000, 0x20000, 0xcb73dd6a )
+		ROM_REGION( 0xc0000, REGION_GFX1, ROMREGION_DISPOSE );
+		ROM_LOAD( "u145_27c.010",  0x00000, 0x20000, 0x612d4bf8 );
+		ROM_LOAD( "u146_27c.010",  0x20000, 0x20000, 0x77a725f6 );
+		ROM_LOAD( "u147_27c.010",  0x40000, 0x20000, 0xd6aac372 );
+		ROM_LOAD( "u148_27c.010",  0x60000, 0x20000, 0x5d19723e );
+		ROM_LOAD( "u149_27c.010",  0x80000, 0x20000, 0x29056791 );
+		ROM_LOAD( "u150_27c.010",  0xa0000, 0x20000, 0xcb73dd6a );
 	
-		ROM_REGION( 0x40000, REGION_USER1, 0 ) /* X-ROM (data used by main processor) */
-		ROM_LOAD( "u68_27c.010",   0x00000, 0x10000, 0x9e88efb3 )
-		ROM_CONTINUE(              0x20000, 0x10000 )
-		ROM_LOAD( "u69_27c.010",   0x10000, 0x10000, 0xaa39fcb3 )
-		ROM_CONTINUE(              0x30000, 0x10000 )
+		ROM_REGION( 0x40000, REGION_USER1, 0 );/* X-ROM (data used by main processor) */
+		ROM_LOAD( "u68_27c.010",   0x00000, 0x10000, 0x9e88efb3 );
+		ROM_CONTINUE(              0x20000, 0x10000 );
+		ROM_LOAD( "u69_27c.010",   0x10000, 0x10000, 0xaa39fcb3 );
+		ROM_CONTINUE(              0x30000, 0x10000 );
 	
-		ROM_REGION( 0x40000, REGION_SOUND1, 0 ) /* externally clocked DAC data */
-		ROM_LOAD( "u8_27c.010",  0x00000, 0x20000, 0x9f16e5b6 )
-		ROM_LOAD( "u9_27c.010",  0x20000, 0x20000, 0x0dc8f488 )
+		ROM_REGION( 0x40000, REGION_SOUND1, 0 );/* externally clocked DAC data */
+		ROM_LOAD( "u8_27c.010",  0x00000, 0x20000, 0x9f16e5b6 );
+		ROM_LOAD( "u9_27c.010",  0x20000, 0x20000, 0x0dc8f488 );
 	
-		ROM_REGION( battery_ram_size + extra_tram_size, REGION_USER2, 0 ) /* extra RAM regions */
-	ROM_END
+		ROM_REGION( battery_ram_size + extra_tram_size, REGION_USER2, 0 );/* extra RAM regions */
+	ROM_END(); }}; 
 	
-	ROM_START( brutforc )
-		ROM_REGION( 0x90000, REGION_CPU1, 0 )
-		ROM_LOAD( "u64",   0x00000, 0x20000, 0x008ae3b8 )
-		ROM_RELOAD(                 0x10000, 0x20000 )
-		ROM_LOAD( "u65",   0x30000, 0x20000, 0x6036e3fa )
-		ROM_LOAD( "u66",   0x50000, 0x20000, 0x7ebf0795 )
-		ROM_LOAD( "u67",   0x70000, 0x20000, 0xe3cbf8b4 )
+	static RomLoadPtr rom_brutforc = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x90000, REGION_CPU1, 0 );
+		ROM_LOAD( "u64",   0x00000, 0x20000, 0x008ae3b8 );
+		ROM_RELOAD(                 0x10000, 0x20000 );
+		ROM_LOAD( "u65",   0x30000, 0x20000, 0x6036e3fa );
+		ROM_LOAD( "u66",   0x50000, 0x20000, 0x7ebf0795 );
+		ROM_LOAD( "u67",   0x70000, 0x20000, 0xe3cbf8b4 );
 	
-		ROM_REGION( 0x100000, REGION_CPU2, 0 )
-		ROM_LOAD( "u151",  0x00000, 0x20000, 0xbd3b677b )
-		ROM_LOAD( "u152",  0x20000, 0x20000, 0x5f4434e7 )
-		ROM_LOAD( "u153",  0x40000, 0x20000, 0x20f7df53 )
-		ROM_LOAD( "u154",  0x60000, 0x20000, 0x69ce2329 )
-		ROM_LOAD( "u155",  0x80000, 0x20000, 0x33d92e25 )
-		ROM_LOAD( "u156",  0xa0000, 0x20000, 0xde7eca8b )
-		ROM_LOAD( "u157",  0xc0000, 0x20000, 0xe42b3dba )
-		ROM_LOAD( "u158",  0xe0000, 0x20000, 0xa0aa3220 )
+		ROM_REGION( 0x100000, REGION_CPU2, 0 );
+		ROM_LOAD( "u151",  0x00000, 0x20000, 0xbd3b677b );
+		ROM_LOAD( "u152",  0x20000, 0x20000, 0x5f4434e7 );
+		ROM_LOAD( "u153",  0x40000, 0x20000, 0x20f7df53 );
+		ROM_LOAD( "u154",  0x60000, 0x20000, 0x69ce2329 );
+		ROM_LOAD( "u155",  0x80000, 0x20000, 0x33d92e25 );
+		ROM_LOAD( "u156",  0xa0000, 0x20000, 0xde7eca8b );
+		ROM_LOAD( "u157",  0xc0000, 0x20000, 0xe42b3dba );
+		ROM_LOAD( "u158",  0xe0000, 0x20000, 0xa0aa3220 );
 	
-		ROM_REGION( 0x100000, REGION_CPU3, 0 )
-		ROM_LOAD16_BYTE( "u3",  0x20001, 0x20000, 0x9984906c )
-		ROM_LOAD16_BYTE( "u6",  0x20000, 0x20000, 0xc9c5a413 )
-		ROM_LOAD16_BYTE( "u4",  0x60001, 0x20000, 0xca8ab3a6 )
-		ROM_RELOAD(             0xc0001, 0x20000 )
-		ROM_LOAD16_BYTE( "u5",  0x60000, 0x20000, 0xcbdb914b )
-		ROM_RELOAD(             0xc0000, 0x20000 )
+		ROM_REGION( 0x100000, REGION_CPU3, 0 );
+		ROM_LOAD16_BYTE( "u3",  0x20001, 0x20000, 0x9984906c );
+		ROM_LOAD16_BYTE( "u6",  0x20000, 0x20000, 0xc9c5a413 );
+		ROM_LOAD16_BYTE( "u4",  0x60001, 0x20000, 0xca8ab3a6 );
+		ROM_RELOAD(             0xc0001, 0x20000 );
+		ROM_LOAD16_BYTE( "u5",  0x60000, 0x20000, 0xcbdb914b );
+		ROM_RELOAD(             0xc0000, 0x20000 );
 	
-		ROM_REGION( 0x180000, REGION_GFX1, ROMREGION_DISPOSE )
-		ROM_LOAD( "u145",  0x000000, 0x40000, 0xc3d20d24 )
-		ROM_LOAD( "u146",  0x040000, 0x40000, 0x43e9dd87 )
-		ROM_LOAD( "u147",  0x080000, 0x40000, 0xfb855ce8 )
-		ROM_LOAD( "u148",  0x0c0000, 0x40000, 0xe4b54eae )
-		ROM_LOAD( "u149",  0x100000, 0x40000, 0xcf48401c )
-		ROM_LOAD( "u150",  0x140000, 0x40000, 0xca9e1e33 )
+		ROM_REGION( 0x180000, REGION_GFX1, ROMREGION_DISPOSE );
+		ROM_LOAD( "u145",  0x000000, 0x40000, 0xc3d20d24 );
+		ROM_LOAD( "u146",  0x040000, 0x40000, 0x43e9dd87 );
+		ROM_LOAD( "u147",  0x080000, 0x40000, 0xfb855ce8 );
+		ROM_LOAD( "u148",  0x0c0000, 0x40000, 0xe4b54eae );
+		ROM_LOAD( "u149",  0x100000, 0x40000, 0xcf48401c );
+		ROM_LOAD( "u150",  0x140000, 0x40000, 0xca9e1e33 );
 	
-		ROM_REGION( 0x40000, REGION_USER1, 0 ) /* X-ROM (data used by main processor) */
-		ROM_LOAD( "u68",   0x00000, 0x10000, 0x77c8de62 )
-		ROM_CONTINUE(      0x20000, 0x10000 )
-		ROM_LOAD( "u69",   0x10000, 0x10000, 0x113aa6d5 )
-		ROM_CONTINUE(      0x30000, 0x10000 )
+		ROM_REGION( 0x40000, REGION_USER1, 0 );/* X-ROM (data used by main processor) */
+		ROM_LOAD( "u68",   0x00000, 0x10000, 0x77c8de62 );
+		ROM_CONTINUE(      0x20000, 0x10000 );
+		ROM_LOAD( "u69",   0x10000, 0x10000, 0x113aa6d5 );
+		ROM_CONTINUE(      0x30000, 0x10000 );
 	
-		ROM_REGION( 0x80000, REGION_SOUND1, 0 ) /* externally clocked DAC data */
-		ROM_LOAD( "u8",  0x00000, 0x20000, 0x1e0ead72 )
-		ROM_LOAD( "u9",  0x20000, 0x20000, 0x3195b305 )
-		ROM_LOAD( "u10", 0x40000, 0x20000, 0x1dc5f375 )
-		ROM_LOAD( "u11", 0x60000, 0x20000, 0x5ed4877f )
+		ROM_REGION( 0x80000, REGION_SOUND1, 0 );/* externally clocked DAC data */
+		ROM_LOAD( "u8",  0x00000, 0x20000, 0x1e0ead72 );
+		ROM_LOAD( "u9",  0x20000, 0x20000, 0x3195b305 );
+		ROM_LOAD( "u10", 0x40000, 0x20000, 0x1dc5f375 );
+		ROM_LOAD( "u11", 0x60000, 0x20000, 0x5ed4877f );
 	
-		ROM_REGION( battery_ram_size + extra_tram_size, REGION_USER2, 0 ) /* extra RAM regions */
-	ROM_END
+		ROM_REGION( battery_ram_size + extra_tram_size, REGION_USER2, 0 );/* extra RAM regions */
+	ROM_END(); }}; 
 	
 	
 	

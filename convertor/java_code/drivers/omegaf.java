@@ -768,151 +768,151 @@ public class omegaf
 	  ROM loaders
 	**************************************************************************/
 	
-	ROM_START( omegaf )
-		ROM_REGION( 0x48000, REGION_CPU1, 0 )						/* main CPU */
-		ROM_LOAD( "1.5",          0x00000, 0x08000, 0x57a7fd96 )
-		ROM_CONTINUE(             0x10000, 0x18000 )
-		ROM_LOAD( "6.4l",         0x28000, 0x20000, 0x6277735c )
+	static RomLoadPtr rom_omegaf = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x48000, REGION_CPU1, 0 );					/* main CPU */
+		ROM_LOAD( "1.5",          0x00000, 0x08000, 0x57a7fd96 );
+		ROM_CONTINUE(             0x10000, 0x18000 );
+		ROM_LOAD( "6.4l",         0x28000, 0x20000, 0x6277735c );
 	
-		ROM_REGION( 0x10000, REGION_CPU2, 0 )						/* sound CPU */
-		ROM_LOAD( "7.7m",         0x00000, 0x10000, 0xd40fc8d5 )
+		ROM_REGION( 0x10000, REGION_CPU2, 0 );					/* sound CPU */
+		ROM_LOAD( "7.7m",         0x00000, 0x10000, 0xd40fc8d5 );
 	
-		ROM_REGION( 0x80000, REGION_GFX1, ROMREGION_DISPOSE )		/* BG0 */
-		ROM_LOAD( "2back1.27b",   0x00000, 0x80000, 0x21f8a32e )
+		ROM_REGION( 0x80000, REGION_GFX1, ROMREGION_DISPOSE );	/* BG0 */
+		ROM_LOAD( "2back1.27b",   0x00000, 0x80000, 0x21f8a32e );
 	
-		ROM_REGION( 0x80000, REGION_GFX2, ROMREGION_DISPOSE )		/* BG1 */
-		ROM_LOAD( "1back2.15b",   0x00000, 0x80000, 0x6210ddcc )
+		ROM_REGION( 0x80000, REGION_GFX2, ROMREGION_DISPOSE );	/* BG1 */
+		ROM_LOAD( "1back2.15b",   0x00000, 0x80000, 0x6210ddcc );
 	
-		ROM_REGION( 0x80000, REGION_GFX3, ROMREGION_DISPOSE )		/* BG2 */
-		ROM_LOAD( "3back3.5f",    0x00000, 0x80000, 0xc31cae56 )
+		ROM_REGION( 0x80000, REGION_GFX3, ROMREGION_DISPOSE );	/* BG2 */
+		ROM_LOAD( "3back3.5f",    0x00000, 0x80000, 0xc31cae56 );
 	
-		ROM_REGION( 0x20000, REGION_GFX4, ROMREGION_DISPOSE )		/* sprite */
-		ROM_LOAD( "8.23m",        0x00000, 0x20000, 0x0bd2a5d1 )
+		ROM_REGION( 0x20000, REGION_GFX4, ROMREGION_DISPOSE );	/* sprite */
+		ROM_LOAD( "8.23m",        0x00000, 0x20000, 0x0bd2a5d1 );
 	
-		ROM_REGION( 0x08000, REGION_GFX5, ROMREGION_DISPOSE )		/* FG */
-		ROM_LOAD( "4.18h",        0x00000, 0x08000, 0x9e2d8152 )
-	ROM_END
+		ROM_REGION( 0x08000, REGION_GFX5, ROMREGION_DISPOSE );	/* FG */
+		ROM_LOAD( "4.18h",        0x00000, 0x08000, 0x9e2d8152 );
+	ROM_END(); }}; 
 	
-	ROM_START( omegafs )
-		ROM_REGION( 0x48000, REGION_CPU1, 0 )						/* main CPU */
-		ROM_LOAD( "5.3l",         0x00000, 0x08000, 0x503a3e63 )
-		ROM_CONTINUE(             0x10000, 0x18000 )
-		ROM_LOAD( "6.4l",         0x28000, 0x20000, 0x6277735c )
+	static RomLoadPtr rom_omegafs = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x48000, REGION_CPU1, 0 );					/* main CPU */
+		ROM_LOAD( "5.3l",         0x00000, 0x08000, 0x503a3e63 );
+		ROM_CONTINUE(             0x10000, 0x18000 );
+		ROM_LOAD( "6.4l",         0x28000, 0x20000, 0x6277735c );
 	
-		ROM_REGION( 0x10000, REGION_CPU2, 0 )						/* sound CPU */
-		ROM_LOAD( "7.7m",         0x00000, 0x10000, 0xd40fc8d5 )
+		ROM_REGION( 0x10000, REGION_CPU2, 0 );					/* sound CPU */
+		ROM_LOAD( "7.7m",         0x00000, 0x10000, 0xd40fc8d5 );
 	
-		ROM_REGION( 0x80000, REGION_GFX1, ROMREGION_DISPOSE )		/* BG0 */
-		ROM_LOAD( "2back1.27b",   0x00000, 0x80000, 0x21f8a32e )
+		ROM_REGION( 0x80000, REGION_GFX1, ROMREGION_DISPOSE );	/* BG0 */
+		ROM_LOAD( "2back1.27b",   0x00000, 0x80000, 0x21f8a32e );
 	
-		ROM_REGION( 0x80000, REGION_GFX2, ROMREGION_DISPOSE )		/* BG1 */
-		ROM_LOAD( "1back2.15b",   0x00000, 0x80000, 0x6210ddcc )
+		ROM_REGION( 0x80000, REGION_GFX2, ROMREGION_DISPOSE );	/* BG1 */
+		ROM_LOAD( "1back2.15b",   0x00000, 0x80000, 0x6210ddcc );
 	
-		ROM_REGION( 0x80000, REGION_GFX3, ROMREGION_DISPOSE )		/* BG2 */
-		ROM_LOAD( "3back3.5f",    0x00000, 0x80000, 0xc31cae56 )
+		ROM_REGION( 0x80000, REGION_GFX3, ROMREGION_DISPOSE );	/* BG2 */
+		ROM_LOAD( "3back3.5f",    0x00000, 0x80000, 0xc31cae56 );
 	
-		ROM_REGION( 0x20000, REGION_GFX4, ROMREGION_DISPOSE )		/* sprite */
-		ROM_LOAD( "8.23m",        0x00000, 0x20000, 0x0bd2a5d1 )
+		ROM_REGION( 0x20000, REGION_GFX4, ROMREGION_DISPOSE );	/* sprite */
+		ROM_LOAD( "8.23m",        0x00000, 0x20000, 0x0bd2a5d1 );
 	
-		ROM_REGION( 0x08000, REGION_GFX5, ROMREGION_DISPOSE )		/* FG */
-		ROM_LOAD( "4.18h",        0x00000, 0x08000, 0x9e2d8152 )
-	ROM_END
+		ROM_REGION( 0x08000, REGION_GFX5, ROMREGION_DISPOSE );	/* FG */
+		ROM_LOAD( "4.18h",        0x00000, 0x08000, 0x9e2d8152 );
+	ROM_END(); }}; 
 	
-	ROM_START( robokid )
-		ROM_REGION( 0x48000, REGION_CPU1, 0 )						/* main CPU */
-		ROM_LOAD( "robokid1.18j", 0x00000, 0x08000, 0x378c21fc )
-		ROM_CONTINUE(             0x10000, 0x08000 )
-		ROM_LOAD( "robokid2.18k", 0x18000, 0x10000, 0xddef8c5a )
-		ROM_LOAD( "robokid3.15k", 0x28000, 0x10000, 0x05295ec3 )
-		ROM_LOAD( "robokid4.12k", 0x38000, 0x10000, 0x3bc3977f )
+	static RomLoadPtr rom_robokid = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x48000, REGION_CPU1, 0 );					/* main CPU */
+		ROM_LOAD( "robokid1.18j", 0x00000, 0x08000, 0x378c21fc );
+		ROM_CONTINUE(             0x10000, 0x08000 );
+		ROM_LOAD( "robokid2.18k", 0x18000, 0x10000, 0xddef8c5a );
+		ROM_LOAD( "robokid3.15k", 0x28000, 0x10000, 0x05295ec3 );
+		ROM_LOAD( "robokid4.12k", 0x38000, 0x10000, 0x3bc3977f );
 	
-		ROM_REGION( 0x10000, REGION_CPU2, 0 )						/* sound CPU */
-		ROM_LOAD( "robokid.k7",   0x00000, 0x10000, 0xf490a2e9 )
+		ROM_REGION( 0x10000, REGION_CPU2, 0 );					/* sound CPU */
+		ROM_LOAD( "robokid.k7",   0x00000, 0x10000, 0xf490a2e9 );
 	
-		ROM_REGION( 0x80000, REGION_GFX1, ROMREGION_DISPOSE )		/* BG0 */
-		ROM_LOAD( "robokid.19c",  0x00000, 0x10000, 0x02220421 )
-		ROM_LOAD( "robokid.20c",  0x10000, 0x10000, 0x02d59bc2 )
-		ROM_LOAD( "robokid.17d",  0x20000, 0x10000, 0x2fa29b99 )
-		ROM_LOAD( "robokid.18d",  0x30000, 0x10000, 0xae15ce02 )
-		ROM_LOAD( "robokid.19d",  0x40000, 0x10000, 0x784b089e )
-		ROM_LOAD( "robokid.20d",  0x50000, 0x10000, 0xb0b395ed )
-		ROM_LOAD( "robokid.19f",  0x60000, 0x10000, 0x0f9071c6 )
+		ROM_REGION( 0x80000, REGION_GFX1, ROMREGION_DISPOSE );	/* BG0 */
+		ROM_LOAD( "robokid.19c",  0x00000, 0x10000, 0x02220421 );
+		ROM_LOAD( "robokid.20c",  0x10000, 0x10000, 0x02d59bc2 );
+		ROM_LOAD( "robokid.17d",  0x20000, 0x10000, 0x2fa29b99 );
+		ROM_LOAD( "robokid.18d",  0x30000, 0x10000, 0xae15ce02 );
+		ROM_LOAD( "robokid.19d",  0x40000, 0x10000, 0x784b089e );
+		ROM_LOAD( "robokid.20d",  0x50000, 0x10000, 0xb0b395ed );
+		ROM_LOAD( "robokid.19f",  0x60000, 0x10000, 0x0f9071c6 );
 	
-		ROM_REGION( 0x80000, REGION_GFX2, ROMREGION_DISPOSE )		/* BG1 */
-		ROM_LOAD( "robokid.12c",  0x00000, 0x10000, 0x0ab45f94 )
-		ROM_LOAD( "robokid.14c",  0x10000, 0x10000, 0x029bbd4a )
-		ROM_LOAD( "robokid.15c",  0x20000, 0x10000, 0x7de67ebb )
-		ROM_LOAD( "robokid.16c",  0x30000, 0x10000, 0x53c0e582 )
-		ROM_LOAD( "robokid.17c",  0x40000, 0x10000, 0x0cae5a1e )
-		ROM_LOAD( "robokid.18c",  0x50000, 0x10000, 0x56ac7c8a )
-		ROM_LOAD( "robokid.15d",  0x60000, 0x10000, 0xcd632a4d )
-		ROM_LOAD( "robokid.16d",  0x70000, 0x10000, 0x18d92b2b )
+		ROM_REGION( 0x80000, REGION_GFX2, ROMREGION_DISPOSE );	/* BG1 */
+		ROM_LOAD( "robokid.12c",  0x00000, 0x10000, 0x0ab45f94 );
+		ROM_LOAD( "robokid.14c",  0x10000, 0x10000, 0x029bbd4a );
+		ROM_LOAD( "robokid.15c",  0x20000, 0x10000, 0x7de67ebb );
+		ROM_LOAD( "robokid.16c",  0x30000, 0x10000, 0x53c0e582 );
+		ROM_LOAD( "robokid.17c",  0x40000, 0x10000, 0x0cae5a1e );
+		ROM_LOAD( "robokid.18c",  0x50000, 0x10000, 0x56ac7c8a );
+		ROM_LOAD( "robokid.15d",  0x60000, 0x10000, 0xcd632a4d );
+		ROM_LOAD( "robokid.16d",  0x70000, 0x10000, 0x18d92b2b );
 	
-		ROM_REGION( 0x80000, REGION_GFX3, ROMREGION_DISPOSE )		/* BG2 */
-		ROM_LOAD( "robokid.12a",  0x00000, 0x10000, 0xe64d1c10 )
-		ROM_LOAD( "robokid.14a",  0x10000, 0x10000, 0x8f9371e4 )
-		ROM_LOAD( "robokid.15a",  0x20000, 0x10000, 0x469204e7 )
-		ROM_LOAD( "robokid.16a",  0x30000, 0x10000, 0x4e340815 )
-		ROM_LOAD( "robokid.17a",  0x40000, 0x10000, 0xf0863106 )
-		ROM_LOAD( "robokid.18a",  0x50000, 0x10000, 0xfdff7441 )
+		ROM_REGION( 0x80000, REGION_GFX3, ROMREGION_DISPOSE );	/* BG2 */
+		ROM_LOAD( "robokid.12a",  0x00000, 0x10000, 0xe64d1c10 );
+		ROM_LOAD( "robokid.14a",  0x10000, 0x10000, 0x8f9371e4 );
+		ROM_LOAD( "robokid.15a",  0x20000, 0x10000, 0x469204e7 );
+		ROM_LOAD( "robokid.16a",  0x30000, 0x10000, 0x4e340815 );
+		ROM_LOAD( "robokid.17a",  0x40000, 0x10000, 0xf0863106 );
+		ROM_LOAD( "robokid.18a",  0x50000, 0x10000, 0xfdff7441 );
 	
-		ROM_REGION( 0x40000, REGION_GFX4, ROMREGION_DISPOSE )		/* sprite */
-		ROM_LOAD( "robokid.15f",  0x00000, 0x10000, 0xba61f5ab )
-		ROM_LOAD( "robokid.16f",  0x10000, 0x10000, 0xd9b399ce )
-		ROM_LOAD( "robokid.17f",  0x20000, 0x10000, 0xafe432b9 )
-		ROM_LOAD( "robokid.18f",  0x30000, 0x10000, 0xa0aa2a84 )
+		ROM_REGION( 0x40000, REGION_GFX4, ROMREGION_DISPOSE );	/* sprite */
+		ROM_LOAD( "robokid.15f",  0x00000, 0x10000, 0xba61f5ab );
+		ROM_LOAD( "robokid.16f",  0x10000, 0x10000, 0xd9b399ce );
+		ROM_LOAD( "robokid.17f",  0x20000, 0x10000, 0xafe432b9 );
+		ROM_LOAD( "robokid.18f",  0x30000, 0x10000, 0xa0aa2a84 );
 	
-		ROM_REGION( 0x08000, REGION_GFX5, ROMREGION_DISPOSE )		/* FG */
-		ROM_LOAD( "robokid.b9",   0x00000, 0x08000, 0xfac59c3f )
-	ROM_END
+		ROM_REGION( 0x08000, REGION_GFX5, ROMREGION_DISPOSE );	/* FG */
+		ROM_LOAD( "robokid.b9",   0x00000, 0x08000, 0xfac59c3f );
+	ROM_END(); }}; 
 	
-	ROM_START( robokidj )
-		ROM_REGION( 0x48000, REGION_CPU1, 0 )						/* main CPU */
-		ROM_LOAD( "1.29",         0x00000, 0x08000, 0x59a1e2ec )
-		ROM_CONTINUE(             0x10000, 0x08000 )
-		ROM_LOAD( "2.30",         0x18000, 0x10000, 0xe3f73476 )
-		ROM_LOAD( "robokid3.15k", 0x28000, 0x10000, 0x05295ec3 )
-		ROM_LOAD( "robokid4.12k", 0x38000, 0x10000, 0x3bc3977f )
+	static RomLoadPtr rom_robokidj = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x48000, REGION_CPU1, 0 );					/* main CPU */
+		ROM_LOAD( "1.29",         0x00000, 0x08000, 0x59a1e2ec );
+		ROM_CONTINUE(             0x10000, 0x08000 );
+		ROM_LOAD( "2.30",         0x18000, 0x10000, 0xe3f73476 );
+		ROM_LOAD( "robokid3.15k", 0x28000, 0x10000, 0x05295ec3 );
+		ROM_LOAD( "robokid4.12k", 0x38000, 0x10000, 0x3bc3977f );
 	
-		ROM_REGION( 0x10000, REGION_CPU2, 0 )						/* sound CPU */
-		ROM_LOAD( "robokid.k7",   0x00000, 0x10000, 0xf490a2e9 )
+		ROM_REGION( 0x10000, REGION_CPU2, 0 );					/* sound CPU */
+		ROM_LOAD( "robokid.k7",   0x00000, 0x10000, 0xf490a2e9 );
 	
-		ROM_REGION( 0x80000, REGION_GFX1, ROMREGION_DISPOSE )		/* BG0 */
-		ROM_LOAD( "robokid.19c",  0x00000, 0x10000, 0x02220421 )
-		ROM_LOAD( "robokid.20c",  0x10000, 0x10000, 0x02d59bc2 )
-		ROM_LOAD( "robokid.17d",  0x20000, 0x10000, 0x2fa29b99 )
-		ROM_LOAD( "robokid.18d",  0x30000, 0x10000, 0xae15ce02 )
-		ROM_LOAD( "robokid.19d",  0x40000, 0x10000, 0x784b089e )
-		ROM_LOAD( "robokid.20d",  0x50000, 0x10000, 0xb0b395ed )
-		ROM_LOAD( "robokid.19f",  0x60000, 0x10000, 0x0f9071c6 )
+		ROM_REGION( 0x80000, REGION_GFX1, ROMREGION_DISPOSE );	/* BG0 */
+		ROM_LOAD( "robokid.19c",  0x00000, 0x10000, 0x02220421 );
+		ROM_LOAD( "robokid.20c",  0x10000, 0x10000, 0x02d59bc2 );
+		ROM_LOAD( "robokid.17d",  0x20000, 0x10000, 0x2fa29b99 );
+		ROM_LOAD( "robokid.18d",  0x30000, 0x10000, 0xae15ce02 );
+		ROM_LOAD( "robokid.19d",  0x40000, 0x10000, 0x784b089e );
+		ROM_LOAD( "robokid.20d",  0x50000, 0x10000, 0xb0b395ed );
+		ROM_LOAD( "robokid.19f",  0x60000, 0x10000, 0x0f9071c6 );
 	
-		ROM_REGION( 0x80000, REGION_GFX2, ROMREGION_DISPOSE )		/* BG1 */
-		ROM_LOAD( "robokid.12c",  0x00000, 0x10000, 0x0ab45f94 )
-		ROM_LOAD( "robokid.14c",  0x10000, 0x10000, 0x029bbd4a )
-		ROM_LOAD( "robokid.15c",  0x20000, 0x10000, 0x7de67ebb )
-		ROM_LOAD( "robokid.16c",  0x30000, 0x10000, 0x53c0e582 )
-		ROM_LOAD( "robokid.17c",  0x40000, 0x10000, 0x0cae5a1e )
-		ROM_LOAD( "robokid.18c",  0x50000, 0x10000, 0x56ac7c8a )
-		ROM_LOAD( "robokid.15d",  0x60000, 0x10000, 0xcd632a4d )
-		ROM_LOAD( "robokid.16d",  0x70000, 0x10000, 0x18d92b2b )
+		ROM_REGION( 0x80000, REGION_GFX2, ROMREGION_DISPOSE );	/* BG1 */
+		ROM_LOAD( "robokid.12c",  0x00000, 0x10000, 0x0ab45f94 );
+		ROM_LOAD( "robokid.14c",  0x10000, 0x10000, 0x029bbd4a );
+		ROM_LOAD( "robokid.15c",  0x20000, 0x10000, 0x7de67ebb );
+		ROM_LOAD( "robokid.16c",  0x30000, 0x10000, 0x53c0e582 );
+		ROM_LOAD( "robokid.17c",  0x40000, 0x10000, 0x0cae5a1e );
+		ROM_LOAD( "robokid.18c",  0x50000, 0x10000, 0x56ac7c8a );
+		ROM_LOAD( "robokid.15d",  0x60000, 0x10000, 0xcd632a4d );
+		ROM_LOAD( "robokid.16d",  0x70000, 0x10000, 0x18d92b2b );
 	
-		ROM_REGION( 0x80000, REGION_GFX3, ROMREGION_DISPOSE )		/* BG2 */
-		ROM_LOAD( "robokid.12a",  0x00000, 0x10000, 0xe64d1c10 )
-		ROM_LOAD( "robokid.14a",  0x10000, 0x10000, 0x8f9371e4 )
-		ROM_LOAD( "robokid.15a",  0x20000, 0x10000, 0x469204e7 )
-		ROM_LOAD( "robokid.16a",  0x30000, 0x10000, 0x4e340815 )
-		ROM_LOAD( "robokid.17a",  0x40000, 0x10000, 0xf0863106 )
-		ROM_LOAD( "robokid.18a",  0x50000, 0x10000, 0xfdff7441 )
+		ROM_REGION( 0x80000, REGION_GFX3, ROMREGION_DISPOSE );	/* BG2 */
+		ROM_LOAD( "robokid.12a",  0x00000, 0x10000, 0xe64d1c10 );
+		ROM_LOAD( "robokid.14a",  0x10000, 0x10000, 0x8f9371e4 );
+		ROM_LOAD( "robokid.15a",  0x20000, 0x10000, 0x469204e7 );
+		ROM_LOAD( "robokid.16a",  0x30000, 0x10000, 0x4e340815 );
+		ROM_LOAD( "robokid.17a",  0x40000, 0x10000, 0xf0863106 );
+		ROM_LOAD( "robokid.18a",  0x50000, 0x10000, 0xfdff7441 );
 	
-		ROM_REGION( 0x40000, REGION_GFX4, ROMREGION_DISPOSE )		/* sprite */
-		ROM_LOAD( "robokid.15f",  0x00000, 0x10000, 0xba61f5ab )
-		ROM_LOAD( "robokid.16f",  0x10000, 0x10000, 0xd9b399ce )
-		ROM_LOAD( "robokid.17f",  0x20000, 0x10000, 0xafe432b9 )
-		ROM_LOAD( "robokid.18f",  0x30000, 0x10000, 0xa0aa2a84 )
+		ROM_REGION( 0x40000, REGION_GFX4, ROMREGION_DISPOSE );	/* sprite */
+		ROM_LOAD( "robokid.15f",  0x00000, 0x10000, 0xba61f5ab );
+		ROM_LOAD( "robokid.16f",  0x10000, 0x10000, 0xd9b399ce );
+		ROM_LOAD( "robokid.17f",  0x20000, 0x10000, 0xafe432b9 );
+		ROM_LOAD( "robokid.18f",  0x30000, 0x10000, 0xa0aa2a84 );
 	
-		ROM_REGION( 0x08000, REGION_GFX5, ROMREGION_DISPOSE )		/* FG */
-		ROM_LOAD( "robokid.b9",   0x00000, 0x08000, 0xfac59c3f )
-	ROM_END
+		ROM_REGION( 0x08000, REGION_GFX5, ROMREGION_DISPOSE );	/* FG */
+		ROM_LOAD( "robokid.b9",   0x00000, 0x08000, 0xfac59c3f );
+	ROM_END(); }}; 
 	
 	
 	/*   ( YEAR  NAME      PARENT   MACHINE  INPUT    INIT      MONITOR COMPANY  FULLNAME                 FLAGS ) */

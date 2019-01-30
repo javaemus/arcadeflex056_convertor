@@ -289,20 +289,20 @@ public class cloud9
 	
 	***************************************************************************/
 	
-	ROM_START( cloud9 )
-		ROM_REGION( 0x14000, REGION_CPU1, 0 )	/* 64k for code + extra VRAM space */
-		ROM_LOAD( "c9_6000.bin", 0x6000, 0x2000, 0xb5d95d98 )
-		ROM_LOAD( "c9_8000.bin", 0x8000, 0x2000, 0x49af8f22 )
-		ROM_LOAD( "c9_a000.bin", 0xa000, 0x2000, 0x7cf404a6 )
-		ROM_LOAD( "c9_c000.bin", 0xc000, 0x2000, 0x26a4d7df )
-		ROM_LOAD( "c9_e000.bin", 0xe000, 0x2000, 0x6e663bce )
+	static RomLoadPtr rom_cloud9 = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x14000, REGION_CPU1, 0 );/* 64k for code + extra VRAM space */
+		ROM_LOAD( "c9_6000.bin", 0x6000, 0x2000, 0xb5d95d98 );
+		ROM_LOAD( "c9_8000.bin", 0x8000, 0x2000, 0x49af8f22 );
+		ROM_LOAD( "c9_a000.bin", 0xa000, 0x2000, 0x7cf404a6 );
+		ROM_LOAD( "c9_c000.bin", 0xc000, 0x2000, 0x26a4d7df );
+		ROM_LOAD( "c9_e000.bin", 0xe000, 0x2000, 0x6e663bce );
 	
-		ROM_REGION( 0x4000, REGION_GFX1, ROMREGION_DISPOSE )
-		ROM_LOAD( "c9_gfx0.bin", 0x0000, 0x1000, 0xd01a8019 )
-		ROM_LOAD( "c9_gfx1.bin", 0x1000, 0x1000, 0x514ac009 )
-		ROM_LOAD( "c9_gfx2.bin", 0x2000, 0x1000, 0x930c1ade )
-		ROM_LOAD( "c9_gfx3.bin", 0x3000, 0x1000, 0x27e9b88d )
-	ROM_END
+		ROM_REGION( 0x4000, REGION_GFX1, ROMREGION_DISPOSE );
+		ROM_LOAD( "c9_gfx0.bin", 0x0000, 0x1000, 0xd01a8019 );
+		ROM_LOAD( "c9_gfx1.bin", 0x1000, 0x1000, 0x514ac009 );
+		ROM_LOAD( "c9_gfx2.bin", 0x2000, 0x1000, 0x930c1ade );
+		ROM_LOAD( "c9_gfx3.bin", 0x3000, 0x1000, 0x27e9b88d );
+	ROM_END(); }}; 
 	
 	
 	

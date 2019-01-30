@@ -303,99 +303,99 @@ public class rollrace
 	
 	***************************************************************************/
 	
-	ROM_START( fightrol )
-		ROM_REGION( 0x10000, REGION_CPU1,0 )	/* 64k for code */
-		ROM_LOAD( "4.8k", 0x0000, 0x2000, 0xefa2f430 )
-		ROM_LOAD( "5.8h", 0x2000, 0x2000, 0x2497d9f6 )
-		ROM_LOAD( "6.8f", 0x4000, 0x2000, 0xf39727b9 )
-		ROM_LOAD( "7.8d", 0x6000, 0x2000, 0xee65b728 )
+	static RomLoadPtr rom_fightrol = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x10000, REGION_CPU1,0 );/* 64k for code */
+		ROM_LOAD( "4.8k", 0x0000, 0x2000, 0xefa2f430 );
+		ROM_LOAD( "5.8h", 0x2000, 0x2000, 0x2497d9f6 );
+		ROM_LOAD( "6.8f", 0x4000, 0x2000, 0xf39727b9 );
+		ROM_LOAD( "7.8d", 0x6000, 0x2000, 0xee65b728 );
 	
-		ROM_REGION( 0x6000,REGION_GFX1,ROMREGION_DISPOSE )	/* characters */
-		ROM_LOAD( "3.7m", 0x0000, 0x2000, 0xca4f353c )
-		ROM_LOAD( "2.8m", 0x2000, 0x2000, 0x93786171 )
-		ROM_LOAD( "1.9m", 0x4000, 0x2000, 0xdc072be1 )
+		ROM_REGION( 0x6000,REGION_GFX1,ROMREGION_DISPOSE );/* characters */
+		ROM_LOAD( "3.7m", 0x0000, 0x2000, 0xca4f353c );
+		ROM_LOAD( "2.8m", 0x2000, 0x2000, 0x93786171 );
+		ROM_LOAD( "1.9m", 0x4000, 0x2000, 0xdc072be1 );
 	
-		ROM_REGION( 0x6000, REGION_GFX2,ROMREGION_DISPOSE )	/* road graphics */
-		ROM_LOAD ( "6.20k", 0x0000, 0x2000, 0x003d7515 )
-		ROM_LOAD ( "7.18k", 0x2000, 0x2000, 0x27843afa )
-		ROM_LOAD ( "5.20f", 0x4000, 0x2000, 0x51dd0108 )
+		ROM_REGION( 0x6000, REGION_GFX2,ROMREGION_DISPOSE );/* road graphics */
+		ROM_LOAD ( "6.20k", 0x0000, 0x2000, 0x003d7515 );
+		ROM_LOAD ( "7.18k", 0x2000, 0x2000, 0x27843afa );
+		ROM_LOAD ( "5.20f", 0x4000, 0x2000, 0x51dd0108 );
 	
-		ROM_REGION( 0x6000, REGION_GFX3,ROMREGION_DISPOSE ) 	/* sprite bank 0*/
-		ROM_LOAD ( "8.17m",  0x0000, 0x2000, 0x08ad783e )
-		ROM_LOAD ( "9.17r",  0x2000, 0x2000, 0x69b23461 )
-		ROM_LOAD ( "10.17t", 0x4000, 0x2000, 0xba6ccd8c )
+		ROM_REGION( 0x6000, REGION_GFX3,ROMREGION_DISPOSE );	/* sprite bank 0*/
+		ROM_LOAD ( "8.17m",  0x0000, 0x2000, 0x08ad783e );
+		ROM_LOAD ( "9.17r",  0x2000, 0x2000, 0x69b23461 );
+		ROM_LOAD ( "10.17t", 0x4000, 0x2000, 0xba6ccd8c );
 	
-		ROM_REGION( 0x6000, REGION_GFX4,ROMREGION_DISPOSE ) 	/* sprite bank 1*/
-		ROM_LOAD ( "11.18m", 0x0000, 0x2000, 0x06a5d849 )
-		ROM_LOAD ( "12.18r", 0x2000, 0x2000, 0x569815ef )
-		ROM_LOAD ( "13.18t", 0x4000, 0x2000, 0x4f8af872 )
+		ROM_REGION( 0x6000, REGION_GFX4,ROMREGION_DISPOSE );	/* sprite bank 1*/
+		ROM_LOAD ( "11.18m", 0x0000, 0x2000, 0x06a5d849 );
+		ROM_LOAD ( "12.18r", 0x2000, 0x2000, 0x569815ef );
+		ROM_LOAD ( "13.18t", 0x4000, 0x2000, 0x4f8af872 );
 	
-		ROM_REGION( 0x6000, REGION_GFX5,ROMREGION_DISPOSE )	/* sprite bank 2*/
-		ROM_LOAD ( "14.19m", 0x0000, 0x2000, 0x93f3c649 )
-		ROM_LOAD ( "15.19r", 0x2000, 0x2000, 0x5b3d87e4 )
-		ROM_LOAD ( "16.19u", 0x4000, 0x2000, 0xa2c24b64 )
+		ROM_REGION( 0x6000, REGION_GFX5,ROMREGION_DISPOSE );/* sprite bank 2*/
+		ROM_LOAD ( "14.19m", 0x0000, 0x2000, 0x93f3c649 );
+		ROM_LOAD ( "15.19r", 0x2000, 0x2000, 0x5b3d87e4 );
+		ROM_LOAD ( "16.19u", 0x4000, 0x2000, 0xa2c24b64 );
 	
-		ROM_REGION( 0x8000, REGION_USER1,ROMREGION_NODISPOSE )	/* road layout */
-		ROM_LOAD ( "1.17a", 0x0000, 0x2000, 0xf0fa72fc )
-		ROM_LOAD ( "3.18b", 0x2000, 0x2000, 0x954268f7 )
-		ROM_LOAD ( "2.17d", 0x4000, 0x2000, 0x2e38bb0e )
-		ROM_LOAD ( "4.18d", 0x6000, 0x2000, 0x3d9e16ab )
+		ROM_REGION( 0x8000, REGION_USER1,ROMREGION_NODISPOSE );/* road layout */
+		ROM_LOAD ( "1.17a", 0x0000, 0x2000, 0xf0fa72fc );
+		ROM_LOAD ( "3.18b", 0x2000, 0x2000, 0x954268f7 );
+		ROM_LOAD ( "2.17d", 0x4000, 0x2000, 0x2e38bb0e );
+		ROM_LOAD ( "4.18d", 0x6000, 0x2000, 0x3d9e16ab );
 	
-		ROM_REGION( 0x300, REGION_PROMS,ROMREGION_NODISPOSE )	/* colour */
-		ROM_LOAD("tbp24s10.7u", 0x0000, 0x0100, 0x9d199d33 )
-		ROM_LOAD("tbp24s10.7t", 0x0100, 0x0100, 0xc0426582 )
-		ROM_LOAD("tbp24s10.6t", 0x0200, 0x0100, 0xc096e05c )
+		ROM_REGION( 0x300, REGION_PROMS,ROMREGION_NODISPOSE );/* colour */
+		ROM_LOAD("tbp24s10.7u", 0x0000, 0x0100, 0x9d199d33 );
+		ROM_LOAD("tbp24s10.7t", 0x0100, 0x0100, 0xc0426582 );
+		ROM_LOAD("tbp24s10.6t", 0x0200, 0x0100, 0xc096e05c );
 	
-		ROM_REGION( 0x10000,REGION_CPU2,0 )
-		ROM_LOAD( "8.6f", 0x0000, 0x1000, 0x6ec3c545 )
-	ROM_END
+		ROM_REGION( 0x10000,REGION_CPU2,0 );
+		ROM_LOAD( "8.6f", 0x0000, 0x1000, 0x6ec3c545 );
+	ROM_END(); }}; 
 	
-	ROM_START( rollrace )
-		ROM_REGION( 0x10000, REGION_CPU1,0 )	/* 64k for code */
-		ROM_LOAD( "w1.8k", 0x0000, 0x2000, 0xc0bd3cf3 )
-		ROM_LOAD( "w2.8h", 0x2000, 0x2000, 0xc1900a75 )
-		ROM_LOAD( "w3.8f", 0x4000, 0x2000, 0x16ceced6 )
-		ROM_LOAD( "w4.8d", 0x6000, 0x2000, 0xae826a96 )
+	static RomLoadPtr rom_rollrace = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x10000, REGION_CPU1,0 );/* 64k for code */
+		ROM_LOAD( "w1.8k", 0x0000, 0x2000, 0xc0bd3cf3 );
+		ROM_LOAD( "w2.8h", 0x2000, 0x2000, 0xc1900a75 );
+		ROM_LOAD( "w3.8f", 0x4000, 0x2000, 0x16ceced6 );
+		ROM_LOAD( "w4.8d", 0x6000, 0x2000, 0xae826a96 );
 	
-		ROM_REGION( 0x6000,REGION_GFX1,ROMREGION_DISPOSE )	/* characters */
-		ROM_LOAD( "w3.7m", 0x0000, 0x2000, 0xf9970aae )
-		ROM_LOAD( "w2.8m", 0x2000, 0x2000, 0x80573091 )
-		ROM_LOAD( "w1.9m", 0x4000, 0x2000, 0xb37effd8 )
+		ROM_REGION( 0x6000,REGION_GFX1,ROMREGION_DISPOSE );/* characters */
+		ROM_LOAD( "w3.7m", 0x0000, 0x2000, 0xf9970aae );
+		ROM_LOAD( "w2.8m", 0x2000, 0x2000, 0x80573091 );
+		ROM_LOAD( "w1.9m", 0x4000, 0x2000, 0xb37effd8 );
 	
-		ROM_REGION( 0x6000, REGION_GFX2,ROMREGION_DISPOSE )	/* road graphics */
-		ROM_LOAD ( "6.20k", 0x0000, 0x2000, 0x003d7515 )
-		ROM_LOAD ( "7.18k", 0x2000, 0x2000, 0x27843afa )
-		ROM_LOAD ( "5.20f", 0x4000, 0x2000, 0x51dd0108 )
+		ROM_REGION( 0x6000, REGION_GFX2,ROMREGION_DISPOSE );/* road graphics */
+		ROM_LOAD ( "6.20k", 0x0000, 0x2000, 0x003d7515 );
+		ROM_LOAD ( "7.18k", 0x2000, 0x2000, 0x27843afa );
+		ROM_LOAD ( "5.20f", 0x4000, 0x2000, 0x51dd0108 );
 	
-		ROM_REGION( 0x6000, REGION_GFX3,ROMREGION_DISPOSE ) 	/* sprite bank 0*/
-		ROM_LOAD ( "w8.17m",  0x0000, 0x2000, 0xe2afe3a3 )
-		ROM_LOAD ( "w9.17p",  0x2000, 0x2000, 0x8a8e6b62 )
-		ROM_LOAD ( "w10.17t", 0x4000, 0x2000, 0x70bf7b23 )
+		ROM_REGION( 0x6000, REGION_GFX3,ROMREGION_DISPOSE );	/* sprite bank 0*/
+		ROM_LOAD ( "w8.17m",  0x0000, 0x2000, 0xe2afe3a3 );
+		ROM_LOAD ( "w9.17p",  0x2000, 0x2000, 0x8a8e6b62 );
+		ROM_LOAD ( "w10.17t", 0x4000, 0x2000, 0x70bf7b23 );
 	
-		ROM_REGION( 0x6000, REGION_GFX4,ROMREGION_DISPOSE ) 	/* sprite bank 1*/
-		ROM_LOAD ( "11.18m", 0x0000, 0x2000, 0x06a5d849 )
-		ROM_LOAD ( "12.18r", 0x2000, 0x2000, 0x569815ef )
-		ROM_LOAD ( "13.18t", 0x4000, 0x2000, 0x4f8af872 )
+		ROM_REGION( 0x6000, REGION_GFX4,ROMREGION_DISPOSE );	/* sprite bank 1*/
+		ROM_LOAD ( "11.18m", 0x0000, 0x2000, 0x06a5d849 );
+		ROM_LOAD ( "12.18r", 0x2000, 0x2000, 0x569815ef );
+		ROM_LOAD ( "13.18t", 0x4000, 0x2000, 0x4f8af872 );
 	
-		ROM_REGION( 0x6000, REGION_GFX5,ROMREGION_DISPOSE )	/* sprite bank 2*/
-		ROM_LOAD ( "14.19m", 0x0000, 0x2000, 0x93f3c649 )
-		ROM_LOAD ( "15.19r", 0x2000, 0x2000, 0x5b3d87e4 )
-		ROM_LOAD ( "16.19u", 0x4000, 0x2000, 0xa2c24b64 )
+		ROM_REGION( 0x6000, REGION_GFX5,ROMREGION_DISPOSE );/* sprite bank 2*/
+		ROM_LOAD ( "14.19m", 0x0000, 0x2000, 0x93f3c649 );
+		ROM_LOAD ( "15.19r", 0x2000, 0x2000, 0x5b3d87e4 );
+		ROM_LOAD ( "16.19u", 0x4000, 0x2000, 0xa2c24b64 );
 	
-		ROM_REGION( 0x8000, REGION_USER1,ROMREGION_NODISPOSE )	/* road layout */
-		ROM_LOAD ( "1.17a", 0x0000, 0x2000, 0xf0fa72fc )
-		ROM_LOAD ( "3.18b", 0x2000, 0x2000, 0x954268f7 )
-		ROM_LOAD ( "2.17d", 0x4000, 0x2000, 0x2e38bb0e )
-		ROM_LOAD ( "4.18d", 0x6000, 0x2000, 0x3d9e16ab )
+		ROM_REGION( 0x8000, REGION_USER1,ROMREGION_NODISPOSE );/* road layout */
+		ROM_LOAD ( "1.17a", 0x0000, 0x2000, 0xf0fa72fc );
+		ROM_LOAD ( "3.18b", 0x2000, 0x2000, 0x954268f7 );
+		ROM_LOAD ( "2.17d", 0x4000, 0x2000, 0x2e38bb0e );
+		ROM_LOAD ( "4.18d", 0x6000, 0x2000, 0x3d9e16ab );
 	
-		ROM_REGION( 0x300, REGION_PROMS,ROMREGION_NODISPOSE )	/* colour */
-		ROM_LOAD("tbp24s10.7u", 0x0000, 0x0100, 0x9d199d33 )
-		ROM_LOAD("tbp24s10.7t", 0x0100, 0x0100, 0xc0426582 )
-		ROM_LOAD("tbp24s10.6t", 0x0200, 0x0100, 0xc096e05c )
+		ROM_REGION( 0x300, REGION_PROMS,ROMREGION_NODISPOSE );/* colour */
+		ROM_LOAD("tbp24s10.7u", 0x0000, 0x0100, 0x9d199d33 );
+		ROM_LOAD("tbp24s10.7t", 0x0100, 0x0100, 0xc0426582 );
+		ROM_LOAD("tbp24s10.6t", 0x0200, 0x0100, 0xc096e05c );
 	
-		ROM_REGION( 0x10000,REGION_CPU2,0 )
-		ROM_LOAD( "8.6f", 0x0000, 0x1000, 0x6ec3c545 )
-	ROM_END
+		ROM_REGION( 0x10000,REGION_CPU2,0 );
+		ROM_LOAD( "8.6f", 0x0000, 0x1000, 0x6ec3c545 );
+	ROM_END(); }}; 
 	
 	
 	

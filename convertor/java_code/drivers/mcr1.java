@@ -446,85 +446,85 @@ public class mcr1
 	 *
 	 *************************************/
 	
-	ROM_START( solarfox )
-		ROM_REGION( 0x10000, REGION_CPU1, 0 )	/* 64k for code */
-		ROM_LOAD( "sfcpu.3b",     0x0000, 0x1000, 0x8c40f6eb )
-		ROM_LOAD( "sfcpu.4b",     0x1000, 0x1000, 0x4d47bd7e )
-		ROM_LOAD( "sfcpu.5b",     0x2000, 0x1000, 0xb52c3bd5 )
-		ROM_LOAD( "sfcpu.4d",     0x3000, 0x1000, 0xbd5d25ba )
-		ROM_LOAD( "sfcpu.5d",     0x4000, 0x1000, 0xdd57d817 )
-		ROM_LOAD( "sfcpu.6d",     0x5000, 0x1000, 0xbd993cd9 )
-		ROM_LOAD( "sfcpu.7d",     0x6000, 0x1000, 0x8ad8731d )
+	static RomLoadPtr rom_solarfox = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x10000, REGION_CPU1, 0 );/* 64k for code */
+		ROM_LOAD( "sfcpu.3b",     0x0000, 0x1000, 0x8c40f6eb );
+		ROM_LOAD( "sfcpu.4b",     0x1000, 0x1000, 0x4d47bd7e );
+		ROM_LOAD( "sfcpu.5b",     0x2000, 0x1000, 0xb52c3bd5 );
+		ROM_LOAD( "sfcpu.4d",     0x3000, 0x1000, 0xbd5d25ba );
+		ROM_LOAD( "sfcpu.5d",     0x4000, 0x1000, 0xdd57d817 );
+		ROM_LOAD( "sfcpu.6d",     0x5000, 0x1000, 0xbd993cd9 );
+		ROM_LOAD( "sfcpu.7d",     0x6000, 0x1000, 0x8ad8731d );
 	
-		ROM_REGION( 0x10000, REGION_CPU2, 0 )	/* 64k for the audio CPU */
-		ROM_LOAD( "sfsnd.7a",     0x0000, 0x1000, 0xcdecf83a )
-		ROM_LOAD( "sfsnd.8a",     0x1000, 0x1000, 0xcb7788cb )
-		ROM_LOAD( "sfsnd.9a",     0x2000, 0x1000, 0x304896ce )
+		ROM_REGION( 0x10000, REGION_CPU2, 0 );/* 64k for the audio CPU */
+		ROM_LOAD( "sfsnd.7a",     0x0000, 0x1000, 0xcdecf83a );
+		ROM_LOAD( "sfsnd.8a",     0x1000, 0x1000, 0xcb7788cb );
+		ROM_LOAD( "sfsnd.9a",     0x2000, 0x1000, 0x304896ce );
 	
-		ROM_REGION( 0x02000, REGION_GFX1, ROMREGION_DISPOSE )
-		ROM_LOAD( "sfcpu.4g",     0x0000, 0x1000, 0xba019a60 )
-		ROM_LOAD( "sfcpu.5g",     0x1000, 0x1000, 0x7ff0364e )
+		ROM_REGION( 0x02000, REGION_GFX1, ROMREGION_DISPOSE );
+		ROM_LOAD( "sfcpu.4g",     0x0000, 0x1000, 0xba019a60 );
+		ROM_LOAD( "sfcpu.5g",     0x1000, 0x1000, 0x7ff0364e );
 	
-		ROM_REGION( 0x08000, REGION_GFX2, ROMREGION_DISPOSE )
-		ROM_LOAD( "sfvid.1a",     0x0000, 0x2000, 0x9d9b5d7e )
-		ROM_LOAD( "sfvid.1b",     0x2000, 0x2000, 0x78801e83 )
-		ROM_LOAD( "sfvid.1d",     0x4000, 0x2000, 0x4d8445cf )
-		ROM_LOAD( "sfvid.1e",     0x6000, 0x2000, 0x3da25495 )
-	ROM_END
-	
-	
-	ROM_START( kick )
-		ROM_REGION( 0x10000, REGION_CPU1, 0 )	/* 64k for code */
-		ROM_LOAD( "1200a-v2.b3",  0x0000, 0x1000, 0x65924917 )
-		ROM_LOAD( "1300b-v2.b4",  0x1000, 0x1000, 0x27929f52 )
-		ROM_LOAD( "1400c-v2.b5",  0x2000, 0x1000, 0x69107ce6 )
-		ROM_LOAD( "1500d-v2.d4",  0x3000, 0x1000, 0x04a23aa1 )
-		ROM_LOAD( "1600e-v2.d5",  0x4000, 0x1000, 0x1d2834c0 )
-		ROM_LOAD( "1700f-v2.d6",  0x5000, 0x1000, 0xddf84ce1 )
-	
-		ROM_REGION( 0x10000, REGION_CPU2, 0 )	/* 64k for the audio CPU */
-		ROM_LOAD( "4200-a.a7",    0x0000, 0x1000, 0x9e35c02e )
-		ROM_LOAD( "4300-b.a8",    0x1000, 0x1000, 0xca2b7c28 )
-		ROM_LOAD( "4400-c.a9",    0x2000, 0x1000, 0xd1901551 )
-		ROM_LOAD( "4500-d.a10",   0x3000, 0x1000, 0xd36ddcdc )
-	
-		ROM_REGION( 0x02000, REGION_GFX1, ROMREGION_DISPOSE )
-		ROM_LOAD( "1800g-v2.g4",  0x0000, 0x1000, 0xb4d120f3 )
-		ROM_LOAD( "1900h-v2.g5",  0x1000, 0x1000, 0xc3ba4893 )
-	
-		ROM_REGION( 0x08000, REGION_GFX2, ROMREGION_DISPOSE )
-		ROM_LOAD( "2600a-v2.1e",  0x0000, 0x2000, 0x2c5d6b55 )
-		ROM_LOAD( "2700b-v2.1d",  0x2000, 0x2000, 0x565ea97d )
-		ROM_LOAD( "2800c-v2.1b",  0x4000, 0x2000, 0xf3be56a1 )
-		ROM_LOAD( "2900d-v2.1a",  0x6000, 0x2000, 0x77da795e )
-	ROM_END
+		ROM_REGION( 0x08000, REGION_GFX2, ROMREGION_DISPOSE );
+		ROM_LOAD( "sfvid.1a",     0x0000, 0x2000, 0x9d9b5d7e );
+		ROM_LOAD( "sfvid.1b",     0x2000, 0x2000, 0x78801e83 );
+		ROM_LOAD( "sfvid.1d",     0x4000, 0x2000, 0x4d8445cf );
+		ROM_LOAD( "sfvid.1e",     0x6000, 0x2000, 0x3da25495 );
+	ROM_END(); }}; 
 	
 	
-	ROM_START( kicka )
-		ROM_REGION( 0x10000, REGION_CPU1, 0 )	/* 64k for code */
-		ROM_LOAD( "1200-a.b3",    0x0000, 0x1000, 0x22fa42ed )
-		ROM_LOAD( "1300-b.b4",    0x1000, 0x1000, 0xafaca819 )
-		ROM_LOAD( "1400-c.b5",    0x2000, 0x1000, 0x6054ee56 )
-		ROM_LOAD( "1500-d.d4",    0x3000, 0x1000, 0x263af0f3 )
-		ROM_LOAD( "1600-e.d5",    0x4000, 0x1000, 0xeaaa78a7 )
-		ROM_LOAD( "1700-f.d6",    0x5000, 0x1000, 0xc06c880f )
+	static RomLoadPtr rom_kick = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x10000, REGION_CPU1, 0 );/* 64k for code */
+		ROM_LOAD( "1200a-v2.b3",  0x0000, 0x1000, 0x65924917 );
+		ROM_LOAD( "1300b-v2.b4",  0x1000, 0x1000, 0x27929f52 );
+		ROM_LOAD( "1400c-v2.b5",  0x2000, 0x1000, 0x69107ce6 );
+		ROM_LOAD( "1500d-v2.d4",  0x3000, 0x1000, 0x04a23aa1 );
+		ROM_LOAD( "1600e-v2.d5",  0x4000, 0x1000, 0x1d2834c0 );
+		ROM_LOAD( "1700f-v2.d6",  0x5000, 0x1000, 0xddf84ce1 );
 	
-		ROM_REGION( 0x10000, REGION_CPU2, 0 )	/* 64k for the audio CPU */
-		ROM_LOAD( "4200-a.a7",    0x0000, 0x1000, 0x9e35c02e )
-		ROM_LOAD( "4300-b.a8",    0x1000, 0x1000, 0xca2b7c28 )
-		ROM_LOAD( "4400-c.a9",    0x2000, 0x1000, 0xd1901551 )
-		ROM_LOAD( "4500-d.a10",   0x3000, 0x1000, 0xd36ddcdc )
+		ROM_REGION( 0x10000, REGION_CPU2, 0 );/* 64k for the audio CPU */
+		ROM_LOAD( "4200-a.a7",    0x0000, 0x1000, 0x9e35c02e );
+		ROM_LOAD( "4300-b.a8",    0x1000, 0x1000, 0xca2b7c28 );
+		ROM_LOAD( "4400-c.a9",    0x2000, 0x1000, 0xd1901551 );
+		ROM_LOAD( "4500-d.a10",   0x3000, 0x1000, 0xd36ddcdc );
 	
-		ROM_REGION( 0x02000, REGION_GFX1, ROMREGION_DISPOSE )
-		ROM_LOAD( "1000-g.g4",    0x0000, 0x1000, 0xacdae4f6 )
-		ROM_LOAD( "1100-h.g5",    0x1000, 0x1000, 0xdbb18c96 )
+		ROM_REGION( 0x02000, REGION_GFX1, ROMREGION_DISPOSE );
+		ROM_LOAD( "1800g-v2.g4",  0x0000, 0x1000, 0xb4d120f3 );
+		ROM_LOAD( "1900h-v2.g5",  0x1000, 0x1000, 0xc3ba4893 );
 	
-		ROM_REGION( 0x08000, REGION_GFX2, ROMREGION_DISPOSE )
-		ROM_LOAD( "2600-a.1e",    0x0000, 0x2000, 0x74b409d7 )
-		ROM_LOAD( "2700-b.1d",    0x2000, 0x2000, 0x78eda36c )
-		ROM_LOAD( "2800-c.1b",    0x4000, 0x2000, 0xc93e0170 )
-		ROM_LOAD( "2900-d.1a",    0x6000, 0x2000, 0x91e59383 )
-	ROM_END
+		ROM_REGION( 0x08000, REGION_GFX2, ROMREGION_DISPOSE );
+		ROM_LOAD( "2600a-v2.1e",  0x0000, 0x2000, 0x2c5d6b55 );
+		ROM_LOAD( "2700b-v2.1d",  0x2000, 0x2000, 0x565ea97d );
+		ROM_LOAD( "2800c-v2.1b",  0x4000, 0x2000, 0xf3be56a1 );
+		ROM_LOAD( "2900d-v2.1a",  0x6000, 0x2000, 0x77da795e );
+	ROM_END(); }}; 
+	
+	
+	static RomLoadPtr rom_kicka = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x10000, REGION_CPU1, 0 );/* 64k for code */
+		ROM_LOAD( "1200-a.b3",    0x0000, 0x1000, 0x22fa42ed );
+		ROM_LOAD( "1300-b.b4",    0x1000, 0x1000, 0xafaca819 );
+		ROM_LOAD( "1400-c.b5",    0x2000, 0x1000, 0x6054ee56 );
+		ROM_LOAD( "1500-d.d4",    0x3000, 0x1000, 0x263af0f3 );
+		ROM_LOAD( "1600-e.d5",    0x4000, 0x1000, 0xeaaa78a7 );
+		ROM_LOAD( "1700-f.d6",    0x5000, 0x1000, 0xc06c880f );
+	
+		ROM_REGION( 0x10000, REGION_CPU2, 0 );/* 64k for the audio CPU */
+		ROM_LOAD( "4200-a.a7",    0x0000, 0x1000, 0x9e35c02e );
+		ROM_LOAD( "4300-b.a8",    0x1000, 0x1000, 0xca2b7c28 );
+		ROM_LOAD( "4400-c.a9",    0x2000, 0x1000, 0xd1901551 );
+		ROM_LOAD( "4500-d.a10",   0x3000, 0x1000, 0xd36ddcdc );
+	
+		ROM_REGION( 0x02000, REGION_GFX1, ROMREGION_DISPOSE );
+		ROM_LOAD( "1000-g.g4",    0x0000, 0x1000, 0xacdae4f6 );
+		ROM_LOAD( "1100-h.g5",    0x1000, 0x1000, 0xdbb18c96 );
+	
+		ROM_REGION( 0x08000, REGION_GFX2, ROMREGION_DISPOSE );
+		ROM_LOAD( "2600-a.1e",    0x0000, 0x2000, 0x74b409d7 );
+		ROM_LOAD( "2700-b.1d",    0x2000, 0x2000, 0x78eda36c );
+		ROM_LOAD( "2800-c.1b",    0x4000, 0x2000, 0xc93e0170 );
+		ROM_LOAD( "2900-d.1a",    0x6000, 0x2000, 0x91e59383 );
+	ROM_END(); }}; 
 	
 	
 	

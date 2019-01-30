@@ -438,75 +438,75 @@ public class looping
 		PORT_DIPSETTING(	0x80, DEF_STR( Yes ) )
 	INPUT_PORTS_END
 	
-	ROM_START( loopinga )
-		ROM_REGION( 0x10000, REGION_CPU1, 0 ) /* 64k for TMS9995 code */
-		ROM_LOAD( "vli3.5a",		0x0000, 0x2000, 0x1ac3ccdf )
-		ROM_LOAD( "vli-4-3",		0x2000, 0x1000, 0xf32cae2b )
-		ROM_LOAD( "vli-8-4",		0x3000, 0x1000, 0x611e1dbf )
-		ROM_LOAD( "l056-6.9a",		0x4000, 0x2000, 0x548afa52 )
-		ROM_LOAD( "vli9-5.8a",		0x6000, 0x2000, 0x5d122f86 )
+	static RomLoadPtr rom_loopinga = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x10000, REGION_CPU1, 0 );/* 64k for TMS9995 code */
+		ROM_LOAD( "vli3.5a",		0x0000, 0x2000, 0x1ac3ccdf );
+		ROM_LOAD( "vli-4-3",		0x2000, 0x1000, 0xf32cae2b );
+		ROM_LOAD( "vli-8-4",		0x3000, 0x1000, 0x611e1dbf );
+		ROM_LOAD( "l056-6.9a",		0x4000, 0x2000, 0x548afa52 );
+		ROM_LOAD( "vli9-5.8a",		0x6000, 0x2000, 0x5d122f86 );
 	
-		ROM_REGION( 0x10000, REGION_CPU2, 0 ) /* 64k for TMS9980 code */
-		ROM_LOAD( "i-o-v2.13c",		0x0000, 0x0800, 0x09765ebe )
-	    ROM_LOAD( "i-o.13a",		0x0800, 0x1000, 0x1de29f25 ) /* speech */
-		ROM_LOAD( "i-o.11a",		0x2800, 0x1000, 0x61c74c79 )
+		ROM_REGION( 0x10000, REGION_CPU2, 0 );/* 64k for TMS9980 code */
+		ROM_LOAD( "i-o-v2.13c",		0x0000, 0x0800, 0x09765ebe );
+	    ROM_LOAD( "i-o.13a",		0x0800, 0x1000, 0x1de29f25 );/* speech */
+		ROM_LOAD( "i-o.11a",		0x2800, 0x1000, 0x61c74c79 );
 	
-		ROM_REGION( 0x1000, REGION_CPU3, 0 ) /* COP420 microcontroller code */
-		ROM_LOAD( "cop.bin",		0x0000, 0x1000, 0xbbfd26d5 )
+		ROM_REGION( 0x1000, REGION_CPU3, 0 );/* COP420 microcontroller code */
+		ROM_LOAD( "cop.bin",		0x0000, 0x1000, 0xbbfd26d5 );
 	
-		ROM_REGION( 0x1000, REGION_GFX1, ROMREGION_DISPOSE )
-		ROM_LOAD( "log1-9-3.6a",	0x0000, 0x800, 0xc434c14c )
-		ROM_LOAD( "log2.8a",		0x0800, 0x800, 0xef3284ac )
+		ROM_REGION( 0x1000, REGION_GFX1, ROMREGION_DISPOSE );
+		ROM_LOAD( "log1-9-3.6a",	0x0000, 0x800, 0xc434c14c );
+		ROM_LOAD( "log2.8a",		0x0800, 0x800, 0xef3284ac );
 	
-		ROM_REGION( 0x0020, REGION_PROMS, 0 ) /* color prom */
-		ROM_LOAD( "18s030.11b",		0x0000, 0x0020, 0x6a0c7d87 )
-	ROM_END
+		ROM_REGION( 0x0020, REGION_PROMS, 0 );/* color prom */
+		ROM_LOAD( "18s030.11b",		0x0000, 0x0020, 0x6a0c7d87 );
+	ROM_END(); }}; 
 	
-	ROM_START( looping )
-		ROM_REGION( 0x10000, REGION_CPU1, 0 ) /* 64k for TMS9995 code */
-		ROM_LOAD( "vli3.5a",		0x0000, 0x2000, 0x1ac3ccdf )
-		ROM_LOAD( "vli1.2a",		0x2000, 0x2000, 0x97755fd4 )
-		ROM_LOAD( "l056-6.9a",		0x4000, 0x2000, 0x548afa52 )
-		ROM_LOAD( "vli9-5.8a",		0x6000, 0x2000, 0x5d122f86 )
+	static RomLoadPtr rom_looping = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x10000, REGION_CPU1, 0 );/* 64k for TMS9995 code */
+		ROM_LOAD( "vli3.5a",		0x0000, 0x2000, 0x1ac3ccdf );
+		ROM_LOAD( "vli1.2a",		0x2000, 0x2000, 0x97755fd4 );
+		ROM_LOAD( "l056-6.9a",		0x4000, 0x2000, 0x548afa52 );
+		ROM_LOAD( "vli9-5.8a",		0x6000, 0x2000, 0x5d122f86 );
 	
-		ROM_REGION( 0x10000, REGION_CPU2, 0 ) /* 64k for TMS9980 code */
-		ROM_LOAD( "i-o.13c",		0x0000, 0x0800, 0x21e9350c )
-		ROM_LOAD( "i-o.13a",		0x0800, 0x1000, 0x1de29f25 )
-		ROM_LOAD( "i-o.11a",		0x2800, 0x1000, 0x61c74c79 ) /* speech */
+		ROM_REGION( 0x10000, REGION_CPU2, 0 );/* 64k for TMS9980 code */
+		ROM_LOAD( "i-o.13c",		0x0000, 0x0800, 0x21e9350c );
+		ROM_LOAD( "i-o.13a",		0x0800, 0x1000, 0x1de29f25 );
+		ROM_LOAD( "i-o.11a",		0x2800, 0x1000, 0x61c74c79 );/* speech */
 	
-		ROM_REGION( 0x1000, REGION_CPU3, 0 ) /* COP420 microcontroller code */
-		ROM_LOAD( "cop.bin",		0x0000, 0x1000, 0xbbfd26d5 )
+		ROM_REGION( 0x1000, REGION_CPU3, 0 );/* COP420 microcontroller code */
+		ROM_LOAD( "cop.bin",		0x0000, 0x1000, 0xbbfd26d5 );
 	
-		ROM_REGION( 0x1000, REGION_GFX1, ROMREGION_DISPOSE )
-		ROM_LOAD( "log1-9-3.6a",	0x0000, 0x800, 0xc434c14c )
-		ROM_LOAD( "log2.8a",		0x0800, 0x800, 0xef3284ac )
+		ROM_REGION( 0x1000, REGION_GFX1, ROMREGION_DISPOSE );
+		ROM_LOAD( "log1-9-3.6a",	0x0000, 0x800, 0xc434c14c );
+		ROM_LOAD( "log2.8a",		0x0800, 0x800, 0xef3284ac );
 	
-		ROM_REGION( 0x0020, REGION_PROMS, 0 ) /* color prom */
-		ROM_LOAD( "18s030.11b",		0x0000, 0x0020, 0x6a0c7d87 )
-	ROM_END
+		ROM_REGION( 0x0020, REGION_PROMS, 0 );/* color prom */
+		ROM_LOAD( "18s030.11b",		0x0000, 0x0020, 0x6a0c7d87 );
+	ROM_END(); }}; 
 	
-	ROM_START( skybump )
-		ROM_REGION( 0x10000, REGION_CPU1, 0 ) /* 64k for TMS9995 code */
-		ROM_LOAD( "cpu.5a",			0x0000, 0x2000, 0xdca38df0 )
-		ROM_LOAD( "cpu.2a",			0x2000, 0x2000, 0x6bcc211a )
-		ROM_LOAD( "cpu.9a",			0x4000, 0x2000, 0xc7a50797 )
-		ROM_LOAD( "cpu.8a",			0x6000, 0x2000, 0xa718c6f2 )
+	static RomLoadPtr rom_skybump = new RomLoadPtr(){ public void handler(){ 
+		ROM_REGION( 0x10000, REGION_CPU1, 0 );/* 64k for TMS9995 code */
+		ROM_LOAD( "cpu.5a",			0x0000, 0x2000, 0xdca38df0 );
+		ROM_LOAD( "cpu.2a",			0x2000, 0x2000, 0x6bcc211a );
+		ROM_LOAD( "cpu.9a",			0x4000, 0x2000, 0xc7a50797 );
+		ROM_LOAD( "cpu.8a",			0x6000, 0x2000, 0xa718c6f2 );
 	
-	    ROM_REGION( 0x10000, REGION_CPU2, 0 ) /* 64k for TMS9980 code */
-		ROM_LOAD( "snd.13c",		0x0000, 0x0800, 0x21e9350c )
-		ROM_LOAD( "snd.13a",		0x0800, 0x1000, 0x1de29f25 )
-		ROM_LOAD( "snd.11a",		0x2800, 0x1000, 0x61c74c79 )
+	    ROM_REGION( 0x10000, REGION_CPU2, 0 );/* 64k for TMS9980 code */
+		ROM_LOAD( "snd.13c",		0x0000, 0x0800, 0x21e9350c );
+		ROM_LOAD( "snd.13a",		0x0800, 0x1000, 0x1de29f25 );
+		ROM_LOAD( "snd.11a",		0x2800, 0x1000, 0x61c74c79 );
 	
-		ROM_REGION( 0x1000, REGION_CPU3, 0 ) /* COP420 microcontroller code */
-		ROM_LOAD( "cop.bin",		0x0000, 0x1000, 0xbbfd26d5 )
+		ROM_REGION( 0x1000, REGION_CPU3, 0 );/* COP420 microcontroller code */
+		ROM_LOAD( "cop.bin",		0x0000, 0x1000, 0xbbfd26d5 );
 	
-		ROM_REGION( 0x1000, REGION_GFX1, ROMREGION_DISPOSE )
-		ROM_LOAD( "vid.6a",			0x0000, 0x800, 0x12ebbe74 )
-		ROM_LOAD( "vid.8a",			0x0800, 0x800, 0x459ccc55 )
+		ROM_REGION( 0x1000, REGION_GFX1, ROMREGION_DISPOSE );
+		ROM_LOAD( "vid.6a",			0x0000, 0x800, 0x12ebbe74 );
+		ROM_LOAD( "vid.8a",			0x0800, 0x800, 0x459ccc55 );
 	
-		ROM_REGION( 0x0020, REGION_PROMS, 0 ) /* color prom */
-		ROM_LOAD( "vid.clr",		0x0000, 0x0020, 0x6a0c7d87 )
-	ROM_END
+		ROM_REGION( 0x0020, REGION_PROMS, 0 );/* color prom */
+		ROM_LOAD( "vid.clr",		0x0000, 0x0020, 0x6a0c7d87 );
+	ROM_END(); }}; 
 	
 	void init_looping( void ){
 		/* unscramble the TMS9995 ROMs */
