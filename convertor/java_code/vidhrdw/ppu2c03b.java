@@ -1396,13 +1396,13 @@ public class ppu2c03b
 		return ppu2c03b_r( 1, offset );
 	} };
 	
-	WRITE_HANDLER( ppu2c03b_0_w )
+	public static WriteHandlerPtr ppu2c03b_0_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		ppu2c03b_w( 0, offset, data );
-	}
+	} };
 	
-	WRITE_HANDLER( ppu2c03b_1_w )
+	public static WriteHandlerPtr ppu2c03b_1_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		ppu2c03b_w( 1, offset, data );
-	}
+	} };
 }

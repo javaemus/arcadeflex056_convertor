@@ -48,23 +48,22 @@ public class gladiatr
 		palette_set_color(513,0xff,0xff,0xff);
 	}
 	
-	WRITE_HANDLER( gladiatr_paletteram_rg_w )
+	public static WriteHandlerPtr gladiatr_paletteram_rg_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		paletteram[offset] = data;
 		update_color(offset);
-	}
+	} };
 	
-	WRITE_HANDLER( gladiatr_paletteram_b_w )
+	public static WriteHandlerPtr gladiatr_paletteram_b_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		paletteram_2[offset] = data;
 		update_color(offset);
-	}
+	} };
 	
 	
-	WRITE_HANDLER( gladiatr_spritebank_w );
-	WRITE_HANDLER( gladiatr_spritebank_w ){
+	public static WriteHandlerPtr gladiatr_spritebank_w = new WriteHandlerPtr() {public void handler(int offset, int data){
 		sprite_bank = (data)?4:2;
-	}
+	} };
 	
 	public static ReadHandlerPtr gladiatr_video_registers_r  = new ReadHandlerPtr() { public int handler(int offset){
 		switch( offset ){
@@ -75,8 +74,7 @@ public class gladiatr
 		return 0;
 	} };
 	
-	WRITE_HANDLER( gladiatr_video_registers_w );
-	WRITE_HANDLER( gladiatr_video_registers_w ){
+	public static WriteHandlerPtr gladiatr_video_registers_w = new WriteHandlerPtr() {public void handler(int offset, int data){
 		switch( offset ){
 			case 0x000: break;
 			case 0x080: video_attributes = data; break;
@@ -84,7 +82,7 @@ public class gladiatr
 			case 0x200: break;
 			case 0x300: background_scroll = data; break;
 		}
-	}
+	} };
 	
 	
 	int gladiatr_vh_start(void);

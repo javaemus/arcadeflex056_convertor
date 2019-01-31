@@ -21,11 +21,6 @@ public class hcastle
 	
 	extern data8_t *hcastle_pf1_videoram,*hcastle_pf2_videoram;
 	
-	WRITE_HANDLER( hcastle_pf1_video_w );
-	WRITE_HANDLER( hcastle_pf2_video_w );
-	WRITE_HANDLER( hcastle_gfxbank_w );
-	WRITE_HANDLER( hcastle_pf1_control_w );
-	WRITE_HANDLER( hcastle_pf2_control_w );
 	
 	public static WriteHandlerPtr hcastle_bankswitch_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{

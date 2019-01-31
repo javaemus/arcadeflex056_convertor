@@ -18,13 +18,13 @@ public class skydiver
 	static int skydiver_lamps[8];
 	static int skydiver_width = 0;
 	
-	WRITE_HANDLER( skydiver_width_w )
+	public static WriteHandlerPtr skydiver_width_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		skydiver_width = offset;
 		logerror("width: %02x\n", data);
-	}
+	} };
 	
-	WRITE_HANDLER( skydiver_sk_lamps_w )
+	public static WriteHandlerPtr skydiver_sk_lamps_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		switch (offset)
 		{
@@ -33,9 +33,9 @@ public class skydiver
 			case 2:	skydiver_lamps[1] = 0;	break;
 			case 3:	skydiver_lamps[1] = 1;	break;	/* K */
 		}
-	}
+	} };
 	
-	WRITE_HANDLER( skydiver_yd_lamps_w )
+	public static WriteHandlerPtr skydiver_yd_lamps_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		switch (offset)
 		{
@@ -44,9 +44,9 @@ public class skydiver
 			case 2:	skydiver_lamps[3] = 0;	break;
 			case 3:	skydiver_lamps[3] = 1;	break;	/* D */
 		}
-	}
+	} };
 	
-	WRITE_HANDLER( skydiver_iver_lamps_w )
+	public static WriteHandlerPtr skydiver_iver_lamps_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		switch (offset)
 		{
@@ -59,7 +59,7 @@ public class skydiver
 			case 6:	skydiver_lamps[7] = 0;	break;
 			case 7:	skydiver_lamps[7] = 1;	break;	/* R */
 		}
-	}
+	} };
 	
 	/***************************************************************************
 	

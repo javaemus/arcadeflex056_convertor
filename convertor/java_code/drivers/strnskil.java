@@ -25,13 +25,11 @@ public class strnskil
 	
 	/****************************************************************************/
 	
-	WRITE_HANDLER( strnskil_scroll_x_w );
-	WRITE_HANDLER( strnskil_scrl_ctrl_w );
 	
-	WRITE_HANDLER( strnskil_sharedram_w )
+	public static WriteHandlerPtr strnskil_sharedram_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		strnskil_sharedram[offset] = data;
-	}
+	} };
 	
 	public static ReadHandlerPtr strnskil_sharedram_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{

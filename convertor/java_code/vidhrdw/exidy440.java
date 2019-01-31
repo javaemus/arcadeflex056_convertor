@@ -190,7 +190,7 @@ public class exidy440
 	} };
 	
 	
-	WRITE_HANDLER( exidy440_videoram_w )
+	public static WriteHandlerPtr exidy440_videoram_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		UINT8 *base = &local_videoram[(*exidy440_scanline * 256 + offset) * 2];
 	
@@ -200,7 +200,7 @@ public class exidy440
 	
 		/* mark the scanline dirty */
 		scanline_dirty[*exidy440_scanline] = 1;
-	}
+	} };
 	
 	
 	
@@ -216,7 +216,7 @@ public class exidy440
 	} };
 	
 	
-	WRITE_HANDLER( exidy440_paletteram_w )
+	public static WriteHandlerPtr exidy440_paletteram_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		/* update palette ram in the I/O bank */
 		local_paletteram[palettebank_io * 512 + offset] = data;
@@ -233,7 +233,7 @@ public class exidy440
 			/* extract the 5-5-5 RGB colors */
 			palette_set_color(offset / 2, ((word >> 10) & 31) << 3, ((word >> 5) & 31) << 3, (word & 31) << 3);
 		}
-	}
+	} };
 	
 	
 	
@@ -275,7 +275,7 @@ public class exidy440
 	 *
 	 *************************************/
 	
-	WRITE_HANDLER( exidy440_control_w )
+	public static WriteHandlerPtr exidy440_control_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		int oldvis = palettebank_vis;
 	
@@ -306,15 +306,15 @@ public class exidy440
 				palette_set_color(i, ((word >> 10) & 31) << 3, ((word >> 5) & 31) << 3, (word & 31) << 3);
 			}
 		}
-	}
+	} };
 	
 	
-	WRITE_HANDLER( exidy440_interrupt_clear_w )
+	public static WriteHandlerPtr exidy440_interrupt_clear_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		/* clear the VBLANK FIRQ on a write here */
 		exidy440_firq_vblank = 0;
 		exidy440_update_firq();
-	}
+	} };
 	
 	
 	

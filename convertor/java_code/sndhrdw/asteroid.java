@@ -189,29 +189,29 @@ public class asteroid
 	DISCRETE_SOUND_END
 	
 	
-	WRITE_HANDLER( asteroid_explode_w )
+	public static WriteHandlerPtr asteroid_explode_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		discrete_sound_w(0x20,(data&0x3c)>>2);				// Volume
 		discrete_sound_w(0x21,12/(((data&0xc0)>>6)+1));		// Noise Pitch divider 12KHz / (1+Value) in KHz
-	}
+	} };
 	
-	WRITE_HANDLER( asteroid_thump_w )
+	public static WriteHandlerPtr asteroid_thump_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		discrete_sound_w(0x10,data&0x10);			//Thump enable
 		discrete_sound_w(0x11,(data&0x0f)^0x0f);	//Thump frequency
 		discrete_sound_w(0x12,data&0x0f);			//Thump duty
-	}
+	} };
 	
-	WRITE_HANDLER( asteroid_sounds_w )
+	public static WriteHandlerPtr asteroid_sounds_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		discrete_sound_w(0x00+offset,(data&0x80)?1:0);
-	}
+	} };
 	
-	WRITE_HANDLER( astdelux_sounds_w )
+	public static WriteHandlerPtr astdelux_sounds_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		/* Only ever activates the thrusters in Astdelux */
 		discrete_sound_w(0x03,(data&0x80)?1:0);
-	}
+	} };
 	
 	
 }

@@ -23,11 +23,6 @@ public class amidar
 	extern size_t galaxian_spriteram_size;
 	
 	void turtles_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom);
-	WRITE_HANDLER( scramble_background_red_w );
-	WRITE_HANDLER( scramble_background_green_w );
-	WRITE_HANDLER( scramble_background_blue_w );
-	WRITE_HANDLER( galaxian_flip_screen_x_w );
-	WRITE_HANDLER( galaxian_flip_screen_y_w );
 	void galaxian_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	
 	extern struct AY8910interface scobra_ay8910_interface;

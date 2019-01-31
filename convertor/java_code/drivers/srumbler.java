@@ -19,10 +19,6 @@ public class srumbler
 	
 	extern unsigned char *srumbler_backgroundram,*srumbler_foregroundram;
 	
-	WRITE_HANDLER( srumbler_background_w );
-	WRITE_HANDLER( srumbler_foreground_w );
-	WRITE_HANDLER( srumbler_scroll_w );
-	WRITE_HANDLER( srumbler_4009_w );
 	
 	int  srumbler_vh_start(void);
 	void srumbler_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);

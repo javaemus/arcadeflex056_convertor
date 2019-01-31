@@ -25,12 +25,12 @@ public class m79amb
 	
 	static unsigned char mask = 0;
 	
-	WRITE_HANDLER( ramtek_mask_w )
+	public static WriteHandlerPtr ramtek_mask_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		mask = data;
-	}
+	} };
 	
-	WRITE_HANDLER( ramtek_videoram_w )
+	public static WriteHandlerPtr ramtek_videoram_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		data = data & ~mask;
 	
@@ -51,5 +51,5 @@ public class m79amb
 				data <<= 1;
 			}
 		}
-	}
+	} };
 }

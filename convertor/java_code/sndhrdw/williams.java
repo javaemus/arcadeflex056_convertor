@@ -931,22 +931,22 @@ public class williams
 		CVSD BANK SELECT
 	****************************************************************************/
 	
-	WRITE_HANDLER( williams_cvsd_bank_select_w )
+	public static WriteHandlerPtr williams_cvsd_bank_select_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		cpu_setbank(6, get_cvsd_bank_base(data));
-	}
+	} };
 	
 	
 	/***************************************************************************
 		ADPCM BANK SELECT
 	****************************************************************************/
 	
-	WRITE_HANDLER( williams_adpcm_bank_select_w )
+	public static WriteHandlerPtr williams_adpcm_bank_select_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		cpu_setbank(6, get_adpcm_bank_base(data));
-	}
+	} };
 	
-	WRITE_HANDLER( williams_adpcm_6295_bank_select_w )
+	public static WriteHandlerPtr williams_adpcm_6295_bank_select_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		if (adpcm_bank_count <= 3)
 		{
@@ -963,22 +963,22 @@ public class williams
 			if (data != 0)
 				OKIM6295_set_bank_base(0, (data - 1) * 0x40000);
 		}
-	}
+	} };
 	
 	
 	/***************************************************************************
 		NARC BANK SELECT
 	****************************************************************************/
 	
-	WRITE_HANDLER( williams_narc_master_bank_select_w )
+	public static WriteHandlerPtr williams_narc_master_bank_select_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		cpu_setbank(6, get_narc_master_bank_base(data));
-	}
+	} };
 	
-	WRITE_HANDLER( williams_narc_slave_bank_select_w )
+	public static WriteHandlerPtr williams_narc_slave_bank_select_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		cpu_setbank(5, get_narc_slave_bank_base(data));
-	}
+	} };
 	
 	
 	/***************************************************************************
@@ -1141,11 +1141,11 @@ public class williams
 		return soundlatch2_r(0);
 	} };
 	
-	WRITE_HANDLER( williams_narc_command2_w )
+	public static WriteHandlerPtr williams_narc_command2_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		soundlatch2_w(0, data & 0xff);
 		cpu_set_irq_line(williams_cpunum + 1, M6809_FIRQ_LINE, ASSERT_LINE);
-	}
+	} };
 	
 	
 	/***************************************************************************

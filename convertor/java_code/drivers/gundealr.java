@@ -58,12 +58,6 @@ public class gundealr
 	
 	extern unsigned char *gundealr_bg_videoram,*gundealr_fg_videoram;
 	
-	WRITE_HANDLER( gundealr_paletteram_w );
-	WRITE_HANDLER( gundealr_bg_videoram_w );
-	WRITE_HANDLER( gundealr_fg_videoram_w );
-	WRITE_HANDLER( gundealr_fg_scroll_w );
-	WRITE_HANDLER( yamyam_fg_scroll_w );
-	WRITE_HANDLER( gundealr_flipscreen_w );
 	void gundealr_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	int gundealr_vh_start(void);
 	

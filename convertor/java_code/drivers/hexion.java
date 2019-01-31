@@ -29,10 +29,6 @@ public class hexion
 	int hexion_vh_start(void);
 	void hexion_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	
-	WRITE_HANDLER( hexion_bankswitch_w );
-	WRITE_HANDLER( hexion_bankedram_w );
-	WRITE_HANDLER( hexion_bankctrl_w );
-	WRITE_HANDLER( hexion_gfxrom_select_w );
 	
 	
 	

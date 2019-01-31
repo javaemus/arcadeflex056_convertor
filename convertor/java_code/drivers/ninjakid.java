@@ -28,17 +28,12 @@ package drivers;
 public class ninjakid
 {
 	
-	extern WRITE_HANDLER( ninjakid_bg_videoram_w );
-	extern WRITE_HANDLER( ninjakid_fg_videoram_w );
-	extern 
-	extern extern WRITE_HANDLER( ninjakun_io_8000_w );
-	
+	extern extern extern 
+	extern extern 
 	extern int ninjakid_vh_start( void );
 	extern void ninjakid_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
-	extern WRITE_HANDLER( ninjakun_flipscreen_w );
-	
-	extern WRITE_HANDLER( ninjakun_paletteram_w );
-	
+	extern 
+	extern 
 	/******************************************************************************/
 	
 	static UINT8 *ninjakid_gfx_rom;

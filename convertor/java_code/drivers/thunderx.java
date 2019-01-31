@@ -237,7 +237,7 @@ public class thunderx
 		unknown_enable = data;
 	} };
 	
-	WRITE_HANDLER( scontra_bankswitch_w )
+	public static WriteHandlerPtr scontra_bankswitch_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		unsigned char *RAM = memory_region(REGION_CPU1);
 		int offs;
@@ -257,7 +257,7 @@ public class thunderx
 	
 		/* bit 7 controls layer priority */
 		scontra_priority = data & 0x80;
-	}
+	} };
 	
 	public static WriteHandlerPtr thunderx_videobank_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{

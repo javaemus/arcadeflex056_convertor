@@ -51,13 +51,6 @@ public class astrof
 	int  astrof_vh_start(void);
 	void astrof_vh_stop(void);
 	void astrof_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
-	WRITE_HANDLER( astrof_videoram_w );
-	WRITE_HANDLER( tomahawk_videoram_w );
-	WRITE_HANDLER( astrof_video_control1_w );
-	WRITE_HANDLER( astrof_video_control2_w );
-	WRITE_HANDLER( tomahawk_video_control2_w );
-	WRITE_HANDLER( astrof_sample1_w );
-	WRITE_HANDLER( astrof_sample2_w );
 	
 	extern struct Samplesinterface astrof_samples_interface;
 	extern struct Samplesinterface tomahawk_samples_interface;

@@ -29,5 +29,4 @@ void ticket_dispenser_init(int msec, int motoractivehigh, int statusactivehigh);
 /***************************************************************************
   ticket_dispenser_w
 ***************************************************************************/
-WRITE_HANDLER( ticket_dispenser_w );
 

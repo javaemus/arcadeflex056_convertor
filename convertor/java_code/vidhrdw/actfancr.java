@@ -104,32 +104,32 @@ public class actfancr
 	
 	/******************************************************************************/
 	
-	WRITE_HANDLER( actfancr_pf1_control_w )
+	public static WriteHandlerPtr actfancr_pf1_control_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		actfancr_control_1[offset]=data;
-	}
+	} };
 	
-	WRITE_HANDLER( actfancr_pf2_control_w )
+	public static WriteHandlerPtr actfancr_pf2_control_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		actfancr_control_2[offset]=data;
-	}
+	} };
 	
-	WRITE_HANDLER( actfancr_pf1_data_w )
+	public static WriteHandlerPtr actfancr_pf1_data_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		actfancr_pf1_data[offset]=data;
 		tilemap_mark_tile_dirty(pf1_tilemap,offset/2);
 		if (pf1_alt_tilemap) tilemap_mark_tile_dirty(pf1_alt_tilemap,offset/2);
-	}
+	} };
 	
 	public static ReadHandlerPtr actfancr_pf1_data_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return actfancr_pf1_data[offset];
 	} };
 	
-	WRITE_HANDLER( actfancr_pf2_data_w )
+	public static WriteHandlerPtr actfancr_pf2_data_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		actfancr_pf2_data[offset]=data;
-	}
+	} };
 	
 	public static ReadHandlerPtr actfancr_pf2_data_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{

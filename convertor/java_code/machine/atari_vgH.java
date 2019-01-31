@@ -9,8 +9,6 @@
 
 ***************************************************************************/
 
-WRITE_HANDLER( atari_vg_earom_w );
-WRITE_HANDLER( atari_vg_earom_ctrl_w );
 void atari_vg_earom_handler(void *file,int read_or_write);
 
 #endif

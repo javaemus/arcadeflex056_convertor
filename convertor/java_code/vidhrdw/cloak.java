@@ -50,7 +50,7 @@ public class cloak
 	  bit 0 -- inverter -- 1  kohm resistor  -- BLUE
 	
 	***************************************************************************/
-	WRITE_HANDLER( cloak_paletteram_w )
+	public static WriteHandlerPtr cloak_paletteram_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		int r,g,b;
 		int bit0,bit1,bit2;
@@ -76,10 +76,10 @@ public class cloak
 		b = 0x21 * bit0 + 0x47 * bit1 + 0x97 * bit2;
 	
 		palette_set_color(offset & 0x3f,r,g,b);
-	}
+	} };
 	
 	
-	WRITE_HANDLER( cloak_clearbmp_w )
+	public static WriteHandlerPtr cloak_clearbmp_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		bmap = data & 1;
 		if (data & 2)	/* clear */
@@ -95,7 +95,7 @@ public class cloak
 				memset(tmpvideoram2, 0, 256*256);
 			}
 		}
-	}
+	} };
 	
 	
 	static void adjust_xy(int offset)
@@ -131,7 +131,7 @@ public class cloak
 	} };
 	
 	
-	WRITE_HANDLER( graph_processor_w )
+	public static WriteHandlerPtr graph_processor_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		int col;
 	
@@ -156,7 +156,7 @@ public class cloak
 			adjust_xy(offset);
 			break;
 		}
-	}
+	} };
 	
 	
 	/***************************************************************************

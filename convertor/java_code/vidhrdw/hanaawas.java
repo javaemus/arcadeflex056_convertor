@@ -74,7 +74,7 @@ public class hanaawas
 	}
 	
 	
-	WRITE_HANDLER( hanaawas_colorram_w )
+	public static WriteHandlerPtr hanaawas_colorram_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		offs_t offs2;
 	
@@ -86,14 +86,14 @@ public class hanaawas
 	
 		dirtybuffer[offset] = 1;
 		dirtybuffer[offs2 ] = 1;
-	}
+	} };
 	
 	
-	WRITE_HANDLER( hanaawas_portB_w )
+	public static WriteHandlerPtr hanaawas_portB_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		/* bit 7 is flip screen */
 		flip_screen_set(~data & 0x80);
-	}
+	} };
 	
 	/***************************************************************************
 	

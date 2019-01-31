@@ -158,19 +158,19 @@ public class dkong
 	
 	
 	
-	WRITE_HANDLER( dkongjr_gfxbank_w )
+	public static WriteHandlerPtr dkongjr_gfxbank_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		set_vh_global_attribute(&gfx_bank, data & 1);
-	}
+	} };
 	
-	WRITE_HANDLER( dkong3_gfxbank_w )
+	public static WriteHandlerPtr dkong3_gfxbank_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		set_vh_global_attribute(&gfx_bank, ~data & 1);
-	}
+	} };
 	
 	
 	
-	WRITE_HANDLER( dkong_palettebank_w )
+	public static WriteHandlerPtr dkong_palettebank_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		int newbank;
 	
@@ -182,14 +182,14 @@ public class dkong
 			newbank &= ~(1 << offset);
 	
 		set_vh_global_attribute(&palette_bank, newbank);
-	}
+	} };
 	
-	WRITE_HANDLER( radarscp_grid_enable_w )
+	public static WriteHandlerPtr radarscp_grid_enable_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		grid_on = data & 1;
-	}
+	} };
 	
-	WRITE_HANDLER( radarscp_grid_color_w )
+	public static WriteHandlerPtr radarscp_grid_color_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		int r,g,b;
 	
@@ -198,12 +198,12 @@ public class dkong
 		b = ((~data >> 2) & 0x01) * 0xff;
 	//	palette_set_color(257,r,g,b);
 		palette_set_color(257,0x00,0x00,0xff);
-	}
+	} };
 	
-	WRITE_HANDLER( dkong_flipscreen_w )
+	public static WriteHandlerPtr dkong_flipscreen_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		flip_screen_set(~data & 1);
-	}
+	} };
 	
 	/***************************************************************************
 	

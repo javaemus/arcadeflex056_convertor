@@ -116,14 +116,6 @@ public class m92
 	#define M92_SCANLINES	256
 	
 	/* From vidhrdw/m92.c */
-	WRITE_HANDLER( m92_spritecontrol_w );
-	WRITE_HANDLER( m92_videocontrol_w );
-	WRITE_HANDLER( m92_paletteram_w );
-	WRITE_HANDLER( m92_vram_w );
-	WRITE_HANDLER( m92_pf1_control_w );
-	WRITE_HANDLER( m92_pf2_control_w );
-	WRITE_HANDLER( m92_pf3_control_w );
-	WRITE_HANDLER( m92_master_control_w );
 	int m92_vh_start(void);
 	void m92_vh_stop(void);
 	void m92_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);

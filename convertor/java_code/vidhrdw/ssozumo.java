@@ -53,7 +53,7 @@ public class ssozumo
 	}
 	
 	
-	WRITE_HANDLER( ssozumo_paletteram_w )
+	public static WriteHandlerPtr ssozumo_paletteram_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		int	bit0, bit1, bit2, bit3, val;
 		int	r, g, b;
@@ -84,7 +84,7 @@ public class ssozumo
 		b = 0x0e * bit0 + 0x1f * bit1 + 0x43 * bit2 + 0x8f * bit3;
 	
 		palette_set_color(offs2 + 64, r, g, b);
-	}
+	} };
 	
 	
 	int ssozumo_vh_start(void)

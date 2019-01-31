@@ -164,11 +164,6 @@ public class galaxian
 	
 	void galaxian_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom);
 	void scramble_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom);
-	WRITE_HANDLER( galaxian_videoram_w );
-	WRITE_HANDLER( galaxian_stars_enable_w );
-	WRITE_HANDLER( scramble_background_enable_w );
-	WRITE_HANDLER( mooncrst_gfxextend_w );
-	WRITE_HANDLER( mooncrgx_gfxextend_w );
 	int galaxian_plain_vh_start(void);
 	int galaxian_vh_start(void);
 	int mooncrst_vh_start(void);
@@ -179,19 +174,7 @@ public class galaxian
 	int scramble_vh_start(void);
 	int  jumpbug_vh_start(void);
 	void galaxian_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
-	WRITE_HANDLER( jumpbug_gfxbank_w );
-	WRITE_HANDLER( pisces_gfxbank_w );
-	WRITE_HANDLER( galaxian_flip_screen_x_w );
-	WRITE_HANDLER( galaxian_flip_screen_y_w );
-	WRITE_HANDLER( gteikob2_flip_screen_x_w );
-	WRITE_HANDLER( gteikob2_flip_screen_y_w );
 	
-	WRITE_HANDLER( galaxian_pitch_w );
-	WRITE_HANDLER( galaxian_vol_w );
-	WRITE_HANDLER( galaxian_noise_enable_w );
-	WRITE_HANDLER( galaxian_background_enable_w );
-	WRITE_HANDLER( galaxian_shoot_enable_w );
-	WRITE_HANDLER( galaxian_lfo_freq_w );
 	int  galaxian_sh_start(const struct MachineSound *msound);
 	void galaxian_sh_stop(void);
 	void galaxian_sh_update(void);

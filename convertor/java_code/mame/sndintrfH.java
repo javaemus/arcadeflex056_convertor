@@ -309,19 +309,11 @@ public class sndintrfH
 	READ16_HANDLER( soundlatch3_word_r );
 	READ16_HANDLER( soundlatch4_word_r );
 	
-	WRITE_HANDLER( soundlatch_w );
-	WRITE_HANDLER( soundlatch2_w );
-	WRITE_HANDLER( soundlatch3_w );
-	WRITE_HANDLER( soundlatch4_w );
 	WRITE16_HANDLER( soundlatch_word_w );
 	WRITE16_HANDLER( soundlatch2_word_w );
 	WRITE16_HANDLER( soundlatch3_word_w );
 	WRITE16_HANDLER( soundlatch4_word_w );
 	
-	WRITE_HANDLER( soundlatch_clear_w );
-	WRITE_HANDLER( soundlatch2_clear_w );
-	WRITE_HANDLER( soundlatch3_clear_w );
-	WRITE_HANDLER( soundlatch4_clear_w );
 	
 	
 	/* If you're going to use soundlatchX_clear_w, and the cleared value is

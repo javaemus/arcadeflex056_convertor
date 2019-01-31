@@ -47,18 +47,8 @@ public class segar
 	
 	/* sndhrdw/segar.c */
 	
-	WRITE_HANDLER( astrob_speech_port_w );
-	WRITE_HANDLER( astrob_audio_ports_w );
-	WRITE_HANDLER( spaceod_audio_ports_w );
-	WRITE_HANDLER( monsterb_audio_8255_w );
 	 
-	   WRITE_HANDLER( monsterb_sh_dac_w );
-	WRITE_HANDLER( monsterb_sh_busy_w );
-	WRITE_HANDLER( monsterb_sh_offset_a0_a3_w );
-	WRITE_HANDLER( monsterb_sh_offset_a4_a7_w );
-	WRITE_HANDLER( monsterb_sh_offset_a8_a11_w );
-	WRITE_HANDLER( monsterb_sh_rom_select_w );
-	
+	   
 	/* temporary speech handling through samples */
 	int astrob_speech_sh_start(const struct MachineSound *msound);
 	void astrob_speech_sh_update(void);
@@ -72,7 +62,6 @@ public class segar
 	/* machine/segar.c */
 	
 	void sega_security(int chip);
-	WRITE_HANDLER( segar_w );
 	
 	extern unsigned char *segar_mem;
 	
@@ -83,32 +72,18 @@ public class segar
 	extern unsigned char *segar_mem_colortable;
 	extern unsigned char *segar_mem_bcolortable;
 	
-	WRITE_HANDLER( segar_characterram_w );
-	WRITE_HANDLER( segar_characterram2_w );
-	WRITE_HANDLER( segar_colortable_w );
-	WRITE_HANDLER( segar_bcolortable_w );
 	void segar_init_colors(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom);
-	WRITE_HANDLER( segar_video_port_w );
 	int  segar_vh_start(void);
 	void segar_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	
-	WRITE_HANDLER( monsterb_back_port_w );
 	int  monsterb_vh_start(void);
 	void monsterb_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	
 	int  spaceod_vh_start(void);
 	void spaceod_vh_stop(void);
-	WRITE_HANDLER( spaceod_back_port_w );
-	WRITE_HANDLER( spaceod_backshift_w );
-	WRITE_HANDLER( spaceod_backshift_clear_w );
-	WRITE_HANDLER( spaceod_backfill_w );
-	WRITE_HANDLER( spaceod_nobackfill_w );
 	void spaceod_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	
-	WRITE_HANDLER( pignewt_back_color_w );
-	WRITE_HANDLER( pignewt_back_ports_w );
 	
-	WRITE_HANDLER( sindbadm_back_port_w );
 	void sindbadm_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	
 	/***************************************************************************

@@ -36,43 +36,33 @@ public class matmania
 	extern unsigned char *matmania_scroll;
 	extern unsigned char *matmania_pageselect;
 	
-	WRITE_HANDLER( matmania_paletteram_w );
 	void matmania_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom);
 	void matmania_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	void maniach_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
-	WRITE_HANDLER( matmania_videoram3_w );
-	WRITE_HANDLER( matmania_colorram3_w );
 	int matmania_vh_start(void);
 	void matmania_vh_stop(void);
 	void matmania_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	
-	WRITE_HANDLER( maniach_68705_portA_w );
-	WRITE_HANDLER( maniach_68705_portB_w );
-	WRITE_HANDLER( maniach_68705_portC_w );
-	WRITE_HANDLER( maniach_68705_ddrA_w );
-	WRITE_HANDLER( maniach_68705_ddrB_w );
-	WRITE_HANDLER( maniach_68705_ddrC_w );
-	WRITE_HANDLER( maniach_mcu_w );
 	
 	
 	
-	WRITE_HANDLER( matmania_sh_command_w )
+	public static WriteHandlerPtr matmania_sh_command_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		soundlatch_w(offset,data);
 		cpu_cause_interrupt(1,M6502_INT_IRQ);
-	}
+	} };
 	
-	WRITE_HANDLER( matmania_dac_w )
+	public static WriteHandlerPtr matmania_dac_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		DAC_signed_data_w(0,data);
-	}
+	} };
 	
 	
-	WRITE_HANDLER( maniach_sh_command_w )
+	public static WriteHandlerPtr maniach_sh_command_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		soundlatch_w(offset,data);
 		cpu_cause_interrupt(1,M6809_INT_IRQ);
-	}
+	} };
 	
 	
 	

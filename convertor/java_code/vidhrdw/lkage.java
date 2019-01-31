@@ -35,7 +35,7 @@ public class lkage
 	
 	struct tilemap *bg_tilemap, *fg_tilemap, *tx_tilemap;
 	
-	WRITE_HANDLER( lkage_videoram_w )
+	public static WriteHandlerPtr lkage_videoram_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		if( videoram[offset]!=data )
 		{
@@ -56,7 +56,7 @@ public class lkage
 				break;
 			}
 		}
-	}
+	} };
 	
 	static void get_bg_tile_info(int tile_index)
 	{

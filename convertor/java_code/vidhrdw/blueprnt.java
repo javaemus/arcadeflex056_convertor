@@ -66,7 +66,7 @@ public class blueprnt
 	
 	
 	
-	WRITE_HANDLER( blueprnt_flipscreen_w )
+	public static WriteHandlerPtr blueprnt_flipscreen_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		if (flipscreen != (~data & 2))
 		{
@@ -79,7 +79,7 @@ public class blueprnt
 			gfx_bank = ((data & 4) >> 2);
 			memset(dirtybuffer,1,videoram_size);
 		}
-	}
+	} };
 	
 	
 	

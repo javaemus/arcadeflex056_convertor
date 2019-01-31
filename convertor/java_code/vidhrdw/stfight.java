@@ -183,31 +183,31 @@ public class stfight
 	
 	***************************************************************************/
 	
-	WRITE_HANDLER( stfight_text_char_w )
+	public static WriteHandlerPtr stfight_text_char_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		if (stfight_text_char_ram[offset] != data)
 		{
 			stfight_text_char_ram[offset] = data;
 			tilemap_mark_tile_dirty(tx_tilemap,offset);
 		}
-	}
+	} };
 	
-	WRITE_HANDLER( stfight_text_attr_w )
+	public static WriteHandlerPtr stfight_text_attr_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		if (stfight_text_attr_ram[offset] != data)
 		{
 			stfight_text_attr_ram[offset] = data;
 			tilemap_mark_tile_dirty(tx_tilemap,offset);
 		}
-	}
+	} };
 	
-	WRITE_HANDLER( stfight_sprite_bank_w )
+	public static WriteHandlerPtr stfight_sprite_bank_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		stfight_sprite_base = ( ( data & 0x04 ) << 7 ) |
 					          ( ( data & 0x01 ) << 8 );
-	}
+	} };
 	
-	WRITE_HANDLER( stfight_vh_latch_w )
+	public static WriteHandlerPtr stfight_vh_latch_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		int scroll;
 	
@@ -248,7 +248,7 @@ public class stfight
 				flip_screen_set(data & 0x01);
 				break;
 		}
-	}
+	} };
 	
 	/***************************************************************************
 	

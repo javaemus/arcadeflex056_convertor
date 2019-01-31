@@ -159,12 +159,12 @@ public class hal21
 	
 	int hal21_vreg[6];
 	
-	WRITE_HANDLER( hal21_vreg0_w ){ hal21_vreg[0] = data; }
-	WRITE_HANDLER( hal21_vreg1_w ){ hal21_vreg[1] = data; }
-	WRITE_HANDLER( hal21_vreg2_w ){ hal21_vreg[2] = data; }
-	WRITE_HANDLER( hal21_vreg3_w ){ hal21_vreg[3] = data; }
-	WRITE_HANDLER( hal21_vreg4_w ){ hal21_vreg[4] = data; }
-	WRITE_HANDLER( hal21_vreg5_w ){ hal21_vreg[5] = data; }
+	public static WriteHandlerPtr hal21_vreg0_w = new WriteHandlerPtr() {public void handler(int offset, int data){ hal21_vreg[0] = data; } };
+	public static WriteHandlerPtr hal21_vreg1_w = new WriteHandlerPtr() {public void handler(int offset, int data){ hal21_vreg[1] = data; } };
+	public static WriteHandlerPtr hal21_vreg2_w = new WriteHandlerPtr() {public void handler(int offset, int data){ hal21_vreg[2] = data; } };
+	public static WriteHandlerPtr hal21_vreg3_w = new WriteHandlerPtr() {public void handler(int offset, int data){ hal21_vreg[3] = data; } };
+	public static WriteHandlerPtr hal21_vreg4_w = new WriteHandlerPtr() {public void handler(int offset, int data){ hal21_vreg[4] = data; } };
+	public static WriteHandlerPtr hal21_vreg5_w = new WriteHandlerPtr() {public void handler(int offset, int data){ hal21_vreg[5] = data; } };
 	
 	void aso_vh_screenrefresh( struct mame_bitmap *bitmap, int full_refresh ){
 		unsigned char *ram = memory_region(REGION_CPU1);
@@ -639,9 +639,9 @@ public class hal21
 	public static ReadHandlerPtr hal21_spriteram_r  = new ReadHandlerPtr() { public int handler(int offset){
 		return spriteram[offset];
 	} };
-	WRITE_HANDLER( hal21_spriteram_w ){
+	public static WriteHandlerPtr hal21_spriteram_w = new WriteHandlerPtr() {public void handler(int offset, int data){
 		spriteram[offset] = data;
-	}
+	} };
 	
 	public static Memory_ReadAddress hal21_readmem_CPUB[]={
 		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),

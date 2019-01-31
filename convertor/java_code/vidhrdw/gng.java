@@ -80,38 +80,38 @@ public class gng
 	
 	***************************************************************************/
 	
-	WRITE_HANDLER( gng_fgvideoram_w )
+	public static WriteHandlerPtr gng_fgvideoram_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		gng_fgvideoram[offset] = data;
 		tilemap_mark_tile_dirty(fg_tilemap,offset & 0x3ff);
-	}
+	} };
 	
-	WRITE_HANDLER( gng_bgvideoram_w )
+	public static WriteHandlerPtr gng_bgvideoram_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		gng_bgvideoram[offset] = data;
 		tilemap_mark_tile_dirty(bg_tilemap,offset & 0x3ff);
-	}
+	} };
 	
 	
-	WRITE_HANDLER( gng_bgscrollx_w )
+	public static WriteHandlerPtr gng_bgscrollx_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		static unsigned char scrollx[2];
 		scrollx[offset] = data;
 		tilemap_set_scrollx( bg_tilemap, 0, scrollx[0] + 256 * scrollx[1] );
-	}
+	} };
 	
-	WRITE_HANDLER( gng_bgscrolly_w )
+	public static WriteHandlerPtr gng_bgscrolly_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		static unsigned char scrolly[2];
 		scrolly[offset] = data;
 		tilemap_set_scrolly( bg_tilemap, 0, scrolly[0] + 256 * scrolly[1] );
-	}
+	} };
 	
 	
-	WRITE_HANDLER( gng_flipscreen_w )
+	public static WriteHandlerPtr gng_flipscreen_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		flip_screen_set(~data & 1);
-	}
+	} };
 	
 	
 	

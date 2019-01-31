@@ -54,7 +54,6 @@ public class funkybee
 	void funkybee_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom);
 	void funkybee_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	
-	WRITE_HANDLER( funkybee_gfx_bank_w );
 	
 	
 	public static ReadHandlerPtr funkybee_input_port_0_r  = new ReadHandlerPtr() { public int handler(int offset)

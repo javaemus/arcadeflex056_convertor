@@ -25,11 +25,6 @@ public class holeland
 	void holeland_vh_screenrefresh( struct mame_bitmap *bitmap,int full_refresh );
 	void crzrally_vh_screenrefresh( struct mame_bitmap *bitmap,int full_refresh );
 	
-	WRITE_HANDLER( holeland_videoram_w );
-	WRITE_HANDLER( holeland_colorram_w );
-	WRITE_HANDLER( holeland_flipscreen_w );
-	WRITE_HANDLER( holeland_pal_offs_w );
-	WRITE_HANDLER( holeland_scroll_w );
 	
 	
 	public static Memory_ReadAddress readmem[]={

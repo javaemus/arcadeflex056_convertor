@@ -36,20 +36,20 @@ public class flstory
 	
 	
 	
-	WRITE_HANDLER( flstory_palette_w )
+	public static WriteHandlerPtr flstory_palette_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		if (offset & 0x100)
 			paletteram_xxxxBBBBGGGGRRRR_split2_w((offset & 0xff) + (palette_bank << 8),data);
 		else
 			paletteram_xxxxBBBBGGGGRRRR_split1_w((offset & 0xff) + (palette_bank << 8),data);
-	}
+	} };
 	
-	WRITE_HANDLER( flstory_gfxctrl_w )
+	public static WriteHandlerPtr flstory_gfxctrl_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		char_bank = (data & 0x10) >> 4;
 		palette_bank = (data & 0x20) >> 5;
 	//usrintf_showmessage("%04x: gfxctrl = %02x\n",cpu_get_pc(),data);
-	}
+	} };
 	
 	
 	

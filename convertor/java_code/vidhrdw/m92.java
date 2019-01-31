@@ -78,7 +78,7 @@ public class m92
 			m92_sprite_interrupt();
 	}
 	
-	WRITE_HANDLER( m92_spritecontrol_w )
+	public static WriteHandlerPtr m92_spritecontrol_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		static int sprite_extent;
 	
@@ -114,9 +114,9 @@ public class m92
 			timer_set (TIME_IN_NSEC(37 * 0x400), 0, spritebuffer_callback);
 		}
 	//	logerror("%04x: m92_spritecontrol_w %08x %08x\n",cpu_get_pc(),offset,data);
-	}
+	} };
 	
-	WRITE_HANDLER( m92_videocontrol_w )
+	public static WriteHandlerPtr m92_videocontrol_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		/*
 			Many games write:
@@ -138,17 +138,17 @@ public class m92
 			else                     m92_palette_bank = 0;
 		}
 	//	logerror("%04x: m92_videocontrol_w %d = %02x\n",cpu_get_pc(),offset,data);
-	}
+	} };
 	
 	public static ReadHandlerPtr m92_paletteram_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return paletteram_r(offset + 0x800*m92_palette_bank);
 	} };
 	
-	WRITE_HANDLER( m92_paletteram_w )
+	public static WriteHandlerPtr m92_paletteram_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		paletteram_xBBBBBGGGGGRRRRR_w(offset + 0x800*m92_palette_bank,data);
-	}
+	} };
 	
 	/*****************************************************************************/
 	
@@ -286,7 +286,7 @@ public class m92
 		return m92_vram_data[offset];
 	} };
 	
-	WRITE_HANDLER( m92_vram_w )
+	public static WriteHandlerPtr m92_vram_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		int a,wide;
 	
@@ -317,26 +317,26 @@ public class m92
 			tilemap_mark_tile_dirty(pf3_layer,offset/4);
 			tilemap_mark_tile_dirty(pf3_wide_layer,wide/4);
 		}
-	}
+	} };
 	
 	/*****************************************************************************/
 	
-	WRITE_HANDLER( m92_pf1_control_w )
+	public static WriteHandlerPtr m92_pf1_control_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		pf1_control[offset]=data;
-	}
+	} };
 	
-	WRITE_HANDLER( m92_pf2_control_w )
+	public static WriteHandlerPtr m92_pf2_control_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		pf2_control[offset]=data;
-	}
+	} };
 	
-	WRITE_HANDLER( m92_pf3_control_w )
+	public static WriteHandlerPtr m92_pf3_control_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		pf3_control[offset]=data;
-	}
+	} };
 	
-	WRITE_HANDLER( m92_master_control_w )
+	public static WriteHandlerPtr m92_master_control_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		static int last_pf1_ptr,last_pf2_ptr,last_pf3_ptr;
 	
@@ -405,7 +405,7 @@ public class m92
 	//				logerror("%06x: Raster %d %d\n",cpu_get_pc(),offset, m92_raster_irq_position);
 				break;
 		}
-	}
+	} };
 	
 	/*****************************************************************************/
 	

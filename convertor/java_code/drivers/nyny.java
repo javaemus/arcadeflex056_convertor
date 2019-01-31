@@ -55,12 +55,8 @@ public class nyny
 	static unsigned char dac_volume = 0 ;
 	static unsigned char dac_enable = 0 ;
 	
-	WRITE_HANDLER( nyny_videoram0_w );
-	WRITE_HANDLER( nyny_videoram1_w );
 	
-	WRITE_HANDLER( nyny_colourram0_w );
-	WRITE_HANDLER( nyny_colourram1_w );
-	WRITE_HANDLER( nyny_flipscreen_w ) ;
+	public static WriteHandlerPtr nyny_flipscreen_w = new WriteHandlerPtr() {public void handler(int offset, int data) ;
 	
 	
 	
@@ -78,7 +74,7 @@ public class nyny
 			else
 				memset(nvram,0x00,nvram_size);
 		}
-	}
+	} };
 	
 	
 	
@@ -150,27 +146,27 @@ public class nyny
 	
 	
 	
-	WRITE_HANDLER( ay8910_porta_w )
+	public static WriteHandlerPtr ay8910_porta_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		/* dac sounds like crap most likely bad implementation */
 		dac_volume = data ;
 		DAC_1_data_w( 0, dac_enable * dac_volume ) ;
-	}
+	} };
 	
-	WRITE_HANDLER( ay8910_portb_w )
+	public static WriteHandlerPtr ay8910_portb_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		int v = (data & 7) << 5 ;
 		DAC_0_data_w( 0, v ) ;
 	
 		dac_enable = ( data & 8 ) >> 3 ;
 		DAC_1_data_w( 0, dac_enable * dac_volume ) ;
-	}
+	} };
 	
-	WRITE_HANDLER( shared_w_irq )
+	public static WriteHandlerPtr shared_w_irq = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		soundlatch_w(0,data);
 		cpu_set_irq_line(1,M6802_IRQ_LINE,HOLD_LINE);
-	}
+	} };
 	
 	
 	static unsigned char snd_w = 0;
@@ -180,10 +176,10 @@ public class nyny
 		return snd_w;
 	} };
 	
-	WRITE_HANDLER( snd_answer_w )
+	public static WriteHandlerPtr snd_answer_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		snd_w = data;
-	}
+	} };
 	
 	
 	

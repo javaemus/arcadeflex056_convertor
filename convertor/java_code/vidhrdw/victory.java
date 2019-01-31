@@ -190,14 +190,14 @@ public class victory
 	 *
 	 *************************************/
 	
-	WRITE_HANDLER( victory_videoram_w )
+	public static WriteHandlerPtr victory_videoram_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		if (videoram[offset] != data)
 		{
 			videoram[offset] = data;
 			bgdirty[offset] = 1;
 		}
-	}
+	} };
 	
 	
 	
@@ -207,14 +207,14 @@ public class victory
 	 *
 	 *************************************/
 	
-	WRITE_HANDLER( victory_charram_w )
+	public static WriteHandlerPtr victory_charram_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		if (victory_charram[offset] != data)
 		{
 			victory_charram[offset] = data;
 			chardirty[(offset / 8) % 256] = 1;
 		}
-	}
+	} };
 	
 	
 	
@@ -224,7 +224,7 @@ public class victory
 	 *
 	 *************************************/
 	
-	WRITE_HANDLER( victory_paletteram_w )
+	public static WriteHandlerPtr victory_paletteram_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		int red = ((offset & 0x80) >> 5) | ((data & 0xc0) >> 6);
 		int blue = (data & 0x38) >> 3;
@@ -237,7 +237,7 @@ public class victory
 	
 		/* set the color */
 		palette_set_color(offset & 0x3f, red, green, blue);
-	}
+	} };
 	
 	
 	
@@ -313,7 +313,7 @@ public class victory
 	 *
 	 *************************************/
 	
-	WRITE_HANDLER( victory_video_control_w )
+	public static WriteHandlerPtr victory_video_control_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		switch (offset)
 		{
@@ -424,7 +424,7 @@ public class victory
 				if (LOG_MICROCODE) logerror("%04X:victory_video_control_w(%02X) = %02X\n", cpu_getpreviouspc(), offset, data);
 				break;
 		}
-	}
+	} };
 	
 	
 	/***************************************************************************************************

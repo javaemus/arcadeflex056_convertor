@@ -61,7 +61,7 @@ public class videopin
 		return interrupt();
 	}
 	
-	WRITE_HANDLER( videopin_out1_w )
+	public static WriteHandlerPtr videopin_out1_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		NMI_mask = data & 0x10;
 		if (NMI_mask)
@@ -73,41 +73,41 @@ public class videopin
 	//	if (data & 0x10) logerror("out1_w, NMI mask\n");
 	//	if (data & 0x08) logerror("out1_w, lockout coil\n");
 	//	if (data & 0x07) logerror("out1_w, audio frequency : %02x\n", data & 0x07);
-	}
+	} };
 	
-	WRITE_HANDLER( videopin_out2_w )
+	public static WriteHandlerPtr videopin_out2_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 	//	if (data & 0x80) logerror("out2_w, audio disable during attract\n");
 	//	if (data & 0x40) logerror("out2_w, bell audio gen enable\n");
 	//	if (data & 0x20) logerror("out2_w, bong audio gen enable\n");
 	//	if (data & 0x10) logerror("out2_w, coin counter\n");
 	//	if (data & 0x07) logerror("out2_w, audio volume : %02x\n", data & 0x07);
-	}
+	} };
 	
-	WRITE_HANDLER( videopin_led_w )
+	public static WriteHandlerPtr videopin_led_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		// No LEDs for now
 	//	logerror("led_w, LED write : %02x\n", data);
-	}
+	} };
 	
 	
-	WRITE_HANDLER( videopin_watchdog_w )
+	public static WriteHandlerPtr videopin_watchdog_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 	//	logerror("watchdog_w, counter clear %02x:%02x\n", offset, data);
-	}
+	} };
 	
-	WRITE_HANDLER( videopin_ball_position_w )
+	public static WriteHandlerPtr videopin_ball_position_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		//logerror("ball_position_w, ball position : %02x\n", data);
 		ball_position = data;
-	}
+	} };
 	
 	// No sound yet
 	// Load audio frequency
-	WRITE_HANDLER( videopin_note_dvslrd_w )
+	public static WriteHandlerPtr videopin_note_dvslrd_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 	//	logerror("note_dvslrd_w, load audio frequency : %02x\n", data);
-	}
+	} };
 	
 	
 	public static ReadHandlerPtr videopin_in0_r  = new ReadHandlerPtr() { public int handler(int offset)

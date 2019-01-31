@@ -39,9 +39,6 @@ public class pacland
 	
 	static unsigned char *sharedram1;
 	
-	WRITE_HANDLER( pacland_scroll0_w );
-	WRITE_HANDLER( pacland_scroll1_w );
-	WRITE_HANDLER( pacland_bankswitch_w );
 	void pacland_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom);
 	int pacland_vh_start(void);
 	void pacland_vh_stop(void);

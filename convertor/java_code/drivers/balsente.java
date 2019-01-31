@@ -161,9 +161,6 @@ public class balsente
 	void balsente_vh_stop(void);
 	void balsente_vh_screenrefresh(struct mame_bitmap *bitmap, int full_refresh);
 	
-	WRITE_HANDLER( balsente_videoram_w );
-	WRITE_HANDLER( balsente_paletteram_w );
-	WRITE_HANDLER( balsente_palette_select_w );
 	
 	
 	/* local prototypes */

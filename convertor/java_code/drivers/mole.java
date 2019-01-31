@@ -55,8 +55,6 @@ public class mole
 	extern void moleattack_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	extern void moleattack_vh_stop( void );
 	
-	WRITE_HANDLER( moleattack_videoram_w );
-	WRITE_HANDLER( moleattack_tilesetselector_w );
 	
 	static GfxLayout tile_layout = new GfxLayout
 	(

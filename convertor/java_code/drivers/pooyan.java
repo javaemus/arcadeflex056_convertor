@@ -72,7 +72,6 @@ public class pooyan
 {
 	
 	
-	WRITE_HANDLER( pooyan_flipscreen_w );
 	void pooyan_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom);
 	void pooyan_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	

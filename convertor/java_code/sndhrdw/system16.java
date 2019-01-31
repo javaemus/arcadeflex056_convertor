@@ -35,7 +35,7 @@ public class system16
 	}
 	
 	// I'm sure this must be wrong, but it seems to work for quartet music.
-	WRITE_HANDLER( sys16_7751_audio_8255_w )
+	public static WriteHandlerPtr sys16_7751_audio_8255_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		logerror("7751: %4x %4x\n",data,data^0xff);
 	
@@ -44,7 +44,7 @@ public class system16
 			cpu_set_reset_line(2,PULSE_LINE);
 			timer_set(TIME_IN_USEC(300), data, trigger_7751_sound);
 		}
-	}
+	} };
 	
 	
 	public static ReadHandlerPtr sys16_7751_audio_8255_r  = new ReadHandlerPtr() { public int handler(int offset)
@@ -77,43 +77,43 @@ public class system16
 	} };
 	
 	/* write to P1 */
-	WRITE_HANDLER( sys16_7751_sh_dac_w )
+	public static WriteHandlerPtr sys16_7751_sh_dac_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		DAC_data_w(0,data);
-	}
+	} };
 	
 	/* write to P2 */
-	WRITE_HANDLER( sys16_7751_sh_busy_w )
+	public static WriteHandlerPtr sys16_7751_sh_busy_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		port_8255_c03 = (data & 0x70) >> 4;
 		port_8255_c47 = (data & 0x80) >> 3;
 		port_7751_p27 = data & 0x80;
 		rom_base = rom_bank;
-	}
+	} };
 	
 	/* write to P4 */
-	WRITE_HANDLER( sys16_7751_sh_offset_a0_a3_w )
+	public static WriteHandlerPtr sys16_7751_sh_offset_a0_a3_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		rom_offset = (rom_offset & 0xFFF0) | (data & 0x0F);
-	}
+	} };
 	
 	/* write to P5 */
-	WRITE_HANDLER( sys16_7751_sh_offset_a4_a7_w )
+	public static WriteHandlerPtr sys16_7751_sh_offset_a4_a7_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		rom_offset = (rom_offset & 0xFF0F) | ((data & 0x0F) << 4);
-	}
+	} };
 	
 	/* write to P6 */
-	WRITE_HANDLER( sys16_7751_sh_offset_a8_a11_w )
+	public static WriteHandlerPtr sys16_7751_sh_offset_a8_a11_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		rom_offset = (rom_offset & 0xF0FF) | ((data & 0x0F) << 8);
-	}
+	} };
 	
 	/* write to P7 */
-	WRITE_HANDLER( sys16_7751_sh_rom_select_w )
+	public static WriteHandlerPtr sys16_7751_sh_rom_select_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		rom_offset = (rom_offset & 0x0FFF) | ((0x4000 + ((data&0xf) << 12)) & 0x3000);
 	
-	}
+	} };
 	
 }

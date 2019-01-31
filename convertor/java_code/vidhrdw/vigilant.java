@@ -116,7 +116,7 @@ public class vigilant
 	 These are used to index a color triplet of RGB.  The triplet is read
 	 from RAM, and output to R0-R4, G0-G4, and B0-B4.
 	 **************************************************************************/
-	WRITE_HANDLER( vigilant_paletteram_w )
+	public static WriteHandlerPtr vigilant_paletteram_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		int bank,r,g,b;
 	
@@ -131,7 +131,7 @@ public class vigilant
 		b = (paletteram[bank + offset + 0x200] << 3) & 0xFF;
 	
 		palette_set_color((bank >> 2) + offset,r,g,b);
-	}
+	} };
 	
 	
 	
@@ -141,13 +141,13 @@ public class vigilant
 	 horiz_scroll_low  = HSPL, an 8-bit register
 	 horiz_scroll_high = HSPH, a 1-bit register
 	 **************************************************************************/
-	WRITE_HANDLER( vigilant_horiz_scroll_w )
+	public static WriteHandlerPtr vigilant_horiz_scroll_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		if (offset==0)
 			horiz_scroll_low = data;
 		else
 			horiz_scroll_high = (data & 0x01) * 256;
-	}
+	} };
 	
 	/***************************************************************************
 	 vigilant_rear_horiz_scroll_w
@@ -155,13 +155,13 @@ public class vigilant
 	 rear_horiz_scroll_low  = RHSPL, an 8-bit register
 	 rear_horiz_scroll_high = RHSPH, an 8-bit register but only 3 bits are saved
 	***************************************************************************/
-	WRITE_HANDLER( vigilant_rear_horiz_scroll_w )
+	public static WriteHandlerPtr vigilant_rear_horiz_scroll_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		if (offset==0)
 			rear_horiz_scroll_low = data;
 		else
 			rear_horiz_scroll_high = (data & 0x07) * 256;
-	}
+	} };
 	
 	/***************************************************************************
 	 vigilant_rear_color_w
@@ -178,11 +178,11 @@ public class vigilant
 	 palette.  However, the top four bits of the palette inputs are labelled:
 	 "RCC3", "RCC2", "V256E", "RCC0".  Methinks there's a typo.
 	 **************************************************************************/
-	WRITE_HANDLER( vigilant_rear_color_w )
+	public static WriteHandlerPtr vigilant_rear_color_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		rear_disable = data & 0x40;
 		rear_color = (data & 0x0d);
-	}
+	} };
 	
 	/***************************************************************************
 	 draw_foreground

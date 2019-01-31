@@ -198,8 +198,6 @@ public class bzone
 	#define IN0_3KHZ (1<<7)
 	#define IN0_VG_HALT (1<<6)
 	
-	WRITE_HANDLER( redbaron_sounds_w );
-	WRITE_HANDLER( bzone_sounds_w );
 	int bzone_sh_start(const struct MachineSound *msound);
 	void bzone_sh_stop(void);
 	void bzone_sh_update(void);

@@ -115,17 +115,11 @@ public class atarifb
 	extern unsigned char *atarifb_alphap2_vram;
 	extern unsigned char *atarifb_scroll_register;
 	
-	WRITE_HANDLER( atarifb_scroll_w );
-	WRITE_HANDLER( atarifb_alphap1_vram_w );
-	WRITE_HANDLER( atarifb_alphap2_vram_w );
 	extern int atarifb_vh_start(void);
 	extern void atarifb_vh_stop(void);
 	extern void atarifb_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	
 	/* machine/atarifb.c */
-	WRITE_HANDLER( atarifb_out1_w );
-	WRITE_HANDLER( atarifb4_out1_w );
-	WRITE_HANDLER( soccer_out1_w );
 	
 	int atarifb_lamp1, atarifb_lamp2;
 	int atarifb_game;

@@ -79,8 +79,6 @@ public class chinagat
 	
 	/**************** Video stuff ******************/
 	
-	WRITE_HANDLER( ddragon_bgvideoram_w );
-	WRITE_HANDLER( ddragon_fgvideoram_w );
 	
 	int  chinagat_vh_start(void);
 	void ddragon_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
@@ -112,7 +110,7 @@ public class chinagat
 		sound_irq = Z80_NMI_INT;
 	}
 	
-	WRITE_HANDLER( chinagat_video_ctrl_w )
+	public static WriteHandlerPtr chinagat_video_ctrl_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		/***************************
 		---- ---x   X Scroll MSB
@@ -125,7 +123,7 @@ public class chinagat
 		ddragon_scrollx_hi = ( ( data & 0x01 ) << 8 );
 	
 		flip_screen_set(~data & 0x04);
-	}
+	} };
 	
 	public static WriteHandlerPtr chinagat_bankswitch_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{

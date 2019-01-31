@@ -170,7 +170,7 @@ public class llander
 	
 	*/
 	
-	WRITE_HANDLER( llander_led_w )
+	public static WriteHandlerPtr llander_led_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		/*      logerror("LANDER LED: %02x\n",data); */
 	
@@ -188,6 +188,6 @@ public class llander
 	
 	
 	
-	}
+	} };
 	
 }

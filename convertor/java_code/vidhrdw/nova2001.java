@@ -100,26 +100,26 @@ public class nova2001
 	
 	
 	
-	WRITE_HANDLER( nova2001_scroll_x_w )
+	public static WriteHandlerPtr nova2001_scroll_x_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		nova2001_xscroll = data;
-	}
+	} };
 	
-	WRITE_HANDLER( nova2001_scroll_y_w )
+	public static WriteHandlerPtr nova2001_scroll_y_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		nova2001_yscroll = data;
-	}
+	} };
 	
 	
 	
-	WRITE_HANDLER( nova2001_flipscreen_w )
+	public static WriteHandlerPtr nova2001_flipscreen_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		if ((~data & 0x01) != flipscreen)
 		{
 			flipscreen = ~data & 0x01;
 			memset(dirtybuffer,1,videoram_size);
 		}
-	}
+	} };
 	
 	
 	

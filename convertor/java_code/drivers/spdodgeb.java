@@ -32,9 +32,6 @@ public class spdodgeb
 	int spdodgeb_vh_start(void);
 	void spdodgeb_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	int spdodgeb_interrupt(void);
-	WRITE_HANDLER( spdodgeb_scrollx_lo_w );
-	WRITE_HANDLER( spdodgeb_ctrl_w );
-	WRITE_HANDLER( spdodgeb_videoram_w );
 	
 	
 	/* private globals */

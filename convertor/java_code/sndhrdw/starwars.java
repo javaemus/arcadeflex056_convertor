@@ -109,7 +109,7 @@ public class starwars
 	 *
 	 *************************************/
 	
-	WRITE_HANDLER( starwars_m6532_w )
+	public static WriteHandlerPtr starwars_m6532_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		switch (offset)
 		{
@@ -169,7 +169,7 @@ public class starwars
 	
 		return; /* will never execute this */
 	
-	}
+	} };
 	
 	
 	
@@ -190,12 +190,12 @@ public class starwars
 	} };
 	
 	
-	WRITE_HANDLER( starwars_sout_w )
+	public static WriteHandlerPtr starwars_sout_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		port_A |= 0x40; /* result from sound cpu pending */
 		main_data = data;
 		return;
-	}
+	} };
 	
 	
 	
@@ -228,21 +228,21 @@ public class starwars
 	} };
 	
 	
-	WRITE_HANDLER( starwars_main_wr_w )
+	public static WriteHandlerPtr starwars_main_wr_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		port_A |= 0x80;  /* command from main cpu pending */
 		sound_data = data;
 		if (PA7_irq)
 			cpu_cause_interrupt(1, M6809_INT_IRQ);
-	}
+	} };
 	
 	
-	WRITE_HANDLER( starwars_soundrst_w )
+	public static WriteHandlerPtr starwars_soundrst_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		port_A &= 0x3f;
 	
 		/* reset sound CPU here  */
 		cpu_set_reset_line(1, PULSE_LINE);
-	}
+	} };
 	
 }

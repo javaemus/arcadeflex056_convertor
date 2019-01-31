@@ -45,7 +45,7 @@ public class polyplay
 	}
 	
 	
-	WRITE_HANDLER( polyplay_characterram_w )
+	public static WriteHandlerPtr polyplay_characterram_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		if (polyplay_characterram[offset] != data)
 		{
@@ -53,7 +53,7 @@ public class polyplay
 	
 			polyplay_characterram[offset] = data;
 		}
-	}
+	} };
 	
 	public static ReadHandlerPtr polyplay_characterram_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{

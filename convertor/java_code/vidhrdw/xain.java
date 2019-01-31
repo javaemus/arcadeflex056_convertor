@@ -92,70 +92,70 @@ public class xain
 	
 	***************************************************************************/
 	
-	WRITE_HANDLER( xain_bgram0_w )
+	public static WriteHandlerPtr xain_bgram0_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		if (xain_bgram0[offset] != data)
 		{
 			xain_bgram0[offset] = data;
 			tilemap_mark_tile_dirty(bgram0_tilemap,offset & 0x3ff);
 		}
-	}
+	} };
 	
-	WRITE_HANDLER( xain_bgram1_w )
+	public static WriteHandlerPtr xain_bgram1_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		if (xain_bgram1[offset] != data)
 		{
 			xain_bgram1[offset] = data;
 			tilemap_mark_tile_dirty(bgram1_tilemap,offset & 0x3ff);
 		}
-	}
+	} };
 	
-	WRITE_HANDLER( xain_charram_w )
+	public static WriteHandlerPtr xain_charram_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		if (xain_charram[offset] != data)
 		{
 			xain_charram[offset] = data;
 			tilemap_mark_tile_dirty(char_tilemap,offset & 0x3ff);
 		}
-	}
+	} };
 	
-	WRITE_HANDLER( xain_scrollxP0_w )
+	public static WriteHandlerPtr xain_scrollxP0_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		static unsigned char xain_scrollxP0[2];
 	
 		xain_scrollxP0[offset] = data;
 		tilemap_set_scrollx(bgram0_tilemap, 0, xain_scrollxP0[0]|(xain_scrollxP0[1]<<8));
-	}
+	} };
 	
-	WRITE_HANDLER( xain_scrollyP0_w )
+	public static WriteHandlerPtr xain_scrollyP0_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		static unsigned char xain_scrollyP0[2];
 	
 		xain_scrollyP0[offset] = data;
 		tilemap_set_scrolly(bgram0_tilemap, 0, xain_scrollyP0[0]|(xain_scrollyP0[1]<<8));
-	}
+	} };
 	
-	WRITE_HANDLER( xain_scrollxP1_w )
+	public static WriteHandlerPtr xain_scrollxP1_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		static unsigned char xain_scrollxP1[2];
 	
 		xain_scrollxP1[offset] = data;
 		tilemap_set_scrollx(bgram1_tilemap, 0, xain_scrollxP1[0]|(xain_scrollxP1[1]<<8));
-	}
+	} };
 	
-	WRITE_HANDLER( xain_scrollyP1_w )
+	public static WriteHandlerPtr xain_scrollyP1_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		static unsigned char xain_scrollyP1[2];
 	
 		xain_scrollyP1[offset] = data;
 		tilemap_set_scrolly(bgram1_tilemap, 0, xain_scrollyP1[0]|(xain_scrollyP1[1]<<8));
-	}
+	} };
 	
 	
-	WRITE_HANDLER( xain_flipscreen_w )
+	public static WriteHandlerPtr xain_flipscreen_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		flip_screen_set(data & 1);
-	}
+	} };
 	
 	
 	/***************************************************************************

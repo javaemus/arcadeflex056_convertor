@@ -179,44 +179,44 @@ public class mrdo
 	
 	***************************************************************************/
 	
-	WRITE_HANDLER( mrdo_bgvideoram_w )
+	public static WriteHandlerPtr mrdo_bgvideoram_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		if (mrdo_bgvideoram[offset] != data)
 		{
 			mrdo_bgvideoram[offset] = data;
 			tilemap_mark_tile_dirty(bg_tilemap,offset & 0x3ff);
 		}
-	}
+	} };
 	
-	WRITE_HANDLER( mrdo_fgvideoram_w )
+	public static WriteHandlerPtr mrdo_fgvideoram_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		if (mrdo_fgvideoram[offset] != data)
 		{
 			mrdo_fgvideoram[offset] = data;
 			tilemap_mark_tile_dirty(fg_tilemap,offset & 0x3ff);
 		}
-	}
+	} };
 	
 	
-	WRITE_HANDLER( mrdo_scrollx_w )
+	public static WriteHandlerPtr mrdo_scrollx_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		tilemap_set_scrollx(bg_tilemap,0,data);
-	}
+	} };
 	
-	WRITE_HANDLER( mrdo_scrolly_w )
+	public static WriteHandlerPtr mrdo_scrolly_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		tilemap_set_scrolly(bg_tilemap,0,data);
-	}
+	} };
 	
 	
-	WRITE_HANDLER( mrdo_flipscreen_w )
+	public static WriteHandlerPtr mrdo_flipscreen_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		/* bits 1-3 control the playfield priority, but they are not used by */
 		/* Mr. Do! so we don't emulate them */
 	
 		flipscreen = data & 0x01;
 		tilemap_set_flip(ALL_TILEMAPS,flipscreen ? (TILEMAP_FLIPY | TILEMAP_FLIPX) : 0);
-	}
+	} };
 	
 	
 	

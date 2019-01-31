@@ -14,7 +14,6 @@ int tms5220_sh_start(const struct MachineSound *msound);
 void tms5220_sh_stop(void);
 void tms5220_sh_update(void);
 
-WRITE_HANDLER( tms5220_data_w );
 int tms5220_ready_r(void);
 int tms5220_int_r(void);
 

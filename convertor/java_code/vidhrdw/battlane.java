@@ -38,7 +38,7 @@ public class battlane
 	static struct mame_bitmap *bkgnd_bitmap;  /* scroll bitmap */
 	
 	
-	WRITE_HANDLER( battlane_video_ctrl_w )
+	public static WriteHandlerPtr battlane_video_ctrl_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		/*
 	    Video control register
@@ -49,14 +49,14 @@ public class battlane
 		*/
 	
 		battlane_video_ctrl=data;
-	}
+	} };
 	
 	public static ReadHandlerPtr battlane_video_ctrl_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return battlane_video_ctrl;
 	} };
 	
-	WRITE_HANDLER( battlane_palette_w )
+	public static WriteHandlerPtr battlane_palette_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		int r,g,b;
 		int bit0,bit1,bit2;
@@ -79,7 +79,7 @@ public class battlane
 		b = 0x21 * bit0 + 0x47 * bit1 + 0x97 * bit2;
 	
 		palette_set_color(offset,r,g,b);
-	}
+	} };
 	
 	
 	void battlane_set_video_flip(int flip)
@@ -100,30 +100,30 @@ public class battlane
 	
 	}
 	
-	WRITE_HANDLER( battlane_scrollx_w )
+	public static WriteHandlerPtr battlane_scrollx_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 	    battlane_scrollx=data;
-	}
+	} };
 	
-	WRITE_HANDLER( battlane_scrolly_w )
+	public static WriteHandlerPtr battlane_scrolly_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 	    battlane_scrolly=data;
-	}
+	} };
 	
-	WRITE_HANDLER( battlane_tileram_w )
+	public static WriteHandlerPtr battlane_tileram_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 	    battlane_tileram[offset]=data;
-	}
+	} };
 	
 	public static ReadHandlerPtr battlane_tileram_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 	    return battlane_tileram[offset];
 	} };
 	
-	WRITE_HANDLER( battlane_spriteram_w )
+	public static WriteHandlerPtr battlane_spriteram_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 	    battlane_spriteram[offset]=data;
-	}
+	} };
 	
 	public static ReadHandlerPtr battlane_spriteram_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
@@ -131,7 +131,7 @@ public class battlane
 	} };
 	
 	
-	WRITE_HANDLER( battlane_bitmap_w )
+	public static WriteHandlerPtr battlane_bitmap_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		int i, orval;
 	
@@ -152,7 +152,7 @@ public class battlane
 			}
 		}
 		battlane_bitmap[offset]=data;
-	}
+	} };
 	
 	public static ReadHandlerPtr battlane_bitmap_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{

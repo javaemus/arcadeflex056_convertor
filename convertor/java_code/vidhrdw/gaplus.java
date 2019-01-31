@@ -250,9 +250,9 @@ public class gaplus
 		}
 	}
 	
-	WRITE_HANDLER( gaplus_starfield_control_w ) {
+	public static WriteHandlerPtr gaplus_starfield_control_w = new WriteHandlerPtr() {public void handler(int offset, int data) {
 		gaplus_starfield_control[offset] = data;
-	}
+	} };
 	
 	extern unsigned char *gaplus_sharedram;
 	

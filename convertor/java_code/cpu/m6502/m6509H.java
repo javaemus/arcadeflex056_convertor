@@ -69,8 +69,6 @@ public class m6509H
 	extern unsigned m6509_dasm(char *buffer, unsigned pc);
 	
 	
-	WRITE_HANDLER( m6509_write_00000 );
-	WRITE_HANDLER( m6509_write_00001 );
 	
 	#ifdef MAME_DEBUG
 	extern unsigned int Dasm6509( char *dst, unsigned pc );

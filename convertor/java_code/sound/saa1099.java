@@ -468,23 +468,23 @@ public class saa1099
 		SAA1099 interface functions
 	*******************************************/
 	
-	WRITE_HANDLER( saa1099_control_port_0_w )
+	public static WriteHandlerPtr saa1099_control_port_0_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		saa1099_control_port_w(0, offset, data);
-	}
+	} };
 	
-	WRITE_HANDLER( saa1099_write_port_0_w )
+	public static WriteHandlerPtr saa1099_write_port_0_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		saa1099_write_port_w(0, offset, data);
-	}
+	} };
 	
-	WRITE_HANDLER( saa1099_control_port_1_w )
+	public static WriteHandlerPtr saa1099_control_port_1_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		saa1099_control_port_w(1, offset, data);
-	}
+	} };
 	
-	WRITE_HANDLER( saa1099_write_port_1_w )
+	public static WriteHandlerPtr saa1099_write_port_1_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		saa1099_write_port_w(1, offset, data);
-	}
+	} };
 }

@@ -69,26 +69,26 @@ public class gyruss
 		}
 	}
 	
-	WRITE_HANDLER( gyruss_filter0_w )
+	public static WriteHandlerPtr gyruss_filter0_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		filter_w(0,data);
-	}
+	} };
 	
-	WRITE_HANDLER( gyruss_filter1_w )
+	public static WriteHandlerPtr gyruss_filter1_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		filter_w(1,data);
-	}
+	} };
 	
 	
 	
-	WRITE_HANDLER( gyruss_sh_irqtrigger_w )
+	public static WriteHandlerPtr gyruss_sh_irqtrigger_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		/* writing to this register triggers IRQ on the sound CPU */
 		cpu_cause_interrupt(2,0xff);
-	}
+	} };
 	
-	WRITE_HANDLER( gyruss_i8039_irq_w )
+	public static WriteHandlerPtr gyruss_i8039_irq_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		cpu_cause_interrupt(3,I8039_EXT_INT);
-	}
+	} };
 }

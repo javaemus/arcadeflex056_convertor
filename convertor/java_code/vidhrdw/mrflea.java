@@ -16,14 +16,14 @@ public class mrflea
 	
 	static int mrflea_gfx_bank;
 	
-	WRITE_HANDLER( mrflea_gfx_bank_w ){
+	public static WriteHandlerPtr mrflea_gfx_bank_w = new WriteHandlerPtr() {public void handler(int offset, int data){
 		mrflea_gfx_bank = data;
 		if( data & ~0x14 ){
 			logerror( "unknown gfx bank: 0x%02x\n", data );
 		}
-	}
+	} };
 	
-	WRITE_HANDLER( mrflea_videoram_w ){
+	public static WriteHandlerPtr mrflea_videoram_w = new WriteHandlerPtr() {public void handler(int offset, int data){
 		int bank = offset/0x400;
 		offset &= 0x3ff;
 		videoram[offset] = data;
@@ -31,15 +31,15 @@ public class mrflea
 		/*	the address range that tile data is written to sets one bit of
 		**	the bank select.  The remaining bits are from a video register.
 		*/
-	}
+	} };
 	
-	WRITE_HANDLER( mrflea_spriteram_w ){
+	public static WriteHandlerPtr mrflea_spriteram_w = new WriteHandlerPtr() {public void handler(int offset, int data){
 		if( offset&2 ){ /* tile_number */
 			spriteram[offset|1] = offset&1;
 			offset &= ~1;
 		}
 		spriteram[offset] = data;
-	}
+	} };
 	
 	static void draw_sprites( struct mame_bitmap *bitmap ){
 		const struct GfxElement *gfx = Machine->gfx[0];

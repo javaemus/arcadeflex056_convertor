@@ -34,7 +34,7 @@ public class btime
 	
 	
 	
-	WRITE_HANDLER( mmonkey_protection_w )
+	public static WriteHandlerPtr mmonkey_protection_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		unsigned char *RAM = memory_region(REGION_CPU1);
 	
@@ -97,5 +97,5 @@ public class btime
 		else if (offset >= 0x0f00)                      RAM[BASE+offset] = data;   /* decrypt table */
 		else if (offset >= 0x0d00 && offset <= 0x0d05)  RAM[BASE+offset] = data;   /* source table */
 		else logerror("Unknown protection write=%02X.  PC=%04X  Offset=%04X\n", data, cpu_get_pc(), offset);
-	}
+	} };
 }

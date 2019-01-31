@@ -198,7 +198,7 @@ public class tp84
 	
 	
 	
-	WRITE_HANDLER( tp84_videoram2_w )
+	public static WriteHandlerPtr tp84_videoram2_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		if (tp84_videoram2[offset] != data)
 		{
@@ -206,11 +206,11 @@ public class tp84
 	
 			tp84_videoram2[offset] = data;
 		}
-	}
+	} };
 	
 	
 	
-	WRITE_HANDLER( tp84_colorram2_w )
+	public static WriteHandlerPtr tp84_colorram2_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		if (tp84_colorram2[offset] != data)
 		{
@@ -218,14 +218,14 @@ public class tp84
 	
 			tp84_colorram2[offset] = data;
 		}
-	}
+	} };
 	
 	
 	
 	/*****
 	  col0 is a register to index the color Proms
 	*****/
-	WRITE_HANDLER( tp84_col0_w )
+	public static WriteHandlerPtr tp84_col0_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		if(col0 != data)
 		{
@@ -234,7 +234,7 @@ public class tp84
 			memset(dirtybuffer,1,videoram_size);
 			memset(dirtybuffer2,1,videoram_size);
 		}
-	}
+	} };
 	
 	
 	

@@ -32,9 +32,6 @@ public class sbrkout
 	extern unsigned char *sbrkout_vert_ram;
 	
 	/* machine/sbrkout.c */
-	WRITE_HANDLER( sbrkout_serve_led_w );
-	WRITE_HANDLER( sbrkout_start_1_led_w );
-	WRITE_HANDLER( sbrkout_start_2_led_w );
 	extern int sbrkout_interrupt(void);
 	
 	

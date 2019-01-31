@@ -62,11 +62,11 @@ public class sbrkout
 	    else return 0x00;
 	} };
 	
-	WRITE_HANDLER( sbrkout_irq_w )
+	public static WriteHandlerPtr sbrkout_irq_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 	        /* generate irq */
 	        cpu_cause_interrupt(0,M6502_INT_IRQ);
-	}
+	} };
 	
 	
 	/***************************************************************************
@@ -99,19 +99,19 @@ public class sbrkout
 	first address turns them off, the second address turns them on.  This is
 	reversed for the Serve LED, which has a NOT on the signal.
 	***************************************************************************/
-	WRITE_HANDLER( sbrkout_start_1_led_w )
+	public static WriteHandlerPtr sbrkout_start_1_led_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		set_led_status(0,offset & 1);
-	}
+	} };
 	
-	WRITE_HANDLER( sbrkout_start_2_led_w )
+	public static WriteHandlerPtr sbrkout_start_2_led_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		set_led_status(1,offset & 1);
-	}
+	} };
 	
-	WRITE_HANDLER( sbrkout_serve_led_w )
+	public static WriteHandlerPtr sbrkout_serve_led_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		set_led_status(2,~offset & 1);
-	}
+	} };
 	
 }

@@ -115,7 +115,7 @@ public class fastfred
 	}
 	
 	
-	WRITE_HANDLER( fastfred_attributes_w )
+	public static WriteHandlerPtr fastfred_attributes_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		if ((offset & 1) && fastfred_attributesram[offset] != data)
 		{
@@ -127,23 +127,23 @@ public class fastfred
 		}
 	
 		fastfred_attributesram[offset] = data;
-	}
+	} };
 	
 	
-	WRITE_HANDLER( fastfred_character_bank_select_w )
+	public static WriteHandlerPtr fastfred_character_bank_select_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		set_vh_global_attribute(&character_bank[offset], data & 0x01);
 	
-	}
+	} };
 	
 	
-	WRITE_HANDLER( fastfred_color_bank_select_w )
+	public static WriteHandlerPtr fastfred_color_bank_select_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		set_vh_global_attribute(&color_bank[offset], data & 0x01);
-	}
+	} };
 	
 	
-	WRITE_HANDLER( fastfred_background_color_w )
+	public static WriteHandlerPtr fastfred_background_color_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		int r,g,b;
 	
@@ -152,7 +152,7 @@ public class fastfred
 		convert_color(data, &r, &g, &b);
 	
 		palette_set_color(0,r,g,b);
-	}
+	} };
 	
 	
 	/***************************************************************************

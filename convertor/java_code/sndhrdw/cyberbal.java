@@ -62,7 +62,7 @@ public class cyberbal
 	} };
 	
 	
-	WRITE_HANDLER( cyberbal_sound_bank_select_w )
+	public static WriteHandlerPtr cyberbal_sound_bank_select_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		cpu_setbank(8, &bank_base[0x1000 * ((data >> 6) & 3)]);
 		coin_counter_w(1, (data >> 5) & 1);
@@ -70,7 +70,7 @@ public class cyberbal
 		cpu_set_reset_line(3, (data & 0x08) ? CLEAR_LINE : ASSERT_LINE);
 		if (!(data & 0x01)) YM2151_sh_reset();
 	
-	}
+	} };
 	
 	
 	public static ReadHandlerPtr cyberbal_sound_68k_6502_r  = new ReadHandlerPtr() { public int handler(int offset)
@@ -80,7 +80,7 @@ public class cyberbal
 	} };
 	
 	
-	WRITE_HANDLER( cyberbal_sound_68k_6502_w )
+	public static WriteHandlerPtr cyberbal_sound_68k_6502_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		sound_data_from_6502 = data;
 		sound_data_from_6502_ready = 1;
@@ -90,7 +90,7 @@ public class cyberbal
 			io_68k_int = 1;
 			update_sound_68k_interrupts();
 		}
-	}
+	} };
 	
 	
 	

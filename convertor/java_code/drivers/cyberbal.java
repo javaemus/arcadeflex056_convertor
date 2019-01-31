@@ -73,8 +73,6 @@ public class cyberbal
 	
 	int cyberbal_sound_68k_irq_gen(void);
 	
-	WRITE_HANDLER( cyberbal_sound_bank_select_w );
-	WRITE_HANDLER( cyberbal_sound_68k_6502_w );
 	
 	READ16_HANDLER( cyberbal_sound_68k_r );
 	WRITE16_HANDLER( cyberbal_io_68k_irq_ack_w );

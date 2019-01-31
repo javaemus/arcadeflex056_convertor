@@ -254,9 +254,6 @@ public class exidy440
 	void exidy440_sh_update(void);
 	int exidy440_sound_interrupt(void);
 	
-	WRITE_HANDLER( exidy440_m6844_w );
-	WRITE_HANDLER( exidy440_sound_volume_w );
-	WRITE_HANDLER( exidy440_sound_interrupt_clear_w );
 	
 	
 	/* video driver data & functions */
@@ -273,10 +270,6 @@ public class exidy440
 	void topsecex_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	int exidy440_vblank_interrupt(void);
 	
-	WRITE_HANDLER( exidy440_videoram_w );
-	WRITE_HANDLER( exidy440_paletteram_w );
-	WRITE_HANDLER( exidy440_control_w );
-	WRITE_HANDLER( exidy440_interrupt_clear_w );
 	
 	
 	

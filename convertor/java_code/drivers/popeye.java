@@ -30,9 +30,6 @@ public class popeye
 	extern data8_t *popeye_background_pos;
 	extern data8_t *popeye_palettebank;
 	extern data8_t *popeye_textram;
-	WRITE_HANDLER( popeye_backgroundram_w );
-	WRITE_HANDLER( popeye_bitmap_w );
-	WRITE_HANDLER( popeyebl_bitmap_w );
 	void popeye_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom);
 	void popeyebl_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom);
 	void popeye_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);

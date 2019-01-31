@@ -67,14 +67,14 @@ public class mrjong
 	  Display control parameter.
 	
 	***************************************************************************/
-	WRITE_HANDLER( mrjong_flipscreen_w )
+	public static WriteHandlerPtr mrjong_flipscreen_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		if (flipscreen != (data & 1))
 		{
 			flipscreen = (data & 1);
 			memset(dirtybuffer, 1, videoram_size);
 		}
-	}
+	} };
 	
 	
 	/***************************************************************************

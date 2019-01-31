@@ -52,7 +52,7 @@ public class rockrage
 	}
 	
 	
-	WRITE_HANDLER( rockrage_vreg_w ){
+	public static WriteHandlerPtr rockrage_vreg_w = new WriteHandlerPtr() {public void handler(int offset, int data){
 		/* bits 4-7: unused */
 		/* bit 3: bit 4 of bank # (layer 0) */
 		/* bit 2: bit 1 of bank # (layer 0) */
@@ -62,7 +62,7 @@ public class rockrage
 			tilemap_mark_all_tiles_dirty(ALL_TILEMAPS);
 	
 		rockrage_vreg = data;
-	}
+	} };
 	
 	/***************************************************************************
 	

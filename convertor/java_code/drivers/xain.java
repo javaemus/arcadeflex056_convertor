@@ -27,14 +27,6 @@ public class xain
 	
 	void xain_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	int xain_vh_start(void);
-	WRITE_HANDLER( xain_scrollxP0_w );
-	WRITE_HANDLER( xain_scrollyP0_w );
-	WRITE_HANDLER( xain_scrollxP1_w );
-	WRITE_HANDLER( xain_scrollyP1_w );
-	WRITE_HANDLER( xain_charram_w );
-	WRITE_HANDLER( xain_bgram0_w );
-	WRITE_HANDLER( xain_bgram1_w );
-	WRITE_HANDLER( xain_flipscreen_w );
 	
 	extern unsigned char *xain_charram, *xain_bgram0, *xain_bgram1;
 	

@@ -67,13 +67,7 @@ public class route16
 	void route16_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom);
 	int  route16_vh_start(void);
 	void route16_vh_stop(void);
-	WRITE_HANDLER( route16_out0_w );
-	WRITE_HANDLER( route16_out1_w );
-	WRITE_HANDLER( route16_videoram1_w );
-	WRITE_HANDLER( route16_videoram2_w );
-	WRITE_HANDLER( route16_sharedram_w );
 	void route16_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
-	WRITE_HANDLER( stratvox_sn76477_w );
 	
 	public static Memory_ReadAddress cpu1_readmem[]={
 		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),

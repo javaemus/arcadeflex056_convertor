@@ -16,7 +16,7 @@ public class dynduke
 	
 	/******************************************************************************/
 	
-	WRITE_HANDLER( dynduke_paletteram_w )
+	public static WriteHandlerPtr dynduke_paletteram_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		int r,g,b;
 		int color;
@@ -40,7 +40,7 @@ public class dynduke
 			palette_set_color(((offset&0x1f)/2) | (offset&0xffe0) | 2048,r,g,b);
 			palette_set_color(((offset&0x1f)/2) | (offset&0xffe0) | 2048 | 16,r,g,b);
 		}
-	}
+	} };
 	
 	public static ReadHandlerPtr dynduke_background_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
@@ -52,23 +52,23 @@ public class dynduke
 		return dynduke_fore_data[offset];
 	} };
 	
-	WRITE_HANDLER( dynduke_background_w )
+	public static WriteHandlerPtr dynduke_background_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		dynduke_back_data[offset]=data;
 		tilemap_mark_tile_dirty(bg_layer,offset/2);
-	}
+	} };
 	
-	WRITE_HANDLER( dynduke_foreground_w )
+	public static WriteHandlerPtr dynduke_foreground_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		dynduke_fore_data[offset]=data;
 		tilemap_mark_tile_dirty(fg_layer,offset/2);
-	}
+	} };
 	
-	WRITE_HANDLER( dynduke_text_w )
+	public static WriteHandlerPtr dynduke_text_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		videoram[offset]=data;
 		tilemap_mark_tile_dirty(tx_layer,offset/2);
-	}
+	} };
 	
 	static void get_bg_tile_info(int tile_index)
 	{
@@ -124,7 +124,7 @@ public class dynduke
 		return 0;
 	}
 	
-	WRITE_HANDLER( dynduke_gfxbank_w )
+	public static WriteHandlerPtr dynduke_gfxbank_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		static int old_back,old_fore;
 	
@@ -138,9 +138,9 @@ public class dynduke
 	
 		old_back=back_bankbase;
 		old_fore=fore_bankbase;
-	}
+	} };
 	
-	WRITE_HANDLER( dynduke_control_w )
+	public static WriteHandlerPtr dynduke_control_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		static int old_bpal;
 	
@@ -159,7 +159,7 @@ public class dynduke
 		old_bpal=back_palbase;
 		flipscreen=data&0x40;
 		tilemap_set_flip(ALL_TILEMAPS,flipscreen ? (TILEMAP_FLIPY | TILEMAP_FLIPX) : 0);
-	}
+	} };
 	
 	static void draw_sprites(struct mame_bitmap *bitmap,int pri)
 	{

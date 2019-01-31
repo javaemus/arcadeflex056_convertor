@@ -123,30 +123,30 @@ public class mappy
 	
 	
 	
-	WRITE_HANDLER( mappy_videoram_w )
+	public static WriteHandlerPtr mappy_videoram_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		if (videoram[offset] != data)
 		{
 			dirtybuffer[offset] = 1;
 			videoram[offset] = data;
 		}
-	}
+	} };
 	
 	
-	WRITE_HANDLER( mappy_colorram_w )
+	public static WriteHandlerPtr mappy_colorram_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		if (colorram[offset] != data)
 		{
 			dirtybuffer[offset] = 1;
 			colorram[offset] = data;
 		}
-	}
+	} };
 	
 	
-	WRITE_HANDLER( mappy_scroll_w )
+	public static WriteHandlerPtr mappy_scroll_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		mappy_scroll = offset >> 3;
-	}
+	} };
 	
 	
 	
@@ -159,14 +159,14 @@ public class mappy
 			TRANSPARENCY_COLOR,15);
 	}
 	
-	WRITE_HANDLER( mappy_flipscreen_w )
+	public static WriteHandlerPtr mappy_flipscreen_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		if (flipscreen != (data & 1))
 		{
 			flipscreen = data & 1;
 			memset(dirtybuffer,1,videoram_size);
 		}
-	}
+	} };
 	
 	/***************************************************************************
 	

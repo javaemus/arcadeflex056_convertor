@@ -32,10 +32,6 @@ public class pandoras
 	
 	/* from vidhrdw */
 	void pandoras_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom);
-	WRITE_HANDLER( pandoras_vram_w );
-	WRITE_HANDLER( pandoras_cram_w );
-	WRITE_HANDLER( pandoras_flipscreen_w );
-	WRITE_HANDLER( pandoras_scrolly_w );
 	int pandoras_vh_start(void);
 	void pandoras_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	
@@ -98,21 +94,21 @@ public class pandoras
 		}
 	} };
 	
-	WRITE_HANDLER( pandoras_cpua_irqtrigger_w ){
+	public static WriteHandlerPtr pandoras_cpua_irqtrigger_w = new WriteHandlerPtr() {public void handler(int offset, int data){
 		if (!firq_old_data_a && data){
 			cpu_cause_interrupt(0,M6809_INT_FIRQ);
 		}
 	
 		firq_old_data_a = data;
-	}
+	} };
 	
-	WRITE_HANDLER( pandoras_cpub_irqtrigger_w ){
+	public static WriteHandlerPtr pandoras_cpub_irqtrigger_w = new WriteHandlerPtr() {public void handler(int offset, int data){
 		if (!firq_old_data_b && data){
 			cpu_cause_interrupt(1,M6809_INT_FIRQ);
 		}
 	
 		firq_old_data_b = data;
-	}
+	} };
 	
 	public static WriteHandlerPtr i8039_irqen_and_status_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
@@ -123,16 +119,16 @@ public class pandoras
 		i8039_status = (data & 0x20) >> 5;
 	} };
 	
-	WRITE_HANDLER( pandoras_z80_irqtrigger_w )
+	public static WriteHandlerPtr pandoras_z80_irqtrigger_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		cpu_cause_interrupt(2,0xff);
-	}
+	} };
 	
-	WRITE_HANDLER( pandoras_i8039_irqtrigger_w )
+	public static WriteHandlerPtr pandoras_i8039_irqtrigger_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		if (i8039_irqenable)
 			cpu_cause_interrupt(3,I8039_EXT_INT);
-	}
+	} };
 	
 	
 	

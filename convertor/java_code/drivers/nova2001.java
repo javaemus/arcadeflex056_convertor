@@ -41,9 +41,6 @@ public class nova2001
 	extern size_t nova2001_videoram_size;
 	
 	void nova2001_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom);
-	WRITE_HANDLER( nova2001_scroll_x_w );
-	WRITE_HANDLER( nova2001_scroll_y_w );
-	WRITE_HANDLER( nova2001_flipscreen_w );
 	void nova2001_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	
 	

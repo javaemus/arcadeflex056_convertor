@@ -151,13 +151,7 @@ public class scobra
 	int  stratgyx_vh_start(void);
 	
 	void galaxian_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
-	WRITE_HANDLER( galaxian_videoram_w );
 	READ_HANDLER ( galaxian_videoram_r );
-	WRITE_HANDLER( galaxian_stars_enable_w );
-	WRITE_HANDLER( galaxian_flip_screen_x_w );
-	WRITE_HANDLER( galaxian_flip_screen_y_w );
-	WRITE_HANDLER( scramble_filter_w );
-	WRITE_HANDLER( frogger_filter_w );
 	
 	extern struct GfxDecodeInfo galaxian_gfxdecodeinfo[];
 	

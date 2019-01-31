@@ -373,10 +373,10 @@ public class _8080bw
 	}
 	
 	
-	WRITE_HANDLER( invaders_videoram_w )
+	public static WriteHandlerPtr invaders_videoram_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		videoram_w_p(offset, data);
-	}
+	} };
 	
 	
 	public static WriteHandlerPtr bw_videoram_w = new WriteHandlerPtr() {public void handler(int offset, int data)
@@ -504,7 +504,7 @@ public class _8080bw
 	} };
 	
 	
-	WRITE_HANDLER( schaser_colorram_w )
+	public static WriteHandlerPtr schaser_colorram_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		int i;
 	
@@ -518,7 +518,7 @@ public class _8080bw
 		{
 			videoram_w_p(offset, videoram[offset]);
 		}
-	}
+	} };
 	
 	public static ReadHandlerPtr schaser_colorram_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
@@ -526,13 +526,13 @@ public class _8080bw
 	} };
 	
 	
-	WRITE_HANDLER( helifire_colorram_w )
+	public static WriteHandlerPtr helifire_colorram_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		colorram[offset] = data;
 	
 		/* redraw region with (possibly) changed color */
 		videoram_w_p(offset, videoram[offset]);
-	}
+	} };
 	
 	
 	/***************************************************************************

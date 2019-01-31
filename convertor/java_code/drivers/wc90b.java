@@ -91,9 +91,6 @@ public class wc90b
 	extern data8_t *wc90b_scroll2y;
 	
 	int wc90b_vh_start( void );
-	WRITE_HANDLER( wc90b_bgvideoram_w );
-	WRITE_HANDLER( wc90b_fgvideoram_w );
-	WRITE_HANDLER( wc90b_txvideoram_w );
 	void wc90b_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	
 	

@@ -44,7 +44,7 @@ public class redalert
 	static int sound_register_IC1 = 0;
 	static int sound_register_IC2 = 0;
 	
-	WRITE_HANDLER( redalert_c030_w )
+	public static WriteHandlerPtr redalert_c030_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		c030_data = data & 0x3F;
 	
@@ -52,14 +52,14 @@ public class redalert
 		if (data & 0x80)
 			/* Cause an NMI on the voice CPU here? */
 			cpu_cause_interrupt(2,I8085_RST75);
-	}
+	} };
 	
 	public static ReadHandlerPtr redalert_voicecommand_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return c030_data;
 	} };
 	
-	WRITE_HANDLER( redalert_soundlatch_w )
+	public static WriteHandlerPtr redalert_soundlatch_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		/* The byte is connected to Port A of the AY8910 */
 		AY8910_A_input_data = data;
@@ -67,14 +67,14 @@ public class redalert
 		/* Bit D7 is also connected to the NMI input of the CPU */
 		if ((data & 0x80)!=0x80)
 			cpu_cause_interrupt(1,M6502_INT_NMI);
-	}
+	} };
 	
 	public static ReadHandlerPtr redalert_AY8910_A_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return AY8910_A_input_data;
 	} };
 	
-	WRITE_HANDLER( redalert_AY8910_w )
+	public static WriteHandlerPtr redalert_AY8910_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		/* BC2 is connected to a pull-up resistor, so BC2=1 always */
 		switch (data)
@@ -98,19 +98,19 @@ public class redalert
 				logerror("Invalid Sound Command: %02X\n",data);
 				break;
 		}
-	}
+	} };
 	
 	public static ReadHandlerPtr redalert_sound_register_IC1_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return sound_register_IC1;
 	} };
 	
-	WRITE_HANDLER( redalert_sound_register_IC2_w )
+	public static WriteHandlerPtr redalert_sound_register_IC2_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		sound_register_IC2 = data;
-	}
+	} };
 	
-	WRITE_HANDLER( redalert_AY8910_B_w )
+	public static WriteHandlerPtr redalert_AY8910_B_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		/* I'm fairly certain this port triggers analog sounds */
 		logerror("Port B Trigger: %02X\n",data);
@@ -121,6 +121,6 @@ public class redalert
 		/* D4 = Explosion #1? */
 		/* D5 = Explosion #2? */
 		/* D6 = Explosion #3? */
-	}
+	} };
 	
 }

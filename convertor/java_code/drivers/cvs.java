@@ -107,13 +107,6 @@ public class cvs
 	extern unsigned char *s2636_2_ram;
 	extern unsigned char *s2636_3_ram;
 	
-	WRITE_HANDLER( cvs_videoram_w );
-	WRITE_HANDLER( cvs_bullet_w );
-	WRITE_HANDLER( cvs_2636_1_w );
-	WRITE_HANDLER( cvs_2636_2_w );
-	WRITE_HANDLER( cvs_2636_3_w );
-	WRITE_HANDLER( cvs_scroll_w );
-	WRITE_HANDLER( cvs_video_fx_w );
 	
 	
 	/***************************************************************************
@@ -125,10 +118,10 @@ public class cvs
 		return cpu_readmem16(0x1400+offset);
 	} };
 	
-	WRITE_HANDLER( cvs_mirror_w )
+	public static WriteHandlerPtr cvs_mirror_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		cpu_writemem16(0x1400+offset,data);
-	}
+	} };
 	
 	/***************************************************************************
 		Speech Calls
@@ -164,7 +157,7 @@ public class cvs
 	    speech_rom_bit     = 0x0;
 	}
 	
-	WRITE_HANDLER( control_port_w )
+	public static WriteHandlerPtr control_port_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		/* Controls both Speech and Effects */
 	
@@ -196,7 +189,7 @@ public class cvs
 	            start_talking();
 	        }
 	    }
-	}
+	} };
 	
 	int cvs_speech_rom_read_bit(void)
 	{
@@ -217,7 +210,7 @@ public class cvs
 		return bit;
 	}
 	
-	WRITE_HANDLER( cvs_DAC2_w )
+	public static WriteHandlerPtr cvs_DAC2_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 	    /* 4 Bit DAC - 4 memory locations used */
 	
@@ -227,7 +220,7 @@ public class cvs
 	    DAC_Value |= ((data & 0x80) >> 7) << (offset + 4);
 	
 		DAC_1_data_w(0,DAC_Value);
-	}
+	} };
 	
 	public static ReadHandlerPtr CVS_393hz_Clock_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{

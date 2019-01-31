@@ -236,7 +236,7 @@ public class cclimber
 	  bit 0 -- 1  kohm resistor  -- BLUE
 	
 	***************************************************************************/
-	WRITE_HANDLER( swimmer_bgcolor_w )
+	public static WriteHandlerPtr swimmer_bgcolor_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		int bit0,bit1,bit2;
 		int r,g,b;
@@ -261,7 +261,7 @@ public class cclimber
 		b = 0x20 * bit0 + 0x40 * bit1 + 0x80 * bit2;
 	
 		palette_set_color(BGPEN,r,g,b);
-	}
+	} };
 	
 	
 	
@@ -292,7 +292,7 @@ public class cclimber
 	
 	
 	
-	WRITE_HANDLER( cclimber_colorram_w )
+	public static WriteHandlerPtr cclimber_colorram_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		if (colorram[offset] != data)
 		{
@@ -307,28 +307,28 @@ public class cclimber
 			colorram[offset] = data;
 			colorram[offset + 0x20] = data;
 		}
-	}
+	} };
 	
 	
 	
-	WRITE_HANDLER( cclimber_bigsprite_videoram_w )
+	public static WriteHandlerPtr cclimber_bigsprite_videoram_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		cclimber_bsvideoram[offset] = data;
-	}
+	} };
 	
 	
 	
-	WRITE_HANDLER( swimmer_palettebank_w )
+	public static WriteHandlerPtr swimmer_palettebank_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		set_vh_global_attribute(&palettebank, data & 1);
-	}
+	} };
 	
 	
 	
-	WRITE_HANDLER( swimmer_sidepanel_enable_w )
+	public static WriteHandlerPtr swimmer_sidepanel_enable_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		set_vh_global_attribute(&sidepanel_enabled, data );
-	}
+	} };
 	
 	
 	

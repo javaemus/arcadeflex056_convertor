@@ -36,10 +36,10 @@ public class battlnts
 		*color = 0;
 	}
 	
-	WRITE_HANDLER( battlnts_spritebank_w )
+	public static WriteHandlerPtr battlnts_spritebank_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		spritebank = 1024 * (data & 1);
-	}
+	} };
 	
 	/***************************************************************************
 	

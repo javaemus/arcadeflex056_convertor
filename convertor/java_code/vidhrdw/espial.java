@@ -73,14 +73,14 @@ public class espial
 	
 	
 	
-	WRITE_HANDLER( espial_attributeram_w )
+	public static WriteHandlerPtr espial_attributeram_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		if (espial_attributeram[offset] != data)
 		{
 			espial_attributeram[offset] = data;
 			memset(dirtybuffer,1,videoram_size);
 		}
-	}
+	} };
 	
 	
 	

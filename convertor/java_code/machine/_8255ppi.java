@@ -353,8 +353,8 @@ public class _8255ppi
 	public static ReadHandlerPtr ppi8255_1_r  = new ReadHandlerPtr() { public int handler(int offset) { return ppi8255_r( 1, offset ); } };
 	public static ReadHandlerPtr ppi8255_2_r  = new ReadHandlerPtr() { public int handler(int offset) { return ppi8255_r( 2, offset ); } };
 	public static ReadHandlerPtr ppi8255_3_r  = new ReadHandlerPtr() { public int handler(int offset) { return ppi8255_r( 3, offset ); } };
-	WRITE_HANDLER( ppi8255_0_w ) { ppi8255_w( 0, offset, data ); }
-	WRITE_HANDLER( ppi8255_1_w ) { ppi8255_w( 1, offset, data ); }
-	WRITE_HANDLER( ppi8255_2_w ) { ppi8255_w( 2, offset, data ); }
-	WRITE_HANDLER( ppi8255_3_w ) { ppi8255_w( 3, offset, data ); }
+	public static WriteHandlerPtr ppi8255_0_w = new WriteHandlerPtr() {public void handler(int offset, int data) { ppi8255_w( 0, offset, data ); } };
+	public static WriteHandlerPtr ppi8255_1_w = new WriteHandlerPtr() {public void handler(int offset, int data) { ppi8255_w( 1, offset, data ); } };
+	public static WriteHandlerPtr ppi8255_2_w = new WriteHandlerPtr() {public void handler(int offset, int data) { ppi8255_w( 2, offset, data ); } };
+	public static WriteHandlerPtr ppi8255_3_w = new WriteHandlerPtr() {public void handler(int offset, int data) { ppi8255_w( 3, offset, data ); } };
 }

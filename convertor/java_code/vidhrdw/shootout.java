@@ -69,18 +69,18 @@ public class shootout
 				0)
 	}
 	
-	WRITE_HANDLER( shootout_videoram_w ){
+	public static WriteHandlerPtr shootout_videoram_w = new WriteHandlerPtr() {public void handler(int offset, int data){
 		if( videoram[offset]!=data ){
 			videoram[offset] = data;
 			tilemap_mark_tile_dirty( background, offset&0x3ff );
 		}
-	}
-	WRITE_HANDLER( shootout_textram_w ){
+	} };
+	public static WriteHandlerPtr shootout_textram_w = new WriteHandlerPtr() {public void handler(int offset, int data){
 		if( shootout_textram[offset]!=data ){
 			shootout_textram[offset] = data;
 			tilemap_mark_tile_dirty( foreground, offset&0x3ff );
 		}
-	}
+	} };
 	
 	int shootout_vh_start( void ){
 		background = tilemap_create(get_bg_tile_info,tilemap_scan_rows,TILEMAP_OPAQUE,8,8,32,32);

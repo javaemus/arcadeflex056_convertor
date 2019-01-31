@@ -35,10 +35,7 @@ public class vball
 	void vb_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	extern void vb_bgprombank_w(int bank);
 	extern void vb_spprombank_w(int bank);
-	extern WRITE_HANDLER( vb_foreground_w );
-	extern WRITE_HANDLER( vb_attrib_w );
-	extern WRITE_HANDLER( vb_fgattrib_w );
-	/* end of extern code & data */
+	extern extern extern /* end of extern code & data */
 	
 	/* private globals */
 	static int sound_irq, ym_irq;
@@ -67,11 +64,11 @@ public class vball
 	/* The sound system comes all but verbatim from Double Dragon */
 	
 	
-	WRITE_HANDLER( cpu_sound_command_w ) {
+	public static WriteHandlerPtr cpu_sound_command_w = new WriteHandlerPtr() {public void handler(int offset, int data) {
 		soundlatch_w( offset, data );
 		cpu_cause_interrupt( 1, sound_irq );
 		logerror("Sound_command_w\n");
-	}
+	} };
 	
 	public static WriteHandlerPtr dd_adpcm_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
@@ -125,7 +122,7 @@ public class vball
 	} };
 	
 	
-	WRITE_HANDLER( vb_scrollx_hi_w )
+	public static WriteHandlerPtr vb_scrollx_hi_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		vb_scrollx_hi = (data & 0x02) << 7;
 		vb_bgprombank_w((data >> 2)&0x07);
@@ -133,7 +130,7 @@ public class vball
 	
 	//	logerror("vb_scrollx_hi %02x\n",data);
 	
-	}
+	} };
 	
 	public static Memory_ReadAddress readmem[]={
 		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),

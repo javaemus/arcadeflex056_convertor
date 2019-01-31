@@ -153,11 +153,11 @@ public class gridlee
 	 *
 	 *************************************/
 	
-	WRITE_HANDLER( gridlee_cocktail_flip_w )
+	public static WriteHandlerPtr gridlee_cocktail_flip_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		gridlee_cocktail_flip = data & 1;
 		memset(scanline_dirty, 1, 256);
-	}
+	} };
 	
 	
 	
@@ -167,7 +167,7 @@ public class gridlee
 	 *
 	 *************************************/
 	
-	WRITE_HANDLER( gridlee_videoram_w )
+	public static WriteHandlerPtr gridlee_videoram_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		videoram[offset] = data;
 	
@@ -177,7 +177,7 @@ public class gridlee
 	
 		/* mark the scanline dirty */
 		scanline_dirty[offset / 128] = 1;
-	}
+	} };
 	
 	
 	
@@ -226,12 +226,12 @@ public class gridlee
 	}
 	
 	
-	WRITE_HANDLER( gridlee_palette_select_w )
+	public static WriteHandlerPtr gridlee_palette_select_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		/* update the scanline palette */
 		update_palette();
 		palettebank_vis = data & 0x3f;
-	}
+	} };
 	
 	
 	

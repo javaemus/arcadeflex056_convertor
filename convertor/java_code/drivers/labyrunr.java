@@ -22,8 +22,6 @@ public class labyrunr
 	/* from vidhrdw/labyrunr.c */
 	extern unsigned char *labyrunr_videoram1,*labyrunr_videoram2;
 	void labyrunr_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom);
-	WRITE_HANDLER( labyrunr_vram1_w );
-	WRITE_HANDLER( labyrunr_vram2_w );
 	int labyrunr_vh_start(void);
 	void labyrunr_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	

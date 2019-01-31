@@ -22,7 +22,6 @@ public class galaga
 	
 	static void *nmi_timer;
 	
-	WRITE_HANDLER( galaga_halt_w );
 	void galaga_vh_interrupt(void);
 	
 	
@@ -41,13 +40,13 @@ public class galaga
 	
 	
 	
-	WRITE_HANDLER( galaga_sharedram_w )
+	public static WriteHandlerPtr galaga_sharedram_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		if (offset < 0x800)		/* write to video RAM */
 			dirtybuffer[offset & 0x3ff] = 1;
 	
 		galaga_sharedram[offset] = data;
-	}
+	} };
 	
 	
 	
@@ -75,7 +74,7 @@ public class galaga
 	static unsigned char customio[16];
 	
 	
-	WRITE_HANDLER( galaga_customio_data_w )
+	public static WriteHandlerPtr galaga_customio_data_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		customio[offset] = data;
 	
@@ -96,7 +95,7 @@ public class galaga
 				}
 				break;
 		}
-	}
+	} };
 	
 	
 	public static ReadHandlerPtr galaga_customio_data_r  = new ReadHandlerPtr() { public int handler(int offset)
@@ -174,7 +173,7 @@ public class galaga
 	}
 	
 	
-	WRITE_HANDLER( galaga_customio_w )
+	public static WriteHandlerPtr galaga_customio_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		if (data != 0x10 && data != 0x71)
 			logerror("%04x: custom IO command %02x\n",cpu_get_pc(),data);
@@ -199,11 +198,11 @@ public class galaga
 		}
 	
 		nmi_timer = timer_pulse (TIME_IN_USEC (50), 0, galaga_nmi_generate);
-	}
+	} };
 	
 	
 	
-	WRITE_HANDLER( galaga_halt_w )
+	public static WriteHandlerPtr galaga_halt_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		if (data & 1)
 		{
@@ -215,14 +214,14 @@ public class galaga
 			cpu_set_reset_line(1,ASSERT_LINE);
 			cpu_set_reset_line(2,ASSERT_LINE);
 		}
-	}
+	} };
 	
 	
 	
-	WRITE_HANDLER( galaga_interrupt_enable_1_w )
+	public static WriteHandlerPtr galaga_interrupt_enable_1_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		interrupt_enable_1 = data & 1;
-	}
+	} };
 	
 	
 	
@@ -236,10 +235,10 @@ public class galaga
 	
 	
 	
-	WRITE_HANDLER( galaga_interrupt_enable_2_w )
+	public static WriteHandlerPtr galaga_interrupt_enable_2_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		interrupt_enable_2 = data & 1;
-	}
+	} };
 	
 	
 	
@@ -251,10 +250,10 @@ public class galaga
 	
 	
 	
-	WRITE_HANDLER( galaga_interrupt_enable_3_w )
+	public static WriteHandlerPtr galaga_interrupt_enable_3_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		interrupt_enable_3 = !(data & 1);
-	}
+	} };
 	
 	
 	

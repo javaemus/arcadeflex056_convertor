@@ -40,12 +40,12 @@ public class ninjakid
 				0)
 	}
 	
-	WRITE_HANDLER( ninjakid_fg_videoram_w ){
+	public static WriteHandlerPtr ninjakid_fg_videoram_w = new WriteHandlerPtr() {public void handler(int offset, int data){
 		videoram[offset] = data;
 		tilemap_mark_tile_dirty(fg_tilemap,offset&0x3ff);
-	}
+	} };
 	
-	WRITE_HANDLER( ninjakid_bg_videoram_w ){
+	public static WriteHandlerPtr ninjakid_bg_videoram_w = new WriteHandlerPtr() {public void handler(int offset, int data){
 	
 		int y = (offset + ((ninjakun_yscroll & 0xf8) << 2) ) & 0x3e0;
 		int x = (offset + (ninjakun_xscroll >> 3) ) & 0x1f;
@@ -53,7 +53,7 @@ public class ninjakid
 	
 		videoram[0x800+offs] = data;
 		tilemap_mark_tile_dirty(bg_tilemap,x+y);
-	}
+	} };
 	
 	public static ReadHandlerPtr ninjakid_bg_videoram_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
@@ -66,10 +66,10 @@ public class ninjakid
 	
 	/******************************************************************************/
 	
-	WRITE_HANDLER( ninjakun_flipscreen_w ){
+	public static WriteHandlerPtr ninjakun_flipscreen_w = new WriteHandlerPtr() {public void handler(int offset, int data){
 		flipscreen = data?(TILEMAP_FLIPX|TILEMAP_FLIPY):0;
 		tilemap_set_flip( ALL_TILEMAPS,flipscreen );
-	}
+	} };
 	
 	public static ReadHandlerPtr ninjakun_io_8000_r  = new ReadHandlerPtr() { public int handler(int offset){
 		switch( offset ){
@@ -135,7 +135,7 @@ public class ninjakid
 	*/
 	
 	
-	WRITE_HANDLER( ninjakun_io_8000_w ){
+	public static WriteHandlerPtr ninjakun_io_8000_w = new WriteHandlerPtr() {public void handler(int offset, int data){
 		switch( offset ){
 		case 0x0: /* control#1 */
 			ninjakun_io_8000_ctrl[0] = data;
@@ -175,9 +175,9 @@ public class ninjakid
 			}
 			break;
 		}
-	}
+	} };
 	
-	WRITE_HANDLER( ninjakun_paletteram_w )
+	public static WriteHandlerPtr ninjakun_paletteram_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		int i;
 	
@@ -194,7 +194,7 @@ public class ninjakid
 			}
 		}
 		paletteram_BBGGRRII_w(0x200+offset*16+1,data);
-	}
+	} };
 	
 	/*******************************************************************************
 	 Video Hardware Functions

@@ -62,18 +62,18 @@ public class llander
 		DISCRETE_OUTPUT(NODE_90)														// Take the output from the mixer
 	DISCRETE_SOUND_END
 	
-	WRITE_HANDLER( llander_snd_reset_w )
+	public static WriteHandlerPtr llander_snd_reset_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		/* This does nothing in the discrete emulation but on the real machine */
 		/* It resets the LFSR that is used for the white noise generator       */
-	}
+	} };
 	
-	WRITE_HANDLER( llander_sounds_w )
+	public static WriteHandlerPtr llander_sounds_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		discrete_sound_w(0,data&0x07);		/* Thrust volume */
 		discrete_sound_w(1,data&0x10);		/* Tone 3KHz enable */
 		discrete_sound_w(2,data&0x20);		/* Tone 6KHz enable */
 		discrete_sound_w(3,data&0x08);		/* Explosion */
-	}
+	} };
 	
 }

@@ -134,12 +134,9 @@ public class pacman
 	
 	int pacman_vh_start(void);
 	void pacman_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom);
-	WRITE_HANDLER( pengo_flipscreen_w );
 	void pengo_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	
 	extern unsigned char *pengo_soundregs;
-	WRITE_HANDLER( pengo_sound_enable_w );
-	WRITE_HANDLER( pengo_sound_w );
 	
 	extern void pacplus_decode(void);
 	extern void jumpshot_decode(void);
@@ -148,7 +145,6 @@ public class pacman
 	void theglobp_init_machine(void);
 	
 	void mspacman_init_machine(void);
-	WRITE_HANDLER( mspacman_activate_rom );
 	
 	
 	static int speedcheat = 0;	/* a well known hack allows to make Pac Man run at four times */

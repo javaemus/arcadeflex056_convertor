@@ -230,26 +230,26 @@ public class galivan
 	
 	***************************************************************************/
 	
-	WRITE_HANDLER( galivan_videoram_w )
+	public static WriteHandlerPtr galivan_videoram_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		if (videoram[offset] != data)
 		{
 			videoram[offset] = data;
 			tilemap_mark_tile_dirty(tx_tilemap,offset);
 		}
-	}
+	} };
 	
-	WRITE_HANDLER( galivan_colorram_w )
+	public static WriteHandlerPtr galivan_colorram_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		if (colorram[offset] != data)
 		{
 			colorram[offset] = data;
 			tilemap_mark_tile_dirty(tx_tilemap,offset);
 		}
-	}
+	} };
 	
 	/* Written through port 40 */
-	WRITE_HANDLER( galivan_gfxbank_w )
+	public static WriteHandlerPtr galivan_gfxbank_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		/* bits 0 and 1 coin counters */
 		coin_counter_w(0,data & 1);
@@ -269,9 +269,9 @@ public class galivan
 		}
 	
 	/*	logerror("Address: %04X - port 40 = %02x\n",cpu_get_pc(),data); */
-	}
+	} };
 	
-	WRITE_HANDLER( ninjemak_gfxbank_w )
+	public static WriteHandlerPtr ninjemak_gfxbank_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		/* bits 0 and 1 coin counters */
 		coin_counter_w(0,data & 1);
@@ -326,12 +326,12 @@ public class galivan
 			usrintf_showmessage(mess);
 		}
 	#endif
-	}
+	} };
 	
 	
 	
 	/* Written through port 41-42 */
-	WRITE_HANDLER( galivan_scrollx_w )
+	public static WriteHandlerPtr galivan_scrollx_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		static int up = 0;
 		if (offset == 1) {
@@ -343,24 +343,24 @@ public class galivan
 			}
 		}
 		scrollx[offset] = data;
-	}
+	} };
 	
 	/* Written through port 43-44 */
-	WRITE_HANDLER( galivan_scrolly_w )
+	public static WriteHandlerPtr galivan_scrolly_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		scrolly[offset] = data;
-	}
+	} };
 	
 	
-	WRITE_HANDLER( ninjemak_scrollx_w )
+	public static WriteHandlerPtr ninjemak_scrollx_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		scrollx[offset] = data;
-	}
+	} };
 	
-	WRITE_HANDLER( ninjemak_scrolly_w )
+	public static WriteHandlerPtr ninjemak_scrolly_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		scrolly[offset] = data;
-	}
+	} };
 	
 	
 	

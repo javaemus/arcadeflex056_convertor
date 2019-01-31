@@ -76,9 +76,6 @@ public class vastar
 	extern data8_t *vastar_bg1_scroll,*vastar_bg2_scroll;
 	extern data8_t *vastar_sprite_priority;
 	
-	WRITE_HANDLER( vastar_bg1videoram_w );
-	WRITE_HANDLER( vastar_bg2videoram_w );
-	WRITE_HANDLER( vastar_fgvideoram_w );
 	int vastar_vh_start(void);
 	void vastar_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	

@@ -196,52 +196,52 @@ public class _2612intf
 	/* Control Write for YM2612 - Chip 0			*/
 	/* Consists of 2 addresses						*/
 	/************************************************/
-	WRITE_HANDLER( YM2612_control_port_0_A_w )
+	public static WriteHandlerPtr YM2612_control_port_0_A_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 	  YM2612Write(0,0,data);
-	}
+	} };
 	
-	WRITE_HANDLER( YM2612_control_port_0_B_w )
+	public static WriteHandlerPtr YM2612_control_port_0_B_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 	  YM2612Write(0,2,data);
-	}
+	} };
 	
 	/************************************************/
 	/* Control Write for YM2612 - Chip 1			*/
 	/* Consists of 2 addresses						*/
 	/************************************************/
-	WRITE_HANDLER( YM2612_control_port_1_A_w ){
+	public static WriteHandlerPtr YM2612_control_port_1_A_w = new WriteHandlerPtr() {public void handler(int offset, int data){
 	  YM2612Write(1,0,data);
-	}
+	} };
 	
-	WRITE_HANDLER( YM2612_control_port_1_B_w ){
+	public static WriteHandlerPtr YM2612_control_port_1_B_w = new WriteHandlerPtr() {public void handler(int offset, int data){
 	  YM2612Write(1,2,data);
-	}
+	} };
 	
 	/************************************************/
 	/* Data Write for YM2612 - Chip 0				*/
 	/* Consists of 2 addresses						*/
 	/************************************************/
-	WRITE_HANDLER( YM2612_data_port_0_A_w )
+	public static WriteHandlerPtr YM2612_data_port_0_A_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 	  YM2612Write(0,1,data);
-	}
+	} };
 	
-	WRITE_HANDLER( YM2612_data_port_0_B_w )
+	public static WriteHandlerPtr YM2612_data_port_0_B_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 	  YM2612Write(0,3,data);
-	}
+	} };
 	
 	/************************************************/
 	/* Data Write for YM2612 - Chip 1				*/
 	/* Consists of 2 addresses						*/
 	/************************************************/
-	WRITE_HANDLER( YM2612_data_port_1_A_w ){
+	public static WriteHandlerPtr YM2612_data_port_1_A_w = new WriteHandlerPtr() {public void handler(int offset, int data){
 	  YM2612Write(1,1,data);
-	}
-	WRITE_HANDLER( YM2612_data_port_1_B_w ){
+	} };
+	public static WriteHandlerPtr YM2612_data_port_1_B_w = new WriteHandlerPtr() {public void handler(int offset, int data){
 	  YM2612Write(1,3,data);
-	}
+	} };
 	
 	/**************** end of file ****************/
 	

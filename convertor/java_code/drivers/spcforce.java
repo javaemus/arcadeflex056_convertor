@@ -43,7 +43,6 @@ public class spcforce
 	
 	extern unsigned char *spcforce_scrollram;
 	
-	WRITE_HANDLER( spcforce_flip_screen_w );
 	void spcforce_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	
 	

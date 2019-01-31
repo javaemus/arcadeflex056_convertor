@@ -48,7 +48,7 @@ public class pstadium
 		return pstadium_palette[offset];
 	} };
 	
-	WRITE_HANDLER( pstadium_palette_w )
+	public static WriteHandlerPtr pstadium_palette_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		int r, g, b;
 	
@@ -67,9 +67,9 @@ public class pstadium
 		b = (b | (b >> 4));
 	
 		palette_set_color((offset >> 1), r, g, b);
-	}
+	} };
 	
-	WRITE_HANDLER( galkoku_palette_w )
+	public static WriteHandlerPtr galkoku_palette_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		int r, g, b;
 	
@@ -88,9 +88,9 @@ public class pstadium
 		b = (b | (b >> 4));
 	
 		palette_set_color((offset >> 1), r, g, b);
-	}
+	} };
 	
-	WRITE_HANDLER( galkaika_palette_w )
+	public static WriteHandlerPtr galkaika_palette_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		int r, g, b;
 	
@@ -109,7 +109,7 @@ public class pstadium
 		b = ((b << 3) | (b >> 2));
 	
 		palette_set_color((offset / 2), r, g, b);
-	}
+	} };
 	
 	/******************************************************************************
 	
@@ -226,10 +226,10 @@ public class pstadium
 		return pstadium_paltbl[offset];
 	} };
 	
-	WRITE_HANDLER( pstadium_paltbl_w )
+	public static WriteHandlerPtr pstadium_paltbl_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		pstadium_paltbl[((pstadium_paltblnum & 0x7f) * 0x10) + (offset & 0x0f)] = data;
-	}
+	} };
 	
 	/******************************************************************************
 	

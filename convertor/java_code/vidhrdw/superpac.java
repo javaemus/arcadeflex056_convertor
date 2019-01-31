@@ -80,10 +80,10 @@ public class superpac
 	}
 	
 	
-	WRITE_HANDLER( superpac_flipscreen_w )
+	public static WriteHandlerPtr superpac_flipscreen_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		flip_screen_set(data);
-	}
+	} };
 	
 	
 	

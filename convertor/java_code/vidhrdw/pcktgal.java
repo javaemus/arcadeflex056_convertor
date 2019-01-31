@@ -41,14 +41,14 @@ public class pcktgal
 	
 	
 	
-	WRITE_HANDLER( pcktgal_flipscreen_w )
+	public static WriteHandlerPtr pcktgal_flipscreen_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		static int last_flip;
 		flipscreen = (data&0x80) ? 1 : 0;
 		if (last_flip!=flipscreen)
 			memset(dirtybuffer,1,0x800);
 		last_flip=flipscreen;
-	}
+	} };
 	
 	void pcktgal_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
 	{

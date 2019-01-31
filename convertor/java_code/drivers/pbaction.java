@@ -44,10 +44,6 @@ public class pbaction
 	
 	
 	extern unsigned char *pbaction_videoram2,*pbaction_colorram2;
-	WRITE_HANDLER( pbaction_videoram2_w );
-	WRITE_HANDLER( pbaction_colorram2_w );
-	WRITE_HANDLER( pbaction_flipscreen_w );
-	WRITE_HANDLER( pbaction_scroll_w );
 	int pbaction_vh_start(void);
 	void pbaction_vh_stop(void);
 	

@@ -17,8 +17,6 @@ public class pbaction
 	
 	
 	unsigned char *pbaction_videoram2,*pbaction_colorram2;
-	WRITE_HANDLER( pbaction_videoram2_w );
-	WRITE_HANDLER( pbaction_colorram2_w );
 	static unsigned char *dirtybuffer2;
 	static struct mame_bitmap *tmpbitmap2;
 	static int scroll;
@@ -68,7 +66,7 @@ public class pbaction
 	
 	
 	
-	WRITE_HANDLER( pbaction_videoram2_w )
+	public static WriteHandlerPtr pbaction_videoram2_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		if (pbaction_videoram2[offset] != data)
 		{
@@ -76,11 +74,11 @@ public class pbaction
 	
 			pbaction_videoram2[offset] = data;
 		}
-	}
+	} };
 	
 	
 	
-	WRITE_HANDLER( pbaction_colorram2_w )
+	public static WriteHandlerPtr pbaction_colorram2_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		if (pbaction_colorram2[offset] != data)
 		{
@@ -88,18 +86,18 @@ public class pbaction
 	
 			pbaction_colorram2[offset] = data;
 		}
-	}
+	} };
 	
 	
 	
-	WRITE_HANDLER( pbaction_scroll_w )
+	public static WriteHandlerPtr pbaction_scroll_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		scroll = -(data-3);
-	}
+	} };
 	
 	
 	
-	WRITE_HANDLER( pbaction_flipscreen_w )
+	public static WriteHandlerPtr pbaction_flipscreen_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		if (flipscreen != (data & 1))
 		{
@@ -107,7 +105,7 @@ public class pbaction
 			memset(dirtybuffer,1,videoram_size);
 			memset(dirtybuffer2,1,videoram_size);
 		}
-	}
+	} };
 	
 	
 	

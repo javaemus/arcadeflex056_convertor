@@ -109,31 +109,11 @@ public class sailorws
 	int mscoutm_vh_start(void);
 	void mscoutm_vh_stop(void);
 	
-	WRITE_HANDLER( sailorws_palette_w );
-	WRITE_HANDLER( mscoutm_palette_w );
 	
-	WRITE_HANDLER( sailorws_gfxflag_0_w );
-	WRITE_HANDLER( sailorws_scrollx_0_w );
-	WRITE_HANDLER( sailorws_scrolly_0_w );
-	WRITE_HANDLER( sailorws_radr_0_w );
-	WRITE_HANDLER( sailorws_sizex_0_w );
-	WRITE_HANDLER( sailorws_sizey_0_w );
-	WRITE_HANDLER( sailorws_drawx_0_w );
-	WRITE_HANDLER( sailorws_drawy_0_w );
 	
-	WRITE_HANDLER( sailorws_gfxflag_1_w );
-	WRITE_HANDLER( sailorws_scrollx_1_w );
-	WRITE_HANDLER( sailorws_scrolly_1_w );
-	WRITE_HANDLER( sailorws_radr_1_w );
-	WRITE_HANDLER( sailorws_sizex_1_w );
-	WRITE_HANDLER( sailorws_sizey_1_w );
-	WRITE_HANDLER( sailorws_drawx_1_w );
-	WRITE_HANDLER( sailorws_drawy_1_w );
 	
 	void sailorws_gfxflag2_w(int data);
 	void sailorws_paltblnum_w(int data);
-	WRITE_HANDLER( sailorws_paltbl_0_w );
-	WRITE_HANDLER( sailorws_paltbl_1_w );
 	
 	
 	static int sailorws_inputport;

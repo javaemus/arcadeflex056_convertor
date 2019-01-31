@@ -95,25 +95,25 @@ public class mario
 	
 	
 	
-	WRITE_HANDLER( mario_gfxbank_w )
+	public static WriteHandlerPtr mario_gfxbank_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		if (gfx_bank != (data & 1))
 		{
 			memset(dirtybuffer,1,videoram_size);
 			gfx_bank = data & 1;
 		}
-	}
+	} };
 	
 	
 	
-	WRITE_HANDLER( mario_palettebank_w )
+	public static WriteHandlerPtr mario_palettebank_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		if (palette_bank != (data & 1))
 		{
 			memset(dirtybuffer,1,videoram_size);
 			palette_bank = data & 1;
 		}
-	}
+	} };
 	
 	
 	

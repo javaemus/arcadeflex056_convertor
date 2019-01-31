@@ -81,7 +81,7 @@ public class missile
 	}
 	
 	/********************************************************************************************/
-	WRITE_HANDLER( missile_video_w )
+	public static WriteHandlerPtr missile_video_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		/* $0640 - $4fff */
 		int wbyte, wbit;
@@ -104,17 +104,17 @@ public class missile
 			else
 				RAM[0x401 + wbyte] &= ((1 << wbit) ^ 0xff);
 		}
-	}
+	} };
 	
-	WRITE_HANDLER( missile_video2_w )
+	public static WriteHandlerPtr missile_video2_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		/* $5000 - $ffff */
 		offset += 0x5000;
 		missile_video_w (offset, data);
-	}
+	} };
 	
 	/********************************************************************************************/
-	WRITE_HANDLER( missile_video_mult_w )
+	public static WriteHandlerPtr missile_video_mult_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		/*
 			$1900 - $3fff
@@ -140,11 +140,11 @@ public class missile
 		missile_blit_w (offset + 1);
 		missile_blit_w (offset + 2);
 		missile_blit_w (offset + 3);
-	}
+	} };
 	
 	
 	/********************************************************************************************/
-	WRITE_HANDLER( missile_video_3rd_bit_w )
+	public static WriteHandlerPtr missile_video_3rd_bit_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		int i;
 		unsigned char *RAM = memory_region(REGION_CPU1);
@@ -162,7 +162,7 @@ public class missile
 				missile_videoram[offset + i] &= 0xc0;
 			missile_blit_w (offset + i);
 		}
-	}
+	} };
 	
 	
 	/********************************************************************************************/

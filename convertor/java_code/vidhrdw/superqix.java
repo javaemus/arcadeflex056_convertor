@@ -123,7 +123,7 @@ public class superqix
 	} };
 	
 	
-	WRITE_HANDLER( superqix_bitmapram_w )
+	public static WriteHandlerPtr superqix_bitmapram_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		if(data != superqix_bitmapram[offset])
 		{
@@ -137,14 +137,14 @@ public class superqix
 			if(y<sqix_miny) sqix_miny=y;
 			if(y>sqix_maxy) sqix_maxy=y;
 		}
-	}
+	} };
 	
 	public static ReadHandlerPtr superqix_bitmapram2_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return superqix_bitmapram2[offset];
 	} };
 	
-	WRITE_HANDLER( superqix_bitmapram2_w )
+	public static WriteHandlerPtr superqix_bitmapram2_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		if(data != superqix_bitmapram2[offset])
 		{
@@ -158,11 +158,11 @@ public class superqix
 			if(y<sqix_miny) sqix_miny=y;
 			if(y>sqix_maxy) sqix_maxy=y;
 		}
-	}
+	} };
 	
 	
 	
-	WRITE_HANDLER( superqix_0410_w )
+	public static WriteHandlerPtr superqix_0410_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		int bankaddress;
 		unsigned char *RAM = memory_region(REGION_CPU1);
@@ -191,7 +191,7 @@ public class superqix
 		/* bits 4-5 control ROM bank */
 		bankaddress = 0x10000 + ((data & 0x30) >> 4) * 0x4000;
 		cpu_setbank(1,&RAM[bankaddress]);
-	}
+	} };
 	
 	
 	

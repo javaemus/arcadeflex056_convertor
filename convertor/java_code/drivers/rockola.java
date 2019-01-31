@@ -102,24 +102,12 @@ public class rockola
 	
 	extern const char *vanguard_sample_names[];
 	
-	WRITE_HANDLER( satansat_b002_w );
-	WRITE_HANDLER( satansat_backcolor_w );
 	void satansat_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom);
 	void satansat_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
-	WRITE_HANDLER( satansat_characterram_w );
 	
-	WRITE_HANDLER( rockola_characterram_w );
-	WRITE_HANDLER( rockola_flipscreen_w );
 	void rockola_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom);
 	void rockola_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	
-	WRITE_HANDLER( satansat_sound0_w );
-	WRITE_HANDLER( satansat_sound1_w );
-	WRITE_HANDLER( vanguard_sound0_w );
-	WRITE_HANDLER( vanguard_sound1_w );
-	WRITE_HANDLER( fantasy_sound0_w );
-	WRITE_HANDLER( fantasy_sound1_w );
-	WRITE_HANDLER( fantasy_sound2_w );
 	int rockola_sh_start(const struct MachineSound *msound);
 	void rockola_sh_update(void);
 	

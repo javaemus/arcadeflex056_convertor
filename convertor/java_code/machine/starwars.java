@@ -64,7 +64,7 @@ public class starwars
 	 *
 	 *************************************/
 	
-	WRITE_HANDLER( starwars_out_w )
+	public static WriteHandlerPtr starwars_out_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		unsigned char *RAM = memory_region(REGION_CPU1);
 	
@@ -111,7 +111,7 @@ public class starwars
 				logerror("recall\n"); /* what's that? */
 				break;
 		}
-	}
+	} };
 	
 	
 	
@@ -163,10 +163,10 @@ public class starwars
 	} };
 	
 	
-	WRITE_HANDLER( starwars_adc_select_w )
+	public static WriteHandlerPtr starwars_adc_select_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		control_num = offset;
-	}
+	} };
 	
 	
 	
@@ -356,7 +356,7 @@ public class starwars
 	} };
 	
 	
-	WRITE_HANDLER( swmathbx_w )
+	public static WriteHandlerPtr swmathbx_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		data &= 0xff;	/* ASG 971002 -- make sure we only get bytes here */
 		switch (offset)
@@ -404,5 +404,5 @@ public class starwars
 			default:
 				break;
 		}
-	}
+	} };
 }

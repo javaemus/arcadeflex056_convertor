@@ -25,7 +25,6 @@ public class videopin
 {
 	
 	/* vidhrdw/videopin.c */
-	WRITE_HANDLER( videopin_videoram_w );
 	extern int videopin_vh_start(void);
 	extern void videopin_vh_stop(void);
 	extern void videopin_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
@@ -34,12 +33,6 @@ public class videopin
 	
 	/* machine/videopin.c */
 	extern int videopin_interrupt(void);
-	WRITE_HANDLER( videopin_out1_w );
-	WRITE_HANDLER( videopin_out2_w );
-	WRITE_HANDLER( videopin_led_w );
-	WRITE_HANDLER( videopin_watchdog_w );
-	WRITE_HANDLER( videopin_ball_position_w );
-	WRITE_HANDLER( videopin_note_dvslrd_w );
 	
 	
 	

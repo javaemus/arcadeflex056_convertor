@@ -93,7 +93,7 @@ public class centiped
 		palette_set_color(pen,r,g,b);
 	}
 	
-	WRITE_HANDLER( centiped_paletteram_w )
+	public static WriteHandlerPtr centiped_paletteram_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		paletteram[offset] = data;
 	
@@ -103,7 +103,7 @@ public class centiped
 		{
 			setcolor(16 + (offset - 12),data);
 		}
-	}
+	} };
 	
 	static int powerup_counter;
 	

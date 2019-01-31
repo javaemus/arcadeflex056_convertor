@@ -50,11 +50,11 @@ public class senjyo
 	static int channel;
 	
 	
-	WRITE_HANDLER( senjyo_volume_w )
+	public static WriteHandlerPtr senjyo_volume_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		single_volume = data & 0x0f;
 		mixer_set_volume(channel,single_volume * 100 / 15);
-	}
+	} };
 	
 	int senjyo_sh_start(const struct MachineSound *msound)
 	{

@@ -473,7 +473,7 @@ public class exidy
 	 *
 	 *************************************/
 	
-	WRITE_HANDLER( exidy_shriot_w )
+	public static WriteHandlerPtr exidy_shriot_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		/* mask to the low 7 bits */
 		offset &= 0x7f;
@@ -545,7 +545,7 @@ public class exidy
 			riot_timer = timer_set(riot_interval * data, 0, riot_interrupt);
 			riot_state = RIOT_COUNT;
 		}
-	}
+	} };
 	
 	
 	
@@ -627,7 +627,7 @@ public class exidy
 	 *
 	 *************************************/
 	
-	WRITE_HANDLER( exidy_sh8253_w )
+	public static WriteHandlerPtr exidy_sh8253_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		int chan;
 	
@@ -661,7 +661,7 @@ public class exidy
 				sh8253_timer[chan].enable = ((data & 0x0e) != 0);
 				break;
 		}
-	}
+	} };
 	
 	
 	public static ReadHandlerPtr exidy_sh8253_r  = new ReadHandlerPtr() { public int handler(int offset)
@@ -685,7 +685,7 @@ public class exidy
 	} };
 	
 	
-	WRITE_HANDLER( exidy_sh6840_w )
+	public static WriteHandlerPtr exidy_sh6840_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		/* force an update of the stream */
 		stream_update(exidy_stream, 0);
@@ -725,7 +725,7 @@ public class exidy
 				break;
 			}
 		}
-	}
+	} };
 	
 	
 	
@@ -735,7 +735,7 @@ public class exidy
 	 *
 	 *************************************/
 	
-	WRITE_HANDLER( exidy_sfxctrl_w )
+	public static WriteHandlerPtr exidy_sfxctrl_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		stream_update(exidy_stream, 0);
 	
@@ -752,7 +752,7 @@ public class exidy
 				sh6840_volume[offset - 1] = ((data & 7) * BASE_VOLUME) / 7;
 				break;
 		}
-	}
+	} };
 	
 	
 	
@@ -762,7 +762,7 @@ public class exidy
 	 *
 	 *************************************/
 	
-	WRITE_HANDLER( mtrap_voiceio_w )
+	public static WriteHandlerPtr mtrap_voiceio_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 	    if (!(offset & 0x10))
 	    {
@@ -771,7 +771,7 @@ public class exidy
 		}
 	    if (!(offset & 0x20))
 			riot_portb_data = data & 1;
-	}
+	} };
 	
 	
 	public static ReadHandlerPtr mtrap_voiceio_r  = new ReadHandlerPtr() { public int handler(int offset)

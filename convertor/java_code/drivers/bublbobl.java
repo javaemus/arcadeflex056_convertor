@@ -150,20 +150,7 @@ public class bublbobl
 	
 	/* machine/bublbobl.c */
 	extern unsigned char *bublbobl_sharedram1,*bublbobl_sharedram2;
-	WRITE_HANDLER( bublbobl_sharedram1_w );
-	WRITE_HANDLER( bublbobl_sharedram2_w );
 	int bublbobl_m68705_interrupt(void);
-	WRITE_HANDLER( bublbobl_68705_portA_w );
-	WRITE_HANDLER( bublbobl_68705_ddrA_w );
-	WRITE_HANDLER( bublbobl_68705_portB_w );
-	WRITE_HANDLER( bublbobl_68705_ddrB_w );
-	WRITE_HANDLER( bublbobl_bankswitch_w );
-	WRITE_HANDLER( tokio_bankswitch_w );
-	WRITE_HANDLER( tokio_videoctrl_w );
-	WRITE_HANDLER( bublbobl_nmitrigger_w );
-	WRITE_HANDLER( bublbobl_sound_command_w );
-	WRITE_HANDLER( bublbobl_sh_nmi_disable_w );
-	WRITE_HANDLER( bublbobl_sh_nmi_enable_w );
 	
 	
 	

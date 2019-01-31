@@ -60,10 +60,6 @@ public class exzisus
 	READ_HANDLER ( exzisus_videoram_1_r );
 	READ_HANDLER ( exzisus_objectram_0_r );
 	READ_HANDLER ( exzisus_objectram_1_r );
-	WRITE_HANDLER( exzisus_videoram_0_w );
-	WRITE_HANDLER( exzisus_videoram_1_w );
-	WRITE_HANDLER( exzisus_objectram_0_w );
-	WRITE_HANDLER( exzisus_objectram_1_w );
 	
 	void exzisus_vh_screenrefresh(struct mame_bitmap *bitmap, int full_refresh);
 	

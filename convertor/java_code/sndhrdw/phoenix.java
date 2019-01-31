@@ -559,7 +559,7 @@ public class phoenix
 		}
 	}
 	
-	WRITE_HANDLER( phoenix_sound_control_a_w )
+	public static WriteHandlerPtr phoenix_sound_control_a_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		if( data == sound_latch_a )
 			return;
@@ -572,9 +572,9 @@ public class phoenix
 			tone1_level = VMAX * 10000 / (10000+10000);
 		else
 			tone1_level = VMAX;
-	}
+	} };
 	
-	WRITE_HANDLER( phoenix_sound_control_b_w )
+	public static WriteHandlerPtr phoenix_sound_control_b_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		if( data == sound_latch_b )
 			return;
@@ -589,7 +589,7 @@ public class phoenix
 	
 		/* eventually change the tune that the MM6221AA is playing */
 		mm6221aa_tune_w(0, sound_latch_b >> 6);
-	}
+	} };
 	
 	int phoenix_sh_start(const struct MachineSound *msound)
 	{

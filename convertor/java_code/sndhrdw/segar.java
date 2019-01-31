@@ -171,7 +171,7 @@ public class segar
 		speechQueue[newPtr] = sound;
 	}
 	
-	WRITE_HANDLER( astrob_speech_port_w )
+	public static WriteHandlerPtr astrob_speech_port_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		if( Machine->samples == 0 )
 			return;
@@ -213,9 +213,9 @@ public class segar
 			case 0x22:      astrob_queue_speech(v22); break;
 			case 0x23:      astrob_queue_speech(v23); break;
 		}
-	}
+	} };
 	
-	WRITE_HANDLER( astrob_audio_ports_w )
+	public static WriteHandlerPtr astrob_audio_ports_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		int line;
 		int noise;
@@ -283,7 +283,7 @@ public class segar
 				}
 			}
 		}
-	}
+	} };
 	
 	/***************************************************************************
 	005
@@ -365,7 +365,7 @@ public class segar
 			{ 10, sodamaged,  0, 0, 1 },    /* Line  7 - Black Hole */
 	};
 	
-	WRITE_HANDLER( spaceod_audio_ports_w )
+	public static WriteHandlerPtr spaceod_audio_ports_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 			int line;
 			int noise;
@@ -389,7 +389,7 @@ public class segar
 							}
 					}
 			}
-	}
+	} };
 	
 	/***************************************************************************
 	Monster Bash
@@ -419,7 +419,7 @@ public class segar
 	
 	
 	/* Monster Bash uses an 8255 to control the sounds, much like Zaxxon */
-	WRITE_HANDLER( monsterb_audio_8255_w )
+	public static WriteHandlerPtr monsterb_audio_8255_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		/* Port A controls the special TMS3617 music chip */
 		if (offset == 0)
@@ -459,7 +459,7 @@ public class segar
 			if (data != 0x80)
 				logerror("8255 Control Port Write = %02X\n",data);
 		}
-	}
+	} };
 	
 	public static ReadHandlerPtr monsterb_audio_8255_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
@@ -491,47 +491,47 @@ public class segar
 	} };
 	
 	/* write to P1 */
-	WRITE_HANDLER( monsterb_sh_dac_w )
+	public static WriteHandlerPtr monsterb_sh_dac_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		DAC_data_w(0,data);
-	}
+	} };
 	
 	/* write to P2 */
-	WRITE_HANDLER( monsterb_sh_busy_w )
+	public static WriteHandlerPtr monsterb_sh_busy_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		// 8255's PC0-2 connects to 7751's S0-2 (P24-P26 on an 8048)
 		// 8255's PC4 connects to 7751's BSY OUT (P27 on an 8048)
 		port_8255_c03 = (data & 0x70) >> 4;
 		port_8255_c47 = (data & 0x80) >> 3;
 		port_7751_p27 = data & 0x80;
-	}
+	} };
 	
 	/* write to P4 */
-	WRITE_HANDLER( monsterb_sh_offset_a0_a3_w )
+	public static WriteHandlerPtr monsterb_sh_offset_a0_a3_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		rom_offset = (rom_offset & 0x1FF0) | (data & 0x0F);
-	}
+	} };
 	
 	/* write to P5 */
-	WRITE_HANDLER( monsterb_sh_offset_a4_a7_w )
+	public static WriteHandlerPtr monsterb_sh_offset_a4_a7_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		rom_offset = (rom_offset & 0x1F0F) | ((data & 0x0F) << 4);
-	}
+	} };
 	
 	/* write to P6 */
-	WRITE_HANDLER( monsterb_sh_offset_a8_a11_w )
+	public static WriteHandlerPtr monsterb_sh_offset_a8_a11_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		rom_offset = (rom_offset & 0x10FF) | ((data & 0x0F) << 8);
-	}
+	} };
 	
 	/* write to P7 */
-	WRITE_HANDLER( monsterb_sh_rom_select_w )
+	public static WriteHandlerPtr monsterb_sh_rom_select_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		rom_offset = (rom_offset & 0x0FFF);
 	
 		/* D0 = !ROM1 enable, D1 = !ROM2 enable, D2/3 hit empty sockets. */
 		if ((data & 0x02) == 0)
 			rom_offset |= 0x1000;
-	}
+	} };
 	
 }

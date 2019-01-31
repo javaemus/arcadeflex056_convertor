@@ -33,15 +33,10 @@ public class nitedrvr
 	
 	/* machine/nitedrvr.c */
 	extern unsigned char *nitedrvr_ram;
-	WRITE_HANDLER( nitedrvr_steering_reset_w );
-	WRITE_HANDLER( nitedrvr_out0_w );
-	WRITE_HANDLER( nitedrvr_out1_w );
-	WRITE_HANDLER( nitedrvr_ram_w );
 	
 	
 	/* vidhrdw/nitedrvr.c */
 	extern unsigned char *nitedrvr_hvc;
-	WRITE_HANDLER( nitedrvr_hvc_w );
 	extern void nitedrvr_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	
 	

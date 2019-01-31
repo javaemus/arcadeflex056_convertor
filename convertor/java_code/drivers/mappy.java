@@ -58,17 +58,8 @@ public class mappy
 	extern unsigned char *mappy_customio_1,*mappy_customio_2;
 	void mappy_init_machine(void);
 	void motos_init_machine(void);
-	WRITE_HANDLER( mappy_sharedram_w );
-	WRITE_HANDLER( mappy_customio_1_w );
-	WRITE_HANDLER( mappy_customio_2_w );
 	int mappy_interrupt_1(void);
 	int mappy_interrupt_2(void);
-	WRITE_HANDLER( mappy_interrupt_enable_1_w );
-	WRITE_HANDLER( mappy_interrupt_enable_2_w );
-	WRITE_HANDLER( mappy_cpu_enable_w );
-	WRITE_HANDLER( mappy_reset_2_w );
-	WRITE_HANDLER( mappy_io_chips_enable_w );
-	WRITE_HANDLER( mappy_flipscreen_w );
 	
 	
 	
@@ -80,15 +71,10 @@ public class mappy
 	int todruaga_vh_start(void);
 	void mappy_vh_stop(void);
 	void mappy_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
-	WRITE_HANDLER( mappy_videoram_w );
-	WRITE_HANDLER( mappy_colorram_w );
-	WRITE_HANDLER( mappy_scroll_w );
 	void mappy_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom);
 	
 	/* sound driver data & functions */
 	extern unsigned char *mappy_soundregs;
-	WRITE_HANDLER( mappy_sound_w );
-	WRITE_HANDLER( mappy_sound_enable_w );
 	
 	
 	/* CPU 1 read addresses */

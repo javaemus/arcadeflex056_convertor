@@ -98,23 +98,23 @@ public class mikie
 	
 	
 	
-	WRITE_HANDLER( mikie_palettebank_w )
+	public static WriteHandlerPtr mikie_palettebank_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		if (palettebank != (data & 7))
 		{
 			palettebank = data & 7;
 			memset(dirtybuffer,1,videoram_size);
 		}
-	}
+	} };
 	
-	WRITE_HANDLER( mikie_flipscreen_w )
+	public static WriteHandlerPtr mikie_flipscreen_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		if (flipscreen != (data & 1))
 		{
 			flipscreen = data & 1;
 			memset(dirtybuffer,1,videoram_size);
 		}
-	}
+	} };
 	
 	
 	

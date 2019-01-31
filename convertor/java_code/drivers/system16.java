@@ -126,14 +126,7 @@ public class system16
 	/***************************************************************************/
 	
 	// 7751 emulation
-	WRITE_HANDLER( sys16_7751_audio_8255_w );
-	    WRITE_HANDLER( sys16_7751_sh_dac_w );
-	WRITE_HANDLER( sys16_7751_sh_busy_w );
-	WRITE_HANDLER( sys16_7751_sh_offset_a0_a3_w );
-	WRITE_HANDLER( sys16_7751_sh_offset_a4_a7_w );
-	WRITE_HANDLER( sys16_7751_sh_offset_a8_a11_w );
-	WRITE_HANDLER( sys16_7751_sh_rom_select_w );
-	
+	    
 	/***************************************************************************/
 	
 	static data16_t coinctrl;

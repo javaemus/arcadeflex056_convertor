@@ -68,18 +68,18 @@ public class spacefb
 	}
 	
 	
-	WRITE_HANDLER( spacefb_video_control_w )
+	public static WriteHandlerPtr spacefb_video_control_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		flip_screen_set(data & 0x01);
 	
 		video_control = data;
-	}
+	} };
 	
 	
-	WRITE_HANDLER( spacefb_port_2_w )
+	public static WriteHandlerPtr spacefb_port_2_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 	logerror("Port #2 = %02d\n",data);
-	}
+	} };
 	
 	
 	/***************************************************************************

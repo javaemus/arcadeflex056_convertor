@@ -20,8 +20,6 @@ public class fastlane
 	
 	/* from vidhrdw/fastlane.c */
 	extern unsigned char *fastlane_k007121_regs,*fastlane_videoram1,*fastlane_videoram2;
-	WRITE_HANDLER( fastlane_vram1_w );
-	WRITE_HANDLER( fastlane_vram2_w );
 	void fastlane_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom);
 	int fastlane_vh_start(void);
 	void fastlane_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
@@ -39,13 +37,13 @@ public class fastlane
 		return ignore_interrupt();
 	}
 	
-	WRITE_HANDLER( k007121_registers_w )
+	public static WriteHandlerPtr k007121_registers_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		if (offset < 8)
 			K007121_ctrl_0_w(offset,data);
 		else	/* scroll registers */
 			fastlane_k007121_regs[offset] = data;
-	}
+	} };
 	
 	public static WriteHandlerPtr fastlane_bankswitch_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{

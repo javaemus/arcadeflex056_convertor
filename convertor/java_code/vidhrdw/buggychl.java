@@ -73,7 +73,7 @@ public class buggychl
 	
 	
 	
-	WRITE_HANDLER( buggychl_chargen_w )
+	public static WriteHandlerPtr buggychl_chargen_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		if (buggychl_character_ram[offset] != data)
 		{
@@ -81,19 +81,19 @@ public class buggychl
 	
 			dirtychar[(offset / 8) & 0xff] = 1;
 		}
-	}
+	} };
 	
-	WRITE_HANDLER( buggychl_sprite_lookup_bank_w )
+	public static WriteHandlerPtr buggychl_sprite_lookup_bank_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		sl_bank = (data & 0x10) << 8;
-	}
+	} };
 	
-	WRITE_HANDLER( buggychl_sprite_lookup_w )
+	public static WriteHandlerPtr buggychl_sprite_lookup_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		buggychl_sprite_lookup[offset + sl_bank] = data;
-	}
+	} };
 	
-	WRITE_HANDLER( buggychl_ctrl_w )
+	public static WriteHandlerPtr buggychl_ctrl_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 	/*
 		bit7 = lamp
@@ -115,12 +115,12 @@ public class buggychl
 	
 		coin_lockout_global_w((~data & 0x40) >> 6);
 		set_led_status(0,~data & 0x80);
-	}
+	} };
 	
-	WRITE_HANDLER( buggychl_bg_scrollx_w )
+	public static WriteHandlerPtr buggychl_bg_scrollx_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		bg_scrollx = -(data - 0x12);
-	}
+	} };
 	
 	
 	

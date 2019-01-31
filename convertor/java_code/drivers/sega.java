@@ -129,32 +129,18 @@ public class sega
 	
 	extern unsigned char *sega_mem;
 	extern void sega_security(int chip);
-	WRITE_HANDLER( sega_w );
 	
 	
 	int sega_interrupt(void);
-	WRITE_HANDLER( sega_mult1_w );
-	WRITE_HANDLER( sega_mult2_w );
-	WRITE_HANDLER( sega_switch_w );
-	WRITE_HANDLER( sega_coin_counter_w );
 	
 	/* Sound hardware prototypes */
 	int sega_sh_start (const struct MachineSound *msound);
-	WRITE_HANDLER( sega_sh_speech_w );
 	void sega_sh_update(void);
 	
-	WRITE_HANDLER( elim1_sh_w );
-	WRITE_HANDLER( elim2_sh_w );
-	WRITE_HANDLER( spacfury1_sh_w );
-	WRITE_HANDLER( spacfury2_sh_w );
-	WRITE_HANDLER( zektor1_sh_w );
-	WRITE_HANDLER( zektor2_sh_w );
 	
 	int tacscan_sh_start (const struct MachineSound *msound);
-	WRITE_HANDLER( tacscan_sh_w );
 	void tacscan_sh_update(void);
 	
-	WRITE_HANDLER( startrek_sh_w );
 	
 	/* Video hardware prototypes */
 	int sega_vh_start (void);

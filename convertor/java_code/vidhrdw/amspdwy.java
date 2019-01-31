@@ -25,19 +25,19 @@ public class amspdwy
 	static struct tilemap *tilemap;
 	
 	
-	WRITE_HANDLER( amspdwy_paletteram_w )
+	public static WriteHandlerPtr amspdwy_paletteram_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		data ^= 0xff;
 		paletteram_BBGGGRRR_w(offset,data);
 	//	paletteram_RRRGGGBB_w(offset,data);
-	}
+	} };
 	
-	WRITE_HANDLER( amspdwy_flipscreen_w )
+	public static WriteHandlerPtr amspdwy_flipscreen_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		static int flip = 0;
 		flip ^= 1;
 		flip_screen_set( flip );
-	}
+	} };
 	
 	/***************************************************************************
 	
@@ -63,23 +63,23 @@ public class amspdwy
 				0)
 	}
 	
-	WRITE_HANDLER( amspdwy_videoram_w )
+	public static WriteHandlerPtr amspdwy_videoram_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		if (videoram[offset] != data)
 		{
 			videoram[offset] = data;
 			tilemap_mark_tile_dirty(tilemap, offset);
 		}
-	}
+	} };
 	
-	WRITE_HANDLER( amspdwy_colorram_w )
+	public static WriteHandlerPtr amspdwy_colorram_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		if (colorram[offset] != data)
 		{
 			colorram[offset] = data;
 			tilemap_mark_tile_dirty(tilemap, offset);
 		}
-	}
+	} };
 	
 	
 	/* logical (col,row) -> memory offset */

@@ -47,11 +47,8 @@ public class z80bw
 	void invaders_vh_stop(void);
 	
 	void invadpt2_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom);
-	WRITE_HANDLER( invaders_videoram_w );
 	void invaders_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	
-	WRITE_HANDLER( astinvad_sh_port_4_w );
-	WRITE_HANDLER( astinvad_sh_port_5_w );
 	void astinvad_sh_update(void);
 	
 	void init_astinvad(void);

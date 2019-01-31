@@ -153,13 +153,13 @@ public class qix
 	 *
 	 *************************************/
 	
-	WRITE_HANDLER( slither_vram_mask_w )
+	public static WriteHandlerPtr slither_vram_mask_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		/* Slither appears to extend the basic hardware by providing */
 		/* a mask register which controls which data bits get written */
 		/* to video RAM */
 		vram_mask = data;
-	}
+	} };
 	
 	
 	
@@ -186,14 +186,14 @@ public class qix
 	} };
 	
 	
-	WRITE_HANDLER( qix_videoram_w )
+	public static WriteHandlerPtr qix_videoram_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		/* add in the upper bit of the address latch */
 		offset += (qix_videoaddress[0] & 0x80) << 8;
 	
 		/* blend the data */
 		videoram[offset] = (videoram[offset] & ~vram_mask) | (data & vram_mask);
-	}
+	} };
 	
 	
 	
@@ -221,14 +221,14 @@ public class qix
 	
 	
 	
-	WRITE_HANDLER( qix_addresslatch_w )
+	public static WriteHandlerPtr qix_addresslatch_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		/* compute the value at the address latch */
 		offset = (qix_videoaddress[0] << 8) | qix_videoaddress[1];
 	
 		/* blend the data */
 		videoram[offset] = (videoram[offset] & ~vram_mask) | (data & vram_mask);
-	}
+	} };
 	
 	
 	
@@ -238,7 +238,7 @@ public class qix
 	 *
 	 *************************************/
 	
-	WRITE_HANDLER( qix_paletteram_w )
+	public static WriteHandlerPtr qix_paletteram_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		/* this conversion table should be about right. It gives a reasonable */
 		/* gray scale in the test screen, and the red, green and blue squares */
@@ -278,16 +278,16 @@ public class qix
 	
 		/* update the palette */
 		palette_set_color(offset, red, green, blue);
-	}
+	} };
 	
 	
-	WRITE_HANDLER( qix_palettebank_w )
+	public static WriteHandlerPtr qix_palettebank_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		/* set the bank value; this is cached per-scanline above */
 		*qix_palettebank = data;
 	
 		/* LEDs are in the upper 6 bits */
-	}
+	} };
 	
 	
 	

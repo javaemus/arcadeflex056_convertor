@@ -37,10 +37,10 @@ public class lwings
 	
 	static data8_t avengers_adpcm;
 	
-	WRITE_HANDLER( avengers_adpcm_w )
+	public static WriteHandlerPtr avengers_adpcm_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		avengers_adpcm = data;
-	}
+	} };
 	
 	public static ReadHandlerPtr avengers_adpcm_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{

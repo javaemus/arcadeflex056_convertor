@@ -106,20 +106,20 @@ public class scramble
 	} };
 	
 	
-	WRITE_HANDLER( scramble_sh_irqtrigger_w )
+	public static WriteHandlerPtr scramble_sh_irqtrigger_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		/* the complement of bit 3 is connected to the flip-flop's clock */
 		TTL7474_set_inputs(0, -1, -1, ~data & 0x08, -1);
 	
 		/* bit 4 is sound disable */
 		mixer_sound_enable_global_w(~data & 0x10);
-	}
+	} };
 	
-	WRITE_HANDLER( froggrmc_sh_irqtrigger_w )
+	public static WriteHandlerPtr froggrmc_sh_irqtrigger_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		/* the complement of bit 0 is connected to the flip-flop's clock */
 		TTL7474_set_inputs(0, -1, -1, ~data & 0x01, -1);
-	}
+	} };
 	
 	
 	static int scramble_sh_irq_callback(int irqline)
@@ -140,10 +140,10 @@ public class scramble
 		cpu_set_irq_line(1, 0, !TTL7474_output_comp_r(0) ? ASSERT_LINE : CLEAR_LINE);
 	}
 	
-	WRITE_HANDLER( hotshock_sh_irqtrigger_w )
+	public static WriteHandlerPtr hotshock_sh_irqtrigger_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		cpu_set_irq_line(1, 0, PULSE_LINE);
-	}
+	} };
 	
 	
 	static void filter_w(int chip, int channel, int data)
@@ -157,7 +157,7 @@ public class scramble
 		set_RC_filter(3*chip + channel,1000,5100,0,C);
 	}
 	
-	WRITE_HANDLER( scramble_filter_w )
+	public static WriteHandlerPtr scramble_filter_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		filter_w(1, 0, (offset >>  0) & 3);
 		filter_w(1, 1, (offset >>  2) & 3);
@@ -165,14 +165,14 @@ public class scramble
 		filter_w(0, 0, (offset >>  6) & 3);
 		filter_w(0, 1, (offset >>  8) & 3);
 		filter_w(0, 2, (offset >> 10) & 3);
-	}
+	} };
 	
-	WRITE_HANDLER( frogger_filter_w )
+	public static WriteHandlerPtr frogger_filter_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		filter_w(0, 0, (offset >>  6) & 3);
 		filter_w(0, 1, (offset >>  8) & 3);
 		filter_w(0, 2, (offset >> 10) & 3);
-	}
+	} };
 	
 	
 	static const struct TTL7474_interface scramble_sh_7474_intf =

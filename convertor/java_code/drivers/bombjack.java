@@ -77,8 +77,6 @@ public class bombjack
 	
 	
 	
-	WRITE_HANDLER( bombjack_background_w );
-	WRITE_HANDLER( bombjack_flipscreen_w );
 	void bombjack_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	int bombjack_vh_start(void);
 	
@@ -91,11 +89,11 @@ public class bombjack
 		latch = param;
 	}
 	
-	WRITE_HANDLER( bombjack_soundlatch_w )
+	public static WriteHandlerPtr bombjack_soundlatch_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		/* make all the CPUs synchronize, and only AFTER that write the new command to the latch */
 		timer_set(TIME_NOW,data,soundlatch_callback);
-	}
+	} };
 	
 	public static ReadHandlerPtr bombjack_soundlatch_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{

@@ -92,29 +92,29 @@ public class sidepckt
 	
 	***************************************************************************/
 	
-	WRITE_HANDLER( sidepckt_videoram_w )
+	public static WriteHandlerPtr sidepckt_videoram_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		if (videoram[offset] != data)
 		{
 			videoram[offset] = data;
 			tilemap_mark_tile_dirty(bg_tilemap,offset);
 		}
-	}
+	} };
 	
-	WRITE_HANDLER( sidepckt_colorram_w )
+	public static WriteHandlerPtr sidepckt_colorram_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		if (colorram[offset] != data)
 		{
 			colorram[offset] = data;
 			tilemap_mark_tile_dirty(bg_tilemap,offset);
 		}
-	}
+	} };
 	
-	WRITE_HANDLER( sidepckt_flipscreen_w )
+	public static WriteHandlerPtr sidepckt_flipscreen_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		flipscreen = data;
 		tilemap_set_flip(ALL_TILEMAPS,flipscreen ? TILEMAP_FLIPY : TILEMAP_FLIPX);
-	}
+	} };
 	
 	
 	/***************************************************************************

@@ -62,7 +62,7 @@ public class gotya
 	}
 	
 	
-	WRITE_HANDLER( gotya_video_control_w )
+	public static WriteHandlerPtr gotya_video_control_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		/* bit 0 - scroll bit 8
 		   bit 1 - flip screen
@@ -71,7 +71,7 @@ public class gotya
 		scroll_bit_8 = data & 0x01;
 	
 		flip_screen_set(data & 0x02);
-	}
+	} };
 	
 	
 	int gotya_vh_start(void)

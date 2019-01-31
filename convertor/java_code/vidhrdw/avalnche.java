@@ -34,7 +34,7 @@ public class avalnche
 		return 0;
 	}
 	
-	WRITE_HANDLER( avalnche_videoram_w )
+	public static WriteHandlerPtr avalnche_videoram_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		videoram[offset] = data;
 	
@@ -48,7 +48,7 @@ public class avalnche
 			for (i = 0;i < 8;i++)
 				plot_pixel(tmpbitmap,x+7-i,y,Machine->pens[(data >> i) & 1]);
 		}
-	}
+	} };
 	
 	void avalnche_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
 	{

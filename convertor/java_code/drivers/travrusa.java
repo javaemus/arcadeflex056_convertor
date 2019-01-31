@@ -28,10 +28,6 @@ public class travrusa
 	
 	void travrusa_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom);
 	int travrusa_vh_start(void);
-	WRITE_HANDLER( travrusa_videoram_w );
-	WRITE_HANDLER( travrusa_scroll_x_low_w );
-	WRITE_HANDLER( travrusa_scroll_x_high_w );
-	WRITE_HANDLER( travrusa_flipscreen_w );
 	void travrusa_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	
 	

@@ -184,7 +184,7 @@ public class decocass
 		memory handlers
 	 ********************************************/
 	
-	WRITE_HANDLER( decocass_paletteram_w )
+	public static WriteHandlerPtr decocass_paletteram_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		/*
 		 * RGB output is inverted and A4 is inverted too
@@ -192,9 +192,9 @@ public class decocass
 		 */
 		offset = (offset & 31) ^ 16;
 		paletteram_BBGGGRRR_w( offset, ~data );
-	}
+	} };
 	
-	WRITE_HANDLER( decocass_charram_w )
+	public static WriteHandlerPtr decocass_charram_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		if (data == decocass_charram[offset])
 			return;
@@ -203,24 +203,24 @@ public class decocass
 		sprite_dirty[(offset >> 5) & 255] = 1;
 		/* dirty char */
 		char_dirty[(offset >> 3) & 1023] = 1;
-	}
+	} };
 	
 	
-	WRITE_HANDLER( decocass_fgvideoram_w )
+	public static WriteHandlerPtr decocass_fgvideoram_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		if (data == decocass_fgvideoram[offset])
 			return;
 		decocass_fgvideoram[offset] = data;
 		tilemap_mark_tile_dirty( fg_tilemap, offset );
-	}
+	} };
 	
-	WRITE_HANDLER( decocass_colorram_w )
+	public static WriteHandlerPtr decocass_colorram_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		if (data == decocass_colorram[offset])
 			return;
 		decocass_colorram[offset] = data;
 		tilemap_mark_tile_dirty( fg_tilemap, offset );
-	}
+	} };
 	
 	static void mark_bg_tile_dirty(offs_t offset)
 	{
@@ -230,7 +230,7 @@ public class decocass
 			tilemap_mark_tile_dirty( bg_tilemap_l, offset );
 	}
 	
-	WRITE_HANDLER( decocass_tileram_w )
+	public static WriteHandlerPtr decocass_tileram_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		if (data == decocass_tileram[offset])
 			return;
@@ -240,24 +240,24 @@ public class decocass
 		/* first 1KB of tile RAM is shared with tilemap RAM */
 		if (offset < decocass_bgvideoram_size)
 			mark_bg_tile_dirty( offset );
-	}
+	} };
 	
-	WRITE_HANDLER( decocass_objectram_w )
+	public static WriteHandlerPtr decocass_objectram_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		if (data == decocass_objectram[offset])
 			return;
 		decocass_objectram[offset] = data;
 		/* dirty the object */
 		object_dirty = 1;
-	}
+	} };
 	
-	WRITE_HANDLER( decocass_bgvideoram_w )
+	public static WriteHandlerPtr decocass_bgvideoram_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		if (data == decocass_bgvideoram[offset])
 			return;
 		decocass_bgvideoram[offset] = data;
 		mark_bg_tile_dirty( offset );
-	}
+	} };
 	
 	public static ReadHandlerPtr decocass_mirrorvideoram_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
@@ -283,7 +283,7 @@ public class decocass
 		return decocass_colorram[offset];
 	} };
 	
-	WRITE_HANDLER( decocass_mirrorvideoram_w )
+	public static WriteHandlerPtr decocass_mirrorvideoram_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		int x,y;
 	
@@ -293,9 +293,9 @@ public class decocass
 		offset = 32 * y + x;
 	
 		decocass_fgvideoram_w(offset,data);
-	}
+	} };
 	
-	WRITE_HANDLER( decocass_mirrorcolorram_w )
+	public static WriteHandlerPtr decocass_mirrorcolorram_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		int x,y;
 	
@@ -305,22 +305,22 @@ public class decocass
 		offset = 32 * y + x;
 	
 		decocass_colorram_w(offset,data);
-	}
+	} };
 	
 	/* The watchdog is a 4bit counter counting down every frame */
-	WRITE_HANDLER( decocass_watchdog_count_w )
+	public static WriteHandlerPtr decocass_watchdog_count_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		LOG(1,("decocass_watchdog_count_w: $%02x\n", data));
 		watchdog_count = data & 0x0f;
-	}
+	} };
 	
-	WRITE_HANDLER( decocass_watchdog_flip_w )
+	public static WriteHandlerPtr decocass_watchdog_flip_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		LOG(1,("decocass_watchdog_flip_w: $%02x\n", data));
 		watchdog_flip = data;
-	}
+	} };
 	
-	WRITE_HANDLER( decocass_color_missiles_w )
+	public static WriteHandlerPtr decocass_color_missiles_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		LOG(1,("decocass_color_missiles_w: $%02x\n", data));
 		/* only bits D0-D2 and D4-D6 are connected to
@@ -329,7 +329,7 @@ public class decocass
 		 * D4-D6 to the IC1 inputs
 		 */
 		color_missiles = data & 0x77;
-	}
+	} };
 	
 	/*
 	 * D0 - ??
@@ -341,7 +341,7 @@ public class decocass
 	 * D6 - tunnel
 	 * D7 - part h enable
 	 */
-	WRITE_HANDLER( decocass_mode_set_w )
+	public static WriteHandlerPtr decocass_mode_set_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		if (data == mode_set)
 			return;
@@ -356,9 +356,9 @@ public class decocass
 			(data & 0x80) ? " part_h_enable" : ""));
 	
 		set_vh_global_attribute( &mode_set, data );
-	}
+	} };
 	
-	WRITE_HANDLER( decocass_color_center_bot_w )
+	public static WriteHandlerPtr decocass_color_center_bot_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		if (data == color_center_bot)
 			return;
@@ -374,61 +374,61 @@ public class decocass
 		 * D0	CLD3
 		 */
 		set_vh_global_attribute( &color_center_bot, data);
-	}
+	} };
 	
-	WRITE_HANDLER( decocass_back_h_shift_w )
+	public static WriteHandlerPtr decocass_back_h_shift_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		if (data == back_h_shift)
 			return;
 		LOG(1,("decocass_back_h_shift_w: $%02x\n", data));
 		back_h_shift = data;
-	}
+	} };
 	
-	WRITE_HANDLER( decocass_back_vl_shift_w )
+	public static WriteHandlerPtr decocass_back_vl_shift_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		if (data == back_vl_shift)
 			return;
 		LOG(1,("decocass_back_vl_shift_w: $%02x\n", data));
 		back_vl_shift = data;
-	}
+	} };
 	
-	WRITE_HANDLER( decocass_back_vr_shift_w )
+	public static WriteHandlerPtr decocass_back_vr_shift_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		if (data == back_vr_shift)
 			return;
 		LOG(1,("decocass_back_vr_shift_w: $%02x\n", data));
 		back_vr_shift = data;
-	}
+	} };
 	
-	WRITE_HANDLER( decocass_part_h_shift_w )
+	public static WriteHandlerPtr decocass_part_h_shift_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		if (data == part_v_shift )
 			return;
 		LOG(1,("decocass_part_h_shift_w: $%02x\n", data));
 		part_h_shift = data;
-	}
+	} };
 	
-	WRITE_HANDLER( decocass_part_v_shift_w )
+	public static WriteHandlerPtr decocass_part_v_shift_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		if (data == part_v_shift )
 			return;
 		LOG(1,("decocass_part_v_shift_w: $%02x\n", data));
 		part_v_shift = data;
-	}
+	} };
 	
-	WRITE_HANDLER( decocass_center_h_shift_space_w )
+	public static WriteHandlerPtr decocass_center_h_shift_space_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		if (data == center_h_shift_space)
 			return;
 		LOG(1,("decocass_center_h_shift_space_w: $%02x\n", data));
 		center_h_shift_space = data;
-	}
+	} };
 	
-	WRITE_HANDLER( decocass_center_v_shift_w )
+	public static WriteHandlerPtr decocass_center_v_shift_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		LOG(1,("decocass_center_v_shift_w: $%02x\n", data));
 		center_v_shift = data;
-	}
+	} };
 	
 	/********************************************
 		memory handlers

@@ -24,7 +24,6 @@ public class digdug
 	
 	static void *nmi_timer;
 	
-	WRITE_HANDLER( digdug_halt_w );
 	
 	
 	void digdig_init_machine(void)
@@ -42,7 +41,7 @@ public class digdug
 	} };
 	
 	
-	WRITE_HANDLER( digdug_sharedram_w )
+	public static WriteHandlerPtr digdug_sharedram_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		/* a video ram write */
 		if (offset < 0x400)
@@ -53,7 +52,7 @@ public class digdug
 			cpu_spinuntil_int ();
 	
 		digdug_sharedram[offset] = data;
-	}
+	} };
 	
 	
 	/***************************************************************************
@@ -67,7 +66,7 @@ public class digdug
 	static unsigned char customio[16];
 	static int mode;
 	
-	WRITE_HANDLER( digdug_customio_data_w )
+	public static WriteHandlerPtr digdug_customio_data_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		customio[offset] = data;
 	
@@ -85,7 +84,7 @@ public class digdug
 				}
 				break;
 		}
-	}
+	} };
 	
 	
 	public static ReadHandlerPtr digdug_customio_data_r  = new ReadHandlerPtr() { public int handler(int offset)
@@ -227,7 +226,7 @@ public class digdug
 	}
 	
 	
-	WRITE_HANDLER( digdug_customio_w )
+	public static WriteHandlerPtr digdug_customio_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		if (data != 0x10 && data != 0x71)
 			logerror("%04x: custom IO command %02x\n",cpu_get_pc(),data);
@@ -256,11 +255,11 @@ public class digdug
 		}
 	
 		nmi_timer = timer_pulse (TIME_IN_USEC (50), 0, digdug_nmi_generate);
-	}
+	} };
 	
 	
 	
-	WRITE_HANDLER( digdug_halt_w )
+	public static WriteHandlerPtr digdug_halt_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		if (data & 1)
 		{
@@ -272,14 +271,14 @@ public class digdug
 			cpu_set_reset_line(1,ASSERT_LINE);
 			cpu_set_reset_line(2,ASSERT_LINE);
 		}
-	}
+	} };
 	
 	
 	
-	WRITE_HANDLER( digdug_interrupt_enable_1_w )
+	public static WriteHandlerPtr digdug_interrupt_enable_1_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		interrupt_enable_1 = (data&1);
-	}
+	} };
 	
 	
 	
@@ -291,10 +290,10 @@ public class digdug
 	
 	
 	
-	WRITE_HANDLER( digdug_interrupt_enable_2_w )
+	public static WriteHandlerPtr digdug_interrupt_enable_2_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		interrupt_enable_2 = data & 1;
-	}
+	} };
 	
 	
 	
@@ -306,10 +305,10 @@ public class digdug
 	
 	
 	
-	WRITE_HANDLER( digdug_interrupt_enable_3_w )
+	public static WriteHandlerPtr digdug_interrupt_enable_3_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		interrupt_enable_3 = !(data & 1);
-	}
+	} };
 	
 	
 	

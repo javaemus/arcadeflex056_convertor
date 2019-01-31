@@ -25,13 +25,11 @@ public class markham
 	
 	/****************************************************************************/
 	
-	WRITE_HANDLER( markham_scroll_x_w );
-	WRITE_HANDLER( markham_flipscreen_w );
 	
-	WRITE_HANDLER( markham_sharedram_w )
+	public static WriteHandlerPtr markham_sharedram_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		markham_sharedram[offset] = data;
-	}
+	} };
 	
 	public static ReadHandlerPtr markham_sharedram_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{

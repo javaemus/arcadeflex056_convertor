@@ -95,7 +95,6 @@ public class polyplay
 	extern unsigned char *polyplay_characterram;
 	void polyplay_init_palette(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom);
 	void polyplay_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
-	WRITE_HANDLER( polyplay_characterram_w );
 	
 	/* I/O Port handling */
 	
@@ -118,8 +117,6 @@ public class polyplay
 	/* timer handling */
 	static void polyplay_timer(int param);
 	int timer2_active;
-	WRITE_HANDLER( polyplay_start_timer2 );
-	WRITE_HANDLER( polyplay_sound_channel );
 	
 	
 	/* Polyplay Sound Interface */
@@ -145,10 +142,10 @@ public class polyplay
 	
 	
 	/* work RAM access */
-	WRITE_HANDLER( polyplay_ram_w )
+	public static WriteHandlerPtr polyplay_ram_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		polyplay_ram[offset] = data;
-	}
+	} };
 	
 	public static ReadHandlerPtr polyplay_ram_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
@@ -209,7 +206,7 @@ public class polyplay
 	INPUT_PORTS_END
 	
 	
-	WRITE_HANDLER( polyplay_sound_channel )
+	public static WriteHandlerPtr polyplay_sound_channel = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		switch(offset) {
 		case 0x00:
@@ -255,9 +252,9 @@ public class polyplay
 			}
 			break;
 		}
-	}
+	} };
 	
-	WRITE_HANDLER( polyplay_start_timer2 )
+	public static WriteHandlerPtr polyplay_start_timer2 = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		if (data == 0x03) {
 			timer2_active = 0;
@@ -268,7 +265,7 @@ public class polyplay
 				timer2_active = 1;
 			}
 		}
-	}
+	} };
 	
 	/* random number generator */
 	public static ReadHandlerPtr polyplay_random_read  = new ReadHandlerPtr() { public int handler(int offset)

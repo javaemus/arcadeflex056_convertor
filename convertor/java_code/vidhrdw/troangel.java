@@ -110,7 +110,7 @@ public class troangel
 	
 	
 	
-	WRITE_HANDLER( troangel_flipscreen_w )
+	public static WriteHandlerPtr troangel_flipscreen_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		/* screen flip is handled both by software and hardware */
 		data ^= ~readinputport(4) & 1;
@@ -123,7 +123,7 @@ public class troangel
 	
 		coin_counter_w(0,data & 0x02);
 		coin_counter_w(1,data & 0x20);
-	}
+	} };
 	
 	
 	

@@ -67,12 +67,6 @@ public class dday
 	int dday_vh_start(void);
 	void dday_vh_stop(void);
 	void dday_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
-	WRITE_HANDLER( dday_bgvideoram_w );
-	WRITE_HANDLER( dday_fgvideoram_w );
-	WRITE_HANDLER( dday_textvideoram_w );
-	WRITE_HANDLER( dday_colorram_w );
-	WRITE_HANDLER( dday_control_w );
-	WRITE_HANDLER( dday_sl_control_w );
 	
 	
 	public static Memory_ReadAddress readmem[]={

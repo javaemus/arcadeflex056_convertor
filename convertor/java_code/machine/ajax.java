@@ -138,7 +138,7 @@ public class ajax
 		return data;
 	} };
 	
-	WRITE_HANDLER( ajax_ls138_f10_w )
+	public static WriteHandlerPtr ajax_ls138_f10_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		switch ((offset & 0x01c0) >> 6){
 			case 0x00:	/* NSFIRQ + AFR */
@@ -165,7 +165,7 @@ public class ajax
 			default:
 				logerror("%04x: (ls138_f10) write %02x to an unknown address %02x\n",cpu_get_pc(), data, offset);
 		}
-	}
+	} };
 	
 	/* Shared RAM between the 052001 and the 6809 (6264SL at I8) */
 	public static ReadHandlerPtr ajax_sharedram_r  = new ReadHandlerPtr() { public int handler(int offset)
@@ -173,10 +173,10 @@ public class ajax
 		return ajax_sharedram[offset];
 	} };
 	
-	WRITE_HANDLER( ajax_sharedram_w )
+	public static WriteHandlerPtr ajax_sharedram_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		ajax_sharedram[offset] = data;
-	}
+	} };
 	
 	/*	ajax_bankswitch_w_2:
 		Handled by the LS273 Octal +ve edge trigger D-type Flip-flop with Reset at K14:
@@ -193,7 +193,7 @@ public class ajax
 		0	SRB0	/
 	*/
 	
-	WRITE_HANDLER( ajax_bankswitch_2_w )
+	public static WriteHandlerPtr ajax_bankswitch_2_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		unsigned char *RAM = memory_region(REGION_CPU2);
 		int bankaddress;
@@ -210,7 +210,7 @@ public class ajax
 		/* bank # (ROMS G16 and I16) */
 		bankaddress = 0x10000 + (data & 0x0f)*0x2000;
 		cpu_setbank(1,&RAM[bankaddress]);
-	}
+	} };
 	
 	
 	void ajax_init_machine( void )

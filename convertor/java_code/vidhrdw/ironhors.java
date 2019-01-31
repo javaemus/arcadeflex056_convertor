@@ -99,7 +99,7 @@ public class ironhors
 	
 	
 	
-	WRITE_HANDLER( ironhors_charbank_w )
+	public static WriteHandlerPtr ironhors_charbank_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		if (charbank != (data & 3))
 		{
@@ -110,11 +110,11 @@ public class ironhors
 		spriterambank = data & 8;
 	
 		/* other bits unknown */
-	}
+	} };
 	
 	
 	
-	WRITE_HANDLER( ironhors_palettebank_w )
+	public static WriteHandlerPtr ironhors_palettebank_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		if (palettebank != (data & 7))
 		{
@@ -126,7 +126,7 @@ public class ironhors
 		coin_counter_w(1,data & 0x20);
 	
 	if (data & 0xc8) usrintf_showmessage("ironhors_palettebank_w %02x",data);
-	}
+	} };
 	
 	
 	

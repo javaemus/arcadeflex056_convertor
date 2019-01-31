@@ -37,20 +37,17 @@ public class exctsccr
 	/* from vidhrdw */
 	extern void exctsccr_vh_screenrefresh(struct mame_bitmap *bitmap, int full_refresh);
 	extern void exctsccr_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom);
-	WRITE_HANDLER( exctsccr_gfx_bank_w );
 	extern int exctsccr_vh_start( void );
 	extern void exctsccr_vh_stop( void );
 	
 	/* from machine */
 	extern unsigned char *exctsccr_mcu_ram;
-	WRITE_HANDLER( exctsccr_mcu_w );
-	WRITE_HANDLER( exctsccr_mcu_control_w );
 	
 	
-	WRITE_HANDLER( exctsccr_DAC_data_w )
+	public static WriteHandlerPtr exctsccr_DAC_data_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		DAC_signed_data_w(offset,data << 2);
-	}
+	} };
 	
 	
 	/***************************************************************************

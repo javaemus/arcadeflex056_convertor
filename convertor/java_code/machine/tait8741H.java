@@ -22,10 +22,6 @@ void TAITO8741_stop(void);
 void TAITO8741_reset(int num);
 
 /* write handler */
-WRITE_HANDLER( TAITO8741_0_w );
-WRITE_HANDLER( TAITO8741_1_w );
-WRITE_HANDLER( TAITO8741_2_w );
-WRITE_HANDLER( TAITO8741_3_w );
 /* read handler */
 
 #endif

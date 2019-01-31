@@ -116,8 +116,6 @@ public class meadows
 	int deadeye_vh_start(void);
 	int gypsyjug_vh_start(void);
 	void meadows_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
-	WRITE_HANDLER( meadows_videoram_w );
-	WRITE_HANDLER( meadows_sprite_w );
 	
 	int meadows_sh_start(const struct MachineSound *msound);
 	void meadows_sh_stop(void);
@@ -174,7 +172,7 @@ public class meadows
 	    return 0;
 	} };
 	
-	WRITE_HANDLER( meadows_hardware_w )
+	public static WriteHandlerPtr meadows_hardware_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		switch( offset ) {
 			case 0:
@@ -193,7 +191,7 @@ public class meadows
 	//			S2650_Clear_Pending_Interrupts();
 				break;
 		}
-	}
+	} };
 	
 	/*************************************************************/
 	/*                                                           */

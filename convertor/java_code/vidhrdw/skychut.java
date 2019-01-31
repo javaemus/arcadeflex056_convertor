@@ -22,7 +22,7 @@ public class skychut
 	static int flipscreen;
 	
 	
-	WRITE_HANDLER( skychut_vh_flipscreen_w )
+	public static WriteHandlerPtr skychut_vh_flipscreen_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 	/*	if (flipscreen != (data & 0x8f))
 		{
@@ -30,10 +30,10 @@ public class skychut
 			memset(dirtybuffer,1,videoram_size);
 		}
 	*/
-	}
+	} };
 	
 	
-	WRITE_HANDLER( skychut_colorram_w )
+	public static WriteHandlerPtr skychut_colorram_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		if (colorram[offset] != data)
 		{
@@ -41,7 +41,7 @@ public class skychut
 	
 			colorram[offset] = data;
 		}
-	}
+	} };
 	
 	
 	

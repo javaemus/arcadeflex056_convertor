@@ -101,7 +101,7 @@ public class finalizr
 	
 	
 	
-	WRITE_HANDLER( finalizr_videoctrl_w )
+	public static WriteHandlerPtr finalizr_videoctrl_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		if (charbank != (data & 3))
 		{
@@ -112,7 +112,7 @@ public class finalizr
 		spriterambank = data & 8;
 	
 		/* other bits unknown */
-	}
+	} };
 	
 	
 	

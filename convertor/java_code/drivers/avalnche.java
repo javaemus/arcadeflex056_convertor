@@ -26,12 +26,9 @@ public class avalnche
 {
 	
 	/* machine/avalnche.c */
-	WRITE_HANDLER( avalnche_output_w );
-	WRITE_HANDLER( avalnche_noise_amplitude_w );
 	int avalnche_interrupt(void);
 	
 	/* vidhrdw/avalnche.c */
-	WRITE_HANDLER( avalnche_videoram_w );
 	int avalnche_vh_start(void);
 	void avalnche_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	

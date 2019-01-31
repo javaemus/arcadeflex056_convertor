@@ -79,26 +79,26 @@ public class srumbler
 	
 	***************************************************************************/
 	
-	WRITE_HANDLER( srumbler_foreground_w )
+	public static WriteHandlerPtr srumbler_foreground_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		if (srumbler_foregroundram[offset] != data)
 		{
 			srumbler_foregroundram[offset] = data;
 			tilemap_mark_tile_dirty(fg_tilemap,offset/2);
 		}
-	}
+	} };
 	
-	WRITE_HANDLER( srumbler_background_w )
+	public static WriteHandlerPtr srumbler_background_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		if (srumbler_backgroundram[offset] != data)
 		{
 			srumbler_backgroundram[offset] = data;
 			tilemap_mark_tile_dirty(bg_tilemap,offset/2);
 		}
-	}
+	} };
 	
 	
-	WRITE_HANDLER( srumbler_4009_w )
+	public static WriteHandlerPtr srumbler_4009_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		/* bit 0 flips screen */
 		flip_screen_set(data & 1);
@@ -108,10 +108,10 @@ public class srumbler
 		/* bits 6-7 coin counters */
 		coin_counter_w(0,data & 0x40);
 		coin_counter_w(1,data & 0x80);
-	}
+	} };
 	
 	
-	WRITE_HANDLER( srumbler_scroll_w )
+	public static WriteHandlerPtr srumbler_scroll_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		static int scroll[4];
 	
@@ -119,7 +119,7 @@ public class srumbler
 	
 		tilemap_set_scrollx(bg_tilemap,0,scroll[0] | (scroll[1] << 8));
 		tilemap_set_scrolly(bg_tilemap,0,scroll[2] | (scroll[3] << 8));
-	}
+	} };
 	
 	
 	

@@ -271,15 +271,15 @@ public class sprint2
 		return sprint2_steering_val2;
 	} };
 	
-	WRITE_HANDLER( sprint2_steering_reset1_w )
+	public static WriteHandlerPtr sprint2_steering_reset1_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 	    sprint2_steering_val1=0xFF;
-	}
+	} };
 	
-	WRITE_HANDLER( sprint2_steering_reset2_w )
+	public static WriteHandlerPtr sprint2_steering_reset2_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 	    sprint2_steering_val2=0xFF;
-	}
+	} };
 	
 	
 	
@@ -300,28 +300,28 @@ public class sprint2
 		return sprint2_collision2_data;
 	} };
 	
-	WRITE_HANDLER( sprint2_collision_reset1_w )
+	public static WriteHandlerPtr sprint2_collision_reset1_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		sprint2_collision1_data=0;
-	}
+	} };
 	
-	WRITE_HANDLER( sprint2_collision_reset2_w )
+	public static WriteHandlerPtr sprint2_collision_reset2_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		sprint2_collision2_data=0;
-	}
+	} };
 	
 	/***************************************************************************
 	Lamps
 	***************************************************************************/
-	WRITE_HANDLER( sprint2_lamp1_w )
+	public static WriteHandlerPtr sprint2_lamp1_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		set_led_status(0,offset & 1);
-	}
+	} };
 	
-	WRITE_HANDLER( sprint2_lamp2_w )
+	public static WriteHandlerPtr sprint2_lamp2_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		set_led_status(1,offset & 1);
-	}
+	} };
 	
 	
 	

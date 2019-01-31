@@ -148,9 +148,6 @@ public class gsword
 	int  gsword_vh_start(void);
 	void gsword_vh_stop(void);
 	void gsword_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
-	WRITE_HANDLER( gs_charbank_w );
-	WRITE_HANDLER( gs_videoctrl_w );
-	WRITE_HANDLER( gs_videoram_w );
 	
 	
 	extern size_t gs_videoram_size;
@@ -284,18 +281,18 @@ public class gsword
 		return fake8910_1+1;
 	} };
 	
-	WRITE_HANDLER( gsword_adpcm_data_w )
+	public static WriteHandlerPtr gsword_adpcm_data_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		MSM5205_data_w (0,data & 0x0f); /* bit 0..3 */
 		MSM5205_reset_w(0,(data>>5)&1); /* bit 5    */
 		MSM5205_vclk_w(0,(data>>4)&1);  /* bit 4    */
-	}
+	} };
 	
-	WRITE_HANDLER( adpcm_soundcommand_w )
+	public static WriteHandlerPtr adpcm_soundcommand_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		soundlatch_w(0,data);
 		cpu_set_nmi_line(2, PULSE_LINE);
-	}
+	} };
 	
 	public static Memory_ReadAddress gsword_readmem[]={
 		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),

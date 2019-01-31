@@ -7,7 +7,6 @@ package machine;
 public class beezer
 {
 	
-	WRITE_HANDLER( beezer_map_w );
 	
 	static int pbus;
 	
@@ -114,7 +113,7 @@ public class beezer
 		pbus = 0;
 	}
 	
-	WRITE_HANDLER( beezer_bankswitch_w )
+	public static WriteHandlerPtr beezer_bankswitch_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		if ((data & 0x07) == 0)
 		{
@@ -131,7 +130,7 @@ public class beezer
 			install_mem_write_handler(0, 0xc000, 0xcfff, MWA_BANK1);
 			cpu_setbank(1, rom + (data & 0x07) * 0x2000 + ((data & 0x08) ? 0x1000: 0));
 		}
-	}
+	} };
 	
 	
 }

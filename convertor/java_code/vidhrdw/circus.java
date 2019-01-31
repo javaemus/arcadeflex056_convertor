@@ -49,21 +49,21 @@ public class circus
 	/***************************************************************************
 	***************************************************************************/
 	
-	WRITE_HANDLER( circus_clown_x_w )
+	public static WriteHandlerPtr circus_clown_x_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		clown_x = 240-data;
-	}
+	} };
 	
-	WRITE_HANDLER( circus_clown_y_w )
+	public static WriteHandlerPtr circus_clown_y_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		clown_y = 240-data;
-	}
+	} };
 	
 	/* This register controls the clown image currently displayed */
 	/* and also is used to enable the amplifier and trigger the   */
 	/* discrete circuitry that produces sound effects and music   */
 	
-	WRITE_HANDLER( circus_clown_z_w )
+	public static WriteHandlerPtr circus_clown_z_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		clown_z = (data & 0x0f);
 	
@@ -102,7 +102,7 @@ public class circus
 		/* Bit 7 enables amplifier (1 = on) */
 	
 	//	logerror("clown Z = %02x\n",data);
-	}
+	} };
 	
 	static void draw_line(struct mame_bitmap *bitmap, int x1, int y1, int x2, int y2, int dotted)
 	{

@@ -533,10 +533,10 @@ public class vlm5030
 	}
 	
 	/* latch contoll data */
-	WRITE_HANDLER( VLM5030_data_w )
+	public static WriteHandlerPtr VLM5030_data_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		latch_data = data;
-	}
+	} };
 	
 	/* set RST pin level : reset / set table address A8-A15 */
 	void VLM5030_RST (int pin )

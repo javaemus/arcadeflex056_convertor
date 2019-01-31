@@ -109,10 +109,6 @@ public class cosmic
 	void cosmica_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	void cosmicg_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	void nomnlnd_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
-	WRITE_HANDLER( cosmica_videoram_w );
-	WRITE_HANDLER( panic_color_register_w );
-	WRITE_HANDLER( cosmicg_color_register_w );
-	WRITE_HANDLER( nomnlnd_background_w );
 	
 	
 	static unsigned int pixel_clock = 0;
@@ -191,12 +187,12 @@ public class cosmic
 		#endif
 	} };
 	
-	WRITE_HANDLER( panic_sound_output2_w )
+	public static WriteHandlerPtr panic_sound_output2_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		panic_sound_output_w(offset+15, data);
-	}
+	} };
 	
-	WRITE_HANDLER( cosmicg_output_w )
+	public static WriteHandlerPtr cosmicg_output_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		static int march_select;
 	    static int gun_die_select;
@@ -259,7 +255,7 @@ public class cosmic
 		#ifdef MAME_DEBUG
 	 	if (offset != 11) logerror("Output %x=%x\n",offset,data);
 	    #endif
-	}
+	} };
 	
 	static int panic_interrupt(void)
 	{

@@ -25,9 +25,6 @@ public class suprloco
 	void suprloco_vh_convert_color_prom(unsigned char *obsolete,unsigned short *colortable,const unsigned char *color_prom);
 	int  suprloco_vh_start(void);
 	void suprloco_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
-	WRITE_HANDLER( suprloco_videoram_w );
-	WRITE_HANDLER( suprloco_scrollram_w );
-	WRITE_HANDLER( suprloco_control_w );
 	
 	
 	public static WriteHandlerPtr suprloco_soundport_w = new WriteHandlerPtr() {public void handler(int offset, int data)

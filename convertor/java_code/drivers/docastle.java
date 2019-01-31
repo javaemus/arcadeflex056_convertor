@@ -122,17 +122,12 @@ public class docastle
 	
 	
 	
-	WRITE_HANDLER( docastle_shared0_w );
-	WRITE_HANDLER( docastle_shared1_w );
-	WRITE_HANDLER( docastle_nmitrigger_w );
 	
 	void docastle_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom);
 	void dorunrun_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom);
 	int docastle_vh_start(void);
 	void docastle_vh_stop(void);
 	void docastle_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
-	WRITE_HANDLER( docastle_flipscreen_off_w );
-	WRITE_HANDLER( docastle_flipscreen_on_w );
 	
 	
 	public static Memory_ReadAddress docastle_readmem[]={

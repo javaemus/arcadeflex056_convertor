@@ -176,14 +176,6 @@ public class mhavoc
 	void mhavoc_init_machine(void);
 	int mhavoc_alpha_interrupt (void);
 	int mhavoc_gamma_interrupt (void);
-	WRITE_HANDLER( mhavoc_rom_banksel_w );
-	WRITE_HANDLER( mhavoc_ram_banksel_w );
-	WRITE_HANDLER( mhavoc_gamma_w );
-	WRITE_HANDLER( mhavoc_alpha_w );
-	WRITE_HANDLER( mhavoc_out_0_w );
-	WRITE_HANDLER( mhavoc_out_1_w );
-	WRITE_HANDLER( mhavoc_irqack_w );
-	WRITE_HANDLER( tempest_colorram_w );
 	
 	
 	

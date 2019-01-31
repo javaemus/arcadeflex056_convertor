@@ -287,7 +287,7 @@ public class omegrace
 		return (spinnerTable[res&0x3f]);
 	} };
 	
-	WRITE_HANDLER( omegrace_leds_w )
+	public static WriteHandlerPtr omegrace_leds_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		/* bits 0 and 1 are coin counters */
 		coin_counter_w(0,data & 0x01);
@@ -300,13 +300,13 @@ public class omegrace
 		set_led_status(3,~data & 0x20);
 	
 		/* bit 6 flips screen (not supported) */
-	}
+	} };
 	
-	WRITE_HANDLER( omegrace_soundlatch_w )
+	public static WriteHandlerPtr omegrace_soundlatch_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		soundlatch_w (offset, data);
 		cpu_cause_interrupt (1, 0xff);
-	}
+	} };
 	
 	public static Memory_ReadAddress readmem[]={
 		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),

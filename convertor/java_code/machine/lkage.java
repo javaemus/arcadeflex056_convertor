@@ -38,16 +38,16 @@ public class lkage
 		return (portA_out & ddrA) | (portA_in & ~ddrA);
 	} };
 	
-	WRITE_HANDLER( lkage_68705_portA_w )
+	public static WriteHandlerPtr lkage_68705_portA_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 	//logerror("%04x: 68705 port A write %02x\n",cpu_get_pc(),data);
 		portA_out = data;
-	}
+	} };
 	
-	WRITE_HANDLER( lkage_68705_ddrA_w )
+	public static WriteHandlerPtr lkage_68705_ddrA_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		ddrA = data;
-	}
+	} };
 	
 	
 	
@@ -67,7 +67,7 @@ public class lkage
 		return (portB_out & ddrB) | (portB_in & ~ddrB);
 	} };
 	
-	WRITE_HANDLER( lkage_68705_portB_w )
+	public static WriteHandlerPtr lkage_68705_portB_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 	//logerror("%04x: 68705 port B write %02x\n",cpu_get_pc(),data);
 	
@@ -86,12 +86,12 @@ public class lkage
 		}
 	
 		portB_out = data;
-	}
+	} };
 	
-	WRITE_HANDLER( lkage_68705_ddrB_w )
+	public static WriteHandlerPtr lkage_68705_ddrB_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		ddrB = data;
-	}
+	} };
 	
 	
 	static unsigned char portC_in,portC_out,ddrC;
@@ -105,25 +105,25 @@ public class lkage
 		return (portC_out & ddrC) | (portC_in & ~ddrC);
 	} };
 	
-	WRITE_HANDLER( lkage_68705_portC_w )
+	public static WriteHandlerPtr lkage_68705_portC_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 	logerror("%04x: 68705 port C write %02x\n",cpu_get_pc(),data);
 		portC_out = data;
-	}
+	} };
 	
-	WRITE_HANDLER( lkage_68705_ddrC_w )
+	public static WriteHandlerPtr lkage_68705_ddrC_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		ddrC = data;
-	}
+	} };
 	
 	
-	WRITE_HANDLER( lkage_mcu_w )
+	public static WriteHandlerPtr lkage_mcu_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 	logerror("%04x: mcu_w %02x\n",cpu_get_pc(),data);
 		from_main = data;
 		main_sent = 1;
 		cpu_set_irq_line(2,0,ASSERT_LINE);
-	}
+	} };
 	
 	public static ReadHandlerPtr lkage_mcu_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{

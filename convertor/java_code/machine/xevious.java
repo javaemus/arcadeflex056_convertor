@@ -26,7 +26,6 @@ public class xevious
 	
 	static void *nmi_timer;
 	
-	WRITE_HANDLER( xevious_halt_w );
 	
 	/* namco stick number array */
 	/*
@@ -59,10 +58,10 @@ public class xevious
 	}
 	
 	/* emulation for schematic 9B */
-	WRITE_HANDLER( xevious_bs_w )
+	public static WriteHandlerPtr xevious_bs_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		xevious_bs[offset & 0x01] = data;
-	}
+	} };
 	
 	public static ReadHandlerPtr xevious_bb_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
@@ -106,10 +105,10 @@ public class xevious
 		return xevious_sharedram[offset];
 	} };
 	
-	WRITE_HANDLER( xevious_sharedram_w )
+	public static WriteHandlerPtr xevious_sharedram_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		xevious_sharedram[offset] = data;
-	}
+	} };
 	
 	
 	
@@ -136,7 +135,7 @@ public class xevious
 	static unsigned char customio[16];
 	
 	
-	WRITE_HANDLER( xevious_customio_data_w )
+	public static WriteHandlerPtr xevious_customio_data_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		customio[offset] = data;
 	
@@ -201,7 +200,7 @@ public class xevious
 				}
 				break;
 		}
-	}
+	} };
 	
 	
 	public static ReadHandlerPtr xevious_customio_data_r  = new ReadHandlerPtr() { public int handler(int offset)
@@ -325,7 +324,7 @@ public class xevious
 	}
 	
 	
-	WRITE_HANDLER( xevious_customio_w )
+	public static WriteHandlerPtr xevious_customio_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		if (data != 0x10 && data != 0x71)
 			logerror("%04x: custom IO command %02x\n",cpu_get_pc(),data);
@@ -341,11 +340,11 @@ public class xevious
 		}
 		nmi_timer = timer_pulse (TIME_IN_USEC (50), 0, xevious_nmi_generate);
 	
-	}
+	} };
 	
 	
 	
-	WRITE_HANDLER( xevious_halt_w )
+	public static WriteHandlerPtr xevious_halt_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		if (data & 1)
 		{
@@ -357,14 +356,14 @@ public class xevious
 			cpu_set_reset_line(1,ASSERT_LINE);
 			cpu_set_reset_line(2,ASSERT_LINE);
 		}
-	}
+	} };
 	
 	
 	
-	WRITE_HANDLER( xevious_interrupt_enable_1_w )
+	public static WriteHandlerPtr xevious_interrupt_enable_1_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		interrupt_enable_1 = (data&1);
-	}
+	} };
 	
 	
 	
@@ -376,10 +375,10 @@ public class xevious
 	
 	
 	
-	WRITE_HANDLER( xevious_interrupt_enable_2_w )
+	public static WriteHandlerPtr xevious_interrupt_enable_2_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		interrupt_enable_2 = data & 1;
-	}
+	} };
 	
 	
 	
@@ -391,10 +390,10 @@ public class xevious
 	
 	
 	
-	WRITE_HANDLER( xevious_interrupt_enable_3_w )
+	public static WriteHandlerPtr xevious_interrupt_enable_3_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		interrupt_enable_3 = !(data & 1);
-	}
+	} };
 	
 	
 	

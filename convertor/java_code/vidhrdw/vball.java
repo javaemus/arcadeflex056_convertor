@@ -103,13 +103,13 @@ public class vball
 	} };
 	
 	
-	WRITE_HANDLER( vb_foreground_w )
+	public static WriteHandlerPtr vb_foreground_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		if( vb_videoram[offset] != data ){
 			vb_videoram[offset] = data;
 			dirtybuffer[offset] = 1;
 		}
-	}
+	} };
 	
 	
 	public static ReadHandlerPtr vb_fgattrib_r  = new ReadHandlerPtr() { public int handler(int offset)
@@ -118,13 +118,13 @@ public class vball
 	} };
 	
 	
-	WRITE_HANDLER( vb_fgattrib_w )
+	public static WriteHandlerPtr vb_fgattrib_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		if( vb_fgattribram[offset] != data ){
 			vb_fgattribram[offset] = data;
 			dirtybuffer[offset] = 1;
 		}
-	}
+	} };
 	
 	
 	public static ReadHandlerPtr vb_attrib_r  = new ReadHandlerPtr() { public int handler(int offset)
@@ -133,13 +133,13 @@ public class vball
 	} };
 	
 	
-	WRITE_HANDLER( vb_attrib_w )
+	public static WriteHandlerPtr vb_attrib_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		if( vb_attribram[offset] != data ){
 			vb_attribram[offset] = data;
 			dirtybuffer[offset] = 1;
 		}
-	}
+	} };
 	
 	static void vb_draw_foreground( struct mame_bitmap *bitmap )
 	{

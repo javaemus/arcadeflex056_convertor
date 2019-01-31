@@ -39,8 +39,6 @@ public class spiders
 	
 	/* Function prototypes */
 	
-	WRITE_HANDLER( spiders_flip_w );
-	WRITE_HANDLER( spiders_vrif_w );
 	
 	
 	/* Declare PIA structure */
@@ -145,17 +143,17 @@ public class spiders
 	
 	int spiders_video_flip=0;
 	
-	WRITE_HANDLER( spiders_flip_w )
+	public static WriteHandlerPtr spiders_flip_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		spiders_video_flip=data;
-	}
+	} };
 	
-	WRITE_HANDLER( spiders_vrif_w )
+	public static WriteHandlerPtr spiders_vrif_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		vrom_ctrl_mode=(data&0x80)>>7;
 		vrom_ctrl_latch=(data&0x30)>>4;
 		vrom_ctrl_data=15-(data&0x0f);
-	}
+	} };
 	
 	public static ReadHandlerPtr spiders_vrom_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{

@@ -37,18 +37,10 @@ package drivers;
 public class galivan
 {
 	
-	WRITE_HANDLER( galivan_scrollx_w );
-	WRITE_HANDLER( galivan_scrolly_w );
-	WRITE_HANDLER( galivan_videoram_w );
-	WRITE_HANDLER( galivan_colorram_w );
-	WRITE_HANDLER( galivan_gfxbank_w );
 	void galivan_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom);
 	int galivan_vh_start(void);
 	void galivan_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	
-	WRITE_HANDLER( ninjemak_scrollx_w );
-	WRITE_HANDLER( ninjemak_scrolly_w );
-	WRITE_HANDLER( ninjemak_gfxbank_w );
 	int ninjemak_vh_start(void);
 	void ninjemak_vh_screenrefresh(struct mame_bitmap *bitmap, int full_refresh);
 	

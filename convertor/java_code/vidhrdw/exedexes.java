@@ -99,7 +99,7 @@ public class exedexes
 	}
 	
 	
-	WRITE_HANDLER( exedexes_c804_w )
+	public static WriteHandlerPtr exedexes_c804_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		/* bits 0 and 1 are coin counters */
 		coin_counter_w(0,data & 0x01);
@@ -109,9 +109,9 @@ public class exedexes
 		chon = data & 0x80;
 	
 		/* other bits seem to be unused */
-	}
+	} };
 	
-	WRITE_HANDLER( exedexes_gfxctrl_w )
+	public static WriteHandlerPtr exedexes_gfxctrl_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		/* bit 4 is bg enable */
 		sc2on = data & 0x10;
@@ -123,7 +123,7 @@ public class exedexes
 		objon = data & 0x40;
 	
 		/* other bits seem to be unused */
-	}
+	} };
 	
 	
 	

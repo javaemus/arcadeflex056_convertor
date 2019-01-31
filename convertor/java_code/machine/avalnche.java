@@ -44,7 +44,7 @@ public class avalnche
 	  avalnche_output_w
 	***************************************************************************/
 	
-	WRITE_HANDLER( avalnche_output_w )
+	public static WriteHandlerPtr avalnche_output_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		switch (offset & 0x07)
 		{
@@ -82,16 +82,16 @@ public class avalnche
 		        set_led_status(2,data & 0x01);
 				break;
 		}
-	}
+	} };
 	
 	/***************************************************************************
 	  avalnche_noise_amplitude_w
 	***************************************************************************/
 	
-	WRITE_HANDLER( avalnche_noise_amplitude_w )
+	public static WriteHandlerPtr avalnche_noise_amplitude_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		volume = data & 0x3F;
-	}
+	} };
 	
 	/***************************************************************************
 	  avalnche_interrupt

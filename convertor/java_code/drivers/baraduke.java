@@ -29,10 +29,6 @@ public class baraduke
 	void baraduke_vh_stop( void );
 	void baraduke_vh_screenrefresh( struct mame_bitmap *bitmap,int full_refresh );
 	void metrocrs_vh_screenrefresh( struct mame_bitmap *bitmap,int full_refresh );
-	WRITE_HANDLER( baraduke_textlayer_w );
-	WRITE_HANDLER( baraduke_videoram_w );
-	WRITE_HANDLER( baraduke_scroll0_w );
-	WRITE_HANDLER( baraduke_scroll1_w );
 	void baraduke_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom);
 	
 	static int inputport_selected;
@@ -88,10 +84,10 @@ public class baraduke
 	{
 		return sharedram[offset];
 	} };
-	WRITE_HANDLER( baraduke_sharedram_w )
+	public static WriteHandlerPtr baraduke_sharedram_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		sharedram[offset] = data;
-	}
+	} };
 	
 	public static Memory_ReadAddress baraduke_readmem[]={
 		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),

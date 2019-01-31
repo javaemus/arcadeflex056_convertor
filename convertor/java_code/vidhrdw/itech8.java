@@ -163,15 +163,15 @@ public class itech8
 	 *
 	 *************************************/
 	
-	WRITE_HANDLER( itech8_palette_address_w )
+	public static WriteHandlerPtr itech8_palette_address_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		/* latch the address */
 		palette_addr = data;
 		palette_index = 0;
-	}
+	} };
 	
 	
-	WRITE_HANDLER( itech8_palette_data_w )
+	public static WriteHandlerPtr itech8_palette_data_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		/* wait for 3 bytes to come in, then update the color */
 		palette_data[palette_index++] = data;
@@ -180,7 +180,7 @@ public class itech8
 			palette_set_color(palette_addr++, palette_data[0] << 2, palette_data[1] << 2, palette_data[2] << 2);
 			palette_index = 0;
 		}
-	}
+	} };
 	
 	
 	
@@ -687,7 +687,7 @@ public class itech8
 	} };
 	
 	
-	WRITE_HANDLER( itech8_blitter_w )
+	public static WriteHandlerPtr itech8_blitter_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		/* low bit seems to be ignored */
 		offset /= 2;
@@ -732,7 +732,7 @@ public class itech8
 	
 		/* debugging */
 		if (FULL_LOGGING) logerror("%04x:blitter_w(%02x)=%02x\n", cpu_getpreviouspc(), offset, data);
-	}
+	} };
 	
 	
 	
@@ -742,7 +742,7 @@ public class itech8
 	 *
 	 *************************************/
 	
-	WRITE_HANDLER( itech8_tms34061_w )
+	public static WriteHandlerPtr itech8_tms34061_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		int func = (offset >> 9) & 7;
 		int col = offset & 0xff;
@@ -754,7 +754,7 @@ public class itech8
 	
 		/* Row address (RA0-RA8) is not dependent on the offset */
 		tms34061_w(col, 0xff, func, data);
-	}
+	} };
 	
 	
 	public static ReadHandlerPtr itech8_tms34061_r  = new ReadHandlerPtr() { public int handler(int offset)

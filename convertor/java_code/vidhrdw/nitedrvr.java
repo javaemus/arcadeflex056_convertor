@@ -22,7 +22,7 @@ public class nitedrvr
 	/* local */
 	unsigned char *nitedrvr_hvc;
 	
-	WRITE_HANDLER( nitedrvr_hvc_w )
+	public static WriteHandlerPtr nitedrvr_hvc_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		nitedrvr_hvc[offset & 0x3f] = data;
 	
@@ -30,7 +30,7 @@ public class nitedrvr
 	//		;		/* Watchdog called here */
 	
 		return;
-	}
+	} };
 	
 	static void nitedrvr_draw_block(struct mame_bitmap *bitmap, int bx, int by, int ex, int ey)
 	{

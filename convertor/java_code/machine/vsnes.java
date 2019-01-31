@@ -114,7 +114,7 @@ public class vsnes
 	 *	Input Ports
 	 *
 	 *************************************/
-	WRITE_HANDLER( vsnes_in0_w )
+	public static WriteHandlerPtr vsnes_in0_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		/* Toggling bit 0 high then low resets both controllers */
 		if ( data & 1 )
@@ -123,7 +123,7 @@ public class vsnes
 			input_latch[0] = readinputport( 0 );
 			input_latch[1] = readinputport( 1 );
 		}
-	}
+	} };
 	
 	public static ReadHandlerPtr gun_in0_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
@@ -184,7 +184,7 @@ public class vsnes
 		return ret;
 	} };
 	
-	WRITE_HANDLER( vsnes_in0_1_w )
+	public static WriteHandlerPtr vsnes_in0_1_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		/* Toggling bit 0 high then low resets both controllers */
 		if ( data & 1 )
@@ -193,7 +193,7 @@ public class vsnes
 			input_latch[2] = readinputport( 4 );
 			input_latch[3] = readinputport( 5 );
 		}
-	}
+	} };
 	
 	public static ReadHandlerPtr vsnes_in0_1_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{

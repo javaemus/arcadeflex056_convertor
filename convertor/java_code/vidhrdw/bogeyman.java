@@ -62,17 +62,17 @@ public class bogeyman
 	
 	/******************************************************************************/
 	
-	WRITE_HANDLER( bogeyman_paletteram_w )
+	public static WriteHandlerPtr bogeyman_paletteram_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		/* RGB output is inverted */
 		paletteram_BBGGGRRR_w(offset,~data);
-	}
+	} };
 	
-	WRITE_HANDLER( bogeyman_videoram_w )
+	public static WriteHandlerPtr bogeyman_videoram_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		bogeyman_videoram[offset]=data;
 		dirtybuffer[offset]=1;
-	}
+	} };
 	
 	void bogeyman_vh_screenrefresh(struct mame_bitmap *bitmap, int full_refresh)
 	{

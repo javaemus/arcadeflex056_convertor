@@ -61,16 +61,16 @@ public class lasso
 	
 	***************************************************************************/
 	
-	WRITE_HANDLER( lasso_videoram_w )
+	public static WriteHandlerPtr lasso_videoram_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		if( videoram[offset]!=data )
 		{
 			videoram[offset] = data;
 			tilemap_mark_tile_dirty( background, offset&0x3ff );
 		}
-	}
+	} };
 	
-	WRITE_HANDLER( lasso_gfxbank_w )
+	public static WriteHandlerPtr lasso_gfxbank_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		int bank = (data & 0x04) >> 2;
 	
@@ -81,9 +81,9 @@ public class lasso
 			gfxbank = bank;
 			tilemap_mark_all_tiles_dirty(ALL_TILEMAPS);
 		}
-	}
+	} };
 	
-	WRITE_HANDLER( wwjgtin_gfxbank_w )
+	public static WriteHandlerPtr wwjgtin_gfxbank_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		int bank = ((data & 0x04) ? 0 : 1) + ((data & 0x10) ? 2 : 0);
 		wwjgtin_bg1_enable = data & 0x08;
@@ -95,7 +95,7 @@ public class lasso
 			gfxbank = bank;
 			tilemap_mark_all_tiles_dirty(ALL_TILEMAPS);
 		}
-	}
+	} };
 	
 	/***************************************************************************
 	
@@ -151,18 +151,18 @@ public class lasso
 	}
 	
 	/* The background color can be changed */
-	WRITE_HANDLER( lasso_backcolor_w )
+	public static WriteHandlerPtr lasso_backcolor_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		int i;
 		for( i=0; i<0x40; i+=4 ) /* stuff into color#0 of each palette */
 			lasso_set_color(i,data);
-	}
+	} };
 	
 	/* The last 4 color (= last palette) entries can be changed */
-	WRITE_HANDLER( wwjgtin_lastcolor_w )
+	public static WriteHandlerPtr wwjgtin_lastcolor_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		lasso_set_color(0x3f - offset,data);
-	}
+	} };
 	
 	/***************************************************************************
 	

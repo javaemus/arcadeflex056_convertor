@@ -407,10 +407,10 @@ public class jrcrypt
 	}
 	#endif
 	
-	WRITE_HANDLER( jrpacman_interrupt_enable_w )
+	public static WriteHandlerPtr jrpacman_interrupt_enable_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		interrupt_enable = data;
-	}
+	} };
 	
 	
 	

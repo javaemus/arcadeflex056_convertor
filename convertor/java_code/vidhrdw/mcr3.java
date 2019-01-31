@@ -64,7 +64,7 @@ public class mcr3
 	 *
 	 *************************************/
 	
-	WRITE_HANDLER( mcr3_paletteram_w )
+	public static WriteHandlerPtr mcr3_paletteram_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		int r, g, b;
 	
@@ -82,7 +82,7 @@ public class mcr3
 		b = (b << 5) | (b << 2) | (b >> 1);
 	
 		palette_set_color(offset / 2, r, g, b);
-	}
+	} };
 	
 	
 	
@@ -92,14 +92,14 @@ public class mcr3
 	 *
 	 *************************************/
 	
-	WRITE_HANDLER( mcr3_videoram_w )
+	public static WriteHandlerPtr mcr3_videoram_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		if (videoram[offset] != data)
 		{
 			dirtybuffer[offset & ~1] = 1;
 			videoram[offset] = data;
 		}
-	}
+	} };
 	
 	
 	

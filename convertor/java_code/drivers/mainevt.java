@@ -59,7 +59,7 @@ public class mainevt
 	}
 	
 	
-	WRITE_HANDLER( mainevt_bankswitch_w )
+	public static WriteHandlerPtr mainevt_bankswitch_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		unsigned char *RAM = memory_region(REGION_CPU1);
 		int bankaddress;
@@ -77,9 +77,9 @@ public class mainevt
 		/* bit 7 = NINITSET (unknown) */
 	
 		/* other bits unused */
-	}
+	} };
 	
-	WRITE_HANDLER( mainevt_coin_w )
+	public static WriteHandlerPtr mainevt_coin_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		coin_counter_w(0,data & 0x10);
 		coin_counter_w(1,data & 0x20);
@@ -87,14 +87,14 @@ public class mainevt
 		set_led_status(1,data & 0x02);
 		set_led_status(2,data & 0x04);
 		set_led_status(3,data & 0x08);
-	}
+	} };
 	
-	WRITE_HANDLER( mainevt_sh_irqtrigger_w )
+	public static WriteHandlerPtr mainevt_sh_irqtrigger_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		cpu_cause_interrupt(1,0xff);
-	}
+	} };
 	
-	WRITE_HANDLER( mainevt_sh_irqcontrol_w )
+	public static WriteHandlerPtr mainevt_sh_irqcontrol_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 	 	/* I think bit 1 resets the UPD7795C sound chip */
 	 	if ((data & 0x02) == 0)
@@ -107,14 +107,14 @@ public class mainevt
 	 	}
 	
 		interrupt_enable_w(0,data & 4);
-	}
+	} };
 	
-	WRITE_HANDLER( devstor_sh_irqcontrol_w )
+	public static WriteHandlerPtr devstor_sh_irqcontrol_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 	interrupt_enable_w(0,data & 4);
-	}
+	} };
 	
-	WRITE_HANDLER( mainevt_sh_bankswitch_w )
+	public static WriteHandlerPtr mainevt_sh_bankswitch_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		unsigned char *src,*dest;
 		unsigned char *RAM = memory_region(REGION_SOUND1);
@@ -131,9 +131,9 @@ public class mainevt
 		src = &memory_region(REGION_SOUND2)[0x20000];
 		dest = memory_region(REGION_SOUND2);
 		memcpy(dest,&src[((data >> 4) & 0x03) * 0x20000],0x20000);
-	}
+	} };
 	
-	WRITE_HANDLER( dv_sh_bankswitch_w )
+	public static WriteHandlerPtr dv_sh_bankswitch_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		unsigned char *RAM = memory_region(REGION_SOUND1);
 		int bank_A,bank_B;
@@ -144,7 +144,7 @@ public class mainevt
 		bank_A=0x20000 * (data&0x3);
 		bank_B=0x20000 * ((data>>2)&0x3);
 		K007232_bankswitch(0,RAM+bank_A,RAM+bank_B);
-	}
+	} };
 	
 	
 	public static Memory_ReadAddress readmem[]={

@@ -723,11 +723,11 @@ public class kaneko16
 		return EEPROM_read_bit() & 1;
 	} };
 	
-	WRITE_HANDLER( kaneko16_eeprom_reset_w )
+	public static WriteHandlerPtr kaneko16_eeprom_reset_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		// reset line asserted: reset.
 		EEPROM_set_cs_line((data & 0x01) ? CLEAR_LINE : ASSERT_LINE );
-	}
+	} };
 	
 	WRITE16_HANDLER( kaneko16_eeprom_w )
 	{
@@ -1267,7 +1267,7 @@ public class kaneko16
 									Sand Scorpion
 	***************************************************************************/
 	
-	WRITE_HANDLER( sandscrp_bankswitch_w )
+	public static WriteHandlerPtr sandscrp_bankswitch_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		unsigned char *RAM = memory_region(REGION_CPU1);
 		int bank = data & 0x07;
@@ -1278,7 +1278,7 @@ public class kaneko16
 		else			RAM = &RAM[0x4000 * (bank-3) + 0x10000];
 	
 		cpu_setbank(1, RAM);
-	}
+	} };
 	
 	public static ReadHandlerPtr sandscrp_latchstatus_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{

@@ -8,7 +8,6 @@ package sndhrdw;
 public class rockola
 {
 	
-	WRITE_HANDLER( rockola_flipscreen_w );
 	
 	#define TONE_VOLUME 25
 	#define SAMPLE_VOLUME 25
@@ -137,7 +136,7 @@ public class rockola
 	
 	
 	
-	WRITE_HANDLER( satansat_sound0_w )
+	public static WriteHandlerPtr satansat_sound0_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		/* bit 0 = analog sound trigger */
 	
@@ -166,9 +165,9 @@ public class rockola
 		/* bit 7 sound1 volume control (TODO) */
 	
 		LastPort1 = data;
-	}
+	} };
 	
-	WRITE_HANDLER( satansat_sound1_w )
+	public static WriteHandlerPtr satansat_sound1_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		/* select tune in ROM based on sound command byte */
 		Sound0Base = 0x0000 + ((data & 0x0e) << 7);
@@ -189,10 +188,10 @@ public class rockola
 		}
 	
 		/* bit 7 = ? */
-	}
+	} };
 	
 	
-	WRITE_HANDLER( vanguard_sound0_w )
+	public static WriteHandlerPtr vanguard_sound0_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		/* select musical tune in ROM based on sound command byte */
 	
@@ -240,9 +239,9 @@ public class rockola
 		}
 	
 		LastPort1 = data;
-	}
+	} };
 	
-	WRITE_HANDLER( vanguard_sound1_w )
+	public static WriteHandlerPtr vanguard_sound1_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		/* select tune in ROM based on sound command byte */
 		Sound1Base = 0x0800 + ((data & 0x07) << 8);
@@ -255,11 +254,11 @@ public class rockola
 			NoSound1=1;
 			Sound1Offset = 0;
 		}
-	}
+	} };
 	
 	
 	
-	WRITE_HANDLER( fantasy_sound0_w )
+	public static WriteHandlerPtr fantasy_sound0_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		/* select musical tune in ROM based on sound command byte */
 		Sound0Base = 0x0000 + ((data & 0x07) << 8);
@@ -295,9 +294,9 @@ public class rockola
 		}
 	
 		LastPort1 = data;
-	}
+	} };
 	
-	WRITE_HANDLER( fantasy_sound1_w )
+	public static WriteHandlerPtr fantasy_sound1_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		/* select tune in ROM based on sound command byte */
 		Sound1Base = 0x0800 + ((data & 0x07) << 8);
@@ -310,9 +309,9 @@ public class rockola
 			NoSound1=1;
 			Sound1Offset = 0;
 		}
-	}
+	} };
 	
-	WRITE_HANDLER( fantasy_sound2_w )
+	public static WriteHandlerPtr fantasy_sound2_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		rockola_flipscreen_w(offset,data);
 	
@@ -320,5 +319,5 @@ public class rockola
 		Sound2Base = 0x1000 + ((data & 0x70) << 4);
 	//	Sound2Base = 0x1000 + ((data & 0x10) << 5) + ((data & 0x20) << 5) + ((data & 0x40) << 2);
 		Sound2Mask = 0xff;
-	}
+	} };
 }

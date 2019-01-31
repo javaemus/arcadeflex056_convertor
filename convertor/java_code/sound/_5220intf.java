@@ -100,12 +100,12 @@ public class _5220intf
 	
 	***********************************************************************************************/
 	
-	WRITE_HANDLER( tms5220_data_w )
+	public static WriteHandlerPtr tms5220_data_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 	    /* bring up to date first */
 	    stream_update(stream, 0);
 	    tms5220_data_write(data);
-	}
+	} };
 	
 	
 	

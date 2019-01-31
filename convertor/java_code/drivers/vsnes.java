@@ -107,9 +107,7 @@ public class vsnes
 	extern void init_xevious(void);
 	
 	
-	extern extern extern extern extern WRITE_HANDLER( vsnes_in0_w );
-	extern WRITE_HANDLER( vsnes_in0_1_w );
-	
+	extern extern extern extern extern extern 
 	/******************************************************************************/
 	
 	/* local stuff */

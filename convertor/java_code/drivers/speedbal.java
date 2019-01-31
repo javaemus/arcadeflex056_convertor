@@ -64,8 +64,6 @@ public class speedbal
 	int  speedbal_vh_start(void);
 	void speedbal_vh_stop(void);
 	void speedbal_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
-	WRITE_HANDLER( speedbal_foreground_videoram_w );
-	WRITE_HANDLER( speedbal_background_videoram_w );
 	
 	
 	unsigned char *speedbal_sharedram;
@@ -77,10 +75,10 @@ public class speedbal
 	} };
 	
 	
-	WRITE_HANDLER( speedbal_sharedram_w )
+	public static WriteHandlerPtr speedbal_sharedram_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 	    speedbal_sharedram[offset] = data;
-	}
+	} };
 	
 	public static Memory_ReadAddress readmem[]={
 		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),

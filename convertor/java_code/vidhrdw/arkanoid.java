@@ -22,7 +22,7 @@ public class arkanoid
 	
 	
 	
-	WRITE_HANDLER( arkanoid_d008_w )
+	public static WriteHandlerPtr arkanoid_d008_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		/* bits 0 and 1 flip X and Y, I don't know which is which */
 		flip_screen_x_set(data & 0x01);
@@ -43,7 +43,7 @@ public class arkanoid
 		set_vh_global_attribute(&palettebank, (data & 0x40) >> 6);
 	
 		/* bit 7 is unknown */
-	}
+	} };
 	
 	
 	

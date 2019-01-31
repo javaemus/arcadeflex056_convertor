@@ -60,14 +60,10 @@ public class pengo
 	
 	
 	void pengo_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom);
-	WRITE_HANDLER( pengo_gfxbank_w );
 	int pengo_vh_start(void);
-	WRITE_HANDLER( pengo_flipscreen_w );
 	void pengo_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	
 	extern unsigned char *pengo_soundregs;
-	WRITE_HANDLER( pengo_sound_enable_w );
-	WRITE_HANDLER( pengo_sound_w );
 	
 	
 	

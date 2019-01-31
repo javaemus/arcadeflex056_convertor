@@ -24,16 +24,10 @@ public class fromanceH
 	void fromance_vh_screenrefresh(struct mame_bitmap *bitmap, int full_refresh);
 	void pipedrm_vh_screenrefresh(struct mame_bitmap *bitmap, int full_refresh);
 	
-	WRITE_HANDLER( fromance_crtc_data_w );
-	WRITE_HANDLER( fromance_crtc_register_w );
 	
-	WRITE_HANDLER( fromance_gfxreg_w );
 	
-	WRITE_HANDLER( fromance_scroll_w );
 	
-	WRITE_HANDLER( fromance_paletteram_w );
 	
-	WRITE_HANDLER( fromance_videoram_w );
 	
 	
 }

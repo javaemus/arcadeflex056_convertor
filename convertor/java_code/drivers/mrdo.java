@@ -24,11 +24,6 @@ public class mrdo
 	
 	
 	extern unsigned char *mrdo_bgvideoram,*mrdo_fgvideoram;
-	WRITE_HANDLER( mrdo_bgvideoram_w );
-	WRITE_HANDLER( mrdo_fgvideoram_w );
-	WRITE_HANDLER( mrdo_scrollx_w );
-	WRITE_HANDLER( mrdo_scrolly_w );
-	WRITE_HANDLER( mrdo_flipscreen_w );
 	void mrdo_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom);
 	int mrdo_vh_start(void);
 	void mrdo_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);

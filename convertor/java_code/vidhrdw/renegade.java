@@ -19,7 +19,7 @@ public class renegade
 	static struct tilemap *fg_tilemap;
 	static int flipscreen;
 	
-	WRITE_HANDLER( renegade_videoram_w )
+	public static WriteHandlerPtr renegade_videoram_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		if( videoram[offset]!=data )
 		{
@@ -27,9 +27,9 @@ public class renegade
 			offset = offset%(64*16);
 			tilemap_mark_tile_dirty(bg_tilemap,offset);
 		}
-	}
+	} };
 	
-	WRITE_HANDLER( renegade_textram_w )
+	public static WriteHandlerPtr renegade_textram_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		if( renegade_textram[offset]!=data )
 		{
@@ -37,23 +37,23 @@ public class renegade
 			offset = offset%(32*32);
 			tilemap_mark_tile_dirty(fg_tilemap,offset);
 		}
-	}
+	} };
 	
-	WRITE_HANDLER( renegade_flipscreen_w )
+	public static WriteHandlerPtr renegade_flipscreen_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		flipscreen = !data;
 		tilemap_set_flip( ALL_TILEMAPS, flipscreen?(TILEMAP_FLIPY|TILEMAP_FLIPX):0);
-	}
+	} };
 	
-	WRITE_HANDLER( renegade_scroll0_w )
+	public static WriteHandlerPtr renegade_scroll0_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		renegade_scrollx = (renegade_scrollx&0xff00)|data;
-	}
+	} };
 	
-	WRITE_HANDLER( renegade_scroll1_w )
+	public static WriteHandlerPtr renegade_scroll1_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		renegade_scrollx = (renegade_scrollx&0xFF)|(data<<8);
-	}
+	} };
 	
 	static void get_bg_tilemap_info(int tile_index)
 	{

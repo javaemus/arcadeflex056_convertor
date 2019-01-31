@@ -37,15 +37,12 @@ public class sbasketb
 	extern struct VLM5030interface konami_vlm5030_interface;
 	extern struct SN76496interface konami_sn76496_interface;
 	extern struct DACinterface konami_dac_interface;
-	WRITE_HANDLER( konami_SN76496_latch_w );
-	WRITE_HANDLER( konami_SN76496_0_w );
-	WRITE_HANDLER( hyperspt_sound_w );
 	
 	
-	WRITE_HANDLER( sbasketb_sh_irqtrigger_w )
+	public static WriteHandlerPtr sbasketb_sh_irqtrigger_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		cpu_cause_interrupt(1,0xff);
-	}
+	} };
 	
 	public static WriteHandlerPtr flip_screen_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{

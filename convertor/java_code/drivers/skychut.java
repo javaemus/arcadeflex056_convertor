@@ -25,8 +25,6 @@ public class skychut
 	
 	void skychut_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	void iremm15_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
-	WRITE_HANDLER( skychut_colorram_w );
-	WRITE_HANDLER( skychut_vh_flipscreen_w );
 	
 	static UINT8 *memory;
 	

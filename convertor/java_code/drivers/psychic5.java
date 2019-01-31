@@ -322,8 +322,6 @@ public class psychic5
 	int  psychic5_vh_start(void);
 	void psychic5_vh_stop(void);
 	void psychic5_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
-	WRITE_HANDLER( psychic5_paged_ram_w );
-	WRITE_HANDLER( psychic5_vram_page_select_w );
 	
 	
 	static int psychic5_bank_latch = 0x0;
@@ -334,7 +332,7 @@ public class psychic5
 		return psychic5_bank_latch;
 	} };
 	
-	WRITE_HANDLER( psychic5_bankselect_w )
+	public static WriteHandlerPtr psychic5_bankselect_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		unsigned char *RAM = memory_region(REGION_CPU1);
 		int bankaddress;
@@ -345,7 +343,7 @@ public class psychic5
 			bankaddress = 0x10000 + ((data & 3) * 0x4000);
 			cpu_setbank(1,&RAM[bankaddress]);	 /* Select 4 banks of 16k */
 		}
-	}
+	} };
 	
 	int psychic5_interrupt(void)
 	{

@@ -25,26 +25,16 @@ public class toypop
 	int toypop_main_interrupt(void);
 	int toypop_sound_interrupt(void);
 	int toypop_m68000_interrupt(void);
-	WRITE_HANDLER( toypop_main_interrupt_enable_w );
-	WRITE_HANDLER( toypop_main_interrupt_disable_w );
-	WRITE_HANDLER( toypop_sound_interrupt_enable_w );
-	WRITE_HANDLER( toypop_sound_interrupt_disable_w );
 	WRITE16_HANDLER( toypop_m68000_interrupt_enable_w );
 	WRITE16_HANDLER( toypop_m68000_interrupt_disable_w );
 	extern unsigned char *toypop_sound_sharedram, *toypop_m68000_sharedram, *toypop_customio;
-	WRITE_HANDLER( toypop_sound_sharedram_w );
 	READ16_HANDLER( toypop_m68000_sharedram_r );
 	WRITE16_HANDLER( toypop_m68000_sharedram_w );
-	WRITE_HANDLER( toypop_m68000_clear_w );
-	WRITE_HANDLER( toypop_m68000_assert_w );
-	WRITE_HANDLER( toypop_sound_clear_w );
-	WRITE_HANDLER( toypop_sound_assert_w );
 	
 	// vidhrdw\toypop.c
 	extern data16_t *toypop_bg_image;
 	READ16_HANDLER( toypop_merged_background_r );
 	WRITE16_HANDLER( toypop_merged_background_w );
-	WRITE_HANDLER( toypop_palettebank_w );
 	WRITE16_HANDLER( toypop_flipscreen_w );
 	WRITE16_HANDLER( liblrabl_flipscreen_w );
 	void toypop_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);

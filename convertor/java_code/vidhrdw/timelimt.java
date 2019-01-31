@@ -86,39 +86,39 @@ public class timelimt
 	
 	/***************************************************************************/
 	
-	WRITE_HANDLER( timelimt_videoram_w )
+	public static WriteHandlerPtr timelimt_videoram_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		if (videoram[offset] != data)
 		{
 			videoram[offset] = data;
 		}
-	}
+	} };
 	
-	WRITE_HANDLER( timelimt_bg_videoram_w )
+	public static WriteHandlerPtr timelimt_bg_videoram_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		if (timelimt_bg_videoram[offset] != data)
 		{
 			timelimt_bg_videoram[offset] = data;
 			dirtybuffer[offset] = 1;
 		}
-	}
+	} };
 	
-	WRITE_HANDLER( timelimt_scroll_x_lsb_w )
+	public static WriteHandlerPtr timelimt_scroll_x_lsb_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		scrollx &= 0x100;
 		scrollx |= data & 0xff;
-	}
+	} };
 	
-	WRITE_HANDLER( timelimt_scroll_x_msb_w )
+	public static WriteHandlerPtr timelimt_scroll_x_msb_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		scrollx &= 0xff;
 		scrollx |= ( data & 1 ) << 8;
-	}
+	} };
 	
-	WRITE_HANDLER( timelimt_scroll_y_w )
+	public static WriteHandlerPtr timelimt_scroll_y_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		scrolly = data;
-	}
+	} };
 	
 	/***************************************************************************
 	

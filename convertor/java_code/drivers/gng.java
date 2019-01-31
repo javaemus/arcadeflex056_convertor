@@ -30,11 +30,6 @@ public class gng
 	
 	extern unsigned char *gng_fgvideoram;
 	extern unsigned char *gng_bgvideoram;
-	WRITE_HANDLER( gng_fgvideoram_w );
-	WRITE_HANDLER( gng_bgvideoram_w );
-	WRITE_HANDLER( gng_bgscrollx_w );
-	WRITE_HANDLER( gng_bgscrolly_w );
-	WRITE_HANDLER( gng_flipscreen_w );
 	int gng_vh_start(void);
 	void gng_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	void gng_eof_callback(void);

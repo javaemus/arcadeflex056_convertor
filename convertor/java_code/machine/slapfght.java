@@ -45,7 +45,7 @@ public class slapfght
 	
 	/* Interrupt handlers cpu & sound */
 	
-	WRITE_HANDLER( slapfight_dpram_w )
+	public static WriteHandlerPtr slapfight_dpram_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 	    slapfight_dpram[offset]=data;
 	
@@ -64,7 +64,7 @@ public class slapfght
 	
 	
 	    return;
-	}
+	} };
 	
 	public static ReadHandlerPtr slapfight_dpram_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
@@ -80,43 +80,43 @@ public class slapfght
 	*/
 	
 	/* Reset and hold sound CPU */
-	WRITE_HANDLER( slapfight_port_00_w )
+	public static WriteHandlerPtr slapfight_port_00_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		cpu_set_reset_line(1,ASSERT_LINE);
 		getstar_sh_intenabled = 0;
-	}
+	} };
 	
 	/* Release reset on sound CPU */
-	WRITE_HANDLER( slapfight_port_01_w )
+	public static WriteHandlerPtr slapfight_port_01_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		cpu_set_reset_line(1,CLEAR_LINE);
-	}
+	} };
 	
 	/* Disable and clear hardware interrupt */
-	WRITE_HANDLER( slapfight_port_06_w )
+	public static WriteHandlerPtr slapfight_port_06_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		interrupt_enable_w(0,0);
-	}
+	} };
 	
 	/* Enable hardware interrupt */
-	WRITE_HANDLER( slapfight_port_07_w )
+	public static WriteHandlerPtr slapfight_port_07_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		interrupt_enable_w(0,1);
-	}
+	} };
 	
-	WRITE_HANDLER( slapfight_port_08_w )
+	public static WriteHandlerPtr slapfight_port_08_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		unsigned char *RAM = memory_region(REGION_CPU1);
 	
 		cpu_setbank(1,&RAM[0x10000]);
-	}
+	} };
 	
-	WRITE_HANDLER( slapfight_port_09_w )
+	public static WriteHandlerPtr slapfight_port_09_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		unsigned char *RAM = memory_region(REGION_CPU1);
 	
 		cpu_setbank(1,&RAM[0x14000]);
-	}
+	} };
 	
 	
 	/* Status register */
@@ -154,11 +154,11 @@ public class slapfght
 	
 	
 	/* Enable hardware interrupt of sound cpu */
-	WRITE_HANDLER( getstar_sh_intenable_w )
+	public static WriteHandlerPtr getstar_sh_intenable_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		getstar_sh_intenabled = 1;
 		logerror("cpu #1 PC=%d: %d written to a0e0\n",cpu_get_pc(),data);
-	}
+	} };
 	
 	
 	
@@ -171,8 +171,8 @@ public class slapfght
 			return ignore_interrupt();
 	}
 	
-	WRITE_HANDLER( getstar_port_04_w )
+	public static WriteHandlerPtr getstar_port_04_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 	//	cpu_halt(0,0);
-	}
+	} };
 }

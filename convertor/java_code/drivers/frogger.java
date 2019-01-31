@@ -104,12 +104,8 @@ public class frogger
 	int frogger_vh_start(void);
 	int froggrmc_vh_start(void);
 	
-	WRITE_HANDLER( galaxian_flip_screen_x_w );
-	WRITE_HANDLER( galaxian_flip_screen_y_w );
 	void galaxian_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
-	WRITE_HANDLER( frogger_filter_w );
 	
-	WRITE_HANDLER( froggrmc_sh_irqtrigger_w );
 	
 	READ_HANDLER(frogger_ppi8255_0_r);
 	READ_HANDLER(frogger_ppi8255_1_r);

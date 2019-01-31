@@ -23,7 +23,6 @@ public class pcktgal
 	
 	void pcktgal_vh_convert_color_prom(unsigned char *obsolete,unsigned short *colortable,const unsigned char *color_prom);
 	void pcktgal_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
-	WRITE_HANDLER( pcktgal_flipscreen_w );
 	
 	/***************************************************************************/
 	

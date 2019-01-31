@@ -84,7 +84,7 @@ public class tunhunt
 	
 	static data8_t tunhunt_control;
 	
-	WRITE_HANDLER( tunhunt_control_w )
+	public static WriteHandlerPtr tunhunt_control_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		/*
 			0x01	coin counter#2	"right counter"
@@ -99,16 +99,16 @@ public class tunhunt
 		coin_counter_w( 0,data&0x01 );
 		coin_counter_w( 1,data&0x02 );
 		set_led_status( 0, data&0x40 ); /* start */
-	}
+	} };
 	
-	WRITE_HANDLER( tunhunt_mott_w )
+	public static WriteHandlerPtr tunhunt_mott_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		if( spriteram[offset]!=data )
 		{
 			spriteram[offset] = data;
 			dirtybuffer[offset>>4] = 1;
 		}
-	}
+	} };
 	
 	int tunhunt_vh_start( void )
 	{

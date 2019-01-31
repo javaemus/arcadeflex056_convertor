@@ -22,22 +22,22 @@ public class atarifb
 	static int sign_x_3, sign_y_3;
 	static int sign_x_4, sign_y_4;
 	
-	WRITE_HANDLER( atarifb_out1_w )
+	public static WriteHandlerPtr atarifb_out1_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		CTRLD = data;
 		/* we also need to handle the whistle, hit, and kicker sound lines */
 	//	logerror("out1_w: %02x\n", data);
-	}
+	} };
 	
-	WRITE_HANDLER( atarifb4_out1_w )
+	public static WriteHandlerPtr atarifb4_out1_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		CTRLD = data;
 		coin_counter_w (0, data & 0x80);
 		/* we also need to handle the whistle, hit, and kicker sound lines */
 	//	logerror("out1_w: %02x\n", data);
-	}
+	} };
 	
-	WRITE_HANDLER( soccer_out1_w )
+	public static WriteHandlerPtr soccer_out1_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		/* bit 0 = whistle */
 		/* bit 1 = hit */
@@ -49,7 +49,7 @@ public class atarifb
 		CTRLD = data;
 		set_led_status(0,data & 0x10);
 		set_led_status(1,data & 0x80);
-	}
+	} };
 	
 	
 	public static ReadHandlerPtr atarifb_in0_r  = new ReadHandlerPtr() { public int handler(int offset)

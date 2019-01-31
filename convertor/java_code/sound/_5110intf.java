@@ -109,12 +109,12 @@ public class _5110intf
 	
 	******************************************************************************/
 	
-	WRITE_HANDLER( tms5110_CTL_w )
+	public static WriteHandlerPtr tms5110_CTL_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 	    /* bring up to date first */
 	    stream_update(stream, 0);
 	    tms5110_CTL_set(data);
-	}
+	} };
 	
 	/******************************************************************************
 	
@@ -122,12 +122,12 @@ public class _5110intf
 	
 	******************************************************************************/
 	
-	WRITE_HANDLER( tms5110_PDC_w )
+	public static WriteHandlerPtr tms5110_PDC_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 	    /* bring up to date first */
 	    stream_update(stream, 0);
 	    tms5110_PDC_set(data);
-	}
+	} };
 	
 	
 	

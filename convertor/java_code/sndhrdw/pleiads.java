@@ -410,7 +410,7 @@ public class pleiads
 		}
 	}
 	
-	WRITE_HANDLER( pleiads_sound_control_a_w )
+	public static WriteHandlerPtr pleiads_sound_control_a_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		if (data == sound_latch_a)
 			return;
@@ -419,9 +419,9 @@ public class pleiads
 	
 		stream_update(channel,0);
 		sound_latch_a = data;
-	}
+	} };
 	
-	WRITE_HANDLER( pleiads_sound_control_b_w )
+	public static WriteHandlerPtr pleiads_sound_control_b_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		/*
 		 * pitch selects one of 4 possible clock inputs
@@ -443,10 +443,10 @@ public class pleiads
 	
 		stream_update(channel,0);
 		sound_latch_b = data;
-	}
+	} };
 	
 	/* two bits (4 + 5) from the videoreg_w latch go here */
-	WRITE_HANDLER( pleiads_sound_control_c_w )
+	public static WriteHandlerPtr pleiads_sound_control_c_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		if (data == sound_latch_c)
 			return;
@@ -454,7 +454,7 @@ public class pleiads
 		logerror("pleiads_sound_control_c_w $%02x\n", data);
 		stream_update(channel,0);
 		sound_latch_c = data;
-	}
+	} };
 	
 	static int common_sh_start(const struct MachineSound *msound, char *name)
 	{

@@ -163,56 +163,56 @@ public class firetrap
 	
 	***************************************************************************/
 	
-	WRITE_HANDLER( firetrap_fgvideoram_w )
+	public static WriteHandlerPtr firetrap_fgvideoram_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		firetrap_fgvideoram[offset] = data;
 		tilemap_mark_tile_dirty(fg_tilemap,offset & 0x3ff);
-	}
+	} };
 	
-	WRITE_HANDLER( firetrap_bg1videoram_w )
+	public static WriteHandlerPtr firetrap_bg1videoram_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		firetrap_bg1videoram[offset] = data;
 		tilemap_mark_tile_dirty(bg1_tilemap,offset & 0x6ff);
-	}
+	} };
 	
-	WRITE_HANDLER( firetrap_bg2videoram_w )
+	public static WriteHandlerPtr firetrap_bg2videoram_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		firetrap_bg2videoram[offset] = data;
 		tilemap_mark_tile_dirty(bg2_tilemap,offset & 0x6ff);
-	}
+	} };
 	
 	
-	WRITE_HANDLER( firetrap_bg1_scrollx_w )
+	public static WriteHandlerPtr firetrap_bg1_scrollx_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		static unsigned char scroll[2];
 	
 		scroll[offset] = data;
 		tilemap_set_scrollx(bg1_tilemap,0,scroll[0] | (scroll[1] << 8));
-	}
+	} };
 	
-	WRITE_HANDLER( firetrap_bg1_scrolly_w )
+	public static WriteHandlerPtr firetrap_bg1_scrolly_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		static unsigned char scroll[2];
 	
 		scroll[offset] = data;
 		tilemap_set_scrolly(bg1_tilemap,0,-(scroll[0] | (scroll[1] << 8)));
-	}
+	} };
 	
-	WRITE_HANDLER( firetrap_bg2_scrollx_w )
+	public static WriteHandlerPtr firetrap_bg2_scrollx_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		static unsigned char scroll[2];
 	
 		scroll[offset] = data;
 		tilemap_set_scrollx(bg2_tilemap,0,scroll[0] | (scroll[1] << 8));
-	}
+	} };
 	
-	WRITE_HANDLER( firetrap_bg2_scrolly_w )
+	public static WriteHandlerPtr firetrap_bg2_scrolly_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		static unsigned char scroll[2];
 	
 		scroll[offset] = data;
 		tilemap_set_scrolly(bg2_tilemap,0,-(scroll[0] | (scroll[1] << 8)));
-	}
+	} };
 	
 	
 	/***************************************************************************

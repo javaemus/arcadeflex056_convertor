@@ -87,29 +87,19 @@ public class vicdual
 	
 	extern unsigned char *vicdual_characterram;
 	void vicdual_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom);
-	WRITE_HANDLER( vicdual_characterram_w );
-	WRITE_HANDLER( vicdual_palette_bank_w );
 	void vicdual_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	
 	/* Carnival sound handlers */
 	extern const char *carnival_sample_names[];
-	WRITE_HANDLER( carnival_sh_port1_w );
-	WRITE_HANDLER( carnival_sh_port2_w );
-	WRITE_HANDLER( carnival_music_port_1_w );
-	WRITE_HANDLER( carnival_music_port_2_w );
 	
 	/* Depth Charge sound handlers */
 	extern const char *depthch_sample_names[];
-	WRITE_HANDLER( depthch_sh_port1_w );
 	
 	/* Invinco sound handlers */
 	extern const char *invinco_sample_names[];
-	WRITE_HANDLER( invinco_sh_port2_w );
 	
 	/* Pulsar sound handlers */
 	extern const char *pulsar_sample_names[];
-	WRITE_HANDLER( pulsar_sh_port1_w );
-	WRITE_HANDLER( pulsar_sh_port2_w );
 	
 	
 	static int protection_data;

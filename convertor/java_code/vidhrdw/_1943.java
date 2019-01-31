@@ -149,7 +149,7 @@ public class _1943
 	
 	
 	
-	WRITE_HANDLER( c1943_c804_w )
+	public static WriteHandlerPtr c1943_c804_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		int bankaddress;
 		unsigned char *RAM = memory_region(REGION_CPU1);
@@ -174,11 +174,11 @@ public class _1943
 	
 		/* bit 7 enables characters */
 		chon = data & 0x80;
-	}
+	} };
 	
 	
 	
-	WRITE_HANDLER( c1943_d806_w )
+	public static WriteHandlerPtr c1943_d806_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		/* bit 4 enables bg 1 */
 		sc1on = data & 0x10;
@@ -188,7 +188,7 @@ public class _1943
 	
 		/* bit 6 enables sprites */
 		objon = data & 0x40;
-	}
+	} };
 	
 	
 	

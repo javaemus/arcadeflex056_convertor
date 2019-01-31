@@ -8,8 +8,6 @@ void konami_rom_deinterleave_4(int mem_region);
 extern unsigned char K007121_ctrlram[MAX_K007121][8];
 
 void K007121_ctrl_w(int chip,int offset,int data);
-WRITE_HANDLER( K007121_ctrl_0_w );
-WRITE_HANDLER( K007121_ctrl_1_w );
 void K007121_sprites_draw(int chip,struct mame_bitmap *bitmap,
 		const unsigned char *source,int base_color,int global_x_offset,int bank_base,
 		UINT32 pri_mask);
@@ -17,10 +15,7 @@ void K007121_sprites_draw(int chip,struct mame_bitmap *bitmap,
 
 int K007342_vh_start(int gfx_index, void (*callback)(int layer,int bank,int *code,int *color));
 void K007342_vh_stop(void);
-WRITE_HANDLER( K007342_w );
-WRITE_HANDLER( K007342_scroll_w );
 void K007342_tilemap_update(void);
-WRITE_HANDLER( K007342_vreg_w );
 void K007342_tilemap_set_enable(int layer, int enable);
 void K007342_tilemap_draw(struct mame_bitmap *bitmap,int num,int flags,UINT32 priority);
 int K007342_is_INT_enabled(void);
@@ -28,7 +23,6 @@ int K007342_is_INT_enabled(void);
 
 int K007420_vh_start(int gfxnum, void (*callback)(int *code,int *color));
 void K007420_vh_stop(void);
-WRITE_HANDLER( K007420_w );
 void K007420_sprites_draw(struct mame_bitmap *bitmap);
 
 
@@ -63,7 +57,6 @@ int K052109_vh_start(int gfx_memory_region,int plane0,int plane1,int plane2,int 
 		void (*callback)(int layer,int bank,int *code,int *color));
 void K052109_vh_stop(void);
 /* plain 8-bit access */
-WRITE_HANDLER( K052109_w );
 READ16_HANDLER( K052109_word_r );
 WRITE16_HANDLER( K052109_word_w );
 READ16_HANDLER( K052109_lsb_r );
@@ -90,10 +83,8 @@ The callback must put:
 int K051960_vh_start(int gfx_memory_region,int plane0,int plane1,int plane2,int plane3,
 		void (*callback)(int *code,int *color,int *priority,int *shadow));
 void K051960_vh_stop(void);
-WRITE_HANDLER( K051960_w );
 READ16_HANDLER( K051960_word_r );
 WRITE16_HANDLER( K051960_word_w );
-WRITE_HANDLER( K051937_w );
 READ16_HANDLER( K051937_word_r );
 WRITE16_HANDLER( K051937_word_w );
 void K051960_sprites_draw(struct mame_bitmap *bitmap,int min_priority,int max_priority);
@@ -101,7 +92,6 @@ int K051960_is_IRQ_enabled(void);
 int K051960_is_NMI_enabled(void);
 
 /* special handling for the chips sharing address space */
-WRITE_HANDLER( K052109_051960_w );
 
 
 int K053245_vh_start(int gfx_memory_region,int plane0,int plane1,int plane2,int plane3,
@@ -109,8 +99,6 @@ int K053245_vh_start(int gfx_memory_region,int plane0,int plane1,int plane2,int 
 void K053245_vh_stop(void);
 READ16_HANDLER( K053245_word_r );
 WRITE16_HANDLER( K053245_word_w );
-WRITE_HANDLER( K053245_w );
-WRITE_HANDLER( K053244_w );
 READ16_HANDLER( K053244_lsb_r );
 WRITE16_HANDLER( K053244_lsb_w );
 READ16_HANDLER( K053244_word_r );
@@ -124,10 +112,8 @@ int K053247_vh_start(int gfx_memory_region,int dx,int dy,int plane0,int plane1,i
 void K053247_vh_stop(void);
 READ16_HANDLER( K053247_word_r );
 WRITE16_HANDLER( K053247_word_w );
-WRITE_HANDLER( K053247_w );
 void K053247_sprites_draw(struct mame_bitmap *bitmap);
 
-WRITE_HANDLER( K053246_w );
 READ16_HANDLER( K053246_word_r );
 WRITE16_HANDLER( K053246_word_w );
 void K053246_set_OBJCHA_line(int state);
@@ -157,12 +143,6 @@ int K051316_vh_start_2(int gfx_memory_region,int bpp,
 void K051316_vh_stop_0(void);
 void K051316_vh_stop_1(void);
 void K051316_vh_stop_2(void);
-WRITE_HANDLER( K051316_0_w );
-WRITE_HANDLER( K051316_1_w );
-WRITE_HANDLER( K051316_2_w );
-WRITE_HANDLER( K051316_ctrl_0_w );
-WRITE_HANDLER( K051316_ctrl_1_w );
-WRITE_HANDLER( K051316_ctrl_2_w );
 void K051316_zoom_draw_0(struct mame_bitmap *bitmap,int flags,UINT32 priority);
 void K051316_zoom_draw_1(struct mame_bitmap *bitmap,int flags,UINT32 priority);
 void K051316_zoom_draw_2(struct mame_bitmap *bitmap,int flags,UINT32 priority);
@@ -170,7 +150,6 @@ void K051316_wraparound_enable(int chip, int status);
 void K051316_set_offset(int chip, int xoffs, int yoffs);
 
 
-WRITE_HANDLER( K053251_w );
 WRITE16_HANDLER( K053251_lsb_w );
 WRITE16_HANDLER( K053251_msb_w );
 enum { K053251_CI0=0,K053251_CI1,K053251_CI2,K053251_CI3,K053251_CI4 };
@@ -179,11 +158,9 @@ int K053251_get_palette_index(int ci);
 int K053251_vh_start(void);
 
 
-WRITE_HANDLER( K054000_w );
 WRITE16_HANDLER( K054000_lsb_w );
 READ16_HANDLER( K054000_lsb_r );
 
-WRITE_HANDLER( K051733_w );
 
 int K054157_vh_start(int gfx_memory_region, int big, int (*scrolld)[4][2],
 		     int plane0,int plane1,int plane2,int plane3,

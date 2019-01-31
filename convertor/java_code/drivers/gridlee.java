@@ -113,9 +113,6 @@ public class gridlee
 	void gridlee_vh_stop(void);
 	void gridlee_vh_screenrefresh(struct mame_bitmap *bitmap, int full_refresh);
 	void gridlee_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable, const unsigned char *color_prom);
-	WRITE_HANDLER( gridlee_cocktail_flip_w );
-	WRITE_HANDLER( gridlee_videoram_w );
-	WRITE_HANDLER( gridlee_palette_select_w );
 	
 	
 	

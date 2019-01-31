@@ -55,27 +55,16 @@ public class grchamp
 	extern int grchamp_vh_start( void );
 	extern void grchamp_vh_stop( void );
 	extern void grchamp_vh_screenrefresh( struct mame_bitmap *bitmap,int full_refresh );
-	extern WRITE_HANDLER( grchamp_videoram_w );
-	extern UINT8 *grchamp_videoram;
+	extern extern UINT8 *grchamp_videoram;
 	extern UINT8 *grchamp_radar;
 	extern UINT8 grchamp_player_ypos;
 	
-	extern WRITE_HANDLER( grchamp_player_xpos_w );
-	extern WRITE_HANDLER( grchamp_player_ypos_w );
-	extern WRITE_HANDLER( grchamp_tile_select_w );
-	extern WRITE_HANDLER( grchamp_rain_xpos_w );
-	extern WRITE_HANDLER( grchamp_rain_ypos_w );
-	
+	extern extern extern extern extern 
 	/* from machine */
 	extern int grchamp_cpu_irq_enable[2];
 	extern void init_grchamp( void );
-	extern extern extern WRITE_HANDLER( grchamp_port_1_w );
-	
-	extern WRITE_HANDLER( grchamp_control0_w );
-	extern WRITE_HANDLER( grchamp_coinled_w );
-	extern WRITE_HANDLER( grchamp_sound_w );
-	extern WRITE_HANDLER( grchamp_comm_w );
-	
+	extern extern extern 
+	extern extern extern extern 
 	extern int grchamp_collision;
 	
 	/***************************************************************************/
@@ -90,19 +79,19 @@ public class grchamp
 	**	1 digit for rank (?)
 	*/
 	
-	WRITE_HANDLER( grchamp_led_data0_w )
+	public static WriteHandlerPtr grchamp_led_data0_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		grchamp_led_data0 = data;
-	}
-	WRITE_HANDLER( grchamp_led_data1_w )
+	} };
+	public static WriteHandlerPtr grchamp_led_data1_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		grchamp_led_data1 = data;
-	}
-	WRITE_HANDLER( grchamp_led_data2_w )
+	} };
+	public static WriteHandlerPtr grchamp_led_data2_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		grchamp_led_data2 = data;
-	}
-	WRITE_HANDLER( grchamp_led_data3_w )
+	} };
+	public static WriteHandlerPtr grchamp_led_data3_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		if( data )
 		{
@@ -111,16 +100,16 @@ public class grchamp
 			grchamp_led_reg[which][1] = grchamp_led_data1; /* ? */
 			grchamp_led_reg[which][2] = grchamp_led_data2;
 		}
-	}
+	} };
 	
 	/***************************************************************************/
 	
 	static int PC3259_data;
 	
-	WRITE_HANDLER( PC3259_control_w )
+	public static WriteHandlerPtr PC3259_control_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		PC3259_data = data;
-	}
+	} };
 	
 	public static ReadHandlerPtr PC3259_0_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{ /* 0x01 (401a)*/

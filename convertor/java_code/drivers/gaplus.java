@@ -23,28 +23,18 @@ public class gaplus
 	extern unsigned char *mappy_soundregs;
 	
 	/* shared memory functions */
-	WRITE_HANDLER( gaplus_sharedram_w );
-	WRITE_HANDLER( gaplus_snd_sharedram_w );
 	
 	/* custom IO chips functions */
-	WRITE_HANDLER( gaplus_customio_1_w );
-	WRITE_HANDLER( gaplus_customio_2_w );
-	WRITE_HANDLER( gaplus_customio_3_w );
 	
 	extern int gaplus_interrupt_1(void);
-	WRITE_HANDLER( gaplus_reset_2_3_w );
 	extern int gaplus_interrupt_2(void);
-	WRITE_HANDLER( gaplus_interrupt_ctrl_2_w );
 	extern int gaplus_interrupt_3( void );
-	WRITE_HANDLER( gaplus_interrupt_ctrl_3a_w );
-	WRITE_HANDLER( gaplus_interrupt_ctrl_3b_w );
 	
 	extern int gaplus_vh_start( void );
 	extern void gaplus_vh_stop( void );
 	extern void gaplus_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom);
 	extern void gaplus_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	extern void gaplus_init_machine(void);
-	WRITE_HANDLER( gaplus_starfield_control_w );
 	
 	public static Memory_ReadAddress readmem_cpu1[]={
 		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),

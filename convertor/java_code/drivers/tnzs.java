@@ -196,11 +196,6 @@ public class tnzs
 	void init_kageki(void);
 	void tnzs_init_machine(void);
 	int tnzs_interrupt (void);
-	WRITE_HANDLER( tnzs_workram_w );
-	WRITE_HANDLER( tnzs_workram_sub_w );
-	WRITE_HANDLER( tnzs_mcu_w );
-	WRITE_HANDLER( tnzs_bankswitch_w );
-	WRITE_HANDLER( tnzs_bankswitch1_w );
 	
 	
 	/* prototypes for functions in ../vidhrdw/tnzs.c */

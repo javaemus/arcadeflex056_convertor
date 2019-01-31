@@ -71,10 +71,10 @@ public class _2413intf
 		}
 	}
 	
-	WRITE_HANDLER( YM2413_register_port_0_w ) { ym_latch[0] = data; }
-	WRITE_HANDLER( YM2413_register_port_1_w ) { ym_latch[1] = data; }
-	WRITE_HANDLER( YM2413_register_port_2_w ) { ym_latch[2] = data; }
-	WRITE_HANDLER( YM2413_register_port_3_w ) { ym_latch[3] = data; }
+	public static WriteHandlerPtr YM2413_register_port_0_w = new WriteHandlerPtr() {public void handler(int offset, int data) { ym_latch[0] = data; } };
+	public static WriteHandlerPtr YM2413_register_port_1_w = new WriteHandlerPtr() {public void handler(int offset, int data) { ym_latch[1] = data; } };
+	public static WriteHandlerPtr YM2413_register_port_2_w = new WriteHandlerPtr() {public void handler(int offset, int data) { ym_latch[2] = data; } };
+	public static WriteHandlerPtr YM2413_register_port_3_w = new WriteHandlerPtr() {public void handler(int offset, int data) { ym_latch[3] = data; } };
 	
 	static void YM2413_write_reg (int chip, int data)
 	{
@@ -82,10 +82,10 @@ public class _2413intf
 		stream_update(stream[chip], chip);
 	}
 	
-	WRITE_HANDLER( YM2413_data_port_0_w ) { YM2413_write_reg (0, data); }
-	WRITE_HANDLER( YM2413_data_port_1_w ) { YM2413_write_reg (1, data); }
-	WRITE_HANDLER( YM2413_data_port_2_w ) { YM2413_write_reg (2, data); }
-	WRITE_HANDLER( YM2413_data_port_3_w ) { YM2413_write_reg (3, data); }
+	public static WriteHandlerPtr YM2413_data_port_0_w = new WriteHandlerPtr() {public void handler(int offset, int data) { YM2413_write_reg (0, data); } };
+	public static WriteHandlerPtr YM2413_data_port_1_w = new WriteHandlerPtr() {public void handler(int offset, int data) { YM2413_write_reg (1, data); } };
+	public static WriteHandlerPtr YM2413_data_port_2_w = new WriteHandlerPtr() {public void handler(int offset, int data) { YM2413_write_reg (2, data); } };
+	public static WriteHandlerPtr YM2413_data_port_3_w = new WriteHandlerPtr() {public void handler(int offset, int data) { YM2413_write_reg (3, data); } };
 	
 	WRITE16_HANDLER( YM2413_register_port_0_lsb_w ) { if (ACCESSING_LSB) YM2413_register_port_0_w(offset,data & 0xff); }
 	WRITE16_HANDLER( YM2413_register_port_1_lsb_w ) { if (ACCESSING_LSB) YM2413_register_port_1_w(offset,data & 0xff); }

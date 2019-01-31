@@ -67,19 +67,6 @@ public class m62
 	int kidniki_vh_start( void );
 	int spelunkr_vh_start( void );
 	int youjyudn_vh_start( void );
-	WRITE_HANDLER( irem_flipscreen_w );
-	WRITE_HANDLER( kungfum_scroll_low_w );
-	WRITE_HANDLER( kungfum_scroll_high_w );
-	WRITE_HANDLER( ldrun3_vscroll_w );
-	WRITE_HANDLER( ldrun4_hscroll_w );
-	WRITE_HANDLER( irem_background_hscroll_w );
-	WRITE_HANDLER( irem_background_vscroll_w );
-	WRITE_HANDLER( battroad_scroll_w );
-	WRITE_HANDLER( youjyudn_scroll_w );
-	WRITE_HANDLER( kidniki_text_vscroll_w );
-	WRITE_HANDLER( kidniki_background_bank_w );
-	WRITE_HANDLER( spelunkr_palbank_w );
-	WRITE_HANDLER( spelunk2_gfxport_w );
 	void kungfum_vh_screenrefresh(struct mame_bitmap *bitmap,int fullrefresh);
 	void battroad_vh_screenrefresh(struct mame_bitmap *bitmap,int fullrefresh);
 	void ldrun_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
@@ -120,7 +107,7 @@ public class m62
 		return 0;
 	} };
 	
-	WRITE_HANDLER( ldrun2_bankswitch_w )
+	public static WriteHandlerPtr ldrun2_bankswitch_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		int bankaddress;
 		static int bankcontrol[2];
@@ -151,7 +138,7 @@ public class m62
 				ldrun2_bankswap = 2;
 			else ldrun2_bankswap = 0;
 		}
-	}
+	} };
 	
 	
 	/* Lode Runner 3 has, it seems, a poor man's protection consisting of a PAL */
@@ -168,7 +155,7 @@ public class m62
 	} };
 	
 	
-	WRITE_HANDLER( ldrun4_bankswitch_w )
+	public static WriteHandlerPtr ldrun4_bankswitch_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		int bankaddress;
 		unsigned char *RAM = memory_region(REGION_CPU1);
@@ -176,7 +163,7 @@ public class m62
 	
 		bankaddress = 0x10000 + ((data & 0x01) * 0x4000);
 		cpu_setbank(1,&RAM[bankaddress]);
-	}
+	} };
 	
 	public static WriteHandlerPtr kidniki_bankswitch_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
@@ -200,14 +187,14 @@ public class m62
 		cpu_setbank(1,&RAM[bankaddress]);
 	} };
 	
-	WRITE_HANDLER( spelunk2_bankswitch_w )
+	public static WriteHandlerPtr spelunk2_bankswitch_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		unsigned char *RAM = memory_region(REGION_CPU1);
 	
 	
 		cpu_setbank(1,&RAM[0x20000 + 0x1000 * ((data & 0xc0)>>6)]);
 		cpu_setbank(2,&RAM[0x10000 + 0x0400 *  (data & 0x3c)]);
-	}
+	} };
 	
 	public static WriteHandlerPtr youjyudn_bankswitch_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{

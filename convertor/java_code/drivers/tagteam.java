@@ -26,10 +26,6 @@ public class tagteam
 	
 	void tagteam_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom);
 	
-	WRITE_HANDLER( tagteam_mirrorvideoram_w );
-	WRITE_HANDLER( tagteam_mirrorcolorram_w );
-	WRITE_HANDLER( tagteam_video_control_w );
-	WRITE_HANDLER( tagteam_control_w );
 	
 	int  tagteam_vh_start (void);
 	void tagteam_vh_stop (void);

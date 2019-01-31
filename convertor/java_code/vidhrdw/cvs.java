@@ -139,7 +139,7 @@ public class cvs
 	    scroll[7]=0;
 	}
 	
-	WRITE_HANDLER( cvs_video_fx_w )
+	public static WriteHandlerPtr cvs_video_fx_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		logerror("%4x : Data Port = %2x\n",activecpu_get_pc(),data);
 	
@@ -156,7 +156,7 @@ public class cvs
 	    stars_on = data & 1;
 	    set_led_status(1,data & 16);	/* Lamp 1 */
 	    set_led_status(2,data & 32);	/* Lamp 2 */
-	}
+	} };
 	
 	public static ReadHandlerPtr cvs_character_mode_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
@@ -187,7 +187,7 @@ public class cvs
 	    return 0;
 	} };
 	
-	WRITE_HANDLER( cvs_scroll_w )
+	public static WriteHandlerPtr cvs_scroll_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		scroll_reg = 255 - data;
 	
@@ -196,9 +196,9 @@ public class cvs
 	    scroll[3]=scroll_reg;
 	    scroll[4]=scroll_reg;
 	    scroll[5]=scroll_reg;
-	}
+	} };
 	
-	WRITE_HANDLER( cvs_videoram_w )
+	public static WriteHandlerPtr cvs_videoram_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		if(!s2650_get_flag())
 	    {
@@ -212,7 +212,7 @@ public class cvs
 	
 	        videoram_w(offset,data);
 	    }
-	}
+	} };
 	
 	public static ReadHandlerPtr cvs_videoram_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
@@ -230,7 +230,7 @@ public class cvs
 	    }
 	} };
 	
-	WRITE_HANDLER( cvs_bullet_w )
+	public static WriteHandlerPtr cvs_bullet_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		if(!s2650_get_flag())
 	    {
@@ -244,7 +244,7 @@ public class cvs
 	
 			paletteram_BBBGGGRR_w((offset & 0x0f),(data ^ 0xff));
 	    }
-	}
+	} };
 	
 	public static ReadHandlerPtr cvs_bullet_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
@@ -262,7 +262,7 @@ public class cvs
 	    }
 	} };
 	
-	WRITE_HANDLER( cvs_2636_1_w )
+	public static WriteHandlerPtr cvs_2636_1_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		if(!s2650_get_flag())
 	    {
@@ -280,7 +280,7 @@ public class cvs
 				dirty_character[128+((character_page + offset)>>3)] = 1;
 	        }
 		}
-	}
+	} };
 	
 	public static ReadHandlerPtr cvs_2636_1_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
@@ -298,7 +298,7 @@ public class cvs
 	    }
 	} };
 	
-	WRITE_HANDLER( cvs_2636_2_w )
+	public static WriteHandlerPtr cvs_2636_2_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		if(!s2650_get_flag())
 	    {
@@ -316,7 +316,7 @@ public class cvs
 				dirty_character[128+((character_page + offset)>>3)] = 1;
 	        }
 	    }
-	}
+	} };
 	
 	public static ReadHandlerPtr cvs_2636_2_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
@@ -334,7 +334,7 @@ public class cvs
 	    }
 	} };
 	
-	WRITE_HANDLER( cvs_2636_3_w )
+	public static WriteHandlerPtr cvs_2636_3_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		if(!s2650_get_flag())
 	    {
@@ -352,7 +352,7 @@ public class cvs
 				dirty_character[128+((character_page + offset)>>3)] = 1;
 	        }
 	    }
-	}
+	} };
 	
 	public static ReadHandlerPtr cvs_2636_3_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{

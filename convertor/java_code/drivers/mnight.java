@@ -17,10 +17,6 @@ package drivers;
 public class mnight
 {
 	
-	WRITE_HANDLER( mnight_bgvideoram_w );
-	WRITE_HANDLER( mnight_fgvideoram_w );
-	WRITE_HANDLER( mnight_sprite_overdraw_w );
-	WRITE_HANDLER( mnight_background_enable_w );
 	int  mnight_vh_start(void);
 	void mnight_vh_stop(void);
 	void mnight_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
@@ -51,7 +47,7 @@ public class mnight
 		return mnight_bank_latch;
 	} };
 	
-	WRITE_HANDLER( mnight_bankselect_w )
+	public static WriteHandlerPtr mnight_bankselect_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		unsigned char *RAM = memory_region(REGION_CPU1+main_cpu_num);
 		int bankaddress;
@@ -63,7 +59,7 @@ public class mnight
 			bankaddress = 0x10000 + ((data & 0x7) * 0x4000);
 			cpu_setbank(1,&RAM[bankaddress]);	 /* Select 8 banks of 16k */
 		}
-	}
+	} };
 	
 	
 	public static Memory_ReadAddress readmem[]={

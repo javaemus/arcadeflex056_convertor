@@ -205,9 +205,6 @@ public class airbustr
 	extern unsigned char *airbustr_bgram, *airbustr_fgram;
 	
 	/* Functions defined in vidhrdw */
-	WRITE_HANDLER( airbustr_bgram_w );
-	WRITE_HANDLER( airbustr_fgram_w );
-	WRITE_HANDLER( airbustr_scrollregs_w );
 	extern int  airbustr_vh_start(void);
 	extern void airbustr_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	
@@ -282,7 +279,7 @@ public class airbustr
 		}
 	
 	} };
-	WRITE_HANDLER( devram_w )	{	devram[offset] = data; }
+	public static WriteHandlerPtr devram_w = new WriteHandlerPtr() {public void handler(int offset, int data)	{	devram[offset] = data; } };
 	
 	
 	public static WriteHandlerPtr bankswitch_w = new WriteHandlerPtr() {public void handler(int offset, int data)
@@ -381,7 +378,7 @@ public class airbustr
 	} };
 	
 	
-	WRITE_HANDLER( airbustr_paletteram_w )
+	public static WriteHandlerPtr airbustr_paletteram_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		int r,g,b;
 		int val;
@@ -400,7 +397,7 @@ public class airbustr
 		palette_set_color(offset/2,	(r * 0xff) / 0x1f,
 										(g * 0xff) / 0x1f,
 										(b * 0xff) / 0x1f );
-	}
+	} };
 	
 	
 	/* Memory */
@@ -470,7 +467,7 @@ public class airbustr
 	} };
 	
 	
-	WRITE_HANDLER( port_38_w )	{	u4 = data; } // for debug
+	public static WriteHandlerPtr port_38_w = new WriteHandlerPtr() {public void handler(int offset, int data)	{	u4 = data; } }; // for debug
 	
 	
 	public static IO_ReadPort readport2[]={
@@ -549,11 +546,11 @@ public class airbustr
 	} };
 	
 	
-	WRITE_HANDLER( soundcommand2_w )
+	public static WriteHandlerPtr soundcommand2_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		soundlatch2_status = 1;		// soundlatch2 has been written
 		soundlatch2_w(0,data);
-	}
+	} };
 	
 	
 	public static IO_ReadPort sound_readport[]={

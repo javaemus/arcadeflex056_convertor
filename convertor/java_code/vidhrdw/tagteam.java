@@ -74,7 +74,7 @@ public class tagteam
 		return colorram_r(offset);
 	} };
 	
-	WRITE_HANDLER( tagteam_mirrorvideoram_w )
+	public static WriteHandlerPtr tagteam_mirrorvideoram_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		int x,y;
 	
@@ -84,9 +84,9 @@ public class tagteam
 		offset = 32 * y + x;
 	
 		videoram_w(offset,data);
-	}
+	} };
 	
-	WRITE_HANDLER( tagteam_mirrorcolorram_w )
+	public static WriteHandlerPtr tagteam_mirrorcolorram_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		int x,y;
 	
@@ -96,15 +96,15 @@ public class tagteam
 		offset = 32 * y + x;
 	
 		colorram_w(offset,data);
-	}
+	} };
 	
-	WRITE_HANDLER( tagteam_control_w )
+	public static WriteHandlerPtr tagteam_control_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 	logerror("%04x: control = %02x\n",cpu_get_pc(),data);
 	
 		/* bit 7 is the palette bank */
 		palettebank = (data & 0x80) >> 7;
-	}
+	} };
 	
 	
 	/***************************************************************************

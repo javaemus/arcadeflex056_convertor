@@ -72,7 +72,7 @@ public class congo
 		zaxxon_vid_type = 1;
 	}
 	
-	WRITE_HANDLER( congo_daio_w )
+	public static WriteHandlerPtr congo_daio_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		if (offset == 1)
 		{
@@ -90,7 +90,7 @@ public class congo
 				if (data & 1) sample_start(4,4,0);
 			}
 		}
-	}
+	} };
 	
 	public static WriteHandlerPtr congo_coin_counter_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{

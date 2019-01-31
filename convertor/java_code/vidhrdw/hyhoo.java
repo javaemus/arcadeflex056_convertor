@@ -62,10 +62,10 @@ public class hyhoo
 		}
 	}
 	
-	WRITE_HANDLER( hyhoo_palette_w )
+	public static WriteHandlerPtr hyhoo_palette_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		hyhoo_palette[offset & 0x0f] = (data ^ 0xff);
-	}
+	} };
 	
 	/******************************************************************************
 	

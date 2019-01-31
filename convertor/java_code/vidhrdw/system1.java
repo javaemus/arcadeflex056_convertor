@@ -68,7 +68,7 @@ public class system1
 		system1_color_prom = color_prom;
 	}
 	
-	WRITE_HANDLER( system1_paletteram_w )
+	public static WriteHandlerPtr system1_paletteram_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		int val,r,g,b;
 	
@@ -114,7 +114,7 @@ public class system1
 		}
 	
 		palette_set_color(offset,r,g,b);
-	}
+	} };
 	
 	
 	
@@ -156,7 +156,7 @@ public class system1
 		free(sprite_onscreen_map);
 	}
 	
-	WRITE_HANDLER( system1_videomode_w )
+	public static WriteHandlerPtr system1_videomode_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 	if (data & 0x6e) logerror("videomode = %02x\n",data);
 	
@@ -168,7 +168,7 @@ public class system1
 	
 		/* bit 7 is flip screen */
 		flip_screen_set(data & 0x80);
-	}
+	} };
 	
 	public static ReadHandlerPtr system1_videomode_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
@@ -238,21 +238,21 @@ public class system1
 		/* (TeddyBoy Blues, head of the tiger in girl bonus round) */
 	}
 	
-	WRITE_HANDLER( system1_background_collisionram_w )
+	public static WriteHandlerPtr system1_background_collisionram_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		/* to do the RAM check, Mister Viking writes 0xff and immediately */
 		/* reads it back, expecting bit 0 to be NOT set. */
 		system1_background_collisionram[offset] = 0x7e;
-	}
+	} };
 	
-	WRITE_HANDLER( system1_sprites_collisionram_w )
+	public static WriteHandlerPtr system1_sprites_collisionram_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		/* to do the RAM check, Mister Viking write 0xff and immediately */
 		/* reads it back, expecting bit 0 to be NOT set. */
 		/* Up'n Down expects to find 0x7e at f800 before doing the whole */
 		/* collision test */
 		system1_sprites_collisionram[offset] = 0x7e;
-	}
+	} };
 	
 	
 	
@@ -365,11 +365,11 @@ public class system1
 	
 	
 	
-	WRITE_HANDLER( system1_backgroundram_w )
+	public static WriteHandlerPtr system1_backgroundram_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		system1_backgroundram[offset] = data;
 		bg_dirtybuffer[offset>>1] = 1;
-	}
+	} };
 	
 	
 	static int system1_draw_fg(struct mame_bitmap *bitmap,int priority)
@@ -556,12 +556,12 @@ public class system1
 	
 	
 	
-	WRITE_HANDLER( choplifter_scroll_x_w )
+	public static WriteHandlerPtr choplifter_scroll_x_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		system1_scrollx_ram[offset] = data;
 	
 		scrollx_row[offset/2] = (system1_scrollx_ram[offset & ~1] >> 1) + ((system1_scrollx_ram[offset | 1] & 1) << 7);
-	}
+	} };
 	
 	static void chplft_draw_bg(struct mame_bitmap *bitmap, int priority)
 	{
@@ -703,21 +703,21 @@ public class system1
 		return wbml_videoram_bank_latch;
 	} };
 	
-	WRITE_HANDLER( wbml_videoram_bank_latch_w )
+	public static WriteHandlerPtr wbml_videoram_bank_latch_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		wbml_videoram_bank_latch = data;
 		wbml_videoram_bank = (data >> 1) & 0x03;	/* Select 4 banks of 4k, bit 2,1 */
-	}
+	} };
 	
 	public static ReadHandlerPtr wbml_paged_videoram_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return wbml_paged_videoram[0x1000*wbml_videoram_bank + offset];
 	} };
 	
-	WRITE_HANDLER( wbml_paged_videoram_w )
+	public static WriteHandlerPtr wbml_paged_videoram_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		wbml_paged_videoram[0x1000*wbml_videoram_bank + offset] = data;
-	}
+	} };
 	
 	static void wbml_draw_bg(struct mame_bitmap *bitmap, int trasp)
 	{

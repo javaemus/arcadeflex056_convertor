@@ -87,23 +87,23 @@ public class citycon
 	
 	***************************************************************************/
 	
-	WRITE_HANDLER( citycon_videoram_w )
+	public static WriteHandlerPtr citycon_videoram_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		if (citycon_videoram[offset] != data)
 		{
 			citycon_videoram[offset] = data;
 			tilemap_mark_tile_dirty(fg_tilemap,offset);
 		}
-	}
+	} };
 	
 	
-	WRITE_HANDLER( citycon_linecolor_w )
+	public static WriteHandlerPtr citycon_linecolor_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		citycon_linecolor[offset] = data;
-	}
+	} };
 	
 	
-	WRITE_HANDLER( citycon_background_w )
+	public static WriteHandlerPtr citycon_background_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		/* bits 4-7 control the background image */
 		if (bg_image != (data >> 4))
@@ -118,7 +118,7 @@ public class citycon
 	
 		/* bits 1-3 are unknown */
 	//	if ((data & 0x0e) != 0) logerror("background register = %02x\n",data);
-	}
+	} };
 	
 	
 	

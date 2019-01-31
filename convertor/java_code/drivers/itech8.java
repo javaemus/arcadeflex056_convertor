@@ -183,8 +183,6 @@ public class itech8
 	 *************************************/
 	
 	/* machine functions */
-	WRITE_HANDLER( slikz80_port_w );
-	WRITE_HANDLER( slikshot_z80_control_w );
 	
 	/* video driver data & functions */
 	extern UINT8 *itech8_grom_bank;
@@ -196,10 +194,6 @@ public class itech8
 	void itech8_vh_screenrefresh(struct mame_bitmap *bitmap, int full_refresh);
 	
 	
-	WRITE_HANDLER( itech8_tms34061_w );
-	WRITE_HANDLER( itech8_palette_address_w );
-	WRITE_HANDLER( itech8_palette_data_w );
-	WRITE_HANDLER( itech8_blitter_w );
 	
 	
 	
@@ -390,14 +384,14 @@ public class itech8
 	 *
 	 *************************************/
 	
-	WRITE_HANDLER( pia_porta_out )
+	public static WriteHandlerPtr pia_porta_out = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		logerror("PIA port A write = %02x\n", data);
 		pia_porta_data = data;
-	}
+	} };
 	
 	
-	WRITE_HANDLER( pia_portb_out )
+	public static WriteHandlerPtr pia_portb_out = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		logerror("PIA port B write = %02x\n", data);
 	
@@ -408,10 +402,10 @@ public class itech8
 		pia_portb_data = data;
 		ticket_dispenser_w(0, (data & 0x10) << 3);
 		coin_counter_w(0, (data & 0x20) >> 5);
-	}
+	} };
 	
 	
-	WRITE_HANDLER( ym2203_portb_out )
+	public static WriteHandlerPtr ym2203_portb_out = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		logerror("YM2203 port B write = %02x\n", data);
 	
@@ -422,7 +416,7 @@ public class itech8
 		pia_portb_data = data;
 		ticket_dispenser_w(0, data & 0x80);
 		coin_counter_w(0, (data & 0x20) >> 5);
-	}
+	} };
 	
 	
 	

@@ -77,8 +77,6 @@ public class _8080bw
 	
 	/* in machine/8080bw.c */
 	
-	WRITE_HANDLER( invaders_shift_amount_w );
-	WRITE_HANDLER( invaders_shift_data_w );
 	int  invaders_interrupt(void);
 	int  polaris_interrupt(void);
 	
@@ -99,7 +97,6 @@ public class _8080bw
 	void init_machine_schaser(void);
 	void init_machine_polaris(void);
 	
-	WRITE_HANDLER( sheriff_sh_p2_w );
 	
 	extern struct SN76477interface invaders_sn76477_interface;
 	extern struct Samplesinterface invaders_samples_interface;
@@ -136,9 +133,6 @@ public class _8080bw
 	void init_phantom2(void);
 	void init_boothill(void);
 	
-	WRITE_HANDLER( invaders_videoram_w );
-	WRITE_HANDLER( schaser_colorram_w );
-	WRITE_HANDLER( helifire_colorram_w );
 	
 	void invaders_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	

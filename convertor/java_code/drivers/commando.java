@@ -50,11 +50,6 @@ public class commando
 	extern unsigned char *commando_fgvideoram;
 	extern unsigned char *commando_bgvideoram;
 	
-	WRITE_HANDLER( commando_fgvideoram_w );
-	WRITE_HANDLER( commando_bgvideoram_w );
-	WRITE_HANDLER( commando_scrollx_w );
-	WRITE_HANDLER( commando_scrolly_w );
-	WRITE_HANDLER( commando_c804_w );
 	int commando_vh_start(void);
 	void commando_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	void commando_eof_callback(void);

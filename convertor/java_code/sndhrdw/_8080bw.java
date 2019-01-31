@@ -48,7 +48,6 @@ public class _8080bw
 	
 	
 	
-	WRITE_HANDLER( desertgu_controller_select_w );
 	
 	static int  schaser_sh_start(const struct MachineSound *msound);
 	static void schaser_sh_stop(void);
@@ -573,12 +572,12 @@ public class _8080bw
 		return sheriff_p2;
 	} };
 	
-	WRITE_HANDLER( sheriff_sh_p2_w )
+	public static WriteHandlerPtr sheriff_sh_p2_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		sheriff_p2 = data;
 	
 		DAC_data_w(0, sheriff_p2 & 0x80 ? 0xff : 0x00);
-	}
+	} };
 	
 	
 	/*******************************************************/

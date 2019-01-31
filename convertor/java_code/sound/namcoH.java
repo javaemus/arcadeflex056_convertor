@@ -13,17 +13,9 @@ struct namco_interface
 int namco_sh_start(const struct MachineSound *msound);
 void namco_sh_stop(void);
 
-WRITE_HANDLER( pengo_sound_enable_w );
-WRITE_HANDLER( pengo_sound_w );
 
-WRITE_HANDLER( polepos_sound_enable_w );
-WRITE_HANDLER( polepos_sound_w );
 
-WRITE_HANDLER( mappy_sound_enable_w );
-WRITE_HANDLER( mappy_sound_w );
 
-WRITE_HANDLER( namcos1_sound_w );
-WRITE_HANDLER( namcos1_wavedata_w );
 
 extern unsigned char *namco_soundregs;
 extern unsigned char *namco_wavedata;

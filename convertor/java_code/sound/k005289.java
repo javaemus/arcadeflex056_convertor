@@ -211,39 +211,39 @@ public class k005289
 		voice[1].wave = &sound_prom[32 * k005289_B_waveform + 0x100];
 	}
 	
-	WRITE_HANDLER( k005289_control_A_w )
+	public static WriteHandlerPtr k005289_control_A_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		k005289_A_volume=data&0xf;
 		k005289_A_waveform=data>>5;
 		k005289_recompute();
-	}
+	} };
 	
-	WRITE_HANDLER( k005289_control_B_w )
+	public static WriteHandlerPtr k005289_control_B_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		k005289_B_volume=data&0xf;
 		k005289_B_waveform=data>>5;
 		k005289_recompute();
-	}
+	} };
 	
-	WRITE_HANDLER( k005289_pitch_A_w )
+	public static WriteHandlerPtr k005289_pitch_A_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		k005289_A_latch = 0x1000 - offset;
-	}
+	} };
 	
-	WRITE_HANDLER( k005289_pitch_B_w )
+	public static WriteHandlerPtr k005289_pitch_B_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		k005289_B_latch = 0x1000 - offset;
-	}
+	} };
 	
-	WRITE_HANDLER( k005289_keylatch_A_w )
+	public static WriteHandlerPtr k005289_keylatch_A_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		k005289_A_frequency = k005289_A_latch;
 		k005289_recompute();
-	}
+	} };
 	
-	WRITE_HANDLER( k005289_keylatch_B_w )
+	public static WriteHandlerPtr k005289_keylatch_B_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		k005289_B_frequency = k005289_B_latch;
 		k005289_recompute();
-	}
+	} };
 }

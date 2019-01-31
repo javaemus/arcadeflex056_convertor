@@ -14,8 +14,6 @@ public class goindol
 {
 	
 	int  goindol_vh_start(void);
-	WRITE_HANDLER( goindol_fg_videoram_w );
-	WRITE_HANDLER( goindol_bg_videoram_w );
 	void goindol_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	
 	extern data8_t *goindol_fg_scrollx;
@@ -29,7 +27,7 @@ public class goindol
 	extern int goindol_char_bank;
 	
 	
-	WRITE_HANDLER( goindol_bankswitch_w )
+	public static WriteHandlerPtr goindol_bankswitch_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		int bankaddress;
 		unsigned char *RAM = memory_region(REGION_CPU1);
@@ -42,7 +40,7 @@ public class goindol
 			goindol_char_bank = (data & 0x10) >> 4;
 			tilemap_mark_all_tiles_dirty(ALL_TILEMAPS);
 		}
-	}
+	} };
 	
 	
 	

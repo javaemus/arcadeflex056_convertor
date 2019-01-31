@@ -30,12 +30,10 @@ public class dotrikun
 {
 	
 	
-	WRITE_HANDLER( dotrikun_videoram_w );
 	void dotrikun_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	int dotrikun_vh_start(void);
 	void dotrikun_vh_stop(void);
 	
-	WRITE_HANDLER( dotrikun_color_w );
 	
 	
 	public static Memory_ReadAddress readmem[]={

@@ -29,20 +29,20 @@ public class capbowl
 	}
 	
 	
-	WRITE_HANDLER( capbowl_rom_select_w )
+	public static WriteHandlerPtr capbowl_rom_select_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		int bankaddress = 0x10000 + ((data & 0x0c) << 13) + ((data & 0x01) << 14);
 		unsigned char *RAM = memory_region(REGION_CPU1);
 	
 	
 		cpu_setbank(1,&RAM[bankaddress]);
-	}
+	} };
 	
 	
 	/*
 		Write to GR Address upper word (2 bits)
 	*/
-	WRITE_HANDLER( bowlrama_turbo_w )
+	public static WriteHandlerPtr bowlrama_turbo_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		switch( offset )
 		{
@@ -63,7 +63,7 @@ public class capbowl
 		}
 	
 		currentaddress = ((GRHighByte << 16) | (GRMidByte << 8) | GRLowByte);
-	}
+	} };
 	
 	
 	public static ReadHandlerPtr bowlrama_turbo_r  = new ReadHandlerPtr() { public int handler(int offset)

@@ -37,16 +37,16 @@ public class superpac
 		return superpac_sharedram[offset];
 	} };
 	
-	WRITE_HANDLER( superpac_sharedram_w )
+	public static WriteHandlerPtr superpac_sharedram_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		superpac_sharedram[offset] = data;
-	}
+	} };
 	
 	
-	WRITE_HANDLER( superpac_reset_2_w )
+	public static WriteHandlerPtr superpac_reset_2_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		cpu_set_reset_line(1,PULSE_LINE);
-	}
+	} };
 	
 	
 	void superpac_update_credits (void)
@@ -262,14 +262,14 @@ public class superpac
 	} };
 	
 	
-	WRITE_HANDLER( superpac_interrupt_enable_w )
+	public static WriteHandlerPtr superpac_interrupt_enable_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		interrupt_enable_w(0, offset);
-	}
+	} };
 	
 	
-	WRITE_HANDLER( superpac_cpu_enable_w )
+	public static WriteHandlerPtr superpac_cpu_enable_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		cpu_set_halt_line(1, offset ? CLEAR_LINE : ASSERT_LINE);
-	}
+	} };
 }

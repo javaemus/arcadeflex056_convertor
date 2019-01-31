@@ -638,10 +638,10 @@ public class cpuexec
 	}
 	
 	
-	WRITE_HANDLER( watchdog_reset_w )
+	public static WriteHandlerPtr watchdog_reset_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		watchdog_reset();
-	}
+	} };
 	
 	
 	public static ReadHandlerPtr watchdog_reset_r  = new ReadHandlerPtr() { public int handler(int offset)
@@ -1200,15 +1200,15 @@ public class cpuexec
 	}
 	
 	
-	WRITE_HANDLER( interrupt_enable_w )
+	public static WriteHandlerPtr interrupt_enable_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		VERIFY_ACTIVECPU_VOID(interrupt_enable_w);
 		cpu_interrupt_enable(activecpu, data);
-	}
+	} };
 	
 	
 	
-	WRITE_HANDLER( interrupt_vector_w )
+	public static WriteHandlerPtr interrupt_vector_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		VERIFY_ACTIVECPU_VOID(interrupt_vector_w);
 		if (interrupt_vector[activecpu] != data)
@@ -1219,7 +1219,7 @@ public class cpuexec
 			/* make sure there are no queued interrupts */
 			timer_set(TIME_NOW, activecpu, cpu_clearintcallback);
 		}
-	}
+	} };
 	
 	
 	

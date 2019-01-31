@@ -261,8 +261,8 @@ public class z80fmly
 		}
 	}
 	
-	WRITE_HANDLER( z80ctc_0_w ) { z80ctc_w (0, offset, data); }
-	WRITE_HANDLER( z80ctc_1_w ) { z80ctc_w (1, offset, data); }
+	public static WriteHandlerPtr z80ctc_0_w = new WriteHandlerPtr() {public void handler(int offset, int data) { z80ctc_w (0, offset, data); } };
+	public static WriteHandlerPtr z80ctc_1_w = new WriteHandlerPtr() {public void handler(int offset, int data) { z80ctc_w (1, offset, data); } };
 	
 	
 	int z80ctc_r (int which, int ch)
@@ -415,14 +415,14 @@ public class z80fmly
 		}
 	}
 	
-	WRITE_HANDLER( z80ctc_0_trg0_w ) { z80ctc_trg_w (0, 0, offset, data); }
-	WRITE_HANDLER( z80ctc_0_trg1_w ) { z80ctc_trg_w (0, 1, offset, data); }
-	WRITE_HANDLER( z80ctc_0_trg2_w ) { z80ctc_trg_w (0, 2, offset, data); }
-	WRITE_HANDLER( z80ctc_0_trg3_w ) { z80ctc_trg_w (0, 3, offset, data); }
-	WRITE_HANDLER( z80ctc_1_trg0_w ) { z80ctc_trg_w (1, 0, offset, data); }
-	WRITE_HANDLER( z80ctc_1_trg1_w ) { z80ctc_trg_w (1, 1, offset, data); }
-	WRITE_HANDLER( z80ctc_1_trg2_w ) { z80ctc_trg_w (1, 2, offset, data); }
-	WRITE_HANDLER( z80ctc_1_trg3_w ) { z80ctc_trg_w (1, 3, offset, data); }
+	public static WriteHandlerPtr z80ctc_0_trg0_w = new WriteHandlerPtr() {public void handler(int offset, int data) { z80ctc_trg_w (0, 0, offset, data); } };
+	public static WriteHandlerPtr z80ctc_0_trg1_w = new WriteHandlerPtr() {public void handler(int offset, int data) { z80ctc_trg_w (0, 1, offset, data); } };
+	public static WriteHandlerPtr z80ctc_0_trg2_w = new WriteHandlerPtr() {public void handler(int offset, int data) { z80ctc_trg_w (0, 2, offset, data); } };
+	public static WriteHandlerPtr z80ctc_0_trg3_w = new WriteHandlerPtr() {public void handler(int offset, int data) { z80ctc_trg_w (0, 3, offset, data); } };
+	public static WriteHandlerPtr z80ctc_1_trg0_w = new WriteHandlerPtr() {public void handler(int offset, int data) { z80ctc_trg_w (1, 0, offset, data); } };
+	public static WriteHandlerPtr z80ctc_1_trg1_w = new WriteHandlerPtr() {public void handler(int offset, int data) { z80ctc_trg_w (1, 1, offset, data); } };
+	public static WriteHandlerPtr z80ctc_1_trg2_w = new WriteHandlerPtr() {public void handler(int offset, int data) { z80ctc_trg_w (1, 2, offset, data); } };
+	public static WriteHandlerPtr z80ctc_1_trg3_w = new WriteHandlerPtr() {public void handler(int offset, int data) { z80ctc_trg_w (1, 3, offset, data); } };
 	
 	
 	/*---------------------- Z80 PIO ---------------------------------*/
@@ -751,19 +751,19 @@ public class z80fmly
 	
 	void z80pio_0_reset (void) { z80pio_reset (0); }
 	
-	WRITE_HANDLER( z80pio_0_w )
+	public static WriteHandlerPtr z80pio_0_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		if(offset&1) z80pio_c_w(0,(offset/2)&1,data);
 		else         z80pio_d_w(0,(offset/2)&1,data);
-	}
+	} };
 	
 	public static ReadHandlerPtr z80pio_0_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return (offset&1) ? z80pio_c_r(0,(offset/2)&1) : z80pio_d_r(0,(offset/2)&1);
 	} };
 	
-	WRITE_HANDLER( z80pioA_0_p_w ) { z80pio_p_w(0,0,data);   }
-	WRITE_HANDLER( z80pioB_0_p_w ) { z80pio_p_w(0,1,data);   }
+	public static WriteHandlerPtr z80pioA_0_p_w = new WriteHandlerPtr() {public void handler(int offset, int data) { z80pio_p_w(0,0,data);   } };
+	public static WriteHandlerPtr z80pioB_0_p_w = new WriteHandlerPtr() {public void handler(int offset, int data) { z80pio_p_w(0,1,data);   } };
 	public static ReadHandlerPtr z80pioA_0_p_r  = new ReadHandlerPtr() { public int handler(int offset)           { return z80pio_p_r(0,0); } };
 	public static ReadHandlerPtr z80pioB_0_p_r  = new ReadHandlerPtr() { public int handler(int offset)           { return z80pio_p_r(0,1); } };
 	

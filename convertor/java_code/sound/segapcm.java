@@ -285,7 +285,7 @@ public class segapcm
 	/************************************************/
 	/*    wrtie register SEGAPCM                    */
 	/************************************************/
-	WRITE_HANDLER( SegaPCM_w )
+	public static WriteHandlerPtr SegaPCM_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 	  int r = offset;
 	  int v = data;

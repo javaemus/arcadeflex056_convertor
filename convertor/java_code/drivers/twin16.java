@@ -279,7 +279,7 @@ public class twin16
 		return twin16_soundlatch;
 	} };
 	
-	WRITE_HANDLER( twin16_sres_w )
+	public static WriteHandlerPtr twin16_sres_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		/* bit 1 resets the UPD7795C sound chip */
 		if ((data & 0x02) == 0)
@@ -287,7 +287,7 @@ public class twin16
 			UPD7759_reset_w(0,(data & 0x02) >> 1);
 		}
 		twin16_soundlatch = data;
-	}
+	} };
 	
 	
 	// Added by Takahiro Nogi. (1999/10/27)

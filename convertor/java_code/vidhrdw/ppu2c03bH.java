@@ -64,8 +64,6 @@ public class ppu2c03bH
 	
 	/* accesors */
 	
-	WRITE_HANDLER( ppu2c03b_0_w );
-	WRITE_HANDLER( ppu2c03b_1_w );
 	
 	#endif /* __PPU_2C03B_H__ */
 }

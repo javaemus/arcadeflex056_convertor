@@ -324,7 +324,7 @@ public class m72
 		palette_set_color(color,r,g,b);
 	}
 	
-	WRITE_HANDLER( m72_palette1_w )
+	public static WriteHandlerPtr m72_palette1_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		/* only D0-D4 are connected */
 		if (offset & 1) return;
@@ -338,9 +338,9 @@ public class m72
 				paletteram[offset + 0x000],
 				paletteram[offset + 0x400],
 				paletteram[offset + 0x800]);
-	}
+	} };
 	
-	WRITE_HANDLER( m72_palette2_w )
+	public static WriteHandlerPtr m72_palette2_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		/* only D0-D4 are connected */
 		if (offset & 1) return;
@@ -354,7 +354,7 @@ public class m72
 				paletteram_2[offset + 0x000],
 				paletteram_2[offset + 0x400],
 				paletteram_2[offset + 0x800]);
-	}
+	} };
 	
 	public static ReadHandlerPtr m72_videoram1_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
@@ -366,31 +366,31 @@ public class m72
 		return m72_videoram2[offset];
 	} };
 	
-	WRITE_HANDLER( m72_videoram1_w )
+	public static WriteHandlerPtr m72_videoram1_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		if (m72_videoram1[offset] != data)
 		{
 			m72_videoram1[offset] = data;
 			tilemap_mark_tile_dirty(fg_tilemap,offset/4);
 		}
-	}
+	} };
 	
-	WRITE_HANDLER( m72_videoram2_w )
+	public static WriteHandlerPtr m72_videoram2_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		if (m72_videoram2[offset] != data)
 		{
 			m72_videoram2[offset] = data;
 			tilemap_mark_tile_dirty(bg_tilemap,offset/4);
 		}
-	}
+	} };
 	
-	WRITE_HANDLER( m72_irq_line_w )
+	public static WriteHandlerPtr m72_irq_line_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		offset *= 8;
 		splitline = (splitline & (0xff00 >> offset)) | (data << offset);
-	}
+	} };
 	
-	WRITE_HANDLER( m72_scrollx1_w )
+	public static WriteHandlerPtr m72_scrollx1_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		int i;
 	
@@ -399,9 +399,9 @@ public class m72
 	
 		for (i = rastersplit+1;i < 256;i++)
 			scrollx1[i] = scrollx1[rastersplit];
-	}
+	} };
 	
-	WRITE_HANDLER( m72_scrollx2_w )
+	public static WriteHandlerPtr m72_scrollx2_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		int i;
 	
@@ -410,9 +410,9 @@ public class m72
 	
 		for (i = rastersplit+1;i < 256;i++)
 			scrollx2[i] = scrollx2[rastersplit];
-	}
+	} };
 	
-	WRITE_HANDLER( m72_scrolly1_w )
+	public static WriteHandlerPtr m72_scrolly1_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		int i;
 	
@@ -421,9 +421,9 @@ public class m72
 	
 		for (i = rastersplit+1;i < 256;i++)
 			scrolly1[i] = scrolly1[rastersplit];
-	}
+	} };
 	
-	WRITE_HANDLER( m72_scrolly2_w )
+	public static WriteHandlerPtr m72_scrolly2_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		int i;
 	
@@ -432,18 +432,18 @@ public class m72
 	
 		for (i = rastersplit+1;i < 256;i++)
 			scrolly2[i] = scrolly2[rastersplit];
-	}
+	} };
 	
-	WRITE_HANDLER( m72_dmaon_w )
+	public static WriteHandlerPtr m72_dmaon_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		if (offset == 0)
 		{
 			memcpy(m72_spriteram,spriteram,spriteram_size);
 		}
-	}
+	} };
 	
 	
-	WRITE_HANDLER( m72_port02_w )
+	public static WriteHandlerPtr m72_port02_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		if (offset != 0)
 		{
@@ -469,9 +469,9 @@ public class m72
 			cpu_set_reset_line(1,ASSERT_LINE);
 	
 		/* bit 5 = "bank"? */
-	}
+	} };
 	
-	WRITE_HANDLER( rtype2_port02_w )
+	public static WriteHandlerPtr rtype2_port02_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		if (offset != 0)
 		{
@@ -491,20 +491,20 @@ public class m72
 		video_off = data & 0x08;
 	
 		/* other bits unknown */
-	}
+	} };
 	
 	
 	static int majtitle_rowscroll;
 	
 	/* the following is mostly a kludge. This register seems to be used for something else */
-	WRITE_HANDLER( majtitle_gfx_ctrl_w )
+	public static WriteHandlerPtr majtitle_gfx_ctrl_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		if (offset == 1)
 		{
 			if (data) majtitle_rowscroll = 1;
 			else majtitle_rowscroll = 0;
 		}
-	}
+	} };
 	
 	
 	/***************************************************************************

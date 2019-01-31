@@ -44,33 +44,33 @@ public class munchmo
 		}
 	}
 	
-	WRITE_HANDLER( mnchmobl_palette_bank_w )
+	public static WriteHandlerPtr mnchmobl_palette_bank_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		if( mnchmobl_palette_bank!=(data&0x3) )
 		{
 			memset( dirtybuffer, 1, 0x100 );
 			mnchmobl_palette_bank = data&0x3;
 		}
-	}
+	} };
 	
-	WRITE_HANDLER( mnchmobl_flipscreen_w )
+	public static WriteHandlerPtr mnchmobl_flipscreen_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		if( flipscreen!=data )
 		{
 			memset( dirtybuffer, 1, 0x100 );
 			flipscreen = data;
 		}
-	}
+	} };
 	
 	
 	public static ReadHandlerPtr mnchmobl_sprite_xpos_r  = new ReadHandlerPtr() { public int handler(int offset){ return mnchmobl_sprite_xpos[offset]; } };
-	WRITE_HANDLER( mnchmobl_sprite_xpos_w ){ mnchmobl_sprite_xpos[offset] = data; }
+	public static WriteHandlerPtr mnchmobl_sprite_xpos_w = new WriteHandlerPtr() {public void handler(int offset, int data){ mnchmobl_sprite_xpos[offset] = data; } };
 	
 	public static ReadHandlerPtr mnchmobl_sprite_attr_r  = new ReadHandlerPtr() { public int handler(int offset){ return mnchmobl_sprite_attr[offset]; } };
-	WRITE_HANDLER( mnchmobl_sprite_attr_w ){ mnchmobl_sprite_attr[offset] = data; }
+	public static WriteHandlerPtr mnchmobl_sprite_attr_w = new WriteHandlerPtr() {public void handler(int offset, int data){ mnchmobl_sprite_attr[offset] = data; } };
 	
 	public static ReadHandlerPtr mnchmobl_sprite_tile_r  = new ReadHandlerPtr() { public int handler(int offset){ return mnchmobl_sprite_tile[offset]; } };
-	WRITE_HANDLER( mnchmobl_sprite_tile_w ){ mnchmobl_sprite_tile[offset] = data; }
+	public static WriteHandlerPtr mnchmobl_sprite_tile_w = new WriteHandlerPtr() {public void handler(int offset, int data){ mnchmobl_sprite_tile[offset] = data; } };
 	
 	void mnchmobl_vh_stop( void )
 	{
@@ -96,7 +96,7 @@ public class munchmo
 		return videoram[offset];
 	} };
 	
-	WRITE_HANDLER( mnchmobl_videoram_w )
+	public static WriteHandlerPtr mnchmobl_videoram_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		offset = offset&0xff; /* mirror the two banks? */
 		if( videoram[offset]!=data )
@@ -104,7 +104,7 @@ public class munchmo
 			videoram[offset] = data;
 			dirtybuffer[offset] = 1;
 		}
-	}
+	} };
 	
 	static void draw_status( struct mame_bitmap *bitmap )
 	{

@@ -73,11 +73,6 @@ public class gberet
 	extern unsigned char *gberet_videoram,*gberet_colorram;
 	extern unsigned char *gberet_spritebank;
 	extern unsigned char *gberet_scrollram;
-	WRITE_HANDLER( gberet_videoram_w );
-	WRITE_HANDLER( gberet_colorram_w );
-	WRITE_HANDLER( gberet_e044_w );
-	WRITE_HANDLER( gberet_scroll_w );
-	WRITE_HANDLER( gberetb_scroll_w );
 	void gberet_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom);
 	int gberet_vh_start(void);
 	void gberet_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);

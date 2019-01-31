@@ -188,21 +188,21 @@ public class rp5h01
 	
 	/****************************************************************************/
 	
-	WRITE_HANDLER( RP5H01_0_enable_w ) {
+	public static WriteHandlerPtr RP5H01_0_enable_w = new WriteHandlerPtr() {public void handler(int offset, int data) {
 		RP5H01_enable_w( 0, data );
-	}
+	} };
 	
-	WRITE_HANDLER( RP5H01_0_reset_w ) {
+	public static WriteHandlerPtr RP5H01_0_reset_w = new WriteHandlerPtr() {public void handler(int offset, int data) {
 		RP5H01_reset_w( 0, data );
-	}
+	} };
 	
-	WRITE_HANDLER( RP5H01_0_clock_w ) {
+	public static WriteHandlerPtr RP5H01_0_clock_w = new WriteHandlerPtr() {public void handler(int offset, int data) {
 		RP5H01_clock_w( 0, data );
-	}
+	} };
 	
-	WRITE_HANDLER( RP5H01_0_test_w ) {
+	public static WriteHandlerPtr RP5H01_0_test_w = new WriteHandlerPtr() {public void handler(int offset, int data) {
 		RP5H01_test_w( 0, data );
-	}
+	} };
 	
 	public static ReadHandlerPtr RP5H01_0_counter_r  = new ReadHandlerPtr() { public int handler(int offset) {
 		return RP5H01_counter_r( 0 );

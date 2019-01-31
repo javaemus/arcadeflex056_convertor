@@ -57,15 +57,15 @@ public class ikki
 	
 	}
 	
-	WRITE_HANDLER( ikki_scroll_w )
+	public static WriteHandlerPtr ikki_scroll_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		ikki_scroll[offset] = data;
-	}
+	} };
 	
-	WRITE_HANDLER( ikki_scrn_ctrl_w )
+	public static WriteHandlerPtr ikki_scrn_ctrl_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		ikki_flipscreen = (data >> 2) & 1;
-	}
+	} };
 	
 	void ikki_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
 	{

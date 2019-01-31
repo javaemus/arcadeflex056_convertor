@@ -83,23 +83,23 @@ public class goindol
 	
 	***************************************************************************/
 	
-	WRITE_HANDLER( goindol_fg_videoram_w )
+	public static WriteHandlerPtr goindol_fg_videoram_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		if (goindol_fg_videoram[offset] != data)
 		{
 			goindol_fg_videoram[offset] = data;
 			tilemap_mark_tile_dirty(fg_tilemap,offset / 2);
 		}
-	}
+	} };
 	
-	WRITE_HANDLER( goindol_bg_videoram_w )
+	public static WriteHandlerPtr goindol_bg_videoram_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		if (goindol_bg_videoram[offset] != data)
 		{
 			goindol_bg_videoram[offset] = data;
 			tilemap_mark_tile_dirty(bg_tilemap,offset / 2);
 		}
-	}
+	} };
 	
 	
 	

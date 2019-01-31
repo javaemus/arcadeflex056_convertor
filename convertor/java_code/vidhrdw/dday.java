@@ -289,26 +289,26 @@ public class dday
 	}
 	
 	
-	WRITE_HANDLER( dday_bgvideoram_w )
+	public static WriteHandlerPtr dday_bgvideoram_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		dday_bgvideoram[offset] = data;
 		tilemap_mark_tile_dirty(bg_tilemap, offset);
-	}
+	} };
 	
-	WRITE_HANDLER( dday_fgvideoram_w )
+	public static WriteHandlerPtr dday_fgvideoram_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		dday_fgvideoram[offset] = data;
 		tilemap_mark_tile_dirty(fg_tilemap, offset);
 		tilemap_mark_tile_dirty(fg_tilemap, offset ^ 0x1f);  /* for flipx case */
-	}
+	} };
 	
-	WRITE_HANDLER( dday_textvideoram_w )
+	public static WriteHandlerPtr dday_textvideoram_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		dday_textvideoram[offset] = data;
 		tilemap_mark_tile_dirty(text_tilemap, offset);
-	}
+	} };
 	
-	WRITE_HANDLER( dday_colorram_w )
+	public static WriteHandlerPtr dday_colorram_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		int i;
 	
@@ -321,7 +321,7 @@ public class dday
 	    {
 			tilemap_mark_tile_dirty(fg_tilemap, offset + i);
 		}
-	}
+	} };
 	
 	public static ReadHandlerPtr dday_colorram_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
@@ -329,7 +329,7 @@ public class dday
 	} };
 	
 	
-	WRITE_HANDLER( dday_sl_control_w )
+	public static WriteHandlerPtr dday_sl_control_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		if (sl_image != data)
 		{
@@ -337,10 +337,10 @@ public class dday
 	
 			tilemap_mark_all_tiles_dirty(sl_tilemap);
 		}
-	}
+	} };
 	
 	
-	WRITE_HANDLER( dday_control_w )
+	public static WriteHandlerPtr dday_control_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		//if (data & 0xac)  logerror("Control = %02X\n", data & 0xac);
 	
@@ -363,7 +363,7 @@ public class dday
 		sl_enable = data & 0x40;
 	
 		control = data;
-	}
+	} };
 	
 	/***************************************************************************
 	

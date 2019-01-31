@@ -119,14 +119,14 @@ public class baraduke
 		return baraduke_videoram[offset];
 	} };
 	
-	WRITE_HANDLER( baraduke_videoram_w )
+	public static WriteHandlerPtr baraduke_videoram_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		if (baraduke_videoram[offset] != data)
 		{
 			baraduke_videoram[offset] = data;
 			tilemap_mark_tile_dirty(tilemap[offset/0x1000],(offset&0xfff)/2);
 		}
-	}
+	} };
 	
 	static void scroll_w(int layer,int offset,int data)
 	{
@@ -158,14 +158,14 @@ public class baraduke
 		tilemap_set_scrolly(tilemap[layer], 0, scrolly);
 	}
 	
-	WRITE_HANDLER( baraduke_scroll0_w )
+	public static WriteHandlerPtr baraduke_scroll0_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		scroll_w(0, offset, data);
-	}
-	WRITE_HANDLER( baraduke_scroll1_w )
+	} };
+	public static WriteHandlerPtr baraduke_scroll1_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		scroll_w(1, offset, data);
-	}
+	} };
 	
 	/***************************************************************************
 	

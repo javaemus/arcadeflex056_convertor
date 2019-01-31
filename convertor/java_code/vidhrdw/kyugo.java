@@ -19,7 +19,7 @@ public class kyugo
 	
 	
 	
-	WRITE_HANDLER( kyugo_gfxctrl_w )
+	public static WriteHandlerPtr kyugo_gfxctrl_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		/* bit 0 is scroll MSB */
 		kyugo_back_scrollY_hi = data & 0x01;
@@ -40,17 +40,17 @@ public class kyugo
 		sprintf(baf,"%02x",data);
 		usrintf_showmessage(baf);
 	}
-	}
+	} };
 	
 	
-	WRITE_HANDLER( kyugo_flipscreen_w )
+	public static WriteHandlerPtr kyugo_flipscreen_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		if (flipscreen != (data & 0x01))
 		{
 			flipscreen = (data & 0x01);
 			memset(dirtybuffer,1,videoram_size);
 		}
-	}
+	} };
 	
 	
 	

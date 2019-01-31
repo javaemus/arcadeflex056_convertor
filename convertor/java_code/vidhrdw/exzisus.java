@@ -55,28 +55,28 @@ public class exzisus
 	}
 	
 	
-	WRITE_HANDLER( exzisus_videoram_0_w )
+	public static WriteHandlerPtr exzisus_videoram_0_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		exzisus_videoram0[offset] = data;
-	}
+	} };
 	
 	
-	WRITE_HANDLER( exzisus_videoram_1_w )
+	public static WriteHandlerPtr exzisus_videoram_1_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		exzisus_videoram1[offset] = data;
-	}
+	} };
 	
 	
-	WRITE_HANDLER( exzisus_objectram_0_w )
+	public static WriteHandlerPtr exzisus_objectram_0_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		exzisus_objectram0[offset] = data;
-	}
+	} };
 	
 	
-	WRITE_HANDLER( exzisus_objectram_1_w )
+	public static WriteHandlerPtr exzisus_objectram_1_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		exzisus_objectram1[offset] = data;
-	}
+	} };
 	
 	
 	/***************************************************************************

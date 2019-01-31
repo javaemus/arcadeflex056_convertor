@@ -23,11 +23,9 @@ public class m79amb
 	 *
 	 */
 	
-	WRITE_HANDLER( ramtek_videoram_w );
 	
 	int  invaders_interrupt(void);
 	void ramtek_sh_update(void);
-	WRITE_HANDLER( ramtek_mask_w );
 	
 	/*
 	 * since these functions aren't used anywhere else, i've made them
@@ -63,9 +61,9 @@ public class m79amb
 		new Memory_ReadAddress(MEMPORT_MARKER, 0)
 	};
 	
-	WRITE_HANDLER( sound_w )
+	public static WriteHandlerPtr sound_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
-	}
+	} };
 	
 	public static Memory_WriteAddress writemem[]={
 		new Memory_WriteAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_WRITE | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),

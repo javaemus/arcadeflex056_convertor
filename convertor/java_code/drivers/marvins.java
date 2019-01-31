@@ -22,7 +22,6 @@ package drivers;
 public class marvins
 {
 	
-	WRITE_HANDLER( snkwave_w );
 	
 	#define CREDITS "Phil Stroffolino\nTim Lindquist\nCarlos A. Lozano"
 	
@@ -32,13 +31,9 @@ public class marvins
 	**
 	***************************************************************************/
 	
-	WRITE_HANDLER( marvins_background_ram_w );
 	
-	WRITE_HANDLER( marvins_foreground_ram_w );
 	
-	WRITE_HANDLER( marvins_text_ram_w );
 	
-	WRITE_HANDLER( marvins_spriteram_w );
 	
 	/***************************************************************************
 	**
@@ -49,7 +44,6 @@ public class marvins
 	extern int marvins_vh_start( void );
 	extern void marvins_vh_screenrefresh( struct mame_bitmap *bitmap, int fullrefresh );
 	extern void madcrash_vh_screenrefresh( struct mame_bitmap *bitmap, int fullrefresh );
-	WRITE_HANDLER( marvins_palette_bank_w );
 	
 	/***************************************************************************
 	**

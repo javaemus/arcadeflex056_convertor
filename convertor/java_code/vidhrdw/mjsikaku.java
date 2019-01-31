@@ -122,15 +122,15 @@ public class mjsikaku
 		}
 	}
 	
-	WRITE_HANDLER( mjsikaku_palette_w )
+	public static WriteHandlerPtr mjsikaku_palette_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		mjsikaku_palette[(((offset & 0x0f) << 1) | ((offset & 0x10) >> 4))] = (data ^ 0xff);
-	}
+	} };
 	
-	WRITE_HANDLER( secolove_palette_w )
+	public static WriteHandlerPtr secolove_palette_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		mjsikaku_palette[offset & 0x0f] = (data ^ 0xff);
-	}
+	} };
 	
 	/******************************************************************************
 	

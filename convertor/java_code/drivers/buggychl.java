@@ -88,13 +88,6 @@ public class buggychl
 	
 	
 	/* in machine */
-	WRITE_HANDLER( buggychl_68705_portA_w );
-	WRITE_HANDLER( buggychl_68705_ddrA_w );
-	WRITE_HANDLER( buggychl_68705_portB_w );
-	WRITE_HANDLER( buggychl_68705_ddrB_w );
-	WRITE_HANDLER( buggychl_68705_portC_w );
-	WRITE_HANDLER( buggychl_68705_ddrC_w );
-	WRITE_HANDLER( buggychl_mcu_w );
 	
 	/* in vidhrdw */
 	extern unsigned char *buggychl_scrollv,*buggychl_scrollh;
@@ -104,11 +97,6 @@ public class buggychl
 	void buggychl_init_palette(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom);
 	void buggychl_vh_stop(void);
 	int buggychl_vh_start(void);
-	WRITE_HANDLER( buggychl_chargen_w );
-	WRITE_HANDLER( buggychl_sprite_lookup_bank_w );
-	WRITE_HANDLER( buggychl_sprite_lookup_w );
-	WRITE_HANDLER( buggychl_ctrl_w );
-	WRITE_HANDLER( buggychl_bg_scrollx_w );
 	void buggychl_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	
 	

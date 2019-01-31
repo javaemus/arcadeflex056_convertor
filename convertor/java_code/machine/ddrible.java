@@ -27,14 +27,14 @@ public class ddrible
 		ddrible_int_enable_0 = ddrible_int_enable_1 = 0;
 	}
 	
-	WRITE_HANDLER( ddrible_bankswitch_w )
+	public static WriteHandlerPtr ddrible_bankswitch_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		unsigned char *RAM = memory_region(REGION_CPU1);
 		int bankaddress;
 	
 		bankaddress = 0x10000 + (data & 0x0f) * 0x2000;
 		cpu_setbank(1,&RAM[bankaddress]);
-	}
+	} };
 	
 	int ddrible_interrupt_0( void )
 	{
@@ -50,43 +50,43 @@ public class ddrible
 		return ignore_interrupt();
 	}
 	
-	WRITE_HANDLER( int_0_w )
+	public static WriteHandlerPtr int_0_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		if (data & 0x02)
 			ddrible_int_enable_0 = 1;
 		else
 			ddrible_int_enable_0 = 0;
-	}
+	} };
 	
-	WRITE_HANDLER( int_1_w )
+	public static WriteHandlerPtr int_1_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		if (data & 0x02)
 			ddrible_int_enable_1 = 1;
 		else
 			ddrible_int_enable_1 = 0;
-	}
+	} };
 	
 	public static ReadHandlerPtr ddrible_sharedram_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return ddrible_sharedram[offset];
 	} };
 	
-	WRITE_HANDLER( ddrible_sharedram_w )
+	public static WriteHandlerPtr ddrible_sharedram_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		ddrible_sharedram[offset] = data;
-	}
+	} };
 	
 	public static ReadHandlerPtr ddrible_snd_sharedram_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return ddrible_snd_sharedram[offset];
 	} };
 	
-	WRITE_HANDLER( ddrible_snd_sharedram_w )
+	public static WriteHandlerPtr ddrible_snd_sharedram_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		ddrible_snd_sharedram[offset] = data;
-	}
+	} };
 	
-	WRITE_HANDLER( ddrible_coin_counter_w )
+	public static WriteHandlerPtr ddrible_coin_counter_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		/* b4-b7: unused */
 		/* b2-b3: unknown */
@@ -95,6 +95,6 @@ public class ddrible
 	
 		coin_counter_w(0,(data) & 0x01);
 		coin_counter_w(1,(data >> 1) & 0x01);
-	}
+	} };
 	
 }

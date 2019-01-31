@@ -107,7 +107,7 @@ public class z80bw
 	
 	
 	/* LT 20-3-1998 */
-	WRITE_HANDLER( astinvad_sh_port_4_w )
+	public static WriteHandlerPtr astinvad_sh_port_4_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		static int port4State;
 	
@@ -148,11 +148,11 @@ public class z80bw
 		if ( bitsGoneLow  & OUT_PORT_4_INVADERHIT )  STOP( SND_INVADERHIT );
 	
 		if ( bitsChanged & OUT_PORT_4_UNUSED ) logerror("Snd Port 4 = %02X\n", data & OUT_PORT_4_UNUSED);
-	}
+	} };
 	
 	
 	
-	WRITE_HANDLER( astinvad_sh_port_5_w )
+	public static WriteHandlerPtr astinvad_sh_port_5_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		static int port5State;
 	
@@ -182,6 +182,6 @@ public class z80bw
 		if ( bitsChanged  & OUT_PORT_5_FLIP )  invaders_flip_screen_w(data & 0x20);
 	
 		if ( bitsChanged  & OUT_PORT_5_UNUSED ) logerror("Snd Port 5 = %02X\n", data & OUT_PORT_5_UNUSED);
-	}
+	} };
 	
 }

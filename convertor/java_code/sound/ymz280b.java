@@ -870,15 +870,15 @@ public class ymz280b
 	
 	***********************************************************************************************/
 	
-	WRITE_HANDLER( YMZ280B_register_0_w )
+	public static WriteHandlerPtr YMZ280B_register_0_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		ymz280b[0].current_register = data;
-	}
+	} };
 	
-	WRITE_HANDLER( YMZ280B_register_1_w )
+	public static WriteHandlerPtr YMZ280B_register_1_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		ymz280b[1].current_register = data;
-	}
+	} };
 	
 	
 	
@@ -888,13 +888,13 @@ public class ymz280b
 	
 	***********************************************************************************************/
 	
-	WRITE_HANDLER( YMZ280B_data_0_w )
+	public static WriteHandlerPtr YMZ280B_data_0_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		write_to_register(&ymz280b[0], data);
-	}
+	} };
 	
-	WRITE_HANDLER( YMZ280B_data_1_w )
+	public static WriteHandlerPtr YMZ280B_data_1_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		write_to_register(&ymz280b[1], data);
-	}
+	} };
 }

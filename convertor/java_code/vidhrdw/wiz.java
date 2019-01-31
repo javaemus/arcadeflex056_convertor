@@ -99,7 +99,7 @@ public class wiz
 		}
 	}
 	
-	WRITE_HANDLER( wiz_attributes_w )
+	public static WriteHandlerPtr wiz_attributes_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		if ((offset & 1) && wiz_attributesram[offset] != data)
 		{
@@ -113,9 +113,9 @@ public class wiz
 		}
 	
 		wiz_attributesram[offset] = data;
-	}
+	} };
 	
-	WRITE_HANDLER( wiz_palettebank_w )
+	public static WriteHandlerPtr wiz_palettebank_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		if (palbank[offset] != (data & 1))
 		{
@@ -124,23 +124,23 @@ public class wiz
 	
 			memset(dirtybuffer,1,videoram_size);
 		}
-	}
+	} };
 	
-	WRITE_HANDLER( wiz_bgcolor_w )
+	public static WriteHandlerPtr wiz_bgcolor_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		bgpen = data;
-	}
+	} };
 	
-	WRITE_HANDLER( wiz_char_bank_select_w )
+	public static WriteHandlerPtr wiz_char_bank_select_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		if (char_bank[offset] != (data & 1))
 		{
 			char_bank[offset] = data & 1;
 			memset(dirtybuffer,1,videoram_size);
 		}
-	}
+	} };
 	
-	WRITE_HANDLER( wiz_flipx_w )
+	public static WriteHandlerPtr wiz_flipx_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 	    if (flipx != data)
 	    {
@@ -148,10 +148,10 @@ public class wiz
 	
 			memset(dirtybuffer, 1, videoram_size);
 	    }
-	}
+	} };
 	
 	
-	WRITE_HANDLER( wiz_flipy_w )
+	public static WriteHandlerPtr wiz_flipy_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 	    if (flipy != data)
 	    {
@@ -159,7 +159,7 @@ public class wiz
 	
 			memset(dirtybuffer, 1, videoram_size);
 	    }
-	}
+	} };
 	
 	static void draw_background(struct mame_bitmap *bitmap, int bank, int colortype)
 	{

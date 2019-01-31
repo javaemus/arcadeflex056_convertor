@@ -151,7 +151,7 @@ public class taitosj
 	
 	
 	
-	WRITE_HANDLER( taitosj_paletteram_w )
+	public static WriteHandlerPtr taitosj_paletteram_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		int bit0,bit1,bit2;
 		int r,g,b,val;
@@ -182,7 +182,7 @@ public class taitosj
 		b = 0x21 * bit0 + 0x47 * bit1 + 0x97 * bit2;
 	
 		palette_set_color(offset / 2,r,g,b);
-	}
+	} };
 	
 	
 	
@@ -304,7 +304,7 @@ public class taitosj
 	} };
 	
 	
-	WRITE_HANDLER( taitosj_videoram2_w )
+	public static WriteHandlerPtr taitosj_videoram2_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		if (taitosj_videoram2[offset] != data)
 		{
@@ -312,11 +312,11 @@ public class taitosj
 	
 			taitosj_videoram2[offset] = data;
 		}
-	}
+	} };
 	
 	
 	
-	WRITE_HANDLER( taitosj_videoram3_w )
+	public static WriteHandlerPtr taitosj_videoram3_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		if (taitosj_videoram3[offset] != data)
 		{
@@ -324,11 +324,11 @@ public class taitosj
 	
 			taitosj_videoram3[offset] = data;
 		}
-	}
+	} };
 	
 	
 	
-	WRITE_HANDLER( taitosj_colorbank_w )
+	public static WriteHandlerPtr taitosj_colorbank_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		if (taitosj_colorbank[offset] != data)
 		{
@@ -339,11 +339,11 @@ public class taitosj
 	
 			taitosj_colorbank[offset] = data;
 		}
-	}
+	} };
 	
 	
 	
-	WRITE_HANDLER( taitosj_videoenable_w )
+	public static WriteHandlerPtr taitosj_videoenable_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		if (taitosj_video_enable != data)
 		{
@@ -361,11 +361,11 @@ public class taitosj
 	
 			taitosj_video_enable = data;
 		}
-	}
+	} };
 	
 	
 	
-	WRITE_HANDLER( taitosj_characterram_w )
+	public static WriteHandlerPtr taitosj_characterram_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		if (taitosj_characterram[offset] != data)
 		{
@@ -382,12 +382,12 @@ public class taitosj
 	
 			taitosj_characterram[offset] = data;
 		}
-	}
+	} };
 	
-	WRITE_HANDLER( junglhbr_characterram_w )
+	public static WriteHandlerPtr junglhbr_characterram_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		taitosj_characterram_w(offset, data ^ 0xfc);
-	}
+	} };
 	
 	/***************************************************************************
 	
@@ -400,13 +400,13 @@ public class taitosj
 		return taitosj_collision_reg[offset];
 	} };
 	
-	WRITE_HANDLER( taitosj_collision_reg_clear_w )
+	public static WriteHandlerPtr taitosj_collision_reg_clear_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		taitosj_collision_reg[0] = 0;
 		taitosj_collision_reg[1] = 0;
 		taitosj_collision_reg[2] = 0;
 		taitosj_collision_reg[3] = 0;
-	}
+	} };
 	
 	INLINE int get_sprite_xy(UINT8 num, UINT8* sx, UINT8* sy)
 	{

@@ -136,26 +136,26 @@ public class mystston
 	
 	***************************************************************************/
 	
-	WRITE_HANDLER( mystston_fgvideoram_w )
+	public static WriteHandlerPtr mystston_fgvideoram_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		mystston_fgvideoram[offset] = data;
 		tilemap_mark_tile_dirty(fg_tilemap,offset & 0x3ff);
-	}
+	} };
 	
-	WRITE_HANDLER( mystston_bgvideoram_w )
+	public static WriteHandlerPtr mystston_bgvideoram_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		mystston_bgvideoram[offset] = data;
 		tilemap_mark_tile_dirty(bg_tilemap,offset & 0x1ff);
-	}
+	} };
 	
 	
-	WRITE_HANDLER( mystston_scroll_w )
+	public static WriteHandlerPtr mystston_scroll_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		tilemap_set_scrolly(bg_tilemap,0,data);
-	}
+	} };
 	
 	
-	WRITE_HANDLER( mystston_2000_w )
+	public static WriteHandlerPtr mystston_2000_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		int new_textcolor;
 	
@@ -177,7 +177,7 @@ public class mystston
 	
 		/* other bits unused? */
 		logerror("PC %04x: 2000 = %02x\n",cpu_get_pc(),data);
-	}
+	} };
 	
 	
 	/***************************************************************************

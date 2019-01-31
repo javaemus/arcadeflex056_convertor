@@ -23,8 +23,6 @@ public class bogeyman
 	void bogeyman_vh_screenrefresh(struct mame_bitmap *bitmap, int full_refresh);
 	int bogeyman_vh_start(void);
 	void bogeyman_vh_stop(void);
-	WRITE_HANDLER( bogeyman_paletteram_w );
-	WRITE_HANDLER( bogeyman_videoram_w );
 	
 	/******************************************************************************/
 	

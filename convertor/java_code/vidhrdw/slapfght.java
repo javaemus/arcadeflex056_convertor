@@ -112,36 +112,36 @@ public class slapfght
 	
 	***************************************************************************/
 	
-	WRITE_HANDLER( slapfight_videoram_w )
+	public static WriteHandlerPtr slapfight_videoram_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		videoram[offset]=data;
 		tilemap_mark_tile_dirty(pf1_tilemap,offset);
-	}
+	} };
 	
-	WRITE_HANDLER( slapfight_colorram_w )
+	public static WriteHandlerPtr slapfight_colorram_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		colorram[offset]=data;
 		tilemap_mark_tile_dirty(pf1_tilemap,offset);
-	}
+	} };
 	
-	WRITE_HANDLER( slapfight_fixram_w )
+	public static WriteHandlerPtr slapfight_fixram_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		slapfight_videoram[offset]=data;
 		tilemap_mark_tile_dirty(fix_tilemap,offset);
-	}
+	} };
 	
-	WRITE_HANDLER( slapfight_fixcol_w )
+	public static WriteHandlerPtr slapfight_fixcol_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		slapfight_colorram[offset]=data;
 		tilemap_mark_tile_dirty(fix_tilemap,offset);
-	}
+	} };
 	
-	WRITE_HANDLER( slapfight_flipscreen_w )
+	public static WriteHandlerPtr slapfight_flipscreen_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		logerror("Writing %02x to flipscreen\n",offset);
 		if (offset==0) flipscreen=1; /* Port 0x2 is flipscreen */
 		else flipscreen=0; /* Port 0x3 is normal */
-	}
+	} };
 	
 	#ifdef MAME_DEBUG
 	void slapfght_log_vram(void)

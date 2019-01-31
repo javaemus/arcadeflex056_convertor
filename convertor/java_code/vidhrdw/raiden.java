@@ -25,29 +25,29 @@ public class raiden
 		return raiden_fore_data[offset];
 	} };
 	
-	WRITE_HANDLER( raiden_background_w )
+	public static WriteHandlerPtr raiden_background_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		raiden_back_data[offset]=data;
 		tilemap_mark_tile_dirty( bg_layer,offset/2);
-	}
+	} };
 	
-	WRITE_HANDLER( raiden_foreground_w )
+	public static WriteHandlerPtr raiden_foreground_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		raiden_fore_data[offset]=data;
 		tilemap_mark_tile_dirty( fg_layer,offset/2);
-	}
+	} };
 	
-	WRITE_HANDLER( raiden_text_w )
+	public static WriteHandlerPtr raiden_text_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		videoram[offset]=data;
 		tilemap_mark_tile_dirty( tx_layer,offset/2);
-	}
+	} };
 	
-	WRITE_HANDLER( raidena_text_w )
+	public static WriteHandlerPtr raidena_text_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		videoram[offset]=data;
 		tilemap_mark_tile_dirty( tx_layer,offset/2);
-	}
+	} };
 	
 	static void get_back_tile_info(int tile_index)
 	{
@@ -121,7 +121,7 @@ public class raiden
 		return 0;
 	}
 	
-	WRITE_HANDLER( raiden_control_w )
+	public static WriteHandlerPtr raiden_control_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		/* All other bits unknown - could be playfield enables */
 	
@@ -130,7 +130,7 @@ public class raiden
 			flipscreen=data&0x2;
 			tilemap_set_flip(ALL_TILEMAPS,flipscreen ? (TILEMAP_FLIPY | TILEMAP_FLIPX) : 0);
 		}
-	}
+	} };
 	
 	static void draw_sprites(struct mame_bitmap *bitmap,int pri_mask)
 	{

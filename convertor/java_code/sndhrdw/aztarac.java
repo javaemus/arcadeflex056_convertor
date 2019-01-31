@@ -48,10 +48,10 @@ public class aztarac
 	    return sound_status & ~0x01;
 	} };
 	
-	WRITE_HANDLER( aztarac_snd_status_w )
+	public static WriteHandlerPtr aztarac_snd_status_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 	    sound_status &= ~0x10;
-	}
+	} };
 	
 	int aztarac_snd_timed_irq (void)
 	{

@@ -102,14 +102,14 @@ public class shaolins
 	
 	
 	
-	WRITE_HANDLER( shaolins_palettebank_w )
+	public static WriteHandlerPtr shaolins_palettebank_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		if (palettebank != (data & 7))
 		{
 			palettebank = data & 7;
 			memset(dirtybuffer,1,videoram_size);
 		}
-	}
+	} };
 	
 	
 	

@@ -250,7 +250,7 @@ public class tmnt
 		return tmnt_soundlatch;
 	} };
 	
-	WRITE_HANDLER( tmnt_sres_w )
+	public static WriteHandlerPtr tmnt_sres_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		/* bit 1 resets the UPD7795C sound chip */
 		if ((data & 0x02) == 0)
@@ -265,7 +265,7 @@ public class tmnt
 		}
 		else sample_stop(0);
 		tmnt_soundlatch = data;
-	}
+	} };
 	
 	
 	static int tmnt_decode_sample(const struct MachineSound *msound)

@@ -17,20 +17,10 @@ public class subs
 	
 	/* vidhrdw/subs.c */
 	extern void subs_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
-	WRITE_HANDLER( subs_invert1_w );
-	WRITE_HANDLER( subs_invert2_w );
 	
 	/* machine/subs.c */
 	extern void subs_init_machine(void);
 	extern int subs_interrupt(void);
-	WRITE_HANDLER( subs_steer_reset_w );
-	WRITE_HANDLER( subs_lamp1_w );
-	WRITE_HANDLER( subs_lamp2_w );
-	WRITE_HANDLER( subs_noise_reset_w );
-	WRITE_HANDLER( subs_sonar2_w );
-	WRITE_HANDLER( subs_sonar1_w );
-	WRITE_HANDLER( subs_crash_w );
-	WRITE_HANDLER( subs_explode_w );
 	
 	public static Memory_ReadAddress readmem[]={
 		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),

@@ -79,26 +79,11 @@ public class btime
 	void disco_vh_screenrefresh   (struct mame_bitmap *bitmap,int full_refresh);
 	void eggs_vh_screenrefresh    (struct mame_bitmap *bitmap,int full_refresh);
 	
-	WRITE_HANDLER( btime_paletteram_w );
-	WRITE_HANDLER( bnj_background_w );
-	WRITE_HANDLER( bnj_scroll1_w );
-	WRITE_HANDLER( bnj_scroll2_w );
-	WRITE_HANDLER( btime_mirrorvideoram_w );
-	WRITE_HANDLER( btime_mirrorcolorram_w );
-	WRITE_HANDLER( lnc_videoram_w );
-	WRITE_HANDLER( lnc_mirrorvideoram_w );
-	WRITE_HANDLER( deco_charram_w );
 	
-	WRITE_HANDLER( zoar_video_control_w );
-	WRITE_HANDLER( btime_video_control_w );
-	WRITE_HANDLER( bnj_video_control_w );
-	WRITE_HANDLER( lnc_video_control_w );
-	WRITE_HANDLER( disco_video_control_w );
 	
 	int lnc_sound_interrupt(void);
 	
 	
-	WRITE_HANDLER( mmonkey_protection_w );
 	
 	
 	INLINE int swap_bits_5_6(int data)

@@ -303,15 +303,15 @@ public class astrocde
 		}
 	}
 	
-	WRITE_HANDLER( astrocade_sound1_w )
+	public static WriteHandlerPtr astrocade_sound1_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		astrocade_sound_w(0, offset, data);
-	}
+	} };
 	
-	WRITE_HANDLER( astrocade_sound2_w )
+	public static WriteHandlerPtr astrocade_sound2_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		astrocade_sound_w(1, offset, data);
-	}
+	} };
 	
 	
 	void astrocade_sh_update(void)

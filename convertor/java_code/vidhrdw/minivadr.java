@@ -40,7 +40,7 @@ public class minivadr
 		Draw Pixel.
 	
 	*******************************************************************/
-	WRITE_HANDLER( minivadr_videoram_w )
+	public static WriteHandlerPtr minivadr_videoram_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		int i;
 		int x, y;
@@ -64,7 +64,7 @@ public class minivadr
 				plot_pixel(Machine->scrbitmap, x + (7 - i), y, color);
 			}
 		}
-	}
+	} };
 	
 	
 	void minivadr_vh_screenrefresh(struct mame_bitmap *bitmap, int full_refresh)

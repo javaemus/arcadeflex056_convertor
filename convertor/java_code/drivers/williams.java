@@ -529,14 +529,8 @@ public class williams
 	void joust2_init_machine(void);
 	
 	/* banking */
-	WRITE_HANDLER( williams_vram_select_w );
-	WRITE_HANDLER( defender_bank_select_w );
-	WRITE_HANDLER( blaster_bank_select_w );
-	WRITE_HANDLER( blaster_vram_select_w );
-	WRITE_HANDLER( williams2_bank_select_w );
 	
 	/* misc */
-	WRITE_HANDLER( williams2_7segment_w );
 	
 	/* Mayday protection */
 	extern UINT8 *mayday_protection;
@@ -569,12 +563,6 @@ public class williams
 	extern UINT8 *blaster_video_bits;
 	
 	
-	WRITE_HANDLER( defender_videoram_w );
-	WRITE_HANDLER( williams_videoram_w );
-	WRITE_HANDLER( williams2_videoram_w );
-	WRITE_HANDLER( williams_blitter_w );
-	WRITE_HANDLER( blaster_remap_select_w );
-	WRITE_HANDLER( blaster_palette_0_w );
 	
 	
 	int williams_vh_start(void);
@@ -587,8 +575,6 @@ public class williams
 	int williams2_vh_start(void);
 	void williams2_vh_stop(void);
 	
-	WRITE_HANDLER( williams2_fg_select_w );
-	WRITE_HANDLER( williams2_bg_select_w );
 	
 	
 	

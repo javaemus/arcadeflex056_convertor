@@ -19,11 +19,9 @@ public class beezer
 	extern UINT8 *beezer_ram;
 	int beezer_interrupt (void);
 	void beezer_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
-	WRITE_HANDLER( beezer_ram_w );
 	
 	/* from machine/beezer.c */
 	void init_beezer(void);
-	WRITE_HANDLER( beezer_bankswitch_w );
 	
 	public static Memory_ReadAddress readmem[]={
 		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),

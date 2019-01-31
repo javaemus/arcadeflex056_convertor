@@ -27,9 +27,6 @@ public class superqix
 	
 	int superqix_vh_start(void);
 	void superqix_vh_stop(void);
-	WRITE_HANDLER( superqix_bitmapram_w );
-	WRITE_HANDLER( superqix_bitmapram2_w );
-	WRITE_HANDLER( superqix_0410_w );
 	void superqix_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	
 	

@@ -117,21 +117,21 @@ public class blktiger
 	
 	***************************************************************************/
 	
-	WRITE_HANDLER( blktiger_txvideoram_w )
+	public static WriteHandlerPtr blktiger_txvideoram_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		if (blktiger_txvideoram[offset] != data)
 		{
 			blktiger_txvideoram[offset] = data;
 			tilemap_mark_tile_dirty(tx_tilemap,offset & 0x3ff);
 		}
-	}
+	} };
 	
 	public static ReadHandlerPtr blktiger_bgvideoram_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return scroll_ram[offset + blktiger_scroll_bank];
 	} };
 	
-	WRITE_HANDLER( blktiger_bgvideoram_w )
+	public static WriteHandlerPtr blktiger_bgvideoram_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		offset += blktiger_scroll_bank;
 	
@@ -141,15 +141,15 @@ public class blktiger
 			tilemap_mark_tile_dirty(bg_tilemap8x4,offset/2);
 			tilemap_mark_tile_dirty(bg_tilemap4x8,offset/2);
 		}
-	}
+	} };
 	
-	WRITE_HANDLER( blktiger_bgvideoram_bank_w )
+	public static WriteHandlerPtr blktiger_bgvideoram_bank_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		blktiger_scroll_bank = (data % BGRAM_BANKS) * BGRAM_BANK_SIZE;
-	}
+	} };
 	
 	
-	WRITE_HANDLER( blktiger_scrolly_w )
+	public static WriteHandlerPtr blktiger_scrolly_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		static unsigned char scroll[2];
 		int scrolly;
@@ -158,9 +158,9 @@ public class blktiger
 		scrolly = scroll[0] | (scroll[1] << 8);
 		tilemap_set_scrolly(bg_tilemap8x4,0,scrolly);
 		tilemap_set_scrolly(bg_tilemap4x8,0,scrolly);
-	}
+	} };
 	
-	WRITE_HANDLER( blktiger_scrollx_w )
+	public static WriteHandlerPtr blktiger_scrollx_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		static unsigned char scroll[2];
 		int scrollx;
@@ -169,10 +169,10 @@ public class blktiger
 		scrollx = scroll[0] | (scroll[1] << 8);
 		tilemap_set_scrollx(bg_tilemap8x4,0,scrollx);
 		tilemap_set_scrollx(bg_tilemap4x8,0,scrollx);
-	}
+	} };
 	
 	
-	WRITE_HANDLER( blktiger_video_control_w )
+	public static WriteHandlerPtr blktiger_video_control_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		/* bits 0 and 1 are coin counters */
 		coin_counter_w(0,data & 1);
@@ -186,9 +186,9 @@ public class blktiger
 	
 		/* bit 7 enables characters? Just a guess */
 		chon = ~data & 0x80;
-	}
+	} };
 	
-	WRITE_HANDLER( blktiger_video_enable_w )
+	public static WriteHandlerPtr blktiger_video_enable_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		/* not sure which is which, but I think that bit 1 and 2 enable background and sprites */
 		/* bit 1 enables bg ? */
@@ -196,14 +196,14 @@ public class blktiger
 	
 		/* bit 2 enables sprites ? */
 		objon = ~data & 0x04;
-	}
+	} };
 	
-	WRITE_HANDLER( blktiger_screen_layout_w )
+	public static WriteHandlerPtr blktiger_screen_layout_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		screen_layout = data;
 		tilemap_set_enable(bg_tilemap8x4, screen_layout);
 		tilemap_set_enable(bg_tilemap4x8,!screen_layout);
-	}
+	} };
 	
 	
 	

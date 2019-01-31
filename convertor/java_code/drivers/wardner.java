@@ -137,9 +137,6 @@ public class wardner
 	
 	/******************** Machine stuff **********************/
 	void wardner_reset(void);
-	WRITE_HANDLER( wardner_mainram_w );
-	WRITE_HANDLER( wardner_control_w );
-	WRITE_HANDLER( wardner_coin_dsp_w );
 	READ16_HANDLER( twincobr_dsp_r );
 	WRITE16_HANDLER( twincobr_dsp_w );
 	
@@ -153,15 +150,7 @@ public class wardner
 	
 	
 	/******************** Video stuff **********************/
-	WRITE_HANDLER( wardner_videoram_w );
 	READ_HANDLER ( wardner_videoram_r );
-	WRITE_HANDLER( wardner_bglayer_w );
-	WRITE_HANDLER( wardner_fglayer_w );
-	WRITE_HANDLER( wardner_txlayer_w );
-	WRITE_HANDLER( wardner_bgscroll_w );
-	WRITE_HANDLER( wardner_fgscroll_w );
-	WRITE_HANDLER( wardner_txscroll_w );
-	WRITE_HANDLER( wardner_exscroll_w );
 	
 	int  toaplan0_vh_start(void);
 	void toaplan0_vh_stop(void);

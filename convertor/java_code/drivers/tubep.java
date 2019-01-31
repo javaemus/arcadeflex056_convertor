@@ -128,8 +128,7 @@ public class tubep
 	void tubep_vh_stop(void);
 	
 	extern data8_t *tubep_textram;
-	extern WRITE_HANDLER( tubep_textram_w );
-	
+	extern 
 	static data8_t *sharedram;
 	static void *scanline_timer;
 	static int sound_latch;

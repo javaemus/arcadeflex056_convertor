@@ -781,7 +781,7 @@ public class avgdvg
 		busy = 0;
 	}
 	
-	WRITE_HANDLER( avgdvg_go_w )
+	public static WriteHandlerPtr avgdvg_go_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		if (busy)
 			return;
@@ -807,17 +807,17 @@ public class avgdvg
 				busy = 0;
 			}
 		}
-	}
+	} };
 	
 	WRITE16_HANDLER( avgdvg_go_word_w )
 	{
 		avgdvg_go_w(offset, data);
 	}
 	
-	WRITE_HANDLER( avgdvg_reset_w )
+	public static WriteHandlerPtr avgdvg_reset_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		avgdvg_clr_busy(0);
-	}
+	} };
 	
 	WRITE16_HANDLER( avgdvg_reset_word_w )
 	{
@@ -959,7 +959,7 @@ public class avgdvg
 	 * We need translation tables.
 	 */
 	
-	WRITE_HANDLER( tempest_colorram_w )
+	public static WriteHandlerPtr tempest_colorram_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 	#if 0 /* with low intensity bit */
 		static const int trans[]= { 7, 15, 3, 11, 6, 14, 2, 10, 5, 13, 1,  9, 4, 12, 0,  8 };
@@ -967,9 +967,9 @@ public class avgdvg
 		static const int trans[]= { 7,  7, 3,  3, 6,  6, 2,  2, 5,  5, 1,  1, 4,  4, 0,  0 };
 	#endif
 		colorram_w (offset, trans[data & 0x0f]);
-	}
+	} };
 	
-	WRITE_HANDLER( mhavoc_colorram_w )
+	public static WriteHandlerPtr mhavoc_colorram_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 	#if 0 /* with low intensity bit */
 		static const int trans[]= { 7, 6, 5, 4, 15, 14, 13, 12, 3, 2, 1, 0, 11, 10, 9, 8 };
@@ -978,7 +978,7 @@ public class avgdvg
 	#endif
 		logerror("colorram: %02x: %02x\n", offset, data);
 		colorram_w (offset , trans[data & 0x0f]);
-	}
+	} };
 	
 	
 	WRITE16_HANDLER( quantum_colorram_w )

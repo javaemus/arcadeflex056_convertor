@@ -25,17 +25,6 @@ public class bking2
 	
 	void bking2_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom);
 	void bking2_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
-	WRITE_HANDLER( bking2_xld1_w );
-	WRITE_HANDLER( bking2_yld1_w );
-	WRITE_HANDLER( bking2_xld2_w );
-	WRITE_HANDLER( bking2_yld2_w );
-	WRITE_HANDLER( bking2_xld3_w );
-	WRITE_HANDLER( bking2_yld3_w );
-	WRITE_HANDLER( bking2_msk_w );
-	WRITE_HANDLER( bking2_cont1_w );
-	WRITE_HANDLER( bking2_cont2_w );
-	WRITE_HANDLER( bking2_cont3_w );
-	WRITE_HANDLER( bking2_hitclr_w );
 	
 	
 	static int sndnmi_enable = 1;

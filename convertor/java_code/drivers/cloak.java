@@ -100,9 +100,6 @@ public class cloak
 	
 	static unsigned char *enable_nvRAM;
 	static unsigned char *cloak_sharedram;
-	WRITE_HANDLER( cloak_paletteram_w );
-	WRITE_HANDLER( graph_processor_w );
-	WRITE_HANDLER( cloak_clearbmp_w );
 	extern int  cloak_vh_start(void);
 	extern void cloak_vh_stop(void);
 	extern void cloak_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);

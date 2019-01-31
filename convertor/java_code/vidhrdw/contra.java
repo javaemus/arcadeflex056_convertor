@@ -181,60 +181,60 @@ public class contra
 	
 	***************************************************************************/
 	
-	WRITE_HANDLER( contra_fg_vram_w )
+	public static WriteHandlerPtr contra_fg_vram_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		if (contra_fg_vram[offset] != data)
 		{
 			tilemap_mark_tile_dirty(fg_tilemap,offset);
 			contra_fg_vram[offset] = data;
 		}
-	}
+	} };
 	
-	WRITE_HANDLER( contra_fg_cram_w ){
+	public static WriteHandlerPtr contra_fg_cram_w = new WriteHandlerPtr() {public void handler(int offset, int data){
 		if (contra_fg_cram[offset] != data)
 		{
 			tilemap_mark_tile_dirty(fg_tilemap,offset);
 			contra_fg_cram[offset] = data;
 		}
-	}
+	} };
 	
-	WRITE_HANDLER( contra_bg_vram_w )
+	public static WriteHandlerPtr contra_bg_vram_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		if (contra_bg_vram[offset] != data)
 		{
 			tilemap_mark_tile_dirty(bg_tilemap,offset);
 			contra_bg_vram[offset] = data;
 		}
-	}
+	} };
 	
-	WRITE_HANDLER( contra_bg_cram_w )
+	public static WriteHandlerPtr contra_bg_cram_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		if (contra_bg_cram[offset] != data)
 		{
 			tilemap_mark_tile_dirty(bg_tilemap,offset);
 			contra_bg_cram[offset] = data;
 		}
-	}
+	} };
 	
-	WRITE_HANDLER( contra_text_vram_w )
+	public static WriteHandlerPtr contra_text_vram_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		if (contra_text_vram[offset] != data)
 		{
 			tilemap_mark_tile_dirty(tx_tilemap,offset);
 			contra_text_vram[offset] = data;
 		}
-	}
+	} };
 	
-	WRITE_HANDLER( contra_text_cram_w )
+	public static WriteHandlerPtr contra_text_cram_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		if (contra_text_cram[offset] != data)
 		{
 			tilemap_mark_tile_dirty(tx_tilemap,offset);
 			contra_text_cram[offset] = data;
 		}
-	}
+	} };
 	
-	WRITE_HANDLER( contra_K007121_ctrl_0_w )
+	public static WriteHandlerPtr contra_K007121_ctrl_0_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		if (offset == 3)
 		{
@@ -252,9 +252,9 @@ public class contra
 			tilemap_set_flip(fg_tilemap,(data & 0x08) ? (TILEMAP_FLIPY | TILEMAP_FLIPX) : 0);
 	
 		K007121_ctrl_0_w(offset,data);
-	}
+	} };
 	
-	WRITE_HANDLER( contra_K007121_ctrl_1_w )
+	public static WriteHandlerPtr contra_K007121_ctrl_1_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		if (offset == 3)
 		{
@@ -272,7 +272,7 @@ public class contra
 			tilemap_set_flip(bg_tilemap,(data & 0x08) ? (TILEMAP_FLIPY | TILEMAP_FLIPX) : 0);
 	
 		K007121_ctrl_1_w(offset,data);
-	}
+	} };
 	
 	
 	

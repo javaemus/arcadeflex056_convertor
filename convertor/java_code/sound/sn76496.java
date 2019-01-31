@@ -141,10 +141,10 @@ public class sn76496
 	}
 	
 	
-	WRITE_HANDLER( SN76496_0_w ) {	SN76496Write(0,data); }
-	WRITE_HANDLER( SN76496_1_w ) {	SN76496Write(1,data); }
-	WRITE_HANDLER( SN76496_2_w ) {	SN76496Write(2,data); }
-	WRITE_HANDLER( SN76496_3_w ) {	SN76496Write(3,data); }
+	public static WriteHandlerPtr SN76496_0_w = new WriteHandlerPtr() {public void handler(int offset, int data) {	SN76496Write(0,data); } };
+	public static WriteHandlerPtr SN76496_1_w = new WriteHandlerPtr() {public void handler(int offset, int data) {	SN76496Write(1,data); } };
+	public static WriteHandlerPtr SN76496_2_w = new WriteHandlerPtr() {public void handler(int offset, int data) {	SN76496Write(2,data); } };
+	public static WriteHandlerPtr SN76496_3_w = new WriteHandlerPtr() {public void handler(int offset, int data) {	SN76496Write(3,data); } };
 	
 	
 	

@@ -26,12 +26,12 @@ public class lsasquad
 		else pending_nmi = 1;
 	}
 	
-	WRITE_HANDLER( lsasquad_sh_nmi_disable_w )
+	public static WriteHandlerPtr lsasquad_sh_nmi_disable_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		sound_nmi_enable = 0;
-	}
+	} };
 	
-	WRITE_HANDLER( lsasquad_sh_nmi_enable_w )
+	public static WriteHandlerPtr lsasquad_sh_nmi_enable_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		sound_nmi_enable = 1;
 		if (pending_nmi)
@@ -39,15 +39,15 @@ public class lsasquad
 			cpu_cause_interrupt(1,Z80_NMI_INT);
 			pending_nmi = 0;
 		}
-	}
+	} };
 	
-	WRITE_HANDLER( lsasquad_sound_command_w )
+	public static WriteHandlerPtr lsasquad_sound_command_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		sound_pending |= 0x01;
 		sound_cmd = data;
 	//logerror("%04x: sound cmd %02x\n",cpu_get_pc(),data);
 		timer_set(TIME_NOW,data,nmi_callback);
-	}
+	} };
 	
 	public static ReadHandlerPtr lsasquad_sh_sound_command_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
@@ -56,12 +56,12 @@ public class lsasquad
 		return sound_cmd;
 	} };
 	
-	WRITE_HANDLER( lsasquad_sh_result_w )
+	public static WriteHandlerPtr lsasquad_sh_result_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		sound_pending |= 0x02;
 	//logerror("%04x: sound res %02x\n",cpu_get_pc(),data);
 		sound_result = data;
-	}
+	} };
 	
 	public static ReadHandlerPtr lsasquad_sound_result_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
@@ -98,16 +98,16 @@ public class lsasquad
 		return (portA_out & ddrA) | (portA_in & ~ddrA);
 	} };
 	
-	WRITE_HANDLER( lsasquad_68705_portA_w )
+	public static WriteHandlerPtr lsasquad_68705_portA_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 	//logerror("%04x: 68705 port A write %02x\n",cpu_get_pc(),data);
 		portA_out = data;
-	}
+	} };
 	
-	WRITE_HANDLER( lsasquad_68705_ddrA_w )
+	public static WriteHandlerPtr lsasquad_68705_ddrA_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		ddrA = data;
-	}
+	} };
 	
 	
 	
@@ -127,7 +127,7 @@ public class lsasquad
 		return (portB_out & ddrB) | (portB_in & ~ddrB);
 	} };
 	
-	WRITE_HANDLER( lsasquad_68705_portB_w )
+	public static WriteHandlerPtr lsasquad_68705_portB_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 	//logerror("%04x: 68705 port B write %02x\n",cpu_get_pc(),data);
 	
@@ -146,20 +146,20 @@ public class lsasquad
 		}
 	
 		portB_out = data;
-	}
+	} };
 	
-	WRITE_HANDLER( lsasquad_68705_ddrB_w )
+	public static WriteHandlerPtr lsasquad_68705_ddrB_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		ddrB = data;
-	}
+	} };
 	
-	WRITE_HANDLER( lsasquad_mcu_w )
+	public static WriteHandlerPtr lsasquad_mcu_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 	//logerror("%04x: mcu_w %02x\n",cpu_get_pc(),data);
 		from_main = data;
 		main_sent = 1;
 		cpu_set_irq_line(2,0,ASSERT_LINE);
-	}
+	} };
 	
 	public static ReadHandlerPtr lsasquad_mcu_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{

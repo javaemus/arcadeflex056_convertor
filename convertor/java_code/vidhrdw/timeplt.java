@@ -154,28 +154,28 @@ public class timeplt
 	
 	***************************************************************************/
 	
-	WRITE_HANDLER( timeplt_videoram_w )
+	public static WriteHandlerPtr timeplt_videoram_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		if (timeplt_videoram[offset] != data)
 		{
 			timeplt_videoram[offset] = data;
 			tilemap_mark_tile_dirty(bg_tilemap,offset);
 		}
-	}
+	} };
 	
-	WRITE_HANDLER( timeplt_colorram_w )
+	public static WriteHandlerPtr timeplt_colorram_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		if (timeplt_colorram[offset] != data)
 		{
 			timeplt_colorram[offset] = data;
 			tilemap_mark_tile_dirty(bg_tilemap,offset);
 		}
-	}
+	} };
 	
-	WRITE_HANDLER( timeplt_flipscreen_w )
+	public static WriteHandlerPtr timeplt_flipscreen_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		flip_screen_set(~data & 1);
-	}
+	} };
 	
 	/* Return the current video scan line */
 	public static ReadHandlerPtr timeplt_scanline_r  = new ReadHandlerPtr() { public int handler(int offset)

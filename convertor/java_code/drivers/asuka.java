@@ -105,9 +105,6 @@ public class asuka
 	void asuka_vh_screenrefresh (struct mame_bitmap *bitmap,int full_refresh);
 	void asuka_vh_stop(void);
 	
-	WRITE_HANDLER( rastan_adpcm_trigger_w );
-	WRITE_HANDLER( rastan_c000_w );
-	WRITE_HANDLER( rastan_d000_w );
 	
 	WRITE16_HANDLER( bonzeadv_c_chip_w );
 	READ16_HANDLER( bonzeadv_c_chip_r );

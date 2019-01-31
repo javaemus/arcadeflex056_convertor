@@ -29,7 +29,6 @@ public class kingobox
 	extern unsigned char *kingobox_colorram1;
 	extern size_t kingobox_videoram1_size;
 	extern unsigned char *kingobox_scroll_y;
-	WRITE_HANDLER( kingofb_f800_w );
 	void kingobox_vh_convert_color_prom(unsigned char *palette,unsigned short *colortable,const unsigned char *color_prom);
 	void ringking_vh_convert_color_prom(unsigned char *palette,unsigned short *colortable,const unsigned char *color_prom);
 	void kingobox_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);

@@ -68,9 +68,6 @@ public class cadash
 	int cadash_vh_start(void);
 	void cadash_vh_stop(void);
 	
-	WRITE_HANDLER( rastan_adpcm_trigger_w );
-	WRITE_HANDLER( rastan_c000_w );
-	WRITE_HANDLER( rastan_d000_w );
 	
 	
 	/***********************************************************

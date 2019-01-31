@@ -39,11 +39,11 @@ public class atetris
 	 *
 	 *************************************/
 	
-	WRITE_HANDLER( atetris_videoram_w )
+	public static WriteHandlerPtr atetris_videoram_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		videoram[offset] = data;
 		tilemap_mark_tile_dirty(tilemap, offset / 2);
-	}
+	} };
 	
 	
 	

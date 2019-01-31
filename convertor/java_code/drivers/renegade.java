@@ -111,11 +111,6 @@ public class renegade
 	
 	extern void renegade_vh_screenrefresh(struct mame_bitmap *bitmap, int fullrefresh);
 	extern int renegade_vh_start( void );
-	WRITE_HANDLER( renegade_scroll0_w );
-	WRITE_HANDLER( renegade_scroll1_w );
-	WRITE_HANDLER( renegade_videoram_w );
-	WRITE_HANDLER( renegade_textram_w );
-	WRITE_HANDLER( renegade_flipscreen_w );
 	
 	extern unsigned char *renegade_textram;
 	

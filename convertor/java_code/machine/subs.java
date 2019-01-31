@@ -111,11 +111,11 @@ public class subs
 	/***************************************************************************
 	subs_steer_reset
 	***************************************************************************/
-	WRITE_HANDLER( subs_steer_reset_w )
+	public static WriteHandlerPtr subs_steer_reset_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 	    subs_steering_val1 = 0x00;
 	    subs_steering_val2 = 0x00;
-	}
+	} };
 	
 	/***************************************************************************
 	subs_control_r
@@ -182,41 +182,41 @@ public class subs
 	/***************************************************************************
 	subs_lamp1_w
 	***************************************************************************/
-	WRITE_HANDLER( subs_lamp1_w )
+	public static WriteHandlerPtr subs_lamp1_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		set_led_status(0,~offset & 1);
-	}
+	} };
 	
 	/***************************************************************************
 	subs_lamp2_w
 	***************************************************************************/
-	WRITE_HANDLER( subs_lamp2_w )
+	public static WriteHandlerPtr subs_lamp2_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		set_led_status(1,~offset & 1);
-	}
+	} };
 	
 	/***************************************************************************
 	TODO: sub sound functions
 	***************************************************************************/
 	
-	WRITE_HANDLER( subs_sonar2_w )
+	public static WriteHandlerPtr subs_sonar2_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
-	}
+	} };
 	
-	WRITE_HANDLER( subs_sonar1_w )
+	public static WriteHandlerPtr subs_sonar1_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
-	}
+	} };
 	
-	WRITE_HANDLER( subs_crash_w )
+	public static WriteHandlerPtr subs_crash_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
-	}
+	} };
 	
-	WRITE_HANDLER( subs_explode_w )
+	public static WriteHandlerPtr subs_explode_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
-	}
+	} };
 	
-	WRITE_HANDLER( subs_noise_reset_w )
+	public static WriteHandlerPtr subs_noise_reset_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
-	}
+	} };
 	
 }

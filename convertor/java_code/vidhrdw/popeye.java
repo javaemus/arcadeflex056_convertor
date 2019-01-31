@@ -173,7 +173,7 @@ public class popeye
 	
 	
 	
-	WRITE_HANDLER( popeye_bitmap_w )
+	public static WriteHandlerPtr popeye_bitmap_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		int sx,sy,x,y,colour;
 	
@@ -188,16 +188,16 @@ public class popeye
 				plot_pixel(tmpbitmap2, sx+x, sy+y, colour);
 			}
 		}
-	}
+	} };
 	
-	WRITE_HANDLER( popeyebl_bitmap_w )
+	public static WriteHandlerPtr popeyebl_bitmap_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		offset = ((offset & 0xfc0) << 1) | (offset & 0x03f);
 		if (data & 0x80)
 			offset |= 0x40;
 	
 		popeye_bitmap_w(offset,data);
-	}
+	} };
 	
 	
 	/***************************************************************************

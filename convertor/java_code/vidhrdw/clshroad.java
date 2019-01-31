@@ -48,15 +48,12 @@ public class clshroad
 	data8_t *clshroad_vram_0, *clshroad_vram_1;
 	data8_t *clshroad_vregs;
 	
-	WRITE_HANDLER( clshroad_vram_0_w );
-	WRITE_HANDLER( clshroad_vram_1_w );
-	WRITE_HANDLER( clshroad_flipscreen_w );
 	
 	
-	WRITE_HANDLER( clshroad_flipscreen_w )
+	public static WriteHandlerPtr clshroad_flipscreen_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		flip_screen_set( data & 1 );
-	}
+	} };
 	
 	
 	void firebatl_vh_convert_color_prom(unsigned char *obsolete,unsigned short *colortable,const unsigned char *color_prom)
@@ -151,7 +148,7 @@ public class clshroad
 				0)
 	}
 	
-	WRITE_HANDLER( clshroad_vram_0_w )
+	public static WriteHandlerPtr clshroad_vram_0_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		if (clshroad_vram_0[offset] != data)
 		{
@@ -161,7 +158,7 @@ public class clshroad
 			if (tile_index & 0x20)	tilemap_mark_tile_dirty(tilemap_0a, tile);
 			else					tilemap_mark_tile_dirty(tilemap_0b, tile);
 		}
-	}
+	} };
 	
 	/***************************************************************************
 	
@@ -220,14 +217,14 @@ public class clshroad
 				0)
 	}
 	
-	WRITE_HANDLER( clshroad_vram_1_w )
+	public static WriteHandlerPtr clshroad_vram_1_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		if (clshroad_vram_1[offset] != data)
 		{
 			clshroad_vram_1[offset] = data;
 			tilemap_mark_tile_dirty(tilemap_1, offset % 0x400);
 		}
-	}
+	} };
 	
 	
 	int firebatl_vh_start(void)

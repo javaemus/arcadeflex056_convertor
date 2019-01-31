@@ -30,18 +30,18 @@ public class bublbobl
 	{
 		return bublbobl_sharedram2[offset];
 	} };
-	WRITE_HANDLER( bublbobl_sharedram1_w )
+	public static WriteHandlerPtr bublbobl_sharedram1_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		bublbobl_sharedram1[offset] = data;
-	}
-	WRITE_HANDLER( bublbobl_sharedram2_w )
+	} };
+	public static WriteHandlerPtr bublbobl_sharedram2_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		bublbobl_sharedram2[offset] = data;
-	}
+	} };
 	
 	
 	
-	WRITE_HANDLER( bublbobl_bankswitch_w )
+	public static WriteHandlerPtr bublbobl_bankswitch_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		unsigned char *ROM = memory_region(REGION_CPU1);
 	
@@ -59,9 +59,9 @@ public class bublbobl
 	
 		/* bit 7 flips screen */
 		flip_screen_set(data & 0x80);
-	}
+	} };
 	
-	WRITE_HANDLER( tokio_bankswitch_w )
+	public static WriteHandlerPtr tokio_bankswitch_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		unsigned char *ROM = memory_region(REGION_CPU1);
 	
@@ -69,20 +69,20 @@ public class bublbobl
 		cpu_setbank(1,&ROM[0x10000 + 0x4000 * (data & 7)]);
 	
 		/* bits 3-7 unknown */
-	}
+	} };
 	
-	WRITE_HANDLER( tokio_videoctrl_w )
+	public static WriteHandlerPtr tokio_videoctrl_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		/* bit 7 flips screen */
 		flip_screen_set(data & 0x80);
 	
 		/* other bits unknown */
-	}
+	} };
 	
-	WRITE_HANDLER( bublbobl_nmitrigger_w )
+	public static WriteHandlerPtr bublbobl_nmitrigger_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		cpu_cause_interrupt(1,Z80_NMI_INT);
-	}
+	} };
 	
 	public static ReadHandlerPtr tokio_fake_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
@@ -99,18 +99,18 @@ public class bublbobl
 		else pending_nmi = 1;
 	}
 	
-	WRITE_HANDLER( bublbobl_sound_command_w )
+	public static WriteHandlerPtr bublbobl_sound_command_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		soundlatch_w(offset,data);
 		timer_set(TIME_NOW,data,nmi_callback);
-	}
+	} };
 	
-	WRITE_HANDLER( bublbobl_sh_nmi_disable_w )
+	public static WriteHandlerPtr bublbobl_sh_nmi_disable_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		sound_nmi_enable = 0;
-	}
+	} };
 	
-	WRITE_HANDLER( bublbobl_sh_nmi_enable_w )
+	public static WriteHandlerPtr bublbobl_sh_nmi_enable_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		sound_nmi_enable = 1;
 		if (pending_nmi)
@@ -118,7 +118,7 @@ public class bublbobl
 			cpu_cause_interrupt(2,Z80_NMI_INT);
 			pending_nmi = 0;
 		}
-	}
+	} };
 	
 	
 	
@@ -150,16 +150,16 @@ public class bublbobl
 		return (portA_out & ddrA) | (portA_in & ~ddrA);
 	} };
 	
-	WRITE_HANDLER( bublbobl_68705_portA_w )
+	public static WriteHandlerPtr bublbobl_68705_portA_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 	//logerror("%04x: 68705 port A write %02x\n",cpu_get_pc(),data);
 		portA_out = data;
-	}
+	} };
 	
-	WRITE_HANDLER( bublbobl_68705_ddrA_w )
+	public static WriteHandlerPtr bublbobl_68705_ddrA_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		ddrA = data;
-	}
+	} };
 	
 	
 	
@@ -191,7 +191,7 @@ public class bublbobl
 	
 	static int address,latch;
 	
-	WRITE_HANDLER( bublbobl_68705_portB_w )
+	public static WriteHandlerPtr bublbobl_68705_portB_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 	//logerror("%04x: 68705 port B write %02x\n",cpu_get_pc(),data);
 	
@@ -254,10 +254,10 @@ public class bublbobl
 		}
 	
 		portB_out = data;
-	}
+	} };
 	
-	WRITE_HANDLER( bublbobl_68705_ddrB_w )
+	public static WriteHandlerPtr bublbobl_68705_ddrB_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		ddrB = data;
-	}
+	} };
 }

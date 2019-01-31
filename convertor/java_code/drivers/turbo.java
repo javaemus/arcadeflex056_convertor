@@ -146,8 +146,6 @@ public class turbo
 	
 	/* from machine */
 	void turbo_init_machine(void);
-	WRITE_HANDLER( turbo_8279_w );
-	WRITE_HANDLER( turbo_coin_and_lamp_w );
 	
 	/* from vidhrdw */
 	extern UINT8 *turbo_sprite_position;
@@ -157,7 +155,6 @@ public class turbo
 	void turbo_vh_convert_color_prom(UINT8 *palette, UINT16 *colortable, const UINT8 *color_prom);
 	void turbo_vh_eof(void);
 	void turbo_vh_screenrefresh(struct mame_bitmap *bitmap, int full_refresh);
-	WRITE_HANDLER( turbo_collision_clear_w );
 	
 	
 	/*********************************************************************

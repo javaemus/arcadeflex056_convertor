@@ -28,15 +28,8 @@ extern const struct Memory_WriteAddress seibu_sound_writemem[];
 
 READ16_HANDLER( seibu_main_word_r );
 WRITE16_HANDLER( seibu_main_word_w );
-WRITE_HANDLER( seibu_main_v30_w );
 
-WRITE_HANDLER( seibu_irq_clear_w );
-WRITE_HANDLER( seibu_rst10_ack_w );
-WRITE_HANDLER( seibu_rst18_ack_w );
-WRITE_HANDLER( seibu_bank_w );
-WRITE_HANDLER( seibu_coin_w );
 void seibu_ym3812_irqhandler(int linestate);
-WRITE_HANDLER( seibu_main_data_w );
 void seibu_sound_init_1(void);
 void seibu_sound_init_2(void);
 void seibu_sound_decrypt(int cpu_region,int length);

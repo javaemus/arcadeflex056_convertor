@@ -673,10 +673,10 @@ public class galaxian
 	}
 	
 	
-	WRITE_HANDLER( galaxian_videoram_w )
+	public static WriteHandlerPtr galaxian_videoram_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		galaxian_videoram[offset] = data;
-	}
+	} };
 	
 	public static ReadHandlerPtr galaxian_videoram_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
@@ -684,50 +684,50 @@ public class galaxian
 	} };
 	
 	
-	WRITE_HANDLER( galaxian_flip_screen_x_w )
+	public static WriteHandlerPtr galaxian_flip_screen_x_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		flip_screen_x_set(data);
-	}
+	} };
 	
-	WRITE_HANDLER( galaxian_flip_screen_y_w )
+	public static WriteHandlerPtr galaxian_flip_screen_y_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		flip_screen_y_set(data);
-	}
+	} };
 	
 	
-	WRITE_HANDLER( gteikob2_flip_screen_x_w )
+	public static WriteHandlerPtr gteikob2_flip_screen_x_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		flip_screen_x_set(~data & 0x01);
-	}
+	} };
 	
-	WRITE_HANDLER( gteikob2_flip_screen_y_w )
+	public static WriteHandlerPtr gteikob2_flip_screen_y_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		flip_screen_y_set(~data & 0x01);
-	}
+	} };
 	
 	
-	WRITE_HANDLER( scramble_background_enable_w )
+	public static WriteHandlerPtr scramble_background_enable_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		background_enable = data & 0x01;
-	}
+	} };
 	
-	WRITE_HANDLER( scramble_background_red_w )
+	public static WriteHandlerPtr scramble_background_red_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		background_red = data & 0x01;
-	}
+	} };
 	
-	WRITE_HANDLER( scramble_background_green_w )
+	public static WriteHandlerPtr scramble_background_green_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		background_green = data & 0x01;
-	}
+	} };
 	
-	WRITE_HANDLER( scramble_background_blue_w )
+	public static WriteHandlerPtr scramble_background_blue_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		background_blue = data & 0x01;
-	}
+	} };
 	
 	
-	WRITE_HANDLER( galaxian_stars_enable_w )
+	public static WriteHandlerPtr galaxian_stars_enable_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		galaxian_stars_on = data & 0x01;
 	
@@ -735,24 +735,24 @@ public class galaxian
 		{
 			stars_scrollpos = 0;
 		}
-	}
+	} };
 	
 	
-	WRITE_HANDLER( darkplnt_bullet_color_w )
+	public static WriteHandlerPtr darkplnt_bullet_color_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		darkplnt_bullet_color = data & 0x01;
-	}
+	} };
 	
 	
-	WRITE_HANDLER( mooncrst_gfxextend_w )
+	public static WriteHandlerPtr mooncrst_gfxextend_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		if (data)
 			mooncrst_gfxextend |= (1 << offset);
 		else
 			mooncrst_gfxextend &= ~(1 << offset);
-	}
+	} };
 	
-	WRITE_HANDLER( mooncrgx_gfxextend_w )
+	public static WriteHandlerPtr mooncrgx_gfxextend_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		/* for the Moon Cresta bootleg on Galaxian H/W the gfx_extend is
 		 located at 0x6000-0x6002.  Also, 0x6000 and 0x6001 are reversed. */
@@ -761,17 +761,17 @@ public class galaxian
 		else if(offset == 0)
 			offset = 1;
 		mooncrst_gfxextend_w(offset, data);
-	}
+	} };
 	
-	WRITE_HANDLER( pisces_gfxbank_w )
+	public static WriteHandlerPtr pisces_gfxbank_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		set_vh_global_attribute( &pisces_gfxbank, data & 0x01 );
-	}
+	} };
 	
-	WRITE_HANDLER( jumpbug_gfxbank_w )
+	public static WriteHandlerPtr jumpbug_gfxbank_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		set_vh_global_attribute( &jumpbug_gfxbank[offset], data & 0x01 );
-	}
+	} };
 	
 	
 	/* character banking functions */

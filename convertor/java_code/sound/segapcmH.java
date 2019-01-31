@@ -71,7 +71,6 @@ void SEGAPCM_sh_update( void );
 int SEGAPCMInit( const struct MachineSound *msound, int banksize, int mode, unsigned char *inpcm, int volume );
 void SEGAPCMShutdown( void );
 void SEGAPCMResetChip( void );
-WRITE_HANDLER( SegaPCM_w );
 
 /************************************************/
 #endif

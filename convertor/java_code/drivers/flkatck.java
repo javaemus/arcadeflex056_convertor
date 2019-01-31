@@ -22,8 +22,6 @@ public class flkatck
 	/* from vidhrdw/flkatck.c */
 	int flkatck_vh_start(void);
 	void flkatck_vh_screenrefresh(struct mame_bitmap *bitmap,int fullrefresh);
-	WRITE_HANDLER( flkatck_k007121_w );
-	WRITE_HANDLER( flkatck_k007121_regs_w );
 	
 	extern unsigned char *k007121_ram;
 	extern int flkatck_irq_enabled;

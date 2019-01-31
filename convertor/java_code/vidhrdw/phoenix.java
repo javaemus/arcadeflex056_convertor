@@ -17,7 +17,6 @@ public class phoenix
 	
 	
 	/* in sndhrdw/pleiads.c */
-	WRITE_HANDLER( pleiads_sound_control_c_w );
 	
 	static unsigned char *videoram_pg1;
 	static unsigned char *videoram_pg2;
@@ -217,7 +216,7 @@ public class phoenix
 		return current_videoram_pg[offset];
 	} };
 	
-	WRITE_HANDLER( phoenix_videoram_w )
+	public static WriteHandlerPtr phoenix_videoram_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		unsigned char *rom = memory_region(REGION_CPU1);
 	
@@ -233,10 +232,10 @@ public class phoenix
 	
 		/* as part of the protecion, Survival executes code from $43a4 */
 		rom[offset + 0x4000] = data;
-	}
+	} };
 	
 	
-	WRITE_HANDLER( phoenix_videoreg_w )
+	public static WriteHandlerPtr phoenix_videoreg_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 	    if (current_videoram_pg_index != (data & 1))
 		{
@@ -257,9 +256,9 @@ public class phoenix
 	
 			tilemap_mark_all_tiles_dirty(ALL_TILEMAPS);
 		}
-	}
+	} };
 	
-	WRITE_HANDLER( pleiads_videoreg_w )
+	public static WriteHandlerPtr pleiads_videoreg_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 	    if (current_videoram_pg_index != (data & 1))
 		{
@@ -291,13 +290,13 @@ public class phoenix
 	
 		/* send two bits to sound control C (not sure if they are there) */
 		pleiads_sound_control_c_w(offset, data);
-	}
+	} };
 	
 	
-	WRITE_HANDLER( phoenix_scroll_w )
+	public static WriteHandlerPtr phoenix_scroll_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		tilemap_set_scrollx(bg_tilemap,0,data);
-	}
+	} };
 	
 	
 	public static ReadHandlerPtr phoenix_input_port_0_r  = new ReadHandlerPtr() { public int handler(int offset)

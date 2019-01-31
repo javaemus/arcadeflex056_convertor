@@ -16,11 +16,11 @@ public class jack
 {
 	
 	
-	WRITE_HANDLER( jack_paletteram_w )
+	public static WriteHandlerPtr jack_paletteram_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		/* RGB output is inverted */
 		paletteram_BBGGGRRR_w(offset,~data);
-	}
+	} };
 	
 	
 	public static ReadHandlerPtr jack_flipscreen_r  = new ReadHandlerPtr() { public int handler(int offset)
@@ -29,10 +29,10 @@ public class jack
 		return 0;
 	} };
 	
-	WRITE_HANDLER( jack_flipscreen_w )
+	public static WriteHandlerPtr jack_flipscreen_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		flip_screen_set(offset);
-	}
+	} };
 	
 	
 	void jack_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)

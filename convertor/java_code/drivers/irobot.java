@@ -76,16 +76,10 @@ public class irobot
 	extern void irobot_vh_stop(void);
 	extern void irobot_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom);
 	extern void irobot_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
-	WRITE_HANDLER( irobot_paletteram_w );
 	
 	void init_irobot(void);	/* convert mathbox ROMs */
 	void irobot_init_machine (void);
 	
-	WRITE_HANDLER( irobot_statwr_w );
-	WRITE_HANDLER( irobot_out0_w );
-	WRITE_HANDLER( irobot_rom_banksel_w );
-	WRITE_HANDLER( irobot_control_w );
-	WRITE_HANDLER( irobot_sharedmem_w );
 	
 	
 	
@@ -105,10 +99,10 @@ public class irobot
 		}
 	}
 	
-	WRITE_HANDLER( irobot_nvram_w )
+	public static WriteHandlerPtr irobot_nvram_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		nvram[offset] = data & 0x0f;
-	}
+	} };
 	
 	
 	public static WriteHandlerPtr irobot_clearirq_w = new WriteHandlerPtr() {public void handler(int offset, int data)

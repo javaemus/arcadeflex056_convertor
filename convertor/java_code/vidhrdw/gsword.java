@@ -145,16 +145,16 @@ public class gsword
 		bitmap_free(bitmap_bg);
 	}
 	
-	WRITE_HANDLER( gs_charbank_w )
+	public static WriteHandlerPtr gs_charbank_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		if (charbank != data)
 		{
 			charbank = data;
 			memset(dirtybuffer,1,gs_videoram_size);
 		}
-	}
+	} };
 	
-	WRITE_HANDLER( gs_videoctrl_w )
+	public static WriteHandlerPtr gs_videoctrl_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		if (data & 0x8f)
 		{
@@ -178,16 +178,16 @@ public class gsword
 		/* bit 0 could be used but unknown */
 	
 		/* other bits unused */
-	}
+	} };
 	
-	WRITE_HANDLER( gs_videoram_w )
+	public static WriteHandlerPtr gs_videoram_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		if (gs_videoram[offset] != data)
 		{
 			dirtybuffer[offset] = 1;
 			gs_videoram[offset] = data;
 		}
-	}
+	} };
 	
 	void render_background(struct mame_bitmap *bitmap)
 	{

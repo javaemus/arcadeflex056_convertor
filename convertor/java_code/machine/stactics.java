@@ -92,9 +92,9 @@ public class stactics
 	    return interrupt();
 	}
 	
-	WRITE_HANDLER( stactics_coin_lockout_w )
+	public static WriteHandlerPtr stactics_coin_lockout_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		coin_lockout_w(offset, ~data & 0x01);
-	}
+	} };
 	
 }

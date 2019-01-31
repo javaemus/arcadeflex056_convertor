@@ -140,7 +140,7 @@ public class generic
 		return colorram[offset];
 	} };
 	
-	WRITE_HANDLER( videoram_w )
+	public static WriteHandlerPtr videoram_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		if (videoram[offset] != data)
 		{
@@ -148,9 +148,9 @@ public class generic
 	
 			videoram[offset] = data;
 		}
-	}
+	} };
 	
-	WRITE_HANDLER( colorram_w )
+	public static WriteHandlerPtr colorram_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		if (colorram[offset] != data)
 		{
@@ -158,7 +158,7 @@ public class generic
 	
 			colorram[offset] = data;
 		}
-	}
+	} };
 	
 	
 	
@@ -167,10 +167,10 @@ public class generic
 		return spriteram[offset];
 	} };
 	
-	WRITE_HANDLER( spriteram_w )
+	public static WriteHandlerPtr spriteram_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		spriteram[offset] = data;
-	}
+	} };
 	
 	READ16_HANDLER( spriteram16_r )
 	{
@@ -187,10 +187,10 @@ public class generic
 		return spriteram_2[offset];
 	} };
 	
-	WRITE_HANDLER( spriteram_2_w )
+	public static WriteHandlerPtr spriteram_2_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		spriteram_2[offset] = data;
-	}
+	} };
 	
 	/* Mish:  171099
 	
@@ -235,10 +235,10 @@ public class generic
 	
 	*/
 	
-	WRITE_HANDLER( buffer_spriteram_w )
+	public static WriteHandlerPtr buffer_spriteram_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		memcpy(buffered_spriteram,spriteram,spriteram_size);
-	}
+	} };
 	
 	WRITE16_HANDLER( buffer_spriteram16_w )
 	{
@@ -250,10 +250,10 @@ public class generic
 		memcpy(buffered_spriteram32,spriteram32,spriteram_size);
 	}
 	
-	WRITE_HANDLER( buffer_spriteram_2_w )
+	public static WriteHandlerPtr buffer_spriteram_2_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		memcpy(buffered_spriteram_2,spriteram_2,spriteram_2_size);
-	}
+	} };
 	
 	WRITE16_HANDLER( buffer_spriteram16_2_w )
 	{

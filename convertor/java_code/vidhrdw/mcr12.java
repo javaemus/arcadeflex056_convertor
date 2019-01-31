@@ -128,14 +128,14 @@ public class mcr12
 	 *
 	 *************************************/
 	
-	WRITE_HANDLER( mcr1_videoram_w )
+	public static WriteHandlerPtr mcr1_videoram_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		if (videoram[offset] != data)
 		{
 			dirtybuffer[offset] = 1;
 			videoram[offset] = data;
 		}
-	}
+	} };
 	
 	
 	public static ReadHandlerPtr mcr2_videoram_r  = new ReadHandlerPtr() { public int handler(int offset)
@@ -148,7 +148,7 @@ public class mcr12
 		return videoram[((offset & 0x400) >> 10) | ((offset & 0x3ff) << 1)];
 	} };
 	
-	WRITE_HANDLER( mcr2_videoram_w )
+	public static WriteHandlerPtr mcr2_videoram_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		videoram[offset] = data;
 		if ((offset & 0x780) != 0x780)
@@ -158,9 +158,9 @@ public class mcr12
 			offset -= 0x780;
 			mcr2_paletteram_w(offset,data);
 		}
-	}
+	} };
 	
-	WRITE_HANDLER( twotigra_videoram_w )
+	public static WriteHandlerPtr twotigra_videoram_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		offset = ((offset & 0x400) >> 10) | ((offset & 0x3ff) << 1);
 	
@@ -173,7 +173,7 @@ public class mcr12
 			offset = ((offset & 0x7e) >> 1) | ((offset & 0x01) << 6);
 			mcr2_paletteram_w(offset,data);
 		}
-	}
+	} };
 	
 	
 	

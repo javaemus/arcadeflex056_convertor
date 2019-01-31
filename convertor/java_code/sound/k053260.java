@@ -455,20 +455,20 @@ public class k053260
 		return K053260_read( 0, offset );
 	} };
 	
-	WRITE_HANDLER( K053260_0_w )
+	public static WriteHandlerPtr K053260_0_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		K053260_write( 0, offset, data );
-	}
+	} };
 	
 	public static ReadHandlerPtr K053260_1_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return K053260_read( 1, offset );
 	} };
 	
-	WRITE_HANDLER( K053260_1_w )
+	public static WriteHandlerPtr K053260_1_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		K053260_write( 1, offset, data );
-	}
+	} };
 	
 	WRITE16_HANDLER( K053260_0_lsb_w )
 	{

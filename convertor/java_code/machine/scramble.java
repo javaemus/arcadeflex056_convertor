@@ -18,12 +18,6 @@ public class scramble
 	
 	
 	void scramble_sh_init(void);
-	WRITE_HANDLER( scramble_sh_irqtrigger_w );
-	WRITE_HANDLER( scramble_background_enable_w );
-	WRITE_HANDLER( scramble_background_red_w );
-	WRITE_HANDLER( scramble_background_green_w );
-	WRITE_HANDLER( scramble_background_blue_w );
-	WRITE_HANDLER( darkplnt_bullet_color_w );
 	
 	
 	void scramble_init_machine(void)

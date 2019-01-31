@@ -8,6 +8,5 @@
 typedef short s16;
 typedef int s32;
 
-WRITE_HANDLER( mb_go_w );
 
 extern s16 mb_result;

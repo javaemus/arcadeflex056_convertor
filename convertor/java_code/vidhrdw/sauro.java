@@ -23,21 +23,21 @@ public class sauro
 	
 	
 	
-	WRITE_HANDLER( sauro_scroll1_w )
+	public static WriteHandlerPtr sauro_scroll1_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		scroll1 = data;
-	}
+	} };
 	
 	
 	static int scroll2_map     [8] = {2, 1, 4, 3, 6, 5, 0, 7};
 	static int scroll2_map_flip[8] = {0, 7, 2, 1, 4, 3, 6, 5};
 	
-	WRITE_HANDLER( sauro_scroll2_w )
+	public static WriteHandlerPtr sauro_scroll2_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		int* map = (flip_screen ? scroll2_map_flip : scroll2_map);
 	
 		scroll2 = (data & 0xf8) | map[data & 7];
-	}
+	} };
 	
 	/***************************************************************************
 	

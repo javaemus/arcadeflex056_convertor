@@ -85,14 +85,14 @@ public class champbas
 	
 	
 	
-	WRITE_HANDLER( champbas_gfxbank_w )
+	public static WriteHandlerPtr champbas_gfxbank_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		if (gfxbank != (data & 1))
 		{
 			gfxbank = data & 1;
 			memset(dirtybuffer,1,videoram_size);
 		}
-	}
+	} };
 	
 	
 	/***************************************************************************

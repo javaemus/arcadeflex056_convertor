@@ -190,7 +190,6 @@ public class tutankhm
 	
 	extern unsigned char *tutankhm_scrollx;
 	
-	WRITE_HANDLER( tutankhm_videoram_w );
 	void tutankhm_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	
 	

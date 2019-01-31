@@ -137,19 +137,19 @@ public class pacland
 	
 	
 	
-	WRITE_HANDLER( pacland_scroll0_w )
+	public static WriteHandlerPtr pacland_scroll0_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		scroll0 = data + 256 * offset;
-	}
+	} };
 	
-	WRITE_HANDLER( pacland_scroll1_w )
+	public static WriteHandlerPtr pacland_scroll1_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		scroll1 = data + 256 * offset;
-	}
+	} };
 	
 	
 	
-	WRITE_HANDLER( pacland_bankswitch_w )
+	public static WriteHandlerPtr pacland_bankswitch_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		int bankaddress;
 		unsigned char *RAM = memory_region(REGION_CPU1);
@@ -194,7 +194,7 @@ public class pacland
 				palette_set_color(i,r,g,b);
 			}
 		}
-	}
+	} };
 	
 	
 	

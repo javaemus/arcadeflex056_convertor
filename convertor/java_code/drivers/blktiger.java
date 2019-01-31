@@ -25,15 +25,7 @@ public class blktiger
 	
 	extern unsigned char *blktiger_txvideoram;
 	
-	WRITE_HANDLER( blktiger_screen_layout_w );
 	
-	WRITE_HANDLER( blktiger_bgvideoram_w );
-	WRITE_HANDLER( blktiger_txvideoram_w );
-	WRITE_HANDLER( blktiger_video_control_w );
-	WRITE_HANDLER( blktiger_video_enable_w );
-	WRITE_HANDLER( blktiger_bgvideoram_bank_w );
-	WRITE_HANDLER( blktiger_scrollx_w );
-	WRITE_HANDLER( blktiger_scrolly_w );
 	
 	int blktiger_vh_start(void);
 	void blktiger_vh_stop(void);

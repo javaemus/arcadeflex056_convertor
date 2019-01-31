@@ -30,7 +30,6 @@ public class cchasm
 	/* from sndhrdw/cchasm.c */
 	WRITE16_HANDLER( cchasm_io_w );
 	READ16_HANDLER( cchasm_io_r );
-	WRITE_HANDLER( cchasm_snd_io_w );
 	int cchasm_sh_start(const struct MachineSound *msound);
 	void cchasm_sh_update(void);
 	

@@ -163,7 +163,6 @@ WRITE16_HANDLER( TC0110PCR_step1_rbswap_word_w );	/* swaps red and blue componen
 WRITE16_HANDLER( TC0110PCR_step1_4bpg_word_w );	/* only 4 bits per color gun */
 
 int TC0360PRI_vh_start(void);	/* must be called to ensure regs saved in state.c */
-WRITE_HANDLER( TC0360PRI_w );
 WRITE16_HANDLER( TC0360PRI_halfword_w );
 WRITE16_HANDLER( TC0360PRI_halfword_swap_w );
 
@@ -174,11 +173,8 @@ WRITE16_HANDLER( TC0360PRI_halfword_swap_w );
    through a port, typically on earlier games. */
 
 READ_HANDLER ( TC0220IOC_r );
-WRITE_HANDLER( TC0220IOC_w );
 READ_HANDLER ( TC0220IOC_port_r );
-WRITE_HANDLER( TC0220IOC_port_w );
 READ_HANDLER ( TC0220IOC_portreg_r );
-WRITE_HANDLER( TC0220IOC_portreg_w );
 
 READ16_HANDLER ( TC0220IOC_halfword_port_r );
 WRITE16_HANDLER( TC0220IOC_halfword_port_w );
@@ -194,7 +190,6 @@ READ16_HANDLER ( TC0220IOC_halfword_byteswap_r );
 WRITE16_HANDLER( TC0220IOC_halfword_byteswap_w );
 
 READ_HANDLER ( TC0510NIO_r );
-WRITE_HANDLER( TC0510NIO_w );
 
 READ16_HANDLER ( TC0510NIO_halfword_r );
 WRITE16_HANDLER( TC0510NIO_halfword_w );
@@ -202,7 +197,6 @@ READ16_HANDLER ( TC0510NIO_halfword_wordswap_r );
 WRITE16_HANDLER( TC0510NIO_halfword_wordswap_w );
 
 READ_HANDLER ( TC0640FIO_r );
-WRITE_HANDLER( TC0640FIO_W );
 
 READ16_HANDLER ( TC0640FIO_halfword_r );
 WRITE16_HANDLER( TC0640FIO_halfword_w );

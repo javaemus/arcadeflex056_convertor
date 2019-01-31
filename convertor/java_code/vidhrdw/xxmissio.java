@@ -25,34 +25,34 @@ public class xxmissio
 	static UINT8 xxmissio_bg_redraw;
 	
 	
-	WRITE_HANDLER( xxmissio_scroll_x_w )
+	public static WriteHandlerPtr xxmissio_scroll_x_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		xxmissio_xscroll = data;
-	}
-	WRITE_HANDLER( xxmissio_scroll_y_w )
+	} };
+	public static WriteHandlerPtr xxmissio_scroll_y_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		xxmissio_yscroll = data;
-	}
+	} };
 	
-	WRITE_HANDLER( xxmissio_flipscreen_w )
+	public static WriteHandlerPtr xxmissio_flipscreen_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		if ((data & 0x01) != flipscreen)
 		{
 			flipscreen = data & 0x01;
 			xxmissio_bg_redraw = 1;
 		}
-	}
+	} };
 	
 	public static ReadHandlerPtr xxmissio_fgram_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return xxmissio_fgram[offset];
 	} };
-	WRITE_HANDLER( xxmissio_fgram_w )
+	public static WriteHandlerPtr xxmissio_fgram_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		xxmissio_fgram[offset] = data;
-	}
+	} };
 	
-	WRITE_HANDLER( xxmissio_videoram_w )
+	public static WriteHandlerPtr xxmissio_videoram_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		int offs = offset & 0x7e0;
 		int x = (offset + (xxmissio_xscroll >> 3) ) & 0x1f;
@@ -60,7 +60,7 @@ public class xxmissio
 	
 		videoram[offs] = data;
 		dirtybuffer[offs & 0x3ff] = 1;
-	}
+	} };
 	public static ReadHandlerPtr xxmissio_videoram_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		int offs = offset & 0x7e0;
@@ -70,7 +70,7 @@ public class xxmissio
 		return videoram[offs];
 	} };
 	
-	WRITE_HANDLER( xxmissio_paletteram_w )
+	public static WriteHandlerPtr xxmissio_paletteram_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		if (paletteram[offset] != data)
 		{
@@ -79,7 +79,7 @@ public class xxmissio
 			if (offset >= 0x200)
 				xxmissio_bg_redraw = 1;
 		}
-	}
+	} };
 	
 	/****************************************************************************/
 	

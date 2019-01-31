@@ -78,7 +78,7 @@ public class gameplan
 			return 0;
 	} };
 	
-	WRITE_HANDLER( gameplan_sound_w )
+	public static WriteHandlerPtr gameplan_sound_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 	#ifdef VERBOSE
 		logerror("GAME: write reg%X with %02x at PC %04x\n", offset, data, cpu_get_pc());
@@ -117,7 +117,7 @@ public class gameplan
 				else cb2 = -1;
 			}
 		}
-	}
+	} };
 	
 	public static ReadHandlerPtr gameplan_via5_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
@@ -155,7 +155,7 @@ public class gameplan
 		return 1;
 	} };
 	
-	WRITE_HANDLER( gameplan_via5_w )
+	public static WriteHandlerPtr gameplan_via5_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 	#ifdef VERBOSE
 		logerror("SOUND: write reg%X with %02x at PC %04x\n", offset, data, cpu_get_pc());
@@ -168,7 +168,7 @@ public class gameplan
 	#endif
 			finished_sound = data;
 		}
-	}
+	} };
 	
 	public static ReadHandlerPtr gameplan_video_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
@@ -180,7 +180,7 @@ public class gameplan
 		return x;
 	} };
 	
-	WRITE_HANDLER( gameplan_video_w )
+	public static WriteHandlerPtr gameplan_video_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		static int r0 = -1;
 		static unsigned char xpos, ypos, colour = 7;
@@ -327,7 +327,7 @@ public class gameplan
 		else
 			logerror("  !offset = %d, data = %02x\n", offset, data);
 	#endif
-	}
+	} };
 	
 	
 	/***************************************************************************

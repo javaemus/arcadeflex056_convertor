@@ -23,9 +23,6 @@ public class ajax
 	
 	
 	/* from machine/ajax.c */
-	WRITE_HANDLER( ajax_bankswitch_2_w );
-	WRITE_HANDLER( ajax_sharedram_w );
-	WRITE_HANDLER( ajax_ls138_f10_w );
 	void ajax_init_machine( void );
 	int ajax_interrupt( void );
 	

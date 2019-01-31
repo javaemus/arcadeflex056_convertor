@@ -13,7 +13,7 @@ public class mexico86
 	
 	
 	
-	WRITE_HANDLER( mexico86_bankswitch_w )
+	public static WriteHandlerPtr mexico86_bankswitch_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		unsigned char *RAM = memory_region(REGION_CPU1);
 	
@@ -23,7 +23,7 @@ public class mexico86
 		cpu_setbank(1, &RAM[0x10000 + 0x4000 * (data & 0x07)]);
 	
 		charbank = (data & 0x20) >> 5;
-	}
+	} };
 	
 	
 	

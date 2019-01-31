@@ -63,22 +63,6 @@ public class dec8
 	int gondo_vh_start(void);
 	int garyoret_vh_start(void);
 	
-	WRITE_HANDLER( dec8_bac06_0_w );
-	WRITE_HANDLER( dec8_bac06_1_w );
-	WRITE_HANDLER( dec8_pf0_data_w );
-	WRITE_HANDLER( dec8_pf1_data_w );
-	WRITE_HANDLER( srdarwin_videoram_w );
-	WRITE_HANDLER( dec8_scroll1_w );
-	WRITE_HANDLER( dec8_scroll2_w );
-	WRITE_HANDLER( srdarwin_control_w );
-	WRITE_HANDLER( gondo_scroll_w );
-	WRITE_HANDLER( shackled_control_w );
-	WRITE_HANDLER( lastmiss_control_w );
-	WRITE_HANDLER( lastmiss_scrollx_w );
-	WRITE_HANDLER( lastmiss_scrolly_w );
-	WRITE_HANDLER( dec8_bac06_0_w );
-	WRITE_HANDLER( dec8_bac06_1_w );
-	WRITE_HANDLER( dec8_videoram_w );
 	
 	/******************************************************************************/
 	
@@ -401,7 +385,7 @@ public class dec8
 		flip_screen_set(data & 0x08);
 	} };
 	
-	WRITE_HANDLER( csilver_control_w )
+	public static WriteHandlerPtr csilver_control_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		unsigned char *RAM = memory_region(REGION_CPU1);
 	
@@ -413,7 +397,7 @@ public class dec8
 			Bit 0x80 - Hold subcpu reset line high if clear, else low?  (Not needed anyway)
 		*/
 		cpu_setbank(1,&RAM[0x10000 + (data & 0x0f) * 0x4000]);
-	}
+	} };
 	
 	public static WriteHandlerPtr dec8_sound_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{

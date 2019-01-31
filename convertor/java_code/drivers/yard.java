@@ -26,8 +26,6 @@ public class yard
 	void yard_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom);
 	int yard_vh_start(void);
 	void yard_vh_stop(void);
-	WRITE_HANDLER( yard_flipscreen_w );
-	WRITE_HANDLER( yard_scroll_panel_w );
 	void yard_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	
 	

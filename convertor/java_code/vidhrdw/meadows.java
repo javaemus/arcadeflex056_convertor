@@ -155,7 +155,7 @@ public class meadows
 	/* Video RAM write                                           */
 	/*                                                           */
 	/*************************************************************/
-	WRITE_HANDLER( meadows_videoram_w )
+	public static WriteHandlerPtr meadows_videoram_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 	    if (offset >= videoram_size)
 	        return;
@@ -163,7 +163,7 @@ public class meadows
 			return;
 		videoram[offset] = data;
 		dirtybuffer[offset] = 1;
-	}
+	} };
 	
 	
 	/*************************************************************/
@@ -194,7 +194,7 @@ public class meadows
 	/*************************************************************/
 	/* write to the sprite registers                             */
 	/*************************************************************/
-	WRITE_HANDLER( meadows_sprite_w )
+	public static WriteHandlerPtr meadows_sprite_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 	int     n = offset % SPR_COUNT;
 		switch (offset)
@@ -230,7 +230,7 @@ public class meadows
 				}
 				break;
 		}
-	}
+	} };
 	
 	
 	

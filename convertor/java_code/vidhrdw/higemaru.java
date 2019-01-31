@@ -62,7 +62,7 @@ public class higemaru
 	
 	
 	
-	WRITE_HANDLER( higemaru_c800_w )
+	public static WriteHandlerPtr higemaru_c800_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		if (data & 0x7c) logerror("c800 = %02x\n",data);
 	
@@ -76,7 +76,7 @@ public class higemaru
 			flipscreen = data & 0x80;
 			memset(dirtybuffer,1,videoram_size);
 		}
-	}
+	} };
 	
 	
 	

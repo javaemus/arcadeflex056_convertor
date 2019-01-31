@@ -550,11 +550,11 @@ public class atarigen
 		return ignore_interrupt();
 	} };
 	
-	WRITE_HANDLER( atarigen_6502_irq_ack_w )
+	public static WriteHandlerPtr atarigen_6502_irq_ack_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		timed_int = 0;
 		update_6502_irq();
-	}
+	} };
 	
 	
 	/*---------------------------------------------------------------
@@ -651,10 +651,10 @@ public class atarigen
 		CPU to the main CPU.
 	---------------------------------------------------------------*/
 	
-	WRITE_HANDLER( atarigen_6502_sound_w )
+	public static WriteHandlerPtr atarigen_6502_sound_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		timer_set(TIME_NOW, data, delayed_6502_sound_w);
-	}
+	} };
 	
 	
 	/*---------------------------------------------------------------

@@ -125,23 +125,23 @@ public class labyrunr
 	
 	***************************************************************************/
 	
-	WRITE_HANDLER( labyrunr_vram1_w )
+	public static WriteHandlerPtr labyrunr_vram1_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		if (labyrunr_videoram1[offset] != data)
 		{
 			labyrunr_videoram1[offset] = data;
 			tilemap_mark_tile_dirty(layer0,offset & 0x3ff);
 		}
-	}
+	} };
 	
-	WRITE_HANDLER( labyrunr_vram2_w )
+	public static WriteHandlerPtr labyrunr_vram2_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		if (labyrunr_videoram2[offset] != data)
 		{
 			labyrunr_videoram2[offset] = data;
 			tilemap_mark_tile_dirty(layer1,offset & 0x3ff);
 		}
-	}
+	} };
 	
 	
 	

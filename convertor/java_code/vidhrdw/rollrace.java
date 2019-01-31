@@ -22,18 +22,18 @@ public class rollrace
 	#define RA_BGCHAR_BASE 	4
 	#define RA_SP_BASE	5
 	
-	WRITE_HANDLER( rollrace_charbank_w)
+	public static WriteHandlerPtr rollrace_charbank_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 	
 		ra_charbank[offset&1] = data;
 		ra_chrbank = ra_charbank[0] | (ra_charbank[1] << 1) ;
-	}
+	} };
 	
 	
-	WRITE_HANDLER( rollrace_bkgpen_w)
+	public static WriteHandlerPtr rollrace_bkgpen_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		ra_bkgpen = data;
-	}
+	} };
 	
 	WRITE_HANDLER(rollrace_spritebank_w)
 	{
@@ -49,20 +49,20 @@ public class rollrace
 		/* 0x80 flip vertical */
 	}
 	
-	WRITE_HANDLER( rollrace_backgroundcolor_w )
+	public static WriteHandlerPtr rollrace_backgroundcolor_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		ra_bkgcol = data;
-	}
+	} };
 	
-	WRITE_HANDLER( rollrace_flipy_w )
+	public static WriteHandlerPtr rollrace_flipy_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		ra_flipy = data & 0x01;
-	}
+	} };
 	
-	WRITE_HANDLER( rollrace_flipx_w )
+	public static WriteHandlerPtr rollrace_flipx_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		ra_flipx = data & 0x01;
-	}
+	} };
 	
 	void rollrace_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
 	{

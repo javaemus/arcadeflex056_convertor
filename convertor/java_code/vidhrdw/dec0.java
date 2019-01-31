@@ -791,7 +791,7 @@ public class dec0
 	  	COMBINE_DATA(&dec0_pri);
 	}
 	
-	WRITE_HANDLER( dec0_pf3_control_8bit_w )
+	public static WriteHandlerPtr dec0_pf3_control_8bit_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		static int buffer[0x20];
 		data16_t myword;
@@ -804,9 +804,9 @@ public class dec0
 	
 		if (offset<0x10) dec0_pf3_control_0_w(offset/2,myword,0);
 		else dec0_pf3_control_1_w((offset-0x10)/2,myword,0);
-	}
+	} };
 	
-	WRITE_HANDLER( dec0_pf3_data_8bit_w )
+	public static WriteHandlerPtr dec0_pf3_data_8bit_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		if (offset&1) { /* MSB has changed */
 			data16_t lsb=dec0_pf3_data[offset>>1];
@@ -821,7 +821,7 @@ public class dec0
 		tilemap_mark_tile_dirty(pf3_tilemap_0,offset>>1);
 		tilemap_mark_tile_dirty(pf3_tilemap_1,offset>>1);
 		tilemap_mark_tile_dirty(pf3_tilemap_2,offset>>1);
-	}
+	} };
 	
 	public static ReadHandlerPtr dec0_pf3_data_8bit_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{

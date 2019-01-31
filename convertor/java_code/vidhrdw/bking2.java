@@ -99,42 +99,42 @@ public class bking2
 		}
 	}
 	
-	WRITE_HANDLER( bking2_xld1_w )
+	public static WriteHandlerPtr bking2_xld1_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 	    xld1 = -data;
-	}
+	} };
 	
-	WRITE_HANDLER( bking2_yld1_w )
+	public static WriteHandlerPtr bking2_yld1_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 	    yld1 = -data;
-	}
+	} };
 	
-	WRITE_HANDLER( bking2_xld2_w )
+	public static WriteHandlerPtr bking2_xld2_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 	    xld2 = -data;
-	}
+	} };
 	
-	WRITE_HANDLER( bking2_yld2_w )
+	public static WriteHandlerPtr bking2_yld2_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 	    yld2 = -data;
-	}
+	} };
 	
-	WRITE_HANDLER( bking2_xld3_w )
+	public static WriteHandlerPtr bking2_xld3_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 	    xld3 = -data;
-	}
+	} };
 	
-	WRITE_HANDLER( bking2_yld3_w )
+	public static WriteHandlerPtr bking2_yld3_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 	    yld3 = -data;
-	}
+	} };
 	
-	WRITE_HANDLER( bking2_msk_w )
+	public static WriteHandlerPtr bking2_msk_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 	    msk = data;
-	}
+	} };
 	
-	WRITE_HANDLER( bking2_cont1_w )
+	public static WriteHandlerPtr bking2_cont1_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 	    /* D0 = COIN LOCK */
 	    /* D1 =  BALL 5 (Controller selection) */
@@ -149,9 +149,9 @@ public class bking2
 		controller = data & 0x02;
 	
 	    crow_pic = (data >> 4) & 0x0f;
-	}
+	} };
 	
-	WRITE_HANDLER( bking2_cont2_w )
+	public static WriteHandlerPtr bking2_cont2_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		static int last = -1;
 	
@@ -168,9 +168,9 @@ public class bking2
 			//debug_key_pressed = 1;
 			last = data;
 		}
-	}
+	} };
 	
-	WRITE_HANDLER( bking2_cont3_w )
+	public static WriteHandlerPtr bking2_cont3_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		/* D0 = CROW INV (inverts Crow picture and coordinates) */
 		/* D1-D2 = COLOR 0 - COLOR 1 (switches 4 color palettes, global across all graphics) */
@@ -181,13 +181,13 @@ public class bking2
 		set_vh_global_attribute(&palette_bank, (data >> 1) & 0x03);
 	
 		mixer_sound_enable_global_w(~data & 0x08);
-	}
+	} };
 	
 	
-	WRITE_HANDLER( bking2_hitclr_w )
+	public static WriteHandlerPtr bking2_hitclr_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 	    hitclr = data;
-	}
+	} };
 	
 	
 	public static ReadHandlerPtr bking2_input_port_5_r  = new ReadHandlerPtr() { public int handler(int offset)

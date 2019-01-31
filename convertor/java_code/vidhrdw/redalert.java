@@ -49,27 +49,27 @@ public class redalert
 	
 	static int backcolor;
 	
-	WRITE_HANDLER( redalert_c040_w )
+	public static WriteHandlerPtr redalert_c040_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		/* Only seems to load D0-D3 into a flip-flop. */
 		/* D0/D1 seem to head off to unconnected circuits */
 		/* D2 connects to a "NL" line, and NOTted to a "NH" line */
 		/* D3 connects to a "YI" line */
-	}
+	} };
 	
-	WRITE_HANDLER( redalert_backcolor_w )
+	public static WriteHandlerPtr redalert_backcolor_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		/* Only seems to load D0-D2 into a flip-flop. */
 		/* Outputs feed into RAM which seems to feed to RGB lines. */
 		backcolor = data & 0x07;
-	}
+	} };
 	
 	
 	/***************************************************************************
 	redalert_backram_w
 	***************************************************************************/
 	
-	WRITE_HANDLER( redalert_backram_w )
+	public static WriteHandlerPtr redalert_backram_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		int charnum;
 	
@@ -84,13 +84,13 @@ public class redalert
 	
 			redalert_backram[offset] = data;
 		}
-	}
+	} };
 	
 	/***************************************************************************
 	redalert_spriteram1_w
 	***************************************************************************/
 	
-	WRITE_HANDLER( redalert_spriteram1_w )
+	public static WriteHandlerPtr redalert_spriteram1_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		if (redalert_spriteram1[offset] != data)
 		{
@@ -98,13 +98,13 @@ public class redalert
 	
 			redalert_spriteram1[offset] = data;
 		}
-	}
+	} };
 	
 	/***************************************************************************
 	redalert_spriteram2_w
 	***************************************************************************/
 	
-	WRITE_HANDLER( redalert_spriteram2_w )
+	public static WriteHandlerPtr redalert_spriteram2_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		if (redalert_spriteram2[offset] != data)
 		{
@@ -112,13 +112,13 @@ public class redalert
 	
 			redalert_spriteram2[offset] = data;
 		}
-	}
+	} };
 	
 	/***************************************************************************
 	redalert_characterram_w
 	***************************************************************************/
 	
-	WRITE_HANDLER( redalert_characterram_w )
+	public static WriteHandlerPtr redalert_characterram_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		if (redalert_characterram[offset] != data)
 		{
@@ -126,7 +126,7 @@ public class redalert
 	
 			redalert_characterram[offset] = data;
 		}
-	}
+	} };
 	
 	/***************************************************************************
 	

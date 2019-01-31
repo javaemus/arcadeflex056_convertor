@@ -44,24 +44,16 @@ public class phoenix
 	
 	
 	
-	WRITE_HANDLER( phoenix_videoram_w );
-	WRITE_HANDLER( phoenix_videoreg_w );
-	WRITE_HANDLER( pleiads_videoreg_w );
-	WRITE_HANDLER( phoenix_scroll_w );
 	void phoenix_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom);
 	void pleiads_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom);
 	int  phoenix_vh_start(void);
 	void phoenix_vh_stop(void);
 	void phoenix_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	
-	WRITE_HANDLER( phoenix_sound_control_a_w );
-	WRITE_HANDLER( phoenix_sound_control_b_w );
 	int phoenix_sh_start(const struct MachineSound *msound);
 	void phoenix_sh_stop(void);
 	void phoenix_sh_update(void);
 	
-	WRITE_HANDLER( pleiads_sound_control_a_w );
-	WRITE_HANDLER( pleiads_sound_control_b_w );
 	int pleiads_sh_start(const struct MachineSound *msound);
 	void pleiads_sh_stop(void);
 	void pleiads_sh_update(void);

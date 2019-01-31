@@ -24,12 +24,7 @@ public class timelimt
 	extern void timelimt_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom);
 	extern void timelimt_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	
-	extern WRITE_HANDLER( timelimt_videoram_w );
-	extern WRITE_HANDLER( timelimt_bg_videoram_w );
-	extern WRITE_HANDLER( timelimt_scroll_y_w );
-	extern WRITE_HANDLER( timelimt_scroll_x_msb_w );
-	extern WRITE_HANDLER( timelimt_scroll_x_lsb_w );
-	
+	extern extern extern extern extern 
 	extern data8_t *timelimt_bg_videoram;
 	extern size_t timelimt_bg_videoram_size;
 	

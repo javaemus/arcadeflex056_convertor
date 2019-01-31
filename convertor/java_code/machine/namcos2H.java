@@ -249,7 +249,6 @@ READ16_HANDLER( namcos2_68k_road_ctrl_r );
 /**************************************************************/
 
 int  namcos2_sound_interrupt(void);
-WRITE_HANDLER( namcos2_sound_bankselect_w );
 
 
 /**************************************************************/
@@ -258,9 +257,6 @@ WRITE_HANDLER( namcos2_sound_bankselect_w );
 
 int  namcos2_mcu_interrupt(void);
 
-WRITE_HANDLER( namcos2_mcu_analog_ctrl_w );
 
-WRITE_HANDLER( namcos2_mcu_analog_port_w );
 
-WRITE_HANDLER( namcos2_mcu_port_d_w );
 

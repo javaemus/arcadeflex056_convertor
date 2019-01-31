@@ -43,33 +43,33 @@ public class mappy
 		return mappy_sharedram[offset];
 	} };
 	
-	WRITE_HANDLER( mappy_sharedram_w )
+	public static WriteHandlerPtr mappy_sharedram_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		mappy_sharedram[offset] = data;
-	}
+	} };
 	
 	
-	WRITE_HANDLER( mappy_customio_1_w )
+	public static WriteHandlerPtr mappy_customio_1_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		mappy_customio_1[offset] = data;
-	}
+	} };
 	
 	
-	WRITE_HANDLER( mappy_customio_2_w )
+	public static WriteHandlerPtr mappy_customio_2_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		mappy_customio_2[offset] = data;
-	}
+	} };
 	
-	WRITE_HANDLER( mappy_reset_2_w )
+	public static WriteHandlerPtr mappy_reset_2_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		io_chip_1_enabled = io_chip_2_enabled = 0;
 		cpu_set_reset_line(1,PULSE_LINE);
-	}
+	} };
 	
-	WRITE_HANDLER( mappy_io_chips_enable_w )
+	public static WriteHandlerPtr mappy_io_chips_enable_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		io_chip_1_enabled = io_chip_2_enabled = 1;
-	}
+	} };
 	
 	/*************************************************************************************
 	 *
@@ -556,10 +556,10 @@ public class mappy
 	
 	
 	
-	WRITE_HANDLER( mappy_interrupt_enable_1_w )
+	public static WriteHandlerPtr mappy_interrupt_enable_1_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		interrupt_enable_1 = offset;
-	}
+	} };
 	
 	
 	
@@ -571,10 +571,10 @@ public class mappy
 	
 	
 	
-	WRITE_HANDLER( mappy_interrupt_enable_2_w )
+	public static WriteHandlerPtr mappy_interrupt_enable_2_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		interrupt_enable_2 = offset;
-	}
+	} };
 	
 	
 	
@@ -585,8 +585,8 @@ public class mappy
 	}
 	
 	
-	WRITE_HANDLER( mappy_cpu_enable_w )
+	public static WriteHandlerPtr mappy_cpu_enable_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		cpu_set_halt_line(1, offset ? CLEAR_LINE : ASSERT_LINE);
-	}
+	} };
 }

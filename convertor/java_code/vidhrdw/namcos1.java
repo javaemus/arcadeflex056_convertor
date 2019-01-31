@@ -136,7 +136,7 @@ public class namcos1
 		return namcos1_videoram[offset];
 	} };
 	
-	WRITE_HANDLER( namcos1_videoram_w )
+	public static WriteHandlerPtr namcos1_videoram_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		if (namcos1_videoram[offset] != data)
 		{
@@ -155,14 +155,14 @@ public class namcos1
 					tilemap_mark_tile_dirty(tilemap[layer],num);
 			}
 		}
-	}
+	} };
 	
 	public static ReadHandlerPtr namcos1_paletteram_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return namcos1_paletteram[offset];
 	} };
 	
-	WRITE_HANDLER( namcos1_paletteram_w )
+	public static WriteHandlerPtr namcos1_paletteram_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		namcos1_paletteram[offset] = data;
 		if ((offset&0x1fff) < 0x1800)
@@ -183,7 +183,7 @@ public class namcos1
 				}
 			}
 		}
-	}
+	} };
 	
 	static void namcos1_palette_refresh(int start,int offset,int num)
 	{
@@ -270,7 +270,7 @@ public class namcos1
 	#endif
 	} };
 	
-	WRITE_HANDLER( namcos1_videocontrol_w )
+	public static WriteHandlerPtr namcos1_videocontrol_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		namcos1_controlram[offset] = data;
 	
@@ -287,7 +287,7 @@ public class namcos1
 		/* 1000-1fff control ram */
 		else if (offset >= 0x1000)
 			namcos1_playfield_control_w(offset&0xff, data);
-	}
+	} };
 	
 	/* tilemap callback */
 	INLINE void background_get_info(int tile_index,int info_color,data8_t *info_vram)

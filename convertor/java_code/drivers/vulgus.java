@@ -53,10 +53,6 @@ public class vulgus
 	extern unsigned char *vulgus_bgvideoram;
 	extern unsigned char *vulgus_scroll_low,*vulgus_scroll_high;
 	
-	WRITE_HANDLER( vulgus_fgvideoram_w );
-	WRITE_HANDLER( vulgus_bgvideoram_w );
-	WRITE_HANDLER( vulgus_c804_w );
-	WRITE_HANDLER( vulgus_palette_bank_w );
 	int vulgus_vh_start(void);
 	void vulgus_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom);
 	void vulgus_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);

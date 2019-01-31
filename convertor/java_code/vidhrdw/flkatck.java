@@ -103,7 +103,7 @@ public class flkatck
 	
 	***************************************************************************/
 	
-	WRITE_HANDLER( flkatck_k007121_w )
+	public static WriteHandlerPtr flkatck_k007121_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		if (offset < 0x1000){	/* tiles */
 			if (k007121_ram[offset] != data)
@@ -117,9 +117,9 @@ public class flkatck
 		}
 		else	/* sprites */
 			k007121_ram[offset] = data;
-	}
+	} };
 	
-	WRITE_HANDLER( flkatck_k007121_regs_w )
+	public static WriteHandlerPtr flkatck_k007121_regs_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		switch (offset)
 		{
@@ -136,7 +136,7 @@ public class flkatck
 		}
 	
 		K007121_ctrl_0_w(offset,data);
-	}
+	} };
 	
 	
 	/***************************************************************************

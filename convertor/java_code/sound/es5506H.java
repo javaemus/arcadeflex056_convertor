@@ -50,8 +50,6 @@ struct ES5506interface
 int ES5506_sh_start(const struct MachineSound *msound);
 void ES5506_sh_stop(void);
 
-WRITE_HANDLER( ES5506_data_0_w );
-WRITE_HANDLER( ES5506_data_1_w );
 
 void ES5506_voice_bank_0_w(int voice, int bank);
 void ES5506_voice_bank_1_w(int voice, int bank);

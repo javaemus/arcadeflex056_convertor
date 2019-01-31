@@ -23,12 +23,12 @@ public class leprechn
 	// walks on the rainbow, he'd leave a trail behind him
 	static int pending, pending_x, pending_y, pending_color;
 	
-	WRITE_HANDLER( leprechn_graphics_command_w )
+	public static WriteHandlerPtr leprechn_graphics_command_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 	    last_command = data;
-	}
+	} };
 	
-	WRITE_HANDLER( leprechn_graphics_data_w )
+	public static WriteHandlerPtr leprechn_graphics_data_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 	    int direction;
 	
@@ -123,7 +123,7 @@ public class leprechn
 	
 	    // Just a precaution. Doesn't seem to happen.
 	    logerror("Unknown Graphics Command #%2X at %04X\n", last_command, cpu_get_pc());
-	}
+	} };
 	
 	
 	public static ReadHandlerPtr leprechn_graphics_data_r  = new ReadHandlerPtr() { public int handler(int offset)

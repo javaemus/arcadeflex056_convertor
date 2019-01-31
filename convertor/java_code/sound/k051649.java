@@ -166,43 +166,43 @@ public class k051649
 	
 	/********************************************************************************/
 	
-	WRITE_HANDLER( K051649_waveform_w )
+	public static WriteHandlerPtr K051649_waveform_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		stream_update(stream,0);
 		channel_list[offset>>5].waveform[offset&0x1f]=data;
 		/* SY 20001114: Channel 5 shares the waveform with channel 4 */
 	    if (offset >= 0x60)
 			channel_list[4].waveform[offset&0x1f]=data;
-	}
+	} };
 	
 	/* SY 20001114: Channel 5 doesn't share the waveform with channel 4 on this chip */
-	WRITE_HANDLER( K052539_waveform_w )
+	public static WriteHandlerPtr K052539_waveform_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		stream_update(stream,0);
 		channel_list[offset>>5].waveform[offset&0x1f]=data;
-	}
+	} };
 	
-	WRITE_HANDLER( K051649_volume_w )
+	public static WriteHandlerPtr K051649_volume_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		stream_update(stream,0);
 		channel_list[offset&0x7].volume=data&0xf;
-	}
+	} };
 	
-	WRITE_HANDLER( K051649_frequency_w )
+	public static WriteHandlerPtr K051649_frequency_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		static int f[10];
 		f[offset]=data;
 	
 		stream_update(stream,0);
 		channel_list[offset>>1].frequency=(f[offset&0xe] + (f[offset|1]<<8))&0xfff;
-	}
+	} };
 	
-	WRITE_HANDLER( K051649_keyonoff_w )
+	public static WriteHandlerPtr K051649_keyonoff_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		channel_list[0].key=data&1;
 		channel_list[1].key=data&2;
 		channel_list[2].key=data&4;
 		channel_list[3].key=data&8;
 		channel_list[4].key=data&16;
-	}
+	} };
 }

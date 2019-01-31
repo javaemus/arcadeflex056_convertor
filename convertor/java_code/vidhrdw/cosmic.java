@@ -37,7 +37,7 @@ public class cosmic
 	};
 	
 	
-	WRITE_HANDLER( panic_color_register_w )
+	public static WriteHandlerPtr panic_color_register_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		/* 7c0c & 7c0e = Rom Address Offset
 	 	   7c0d        = high / low nibble */
@@ -45,14 +45,14 @@ public class cosmic
 		set_vh_global_attribute(&color_registers[offset], data & 0x80);
 	
 	   	color_base = (color_registers[0] << 2) + (color_registers[2] << 3);
-	}
+	} };
 	
-	WRITE_HANDLER( cosmicg_color_register_w )
+	public static WriteHandlerPtr cosmicg_color_register_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		set_vh_global_attribute(&color_registers[offset], data);
 	
 	   	color_base = (color_registers[0] << 8) + (color_registers[1] << 9);
-	}
+	} };
 	
 	
 	static int panic_map_color(int x, int y)
@@ -245,13 +245,13 @@ public class cosmic
 	}
 	
 	
-	WRITE_HANDLER( nomnlnd_background_w )
+	public static WriteHandlerPtr nomnlnd_background_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		nomnlnd_background_on = data;
-	}
+	} };
 	
 	
-	WRITE_HANDLER( cosmica_videoram_w )
+	public static WriteHandlerPtr cosmica_videoram_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 	    int i,x,y,col;
 	
@@ -272,7 +272,7 @@ public class cosmic
 		    x++;
 		    data <<= 1;
 	    }
-	}
+	} };
 	
 	
 	void cosmicg_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)

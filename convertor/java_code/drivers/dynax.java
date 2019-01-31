@@ -53,17 +53,17 @@ public class dynax
 		cpu_set_irq_line(0, 0, irq ? ASSERT_LINE : CLEAR_LINE );
 	}
 	
-	WRITE_HANDLER( sprtmtch_vblank_ack_w )
+	public static WriteHandlerPtr sprtmtch_vblank_ack_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		dynax_vblank_irq = 0;
 		sprtmtch_update_irq();
-	}
+	} };
 	
-	WRITE_HANDLER( sprtmtch_blitter_ack_w )
+	public static WriteHandlerPtr sprtmtch_blitter_ack_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		dynax_blitter_irq = 0;
 		sprtmtch_update_irq();
-	}
+	} };
 	
 	int sprtmtch_vblank_interrupt(void)
 	{
@@ -318,17 +318,17 @@ public class dynax
 		return 0xff;
 	} };
 	
-	WRITE_HANDLER( rongrong_select_w )
+	public static WriteHandlerPtr rongrong_select_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		unsigned char *RAM = memory_region(REGION_CPU1);
 		rongrong_select = data;
 		cpu_setbank(1, &RAM[0x10000 + 0x8000 * (rongrong_select & 0x0f)]);
-	}
+	} };
 	
-	WRITE_HANDLER( rongrong_select2_w )
+	public static WriteHandlerPtr rongrong_select2_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		rongrong_select2 = data;
-	}
+	} };
 	
 	public static Memory_ReadAddress rongrong_readmem[]={
 		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),

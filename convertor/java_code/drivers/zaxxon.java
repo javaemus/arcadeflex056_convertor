@@ -115,7 +115,6 @@ public class zaxxon
 	void ixion_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	extern int zaxxon_vid_type;
 	
-	WRITE_HANDLER( zaxxon_sound_w );
 	
 	
 	

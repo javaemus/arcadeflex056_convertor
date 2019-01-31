@@ -443,13 +443,13 @@ public class _3812intf
 		YM3812_write_port_0_w(0,0x80);
 	}
 	
-	WRITE_HANDLER( YM3812_control_port_0_w ) {
+	public static WriteHandlerPtr YM3812_control_port_0_w = new WriteHandlerPtr() {public void handler(int offset, int data) {
 		(*control_port_w)( 0, data );
-	}
+	} };
 	
-	WRITE_HANDLER( YM3812_write_port_0_w ) {
+	public static WriteHandlerPtr YM3812_write_port_0_w = new WriteHandlerPtr() {public void handler(int offset, int data) {
 		(*write_port_w)( 0, data );
-	}
+	} };
 	
 	public static ReadHandlerPtr YM3812_status_port_0_r  = new ReadHandlerPtr() { public int handler(int offset) {
 		return (*status_port_r)( 0 );
@@ -459,13 +459,13 @@ public class _3812intf
 		return (*read_port_r)( 0 );
 	} };
 	
-	WRITE_HANDLER( YM3812_control_port_1_w ) {
+	public static WriteHandlerPtr YM3812_control_port_1_w = new WriteHandlerPtr() {public void handler(int offset, int data) {
 		(*control_port_w)( 1, data );
-	}
+	} };
 	
-	WRITE_HANDLER( YM3812_write_port_1_w ) {
+	public static WriteHandlerPtr YM3812_write_port_1_w = new WriteHandlerPtr() {public void handler(int offset, int data) {
 		(*write_port_w)( 1, data );
-	}
+	} };
 	
 	public static ReadHandlerPtr YM3812_status_port_1_r  = new ReadHandlerPtr() { public int handler(int offset) {
 		return (*status_port_r)( 1 );

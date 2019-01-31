@@ -5,7 +5,6 @@
 ****************************************************************************/
 
 
-WRITE_HANDLER( irem_sound_cmd_w );
 
 
 extern const struct Memory_ReadAddress irem_sound_readmem[];

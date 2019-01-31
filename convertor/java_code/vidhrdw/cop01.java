@@ -140,25 +140,25 @@ public class cop01
 	
 	***************************************************************************/
 	
-	WRITE_HANDLER( cop01_background_w )
+	public static WriteHandlerPtr cop01_background_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		if (cop01_bgvideoram[offset] != data)
 		{
 			cop01_bgvideoram[offset] = data;
 			tilemap_mark_tile_dirty(bg_tilemap,offset & 0x7ff);
 		}
-	}
+	} };
 	
-	WRITE_HANDLER( cop01_foreground_w )
+	public static WriteHandlerPtr cop01_foreground_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		if (cop01_fgvideoram[offset] != data)
 		{
 			cop01_fgvideoram[offset] = data;
 			tilemap_mark_tile_dirty(fg_tilemap,offset);
 		}
-	}
+	} };
 	
-	WRITE_HANDLER( cop01_vreg_w )
+	public static WriteHandlerPtr cop01_vreg_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		/*	0x40: --xx---- sprite bank, coin counters, flip screen
 		 *	      -----x-- flip screen
@@ -179,7 +179,7 @@ public class cop01
 			coin_counter_w(1,data & 2);
 			flip_screen_set(data & 4);
 		}
-	}
+	} };
 	
 	
 	

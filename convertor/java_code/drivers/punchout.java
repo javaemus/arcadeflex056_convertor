@@ -114,10 +114,6 @@ public class punchout
 	extern unsigned char *punchout_bigsprite1;
 	extern unsigned char *punchout_bigsprite2;
 	extern unsigned char *punchout_palettebank;
-	WRITE_HANDLER( punchout_videoram2_w );
-	WRITE_HANDLER( punchout_bigsprite1ram_w );
-	WRITE_HANDLER( punchout_bigsprite2ram_w );
-	WRITE_HANDLER( punchout_palettebank_w );
 	int punchout_vh_start(void);
 	int armwrest_vh_start(void);
 	void punchout_vh_stop(void);
@@ -160,28 +156,28 @@ public class punchout
 		return data;
 	} };
 	
-	WRITE_HANDLER( punchout_speech_reset_w )
+	public static WriteHandlerPtr punchout_speech_reset_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		VLM5030_RST( data&0x01 );
-	}
+	} };
 	
-	WRITE_HANDLER( punchout_speech_st_w )
+	public static WriteHandlerPtr punchout_speech_st_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		VLM5030_ST( data&0x01 );
-	}
+	} };
 	
-	WRITE_HANDLER( punchout_speech_vcu_w )
+	public static WriteHandlerPtr punchout_speech_vcu_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		VLM5030_VCU( data & 0x01 );
-	}
+	} };
 	
-	WRITE_HANDLER( punchout_2a03_reset_w )
+	public static WriteHandlerPtr punchout_2a03_reset_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		if (data & 1)
 			cpu_set_reset_line(1,ASSERT_LINE);
 		else
 			cpu_set_reset_line(1,CLEAR_LINE);
-	}
+	} };
 	
 	static int prot_mode_sel = -1; /* Mode selector */
 	static int prot_mem[16];

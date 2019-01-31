@@ -121,19 +121,19 @@ public class m72
 			timer_set(TIME_NOW,YM2151_CLEAR,setvector_callback);
 	}
 	
-	WRITE_HANDLER( m72_sound_command_w )
+	public static WriteHandlerPtr m72_sound_command_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		if (offset == 0)
 		{
 			soundlatch_w(offset,data);
 			timer_set(TIME_NOW,Z80_ASSERT,setvector_callback);
 		}
-	}
+	} };
 	
-	WRITE_HANDLER( m72_sound_irq_ack_w )
+	public static WriteHandlerPtr m72_sound_irq_ack_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		timer_set(TIME_NOW,Z80_CLEAR,setvector_callback);
-	}
+	} };
 	
 	
 	
@@ -144,15 +144,15 @@ public class m72
 		sample_addr = start;
 	}
 	
-	WRITE_HANDLER( vigilant_sample_addr_w )
+	public static WriteHandlerPtr vigilant_sample_addr_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		if (offset == 1)
 			sample_addr = (sample_addr & 0x00ff) | ((data << 8) & 0xff00);
 		else
 			sample_addr = (sample_addr & 0xff00) | ((data << 0) & 0x00ff);
-	}
+	} };
 	
-	WRITE_HANDLER( shisen_sample_addr_w )
+	public static WriteHandlerPtr shisen_sample_addr_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		sample_addr >>= 2;
 	
@@ -162,9 +162,9 @@ public class m72
 			sample_addr = (sample_addr & 0xff00) | ((data << 0) & 0x00ff);
 	
 		sample_addr <<= 2;
-	}
+	} };
 	
-	WRITE_HANDLER( rtype2_sample_addr_w )
+	public static WriteHandlerPtr rtype2_sample_addr_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		sample_addr >>= 5;
 	
@@ -174,16 +174,16 @@ public class m72
 			sample_addr = (sample_addr & 0xff00) | ((data << 0) & 0x00ff);
 	
 		sample_addr <<= 5;
-	}
+	} };
 	
 	public static ReadHandlerPtr m72_sample_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return memory_region(REGION_SOUND1)[sample_addr];
 	} };
 	
-	WRITE_HANDLER( m72_sample_w )
+	public static WriteHandlerPtr m72_sample_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		DAC_signed_data_w(0,data);
 		sample_addr = (sample_addr + 1) & (memory_region_length(REGION_SOUND1) - 1);
-	}
+	} };
 }

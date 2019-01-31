@@ -46,7 +46,7 @@ public class depthch
 	};
 	
 	
-	WRITE_HANDLER( depthch_sh_port1_w )
+	public static WriteHandlerPtr depthch_sh_port1_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		static int port1State = 0;
 		int bitsChanged;
@@ -83,5 +83,5 @@ public class depthch
 		{
 			STOP( SND_SONAR );
 		}
-	}
+	} };
 }

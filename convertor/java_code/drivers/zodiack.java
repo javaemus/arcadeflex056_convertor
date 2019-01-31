@@ -38,14 +38,9 @@ public class zodiack
 	void zodiack_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom);
 	void zodiack_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	void zodiack_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
-	WRITE_HANDLER( zodiack_attributes_w );
-	WRITE_HANDLER( zodiac_flipscreen_w );
-	WRITE_HANDLER( zodiac_control_w );
 	
 	void espial_init_machine(void);
-	WRITE_HANDLER( zodiac_master_interrupt_enable_w );
 	int  zodiac_master_interrupt(void);
-	WRITE_HANDLER( zodiac_master_soundlatch_w );
 	
 	
 	static void zodiack_init_machine(void)

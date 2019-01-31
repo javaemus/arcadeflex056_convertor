@@ -228,7 +228,7 @@ public class atarigt
 	 *************************************/
 	
 	/*
-	WRITE_HANDLER( atarigen_888_paletteram_lo_w )
+	public static WriteHandlerPtr atarigen_888_paletteram_lo_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		int oldword = READ_WORD(&paletteram[offset]);
 		int newword = COMBINE_WORD(oldword, data);
@@ -244,10 +244,10 @@ public class atarigt
 	
 			palette_set_color(offset / 2, r, g, b);
 		}
-	}
+	} };
 	
 	
-	WRITE_HANDLER( atarigen_888_paletteram_hi_w )
+	public static WriteHandlerPtr atarigen_888_paletteram_hi_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		int oldword = READ_WORD(&paletteram_2[offset]);
 		int newword = COMBINE_WORD(oldword, data);
@@ -263,7 +263,7 @@ public class atarigt
 	
 			palette_set_color(offset / 2, r, g, b);
 		}
-	}
+	} };
 	*/
 	
 	

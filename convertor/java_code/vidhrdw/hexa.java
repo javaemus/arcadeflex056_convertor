@@ -20,7 +20,7 @@ public class hexa
 	static int flipx,flipy;
 	
 	
-	WRITE_HANDLER( hexa_d008_w )
+	public static WriteHandlerPtr hexa_d008_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		int bankaddress;
 		unsigned char *RAM = memory_region(REGION_CPU1);
@@ -54,7 +54,7 @@ public class hexa
 		}
 	
 		/* bit 6 - 7 unknown */
-	}
+	} };
 	
 	
 	

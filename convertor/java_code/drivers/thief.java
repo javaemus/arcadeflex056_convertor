@@ -37,15 +37,6 @@ public class thief
 	
 	static UINT8 thief_input_select;
 	
-	WRITE_HANDLER( thief_context_ram_w );
-	WRITE_HANDLER( thief_context_bank_w );
-	WRITE_HANDLER( thief_video_control_w );
-	WRITE_HANDLER( thief_vtcsel_w );
-	WRITE_HANDLER( thief_color_map_w );
-	WRITE_HANDLER( thief_color_plane_w );
-	WRITE_HANDLER( thief_videoram_w );
-	WRITE_HANDLER( thief_blit_w );
-	WRITE_HANDLER( thief_coprocessor_w );
 	
 	void thief_vh_stop( void );
 	int thief_vh_start( void );

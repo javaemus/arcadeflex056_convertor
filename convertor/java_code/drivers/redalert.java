@@ -23,20 +23,9 @@ public class redalert
 	extern unsigned char *redalert_spriteram1;
 	extern unsigned char *redalert_spriteram2;
 	extern unsigned char *redalert_characterram;
-	WRITE_HANDLER( redalert_backram_w );
-	WRITE_HANDLER( redalert_spriteram1_w );
-	WRITE_HANDLER( redalert_spriteram2_w );
-	WRITE_HANDLER( redalert_characterram_w );
 	extern void redalert_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
-	WRITE_HANDLER( redalert_c040_w );
-	WRITE_HANDLER( redalert_backcolor_w );
 	
 	/* sndhrdw/redalert.c */
-	WRITE_HANDLER( redalert_c030_w );
-	WRITE_HANDLER( redalert_soundlatch_w );
-	WRITE_HANDLER( redalert_AY8910_B_w );
-	WRITE_HANDLER( redalert_AY8910_w );
-	WRITE_HANDLER( redalert_sound_register_IC2_w );
 	
 	
 	public static Memory_ReadAddress readmem[]={

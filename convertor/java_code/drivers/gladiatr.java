@@ -109,27 +109,22 @@ public class gladiatr
 	
 	/*Video functions*/
 	extern unsigned char *gladiator_text;
-	WRITE_HANDLER( gladiatr_video_registers_w );
-	WRITE_HANDLER( gladiatr_paletteram_rg_w );
-	WRITE_HANDLER( gladiatr_paletteram_b_w );
 	extern int gladiatr_vh_start(void);
 	extern void gladiatr_vh_stop(void);
 	extern void gladiatr_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
-	WRITE_HANDLER( gladiatr_spritebank_w );
 	
 	/*Rom bankswitching*/
 	static int banka;
-	WRITE_HANDLER( gladiatr_bankswitch_w );
 	
 	/*Rom bankswitching*/
-	WRITE_HANDLER( gladiatr_bankswitch_w ){
+	public static WriteHandlerPtr gladiatr_bankswitch_w = new WriteHandlerPtr() {public void handler(int offset, int data){
 		static int bank1[2] = { 0x10000, 0x12000 };
 		static int bank2[2] = { 0x14000, 0x18000 };
 		unsigned char *RAM = memory_region(REGION_CPU1);
 		banka = data;
 		cpu_setbank(1,&RAM[bank1[(data & 0x03)]]);
 		cpu_setbank(2,&RAM[bank2[(data & 0x03)]]);
-	}
+	} };
 	
 	public static ReadHandlerPtr gladiatr_bankswitch_r  = new ReadHandlerPtr() { public int handler(int offset){
 		return banka;
@@ -208,10 +203,10 @@ public class gladiatr
 	
 	#if 1
 	/* !!!!! patch to IRQ timming for 2nd CPU !!!!! */
-	WRITE_HANDLER( gladiatr_irq_patch_w )
+	public static WriteHandlerPtr gladiatr_irq_patch_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		cpu_cause_interrupt(1,Z80_INT_REQ);
-	}
+	} };
 	#endif
 	
 	/* YM2203 port A handler (input) */

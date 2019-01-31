@@ -68,7 +68,7 @@ public class solomon
 	}
 	
 	
-	WRITE_HANDLER( solomon_bgvideoram_w )
+	public static WriteHandlerPtr solomon_bgvideoram_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		if (solomon_bgvideoram[offset] != data)
 		{
@@ -76,9 +76,9 @@ public class solomon
 	
 			solomon_bgvideoram[offset] = data;
 		}
-	}
+	} };
 	
-	WRITE_HANDLER( solomon_bgcolorram_w )
+	public static WriteHandlerPtr solomon_bgcolorram_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		if (solomon_bgcolorram[offset] != data)
 		{
@@ -86,11 +86,11 @@ public class solomon
 	
 			solomon_bgcolorram[offset] = data;
 		}
-	}
+	} };
 	
 	
 	
-	WRITE_HANDLER( solomon_flipscreen_w )
+	public static WriteHandlerPtr solomon_flipscreen_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		if (flipscreen != (data & 1))
 		{
@@ -98,7 +98,7 @@ public class solomon
 			memset(dirtybuffer,1,videoram_size);
 			memset(dirtybuffer2,1,videoram_size);
 		}
-	}
+	} };
 	
 	
 	

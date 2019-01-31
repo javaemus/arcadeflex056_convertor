@@ -279,7 +279,7 @@ public class bwidow
 		} };
 	
 	
-	WRITE_HANDLER( bwidow_misc_w )
+	public static WriteHandlerPtr bwidow_misc_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		/*
 			0x10 = p1 led
@@ -295,7 +295,7 @@ public class bwidow
 		coin_counter_w (0, data & 0x01);
 		coin_counter_w (1, data & 0x02);
 		lastdata = data;
-	}
+	} };
 	
 	
 	public static Memory_ReadAddress bwidow_readmem[]={

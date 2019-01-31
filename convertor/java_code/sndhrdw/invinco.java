@@ -54,7 +54,7 @@ public class invinco
 	};
 	
 	
-	WRITE_HANDLER( invinco_sh_port2_w )
+	public static WriteHandlerPtr invinco_sh_port2_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		static int port2State = 0;
 		int bitsChanged;
@@ -101,5 +101,5 @@ public class invinco
 	#if 0
 		logerror("Went LO: %02X  %04X\n", bitsGoneLow, cpu_get_pc());
 	#endif
-	}
+	} };
 }

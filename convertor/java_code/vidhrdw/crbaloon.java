@@ -62,17 +62,17 @@ public class crbaloon
 	
 	
 	
-	WRITE_HANDLER( crbaloon_spritectrl_w )
+	public static WriteHandlerPtr crbaloon_spritectrl_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		spritectrl[offset] = data;
-	}
+	} };
 	
 	
 	
-	WRITE_HANDLER( crbaloon_flipscreen_w )
+	public static WriteHandlerPtr crbaloon_flipscreen_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		flip_screen_set(data & 1);
-	}
+	} };
 	
 	/***************************************************************************
 	

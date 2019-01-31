@@ -55,10 +55,10 @@ public class safarir
 	
 	
 	
-	WRITE_HANDLER( safarir_ram_w )
+	public static WriteHandlerPtr safarir_ram_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		safarir_ram[offset] = data;
-	}
+	} };
 	
 	public static ReadHandlerPtr safarir_ram_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
@@ -66,15 +66,15 @@ public class safarir
 	} };
 	
 	
-	WRITE_HANDLER( safarir_scroll_w )
+	public static WriteHandlerPtr safarir_scroll_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		safarir_scroll = data;
-	}
+	} };
 	
-	WRITE_HANDLER( safarir_ram_bank_w )
+	public static WriteHandlerPtr safarir_ram_bank_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		safarir_ram = data ? safarir_ram1 : safarir_ram2;
-	}
+	} };
 	
 	
 	void safarir_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)

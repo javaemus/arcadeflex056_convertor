@@ -10,10 +10,10 @@ public class exterm
 	static int aimpos1, aimpos2;
 	
 	
-	WRITE_HANDLER( exterm_host_data_w )
+	public static WriteHandlerPtr exterm_host_data_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		tms34010_host_w(1, offset / TOBYTE(0x00100000), data);
-	}
+	} };
 	
 	
 	public static ReadHandlerPtr exterm_host_data_r  = new ReadHandlerPtr() { public int handler(int offset)
@@ -42,7 +42,7 @@ public class exterm
 		return (aimpos2 << 8) | input_port_2_r(offset);
 	} };
 	
-	WRITE_HANDLER( exterm_output_port_0_w )
+	public static WriteHandlerPtr exterm_output_port_0_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		/* All the outputs are activated on the rising edge */
 	
@@ -70,5 +70,5 @@ public class exterm
 		coin_counter_w(1, data & 0x4000);
 	
 		last = data;
-	}
+	} };
 }

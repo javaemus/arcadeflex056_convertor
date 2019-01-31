@@ -335,11 +335,11 @@ public class ay8910
 	READ16_HANDLER( AY8910_read_port_3_msb_r ) { return AY8910Read(3) << 8; }
 	READ16_HANDLER( AY8910_read_port_4_msb_r ) { return AY8910Read(4) << 8; }
 	
-	WRITE_HANDLER( AY8910_control_port_0_w ) { AY8910Write(0,0,data); }
-	WRITE_HANDLER( AY8910_control_port_1_w ) { AY8910Write(1,0,data); }
-	WRITE_HANDLER( AY8910_control_port_2_w ) { AY8910Write(2,0,data); }
-	WRITE_HANDLER( AY8910_control_port_3_w ) { AY8910Write(3,0,data); }
-	WRITE_HANDLER( AY8910_control_port_4_w ) { AY8910Write(4,0,data); }
+	public static WriteHandlerPtr AY8910_control_port_0_w = new WriteHandlerPtr() {public void handler(int offset, int data) { AY8910Write(0,0,data); } };
+	public static WriteHandlerPtr AY8910_control_port_1_w = new WriteHandlerPtr() {public void handler(int offset, int data) { AY8910Write(1,0,data); } };
+	public static WriteHandlerPtr AY8910_control_port_2_w = new WriteHandlerPtr() {public void handler(int offset, int data) { AY8910Write(2,0,data); } };
+	public static WriteHandlerPtr AY8910_control_port_3_w = new WriteHandlerPtr() {public void handler(int offset, int data) { AY8910Write(3,0,data); } };
+	public static WriteHandlerPtr AY8910_control_port_4_w = new WriteHandlerPtr() {public void handler(int offset, int data) { AY8910Write(4,0,data); } };
 	WRITE16_HANDLER( AY8910_control_port_0_lsb_w ) { if (ACCESSING_LSB) AY8910Write(0,0,data & 0xff); }
 	WRITE16_HANDLER( AY8910_control_port_1_lsb_w ) { if (ACCESSING_LSB) AY8910Write(1,0,data & 0xff); }
 	WRITE16_HANDLER( AY8910_control_port_2_lsb_w ) { if (ACCESSING_LSB) AY8910Write(2,0,data & 0xff); }
@@ -351,11 +351,11 @@ public class ay8910
 	WRITE16_HANDLER( AY8910_control_port_3_msb_w ) { if (ACCESSING_MSB) AY8910Write(3,0,data >> 8); }
 	WRITE16_HANDLER( AY8910_control_port_4_msb_w ) { if (ACCESSING_MSB) AY8910Write(4,0,data >> 8); }
 	
-	WRITE_HANDLER( AY8910_write_port_0_w ) { AY8910Write(0,1,data); }
-	WRITE_HANDLER( AY8910_write_port_1_w ) { AY8910Write(1,1,data); }
-	WRITE_HANDLER( AY8910_write_port_2_w ) { AY8910Write(2,1,data); }
-	WRITE_HANDLER( AY8910_write_port_3_w ) { AY8910Write(3,1,data); }
-	WRITE_HANDLER( AY8910_write_port_4_w ) { AY8910Write(4,1,data); }
+	public static WriteHandlerPtr AY8910_write_port_0_w = new WriteHandlerPtr() {public void handler(int offset, int data) { AY8910Write(0,1,data); } };
+	public static WriteHandlerPtr AY8910_write_port_1_w = new WriteHandlerPtr() {public void handler(int offset, int data) { AY8910Write(1,1,data); } };
+	public static WriteHandlerPtr AY8910_write_port_2_w = new WriteHandlerPtr() {public void handler(int offset, int data) { AY8910Write(2,1,data); } };
+	public static WriteHandlerPtr AY8910_write_port_3_w = new WriteHandlerPtr() {public void handler(int offset, int data) { AY8910Write(3,1,data); } };
+	public static WriteHandlerPtr AY8910_write_port_4_w = new WriteHandlerPtr() {public void handler(int offset, int data) { AY8910Write(4,1,data); } };
 	WRITE16_HANDLER( AY8910_write_port_0_lsb_w ) { if (ACCESSING_LSB) AY8910Write(0,1,data & 0xff); }
 	WRITE16_HANDLER( AY8910_write_port_1_lsb_w ) { if (ACCESSING_LSB) AY8910Write(1,1,data & 0xff); }
 	WRITE16_HANDLER( AY8910_write_port_2_lsb_w ) { if (ACCESSING_LSB) AY8910Write(2,1,data & 0xff); }

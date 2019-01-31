@@ -20,7 +20,6 @@ public class ssozumo
 	extern size_t ssozumo_videoram2_size;
 	extern unsigned char *ssozumo_scroll;
 	
-	WRITE_HANDLER( ssozumo_paletteram_w );
 	void ssozumo_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable, const unsigned char *color_prom);
 	void ssozumo_vh_screenrefresh(struct mame_bitmap *bitmap, int full_refresh);
 	int ssozumo_vh_start(void);
@@ -45,11 +44,11 @@ public class ssozumo
 	}
 	
 	
-	WRITE_HANDLER( ssozumo_sh_command_w )
+	public static WriteHandlerPtr ssozumo_sh_command_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		soundlatch_w(offset, data);
 		cpu_cause_interrupt(1, M6502_INT_IRQ);
-	}
+	} };
 	
 	
 	public static Memory_ReadAddress readmem[]={

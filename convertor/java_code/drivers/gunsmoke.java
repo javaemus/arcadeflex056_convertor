@@ -23,8 +23,6 @@ public class gunsmoke
 	extern unsigned char *gunsmoke_bg_scrollx;
 	extern unsigned char *gunsmoke_bg_scrolly;
 	
-	WRITE_HANDLER( gunsmoke_c804_w );	/* in vidhrdw/c1943.c */
-	WRITE_HANDLER( gunsmoke_d806_w );	/* in vidhrdw/c1943.c */
 	void gunsmoke_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom);
 	void gunsmoke_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	int gunsmoke_vh_start(void);

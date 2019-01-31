@@ -64,9 +64,6 @@ public class cop01
 	void cop01_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom);
 	int cop01_vh_start(void);
 	void cop01_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
-	WRITE_HANDLER( cop01_background_w );
-	WRITE_HANDLER( cop01_foreground_w );
-	WRITE_HANDLER( cop01_vreg_w );
 	
 	
 	public static WriteHandlerPtr cop01_sound_command_w = new WriteHandlerPtr() {public void handler(int offset, int data)

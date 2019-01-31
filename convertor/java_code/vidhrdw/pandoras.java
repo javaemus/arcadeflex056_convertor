@@ -120,34 +120,34 @@ public class pandoras
 		return colorram[offset];
 	} };
 	
-	WRITE_HANDLER( pandoras_vram_w )
+	public static WriteHandlerPtr pandoras_vram_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		if (videoram[offset] != data)
 		{
 			tilemap_mark_tile_dirty(layer0,offset);
 			videoram[offset] = data;
 		}
-	}
+	} };
 	
-	WRITE_HANDLER( pandoras_cram_w )
+	public static WriteHandlerPtr pandoras_cram_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		if (colorram[offset] != data)
 		{
 			tilemap_mark_tile_dirty(layer0,offset);
 			colorram[offset] = data;
 		}
-	}
+	} };
 	
-	WRITE_HANDLER( pandoras_scrolly_w )
+	public static WriteHandlerPtr pandoras_scrolly_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		tilemap_set_scrolly(layer0,0,data);
-	}
+	} };
 	
-	WRITE_HANDLER( pandoras_flipscreen_w )
+	public static WriteHandlerPtr pandoras_flipscreen_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		flipscreen = data;
 		tilemap_set_flip(ALL_TILEMAPS, flipscreen ? (TILEMAP_FLIPY | TILEMAP_FLIPX) : 0);
-	}
+	} };
 	
 	/***************************************************************************
 	

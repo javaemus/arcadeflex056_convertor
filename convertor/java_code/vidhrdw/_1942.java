@@ -156,38 +156,38 @@ public class _1942
 	
 	***************************************************************************/
 	
-	WRITE_HANDLER( c1942_fgvideoram_w )
+	public static WriteHandlerPtr c1942_fgvideoram_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		c1942_fgvideoram[offset] = data;
 		tilemap_mark_tile_dirty(fg_tilemap,offset & 0x3ff);
-	}
+	} };
 	
-	WRITE_HANDLER( c1942_bgvideoram_w )
+	public static WriteHandlerPtr c1942_bgvideoram_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		c1942_bgvideoram[offset] = data;
 		tilemap_mark_tile_dirty(bg_tilemap,(offset & 0x0f) | ((offset >> 1) & 0x01f0));
-	}
+	} };
 	
 	
-	WRITE_HANDLER( c1942_palette_bank_w )
+	public static WriteHandlerPtr c1942_palette_bank_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		if (c1942_palette_bank != data)
 		{
 			c1942_palette_bank = data;
 			tilemap_mark_all_tiles_dirty(bg_tilemap);
 		}
-	}
+	} };
 	
-	WRITE_HANDLER( c1942_scroll_w )
+	public static WriteHandlerPtr c1942_scroll_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		static unsigned char scroll[2];
 	
 		scroll[offset] = data;
 		tilemap_set_scrollx(bg_tilemap,0,scroll[0] | (scroll[1] << 8));
-	}
+	} };
 	
 	
-	WRITE_HANDLER( c1942_c804_w )
+	public static WriteHandlerPtr c1942_c804_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		/* bit 7: flip screen
 	       bit 4: cpu B reset
@@ -198,7 +198,7 @@ public class _1942
 		cpu_set_reset_line(1,(data & 0x10) ? ASSERT_LINE : CLEAR_LINE);
 	
 		flip_screen_set(data & 0x80);
-	}
+	} };
 	
 	
 	/***************************************************************************

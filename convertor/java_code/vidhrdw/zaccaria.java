@@ -177,16 +177,16 @@ public class zaccaria
 	
 	***************************************************************************/
 	
-	WRITE_HANDLER( zaccaria_videoram_w )
+	public static WriteHandlerPtr zaccaria_videoram_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		if (zaccaria_videoram[offset] != data)
 		{
 			zaccaria_videoram[offset] = data;
 			tilemap_mark_tile_dirty(bg_tilemap,offset & 0x3ff);
 		}
-	}
+	} };
 	
-	WRITE_HANDLER( zaccaria_attributes_w )
+	public static WriteHandlerPtr zaccaria_attributes_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		if (offset & 1)
 		{
@@ -202,17 +202,17 @@ public class zaccaria
 			tilemap_set_scrolly(bg_tilemap,offset / 2,data);
 	
 		zaccaria_attributesram[offset] = data;
-	}
+	} };
 	
-	WRITE_HANDLER( zaccaria_flip_screen_x_w )
+	public static WriteHandlerPtr zaccaria_flip_screen_x_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		flip_screen_x_set(data);
-	}
+	} };
 	
-	WRITE_HANDLER( zaccaria_flip_screen_y_w )
+	public static WriteHandlerPtr zaccaria_flip_screen_y_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		flip_screen_y_set(data);
-	}
+	} };
 	
 	
 	

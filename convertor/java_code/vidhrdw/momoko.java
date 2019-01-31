@@ -61,19 +61,19 @@ public class momoko
 	{
 		momoko_bg_scrolly[ offset ] = data;
 	}
-	WRITE_HANDLER( momoko_bg_select_w )
+	public static WriteHandlerPtr momoko_bg_select_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		momoko_bg_select = data & 0x0f;
 		momoko_bg_mask = data & 0x10;
-	}
-	WRITE_HANDLER( momoko_bg_priority_w )
+	} };
+	public static WriteHandlerPtr momoko_bg_priority_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		momoko_bg_priority = data & 0x01;
-	}
-	WRITE_HANDLER( momoko_flipscreen_w )
+	} };
+	public static WriteHandlerPtr momoko_flipscreen_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		momoko_flipscreen = data & 0x01;
-	}
+	} };
 	/****************************************************************************/
 	
 	void momoko_draw_bg_pri(struct mame_bitmap *bitmap, int chr, int col, int flipx, int flipy, int x,int y, int pri)

@@ -77,15 +77,8 @@ public class astrocde
 	extern const char *gorf_sample_names[];
 	
 	void astrocde_init_palette(unsigned char *game_palette, unsigned short *game_colortable,const unsigned char *color_prom);
-	WRITE_HANDLER( wow_videoram_w );
-	WRITE_HANDLER( astrocde_magic_expand_color_w );
-	WRITE_HANDLER( astrocde_magic_control_w );
-	WRITE_HANDLER( wow_magicram_w );
-	WRITE_HANDLER( astrocde_pattern_board_w );
 	void astrocde_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	
-	WRITE_HANDLER( astrocde_interrupt_enable_w );
-	WRITE_HANDLER( astrocde_interrupt_w );
 	int  wow_interrupt(void);
 	
 	void seawolf2_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
@@ -102,15 +95,8 @@ public class astrocde
 	
 	int  gorf_sh_start(const struct MachineSound *msound);
 	void gorf_sh_update(void);
-	WRITE_HANDLER( gorf_sound_control_a_w );
 	
-	WRITE_HANDLER( astrocde_mode_w );
-	WRITE_HANDLER( astrocde_vertical_blank_w );
-	WRITE_HANDLER( astrocde_colour_register_w );
-	WRITE_HANDLER( astrocde_colour_split_w );
-	WRITE_HANDLER( astrocde_colour_block_w );
 	
-	WRITE_HANDLER( ebases_trackball_select_w );
 	
 	
 	public static WriteHandlerPtr seawolf2_lamps_w = new WriteHandlerPtr() {public void handler(int offset, int data)

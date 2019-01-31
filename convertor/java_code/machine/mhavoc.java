@@ -30,7 +30,7 @@ public class mhavoc
 	static void *gamma_timer = NULL;
 	static void mhavoc_gamma_irq(int param);
 	
-	WRITE_HANDLER( mhavoc_ram_banksel_w )
+	public static WriteHandlerPtr mhavoc_ram_banksel_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		static int bank[2] = { 0x20200, 0x20800 };
 		unsigned char *RAM = memory_region(REGION_CPU1);
@@ -38,9 +38,9 @@ public class mhavoc
 		data&=0x01;
 		logerror("Alpha RAM select: %02x\n",data);
 		cpu_setbank (1, &RAM[bank[data]]);
-	}
+	} };
 	
-	WRITE_HANDLER( mhavoc_rom_banksel_w )
+	public static WriteHandlerPtr mhavoc_rom_banksel_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		static int bank[4] = { 0x10000, 0x12000, 0x14000, 0x16000 };
 		unsigned char *RAM = memory_region(REGION_CPU1);
@@ -50,7 +50,7 @@ public class mhavoc
 	
 		logerror("Alpha ROM select: %02x\n",data);
 		cpu_setbank (2, &RAM[bank[data]]);
-	}
+	} };
 	
 	void mhavoc_init_machine (void)
 	{
@@ -89,7 +89,7 @@ public class mhavoc
 	} };
 	
 	/* Write to the gamma processor */
-	WRITE_HANDLER( mhavoc_gamma_w )
+	public static WriteHandlerPtr mhavoc_gamma_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		logerror("  writing to gamma processor: %02x (%d %d)\n", data, gamma_rcvd, alpha_xmtd);
 		gamma_rcvd=0;
@@ -99,16 +99,16 @@ public class mhavoc
 	
 		/* the sound CPU needs to reply in 250microseconds (according to Neil Bradley) */
 		timer_set (TIME_IN_USEC(250), 0, 0);
-	}
+	} };
 	
 	/* Write to the alpha processor */
-	WRITE_HANDLER( mhavoc_alpha_w )
+	public static WriteHandlerPtr mhavoc_alpha_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		logerror("\t\t\t\t\twriting to alpha processor: %02x %d %d\n", data, alpha_rcvd, gamma_xmtd);
 		alpha_rcvd=0;
 		gamma_xmtd=1;
 		gamma_data = data;
-	}
+	} };
 	
 	/* Simulates frequency and vector halt */
 	public static ReadHandlerPtr mhavoc_port_0_r  = new ReadHandlerPtr() { public int handler(int offset)
@@ -162,7 +162,7 @@ public class mhavoc
 		return (res & 0xff);
 	} };
 	
-	WRITE_HANDLER( mhavoc_out_0_w )
+	public static WriteHandlerPtr mhavoc_out_0_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		if (!(data & 0x08))
 		{
@@ -176,22 +176,22 @@ public class mhavoc
 		player_1 = data & 0x20;
 		/* Emulate the roller light (Blinks on fatal errors) */
 		set_led_status (2, data & 0x01);
-	}
+	} };
 	
-	WRITE_HANDLER( mhavoc_out_1_w )
+	public static WriteHandlerPtr mhavoc_out_1_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		set_led_status (1,data & 0x01);
 		set_led_status (0,data & 0x02);
-	}
+	} };
 	
 	static void mhavoc_gamma_irq(int param)
 	{
 		cpu_set_irq_line(1,0,HOLD_LINE);
 	}
 	
-	WRITE_HANDLER( mhavoc_irqack_w )
+	public static WriteHandlerPtr mhavoc_irqack_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		timer_reset( gamma_timer, TIME_IN_HZ(LS161_CLOCK/16));
 		cpu_set_irq_line(1,0,CLEAR_LINE);
-	}
+	} };
 }

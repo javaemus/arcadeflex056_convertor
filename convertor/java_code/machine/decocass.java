@@ -89,11 +89,11 @@ public class decocass
 	static data8_t decocass_sound_ack;
 	static void *decocass_sound_timer;
 	
-	WRITE_HANDLER( decocass_coin_counter_w )
+	public static WriteHandlerPtr decocass_coin_counter_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
-	}
+	} };
 	
-	WRITE_HANDLER( decocass_sound_command_w )
+	public static WriteHandlerPtr decocass_sound_command_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		LOG(2,("CPU #%d sound command -> $%02x\n", cpu_getactivecpu(), data));
 		soundlatch_w(0,data);
@@ -101,7 +101,7 @@ public class decocass
 		/* remove snd cpu data ack bit. i don't see it in the schems, but... */
 		decocass_sound_ack &= ~0x40;
 		cpu_set_irq_line(1, M6502_INT_IRQ, ASSERT_LINE);
-	}
+	} };
 	
 	public static ReadHandlerPtr decocass_sound_data_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
@@ -117,12 +117,12 @@ public class decocass
 		return data;
 	} };
 	
-	WRITE_HANDLER( decocass_sound_data_w )
+	public static WriteHandlerPtr decocass_sound_data_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		LOG(2,("CPU #%d sound data    -> $%02x\n", cpu_getactivecpu(), data));
 		soundlatch2_w(0, data);
 		decocass_sound_ack |= 0x40;
-	}
+	} };
 	
 	public static ReadHandlerPtr decocass_sound_command_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
@@ -138,12 +138,12 @@ public class decocass
 		cpu_set_nmi_line(1, PULSE_LINE);
 	}
 	
-	WRITE_HANDLER( decocass_sound_nmi_enable_w )
+	public static WriteHandlerPtr decocass_sound_nmi_enable_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		LOG(2,("CPU #%d sound NMI enb -> $%02x\n", cpu_getactivecpu(), data));
 		if (NULL == decocass_sound_timer)
 			decocass_sound_timer = timer_pulse(TIME_IN_HZ(256 * 57 / 8 / 2), 0, decocass_sound_nmi_pulse);
-	}
+	} };
 	
 	public static ReadHandlerPtr decocass_sound_nmi_enable_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
@@ -162,29 +162,29 @@ public class decocass
 		return data;
 	} };
 	
-	WRITE_HANDLER( decocass_sound_data_ack_reset_w )
+	public static WriteHandlerPtr decocass_sound_data_ack_reset_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		LOG(2,("CPU #%d sound ack rst -> $%02x\n", cpu_getactivecpu(), data));
 		decocass_sound_ack &= ~0x40;
-	}
+	} };
 	
-	WRITE_HANDLER( decocass_nmi_reset_w )
+	public static WriteHandlerPtr decocass_nmi_reset_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		cpu_set_nmi_line( 0, CLEAR_LINE );
-	}
+	} };
 	
-	WRITE_HANDLER( decocass_quadrature_decoder_reset_w )
+	public static WriteHandlerPtr decocass_quadrature_decoder_reset_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		/* just latch the analog controls here */
 		decocass_quadrature_decoder[0] = input_port_3_r(0);
 		decocass_quadrature_decoder[1] = input_port_4_r(0);
 		decocass_quadrature_decoder[2] = input_port_5_r(0);
 		decocass_quadrature_decoder[3] = input_port_6_r(0);
-	}
+	} };
 	
-	WRITE_HANDLER( decocass_adc_w )
+	public static WriteHandlerPtr decocass_adc_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
-	}
+	} };
 	
 	/*
 	 * E6x0    inputs
@@ -270,7 +270,7 @@ public class decocass
 	#define BIT6(x) (((x)>>6)&1)
 	#define BIT7(x) (((x)>>7)&1)
 	
-	WRITE_HANDLER( decocass_reset_w )
+	public static WriteHandlerPtr decocass_reset_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		LOG(1,("%9.7f 6502-PC: %04x decocass_reset_w(%02x): $%02x\n", timer_get_time(), cpu_getpreviouspc(), offset, data));
 		decocass_reset = data;
@@ -287,7 +287,7 @@ public class decocass
 	
 		/* 8041 active low reset */
 		cpu_set_reset_line( 2, (data & 0x08) ^ 0x08 );
-	}
+	} };
 	
 	static char *dirnm(int speed)
 	{
@@ -924,7 +924,7 @@ public class decocass
 		return data;
 	} };
 	
-	WRITE_HANDLER( decocass_type2_w )
+	public static WriteHandlerPtr decocass_type2_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		if (1 == type2_xx_latch)
 		{
@@ -957,7 +957,7 @@ public class decocass
 	#ifdef MAME_DEBUG
 		decocass_fno(offset, data);
 	#endif
-	}
+	} };
 	
 	/***************************************************************************
 	 *
@@ -1176,7 +1176,7 @@ public class decocass
 		return data;
 	} };
 	
-	WRITE_HANDLER( decocass_type3_w )
+	public static WriteHandlerPtr decocass_type3_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		if (1 == (offset & 1))
 		{
@@ -1201,7 +1201,7 @@ public class decocass
 		}
 		LOG(3,("%9.7f 6502-PC: %04x decocass_e5xx_w(%02x): $%02x -> %s\n", timer_get_time(), cpu_getpreviouspc(), offset, data, offset & 1 ? "8041-CMND" : "8041-DATA"));
 		cpunum_set_reg(2, offset & 1 ? I8X41_CMND : I8X41_DATA, data);
-	}
+	} };
 	
 	/***************************************************************************
 	 *
@@ -1260,7 +1260,7 @@ public class decocass
 		return data;
 	} };
 	
-	WRITE_HANDLER( decocass_type4_w )
+	public static WriteHandlerPtr decocass_type4_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		if (1 == (offset & 1))
 		{
@@ -1287,7 +1287,7 @@ public class decocass
 		}
 		LOG(3,("%9.7f 6502-PC: %04x decocass_e5xx_w(%02x): $%02x -> %s\n", timer_get_time(), cpu_getpreviouspc(), offset, data, offset & 1 ? "8041-CMND" : "8041-DATA"));
 		cpunum_set_reg(2, offset & 1 ? I8X41_CMND : I8X41_DATA, data);
-	}
+	} };
 	
 	/***************************************************************************
 	 *
@@ -1340,7 +1340,7 @@ public class decocass
 		return data;
 	} };
 	
-	WRITE_HANDLER( decocass_type5_w )
+	public static WriteHandlerPtr decocass_type5_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		if (1 == (offset & 1))
 		{
@@ -1364,7 +1364,7 @@ public class decocass
 		}
 		LOG(3,("%9.7f 6502-PC: %04x decocass_e5xx_w(%02x): $%02x -> %s\n", timer_get_time(), cpu_getpreviouspc(), offset, data, offset & 1 ? "8041-CMND" : "8041-DATA"));
 		cpunum_set_reg(2, offset & 1 ? I8X41_CMND : I8X41_DATA, data);
-	}
+	} };
 	
 	/***************************************************************************
 	 *
@@ -1412,7 +1412,7 @@ public class decocass
 		return data;
 	} };
 	
-	WRITE_HANDLER( decocass_e5xx_w )
+	public static WriteHandlerPtr decocass_e5xx_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		if (decocass_dongle_w)
 		{
@@ -1432,7 +1432,7 @@ public class decocass
 		{
 			LOG(3,("%9.7f 6502-PC: %04x decocass_e5xx_w(%02x): $%02x -> dongle\n", timer_get_time(), cpu_getpreviouspc(), offset, data));
 		}
-	}
+	} };
 	
 	/***************************************************************************
 	 *
@@ -1785,7 +1785,7 @@ public class decocass
 	}
 	
 	
-	WRITE_HANDLER( i8041_p1_w )
+	public static WriteHandlerPtr i8041_p1_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		static int i8041_p1_old;
 	
@@ -1874,7 +1874,7 @@ public class decocass
 		}
 	
 		i8041_p1 = data;
-	}
+	} };
 	
 	public static ReadHandlerPtr i8041_p1_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
@@ -1900,7 +1900,7 @@ public class decocass
 		return data;
 	} };
 	
-	WRITE_HANDLER( i8041_p2_w )
+	public static WriteHandlerPtr i8041_p2_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		static int i8041_p2_old;
 	
@@ -1921,7 +1921,7 @@ public class decocass
 			i8041_p2_old = data;
 		}
 		i8041_p2 = data;
-	}
+	} };
 	
 	public static ReadHandlerPtr i8041_p2_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{

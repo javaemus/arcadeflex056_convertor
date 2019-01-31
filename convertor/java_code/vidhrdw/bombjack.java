@@ -21,25 +21,25 @@ public class bombjack
 	
 	
 	
-	WRITE_HANDLER( bombjack_background_w )
+	public static WriteHandlerPtr bombjack_background_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		if (background_image != data)
 		{
 			memset(dirtybuffer,1,videoram_size);
 			background_image = data;
 		}
-	}
+	} };
 	
 	
 	
-	WRITE_HANDLER( bombjack_flipscreen_w )
+	public static WriteHandlerPtr bombjack_flipscreen_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		if (flipscreen != (data & 1))
 		{
 			flipscreen = data & 1;
 			memset(dirtybuffer,1,videoram_size);
 		}
-	}
+	} };
 	
 	static void dirty_all(void)
 	{

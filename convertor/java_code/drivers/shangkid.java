@@ -63,8 +63,7 @@ public class shangkid
 	extern int shangkid_vh_start( void );
 	extern void shangkid_vh_stop( void );
 	extern void shangkid_screenrefresh( struct mame_bitmap *bitmap, int fullfresh );
-	extern WRITE_HANDLER( shangkid_videoram_w );
-	extern UINT8 *shangkid_videoreg;
+	extern extern UINT8 *shangkid_videoreg;
 	extern int shangkid_gfx_type;
 	
 	extern void dynamski_screenrefresh( struct mame_bitmap *bitmap, int fullrefresh );
@@ -149,13 +148,13 @@ public class shangkid
 		bbx_sound_enable = data;
 	} };
 	
-	WRITE_HANDLER( shangkid_bbx_AY8910_control_w )
+	public static WriteHandlerPtr shangkid_bbx_AY8910_control_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		bbx_AY8910_control = data;
 		AY8910_control_port_0_w( offset, data );
-	}
+	} };
 	
-	WRITE_HANDLER( shangkid_bbx_AY8910_write_w )
+	public static WriteHandlerPtr shangkid_bbx_AY8910_write_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		switch( bbx_AY8910_control )
 		{
@@ -182,7 +181,7 @@ public class shangkid
 			AY8910_write_port_0_w( offset, data );
 			break;
 		}
-	}
+	} };
 	
 	/***************************************************************************************/
 	

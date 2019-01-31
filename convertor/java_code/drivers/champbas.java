@@ -49,15 +49,14 @@ public class champbas
 	
 	
 	void champbas_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom);
-	WRITE_HANDLER( champbas_gfxbank_w );
 	void champbas_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	
 	
 	
-	WRITE_HANDLER( champbas_dac_w )
+	public static WriteHandlerPtr champbas_dac_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		DAC_signed_data_w(0,data<<2);
-	}
+	} };
 	
 	
 	public static Memory_ReadAddress readmem[]={

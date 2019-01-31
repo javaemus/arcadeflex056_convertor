@@ -18,9 +18,4 @@ void init_swmathbox (void);
 /* Read handlers */
 
 /* Write handlers */
-WRITE_HANDLER( prngclr_w );
-WRITE_HANDLER( mw0_w );
-WRITE_HANDLER( mw1_w );
-WRITE_HANDLER( mw2_w );
-WRITE_HANDLER( swmathbx_w );
 

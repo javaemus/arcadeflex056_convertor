@@ -46,7 +46,6 @@ public class seicross
 	
 	
 	extern unsigned char *seicross_row_scroll;
-	WRITE_HANDLER( seicross_colorram_w );
 	void seicross_vh_convert_color_prom(unsigned char *obsolete,unsigned short *colortable,const unsigned char *color_prom);
 	void seicross_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	

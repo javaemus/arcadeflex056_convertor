@@ -110,14 +110,14 @@ public class tubep
 	}
 	
 	
-	WRITE_HANDLER( tubep_textram_w )
+	public static WriteHandlerPtr tubep_textram_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		if (tubep_textram[offset] != data)
 		{
 			dirtybuff[offset/2] = 1;
 			tubep_textram[offset] = data;
 		}
-	}
+	} };
 	
 	void tubep_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
 	{

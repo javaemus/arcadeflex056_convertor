@@ -67,7 +67,6 @@ public class gyruss
 	
 	void konami1_decode_cpu2(void);
 	
-	WRITE_HANDLER( gyruss_flipscreen_w );
 	int  gyruss_vh_start(void);
 	void gyruss_vh_stop(void);
 	void gyruss_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom);
@@ -75,10 +74,6 @@ public class gyruss
 	int gyruss_6809_interrupt(void);
 	
 	
-	WRITE_HANDLER( gyruss_filter0_w );
-	WRITE_HANDLER( gyruss_filter1_w );
-	WRITE_HANDLER( gyruss_sh_irqtrigger_w );
-	WRITE_HANDLER( gyruss_i8039_irq_w );
 	
 	
 	unsigned char *gyruss_sharedram;
@@ -88,10 +83,10 @@ public class gyruss
 		return gyruss_sharedram[offset];
 	} };
 	
-	WRITE_HANDLER( gyruss_sharedram_w )
+	public static WriteHandlerPtr gyruss_sharedram_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		gyruss_sharedram[offset] = data;
-	}
+	} };
 	
 	
 	

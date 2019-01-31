@@ -10,7 +10,7 @@ public class shisen
 	static int gfxbank;
 	
 	
-	WRITE_HANDLER( sichuan2_bankswitch_w )
+	public static WriteHandlerPtr sichuan2_bankswitch_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		int bankaddress;
 		unsigned char *RAM = memory_region(REGION_CPU1);
@@ -30,10 +30,10 @@ public class shisen
 		}
 	
 		/* bits 6-7 unknown */
-	}
+	} };
 	
 	
-	WRITE_HANDLER( sichuan2_paletteram_w )
+	public static WriteHandlerPtr sichuan2_paletteram_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		int r,g,b;
 	
@@ -49,7 +49,7 @@ public class shisen
 		b = (b << 3) | (b >> 2);
 	
 		palette_set_color(offset,r,g,b);
-	}
+	} };
 	
 	
 	

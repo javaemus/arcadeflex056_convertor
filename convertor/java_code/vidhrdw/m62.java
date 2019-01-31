@@ -261,7 +261,7 @@ public class m62
 	
 	
 	
-	WRITE_HANDLER( irem_flipscreen_w )
+	public static WriteHandlerPtr irem_flipscreen_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		/* screen flip is handled both by software and hardware */
 		data ^= ~readinputport(4) & 1;
@@ -274,10 +274,10 @@ public class m62
 	
 		coin_counter_w(0,data & 2);
 		coin_counter_w(1,data & 4);
-	}
+	} };
 	
 	
-	WRITE_HANDLER( irem_background_hscroll_w )
+	public static WriteHandlerPtr irem_background_hscroll_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		switch(offset)
 		{
@@ -289,18 +289,18 @@ public class m62
 				irem_background_hscroll = (irem_background_hscroll&0xff)|(data<<8);
 				break;
 		}
-	}
+	} };
 	
-	WRITE_HANDLER( kungfum_scroll_low_w )
+	public static WriteHandlerPtr kungfum_scroll_low_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		irem_background_hscroll_w(0,data);
-	}
-	WRITE_HANDLER( kungfum_scroll_high_w )
+	} };
+	public static WriteHandlerPtr kungfum_scroll_high_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		irem_background_hscroll_w(1,data);
-	}
+	} };
 	
-	WRITE_HANDLER( irem_background_vscroll_w )
+	public static WriteHandlerPtr irem_background_vscroll_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		switch( offset )
 		{
@@ -312,9 +312,9 @@ public class m62
 			irem_background_vscroll = (irem_background_vscroll&0xff)|(data<<8);
 			break;
 		}
-	}
+	} };
 	
-	WRITE_HANDLER( battroad_scroll_w )
+	public static WriteHandlerPtr battroad_scroll_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		switch( offset )
 		{
@@ -330,19 +330,19 @@ public class m62
 			irem_background_hscroll_w(0, data);
 			break;
 		}
-	}
+	} };
 	
-	WRITE_HANDLER( ldrun3_vscroll_w )
+	public static WriteHandlerPtr ldrun3_vscroll_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		irem_background_vscroll = data;
-	}
+	} };
 	
-	WRITE_HANDLER( ldrun4_hscroll_w )
+	public static WriteHandlerPtr ldrun4_hscroll_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		irem_background_hscroll_w(offset ^ 1,data);
-	}
+	} };
 	
-	WRITE_HANDLER( kidniki_text_vscroll_w )
+	public static WriteHandlerPtr kidniki_text_vscroll_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		switch (offset)
 		{
@@ -354,32 +354,32 @@ public class m62
 			kidniki_text_vscroll = (kidniki_text_vscroll & 0xff) | (data << 8);
 			break;
 		}
-	}
+	} };
 	
-	WRITE_HANDLER( youjyudn_scroll_w )
+	public static WriteHandlerPtr youjyudn_scroll_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		irem_background_hscroll_w(offset^1,data);
-	}
+	} };
 	
-	WRITE_HANDLER( kidniki_background_bank_w )
+	public static WriteHandlerPtr kidniki_background_bank_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		if (kidniki_background_bank != (data & 1))
 		{
 			kidniki_background_bank = data & 1;
 			memset(dirtybuffer,1,videoram_size);
 		}
-	}
+	} };
 	
-	WRITE_HANDLER( spelunkr_palbank_w )
+	public static WriteHandlerPtr spelunkr_palbank_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		if (spelunk2_palbank != (data & 0x01))
 		{
 			spelunk2_palbank = data & 0x01;
 			memset(dirtybuffer,1,videoram_size);
 		}
-	}
+	} };
 	
-	WRITE_HANDLER( spelunk2_gfxport_w )
+	public static WriteHandlerPtr spelunk2_gfxport_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		switch( offset )
 		{
@@ -401,7 +401,7 @@ public class m62
 			}
 			break;
 		}
-	}
+	} };
 	
 	
 	

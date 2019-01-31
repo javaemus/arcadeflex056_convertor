@@ -26,23 +26,11 @@ public class qixH
 	void qixmcu_init_machine(void);
 	void slither_init_machine(void);
 	
-	WRITE_HANDLER( qix_sharedram_w );
 	
-	WRITE_HANDLER( zoo_bankswitch_w );
 	
-	WRITE_HANDLER( qix_data_firq_w );
-	WRITE_HANDLER( qix_data_firq_ack_w );
 	
-	WRITE_HANDLER( qix_video_firq_w );
-	WRITE_HANDLER( qix_video_firq_ack_w );
 	
-	WRITE_HANDLER( qix_68705_portA_w );
-	WRITE_HANDLER( qix_68705_portB_w );
-	WRITE_HANDLER( qix_68705_portC_w );
 	
-	WRITE_HANDLER( qix_pia_0_w );
-	WRITE_HANDLER( zookeep_pia_0_w );
-	WRITE_HANDLER( zookeep_pia_2_w );
 	
 	
 	/*----------- defined in vidhrdw/qix.c -----------*/
@@ -58,12 +46,5 @@ public class qixH
 	int qix_vblank_start(void);
 	void qix_scanline_callback(int scanline);
 	
-	WRITE_HANDLER( qix_videoram_w );
-	WRITE_HANDLER( qix_addresslatch_w );
-	WRITE_HANDLER( slither_vram_mask_w );
-	WRITE_HANDLER( qix_paletteram_w );
-	WRITE_HANDLER( qix_palettebank_w );
 	
-	WRITE_HANDLER( qix_data_io_w );
-	WRITE_HANDLER( qix_sound_io_w );
-}
+	}

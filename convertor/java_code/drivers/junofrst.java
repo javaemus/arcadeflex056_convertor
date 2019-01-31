@@ -91,22 +91,19 @@ public class junofrst
 	
 	extern unsigned char *tutankhm_scrollx;
 	
-	WRITE_HANDLER( tutankhm_videoram_w );
-	WRITE_HANDLER( junofrst_blitter_w );
 	void tutankhm_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	
 	
-	WRITE_HANDLER( tutankhm_sh_irqtrigger_w );
 	
 	
-	WRITE_HANDLER( junofrst_bankselect_w )
+	public static WriteHandlerPtr junofrst_bankselect_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		int bankaddress;
 		unsigned char *RAM = memory_region(REGION_CPU1);
 	
 		bankaddress = 0x10000 + (data & 0x0f) * 0x1000;
 		cpu_setbank(1,&RAM[bankaddress]);
-	}
+	} };
 	
 	
 	static int i8039_irqenable;
@@ -146,7 +143,7 @@ public class junofrst
 		}
 	} };
 	
-	WRITE_HANDLER( junofrst_sh_irqtrigger_w )
+	public static WriteHandlerPtr junofrst_sh_irqtrigger_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		static int last;
 	
@@ -158,13 +155,13 @@ public class junofrst
 		}
 	
 		last = data;
-	}
+	} };
 	
-	WRITE_HANDLER( junofrst_i8039_irq_w )
+	public static WriteHandlerPtr junofrst_i8039_irq_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		if (i8039_irqenable)
 			cpu_cause_interrupt(2,I8039_EXT_INT);
-	}
+	} };
 	
 	public static WriteHandlerPtr i8039_irqen_and_status_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{

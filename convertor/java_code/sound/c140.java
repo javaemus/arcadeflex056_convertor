@@ -109,7 +109,7 @@ public class c140
 		return ((adrs&0x200000)>>2)|(adrs&0x7ffff);		//SYSTEM2 mapping
 	}
 	
-	WRITE_HANDLER( C140_w )
+	public static WriteHandlerPtr C140_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		stream_update(stream, 0);
 	
@@ -142,7 +142,7 @@ public class c140
 				}
 			}
 		}
-	}
+	} };
 	
 	INLINE int limit(INT32 in)
 	{

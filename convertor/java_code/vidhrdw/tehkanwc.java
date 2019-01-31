@@ -64,11 +64,11 @@ public class tehkanwc
 		return tehkanwc_videoram1[offset];
 	} };
 	
-	WRITE_HANDLER( tehkanwc_videoram1_w )
+	public static WriteHandlerPtr tehkanwc_videoram1_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		tehkanwc_videoram1[offset] = data;
 		dirtybuffer1[offset] = 1;
-	}
+	} };
 	
 	public static ReadHandlerPtr tehkanwc_scroll_x_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
@@ -80,26 +80,26 @@ public class tehkanwc
 		return scroll_y;
 	} };
 	
-	WRITE_HANDLER( tehkanwc_scroll_x_w )
+	public static WriteHandlerPtr tehkanwc_scroll_x_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		scroll_x[offset] = data;
-	}
+	} };
 	
-	WRITE_HANDLER( tehkanwc_scroll_y_w )
+	public static WriteHandlerPtr tehkanwc_scroll_y_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		scroll_y = data;
-	}
+	} };
 	
 	
 	
-	WRITE_HANDLER( gridiron_led0_w )
+	public static WriteHandlerPtr gridiron_led0_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		led0 = data;
-	}
-	WRITE_HANDLER( gridiron_led1_w )
+	} };
+	public static WriteHandlerPtr gridiron_led1_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		led1 = data;
-	}
+	} };
 	
 	/*
 	   Gridiron Fight has a LED display on the control panel, to let each player

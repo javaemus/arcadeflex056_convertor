@@ -244,19 +244,10 @@ public class stfight
 	int  stfight_vb_interrupt( void );
 	int  stfight_interrupt_1( void );
 	int  stfight_interrupt_2( void );
-	WRITE_HANDLER( stfight_fm_w );
-	WRITE_HANDLER( stfight_voice_w );
-	WRITE_HANDLER( stfight_coin_w );
-	WRITE_HANDLER( stfight_e800_w );
 	void stfight_adpcm_int( int data );
-	WRITE_HANDLER( stfight_adpcm_control_w );
 	
 	// vidhrdw
 	void stfight_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom);
-	WRITE_HANDLER( stfight_text_char_w );
-	WRITE_HANDLER( stfight_text_attr_w );
-	WRITE_HANDLER( stfight_vh_latch_w );
-	WRITE_HANDLER( stfight_sprite_bank_w );
 	int  stfight_vh_start( void );
 	void stfight_vh_screenrefresh( struct mame_bitmap *bitmap, int full_refresh );
 	

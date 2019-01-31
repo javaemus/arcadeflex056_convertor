@@ -36,15 +36,6 @@ public class namcos86
 	void namcos86_vh_convert_color_prom(unsigned char *palette,unsigned short *colortable,const unsigned char *color_prom);
 	int namcos86_vh_start(void);
 	void namcos86_vh_screenrefresh(struct mame_bitmap *bitmap,int fullrefresh);
-	WRITE_HANDLER( rthunder_videoram1_w );
-	WRITE_HANDLER( rthunder_videoram2_w );
-	WRITE_HANDLER( rthunder_scroll0_w );
-	WRITE_HANDLER( rthunder_scroll1_w );
-	WRITE_HANDLER( rthunder_scroll2_w );
-	WRITE_HANDLER( rthunder_scroll3_w );
-	WRITE_HANDLER( rthunder_backcolor_w );
-	WRITE_HANDLER( rthunder_tilebank_select_0_w );
-	WRITE_HANDLER( rthunder_tilebank_select_1_w );
 	
 	
 	
@@ -1730,13 +1721,13 @@ public class namcos86
 	
 	
 	
-	WRITE_HANDLER( roishtar_semaphore_w )
+	public static WriteHandlerPtr roishtar_semaphore_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 	    rthunder_videoram1_w(0x7e24-0x6000+offset,data);
 	
 	    if (data == 0x02)
 		    cpu_spinuntil_int();
-	}
+	} };
 	
 	static void init_roishtar(void)
 	{

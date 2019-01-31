@@ -172,7 +172,7 @@ public class pengo
 	
 	
 	
-	WRITE_HANDLER( pengo_gfxbank_w )
+	public static WriteHandlerPtr pengo_gfxbank_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		/* the Pengo hardware can set independently the palette bank, color lookup */
 		/* table, and chars/sprites. However the game always set them together (and */
@@ -183,16 +183,16 @@ public class pengo
 			gfx_bank = data & 1;
 			memset(dirtybuffer,1,videoram_size);
 		}
-	}
+	} };
 	
-	WRITE_HANDLER( pengo_flipscreen_w )
+	public static WriteHandlerPtr pengo_flipscreen_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		if (flipscreen != (data & 1))
 		{
 			flipscreen = data & 1;
 			memset(dirtybuffer,1,videoram_size);
 		}
-	}
+	} };
 	
 	
 	

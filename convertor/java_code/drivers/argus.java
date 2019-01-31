@@ -123,26 +123,6 @@ public class argus
 	static data8_t butasan_page_latch = 0x00;
 	
 	
-	WRITE_HANDLER( argus_txram_w );
-	WRITE_HANDLER( butasan_txram_w );
-	WRITE_HANDLER( argus_bg1ram_w );
-	WRITE_HANDLER( butasan_bg0ram_w );
-	WRITE_HANDLER( butasan_bg1ram_w );
-	WRITE_HANDLER( argus_bg0_scrollx_w );
-	WRITE_HANDLER( argus_bg0_scrolly_w );
-	WRITE_HANDLER( butasan_bg0_scrollx_w );
-	WRITE_HANDLER( argus_bg1_scrollx_w );
-	WRITE_HANDLER( argus_bg1_scrolly_w );
-	WRITE_HANDLER( argus_bg_status_w );
-	WRITE_HANDLER( valtric_bg_status_w );
-	WRITE_HANDLER( butasan_bg0_status_w );
-	WRITE_HANDLER( argus_flipscreen_w );
-	WRITE_HANDLER( argus_paletteram_w );
-	WRITE_HANDLER( valtric_paletteram_w );
-	WRITE_HANDLER( butasan_paletteram_w );
-	WRITE_HANDLER( butasan_txbackram_w );
-	WRITE_HANDLER( butasan_bg0backram_w );
-	WRITE_HANDLER( butasan_bg1_status_w );
 	
 	/***************************************************************************
 	

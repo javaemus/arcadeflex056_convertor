@@ -128,17 +128,17 @@ public class m6509
 		return m6509.ind_bank.b.h2;
 	} };
 	
-	WRITE_HANDLER( m6509_write_00000 )
+	public static WriteHandlerPtr m6509_write_00000 = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		m6509.pc_bank.b.h2=data&0xf;
 		m6509.pc.w.h=m6509.pc_bank.w.h;
 		change_pc20(PCD);
-	}
+	} };
 	
-	WRITE_HANDLER( m6509_write_00001 )
+	public static WriteHandlerPtr m6509_write_00001 = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		m6509.ind_bank.b.h2=data&0xf;
-	}
+	} };
 	
 	void m6509_reset (void *param)
 	{

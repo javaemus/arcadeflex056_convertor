@@ -192,9 +192,9 @@ public class hc55516
 	}
 	
 	
-	WRITE_HANDLER( hc55516_0_digit_w )	{ hc55516_digit_w(0,data); }
-	WRITE_HANDLER( hc55516_0_clock_w )	{ hc55516_clock_w(0,data); }
-	WRITE_HANDLER( hc55516_0_clock_clear_w )	{ hc55516_clock_clear_w(0,data); }
-	WRITE_HANDLER( hc55516_0_clock_set_w )		{ hc55516_clock_set_w(0,data); }
-	WRITE_HANDLER( hc55516_0_digit_clock_clear_w )	{ hc55516_digit_clock_clear_w(0,data); }
+	public static WriteHandlerPtr hc55516_0_digit_w = new WriteHandlerPtr() {public void handler(int offset, int data)	{ hc55516_digit_w(0,data); } };
+	public static WriteHandlerPtr hc55516_0_clock_w = new WriteHandlerPtr() {public void handler(int offset, int data)	{ hc55516_clock_w(0,data); } };
+	public static WriteHandlerPtr hc55516_0_clock_clear_w = new WriteHandlerPtr() {public void handler(int offset, int data)	{ hc55516_clock_clear_w(0,data); } };
+	public static WriteHandlerPtr hc55516_0_clock_set_w = new WriteHandlerPtr() {public void handler(int offset, int data)		{ hc55516_clock_set_w(0,data); } };
+	public static WriteHandlerPtr hc55516_0_digit_clock_clear_w = new WriteHandlerPtr() {public void handler(int offset, int data)	{ hc55516_digit_clock_clear_w(0,data); } };
 }

@@ -122,18 +122,18 @@ public class rockola
 	
 	
 	
-	WRITE_HANDLER( rockola_characterram_w )
+	public static WriteHandlerPtr rockola_characterram_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		if (rockola_characterram[offset] != data)
 		{
 			dirtycharacter[(offset / 8) & 0xff] = 1;
 			rockola_characterram[offset] = data;
 		}
-	}
+	} };
 	
 	
 	
-	WRITE_HANDLER( rockola_flipscreen_w )
+	public static WriteHandlerPtr rockola_flipscreen_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		/* bits 0-2 select background color */
 		if (backcolor != (data & 7))
@@ -154,10 +154,10 @@ public class rockola
 	
 		/* bit 7 flips screen */
 		flip_screen_set(data & 0x80);
-	}
+	} };
 	
 	
-	WRITE_HANDLER( satansat_b002_w )
+	public static WriteHandlerPtr satansat_b002_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		/* bit 0 flips screen */
 		flip_screen_set(data & 0x01);
@@ -168,11 +168,11 @@ public class rockola
 		interrupt_enable_w(0,data & 0x02);
 	
 		/* other bits unused */
-	}
+	} };
 	
 	
 	
-	WRITE_HANDLER( satansat_backcolor_w )
+	public static WriteHandlerPtr satansat_backcolor_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		/* bits 0-1 select background color. Other bits unused. */
 		if (backcolor != (data & 3))
@@ -187,7 +187,7 @@ public class rockola
 	
 			schedule_full_refresh();
 		}
-	}
+	} };
 	
 	
 	

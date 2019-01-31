@@ -130,36 +130,36 @@ public class skykid
 		return skykid_videoram[offset];
 	} };
 	
-	WRITE_HANDLER( skykid_videoram_w )
+	public static WriteHandlerPtr skykid_videoram_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		if (skykid_videoram[offset] != data){
 			skykid_videoram[offset] = data;
 			tilemap_mark_tile_dirty(background,offset & 0x7ff);
 		}
-	}
+	} };
 	
-	WRITE_HANDLER( skykid_scroll_x_w )
+	public static WriteHandlerPtr skykid_scroll_x_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		if (flipscreen)
 			tilemap_set_scrollx(background, 0, (189 - (offset ^ 1)) & 0x1ff);
 		else
 			tilemap_set_scrollx(background, 0, ((offset) + 35) & 0x1ff);
-	}
+	} };
 	
-	WRITE_HANDLER( skykid_scroll_y_w )
+	public static WriteHandlerPtr skykid_scroll_y_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		if (flipscreen)
 			tilemap_set_scrolly(background, 0, (261 - offset) & 0xff);
 		else
 			tilemap_set_scrolly(background, 0, (offset + 27) & 0xff);
-	}
+	} };
 	
-	WRITE_HANDLER( skykid_flipscreen_w )
+	public static WriteHandlerPtr skykid_flipscreen_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		priority = data;
 		flipscreen = offset;
 		tilemap_set_flip(background,flipscreen ? (TILEMAP_FLIPY | TILEMAP_FLIPX) : 0);
-	}
+	} };
 	
 	/***************************************************************************
 	

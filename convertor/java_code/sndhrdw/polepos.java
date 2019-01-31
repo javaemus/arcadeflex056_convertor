@@ -157,21 +157,21 @@ public class polepos
 	/************************************/
 	/* Write LSB of engine sound		*/
 	/************************************/
-	WRITE_HANDLER( polepos_engine_sound_lsb_w )
+	public static WriteHandlerPtr polepos_engine_sound_lsb_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		stream_update(sound_stream, 0);
 		sample_lsb = data & 62;
 	    sample_enable = data & 1;
-	}
+	} };
 	
 	/************************************/
 	/* Write MSB of engine sound		*/
 	/************************************/
-	WRITE_HANDLER( polepos_engine_sound_msb_w )
+	public static WriteHandlerPtr polepos_engine_sound_msb_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		stream_update(sound_stream, 0);
 		sample_msb = data & 63;
-	}
+	} };
 	
 	/************************************/
 	/* Play speech sample				*/

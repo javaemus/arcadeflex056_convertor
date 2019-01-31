@@ -39,7 +39,7 @@ public class arkanoid
 		return toz80;
 	} };
 	
-	WRITE_HANDLER( arkanoid_Z80_mcu_w )
+	public static WriteHandlerPtr arkanoid_Z80_mcu_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		/* a write from the Z80 has occurred, mark it and remember the value */
 		z80write = 1;
@@ -47,22 +47,22 @@ public class arkanoid
 	
 		/* give up a little bit of time to let the 68705 detect the write */
 		cpu_spinuntil_trigger(700);
-	}
+	} };
 	
 	public static ReadHandlerPtr arkanoid_68705_portA_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return (portA_out & ddrA) | (portA_in & ~ddrA);
 	} };
 	
-	WRITE_HANDLER( arkanoid_68705_portA_w )
+	public static WriteHandlerPtr arkanoid_68705_portA_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		portA_out = data;
-	}
+	} };
 	
-	WRITE_HANDLER( arkanoid_68705_ddrA_w )
+	public static WriteHandlerPtr arkanoid_68705_ddrA_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		ddrA = data;
-	}
+	} };
 	
 	
 	public static ReadHandlerPtr arkanoid_68705_portC_r  = new ReadHandlerPtr() { public int handler(int offset)
@@ -78,7 +78,7 @@ public class arkanoid
 		return (portC_out & ddrC) | (res & ~ddrC);
 	} };
 	
-	WRITE_HANDLER( arkanoid_68705_portC_w )
+	public static WriteHandlerPtr arkanoid_68705_portC_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		if ((ddrC & 0x04) && (~data & 0x04) && (portC_out & 0x04))
 		{
@@ -97,12 +97,12 @@ public class arkanoid
 		}
 	
 		portC_out = data;
-	}
+	} };
 	
-	WRITE_HANDLER( arkanoid_68705_ddrC_w )
+	public static WriteHandlerPtr arkanoid_68705_ddrC_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		ddrC = data;
-	}
+	} };
 	
 	
 	

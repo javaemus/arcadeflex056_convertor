@@ -92,7 +92,6 @@ public class mcr1
 	void mcr12_vh_stop(void);
 	void mcr1_vh_screenrefresh(struct mame_bitmap *bitmap, int full_refresh);
 	
-	WRITE_HANDLER( mcr1_videoram_w );
 	
 	
 	static const UINT8 *nvram_init;

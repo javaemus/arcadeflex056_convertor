@@ -49,7 +49,7 @@ public class mole
 		free( tile_data );
 	}
 	
-	WRITE_HANDLER( moleattack_videoram_w ){
+	public static WriteHandlerPtr moleattack_videoram_w = new WriteHandlerPtr() {public void handler(int offset, int data){
 		if( offset<NUM_TILES ){
 			if( tile_data[offset]!=data ){
 				dirtybuffer[offset] = 1;
@@ -60,11 +60,11 @@ public class mole
 			memset( dirtybuffer, 1, NUM_TILES );
 			memset( tile_data, 0, NUM_TILES*sizeof(UINT16) );
 		}
-	}
+	} };
 	
-	WRITE_HANDLER( moleattack_tilesetselector_w ){
+	public static WriteHandlerPtr moleattack_tilesetselector_w = new WriteHandlerPtr() {public void handler(int offset, int data){
 		tile_bank = data;
-	}
+	} };
 	
 	void moleattack_vh_screenrefresh( struct mame_bitmap *bitmap, int full_refresh ){
 		int offs;

@@ -25,7 +25,6 @@ public class finalizr
 	void finalizr_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom);
 	int finalizr_vh_start(void);
 	void finalizr_vh_stop(void);
-	WRITE_HANDLER( finalizr_videoctrl_w );
 	void finalizr_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	
 	
@@ -53,11 +52,11 @@ public class finalizr
 	static int i8039_irqenable;
 	static int i8039_status;
 	
-	WRITE_HANDLER( finalizr_i8039_irq_w )
+	public static WriteHandlerPtr finalizr_i8039_irq_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		if (i8039_irqenable)
 			cpu_cause_interrupt(1,I8039_EXT_INT);
-	}
+	} };
 	
 	public static ReadHandlerPtr i8039_irqen_and_status_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{

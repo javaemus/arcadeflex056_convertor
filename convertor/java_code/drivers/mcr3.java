@@ -103,8 +103,6 @@ public class mcr3
 	extern UINT8 *spyhunt_alpharam;
 	extern size_t spyhunt_alpharam_size;
 	
-	WRITE_HANDLER( mcr3_videoram_w );
-	WRITE_HANDLER( mcr3_paletteram_w );
 	
 	void mcr3_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	

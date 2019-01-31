@@ -28,21 +28,13 @@ public class contra
 	
 	void contra_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom);
 	
-	WRITE_HANDLER( contra_fg_vram_w );
-	WRITE_HANDLER( contra_fg_cram_w );
-	WRITE_HANDLER( contra_bg_vram_w );
-	WRITE_HANDLER( contra_bg_cram_w );
-	WRITE_HANDLER( contra_text_vram_w );
-	WRITE_HANDLER( contra_text_cram_w );
 	
-	WRITE_HANDLER( contra_K007121_ctrl_0_w );
-	WRITE_HANDLER( contra_K007121_ctrl_1_w );
 	void contra_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	int contra_vh_start(void);
 	void contra_vh_stop(void);
 	
 	
-	WRITE_HANDLER( contra_bankswitch_w )
+	public static WriteHandlerPtr contra_bankswitch_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		int bankaddress;
 		unsigned char *RAM = memory_region(REGION_CPU1);
@@ -51,18 +43,18 @@ public class contra
 		bankaddress = 0x10000 + (data & 0x0f) * 0x2000;
 		if (bankaddress < 0x28000)	/* for safety */
 			cpu_setbank(1,&RAM[bankaddress]);
-	}
+	} };
 	
-	WRITE_HANDLER( contra_sh_irqtrigger_w )
+	public static WriteHandlerPtr contra_sh_irqtrigger_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		cpu_cause_interrupt(1,M6809_INT_IRQ);
-	}
+	} };
 	
-	WRITE_HANDLER( contra_coin_counter_w )
+	public static WriteHandlerPtr contra_coin_counter_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		if (data & 0x01) coin_counter_w(0,data & 0x01);
 		if (data & 0x02) coin_counter_w(1,(data & 0x02) >> 1);
-	}
+	} };
 	
 	public static WriteHandlerPtr cpu_sound_command_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{

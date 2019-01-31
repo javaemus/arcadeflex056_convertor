@@ -141,8 +141,7 @@ public class z180H
 	extern void *z180_get_cycle_table (int which);
 	extern void z180_set_cycle_table (int which, void *new_tbl);
 	extern unsigned z180_get_reg (int regnum);
-	extern extern WRITE_HANDLER( z180_internal_w );
-	extern void z180_set_reg (int regnum, unsigned val);
+	extern extern extern void z180_set_reg (int regnum, unsigned val);
 	extern void z180_set_irq_line(int irqline, int state);
 	extern void z180_set_irq_callback(int (*irq_callback)(int));
 	extern void z180_state_save(void *file);

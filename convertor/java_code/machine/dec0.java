@@ -264,24 +264,24 @@ public class dec0
 		return 0;
 	} };
 	
-	WRITE_HANDLER( hippodrm_prot_w )
+	public static WriteHandlerPtr hippodrm_prot_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		switch (offset) {
 			case 4:	hippodrm_msb=data; break;
 			case 5:	hippodrm_lsb=data; break;
 		}
 	//logerror("6280 PC %06x - Wrote %06x to %04x\n",cpu_getpc(),data,offset+0x1d0000);
-	}
+	} };
 	
 	public static ReadHandlerPtr hippodrm_shared_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return share[offset];
 	} };
 	
-	WRITE_HANDLER( hippodrm_shared_w )
+	public static WriteHandlerPtr hippodrm_shared_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		share[offset]=data;
-	}
+	} };
 	
 	static READ16_HANDLER( hippodrm_68000_share_r )
 	{

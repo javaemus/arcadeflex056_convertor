@@ -24,10 +24,6 @@ public class amspdwy
 	
 	/* Variables & functions defined in vidhrdw: */
 	
-	WRITE_HANDLER( amspdwy_videoram_w );
-	WRITE_HANDLER( amspdwy_colorram_w );
-	WRITE_HANDLER( amspdwy_paletteram_w );
-	WRITE_HANDLER( amspdwy_flipscreen_w );
 	
 	int  amspdwy_vh_start(void);
 	void amspdwy_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
@@ -71,11 +67,11 @@ public class amspdwy
 		return (YM2151_status_port_0_r(0) & ~ 0x30) | readinputport(4);
 	} };
 	
-	WRITE_HANDLER( amspdwy_sound_w )
+	public static WriteHandlerPtr amspdwy_sound_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		soundlatch_w(0,data);
 		cpu_set_nmi_line(1,PULSE_LINE);
-	}
+	} };
 	
 	public static Memory_ReadAddress amspdwy_readmem[]={
 		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),

@@ -26,9 +26,6 @@ public class atarifb
 	
 	extern int atarifb_game;
 	
-	WRITE_HANDLER( atarifb_alphap1_vram_w );
-	WRITE_HANDLER( atarifb_alphap2_vram_w );
-	WRITE_HANDLER( atarifb_scroll_w );
 	void atarifb_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	
 	struct rectangle bigfield_area = {  4*8, 34*8-1, 0*8, 32*8-1 };
@@ -37,7 +34,7 @@ public class atarifb
 	
 	/***************************************************************************
 	***************************************************************************/
-	WRITE_HANDLER( atarifb_alphap1_vram_w )
+	public static WriteHandlerPtr atarifb_alphap1_vram_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		if (atarifb_alphap1_vram[offset] != data)
 		{
@@ -45,9 +42,9 @@ public class atarifb
 	
 			alphap1_dirtybuffer[offset] = 1;
 		}
-	}
+	} };
 	
-	WRITE_HANDLER( atarifb_alphap2_vram_w )
+	public static WriteHandlerPtr atarifb_alphap2_vram_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		if (atarifb_alphap2_vram[offset] != data)
 		{
@@ -55,18 +52,18 @@ public class atarifb
 	
 			alphap2_dirtybuffer[offset] = 1;
 		}
-	}
+	} };
 	
 	/***************************************************************************
 	***************************************************************************/
-	WRITE_HANDLER( atarifb_scroll_w )
+	public static WriteHandlerPtr atarifb_scroll_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		if (data - 8 != *atarifb_scroll_register)
 		{
 			*atarifb_scroll_register = data - 8;
 			memset(dirtybuffer,1,videoram_size);
 		}
-	}
+	} };
 	
 	/***************************************************************************
 	***************************************************************************/

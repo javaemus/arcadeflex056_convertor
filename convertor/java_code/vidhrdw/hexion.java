@@ -75,7 +75,7 @@ public class hexion
 	
 	***************************************************************************/
 	
-	WRITE_HANDLER( hexion_bankswitch_w )
+	public static WriteHandlerPtr hexion_bankswitch_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		unsigned char *rom = memory_region(REGION_CPU1) + 0x10000;
 	
@@ -95,7 +95,7 @@ public class hexion
 		usrintf_showmessage("bankswitch %02x",data&0xf0);
 	
 	//logerror("%04x: bankswitch_w %02x\n",cpu_get_pc(),data);
-	}
+	} };
 	
 	public static ReadHandlerPtr hexion_bankedram_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
@@ -118,7 +118,7 @@ public class hexion
 		}
 	} };
 	
-	WRITE_HANDLER( hexion_bankedram_w )
+	public static WriteHandlerPtr hexion_bankedram_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		if (bankctrl == 3 && offset == 0 && (data & 0xfe) == 0)
 		{
@@ -141,19 +141,19 @@ public class hexion
 		}
 		else
 	logerror("%04x: bankedram_w offset %04x, data %02x, bankctrl = %02x\n",cpu_get_pc(),offset,data,bankctrl);
-	}
+	} };
 	
-	WRITE_HANDLER( hexion_bankctrl_w )
+	public static WriteHandlerPtr hexion_bankctrl_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 	//logerror("%04x: bankctrl_w %02x\n",cpu_get_pc(),data);
 		bankctrl = data;
-	}
+	} };
 	
-	WRITE_HANDLER( hexion_gfxrom_select_w )
+	public static WriteHandlerPtr hexion_gfxrom_select_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 	//logerror("%04x: gfxrom_select_w %02x\n",cpu_get_pc(),data);
 		gfxrom_select = data;
-	}
+	} };
 	
 	
 	

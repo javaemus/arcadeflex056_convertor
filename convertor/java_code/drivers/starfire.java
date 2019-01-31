@@ -60,10 +60,6 @@ public class starfire
 	extern void starfire_vh_stop(void);
 	extern void starfire_video_update(int scanline, int count);
 	
-	WRITE_HANDLER( starfire_videoram_w );
-	WRITE_HANDLER( starfire_colorram_w );
-	WRITE_HANDLER( starfire_vidctrl_w );
-	WRITE_HANDLER( starfire_vidctrl1_w );
 	
 	
 	

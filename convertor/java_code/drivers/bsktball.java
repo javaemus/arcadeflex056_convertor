@@ -20,12 +20,7 @@ public class bsktball
 {
 	
 	/* machine/bsktball.c */
-	WRITE_HANDLER( bsktball_nmion_w );
 	extern int bsktball_interrupt(void);
-	WRITE_HANDLER( bsktball_ld1_w );
-	WRITE_HANDLER( bsktball_ld2_w );
-	WRITE_HANDLER( bsktball_led1_w );
-	WRITE_HANDLER( bsktball_led2_w );
 	
 	/* vidhrdw/bsktball.c */
 	extern unsigned char *bsktball_motion;

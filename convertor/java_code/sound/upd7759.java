@@ -837,8 +837,8 @@ public class upd7759
 	
 	
 	/* helper functions to be used as memory read handler function pointers */
-	WRITE_HANDLER( UPD7759_0_message_w )	{ UPD7759_message_w(0,data); }
-	WRITE_HANDLER( UPD7759_0_start_w )	{ UPD7759_start_w(0,data); }
+	public static WriteHandlerPtr UPD7759_0_message_w = new WriteHandlerPtr() {public void handler(int offset, int data)	{ UPD7759_message_w(0,data); } };
+	public static WriteHandlerPtr UPD7759_0_start_w = new WriteHandlerPtr() {public void handler(int offset, int data)	{ UPD7759_start_w(0,data); } };
 	public static ReadHandlerPtr UPD7759_0_busy_r  = new ReadHandlerPtr() { public int handler(int offset)	{ return UPD7759_busy_r(0); } };
 	public static ReadHandlerPtr UPD7759_0_data_r  = new ReadHandlerPtr() { public int handler(int offset)	{ return UPD7759_data_r(0,offset); } };
 	public static ReadHandlerPtr UPD7759_1_data_r  = new ReadHandlerPtr() { public int handler(int offset)	{ return UPD7759_data_r(1,offset); } };

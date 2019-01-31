@@ -322,26 +322,26 @@ public class tait8741
 	}
 	
 	/* Write port handler */
-	WRITE_HANDLER( TAITO8741_0_w )
+	public static WriteHandlerPtr TAITO8741_0_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		if(offset&1) I8741_command_w(0,data);
 		else         I8741_data_w(0,data);
-	}
-	WRITE_HANDLER( TAITO8741_1_w )
+	} };
+	public static WriteHandlerPtr TAITO8741_1_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		if(offset&1) I8741_command_w(1,data);
 		else         I8741_data_w(1,data);
-	}
-	WRITE_HANDLER( TAITO8741_2_w )
+	} };
+	public static WriteHandlerPtr TAITO8741_2_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		if(offset&1) I8741_command_w(2,data);
 		else         I8741_data_w(2,data);
-	}
-	WRITE_HANDLER( TAITO8741_3_w )
+	} };
+	public static WriteHandlerPtr TAITO8741_3_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		if(offset&1) I8741_command_w(3,data);
 		else         I8741_data_w(3,data);
-	}
+	} };
 	
 	/* Read port handler */
 	public static ReadHandlerPtr TAITO8741_0_r  = new ReadHandlerPtr() { public int handler(int offset)

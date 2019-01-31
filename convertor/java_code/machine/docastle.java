@@ -45,7 +45,7 @@ public class docastle
 	} };
 	
 	
-	WRITE_HANDLER( docastle_shared0_w )
+	public static WriteHandlerPtr docastle_shared0_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		if (offset == 8) logerror("CPU #1 shared0w %02x %02x %02x %02x %02x %02x %02x %02x %02x clock = %d\n",
 			buffer0[0],buffer0[1],buffer0[2],buffer0[3],buffer0[4],buffer0[5],buffer0[6],buffer0[7],data,cpu_gettotalcycles());
@@ -55,10 +55,10 @@ public class docastle
 		if (offset == 8)
 			/* awake the master CPU */
 			cpu_trigger(500);
-	}
+	} };
 	
 	
-	WRITE_HANDLER( docastle_shared1_w )
+	public static WriteHandlerPtr docastle_shared1_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		buffer1[offset] = data;
 	
@@ -70,12 +70,12 @@ public class docastle
 			/* freeze execution of the master CPU until the slave has used the shared memory */
 			cpu_spinuntil_trigger(500);
 		}
-	}
+	} };
 	
 	
 	
-	WRITE_HANDLER( docastle_nmitrigger_w )
+	public static WriteHandlerPtr docastle_nmitrigger_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		cpu_cause_interrupt(1,Z80_NMI_INT);
-	}
+	} };
 }

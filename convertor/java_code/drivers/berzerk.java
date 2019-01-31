@@ -21,16 +21,8 @@ public class berzerk
 	void berzerk_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	
 	int  berzerk_interrupt(void);
-	WRITE_HANDLER( berzerk_irq_enable_w );
-	WRITE_HANDLER( berzerk_nmi_enable_w );
-	WRITE_HANDLER( berzerk_nmi_disable_w );
-	WRITE_HANDLER( berzerk_videoram_w );
-	WRITE_HANDLER( berzerk_colorram_w );
 	
-	WRITE_HANDLER( berzerk_magicram_w );
-	WRITE_HANDLER( berzerk_magicram_control_w );
 	
-	WRITE_HANDLER( berzerk_sound_control_a_w );
 	int  berzerk_sh_start(const struct MachineSound *msound);
 	void berzerk_sh_update(void);
 	

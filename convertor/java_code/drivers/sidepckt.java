@@ -27,9 +27,6 @@ public class sidepckt
 	int sidepckt_vh_start(void);
 	void sidepckt_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	
-	WRITE_HANDLER( sidepckt_flipscreen_w );
-	WRITE_HANDLER( sidepckt_videoram_w );
-	WRITE_HANDLER( sidepckt_colorram_w );
 	static int i8751_return;
 	
 	

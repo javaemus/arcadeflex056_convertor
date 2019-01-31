@@ -51,11 +51,11 @@ public class tutankhm
 	
 	
 	
-	WRITE_HANDLER( tutankhm_videoram_w )
+	public static WriteHandlerPtr tutankhm_videoram_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		videoram[offset] = data;
 		videowrite(offset,data);
-	}
+	} };
 	
 	
 	
@@ -132,7 +132,7 @@ public class tutankhm
 			The clear works properly.
 	*/
 	
-	WRITE_HANDLER( junofrst_blitter_w )
+	public static WriteHandlerPtr junofrst_blitter_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		static unsigned char blitterdata[4];
 	
@@ -205,5 +205,5 @@ public class tutankhm
 				}
 			}
 		}
-	}
+	} };
 }

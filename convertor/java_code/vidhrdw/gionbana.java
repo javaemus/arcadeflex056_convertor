@@ -48,7 +48,7 @@ public class gionbana
 		return gionbana_palette[offset];
 	} };
 	
-	WRITE_HANDLER( gionbana_palette_w )
+	public static WriteHandlerPtr gionbana_palette_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		int r, g, b;
 	
@@ -67,14 +67,14 @@ public class gionbana
 		b = (b | (b >> 4));
 	
 		palette_set_color((offset >> 1), r, g, b);
-	}
+	} };
 	
 	public static ReadHandlerPtr maiko_palette_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return gionbana_palette[offset];
 	} };
 	
-	WRITE_HANDLER( maiko_palette_w )
+	public static WriteHandlerPtr maiko_palette_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		int r, g, b;
 	
@@ -93,7 +93,7 @@ public class gionbana
 		b = (b | (b >> 4));
 	
 		palette_set_color((offset & 0x0ff), r, g, b);
-	}
+	} };
 	
 	/******************************************************************************
 	
@@ -191,10 +191,10 @@ public class gionbana
 		return gionbana_paltbl[offset];
 	} };
 	
-	WRITE_HANDLER( gionbana_paltbl_w )
+	public static WriteHandlerPtr gionbana_paltbl_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		gionbana_paltbl[((gionbana_paltblnum & 0x7f) * 0x10) + (offset & 0x0f)] = data;
-	}
+	} };
 	
 	/******************************************************************************
 	

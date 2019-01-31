@@ -85,7 +85,7 @@ public class targ
 	    mixer_stop_sample(tone_channel);
 	}
 	
-	WRITE_HANDLER( targ_sh_w )
+	public static WriteHandlerPtr targ_sh_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		int maxfreq;
 	
@@ -165,6 +165,6 @@ public class targ
 	        }
 	        targ_sh_ctrl0 = data;
 	    }
-	}
+	} };
 	
 }

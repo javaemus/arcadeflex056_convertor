@@ -211,7 +211,7 @@ public class bosco
 	
 	
 	
-	WRITE_HANDLER( bosco_videoram2_w )
+	public static WriteHandlerPtr bosco_videoram2_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		if (bosco_videoram2[offset] != data)
 		{
@@ -219,11 +219,11 @@ public class bosco
 	
 			bosco_videoram2[offset] = data;
 		}
-	}
+	} };
 	
 	
 	
-	WRITE_HANDLER( bosco_colorram2_w )
+	public static WriteHandlerPtr bosco_colorram2_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		if (bosco_colorram2[offset] != data)
 		{
@@ -231,10 +231,10 @@ public class bosco
 	
 			bosco_colorram2[offset] = data;
 		}
-	}
+	} };
 	
 	
-	WRITE_HANDLER( bosco_flipscreen_w )
+	public static WriteHandlerPtr bosco_flipscreen_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		if (flipscreen != (~data & 1))
 		{
@@ -242,22 +242,22 @@ public class bosco
 			memset(dirtybuffer,1,videoram_size);
 			memset(dirtybuffer2,1,videoram_size);
 		}
-	}
+	} };
 	
-	WRITE_HANDLER( bosco_scrollx_w )
+	public static WriteHandlerPtr bosco_scrollx_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		bosco_scrollx = data;
-	}
+	} };
 	
-	WRITE_HANDLER( bosco_scrolly_w )
+	public static WriteHandlerPtr bosco_scrolly_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		bosco_scrolly = data;
-	}
+	} };
 	
-	WRITE_HANDLER( bosco_starcontrol_w )
+	public static WriteHandlerPtr bosco_starcontrol_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		bosco_starcontrol = data;
-	}
+	} };
 	
 	
 	/***************************************************************************

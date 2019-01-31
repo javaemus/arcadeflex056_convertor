@@ -102,7 +102,7 @@ public class kangaroo
 	}
 	
 	
-	WRITE_HANDLER( kangaroo_video_control_w )
+	public static WriteHandlerPtr kangaroo_video_control_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		/* A & B bitmap control latch (A=playfield B=motion)
 			  bit 5 FLIP A
@@ -118,10 +118,10 @@ public class kangaroo
 		}
 	
 		*kangaroo_video_control = data;
-	}
+	} };
 	
 	
-	WRITE_HANDLER( kangaroo_bank_select_w )
+	public static WriteHandlerPtr kangaroo_bank_select_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		unsigned char *RAM = memory_region(REGION_CPU1);
 	
@@ -134,11 +134,11 @@ public class kangaroo
 			cpu_setbank(1,&RAM[0x12000]);
 	
 		*kangaroo_bank_select = data;
-	}
+	} };
 	
 	
 	
-	WRITE_HANDLER( kangaroo_color_mask_w )
+	public static WriteHandlerPtr kangaroo_color_mask_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		int i;
 	
@@ -168,11 +168,11 @@ public class kangaroo
 	
 			palette_set_color(16+i,r,g,b);
 		}
-	}
+	} };
 	
 	
 	
-	WRITE_HANDLER( kangaroo_blitter_w )
+	public static WriteHandlerPtr kangaroo_blitter_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		kangaroo_blitter[offset] = data;
 	
@@ -220,7 +220,7 @@ public class kangaroo
 	
 			kangaroo_bank_select_w(0, old_bank_select);
 		}
-	}
+	} };
 	
 	
 	
@@ -255,7 +255,7 @@ public class kangaroo
 		kangaroo_plot_pixel(tmpbitmap2, x+3, y, videoram[offs+3] >> 4,   16, flipB);
 	}
 	
-	WRITE_HANDLER( kangaroo_videoram_w )
+	public static WriteHandlerPtr kangaroo_videoram_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		int a_Z_R,a_G_B,b_Z_R,b_G_B;
 		int sx, sy, offs;
@@ -303,7 +303,7 @@ public class kangaroo
 		}
 	
 		kangaroo_redraw_4pixels(sx, sy);
-	}
+	} };
 	
 	
 	

@@ -109,7 +109,7 @@ public class vicdual
 	
 	
 	
-	WRITE_HANDLER( vicdual_characterram_w )
+	public static WriteHandlerPtr vicdual_characterram_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		if (vicdual_characterram[offset] != data)
 		{
@@ -117,21 +117,21 @@ public class vicdual
 	
 			vicdual_characterram[offset] = data;
 		}
-	}
+	} };
 	
 	public static ReadHandlerPtr vicdual_characterram_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return vicdual_characterram[offset];
 	} };
 	
-	WRITE_HANDLER( vicdual_palette_bank_w )
+	public static WriteHandlerPtr vicdual_palette_bank_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		if (palette_bank != (data & 3))
 		{
 			palette_bank = data & 3;
 			memset(dirtybuffer,1,videoram_size);
 		}
-	}
+	} };
 	
 	
 	

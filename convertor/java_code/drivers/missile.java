@@ -148,14 +148,11 @@ public class missile
 	extern unsigned char *missile_video2ram;
 	
 	void missile_init_machine(void);
-	WRITE_HANDLER( missile_w );
 	
 	int  missile_vh_start(void);
 	void missile_vh_stop(void);
 	void missile_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	
-	WRITE_HANDLER( missile_video_3rd_bit_w );
-	WRITE_HANDLER( missile_video2_w );
 	
 	
 	public static Memory_ReadAddress readmem[]={

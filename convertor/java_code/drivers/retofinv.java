@@ -18,24 +18,12 @@ public class retofinv
 {
 	
 	/* in machine */
-	WRITE_HANDLER( retofinv_68705_portA_w );
-	WRITE_HANDLER( retofinv_68705_ddrA_w );
-	WRITE_HANDLER( retofinv_68705_portB_w );
-	WRITE_HANDLER( retofinv_68705_ddrB_w );
-	WRITE_HANDLER( retofinv_68705_portC_w );
-	WRITE_HANDLER( retofinv_68705_ddrC_w );
-	WRITE_HANDLER( retofinv_mcu_w );
 	
 	/* in vidhrdw */
 	int  retofinv_vh_start(void);
 	void retofinv_vh_stop(void);
 	void retofinv_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom);
 	void retofinv_vh_screenrefresh(struct mame_bitmap *bitmap, int full_refresh);
-	WRITE_HANDLER( retofinv_bg_videoram_w );
-	WRITE_HANDLER( retofinv_fg_videoram_w );
-	WRITE_HANDLER( retofinv_bg_colorram_w );
-	WRITE_HANDLER( retofinv_fg_colorram_w );
-	WRITE_HANDLER( retofinv_flip_screen_w );
 	
 	extern size_t retofinv_videoram_size;
 	extern unsigned char *retofinv_sprite_ram1;

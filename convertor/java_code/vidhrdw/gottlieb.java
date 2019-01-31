@@ -54,7 +54,7 @@ public class gottlieb
 	  bit 0 -- 2  kohm resistor  -- BLUE
 	
 	***************************************************************************/
-	WRITE_HANDLER( gottlieb_paletteram_w )
+	public static WriteHandlerPtr gottlieb_paletteram_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		int bit0,bit1,bit2,bit3;
 		int r,g,b,val;
@@ -87,7 +87,7 @@ public class gottlieb
 		b = 0x10 * bit0 + 0x21 * bit1 + 0x46 * bit2 + 0x88 * bit3;
 	
 		palette_set_color(offset / 2,r,g,b);
-	}
+	} };
 	
 	
 	
@@ -128,7 +128,7 @@ public class gottlieb
 	
 	
 	
-	WRITE_HANDLER( gottlieb_video_outputs_w )
+	public static WriteHandlerPtr gottlieb_video_outputs_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		extern void gottlieb_knocker(void);
 		static int last = 0;
@@ -147,9 +147,9 @@ public class gottlieb
 		if ((last&0x20) && !(data&0x20)) gottlieb_knocker();
 	
 		last = data;
-	}
+	} };
 	
-	WRITE_HANDLER( usvsthem_video_outputs_w )
+	public static WriteHandlerPtr usvsthem_video_outputs_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		background_priority = data & 1;
 	
@@ -162,18 +162,18 @@ public class gottlieb
 		/* bit 2 video enable (0 = black screen) */
 	
 		/* bit 3 genlock control (1 = show laserdisc image) */
-	}
+	} };
 	
 	
 	
-	WRITE_HANDLER( gottlieb_characterram_w )
+	public static WriteHandlerPtr gottlieb_characterram_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		if (gottlieb_characterram[offset] != data)
 		{
 			dirtycharacter[offset / 32] = 1;
 			gottlieb_characterram[offset] = data;
 		}
-	}
+	} };
 	
 	
 	

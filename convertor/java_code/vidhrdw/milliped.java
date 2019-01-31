@@ -69,7 +69,7 @@ public class milliped
 	}
 	
 	
-	WRITE_HANDLER( milliped_paletteram_w )
+	public static WriteHandlerPtr milliped_paletteram_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		int bit0,bit1,bit2;
 		int r,g,b;
@@ -96,7 +96,7 @@ public class milliped
 		b = 0x21 * bit0 + 0x47 * bit1 + 0x97 * bit2;
 	
 		palette_set_color(offset,r,g,b);
-	}
+	} };
 	
 	
 	

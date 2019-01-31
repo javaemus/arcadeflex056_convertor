@@ -2830,7 +2830,7 @@ public class taitoic
 		return 0;
 	}
 	
-	WRITE_HANDLER( TC0360PRI_w )
+	public static WriteHandlerPtr TC0360PRI_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		TC0360PRI_regs[offset] = data;
 	
@@ -2843,7 +2843,7 @@ public class taitoic
 			regs[0x04],regs[0x05],regs[0x06],regs[0x07],
 			regs[0x08],regs[0x09]);
 	#endif
-	}
+	} };
 	
 	WRITE16_HANDLER( TC0360PRI_halfword_w )
 	{
@@ -4410,7 +4410,7 @@ public class taitoic
 		}
 	} };
 	
-	WRITE_HANDLER( TC0220IOC_w )
+	public static WriteHandlerPtr TC0220IOC_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		TC0220IOC_regs[offset] = data;
 	
@@ -4435,27 +4435,27 @@ public class taitoic
 	logerror("PC %06x: warning - write %02x to TC0220IOC address %02x\n",cpu_get_pc(),data,offset);
 				break;
 		}
-	}
+	} };
 	
 	public static ReadHandlerPtr TC0220IOC_port_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return TC0220IOC_port;
 	} };
 	
-	WRITE_HANDLER( TC0220IOC_port_w )
+	public static WriteHandlerPtr TC0220IOC_port_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		TC0220IOC_port = data;
-	}
+	} };
 	
 	public static ReadHandlerPtr TC0220IOC_portreg_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return TC0220IOC_r(TC0220IOC_port);
 	} };
 	
-	WRITE_HANDLER( TC0220IOC_portreg_w )
+	public static WriteHandlerPtr TC0220IOC_portreg_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		TC0220IOC_w(TC0220IOC_port, data);
-	}
+	} };
 	
 	READ16_HANDLER( TC0220IOC_halfword_port_r )
 	{
@@ -4571,7 +4571,7 @@ public class taitoic
 		}
 	} };
 	
-	WRITE_HANDLER( TC0510NIO_w )
+	public static WriteHandlerPtr TC0510NIO_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		TC0510NIO_regs[offset] = data;
 	
@@ -4592,7 +4592,7 @@ public class taitoic
 	logerror("PC %06x: warning - write %02x to TC0510NIO address %02x\n",cpu_get_pc(),data,offset);
 				break;
 		}
-	}
+	} };
 	
 	READ16_HANDLER( TC0510NIO_halfword_r )
 	{
@@ -4654,7 +4654,7 @@ public class taitoic
 		}
 	} };
 	
-	WRITE_HANDLER( TC0640FIO_w )
+	public static WriteHandlerPtr TC0640FIO_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		TC0640FIO_regs[offset] = data;
 	
@@ -4675,7 +4675,7 @@ public class taitoic
 	logerror("PC %06x: warning - write %02x to TC0640FIO address %02x\n",cpu_get_pc(),data,offset);
 				break;
 		}
-	}
+	} };
 	
 	READ16_HANDLER( TC0640FIO_halfword_r )
 	{

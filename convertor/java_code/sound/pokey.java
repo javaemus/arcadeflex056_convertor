@@ -1373,34 +1373,34 @@ public class pokey
 	    }
 	}
 	
-	WRITE_HANDLER( pokey1_w )
+	public static WriteHandlerPtr pokey1_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		pokey_register_w(0,offset,data);
-	}
+	} };
 	
-	WRITE_HANDLER( pokey2_w )
+	public static WriteHandlerPtr pokey2_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 	    pokey_register_w(1,offset,data);
-	}
+	} };
 	
-	WRITE_HANDLER( pokey3_w )
+	public static WriteHandlerPtr pokey3_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 	    pokey_register_w(2,offset,data);
-	}
+	} };
 	
-	WRITE_HANDLER( pokey4_w )
+	public static WriteHandlerPtr pokey4_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 	    pokey_register_w(3,offset,data);
-	}
+	} };
 	
-	WRITE_HANDLER( quad_pokey_w )
+	public static WriteHandlerPtr quad_pokey_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 	    int pokey_num = (offset >> 3) & ~0x04;
 	    int control = (offset & 0x20) >> 2;
 	    int pokey_reg = (offset % 8) | control;
 	
 	    pokey_register_w(pokey_num, pokey_reg, data);
-	}
+	} };
 	
 	void pokey1_serin_ready(int after)
 	{

@@ -53,7 +53,6 @@ public class stactics
 	
 	/* Defined in machine/stactics.c */
 	int stactics_interrupt(void);
-	WRITE_HANDLER( stactics_coin_lockout_w );
 	extern unsigned char *stactics_motor_on;
 	
 	/* Defined in vidhrdw/stactics.c */
@@ -74,20 +73,7 @@ public class stactics
 	void stactics_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable,
 	                                    const unsigned char *color_prom);
 	
-	WRITE_HANDLER( stactics_palette_w );
-	WRITE_HANDLER( stactics_scroll_ram_w );
-	WRITE_HANDLER( stactics_speed_latch_w );
-	WRITE_HANDLER( stactics_shot_trigger_w );
-	WRITE_HANDLER( stactics_shot_flag_clear_w );
 	
-	WRITE_HANDLER( stactics_videoram_b_w );
-	WRITE_HANDLER( stactics_chardata_b_w );
-	WRITE_HANDLER( stactics_videoram_d_w );
-	WRITE_HANDLER( stactics_chardata_d_w );
-	WRITE_HANDLER( stactics_videoram_e_w );
-	WRITE_HANDLER( stactics_chardata_e_w );
-	WRITE_HANDLER( stactics_videoram_f_w );
-	WRITE_HANDLER( stactics_chardata_f_w );
 	
 	public static Memory_ReadAddress readmem[]={
 		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),

@@ -69,7 +69,7 @@ public class seicross
 	
 	
 	
-	WRITE_HANDLER( seicross_colorram_w )
+	public static WriteHandlerPtr seicross_colorram_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		if (colorram[offset] != data)
 		{
@@ -84,7 +84,7 @@ public class seicross
 			colorram[offset] = data;
 			colorram[offset + 0x20] = data;
 		}
-	}
+	} };
 	
 	
 	

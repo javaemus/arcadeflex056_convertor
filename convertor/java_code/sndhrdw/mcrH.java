@@ -21,19 +21,14 @@ public class mcrH
 	
 	void mcr_sound_init(void);
 	
-	WRITE_HANDLER( ssio_data_w );
 	void ssio_reset_w(int state);
 	
-	WRITE_HANDLER( csdeluxe_data_w );
 	void csdeluxe_reset_w(int state);
 	
-	WRITE_HANDLER( turbocs_data_w );
 	void turbocs_reset_w(int state);
 	
-	WRITE_HANDLER( soundsgood_data_w );
 	void soundsgood_reset_w(int state);
 	
-	WRITE_HANDLER( squawkntalk_data_w );
 	void squawkntalk_reset_w(int state);
 	
 	

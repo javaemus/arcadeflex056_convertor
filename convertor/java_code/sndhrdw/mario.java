@@ -9,17 +9,17 @@ public class mario
 	
 	
 	
-	WRITE_HANDLER( mario_sh_w )
+	public static WriteHandlerPtr mario_sh_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		if (data)
 			cpu_set_irq_line(1,0,ASSERT_LINE);
 		else
 			cpu_set_irq_line(1,0,CLEAR_LINE);
-	}
+	} };
 	
 	
 	/* Mario running sample */
-	WRITE_HANDLER( mario_sh1_w )
+	public static WriteHandlerPtr mario_sh1_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		static int last;
 	
@@ -28,10 +28,10 @@ public class mario
 			last = data;
 	                if (data && sample_playing(0) == 0) sample_start (0, 3, 0);
 		}
-	}
+	} };
 	
 	/* Luigi running sample */
-	WRITE_HANDLER( mario_sh2_w )
+	public static WriteHandlerPtr mario_sh2_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		static int last;
 	
@@ -40,10 +40,10 @@ public class mario
 			last = data;
 	                if (data && sample_playing(1) == 0) sample_start (1, 4, 0);
 		}
-	}
+	} };
 	
 	/* Misc samples */
-	WRITE_HANDLER( mario_sh3_w )
+	public static WriteHandlerPtr mario_sh3_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		static int state[8];
 	
@@ -66,5 +66,5 @@ public class mario
 					break;
 			}
 		}
-	}
+	} };
 }

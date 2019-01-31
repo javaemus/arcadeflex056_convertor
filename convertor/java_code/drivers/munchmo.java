@@ -33,12 +33,6 @@ public class munchmo
 	void mnchmobl_convert_color_prom(unsigned char *obsolete,unsigned short *colortable,const unsigned char *color_prom);
 	int mnchmobl_vh_start( void );
 	void mnchmobl_vh_stop( void );
-	WRITE_HANDLER( mnchmobl_palette_bank_w );
-	WRITE_HANDLER( mnchmobl_flipscreen_w );
-	WRITE_HANDLER( mnchmobl_sprite_xpos_w );
-	WRITE_HANDLER( mnchmobl_sprite_attr_w );
-	WRITE_HANDLER( mnchmobl_sprite_tile_w );
-	WRITE_HANDLER( mnchmobl_videoram_w );
 	void mnchmobl_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	
 	
@@ -60,11 +54,11 @@ public class munchmo
 		return ignore_interrupt();
 	}
 	
-	WRITE_HANDLER( mnchmobl_soundlatch_w )
+	public static WriteHandlerPtr mnchmobl_soundlatch_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		soundlatch_w( offset, data );
 		cpu_cause_interrupt( 1, Z80_IRQ_INT );
-	}
+	} };
 	
 	public static Memory_ReadAddress readmem[]={
 		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),

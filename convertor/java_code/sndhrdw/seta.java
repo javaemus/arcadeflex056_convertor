@@ -125,7 +125,7 @@ public class seta
 	
 	
 	
-	WRITE_HANDLER( seta_sound_w )
+	public static WriteHandlerPtr seta_sound_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		int channel, reg;
 		int frequency;
@@ -226,7 +226,7 @@ public class seta
 				break;
 	
 		}
-	}
+	} };
 	
 	
 	

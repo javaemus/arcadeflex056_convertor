@@ -32,9 +32,6 @@ package drivers;
 public class circus
 {
 	
-	WRITE_HANDLER( circus_clown_x_w );
-	WRITE_HANDLER( circus_clown_y_w );
-	WRITE_HANDLER( circus_clown_z_w );
 	
 	extern int circus_vh_start(void);
 	

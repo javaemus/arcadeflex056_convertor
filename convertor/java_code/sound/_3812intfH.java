@@ -30,10 +30,6 @@ struct Y8950interface
 #define YM3526interface YM3812interface
 
 /* YM3812 */
-WRITE_HANDLER( YM3812_control_port_0_w );
-WRITE_HANDLER( YM3812_write_port_0_w );
-WRITE_HANDLER( YM3812_control_port_1_w );
-WRITE_HANDLER( YM3812_write_port_1_w );
 
 int YM3812_sh_start(const struct MachineSound *msound);
 void YM3812_sh_stop(void);

@@ -20,8 +20,6 @@ public class exedexes
 	
 	
 	
-	WRITE_HANDLER( exedexes_c804_w );
-	WRITE_HANDLER( exedexes_gfxctrl_w );
 	
 	extern unsigned char *exedexes_bg_scroll;
 	extern unsigned char *exedexes_nbg_yscroll;

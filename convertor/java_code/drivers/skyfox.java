@@ -29,7 +29,6 @@ public class skyfox
 	
 	/* Functions defined in vidhrdw: */
 	
-	WRITE_HANDLER( skyfox_vregs_w );
 	
 	void skyfox_vh_convert_color_prom(unsigned char *obsolete,unsigned short *colortable,const unsigned char *color_prom);
 	

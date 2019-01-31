@@ -220,7 +220,7 @@ public class turbo
 		}
 	} };
 	
-	WRITE_HANDLER( turbo_8279_w )
+	public static WriteHandlerPtr turbo_8279_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		switch (offset & 1)
 		{
@@ -247,7 +247,7 @@ public class turbo
 				}
 				break;
 		}
-	}
+	} };
 	
 	
 	/*******************************************
@@ -261,12 +261,12 @@ public class turbo
 		return readinputport(3) | (turbo_collision & 15);
 	} };
 	
-	WRITE_HANDLER( turbo_collision_clear_w )
+	public static WriteHandlerPtr turbo_collision_clear_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		turbo_collision = 0;
-	}
+	} };
 	
-	WRITE_HANDLER( turbo_coin_and_lamp_w )
+	public static WriteHandlerPtr turbo_coin_and_lamp_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		data &= 1;
 		switch (offset & 7)
@@ -284,5 +284,5 @@ public class turbo
 			default:
 				break;
 		}
-	}
+	} };
 }

@@ -82,10 +82,6 @@ public class skydiver
 {
 	
 	/* vidhrdw/skydiver.c */
-	WRITE_HANDLER( skydiver_sk_lamps_w );
-	WRITE_HANDLER( skydiver_yd_lamps_w );
-	WRITE_HANDLER( skydiver_iver_lamps_w );
-	WRITE_HANDLER( skydiver_width_w );
 	extern void skydiver_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	
 	static int skydiver_nmion;
@@ -146,11 +142,11 @@ public class skydiver
 		}
 	} };
 	
-	WRITE_HANDLER( skydiver_nmion_w )
+	public static WriteHandlerPtr skydiver_nmion_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 	//	logerror("nmi_on: %02x:%02x\n", offset, data);
 		skydiver_nmion = offset;
-	}
+	} };
 	
 	int skydiver_interrupt(void)
 	{

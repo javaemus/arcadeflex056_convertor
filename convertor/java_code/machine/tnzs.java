@@ -598,7 +598,7 @@ public class tnzs
 		}
 	} };
 	
-	WRITE_HANDLER( tnzs_mcu_w )
+	public static WriteHandlerPtr tnzs_mcu_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		switch (mcu_type)
 		{
@@ -615,7 +615,7 @@ public class tnzs
 				mcu_tnzs_w(offset,data);
 				break;
 		}
-	}
+	} };
 	
 	int tnzs_interrupt(void)
 	{
@@ -697,7 +697,7 @@ public class tnzs
 		return tnzs_workram[offset];
 	} };
 	
-	WRITE_HANDLER( tnzs_workram_w )
+	public static WriteHandlerPtr tnzs_workram_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		/* Location $EF10 workaround required to stop TNZS getting */
 		/* caught in and endless loop due to shared ram sync probs */
@@ -724,14 +724,14 @@ public class tnzs
 		}
 		if (tnzs_workram_backup == -1)
 			tnzs_workram[offset] = data;
-	}
+	} };
 	
-	WRITE_HANDLER( tnzs_workram_sub_w )
+	public static WriteHandlerPtr tnzs_workram_sub_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		tnzs_workram[offset] = data;
-	}
+	} };
 	
-	WRITE_HANDLER( tnzs_bankswitch_w )
+	public static WriteHandlerPtr tnzs_bankswitch_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		unsigned char *RAM = memory_region(REGION_CPU1);
 	
@@ -744,9 +744,9 @@ public class tnzs
 		/* bits 0-2 select RAM/ROM bank */
 	//	logerror("PC %04x: writing %02x to bankswitch\n", cpu_get_pc(),data);
 		cpu_setbank (1, &RAM[0x10000 + 0x4000 * (data & 0x07)]);
-	}
+	} };
 	
-	WRITE_HANDLER( tnzs_bankswitch1_w )
+	public static WriteHandlerPtr tnzs_bankswitch1_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		unsigned char *RAM = memory_region(REGION_CPU2);
 	
@@ -757,5 +757,5 @@ public class tnzs
 	
 		/* bits 0-1 select ROM bank */
 		cpu_setbank (2, &RAM[0x10000 + 0x2000 * (data & 3)]);
-	}
+	} };
 }

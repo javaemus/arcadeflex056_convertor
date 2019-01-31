@@ -24,9 +24,6 @@ public class rastan
 	void rastan_vh_stop(void);
 	void rastan_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	
-	WRITE_HANDLER( rastan_adpcm_trigger_w );
-	WRITE_HANDLER( rastan_c000_w );
-	WRITE_HANDLER( rastan_d000_w );
 	
 	static int banknum = -1;
 	

@@ -43,7 +43,7 @@ public class gotya
 		{   -1, 0, 0 }		/* end of array */
 	};
 	
-	WRITE_HANDLER( gotya_soundlatch_w )
+	public static WriteHandlerPtr gotya_soundlatch_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		static int theme_playing;
 		int sample_number;
@@ -82,5 +82,5 @@ public class gotya
 				return;
 			}
 		}
-	}
+	} };
 }

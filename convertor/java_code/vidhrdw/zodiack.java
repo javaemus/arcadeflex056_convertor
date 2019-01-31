@@ -79,7 +79,7 @@ public class zodiack
 	}
 	
 	
-	WRITE_HANDLER( zodiack_attributes_w )
+	public static WriteHandlerPtr zodiack_attributes_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		if ((offset & 1) && zodiack_attributesram[offset] != data)
 		{
@@ -91,10 +91,10 @@ public class zodiack
 		}
 	
 		zodiack_attributesram[offset] = data;
-	}
+	} };
 	
 	
-	WRITE_HANDLER( zodiac_flipscreen_w )
+	public static WriteHandlerPtr zodiac_flipscreen_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		if (flipscreen != (!data))
 		{
@@ -102,17 +102,17 @@ public class zodiack
 	
 			memset(dirtybuffer, 1, videoram_size);
 		}
-	}
+	} };
 	
 	
-	WRITE_HANDLER( zodiac_control_w )
+	public static WriteHandlerPtr zodiac_control_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		/* Bit 0-1 - coin counters */
 		coin_counter_w(0, data & 0x02);
 		coin_counter_w(1, data & 0x01);
 	
 		/* Bit 2 - ???? */
-	}
+	} };
 	
 	/***************************************************************************
 	

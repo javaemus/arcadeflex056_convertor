@@ -20,7 +20,6 @@ public class geebee
 {
 	
 	/* from sndhrdw/geebee.c */
-	WRITE_HANDLER( geebee_sound_w );
 	
 	/* globals */
 	int geebee_ball_h;
@@ -74,7 +73,7 @@ public class geebee
 	    return data;
 	} };
 	
-	WRITE_HANDLER( geebee_out6_w )
+	public static WriteHandlerPtr geebee_out6_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 	    switch (offset & 3)
 	    {
@@ -98,9 +97,9 @@ public class geebee
 			geebee_sound_w(offset,data);
 	        break;
 	    }
-	}
+	} };
 	
-	WRITE_HANDLER( geebee_out7_w )
+	public static WriteHandlerPtr geebee_out7_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		switch (offset & 7)
 		{
@@ -134,7 +133,7 @@ public class geebee
 			geebee_inv = data & 1;
 			break;
 		}
-	}
+	} };
 	
 	
 }

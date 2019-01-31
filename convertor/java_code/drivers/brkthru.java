@@ -59,7 +59,6 @@ public class brkthru
 	extern unsigned char *brkthru_videoram;
 	extern size_t brkthru_videoram_size;
 	
-	WRITE_HANDLER( brkthru_1800_w );
 	int brkthru_vh_start(void);
 	void brkthru_vh_stop(void);
 	void brkthru_vh_convert_color_prom(unsigned char *obsolete,unsigned short *colortable,const unsigned char *color_prom);
@@ -68,27 +67,27 @@ public class brkthru
 	
 	static int nmi_enable;
 	
-	WRITE_HANDLER( brkthru_1803_w )
+	public static WriteHandlerPtr brkthru_1803_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		/* bit 0 = NMI enable */
 		nmi_enable = ~data & 1;
 	
 		/* bit 1 = ? maybe IRQ acknowledge */
-	}
-	WRITE_HANDLER( darwin_0803_w )
+	} };
+	public static WriteHandlerPtr darwin_0803_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		/* bit 0 = NMI enable */
 		/*nmi_enable = ~data & 1;*/
 		logerror("0803 %02X\n",data);
 	        nmi_enable = data;
 		/* bit 1 = ? maybe IRQ acknowledge */
-	}
+	} };
 	
-	WRITE_HANDLER( brkthru_soundlatch_w )
+	public static WriteHandlerPtr brkthru_soundlatch_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		soundlatch_w(offset,data);
 		cpu_cause_interrupt(1,M6809_INT_NMI);
-	}
+	} };
 	
 	
 	

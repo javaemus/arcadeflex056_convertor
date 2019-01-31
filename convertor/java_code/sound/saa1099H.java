@@ -21,10 +21,6 @@ extern "C" {
 int saa1099_sh_start(const struct MachineSound *msound);
 void saa1099_sh_stop(void);
 
-WRITE_HANDLER( saa1099_control_port_0_w );
-WRITE_HANDLER( saa1099_write_port_0_w );
-WRITE_HANDLER( saa1099_control_port_1_w );
-WRITE_HANDLER( saa1099_write_port_1_w );
 
 #ifdef __cplusplus
 }

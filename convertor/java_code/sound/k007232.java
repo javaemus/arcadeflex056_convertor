@@ -437,30 +437,30 @@ public class k007232
 	
 	/*****************************************************************************/
 	
-	WRITE_HANDLER( K007232_write_port_0_w )
+	public static WriteHandlerPtr K007232_write_port_0_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		K007232_WriteReg(offset,data,0);
-	}
+	} };
 	
 	public static ReadHandlerPtr K007232_read_port_0_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return K007232_ReadReg(offset,0);
 	} };
 	
-	WRITE_HANDLER( K007232_write_port_1_w )
+	public static WriteHandlerPtr K007232_write_port_1_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		K007232_WriteReg(offset,data,1);
-	}
+	} };
 	
 	public static ReadHandlerPtr K007232_read_port_1_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return K007232_ReadReg(offset,1);
 	} };
 	
-	WRITE_HANDLER( K007232_write_port_2_w )
+	public static WriteHandlerPtr K007232_write_port_2_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		K007232_WriteReg(offset,data,2);
-	}
+	} };
 	
 	public static ReadHandlerPtr K007232_read_port_2_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{

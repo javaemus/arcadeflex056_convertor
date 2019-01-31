@@ -53,12 +53,6 @@ public class sprint2
 	extern unsigned char *sprint2_horiz_ram;
 	
 	/* machine/sprint2.c */
-	WRITE_HANDLER( sprint2_collision_reset1_w );
-	WRITE_HANDLER( sprint2_collision_reset2_w );
-	WRITE_HANDLER( sprint2_steering_reset1_w );
-	WRITE_HANDLER( sprint2_steering_reset2_w );
-	WRITE_HANDLER( sprint2_lamp1_w );
-	WRITE_HANDLER( sprint2_lamp2_w );
 	
 	
 	public static Memory_ReadAddress readmem[]={

@@ -329,18 +329,6 @@ public class playch10
 	extern void init_pchboard( void );	/* h-board games */
 	extern void init_pciboard( void );	/* i-board games */
 	extern void init_pckboard( void );	/* k-board games */
-	WRITE_HANDLER( pc10_SDCS_w );
-	WRITE_HANDLER( pc10_CNTRLMASK_w );
-	WRITE_HANDLER( pc10_DISPMASK_w );
-	WRITE_HANDLER( pc10_SOUNDMASK_w );
-	WRITE_HANDLER( pc10_NMIENABLE_w );
-	WRITE_HANDLER( pc10_DOGDI_w );
-	WRITE_HANDLER( pc10_GAMERES_w );
-	WRITE_HANDLER( pc10_GAMESTOP_w );
-	WRITE_HANDLER( pc10_PPURES_w );
-	WRITE_HANDLER( pc10_prot_w );
-	WRITE_HANDLER( pc10_CARTSEL_w );
-	WRITE_HANDLER( pc10_in0_w );
 	extern int pc10_sdcs;
 	extern int pc10_nmi_enable;
 	extern int pc10_dog_di;

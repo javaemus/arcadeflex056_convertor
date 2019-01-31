@@ -17,7 +17,6 @@ public class stfight
 {
 	
 	// this prototype will move to the driver
-	WRITE_HANDLER( stfight_bank_w );
 	
 	
 	/*
@@ -95,12 +94,12 @@ public class stfight
 	
 	// It's entirely possible that this bank is never switched out
 	// - in fact I don't even know how/where it's switched in!
-	WRITE_HANDLER( stfight_bank_w )
+	public static WriteHandlerPtr stfight_bank_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		unsigned char   *ROM2 = memory_region(REGION_CPU1) + 0x10000;
 	
 		cpu_setbank( 1, &ROM2[data<<14] );
-	}
+	} };
 	
 	int stfight_vb_interrupt( void )
 	{
@@ -179,12 +178,12 @@ public class stfight
 	    return( coin_mech_data );
 	} };
 	
-	WRITE_HANDLER( stfight_coin_w )
+	public static WriteHandlerPtr stfight_coin_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 	    // interrogate coin mech
 	    stfight_coin_mech_query_active = 1;
 	    stfight_coin_mech_query = data;
-	}
+	} };
 	
 	/*
 	 *      Machine hardware for MSM5205 ADPCM sound control
@@ -226,7 +225,7 @@ public class stfight
 		toggle ^= 1;
 	}
 	
-	WRITE_HANDLER( stfight_adpcm_control_w )
+	public static WriteHandlerPtr stfight_adpcm_control_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 	    if( data < 0x08 )
 	    {
@@ -235,11 +234,11 @@ public class stfight
 	    }
 	
 	    MSM5205_reset_w( 0, data & 0x08 ? 1 : 0 );
-	}
+	} };
 	
-	WRITE_HANDLER( stfight_e800_w )
+	public static WriteHandlerPtr stfight_e800_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
-	}
+	} };
 	
 	/*
 	 *      Machine hardware for YM2303 fm sound control
@@ -247,11 +246,11 @@ public class stfight
 	
 	static unsigned char fm_data;
 	
-	WRITE_HANDLER( stfight_fm_w )
+	public static WriteHandlerPtr stfight_fm_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 	    // the sound cpu ignores any fm data without bit 7 set
 	    fm_data = 0x80 | data;
-	}
+	} };
 	
 	public static ReadHandlerPtr stfight_fm_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{

@@ -33,9 +33,7 @@ public class megazone
 	int megazone_vh_start(void);
 	void megazone_vh_stop(void);
 	
-	WRITE_HANDLER( megazone_flipscreen_w );
 	void megazone_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom);
-	WRITE_HANDLER( megazone_sprite_bank_select_w );
 	void megazone_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	
 	
@@ -78,31 +76,31 @@ public class megazone
 		}
 	} };
 	
-	WRITE_HANDLER( megazone_videoram2_w )
+	public static WriteHandlerPtr megazone_videoram2_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		if (megazone_videoram2[offset] != data)
 		{
 			megazone_videoram2[offset] = data;
 		}
-	}
+	} };
 	
-	WRITE_HANDLER( megazone_colorram2_w )
+	public static WriteHandlerPtr megazone_colorram2_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		if (megazone_colorram2[offset] != data)
 		{
 			megazone_colorram2[offset] = data;
 		}
-	}
+	} };
 	
 	public static ReadHandlerPtr megazone_sharedram_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return(megazone_sharedram[offset]);
 	} };
 	
-	WRITE_HANDLER( megazone_sharedram_w )
+	public static WriteHandlerPtr megazone_sharedram_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		megazone_sharedram[offset] = data;
-	}
+	} };
 	
 	public static WriteHandlerPtr megazone_i8039_irq_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
@@ -110,11 +108,11 @@ public class megazone
 			cpu_cause_interrupt(2,I8039_EXT_INT);
 	} };
 	
-	WRITE_HANDLER( i8039_irqen_and_status_w )
+	public static WriteHandlerPtr i8039_irqen_and_status_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		i8039_irqenable = data & 0x80;
 		i8039_status = (data & 0x70) >> 4;
-	}
+	} };
 	
 	public static WriteHandlerPtr megazone_coin_counter_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{

@@ -77,13 +77,6 @@ public class galaga
 	
 	
 	extern unsigned char *galaga_sharedram;
-	WRITE_HANDLER( galaga_sharedram_w );
-	WRITE_HANDLER( galaga_interrupt_enable_1_w );
-	WRITE_HANDLER( galaga_interrupt_enable_2_w );
-	WRITE_HANDLER( galaga_interrupt_enable_3_w );
-	WRITE_HANDLER( galaga_customio_w );
-	WRITE_HANDLER( galaga_customio_data_w );
-	WRITE_HANDLER( galaga_halt_w );
 	int galaga_interrupt_1(void);
 	int galaga_interrupt_2(void);
 	int galaga_interrupt_3(void);
@@ -95,7 +88,6 @@ public class galaga
 	void galaga_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	void galaga_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom);
 	
-	WRITE_HANDLER( pengo_sound_w );
 	extern unsigned char *pengo_soundregs;
 	
 	

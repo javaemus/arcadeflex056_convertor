@@ -179,52 +179,52 @@ public class senjyo
 	
 	***************************************************************************/
 	
-	WRITE_HANDLER( senjyo_fgvideoram_w )
+	public static WriteHandlerPtr senjyo_fgvideoram_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		if (senjyo_fgvideoram[offset] != data)
 		{
 			senjyo_fgvideoram[offset] = data;
 			tilemap_mark_tile_dirty(fg_tilemap,offset);
 		}
-	}
-	WRITE_HANDLER( senjyo_fgcolorram_w )
+	} };
+	public static WriteHandlerPtr senjyo_fgcolorram_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		if (senjyo_fgcolorram[offset] != data)
 		{
 			senjyo_fgcolorram[offset] = data;
 			tilemap_mark_tile_dirty(fg_tilemap,offset);
 		}
-	}
-	WRITE_HANDLER( senjyo_bg1videoram_w )
+	} };
+	public static WriteHandlerPtr senjyo_bg1videoram_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		if (senjyo_bg1videoram[offset] != data)
 		{
 			senjyo_bg1videoram[offset] = data;
 			tilemap_mark_tile_dirty(bg1_tilemap,offset);
 		}
-	}
-	WRITE_HANDLER( senjyo_bg2videoram_w )
+	} };
+	public static WriteHandlerPtr senjyo_bg2videoram_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		if (senjyo_bg2videoram[offset] != data)
 		{
 			senjyo_bg2videoram[offset] = data;
 			tilemap_mark_tile_dirty(bg2_tilemap,offset);
 		}
-	}
-	WRITE_HANDLER( senjyo_bg3videoram_w )
+	} };
+	public static WriteHandlerPtr senjyo_bg3videoram_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		if (senjyo_bg3videoram[offset] != data)
 		{
 			senjyo_bg3videoram[offset] = data;
 			tilemap_mark_tile_dirty(bg3_tilemap,offset);
 		}
-	}
+	} };
 	
-	WRITE_HANDLER( senjyo_bgstripes_w )
+	public static WriteHandlerPtr senjyo_bgstripes_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		*senjyo_bgstripesram = data;
 		set_vh_global_attribute(&senjyo_bgstripes, data);
-	}
+	} };
 	
 	/***************************************************************************
 	

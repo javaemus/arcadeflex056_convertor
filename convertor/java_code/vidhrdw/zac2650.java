@@ -39,14 +39,14 @@ public class zac2650
 	/* once it's workings are fully understood.                   */
 	/**************************************************************/
 	
-	WRITE_HANDLER( zac_s2636_w )
+	public static WriteHandlerPtr zac_s2636_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		if (s2636ram[offset] != data)
 	    {
 			s2636ram[offset] = data;
 	        dirtychar[offset>>3] = 1;
 	    }
-	}
+	} };
 	
 	public static ReadHandlerPtr zac_s2636_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{

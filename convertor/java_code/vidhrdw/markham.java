@@ -46,15 +46,15 @@ public class markham
 	
 	}
 	
-	WRITE_HANDLER( markham_scroll_x_w )
+	public static WriteHandlerPtr markham_scroll_x_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		markham_xscroll[offset] = data;
-	}
+	} };
 	
-	WRITE_HANDLER( markham_flipscreen_w )
+	public static WriteHandlerPtr markham_flipscreen_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		flipscreen = data & 1;
-	}
+	} };
 	
 	void markham_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
 	{

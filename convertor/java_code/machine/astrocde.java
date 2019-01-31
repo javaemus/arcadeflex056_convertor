@@ -79,10 +79,10 @@ public class astrocde
 	
 	static int ebases_trackball_select = 0;
 	
-	WRITE_HANDLER( ebases_trackball_select_w )
+	public static WriteHandlerPtr ebases_trackball_select_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		ebases_trackball_select = data;
-	}
+	} };
 	
 	public static ReadHandlerPtr ebases_trackball_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{

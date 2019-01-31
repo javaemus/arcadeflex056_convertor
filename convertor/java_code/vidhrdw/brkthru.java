@@ -117,7 +117,7 @@ public class brkthru
 	
 	
 	
-	WRITE_HANDLER( brkthru_1800_w )
+	public static WriteHandlerPtr brkthru_1800_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		if (offset == 0)	/* low 8 bits of scroll */
 			bgscroll = (bgscroll & 0x100) | data;
@@ -148,7 +148,7 @@ public class brkthru
 			/* bit 7 = high bit of scroll */
 			bgscroll = (bgscroll & 0xff) | ((data & 0x80) << 1);
 		}
-	}
+	} };
 	
 	
 	

@@ -18,22 +18,17 @@ public class hyperspt
 	
 	extern unsigned char *hyperspt_scroll;
 	
-	WRITE_HANDLER( hyperspt_flipscreen_w );
 	void hyperspt_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom);
 	int hyperspt_vh_start(void);
 	void hyperspt_vh_stop(void);
 	void hyperspt_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	void roadf_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	
-	WRITE_HANDLER( konami_sh_irqtrigger_w );
-	WRITE_HANDLER( hyperspt_sound_w );
 	
 	/* these routines lurk in sndhrdw/trackfld.c */
 	extern struct VLM5030interface konami_vlm5030_interface;
 	extern struct SN76496interface konami_sn76496_interface;
 	extern struct DACinterface konami_dac_interface;
-	WRITE_HANDLER( konami_SN76496_latch_w );
-	WRITE_HANDLER( konami_SN76496_0_w );
 	
 	
 	public static WriteHandlerPtr hyperspt_coin_counter_w = new WriteHandlerPtr() {public void handler(int offset, int data)

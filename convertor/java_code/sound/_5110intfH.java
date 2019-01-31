@@ -15,8 +15,6 @@ int tms5110_sh_start(const struct MachineSound *msound);
 void tms5110_sh_stop(void);
 void tms5110_sh_update(void);
 
-WRITE_HANDLER( tms5110_CTL_w );
-WRITE_HANDLER( tms5110_PDC_w );
 
 int tms5110_ready_r(void);
 

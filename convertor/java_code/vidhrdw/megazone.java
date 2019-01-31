@@ -89,14 +89,14 @@ public class megazone
 			COLOR(0,i) = (*(color_prom++) & 0x0f) + 0x10;
 	}
 	
-	WRITE_HANDLER( megazone_flipscreen_w )
+	public static WriteHandlerPtr megazone_flipscreen_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		if (flipscreen != (data & 1))
 		{
 			flipscreen = data & 1;
 			memset(dirtybuffer,1,videoram_size);
 		}
-	}
+	} };
 	
 	int megazone_vh_start(void)
 	{

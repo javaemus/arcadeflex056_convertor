@@ -103,8 +103,6 @@ public class scramble
 	void scramble_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom);
 	void mariner_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom);
 	void frogger_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom);
-	WRITE_HANDLER( galaxian_videoram_w );
-	WRITE_HANDLER( galaxian_stars_enable_w );
 	
 	void init_scramble_ppi(void);
 	void init_atlantis(void);
@@ -129,13 +127,9 @@ public class scramble
 	
 	void galaxian_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	
-	WRITE_HANDLER( pisces_gfxbank_w );
 	
 	int hunchbks_vh_interrupt(void);
-	WRITE_HANDLER( galaxian_flip_screen_x_w );
-	WRITE_HANDLER( galaxian_flip_screen_y_w );
 	
-	WRITE_HANDLER( hotshock_sh_irqtrigger_w );
 	
 	READ_HANDLER(mars_ppi8255_0_r);
 	READ_HANDLER(mars_ppi8255_1_r);
@@ -171,10 +165,10 @@ public class scramble
 		return cpu_readmem16(0x1000+offset);
 	} };
 	
-	WRITE_HANDLER( hunchbks_mirror_w )
+	public static WriteHandlerPtr hunchbks_mirror_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		cpu_writemem16(0x1000+offset,data);
-	}
+	} };
 	
 	
 	public static Memory_ReadAddress scramble_readmem[]={

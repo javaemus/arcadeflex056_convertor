@@ -118,7 +118,7 @@ public class jrpacman
 	
 	
 	
-	WRITE_HANDLER( jrpacman_videoram_w )
+	public static WriteHandlerPtr jrpacman_videoram_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		if (videoram[offset] != data)
 		{
@@ -139,50 +139,50 @@ public class jrpacman
 				dirtybuffer[offset & ~0x80] = 1;
 			}
 		}
-	}
+	} };
 	
 	
 	
-	WRITE_HANDLER( jrpacman_palettebank_w )
+	public static WriteHandlerPtr jrpacman_palettebank_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		if (*jrpacman_palettebank != data)
 		{
 			*jrpacman_palettebank = data;
 			memset(dirtybuffer,1,videoram_size);
 		}
-	}
+	} };
 	
 	
 	
-	WRITE_HANDLER( jrpacman_colortablebank_w )
+	public static WriteHandlerPtr jrpacman_colortablebank_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		if (*jrpacman_colortablebank != data)
 		{
 			*jrpacman_colortablebank = data;
 			memset(dirtybuffer,1,videoram_size);
 		}
-	}
+	} };
 	
 	
 	
-	WRITE_HANDLER( jrpacman_charbank_w )
+	public static WriteHandlerPtr jrpacman_charbank_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		if (*jrpacman_charbank != data)
 		{
 			*jrpacman_charbank = data;
 			memset(dirtybuffer,1,videoram_size);
 		}
-	}
+	} };
 	
 	
-	WRITE_HANDLER( jrpacman_flipscreen_w )
+	public static WriteHandlerPtr jrpacman_flipscreen_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		if (flipscreen != (data & 1))
 		{
 			flipscreen = data & 1;
 			memset(dirtybuffer,1,videoram_size);
 		}
-	}
+	} };
 	
 	
 	/***************************************************************************

@@ -137,14 +137,8 @@ public class namcos1
 	extern void namcos1_vh_stop(void);
 	
 	/* from machine */
-	WRITE_HANDLER( namcos1_bankswitch_w );
-	WRITE_HANDLER( namcos1_subcpu_bank_w );
 	
-	WRITE_HANDLER( namcos1_cpu_control_w );
-	WRITE_HANDLER( namcos1_sound_bankswitch_w );
 	
-	WRITE_HANDLER( namcos1_mcu_bankswitch_w );
-	WRITE_HANDLER( namcos1_mcu_patch_w );
 	
 	extern void init_namcos1( void );
 	

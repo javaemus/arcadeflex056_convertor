@@ -9,13 +9,13 @@ public class irem
 	
 	
 	
-	WRITE_HANDLER( irem_sound_cmd_w )
+	public static WriteHandlerPtr irem_sound_cmd_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		if ((data & 0x80) == 0)
 			soundlatch_w(0,data & 0x7f);
 		else
 			cpu_set_irq_line(1,0,HOLD_LINE);
-	}
+	} };
 	
 	
 	static int port1,port2;

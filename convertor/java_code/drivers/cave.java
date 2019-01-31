@@ -903,16 +903,16 @@ public class cave
 									Hotdog Storm
 	***************************************************************************/
 	
-	WRITE_HANDLER( hotdogst_rombank_w )
+	public static WriteHandlerPtr hotdogst_rombank_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		data8_t *RAM = memory_region(REGION_CPU2);
 		int bank = data & 0x0f;
 		if ( data & ~0x0f )	logerror("CPU #1 - PC %04X: Bank %02X\n",cpu_get_pc(),data);
 		if (bank > 1)	bank+=2;
 		cpu_setbank(2, &RAM[ 0x4000 * bank ]);
-	}
+	} };
 	
-	WRITE_HANDLER( hotdogst_okibank_w )
+	public static WriteHandlerPtr hotdogst_okibank_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		data8_t *RAM = memory_region(REGION_SOUND1);
 		int bank1 = (data >> 0) & 0x3;
@@ -920,7 +920,7 @@ public class cave
 		if (Machine->sample_rate == 0)	return;
 		memcpy(RAM + 0x20000 * 0, RAM + 0x40000 + 0x20000 * bank1, 0x20000);
 		memcpy(RAM + 0x20000 * 1, RAM + 0x40000 + 0x20000 * bank2, 0x20000);
-	}
+	} };
 	
 	public static Memory_ReadAddress hotdogst_sound_readmem[]={
 		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
@@ -962,14 +962,14 @@ public class cave
 									Mazinger Z
 	***************************************************************************/
 	
-	WRITE_HANDLER( mazinger_rombank_w )
+	public static WriteHandlerPtr mazinger_rombank_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		data8_t *RAM = memory_region(REGION_CPU2);
 		int bank = data & 0x07;
 		if ( data & ~0x07 )	logerror("CPU #1 - PC %04X: Bank %02X\n",cpu_get_pc(),data);
 		if (bank > 1)	bank+=2;
 		cpu_setbank(2, &RAM[ 0x4000 * bank ]);
-	}
+	} };
 	
 	public static Memory_ReadAddress mazinger_sound_readmem[]={
 		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
@@ -1012,16 +1012,16 @@ public class cave
 									Metamoqester
 	***************************************************************************/
 	
-	WRITE_HANDLER( metmqstr_rombank_w )
+	public static WriteHandlerPtr metmqstr_rombank_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		data8_t *ROM = memory_region(REGION_CPU2);
 		int bank = data & 0xf;
 		if ( bank != data )	logerror("CPU #1 - PC %04X: Bank %02X\n",cpu_get_pc(),data);
 		if (bank >= 2)	bank += 2;
 		cpu_setbank(1, &ROM[ 0x4000 * bank ]);
-	}
+	} };
 	
-	WRITE_HANDLER( metmqstr_okibank0_w )
+	public static WriteHandlerPtr metmqstr_okibank0_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		data8_t *ROM = memory_region(REGION_SOUND1);
 		int bank1 = (data >> 0) & 0x7;
@@ -1029,9 +1029,9 @@ public class cave
 		if (Machine->sample_rate == 0)	return;
 		memcpy(ROM + 0x20000 * 0, ROM + 0x40000 + 0x20000 * bank1, 0x20000);
 		memcpy(ROM + 0x20000 * 1, ROM + 0x40000 + 0x20000 * bank2, 0x20000);
-	}
+	} };
 	
-	WRITE_HANDLER( metmqstr_okibank1_w )
+	public static WriteHandlerPtr metmqstr_okibank1_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		data8_t *ROM = memory_region(REGION_SOUND2);
 		int bank1 = (data >> 0) & 0x7;
@@ -1039,7 +1039,7 @@ public class cave
 		if (Machine->sample_rate == 0)	return;
 		memcpy(ROM + 0x20000 * 0, ROM + 0x40000 + 0x20000 * bank1, 0x20000);
 		memcpy(ROM + 0x20000 * 1, ROM + 0x40000 + 0x20000 * bank2, 0x20000);
-	}
+	} };
 	
 	public static Memory_ReadAddress metmqstr_sound_readmem[]={
 		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
@@ -1083,16 +1083,16 @@ public class cave
 									Sailorm Moon
 	***************************************************************************/
 	
-	WRITE_HANDLER( sailormn_rombank_w )
+	public static WriteHandlerPtr sailormn_rombank_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		data8_t *RAM = memory_region(REGION_CPU2);
 		int bank = data & 0x1f;
 		if ( data & ~0x1f )	logerror("CPU #1 - PC %04X: Bank %02X\n",cpu_get_pc(),data);
 		if (bank > 1)	bank+=2;
 		cpu_setbank(1, &RAM[ 0x4000 * bank ]);
-	}
+	} };
 	
-	WRITE_HANDLER( sailormn_okibank0_w )
+	public static WriteHandlerPtr sailormn_okibank0_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		data8_t *RAM = memory_region(REGION_SOUND1);
 		int bank1 = (data >> 0) & 0xf;
@@ -1100,9 +1100,9 @@ public class cave
 		if (Machine->sample_rate == 0)	return;
 		memcpy(RAM + 0x20000 * 0, RAM + 0x40000 + 0x20000 * bank1, 0x20000);
 		memcpy(RAM + 0x20000 * 1, RAM + 0x40000 + 0x20000 * bank2, 0x20000);
-	}
+	} };
 	
-	WRITE_HANDLER( sailormn_okibank1_w )
+	public static WriteHandlerPtr sailormn_okibank1_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		data8_t *RAM = memory_region(REGION_SOUND2);
 		int bank1 = (data >> 0) & 0x3;
@@ -1110,7 +1110,7 @@ public class cave
 		if (Machine->sample_rate == 0)	return;
 		memcpy(RAM + 0x20000 * 0, RAM + 0x40000 + 0x20000 * bank1, 0x20000);
 		memcpy(RAM + 0x20000 * 1, RAM + 0x40000 + 0x20000 * bank2, 0x20000);
-	}
+	} };
 	
 	public static Memory_ReadAddress sailormn_sound_readmem[]={
 		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),

@@ -22,13 +22,9 @@ public class circusc
 	extern unsigned char *circusc_scroll;
 	extern unsigned char *circusc_videoram,*circusc_colorram;
 	
-	WRITE_HANDLER( circusc_videoram_w );
-	WRITE_HANDLER( circusc_colorram_w );
 	
 	int circusc_vh_start(void);
-	WRITE_HANDLER( circusc_flipscreen_w );
 	void circusc_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom);
-	WRITE_HANDLER( circusc_sprite_bank_select_w );
 	void circusc_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	
 	

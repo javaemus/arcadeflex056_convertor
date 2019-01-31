@@ -110,27 +110,27 @@ public class dec8
 		}
 	}
 	
-	WRITE_HANDLER( dec8_bac06_0_w )
+	public static WriteHandlerPtr dec8_bac06_0_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		dec8_pf0_control[offset]=data;
-	}
+	} };
 	
-	WRITE_HANDLER( dec8_bac06_1_w )
+	public static WriteHandlerPtr dec8_bac06_1_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		dec8_pf1_control[offset]=data;
-	}
+	} };
 	
-	WRITE_HANDLER( dec8_pf0_data_w )
+	public static WriteHandlerPtr dec8_pf0_data_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		dec8_pf0_data[offset]=data;
 		tilemap_mark_tile_dirty(dec8_pf0_tilemap,offset/2);
-	}
+	} };
 	
-	WRITE_HANDLER( dec8_pf1_data_w )
+	public static WriteHandlerPtr dec8_pf1_data_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		dec8_pf1_data[offset]=data;
 		tilemap_mark_tile_dirty(dec8_pf1_tilemap,offset/2);
-	}
+	} };
 	
 	public static ReadHandlerPtr dec8_pf0_data_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
@@ -142,29 +142,29 @@ public class dec8
 		return dec8_pf1_data[offset];
 	} };
 	
-	WRITE_HANDLER( dec8_videoram_w )
+	public static WriteHandlerPtr dec8_videoram_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		videoram[offset]=data;
 		tilemap_mark_tile_dirty( dec8_fix_tilemap,offset/2 );
-	}
+	} };
 	
-	WRITE_HANDLER( srdarwin_videoram_w )
+	public static WriteHandlerPtr srdarwin_videoram_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		videoram[offset]=data;
 		tilemap_mark_tile_dirty( dec8_fix_tilemap,offset );
-	}
+	} };
 	
-	WRITE_HANDLER( dec8_scroll1_w )
+	public static WriteHandlerPtr dec8_scroll1_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		scroll1[offset]=data;
-	}
+	} };
 	
-	WRITE_HANDLER( dec8_scroll2_w )
+	public static WriteHandlerPtr dec8_scroll2_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		scroll2[offset]=data;
-	}
+	} };
 	
-	WRITE_HANDLER( srdarwin_control_w )
+	public static WriteHandlerPtr srdarwin_control_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		int bankaddress;
 		unsigned char *RAM = memory_region(REGION_CPU1);
@@ -180,9 +180,9 @@ public class dec8
 	        	scroll2[1]=data;
 	        	return;
 	    }
-	}
+	} };
 	
-	WRITE_HANDLER( lastmiss_control_w )
+	public static WriteHandlerPtr lastmiss_control_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		unsigned char *RAM = memory_region(REGION_CPU1);
 	
@@ -202,9 +202,9 @@ public class dec8
 			cpu_set_reset_line(1,CLEAR_LINE);
 		else
 			cpu_set_reset_line(1,ASSERT_LINE);
-	}
+	} };
 	
-	WRITE_HANDLER( shackled_control_w )
+	public static WriteHandlerPtr shackled_control_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		int bankaddress;
 		unsigned char *RAM = memory_region(REGION_CPU1);
@@ -215,19 +215,19 @@ public class dec8
 	
 		scroll2[0]=(data>>5)&1;
 		scroll2[2]=(data>>6)&1;
-	}
+	} };
 	
-	WRITE_HANDLER( lastmiss_scrollx_w )
+	public static WriteHandlerPtr lastmiss_scrollx_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		scroll2[1]=data;
-	}
+	} };
 	
-	WRITE_HANDLER( lastmiss_scrolly_w )
+	public static WriteHandlerPtr lastmiss_scrolly_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		scroll2[3]=data;
-	}
+	} };
 	
-	WRITE_HANDLER( gondo_scroll_w )
+	public static WriteHandlerPtr gondo_scroll_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		switch (offset) {
 			case 0x0:
@@ -242,7 +242,7 @@ public class dec8
 				/* Bit 2 is also used in Gondo & Garyoret */
 				break;
 		}
-	}
+	} };
 	
 	/******************************************************************************/
 	

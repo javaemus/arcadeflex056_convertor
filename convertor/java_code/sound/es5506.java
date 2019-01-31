@@ -1429,15 +1429,15 @@ public class es5506
 	
 	***********************************************************************************************/
 	
-	WRITE_HANDLER( ES5506_data_0_w )
+	public static WriteHandlerPtr ES5506_data_0_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		es5506_reg_write(&es5506[0], offset, data);
-	}
+	} };
 	
-	WRITE_HANDLER( ES5506_data_1_w )
+	public static WriteHandlerPtr ES5506_data_1_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		es5506_reg_write(&es5506[1], offset, data);
-	}
+	} };
 	
 	
 	

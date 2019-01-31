@@ -140,15 +140,9 @@ public class cclimber
 	extern size_t cclimber_bsvideoram_size;
 	extern unsigned char *cclimber_bigspriteram;
 	extern unsigned char *cclimber_column_scroll;
-	WRITE_HANDLER( cclimber_colorram_w );
-	WRITE_HANDLER( cclimber_bigsprite_videoram_w );
 	void cclimber_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom);
 	void cclimber_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	
-	WRITE_HANDLER( cclimber_sample_select_w );
-	WRITE_HANDLER( cclimber_sample_trigger_w );
-	WRITE_HANDLER( cclimber_sample_rate_w );
-	WRITE_HANDLER( cclimber_sample_volume_w );
 	int cclimber_sh_start(const struct MachineSound *msound);
 	void cclimber_sh_stop(void);
 	
@@ -1030,19 +1024,16 @@ public class cclimber
 	
 	***************************************************************************/
 	
-	WRITE_HANDLER( swimmer_bgcolor_w );
-	WRITE_HANDLER( swimmer_palettebank_w );
 	void swimmer_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom);
 	void swimmer_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
-	WRITE_HANDLER( swimmer_sidepanel_enable_w );
 	
 	
 	
-	WRITE_HANDLER( swimmer_sh_soundlatch_w )
+	public static WriteHandlerPtr swimmer_sh_soundlatch_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		soundlatch_w(offset,data);
 		cpu_cause_interrupt(1,0xff);
-	}
+	} };
 	
 	
 	

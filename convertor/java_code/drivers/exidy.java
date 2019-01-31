@@ -120,12 +120,7 @@ public class exidy
 	/* These are defined in sndhrdw/exidy.c */
 	int exidy_sh_start(const struct MachineSound *msound);
 	
-	WRITE_HANDLER( exidy_shriot_w );
-	WRITE_HANDLER( exidy_sfxctrl_w );
-	WRITE_HANDLER( exidy_sh8253_w );
-	WRITE_HANDLER( exidy_sh6840_w );
 	
-	WRITE_HANDLER( mtrap_voiceio_w );
 	
 	
 	/* These are defined in sndhrdw/targ.c */
@@ -134,7 +129,6 @@ public class exidy
 	int targ_sh_start(const struct MachineSound *msound);
 	void targ_sh_stop(void);
 	
-	WRITE_HANDLER( targ_sh_w );
 	
 	
 	/* These are defined in vidhrdw/targ.c */
@@ -168,8 +162,6 @@ public class exidy
 	void exidy_vh_init_palette(UINT8 *game_palette, UINT16 *game_colortable,const UINT8 *color_prom);
 	int exidy_vblank_interrupt(void);
 	
-	WRITE_HANDLER( exidy_characterram_w );
-	WRITE_HANDLER( exidy_color_w );
 	
 	
 	

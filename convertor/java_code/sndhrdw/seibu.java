@@ -216,20 +216,20 @@ public class seibu
 			cpu_set_irq_line(sound_cpu,0,ASSERT_LINE);
 	}
 	
-	WRITE_HANDLER( seibu_irq_clear_w )
+	public static WriteHandlerPtr seibu_irq_clear_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		setvector_callback(VECTOR_INIT);
-	}
+	} };
 	
-	WRITE_HANDLER( seibu_rst10_ack_w )
+	public static WriteHandlerPtr seibu_rst10_ack_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		/* Unused for now */
-	}
+	} };
 	
-	WRITE_HANDLER( seibu_rst18_ack_w )
+	public static WriteHandlerPtr seibu_rst18_ack_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		timer_set(TIME_NOW,RST18_CLEAR,setvector_callback);
-	}
+	} };
 	
 	void seibu_ym3812_irqhandler(int linestate)
 	{
@@ -261,18 +261,18 @@ public class seibu
 	static int main2sub_pending,sub2main_pending;
 	
 	
-	WRITE_HANDLER( seibu_bank_w )
+	public static WriteHandlerPtr seibu_bank_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		UINT8 *rom = memory_region(REGION_CPU1+sound_cpu);
 	
 		cpu_setbank(1,rom + 0x10000 + 0x8000 * (data & 1));
-	}
+	} };
 	
-	WRITE_HANDLER( seibu_coin_w )
+	public static WriteHandlerPtr seibu_coin_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		coin_counter_w(0,data & 1);
 		coin_counter_w(1,data & 2);
-	}
+	} };
 	
 	public static ReadHandlerPtr seibu_soundlatch_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
@@ -284,17 +284,17 @@ public class seibu
 		return sub2main_pending ? 1 : 0;
 	} };
 	
-	WRITE_HANDLER( seibu_main_data_w )
+	public static WriteHandlerPtr seibu_main_data_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		sub2main[offset] = data;
-	}
+	} };
 	
-	WRITE_HANDLER( seibu_pending_w )
+	public static WriteHandlerPtr seibu_pending_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		/* just a guess */
 		main2sub_pending = 0;
 		sub2main_pending = 1;
-	}
+	} };
 	
 	READ16_HANDLER( seibu_main_word_r )
 	{
@@ -340,10 +340,10 @@ public class seibu
 		return seibu_main_word_r(offset/2,0) >> (8 * (offset & 1));
 	} };
 	
-	WRITE_HANDLER( seibu_main_v30_w )
+	public static WriteHandlerPtr seibu_main_v30_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		seibu_main_word_w(offset/2,data << (8 * (offset & 1)),0xff00 >> (8 * (offset & 1)));
-	}
+	} };
 	
 	
 	/***************************************************************************/

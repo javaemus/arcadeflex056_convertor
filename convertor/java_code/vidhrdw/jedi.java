@@ -149,7 +149,7 @@ public class jedi
 	 *
 	 *************************************/
 	
-	WRITE_HANDLER( jedi_paletteram_w )
+	public static WriteHandlerPtr jedi_paletteram_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 	    int r, g, b, bits, intensity;
 	    UINT32 color;
@@ -166,7 +166,7 @@ public class jedi
 		b = 5 * bits * intensity;
 	
 		palette_set_color(offset & 0x3ff, r, g, b);
-	}
+	} };
 	
 	
 	
@@ -176,14 +176,14 @@ public class jedi
 	 *
 	 *************************************/
 	
-	WRITE_HANDLER( jedi_backgroundram_w )
+	public static WriteHandlerPtr jedi_backgroundram_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		if (jedi_backgroundram[offset] != data)
 		{
 			bgdirty[offset] = 1;
 			jedi_backgroundram[offset] = data;
 		}
-	}
+	} };
 	
 	
 	
@@ -193,14 +193,14 @@ public class jedi
 	 *
 	 *************************************/
 	
-	WRITE_HANDLER( jedi_alpha_banksel_w )
+	public static WriteHandlerPtr jedi_alpha_banksel_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		if (jedi_alpha_bank != 2 * (data & 0x80))
 		{
 			jedi_alpha_bank = 2 * (data & 0x80);
 			memset(fgdirty, 1, videoram_size);
 		}
-	}
+	} };
 	
 	
 	
@@ -210,16 +210,16 @@ public class jedi
 	 *
 	 *************************************/
 	
-	WRITE_HANDLER( jedi_vscroll_w )
+	public static WriteHandlerPtr jedi_vscroll_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 	    jedi_vscroll = data | (offset << 8);
-	}
+	} };
 	
 	
-	WRITE_HANDLER( jedi_hscroll_w )
+	public static WriteHandlerPtr jedi_hscroll_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 	    jedi_hscroll = data | (offset << 8);
-	}
+	} };
 	
 	
 	
@@ -229,17 +229,17 @@ public class jedi
 	 *
 	 *************************************/
 	
-	WRITE_HANDLER( jedi_video_off_w )
+	public static WriteHandlerPtr jedi_video_off_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		video_off = data;
-	}
+	} };
 	
 	
-	WRITE_HANDLER( jedi_PIXIRAM_w )
+	public static WriteHandlerPtr jedi_PIXIRAM_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		smooth_table = data & 0x03;
 		memset(bgdirty, 1, jedi_backgroundram_size);
-	}
+	} };
 	
 	
 	

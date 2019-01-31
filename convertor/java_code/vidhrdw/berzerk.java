@@ -47,7 +47,7 @@ public class berzerk
 	}
 	
 	
-	WRITE_HANDLER( berzerk_videoram_w )
+	public static WriteHandlerPtr berzerk_videoram_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		int coloroffset, x, y;
 	
@@ -60,10 +60,10 @@ public class berzerk
 		x = (offset & 0x1f) << 3;
 	
 	    copy_byte(x, y, data, colorram[coloroffset]);
-	}
+	} };
 	
 	
-	WRITE_HANDLER( berzerk_colorram_w )
+	public static WriteHandlerPtr berzerk_colorram_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		int x, y, i;
 	
@@ -83,7 +83,7 @@ public class berzerk
 				copy_byte(x, y, byte, data);
 			}
 		}
-	}
+	} };
 	
 	INLINE unsigned char reverse_byte(unsigned char data)
 	{
@@ -119,7 +119,7 @@ public class berzerk
 	}
 	
 	
-	WRITE_HANDLER( berzerk_magicram_w )
+	public static WriteHandlerPtr berzerk_magicram_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		int data2;
 	
@@ -154,15 +154,15 @@ public class berzerk
 		}
 	
 		berzerk_videoram_w(offset, berzerk_magicram[offset]);
-	}
+	} };
 	
 	
-	WRITE_HANDLER( berzerk_magicram_control_w )
+	public static WriteHandlerPtr berzerk_magicram_control_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		magicram_control = data;
 		magicram_latch = 0;
 		collision = 0;
-	}
+	} };
 	
 	
 	public static ReadHandlerPtr berzerk_collision_r  = new ReadHandlerPtr() { public int handler(int offset)

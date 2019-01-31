@@ -57,7 +57,7 @@ public class royalmah
 	}
 	
 	
-	WRITE_HANDLER( royalmah_videoram_w )
+	public static WriteHandlerPtr royalmah_videoram_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		int i;
 		UINT8 x, y;
@@ -81,7 +81,7 @@ public class royalmah
 			col1 >>= 1;
 			col2 >>= 1;
 		}
-	}
+	} };
 	
 	
 	void royalmah_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)

@@ -29,11 +29,11 @@ public class marvins
 	**
 	***************************************************************************/
 	
-	WRITE_HANDLER( marvins_palette_bank_w )
+	public static WriteHandlerPtr marvins_palette_bank_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		bg_color = data>>4;
 		fg_color = data&0xf;
-	}
+	} };
 	
 	static void stuff_palette( int source_index, int dest_index, int num_colors )
 	{
@@ -88,10 +88,10 @@ public class marvins
 	**
 	***************************************************************************/
 	
-	WRITE_HANDLER( marvins_spriteram_w )
+	public static WriteHandlerPtr marvins_spriteram_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		spriteram[offset] = data;
-	}
+	} };
 	public static ReadHandlerPtr marvins_spriteram_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return spriteram[offset];
@@ -101,7 +101,7 @@ public class marvins
 	{
 		return videoram[offset+0x1000];
 	} };
-	WRITE_HANDLER( marvins_foreground_ram_w )
+	public static WriteHandlerPtr marvins_foreground_ram_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		if( offset<0x800 )
 		{
@@ -109,13 +109,13 @@ public class marvins
 			tilemap_mark_tile_dirty(fg_tilemap,offset);
 		}
 		videoram[offset+0x1000] = data;
-	}
+	} };
 	
 	public static ReadHandlerPtr marvins_background_ram_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return videoram[offset];
 	} };
-	WRITE_HANDLER( marvins_background_ram_w )
+	public static WriteHandlerPtr marvins_background_ram_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		if( offset<0x800 )
 		{
@@ -123,13 +123,13 @@ public class marvins
 			tilemap_mark_tile_dirty(bg_tilemap,offset);
 		}
 		videoram[offset] = data;
-	}
+	} };
 	
 	public static ReadHandlerPtr marvins_text_ram_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return videoram[offset+0x2000];
 	} };
-	WRITE_HANDLER( marvins_text_ram_w )
+	public static WriteHandlerPtr marvins_text_ram_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		if( offset<0x400 )
 		{
@@ -137,7 +137,7 @@ public class marvins
 			tilemap_mark_tile_dirty(tx_tilemap,offset);
 		}
 		videoram[offset+0x2000] = data;
-	}
+	} };
 	
 	/***************************************************************************
 	**

@@ -122,31 +122,31 @@ public class suprloco
 	
 	***************************************************************************/
 	
-	WRITE_HANDLER( suprloco_videoram_w )
+	public static WriteHandlerPtr suprloco_videoram_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		if (suprloco_videoram[offset] != data)
 		{
 			suprloco_videoram[offset] = data;
 			tilemap_mark_tile_dirty(bg_tilemap,offset/2);
 		}
-	}
+	} };
 	
 	static int suprloco_scrollram[32];
 	
-	WRITE_HANDLER( suprloco_scrollram_w )
+	public static WriteHandlerPtr suprloco_scrollram_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		int adj = flip_screen ? -8 : 8;
 	
 		suprloco_scrollram[offset] = data;
 		tilemap_set_scrollx(bg_tilemap,offset, data - adj);
-	}
+	} };
 	
 	public static ReadHandlerPtr suprloco_scrollram_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return suprloco_scrollram[offset];
 	} };
 	
-	WRITE_HANDLER( suprloco_control_w )
+	public static WriteHandlerPtr suprloco_control_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		/* There is probably a palette select in here */
 	
@@ -170,7 +170,7 @@ public class suprloco
 		tilemap_set_scrolly(bg_tilemap,0,flip_screen ? -32 : 0);
 	
 		control = data;
-	}
+	} };
 	
 	
 	public static ReadHandlerPtr suprloco_control_r  = new ReadHandlerPtr() { public int handler(int offset)

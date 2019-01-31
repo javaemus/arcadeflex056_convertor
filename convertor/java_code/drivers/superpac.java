@@ -47,16 +47,11 @@ public class superpac
 	
 	extern unsigned char *superpac_sharedram;
 	extern unsigned char *superpac_customio_1,*superpac_customio_2;
-	WRITE_HANDLER( superpac_sharedram_w );
-	WRITE_HANDLER( superpac_interrupt_enable_w );
-	WRITE_HANDLER( superpac_cpu_enable_w );
-	WRITE_HANDLER( superpac_reset_2_w );
 	
 	int superpac_vh_start(void);
 	void superpac_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	void superpac_init_machine(void);
 	void superpac_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom);
-	WRITE_HANDLER( superpac_flipscreen_w );
 	
 	
 	

@@ -172,30 +172,30 @@ public class namcos86
 		return rthunder_videoram1[offset];
 	} };
 	
-	WRITE_HANDLER( rthunder_videoram1_w )
+	public static WriteHandlerPtr rthunder_videoram1_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		if (rthunder_videoram1[offset] != data)
 		{
 			rthunder_videoram1[offset] = data;
 			tilemap_mark_tile_dirty(tilemap[offset/0x1000],(offset & 0xfff)/2);
 		}
-	}
+	} };
 	
 	public static ReadHandlerPtr rthunder_videoram2_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return rthunder_videoram2[offset];
 	} };
 	
-	WRITE_HANDLER( rthunder_videoram2_w )
+	public static WriteHandlerPtr rthunder_videoram2_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		if (rthunder_videoram2[offset] != data)
 		{
 			rthunder_videoram2[offset] = data;
 			tilemap_mark_tile_dirty(tilemap[2+offset/0x1000],(offset & 0xfff)/2);
 		}
-	}
+	} };
 	
-	WRITE_HANDLER( rthunder_tilebank_select_0_w )
+	public static WriteHandlerPtr rthunder_tilebank_select_0_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		if (tilebank != 0)
 		{
@@ -203,9 +203,9 @@ public class namcos86
 			tilemap_mark_all_tiles_dirty(tilemap[0]);
 			tilemap_mark_all_tiles_dirty(tilemap[1]);
 		}
-	}
+	} };
 	
-	WRITE_HANDLER( rthunder_tilebank_select_1_w )
+	public static WriteHandlerPtr rthunder_tilebank_select_1_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		if (tilebank != 1)
 		{
@@ -213,7 +213,7 @@ public class namcos86
 			tilemap_mark_all_tiles_dirty(tilemap[0]);
 			tilemap_mark_all_tiles_dirty(tilemap[1]);
 		}
-	}
+	} };
 	
 	static void scroll_w(int layer,int offset,int data)
 	{
@@ -246,28 +246,28 @@ public class namcos86
 		tilemap_set_scrolly(tilemap[layer],0,scrolly+16);
 	}
 	
-	WRITE_HANDLER( rthunder_scroll0_w )
+	public static WriteHandlerPtr rthunder_scroll0_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		scroll_w(0,offset,data);
-	}
-	WRITE_HANDLER( rthunder_scroll1_w )
+	} };
+	public static WriteHandlerPtr rthunder_scroll1_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		scroll_w(1,offset,data);
-	}
-	WRITE_HANDLER( rthunder_scroll2_w )
+	} };
+	public static WriteHandlerPtr rthunder_scroll2_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		scroll_w(2,offset,data);
-	}
-	WRITE_HANDLER( rthunder_scroll3_w )
+	} };
+	public static WriteHandlerPtr rthunder_scroll3_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		scroll_w(3,offset,data);
-	}
+	} };
 	
 	
-	WRITE_HANDLER( rthunder_backcolor_w )
+	public static WriteHandlerPtr rthunder_backcolor_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		backcolor = data;
-	}
+	} };
 	
 	
 	/***************************************************************************

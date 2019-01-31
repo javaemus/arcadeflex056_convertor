@@ -22,7 +22,6 @@ public class mrjong
 	
 	void mrjong_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom);
 	void mrjong_vh_screenrefresh(struct mame_bitmap *bitmap, int full_refresh);
-	WRITE_HANDLER( mrjong_flipscreen_w );
 	
 	
 	public static Memory_ReadAddress readmem[]={
@@ -47,10 +46,10 @@ public class mrjong
 	};
 	
 	
-	WRITE_HANDLER( io_0x00_w )
+	public static WriteHandlerPtr io_0x00_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		mrjong_flipscreen_w(0, ((data & 0x04) > 2));
-	}
+	} };
 	
 	public static ReadHandlerPtr io_0x03_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{

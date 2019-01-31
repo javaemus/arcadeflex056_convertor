@@ -597,6 +597,27 @@ public class convertMame {
                     Convertor.inpos = i;
                 }
                 break;
+                case 'W': {
+                    i = Convertor.inpos;
+                    if (sUtil.getToken("WRITE_HANDLER(")) {
+                        sUtil.skipSpace();
+                        Convertor.token[0] = sUtil.parseToken();
+                        sUtil.skipSpace();
+                        if (sUtil.getToken(");"))//if it is a front function skip it
+                        {
+                            sUtil.skipLine();
+                            continue;
+                        } else {
+                            sUtil.putString("public static WriteHandlerPtr " + Convertor.token[0] + " = new WriteHandlerPtr() {public void handler(int offset, int data)");
+                            type = WRITE_HANDLER8;
+                            i3 = -1;
+                            Convertor.inpos += 1;
+                            continue;
+                        }
+                    }
+                    Convertor.inpos = i;
+                }
+                break;
                 case ')': {
                     if (type2 == ROMDEF) {
                         i8--;

@@ -218,7 +218,7 @@ public class rpunch
 	 *
 	 *************************************/
 	
-	WRITE_HANDLER( upd_control_w )
+	public static WriteHandlerPtr upd_control_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		if ((data & 1) != upd_rom_bank)
 		{
@@ -226,15 +226,15 @@ public class rpunch
 			memcpy(memory_region(REGION_SOUND1), memory_region(REGION_SOUND1) + 0x20000 * (upd_rom_bank + 1), 0x20000);
 		}
 		UPD7759_reset_w(0, data >> 7);
-	}
+	} };
 	
 	
-	WRITE_HANDLER( upd_data_w )
+	public static WriteHandlerPtr upd_data_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		UPD7759_message_w(0, data);
 		UPD7759_start_w(0, 0);
 		UPD7759_start_w(0, 1);
-	}
+	} };
 	
 	
 	

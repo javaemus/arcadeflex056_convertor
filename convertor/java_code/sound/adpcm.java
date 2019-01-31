@@ -851,15 +851,15 @@ public class adpcm
 	
 	***********************************************************************************************/
 	
-	WRITE_HANDLER( OKIM6295_data_0_w )
+	public static WriteHandlerPtr OKIM6295_data_0_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		OKIM6295_data_w(0, data);
-	}
+	} };
 	
-	WRITE_HANDLER( OKIM6295_data_1_w )
+	public static WriteHandlerPtr OKIM6295_data_1_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		OKIM6295_data_w(1, data);
-	}
+	} };
 	
 	WRITE16_HANDLER( OKIM6295_data_0_lsb_w )
 	{

@@ -147,7 +147,7 @@ public class pd4990a
 		return (outputbit);
 	} };
 	
-	WRITE_HANDLER( pd4990a_control_w )
+	public static WriteHandlerPtr pd4990a_control_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		switch (data)
 		{
@@ -194,7 +194,7 @@ public class pd4990a
 		default:	/* Unhandled value */
 			break;
 		}
-	}
+	} };
 	
 	WRITE16_HANDLER( pd4990a_control_16_w )
 	{

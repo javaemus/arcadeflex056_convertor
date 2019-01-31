@@ -117,7 +117,7 @@ public class carnival
 	static int psgData = 0;
 	
 	
-	WRITE_HANDLER( carnival_sh_port1_w )
+	public static WriteHandlerPtr carnival_sh_port1_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		static int port1State = 0;
 		int bitsChanged;
@@ -193,10 +193,10 @@ public class carnival
 		{
 			PLAY( SND_BONUS_2, 0 );
 		}
-	}
+	} };
 	
 	
-	WRITE_HANDLER( carnival_sh_port2_w )
+	public static WriteHandlerPtr carnival_sh_port2_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		int bitsChanged;
 		int bitsGoneHigh;
@@ -234,7 +234,7 @@ public class carnival
 			/* reset output is no longer asserted active low */
 			cpu_set_reset_line( CPU_MUSIC_ID, PULSE_LINE );
 		}
-	}
+	} };
 	
 	
 	public static ReadHandlerPtr carnival_music_port_t1_r  = new ReadHandlerPtr() { public int handler(int offset)
@@ -244,13 +244,13 @@ public class carnival
 	} };
 	
 	
-	WRITE_HANDLER( carnival_music_port_1_w )
+	public static WriteHandlerPtr carnival_music_port_1_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		psgData = data;
-	}
+	} };
 	
 	
-	WRITE_HANDLER( carnival_music_port_2_w )
+	public static WriteHandlerPtr carnival_music_port_2_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		static int psgSelect = 0;
 		int newSelect;
@@ -279,5 +279,5 @@ public class carnival
 				break;
 			}
 		}
-	}
+	} };
 }

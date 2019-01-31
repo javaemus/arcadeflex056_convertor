@@ -209,7 +209,7 @@ public class yard
 	
 	
 	
-	WRITE_HANDLER( yard_flipscreen_w )
+	public static WriteHandlerPtr yard_flipscreen_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		/* screen flip is handled both by software and hardware */
 		data ^= ~readinputport(4) & 1;
@@ -218,10 +218,10 @@ public class yard
 	
 		coin_counter_w(0,data & 0x02);
 		coin_counter_w(1,data & 0x20);
-	}
+	} };
 	
 	
-	WRITE_HANDLER( yard_scroll_panel_w )
+	public static WriteHandlerPtr yard_scroll_panel_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		int sx,sy,i;
 	
@@ -241,7 +241,7 @@ public class yard
 	
 			plot_pixel(scroll_panel_bitmap, sx + i, sy, Machine->pens[RADAR_PALETTE_BASE + (sy & 0xfc) + col]);
 		}
-	}
+	} };
 	
 	
 	/***************************************************************************

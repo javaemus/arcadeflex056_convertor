@@ -100,8 +100,6 @@ public class mjsikaku
 	int crystal2_vh_start(void);
 	void mjsikaku_vh_stop(void);
 	
-	WRITE_HANDLER( mjsikaku_palette_w );
-	WRITE_HANDLER( secolove_palette_w );
 	void mjsikaku_radrx_w(int data);
 	void mjsikaku_radry_w(int data);
 	void mjsikaku_sizex_w(int data);

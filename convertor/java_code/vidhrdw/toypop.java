@@ -66,13 +66,13 @@ public class toypop
 			colortable[i] = color_prom[i + 0x400];	// 0x500-5ff
 	}
 	
-	WRITE_HANDLER( toypop_palettebank_w )
+	public static WriteHandlerPtr toypop_palettebank_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		if (offset)
 			palettebank = 0xe0;
 		else
 			palettebank = 0x60;
-	}
+	} };
 	
 	WRITE16_HANDLER( toypop_flipscreen_w )
 	{

@@ -23,8 +23,6 @@ public class zac2650
 	void tinvader_vh_stop(void);
 	void tinvader_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	
-	WRITE_HANDLER( zac_s2636_w );
-	WRITE_HANDLER( tinvader_sound_w );
 	
 	
 	
@@ -252,7 +250,7 @@ public class zac2650
 		0,0,0,0,
 	};
 	
-	WRITE_HANDLER( tinvader_sound_w )
+	public static WriteHandlerPtr tinvader_sound_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 	    /* sounds are NOT the same as space invaders */
 	
@@ -264,7 +262,7 @@ public class zac2650
 		/* 84 = fire */
 	    /* 90 = die */
 	    /* c4 = hit saucer */
-	}
+	} };
 	
 	static RomLoadPtr rom_sia2650 = new RomLoadPtr(){ public void handler(){ 
 		ROM_REGION( 0x2000, REGION_CPU1, 0 );
@@ -297,7 +295,6 @@ public class zac2650
 	
 	void init_8080bw(void);
 	
-	WRITE_HANDLER( invaders_videoram_w );
 	
 	public static Memory_ReadAddress emb_readmem[]={
 		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),

@@ -68,7 +68,7 @@ public class ticket
 	/***************************************************************************
 	  ticket_dispenser_w
 	***************************************************************************/
-	WRITE_HANDLER( ticket_dispenser_w )
+	public static WriteHandlerPtr ticket_dispenser_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		/* On an activate signal, start dispensing! */
 		if ((data & active_bit) == motoron)
@@ -96,7 +96,7 @@ public class ticket
 				power = 0;
 			}
 		}
-	}
+	} };
 	
 	
 	/***************************************************************************

@@ -50,10 +50,10 @@ public class psychic5
 		bg_clip_mode = -10;
 	}
 	
-	WRITE_HANDLER( psychic5_vram_page_select_w )
+	public static WriteHandlerPtr psychic5_vram_page_select_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		ps5_vram_page = data;
-	}
+	} };
 	
 	public static ReadHandlerPtr psychic5_vram_page_select_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
@@ -165,14 +165,14 @@ public class psychic5
 	}
 	
 	
-	WRITE_HANDLER( psychic5_bgvideoram_w )
+	public static WriteHandlerPtr psychic5_bgvideoram_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		if (ps5_background_videoram[offset] != data)
 		{
 			bg_dirtybuffer[offset >> 1] = 1;
 			ps5_background_videoram[offset] = data;
 		}
-	}
+	} };
 	
 	public static ReadHandlerPtr psychic5_paged_ram_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
@@ -225,7 +225,7 @@ public class psychic5
 		return 0;
 	} };
 	
-	WRITE_HANDLER( psychic5_paged_ram_w )
+	public static WriteHandlerPtr psychic5_paged_ram_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		if (ps5_vram_page == 0)
 		{
@@ -264,7 +264,7 @@ public class psychic5
 				ps5_foreground_videoram[offset & 0xfff] = data;
 			}
 		}
-	}
+	} };
 	
 	
 	int psychic5_vh_start(void)

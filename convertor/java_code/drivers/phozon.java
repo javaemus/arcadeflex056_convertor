@@ -54,15 +54,8 @@ public class phozon
 	extern unsigned char *mappy_soundregs;
 	
 	/* memory functions */
-	WRITE_HANDLER( phozon_spriteram_w );
-	WRITE_HANDLER( phozon_snd_sharedram_w );
 	
 	/* custom IO chips & CPU functions */
-	WRITE_HANDLER( phozon_customio_1_w );
-	WRITE_HANDLER( phozon_customio_2_w );
-	WRITE_HANDLER( phozon_cpu2_enable_w );
-	WRITE_HANDLER( phozon_cpu3_enable_w );
-	WRITE_HANDLER( phozon_cpu3_reset_w );
 	extern void phozon_init_machine(void);
 	
 	/* video functions */

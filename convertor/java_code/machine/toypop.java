@@ -40,10 +40,10 @@ public class toypop
 		return toypop_sound_sharedram[offset];
 	} };
 	
-	WRITE_HANDLER( toypop_sound_sharedram_w )
+	public static WriteHandlerPtr toypop_sound_sharedram_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		toypop_sound_sharedram[offset] = data;
-	}
+	} };
 	
 	READ16_HANDLER( toypop_m68000_sharedram_r )
 	{
@@ -56,25 +56,25 @@ public class toypop
 			toypop_m68000_sharedram[offset] = data & 0xff;
 	}
 	
-	WRITE_HANDLER( toypop_main_interrupt_enable_w )
+	public static WriteHandlerPtr toypop_main_interrupt_enable_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		interrupt_enable_mainCPU = 1;
-	}
+	} };
 	
-	WRITE_HANDLER( toypop_main_interrupt_disable_w )
+	public static WriteHandlerPtr toypop_main_interrupt_disable_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		interrupt_enable_mainCPU = 0;
-	}
+	} };
 	
-	WRITE_HANDLER( toypop_sound_interrupt_enable_w )
+	public static WriteHandlerPtr toypop_sound_interrupt_enable_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		interrupt_enable_sound = 1;
-	}
+	} };
 	
-	WRITE_HANDLER( toypop_sound_interrupt_disable_w )
+	public static WriteHandlerPtr toypop_sound_interrupt_disable_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		interrupt_enable_sound = 0;
-	}
+	} };
 	
 	WRITE16_HANDLER( toypop_m68000_interrupt_enable_w )
 	{
@@ -241,23 +241,23 @@ public class toypop
 			return toypop_customio[offset];
 	} };
 	
-	WRITE_HANDLER( toypop_sound_clear_w )
+	public static WriteHandlerPtr toypop_sound_clear_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		cpu_set_reset_line(1, CLEAR_LINE);
-	}
+	} };
 	
-	WRITE_HANDLER( toypop_sound_assert_w )
+	public static WriteHandlerPtr toypop_sound_assert_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		cpu_set_reset_line(1, ASSERT_LINE);
-	}
+	} };
 	
-	WRITE_HANDLER( toypop_m68000_clear_w )
+	public static WriteHandlerPtr toypop_m68000_clear_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		cpu_set_reset_line(2, CLEAR_LINE);
-	}
+	} };
 	
-	WRITE_HANDLER( toypop_m68000_assert_w )
+	public static WriteHandlerPtr toypop_m68000_assert_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		cpu_set_reset_line(2, ASSERT_LINE);
-	}
+	} };
 }

@@ -42,17 +42,17 @@ public class thief
 		return thief_coprocessor.context_ram[0x40*thief_coprocessor.bank+offset];
 	} };
 	
-	WRITE_HANDLER( thief_context_ram_w ){
+	public static WriteHandlerPtr thief_context_ram_w = new WriteHandlerPtr() {public void handler(int offset, int data){
 		thief_coprocessor.context_ram[0x40*thief_coprocessor.bank+offset] = data;
-	}
+	} };
 	
-	WRITE_HANDLER( thief_context_bank_w ){
+	public static WriteHandlerPtr thief_context_bank_w = new WriteHandlerPtr() {public void handler(int offset, int data){
 		thief_coprocessor.bank = data&0xf;
-	}
+	} };
 	
 	/***************************************************************************/
 	
-	WRITE_HANDLER( thief_video_control_w ){
+	public static WriteHandlerPtr thief_video_control_w = new WriteHandlerPtr() {public void handler(int offset, int data){
 		if( (data^thief_video_control)&1 ){
 			/* screen flipped */
 			memset( dirtybuffer, 0x00, 0x2000*2 );
@@ -66,13 +66,13 @@ public class thief
 		bit 3: mirrors bit 1
 		bit 4: mirrors bit 2
 	*/
-	}
+	} };
 	
-	WRITE_HANDLER( thief_vtcsel_w ){
+	public static WriteHandlerPtr thief_vtcsel_w = new WriteHandlerPtr() {public void handler(int offset, int data){
 		/* TMS9927 VTAC registers */
-	}
+	} };
 	
-	WRITE_HANDLER( thief_color_map_w ){
+	public static WriteHandlerPtr thief_color_map_w = new WriteHandlerPtr() {public void handler(int offset, int data){
 	/*
 		--xx----	blue
 		----xx--	green
@@ -83,18 +83,18 @@ public class thief
 	    int g = intensity[(data & 0x0C) >> 2];
 	    int b = intensity[(data & 0x30) >> 4];
 		palette_set_color( offset,r,g,b );
-	}
+	} };
 	
 	/***************************************************************************/
 	
-	WRITE_HANDLER( thief_color_plane_w ){
+	public static WriteHandlerPtr thief_color_plane_w = new WriteHandlerPtr() {public void handler(int offset, int data){
 	/*
 		--xx----	selects bitplane to read from (0..3)
 		----xxxx	selects bitplane(s) to write to (0x0 = none, 0xf = all)
 	*/
 		thief_write_mask = data&0xf;
 		thief_read_mask = (data>>4)&3;
-	}
+	} };
 	
 	public static ReadHandlerPtr thief_videoram_r  = new ReadHandlerPtr() { public int handler(int offset){
 		unsigned char *source = &videoram[offset];
@@ -102,7 +102,7 @@ public class thief
 		return source[thief_read_mask*0x2000];
 	} };
 	
-	WRITE_HANDLER( thief_videoram_w ){
+	public static WriteHandlerPtr thief_videoram_w = new WriteHandlerPtr() {public void handler(int offset, int data){
 		UINT8 *dest = &videoram[offset];
 		if( thief_video_control&0x02 ){
 			dest+=0x2000*4; /* foreground/background */
@@ -115,7 +115,7 @@ public class thief
 		if( thief_write_mask&0x2 ) dest[0x2000*1] = data;
 		if( thief_write_mask&0x4 ) dest[0x2000*2] = data;
 		if( thief_write_mask&0x8 ) dest[0x2000*3] = data;
-	}
+	} };
 	
 	/***************************************************************************/
 	
@@ -219,7 +219,7 @@ public class thief
 		return addr;
 	}
 	
-	WRITE_HANDLER( thief_blit_w ){
+	public static WriteHandlerPtr thief_blit_w = new WriteHandlerPtr() {public void handler(int offset, int data){
 		int i, offs, xoffset, dy;
 		UINT8 *gfx_rom = memory_region( REGION_GFX1 );
 		UINT8 x = thief_coprocessor.param[SCREEN_XPOS];
@@ -277,7 +277,7 @@ public class thief
 			}
 			y+=dy;
 		}
-	}
+	} };
 	
 	public static ReadHandlerPtr thief_coprocessor_r  = new ReadHandlerPtr() { public int handler(int offset){
 		switch( offset ){
@@ -322,7 +322,7 @@ public class thief
 		return thief_coprocessor.param[offset];
 	} };
 	
-	WRITE_HANDLER( thief_coprocessor_w ){
+	public static WriteHandlerPtr thief_coprocessor_w = new WriteHandlerPtr() {public void handler(int offset, int data){
 		switch( offset ){
 		case GFX_PORT:
 			{
@@ -337,5 +337,5 @@ public class thief
 			thief_coprocessor.param[offset] = data;
 			break;
 		}
-	}
+	} };
 }

@@ -46,16 +46,16 @@ public class strnskil
 	
 	}
 	
-	WRITE_HANDLER( strnskil_scroll_x_w )
+	public static WriteHandlerPtr strnskil_scroll_x_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		strnskil_xscroll[offset] = data;
-	}
+	} };
 	
-	WRITE_HANDLER( strnskil_scrl_ctrl_w )
+	public static WriteHandlerPtr strnskil_scrl_ctrl_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		strnskil_scrl_ctrl = data >> 5;
 		strnskil_flipscreen = (data >> 3) & 1;
-	}
+	} };
 	
 	void strnskil_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
 	{

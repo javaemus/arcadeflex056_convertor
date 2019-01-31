@@ -129,7 +129,6 @@ public class cpuexecH
 	 *************************************/
 	
 	/* 8-bit watchdog read/write handlers */
-	WRITE_HANDLER( watchdog_reset_w );
 	
 	/* 16-bit watchdog read/write handlers */
 	WRITE16_HANDLER( watchdog_reset16_w );
@@ -245,8 +244,6 @@ public class cpuexecH
 	
 	void cpu_cause_interrupt(int cpu,int type);
 	void cpu_interrupt_enable(int cpu,int enabled);
-	WRITE_HANDLER( interrupt_enable_w );
-	WRITE_HANDLER( interrupt_vector_w );
 	int interrupt(void);
 	int nmi_interrupt(void);
 	int ignore_interrupt(void);

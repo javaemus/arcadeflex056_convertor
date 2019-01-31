@@ -102,7 +102,7 @@ public class irobot
 	}
 	
 	
-	WRITE_HANDLER( irobot_paletteram_w )
+	public static WriteHandlerPtr irobot_paletteram_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 	    int r,g,b;
 		int bits,intensity;
@@ -117,7 +117,7 @@ public class irobot
 	    bits = (color >> 7) & 0x03;
 	    r = 12 * bits * intensity;
 	    palette_set_color((offset >> 1) & 0x3F,r,g,b);
-	}
+	} };
 	
 	
 	/***************************************************************************

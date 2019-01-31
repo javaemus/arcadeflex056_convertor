@@ -51,7 +51,6 @@ public class qwakprot
 {
 	
 	void qwakprot_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
-	WRITE_HANDLER( qwakprot_paletteram_w );
 	
 	
 	public static WriteHandlerPtr qwakprot_led_w = new WriteHandlerPtr() {public void handler(int offset, int data)

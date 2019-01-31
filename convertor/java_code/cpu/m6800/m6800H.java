@@ -150,7 +150,6 @@ public class m6800H
 	
 	#define M6803_PORT1 0x100
 	#define M6803_PORT2 0x101
-	WRITE_HANDLER( m6803_internal_registers_w );
 	#endif
 	
 	/****************************************************************************
@@ -226,7 +225,6 @@ public class m6800H
 	#define HD63701_PORT1 M6803_PORT1
 	#define HD63701_PORT2 M6803_PORT2
 	
-	WRITE_HANDLER( hd63701_internal_registers_w );
 	
 	#endif
 	

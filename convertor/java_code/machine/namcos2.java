@@ -439,12 +439,12 @@ public class namcos2
 	}
 	
 	
-	WRITE_HANDLER( namcos2_sound_bankselect_w )
+	public static WriteHandlerPtr namcos2_sound_bankselect_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		unsigned char *RAM=memory_region(REGION_CPU3);
 		int bank = ( data >> 4 ) & 0x0f;	/* 991104.CAB */
 		cpu_setbank( CPU3_ROM1, &RAM[ 0x10000 + ( 0x4000 * bank ) ] );
-	}
+	} };
 	
 	
 	
@@ -463,7 +463,7 @@ public class namcos2
 	static int namcos2_mcu_analog_data=0xaa;
 	static int namcos2_mcu_analog_complete=0;
 	
-	WRITE_HANDLER( namcos2_mcu_analog_ctrl_w )
+	public static WriteHandlerPtr namcos2_mcu_analog_ctrl_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		namcos2_mcu_analog_ctrl=data&0xff;
 	
@@ -515,7 +515,7 @@ public class namcos2
 				cpu_set_irq_line( CPU_MCU, HD63705_INT_ADCONV , PULSE_LINE);
 			}
 		}
-	}
+	} };
 	
 	public static ReadHandlerPtr namcos2_mcu_analog_ctrl_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
@@ -531,9 +531,9 @@ public class namcos2
 		return data;
 	} };
 	
-	WRITE_HANDLER( namcos2_mcu_analog_port_w )
+	public static WriteHandlerPtr namcos2_mcu_analog_port_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
-	}
+	} };
 	
 	public static ReadHandlerPtr namcos2_mcu_analog_port_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
@@ -541,10 +541,10 @@ public class namcos2
 		return namcos2_mcu_analog_data;
 	} };
 	
-	WRITE_HANDLER( namcos2_mcu_port_d_w )
+	public static WriteHandlerPtr namcos2_mcu_port_d_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		/* Undefined operation on write */
-	}
+	} };
 	
 	public static ReadHandlerPtr namcos2_mcu_port_d_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{

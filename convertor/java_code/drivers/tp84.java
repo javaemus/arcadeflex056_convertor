@@ -95,9 +95,6 @@ public class tp84
 	extern unsigned char *tp84_colorram2;
 	extern unsigned char *tp84_scrollx;
 	extern unsigned char *tp84_scrolly;
-	WRITE_HANDLER( tp84_videoram2_w );
-	WRITE_HANDLER( tp84_colorram2_w );
-	WRITE_HANDLER( tp84_col0_w );
 	void tp84_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom);
 	int tp84_vh_start(void);
 	void tp84_vh_stop(void);

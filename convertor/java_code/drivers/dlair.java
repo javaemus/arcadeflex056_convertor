@@ -39,14 +39,14 @@ public class dlair
 	
 	static int led0,led1;
 	
-	WRITE_HANDLER( dlair_led0_w )
+	public static WriteHandlerPtr dlair_led0_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		led0 = data;
-	}
-	WRITE_HANDLER( dlair_led1_w )
+	} };
+	public static WriteHandlerPtr dlair_led1_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		led1 = data;
-	}
+	} };
 	
 	void dlair_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
 	{

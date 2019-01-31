@@ -38,7 +38,7 @@ public class warpwarp
 			sound_volume = 0;
 	}
 	
-	WRITE_HANDLER( warpwarp_sound_w )
+	public static WriteHandlerPtr warpwarp_sound_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		stream_update(channel,0);
 		sound_latch = data;
@@ -75,13 +75,13 @@ public class warpwarp
 	//		sound_volume_timer = timer_pulse(TIME_IN_HZ(32768/7.0290), 0, sound_volume_decay);
 			sound_volume_timer = timer_pulse(TIME_IN_HZ(32768/1.917), 0, sound_volume_decay);
 	    }
-	}
+	} };
 	
-	WRITE_HANDLER( warpwarp_music1_w )
+	public static WriteHandlerPtr warpwarp_music1_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 	    stream_update(channel,0);
 		music1_latch = data & 63;
-	}
+	} };
 	
 	static void music_volume_decay(int param)
 	{
@@ -89,7 +89,7 @@ public class warpwarp
 	        music_volume = 0;
 	}
 	
-	WRITE_HANDLER( warpwarp_music2_w )
+	public static WriteHandlerPtr warpwarp_music2_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 	    stream_update(channel,0);
 		music2_latch = data;
@@ -125,7 +125,7 @@ public class warpwarp
 			music_volume_timer = timer_pulse(TIME_IN_HZ(32768/3.0033), 0, music_volume_decay);
 		}
 	
-	}
+	} };
 	
 	static void warpwarp_sound_update(int param, INT16 *buffer, int length)
 	{

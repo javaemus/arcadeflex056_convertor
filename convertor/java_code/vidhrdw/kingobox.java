@@ -147,7 +147,7 @@ public class kingobox
 	
 	
 	
-	WRITE_HANDLER( kingofb_f800_w )
+	public static WriteHandlerPtr kingofb_f800_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		kingofb_nmi_enable = data & 0x20;
 	
@@ -156,7 +156,7 @@ public class kingobox
 			palette_bank = (data & 0x18) >> 3;
 			memset(dirtybuffer,1,videoram_size);
 		}
-	}
+	} };
 	
 	
 	

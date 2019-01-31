@@ -69,7 +69,7 @@ public class simpsons
 		return res;
 	} };
 	
-	WRITE_HANDLER( simpsons_eeprom_w )
+	public static WriteHandlerPtr simpsons_eeprom_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		if ( data == 0xff )
 			return;
@@ -81,7 +81,7 @@ public class simpsons
 		simpsons_video_banking( data & 3 );
 	
 		simpsons_firq_enabled = data & 0x04;
-	}
+	} };
 	
 	/***************************************************************************
 	
@@ -89,7 +89,7 @@ public class simpsons
 	
 	***************************************************************************/
 	
-	WRITE_HANDLER( simpsons_coin_counter_w )
+	public static WriteHandlerPtr simpsons_coin_counter_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		/* bit 0,1 coin counters */
 		coin_counter_w(0,data & 0x01);
@@ -100,7 +100,7 @@ public class simpsons
 		/* bit 4 = INIT (unknown) */
 		/* bit 5 = enable sprite ROM reading */
 		K053246_set_OBJCHA_line((~data & 0x20) ? ASSERT_LINE : CLEAR_LINE);
-	}
+	} };
 	
 	public static ReadHandlerPtr simpsons_sound_interrupt_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{

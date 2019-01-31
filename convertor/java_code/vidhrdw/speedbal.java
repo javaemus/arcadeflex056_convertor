@@ -138,11 +138,11 @@ public class speedbal
 	 *				   *
 	 *************************************/
 	
-	WRITE_HANDLER( speedbal_foreground_videoram_w )
+	public static WriteHandlerPtr speedbal_foreground_videoram_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 	   ch_dirtybuffer[offset] = 1;
 	   speedbal_foreground_videoram[offset]=data;
-	}
+	} };
 	
 	public static ReadHandlerPtr speedbal_foreground_videoram_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
@@ -157,11 +157,11 @@ public class speedbal
 	 *				   *
 	 *************************************/
 	
-	WRITE_HANDLER( speedbal_background_videoram_w )
+	public static WriteHandlerPtr speedbal_background_videoram_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 	   bg_dirtybuffer[offset] = 1;
 	   speedbal_background_videoram[offset] = data;
-	}
+	} };
 	
 	public static ReadHandlerPtr speedbal_background_videoram_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{

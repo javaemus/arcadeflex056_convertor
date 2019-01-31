@@ -136,48 +136,48 @@ public class lwings
 	
 	***************************************************************************/
 	
-	WRITE_HANDLER( lwings_fgvideoram_w )
+	public static WriteHandlerPtr lwings_fgvideoram_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		lwings_fgvideoram[offset] = data;
 		tilemap_mark_tile_dirty(fg_tilemap,offset & 0x3ff);
-	}
+	} };
 	
-	WRITE_HANDLER( lwings_bg1videoram_w )
+	public static WriteHandlerPtr lwings_bg1videoram_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		lwings_bg1videoram[offset] = data;
 		tilemap_mark_tile_dirty(bg1_tilemap,offset & 0x3ff);
-	}
+	} };
 	
 	
-	WRITE_HANDLER( lwings_bg1_scrollx_w )
+	public static WriteHandlerPtr lwings_bg1_scrollx_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		static unsigned char scroll[2];
 	
 		scroll[offset] = data;
 		tilemap_set_scrollx(bg1_tilemap,0,scroll[0] | (scroll[1] << 8));
-	}
+	} };
 	
-	WRITE_HANDLER( lwings_bg1_scrolly_w )
+	public static WriteHandlerPtr lwings_bg1_scrolly_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		static unsigned char scroll[2];
 	
 		scroll[offset] = data;
 		tilemap_set_scrolly(bg1_tilemap,0,scroll[0] | (scroll[1] << 8));
-	}
+	} };
 	
-	WRITE_HANDLER( lwings_bg2_scrollx_w )
+	public static WriteHandlerPtr lwings_bg2_scrollx_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		tilemap_set_scrollx(bg2_tilemap,0,data);
-	}
+	} };
 	
-	WRITE_HANDLER( lwings_bg2_image_w )
+	public static WriteHandlerPtr lwings_bg2_image_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		if (bg2_image != data)
 		{
 			bg2_image = data;
 			tilemap_mark_all_tiles_dirty(bg2_tilemap);
 		}
-	}
+	} };
 	
 	
 	/***************************************************************************

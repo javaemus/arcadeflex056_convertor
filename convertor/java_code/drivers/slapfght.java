@@ -205,11 +205,6 @@ public class slapfght
 	void perfrman_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	int slapfight_vh_start (void);
 	int perfrman_vh_start (void);
-	WRITE_HANDLER( slapfight_flipscreen_w );
-	WRITE_HANDLER( slapfight_fixram_w );
-	WRITE_HANDLER( slapfight_fixcol_w );
-	WRITE_HANDLER( slapfight_videoram_w );
-	WRITE_HANDLER( slapfight_colorram_w );
 	
 	/* MACHINE */
 	
@@ -217,19 +212,10 @@ public class slapfght
 	
 	extern unsigned char *slapfight_dpram;
 	extern size_t slapfight_dpram_size;
-	WRITE_HANDLER( slapfight_dpram_w );
 	
 	
-	WRITE_HANDLER( slapfight_port_00_w );
-	WRITE_HANDLER( slapfight_port_01_w );
-	WRITE_HANDLER( getstar_port_04_w );
-	WRITE_HANDLER( slapfight_port_06_w );
-	WRITE_HANDLER( slapfight_port_07_w );
-	WRITE_HANDLER( slapfight_port_08_w );
-	WRITE_HANDLER( slapfight_port_09_w );
 	
 	
-	WRITE_HANDLER( getstar_sh_intenable_w );
 	int getstar_interrupt(void);
 	
 	

@@ -113,7 +113,7 @@ public class timeplt
 	} };
 	
 	
-	WRITE_HANDLER( timeplt_sh_irqtrigger_w )
+	public static WriteHandlerPtr timeplt_sh_irqtrigger_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		static int last;
 	
@@ -124,6 +124,6 @@ public class timeplt
 		}
 	
 		last = data;
-	}
+	} };
 	
 }

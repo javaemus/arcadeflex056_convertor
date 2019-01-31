@@ -173,43 +173,43 @@ public class xevious
 	
 	***************************************************************************/
 	
-	WRITE_HANDLER( xevious_fg_videoram_w )
+	public static WriteHandlerPtr xevious_fg_videoram_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		if (xevious_fg_videoram[offset] != data)
 		{
 			xevious_fg_videoram[offset] = data;
 			tilemap_mark_tile_dirty(fg_tilemap,offset);
 		}
-	}
+	} };
 	
-	WRITE_HANDLER( xevious_fg_colorram_w )
+	public static WriteHandlerPtr xevious_fg_colorram_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		if (xevious_fg_colorram[offset] != data)
 		{
 			xevious_fg_colorram[offset] = data;
 			tilemap_mark_tile_dirty(fg_tilemap,offset);
 		}
-	}
+	} };
 	
-	WRITE_HANDLER( xevious_bg_videoram_w )
+	public static WriteHandlerPtr xevious_bg_videoram_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		if (xevious_bg_videoram[offset] != data)
 		{
 			xevious_bg_videoram[offset] = data;
 			tilemap_mark_tile_dirty(bg_tilemap,offset);
 		}
-	}
+	} };
 	
-	WRITE_HANDLER( xevious_bg_colorram_w )
+	public static WriteHandlerPtr xevious_bg_colorram_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		if (xevious_bg_colorram[offset] != data)
 		{
 			xevious_bg_colorram[offset] = data;
 			tilemap_mark_tile_dirty(bg_tilemap,offset);
 		}
-	}
+	} };
 	
-	WRITE_HANDLER( xevious_vh_latch_w )
+	public static WriteHandlerPtr xevious_vh_latch_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		int reg;
 		int scroll = data + ((offset&0x01)<<8);   /* A0 -> D8 */
@@ -240,7 +240,7 @@ public class xevious
 			   logerror("CRTC WRITE REG: %x  Data: %03x\n",reg, scroll);
 			   break;
 		}
-	}
+	} };
 	
 	
 	

@@ -46,7 +46,7 @@ public class cchasm
 	    }
 	} };
 	
-	WRITE_HANDLER( cchasm_snd_io_w )
+	public static WriteHandlerPtr cchasm_snd_io_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 	    switch (offset & 0x61 )
 	    {
@@ -83,7 +83,7 @@ public class cchasm
 	    default:
 	        logerror("Write %x to unmapped internal IO device at 0x%x\n", data, offset + 0x6000);
 	    }
-	}
+	} };
 	
 	WRITE16_HANDLER( cchasm_io_w )
 	{

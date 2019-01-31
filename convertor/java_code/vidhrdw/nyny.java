@@ -71,10 +71,10 @@ public class nyny
 	   bitmap_free(tmpbitmap2);
 	}
 	
-	WRITE_HANDLER( nyny_flipscreen_w )
+	public static WriteHandlerPtr nyny_flipscreen_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		flip_screen_set(data);
-	}
+	} };
 	
 	public static ReadHandlerPtr nyny_videoram0_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
@@ -96,7 +96,7 @@ public class nyny
 		return( nyny_colourram[offset+0x2000] ) ;
 	} };
 	
-	WRITE_HANDLER( nyny_colourram0_w )
+	public static WriteHandlerPtr nyny_colourram0_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		int x,y,z,d,v,c;
 		nyny_colourram[offset] = data;
@@ -112,9 +112,9 @@ public class nyny
 		  	plot_pixel( tmpbitmap1, x*8+z, y, Machine->pens[c*d]);
 			v >>= 1 ;
 		}
-	}
+	} };
 	
-	WRITE_HANDLER( nyny_videoram0_w )
+	public static WriteHandlerPtr nyny_videoram0_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		int x,y,z,c,d;
 		nyny_videoram[offset] = data;
@@ -129,9 +129,9 @@ public class nyny
 	  		plot_pixel( tmpbitmap1, x*8+z, y, Machine->pens[c*d]);
 			data >>= 1 ;
 		}
-	}
+	} };
 	
-	WRITE_HANDLER( nyny_colourram1_w )
+	public static WriteHandlerPtr nyny_colourram1_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		int x,y,z,d,v,c;
 		nyny_colourram[offset+0x2000] = data;
@@ -148,9 +148,9 @@ public class nyny
 			v >>= 1 ;
 		}
 	
-	}
+	} };
 	
-	WRITE_HANDLER( nyny_videoram1_w )
+	public static WriteHandlerPtr nyny_videoram1_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		int x,y,z,c,d;
 		nyny_videoram[offset+0x2000] = data;
@@ -165,7 +165,7 @@ public class nyny
 		  	plot_pixel( tmpbitmap2, x*8+z, y, Machine->pens[c*d]);
 			data >>= 1 ;
 		}
-	}
+	} };
 	
 	void nyny_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
 	{

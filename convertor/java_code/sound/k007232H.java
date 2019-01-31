@@ -19,9 +19,6 @@ struct K007232_interface
 
 int K007232_sh_start(const struct MachineSound *msound);
 
-WRITE_HANDLER( K007232_write_port_0_w );
-WRITE_HANDLER( K007232_write_port_1_w );
-WRITE_HANDLER( K007232_write_port_2_w );
 
 void K007232_bankswitch(int chip,unsigned char *ptr_A,unsigned char *ptr_B);
 

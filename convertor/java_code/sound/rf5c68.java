@@ -185,7 +185,7 @@ public class rf5c68
 	/************************************************/
 	/*    RF5C68 write register                     */
 	/************************************************/
-	WRITE_HANDLER( RF5C68_reg_w )
+	public static WriteHandlerPtr RF5C68_reg_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		int  i;
 		int  val;
@@ -250,7 +250,7 @@ public class rf5c68
 				}
 				break;
 		}
-	}
+	} };
 	
 	/************************************************/
 	/*    RF5C68 read memory                        */
@@ -264,12 +264,12 @@ public class rf5c68
 	/************************************************/
 	/*    RF5C68 write memory                       */
 	/************************************************/
-	WRITE_HANDLER( RF5C68_w )
+	public static WriteHandlerPtr RF5C68_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		unsigned int  bank;
 		bank = ((unsigned int)(wreg[0x07]&0x0f))<<(8+4);
 		pcmbuf[bank + offset] = data;
-	}
+	} };
 	
 	
 	/**************** end of file ****************/

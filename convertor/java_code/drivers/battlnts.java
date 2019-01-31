@@ -17,7 +17,6 @@ public class battlnts
 {
 	
 	/* from vidhrdw */
-	WRITE_HANDLER( battlnts_spritebank_w );
 	int battlnts_vh_start(void);
 	void battlnts_vh_stop(void);
 	void battlnts_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
@@ -30,10 +29,10 @@ public class battlnts
 			return ignore_interrupt();
 	}
 	
-	WRITE_HANDLER( battlnts_sh_irqtrigger_w )
+	public static WriteHandlerPtr battlnts_sh_irqtrigger_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		cpu_cause_interrupt(1,0xff);
-	}
+	} };
 	
 	public static WriteHandlerPtr battlnts_bankswitch_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{

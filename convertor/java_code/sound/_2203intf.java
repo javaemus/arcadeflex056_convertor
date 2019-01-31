@@ -134,45 +134,45 @@ public class _2203intf
 	public static ReadHandlerPtr YM2203_read_port_3_r  = new ReadHandlerPtr() { public int handler(int offset) { return YM2203Read(3,1); } };
 	public static ReadHandlerPtr YM2203_read_port_4_r  = new ReadHandlerPtr() { public int handler(int offset) { return YM2203Read(4,1); } };
 	
-	WRITE_HANDLER( YM2203_control_port_0_w )
+	public static WriteHandlerPtr YM2203_control_port_0_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		YM2203Write(0,0,data);
-	}
-	WRITE_HANDLER( YM2203_control_port_1_w )
+	} };
+	public static WriteHandlerPtr YM2203_control_port_1_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		YM2203Write(1,0,data);
-	}
-	WRITE_HANDLER( YM2203_control_port_2_w )
+	} };
+	public static WriteHandlerPtr YM2203_control_port_2_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		YM2203Write(2,0,data);
-	}
-	WRITE_HANDLER( YM2203_control_port_3_w )
+	} };
+	public static WriteHandlerPtr YM2203_control_port_3_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		YM2203Write(3,0,data);
-	}
-	WRITE_HANDLER( YM2203_control_port_4_w )
+	} };
+	public static WriteHandlerPtr YM2203_control_port_4_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		YM2203Write(4,0,data);
-	}
+	} };
 	
-	WRITE_HANDLER( YM2203_write_port_0_w )
+	public static WriteHandlerPtr YM2203_write_port_0_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		YM2203Write(0,1,data);
-	}
-	WRITE_HANDLER( YM2203_write_port_1_w )
+	} };
+	public static WriteHandlerPtr YM2203_write_port_1_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		YM2203Write(1,1,data);
-	}
-	WRITE_HANDLER( YM2203_write_port_2_w )
+	} };
+	public static WriteHandlerPtr YM2203_write_port_2_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		YM2203Write(2,1,data);
-	}
-	WRITE_HANDLER( YM2203_write_port_3_w )
+	} };
+	public static WriteHandlerPtr YM2203_write_port_3_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		YM2203Write(3,1,data);
-	}
-	WRITE_HANDLER( YM2203_write_port_4_w )
+	} };
+	public static WriteHandlerPtr YM2203_write_port_4_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		YM2203Write(4,1,data);
-	}
+	} };
 }

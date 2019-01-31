@@ -28,20 +28,10 @@ void z80ctc_0_reset (void);
 void z80ctc_1_reset (void);
 
 void z80ctc_w (int which, int offset, int data);
-WRITE_HANDLER( z80ctc_0_w );
-WRITE_HANDLER( z80ctc_1_w );
 
 int z80ctc_r (int which, int offset);
 
 void z80ctc_trg_w (int which, int trg, int offset, int data);
-WRITE_HANDLER( z80ctc_0_trg0_w );
-WRITE_HANDLER( z80ctc_0_trg1_w );
-WRITE_HANDLER( z80ctc_0_trg2_w );
-WRITE_HANDLER( z80ctc_0_trg3_w );
-WRITE_HANDLER( z80ctc_1_trg0_w );
-WRITE_HANDLER( z80ctc_1_trg1_w );
-WRITE_HANDLER( z80ctc_1_trg2_w );
-WRITE_HANDLER( z80ctc_1_trg3_w );
 
 /* Z80 DaisyChain controll */
 int z80ctc_interrupt( int which );
@@ -81,9 +71,6 @@ void z80pio_reti( int which );
 void z80pio_0_reset (void);
 
 /* this functions can use when C/D = A0 , A/B = A1 */
-WRITE_HANDLER( z80pio_0_w );
 
-WRITE_HANDLER( z80pioA_0_p_w );
-WRITE_HANDLER( z80pioB_0_p_w );
 
 

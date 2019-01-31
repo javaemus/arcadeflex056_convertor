@@ -70,14 +70,14 @@ public class bagman
 	
 	
 	
-	WRITE_HANDLER( bagman_flipscreen_w )
+	public static WriteHandlerPtr bagman_flipscreen_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		if ((data & 1) != flipscreen[offset])
 		{
 			flipscreen[offset] = data & 1;
 			memset(dirtybuffer,1,videoram_size);
 		}
-	}
+	} };
 	
 	
 	

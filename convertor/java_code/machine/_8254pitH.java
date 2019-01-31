@@ -15,17 +15,7 @@ typedef struct
 void pit8254_init (pit8254_interface *intf);
 
 void pit8254_w (int which, int offset, int data);
-WRITE_HANDLER( pit8254_0_w );
-WRITE_HANDLER( pit8254_0_counter1_w );
-WRITE_HANDLER( pit8254_0_counter2_w );
-WRITE_HANDLER( pit8254_0_counter3_w );
-WRITE_HANDLER( pit8254_0_control_w );
 
-WRITE_HANDLER( pit8254_1_w );
-WRITE_HANDLER( pit8254_1_counter1_w );
-WRITE_HANDLER( pit8254_1_counter2_w );
-WRITE_HANDLER( pit8254_1_counter3_w );
-WRITE_HANDLER( pit8254_1_control_w );
 
 int pit8254_r (int which, int offset);
 

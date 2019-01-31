@@ -136,7 +136,7 @@ public class balsente
 	 *
 	 *************************************/
 	
-	WRITE_HANDLER( balsente_videoram_w )
+	public static WriteHandlerPtr balsente_videoram_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		videoram[offset] = data;
 	
@@ -146,7 +146,7 @@ public class balsente
 	
 		/* mark the scanline dirty */
 		scanline_dirty[offset / 128] = 1;
-	}
+	} };
 	
 	
 	
@@ -193,7 +193,7 @@ public class balsente
 	}
 	
 	
-	WRITE_HANDLER( balsente_palette_select_w )
+	public static WriteHandlerPtr balsente_palette_select_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		/* only update if changed */
 		if (palettebank_vis != (data & 3))
@@ -204,7 +204,7 @@ public class balsente
 		}
 	
 		logerror("balsente_palette_select_w(%d) scanline=%d\n", data & 3, cpu_getscanline());
-	}
+	} };
 	
 	
 	
@@ -214,7 +214,7 @@ public class balsente
 	 *
 	 *************************************/
 	
-	WRITE_HANDLER( balsente_paletteram_w )
+	public static WriteHandlerPtr balsente_paletteram_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		int r, g, b;
 	
@@ -224,7 +224,7 @@ public class balsente
 		g = paletteram[(offset & ~3) + 1];
 		b = paletteram[(offset & ~3) + 2];
 		palette_set_color(offset / 4, (r << 4) | r, (g << 4) | g, (b << 4) | b);
-	}
+	} };
 	
 	
 	

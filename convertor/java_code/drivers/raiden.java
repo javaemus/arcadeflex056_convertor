@@ -45,13 +45,8 @@ package drivers;
 public class raiden
 {
 	
-	WRITE_HANDLER( raiden_background_w );
-	WRITE_HANDLER( raiden_foreground_w );
-	WRITE_HANDLER( raiden_text_w );
-	WRITE_HANDLER( raidena_text_w );
 	int raiden_vh_start(void);
 	int raidena_vh_start(void);
-	WRITE_HANDLER( raiden_control_w );
 	void raiden_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	
 	static unsigned char *raiden_shared_ram;

@@ -82,8 +82,6 @@ public class sauro
 	
 	void sauro_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	
-	WRITE_HANDLER( sauro_scroll1_w );
-	WRITE_HANDLER( sauro_scroll2_w );
 	
 	public static WriteHandlerPtr sauro_sound_command_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{

@@ -134,10 +134,10 @@ public class chqflag
 		return 0xff;
 	} };
 	
-	WRITE_HANDLER( chqflag_sh_irqtrigger_w )
+	public static WriteHandlerPtr chqflag_sh_irqtrigger_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		cpu_cause_interrupt(1,Z80_IRQ_INT);
-	}
+	} };
 	
 	
 	/****************************************************************************/

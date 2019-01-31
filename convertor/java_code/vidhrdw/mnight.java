@@ -58,22 +58,22 @@ public class mnight
 	}
 	
 	
-	WRITE_HANDLER( mnight_bgvideoram_w )
+	public static WriteHandlerPtr mnight_bgvideoram_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		if (mnight_background_videoram[offset] != data)
 		{
 			bg_dirtybuffer[offset >> 1] = 1;
 			mnight_background_videoram[offset] = data;
 		}
-	}
+	} };
 	
-	WRITE_HANDLER( mnight_fgvideoram_w )
+	public static WriteHandlerPtr mnight_fgvideoram_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		if (mnight_foreground_videoram[offset] != data)
 			mnight_foreground_videoram[offset] = data;
-	}
+	} };
 	
-	WRITE_HANDLER( mnight_background_enable_w )
+	public static WriteHandlerPtr mnight_background_enable_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		if (bg_enable!=data)
 		{
@@ -84,9 +84,9 @@ public class mnight
 			else
 				fillbitmap(bitmap_bg, Machine->pens[0],0);
 		}
-	}
+	} };
 	
-	WRITE_HANDLER( mnight_sprite_overdraw_w )
+	public static WriteHandlerPtr mnight_sprite_overdraw_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		if (sp_overdraw != (data&1))
 		{
@@ -94,7 +94,7 @@ public class mnight
 			fillbitmap(bitmap_sp,15,&Machine->visible_area);
 			sp_overdraw = data & 1;
 		}
-	}
+	} };
 	
 	void mnight_draw_foreground(struct mame_bitmap *bitmap)
 	{

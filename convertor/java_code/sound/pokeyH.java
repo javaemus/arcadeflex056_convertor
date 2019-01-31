@@ -108,11 +108,6 @@ public class pokeyH
 	void pokey_sh_stop (void);
 	
 	
-	WRITE_HANDLER( pokey1_w );
-	WRITE_HANDLER( pokey2_w );
-	WRITE_HANDLER( pokey3_w );
-	WRITE_HANDLER( pokey4_w );
-	WRITE_HANDLER( quad_pokey_w );
 	
 	void pokey1_serin_ready (int after);
 	void pokey2_serin_ready (int after);

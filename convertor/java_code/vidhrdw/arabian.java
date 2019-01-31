@@ -299,7 +299,7 @@ public class arabian
 	 *
 	 *************************************/
 	
-	WRITE_HANDLER( arabian_blitter_w )
+	public static WriteHandlerPtr arabian_blitter_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		/* write the data */
 		offset &= 7;
@@ -319,7 +319,7 @@ public class arabian
 			/* blit it */
 			blit_area(plane, src, x, y, sx, sy);
 		}
-	}
+	} };
 	
 	
 	
@@ -329,7 +329,7 @@ public class arabian
 	 *
 	 *************************************/
 	
-	WRITE_HANDLER( arabian_videoram_w )
+	public static WriteHandlerPtr arabian_videoram_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		UINT8 *base;
 		UINT8 x, y;
@@ -388,7 +388,7 @@ public class arabian
 			base[2] = (base[2] & ~0xc0) | ((data & 0x40) << 1) | ((data & 0x04) << 4);
 			base[3] = (base[3] & ~0xc0) | ((data & 0x80) << 0) | ((data & 0x08) << 3);
 		}
-	}
+	} };
 	
 	
 	

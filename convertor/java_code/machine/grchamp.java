@@ -45,9 +45,8 @@ public class grchamp
 		return comm_latch;
 	} };
 	
-	extern WRITE_HANDLER( PC3259_control_w );
-	
-	WRITE_HANDLER( grchamp_control0_w ){
+	extern 
+	public static WriteHandlerPtr grchamp_control0_w = new WriteHandlerPtr() {public void handler(int offset, int data){
 		/* *OUT0 - Page 42 */
 		/* bit 0 = trigger irq on cpu1 (itself) when vblank arrives */
 		/* bit 1 = enable PC3259 (10A), page 41, top-left. TODO */
@@ -59,9 +58,9 @@ public class grchamp
 		grchamp_videoreg0 = data;
 		grchamp_cpu_irq_enable[0] = data & 1;	/* bit 0 */
 	//	osd_led_w( 0, ( ~data >> 4 ) & 1 ); 	/* bit 4 */
-	}
+	} };
 	
-	WRITE_HANDLER( grchamp_coinled_w ){
+	public static WriteHandlerPtr grchamp_coinled_w = new WriteHandlerPtr() {public void handler(int offset, int data){
 		/* *OUT9 - Page 40 */
 		/* bit 0-3 = unused */
 		/* bit 4 = Coin Lockout */
@@ -69,18 +68,18 @@ public class grchamp
 		/* bit 6/7 = unused */
 	//	coin_lockout_global_w( 0, ( data >> 4 ) & 1 );	/* bit 4 */
 	//	osd_led_w( 1, ( ~data >> 5 ) & 1 ); 			/* bit 5 */
-	}
+	} };
 	
-	WRITE_HANDLER( grchamp_sound_w ){
+	public static WriteHandlerPtr grchamp_sound_w = new WriteHandlerPtr() {public void handler(int offset, int data){
 		/* *OUT14 - Page 42 */
 		soundlatch_w( 0, data );
 		cpu_set_nmi_line( 2, PULSE_LINE );
-	}
+	} };
 	
-	WRITE_HANDLER( grchamp_comm_w ){
+	public static WriteHandlerPtr grchamp_comm_w = new WriteHandlerPtr() {public void handler(int offset, int data){
 		/* *OUT16 - Page 40 */
 		comm_latch2[ offset & 3] = data;
-	}
+	} };
 	
 	/***************************************************************************
 	
@@ -92,7 +91,7 @@ public class grchamp
 		return comm_latch2[offset];
 	} };
 	
-	WRITE_HANDLER( grchamp_port_1_w ) {
+	public static WriteHandlerPtr grchamp_port_1_w = new WriteHandlerPtr() {public void handler(int offset, int data) {
 		grchamp_vreg1[offset] = data;
 	
 		switch( offset ) { 	/* OUT0 - OUTF (Page 48) */
@@ -134,5 +133,5 @@ public class grchamp
 			/* OUTF - unused */
 			break;
 		}
-	}
+	} };
 }

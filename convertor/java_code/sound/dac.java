@@ -116,23 +116,23 @@ public class dac
 	}
 	
 	
-	WRITE_HANDLER( DAC_0_data_w )
+	public static WriteHandlerPtr DAC_0_data_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		DAC_data_w(0,data);
-	}
+	} };
 	
-	WRITE_HANDLER( DAC_1_data_w )
+	public static WriteHandlerPtr DAC_1_data_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		DAC_data_w(1,data);
-	}
+	} };
 	
-	WRITE_HANDLER( DAC_0_signed_data_w )
+	public static WriteHandlerPtr DAC_0_signed_data_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		DAC_signed_data_w(0,data);
-	}
+	} };
 	
-	WRITE_HANDLER( DAC_1_signed_data_w )
+	public static WriteHandlerPtr DAC_1_signed_data_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		DAC_signed_data_w(1,data);
-	}
+	} };
 }

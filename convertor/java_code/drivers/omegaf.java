@@ -63,26 +63,6 @@ public class omegaf
 	extern unsigned char *omegaf_bg1_scroll_y;
 	extern unsigned char *omegaf_bg2_scroll_y;
 	
-	WRITE_HANDLER( omegaf_bg0_bank_w );
-	WRITE_HANDLER( omegaf_bg1_bank_w );
-	WRITE_HANDLER( omegaf_bg2_bank_w );
-	WRITE_HANDLER( omegaf_bg0_videoram_w );
-	WRITE_HANDLER( omegaf_bg1_videoram_w );
-	WRITE_HANDLER( omegaf_bg2_videoram_w );
-	WRITE_HANDLER( robokid_bg0_videoram_w );
-	WRITE_HANDLER( robokid_bg1_videoram_w );
-	WRITE_HANDLER( robokid_bg2_videoram_w );
-	WRITE_HANDLER( omegaf_bg0_scrollx_w );
-	WRITE_HANDLER( omegaf_bg1_scrollx_w );
-	WRITE_HANDLER( omegaf_bg2_scrollx_w );
-	WRITE_HANDLER( omegaf_bg0_scrolly_w );
-	WRITE_HANDLER( omegaf_bg1_scrolly_w );
-	WRITE_HANDLER( omegaf_bg2_scrolly_w );
-	WRITE_HANDLER( omegaf_fgvideoram_w );
-	WRITE_HANDLER( omegaf_bg0_enabled_w );
-	WRITE_HANDLER( omegaf_bg1_enabled_w );
-	WRITE_HANDLER( omegaf_bg2_enabled_w );
-	WRITE_HANDLER( omegaf_sprite_overdraw_w );
 	
 	int omegaf_vh_start(void);
 	int robokid_vh_start(void);

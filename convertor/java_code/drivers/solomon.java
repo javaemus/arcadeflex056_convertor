@@ -18,9 +18,6 @@ public class solomon
 	extern unsigned char *solomon_bgvideoram;
 	extern unsigned char *solomon_bgcolorram;
 	
-	WRITE_HANDLER( solomon_flipscreen_w );
-	WRITE_HANDLER( solomon_bgvideoram_w );
-	WRITE_HANDLER( solomon_bgcolorram_w );
 	int  solomon_vh_start(void);
 	void solomon_vh_stop(void);
 	void solomon_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);

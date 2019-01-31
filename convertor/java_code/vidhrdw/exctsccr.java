@@ -17,9 +17,9 @@ public class exctsccr
 	
 	static int gfx_bank;
 	
-	WRITE_HANDLER( exctsccr_gfx_bank_w ) {
+	public static WriteHandlerPtr exctsccr_gfx_bank_w = new WriteHandlerPtr() {public void handler(int offset, int data) {
 		gfx_bank = data & 1;
-	}
+	} };
 	
 	void *exctsccr_fm_timer;
 	

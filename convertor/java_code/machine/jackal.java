@@ -63,7 +63,7 @@ public class jackal
 	} };
 	
 	
-	WRITE_HANDLER( jackal_rambank_w )
+	public static WriteHandlerPtr jackal_rambank_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 	if (data & 0xc4) usrintf_showmessage("jackal_rambank_w %02x",data);
 		coin_counter_w(0,data & 0x01);
@@ -71,40 +71,40 @@ public class jackal
 		jackal_rambank = &((memory_region(REGION_CPU1))[((data & 0x10) << 12)]);
 		jackal_spritebank = &((memory_region(REGION_CPU1))[((data & 0x08) << 13)]);
 		cpu_setbank(1,&((memory_region(REGION_CPU1))[((data & 0x20) << 11) + 0x4000]));
-	}
+	} };
 	
 	
-	WRITE_HANDLER( jackal_zram_w )
+	public static WriteHandlerPtr jackal_zram_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		jackal_rambank[0x0020+offset] = data;
-	}
+	} };
 	
 	
-	WRITE_HANDLER( jackal_commonram_w )
+	public static WriteHandlerPtr jackal_commonram_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		jackal_rambank[0x0060+offset] = data;
-	}
+	} };
 	
 	
-	WRITE_HANDLER( jackal_commonram1_w )
+	public static WriteHandlerPtr jackal_commonram1_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		(memory_region(REGION_CPU1))[0x0060+offset] = data;
 		(memory_region(REGION_CPU2))[0x6060+offset] = data;
-	}
+	} };
 	
 	
-	WRITE_HANDLER( jackal_voram_w )
+	public static WriteHandlerPtr jackal_voram_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		if ((offset & 0xF800) == 0)
 		{
 			dirtybuffer[offset & 0x3FF] = 1;
 		}
 		jackal_rambank[0x2000+offset] = data;
-	}
+	} };
 	
 	
-	WRITE_HANDLER( jackal_spriteram_w )
+	public static WriteHandlerPtr jackal_spriteram_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		jackal_spritebank[0x3000+offset] = data;
-	}
+	} };
 }

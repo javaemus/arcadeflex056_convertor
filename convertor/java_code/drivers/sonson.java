@@ -61,7 +61,7 @@ public class sonson
 	
 	
 	
-	WRITE_HANDLER( sonson_sh_irqtrigger_w )
+	public static WriteHandlerPtr sonson_sh_irqtrigger_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		static int last;
 	
@@ -73,7 +73,7 @@ public class sonson
 		}
 	
 		last = data;
-	}
+	} };
 	
 	
 	

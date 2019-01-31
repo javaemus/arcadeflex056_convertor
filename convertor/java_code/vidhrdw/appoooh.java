@@ -133,10 +133,10 @@ public class appoooh
 		return 0;
 	}
 	
-	WRITE_HANDLER( appoooh_scroll_w )
+	public static WriteHandlerPtr appoooh_scroll_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		scroll_x = data;
-	}
+	} };
 	
 	/***************************************************************************
 	
@@ -147,43 +147,43 @@ public class appoooh
 	{
 	}
 	
-	WRITE_HANDLER( appoooh_fg_videoram_w )
+	public static WriteHandlerPtr appoooh_fg_videoram_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		if (appoooh_fg_videoram[offset] != data)
 		{
 			appoooh_fg_videoram[offset] = data;
 			tilemap_mark_tile_dirty(fg_tilemap,offset);
 		}
-	}
+	} };
 	
-	WRITE_HANDLER( appoooh_fg_colorram_w )
+	public static WriteHandlerPtr appoooh_fg_colorram_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		if (appoooh_fg_colorram[offset] != data)
 		{
 			appoooh_fg_colorram[offset] = data;
 			tilemap_mark_tile_dirty(fg_tilemap,offset);
 		}
-	}
+	} };
 	
-	WRITE_HANDLER( appoooh_bg_videoram_w )
+	public static WriteHandlerPtr appoooh_bg_videoram_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		if (appoooh_bg_videoram[offset] != data)
 		{
 			appoooh_bg_videoram[offset] = data;
 			tilemap_mark_tile_dirty(bg_tilemap,offset);
 		}
-	}
+	} };
 	
-	WRITE_HANDLER( appoooh_bg_colorram_w )
+	public static WriteHandlerPtr appoooh_bg_colorram_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		if (appoooh_bg_colorram[offset] != data)
 		{
 			appoooh_bg_colorram[offset] = data;
 			tilemap_mark_tile_dirty(bg_tilemap,offset);
 		}
-	}
+	} };
 	
-	WRITE_HANDLER( appoooh_out_w )
+	public static WriteHandlerPtr appoooh_out_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		/* bit 0 controls NMI */
 		interrupt_enable_w(0,data & 0x01);
@@ -211,7 +211,7 @@ public class appoooh
 		}
 	
 		/* bit 7 unknown (used) */
-	}
+	} };
 	
 	static void appoooh_draw_sprites(struct mame_bitmap *dest_bmp,
 	        const struct GfxElement *gfx,

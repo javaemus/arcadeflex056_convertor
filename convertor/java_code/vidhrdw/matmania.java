@@ -92,7 +92,7 @@ public class matmania
 	
 	
 	
-	WRITE_HANDLER( matmania_paletteram_w )
+	public static WriteHandlerPtr matmania_paletteram_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		int bit0,bit1,bit2,bit3,val;
 		int r,g,b;
@@ -124,7 +124,7 @@ public class matmania
 		b = 0x0e * bit0 + 0x1f * bit1 + 0x43 * bit2 + 0x8f * bit3;
 	
 		palette_set_color(offs2 + 64,r,g,b);
-	}
+	} };
 	
 	
 	/***************************************************************************
@@ -181,7 +181,7 @@ public class matmania
 	}
 	
 	
-	WRITE_HANDLER( matmania_videoram3_w )
+	public static WriteHandlerPtr matmania_videoram3_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		if (matmania_videoram3[offset] != data)
 		{
@@ -189,11 +189,11 @@ public class matmania
 	
 			matmania_videoram3[offset] = data;
 		}
-	}
+	} };
 	
 	
 	
-	WRITE_HANDLER( matmania_colorram3_w )
+	public static WriteHandlerPtr matmania_colorram3_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		if (matmania_colorram3[offset] != data)
 		{
@@ -201,7 +201,7 @@ public class matmania
 	
 			matmania_colorram3[offset] = data;
 		}
-	}
+	} };
 	
 	
 	void matmania_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)

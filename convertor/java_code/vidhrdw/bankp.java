@@ -128,10 +128,10 @@ public class bankp
 	
 	
 	
-	WRITE_HANDLER( bankp_scroll_w )
+	public static WriteHandlerPtr bankp_scroll_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		scroll_x = data;
-	}
+	} };
 	
 	
 	
@@ -149,7 +149,7 @@ public class bankp
 	
 	
 	
-	WRITE_HANDLER( bankp_videoram2_w )
+	public static WriteHandlerPtr bankp_videoram2_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		if (bankp_videoram2[offset] != data)
 		{
@@ -157,11 +157,11 @@ public class bankp
 	
 			bankp_videoram2[offset] = data;
 		}
-	}
+	} };
 	
 	
 	
-	WRITE_HANDLER( bankp_colorram2_w )
+	public static WriteHandlerPtr bankp_colorram2_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		if (bankp_colorram2[offset] != data)
 		{
@@ -169,11 +169,11 @@ public class bankp
 	
 			bankp_colorram2[offset] = data;
 		}
-	}
+	} };
 	
 	
 	
-	WRITE_HANDLER( bankp_out_w )
+	public static WriteHandlerPtr bankp_out_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		/* bits 0-1 are playfield priority */
 		/* TODO: understand how this works, currently the only thing I do is */
@@ -194,7 +194,7 @@ public class bankp
 		}
 	
 		/* bits 6-7 unknown */
-	}
+	} };
 	
 	
 	

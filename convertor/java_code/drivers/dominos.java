@@ -29,10 +29,6 @@ public class dominos
 {
 	
 	/* machine/dominos.c */
-	WRITE_HANDLER( dominos_attract_w );
-	WRITE_HANDLER( dominos_tumble_w );
-	WRITE_HANDLER( dominos_lamp2_w );
-	WRITE_HANDLER( dominos_lamp1_w );
 	
 	/* vidhrdw/dominos.c */
 	extern void dominos_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);

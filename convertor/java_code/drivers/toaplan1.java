@@ -60,8 +60,6 @@ public class toaplan1
 	
 	void toaplan1_init_machine(void);
 	
-	WRITE_HANDLER( rallybik_coin_w );
-	WRITE_HANDLER( toaplan1_coin_w );
 	WRITE16_HANDLER( samesame_coin_w );
 	
 	extern unsigned char *toaplan1_sharedram;

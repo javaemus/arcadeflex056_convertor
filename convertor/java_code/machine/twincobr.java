@@ -184,14 +184,14 @@ public class twincobr
 	}
 	
 	
-	WRITE_HANDLER( wardner_mainram_w )
+	public static WriteHandlerPtr wardner_mainram_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 	#if 0
 		if ((offset == 4) && (data != 4)) logerror("CPU #0:%04x  Writing %02x to %04x of main RAM (DSP command number)\n",cpu_get_pc(),data, offset + 0x7000);
 	#endif
 		wardner_mainram[offset] = data;
 	
-	}
+	} };
 	public static ReadHandlerPtr wardner_mainram_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
 		return wardner_mainram[offset];
@@ -246,10 +246,10 @@ public class twincobr
 			toaplan0_control_w(offset, data & 0xff);
 		}
 	}
-	WRITE_HANDLER( wardner_control_w )
+	public static WriteHandlerPtr wardner_control_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		toaplan0_control_w(offset, data);
-	}
+	} };
 	
 	
 	READ16_HANDLER( twincobr_sharedram_r )
@@ -305,12 +305,12 @@ public class twincobr
 			toaplan0_coin_dsp_w(offset, data & 0xff);
 		}
 	}
-	WRITE_HANDLER( twincobr_coin_w )
+	public static WriteHandlerPtr twincobr_coin_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		toaplan0_coin_dsp_w(offset, data);
-	}
-	WRITE_HANDLER( wardner_coin_dsp_w )
+	} };
+	public static WriteHandlerPtr wardner_coin_dsp_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		toaplan0_coin_dsp_w(offset, data);
-	}
+	} };
 }

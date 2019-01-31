@@ -52,14 +52,14 @@ public class funkybee
 	}
 	
 	
-	WRITE_HANDLER( funkybee_gfx_bank_w )
+	public static WriteHandlerPtr funkybee_gfx_bank_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		if (data != (gfx_bank & 0x01))
 		{
 			gfx_bank = data & 0x01;
 			memset(dirtybuffer, 1, videoram_size);
 		}
-	}
+	} };
 	
 	/***************************************************************************
 	

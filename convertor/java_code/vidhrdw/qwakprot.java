@@ -29,7 +29,7 @@ public class qwakprot
 	  This might seem a little odd, but it really seems as though the palette
 	  is writing as GGGRRRBB.  This is just a guess, and has not been confirmed.
 	***************************************************************************/
-	WRITE_HANDLER( qwakprot_paletteram_w )
+	public static WriteHandlerPtr qwakprot_paletteram_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		int bit0,bit1,bit2;
 		int r,g,b;
@@ -56,7 +56,7 @@ public class qwakprot
 		b = 0x21 * bit0 + 0x47 * bit1 + 0x97 * bit2;
 	
 		palette_set_color(offset,r,g,b);
-	}
+	} };
 	
 	
 	/***************************************************************************

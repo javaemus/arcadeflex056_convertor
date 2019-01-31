@@ -71,7 +71,6 @@ public class espial
 	
 	extern unsigned char *espial_attributeram;
 	extern unsigned char *espial_column_scroll;
-	WRITE_HANDLER( espial_attributeram_w );
 	void espial_vh_convert_color_prom(unsigned char *obsolete,unsigned short *colortable,const unsigned char *color_prom);
 	void espial_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	
@@ -84,10 +83,10 @@ public class espial
 	}
 	
 	
-	WRITE_HANDLER( zodiac_master_interrupt_enable_w )
+	public static WriteHandlerPtr zodiac_master_interrupt_enable_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		interrupt_enable_w(offset,~data & 1);
-	}
+	} };
 	
 	
 	int zodiac_master_interrupt(void)
@@ -96,11 +95,11 @@ public class espial
 	}
 	
 	
-	WRITE_HANDLER( zodiac_master_soundlatch_w )
+	public static WriteHandlerPtr zodiac_master_soundlatch_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		soundlatch_w(offset, data);
 		cpu_cause_interrupt(1, Z80_IRQ_INT);
-	}
+	} };
 	
 	
 	

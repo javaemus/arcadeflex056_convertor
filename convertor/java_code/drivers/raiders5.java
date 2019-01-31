@@ -40,19 +40,13 @@ public class raiders5
 	static UINT8 *raiders5_shared_workram;
 	
 	
-	WRITE_HANDLER( raiders5_scroll_x_w );
-	WRITE_HANDLER( raiders5_scroll_y_w );
-	WRITE_HANDLER( raiders5_flipscreen_w );
 	
-	WRITE_HANDLER( raiders5_videoram_w );
-	WRITE_HANDLER( raiders5_fgram_w );
 	
-	WRITE_HANDLER( raiders5_paletteram_w );
 	
-	WRITE_HANDLER( raiders5_shared_workram_w )
+	public static WriteHandlerPtr raiders5_shared_workram_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		raiders5_shared_workram[offset] = data;
-	}
+	} };
 	
 	public static ReadHandlerPtr raiders5_shared_workram_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{

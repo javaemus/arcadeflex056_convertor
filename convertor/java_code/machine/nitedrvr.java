@@ -34,10 +34,10 @@ public class nitedrvr
 	/***************************************************************************
 	nitedrvr_ram_w
 	***************************************************************************/
-	WRITE_HANDLER( nitedrvr_ram_w )
+	public static WriteHandlerPtr nitedrvr_ram_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		nitedrvr_ram[offset]=data;
-	}
+	} };
 	
 	/***************************************************************************
 	Steering
@@ -90,10 +90,10 @@ public class nitedrvr
 		return 0;
 	} };
 	
-	WRITE_HANDLER( nitedrvr_steering_reset_w )
+	public static WriteHandlerPtr nitedrvr_steering_reset_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		nitedrvr_steering_val=0x00;
-	}
+	} };
 	
 	
 	/***************************************************************************
@@ -232,10 +232,10 @@ public class nitedrvr
 	D4 = SKID1
 	D5 = SKID2
 	***************************************************************************/
-	WRITE_HANDLER( nitedrvr_out0_w )
+	public static WriteHandlerPtr nitedrvr_out0_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		/* TODO: put sound bits here */
-	}
+	} };
 	
 	/***************************************************************************
 	nitedrvr_out1_w
@@ -247,10 +247,10 @@ public class nitedrvr
 	D4 = LED START
 	D5 = Spare (Not used)
 	***************************************************************************/
-	WRITE_HANDLER( nitedrvr_out1_w )
+	public static WriteHandlerPtr nitedrvr_out1_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		set_led_status(0,data & 0x10);
 		/* TODO: put sound bits here */
-	}
+	} };
 	
 }

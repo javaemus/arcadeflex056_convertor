@@ -43,9 +43,7 @@ public class gotya
 	void gotya_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom);
 	int gotya_vh_start(void);
 	void gotya_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
-	WRITE_HANDLER( gotya_video_control_w );
 	
-	WRITE_HANDLER( gotya_soundlatch_w );
 	
 	
 	public static Memory_ReadAddress readmem[]={

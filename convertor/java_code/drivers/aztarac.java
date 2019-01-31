@@ -26,7 +26,6 @@ public class aztarac
 	/* from sndhrdw/aztarac.c */
 	READ16_HANDLER( aztarac_sound_r );
 	WRITE16_HANDLER( aztarac_sound_w );
-	WRITE_HANDLER( aztarac_snd_status_w );
 	int aztarac_snd_timed_irq (void);
 	
 	static data16_t *nvram;

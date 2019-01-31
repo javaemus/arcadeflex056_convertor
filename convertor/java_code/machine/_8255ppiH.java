@@ -36,8 +36,4 @@ data8_t ppi8255_peek( int which, offs_t offset );
 #endif
 
 /* Helpers */
-WRITE_HANDLER( ppi8255_0_w );
-WRITE_HANDLER( ppi8255_1_w );
-WRITE_HANDLER( ppi8255_2_w );
-WRITE_HANDLER( ppi8255_3_w );
 #endif

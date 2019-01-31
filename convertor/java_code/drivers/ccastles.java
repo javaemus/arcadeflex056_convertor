@@ -91,12 +91,10 @@ public class ccastles
 	extern unsigned char *ccastles_scrollx;
 	extern unsigned char *ccastles_scrolly;
 	
-	WRITE_HANDLER( ccastles_paletteram_w );
 	int ccastles_vh_start(void);
 	void ccastles_vh_stop(void);
 	void ccastles_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	
-	WRITE_HANDLER( ccastles_bitmode_w );
 	
 	
 	static unsigned char *nvram;

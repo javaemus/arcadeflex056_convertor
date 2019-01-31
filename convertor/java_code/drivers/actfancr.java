@@ -26,10 +26,6 @@ public class actfancr
 	
 	void actfancr_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	void triothep_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
-	WRITE_HANDLER( actfancr_pf1_data_w );
-	WRITE_HANDLER( actfancr_pf1_control_w );
-	WRITE_HANDLER( actfancr_pf2_data_w );
-	WRITE_HANDLER( actfancr_pf2_control_w );
 	int actfancr_vh_start (void);
 	int triothep_vh_start (void);
 	

@@ -51,22 +51,7 @@ extern UINT8 *dynax_bitmap[3][2];
 
 /* Functions defined in vidhrdw: */
 
-WRITE_HANDLER( dynax_blit_x_w );
-WRITE_HANDLER( dynax_blit_y_w );
-WRITE_HANDLER( dynax_blit_scroll_w );
-WRITE_HANDLER( dynax_blit_addr0_w );
-WRITE_HANDLER( dynax_blit_addr1_w );
-WRITE_HANDLER( dynax_blit_addr2_w );
-WRITE_HANDLER( dynax_blit_dest_w );
-WRITE_HANDLER( dynax_blit_pen_w );
-WRITE_HANDLER( dynax_blit_backpen_w );
-WRITE_HANDLER( dynax_blit_palette01_w );
-WRITE_HANDLER( dynax_blit_palette2_w );
-WRITE_HANDLER( dynax_blit_palbank_w );
-WRITE_HANDLER( dynax_blit_enable_w );
-WRITE_HANDLER( dynax_flipscreen_w );
 
-WRITE_HANDLER( sprtmtch_blit_draw_w );
 
 int  dynax_vh_start(void);
 int  sprtmtch_vh_start(void);

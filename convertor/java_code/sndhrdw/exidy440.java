@@ -404,7 +404,7 @@ public class exidy440
 	 *
 	 *************************************/
 	
-	WRITE_HANDLER( exidy440_sound_volume_w )
+	public static WriteHandlerPtr exidy440_sound_volume_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		if (SOUND_LOG && debuglog)
 			fprintf(debuglog, "Volume %02X=%02X\n", offset, data);
@@ -414,7 +414,7 @@ public class exidy440
 	
 		/* set the new volume */
 		exidy440_sound_volume[offset] = ~data;
-	}
+	} };
 	
 	
 	
@@ -431,10 +431,10 @@ public class exidy440
 	}
 	
 	
-	WRITE_HANDLER( exidy440_sound_interrupt_clear_w )
+	public static WriteHandlerPtr exidy440_sound_interrupt_clear_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		cpu_set_irq_line(1, 0, CLEAR_LINE);
-	}
+	} };
 	
 	
 	
@@ -556,7 +556,7 @@ public class exidy440
 	} };
 	
 	
-	WRITE_HANDLER( exidy440_m6844_w )
+	public static WriteHandlerPtr exidy440_m6844_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		int i;
 	
@@ -653,7 +653,7 @@ public class exidy440
 				m6844_chain = data;
 				break;
 		}
-	}
+	} };
 	
 	
 	

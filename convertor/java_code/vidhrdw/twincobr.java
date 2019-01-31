@@ -192,43 +192,43 @@ public class twincobr
 	}
 	
 	/******************** Wardner interface to this hardware ********************/
-	WRITE_HANDLER( wardner_txlayer_w )
+	public static WriteHandlerPtr wardner_txlayer_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		int shift = 8 * (offset & 1);
 		twincobr_txoffs_w(offset / 2, data << shift, 0xff00 >> shift);
-	}
-	WRITE_HANDLER( wardner_bglayer_w )
+	} };
+	public static WriteHandlerPtr wardner_bglayer_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		int shift = 8 * (offset & 1);
 		twincobr_bgoffs_w(offset / 2, data << shift, 0xff00 >> shift);
-	}
-	WRITE_HANDLER( wardner_fglayer_w )
+	} };
+	public static WriteHandlerPtr wardner_fglayer_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		int shift = 8 * (offset & 1);
 		twincobr_fgoffs_w(offset / 2, data << shift, 0xff00 >> shift);
-	}
+	} };
 	
-	WRITE_HANDLER( wardner_txscroll_w )
+	public static WriteHandlerPtr wardner_txscroll_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		int shift = 8 * (offset & 1);
 		twincobr_txscroll_w(offset / 2, data << shift, 0xff00 >> shift);
-	}
-	WRITE_HANDLER( wardner_bgscroll_w )
+	} };
+	public static WriteHandlerPtr wardner_bgscroll_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		int shift = 8 * (offset & 1);
 		twincobr_bgscroll_w(offset / 2, data << shift, 0xff00 >> shift);
-	}
-	WRITE_HANDLER( wardner_fgscroll_w )
+	} };
+	public static WriteHandlerPtr wardner_fgscroll_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		int shift = 8 * (offset & 1);
 		twincobr_fgscroll_w(offset / 2, data << shift, 0xff00 >> shift);
-	}
+	} };
 	
-	WRITE_HANDLER( wardner_exscroll_w )	/* Extra unused video layer */
+	public static WriteHandlerPtr wardner_exscroll_w = new WriteHandlerPtr() {public void handler(int offset, int data)	/* Extra unused video layer */
 	{
 		if (offset == 0) logerror("PC - write %04x to unknown video scroll Y register\n",data);
 		else logerror("PC - write %04x to unknown video scroll X register\n",data);
-	}
+	} };
 	
 	public static ReadHandlerPtr wardner_videoram_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
@@ -241,7 +241,7 @@ public class twincobr
 		return 0;
 	} };
 	
-	WRITE_HANDLER( wardner_videoram_w )
+	public static WriteHandlerPtr wardner_videoram_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		int shift = 8 * (offset & 1);
 		switch (offset/2) {
@@ -249,7 +249,7 @@ public class twincobr
 			case 1: twincobr_bgram_w(0,data << shift, 0xff00 >> shift); break;
 			case 2: twincobr_fgram_w(0,data << shift, 0xff00 >> shift); break;
 		}
-	}
+	} };
 	
 	static void twincobr_draw_sprites(struct mame_bitmap *bitmap, int priority)
 	{

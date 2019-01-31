@@ -113,20 +113,20 @@ public class galaxian
 		}
 	}
 	
-	WRITE_HANDLER( galaxian_pitch_w )
+	public static WriteHandlerPtr galaxian_pitch_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		stream_update(tone_stream,0);
 	
 		pitch = data;
-	}
+	} };
 	
-	WRITE_HANDLER( galaxian_vol_w )
+	public static WriteHandlerPtr galaxian_vol_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		stream_update(tone_stream,0);
 	
 		/* offset 0 = bit 0, offset 1 = bit 1 */
 		vol = (vol & ~(1 << offset)) | ((data & 1) << offset);
-	}
+	} };
 	
 	
 	static void noise_timer_cb(int param)
@@ -138,7 +138,7 @@ public class galaxian
 		}
 	}
 	
-	WRITE_HANDLER( galaxian_noise_enable_w )
+	public static WriteHandlerPtr galaxian_noise_enable_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 	#if SAMPLES
 		if (deathsampleloaded)
@@ -172,9 +172,9 @@ public class galaxian
 				}
 			}
 		}
-	}
+	} };
 	
-	WRITE_HANDLER( galaxian_shoot_enable_w )
+	public static WriteHandlerPtr galaxian_shoot_enable_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		if( data & 1 && !(last_port2 & 1) )
 		{
@@ -198,7 +198,7 @@ public class galaxian
 			}
 		}
 		last_port2=data;
-	}
+	} };
 	
 	
 	#if SAMPLES
@@ -531,10 +531,10 @@ public class galaxian
 		shootwave = 0;
 	}
 	
-	WRITE_HANDLER( galaxian_background_enable_w )
+	public static WriteHandlerPtr galaxian_background_enable_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		mixer_set_volume(channellfo+offset,(data & 1) ? 100 : 0);
-	}
+	} };
 	
 	static void lfo_timer_cb(int param)
 	{
@@ -544,7 +544,7 @@ public class galaxian
 			freq = MAXFREQ;
 	}
 	
-	WRITE_HANDLER( galaxian_lfo_freq_w )
+	public static WriteHandlerPtr galaxian_lfo_freq_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 	#if NEW_LFO
 		static int lfobit[4];
@@ -668,7 +668,7 @@ public class galaxian
 		LOG(("lfotimer bits:%d%d%d%d r0:%d, r1:%d, rx: %d, time: %9.2fus\n", lfobit[3], lfobit[2], lfobit[1], lfobit[0], (int)r0, (int)r1, (int)rx, 0.639 * rx));
 		lfotimer = timer_pulse( TIME_IN_USEC(0.639 * rx / (MAXFREQ-MINFREQ)), 0, lfo_timer_cb);
 	#endif
-	}
+	} };
 	
 	void galaxian_sh_update(void)
 	{

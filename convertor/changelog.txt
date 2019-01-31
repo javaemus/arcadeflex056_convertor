@@ -1,3 +1,7 @@
+31/01/2019
+==========
+-Improved WRITEHANDLER for 8bit writes
+
 30/01/2019
 ==========
 -Implemented MEMORY_READ for 8bit handlers

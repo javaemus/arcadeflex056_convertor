@@ -39,7 +39,6 @@ public class hyhoo
 	int hyhoo_vh_start(void);
 	void hyhoo_vh_stop(void);
 	
-	WRITE_HANDLER( hyhoo_palette_w );
 	void hyhoo_radrx_w(int data);
 	void hyhoo_radry_w(int data);
 	void hyhoo_sizex_w(int data);

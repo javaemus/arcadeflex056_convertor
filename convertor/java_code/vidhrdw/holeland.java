@@ -81,25 +81,25 @@ public class holeland
 		return 0;
 	}
 	
-	WRITE_HANDLER( holeland_videoram_w )
+	public static WriteHandlerPtr holeland_videoram_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		if( videoram[offset]!=data )
 		{
 			videoram[offset] = data;
 			tilemap_mark_tile_dirty( bg_tilemap, offset );
 		}
-	}
+	} };
 	
-	WRITE_HANDLER( holeland_colorram_w )
+	public static WriteHandlerPtr holeland_colorram_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		if( colorram[offset]!=data )
 		{
 			colorram[offset] = data;
 			tilemap_mark_tile_dirty( bg_tilemap, offset );
 		}
-	}
+	} };
 	
-	WRITE_HANDLER( holeland_pal_offs_w )
+	public static WriteHandlerPtr holeland_pal_offs_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		static int po[2];
 		if ((data & 1) != po[offset])
@@ -108,18 +108,18 @@ public class holeland
 			palette_offset = (po[0] + (po[1] << 1)) << 4;
 			tilemap_mark_all_tiles_dirty(ALL_TILEMAPS);
 		}
-	}
+	} };
 	
-	WRITE_HANDLER( holeland_scroll_w )
+	public static WriteHandlerPtr holeland_scroll_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		tilemap_set_scrollx(bg_tilemap, 0, data);
-	}
+	} };
 	
-	WRITE_HANDLER( holeland_flipscreen_w )
+	public static WriteHandlerPtr holeland_flipscreen_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		if (offset) flip_screen_y_set(data);
 		else        flip_screen_x_set(data);
-	}
+	} };
 	
 	
 	static void holeland_draw_sprites(struct mame_bitmap *bitmap)

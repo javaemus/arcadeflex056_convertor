@@ -53,13 +53,13 @@ public class magmax
 		return (sound_latch | LS74_q);
 	} };
 	
-	WRITE_HANDLER( ay8910_portB_0_w )
+	public static WriteHandlerPtr ay8910_portB_0_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		/*bit 0 is input to CLR line of the LS74*/
 		LS74_clr = data & 1;
 		if (LS74_clr == 0)
 			LS74_q = 0;
-	}
+	} };
 	
 	static void scanline_callback(int scanline)
 	{
@@ -81,7 +81,7 @@ public class magmax
 	
 	
 	
-	WRITE_HANDLER( ay8910_portA_0_w )
+	public static WriteHandlerPtr ay8910_portA_0_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 	/*There are three AY8910 chips and four(!) separate amplifiers on the board
 	* Each of AY channels is hardware mapped in following order:
@@ -107,7 +107,7 @@ public class magmax
 	
 			//missing implementation
 	
-	}
+	} };
 	
 	static WRITE16_HANDLER( magmax_vreg_w )
 	{

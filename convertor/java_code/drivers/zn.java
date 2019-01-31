@@ -39,14 +39,14 @@ public class zn
 	static int queue_data;
 	static int queue_len;
 	
-	WRITE_HANDLER( qsound_queue_w )
+	public static WriteHandlerPtr qsound_queue_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		if( cpu_getstatus( 1 ) != 0 )
 		{
 			queue_data = data;
 			queue_len = 2;
 		}
-	}
+	} };
 	
 	static int znqs_vh_start( void )
 	{

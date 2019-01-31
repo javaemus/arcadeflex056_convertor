@@ -17,7 +17,6 @@ public class naughtyb
 	
 	
 	/* from sndhrdw/pleiads.c */
-	WRITE_HANDLER( pleiads_sound_control_c_w );
 	
 	unsigned char *naughtyb_videoram2;
 	
@@ -170,7 +169,7 @@ public class naughtyb
 	
 	
 	
-	WRITE_HANDLER( naughtyb_videoram2_w )
+	public static WriteHandlerPtr naughtyb_videoram2_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		if (naughtyb_videoram2[offset] != data)
 		{
@@ -178,11 +177,11 @@ public class naughtyb
 	
 			naughtyb_videoram2[offset] = data;
 		}
-	}
+	} };
 	
 	
 	
-	WRITE_HANDLER( naughtyb_videoreg_w )
+	public static WriteHandlerPtr naughtyb_videoreg_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		/* bits 4+5 control the sound circuit */
 		pleiads_sound_control_c_w(offset,data);
@@ -196,9 +195,9 @@ public class naughtyb
 	
 			memset (dirtybuffer, 1, videoram_size);
 		}
-	}
+	} };
 	
-	WRITE_HANDLER( popflame_videoreg_w )
+	public static WriteHandlerPtr popflame_videoreg_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		/* bits 4+5 control the sound circuit */
 		pleiads_sound_control_c_w(offset,data);
@@ -212,7 +211,7 @@ public class naughtyb
 	
 			memset (dirtybuffer, 1, videoram_size);
 		}
-	}
+	} };
 	
 	
 	

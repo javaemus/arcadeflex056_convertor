@@ -74,11 +74,6 @@ public class _1942
 	
 	int c1942_vh_start(void);
 	void c1942_vh_convert_color_prom(unsigned char *obsolete,unsigned short *colortable,const unsigned char *color_prom);
-	WRITE_HANDLER( c1942_fgvideoram_w );
-	WRITE_HANDLER( c1942_bgvideoram_w );
-	WRITE_HANDLER( c1942_scroll_w );
-	WRITE_HANDLER( c1942_c804_w );
-	WRITE_HANDLER( c1942_palette_bank_w );
 	void c1942_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	
 	

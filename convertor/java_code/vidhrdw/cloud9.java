@@ -31,7 +31,7 @@ public class cloud9
 	  Cloud 9 uses 9-bit color, in the form RRRGGGBB, with the LSB of B stored
 	  in the $40 bit of the address.
 	***************************************************************************/
-	WRITE_HANDLER( cloud9_paletteram_w )
+	public static WriteHandlerPtr cloud9_paletteram_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		int bit0,bit1,bit2;
 		int r,g,b;
@@ -60,7 +60,7 @@ public class cloud9
 		b = 0x21 * bit0 + 0x47 * bit1 + 0x97 * bit2;
 	
 		palette_set_color((offset & 0x3f),r,g,b);
-	}
+	} };
 	
 	/***************************************************************************
 	 The video system is a little bit odd.
@@ -167,7 +167,7 @@ public class cloud9
 	/***************************************************************************
 	  cloud9_bitmap_regs_w
 	***************************************************************************/
-	WRITE_HANDLER( cloud9_bitmap_regs_w )
+	public static WriteHandlerPtr cloud9_bitmap_regs_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		unsigned int x, y;
 	
@@ -211,12 +211,12 @@ public class cloud9
 			if ((*cloud9_auto_inc_y) < 0x80)
 				cloud9_bitmap_regs[1]++;
 		}
-	}
+	} };
 	
 	/***************************************************************************
 	  cloud9_bitmap_w
 	***************************************************************************/
-	WRITE_HANDLER( cloud9_bitmap_w )
+	public static WriteHandlerPtr cloud9_bitmap_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		UINT8 x, y;
 	
@@ -247,7 +247,7 @@ public class cloud9
 			plot_pixel(tmpbitmap, x  , y, Machine->pens[((data & 0x0f) >> 0) + ((*cloud9_color_bank & 0x80) >> 2)]);
 			plot_pixel(tmpbitmap, x+1, y, Machine->pens[((data & 0xf0) >> 4) + ((*cloud9_color_bank & 0x80) >> 2)]);
 		}
-	}
+	} };
 	
 	/***************************************************************************
 	

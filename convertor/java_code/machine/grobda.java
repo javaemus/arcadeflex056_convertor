@@ -34,19 +34,19 @@ public class grobda
 	    return grobda_snd_sharedram[offset];
 	} };
 	
-	WRITE_HANDLER( grobda_snd_sharedram_w )
+	public static WriteHandlerPtr grobda_snd_sharedram_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 	    grobda_snd_sharedram[offset] = data;
-	}
+	} };
 	
 	/* irq control functions */
-	WRITE_HANDLER( grobda_interrupt_ctrl_1_w ){
+	public static WriteHandlerPtr grobda_interrupt_ctrl_1_w = new WriteHandlerPtr() {public void handler(int offset, int data){
 	    int_enable_1 = offset;
-	}
+	} };
 	
-	WRITE_HANDLER( grobda_interrupt_ctrl_2_w ){
+	public static WriteHandlerPtr grobda_interrupt_ctrl_2_w = new WriteHandlerPtr() {public void handler(int offset, int data){
 	    int_enable_2 = offset;
-	}
+	} };
 	
 	int grobda_interrupt_1( void ) {
 		if (int_enable_1)
@@ -62,10 +62,10 @@ public class grobda
 	        return ignore_interrupt();
 	}
 	
-	WRITE_HANDLER( grobda_cpu2_enable_w )
+	public static WriteHandlerPtr grobda_cpu2_enable_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		cpu_set_halt_line(1, offset ? CLEAR_LINE : ASSERT_LINE);
-	}
+	} };
 	
 	/************************************************************************************
 	*																					*
@@ -73,15 +73,15 @@ public class grobda
 	*																					*
 	************************************************************************************/
 	
-	WRITE_HANDLER( grobda_customio_1_w )
+	public static WriteHandlerPtr grobda_customio_1_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 	    grobda_customio_1[offset] = data;
-	}
+	} };
 	
-	WRITE_HANDLER( grobda_customio_2_w )
+	public static WriteHandlerPtr grobda_customio_2_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 	    grobda_customio_2[offset] = data;
-	}
+	} };
 	
 	static int credmoned [] = { 1, 1, 1, 1, 2, 2, 3, 4 };
 	static int monedcred [] = { 3, 4, 2, 1, 1, 3, 1, 1 };

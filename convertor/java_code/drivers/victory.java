@@ -118,10 +118,6 @@ public class victory
 	/* sound driver data & functions */
 	int victory_sh_start(const struct MachineSound *msound);
 	
-	WRITE_HANDLER( exidy_shriot_w );
-	WRITE_HANDLER( exidy_sh6840_w );
-	WRITE_HANDLER( exidy_sh8253_w );
-	WRITE_HANDLER( exidy_sfxctrl_w );
 	
 	
 	/* video driver data & functions */
@@ -133,10 +129,6 @@ public class victory
 	void victory_vh_screenrefresh(struct mame_bitmap *bitmap, int full_refresh);
 	int victory_vblank_interrupt(void);
 	
-	WRITE_HANDLER( victory_video_control_w );
-	WRITE_HANDLER( victory_paletteram_w );
-	WRITE_HANDLER( victory_videoram_w );
-	WRITE_HANDLER( victory_charram_w );
 	
 	
 	
@@ -198,27 +190,27 @@ public class victory
 	} };
 	
 	
-	WRITE_HANDLER( victory_sound_response_w )
+	public static WriteHandlerPtr victory_sound_response_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		sound_response = data;
 		if (LOG_SOUND) logerror("%04X:!!!! Sound response = %02X\n", cpu_getpreviouspc(), data);
-	}
+	} };
 	
 	
-	WRITE_HANDLER( victory_sound_irq_clear_w )
+	public static WriteHandlerPtr victory_sound_irq_clear_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		if (LOG_SOUND) logerror("%04X:!!!! Sound IRQ clear = %02X\n", cpu_getpreviouspc(), data);
 		if (data == 0) pia_0_ca1_w(0, 1);
-	}
+	} };
 	
 	
-	WRITE_HANDLER( victory_main_ack_w )
+	public static WriteHandlerPtr victory_main_ack_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		if (LOG_SOUND) logerror("%04X:!!!! Sound ack = %02X\n", cpu_getpreviouspc(), data);
 		if (sound_response_ack_clk && !data)
 			pia_0_cb1_w(0, 1);
 		sound_response_ack_clk = data;
-	}
+	} };
 	
 	
 	

@@ -201,15 +201,15 @@ public class docastle
 		return 0;
 	} };
 	
-	WRITE_HANDLER( docastle_flipscreen_off_w )
+	public static WriteHandlerPtr docastle_flipscreen_off_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		flip_screen_set(0);
-	}
+	} };
 	
-	WRITE_HANDLER( docastle_flipscreen_on_w )
+	public static WriteHandlerPtr docastle_flipscreen_on_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		flip_screen_set(1);
-	}
+	} };
 	
 	
 	

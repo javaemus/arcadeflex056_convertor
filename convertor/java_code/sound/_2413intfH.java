@@ -10,14 +10,6 @@ struct YM2413interface
 	int mixing_level[MAX_2413];
 };
 
-WRITE_HANDLER( YM2413_register_port_0_w );
-WRITE_HANDLER( YM2413_register_port_1_w );
-WRITE_HANDLER( YM2413_register_port_2_w );
-WRITE_HANDLER( YM2413_register_port_3_w );
-WRITE_HANDLER( YM2413_data_port_0_w );
-WRITE_HANDLER( YM2413_data_port_1_w );
-WRITE_HANDLER( YM2413_data_port_2_w );
-WRITE_HANDLER( YM2413_data_port_3_w );
 
 WRITE16_HANDLER( YM2413_register_port_0_lsb_w );
 WRITE16_HANDLER( YM2413_register_port_1_lsb_w );

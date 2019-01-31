@@ -40,7 +40,6 @@ public class bladestl
 	void bladestl_vh_stop(void);
 	void bladestl_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	void bladestl_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom);
-	WRITE_HANDLER( bladestl_vreg_w );
 	
 	static int bladestl_interrupt( void )
 	{

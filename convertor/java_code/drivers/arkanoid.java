@@ -53,16 +53,10 @@ public class arkanoid
 	
 	void arkanoid_init_machine(void);
 	
-	WRITE_HANDLER( arkanoid_d008_w );
 	void arkanoid_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	
-	WRITE_HANDLER( arkanoid_Z80_mcu_w );
 	
-	WRITE_HANDLER( arkanoid_68705_portA_w );
-	WRITE_HANDLER( arkanoid_68705_ddrA_w );
 	
-	WRITE_HANDLER( arkanoid_68705_portC_w );
-	WRITE_HANDLER( arkanoid_68705_ddrC_w );
 	
 	
 	

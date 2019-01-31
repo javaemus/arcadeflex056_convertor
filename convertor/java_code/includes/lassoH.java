@@ -7,11 +7,6 @@
 extern data8_t *lasso_vram;
 extern data8_t *wwjgtin_scroll;
 
-WRITE_HANDLER( lasso_videoram_w );
-WRITE_HANDLER( lasso_backcolor_w );
-WRITE_HANDLER( lasso_gfxbank_w );
-WRITE_HANDLER( wwjgtin_gfxbank_w );
-WRITE_HANDLER( wwjgtin_lastcolor_w );
 
 void lasso_vh_convert_color_prom  (unsigned char *palette,unsigned short *colortable,const unsigned char *color_prom);
 void wwjgtin_vh_convert_color_prom(unsigned char *palette,unsigned short *colortable,const unsigned char *color_prom);

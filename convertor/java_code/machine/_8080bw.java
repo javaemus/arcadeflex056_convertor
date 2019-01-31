@@ -20,16 +20,16 @@ public class _8080bw
 	static int shift_data1,shift_data2,shift_amount;
 	
 	
-	WRITE_HANDLER( invaders_shift_amount_w )
+	public static WriteHandlerPtr invaders_shift_amount_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		shift_amount = data;
-	}
+	} };
 	
-	WRITE_HANDLER( invaders_shift_data_w )
+	public static WriteHandlerPtr invaders_shift_data_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		shift_data2 = shift_data1;
 		shift_data1 = data;
-	}
+	} };
 	
 	
 	#define SHIFT  (((((shift_data1 << 8) | shift_data2) << (shift_amount & 0x07)) >> 8) & 0xff)
@@ -164,8 +164,8 @@ public class _8080bw
 		return readinputport(desertgu_controller_select ? 0 : 2);
 	} };
 	
-	WRITE_HANDLER( desertgu_controller_select_w )
+	public static WriteHandlerPtr desertgu_controller_select_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		desertgu_controller_select = data & 0x08;
-	}
+	} };
 }

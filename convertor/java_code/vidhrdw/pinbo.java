@@ -20,7 +20,7 @@ public class pinbo
 	
 	
 	
-	WRITE_HANDLER( pinbo_flipscreen_w )
+	public static WriteHandlerPtr pinbo_flipscreen_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		if (flipscreen[0] != (data & 1))
 		{
@@ -32,7 +32,7 @@ public class pinbo
 			flipscreen[1] = data & 2;
 			memset(dirtybuffer,1,videoram_size);
 		}
-	}
+	} };
 	
 	void pinbo_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
 	{

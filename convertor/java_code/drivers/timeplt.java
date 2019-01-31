@@ -52,9 +52,6 @@ public class timeplt
 	
 	extern unsigned char *timeplt_videoram,*timeplt_colorram;
 	
-	WRITE_HANDLER( timeplt_videoram_w );
-	WRITE_HANDLER( timeplt_colorram_w );
-	WRITE_HANDLER( timeplt_flipscreen_w );
 	int  timeplt_vh_start(void);
 	void timeplt_vh_stop(void);
 	void timeplt_vh_convert_color_prom(unsigned char *obsolete,unsigned short *colortable,const unsigned char *color_prom);

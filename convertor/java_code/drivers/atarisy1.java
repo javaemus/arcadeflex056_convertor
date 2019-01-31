@@ -423,7 +423,7 @@ public class atarisy1
 	} };
 	
 	
-	WRITE_HANDLER( m6522_w )
+	public static WriteHandlerPtr m6522_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		int old;
 	
@@ -459,7 +459,7 @@ public class atarisy1
 				m6522_regs[offset & 15] = data;
 				break;
 		}
-	}
+	} };
 	
 	
 	

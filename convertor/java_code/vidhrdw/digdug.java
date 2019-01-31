@@ -108,7 +108,7 @@ public class digdug
 	}
 	
 	
-	WRITE_HANDLER( digdug_vh_latch_w )
+	public static WriteHandlerPtr digdug_vh_latch_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		switch (offset)
 		{
@@ -136,7 +136,7 @@ public class digdug
 				playcolor = (playcolor & ~2) | ((data << 1) & 2);
 				break;
 		}
-	}
+	} };
 	
 	
 	void digdug_draw_sprite(struct mame_bitmap *dest,unsigned int code,unsigned int color,
@@ -148,14 +148,14 @@ public class digdug
 	
 	
 	
-	WRITE_HANDLER( digdug_flipscreen_w )
+	public static WriteHandlerPtr digdug_flipscreen_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		if (flipscreen != (data & 1))
 		{
 			flipscreen = data & 1;
 			memset(dirtybuffer,1,videoram_size);
 		}
-	}
+	} };
 	
 	/***************************************************************************
 	

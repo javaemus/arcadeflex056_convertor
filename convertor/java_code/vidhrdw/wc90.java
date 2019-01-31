@@ -94,32 +94,32 @@ public class wc90
 	
 	***************************************************************************/
 	
-	WRITE_HANDLER( wc90_bgvideoram_w )
+	public static WriteHandlerPtr wc90_bgvideoram_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		if (wc90_bgvideoram[offset] != data)
 		{
 			wc90_bgvideoram[offset] = data;
 			tilemap_mark_tile_dirty(bg_tilemap,offset & 0x7ff);
 		}
-	}
+	} };
 	
-	WRITE_HANDLER( wc90_fgvideoram_w )
+	public static WriteHandlerPtr wc90_fgvideoram_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		if (wc90_fgvideoram[offset] != data)
 		{
 			wc90_fgvideoram[offset] = data;
 			tilemap_mark_tile_dirty(fg_tilemap,offset & 0x7ff);
 		}
-	}
+	} };
 	
-	WRITE_HANDLER( wc90_txvideoram_w )
+	public static WriteHandlerPtr wc90_txvideoram_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		if (wc90_txvideoram[offset] != data)
 		{
 			wc90_txvideoram[offset] = data;
 			tilemap_mark_tile_dirty(tx_tilemap,offset & 0x7ff);
 		}
-	}
+	} };
 	
 	
 	

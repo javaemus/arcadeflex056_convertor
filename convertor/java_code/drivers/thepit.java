@@ -66,13 +66,10 @@ public class thepit
 	
 	extern unsigned char *thepit_attributesram;
 	extern unsigned char *intrepid_sprite_bank_select;
-	WRITE_HANDLER( thepit_attributes_w );
 	
 	void thepit_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom);
 	void suprmous_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom);
 	void thepit_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
-	WRITE_HANDLER( thepit_sound_enable_w );
-	WRITE_HANDLER( intrepid_graphics_bank_select_w );
 	
 	public static WriteHandlerPtr flip_screen_x_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{

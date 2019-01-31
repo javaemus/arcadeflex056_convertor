@@ -103,23 +103,23 @@ public class vastar
 	
 	***************************************************************************/
 	
-	WRITE_HANDLER( vastar_fgvideoram_w )
+	public static WriteHandlerPtr vastar_fgvideoram_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		vastar_fgvideoram[offset] = data;
 		tilemap_mark_tile_dirty(fg_tilemap,offset & 0x3ff);
-	}
+	} };
 	
-	WRITE_HANDLER( vastar_bg1videoram_w )
+	public static WriteHandlerPtr vastar_bg1videoram_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		vastar_bg1videoram[offset] = data;
 		tilemap_mark_tile_dirty(bg1_tilemap,offset & 0x3ff);
-	}
+	} };
 	
-	WRITE_HANDLER( vastar_bg2videoram_w )
+	public static WriteHandlerPtr vastar_bg2videoram_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		vastar_bg2videoram[offset] = data;
 		tilemap_mark_tile_dirty(bg2_tilemap,offset & 0x3ff);
-	}
+	} };
 	
 	
 	public static ReadHandlerPtr vastar_bg1videoram_r  = new ReadHandlerPtr() { public int handler(int offset)

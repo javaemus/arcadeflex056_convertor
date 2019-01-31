@@ -97,9 +97,6 @@ public class leland
 	
 	
 	/* Sound routines */
-	WRITE_HANDLER( leland_i86_control_w );
-	WRITE_HANDLER( leland_i86_command_lo_w );
-	WRITE_HANDLER( leland_i86_command_hi_w );
 	
 	int  leland_sh_start(const struct MachineSound *msound);
 	void leland_sh_stop(void);
@@ -117,12 +114,7 @@ public class leland
 	extern const struct IO_WritePort leland_i86_writeport[];
 	
 	/* Video routines */
-	WRITE_HANDLER( leland_mvram_port_w );
-	WRITE_HANDLER( leland_svram_port_w );
-	WRITE_HANDLER( leland_master_video_addr_w );
-	WRITE_HANDLER( leland_slave_video_addr_w );
 	
-	WRITE_HANDLER( leland_gfx_port_w );
 	
 	void leland_vh_eof(void);
 	int leland_vh_start(void);

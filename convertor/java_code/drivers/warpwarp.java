@@ -60,9 +60,6 @@ public class warpwarp
 	void warpwarp_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	
 	/* from sndhrdw/warpwarp.c */
-	WRITE_HANDLER( warpwarp_sound_w );
-	WRITE_HANDLER( warpwarp_music1_w );
-	WRITE_HANDLER( warpwarp_music2_w );
 	extern int warpwarp_sh_start(const struct MachineSound *msound);
 	extern void warpwarp_sh_stop(void);
 	extern void warpwarp_sh_update(void);

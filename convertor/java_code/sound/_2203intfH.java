@@ -19,17 +19,7 @@ public class _2203intfH
 	
 	
 	
-	WRITE_HANDLER( YM2203_control_port_0_w );
-	WRITE_HANDLER( YM2203_control_port_1_w );
-	WRITE_HANDLER( YM2203_control_port_2_w );
-	WRITE_HANDLER( YM2203_control_port_3_w );
-	WRITE_HANDLER( YM2203_control_port_4_w );
 	
-	WRITE_HANDLER( YM2203_write_port_0_w );
-	WRITE_HANDLER( YM2203_write_port_1_w );
-	WRITE_HANDLER( YM2203_write_port_2_w );
-	WRITE_HANDLER( YM2203_write_port_3_w );
-	WRITE_HANDLER( YM2203_write_port_4_w );
 	
 	int YM2203_sh_start(const struct MachineSound *msound);
 	void YM2203_sh_stop(void);

@@ -22,16 +22,7 @@ public class flstory
 	void flstory_vh_stop(void);
 	void flstory_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	
-	WRITE_HANDLER( flstory_palette_w );
-	WRITE_HANDLER( flstory_gfxctrl_w );
 	
-	WRITE_HANDLER( flstory_68705_portA_w );
-	WRITE_HANDLER( flstory_68705_portB_w );
-	WRITE_HANDLER( flstory_68705_portC_w );
-	WRITE_HANDLER( flstory_68705_ddrA_w );
-	WRITE_HANDLER( flstory_68705_ddrB_w );
-	WRITE_HANDLER( flstory_68705_ddrC_w );
-	WRITE_HANDLER( flstory_mcu_w );
 	
 	
 	int d400 = 0;

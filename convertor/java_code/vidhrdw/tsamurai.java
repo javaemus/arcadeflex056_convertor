@@ -82,40 +82,40 @@ public class tsamurai
 	
 	***************************************************************************/
 	
-	WRITE_HANDLER( tsamurai_scrolly_w )
+	public static WriteHandlerPtr tsamurai_scrolly_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		tilemap_set_scrolly( background, 0, data );
-	}
+	} };
 	
-	WRITE_HANDLER( tsamurai_scrollx_w )
+	public static WriteHandlerPtr tsamurai_scrollx_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		tilemap_set_scrollx( background, 0, data );
-	}
+	} };
 	
-	WRITE_HANDLER( tsamurai_bgcolor_w )
+	public static WriteHandlerPtr tsamurai_bgcolor_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		bgcolor = data;
-	}
+	} };
 	
-	WRITE_HANDLER( tsamurai_textbank1_w )
+	public static WriteHandlerPtr tsamurai_textbank1_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		if( textbank1!=data )
 		{
 			textbank1 = data;
 			tilemap_mark_all_tiles_dirty( foreground );
 		}
-	}
+	} };
 	
-	WRITE_HANDLER( tsamurai_textbank2_w )
+	public static WriteHandlerPtr tsamurai_textbank2_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		if( textbank2!=data )
 		{
 			textbank2 = data;
 			tilemap_mark_all_tiles_dirty( foreground );
 		}
-	}
+	} };
 	
-	WRITE_HANDLER( tsamurai_bg_videoram_w )
+	public static WriteHandlerPtr tsamurai_bg_videoram_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		if( tsamurai_videoram[offset]!=data )
 		{
@@ -123,16 +123,16 @@ public class tsamurai
 			offset = offset/2;
 			tilemap_mark_tile_dirty(background,offset);
 		}
-	}
-	WRITE_HANDLER( tsamurai_fg_videoram_w )
+	} };
+	public static WriteHandlerPtr tsamurai_fg_videoram_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		if( videoram[offset]!=data )
 		{
 			videoram[offset]=data;
 			tilemap_mark_tile_dirty(foreground,offset);
 		}
-	}
-	WRITE_HANDLER( tsamurai_fg_colorram_w )
+	} };
+	public static WriteHandlerPtr tsamurai_fg_colorram_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		if( colorram[offset]!=data )
 		{
@@ -145,7 +145,7 @@ public class tsamurai
 					tilemap_mark_tile_dirty(foreground,32*row+col);
 			}
 		}
-	}
+	} };
 	
 	
 	/***************************************************************************
@@ -231,14 +231,14 @@ public class tsamurai
 	
 	int vsgongf_color;
 	
-	WRITE_HANDLER( vsgongf_color_w )
+	public static WriteHandlerPtr vsgongf_color_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		if( vsgongf_color != data )
 		{
 			vsgongf_color = data;
 			tilemap_mark_all_tiles_dirty( foreground );
 		}
-	}
+	} };
 	
 	static void get_vsgongf_tile_info(int tile_index)
 	{

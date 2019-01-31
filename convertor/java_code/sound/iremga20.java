@@ -148,7 +148,7 @@ public class iremga20
 	{
 	}
 	
-	WRITE_HANDLER( IremGA20_w )
+	public static WriteHandlerPtr IremGA20_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
 		int channel = offset / 0x10;
 	
@@ -182,7 +182,7 @@ public class iremga20
 				IremGA20_channel[channel].volume=0x7f;//data<<4; ?
 				break;
 		}
-	}
+	} };
 	
 	public static ReadHandlerPtr IremGA20_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{
