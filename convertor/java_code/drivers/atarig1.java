@@ -722,9 +722,9 @@ public class atarig1
 	 *
 	 *************************************/
 	
-	GAME( 1990, hydra,    0,        atarig1, hydra,    hydra,    ROT0, "Atari Games", "Hydra" )
-	GAME( 1990, hydrap,   hydra,    atarig1, hydra,    hydrap,   ROT0, "Atari Games", "Hydra (prototype)" )
-	GAME( 1990, pitfight, 0,        atarig1, pitfight, pitfight, ROT0, "Atari Games", "Pit Fighter (version 4)" )
-	GAME( 1990, pitfigh3, pitfight, atarig1, pitfight, pitfight, ROT0, "Atari Games", "Pit Fighter (version 3)" )
-	GAME( 1990, pitfighb, pitfight, atarig1, pitfight, pitfighb, ROT0, "Atari Games", "Pit Fighter (bootleg)" )
+	public static GameDriver driver_hydra	   = new GameDriver("1990"	,"hydra"	,"atarig1.java"	,rom_hydra,null	,machine_driver_atarig1	,input_ports_hydra	,init_hydra	,ROT0	,	Atari Games", "Hydra" )
+	public static GameDriver driver_hydrap	   = new GameDriver("1990"	,"hydrap"	,"atarig1.java"	,rom_hydrap,driver_hydra	,machine_driver_atarig1	,input_ports_hydra	,init_hydrap	,ROT0	,	Atari Games", "Hydra (prototype)" )
+	public static GameDriver driver_pitfight	   = new GameDriver("1990"	,"pitfight"	,"atarig1.java"	,rom_pitfight,null	,machine_driver_atarig1	,input_ports_pitfight	,init_pitfight	,ROT0	,	Atari Games", "Pit Fighter (version 4)" )
+	public static GameDriver driver_pitfigh3	   = new GameDriver("1990"	,"pitfigh3"	,"atarig1.java"	,rom_pitfigh3,driver_pitfight	,machine_driver_atarig1	,input_ports_pitfight	,init_pitfight	,ROT0	,	Atari Games", "Pit Fighter (version 3)" )
+	public static GameDriver driver_pitfighb	   = new GameDriver("1990"	,"pitfighb"	,"atarig1.java"	,rom_pitfighb,driver_pitfight	,machine_driver_atarig1	,input_ports_pitfight	,init_pitfighb	,ROT0	,	Atari Games", "Pit Fighter (bootleg)" )
 }

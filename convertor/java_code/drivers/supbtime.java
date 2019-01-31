@@ -561,7 +561,7 @@ public class supbtime
 	
 	/******************************************************************************/
 	
-	GAME( 1990, supbtime, 0,        supbtime, supbtime, 0, ROT0, "Data East Corporation", "Super Burger Time (World)" )
-	GAME( 1990, supbtimj, supbtime, supbtime, supbtime, 0, ROT0, "Data East Corporation", "Super Burger Time (Japan)" )
-	GAME( 1991, chinatwn, 0,        chinatwn, chinatwn, 0, ROT0, "Data East Corporation", "China Town (Japan)" )
+	public static GameDriver driver_supbtime	   = new GameDriver("1990"	,"supbtime"	,"supbtime.java"	,rom_supbtime,null	,machine_driver_supbtime	,input_ports_supbtime	,null	,ROT0	,	Data East Corporation", "Super Burger Time (World)" )
+	public static GameDriver driver_supbtimj	   = new GameDriver("1990"	,"supbtimj"	,"supbtime.java"	,rom_supbtimj,driver_supbtime	,machine_driver_supbtime	,input_ports_supbtime	,null	,ROT0	,	Data East Corporation", "Super Burger Time (Japan)" )
+	public static GameDriver driver_chinatwn	   = new GameDriver("1991"	,"chinatwn"	,"supbtime.java"	,rom_chinatwn,null	,machine_driver_chinatwn	,input_ports_chinatwn	,null	,ROT0	,	Data East Corporation", "China Town (Japan)" )
 }

@@ -610,9 +610,9 @@ public class gundealr
 	
 	
 	
-	GAME( 1990, gundealr, 0,        gundealr, gundealr, gundealr, ROT270, "Dooyong", "Gun Dealer (set 1)" )
-	GAME( 19??, gundeala, gundealr, gundealr, gundealr, gundealr, ROT270, "Dooyong", "Gun Dealer (set 2)" )
-	GAME( 1990, gundealt, gundealr, gundealr, gundealt, gundealr, ROT270, "Tecmo", "Gun Dealer (Tecmo)" )
-	GAME( 1990, yamyam,   0,        gundealr, yamyam,   yamyam,   ROT0,   "Dooyong", "Yam! Yam!?" )
-	GAME( 1990, wiseguy,  yamyam,   gundealr, yamyam,   yamyam,   ROT0,   "Dooyong", "Wise Guy" )
+	public static GameDriver driver_gundealr	   = new GameDriver("1990"	,"gundealr"	,"gundealr.java"	,rom_gundealr,null	,machine_driver_gundealr	,input_ports_gundealr	,init_gundealr	,ROT270	,	Dooyong", "Gun Dealer (set 1)" )
+	public static GameDriver driver_gundeala	   = new GameDriver("19??"	,"gundeala"	,"gundealr.java"	,rom_gundeala,driver_gundealr	,machine_driver_gundealr	,input_ports_gundealr	,init_gundealr	,ROT270	,	Dooyong", "Gun Dealer (set 2)" )
+	public static GameDriver driver_gundealt	   = new GameDriver("1990"	,"gundealt"	,"gundealr.java"	,rom_gundealt,driver_gundealr	,machine_driver_gundealr	,input_ports_gundealt	,init_gundealr	,ROT270	,	Tecmo", "Gun Dealer (Tecmo)" )
+	public static GameDriver driver_yamyam	   = new GameDriver("1990"	,"yamyam"	,"gundealr.java"	,rom_yamyam,null	,machine_driver_gundealr	,input_ports_yamyam	,init_yamyam	,ROT0	,	Dooyong", "Yam! Yam!?" )
+	public static GameDriver driver_wiseguy	   = new GameDriver("1990"	,"wiseguy"	,"gundealr.java"	,rom_wiseguy,driver_yamyam	,machine_driver_gundealr	,input_ports_yamyam	,init_yamyam	,ROT0	,	Dooyong", "Wise Guy" )
 }

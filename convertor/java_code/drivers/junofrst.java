@@ -489,6 +489,6 @@ public class junofrst
 	}
 	
 	
-	GAME( 1983, junofrst, 0,        junofrst, junofrst, junofrst, ROT90, "Konami", "Juno First" )
-	GAME( 1983, junofstg, junofrst, junofrst, junofrst, junofrst, ROT90, "Konami (Gottlieb license)", "Juno First (Gottlieb)" )
+	public static GameDriver driver_junofrst	   = new GameDriver("1983"	,"junofrst"	,"junofrst.java"	,rom_junofrst,null	,machine_driver_junofrst	,input_ports_junofrst	,init_junofrst	,ROT90	,	Konami", "Juno First" )
+	public static GameDriver driver_junofstg	   = new GameDriver("1983"	,"junofstg"	,"junofrst.java"	,rom_junofstg,driver_junofrst	,machine_driver_junofrst	,input_ports_junofrst	,init_junofrst	,ROT90	,	Konami (Gottlieb license)", "Juno First (Gottlieb)" )
 }

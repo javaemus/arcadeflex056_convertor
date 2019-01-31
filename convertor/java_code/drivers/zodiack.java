@@ -657,9 +657,9 @@ public class zodiack
 	
 	
 	
-	GAMEX(1983, zodiack,  0, zodiack, zodiack,  0, ROT270, "Orca (Esco Trading Co, Inc)", "Zodiack", GAME_IMPERFECT_COLORS )	/* bullet color needs to be verified */
-	GAMEX(1983, dogfight, 0, zodiack, dogfight, 0, ROT270, "[Orca] Thunderbolt", "Dog Fight", GAME_IMPERFECT_COLORS )	/* bullet color needs to be verified */
-	GAMEX(1982, moguchan, 0, zodiack, moguchan, 0, ROT270, "Orca (Eastern Commerce Inc. license) (bootleg?)",  /* this is in the ROM at $0b5c */ "Moguchan", GAME_WRONG_COLORS )
-	GAME( 1981, percuss,  0, percuss, percuss,  0, ROT270, "Orca", "The Percussor" )
-	GAME( 1982, bounty,   0, percuss, bounty,   0, ROT180, "Orca", "The Bounty" )
+	public static GameDriver driver_zodiack	   = new GameDriver("1983"	,"zodiack"	,"zodiack.java"	,rom_zodiack,null	,machine_driver_zodiack	,input_ports_zodiack	,null	,ROT270	,	Orca (Esco Trading Co, Inc)", "Zodiack", GAME_IMPERFECT_COLORS )	/* bullet color needs to be verified */
+	public static GameDriver driver_dogfight	   = new GameDriver("1983"	,"dogfight"	,"zodiack.java"	,rom_dogfight,null	,machine_driver_zodiack	,input_ports_dogfight	,null	,ROT270	,	[Orca] Thunderbolt", "Dog Fight", GAME_IMPERFECT_COLORS )	/* bullet color needs to be verified */
+	public static GameDriver driver_moguchan	   = new GameDriver("1982"	,"moguchan"	,"zodiack.java"	,rom_moguchan,null	,machine_driver_zodiack	,input_ports_moguchan	,null	,ROT270	,	Orca (Eastern Commerce Inc. license) (bootleg?)",  /* this is in the ROM at $0b5c */ "Moguchan", GAME_WRONG_COLORS )
+	public static GameDriver driver_percuss	   = new GameDriver("1981"	,"percuss"	,"zodiack.java"	,rom_percuss,null	,machine_driver_percuss	,input_ports_percuss	,null	,ROT270	,	Orca", "The Percussor" )
+	public static GameDriver driver_bounty	   = new GameDriver("1982"	,"bounty"	,"zodiack.java"	,rom_bounty,null	,machine_driver_percuss	,input_ports_bounty	,null	,ROT180	,	Orca", "The Bounty" )
 }

@@ -353,6 +353,6 @@ public class tagteam
 	
 	
 	
-	GAME( 1983, bigprowr, 0,        tagteam, tagteam, 0, ROT270, "Technos", "The Big Pro Wrestling!" )
-	GAME( 1983, tagteam,  bigprowr, tagteam, tagteam, 0, ROT270, "Technos (Data East license)", "Tag Team Wrestling" )
+	public static GameDriver driver_bigprowr	   = new GameDriver("1983"	,"bigprowr"	,"tagteam.java"	,rom_bigprowr,null	,machine_driver_tagteam	,input_ports_tagteam	,null	,ROT270	,	Technos", "The Big Pro Wrestling!" )
+	public static GameDriver driver_tagteam	   = new GameDriver("1983"	,"tagteam"	,"tagteam.java"	,rom_tagteam,driver_bigprowr	,machine_driver_tagteam	,input_ports_tagteam	,null	,ROT270	,	Technos (Data East license)", "Tag Team Wrestling" )
 }

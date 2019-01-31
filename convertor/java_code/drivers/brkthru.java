@@ -712,7 +712,7 @@ public class brkthru
 	
 	
 	
-	GAME( 1986, brkthru,  0,       brkthru, brkthru,  0, ROT0,   "Data East USA", "Break Thru (US)" )
-	GAME( 1986, brkthruj, brkthru, brkthru, brkthruj, 0, ROT0,   "Data East Corporation", "Kyohkoh-Toppa (Japan)" )
-	GAME( 1986, darwin,   0,       darwin,  darwin,   0, ROT270, "Data East Corporation", "Darwin 4078 (Japan)" )
+	public static GameDriver driver_brkthru	   = new GameDriver("1986"	,"brkthru"	,"brkthru.java"	,rom_brkthru,null	,machine_driver_brkthru	,input_ports_brkthru	,null	,ROT0	,	Data East USA", "Break Thru (US)" )
+	public static GameDriver driver_brkthruj	   = new GameDriver("1986"	,"brkthruj"	,"brkthru.java"	,rom_brkthruj,driver_brkthru	,machine_driver_brkthru	,input_ports_brkthruj	,null	,ROT0	,	Data East Corporation", "Kyohkoh-Toppa (Japan)" )
+	public static GameDriver driver_darwin	   = new GameDriver("1986"	,"darwin"	,"brkthru.java"	,rom_darwin,null	,machine_driver_darwin	,input_ports_darwin	,null	,ROT270	,	Data East Corporation", "Darwin 4078 (Japan)" )
 }

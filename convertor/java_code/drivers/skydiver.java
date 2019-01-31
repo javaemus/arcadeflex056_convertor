@@ -389,5 +389,5 @@ public class skydiver
 	
 	
 	
-	GAMEX( 1978, skydiver, 0, skydiver, skydiver, 0, ROT0, "Atari", "Sky Diver", GAME_NO_SOUND )
+	public static GameDriver driver_skydiver	   = new GameDriver("1978"	,"skydiver"	,"skydiver.java"	,rom_skydiver,null	,machine_driver_skydiver	,input_ports_skydiver	,null	,ROT0	,	Atari", "Sky Diver", GAME_NO_SOUND )
 }

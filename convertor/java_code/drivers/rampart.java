@@ -538,7 +538,7 @@ public class rampart
 	 *
 	 *************************************/
 	
-	GAME( 1990, rampart,  0,       rampart, rampart,  rampart, ROT0, "Atari Games", "Rampart (3-player Trackball)" )
-	GAME( 1990, ramprt2p, rampart, rampart, ramprt2p, rampart, ROT0, "Atari Games", "Rampart (2-player Joystick)" )
-	GAME( 1990, rampartj, rampart, rampart, ramprt2p, rampart, ROT0, "Atari Games", "Rampart (Japan, 2-player Joystick)" )
+	public static GameDriver driver_rampart	   = new GameDriver("1990"	,"rampart"	,"rampart.java"	,rom_rampart,null	,machine_driver_rampart	,input_ports_rampart	,init_rampart	,ROT0	,	Atari Games", "Rampart (3-player Trackball)" )
+	public static GameDriver driver_ramprt2p	   = new GameDriver("1990"	,"ramprt2p"	,"rampart.java"	,rom_ramprt2p,driver_rampart	,machine_driver_rampart	,input_ports_ramprt2p	,init_rampart	,ROT0	,	Atari Games", "Rampart (2-player Joystick)" )
+	public static GameDriver driver_rampartj	   = new GameDriver("1990"	,"rampartj"	,"rampart.java"	,rom_rampartj,driver_rampart	,machine_driver_rampart	,input_ports_ramprt2p	,init_rampart	,ROT0	,	Atari Games", "Rampart (Japan, 2-player Joystick)" )
 }

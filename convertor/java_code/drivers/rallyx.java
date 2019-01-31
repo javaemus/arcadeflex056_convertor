@@ -431,8 +431,8 @@ public class rallyx
 	
 	
 	
-	GAME( 1980, rallyx,  0, 	 rallyx, rallyx,  0, ROT0, "Namco", "Rally X" )
-	GAME( 1980, rallyxm, rallyx, rallyx, rallyx,  0, ROT0, "[Namco] (Midway license)", "Rally X (Midway)" )
-	GAME( 1981, nrallyx, 0, 	 rallyx, nrallyx, 0, ROT0, "Namco", "New Rally X" )
+	public static GameDriver driver_rallyx	   = new GameDriver("1980"	,"rallyx"	,"rallyx.java"	,rom_rallyx,null	,machine_driver_rallyx	,input_ports_rallyx	,null	,ROT0	,	Namco", "Rally X" )
+	public static GameDriver driver_rallyxm	   = new GameDriver("1980"	,"rallyxm"	,"rallyx.java"	,rom_rallyxm,driver_rallyx	,machine_driver_rallyx	,input_ports_rallyx	,null	,ROT0	,	[Namco] (Midway license)", "Rally X (Midway)" )
+	public static GameDriver driver_nrallyx	   = new GameDriver("1981"	,"nrallyx"	,"rallyx.java"	,rom_nrallyx,null	,machine_driver_rallyx	,input_ports_nrallyx	,null	,ROT0	,	Namco", "New Rally X" )
 	
 }

@@ -784,9 +784,9 @@ public class gberet
 	
 	
 	
-	GAME( 1985, gberet,   0,      gberet,   gberet,   0, ROT0, "Konami", "Green Beret" )
-	GAME( 1985, rushatck, gberet, gberet,   gberet,   0, ROT0, "Konami", "Rush'n Attack" )
-	GAME( 1985, gberetb,  gberet, gberetb,  gberetb,  0, ROT0, "bootleg", "Green Beret (bootleg)" )
-	GAME( 1986, mrgoemon, 0,      mrgoemon, mrgoemon, 0, ROT0, "Konami", "Mr. Goemon (Japan)" )
+	public static GameDriver driver_gberet	   = new GameDriver("1985"	,"gberet"	,"gberet.java"	,rom_gberet,null	,machine_driver_gberet	,input_ports_gberet	,null	,ROT0	,	Konami", "Green Beret" )
+	public static GameDriver driver_rushatck	   = new GameDriver("1985"	,"rushatck"	,"gberet.java"	,rom_rushatck,driver_gberet	,machine_driver_gberet	,input_ports_gberet	,null	,ROT0	,	Konami", "Rush'n Attack" )
+	public static GameDriver driver_gberetb	   = new GameDriver("1985"	,"gberetb"	,"gberet.java"	,rom_gberetb,driver_gberet	,machine_driver_gberetb	,input_ports_gberetb	,null	,ROT0	,	bootleg", "Green Beret (bootleg)" )
+	public static GameDriver driver_mrgoemon	   = new GameDriver("1986"	,"mrgoemon"	,"gberet.java"	,rom_mrgoemon,null	,machine_driver_mrgoemon	,input_ports_mrgoemon	,null	,ROT0	,	Konami", "Mr. Goemon (Japan)" )
 	
 }

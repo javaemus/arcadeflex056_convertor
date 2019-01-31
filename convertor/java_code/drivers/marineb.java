@@ -873,13 +873,13 @@ public class marineb
 	
 	
 	/*    year  name      parent   machine   inputs */
-	GAME( 1982, marineb,  0,       marineb,  marineb, 0, ROT0,   "Orca", "Marine Boy" )
-	GAME( 1982, changes,  0,       changes,  changes, 0, ROT0,   "Orca", "Changes" )
-	GAME( 1982, looper,   changes, changes,  changes, 0, ROT0,   "Orca", "Looper" )
-	GAME( 1982, springer, 0,       springer, marineb, 0, ROT270, "Orca", "Springer" )
-	GAME( 1983, hoccer,   0,       hoccer,   hoccer,  0, ROT90,  "Eastern Micro Electronics, Inc.", "Hoccer (set 1)" )
-	GAME( 1983, hoccer2,  hoccer,  hoccer,   hoccer,  0, ROT90,  "Eastern Micro Electronics, Inc.", "Hoccer (set 2)" )	/* earlier */
-	GAME( 1983, bcruzm12, 0,       bcruzm12, bcruzm12,0, ROT90,  "Sigma Enterprises Inc.", "Battle Cruiser M12" )
-	GAME( 1983, hopprobo, 0,       hopprobo, marineb, 0, ROT90,  "Sega", "Hopper Robo" )
-	GAME( 1984, wanted,   0,       wanted,   wanted,  0, ROT90,  "Sigma Enterprises Inc.", "Wanted" )
+	public static GameDriver driver_marineb	   = new GameDriver("1982"	,"marineb"	,"marineb.java"	,rom_marineb,null	,machine_driver_marineb	,input_ports_marineb	,null	,ROT0	,	Orca", "Marine Boy" )
+	public static GameDriver driver_changes	   = new GameDriver("1982"	,"changes"	,"marineb.java"	,rom_changes,null	,machine_driver_changes	,input_ports_changes	,null	,ROT0	,	Orca", "Changes" )
+	public static GameDriver driver_looper	   = new GameDriver("1982"	,"looper"	,"marineb.java"	,rom_looper,driver_changes	,machine_driver_changes	,input_ports_changes	,null	,ROT0	,	Orca", "Looper" )
+	public static GameDriver driver_springer	   = new GameDriver("1982"	,"springer"	,"marineb.java"	,rom_springer,null	,machine_driver_springer	,input_ports_marineb	,null	,ROT270	,	Orca", "Springer" )
+	public static GameDriver driver_hoccer	   = new GameDriver("1983"	,"hoccer"	,"marineb.java"	,rom_hoccer,null	,machine_driver_hoccer	,input_ports_hoccer	,null	,ROT90	,	Eastern Micro Electronics, Inc.", "Hoccer (set 1)" )
+	public static GameDriver driver_hoccer2	   = new GameDriver("1983"	,"hoccer2"	,"marineb.java"	,rom_hoccer2,driver_hoccer	,machine_driver_hoccer	,input_ports_hoccer	,null	,ROT90	,	Eastern Micro Electronics, Inc.", "Hoccer (set 2)" )	/* earlier */
+	public static GameDriver driver_bcruzm12	   = new GameDriver("1983"	,"bcruzm12"	,"marineb.java"	,rom_bcruzm12,null	,machine_driver_bcruzm12	,input_ports_bcruzm12	,null	,ROT90	,	Sigma Enterprises Inc.", "Battle Cruiser M12" )
+	public static GameDriver driver_hopprobo	   = new GameDriver("1983"	,"hopprobo"	,"marineb.java"	,rom_hopprobo,null	,machine_driver_hopprobo	,input_ports_marineb	,null	,ROT90	,	Sega", "Hopper Robo" )
+	public static GameDriver driver_wanted	   = new GameDriver("1984"	,"wanted"	,"marineb.java"	,rom_wanted,null	,machine_driver_wanted	,input_ports_wanted	,null	,ROT90	,	Sigma Enterprises Inc.", "Wanted" )
 }

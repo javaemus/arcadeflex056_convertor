@@ -630,6 +630,6 @@ public class meadows
 	
 	
 	
-	GAME( 1978, deadeye,  0, deadeye,  meadows, 0,        ROT0, "Meadows", "Dead Eye" )
-	GAME( 1978, gypsyjug, 0, gypsyjug, meadows, gypsyjug, ROT0, "Meadows", "Gypsy Juggler" )
+	public static GameDriver driver_deadeye	   = new GameDriver("1978"	,"deadeye"	,"meadows.java"	,rom_deadeye,null	,machine_driver_deadeye	,input_ports_meadows	,null	,ROT0	,	Meadows", "Dead Eye" )
+	public static GameDriver driver_gypsyjug	   = new GameDriver("1978"	,"gypsyjug"	,"meadows.java"	,rom_gypsyjug,null	,machine_driver_gypsyjug	,input_ports_meadows	,init_gypsyjug	,ROT0	,	Meadows", "Gypsy Juggler" )
 }

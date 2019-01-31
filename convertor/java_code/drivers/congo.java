@@ -558,7 +558,7 @@ public class congo
 	
 	
 	
-	GAME( 1983, congo,	0,	   congo, congo,  0, ROT90, "Sega", "Congo Bongo" )
-	GAME( 1983, tiptop, congo, congo, tiptop, 0, ROT90, "Sega", "Tip Top" )
+	public static GameDriver driver_congo	   = new GameDriver("1983"	,"congo"	,"congo.java"	,rom_congo,null	,machine_driver_congo	,input_ports_congo	,null	,ROT90	,	Sega", "Congo Bongo" )
+	public static GameDriver driver_tiptop	   = new GameDriver("1983"	,"tiptop"	,"congo.java"	,rom_tiptop,driver_congo	,machine_driver_congo	,input_ports_tiptop	,null	,ROT90	,	Sega", "Tip Top" )
 	
 }

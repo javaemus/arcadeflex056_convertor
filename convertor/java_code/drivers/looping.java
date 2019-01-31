@@ -530,7 +530,7 @@ public class looping
 	}
 	
 	/*          rom       parent    machine   inp       init */
-	GAME( 1982, looping,  0,        looping, looping, looping, ROT90, "Venture Line", "Looping (set 1)" )
-	GAME( 1982, loopinga, looping,  looping, looping, looping, ROT90, "Venture Line", "Looping (set 2)" )
-	GAME( 1982, skybump,  0,        looping, looping, looping, ROT90, "Venture Line", "Sky Bumper" )
+	public static GameDriver driver_looping	   = new GameDriver("1982"	,"looping"	,"looping.java"	,rom_looping,null	,machine_driver_looping	,input_ports_looping	,init_looping	,ROT90	,	Venture Line", "Looping (set 1)" )
+	public static GameDriver driver_loopinga	   = new GameDriver("1982"	,"loopinga"	,"looping.java"	,rom_loopinga,driver_looping	,machine_driver_looping	,input_ports_looping	,init_looping	,ROT90	,	Venture Line", "Looping (set 2)" )
+	public static GameDriver driver_skybump	   = new GameDriver("1982"	,"skybump"	,"looping.java"	,rom_skybump,null	,machine_driver_looping	,input_ports_looping	,init_looping	,ROT90	,	Venture Line", "Sky Bumper" )
 }

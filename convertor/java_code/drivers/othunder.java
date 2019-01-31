@@ -690,7 +690,7 @@ public class othunder
 	}
 	
 	
-	GAME( 1988, othunder, 0,        othunder, othunder, othunder, ORIENTATION_FLIP_X, "Taito Corporation Japan", "Operation Thunderbolt (World)" )
-	GAME( 1988, othundu,  othunder, othunder, othundu,  othunder, ORIENTATION_FLIP_X, "Taito America Corporation", "Operation Thunderbolt (US)" )
+	public static GameDriver driver_othunder	   = new GameDriver("1988"	,"othunder"	,"othunder.java"	,rom_othunder,null	,machine_driver_othunder	,input_ports_othunder	,init_othunder	,ORIENTATION_FLIP_X	,	Taito Corporation Japan", "Operation Thunderbolt (World)" )
+	public static GameDriver driver_othundu	   = new GameDriver("1988"	,"othundu"	,"othunder.java"	,rom_othundu,driver_othunder	,machine_driver_othunder	,input_ports_othundu	,init_othunder	,ORIENTATION_FLIP_X	,	Taito America Corporation", "Operation Thunderbolt (US)" )
 	
 }

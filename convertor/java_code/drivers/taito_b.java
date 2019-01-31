@@ -3892,30 +3892,30 @@ public class taito_b
 	ROM_END(); }}; 
 	
 	
-	GAMEX( 1989, masterw,  0,       masterw,  masterw,  0, ROT270, "Taito Corporation Japan", "Master of Weapon (World)", GAME_NO_COCKTAIL)
-	GAMEX( 1988, nastar,   0,       rastsag2, nastar,   0, ROT0,   "Taito Corporation Japan", "Nastar (World)", GAME_NO_COCKTAIL )
-	GAMEX( 1988, nastarw,  nastar,  rastsag2, nastarw,  0, ROT0,   "Taito America Corporation", "Nastar Warrior (US)", GAME_NO_COCKTAIL )
-	GAMEX( 1988, rastsag2, nastar,  rastsag2, rastsag2, 0, ROT0,   "Taito Corporation", "Rastan Saga 2 (Japan)", GAME_NO_COCKTAIL )
-	GAMEX( 1989, rambo3,   0,       rambo3,   rambo3,   0, ROT180, "Taito Europe Corporation", "Rambo III (Europe set 1)", GAME_NO_COCKTAIL )
-	GAMEX( 1989, rambo3ae, rambo3,  rambo3a,  rambo3a,  0, ROT180, "Taito Europe Corporation", "Rambo III (Europe set 2)", GAME_NO_COCKTAIL)
-	GAMEX( 1989, rambo3a,  rambo3,  rambo3a,  rambo3a,  0, ROT180, "Taito America Corporation", "Rambo III (US)", GAME_NO_COCKTAIL)
-	GAMEX( 1989, crimec,   0,       crimec,   crimec,   0, ROT0,   "Taito Corporation Japan", "Crime City (World)", GAME_NO_COCKTAIL )
-	GAMEX( 1989, crimecu,  crimec,  crimec,   crimecu,  0, ROT0,   "Taito America Corporation", "Crime City (US)", GAME_NO_COCKTAIL )
-	GAMEX( 1989, crimecj,  crimec,  crimec,   crimecj,  0, ROT0,   "Taito Corporation", "Crime City (Japan)", GAME_NO_COCKTAIL )
-	GAMEX( 1989, tetrist,  tetris,  tetrist,  tetrist,  0, ROT0,   "Sega", "Tetris (Japan, B-System)", GAME_NO_COCKTAIL )
-	GAMEX( 1989, viofight, 0,       viofight, viofight, 0, ROT180, "Taito Corporation Japan", "Violence Fight (World)", GAME_NO_COCKTAIL )
-	GAMEX( 1990, ashura,   0,       ashura,   ashura,   0, ROT270, "Taito Corporation", "Ashura Blaster (Japan)", GAME_NO_COCKTAIL )
-	GAMEX( 1990, ashurau,  ashura,  ashura,   ashurau,  0, ROT270, "Taito America Corporation", "Ashura Blaster (US)", GAME_NO_COCKTAIL )
-	GAMEX( 1990, hitice,   0,       hitice,   hitice,   0, ROT180, "Williams", "Hit the Ice (US)", GAME_NO_COCKTAIL )
-	GAMEX( 1991, selfeena, 0,       selfeena, selfeena, 0, ROT0,   "East Technology", "Sel Feena", GAME_NO_COCKTAIL )
-	GAMEX( 1992, silentd,  0,       silentd,  silentd,  0, ROT0,   "Taito Corporation Japan", "Silent Dragon (World)", GAME_NO_COCKTAIL )
-	GAMEX( 1992, silentdj, silentd, silentd,  silentdj, 0, ROT0,   "Taito Corporation", "Silent Dragon (Japan)", GAME_NO_COCKTAIL )
-	GAMEX( 1993, ryujin,   0,       ryujin,   ryujin,   0, ROT270, "Taito Corporation", "Ryu Jin (Japan)", GAME_NO_COCKTAIL )
-	GAMEX( 1993, qzshowby, 0,       qzshowby, qzshowby, 0, ROT0,   "Taito Corporation", "Quiz Sekai wa SHOW by shobai (Japan)", GAME_NO_COCKTAIL )
-	GAMEX( 1994, pbobble,  0,       pbobble,  pbobble,  0, ROT0,   "Taito Corporation", "Puzzle Bobble (Japan, B-System)", GAME_NO_COCKTAIL )
-	GAMEX( 1994, spacedx,  0,       spacedx,  pbobble,  0, ROT0,   "Taito Corporation", "Space Invaders DX (US) v2.1", GAME_NO_COCKTAIL )
-	GAMEX( 1994, spacedxj, spacedx, spacedx,  pbobble,  0, ROT0,   "Taito Corporation", "Space Invaders DX (Japan) v2.1", GAME_NO_COCKTAIL )
-	GAMEX( 1994, spacedxo, spacedx, spacedxo, spacedxo, 0, ROT0,   "Taito Corporation", "Space Invaders DX (Japan) v2.0", GAME_NO_COCKTAIL )
+	public static GameDriver driver_masterw	   = new GameDriver("1989"	,"masterw"	,"taito_b.java"	,rom_masterw,null	,machine_driver_masterw	,input_ports_masterw	,null	,ROT270	,	Taito Corporation Japan", "Master of Weapon (World)", GAME_NO_COCKTAIL)
+	public static GameDriver driver_nastar	   = new GameDriver("1988"	,"nastar"	,"taito_b.java"	,rom_nastar,null	,machine_driver_rastsag2	,input_ports_nastar	,null	,ROT0	,	Taito Corporation Japan", "Nastar (World)", GAME_NO_COCKTAIL )
+	public static GameDriver driver_nastarw	   = new GameDriver("1988"	,"nastarw"	,"taito_b.java"	,rom_nastarw,driver_nastar	,machine_driver_rastsag2	,input_ports_nastarw	,null	,ROT0	,	Taito America Corporation", "Nastar Warrior (US)", GAME_NO_COCKTAIL )
+	public static GameDriver driver_rastsag2	   = new GameDriver("1988"	,"rastsag2"	,"taito_b.java"	,rom_rastsag2,driver_nastar	,machine_driver_rastsag2	,input_ports_rastsag2	,null	,ROT0	,	Taito Corporation", "Rastan Saga 2 (Japan)", GAME_NO_COCKTAIL )
+	public static GameDriver driver_rambo3	   = new GameDriver("1989"	,"rambo3"	,"taito_b.java"	,rom_rambo3,null	,machine_driver_rambo3	,input_ports_rambo3	,null	,ROT180	,	Taito Europe Corporation", "Rambo III (Europe set 1)", GAME_NO_COCKTAIL )
+	public static GameDriver driver_rambo3ae	   = new GameDriver("1989"	,"rambo3ae"	,"taito_b.java"	,rom_rambo3ae,driver_rambo3	,machine_driver_rambo3a	,input_ports_rambo3a	,null	,ROT180	,	Taito Europe Corporation", "Rambo III (Europe set 2)", GAME_NO_COCKTAIL)
+	public static GameDriver driver_rambo3a	   = new GameDriver("1989"	,"rambo3a"	,"taito_b.java"	,rom_rambo3a,driver_rambo3	,machine_driver_rambo3a	,input_ports_rambo3a	,null	,ROT180	,	Taito America Corporation", "Rambo III (US)", GAME_NO_COCKTAIL)
+	public static GameDriver driver_crimec	   = new GameDriver("1989"	,"crimec"	,"taito_b.java"	,rom_crimec,null	,machine_driver_crimec	,input_ports_crimec	,null	,ROT0	,	Taito Corporation Japan", "Crime City (World)", GAME_NO_COCKTAIL )
+	public static GameDriver driver_crimecu	   = new GameDriver("1989"	,"crimecu"	,"taito_b.java"	,rom_crimecu,driver_crimec	,machine_driver_crimec	,input_ports_crimecu	,null	,ROT0	,	Taito America Corporation", "Crime City (US)", GAME_NO_COCKTAIL )
+	public static GameDriver driver_crimecj	   = new GameDriver("1989"	,"crimecj"	,"taito_b.java"	,rom_crimecj,driver_crimec	,machine_driver_crimec	,input_ports_crimecj	,null	,ROT0	,	Taito Corporation", "Crime City (Japan)", GAME_NO_COCKTAIL )
+	public static GameDriver driver_tetrist	   = new GameDriver("1989"	,"tetrist"	,"taito_b.java"	,rom_tetrist,driver_tetris	,machine_driver_tetrist	,input_ports_tetrist	,null	,ROT0	,	Sega", "Tetris (Japan, B-System)", GAME_NO_COCKTAIL )
+	public static GameDriver driver_viofight	   = new GameDriver("1989"	,"viofight"	,"taito_b.java"	,rom_viofight,null	,machine_driver_viofight	,input_ports_viofight	,null	,ROT180	,	Taito Corporation Japan", "Violence Fight (World)", GAME_NO_COCKTAIL )
+	public static GameDriver driver_ashura	   = new GameDriver("1990"	,"ashura"	,"taito_b.java"	,rom_ashura,null	,machine_driver_ashura	,input_ports_ashura	,null	,ROT270	,	Taito Corporation", "Ashura Blaster (Japan)", GAME_NO_COCKTAIL )
+	public static GameDriver driver_ashurau	   = new GameDriver("1990"	,"ashurau"	,"taito_b.java"	,rom_ashurau,driver_ashura	,machine_driver_ashura	,input_ports_ashurau	,null	,ROT270	,	Taito America Corporation", "Ashura Blaster (US)", GAME_NO_COCKTAIL )
+	public static GameDriver driver_hitice	   = new GameDriver("1990"	,"hitice"	,"taito_b.java"	,rom_hitice,null	,machine_driver_hitice	,input_ports_hitice	,null	,ROT180	,	Williams", "Hit the Ice (US)", GAME_NO_COCKTAIL )
+	public static GameDriver driver_selfeena	   = new GameDriver("1991"	,"selfeena"	,"taito_b.java"	,rom_selfeena,null	,machine_driver_selfeena	,input_ports_selfeena	,null	,ROT0	,	East Technology", "Sel Feena", GAME_NO_COCKTAIL )
+	public static GameDriver driver_silentd	   = new GameDriver("1992"	,"silentd"	,"taito_b.java"	,rom_silentd,null	,machine_driver_silentd	,input_ports_silentd	,null	,ROT0	,	Taito Corporation Japan", "Silent Dragon (World)", GAME_NO_COCKTAIL )
+	public static GameDriver driver_silentdj	   = new GameDriver("1992"	,"silentdj"	,"taito_b.java"	,rom_silentdj,driver_silentd	,machine_driver_silentd	,input_ports_silentdj	,null	,ROT0	,	Taito Corporation", "Silent Dragon (Japan)", GAME_NO_COCKTAIL )
+	public static GameDriver driver_ryujin	   = new GameDriver("1993"	,"ryujin"	,"taito_b.java"	,rom_ryujin,null	,machine_driver_ryujin	,input_ports_ryujin	,null	,ROT270	,	Taito Corporation", "Ryu Jin (Japan)", GAME_NO_COCKTAIL )
+	public static GameDriver driver_qzshowby	   = new GameDriver("1993"	,"qzshowby"	,"taito_b.java"	,rom_qzshowby,null	,machine_driver_qzshowby	,input_ports_qzshowby	,null	,ROT0	,	Taito Corporation", "Quiz Sekai wa SHOW by shobai (Japan)", GAME_NO_COCKTAIL )
+	public static GameDriver driver_pbobble	   = new GameDriver("1994"	,"pbobble"	,"taito_b.java"	,rom_pbobble,null	,machine_driver_pbobble	,input_ports_pbobble	,null	,ROT0	,	Taito Corporation", "Puzzle Bobble (Japan, B-System)", GAME_NO_COCKTAIL )
+	public static GameDriver driver_spacedx	   = new GameDriver("1994"	,"spacedx"	,"taito_b.java"	,rom_spacedx,null	,machine_driver_spacedx	,input_ports_pbobble	,null	,ROT0	,	Taito Corporation", "Space Invaders DX (US) v2.1", GAME_NO_COCKTAIL )
+	public static GameDriver driver_spacedxj	   = new GameDriver("1994"	,"spacedxj"	,"taito_b.java"	,rom_spacedxj,driver_spacedx	,machine_driver_spacedx	,input_ports_pbobble	,null	,ROT0	,	Taito Corporation", "Space Invaders DX (Japan) v2.1", GAME_NO_COCKTAIL )
+	public static GameDriver driver_spacedxo	   = new GameDriver("1994"	,"spacedxo"	,"taito_b.java"	,rom_spacedxo,driver_spacedx	,machine_driver_spacedxo	,input_ports_spacedxo	,null	,ROT0	,	Taito Corporation", "Space Invaders DX (Japan) v2.0", GAME_NO_COCKTAIL )
 	/*
 		Sonic Blast Man is a ticket dispensing game.
 		(Japanese version however does not dispense them, only US does - try the "sbm_patch" in the machine_driver).
@@ -3923,5 +3923,5 @@ public class taito_b
 		in that it has a punching pad that player needs to punch to hit
 	 	the enemy.
 	*/
-	GAME(  1990, sbm,      0,       sbm,      sbm,      0, ROT0,   "Taito Corporation", "Sonic Blast Man (Japan)" )
+	public static GameDriver driver_sbm	   = new GameDriver("1990"	,"sbm"	,"taito_b.java"	,rom_sbm,null	,machine_driver_sbm	,input_ports_sbm	,null	,ROT0	,	Taito Corporation", "Sonic Blast Man (Japan)" )
 }

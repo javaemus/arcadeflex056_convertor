@@ -510,7 +510,7 @@ public class bionicc
 	
 	
 	
-	GAME( 1987, bionicc,  0,       bionicc, bionicc, 0, ROT0, "Capcom", "Bionic Commando (US set 1)" )
-	GAME( 1987, bionicc2, bionicc, bionicc, bionicc, 0, ROT0, "Capcom", "Bionic Commando (US set 2)" )
-	GAME( 1987, topsecrt, bionicc, bionicc, bionicc, 0, ROT0, "Capcom", "Top Secret (Japan)" )
+	public static GameDriver driver_bionicc	   = new GameDriver("1987"	,"bionicc"	,"bionicc.java"	,rom_bionicc,null	,machine_driver_bionicc	,input_ports_bionicc	,null	,ROT0	,	Capcom", "Bionic Commando (US set 1)" )
+	public static GameDriver driver_bionicc2	   = new GameDriver("1987"	,"bionicc2"	,"bionicc.java"	,rom_bionicc2,driver_bionicc	,machine_driver_bionicc	,input_ports_bionicc	,null	,ROT0	,	Capcom", "Bionic Commando (US set 2)" )
+	public static GameDriver driver_topsecrt	   = new GameDriver("1987"	,"topsecrt"	,"bionicc.java"	,rom_topsecrt,driver_bionicc	,machine_driver_bionicc	,input_ports_bionicc	,null	,ROT0	,	Capcom", "Top Secret (Japan)" )
 }

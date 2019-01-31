@@ -647,11 +647,11 @@ public class geebee
 	ROM_END(); }}; 
 	
 	
-	GAME ( 1978, geebee,   0,        geebee,   geebee,   0, ROT90, "Namco", "Gee Bee" )
-	GAME ( 1978, geebeeg,  geebee,	 geebee,   geebee,   0, ROT90, "[Namco] (Gremlin license)", "Gee Bee (Gremlin)" )
-	GAMEX( 1980, navalone, 0,        navalone, navalone, 0, ROT90, "Namco", "Navalone", GAME_IMPERFECT_SOUND )
-	GAME ( 1980, kaitei,   0,        kaitei,   kaitei,   0, ROT90, "K.K. Tokki", "Kaitei Takara Sagashi" )
-	GAME ( 1980, kaitein,  kaitei,	 kaitei,   kaitein,  0, ROT90, "Namco", "Kaitei Takara Sagashi (Namco)" )
-	GAMEX( 1980, sos,	   0,        sos,      sos,      0, ROT90, "Namco", "SOS", GAME_IMPERFECT_SOUND )
+	public static GameDriver driver_geebee	   = new GameDriver("1978"	,"geebee"	,"geebee.java"	,rom_geebee,null	,machine_driver_geebee	,input_ports_geebee	,null	,ROT90	,	Namco", "Gee Bee" )
+	public static GameDriver driver_geebeeg	   = new GameDriver("1978"	,"geebeeg"	,"geebee.java"	,rom_geebeeg,driver_geebee	,machine_driver_geebee	,input_ports_geebee	,null	,ROT90	,	[Namco] (Gremlin license)", "Gee Bee (Gremlin)" )
+	public static GameDriver driver_navalone	   = new GameDriver("1980"	,"navalone"	,"geebee.java"	,rom_navalone,null	,machine_driver_navalone	,input_ports_navalone	,null	,ROT90	,	Namco", "Navalone", GAME_IMPERFECT_SOUND )
+	public static GameDriver driver_kaitei	   = new GameDriver("1980"	,"kaitei"	,"geebee.java"	,rom_kaitei,null	,machine_driver_kaitei	,input_ports_kaitei	,null	,ROT90	,	K.K. Tokki", "Kaitei Takara Sagashi" )
+	public static GameDriver driver_kaitein	   = new GameDriver("1980"	,"kaitein"	,"geebee.java"	,rom_kaitein,driver_kaitei	,machine_driver_kaitei	,input_ports_kaitein	,null	,ROT90	,	Namco", "Kaitei Takara Sagashi (Namco)" )
+	public static GameDriver driver_sos	   = new GameDriver("1980"	,"sos"	,"geebee.java"	,rom_sos,null	,machine_driver_sos	,input_ports_sos	,null	,ROT90	,	Namco", "SOS", GAME_IMPERFECT_SOUND )
 	
 }

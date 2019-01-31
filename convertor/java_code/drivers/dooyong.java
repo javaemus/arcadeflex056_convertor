@@ -1571,15 +1571,15 @@ public class dooyong
 	
 	/* The differences between the two lastday sets are only in the sound program
 	   and graphics. The main program is the same. */
-	GAMEX(1990, lastday,  0,        lastday,  lastday,  0, ROT270, "Dooyong", "The Last Day (set 1)", GAME_IMPERFECT_GRAPHICS )
-	GAMEX(1990, lastdaya, lastday,  lastday,  lastday,  0, ROT270, "Dooyong", "The Last Day (set 2)", GAME_IMPERFECT_GRAPHICS )
-	GAMEX(1991, gulfstrm, 0,        gulfstrm, gulfstrm, 0, ROT270, "Dooyong", "Gulf Storm", GAME_IMPERFECT_GRAPHICS )
-	GAMEX(1991, gulfstr2, gulfstrm, gulfstrm, gulfstrm, 0, ROT270, "Dooyong (Media Shoji license)", "Gulf Storm (Media Shoji)", GAME_IMPERFECT_GRAPHICS )
-	GAME( 1991, pollux,   0,        pollux,   pollux,   0, ROT270, "Dooyong", "Pollux" )
-	GAMEX(1993, bluehawk, 0,        bluehawk, bluehawk, 0, ROT270, "Dooyong", "Blue Hawk", GAME_IMPERFECT_GRAPHICS )
-	GAMEX(1993, bluehawn, bluehawk, bluehawk, bluehawk, 0, ROT270, "[Dooyong] (NTC license)", "Blue Hawk (NTC)", GAME_IMPERFECT_GRAPHICS )
-	GAME( 1993, sadari,   0,        primella, primella, 0, ROT0,   "[Dooyong] (NTC license)", "Sadari" )
-	GAME( 1994, gundl94,  0,        primella, primella, 0, ROT0,   "Dooyong", "Gun Dealer '94" )
-	GAME( 1994, primella, gundl94,  primella, primella, 0, ROT0,   "[Dooyong] (NTC license)", "Primella" )
-	GAMEX(1995, rshark,   0,        rshark,   rshark,   0, ROT270, "Dooyong", "R-Shark", GAME_IMPERFECT_GRAPHICS )
+	public static GameDriver driver_lastday	   = new GameDriver("1990"	,"lastday"	,"dooyong.java"	,rom_lastday,null	,machine_driver_lastday	,input_ports_lastday	,null	,ROT270	,	Dooyong", "The Last Day (set 1)", GAME_IMPERFECT_GRAPHICS )
+	public static GameDriver driver_lastdaya	   = new GameDriver("1990"	,"lastdaya"	,"dooyong.java"	,rom_lastdaya,driver_lastday	,machine_driver_lastday	,input_ports_lastday	,null	,ROT270	,	Dooyong", "The Last Day (set 2)", GAME_IMPERFECT_GRAPHICS )
+	public static GameDriver driver_gulfstrm	   = new GameDriver("1991"	,"gulfstrm"	,"dooyong.java"	,rom_gulfstrm,null	,machine_driver_gulfstrm	,input_ports_gulfstrm	,null	,ROT270	,	Dooyong", "Gulf Storm", GAME_IMPERFECT_GRAPHICS )
+	public static GameDriver driver_gulfstr2	   = new GameDriver("1991"	,"gulfstr2"	,"dooyong.java"	,rom_gulfstr2,driver_gulfstrm	,machine_driver_gulfstrm	,input_ports_gulfstrm	,null	,ROT270	,	Dooyong (Media Shoji license)", "Gulf Storm (Media Shoji)", GAME_IMPERFECT_GRAPHICS )
+	public static GameDriver driver_pollux	   = new GameDriver("1991"	,"pollux"	,"dooyong.java"	,rom_pollux,null	,machine_driver_pollux	,input_ports_pollux	,null	,ROT270	,	Dooyong", "Pollux" )
+	public static GameDriver driver_bluehawk	   = new GameDriver("1993"	,"bluehawk"	,"dooyong.java"	,rom_bluehawk,null	,machine_driver_bluehawk	,input_ports_bluehawk	,null	,ROT270	,	Dooyong", "Blue Hawk", GAME_IMPERFECT_GRAPHICS )
+	public static GameDriver driver_bluehawn	   = new GameDriver("1993"	,"bluehawn"	,"dooyong.java"	,rom_bluehawn,driver_bluehawk	,machine_driver_bluehawk	,input_ports_bluehawk	,null	,ROT270	,	[Dooyong] (NTC license)", "Blue Hawk (NTC)", GAME_IMPERFECT_GRAPHICS )
+	public static GameDriver driver_sadari	   = new GameDriver("1993"	,"sadari"	,"dooyong.java"	,rom_sadari,null	,machine_driver_primella	,input_ports_primella	,null	,ROT0	,	[Dooyong] (NTC license)", "Sadari" )
+	public static GameDriver driver_gundl94	   = new GameDriver("1994"	,"gundl94"	,"dooyong.java"	,rom_gundl94,null	,machine_driver_primella	,input_ports_primella	,null	,ROT0	,	Dooyong", "Gun Dealer '94" )
+	public static GameDriver driver_primella	   = new GameDriver("1994"	,"primella"	,"dooyong.java"	,rom_primella,driver_gundl94	,machine_driver_primella	,input_ports_primella	,null	,ROT0	,	[Dooyong] (NTC license)", "Primella" )
+	public static GameDriver driver_rshark	   = new GameDriver("1995"	,"rshark"	,"dooyong.java"	,rom_rshark,null	,machine_driver_rshark	,input_ports_rshark	,null	,ROT270	,	Dooyong", "R-Shark", GAME_IMPERFECT_GRAPHICS )
 }

@@ -1522,8 +1522,8 @@ public class atarigx2
 	 *
 	 *************************************/
 	
-	GAMEX( 1992, spclords, 0,        atarigx2, spclords, spclords, ROT0, "Atari Games", "Space Lords", GAME_UNEMULATED_PROTECTION )
-	GAMEX( 1992, spclorda, spclords, atarigx2, spclords, spclords, ROT0, "Atari Games", "Space Lords (alternate)", GAME_UNEMULATED_PROTECTION )
-	GAMEX( 1992, motofren, 0,        atarigx2, spclords, motofren, ROT0, "Atari Games", "Moto Frenzy", GAME_UNEMULATED_PROTECTION )
-	GAMEX( 1993, revrally, 0,        atarigx2, spclords, revrally, ROT0, "Atari Games", "Road Riot Revenge Rally (Prototype)", GAME_UNEMULATED_PROTECTION )
+	public static GameDriver driver_spclords	   = new GameDriver("1992"	,"spclords"	,"atarigx2.java"	,rom_spclords,null	,machine_driver_atarigx2	,input_ports_spclords	,init_spclords	,ROT0	,	Atari Games", "Space Lords", GAME_UNEMULATED_PROTECTION )
+	public static GameDriver driver_spclorda	   = new GameDriver("1992"	,"spclorda"	,"atarigx2.java"	,rom_spclorda,driver_spclords	,machine_driver_atarigx2	,input_ports_spclords	,init_spclords	,ROT0	,	Atari Games", "Space Lords (alternate)", GAME_UNEMULATED_PROTECTION )
+	public static GameDriver driver_motofren	   = new GameDriver("1992"	,"motofren"	,"atarigx2.java"	,rom_motofren,null	,machine_driver_atarigx2	,input_ports_spclords	,init_motofren	,ROT0	,	Atari Games", "Moto Frenzy", GAME_UNEMULATED_PROTECTION )
+	public static GameDriver driver_revrally	   = new GameDriver("1993"	,"revrally"	,"atarigx2.java"	,rom_revrally,null	,machine_driver_atarigx2	,input_ports_spclords	,init_revrally	,ROT0	,	Atari Games", "Road Riot Revenge Rally (Prototype)", GAME_UNEMULATED_PROTECTION )
 }

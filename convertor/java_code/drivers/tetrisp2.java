@@ -620,6 +620,6 @@ public class tetrisp2
 	
 	***************************************************************************/
 	
-	GAMEX( 1997, tetrisp2, 0,        tetrisp2, tetrisp2, 0, ROT0, "Jaleco / The Tetris Company", "Tetris Plus 2 (World?)", GAME_NOT_WORKING | GAME_IMPERFECT_GRAPHICS )
-	GAMEX( 1997, teplus2j, tetrisp2, tetrisp2, teplus2j, 0, ROT0, "Jaleco / The Tetris Company", "Tetris Plus 2 (Japan)", GAME_IMPERFECT_GRAPHICS )
+	public static GameDriver driver_tetrisp2	   = new GameDriver("1997"	,"tetrisp2"	,"tetrisp2.java"	,rom_tetrisp2,null	,machine_driver_tetrisp2	,input_ports_tetrisp2	,null	,ROT0	,	Jaleco / The Tetris Company", "Tetris Plus 2 (World?)", GAME_NOT_WORKING | GAME_IMPERFECT_GRAPHICS )
+	public static GameDriver driver_teplus2j	   = new GameDriver("1997"	,"teplus2j"	,"tetrisp2.java"	,rom_teplus2j,driver_tetrisp2	,machine_driver_tetrisp2	,input_ports_teplus2j	,null	,ROT0	,	Jaleco / The Tetris Company", "Tetris Plus 2 (Japan)", GAME_IMPERFECT_GRAPHICS )
 }

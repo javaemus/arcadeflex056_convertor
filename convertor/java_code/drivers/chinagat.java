@@ -943,8 +943,8 @@ public class chinagat
 	
 	
 	/*   ( YEAR  NAME      PARENT    MACHINE   INPUT     INIT    MONITOR COMPANY    FULLNAME     FLAGS ) */
-	GAME ( 1988, chinagat, 0,        chinagat, chinagat, 0     , ROT0, "[Technos] (Taito Romstar license)", "China Gate (US)" )
-	GAME ( 1988, saiyugou, chinagat, chinagat, chinagat, 0     , ROT0, "Technos", "Sai Yu Gou Ma Roku (Japan)" )
-	GAMEX( 1988, saiyugb1, chinagat, saiyugb1, chinagat, 0     , ROT0, "bootleg", "Sai Yu Gou Ma Roku (bootleg 1)", GAME_IMPERFECT_SOUND )
-	GAME ( 1988, saiyugb2, chinagat, saiyugb2, chinagat, 0     , ROT0, "bootleg", "Sai Yu Gou Ma Roku (bootleg 2)" )
+	public static GameDriver driver_chinagat	   = new GameDriver("1988"	,"chinagat"	,"chinagat.java"	,rom_chinagat,null	,machine_driver_chinagat	,input_ports_chinagat	,null	,	,ROT0	"[Technos] (Taito Romstar license)", "China Gate (US)" )
+	public static GameDriver driver_saiyugou	   = new GameDriver("1988"	,"saiyugou"	,"chinagat.java"	,rom_saiyugou,driver_chinagat	,machine_driver_chinagat	,input_ports_chinagat	,null	,	,ROT0	"Technos", "Sai Yu Gou Ma Roku (Japan)" )
+	public static GameDriver driver_saiyugb1	   = new GameDriver("1988"	,"saiyugb1"	,"chinagat.java"	,rom_saiyugb1,driver_chinagat	,machine_driver_saiyugb1	,input_ports_chinagat	,null	,	,ROT0	"bootleg", "Sai Yu Gou Ma Roku (bootleg 1)", GAME_IMPERFECT_SOUND )
+	public static GameDriver driver_saiyugb2	   = new GameDriver("1988"	,"saiyugb2"	,"chinagat.java"	,rom_saiyugb2,driver_chinagat	,machine_driver_saiyugb2	,input_ports_chinagat	,null	,	,ROT0	"bootleg", "Sai Yu Gou Ma Roku (bootleg 2)" )
 }

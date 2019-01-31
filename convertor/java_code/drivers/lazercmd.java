@@ -974,7 +974,7 @@ public class lazercmd
 	
 	
 	
-	GAME( 1976, lazercmd, 0, lazercmd, lazercmd, lazercmd, ROT0, "Meadows Games, Inc.", "Lazer Command" )
-	GAME( 1977, medlanes, 0, medlanes, medlanes, medlanes, ROT0, "Meadows Games, Inc.", "Meadows Lanes" )
-	GAME( 1976, bbonk,	  0, bbonk,    bbonk,	 bbonk,    ROT0, "Meadows Games, Inc.", "Bigfoot Bonkers" )
+	public static GameDriver driver_lazercmd	   = new GameDriver("1976"	,"lazercmd"	,"lazercmd.java"	,rom_lazercmd,null	,machine_driver_lazercmd	,input_ports_lazercmd	,init_lazercmd	,ROT0	,	Meadows Games, Inc.", "Lazer Command" )
+	public static GameDriver driver_medlanes	   = new GameDriver("1977"	,"medlanes"	,"lazercmd.java"	,rom_medlanes,null	,machine_driver_medlanes	,input_ports_medlanes	,init_medlanes	,ROT0	,	Meadows Games, Inc.", "Meadows Lanes" )
+	public static GameDriver driver_bbonk	   = new GameDriver("1976"	,"bbonk"	,"lazercmd.java"	,rom_bbonk,null	,machine_driver_bbonk	,input_ports_bbonk	,init_bbonk	,ROT0	,	Meadows Games, Inc.", "Bigfoot Bonkers" )
 }

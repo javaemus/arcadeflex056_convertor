@@ -1713,16 +1713,16 @@ public class aerofgt
 	
 	
 	
-	GAMEX( 1991, pspikes,  0,        pspikes,  pspikes,  0, ROT0,   "Video System Co.", "Power Spikes (Korea)", GAME_NO_COCKTAIL )
-	GAMEX( 1991, svolly91, pspikes,  pspikes,  pspikes,  0, ROT0,   "Video System Co.", "Super Volley '91 (Japan)", GAME_NO_COCKTAIL )
-	GAMEX( 1991, karatblz, 0,        karatblz, karatblz, 0, ROT0,   "Video System Co.", "Karate Blazers (World?)", GAME_NO_COCKTAIL )
-	GAMEX( 1991, karatblu, karatblz, karatblz, karatblz, 0, ROT0,   "Video System Co.", "Karate Blazers (US)", GAME_NO_COCKTAIL )
-	GAMEX( 1990, spinlbrk, 0,        spinlbrk, spinlbrk, 0, ROT0,   "V-System Co.", "Spinal Breakers (World)", GAME_IMPERFECT_SOUND | GAME_NO_COCKTAIL )
-	GAMEX( 1990, spinlbru, spinlbrk, spinlbrk, spinlbrk, 0, ROT0,   "V-System Co.", "Spinal Breakers (US)", GAME_IMPERFECT_SOUND | GAME_NO_COCKTAIL )
-	GAMEX( 1990, spinlbrj, spinlbrk, spinlbrk, spinlbrk, 0, ROT0,   "V-System Co.", "Spinal Breakers (Japan)", GAME_IMPERFECT_SOUND | GAME_NO_COCKTAIL )
-	GAMEX( 1991, turbofrc, 0,        turbofrc, turbofrc, 0, ROT270, "Video System Co.", "Turbo Force", GAME_NO_COCKTAIL )
-	GAMEX( 1992, aerofgt,  0,        aerofgt,  aerofgt,  0, ROT270, "Video System Co.", "Aero Fighters", GAME_NO_COCKTAIL )
-	GAMEX( 1992, aerofgtb, aerofgt,  aerofgtb, aerofgtb, 0, ROT270, "Video System Co.", "Aero Fighters (Turbo Force hardware set 1)", GAME_NO_COCKTAIL )
-	GAMEX( 1992, aerofgtc, aerofgt,  aerofgtb, aerofgtb, 0, ROT270, "Video System Co.", "Aero Fighters (Turbo Force hardware set 2)", GAME_NO_COCKTAIL )
-	GAMEX( 1992, sonicwi,  aerofgt,  aerofgtb, aerofgtb, 0, ROT270, "Video System Co.", "Sonic Wings (Japan)", GAME_NO_COCKTAIL )
+	public static GameDriver driver_pspikes	   = new GameDriver("1991"	,"pspikes"	,"aerofgt.java"	,rom_pspikes,null	,machine_driver_pspikes	,input_ports_pspikes	,null	,ROT0	,	Video System Co.", "Power Spikes (Korea)", GAME_NO_COCKTAIL )
+	public static GameDriver driver_svolly91	   = new GameDriver("1991"	,"svolly91"	,"aerofgt.java"	,rom_svolly91,driver_pspikes	,machine_driver_pspikes	,input_ports_pspikes	,null	,ROT0	,	Video System Co.", "Super Volley '91 (Japan)", GAME_NO_COCKTAIL )
+	public static GameDriver driver_karatblz	   = new GameDriver("1991"	,"karatblz"	,"aerofgt.java"	,rom_karatblz,null	,machine_driver_karatblz	,input_ports_karatblz	,null	,ROT0	,	Video System Co.", "Karate Blazers (World?)", GAME_NO_COCKTAIL )
+	public static GameDriver driver_karatblu	   = new GameDriver("1991"	,"karatblu"	,"aerofgt.java"	,rom_karatblu,driver_karatblz	,machine_driver_karatblz	,input_ports_karatblz	,null	,ROT0	,	Video System Co.", "Karate Blazers (US)", GAME_NO_COCKTAIL )
+	public static GameDriver driver_spinlbrk	   = new GameDriver("1990"	,"spinlbrk"	,"aerofgt.java"	,rom_spinlbrk,null	,machine_driver_spinlbrk	,input_ports_spinlbrk	,null	,ROT0	,	V-System Co.", "Spinal Breakers (World)", GAME_IMPERFECT_SOUND | GAME_NO_COCKTAIL )
+	public static GameDriver driver_spinlbru	   = new GameDriver("1990"	,"spinlbru"	,"aerofgt.java"	,rom_spinlbru,driver_spinlbrk	,machine_driver_spinlbrk	,input_ports_spinlbrk	,null	,ROT0	,	V-System Co.", "Spinal Breakers (US)", GAME_IMPERFECT_SOUND | GAME_NO_COCKTAIL )
+	public static GameDriver driver_spinlbrj	   = new GameDriver("1990"	,"spinlbrj"	,"aerofgt.java"	,rom_spinlbrj,driver_spinlbrk	,machine_driver_spinlbrk	,input_ports_spinlbrk	,null	,ROT0	,	V-System Co.", "Spinal Breakers (Japan)", GAME_IMPERFECT_SOUND | GAME_NO_COCKTAIL )
+	public static GameDriver driver_turbofrc	   = new GameDriver("1991"	,"turbofrc"	,"aerofgt.java"	,rom_turbofrc,null	,machine_driver_turbofrc	,input_ports_turbofrc	,null	,ROT270	,	Video System Co.", "Turbo Force", GAME_NO_COCKTAIL )
+	public static GameDriver driver_aerofgt	   = new GameDriver("1992"	,"aerofgt"	,"aerofgt.java"	,rom_aerofgt,null	,machine_driver_aerofgt	,input_ports_aerofgt	,null	,ROT270	,	Video System Co.", "Aero Fighters", GAME_NO_COCKTAIL )
+	public static GameDriver driver_aerofgtb	   = new GameDriver("1992"	,"aerofgtb"	,"aerofgt.java"	,rom_aerofgtb,driver_aerofgt	,machine_driver_aerofgtb	,input_ports_aerofgtb	,null	,ROT270	,	Video System Co.", "Aero Fighters (Turbo Force hardware set 1)", GAME_NO_COCKTAIL )
+	public static GameDriver driver_aerofgtc	   = new GameDriver("1992"	,"aerofgtc"	,"aerofgt.java"	,rom_aerofgtc,driver_aerofgt	,machine_driver_aerofgtb	,input_ports_aerofgtb	,null	,ROT270	,	Video System Co.", "Aero Fighters (Turbo Force hardware set 2)", GAME_NO_COCKTAIL )
+	public static GameDriver driver_sonicwi	   = new GameDriver("1992"	,"sonicwi"	,"aerofgt.java"	,rom_sonicwi,driver_aerofgt	,machine_driver_aerofgtb	,input_ports_aerofgtb	,null	,ROT270	,	Video System Co.", "Sonic Wings (Japan)", GAME_NO_COCKTAIL )
 }

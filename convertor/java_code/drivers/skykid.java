@@ -597,7 +597,7 @@ public class skykid
 	
 	
 	
-	GAME( 1985, skykid,   0,      skykid, skykid,   0, ROT0, "Namco", "Sky Kid (set 1)" )
-	GAME( 1985, skykidb,  skykid, skykid, skykid,   0, ROT0, "Namco", "Sky Kid (set 2)" )
-	GAME( 1984, drgnbstr, 0,      skykid, drgnbstr, 0, ROT0, "Namco", "Dragon Buster" )
+	public static GameDriver driver_skykid	   = new GameDriver("1985"	,"skykid"	,"skykid.java"	,rom_skykid,null	,machine_driver_skykid	,input_ports_skykid	,null	,ROT0	,	Namco", "Sky Kid (set 1)" )
+	public static GameDriver driver_skykidb	   = new GameDriver("1985"	,"skykidb"	,"skykid.java"	,rom_skykidb,driver_skykid	,machine_driver_skykid	,input_ports_skykid	,null	,ROT0	,	Namco", "Sky Kid (set 2)" )
+	public static GameDriver driver_drgnbstr	   = new GameDriver("1984"	,"drgnbstr"	,"skykid.java"	,rom_drgnbstr,null	,machine_driver_skykid	,input_ports_drgnbstr	,null	,ROT0	,	Namco", "Dragon Buster" )
 }

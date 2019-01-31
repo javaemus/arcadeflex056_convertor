@@ -292,5 +292,5 @@ public class solomon
 	
 	
 	
-	GAME( 1986, solomon, 0, solomon, solomon, 0, ROT0, "Tecmo", "Solomon's Key (Japan)" )
+	public static GameDriver driver_solomon	   = new GameDriver("1986"	,"solomon"	,"solomon.java"	,rom_solomon,null	,machine_driver_solomon	,input_ports_solomon	,null	,ROT0	,	Tecmo", "Solomon's Key (Japan)" )
 }

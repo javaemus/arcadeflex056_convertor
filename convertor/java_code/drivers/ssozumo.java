@@ -362,5 +362,5 @@ public class ssozumo
 	
 	
 	
-	GAMEX( 1984, ssozumo, 0, ssozumo, ssozumo, 0, ROT270, "Technos", "Syusse Oozumou (Japan)", GAME_NO_COCKTAIL )
+	public static GameDriver driver_ssozumo	   = new GameDriver("1984"	,"ssozumo"	,"ssozumo.java"	,rom_ssozumo,null	,machine_driver_ssozumo	,input_ports_ssozumo	,null	,ROT270	,	Technos", "Syusse Oozumou (Japan)", GAME_NO_COCKTAIL )
 }

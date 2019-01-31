@@ -1200,10 +1200,10 @@ public class fromance
 	 *
 	 *************************************/
 	
-	GAME( 1988, idolmj,   0, idolmj,   idolmj,   0, ROT0, "System Service", "Idol-Mahjong Housoukyoku (Japan)" )
-	GAME( 1989, mjnatsu,  0, fromance, mjnatsu,  0, ROT0, "Video System", "Mahjong Natsu Monogatari (Japan)" )
-	GAME( 1989, mfunclub, 0, fromance, mfunclub, 0, ROT0, "Video System", "Mahjong Fun Club - Idol Saizensen (Japan)" )
-	GAME( 1990, daiyogen, 0, fromance, daiyogen, 0, ROT0, "Video System", "Mahjong Daiyogen (Japan)" )
-	GAME( 1991, nmsengen, 0, fromance, nmsengen, 0, ROT0, "Video System", "Nekketsu Mahjong Sengen! AFTER 5 (Japan)" )
-	GAME( 1991, fromance, 0, fromance, fromance, 0, ROT0, "Video System", "Idol-Mahjong Final Romance (Japan)" )
+	public static GameDriver driver_idolmj	   = new GameDriver("1988"	,"idolmj"	,"fromance.java"	,rom_idolmj,null	,machine_driver_idolmj	,input_ports_idolmj	,null	,ROT0	,	System Service", "Idol-Mahjong Housoukyoku (Japan)" )
+	public static GameDriver driver_mjnatsu	   = new GameDriver("1989"	,"mjnatsu"	,"fromance.java"	,rom_mjnatsu,null	,machine_driver_fromance	,input_ports_mjnatsu	,null	,ROT0	,	Video System", "Mahjong Natsu Monogatari (Japan)" )
+	public static GameDriver driver_mfunclub	   = new GameDriver("1989"	,"mfunclub"	,"fromance.java"	,rom_mfunclub,null	,machine_driver_fromance	,input_ports_mfunclub	,null	,ROT0	,	Video System", "Mahjong Fun Club - Idol Saizensen (Japan)" )
+	public static GameDriver driver_daiyogen	   = new GameDriver("1990"	,"daiyogen"	,"fromance.java"	,rom_daiyogen,null	,machine_driver_fromance	,input_ports_daiyogen	,null	,ROT0	,	Video System", "Mahjong Daiyogen (Japan)" )
+	public static GameDriver driver_nmsengen	   = new GameDriver("1991"	,"nmsengen"	,"fromance.java"	,rom_nmsengen,null	,machine_driver_fromance	,input_ports_nmsengen	,null	,ROT0	,	Video System", "Nekketsu Mahjong Sengen! AFTER 5 (Japan)" )
+	public static GameDriver driver_fromance	   = new GameDriver("1991"	,"fromance"	,"fromance.java"	,rom_fromance,null	,machine_driver_fromance	,input_ports_fromance	,null	,ROT0	,	Video System", "Idol-Mahjong Final Romance (Japan)" )
 }

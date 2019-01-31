@@ -978,15 +978,15 @@ public class namcos21
 	INPUT_PORTS_END
 	
 	/*    YEAR, NAME,     PARENT,   MACHINE,  INPUT,    	INIT,     MONITOR,    COMPANY, FULLNAME,	    	FLAGS */
-	GAMEX( 1992, aircombj, 0,		poly,	  aircombt, 	aircombt, ROT0,		  "Namco", "Air Combat (JP)",	GAME_NOT_WORKING )
-	GAMEX( 1992, aircombu, aircombj,poly,	  aircombt, 	aircombt, ROT0, 	  "Namco", "Air Combat (US)",	GAME_NOT_WORKING )
-	GAMEX( 1993, cybsled,  0,       poly,     default,      cybsled,  ROT0,       "Namco", "Cyber Sled",		GAME_NOT_WORKING )
+	public static GameDriver driver_aircombj	   = new GameDriver("1992"	,"aircombj"	,"namcos21.java"	,rom_aircombj,null	,machine_driver_poly	,input_ports_aircombt	,init_aircombt	,ROT0	,	Namco", "Air Combat (JP)",	GAME_NOT_WORKING )
+	public static GameDriver driver_aircombu	   = new GameDriver("1992"	,"aircombu"	,"namcos21.java"	,rom_aircombu,driver_aircombj	,machine_driver_poly	,input_ports_aircombt	,init_aircombt	,ROT0	,	Namco", "Air Combat (US)",	GAME_NOT_WORKING )
+	public static GameDriver driver_cybsled	   = new GameDriver("1993"	,"cybsled"	,"namcos21.java"	,rom_cybsled,null	,machine_driver_poly	,input_ports_default	,init_cybsled	,ROT0	,	Namco", "Cyber Sled",		GAME_NOT_WORKING )
 	/* 199?, Driver's Eyes */
 	/* 1993, Rhinoceros Berth Lead-Lead */
 	/* 1992, ShimDrive */
-	GAMEX( 1991, solvalou, 0, 		poly,	  default,		starblad, ROT0, 	  "Namco", "Solvalou",			GAME_NOT_WORKING )
-	GAMEX( 1991, starblad, 0, 		poly,	  default,  	starblad, ROT0, 	  "Namco", "Starblade",			GAME_NOT_WORKING )
+	public static GameDriver driver_solvalou	   = new GameDriver("1991"	,"solvalou"	,"namcos21.java"	,rom_solvalou,null	,machine_driver_poly	,input_ports_default	,init_starblad	,ROT0	,	Namco", "Solvalou",			GAME_NOT_WORKING )
+	public static GameDriver driver_starblad	   = new GameDriver("1991"	,"starblad"	,"namcos21.java"	,rom_starblad,null	,machine_driver_poly	,input_ports_default	,init_starblad	,ROT0	,	Namco", "Starblade",			GAME_NOT_WORKING )
 	/* 1988, Winning Run */
 	/* 1989, Winning Run Suzuka Grand Prix */
-	GAMEX( 1991, winrun91, 0, 		poly,	  default,		winrun,	  ROT0, 	  "Namco", "Winning Run 91", 	GAME_NOT_WORKING )
+	public static GameDriver driver_winrun91	   = new GameDriver("1991"	,"winrun91"	,"namcos21.java"	,rom_winrun91,null	,machine_driver_poly	,input_ports_default	,init_winrun	,ROT0	,	Namco", "Winning Run 91", 	GAME_NOT_WORKING )
 }

@@ -698,8 +698,8 @@ public class thief
 	}
 	
 	
-	GAME( 1980, sharkatt, 0,       sharkatt, sharkatt, 0,     ROT0, "Pacific Novelty", "Shark Attack" )
-	GAME( 1981, thief,    0,       thief,    thief,    thief, ROT0, "Pacific Novelty", "Thief" )
-	GAME( 1982, natodef,  0,       natodef,  natodef,  thief, ROT0, "Pacific Novelty", "NATO Defense"  )
-	GAME( 1982, natodefa, natodef, natodef,  natodef,  thief, ROT0, "Pacific Novelty", "NATO Defense (alternate mazes)"  )
+	public static GameDriver driver_sharkatt	   = new GameDriver("1980"	,"sharkatt"	,"thief.java"	,rom_sharkatt,null	,machine_driver_sharkatt	,input_ports_sharkatt	,null	,ROT0	,	Pacific Novelty", "Shark Attack" )
+	public static GameDriver driver_thief	   = new GameDriver("1981"	,"thief"	,"thief.java"	,rom_thief,null	,machine_driver_thief	,input_ports_thief	,init_thief	,ROT0	,	Pacific Novelty", "Thief" )
+	public static GameDriver driver_natodef	   = new GameDriver("1982"	,"natodef"	,"thief.java"	,rom_natodef,null	,machine_driver_natodef	,input_ports_natodef	,init_thief	,ROT0	,	Pacific Novelty", "NATO Defense"  )
+	public static GameDriver driver_natodefa	   = new GameDriver("1982"	,"natodefa"	,"thief.java"	,rom_natodefa,driver_natodef	,machine_driver_natodef	,input_ports_natodef	,init_thief	,ROT0	,	Pacific Novelty", "NATO Defense (alternate mazes)"  )
 }

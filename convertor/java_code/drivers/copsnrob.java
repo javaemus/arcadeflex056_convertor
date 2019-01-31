@@ -286,5 +286,5 @@ public class copsnrob
 	ROM_END(); }}; 
 	
 	
-	GAMEX( 1976, copsnrob, 0, copsnrob, copsnrob, 0, ROT0, "Atari", "Cops'n Robbers", GAME_NO_SOUND )
+	public static GameDriver driver_copsnrob	   = new GameDriver("1976"	,"copsnrob"	,"copsnrob.java"	,rom_copsnrob,null	,machine_driver_copsnrob	,input_ports_copsnrob	,null	,ROT0	,	Atari", "Cops'n Robbers", GAME_NO_SOUND )
 }

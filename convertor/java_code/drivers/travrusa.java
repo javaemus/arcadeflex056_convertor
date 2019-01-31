@@ -390,6 +390,6 @@ public class travrusa
 	
 	
 	
-	GAME( 1983, travrusa, 0,        travrusa, travrusa, 0,        ROT270, "Irem", "Traverse USA / Zippy Race" )
-	GAME( 1983, motorace, travrusa, travrusa, motorace, motorace, ROT270, "Irem (Williams license)", "MotoRace USA" )
+	public static GameDriver driver_travrusa	   = new GameDriver("1983"	,"travrusa"	,"travrusa.java"	,rom_travrusa,null	,machine_driver_travrusa	,input_ports_travrusa	,null	,ROT270	,	Irem", "Traverse USA / Zippy Race" )
+	public static GameDriver driver_motorace	   = new GameDriver("1983"	,"motorace"	,"travrusa.java"	,rom_motorace,driver_travrusa	,machine_driver_travrusa	,input_ports_motorace	,init_motorace	,ROT270	,	Irem (Williams license)", "MotoRace USA" )
 }

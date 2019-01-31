@@ -768,10 +768,10 @@ public class rainbow
 	}
 	
 	
-	GAME( 1987, rainbow,  0,       rainbow, rainbow, rainbow, ROT0, "Taito Corporation", "Rainbow Islands (set 1)" )
-	GAME( 1987, rainbowa, rainbow, rainbow, rainbow, rainbow, ROT0, "Taito Corporation", "Rainbow Islands (set 2)" )
-	GAMEX(1988, rainbowe, rainbow, rainbow, rainbow, rainbow, ROT0, "Taito Corporation", "Rainbow Islands (Extra)", GAME_NOT_WORKING )
-	GAME( 1989, jumping,  rainbow, jumping, jumping, jumping, ROT0, "bootleg", "Jumping" )
+	public static GameDriver driver_rainbow	   = new GameDriver("1987"	,"rainbow"	,"rainbow.java"	,rom_rainbow,null	,machine_driver_rainbow	,input_ports_rainbow	,init_rainbow	,ROT0	,	Taito Corporation", "Rainbow Islands (set 1)" )
+	public static GameDriver driver_rainbowa	   = new GameDriver("1987"	,"rainbowa"	,"rainbow.java"	,rom_rainbowa,driver_rainbow	,machine_driver_rainbow	,input_ports_rainbow	,init_rainbow	,ROT0	,	Taito Corporation", "Rainbow Islands (set 2)" )
+	public static GameDriver driver_rainbowe	   = new GameDriver("1988"	,"rainbowe"	,"rainbow.java"	,rom_rainbowe,driver_rainbow	,machine_driver_rainbow	,input_ports_rainbow	,init_rainbow	,ROT0	,	Taito Corporation", "Rainbow Islands (Extra)", GAME_NOT_WORKING )
+	public static GameDriver driver_jumping	   = new GameDriver("1989"	,"jumping"	,"rainbow.java"	,rom_jumping,driver_rainbow	,machine_driver_jumping	,input_ports_jumping	,init_jumping	,ROT0	,	bootleg", "Jumping" )
 	
 	
 }

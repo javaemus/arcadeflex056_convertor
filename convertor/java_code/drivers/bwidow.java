@@ -816,8 +816,8 @@ public class bwidow
 	
 	
 	
-	GAME( 1982, bwidow,   0,        bwidow,   bwidow,   0, ROT0, "Atari", "Black Widow" )
-	GAME( 1982, gravitar, 0,        gravitar, gravitar, 0, ROT0, "Atari", "Gravitar (version 3)" )
-	GAME( 1982, gravitr2, gravitar, gravitar, gravitar, 0, ROT0, "Atari", "Gravitar (version 2)" )
-	GAME( 1980, spacduel, 0,        spacduel, spacduel, 0, ROT0, "Atari", "Space Duel" )
+	public static GameDriver driver_bwidow	   = new GameDriver("1982"	,"bwidow"	,"bwidow.java"	,rom_bwidow,null	,machine_driver_bwidow	,input_ports_bwidow	,null	,ROT0	,	Atari", "Black Widow" )
+	public static GameDriver driver_gravitar	   = new GameDriver("1982"	,"gravitar"	,"bwidow.java"	,rom_gravitar,null	,machine_driver_gravitar	,input_ports_gravitar	,null	,ROT0	,	Atari", "Gravitar (version 3)" )
+	public static GameDriver driver_gravitr2	   = new GameDriver("1982"	,"gravitr2"	,"bwidow.java"	,rom_gravitr2,driver_gravitar	,machine_driver_gravitar	,input_ports_gravitar	,null	,ROT0	,	Atari", "Gravitar (version 2)" )
+	public static GameDriver driver_spacduel	   = new GameDriver("1980"	,"spacduel"	,"bwidow.java"	,rom_spacduel,null	,machine_driver_spacduel	,input_ports_spacduel	,null	,ROT0	,	Atari", "Space Duel" )
 }

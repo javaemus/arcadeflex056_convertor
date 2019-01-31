@@ -409,5 +409,5 @@ public class hexion
 	}
 	
 	
-	GAMEX( 1992, hexion, 0, hexion, hexion, hexion, ROT0, "Konami", "Hexion (Japan)", GAME_WRONG_COLORS )
+	public static GameDriver driver_hexion	   = new GameDriver("1992"	,"hexion"	,"hexion.java"	,rom_hexion,null	,machine_driver_hexion	,input_ports_hexion	,init_hexion	,ROT0	,	Konami", "Hexion (Japan)", GAME_WRONG_COLORS )
 }

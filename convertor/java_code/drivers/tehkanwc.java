@@ -795,7 +795,7 @@ public class tehkanwc
 	
 	
 	
-	GAME( 1985, tehkanwc, 0, tehkanwc, tehkanwc, 0, ROT0,  "Tehkan", "Tehkan World Cup" )
-	GAME( 1985, gridiron, 0, tehkanwc, gridiron, 0, ROT0,  "Tehkan", "Gridiron Fight" )
-	GAMEX(1986, teedoff,  0, tehkanwc, teedoff,  0, ROT90, "Tecmo", "Tee'd Off", GAME_NOT_WORKING )
+	public static GameDriver driver_tehkanwc	   = new GameDriver("1985"	,"tehkanwc"	,"tehkanwc.java"	,rom_tehkanwc,null	,machine_driver_tehkanwc	,input_ports_tehkanwc	,null	,ROT0	,	Tehkan", "Tehkan World Cup" )
+	public static GameDriver driver_gridiron	   = new GameDriver("1985"	,"gridiron"	,"tehkanwc.java"	,rom_gridiron,null	,machine_driver_tehkanwc	,input_ports_gridiron	,null	,ROT0	,	Tehkan", "Gridiron Fight" )
+	public static GameDriver driver_teedoff	   = new GameDriver("1986"	,"teedoff"	,"tehkanwc.java"	,rom_teedoff,null	,machine_driver_tehkanwc	,input_ports_teedoff	,null	,ROT90	,	Tecmo", "Tee'd Off", GAME_NOT_WORKING )
 }

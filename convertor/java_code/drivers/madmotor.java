@@ -423,5 +423,5 @@ public class madmotor
 	
 	
 	 /* The title screen is undated, but it's (c) 1989 Data East at 0xefa0 */
-	GAME( 1989, madmotor, 0, madmotor, madmotor, madmotor, ROT0, "Mitchell", "Mad Motor" )
+	public static GameDriver driver_madmotor	   = new GameDriver("1989"	,"madmotor"	,"madmotor.java"	,rom_madmotor,null	,machine_driver_madmotor	,input_ports_madmotor	,init_madmotor	,ROT0	,	Mitchell", "Mad Motor" )
 }

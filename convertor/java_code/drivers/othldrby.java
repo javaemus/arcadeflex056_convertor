@@ -316,5 +316,5 @@ public class othldrby
 	ROM_END(); }}; 
 	
 	
-	GAME( 1995, othldrby, 0, othldrby, othldrby, 0, ROT0, "Sunwise", "Othello Derby (Japan)" )
+	public static GameDriver driver_othldrby	   = new GameDriver("1995"	,"othldrby"	,"othldrby.java"	,rom_othldrby,null	,machine_driver_othldrby	,input_ports_othldrby	,null	,ROT0	,	Sunwise", "Othello Derby (Japan)" )
 }

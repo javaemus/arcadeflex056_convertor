@@ -4884,196 +4884,196 @@ public class neogeo
 	/* A dummy driver, so that the bios can be debugged, and to serve as */
 	/* parent for the neo-geo.rom file, so that we do not have to include */
 	/* it in every zip file */
-	GAMEX( 1990, neogeo, 0, neogeo, neogeo, neogeo, ROT0, "SNK", "Neo-Geo", NOT_A_DRIVER )
+	public static GameDriver driver_neogeo	   = new GameDriver("1990"	,"neogeo"	,"neogeo.java"	,rom_neogeo,null	,machine_driver_neogeo	,input_ports_neogeo	,init_neogeo	,ROT0	,	SNK", "Neo-Geo", NOT_A_DRIVER )
 	
 	/******************************************************************************/
 	
 	/*	  YEAR	NAME	  PARENT	MACHINE INPUT	 INIT	 MONITOR  */
 	
 	/* SNK */
-	GAME( 1990, nam1975,  neogeo,   neogeo, neogeo,  neogeo,   ROT0, "SNK", "NAM-1975" )
-	GAME( 1990, bstars,   neogeo,   neogeo, neogeo,  neogeo,   ROT0, "SNK", "Baseball Stars Professional" )
-	GAME( 1990, tpgolf,   neogeo,   raster, neogeo,  neogeo,   ROT0, "SNK", "Top Player's Golf" )
-	GAME( 1990, mahretsu, neogeo,   neogeo, neogeo,  neogeo,   ROT0, "SNK", "Mahjong Kyoretsuden" )
-	GAME( 1990, ridhero,  neogeo,   raster, neogeo,  neogeo,   ROT0, "SNK", "Riding Hero (set 1)" )
-	GAME( 1990, ridheroh, ridhero,  raster, neogeo,  neogeo,   ROT0, "SNK", "Riding Hero (set 2)" )
-	GAME( 1991, alpham2,  neogeo,   neogeo, neogeo,  neogeo,   ROT0, "SNK", "Alpha Mission II / ASO II - Last Guardian" )
-	GAME( 1990, cyberlip, neogeo,   neogeo, neogeo,  neogeo,   ROT0, "SNK", "Cyber-Lip" )
-	GAME( 1990, superspy, neogeo,   neogeo, neogeo,  neogeo,   ROT0, "SNK", "The Super Spy" )
-	GAME( 1992, mutnat,   neogeo,   neogeo, neogeo,  neogeo,   ROT0, "SNK", "Mutation Nation" )
-	GAME( 1991, kotm,     neogeo,   neogeo, neogeo,  neogeo,   ROT0, "SNK", "King of the Monsters" )
-	GAME( 1991, sengoku,  neogeo,   raster, neogeo,  neogeo,   ROT0, "SNK", "Sengoku / Sengoku Denshou (set 1)" )
-	GAME( 1991, sengokh,  sengoku,  raster, neogeo,  neogeo,   ROT0, "SNK", "Sengoku / Sengoku Denshou (set 2)" )
-	GAME( 1991, burningf, neogeo,   neogeo, neogeo,  neogeo,   ROT0, "SNK", "Burning Fight (set 1)" )
-	GAME( 1991, burningh, burningf, neogeo, neogeo,  neogeo,   ROT0, "SNK", "Burning Fight (set 2)" )
-	GAME( 1990, lbowling, neogeo,   neogeo, neogeo,  neogeo,   ROT0, "SNK", "League Bowling" )
-	GAME( 1991, gpilots,  neogeo,   neogeo, neogeo,  neogeo,   ROT0, "SNK", "Ghost Pilots" )
-	GAME( 1990, joyjoy,   neogeo,   neogeo, neogeo,  neogeo,   ROT0, "SNK", "Puzzled / Joy Joy Kid" )
-	GAME( 1991, quizdais, neogeo,   neogeo, neogeo,  neogeo,   ROT0, "SNK", "Quiz Daisousa Sen - The Last Count Down" )
-	GAME( 1992, lresort,  neogeo,   neogeo, neogeo,  neogeo,   ROT0, "SNK", "Last Resort" )
-	GAME( 1991, eightman, neogeo,   raster, neogeo,  neogeo,   ROT0, "SNK / Pallas", "Eight Man" )
-	GAME( 1991, legendos, neogeo,   neogeo, neogeo,  neogeo,   ROT0, "SNK", "Legend of Success Joe / Ashitano Joe Densetsu" )
-	GAME( 1991, 2020bb,   neogeo,   neogeo, neogeo,  neogeo,   ROT0, "SNK / Pallas", "2020 Super Baseball (set 1)" )
-	GAME( 1991, 2020bbh,  2020bb,   neogeo, neogeo,  neogeo,   ROT0, "SNK / Pallas", "2020 Super Baseball (set 2)" )
-	GAME( 1991, socbrawl, neogeo,   neogeo, neogeo,  neogeo,   ROT0, "SNK", "Soccer Brawl" )
-	GAME( 1991, fatfury1, neogeo,   neogeo, neogeo,  neogeo,   ROT0, "SNK", "Fatal Fury - King of Fighters / Garou Densetsu - shukumei no tatakai" )
-	GAME( 1991, roboarmy, neogeo,   neogeo, neogeo,  neogeo,   ROT0, "SNK", "Robo Army" )
-	GAME( 1992, fbfrenzy, neogeo,   neogeo, neogeo,  neogeo,   ROT0, "SNK", "Football Frenzy" )
-	GAME( 1992, kotm2,    neogeo,   neogeo, neogeo,  neogeo,   ROT0, "SNK", "King of the Monsters 2 - The Next Thing" )
-	GAME( 1993, sengoku2, neogeo,   raster, neogeo,  neogeo,   ROT0, "SNK", "Sengoku 2 / Sengoku Denshou 2")
-	GAME( 1992, bstars2,  neogeo,   neogeo, neogeo,  neogeo,   ROT0, "SNK", "Baseball Stars 2" )
-	GAME( 1992, quizdai2, neogeo,   neogeo, neogeo,  neogeo,   ROT0, "SNK", "Quiz Meintantei Neo Geo - Quiz Daisousa Sen Part 2" )
-	GAME( 1993, 3countb,  neogeo,   neogeo, neogeo,  neogeo,   ROT0, "SNK", "3 Count Bout / Fire Suplex" )
-	GAME( 1992, aof,      neogeo,   raster, neogeo,  neogeo,   ROT0, "SNK", "Art of Fighting / Ryuuko no Ken" )
-	GAME( 1993, samsho,   neogeo,   neogeo, neogeo,  neogeo,   ROT0, "SNK", "Samurai Shodown / Samurai Spirits" )
-	GAME( 1994, tophuntr, neogeo,   raster, neogeo,  neogeo,   ROT0, "SNK", "Top Hunter - Roddy & Cathy" )
-	GAME( 1992, fatfury2, neogeo,   neogeo, neogeo,  neogeo,   ROT0, "SNK", "Fatal Fury 2 / Garou Densetsu 2 - arata-naru tatakai" )
-	GAME( 1992, ssideki,  neogeo,   neogeo, neogeo,  neogeo,   ROT0, "SNK", "Super Sidekicks / Tokuten Ou" )
-	GAME( 1994, kof94,    neogeo,   neogeo, neogeo,  neogeo,   ROT0, "SNK", "The King of Fighters '94" )
-	GAME( 1994, aof2,     neogeo,   neogeo, neogeo,  neogeo,   ROT0, "SNK", "Art of Fighting 2 / Ryuuko no Ken 2" )
-	GAME( 1993, fatfursp, neogeo,   neogeo, neogeo,  neogeo,   ROT0, "SNK", "Fatal Fury Special / Garou Densetsu Special" )
-	GAME( 1995, savagere, neogeo,   neogeo, neogeo,  neogeo,   ROT0, "SNK", "Savage Reign / Fu'un Mokushiroku - kakutou sousei" )
-	GAME( 1994, ssideki2, neogeo,   raster, neogeo,  neogeo,   ROT0, "SNK", "Super Sidekicks 2 - The World Championship / Tokuten Ou 2 - real fight football" )
-	GAME( 1994, samsho2,  neogeo,   neogeo, neogeo,  neogeo,   ROT0, "SNK", "Samurai Shodown II / Shin Samurai Spirits - Haohmaru jigokuhen" )
-	GAME( 1995, fatfury3, neogeo,   raster, neogeo,  neogeo,   ROT0, "SNK", "Fatal Fury 3 - Road to the Final Victory / Garou Densetsu 3 - haruka-naru tatakai" )
-	GAME( 1995, ssideki3, neogeo,   raster, neogeo,  neogeo,   ROT0, "SNK", "Super Sidekicks 3 - The Next Glory / Tokuten Ou 3 - eikoue no michi" )
-	GAME( 1995, kof95,    neogeo,   neogeo, neogeo,  neogeo,   ROT0, "SNK", "The King of Fighters '95" )
-	GAME( 1995, samsho3,  neogeo,   raster, neogeo,  neogeo,   ROT0, "SNK", "Samurai Shodown III / Samurai Spirits - Zankurou Musouken" )
-	GAME( 1995, rbff1,    neogeo,   neogeo, neogeo,  neogeo,   ROT0, "SNK", "Real Bout Fatal Fury / Real Bout Garou Densetsu" )
-	GAME( 1996, aof3,     neogeo,   neogeo, neogeo,  neogeo,   ROT0, "SNK", "Art of Fighting 3 - The Path of the Warrior / Art of Fighting - Ryuuko no Ken Gaiden" )
-	GAME( 1996, kof96,    neogeo,   neogeo, neogeo,  neogeo,   ROT0, "SNK", "The King of Fighters '96" )
-	GAME( 1996, ssideki4, neogeo,   raster, neogeo,  neogeo,   ROT0, "SNK", "The Ultimate 11 / Tokuten Ou - Honoo no Libero" )
-	GAME( 1996, kizuna,   neogeo,   neogeo, neogeo,  neogeo,   ROT0, "SNK", "Kizuna Encounter - Super Tag Battle / Fu'un Super Tag Battle" )
-	GAME( 1996, samsho4,  neogeo,   neogeo, neogeo,  neogeo,   ROT0, "SNK", "Samurai Shodown IV - Amakusa's Revenge / Samurai Spirits - Amakusa Kourin" )
-	GAME( 1996, rbffspec, neogeo,   neogeo, neogeo,  neogeo,   ROT0, "SNK", "Real Bout Fatal Fury Special / Real Bout Garou Densetsu Special" )
-	GAME( 1997, kof97,    neogeo,   neogeo, neogeo,  neogeo,   ROT0, "SNK", "The King of Fighters '97" )
-	GAME( 1997, lastblad, neogeo,   neogeo, neogeo,  neogeo,   ROT0, "SNK", "The Last Blade / Bakumatsu Roman - Gekkano Kenshi" )
-	GAME( 1997, irrmaze,  neogeo,   neogeo, irrmaze, neogeo,   ROT0, "SNK / Saurus", "The Irritating Maze / Ultra Denryu Iraira Bou" )
-	GAME( 1998, rbff2,    neogeo,   neogeo, neogeo,  neogeo,   ROT0, "SNK", "Real Bout Fatal Fury 2 - The Newcomers / Real Bout Garou Densetsu 2 - the newcomers" )
-	GAME( 1998, mslug2,   neogeo,   raster, neogeo,  neogeo,   ROT0, "SNK", "Metal Slug 2 - Super Vehicle-001/II" )
-	GAME( 1998, kof98,    neogeo,   neogeo, neogeo,  neogeo,   ROT0, "SNK", "The King of Fighters '98 - The Slugfest / King of Fighters '98 - dream match never ends" )
-	GAME( 1998, lastbld2, neogeo,   raster, neogeo,  neogeo,   ROT0, "SNK", "The Last Blade 2 / Bakumatsu Roman - Dai Ni Maku Gekkano Kenshi" )
-	GAME( 1998, neocup98, neogeo,   raster, neogeo,  neogeo,   ROT0, "SNK", "Neo-Geo Cup '98 - The Road to the Victory" )
-	GAME( 1999, mslugx,   neogeo,   neogeo, neogeo,  neogeo,   ROT0, "SNK", "Metal Slug X - Super Vehicle-001" )
-	GAME( 1999, kof99,    neogeo,   raster, neogeo,  kof99,    ROT0, "SNK", "The King of Fighters '99 - Millennium Battle" ) /* Encrypted Code & GFX */
-	GAME( 1999, kof99n,   kof99,    raster, neogeo,  gfxdec,   ROT0, "SNK", "The King of Fighters '99 - Millennium Battle (not encrypted)" )
-	GAME( 1999, kof99p,   kof99,    raster, neogeo,  neogeo,   ROT0, "SNK", "The King of Fighters '99 - Millennium Battle (prototype)" )
-	GAMEX(1999, garou,    neogeo,   raster, neogeo,  gfxdec,   ROT0, "SNK", "Garou - Mark of the Wolves (set 1)", GAME_NOT_WORKING ) /* Encrypted Code & GFX */
-	GAMEX(1999, garouo,   garou,    raster, neogeo,  gfxdec,   ROT0, "SNK", "Garou - Mark of the Wolves (set 2))", GAME_NOT_WORKING ) /* Encrypted Code & GFX */
-	GAME( 1999, garoup,   garou,    raster, neogeo,  neogeo,   ROT0, "SNK", "Garou - Mark of the Wolves (prototype)" )
-	GAMEX(1999, s1945p,   neogeo,   neogeo, neogeo,  neogeo,   ROT0, "SNK", "Strikers 1945+", GAME_NOT_WORKING ) /* Missing GFX */
-	GAMEX(2000, mslug3,   neogeo,   neogeo, neogeo,  mslug3,   ROT0, "SNK", "Metal Slug 3", GAME_NOT_WORKING ) /* Encrypted Code & GFX */
-	GAMEX(2000, kof2000,  neogeo,   neogeo, neogeo,  neogeo,   ROT0, "SNK", "The King of Fighters 2000", GAME_NOT_WORKING ) /* Special banking, missing GFX */
-	GAMEX(2001, sengoku3, neogeo,   neogeo, neogeo,  neogeo,   ROT0, "SNK", "Sengoku 3", GAME_NOT_WORKING ) /* Missing GFX */
+	public static GameDriver driver_nam1975	   = new GameDriver("1990"	,"nam1975"	,"neogeo.java"	,rom_nam1975,driver_neogeo	,machine_driver_neogeo	,input_ports_neogeo	,init_neogeo	,ROT0	,	SNK", "NAM-1975" )
+	public static GameDriver driver_bstars	   = new GameDriver("1990"	,"bstars"	,"neogeo.java"	,rom_bstars,driver_neogeo	,machine_driver_neogeo	,input_ports_neogeo	,init_neogeo	,ROT0	,	SNK", "Baseball Stars Professional" )
+	public static GameDriver driver_tpgolf	   = new GameDriver("1990"	,"tpgolf"	,"neogeo.java"	,rom_tpgolf,driver_neogeo	,machine_driver_raster	,input_ports_neogeo	,init_neogeo	,ROT0	,	SNK", "Top Player's Golf" )
+	public static GameDriver driver_mahretsu	   = new GameDriver("1990"	,"mahretsu"	,"neogeo.java"	,rom_mahretsu,driver_neogeo	,machine_driver_neogeo	,input_ports_neogeo	,init_neogeo	,ROT0	,	SNK", "Mahjong Kyoretsuden" )
+	public static GameDriver driver_ridhero	   = new GameDriver("1990"	,"ridhero"	,"neogeo.java"	,rom_ridhero,driver_neogeo	,machine_driver_raster	,input_ports_neogeo	,init_neogeo	,ROT0	,	SNK", "Riding Hero (set 1)" )
+	public static GameDriver driver_ridheroh	   = new GameDriver("1990"	,"ridheroh"	,"neogeo.java"	,rom_ridheroh,driver_ridhero	,machine_driver_raster	,input_ports_neogeo	,init_neogeo	,ROT0	,	SNK", "Riding Hero (set 2)" )
+	public static GameDriver driver_alpham2	   = new GameDriver("1991"	,"alpham2"	,"neogeo.java"	,rom_alpham2,driver_neogeo	,machine_driver_neogeo	,input_ports_neogeo	,init_neogeo	,ROT0	,	SNK", "Alpha Mission II / ASO II - Last Guardian" )
+	public static GameDriver driver_cyberlip	   = new GameDriver("1990"	,"cyberlip"	,"neogeo.java"	,rom_cyberlip,driver_neogeo	,machine_driver_neogeo	,input_ports_neogeo	,init_neogeo	,ROT0	,	SNK", "Cyber-Lip" )
+	public static GameDriver driver_superspy	   = new GameDriver("1990"	,"superspy"	,"neogeo.java"	,rom_superspy,driver_neogeo	,machine_driver_neogeo	,input_ports_neogeo	,init_neogeo	,ROT0	,	SNK", "The Super Spy" )
+	public static GameDriver driver_mutnat	   = new GameDriver("1992"	,"mutnat"	,"neogeo.java"	,rom_mutnat,driver_neogeo	,machine_driver_neogeo	,input_ports_neogeo	,init_neogeo	,ROT0	,	SNK", "Mutation Nation" )
+	public static GameDriver driver_kotm	   = new GameDriver("1991"	,"kotm"	,"neogeo.java"	,rom_kotm,driver_neogeo	,machine_driver_neogeo	,input_ports_neogeo	,init_neogeo	,ROT0	,	SNK", "King of the Monsters" )
+	public static GameDriver driver_sengoku	   = new GameDriver("1991"	,"sengoku"	,"neogeo.java"	,rom_sengoku,driver_neogeo	,machine_driver_raster	,input_ports_neogeo	,init_neogeo	,ROT0	,	SNK", "Sengoku / Sengoku Denshou (set 1)" )
+	public static GameDriver driver_sengokh	   = new GameDriver("1991"	,"sengokh"	,"neogeo.java"	,rom_sengokh,driver_sengoku	,machine_driver_raster	,input_ports_neogeo	,init_neogeo	,ROT0	,	SNK", "Sengoku / Sengoku Denshou (set 2)" )
+	public static GameDriver driver_burningf	   = new GameDriver("1991"	,"burningf"	,"neogeo.java"	,rom_burningf,driver_neogeo	,machine_driver_neogeo	,input_ports_neogeo	,init_neogeo	,ROT0	,	SNK", "Burning Fight (set 1)" )
+	public static GameDriver driver_burningh	   = new GameDriver("1991"	,"burningh"	,"neogeo.java"	,rom_burningh,driver_burningf	,machine_driver_neogeo	,input_ports_neogeo	,init_neogeo	,ROT0	,	SNK", "Burning Fight (set 2)" )
+	public static GameDriver driver_lbowling	   = new GameDriver("1990"	,"lbowling"	,"neogeo.java"	,rom_lbowling,driver_neogeo	,machine_driver_neogeo	,input_ports_neogeo	,init_neogeo	,ROT0	,	SNK", "League Bowling" )
+	public static GameDriver driver_gpilots	   = new GameDriver("1991"	,"gpilots"	,"neogeo.java"	,rom_gpilots,driver_neogeo	,machine_driver_neogeo	,input_ports_neogeo	,init_neogeo	,ROT0	,	SNK", "Ghost Pilots" )
+	public static GameDriver driver_joyjoy	   = new GameDriver("1990"	,"joyjoy"	,"neogeo.java"	,rom_joyjoy,driver_neogeo	,machine_driver_neogeo	,input_ports_neogeo	,init_neogeo	,ROT0	,	SNK", "Puzzled / Joy Joy Kid" )
+	public static GameDriver driver_quizdais	   = new GameDriver("1991"	,"quizdais"	,"neogeo.java"	,rom_quizdais,driver_neogeo	,machine_driver_neogeo	,input_ports_neogeo	,init_neogeo	,ROT0	,	SNK", "Quiz Daisousa Sen - The Last Count Down" )
+	public static GameDriver driver_lresort	   = new GameDriver("1992"	,"lresort"	,"neogeo.java"	,rom_lresort,driver_neogeo	,machine_driver_neogeo	,input_ports_neogeo	,init_neogeo	,ROT0	,	SNK", "Last Resort" )
+	public static GameDriver driver_eightman	   = new GameDriver("1991"	,"eightman"	,"neogeo.java"	,rom_eightman,driver_neogeo	,machine_driver_raster	,input_ports_neogeo	,init_neogeo	,ROT0	,	SNK / Pallas", "Eight Man" )
+	public static GameDriver driver_legendos	   = new GameDriver("1991"	,"legendos"	,"neogeo.java"	,rom_legendos,driver_neogeo	,machine_driver_neogeo	,input_ports_neogeo	,init_neogeo	,ROT0	,	SNK", "Legend of Success Joe / Ashitano Joe Densetsu" )
+	public static GameDriver driver_2020bb	   = new GameDriver("1991"	,"2020bb"	,"neogeo.java"	,rom_2020bb,driver_neogeo	,machine_driver_neogeo	,input_ports_neogeo	,init_neogeo	,ROT0	,	SNK / Pallas", "2020 Super Baseball (set 1)" )
+	public static GameDriver driver_2020bbh	   = new GameDriver("1991"	,"2020bbh"	,"neogeo.java"	,rom_2020bbh,driver_2020bb	,machine_driver_neogeo	,input_ports_neogeo	,init_neogeo	,ROT0	,	SNK / Pallas", "2020 Super Baseball (set 2)" )
+	public static GameDriver driver_socbrawl	   = new GameDriver("1991"	,"socbrawl"	,"neogeo.java"	,rom_socbrawl,driver_neogeo	,machine_driver_neogeo	,input_ports_neogeo	,init_neogeo	,ROT0	,	SNK", "Soccer Brawl" )
+	public static GameDriver driver_fatfury1	   = new GameDriver("1991"	,"fatfury1"	,"neogeo.java"	,rom_fatfury1,driver_neogeo	,machine_driver_neogeo	,input_ports_neogeo	,init_neogeo	,ROT0	,	SNK", "Fatal Fury - King of Fighters / Garou Densetsu - shukumei no tatakai" )
+	public static GameDriver driver_roboarmy	   = new GameDriver("1991"	,"roboarmy"	,"neogeo.java"	,rom_roboarmy,driver_neogeo	,machine_driver_neogeo	,input_ports_neogeo	,init_neogeo	,ROT0	,	SNK", "Robo Army" )
+	public static GameDriver driver_fbfrenzy	   = new GameDriver("1992"	,"fbfrenzy"	,"neogeo.java"	,rom_fbfrenzy,driver_neogeo	,machine_driver_neogeo	,input_ports_neogeo	,init_neogeo	,ROT0	,	SNK", "Football Frenzy" )
+	public static GameDriver driver_kotm2	   = new GameDriver("1992"	,"kotm2"	,"neogeo.java"	,rom_kotm2,driver_neogeo	,machine_driver_neogeo	,input_ports_neogeo	,init_neogeo	,ROT0	,	SNK", "King of the Monsters 2 - The Next Thing" )
+	public static GameDriver driver_sengoku2	   = new GameDriver("1993"	,"sengoku2"	,"neogeo.java"	,rom_sengoku2,driver_neogeo	,machine_driver_raster	,input_ports_neogeo	,init_neogeo	,ROT0	,	SNK", "Sengoku 2 / Sengoku Denshou 2")
+	public static GameDriver driver_bstars2	   = new GameDriver("1992"	,"bstars2"	,"neogeo.java"	,rom_bstars2,driver_neogeo	,machine_driver_neogeo	,input_ports_neogeo	,init_neogeo	,ROT0	,	SNK", "Baseball Stars 2" )
+	public static GameDriver driver_quizdai2	   = new GameDriver("1992"	,"quizdai2"	,"neogeo.java"	,rom_quizdai2,driver_neogeo	,machine_driver_neogeo	,input_ports_neogeo	,init_neogeo	,ROT0	,	SNK", "Quiz Meintantei Neo Geo - Quiz Daisousa Sen Part 2" )
+	public static GameDriver driver_3countb	   = new GameDriver("1993"	,"3countb"	,"neogeo.java"	,rom_3countb,driver_neogeo	,machine_driver_neogeo	,input_ports_neogeo	,init_neogeo	,ROT0	,	SNK", "3 Count Bout / Fire Suplex" )
+	public static GameDriver driver_aof	   = new GameDriver("1992"	,"aof"	,"neogeo.java"	,rom_aof,driver_neogeo	,machine_driver_raster	,input_ports_neogeo	,init_neogeo	,ROT0	,	SNK", "Art of Fighting / Ryuuko no Ken" )
+	public static GameDriver driver_samsho	   = new GameDriver("1993"	,"samsho"	,"neogeo.java"	,rom_samsho,driver_neogeo	,machine_driver_neogeo	,input_ports_neogeo	,init_neogeo	,ROT0	,	SNK", "Samurai Shodown / Samurai Spirits" )
+	public static GameDriver driver_tophuntr	   = new GameDriver("1994"	,"tophuntr"	,"neogeo.java"	,rom_tophuntr,driver_neogeo	,machine_driver_raster	,input_ports_neogeo	,init_neogeo	,ROT0	,	SNK", "Top Hunter - Roddy & Cathy" )
+	public static GameDriver driver_fatfury2	   = new GameDriver("1992"	,"fatfury2"	,"neogeo.java"	,rom_fatfury2,driver_neogeo	,machine_driver_neogeo	,input_ports_neogeo	,init_neogeo	,ROT0	,	SNK", "Fatal Fury 2 / Garou Densetsu 2 - arata-naru tatakai" )
+	public static GameDriver driver_ssideki	   = new GameDriver("1992"	,"ssideki"	,"neogeo.java"	,rom_ssideki,driver_neogeo	,machine_driver_neogeo	,input_ports_neogeo	,init_neogeo	,ROT0	,	SNK", "Super Sidekicks / Tokuten Ou" )
+	public static GameDriver driver_kof94	   = new GameDriver("1994"	,"kof94"	,"neogeo.java"	,rom_kof94,driver_neogeo	,machine_driver_neogeo	,input_ports_neogeo	,init_neogeo	,ROT0	,	SNK", "The King of Fighters '94" )
+	public static GameDriver driver_aof2	   = new GameDriver("1994"	,"aof2"	,"neogeo.java"	,rom_aof2,driver_neogeo	,machine_driver_neogeo	,input_ports_neogeo	,init_neogeo	,ROT0	,	SNK", "Art of Fighting 2 / Ryuuko no Ken 2" )
+	public static GameDriver driver_fatfursp	   = new GameDriver("1993"	,"fatfursp"	,"neogeo.java"	,rom_fatfursp,driver_neogeo	,machine_driver_neogeo	,input_ports_neogeo	,init_neogeo	,ROT0	,	SNK", "Fatal Fury Special / Garou Densetsu Special" )
+	public static GameDriver driver_savagere	   = new GameDriver("1995"	,"savagere"	,"neogeo.java"	,rom_savagere,driver_neogeo	,machine_driver_neogeo	,input_ports_neogeo	,init_neogeo	,ROT0	,	SNK", "Savage Reign / Fu'un Mokushiroku - kakutou sousei" )
+	public static GameDriver driver_ssideki2	   = new GameDriver("1994"	,"ssideki2"	,"neogeo.java"	,rom_ssideki2,driver_neogeo	,machine_driver_raster	,input_ports_neogeo	,init_neogeo	,ROT0	,	SNK", "Super Sidekicks 2 - The World Championship / Tokuten Ou 2 - real fight football" )
+	public static GameDriver driver_samsho2	   = new GameDriver("1994"	,"samsho2"	,"neogeo.java"	,rom_samsho2,driver_neogeo	,machine_driver_neogeo	,input_ports_neogeo	,init_neogeo	,ROT0	,	SNK", "Samurai Shodown II / Shin Samurai Spirits - Haohmaru jigokuhen" )
+	public static GameDriver driver_fatfury3	   = new GameDriver("1995"	,"fatfury3"	,"neogeo.java"	,rom_fatfury3,driver_neogeo	,machine_driver_raster	,input_ports_neogeo	,init_neogeo	,ROT0	,	SNK", "Fatal Fury 3 - Road to the Final Victory / Garou Densetsu 3 - haruka-naru tatakai" )
+	public static GameDriver driver_ssideki3	   = new GameDriver("1995"	,"ssideki3"	,"neogeo.java"	,rom_ssideki3,driver_neogeo	,machine_driver_raster	,input_ports_neogeo	,init_neogeo	,ROT0	,	SNK", "Super Sidekicks 3 - The Next Glory / Tokuten Ou 3 - eikoue no michi" )
+	public static GameDriver driver_kof95	   = new GameDriver("1995"	,"kof95"	,"neogeo.java"	,rom_kof95,driver_neogeo	,machine_driver_neogeo	,input_ports_neogeo	,init_neogeo	,ROT0	,	SNK", "The King of Fighters '95" )
+	public static GameDriver driver_samsho3	   = new GameDriver("1995"	,"samsho3"	,"neogeo.java"	,rom_samsho3,driver_neogeo	,machine_driver_raster	,input_ports_neogeo	,init_neogeo	,ROT0	,	SNK", "Samurai Shodown III / Samurai Spirits - Zankurou Musouken" )
+	public static GameDriver driver_rbff1	   = new GameDriver("1995"	,"rbff1"	,"neogeo.java"	,rom_rbff1,driver_neogeo	,machine_driver_neogeo	,input_ports_neogeo	,init_neogeo	,ROT0	,	SNK", "Real Bout Fatal Fury / Real Bout Garou Densetsu" )
+	public static GameDriver driver_aof3	   = new GameDriver("1996"	,"aof3"	,"neogeo.java"	,rom_aof3,driver_neogeo	,machine_driver_neogeo	,input_ports_neogeo	,init_neogeo	,ROT0	,	SNK", "Art of Fighting 3 - The Path of the Warrior / Art of Fighting - Ryuuko no Ken Gaiden" )
+	public static GameDriver driver_kof96	   = new GameDriver("1996"	,"kof96"	,"neogeo.java"	,rom_kof96,driver_neogeo	,machine_driver_neogeo	,input_ports_neogeo	,init_neogeo	,ROT0	,	SNK", "The King of Fighters '96" )
+	public static GameDriver driver_ssideki4	   = new GameDriver("1996"	,"ssideki4"	,"neogeo.java"	,rom_ssideki4,driver_neogeo	,machine_driver_raster	,input_ports_neogeo	,init_neogeo	,ROT0	,	SNK", "The Ultimate 11 / Tokuten Ou - Honoo no Libero" )
+	public static GameDriver driver_kizuna	   = new GameDriver("1996"	,"kizuna"	,"neogeo.java"	,rom_kizuna,driver_neogeo	,machine_driver_neogeo	,input_ports_neogeo	,init_neogeo	,ROT0	,	SNK", "Kizuna Encounter - Super Tag Battle / Fu'un Super Tag Battle" )
+	public static GameDriver driver_samsho4	   = new GameDriver("1996"	,"samsho4"	,"neogeo.java"	,rom_samsho4,driver_neogeo	,machine_driver_neogeo	,input_ports_neogeo	,init_neogeo	,ROT0	,	SNK", "Samurai Shodown IV - Amakusa's Revenge / Samurai Spirits - Amakusa Kourin" )
+	public static GameDriver driver_rbffspec	   = new GameDriver("1996"	,"rbffspec"	,"neogeo.java"	,rom_rbffspec,driver_neogeo	,machine_driver_neogeo	,input_ports_neogeo	,init_neogeo	,ROT0	,	SNK", "Real Bout Fatal Fury Special / Real Bout Garou Densetsu Special" )
+	public static GameDriver driver_kof97	   = new GameDriver("1997"	,"kof97"	,"neogeo.java"	,rom_kof97,driver_neogeo	,machine_driver_neogeo	,input_ports_neogeo	,init_neogeo	,ROT0	,	SNK", "The King of Fighters '97" )
+	public static GameDriver driver_lastblad	   = new GameDriver("1997"	,"lastblad"	,"neogeo.java"	,rom_lastblad,driver_neogeo	,machine_driver_neogeo	,input_ports_neogeo	,init_neogeo	,ROT0	,	SNK", "The Last Blade / Bakumatsu Roman - Gekkano Kenshi" )
+	public static GameDriver driver_irrmaze	   = new GameDriver("1997"	,"irrmaze"	,"neogeo.java"	,rom_irrmaze,driver_neogeo	,machine_driver_neogeo	,input_ports_irrmaze	,init_neogeo	,ROT0	,	SNK / Saurus", "The Irritating Maze / Ultra Denryu Iraira Bou" )
+	public static GameDriver driver_rbff2	   = new GameDriver("1998"	,"rbff2"	,"neogeo.java"	,rom_rbff2,driver_neogeo	,machine_driver_neogeo	,input_ports_neogeo	,init_neogeo	,ROT0	,	SNK", "Real Bout Fatal Fury 2 - The Newcomers / Real Bout Garou Densetsu 2 - the newcomers" )
+	public static GameDriver driver_mslug2	   = new GameDriver("1998"	,"mslug2"	,"neogeo.java"	,rom_mslug2,driver_neogeo	,machine_driver_raster	,input_ports_neogeo	,init_neogeo	,ROT0	,	SNK", "Metal Slug 2 - Super Vehicle-001/II" )
+	public static GameDriver driver_kof98	   = new GameDriver("1998"	,"kof98"	,"neogeo.java"	,rom_kof98,driver_neogeo	,machine_driver_neogeo	,input_ports_neogeo	,init_neogeo	,ROT0	,	SNK", "The King of Fighters '98 - The Slugfest / King of Fighters '98 - dream match never ends" )
+	public static GameDriver driver_lastbld2	   = new GameDriver("1998"	,"lastbld2"	,"neogeo.java"	,rom_lastbld2,driver_neogeo	,machine_driver_raster	,input_ports_neogeo	,init_neogeo	,ROT0	,	SNK", "The Last Blade 2 / Bakumatsu Roman - Dai Ni Maku Gekkano Kenshi" )
+	public static GameDriver driver_neocup98	   = new GameDriver("1998"	,"neocup98"	,"neogeo.java"	,rom_neocup98,driver_neogeo	,machine_driver_raster	,input_ports_neogeo	,init_neogeo	,ROT0	,	SNK", "Neo-Geo Cup '98 - The Road to the Victory" )
+	public static GameDriver driver_mslugx	   = new GameDriver("1999"	,"mslugx"	,"neogeo.java"	,rom_mslugx,driver_neogeo	,machine_driver_neogeo	,input_ports_neogeo	,init_neogeo	,ROT0	,	SNK", "Metal Slug X - Super Vehicle-001" )
+	public static GameDriver driver_kof99	   = new GameDriver("1999"	,"kof99"	,"neogeo.java"	,rom_kof99,driver_neogeo	,machine_driver_raster	,input_ports_neogeo	,init_kof99	,ROT0	,	SNK", "The King of Fighters '99 - Millennium Battle" ) /* Encrypted Code & GFX */
+	public static GameDriver driver_kof99n	   = new GameDriver("1999"	,"kof99n"	,"neogeo.java"	,rom_kof99n,driver_kof99	,machine_driver_raster	,input_ports_neogeo	,init_gfxdec	,ROT0	,	SNK", "The King of Fighters '99 - Millennium Battle (not encrypted)" )
+	public static GameDriver driver_kof99p	   = new GameDriver("1999"	,"kof99p"	,"neogeo.java"	,rom_kof99p,driver_kof99	,machine_driver_raster	,input_ports_neogeo	,init_neogeo	,ROT0	,	SNK", "The King of Fighters '99 - Millennium Battle (prototype)" )
+	public static GameDriver driver_garou	   = new GameDriver("1999"	,"garou"	,"neogeo.java"	,rom_garou,driver_neogeo	,machine_driver_raster	,input_ports_neogeo	,init_gfxdec	,ROT0	,	SNK", "Garou - Mark of the Wolves (set 1)", GAME_NOT_WORKING ) /* Encrypted Code & GFX */
+	public static GameDriver driver_garouo	   = new GameDriver("1999"	,"garouo"	,"neogeo.java"	,rom_garouo,driver_garou	,machine_driver_raster	,input_ports_neogeo	,init_gfxdec	,ROT0	,	SNK", "Garou - Mark of the Wolves (set 2))", GAME_NOT_WORKING ) /* Encrypted Code & GFX */
+	public static GameDriver driver_garoup	   = new GameDriver("1999"	,"garoup"	,"neogeo.java"	,rom_garoup,driver_garou	,machine_driver_raster	,input_ports_neogeo	,init_neogeo	,ROT0	,	SNK", "Garou - Mark of the Wolves (prototype)" )
+	public static GameDriver driver_s1945p	   = new GameDriver("1999"	,"s1945p"	,"neogeo.java"	,rom_s1945p,driver_neogeo	,machine_driver_neogeo	,input_ports_neogeo	,init_neogeo	,ROT0	,	SNK", "Strikers 1945+", GAME_NOT_WORKING ) /* Missing GFX */
+	public static GameDriver driver_mslug3	   = new GameDriver("2000"	,"mslug3"	,"neogeo.java"	,rom_mslug3,driver_neogeo	,machine_driver_neogeo	,input_ports_neogeo	,init_mslug3	,ROT0	,	SNK", "Metal Slug 3", GAME_NOT_WORKING ) /* Encrypted Code & GFX */
+	public static GameDriver driver_kof2000	   = new GameDriver("2000"	,"kof2000"	,"neogeo.java"	,rom_kof2000,driver_neogeo	,machine_driver_neogeo	,input_ports_neogeo	,init_neogeo	,ROT0	,	SNK", "The King of Fighters 2000", GAME_NOT_WORKING ) /* Special banking, missing GFX */
+	public static GameDriver driver_sengoku3	   = new GameDriver("2001"	,"sengoku3"	,"neogeo.java"	,rom_sengoku3,driver_neogeo	,machine_driver_neogeo	,input_ports_neogeo	,init_neogeo	,ROT0	,	SNK", "Sengoku 3", GAME_NOT_WORKING ) /* Missing GFX */
 	
 	/* Alpha Denshi Co. / ADK (changed name in 1993) */
-	GAME( 1990, maglord,  neogeo,   neogeo, neogeo,  neogeo,   ROT0, "Alpha Denshi Co.", "Magician Lord (set 1)" )
-	GAME( 1990, maglordh, maglord,  neogeo, neogeo,  neogeo,   ROT0, "Alpha Denshi Co.", "Magician Lord (set 2)" )
-	GAME( 1990, ncombat,  neogeo,   neogeo, neogeo,  neogeo,   ROT0, "Alpha Denshi Co.", "Ninja Combat" )
-	GAME( 1990, bjourney, neogeo,   neogeo, neogeo,  neogeo,   ROT0, "Alpha Denshi Co.", "Blue's Journey / Raguy" )
-	GAME( 1991, crsword,  neogeo,   neogeo, neogeo,  neogeo,   ROT0, "Alpha Denshi Co.", "Crossed Swords" )
-	GAME( 1991, trally,   neogeo,   raster, neogeo,  neogeo,   ROT0, "Alpha Denshi Co.", "Thrash Rally" )
-	GAME( 1992, ncommand, neogeo,   neogeo, neogeo,  neogeo,   ROT0, "Alpha Denshi Co.", "Ninja Commando" )
-	GAME( 1992, wh1,      neogeo,   raster, neogeo,  neogeo,   ROT0, "Alpha Denshi Co.", "World Heroes" )
-	GAME( 1993, wh2,      neogeo,   raster, neogeo,  neogeo,   ROT0, "ADK",              "World Heroes 2" )
-	GAME( 1994, wh2j,     neogeo,   raster, neogeo,  neogeo,   ROT0, "ADK / SNK",        "World Heroes 2 Jet" )
-	GAME( 1994, aodk,     neogeo,   raster, neogeo,  neogeo,   ROT0, "ADK / SNK",        "Aggressors of Dark Kombat / Tsuukai GANGAN Koushinkyoku" )
-	GAME( 1995, whp,      neogeo,   neogeo, neogeo,  neogeo,   ROT0, "ADK / SNK",        "World Heroes Perfect" )
-	GAME( 1995, mosyougi, neogeo,   raster_busy, neogeo,  neogeo,   ROT0, "ADK / SNK",        "Syougi No Tatsujin - Master of Syougi" )
-	GAME( 1996, overtop,  neogeo,   neogeo, neogeo,  neogeo,   ROT0, "ADK",              "Over Top" )
-	GAME( 1996, ninjamas, neogeo,   neogeo, neogeo,  neogeo,   ROT0, "ADK / SNK",        "Ninja Master's - haoh-ninpo-cho" )
-	GAME( 1996, twinspri, neogeo,   neogeo, neogeo,  neogeo,   ROT0, "ADK",              "Twinkle Star Sprites" )
+	public static GameDriver driver_maglord	   = new GameDriver("1990"	,"maglord"	,"neogeo.java"	,rom_maglord,driver_neogeo	,machine_driver_neogeo	,input_ports_neogeo	,init_neogeo	,ROT0	,	Alpha Denshi Co.", "Magician Lord (set 1)" )
+	public static GameDriver driver_maglordh	   = new GameDriver("1990"	,"maglordh"	,"neogeo.java"	,rom_maglordh,driver_maglord	,machine_driver_neogeo	,input_ports_neogeo	,init_neogeo	,ROT0	,	Alpha Denshi Co.", "Magician Lord (set 2)" )
+	public static GameDriver driver_ncombat	   = new GameDriver("1990"	,"ncombat"	,"neogeo.java"	,rom_ncombat,driver_neogeo	,machine_driver_neogeo	,input_ports_neogeo	,init_neogeo	,ROT0	,	Alpha Denshi Co.", "Ninja Combat" )
+	public static GameDriver driver_bjourney	   = new GameDriver("1990"	,"bjourney"	,"neogeo.java"	,rom_bjourney,driver_neogeo	,machine_driver_neogeo	,input_ports_neogeo	,init_neogeo	,ROT0	,	Alpha Denshi Co.", "Blue's Journey / Raguy" )
+	public static GameDriver driver_crsword	   = new GameDriver("1991"	,"crsword"	,"neogeo.java"	,rom_crsword,driver_neogeo	,machine_driver_neogeo	,input_ports_neogeo	,init_neogeo	,ROT0	,	Alpha Denshi Co.", "Crossed Swords" )
+	public static GameDriver driver_trally	   = new GameDriver("1991"	,"trally"	,"neogeo.java"	,rom_trally,driver_neogeo	,machine_driver_raster	,input_ports_neogeo	,init_neogeo	,ROT0	,	Alpha Denshi Co.", "Thrash Rally" )
+	public static GameDriver driver_ncommand	   = new GameDriver("1992"	,"ncommand"	,"neogeo.java"	,rom_ncommand,driver_neogeo	,machine_driver_neogeo	,input_ports_neogeo	,init_neogeo	,ROT0	,	Alpha Denshi Co.", "Ninja Commando" )
+	public static GameDriver driver_wh1	   = new GameDriver("1992"	,"wh1"	,"neogeo.java"	,rom_wh1,driver_neogeo	,machine_driver_raster	,input_ports_neogeo	,init_neogeo	,ROT0	,	Alpha Denshi Co.", "World Heroes" )
+	public static GameDriver driver_wh2	   = new GameDriver("1993"	,"wh2"	,"neogeo.java"	,rom_wh2,driver_neogeo	,machine_driver_raster	,input_ports_neogeo	,init_neogeo	,ROT0	,	ADK",              "World Heroes 2" )
+	public static GameDriver driver_wh2j	   = new GameDriver("1994"	,"wh2j"	,"neogeo.java"	,rom_wh2j,driver_neogeo	,machine_driver_raster	,input_ports_neogeo	,init_neogeo	,ROT0	,	ADK / SNK",        "World Heroes 2 Jet" )
+	public static GameDriver driver_aodk	   = new GameDriver("1994"	,"aodk"	,"neogeo.java"	,rom_aodk,driver_neogeo	,machine_driver_raster	,input_ports_neogeo	,init_neogeo	,ROT0	,	ADK / SNK",        "Aggressors of Dark Kombat / Tsuukai GANGAN Koushinkyoku" )
+	public static GameDriver driver_whp	   = new GameDriver("1995"	,"whp"	,"neogeo.java"	,rom_whp,driver_neogeo	,machine_driver_neogeo	,input_ports_neogeo	,init_neogeo	,ROT0	,	ADK / SNK",        "World Heroes Perfect" )
+	public static GameDriver driver_mosyougi	   = new GameDriver("1995"	,"mosyougi"	,"neogeo.java"	,rom_mosyougi,driver_neogeo	,machine_driver_raster_busy	,input_ports_neogeo	,init_neogeo	,ROT0	,	ADK / SNK",        "Syougi No Tatsujin - Master of Syougi" )
+	public static GameDriver driver_overtop	   = new GameDriver("1996"	,"overtop"	,"neogeo.java"	,rom_overtop,driver_neogeo	,machine_driver_neogeo	,input_ports_neogeo	,init_neogeo	,ROT0	,	ADK",              "Over Top" )
+	public static GameDriver driver_ninjamas	   = new GameDriver("1996"	,"ninjamas"	,"neogeo.java"	,rom_ninjamas,driver_neogeo	,machine_driver_neogeo	,input_ports_neogeo	,init_neogeo	,ROT0	,	ADK / SNK",        "Ninja Master's - haoh-ninpo-cho" )
+	public static GameDriver driver_twinspri	   = new GameDriver("1996"	,"twinspri"	,"neogeo.java"	,rom_twinspri,driver_neogeo	,machine_driver_neogeo	,input_ports_neogeo	,init_neogeo	,ROT0	,	ADK",              "Twinkle Star Sprites" )
 	
 	/* Aicom */
-	GAME( 1994, janshin,  neogeo,   neogeo, neogeo,  neogeo,   ROT0, "Aicom", "Jyanshin Densetsu - Quest of Jongmaster" )
-	GAME( 1995, pulstar,  neogeo,   raster, neogeo,  neogeo,   ROT0, "Aicom", "Pulstar" )
+	public static GameDriver driver_janshin	   = new GameDriver("1994"	,"janshin"	,"neogeo.java"	,rom_janshin,driver_neogeo	,machine_driver_neogeo	,input_ports_neogeo	,init_neogeo	,ROT0	,	Aicom", "Jyanshin Densetsu - Quest of Jongmaster" )
+	public static GameDriver driver_pulstar	   = new GameDriver("1995"	,"pulstar"	,"neogeo.java"	,rom_pulstar,driver_neogeo	,machine_driver_raster	,input_ports_neogeo	,init_neogeo	,ROT0	,	Aicom", "Pulstar" )
 	
 	/* Data East Corporation */
-	GAME( 1993, spinmast, neogeo,   raster, neogeo,  neogeo,   ROT0, "Data East Corporation", "Spinmaster / Miracle Adventure" )
-	GAME( 1994, wjammers, neogeo,   neogeo, neogeo,  neogeo,   ROT0, "Data East Corporation", "Windjammers / Flying Power Disc" )
-	GAME( 1994, karnovr,  neogeo,   raster, neogeo,  neogeo,   ROT0, "Data East Corporation", "Karnov's Revenge / Fighter's History Dynamite" )
-	GAME( 1994, strhoop,  neogeo,   raster, neogeo,  neogeo,   ROT0, "Data East Corporation", "Street Hoop / Street Slam / Dunk Dream" )
-	GAME( 1996, magdrop2, neogeo,   neogeo, neogeo,  neogeo,   ROT0, "Data East Corporation", "Magical Drop II" )
-	GAME( 1997, magdrop3, neogeo,   neogeo, neogeo,  neogeo,   ROT0, "Data East Corporation", "Magical Drop III" )
+	public static GameDriver driver_spinmast	   = new GameDriver("1993"	,"spinmast"	,"neogeo.java"	,rom_spinmast,driver_neogeo	,machine_driver_raster	,input_ports_neogeo	,init_neogeo	,ROT0	,	Data East Corporation", "Spinmaster / Miracle Adventure" )
+	public static GameDriver driver_wjammers	   = new GameDriver("1994"	,"wjammers"	,"neogeo.java"	,rom_wjammers,driver_neogeo	,machine_driver_neogeo	,input_ports_neogeo	,init_neogeo	,ROT0	,	Data East Corporation", "Windjammers / Flying Power Disc" )
+	public static GameDriver driver_karnovr	   = new GameDriver("1994"	,"karnovr"	,"neogeo.java"	,rom_karnovr,driver_neogeo	,machine_driver_raster	,input_ports_neogeo	,init_neogeo	,ROT0	,	Data East Corporation", "Karnov's Revenge / Fighter's History Dynamite" )
+	public static GameDriver driver_strhoop	   = new GameDriver("1994"	,"strhoop"	,"neogeo.java"	,rom_strhoop,driver_neogeo	,machine_driver_raster	,input_ports_neogeo	,init_neogeo	,ROT0	,	Data East Corporation", "Street Hoop / Street Slam / Dunk Dream" )
+	public static GameDriver driver_magdrop2	   = new GameDriver("1996"	,"magdrop2"	,"neogeo.java"	,rom_magdrop2,driver_neogeo	,machine_driver_neogeo	,input_ports_neogeo	,init_neogeo	,ROT0	,	Data East Corporation", "Magical Drop II" )
+	public static GameDriver driver_magdrop3	   = new GameDriver("1997"	,"magdrop3"	,"neogeo.java"	,rom_magdrop3,driver_neogeo	,machine_driver_neogeo	,input_ports_neogeo	,init_neogeo	,ROT0	,	Data East Corporation", "Magical Drop III" )
 	
 	/* Eleven */
-	GAME( 2000, nitd,     neogeo,   neogeo, neogeo,  nitd,     ROT0, "Eleven / Gavaking", "Nightmare in the Dark" ) /* Encrypted GFX */
+	public static GameDriver driver_nitd	   = new GameDriver("2000"	,"nitd"	,"neogeo.java"	,rom_nitd,driver_neogeo	,machine_driver_neogeo	,input_ports_neogeo	,init_nitd	,ROT0	,	Eleven / Gavaking", "Nightmare in the Dark" ) /* Encrypted GFX */
 	
 	/* Face */
-	GAME( 1994, gururin,  neogeo,   neogeo, neogeo,  neogeo,   ROT0, "Face", "Gururin" )
-	GAME( 1997, miexchng, neogeo,   neogeo, neogeo,  neogeo,   ROT0, "Face", "Money Puzzle Exchanger / Money Idol Exchanger" )
+	public static GameDriver driver_gururin	   = new GameDriver("1994"	,"gururin"	,"neogeo.java"	,rom_gururin,driver_neogeo	,machine_driver_neogeo	,input_ports_neogeo	,init_neogeo	,ROT0	,	Face", "Gururin" )
+	public static GameDriver driver_miexchng	   = new GameDriver("1997"	,"miexchng"	,"neogeo.java"	,rom_miexchng,driver_neogeo	,machine_driver_neogeo	,input_ports_neogeo	,init_neogeo	,ROT0	,	Face", "Money Puzzle Exchanger / Money Idol Exchanger" )
 	
 	/* Hudson Soft */
-	GAME( 1994, panicbom, neogeo,   neogeo, neogeo,  neogeo,   ROT0, "Eighting / Hudson", "Panic Bomber" )
-	GAME( 1995, kabukikl, neogeo,   neogeo, neogeo,  neogeo,   ROT0, "Hudson", "Kabuki Klash - Far East of Eden / Tengai Makyou Shinden - Far East of Eden" )
-	GAME( 1997, neobombe, neogeo,   neogeo, neogeo,  neogeo,   ROT0, "Hudson", "Neo Bomberman" )
+	public static GameDriver driver_panicbom	   = new GameDriver("1994"	,"panicbom"	,"neogeo.java"	,rom_panicbom,driver_neogeo	,machine_driver_neogeo	,input_ports_neogeo	,init_neogeo	,ROT0	,	Eighting / Hudson", "Panic Bomber" )
+	public static GameDriver driver_kabukikl	   = new GameDriver("1995"	,"kabukikl"	,"neogeo.java"	,rom_kabukikl,driver_neogeo	,machine_driver_neogeo	,input_ports_neogeo	,init_neogeo	,ROT0	,	Hudson", "Kabuki Klash - Far East of Eden / Tengai Makyou Shinden - Far East of Eden" )
+	public static GameDriver driver_neobombe	   = new GameDriver("1997"	,"neobombe"	,"neogeo.java"	,rom_neobombe,driver_neogeo	,machine_driver_neogeo	,input_ports_neogeo	,init_neogeo	,ROT0	,	Hudson", "Neo Bomberman" )
 	
 	/* Monolith Corp. */
-	GAME( 1990, minasan,  neogeo,   neogeo, neogeo,  neogeo,   ROT0, "Monolith Corp.", "Minnasanno Okagesamadesu" )
-	GAME( 1991, bakatono, neogeo,   neogeo, neogeo,  neogeo,   ROT0, "Monolith Corp.", "Bakatonosama Mahjong Manyuki" )
+	public static GameDriver driver_minasan	   = new GameDriver("1990"	,"minasan"	,"neogeo.java"	,rom_minasan,driver_neogeo	,machine_driver_neogeo	,input_ports_neogeo	,init_neogeo	,ROT0	,	Monolith Corp.", "Minnasanno Okagesamadesu" )
+	public static GameDriver driver_bakatono	   = new GameDriver("1991"	,"bakatono"	,"neogeo.java"	,rom_bakatono,driver_neogeo	,machine_driver_neogeo	,input_ports_neogeo	,init_neogeo	,ROT0	,	Monolith Corp.", "Bakatonosama Mahjong Manyuki" )
 	
 	/* Nazca */
-	GAME( 1996, turfmast, neogeo,   raster, neogeo,  neogeo,   ROT0, "Nazca", "Neo Turf Masters / Big Tournament Golf" )
-	GAME( 1996, mslug,    neogeo,   neogeo, neogeo,  neogeo,   ROT0, "Nazca", "Metal Slug - Super Vehicle-001" )
+	public static GameDriver driver_turfmast	   = new GameDriver("1996"	,"turfmast"	,"neogeo.java"	,rom_turfmast,driver_neogeo	,machine_driver_raster	,input_ports_neogeo	,init_neogeo	,ROT0	,	Nazca", "Neo Turf Masters / Big Tournament Golf" )
+	public static GameDriver driver_mslug	   = new GameDriver("1996"	,"mslug"	,"neogeo.java"	,rom_mslug,driver_neogeo	,machine_driver_neogeo	,input_ports_neogeo	,init_neogeo	,ROT0	,	Nazca", "Metal Slug - Super Vehicle-001" )
 	
 	/* NMK */
-	GAME( 1994, zedblade, neogeo,   raster, neogeo,  neogeo,   ROT0, "NMK", "Zed Blade / Operation Ragnarok" )
+	public static GameDriver driver_zedblade	   = new GameDriver("1994"	,"zedblade"	,"neogeo.java"	,rom_zedblade,driver_neogeo	,machine_driver_raster	,input_ports_neogeo	,init_neogeo	,ROT0	,	NMK", "Zed Blade / Operation Ragnarok" )
 	
 	/* Sammy */
-	GAME( 1992, viewpoin, neogeo,   raster, neogeo,  neogeo,   ROT0, "Sammy", "Viewpoint" )
+	public static GameDriver driver_viewpoin	   = new GameDriver("1992"	,"viewpoin"	,"neogeo.java"	,rom_viewpoin,driver_neogeo	,machine_driver_raster	,input_ports_neogeo	,init_neogeo	,ROT0	,	Sammy", "Viewpoint" )
 	
 	/* Saurus */
-	GAME( 1995, quizkof,  neogeo,   neogeo, neogeo,  neogeo,   ROT0, "Saurus", "Quiz King of Fighters" )
-	GAME( 1995, stakwin,  neogeo,   neogeo, neogeo,  neogeo,   ROT0, "Saurus", "Stakes Winner / Stakes Winner - GI kinzen seihae no michi" )
-	GAME( 1996, ragnagrd, neogeo,   neogeo, neogeo,  neogeo,   ROT0, "Saurus", "Operation Ragnagard / Shin-Oh-Ken" )
-	GAME( 1996, pgoal,    neogeo,   neogeo, neogeo,  neogeo,   ROT0, "Saurus", "Pleasure Goal / Futsal - 5 on 5 Mini Soccer" )
-	GAME( 1996, stakwin2, neogeo,   neogeo, neogeo,  neogeo,   ROT0, "Saurus", "Stakes Winner 2" )
-	GAME( 1997, shocktro, neogeo,   neogeo, neogeo,  neogeo,   ROT0, "Saurus", "Shock Troopers" )
-	GAME( 1997, shocktrj, shocktro, neogeo, neogeo,  neogeo,   ROT0, "Saurus", "Shock Troopers (Japan)" )
-	GAME( 1998, shocktr2, neogeo,   neogeo, neogeo,  neogeo,   ROT0, "Saurus", "Shock Troopers - 2nd Squad" )
+	public static GameDriver driver_quizkof	   = new GameDriver("1995"	,"quizkof"	,"neogeo.java"	,rom_quizkof,driver_neogeo	,machine_driver_neogeo	,input_ports_neogeo	,init_neogeo	,ROT0	,	Saurus", "Quiz King of Fighters" )
+	public static GameDriver driver_stakwin	   = new GameDriver("1995"	,"stakwin"	,"neogeo.java"	,rom_stakwin,driver_neogeo	,machine_driver_neogeo	,input_ports_neogeo	,init_neogeo	,ROT0	,	Saurus", "Stakes Winner / Stakes Winner - GI kinzen seihae no michi" )
+	public static GameDriver driver_ragnagrd	   = new GameDriver("1996"	,"ragnagrd"	,"neogeo.java"	,rom_ragnagrd,driver_neogeo	,machine_driver_neogeo	,input_ports_neogeo	,init_neogeo	,ROT0	,	Saurus", "Operation Ragnagard / Shin-Oh-Ken" )
+	public static GameDriver driver_pgoal	   = new GameDriver("1996"	,"pgoal"	,"neogeo.java"	,rom_pgoal,driver_neogeo	,machine_driver_neogeo	,input_ports_neogeo	,init_neogeo	,ROT0	,	Saurus", "Pleasure Goal / Futsal - 5 on 5 Mini Soccer" )
+	public static GameDriver driver_stakwin2	   = new GameDriver("1996"	,"stakwin2"	,"neogeo.java"	,rom_stakwin2,driver_neogeo	,machine_driver_neogeo	,input_ports_neogeo	,init_neogeo	,ROT0	,	Saurus", "Stakes Winner 2" )
+	public static GameDriver driver_shocktro	   = new GameDriver("1997"	,"shocktro"	,"neogeo.java"	,rom_shocktro,driver_neogeo	,machine_driver_neogeo	,input_ports_neogeo	,init_neogeo	,ROT0	,	Saurus", "Shock Troopers" )
+	public static GameDriver driver_shocktrj	   = new GameDriver("1997"	,"shocktrj"	,"neogeo.java"	,rom_shocktrj,driver_shocktro	,machine_driver_neogeo	,input_ports_neogeo	,init_neogeo	,ROT0	,	Saurus", "Shock Troopers (Japan)" )
+	public static GameDriver driver_shocktr2	   = new GameDriver("1998"	,"shocktr2"	,"neogeo.java"	,rom_shocktr2,driver_neogeo	,machine_driver_neogeo	,input_ports_neogeo	,init_neogeo	,ROT0	,	Saurus", "Shock Troopers - 2nd Squad" )
 	
 	/* Sunsoft */
-	GAME( 1995, galaxyfg, neogeo,   raster, neogeo,  neogeo,   ROT0, "Sunsoft", "Galaxy Fight - Universal Warriors" )
-	GAME( 1996, wakuwak7, neogeo,   neogeo, neogeo,  neogeo,   ROT0, "Sunsoft", "Waku Waku 7" )
+	public static GameDriver driver_galaxyfg	   = new GameDriver("1995"	,"galaxyfg"	,"neogeo.java"	,rom_galaxyfg,driver_neogeo	,machine_driver_raster	,input_ports_neogeo	,init_neogeo	,ROT0	,	Sunsoft", "Galaxy Fight - Universal Warriors" )
+	public static GameDriver driver_wakuwak7	   = new GameDriver("1996"	,"wakuwak7"	,"neogeo.java"	,rom_wakuwak7,driver_neogeo	,machine_driver_neogeo	,input_ports_neogeo	,init_neogeo	,ROT0	,	Sunsoft", "Waku Waku 7" )
 	
 	/* Taito */
-	GAME( 1994, pbobblen, neogeo,   neogeo, neogeo,  neogeo,   ROT0, "Taito", "Puzzle Bobble / Bust-A-Move (Neo-Geo)" )
-	GAME( 1999, pbobbl2n, neogeo,   neogeo, neogeo,  neogeo,   ROT0, "Taito (SNK license)", "Puzzle Bobble 2 / Bust-A-Move Again (Neo-Geo)" )
+	public static GameDriver driver_pbobblen	   = new GameDriver("1994"	,"pbobblen"	,"neogeo.java"	,rom_pbobblen,driver_neogeo	,machine_driver_neogeo	,input_ports_neogeo	,init_neogeo	,ROT0	,	Taito", "Puzzle Bobble / Bust-A-Move (Neo-Geo)" )
+	public static GameDriver driver_pbobbl2n	   = new GameDriver("1999"	,"pbobbl2n"	,"neogeo.java"	,rom_pbobbl2n,driver_neogeo	,machine_driver_neogeo	,input_ports_neogeo	,init_neogeo	,ROT0	,	Taito (SNK license)", "Puzzle Bobble 2 / Bust-A-Move Again (Neo-Geo)" )
 	
 	/* Takara */
-	GAME( 1995, marukodq, neogeo,   neogeo, neogeo,  neogeo,   ROT0, "Takara", "Chibi Marukochan Deluxe Quiz" )
+	public static GameDriver driver_marukodq	   = new GameDriver("1995"	,"marukodq"	,"neogeo.java"	,rom_marukodq,driver_neogeo	,machine_driver_neogeo	,input_ports_neogeo	,init_neogeo	,ROT0	,	Takara", "Chibi Marukochan Deluxe Quiz" )
 	
 	/* Technos */
-	GAME( 1995, doubledr, neogeo,   raster, neogeo,  neogeo,   ROT0, "Technos", "Double Dragon (Neo-Geo)" )
-	GAME( 1995, gowcaizr, neogeo,   neogeo, neogeo,  neogeo,   ROT0, "Technos", "Voltage Fighter - Gowcaizer / Choujin Gakuen Gowcaizer")
-	GAME( 1996, sdodgeb,  neogeo,   raster, neogeo,  neogeo,   ROT0, "Technos", "Super Dodge Ball / Kunio no Nekketsu Toukyuu Densetsu" )
+	public static GameDriver driver_doubledr	   = new GameDriver("1995"	,"doubledr"	,"neogeo.java"	,rom_doubledr,driver_neogeo	,machine_driver_raster	,input_ports_neogeo	,init_neogeo	,ROT0	,	Technos", "Double Dragon (Neo-Geo)" )
+	public static GameDriver driver_gowcaizr	   = new GameDriver("1995"	,"gowcaizr"	,"neogeo.java"	,rom_gowcaizr,driver_neogeo	,machine_driver_neogeo	,input_ports_neogeo	,init_neogeo	,ROT0	,	Technos", "Voltage Fighter - Gowcaizer / Choujin Gakuen Gowcaizer")
+	public static GameDriver driver_sdodgeb	   = new GameDriver("1996"	,"sdodgeb"	,"neogeo.java"	,rom_sdodgeb,driver_neogeo	,machine_driver_raster	,input_ports_neogeo	,init_neogeo	,ROT0	,	Technos", "Super Dodge Ball / Kunio no Nekketsu Toukyuu Densetsu" )
 	
 	/* Tecmo */
-	GAME( 1996, tws96,    neogeo,   neogeo, neogeo,  neogeo,   ROT0, "Tecmo", "Tecmo World Soccer '96" )
+	public static GameDriver driver_tws96	   = new GameDriver("1996"	,"tws96"	,"neogeo.java"	,rom_tws96,driver_neogeo	,machine_driver_neogeo	,input_ports_neogeo	,init_neogeo	,ROT0	,	Tecmo", "Tecmo World Soccer '96" )
 	
 	/* Yumekobo */
-	GAME( 1998, blazstar, neogeo,   neogeo, neogeo,  neogeo,   ROT0, "Yumekobo", "Blazing Star" )
-	GAME( 1999, preisle2, neogeo,   neogeo, neogeo,  preisle2, ROT0, "Yumekobo", "Prehistoric Isle 2" ) /* Encrypted GFX */
+	public static GameDriver driver_blazstar	   = new GameDriver("1998"	,"blazstar"	,"neogeo.java"	,rom_blazstar,driver_neogeo	,machine_driver_neogeo	,input_ports_neogeo	,init_neogeo	,ROT0	,	Yumekobo", "Blazing Star" )
+	public static GameDriver driver_preisle2	   = new GameDriver("1999"	,"preisle2"	,"neogeo.java"	,rom_preisle2,driver_neogeo	,machine_driver_neogeo	,input_ports_neogeo	,init_preisle2	,ROT0	,	Yumekobo", "Prehistoric Isle 2" ) /* Encrypted GFX */
 	
 	/* Viccom */
-	GAME( 1994, fightfev, neogeo,   neogeo, neogeo,  neogeo,   ROT0, "Viccom", "Fight Fever / Crystal Legacy" )
+	public static GameDriver driver_fightfev	   = new GameDriver("1994"	,"fightfev"	,"neogeo.java"	,rom_fightfev,driver_neogeo	,machine_driver_neogeo	,input_ports_neogeo	,init_neogeo	,ROT0	,	Viccom", "Fight Fever / Crystal Legacy" )
 	
 	/* Video System Co. */
-	GAME( 1994, pspikes2, neogeo,   raster, neogeo,  neogeo,   ROT0, "Video System Co.", "Power Spikes II" )
-	GAME( 1994, sonicwi2, neogeo,   neogeo, neogeo,  neogeo,   ROT0, "Video System Co.", "Aero Fighters 2 / Sonic Wings 2" )
-	GAME( 1995, sonicwi3, neogeo,   neogeo, neogeo,  neogeo,   ROT0, "Video System Co.", "Aero Fighters 3 / Sonic Wings 3" )
-	GAME( 1997, popbounc, neogeo,   neogeo, neogeo,  neogeo,   ROT0, "Video System Co.", "Pop 'n Bounce / Gapporin" )
+	public static GameDriver driver_pspikes2	   = new GameDriver("1994"	,"pspikes2"	,"neogeo.java"	,rom_pspikes2,driver_neogeo	,machine_driver_raster	,input_ports_neogeo	,init_neogeo	,ROT0	,	Video System Co.", "Power Spikes II" )
+	public static GameDriver driver_sonicwi2	   = new GameDriver("1994"	,"sonicwi2"	,"neogeo.java"	,rom_sonicwi2,driver_neogeo	,machine_driver_neogeo	,input_ports_neogeo	,init_neogeo	,ROT0	,	Video System Co.", "Aero Fighters 2 / Sonic Wings 2" )
+	public static GameDriver driver_sonicwi3	   = new GameDriver("1995"	,"sonicwi3"	,"neogeo.java"	,rom_sonicwi3,driver_neogeo	,machine_driver_neogeo	,input_ports_neogeo	,init_neogeo	,ROT0	,	Video System Co.", "Aero Fighters 3 / Sonic Wings 3" )
+	public static GameDriver driver_popbounc	   = new GameDriver("1997"	,"popbounc"	,"neogeo.java"	,rom_popbounc,driver_neogeo	,machine_driver_neogeo	,input_ports_neogeo	,init_neogeo	,ROT0	,	Video System Co.", "Pop 'n Bounce / Gapporin" )
 	
 	/* Visco */
-	GAME( 1992, androdun, neogeo,   neogeo, neogeo,  neogeo,   ROT0, "Visco", "Andro Dunos" )
-	GAME( 1995, puzzledp, neogeo,   neogeo, neogeo,  neogeo,   ROT0, "Taito (Visco license)", "Puzzle De Pon" )
-	GAME( 1996, neomrdo,  neogeo,   neogeo, neogeo,  neogeo,   ROT0, "Visco", "Neo Mr. Do!" )
-	GAME( 1995, goalx3,   neogeo,   neogeo, neogeo,  neogeo,   ROT0, "Visco", "Goal! Goal! Goal!" )
-	GAME( 1996, neodrift, neogeo,   raster, neogeo,  neogeo,   ROT0, "Visco", "Neo Drift Out - New Technology" )
-	GAME( 1996, breakers, neogeo,   neogeo, neogeo,  neogeo,   ROT0, "Visco", "Breakers" )
-	GAME( 1997, puzzldpr, puzzledp, neogeo, neogeo,  neogeo,   ROT0, "Taito (Visco license)", "Puzzle De Pon R" )
-	GAME( 1998, breakrev, breakers, neogeo, neogeo,  neogeo,   ROT0, "Visco", "Breakers Revenge")
-	GAME( 1998, flipshot, neogeo,   neogeo, neogeo,  neogeo,   ROT0, "Visco", "Battle Flip Shot" )
-	GAME( 1999, ctomaday, neogeo,   neogeo, neogeo,  neogeo,   ROT0, "Visco", "Captain Tomaday" )
-	GAME( 1999, ganryu,   neogeo,   neogeo, neogeo,  ganryu,   ROT0, "Visco", "Musashi Ganryuuki" )
+	public static GameDriver driver_androdun	   = new GameDriver("1992"	,"androdun"	,"neogeo.java"	,rom_androdun,driver_neogeo	,machine_driver_neogeo	,input_ports_neogeo	,init_neogeo	,ROT0	,	Visco", "Andro Dunos" )
+	public static GameDriver driver_puzzledp	   = new GameDriver("1995"	,"puzzledp"	,"neogeo.java"	,rom_puzzledp,driver_neogeo	,machine_driver_neogeo	,input_ports_neogeo	,init_neogeo	,ROT0	,	Taito (Visco license)", "Puzzle De Pon" )
+	public static GameDriver driver_neomrdo	   = new GameDriver("1996"	,"neomrdo"	,"neogeo.java"	,rom_neomrdo,driver_neogeo	,machine_driver_neogeo	,input_ports_neogeo	,init_neogeo	,ROT0	,	Visco", "Neo Mr. Do!" )
+	public static GameDriver driver_goalx3	   = new GameDriver("1995"	,"goalx3"	,"neogeo.java"	,rom_goalx3,driver_neogeo	,machine_driver_neogeo	,input_ports_neogeo	,init_neogeo	,ROT0	,	Visco", "Goal! Goal! Goal!" )
+	public static GameDriver driver_neodrift	   = new GameDriver("1996"	,"neodrift"	,"neogeo.java"	,rom_neodrift,driver_neogeo	,machine_driver_raster	,input_ports_neogeo	,init_neogeo	,ROT0	,	Visco", "Neo Drift Out - New Technology" )
+	public static GameDriver driver_breakers	   = new GameDriver("1996"	,"breakers"	,"neogeo.java"	,rom_breakers,driver_neogeo	,machine_driver_neogeo	,input_ports_neogeo	,init_neogeo	,ROT0	,	Visco", "Breakers" )
+	public static GameDriver driver_puzzldpr	   = new GameDriver("1997"	,"puzzldpr"	,"neogeo.java"	,rom_puzzldpr,driver_puzzledp	,machine_driver_neogeo	,input_ports_neogeo	,init_neogeo	,ROT0	,	Taito (Visco license)", "Puzzle De Pon R" )
+	public static GameDriver driver_breakrev	   = new GameDriver("1998"	,"breakrev"	,"neogeo.java"	,rom_breakrev,driver_breakers	,machine_driver_neogeo	,input_ports_neogeo	,init_neogeo	,ROT0	,	Visco", "Breakers Revenge")
+	public static GameDriver driver_flipshot	   = new GameDriver("1998"	,"flipshot"	,"neogeo.java"	,rom_flipshot,driver_neogeo	,machine_driver_neogeo	,input_ports_neogeo	,init_neogeo	,ROT0	,	Visco", "Battle Flip Shot" )
+	public static GameDriver driver_ctomaday	   = new GameDriver("1999"	,"ctomaday"	,"neogeo.java"	,rom_ctomaday,driver_neogeo	,machine_driver_neogeo	,input_ports_neogeo	,init_neogeo	,ROT0	,	Visco", "Captain Tomaday" )
+	public static GameDriver driver_ganryu	   = new GameDriver("1999"	,"ganryu"	,"neogeo.java"	,rom_ganryu,driver_neogeo	,machine_driver_neogeo	,input_ports_neogeo	,init_ganryu	,ROT0	,	Visco", "Musashi Ganryuuki" )
 }

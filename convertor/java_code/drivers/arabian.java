@@ -475,6 +475,6 @@ public class arabian
 	 *
 	 *************************************/
 	
-	GAME( 1983, arabian,  0,       arabian, arabian, arabian, ROT270, "Sun Electronics", "Arabian" )
-	GAME( 1983, arabiana, arabian, arabian, arabian, arabian, ROT270, "[Sun Electronics] (Atari license)", "Arabian (Atari)" )
+	public static GameDriver driver_arabian	   = new GameDriver("1983"	,"arabian"	,"arabian.java"	,rom_arabian,null	,machine_driver_arabian	,input_ports_arabian	,init_arabian	,ROT270	,	Sun Electronics", "Arabian" )
+	public static GameDriver driver_arabiana	   = new GameDriver("1983"	,"arabiana"	,"arabian.java"	,rom_arabiana,driver_arabian	,machine_driver_arabian	,input_ports_arabian	,init_arabian	,ROT270	,	[Sun Electronics] (Atari license)", "Arabian (Atari)" )
 }

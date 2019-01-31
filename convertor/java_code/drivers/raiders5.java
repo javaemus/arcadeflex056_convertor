@@ -333,6 +333,6 @@ public class raiders5
 	ROM_END(); }}; 
 	
 	
-	GAME( 1985, raiders5, 0,        raiders5, raiders5, 0, ROT0, "UPL", "Raiders5" )
-	GAME( 1985, raidrs5t, raiders5, raiders5, raiders5, 0, ROT0, "UPL (Taito license)", "Raiders5 (Japan)" )
+	public static GameDriver driver_raiders5	   = new GameDriver("1985"	,"raiders5"	,"raiders5.java"	,rom_raiders5,null	,machine_driver_raiders5	,input_ports_raiders5	,null	,ROT0	,	UPL", "Raiders5" )
+	public static GameDriver driver_raidrs5t	   = new GameDriver("1985"	,"raidrs5t"	,"raiders5.java"	,rom_raidrs5t,driver_raiders5	,machine_driver_raiders5	,input_ports_raiders5	,null	,ROT0	,	UPL (Taito license)", "Raiders5 (Japan)" )
 }

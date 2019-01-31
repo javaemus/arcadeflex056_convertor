@@ -1275,14 +1275,14 @@ public class snk68
 	
 	/******************************************************************************/
 	
-	GAME( 1988, pow,	  0,		pow,	  pow,		0,		  ROT0,  "SNK", "P.O.W. - Prisoners of War (US)" )
-	GAME( 1988, powj,	  pow,		pow,	  powj, 	0,		  ROT0,  "SNK", "Datsugoku - Prisoners of War (Japan)" )
-	GAME( 1989, searchar, 0,		searchar, searchar, searchar, ROT90, "SNK", "SAR - Search And Rescue (World)" )
-	GAME( 1989, sercharu, searchar, searchar, searchar, searchar, ROT90, "SNK", "SAR - Search And Rescue (US)" )
-	GAME( 1989, streetsm, 0,		streetsm, streetsm, 0,		  ROT0,  "SNK", "Street Smart (US version 2)" )
-	GAME( 1989, streets1, streetsm, searchar, streetsm, 0,		  ROT0,  "SNK", "Street Smart (US version 1)" )
-	GAME( 1989, streetsw, streetsm, searchar, streetsj, 0,		  ROT0,  "SNK", "Street Smart (World version 1)" )
-	GAME( 1989, streetsj, streetsm, searchar, streetsj, 0,		  ROT0,  "SNK", "Street Smart (Japan version 1)" )
-	GAME( 1989, ikari3,   0,		ikari3,   ikari3,	searchar, ROT0,  "SNK", "Ikari III - The Rescue" )
+	public static GameDriver driver_pow	   = new GameDriver("1988"	,"pow"	,"snk68.java"	,rom_pow,null	,machine_driver_pow	,input_ports_pow	,null	,ROT0	,	SNK", "P.O.W. - Prisoners of War (US)" )
+	public static GameDriver driver_powj	   = new GameDriver("1988"	,"powj"	,"snk68.java"	,rom_powj,driver_pow	,machine_driver_pow	,input_ports_powj	,null	,ROT0	,	SNK", "Datsugoku - Prisoners of War (Japan)" )
+	public static GameDriver driver_searchar	   = new GameDriver("1989"	,"searchar"	,"snk68.java"	,rom_searchar,null	,machine_driver_searchar	,input_ports_searchar	,init_searchar	,ROT90	,	SNK", "SAR - Search And Rescue (World)" )
+	public static GameDriver driver_sercharu	   = new GameDriver("1989"	,"sercharu"	,"snk68.java"	,rom_sercharu,driver_searchar	,machine_driver_searchar	,input_ports_searchar	,init_searchar	,ROT90	,	SNK", "SAR - Search And Rescue (US)" )
+	public static GameDriver driver_streetsm	   = new GameDriver("1989"	,"streetsm"	,"snk68.java"	,rom_streetsm,null	,machine_driver_streetsm	,input_ports_streetsm	,null	,ROT0	,	SNK", "Street Smart (US version 2)" )
+	public static GameDriver driver_streets1	   = new GameDriver("1989"	,"streets1"	,"snk68.java"	,rom_streets1,driver_streetsm	,machine_driver_searchar	,input_ports_streetsm	,null	,ROT0	,	SNK", "Street Smart (US version 1)" )
+	public static GameDriver driver_streetsw	   = new GameDriver("1989"	,"streetsw"	,"snk68.java"	,rom_streetsw,driver_streetsm	,machine_driver_searchar	,input_ports_streetsj	,null	,ROT0	,	SNK", "Street Smart (World version 1)" )
+	public static GameDriver driver_streetsj	   = new GameDriver("1989"	,"streetsj"	,"snk68.java"	,rom_streetsj,driver_streetsm	,machine_driver_searchar	,input_ports_streetsj	,null	,ROT0	,	SNK", "Street Smart (Japan version 1)" )
+	public static GameDriver driver_ikari3	   = new GameDriver("1989"	,"ikari3"	,"snk68.java"	,rom_ikari3,null	,machine_driver_ikari3	,input_ports_ikari3	,init_searchar	,ROT0	,	SNK", "Ikari III - The Rescue" )
 	
 }

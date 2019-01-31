@@ -474,6 +474,6 @@ public class pinbo
 	
 	
 	
-	GAME( 1984, pinbo,  0,     pinbo, pinbo,  0, ROT90, "Jaleco", "Pinbo" )
-	GAME( 1984, pinbos, pinbo, pinbo, pinbos, 0, ROT90, "bootleg?", "Pinbo (Strike)" )
+	public static GameDriver driver_pinbo	   = new GameDriver("1984"	,"pinbo"	,"pinbo.java"	,rom_pinbo,null	,machine_driver_pinbo	,input_ports_pinbo	,null	,ROT90	,	Jaleco", "Pinbo" )
+	public static GameDriver driver_pinbos	   = new GameDriver("1984"	,"pinbos"	,"pinbo.java"	,rom_pinbos,driver_pinbo	,machine_driver_pinbo	,input_ports_pinbos	,null	,ROT90	,	bootleg?", "Pinbo (Strike)" )
 }

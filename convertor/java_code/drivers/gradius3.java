@@ -549,7 +549,7 @@ public class gradius3
 	
 	
 	
-	GAME( 1989, gradius3, 0,        gradius3, gradius3, gradius3, ROT0, "Konami", "Gradius III (Japan)" )
-	GAME( 1989, grdius3a, gradius3, gradius3, gradius3, gradius3, ROT0, "Konami", "Gradius III (Asia)" )
+	public static GameDriver driver_gradius3	   = new GameDriver("1989"	,"gradius3"	,"gradius3.java"	,rom_gradius3,null	,machine_driver_gradius3	,input_ports_gradius3	,init_gradius3	,ROT0	,	Konami", "Gradius III (Japan)" )
+	public static GameDriver driver_grdius3a	   = new GameDriver("1989"	,"grdius3a"	,"gradius3.java"	,rom_grdius3a,driver_gradius3	,machine_driver_gradius3	,input_ports_gradius3	,init_gradius3	,ROT0	,	Konami", "Gradius III (Asia)" )
 	
 }

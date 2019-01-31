@@ -519,6 +519,6 @@ public class victory
 	 *
 	 *************************************/
 	
-	GAME( 1982, victory,  0,        victory, victory, 0,     ROT0, "Exidy", "Victory" )
-	GAME( 1982, victorba, victory,  victory, victory, 0,     ROT0, "Exidy", "Victor Banana" )
+	public static GameDriver driver_victory	   = new GameDriver("1982"	,"victory"	,"victory.java"	,rom_victory,null	,machine_driver_victory	,input_ports_victory	,null	,ROT0	,	Exidy", "Victory" )
+	public static GameDriver driver_victorba	   = new GameDriver("1982"	,"victorba"	,"victory.java"	,rom_victorba,driver_victory	,machine_driver_victory	,input_ports_victory	,null	,ROT0	,	Exidy", "Victor Banana" )
 }

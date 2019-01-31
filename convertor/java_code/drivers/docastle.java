@@ -1011,14 +1011,14 @@ public class docastle
 	
 	
 	
-	GAME( 1983, docastle, 0,        docastle, docastle, 0, ROT270, "Universal", "Mr. Do's Castle (set 1)" )
-	GAME( 1983, docastl2, docastle, docastle, docastle, 0, ROT270, "Universal", "Mr. Do's Castle (set 2)" )
-	GAME( 1983, douni,    docastle, docastle, docastle, 0, ROT270, "Universal", "Mr. Do vs. Unicorns" )
-	GAME( 1984, dorunrun, 0,        dorunrun, dorunrun, 0, ROT0,   "Universal", "Do! Run Run (set 1)" )
-	GAME( 1984, dorunru2, dorunrun, dorunrun, dorunrun, 0, ROT0,   "Universal", "Do! Run Run (set 2)" )
-	GAME( 1984, dorunruc, dorunrun, docastle, dorunrun, 0, ROT0,   "Universal", "Do! Run Run (Do's Castle hardware)" )
-	GAME( 1987, spiero,   dorunrun, dorunrun, dorunrun, 0, ROT0,   "Universal", "Super Pierrot (Japan)" )
-	GAME( 1984, dowild,   0,        dorunrun, dowild,   0, ROT0,   "Universal", "Mr. Do's Wild Ride" )
-	GAME( 1984, jjack,    0,        dorunrun, jjack,    0, ROT270, "Universal", "Jumping Jack" )
-	GAME( 1984, kickridr, 0,        dorunrun, kickridr, 0, ROT0,   "Universal", "Kick Rider" )
+	public static GameDriver driver_docastle	   = new GameDriver("1983"	,"docastle"	,"docastle.java"	,rom_docastle,null	,machine_driver_docastle	,input_ports_docastle	,null	,ROT270	,	Universal", "Mr. Do's Castle (set 1)" )
+	public static GameDriver driver_docastl2	   = new GameDriver("1983"	,"docastl2"	,"docastle.java"	,rom_docastl2,driver_docastle	,machine_driver_docastle	,input_ports_docastle	,null	,ROT270	,	Universal", "Mr. Do's Castle (set 2)" )
+	public static GameDriver driver_douni	   = new GameDriver("1983"	,"douni"	,"docastle.java"	,rom_douni,driver_docastle	,machine_driver_docastle	,input_ports_docastle	,null	,ROT270	,	Universal", "Mr. Do vs. Unicorns" )
+	public static GameDriver driver_dorunrun	   = new GameDriver("1984"	,"dorunrun"	,"docastle.java"	,rom_dorunrun,null	,machine_driver_dorunrun	,input_ports_dorunrun	,null	,ROT0	,	Universal", "Do! Run Run (set 1)" )
+	public static GameDriver driver_dorunru2	   = new GameDriver("1984"	,"dorunru2"	,"docastle.java"	,rom_dorunru2,driver_dorunrun	,machine_driver_dorunrun	,input_ports_dorunrun	,null	,ROT0	,	Universal", "Do! Run Run (set 2)" )
+	public static GameDriver driver_dorunruc	   = new GameDriver("1984"	,"dorunruc"	,"docastle.java"	,rom_dorunruc,driver_dorunrun	,machine_driver_docastle	,input_ports_dorunrun	,null	,ROT0	,	Universal", "Do! Run Run (Do's Castle hardware)" )
+	public static GameDriver driver_spiero	   = new GameDriver("1987"	,"spiero"	,"docastle.java"	,rom_spiero,driver_dorunrun	,machine_driver_dorunrun	,input_ports_dorunrun	,null	,ROT0	,	Universal", "Super Pierrot (Japan)" )
+	public static GameDriver driver_dowild	   = new GameDriver("1984"	,"dowild"	,"docastle.java"	,rom_dowild,null	,machine_driver_dorunrun	,input_ports_dowild	,null	,ROT0	,	Universal", "Mr. Do's Wild Ride" )
+	public static GameDriver driver_jjack	   = new GameDriver("1984"	,"jjack"	,"docastle.java"	,rom_jjack,null	,machine_driver_dorunrun	,input_ports_jjack	,null	,ROT270	,	Universal", "Jumping Jack" )
+	public static GameDriver driver_kickridr	   = new GameDriver("1984"	,"kickridr"	,"docastle.java"	,rom_kickridr,null	,machine_driver_dorunrun	,input_ports_kickridr	,null	,ROT0	,	Universal", "Kick Rider" )
 }

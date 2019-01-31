@@ -1072,13 +1072,13 @@ public class polepos
 	 * Game drivers
 	 *********************************************************************/
 	
-	GAME( 1982, polepos,  0,		polepos, polepos,  0,		 ROT0, "Namco", "Pole Position" )
-	GAME( 1982, poleposa, polepos,	polepos, polepos,  0,		 ROT0, "Namco (Atari license)", "Pole Position (Atari version 2)" )
-	GAME( 1982, polepos1, polepos,	polepos, polepos,  0,		 ROT0, "[Namco] (Atari license)", "Pole Position (Atari version 1)" )
-	GAME( 1982, topracer, polepos,	polepos, polepos,  0,		 ROT0, "bootleg", "Top Racer" )
-	GAME( 1983, polepos2, 0,		polepos, polepos2, polepos2, ROT0, "Namco", "Pole Position II" )
-	GAME( 1983, poleps2a, polepos2, polepos, polepos2, polepos2, ROT0, "Namco (Atari license)", "Pole Position II (Atari)" )
-	GAME( 1983, poleps2b, polepos2, polepos, polepos2, 0,		 ROT0, "Namco (Atari license)", "Pole Position II (Atari bootleg 1)" )
-	GAME( 1983, poleps2c, polepos2, polepos, polepos2, 0,		 ROT0, "Namco (Atari license)", "Pole Position II (Atari bootleg 2)" )
+	public static GameDriver driver_polepos	   = new GameDriver("1982"	,"polepos"	,"polepos.java"	,rom_polepos,null	,machine_driver_polepos	,input_ports_polepos	,null	,ROT0	,	Namco", "Pole Position" )
+	public static GameDriver driver_poleposa	   = new GameDriver("1982"	,"poleposa"	,"polepos.java"	,rom_poleposa,driver_polepos	,machine_driver_polepos	,input_ports_polepos	,null	,ROT0	,	Namco (Atari license)", "Pole Position (Atari version 2)" )
+	public static GameDriver driver_polepos1	   = new GameDriver("1982"	,"polepos1"	,"polepos.java"	,rom_polepos1,driver_polepos	,machine_driver_polepos	,input_ports_polepos	,null	,ROT0	,	[Namco] (Atari license)", "Pole Position (Atari version 1)" )
+	public static GameDriver driver_topracer	   = new GameDriver("1982"	,"topracer"	,"polepos.java"	,rom_topracer,driver_polepos	,machine_driver_polepos	,input_ports_polepos	,null	,ROT0	,	bootleg", "Top Racer" )
+	public static GameDriver driver_polepos2	   = new GameDriver("1983"	,"polepos2"	,"polepos.java"	,rom_polepos2,null	,machine_driver_polepos	,input_ports_polepos2	,init_polepos2	,ROT0	,	Namco", "Pole Position II" )
+	public static GameDriver driver_poleps2a	   = new GameDriver("1983"	,"poleps2a"	,"polepos.java"	,rom_poleps2a,driver_polepos2	,machine_driver_polepos	,input_ports_polepos2	,init_polepos2	,ROT0	,	Namco (Atari license)", "Pole Position II (Atari)" )
+	public static GameDriver driver_poleps2b	   = new GameDriver("1983"	,"poleps2b"	,"polepos.java"	,rom_poleps2b,driver_polepos2	,machine_driver_polepos	,input_ports_polepos2	,null	,ROT0	,	Namco (Atari license)", "Pole Position II (Atari bootleg 1)" )
+	public static GameDriver driver_poleps2c	   = new GameDriver("1983"	,"poleps2c"	,"polepos.java"	,rom_poleps2c,driver_polepos2	,machine_driver_polepos	,input_ports_polepos2	,null	,ROT0	,	Namco (Atari license)", "Pole Position II (Atari bootleg 2)" )
 	
 }

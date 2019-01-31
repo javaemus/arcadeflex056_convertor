@@ -347,5 +347,5 @@ public class tankbatt
 	
 	
 	
-	GAME( 1980, tankbatt, 0, tankbatt, tankbatt, 0, ROT90, "Namco", "Tank Battalion" )
+	public static GameDriver driver_tankbatt	   = new GameDriver("1980"	,"tankbatt"	,"tankbatt.java"	,rom_tankbatt,null	,machine_driver_tankbatt	,input_ports_tankbatt	,null	,ROT90	,	Namco", "Tank Battalion" )
 }

@@ -891,8 +891,8 @@ public class kingobox
 	
 	
 	
-	GAME( 1985, kingofb,  0,       kingofb,  kingofb,  0,        ROT90, "Woodplace Inc.", "King of Boxer (English)" )
-	GAME( 1985, ringking, kingofb, ringking, ringking, 0,        ROT90, "Data East USA", "Ring King (set 1)" )
-	GAME( 1985, ringkin2, kingofb, ringking, ringking, 0,        ROT90, "Data East USA", "Ring King (set 2)" )
-	GAME( 1985, ringkin3, kingofb, kingofb,  kingofb,  ringkin3, ROT90, "Data East USA", "Ring King (set 3)" )
+	public static GameDriver driver_kingofb	   = new GameDriver("1985"	,"kingofb"	,"kingobox.java"	,rom_kingofb,null	,machine_driver_kingofb	,input_ports_kingofb	,null	,ROT90	,	Woodplace Inc.", "King of Boxer (English)" )
+	public static GameDriver driver_ringking	   = new GameDriver("1985"	,"ringking"	,"kingobox.java"	,rom_ringking,driver_kingofb	,machine_driver_ringking	,input_ports_ringking	,null	,ROT90	,	Data East USA", "Ring King (set 1)" )
+	public static GameDriver driver_ringkin2	   = new GameDriver("1985"	,"ringkin2"	,"kingobox.java"	,rom_ringkin2,driver_kingofb	,machine_driver_ringking	,input_ports_ringking	,null	,ROT90	,	Data East USA", "Ring King (set 2)" )
+	public static GameDriver driver_ringkin3	   = new GameDriver("1985"	,"ringkin3"	,"kingobox.java"	,rom_ringkin3,driver_kingofb	,machine_driver_kingofb	,input_ports_kingofb	,init_ringkin3	,ROT90	,	Data East USA", "Ring King (set 3)" )
 }

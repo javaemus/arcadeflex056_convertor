@@ -561,5 +561,5 @@ public class grchamp
 	
 	/***************************************************************************/
 	
-	GAMEX( 1981, grchamp, 0, grchamp, grchamp, grchamp, ROT90, "Taito", "Grand Champion", GAME_IMPERFECT_SOUND )
+	public static GameDriver driver_grchamp	   = new GameDriver("1981"	,"grchamp"	,"grchamp.java"	,rom_grchamp,null	,machine_driver_grchamp	,input_ports_grchamp	,init_grchamp	,ROT90	,	Taito", "Grand Champion", GAME_IMPERFECT_SOUND )
 }

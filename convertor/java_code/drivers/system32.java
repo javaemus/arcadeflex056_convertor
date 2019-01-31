@@ -229,5 +229,5 @@ public class system32
 		nvram_handler
 	};
 	
-	GAME( 1992, ga2, 0, ga2, ga2, 0, ROT0, "Sega", "Golden Axe 2" )
+	public static GameDriver driver_ga2	   = new GameDriver("1992"	,"ga2"	,"system32.java"	,rom_ga2,null	,machine_driver_ga2	,input_ports_ga2	,null	,ROT0	,	Sega", "Golden Axe 2" )
 }

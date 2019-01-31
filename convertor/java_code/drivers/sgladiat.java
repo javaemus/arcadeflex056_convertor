@@ -421,5 +421,5 @@ public class sgladiat
 		PORT_DIPSETTING(    0x00, DEF_STR( Yes ) )
 	INPUT_PORTS_END
 	
-	GAMEX( 1984, sgladiat, 0, sgladiat, sgladiat, 0, 0,   "SNK", "Gladiator 1984", GAME_NO_COCKTAIL )
+	public static GameDriver driver_sgladiat	   = new GameDriver("1984"	,"sgladiat"	,"sgladiat.java"	,rom_sgladiat,null	,machine_driver_sgladiat	,input_ports_sgladiat	,null	,0	,	SNK", "Gladiator 1984", GAME_NO_COCKTAIL )
 }

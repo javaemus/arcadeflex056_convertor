@@ -554,9 +554,9 @@ public class superpac
 	 *
 	 *************************************/
 	
-	GAME( 1982, superpac, 0,        superpac, superpac, 0, ROT90, "Namco", "Super Pac-Man" )
-	GAME( 1982, superpcm, superpac, superpac, superpac, 0, ROT90, "[Namco] (Bally Midway license)", "Super Pac-Man (Midway)" )
-	GAME( 1983, pacnpal,  0,        superpac, pacnpal,  0, ROT90, "Namco", "Pac & Pal" )
-	GAME( 1983, pacnpal2, pacnpal,  superpac, pacnpal,  0, ROT90, "Namco", "Pac & Pal (older)" )
-	GAMEX(1983, pacnchmp, pacnpal,  superpac, pacnpal,  0, ROT90, "Namco", "Pac-Man & Chomp Chomp", GAME_IMPERFECT_COLORS )
+	public static GameDriver driver_superpac	   = new GameDriver("1982"	,"superpac"	,"superpac.java"	,rom_superpac,null	,machine_driver_superpac	,input_ports_superpac	,null	,ROT90	,	Namco", "Super Pac-Man" )
+	public static GameDriver driver_superpcm	   = new GameDriver("1982"	,"superpcm"	,"superpac.java"	,rom_superpcm,driver_superpac	,machine_driver_superpac	,input_ports_superpac	,null	,ROT90	,	[Namco] (Bally Midway license)", "Super Pac-Man (Midway)" )
+	public static GameDriver driver_pacnpal	   = new GameDriver("1983"	,"pacnpal"	,"superpac.java"	,rom_pacnpal,null	,machine_driver_superpac	,input_ports_pacnpal	,null	,ROT90	,	Namco", "Pac & Pal" )
+	public static GameDriver driver_pacnpal2	   = new GameDriver("1983"	,"pacnpal2"	,"superpac.java"	,rom_pacnpal2,driver_pacnpal	,machine_driver_superpac	,input_ports_pacnpal	,null	,ROT90	,	Namco", "Pac & Pal (older)" )
+	public static GameDriver driver_pacnchmp	   = new GameDriver("1983"	,"pacnchmp"	,"superpac.java"	,rom_pacnchmp,driver_pacnpal	,machine_driver_superpac	,input_ports_pacnpal	,null	,ROT90	,	Namco", "Pac-Man & Chomp Chomp", GAME_IMPERFECT_COLORS )
 }

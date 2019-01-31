@@ -384,6 +384,6 @@ public class rockrage
 	
 	***************************************************************************/
 	
-	GAME( 1986, rockrage, 0,        rockrage, rockrage, 0, ROT0, "Konami", "Rock 'n Rage (World?)" )
-	GAME( 1986, rockragj, rockrage, rockrage, rockrage, 0, ROT0, "Konami", "Koi no Hotrock (Japan)" )
+	public static GameDriver driver_rockrage	   = new GameDriver("1986"	,"rockrage"	,"rockrage.java"	,rom_rockrage,null	,machine_driver_rockrage	,input_ports_rockrage	,null	,ROT0	,	Konami", "Rock 'n Rage (World?)" )
+	public static GameDriver driver_rockragj	   = new GameDriver("1986"	,"rockragj"	,"rockrage.java"	,rom_rockragj,driver_rockrage	,machine_driver_rockrage	,input_ports_rockrage	,null	,ROT0	,	Konami", "Koi no Hotrock (Japan)" )
 }

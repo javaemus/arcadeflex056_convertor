@@ -491,7 +491,7 @@ public class toobin
 	 *
 	 *************************************/
 	
-	GAME( 1988, toobin,  0,      toobin, toobin, toobin, ROT270, "Atari Games", "Toobin' (version 3)" )
-	GAME( 1988, toobin2, toobin, toobin, toobin, toobin, ROT270, "Atari Games", "Toobin' (version 2)" )
-	GAME( 1988, toobinp, toobin, toobin, toobin, toobin, ROT270, "Atari Games", "Toobin' (prototype)" )
+	public static GameDriver driver_toobin	   = new GameDriver("1988"	,"toobin"	,"toobin.java"	,rom_toobin,null	,machine_driver_toobin	,input_ports_toobin	,init_toobin	,ROT270	,	Atari Games", "Toobin' (version 3)" )
+	public static GameDriver driver_toobin2	   = new GameDriver("1988"	,"toobin2"	,"toobin.java"	,rom_toobin2,driver_toobin	,machine_driver_toobin	,input_ports_toobin	,init_toobin	,ROT270	,	Atari Games", "Toobin' (version 2)" )
+	public static GameDriver driver_toobinp	   = new GameDriver("1988"	,"toobinp"	,"toobin.java"	,rom_toobinp,driver_toobin	,machine_driver_toobin	,input_ports_toobin	,init_toobin	,ROT270	,	Atari Games", "Toobin' (prototype)" )
 }

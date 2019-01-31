@@ -260,5 +260,5 @@ public class higemaru
 	
 	
 	
-	GAME( 1984, higemaru, 0, higemaru, higemaru, 0, ROT0, "Capcom", "Pirate Ship HigeMaru" )
+	public static GameDriver driver_higemaru	   = new GameDriver("1984"	,"higemaru"	,"higemaru.java"	,rom_higemaru,null	,machine_driver_higemaru	,input_ports_higemaru	,null	,ROT0	,	Capcom", "Pirate Ship HigeMaru" )
 }

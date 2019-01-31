@@ -500,6 +500,6 @@ public class mnight
 	
 	
 	
-	GAME( 1987, mnight,  0, mnight, mnight,  0, ROT0, "UPL (Kawakus license)", "Mutant Night" )
-	GAME( 1988?,arkarea, 0, mnight, arkarea, 0, ROT0, "UPL", "Ark Area" )
+	public static GameDriver driver_mnight	   = new GameDriver("1987"	,"mnight"	,"mnight.java"	,rom_mnight,null	,machine_driver_mnight	,input_ports_mnight	,null	,ROT0	,	UPL (Kawakus license)", "Mutant Night" )
+	public static GameDriver driver_arkarea	   = new GameDriver("1988?"	,"arkarea"	,"mnight.java"	,rom_arkarea,null	,machine_driver_mnight	,input_ports_arkarea	,null	,ROT0	,	UPL", "Ark Area" )
 }

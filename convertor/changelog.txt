@@ -1,6 +1,7 @@
 31/01/2019
 ==========
 -Improved WRITEHANDLER for 8bit writes
+-Implemented GAME,GAMEX macros
 
 30/01/2019
 ==========

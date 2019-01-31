@@ -398,6 +398,6 @@ public class spiders
 	
 	
 	/* this is a newer version with just one bug fix */
-	GAMEX( 1981, spiders,  0,       spiders, spiders, 0, ROT270, "Sigma Ent. Inc.", "Spiders (set 1)", GAME_NO_SOUND | GAME_NO_COCKTAIL )
-	GAMEX( 1981, spiders2, spiders, spiders, spiders, 0, ROT270, "Sigma Ent. Inc.", "Spiders (set 2)", GAME_NO_SOUND | GAME_NO_COCKTAIL )
+	public static GameDriver driver_spiders	   = new GameDriver("1981"	,"spiders"	,"spiders.java"	,rom_spiders,null	,machine_driver_spiders	,input_ports_spiders	,null	,ROT270	,	Sigma Ent. Inc.", "Spiders (set 1)", GAME_NO_SOUND | GAME_NO_COCKTAIL )
+	public static GameDriver driver_spiders2	   = new GameDriver("1981"	,"spiders2"	,"spiders.java"	,rom_spiders2,driver_spiders	,machine_driver_spiders	,input_ports_spiders	,null	,ROT270	,	Sigma Ent. Inc.", "Spiders (set 2)", GAME_NO_SOUND | GAME_NO_COCKTAIL )
 }

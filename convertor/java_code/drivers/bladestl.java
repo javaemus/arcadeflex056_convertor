@@ -557,6 +557,6 @@ public class bladestl
 	
 	
 	
-	GAMEX( 1987, bladestl, 0,        bladestl, bladestl, 0, ROT90, "Konami", "Blades of Steel (version T)", GAME_IMPERFECT_SOUND )
-	GAMEX( 1987, bladstle, bladestl, bladestl, bladstle, 0, ROT90, "Konami", "Blades of Steel (version E)", GAME_IMPERFECT_SOUND )
+	public static GameDriver driver_bladestl	   = new GameDriver("1987"	,"bladestl"	,"bladestl.java"	,rom_bladestl,null	,machine_driver_bladestl	,input_ports_bladestl	,null	,ROT90	,	Konami", "Blades of Steel (version T)", GAME_IMPERFECT_SOUND )
+	public static GameDriver driver_bladstle	   = new GameDriver("1987"	,"bladstle"	,"bladestl.java"	,rom_bladstle,driver_bladestl	,machine_driver_bladestl	,input_ports_bladstle	,null	,ROT90	,	Konami", "Blades of Steel (version E)", GAME_IMPERFECT_SOUND )
 }

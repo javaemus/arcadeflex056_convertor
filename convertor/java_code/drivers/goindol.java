@@ -417,6 +417,6 @@ public class goindol
 	
 	
 	
-	GAMEX( 1987, goindol, 0,       goindol, goindol, goindol, ROT90, "Sun a Electronics", "Goindol", GAME_NO_COCKTAIL )
-	GAMEX( 1987, homo,    goindol, goindol, homo,    homo,    ROT90, "bootleg", "Homo", GAME_NO_COCKTAIL )
+	public static GameDriver driver_goindol	   = new GameDriver("1987"	,"goindol"	,"goindol.java"	,rom_goindol,null	,machine_driver_goindol	,input_ports_goindol	,init_goindol	,ROT90	,	Sun a Electronics", "Goindol", GAME_NO_COCKTAIL )
+	public static GameDriver driver_homo	   = new GameDriver("1987"	,"homo"	,"goindol.java"	,rom_homo,driver_goindol	,machine_driver_goindol	,input_ports_homo	,init_homo	,ROT90	,	bootleg", "Homo", GAME_NO_COCKTAIL )
 }

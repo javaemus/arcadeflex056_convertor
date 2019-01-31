@@ -717,9 +717,9 @@ public class blockade
 	    ROM_LOAD( "mineswee.uls", 0x0200, 0x0200, 0x3a4f66e1 );
 	ROM_END(); }}; 
 	
-	GAMEX( 1976, blockade, 0, blockade, blockade, blockade, ROT0, "Gremlin", "Blockade", GAME_IMPERFECT_SOUND | GAME_NO_COCKTAIL )
-	GAMEX( 1976, comotion, 0, comotion, comotion, comotion, ROT0, "Gremlin", "Comotion", GAME_IMPERFECT_SOUND | GAME_NO_COCKTAIL )
-	GAMEX( 1978, blasto,   0, blasto,   blasto,   comotion, ROT0, "Gremlin", "Blasto", GAME_IMPERFECT_SOUND | GAME_NO_COCKTAIL )
-	GAMEX( 1977, hustle,   0, hustle,   hustle,   comotion, ROT0, "Gremlin", "Hustle", GAME_IMPERFECT_SOUND | GAME_NO_COCKTAIL )
-	GAMEX( 1977, mineswpr, 0, blasto,   blockade, blockade, ROT0, "Amutech", "Minesweeper", GAME_IMPERFECT_SOUND | GAME_NO_COCKTAIL )
+	public static GameDriver driver_blockade	   = new GameDriver("1976"	,"blockade"	,"blockade.java"	,rom_blockade,null	,machine_driver_blockade	,input_ports_blockade	,init_blockade	,ROT0	,	Gremlin", "Blockade", GAME_IMPERFECT_SOUND | GAME_NO_COCKTAIL )
+	public static GameDriver driver_comotion	   = new GameDriver("1976"	,"comotion"	,"blockade.java"	,rom_comotion,null	,machine_driver_comotion	,input_ports_comotion	,init_comotion	,ROT0	,	Gremlin", "Comotion", GAME_IMPERFECT_SOUND | GAME_NO_COCKTAIL )
+	public static GameDriver driver_blasto	   = new GameDriver("1978"	,"blasto"	,"blockade.java"	,rom_blasto,null	,machine_driver_blasto	,input_ports_blasto	,init_comotion	,ROT0	,	Gremlin", "Blasto", GAME_IMPERFECT_SOUND | GAME_NO_COCKTAIL )
+	public static GameDriver driver_hustle	   = new GameDriver("1977"	,"hustle"	,"blockade.java"	,rom_hustle,null	,machine_driver_hustle	,input_ports_hustle	,init_comotion	,ROT0	,	Gremlin", "Hustle", GAME_IMPERFECT_SOUND | GAME_NO_COCKTAIL )
+	public static GameDriver driver_mineswpr	   = new GameDriver("1977"	,"mineswpr"	,"blockade.java"	,rom_mineswpr,null	,machine_driver_blasto	,input_ports_blockade	,init_blockade	,ROT0	,	Amutech", "Minesweeper", GAME_IMPERFECT_SOUND | GAME_NO_COCKTAIL )
 }

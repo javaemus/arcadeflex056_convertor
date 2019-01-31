@@ -504,7 +504,7 @@ public class terracre
 	
 	
 	
-	GAME( 1985, terracre, 0,        ym3526, terracre, 0, ROT270, "Nichibutsu", "Terra Cresta (YM3526 set 1)" )
-	GAME( 1985, terracrb, terracre, ym3526, terracre, 0, ROT270, "Nichibutsu", "Terra Cresta (YM3526 set 2)" )
-	GAME( 1985, terracra, terracre, ym2203, terracre, 0, ROT270, "Nichibutsu", "Terra Cresta (YM2203)" )
+	public static GameDriver driver_terracre	   = new GameDriver("1985"	,"terracre"	,"terracre.java"	,rom_terracre,null	,machine_driver_ym3526	,input_ports_terracre	,null	,ROT270	,	Nichibutsu", "Terra Cresta (YM3526 set 1)" )
+	public static GameDriver driver_terracrb	   = new GameDriver("1985"	,"terracrb"	,"terracre.java"	,rom_terracrb,driver_terracre	,machine_driver_ym3526	,input_ports_terracre	,null	,ROT270	,	Nichibutsu", "Terra Cresta (YM3526 set 2)" )
+	public static GameDriver driver_terracra	   = new GameDriver("1985"	,"terracra"	,"terracre.java"	,rom_terracra,driver_terracre	,machine_driver_ym2203	,input_ports_terracre	,null	,ROT270	,	Nichibutsu", "Terra Cresta (YM2203)" )
 }

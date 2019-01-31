@@ -684,8 +684,8 @@ public class fastfred
 	
 	
 	
-	GAMEX(1982, flyboy,   0,      fastfred, flyboy,   0,        ROT90, "Kaneko", "Fly-Boy", GAME_NOT_WORKING )	/* protection */
-	GAME( 1982, flyboyb,  flyboy, fastfred, flyboy,   0,        ROT90, "Kaneko", "Fly-Boy (bootleg)" )
-	GAME( 1982, fastfred, flyboy, fastfred, fastfred, fastfred, ROT90, "Atari", "Fast Freddie" )
-	GAME( 1983, jumpcoas, 0,      jumpcoas, jumpcoas, jumpcoas, ROT90, "Kaneko", "Jump Coaster" )
+	public static GameDriver driver_flyboy	   = new GameDriver("1982"	,"flyboy"	,"fastfred.java"	,rom_flyboy,null	,machine_driver_fastfred	,input_ports_flyboy	,null	,ROT90	,	Kaneko", "Fly-Boy", GAME_NOT_WORKING )	/* protection */
+	public static GameDriver driver_flyboyb	   = new GameDriver("1982"	,"flyboyb"	,"fastfred.java"	,rom_flyboyb,driver_flyboy	,machine_driver_fastfred	,input_ports_flyboy	,null	,ROT90	,	Kaneko", "Fly-Boy (bootleg)" )
+	public static GameDriver driver_fastfred	   = new GameDriver("1982"	,"fastfred"	,"fastfred.java"	,rom_fastfred,driver_flyboy	,machine_driver_fastfred	,input_ports_fastfred	,init_fastfred	,ROT90	,	Atari", "Fast Freddie" )
+	public static GameDriver driver_jumpcoas	   = new GameDriver("1983"	,"jumpcoas"	,"fastfred.java"	,rom_jumpcoas,null	,machine_driver_jumpcoas	,input_ports_jumpcoas	,init_jumpcoas	,ROT90	,	Kaneko", "Jump Coaster" )
 }

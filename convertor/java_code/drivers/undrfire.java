@@ -743,5 +743,5 @@ public class undrfire
 	}
 	
 	
-	GAMEX( 1993, undrfire, 0, undrfire, undrfire, undrfire, ROT0, "Taito Corporation Japan", "Under Fire (World)", GAME_IMPERFECT_COLORS )
+	public static GameDriver driver_undrfire	   = new GameDriver("1993"	,"undrfire"	,"undrfire.java"	,rom_undrfire,null	,machine_driver_undrfire	,input_ports_undrfire	,init_undrfire	,ROT0	,	Taito Corporation Japan", "Under Fire (World)", GAME_IMPERFECT_COLORS )
 }

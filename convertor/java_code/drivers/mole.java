@@ -261,5 +261,5 @@ public class mole
 	INPUT_PORTS_END
 	
 	
-	GAME( 1982, mole, 0, mole, mole, 0, ROT0, "Yachiyo Electronics, Ltd.", "Mole Attack" )
+	public static GameDriver driver_mole	   = new GameDriver("1982"	,"mole"	,"mole.java"	,rom_mole,null	,machine_driver_mole	,input_ports_mole	,null	,ROT0	,	Yachiyo Electronics, Ltd.", "Mole Attack" )
 }

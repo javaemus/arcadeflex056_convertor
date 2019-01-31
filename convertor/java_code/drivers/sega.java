@@ -1432,13 +1432,13 @@ public class sega
 	
 	
 	
-	GAME( 1981, spacfury, 0,		spacfury, spacfury, spacfury, ROT0,   "Sega", "Space Fury (revision C)" )
-	GAME( 1981, spacfura, spacfury, spacfury, spacfury, spacfury, ROT0,   "Sega", "Space Fury (revision A)" )
-	GAME( 1982, zektor,   0,		zektor,   zektor,	zektor,   ROT0,   "Sega", "Zektor (revision B)" )
-	GAME( 1982, tacscan,  0,		tacscan,  tacscan,	tacscan,  ROT270, "Sega", "Tac/Scan" )
-	GAME( 1981, elim2,	  0,		elim2,	  elim2,	elim2,	  ROT0,   "Gremlin", "Eliminator (2 Players, set 1)" )
-	GAME( 1981, elim2a,   elim2,	elim2,	  elim2,	elim2,	  ROT0,   "Gremlin", "Eliminator (2 Players, set 2)" )
-	GAME( 1981, elim4,	  elim2,	elim4,	  elim4,	elim4,	  ROT0,   "Gremlin", "Eliminator (4 Players)" )
-	GAME( 1982, startrek, 0,		startrek, startrek, startrek, ROT0,   "Sega", "Star Trek" )
+	public static GameDriver driver_spacfury	   = new GameDriver("1981"	,"spacfury"	,"sega.java"	,rom_spacfury,null	,machine_driver_spacfury	,input_ports_spacfury	,init_spacfury	,ROT0	,	Sega", "Space Fury (revision C)" )
+	public static GameDriver driver_spacfura	   = new GameDriver("1981"	,"spacfura"	,"sega.java"	,rom_spacfura,driver_spacfury	,machine_driver_spacfury	,input_ports_spacfury	,init_spacfury	,ROT0	,	Sega", "Space Fury (revision A)" )
+	public static GameDriver driver_zektor	   = new GameDriver("1982"	,"zektor"	,"sega.java"	,rom_zektor,null	,machine_driver_zektor	,input_ports_zektor	,init_zektor	,ROT0	,	Sega", "Zektor (revision B)" )
+	public static GameDriver driver_tacscan	   = new GameDriver("1982"	,"tacscan"	,"sega.java"	,rom_tacscan,null	,machine_driver_tacscan	,input_ports_tacscan	,init_tacscan	,ROT270	,	Sega", "Tac/Scan" )
+	public static GameDriver driver_elim2	   = new GameDriver("1981"	,"elim2"	,"sega.java"	,rom_elim2,null	,machine_driver_elim2	,input_ports_elim2	,init_elim2	,ROT0	,	Gremlin", "Eliminator (2 Players, set 1)" )
+	public static GameDriver driver_elim2a	   = new GameDriver("1981"	,"elim2a"	,"sega.java"	,rom_elim2a,driver_elim2	,machine_driver_elim2	,input_ports_elim2	,init_elim2	,ROT0	,	Gremlin", "Eliminator (2 Players, set 2)" )
+	public static GameDriver driver_elim4	   = new GameDriver("1981"	,"elim4"	,"sega.java"	,rom_elim4,driver_elim2	,machine_driver_elim4	,input_ports_elim4	,init_elim4	,ROT0	,	Gremlin", "Eliminator (4 Players)" )
+	public static GameDriver driver_startrek	   = new GameDriver("1982"	,"startrek"	,"sega.java"	,rom_startrek,null	,machine_driver_startrek	,input_ports_startrek	,init_startrek	,ROT0	,	Sega", "Star Trek" )
 	
 }

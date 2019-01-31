@@ -445,5 +445,5 @@ public class mrflea
 	INPUT_PORTS_END
 	
 	
-	GAME(1982, mrflea,   0,        mrflea,   mrflea,   0,        ROT270, "Pacific Novelty", "The Amazing Adventures of Mr. F. Lea"  )
+	public static GameDriver driver_mrflea	   = new GameDriver("1982"	,"mrflea"	,"mrflea.java"	,rom_mrflea,null	,machine_driver_mrflea	,input_ports_mrflea	,null	,ROT270	,	Pacific Novelty", "The Amazing Adventures of Mr. F. Lea"  )
 }

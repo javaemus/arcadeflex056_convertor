@@ -218,5 +218,5 @@ public class cheekyms
 	
 	
 	
-	GAMEX( 1980?, cheekyms, 0, cheekyms, cheekyms, 0, ROT270, "Universal", "Cheeky Mouse", GAME_WRONG_COLORS | GAME_IMPERFECT_SOUND )
+	public static GameDriver driver_cheekyms	   = new GameDriver("1980?"	,"cheekyms"	,"cheekyms.java"	,rom_cheekyms,null	,machine_driver_cheekyms	,input_ports_cheekyms	,null	,ROT270	,	Universal", "Cheeky Mouse", GAME_WRONG_COLORS | GAME_IMPERFECT_SOUND )
 }

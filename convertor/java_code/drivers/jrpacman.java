@@ -421,5 +421,5 @@ public class jrpacman
 	
 	
 	
-	GAME( 1983, jrpacman, 0, jrpacman, jrpacman, jrpacman, ROT90, "Bally Midway", "Jr. Pac-Man" )
+	public static GameDriver driver_jrpacman	   = new GameDriver("1983"	,"jrpacman"	,"jrpacman.java"	,rom_jrpacman,null	,machine_driver_jrpacman	,input_ports_jrpacman	,init_jrpacman	,ROT90	,	Bally Midway", "Jr. Pac-Man" )
 }

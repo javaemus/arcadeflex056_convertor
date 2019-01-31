@@ -597,6 +597,6 @@ public class yunsung8
 	
 	***************************************************************************/
 	
-	GAMEX( 1995, cannball, 0, yunsung8, cannball, 0, ROT0, "Yun Sung / Soft Vision", "Cannon Ball",  GAME_IMPERFECT_SOUND )
-	GAMEX( 1995, magix,    0, yunsung8, magix,    0, ROT0, "Yun Sung",               "Magix / Rock", GAME_IMPERFECT_SOUND ) // Title: DSW
+	public static GameDriver driver_cannball	   = new GameDriver("1995"	,"cannball"	,"yunsung8.java"	,rom_cannball,null	,machine_driver_yunsung8	,input_ports_cannball	,null	,ROT0	,	Yun Sung / Soft Vision", "Cannon Ball",  GAME_IMPERFECT_SOUND )
+	public static GameDriver driver_magix	   = new GameDriver("1995"	,"magix"	,"yunsung8.java"	,rom_magix,null	,machine_driver_yunsung8	,input_ports_magix	,null	,ROT0	,	Yun Sung",               "Magix / Rock", GAME_IMPERFECT_SOUND ) // Title: DSW
 }

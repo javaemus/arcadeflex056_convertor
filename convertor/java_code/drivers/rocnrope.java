@@ -349,6 +349,6 @@ public class rocnrope
 	
 	
 	
-	GAME( 1983, rocnrope, 0,        rocnrope, rocnrope, rocnrope, ROT270, "Konami", "Roc'n Rope" )
-	GAME( 1983, rocnropk, rocnrope, rocnrope, rocnrope, rocnropk, ROT270, "Konami + Kosuka", "Roc'n Rope (Kosuka)" )
+	public static GameDriver driver_rocnrope	   = new GameDriver("1983"	,"rocnrope"	,"rocnrope.java"	,rom_rocnrope,null	,machine_driver_rocnrope	,input_ports_rocnrope	,init_rocnrope	,ROT270	,	Konami", "Roc'n Rope" )
+	public static GameDriver driver_rocnropk	   = new GameDriver("1983"	,"rocnropk"	,"rocnrope.java"	,rom_rocnropk,driver_rocnrope	,machine_driver_rocnrope	,input_ports_rocnrope	,init_rocnropk	,ROT270	,	Konami + Kosuka", "Roc'n Rope (Kosuka)" )
 }

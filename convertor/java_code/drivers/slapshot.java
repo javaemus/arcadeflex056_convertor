@@ -528,5 +528,5 @@ public class slapshot
 		state_save_register_func_postload(reset_sound_region);
 	}
 	
-	GAME( 1994, slapshot, 0, slapshot, slapshot, slapshot, ROT0, "Taito Corporation", "Slap Shot (Japan)" )
+	public static GameDriver driver_slapshot	   = new GameDriver("1994"	,"slapshot"	,"slapshot.java"	,rom_slapshot,null	,machine_driver_slapshot	,input_ports_slapshot	,init_slapshot	,ROT0	,	Taito Corporation", "Slap Shot (Japan)" )
 }

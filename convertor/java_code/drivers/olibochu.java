@@ -445,5 +445,5 @@ public class olibochu
 	
 	
 	
-	GAMEX( 1981, olibochu, 0, olibochu, olibochu, 0, ROT270, "Irem + GDI", "Oli-Boo-Chu", GAME_WRONG_COLORS | GAME_IMPERFECT_SOUND | GAME_NO_COCKTAIL )
+	public static GameDriver driver_olibochu	   = new GameDriver("1981"	,"olibochu"	,"olibochu.java"	,rom_olibochu,null	,machine_driver_olibochu	,input_ports_olibochu	,null	,ROT270	,	Irem + GDI", "Oli-Boo-Chu", GAME_WRONG_COLORS | GAME_IMPERFECT_SOUND | GAME_NO_COCKTAIL )
 }

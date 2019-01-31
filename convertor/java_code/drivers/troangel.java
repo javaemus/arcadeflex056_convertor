@@ -249,5 +249,5 @@ public class troangel
 	
 	
 	
-	GAME( 1983, troangel, 0, troangel, troangel, 0, ROT0, "Irem", "Tropical Angel" )
+	public static GameDriver driver_troangel	   = new GameDriver("1983"	,"troangel"	,"troangel.java"	,rom_troangel,null	,machine_driver_troangel	,input_ports_troangel	,null	,ROT0	,	Irem", "Tropical Angel" )
 }

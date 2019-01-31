@@ -198,5 +198,5 @@ public class dominos
 	
 	
 	
-	GAMEX( 1977, dominos, 0, dominos, dominos, 0, ROT0, "Atari", "Dominos", GAME_NO_SOUND )
+	public static GameDriver driver_dominos	   = new GameDriver("1977"	,"dominos"	,"dominos.java"	,rom_dominos,null	,machine_driver_dominos	,input_ports_dominos	,null	,ROT0	,	Atari", "Dominos", GAME_NO_SOUND )
 }

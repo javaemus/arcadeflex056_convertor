@@ -305,5 +305,5 @@ public class xybots
 	 *
 	 *************************************/
 	
-	GAME( 1987, xybots, 0, xybots, xybots, xybots, ROT0, "Atari Games", "Xybots" )
+	public static GameDriver driver_xybots	   = new GameDriver("1987"	,"xybots"	,"xybots.java"	,rom_xybots,null	,machine_driver_xybots	,input_ports_xybots	,init_xybots	,ROT0	,	Atari Games", "Xybots" )
 }

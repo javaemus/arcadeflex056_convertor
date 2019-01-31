@@ -458,8 +458,8 @@ public class timeplt
 	
 	
 	
-	GAME( 1982, timeplt,  0,       timeplt, timeplt, 0, ROT90,  "Konami", "Time Pilot" )
-	GAME( 1982, timepltc, timeplt, timeplt, timeplt, 0, ROT90,  "Konami (Centuri license)", "Time Pilot (Centuri)" )
-	GAME( 1982, spaceplt, timeplt, timeplt, timeplt, 0, ROT90,  "bootleg", "Space Pilot" )
-	GAME( 1988, psurge,   0,       timeplt, psurge,  0, ROT270, "<unknown>", "Power Surge" )
+	public static GameDriver driver_timeplt	   = new GameDriver("1982"	,"timeplt"	,"timeplt.java"	,rom_timeplt,null	,machine_driver_timeplt	,input_ports_timeplt	,null	,ROT90	,	Konami", "Time Pilot" )
+	public static GameDriver driver_timepltc	   = new GameDriver("1982"	,"timepltc"	,"timeplt.java"	,rom_timepltc,driver_timeplt	,machine_driver_timeplt	,input_ports_timeplt	,null	,ROT90	,	Konami (Centuri license)", "Time Pilot (Centuri)" )
+	public static GameDriver driver_spaceplt	   = new GameDriver("1982"	,"spaceplt"	,"timeplt.java"	,rom_spaceplt,driver_timeplt	,machine_driver_timeplt	,input_ports_timeplt	,null	,ROT90	,	bootleg", "Space Pilot" )
+	public static GameDriver driver_psurge	   = new GameDriver("1988"	,"psurge"	,"timeplt.java"	,rom_psurge,null	,machine_driver_timeplt	,input_ports_psurge	,null	,ROT270	,	<unknown>", "Power Surge" )
 }

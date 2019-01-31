@@ -1563,16 +1563,16 @@ public class atarisy1
 	 *
 	 *************************************/
 	
-	GAME( 1984, marble,   0,        atarisy1, marble,   marble,   ROT0, "Atari Games", "Marble Madness (set 1)" )
-	GAME( 1984, marble2,  marble,   atarisy1, marble,   marble,   ROT0, "Atari Games", "Marble Madness (set 2)" )
-	GAME( 1984, marble3,  marble,   atarisy1, marble,   marble,   ROT0, "Atari Games", "Marble Madness (set 3)" )
-	GAME( 1984, marble4,  marble,   atarisy1, marble,   marble,   ROT0, "Atari Games", "Marble Madness (set 4)" )
-	GAME( 1984, peterpak, 0,        atarisy1, peterpak, peterpak, ROT0, "Atari Games", "Peter Pack-Rat" )
-	GAME( 1985, indytemp, 0,        atarisy1, indytemp, indytemp, ROT0, "Atari Games", "Indiana Jones and the Temple of Doom (set 1)" )
-	GAME( 1985, indytem2, indytemp, atarisy1, indytemp, indytemp, ROT0, "Atari Games", "Indiana Jones and the Temple of Doom (set 2)" )
-	GAME( 1985, indytem3, indytemp, atarisy1, indytemp, indytemp, ROT0, "Atari Games", "Indiana Jones and the Temple of Doom (set 3)" )
-	GAME( 1985, indytem4, indytemp, atarisy1, indytemp, indytemp, ROT0, "Atari Games", "Indiana Jones and the Temple of Doom (set 4)" )
-	GAME( 1985, indytemd, indytemp, atarisy1, indytemp, indytemp, ROT0, "Atari Games", "Indiana Jones and the Temple of Doom (German)" )
-	GAME( 1985, roadrunn, 0,        atarisy1, roadrunn, roadrunn, ROT0, "Atari Games", "Road Runner" )
-	GAME( 1987, roadblst, 0,        atarisy1, roadblst, roadblst, ROT0, "Atari Games", "Road Blasters" )
+	public static GameDriver driver_marble	   = new GameDriver("1984"	,"marble"	,"atarisy1.java"	,rom_marble,null	,machine_driver_atarisy1	,input_ports_marble	,init_marble	,ROT0	,	Atari Games", "Marble Madness (set 1)" )
+	public static GameDriver driver_marble2	   = new GameDriver("1984"	,"marble2"	,"atarisy1.java"	,rom_marble2,driver_marble	,machine_driver_atarisy1	,input_ports_marble	,init_marble	,ROT0	,	Atari Games", "Marble Madness (set 2)" )
+	public static GameDriver driver_marble3	   = new GameDriver("1984"	,"marble3"	,"atarisy1.java"	,rom_marble3,driver_marble	,machine_driver_atarisy1	,input_ports_marble	,init_marble	,ROT0	,	Atari Games", "Marble Madness (set 3)" )
+	public static GameDriver driver_marble4	   = new GameDriver("1984"	,"marble4"	,"atarisy1.java"	,rom_marble4,driver_marble	,machine_driver_atarisy1	,input_ports_marble	,init_marble	,ROT0	,	Atari Games", "Marble Madness (set 4)" )
+	public static GameDriver driver_peterpak	   = new GameDriver("1984"	,"peterpak"	,"atarisy1.java"	,rom_peterpak,null	,machine_driver_atarisy1	,input_ports_peterpak	,init_peterpak	,ROT0	,	Atari Games", "Peter Pack-Rat" )
+	public static GameDriver driver_indytemp	   = new GameDriver("1985"	,"indytemp"	,"atarisy1.java"	,rom_indytemp,null	,machine_driver_atarisy1	,input_ports_indytemp	,init_indytemp	,ROT0	,	Atari Games", "Indiana Jones and the Temple of Doom (set 1)" )
+	public static GameDriver driver_indytem2	   = new GameDriver("1985"	,"indytem2"	,"atarisy1.java"	,rom_indytem2,driver_indytemp	,machine_driver_atarisy1	,input_ports_indytemp	,init_indytemp	,ROT0	,	Atari Games", "Indiana Jones and the Temple of Doom (set 2)" )
+	public static GameDriver driver_indytem3	   = new GameDriver("1985"	,"indytem3"	,"atarisy1.java"	,rom_indytem3,driver_indytemp	,machine_driver_atarisy1	,input_ports_indytemp	,init_indytemp	,ROT0	,	Atari Games", "Indiana Jones and the Temple of Doom (set 3)" )
+	public static GameDriver driver_indytem4	   = new GameDriver("1985"	,"indytem4"	,"atarisy1.java"	,rom_indytem4,driver_indytemp	,machine_driver_atarisy1	,input_ports_indytemp	,init_indytemp	,ROT0	,	Atari Games", "Indiana Jones and the Temple of Doom (set 4)" )
+	public static GameDriver driver_indytemd	   = new GameDriver("1985"	,"indytemd"	,"atarisy1.java"	,rom_indytemd,driver_indytemp	,machine_driver_atarisy1	,input_ports_indytemp	,init_indytemp	,ROT0	,	Atari Games", "Indiana Jones and the Temple of Doom (German)" )
+	public static GameDriver driver_roadrunn	   = new GameDriver("1985"	,"roadrunn"	,"atarisy1.java"	,rom_roadrunn,null	,machine_driver_atarisy1	,input_ports_roadrunn	,init_roadrunn	,ROT0	,	Atari Games", "Road Runner" )
+	public static GameDriver driver_roadblst	   = new GameDriver("1987"	,"roadblst"	,"atarisy1.java"	,rom_roadblst,null	,machine_driver_atarisy1	,input_ports_roadblst	,init_roadblst	,ROT0	,	Atari Games", "Road Blasters" )
 }

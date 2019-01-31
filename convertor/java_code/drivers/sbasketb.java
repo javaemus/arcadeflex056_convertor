@@ -393,6 +393,6 @@ public class sbasketb
 	}
 	
 	
-	GAME( 1984, sbasketb, 0,        sbasketb, sbasketb, sbasketb, ROT90, "Konami", "Super Basketball" )
-	GAME( 1984, sbasketu, sbasketb, sbasketb, sbasketb, 0,        ROT90, "Konami", "Super Basketball (not encrypted)" )
+	public static GameDriver driver_sbasketb	   = new GameDriver("1984"	,"sbasketb"	,"sbasketb.java"	,rom_sbasketb,null	,machine_driver_sbasketb	,input_ports_sbasketb	,init_sbasketb	,ROT90	,	Konami", "Super Basketball" )
+	public static GameDriver driver_sbasketu	   = new GameDriver("1984"	,"sbasketu"	,"sbasketb.java"	,rom_sbasketu,driver_sbasketb	,machine_driver_sbasketb	,input_ports_sbasketb	,null	,ROT90	,	Konami", "Super Basketball (not encrypted)" )
 }

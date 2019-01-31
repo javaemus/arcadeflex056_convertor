@@ -422,6 +422,6 @@ public class hyhoo
 	ROM_END(); }}; 
 	
 	
-	GAME( 1987, hyhoo,  0, hyhoo,  hyhoo,  hyhoo,  ROT90, "Nichibutsu", "Taisen Quiz HYHOO (Japan)" )
-	GAME( 1987, hyhoo2, 0, hyhoo2, hyhoo2, hyhoo2, ROT90, "Nichibutsu", "Taisen Quiz HYHOO 2 (Japan)" )
+	public static GameDriver driver_hyhoo	   = new GameDriver("1987"	,"hyhoo"	,"hyhoo.java"	,rom_hyhoo,null	,machine_driver_hyhoo	,input_ports_hyhoo	,init_hyhoo	,ROT90	,	Nichibutsu", "Taisen Quiz HYHOO (Japan)" )
+	public static GameDriver driver_hyhoo2	   = new GameDriver("1987"	,"hyhoo2"	,"hyhoo.java"	,rom_hyhoo2,null	,machine_driver_hyhoo2	,input_ports_hyhoo2	,init_hyhoo2	,ROT90	,	Nichibutsu", "Taisen Quiz HYHOO 2 (Japan)" )
 }

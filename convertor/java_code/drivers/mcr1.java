@@ -533,7 +533,7 @@ public class mcr1
 	 *
 	 *************************************/
 	
-	GAME( 1981, solarfox, 0,    mcr1, solarfox, solarfox, ROT90 ^ ORIENTATION_FLIP_Y, "Bally Midway", "Solar Fox" )
-	GAME( 1981, kick,     0,    mcr1, kick,     kick,     ORIENTATION_SWAP_XY,        "Midway", "Kick (upright)" )
-	GAME( 1981, kicka,    kick, mcr1, kicka,    kick,     ROT90,                      "Midway", "Kick (cocktail)" )
+	public static GameDriver driver_solarfox	   = new GameDriver("1981"	,"solarfox"	,"mcr1.java"	,rom_solarfox,null	,machine_driver_mcr1	,input_ports_solarfox	,init_solarfox	,ROT90	,	ORIENTATION_FLIP_Y, "Bally Midway", "Solar Fox" )
+	public static GameDriver driver_kick	   = new GameDriver("1981"	,"kick"	,"mcr1.java"	,rom_kick,null	,machine_driver_mcr1	,input_ports_kick	,init_kick	,ORIENTATION_SWAP_XY	,	Midway", "Kick (upright)" )
+	public static GameDriver driver_kicka	   = new GameDriver("1981"	,"kicka"	,"mcr1.java"	,rom_kicka,driver_kick	,machine_driver_mcr1	,input_ports_kicka	,init_kick	,ROT90	,	Midway", "Kick (cocktail)" )
 }

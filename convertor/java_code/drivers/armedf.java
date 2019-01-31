@@ -968,9 +968,9 @@ public class armedf
 	
 	
 	
-	GAMEX( 1987, terraf,   0,      terraf,   terraf,   0, ROT0,   "Nichibutsu", "Terra Force", GAME_NO_COCKTAIL | GAME_IMPERFECT_GRAPHICS )
-	GAMEX( 1987, terrafu,  terraf, terraf,   terraf,   0, ROT0,   "Nichibutsu USA", "Terra Force (US)", GAME_NO_COCKTAIL | GAME_IMPERFECT_GRAPHICS )
-	GAMEX( 1987, kodure,   0,      kodure,   kodure,   0, ROT0,   "Nichibutsu", "Kodure Ookami (Japan)", GAME_NO_COCKTAIL | GAME_IMPERFECT_GRAPHICS )
-	GAMEX( 1988, cclimbr2, 0,      cclimbr2, cclimbr2, 0, ROT0,   "Nichibutsu", "Crazy Climber 2 (Japan)", GAME_NO_COCKTAIL )
-	GAMEX( 1988, armedf,   0,      armedf,   armedf,   0, ROT270, "Nichibutsu", "Armed Formation", GAME_NO_COCKTAIL )
+	public static GameDriver driver_terraf	   = new GameDriver("1987"	,"terraf"	,"armedf.java"	,rom_terraf,null	,machine_driver_terraf	,input_ports_terraf	,null	,ROT0	,	Nichibutsu", "Terra Force", GAME_NO_COCKTAIL | GAME_IMPERFECT_GRAPHICS )
+	public static GameDriver driver_terrafu	   = new GameDriver("1987"	,"terrafu"	,"armedf.java"	,rom_terrafu,driver_terraf	,machine_driver_terraf	,input_ports_terraf	,null	,ROT0	,	Nichibutsu USA", "Terra Force (US)", GAME_NO_COCKTAIL | GAME_IMPERFECT_GRAPHICS )
+	public static GameDriver driver_kodure	   = new GameDriver("1987"	,"kodure"	,"armedf.java"	,rom_kodure,null	,machine_driver_kodure	,input_ports_kodure	,null	,ROT0	,	Nichibutsu", "Kodure Ookami (Japan)", GAME_NO_COCKTAIL | GAME_IMPERFECT_GRAPHICS )
+	public static GameDriver driver_cclimbr2	   = new GameDriver("1988"	,"cclimbr2"	,"armedf.java"	,rom_cclimbr2,null	,machine_driver_cclimbr2	,input_ports_cclimbr2	,null	,ROT0	,	Nichibutsu", "Crazy Climber 2 (Japan)", GAME_NO_COCKTAIL )
+	public static GameDriver driver_armedf	   = new GameDriver("1988"	,"armedf"	,"armedf.java"	,rom_armedf,null	,machine_driver_armedf	,input_ports_armedf	,null	,ROT270	,	Nichibutsu", "Armed Formation", GAME_NO_COCKTAIL )
 }

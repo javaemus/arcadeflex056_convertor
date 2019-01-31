@@ -928,9 +928,9 @@ public class aburner
 	};
 	
 	/*          rom       parent    machine   inp       init */
-	GAME( 1987, aburner,  aburner2, aburner,  aburner,  aburner,  ROT0, "Sega", "After Burner (Japan)" )
-	GAME( 1987, aburner2, 0,        aburner,  aburner2, aburner2, ROT0, "Sega", "After Burner II" )
-	GAMEX(19??, loffire,  0,        aburner,  aburner,  aburner,  ROT0, "Sega", "Line of Fire", GAME_NOT_WORKING )
-	GAMEX(19??, thndrbld, 0,        aburner,  thndrbld, aburner,  ROT0, "Sega", "Thunder Blade", GAME_NOT_WORKING )
-	GAME( 19??, thndrbdj, thndrbld, aburner,  thndrbld, thndrbdj, ROT0, "Sega", "Thunder Blade (Japan)" )
+	public static GameDriver driver_aburner	   = new GameDriver("1987"	,"aburner"	,"aburner.java"	,rom_aburner,driver_aburner2	,machine_driver_aburner	,input_ports_aburner	,init_aburner	,ROT0	,	Sega", "After Burner (Japan)" )
+	public static GameDriver driver_aburner2	   = new GameDriver("1987"	,"aburner2"	,"aburner.java"	,rom_aburner2,null	,machine_driver_aburner	,input_ports_aburner2	,init_aburner2	,ROT0	,	Sega", "After Burner II" )
+	public static GameDriver driver_loffire	   = new GameDriver("19??"	,"loffire"	,"aburner.java"	,rom_loffire,null	,machine_driver_aburner	,input_ports_aburner	,init_aburner	,ROT0	,	Sega", "Line of Fire", GAME_NOT_WORKING )
+	public static GameDriver driver_thndrbld	   = new GameDriver("19??"	,"thndrbld"	,"aburner.java"	,rom_thndrbld,null	,machine_driver_aburner	,input_ports_thndrbld	,init_aburner	,ROT0	,	Sega", "Thunder Blade", GAME_NOT_WORKING )
+	public static GameDriver driver_thndrbdj	   = new GameDriver("19??"	,"thndrbdj"	,"aburner.java"	,rom_thndrbdj,driver_thndrbld	,machine_driver_aburner	,input_ports_thndrbld	,init_thndrbdj	,ROT0	,	Sega", "Thunder Blade (Japan)" )
 }

@@ -366,5 +366,5 @@ public class royalmah
 	ROM_END(); }}; 
 	
 	
-	GAME( 1982, royalmah, 0, royalmah, royalmah, 0, ROT180, "Falcon", "Royal Mahjong" )
+	public static GameDriver driver_royalmah	   = new GameDriver("1982"	,"royalmah"	,"royalmah.java"	,rom_royalmah,null	,machine_driver_royalmah	,input_ports_royalmah	,null	,ROT180	,	Falcon", "Royal Mahjong" )
 }

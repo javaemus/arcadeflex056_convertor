@@ -824,7 +824,7 @@ public class pipedrm
 	 *
 	 *************************************/
 	
-	GAME( 1990, pipedrm,  0,       pipedrm, pipedrm, pipedrm, ROT0, "Video System Co.", "Pipe Dream (US)" )
-	GAME( 1990, pipedrmj, pipedrm, pipedrm, pipedrm, pipedrm, ROT0, "Video System Co.", "Pipe Dream (Japan)" )
-	GAME( 1990, hatris,   0,       hatris,  hatris,  hatris,  ROT0, "Video System Co.", "Hatris (Japan)" )
+	public static GameDriver driver_pipedrm	   = new GameDriver("1990"	,"pipedrm"	,"pipedrm.java"	,rom_pipedrm,null	,machine_driver_pipedrm	,input_ports_pipedrm	,init_pipedrm	,ROT0	,	Video System Co.", "Pipe Dream (US)" )
+	public static GameDriver driver_pipedrmj	   = new GameDriver("1990"	,"pipedrmj"	,"pipedrm.java"	,rom_pipedrmj,driver_pipedrm	,machine_driver_pipedrm	,input_ports_pipedrm	,init_pipedrm	,ROT0	,	Video System Co.", "Pipe Dream (Japan)" )
+	public static GameDriver driver_hatris	   = new GameDriver("1990"	,"hatris"	,"pipedrm.java"	,rom_hatris,null	,machine_driver_hatris	,input_ports_hatris	,init_hatris	,ROT0	,	Video System Co.", "Hatris (Japan)" )
 }

@@ -428,6 +428,6 @@ public class vindictr
 	 *
 	 *************************************/
 	
-	GAME( 1988, vindictr, 0,        vindictr, vindictr, vindictr, ROT0, "Atari Games", "Vindicators (4/26/88)" )
-	GAME( 1988, vindicta, vindictr, vindictr, vindictr, vindictr, ROT0, "Atari Games", "Vindicators (4/20/88)" )
+	public static GameDriver driver_vindictr	   = new GameDriver("1988"	,"vindictr"	,"vindictr.java"	,rom_vindictr,null	,machine_driver_vindictr	,input_ports_vindictr	,init_vindictr	,ROT0	,	Atari Games", "Vindicators (4/26/88)" )
+	public static GameDriver driver_vindicta	   = new GameDriver("1988"	,"vindicta"	,"vindictr.java"	,rom_vindicta,driver_vindictr	,machine_driver_vindictr	,input_ports_vindictr	,init_vindictr	,ROT0	,	Atari Games", "Vindicators (4/20/88)" )
 }

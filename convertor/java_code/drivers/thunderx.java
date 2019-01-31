@@ -954,8 +954,8 @@ public class thunderx
 	
 	
 	
-	GAME( 1988, scontra,  0,        scontra,  scontra,  scontra, ROT90, "Konami", "Super Contra" )
-	GAME( 1988, scontraj, scontra,  scontra,  scontra,  scontra, ROT90, "Konami", "Super Contra (Japan)" )
-	GAME( 1988, thunderx, 0,        thunderx, thunderx, scontra, ROT0, "Konami", "Thunder Cross" )
-	GAME( 1988, thnderxj, thunderx, thunderx, thunderx, scontra, ROT0, "Konami", "Thunder Cross (Japan)" )
+	public static GameDriver driver_scontra	   = new GameDriver("1988"	,"scontra"	,"thunderx.java"	,rom_scontra,null	,machine_driver_scontra	,input_ports_scontra	,init_scontra	,ROT90	,	Konami", "Super Contra" )
+	public static GameDriver driver_scontraj	   = new GameDriver("1988"	,"scontraj"	,"thunderx.java"	,rom_scontraj,driver_scontra	,machine_driver_scontra	,input_ports_scontra	,init_scontra	,ROT90	,	Konami", "Super Contra (Japan)" )
+	public static GameDriver driver_thunderx	   = new GameDriver("1988"	,"thunderx"	,"thunderx.java"	,rom_thunderx,null	,machine_driver_thunderx	,input_ports_thunderx	,init_scontra	,ROT0	,	Konami", "Thunder Cross" )
+	public static GameDriver driver_thnderxj	   = new GameDriver("1988"	,"thnderxj"	,"thunderx.java"	,rom_thnderxj,driver_thunderx	,machine_driver_thunderx	,input_ports_thunderx	,init_scontra	,ROT0	,	Konami", "Thunder Cross (Japan)" )
 }

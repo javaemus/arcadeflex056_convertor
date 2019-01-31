@@ -1250,12 +1250,12 @@ public class zaxxon
 	}
 	
 	
-	GAME( 1982, zaxxon,   0,	   zaxxon,	 zaxxon,   0,		 ROT90,  "Sega",    "Zaxxon (set 1)" )
-	GAME( 1982, zaxxon2,  zaxxon, zaxxon,	 zaxxon,   0,		 ROT90,  "Sega",    "Zaxxon (set 2)" )
-	GAME( 1982, zaxxonb,  zaxxon, zaxxon,	 zaxxon,   zaxxonb,  ROT90,  "bootleg", "Jackson" )
-	GAME( 1982, szaxxon,  0,	   zaxxon,	 zaxxon,   szaxxon,  ROT90,  "Sega",    "Super Zaxxon" )
-	GAMEX(1984, futspy,   0,	   futspy,	 futspy,   futspy,	 ROT270, "Sega",    "Future Spy", GAME_NO_COCKTAIL )
-	GAMEX(1983, razmataz, 0,	   razmataz, razmataz, razmataz, ROT270, "Sega",    "Razzmatazz", GAME_NO_SOUND | GAME_NO_COCKTAIL )
-	GAMEX(1983, ixion,    0,	   ixion,    ixion,    ixion,    ROT270, "Sega",    "Ixion (prototype)", GAME_NO_SOUND )
+	public static GameDriver driver_zaxxon	   = new GameDriver("1982"	,"zaxxon"	,"zaxxon.java"	,rom_zaxxon,null	,machine_driver_zaxxon	,input_ports_zaxxon	,null	,ROT90	,	Sega",    "Zaxxon (set 1)" )
+	public static GameDriver driver_zaxxon2	   = new GameDriver("1982"	,"zaxxon2"	,"zaxxon.java"	,rom_zaxxon2,driver_zaxxon	,machine_driver_zaxxon	,input_ports_zaxxon	,null	,ROT90	,	Sega",    "Zaxxon (set 2)" )
+	public static GameDriver driver_zaxxonb	   = new GameDriver("1982"	,"zaxxonb"	,"zaxxon.java"	,rom_zaxxonb,driver_zaxxon	,machine_driver_zaxxon	,input_ports_zaxxon	,init_zaxxonb	,ROT90	,	bootleg", "Jackson" )
+	public static GameDriver driver_szaxxon	   = new GameDriver("1982"	,"szaxxon"	,"zaxxon.java"	,rom_szaxxon,null	,machine_driver_zaxxon	,input_ports_zaxxon	,init_szaxxon	,ROT90	,	Sega",    "Super Zaxxon" )
+	public static GameDriver driver_futspy	   = new GameDriver("1984"	,"futspy"	,"zaxxon.java"	,rom_futspy,null	,machine_driver_futspy	,input_ports_futspy	,init_futspy	,ROT270	,	Sega",    "Future Spy", GAME_NO_COCKTAIL )
+	public static GameDriver driver_razmataz	   = new GameDriver("1983"	,"razmataz"	,"zaxxon.java"	,rom_razmataz,null	,machine_driver_razmataz	,input_ports_razmataz	,init_razmataz	,ROT270	,	Sega",    "Razzmatazz", GAME_NO_SOUND | GAME_NO_COCKTAIL )
+	public static GameDriver driver_ixion	   = new GameDriver("1983"	,"ixion"	,"zaxxon.java"	,rom_ixion,null	,machine_driver_ixion	,input_ports_ixion	,init_ixion	,ROT270	,	Sega",    "Ixion (prototype)", GAME_NO_SOUND )
 	
 }

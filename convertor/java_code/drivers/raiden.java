@@ -586,7 +586,7 @@ public class raiden
 	
 	/***************************************************************************/
 	
-	GAME( 1990, raiden,  0,      raiden,  raiden, raiden,  ROT270, "Seibu Kaihatsu", "Raiden" )
-	GAME( 1990, raidena, raiden, raidena, raiden, raidena, ROT270, "Seibu Kaihatsu", "Raiden (Alternate Hardware)" )
-	GAME( 1990, raidenk, raiden, raidena, raiden, raidenk, ROT270, "Seibu Kaihatsu (IBL Corporation license)", "Raiden (Korea)" )
+	public static GameDriver driver_raiden	   = new GameDriver("1990"	,"raiden"	,"raiden.java"	,rom_raiden,null	,machine_driver_raiden	,input_ports_raiden	,init_raiden	,ROT270	,	Seibu Kaihatsu", "Raiden" )
+	public static GameDriver driver_raidena	   = new GameDriver("1990"	,"raidena"	,"raiden.java"	,rom_raidena,driver_raiden	,machine_driver_raidena	,input_ports_raiden	,init_raidena	,ROT270	,	Seibu Kaihatsu", "Raiden (Alternate Hardware)" )
+	public static GameDriver driver_raidenk	   = new GameDriver("1990"	,"raidenk"	,"raiden.java"	,rom_raidenk,driver_raiden	,machine_driver_raidena	,input_ports_raiden	,init_raidenk	,ROT270	,	Seibu Kaihatsu (IBL Corporation license)", "Raiden (Korea)" )
 }

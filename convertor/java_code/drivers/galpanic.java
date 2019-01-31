@@ -561,8 +561,8 @@ public class galpanic
 	ROM_END(); }}; 
 	
 	
-	GAMEX( 1990, galpanic, 0, galpanic, galpanic, 0, ROT90, "Kaneko", "Gals Panic", GAME_NO_COCKTAIL )
-	GAMEX( 1994, fantasia, 0, comad,    newfant,  0, ROT90, "Comad & New Japan System", "Fantasia", GAME_NO_COCKTAIL )
-	GAMEX( 1995, newfant,  0, comad,    newfant,  0, ROT90, "Comad & New Japan System", "New Fantasia", GAME_NO_COCKTAIL )
-	GAMEX( 1996, missw96,  0, comad,    missw96,  0, ROT0,  "Comad", "Miss World '96 Nude", GAME_NO_COCKTAIL )
+	public static GameDriver driver_galpanic	   = new GameDriver("1990"	,"galpanic"	,"galpanic.java"	,rom_galpanic,null	,machine_driver_galpanic	,input_ports_galpanic	,null	,ROT90	,	Kaneko", "Gals Panic", GAME_NO_COCKTAIL )
+	public static GameDriver driver_fantasia	   = new GameDriver("1994"	,"fantasia"	,"galpanic.java"	,rom_fantasia,null	,machine_driver_comad	,input_ports_newfant	,null	,ROT90	,	Comad & New Japan System", "Fantasia", GAME_NO_COCKTAIL )
+	public static GameDriver driver_newfant	   = new GameDriver("1995"	,"newfant"	,"galpanic.java"	,rom_newfant,null	,machine_driver_comad	,input_ports_newfant	,null	,ROT90	,	Comad & New Japan System", "New Fantasia", GAME_NO_COCKTAIL )
+	public static GameDriver driver_missw96	   = new GameDriver("1996"	,"missw96"	,"galpanic.java"	,rom_missw96,null	,machine_driver_comad	,input_ports_missw96	,null	,ROT0	,	Comad", "Miss World '96 Nude", GAME_NO_COCKTAIL )
 }

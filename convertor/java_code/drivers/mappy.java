@@ -962,11 +962,11 @@ public class mappy
 	
 	
 	
-	GAME( 1983, mappy,    0,        mappy,    mappy,    0, ROT90, "Namco", "Mappy (US)" )
-	GAME( 1983, mappyjp,  mappy,    mappy,    mappy,    0, ROT90, "Namco", "Mappy (Japan)" )
-	GAME( 1985, digdug2,  0,        digdug2,  digdug2,  0, ROT90, "Namco", "Dig Dug II (set 1)" )
-	GAME( 1985, digdug2a, digdug2,  digdug2,  digdug2,  0, ROT90, "Namco", "Dig Dug II (set 2)" )
-	GAME( 1985, motos,    0,        motos,    motos,    0, ROT90, "Namco", "Motos" )
-	GAME( 1984, todruaga, 0,        todruaga, todruaga, 0, ROT90, "Namco", "Tower of Druaga (set 1)" )
-	GAME( 1984, todruagb, todruaga, todruaga, todruaga, 0, ROT90, "Namco", "Tower of Druaga (set 2)" )
+	public static GameDriver driver_mappy	   = new GameDriver("1983"	,"mappy"	,"mappy.java"	,rom_mappy,null	,machine_driver_mappy	,input_ports_mappy	,null	,ROT90	,	Namco", "Mappy (US)" )
+	public static GameDriver driver_mappyjp	   = new GameDriver("1983"	,"mappyjp"	,"mappy.java"	,rom_mappyjp,driver_mappy	,machine_driver_mappy	,input_ports_mappy	,null	,ROT90	,	Namco", "Mappy (Japan)" )
+	public static GameDriver driver_digdug2	   = new GameDriver("1985"	,"digdug2"	,"mappy.java"	,rom_digdug2,null	,machine_driver_digdug2	,input_ports_digdug2	,null	,ROT90	,	Namco", "Dig Dug II (set 1)" )
+	public static GameDriver driver_digdug2a	   = new GameDriver("1985"	,"digdug2a"	,"mappy.java"	,rom_digdug2a,driver_digdug2	,machine_driver_digdug2	,input_ports_digdug2	,null	,ROT90	,	Namco", "Dig Dug II (set 2)" )
+	public static GameDriver driver_motos	   = new GameDriver("1985"	,"motos"	,"mappy.java"	,rom_motos,null	,machine_driver_motos	,input_ports_motos	,null	,ROT90	,	Namco", "Motos" )
+	public static GameDriver driver_todruaga	   = new GameDriver("1984"	,"todruaga"	,"mappy.java"	,rom_todruaga,null	,machine_driver_todruaga	,input_ports_todruaga	,null	,ROT90	,	Namco", "Tower of Druaga (set 1)" )
+	public static GameDriver driver_todruagb	   = new GameDriver("1984"	,"todruagb"	,"mappy.java"	,rom_todruagb,driver_todruaga	,machine_driver_todruaga	,input_ports_todruaga	,null	,ROT90	,	Namco", "Tower of Druaga (set 2)" )
 }

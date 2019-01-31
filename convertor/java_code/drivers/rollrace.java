@@ -393,6 +393,6 @@ public class rollrace
 	
 	
 	
-	GAMEX( 1983, fightrol, 0,        rollrace, rollrace, 0, ROT270, "[Kaneko] (Taito license)", "Fighting Roller", GAME_IMPERFECT_SOUND|GAME_IMPERFECT_COLORS )
-	GAMEX( 1983, rollrace, fightrol, rollrace, rollrace, 0, ROT270, "[Kaneko] (Williams license)", "Roller Aces", GAME_IMPERFECT_SOUND|GAME_IMPERFECT_COLORS )
+	public static GameDriver driver_fightrol	   = new GameDriver("1983"	,"fightrol"	,"rollrace.java"	,rom_fightrol,null	,machine_driver_rollrace	,input_ports_rollrace	,null	,ROT270	,	[Kaneko] (Taito license)", "Fighting Roller", GAME_IMPERFECT_SOUND|GAME_IMPERFECT_COLORS )
+	public static GameDriver driver_rollrace	   = new GameDriver("1983"	,"rollrace"	,"rollrace.java"	,rom_rollrace,driver_fightrol	,machine_driver_rollrace	,input_ports_rollrace	,null	,ROT270	,	[Kaneko] (Williams license)", "Roller Aces", GAME_IMPERFECT_SOUND|GAME_IMPERFECT_COLORS )
 }

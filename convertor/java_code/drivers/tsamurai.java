@@ -1422,14 +1422,14 @@ public class tsamurai
 		ROM_LOAD( "clr.6p",  0x200, 0x0100, 0x0e4fd17a );
 	ROM_END(); }}; 
 	
-	GAMEX(1984, vsgongf,  0,        vsgongf,  vsgongf,  0, ROT90, "Kaneko", "VS Gong Fight", GAME_IMPERFECT_COLORS )
-	GAME( 1985, tsamurai, 0,        tsamurai, tsamurai, 0, ROT90, "Taito", "Samurai Nihon-ichi (set 1)" )
-	GAME( 1985, tsamura2, tsamurai, tsamurai, tsamurai, 0, ROT90, "Taito", "Samurai Nihon-ichi (set 2)" )
-	GAMEX(1985, nunchaku, 0,        tsamurai, nunchaku, 0, ROT90, "Taito", "Nunchackun", GAME_IMPERFECT_COLORS )
-	GAMEX(1985, yamagchi, 0,        tsamurai, yamagchi, 0, ROT90, "Taito", "Go Go Mr. Yamaguchi / Yuke Yuke Yamaguchi-kun", GAME_IMPERFECT_COLORS )
+	public static GameDriver driver_vsgongf	   = new GameDriver("1984"	,"vsgongf"	,"tsamurai.java"	,rom_vsgongf,null	,machine_driver_vsgongf	,input_ports_vsgongf	,null	,ROT90	,	Kaneko", "VS Gong Fight", GAME_IMPERFECT_COLORS )
+	public static GameDriver driver_tsamurai	   = new GameDriver("1985"	,"tsamurai"	,"tsamurai.java"	,rom_tsamurai,null	,machine_driver_tsamurai	,input_ports_tsamurai	,null	,ROT90	,	Taito", "Samurai Nihon-ichi (set 1)" )
+	public static GameDriver driver_tsamura2	   = new GameDriver("1985"	,"tsamura2"	,"tsamurai.java"	,rom_tsamura2,driver_tsamurai	,machine_driver_tsamurai	,input_ports_tsamurai	,null	,ROT90	,	Taito", "Samurai Nihon-ichi (set 2)" )
+	public static GameDriver driver_nunchaku	   = new GameDriver("1985"	,"nunchaku"	,"tsamurai.java"	,rom_nunchaku,null	,machine_driver_tsamurai	,input_ports_nunchaku	,null	,ROT90	,	Taito", "Nunchackun", GAME_IMPERFECT_COLORS )
+	public static GameDriver driver_yamagchi	   = new GameDriver("1985"	,"yamagchi"	,"tsamurai.java"	,rom_yamagchi,null	,machine_driver_tsamurai	,input_ports_yamagchi	,null	,ROT90	,	Taito", "Go Go Mr. Yamaguchi / Yuke Yuke Yamaguchi-kun", GAME_IMPERFECT_COLORS )
 	
-	GAME( 1986, m660,     0,        m660,     m660    , 0, ROT90, "[Wood Place] Taito America Corporation", "Mission 660" )
-	GAME( 1986, m660j,    m660,     m660,     m660    , 0, ROT90, "[Wood Place] Taito Corporation", "Mission 660 (Japan)" )
-	GAME( 1986, m660b,    m660,     m660,     m660    , 0, ROT90, "bootleg", "Mission 660 (bootleg)" )
-	GAME( 1986, alphaxz,  m660,     m660,     m660    , 0, ROT90, "Ed/Wood Place", "Alphax Z" )
+	public static GameDriver driver_m660	   = new GameDriver("1986"	,"m660"	,"tsamurai.java"	,rom_m660,null	,machine_driver_m660	,input_ports_m660	,init_	,0	,ROT90	"[Wood Place] Taito America Corporation", "Mission 660" )
+	public static GameDriver driver_m660j	   = new GameDriver("1986"	,"m660j"	,"tsamurai.java"	,rom_m660j,driver_m660	,machine_driver_m660	,input_ports_m660	,init_	,0	,ROT90	"[Wood Place] Taito Corporation", "Mission 660 (Japan)" )
+	public static GameDriver driver_m660b	   = new GameDriver("1986"	,"m660b"	,"tsamurai.java"	,rom_m660b,driver_m660	,machine_driver_m660	,input_ports_m660	,init_	,0	,ROT90	"bootleg", "Mission 660 (bootleg)" )
+	public static GameDriver driver_alphaxz	   = new GameDriver("1986"	,"alphaxz"	,"tsamurai.java"	,rom_alphaxz,driver_m660	,machine_driver_m660	,input_ports_m660	,init_	,0	,ROT90	"Ed/Wood Place", "Alphax Z" )
 }

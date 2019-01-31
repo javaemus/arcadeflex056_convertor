@@ -645,8 +645,8 @@ public class cbuster
 	
 	/******************************************************************************/
 	
-	GAME( 1990, cbuster,  0,       twocrude, twocrude, twocrude, ROT0, "Data East Corporation", "Crude Buster (World FX version)" )
-	GAME( 1990, cbusterw, cbuster, twocrude, twocrude, twocrude, ROT0, "Data East Corporation", "Crude Buster (World FU version)" )
-	GAME( 1990, cbusterj, cbuster, twocrude, twocrude, twocrude, ROT0, "Data East Corporation", "Crude Buster (Japan)" )
-	GAME( 1990, twocrude, cbuster, twocrude, twocrude, twocrude, ROT0, "Data East USA", "Two Crude (US)" )
+	public static GameDriver driver_cbuster	   = new GameDriver("1990"	,"cbuster"	,"cbuster.java"	,rom_cbuster,null	,machine_driver_twocrude	,input_ports_twocrude	,init_twocrude	,ROT0	,	Data East Corporation", "Crude Buster (World FX version)" )
+	public static GameDriver driver_cbusterw	   = new GameDriver("1990"	,"cbusterw"	,"cbuster.java"	,rom_cbusterw,driver_cbuster	,machine_driver_twocrude	,input_ports_twocrude	,init_twocrude	,ROT0	,	Data East Corporation", "Crude Buster (World FU version)" )
+	public static GameDriver driver_cbusterj	   = new GameDriver("1990"	,"cbusterj"	,"cbuster.java"	,rom_cbusterj,driver_cbuster	,machine_driver_twocrude	,input_ports_twocrude	,init_twocrude	,ROT0	,	Data East Corporation", "Crude Buster (Japan)" )
+	public static GameDriver driver_twocrude	   = new GameDriver("1990"	,"twocrude"	,"cbuster.java"	,rom_twocrude,driver_cbuster	,machine_driver_twocrude	,input_ports_twocrude	,init_twocrude	,ROT0	,	Data East USA", "Two Crude (US)" )
 }

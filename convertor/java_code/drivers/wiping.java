@@ -432,6 +432,6 @@ public class wiping
 	
 	
 	
-	GAME( 1982, wiping,  0,      wiping, wiping,  0, ROT90, "Nichibutsu", "Wiping" )
-	GAME( 1983, rugrats, wiping, wiping, rugrats, 0, ROT90, "Nichibutsu", "Rug Rats" )
+	public static GameDriver driver_wiping	   = new GameDriver("1982"	,"wiping"	,"wiping.java"	,rom_wiping,null	,machine_driver_wiping	,input_ports_wiping	,null	,ROT90	,	Nichibutsu", "Wiping" )
+	public static GameDriver driver_rugrats	   = new GameDriver("1983"	,"rugrats"	,"wiping.java"	,rom_rugrats,driver_wiping	,machine_driver_wiping	,input_ports_rugrats	,null	,ROT90	,	Nichibutsu", "Rug Rats" )
 }

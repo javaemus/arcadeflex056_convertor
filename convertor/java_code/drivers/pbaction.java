@@ -389,6 +389,6 @@ public class pbaction
 	
 	
 	
-	GAME( 1985, pbaction, 0,        pbaction, pbaction, 0, ROT90, "Tehkan", "Pinball Action (set 1)" )
-	GAME( 1985, pbactio2, pbaction, pbaction, pbaction, 0, ROT90, "Tehkan", "Pinball Action (set 2)" )
+	public static GameDriver driver_pbaction	   = new GameDriver("1985"	,"pbaction"	,"pbaction.java"	,rom_pbaction,null	,machine_driver_pbaction	,input_ports_pbaction	,null	,ROT90	,	Tehkan", "Pinball Action (set 1)" )
+	public static GameDriver driver_pbactio2	   = new GameDriver("1985"	,"pbactio2"	,"pbaction.java"	,rom_pbactio2,driver_pbaction	,machine_driver_pbaction	,input_ports_pbaction	,null	,ROT90	,	Tehkan", "Pinball Action (set 2)" )
 }

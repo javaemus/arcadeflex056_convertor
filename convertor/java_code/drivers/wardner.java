@@ -812,8 +812,8 @@ public class wardner
 	
 	
 	
-	GAME( 1987, wardner,  0,       wardner, wardner,  wardner, ROT0, "[Toaplan] Taito Corporation Japan", "Wardner (World)" )
-	GAME( 1987, pyros,    wardner, wardner, pyros,    wardner, ROT0, "[Toaplan] Taito America Corporation", "Pyros (US)" )
-	GAME( 1987, wardnerj, wardner, wardner, wardnerj, wardner, ROT0, "[Toaplan] Taito Corporation", "Wardna no Mori (Japan)" )
+	public static GameDriver driver_wardner	   = new GameDriver("1987"	,"wardner"	,"wardner.java"	,rom_wardner,null	,machine_driver_wardner	,input_ports_wardner	,init_wardner	,ROT0	,	[Toaplan] Taito Corporation Japan", "Wardner (World)" )
+	public static GameDriver driver_pyros	   = new GameDriver("1987"	,"pyros"	,"wardner.java"	,rom_pyros,driver_wardner	,machine_driver_wardner	,input_ports_pyros	,init_wardner	,ROT0	,	[Toaplan] Taito America Corporation", "Pyros (US)" )
+	public static GameDriver driver_wardnerj	   = new GameDriver("1987"	,"wardnerj"	,"wardner.java"	,rom_wardnerj,driver_wardner	,machine_driver_wardner	,input_ports_wardnerj	,init_wardner	,ROT0	,	[Toaplan] Taito Corporation", "Wardna no Mori (Japan)" )
 	
 }

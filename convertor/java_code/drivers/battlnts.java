@@ -512,10 +512,10 @@ public class battlnts
 	
 	
 	
-	GAME( 1987, battlnts, 0,		battlnts, battlnts, 0,		  ROT90, "Konami", "Battlantis" )
-	GAME( 1987, battlntj, battlnts, battlnts, battlnts, 0,		  ROT90, "Konami", "Battlantis (Japan)" )
-	GAME( 1987, thehustl, 0,		battlnts, thehustj, 0,		  ROT90, "Konami", "The Hustler (Japan version M)" )
-	GAME( 1987, thehustj, thehustl, battlnts, thehustj, 0,		  ROT90, "Konami", "The Hustler (Japan version J)" )
-	GAME( 1987, rackemup, thehustl, battlnts, thehustj, rackemup, ROT90, "Konami", "Rack 'em Up" )
+	public static GameDriver driver_battlnts	   = new GameDriver("1987"	,"battlnts"	,"battlnts.java"	,rom_battlnts,null	,machine_driver_battlnts	,input_ports_battlnts	,null	,ROT90	,	Konami", "Battlantis" )
+	public static GameDriver driver_battlntj	   = new GameDriver("1987"	,"battlntj"	,"battlnts.java"	,rom_battlntj,driver_battlnts	,machine_driver_battlnts	,input_ports_battlnts	,null	,ROT90	,	Konami", "Battlantis (Japan)" )
+	public static GameDriver driver_thehustl	   = new GameDriver("1987"	,"thehustl"	,"battlnts.java"	,rom_thehustl,null	,machine_driver_battlnts	,input_ports_thehustj	,null	,ROT90	,	Konami", "The Hustler (Japan version M)" )
+	public static GameDriver driver_thehustj	   = new GameDriver("1987"	,"thehustj"	,"battlnts.java"	,rom_thehustj,driver_thehustl	,machine_driver_battlnts	,input_ports_thehustj	,null	,ROT90	,	Konami", "The Hustler (Japan version J)" )
+	public static GameDriver driver_rackemup	   = new GameDriver("1987"	,"rackemup"	,"battlnts.java"	,rom_rackemup,driver_thehustl	,machine_driver_battlnts	,input_ports_thehustj	,init_rackemup	,ROT90	,	Konami", "Rack 'em Up" )
 	
 }

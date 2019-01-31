@@ -411,6 +411,6 @@ public class dynduke
 	}
 	
 	
-	GAME( 1989, dynduke, 0,       dynduke, dynduke, dynduke, ROT0, "Seibu Kaihatsu (Fabtek license)", "Dynamite Duke" )
-	GAME( 1989, dbldyn,  dynduke, dynduke, dynduke, dynduke, ROT0, "Seibu Kaihatsu (Fabtek license)", "The Double Dynamites" )
+	public static GameDriver driver_dynduke	   = new GameDriver("1989"	,"dynduke"	,"dynduke.java"	,rom_dynduke,null	,machine_driver_dynduke	,input_ports_dynduke	,init_dynduke	,ROT0	,	Seibu Kaihatsu (Fabtek license)", "Dynamite Duke" )
+	public static GameDriver driver_dbldyn	   = new GameDriver("1989"	,"dbldyn"	,"dynduke.java"	,rom_dbldyn,driver_dynduke	,machine_driver_dynduke	,input_ports_dynduke	,init_dynduke	,ROT0	,	Seibu Kaihatsu (Fabtek license)", "The Double Dynamites" )
 }

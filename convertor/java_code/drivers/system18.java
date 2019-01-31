@@ -1316,19 +1316,19 @@ public class system18
 	
 	/*****************************************************************************/
 	
-	GAMEX(1990, astorm,   0,        astorm,   astorm,   astorm,   ROT0, "Sega",    "Alien Storm", GAME_NOT_WORKING )
-	GAMEX(1990, astorm2p, astorm,   astorm,   astorm,   astorm,   ROT0, "Sega",    "Alien Storm (2 Player)", GAME_NOT_WORKING )
-	GAME( 1990, astormbl, astorm,   astorm,   astorm,   astorm,   ROT0, "bootleg", "Alien Storm (bootleg)" )
-	GAMEX(1990, moonwalk, 0,        moonwalk, moonwalk, moonwalk, ROT0, "Sega",    "Moon Walker (Set 1)", GAME_NOT_WORKING )
-	GAMEX(1990, moonwlka, moonwalk, moonwalk, moonwalk, moonwalk, ROT0, "Sega",    "Moon Walker (Set 2)", GAME_NOT_WORKING )
-	GAME( 1990, moonwlkb, moonwalk, moonwalk, moonwalk, moonwalk, ROT0, "bootleg", "Moon Walker (bootleg)" )
-	GAME( 1989, shdancer, 0,        shdancer, shdancer, shdancer, ROT0, "Sega",    "Shadow Dancer (US)" )
-	GAMEX(1989, shdancbl, shdancer, shdancbl, shdancer, shdancbl, ROT0, "bootleg", "Shadow Dancer (bootleg)", GAME_NOT_WORKING )
-	GAME( 1989, shdancrj, shdancer, shdancrj, shdancer, shdancrj, ROT0, "Sega",    "Shadow Dancer (Japan)" )
+	public static GameDriver driver_astorm	   = new GameDriver("1990"	,"astorm"	,"system18.java"	,rom_astorm,null	,machine_driver_astorm	,input_ports_astorm	,init_astorm	,ROT0	,	Sega",    "Alien Storm", GAME_NOT_WORKING )
+	public static GameDriver driver_astorm2p	   = new GameDriver("1990"	,"astorm2p"	,"system18.java"	,rom_astorm2p,driver_astorm	,machine_driver_astorm	,input_ports_astorm	,init_astorm	,ROT0	,	Sega",    "Alien Storm (2 Player)", GAME_NOT_WORKING )
+	public static GameDriver driver_astormbl	   = new GameDriver("1990"	,"astormbl"	,"system18.java"	,rom_astormbl,driver_astorm	,machine_driver_astorm	,input_ports_astorm	,init_astorm	,ROT0	,	bootleg", "Alien Storm (bootleg)" )
+	public static GameDriver driver_moonwalk	   = new GameDriver("1990"	,"moonwalk"	,"system18.java"	,rom_moonwalk,null	,machine_driver_moonwalk	,input_ports_moonwalk	,init_moonwalk	,ROT0	,	Sega",    "Moon Walker (Set 1)", GAME_NOT_WORKING )
+	public static GameDriver driver_moonwlka	   = new GameDriver("1990"	,"moonwlka"	,"system18.java"	,rom_moonwlka,driver_moonwalk	,machine_driver_moonwalk	,input_ports_moonwalk	,init_moonwalk	,ROT0	,	Sega",    "Moon Walker (Set 2)", GAME_NOT_WORKING )
+	public static GameDriver driver_moonwlkb	   = new GameDriver("1990"	,"moonwlkb"	,"system18.java"	,rom_moonwlkb,driver_moonwalk	,machine_driver_moonwalk	,input_ports_moonwalk	,init_moonwalk	,ROT0	,	bootleg", "Moon Walker (bootleg)" )
+	public static GameDriver driver_shdancer	   = new GameDriver("1989"	,"shdancer"	,"system18.java"	,rom_shdancer,null	,machine_driver_shdancer	,input_ports_shdancer	,init_shdancer	,ROT0	,	Sega",    "Shadow Dancer (US)" )
+	public static GameDriver driver_shdancbl	   = new GameDriver("1989"	,"shdancbl"	,"system18.java"	,rom_shdancbl,driver_shdancer	,machine_driver_shdancbl	,input_ports_shdancer	,init_shdancbl	,ROT0	,	bootleg", "Shadow Dancer (bootleg)", GAME_NOT_WORKING )
+	public static GameDriver driver_shdancrj	   = new GameDriver("1989"	,"shdancrj"	,"system18.java"	,rom_shdancrj,driver_shdancer	,machine_driver_shdancrj	,input_ports_shdancer	,init_shdancrj	,ROT0	,	Sega",    "Shadow Dancer (Japan)" )
 	
-	GAMEX(????, aceattac, 0,        shdancer, shdancer, shdancer, ROT0, "Sega", "Ace Attacker", GAME_NOT_WORKING )
-	GAMEX(????, bloxeed,  0,        shdancer, shdancer, shdancer, ROT0, "Sega", "Bloxeed", GAME_NOT_WORKING )
-	GAMEX(????, cltchitr, 0,        shdancer, shdancer, shdancer, ROT0, "Sega", "Clutch Hitter", GAME_NOT_WORKING )
-	GAMEX(????, ddcrew,   0,        shdancer, shdancer, shdancer, ROT0, "Sega", "DD Crew", GAME_NOT_WORKING )
-	GAMEX(????, lghost,   0,        shdancer, shdancer, shdancer, ROT0, "Sega", "Laser Ghost", GAME_NOT_WORKING )
+	public static GameDriver driver_aceattac	   = new GameDriver("????"	,"aceattac"	,"system18.java"	,rom_aceattac,null	,machine_driver_shdancer	,input_ports_shdancer	,init_shdancer	,ROT0	,	Sega", "Ace Attacker", GAME_NOT_WORKING )
+	public static GameDriver driver_bloxeed	   = new GameDriver("????"	,"bloxeed"	,"system18.java"	,rom_bloxeed,null	,machine_driver_shdancer	,input_ports_shdancer	,init_shdancer	,ROT0	,	Sega", "Bloxeed", GAME_NOT_WORKING )
+	public static GameDriver driver_cltchitr	   = new GameDriver("????"	,"cltchitr"	,"system18.java"	,rom_cltchitr,null	,machine_driver_shdancer	,input_ports_shdancer	,init_shdancer	,ROT0	,	Sega", "Clutch Hitter", GAME_NOT_WORKING )
+	public static GameDriver driver_ddcrew	   = new GameDriver("????"	,"ddcrew"	,"system18.java"	,rom_ddcrew,null	,machine_driver_shdancer	,input_ports_shdancer	,init_shdancer	,ROT0	,	Sega", "DD Crew", GAME_NOT_WORKING )
+	public static GameDriver driver_lghost	   = new GameDriver("????"	,"lghost"	,"system18.java"	,rom_lghost,null	,machine_driver_shdancer	,input_ports_shdancer	,init_shdancer	,ROT0	,	Sega", "Laser Ghost", GAME_NOT_WORKING )
 }

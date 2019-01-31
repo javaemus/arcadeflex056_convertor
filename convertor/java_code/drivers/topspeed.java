@@ -986,8 +986,8 @@ public class topspeed
 	}
 	
 	
-	GAME( 1987, topspeed, 0,        topspeed, topspeed, topspeed, ROT0, "Taito Corporation Japan", "Top Speed (World)" )
-	GAME( 1987, topspedu, topspeed, topspeed, topspedu, topspeed, ROT0, "Taito America Corporation (Romstar license)", "Top Speed (US)" )
-	GAME( 1987, fullthrl, topspeed, topspeed, fullthrl, topspeed, ROT0, "Taito Corporation", "Full Throttle (Japan)" )
+	public static GameDriver driver_topspeed	   = new GameDriver("1987"	,"topspeed"	,"topspeed.java"	,rom_topspeed,null	,machine_driver_topspeed	,input_ports_topspeed	,init_topspeed	,ROT0	,	Taito Corporation Japan", "Top Speed (World)" )
+	public static GameDriver driver_topspedu	   = new GameDriver("1987"	,"topspedu"	,"topspeed.java"	,rom_topspedu,driver_topspeed	,machine_driver_topspeed	,input_ports_topspedu	,init_topspeed	,ROT0	,	Taito America Corporation (Romstar license)", "Top Speed (US)" )
+	public static GameDriver driver_fullthrl	   = new GameDriver("1987"	,"fullthrl"	,"topspeed.java"	,rom_fullthrl,driver_topspeed	,machine_driver_topspeed	,input_ports_fullthrl	,init_topspeed	,ROT0	,	Taito Corporation", "Full Throttle (Japan)" )
 	
 }

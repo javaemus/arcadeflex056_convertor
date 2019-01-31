@@ -605,8 +605,8 @@ public class exprraid
 	}
 	
 	
-	GAMEX( 1986, exprraid, 0,        exprraid, exprraid, exprraid, ROT0, "Data East USA", "Express Raider (US)", GAME_NO_COCKTAIL )
-	GAMEX( 1986, wexpress, exprraid, exprraid, exprraid, wexpress, ROT0, "Data East Corporation", "Western Express (World?)", GAME_NO_COCKTAIL )
-	GAMEX( 1986, wexpresb, exprraid, exprraid, exprraid, wexpresb, ROT0, "bootleg", "Western Express (bootleg set 1)", GAME_NO_COCKTAIL )
-	GAMEX( 1986, wexpresc, exprraid, exprraid, exprraid, wexpresc, ROT0, "bootleg", "Western Express (bootleg set 2)", GAME_NO_COCKTAIL )
+	public static GameDriver driver_exprraid	   = new GameDriver("1986"	,"exprraid"	,"exprraid.java"	,rom_exprraid,null	,machine_driver_exprraid	,input_ports_exprraid	,init_exprraid	,ROT0	,	Data East USA", "Express Raider (US)", GAME_NO_COCKTAIL )
+	public static GameDriver driver_wexpress	   = new GameDriver("1986"	,"wexpress"	,"exprraid.java"	,rom_wexpress,driver_exprraid	,machine_driver_exprraid	,input_ports_exprraid	,init_wexpress	,ROT0	,	Data East Corporation", "Western Express (World?)", GAME_NO_COCKTAIL )
+	public static GameDriver driver_wexpresb	   = new GameDriver("1986"	,"wexpresb"	,"exprraid.java"	,rom_wexpresb,driver_exprraid	,machine_driver_exprraid	,input_ports_exprraid	,init_wexpresb	,ROT0	,	bootleg", "Western Express (bootleg set 1)", GAME_NO_COCKTAIL )
+	public static GameDriver driver_wexpresc	   = new GameDriver("1986"	,"wexpresc"	,"exprraid.java"	,rom_wexpresc,driver_exprraid	,machine_driver_exprraid	,input_ports_exprraid	,init_wexpresc	,ROT0	,	bootleg", "Western Express (bootleg set 2)", GAME_NO_COCKTAIL )
 }

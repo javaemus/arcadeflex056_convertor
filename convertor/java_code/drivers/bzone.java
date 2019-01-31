@@ -689,8 +689,8 @@ public class bzone
 	
 	
 	
-	GAME( 1980, bzone,    0,     bzone,    bzone,    0, ROT0, "Atari", "Battle Zone (set 1)" )
-	GAME( 1980, bzone2,   bzone, bzone,    bzone,    0, ROT0, "Atari", "Battle Zone (set 2)" )
-	GAMEX(1980, bzonec,   bzone, bzone,    bzone,    0, ROT0, "Atari", "Battle Zone (cocktail)", GAME_NO_COCKTAIL )
-	GAME( 1980, redbaron, 0,     redbaron, redbaron, 0, ROT0, "Atari", "Red Baron" )
+	public static GameDriver driver_bzone	   = new GameDriver("1980"	,"bzone"	,"bzone.java"	,rom_bzone,null	,machine_driver_bzone	,input_ports_bzone	,null	,ROT0	,	Atari", "Battle Zone (set 1)" )
+	public static GameDriver driver_bzone2	   = new GameDriver("1980"	,"bzone2"	,"bzone.java"	,rom_bzone2,driver_bzone	,machine_driver_bzone	,input_ports_bzone	,null	,ROT0	,	Atari", "Battle Zone (set 2)" )
+	public static GameDriver driver_bzonec	   = new GameDriver("1980"	,"bzonec"	,"bzone.java"	,rom_bzonec,driver_bzone	,machine_driver_bzone	,input_ports_bzone	,null	,ROT0	,	Atari", "Battle Zone (cocktail)", GAME_NO_COCKTAIL )
+	public static GameDriver driver_redbaron	   = new GameDriver("1980"	,"redbaron"	,"bzone.java"	,rom_redbaron,null	,machine_driver_redbaron	,input_ports_redbaron	,null	,ROT0	,	Atari", "Red Baron" )
 }

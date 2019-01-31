@@ -589,14 +589,14 @@ public class arkanoid
 	
 	
 	
-	GAME( 1986, arkanoid, 0,        arkanoid, arkanoid, 0, ROT90, "Taito Corporation Japan", "Arkanoid (World)" )
-	GAME( 1986, arknoidu, arkanoid, arkanoid, arkanoid, 0, ROT90, "Taito America Corporation (Romstar license)", "Arkanoid (US)" )
-	GAME( 1986, arknoidj, arkanoid, arkanoid, arknoidj, 0, ROT90, "Taito Corporation", "Arkanoid (Japan)" )
-	GAMEX(1986, arkbl2,   arkanoid, arkanoid, arknoidj, 0, ROT90, "bootleg", "Arkanoid (Japanese bootleg Set 2)", GAME_NOT_WORKING )
-	GAMEX(1986, arkbl3,   arkanoid, bootleg,  arknoidj, 0, ROT90, "bootleg", "Arkanoid (Japanese bootleg Set 3)", GAME_NOT_WORKING )
-	GAME( 1986, arkatayt, arkanoid, bootleg,  arkatayt, 0, ROT90, "bootleg", "Arkanoid (Tayto bootleg, Japanese)" )
-	GAMEX(1986, arkblock, arkanoid, bootleg,  arknoidj, 0, ROT90, "bootleg", "Block (bootleg, Japanese)", GAME_NOT_WORKING )
-	GAME( 1986, arkbloc2, arkanoid, bootleg,  arknoidj, 0, ROT90, "bootleg", "Block (Game Corporation bootleg)" )
-	GAME( 1986, arkangc,  arkanoid, bootleg,  arknoidj, 0, ROT90, "bootleg", "Arkanoid (Game Corporation bootleg)" )
-	GAME( 1987, arkatour, arkanoid, arkanoid, arkanoid, 0, ROT90, "Taito America Corporation (Romstar license)", "Tournament Arkanoid (US)" )
+	public static GameDriver driver_arkanoid	   = new GameDriver("1986"	,"arkanoid"	,"arkanoid.java"	,rom_arkanoid,null	,machine_driver_arkanoid	,input_ports_arkanoid	,null	,ROT90	,	Taito Corporation Japan", "Arkanoid (World)" )
+	public static GameDriver driver_arknoidu	   = new GameDriver("1986"	,"arknoidu"	,"arkanoid.java"	,rom_arknoidu,driver_arkanoid	,machine_driver_arkanoid	,input_ports_arkanoid	,null	,ROT90	,	Taito America Corporation (Romstar license)", "Arkanoid (US)" )
+	public static GameDriver driver_arknoidj	   = new GameDriver("1986"	,"arknoidj"	,"arkanoid.java"	,rom_arknoidj,driver_arkanoid	,machine_driver_arkanoid	,input_ports_arknoidj	,null	,ROT90	,	Taito Corporation", "Arkanoid (Japan)" )
+	public static GameDriver driver_arkbl2	   = new GameDriver("1986"	,"arkbl2"	,"arkanoid.java"	,rom_arkbl2,driver_arkanoid	,machine_driver_arkanoid	,input_ports_arknoidj	,null	,ROT90	,	bootleg", "Arkanoid (Japanese bootleg Set 2)", GAME_NOT_WORKING )
+	public static GameDriver driver_arkbl3	   = new GameDriver("1986"	,"arkbl3"	,"arkanoid.java"	,rom_arkbl3,driver_arkanoid	,machine_driver_bootleg	,input_ports_arknoidj	,null	,ROT90	,	bootleg", "Arkanoid (Japanese bootleg Set 3)", GAME_NOT_WORKING )
+	public static GameDriver driver_arkatayt	   = new GameDriver("1986"	,"arkatayt"	,"arkanoid.java"	,rom_arkatayt,driver_arkanoid	,machine_driver_bootleg	,input_ports_arkatayt	,null	,ROT90	,	bootleg", "Arkanoid (Tayto bootleg, Japanese)" )
+	public static GameDriver driver_arkblock	   = new GameDriver("1986"	,"arkblock"	,"arkanoid.java"	,rom_arkblock,driver_arkanoid	,machine_driver_bootleg	,input_ports_arknoidj	,null	,ROT90	,	bootleg", "Block (bootleg, Japanese)", GAME_NOT_WORKING )
+	public static GameDriver driver_arkbloc2	   = new GameDriver("1986"	,"arkbloc2"	,"arkanoid.java"	,rom_arkbloc2,driver_arkanoid	,machine_driver_bootleg	,input_ports_arknoidj	,null	,ROT90	,	bootleg", "Block (Game Corporation bootleg)" )
+	public static GameDriver driver_arkangc	   = new GameDriver("1986"	,"arkangc"	,"arkanoid.java"	,rom_arkangc,driver_arkanoid	,machine_driver_bootleg	,input_ports_arknoidj	,null	,ROT90	,	bootleg", "Arkanoid (Game Corporation bootleg)" )
+	public static GameDriver driver_arkatour	   = new GameDriver("1987"	,"arkatour"	,"arkanoid.java"	,rom_arkatour,driver_arkanoid	,machine_driver_arkanoid	,input_ports_arkanoid	,null	,ROT90	,	Taito America Corporation (Romstar license)", "Tournament Arkanoid (US)" )
 }

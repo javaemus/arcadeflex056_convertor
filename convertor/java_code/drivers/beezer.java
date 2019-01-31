@@ -198,6 +198,6 @@ public class beezer
 		ROM_LOAD( "e1.cpu", 0x100, 0x0100, 0x3c775c5e );
 	ROM_END(); }}; 
 	
-	GAMEX( 1982, beezer,  0,       beezer, beezer, beezer, ORIENTATION_FLIP_X, "Tong Electronic", "Beezer (set 1)", GAME_IMPERFECT_SOUND )
-	GAMEX( 1982, beezer1,  beezer, beezer, beezer, beezer, ORIENTATION_FLIP_X, "Tong Electronic", "Beezer (set 2)", GAME_IMPERFECT_SOUND )
+	public static GameDriver driver_beezer	   = new GameDriver("1982"	,"beezer"	,"beezer.java"	,rom_beezer,null	,machine_driver_beezer	,input_ports_beezer	,init_beezer	,ORIENTATION_FLIP_X	,	Tong Electronic", "Beezer (set 1)", GAME_IMPERFECT_SOUND )
+	public static GameDriver driver_beezer1	   = new GameDriver("1982"	,"beezer1"	,"beezer.java"	,rom_beezer1,driver_beezer	,machine_driver_beezer	,input_ports_beezer	,init_beezer	,ORIENTATION_FLIP_X	,	Tong Electronic", "Beezer (set 2)", GAME_IMPERFECT_SOUND )
 }

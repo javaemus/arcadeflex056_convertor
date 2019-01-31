@@ -448,7 +448,7 @@ public class yard
 	
 	
 	
-	GAME( 1983, yard,    0,    yard, yard,   0, ROT0, "Irem", "10 Yard Fight" )
-	GAME( 1984, vsyard,  yard, yard, vsyard, 0, ROT0, "Irem", "10 Yard Fight (Vs. version 11/05/84)" )
-	GAME( 1984, vsyard2, yard, yard, vsyard, 0, ROT0, "Irem", "10 Yard Fight (Vs. version, set 2)" )
+	public static GameDriver driver_yard	   = new GameDriver("1983"	,"yard"	,"yard.java"	,rom_yard,null	,machine_driver_yard	,input_ports_yard	,null	,ROT0	,	Irem", "10 Yard Fight" )
+	public static GameDriver driver_vsyard	   = new GameDriver("1984"	,"vsyard"	,"yard.java"	,rom_vsyard,driver_yard	,machine_driver_yard	,input_ports_vsyard	,null	,ROT0	,	Irem", "10 Yard Fight (Vs. version 11/05/84)" )
+	public static GameDriver driver_vsyard2	   = new GameDriver("1984"	,"vsyard2"	,"yard.java"	,rom_vsyard2,driver_yard	,machine_driver_yard	,input_ports_vsyard	,null	,ROT0	,	Irem", "10 Yard Fight (Vs. version, set 2)" )
 }

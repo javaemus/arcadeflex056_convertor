@@ -2796,14 +2796,14 @@ public class cave
 	
 	***************************************************************************/
 	
-	GAME( 1994, mazinger, 0, mazinger, cave,     mazinger, ROT90,  "Banpresto",                   "Mazinger Z"                 )
-	GAME( 1995, donpachi, 0, donpachi, cave,     ddonpach, ROT270, "Atlus/Cave",                  "DonPachi (Japan)"           )
-	GAME( 1995, metmqstr, 0, metmqstr, metmqstr, metmqstr, ROT0,   "Banpresto / Pandorabox",      "Metamoqester"               )
-	GAME( 1995, sailormn, 0, sailormn, cave,     sailormn, ROT0,   "Banpresto",                   "Pretty Soldier Sailor Moon" )
-	GAME( 1996, hotdogst, 0, hotdogst, cave,     hotdogst, ROT90,  "Marble",                      "Hotdog Storm"               )
-	GAME( 1997, ddonpach, 0, ddonpach, cave,     ddonpach, ROT270, "Atlus/Cave",                  "DoDonPachi (Japan)"         )
-	GAME( 1998, dfeveron, 0, dfeveron, cave,     dfeveron, ROT270, "Cave (Nihon System license)", "Dangun Feveron (Japan)"     )
-	GAME( 1998, esprade,  0, esprade,  cave,     esprade,  ROT270, "Atlus/Cave",                  "ESP Ra.De. (Japan)"         )
-	GAME( 1998, uopoko,   0, uopoko,   cave,     uopoko,   ROT0,   "Cave (Jaleco license)",       "Uo Poko (Japan)"            )
-	GAME( 1999, guwange,  0, guwange,  guwange,  guwange,  ROT270, "Atlus/Cave",                  "Guwange (Japan)"            )
+	public static GameDriver driver_mazinger	   = new GameDriver("1994"	,"mazinger"	,"cave.java"	,rom_mazinger,null	,machine_driver_mazinger	,input_ports_cave	,init_mazinger	,ROT90	,	Banpresto",                   "Mazinger Z"                 )
+	public static GameDriver driver_donpachi	   = new GameDriver("1995"	,"donpachi"	,"cave.java"	,rom_donpachi,null	,machine_driver_donpachi	,input_ports_cave	,init_ddonpach	,ROT270	,	Atlus/Cave",                  "DonPachi (Japan)"           )
+	public static GameDriver driver_metmqstr	   = new GameDriver("1995"	,"metmqstr"	,"cave.java"	,rom_metmqstr,null	,machine_driver_metmqstr	,input_ports_metmqstr	,init_metmqstr	,ROT0	,	Banpresto / Pandorabox",      "Metamoqester"               )
+	public static GameDriver driver_sailormn	   = new GameDriver("1995"	,"sailormn"	,"cave.java"	,rom_sailormn,null	,machine_driver_sailormn	,input_ports_cave	,init_sailormn	,ROT0	,	Banpresto",                   "Pretty Soldier Sailor Moon" )
+	public static GameDriver driver_hotdogst	   = new GameDriver("1996"	,"hotdogst"	,"cave.java"	,rom_hotdogst,null	,machine_driver_hotdogst	,input_ports_cave	,init_hotdogst	,ROT90	,	Marble",                      "Hotdog Storm"               )
+	public static GameDriver driver_ddonpach	   = new GameDriver("1997"	,"ddonpach"	,"cave.java"	,rom_ddonpach,null	,machine_driver_ddonpach	,input_ports_cave	,init_ddonpach	,ROT270	,	Atlus/Cave",                  "DoDonPachi (Japan)"         )
+	public static GameDriver driver_dfeveron	   = new GameDriver("1998"	,"dfeveron"	,"cave.java"	,rom_dfeveron,null	,machine_driver_dfeveron	,input_ports_cave	,init_dfeveron	,ROT270	,	Cave (Nihon System license)", "Dangun Feveron (Japan)"     )
+	public static GameDriver driver_esprade	   = new GameDriver("1998"	,"esprade"	,"cave.java"	,rom_esprade,null	,machine_driver_esprade	,input_ports_cave	,init_esprade	,ROT270	,	Atlus/Cave",                  "ESP Ra.De. (Japan)"         )
+	public static GameDriver driver_uopoko	   = new GameDriver("1998"	,"uopoko"	,"cave.java"	,rom_uopoko,null	,machine_driver_uopoko	,input_ports_cave	,init_uopoko	,ROT0	,	Cave (Jaleco license)",       "Uo Poko (Japan)"            )
+	public static GameDriver driver_guwange	   = new GameDriver("1999"	,"guwange"	,"cave.java"	,rom_guwange,null	,machine_driver_guwange	,input_ports_guwange	,init_guwange	,ROT270	,	Atlus/Cave",                  "Guwange (Japan)"            )
 }

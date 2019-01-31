@@ -1686,16 +1686,16 @@ public class twin16
 	}
 	
 	
-	GAME( 1987, devilw,   0,      heavysync, devilw,   twin16, ROT0, "Konami", "Devil World" )
-	GAME( 1987, majuu,    devilw, heavysync, devilw,   twin16, ROT0, "Konami", "Majuu no Ohkoku" )
-	GAME( 1987, darkadv,  devilw, heavysync, darkadv,  twin16, ROT0, "Konami", "Dark Adventure" )
-	GAME( 1988, vulcan,   0,      twin16,    vulcan,   twin16, ROT0, "Konami", "Vulcan Venture" )
-	GAME( 1988, gradius2, vulcan, twin16,    gradius2, twin16, ROT0, "Konami", "Gradius II - Gofer no Yabou (Japan New Ver.)" )
-	GAME( 1988, grdius2a, vulcan, twin16,    vulcan,   twin16, ROT0, "Konami", "Gradius II - Gofer no Yabou (Japan Old Ver.)" )
-	GAME( 1988, grdius2b, vulcan, twin16,    vulcan,   twin16, ROT0, "Konami", "Gradius II - Gofer no Yabou (Japan Older Ver.)" )
-	GAME( 1989, cuebrick, 0,      cuebrick,  twin16,   twin16, ROT0, "Konami", "Cuebrick" )
-	GAME( 1988, fround,   0,      fround,    fround,   fround, ROT0, "Konami", "Final Round (version M)" )
-	GAME( 1988, froundl,  fround, fround,    fround,   fround, ROT0, "Konami", "Final Round (version L)" )
-	GAME( 1988, hpuncher, fround, twin16,    fround,   twin16, ROT0, "Konami", "Hard Puncher (Japan)" )
-	GAME( 1989, miaj,     mia,    twin16,    miaj,     twin16, ROT0, "Konami", "Missing in Action (Japan)" )
+	public static GameDriver driver_devilw	   = new GameDriver("1987"	,"devilw"	,"twin16.java"	,rom_devilw,null	,machine_driver_heavysync	,input_ports_devilw	,init_twin16	,ROT0	,	Konami", "Devil World" )
+	public static GameDriver driver_majuu	   = new GameDriver("1987"	,"majuu"	,"twin16.java"	,rom_majuu,driver_devilw	,machine_driver_heavysync	,input_ports_devilw	,init_twin16	,ROT0	,	Konami", "Majuu no Ohkoku" )
+	public static GameDriver driver_darkadv	   = new GameDriver("1987"	,"darkadv"	,"twin16.java"	,rom_darkadv,driver_devilw	,machine_driver_heavysync	,input_ports_darkadv	,init_twin16	,ROT0	,	Konami", "Dark Adventure" )
+	public static GameDriver driver_vulcan	   = new GameDriver("1988"	,"vulcan"	,"twin16.java"	,rom_vulcan,null	,machine_driver_twin16	,input_ports_vulcan	,init_twin16	,ROT0	,	Konami", "Vulcan Venture" )
+	public static GameDriver driver_gradius2	   = new GameDriver("1988"	,"gradius2"	,"twin16.java"	,rom_gradius2,driver_vulcan	,machine_driver_twin16	,input_ports_gradius2	,init_twin16	,ROT0	,	Konami", "Gradius II - Gofer no Yabou (Japan New Ver.)" )
+	public static GameDriver driver_grdius2a	   = new GameDriver("1988"	,"grdius2a"	,"twin16.java"	,rom_grdius2a,driver_vulcan	,machine_driver_twin16	,input_ports_vulcan	,init_twin16	,ROT0	,	Konami", "Gradius II - Gofer no Yabou (Japan Old Ver.)" )
+	public static GameDriver driver_grdius2b	   = new GameDriver("1988"	,"grdius2b"	,"twin16.java"	,rom_grdius2b,driver_vulcan	,machine_driver_twin16	,input_ports_vulcan	,init_twin16	,ROT0	,	Konami", "Gradius II - Gofer no Yabou (Japan Older Ver.)" )
+	public static GameDriver driver_cuebrick	   = new GameDriver("1989"	,"cuebrick"	,"twin16.java"	,rom_cuebrick,null	,machine_driver_cuebrick	,input_ports_twin16	,init_twin16	,ROT0	,	Konami", "Cuebrick" )
+	public static GameDriver driver_fround	   = new GameDriver("1988"	,"fround"	,"twin16.java"	,rom_fround,null	,machine_driver_fround	,input_ports_fround	,init_fround	,ROT0	,	Konami", "Final Round (version M)" )
+	public static GameDriver driver_froundl	   = new GameDriver("1988"	,"froundl"	,"twin16.java"	,rom_froundl,driver_fround	,machine_driver_fround	,input_ports_fround	,init_fround	,ROT0	,	Konami", "Final Round (version L)" )
+	public static GameDriver driver_hpuncher	   = new GameDriver("1988"	,"hpuncher"	,"twin16.java"	,rom_hpuncher,driver_fround	,machine_driver_twin16	,input_ports_fround	,init_twin16	,ROT0	,	Konami", "Hard Puncher (Japan)" )
+	public static GameDriver driver_miaj	   = new GameDriver("1989"	,"miaj"	,"twin16.java"	,rom_miaj,driver_mia	,machine_driver_twin16	,input_ports_miaj	,init_twin16	,ROT0	,	Konami", "Missing in Action (Japan)" )
 }

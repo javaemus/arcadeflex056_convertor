@@ -429,6 +429,6 @@ public class shuuz
 	 *
 	 *************************************/
 	
-	GAME( 1990, shuuz,  0,     shuuz, shuuz,  shuuz, ROT0, "Atari Games", "Shuuz (version 8.0)" )
-	GAME( 1990, shuuz2, shuuz, shuuz, shuuz2, shuuz, ROT0, "Atari Games", "Shuuz (version 7.1)" )
+	public static GameDriver driver_shuuz	   = new GameDriver("1990"	,"shuuz"	,"shuuz.java"	,rom_shuuz,null	,machine_driver_shuuz	,input_ports_shuuz	,init_shuuz	,ROT0	,	Atari Games", "Shuuz (version 8.0)" )
+	public static GameDriver driver_shuuz2	   = new GameDriver("1990"	,"shuuz2"	,"shuuz.java"	,rom_shuuz2,driver_shuuz	,machine_driver_shuuz	,input_ports_shuuz2	,init_shuuz	,ROT0	,	Atari Games", "Shuuz (version 7.1)" )
 }

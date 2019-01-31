@@ -394,5 +394,5 @@ public class stadhero
 	
 	/******************************************************************************/
 	
-	GAME( 1988, stadhero, 0, stadhero, stadhero, 0, ROT0, "Data East Corporation", "Stadium Hero (Japan)" )
+	public static GameDriver driver_stadhero	   = new GameDriver("1988"	,"stadhero"	,"stadhero.java"	,rom_stadhero,null	,machine_driver_stadhero	,input_ports_stadhero	,null	,ROT0	,	Data East Corporation", "Stadium Hero (Japan)" )
 }

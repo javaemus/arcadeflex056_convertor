@@ -457,7 +457,7 @@ public class blueprnt
 	
 	
 	
-	GAME( 1982, blueprnt, 0,        blueprnt, blueprnt, 0, ROT270, "[Zilec] Bally Midway", "Blue Print (Midway)" )
-	GAME( 1982, blueprnj, blueprnt, blueprnt, blueprnt, 0, ROT270, "[Zilec] Jaleco", "Blue Print (Jaleco)" )
-	GAME( 1983, saturn,   0,        blueprnt, saturn,   0, ROT270, "[Zilec] Jaleco", "Saturn" )
+	public static GameDriver driver_blueprnt	   = new GameDriver("1982"	,"blueprnt"	,"blueprnt.java"	,rom_blueprnt,null	,machine_driver_blueprnt	,input_ports_blueprnt	,null	,ROT270	,	[Zilec] Bally Midway", "Blue Print (Midway)" )
+	public static GameDriver driver_blueprnj	   = new GameDriver("1982"	,"blueprnj"	,"blueprnt.java"	,rom_blueprnj,driver_blueprnt	,machine_driver_blueprnt	,input_ports_blueprnt	,null	,ROT270	,	[Zilec] Jaleco", "Blue Print (Jaleco)" )
+	public static GameDriver driver_saturn	   = new GameDriver("1983"	,"saturn"	,"blueprnt.java"	,rom_saturn,null	,machine_driver_blueprnt	,input_ports_saturn	,null	,ROT270	,	[Zilec] Jaleco", "Saturn" )
 }

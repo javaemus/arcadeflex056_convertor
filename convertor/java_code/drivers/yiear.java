@@ -364,6 +364,6 @@ public class yiear
 	
 	
 	
-	GAME( 1985, yiear,  0,     yiear, yiear, 0, ROT0, "Konami", "Yie Ar Kung-Fu (set 1)" )
-	GAME( 1985, yiear2, yiear, yiear, yiear, 0, ROT0, "Konami", "Yie Ar Kung-Fu (set 2)" )
+	public static GameDriver driver_yiear	   = new GameDriver("1985"	,"yiear"	,"yiear.java"	,rom_yiear,null	,machine_driver_yiear	,input_ports_yiear	,null	,ROT0	,	Konami", "Yie Ar Kung-Fu (set 1)" )
+	public static GameDriver driver_yiear2	   = new GameDriver("1985"	,"yiear2"	,"yiear.java"	,rom_yiear2,driver_yiear	,machine_driver_yiear	,input_ports_yiear	,null	,ROT0	,	Konami", "Yie Ar Kung-Fu (set 2)" )
 }

@@ -817,9 +817,9 @@ public class senjyo
 	
 	
 	
-	GAME( 1983, senjyo,   0,        senjyo, senjyo,   senjyo,   ROT90, "Tehkan", "Senjyo" )
-	GAME( 1984, starforc, 0,        senjyo, starforc, starforc, ROT90, "Tehkan", "Star Force" )
-	GAME( 1984, starfore, starforc, senjyo, starforc, starfore, ROT90, "Tehkan", "Star Force (encrypted)" )
-	GAME( 1985, megaforc, starforc, senjyo, starforc, starforc, ROT90, "Tehkan (Video Ware license)", "Mega Force" )
-	GAMEX(1986, baluba,   0,        senjyo, baluba,   starforc, ROT90, "Able Corp, Ltd.", "Baluba-louk no Densetsu", GAME_IMPERFECT_COLORS )
+	public static GameDriver driver_senjyo	   = new GameDriver("1983"	,"senjyo"	,"senjyo.java"	,rom_senjyo,null	,machine_driver_senjyo	,input_ports_senjyo	,init_senjyo	,ROT90	,	Tehkan", "Senjyo" )
+	public static GameDriver driver_starforc	   = new GameDriver("1984"	,"starforc"	,"senjyo.java"	,rom_starforc,null	,machine_driver_senjyo	,input_ports_starforc	,init_starforc	,ROT90	,	Tehkan", "Star Force" )
+	public static GameDriver driver_starfore	   = new GameDriver("1984"	,"starfore"	,"senjyo.java"	,rom_starfore,driver_starforc	,machine_driver_senjyo	,input_ports_starforc	,init_starfore	,ROT90	,	Tehkan", "Star Force (encrypted)" )
+	public static GameDriver driver_megaforc	   = new GameDriver("1985"	,"megaforc"	,"senjyo.java"	,rom_megaforc,driver_starforc	,machine_driver_senjyo	,input_ports_starforc	,init_starforc	,ROT90	,	Tehkan (Video Ware license)", "Mega Force" )
+	public static GameDriver driver_baluba	   = new GameDriver("1986"	,"baluba"	,"senjyo.java"	,rom_baluba,null	,machine_driver_senjyo	,input_ports_baluba	,init_starforc	,ROT90	,	Able Corp, Ltd.", "Baluba-louk no Densetsu", GAME_IMPERFECT_COLORS )
 }

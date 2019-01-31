@@ -415,5 +415,5 @@ public class bsktball
 	
 	
 	
-	GAME( 1979, bsktball, 0, bsktball, bsktball, 0, ROT0, "Atari", "Basketball" )
+	public static GameDriver driver_bsktball	   = new GameDriver("1979"	,"bsktball"	,"bsktball.java"	,rom_bsktball,null	,machine_driver_bsktball	,input_ports_bsktball	,null	,ROT0	,	Atari", "Basketball" )
 }

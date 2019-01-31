@@ -259,5 +259,5 @@ public class bankp
 	
 	
 	
-	GAME( 1984, bankp, 0, bankp, bankp, 0, ROT0, "Sega", "Bank Panic" )
+	public static GameDriver driver_bankp	   = new GameDriver("1984"	,"bankp"	,"bankp.java"	,rom_bankp,null	,machine_driver_bankp	,input_ports_bankp	,null	,ROT0	,	Sega", "Bank Panic" )
 }

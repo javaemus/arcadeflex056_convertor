@@ -398,6 +398,6 @@ public class blmbycar
 	
 	***************************************************************************/
 	
-	GAME( 1994, blmbycar, 0,        blmbycar, blmbycar, blmbycar, ROT0, "ABM & Gecas", "Blomby Car" )
-	GAME( 1994, blmbycau, blmbycar, blmbycar, blmbycar, 0,        ROT0, "ABM & Gecas", "Blomby Car (not encrypted)" )
+	public static GameDriver driver_blmbycar	   = new GameDriver("1994"	,"blmbycar"	,"blmbycar.java"	,rom_blmbycar,null	,machine_driver_blmbycar	,input_ports_blmbycar	,init_blmbycar	,ROT0	,	ABM & Gecas", "Blomby Car" )
+	public static GameDriver driver_blmbycau	   = new GameDriver("1994"	,"blmbycau"	,"blmbycar.java"	,rom_blmbycau,driver_blmbycar	,machine_driver_blmbycar	,input_ports_blmbycar	,null	,ROT0	,	ABM & Gecas", "Blomby Car (not encrypted)" )
 }

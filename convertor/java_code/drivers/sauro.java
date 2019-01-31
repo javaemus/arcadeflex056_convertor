@@ -371,5 +371,5 @@ public class sauro
 	}
 	
 	
-	GAMEX( 1987, sauro, 0, sauro, sauro, sauro, ROT0, "Tecfri", "Sauro", GAME_IMPERFECT_COLORS | GAME_IMPERFECT_SOUND )
+	public static GameDriver driver_sauro	   = new GameDriver("1987"	,"sauro"	,"sauro.java"	,rom_sauro,null	,machine_driver_sauro	,input_ports_sauro	,init_sauro	,ROT0	,	Tecfri", "Sauro", GAME_IMPERFECT_COLORS | GAME_IMPERFECT_SOUND )
 }

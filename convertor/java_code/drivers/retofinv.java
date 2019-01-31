@@ -593,7 +593,7 @@ public class retofinv
 	
 	
 	
-	GAME( 1985, retofinv, 0,        retofinv, retofinv, 0, ROT270, "Taito Corporation", "Return of the Invaders" )
-	GAME( 1985, retofin1, retofinv, retofinb, retofinv, 0, ROT270, "bootleg", "Return of the Invaders (bootleg set 1)" )
-	GAME( 1985, retofin2, retofinv, retofinb, retofinv, 0, ROT270, "bootleg", "Return of the Invaders (bootleg set 2)" )
+	public static GameDriver driver_retofinv	   = new GameDriver("1985"	,"retofinv"	,"retofinv.java"	,rom_retofinv,null	,machine_driver_retofinv	,input_ports_retofinv	,null	,ROT270	,	Taito Corporation", "Return of the Invaders" )
+	public static GameDriver driver_retofin1	   = new GameDriver("1985"	,"retofin1"	,"retofinv.java"	,rom_retofin1,driver_retofinv	,machine_driver_retofinb	,input_ports_retofinv	,null	,ROT270	,	bootleg", "Return of the Invaders (bootleg set 1)" )
+	public static GameDriver driver_retofin2	   = new GameDriver("1985"	,"retofin2"	,"retofinv.java"	,rom_retofin2,driver_retofinv	,machine_driver_retofinb	,input_ports_retofinv	,null	,ROT270	,	bootleg", "Return of the Invaders (bootleg set 2)" )
 }

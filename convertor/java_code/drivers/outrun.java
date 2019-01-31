@@ -1350,12 +1350,12 @@ public class outrun
 		}
 	};
 	
-	GAMEX(1992, shangon,  0,        shangon,  shangon,  shangon,  ROT0,         "Sega",    "Super Hang-On", GAME_NOT_WORKING )
-	GAME( 1992, shangonb, shangon,  shangon,  shangon,  shangonb, ROT0,         "bootleg", "Super Hang-On (bootleg)" )
+	public static GameDriver driver_shangon	   = new GameDriver("1992"	,"shangon"	,"outrun.java"	,rom_shangon,null	,machine_driver_shangon	,input_ports_shangon	,init_shangon	,ROT0	,	Sega",    "Super Hang-On", GAME_NOT_WORKING )
+	public static GameDriver driver_shangonb	   = new GameDriver("1992"	,"shangonb"	,"outrun.java"	,rom_shangonb,driver_shangon	,machine_driver_shangon	,input_ports_shangon	,init_shangonb	,ROT0	,	bootleg", "Super Hang-On (bootleg)" )
 	
-	GAME( 1986, outrun,   0,        outrun,   outrun,   outrun,   ROT0,         "Sega",    "Out Run (set 1)" )
-	GAME( 1986, outruna,  outrun,   outruna,  outrun,   outrun,   ROT0,         "Sega",    "Out Run (set 2)" )
-	GAME( 1986, outrunb,  outrun,   outruna,  outrun,   outrunb,  ROT0,         "Sega",    "Out Run (set 3)" )
-	GAMEX(19??, toutrun,  0,        outrun,   outrun,   outrun,   ROT0,         "Sega", "Turbo Outrun (set 1)", GAME_NOT_WORKING )
-	GAMEX(19??, toutruna, toutrun,  outrun,   outrun,   outrun,   ROT0,         "Sega", "Turbo Outrun (set 2)", GAME_NOT_WORKING )
+	public static GameDriver driver_outrun	   = new GameDriver("1986"	,"outrun"	,"outrun.java"	,rom_outrun,null	,machine_driver_outrun	,input_ports_outrun	,init_outrun	,ROT0	,	Sega",    "Out Run (set 1)" )
+	public static GameDriver driver_outruna	   = new GameDriver("1986"	,"outruna"	,"outrun.java"	,rom_outruna,driver_outrun	,machine_driver_outruna	,input_ports_outrun	,init_outrun	,ROT0	,	Sega",    "Out Run (set 2)" )
+	public static GameDriver driver_outrunb	   = new GameDriver("1986"	,"outrunb"	,"outrun.java"	,rom_outrunb,driver_outrun	,machine_driver_outruna	,input_ports_outrun	,init_outrunb	,ROT0	,	Sega",    "Out Run (set 3)" )
+	public static GameDriver driver_toutrun	   = new GameDriver("19??"	,"toutrun"	,"outrun.java"	,rom_toutrun,null	,machine_driver_outrun	,input_ports_outrun	,init_outrun	,ROT0	,	Sega", "Turbo Outrun (set 1)", GAME_NOT_WORKING )
+	public static GameDriver driver_toutruna	   = new GameDriver("19??"	,"toutruna"	,"outrun.java"	,rom_toutruna,driver_toutrun	,machine_driver_outrun	,input_ports_outrun	,init_outrun	,ROT0	,	Sega", "Turbo Outrun (set 2)", GAME_NOT_WORKING )
 }

@@ -253,5 +253,5 @@ public class starcrus
 	ROM_END(); }}; 
 	
 	
-	GAME( 1977, starcrus, 0, starcrus, starcrus, 0, ROT0, "Ramtek", "Star Cruiser" )
+	public static GameDriver driver_starcrus	   = new GameDriver("1977"	,"starcrus"	,"starcrus.java"	,rom_starcrus,null	,machine_driver_starcrus	,input_ports_starcrus	,null	,ROT0	,	Ramtek", "Star Cruiser" )
 }

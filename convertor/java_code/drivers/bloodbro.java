@@ -741,7 +741,7 @@ public class bloodbro
 	
 	/***************************************************************************/
 	
-	GAMEX(1990, bloodbro, 0,        bloodbro, bloodbro, 0,        ROT0,   "Tad", "Blood Bros.", GAME_NO_COCKTAIL )
-	GAMEX(1990, weststry, bloodbro, weststry, weststry, weststry, ROT0,   "bootleg", "West Story", GAME_NO_COCKTAIL | GAME_NO_SOUND )
-	GAME( 1990, skysmash, 0,        skysmash, skysmash, 0,        ROT270, "Nihon System Inc.", "Sky Smasher" )
+	public static GameDriver driver_bloodbro	   = new GameDriver("1990"	,"bloodbro"	,"bloodbro.java"	,rom_bloodbro,null	,machine_driver_bloodbro	,input_ports_bloodbro	,null	,ROT0	,	Tad", "Blood Bros.", GAME_NO_COCKTAIL )
+	public static GameDriver driver_weststry	   = new GameDriver("1990"	,"weststry"	,"bloodbro.java"	,rom_weststry,driver_bloodbro	,machine_driver_weststry	,input_ports_weststry	,init_weststry	,ROT0	,	bootleg", "West Story", GAME_NO_COCKTAIL | GAME_NO_SOUND )
+	public static GameDriver driver_skysmash	   = new GameDriver("1990"	,"skysmash"	,"bloodbro.java"	,rom_skysmash,null	,machine_driver_skysmash	,input_ports_skysmash	,null	,ROT270	,	Nihon System Inc.", "Sky Smasher" )
 }

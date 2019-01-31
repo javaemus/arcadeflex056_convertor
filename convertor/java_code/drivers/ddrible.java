@@ -435,5 +435,5 @@ public class ddrible
 	
 	
 	
-	GAME( 1986, ddribble, 0, ddribble, ddribble, 0, ROT0, "Konami", "Double Dribble")
+	public static GameDriver driver_ddribble	   = new GameDriver("1986"	,"ddribble"	,"ddrible.java"	,rom_ddribble,null	,machine_driver_ddribble	,input_ports_ddribble	,null	,ROT0	,	Konami", "Double Dribble")
 }

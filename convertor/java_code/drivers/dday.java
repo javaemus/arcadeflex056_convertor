@@ -429,6 +429,6 @@ public class dday
 	ROM_END(); }}; 
 	
 	
-	GAMEX( 1982, dday,  0,    dday, dday,  0, ROT0, "Olympia", "D-Day", GAME_IMPERFECT_COLORS )
-	GAMEX( 1982, ddayc, dday, dday, ddayc, 0, ROT0, "Olympia (Centuri license)", "D-Day (Centuri)", GAME_IMPERFECT_COLORS )
+	public static GameDriver driver_dday	   = new GameDriver("1982"	,"dday"	,"dday.java"	,rom_dday,null	,machine_driver_dday	,input_ports_dday	,null	,ROT0	,	Olympia", "D-Day", GAME_IMPERFECT_COLORS )
+	public static GameDriver driver_ddayc	   = new GameDriver("1982"	,"ddayc"	,"dday.java"	,rom_ddayc,driver_dday	,machine_driver_dday	,input_ports_ddayc	,null	,ROT0	,	Olympia (Centuri license)", "D-Day (Centuri)", GAME_IMPERFECT_COLORS )
 }

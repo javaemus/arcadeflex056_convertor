@@ -2229,26 +2229,26 @@ public class mcr3
 	 *************************************/
 	
 	/* MCR3 games */
-	GAME( 1983, tapper,   0,        mcr3,     tapper,   tapper,   ROT0,  "Bally Midway", "Tapper (Budweiser)" )
-	GAME( 1983, tappera,  tapper,   mcr3,     tapper,   tapper,   ROT0,  "Bally Midway", "Tapper (alternate)" )
-	GAME( 1983, sutapper, tapper,   mcr3,     tapper,   tapper,   ROT0,  "Bally Midway", "Tapper (Suntory)" )
-	GAME( 1984, rbtapper, tapper,   mcr3,     tapper,   tapper,   ROT0,  "Bally Midway", "Tapper (Root Beer)" )
-	GAME( 1984, timber,   0,        mcr3,     timber,   timber,   ROT0,  "Bally Midway", "Timber" )
-	GAME( 1983, dotron,   0,        dotron,   dotron,   dotron,   ORIENTATION_FLIP_X, "Bally Midway", "Discs of Tron (Upright)" )
-	GAME( 1983, dotrone,  dotron,   dotron,   dotron,   dotron,   ORIENTATION_FLIP_X, "Bally Midway", "Discs of Tron (Environmental)" )
-	GAME( 1984, demoderb, 0,        demoderb, demoderb, demoderb, ROT0,  "Bally Midway", "Demolition Derby" )
+	public static GameDriver driver_tapper	   = new GameDriver("1983"	,"tapper"	,"mcr3.java"	,rom_tapper,null	,machine_driver_mcr3	,input_ports_tapper	,init_tapper	,ROT0	,	Bally Midway", "Tapper (Budweiser)" )
+	public static GameDriver driver_tappera	   = new GameDriver("1983"	,"tappera"	,"mcr3.java"	,rom_tappera,driver_tapper	,machine_driver_mcr3	,input_ports_tapper	,init_tapper	,ROT0	,	Bally Midway", "Tapper (alternate)" )
+	public static GameDriver driver_sutapper	   = new GameDriver("1983"	,"sutapper"	,"mcr3.java"	,rom_sutapper,driver_tapper	,machine_driver_mcr3	,input_ports_tapper	,init_tapper	,ROT0	,	Bally Midway", "Tapper (Suntory)" )
+	public static GameDriver driver_rbtapper	   = new GameDriver("1984"	,"rbtapper"	,"mcr3.java"	,rom_rbtapper,driver_tapper	,machine_driver_mcr3	,input_ports_tapper	,init_tapper	,ROT0	,	Bally Midway", "Tapper (Root Beer)" )
+	public static GameDriver driver_timber	   = new GameDriver("1984"	,"timber"	,"mcr3.java"	,rom_timber,null	,machine_driver_mcr3	,input_ports_timber	,init_timber	,ROT0	,	Bally Midway", "Timber" )
+	public static GameDriver driver_dotron	   = new GameDriver("1983"	,"dotron"	,"mcr3.java"	,rom_dotron,null	,machine_driver_dotron	,input_ports_dotron	,init_dotron	,ORIENTATION_FLIP_X	,	Bally Midway", "Discs of Tron (Upright)" )
+	public static GameDriver driver_dotrone	   = new GameDriver("1983"	,"dotrone"	,"mcr3.java"	,rom_dotrone,driver_dotron	,machine_driver_dotron	,input_ports_dotron	,init_dotron	,ORIENTATION_FLIP_X	,	Bally Midway", "Discs of Tron (Environmental)" )
+	public static GameDriver driver_demoderb	   = new GameDriver("1984"	,"demoderb"	,"mcr3.java"	,rom_demoderb,null	,machine_driver_demoderb	,input_ports_demoderb	,init_demoderb	,ROT0	,	Bally Midway", "Demolition Derby" )
 	
 	/* MCR monoboard games */
-	GAME( 1984, demoderm, demoderb, mono_tcs, demoderb, demoderm, ROT0,  "Bally Midway", "Demolition Derby (2-Player Mono Board Version)" )
-	GAME( 1985, sarge,    0,        mono_tcs, sarge,    sarge,    ROT0,  "Bally Midway", "Sarge" )
-	GAME( 1986, maxrpm,   0,        mono_tcs, maxrpm,   maxrpm,   ROT0,  "Bally Midway", "Max RPM" )
-	GAME( 1986, rampage,  0,        mono_sg,  rampage,  rampage,  ROT0,  "Bally Midway", "Rampage (revision 3)" )
-	GAME( 1986, rampage2, rampage,  mono_sg,  rampage,  rampage,  ROT0,  "Bally Midway", "Rampage (revision 2)" )
-	GAME( 1986, powerdrv, 0,        mono_sg,  powerdrv, powerdrv, ROT0,  "Bally Midway", "Power Drive" )
-	GAME( 1987, stargrds, 0,        mono_sg,  stargrds, stargrds, ROT0,  "Bally Midway", "Star Guards" )
+	public static GameDriver driver_demoderm	   = new GameDriver("1984"	,"demoderm"	,"mcr3.java"	,rom_demoderm,driver_demoderb	,machine_driver_mono_tcs	,input_ports_demoderb	,init_demoderm	,ROT0	,	Bally Midway", "Demolition Derby (2-Player Mono Board Version)" )
+	public static GameDriver driver_sarge	   = new GameDriver("1985"	,"sarge"	,"mcr3.java"	,rom_sarge,null	,machine_driver_mono_tcs	,input_ports_sarge	,init_sarge	,ROT0	,	Bally Midway", "Sarge" )
+	public static GameDriver driver_maxrpm	   = new GameDriver("1986"	,"maxrpm"	,"mcr3.java"	,rom_maxrpm,null	,machine_driver_mono_tcs	,input_ports_maxrpm	,init_maxrpm	,ROT0	,	Bally Midway", "Max RPM" )
+	public static GameDriver driver_rampage	   = new GameDriver("1986"	,"rampage"	,"mcr3.java"	,rom_rampage,null	,machine_driver_mono_sg	,input_ports_rampage	,init_rampage	,ROT0	,	Bally Midway", "Rampage (revision 3)" )
+	public static GameDriver driver_rampage2	   = new GameDriver("1986"	,"rampage2"	,"mcr3.java"	,rom_rampage2,driver_rampage	,machine_driver_mono_sg	,input_ports_rampage	,init_rampage	,ROT0	,	Bally Midway", "Rampage (revision 2)" )
+	public static GameDriver driver_powerdrv	   = new GameDriver("1986"	,"powerdrv"	,"mcr3.java"	,rom_powerdrv,null	,machine_driver_mono_sg	,input_ports_powerdrv	,init_powerdrv	,ROT0	,	Bally Midway", "Power Drive" )
+	public static GameDriver driver_stargrds	   = new GameDriver("1987"	,"stargrds"	,"mcr3.java"	,rom_stargrds,null	,machine_driver_mono_sg	,input_ports_stargrds	,init_stargrds	,ROT0	,	Bally Midway", "Star Guards" )
 	
 	/* Spy Hunter games */
-	GAME( 1983, spyhunt,  0,        spyhunt,  spyhunt,  spyhunt,  ROT90, "Bally Midway", "Spy Hunter" )
-	GAME( 1984, crater,   0,        crater,   crater,   crater,   ORIENTATION_FLIP_X, "Bally Midway", "Crater Raider" )
-	GAME( 1985, turbotag, 0,        turbotag, turbotag, turbotag, ROT90, "Bally Midway", "Turbo Tag (prototype)" )
+	public static GameDriver driver_spyhunt	   = new GameDriver("1983"	,"spyhunt"	,"mcr3.java"	,rom_spyhunt,null	,machine_driver_spyhunt	,input_ports_spyhunt	,init_spyhunt	,ROT90	,	Bally Midway", "Spy Hunter" )
+	public static GameDriver driver_crater	   = new GameDriver("1984"	,"crater"	,"mcr3.java"	,rom_crater,null	,machine_driver_crater	,input_ports_crater	,init_crater	,ORIENTATION_FLIP_X	,	Bally Midway", "Crater Raider" )
+	public static GameDriver driver_turbotag	   = new GameDriver("1985"	,"turbotag"	,"mcr3.java"	,rom_turbotag,null	,machine_driver_turbotag	,input_ports_turbotag	,init_turbotag	,ROT90	,	Bally Midway", "Turbo Tag (prototype)" )
 }

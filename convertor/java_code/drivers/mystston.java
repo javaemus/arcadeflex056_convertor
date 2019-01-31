@@ -314,5 +314,5 @@ public class mystston
 	
 	
 	
-	GAME( 1984, mystston, 0, mystston, mystston, 0, ROT270, "Technos", "Mysterious Stones" )
+	public static GameDriver driver_mystston	   = new GameDriver("1984"	,"mystston"	,"mystston.java"	,rom_mystston,null	,machine_driver_mystston	,input_ports_mystston	,null	,ROT270	,	Technos", "Mysterious Stones" )
 }

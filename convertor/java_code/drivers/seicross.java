@@ -631,8 +631,8 @@ public class seicross
 	
 	
 	
-	GAMEX( 1981, friskyt,  0,        nvram,    friskyt,  friskyt, ROT0,  "Nichibutsu", "Frisky Tom", GAME_NO_COCKTAIL )
-	GAMEX( 1982, radrad,   0,        no_nvram, radrad,   friskyt, ROT0,  "Nichibutsu USA", "Radical Radial", GAME_NO_COCKTAIL )
-	GAMEX( 1984, seicross, 0,        no_nvram, seicross, friskyt, ROT90, "Nichibutsu + Alice", "Seicross", GAME_NO_COCKTAIL )
-	GAMEX( 1984, sectrzon, seicross, no_nvram, seicross, friskyt, ROT90, "Nichibutsu + Alice", "Sector Zone", GAME_NO_COCKTAIL )
+	public static GameDriver driver_friskyt	   = new GameDriver("1981"	,"friskyt"	,"seicross.java"	,rom_friskyt,null	,machine_driver_nvram	,input_ports_friskyt	,init_friskyt	,ROT0	,	Nichibutsu", "Frisky Tom", GAME_NO_COCKTAIL )
+	public static GameDriver driver_radrad	   = new GameDriver("1982"	,"radrad"	,"seicross.java"	,rom_radrad,null	,machine_driver_no_nvram	,input_ports_radrad	,init_friskyt	,ROT0	,	Nichibutsu USA", "Radical Radial", GAME_NO_COCKTAIL )
+	public static GameDriver driver_seicross	   = new GameDriver("1984"	,"seicross"	,"seicross.java"	,rom_seicross,null	,machine_driver_no_nvram	,input_ports_seicross	,init_friskyt	,ROT90	,	Nichibutsu + Alice", "Seicross", GAME_NO_COCKTAIL )
+	public static GameDriver driver_sectrzon	   = new GameDriver("1984"	,"sectrzon"	,"seicross.java"	,rom_sectrzon,driver_seicross	,machine_driver_no_nvram	,input_ports_seicross	,init_friskyt	,ROT90	,	Nichibutsu + Alice", "Sector Zone", GAME_NO_COCKTAIL )
 }

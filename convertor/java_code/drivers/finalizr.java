@@ -515,6 +515,6 @@ public class finalizr
 	}
 	
 	
-	GAMEX( 1985, finalizr, 0,        finalizr, finalizr, finalizr, ROT90, "Konami", "Finalizer - Super Transformation", GAME_IMPERFECT_SOUND | GAME_NO_COCKTAIL )
-	GAMEX( 1985, finalizb, finalizr, finalizr, finalizb, finalizr, ROT90, "bootleg", "Finalizer - Super Transformation (bootleg)", GAME_IMPERFECT_SOUND | GAME_NO_COCKTAIL )
+	public static GameDriver driver_finalizr	   = new GameDriver("1985"	,"finalizr"	,"finalizr.java"	,rom_finalizr,null	,machine_driver_finalizr	,input_ports_finalizr	,init_finalizr	,ROT90	,	Konami", "Finalizer - Super Transformation", GAME_IMPERFECT_SOUND | GAME_NO_COCKTAIL )
+	public static GameDriver driver_finalizb	   = new GameDriver("1985"	,"finalizb"	,"finalizr.java"	,rom_finalizb,driver_finalizr	,machine_driver_finalizr	,input_ports_finalizb	,init_finalizr	,ROT90	,	bootleg", "Finalizer - Super Transformation (bootleg)", GAME_IMPERFECT_SOUND | GAME_NO_COCKTAIL )
 }

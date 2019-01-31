@@ -490,6 +490,6 @@ public class spdodgeb
 	
 	
 	
-	GAME( 1987, spdodgeb, 0,        spdodgeb, spdodgeb, 0, ROT0, "Technos", "Super Dodge Ball (US)" )
-	GAME( 1987, nkdodgeb, spdodgeb, spdodgeb, spdodgeb, 0, ROT0, "Technos", "Nekketsu Koukou Dodgeball Bu (Japan bootleg)" )
+	public static GameDriver driver_spdodgeb	   = new GameDriver("1987"	,"spdodgeb"	,"spdodgeb.java"	,rom_spdodgeb,null	,machine_driver_spdodgeb	,input_ports_spdodgeb	,null	,ROT0	,	Technos", "Super Dodge Ball (US)" )
+	public static GameDriver driver_nkdodgeb	   = new GameDriver("1987"	,"nkdodgeb"	,"spdodgeb.java"	,rom_nkdodgeb,driver_spdodgeb	,machine_driver_spdodgeb	,input_ports_spdodgeb	,null	,ROT0	,	Technos", "Nekketsu Koukou Dodgeball Bu (Japan bootleg)" )
 }

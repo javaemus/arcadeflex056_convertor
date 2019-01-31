@@ -419,5 +419,5 @@ public class bking2
 	
 	
 	
-	GAME( 1983, bking2, 0, bking2, bking2, 0, ROT90, "Taito Corporation", "Birdie King 2" )
+	public static GameDriver driver_bking2	   = new GameDriver("1983"	,"bking2"	,"bking2.java"	,rom_bking2,null	,machine_driver_bking2	,input_ports_bking2	,null	,ROT90	,	Taito Corporation", "Birdie King 2" )
 }

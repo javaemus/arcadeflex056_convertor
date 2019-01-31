@@ -280,5 +280,5 @@ public class safarir
 	ROM_END(); }}; 
 	
 	
-	GAMEX( 19??, safarir, 0, safarir, safarir, 0, ROT90, "SNK", "Safari Rally", GAME_NO_SOUND | GAME_IMPERFECT_COLORS )
+	public static GameDriver driver_safarir	   = new GameDriver("19??"	,"safarir"	,"safarir.java"	,rom_safarir,null	,machine_driver_safarir	,input_ports_safarir	,null	,ROT90	,	SNK", "Safari Rally", GAME_NO_SOUND | GAME_IMPERFECT_COLORS )
 }

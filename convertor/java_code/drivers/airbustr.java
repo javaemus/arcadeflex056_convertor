@@ -829,5 +829,5 @@ public class airbustr
 	
 	
 	
-	GAME( 1990, airbustr, 0, airbustr, airbustr, airbustr, ROT0, "Kaneko (Namco license)", "Air Buster (Japan)" )
+	public static GameDriver driver_airbustr	   = new GameDriver("1990"	,"airbustr"	,"airbustr.java"	,rom_airbustr,null	,machine_driver_airbustr	,input_ports_airbustr	,init_airbustr	,ROT0	,	Kaneko (Namco license)", "Air Buster (Japan)" )
 }

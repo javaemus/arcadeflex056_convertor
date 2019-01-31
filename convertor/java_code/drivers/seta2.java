@@ -997,7 +997,7 @@ public class seta2
 	
 	***************************************************************************/
 	
-	GAMEX( 1996, myangel,  0, myangel,  myangel,  0,        ROT0, "Namco",               "Kosodate Quiz My Angel (Japan)",   GAME_IMPERFECT_GRAPHICS | GAME_NO_COCKTAIL )
-	GAMEX( 1997, myangel2, 0, myangel2, myangel2, 0,        ROT0, "Namco",               "Kosodate Quiz My Angel 2 (Japan)", GAME_IMPERFECT_GRAPHICS | GAME_NO_COCKTAIL )
-	GAMEX( 1999, pzlbowl,  0, pzlbowl,  pzlbowl,  pzlbowl,  ROT0, "Nihon System / Moss", "Puzzle De Bowling (Japan)",        GAME_IMPERFECT_GRAPHICS | GAME_WRONG_COLORS | GAME_NO_COCKTAIL )
+	public static GameDriver driver_myangel	   = new GameDriver("1996"	,"myangel"	,"seta2.java"	,rom_myangel,null	,machine_driver_myangel	,input_ports_myangel	,null	,ROT0	,	Namco",               "Kosodate Quiz My Angel (Japan)",   GAME_IMPERFECT_GRAPHICS | GAME_NO_COCKTAIL )
+	public static GameDriver driver_myangel2	   = new GameDriver("1997"	,"myangel2"	,"seta2.java"	,rom_myangel2,null	,machine_driver_myangel2	,input_ports_myangel2	,null	,ROT0	,	Namco",               "Kosodate Quiz My Angel 2 (Japan)", GAME_IMPERFECT_GRAPHICS | GAME_NO_COCKTAIL )
+	public static GameDriver driver_pzlbowl	   = new GameDriver("1999"	,"pzlbowl"	,"seta2.java"	,rom_pzlbowl,null	,machine_driver_pzlbowl	,input_ports_pzlbowl	,init_pzlbowl	,ROT0	,	Nihon System / Moss", "Puzzle De Bowling (Japan)",        GAME_IMPERFECT_GRAPHICS | GAME_WRONG_COLORS | GAME_NO_COCKTAIL )
 }

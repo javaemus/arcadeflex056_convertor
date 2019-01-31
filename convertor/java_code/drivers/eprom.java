@@ -618,8 +618,8 @@ public class eprom
 	 *
 	 *************************************/
 	
-	GAME( 1989, eprom,  0,     eprom, eprom, eprom, ROT0, "Atari Games", "Escape from the Planet of the Robot Monsters (set 1)" )
-	GAME( 1989, eprom2, eprom, eprom, eprom, eprom, ROT0, "Atari Games", "Escape from the Planet of the Robot Monsters (set 2)" )
-	GAME( 1989, klaxp1, klax,  klaxp, klaxp, klaxp, ROT0, "Atari Games", "Klax (prototype set 1)" )
-	GAME( 1989, klaxp2, klax,  klaxp, klaxp, klaxp, ROT0, "Atari Games", "Klax (prototype set 2)" )
+	public static GameDriver driver_eprom	   = new GameDriver("1989"	,"eprom"	,"eprom.java"	,rom_eprom,null	,machine_driver_eprom	,input_ports_eprom	,init_eprom	,ROT0	,	Atari Games", "Escape from the Planet of the Robot Monsters (set 1)" )
+	public static GameDriver driver_eprom2	   = new GameDriver("1989"	,"eprom2"	,"eprom.java"	,rom_eprom2,driver_eprom	,machine_driver_eprom	,input_ports_eprom	,init_eprom	,ROT0	,	Atari Games", "Escape from the Planet of the Robot Monsters (set 2)" )
+	public static GameDriver driver_klaxp1	   = new GameDriver("1989"	,"klaxp1"	,"eprom.java"	,rom_klaxp1,driver_klax	,machine_driver_klaxp	,input_ports_klaxp	,init_klaxp	,ROT0	,	Atari Games", "Klax (prototype set 1)" )
+	public static GameDriver driver_klaxp2	   = new GameDriver("1989"	,"klaxp2"	,"eprom.java"	,rom_klaxp2,driver_klax	,machine_driver_klaxp	,input_ports_klaxp	,init_klaxp	,ROT0	,	Atari Games", "Klax (prototype set 2)" )
 }

@@ -462,6 +462,6 @@ public class gbusters
 	
 	
 	
-	GAME( 1988, gbusters, 0,        gbusters, gbusters, gbusters, ROT90, "Konami", "Gang Busters" )
-	GAME( 1988, crazycop, gbusters, gbusters, gbusters, gbusters, ROT90, "Konami", "Crazy Cop (Japan)" )
+	public static GameDriver driver_gbusters	   = new GameDriver("1988"	,"gbusters"	,"gbusters.java"	,rom_gbusters,null	,machine_driver_gbusters	,input_ports_gbusters	,init_gbusters	,ROT90	,	Konami", "Gang Busters" )
+	public static GameDriver driver_crazycop	   = new GameDriver("1988"	,"crazycop"	,"gbusters.java"	,rom_crazycop,driver_gbusters	,machine_driver_gbusters	,input_ports_gbusters	,init_gbusters	,ROT90	,	Konami", "Crazy Cop (Japan)" )
 }

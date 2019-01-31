@@ -496,8 +496,8 @@ public class aliens
 	
 	
 	
-	GAME( 1990, aliens,  0,      aliens, aliens, aliens, ROT0, "Konami", "Aliens (World set 1)" )
-	GAME( 1990, aliens2, aliens, aliens, aliens, aliens, ROT0, "Konami", "Aliens (World set 2)" )
-	GAME( 1990, aliensu, aliens, aliens, aliens, aliens, ROT0, "Konami", "Aliens (US)" )
-	GAME( 1990, aliensj, aliens, aliens, aliens, aliens, ROT0, "Konami", "Aliens (Japan)" )
+	public static GameDriver driver_aliens	   = new GameDriver("1990"	,"aliens"	,"aliens.java"	,rom_aliens,null	,machine_driver_aliens	,input_ports_aliens	,init_aliens	,ROT0	,	Konami", "Aliens (World set 1)" )
+	public static GameDriver driver_aliens2	   = new GameDriver("1990"	,"aliens2"	,"aliens.java"	,rom_aliens2,driver_aliens	,machine_driver_aliens	,input_ports_aliens	,init_aliens	,ROT0	,	Konami", "Aliens (World set 2)" )
+	public static GameDriver driver_aliensu	   = new GameDriver("1990"	,"aliensu"	,"aliens.java"	,rom_aliensu,driver_aliens	,machine_driver_aliens	,input_ports_aliens	,init_aliens	,ROT0	,	Konami", "Aliens (US)" )
+	public static GameDriver driver_aliensj	   = new GameDriver("1990"	,"aliensj"	,"aliens.java"	,rom_aliensj,driver_aliens	,machine_driver_aliens	,input_ports_aliens	,init_aliens	,ROT0	,	Konami", "Aliens (Japan)" )
 }

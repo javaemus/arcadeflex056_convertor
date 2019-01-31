@@ -516,7 +516,7 @@ public class wc90
 	
 	
 	
-	GAMEX( 1989, wc90,  0,    wc90, wc90, 0, ROT0, "Tecmo", "World Cup '90 (set 1)", GAME_IMPERFECT_SOUND | GAME_NO_COCKTAIL )
-	GAMEX( 1989, wc90a, wc90, wc90, wc90, 0, ROT0, "Tecmo", "World Cup '90 (set 2)", GAME_IMPERFECT_SOUND | GAME_NO_COCKTAIL )
-	GAMEX( 1989, wc90t, wc90, wc90, wc90, 0, ROT0, "Tecmo", "World Cup '90 (trackball)", GAME_IMPERFECT_SOUND | GAME_NO_COCKTAIL )
+	public static GameDriver driver_wc90	   = new GameDriver("1989"	,"wc90"	,"wc90.java"	,rom_wc90,null	,machine_driver_wc90	,input_ports_wc90	,null	,ROT0	,	Tecmo", "World Cup '90 (set 1)", GAME_IMPERFECT_SOUND | GAME_NO_COCKTAIL )
+	public static GameDriver driver_wc90a	   = new GameDriver("1989"	,"wc90a"	,"wc90.java"	,rom_wc90a,driver_wc90	,machine_driver_wc90	,input_ports_wc90	,null	,ROT0	,	Tecmo", "World Cup '90 (set 2)", GAME_IMPERFECT_SOUND | GAME_NO_COCKTAIL )
+	public static GameDriver driver_wc90t	   = new GameDriver("1989"	,"wc90t"	,"wc90.java"	,rom_wc90t,driver_wc90	,machine_driver_wc90	,input_ports_wc90	,null	,ROT0	,	Tecmo", "World Cup '90 (trackball)", GAME_IMPERFECT_SOUND | GAME_NO_COCKTAIL )
 }

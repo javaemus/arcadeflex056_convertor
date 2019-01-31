@@ -543,6 +543,6 @@ public class omegrace
 	
 	
 	
-	GAMEX( 1981, omegrace, 0, omegrace, omegrace, 0, ROT0, "Midway", "Omega Race", GAME_NO_COCKTAIL )
+	public static GameDriver driver_omegrace	   = new GameDriver("1981"	,"omegrace"	,"omegrace.java"	,rom_omegrace,null	,machine_driver_omegrace	,input_ports_omegrace	,null	,ROT0	,	Midway", "Omega Race", GAME_NO_COCKTAIL )
 	
 }

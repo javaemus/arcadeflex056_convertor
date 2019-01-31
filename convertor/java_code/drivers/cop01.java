@@ -605,7 +605,7 @@ public class cop01
 	
 	
 	
-	GAME( 1985, cop01,    0,     cop01,    cop01,    0, ROT0,   "Nichibutsu", "Cop 01 (set 1)" )
-	GAME( 1985, cop01a,   cop01, cop01,    cop01,    0, ROT0,   "Nichibutsu", "Cop 01 (set 2)" )
-	GAMEX(1986, mightguy, 0,     mightguy, mightguy, 0, ROT270, "Nichibutsu", "Mighty Guy", GAME_NOT_WORKING | GAME_UNEMULATED_PROTECTION | GAME_IMPERFECT_SOUND )
+	public static GameDriver driver_cop01	   = new GameDriver("1985"	,"cop01"	,"cop01.java"	,rom_cop01,null	,machine_driver_cop01	,input_ports_cop01	,null	,ROT0	,	Nichibutsu", "Cop 01 (set 1)" )
+	public static GameDriver driver_cop01a	   = new GameDriver("1985"	,"cop01a"	,"cop01.java"	,rom_cop01a,driver_cop01	,machine_driver_cop01	,input_ports_cop01	,null	,ROT0	,	Nichibutsu", "Cop 01 (set 2)" )
+	public static GameDriver driver_mightguy	   = new GameDriver("1986"	,"mightguy"	,"cop01.java"	,rom_mightguy,null	,machine_driver_mightguy	,input_ports_mightguy	,null	,ROT270	,	Nichibutsu", "Mighty Guy", GAME_NOT_WORKING | GAME_UNEMULATED_PROTECTION | GAME_IMPERFECT_SOUND )
 }

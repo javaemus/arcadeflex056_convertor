@@ -316,5 +316,5 @@ public class suprloco
 	
 	
 	
-	GAME( 1982, suprloco, 0, suprloco, suprloco, suprloco, ROT0, "Sega", "Super Locomotive" )
+	public static GameDriver driver_suprloco	   = new GameDriver("1982"	,"suprloco"	,"suprloco.java"	,rom_suprloco,null	,machine_driver_suprloco	,input_ports_suprloco	,init_suprloco	,ROT0	,	Sega", "Super Locomotive" )
 }

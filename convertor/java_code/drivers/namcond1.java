@@ -325,9 +325,9 @@ public class namcond1
 	#endif
 	
 	
-	GAMEX( 1995, ncv1,      0, namcond1, namcond1, 0, ROT90, "Namco", "Namco Classics Vol.1", GAME_NO_SOUND | GAME_IMPERFECT_GRAPHICS )
-	GAMEX( 1995, ncv1j,  ncv1, namcond1, namcond1, 0, ROT90, "Namco", "Namco Classics Vol.1 (Japan set 1)", GAME_NO_SOUND | GAME_IMPERFECT_GRAPHICS )
-	GAMEX( 1995, ncv1j2, ncv1, namcond1, namcond1, 0, ROT90, "Namco", "Namco Classics Vol.1 (Japan set 2)", GAME_NO_SOUND | GAME_IMPERFECT_GRAPHICS )
-	GAMEX( 1996, ncv2,      0, namcond1, namcond1, 0, ROT90, "Namco", "Namco Classics Vol.2", GAME_NOT_WORKING | GAME_NO_SOUND | GAME_IMPERFECT_GRAPHICS )
-	GAMEX( 1996, ncv2j,  ncv2, namcond1, namcond1, 0, ROT90, "Namco", "Namco Classics Vol.2 (Japan)", GAME_NOT_WORKING | GAME_NO_SOUND | GAME_IMPERFECT_GRAPHICS )
+	public static GameDriver driver_ncv1	   = new GameDriver("1995"	,"ncv1"	,"namcond1.java"	,rom_ncv1,null	,machine_driver_namcond1	,input_ports_namcond1	,null	,ROT90	,	Namco", "Namco Classics Vol.1", GAME_NO_SOUND | GAME_IMPERFECT_GRAPHICS )
+	public static GameDriver driver_ncv1j	   = new GameDriver("1995"	,"ncv1j"	,"namcond1.java"	,rom_ncv1j,driver_ncv1	,machine_driver_namcond1	,input_ports_namcond1	,null	,ROT90	,	Namco", "Namco Classics Vol.1 (Japan set 1)", GAME_NO_SOUND | GAME_IMPERFECT_GRAPHICS )
+	public static GameDriver driver_ncv1j2	   = new GameDriver("1995"	,"ncv1j2"	,"namcond1.java"	,rom_ncv1j2,driver_ncv1	,machine_driver_namcond1	,input_ports_namcond1	,null	,ROT90	,	Namco", "Namco Classics Vol.1 (Japan set 2)", GAME_NO_SOUND | GAME_IMPERFECT_GRAPHICS )
+	public static GameDriver driver_ncv2	   = new GameDriver("1996"	,"ncv2"	,"namcond1.java"	,rom_ncv2,null	,machine_driver_namcond1	,input_ports_namcond1	,null	,ROT90	,	Namco", "Namco Classics Vol.2", GAME_NOT_WORKING | GAME_NO_SOUND | GAME_IMPERFECT_GRAPHICS )
+	public static GameDriver driver_ncv2j	   = new GameDriver("1996"	,"ncv2j"	,"namcond1.java"	,rom_ncv2j,driver_ncv2	,machine_driver_namcond1	,input_ports_namcond1	,null	,ROT90	,	Namco", "Namco Classics Vol.2 (Japan)", GAME_NOT_WORKING | GAME_NO_SOUND | GAME_IMPERFECT_GRAPHICS )
 }

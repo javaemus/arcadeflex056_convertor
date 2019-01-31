@@ -346,5 +346,5 @@ public class phozon
 	
 	
 	
-	GAMEX( 1983, phozon, 0, phozon, phozon, 0, ROT90, "Namco", "Phozon", GAME_NO_COCKTAIL )
+	public static GameDriver driver_phozon	   = new GameDriver("1983"	,"phozon"	,"phozon.java"	,rom_phozon,null	,machine_driver_phozon	,input_ports_phozon	,null	,ROT90	,	Namco", "Phozon", GAME_NO_COCKTAIL )
 }

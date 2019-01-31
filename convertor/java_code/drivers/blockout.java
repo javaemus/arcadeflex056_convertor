@@ -286,6 +286,6 @@ public class blockout
 	
 	
 	
-	GAME( 1989, blockout, 0,        blockout, blockout, 0, ROT0, "Technos + California Dreams", "Block Out (set 1)" )
-	GAME( 1989, blckout2, blockout, blockout, blockout, 0, ROT0, "Technos + California Dreams", "Block Out (set 2)" )
+	public static GameDriver driver_blockout	   = new GameDriver("1989"	,"blockout"	,"blockout.java"	,rom_blockout,null	,machine_driver_blockout	,input_ports_blockout	,null	,ROT0	,	Technos + California Dreams", "Block Out (set 1)" )
+	public static GameDriver driver_blckout2	   = new GameDriver("1989"	,"blckout2"	,"blockout.java"	,rom_blckout2,driver_blockout	,machine_driver_blockout	,input_ports_blockout	,null	,ROT0	,	Technos + California Dreams", "Block Out (set 2)" )
 }

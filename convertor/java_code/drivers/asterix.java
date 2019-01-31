@@ -409,7 +409,7 @@ public class asterix
 	}
 	
 	
-	GAME( 1992, asterix,  0,       asterix, asterix, asterix, ROT0, "Konami", "Asterix (World ver. EAD)" )
-	GAME( 1992, astrxeac, asterix, asterix, asterix, asterix, ROT0, "Konami", "Asterix (World ver. EAC)" )
-	GAME( 1992, astrxeaa, asterix, asterix, asterix, asterix, ROT0, "Konami", "Asterix (World ver. EAA)" )
+	public static GameDriver driver_asterix	   = new GameDriver("1992"	,"asterix"	,"asterix.java"	,rom_asterix,null	,machine_driver_asterix	,input_ports_asterix	,init_asterix	,ROT0	,	Konami", "Asterix (World ver. EAD)" )
+	public static GameDriver driver_astrxeac	   = new GameDriver("1992"	,"astrxeac"	,"asterix.java"	,rom_astrxeac,driver_asterix	,machine_driver_asterix	,input_ports_asterix	,init_asterix	,ROT0	,	Konami", "Asterix (World ver. EAC)" )
+	public static GameDriver driver_astrxeaa	   = new GameDriver("1992"	,"astrxeaa"	,"asterix.java"	,rom_astrxeaa,driver_asterix	,machine_driver_asterix	,input_ports_asterix	,init_asterix	,ROT0	,	Konami", "Asterix (World ver. EAA)" )
 }

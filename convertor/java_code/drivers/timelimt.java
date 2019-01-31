@@ -303,5 +303,5 @@ public class timelimt
 	
 	
 	
-	GAMEX( 1983, timelimt, 0, timelimt, timelimt, 0, ROT90, "Chuo Co. Ltd", "Time Limit", GAME_IMPERFECT_COLORS )
+	public static GameDriver driver_timelimt	   = new GameDriver("1983"	,"timelimt"	,"timelimt.java"	,rom_timelimt,null	,machine_driver_timelimt	,input_ports_timelimt	,null	,ROT90	,	Chuo Co. Ltd", "Time Limit", GAME_IMPERFECT_COLORS )
 }

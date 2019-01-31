@@ -621,5 +621,5 @@ public class psychic5
 	
 	
 	
-	GAMEX( 1987, psychic5, 0, psychic5, psychic5, 0, ROT270, "Jaleco", "Psychic 5", GAME_NO_COCKTAIL )
+	public static GameDriver driver_psychic5	   = new GameDriver("1987"	,"psychic5"	,"psychic5.java"	,rom_psychic5,null	,machine_driver_psychic5	,input_ports_psychic5	,null	,ROT270	,	Jaleco", "Psychic 5", GAME_NO_COCKTAIL )
 }

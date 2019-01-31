@@ -907,9 +907,9 @@ public class dynax
 	
 	***************************************************************************/
 	
-	GAME ( 1989, sprtmtch, 0, sprtmtch, sprtmtch, 0, ROT0, "Log+Dynax (Fabtek license)", "Sports Match" )
+	public static GameDriver driver_sprtmtch	   = new GameDriver("1989"	,"sprtmtch"	,"dynax.java"	,rom_sprtmtch,null	,machine_driver_sprtmtch	,input_ports_sprtmtch	,null	,ROT0	,	Log+Dynax (Fabtek license)", "Sports Match" )
 	
 	/* TESTDRIVERS */
-	GAMEX( 1995, ddenlovr, 0, ddenlovr, ddenlovr, 0, ROT0, "Dynax",     "Don Den Lover Vol 1", GAME_NOT_WORKING )
-	GAMEX( 1994, rongrong, 0, rongrong, rongrong, 0, ROT0, "Nakanihon", "Rong Rong",           GAME_NOT_WORKING )
+	public static GameDriver driver_ddenlovr	   = new GameDriver("1995"	,"ddenlovr"	,"dynax.java"	,rom_ddenlovr,null	,machine_driver_ddenlovr	,input_ports_ddenlovr	,null	,ROT0	,	Dynax",     "Don Den Lover Vol 1", GAME_NOT_WORKING )
+	public static GameDriver driver_rongrong	   = new GameDriver("1994"	,"rongrong"	,"dynax.java"	,rom_rongrong,null	,machine_driver_rongrong	,input_ports_rongrong	,null	,ROT0	,	Nakanihon", "Rong Rong",           GAME_NOT_WORKING )
 }

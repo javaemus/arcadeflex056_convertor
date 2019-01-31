@@ -1154,16 +1154,16 @@ public class wmswolfu
 	 *
 	 *************************************/
 	
-	GAME( 1994, mk3,     0,         wolfu, mk3,     mk3,     ROT0, "Midway", "Mortal Kombat 3 (rev 2.1)" )
-	GAME( 1994, mk3r20,  mk3,       wolfu, mk3,     mk3r20,  ROT0, "Midway", "Mortal Kombat 3 (rev 2.0)" )
-	GAME( 1994, mk3r10,  mk3,       wolfu, mk3,     mk3r10,  ROT0, "Midway", "Mortal Kombat 3 (rev 1.0)" )
-	GAME( 1994, umk3,    mk3,       wolfu, mk3,     umk3,    ROT0, "Midway", "Ultimate Mortal Kombat 3 (rev 1.2)" )
-	GAME( 1994, umk3r11, mk3,       wolfu, mk3,     umk3r11, ROT0, "Midway", "Ultimate Mortal Kombat 3 (rev 1.1)" )
+	public static GameDriver driver_mk3	   = new GameDriver("1994"	,"mk3"	,"wmswolfu.java"	,rom_mk3,null	,machine_driver_wolfu	,input_ports_mk3	,init_mk3	,ROT0	,	Midway", "Mortal Kombat 3 (rev 2.1)" )
+	public static GameDriver driver_mk3r20	   = new GameDriver("1994"	,"mk3r20"	,"wmswolfu.java"	,rom_mk3r20,driver_mk3	,machine_driver_wolfu	,input_ports_mk3	,init_mk3r20	,ROT0	,	Midway", "Mortal Kombat 3 (rev 2.0)" )
+	public static GameDriver driver_mk3r10	   = new GameDriver("1994"	,"mk3r10"	,"wmswolfu.java"	,rom_mk3r10,driver_mk3	,machine_driver_wolfu	,input_ports_mk3	,init_mk3r10	,ROT0	,	Midway", "Mortal Kombat 3 (rev 1.0)" )
+	public static GameDriver driver_umk3	   = new GameDriver("1994"	,"umk3"	,"wmswolfu.java"	,rom_umk3,driver_mk3	,machine_driver_wolfu	,input_ports_mk3	,init_umk3	,ROT0	,	Midway", "Ultimate Mortal Kombat 3 (rev 1.2)" )
+	public static GameDriver driver_umk3r11	   = new GameDriver("1994"	,"umk3r11"	,"wmswolfu.java"	,rom_umk3r11,driver_mk3	,machine_driver_wolfu	,input_ports_mk3	,init_umk3r11	,ROT0	,	Midway", "Ultimate Mortal Kombat 3 (rev 1.1)" )
 	
-	GAME( 1995, wwfmania,0,         wolfu, wwfmania,wwfmania,ROT0, "Midway", "WWF: Wrestlemania (rev 1.30)" )
-	GAME( 1995, openice, 0,         wolfu, openice, openice, ROT0, "Midway", "2 On 2 Open Ice Challenge (rev 1.21)" )
-	GAME( 1996, nbahangt,0,         wolfu, nbahangt,nbahangt,ROT0, "Midway", "NBA Hangtime (rev L1.1)" )
-	GAME( 1996, nbamaxht,nbahangt,  wolfu, nbahangt,nbahangt,ROT0, "Midway", "NBA Maximum Hangtime (rev 1.0)" )
-	GAME( 1997, rmpgwt,  0,         wolfu, rmpgwt,  rmpgwt,  ROT0, "Midway", "Rampage: World Tour (rev 1.3)" )
-	GAME( 1997, rmpgwt11,rmpgwt,    wolfu, rmpgwt,  rmpgwt,  ROT0, "Midway", "Rampage: World Tour (rev 1.1)" )
+	public static GameDriver driver_wwfmania	   = new GameDriver("1995"	,"wwfmania"	,"wmswolfu.java"	,rom_wwfmania,null	,machine_driver_wolfu	,input_ports_wwfmania	,init_wwfmania	,ROT0	,	Midway", "WWF: Wrestlemania (rev 1.30)" )
+	public static GameDriver driver_openice	   = new GameDriver("1995"	,"openice"	,"wmswolfu.java"	,rom_openice,null	,machine_driver_wolfu	,input_ports_openice	,init_openice	,ROT0	,	Midway", "2 On 2 Open Ice Challenge (rev 1.21)" )
+	public static GameDriver driver_nbahangt	   = new GameDriver("1996"	,"nbahangt"	,"wmswolfu.java"	,rom_nbahangt,null	,machine_driver_wolfu	,input_ports_nbahangt	,init_nbahangt	,ROT0	,	Midway", "NBA Hangtime (rev L1.1)" )
+	public static GameDriver driver_nbamaxht	   = new GameDriver("1996"	,"nbamaxht"	,"wmswolfu.java"	,rom_nbamaxht,driver_nbahangt	,machine_driver_wolfu	,input_ports_nbahangt	,init_nbahangt	,ROT0	,	Midway", "NBA Maximum Hangtime (rev 1.0)" )
+	public static GameDriver driver_rmpgwt	   = new GameDriver("1997"	,"rmpgwt"	,"wmswolfu.java"	,rom_rmpgwt,null	,machine_driver_wolfu	,input_ports_rmpgwt	,init_rmpgwt	,ROT0	,	Midway", "Rampage: World Tour (rev 1.3)" )
+	public static GameDriver driver_rmpgwt11	   = new GameDriver("1997"	,"rmpgwt11"	,"wmswolfu.java"	,rom_rmpgwt11,driver_rmpgwt	,machine_driver_wolfu	,input_ports_rmpgwt	,init_rmpgwt	,ROT0	,	Midway", "Rampage: World Tour (rev 1.1)" )
 }

@@ -470,8 +470,8 @@ public class kangaroo
 	
 	
 	
-	GAME( 1981, fnkyfish, 0,        kangaroo, fnkyfish, 0, ROT90, "Sun Electronics", "Funky Fish" )
-	GAME( 1982, kangaroo, 0,        kangaroo, kangaroo, 0, ROT90, "Sun Electronics", "Kangaroo" )
-	GAME( 1982, kangaroa, kangaroo, kangaroo, kangaroo, 0, ROT90, "[Sun Electronics] (Atari license)", "Kangaroo (Atari)" )
-	GAME( 1982, kangarob, kangaroo, kangaroo, kangaroo, 0, ROT90, "bootleg", "Kangaroo (bootleg)" )
+	public static GameDriver driver_fnkyfish	   = new GameDriver("1981"	,"fnkyfish"	,"kangaroo.java"	,rom_fnkyfish,null	,machine_driver_kangaroo	,input_ports_fnkyfish	,null	,ROT90	,	Sun Electronics", "Funky Fish" )
+	public static GameDriver driver_kangaroo	   = new GameDriver("1982"	,"kangaroo"	,"kangaroo.java"	,rom_kangaroo,null	,machine_driver_kangaroo	,input_ports_kangaroo	,null	,ROT90	,	Sun Electronics", "Kangaroo" )
+	public static GameDriver driver_kangaroa	   = new GameDriver("1982"	,"kangaroa"	,"kangaroo.java"	,rom_kangaroa,driver_kangaroo	,machine_driver_kangaroo	,input_ports_kangaroo	,null	,ROT90	,	[Sun Electronics] (Atari license)", "Kangaroo (Atari)" )
+	public static GameDriver driver_kangarob	   = new GameDriver("1982"	,"kangarob"	,"kangaroo.java"	,rom_kangarob,driver_kangaroo	,machine_driver_kangaroo	,input_ports_kangaroo	,null	,ROT90	,	bootleg", "Kangaroo (bootleg)" )
 }

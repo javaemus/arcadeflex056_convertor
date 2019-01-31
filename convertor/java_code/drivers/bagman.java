@@ -818,12 +818,12 @@ public class bagman
 	
 	
 	
-	GAME(1982, bagman,	 0, 	  bagman, bagman,  0, ROT270, "Valadon Automation", "Bagman" )
-	GAME(1982, bagnard,  bagman,  bagman, bagman,  0, ROT270, "Valadon Automation", "Le Bagnard" )
-	GAME(1982, bagmans,  bagman,  bagman, bagmans, 0, ROT270, "Valadon Automation (Stern license)", "Bagman (Stern set 1)" )
-	GAME(1982, bagmans2, bagman,  bagman, bagman,  0, ROT270, "Valadon Automation (Stern license)", "Bagman (Stern set 2)" )
-	GAME(1984, sbagman,  0, 	  bagman, sbagman, 0, ROT270, "Valadon Automation", "Super Bagman" )
-	GAME(1984, sbagmans, sbagman, bagman, sbagman, 0, ROT270, "Valadon Automation (Stern license)", "Super Bagman (Stern)" )
-	GAME(1983, pickin,	 0, 	  pickin, pickin,  0, ROT270, "Valadon Automation", "Pickin'" )
+	public static GameDriver driver_bagman	   = new GameDriver("1982"	,"bagman"	,"bagman.java"	,rom_bagman,null	,machine_driver_bagman	,input_ports_bagman	,null	,ROT270	,	Valadon Automation", "Bagman" )
+	public static GameDriver driver_bagnard	   = new GameDriver("1982"	,"bagnard"	,"bagman.java"	,rom_bagnard,driver_bagman	,machine_driver_bagman	,input_ports_bagman	,null	,ROT270	,	Valadon Automation", "Le Bagnard" )
+	public static GameDriver driver_bagmans	   = new GameDriver("1982"	,"bagmans"	,"bagman.java"	,rom_bagmans,driver_bagman	,machine_driver_bagman	,input_ports_bagmans	,null	,ROT270	,	Valadon Automation (Stern license)", "Bagman (Stern set 1)" )
+	public static GameDriver driver_bagmans2	   = new GameDriver("1982"	,"bagmans2"	,"bagman.java"	,rom_bagmans2,driver_bagman	,machine_driver_bagman	,input_ports_bagman	,null	,ROT270	,	Valadon Automation (Stern license)", "Bagman (Stern set 2)" )
+	public static GameDriver driver_sbagman	   = new GameDriver("1984"	,"sbagman"	,"bagman.java"	,rom_sbagman,null	,machine_driver_bagman	,input_ports_sbagman	,null	,ROT270	,	Valadon Automation", "Super Bagman" )
+	public static GameDriver driver_sbagmans	   = new GameDriver("1984"	,"sbagmans"	,"bagman.java"	,rom_sbagmans,driver_sbagman	,machine_driver_bagman	,input_ports_sbagman	,null	,ROT270	,	Valadon Automation (Stern license)", "Super Bagman (Stern)" )
+	public static GameDriver driver_pickin	   = new GameDriver("1983"	,"pickin"	,"bagman.java"	,rom_pickin,null	,machine_driver_pickin	,input_ports_pickin	,null	,ROT270	,	Valadon Automation", "Pickin'" )
 	
 }

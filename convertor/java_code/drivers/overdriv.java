@@ -528,5 +528,5 @@ public class overdriv
 	
 	
 	
-	GAMEX( 1990, overdriv, 0, overdriv, overdriv, overdriv, ROT90, "Konami", "Over Drive", GAME_IMPERFECT_GRAPHICS )
+	public static GameDriver driver_overdriv	   = new GameDriver("1990"	,"overdriv"	,"overdriv.java"	,rom_overdriv,null	,machine_driver_overdriv	,input_ports_overdriv	,init_overdriv	,ROT90	,	Konami", "Over Drive", GAME_IMPERFECT_GRAPHICS )
 }

@@ -403,6 +403,6 @@ public class amspdwy
 	
 	/* (C) 1987 ETI 8402 MAGNOLIA ST. #C SANTEE, CA 92071 */
 	
-	GAME( 1987, amspdwy,  0,       amspdwy, amspdwy, 0, ROT0, "Enerdyne Technologies, Inc.", "American Speedway (set 1)" )
-	GAME( 1987, amspdwya, amspdwy, amspdwy, amspdwy, 0, ROT0, "Enerdyne Technologies, Inc.", "American Speedway (set 2)" )
+	public static GameDriver driver_amspdwy	   = new GameDriver("1987"	,"amspdwy"	,"amspdwy.java"	,rom_amspdwy,null	,machine_driver_amspdwy	,input_ports_amspdwy	,null	,ROT0	,	Enerdyne Technologies, Inc.", "American Speedway (set 1)" )
+	public static GameDriver driver_amspdwya	   = new GameDriver("1987"	,"amspdwya"	,"amspdwy.java"	,rom_amspdwya,driver_amspdwy	,machine_driver_amspdwy	,input_ports_amspdwy	,null	,ROT0	,	Enerdyne Technologies, Inc.", "American Speedway (set 2)" )
 }

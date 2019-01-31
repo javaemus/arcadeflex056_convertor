@@ -341,6 +341,6 @@ public class fastlane
 	
 	
 	
-	GAMEX( 1987, fastlane, 0, fastlane, fastlane, 0, ROT90, "Konami", "Fast Lane", GAME_NOT_WORKING | GAME_IMPERFECT_COLORS )
+	public static GameDriver driver_fastlane	   = new GameDriver("1987"	,"fastlane"	,"fastlane.java"	,rom_fastlane,null	,machine_driver_fastlane	,input_ports_fastlane	,null	,ROT90	,	Konami", "Fast Lane", GAME_NOT_WORKING | GAME_IMPERFECT_COLORS )
 	
 }

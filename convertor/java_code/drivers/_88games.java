@@ -593,7 +593,7 @@ public class _88games
 	
 	
 	
-	GAME( 1988, 88games,  0,       88games, 88games, 88games, ROT0, "Konami", "'88 Games" )
-	GAME( 1988, konami88, 88games, 88games, 88games, 88games, ROT0, "Konami", "Konami '88" )
-	GAME( 1988, hypsptsp, 88games, 88games, 88games, 88games, ROT0, "Konami", "Hyper Sports Special (Japan)" )
+	public static GameDriver driver_88games	   = new GameDriver("1988"	,"88games"	,"_88games.java"	,rom_88games,null	,machine_driver_88games	,input_ports_88games	,init_88games	,ROT0	,	Konami", "'88 Games" )
+	public static GameDriver driver_konami88	   = new GameDriver("1988"	,"konami88"	,"_88games.java"	,rom_konami88,driver_88games	,machine_driver_88games	,input_ports_88games	,init_88games	,ROT0	,	Konami", "Konami '88" )
+	public static GameDriver driver_hypsptsp	   = new GameDriver("1988"	,"hypsptsp"	,"_88games.java"	,rom_hypsptsp,driver_88games	,machine_driver_88games	,input_ports_88games	,init_88games	,ROT0	,	Konami", "Hyper Sports Special (Japan)" )
 }

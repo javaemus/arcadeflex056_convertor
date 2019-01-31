@@ -1739,12 +1739,12 @@ public class namcos86
 	
 	
 	
-	GAME( 1986, hopmappy, 0,        hopmappy, hopmappy, namco86,  ROT0,   "Namco", "Hopping Mappy" )
-	GAME( 1986, skykiddx, 0,        skykiddx, skykiddx, namco86,  ROT180, "Namco", "Sky Kid Deluxe (set 1)" )
-	GAME( 1986, skykiddo, skykiddx, skykiddx, skykiddx, namco86,  ROT180, "Namco", "Sky Kid Deluxe (set 2)" )
-	GAME( 1986, roishtar, 0,        roishtar, roishtar, roishtar, ROT0,   "Namco", "The Return of Ishtar" )
-	GAME( 1986, genpeitd, 0,        genpeitd, genpeitd, namco86,  ROT0,   "Namco", "Genpei ToumaDen" )
-	GAME( 1986, rthunder, 0,        rthunder, rthunder, namco86,  ROT0,   "Namco", "Rolling Thunder (new version)" )
-	GAME( 1986, rthundro, rthunder, rthunder, rthundro, namco86,  ROT0,   "Namco", "Rolling Thunder (old version)" )
-	GAME( 1987, wndrmomo, 0,        wndrmomo, wndrmomo, namco86,  ROT0,   "Namco", "Wonder Momo" )
+	public static GameDriver driver_hopmappy	   = new GameDriver("1986"	,"hopmappy"	,"namcos86.java"	,rom_hopmappy,null	,machine_driver_hopmappy	,input_ports_hopmappy	,init_namco86	,ROT0	,	Namco", "Hopping Mappy" )
+	public static GameDriver driver_skykiddx	   = new GameDriver("1986"	,"skykiddx"	,"namcos86.java"	,rom_skykiddx,null	,machine_driver_skykiddx	,input_ports_skykiddx	,init_namco86	,ROT180	,	Namco", "Sky Kid Deluxe (set 1)" )
+	public static GameDriver driver_skykiddo	   = new GameDriver("1986"	,"skykiddo"	,"namcos86.java"	,rom_skykiddo,driver_skykiddx	,machine_driver_skykiddx	,input_ports_skykiddx	,init_namco86	,ROT180	,	Namco", "Sky Kid Deluxe (set 2)" )
+	public static GameDriver driver_roishtar	   = new GameDriver("1986"	,"roishtar"	,"namcos86.java"	,rom_roishtar,null	,machine_driver_roishtar	,input_ports_roishtar	,init_roishtar	,ROT0	,	Namco", "The Return of Ishtar" )
+	public static GameDriver driver_genpeitd	   = new GameDriver("1986"	,"genpeitd"	,"namcos86.java"	,rom_genpeitd,null	,machine_driver_genpeitd	,input_ports_genpeitd	,init_namco86	,ROT0	,	Namco", "Genpei ToumaDen" )
+	public static GameDriver driver_rthunder	   = new GameDriver("1986"	,"rthunder"	,"namcos86.java"	,rom_rthunder,null	,machine_driver_rthunder	,input_ports_rthunder	,init_namco86	,ROT0	,	Namco", "Rolling Thunder (new version)" )
+	public static GameDriver driver_rthundro	   = new GameDriver("1986"	,"rthundro"	,"namcos86.java"	,rom_rthundro,driver_rthunder	,machine_driver_rthunder	,input_ports_rthundro	,init_namco86	,ROT0	,	Namco", "Rolling Thunder (old version)" )
+	public static GameDriver driver_wndrmomo	   = new GameDriver("1987"	,"wndrmomo"	,"namcos86.java"	,rom_wndrmomo,null	,machine_driver_wndrmomo	,input_ports_wndrmomo	,init_namco86	,ROT0	,	Namco", "Wonder Momo" )
 }

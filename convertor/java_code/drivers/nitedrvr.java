@@ -222,5 +222,5 @@ public class nitedrvr
 	
 	
 	
-	GAMEX( 1976, nitedrvr, 0, nitedrv, nitedrvr, 0, ROT0, "Atari", "Night Driver", GAME_NO_SOUND )
+	public static GameDriver driver_nitedrvr	   = new GameDriver("1976"	,"nitedrvr"	,"nitedrvr.java"	,rom_nitedrvr,null	,machine_driver_nitedrv	,input_ports_nitedrvr	,null	,ROT0	,	Atari", "Night Driver", GAME_NO_SOUND )
 }

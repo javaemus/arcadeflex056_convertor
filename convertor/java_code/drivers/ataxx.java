@@ -1454,10 +1454,10 @@ public class ataxx
 	 *
 	 *************************************/
 	
-	GAME( 1990, ataxx,    0,      ataxx,   ataxx,    ataxx,    ROT0,   "Leland Corp.", "Ataxx (set 1)" )
-	GAME( 1990, ataxxa,   ataxx,  ataxx,   ataxx,    ataxx,    ROT0,   "Leland Corp.", "Ataxx (set 2)" )
-	GAME( 1990, ataxxj,   ataxx,  ataxx,   ataxx,    ataxxj,   ROT0,   "Leland Corp.", "Ataxx (Japan)" )
-	GAME( 1990, wsf,      0,      wsf,     wsf,      wsf,      ROT0,   "Leland Corp.", "World Soccer Finals" )
-	GAME( 1991, indyheat, 0,      wsf,     indyheat, indyheat, ROT0,   "Leland Corp.", "Danny Sullivan's Indy Heat" )
-	GAME( 1991, brutforc, 0,      wsf,     brutforc, brutforc, ROT0,   "Leland Corp.", "Brute Force" )
+	public static GameDriver driver_ataxx	   = new GameDriver("1990"	,"ataxx"	,"ataxx.java"	,rom_ataxx,null	,machine_driver_ataxx	,input_ports_ataxx	,init_ataxx	,ROT0	,	Leland Corp.", "Ataxx (set 1)" )
+	public static GameDriver driver_ataxxa	   = new GameDriver("1990"	,"ataxxa"	,"ataxx.java"	,rom_ataxxa,driver_ataxx	,machine_driver_ataxx	,input_ports_ataxx	,init_ataxx	,ROT0	,	Leland Corp.", "Ataxx (set 2)" )
+	public static GameDriver driver_ataxxj	   = new GameDriver("1990"	,"ataxxj"	,"ataxx.java"	,rom_ataxxj,driver_ataxx	,machine_driver_ataxx	,input_ports_ataxx	,init_ataxxj	,ROT0	,	Leland Corp.", "Ataxx (Japan)" )
+	public static GameDriver driver_wsf	   = new GameDriver("1990"	,"wsf"	,"ataxx.java"	,rom_wsf,null	,machine_driver_wsf	,input_ports_wsf	,init_wsf	,ROT0	,	Leland Corp.", "World Soccer Finals" )
+	public static GameDriver driver_indyheat	   = new GameDriver("1991"	,"indyheat"	,"ataxx.java"	,rom_indyheat,null	,machine_driver_wsf	,input_ports_indyheat	,init_indyheat	,ROT0	,	Leland Corp.", "Danny Sullivan's Indy Heat" )
+	public static GameDriver driver_brutforc	   = new GameDriver("1991"	,"brutforc"	,"ataxx.java"	,rom_brutforc,null	,machine_driver_wsf	,input_ports_brutforc	,init_brutforc	,ROT0	,	Leland Corp.", "Brute Force" )
 }

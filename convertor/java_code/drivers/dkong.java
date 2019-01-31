@@ -1743,24 +1743,24 @@ public class dkong
 	
 	
 	
-	GAMEX(1980, radarscp, 0,        radarscp, dkong,    radarscp, ROT90, "Nintendo", "Radar Scope", GAME_IMPERFECT_SOUND | GAME_IMPERFECT_GRAPHICS )
+	public static GameDriver driver_radarscp	   = new GameDriver("1980"	,"radarscp"	,"dkong.java"	,rom_radarscp,null	,machine_driver_radarscp	,input_ports_dkong	,init_radarscp	,ROT90	,	Nintendo", "Radar Scope", GAME_IMPERFECT_SOUND | GAME_IMPERFECT_GRAPHICS )
 	
-	GAME( 1981, dkong,    0,        dkong,    dkong,    0,        ROT90, "Nintendo of America", "Donkey Kong (US)" )
-	GAME( 1981, dkongjp,  dkong,    dkong,    dkong,    0,        ROT90, "Nintendo", "Donkey Kong (Japan set 1)" )
-	GAME( 1981, dkongjo,  dkong,    dkong,    dkong,    0,        ROT90, "Nintendo", "Donkey Kong (Japan set 2)" )
-	GAME( 1981, dkongjo1, dkong,    dkong,    dkong,    0,        ROT90, "Nintendo", "Donkey Kong (Japan set 3) (bad dump?)" )
+	public static GameDriver driver_dkong	   = new GameDriver("1981"	,"dkong"	,"dkong.java"	,rom_dkong,null	,machine_driver_dkong	,input_ports_dkong	,null	,ROT90	,	Nintendo of America", "Donkey Kong (US)" )
+	public static GameDriver driver_dkongjp	   = new GameDriver("1981"	,"dkongjp"	,"dkong.java"	,rom_dkongjp,driver_dkong	,machine_driver_dkong	,input_ports_dkong	,null	,ROT90	,	Nintendo", "Donkey Kong (Japan set 1)" )
+	public static GameDriver driver_dkongjo	   = new GameDriver("1981"	,"dkongjo"	,"dkong.java"	,rom_dkongjo,driver_dkong	,machine_driver_dkong	,input_ports_dkong	,null	,ROT90	,	Nintendo", "Donkey Kong (Japan set 2)" )
+	public static GameDriver driver_dkongjo1	   = new GameDriver("1981"	,"dkongjo1"	,"dkong.java"	,rom_dkongjo1,driver_dkong	,machine_driver_dkong	,input_ports_dkong	,null	,ROT90	,	Nintendo", "Donkey Kong (Japan set 3) (bad dump?)" )
 	
-	GAME( 1982, dkongjr,  0,        dkongjr,  dkong,    0,        ROT90, "Nintendo of America", "Donkey Kong Junior (US)" )
-	GAME( 1982, dkongjrj, dkongjr,  dkongjr,  dkong,    0,        ROT90, "Nintendo", "Donkey Kong Jr. (Japan)" )
-	GAME( 1982, dkngjnrj, dkongjr,  dkongjr,  dkong,    0,        ROT90, "Nintendo", "Donkey Kong Junior (Japan?)" )
-	GAME( 1982, dkongjrb, dkongjr,  dkongjr,  dkong,    0,        ROT90, "bootleg", "Donkey Kong Jr. (bootleg)" )
-	GAME( 1982, dkngjnrb, dkongjr,  dkongjr,  dkong,    0,        ROT90, "Nintendo of America", "Donkey Kong Junior (bootleg?)" )
+	public static GameDriver driver_dkongjr	   = new GameDriver("1982"	,"dkongjr"	,"dkong.java"	,rom_dkongjr,null	,machine_driver_dkongjr	,input_ports_dkong	,null	,ROT90	,	Nintendo of America", "Donkey Kong Junior (US)" )
+	public static GameDriver driver_dkongjrj	   = new GameDriver("1982"	,"dkongjrj"	,"dkong.java"	,rom_dkongjrj,driver_dkongjr	,machine_driver_dkongjr	,input_ports_dkong	,null	,ROT90	,	Nintendo", "Donkey Kong Jr. (Japan)" )
+	public static GameDriver driver_dkngjnrj	   = new GameDriver("1982"	,"dkngjnrj"	,"dkong.java"	,rom_dkngjnrj,driver_dkongjr	,machine_driver_dkongjr	,input_ports_dkong	,null	,ROT90	,	Nintendo", "Donkey Kong Junior (Japan?)" )
+	public static GameDriver driver_dkongjrb	   = new GameDriver("1982"	,"dkongjrb"	,"dkong.java"	,rom_dkongjrb,driver_dkongjr	,machine_driver_dkongjr	,input_ports_dkong	,null	,ROT90	,	bootleg", "Donkey Kong Jr. (bootleg)" )
+	public static GameDriver driver_dkngjnrb	   = new GameDriver("1982"	,"dkngjnrb"	,"dkong.java"	,rom_dkngjnrb,driver_dkongjr	,machine_driver_dkongjr	,input_ports_dkong	,null	,ROT90	,	Nintendo of America", "Donkey Kong Junior (bootleg?)" )
 	
-	GAME( 1983, dkong3,   0,        dkong3,   dkong3,   0,        ROT90, "Nintendo of America", "Donkey Kong 3 (US)" )
-	GAME( 1983, dkong3j,  dkong3,   dkong3,   dkong3,   0,        ROT90, "Nintendo", "Donkey Kong 3 (Japan)" )
+	public static GameDriver driver_dkong3	   = new GameDriver("1983"	,"dkong3"	,"dkong.java"	,rom_dkong3,null	,machine_driver_dkong3	,input_ports_dkong3	,null	,ROT90	,	Nintendo of America", "Donkey Kong 3 (US)" )
+	public static GameDriver driver_dkong3j	   = new GameDriver("1983"	,"dkong3j"	,"dkong.java"	,rom_dkong3j,driver_dkong3	,machine_driver_dkong3	,input_ports_dkong3	,null	,ROT90	,	Nintendo", "Donkey Kong 3 (Japan)" )
 	
-	GAME( 1984, herbiedk, huncholy, herbiedk, herbiedk, 0,        ROT90, "Seatongrove Ltd", "Herbie at the Olympics (DK conversion)")
+	public static GameDriver driver_herbiedk	   = new GameDriver("1984"	,"herbiedk"	,"dkong.java"	,rom_herbiedk,driver_huncholy	,machine_driver_herbiedk	,input_ports_herbiedk	,null	,ROT90	,	Seatongrove Ltd", "Herbie at the Olympics (DK conversion)")
 	
-	GAMEX(1983, hunchbkd, hunchbak, hunchbkd, hunchbdk, 0,        ROT90, "Century Electronics", "Hunchback (DK conversion)", GAME_WRONG_COLORS )
-	GAMEX(1984, herocast, 0,        dkong,    dkong,    herocast, ROT90, "Seatongrove Ltd (Crown license)", "herocast", GAME_NOT_WORKING )
+	public static GameDriver driver_hunchbkd	   = new GameDriver("1983"	,"hunchbkd"	,"dkong.java"	,rom_hunchbkd,driver_hunchbak	,machine_driver_hunchbkd	,input_ports_hunchbdk	,null	,ROT90	,	Century Electronics", "Hunchback (DK conversion)", GAME_WRONG_COLORS )
+	public static GameDriver driver_herocast	   = new GameDriver("1984"	,"herocast"	,"dkong.java"	,rom_herocast,null	,machine_driver_dkong	,input_ports_dkong	,init_herocast	,ROT90	,	Seatongrove Ltd (Crown license)", "herocast", GAME_NOT_WORKING )
 }

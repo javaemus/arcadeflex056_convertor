@@ -547,6 +547,6 @@ public class firetrap
 	
 	
 	
-	GAMEX(1986, firetrap, 0,        firetrap, firetrap, 0, ROT90, "Data East USA", "Fire Trap", GAME_UNEMULATED_PROTECTION )
-	GAME( 1986, firetpbl, firetrap, firetrap, firetrap, 0, ROT90, "bootleg", "Fire Trap (Japan bootleg)" )
+	public static GameDriver driver_firetrap	   = new GameDriver("1986"	,"firetrap"	,"firetrap.java"	,rom_firetrap,null	,machine_driver_firetrap	,input_ports_firetrap	,null	,ROT90	,	Data East USA", "Fire Trap", GAME_UNEMULATED_PROTECTION )
+	public static GameDriver driver_firetpbl	   = new GameDriver("1986"	,"firetpbl"	,"firetrap.java"	,rom_firetpbl,driver_firetrap	,machine_driver_firetrap	,input_ports_firetrap	,null	,ROT90	,	bootleg", "Fire Trap (Japan bootleg)" )
 }

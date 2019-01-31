@@ -498,7 +498,7 @@ public class mexico86
 	
 	
 	
-	GAMEX(1986, kikikai,  0,        kikikai,  kikikai,  0, ROT90, "Taito Corporation", "KiKi KaiKai", GAME_NOT_WORKING )
-	GAME( 1986, kicknrun, 0,        mexico86, mexico86, 0, ROT0, "Taito Corporation", "Kick and Run" )
-	GAME( 1986, mexico86, kicknrun, mexico86, mexico86, 0, ROT0, "bootleg", "Mexico 86" )
+	public static GameDriver driver_kikikai	   = new GameDriver("1986"	,"kikikai"	,"mexico86.java"	,rom_kikikai,null	,machine_driver_kikikai	,input_ports_kikikai	,null	,ROT90	,	Taito Corporation", "KiKi KaiKai", GAME_NOT_WORKING )
+	public static GameDriver driver_kicknrun	   = new GameDriver("1986"	,"kicknrun"	,"mexico86.java"	,rom_kicknrun,null	,machine_driver_mexico86	,input_ports_mexico86	,null	,ROT0	,	Taito Corporation", "Kick and Run" )
+	public static GameDriver driver_mexico86	   = new GameDriver("1986"	,"mexico86"	,"mexico86.java"	,rom_mexico86,driver_kicknrun	,machine_driver_mexico86	,input_ports_mexico86	,null	,ROT0	,	bootleg", "Mexico 86" )
 }

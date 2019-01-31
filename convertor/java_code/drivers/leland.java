@@ -3659,37 +3659,37 @@ public class leland
 	 *************************************/
 	
 	/* small master banks, small slave banks */
-	GAME( 1985, cerberus, 0,       leland,  cerberus, cerberus, ROT0,   "Cinematronics", "Cerberus" )
-	GAME( 1985, mayhem,   0,       leland,  mayhem,   mayhem,   ROT0,   "Cinematronics", "Mayhem 2002" )
-	GAME( 1985, powrplay, 0,       leland,  mayhem,   powrplay, ROT0,   "Cinematronics", "Power Play" )
-	GAME( 1985, wseries,  0,       leland,  wseries,  wseries,  ROT0,   "Cinematronics", "World Series: The Season" )
-	GAME( 1986, alleymas, 0,       leland,  alleymas, alleymas, ROT270, "Cinematronics", "Alley Master" )
+	public static GameDriver driver_cerberus	   = new GameDriver("1985"	,"cerberus"	,"leland.java"	,rom_cerberus,null	,machine_driver_leland	,input_ports_cerberus	,init_cerberus	,ROT0	,	Cinematronics", "Cerberus" )
+	public static GameDriver driver_mayhem	   = new GameDriver("1985"	,"mayhem"	,"leland.java"	,rom_mayhem,null	,machine_driver_leland	,input_ports_mayhem	,init_mayhem	,ROT0	,	Cinematronics", "Mayhem 2002" )
+	public static GameDriver driver_powrplay	   = new GameDriver("1985"	,"powrplay"	,"leland.java"	,rom_powrplay,null	,machine_driver_leland	,input_ports_mayhem	,init_powrplay	,ROT0	,	Cinematronics", "Power Play" )
+	public static GameDriver driver_wseries	   = new GameDriver("1985"	,"wseries"	,"leland.java"	,rom_wseries,null	,machine_driver_leland	,input_ports_wseries	,init_wseries	,ROT0	,	Cinematronics", "World Series: The Season" )
+	public static GameDriver driver_alleymas	   = new GameDriver("1986"	,"alleymas"	,"leland.java"	,rom_alleymas,null	,machine_driver_leland	,input_ports_alleymas	,init_alleymas	,ROT270	,	Cinematronics", "Alley Master" )
 	
 	/* odd master banks, small slave banks */
-	GAME( 1986, dangerz,  0,       leland,  dangerz,  dangerz,  ROT0,   "Cinematronics", "Danger Zone" )
+	public static GameDriver driver_dangerz	   = new GameDriver("1986"	,"dangerz"	,"leland.java"	,rom_dangerz,null	,machine_driver_leland	,input_ports_dangerz	,init_dangerz	,ROT0	,	Cinematronics", "Danger Zone" )
 	
 	/* small master banks + extra top board, small slave banks */
-	GAME( 1987, basebal2, 0,       leland,  basebal2, basebal2, ROT0,   "Cinematronics", "Baseball The Season II" )
-	GAME( 1987, dblplay,  0,       leland,  basebal2, dblplay,  ROT0,   "Leland Corp. / Tradewest", "Super Baseball Double Play Home Run Derby" )
-	GAME( 1988, strkzone, 0,       leland,  basebal2, strkzone, ROT0,   "Leland Corp.", "Strike Zone" )
+	public static GameDriver driver_basebal2	   = new GameDriver("1987"	,"basebal2"	,"leland.java"	,rom_basebal2,null	,machine_driver_leland	,input_ports_basebal2	,init_basebal2	,ROT0	,	Cinematronics", "Baseball The Season II" )
+	public static GameDriver driver_dblplay	   = new GameDriver("1987"	,"dblplay"	,"leland.java"	,rom_dblplay,null	,machine_driver_leland	,input_ports_basebal2	,init_dblplay	,ROT0	,	Leland Corp. / Tradewest", "Super Baseball Double Play Home Run Derby" )
+	public static GameDriver driver_strkzone	   = new GameDriver("1988"	,"strkzone"	,"leland.java"	,rom_strkzone,null	,machine_driver_leland	,input_ports_basebal2	,init_strkzone	,ROT0	,	Leland Corp.", "Strike Zone" )
 	
 	/* large master banks, small slave banks, I86 sound */
-	GAME( 1987, redlin2p, 0,       redline, redline,  redlin2p, ROT270, "Cinematronics (Tradewest license)", "Redline Racer (2 players)" )
-	GAME( 1987, quarterb, 0,       quarterb,quarterb, quarterb, ROT270, "Leland Corp.", "Quarterback" )
-	GAME( 1987, quartrba, quarterb,quarterb,quarterb, quarterb, ROT270, "Leland Corp.", "Quarterback (set 2)" )
+	public static GameDriver driver_redlin2p	   = new GameDriver("1987"	,"redlin2p"	,"leland.java"	,rom_redlin2p,null	,machine_driver_redline	,input_ports_redline	,init_redlin2p	,ROT270	,	Cinematronics (Tradewest license)", "Redline Racer (2 players)" )
+	public static GameDriver driver_quarterb	   = new GameDriver("1987"	,"quarterb"	,"leland.java"	,rom_quarterb,null	,machine_driver_quarterb	,input_ports_quarterb	,init_quarterb	,ROT270	,	Leland Corp.", "Quarterback" )
+	public static GameDriver driver_quartrba	   = new GameDriver("1987"	,"quartrba"	,"leland.java"	,rom_quartrba,driver_quarterb	,machine_driver_quarterb	,input_ports_quarterb	,init_quarterb	,ROT270	,	Leland Corp.", "Quarterback (set 2)" )
 	
 	/* large master banks, large slave banks, I86 sound */
-	GAME( 1988, viper,    0,       lelandi, dangerz,  viper,    ROT0,   "Leland Corp.", "Viper" )
-	GAME( 1988, teamqb,   0,       lelandi, teamqb,   teamqb,   ROT270, "Leland Corp.", "John Elway's Team Quarterback" )
-	GAME( 1988, teamqb2,  teamqb,  lelandi, teamqb,   teamqb,   ROT270, "Leland Corp.", "John Elway's Team Quarterback (set 2)" )
-	GAME( 1989, aafb,     0,       lelandi, teamqb,   aafb,     ROT270, "Leland Corp.", "All American Football (rev E)" )
-	GAME( 1989, aafbd2p,  aafb,    lelandi, aafb2p,   aafbd2p,  ROT270, "Leland Corp.", "All American Football (rev D, 2 Players)" )
-	GAME( 1989, aafbc,    aafb,    lelandi, teamqb,   aafbb,    ROT270, "Leland Corp.", "All American Football (rev C)" )
-	GAME( 1989, aafbb,    aafb,    lelandi, teamqb,   aafbb,    ROT270, "Leland Corp.", "All American Football (rev B)" )
+	public static GameDriver driver_viper	   = new GameDriver("1988"	,"viper"	,"leland.java"	,rom_viper,null	,machine_driver_lelandi	,input_ports_dangerz	,init_viper	,ROT0	,	Leland Corp.", "Viper" )
+	public static GameDriver driver_teamqb	   = new GameDriver("1988"	,"teamqb"	,"leland.java"	,rom_teamqb,null	,machine_driver_lelandi	,input_ports_teamqb	,init_teamqb	,ROT270	,	Leland Corp.", "John Elway's Team Quarterback" )
+	public static GameDriver driver_teamqb2	   = new GameDriver("1988"	,"teamqb2"	,"leland.java"	,rom_teamqb2,driver_teamqb	,machine_driver_lelandi	,input_ports_teamqb	,init_teamqb	,ROT270	,	Leland Corp.", "John Elway's Team Quarterback (set 2)" )
+	public static GameDriver driver_aafb	   = new GameDriver("1989"	,"aafb"	,"leland.java"	,rom_aafb,null	,machine_driver_lelandi	,input_ports_teamqb	,init_aafb	,ROT270	,	Leland Corp.", "All American Football (rev E)" )
+	public static GameDriver driver_aafbd2p	   = new GameDriver("1989"	,"aafbd2p"	,"leland.java"	,rom_aafbd2p,driver_aafb	,machine_driver_lelandi	,input_ports_aafb2p	,init_aafbd2p	,ROT270	,	Leland Corp.", "All American Football (rev D, 2 Players)" )
+	public static GameDriver driver_aafbc	   = new GameDriver("1989"	,"aafbc"	,"leland.java"	,rom_aafbc,driver_aafb	,machine_driver_lelandi	,input_ports_teamqb	,init_aafbb	,ROT270	,	Leland Corp.", "All American Football (rev C)" )
+	public static GameDriver driver_aafbb	   = new GameDriver("1989"	,"aafbb"	,"leland.java"	,rom_aafbb,driver_aafb	,machine_driver_lelandi	,input_ports_teamqb	,init_aafbb	,ROT270	,	Leland Corp.", "All American Football (rev B)" )
 	
 	/* huge master banks, large slave banks, I86 sound */
-	GAME( 1989, offroad,  0,       lelandi, offroad,  offroad,  ROT0,   "Leland Corp.", "Ironman Stewart's Super Off-Road" )
-	GAME( 1989, offroadt, 0,       lelandi, offroad,  offroadt, ROT0,   "Leland Corp.", "Ironman Stewart's Super Off-Road Track Pack" )
-	GAME( 1990, pigout,   0,       lelandi, pigout,   pigout,   ROT0,   "Leland Corp.", "Pigout" )
-	GAME( 1990, pigouta,  pigout,  lelandi, pigout,   pigout,   ROT0,   "Leland Corp.", "Pigout (alternate)" )
+	public static GameDriver driver_offroad	   = new GameDriver("1989"	,"offroad"	,"leland.java"	,rom_offroad,null	,machine_driver_lelandi	,input_ports_offroad	,init_offroad	,ROT0	,	Leland Corp.", "Ironman Stewart's Super Off-Road" )
+	public static GameDriver driver_offroadt	   = new GameDriver("1989"	,"offroadt"	,"leland.java"	,rom_offroadt,null	,machine_driver_lelandi	,input_ports_offroad	,init_offroadt	,ROT0	,	Leland Corp.", "Ironman Stewart's Super Off-Road Track Pack" )
+	public static GameDriver driver_pigout	   = new GameDriver("1990"	,"pigout"	,"leland.java"	,rom_pigout,null	,machine_driver_lelandi	,input_ports_pigout	,init_pigout	,ROT0	,	Leland Corp.", "Pigout" )
+	public static GameDriver driver_pigouta	   = new GameDriver("1990"	,"pigouta"	,"leland.java"	,rom_pigouta,driver_pigout	,machine_driver_lelandi	,input_ports_pigout	,init_pigout	,ROT0	,	Leland Corp.", "Pigout (alternate)" )
 }

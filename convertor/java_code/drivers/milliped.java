@@ -385,6 +385,6 @@ public class milliped
 	
 	
 	
-	GAME( 1982, milliped, 0, milliped, milliped, 0, ROT270, "Atari", "Millipede" )
+	public static GameDriver driver_milliped	   = new GameDriver("1982"	,"milliped"	,"milliped.java"	,rom_milliped,null	,machine_driver_milliped	,input_ports_milliped	,null	,ROT270	,	Atari", "Millipede" )
 	
 }

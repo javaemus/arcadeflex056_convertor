@@ -1150,12 +1150,12 @@ public class asuka
 	}
 	
 	
-	GAME( 1988, bonzeadv, 0,        bonzeadv, bonzeadv, asuka, ROT0,   "Taito Corporation Japan", "Bonze Adventure (World)" )
-	GAME( 1988, bonzeadu, bonzeadv, bonzeadv, jigkmgri, asuka, ROT0,   "Taito America Corporation", "Bonze Adventure (US)" )
-	GAME( 1988, jigkmgri, bonzeadv, bonzeadv, jigkmgri, asuka, ROT0,   "Taito Corporation", "Jigoku Meguri (Japan)" )
-	GAME( 1988, asuka,    0,        asuka,    asuka,    asuka, ROT270, "Taito Corporation", "Asuka & Asuka (Japan)" )
-	GAME( 1989, mofflott, 0,        galmedes, mofflott, asuka, ROT270, "Taito Corporation", "Maze of Flott (Japan)" )
-	GAME( 1992, galmedes, 0,        galmedes, galmedes, asuka, ROT270, "Visco", "Galmedes (Japan)" )
-	GAME( 1993, earthjkr, 0,        galmedes, earthjkr, asuka, ROT270, "Visco", "U.N. Defense Force: Earth Joker (Japan)" )
-	GAME( 1994, eto,      0,        eto,      eto,      asuka, ROT0,   "Visco", "Kokontouzai Eto Monogatari (Japan)" )
+	public static GameDriver driver_bonzeadv	   = new GameDriver("1988"	,"bonzeadv"	,"asuka.java"	,rom_bonzeadv,null	,machine_driver_bonzeadv	,input_ports_bonzeadv	,init_asuka	,ROT0	,	Taito Corporation Japan", "Bonze Adventure (World)" )
+	public static GameDriver driver_bonzeadu	   = new GameDriver("1988"	,"bonzeadu"	,"asuka.java"	,rom_bonzeadu,driver_bonzeadv	,machine_driver_bonzeadv	,input_ports_jigkmgri	,init_asuka	,ROT0	,	Taito America Corporation", "Bonze Adventure (US)" )
+	public static GameDriver driver_jigkmgri	   = new GameDriver("1988"	,"jigkmgri"	,"asuka.java"	,rom_jigkmgri,driver_bonzeadv	,machine_driver_bonzeadv	,input_ports_jigkmgri	,init_asuka	,ROT0	,	Taito Corporation", "Jigoku Meguri (Japan)" )
+	public static GameDriver driver_asuka	   = new GameDriver("1988"	,"asuka"	,"asuka.java"	,rom_asuka,null	,machine_driver_asuka	,input_ports_asuka	,init_asuka	,ROT270	,	Taito Corporation", "Asuka & Asuka (Japan)" )
+	public static GameDriver driver_mofflott	   = new GameDriver("1989"	,"mofflott"	,"asuka.java"	,rom_mofflott,null	,machine_driver_galmedes	,input_ports_mofflott	,init_asuka	,ROT270	,	Taito Corporation", "Maze of Flott (Japan)" )
+	public static GameDriver driver_galmedes	   = new GameDriver("1992"	,"galmedes"	,"asuka.java"	,rom_galmedes,null	,machine_driver_galmedes	,input_ports_galmedes	,init_asuka	,ROT270	,	Visco", "Galmedes (Japan)" )
+	public static GameDriver driver_earthjkr	   = new GameDriver("1993"	,"earthjkr"	,"asuka.java"	,rom_earthjkr,null	,machine_driver_galmedes	,input_ports_earthjkr	,init_asuka	,ROT270	,	Visco", "U.N. Defense Force: Earth Joker (Japan)" )
+	public static GameDriver driver_eto	   = new GameDriver("1994"	,"eto"	,"asuka.java"	,rom_eto,null	,machine_driver_eto	,input_ports_eto	,init_asuka	,ROT0	,	Visco", "Kokontouzai Eto Monogatari (Japan)" )
 }

@@ -324,6 +324,6 @@ public class shaolins
 	
 	
 	
-	GAME( 1985, kicker,   0,      shaolins, shaolins, 0, ROT90, "Konami", "Kicker" )
-	GAME( 1985, shaolins, kicker, shaolins, shaolins, 0, ROT90, "Konami", "Shao-Lin's Road" )
+	public static GameDriver driver_kicker	   = new GameDriver("1985"	,"kicker"	,"shaolins.java"	,rom_kicker,null	,machine_driver_shaolins	,input_ports_shaolins	,null	,ROT90	,	Konami", "Kicker" )
+	public static GameDriver driver_shaolins	   = new GameDriver("1985"	,"shaolins"	,"shaolins.java"	,rom_shaolins,driver_kicker	,machine_driver_shaolins	,input_ports_shaolins	,null	,ROT90	,	Konami", "Shao-Lin's Road" )
 }

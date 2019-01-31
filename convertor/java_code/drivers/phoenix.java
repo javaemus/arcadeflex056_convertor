@@ -866,13 +866,13 @@ public class phoenix
 	
 	
 	
-	GAME ( 1980, phoenix,  0,       phoenix,  phoenix,  0,        ROT90, "Amstar", "Phoenix (Amstar)" )
-	GAME ( 1980, phoenixa, phoenix, phoenix,  phoenixa, 0,        ROT90, "Amstar (Centuri license)", "Phoenix (Centuri)" )
-	GAME ( 1980, phoenixt, phoenix, phoenix,  phoenixt, 0,        ROT90, "Taito", "Phoenix (Taito)" )
-	GAME ( 1980, phoenix3, phoenix, phoenix,  phoenix3, 0,        ROT90, "bootleg", "Phoenix (T.P.N.)" )
-	GAME ( 1981, phoenixc, phoenix, phoenix,  phoenixt, 0,        ROT90, "bootleg?", "Phoenix (IRECSA, G.G.I Corp)" )
-	GAMEX( 1981, pleiads,  0,       pleiads,  pleiads,  0,        ROT90, "Tehkan", "Pleiads (Tehkan)", GAME_IMPERFECT_COLORS )
-	GAMEX( 1981, pleiadbl, pleiads, pleiads,  pleiads,  0,        ROT90, "bootleg", "Pleiads (bootleg)", GAME_IMPERFECT_COLORS )
-	GAMEX( 1981, pleiadce, pleiads, pleiads,  pleiadce, 0,        ROT90, "Tehkan (Centuri license)", "Pleiads (Centuri)", GAME_IMPERFECT_COLORS )
-	GAMEX( 1982, survival, 0,       survival, survival, survival, ROT90, "Rock-ola", "Survival", GAME_UNEMULATED_PROTECTION )
+	public static GameDriver driver_phoenix	   = new GameDriver("1980"	,"phoenix"	,"phoenix.java"	,rom_phoenix,null	,machine_driver_phoenix	,input_ports_phoenix	,null	,ROT90	,	Amstar", "Phoenix (Amstar)" )
+	public static GameDriver driver_phoenixa	   = new GameDriver("1980"	,"phoenixa"	,"phoenix.java"	,rom_phoenixa,driver_phoenix	,machine_driver_phoenix	,input_ports_phoenixa	,null	,ROT90	,	Amstar (Centuri license)", "Phoenix (Centuri)" )
+	public static GameDriver driver_phoenixt	   = new GameDriver("1980"	,"phoenixt"	,"phoenix.java"	,rom_phoenixt,driver_phoenix	,machine_driver_phoenix	,input_ports_phoenixt	,null	,ROT90	,	Taito", "Phoenix (Taito)" )
+	public static GameDriver driver_phoenix3	   = new GameDriver("1980"	,"phoenix3"	,"phoenix.java"	,rom_phoenix3,driver_phoenix	,machine_driver_phoenix	,input_ports_phoenix3	,null	,ROT90	,	bootleg", "Phoenix (T.P.N.)" )
+	public static GameDriver driver_phoenixc	   = new GameDriver("1981"	,"phoenixc"	,"phoenix.java"	,rom_phoenixc,driver_phoenix	,machine_driver_phoenix	,input_ports_phoenixt	,null	,ROT90	,	bootleg?", "Phoenix (IRECSA, G.G.I Corp)" )
+	public static GameDriver driver_pleiads	   = new GameDriver("1981"	,"pleiads"	,"phoenix.java"	,rom_pleiads,null	,machine_driver_pleiads	,input_ports_pleiads	,null	,ROT90	,	Tehkan", "Pleiads (Tehkan)", GAME_IMPERFECT_COLORS )
+	public static GameDriver driver_pleiadbl	   = new GameDriver("1981"	,"pleiadbl"	,"phoenix.java"	,rom_pleiadbl,driver_pleiads	,machine_driver_pleiads	,input_ports_pleiads	,null	,ROT90	,	bootleg", "Pleiads (bootleg)", GAME_IMPERFECT_COLORS )
+	public static GameDriver driver_pleiadce	   = new GameDriver("1981"	,"pleiadce"	,"phoenix.java"	,rom_pleiadce,driver_pleiads	,machine_driver_pleiads	,input_ports_pleiadce	,null	,ROT90	,	Tehkan (Centuri license)", "Pleiads (Centuri)", GAME_IMPERFECT_COLORS )
+	public static GameDriver driver_survival	   = new GameDriver("1982"	,"survival"	,"phoenix.java"	,rom_survival,null	,machine_driver_survival	,input_ports_survival	,init_survival	,ROT90	,	Rock-ola", "Survival", GAME_UNEMULATED_PROTECTION )
 }

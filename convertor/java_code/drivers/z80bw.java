@@ -396,7 +396,7 @@ public class z80bw
 	
 	
 	
-	GAME( 1980, astinvad, 0,        astinvad, astinvad, astinvad, ROT270, "Stern", "Astro Invader" )
-	GAME( 1979, kamikaze, astinvad, astinvad, kamikaze, astinvad, ROT270, "Leijac Corporation", "Kamikaze" )
-	GAMEX(1980, spaceint, 0,        spaceint, spaceint, spaceint, ROT0,   "Shoei", "Space Intruder", GAME_WRONG_COLORS | GAME_NO_SOUND | GAME_NO_COCKTAIL )
+	public static GameDriver driver_astinvad	   = new GameDriver("1980"	,"astinvad"	,"z80bw.java"	,rom_astinvad,null	,machine_driver_astinvad	,input_ports_astinvad	,init_astinvad	,ROT270	,	Stern", "Astro Invader" )
+	public static GameDriver driver_kamikaze	   = new GameDriver("1979"	,"kamikaze"	,"z80bw.java"	,rom_kamikaze,driver_astinvad	,machine_driver_astinvad	,input_ports_kamikaze	,init_astinvad	,ROT270	,	Leijac Corporation", "Kamikaze" )
+	public static GameDriver driver_spaceint	   = new GameDriver("1980"	,"spaceint"	,"z80bw.java"	,rom_spaceint,null	,machine_driver_spaceint	,input_ports_spaceint	,init_spaceint	,ROT0	,	Shoei", "Space Intruder", GAME_WRONG_COLORS | GAME_NO_SOUND | GAME_NO_COCKTAIL )
 }

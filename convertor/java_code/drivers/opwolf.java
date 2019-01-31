@@ -699,6 +699,6 @@ public class opwolf
 	
 	
 	/*    year  rom       parent    machine   inp       init */
-	GAME( 1987, opwolf,   0,        opwolf,   opwolf,   opwolf,   ROT0, "Taito America Corp", "Operation Wolf (US)" )
-	GAME( 1987, opwolfb,  opwolf,   opwolfb,  opwolf,   opwolfb,  ROT0, "bootleg", "Operation Bear" )
+	public static GameDriver driver_opwolf	   = new GameDriver("1987"	,"opwolf"	,"opwolf.java"	,rom_opwolf,null	,machine_driver_opwolf	,input_ports_opwolf	,init_opwolf	,ROT0	,	Taito America Corp", "Operation Wolf (US)" )
+	public static GameDriver driver_opwolfb	   = new GameDriver("1987"	,"opwolfb"	,"opwolf.java"	,rom_opwolfb,driver_opwolf	,machine_driver_opwolfb	,input_ports_opwolf	,init_opwolfb	,ROT0	,	bootleg", "Operation Bear" )
 }

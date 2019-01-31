@@ -302,6 +302,6 @@ public class cloud9
 	
 	
 	
-	GAMEX( 1983, cloud9, 0, cloud9, cloud9, 0, ROT0, "Atari", "Cloud 9 (prototype)", GAME_NO_COCKTAIL )
+	public static GameDriver driver_cloud9	   = new GameDriver("1983"	,"cloud9"	,"cloud9.java"	,rom_cloud9,null	,machine_driver_cloud9	,input_ports_cloud9	,null	,ROT0	,	Atari", "Cloud 9 (prototype)", GAME_NO_COCKTAIL )
 	
 }

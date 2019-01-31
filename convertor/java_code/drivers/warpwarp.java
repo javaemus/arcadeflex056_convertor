@@ -464,10 +464,10 @@ public class warpwarp
 	
 	
 	
-	GAMEX( 1979, bombbee,  0,		 bombbee,  bombbee,  0, ROT90, "Namco", "Bomb Bee", GAME_NO_COCKTAIL )
-	GAMEX( 1979, cutieq,   0,		 bombbee,  cutieq,	 0, ROT90, "Namco", "Cutie Q", GAME_NO_COCKTAIL )
-	GAMEX( 1981, warpwarp, 0,		 warpwarp, warpwarp, 0, ROT90, "Namco", "Warp & Warp", GAME_NO_COCKTAIL )
-	GAMEX( 1981, warpwarr, warpwarp, warpwarp, warpwarr, 0, ROT90, "[Namco] (Rock-ola license)", "Warp Warp (Rock-ola set 1)", GAME_NO_COCKTAIL )
-	GAMEX( 1981, warpwar2, warpwarp, warpwarp, warpwarr, 0, ROT90, "[Namco] (Rock-ola license)", "Warp Warp (Rock-ola set 2)", GAME_NO_COCKTAIL )
+	public static GameDriver driver_bombbee	   = new GameDriver("1979"	,"bombbee"	,"warpwarp.java"	,rom_bombbee,null	,machine_driver_bombbee	,input_ports_bombbee	,null	,ROT90	,	Namco", "Bomb Bee", GAME_NO_COCKTAIL )
+	public static GameDriver driver_cutieq	   = new GameDriver("1979"	,"cutieq"	,"warpwarp.java"	,rom_cutieq,null	,machine_driver_bombbee	,input_ports_cutieq	,null	,ROT90	,	Namco", "Cutie Q", GAME_NO_COCKTAIL )
+	public static GameDriver driver_warpwarp	   = new GameDriver("1981"	,"warpwarp"	,"warpwarp.java"	,rom_warpwarp,null	,machine_driver_warpwarp	,input_ports_warpwarp	,null	,ROT90	,	Namco", "Warp & Warp", GAME_NO_COCKTAIL )
+	public static GameDriver driver_warpwarr	   = new GameDriver("1981"	,"warpwarr"	,"warpwarp.java"	,rom_warpwarr,driver_warpwarp	,machine_driver_warpwarp	,input_ports_warpwarr	,null	,ROT90	,	[Namco] (Rock-ola license)", "Warp Warp (Rock-ola set 1)", GAME_NO_COCKTAIL )
+	public static GameDriver driver_warpwar2	   = new GameDriver("1981"	,"warpwar2"	,"warpwarp.java"	,rom_warpwar2,driver_warpwarp	,machine_driver_warpwarp	,input_ports_warpwarr	,null	,ROT90	,	[Namco] (Rock-ola license)", "Warp Warp (Rock-ola set 2)", GAME_NO_COCKTAIL )
 	
 }

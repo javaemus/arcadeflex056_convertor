@@ -612,10 +612,10 @@ public class locomotn
 	
 	
 	
-	GAME( 1982, locomotn, 0,        locomotn, locomotn, 0, ROT90, "Konami (Centuri license)", "Loco-Motion" )
-	GAME( 1982, gutangtn, locomotn, locomotn, locomotn, 0, ROT90, "Konami (Sega license)", "Guttang Gottong" )
-	GAME( 1982, cottong,  locomotn, locomotn, locomotn, 0, ROT90, "bootleg", "Cotocoto Cottong" )
-	GAME( 1981, jungler,  0,        jungler,  jungler,  0, ROT90, "Konami", "Jungler" )
-	GAME( 1981, junglers, jungler,  jungler,  jungler,  0, ROT90, "[Konami] (Stern license)", "Jungler (Stern)" )
-	GAME( 1983, commsega, 0,        commsega, commsega, 0, ROT90, "Sega", "Commando (Sega)" )
+	public static GameDriver driver_locomotn	   = new GameDriver("1982"	,"locomotn"	,"locomotn.java"	,rom_locomotn,null	,machine_driver_locomotn	,input_ports_locomotn	,null	,ROT90	,	Konami (Centuri license)", "Loco-Motion" )
+	public static GameDriver driver_gutangtn	   = new GameDriver("1982"	,"gutangtn"	,"locomotn.java"	,rom_gutangtn,driver_locomotn	,machine_driver_locomotn	,input_ports_locomotn	,null	,ROT90	,	Konami (Sega license)", "Guttang Gottong" )
+	public static GameDriver driver_cottong	   = new GameDriver("1982"	,"cottong"	,"locomotn.java"	,rom_cottong,driver_locomotn	,machine_driver_locomotn	,input_ports_locomotn	,null	,ROT90	,	bootleg", "Cotocoto Cottong" )
+	public static GameDriver driver_jungler	   = new GameDriver("1981"	,"jungler"	,"locomotn.java"	,rom_jungler,null	,machine_driver_jungler	,input_ports_jungler	,null	,ROT90	,	Konami", "Jungler" )
+	public static GameDriver driver_junglers	   = new GameDriver("1981"	,"junglers"	,"locomotn.java"	,rom_junglers,driver_jungler	,machine_driver_jungler	,input_ports_jungler	,null	,ROT90	,	[Konami] (Stern license)", "Jungler (Stern)" )
+	public static GameDriver driver_commsega	   = new GameDriver("1983"	,"commsega"	,"locomotn.java"	,rom_commsega,null	,machine_driver_commsega	,input_ports_commsega	,null	,ROT90	,	Sega", "Commando (Sega)" )
 }

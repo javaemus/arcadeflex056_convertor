@@ -486,7 +486,7 @@ public class sidepckt
 	
 	
 	
-	GAME( 1986, sidepckt, 0,        sidepckt, sidepckt, 0, ROT0, "Data East Corporation", "Side Pocket (World)" )
-	GAME( 1986, sidepctj, sidepckt, sidepctj, sidepckt, 0, ROT0, "Data East Corporation", "Side Pocket (Japan)" )
-	GAME( 1986, sidepctb, sidepckt, sidepckt, sidepckt, 0, ROT0, "bootleg", "Side Pocket (bootleg)" )
+	public static GameDriver driver_sidepckt	   = new GameDriver("1986"	,"sidepckt"	,"sidepckt.java"	,rom_sidepckt,null	,machine_driver_sidepckt	,input_ports_sidepckt	,null	,ROT0	,	Data East Corporation", "Side Pocket (World)" )
+	public static GameDriver driver_sidepctj	   = new GameDriver("1986"	,"sidepctj"	,"sidepckt.java"	,rom_sidepctj,driver_sidepckt	,machine_driver_sidepctj	,input_ports_sidepckt	,null	,ROT0	,	Data East Corporation", "Side Pocket (Japan)" )
+	public static GameDriver driver_sidepctb	   = new GameDriver("1986"	,"sidepctb"	,"sidepckt.java"	,rom_sidepctb,driver_sidepckt	,machine_driver_sidepckt	,input_ports_sidepckt	,null	,ROT0	,	bootleg", "Side Pocket (bootleg)" )
 }

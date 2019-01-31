@@ -39,6 +39,7 @@ public class convertMame {
     static final int GFXLAYOUT = 11;
     static final int GFXDECODE = 12;
     static final int ROMDEF = 13;
+    static final int GAMEDRIVER = 14;
 
     public static void Convert() {
         Convertor.inpos = 0;//position of pointer inside the buffers
@@ -631,6 +632,72 @@ public class convertMame {
                             Convertor.inpos += 1;
                         }
                         type2 = -1;
+                        continue;
+                    }
+                }
+                break;
+                case 'G': {
+                    i = Convertor.inpos;
+                    if (sUtil.getToken("GAME") || sUtil.getToken("GAMEX")) {
+                        sUtil.skipSpace();
+                        if (sUtil.getChar() != '(') {
+                            Convertor.inpos = i;
+                            break;
+                        } else {
+                            Convertor.inpos += 1;
+                        }
+                        if (sUtil.getChar() == ')')//fix an issue in driverH
+                        {
+                            Convertor.inpos = i;
+                            break;
+                        }
+                        type = GAMEDRIVER;
+                        sUtil.skipSpace();
+                        Convertor.token[0] = sUtil.parseTokenGameDriv();//year
+                        Convertor.inpos++;
+                        sUtil.skipSpace();
+                        Convertor.token[1] = sUtil.parseToken();//rom
+                        Convertor.inpos++;
+                        sUtil.skipSpace();
+                        Convertor.token[2] = sUtil.parseToken();//parent
+                        if (Convertor.token[2].matches("0")) {
+                            Convertor.token[2] = "null";
+                        } else {
+                            Convertor.token[2] = "driver_" + Convertor.token[2];
+                        }
+                        Convertor.inpos++;
+                        sUtil.skipSpace();
+                        Convertor.token[3] = sUtil.parseToken();//machine
+                        Convertor.inpos++;
+                        sUtil.skipSpace();
+                        Convertor.token[4] = sUtil.parseToken();//input
+                        Convertor.inpos++;
+                        sUtil.skipSpace();
+                        Convertor.token[5] = sUtil.parseToken();//init
+                        if (Convertor.token[5].matches("0")) {
+                            Convertor.token[5] = "null";
+                        } else {
+                            Convertor.token[5] = "init_" + Convertor.token[5];
+                        }
+                        Convertor.inpos++;
+                        sUtil.skipSpace();
+                        Convertor.token[6] = sUtil.parseToken();//ROT
+                        Convertor.inpos++;
+                        sUtil.skipSpace();
+                        Convertor.token[7] = sUtil.parseToken();
+                        Convertor.inpos++;
+                        sUtil.skipSpace();
+                        Convertor.token[8] = sUtil.parseToken();//name
+
+                        sUtil.putString((new StringBuilder()).append("public static GameDriver driver_").append(Convertor.token[1]).append("\t   = new GameDriver(\"").append(Convertor.token[0]).append("\"\t,\"").append(Convertor.token[1]).append("\"\t,\"").append(Convertor.className).append(".java\"\t,rom_")
+                                .append(Convertor.token[1]).append(",").append(Convertor.token[2])
+                                .append("\t,machine_driver_").append(Convertor.token[3])
+                                .append("\t,input_ports_").append(Convertor.token[4])
+                                .append("\t,").append(Convertor.token[5])
+                                .append("\t,").append(Convertor.token[6])
+                                .append("\t,").append(Convertor.token[7])
+                                .append("\t").append(Convertor.token[8])
+                                .toString());
                         continue;
                     }
                 }

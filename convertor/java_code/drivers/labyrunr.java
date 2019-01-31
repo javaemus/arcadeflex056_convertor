@@ -319,6 +319,6 @@ public class labyrunr
 	
 	
 	
-	GAMEX( 1987, tricktrp, 0,        labyrunr, labyrunr, 0, ROT90, "Konami", "Trick Trap (World?)", GAME_NOT_WORKING )
-	GAMEX( 1987, labyrunr, tricktrp, labyrunr, labyrunr, 0, ROT90, "Konami", "Labyrinth Runner (Japan)", GAME_NOT_WORKING )
+	public static GameDriver driver_tricktrp	   = new GameDriver("1987"	,"tricktrp"	,"labyrunr.java"	,rom_tricktrp,null	,machine_driver_labyrunr	,input_ports_labyrunr	,null	,ROT90	,	Konami", "Trick Trap (World?)", GAME_NOT_WORKING )
+	public static GameDriver driver_labyrunr	   = new GameDriver("1987"	,"labyrunr"	,"labyrunr.java"	,rom_labyrunr,driver_tricktrp	,machine_driver_labyrunr	,input_ports_labyrunr	,null	,ROT90	,	Konami", "Labyrinth Runner (Japan)", GAME_NOT_WORKING )
 }

@@ -483,7 +483,7 @@ public class vaportra
 	
 	/******************************************************************************/
 	
-	GAME( 1989, vaportra, 0,        vaportra, vaportra, vaportra, ROT270, "Data East Corporation", "Vapor Trail - Hyper Offence Formation (World revision 1)" )
-	GAME( 1989, vaportru, vaportra, vaportra, vaportra, vaportra, ROT270, "Data East USA", "Vapor Trail - Hyper Offence Formation (US)" )
-	GAME( 1989, kuhga,    vaportra, vaportra, vaportra, vaportra, ROT270, "Data East Corporation", "Kuhga - Operation Code 'Vapor Trail' (Japan revision 3)" )
+	public static GameDriver driver_vaportra	   = new GameDriver("1989"	,"vaportra"	,"vaportra.java"	,rom_vaportra,null	,machine_driver_vaportra	,input_ports_vaportra	,init_vaportra	,ROT270	,	Data East Corporation", "Vapor Trail - Hyper Offence Formation (World revision 1)" )
+	public static GameDriver driver_vaportru	   = new GameDriver("1989"	,"vaportru"	,"vaportra.java"	,rom_vaportru,driver_vaportra	,machine_driver_vaportra	,input_ports_vaportra	,init_vaportra	,ROT270	,	Data East USA", "Vapor Trail - Hyper Offence Formation (US)" )
+	public static GameDriver driver_kuhga	   = new GameDriver("1989"	,"kuhga"	,"vaportra.java"	,rom_kuhga,driver_vaportra	,machine_driver_vaportra	,input_ports_vaportra	,init_vaportra	,ROT270	,	Data East Corporation", "Kuhga - Operation Code 'Vapor Trail' (Japan revision 3)" )
 }

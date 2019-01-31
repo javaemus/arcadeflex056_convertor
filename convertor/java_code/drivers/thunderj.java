@@ -463,5 +463,5 @@ public class thunderj
 	 *
 	 *************************************/
 	
-	GAME( 1990, thunderj, 0, thunderj, thunderj, thunderj, ROT0, "Atari Games", "ThunderJaws" )
+	public static GameDriver driver_thunderj	   = new GameDriver("1990"	,"thunderj"	,"thunderj.java"	,rom_thunderj,null	,machine_driver_thunderj	,input_ports_thunderj	,init_thunderj	,ROT0	,	Atari Games", "ThunderJaws" )
 }

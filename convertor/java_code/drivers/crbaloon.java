@@ -439,6 +439,6 @@ public class crbaloon
 	
 	
 	
-	GAMEX( 1980, crbaloon, 0,		crbaloon, crbaloon, 0, ROT90, "Taito Corporation", "Crazy Balloon (set 1)", GAME_IMPERFECT_SOUND )
-	GAMEX( 1980, crbalon2, crbaloon, crbaloon, crbaloon, 0, ROT90, "Taito Corporation", "Crazy Balloon (set 2)", GAME_IMPERFECT_SOUND )
+	public static GameDriver driver_crbaloon	   = new GameDriver("1980"	,"crbaloon"	,"crbaloon.java"	,rom_crbaloon,null	,machine_driver_crbaloon	,input_ports_crbaloon	,null	,ROT90	,	Taito Corporation", "Crazy Balloon (set 1)", GAME_IMPERFECT_SOUND )
+	public static GameDriver driver_crbalon2	   = new GameDriver("1980"	,"crbalon2"	,"crbaloon.java"	,rom_crbalon2,driver_crbaloon	,machine_driver_crbaloon	,input_ports_crbaloon	,null	,ROT90	,	Taito Corporation", "Crazy Balloon (set 2)", GAME_IMPERFECT_SOUND )
 }

@@ -281,5 +281,5 @@ public class sbrkout
 	
 	
 	
-	GAME( 1978, sbrkout, 0, sbrkout, sbrkout, 0, ROT270, "Atari", "Super Breakout" )
+	public static GameDriver driver_sbrkout	   = new GameDriver("1978"	,"sbrkout"	,"sbrkout.java"	,rom_sbrkout,null	,machine_driver_sbrkout	,input_ports_sbrkout	,null	,ROT270	,	Atari", "Super Breakout" )
 }

@@ -464,6 +464,6 @@ public class vastar
 	
 	
 	
-	GAME( 1983, vastar,  0,      vastar, vastar, 0, ROT90, "Sesame Japan", "Vastar (set 1)" )
-	GAME( 1983, vastar2, vastar, vastar, vastar, 0, ROT90, "Sesame Japan", "Vastar (set 2)" )
+	public static GameDriver driver_vastar	   = new GameDriver("1983"	,"vastar"	,"vastar.java"	,rom_vastar,null	,machine_driver_vastar	,input_ports_vastar	,null	,ROT90	,	Sesame Japan", "Vastar (set 1)" )
+	public static GameDriver driver_vastar2	   = new GameDriver("1983"	,"vastar2"	,"vastar.java"	,rom_vastar2,driver_vastar	,machine_driver_vastar	,input_ports_vastar	,null	,ROT90	,	Sesame Japan", "Vastar (set 2)" )
 }

@@ -1185,14 +1185,14 @@ public class rockola
 	
 	
 	
-	GAMEX( 1980, sasuke,   0,        sasuke,   sasuke,   0, ROT90, "SNK", "Sasuke vs. Commander", GAME_NO_SOUND )
-	GAMEX( 1981, satansat, 0,        satansat, satansat, 0, ROT90, "SNK", "Satan of Saturn", GAME_IMPERFECT_SOUND )
-	GAMEX( 1981, zarzon,   satansat, satansat, satansat, 0, ROT90, "[SNK] (Taito America license)", "Zarzon", GAME_IMPERFECT_SOUND )
-	GAMEX( 1981, vanguard, 0,        vanguard, vanguard, 0, ROT90, "SNK", "Vanguard (SNK)", GAME_IMPERFECT_SOUND )
-	GAMEX( 1981, vangrdce, vanguard, vanguard, vanguard, 0, ROT90, "SNK (Centuri license)", "Vanguard (Centuri)", GAME_IMPERFECT_SOUND )
-	GAMEX( 1981, fantasy,  0,        fantasy,  fantasy,  0, ROT90, "[SNK] (Rock-ola license)", "Fantasy (US)", GAME_IMPERFECT_SOUND )
-	GAMEX( 1981, fantasyj, fantasy,  fantasy,  fantasy,  0, ROT90, "SNK", "Fantasy (Japan)", GAME_IMPERFECT_SOUND )
-	GAMEX( 1982, pballoon, 0,        pballoon, pballoon, 0, ROT90, "SNK", "Pioneer Balloon", GAME_IMPERFECT_SOUND )
-	GAMEX( 1982, nibbler,  0,        fantasy,  nibbler,  0, ROT90, "Rock-ola", "Nibbler (set 1)", GAME_IMPERFECT_SOUND )
-	GAMEX( 1982, nibblera, nibbler,  fantasy,  nibbler,  0, ROT90, "Rock-ola", "Nibbler (set 2)", GAME_IMPERFECT_SOUND )
+	public static GameDriver driver_sasuke	   = new GameDriver("1980"	,"sasuke"	,"rockola.java"	,rom_sasuke,null	,machine_driver_sasuke	,input_ports_sasuke	,null	,ROT90	,	SNK", "Sasuke vs. Commander", GAME_NO_SOUND )
+	public static GameDriver driver_satansat	   = new GameDriver("1981"	,"satansat"	,"rockola.java"	,rom_satansat,null	,machine_driver_satansat	,input_ports_satansat	,null	,ROT90	,	SNK", "Satan of Saturn", GAME_IMPERFECT_SOUND )
+	public static GameDriver driver_zarzon	   = new GameDriver("1981"	,"zarzon"	,"rockola.java"	,rom_zarzon,driver_satansat	,machine_driver_satansat	,input_ports_satansat	,null	,ROT90	,	[SNK] (Taito America license)", "Zarzon", GAME_IMPERFECT_SOUND )
+	public static GameDriver driver_vanguard	   = new GameDriver("1981"	,"vanguard"	,"rockola.java"	,rom_vanguard,null	,machine_driver_vanguard	,input_ports_vanguard	,null	,ROT90	,	SNK", "Vanguard (SNK)", GAME_IMPERFECT_SOUND )
+	public static GameDriver driver_vangrdce	   = new GameDriver("1981"	,"vangrdce"	,"rockola.java"	,rom_vangrdce,driver_vanguard	,machine_driver_vanguard	,input_ports_vanguard	,null	,ROT90	,	SNK (Centuri license)", "Vanguard (Centuri)", GAME_IMPERFECT_SOUND )
+	public static GameDriver driver_fantasy	   = new GameDriver("1981"	,"fantasy"	,"rockola.java"	,rom_fantasy,null	,machine_driver_fantasy	,input_ports_fantasy	,null	,ROT90	,	[SNK] (Rock-ola license)", "Fantasy (US)", GAME_IMPERFECT_SOUND )
+	public static GameDriver driver_fantasyj	   = new GameDriver("1981"	,"fantasyj"	,"rockola.java"	,rom_fantasyj,driver_fantasy	,machine_driver_fantasy	,input_ports_fantasy	,null	,ROT90	,	SNK", "Fantasy (Japan)", GAME_IMPERFECT_SOUND )
+	public static GameDriver driver_pballoon	   = new GameDriver("1982"	,"pballoon"	,"rockola.java"	,rom_pballoon,null	,machine_driver_pballoon	,input_ports_pballoon	,null	,ROT90	,	SNK", "Pioneer Balloon", GAME_IMPERFECT_SOUND )
+	public static GameDriver driver_nibbler	   = new GameDriver("1982"	,"nibbler"	,"rockola.java"	,rom_nibbler,null	,machine_driver_fantasy	,input_ports_nibbler	,null	,ROT90	,	Rock-ola", "Nibbler (set 1)", GAME_IMPERFECT_SOUND )
+	public static GameDriver driver_nibblera	   = new GameDriver("1982"	,"nibblera"	,"rockola.java"	,rom_nibblera,driver_nibbler	,machine_driver_fantasy	,input_ports_nibbler	,null	,ROT90	,	Rock-ola", "Nibbler (set 2)", GAME_IMPERFECT_SOUND )
 }

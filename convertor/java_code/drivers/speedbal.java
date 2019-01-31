@@ -355,5 +355,5 @@ public class speedbal
 	
 	
 	
-	GAME( 1987, speedbal, 0, speedbal, speedbal, speedbal, ROT270, "Tecfri", "Speed Ball" )
+	public static GameDriver driver_speedbal	   = new GameDriver("1987"	,"speedbal"	,"speedbal.java"	,rom_speedbal,null	,machine_driver_speedbal	,input_ports_speedbal	,init_speedbal	,ROT270	,	Tecfri", "Speed Ball" )
 }

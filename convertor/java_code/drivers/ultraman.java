@@ -381,5 +381,5 @@ public class ultraman
 	}
 	
 	
-	GAME( 1991, ultraman, 0, ultraman, ultraman, ultraman, ROT0, "Banpresto/Bandai", "Ultraman (Japan)" )
+	public static GameDriver driver_ultraman	   = new GameDriver("1991"	,"ultraman"	,"ultraman.java"	,rom_ultraman,null	,machine_driver_ultraman	,input_ports_ultraman	,init_ultraman	,ROT0	,	Banpresto/Bandai", "Ultraman (Japan)" )
 }

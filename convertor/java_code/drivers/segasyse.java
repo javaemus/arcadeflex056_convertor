@@ -907,10 +907,10 @@ public class segasyse
 	
 	/*-- Game Drivers --*/
 	
-	GAME( 1985, hangonjr, 0,        segae, hangonjr, hangonjr, ROT0,  "Sega", "Hang-On Jr." )
-	GAME( 1986, transfrm, 0,        segae, transfrm, segasyse, ROT0,  "Sega", "Transformer" )
-	GAME( 1986, astrofl,  transfrm, segae, transfrm, astrofl,  ROT0,  "Sega", "Astro Flash (Japan)" )
-	GAME( 1986, ridleofp, 0,        segae, ridleofp, ridleofp, ROT90, "Sega / Nasco", "Riddle of Pythagoras (Japan)" )
-	GAMEX(198?, fantzn2,  0,        segae, dummy,    segasyse, ROT0,  "????", "Fantasy Zone 2", GAME_NOT_WORKING )	/* encrypted */
-	GAMEX(198?, opaopa,   0,        segae, dummy,    segasyse, ROT0,  "????", "Opa Opa", GAME_NOT_WORKING )	/* either encrypted or bad */
+	public static GameDriver driver_hangonjr	   = new GameDriver("1985"	,"hangonjr"	,"segasyse.java"	,rom_hangonjr,null	,machine_driver_segae	,input_ports_hangonjr	,init_hangonjr	,ROT0	,	Sega", "Hang-On Jr." )
+	public static GameDriver driver_transfrm	   = new GameDriver("1986"	,"transfrm"	,"segasyse.java"	,rom_transfrm,null	,machine_driver_segae	,input_ports_transfrm	,init_segasyse	,ROT0	,	Sega", "Transformer" )
+	public static GameDriver driver_astrofl	   = new GameDriver("1986"	,"astrofl"	,"segasyse.java"	,rom_astrofl,driver_transfrm	,machine_driver_segae	,input_ports_transfrm	,init_astrofl	,ROT0	,	Sega", "Astro Flash (Japan)" )
+	public static GameDriver driver_ridleofp	   = new GameDriver("1986"	,"ridleofp"	,"segasyse.java"	,rom_ridleofp,null	,machine_driver_segae	,input_ports_ridleofp	,init_ridleofp	,ROT90	,	Sega / Nasco", "Riddle of Pythagoras (Japan)" )
+	public static GameDriver driver_fantzn2	   = new GameDriver("198?"	,"fantzn2"	,"segasyse.java"	,rom_fantzn2,null	,machine_driver_segae	,input_ports_dummy	,init_segasyse	,ROT0	,	????", "Fantasy Zone 2", GAME_NOT_WORKING )	/* encrypted */
+	public static GameDriver driver_opaopa	   = new GameDriver("198?"	,"opaopa"	,"segasyse.java"	,rom_opaopa,null	,machine_driver_segae	,input_ports_dummy	,init_segasyse	,ROT0	,	????", "Opa Opa", GAME_NOT_WORKING )	/* either encrypted or bad */
 }

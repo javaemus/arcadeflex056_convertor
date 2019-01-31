@@ -426,7 +426,7 @@ public class starfire
 	 *
 	 *************************************/
 	
-	GAMEX( 1979, starfire, 0,        starfire, starfire, starfire, ROT0, "Exidy", "Star Fire (set 1)", GAME_NO_SOUND )
-	GAMEX( 1979, starfira, starfire, starfire, starfire, starfire, ROT0, "Exidy", "Star Fire (set 2)", GAME_NO_SOUND )
-	GAMEX( 1979, fireone,  0,        starfire, fireone,  fireone,  ROT0, "Exidy", "Fire One", GAME_NO_SOUND )
+	public static GameDriver driver_starfire	   = new GameDriver("1979"	,"starfire"	,"starfire.java"	,rom_starfire,null	,machine_driver_starfire	,input_ports_starfire	,init_starfire	,ROT0	,	Exidy", "Star Fire (set 1)", GAME_NO_SOUND )
+	public static GameDriver driver_starfira	   = new GameDriver("1979"	,"starfira"	,"starfire.java"	,rom_starfira,driver_starfire	,machine_driver_starfire	,input_ports_starfire	,init_starfire	,ROT0	,	Exidy", "Star Fire (set 2)", GAME_NO_SOUND )
+	public static GameDriver driver_fireone	   = new GameDriver("1979"	,"fireone"	,"starfire.java"	,rom_fireone,null	,machine_driver_starfire	,input_ports_fireone	,init_fireone	,ROT0	,	Exidy", "Fire One", GAME_NO_SOUND )
 }

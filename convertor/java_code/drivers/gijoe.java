@@ -380,6 +380,6 @@ public class gijoe
 		state_save_register_UINT16("main", 0, "control2", &cur_control2, 1);
 	}
 	
-	GAME( 1992, gijoe,  0,     gijoe, gijoe, gijoe, ROT0, "Konami", "GI Joe (World)")
-	GAME( 1992, gijoeu, gijoe, gijoe, gijoe, gijoe, ROT0, "Konami", "GI Joe (US)")
+	public static GameDriver driver_gijoe	   = new GameDriver("1992"	,"gijoe"	,"gijoe.java"	,rom_gijoe,null	,machine_driver_gijoe	,input_ports_gijoe	,init_gijoe	,ROT0	,	Konami", "GI Joe (World)")
+	public static GameDriver driver_gijoeu	   = new GameDriver("1992"	,"gijoeu"	,"gijoe.java"	,rom_gijoeu,driver_gijoe	,machine_driver_gijoe	,input_ports_gijoe	,init_gijoe	,ROT0	,	Konami", "GI Joe (US)")
 }

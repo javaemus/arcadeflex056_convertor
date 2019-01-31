@@ -399,7 +399,7 @@ public class citycon
 	
 	
 	
-	GAME( 1985, citycon,  0,       citycon, citycon, citycon, ROT0, "Jaleco", "City Connection (set 1)" )
-	GAME( 1985, citycona, citycon, citycon, citycon, citycon, ROT0, "Jaleco", "City Connection (set 2)" )
-	GAME( 1985, cruisin,  citycon, citycon, citycon, citycon, ROT0, "Jaleco (Kitkorp license)", "Cruisin" )
+	public static GameDriver driver_citycon	   = new GameDriver("1985"	,"citycon"	,"citycon.java"	,rom_citycon,null	,machine_driver_citycon	,input_ports_citycon	,init_citycon	,ROT0	,	Jaleco", "City Connection (set 1)" )
+	public static GameDriver driver_citycona	   = new GameDriver("1985"	,"citycona"	,"citycon.java"	,rom_citycona,driver_citycon	,machine_driver_citycon	,input_ports_citycon	,init_citycon	,ROT0	,	Jaleco", "City Connection (set 2)" )
+	public static GameDriver driver_cruisin	   = new GameDriver("1985"	,"cruisin"	,"citycon.java"	,rom_cruisin,driver_citycon	,machine_driver_citycon	,input_ports_citycon	,init_citycon	,ROT0	,	Jaleco (Kitkorp license)", "Cruisin" )
 }

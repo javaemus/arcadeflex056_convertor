@@ -310,9 +310,9 @@ public class epos
 	
 	
 	
-	GAME ( 1983, suprglob, 0,        epos, suprglob, 0, ROT270, "Epos Corporation", "Super Glob" )
-	GAME ( 1983, theglob,  suprglob, epos, suprglob, 0, ROT270, "Epos Corporation", "The Glob" )
-	GAME ( 1983, theglob2, suprglob, epos, suprglob, 0, ROT270, "Epos Corporation", "The Glob (earlier)" )
-	GAMEX( 1983, theglob3, suprglob, epos, suprglob, 0, ROT270, "Epos Corporation", "The Glob (set 3)", GAME_NOT_WORKING )
-	GAMEX( 1984, igmo,     0,        epos, igmo,     0, ROT270, "Epos Corporation", "IGMO", GAME_WRONG_COLORS )
+	public static GameDriver driver_suprglob	   = new GameDriver("1983"	,"suprglob"	,"epos.java"	,rom_suprglob,null	,machine_driver_epos	,input_ports_suprglob	,null	,ROT270	,	Epos Corporation", "Super Glob" )
+	public static GameDriver driver_theglob	   = new GameDriver("1983"	,"theglob"	,"epos.java"	,rom_theglob,driver_suprglob	,machine_driver_epos	,input_ports_suprglob	,null	,ROT270	,	Epos Corporation", "The Glob" )
+	public static GameDriver driver_theglob2	   = new GameDriver("1983"	,"theglob2"	,"epos.java"	,rom_theglob2,driver_suprglob	,machine_driver_epos	,input_ports_suprglob	,null	,ROT270	,	Epos Corporation", "The Glob (earlier)" )
+	public static GameDriver driver_theglob3	   = new GameDriver("1983"	,"theglob3"	,"epos.java"	,rom_theglob3,driver_suprglob	,machine_driver_epos	,input_ports_suprglob	,null	,ROT270	,	Epos Corporation", "The Glob (set 3)", GAME_NOT_WORKING )
+	public static GameDriver driver_igmo	   = new GameDriver("1984"	,"igmo"	,"epos.java"	,rom_igmo,null	,machine_driver_epos	,input_ports_igmo	,null	,ROT270	,	Epos Corporation", "IGMO", GAME_WRONG_COLORS )
 }

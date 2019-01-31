@@ -590,7 +590,7 @@ public class wwfwfest
 		ROM_LOAD( "wf_02.rom",    0x00000, 0x40000, 0x82ed7155 );/* 2,3 */
 	ROM_END(); }}; 
 	
-	GAME( 1991, wwfwfest, 0,        wwfwfest, wwfwfest, 0, ROT0, "Technos Japan", "WWF WrestleFest (US)" )
-	GAME( 1991, wwfwfsta, wwfwfest, wwfwfest, wwfwfest, 0, ROT0, "Technos Japan (Tecmo license)", "WWF WrestleFest (US Tecmo)" )
-	GAME( 1991, wwfwfstj, wwfwfest, wwfwfest, wwfwfest, 0, ROT0, "Technos Japan", "WWF WrestleFest (Japan)" )
+	public static GameDriver driver_wwfwfest	   = new GameDriver("1991"	,"wwfwfest"	,"wwfwfest.java"	,rom_wwfwfest,null	,machine_driver_wwfwfest	,input_ports_wwfwfest	,null	,ROT0	,	Technos Japan", "WWF WrestleFest (US)" )
+	public static GameDriver driver_wwfwfsta	   = new GameDriver("1991"	,"wwfwfsta"	,"wwfwfest.java"	,rom_wwfwfsta,driver_wwfwfest	,machine_driver_wwfwfest	,input_ports_wwfwfest	,null	,ROT0	,	Technos Japan (Tecmo license)", "WWF WrestleFest (US Tecmo)" )
+	public static GameDriver driver_wwfwfstj	   = new GameDriver("1991"	,"wwfwfstj"	,"wwfwfest.java"	,rom_wwfwfstj,driver_wwfwfest	,machine_driver_wwfwfest	,input_ports_wwfwfest	,null	,ROT0	,	Technos Japan", "WWF WrestleFest (Japan)" )
 }

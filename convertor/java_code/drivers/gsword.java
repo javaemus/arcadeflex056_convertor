@@ -802,6 +802,6 @@ public class gsword
 	}
 	
 	
-	GAMEX( 1983, josvolly, 0, josvolly, gsword, 0,      ROT90, "Taito Corporation", "Joshi Volleyball", GAME_NOT_WORKING )
-	GAMEX( 1984, gsword,   0, gsword,   gsword, gsword, ROT0,  "Taito Corporation", "Great Swordsman", GAME_IMPERFECT_COLORS )
+	public static GameDriver driver_josvolly	   = new GameDriver("1983"	,"josvolly"	,"gsword.java"	,rom_josvolly,null	,machine_driver_josvolly	,input_ports_gsword	,null	,ROT90	,	Taito Corporation", "Joshi Volleyball", GAME_NOT_WORKING )
+	public static GameDriver driver_gsword	   = new GameDriver("1984"	,"gsword"	,"gsword.java"	,rom_gsword,null	,machine_driver_gsword	,input_ports_gsword	,init_gsword	,ROT0	,	Taito Corporation", "Great Swordsman", GAME_IMPERFECT_COLORS )
 }

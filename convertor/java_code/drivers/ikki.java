@@ -309,5 +309,5 @@ public class ikki
 		ROM_LOAD( "prom17_2", 0x0100,  0x0100, 0xf3c55174 );/* unknown */
 	ROM_END(); }}; 
 	
-	GAME( 1985, ikki, 0, ikki, ikki, 0, ROT0, "Sun Electronics", "Ikki (Japan)" )
+	public static GameDriver driver_ikki	   = new GameDriver("1985"	,"ikki"	,"ikki.java"	,rom_ikki,null	,machine_driver_ikki	,input_ports_ikki	,null	,ROT0	,	Sun Electronics", "Ikki (Japan)" )
 }

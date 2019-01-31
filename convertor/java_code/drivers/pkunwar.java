@@ -262,6 +262,6 @@ public class pkunwar
 	
 	
 	
-	GAME( 1985?, pkunwar,  0,       pkunwar, pkunwar, 0, ROT0, "UPL", "Penguin-Kun Wars (US)" )
-	GAME( 1985?, pkunwarj, pkunwar, pkunwar, pkunwar, 0, ROT0, "UPL", "Penguin-Kun Wars (Japan)" )
+	public static GameDriver driver_pkunwar	   = new GameDriver("1985?"	,"pkunwar"	,"pkunwar.java"	,rom_pkunwar,null	,machine_driver_pkunwar	,input_ports_pkunwar	,null	,ROT0	,	UPL", "Penguin-Kun Wars (US)" )
+	public static GameDriver driver_pkunwarj	   = new GameDriver("1985?"	,"pkunwarj"	,"pkunwar.java"	,rom_pkunwarj,driver_pkunwar	,machine_driver_pkunwar	,input_ports_pkunwar	,null	,ROT0	,	UPL", "Penguin-Kun Wars (Japan)" )
 }

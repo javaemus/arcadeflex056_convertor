@@ -437,6 +437,6 @@ public class holeland
 	
 	
 	
-	GAMEX( 1984, holeland, 0, holeland, holeland, 0, ROT0,   "Tecfri", "Hole Land", GAME_IMPERFECT_GRAPHICS )
-	GAMEX( 1985, crzrally, 0, crzrally, crzrally, 0, ROT270, "Tecfri", "Crazy Rally", GAME_IMPERFECT_GRAPHICS )
+	public static GameDriver driver_holeland	   = new GameDriver("1984"	,"holeland"	,"holeland.java"	,rom_holeland,null	,machine_driver_holeland	,input_ports_holeland	,null	,ROT0	,	Tecfri", "Hole Land", GAME_IMPERFECT_GRAPHICS )
+	public static GameDriver driver_crzrally	   = new GameDriver("1985"	,"crzrally"	,"holeland.java"	,rom_crzrally,null	,machine_driver_crzrally	,input_ports_crzrally	,null	,ROT270	,	Tecfri", "Crazy Rally", GAME_IMPERFECT_GRAPHICS )
 }

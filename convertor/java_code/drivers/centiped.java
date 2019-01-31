@@ -630,8 +630,8 @@ public class centiped
 	ROM_END(); }}; 
 	
 	
-	GAME( 1980, centiped, 0,        centiped, centiped, 0, ROT270, "Atari", "Centipede (revision 3)" )
-	GAME( 1980, centipd2, centiped, centiped, centiped, 0, ROT270, "Atari", "Centipede (revision 2)" )
-	GAME( 1980, centipdb, centiped, centipdb, centipdb, 0, ROT270, "bootleg", "Centipede (bootleg set 1)" )
-	GAME( 1980, centipb2, centiped, centipb2, centiped, 0, ROT270, "bootleg", "Centipede (bootleg set 2)" )
+	public static GameDriver driver_centiped	   = new GameDriver("1980"	,"centiped"	,"centiped.java"	,rom_centiped,null	,machine_driver_centiped	,input_ports_centiped	,null	,ROT270	,	Atari", "Centipede (revision 3)" )
+	public static GameDriver driver_centipd2	   = new GameDriver("1980"	,"centipd2"	,"centiped.java"	,rom_centipd2,driver_centiped	,machine_driver_centiped	,input_ports_centiped	,null	,ROT270	,	Atari", "Centipede (revision 2)" )
+	public static GameDriver driver_centipdb	   = new GameDriver("1980"	,"centipdb"	,"centiped.java"	,rom_centipdb,driver_centiped	,machine_driver_centipdb	,input_ports_centipdb	,null	,ROT270	,	bootleg", "Centipede (bootleg set 1)" )
+	public static GameDriver driver_centipb2	   = new GameDriver("1980"	,"centipb2"	,"centiped.java"	,rom_centipb2,driver_centiped	,machine_driver_centipb2	,input_ports_centiped	,null	,ROT270	,	bootleg", "Centipede (bootleg set 2)" )
 }

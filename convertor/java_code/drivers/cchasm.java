@@ -258,6 +258,6 @@ public class cchasm
 	
 	
 	
-	GAME( 1983, cchasm,  0,      cchasm, cchasm, 0, ROT270, "Cinematronics / GCE", "Cosmic Chasm (set 1)" )
-	GAME( 1983, cchasm1, cchasm, cchasm, cchasm, 0, ROT270, "Cinematronics / GCE", "Cosmic Chasm (set 2)" )
+	public static GameDriver driver_cchasm	   = new GameDriver("1983"	,"cchasm"	,"cchasm.java"	,rom_cchasm,null	,machine_driver_cchasm	,input_ports_cchasm	,null	,ROT270	,	Cinematronics / GCE", "Cosmic Chasm (set 1)" )
+	public static GameDriver driver_cchasm1	   = new GameDriver("1983"	,"cchasm1"	,"cchasm.java"	,rom_cchasm1,driver_cchasm	,machine_driver_cchasm	,input_ports_cchasm	,null	,ROT270	,	Cinematronics / GCE", "Cosmic Chasm (set 2)" )
 }

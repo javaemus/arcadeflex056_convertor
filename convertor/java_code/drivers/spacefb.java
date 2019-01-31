@@ -549,9 +549,9 @@ public class spacefb
 	ROM_END(); }}; 
 	
 	
-	GAMEX( 1980, spacefb,  0,       spacefb, spacefb,  0, ROT90, "Nintendo", "Space Firebird (Nintendo)", GAME_IMPERFECT_COLORS | GAME_IMPERFECT_SOUND )
-	GAMEX( 1980, spacefbg, spacefb, spacefb, spacefb,  0, ROT90, "Gremlin", "Space Firebird (Gremlin)", GAME_IMPERFECT_COLORS | GAME_IMPERFECT_SOUND )
-	GAMEX( 1980, spacebrd, spacefb, spacefb, spacefb,  0, ROT90, "bootleg", "Space Bird (bootleg)", GAME_IMPERFECT_COLORS | GAME_IMPERFECT_SOUND )
-	GAMEX( 1980, spacefbb, spacefb, spacefb, spacefb,  0, ROT90, "bootleg", "Space Firebird (bootleg)", GAME_IMPERFECT_COLORS | GAME_IMPERFECT_SOUND )
-	GAMEX( 1980, spacedem, spacefb, spacefb, spacedem, 0, ROT90, "Nintendo (Fortrek license)", "Space Demon", GAME_IMPERFECT_COLORS | GAME_IMPERFECT_SOUND )
+	public static GameDriver driver_spacefb	   = new GameDriver("1980"	,"spacefb"	,"spacefb.java"	,rom_spacefb,null	,machine_driver_spacefb	,input_ports_spacefb	,null	,ROT90	,	Nintendo", "Space Firebird (Nintendo)", GAME_IMPERFECT_COLORS | GAME_IMPERFECT_SOUND )
+	public static GameDriver driver_spacefbg	   = new GameDriver("1980"	,"spacefbg"	,"spacefb.java"	,rom_spacefbg,driver_spacefb	,machine_driver_spacefb	,input_ports_spacefb	,null	,ROT90	,	Gremlin", "Space Firebird (Gremlin)", GAME_IMPERFECT_COLORS | GAME_IMPERFECT_SOUND )
+	public static GameDriver driver_spacebrd	   = new GameDriver("1980"	,"spacebrd"	,"spacefb.java"	,rom_spacebrd,driver_spacefb	,machine_driver_spacefb	,input_ports_spacefb	,null	,ROT90	,	bootleg", "Space Bird (bootleg)", GAME_IMPERFECT_COLORS | GAME_IMPERFECT_SOUND )
+	public static GameDriver driver_spacefbb	   = new GameDriver("1980"	,"spacefbb"	,"spacefb.java"	,rom_spacefbb,driver_spacefb	,machine_driver_spacefb	,input_ports_spacefb	,null	,ROT90	,	bootleg", "Space Firebird (bootleg)", GAME_IMPERFECT_COLORS | GAME_IMPERFECT_SOUND )
+	public static GameDriver driver_spacedem	   = new GameDriver("1980"	,"spacedem"	,"spacefb.java"	,rom_spacedem,driver_spacefb	,machine_driver_spacefb	,input_ports_spacedem	,null	,ROT90	,	Nintendo (Fortrek license)", "Space Demon", GAME_IMPERFECT_COLORS | GAME_IMPERFECT_SOUND )
 }

@@ -598,5 +598,5 @@ public class badlands
 	 *
 	 *************************************/
 	
-	GAME( 1989, badlands, 0, badlands, badlands, badlands, ROT0, "Atari Games", "Bad Lands" )
+	public static GameDriver driver_badlands	   = new GameDriver("1989"	,"badlands"	,"badlands.java"	,rom_badlands,null	,machine_driver_badlands	,input_ports_badlands	,init_badlands	,ROT0	,	Atari Games", "Bad Lands" )
 }

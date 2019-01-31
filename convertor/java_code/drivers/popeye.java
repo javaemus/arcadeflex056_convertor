@@ -578,9 +578,9 @@ public class popeye
 	}
 	
 	
-	GAMEX( 1982, popeye,   0,      popeye,   popeye,  popeye, ROT0, "Nintendo", "Popeye (revision D)", GAME_NO_COCKTAIL )
-	GAMEX( 1982, popeyeu,  popeye, popeye,   popeye,  popeye, ROT0, "Nintendo", "Popeye (revision D not protected)", GAME_NO_COCKTAIL )
-	GAMEX( 1982, popeyef,  popeye, popeye,   popeyef, popeye, ROT0, "Nintendo", "Popeye (revision F)", GAME_NO_COCKTAIL )
-	GAMEX( 1982, popeyebl, popeye, popeyebl, popeye,  0,      ROT0, "bootleg",  "Popeye (bootleg)", GAME_NO_COCKTAIL )
+	public static GameDriver driver_popeye	   = new GameDriver("1982"	,"popeye"	,"popeye.java"	,rom_popeye,null	,machine_driver_popeye	,input_ports_popeye	,init_popeye	,ROT0	,	Nintendo", "Popeye (revision D)", GAME_NO_COCKTAIL )
+	public static GameDriver driver_popeyeu	   = new GameDriver("1982"	,"popeyeu"	,"popeye.java"	,rom_popeyeu,driver_popeye	,machine_driver_popeye	,input_ports_popeye	,init_popeye	,ROT0	,	Nintendo", "Popeye (revision D not protected)", GAME_NO_COCKTAIL )
+	public static GameDriver driver_popeyef	   = new GameDriver("1982"	,"popeyef"	,"popeye.java"	,rom_popeyef,driver_popeye	,machine_driver_popeye	,input_ports_popeyef	,init_popeye	,ROT0	,	Nintendo", "Popeye (revision F)", GAME_NO_COCKTAIL )
+	public static GameDriver driver_popeyebl	   = new GameDriver("1982"	,"popeyebl"	,"popeye.java"	,rom_popeyebl,driver_popeye	,machine_driver_popeyebl	,input_ports_popeye	,null	,ROT0	,	bootleg",  "Popeye (bootleg)", GAME_NO_COCKTAIL )
 	
 }

@@ -4017,46 +4017,46 @@ public class tmnt
 	
 	
 	
-	GAME( 1989, mia,      0,        mia,      mia,      mia,      ROT0,  "Konami", "Missing in Action (version T)" )
-	GAME( 1989, mia2,     mia,      mia,      mia,      mia,      ROT0,  "Konami", "Missing in Action (version S)" )
+	public static GameDriver driver_mia	   = new GameDriver("1989"	,"mia"	,"tmnt.java"	,rom_mia,null	,machine_driver_mia	,input_ports_mia	,init_mia	,ROT0	,	Konami", "Missing in Action (version T)" )
+	public static GameDriver driver_mia2	   = new GameDriver("1989"	,"mia2"	,"tmnt.java"	,rom_mia2,driver_mia	,machine_driver_mia	,input_ports_mia	,init_mia	,ROT0	,	Konami", "Missing in Action (version S)" )
 	
-	GAME( 1989, tmnt,     0,        tmnt,     tmnt,     tmnt,     ROT0,  "Konami", "Teenage Mutant Ninja Turtles (World 4 Players)" )
-	GAME( 1989, tmntu,    tmnt,     tmnt,     tmnt,     tmnt,     ROT0,  "Konami", "Teenage Mutant Ninja Turtles (US 4 Players)" )
-	GAME( 1989, tmht,     tmnt,     tmnt,     tmnt,     tmnt,     ROT0,  "Konami", "Teenage Mutant Hero Turtles (UK 4 Players)" )
-	GAME( 1989, tmntj,    tmnt,     tmnt,     tmnt,     tmnt,     ROT0,  "Konami", "Teenage Mutant Ninja Turtles (Japan 4 Players)" )
-	GAME( 1989, tmht2p,   tmnt,     tmnt,     tmnt2p,   tmnt,     ROT0,  "Konami", "Teenage Mutant Hero Turtles (UK 2 Players)" )
-	GAME( 1990, tmnt2pj,  tmnt,     tmnt,     tmnt2p,   tmnt,     ROT0,  "Konami", "Teenage Mutant Ninja Turtles (Japan 2 Players)" )
-	GAME( 1989, tmnt2po,  tmnt,     tmnt,     tmnt2p,   tmnt,     ROT0,  "Konami", "Teenage Mutant Ninja Turtles (Oceania 2 Players)" )
+	public static GameDriver driver_tmnt	   = new GameDriver("1989"	,"tmnt"	,"tmnt.java"	,rom_tmnt,null	,machine_driver_tmnt	,input_ports_tmnt	,init_tmnt	,ROT0	,	Konami", "Teenage Mutant Ninja Turtles (World 4 Players)" )
+	public static GameDriver driver_tmntu	   = new GameDriver("1989"	,"tmntu"	,"tmnt.java"	,rom_tmntu,driver_tmnt	,machine_driver_tmnt	,input_ports_tmnt	,init_tmnt	,ROT0	,	Konami", "Teenage Mutant Ninja Turtles (US 4 Players)" )
+	public static GameDriver driver_tmht	   = new GameDriver("1989"	,"tmht"	,"tmnt.java"	,rom_tmht,driver_tmnt	,machine_driver_tmnt	,input_ports_tmnt	,init_tmnt	,ROT0	,	Konami", "Teenage Mutant Hero Turtles (UK 4 Players)" )
+	public static GameDriver driver_tmntj	   = new GameDriver("1989"	,"tmntj"	,"tmnt.java"	,rom_tmntj,driver_tmnt	,machine_driver_tmnt	,input_ports_tmnt	,init_tmnt	,ROT0	,	Konami", "Teenage Mutant Ninja Turtles (Japan 4 Players)" )
+	public static GameDriver driver_tmht2p	   = new GameDriver("1989"	,"tmht2p"	,"tmnt.java"	,rom_tmht2p,driver_tmnt	,machine_driver_tmnt	,input_ports_tmnt2p	,init_tmnt	,ROT0	,	Konami", "Teenage Mutant Hero Turtles (UK 2 Players)" )
+	public static GameDriver driver_tmnt2pj	   = new GameDriver("1990"	,"tmnt2pj"	,"tmnt.java"	,rom_tmnt2pj,driver_tmnt	,machine_driver_tmnt	,input_ports_tmnt2p	,init_tmnt	,ROT0	,	Konami", "Teenage Mutant Ninja Turtles (Japan 2 Players)" )
+	public static GameDriver driver_tmnt2po	   = new GameDriver("1989"	,"tmnt2po"	,"tmnt.java"	,rom_tmnt2po,driver_tmnt	,machine_driver_tmnt	,input_ports_tmnt2p	,init_tmnt	,ROT0	,	Konami", "Teenage Mutant Ninja Turtles (Oceania 2 Players)" )
 	
-	GAME( 1990, punkshot, 0,        punkshot, punkshot, gfx,      ROT0,  "Konami", "Punk Shot (US 4 Players)" )
-	GAME( 1990, punksht2, punkshot, punkshot, punksht2, gfx,      ROT0,  "Konami", "Punk Shot (US 2 Players)" )
-	GAME( 1990, punkshtj, punkshot, punkshot, punksht2, gfx,      ROT0,  "Konami", "Punk Shot (Japan 2 Players)" )
+	public static GameDriver driver_punkshot	   = new GameDriver("1990"	,"punkshot"	,"tmnt.java"	,rom_punkshot,null	,machine_driver_punkshot	,input_ports_punkshot	,init_gfx	,ROT0	,	Konami", "Punk Shot (US 4 Players)" )
+	public static GameDriver driver_punksht2	   = new GameDriver("1990"	,"punksht2"	,"tmnt.java"	,rom_punksht2,driver_punkshot	,machine_driver_punkshot	,input_ports_punksht2	,init_gfx	,ROT0	,	Konami", "Punk Shot (US 2 Players)" )
+	public static GameDriver driver_punkshtj	   = new GameDriver("1990"	,"punkshtj"	,"tmnt.java"	,rom_punkshtj,driver_punkshot	,machine_driver_punkshot	,input_ports_punksht2	,init_gfx	,ROT0	,	Konami", "Punk Shot (Japan 2 Players)" )
 	
-	GAME( 1990, lgtnfght, 0,        lgtnfght, lgtnfght, gfx,      ROT90, "Konami", "Lightning Fighters (US)" )
-	GAME( 1990, trigon,   lgtnfght, lgtnfght, lgtnfght, gfx,      ROT90, "Konami", "Trigon (Japan)" )
+	public static GameDriver driver_lgtnfght	   = new GameDriver("1990"	,"lgtnfght"	,"tmnt.java"	,rom_lgtnfght,null	,machine_driver_lgtnfght	,input_ports_lgtnfght	,init_gfx	,ROT90	,	Konami", "Lightning Fighters (US)" )
+	public static GameDriver driver_trigon	   = new GameDriver("1990"	,"trigon"	,"tmnt.java"	,rom_trigon,driver_lgtnfght	,machine_driver_lgtnfght	,input_ports_lgtnfght	,init_gfx	,ROT90	,	Konami", "Trigon (Japan)" )
 	
-	GAME( 1991, blswhstl, 0,        detatwin, detatwin, gfx,      ROT90, "Konami", "Bells & Whistles" )
-	GAME( 1991, detatwin, blswhstl, detatwin, detatwin, gfx,      ROT90, "Konami", "Detana!! Twin Bee (Japan)" )
+	public static GameDriver driver_blswhstl	   = new GameDriver("1991"	,"blswhstl"	,"tmnt.java"	,rom_blswhstl,null	,machine_driver_detatwin	,input_ports_detatwin	,init_gfx	,ROT90	,	Konami", "Bells & Whistles" )
+	public static GameDriver driver_detatwin	   = new GameDriver("1991"	,"detatwin"	,"tmnt.java"	,rom_detatwin,driver_blswhstl	,machine_driver_detatwin	,input_ports_detatwin	,init_gfx	,ROT90	,	Konami", "Detana!! Twin Bee (Japan)" )
 	
-	GAMEX(1991, glfgreat, 0,        glfgreat, glfgreat, glfgreat, ROT0,  "Konami", "Golfing Greats", GAME_NOT_WORKING )
-	GAMEX(1991, glfgretj, glfgreat, glfgreat, glfgreat, glfgreat, ROT0,  "Konami", "Golfing Greats (Japan)", GAME_NOT_WORKING )
+	public static GameDriver driver_glfgreat	   = new GameDriver("1991"	,"glfgreat"	,"tmnt.java"	,rom_glfgreat,null	,machine_driver_glfgreat	,input_ports_glfgreat	,init_glfgreat	,ROT0	,	Konami", "Golfing Greats", GAME_NOT_WORKING )
+	public static GameDriver driver_glfgretj	   = new GameDriver("1991"	,"glfgretj"	,"tmnt.java"	,rom_glfgretj,driver_glfgreat	,machine_driver_glfgreat	,input_ports_glfgreat	,init_glfgreat	,ROT0	,	Konami", "Golfing Greats (Japan)", GAME_NOT_WORKING )
 	
-	GAMEX(1991, tmnt2,    0,        tmnt2,    ssridr4p, gfx,      ROT0,  "Konami", "Teenage Mutant Ninja Turtles - Turtles in Time (US 4 Players)", GAME_UNEMULATED_PROTECTION )
-	GAMEX(1991, tmnt22p,  tmnt2,    tmnt2,    ssriders, gfx,      ROT0,  "Konami", "Teenage Mutant Ninja Turtles - Turtles in Time (US 2 Players)", GAME_UNEMULATED_PROTECTION )
-	GAMEX(1991, tmnt2a,   tmnt2,    tmnt2,    tmnt2a,   gfx,      ROT0,  "Konami", "Teenage Mutant Ninja Turtles - Turtles in Time (Asia 4 Players)", GAME_UNEMULATED_PROTECTION )
+	public static GameDriver driver_tmnt2	   = new GameDriver("1991"	,"tmnt2"	,"tmnt.java"	,rom_tmnt2,null	,machine_driver_tmnt2	,input_ports_ssridr4p	,init_gfx	,ROT0	,	Konami", "Teenage Mutant Ninja Turtles - Turtles in Time (US 4 Players)", GAME_UNEMULATED_PROTECTION )
+	public static GameDriver driver_tmnt22p	   = new GameDriver("1991"	,"tmnt22p"	,"tmnt.java"	,rom_tmnt22p,driver_tmnt2	,machine_driver_tmnt2	,input_ports_ssriders	,init_gfx	,ROT0	,	Konami", "Teenage Mutant Ninja Turtles - Turtles in Time (US 2 Players)", GAME_UNEMULATED_PROTECTION )
+	public static GameDriver driver_tmnt2a	   = new GameDriver("1991"	,"tmnt2a"	,"tmnt.java"	,rom_tmnt2a,driver_tmnt2	,machine_driver_tmnt2	,input_ports_tmnt2a	,init_gfx	,ROT0	,	Konami", "Teenage Mutant Ninja Turtles - Turtles in Time (Asia 4 Players)", GAME_UNEMULATED_PROTECTION )
 	
-	GAME( 1993, qgakumon, 0,        tmnt2,    qgakumon, gfx,      ROT0,  "Konami", "Quiz Gakumon no Susume (Japan)" )
+	public static GameDriver driver_qgakumon	   = new GameDriver("1993"	,"qgakumon"	,"tmnt.java"	,rom_qgakumon,null	,machine_driver_tmnt2	,input_ports_qgakumon	,init_gfx	,ROT0	,	Konami", "Quiz Gakumon no Susume (Japan)" )
 	
-	GAMEX(1991, ssriders, 0,        ssriders, ssridr4p, gfx,      ROT0,  "Konami", "Sunset Riders (World 4 Players ver. EAC)", GAME_IMPERFECT_GRAPHICS )
-	GAMEX(1991, ssrdrebd, ssriders, ssriders, ssriders, gfx,      ROT0,  "Konami", "Sunset Riders (World 2 Players ver. EBD)", GAME_IMPERFECT_GRAPHICS )
-	GAMEX(1991, ssrdrebc, ssriders, ssriders, ssriders, gfx,      ROT0,  "Konami", "Sunset Riders (World 2 Players ver. EBC)", GAME_IMPERFECT_GRAPHICS )
-	GAMEX(1991, ssrdruda, ssriders, ssriders, ssridr4p, gfx,      ROT0,  "Konami", "Sunset Riders (US 4 Players ver. UDA)", GAME_IMPERFECT_GRAPHICS )
-	GAMEX(1991, ssrdruac, ssriders, ssriders, ssridr4p, gfx,      ROT0,  "Konami", "Sunset Riders (US 4 Players ver. UAC)", GAME_IMPERFECT_GRAPHICS )
-	GAMEX(1991, ssrdrubc, ssriders, ssriders, ssriders, gfx,      ROT0,  "Konami", "Sunset Riders (US 2 Players ver. UBC)", GAME_IMPERFECT_GRAPHICS )
-	GAMEX(1991, ssrdrabd, ssriders, ssriders, ssriders, gfx,      ROT0,  "Konami", "Sunset Riders (Asia 2 Players ver. ABD)", GAME_IMPERFECT_GRAPHICS )
-	GAMEX(1991, ssrdrjbd, ssriders, ssriders, ssriders, gfx,      ROT0,  "Konami", "Sunset Riders (Japan 2 Players ver. JBD)", GAME_IMPERFECT_GRAPHICS )
+	public static GameDriver driver_ssriders	   = new GameDriver("1991"	,"ssriders"	,"tmnt.java"	,rom_ssriders,null	,machine_driver_ssriders	,input_ports_ssridr4p	,init_gfx	,ROT0	,	Konami", "Sunset Riders (World 4 Players ver. EAC)", GAME_IMPERFECT_GRAPHICS )
+	public static GameDriver driver_ssrdrebd	   = new GameDriver("1991"	,"ssrdrebd"	,"tmnt.java"	,rom_ssrdrebd,driver_ssriders	,machine_driver_ssriders	,input_ports_ssriders	,init_gfx	,ROT0	,	Konami", "Sunset Riders (World 2 Players ver. EBD)", GAME_IMPERFECT_GRAPHICS )
+	public static GameDriver driver_ssrdrebc	   = new GameDriver("1991"	,"ssrdrebc"	,"tmnt.java"	,rom_ssrdrebc,driver_ssriders	,machine_driver_ssriders	,input_ports_ssriders	,init_gfx	,ROT0	,	Konami", "Sunset Riders (World 2 Players ver. EBC)", GAME_IMPERFECT_GRAPHICS )
+	public static GameDriver driver_ssrdruda	   = new GameDriver("1991"	,"ssrdruda"	,"tmnt.java"	,rom_ssrdruda,driver_ssriders	,machine_driver_ssriders	,input_ports_ssridr4p	,init_gfx	,ROT0	,	Konami", "Sunset Riders (US 4 Players ver. UDA)", GAME_IMPERFECT_GRAPHICS )
+	public static GameDriver driver_ssrdruac	   = new GameDriver("1991"	,"ssrdruac"	,"tmnt.java"	,rom_ssrdruac,driver_ssriders	,machine_driver_ssriders	,input_ports_ssridr4p	,init_gfx	,ROT0	,	Konami", "Sunset Riders (US 4 Players ver. UAC)", GAME_IMPERFECT_GRAPHICS )
+	public static GameDriver driver_ssrdrubc	   = new GameDriver("1991"	,"ssrdrubc"	,"tmnt.java"	,rom_ssrdrubc,driver_ssriders	,machine_driver_ssriders	,input_ports_ssriders	,init_gfx	,ROT0	,	Konami", "Sunset Riders (US 2 Players ver. UBC)", GAME_IMPERFECT_GRAPHICS )
+	public static GameDriver driver_ssrdrabd	   = new GameDriver("1991"	,"ssrdrabd"	,"tmnt.java"	,rom_ssrdrabd,driver_ssriders	,machine_driver_ssriders	,input_ports_ssriders	,init_gfx	,ROT0	,	Konami", "Sunset Riders (Asia 2 Players ver. ABD)", GAME_IMPERFECT_GRAPHICS )
+	public static GameDriver driver_ssrdrjbd	   = new GameDriver("1991"	,"ssrdrjbd"	,"tmnt.java"	,rom_ssrdrjbd,driver_ssriders	,machine_driver_ssriders	,input_ports_ssriders	,init_gfx	,ROT0	,	Konami", "Sunset Riders (Japan 2 Players ver. JBD)", GAME_IMPERFECT_GRAPHICS )
 	
-	GAME( 1991, thndrx2,  0,        thndrx2,  thndrx2,  gfx,      ROT0,  "Konami", "Thunder Cross II (Japan)" )
+	public static GameDriver driver_thndrx2	   = new GameDriver("1991"	,"thndrx2"	,"tmnt.java"	,rom_thndrx2,null	,machine_driver_thndrx2	,input_ports_thndrx2	,init_gfx	,ROT0	,	Konami", "Thunder Cross II (Japan)" )
 	
-	GAMEX(1993, prmrsocr, 0,        prmrsocr, prmrsocr, glfgreat, ROT0,  "Konami", "Premier Soccer (Japan)", GAME_IMPERFECT_GRAPHICS )
+	public static GameDriver driver_prmrsocr	   = new GameDriver("1993"	,"prmrsocr"	,"tmnt.java"	,rom_prmrsocr,null	,machine_driver_prmrsocr	,input_ports_prmrsocr	,init_glfgreat	,ROT0	,	Konami", "Premier Soccer (Japan)", GAME_IMPERFECT_GRAPHICS )
 }

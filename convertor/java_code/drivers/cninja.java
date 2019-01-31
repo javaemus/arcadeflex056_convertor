@@ -1515,14 +1515,14 @@ public class cninja
 	
 	/**********************************************************************************/
 	
-	GAMEX(1990, edrandy,  0,       edrandy,  cninja,  0,        ROT0, "Data East Corporation", "Edward Randy (World)", GAME_UNEMULATED_PROTECTION )
-	GAMEX(1990, edrandyj, edrandy, edrandy,  cninja,  0,        ROT0, "Data East Corporation", "Edward Randy (Japan)", GAME_UNEMULATED_PROTECTION )
-	GAME( 1991, cninja,   0,       cninja,   cninja,  cninja,   ROT0, "Data East Corporation", "Caveman Ninja (World revision 3)" )
-	GAME( 1991, cninja0,  cninja,  cninja,   cninja,  cninja,   ROT0, "Data East Corporation", "Caveman Ninja (World revision 0)" )
-	GAME( 1991, cninjau,  cninja,  cninja,   cninjau, cninja,   ROT0, "Data East Corporation", "Caveman Ninja (US)" )
-	GAME( 1991, joemac,   cninja,  cninja,   cninja,  cninja,   ROT0, "Data East Corporation", "Joe & Mac (Japan)" )
-	GAME( 1991, stoneage, cninja,  stoneage, cninja,  stoneage, ROT0, "bootleg", "Stoneage" )
-	GAMEX(1991, robocop2, 0,       robocop2, robocop2,0,        ROT0, "Data East Corporation", "Robocop 2 (World)", GAME_IMPERFECT_GRAPHICS )
-	GAMEX(1991, robocp2u, robocop2,robocop2, robocop2,0,        ROT0, "Data East Corporation", "Robocop 2 (US)", GAME_IMPERFECT_GRAPHICS )
-	GAMEX(1991, robocp2j, robocop2,robocop2, robocop2,0,        ROT0, "Data East Corporation", "Robocop 2 (Japan)", GAME_IMPERFECT_GRAPHICS )
+	public static GameDriver driver_edrandy	   = new GameDriver("1990"	,"edrandy"	,"cninja.java"	,rom_edrandy,null	,machine_driver_edrandy	,input_ports_cninja	,null	,ROT0	,	Data East Corporation", "Edward Randy (World)", GAME_UNEMULATED_PROTECTION )
+	public static GameDriver driver_edrandyj	   = new GameDriver("1990"	,"edrandyj"	,"cninja.java"	,rom_edrandyj,driver_edrandy	,machine_driver_edrandy	,input_ports_cninja	,null	,ROT0	,	Data East Corporation", "Edward Randy (Japan)", GAME_UNEMULATED_PROTECTION )
+	public static GameDriver driver_cninja	   = new GameDriver("1991"	,"cninja"	,"cninja.java"	,rom_cninja,null	,machine_driver_cninja	,input_ports_cninja	,init_cninja	,ROT0	,	Data East Corporation", "Caveman Ninja (World revision 3)" )
+	public static GameDriver driver_cninja0	   = new GameDriver("1991"	,"cninja0"	,"cninja.java"	,rom_cninja0,driver_cninja	,machine_driver_cninja	,input_ports_cninja	,init_cninja	,ROT0	,	Data East Corporation", "Caveman Ninja (World revision 0)" )
+	public static GameDriver driver_cninjau	   = new GameDriver("1991"	,"cninjau"	,"cninja.java"	,rom_cninjau,driver_cninja	,machine_driver_cninja	,input_ports_cninjau	,init_cninja	,ROT0	,	Data East Corporation", "Caveman Ninja (US)" )
+	public static GameDriver driver_joemac	   = new GameDriver("1991"	,"joemac"	,"cninja.java"	,rom_joemac,driver_cninja	,machine_driver_cninja	,input_ports_cninja	,init_cninja	,ROT0	,	Data East Corporation", "Joe & Mac (Japan)" )
+	public static GameDriver driver_stoneage	   = new GameDriver("1991"	,"stoneage"	,"cninja.java"	,rom_stoneage,driver_cninja	,machine_driver_stoneage	,input_ports_cninja	,init_stoneage	,ROT0	,	bootleg", "Stoneage" )
+	public static GameDriver driver_robocop2	   = new GameDriver("1991"	,"robocop2"	,"cninja.java"	,rom_robocop2,null	,machine_driver_robocop2	,input_ports_robocop2	,null	,ROT0	,	Data East Corporation", "Robocop 2 (World)", GAME_IMPERFECT_GRAPHICS )
+	public static GameDriver driver_robocp2u	   = new GameDriver("1991"	,"robocp2u"	,"cninja.java"	,rom_robocp2u,driver_robocop2	,machine_driver_robocop2	,input_ports_robocop2	,null	,ROT0	,	Data East Corporation", "Robocop 2 (US)", GAME_IMPERFECT_GRAPHICS )
+	public static GameDriver driver_robocp2j	   = new GameDriver("1991"	,"robocp2j"	,"cninja.java"	,rom_robocp2j,driver_robocop2	,machine_driver_robocop2	,input_ports_robocop2	,null	,ROT0	,	Data East Corporation", "Robocop 2 (Japan)", GAME_IMPERFECT_GRAPHICS )
 }

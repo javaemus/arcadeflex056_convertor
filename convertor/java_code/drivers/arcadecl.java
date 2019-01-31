@@ -488,6 +488,6 @@ public class arcadecl
 	 *
 	 *************************************/
 	
-	GAME( 1992, arcadecl, 0, arcadecl, arcadecl, arcadecl, ROT0, "Atari Games", "Arcade Classics (prototype)" )
-	GAME( 1992, sparkz,   0, arcadecl, sparkz,   sparkz,   ROT0, "Atari Games", "Sparkz (prototype)" )
+	public static GameDriver driver_arcadecl	   = new GameDriver("1992"	,"arcadecl"	,"arcadecl.java"	,rom_arcadecl,null	,machine_driver_arcadecl	,input_ports_arcadecl	,init_arcadecl	,ROT0	,	Atari Games", "Arcade Classics (prototype)" )
+	public static GameDriver driver_sparkz	   = new GameDriver("1992"	,"sparkz"	,"arcadecl.java"	,rom_sparkz,null	,machine_driver_arcadecl	,input_ports_sparkz	,init_sparkz	,ROT0	,	Atari Games", "Sparkz (prototype)" )
 }

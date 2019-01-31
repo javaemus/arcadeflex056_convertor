@@ -797,9 +797,9 @@ public class gaplus
 	ROM_END(); }}; 
 	
 	/*          rom       parent  machine  inp     init                                    */
-	GAME( 1984, gaplus,   0,      gaplus,  gaplus,   0, ROT90, "Namco", "Gaplus (set 1)" )
-	GAME( 1984, gaplusa,  gaplus, gaplusa, gaplus,   0, ROT90, "Namco", "Gaplus (set 2)" )
-	GAME( 1984, galaga3,  gaplus, galaga3, galaga3,  0, ROT90, "Namco", "Galaga 3 (set 1)" )
-	GAME( 1984, galaga3a, gaplus, galaga3, galaga3a, 0, ROT90, "Namco", "Galaga 3 (set 2)" )
-	GAME( 1984, galaga3b, gaplus, galaga3, galaga3,  0, ROT90, "Namco", "Galaga 3 (set 3)" )
+	public static GameDriver driver_gaplus	   = new GameDriver("1984"	,"gaplus"	,"gaplus.java"	,rom_gaplus,null	,machine_driver_gaplus	,input_ports_gaplus	,null	,ROT90	,	Namco", "Gaplus (set 1)" )
+	public static GameDriver driver_gaplusa	   = new GameDriver("1984"	,"gaplusa"	,"gaplus.java"	,rom_gaplusa,driver_gaplus	,machine_driver_gaplusa	,input_ports_gaplus	,null	,ROT90	,	Namco", "Gaplus (set 2)" )
+	public static GameDriver driver_galaga3	   = new GameDriver("1984"	,"galaga3"	,"gaplus.java"	,rom_galaga3,driver_gaplus	,machine_driver_galaga3	,input_ports_galaga3	,null	,ROT90	,	Namco", "Galaga 3 (set 1)" )
+	public static GameDriver driver_galaga3a	   = new GameDriver("1984"	,"galaga3a"	,"gaplus.java"	,rom_galaga3a,driver_gaplus	,machine_driver_galaga3	,input_ports_galaga3a	,null	,ROT90	,	Namco", "Galaga 3 (set 2)" )
+	public static GameDriver driver_galaga3b	   = new GameDriver("1984"	,"galaga3b"	,"gaplus.java"	,rom_galaga3b,driver_gaplus	,machine_driver_galaga3	,input_ports_galaga3	,null	,ROT90	,	Namco", "Galaga 3 (set 3)" )
 }

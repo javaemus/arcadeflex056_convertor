@@ -432,5 +432,5 @@ public class polyplay
 	}
 	
 	/* game driver */
-	GAME( 1985, polyplay, 0, polyplay, polyplay, polyplay_sound, ROT0, "VEB Polytechnik Karl-Marx-Stadt", "Poly-Play" )
+	public static GameDriver driver_polyplay	   = new GameDriver("1985"	,"polyplay"	,"polyplay.java"	,rom_polyplay,null	,machine_driver_polyplay	,input_ports_polyplay	,init_polyplay_sound	,ROT0	,	VEB Polytechnik Karl-Marx-Stadt", "Poly-Play" )
 }

@@ -755,7 +755,7 @@ public class atarig42
 	 *
 	 *************************************/
 	
-	GAMEX( 1991, roadriot, 0,        atarig42, roadriot, roadriot, ROT0, "Atari Games", "Road Riot 4WD", GAME_UNEMULATED_PROTECTION )
-	GAMEX( 1991, roadriop, roadriot, atarig42, roadriot, roadriot, ROT0, "Atari Games", "Road Riot 4WD (prototype)", GAME_UNEMULATED_PROTECTION )
-	GAMEX( 1992, guardian, 0,        atarig42, guardian, guardian, ROT0, "Atari Games", "Guardians of the Hood", GAME_UNEMULATED_PROTECTION )
+	public static GameDriver driver_roadriot	   = new GameDriver("1991"	,"roadriot"	,"atarig42.java"	,rom_roadriot,null	,machine_driver_atarig42	,input_ports_roadriot	,init_roadriot	,ROT0	,	Atari Games", "Road Riot 4WD", GAME_UNEMULATED_PROTECTION )
+	public static GameDriver driver_roadriop	   = new GameDriver("1991"	,"roadriop"	,"atarig42.java"	,rom_roadriop,driver_roadriot	,machine_driver_atarig42	,input_ports_roadriot	,init_roadriot	,ROT0	,	Atari Games", "Road Riot 4WD (prototype)", GAME_UNEMULATED_PROTECTION )
+	public static GameDriver driver_guardian	   = new GameDriver("1992"	,"guardian"	,"atarig42.java"	,rom_guardian,null	,machine_driver_atarig42	,input_ports_guardian	,init_guardian	,ROT0	,	Atari Games", "Guardians of the Hood", GAME_UNEMULATED_PROTECTION )
 }

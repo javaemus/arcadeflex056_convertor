@@ -3492,22 +3492,22 @@ public class taito_z
 	/* Working Games */
 	
 	// Spacegun will come after Aquajack in release date order //
-	GAME ( 1990, spacegun, 0,        spacegun, spacegun, bshark,   ORIENTATION_FLIP_X, "Taito Corporation Japan", "Space Gun (World)" )
+	public static GameDriver driver_spacegun	   = new GameDriver("1990"	,"spacegun"	,"taito_z.java"	,rom_spacegun,null	,machine_driver_spacegun	,input_ports_spacegun	,init_bshark	,ORIENTATION_FLIP_X	,	Taito Corporation Japan", "Space Gun (World)" )
 	
 	/* Busted Games, release date order: contcirc 1989 (c) date is bogus */
 	
-	GAMEX( 1989, contcirc, 0,        contcirc, contcirc, taitoz,   ROT0,               "Taito Corporation Japan", "Continental Circus (World)", GAME_IMPERFECT_GRAPHICS )
-	GAMEX( 1987, contcrcu, contcirc, contcirc, contcirc, taitoz,   ROT0,               "Taito America Corporation", "Continental Circus (US)", GAME_IMPERFECT_GRAPHICS )
-	GAMEX( 1988, chasehq,  0,        chasehq,  chasehq,  taitoz,   ROT0,               "Taito Corporation Japan", "Chase HQ (World)", GAME_IMPERFECT_GRAPHICS )
-	GAMEX( 1988, chasehqj, chasehq,  chasehq,  chasehq,  taitoz,   ROT0,               "Taito Corporation", "Chase HQ (Japan)", GAME_IMPERFECT_GRAPHICS )
-	GAMEX( 1989, bshark,   0,        bshark,   bshark,   bshark,   ORIENTATION_FLIP_X, "Taito America Corporation", "Battle Shark (US)", GAME_IMPERFECT_GRAPHICS )
-	GAMEX( 1989, bsharkj,  bshark,   bshark,   bshark,   bshark,   ORIENTATION_FLIP_X, "Taito Corporation", "Battle Shark (Japan)", GAME_IMPERFECT_GRAPHICS )
-	GAMEX( 1989, sci,      0,        sci,      sci,      taitoz,   ROT0,               "Taito Corporation Japan", "Special Criminal Investigation (World set 1)", GAME_IMPERFECT_GRAPHICS )
-	GAMEX( 1989, scia,     sci,      sci,      sci,      taitoz,   ROT0,               "Taito Corporation Japan", "Special Criminal Investigation (World set 2)", GAME_IMPERFECT_GRAPHICS )
-	GAMEX( 1989, sciu,     sci,      sci,      sci,      taitoz,   ROT0,               "Taito America Corporation", "Special Criminal Investigation (US)", GAME_IMPERFECT_GRAPHICS )
-	GAMEX( 1989, nightstr, 0,        nightstr, nightstr, taitoz,   ROT0,               "Taito America Corporation", "Night Striker (US)", GAME_IMPERFECT_GRAPHICS )
-	GAMEX( 1990, aquajack, 0,        aquajack, aquajack, taitoz,   ROT0,               "Taito Corporation Japan", "Aqua Jack (World)", GAME_IMPERFECT_GRAPHICS )
-	GAMEX( 1990, aquajckj, aquajack, aquajack, aquajack, taitoz,   ROT0,               "Taito Corporation", "Aqua Jack (Japan)", GAME_IMPERFECT_GRAPHICS )
-	GAMEX( 1991, dblaxle,  0,        dblaxle,  dblaxle,  taitoz,   ROT0,               "Taito America Corporation", "Double Axle (US)", GAME_IMPERFECT_GRAPHICS )
-	GAMEX( 1991, pwheelsj, dblaxle,  dblaxle,  dblaxle,  taitoz,   ROT0,               "Taito Corporation", "Power Wheels (Japan)", GAME_IMPERFECT_GRAPHICS )
+	public static GameDriver driver_contcirc	   = new GameDriver("1989"	,"contcirc"	,"taito_z.java"	,rom_contcirc,null	,machine_driver_contcirc	,input_ports_contcirc	,init_taitoz	,ROT0	,	Taito Corporation Japan", "Continental Circus (World)", GAME_IMPERFECT_GRAPHICS )
+	public static GameDriver driver_contcrcu	   = new GameDriver("1987"	,"contcrcu"	,"taito_z.java"	,rom_contcrcu,driver_contcirc	,machine_driver_contcirc	,input_ports_contcirc	,init_taitoz	,ROT0	,	Taito America Corporation", "Continental Circus (US)", GAME_IMPERFECT_GRAPHICS )
+	public static GameDriver driver_chasehq	   = new GameDriver("1988"	,"chasehq"	,"taito_z.java"	,rom_chasehq,null	,machine_driver_chasehq	,input_ports_chasehq	,init_taitoz	,ROT0	,	Taito Corporation Japan", "Chase HQ (World)", GAME_IMPERFECT_GRAPHICS )
+	public static GameDriver driver_chasehqj	   = new GameDriver("1988"	,"chasehqj"	,"taito_z.java"	,rom_chasehqj,driver_chasehq	,machine_driver_chasehq	,input_ports_chasehq	,init_taitoz	,ROT0	,	Taito Corporation", "Chase HQ (Japan)", GAME_IMPERFECT_GRAPHICS )
+	public static GameDriver driver_bshark	   = new GameDriver("1989"	,"bshark"	,"taito_z.java"	,rom_bshark,null	,machine_driver_bshark	,input_ports_bshark	,init_bshark	,ORIENTATION_FLIP_X	,	Taito America Corporation", "Battle Shark (US)", GAME_IMPERFECT_GRAPHICS )
+	public static GameDriver driver_bsharkj	   = new GameDriver("1989"	,"bsharkj"	,"taito_z.java"	,rom_bsharkj,driver_bshark	,machine_driver_bshark	,input_ports_bshark	,init_bshark	,ORIENTATION_FLIP_X	,	Taito Corporation", "Battle Shark (Japan)", GAME_IMPERFECT_GRAPHICS )
+	public static GameDriver driver_sci	   = new GameDriver("1989"	,"sci"	,"taito_z.java"	,rom_sci,null	,machine_driver_sci	,input_ports_sci	,init_taitoz	,ROT0	,	Taito Corporation Japan", "Special Criminal Investigation (World set 1)", GAME_IMPERFECT_GRAPHICS )
+	public static GameDriver driver_scia	   = new GameDriver("1989"	,"scia"	,"taito_z.java"	,rom_scia,driver_sci	,machine_driver_sci	,input_ports_sci	,init_taitoz	,ROT0	,	Taito Corporation Japan", "Special Criminal Investigation (World set 2)", GAME_IMPERFECT_GRAPHICS )
+	public static GameDriver driver_sciu	   = new GameDriver("1989"	,"sciu"	,"taito_z.java"	,rom_sciu,driver_sci	,machine_driver_sci	,input_ports_sci	,init_taitoz	,ROT0	,	Taito America Corporation", "Special Criminal Investigation (US)", GAME_IMPERFECT_GRAPHICS )
+	public static GameDriver driver_nightstr	   = new GameDriver("1989"	,"nightstr"	,"taito_z.java"	,rom_nightstr,null	,machine_driver_nightstr	,input_ports_nightstr	,init_taitoz	,ROT0	,	Taito America Corporation", "Night Striker (US)", GAME_IMPERFECT_GRAPHICS )
+	public static GameDriver driver_aquajack	   = new GameDriver("1990"	,"aquajack"	,"taito_z.java"	,rom_aquajack,null	,machine_driver_aquajack	,input_ports_aquajack	,init_taitoz	,ROT0	,	Taito Corporation Japan", "Aqua Jack (World)", GAME_IMPERFECT_GRAPHICS )
+	public static GameDriver driver_aquajckj	   = new GameDriver("1990"	,"aquajckj"	,"taito_z.java"	,rom_aquajckj,driver_aquajack	,machine_driver_aquajack	,input_ports_aquajack	,init_taitoz	,ROT0	,	Taito Corporation", "Aqua Jack (Japan)", GAME_IMPERFECT_GRAPHICS )
+	public static GameDriver driver_dblaxle	   = new GameDriver("1991"	,"dblaxle"	,"taito_z.java"	,rom_dblaxle,null	,machine_driver_dblaxle	,input_ports_dblaxle	,init_taitoz	,ROT0	,	Taito America Corporation", "Double Axle (US)", GAME_IMPERFECT_GRAPHICS )
+	public static GameDriver driver_pwheelsj	   = new GameDriver("1991"	,"pwheelsj"	,"taito_z.java"	,rom_pwheelsj,driver_dblaxle	,machine_driver_dblaxle	,input_ports_dblaxle	,init_taitoz	,ROT0	,	Taito Corporation", "Power Wheels (Japan)", GAME_IMPERFECT_GRAPHICS )
 }

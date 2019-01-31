@@ -488,6 +488,6 @@ public class chqflag
 		paletteram = &RAM[0x58000];
 	}
 	
-	GAMEX( 1988, chqflag,        0, chqflag, chqflag, chqflag, ROT90, "Konami", "Chequered Flag", GAME_UNEMULATED_PROTECTION | GAME_IMPERFECT_SOUND )
-	GAMEX( 1988, chqflagj, chqflag, chqflag, chqflag, chqflag, ROT90, "Konami", "Chequered Flag (Japan)", GAME_UNEMULATED_PROTECTION | GAME_IMPERFECT_SOUND )
+	public static GameDriver driver_chqflag	   = new GameDriver("1988"	,"chqflag"	,"chqflag.java"	,rom_chqflag,null	,machine_driver_chqflag	,input_ports_chqflag	,init_chqflag	,ROT90	,	Konami", "Chequered Flag", GAME_UNEMULATED_PROTECTION | GAME_IMPERFECT_SOUND )
+	public static GameDriver driver_chqflagj	   = new GameDriver("1988"	,"chqflagj"	,"chqflag.java"	,rom_chqflagj,driver_chqflag	,machine_driver_chqflag	,input_ports_chqflag	,init_chqflag	,ROT90	,	Konami", "Chequered Flag (Japan)", GAME_UNEMULATED_PROTECTION | GAME_IMPERFECT_SOUND )
 }

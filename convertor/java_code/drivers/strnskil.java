@@ -494,7 +494,7 @@ public class strnskil
 		ROM_LOAD( "tvg12-16.2", 0x0000,  0x1000, 0x3abc6ba8 );
 	ROM_END(); }}; 
 	
-	GAME(  1984, strnskil, 0,        strnskil, strnskil, 0, ROT0, "Sun Electronics", "Strength & Skill" )
-	GAME(  1984, guiness,  strnskil, strnskil, strnskil, 0, ROT0, "Sun Electronics", "The Guiness (Japan)" )
-	GAMEX( 1984, pettanp,  0,        strnskil, pettanp,  0, ROT0, "Sun Electronics", "Pettan Pyuu (Japan)", GAME_UNEMULATED_PROTECTION )
+	public static GameDriver driver_strnskil	   = new GameDriver("1984"	,"strnskil"	,"strnskil.java"	,rom_strnskil,null	,machine_driver_strnskil	,input_ports_strnskil	,null	,ROT0	,	Sun Electronics", "Strength & Skill" )
+	public static GameDriver driver_guiness	   = new GameDriver("1984"	,"guiness"	,"strnskil.java"	,rom_guiness,driver_strnskil	,machine_driver_strnskil	,input_ports_strnskil	,null	,ROT0	,	Sun Electronics", "The Guiness (Japan)" )
+	public static GameDriver driver_pettanp	   = new GameDriver("1984"	,"pettanp"	,"strnskil.java"	,rom_pettanp,null	,machine_driver_strnskil	,input_ports_pettanp	,null	,ROT0	,	Sun Electronics", "Pettan Pyuu (Japan)", GAME_UNEMULATED_PROTECTION )
 }

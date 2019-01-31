@@ -616,6 +616,6 @@ public class yunsun16
 	
 	***************************************************************************/
 	
-	GAMEX( 19??, magicbub, 0, magicbub, magicbub, magicbub, ROT0, "Yun Sung", "Magic Bubble", GAME_NO_COCKTAIL )
-	GAMEX( 1997, shocking, 0, shocking, shocking, 0,        ROT0, "Yun Sung", "Shocking",     GAME_NO_COCKTAIL )
+	public static GameDriver driver_magicbub	   = new GameDriver("19??"	,"magicbub"	,"yunsun16.java"	,rom_magicbub,null	,machine_driver_magicbub	,input_ports_magicbub	,init_magicbub	,ROT0	,	Yun Sung", "Magic Bubble", GAME_NO_COCKTAIL )
+	public static GameDriver driver_shocking	   = new GameDriver("1997"	,"shocking"	,"yunsun16.java"	,rom_shocking,null	,machine_driver_shocking	,input_ports_shocking	,null	,ROT0	,	Yun Sung", "Shocking",     GAME_NO_COCKTAIL )
 }
