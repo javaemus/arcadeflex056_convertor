@@ -496,8 +496,8 @@ public class tempest
 	
 	
 	
-	public static GameDriver driver_tempest	   = new GameDriver("1980"	,"tempest"	,"tempest.java"	,rom_tempest,null	,machine_driver_tempest	,input_ports_tempest	,null	,ROT270	,	Atari", "Tempest (rev 3)" )
-	public static GameDriver driver_tempest1	   = new GameDriver("1980"	,"tempest1"	,"tempest.java"	,rom_tempest1,driver_tempest	,machine_driver_tempest	,input_ports_tempest	,null	,ROT270	,	Atari", "Tempest (rev 1)" )
-	public static GameDriver driver_tempest2	   = new GameDriver("1980"	,"tempest2"	,"tempest.java"	,rom_tempest2,driver_tempest	,machine_driver_tempest	,input_ports_tempest	,null	,ROT270	,	Atari", "Tempest (rev 2)" )
-	public static GameDriver driver_temptube	   = new GameDriver("1980"	,"temptube"	,"tempest.java"	,rom_temptube,driver_tempest	,machine_driver_tempest	,input_ports_tempest	,null	,ROT270	,	hack", "Tempest Tubes" )
+	public static GameDriver driver_tempest	   = new GameDriver("1980"	,"tempest"	,"tempest.java"	,rom_tempest,null	,machine_driver_tempest	,input_ports_tempest	,null	,ROT270	,	"Atari", "Tempest (rev 3)" )
+	public static GameDriver driver_tempest1	   = new GameDriver("1980"	,"tempest1"	,"tempest.java"	,rom_tempest1,driver_tempest	,machine_driver_tempest	,input_ports_tempest	,null	,ROT270	,	"Atari", "Tempest (rev 1)" )
+	public static GameDriver driver_tempest2	   = new GameDriver("1980"	,"tempest2"	,"tempest.java"	,rom_tempest2,driver_tempest	,machine_driver_tempest	,input_ports_tempest	,null	,ROT270	,	"Atari", "Tempest (rev 2)" )
+	public static GameDriver driver_temptube	   = new GameDriver("1980"	,"temptube"	,"tempest.java"	,rom_temptube,driver_tempest	,machine_driver_tempest	,input_ports_tempest	,null	,ROT270	,	"hack", "Tempest Tubes" )
 }

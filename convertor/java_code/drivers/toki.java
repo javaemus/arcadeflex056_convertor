@@ -770,9 +770,9 @@ public class toki
 	
 	
 	
-	public static GameDriver driver_toki	   = new GameDriver("1989"	,"toki"	,"toki.java"	,rom_toki,null	,machine_driver_toki	,input_ports_toki	,init_toki	,ROT0	,	Tad", "Toki (World set 1)" )
-	public static GameDriver driver_tokia	   = new GameDriver("1989"	,"tokia"	,"toki.java"	,rom_tokia,driver_toki	,machine_driver_toki	,input_ports_toki	,init_toki	,ROT0	,	Tad", "Toki (World set 2)" )
-	public static GameDriver driver_tokij	   = new GameDriver("1989"	,"tokij"	,"toki.java"	,rom_tokij,driver_toki	,machine_driver_toki	,input_ports_toki	,init_toki	,ROT0	,	Tad", "JuJu Densetsu (Japan)" )
-	public static GameDriver driver_tokiu	   = new GameDriver("1989"	,"tokiu"	,"toki.java"	,rom_tokiu,driver_toki	,machine_driver_toki	,input_ports_toki	,init_toki	,ROT0	,	Tad (Fabtek license)", "Toki (US)" )
-	public static GameDriver driver_tokib	   = new GameDriver("1989"	,"tokib"	,"toki.java"	,rom_tokib,driver_toki	,machine_driver_tokib	,input_ports_tokib	,init_tokib	,ROT0	,	bootleg", "Toki (bootleg)" )
+	public static GameDriver driver_toki	   = new GameDriver("1989"	,"toki"	,"toki.java"	,rom_toki,null	,machine_driver_toki	,input_ports_toki	,init_toki	,ROT0	,	"Tad", "Toki (World set 1)" )
+	public static GameDriver driver_tokia	   = new GameDriver("1989"	,"tokia"	,"toki.java"	,rom_tokia,driver_toki	,machine_driver_toki	,input_ports_toki	,init_toki	,ROT0	,	"Tad", "Toki (World set 2)" )
+	public static GameDriver driver_tokij	   = new GameDriver("1989"	,"tokij"	,"toki.java"	,rom_tokij,driver_toki	,machine_driver_toki	,input_ports_toki	,init_toki	,ROT0	,	"Tad", "JuJu Densetsu (Japan)" )
+	public static GameDriver driver_tokiu	   = new GameDriver("1989"	,"tokiu"	,"toki.java"	,rom_tokiu,driver_toki	,machine_driver_toki	,input_ports_toki	,init_toki	,ROT0	,	"Tad (Fabtek license)", "Toki (US)" )
+	public static GameDriver driver_tokib	   = new GameDriver("1989"	,"tokib"	,"toki.java"	,rom_tokib,driver_toki	,machine_driver_tokib	,input_ports_tokib	,init_tokib	,ROT0	,	"bootleg", "Toki (bootleg)" )
 }

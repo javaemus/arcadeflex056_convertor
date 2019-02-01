@@ -331,8 +331,8 @@ public class skychut
 	
 	
 	
-	public static GameDriver driver_iremm10	   = new GameDriver("19??"	,"iremm10"	,"skychut.java"	,rom_iremm10,null	,machine_driver_skychut	,input_ports_skychut	,null	,ROT0	,	Irem", "? (irem m10 hardware)", GAME_NO_SOUND | GAME_WRONG_COLORS | GAME_NOT_WORKING )
-	public static GameDriver driver_skychut	   = new GameDriver("1980"	,"skychut"	,"skychut.java"	,rom_skychut,null	,machine_driver_skychut	,input_ports_skychut	,null	,ROT0	,	Irem", "Sky Chuter", GAME_NO_SOUND | GAME_WRONG_COLORS )
-	public static GameDriver driver_spacbeam	   = new GameDriver("19??"	,"spacbeam"	,"skychut.java"	,rom_spacbeam,null	,machine_driver_greenberet	,input_ports_spacebeam	,null	,ROT0	,	Irem", "Space Beam", GAME_NO_SOUND | GAME_WRONG_COLORS )
-	public static GameDriver driver_greenber	   = new GameDriver("1980"	,"greenber"	,"skychut.java"	,rom_greenber,null	,machine_driver_greenberet	,input_ports_spacebeam	,null	,ROT0	,	Irem", "Green Beret (IREM)", GAME_NO_SOUND | GAME_WRONG_COLORS | GAME_NOT_WORKING )
+	public static GameDriver driver_iremm10	   = new GameDriver("19??"	,"iremm10"	,"skychut.java"	,rom_iremm10,null	,machine_driver_skychut	,input_ports_skychut	,null	,ROT0	,	"Irem", "? (irem m10 hardware)", GAME_NO_SOUND | GAME_WRONG_COLORS | GAME_NOT_WORKING )
+	public static GameDriver driver_skychut	   = new GameDriver("1980"	,"skychut"	,"skychut.java"	,rom_skychut,null	,machine_driver_skychut	,input_ports_skychut	,null	,ROT0	,	"Irem", "Sky Chuter", GAME_NO_SOUND | GAME_WRONG_COLORS )
+	public static GameDriver driver_spacbeam	   = new GameDriver("19??"	,"spacbeam"	,"skychut.java"	,rom_spacbeam,null	,machine_driver_greenberet	,input_ports_spacebeam	,null	,ROT0	,	"Irem", "Space Beam", GAME_NO_SOUND | GAME_WRONG_COLORS )
+	public static GameDriver driver_greenber	   = new GameDriver("1980"	,"greenber"	,"skychut.java"	,rom_greenber,null	,machine_driver_greenberet	,input_ports_spacebeam	,null	,ROT0	,	"Irem", "Green Beret (IREM)", GAME_NO_SOUND | GAME_WRONG_COLORS | GAME_NOT_WORKING )
 }

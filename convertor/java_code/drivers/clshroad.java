@@ -426,6 +426,6 @@ public class clshroad
 	
 	
 	
-	public static GameDriver driver_firebatl	   = new GameDriver("1984"	,"firebatl"	,"clshroad.java"	,rom_firebatl,null	,machine_driver_firebatl	,input_ports_clshroad	,null	,ROT90	,	Taito", "Fire Battle", GAME_NOT_WORKING | GAME_WRONG_COLORS )
-	public static GameDriver driver_clshroad	   = new GameDriver("1986"	,"clshroad"	,"clshroad.java"	,rom_clshroad,null	,machine_driver_clshroad	,input_ports_clshroad	,null	,ROT0	,	Woodplace Inc.", "Clash Road", GAME_WRONG_COLORS )
+	public static GameDriver driver_firebatl	   = new GameDriver("1984"	,"firebatl"	,"clshroad.java"	,rom_firebatl,null	,machine_driver_firebatl	,input_ports_clshroad	,null	,ROT90	,	"Taito", "Fire Battle", GAME_NOT_WORKING | GAME_WRONG_COLORS )
+	public static GameDriver driver_clshroad	   = new GameDriver("1986"	,"clshroad"	,"clshroad.java"	,rom_clshroad,null	,machine_driver_clshroad	,input_ports_clshroad	,null	,ROT0	,	"Woodplace Inc.", "Clash Road", GAME_WRONG_COLORS )
 }

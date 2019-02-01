@@ -654,6 +654,6 @@ public class afega
 	
 	***************************************************************************/
 	
-	public static GameDriver driver_stagger1	   = new GameDriver("1998"	,"stagger1"	,"afega.java"	,rom_stagger1,null	,machine_driver_stagger1	,input_ports_stagger1	,init_stagger1	,ROT270	,	Afega", "Stagger I (Japan)",                GAME_NOT_WORKING )
-	public static GameDriver driver_grdnstrm	   = new GameDriver("1998"	,"grdnstrm"	,"afega.java"	,rom_grdnstrm,null	,machine_driver_grdnstrm	,input_ports_grdnstrm	,init_grdnstrm	,ROT270	,	Afega", "Sen Jin - Guardian Storm (Korea)", GAME_NOT_WORKING )
+	public static GameDriver driver_stagger1	   = new GameDriver("1998"	,"stagger1"	,"afega.java"	,rom_stagger1,null	,machine_driver_stagger1	,input_ports_stagger1	,init_stagger1	,ROT270	,	"Afega", "Stagger I (Japan)",                GAME_NOT_WORKING )
+	public static GameDriver driver_grdnstrm	   = new GameDriver("1998"	,"grdnstrm"	,"afega.java"	,rom_grdnstrm,null	,machine_driver_grdnstrm	,input_ports_grdnstrm	,init_grdnstrm	,ROT270	,	"Afega", "Sen Jin - Guardian Storm (Korea)", GAME_NOT_WORKING )
 }

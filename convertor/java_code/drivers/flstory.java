@@ -439,7 +439,7 @@ public class flstory
 	
 	
 	
-	public static GameDriver driver_flstory	   = new GameDriver("1985"	,"flstory"	,"flstory.java"	,rom_flstory,null	,machine_driver_flstory	,input_ports_flstory	,null	,ROT180	,	Taito", "The FairyLand Story", GAME_IMPERFECT_SOUND | GAME_NO_COCKTAIL )
-	public static GameDriver driver_flstoryj	   = new GameDriver("1985"	,"flstoryj"	,"flstory.java"	,rom_flstoryj,driver_flstory	,machine_driver_flstory	,input_ports_flstory	,null	,ROT180	,	Taito", "The FairyLand Story (Japan)", GAME_IMPERFECT_SOUND | GAME_NO_COCKTAIL )
-	public static GameDriver driver_onna34ro	   = new GameDriver("1985"	,"onna34ro"	,"flstory.java"	,rom_onna34ro,null	,machine_driver_flstory	,input_ports_flstory	,null	,ROT180	,	Taito", "Onna Sansirou (Japan)", GAME_NOT_WORKING | GAME_NO_COCKTAIL )
+	public static GameDriver driver_flstory	   = new GameDriver("1985"	,"flstory"	,"flstory.java"	,rom_flstory,null	,machine_driver_flstory	,input_ports_flstory	,null	,ROT180	,	"Taito", "The FairyLand Story", GAME_IMPERFECT_SOUND | GAME_NO_COCKTAIL )
+	public static GameDriver driver_flstoryj	   = new GameDriver("1985"	,"flstoryj"	,"flstory.java"	,rom_flstoryj,driver_flstory	,machine_driver_flstory	,input_ports_flstory	,null	,ROT180	,	"Taito", "The FairyLand Story (Japan)", GAME_IMPERFECT_SOUND | GAME_NO_COCKTAIL )
+	public static GameDriver driver_onna34ro	   = new GameDriver("1985"	,"onna34ro"	,"flstory.java"	,rom_onna34ro,null	,machine_driver_flstory	,input_ports_flstory	,null	,ROT180	,	"Taito", "Onna Sansirou (Japan)", GAME_NOT_WORKING | GAME_NO_COCKTAIL )
 }

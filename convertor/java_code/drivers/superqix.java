@@ -304,6 +304,6 @@ public class superqix
 	
 	
 	
-	public static GameDriver driver_superqix	   = new GameDriver("1987"	,"superqix"	,"superqix.java"	,rom_superqix,null	,machine_driver_superqix	,input_ports_superqix	,null	,ROT90	,	Taito", "Super Qix", GAME_NOT_WORKING | GAME_NO_COCKTAIL )
-	public static GameDriver driver_sqixbl	   = new GameDriver("1987"	,"sqixbl"	,"superqix.java"	,rom_sqixbl,driver_superqix	,machine_driver_superqix	,input_ports_superqix	,null	,ROT90	,	bootleg", "Super Qix (bootleg)", GAME_NO_COCKTAIL )
+	public static GameDriver driver_superqix	   = new GameDriver("1987"	,"superqix"	,"superqix.java"	,rom_superqix,null	,machine_driver_superqix	,input_ports_superqix	,null	,ROT90	,	"Taito", "Super Qix", GAME_NOT_WORKING | GAME_NO_COCKTAIL )
+	public static GameDriver driver_sqixbl	   = new GameDriver("1987"	,"sqixbl"	,"superqix.java"	,rom_sqixbl,driver_superqix	,machine_driver_superqix	,input_ports_superqix	,null	,ROT90	,	"bootleg", "Super Qix (bootleg)", GAME_NO_COCKTAIL )
 }

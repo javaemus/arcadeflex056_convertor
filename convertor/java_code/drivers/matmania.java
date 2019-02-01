@@ -699,8 +699,8 @@ public class matmania
 	
 	
 	
-	public static GameDriver driver_matmania	   = new GameDriver("1985"	,"matmania"	,"matmania.java"	,rom_matmania,null	,machine_driver_matmania	,input_ports_matmania	,null	,ROT270	,	Technos (Taito America license)", "Mat Mania" )
-	public static GameDriver driver_excthour	   = new GameDriver("1985"	,"excthour"	,"matmania.java"	,rom_excthour,driver_matmania	,machine_driver_matmania	,input_ports_matmania	,null	,ROT270	,	Technos (Taito license)", "Exciting Hour" )
-	public static GameDriver driver_maniach	   = new GameDriver("1986"	,"maniach"	,"matmania.java"	,rom_maniach,null	,machine_driver_maniach	,input_ports_matmania	,null	,ROT270	,	Technos (Taito America license)", "Mania Challenge (set 1)" )
-	public static GameDriver driver_maniach2	   = new GameDriver("1986"	,"maniach2"	,"matmania.java"	,rom_maniach2,driver_maniach	,machine_driver_maniach	,input_ports_matmania	,null	,ROT270	,	Technos (Taito America license)", "Mania Challenge (set 2)" )	/* earlier version? */
+	public static GameDriver driver_matmania	   = new GameDriver("1985"	,"matmania"	,"matmania.java"	,rom_matmania,null	,machine_driver_matmania	,input_ports_matmania	,null	,ROT270	,	"Technos (Taito America license)", "Mat Mania" )
+	public static GameDriver driver_excthour	   = new GameDriver("1985"	,"excthour"	,"matmania.java"	,rom_excthour,driver_matmania	,machine_driver_matmania	,input_ports_matmania	,null	,ROT270	,	"Technos (Taito license)", "Exciting Hour" )
+	public static GameDriver driver_maniach	   = new GameDriver("1986"	,"maniach"	,"matmania.java"	,rom_maniach,null	,machine_driver_maniach	,input_ports_matmania	,null	,ROT270	,	"Technos (Taito America license)", "Mania Challenge (set 1)" )
+	public static GameDriver driver_maniach2	   = new GameDriver("1986"	,"maniach2"	,"matmania.java"	,rom_maniach2,driver_maniach	,machine_driver_maniach	,input_ports_matmania	,null	,ROT270	,	"Technos (Taito America license)", "Mania Challenge (set 2)" )	/* earlier version? */
 }

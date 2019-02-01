@@ -516,10 +516,10 @@ public class naughtyb
 	
 	
 	
-	public static GameDriver driver_naughtyb	   = new GameDriver("1982"	,"naughtyb"	,"naughtyb.java"	,rom_naughtyb,null	,machine_driver_naughtyb	,input_ports_naughtyb	,null	,ROT90	,	Jaleco", "Naughty Boy", GAME_NO_COCKTAIL )
-	public static GameDriver driver_naughtya	   = new GameDriver("1982"	,"naughtya"	,"naughtyb.java"	,rom_naughtya,driver_naughtyb	,machine_driver_naughtyb	,input_ports_naughtyb	,null	,ROT90	,	bootleg", "Naughty Boy (bootleg)", GAME_NO_COCKTAIL )
-	public static GameDriver driver_naughtyc	   = new GameDriver("1982"	,"naughtyc"	,"naughtyb.java"	,rom_naughtyc,driver_naughtyb	,machine_driver_naughtyb	,input_ports_naughtyb	,null	,ROT90	,	Jaleco (Cinematronics license)", "Naughty Boy (Cinematronics)", GAME_NO_COCKTAIL )
-	public static GameDriver driver_popflame	   = new GameDriver("1982"	,"popflame"	,"naughtyb.java"	,rom_popflame,null	,machine_driver_popflame	,input_ports_naughtyb	,null	,ROT90	,	Jaleco", "Pop Flamer (set 1)", GAME_NO_COCKTAIL )
-	public static GameDriver driver_popflama	   = new GameDriver("1982"	,"popflama"	,"naughtyb.java"	,rom_popflama,driver_popflame	,machine_driver_popflame	,input_ports_naughtyb	,null	,ROT90	,	Jaleco", "Pop Flamer (set 2)", GAME_NO_COCKTAIL )
-	public static GameDriver driver_popflamb	   = new GameDriver("1982"	,"popflamb"	,"naughtyb.java"	,rom_popflamb,driver_popflame	,machine_driver_popflame	,input_ports_naughtyb	,null	,ROT90	,	Jaleco (Stern License)", "Pop Flamer (set 3)", GAME_NO_COCKTAIL )
+	public static GameDriver driver_naughtyb	   = new GameDriver("1982"	,"naughtyb"	,"naughtyb.java"	,rom_naughtyb,null	,machine_driver_naughtyb	,input_ports_naughtyb	,null	,ROT90	,	"Jaleco", "Naughty Boy", GAME_NO_COCKTAIL )
+	public static GameDriver driver_naughtya	   = new GameDriver("1982"	,"naughtya"	,"naughtyb.java"	,rom_naughtya,driver_naughtyb	,machine_driver_naughtyb	,input_ports_naughtyb	,null	,ROT90	,	"bootleg", "Naughty Boy (bootleg)", GAME_NO_COCKTAIL )
+	public static GameDriver driver_naughtyc	   = new GameDriver("1982"	,"naughtyc"	,"naughtyb.java"	,rom_naughtyc,driver_naughtyb	,machine_driver_naughtyb	,input_ports_naughtyb	,null	,ROT90	,	"Jaleco (Cinematronics license)", "Naughty Boy (Cinematronics)", GAME_NO_COCKTAIL )
+	public static GameDriver driver_popflame	   = new GameDriver("1982"	,"popflame"	,"naughtyb.java"	,rom_popflame,null	,machine_driver_popflame	,input_ports_naughtyb	,null	,ROT90	,	"Jaleco", "Pop Flamer (set 1)", GAME_NO_COCKTAIL )
+	public static GameDriver driver_popflama	   = new GameDriver("1982"	,"popflama"	,"naughtyb.java"	,rom_popflama,driver_popflame	,machine_driver_popflame	,input_ports_naughtyb	,null	,ROT90	,	"Jaleco", "Pop Flamer (set 2)", GAME_NO_COCKTAIL )
+	public static GameDriver driver_popflamb	   = new GameDriver("1982"	,"popflamb"	,"naughtyb.java"	,rom_popflamb,driver_popflame	,machine_driver_popflame	,input_ports_naughtyb	,null	,ROT90	,	"Jaleco (Stern License)", "Pop Flamer (set 3)", GAME_NO_COCKTAIL )
 }

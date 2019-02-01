@@ -390,6 +390,6 @@ public class blockhl
 	
 	
 	
-	public static GameDriver driver_blockhl	   = new GameDriver("1989"	,"blockhl"	,"blockhl.java"	,rom_blockhl,null	,machine_driver_blockhl	,input_ports_blockhl	,init_blockhl	,ROT0	,	Konami", "Block Hole" )
-	public static GameDriver driver_quarth	   = new GameDriver("1989"	,"quarth"	,"blockhl.java"	,rom_quarth,driver_blockhl	,machine_driver_blockhl	,input_ports_blockhl	,init_blockhl	,ROT0	,	Konami", "Quarth (Japan)" )
+	public static GameDriver driver_blockhl	   = new GameDriver("1989"	,"blockhl"	,"blockhl.java"	,rom_blockhl,null	,machine_driver_blockhl	,input_ports_blockhl	,init_blockhl	,ROT0	,	"Konami", "Block Hole" )
+	public static GameDriver driver_quarth	   = new GameDriver("1989"	,"quarth"	,"blockhl.java"	,rom_quarth,driver_blockhl	,machine_driver_blockhl	,input_ports_blockhl	,init_blockhl	,ROT0	,	"Konami", "Quarth (Japan)" )
 }

@@ -306,5 +306,5 @@ public class volfied
 		ROM_LOAD( "c04-06.bin", 0x0000, 0x8000, 0xb70106b2 );
 	ROM_END(); }}; 
 	
-	public static GameDriver driver_volfied	   = new GameDriver("1989"	,"volfied"	,"volfied.java"	,rom_volfied,null	,machine_driver_volfied	,input_ports_volfied	,init_volfied	,ROT270	,	Taito Corporation", "Volfied (Japan)", GAME_UNEMULATED_PROTECTION )
+	public static GameDriver driver_volfied	   = new GameDriver("1989"	,"volfied"	,"volfied.java"	,rom_volfied,null	,machine_driver_volfied	,input_ports_volfied	,init_volfied	,ROT270	,	"Taito Corporation", "Volfied (Japan)", GAME_UNEMULATED_PROTECTION )
 }

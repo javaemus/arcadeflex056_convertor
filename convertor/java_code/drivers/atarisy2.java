@@ -1928,11 +1928,11 @@ public class atarisy2
 	 *
 	 *************************************/
 	
-	public static GameDriver driver_paperboy	   = new GameDriver("1984"	,"paperboy"	,"atarisy2.java"	,rom_paperboy,null	,machine_driver_paperboy	,input_ports_paperboy	,init_paperboy	,ROT0	,	Atari Games", "Paperboy" )
-	public static GameDriver driver_720	   = new GameDriver("1986"	,"720"	,"atarisy2.java"	,rom_720,null	,machine_driver_a720	,input_ports_720	,init_a720	,ROT0	,	Atari Games", "720 Degrees (set 1)" )
-	public static GameDriver driver_720b	   = new GameDriver("1986"	,"720b"	,"atarisy2.java"	,rom_720b,driver_720	,machine_driver_a720	,input_ports_720	,init_a720	,ROT0	,	Atari Games", "720 Degrees (set 2)" )
-	public static GameDriver driver_ssprint	   = new GameDriver("1986"	,"ssprint"	,"atarisy2.java"	,rom_ssprint,null	,machine_driver_sprint	,input_ports_ssprint	,init_ssprint	,ROT0	,	Atari Games", "Super Sprint" )
-	public static GameDriver driver_csprint	   = new GameDriver("1986"	,"csprint"	,"atarisy2.java"	,rom_csprint,null	,machine_driver_sprint	,input_ports_csprint	,init_csprint	,ROT0	,	Atari Games", "Championship Sprint" )
-	public static GameDriver driver_apb	   = new GameDriver("1987"	,"apb"	,"atarisy2.java"	,rom_apb,null	,machine_driver_paperboy	,input_ports_apb	,init_apb	,ROT270	,	Atari Games", "APB - All Points Bulletin (set 1)" )
-	public static GameDriver driver_apb2	   = new GameDriver("1987"	,"apb2"	,"atarisy2.java"	,rom_apb2,driver_apb	,machine_driver_paperboy	,input_ports_apb	,init_apb	,ROT270	,	Atari Games", "APB - All Points Bulletin (set 2)" )
+	public static GameDriver driver_paperboy	   = new GameDriver("1984"	,"paperboy"	,"atarisy2.java"	,rom_paperboy,null	,machine_driver_paperboy	,input_ports_paperboy	,init_paperboy	,ROT0	,	"Atari Games", "Paperboy" )
+	public static GameDriver driver_720	   = new GameDriver("1986"	,"720"	,"atarisy2.java"	,rom_720,null	,machine_driver_a720	,input_ports_720	,init_a720	,ROT0	,	"Atari Games", "720 Degrees (set 1)" )
+	public static GameDriver driver_720b	   = new GameDriver("1986"	,"720b"	,"atarisy2.java"	,rom_720b,driver_720	,machine_driver_a720	,input_ports_720	,init_a720	,ROT0	,	"Atari Games", "720 Degrees (set 2)" )
+	public static GameDriver driver_ssprint	   = new GameDriver("1986"	,"ssprint"	,"atarisy2.java"	,rom_ssprint,null	,machine_driver_sprint	,input_ports_ssprint	,init_ssprint	,ROT0	,	"Atari Games", "Super Sprint" )
+	public static GameDriver driver_csprint	   = new GameDriver("1986"	,"csprint"	,"atarisy2.java"	,rom_csprint,null	,machine_driver_sprint	,input_ports_csprint	,init_csprint	,ROT0	,	"Atari Games", "Championship Sprint" )
+	public static GameDriver driver_apb	   = new GameDriver("1987"	,"apb"	,"atarisy2.java"	,rom_apb,null	,machine_driver_paperboy	,input_ports_apb	,init_apb	,ROT270	,	"Atari Games", "APB - All Points Bulletin (set 1)" )
+	public static GameDriver driver_apb2	   = new GameDriver("1987"	,"apb2"	,"atarisy2.java"	,rom_apb2,driver_apb	,machine_driver_paperboy	,input_ports_apb	,init_apb	,ROT270	,	"Atari Games", "APB - All Points Bulletin (set 2)" )
 }

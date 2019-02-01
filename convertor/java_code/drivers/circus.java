@@ -539,8 +539,8 @@ public class circus
 	
 	
 	
-	public static GameDriver driver_circus	   = new GameDriver("1977"	,"circus"	,"circus.java"	,rom_circus,null	,machine_driver_circus	,input_ports_circus	,null	,ROT0	,	Exidy", "Circus", GAME_IMPERFECT_SOUND )
-	public static GameDriver driver_robotbwl	   = new GameDriver("1977"	,"robotbwl"	,"circus.java"	,rom_robotbwl,null	,machine_driver_robotbwl	,input_ports_robotbwl	,init_robotbwl	,ROT0	,	Exidy", "Robot Bowl", GAME_IMPERFECT_SOUND )
-	public static GameDriver driver_crash	   = new GameDriver("1979"	,"crash"	,"circus.java"	,rom_crash,null	,machine_driver_crash	,input_ports_crash	,null	,ROT0	,	Exidy", "Crash", GAME_IMPERFECT_SOUND )
-	public static GameDriver driver_ripcord	   = new GameDriver("1977"	,"ripcord"	,"circus.java"	,rom_ripcord,null	,machine_driver_ripcord	,input_ports_ripcord	,null	,ROT0	,	Exidy", "Rip Cord", GAME_NOT_WORKING )
+	public static GameDriver driver_circus	   = new GameDriver("1977"	,"circus"	,"circus.java"	,rom_circus,null	,machine_driver_circus	,input_ports_circus	,null	,ROT0	,	"Exidy", "Circus", GAME_IMPERFECT_SOUND )
+	public static GameDriver driver_robotbwl	   = new GameDriver("1977"	,"robotbwl"	,"circus.java"	,rom_robotbwl,null	,machine_driver_robotbwl	,input_ports_robotbwl	,init_robotbwl	,ROT0	,	"Exidy", "Robot Bowl", GAME_IMPERFECT_SOUND )
+	public static GameDriver driver_crash	   = new GameDriver("1979"	,"crash"	,"circus.java"	,rom_crash,null	,machine_driver_crash	,input_ports_crash	,null	,ROT0	,	"Exidy", "Crash", GAME_IMPERFECT_SOUND )
+	public static GameDriver driver_ripcord	   = new GameDriver("1977"	,"ripcord"	,"circus.java"	,rom_ripcord,null	,machine_driver_ripcord	,input_ports_ripcord	,null	,ROT0	,	"Exidy", "Rip Cord", GAME_NOT_WORKING )
 }

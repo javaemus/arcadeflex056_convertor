@@ -1015,14 +1015,14 @@ public class kyugo
 	
 	***************************************************************************/
 	
-	public static GameDriver driver_gyrodine	   = new GameDriver("1984"	,"gyrodine"	,"kyugo.java"	,rom_gyrodine,null	,machine_driver_gyrodine	,input_ports_gyrodine	,null	,ROT90	,	Taito Corporation", "Gyrodine" )
-	public static GameDriver driver_sonofphx	   = new GameDriver("1985"	,"sonofphx"	,"kyugo.java"	,rom_sonofphx,null	,machine_driver_sonofphx	,input_ports_sonofphx	,null	,ROT90	,	Associated Overseas MFR, Inc", "Son of Phoenix" )
-	public static GameDriver driver_repulse	   = new GameDriver("1985"	,"repulse"	,"kyugo.java"	,rom_repulse,driver_sonofphx	,machine_driver_sonofphx	,input_ports_sonofphx	,null	,ROT90	,	Sega", "Repulse" )
-	public static GameDriver driver_99lstwar	   = new GameDriver("1985"	,"99lstwar"	,"kyugo.java"	,rom_99lstwar,driver_sonofphx	,machine_driver_sonofphx	,input_ports_sonofphx	,null	,ROT90	,	Proma", "'99 The Last War" )
-	public static GameDriver driver_99lstwra	   = new GameDriver("1985"	,"99lstwra"	,"kyugo.java"	,rom_99lstwra,driver_sonofphx	,machine_driver_sonofphx	,input_ports_sonofphx	,null	,ROT90	,	Proma", "'99 The Last War (alternate)" )
-	public static GameDriver driver_flashgal	   = new GameDriver("1985"	,"flashgal"	,"kyugo.java"	,rom_flashgal,null	,machine_driver_flashgal	,input_ports_flashgal	,null	,ROT0	,	Sega", "Flash Gal" )
-	public static GameDriver driver_srdmissn	   = new GameDriver("1986"	,"srdmissn"	,"kyugo.java"	,rom_srdmissn,null	,machine_driver_srdmissn	,input_ports_srdmissn	,null	,ROT90	,	Taito Corporation", "S.R.D. Mission" )
-	public static GameDriver driver_airwolf	   = new GameDriver("1987"	,"airwolf"	,"kyugo.java"	,rom_airwolf,null	,machine_driver_srdmissn	,input_ports_airwolf	,null	,ROT0	,	Kyugo", "Air Wolf" )
-	public static GameDriver driver_skywolf	   = new GameDriver("1987"	,"skywolf"	,"kyugo.java"	,rom_skywolf,driver_airwolf	,machine_driver_srdmissn	,input_ports_skywolf	,null	,ROT0	,	bootleg", "Sky Wolf (set 1)" )
-	public static GameDriver driver_skywolf2	   = new GameDriver("1987"	,"skywolf2"	,"kyugo.java"	,rom_skywolf2,driver_airwolf	,machine_driver_srdmissn	,input_ports_airwolf	,null	,ROT0	,	bootleg", "Sky Wolf (set 2)" )
+	public static GameDriver driver_gyrodine	   = new GameDriver("1984"	,"gyrodine"	,"kyugo.java"	,rom_gyrodine,null	,machine_driver_gyrodine	,input_ports_gyrodine	,null	,ROT90	,	"Taito Corporation", "Gyrodine" )
+	public static GameDriver driver_sonofphx	   = new GameDriver("1985"	,"sonofphx"	,"kyugo.java"	,rom_sonofphx,null	,machine_driver_sonofphx	,input_ports_sonofphx	,null	,ROT90	,	"Associated Overseas MFR, Inc", "Son of Phoenix" )
+	public static GameDriver driver_repulse	   = new GameDriver("1985"	,"repulse"	,"kyugo.java"	,rom_repulse,driver_sonofphx	,machine_driver_sonofphx	,input_ports_sonofphx	,null	,ROT90	,	"Sega", "Repulse" )
+	public static GameDriver driver_99lstwar	   = new GameDriver("1985"	,"99lstwar"	,"kyugo.java"	,rom_99lstwar,driver_sonofphx	,machine_driver_sonofphx	,input_ports_sonofphx	,null	,ROT90	,	"Proma", "'99 The Last War" )
+	public static GameDriver driver_99lstwra	   = new GameDriver("1985"	,"99lstwra"	,"kyugo.java"	,rom_99lstwra,driver_sonofphx	,machine_driver_sonofphx	,input_ports_sonofphx	,null	,ROT90	,	"Proma", "'99 The Last War (alternate)" )
+	public static GameDriver driver_flashgal	   = new GameDriver("1985"	,"flashgal"	,"kyugo.java"	,rom_flashgal,null	,machine_driver_flashgal	,input_ports_flashgal	,null	,ROT0	,	"Sega", "Flash Gal" )
+	public static GameDriver driver_srdmissn	   = new GameDriver("1986"	,"srdmissn"	,"kyugo.java"	,rom_srdmissn,null	,machine_driver_srdmissn	,input_ports_srdmissn	,null	,ROT90	,	"Taito Corporation", "S.R.D. Mission" )
+	public static GameDriver driver_airwolf	   = new GameDriver("1987"	,"airwolf"	,"kyugo.java"	,rom_airwolf,null	,machine_driver_srdmissn	,input_ports_airwolf	,null	,ROT0	,	"Kyugo", "Air Wolf" )
+	public static GameDriver driver_skywolf	   = new GameDriver("1987"	,"skywolf"	,"kyugo.java"	,rom_skywolf,driver_airwolf	,machine_driver_srdmissn	,input_ports_skywolf	,null	,ROT0	,	"bootleg", "Sky Wolf (set 1)" )
+	public static GameDriver driver_skywolf2	   = new GameDriver("1987"	,"skywolf2"	,"kyugo.java"	,rom_skywolf2,driver_airwolf	,machine_driver_srdmissn	,input_ports_airwolf	,null	,ROT0	,	"bootleg", "Sky Wolf (set 2)" )
 }

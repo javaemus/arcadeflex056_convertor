@@ -337,5 +337,5 @@ public class surpratk
 	
 	
 	
-	public static GameDriver driver_surpratk	   = new GameDriver("1990"	,"surpratk"	,"surpratk.java"	,rom_surpratk,null	,machine_driver_surpratk	,input_ports_surpratk	,init_surpratk	,ROT0	,	Konami", "Surprise Attack (Japan)" )
+	public static GameDriver driver_surpratk	   = new GameDriver("1990"	,"surpratk"	,"surpratk.java"	,rom_surpratk,null	,machine_driver_surpratk	,input_ports_surpratk	,init_surpratk	,ROT0	,	"Konami", "Surprise Attack (Japan)" )
 }

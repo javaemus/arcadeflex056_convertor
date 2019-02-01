@@ -860,10 +860,10 @@ public class tecmo
 	
 	
 	
-	public static GameDriver driver_rygar	   = new GameDriver("1986"	,"rygar"	,"tecmo.java"	,rom_rygar,null	,machine_driver_rygar	,input_ports_rygar	,init_rygar	,ROT0	,	Tecmo", "Rygar (US set 1)" )
-	public static GameDriver driver_rygar2	   = new GameDriver("1986"	,"rygar2"	,"tecmo.java"	,rom_rygar2,driver_rygar	,machine_driver_rygar	,input_ports_rygar	,init_rygar	,ROT0	,	Tecmo", "Rygar (US set 2)" )
-	public static GameDriver driver_rygarj	   = new GameDriver("1986"	,"rygarj"	,"tecmo.java"	,rom_rygarj,driver_rygar	,machine_driver_rygar	,input_ports_rygar	,init_rygar	,ROT0	,	Tecmo", "Argus no Senshi (Japan)" )
-	public static GameDriver driver_gemini	   = new GameDriver("1987"	,"gemini"	,"tecmo.java"	,rom_gemini,null	,machine_driver_gemini	,input_ports_gemini	,init_gemini	,ROT90	,	Tecmo", "Gemini Wing" )
-	public static GameDriver driver_silkworm	   = new GameDriver("1988"	,"silkworm"	,"tecmo.java"	,rom_silkworm,null	,machine_driver_silkworm	,input_ports_silkworm	,init_silkworm	,ROT0	,	Tecmo", "Silkworm (set 1)" )
-	public static GameDriver driver_silkwrm2	   = new GameDriver("1988"	,"silkwrm2"	,"tecmo.java"	,rom_silkwrm2,driver_silkworm	,machine_driver_silkworm	,input_ports_silkworm	,init_silkworm	,ROT0	,	Tecmo", "Silkworm (set 2)" )
+	public static GameDriver driver_rygar	   = new GameDriver("1986"	,"rygar"	,"tecmo.java"	,rom_rygar,null	,machine_driver_rygar	,input_ports_rygar	,init_rygar	,ROT0	,	"Tecmo", "Rygar (US set 1)" )
+	public static GameDriver driver_rygar2	   = new GameDriver("1986"	,"rygar2"	,"tecmo.java"	,rom_rygar2,driver_rygar	,machine_driver_rygar	,input_ports_rygar	,init_rygar	,ROT0	,	"Tecmo", "Rygar (US set 2)" )
+	public static GameDriver driver_rygarj	   = new GameDriver("1986"	,"rygarj"	,"tecmo.java"	,rom_rygarj,driver_rygar	,machine_driver_rygar	,input_ports_rygar	,init_rygar	,ROT0	,	"Tecmo", "Argus no Senshi (Japan)" )
+	public static GameDriver driver_gemini	   = new GameDriver("1987"	,"gemini"	,"tecmo.java"	,rom_gemini,null	,machine_driver_gemini	,input_ports_gemini	,init_gemini	,ROT90	,	"Tecmo", "Gemini Wing" )
+	public static GameDriver driver_silkworm	   = new GameDriver("1988"	,"silkworm"	,"tecmo.java"	,rom_silkworm,null	,machine_driver_silkworm	,input_ports_silkworm	,init_silkworm	,ROT0	,	"Tecmo", "Silkworm (set 1)" )
+	public static GameDriver driver_silkwrm2	   = new GameDriver("1988"	,"silkwrm2"	,"tecmo.java"	,rom_silkwrm2,driver_silkworm	,machine_driver_silkworm	,input_ports_silkworm	,init_silkworm	,ROT0	,	"Tecmo", "Silkworm (set 2)" )
 }

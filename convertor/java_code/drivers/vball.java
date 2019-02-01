@@ -592,6 +592,6 @@ public class vball
 	ROM_END(); }}; 
 	
 	
-	public static GameDriver driver_vball	   = new GameDriver("1988"	,"vball"	,"vball.java"	,rom_vball,null	,machine_driver_vball	,input_ports_vball	,null	,ROT0	,	Technos", "U.S. Championship V'ball (set 1)", GAME_NO_COCKTAIL )
-	public static GameDriver driver_vball2pj	   = new GameDriver("1988"	,"vball2pj"	,"vball.java"	,rom_vball2pj,driver_vball	,machine_driver_vball2pj	,input_ports_vball2pj	,null	,ROT0	,	Technos", "U.S. Championship V'ball (Japan bootleg)", GAME_IMPERFECT_SOUND | GAME_NO_COCKTAIL )
+	public static GameDriver driver_vball	   = new GameDriver("1988"	,"vball"	,"vball.java"	,rom_vball,null	,machine_driver_vball	,input_ports_vball	,null	,ROT0	,	"Technos", "U.S. Championship V'ball (set 1)", GAME_NO_COCKTAIL )
+	public static GameDriver driver_vball2pj	   = new GameDriver("1988"	,"vball2pj"	,"vball.java"	,rom_vball2pj,driver_vball	,machine_driver_vball2pj	,input_ports_vball2pj	,null	,ROT0	,	"Technos", "U.S. Championship V'ball (Japan bootleg)", GAME_IMPERFECT_SOUND | GAME_NO_COCKTAIL )
 }

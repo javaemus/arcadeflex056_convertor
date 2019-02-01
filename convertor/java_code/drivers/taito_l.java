@@ -2656,25 +2656,25 @@ public class taito_l
 	}
 	
 	
-	public static GameDriver driver_raimais	   = new GameDriver("1988"	,"raimais"	,"taito_l.java"	,rom_raimais,null	,machine_driver_raimais	,input_ports_raimais	,null	,ROT0	,	Taito Corporation", "Raimais (Japan)" )
-	public static GameDriver driver_fhawk	   = new GameDriver("1988"	,"fhawk"	,"taito_l.java"	,rom_fhawk,null	,machine_driver_fhawk	,input_ports_fhawk	,null	,ROT270	,	Taito Corporation", "Fighting Hawk (Japan)" )
-	public static GameDriver driver_champwr	   = new GameDriver("1989"	,"champwr"	,"taito_l.java"	,rom_champwr,null	,machine_driver_champwr	,input_ports_champwr	,null	,ROT0	,	Taito Corporation Japan", "Champion Wrestler (World)" )
-	public static GameDriver driver_champwru	   = new GameDriver("1989"	,"champwru"	,"taito_l.java"	,rom_champwru,driver_champwr	,machine_driver_champwr	,input_ports_champwru	,null	,ROT0	,	Taito America Corporation", "Champion Wrestler (US)" )
-	public static GameDriver driver_champwrj	   = new GameDriver("1989"	,"champwrj"	,"taito_l.java"	,rom_champwrj,driver_champwr	,machine_driver_champwr	,input_ports_champwrj	,null	,ROT0	,	Taito Corporation", "Champion Wrestler (Japan)" )
+	public static GameDriver driver_raimais	   = new GameDriver("1988"	,"raimais"	,"taito_l.java"	,rom_raimais,null	,machine_driver_raimais	,input_ports_raimais	,null	,ROT0	,	"Taito Corporation", "Raimais (Japan)" )
+	public static GameDriver driver_fhawk	   = new GameDriver("1988"	,"fhawk"	,"taito_l.java"	,rom_fhawk,null	,machine_driver_fhawk	,input_ports_fhawk	,null	,ROT270	,	"Taito Corporation", "Fighting Hawk (Japan)" )
+	public static GameDriver driver_champwr	   = new GameDriver("1989"	,"champwr"	,"taito_l.java"	,rom_champwr,null	,machine_driver_champwr	,input_ports_champwr	,null	,ROT0	,	"Taito Corporation Japan", "Champion Wrestler (World)" )
+	public static GameDriver driver_champwru	   = new GameDriver("1989"	,"champwru"	,"taito_l.java"	,rom_champwru,driver_champwr	,machine_driver_champwr	,input_ports_champwru	,null	,ROT0	,	"Taito America Corporation", "Champion Wrestler (US)" )
+	public static GameDriver driver_champwrj	   = new GameDriver("1989"	,"champwrj"	,"taito_l.java"	,rom_champwrj,driver_champwr	,machine_driver_champwr	,input_ports_champwrj	,null	,ROT0	,	"Taito Corporation", "Champion Wrestler (Japan)" )
 	
-	public static GameDriver driver_kurikint	   = new GameDriver("1988"	,"kurikint"	,"taito_l.java"	,rom_kurikint,null	,machine_driver_kurikint	,input_ports_kurikint	,null	,ROT0	,	Taito Corporation Japan", "Kuri Kinton (World)" )
-	public static GameDriver driver_kurikinu	   = new GameDriver("1988"	,"kurikinu"	,"taito_l.java"	,rom_kurikinu,driver_kurikint	,machine_driver_kurikint	,input_ports_kurikint	,null	,ROT0	,	Taito America Corporation", "Kuri Kinton (US)" )
-	public static GameDriver driver_kurikinj	   = new GameDriver("1988"	,"kurikinj"	,"taito_l.java"	,rom_kurikinj,driver_kurikint	,machine_driver_kurikint	,input_ports_kurikint	,null	,ROT0	,	Taito Corporation", "Kuri Kinton (Japan)" )
-	public static GameDriver driver_kurikina	   = new GameDriver("1988"	,"kurikina"	,"taito_l.java"	,rom_kurikina,driver_kurikint	,machine_driver_kurikint	,input_ports_kurikina	,null	,ROT0	,	Taito Corporation Japan", "Kuri Kinton (prototype?)" )
+	public static GameDriver driver_kurikint	   = new GameDriver("1988"	,"kurikint"	,"taito_l.java"	,rom_kurikint,null	,machine_driver_kurikint	,input_ports_kurikint	,null	,ROT0	,	"Taito Corporation Japan", "Kuri Kinton (World)" )
+	public static GameDriver driver_kurikinu	   = new GameDriver("1988"	,"kurikinu"	,"taito_l.java"	,rom_kurikinu,driver_kurikint	,machine_driver_kurikint	,input_ports_kurikint	,null	,ROT0	,	"Taito America Corporation", "Kuri Kinton (US)" )
+	public static GameDriver driver_kurikinj	   = new GameDriver("1988"	,"kurikinj"	,"taito_l.java"	,rom_kurikinj,driver_kurikint	,machine_driver_kurikint	,input_ports_kurikint	,null	,ROT0	,	"Taito Corporation", "Kuri Kinton (Japan)" )
+	public static GameDriver driver_kurikina	   = new GameDriver("1988"	,"kurikina"	,"taito_l.java"	,rom_kurikina,driver_kurikint	,machine_driver_kurikint	,input_ports_kurikina	,null	,ROT0	,	"Taito Corporation Japan", "Kuri Kinton (prototype?)" )
 	
-	public static GameDriver driver_plotting	   = new GameDriver("1989"	,"plotting"	,"taito_l.java"	,rom_plotting,null	,machine_driver_plotting	,input_ports_plotting	,init_plotting	,ROT0	,	Taito Corporation Japan", "Plotting (World)" )
-	public static GameDriver driver_puzznic	   = new GameDriver("1989"	,"puzznic"	,"taito_l.java"	,rom_puzznic,null	,machine_driver_puzznic	,input_ports_puzznic	,null	,ROT0	,	Taito Corporation", "Puzznic (Japan)" )
-	public static GameDriver driver_horshoes	   = new GameDriver("1990"	,"horshoes"	,"taito_l.java"	,rom_horshoes,null	,machine_driver_horshoes	,input_ports_horshoes	,null	,ROT270	,	Taito America Corporation", "American Horseshoes (US)" )
-	public static GameDriver driver_palamed	   = new GameDriver("1990"	,"palamed"	,"taito_l.java"	,rom_palamed,null	,machine_driver_palamed	,input_ports_palamed	,null	,ROT0	,	Taito Corporation", "Palamedes (Japan)" )
-	public static GameDriver driver_cachat	   = new GameDriver("1993"	,"cachat"	,"taito_l.java"	,rom_cachat,null	,machine_driver_cachat	,input_ports_cachat	,null	,ROT0	,	Taito Corporation", "Cachat (Japan)" )
-	public static GameDriver driver_tubeit	   = new GameDriver("1993"	,"tubeit"	,"taito_l.java"	,rom_tubeit,driver_cachat	,machine_driver_cachat	,input_ports_tubeit	,null	,ROT0	,	Taito Corporation", "Tube-It" )  // No (c) message
-	public static GameDriver driver_cubybop	   = new GameDriver("199?"	,"cubybop"	,"taito_l.java"	,rom_cubybop,null	,machine_driver_cachat	,input_ports_cubybop	,null	,ROT0	,	Taito Corporation", "Cuby Bop" ) // No (c) message
+	public static GameDriver driver_plotting	   = new GameDriver("1989"	,"plotting"	,"taito_l.java"	,rom_plotting,null	,machine_driver_plotting	,input_ports_plotting	,init_plotting	,ROT0	,	"Taito Corporation Japan", "Plotting (World)" )
+	public static GameDriver driver_puzznic	   = new GameDriver("1989"	,"puzznic"	,"taito_l.java"	,rom_puzznic,null	,machine_driver_puzznic	,input_ports_puzznic	,null	,ROT0	,	"Taito Corporation", "Puzznic (Japan)" )
+	public static GameDriver driver_horshoes	   = new GameDriver("1990"	,"horshoes"	,"taito_l.java"	,rom_horshoes,null	,machine_driver_horshoes	,input_ports_horshoes	,null	,ROT270	,	"Taito America Corporation", "American Horseshoes (US)" )
+	public static GameDriver driver_palamed	   = new GameDriver("1990"	,"palamed"	,"taito_l.java"	,rom_palamed,null	,machine_driver_palamed	,input_ports_palamed	,null	,ROT0	,	"Taito Corporation", "Palamedes (Japan)" )
+	public static GameDriver driver_cachat	   = new GameDriver("1993"	,"cachat"	,"taito_l.java"	,rom_cachat,null	,machine_driver_cachat	,input_ports_cachat	,null	,ROT0	,	"Taito Corporation", "Cachat (Japan)" )
+	public static GameDriver driver_tubeit	   = new GameDriver("1993"	,"tubeit"	,"taito_l.java"	,rom_tubeit,driver_cachat	,machine_driver_cachat	,input_ports_tubeit	,null	,ROT0	,	"Taito Corporation", "Tube-It" )  // No (c) message
+	public static GameDriver driver_cubybop	   = new GameDriver("199?"	,"cubybop"	,"taito_l.java"	,rom_cubybop,null	,machine_driver_cachat	,input_ports_cubybop	,null	,ROT0	,	"Taito Corporation", "Cuby Bop" ) // No (c) message
 	
-	public static GameDriver driver_plgirls	   = new GameDriver("1992"	,"plgirls"	,"taito_l.java"	,rom_plgirls,null	,machine_driver_cachat	,input_ports_plgirls	,null	,ROT270	,	Hot-B.", "Play Girls" )
-	public static GameDriver driver_plgirls2	   = new GameDriver("1993"	,"plgirls2"	,"taito_l.java"	,rom_plgirls2,null	,machine_driver_cachat	,input_ports_plgirls2	,null	,ROT270	,	Hot-B.", "Play Girls 2" )
+	public static GameDriver driver_plgirls	   = new GameDriver("1992"	,"plgirls"	,"taito_l.java"	,rom_plgirls,null	,machine_driver_cachat	,input_ports_plgirls	,null	,ROT270	,	"Hot-B.", "Play Girls" )
+	public static GameDriver driver_plgirls2	   = new GameDriver("1993"	,"plgirls2"	,"taito_l.java"	,rom_plgirls2,null	,machine_driver_cachat	,input_ports_plgirls2	,null	,ROT270	,	"Hot-B.", "Play Girls 2" )
 }

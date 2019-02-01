@@ -454,7 +454,7 @@ public class ajax
 	
 	
 	
-	public static GameDriver driver_ajax	   = new GameDriver("1987"	,"ajax"	,"ajax.java"	,rom_ajax,null	,machine_driver_ajax	,input_ports_ajax	,init_ajax	,ROT90	,	Konami", "Ajax" )
-	public static GameDriver driver_typhoon	   = new GameDriver("1987"	,"typhoon"	,"ajax.java"	,rom_typhoon,driver_ajax	,machine_driver_ajax	,input_ports_ajax	,init_ajax	,ROT90	,	Konami", "Typhoon" )
-	public static GameDriver driver_ajaxj	   = new GameDriver("1987"	,"ajaxj"	,"ajax.java"	,rom_ajaxj,driver_ajax	,machine_driver_ajax	,input_ports_ajax	,init_ajax	,ROT90	,	Konami", "Ajax (Japan)" )
+	public static GameDriver driver_ajax	   = new GameDriver("1987"	,"ajax"	,"ajax.java"	,rom_ajax,null	,machine_driver_ajax	,input_ports_ajax	,init_ajax	,ROT90	,	"Konami", "Ajax" )
+	public static GameDriver driver_typhoon	   = new GameDriver("1987"	,"typhoon"	,"ajax.java"	,rom_typhoon,driver_ajax	,machine_driver_ajax	,input_ports_ajax	,init_ajax	,ROT90	,	"Konami", "Typhoon" )
+	public static GameDriver driver_ajaxj	   = new GameDriver("1987"	,"ajaxj"	,"ajax.java"	,rom_ajaxj,driver_ajax	,machine_driver_ajax	,input_ports_ajax	,init_ajax	,ROT90	,	"Konami", "Ajax (Japan)" )
 }

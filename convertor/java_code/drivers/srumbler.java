@@ -471,7 +471,7 @@ public class srumbler
 	
 	
 	
-	public static GameDriver driver_srumbler	   = new GameDriver("1986"	,"srumbler"	,"srumbler.java"	,rom_srumbler,null	,machine_driver_srumbler	,input_ports_srumbler	,null	,ROT270	,	Capcom", "The Speed Rumbler (set 1)" )
-	public static GameDriver driver_srumblr2	   = new GameDriver("1986"	,"srumblr2"	,"srumbler.java"	,rom_srumblr2,driver_srumbler	,machine_driver_srumbler	,input_ports_srumbler	,null	,ROT270	,	Capcom", "The Speed Rumbler (set 2)" )
-	public static GameDriver driver_rushcrsh	   = new GameDriver("1986"	,"rushcrsh"	,"srumbler.java"	,rom_rushcrsh,driver_srumbler	,machine_driver_srumbler	,input_ports_srumbler	,null	,ROT270	,	Capcom", "Rush & Crash (Japan)" )
+	public static GameDriver driver_srumbler	   = new GameDriver("1986"	,"srumbler"	,"srumbler.java"	,rom_srumbler,null	,machine_driver_srumbler	,input_ports_srumbler	,null	,ROT270	,	"Capcom", "The Speed Rumbler (set 1)" )
+	public static GameDriver driver_srumblr2	   = new GameDriver("1986"	,"srumblr2"	,"srumbler.java"	,rom_srumblr2,driver_srumbler	,machine_driver_srumbler	,input_ports_srumbler	,null	,ROT270	,	"Capcom", "The Speed Rumbler (set 2)" )
+	public static GameDriver driver_rushcrsh	   = new GameDriver("1986"	,"rushcrsh"	,"srumbler.java"	,rom_rushcrsh,driver_srumbler	,machine_driver_srumbler	,input_ports_srumbler	,null	,ROT270	,	"Capcom", "Rush & Crash (Japan)" )
 }

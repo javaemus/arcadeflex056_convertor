@@ -1018,14 +1018,14 @@ public class mcr2
 	 *
 	 *************************************/
 	
-	public static GameDriver driver_shollow	   = new GameDriver("1981"	,"shollow"	,"mcr2.java"	,rom_shollow,null	,machine_driver_mcr2	,input_ports_shollow	,init_mcr2	,ROT90	,	Bally Midway", "Satan's Hollow (set 1)" )
-	public static GameDriver driver_shollow2	   = new GameDriver("1981"	,"shollow2"	,"mcr2.java"	,rom_shollow2,driver_shollow	,machine_driver_mcr2	,input_ports_shollow	,init_mcr2	,ROT90	,	Bally Midway", "Satan's Hollow (set 2)" )
-	public static GameDriver driver_tron	   = new GameDriver("1982"	,"tron"	,"mcr2.java"	,rom_tron,null	,machine_driver_mcr2	,input_ports_tron	,init_mcr2	,ROT90	,	Bally Midway", "Tron (set 1)" )
-	public static GameDriver driver_tron2	   = new GameDriver("1982"	,"tron2"	,"mcr2.java"	,rom_tron2,driver_tron	,machine_driver_mcr2	,input_ports_tron	,init_mcr2	,ROT90	,	Bally Midway", "Tron (set 2)" )
-	public static GameDriver driver_kroozr	   = new GameDriver("1982"	,"kroozr"	,"mcr2.java"	,rom_kroozr,null	,machine_driver_mcr2	,input_ports_kroozr	,init_kroozr	,ROT0	,	Bally Midway", "Kozmik Kroozr" )
-	public static GameDriver driver_domino	   = new GameDriver("1982"	,"domino"	,"mcr2.java"	,rom_domino,null	,machine_driver_mcr2	,input_ports_domino	,init_domino	,ROT0	,	Bally Midway", "Domino Man" )
-	public static GameDriver driver_wacko	   = new GameDriver("1982"	,"wacko"	,"mcr2.java"	,rom_wacko,null	,machine_driver_mcr2	,input_ports_wacko	,init_wacko	,ROT0	,	Bally Midway", "Wacko" )
-	public static GameDriver driver_twotiger	   = new GameDriver("1984"	,"twotiger"	,"mcr2.java"	,rom_twotiger,null	,machine_driver_mcr2	,input_ports_twotiger	,init_mcr2	,ROT0	,	Bally Midway", "Two Tigers" )
-	public static GameDriver driver_twotigra	   = new GameDriver("1984"	,"twotigra"	,"mcr2.java"	,rom_twotigra,driver_twotiger	,machine_driver_mcr2	,input_ports_twotigra	,init_twotigra	,ROT0	,	Bally Midway", "Two Tigers (dedicated)" )
-	public static GameDriver driver_journey	   = new GameDriver("1983"	,"journey"	,"mcr2.java"	,rom_journey,null	,machine_driver_journey	,input_ports_domino	,init_mcr2	,ROT90	,	Bally Midway", "Journey", GAME_IMPERFECT_SOUND )
+	public static GameDriver driver_shollow	   = new GameDriver("1981"	,"shollow"	,"mcr2.java"	,rom_shollow,null	,machine_driver_mcr2	,input_ports_shollow	,init_mcr2	,ROT90	,	"Bally Midway", "Satan's Hollow (set 1)" )
+	public static GameDriver driver_shollow2	   = new GameDriver("1981"	,"shollow2"	,"mcr2.java"	,rom_shollow2,driver_shollow	,machine_driver_mcr2	,input_ports_shollow	,init_mcr2	,ROT90	,	"Bally Midway", "Satan's Hollow (set 2)" )
+	public static GameDriver driver_tron	   = new GameDriver("1982"	,"tron"	,"mcr2.java"	,rom_tron,null	,machine_driver_mcr2	,input_ports_tron	,init_mcr2	,ROT90	,	"Bally Midway", "Tron (set 1)" )
+	public static GameDriver driver_tron2	   = new GameDriver("1982"	,"tron2"	,"mcr2.java"	,rom_tron2,driver_tron	,machine_driver_mcr2	,input_ports_tron	,init_mcr2	,ROT90	,	"Bally Midway", "Tron (set 2)" )
+	public static GameDriver driver_kroozr	   = new GameDriver("1982"	,"kroozr"	,"mcr2.java"	,rom_kroozr,null	,machine_driver_mcr2	,input_ports_kroozr	,init_kroozr	,ROT0	,	"Bally Midway", "Kozmik Kroozr" )
+	public static GameDriver driver_domino	   = new GameDriver("1982"	,"domino"	,"mcr2.java"	,rom_domino,null	,machine_driver_mcr2	,input_ports_domino	,init_domino	,ROT0	,	"Bally Midway", "Domino Man" )
+	public static GameDriver driver_wacko	   = new GameDriver("1982"	,"wacko"	,"mcr2.java"	,rom_wacko,null	,machine_driver_mcr2	,input_ports_wacko	,init_wacko	,ROT0	,	"Bally Midway", "Wacko" )
+	public static GameDriver driver_twotiger	   = new GameDriver("1984"	,"twotiger"	,"mcr2.java"	,rom_twotiger,null	,machine_driver_mcr2	,input_ports_twotiger	,init_mcr2	,ROT0	,	"Bally Midway", "Two Tigers" )
+	public static GameDriver driver_twotigra	   = new GameDriver("1984"	,"twotigra"	,"mcr2.java"	,rom_twotigra,driver_twotiger	,machine_driver_mcr2	,input_ports_twotigra	,init_twotigra	,ROT0	,	"Bally Midway", "Two Tigers (dedicated)" )
+	public static GameDriver driver_journey	   = new GameDriver("1983"	,"journey"	,"mcr2.java"	,rom_journey,null	,machine_driver_journey	,input_ports_domino	,init_mcr2	,ROT90	,	"Bally Midway", "Journey", GAME_IMPERFECT_SOUND )
 }

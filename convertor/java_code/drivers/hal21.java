@@ -868,7 +868,7 @@ public class hal21
 	
 	
 	
-	public static GameDriver driver_aso	   = new GameDriver("1985"	,"aso"	,"hal21.java"	,rom_aso,null	,machine_driver_aso	,input_ports_aso	,null	,ROT270	,	SNK", "ASO - Armored Scrum Object", GAME_IMPERFECT_SOUND )
-	public static GameDriver driver_hal21	   = new GameDriver("1985"	,"hal21"	,"hal21.java"	,rom_hal21,null	,machine_driver_hal21	,input_ports_hal21	,null	,ROT270	,	SNK", "HAL21", GAME_NO_SOUND | GAME_WRONG_COLORS )
-	public static GameDriver driver_hal21j	   = new GameDriver("1985"	,"hal21j"	,"hal21.java"	,rom_hal21j,driver_hal21	,machine_driver_hal21	,input_ports_hal21	,null	,ROT270	,	SNK", "HAL21 (Japan)", GAME_NO_SOUND | GAME_WRONG_COLORS )
+	public static GameDriver driver_aso	   = new GameDriver("1985"	,"aso"	,"hal21.java"	,rom_aso,null	,machine_driver_aso	,input_ports_aso	,null	,ROT270	,	"SNK", "ASO - Armored Scrum Object", GAME_IMPERFECT_SOUND )
+	public static GameDriver driver_hal21	   = new GameDriver("1985"	,"hal21"	,"hal21.java"	,rom_hal21,null	,machine_driver_hal21	,input_ports_hal21	,null	,ROT270	,	"SNK", "HAL21", GAME_NO_SOUND | GAME_WRONG_COLORS )
+	public static GameDriver driver_hal21j	   = new GameDriver("1985"	,"hal21j"	,"hal21.java"	,rom_hal21j,driver_hal21	,machine_driver_hal21	,input_ports_hal21	,null	,ROT270	,	"SNK", "HAL21 (Japan)", GAME_NO_SOUND | GAME_WRONG_COLORS )
 }

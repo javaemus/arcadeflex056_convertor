@@ -969,8 +969,8 @@ public class ninjaw
 	
 	/* Working Games */
 	
-	public static GameDriver driver_ninjaw	   = new GameDriver("1987"	,"ninjaw"	,"ninjaw.java"	,rom_ninjaw,null	,machine_driver_ninjaw	,input_ports_ninjaw	,init_ninjaw	,ROT0	,	Taito Corporation Japan", "The Ninja Warriors (World)" )
-	public static GameDriver driver_ninjawj	   = new GameDriver("1987"	,"ninjawj"	,"ninjaw.java"	,rom_ninjawj,driver_ninjaw	,machine_driver_ninjaw	,input_ports_ninjawj	,init_ninjaw	,ROT0	,	Taito Corporation", "The Ninja Warriors (Japan)" )
-	public static GameDriver driver_darius2	   = new GameDriver("1989"	,"darius2"	,"ninjaw.java"	,rom_darius2,null	,machine_driver_darius2	,input_ports_darius2	,init_ninjaw	,ROT0	,	Taito Corporation", "Darius II (Japan)" )
+	public static GameDriver driver_ninjaw	   = new GameDriver("1987"	,"ninjaw"	,"ninjaw.java"	,rom_ninjaw,null	,machine_driver_ninjaw	,input_ports_ninjaw	,init_ninjaw	,ROT0	,	"Taito Corporation Japan", "The Ninja Warriors (World)" )
+	public static GameDriver driver_ninjawj	   = new GameDriver("1987"	,"ninjawj"	,"ninjaw.java"	,rom_ninjawj,driver_ninjaw	,machine_driver_ninjaw	,input_ports_ninjawj	,init_ninjaw	,ROT0	,	"Taito Corporation", "The Ninja Warriors (Japan)" )
+	public static GameDriver driver_darius2	   = new GameDriver("1989"	,"darius2"	,"ninjaw.java"	,rom_darius2,null	,machine_driver_darius2	,input_ports_darius2	,init_ninjaw	,ROT0	,	"Taito Corporation", "Darius II (Japan)" )
 	
 }

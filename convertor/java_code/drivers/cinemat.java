@@ -1418,21 +1418,21 @@ public class cinemat
 	
 	
 	
-	public static GameDriver driver_spacewar	   = new GameDriver("1978"	,"spacewar"	,"cinemat.java"	,rom_spacewar,null	,machine_driver_spacewar	,input_ports_spacewar	,null	,ROT0	,	Cinematronics", "Space Wars" )
-	public static GameDriver driver_barrier	   = new GameDriver("1979"	,"barrier"	,"cinemat.java"	,rom_barrier,null	,machine_driver_barrier	,input_ports_barrier	,init_barrier	,ROT270	,	Vectorbeam", "Barrier", GAME_NO_SOUND )
-	public static GameDriver driver_starhawk	   = new GameDriver("1981"	,"starhawk"	,"cinemat.java"	,rom_starhawk,null	,machine_driver_starhawk	,input_ports_starhawk	,init_starhawk	,ROT0	,	Cinematronics", "Star Hawk", GAME_NO_SOUND )
-	public static GameDriver driver_starcas	   = new GameDriver("1980"	,"starcas"	,"cinemat.java"	,rom_starcas,null	,machine_driver_starcas	,input_ports_starcas	,init_starcas	,ROT0	,	Cinematronics", "Star Castle (version 3)" )
-	public static GameDriver driver_starcas1	   = new GameDriver("1980"	,"starcas1"	,"cinemat.java"	,rom_starcas1,driver_starcas	,machine_driver_starcas	,input_ports_starcas	,init_starcas	,ROT0	,	Cinematronics", "Star Castle (older)" )
-	public static GameDriver driver_tailg	   = new GameDriver("1979"	,"tailg"	,"cinemat.java"	,rom_tailg,null	,machine_driver_tailg	,input_ports_tailg	,init_tailg	,ROT0	,	Cinematronics", "Tailgunner", GAME_NO_SOUND )
-	public static GameDriver driver_ripoff	   = new GameDriver("1979"	,"ripoff"	,"cinemat.java"	,rom_ripoff,null	,machine_driver_ripoff	,input_ports_ripoff	,init_ripoff	,ROT0	,	Cinematronics", "Rip Off" )
-	public static GameDriver driver_speedfrk	   = new GameDriver("19??"	,"speedfrk"	,"cinemat.java"	,rom_speedfrk,null	,machine_driver_speedfrk	,input_ports_speedfrk	,init_speedfrk	,ROT0	,	Vectorbeam", "Speed Freak", GAME_NO_SOUND )
-	public static GameDriver driver_sundance	   = new GameDriver("1979"	,"sundance"	,"cinemat.java"	,rom_sundance,null	,machine_driver_sundance	,input_ports_sundance	,init_sundance	,ROT270	,	Cinematronics", "Sundance", GAME_NOT_WORKING )
-	public static GameDriver driver_warrior	   = new GameDriver("1978"	,"warrior"	,"cinemat.java"	,rom_warrior,null	,machine_driver_warrior	,input_ports_warrior	,init_warrior	,ROT0	,	Vectorbeam", "Warrior" )
-	public static GameDriver driver_armora	   = new GameDriver("1980"	,"armora"	,"cinemat.java"	,rom_armora,null	,machine_driver_armora	,input_ports_armora	,init_armora	,ROT0	,	Cinematronics", "Armor Attack", GAME_NO_SOUND )
-	public static GameDriver driver_solarq	   = new GameDriver("1981"	,"solarq"	,"cinemat.java"	,rom_solarq,null	,machine_driver_solarq	,input_ports_solarq	,init_solarq	,ORIENTATION_FLIP_X	,	Cinematronics", "Solar Quest" )
-	public static GameDriver driver_demon	   = new GameDriver("1982"	,"demon"	,"cinemat.java"	,rom_demon,null	,machine_driver_demon	,input_ports_demon	,init_demon	,ROT0	,	Rock-ola", "Demon" )
-	public static GameDriver driver_wotw	   = new GameDriver("1981"	,"wotw"	,"cinemat.java"	,rom_wotw,null	,machine_driver_wotw	,input_ports_wotw	,init_wotw	,ROT0	,	Cinematronics", "War of the Worlds", GAME_IMPERFECT_COLORS | GAME_NO_SOUND )
-	public static GameDriver driver_boxingb	   = new GameDriver("1981"	,"boxingb"	,"cinemat.java"	,rom_boxingb,null	,machine_driver_boxingb	,input_ports_boxingb	,init_boxingb	,ROT0	,	Cinematronics", "Boxing Bugs", GAME_IMPERFECT_COLORS | GAME_NO_SOUND )
+	public static GameDriver driver_spacewar	   = new GameDriver("1978"	,"spacewar"	,"cinemat.java"	,rom_spacewar,null	,machine_driver_spacewar	,input_ports_spacewar	,null	,ROT0	,	"Cinematronics", "Space Wars" )
+	public static GameDriver driver_barrier	   = new GameDriver("1979"	,"barrier"	,"cinemat.java"	,rom_barrier,null	,machine_driver_barrier	,input_ports_barrier	,init_barrier	,ROT270	,	"Vectorbeam", "Barrier", GAME_NO_SOUND )
+	public static GameDriver driver_starhawk	   = new GameDriver("1981"	,"starhawk"	,"cinemat.java"	,rom_starhawk,null	,machine_driver_starhawk	,input_ports_starhawk	,init_starhawk	,ROT0	,	"Cinematronics", "Star Hawk", GAME_NO_SOUND )
+	public static GameDriver driver_starcas	   = new GameDriver("1980"	,"starcas"	,"cinemat.java"	,rom_starcas,null	,machine_driver_starcas	,input_ports_starcas	,init_starcas	,ROT0	,	"Cinematronics", "Star Castle (version 3)" )
+	public static GameDriver driver_starcas1	   = new GameDriver("1980"	,"starcas1"	,"cinemat.java"	,rom_starcas1,driver_starcas	,machine_driver_starcas	,input_ports_starcas	,init_starcas	,ROT0	,	"Cinematronics", "Star Castle (older)" )
+	public static GameDriver driver_tailg	   = new GameDriver("1979"	,"tailg"	,"cinemat.java"	,rom_tailg,null	,machine_driver_tailg	,input_ports_tailg	,init_tailg	,ROT0	,	"Cinematronics", "Tailgunner", GAME_NO_SOUND )
+	public static GameDriver driver_ripoff	   = new GameDriver("1979"	,"ripoff"	,"cinemat.java"	,rom_ripoff,null	,machine_driver_ripoff	,input_ports_ripoff	,init_ripoff	,ROT0	,	"Cinematronics", "Rip Off" )
+	public static GameDriver driver_speedfrk	   = new GameDriver("19??"	,"speedfrk"	,"cinemat.java"	,rom_speedfrk,null	,machine_driver_speedfrk	,input_ports_speedfrk	,init_speedfrk	,ROT0	,	"Vectorbeam", "Speed Freak", GAME_NO_SOUND )
+	public static GameDriver driver_sundance	   = new GameDriver("1979"	,"sundance"	,"cinemat.java"	,rom_sundance,null	,machine_driver_sundance	,input_ports_sundance	,init_sundance	,ROT270	,	"Cinematronics", "Sundance", GAME_NOT_WORKING )
+	public static GameDriver driver_warrior	   = new GameDriver("1978"	,"warrior"	,"cinemat.java"	,rom_warrior,null	,machine_driver_warrior	,input_ports_warrior	,init_warrior	,ROT0	,	"Vectorbeam", "Warrior" )
+	public static GameDriver driver_armora	   = new GameDriver("1980"	,"armora"	,"cinemat.java"	,rom_armora,null	,machine_driver_armora	,input_ports_armora	,init_armora	,ROT0	,	"Cinematronics", "Armor Attack", GAME_NO_SOUND )
+	public static GameDriver driver_solarq	   = new GameDriver("1981"	,"solarq"	,"cinemat.java"	,rom_solarq,null	,machine_driver_solarq	,input_ports_solarq	,init_solarq	,ORIENTATION_FLIP_X	,	"Cinematronics", "Solar Quest" )
+	public static GameDriver driver_demon	   = new GameDriver("1982"	,"demon"	,"cinemat.java"	,rom_demon,null	,machine_driver_demon	,input_ports_demon	,init_demon	,ROT0	,	"Rock-ola", "Demon" )
+	public static GameDriver driver_wotw	   = new GameDriver("1981"	,"wotw"	,"cinemat.java"	,rom_wotw,null	,machine_driver_wotw	,input_ports_wotw	,init_wotw	,ROT0	,	"Cinematronics", "War of the Worlds", GAME_IMPERFECT_COLORS | GAME_NO_SOUND )
+	public static GameDriver driver_boxingb	   = new GameDriver("1981"	,"boxingb"	,"cinemat.java"	,rom_boxingb,null	,machine_driver_boxingb	,input_ports_boxingb	,init_boxingb	,ROT0	,	"Cinematronics", "Boxing Bugs", GAME_IMPERFECT_COLORS | GAME_NO_SOUND )
 	
 	
 }

@@ -1171,9 +1171,9 @@ public class wgp
 	
 	/* Working Games with a few graphics problems - missing rotation */
 	
-	public static GameDriver driver_wgp	   = new GameDriver("1989"	,"wgp"	,"wgp.java"	,rom_wgp,null	,machine_driver_wgp	,input_ports_wgp	,init_wgp	,ROT0	,	Taito America Corporation", "World Grand Prix (US)", GAME_IMPERFECT_GRAPHICS )
-	public static GameDriver driver_wgpj	   = new GameDriver("1989"	,"wgpj"	,"wgp.java"	,rom_wgpj,driver_wgp	,machine_driver_wgp	,input_ports_wgp	,init_wgp	,ROT0	,	Taito Corporation", "World Grand Prix (Japan)", GAME_IMPERFECT_GRAPHICS )
-	public static GameDriver driver_wgpjoy	   = new GameDriver("1989"	,"wgpjoy"	,"wgp.java"	,rom_wgpjoy,driver_wgp	,machine_driver_wgp	,input_ports_wgpjoy	,init_wgp	,ROT0	,	Taito Corporation", "World Grand Prix (joystick version) (Japan)", GAME_IMPERFECT_GRAPHICS )
-	public static GameDriver driver_wgp2	   = new GameDriver("1990"	,"wgp2"	,"wgp.java"	,rom_wgp2,driver_wgp	,machine_driver_wgp2	,input_ports_wgp	,init_wgp2	,ROT0	,	Taito Corporation", "World Grand Prix 2 (Japan)", GAME_IMPERFECT_GRAPHICS )
+	public static GameDriver driver_wgp	   = new GameDriver("1989"	,"wgp"	,"wgp.java"	,rom_wgp,null	,machine_driver_wgp	,input_ports_wgp	,init_wgp	,ROT0	,	"Taito America Corporation", "World Grand Prix (US)", GAME_IMPERFECT_GRAPHICS )
+	public static GameDriver driver_wgpj	   = new GameDriver("1989"	,"wgpj"	,"wgp.java"	,rom_wgpj,driver_wgp	,machine_driver_wgp	,input_ports_wgp	,init_wgp	,ROT0	,	"Taito Corporation", "World Grand Prix (Japan)", GAME_IMPERFECT_GRAPHICS )
+	public static GameDriver driver_wgpjoy	   = new GameDriver("1989"	,"wgpjoy"	,"wgp.java"	,rom_wgpjoy,driver_wgp	,machine_driver_wgp	,input_ports_wgpjoy	,init_wgp	,ROT0	,	"Taito Corporation", "World Grand Prix (joystick version) (Japan)", GAME_IMPERFECT_GRAPHICS )
+	public static GameDriver driver_wgp2	   = new GameDriver("1990"	,"wgp2"	,"wgp.java"	,rom_wgp2,driver_wgp	,machine_driver_wgp2	,input_ports_wgp	,init_wgp2	,ROT0	,	"Taito Corporation", "World Grand Prix 2 (Japan)", GAME_IMPERFECT_GRAPHICS )
 	
 }

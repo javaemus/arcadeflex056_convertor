@@ -1674,6 +1674,6 @@ public class wecleman
 	
 	***************************************************************************/
 	
-	public static GameDriver driver_wecleman	   = new GameDriver("1986"	,"wecleman"	,"wecleman.java"	,rom_wecleman,null	,machine_driver_wecleman	,input_ports_wecleman	,init_wecleman	,ROT0	,	Konami", "WEC Le Mans 24", GAME_WRONG_COLORS )
-	public static GameDriver driver_hotchase	   = new GameDriver("1988"	,"hotchase"	,"wecleman.java"	,rom_hotchase,null	,machine_driver_hotchase	,input_ports_hotchase	,init_hotchase	,ROT0	,	Konami", "Hot Chase" )
+	public static GameDriver driver_wecleman	   = new GameDriver("1986"	,"wecleman"	,"wecleman.java"	,rom_wecleman,null	,machine_driver_wecleman	,input_ports_wecleman	,init_wecleman	,ROT0	,	"Konami", "WEC Le Mans 24", GAME_WRONG_COLORS )
+	public static GameDriver driver_hotchase	   = new GameDriver("1988"	,"hotchase"	,"wecleman.java"	,rom_hotchase,null	,machine_driver_hotchase	,input_ports_hotchase	,init_hotchase	,ROT0	,	"Konami", "Hot Chase" )
 }

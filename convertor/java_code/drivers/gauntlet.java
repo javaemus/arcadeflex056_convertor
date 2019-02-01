@@ -1104,10 +1104,10 @@ public class gauntlet
 	 *
 	 *************************************/
 	
-	public static GameDriver driver_gauntlet	   = new GameDriver("1985"	,"gauntlet"	,"gauntlet.java"	,rom_gauntlet,null	,machine_driver_gauntlet	,input_ports_gauntlet	,init_gauntlet	,ROT0	,	Atari Games", "Gauntlet" )
-	public static GameDriver driver_gauntir1	   = new GameDriver("1985"	,"gauntir1"	,"gauntlet.java"	,rom_gauntir1,driver_gauntlet	,machine_driver_gauntlet	,input_ports_gauntlet	,init_gauntlet	,ROT0	,	Atari Games", "Gauntlet (Intermediate Release 1)" )
-	public static GameDriver driver_gauntir2	   = new GameDriver("1985"	,"gauntir2"	,"gauntlet.java"	,rom_gauntir2,driver_gauntlet	,machine_driver_gauntlet	,input_ports_gauntlet	,init_gauntlet	,ROT0	,	Atari Games", "Gauntlet (Intermediate Release 2)" )
-	public static GameDriver driver_gaunt2p	   = new GameDriver("1985"	,"gaunt2p"	,"gauntlet.java"	,rom_gaunt2p,driver_gauntlet	,machine_driver_gauntlet	,input_ports_gauntlet	,init_gaunt2p	,ROT0	,	Atari Games", "Gauntlet (2 Players)" )
-	public static GameDriver driver_gaunt2	   = new GameDriver("1986"	,"gaunt2"	,"gauntlet.java"	,rom_gaunt2,null	,machine_driver_gauntlet	,input_ports_gauntlet	,init_gauntlet2	,ROT0	,	Atari Games", "Gauntlet II" )
-	public static GameDriver driver_vindctr2	   = new GameDriver("1988"	,"vindctr2"	,"gauntlet.java"	,rom_vindctr2,null	,machine_driver_gauntlet	,input_ports_vindctr2	,init_vindctr2	,ROT0	,	Atari Games", "Vindicators Part II" )
+	public static GameDriver driver_gauntlet	   = new GameDriver("1985"	,"gauntlet"	,"gauntlet.java"	,rom_gauntlet,null	,machine_driver_gauntlet	,input_ports_gauntlet	,init_gauntlet	,ROT0	,	"Atari Games", "Gauntlet" )
+	public static GameDriver driver_gauntir1	   = new GameDriver("1985"	,"gauntir1"	,"gauntlet.java"	,rom_gauntir1,driver_gauntlet	,machine_driver_gauntlet	,input_ports_gauntlet	,init_gauntlet	,ROT0	,	"Atari Games", "Gauntlet (Intermediate Release 1)" )
+	public static GameDriver driver_gauntir2	   = new GameDriver("1985"	,"gauntir2"	,"gauntlet.java"	,rom_gauntir2,driver_gauntlet	,machine_driver_gauntlet	,input_ports_gauntlet	,init_gauntlet	,ROT0	,	"Atari Games", "Gauntlet (Intermediate Release 2)" )
+	public static GameDriver driver_gaunt2p	   = new GameDriver("1985"	,"gaunt2p"	,"gauntlet.java"	,rom_gaunt2p,driver_gauntlet	,machine_driver_gauntlet	,input_ports_gauntlet	,init_gaunt2p	,ROT0	,	"Atari Games", "Gauntlet (2 Players)" )
+	public static GameDriver driver_gaunt2	   = new GameDriver("1986"	,"gaunt2"	,"gauntlet.java"	,rom_gaunt2,null	,machine_driver_gauntlet	,input_ports_gauntlet	,init_gauntlet2	,ROT0	,	"Atari Games", "Gauntlet II" )
+	public static GameDriver driver_vindctr2	   = new GameDriver("1988"	,"vindctr2"	,"gauntlet.java"	,rom_vindctr2,null	,machine_driver_gauntlet	,input_ports_vindctr2	,init_vindctr2	,ROT0	,	"Atari Games", "Vindicators Part II" )
 }

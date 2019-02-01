@@ -488,6 +488,6 @@ public class megazone
 	}
 	
 	
-	public static GameDriver driver_megazone	   = new GameDriver("1983"	,"megazone"	,"megazone.java"	,rom_megazone,null	,machine_driver_megazone	,input_ports_megazone	,init_megazone	,ROT90	,	Konami", "Mega Zone" )
-	public static GameDriver driver_megaznik	   = new GameDriver("1983"	,"megaznik"	,"megazone.java"	,rom_megaznik,driver_megazone	,machine_driver_megazone	,input_ports_megazone	,init_megazone	,ROT90	,	Konami / Interlogic + Kosuka", "Mega Zone (Kosuka)" )
+	public static GameDriver driver_megazone	   = new GameDriver("1983"	,"megazone"	,"megazone.java"	,rom_megazone,null	,machine_driver_megazone	,input_ports_megazone	,init_megazone	,ROT90	,	"Konami", "Mega Zone" )
+	public static GameDriver driver_megaznik	   = new GameDriver("1983"	,"megaznik"	,"megazone.java"	,rom_megaznik,driver_megazone	,machine_driver_megazone	,input_ports_megazone	,init_megazone	,ROT90	,	"Konami / Interlogic + Kosuka", "Mega Zone (Kosuka)" )
 }

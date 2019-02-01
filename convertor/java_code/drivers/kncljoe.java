@@ -284,6 +284,6 @@ public class kncljoe
 	
 	
 	
-	public static GameDriver driver_kncljoe	   = new GameDriver("1985"	,"kncljoe"	,"kncljoe.java"	,rom_kncljoe,null	,machine_driver_kncljoe	,input_ports_kncljoe	,null	,ROT0	,	[Seibu Kaihatsu] (Taito license)", "Knuckle Joe (set 1)", GAME_NOT_WORKING )
-	public static GameDriver driver_kncljoea	   = new GameDriver("1985"	,"kncljoea"	,"kncljoe.java"	,rom_kncljoea,driver_kncljoe	,machine_driver_kncljoe	,input_ports_kncljoe	,null	,ROT0	,	[Seibu Kaihatsu] (Taito license)", "Knuckle Joe (set 2)", GAME_NOT_WORKING )
+	public static GameDriver driver_kncljoe	   = new GameDriver("1985"	,"kncljoe"	,"kncljoe.java"	,rom_kncljoe,null	,machine_driver_kncljoe	,input_ports_kncljoe	,null	,ROT0	,	"[Seibu Kaihatsu] (Taito license)", "Knuckle Joe (set 1)", GAME_NOT_WORKING )
+	public static GameDriver driver_kncljoea	   = new GameDriver("1985"	,"kncljoea"	,"kncljoe.java"	,rom_kncljoea,driver_kncljoe	,machine_driver_kncljoe	,input_ports_kncljoe	,null	,ROT0	,	"[Seibu Kaihatsu] (Taito license)", "Knuckle Joe (set 2)", GAME_NOT_WORKING )
 }

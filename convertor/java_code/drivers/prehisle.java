@@ -441,7 +441,7 @@ public class prehisle
 	
 	/******************************************************************************/
 	
-	public static GameDriver driver_prehisle	   = new GameDriver("1989"	,"prehisle"	,"prehisle.java"	,rom_prehisle,null	,machine_driver_prehisle	,input_ports_prehisle	,init_prehisle	,ROT0	,	SNK", "Prehistoric Isle in 1930 (World)", GAME_NO_COCKTAIL )
-	public static GameDriver driver_prehislu	   = new GameDriver("1989"	,"prehislu"	,"prehisle.java"	,rom_prehislu,driver_prehisle	,machine_driver_prehisle	,input_ports_prehisle	,init_prehislu	,ROT0	,	SNK of America", "Prehistoric Isle in 1930 (US)", GAME_NO_COCKTAIL )
-	public static GameDriver driver_gensitou	   = new GameDriver("1989"	,"gensitou"	,"prehisle.java"	,rom_gensitou,driver_prehisle	,machine_driver_prehisle	,input_ports_prehisle	,init_gensitou	,ROT0	,	SNK", "Genshi-Tou 1930's", GAME_NO_COCKTAIL )
+	public static GameDriver driver_prehisle	   = new GameDriver("1989"	,"prehisle"	,"prehisle.java"	,rom_prehisle,null	,machine_driver_prehisle	,input_ports_prehisle	,init_prehisle	,ROT0	,	"SNK", "Prehistoric Isle in 1930 (World)", GAME_NO_COCKTAIL )
+	public static GameDriver driver_prehislu	   = new GameDriver("1989"	,"prehislu"	,"prehisle.java"	,rom_prehislu,driver_prehisle	,machine_driver_prehisle	,input_ports_prehisle	,init_prehislu	,ROT0	,	"SNK of America", "Prehistoric Isle in 1930 (US)", GAME_NO_COCKTAIL )
+	public static GameDriver driver_gensitou	   = new GameDriver("1989"	,"gensitou"	,"prehisle.java"	,rom_gensitou,driver_prehisle	,machine_driver_prehisle	,input_ports_prehisle	,init_gensitou	,ROT0	,	"SNK", "Genshi-Tou 1930's", GAME_NO_COCKTAIL )
 }

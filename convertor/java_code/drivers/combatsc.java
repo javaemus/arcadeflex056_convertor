@@ -909,9 +909,9 @@ public class combatsc
 	
 	
 	
-	public static GameDriver driver_combasc	   = new GameDriver("1988"	,"combasc"	,"combatsc.java"	,rom_combasc,null	,machine_driver_combasc	,input_ports_combasc	,init_combasc	,ROT0	,	Konami", "Combat School (joystick)" )
-	public static GameDriver driver_combasct	   = new GameDriver("1987"	,"combasct"	,"combatsc.java"	,rom_combasct,driver_combasc	,machine_driver_combasc	,input_ports_combasct	,null	,ROT0	,	Konami", "Combat School (trackball)" )
-	public static GameDriver driver_combascj	   = new GameDriver("1987"	,"combascj"	,"combatsc.java"	,rom_combascj,driver_combasc	,machine_driver_combasc	,input_ports_combasct	,null	,ROT0	,	Konami", "Combat School (Japan trackball)" )
-	public static GameDriver driver_bootcamp	   = new GameDriver("1987"	,"bootcamp"	,"combatsc.java"	,rom_bootcamp,driver_combasc	,machine_driver_combasc	,input_ports_combasct	,null	,ROT0	,	Konami", "Boot Camp" )
-	public static GameDriver driver_combascb	   = new GameDriver("1988"	,"combascb"	,"combatsc.java"	,rom_combascb,driver_combasc	,machine_driver_combascb	,input_ports_combascb	,init_combascb	,ROT0	,	bootleg", "Combat School (bootleg)", GAME_IMPERFECT_COLORS )
+	public static GameDriver driver_combasc	   = new GameDriver("1988"	,"combasc"	,"combatsc.java"	,rom_combasc,null	,machine_driver_combasc	,input_ports_combasc	,init_combasc	,ROT0	,	"Konami", "Combat School (joystick)" )
+	public static GameDriver driver_combasct	   = new GameDriver("1987"	,"combasct"	,"combatsc.java"	,rom_combasct,driver_combasc	,machine_driver_combasc	,input_ports_combasct	,null	,ROT0	,	"Konami", "Combat School (trackball)" )
+	public static GameDriver driver_combascj	   = new GameDriver("1987"	,"combascj"	,"combatsc.java"	,rom_combascj,driver_combasc	,machine_driver_combasc	,input_ports_combasct	,null	,ROT0	,	"Konami", "Combat School (Japan trackball)" )
+	public static GameDriver driver_bootcamp	   = new GameDriver("1987"	,"bootcamp"	,"combatsc.java"	,rom_bootcamp,driver_combasc	,machine_driver_combasc	,input_ports_combasct	,null	,ROT0	,	"Konami", "Boot Camp" )
+	public static GameDriver driver_combascb	   = new GameDriver("1988"	,"combascb"	,"combatsc.java"	,rom_combascb,driver_combasc	,machine_driver_combascb	,input_ports_combascb	,init_combascb	,ROT0	,	"bootleg", "Combat School (bootleg)", GAME_IMPERFECT_COLORS )
 }

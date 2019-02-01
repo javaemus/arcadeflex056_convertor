@@ -399,7 +399,7 @@ public class mikie
 	
 	
 	
-	public static GameDriver driver_mikie	   = new GameDriver("1984"	,"mikie"	,"mikie.java"	,rom_mikie,null	,machine_driver_mikie	,input_ports_mikie	,null	,ROT270	,	Konami", "Mikie" )
-	public static GameDriver driver_mikiej	   = new GameDriver("1984"	,"mikiej"	,"mikie.java"	,rom_mikiej,driver_mikie	,machine_driver_mikie	,input_ports_mikie	,null	,ROT270	,	Konami", "Shinnyuushain Tooru-kun" )
-	public static GameDriver driver_mikiehs	   = new GameDriver("1984"	,"mikiehs"	,"mikie.java"	,rom_mikiehs,driver_mikie	,machine_driver_mikie	,input_ports_mikie	,null	,ROT270	,	Konami", "Mikie (High School Graffiti)" )
+	public static GameDriver driver_mikie	   = new GameDriver("1984"	,"mikie"	,"mikie.java"	,rom_mikie,null	,machine_driver_mikie	,input_ports_mikie	,null	,ROT270	,	"Konami", "Mikie" )
+	public static GameDriver driver_mikiej	   = new GameDriver("1984"	,"mikiej"	,"mikie.java"	,rom_mikiej,driver_mikie	,machine_driver_mikie	,input_ports_mikie	,null	,ROT270	,	"Konami", "Shinnyuushain Tooru-kun" )
+	public static GameDriver driver_mikiehs	   = new GameDriver("1984"	,"mikiehs"	,"mikie.java"	,rom_mikiehs,driver_mikie	,machine_driver_mikie	,input_ports_mikie	,null	,ROT270	,	"Konami", "Mikie (High School Graffiti)" )
 }

@@ -376,6 +376,6 @@ public class espial
 	
 	
 	
-	public static GameDriver driver_espial	   = new GameDriver("1983"	,"espial"	,"espial.java"	,rom_espial,null	,machine_driver_espial	,input_ports_espial	,null	,ROT0	,	[Orca] Thunderbolt", "Espial (US?)", GAME_NO_COCKTAIL )
-	public static GameDriver driver_espiale	   = new GameDriver("1983"	,"espiale"	,"espial.java"	,rom_espiale,driver_espial	,machine_driver_espial	,input_ports_espial	,null	,ROT0	,	[Orca] Thunderbolt", "Espial (Europe)", GAME_NO_COCKTAIL )
+	public static GameDriver driver_espial	   = new GameDriver("1983"	,"espial"	,"espial.java"	,rom_espial,null	,machine_driver_espial	,input_ports_espial	,null	,ROT0	,	"[Orca] Thunderbolt", "Espial (US?)", GAME_NO_COCKTAIL )
+	public static GameDriver driver_espiale	   = new GameDriver("1983"	,"espiale"	,"espial.java"	,rom_espiale,driver_espial	,machine_driver_espial	,input_ports_espial	,null	,ROT0	,	"[Orca] Thunderbolt", "Espial (Europe)", GAME_NO_COCKTAIL )
 }

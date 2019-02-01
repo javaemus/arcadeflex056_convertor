@@ -306,5 +306,5 @@ public class splash
 	ROM_END(); }}; 
 	
 	
-	public static GameDriver driver_splash	   = new GameDriver("1992"	,"splash"	,"splash.java"	,rom_splash,null	,machine_driver_splash	,input_ports_splash	,null	,ROT0	,	Gaelco", "Splash!" )
+	public static GameDriver driver_splash	   = new GameDriver("1992"	,"splash"	,"splash.java"	,rom_splash,null	,machine_driver_splash	,input_ports_splash	,null	,ROT0	,	"Gaelco", "Splash!" )
 }

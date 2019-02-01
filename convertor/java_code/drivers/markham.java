@@ -307,5 +307,5 @@ public class markham
 	ROM_END(); }}; 
 	
 	
-	public static GameDriver driver_markham	   = new GameDriver("1983"	,"markham"	,"markham.java"	,rom_markham,null	,machine_driver_markham	,input_ports_markham	,null	,ROT0	,	Sun Electronics", "Markham" )
+	public static GameDriver driver_markham	   = new GameDriver("1983"	,"markham"	,"markham.java"	,rom_markham,null	,machine_driver_markham	,input_ports_markham	,null	,ROT0	,	"Sun Electronics", "Markham" )
 }

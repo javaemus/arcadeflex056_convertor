@@ -363,5 +363,5 @@ public class batman
 	 *
 	 *************************************/
 	
-	public static GameDriver driver_batman	   = new GameDriver("1991"	,"batman"	,"batman.java"	,rom_batman,null	,machine_driver_batman	,input_ports_batman	,init_batman	,ROT0	,	Atari Games", "Batman" )
+	public static GameDriver driver_batman	   = new GameDriver("1991"	,"batman"	,"batman.java"	,rom_batman,null	,machine_driver_batman	,input_ports_batman	,init_batman	,ROT0	,	"Atari Games", "Batman" )
 }

@@ -1024,12 +1024,12 @@ public class astrocde
 	}
 	
 	
-	public static GameDriver driver_seawolf2	   = new GameDriver("1978"	,"seawolf2"	,"astrocde.java"	,rom_seawolf2,null	,machine_driver_seawolf2	,input_ports_seawolf2	,init_seawolf2	,ROT0	,	Midway", "Sea Wolf II", GAME_NO_SOUND )
-	public static GameDriver driver_spacezap	   = new GameDriver("1980"	,"spacezap"	,"astrocde.java"	,rom_spacezap,null	,machine_driver_spacezap	,input_ports_spacezap	,null	,ROT0	,	Midway", "Space Zap" )
-	public static GameDriver driver_ebases	   = new GameDriver("1980"	,"ebases"	,"astrocde.java"	,rom_ebases,null	,machine_driver_ebases	,input_ports_ebases	,init_ebases	,ROT0	,	Midway", "Extra Bases" )
-	public static GameDriver driver_wow	   = new GameDriver("1980"	,"wow"	,"astrocde.java"	,rom_wow,null	,machine_driver_wow	,input_ports_wow	,init_wow	,ROT0	,	Midway", "Wizard of Wor" )
-	public static GameDriver driver_gorf	   = new GameDriver("1981"	,"gorf"	,"astrocde.java"	,rom_gorf,null	,machine_driver_gorf	,input_ports_gorf	,init_gorf	,ROT270	,	Midway", "Gorf" )
-	public static GameDriver driver_gorfpgm1	   = new GameDriver("1981"	,"gorfpgm1"	,"astrocde.java"	,rom_gorfpgm1,driver_gorf	,machine_driver_gorf	,input_ports_gorf	,init_gorf	,ROT270	,	Midway", "Gorf (Program 1)" )
-	public static GameDriver driver_robby	   = new GameDriver("1981"	,"robby"	,"astrocde.java"	,rom_robby,null	,machine_driver_robby	,input_ports_robby	,null	,ROT0	,	Bally Midway", "Robby Roto" )
-	public static GameDriver driver_profpac	   = new GameDriver("1983"	,"profpac"	,"astrocde.java"	,rom_profpac,null	,machine_driver_profpac	,input_ports_gorf	,null	,ROT0	,	Bally Midway", "Professor PacMan" )
+	public static GameDriver driver_seawolf2	   = new GameDriver("1978"	,"seawolf2"	,"astrocde.java"	,rom_seawolf2,null	,machine_driver_seawolf2	,input_ports_seawolf2	,init_seawolf2	,ROT0	,	"Midway", "Sea Wolf II", GAME_NO_SOUND )
+	public static GameDriver driver_spacezap	   = new GameDriver("1980"	,"spacezap"	,"astrocde.java"	,rom_spacezap,null	,machine_driver_spacezap	,input_ports_spacezap	,null	,ROT0	,	"Midway", "Space Zap" )
+	public static GameDriver driver_ebases	   = new GameDriver("1980"	,"ebases"	,"astrocde.java"	,rom_ebases,null	,machine_driver_ebases	,input_ports_ebases	,init_ebases	,ROT0	,	"Midway", "Extra Bases" )
+	public static GameDriver driver_wow	   = new GameDriver("1980"	,"wow"	,"astrocde.java"	,rom_wow,null	,machine_driver_wow	,input_ports_wow	,init_wow	,ROT0	,	"Midway", "Wizard of Wor" )
+	public static GameDriver driver_gorf	   = new GameDriver("1981"	,"gorf"	,"astrocde.java"	,rom_gorf,null	,machine_driver_gorf	,input_ports_gorf	,init_gorf	,ROT270	,	"Midway", "Gorf" )
+	public static GameDriver driver_gorfpgm1	   = new GameDriver("1981"	,"gorfpgm1"	,"astrocde.java"	,rom_gorfpgm1,driver_gorf	,machine_driver_gorf	,input_ports_gorf	,init_gorf	,ROT270	,	"Midway", "Gorf (Program 1)" )
+	public static GameDriver driver_robby	   = new GameDriver("1981"	,"robby"	,"astrocde.java"	,rom_robby,null	,machine_driver_robby	,input_ports_robby	,null	,ROT0	,	"Bally Midway", "Robby Roto" )
+	public static GameDriver driver_profpac	   = new GameDriver("1983"	,"profpac"	,"astrocde.java"	,rom_profpac,null	,machine_driver_profpac	,input_ports_gorf	,null	,ROT0	,	"Bally Midway", "Professor PacMan" )
 }

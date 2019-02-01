@@ -327,5 +327,5 @@ public class appoooh
 	
 	
 	
-	public static GameDriver driver_appoooh	   = new GameDriver("1984"	,"appoooh"	,"appoooh.java"	,rom_appoooh,null	,machine_driver_appoooh	,input_ports_appoooh	,null	,ROT0	,	Sega", "Appoooh" )
+	public static GameDriver driver_appoooh	   = new GameDriver("1984"	,"appoooh"	,"appoooh.java"	,rom_appoooh,null	,machine_driver_appoooh	,input_ports_appoooh	,null	,ROT0	,	"Sega", "Appoooh" )
 }

@@ -931,10 +931,10 @@ public class atarifb
 	
 	
 	
-	public static GameDriver driver_atarifb	   = new GameDriver("1978"	,"atarifb"	,"atarifb.java"	,rom_atarifb,null	,machine_driver_atarifb	,input_ports_atarifb	,init_atarifb	,ROT0	,	Atari", "Atari Football (revision 2)" )
-	public static GameDriver driver_atarifb1	   = new GameDriver("1978"	,"atarifb1"	,"atarifb.java"	,rom_atarifb1,driver_atarifb	,machine_driver_atarifb	,input_ports_atarifb	,init_atarifb	,ROT0	,	Atari", "Atari Football (revision 1)" )
-	public static GameDriver driver_atarifb4	   = new GameDriver("1979"	,"atarifb4"	,"atarifb.java"	,rom_atarifb4,driver_atarifb	,machine_driver_atarifb4	,input_ports_atarifb4	,init_atarifb4	,ROT0	,	Atari", "Atari Football (4 players)" )
-	public static GameDriver driver_abaseb	   = new GameDriver("1979"	,"abaseb"	,"atarifb.java"	,rom_abaseb,null	,machine_driver_atarifb	,input_ports_abaseb	,init_abaseb	,ROT0	,	Atari", "Atari Baseball (set 1)" )
-	public static GameDriver driver_abaseb2	   = new GameDriver("1979"	,"abaseb2"	,"atarifb.java"	,rom_abaseb2,driver_abaseb	,machine_driver_atarifb	,input_ports_abaseb	,init_abaseb	,ROT0	,	Atari", "Atari Baseball (set 2)" )
-	public static GameDriver driver_soccer	   = new GameDriver("1980"	,"soccer"	,"atarifb.java"	,rom_soccer,null	,machine_driver_soccer	,input_ports_soccer	,init_soccer	,ROT0	,	Atari", "Atari Soccer" )
+	public static GameDriver driver_atarifb	   = new GameDriver("1978"	,"atarifb"	,"atarifb.java"	,rom_atarifb,null	,machine_driver_atarifb	,input_ports_atarifb	,init_atarifb	,ROT0	,	"Atari", "Atari Football (revision 2)" )
+	public static GameDriver driver_atarifb1	   = new GameDriver("1978"	,"atarifb1"	,"atarifb.java"	,rom_atarifb1,driver_atarifb	,machine_driver_atarifb	,input_ports_atarifb	,init_atarifb	,ROT0	,	"Atari", "Atari Football (revision 1)" )
+	public static GameDriver driver_atarifb4	   = new GameDriver("1979"	,"atarifb4"	,"atarifb.java"	,rom_atarifb4,driver_atarifb	,machine_driver_atarifb4	,input_ports_atarifb4	,init_atarifb4	,ROT0	,	"Atari", "Atari Football (4 players)" )
+	public static GameDriver driver_abaseb	   = new GameDriver("1979"	,"abaseb"	,"atarifb.java"	,rom_abaseb,null	,machine_driver_atarifb	,input_ports_abaseb	,init_abaseb	,ROT0	,	"Atari", "Atari Baseball (set 1)" )
+	public static GameDriver driver_abaseb2	   = new GameDriver("1979"	,"abaseb2"	,"atarifb.java"	,rom_abaseb2,driver_abaseb	,machine_driver_atarifb	,input_ports_abaseb	,init_abaseb	,ROT0	,	"Atari", "Atari Baseball (set 2)" )
+	public static GameDriver driver_soccer	   = new GameDriver("1980"	,"soccer"	,"atarifb.java"	,rom_soccer,null	,machine_driver_soccer	,input_ports_soccer	,init_soccer	,ROT0	,	"Atari", "Atari Soccer" )
 }

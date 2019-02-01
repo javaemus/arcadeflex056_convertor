@@ -346,9 +346,9 @@ public class astrof
 	
 	
 	
-	public static GameDriver driver_astrof	   = new GameDriver("1980"	,"astrof"	,"astrof.java"	,rom_astrof,null	,machine_driver_astrof	,input_ports_astrof	,null	,ROT90	,	Data East", "Astro Fighter (set 1)" )
-	public static GameDriver driver_astrof2	   = new GameDriver("1980"	,"astrof2"	,"astrof.java"	,rom_astrof2,driver_astrof	,machine_driver_astrof	,input_ports_astrof	,null	,ROT90	,	Data East", "Astro Fighter (set 2)" )
-	public static GameDriver driver_astrof3	   = new GameDriver("1980"	,"astrof3"	,"astrof.java"	,rom_astrof3,driver_astrof	,machine_driver_astrof	,input_ports_astrof	,null	,ROT90	,	Data East", "Astro Fighter (set 3)" )
-	public static GameDriver driver_tomahawk	   = new GameDriver("1980"	,"tomahawk"	,"astrof.java"	,rom_tomahawk,null	,machine_driver_tomahawk	,input_ports_tomahawk	,null	,ROT90	,	Data East", "Tomahawk 777 (Revision 1)" )
-	public static GameDriver driver_tomahaw5	   = new GameDriver("1980"	,"tomahaw5"	,"astrof.java"	,rom_tomahaw5,driver_tomahawk	,machine_driver_tomahawk	,input_ports_tomahawk	,null	,ROT90	,	Data East", "Tomahawk 777 (Revision 5)" )
+	public static GameDriver driver_astrof	   = new GameDriver("1980"	,"astrof"	,"astrof.java"	,rom_astrof,null	,machine_driver_astrof	,input_ports_astrof	,null	,ROT90	,	"Data East", "Astro Fighter (set 1)" )
+	public static GameDriver driver_astrof2	   = new GameDriver("1980"	,"astrof2"	,"astrof.java"	,rom_astrof2,driver_astrof	,machine_driver_astrof	,input_ports_astrof	,null	,ROT90	,	"Data East", "Astro Fighter (set 2)" )
+	public static GameDriver driver_astrof3	   = new GameDriver("1980"	,"astrof3"	,"astrof.java"	,rom_astrof3,driver_astrof	,machine_driver_astrof	,input_ports_astrof	,null	,ROT90	,	"Data East", "Astro Fighter (set 3)" )
+	public static GameDriver driver_tomahawk	   = new GameDriver("1980"	,"tomahawk"	,"astrof.java"	,rom_tomahawk,null	,machine_driver_tomahawk	,input_ports_tomahawk	,null	,ROT90	,	"Data East", "Tomahawk 777 (Revision 1)" )
+	public static GameDriver driver_tomahaw5	   = new GameDriver("1980"	,"tomahaw5"	,"astrof.java"	,rom_tomahaw5,driver_tomahawk	,machine_driver_tomahawk	,input_ports_tomahawk	,null	,ROT90	,	"Data East", "Tomahawk 777 (Revision 5)" )
 }

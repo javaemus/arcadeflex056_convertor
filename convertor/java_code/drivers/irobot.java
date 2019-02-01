@@ -368,5 +368,5 @@ public class irobot
 	
 	
 	
-	public static GameDriver driver_irobot	   = new GameDriver("1983"	,"irobot"	,"irobot.java"	,rom_irobot,null	,machine_driver_irobot	,input_ports_irobot	,init_irobot	,ROT0	,	Atari", "I, Robot" )
+	public static GameDriver driver_irobot	   = new GameDriver("1983"	,"irobot"	,"irobot.java"	,rom_irobot,null	,machine_driver_irobot	,input_ports_irobot	,init_irobot	,ROT0	,	"Atari", "I, Robot" )
 }

@@ -469,5 +469,5 @@ public class wwfsstar
 	ROM_END(); }}; 
 	
 	
-	public static GameDriver driver_wwfsstar	   = new GameDriver("1989"	,"wwfsstar"	,"wwfsstar.java"	,rom_wwfsstar,null	,machine_driver_wwfsstar	,input_ports_wwfsstar	,null	,ROT0	,	Technos Japan", "WWF Superstars (US)" )
+	public static GameDriver driver_wwfsstar	   = new GameDriver("1989"	,"wwfsstar"	,"wwfsstar.java"	,rom_wwfsstar,null	,machine_driver_wwfsstar	,input_ports_wwfsstar	,null	,ROT0	,	"Technos Japan", "WWF Superstars (US)" )
 }

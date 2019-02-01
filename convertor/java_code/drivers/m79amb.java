@@ -202,5 +202,5 @@ public class m79amb
 	
 	
 	
-	public static GameDriver driver_m79amb	   = new GameDriver("1977"	,"m79amb"	,"m79amb.java"	,rom_m79amb,null	,machine_driver_m79amb	,input_ports_m79amb	,init_m79amb	,ROT0	,	Ramtek", "M79 Ambush" )
+	public static GameDriver driver_m79amb	   = new GameDriver("1977"	,"m79amb"	,"m79amb.java"	,rom_m79amb,null	,machine_driver_m79amb	,input_ports_m79amb	,init_m79amb	,ROT0	,	"Ramtek", "M79 Ambush" )
 }

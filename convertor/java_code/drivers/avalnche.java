@@ -191,5 +191,5 @@ public class avalnche
 	
 	
 	
-	public static GameDriver driver_avalnche	   = new GameDriver("1978"	,"avalnche"	,"avalnche.java"	,rom_avalnche,null	,machine_driver_avalnche	,input_ports_avalnche	,init_avalnche	,ROT0	,	Atari", "Avalanche" )
+	public static GameDriver driver_avalnche	   = new GameDriver("1978"	,"avalnche"	,"avalnche.java"	,rom_avalnche,null	,machine_driver_avalnche	,input_ports_avalnche	,init_avalnche	,ROT0	,	"Atari", "Avalanche" )
 }

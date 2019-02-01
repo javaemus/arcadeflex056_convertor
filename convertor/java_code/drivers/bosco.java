@@ -712,9 +712,9 @@ public class bosco
 	
 	
 	
-	public static GameDriver driver_bosco	   = new GameDriver("1981"	,"bosco"	,"bosco.java"	,rom_bosco,null	,machine_driver_bosco	,input_ports_bosco	,null	,ROT0	,	Namco", "Bosconian (new version)" )
-	public static GameDriver driver_boscoo	   = new GameDriver("1981"	,"boscoo"	,"bosco.java"	,rom_boscoo,driver_bosco	,machine_driver_bosco	,input_ports_bosco	,null	,ROT0	,	Namco", "Bosconian (old version)" )
-	public static GameDriver driver_boscoo2	   = new GameDriver("1981"	,"boscoo2"	,"bosco.java"	,rom_boscoo2,driver_bosco	,machine_driver_bosco	,input_ports_bosco	,null	,ROT0	,	Namco", "Bosconian (older version)" )
-	public static GameDriver driver_boscomd	   = new GameDriver("1981"	,"boscomd"	,"bosco.java"	,rom_boscomd,driver_bosco	,machine_driver_bosco	,input_ports_boscomd	,null	,ROT0	,	[Namco] (Midway license)", "Bosconian (Midway, new version)" )
-	public static GameDriver driver_boscomdo	   = new GameDriver("1981"	,"boscomdo"	,"bosco.java"	,rom_boscomdo,driver_bosco	,machine_driver_bosco	,input_ports_boscomd	,null	,ROT0	,	[Namco] (Midway license)", "Bosconian (Midway, old version)" )
+	public static GameDriver driver_bosco	   = new GameDriver("1981"	,"bosco"	,"bosco.java"	,rom_bosco,null	,machine_driver_bosco	,input_ports_bosco	,null	,ROT0	,	"Namco", "Bosconian (new version)" )
+	public static GameDriver driver_boscoo	   = new GameDriver("1981"	,"boscoo"	,"bosco.java"	,rom_boscoo,driver_bosco	,machine_driver_bosco	,input_ports_bosco	,null	,ROT0	,	"Namco", "Bosconian (old version)" )
+	public static GameDriver driver_boscoo2	   = new GameDriver("1981"	,"boscoo2"	,"bosco.java"	,rom_boscoo2,driver_bosco	,machine_driver_bosco	,input_ports_bosco	,null	,ROT0	,	"Namco", "Bosconian (older version)" )
+	public static GameDriver driver_boscomd	   = new GameDriver("1981"	,"boscomd"	,"bosco.java"	,rom_boscomd,driver_bosco	,machine_driver_bosco	,input_ports_boscomd	,null	,ROT0	,	"[Namco] (Midway license)", "Bosconian (Midway, new version)" )
+	public static GameDriver driver_boscomdo	   = new GameDriver("1981"	,"boscomdo"	,"bosco.java"	,rom_boscomdo,driver_bosco	,machine_driver_bosco	,input_ports_boscomd	,null	,ROT0	,	"[Namco] (Midway license)", "Bosconian (Midway, old version)" )
 }

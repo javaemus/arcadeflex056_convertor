@@ -390,5 +390,5 @@ public class spy
 	
 	
 	
-	public static GameDriver driver_spy	   = new GameDriver("1989"	,"spy"	,"spy.java"	,rom_spy,null	,machine_driver_spy	,input_ports_spy	,init_spy	,ROT0	,	Konami", "S.P.Y. - Special Project Y (US)", GAME_NOT_WORKING )
+	public static GameDriver driver_spy	   = new GameDriver("1989"	,"spy"	,"spy.java"	,rom_spy,null	,machine_driver_spy	,input_ports_spy	,init_spy	,ROT0	,	"Konami", "S.P.Y. - Special Project Y (US)", GAME_NOT_WORKING )
 }

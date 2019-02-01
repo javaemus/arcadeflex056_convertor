@@ -712,7 +712,7 @@ public class stfight
 	
 	
 	
-	public static GameDriver driver_empcity	   = new GameDriver("1986"	,"empcity"	,"stfight.java"	,rom_empcity,null	,machine_driver_stfight	,input_ports_stfight	,init_empcity	,ROT0	,	Seibu Kaihatsu", "Empire City: 1931 (bootleg?)" )
-	public static GameDriver driver_empcityj	   = new GameDriver("1986"	,"empcityj"	,"stfight.java"	,rom_empcityj,driver_empcity	,machine_driver_stfight	,input_ports_stfight	,init_stfight	,ROT0	,	[Seibu Kaihatsu] (Taito license)", "Empire City: 1931 (Japan)" )
-	public static GameDriver driver_stfight	   = new GameDriver("1986"	,"stfight"	,"stfight.java"	,rom_stfight,driver_empcity	,machine_driver_stfight	,input_ports_stfight	,init_stfight	,ROT0	,	Seibu Kaihatsu", "Street Fight (Germany)" )
+	public static GameDriver driver_empcity	   = new GameDriver("1986"	,"empcity"	,"stfight.java"	,rom_empcity,null	,machine_driver_stfight	,input_ports_stfight	,init_empcity	,ROT0	,	"Seibu Kaihatsu", "Empire City: 1931 (bootleg?)" )
+	public static GameDriver driver_empcityj	   = new GameDriver("1986"	,"empcityj"	,"stfight.java"	,rom_empcityj,driver_empcity	,machine_driver_stfight	,input_ports_stfight	,init_stfight	,ROT0	,	"[Seibu Kaihatsu] (Taito license)", "Empire City: 1931 (Japan)" )
+	public static GameDriver driver_stfight	   = new GameDriver("1986"	,"stfight"	,"stfight.java"	,rom_stfight,driver_empcity	,machine_driver_stfight	,input_ports_stfight	,init_stfight	,ROT0	,	"Seibu Kaihatsu", "Street Fight (Germany)" )
 }

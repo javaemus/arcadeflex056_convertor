@@ -446,6 +446,6 @@ public class galspnbl
 	
 	
 	
-	public static GameDriver driver_hotpinbl	   = new GameDriver("1995"	,"hotpinbl"	,"galspnbl.java"	,rom_hotpinbl,null	,machine_driver_hotpinbl	,input_ports_hotpinbl	,null	,ROT90	,	Comad & New Japan System", "Hot Pinball", GAME_NO_COCKTAIL )
-	public static GameDriver driver_galspnbl	   = new GameDriver("1996"	,"galspnbl"	,"galspnbl.java"	,rom_galspnbl,null	,machine_driver_hotpinbl	,input_ports_galspnbl	,null	,ROT90	,	Comad", "Gals Pinball", GAME_NO_COCKTAIL )
+	public static GameDriver driver_hotpinbl	   = new GameDriver("1995"	,"hotpinbl"	,"galspnbl.java"	,rom_hotpinbl,null	,machine_driver_hotpinbl	,input_ports_hotpinbl	,null	,ROT90	,	"Comad & New Japan System", "Hot Pinball", GAME_NO_COCKTAIL )
+	public static GameDriver driver_galspnbl	   = new GameDriver("1996"	,"galspnbl"	,"galspnbl.java"	,rom_galspnbl,null	,machine_driver_hotpinbl	,input_ports_galspnbl	,null	,ROT90	,	"Comad", "Gals Pinball", GAME_NO_COCKTAIL )
 }

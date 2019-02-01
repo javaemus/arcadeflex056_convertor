@@ -501,8 +501,8 @@ public class gunsmoke
 	  different: the levels are in a different order, and the "Demonstration" dip
 	  switch has no effect.
 	 */
-	public static GameDriver driver_gunsmoke	   = new GameDriver("1985"	,"gunsmoke"	,"gunsmoke.java"	,rom_gunsmoke,null	,machine_driver_gunsmoke	,input_ports_gunsmoke	,null	,ROT270	,	Capcom", "Gun.Smoke (World)" )
-	public static GameDriver driver_gunsmrom	   = new GameDriver("1985"	,"gunsmrom"	,"gunsmoke.java"	,rom_gunsmrom,driver_gunsmoke	,machine_driver_gunsmoke	,input_ports_gunsmoke	,null	,ROT270	,	Capcom (Romstar license)", "Gun.Smoke (US set 1)" )
-	public static GameDriver driver_gunsmoka	   = new GameDriver("1986"	,"gunsmoka"	,"gunsmoke.java"	,rom_gunsmoka,driver_gunsmoke	,machine_driver_gunsmoke	,input_ports_gunsmoke	,null	,ROT270	,	Capcom", "Gun.Smoke (US set 2)" )
-	public static GameDriver driver_gunsmokj	   = new GameDriver("1985"	,"gunsmokj"	,"gunsmoke.java"	,rom_gunsmokj,driver_gunsmoke	,machine_driver_gunsmoke	,input_ports_gunsmoke	,null	,ROT270	,	Capcom", "Gun.Smoke (Japan)" )
+	public static GameDriver driver_gunsmoke	   = new GameDriver("1985"	,"gunsmoke"	,"gunsmoke.java"	,rom_gunsmoke,null	,machine_driver_gunsmoke	,input_ports_gunsmoke	,null	,ROT270	,	"Capcom", "Gun.Smoke (World)" )
+	public static GameDriver driver_gunsmrom	   = new GameDriver("1985"	,"gunsmrom"	,"gunsmoke.java"	,rom_gunsmrom,driver_gunsmoke	,machine_driver_gunsmoke	,input_ports_gunsmoke	,null	,ROT270	,	"Capcom (Romstar license)", "Gun.Smoke (US set 1)" )
+	public static GameDriver driver_gunsmoka	   = new GameDriver("1986"	,"gunsmoka"	,"gunsmoke.java"	,rom_gunsmoka,driver_gunsmoke	,machine_driver_gunsmoke	,input_ports_gunsmoke	,null	,ROT270	,	"Capcom", "Gun.Smoke (US set 2)" )
+	public static GameDriver driver_gunsmokj	   = new GameDriver("1985"	,"gunsmokj"	,"gunsmoke.java"	,rom_gunsmokj,driver_gunsmoke	,machine_driver_gunsmoke	,input_ports_gunsmoke	,null	,ROT270	,	"Capcom", "Gun.Smoke (Japan)" )
 }

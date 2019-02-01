@@ -640,7 +640,7 @@ public class starwars
 	 *
 	 *************************************/
 	
-	public static GameDriver driver_starwars	   = new GameDriver("1983"	,"starwars"	,"starwars.java"	,rom_starwars,null	,machine_driver_starwars	,input_ports_starwars	,init_starwars	,ROT0	,	Atari", "Star Wars (rev 2)" )
-	public static GameDriver driver_starwar1	   = new GameDriver("1983"	,"starwar1"	,"starwars.java"	,rom_starwar1,driver_starwars	,machine_driver_starwars	,input_ports_starwars	,init_starwars	,ROT0	,	Atari", "Star Wars (rev 1)" )
-	public static GameDriver driver_esb	   = new GameDriver("1985"	,"esb"	,"starwars.java"	,rom_esb,null	,machine_driver_starwars	,input_ports_esb	,init_esb	,ROT0	,	Atari Games", "The Empire Strikes Back" )
+	public static GameDriver driver_starwars	   = new GameDriver("1983"	,"starwars"	,"starwars.java"	,rom_starwars,null	,machine_driver_starwars	,input_ports_starwars	,init_starwars	,ROT0	,	"Atari", "Star Wars (rev 2)" )
+	public static GameDriver driver_starwar1	   = new GameDriver("1983"	,"starwar1"	,"starwars.java"	,rom_starwar1,driver_starwars	,machine_driver_starwars	,input_ports_starwars	,init_starwars	,ROT0	,	"Atari", "Star Wars (rev 1)" )
+	public static GameDriver driver_esb	   = new GameDriver("1985"	,"esb"	,"starwars.java"	,rom_esb,null	,machine_driver_starwars	,input_ports_esb	,init_esb	,ROT0	,	"Atari Games", "The Empire Strikes Back" )
 }

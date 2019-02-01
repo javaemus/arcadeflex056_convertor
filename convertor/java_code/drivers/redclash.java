@@ -443,7 +443,7 @@ public class redclash
 	
 	
 	
-	public static GameDriver driver_zerohour	   = new GameDriver("1980?"	,"zerohour"	,"redclash.java"	,rom_zerohour,null	,machine_driver_zerohour	,input_ports_redclash	,init_redclash	,ROT270	,	Universal", "Zero Hour",          GAME_NO_SOUND | GAME_WRONG_COLORS | GAME_IMPERFECT_GRAPHICS )
-	public static GameDriver driver_redclash	   = new GameDriver("1981"	,"redclash"	,"redclash.java"	,rom_redclash,null	,machine_driver_redclash	,input_ports_redclash	,init_redclash	,ROT270	,	Tehkan",    "Red Clash",          GAME_NO_SOUND | GAME_WRONG_COLORS | GAME_IMPERFECT_GRAPHICS )
-	public static GameDriver driver_redclask	   = new GameDriver("1981"	,"redclask"	,"redclash.java"	,rom_redclask,driver_redclash	,machine_driver_redclash	,input_ports_redclash	,init_redclash	,ROT270	,	Kaneko",    "Red Clash (Kaneko)", GAME_NO_SOUND | GAME_WRONG_COLORS | GAME_IMPERFECT_GRAPHICS )
+	public static GameDriver driver_zerohour	   = new GameDriver("1980?"	,"zerohour"	,"redclash.java"	,rom_zerohour,null	,machine_driver_zerohour	,input_ports_redclash	,init_redclash	,ROT270	,	"Universal", "Zero Hour",          GAME_NO_SOUND | GAME_WRONG_COLORS | GAME_IMPERFECT_GRAPHICS )
+	public static GameDriver driver_redclash	   = new GameDriver("1981"	,"redclash"	,"redclash.java"	,rom_redclash,null	,machine_driver_redclash	,input_ports_redclash	,init_redclash	,ROT270	,	"Tehkan",    "Red Clash",          GAME_NO_SOUND | GAME_WRONG_COLORS | GAME_IMPERFECT_GRAPHICS )
+	public static GameDriver driver_redclask	   = new GameDriver("1981"	,"redclask"	,"redclash.java"	,rom_redclask,driver_redclash	,machine_driver_redclash	,input_ports_redclash	,init_redclash	,ROT270	,	"Kaneko",    "Red Clash (Kaneko)", GAME_NO_SOUND | GAME_WRONG_COLORS | GAME_IMPERFECT_GRAPHICS )
 }

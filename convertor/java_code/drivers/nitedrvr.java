@@ -222,5 +222,5 @@ public class nitedrvr
 	
 	
 	
-	public static GameDriver driver_nitedrvr	   = new GameDriver("1976"	,"nitedrvr"	,"nitedrvr.java"	,rom_nitedrvr,null	,machine_driver_nitedrv	,input_ports_nitedrvr	,null	,ROT0	,	Atari", "Night Driver", GAME_NO_SOUND )
+	public static GameDriver driver_nitedrvr	   = new GameDriver("1976"	,"nitedrvr"	,"nitedrvr.java"	,rom_nitedrvr,null	,machine_driver_nitedrv	,input_ports_nitedrvr	,null	,ROT0	,	"Atari", "Night Driver", GAME_NO_SOUND )
 }

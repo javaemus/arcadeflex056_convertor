@@ -318,6 +318,6 @@ public class warlord
 	
 	
 	
-	public static GameDriver driver_warlord	   = new GameDriver("1980"	,"warlord"	,"warlord.java"	,rom_warlord,null	,machine_driver_warlord	,input_ports_warlord	,null	,ROT0	,	Atari", "Warlords" )
+	public static GameDriver driver_warlord	   = new GameDriver("1980"	,"warlord"	,"warlord.java"	,rom_warlord,null	,machine_driver_warlord	,input_ports_warlord	,null	,ROT0	,	"Atari", "Warlords" )
 	
 }

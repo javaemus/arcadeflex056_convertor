@@ -543,6 +543,6 @@ public class buggychl
 	
 	
 	
-	public static GameDriver driver_buggychl	   = new GameDriver("1984"	,"buggychl"	,"buggychl.java"	,rom_buggychl,null	,machine_driver_buggychl	,input_ports_buggychl	,null	,ROT270	,	Taito Corporation", "Buggy Challenge", GAME_IMPERFECT_SOUND | GAME_IMPERFECT_GRAPHICS )
-	public static GameDriver driver_buggycht	   = new GameDriver("1984"	,"buggycht"	,"buggychl.java"	,rom_buggycht,driver_buggychl	,machine_driver_buggychl	,input_ports_buggychl	,null	,ROT270	,	Taito Corporation (Tecfri license)", "Buggy Challenge (Tecfri)", GAME_IMPERFECT_SOUND | GAME_IMPERFECT_GRAPHICS )
+	public static GameDriver driver_buggychl	   = new GameDriver("1984"	,"buggychl"	,"buggychl.java"	,rom_buggychl,null	,machine_driver_buggychl	,input_ports_buggychl	,null	,ROT270	,	"Taito Corporation", "Buggy Challenge", GAME_IMPERFECT_SOUND | GAME_IMPERFECT_GRAPHICS )
+	public static GameDriver driver_buggycht	   = new GameDriver("1984"	,"buggycht"	,"buggychl.java"	,rom_buggycht,driver_buggychl	,machine_driver_buggychl	,input_ports_buggychl	,null	,ROT270	,	"Taito Corporation (Tecfri license)", "Buggy Challenge (Tecfri)", GAME_IMPERFECT_SOUND | GAME_IMPERFECT_GRAPHICS )
 }

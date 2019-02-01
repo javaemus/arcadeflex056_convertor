@@ -534,9 +534,9 @@ public class pcktgal
 	
 	/***************************************************************************/
 	
-	public static GameDriver driver_pcktgal	   = new GameDriver("1987"	,"pcktgal"	,"pcktgal.java"	,rom_pcktgal,null	,machine_driver_pcktgal	,input_ports_pcktgal	,init_pcktgal	,ROT0	,	Data East Corporation", "Pocket Gal (Japan)" )
-	public static GameDriver driver_pcktgalb	   = new GameDriver("1989"	,"pcktgalb"	,"pcktgal.java"	,rom_pcktgalb,driver_pcktgal	,machine_driver_bootleg	,input_ports_pcktgal	,init_deco222	,ROT0	,	bootleg", "Pocket Gal (bootleg)" )
-	public static GameDriver driver_pcktgal2	   = new GameDriver("1989"	,"pcktgal2"	,"pcktgal.java"	,rom_pcktgal2,driver_pcktgal	,machine_driver_pcktgal	,input_ports_pcktgal	,init_graphics	,ROT0	,	Data East Corporation", "Pocket Gal 2 (World?)" )
-	public static GameDriver driver_spool3	   = new GameDriver("1989"	,"spool3"	,"pcktgal.java"	,rom_spool3,driver_pcktgal	,machine_driver_pcktgal	,input_ports_pcktgal	,init_graphics	,ROT0	,	Data East Corporation", "Super Pool III (World?)" )
-	public static GameDriver driver_spool3i	   = new GameDriver("1990"	,"spool3i"	,"pcktgal.java"	,rom_spool3i,driver_pcktgal	,machine_driver_pcktgal	,input_ports_pcktgal	,init_graphics	,ROT0	,	Data East Corporation (I-Vics license)", "Super Pool III (I-Vics)" )
+	public static GameDriver driver_pcktgal	   = new GameDriver("1987"	,"pcktgal"	,"pcktgal.java"	,rom_pcktgal,null	,machine_driver_pcktgal	,input_ports_pcktgal	,init_pcktgal	,ROT0	,	"Data East Corporation", "Pocket Gal (Japan)" )
+	public static GameDriver driver_pcktgalb	   = new GameDriver("1989"	,"pcktgalb"	,"pcktgal.java"	,rom_pcktgalb,driver_pcktgal	,machine_driver_bootleg	,input_ports_pcktgal	,init_deco222	,ROT0	,	"bootleg", "Pocket Gal (bootleg)" )
+	public static GameDriver driver_pcktgal2	   = new GameDriver("1989"	,"pcktgal2"	,"pcktgal.java"	,rom_pcktgal2,driver_pcktgal	,machine_driver_pcktgal	,input_ports_pcktgal	,init_graphics	,ROT0	,	"Data East Corporation", "Pocket Gal 2 (World?)" )
+	public static GameDriver driver_spool3	   = new GameDriver("1989"	,"spool3"	,"pcktgal.java"	,rom_spool3,driver_pcktgal	,machine_driver_pcktgal	,input_ports_pcktgal	,init_graphics	,ROT0	,	"Data East Corporation", "Super Pool III (World?)" )
+	public static GameDriver driver_spool3i	   = new GameDriver("1990"	,"spool3i"	,"pcktgal.java"	,rom_spool3i,driver_pcktgal	,machine_driver_pcktgal	,input_ports_pcktgal	,init_graphics	,ROT0	,	"Data East Corporation (I-Vics license)", "Super Pool III (I-Vics)" )
 }

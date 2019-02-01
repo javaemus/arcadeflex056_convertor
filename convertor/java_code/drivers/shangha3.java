@@ -735,7 +735,7 @@ public class shangha3
 		shangha3_do_shadows = 0;
 	}
 	
-	public static GameDriver driver_shangha3	   = new GameDriver("1993"	,"shangha3"	,"shangha3.java"	,rom_shangha3,null	,machine_driver_shangha3	,input_ports_shangha3	,init_shangha3	,ROT0	,	Sunsoft", "Shanghai III (Japan)" )
-	public static GameDriver driver_heberpop	   = new GameDriver("1994"	,"heberpop"	,"shangha3.java"	,rom_heberpop,null	,machine_driver_heberpop	,input_ports_heberpop	,init_heberpop	,ROT0	,	Sunsoft / Atlus", "Hebereke no Popoon (Japan)" )
-	public static GameDriver driver_blocken	   = new GameDriver("1994"	,"blocken"	,"shangha3.java"	,rom_blocken,null	,machine_driver_blocken	,input_ports_blocken	,init_heberpop	,ROT0	,	KID / Visco", "Blocken (Japan)" )
+	public static GameDriver driver_shangha3	   = new GameDriver("1993"	,"shangha3"	,"shangha3.java"	,rom_shangha3,null	,machine_driver_shangha3	,input_ports_shangha3	,init_shangha3	,ROT0	,	"Sunsoft", "Shanghai III (Japan)" )
+	public static GameDriver driver_heberpop	   = new GameDriver("1994"	,"heberpop"	,"shangha3.java"	,rom_heberpop,null	,machine_driver_heberpop	,input_ports_heberpop	,init_heberpop	,ROT0	,	"Sunsoft / Atlus", "Hebereke no Popoon (Japan)" )
+	public static GameDriver driver_blocken	   = new GameDriver("1994"	,"blocken"	,"shangha3.java"	,rom_blocken,null	,machine_driver_blocken	,input_ports_blocken	,init_heberpop	,ROT0	,	"KID / Visco", "Blocken (Japan)" )
 }

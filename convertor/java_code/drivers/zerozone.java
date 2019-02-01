@@ -276,5 +276,5 @@ public class zerozone
 	
 	
 	
-	public static GameDriver driver_zerozone	   = new GameDriver("1993"	,"zerozone"	,"zerozone.java"	,rom_zerozone,null	,machine_driver_zerozone	,input_ports_zerozone	,null	,ROT0	,	Comad", "Zero Zone" )
+	public static GameDriver driver_zerozone	   = new GameDriver("1993"	,"zerozone"	,"zerozone.java"	,rom_zerozone,null	,machine_driver_zerozone	,input_ports_zerozone	,null	,ROT0	,	"Comad", "Zero Zone" )
 }

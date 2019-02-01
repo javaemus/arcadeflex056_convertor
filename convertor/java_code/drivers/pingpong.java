@@ -267,5 +267,5 @@ public class pingpong
 	
 	
 	
-	public static GameDriver driver_pingpong	   = new GameDriver("1985"	,"pingpong"	,"pingpong.java"	,rom_pingpong,null	,machine_driver_pingpong	,input_ports_pingpong	,null	,ROT0	,	Konami", "Ping Pong" )
+	public static GameDriver driver_pingpong	   = new GameDriver("1985"	,"pingpong"	,"pingpong.java"	,rom_pingpong,null	,machine_driver_pingpong	,input_ports_pingpong	,null	,ROT0	,	"Konami", "Ping Pong" )
 }

@@ -366,6 +366,6 @@ public class jailbrek
 	}
 	
 	
-	public static GameDriver driver_jailbrek	   = new GameDriver("1986"	,"jailbrek"	,"jailbrek.java"	,rom_jailbrek,null	,machine_driver_jailbrek	,input_ports_jailbrek	,init_jailbrek	,ROT0	,	Konami", "Jail Break" )
-	public static GameDriver driver_manhatan	   = new GameDriver("1986"	,"manhatan"	,"jailbrek.java"	,rom_manhatan,driver_jailbrek	,machine_driver_jailbrek	,input_ports_jailbrek	,init_jailbrek	,ROT0	,	Konami", "Manhattan 24 Bunsyo (Japan)" )
+	public static GameDriver driver_jailbrek	   = new GameDriver("1986"	,"jailbrek"	,"jailbrek.java"	,rom_jailbrek,null	,machine_driver_jailbrek	,input_ports_jailbrek	,init_jailbrek	,ROT0	,	"Konami", "Jail Break" )
+	public static GameDriver driver_manhatan	   = new GameDriver("1986"	,"manhatan"	,"jailbrek.java"	,rom_manhatan,driver_jailbrek	,machine_driver_jailbrek	,input_ports_jailbrek	,init_jailbrek	,ROT0	,	"Konami", "Manhattan 24 Bunsyo (Japan)" )
 }

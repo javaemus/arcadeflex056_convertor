@@ -245,5 +245,5 @@ public class mermaid
 	ROM_END(); }}; 
 	
 	
-	public static GameDriver driver_mermaid	   = new GameDriver("1982"	,"mermaid"	,"mermaid.java"	,rom_mermaid,null	,machine_driver_mermaid	,input_ports_mermaid	,null	,ROT0	,	Rock-ola", "Mermaid", GAME_NOT_WORKING )
+	public static GameDriver driver_mermaid	   = new GameDriver("1982"	,"mermaid"	,"mermaid.java"	,rom_mermaid,null	,machine_driver_mermaid	,input_ports_mermaid	,null	,ROT0	,	"Rock-ola", "Mermaid", GAME_NOT_WORKING )
 }

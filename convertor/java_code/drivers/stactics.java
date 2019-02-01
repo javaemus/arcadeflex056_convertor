@@ -311,6 +311,6 @@ public class stactics
 	
 	
 	
-	public static GameDriver driver_stactics	   = new GameDriver("1981"	,"stactics"	,"stactics.java"	,rom_stactics,null	,machine_driver_stactics	,input_ports_stactics	,null	,ROT0	,	Sega", "Space Tactics", GAME_NO_SOUND )
+	public static GameDriver driver_stactics	   = new GameDriver("1981"	,"stactics"	,"stactics.java"	,rom_stactics,null	,machine_driver_stactics	,input_ports_stactics	,null	,ROT0	,	"Sega", "Space Tactics", GAME_NO_SOUND )
 	
 }

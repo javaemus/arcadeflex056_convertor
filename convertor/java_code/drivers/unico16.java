@@ -654,6 +654,6 @@ public class unico16
 	
 	***************************************************************************/
 	
-	public static GameDriver driver_burglarx	   = new GameDriver("1997"	,"burglarx"	,"unico16.java"	,rom_burglarx,null	,machine_driver_burglarx	,input_ports_burglarx	,null	,ROT0	,	Unico Electronics", "Burglar X"  )
-	public static GameDriver driver_zeropnt	   = new GameDriver("1998"	,"zeropnt"	,"unico16.java"	,rom_zeropnt,null	,machine_driver_zeropnt	,input_ports_zeropnt	,null	,ROT0	,	Unico Electronics", "Zero Point" )
+	public static GameDriver driver_burglarx	   = new GameDriver("1997"	,"burglarx"	,"unico16.java"	,rom_burglarx,null	,machine_driver_burglarx	,input_ports_burglarx	,null	,ROT0	,	"Unico Electronics", "Burglar X"  )
+	public static GameDriver driver_zeropnt	   = new GameDriver("1998"	,"zeropnt"	,"unico16.java"	,rom_zeropnt,null	,machine_driver_zeropnt	,input_ports_zeropnt	,null	,ROT0	,	"Unico Electronics", "Zero Point" )
 }

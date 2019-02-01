@@ -664,8 +664,8 @@ public class gameplan
 	
 	
 	
-	public static GameDriver driver_kaos	   = new GameDriver("1981"	,"kaos"	,"gameplan.java"	,rom_kaos,null	,machine_driver_gameplan	,input_ports_kaos	,null	,ROT270	,	GamePlan", "Kaos" )
-	public static GameDriver driver_killcom	   = new GameDriver("1980"	,"killcom"	,"gameplan.java"	,rom_killcom,null	,machine_driver_gameplan	,input_ports_killcom	,null	,ROT0	,	GamePlan (Centuri license)", "Killer Comet" )
-	public static GameDriver driver_megatack	   = new GameDriver("1980"	,"megatack"	,"gameplan.java"	,rom_megatack,null	,machine_driver_gameplan	,input_ports_megatack	,null	,ROT0	,	GamePlan (Centuri license)", "MegaTack" )
-	public static GameDriver driver_challeng	   = new GameDriver("1981"	,"challeng"	,"gameplan.java"	,rom_challeng,null	,machine_driver_gameplan	,input_ports_challeng	,null	,ROT0	,	GamePlan (Centuri license)", "Challenger" )
+	public static GameDriver driver_kaos	   = new GameDriver("1981"	,"kaos"	,"gameplan.java"	,rom_kaos,null	,machine_driver_gameplan	,input_ports_kaos	,null	,ROT270	,	"GamePlan", "Kaos" )
+	public static GameDriver driver_killcom	   = new GameDriver("1980"	,"killcom"	,"gameplan.java"	,rom_killcom,null	,machine_driver_gameplan	,input_ports_killcom	,null	,ROT0	,	"GamePlan (Centuri license)", "Killer Comet" )
+	public static GameDriver driver_megatack	   = new GameDriver("1980"	,"megatack"	,"gameplan.java"	,rom_megatack,null	,machine_driver_gameplan	,input_ports_megatack	,null	,ROT0	,	"GamePlan (Centuri license)", "MegaTack" )
+	public static GameDriver driver_challeng	   = new GameDriver("1981"	,"challeng"	,"gameplan.java"	,rom_challeng,null	,machine_driver_gameplan	,input_ports_challeng	,null	,ROT0	,	"GamePlan (Centuri license)", "Challenger" )
 }

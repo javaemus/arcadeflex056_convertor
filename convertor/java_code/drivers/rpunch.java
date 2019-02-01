@@ -872,8 +872,8 @@ public class rpunch
 	 *
 	 *************************************/
 	
-	public static GameDriver driver_rabiolep	   = new GameDriver("1987"	,"rabiolep"	,"rpunch.java"	,rom_rabiolep,null	,machine_driver_rpunch	,input_ports_rabiolep	,init_rabiolep	,ROT0	,	V-System Co.", "Rabio Lepus (Japan)" )
-	public static GameDriver driver_rpunch	   = new GameDriver("1987"	,"rpunch"	,"rpunch.java"	,rom_rpunch,driver_rabiolep	,machine_driver_rpunch	,input_ports_rpunch	,init_rabiolep	,ROT0	,	V-System Co. (Bally/Midway/Sente license)", "Rabbit Punch (US)" )
-	public static GameDriver driver_svolley	   = new GameDriver("1989"	,"svolley"	,"rpunch.java"	,rom_svolley,null	,machine_driver_rpunch	,input_ports_svolley	,init_svolley	,ROT0	,	V-System Co.", "Super Volleyball (Japan)" )
-	public static GameDriver driver_svolleyk	   = new GameDriver("1989"	,"svolleyk"	,"rpunch.java"	,rom_svolleyk,driver_svolley	,machine_driver_rpunch	,input_ports_svolley	,init_svolley	,ROT0	,	V-System Co.", "Super Volleyball (Korea)" )
+	public static GameDriver driver_rabiolep	   = new GameDriver("1987"	,"rabiolep"	,"rpunch.java"	,rom_rabiolep,null	,machine_driver_rpunch	,input_ports_rabiolep	,init_rabiolep	,ROT0	,	"V-System Co.", "Rabio Lepus (Japan)" )
+	public static GameDriver driver_rpunch	   = new GameDriver("1987"	,"rpunch"	,"rpunch.java"	,rom_rpunch,driver_rabiolep	,machine_driver_rpunch	,input_ports_rpunch	,init_rabiolep	,ROT0	,	"V-System Co. (Bally/Midway/Sente license)", "Rabbit Punch (US)" )
+	public static GameDriver driver_svolley	   = new GameDriver("1989"	,"svolley"	,"rpunch.java"	,rom_svolley,null	,machine_driver_rpunch	,input_ports_svolley	,init_svolley	,ROT0	,	"V-System Co.", "Super Volleyball (Japan)" )
+	public static GameDriver driver_svolleyk	   = new GameDriver("1989"	,"svolleyk"	,"rpunch.java"	,rom_svolleyk,driver_svolley	,machine_driver_rpunch	,input_ports_svolley	,init_svolley	,ROT0	,	"V-System Co.", "Super Volleyball (Korea)" )
 }

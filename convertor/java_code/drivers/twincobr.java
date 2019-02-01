@@ -1116,12 +1116,12 @@ public class twincobr
 	
 	
 	
-	public static GameDriver driver_twincobr	   = new GameDriver("1987"	,"twincobr"	,"twincobr.java"	,rom_twincobr,null	,machine_driver_twincobr	,input_ports_twincobr	,null	,ROT270	,	[Toaplan] Taito Corporation", "Twin Cobra (World)" )
-	public static GameDriver driver_twincobu	   = new GameDriver("1987"	,"twincobu"	,"twincobr.java"	,rom_twincobu,driver_twincobr	,machine_driver_twincobr	,input_ports_twincobu	,null	,ROT270	,	[Toaplan] Taito America Corporation (Romstar license)", "Twin Cobra (US)" )
-	public static GameDriver driver_ktiger	   = new GameDriver("1987"	,"ktiger"	,"twincobr.java"	,rom_ktiger,driver_twincobr	,machine_driver_twincobr	,input_ports_ktiger	,null	,ROT270	,	[Toaplan] Taito Corporation", "Kyukyoku Tiger (Japan)" )
-	public static GameDriver driver_fshark	   = new GameDriver("1987"	,"fshark"	,"twincobr.java"	,rom_fshark,null	,machine_driver_twincobr	,input_ports_fshark	,init_fshark	,ROT270	,	[Toaplan] Taito Corporation", "Flying Shark (World)" )
-	public static GameDriver driver_skyshark	   = new GameDriver("1987"	,"skyshark"	,"twincobr.java"	,rom_skyshark,driver_fshark	,machine_driver_twincobr	,input_ports_skyshark	,init_fshark	,ROT270	,	[Toaplan] Taito America Corporation (Romstar license)", "Sky Shark (US)" )
-	public static GameDriver driver_hishouza	   = new GameDriver("1987"	,"hishouza"	,"twincobr.java"	,rom_hishouza,driver_fshark	,machine_driver_twincobr	,input_ports_hishouza	,init_fshark	,ROT270	,	[Toaplan] Taito Corporation", "Hishou Zame (Japan)" )
-	public static GameDriver driver_fsharkbt	   = new GameDriver("1987"	,"fsharkbt"	,"twincobr.java"	,rom_fsharkbt,driver_fshark	,machine_driver_twincobr	,input_ports_skyshark	,init_fshark	,ROT270	,	bootleg", "Flying Shark (bootleg)" )
+	public static GameDriver driver_twincobr	   = new GameDriver("1987"	,"twincobr"	,"twincobr.java"	,rom_twincobr,null	,machine_driver_twincobr	,input_ports_twincobr	,null	,ROT270	,	"[Toaplan] Taito Corporation", "Twin Cobra (World)" )
+	public static GameDriver driver_twincobu	   = new GameDriver("1987"	,"twincobu"	,"twincobr.java"	,rom_twincobu,driver_twincobr	,machine_driver_twincobr	,input_ports_twincobu	,null	,ROT270	,	"[Toaplan] Taito America Corporation (Romstar license)", "Twin Cobra (US)" )
+	public static GameDriver driver_ktiger	   = new GameDriver("1987"	,"ktiger"	,"twincobr.java"	,rom_ktiger,driver_twincobr	,machine_driver_twincobr	,input_ports_ktiger	,null	,ROT270	,	"[Toaplan] Taito Corporation", "Kyukyoku Tiger (Japan)" )
+	public static GameDriver driver_fshark	   = new GameDriver("1987"	,"fshark"	,"twincobr.java"	,rom_fshark,null	,machine_driver_twincobr	,input_ports_fshark	,init_fshark	,ROT270	,	"[Toaplan] Taito Corporation", "Flying Shark (World)" )
+	public static GameDriver driver_skyshark	   = new GameDriver("1987"	,"skyshark"	,"twincobr.java"	,rom_skyshark,driver_fshark	,machine_driver_twincobr	,input_ports_skyshark	,init_fshark	,ROT270	,	"[Toaplan] Taito America Corporation (Romstar license)", "Sky Shark (US)" )
+	public static GameDriver driver_hishouza	   = new GameDriver("1987"	,"hishouza"	,"twincobr.java"	,rom_hishouza,driver_fshark	,machine_driver_twincobr	,input_ports_hishouza	,init_fshark	,ROT270	,	"[Toaplan] Taito Corporation", "Hishou Zame (Japan)" )
+	public static GameDriver driver_fsharkbt	   = new GameDriver("1987"	,"fsharkbt"	,"twincobr.java"	,rom_fsharkbt,driver_fshark	,machine_driver_twincobr	,input_ports_skyshark	,init_fshark	,ROT270	,	"bootleg", "Flying Shark (bootleg)" )
 	
 }

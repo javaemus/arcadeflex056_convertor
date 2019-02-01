@@ -387,5 +387,5 @@ public class pushman
 	ROM_END(); }}; 
 	
 	
-	public static GameDriver driver_pushman	   = new GameDriver("1990"	,"pushman"	,"pushman.java"	,rom_pushman,null	,machine_driver_pushman	,input_ports_pushman	,null	,ROT0	,	Comad (American Sammy license)", "Pushman" )
+	public static GameDriver driver_pushman	   = new GameDriver("1990"	,"pushman"	,"pushman.java"	,rom_pushman,null	,machine_driver_pushman	,input_ports_pushman	,null	,ROT0	,	"Comad (American Sammy license)", "Pushman" )
 }

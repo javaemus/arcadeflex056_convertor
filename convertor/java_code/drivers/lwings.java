@@ -1462,15 +1462,15 @@ public class lwings
 		ROM_LOAD( "tbb_1bpr.1e",  0x0100,  0x0100, 0x5052fa9d );/* priority (not used) */
 	ROM_END(); }}; 
 	
-	public static GameDriver driver_sectionz	   = new GameDriver("1985"	,"sectionz"	,"lwings.java"	,rom_sectionz,null	,machine_driver_lwings	,input_ports_sectionz	,null	,ROT0	,	Capcom", "Section Z (set 1)" )
-	public static GameDriver driver_sctionza	   = new GameDriver("1985"	,"sctionza"	,"lwings.java"	,rom_sctionza,driver_sectionz	,machine_driver_lwings	,input_ports_sectionz	,null	,ROT0	,	Capcom", "Section Z (set 2)" )
-	public static GameDriver driver_lwings	   = new GameDriver("1986"	,"lwings"	,"lwings.java"	,rom_lwings,null	,machine_driver_lwings	,input_ports_lwings	,null	,ROT90	,	Capcom", "Legendary Wings (US set 1)" )
-	public static GameDriver driver_lwings2	   = new GameDriver("1986"	,"lwings2"	,"lwings.java"	,rom_lwings2,driver_lwings	,machine_driver_lwings	,input_ports_lwings	,null	,ROT90	,	Capcom", "Legendary Wings (US set 2)" )
-	public static GameDriver driver_lwingsjp	   = new GameDriver("1986"	,"lwingsjp"	,"lwings.java"	,rom_lwingsjp,driver_lwings	,machine_driver_lwings	,input_ports_lwings	,null	,ROT90	,	Capcom", "Ales no Tsubasa (Japan)" )
-	public static GameDriver driver_trojan	   = new GameDriver("1986"	,"trojan"	,"lwings.java"	,rom_trojan,null	,machine_driver_trojan	,input_ports_trojanls	,null	,ROT0	,	Capcom", "Trojan (US)" )
-	public static GameDriver driver_trojanr	   = new GameDriver("1986"	,"trojanr"	,"lwings.java"	,rom_trojanr,driver_trojan	,machine_driver_trojan	,input_ports_trojan	,null	,ROT0	,	Capcom (Romstar license)", "Trojan (Romstar)" )
-	public static GameDriver driver_trojanj	   = new GameDriver("1986"	,"trojanj"	,"lwings.java"	,rom_trojanj,driver_trojan	,machine_driver_trojan	,input_ports_trojan	,null	,ROT0	,	Capcom", "Tatakai no Banka (Japan)" )
-	public static GameDriver driver_avengers	   = new GameDriver("1987"	,"avengers"	,"lwings.java"	,rom_avengers,null	,machine_driver_avengers	,input_ports_avengers	,null	,ROT90	,	Capcom", "Avengers (US set 1)" )
-	public static GameDriver driver_avenger2	   = new GameDriver("1987"	,"avenger2"	,"lwings.java"	,rom_avenger2,driver_avengers	,machine_driver_avengers	,input_ports_avengers	,null	,ROT90	,	Capcom", "Avengers (US set 2)" )
-	public static GameDriver driver_buraiken	   = new GameDriver("1987"	,"buraiken"	,"lwings.java"	,rom_buraiken,driver_avengers	,machine_driver_avengers	,input_ports_avengers	,null	,ROT90	,	Capcom", "Hissatsu Buraiken (Japan)" )
+	public static GameDriver driver_sectionz	   = new GameDriver("1985"	,"sectionz"	,"lwings.java"	,rom_sectionz,null	,machine_driver_lwings	,input_ports_sectionz	,null	,ROT0	,	"Capcom", "Section Z (set 1)" )
+	public static GameDriver driver_sctionza	   = new GameDriver("1985"	,"sctionza"	,"lwings.java"	,rom_sctionza,driver_sectionz	,machine_driver_lwings	,input_ports_sectionz	,null	,ROT0	,	"Capcom", "Section Z (set 2)" )
+	public static GameDriver driver_lwings	   = new GameDriver("1986"	,"lwings"	,"lwings.java"	,rom_lwings,null	,machine_driver_lwings	,input_ports_lwings	,null	,ROT90	,	"Capcom", "Legendary Wings (US set 1)" )
+	public static GameDriver driver_lwings2	   = new GameDriver("1986"	,"lwings2"	,"lwings.java"	,rom_lwings2,driver_lwings	,machine_driver_lwings	,input_ports_lwings	,null	,ROT90	,	"Capcom", "Legendary Wings (US set 2)" )
+	public static GameDriver driver_lwingsjp	   = new GameDriver("1986"	,"lwingsjp"	,"lwings.java"	,rom_lwingsjp,driver_lwings	,machine_driver_lwings	,input_ports_lwings	,null	,ROT90	,	"Capcom", "Ales no Tsubasa (Japan)" )
+	public static GameDriver driver_trojan	   = new GameDriver("1986"	,"trojan"	,"lwings.java"	,rom_trojan,null	,machine_driver_trojan	,input_ports_trojanls	,null	,ROT0	,	"Capcom", "Trojan (US)" )
+	public static GameDriver driver_trojanr	   = new GameDriver("1986"	,"trojanr"	,"lwings.java"	,rom_trojanr,driver_trojan	,machine_driver_trojan	,input_ports_trojan	,null	,ROT0	,	"Capcom (Romstar license)", "Trojan (Romstar)" )
+	public static GameDriver driver_trojanj	   = new GameDriver("1986"	,"trojanj"	,"lwings.java"	,rom_trojanj,driver_trojan	,machine_driver_trojan	,input_ports_trojan	,null	,ROT0	,	"Capcom", "Tatakai no Banka (Japan)" )
+	public static GameDriver driver_avengers	   = new GameDriver("1987"	,"avengers"	,"lwings.java"	,rom_avengers,null	,machine_driver_avengers	,input_ports_avengers	,null	,ROT90	,	"Capcom", "Avengers (US set 1)" )
+	public static GameDriver driver_avenger2	   = new GameDriver("1987"	,"avenger2"	,"lwings.java"	,rom_avenger2,driver_avengers	,machine_driver_avengers	,input_ports_avengers	,null	,ROT90	,	"Capcom", "Avengers (US set 2)" )
+	public static GameDriver driver_buraiken	   = new GameDriver("1987"	,"buraiken"	,"lwings.java"	,rom_buraiken,driver_avengers	,machine_driver_avengers	,input_ports_avengers	,null	,ROT90	,	"Capcom", "Hissatsu Buraiken (Japan)" )
 }

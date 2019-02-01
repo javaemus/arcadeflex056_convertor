@@ -1445,13 +1445,13 @@ public class mcr68
 	 *
 	 *************************************/
 	
-	public static GameDriver driver_zwackery	   = new GameDriver("1984"	,"zwackery"	,"mcr68.java"	,rom_zwackery,null	,machine_driver_zwackery	,input_ports_zwackery	,init_zwackery	,ROT0	,	Bally Midway", "Zwackery" )
-	public static GameDriver driver_xenophob	   = new GameDriver("1987"	,"xenophob"	,"mcr68.java"	,rom_xenophob,null	,machine_driver_xenophob	,input_ports_xenophob	,init_xenophob	,ROT0	,	Bally Midway", "Xenophobe" )
-	public static GameDriver driver_spyhunt2	   = new GameDriver("1987"	,"spyhunt2"	,"mcr68.java"	,rom_spyhunt2,null	,machine_driver_spyhunt2	,input_ports_spyhunt2	,init_spyhunt2	,ROT0	,	Bally Midway", "Spy Hunter 2 (rev 2)" )
-	public static GameDriver driver_spyhnt2a	   = new GameDriver("1987"	,"spyhnt2a"	,"mcr68.java"	,rom_spyhnt2a,driver_spyhunt2	,machine_driver_spyhunt2	,input_ports_spyhunt2	,init_spyhunt2	,ROT0	,	Bally Midway", "Spy Hunter 2 (rev 1)" )
-	public static GameDriver driver_blasted	   = new GameDriver("1988"	,"blasted"	,"mcr68.java"	,rom_blasted,null	,machine_driver_xenophob	,input_ports_blasted	,init_blasted	,ROT0	,	Bally Midway", "Blasted" )
-	public static GameDriver driver_archrivl	   = new GameDriver("1989"	,"archrivl"	,"mcr68.java"	,rom_archrivl,null	,machine_driver_archrivl	,input_ports_archrivl	,init_archrivl	,ROT0	,	Bally Midway", "Arch Rivals (rev 4.0)" )
-	public static GameDriver driver_archriv2	   = new GameDriver("1989"	,"archriv2"	,"mcr68.java"	,rom_archriv2,driver_archrivl	,machine_driver_archrivl	,input_ports_archrivl	,init_archrivl	,ROT0	,	Bally Midway", "Arch Rivals (rev 2.0)" )
-	public static GameDriver driver_trisport	   = new GameDriver("1989"	,"trisport"	,"mcr68.java"	,rom_trisport,null	,machine_driver_trisport	,input_ports_trisport	,init_trisport	,ROT270	,	Bally Midway", "Tri-Sports" )
-	public static GameDriver driver_pigskin	   = new GameDriver("1990"	,"pigskin"	,"mcr68.java"	,rom_pigskin,null	,machine_driver_pigskin	,input_ports_pigskin	,init_pigskin	,ROT0	,	Bally Midway", "Pigskin 621AD" )
+	public static GameDriver driver_zwackery	   = new GameDriver("1984"	,"zwackery"	,"mcr68.java"	,rom_zwackery,null	,machine_driver_zwackery	,input_ports_zwackery	,init_zwackery	,ROT0	,	"Bally Midway", "Zwackery" )
+	public static GameDriver driver_xenophob	   = new GameDriver("1987"	,"xenophob"	,"mcr68.java"	,rom_xenophob,null	,machine_driver_xenophob	,input_ports_xenophob	,init_xenophob	,ROT0	,	"Bally Midway", "Xenophobe" )
+	public static GameDriver driver_spyhunt2	   = new GameDriver("1987"	,"spyhunt2"	,"mcr68.java"	,rom_spyhunt2,null	,machine_driver_spyhunt2	,input_ports_spyhunt2	,init_spyhunt2	,ROT0	,	"Bally Midway", "Spy Hunter 2 (rev 2)" )
+	public static GameDriver driver_spyhnt2a	   = new GameDriver("1987"	,"spyhnt2a"	,"mcr68.java"	,rom_spyhnt2a,driver_spyhunt2	,machine_driver_spyhunt2	,input_ports_spyhunt2	,init_spyhunt2	,ROT0	,	"Bally Midway", "Spy Hunter 2 (rev 1)" )
+	public static GameDriver driver_blasted	   = new GameDriver("1988"	,"blasted"	,"mcr68.java"	,rom_blasted,null	,machine_driver_xenophob	,input_ports_blasted	,init_blasted	,ROT0	,	"Bally Midway", "Blasted" )
+	public static GameDriver driver_archrivl	   = new GameDriver("1989"	,"archrivl"	,"mcr68.java"	,rom_archrivl,null	,machine_driver_archrivl	,input_ports_archrivl	,init_archrivl	,ROT0	,	"Bally Midway", "Arch Rivals (rev 4.0)" )
+	public static GameDriver driver_archriv2	   = new GameDriver("1989"	,"archriv2"	,"mcr68.java"	,rom_archriv2,driver_archrivl	,machine_driver_archrivl	,input_ports_archrivl	,init_archrivl	,ROT0	,	"Bally Midway", "Arch Rivals (rev 2.0)" )
+	public static GameDriver driver_trisport	   = new GameDriver("1989"	,"trisport"	,"mcr68.java"	,rom_trisport,null	,machine_driver_trisport	,input_ports_trisport	,init_trisport	,ROT270	,	"Bally Midway", "Tri-Sports" )
+	public static GameDriver driver_pigskin	   = new GameDriver("1990"	,"pigskin"	,"mcr68.java"	,rom_pigskin,null	,machine_driver_pigskin	,input_ports_pigskin	,init_pigskin	,ROT0	,	"Bally Midway", "Pigskin 621AD" )
 }

@@ -561,8 +561,8 @@ public class lkage
 	}
 	
 	
-	public static GameDriver driver_lkage	   = new GameDriver("1984"	,"lkage"	,"lkage.java"	,rom_lkage,null	,machine_driver_lkage	,input_ports_lkage	,null	,ROT0	,	Taito Corporation", "The Legend of Kage" )
-	public static GameDriver driver_lkageb	   = new GameDriver("1984"	,"lkageb"	,"lkage.java"	,rom_lkageb,driver_lkage	,machine_driver_lkageb	,input_ports_lkage	,init_lkageb	,ROT0	,	bootleg", "The Legend of Kage (bootleg set 1)", GAME_NOT_WORKING )
-	public static GameDriver driver_lkageb2	   = new GameDriver("1984"	,"lkageb2"	,"lkage.java"	,rom_lkageb2,driver_lkage	,machine_driver_lkageb	,input_ports_lkage	,null	,ROT0	,	bootleg", "The Legend of Kage (bootleg set 2)" )
-	public static GameDriver driver_lkageb3	   = new GameDriver("1984"	,"lkageb3"	,"lkage.java"	,rom_lkageb3,driver_lkage	,machine_driver_lkageb	,input_ports_lkage	,null	,ROT0	,	bootleg", "The Legend of Kage (bootleg set 3)" )
+	public static GameDriver driver_lkage	   = new GameDriver("1984"	,"lkage"	,"lkage.java"	,rom_lkage,null	,machine_driver_lkage	,input_ports_lkage	,null	,ROT0	,	"Taito Corporation", "The Legend of Kage" )
+	public static GameDriver driver_lkageb	   = new GameDriver("1984"	,"lkageb"	,"lkage.java"	,rom_lkageb,driver_lkage	,machine_driver_lkageb	,input_ports_lkage	,init_lkageb	,ROT0	,	"bootleg", "The Legend of Kage (bootleg set 1)", GAME_NOT_WORKING )
+	public static GameDriver driver_lkageb2	   = new GameDriver("1984"	,"lkageb2"	,"lkage.java"	,rom_lkageb2,driver_lkage	,machine_driver_lkageb	,input_ports_lkage	,null	,ROT0	,	"bootleg", "The Legend of Kage (bootleg set 2)" )
+	public static GameDriver driver_lkageb3	   = new GameDriver("1984"	,"lkageb3"	,"lkage.java"	,rom_lkageb3,driver_lkage	,machine_driver_lkageb	,input_ports_lkage	,null	,ROT0	,	"bootleg", "The Legend of Kage (bootleg set 3)" )
 }

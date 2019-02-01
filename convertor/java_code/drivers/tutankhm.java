@@ -443,6 +443,6 @@ public class tutankhm
 	
 	
 	
-	public static GameDriver driver_tutankhm	   = new GameDriver("1982"	,"tutankhm"	,"tutankhm.java"	,rom_tutankhm,null	,machine_driver_tutankhm	,input_ports_tutankhm	,null	,ROT90	,	Konami", "Tutankham" )
-	public static GameDriver driver_tutankst	   = new GameDriver("1982"	,"tutankst"	,"tutankhm.java"	,rom_tutankst,driver_tutankhm	,machine_driver_tutankhm	,input_ports_tutankhm	,null	,ROT90	,	[Konami] (Stern license)", "Tutankham (Stern)" )
+	public static GameDriver driver_tutankhm	   = new GameDriver("1982"	,"tutankhm"	,"tutankhm.java"	,rom_tutankhm,null	,machine_driver_tutankhm	,input_ports_tutankhm	,null	,ROT90	,	"Konami", "Tutankham" )
+	public static GameDriver driver_tutankst	   = new GameDriver("1982"	,"tutankst"	,"tutankhm.java"	,rom_tutankst,driver_tutankhm	,machine_driver_tutankhm	,input_ports_tutankhm	,null	,ROT90	,	"[Konami] (Stern license)", "Tutankham (Stern)" )
 }

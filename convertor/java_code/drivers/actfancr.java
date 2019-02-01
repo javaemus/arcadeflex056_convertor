@@ -701,8 +701,8 @@ public class actfancr
 	
 	
 	
-	public static GameDriver driver_actfancr	   = new GameDriver("1989"	,"actfancr"	,"actfancr.java"	,rom_actfancr,null	,machine_driver_actfancr	,input_ports_actfancr	,init_actfancr	,ROT0	,	Data East Corporation", "Act-Fancer Cybernetick Hyper Weapon (World revision 2)" )
-	public static GameDriver driver_actfanc1	   = new GameDriver("1989"	,"actfanc1"	,"actfancr.java"	,rom_actfanc1,driver_actfancr	,machine_driver_actfancr	,input_ports_actfancr	,init_actfancr	,ROT0	,	Data East Corporation", "Act-Fancer Cybernetick Hyper Weapon (World revision 1)" )
-	public static GameDriver driver_actfancj	   = new GameDriver("1989"	,"actfancj"	,"actfancr.java"	,rom_actfancj,driver_actfancr	,machine_driver_actfancr	,input_ports_actfancr	,init_actfancj	,ROT0	,	Data East Corporation", "Act-Fancer Cybernetick Hyper Weapon (Japan revision 1)" )
-	public static GameDriver driver_triothep	   = new GameDriver("1989"	,"triothep"	,"actfancr.java"	,rom_triothep,null	,machine_driver_triothep	,input_ports_triothep	,null	,ROT0	,	Data East Corporation", "Trio The Punch - Never Forget Me... (Japan)" )
+	public static GameDriver driver_actfancr	   = new GameDriver("1989"	,"actfancr"	,"actfancr.java"	,rom_actfancr,null	,machine_driver_actfancr	,input_ports_actfancr	,init_actfancr	,ROT0	,	"Data East Corporation", "Act-Fancer Cybernetick Hyper Weapon (World revision 2)" )
+	public static GameDriver driver_actfanc1	   = new GameDriver("1989"	,"actfanc1"	,"actfancr.java"	,rom_actfanc1,driver_actfancr	,machine_driver_actfancr	,input_ports_actfancr	,init_actfancr	,ROT0	,	"Data East Corporation", "Act-Fancer Cybernetick Hyper Weapon (World revision 1)" )
+	public static GameDriver driver_actfancj	   = new GameDriver("1989"	,"actfancj"	,"actfancr.java"	,rom_actfancj,driver_actfancr	,machine_driver_actfancr	,input_ports_actfancr	,init_actfancj	,ROT0	,	"Data East Corporation", "Act-Fancer Cybernetick Hyper Weapon (Japan revision 1)" )
+	public static GameDriver driver_triothep	   = new GameDriver("1989"	,"triothep"	,"actfancr.java"	,rom_triothep,null	,machine_driver_triothep	,input_ports_triothep	,null	,ROT0	,	"Data East Corporation", "Trio The Punch - Never Forget Me... (Japan)" )
 }

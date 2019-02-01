@@ -1623,14 +1623,14 @@ public class cosmic
 	
 	
 	
-	public static GameDriver driver_cosmicg	   = new GameDriver("1979"	,"cosmicg"	,"cosmic.java"	,rom_cosmicg,null	,machine_driver_cosmicg	,input_ports_cosmicg	,init_cosmicg	,ROT270	,	Universal", "Cosmic Guerilla", GAME_NO_COCKTAIL )
-	public static GameDriver driver_cosmica	   = new GameDriver("1979"	,"cosmica"	,"cosmic.java"	,rom_cosmica,null	,machine_driver_cosmica	,input_ports_cosmica	,null	,ROT270	,	Universal", "Cosmic Alien", GAME_NO_SOUND )
-	public static GameDriver driver_cosmica2	   = new GameDriver("1979"	,"cosmica2"	,"cosmic.java"	,rom_cosmica2,driver_cosmica	,machine_driver_cosmica	,input_ports_cosmica	,null	,ROT270	,	Universal", "Cosmic Alien (older)", GAME_NO_SOUND )
-	public static GameDriver driver_panic	   = new GameDriver("1980"	,"panic"	,"cosmic.java"	,rom_panic,null	,machine_driver_panic	,input_ports_panic	,null	,ROT270	,	Universal", "Space Panic (set 1)" )
-	public static GameDriver driver_panica	   = new GameDriver("1980"	,"panica"	,"cosmic.java"	,rom_panica,driver_panic	,machine_driver_panic	,input_ports_panic	,null	,ROT270	,	Universal", "Space Panic (set 2)" )
-	public static GameDriver driver_panicger	   = new GameDriver("1980"	,"panicger"	,"cosmic.java"	,rom_panicger,driver_panic	,machine_driver_panic	,input_ports_panic	,null	,ROT270	,	Universal (ADP Automaten license)", "Space Panic (German)" )
-	public static GameDriver driver_magspot2	   = new GameDriver("1980"	,"magspot2"	,"cosmic.java"	,rom_magspot2,null	,machine_driver_magspot2	,input_ports_magspot2	,null	,ROT270	,	Universal", "Magical Spot II", GAME_IMPERFECT_SOUND )
-	public static GameDriver driver_devzone	   = new GameDriver("1980"	,"devzone"	,"cosmic.java"	,rom_devzone,null	,machine_driver_magspot2	,input_ports_devzone	,null	,ROT270	,	Universal", "Devil Zone", GAME_IMPERFECT_SOUND )
-	public static GameDriver driver_nomnlnd	   = new GameDriver("1980?"	,"nomnlnd"	,"cosmic.java"	,rom_nomnlnd,null	,machine_driver_nomnlnd	,input_ports_nomnlnd	,null	,ROT270	,	Universal", "No Man's Land", GAME_WRONG_COLORS | GAME_IMPERFECT_SOUND )
-	public static GameDriver driver_nomnlndg	   = new GameDriver("1980?"	,"nomnlndg"	,"cosmic.java"	,rom_nomnlndg,driver_nomnlnd	,machine_driver_nomnlnd	,input_ports_nomnlndg	,null	,ROT270	,	Universal (Gottlieb license)", "No Man's Land (Gottlieb)", GAME_WRONG_COLORS | GAME_IMPERFECT_SOUND )
+	public static GameDriver driver_cosmicg	   = new GameDriver("1979"	,"cosmicg"	,"cosmic.java"	,rom_cosmicg,null	,machine_driver_cosmicg	,input_ports_cosmicg	,init_cosmicg	,ROT270	,	"Universal", "Cosmic Guerilla", GAME_NO_COCKTAIL )
+	public static GameDriver driver_cosmica	   = new GameDriver("1979"	,"cosmica"	,"cosmic.java"	,rom_cosmica,null	,machine_driver_cosmica	,input_ports_cosmica	,null	,ROT270	,	"Universal", "Cosmic Alien", GAME_NO_SOUND )
+	public static GameDriver driver_cosmica2	   = new GameDriver("1979"	,"cosmica2"	,"cosmic.java"	,rom_cosmica2,driver_cosmica	,machine_driver_cosmica	,input_ports_cosmica	,null	,ROT270	,	"Universal", "Cosmic Alien (older)", GAME_NO_SOUND )
+	public static GameDriver driver_panic	   = new GameDriver("1980"	,"panic"	,"cosmic.java"	,rom_panic,null	,machine_driver_panic	,input_ports_panic	,null	,ROT270	,	"Universal", "Space Panic (set 1)" )
+	public static GameDriver driver_panica	   = new GameDriver("1980"	,"panica"	,"cosmic.java"	,rom_panica,driver_panic	,machine_driver_panic	,input_ports_panic	,null	,ROT270	,	"Universal", "Space Panic (set 2)" )
+	public static GameDriver driver_panicger	   = new GameDriver("1980"	,"panicger"	,"cosmic.java"	,rom_panicger,driver_panic	,machine_driver_panic	,input_ports_panic	,null	,ROT270	,	"Universal (ADP Automaten license)", "Space Panic (German)" )
+	public static GameDriver driver_magspot2	   = new GameDriver("1980"	,"magspot2"	,"cosmic.java"	,rom_magspot2,null	,machine_driver_magspot2	,input_ports_magspot2	,null	,ROT270	,	"Universal", "Magical Spot II", GAME_IMPERFECT_SOUND )
+	public static GameDriver driver_devzone	   = new GameDriver("1980"	,"devzone"	,"cosmic.java"	,rom_devzone,null	,machine_driver_magspot2	,input_ports_devzone	,null	,ROT270	,	"Universal", "Devil Zone", GAME_IMPERFECT_SOUND )
+	public static GameDriver driver_nomnlnd	   = new GameDriver("1980?"	,"nomnlnd"	,"cosmic.java"	,rom_nomnlnd,null	,machine_driver_nomnlnd	,input_ports_nomnlnd	,null	,ROT270	,	"Universal", "No Man's Land", GAME_WRONG_COLORS | GAME_IMPERFECT_SOUND )
+	public static GameDriver driver_nomnlndg	   = new GameDriver("1980?"	,"nomnlndg"	,"cosmic.java"	,rom_nomnlndg,driver_nomnlnd	,machine_driver_nomnlnd	,input_ports_nomnlndg	,null	,ROT270	,	"Universal (Gottlieb license)", "No Man's Land (Gottlieb)", GAME_WRONG_COLORS | GAME_IMPERFECT_SOUND )
 }

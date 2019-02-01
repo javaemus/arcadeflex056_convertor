@@ -870,13 +870,13 @@ public class thepit
 	
 	
 	
-	public static GameDriver driver_roundup	   = new GameDriver("1981"	,"roundup"	,"thepit.java"	,rom_roundup,null	,machine_driver_thepit	,input_ports_roundup	,null	,ROT90	,	Amenip/Centuri", "Round-Up" )
-	public static GameDriver driver_fitter	   = new GameDriver("1981"	,"fitter"	,"thepit.java"	,rom_fitter,driver_roundup	,machine_driver_thepit	,input_ports_fitter	,null	,ROT90	,	Taito", "Fitter" )
-	public static GameDriver driver_thepit	   = new GameDriver("1982"	,"thepit"	,"thepit.java"	,rom_thepit,null	,machine_driver_thepit	,input_ports_thepit	,null	,ROT90	,	Centuri", "The Pit" )
-	public static GameDriver driver_portman	   = new GameDriver("1982"	,"portman"	,"thepit.java"	,rom_portman,null	,machine_driver_intrepid	,input_ports_portman	,null	,ROT90	,	Nova Games Ltd.", "Port Man" )
-	public static GameDriver driver_funnymou	   = new GameDriver("1982"	,"funnymou"	,"thepit.java"	,rom_funnymou,null	,machine_driver_suprmous	,input_ports_suprmous	,null	,ROT90	,	Chuo Co. Ltd", "Funny Mouse" )
-	public static GameDriver driver_suprmous	   = new GameDriver("1982"	,"suprmous"	,"thepit.java"	,rom_suprmous,driver_funnymou	,machine_driver_suprmous	,input_ports_suprmous	,null	,ROT90	,	Taito", "Super Mouse" )
-	public static GameDriver driver_machomou	   = new GameDriver("1982"	,"machomou"	,"thepit.java"	,rom_machomou,null	,machine_driver_suprmous	,input_ports_suprmous	,null	,ROT90	,	Techstar", "Macho Mouse" )
-	public static GameDriver driver_intrepid	   = new GameDriver("1983"	,"intrepid"	,"thepit.java"	,rom_intrepid,null	,machine_driver_intrepid	,input_ports_intrepid	,null	,ROT90	,	Nova Games Ltd.", "Intrepid (set 1)" )
-	public static GameDriver driver_intrepi2	   = new GameDriver("1983"	,"intrepi2"	,"thepit.java"	,rom_intrepi2,driver_intrepid	,machine_driver_intrepid	,input_ports_intrepid	,null	,ROT90	,	Nova Games Ltd.", "Intrepid (set 2)" )
+	public static GameDriver driver_roundup	   = new GameDriver("1981"	,"roundup"	,"thepit.java"	,rom_roundup,null	,machine_driver_thepit	,input_ports_roundup	,null	,ROT90	,	"Amenip/Centuri", "Round-Up" )
+	public static GameDriver driver_fitter	   = new GameDriver("1981"	,"fitter"	,"thepit.java"	,rom_fitter,driver_roundup	,machine_driver_thepit	,input_ports_fitter	,null	,ROT90	,	"Taito", "Fitter" )
+	public static GameDriver driver_thepit	   = new GameDriver("1982"	,"thepit"	,"thepit.java"	,rom_thepit,null	,machine_driver_thepit	,input_ports_thepit	,null	,ROT90	,	"Centuri", "The Pit" )
+	public static GameDriver driver_portman	   = new GameDriver("1982"	,"portman"	,"thepit.java"	,rom_portman,null	,machine_driver_intrepid	,input_ports_portman	,null	,ROT90	,	"Nova Games Ltd.", "Port Man" )
+	public static GameDriver driver_funnymou	   = new GameDriver("1982"	,"funnymou"	,"thepit.java"	,rom_funnymou,null	,machine_driver_suprmous	,input_ports_suprmous	,null	,ROT90	,	"Chuo Co. Ltd", "Funny Mouse" )
+	public static GameDriver driver_suprmous	   = new GameDriver("1982"	,"suprmous"	,"thepit.java"	,rom_suprmous,driver_funnymou	,machine_driver_suprmous	,input_ports_suprmous	,null	,ROT90	,	"Taito", "Super Mouse" )
+	public static GameDriver driver_machomou	   = new GameDriver("1982"	,"machomou"	,"thepit.java"	,rom_machomou,null	,machine_driver_suprmous	,input_ports_suprmous	,null	,ROT90	,	"Techstar", "Macho Mouse" )
+	public static GameDriver driver_intrepid	   = new GameDriver("1983"	,"intrepid"	,"thepit.java"	,rom_intrepid,null	,machine_driver_intrepid	,input_ports_intrepid	,null	,ROT90	,	"Nova Games Ltd.", "Intrepid (set 1)" )
+	public static GameDriver driver_intrepi2	   = new GameDriver("1983"	,"intrepi2"	,"thepit.java"	,rom_intrepi2,driver_intrepid	,machine_driver_intrepid	,input_ports_intrepid	,null	,ROT90	,	"Nova Games Ltd.", "Intrepid (set 2)" )
 }

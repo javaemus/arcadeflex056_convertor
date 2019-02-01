@@ -847,12 +847,12 @@ public class asteroid
 	
 	
 	
-	public static GameDriver driver_asteroid	   = new GameDriver("1979"	,"asteroid"	,"asteroid.java"	,rom_asteroid,null	,machine_driver_asteroid	,input_ports_asteroid	,null	,ROT0	,	Atari", "Asteroids (rev 2)" )
-	public static GameDriver driver_asteroi1	   = new GameDriver("1979"	,"asteroi1"	,"asteroid.java"	,rom_asteroi1,driver_asteroid	,machine_driver_asteroid	,input_ports_asteroid	,null	,ROT0	,	Atari", "Asteroids (rev 1)" )
-	public static GameDriver driver_asteroib	   = new GameDriver("1979"	,"asteroib"	,"asteroid.java"	,rom_asteroib,driver_asteroid	,machine_driver_asteroib	,input_ports_asteroib	,null	,ROT0	,	bootleg", "Asteroids (bootleg on Lunar Lander hardware)" )
-	public static GameDriver driver_astdelux	   = new GameDriver("1980"	,"astdelux"	,"asteroid.java"	,rom_astdelux,null	,machine_driver_astdelux	,input_ports_astdelux	,null	,ROT0	,	Atari", "Asteroids Deluxe (rev 2)" )
-	public static GameDriver driver_astdelu1	   = new GameDriver("1980"	,"astdelu1"	,"asteroid.java"	,rom_astdelu1,driver_astdelux	,machine_driver_astdelux	,input_ports_astdelux	,null	,ROT0	,	Atari", "Asteroids Deluxe (rev 1)" )
-	public static GameDriver driver_llander	   = new GameDriver("1979"	,"llander"	,"asteroid.java"	,rom_llander,null	,machine_driver_llander	,input_ports_llander	,null	,ROT0	,	Atari", "Lunar Lander (rev 2)" )
-	public static GameDriver driver_llander1	   = new GameDriver("1979"	,"llander1"	,"asteroid.java"	,rom_llander1,driver_llander	,machine_driver_llander	,input_ports_llander1	,null	,ROT0	,	Atari", "Lunar Lander (rev 1)" )
+	public static GameDriver driver_asteroid	   = new GameDriver("1979"	,"asteroid"	,"asteroid.java"	,rom_asteroid,null	,machine_driver_asteroid	,input_ports_asteroid	,null	,ROT0	,	"Atari", "Asteroids (rev 2)" )
+	public static GameDriver driver_asteroi1	   = new GameDriver("1979"	,"asteroi1"	,"asteroid.java"	,rom_asteroi1,driver_asteroid	,machine_driver_asteroid	,input_ports_asteroid	,null	,ROT0	,	"Atari", "Asteroids (rev 1)" )
+	public static GameDriver driver_asteroib	   = new GameDriver("1979"	,"asteroib"	,"asteroid.java"	,rom_asteroib,driver_asteroid	,machine_driver_asteroib	,input_ports_asteroib	,null	,ROT0	,	"bootleg", "Asteroids (bootleg on Lunar Lander hardware)" )
+	public static GameDriver driver_astdelux	   = new GameDriver("1980"	,"astdelux"	,"asteroid.java"	,rom_astdelux,null	,machine_driver_astdelux	,input_ports_astdelux	,null	,ROT0	,	"Atari", "Asteroids Deluxe (rev 2)" )
+	public static GameDriver driver_astdelu1	   = new GameDriver("1980"	,"astdelu1"	,"asteroid.java"	,rom_astdelu1,driver_astdelux	,machine_driver_astdelux	,input_ports_astdelux	,null	,ROT0	,	"Atari", "Asteroids Deluxe (rev 1)" )
+	public static GameDriver driver_llander	   = new GameDriver("1979"	,"llander"	,"asteroid.java"	,rom_llander,null	,machine_driver_llander	,input_ports_llander	,null	,ROT0	,	"Atari", "Lunar Lander (rev 2)" )
+	public static GameDriver driver_llander1	   = new GameDriver("1979"	,"llander1"	,"asteroid.java"	,rom_llander1,driver_llander	,machine_driver_llander	,input_ports_llander1	,null	,ROT0	,	"Atari", "Lunar Lander (rev 1)" )
 	
 }

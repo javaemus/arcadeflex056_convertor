@@ -400,6 +400,6 @@ public class tail2nos
 	
 	
 	
-	public static GameDriver driver_tail2nos	   = new GameDriver("1989"	,"tail2nos"	,"tail2nos.java"	,rom_tail2nos,null	,machine_driver_tail2nos	,input_ports_tail2nos	,null	,ROT90	,	V-System Co.", "Tail to Nose - Great Championship", GAME_NO_COCKTAIL )
-	public static GameDriver driver_sformula	   = new GameDriver("1989"	,"sformula"	,"tail2nos.java"	,rom_sformula,driver_tail2nos	,machine_driver_tail2nos	,input_ports_tail2nos	,null	,ROT90	,	V-System Co.", "Super Formula (Japan)", GAME_NO_COCKTAIL )
+	public static GameDriver driver_tail2nos	   = new GameDriver("1989"	,"tail2nos"	,"tail2nos.java"	,rom_tail2nos,null	,machine_driver_tail2nos	,input_ports_tail2nos	,null	,ROT90	,	"V-System Co.", "Tail to Nose - Great Championship", GAME_NO_COCKTAIL )
+	public static GameDriver driver_sformula	   = new GameDriver("1989"	,"sformula"	,"tail2nos.java"	,rom_sformula,driver_tail2nos	,machine_driver_tail2nos	,input_ports_tail2nos	,null	,ROT90	,	"V-System Co.", "Super Formula (Japan)", GAME_NO_COCKTAIL )
 }

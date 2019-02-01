@@ -416,7 +416,7 @@ public class shisen
 	
 	
 	
-	public static GameDriver driver_sichuan2	   = new GameDriver("1989"	,"sichuan2"	,"shisen.java"	,rom_sichuan2,null	,machine_driver_shisen	,input_ports_shisen	,null	,ROT0	,	Tamtex", "Sichuan II (hack?) (set 1)" )
-	public static GameDriver driver_sichuana	   = new GameDriver("1989"	,"sichuana"	,"shisen.java"	,rom_sichuana,driver_sichuan2	,machine_driver_shisen	,input_ports_shisen	,null	,ROT0	,	Tamtex", "Sichuan II (hack ?) (set 2)" )
-	public static GameDriver driver_shisen	   = new GameDriver("1989"	,"shisen"	,"shisen.java"	,rom_shisen,driver_sichuan2	,machine_driver_shisen	,input_ports_shisen	,null	,ROT0	,	Tamtex", "Shisensho - Joshiryo-Hen (Japan)" )
+	public static GameDriver driver_sichuan2	   = new GameDriver("1989"	,"sichuan2"	,"shisen.java"	,rom_sichuan2,null	,machine_driver_shisen	,input_ports_shisen	,null	,ROT0	,	"Tamtex", "Sichuan II (hack?) (set 1)" )
+	public static GameDriver driver_sichuana	   = new GameDriver("1989"	,"sichuana"	,"shisen.java"	,rom_sichuana,driver_sichuan2	,machine_driver_shisen	,input_ports_shisen	,null	,ROT0	,	"Tamtex", "Sichuan II (hack ?) (set 2)" )
+	public static GameDriver driver_shisen	   = new GameDriver("1989"	,"shisen"	,"shisen.java"	,rom_shisen,driver_sichuan2	,machine_driver_shisen	,input_ports_shisen	,null	,ROT0	,	"Tamtex", "Shisensho - Joshiryo-Hen (Japan)" )
 }

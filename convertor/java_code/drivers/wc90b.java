@@ -476,5 +476,5 @@ public class wc90b
 	}
 	
 	
-	public static GameDriver driver_wc90b	   = new GameDriver("1989"	,"wc90b"	,"wc90b.java"	,rom_wc90b,driver_wc90	,machine_driver_wc90b	,input_ports_wc90b	,init_wc90b	,ROT0	,	bootleg", "Euro League", GAME_NO_COCKTAIL )
+	public static GameDriver driver_wc90b	   = new GameDriver("1989"	,"wc90b"	,"wc90b.java"	,rom_wc90b,driver_wc90	,machine_driver_wc90b	,input_ports_wc90b	,init_wc90b	,ROT0	,	"bootleg", "Euro League", GAME_NO_COCKTAIL )
 }

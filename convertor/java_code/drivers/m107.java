@@ -688,6 +688,6 @@ public class m107
 	
 	/***************************************************************************/
 	
-	public static GameDriver driver_firebarr	   = new GameDriver("1993"	,"firebarr"	,"m107.java"	,rom_firebarr,null	,machine_driver_firebarr	,input_ports_firebarr	,init_m107	,ROT270	,	Irem", "Fire Barrel (Japan)", GAME_NO_SOUND | GAME_IMPERFECT_GRAPHICS )
-	public static GameDriver driver_dsoccr94	   = new GameDriver("1994"	,"dsoccr94"	,"m107.java"	,rom_dsoccr94,null	,machine_driver_dsoccr94	,input_ports_dsoccr94	,init_dsoccr94	,ROT0	,	Irem (Data East Corporation license)", "Dream Soccer '94" )
+	public static GameDriver driver_firebarr	   = new GameDriver("1993"	,"firebarr"	,"m107.java"	,rom_firebarr,null	,machine_driver_firebarr	,input_ports_firebarr	,init_m107	,ROT270	,	"Irem", "Fire Barrel (Japan)", GAME_NO_SOUND | GAME_IMPERFECT_GRAPHICS )
+	public static GameDriver driver_dsoccr94	   = new GameDriver("1994"	,"dsoccr94"	,"m107.java"	,rom_dsoccr94,null	,machine_driver_dsoccr94	,input_ports_dsoccr94	,init_dsoccr94	,ROT0	,	"Irem (Data East Corporation license)", "Dream Soccer '94" )
 }

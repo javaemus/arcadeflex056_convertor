@@ -603,7 +603,7 @@ public class ironhors
 	
 	
 	
-	public static GameDriver driver_ironhors	   = new GameDriver("1986"	,"ironhors"	,"ironhors.java"	,rom_ironhors,null	,machine_driver_ironhors	,input_ports_ironhors	,null	,ROT0	,	Konami", "Iron Horse", GAME_NO_COCKTAIL )
-	public static GameDriver driver_dairesya	   = new GameDriver("1986"	,"dairesya"	,"ironhors.java"	,rom_dairesya,driver_ironhors	,machine_driver_ironhors	,input_ports_dairesya	,null	,ROT0	,	[Konami] (Kawakusu license)", "Dai Ressya Goutou (Japan)", GAME_NO_COCKTAIL )
-	public static GameDriver driver_farwest	   = new GameDriver("1986"	,"farwest"	,"ironhors.java"	,rom_farwest,driver_ironhors	,machine_driver_farwest	,input_ports_ironhors	,null	,ROT0	,	bootleg?", "Far West", GAME_NOT_WORKING | GAME_NO_COCKTAIL )
+	public static GameDriver driver_ironhors	   = new GameDriver("1986"	,"ironhors"	,"ironhors.java"	,rom_ironhors,null	,machine_driver_ironhors	,input_ports_ironhors	,null	,ROT0	,	"Konami", "Iron Horse", GAME_NO_COCKTAIL )
+	public static GameDriver driver_dairesya	   = new GameDriver("1986"	,"dairesya"	,"ironhors.java"	,rom_dairesya,driver_ironhors	,machine_driver_ironhors	,input_ports_dairesya	,null	,ROT0	,	"[Konami] (Kawakusu license)", "Dai Ressya Goutou (Japan)", GAME_NO_COCKTAIL )
+	public static GameDriver driver_farwest	   = new GameDriver("1986"	,"farwest"	,"ironhors.java"	,rom_farwest,driver_ironhors	,machine_driver_farwest	,input_ports_ironhors	,null	,ROT0	,	"bootleg?", "Far West", GAME_NOT_WORKING | GAME_NO_COCKTAIL )
 }

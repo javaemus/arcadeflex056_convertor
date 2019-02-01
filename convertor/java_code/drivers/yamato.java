@@ -477,6 +477,6 @@ public class yamato
 	}
 	
 	
-	public static GameDriver driver_yamato	   = new GameDriver("1983"	,"yamato"	,"yamato.java"	,rom_yamato,null	,machine_driver_yamato	,input_ports_yamato	,init_yamato	,ROT90	,	Sega", "Yamato (set 1)" )
-	public static GameDriver driver_yamato2	   = new GameDriver("1983"	,"yamato2"	,"yamato.java"	,rom_yamato2,driver_yamato	,machine_driver_yamato	,input_ports_yamato	,init_yamato	,ROT90	,	Sega", "Yamato (set 2)" )
+	public static GameDriver driver_yamato	   = new GameDriver("1983"	,"yamato"	,"yamato.java"	,rom_yamato,null	,machine_driver_yamato	,input_ports_yamato	,init_yamato	,ROT90	,	"Sega", "Yamato (set 1)" )
+	public static GameDriver driver_yamato2	   = new GameDriver("1983"	,"yamato2"	,"yamato.java"	,rom_yamato2,driver_yamato	,machine_driver_yamato	,input_ports_yamato	,init_yamato	,ROT90	,	"Sega", "Yamato (set 2)" )
 }

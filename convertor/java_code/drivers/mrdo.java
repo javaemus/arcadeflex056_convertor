@@ -418,11 +418,11 @@ public class mrdo
 	
 	
 	
-	public static GameDriver driver_mrdo	   = new GameDriver("1982"	,"mrdo"	,"mrdo.java"	,rom_mrdo,null	,machine_driver_mrdo	,input_ports_mrdo	,null	,ROT270	,	Universal", "Mr. Do! (Universal)" )
-	public static GameDriver driver_mrdot	   = new GameDriver("1982"	,"mrdot"	,"mrdo.java"	,rom_mrdot,driver_mrdo	,machine_driver_mrdo	,input_ports_mrdo	,null	,ROT270	,	Universal (Taito license)", "Mr. Do! (Taito)" )
-	public static GameDriver driver_mrdofix	   = new GameDriver("1982"	,"mrdofix"	,"mrdo.java"	,rom_mrdofix,driver_mrdo	,machine_driver_mrdo	,input_ports_mrdo	,null	,ROT270	,	Universal (Taito license)", "Mr. Do! (bugfixed)" )
-	public static GameDriver driver_mrlo	   = new GameDriver("1982"	,"mrlo"	,"mrdo.java"	,rom_mrlo,driver_mrdo	,machine_driver_mrdo	,input_ports_mrdo	,null	,ROT270	,	bootleg", "Mr. Lo!" )
-	public static GameDriver driver_mrdu	   = new GameDriver("1982"	,"mrdu"	,"mrdo.java"	,rom_mrdu,driver_mrdo	,machine_driver_mrdo	,input_ports_mrdo	,null	,ROT270	,	bootleg", "Mr. Du!" )
-	public static GameDriver driver_mrdoy	   = new GameDriver("1982"	,"mrdoy"	,"mrdo.java"	,rom_mrdoy,driver_mrdo	,machine_driver_mrdo	,input_ports_mrdo	,null	,ROT270	,	bootleg", "Mr. Do! (Yukidaruma)" )
-	public static GameDriver driver_yankeedo	   = new GameDriver("1982"	,"yankeedo"	,"mrdo.java"	,rom_yankeedo,driver_mrdo	,machine_driver_mrdo	,input_ports_mrdo	,null	,ROT270	,	hack", "Yankee DO!" )
+	public static GameDriver driver_mrdo	   = new GameDriver("1982"	,"mrdo"	,"mrdo.java"	,rom_mrdo,null	,machine_driver_mrdo	,input_ports_mrdo	,null	,ROT270	,	"Universal", "Mr. Do! (Universal)" )
+	public static GameDriver driver_mrdot	   = new GameDriver("1982"	,"mrdot"	,"mrdo.java"	,rom_mrdot,driver_mrdo	,machine_driver_mrdo	,input_ports_mrdo	,null	,ROT270	,	"Universal (Taito license)", "Mr. Do! (Taito)" )
+	public static GameDriver driver_mrdofix	   = new GameDriver("1982"	,"mrdofix"	,"mrdo.java"	,rom_mrdofix,driver_mrdo	,machine_driver_mrdo	,input_ports_mrdo	,null	,ROT270	,	"Universal (Taito license)", "Mr. Do! (bugfixed)" )
+	public static GameDriver driver_mrlo	   = new GameDriver("1982"	,"mrlo"	,"mrdo.java"	,rom_mrlo,driver_mrdo	,machine_driver_mrdo	,input_ports_mrdo	,null	,ROT270	,	"bootleg", "Mr. Lo!" )
+	public static GameDriver driver_mrdu	   = new GameDriver("1982"	,"mrdu"	,"mrdo.java"	,rom_mrdu,driver_mrdo	,machine_driver_mrdo	,input_ports_mrdo	,null	,ROT270	,	"bootleg", "Mr. Du!" )
+	public static GameDriver driver_mrdoy	   = new GameDriver("1982"	,"mrdoy"	,"mrdo.java"	,rom_mrdoy,driver_mrdo	,machine_driver_mrdo	,input_ports_mrdo	,null	,ROT270	,	"bootleg", "Mr. Do! (Yukidaruma)" )
+	public static GameDriver driver_yankeedo	   = new GameDriver("1982"	,"yankeedo"	,"mrdo.java"	,rom_yankeedo,driver_mrdo	,machine_driver_mrdo	,input_ports_mrdo	,null	,ROT270	,	"hack", "Yankee DO!" )
 }

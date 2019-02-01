@@ -474,9 +474,9 @@ public class atetris
 	 *
 	 *************************************/
 	
-	public static GameDriver driver_atetris	   = new GameDriver("1988"	,"atetris"	,"atetris.java"	,rom_atetris,null	,machine_driver_atetris	,input_ports_atetris	,init_atetris	,ROT0	,	Atari Games", "Tetris (set 1)" )
-	public static GameDriver driver_atetrisa	   = new GameDriver("1988"	,"atetrisa"	,"atetris.java"	,rom_atetrisa,driver_atetris	,machine_driver_atetris	,input_ports_atetris	,init_atetris	,ROT0	,	Atari Games", "Tetris (set 2)" )
-	public static GameDriver driver_atetrisb	   = new GameDriver("1988"	,"atetrisb"	,"atetris.java"	,rom_atetrisb,driver_atetris	,machine_driver_atetris	,input_ports_atetris	,init_atetris	,ROT0	,	bootleg",     "Tetris (bootleg)" )
-	public static GameDriver driver_atetcktl	   = new GameDriver("1989"	,"atetcktl"	,"atetris.java"	,rom_atetcktl,driver_atetris	,machine_driver_atetris	,input_ports_atetcktl	,init_atetris	,ROT270	,	Atari Games", "Tetris (Cocktail set 1)" )
-	public static GameDriver driver_atetckt2	   = new GameDriver("1989"	,"atetckt2"	,"atetris.java"	,rom_atetckt2,driver_atetris	,machine_driver_atetris	,input_ports_atetcktl	,init_atetris	,ROT270	,	Atari Games", "Tetris (Cocktail set 2)" )
+	public static GameDriver driver_atetris	   = new GameDriver("1988"	,"atetris"	,"atetris.java"	,rom_atetris,null	,machine_driver_atetris	,input_ports_atetris	,init_atetris	,ROT0	,	"Atari Games", "Tetris (set 1)" )
+	public static GameDriver driver_atetrisa	   = new GameDriver("1988"	,"atetrisa"	,"atetris.java"	,rom_atetrisa,driver_atetris	,machine_driver_atetris	,input_ports_atetris	,init_atetris	,ROT0	,	"Atari Games", "Tetris (set 2)" )
+	public static GameDriver driver_atetrisb	   = new GameDriver("1988"	,"atetrisb"	,"atetris.java"	,rom_atetrisb,driver_atetris	,machine_driver_atetris	,input_ports_atetris	,init_atetris	,ROT0	,	"bootleg",     "Tetris (bootleg)" )
+	public static GameDriver driver_atetcktl	   = new GameDriver("1989"	,"atetcktl"	,"atetris.java"	,rom_atetcktl,driver_atetris	,machine_driver_atetris	,input_ports_atetcktl	,init_atetris	,ROT270	,	"Atari Games", "Tetris (Cocktail set 1)" )
+	public static GameDriver driver_atetckt2	   = new GameDriver("1989"	,"atetckt2"	,"atetris.java"	,rom_atetckt2,driver_atetris	,machine_driver_atetris	,input_ports_atetcktl	,init_atetris	,ROT270	,	"Atari Games", "Tetris (Cocktail set 2)" )
 }

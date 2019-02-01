@@ -459,7 +459,7 @@ public class liberatr
 	
 	
 	
-	public static GameDriver driver_liberatr	   = new GameDriver("1982"	,"liberatr"	,"liberatr.java"	,rom_liberatr,null	,machine_driver_liberatr	,input_ports_liberatr	,null	,ROT0	,	Atari", "Liberator (set 1)", GAME_NO_COCKTAIL )
-	public static GameDriver driver_liberat2	   = new GameDriver("1982"	,"liberat2"	,"liberatr.java"	,rom_liberat2,driver_liberatr	,machine_driver_liberat2	,input_ports_liberatr	,null	,ROT0	,	Atari", "Liberator (set 2)", GAME_NOT_WORKING | GAME_NO_COCKTAIL )
+	public static GameDriver driver_liberatr	   = new GameDriver("1982"	,"liberatr"	,"liberatr.java"	,rom_liberatr,null	,machine_driver_liberatr	,input_ports_liberatr	,null	,ROT0	,	"Atari", "Liberator (set 1)", GAME_NO_COCKTAIL )
+	public static GameDriver driver_liberat2	   = new GameDriver("1982"	,"liberat2"	,"liberatr.java"	,rom_liberat2,driver_liberatr	,machine_driver_liberat2	,input_ports_liberatr	,null	,ROT0	,	"Atari", "Liberator (set 2)", GAME_NOT_WORKING | GAME_NO_COCKTAIL )
 	
 }

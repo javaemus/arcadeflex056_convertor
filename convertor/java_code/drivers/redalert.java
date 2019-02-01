@@ -358,5 +358,5 @@ public class redalert
 	
 	
 	
-	public static GameDriver driver_redalert	   = new GameDriver("1981"	,"redalert"	,"redalert.java"	,rom_redalert,null	,machine_driver_redalert	,input_ports_redalert	,null	,ROT270	,	Irem + GDI", "Red Alert", GAME_WRONG_COLORS | GAME_IMPERFECT_SOUND)
+	public static GameDriver driver_redalert	   = new GameDriver("1981"	,"redalert"	,"redalert.java"	,rom_redalert,null	,machine_driver_redalert	,input_ports_redalert	,null	,ROT270	,	"Irem + GDI", "Red Alert", GAME_WRONG_COLORS | GAME_IMPERFECT_SOUND)
 }

@@ -471,5 +471,5 @@ public class foodf
 	 *
 	 *************************************/
 	
-	public static GameDriver driver_foodf	   = new GameDriver("1982"	,"foodf"	,"foodf.java"	,rom_foodf,null	,machine_driver_foodf	,input_ports_foodf	,null	,ROT0	,	Atari", "Food Fight" )
+	public static GameDriver driver_foodf	   = new GameDriver("1982"	,"foodf"	,"foodf.java"	,rom_foodf,null	,machine_driver_foodf	,input_ports_foodf	,null	,ROT0	,	"Atari", "Food Fight" )
 }

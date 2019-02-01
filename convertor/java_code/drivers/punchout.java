@@ -1148,8 +1148,8 @@ public class punchout
 	
 	
 	
-	public static GameDriver driver_punchout	   = new GameDriver("1984"	,"punchout"	,"punchout.java"	,rom_punchout,null	,machine_driver_punchout	,input_ports_punchout	,init_punchout	,ROT0	,	Nintendo", "Punch-Out!!" )
-	public static GameDriver driver_spnchout	   = new GameDriver("1984"	,"spnchout"	,"punchout.java"	,rom_spnchout,null	,machine_driver_punchout	,input_ports_spnchout	,init_spnchout	,ROT0	,	Nintendo", "Super Punch-Out!!" )
-	public static GameDriver driver_spnchotj	   = new GameDriver("1984"	,"spnchotj"	,"punchout.java"	,rom_spnchotj,driver_spnchout	,machine_driver_punchout	,input_ports_spnchout	,init_spnchotj	,ROT0	,	Nintendo", "Super Punch-Out!! (Japan)" )
-	public static GameDriver driver_armwrest	   = new GameDriver("1985"	,"armwrest"	,"punchout.java"	,rom_armwrest,null	,machine_driver_armwrest	,input_ports_armwrest	,init_armwrest	,ROT0	,	Nintendo", "Arm Wrestling" )
+	public static GameDriver driver_punchout	   = new GameDriver("1984"	,"punchout"	,"punchout.java"	,rom_punchout,null	,machine_driver_punchout	,input_ports_punchout	,init_punchout	,ROT0	,	"Nintendo", "Punch-Out!!" )
+	public static GameDriver driver_spnchout	   = new GameDriver("1984"	,"spnchout"	,"punchout.java"	,rom_spnchout,null	,machine_driver_punchout	,input_ports_spnchout	,init_spnchout	,ROT0	,	"Nintendo", "Super Punch-Out!!" )
+	public static GameDriver driver_spnchotj	   = new GameDriver("1984"	,"spnchotj"	,"punchout.java"	,rom_spnchotj,driver_spnchout	,machine_driver_punchout	,input_ports_spnchout	,init_spnchotj	,ROT0	,	"Nintendo", "Super Punch-Out!! (Japan)" )
+	public static GameDriver driver_armwrest	   = new GameDriver("1985"	,"armwrest"	,"punchout.java"	,rom_armwrest,null	,machine_driver_armwrest	,input_ports_armwrest	,init_armwrest	,ROT0	,	"Nintendo", "Arm Wrestling" )
 }

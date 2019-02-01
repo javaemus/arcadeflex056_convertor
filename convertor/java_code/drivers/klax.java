@@ -413,9 +413,9 @@ public class klax
 	 *
 	 *************************************/
 	
-	public static GameDriver driver_klax	   = new GameDriver("1989"	,"klax"	,"klax.java"	,rom_klax,null	,machine_driver_klax	,input_ports_klax	,init_klax	,ROT0	,	Atari Games", "Klax (set 1)" )
-	public static GameDriver driver_klax2	   = new GameDriver("1989"	,"klax2"	,"klax.java"	,rom_klax2,driver_klax	,machine_driver_klax	,input_ports_klax	,init_klax	,ROT0	,	Atari Games", "Klax (set 2)" )
-	public static GameDriver driver_klax3	   = new GameDriver("1989"	,"klax3"	,"klax.java"	,rom_klax3,driver_klax	,machine_driver_klax	,input_ports_klax	,init_klax	,ROT0	,	Atari Games", "Klax (set 3)" )
-	public static GameDriver driver_klaxj	   = new GameDriver("1989"	,"klaxj"	,"klax.java"	,rom_klaxj,driver_klax	,machine_driver_klax	,input_ports_klax	,init_klax	,ROT0	,	Atari Games", "Klax (Japan)" )
-	public static GameDriver driver_klaxd	   = new GameDriver("1989"	,"klaxd"	,"klax.java"	,rom_klaxd,driver_klax	,machine_driver_klax	,input_ports_klax	,init_klax	,ROT0	,	Atari Games", "Klax (Germany)" )
+	public static GameDriver driver_klax	   = new GameDriver("1989"	,"klax"	,"klax.java"	,rom_klax,null	,machine_driver_klax	,input_ports_klax	,init_klax	,ROT0	,	"Atari Games", "Klax (set 1)" )
+	public static GameDriver driver_klax2	   = new GameDriver("1989"	,"klax2"	,"klax.java"	,rom_klax2,driver_klax	,machine_driver_klax	,input_ports_klax	,init_klax	,ROT0	,	"Atari Games", "Klax (set 2)" )
+	public static GameDriver driver_klax3	   = new GameDriver("1989"	,"klax3"	,"klax.java"	,rom_klax3,driver_klax	,machine_driver_klax	,input_ports_klax	,init_klax	,ROT0	,	"Atari Games", "Klax (set 3)" )
+	public static GameDriver driver_klaxj	   = new GameDriver("1989"	,"klaxj"	,"klax.java"	,rom_klaxj,driver_klax	,machine_driver_klax	,input_ports_klax	,init_klax	,ROT0	,	"Atari Games", "Klax (Japan)" )
+	public static GameDriver driver_klaxd	   = new GameDriver("1989"	,"klaxd"	,"klax.java"	,rom_klaxd,driver_klax	,machine_driver_klax	,input_ports_klax	,init_klax	,ROT0	,	"Atari Games", "Klax (Germany)" )
 }

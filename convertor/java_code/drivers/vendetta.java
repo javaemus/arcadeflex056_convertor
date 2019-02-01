@@ -616,9 +616,9 @@ public class vendetta
 	
 	
 	
-	public static GameDriver driver_vendetta	   = new GameDriver("1991"	,"vendetta"	,"vendetta.java"	,rom_vendetta,null	,machine_driver_vendetta	,input_ports_vendet4p	,init_vendetta	,ROT0	,	Konami", "Vendetta (US ver. T)" )
-	public static GameDriver driver_vendetar	   = new GameDriver("1991"	,"vendetar"	,"vendetta.java"	,rom_vendetar,driver_vendetta	,machine_driver_vendetta	,input_ports_vendet4p	,init_vendetta	,ROT0	,	Konami", "Vendetta (US ver. R)" )
-	public static GameDriver driver_vendetas	   = new GameDriver("1991"	,"vendetas"	,"vendetta.java"	,rom_vendetas,driver_vendetta	,machine_driver_vendetta	,input_ports_vendetta	,init_vendetta	,ROT0	,	Konami", "Vendetta (Asia ver. U)" )
-	public static GameDriver driver_vendeta2	   = new GameDriver("1991"	,"vendeta2"	,"vendetta.java"	,rom_vendeta2,driver_vendetta	,machine_driver_vendetta	,input_ports_vendetta	,init_vendetta	,ROT0	,	Konami", "Vendetta (Asia ver. D)" )
-	public static GameDriver driver_vendettj	   = new GameDriver("1991"	,"vendettj"	,"vendetta.java"	,rom_vendettj,driver_vendetta	,machine_driver_vendetta	,input_ports_vendetta	,init_vendetta	,ROT0	,	Konami", "Crime Fighters 2 (Japan ver. P)" )
+	public static GameDriver driver_vendetta	   = new GameDriver("1991"	,"vendetta"	,"vendetta.java"	,rom_vendetta,null	,machine_driver_vendetta	,input_ports_vendet4p	,init_vendetta	,ROT0	,	"Konami", "Vendetta (US ver. T)" )
+	public static GameDriver driver_vendetar	   = new GameDriver("1991"	,"vendetar"	,"vendetta.java"	,rom_vendetar,driver_vendetta	,machine_driver_vendetta	,input_ports_vendet4p	,init_vendetta	,ROT0	,	"Konami", "Vendetta (US ver. R)" )
+	public static GameDriver driver_vendetas	   = new GameDriver("1991"	,"vendetas"	,"vendetta.java"	,rom_vendetas,driver_vendetta	,machine_driver_vendetta	,input_ports_vendetta	,init_vendetta	,ROT0	,	"Konami", "Vendetta (Asia ver. U)" )
+	public static GameDriver driver_vendeta2	   = new GameDriver("1991"	,"vendeta2"	,"vendetta.java"	,rom_vendeta2,driver_vendetta	,machine_driver_vendetta	,input_ports_vendetta	,init_vendetta	,ROT0	,	"Konami", "Vendetta (Asia ver. D)" )
+	public static GameDriver driver_vendettj	   = new GameDriver("1991"	,"vendettj"	,"vendetta.java"	,rom_vendettj,driver_vendetta	,machine_driver_vendetta	,input_ports_vendetta	,init_vendetta	,ROT0	,	"Konami", "Crime Fighters 2 (Japan ver. P)" )
 }

@@ -418,6 +418,6 @@ public class sprint2
 	
 	
 	
-	public static GameDriver driver_sprint1	   = new GameDriver("1978"	,"sprint1"	,"sprint2.java"	,rom_sprint1,null	,machine_driver_sprint1	,input_ports_sprint1	,null	,ROT0	,	Atari", "Sprint 1", GAME_NO_SOUND )
-	public static GameDriver driver_sprint2	   = new GameDriver("1976"	,"sprint2"	,"sprint2.java"	,rom_sprint2,driver_sprint1	,machine_driver_sprint2	,input_ports_sprint2	,null	,ROT0	,	Atari", "Sprint 2", GAME_NO_SOUND )
+	public static GameDriver driver_sprint1	   = new GameDriver("1978"	,"sprint1"	,"sprint2.java"	,rom_sprint1,null	,machine_driver_sprint1	,input_ports_sprint1	,null	,ROT0	,	"Atari", "Sprint 1", GAME_NO_SOUND )
+	public static GameDriver driver_sprint2	   = new GameDriver("1976"	,"sprint2"	,"sprint2.java"	,rom_sprint2,driver_sprint1	,machine_driver_sprint2	,input_ports_sprint2	,null	,ROT0	,	"Atari", "Sprint 2", GAME_NO_SOUND )
 }

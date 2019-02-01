@@ -372,7 +372,7 @@ public class flkatck
 	
 	
 	
-	public static GameDriver driver_mx5000	   = new GameDriver("1987"	,"mx5000"	,"flkatck.java"	,rom_mx5000,null	,machine_driver_flkatck	,input_ports_flkatck	,null	,ROT90	,	Konami", "MX5000" )
-	public static GameDriver driver_flkatck	   = new GameDriver("1987"	,"flkatck"	,"flkatck.java"	,rom_flkatck,driver_mx5000	,machine_driver_flkatck	,input_ports_flkatck	,null	,ROT90	,	Konami", "Flak Attack (Japan)" )
+	public static GameDriver driver_mx5000	   = new GameDriver("1987"	,"mx5000"	,"flkatck.java"	,rom_mx5000,null	,machine_driver_flkatck	,input_ports_flkatck	,null	,ROT90	,	"Konami", "MX5000" )
+	public static GameDriver driver_flkatck	   = new GameDriver("1987"	,"flkatck"	,"flkatck.java"	,rom_flkatck,driver_mx5000	,machine_driver_flkatck	,input_ports_flkatck	,null	,ROT90	,	"Konami", "Flak Attack (Japan)" )
 	
 }

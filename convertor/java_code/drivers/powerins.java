@@ -383,5 +383,5 @@ public class powerins
 	ROM_END(); }}; 
 	
 	
-	public static GameDriver driver_powerins	   = new GameDriver("1993"	,"powerins"	,"powerins.java"	,rom_powerins,null	,machine_driver_powerins	,input_ports_powerins	,null	,ROT0	,	Atlus", "Power Instinct (USA bootleg)" )
+	public static GameDriver driver_powerins	   = new GameDriver("1993"	,"powerins"	,"powerins.java"	,rom_powerins,null	,machine_driver_powerins	,input_ports_powerins	,null	,ROT0	,	"Atlus", "Power Instinct (USA bootleg)" )
 }

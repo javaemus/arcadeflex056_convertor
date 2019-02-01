@@ -1164,11 +1164,11 @@ public class bublbobl
 	}
 	
 	
-	public static GameDriver driver_bublbobl	   = new GameDriver("1986"	,"bublbobl"	,"bublbobl.java"	,rom_bublbobl,null	,machine_driver_bublbobl	,input_ports_bublbobl	,init_bublbobl	,ROT0	,	Taito Corporation", "Bubble Bobble" )
-	public static GameDriver driver_bublbobr	   = new GameDriver("1986"	,"bublbobr"	,"bublbobl.java"	,rom_bublbobr,driver_bublbobl	,machine_driver_bublbobl	,input_ports_bublbobl	,init_bublbobl	,ROT0	,	Taito America Corporation (Romstar license)", "Bubble Bobble (US with mode select)" )
-	public static GameDriver driver_bubbobr1	   = new GameDriver("1986"	,"bubbobr1"	,"bublbobl.java"	,rom_bubbobr1,driver_bublbobl	,machine_driver_bublbobl	,input_ports_bublbobl	,init_bublbobl	,ROT0	,	Taito America Corporation (Romstar license)", "Bubble Bobble (US)" )
-	public static GameDriver driver_boblbobl	   = new GameDriver("1986"	,"boblbobl"	,"bublbobl.java"	,rom_boblbobl,driver_bublbobl	,machine_driver_boblbobl	,input_ports_boblbobl	,init_boblbobl	,ROT0	,	bootleg", "Bobble Bobble" )
-	public static GameDriver driver_sboblbob	   = new GameDriver("1986"	,"sboblbob"	,"bublbobl.java"	,rom_sboblbob,driver_bublbobl	,machine_driver_boblbobl	,input_ports_sboblbob	,init_bublbobl	,ROT0	,	bootleg", "Super Bobble Bobble" )
-	public static GameDriver driver_tokio	   = new GameDriver("1986"	,"tokio"	,"bublbobl.java"	,rom_tokio,null	,machine_driver_tokio	,input_ports_tokio	,init_tokio	,ROT90	,	Taito", "Tokio / Scramble Formation", GAME_NOT_WORKING )
-	public static GameDriver driver_tokiob	   = new GameDriver("1986"	,"tokiob"	,"bublbobl.java"	,rom_tokiob,driver_tokio	,machine_driver_tokio	,input_ports_tokio	,init_tokio	,ROT90	,	bootleg", "Tokio / Scramble Formation (bootleg)" )
+	public static GameDriver driver_bublbobl	   = new GameDriver("1986"	,"bublbobl"	,"bublbobl.java"	,rom_bublbobl,null	,machine_driver_bublbobl	,input_ports_bublbobl	,init_bublbobl	,ROT0	,	"Taito Corporation", "Bubble Bobble" )
+	public static GameDriver driver_bublbobr	   = new GameDriver("1986"	,"bublbobr"	,"bublbobl.java"	,rom_bublbobr,driver_bublbobl	,machine_driver_bublbobl	,input_ports_bublbobl	,init_bublbobl	,ROT0	,	"Taito America Corporation (Romstar license)", "Bubble Bobble (US with mode select)" )
+	public static GameDriver driver_bubbobr1	   = new GameDriver("1986"	,"bubbobr1"	,"bublbobl.java"	,rom_bubbobr1,driver_bublbobl	,machine_driver_bublbobl	,input_ports_bublbobl	,init_bublbobl	,ROT0	,	"Taito America Corporation (Romstar license)", "Bubble Bobble (US)" )
+	public static GameDriver driver_boblbobl	   = new GameDriver("1986"	,"boblbobl"	,"bublbobl.java"	,rom_boblbobl,driver_bublbobl	,machine_driver_boblbobl	,input_ports_boblbobl	,init_boblbobl	,ROT0	,	"bootleg", "Bobble Bobble" )
+	public static GameDriver driver_sboblbob	   = new GameDriver("1986"	,"sboblbob"	,"bublbobl.java"	,rom_sboblbob,driver_bublbobl	,machine_driver_boblbobl	,input_ports_sboblbob	,init_bublbobl	,ROT0	,	"bootleg", "Super Bobble Bobble" )
+	public static GameDriver driver_tokio	   = new GameDriver("1986"	,"tokio"	,"bublbobl.java"	,rom_tokio,null	,machine_driver_tokio	,input_ports_tokio	,init_tokio	,ROT90	,	"Taito", "Tokio / Scramble Formation", GAME_NOT_WORKING )
+	public static GameDriver driver_tokiob	   = new GameDriver("1986"	,"tokiob"	,"bublbobl.java"	,rom_tokiob,driver_tokio	,machine_driver_tokio	,input_ports_tokio	,init_tokio	,ROT90	,	"bootleg", "Tokio / Scramble Formation (bootleg)" )
 }

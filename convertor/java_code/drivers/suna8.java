@@ -2493,16 +2493,16 @@ public class suna8
 	***************************************************************************/
 	
 	/* Working Games */
-	public static GameDriver driver_rranger	   = new GameDriver("1988"	,"rranger"	,"suna8.java"	,rom_rranger,null	,machine_driver_rranger	,input_ports_rranger	,null	,ROT0	,	SunA", "Rough Ranger (v2.0, Sharp Image license)", GAME_IMPERFECT_SOUND )
-	public static GameDriver driver_hardhead	   = new GameDriver("1988"	,"hardhead"	,"suna8.java"	,rom_hardhead,null	,machine_driver_hardhead	,input_ports_hardhead	,init_hardhead	,ROT0	,	SunA", "Hard Head",           GAME_IMPERFECT_SOUND )
-	public static GameDriver driver_hardhedb	   = new GameDriver("1988"	,"hardhedb"	,"suna8.java"	,rom_hardhedb,driver_hardhead	,machine_driver_hardhead	,input_ports_hardhead	,init_hardhedb	,ROT0	,	SunA", "Hard Head (Bootleg)", GAME_IMPERFECT_SOUND )
+	public static GameDriver driver_rranger	   = new GameDriver("1988"	,"rranger"	,"suna8.java"	,rom_rranger,null	,machine_driver_rranger	,input_ports_rranger	,null	,ROT0	,	"SunA", "Rough Ranger (v2.0, Sharp Image license)", GAME_IMPERFECT_SOUND )
+	public static GameDriver driver_hardhead	   = new GameDriver("1988"	,"hardhead"	,"suna8.java"	,rom_hardhead,null	,machine_driver_hardhead	,input_ports_hardhead	,init_hardhead	,ROT0	,	"SunA", "Hard Head",           GAME_IMPERFECT_SOUND )
+	public static GameDriver driver_hardhedb	   = new GameDriver("1988"	,"hardhedb"	,"suna8.java"	,rom_hardhedb,driver_hardhead	,machine_driver_hardhead	,input_ports_hardhead	,init_hardhedb	,ROT0	,	"SunA", "Hard Head (Bootleg)", GAME_IMPERFECT_SOUND )
 	
 	/* Non Working Games */
-	public static GameDriver driver_sranger	   = new GameDriver("1988"	,"sranger"	,"suna8.java"	,rom_sranger,driver_rranger	,machine_driver_rranger	,input_ports_rranger	,null	,ROT0	,	SunA", "Super Ranger (v2.0)",         GAME_NOT_WORKING )
-	public static GameDriver driver_srangerb	   = new GameDriver("1988"	,"srangerb"	,"suna8.java"	,rom_srangerb,driver_rranger	,machine_driver_rranger	,input_ports_rranger	,null	,ROT0	,	SunA", "Super Ranger (NIWA Bootleg)", GAME_NOT_WORKING )
-	public static GameDriver driver_srangerw	   = new GameDriver("1988"	,"srangerw"	,"suna8.java"	,rom_srangerw,driver_rranger	,machine_driver_rranger	,input_ports_rranger	,null	,ROT0	,	SunA", "Super Ranger (WDK License)",  GAME_NOT_WORKING )
-	public static GameDriver driver_starfigh	   = new GameDriver("1990"	,"starfigh"	,"suna8.java"	,rom_starfigh,null	,machine_driver_starfigh	,input_ports_hardhea2	,init_starfigh	,ROT90	,	SunA", "Star Fighter (v1)",   GAME_NOT_WORKING )
-	public static GameDriver driver_hardhea2	   = new GameDriver("1991"	,"hardhea2"	,"suna8.java"	,rom_hardhea2,null	,machine_driver_hardhea2	,input_ports_hardhea2	,init_hardhea2	,ROT0	,	SunA", "Hard Head 2 (v2.0)",  GAME_NOT_WORKING )
-	public static GameDriver driver_brickzn	   = new GameDriver("1992"	,"brickzn"	,"suna8.java"	,rom_brickzn,null	,machine_driver_brickzn	,input_ports_brickzn	,init_brickzn3	,ROT90	,	SunA", "Brick Zone (v5.0)",   GAME_NOT_WORKING )
-	public static GameDriver driver_brickzn3	   = new GameDriver("1992"	,"brickzn3"	,"suna8.java"	,rom_brickzn3,driver_brickzn	,machine_driver_brickzn	,input_ports_brickzn	,init_brickzn3	,ROT90	,	SunA", "Brick Zone (v3.0)",   GAME_NOT_WORKING )
+	public static GameDriver driver_sranger	   = new GameDriver("1988"	,"sranger"	,"suna8.java"	,rom_sranger,driver_rranger	,machine_driver_rranger	,input_ports_rranger	,null	,ROT0	,	"SunA", "Super Ranger (v2.0)",         GAME_NOT_WORKING )
+	public static GameDriver driver_srangerb	   = new GameDriver("1988"	,"srangerb"	,"suna8.java"	,rom_srangerb,driver_rranger	,machine_driver_rranger	,input_ports_rranger	,null	,ROT0	,	"SunA", "Super Ranger (NIWA Bootleg)", GAME_NOT_WORKING )
+	public static GameDriver driver_srangerw	   = new GameDriver("1988"	,"srangerw"	,"suna8.java"	,rom_srangerw,driver_rranger	,machine_driver_rranger	,input_ports_rranger	,null	,ROT0	,	"SunA", "Super Ranger (WDK License)",  GAME_NOT_WORKING )
+	public static GameDriver driver_starfigh	   = new GameDriver("1990"	,"starfigh"	,"suna8.java"	,rom_starfigh,null	,machine_driver_starfigh	,input_ports_hardhea2	,init_starfigh	,ROT90	,	"SunA", "Star Fighter (v1)",   GAME_NOT_WORKING )
+	public static GameDriver driver_hardhea2	   = new GameDriver("1991"	,"hardhea2"	,"suna8.java"	,rom_hardhea2,null	,machine_driver_hardhea2	,input_ports_hardhea2	,init_hardhea2	,ROT0	,	"SunA", "Hard Head 2 (v2.0)",  GAME_NOT_WORKING )
+	public static GameDriver driver_brickzn	   = new GameDriver("1992"	,"brickzn"	,"suna8.java"	,rom_brickzn,null	,machine_driver_brickzn	,input_ports_brickzn	,init_brickzn3	,ROT90	,	"SunA", "Brick Zone (v5.0)",   GAME_NOT_WORKING )
+	public static GameDriver driver_brickzn3	   = new GameDriver("1992"	,"brickzn3"	,"suna8.java"	,rom_brickzn3,driver_brickzn	,machine_driver_brickzn	,input_ports_brickzn	,init_brickzn3	,ROT90	,	"SunA", "Brick Zone (v3.0)",   GAME_NOT_WORKING )
 }

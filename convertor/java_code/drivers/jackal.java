@@ -532,8 +532,8 @@ public class jackal
 	
 	
 	
-	public static GameDriver driver_jackal	   = new GameDriver("1986"	,"jackal"	,"jackal.java"	,rom_jackal,null	,machine_driver_jackal	,input_ports_jackal	,null	,ROT90	,	Konami", "Jackal (World)", GAME_IMPERFECT_COLORS | GAME_NO_COCKTAIL )
-	public static GameDriver driver_topgunr	   = new GameDriver("1986"	,"topgunr"	,"jackal.java"	,rom_topgunr,driver_jackal	,machine_driver_jackal	,input_ports_jackal	,null	,ROT90	,	Konami", "Top Gunner (US)", GAME_IMPERFECT_COLORS | GAME_NO_COCKTAIL )
-	public static GameDriver driver_jackalj	   = new GameDriver("1986"	,"jackalj"	,"jackal.java"	,rom_jackalj,driver_jackal	,machine_driver_jackal	,input_ports_jackal	,null	,ROT90	,	Konami", "Tokushu Butai Jackal (Japan)", GAME_IMPERFECT_COLORS | GAME_NO_COCKTAIL )
-	public static GameDriver driver_topgunbl	   = new GameDriver("1987"	,"topgunbl"	,"jackal.java"	,rom_topgunbl,driver_jackal	,machine_driver_jackal	,input_ports_topgunbl	,null	,ROT90	,	bootleg", "Top Gunner (bootleg)", GAME_IMPERFECT_COLORS | GAME_NO_COCKTAIL )
+	public static GameDriver driver_jackal	   = new GameDriver("1986"	,"jackal"	,"jackal.java"	,rom_jackal,null	,machine_driver_jackal	,input_ports_jackal	,null	,ROT90	,	"Konami", "Jackal (World)", GAME_IMPERFECT_COLORS | GAME_NO_COCKTAIL )
+	public static GameDriver driver_topgunr	   = new GameDriver("1986"	,"topgunr"	,"jackal.java"	,rom_topgunr,driver_jackal	,machine_driver_jackal	,input_ports_jackal	,null	,ROT90	,	"Konami", "Top Gunner (US)", GAME_IMPERFECT_COLORS | GAME_NO_COCKTAIL )
+	public static GameDriver driver_jackalj	   = new GameDriver("1986"	,"jackalj"	,"jackal.java"	,rom_jackalj,driver_jackal	,machine_driver_jackal	,input_ports_jackal	,null	,ROT90	,	"Konami", "Tokushu Butai Jackal (Japan)", GAME_IMPERFECT_COLORS | GAME_NO_COCKTAIL )
+	public static GameDriver driver_topgunbl	   = new GameDriver("1987"	,"topgunbl"	,"jackal.java"	,rom_topgunbl,driver_jackal	,machine_driver_jackal	,input_ports_topgunbl	,null	,ROT90	,	"bootleg", "Top Gunner (bootleg)", GAME_IMPERFECT_COLORS | GAME_NO_COCKTAIL )
 }

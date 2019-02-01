@@ -841,10 +841,10 @@ public class lastduel
 	
 	/******************************************************************************/
 	
-	public static GameDriver driver_lastduel	   = new GameDriver("1988"	,"lastduel"	,"lastduel.java"	,rom_lastduel,null	,machine_driver_lastduel	,input_ports_lastduel	,null	,ROT270	,	Capcom", "Last Duel (US set 1)" )
-	public static GameDriver driver_lstduela	   = new GameDriver("1988"	,"lstduela"	,"lastduel.java"	,rom_lstduela,driver_lastduel	,machine_driver_lastduel	,input_ports_lastduel	,null	,ROT270	,	Capcom", "Last Duel (US set 2)" )
-	public static GameDriver driver_lstduelb	   = new GameDriver("1988"	,"lstduelb"	,"lastduel.java"	,rom_lstduelb,driver_lastduel	,machine_driver_lastduel	,input_ports_lastduel	,null	,ROT270	,	bootleg", "Last Duel (bootleg)" )
-	public static GameDriver driver_madgear	   = new GameDriver("1989"	,"madgear"	,"lastduel.java"	,rom_madgear,null	,machine_driver_madgear	,input_ports_madgear	,null	,ROT270	,	Capcom", "Mad Gear (US)" )
-	public static GameDriver driver_madgearj	   = new GameDriver("1989"	,"madgearj"	,"lastduel.java"	,rom_madgearj,driver_madgear	,machine_driver_madgear	,input_ports_madgear	,null	,ROT270	,	Capcom", "Mad Gear (Japan)" )
-	public static GameDriver driver_ledstorm	   = new GameDriver("1988"	,"ledstorm"	,"lastduel.java"	,rom_ledstorm,driver_madgear	,machine_driver_madgear	,input_ports_madgear	,null	,ROT270	,	Capcom", "Led Storm (US)" )
+	public static GameDriver driver_lastduel	   = new GameDriver("1988"	,"lastduel"	,"lastduel.java"	,rom_lastduel,null	,machine_driver_lastduel	,input_ports_lastduel	,null	,ROT270	,	"Capcom", "Last Duel (US set 1)" )
+	public static GameDriver driver_lstduela	   = new GameDriver("1988"	,"lstduela"	,"lastduel.java"	,rom_lstduela,driver_lastduel	,machine_driver_lastduel	,input_ports_lastduel	,null	,ROT270	,	"Capcom", "Last Duel (US set 2)" )
+	public static GameDriver driver_lstduelb	   = new GameDriver("1988"	,"lstduelb"	,"lastduel.java"	,rom_lstduelb,driver_lastduel	,machine_driver_lastduel	,input_ports_lastduel	,null	,ROT270	,	"bootleg", "Last Duel (bootleg)" )
+	public static GameDriver driver_madgear	   = new GameDriver("1989"	,"madgear"	,"lastduel.java"	,rom_madgear,null	,machine_driver_madgear	,input_ports_madgear	,null	,ROT270	,	"Capcom", "Mad Gear (US)" )
+	public static GameDriver driver_madgearj	   = new GameDriver("1989"	,"madgearj"	,"lastduel.java"	,rom_madgearj,driver_madgear	,machine_driver_madgear	,input_ports_madgear	,null	,ROT270	,	"Capcom", "Mad Gear (Japan)" )
+	public static GameDriver driver_ledstorm	   = new GameDriver("1988"	,"ledstorm"	,"lastduel.java"	,rom_ledstorm,driver_madgear	,machine_driver_madgear	,input_ports_madgear	,null	,ROT270	,	"Capcom", "Led Storm (US)" )
 }

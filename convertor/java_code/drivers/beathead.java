@@ -609,5 +609,5 @@ public class beathead
 	 *
 	 *************************************/
 	
-	public static GameDriver driver_beathead	   = new GameDriver("1993"	,"beathead"	,"beathead.java"	,rom_beathead,null	,machine_driver_beathead	,input_ports_beathead	,init_beathead	,ROT0	,	Atari Games", "BeatHead (prototype)" )
+	public static GameDriver driver_beathead	   = new GameDriver("1993"	,"beathead"	,"beathead.java"	,rom_beathead,null	,machine_driver_beathead	,input_ports_beathead	,init_beathead	,ROT0	,	"Atari Games", "BeatHead (prototype)" )
 }

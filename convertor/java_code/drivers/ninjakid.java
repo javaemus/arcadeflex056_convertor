@@ -353,5 +353,5 @@ public class ninjakid
 	 Game Drivers
 	*******************************************************************************/
 	
-	public static GameDriver driver_ninjakun	   = new GameDriver("1984"	,"ninjakun"	,"ninjakid.java"	,rom_ninjakun,null	,machine_driver_ninjakid	,input_ports_ninjakid	,init_ninjakid	,ROT0	,	[UPL] (Taito license)", "Ninjakun Majou no Bouken" )
+	public static GameDriver driver_ninjakun	   = new GameDriver("1984"	,"ninjakun"	,"ninjakid.java"	,rom_ninjakun,null	,machine_driver_ninjakid	,input_ports_ninjakid	,init_ninjakid	,ROT0	,	"[UPL] (Taito license)", "Ninjakun Majou no Bouken" )
 }

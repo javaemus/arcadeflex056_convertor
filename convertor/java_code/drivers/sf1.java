@@ -1221,7 +1221,7 @@ public class sf1
 	
 	
 	
-	public static GameDriver driver_sf1	   = new GameDriver("1987"	,"sf1"	,"sf1.java"	,rom_sf1,null	,machine_driver_sf1	,input_ports_sf1	,null	,ROT0	,	Capcom", "Street Fighter (World)" )
-	public static GameDriver driver_sf1us	   = new GameDriver("1987"	,"sf1us"	,"sf1.java"	,rom_sf1us,driver_sf1	,machine_driver_sf1us	,input_ports_sf1us	,null	,ROT0	,	Capcom", "Street Fighter (US)" )
-	public static GameDriver driver_sf1jp	   = new GameDriver("1987"	,"sf1jp"	,"sf1.java"	,rom_sf1jp,driver_sf1	,machine_driver_sf1jp	,input_ports_sf1jp	,null	,ROT0	,	Capcom", "Street Fighter (Japan)" )
+	public static GameDriver driver_sf1	   = new GameDriver("1987"	,"sf1"	,"sf1.java"	,rom_sf1,null	,machine_driver_sf1	,input_ports_sf1	,null	,ROT0	,	"Capcom", "Street Fighter (World)" )
+	public static GameDriver driver_sf1us	   = new GameDriver("1987"	,"sf1us"	,"sf1.java"	,rom_sf1us,driver_sf1	,machine_driver_sf1us	,input_ports_sf1us	,null	,ROT0	,	"Capcom", "Street Fighter (US)" )
+	public static GameDriver driver_sf1jp	   = new GameDriver("1987"	,"sf1jp"	,"sf1.java"	,rom_sf1jp,driver_sf1	,machine_driver_sf1jp	,input_ports_sf1jp	,null	,ROT0	,	"Capcom", "Street Fighter (Japan)" )
 }

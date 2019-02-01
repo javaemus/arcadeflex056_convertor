@@ -877,6 +877,6 @@ public class suna16
 	
 	***************************************************************************/
 	
-	public static GameDriver driver_bssoccer	   = new GameDriver("1996"	,"bssoccer"	,"suna16.java"	,rom_bssoccer,null	,machine_driver_bssoccer	,input_ports_bssoccer	,null	,ROT0	,	SunA", "Back Street Soccer" )
-	public static GameDriver driver_uballoon	   = new GameDriver("1996"	,"uballoon"	,"suna16.java"	,rom_uballoon,null	,machine_driver_uballoon	,input_ports_uballoon	,init_uballoon	,ROT0	,	SunA", "Ultra Balloon" )
+	public static GameDriver driver_bssoccer	   = new GameDriver("1996"	,"bssoccer"	,"suna16.java"	,rom_bssoccer,null	,machine_driver_bssoccer	,input_ports_bssoccer	,null	,ROT0	,	"SunA", "Back Street Soccer" )
+	public static GameDriver driver_uballoon	   = new GameDriver("1996"	,"uballoon"	,"suna16.java"	,rom_uballoon,null	,machine_driver_uballoon	,input_ports_uballoon	,init_uballoon	,ROT0	,	"SunA", "Ultra Balloon" )
 }

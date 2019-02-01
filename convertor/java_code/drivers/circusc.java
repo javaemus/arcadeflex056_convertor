@@ -439,8 +439,8 @@ public class circusc
 	}
 	
 	
-	public static GameDriver driver_circusc	   = new GameDriver("1984"	,"circusc"	,"circusc.java"	,rom_circusc,null	,machine_driver_circusc	,input_ports_circusc	,init_circusc	,ROT90	,	Konami", "Circus Charlie" )
-	public static GameDriver driver_circusc2	   = new GameDriver("1984"	,"circusc2"	,"circusc.java"	,rom_circusc2,driver_circusc	,machine_driver_circusc	,input_ports_circusc	,init_circusc	,ROT90	,	Konami", "Circus Charlie (no level select)" )
-	public static GameDriver driver_circuscc	   = new GameDriver("1984"	,"circuscc"	,"circusc.java"	,rom_circuscc,driver_circusc	,machine_driver_circusc	,input_ports_circusc	,init_circusc	,ROT90	,	Konami (Centuri licence)", "Circus Charlie (Centuri)" )
-	public static GameDriver driver_circusce	   = new GameDriver("1984"	,"circusce"	,"circusc.java"	,rom_circusce,driver_circusc	,machine_driver_circusc	,input_ports_circusc	,init_circusc	,ROT90	,	Konami (Centuri licence)", "Circus Charlie (Centuri, earlier)" )
+	public static GameDriver driver_circusc	   = new GameDriver("1984"	,"circusc"	,"circusc.java"	,rom_circusc,null	,machine_driver_circusc	,input_ports_circusc	,init_circusc	,ROT90	,	"Konami", "Circus Charlie" )
+	public static GameDriver driver_circusc2	   = new GameDriver("1984"	,"circusc2"	,"circusc.java"	,rom_circusc2,driver_circusc	,machine_driver_circusc	,input_ports_circusc	,init_circusc	,ROT90	,	"Konami", "Circus Charlie (no level select)" )
+	public static GameDriver driver_circuscc	   = new GameDriver("1984"	,"circuscc"	,"circusc.java"	,rom_circuscc,driver_circusc	,machine_driver_circusc	,input_ports_circusc	,init_circusc	,ROT90	,	"Konami (Centuri licence)", "Circus Charlie (Centuri)" )
+	public static GameDriver driver_circusce	   = new GameDriver("1984"	,"circusce"	,"circusc.java"	,rom_circusce,driver_circusc	,machine_driver_circusc	,input_ports_circusc	,init_circusc	,ROT90	,	"Konami (Centuri licence)", "Circus Charlie (Centuri, earlier)" )
 }

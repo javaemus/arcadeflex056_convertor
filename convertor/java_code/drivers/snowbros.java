@@ -416,9 +416,9 @@ public class snowbros
 	ROM_END(); }}; 
 	
 	
-	public static GameDriver driver_snowbros	   = new GameDriver("1990"	,"snowbros"	,"snowbros.java"	,rom_snowbros,null	,machine_driver_snowbros	,input_ports_snowbros	,null	,ROT0	,	Toaplan (Romstar license)", "Snow Bros. - Nick & Tom (set 1)" )
-	public static GameDriver driver_snowbroa	   = new GameDriver("1990"	,"snowbroa"	,"snowbros.java"	,rom_snowbroa,driver_snowbros	,machine_driver_snowbros	,input_ports_snowbros	,null	,ROT0	,	Toaplan (Romstar license)", "Snow Bros. - Nick & Tom (set 2)" )
-	public static GameDriver driver_snowbrob	   = new GameDriver("1990"	,"snowbrob"	,"snowbros.java"	,rom_snowbrob,driver_snowbros	,machine_driver_snowbros	,input_ports_snowbros	,null	,ROT0	,	Toaplan (Romstar license)", "Snow Bros. - Nick & Tom (set 3)" )
-	public static GameDriver driver_snowbroj	   = new GameDriver("1990"	,"snowbroj"	,"snowbros.java"	,rom_snowbroj,driver_snowbros	,machine_driver_snowbros	,input_ports_snowbros	,null	,ROT0	,	Toaplan (Romstar license)", "Snow Bros. - Nick & Tom (Japan)" )
-	public static GameDriver driver_wintbob	   = new GameDriver("1990"	,"wintbob"	,"snowbros.java"	,rom_wintbob,driver_snowbros	,machine_driver_wintbob	,input_ports_snowbros	,null	,ROT0	,	bootleg", "The Winter Bobble" )
+	public static GameDriver driver_snowbros	   = new GameDriver("1990"	,"snowbros"	,"snowbros.java"	,rom_snowbros,null	,machine_driver_snowbros	,input_ports_snowbros	,null	,ROT0	,	"Toaplan (Romstar license)", "Snow Bros. - Nick & Tom (set 1)" )
+	public static GameDriver driver_snowbroa	   = new GameDriver("1990"	,"snowbroa"	,"snowbros.java"	,rom_snowbroa,driver_snowbros	,machine_driver_snowbros	,input_ports_snowbros	,null	,ROT0	,	"Toaplan (Romstar license)", "Snow Bros. - Nick & Tom (set 2)" )
+	public static GameDriver driver_snowbrob	   = new GameDriver("1990"	,"snowbrob"	,"snowbros.java"	,rom_snowbrob,driver_snowbros	,machine_driver_snowbros	,input_ports_snowbros	,null	,ROT0	,	"Toaplan (Romstar license)", "Snow Bros. - Nick & Tom (set 3)" )
+	public static GameDriver driver_snowbroj	   = new GameDriver("1990"	,"snowbroj"	,"snowbros.java"	,rom_snowbroj,driver_snowbros	,machine_driver_snowbros	,input_ports_snowbros	,null	,ROT0	,	"Toaplan (Romstar license)", "Snow Bros. - Nick & Tom (Japan)" )
+	public static GameDriver driver_wintbob	   = new GameDriver("1990"	,"wintbob"	,"snowbros.java"	,rom_wintbob,driver_snowbros	,machine_driver_wintbob	,input_ports_snowbros	,null	,ROT0	,	"bootleg", "The Winter Bobble" )
 }

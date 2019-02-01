@@ -861,7 +861,7 @@ public class marvins
 	
 	
 	
-	public static GameDriver driver_marvins	   = new GameDriver("1983"	,"marvins"	,"marvins.java"	,rom_marvins,null	,machine_driver_marvins	,input_ports_marvins	,init_marvins	,ROT270	,	SNK", "Marvin's Maze" )
-	public static GameDriver driver_madcrash	   = new GameDriver("1984"	,"madcrash"	,"marvins.java"	,rom_madcrash,null	,machine_driver_madcrash	,input_ports_madcrash	,init_madcrash	,ROT0	,	SNK", "Mad Crasher", GAME_IMPERFECT_SOUND )
-	public static GameDriver driver_vangrd2	   = new GameDriver("1984"	,"vangrd2"	,"marvins.java"	,rom_vangrd2,null	,machine_driver_madcrash	,input_ports_vangrd2	,init_vangrd2	,ROT270	,	SNK", "Vanguard II" )
+	public static GameDriver driver_marvins	   = new GameDriver("1983"	,"marvins"	,"marvins.java"	,rom_marvins,null	,machine_driver_marvins	,input_ports_marvins	,init_marvins	,ROT270	,	"SNK", "Marvin's Maze" )
+	public static GameDriver driver_madcrash	   = new GameDriver("1984"	,"madcrash"	,"marvins.java"	,rom_madcrash,null	,machine_driver_madcrash	,input_ports_madcrash	,init_madcrash	,ROT0	,	"SNK", "Mad Crasher", GAME_IMPERFECT_SOUND )
+	public static GameDriver driver_vangrd2	   = new GameDriver("1984"	,"vangrd2"	,"marvins.java"	,rom_vangrd2,null	,machine_driver_madcrash	,input_ports_vangrd2	,init_vangrd2	,ROT270	,	"SNK", "Vanguard II" )
 }

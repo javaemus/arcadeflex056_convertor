@@ -2031,16 +2031,16 @@ public class toaplan1
 	
 	
 	
-	public static GameDriver driver_rallybik	   = new GameDriver("1988"	,"rallybik"	,"toaplan1.java"	,rom_rallybik,null	,machine_driver_rallybik	,input_ports_rallybik	,null	,ROT270	,	[Toaplan] Taito Corporation", "Rally Bike / Dash Yarou" )
-	public static GameDriver driver_truxton	   = new GameDriver("1988"	,"truxton"	,"toaplan1.java"	,rom_truxton,null	,machine_driver_truxton	,input_ports_truxton	,null	,ROT270	,	[Toaplan] Taito Corporation", "Truxton / Tatsujin" )
-	public static GameDriver driver_hellfire	   = new GameDriver("1989"	,"hellfire"	,"toaplan1.java"	,rom_hellfire,null	,machine_driver_hellfire	,input_ports_hellfire	,null	,ROT0	,	Toaplan (Taito license)", "Hellfire" )
-	public static GameDriver driver_zerowing	   = new GameDriver("1989"	,"zerowing"	,"toaplan1.java"	,rom_zerowing,null	,machine_driver_zerowing	,input_ports_zerowing	,null	,ROT0	,	Toaplan", "Zero Wing" )
-	public static GameDriver driver_demonwld	   = new GameDriver("1989"	,"demonwld"	,"toaplan1.java"	,rom_demonwld,null	,machine_driver_demonwld	,input_ports_demonwld	,null	,ROT0	,	Toaplan (Taito license)", "Demon's World / Horror Story" )
-	public static GameDriver driver_fireshrk	   = new GameDriver("1990"	,"fireshrk"	,"toaplan1.java"	,rom_fireshrk,null	,machine_driver_samesame	,input_ports_fireshrk	,null	,ROT270	,	Toaplan", "Fire Shark", GAME_NO_SOUND )
-	public static GameDriver driver_samesame	   = new GameDriver("1989"	,"samesame"	,"toaplan1.java"	,rom_samesame,driver_fireshrk	,machine_driver_samesame	,input_ports_samesame	,null	,ROT270	,	Toaplan", "Same! Same! Same!", GAME_NO_SOUND )
-	public static GameDriver driver_outzone	   = new GameDriver("1990"	,"outzone"	,"toaplan1.java"	,rom_outzone,null	,machine_driver_outzone	,input_ports_outzone	,null	,ROT270	,	Toaplan", "Out Zone (set 1)" )
-	public static GameDriver driver_outzonea	   = new GameDriver("1990"	,"outzonea"	,"toaplan1.java"	,rom_outzonea,driver_outzone	,machine_driver_outzone	,input_ports_outzone	,null	,ROT270	,	bootleg", "Out Zone (set 2)" )
-	public static GameDriver driver_vimana	   = new GameDriver("1991"	,"vimana"	,"toaplan1.java"	,rom_vimana,null	,machine_driver_vimana	,input_ports_vimana	,null	,ROT270	,	Toaplan", "Vimana (set 1)", GAME_NO_SOUND )
-	public static GameDriver driver_vimana2	   = new GameDriver("1991"	,"vimana2"	,"toaplan1.java"	,rom_vimana2,driver_vimana	,machine_driver_vimana	,input_ports_vimana	,null	,ROT270	,	Toaplan", "Vimana (set 2)", GAME_NO_SOUND )
-	public static GameDriver driver_vimanan	   = new GameDriver("1991"	,"vimanan"	,"toaplan1.java"	,rom_vimanan,driver_vimana	,machine_driver_vimana	,input_ports_vimanan	,null	,ROT270	,	Toaplan (Nova Apparate GMBH & Co license)", "Vimana (Nova Apparate GMBH & Co)", GAME_NO_SOUND )
+	public static GameDriver driver_rallybik	   = new GameDriver("1988"	,"rallybik"	,"toaplan1.java"	,rom_rallybik,null	,machine_driver_rallybik	,input_ports_rallybik	,null	,ROT270	,	"[Toaplan] Taito Corporation", "Rally Bike / Dash Yarou" )
+	public static GameDriver driver_truxton	   = new GameDriver("1988"	,"truxton"	,"toaplan1.java"	,rom_truxton,null	,machine_driver_truxton	,input_ports_truxton	,null	,ROT270	,	"[Toaplan] Taito Corporation", "Truxton / Tatsujin" )
+	public static GameDriver driver_hellfire	   = new GameDriver("1989"	,"hellfire"	,"toaplan1.java"	,rom_hellfire,null	,machine_driver_hellfire	,input_ports_hellfire	,null	,ROT0	,	"Toaplan (Taito license)", "Hellfire" )
+	public static GameDriver driver_zerowing	   = new GameDriver("1989"	,"zerowing"	,"toaplan1.java"	,rom_zerowing,null	,machine_driver_zerowing	,input_ports_zerowing	,null	,ROT0	,	"Toaplan", "Zero Wing" )
+	public static GameDriver driver_demonwld	   = new GameDriver("1989"	,"demonwld"	,"toaplan1.java"	,rom_demonwld,null	,machine_driver_demonwld	,input_ports_demonwld	,null	,ROT0	,	"Toaplan (Taito license)", "Demon's World / Horror Story" )
+	public static GameDriver driver_fireshrk	   = new GameDriver("1990"	,"fireshrk"	,"toaplan1.java"	,rom_fireshrk,null	,machine_driver_samesame	,input_ports_fireshrk	,null	,ROT270	,	"Toaplan", "Fire Shark", GAME_NO_SOUND )
+	public static GameDriver driver_samesame	   = new GameDriver("1989"	,"samesame"	,"toaplan1.java"	,rom_samesame,driver_fireshrk	,machine_driver_samesame	,input_ports_samesame	,null	,ROT270	,	"Toaplan", "Same! Same! Same!", GAME_NO_SOUND )
+	public static GameDriver driver_outzone	   = new GameDriver("1990"	,"outzone"	,"toaplan1.java"	,rom_outzone,null	,machine_driver_outzone	,input_ports_outzone	,null	,ROT270	,	"Toaplan", "Out Zone (set 1)" )
+	public static GameDriver driver_outzonea	   = new GameDriver("1990"	,"outzonea"	,"toaplan1.java"	,rom_outzonea,driver_outzone	,machine_driver_outzone	,input_ports_outzone	,null	,ROT270	,	"bootleg", "Out Zone (set 2)" )
+	public static GameDriver driver_vimana	   = new GameDriver("1991"	,"vimana"	,"toaplan1.java"	,rom_vimana,null	,machine_driver_vimana	,input_ports_vimana	,null	,ROT270	,	"Toaplan", "Vimana (set 1)", GAME_NO_SOUND )
+	public static GameDriver driver_vimana2	   = new GameDriver("1991"	,"vimana2"	,"toaplan1.java"	,rom_vimana2,driver_vimana	,machine_driver_vimana	,input_ports_vimana	,null	,ROT270	,	"Toaplan", "Vimana (set 2)", GAME_NO_SOUND )
+	public static GameDriver driver_vimanan	   = new GameDriver("1991"	,"vimanan"	,"toaplan1.java"	,rom_vimanan,driver_vimana	,machine_driver_vimana	,input_ports_vimanan	,null	,ROT270	,	"Toaplan (Nova Apparate GMBH & Co license)", "Vimana (Nova Apparate GMBH & Co)", GAME_NO_SOUND )
 }

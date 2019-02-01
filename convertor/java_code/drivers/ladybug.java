@@ -562,8 +562,8 @@ public class ladybug
 	
 	
 	
-	public static GameDriver driver_ladybug	   = new GameDriver("1981"	,"ladybug"	,"ladybug.java"	,rom_ladybug,null	,machine_driver_ladybug	,input_ports_ladybug	,null	,ROT270	,	Universal", "Lady Bug" )
-	public static GameDriver driver_ladybugb	   = new GameDriver("1982"	,"ladybugb"	,"ladybug.java"	,rom_ladybugb,driver_ladybug	,machine_driver_ladybug	,input_ports_ladybug	,null	,ROT270	,	bootleg", "Lady Bug (bootleg)" )
-	public static GameDriver driver_snapjack	   = new GameDriver("1981?"	,"snapjack"	,"ladybug.java"	,rom_snapjack,null	,machine_driver_ladybug	,input_ports_snapjack	,null	,ROT0	,	Universal", "Snap Jack" )
-	public static GameDriver driver_cavenger	   = new GameDriver("1981"	,"cavenger"	,"ladybug.java"	,rom_cavenger,null	,machine_driver_ladybug	,input_ports_cavenger	,null	,ROT0	,	Universal", "Cosmic Avenger" )
+	public static GameDriver driver_ladybug	   = new GameDriver("1981"	,"ladybug"	,"ladybug.java"	,rom_ladybug,null	,machine_driver_ladybug	,input_ports_ladybug	,null	,ROT270	,	"Universal", "Lady Bug" )
+	public static GameDriver driver_ladybugb	   = new GameDriver("1982"	,"ladybugb"	,"ladybug.java"	,rom_ladybugb,driver_ladybug	,machine_driver_ladybug	,input_ports_ladybug	,null	,ROT270	,	"bootleg", "Lady Bug (bootleg)" )
+	public static GameDriver driver_snapjack	   = new GameDriver("1981?"	,"snapjack"	,"ladybug.java"	,rom_snapjack,null	,machine_driver_ladybug	,input_ports_snapjack	,null	,ROT0	,	"Universal", "Snap Jack" )
+	public static GameDriver driver_cavenger	   = new GameDriver("1981"	,"cavenger"	,"ladybug.java"	,rom_cavenger,null	,machine_driver_ladybug	,input_ports_cavenger	,null	,ROT0	,	"Universal", "Cosmic Avenger" )
 }

@@ -540,9 +540,9 @@ public class darkseal
 	
 	/******************************************************************************/
 	
-	public static GameDriver driver_darkseal	   = new GameDriver("1990"	,"darkseal"	,"darkseal.java"	,rom_darkseal,null	,machine_driver_darkseal	,input_ports_darkseal	,init_darkseal	,ROT0	,	Data East Corporation", "Dark Seal (World revision 3)" )
-	public static GameDriver driver_darksea1	   = new GameDriver("1990"	,"darksea1"	,"darkseal.java"	,rom_darksea1,driver_darkseal	,machine_driver_darkseal	,input_ports_darkseal	,init_darkseal	,ROT0	,	Data East Corporation", "Dark Seal (World revision 1)" )
-	public static GameDriver driver_darkseaj	   = new GameDriver("1990"	,"darkseaj"	,"darkseal.java"	,rom_darkseaj,driver_darkseal	,machine_driver_darkseal	,input_ports_darkseal	,init_darkseal	,ROT0	,	Data East Corporation", "Dark Seal (Japan)" )
-	public static GameDriver driver_gatedoom	   = new GameDriver("1990"	,"gatedoom"	,"darkseal.java"	,rom_gatedoom,driver_darkseal	,machine_driver_darkseal	,input_ports_darkseal	,init_darkseal	,ROT0	,	Data East Corporation", "Gate of Doom (US revision 4)" )
-	public static GameDriver driver_gatedom1	   = new GameDriver("1990"	,"gatedom1"	,"darkseal.java"	,rom_gatedom1,driver_darkseal	,machine_driver_darkseal	,input_ports_darkseal	,init_darkseal	,ROT0	,	Data East Corporation", "Gate of Doom (US revision 1)" )
+	public static GameDriver driver_darkseal	   = new GameDriver("1990"	,"darkseal"	,"darkseal.java"	,rom_darkseal,null	,machine_driver_darkseal	,input_ports_darkseal	,init_darkseal	,ROT0	,	"Data East Corporation", "Dark Seal (World revision 3)" )
+	public static GameDriver driver_darksea1	   = new GameDriver("1990"	,"darksea1"	,"darkseal.java"	,rom_darksea1,driver_darkseal	,machine_driver_darkseal	,input_ports_darkseal	,init_darkseal	,ROT0	,	"Data East Corporation", "Dark Seal (World revision 1)" )
+	public static GameDriver driver_darkseaj	   = new GameDriver("1990"	,"darkseaj"	,"darkseal.java"	,rom_darkseaj,driver_darkseal	,machine_driver_darkseal	,input_ports_darkseal	,init_darkseal	,ROT0	,	"Data East Corporation", "Dark Seal (Japan)" )
+	public static GameDriver driver_gatedoom	   = new GameDriver("1990"	,"gatedoom"	,"darkseal.java"	,rom_gatedoom,driver_darkseal	,machine_driver_darkseal	,input_ports_darkseal	,init_darkseal	,ROT0	,	"Data East Corporation", "Gate of Doom (US revision 4)" )
+	public static GameDriver driver_gatedom1	   = new GameDriver("1990"	,"gatedom1"	,"darkseal.java"	,rom_gatedom1,driver_darkseal	,machine_driver_darkseal	,input_ports_darkseal	,init_darkseal	,ROT0	,	"Data East Corporation", "Gate of Doom (US revision 1)" )
 }

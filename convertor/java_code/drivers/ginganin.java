@@ -494,6 +494,6 @@ public class ginganin
 	}
 	
 	
-	public static GameDriver driver_ginganin	   = new GameDriver("1987"	,"ginganin"	,"ginganin.java"	,rom_ginganin,null	,machine_driver_ginganin	,input_ports_ginganin	,init_ginganin	,ROT0	,	Jaleco", "Ginga NinkyouDen" )
+	public static GameDriver driver_ginganin	   = new GameDriver("1987"	,"ginganin"	,"ginganin.java"	,rom_ginganin,null	,machine_driver_ginganin	,input_ports_ginganin	,init_ginganin	,ROT0	,	"Jaleco", "Ginga NinkyouDen" )
 	
 }

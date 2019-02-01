@@ -686,13 +686,13 @@ public class jack
 	
 	
 	
-	public static GameDriver driver_jack	   = new GameDriver("1982"	,"jack"	,"jack.java"	,rom_jack,null	,machine_driver_jack	,input_ports_jack	,init_jack	,ROT90	,	Cinematronics", "Jack the Giantkiller (set 1)" )
-	public static GameDriver driver_jack2	   = new GameDriver("1982"	,"jack2"	,"jack.java"	,rom_jack2,driver_jack	,machine_driver_jack	,input_ports_jack	,init_jack	,ROT90	,	Cinematronics", "Jack the Giantkiller (set 2)" )
-	public static GameDriver driver_jack3	   = new GameDriver("1982"	,"jack3"	,"jack.java"	,rom_jack3,driver_jack	,machine_driver_jack	,input_ports_jack	,init_jack	,ROT90	,	Cinematronics", "Jack the Giantkiller (set 3)" )
-	public static GameDriver driver_treahunt	   = new GameDriver("1982"	,"treahunt"	,"jack.java"	,rom_treahunt,driver_jack	,machine_driver_jack	,input_ports_jack	,init_treahunt	,ROT90	,	Hara Industries", "Treasure Hunt (Japan?)" )
-	public static GameDriver driver_zzyzzyxx	   = new GameDriver("1982"	,"zzyzzyxx"	,"jack.java"	,rom_zzyzzyxx,null	,machine_driver_jack	,input_ports_zzyzzyxx	,init_zzyzzyxx	,ROT90	,	Cinematronics + Advanced Microcomputer Systems", "Zzyzzyxx (set 1)" )
-	public static GameDriver driver_zzyzzyx2	   = new GameDriver("1982"	,"zzyzzyx2"	,"jack.java"	,rom_zzyzzyx2,driver_zzyzzyxx	,machine_driver_jack	,input_ports_zzyzzyxx	,init_zzyzzyxx	,ROT90	,	Cinematronics + Advanced Microcomputer Systems", "Zzyzzyxx (set 2)" )
-	public static GameDriver driver_brix	   = new GameDriver("1982"	,"brix"	,"jack.java"	,rom_brix,driver_zzyzzyxx	,machine_driver_jack	,input_ports_zzyzzyxx	,init_zzyzzyxx	,ROT90	,	Cinematronics + Advanced Microcomputer Systems", "Brix" )
-	public static GameDriver driver_freeze	   = new GameDriver("19??"	,"freeze"	,"jack.java"	,rom_freeze,null	,machine_driver_jack	,input_ports_freeze	,init_jack	,ROT90	,	Cinematronics", "Freeze" )
-	public static GameDriver driver_sucasino	   = new GameDriver("1982"	,"sucasino"	,"jack.java"	,rom_sucasino,null	,machine_driver_jack	,input_ports_jack	,init_jack	,ROT90	,	Data Amusement", "Super Casino" )
+	public static GameDriver driver_jack	   = new GameDriver("1982"	,"jack"	,"jack.java"	,rom_jack,null	,machine_driver_jack	,input_ports_jack	,init_jack	,ROT90	,	"Cinematronics", "Jack the Giantkiller (set 1)" )
+	public static GameDriver driver_jack2	   = new GameDriver("1982"	,"jack2"	,"jack.java"	,rom_jack2,driver_jack	,machine_driver_jack	,input_ports_jack	,init_jack	,ROT90	,	"Cinematronics", "Jack the Giantkiller (set 2)" )
+	public static GameDriver driver_jack3	   = new GameDriver("1982"	,"jack3"	,"jack.java"	,rom_jack3,driver_jack	,machine_driver_jack	,input_ports_jack	,init_jack	,ROT90	,	"Cinematronics", "Jack the Giantkiller (set 3)" )
+	public static GameDriver driver_treahunt	   = new GameDriver("1982"	,"treahunt"	,"jack.java"	,rom_treahunt,driver_jack	,machine_driver_jack	,input_ports_jack	,init_treahunt	,ROT90	,	"Hara Industries", "Treasure Hunt (Japan?)" )
+	public static GameDriver driver_zzyzzyxx	   = new GameDriver("1982"	,"zzyzzyxx"	,"jack.java"	,rom_zzyzzyxx,null	,machine_driver_jack	,input_ports_zzyzzyxx	,init_zzyzzyxx	,ROT90	,	"Cinematronics + Advanced Microcomputer Systems", "Zzyzzyxx (set 1)" )
+	public static GameDriver driver_zzyzzyx2	   = new GameDriver("1982"	,"zzyzzyx2"	,"jack.java"	,rom_zzyzzyx2,driver_zzyzzyxx	,machine_driver_jack	,input_ports_zzyzzyxx	,init_zzyzzyxx	,ROT90	,	"Cinematronics + Advanced Microcomputer Systems", "Zzyzzyxx (set 2)" )
+	public static GameDriver driver_brix	   = new GameDriver("1982"	,"brix"	,"jack.java"	,rom_brix,driver_zzyzzyxx	,machine_driver_jack	,input_ports_zzyzzyxx	,init_zzyzzyxx	,ROT90	,	"Cinematronics + Advanced Microcomputer Systems", "Brix" )
+	public static GameDriver driver_freeze	   = new GameDriver("19??"	,"freeze"	,"jack.java"	,rom_freeze,null	,machine_driver_jack	,input_ports_freeze	,init_jack	,ROT90	,	"Cinematronics", "Freeze" )
+	public static GameDriver driver_sucasino	   = new GameDriver("1982"	,"sucasino"	,"jack.java"	,rom_sucasino,null	,machine_driver_jack	,input_ports_jack	,init_jack	,ROT90	,	"Data Amusement", "Super Casino" )
 }

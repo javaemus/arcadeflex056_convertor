@@ -282,6 +282,6 @@ public class dlair
 	
 	
 	
-	public static GameDriver driver_dlair	   = new GameDriver("1983"	,"dlair"	,"dlair.java"	,rom_dlair,null	,machine_driver_dlair	,input_ports_dlair	,null	,ROT0	,	Cinematronics", "Dragon's Lair", GAME_NOT_WORKING )
+	public static GameDriver driver_dlair	   = new GameDriver("1983"	,"dlair"	,"dlair.java"	,rom_dlair,null	,machine_driver_dlair	,input_ports_dlair	,null	,ROT0	,	"Cinematronics", "Dragon's Lair", GAME_NOT_WORKING )
 	
 }

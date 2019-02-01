@@ -719,12 +719,12 @@ public class gng
 	
 	
 	
-	public static GameDriver driver_gng	   = new GameDriver("1985"	,"gng"	,"gng.java"	,rom_gng,null	,machine_driver_gng	,input_ports_gng	,null	,ROT0	,	Capcom", "Ghosts'n Goblins (World? set 1)" )
-	public static GameDriver driver_gnga	   = new GameDriver("1985"	,"gnga"	,"gng.java"	,rom_gnga,driver_gng	,machine_driver_gng	,input_ports_gng	,null	,ROT0	,	Capcom", "Ghosts'n Goblins (World? set 2)" )
-	public static GameDriver driver_gngt	   = new GameDriver("1985"	,"gngt"	,"gng.java"	,rom_gngt,driver_gng	,machine_driver_gng	,input_ports_gng	,null	,ROT0	,	Capcom (Taito America license)", "Ghosts'n Goblins (US)" )
-	public static GameDriver driver_makaimur	   = new GameDriver("1985"	,"makaimur"	,"gng.java"	,rom_makaimur,driver_gng	,machine_driver_gng	,input_ports_makaimur	,null	,ROT0	,	Capcom", "Makai-Mura" )
-	public static GameDriver driver_makaimuc	   = new GameDriver("1985"	,"makaimuc"	,"gng.java"	,rom_makaimuc,driver_gng	,machine_driver_gng	,input_ports_makaimur	,null	,ROT0	,	Capcom", "Makai-Mura (Revision C)" )
-	public static GameDriver driver_makaimug	   = new GameDriver("1985"	,"makaimug"	,"gng.java"	,rom_makaimug,driver_gng	,machine_driver_gng	,input_ports_makaimur	,null	,ROT0	,	Capcom", "Makai-Mura (Revision G)" )
-	public static GameDriver driver_diamond	   = new GameDriver("1989"	,"diamond"	,"gng.java"	,rom_diamond,null	,machine_driver_gng	,input_ports_diamond	,init_diamond	,ROT0	,	KH Video", "Diamond Run" )
+	public static GameDriver driver_gng	   = new GameDriver("1985"	,"gng"	,"gng.java"	,rom_gng,null	,machine_driver_gng	,input_ports_gng	,null	,ROT0	,	"Capcom", "Ghosts'n Goblins (World? set 1)" )
+	public static GameDriver driver_gnga	   = new GameDriver("1985"	,"gnga"	,"gng.java"	,rom_gnga,driver_gng	,machine_driver_gng	,input_ports_gng	,null	,ROT0	,	"Capcom", "Ghosts'n Goblins (World? set 2)" )
+	public static GameDriver driver_gngt	   = new GameDriver("1985"	,"gngt"	,"gng.java"	,rom_gngt,driver_gng	,machine_driver_gng	,input_ports_gng	,null	,ROT0	,	"Capcom (Taito America license)", "Ghosts'n Goblins (US)" )
+	public static GameDriver driver_makaimur	   = new GameDriver("1985"	,"makaimur"	,"gng.java"	,rom_makaimur,driver_gng	,machine_driver_gng	,input_ports_makaimur	,null	,ROT0	,	"Capcom", "Makai-Mura" )
+	public static GameDriver driver_makaimuc	   = new GameDriver("1985"	,"makaimuc"	,"gng.java"	,rom_makaimuc,driver_gng	,machine_driver_gng	,input_ports_makaimur	,null	,ROT0	,	"Capcom", "Makai-Mura (Revision C)" )
+	public static GameDriver driver_makaimug	   = new GameDriver("1985"	,"makaimug"	,"gng.java"	,rom_makaimug,driver_gng	,machine_driver_gng	,input_ports_makaimur	,null	,ROT0	,	"Capcom", "Makai-Mura (Revision G)" )
+	public static GameDriver driver_diamond	   = new GameDriver("1989"	,"diamond"	,"gng.java"	,rom_diamond,null	,machine_driver_gng	,input_ports_diamond	,init_diamond	,ROT0	,	"KH Video", "Diamond Run" )
 	
 }

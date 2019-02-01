@@ -260,5 +260,5 @@ public class ambush
 	
 	
 	
-	public static GameDriver driver_ambush	   = new GameDriver("1983"	,"ambush"	,"ambush.java"	,rom_ambush,null	,machine_driver_ambush	,input_ports_ambush	,null	,ROT0	,	Nippon Amuse Co-Ltd", "Ambush" )
+	public static GameDriver driver_ambush	   = new GameDriver("1983"	,"ambush"	,"ambush.java"	,rom_ambush,null	,machine_driver_ambush	,input_ports_ambush	,null	,ROT0	,	"Nippon Amuse Co-Ltd", "Ambush" )
 }

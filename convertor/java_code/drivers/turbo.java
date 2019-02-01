@@ -706,7 +706,7 @@ public class turbo
 	 * Game drivers
 	 *********************************************************************/
 	
-	public static GameDriver driver_turbo	   = new GameDriver("1981"	,"turbo"	,"turbo.java"	,rom_turbo,null	,machine_driver_turbo	,input_ports_turbo	,init_turbo	,ROT270	,	Sega", "Turbo", GAME_NO_COCKTAIL )
-	public static GameDriver driver_turboa	   = new GameDriver("1981"	,"turboa"	,"turbo.java"	,rom_turboa,driver_turbo	,machine_driver_turbo	,input_ports_turbo	,init_decode_turbo	,ROT270	,	Sega", "Turbo (encrypted set 1)", GAME_NO_COCKTAIL )
-	public static GameDriver driver_turbob	   = new GameDriver("1981"	,"turbob"	,"turbo.java"	,rom_turbob,driver_turbo	,machine_driver_turbo	,input_ports_turbo	,init_decode_turbo	,ROT270	,	Sega", "Turbo (encrypted set 2)", GAME_NO_COCKTAIL )
+	public static GameDriver driver_turbo	   = new GameDriver("1981"	,"turbo"	,"turbo.java"	,rom_turbo,null	,machine_driver_turbo	,input_ports_turbo	,init_turbo	,ROT270	,	"Sega", "Turbo", GAME_NO_COCKTAIL )
+	public static GameDriver driver_turboa	   = new GameDriver("1981"	,"turboa"	,"turbo.java"	,rom_turboa,driver_turbo	,machine_driver_turbo	,input_ports_turbo	,init_decode_turbo	,ROT270	,	"Sega", "Turbo (encrypted set 1)", GAME_NO_COCKTAIL )
+	public static GameDriver driver_turbob	   = new GameDriver("1981"	,"turbob"	,"turbo.java"	,rom_turbob,driver_turbo	,machine_driver_turbo	,input_ports_turbo	,init_decode_turbo	,ROT270	,	"Sega", "Turbo (encrypted set 2)", GAME_NO_COCKTAIL )
 }

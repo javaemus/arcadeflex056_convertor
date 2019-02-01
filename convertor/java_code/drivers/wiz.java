@@ -831,10 +831,10 @@ public class wiz
 	}
 	
 	
-	public static GameDriver driver_stinger	   = new GameDriver("1983"	,"stinger"	,"wiz.java"	,rom_stinger,null	,machine_driver_stinger	,input_ports_stinger	,init_stinger	,ROT90	,	Seibu Denshi", "Stinger" )
-	public static GameDriver driver_stinger2	   = new GameDriver("1983"	,"stinger2"	,"wiz.java"	,rom_stinger2,driver_stinger	,machine_driver_stinger	,input_ports_stinger2	,init_stinger	,ROT90	,	Seibu Denshi", "Stinger (prototype?)" )
-	public static GameDriver driver_scion	   = new GameDriver("1984"	,"scion"	,"wiz.java"	,rom_scion,null	,machine_driver_stinger	,input_ports_scion	,null	,ROT0	,	Seibu Denshi", "Scion", GAME_IMPERFECT_SOUND )
-	public static GameDriver driver_scionc	   = new GameDriver("1984"	,"scionc"	,"wiz.java"	,rom_scionc,driver_scion	,machine_driver_stinger	,input_ports_scion	,null	,ROT0	,	Seibu Denshi (Cinematronics license)", "Scion (Cinematronics)", GAME_IMPERFECT_COLORS )
-	public static GameDriver driver_wiz	   = new GameDriver("1985"	,"wiz"	,"wiz.java"	,rom_wiz,null	,machine_driver_wiz	,input_ports_wiz	,init_wiz	,ROT270	,	Seibu Kaihatsu Inc.", "Wiz" )
-	public static GameDriver driver_wizt	   = new GameDriver("1985"	,"wizt"	,"wiz.java"	,rom_wizt,driver_wiz	,machine_driver_wiz	,input_ports_wiz	,init_wiz	,ROT270	,	[Seibu] (Taito license)", "Wiz (Taito)" )
+	public static GameDriver driver_stinger	   = new GameDriver("1983"	,"stinger"	,"wiz.java"	,rom_stinger,null	,machine_driver_stinger	,input_ports_stinger	,init_stinger	,ROT90	,	"Seibu Denshi", "Stinger" )
+	public static GameDriver driver_stinger2	   = new GameDriver("1983"	,"stinger2"	,"wiz.java"	,rom_stinger2,driver_stinger	,machine_driver_stinger	,input_ports_stinger2	,init_stinger	,ROT90	,	"Seibu Denshi", "Stinger (prototype?)" )
+	public static GameDriver driver_scion	   = new GameDriver("1984"	,"scion"	,"wiz.java"	,rom_scion,null	,machine_driver_stinger	,input_ports_scion	,null	,ROT0	,	"Seibu Denshi", "Scion", GAME_IMPERFECT_SOUND )
+	public static GameDriver driver_scionc	   = new GameDriver("1984"	,"scionc"	,"wiz.java"	,rom_scionc,driver_scion	,machine_driver_stinger	,input_ports_scion	,null	,ROT0	,	"Seibu Denshi (Cinematronics license)", "Scion (Cinematronics)", GAME_IMPERFECT_COLORS )
+	public static GameDriver driver_wiz	   = new GameDriver("1985"	,"wiz"	,"wiz.java"	,rom_wiz,null	,machine_driver_wiz	,input_ports_wiz	,init_wiz	,ROT270	,	"Seibu Kaihatsu Inc.", "Wiz" )
+	public static GameDriver driver_wizt	   = new GameDriver("1985"	,"wizt"	,"wiz.java"	,rom_wizt,driver_wiz	,machine_driver_wiz	,input_ports_wiz	,init_wiz	,ROT270	,	"[Seibu] (Taito license)", "Wiz (Taito)" )
 }

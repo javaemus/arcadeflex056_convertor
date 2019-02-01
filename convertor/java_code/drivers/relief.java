@@ -525,6 +525,6 @@ public class relief
 	 *
 	 *************************************/
 	
-	public static GameDriver driver_relief	   = new GameDriver("1992"	,"relief"	,"relief.java"	,rom_relief,null	,machine_driver_relief	,input_ports_relief	,init_relief	,ROT0	,	Atari Games", "Relief Pitcher (set 1)" )
-	public static GameDriver driver_relief2	   = new GameDriver("1992"	,"relief2"	,"relief.java"	,rom_relief2,driver_relief	,machine_driver_relief	,input_ports_relief	,init_relief2	,ROT0	,	Atari Games", "Relief Pitcher (set 2)" )
+	public static GameDriver driver_relief	   = new GameDriver("1992"	,"relief"	,"relief.java"	,rom_relief,null	,machine_driver_relief	,input_ports_relief	,init_relief	,ROT0	,	"Atari Games", "Relief Pitcher (set 1)" )
+	public static GameDriver driver_relief2	   = new GameDriver("1992"	,"relief2"	,"relief.java"	,rom_relief2,driver_relief	,machine_driver_relief	,input_ports_relief	,init_relief2	,ROT0	,	"Atari Games", "Relief Pitcher (set 2)" )
 }

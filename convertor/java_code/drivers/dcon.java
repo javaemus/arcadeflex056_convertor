@@ -295,5 +295,5 @@ public class dcon
 	
 	/***************************************************************************/
 	
-	public static GameDriver driver_dcon	   = new GameDriver("1992"	,"dcon"	,"dcon.java"	,rom_dcon,null	,machine_driver_dcon	,input_ports_dcon	,null	,ROT0	,	Success (Seibu hardware)", "D-Con", GAME_NO_COCKTAIL )
+	public static GameDriver driver_dcon	   = new GameDriver("1992"	,"dcon"	,"dcon.java"	,rom_dcon,null	,machine_driver_dcon	,input_ports_dcon	,null	,ROT0	,	"Success (Seibu hardware)", "D-Con", GAME_NO_COCKTAIL )
 }

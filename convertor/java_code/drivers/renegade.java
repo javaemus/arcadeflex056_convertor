@@ -833,8 +833,8 @@ public class renegade
 	
 	
 	
-	public static GameDriver driver_renegade	   = new GameDriver("1986"	,"renegade"	,"renegade.java"	,rom_renegade,null	,machine_driver_renegade	,input_ports_renegade	,init_renegade	,ROT0	,	Technos (Taito America license)", "Renegade (US)", GAME_NO_COCKTAIL )
-	public static GameDriver driver_kuniokun	   = new GameDriver("1986"	,"kuniokun"	,"renegade.java"	,rom_kuniokun,driver_renegade	,machine_driver_renegade	,input_ports_renegade	,init_kuniokun	,ROT0	,	Technos", "Nekketsu Kouha Kunio-kun (Japan)", GAME_NO_COCKTAIL )
-	public static GameDriver driver_kuniokub	   = new GameDriver("1986"	,"kuniokub"	,"renegade.java"	,rom_kuniokub,driver_renegade	,machine_driver_renegade	,input_ports_renegade	,null	,ROT0	,	bootleg", "Nekketsu Kouha Kunio-kun (Japan bootleg)", GAME_NO_COCKTAIL )
+	public static GameDriver driver_renegade	   = new GameDriver("1986"	,"renegade"	,"renegade.java"	,rom_renegade,null	,machine_driver_renegade	,input_ports_renegade	,init_renegade	,ROT0	,	"Technos (Taito America license)", "Renegade (US)", GAME_NO_COCKTAIL )
+	public static GameDriver driver_kuniokun	   = new GameDriver("1986"	,"kuniokun"	,"renegade.java"	,rom_kuniokun,driver_renegade	,machine_driver_renegade	,input_ports_renegade	,init_kuniokun	,ROT0	,	"Technos", "Nekketsu Kouha Kunio-kun (Japan)", GAME_NO_COCKTAIL )
+	public static GameDriver driver_kuniokub	   = new GameDriver("1986"	,"kuniokub"	,"renegade.java"	,rom_kuniokub,driver_renegade	,machine_driver_renegade	,input_ports_renegade	,null	,ROT0	,	"bootleg", "Nekketsu Kouha Kunio-kun (Japan bootleg)", GAME_NO_COCKTAIL )
 	
 }

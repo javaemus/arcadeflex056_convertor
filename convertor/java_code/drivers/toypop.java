@@ -523,6 +523,6 @@ public class toypop
 	 *
 	 *************************************/
 	
-	public static GameDriver driver_liblrabl	   = new GameDriver("1983"	,"liblrabl"	,"toypop.java"	,rom_liblrabl,null	,machine_driver_toypop	,input_ports_liblrabl	,init_liblrabl	,ROT0	,	Namco", "Libble Rabble" )
-	public static GameDriver driver_toypop	   = new GameDriver("1986"	,"toypop"	,"toypop.java"	,rom_toypop,null	,machine_driver_toypop	,input_ports_toypop	,init_toypop	,ROT0	,	Namco", "Toypop" )
+	public static GameDriver driver_liblrabl	   = new GameDriver("1983"	,"liblrabl"	,"toypop.java"	,rom_liblrabl,null	,machine_driver_toypop	,input_ports_liblrabl	,init_liblrabl	,ROT0	,	"Namco", "Libble Rabble" )
+	public static GameDriver driver_toypop	   = new GameDriver("1986"	,"toypop"	,"toypop.java"	,rom_toypop,null	,machine_driver_toypop	,input_ports_toypop	,init_toypop	,ROT0	,	"Namco", "Toypop" )
 }

@@ -323,5 +323,5 @@ public class bogeyman
 	
 	/******************************************************************************/
 	
-	public static GameDriver driver_bogeyman	   = new GameDriver("1985?"	,"bogeyman"	,"bogeyman.java"	,rom_bogeyman,null	,machine_driver_bogeyman	,input_ports_bogeyman	,null	,ROT0	,	Technos Japan", "Bogey Manor", GAME_IMPERFECT_COLORS | GAME_NO_COCKTAIL )
+	public static GameDriver driver_bogeyman	   = new GameDriver("1985?"	,"bogeyman"	,"bogeyman.java"	,rom_bogeyman,null	,machine_driver_bogeyman	,input_ports_bogeyman	,null	,ROT0	,	"Technos Japan", "Bogey Manor", GAME_IMPERFECT_COLORS | GAME_NO_COCKTAIL )
 }

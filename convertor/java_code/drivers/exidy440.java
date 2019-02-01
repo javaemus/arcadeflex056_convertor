@@ -1750,15 +1750,15 @@ public class exidy440
 	 *
 	 *************************************/
 	
-	public static GameDriver driver_crossbow	   = new GameDriver("1983"	,"crossbow"	,"exidy440.java"	,rom_crossbow,null	,machine_driver_exidy440	,input_ports_crossbow	,init_crossbow	,ROT0	,	Exidy", "Crossbow (version 2.0)" )
-	public static GameDriver driver_cheyenne	   = new GameDriver("1984"	,"cheyenne"	,"exidy440.java"	,rom_cheyenne,null	,machine_driver_exidy440	,input_ports_cheyenne	,init_cheyenne	,ROT0	,	Exidy", "Cheyenne (version 1.0)" )
-	public static GameDriver driver_combat	   = new GameDriver("1985"	,"combat"	,"exidy440.java"	,rom_combat,null	,machine_driver_exidy440	,input_ports_combat	,init_combat	,ROT0	,	Exidy", "Combat (version 3.0)" )
-	public static GameDriver driver_cracksht	   = new GameDriver("1985"	,"cracksht"	,"exidy440.java"	,rom_cracksht,null	,machine_driver_exidy440	,input_ports_cracksht	,init_cracksht	,ROT0	,	Exidy", "Crackshot (version 2.0)" )
-	public static GameDriver driver_claypign	   = new GameDriver("1986"	,"claypign"	,"exidy440.java"	,rom_claypign,null	,machine_driver_exidy440	,input_ports_claypign	,init_claypign	,ROT0	,	Exidy", "Clay Pigeon (version 2.0)" )
-	public static GameDriver driver_chiller	   = new GameDriver("1986"	,"chiller"	,"exidy440.java"	,rom_chiller,null	,machine_driver_exidy440	,input_ports_chiller	,init_chiller	,ROT0	,	Exidy", "Chiller (version 3.0)" )
-	public static GameDriver driver_topsecex	   = new GameDriver("1986"	,"topsecex"	,"exidy440.java"	,rom_topsecex,null	,machine_driver_exidy440	,input_ports_topsecex	,init_topsecex	,ROT0	,	Exidy", "Top Secret (Exidy) (version 1.0)" )
-	public static GameDriver driver_hitnmiss	   = new GameDriver("1987"	,"hitnmiss"	,"exidy440.java"	,rom_hitnmiss,null	,machine_driver_exidy440	,input_ports_hitnmiss	,init_hitnmiss	,ROT0	,	Exidy", "Hit 'n Miss (version 3.0)" )
-	public static GameDriver driver_hitnmis2	   = new GameDriver("1987"	,"hitnmis2"	,"exidy440.java"	,rom_hitnmis2,driver_hitnmiss	,machine_driver_exidy440	,input_ports_hitnmiss	,init_hitnmiss	,ROT0	,	Exidy", "Hit 'n Miss (version 2.0)" )
-	public static GameDriver driver_whodunit	   = new GameDriver("1988"	,"whodunit"	,"exidy440.java"	,rom_whodunit,null	,machine_driver_exidy440	,input_ports_whodunit	,init_whodunit	,ROT0	,	Exidy", "Who Dunit (version 8.0)" )
-	public static GameDriver driver_showdown	   = new GameDriver("1988"	,"showdown"	,"exidy440.java"	,rom_showdown,null	,machine_driver_exidy440	,input_ports_showdown	,init_showdown	,ROT0	,	Exidy", "Showdown (version 5.0)" )
+	public static GameDriver driver_crossbow	   = new GameDriver("1983"	,"crossbow"	,"exidy440.java"	,rom_crossbow,null	,machine_driver_exidy440	,input_ports_crossbow	,init_crossbow	,ROT0	,	"Exidy", "Crossbow (version 2.0)" )
+	public static GameDriver driver_cheyenne	   = new GameDriver("1984"	,"cheyenne"	,"exidy440.java"	,rom_cheyenne,null	,machine_driver_exidy440	,input_ports_cheyenne	,init_cheyenne	,ROT0	,	"Exidy", "Cheyenne (version 1.0)" )
+	public static GameDriver driver_combat	   = new GameDriver("1985"	,"combat"	,"exidy440.java"	,rom_combat,null	,machine_driver_exidy440	,input_ports_combat	,init_combat	,ROT0	,	"Exidy", "Combat (version 3.0)" )
+	public static GameDriver driver_cracksht	   = new GameDriver("1985"	,"cracksht"	,"exidy440.java"	,rom_cracksht,null	,machine_driver_exidy440	,input_ports_cracksht	,init_cracksht	,ROT0	,	"Exidy", "Crackshot (version 2.0)" )
+	public static GameDriver driver_claypign	   = new GameDriver("1986"	,"claypign"	,"exidy440.java"	,rom_claypign,null	,machine_driver_exidy440	,input_ports_claypign	,init_claypign	,ROT0	,	"Exidy", "Clay Pigeon (version 2.0)" )
+	public static GameDriver driver_chiller	   = new GameDriver("1986"	,"chiller"	,"exidy440.java"	,rom_chiller,null	,machine_driver_exidy440	,input_ports_chiller	,init_chiller	,ROT0	,	"Exidy", "Chiller (version 3.0)" )
+	public static GameDriver driver_topsecex	   = new GameDriver("1986"	,"topsecex"	,"exidy440.java"	,rom_topsecex,null	,machine_driver_exidy440	,input_ports_topsecex	,init_topsecex	,ROT0	,	"Exidy", "Top Secret (Exidy) (version 1.0)" )
+	public static GameDriver driver_hitnmiss	   = new GameDriver("1987"	,"hitnmiss"	,"exidy440.java"	,rom_hitnmiss,null	,machine_driver_exidy440	,input_ports_hitnmiss	,init_hitnmiss	,ROT0	,	"Exidy", "Hit 'n Miss (version 3.0)" )
+	public static GameDriver driver_hitnmis2	   = new GameDriver("1987"	,"hitnmis2"	,"exidy440.java"	,rom_hitnmis2,driver_hitnmiss	,machine_driver_exidy440	,input_ports_hitnmiss	,init_hitnmiss	,ROT0	,	"Exidy", "Hit 'n Miss (version 2.0)" )
+	public static GameDriver driver_whodunit	   = new GameDriver("1988"	,"whodunit"	,"exidy440.java"	,rom_whodunit,null	,machine_driver_exidy440	,input_ports_whodunit	,init_whodunit	,ROT0	,	"Exidy", "Who Dunit (version 8.0)" )
+	public static GameDriver driver_showdown	   = new GameDriver("1988"	,"showdown"	,"exidy440.java"	,rom_showdown,null	,machine_driver_exidy440	,input_ports_showdown	,init_showdown	,ROT0	,	"Exidy", "Showdown (version 5.0)" )
 }

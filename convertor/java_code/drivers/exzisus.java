@@ -467,5 +467,5 @@ public class exzisus
 	
 	
 	/*  ( YEAR      NAME  PARENT  MACHINE    INPUT     INIT  MONITOR  COMPANY              FULLNAME ) */
-	public static GameDriver driver_exzisus	   = new GameDriver("1987"	,"exzisus"	,"exzisus.java"	,rom_exzisus,null	,machine_driver_exzisus	,input_ports_exzisus	,init_exzisus	,ROT0	,	Taito Corporation", "Exzisus (Japan)", GAME_NO_COCKTAIL )
+	public static GameDriver driver_exzisus	   = new GameDriver("1987"	,"exzisus"	,"exzisus.java"	,rom_exzisus,null	,machine_driver_exzisus	,input_ports_exzisus	,init_exzisus	,ROT0	,	"Taito Corporation", "Exzisus (Japan)", GAME_NO_COCKTAIL )
 }

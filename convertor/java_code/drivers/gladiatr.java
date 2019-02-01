@@ -710,6 +710,6 @@ public class gladiatr
 	
 	
 	
-	public static GameDriver driver_gladiatr	   = new GameDriver("1986"	,"gladiatr"	,"gladiatr.java"	,rom_gladiatr,null	,machine_driver_gladiatr	,input_ports_gladiatr	,null	,ROT0	,	Taito America Corporation", "Gladiator (US)", GAME_NO_COCKTAIL )
-	public static GameDriver driver_ogonsiro	   = new GameDriver("1986"	,"ogonsiro"	,"gladiatr.java"	,rom_ogonsiro,driver_gladiatr	,machine_driver_gladiatr	,input_ports_gladiatr	,null	,ROT0	,	Taito Corporation", "Ohgon no Siro (Japan)", GAME_NO_COCKTAIL )
+	public static GameDriver driver_gladiatr	   = new GameDriver("1986"	,"gladiatr"	,"gladiatr.java"	,rom_gladiatr,null	,machine_driver_gladiatr	,input_ports_gladiatr	,null	,ROT0	,	"Taito America Corporation", "Gladiator (US)", GAME_NO_COCKTAIL )
+	public static GameDriver driver_ogonsiro	   = new GameDriver("1986"	,"ogonsiro"	,"gladiatr.java"	,rom_ogonsiro,driver_gladiatr	,machine_driver_gladiatr	,input_ports_gladiatr	,null	,ROT0	,	"Taito Corporation", "Ohgon no Siro (Japan)", GAME_NO_COCKTAIL )
 }

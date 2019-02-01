@@ -621,11 +621,11 @@ public class amidar
 	
 	
 	
-	public static GameDriver driver_amidar	   = new GameDriver("1981"	,"amidar"	,"amidar.java"	,rom_amidar,null	,machine_driver_amidar	,input_ports_amidar	,init_amidar	,ROT90	,	Konami", "Amidar" )
-	public static GameDriver driver_amidaru	   = new GameDriver("1982"	,"amidaru"	,"amidar.java"	,rom_amidaru,driver_amidar	,machine_driver_amidar	,input_ports_amidaru	,init_amidar	,ROT90	,	Konami (Stern license)", "Amidar (Stern)" )
-	public static GameDriver driver_amidaro	   = new GameDriver("1982"	,"amidaro"	,"amidar.java"	,rom_amidaro,driver_amidar	,machine_driver_amidar	,input_ports_amidaro	,init_amidar	,ROT90	,	Konami (Olympia license)", "Amidar (Olympia)" )
-	public static GameDriver driver_amigo	   = new GameDriver("1982"	,"amigo"	,"amidar.java"	,rom_amigo,driver_amidar	,machine_driver_amidar	,input_ports_amidaru	,init_amidar	,ROT90	,	bootleg", "Amigo" )
-	public static GameDriver driver_turtles	   = new GameDriver("1981"	,"turtles"	,"amidar.java"	,rom_turtles,null	,machine_driver_amidar	,input_ports_turtles	,init_scramble_ppi	,ROT90	,	[Konami] (Stern license)", "Turtles" )
-	public static GameDriver driver_turpin	   = new GameDriver("1981"	,"turpin"	,"amidar.java"	,rom_turpin,driver_turtles	,machine_driver_amidar	,input_ports_turpin	,init_scramble_ppi	,ROT90	,	[Konami] (Sega license)", "Turpin" )
-	public static GameDriver driver_600	   = new GameDriver("1981"	,"600"	,"amidar.java"	,rom_600,driver_turtles	,machine_driver_amidar	,input_ports_turtles	,init_scramble_ppi	,ROT90	,	Konami", "600" )
+	public static GameDriver driver_amidar	   = new GameDriver("1981"	,"amidar"	,"amidar.java"	,rom_amidar,null	,machine_driver_amidar	,input_ports_amidar	,init_amidar	,ROT90	,	"Konami", "Amidar" )
+	public static GameDriver driver_amidaru	   = new GameDriver("1982"	,"amidaru"	,"amidar.java"	,rom_amidaru,driver_amidar	,machine_driver_amidar	,input_ports_amidaru	,init_amidar	,ROT90	,	"Konami (Stern license)", "Amidar (Stern)" )
+	public static GameDriver driver_amidaro	   = new GameDriver("1982"	,"amidaro"	,"amidar.java"	,rom_amidaro,driver_amidar	,machine_driver_amidar	,input_ports_amidaro	,init_amidar	,ROT90	,	"Konami (Olympia license)", "Amidar (Olympia)" )
+	public static GameDriver driver_amigo	   = new GameDriver("1982"	,"amigo"	,"amidar.java"	,rom_amigo,driver_amidar	,machine_driver_amidar	,input_ports_amidaru	,init_amidar	,ROT90	,	"bootleg", "Amigo" )
+	public static GameDriver driver_turtles	   = new GameDriver("1981"	,"turtles"	,"amidar.java"	,rom_turtles,null	,machine_driver_amidar	,input_ports_turtles	,init_scramble_ppi	,ROT90	,	"[Konami] (Stern license)", "Turtles" )
+	public static GameDriver driver_turpin	   = new GameDriver("1981"	,"turpin"	,"amidar.java"	,rom_turpin,driver_turtles	,machine_driver_amidar	,input_ports_turpin	,init_scramble_ppi	,ROT90	,	"[Konami] (Sega license)", "Turpin" )
+	public static GameDriver driver_600	   = new GameDriver("1981"	,"600"	,"amidar.java"	,rom_600,driver_turtles	,machine_driver_amidar	,input_ports_turtles	,init_scramble_ppi	,ROT90	,	"Konami", "600" )
 }

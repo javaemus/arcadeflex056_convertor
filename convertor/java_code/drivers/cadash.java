@@ -619,10 +619,10 @@ public class cadash
 	/* Working games */
 	
 	/*    year  rom       parent    machine   inp       init */
-	public static GameDriver driver_cadash	   = new GameDriver("1989"	,"cadash"	,"cadash.java"	,rom_cadash,null	,machine_driver_cadash	,input_ports_cadash	,null	,ROT0	,	Taito Corporation Japan", "Cadash (World)" )
-	public static GameDriver driver_cadashj	   = new GameDriver("1989"	,"cadashj"	,"cadash.java"	,rom_cadashj,driver_cadash	,machine_driver_cadash	,input_ports_cadashj	,null	,ROT0	,	Taito Corporation", "Cadash (Japan)" )
-	public static GameDriver driver_cadashu	   = new GameDriver("1989"	,"cadashu"	,"cadash.java"	,rom_cadashu,driver_cadash	,machine_driver_cadash	,input_ports_cadashu	,null	,ROT0	,	Taito America Corporation", "Cadash (US)" )
-	public static GameDriver driver_cadashi	   = new GameDriver("1989"	,"cadashi"	,"cadash.java"	,rom_cadashi,driver_cadash	,machine_driver_cadash	,input_ports_cadash	,null	,ROT0	,	Taito Corporation Japan", "Cadash (Italy)" )
-	public static GameDriver driver_cadashf	   = new GameDriver("1989"	,"cadashf"	,"cadash.java"	,rom_cadashf,driver_cadash	,machine_driver_cadash	,input_ports_cadash	,null	,ROT0	,	Taito Corporation Japan", "Cadash (France)" )
+	public static GameDriver driver_cadash	   = new GameDriver("1989"	,"cadash"	,"cadash.java"	,rom_cadash,null	,machine_driver_cadash	,input_ports_cadash	,null	,ROT0	,	"Taito Corporation Japan", "Cadash (World)" )
+	public static GameDriver driver_cadashj	   = new GameDriver("1989"	,"cadashj"	,"cadash.java"	,rom_cadashj,driver_cadash	,machine_driver_cadash	,input_ports_cadashj	,null	,ROT0	,	"Taito Corporation", "Cadash (Japan)" )
+	public static GameDriver driver_cadashu	   = new GameDriver("1989"	,"cadashu"	,"cadash.java"	,rom_cadashu,driver_cadash	,machine_driver_cadash	,input_ports_cadashu	,null	,ROT0	,	"Taito America Corporation", "Cadash (US)" )
+	public static GameDriver driver_cadashi	   = new GameDriver("1989"	,"cadashi"	,"cadash.java"	,rom_cadashi,driver_cadash	,machine_driver_cadash	,input_ports_cadash	,null	,ROT0	,	"Taito Corporation Japan", "Cadash (Italy)" )
+	public static GameDriver driver_cadashf	   = new GameDriver("1989"	,"cadashf"	,"cadash.java"	,rom_cadashf,driver_cadash	,machine_driver_cadash	,input_ports_cadash	,null	,ROT0	,	"Taito Corporation Japan", "Cadash (France)" )
 	
 }

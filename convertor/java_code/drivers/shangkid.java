@@ -819,7 +819,7 @@ public class shangkid
 	ROM_END(); }}; 
 	
 	
-	public static GameDriver driver_dynamski	   = new GameDriver("1984"	,"dynamski"	,"shangkid.java"	,rom_dynamski,null	,machine_driver_dynamski	,input_ports_dynamski	,init_dynamski	,ROT90	,	Taiyo", "Dynamic Ski", GAME_WRONG_COLORS | GAME_NO_COCKTAIL )
-	public static GameDriver driver_chinhero	   = new GameDriver("1984"	,"chinhero"	,"shangkid.java"	,rom_chinhero,null	,machine_driver_chinhero	,input_ports_chinhero	,init_chinhero	,ROT90	,	Taiyo", "Chinese Hero" )
-	public static GameDriver driver_shangkid	   = new GameDriver("1985"	,"shangkid"	,"shangkid.java"	,rom_shangkid,null	,machine_driver_shangkid	,input_ports_shangkid	,init_shangkid	,0	,	Taiyo (Data East license)", "Shanghai Kid", GAME_NO_COCKTAIL )
+	public static GameDriver driver_dynamski	   = new GameDriver("1984"	,"dynamski"	,"shangkid.java"	,rom_dynamski,null	,machine_driver_dynamski	,input_ports_dynamski	,init_dynamski	,ROT90	,	"Taiyo", "Dynamic Ski", GAME_WRONG_COLORS | GAME_NO_COCKTAIL )
+	public static GameDriver driver_chinhero	   = new GameDriver("1984"	,"chinhero"	,"shangkid.java"	,rom_chinhero,null	,machine_driver_chinhero	,input_ports_chinhero	,init_chinhero	,ROT90	,	"Taiyo", "Chinese Hero" )
+	public static GameDriver driver_shangkid	   = new GameDriver("1985"	,"shangkid"	,"shangkid.java"	,rom_shangkid,null	,machine_driver_shangkid	,input_ports_shangkid	,init_shangkid	,0	,	"Taiyo (Data East license)", "Shanghai Kid", GAME_NO_COCKTAIL )
 }

@@ -225,5 +225,5 @@ public class aztarac
 	ROM_END(); }}; 
 	
 	
-	public static GameDriver driver_aztarac	   = new GameDriver("1983"	,"aztarac"	,"aztarac.java"	,rom_aztarac,null	,machine_driver_aztarac	,input_ports_aztarac	,null	,ROT0	,	Centuri", "Aztarac" )
+	public static GameDriver driver_aztarac	   = new GameDriver("1983"	,"aztarac"	,"aztarac.java"	,rom_aztarac,null	,machine_driver_aztarac	,input_ports_aztarac	,null	,ROT0	,	"Centuri", "Aztarac" )
 }

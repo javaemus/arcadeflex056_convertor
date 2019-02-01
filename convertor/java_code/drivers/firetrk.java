@@ -850,5 +850,5 @@ public class firetrk
 	INPUT_PORTS_END(); }}; 
 	
 	/*           rom      parent    machine		inp			init */
-	public static GameDriver driver_firetrk	   = new GameDriver("1978"	,"firetrk"	,"firetrk.java"	,rom_firetrk,null	,machine_driver_firetruck	,input_ports_firetruck	,init_firetruck	,ROT270	,	Atari", "Fire Truck" )
+	public static GameDriver driver_firetrk	   = new GameDriver("1978"	,"firetrk"	,"firetrk.java"	,rom_firetrk,null	,machine_driver_firetruck	,input_ports_firetruck	,init_firetruck	,ROT270	,	"Atari", "Fire Truck" )
 }

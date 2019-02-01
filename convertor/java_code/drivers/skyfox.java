@@ -467,6 +467,6 @@ public class skyfox
 	
 	
 	
-	public static GameDriver driver_skyfox	   = new GameDriver("1987"	,"skyfox"	,"skyfox.java"	,rom_skyfox,null	,machine_driver_skyfox	,input_ports_skyfox	,init_skyfox	,ROT90	,	Jaleco (Nichibutsu USA License)", "Sky Fox"  )
-	public static GameDriver driver_exerizrb	   = new GameDriver("1987"	,"exerizrb"	,"skyfox.java"	,rom_exerizrb,driver_skyfox	,machine_driver_skyfox	,input_ports_skyfox	,init_skyfox	,ROT90	,	Jaleco", "Exerizer (Japan) (bootleg)" )
+	public static GameDriver driver_skyfox	   = new GameDriver("1987"	,"skyfox"	,"skyfox.java"	,rom_skyfox,null	,machine_driver_skyfox	,input_ports_skyfox	,init_skyfox	,ROT90	,	"Jaleco (Nichibutsu USA License)", "Sky Fox"  )
+	public static GameDriver driver_exerizrb	   = new GameDriver("1987"	,"exerizrb"	,"skyfox.java"	,rom_exerizrb,driver_skyfox	,machine_driver_skyfox	,input_ports_skyfox	,init_skyfox	,ROT90	,	"Jaleco", "Exerizer (Japan) (bootleg)" )
 }

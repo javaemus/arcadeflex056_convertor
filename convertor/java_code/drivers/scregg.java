@@ -344,7 +344,7 @@ public class scregg
 	ROM_END(); }}; 
 	
 	
-	public static GameDriver driver_dommy	   = new GameDriver("198?"	,"dommy"	,"scregg.java"	,rom_dommy,null	,machine_driver_dommy	,input_ports_scregg	,null	,ROT270	,	Technos", "Dommy" )
-	public static GameDriver driver_scregg	   = new GameDriver("1983"	,"scregg"	,"scregg.java"	,rom_scregg,null	,machine_driver_scregg	,input_ports_scregg	,null	,ROT270	,	Technos", "Scrambled Egg" )
-	public static GameDriver driver_eggs	   = new GameDriver("1983"	,"eggs"	,"scregg.java"	,rom_eggs,driver_scregg	,machine_driver_scregg	,input_ports_scregg	,null	,ROT270	,	[Technos] Universal USA", "Eggs" )
+	public static GameDriver driver_dommy	   = new GameDriver("198?"	,"dommy"	,"scregg.java"	,rom_dommy,null	,machine_driver_dommy	,input_ports_scregg	,null	,ROT270	,	"Technos", "Dommy" )
+	public static GameDriver driver_scregg	   = new GameDriver("1983"	,"scregg"	,"scregg.java"	,rom_scregg,null	,machine_driver_scregg	,input_ports_scregg	,null	,ROT270	,	"Technos", "Scrambled Egg" )
+	public static GameDriver driver_eggs	   = new GameDriver("1983"	,"eggs"	,"scregg.java"	,rom_eggs,driver_scregg	,machine_driver_scregg	,input_ports_scregg	,null	,ROT270	,	"[Technos] Universal USA", "Eggs" )
 }

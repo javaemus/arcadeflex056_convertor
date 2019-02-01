@@ -936,11 +936,11 @@ public class mainevt
 	
 	
 	
-	public static GameDriver driver_mainevt	   = new GameDriver("1988"	,"mainevt"	,"mainevt.java"	,rom_mainevt,null	,machine_driver_mainevt	,input_ports_mainevt	,init_mainevt	,ROT0	,	Konami", "The Main Event (version Y)" )
-	public static GameDriver driver_mainevt2	   = new GameDriver("1988"	,"mainevt2"	,"mainevt.java"	,rom_mainevt2,driver_mainevt	,machine_driver_mainevt	,input_ports_mainevt	,init_mainevt	,ROT0	,	Konami", "The Main Event (version F)" )
-	public static GameDriver driver_ringohja	   = new GameDriver("1988"	,"ringohja"	,"mainevt.java"	,rom_ringohja,driver_mainevt	,machine_driver_mainevt	,input_ports_ringohja	,init_mainevt	,ROT0	,	Konami", "Ring no Ohja (Japan)" )
-	public static GameDriver driver_devstors	   = new GameDriver("1988"	,"devstors"	,"mainevt.java"	,rom_devstors,null	,machine_driver_devstors	,input_ports_devstors	,init_mainevt	,ROT90	,	Konami", "Devastators (version Z)" )
-	public static GameDriver driver_devstor2	   = new GameDriver("1988"	,"devstor2"	,"mainevt.java"	,rom_devstor2,driver_devstors	,machine_driver_devstors	,input_ports_devstors	,init_mainevt	,ROT90	,	Konami", "Devastators (version X)" )
-	public static GameDriver driver_devstor3	   = new GameDriver("1988"	,"devstor3"	,"mainevt.java"	,rom_devstor3,driver_devstors	,machine_driver_devstors	,input_ports_devstors	,init_mainevt	,ROT90	,	Konami", "Devastators (version V)" )
-	public static GameDriver driver_garuka	   = new GameDriver("1988"	,"garuka"	,"mainevt.java"	,rom_garuka,driver_devstors	,machine_driver_devstors	,input_ports_devstors	,init_mainevt	,ROT90	,	Konami", "Garuka (Japan)" )
+	public static GameDriver driver_mainevt	   = new GameDriver("1988"	,"mainevt"	,"mainevt.java"	,rom_mainevt,null	,machine_driver_mainevt	,input_ports_mainevt	,init_mainevt	,ROT0	,	"Konami", "The Main Event (version Y)" )
+	public static GameDriver driver_mainevt2	   = new GameDriver("1988"	,"mainevt2"	,"mainevt.java"	,rom_mainevt2,driver_mainevt	,machine_driver_mainevt	,input_ports_mainevt	,init_mainevt	,ROT0	,	"Konami", "The Main Event (version F)" )
+	public static GameDriver driver_ringohja	   = new GameDriver("1988"	,"ringohja"	,"mainevt.java"	,rom_ringohja,driver_mainevt	,machine_driver_mainevt	,input_ports_ringohja	,init_mainevt	,ROT0	,	"Konami", "Ring no Ohja (Japan)" )
+	public static GameDriver driver_devstors	   = new GameDriver("1988"	,"devstors"	,"mainevt.java"	,rom_devstors,null	,machine_driver_devstors	,input_ports_devstors	,init_mainevt	,ROT90	,	"Konami", "Devastators (version Z)" )
+	public static GameDriver driver_devstor2	   = new GameDriver("1988"	,"devstor2"	,"mainevt.java"	,rom_devstor2,driver_devstors	,machine_driver_devstors	,input_ports_devstors	,init_mainevt	,ROT90	,	"Konami", "Devastators (version X)" )
+	public static GameDriver driver_devstor3	   = new GameDriver("1988"	,"devstor3"	,"mainevt.java"	,rom_devstor3,driver_devstors	,machine_driver_devstors	,input_ports_devstors	,init_mainevt	,ROT90	,	"Konami", "Devastators (version V)" )
+	public static GameDriver driver_garuka	   = new GameDriver("1988"	,"garuka"	,"mainevt.java"	,rom_garuka,driver_devstors	,machine_driver_devstors	,input_ports_devstors	,init_mainevt	,ROT90	,	"Konami", "Garuka (Japan)" )
 }

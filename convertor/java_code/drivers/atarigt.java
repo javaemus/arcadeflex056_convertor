@@ -739,8 +739,8 @@ public class atarigt
 	 *
 	 *************************************/
 	
-	public static GameDriver driver_tmek	   = new GameDriver("1994"	,"tmek"	,"atarigt.java"	,rom_tmek,null	,machine_driver_atarigt	,input_ports_tmek	,init_tmek	,ROT0	,	Atari Games", "T-MEK", GAME_UNEMULATED_PROTECTION )
-	public static GameDriver driver_tmekprot	   = new GameDriver("1994"	,"tmekprot"	,"atarigt.java"	,rom_tmekprot,driver_tmek	,machine_driver_atarigt	,input_ports_tmek	,init_tmek	,ROT0	,	Atari Games", "T-MEK (prototype)", GAME_UNEMULATED_PROTECTION )
-	public static GameDriver driver_primrage	   = new GameDriver("1994"	,"primrage"	,"atarigt.java"	,rom_primrage,null	,machine_driver_atarigt	,input_ports_tmek	,init_primrage	,ROT0	,	Atari Games", "Primal Rage (version 2.3)", GAME_UNEMULATED_PROTECTION )
-	public static GameDriver driver_primrag2	   = new GameDriver("1994"	,"primrag2"	,"atarigt.java"	,rom_primrag2,driver_primrage	,machine_driver_atarigt	,input_ports_tmek	,init_primrage	,ROT0	,	Atari Games", "Primal Rage (version 2.0)", GAME_UNEMULATED_PROTECTION )
+	public static GameDriver driver_tmek	   = new GameDriver("1994"	,"tmek"	,"atarigt.java"	,rom_tmek,null	,machine_driver_atarigt	,input_ports_tmek	,init_tmek	,ROT0	,	"Atari Games", "T-MEK", GAME_UNEMULATED_PROTECTION )
+	public static GameDriver driver_tmekprot	   = new GameDriver("1994"	,"tmekprot"	,"atarigt.java"	,rom_tmekprot,driver_tmek	,machine_driver_atarigt	,input_ports_tmek	,init_tmek	,ROT0	,	"Atari Games", "T-MEK (prototype)", GAME_UNEMULATED_PROTECTION )
+	public static GameDriver driver_primrage	   = new GameDriver("1994"	,"primrage"	,"atarigt.java"	,rom_primrage,null	,machine_driver_atarigt	,input_ports_tmek	,init_primrage	,ROT0	,	"Atari Games", "Primal Rage (version 2.3)", GAME_UNEMULATED_PROTECTION )
+	public static GameDriver driver_primrag2	   = new GameDriver("1994"	,"primrag2"	,"atarigt.java"	,rom_primrag2,driver_primrage	,machine_driver_atarigt	,input_ports_tmek	,init_primrage	,ROT0	,	"Atari Games", "Primal Rage (version 2.0)", GAME_UNEMULATED_PROTECTION )
 }

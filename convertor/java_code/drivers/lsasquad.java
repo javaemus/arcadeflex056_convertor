@@ -467,6 +467,6 @@ public class lsasquad
 	static void init_storming(void) { lsasquad_invertcoin = 0x0c; init_common(); }
 	
 	
-	public static GameDriver driver_lsasquad	   = new GameDriver("1986"	,"lsasquad"	,"lsasquad.java"	,rom_lsasquad,null	,machine_driver_lsasquad	,input_ports_lsasquad	,init_lsasquad	,ROT270	,	Taito", "Land Sea Air Squad / Riku Kai Kuu Saizensen", GAME_IMPERFECT_GRAPHICS )
-	public static GameDriver driver_storming	   = new GameDriver("1986"	,"storming"	,"lsasquad.java"	,rom_storming,driver_lsasquad	,machine_driver_lsasquad	,input_ports_lsasquad	,init_storming	,ROT270	,	Taito", "Storming Party / Riku Kai Kuu Saizensen", GAME_IMPERFECT_GRAPHICS )
+	public static GameDriver driver_lsasquad	   = new GameDriver("1986"	,"lsasquad"	,"lsasquad.java"	,rom_lsasquad,null	,machine_driver_lsasquad	,input_ports_lsasquad	,init_lsasquad	,ROT270	,	"Taito", "Land Sea Air Squad / Riku Kai Kuu Saizensen", GAME_IMPERFECT_GRAPHICS )
+	public static GameDriver driver_storming	   = new GameDriver("1986"	,"storming"	,"lsasquad.java"	,rom_storming,driver_lsasquad	,machine_driver_lsasquad	,input_ports_lsasquad	,init_storming	,ROT270	,	"Taito", "Storming Party / Riku Kai Kuu Saizensen", GAME_IMPERFECT_GRAPHICS )
 }

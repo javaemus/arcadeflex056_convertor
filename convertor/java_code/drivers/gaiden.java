@@ -657,9 +657,9 @@ public class gaiden
 	
 	
 	
-	public static GameDriver driver_gaiden	   = new GameDriver("1988"	,"gaiden"	,"gaiden.java"	,rom_gaiden,null	,machine_driver_gaiden	,input_ports_gaiden	,null	,ROT0	,	Tecmo", "Ninja Gaiden (World)", GAME_NO_COCKTAIL )
-	public static GameDriver driver_shadoww	   = new GameDriver("1988"	,"shadoww"	,"gaiden.java"	,rom_shadoww,driver_gaiden	,machine_driver_gaiden	,input_ports_gaiden	,null	,ROT0	,	Tecmo", "Shadow Warriors (US)", GAME_NO_COCKTAIL )
-	public static GameDriver driver_ryukendn	   = new GameDriver("1989"	,"ryukendn"	,"gaiden.java"	,rom_ryukendn,driver_gaiden	,machine_driver_gaiden	,input_ports_gaiden	,null	,ROT0	,	Tecmo", "Ninja Ryukenden (Japan)", GAME_NO_COCKTAIL )
-	public static GameDriver driver_tknight	   = new GameDriver("1989"	,"tknight"	,"gaiden.java"	,rom_tknight,null	,machine_driver_gaiden	,input_ports_tknight	,null	,ROT0	,	Tecmo", "Tecmo Knight", GAME_NO_COCKTAIL )
-	public static GameDriver driver_wildfang	   = new GameDriver("1989"	,"wildfang"	,"gaiden.java"	,rom_wildfang,driver_tknight	,machine_driver_gaiden	,input_ports_tknight	,null	,ROT0	,	Tecmo", "Wild Fang", GAME_NO_COCKTAIL )
+	public static GameDriver driver_gaiden	   = new GameDriver("1988"	,"gaiden"	,"gaiden.java"	,rom_gaiden,null	,machine_driver_gaiden	,input_ports_gaiden	,null	,ROT0	,	"Tecmo", "Ninja Gaiden (World)", GAME_NO_COCKTAIL )
+	public static GameDriver driver_shadoww	   = new GameDriver("1988"	,"shadoww"	,"gaiden.java"	,rom_shadoww,driver_gaiden	,machine_driver_gaiden	,input_ports_gaiden	,null	,ROT0	,	"Tecmo", "Shadow Warriors (US)", GAME_NO_COCKTAIL )
+	public static GameDriver driver_ryukendn	   = new GameDriver("1989"	,"ryukendn"	,"gaiden.java"	,rom_ryukendn,driver_gaiden	,machine_driver_gaiden	,input_ports_gaiden	,null	,ROT0	,	"Tecmo", "Ninja Ryukenden (Japan)", GAME_NO_COCKTAIL )
+	public static GameDriver driver_tknight	   = new GameDriver("1989"	,"tknight"	,"gaiden.java"	,rom_tknight,null	,machine_driver_gaiden	,input_ports_tknight	,null	,ROT0	,	"Tecmo", "Tecmo Knight", GAME_NO_COCKTAIL )
+	public static GameDriver driver_wildfang	   = new GameDriver("1989"	,"wildfang"	,"gaiden.java"	,rom_wildfang,driver_tknight	,machine_driver_gaiden	,input_ports_tknight	,null	,ROT0	,	"Tecmo", "Wild Fang", GAME_NO_COCKTAIL )
 }

@@ -739,9 +739,9 @@ public class hyperspt
 	}
 	
 	
-	public static GameDriver driver_hyperspt	   = new GameDriver("1984"	,"hyperspt"	,"hyperspt.java"	,rom_hyperspt,null	,machine_driver_hyperspt	,input_ports_hyperspt	,init_hyperspt	,ROT0	,	Konami (Centuri license)", "Hyper Sports" )
-	public static GameDriver driver_hpolym84	   = new GameDriver("1984"	,"hpolym84"	,"hyperspt.java"	,rom_hpolym84,driver_hyperspt	,machine_driver_hyperspt	,input_ports_hyperspt	,init_hyperspt	,ROT0	,	Konami", "Hyper Olympics '84" )
-	public static GameDriver driver_roadf	   = new GameDriver("1984"	,"roadf"	,"hyperspt.java"	,rom_roadf,null	,machine_driver_roadf	,input_ports_roadf	,init_hyperspt	,ROT90	,	Konami", "Road Fighter (set 1)" )
-	public static GameDriver driver_roadf2	   = new GameDriver("1984"	,"roadf2"	,"hyperspt.java"	,rom_roadf2,driver_roadf	,machine_driver_roadf	,input_ports_roadf	,init_hyperspt	,ROT90	,	Konami", "Road Fighter (set 2)" )
+	public static GameDriver driver_hyperspt	   = new GameDriver("1984"	,"hyperspt"	,"hyperspt.java"	,rom_hyperspt,null	,machine_driver_hyperspt	,input_ports_hyperspt	,init_hyperspt	,ROT0	,	"Konami (Centuri license)", "Hyper Sports" )
+	public static GameDriver driver_hpolym84	   = new GameDriver("1984"	,"hpolym84"	,"hyperspt.java"	,rom_hpolym84,driver_hyperspt	,machine_driver_hyperspt	,input_ports_hyperspt	,init_hyperspt	,ROT0	,	"Konami", "Hyper Olympics '84" )
+	public static GameDriver driver_roadf	   = new GameDriver("1984"	,"roadf"	,"hyperspt.java"	,rom_roadf,null	,machine_driver_roadf	,input_ports_roadf	,init_hyperspt	,ROT90	,	"Konami", "Road Fighter (set 1)" )
+	public static GameDriver driver_roadf2	   = new GameDriver("1984"	,"roadf2"	,"hyperspt.java"	,rom_roadf2,driver_roadf	,machine_driver_roadf	,input_ports_roadf	,init_hyperspt	,ROT90	,	"Konami", "Road Fighter (set 2)" )
 	
 }

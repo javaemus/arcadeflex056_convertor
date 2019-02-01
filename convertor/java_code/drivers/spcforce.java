@@ -407,7 +407,7 @@ public class spcforce
 	ROM_END(); }}; 
 	
 	
-	public static GameDriver driver_spcforce	   = new GameDriver("1980"	,"spcforce"	,"spcforce.java"	,rom_spcforce,null	,machine_driver_spcforce	,input_ports_spcforce	,null	,ROT270	,	Venture Line", "Space Force", GAME_IMPERFECT_COLORS )
-	public static GameDriver driver_spcforc2	   = new GameDriver("19??"	,"spcforc2"	,"spcforce.java"	,rom_spcforc2,driver_spcforce	,machine_driver_spcforce	,input_ports_spcforc2	,null	,ROT270	,	Elcon (bootleg?)", "Space Force (set 2)", GAME_IMPERFECT_COLORS )
-	public static GameDriver driver_meteor	   = new GameDriver("1981"	,"meteor"	,"spcforce.java"	,rom_meteor,driver_spcforce	,machine_driver_spcforce	,input_ports_spcforc2	,null	,ROT270	,	Venture Line", "Meteoroids", GAME_IMPERFECT_COLORS )
+	public static GameDriver driver_spcforce	   = new GameDriver("1980"	,"spcforce"	,"spcforce.java"	,rom_spcforce,null	,machine_driver_spcforce	,input_ports_spcforce	,null	,ROT270	,	"Venture Line", "Space Force", GAME_IMPERFECT_COLORS )
+	public static GameDriver driver_spcforc2	   = new GameDriver("19??"	,"spcforc2"	,"spcforce.java"	,rom_spcforc2,driver_spcforce	,machine_driver_spcforce	,input_ports_spcforc2	,null	,ROT270	,	"Elcon (bootleg?)", "Space Force (set 2)", GAME_IMPERFECT_COLORS )
+	public static GameDriver driver_meteor	   = new GameDriver("1981"	,"meteor"	,"spcforce.java"	,rom_meteor,driver_spcforce	,machine_driver_spcforce	,input_ports_spcforc2	,null	,ROT270	,	"Venture Line", "Meteoroids", GAME_IMPERFECT_COLORS )
 }

@@ -725,5 +725,5 @@ public class tunhunt
 	ROM_END(); }}; 
 	
 	/*         rom   parent  machine    inp       	init */
-	public static GameDriver driver_tunhunt	   = new GameDriver("1981"	,"tunhunt"	,"tunhunt.java"	,rom_tunhunt,null	,machine_driver_tunhunt	,input_ports_tunhunt	,null	,ORIENTATION_SWAP_XY	,	Atari", "Tunnel Hunt" )
+	public static GameDriver driver_tunhunt	   = new GameDriver("1981"	,"tunhunt"	,"tunhunt.java"	,rom_tunhunt,null	,machine_driver_tunhunt	,input_ports_tunhunt	,null	,ORIENTATION_SWAP_XY	,	"Atari", "Tunnel Hunt" )
 }

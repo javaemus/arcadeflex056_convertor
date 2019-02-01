@@ -511,8 +511,8 @@ public class tumblep
 	
 	/******************************************************************************/
 	
-	public static GameDriver driver_tumblep	   = new GameDriver("1991"	,"tumblep"	,"tumblep.java"	,rom_tumblep,null	,machine_driver_tumblepop	,input_ports_tumblep	,init_tumblep	,ROT0	,	Data East Corporation", "Tumble Pop (World)" )
-	public static GameDriver driver_tumblepj	   = new GameDriver("1991"	,"tumblepj"	,"tumblep.java"	,rom_tumblepj,driver_tumblep	,machine_driver_tumblepop	,input_ports_tumblep	,init_tumblep	,ROT0	,	Data East Corporation", "Tumble Pop (Japan)" )
-	public static GameDriver driver_tumblepb	   = new GameDriver("1991"	,"tumblepb"	,"tumblep.java"	,rom_tumblepb,driver_tumblep	,machine_driver_tumblepb	,input_ports_tumblep	,init_tumblepb	,ROT0	,	bootleg", "Tumble Pop (bootleg set 1)", GAME_IMPERFECT_SOUND )
-	public static GameDriver driver_tumblep2	   = new GameDriver("1991"	,"tumblep2"	,"tumblep.java"	,rom_tumblep2,driver_tumblep	,machine_driver_tumblepb	,input_ports_tumblep	,init_tumblepb	,ROT0	,	bootleg", "Tumble Pop (bootleg set 2)", GAME_IMPERFECT_SOUND )
+	public static GameDriver driver_tumblep	   = new GameDriver("1991"	,"tumblep"	,"tumblep.java"	,rom_tumblep,null	,machine_driver_tumblepop	,input_ports_tumblep	,init_tumblep	,ROT0	,	"Data East Corporation", "Tumble Pop (World)" )
+	public static GameDriver driver_tumblepj	   = new GameDriver("1991"	,"tumblepj"	,"tumblep.java"	,rom_tumblepj,driver_tumblep	,machine_driver_tumblepop	,input_ports_tumblep	,init_tumblep	,ROT0	,	"Data East Corporation", "Tumble Pop (Japan)" )
+	public static GameDriver driver_tumblepb	   = new GameDriver("1991"	,"tumblepb"	,"tumblep.java"	,rom_tumblepb,driver_tumblep	,machine_driver_tumblepb	,input_ports_tumblep	,init_tumblepb	,ROT0	,	"bootleg", "Tumble Pop (bootleg set 1)", GAME_IMPERFECT_SOUND )
+	public static GameDriver driver_tumblep2	   = new GameDriver("1991"	,"tumblep2"	,"tumblep.java"	,rom_tumblep2,driver_tumblep	,machine_driver_tumblepb	,input_ports_tumblep	,init_tumblepb	,ROT0	,	"bootleg", "Tumble Pop (bootleg set 2)", GAME_IMPERFECT_SOUND )
 }

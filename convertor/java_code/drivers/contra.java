@@ -448,9 +448,9 @@ public class contra
 	
 	
 	
-	public static GameDriver driver_contra	   = new GameDriver("1987"	,"contra"	,"contra.java"	,rom_contra,null	,machine_driver_contra	,input_ports_contra	,null	,ROT90	,	Konami", "Contra (US)" )
-	public static GameDriver driver_contrab	   = new GameDriver("1987"	,"contrab"	,"contra.java"	,rom_contrab,driver_contra	,machine_driver_contra	,input_ports_contra	,null	,ROT90	,	bootleg", "Contra (US bootleg)" )
-	public static GameDriver driver_contraj	   = new GameDriver("1987"	,"contraj"	,"contra.java"	,rom_contraj,driver_contra	,machine_driver_contra	,input_ports_contra	,null	,ROT90	,	Konami", "Contra (Japan)" )
-	public static GameDriver driver_contrajb	   = new GameDriver("1987"	,"contrajb"	,"contra.java"	,rom_contrajb,driver_contra	,machine_driver_contra	,input_ports_contra	,null	,ROT90	,	bootleg", "Contra (Japan bootleg)" )
-	public static GameDriver driver_gryzor	   = new GameDriver("1987"	,"gryzor"	,"contra.java"	,rom_gryzor,driver_contra	,machine_driver_contra	,input_ports_contra	,null	,ROT90	,	Konami", "Gryzor" )
+	public static GameDriver driver_contra	   = new GameDriver("1987"	,"contra"	,"contra.java"	,rom_contra,null	,machine_driver_contra	,input_ports_contra	,null	,ROT90	,	"Konami", "Contra (US)" )
+	public static GameDriver driver_contrab	   = new GameDriver("1987"	,"contrab"	,"contra.java"	,rom_contrab,driver_contra	,machine_driver_contra	,input_ports_contra	,null	,ROT90	,	"bootleg", "Contra (US bootleg)" )
+	public static GameDriver driver_contraj	   = new GameDriver("1987"	,"contraj"	,"contra.java"	,rom_contraj,driver_contra	,machine_driver_contra	,input_ports_contra	,null	,ROT90	,	"Konami", "Contra (Japan)" )
+	public static GameDriver driver_contrajb	   = new GameDriver("1987"	,"contrajb"	,"contra.java"	,rom_contrajb,driver_contra	,machine_driver_contra	,input_ports_contra	,null	,ROT90	,	"bootleg", "Contra (Japan bootleg)" )
+	public static GameDriver driver_gryzor	   = new GameDriver("1987"	,"gryzor"	,"contra.java"	,rom_gryzor,driver_contra	,machine_driver_contra	,input_ports_contra	,null	,ROT90	,	"Konami", "Gryzor" )
 }

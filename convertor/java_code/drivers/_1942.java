@@ -467,7 +467,7 @@ public class _1942
 	
 	
 	
-	public static GameDriver driver_1942	   = new GameDriver("1984"	,"1942"	,"_1942.java"	,rom_1942,null	,machine_driver_1942	,input_ports_1942	,null	,ROT270	,	Capcom", "1942 (set 1)" )
-	public static GameDriver driver_1942a	   = new GameDriver("1984"	,"1942a"	,"_1942.java"	,rom_1942a,driver_1942	,machine_driver_1942	,input_ports_1942	,null	,ROT270	,	Capcom", "1942 (set 2)" )
-	public static GameDriver driver_1942b	   = new GameDriver("1984"	,"1942b"	,"_1942.java"	,rom_1942b,driver_1942	,machine_driver_1942	,input_ports_1942	,null	,ROT270	,	Capcom", "1942 (set 3)" )
+	public static GameDriver driver_1942	   = new GameDriver("1984"	,"1942"	,"_1942.java"	,rom_1942,null	,machine_driver_1942	,input_ports_1942	,null	,ROT270	,	"Capcom", "1942 (set 1)" )
+	public static GameDriver driver_1942a	   = new GameDriver("1984"	,"1942a"	,"_1942.java"	,rom_1942a,driver_1942	,machine_driver_1942	,input_ports_1942	,null	,ROT270	,	"Capcom", "1942 (set 2)" )
+	public static GameDriver driver_1942b	   = new GameDriver("1984"	,"1942b"	,"_1942.java"	,rom_1942b,driver_1942	,machine_driver_1942	,input_ports_1942	,null	,ROT270	,	"Capcom", "1942 (set 3)" )
 }

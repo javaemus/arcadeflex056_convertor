@@ -887,8 +887,8 @@ public class zaccaria
 	
 	
 	
-	public static GameDriver driver_monymony	   = new GameDriver("1983"	,"monymony"	,"zaccaria.java"	,rom_monymony,null	,machine_driver_zaccaria	,input_ports_monymony	,null	,ROT90	,	Zaccaria", "Money Money", GAME_IMPERFECT_SOUND )
-	public static GameDriver driver_jackrabt	   = new GameDriver("1984"	,"jackrabt"	,"zaccaria.java"	,rom_jackrabt,null	,machine_driver_zaccaria	,input_ports_jackrabt	,null	,ROT90	,	Zaccaria", "Jack Rabbit (set 1)", GAME_IMPERFECT_SOUND )
-	public static GameDriver driver_jackrab2	   = new GameDriver("1984"	,"jackrab2"	,"zaccaria.java"	,rom_jackrab2,driver_jackrabt	,machine_driver_zaccaria	,input_ports_jackrabt	,null	,ROT90	,	Zaccaria", "Jack Rabbit (set 2)", GAME_IMPERFECT_SOUND )
-	public static GameDriver driver_jackrabs	   = new GameDriver("1984"	,"jackrabs"	,"zaccaria.java"	,rom_jackrabs,driver_jackrabt	,machine_driver_zaccaria	,input_ports_jackrabt	,null	,ROT90	,	Zaccaria", "Jack Rabbit (special)", GAME_IMPERFECT_SOUND )
+	public static GameDriver driver_monymony	   = new GameDriver("1983"	,"monymony"	,"zaccaria.java"	,rom_monymony,null	,machine_driver_zaccaria	,input_ports_monymony	,null	,ROT90	,	"Zaccaria", "Money Money", GAME_IMPERFECT_SOUND )
+	public static GameDriver driver_jackrabt	   = new GameDriver("1984"	,"jackrabt"	,"zaccaria.java"	,rom_jackrabt,null	,machine_driver_zaccaria	,input_ports_jackrabt	,null	,ROT90	,	"Zaccaria", "Jack Rabbit (set 1)", GAME_IMPERFECT_SOUND )
+	public static GameDriver driver_jackrab2	   = new GameDriver("1984"	,"jackrab2"	,"zaccaria.java"	,rom_jackrab2,driver_jackrabt	,machine_driver_zaccaria	,input_ports_jackrabt	,null	,ROT90	,	"Zaccaria", "Jack Rabbit (set 2)", GAME_IMPERFECT_SOUND )
+	public static GameDriver driver_jackrabs	   = new GameDriver("1984"	,"jackrabs"	,"zaccaria.java"	,rom_jackrabs,driver_jackrabt	,machine_driver_zaccaria	,input_ports_jackrabt	,null	,ROT90	,	"Zaccaria", "Jack Rabbit (special)", GAME_IMPERFECT_SOUND )
 }

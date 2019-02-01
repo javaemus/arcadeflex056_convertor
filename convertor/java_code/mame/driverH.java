@@ -205,7 +205,7 @@ public class driverH
 	#endif
 	
 	
-	#define public static GameDriver driver_NAME	   = new GameDriver("YEAR"	,"NAME"	,"driverH.java"	,rom_NAME,driver_PARENT	,machine_driver_MACHINE	,input_ports_INPUT	,init_INIT	,MONITOR	,COMPANY	FULLNAME)	\
+	#define public static GameDriver driver_NAME	   = new GameDriver("YEAR"	,"NAME"	,"driverH.java"	,rom_NAME,driver_PARENT	,machine_driver_MACHINE	,input_ports_INPUT	,init_INIT	,MONITOR	,	COMPANY,FULLNAME)	\
 	extern const struct GameDriver driver_##PARENT;	\
 	const struct GameDriver driver_##NAME =		\
 	{											\
@@ -222,7 +222,7 @@ public class driverH
 		MONITOR									\
 	};
 	
-	#define public static GameDriver driver_NAME	   = new GameDriver("YEAR"	,"NAME"	,"driverH.java"	,rom_NAME,driver_PARENT	,machine_driver_MACHINE	,input_ports_INPUT	,init_INIT	,MONITOR	,COMPANY	FULLNAME,FLAGS)	\
+	#define public static GameDriver driver_NAME	   = new GameDriver("YEAR"	,"NAME"	,"driverH.java"	,rom_NAME,driver_PARENT	,machine_driver_MACHINE	,input_ports_INPUT	,init_INIT	,MONITOR	,	COMPANY,FULLNAME,FLAGS)	\
 	extern const struct GameDriver driver_##PARENT;	\
 	const struct GameDriver driver_##NAME =		\
 	{											\

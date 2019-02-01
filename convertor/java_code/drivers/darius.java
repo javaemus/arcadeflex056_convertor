@@ -1176,8 +1176,8 @@ public class darius
 	}
 	
 	
-	public static GameDriver driver_darius	   = new GameDriver("1986"	,"darius"	,"darius.java"	,rom_darius,null	,machine_driver_darius	,input_ports_darius	,init_darius	,ROT0	,	Taito Corporation Japan", "Darius (World)" )
-	public static GameDriver driver_dariusj	   = new GameDriver("1986"	,"dariusj"	,"darius.java"	,rom_dariusj,driver_darius	,machine_driver_darius	,input_ports_dariusj	,init_darius	,ROT0	,	Taito Corporation", "Darius (Japan)" )
-	public static GameDriver driver_dariuso	   = new GameDriver("1986"	,"dariuso"	,"darius.java"	,rom_dariuso,driver_darius	,machine_driver_darius	,input_ports_dariusj	,init_darius	,ROT0	,	Taito Corporation", "Darius (Japan old version)" )
-	public static GameDriver driver_dariuse	   = new GameDriver("1986"	,"dariuse"	,"darius.java"	,rom_dariuse,driver_darius	,machine_driver_darius	,input_ports_dariusj	,init_darius	,ROT0	,	Taito Corporation", "Darius (Extra) (Japan)" )
+	public static GameDriver driver_darius	   = new GameDriver("1986"	,"darius"	,"darius.java"	,rom_darius,null	,machine_driver_darius	,input_ports_darius	,init_darius	,ROT0	,	"Taito Corporation Japan", "Darius (World)" )
+	public static GameDriver driver_dariusj	   = new GameDriver("1986"	,"dariusj"	,"darius.java"	,rom_dariusj,driver_darius	,machine_driver_darius	,input_ports_dariusj	,init_darius	,ROT0	,	"Taito Corporation", "Darius (Japan)" )
+	public static GameDriver driver_dariuso	   = new GameDriver("1986"	,"dariuso"	,"darius.java"	,rom_dariuso,driver_darius	,machine_driver_darius	,input_ports_dariusj	,init_darius	,ROT0	,	"Taito Corporation", "Darius (Japan old version)" )
+	public static GameDriver driver_dariuse	   = new GameDriver("1986"	,"dariuse"	,"darius.java"	,rom_dariuse,driver_darius	,machine_driver_darius	,input_ports_dariusj	,init_darius	,ROT0	,	"Taito Corporation", "Darius (Extra) (Japan)" )
 }

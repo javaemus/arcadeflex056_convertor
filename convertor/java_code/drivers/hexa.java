@@ -221,5 +221,5 @@ public class hexa
 	}
 	
 	
-	public static GameDriver driver_hexa	   = new GameDriver("1986?"	,"hexa"	,"hexa.java"	,rom_hexa,null	,machine_driver_hexa	,input_ports_hexa	,init_hexa	,ROT0	,	D. R. Korea", "Hexa" )
+	public static GameDriver driver_hexa	   = new GameDriver("1986?"	,"hexa"	,"hexa.java"	,rom_hexa,null	,machine_driver_hexa	,input_ports_hexa	,init_hexa	,ROT0	,	"D. R. Korea", "Hexa" )
 }

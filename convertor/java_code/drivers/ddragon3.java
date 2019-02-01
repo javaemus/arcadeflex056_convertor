@@ -871,9 +871,9 @@ public class ddragon3
 	
 	/**************************************************************************/
 	
-	public static GameDriver driver_ddragon3	   = new GameDriver("1990"	,"ddragon3"	,"ddragon3.java"	,rom_ddragon3,null	,machine_driver_ddragon3	,input_ports_ddragon3	,null	,ROT0	,	Technos", "Double Dragon 3 - The Rosetta Stone", GAME_NO_COCKTAIL )
-	public static GameDriver driver_ddrago3b	   = new GameDriver("1990"	,"ddrago3b"	,"ddragon3.java"	,rom_ddrago3b,driver_ddragon3	,machine_driver_ddrago3b	,input_ports_ddrago3b	,null	,ROT0	,	bootleg", "Double Dragon 3 - The Rosetta Stone (bootleg)", GAME_NO_COCKTAIL )
-	public static GameDriver driver_ctribe	   = new GameDriver("1990"	,"ctribe"	,"ddragon3.java"	,rom_ctribe,null	,machine_driver_ctribe	,input_ports_ctribe	,null	,ROT0	,	Technos", "The Combatribes (US)", GAME_NO_COCKTAIL )
-	public static GameDriver driver_ctribeb	   = new GameDriver("1990"	,"ctribeb"	,"ddragon3.java"	,rom_ctribeb,driver_ctribe	,machine_driver_ctribe	,input_ports_ctribe	,null	,ROT0	,	bootleg", "The Combatribes (bootleg)", GAME_NO_COCKTAIL )
+	public static GameDriver driver_ddragon3	   = new GameDriver("1990"	,"ddragon3"	,"ddragon3.java"	,rom_ddragon3,null	,machine_driver_ddragon3	,input_ports_ddragon3	,null	,ROT0	,	"Technos", "Double Dragon 3 - The Rosetta Stone", GAME_NO_COCKTAIL )
+	public static GameDriver driver_ddrago3b	   = new GameDriver("1990"	,"ddrago3b"	,"ddragon3.java"	,rom_ddrago3b,driver_ddragon3	,machine_driver_ddrago3b	,input_ports_ddrago3b	,null	,ROT0	,	"bootleg", "Double Dragon 3 - The Rosetta Stone (bootleg)", GAME_NO_COCKTAIL )
+	public static GameDriver driver_ctribe	   = new GameDriver("1990"	,"ctribe"	,"ddragon3.java"	,rom_ctribe,null	,machine_driver_ctribe	,input_ports_ctribe	,null	,ROT0	,	"Technos", "The Combatribes (US)", GAME_NO_COCKTAIL )
+	public static GameDriver driver_ctribeb	   = new GameDriver("1990"	,"ctribeb"	,"ddragon3.java"	,rom_ctribeb,driver_ctribe	,machine_driver_ctribe	,input_ports_ctribe	,null	,ROT0	,	"bootleg", "The Combatribes (bootleg)", GAME_NO_COCKTAIL )
 	
 }

@@ -999,7 +999,7 @@ public class lasso
 	
 	***************************************************************************/
 	
-	public static GameDriver driver_lasso	   = new GameDriver("1982"	,"lasso"	,"lasso.java"	,rom_lasso,null	,machine_driver_lasso	,input_ports_lasso	,null	,ROT90	,	SNK",            "Lasso"                   )
-	public static GameDriver driver_chameleo	   = new GameDriver("1983"	,"chameleo"	,"lasso.java"	,rom_chameleo,null	,machine_driver_chameleo	,input_ports_chameleo	,null	,ROT0	,	Jaleco",         "Chameleon"               )
-	public static GameDriver driver_wwjgtin	   = new GameDriver("1984"	,"wwjgtin"	,"lasso.java"	,rom_wwjgtin,null	,machine_driver_wwjgtin	,input_ports_wwjgtin	,null	,ROT0	,	Jaleco / Casio", "Wai Wai Jockey Gate-In!" )
+	public static GameDriver driver_lasso	   = new GameDriver("1982"	,"lasso"	,"lasso.java"	,rom_lasso,null	,machine_driver_lasso	,input_ports_lasso	,null	,ROT90	,	"SNK",            "Lasso"                   )
+	public static GameDriver driver_chameleo	   = new GameDriver("1983"	,"chameleo"	,"lasso.java"	,rom_chameleo,null	,machine_driver_chameleo	,input_ports_chameleo	,null	,ROT0	,	"Jaleco",         "Chameleon"               )
+	public static GameDriver driver_wwjgtin	   = new GameDriver("1984"	,"wwjgtin"	,"lasso.java"	,rom_wwjgtin,null	,machine_driver_wwjgtin	,input_ports_wwjgtin	,null	,ROT0	,	"Jaleco / Casio", "Wai Wai Jockey Gate-In!" )
 }

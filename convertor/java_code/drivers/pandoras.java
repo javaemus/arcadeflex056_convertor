@@ -525,5 +525,5 @@ public class pandoras
 	
 	
 	
-	public static GameDriver driver_pandoras	   = new GameDriver("1984"	,"pandoras"	,"pandoras.java"	,rom_pandoras,null	,machine_driver_pandoras	,input_ports_pandoras	,null	,ROT90	,	Konami/Interlogic", "Pandora's Palace" )
+	public static GameDriver driver_pandoras	   = new GameDriver("1984"	,"pandoras"	,"pandoras.java"	,rom_pandoras,null	,machine_driver_pandoras	,input_ports_pandoras	,null	,ROT90	,	"Konami/Interlogic", "Pandora's Palace" )
 }

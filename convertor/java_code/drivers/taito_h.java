@@ -834,7 +834,7 @@ public class taito_h
 	
 	
 	/*  ( YEAR  NAME      PARENT    MACHINE   INPUT     INIT     MONITOR  COMPANY  FULLNAME */
-	public static GameDriver driver_syvalion	   = new GameDriver("1988"	,"syvalion"	,"taito_h.java"	,rom_syvalion,null	,machine_driver_syvalion	,input_ports_syvalion	,init_taitoh	,ROT0	,	Taito Corporation", "Syvalion (Japan)" )
-	public static GameDriver driver_recordbr	   = new GameDriver("1988"	,"recordbr"	,"taito_h.java"	,rom_recordbr,null	,machine_driver_recordbr	,input_ports_recordbr	,init_taitoh	,ROT0	,	Taito Corporation Japan", "Recordbreaker (World)" )
-	public static GameDriver driver_dleague	   = new GameDriver("1990"	,"dleague"	,"taito_h.java"	,rom_dleague,null	,machine_driver_dleague	,input_ports_dleague	,init_taitoh	,ROT0	,	Taito Corporation", "Dynamite League (Japan)" )
+	public static GameDriver driver_syvalion	   = new GameDriver("1988"	,"syvalion"	,"taito_h.java"	,rom_syvalion,null	,machine_driver_syvalion	,input_ports_syvalion	,init_taitoh	,ROT0	,	"Taito Corporation", "Syvalion (Japan)" )
+	public static GameDriver driver_recordbr	   = new GameDriver("1988"	,"recordbr"	,"taito_h.java"	,rom_recordbr,null	,machine_driver_recordbr	,input_ports_recordbr	,init_taitoh	,ROT0	,	"Taito Corporation Japan", "Recordbreaker (World)" )
+	public static GameDriver driver_dleague	   = new GameDriver("1990"	,"dleague"	,"taito_h.java"	,rom_dleague,null	,machine_driver_dleague	,input_ports_dleague	,init_taitoh	,ROT0	,	"Taito Corporation", "Dynamite League (Japan)" )
 }

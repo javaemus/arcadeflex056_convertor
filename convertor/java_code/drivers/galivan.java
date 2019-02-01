@@ -941,12 +941,12 @@ public class galivan
 	
 	
 	
-	public static GameDriver driver_galivan	   = new GameDriver("1985"	,"galivan"	,"galivan.java"	,rom_galivan,null	,machine_driver_galivan	,input_ports_galivan	,null	,ROT270	,	Nichibutsu", "Galivan - Cosmo Police (12/16/1985)" )
-	public static GameDriver driver_galivan2	   = new GameDriver("1985"	,"galivan2"	,"galivan.java"	,rom_galivan2,driver_galivan	,machine_driver_galivan	,input_ports_galivan	,null	,ROT270	,	Nichibutsu", "Galivan - Cosmo Police (12/11/1985)" )
-	public static GameDriver driver_dangar	   = new GameDriver("1986"	,"dangar"	,"galivan.java"	,rom_dangar,null	,machine_driver_galivan	,input_ports_dangar	,null	,ROT270	,	Nichibutsu", "Dangar - Ufo Robo (12/1/1986)" )
-	public static GameDriver driver_dangar2	   = new GameDriver("1986"	,"dangar2"	,"galivan.java"	,rom_dangar2,driver_dangar	,machine_driver_galivan	,input_ports_dangar2	,null	,ROT270	,	Nichibutsu", "Dangar - Ufo Robo (9/26/1986)" )
-	public static GameDriver driver_dangarb	   = new GameDriver("1986"	,"dangarb"	,"galivan.java"	,rom_dangarb,driver_dangar	,machine_driver_galivan	,input_ports_dangarb	,null	,ROT270	,	bootleg", "Dangar - Ufo Robo (bootleg)" )
-	public static GameDriver driver_ninjemak	   = new GameDriver("1986"	,"ninjemak"	,"galivan.java"	,rom_ninjemak,null	,machine_driver_ninjemak	,input_ports_ninjemak	,null	,ROT270	,	Nichibutsu", "Ninja Emaki (US)" )
-	public static GameDriver driver_youma	   = new GameDriver("1986"	,"youma"	,"galivan.java"	,rom_youma,driver_ninjemak	,machine_driver_ninjemak	,input_ports_ninjemak	,null	,ROT270	,	Nichibutsu", "Youma Ninpou Chou (Japan)" )
+	public static GameDriver driver_galivan	   = new GameDriver("1985"	,"galivan"	,"galivan.java"	,rom_galivan,null	,machine_driver_galivan	,input_ports_galivan	,null	,ROT270	,	"Nichibutsu", "Galivan - Cosmo Police (12/16/1985)" )
+	public static GameDriver driver_galivan2	   = new GameDriver("1985"	,"galivan2"	,"galivan.java"	,rom_galivan2,driver_galivan	,machine_driver_galivan	,input_ports_galivan	,null	,ROT270	,	"Nichibutsu", "Galivan - Cosmo Police (12/11/1985)" )
+	public static GameDriver driver_dangar	   = new GameDriver("1986"	,"dangar"	,"galivan.java"	,rom_dangar,null	,machine_driver_galivan	,input_ports_dangar	,null	,ROT270	,	"Nichibutsu", "Dangar - Ufo Robo (12/1/1986)" )
+	public static GameDriver driver_dangar2	   = new GameDriver("1986"	,"dangar2"	,"galivan.java"	,rom_dangar2,driver_dangar	,machine_driver_galivan	,input_ports_dangar2	,null	,ROT270	,	"Nichibutsu", "Dangar - Ufo Robo (9/26/1986)" )
+	public static GameDriver driver_dangarb	   = new GameDriver("1986"	,"dangarb"	,"galivan.java"	,rom_dangarb,driver_dangar	,machine_driver_galivan	,input_ports_dangarb	,null	,ROT270	,	"bootleg", "Dangar - Ufo Robo (bootleg)" )
+	public static GameDriver driver_ninjemak	   = new GameDriver("1986"	,"ninjemak"	,"galivan.java"	,rom_ninjemak,null	,machine_driver_ninjemak	,input_ports_ninjemak	,null	,ROT270	,	"Nichibutsu", "Ninja Emaki (US)" )
+	public static GameDriver driver_youma	   = new GameDriver("1986"	,"youma"	,"galivan.java"	,rom_youma,driver_ninjemak	,machine_driver_ninjemak	,input_ports_ninjemak	,null	,ROT270	,	"Nichibutsu", "Youma Ninpou Chou (Japan)" )
 	
 }

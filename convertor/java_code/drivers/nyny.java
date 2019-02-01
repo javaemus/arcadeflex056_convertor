@@ -491,7 +491,7 @@ public class nyny
 	ROM_END(); }}; 
 	
 	
-	public static GameDriver driver_nyny	   = new GameDriver("1980"	,"nyny"	,"nyny.java"	,rom_nyny,null	,machine_driver_nyny	,input_ports_nyny	,null	,ROT270	,	Sigma Ent. Inc.", "New York New York", GAME_IMPERFECT_GRAPHICS | GAME_IMPERFECT_SOUND )
-	public static GameDriver driver_nynyg	   = new GameDriver("1980"	,"nynyg"	,"nyny.java"	,rom_nynyg,driver_nyny	,machine_driver_nyny	,input_ports_nyny	,null	,ROT270	,	Sigma Ent. Inc. (Gottlieb license)", "New York New York (Gottlieb)", GAME_IMPERFECT_GRAPHICS | GAME_IMPERFECT_SOUND )
-	public static GameDriver driver_arcadia	   = new GameDriver("1980"	,"arcadia"	,"nyny.java"	,rom_arcadia,driver_nyny	,machine_driver_nyny	,input_ports_nyny	,null	,ROT270	,	Sigma Ent. Inc.", "Waga Seishun no Arcadia", GAME_IMPERFECT_GRAPHICS | GAME_IMPERFECT_SOUND )
+	public static GameDriver driver_nyny	   = new GameDriver("1980"	,"nyny"	,"nyny.java"	,rom_nyny,null	,machine_driver_nyny	,input_ports_nyny	,null	,ROT270	,	"Sigma Ent. Inc.", "New York New York", GAME_IMPERFECT_GRAPHICS | GAME_IMPERFECT_SOUND )
+	public static GameDriver driver_nynyg	   = new GameDriver("1980"	,"nynyg"	,"nyny.java"	,rom_nynyg,driver_nyny	,machine_driver_nyny	,input_ports_nyny	,null	,ROT270	,	"Sigma Ent. Inc. (Gottlieb license)", "New York New York (Gottlieb)", GAME_IMPERFECT_GRAPHICS | GAME_IMPERFECT_SOUND )
+	public static GameDriver driver_arcadia	   = new GameDriver("1980"	,"arcadia"	,"nyny.java"	,rom_arcadia,driver_nyny	,machine_driver_nyny	,input_ports_nyny	,null	,ROT270	,	"Sigma Ent. Inc.", "Waga Seishun no Arcadia", GAME_IMPERFECT_GRAPHICS | GAME_IMPERFECT_SOUND )
 }

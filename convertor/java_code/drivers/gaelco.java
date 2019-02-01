@@ -602,7 +602,7 @@ public class gaelco
 	
 	
 	
-	public static GameDriver driver_bigkarnk	   = new GameDriver("1991"	,"bigkarnk"	,"gaelco.java"	,rom_bigkarnk,null	,machine_driver_bigkarnk	,input_ports_bigkarnk	,null	,ROT0	,	Gaelco", "Big Karnak" )
-	public static GameDriver driver_biomtoy	   = new GameDriver("1995"	,"biomtoy"	,"gaelco.java"	,rom_biomtoy,null	,machine_driver_maniacsq	,input_ports_biomtoy	,null	,ROT0	,	Gaelco", "Biomechanical Toy (unprotected)" )
-	public static GameDriver driver_maniacsq	   = new GameDriver("1996"	,"maniacsq"	,"gaelco.java"	,rom_maniacsq,null	,machine_driver_maniacsq	,input_ports_maniacsq	,null	,ROT0	,	Gaelco", "Maniac Square (prototype)" )
+	public static GameDriver driver_bigkarnk	   = new GameDriver("1991"	,"bigkarnk"	,"gaelco.java"	,rom_bigkarnk,null	,machine_driver_bigkarnk	,input_ports_bigkarnk	,null	,ROT0	,	"Gaelco", "Big Karnak" )
+	public static GameDriver driver_biomtoy	   = new GameDriver("1995"	,"biomtoy"	,"gaelco.java"	,rom_biomtoy,null	,machine_driver_maniacsq	,input_ports_biomtoy	,null	,ROT0	,	"Gaelco", "Biomechanical Toy (unprotected)" )
+	public static GameDriver driver_maniacsq	   = new GameDriver("1996"	,"maniacsq"	,"gaelco.java"	,rom_maniacsq,null	,machine_driver_maniacsq	,input_ports_maniacsq	,null	,ROT0	,	"Gaelco", "Maniac Square (prototype)" )
 }

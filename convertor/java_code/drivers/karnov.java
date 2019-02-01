@@ -1051,10 +1051,10 @@ public class karnov
 	
 	/******************************************************************************/
 	
-	public static GameDriver driver_karnov	   = new GameDriver("1987"	,"karnov"	,"karnov.java"	,rom_karnov,null	,machine_driver_karnov	,input_ports_karnov	,init_karnov	,ROT0	,	Data East USA",         "Karnov (US)" )
-	public static GameDriver driver_karnovj	   = new GameDriver("1987"	,"karnovj"	,"karnov.java"	,rom_karnovj,driver_karnov	,machine_driver_karnov	,input_ports_karnov	,init_karnovj	,ROT0	,	Data East Corporation", "Karnov (Japan)" )
-	public static GameDriver driver_wndrplnt	   = new GameDriver("1987"	,"wndrplnt"	,"karnov.java"	,rom_wndrplnt,null	,machine_driver_wndrplnt	,input_ports_wndrplnt	,init_wndrplnt	,ROT270	,	Data East Corporation", "Wonder Planet (Japan)" )
-	public static GameDriver driver_chelnov	   = new GameDriver("1988"	,"chelnov"	,"karnov.java"	,rom_chelnov,null	,machine_driver_karnov	,input_ports_chelnov	,init_chelnovw	,ROT0	,	Data East Corporation", "Chelnov - Atomic Runner (World)", GAME_UNEMULATED_PROTECTION )
-	public static GameDriver driver_chelnovu	   = new GameDriver("1988"	,"chelnovu"	,"karnov.java"	,rom_chelnovu,driver_chelnov	,machine_driver_karnov	,input_ports_chelnov	,init_chelnov	,ROT0	,	Data East USA",         "Chelnov - Atomic Runner (US)" )
-	public static GameDriver driver_chelnovj	   = new GameDriver("1988"	,"chelnovj"	,"karnov.java"	,rom_chelnovj,driver_chelnov	,machine_driver_karnov	,input_ports_chelnov	,init_chelnovj	,ROT0	,	Data East Corporation", "Chelnov - Atomic Runner (Japan)" )
+	public static GameDriver driver_karnov	   = new GameDriver("1987"	,"karnov"	,"karnov.java"	,rom_karnov,null	,machine_driver_karnov	,input_ports_karnov	,init_karnov	,ROT0	,	"Data East USA",         "Karnov (US)" )
+	public static GameDriver driver_karnovj	   = new GameDriver("1987"	,"karnovj"	,"karnov.java"	,rom_karnovj,driver_karnov	,machine_driver_karnov	,input_ports_karnov	,init_karnovj	,ROT0	,	"Data East Corporation", "Karnov (Japan)" )
+	public static GameDriver driver_wndrplnt	   = new GameDriver("1987"	,"wndrplnt"	,"karnov.java"	,rom_wndrplnt,null	,machine_driver_wndrplnt	,input_ports_wndrplnt	,init_wndrplnt	,ROT270	,	"Data East Corporation", "Wonder Planet (Japan)" )
+	public static GameDriver driver_chelnov	   = new GameDriver("1988"	,"chelnov"	,"karnov.java"	,rom_chelnov,null	,machine_driver_karnov	,input_ports_chelnov	,init_chelnovw	,ROT0	,	"Data East Corporation", "Chelnov - Atomic Runner (World)", GAME_UNEMULATED_PROTECTION )
+	public static GameDriver driver_chelnovu	   = new GameDriver("1988"	,"chelnovu"	,"karnov.java"	,rom_chelnovu,driver_chelnov	,machine_driver_karnov	,input_ports_chelnov	,init_chelnov	,ROT0	,	"Data East USA",         "Chelnov - Atomic Runner (US)" )
+	public static GameDriver driver_chelnovj	   = new GameDriver("1988"	,"chelnovj"	,"karnov.java"	,rom_chelnovj,driver_chelnov	,machine_driver_karnov	,input_ports_chelnov	,init_chelnovj	,ROT0	,	"Data East Corporation", "Chelnov - Atomic Runner (Japan)" )
 }

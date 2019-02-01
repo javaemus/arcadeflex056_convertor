@@ -518,5 +518,5 @@ public class gridlee
 	 *
 	 *************************************/
 	
-	public static GameDriver driver_gridlee	   = new GameDriver("1983"	,"gridlee"	,"gridlee.java"	,rom_gridlee,null	,machine_driver_gridlee	,input_ports_gridlee	,null	,ROT0	,	Videa", "Gridlee" )
+	public static GameDriver driver_gridlee	   = new GameDriver("1983"	,"gridlee"	,"gridlee.java"	,rom_gridlee,null	,machine_driver_gridlee	,input_ports_gridlee	,null	,ROT0	,	"Videa", "Gridlee" )
 }

@@ -237,6 +237,6 @@ public class mrjong
 	ROM_END(); }}; 
 	
 	
-	public static GameDriver driver_mrjong	   = new GameDriver("1983"	,"mrjong"	,"mrjong.java"	,rom_mrjong,null	,machine_driver_mrjong	,input_ports_mrjong	,null	,ROT90	,	Kiwako", "Mr. Jong (Japan)" )
-	public static GameDriver driver_crazyblk	   = new GameDriver("1983"	,"crazyblk"	,"mrjong.java"	,rom_crazyblk,driver_mrjong	,machine_driver_mrjong	,input_ports_mrjong	,null	,ROT90	,	Kiwako (ECI license)", "Crazy Blocks" )
+	public static GameDriver driver_mrjong	   = new GameDriver("1983"	,"mrjong"	,"mrjong.java"	,rom_mrjong,null	,machine_driver_mrjong	,input_ports_mrjong	,null	,ROT90	,	"Kiwako", "Mr. Jong (Japan)" )
+	public static GameDriver driver_crazyblk	   = new GameDriver("1983"	,"crazyblk"	,"mrjong.java"	,rom_crazyblk,driver_mrjong	,machine_driver_mrjong	,input_ports_mrjong	,null	,ROT90	,	"Kiwako (ECI license)", "Crazy Blocks" )
 }

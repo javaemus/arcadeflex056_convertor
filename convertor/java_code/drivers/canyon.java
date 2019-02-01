@@ -289,6 +289,6 @@ public class canyon
 	
 	
 	
-	public static GameDriver driver_canyon	   = new GameDriver("1977"	,"canyon"	,"canyon.java"	,rom_canyon,null	,machine_driver_canyon	,input_ports_canyon	,null	,ROT0	,	Atari", "Canyon Bomber", GAME_NO_SOUND )
-	public static GameDriver driver_canbprot	   = new GameDriver("1977"	,"canbprot"	,"canyon.java"	,rom_canbprot,driver_canyon	,machine_driver_canyon	,input_ports_canyon	,null	,ROT0	,	Atari", "Canyon Bomber (prototype)", GAME_NO_SOUND )
+	public static GameDriver driver_canyon	   = new GameDriver("1977"	,"canyon"	,"canyon.java"	,rom_canyon,null	,machine_driver_canyon	,input_ports_canyon	,null	,ROT0	,	"Atari", "Canyon Bomber", GAME_NO_SOUND )
+	public static GameDriver driver_canbprot	   = new GameDriver("1977"	,"canbprot"	,"canyon.java"	,rom_canbprot,driver_canyon	,machine_driver_canyon	,input_ports_canyon	,null	,ROT0	,	"Atari", "Canyon Bomber (prototype)", GAME_NO_SOUND )
 }

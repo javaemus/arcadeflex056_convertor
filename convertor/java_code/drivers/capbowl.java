@@ -469,8 +469,8 @@ public class capbowl
 	 *
 	 *************************************/
 	
-	public static GameDriver driver_capbowl	   = new GameDriver("1988"	,"capbowl"	,"capbowl.java"	,rom_capbowl,null	,machine_driver_capbowl	,input_ports_capbowl	,null	,ROT270	,	Incredible Technologies", "Capcom Bowling (set 1)" )
-	public static GameDriver driver_capbowl2	   = new GameDriver("1988"	,"capbowl2"	,"capbowl.java"	,rom_capbowl2,driver_capbowl	,machine_driver_capbowl	,input_ports_capbowl	,null	,ROT270	,	Incredible Technologies", "Capcom Bowling (set 2)" )
-	public static GameDriver driver_clbowl	   = new GameDriver("1989"	,"clbowl"	,"capbowl.java"	,rom_clbowl,driver_capbowl	,machine_driver_capbowl	,input_ports_capbowl	,null	,ROT270	,	Incredible Technologies", "Coors Light Bowling" )
-	public static GameDriver driver_bowlrama	   = new GameDriver("1991"	,"bowlrama"	,"capbowl.java"	,rom_bowlrama,null	,machine_driver_bowlrama	,input_ports_capbowl	,null	,ROT270	,	P & P Marketing", "Bowl-O-Rama" )
+	public static GameDriver driver_capbowl	   = new GameDriver("1988"	,"capbowl"	,"capbowl.java"	,rom_capbowl,null	,machine_driver_capbowl	,input_ports_capbowl	,null	,ROT270	,	"Incredible Technologies", "Capcom Bowling (set 1)" )
+	public static GameDriver driver_capbowl2	   = new GameDriver("1988"	,"capbowl2"	,"capbowl.java"	,rom_capbowl2,driver_capbowl	,machine_driver_capbowl	,input_ports_capbowl	,null	,ROT270	,	"Incredible Technologies", "Capcom Bowling (set 2)" )
+	public static GameDriver driver_clbowl	   = new GameDriver("1989"	,"clbowl"	,"capbowl.java"	,rom_clbowl,driver_capbowl	,machine_driver_capbowl	,input_ports_capbowl	,null	,ROT270	,	"Incredible Technologies", "Coors Light Bowling" )
+	public static GameDriver driver_bowlrama	   = new GameDriver("1991"	,"bowlrama"	,"capbowl.java"	,rom_bowlrama,null	,machine_driver_bowlrama	,input_ports_capbowl	,null	,ROT270	,	"P & P Marketing", "Bowl-O-Rama" )
 }

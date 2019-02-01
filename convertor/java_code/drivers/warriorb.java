@@ -745,8 +745,8 @@ public class warriorb
 	
 	/* Working Games */
 	
-	public static GameDriver driver_darius2d	   = new GameDriver("1989"	,"darius2d"	,"warriorb.java"	,rom_darius2d,driver_darius2	,machine_driver_darius2d	,input_ports_darius2d	,init_warriorb	,ROT0	,	Taito Corporation", "Darius II (dual screen) (Japan)" )
-	public static GameDriver driver_drius2do	   = new GameDriver("1989"	,"drius2do"	,"warriorb.java"	,rom_drius2do,driver_darius2	,machine_driver_darius2d	,input_ports_darius2d	,init_warriorb	,ROT0	,	Taito Corporation", "Darius II (dual screen) (Japan old version)" )
-	public static GameDriver driver_warriorb	   = new GameDriver("1991"	,"warriorb"	,"warriorb.java"	,rom_warriorb,null	,machine_driver_warriorb	,input_ports_warriorb	,init_warriorb	,ROT0	,	Taito Corporation", "Warrior Blade (Japan)" )
+	public static GameDriver driver_darius2d	   = new GameDriver("1989"	,"darius2d"	,"warriorb.java"	,rom_darius2d,driver_darius2	,machine_driver_darius2d	,input_ports_darius2d	,init_warriorb	,ROT0	,	"Taito Corporation", "Darius II (dual screen) (Japan)" )
+	public static GameDriver driver_drius2do	   = new GameDriver("1989"	,"drius2do"	,"warriorb.java"	,rom_drius2do,driver_darius2	,machine_driver_darius2d	,input_ports_darius2d	,init_warriorb	,ROT0	,	"Taito Corporation", "Darius II (dual screen) (Japan old version)" )
+	public static GameDriver driver_warriorb	   = new GameDriver("1991"	,"warriorb"	,"warriorb.java"	,rom_warriorb,null	,machine_driver_warriorb	,input_ports_warriorb	,init_warriorb	,ROT0	,	"Taito Corporation", "Warrior Blade (Japan)" )
 	
 }

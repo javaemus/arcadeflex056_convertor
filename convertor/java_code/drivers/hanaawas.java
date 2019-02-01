@@ -249,5 +249,5 @@ public class hanaawas
 	
 	
 	
-	public static GameDriver driver_hanaawas	   = new GameDriver("1982"	,"hanaawas"	,"hanaawas.java"	,rom_hanaawas,null	,machine_driver_hanaawas	,input_ports_hanaawas	,null	,ROT0	,	Seta", "Hana Awase (Flower Matching)" )
+	public static GameDriver driver_hanaawas	   = new GameDriver("1982"	,"hanaawas"	,"hanaawas.java"	,rom_hanaawas,null	,machine_driver_hanaawas	,input_ports_hanaawas	,null	,ROT0	,	"Seta", "Hana Awase (Flower Matching)" )
 }

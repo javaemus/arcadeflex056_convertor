@@ -125,6 +125,6 @@ public class dotrikun
 	ROM_END(); }}; 
 	
 	
-	public static GameDriver driver_dotrikun	   = new GameDriver("1990"	,"dotrikun"	,"dotrikun.java"	,rom_dotrikun,null	,machine_driver_dotrikun	,input_ports_dotrikun	,null	,ROT0	,	Sega", "Dottori Kun (new version)" )
-	public static GameDriver driver_dotriku2	   = new GameDriver("1990"	,"dotriku2"	,"dotrikun.java"	,rom_dotriku2,driver_dotrikun	,machine_driver_dotrikun	,input_ports_dotrikun	,null	,ROT0	,	Sega", "Dottori Kun (old version)" )
+	public static GameDriver driver_dotrikun	   = new GameDriver("1990"	,"dotrikun"	,"dotrikun.java"	,rom_dotrikun,null	,machine_driver_dotrikun	,input_ports_dotrikun	,null	,ROT0	,	"Sega", "Dottori Kun (new version)" )
+	public static GameDriver driver_dotriku2	   = new GameDriver("1990"	,"dotriku2"	,"dotrikun.java"	,rom_dotriku2,driver_dotrikun	,machine_driver_dotrikun	,input_ports_dotrikun	,null	,ROT0	,	"Sega", "Dottori Kun (old version)" )
 }

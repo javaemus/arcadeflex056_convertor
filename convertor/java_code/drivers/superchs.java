@@ -578,5 +578,5 @@ public class superchs
 		install_mem_read16_handler(2, 0x80000a, 0x80000b, sub_cycle_r);
 	}
 	
-	public static GameDriver driver_superchs	   = new GameDriver("1992"	,"superchs"	,"superchs.java"	,rom_superchs,null	,machine_driver_superchs	,input_ports_superchs	,init_superchs	,ROT0	,	Taito America Corporation", "Super Chase - Criminal Termination (US)" )
+	public static GameDriver driver_superchs	   = new GameDriver("1992"	,"superchs"	,"superchs.java"	,rom_superchs,null	,machine_driver_superchs	,input_ports_superchs	,init_superchs	,ROT0	,	"Taito America Corporation", "Super Chase - Criminal Termination (US)" )
 }

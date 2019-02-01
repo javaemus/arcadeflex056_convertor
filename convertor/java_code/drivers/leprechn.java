@@ -383,6 +383,6 @@ public class leprechn
 	
 	
 	
-	public static GameDriver driver_leprechn	   = new GameDriver("1982"	,"leprechn"	,"leprechn.java"	,rom_leprechn,null	,machine_driver_leprechn	,input_ports_leprechn	,null	,ROT0	,	Tong Electronic", "Leprechaun" )
-	public static GameDriver driver_potogold	   = new GameDriver("1982"	,"potogold"	,"leprechn.java"	,rom_potogold,driver_leprechn	,machine_driver_leprechn	,input_ports_leprechn	,null	,ROT0	,	GamePlan", "Pot of Gold" )
+	public static GameDriver driver_leprechn	   = new GameDriver("1982"	,"leprechn"	,"leprechn.java"	,rom_leprechn,null	,machine_driver_leprechn	,input_ports_leprechn	,null	,ROT0	,	"Tong Electronic", "Leprechaun" )
+	public static GameDriver driver_potogold	   = new GameDriver("1982"	,"potogold"	,"leprechn.java"	,rom_potogold,driver_leprechn	,machine_driver_leprechn	,input_ports_leprechn	,null	,ROT0	,	"GamePlan", "Pot of Gold" )
 }

@@ -574,8 +574,8 @@ public class exctsccr
 	
 	
 	
-	public static GameDriver driver_exctsccr	   = new GameDriver("1983"	,"exctsccr"	,"exctsccr.java"	,rom_exctsccr,null	,machine_driver_exctsccr	,input_ports_exctsccr	,null	,ROT90	,	Alpha Denshi Co.", "Exciting Soccer", GAME_NO_COCKTAIL )
-	public static GameDriver driver_exctscca	   = new GameDriver("1983"	,"exctscca"	,"exctsccr.java"	,rom_exctscca,driver_exctsccr	,machine_driver_exctsccr	,input_ports_exctsccr	,null	,ROT90	,	Alpha Denshi Co.", "Exciting Soccer (alternate music)", GAME_NO_COCKTAIL )
-	public static GameDriver driver_exctsccb	   = new GameDriver("1984"	,"exctsccb"	,"exctsccr.java"	,rom_exctsccb,driver_exctsccr	,machine_driver_exctsccb	,input_ports_exctsccr	,null	,ROT90	,	bootleg", "Exciting Soccer (bootleg)", GAME_NO_COCKTAIL )
-	public static GameDriver driver_exctscc2	   = new GameDriver("1984"	,"exctscc2"	,"exctsccr.java"	,rom_exctscc2,driver_exctsccr	,machine_driver_exctsccr	,input_ports_exctsccr	,null	,ROT90	,	Alpha Denshi Co.", "Exciting Soccer II", GAME_NOT_WORKING | GAME_NO_COCKTAIL )
+	public static GameDriver driver_exctsccr	   = new GameDriver("1983"	,"exctsccr"	,"exctsccr.java"	,rom_exctsccr,null	,machine_driver_exctsccr	,input_ports_exctsccr	,null	,ROT90	,	"Alpha Denshi Co.", "Exciting Soccer", GAME_NO_COCKTAIL )
+	public static GameDriver driver_exctscca	   = new GameDriver("1983"	,"exctscca"	,"exctsccr.java"	,rom_exctscca,driver_exctsccr	,machine_driver_exctsccr	,input_ports_exctsccr	,null	,ROT90	,	"Alpha Denshi Co.", "Exciting Soccer (alternate music)", GAME_NO_COCKTAIL )
+	public static GameDriver driver_exctsccb	   = new GameDriver("1984"	,"exctsccb"	,"exctsccr.java"	,rom_exctsccb,driver_exctsccr	,machine_driver_exctsccb	,input_ports_exctsccr	,null	,ROT90	,	"bootleg", "Exciting Soccer (bootleg)", GAME_NO_COCKTAIL )
+	public static GameDriver driver_exctscc2	   = new GameDriver("1984"	,"exctscc2"	,"exctsccr.java"	,rom_exctscc2,driver_exctsccr	,machine_driver_exctsccr	,input_ports_exctsccr	,null	,ROT90	,	"Alpha Denshi Co.", "Exciting Soccer II", GAME_NOT_WORKING | GAME_NO_COCKTAIL )
 }

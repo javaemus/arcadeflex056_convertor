@@ -862,9 +862,9 @@ public class ddragon
 	
 	
 	
-	public static GameDriver driver_ddragon	   = new GameDriver("1987"	,"ddragon"	,"ddragon.java"	,rom_ddragon,null	,machine_driver_ddragon	,input_ports_ddragon	,null	,ROT0	,	Technos", "Double Dragon (Japan)" )
-	public static GameDriver driver_ddragonu	   = new GameDriver("1987"	,"ddragonu"	,"ddragon.java"	,rom_ddragonu,driver_ddragon	,machine_driver_ddragon	,input_ports_ddragon	,null	,ROT0	,	[Technos] (Taito America license)", "Double Dragon (US)" )
-	public static GameDriver driver_ddragonb	   = new GameDriver("1987"	,"ddragonb"	,"ddragon.java"	,rom_ddragonb,driver_ddragon	,machine_driver_ddragonb	,input_ports_ddragon	,null	,ROT0	,	bootleg", "Double Dragon (bootleg)" )
-	public static GameDriver driver_ddragon2	   = new GameDriver("1988"	,"ddragon2"	,"ddragon.java"	,rom_ddragon2,null	,machine_driver_ddragon2	,input_ports_ddragon2	,null	,ROT0	,	Technos", "Double Dragon II - The Revenge (World)" )
-	public static GameDriver driver_ddragn2u	   = new GameDriver("1988"	,"ddragn2u"	,"ddragon.java"	,rom_ddragn2u,driver_ddragon2	,machine_driver_ddragon2	,input_ports_ddragon2	,null	,ROT0	,	Technos", "Double Dragon II - The Revenge (US)" )
+	public static GameDriver driver_ddragon	   = new GameDriver("1987"	,"ddragon"	,"ddragon.java"	,rom_ddragon,null	,machine_driver_ddragon	,input_ports_ddragon	,null	,ROT0	,	"Technos", "Double Dragon (Japan)" )
+	public static GameDriver driver_ddragonu	   = new GameDriver("1987"	,"ddragonu"	,"ddragon.java"	,rom_ddragonu,driver_ddragon	,machine_driver_ddragon	,input_ports_ddragon	,null	,ROT0	,	"[Technos] (Taito America license)", "Double Dragon (US)" )
+	public static GameDriver driver_ddragonb	   = new GameDriver("1987"	,"ddragonb"	,"ddragon.java"	,rom_ddragonb,driver_ddragon	,machine_driver_ddragonb	,input_ports_ddragon	,null	,ROT0	,	"bootleg", "Double Dragon (bootleg)" )
+	public static GameDriver driver_ddragon2	   = new GameDriver("1988"	,"ddragon2"	,"ddragon.java"	,rom_ddragon2,null	,machine_driver_ddragon2	,input_ports_ddragon2	,null	,ROT0	,	"Technos", "Double Dragon II - The Revenge (World)" )
+	public static GameDriver driver_ddragn2u	   = new GameDriver("1988"	,"ddragn2u"	,"ddragon.java"	,rom_ddragn2u,driver_ddragon2	,machine_driver_ddragon2	,input_ports_ddragon2	,null	,ROT0	,	"Technos", "Double Dragon II - The Revenge (US)" )
 }

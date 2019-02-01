@@ -799,8 +799,8 @@ public class ninjakd2
 	
 	
 	
-	public static GameDriver driver_ninjakd2	   = new GameDriver("1987"	,"ninjakd2"	,"ninjakd2.java"	,rom_ninjakd2,null	,machine_driver_ninjakd2	,input_ports_ninjakd2	,null	,ROT0	,	UPL", "Ninja Kid II (set 1)", GAME_NO_SOUND )	/* sound program is encrypted */
-	public static GameDriver driver_ninjak2a	   = new GameDriver("1987"	,"ninjak2a"	,"ninjakd2.java"	,rom_ninjak2a,driver_ninjakd2	,machine_driver_ninjak2a	,input_ports_ninjakd2	,init_ninjak2a	,ROT0	,	UPL", "Ninja Kid II (set 2)" )
-	public static GameDriver driver_ninjak2b	   = new GameDriver("1987"	,"ninjak2b"	,"ninjakd2.java"	,rom_ninjak2b,driver_ninjakd2	,machine_driver_ninjak2a	,input_ports_ninjakd2	,init_ninjak2a	,ROT0	,	UPL", "Ninja Kid II (set 3)" )
-	public static GameDriver driver_rdaction	   = new GameDriver("1987"	,"rdaction"	,"ninjakd2.java"	,rom_rdaction,driver_ninjakd2	,machine_driver_ninjak2a	,input_ports_ninjakd2	,init_ninjak2a	,ROT0	,	UPL (World Games license)", "Rad Action" )
+	public static GameDriver driver_ninjakd2	   = new GameDriver("1987"	,"ninjakd2"	,"ninjakd2.java"	,rom_ninjakd2,null	,machine_driver_ninjakd2	,input_ports_ninjakd2	,null	,ROT0	,	"UPL", "Ninja Kid II (set 1)", GAME_NO_SOUND )	/* sound program is encrypted */
+	public static GameDriver driver_ninjak2a	   = new GameDriver("1987"	,"ninjak2a"	,"ninjakd2.java"	,rom_ninjak2a,driver_ninjakd2	,machine_driver_ninjak2a	,input_ports_ninjakd2	,init_ninjak2a	,ROT0	,	"UPL", "Ninja Kid II (set 2)" )
+	public static GameDriver driver_ninjak2b	   = new GameDriver("1987"	,"ninjak2b"	,"ninjakd2.java"	,rom_ninjak2b,driver_ninjakd2	,machine_driver_ninjak2a	,input_ports_ninjakd2	,init_ninjak2a	,ROT0	,	"UPL", "Ninja Kid II (set 3)" )
+	public static GameDriver driver_rdaction	   = new GameDriver("1987"	,"rdaction"	,"ninjakd2.java"	,rom_rdaction,driver_ninjakd2	,machine_driver_ninjak2a	,input_ports_ninjakd2	,init_ninjak2a	,ROT0	,	"UPL (World Games license)", "Rad Action" )
 }

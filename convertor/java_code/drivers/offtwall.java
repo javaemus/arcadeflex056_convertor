@@ -551,6 +551,6 @@ public class offtwall
 	 *
 	 *************************************/
 	
-	public static GameDriver driver_offtwall	   = new GameDriver("1991"	,"offtwall"	,"offtwall.java"	,rom_offtwall,null	,machine_driver_offtwall	,input_ports_offtwall	,init_offtwall	,ROT0	,	Atari Games", "Off the Wall (2/3-player upright)" )
-	public static GameDriver driver_offtwalc	   = new GameDriver("1991"	,"offtwalc"	,"offtwall.java"	,rom_offtwalc,driver_offtwall	,machine_driver_offtwall	,input_ports_offtwall	,init_offtwalc	,ROT0	,	Atari Games", "Off the Wall (2-player cocktail)" )
+	public static GameDriver driver_offtwall	   = new GameDriver("1991"	,"offtwall"	,"offtwall.java"	,rom_offtwall,null	,machine_driver_offtwall	,input_ports_offtwall	,init_offtwall	,ROT0	,	"Atari Games", "Off the Wall (2/3-player upright)" )
+	public static GameDriver driver_offtwalc	   = new GameDriver("1991"	,"offtwalc"	,"offtwall.java"	,rom_offtwalc,driver_offtwall	,machine_driver_offtwall	,input_ports_offtwall	,init_offtwalc	,ROT0	,	"Atari Games", "Off the Wall (2-player cocktail)" )
 }

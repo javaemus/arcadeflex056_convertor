@@ -942,8 +942,8 @@ public class xevious
 	
 	
 	
-	public static GameDriver driver_xevious	   = new GameDriver("1982"	,"xevious"	,"xevious.java"	,rom_xevious,null	,machine_driver_xevious	,input_ports_xevious	,null	,ROT90	,	Namco", "Xevious (Namco)" )
-	public static GameDriver driver_xeviousa	   = new GameDriver("1982"	,"xeviousa"	,"xevious.java"	,rom_xeviousa,driver_xevious	,machine_driver_xevious	,input_ports_xeviousa	,null	,ROT90	,	Namco (Atari license)", "Xevious (Atari)" )
-	public static GameDriver driver_xevios	   = new GameDriver("1982"	,"xevios"	,"xevious.java"	,rom_xevios,driver_xevious	,machine_driver_xevious	,input_ports_xevious	,init_xevios	,ROT90	,	bootleg", "Xevios" )
-	public static GameDriver driver_sxevious	   = new GameDriver("1984"	,"sxevious"	,"xevious.java"	,rom_sxevious,driver_xevious	,machine_driver_xevious	,input_ports_sxevious	,null	,ROT90	,	Namco", "Super Xevious" )
+	public static GameDriver driver_xevious	   = new GameDriver("1982"	,"xevious"	,"xevious.java"	,rom_xevious,null	,machine_driver_xevious	,input_ports_xevious	,null	,ROT90	,	"Namco", "Xevious (Namco)" )
+	public static GameDriver driver_xeviousa	   = new GameDriver("1982"	,"xeviousa"	,"xevious.java"	,rom_xeviousa,driver_xevious	,machine_driver_xevious	,input_ports_xeviousa	,null	,ROT90	,	"Namco (Atari license)", "Xevious (Atari)" )
+	public static GameDriver driver_xevios	   = new GameDriver("1982"	,"xevios"	,"xevious.java"	,rom_xevios,driver_xevious	,machine_driver_xevious	,input_ports_xevious	,init_xevios	,ROT90	,	"bootleg", "Xevios" )
+	public static GameDriver driver_sxevious	   = new GameDriver("1984"	,"sxevious"	,"xevious.java"	,rom_sxevious,driver_xevious	,machine_driver_xevious	,input_ports_sxevious	,null	,ROT90	,	"Namco", "Super Xevious" )
 }

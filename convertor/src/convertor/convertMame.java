@@ -740,7 +740,7 @@ public class convertMame {
                         Convertor.inpos++;
                         sUtil.skipSpace();
                         Convertor.token[6] = sUtil.parseToken();//ROT
-                        Convertor.inpos++;
+                        //Convertor.inpos++;
                         sUtil.skipSpace();
                         Convertor.token[7] = sUtil.parseToken();
                         Convertor.inpos++;

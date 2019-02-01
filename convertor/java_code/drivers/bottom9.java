@@ -640,7 +640,7 @@ public class bottom9
 	
 	
 	
-	public static GameDriver driver_bottom9	   = new GameDriver("1989"	,"bottom9"	,"bottom9.java"	,rom_bottom9,null	,machine_driver_bottom9	,input_ports_bottom9	,init_bottom9	,ROT0	,	Konami", "Bottom of the Ninth (version T)" )
-	public static GameDriver driver_bottom9n	   = new GameDriver("1989"	,"bottom9n"	,"bottom9.java"	,rom_bottom9n,driver_bottom9	,machine_driver_bottom9	,input_ports_bottom9	,init_bottom9	,ROT0	,	Konami", "Bottom of the Ninth (version N)" )
-	public static GameDriver driver_mstadium	   = new GameDriver("1989"	,"mstadium"	,"bottom9.java"	,rom_mstadium,driver_bottom9	,machine_driver_bottom9	,input_ports_mstadium	,init_bottom9	,ROT0	,	Konami", "Main Stadium (Japan)" )
+	public static GameDriver driver_bottom9	   = new GameDriver("1989"	,"bottom9"	,"bottom9.java"	,rom_bottom9,null	,machine_driver_bottom9	,input_ports_bottom9	,init_bottom9	,ROT0	,	"Konami", "Bottom of the Ninth (version T)" )
+	public static GameDriver driver_bottom9n	   = new GameDriver("1989"	,"bottom9n"	,"bottom9.java"	,rom_bottom9n,driver_bottom9	,machine_driver_bottom9	,input_ports_bottom9	,init_bottom9	,ROT0	,	"Konami", "Bottom of the Ninth (version N)" )
+	public static GameDriver driver_mstadium	   = new GameDriver("1989"	,"mstadium"	,"bottom9.java"	,rom_mstadium,driver_bottom9	,machine_driver_bottom9	,input_ports_mstadium	,init_bottom9	,ROT0	,	"Konami", "Main Stadium (Japan)" )
 }

@@ -400,5 +400,5 @@ public class cloak
 	
 	
 	
-	public static GameDriver driver_cloak	   = new GameDriver("1983"	,"cloak"	,"cloak.java"	,rom_cloak,null	,machine_driver_cloak	,input_ports_cloak	,null	,ROT0	,	Atari", "Cloak & Dagger", GAME_NO_COCKTAIL )
+	public static GameDriver driver_cloak	   = new GameDriver("1983"	,"cloak"	,"cloak.java"	,rom_cloak,null	,machine_driver_cloak	,input_ports_cloak	,null	,ROT0	,	"Atari", "Cloak & Dagger", GAME_NO_COCKTAIL )
 }

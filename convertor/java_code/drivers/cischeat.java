@@ -2170,8 +2170,8 @@ public class cischeat
 	
 	***************************************************************************/
 	
-	public static GameDriver driver_bigrun	   = new GameDriver("1989"	,"bigrun"	,"cischeat.java"	,rom_bigrun,null	,machine_driver_bigrun	,input_ports_bigrun	,init_bigrun	,ROT0	,	Jaleco", "Big Run (11th Rallye version)", GAME_IMPERFECT_GRAPHICS )	// there's a 13th Rallye version (1991)
-	public static GameDriver driver_cischeat	   = new GameDriver("1990"	,"cischeat"	,"cischeat.java"	,rom_cischeat,null	,machine_driver_cischeat	,input_ports_cischeat	,init_cischeat	,ROT0	,	Jaleco", "Cisco Heat",         GAME_IMPERFECT_GRAPHICS )
-	public static GameDriver driver_f1gpstar	   = new GameDriver("1991"	,"f1gpstar"	,"cischeat.java"	,rom_f1gpstar,null	,machine_driver_f1gpstar	,input_ports_f1gpstar	,init_f1gpstar	,ROT0	,	Jaleco", "F1 Grand Prix Star", GAME_IMPERFECT_GRAPHICS )
-	public static GameDriver driver_scudhamm	   = new GameDriver("1994"	,"scudhamm"	,"cischeat.java"	,rom_scudhamm,null	,machine_driver_scudhamm	,input_ports_scudhamm	,null	,ROT270	,	Jaleco", "Scud Hammer",        GAME_IMPERFECT_GRAPHICS )
+	public static GameDriver driver_bigrun	   = new GameDriver("1989"	,"bigrun"	,"cischeat.java"	,rom_bigrun,null	,machine_driver_bigrun	,input_ports_bigrun	,init_bigrun	,ROT0	,	"Jaleco", "Big Run (11th Rallye version)", GAME_IMPERFECT_GRAPHICS )	// there's a 13th Rallye version (1991)
+	public static GameDriver driver_cischeat	   = new GameDriver("1990"	,"cischeat"	,"cischeat.java"	,rom_cischeat,null	,machine_driver_cischeat	,input_ports_cischeat	,init_cischeat	,ROT0	,	"Jaleco", "Cisco Heat",         GAME_IMPERFECT_GRAPHICS )
+	public static GameDriver driver_f1gpstar	   = new GameDriver("1991"	,"f1gpstar"	,"cischeat.java"	,rom_f1gpstar,null	,machine_driver_f1gpstar	,input_ports_f1gpstar	,init_f1gpstar	,ROT0	,	"Jaleco", "F1 Grand Prix Star", GAME_IMPERFECT_GRAPHICS )
+	public static GameDriver driver_scudhamm	   = new GameDriver("1994"	,"scudhamm"	,"cischeat.java"	,rom_scudhamm,null	,machine_driver_scudhamm	,input_ports_scudhamm	,null	,ROT270	,	"Jaleco", "Scud Hammer",        GAME_IMPERFECT_GRAPHICS )
 }

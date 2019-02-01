@@ -273,5 +273,5 @@ public class qwakprot
 	
 	
 	
-	public static GameDriver driver_qwakprot	   = new GameDriver("1982"	,"qwakprot"	,"qwakprot.java"	,rom_qwakprot,null	,machine_driver_qwakprot	,input_ports_qwakprot	,null	,ROT270	,	Atari", "Qwak (prototype)", GAME_NO_COCKTAIL )
+	public static GameDriver driver_qwakprot	   = new GameDriver("1982"	,"qwakprot"	,"qwakprot.java"	,rom_qwakprot,null	,machine_driver_qwakprot	,input_ports_qwakprot	,null	,ROT270	,	"Atari", "Qwak (prototype)", GAME_NO_COCKTAIL )
 }

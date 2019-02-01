@@ -570,8 +570,8 @@ public class commando
 	
 	
 	
-	public static GameDriver driver_commando	   = new GameDriver("1985"	,"commando"	,"commando.java"	,rom_commando,null	,machine_driver_commando	,input_ports_commando	,init_commando	,ROT90	,	Capcom", "Commando (World)" )
-	public static GameDriver driver_commandu	   = new GameDriver("1985"	,"commandu"	,"commando.java"	,rom_commandu,driver_commando	,machine_driver_commando	,input_ports_commandu	,init_commando	,ROT90	,	Capcom (Data East USA license)", "Commando (US)" )
-	public static GameDriver driver_commandj	   = new GameDriver("1985"	,"commandj"	,"commando.java"	,rom_commandj,driver_commando	,machine_driver_commando	,input_ports_commando	,init_commando	,ROT90	,	Capcom", "Senjo no Ookami" )
-	public static GameDriver driver_spaceinv	   = new GameDriver("1985"	,"spaceinv"	,"commando.java"	,rom_spaceinv,driver_commando	,machine_driver_commando	,input_ports_commando	,init_spaceinv	,ROT90	,	bootleg", "Space Invasion" )
+	public static GameDriver driver_commando	   = new GameDriver("1985"	,"commando"	,"commando.java"	,rom_commando,null	,machine_driver_commando	,input_ports_commando	,init_commando	,ROT90	,	"Capcom", "Commando (World)" )
+	public static GameDriver driver_commandu	   = new GameDriver("1985"	,"commandu"	,"commando.java"	,rom_commandu,driver_commando	,machine_driver_commando	,input_ports_commandu	,init_commando	,ROT90	,	"Capcom (Data East USA license)", "Commando (US)" )
+	public static GameDriver driver_commandj	   = new GameDriver("1985"	,"commandj"	,"commando.java"	,rom_commandj,driver_commando	,machine_driver_commando	,input_ports_commando	,init_commando	,ROT90	,	"Capcom", "Senjo no Ookami" )
+	public static GameDriver driver_spaceinv	   = new GameDriver("1985"	,"spaceinv"	,"commando.java"	,rom_spaceinv,driver_commando	,machine_driver_commando	,input_ports_commando	,init_spaceinv	,ROT90	,	"bootleg", "Space Invasion" )
 }

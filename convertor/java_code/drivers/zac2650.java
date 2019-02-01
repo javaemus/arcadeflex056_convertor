@@ -352,7 +352,7 @@ public class zac2650
 	ROM_END(); }}; 
 	
 	
-	public static GameDriver driver_sia2650	   = new GameDriver("19??"	,"sia2650"	,"zac2650.java"	,rom_sia2650,null	,machine_driver_tinvader	,input_ports_sinvader	,null	,ROT270	,	Zaccaria/Zelco", "Super Invader Attack", GAME_NO_SOUND )
-	public static GameDriver driver_tinv2650	   = new GameDriver("19??"	,"tinv2650"	,"zac2650.java"	,rom_tinv2650,driver_sia2650	,machine_driver_tinvader	,input_ports_tinvader	,null	,ROT270	,	Zaccaria/Zelco", "The Invaders", GAME_NO_SOUND )
-	public static GameDriver driver_embargo	   = new GameDriver("1977"	,"embargo"	,"zac2650.java"	,rom_embargo,null	,machine_driver_embargo	,input_ports_tinvader	,init_8080bw	,ROT0	,	Cinematronics",  "Embargo", GAME_NO_SOUND )
+	public static GameDriver driver_sia2650	   = new GameDriver("19??"	,"sia2650"	,"zac2650.java"	,rom_sia2650,null	,machine_driver_tinvader	,input_ports_sinvader	,null	,ROT270	,	"Zaccaria/Zelco", "Super Invader Attack", GAME_NO_SOUND )
+	public static GameDriver driver_tinv2650	   = new GameDriver("19??"	,"tinv2650"	,"zac2650.java"	,rom_tinv2650,driver_sia2650	,machine_driver_tinvader	,input_ports_tinvader	,null	,ROT270	,	"Zaccaria/Zelco", "The Invaders", GAME_NO_SOUND )
+	public static GameDriver driver_embargo	   = new GameDriver("1977"	,"embargo"	,"zac2650.java"	,rom_embargo,null	,machine_driver_embargo	,input_ports_tinvader	,init_8080bw	,ROT0	,	"Cinematronics",  "Embargo", GAME_NO_SOUND )
 }

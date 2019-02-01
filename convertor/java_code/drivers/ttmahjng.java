@@ -258,5 +258,5 @@ public class ttmahjng
 	ROM_END(); }}; 
 	
 	
-	public static GameDriver driver_ttmahjng	   = new GameDriver("1981"	,"ttmahjng"	,"ttmahjng.java"	,rom_ttmahjng,null	,machine_driver_ttmahjng	,input_ports_ttmahjng	,null	,ROT0	,	Taito", "T.T. Mahjong" )
+	public static GameDriver driver_ttmahjng	   = new GameDriver("1981"	,"ttmahjng"	,"ttmahjng.java"	,rom_ttmahjng,null	,machine_driver_ttmahjng	,input_ports_ttmahjng	,null	,ROT0	,	"Taito", "T.T. Mahjong" )
 }

@@ -462,8 +462,8 @@ public class blktiger
 	
 	
 	
-	public static GameDriver driver_blktiger	   = new GameDriver("1987"	,"blktiger"	,"blktiger.java"	,rom_blktiger,null	,machine_driver_blktiger	,input_ports_blktiger	,null	,ROT0	,	Capcom", "Black Tiger" )
-	public static GameDriver driver_bktigerb	   = new GameDriver("1987"	,"bktigerb"	,"blktiger.java"	,rom_bktigerb,driver_blktiger	,machine_driver_blktiger	,input_ports_blktiger	,null	,ROT0	,	bootleg", "Black Tiger (bootleg)" )
-	public static GameDriver driver_blkdrgon	   = new GameDriver("1987"	,"blkdrgon"	,"blktiger.java"	,rom_blkdrgon,driver_blktiger	,machine_driver_blktiger	,input_ports_blktiger	,null	,ROT0	,	Capcom", "Black Dragon" )
-	public static GameDriver driver_blkdrgnb	   = new GameDriver("1987"	,"blkdrgnb"	,"blktiger.java"	,rom_blkdrgnb,driver_blktiger	,machine_driver_blktiger	,input_ports_blktiger	,null	,ROT0	,	bootleg", "Black Dragon (bootleg)" )
+	public static GameDriver driver_blktiger	   = new GameDriver("1987"	,"blktiger"	,"blktiger.java"	,rom_blktiger,null	,machine_driver_blktiger	,input_ports_blktiger	,null	,ROT0	,	"Capcom", "Black Tiger" )
+	public static GameDriver driver_bktigerb	   = new GameDriver("1987"	,"bktigerb"	,"blktiger.java"	,rom_bktigerb,driver_blktiger	,machine_driver_blktiger	,input_ports_blktiger	,null	,ROT0	,	"bootleg", "Black Tiger (bootleg)" )
+	public static GameDriver driver_blkdrgon	   = new GameDriver("1987"	,"blkdrgon"	,"blktiger.java"	,rom_blkdrgon,driver_blktiger	,machine_driver_blktiger	,input_ports_blktiger	,null	,ROT0	,	"Capcom", "Black Dragon" )
+	public static GameDriver driver_blkdrgnb	   = new GameDriver("1987"	,"blkdrgnb"	,"blktiger.java"	,rom_blkdrgnb,driver_blktiger	,machine_driver_blktiger	,input_ports_blktiger	,null	,ROT0	,	"bootleg", "Black Dragon (bootleg)" )
 }

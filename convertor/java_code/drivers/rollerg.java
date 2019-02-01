@@ -394,6 +394,6 @@ public class rollerg
 	
 	
 	
-	public static GameDriver driver_rollerg	   = new GameDriver("1991"	,"rollerg"	,"rollerg.java"	,rom_rollerg,null	,machine_driver_rollerg	,input_ports_rollerg	,init_rollerg	,ROT0	,	Konami", "Rollergames (US)" )
-	public static GameDriver driver_rollergj	   = new GameDriver("1991"	,"rollergj"	,"rollerg.java"	,rom_rollergj,driver_rollerg	,machine_driver_rollerg	,input_ports_rollerg	,init_rollerg	,ROT0	,	Konami", "Rollergames (Japan)" )
+	public static GameDriver driver_rollerg	   = new GameDriver("1991"	,"rollerg"	,"rollerg.java"	,rom_rollerg,null	,machine_driver_rollerg	,input_ports_rollerg	,init_rollerg	,ROT0	,	"Konami", "Rollergames (US)" )
+	public static GameDriver driver_rollergj	   = new GameDriver("1991"	,"rollergj"	,"rollerg.java"	,rom_rollergj,driver_rollerg	,machine_driver_rollerg	,input_ports_rollerg	,init_rollerg	,ROT0	,	"Konami", "Rollergames (Japan)" )
 }

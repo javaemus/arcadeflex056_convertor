@@ -512,9 +512,9 @@ public class rastan
 	}
 	
 	
-	public static GameDriver driver_rastan	   = new GameDriver("1987"	,"rastan"	,"rastan.java"	,rom_rastan,null	,machine_driver_rastan	,input_ports_rastan	,init_rastan	,ROT0	,	Taito Corporation Japan", "Rastan (World)")
+	public static GameDriver driver_rastan	   = new GameDriver("1987"	,"rastan"	,"rastan.java"	,rom_rastan,null	,machine_driver_rastan	,input_ports_rastan	,init_rastan	,ROT0	,	"Taito Corporation Japan", "Rastan (World)")
 	/* IDENTICAL to rastan, only difference is copyright notice and Coin B coinage */
-	public static GameDriver driver_rastanu	   = new GameDriver("1987"	,"rastanu"	,"rastan.java"	,rom_rastanu,driver_rastan	,machine_driver_rastan	,input_ports_rastsaga	,init_rastan	,ROT0	,	Taito America Corporation", "Rastan (US set 1)")
-	public static GameDriver driver_rastanu2	   = new GameDriver("1987"	,"rastanu2"	,"rastan.java"	,rom_rastanu2,driver_rastan	,machine_driver_rastan	,input_ports_rastsaga	,init_rastan	,ROT0	,	Taito America Corporation", "Rastan (US set 2)")
-	public static GameDriver driver_rastsaga	   = new GameDriver("1987"	,"rastsaga"	,"rastan.java"	,rom_rastsaga,driver_rastan	,machine_driver_rastan	,input_ports_rastsaga	,init_rastan	,ROT0	,	Taito Corporation", "Rastan Saga (Japan)")
+	public static GameDriver driver_rastanu	   = new GameDriver("1987"	,"rastanu"	,"rastan.java"	,rom_rastanu,driver_rastan	,machine_driver_rastan	,input_ports_rastsaga	,init_rastan	,ROT0	,	"Taito America Corporation", "Rastan (US set 1)")
+	public static GameDriver driver_rastanu2	   = new GameDriver("1987"	,"rastanu2"	,"rastan.java"	,rom_rastanu2,driver_rastan	,machine_driver_rastan	,input_ports_rastsaga	,init_rastan	,ROT0	,	"Taito America Corporation", "Rastan (US set 2)")
+	public static GameDriver driver_rastsaga	   = new GameDriver("1987"	,"rastsaga"	,"rastan.java"	,rom_rastsaga,driver_rastan	,machine_driver_rastan	,input_ports_rastsaga	,init_rastan	,ROT0	,	"Taito Corporation", "Rastan Saga (Japan)")
 }

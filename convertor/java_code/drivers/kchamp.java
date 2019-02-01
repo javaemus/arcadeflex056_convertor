@@ -800,8 +800,8 @@ public class kchamp
 	
 	
 	
-	public static GameDriver driver_kchamp	   = new GameDriver("1984"	,"kchamp"	,"kchamp.java"	,rom_kchamp,null	,machine_driver_kchamp	,input_ports_kchamp	,null	,ROT90	,	Data East USA", "Karate Champ (US)", GAME_NO_COCKTAIL )
-	public static GameDriver driver_karatedo	   = new GameDriver("1984"	,"karatedo"	,"kchamp.java"	,rom_karatedo,driver_kchamp	,machine_driver_kchamp	,input_ports_kchamp	,null	,ROT90	,	Data East Corporation", "Karate Dou (Japan)", GAME_NO_COCKTAIL )
-	public static GameDriver driver_kchampvs	   = new GameDriver("1984"	,"kchampvs"	,"kchamp.java"	,rom_kchampvs,driver_kchamp	,machine_driver_kchampvs	,input_ports_kchampvs	,init_kchampvs	,ROT90	,	Data East USA", "Karate Champ (US VS version)", GAME_NO_COCKTAIL )
-	public static GameDriver driver_karatevs	   = new GameDriver("1984"	,"karatevs"	,"kchamp.java"	,rom_karatevs,driver_kchamp	,machine_driver_kchampvs	,input_ports_kchampvs	,init_kchampvs	,ROT90	,	Data East Corporation", "Taisen Karate Dou (Japan VS version)", GAME_NO_COCKTAIL )
+	public static GameDriver driver_kchamp	   = new GameDriver("1984"	,"kchamp"	,"kchamp.java"	,rom_kchamp,null	,machine_driver_kchamp	,input_ports_kchamp	,null	,ROT90	,	"Data East USA", "Karate Champ (US)", GAME_NO_COCKTAIL )
+	public static GameDriver driver_karatedo	   = new GameDriver("1984"	,"karatedo"	,"kchamp.java"	,rom_karatedo,driver_kchamp	,machine_driver_kchamp	,input_ports_kchamp	,null	,ROT90	,	"Data East Corporation", "Karate Dou (Japan)", GAME_NO_COCKTAIL )
+	public static GameDriver driver_kchampvs	   = new GameDriver("1984"	,"kchampvs"	,"kchamp.java"	,rom_kchampvs,driver_kchamp	,machine_driver_kchampvs	,input_ports_kchampvs	,init_kchampvs	,ROT90	,	"Data East USA", "Karate Champ (US VS version)", GAME_NO_COCKTAIL )
+	public static GameDriver driver_karatevs	   = new GameDriver("1984"	,"karatevs"	,"kchamp.java"	,rom_karatevs,driver_kchamp	,machine_driver_kchampvs	,input_ports_kchampvs	,init_kchampvs	,ROT90	,	"Data East Corporation", "Taisen Karate Dou (Japan VS version)", GAME_NO_COCKTAIL )
 }

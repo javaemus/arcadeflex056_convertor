@@ -362,7 +362,7 @@ public class pooyan
 	
 	
 	
-	public static GameDriver driver_pooyan	   = new GameDriver("1982"	,"pooyan"	,"pooyan.java"	,rom_pooyan,null	,machine_driver_pooyan	,input_ports_pooyan	,null	,ROT270	,	Konami", "Pooyan" )
-	public static GameDriver driver_pooyans	   = new GameDriver("1982"	,"pooyans"	,"pooyan.java"	,rom_pooyans,driver_pooyan	,machine_driver_pooyan	,input_ports_pooyan	,null	,ROT270	,	[Konami] (Stern license)", "Pooyan (Stern)" )
-	public static GameDriver driver_pootan	   = new GameDriver("1982"	,"pootan"	,"pooyan.java"	,rom_pootan,driver_pooyan	,machine_driver_pooyan	,input_ports_pooyan	,null	,ROT270	,	bootleg", "Pootan" )
+	public static GameDriver driver_pooyan	   = new GameDriver("1982"	,"pooyan"	,"pooyan.java"	,rom_pooyan,null	,machine_driver_pooyan	,input_ports_pooyan	,null	,ROT270	,	"Konami", "Pooyan" )
+	public static GameDriver driver_pooyans	   = new GameDriver("1982"	,"pooyans"	,"pooyan.java"	,rom_pooyans,driver_pooyan	,machine_driver_pooyan	,input_ports_pooyan	,null	,ROT270	,	"[Konami] (Stern license)", "Pooyan (Stern)" )
+	public static GameDriver driver_pootan	   = new GameDriver("1982"	,"pootan"	,"pooyan.java"	,rom_pootan,driver_pooyan	,machine_driver_pooyan	,input_ports_pooyan	,null	,ROT270	,	"bootleg", "Pootan" )
 }

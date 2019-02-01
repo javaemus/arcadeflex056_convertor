@@ -437,7 +437,7 @@ public class hcastle
 	
 	
 	
-	public static GameDriver driver_hcastle	   = new GameDriver("1988"	,"hcastle"	,"hcastle.java"	,rom_hcastle,null	,machine_driver_hcastle	,input_ports_hcastle	,null	,ROT0	,	Konami", "Haunted Castle (set 1)", GAME_NO_COCKTAIL )
-	public static GameDriver driver_hcastlea	   = new GameDriver("1988"	,"hcastlea"	,"hcastle.java"	,rom_hcastlea,driver_hcastle	,machine_driver_hcastle	,input_ports_hcastle	,null	,ROT0	,	Konami", "Haunted Castle (set 2)", GAME_NO_COCKTAIL )
-	public static GameDriver driver_hcastlej	   = new GameDriver("1988"	,"hcastlej"	,"hcastle.java"	,rom_hcastlej,driver_hcastle	,machine_driver_hcastle	,input_ports_hcastle	,null	,ROT0	,	Konami", "Akuma-Jou Dracula (Japan)", GAME_NO_COCKTAIL )
+	public static GameDriver driver_hcastle	   = new GameDriver("1988"	,"hcastle"	,"hcastle.java"	,rom_hcastle,null	,machine_driver_hcastle	,input_ports_hcastle	,null	,ROT0	,	"Konami", "Haunted Castle (set 1)", GAME_NO_COCKTAIL )
+	public static GameDriver driver_hcastlea	   = new GameDriver("1988"	,"hcastlea"	,"hcastle.java"	,rom_hcastlea,driver_hcastle	,machine_driver_hcastle	,input_ports_hcastle	,null	,ROT0	,	"Konami", "Haunted Castle (set 2)", GAME_NO_COCKTAIL )
+	public static GameDriver driver_hcastlej	   = new GameDriver("1988"	,"hcastlej"	,"hcastle.java"	,rom_hcastlej,driver_hcastle	,machine_driver_hcastle	,input_ports_hcastle	,null	,ROT0	,	"Konami", "Akuma-Jou Dracula (Japan)", GAME_NO_COCKTAIL )
 }

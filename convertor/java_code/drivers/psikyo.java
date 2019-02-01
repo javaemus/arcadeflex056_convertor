@@ -1290,11 +1290,11 @@ public class psikyo
 	***************************************************************************/
 	
 	/* Working Games */
-	public static GameDriver driver_sngkace	   = new GameDriver("1993"	,"sngkace"	,"psikyo.java"	,rom_sngkace,null	,machine_driver_sngkace	,input_ports_sngkace	,init_sngkace	,ROT270	,	Psikyo", "Sengoku Ace (Japan)"   ) // Banpresto?
-	public static GameDriver driver_gunbird	   = new GameDriver("1994"	,"gunbird"	,"psikyo.java"	,rom_gunbird,null	,machine_driver_gunbird	,input_ports_gunbird	,init_gunbird	,ROT270	,	Psikyo", "Gun Bird (Japan)"      )
-	public static GameDriver driver_btlkrodj	   = new GameDriver("1994"	,"btlkrodj"	,"psikyo.java"	,rom_btlkrodj,null	,machine_driver_gunbird	,input_ports_btlkrodj	,init_gunbird	,ROT0	,	Psikyo", "Battle K-Road (Japan)" )
+	public static GameDriver driver_sngkace	   = new GameDriver("1993"	,"sngkace"	,"psikyo.java"	,rom_sngkace,null	,machine_driver_sngkace	,input_ports_sngkace	,init_sngkace	,ROT270	,	"Psikyo", "Sengoku Ace (Japan)"   ) // Banpresto?
+	public static GameDriver driver_gunbird	   = new GameDriver("1994"	,"gunbird"	,"psikyo.java"	,rom_gunbird,null	,machine_driver_gunbird	,input_ports_gunbird	,init_gunbird	,ROT270	,	"Psikyo", "Gun Bird (Japan)"      )
+	public static GameDriver driver_btlkrodj	   = new GameDriver("1994"	,"btlkrodj"	,"psikyo.java"	,rom_btlkrodj,null	,machine_driver_gunbird	,input_ports_btlkrodj	,init_gunbird	,ROT0	,	"Psikyo", "Battle K-Road (Japan)" )
 	
 	/* Non Working Games: Protected (the PIC16C57 code isn't dumped) */
-	public static GameDriver driver_s1945	   = new GameDriver("1995"	,"s1945"	,"psikyo.java"	,rom_s1945,null	,machine_driver_s1945	,input_ports_gunbird	,init_s1945	,ROT270	,	Psikyo", "Strikers 1945 (Japan)", GAME_NOT_WORKING )
-	public static GameDriver driver_sngkblad	   = new GameDriver("1996"	,"sngkblad"	,"psikyo.java"	,rom_sngkblad,null	,machine_driver_s1945	,input_ports_gunbird	,init_sngkblad	,ROT0	,	Psikyo", "Sengoku Blade (Japan)", GAME_NOT_WORKING )
+	public static GameDriver driver_s1945	   = new GameDriver("1995"	,"s1945"	,"psikyo.java"	,rom_s1945,null	,machine_driver_s1945	,input_ports_gunbird	,init_s1945	,ROT270	,	"Psikyo", "Strikers 1945 (Japan)", GAME_NOT_WORKING )
+	public static GameDriver driver_sngkblad	   = new GameDriver("1996"	,"sngkblad"	,"psikyo.java"	,rom_sngkblad,null	,machine_driver_s1945	,input_ports_gunbird	,init_sngkblad	,ROT0	,	"Psikyo", "Sengoku Blade (Japan)", GAME_NOT_WORKING )
 }

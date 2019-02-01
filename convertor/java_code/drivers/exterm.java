@@ -603,5 +603,5 @@ public class exterm
 	 *
 	 *************************************/
 	
-	public static GameDriver driver_exterm	   = new GameDriver("1989"	,"exterm"	,"exterm.java"	,rom_exterm,null	,machine_driver_exterm	,input_ports_exterm	,init_exterm	,ROT0	,	Gottlieb / Premier Technology", "Exterminator" )
+	public static GameDriver driver_exterm	   = new GameDriver("1989"	,"exterm"	,"exterm.java"	,rom_exterm,null	,machine_driver_exterm	,input_ports_exterm	,init_exterm	,ROT0	,	"Gottlieb / Premier Technology", "Exterminator" )
 }

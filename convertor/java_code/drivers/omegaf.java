@@ -893,8 +893,8 @@ public class omegaf
 	
 	
 	/*   ( YEAR  NAME      PARENT   MACHINE  INPUT    INIT      MONITOR COMPANY  FULLNAME                 FLAGS ) */
-	public static GameDriver driver_robokid	   = new GameDriver("1988"	,"robokid"	,"omegaf.java"	,rom_robokid,null	,machine_driver_robokid	,input_ports_robokid	,null	,ROT0	,	UPL",  "Atomic Robokid",         GAME_NO_COCKTAIL )
-	public static GameDriver driver_robokidj	   = new GameDriver("1988"	,"robokidj"	,"omegaf.java"	,rom_robokidj,driver_robokid	,machine_driver_robokid	,input_ports_robokidj	,null	,ROT0	,	UPL",  "Atomic Robokid (Japan)", GAME_NO_COCKTAIL )
-	public static GameDriver driver_omegaf	   = new GameDriver("1989"	,"omegaf"	,"omegaf.java"	,rom_omegaf,null	,machine_driver_omegaf	,input_ports_omegaf	,init_omegaf	,ROT270	,	UPL",  "Omega Fighter",          GAME_NO_COCKTAIL )
-	public static GameDriver driver_omegafs	   = new GameDriver("1989"	,"omegafs"	,"omegaf.java"	,rom_omegafs,driver_omegaf	,machine_driver_omegaf	,input_ports_omegaf	,init_omegaf	,ROT270	,	UPL",  "Omega Fighter Special",  GAME_NO_COCKTAIL )
+	public static GameDriver driver_robokid	   = new GameDriver("1988"	,"robokid"	,"omegaf.java"	,rom_robokid,null	,machine_driver_robokid	,input_ports_robokid	,null	,ROT0	,	"UPL",  "Atomic Robokid",         GAME_NO_COCKTAIL )
+	public static GameDriver driver_robokidj	   = new GameDriver("1988"	,"robokidj"	,"omegaf.java"	,rom_robokidj,driver_robokid	,machine_driver_robokid	,input_ports_robokidj	,null	,ROT0	,	"UPL",  "Atomic Robokid (Japan)", GAME_NO_COCKTAIL )
+	public static GameDriver driver_omegaf	   = new GameDriver("1989"	,"omegaf"	,"omegaf.java"	,rom_omegaf,null	,machine_driver_omegaf	,input_ports_omegaf	,init_omegaf	,ROT270	,	"UPL",  "Omega Fighter",          GAME_NO_COCKTAIL )
+	public static GameDriver driver_omegafs	   = new GameDriver("1989"	,"omegafs"	,"omegaf.java"	,rom_omegafs,driver_omegaf	,machine_driver_omegaf	,input_ports_omegaf	,init_omegaf	,ROT270	,	"UPL",  "Omega Fighter Special",  GAME_NO_COCKTAIL )
 }

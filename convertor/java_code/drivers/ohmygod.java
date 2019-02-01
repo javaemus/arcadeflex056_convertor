@@ -463,6 +463,6 @@ public class ohmygod
 	}
 	
 	
-	public static GameDriver driver_ohmygod	   = new GameDriver("1993"	,"ohmygod"	,"ohmygod.java"	,rom_ohmygod,null	,machine_driver_ohmygod	,input_ports_ohmygod	,init_ohmygod	,ROT0	,	Atlus", "Oh My God! (Japan)", GAME_NO_COCKTAIL )
-	public static GameDriver driver_naname	   = new GameDriver("1994"	,"naname"	,"ohmygod.java"	,rom_naname,null	,machine_driver_ohmygod	,input_ports_naname	,init_naname	,ROT0	,	Atlus", "Naname de Magic! (Japan)", GAME_NO_COCKTAIL )
+	public static GameDriver driver_ohmygod	   = new GameDriver("1993"	,"ohmygod"	,"ohmygod.java"	,rom_ohmygod,null	,machine_driver_ohmygod	,input_ports_ohmygod	,init_ohmygod	,ROT0	,	"Atlus", "Oh My God! (Japan)", GAME_NO_COCKTAIL )
+	public static GameDriver driver_naname	   = new GameDriver("1994"	,"naname"	,"ohmygod.java"	,rom_naname,null	,machine_driver_ohmygod	,input_ports_naname	,init_naname	,ROT0	,	"Atlus", "Naname de Magic! (Japan)", GAME_NO_COCKTAIL )
 }

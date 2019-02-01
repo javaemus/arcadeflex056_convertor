@@ -434,7 +434,7 @@ public class vulgus
 	
 	
 	
-	public static GameDriver driver_vulgus	   = new GameDriver("1984"	,"vulgus"	,"vulgus.java"	,rom_vulgus,null	,machine_driver_vulgus	,input_ports_vulgus	,null	,ROT90	,	Capcom", "Vulgus (set 1)" )
-	public static GameDriver driver_vulgus2	   = new GameDriver("1984"	,"vulgus2"	,"vulgus.java"	,rom_vulgus2,driver_vulgus	,machine_driver_vulgus	,input_ports_vulgus	,null	,ROT270	,	Capcom", "Vulgus (set 2)" )
-	public static GameDriver driver_vulgusj	   = new GameDriver("1984"	,"vulgusj"	,"vulgus.java"	,rom_vulgusj,driver_vulgus	,machine_driver_vulgus	,input_ports_vulgus	,null	,ROT270	,	Capcom", "Vulgus (Japan?)" )
+	public static GameDriver driver_vulgus	   = new GameDriver("1984"	,"vulgus"	,"vulgus.java"	,rom_vulgus,null	,machine_driver_vulgus	,input_ports_vulgus	,null	,ROT90	,	"Capcom", "Vulgus (set 1)" )
+	public static GameDriver driver_vulgus2	   = new GameDriver("1984"	,"vulgus2"	,"vulgus.java"	,rom_vulgus2,driver_vulgus	,machine_driver_vulgus	,input_ports_vulgus	,null	,ROT270	,	"Capcom", "Vulgus (set 2)" )
+	public static GameDriver driver_vulgusj	   = new GameDriver("1984"	,"vulgusj"	,"vulgus.java"	,rom_vulgusj,driver_vulgus	,machine_driver_vulgus	,input_ports_vulgus	,null	,ROT270	,	"Capcom", "Vulgus (Japan?)" )
 }

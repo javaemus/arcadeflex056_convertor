@@ -382,6 +382,6 @@ public class exedexes
 	
 	
 	
-	public static GameDriver driver_exedexes	   = new GameDriver("1985"	,"exedexes"	,"exedexes.java"	,rom_exedexes,null	,machine_driver_exedexes	,input_ports_exedexes	,null	,ROT270	,	Capcom", "Exed Exes" )
-	public static GameDriver driver_savgbees	   = new GameDriver("1985"	,"savgbees"	,"exedexes.java"	,rom_savgbees,driver_exedexes	,machine_driver_exedexes	,input_ports_exedexes	,null	,ROT270	,	Capcom (Memetron license)", "Savage Bees" )
+	public static GameDriver driver_exedexes	   = new GameDriver("1985"	,"exedexes"	,"exedexes.java"	,rom_exedexes,null	,machine_driver_exedexes	,input_ports_exedexes	,null	,ROT270	,	"Capcom", "Exed Exes" )
+	public static GameDriver driver_savgbees	   = new GameDriver("1985"	,"savgbees"	,"exedexes.java"	,rom_savgbees,driver_exedexes	,machine_driver_exedexes	,input_ports_exedexes	,null	,ROT270	,	"Capcom (Memetron license)", "Savage Bees" )
 }

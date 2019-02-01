@@ -471,8 +471,8 @@ public class pengo
 	
 	
 	
-	public static GameDriver driver_pengo	   = new GameDriver("1982"	,"pengo"	,"pengo.java"	,rom_pengo,null	,machine_driver_pengo	,input_ports_pengo	,init_pengo	,ROT90	,	Sega", "Pengo (set 1)" )
-	public static GameDriver driver_pengo2	   = new GameDriver("1982"	,"pengo2"	,"pengo.java"	,rom_pengo2,driver_pengo	,machine_driver_pengo	,input_ports_pengo	,init_pengo	,ROT90	,	Sega", "Pengo (set 2)" )
-	public static GameDriver driver_pengo2u	   = new GameDriver("1982"	,"pengo2u"	,"pengo.java"	,rom_pengo2u,driver_pengo	,machine_driver_pengo	,input_ports_pengo	,null	,ROT90	,	Sega", "Pengo (set 2 not encrypted)" )
-	public static GameDriver driver_penta	   = new GameDriver("1982"	,"penta"	,"pengo.java"	,rom_penta,driver_pengo	,machine_driver_pengo	,input_ports_pengo	,init_penta	,ROT90	,	bootleg", "Penta" )
+	public static GameDriver driver_pengo	   = new GameDriver("1982"	,"pengo"	,"pengo.java"	,rom_pengo,null	,machine_driver_pengo	,input_ports_pengo	,init_pengo	,ROT90	,	"Sega", "Pengo (set 1)" )
+	public static GameDriver driver_pengo2	   = new GameDriver("1982"	,"pengo2"	,"pengo.java"	,rom_pengo2,driver_pengo	,machine_driver_pengo	,input_ports_pengo	,init_pengo	,ROT90	,	"Sega", "Pengo (set 2)" )
+	public static GameDriver driver_pengo2u	   = new GameDriver("1982"	,"pengo2u"	,"pengo.java"	,rom_pengo2u,driver_pengo	,machine_driver_pengo	,input_ports_pengo	,null	,ROT90	,	"Sega", "Pengo (set 2 not encrypted)" )
+	public static GameDriver driver_penta	   = new GameDriver("1982"	,"penta"	,"pengo.java"	,rom_penta,driver_pengo	,machine_driver_pengo	,input_ports_pengo	,init_penta	,ROT90	,	"bootleg", "Penta" )
 }

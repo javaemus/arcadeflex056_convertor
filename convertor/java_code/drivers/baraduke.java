@@ -595,6 +595,6 @@ public class baraduke
 	
 	
 	
-	public static GameDriver driver_baraduke	   = new GameDriver("1985"	,"baraduke"	,"baraduke.java"	,rom_baraduke,null	,machine_driver_baraduke	,input_ports_baraduke	,null	,ROT0	,	Namco", "Baraduke" )
-	public static GameDriver driver_metrocrs	   = new GameDriver("1985"	,"metrocrs"	,"baraduke.java"	,rom_metrocrs,null	,machine_driver_metrocrs	,input_ports_metrocrs	,init_metrocrs	,ROT0	,	Namco", "Metro-Cross" )
+	public static GameDriver driver_baraduke	   = new GameDriver("1985"	,"baraduke"	,"baraduke.java"	,rom_baraduke,null	,machine_driver_baraduke	,input_ports_baraduke	,null	,ROT0	,	"Namco", "Baraduke" )
+	public static GameDriver driver_metrocrs	   = new GameDriver("1985"	,"metrocrs"	,"baraduke.java"	,rom_metrocrs,null	,machine_driver_metrocrs	,input_ports_metrocrs	,init_metrocrs	,ROT0	,	"Namco", "Metro-Cross" )
 }

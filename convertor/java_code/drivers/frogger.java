@@ -478,8 +478,8 @@ public class frogger
 	
 	
 	
-	public static GameDriver driver_frogger	   = new GameDriver("1981"	,"frogger"	,"frogger.java"	,rom_frogger,null	,machine_driver_frogger	,input_ports_frogger	,init_frogger	,ROT90	,	Konami", "Frogger" )
-	public static GameDriver driver_frogseg1	   = new GameDriver("1981"	,"frogseg1"	,"frogger.java"	,rom_frogseg1,driver_frogger	,machine_driver_frogger	,input_ports_frogger	,init_frogger	,ROT90	,	[Konami] (Sega license)", "Frogger (Sega set 1)" )
-	public static GameDriver driver_frogseg2	   = new GameDriver("1981"	,"frogseg2"	,"frogger.java"	,rom_frogseg2,driver_frogger	,machine_driver_frogger	,input_ports_frogger	,init_frogger	,ROT90	,	[Konami] (Sega license)", "Frogger (Sega set 2)" )
-	public static GameDriver driver_froggrmc	   = new GameDriver("1981"	,"froggrmc"	,"frogger.java"	,rom_froggrmc,driver_frogger	,machine_driver_froggrmc	,input_ports_froggrmc	,init_froggers	,ROT90	,	bootleg?", "Frogger (modified Moon Cresta hardware)" )
+	public static GameDriver driver_frogger	   = new GameDriver("1981"	,"frogger"	,"frogger.java"	,rom_frogger,null	,machine_driver_frogger	,input_ports_frogger	,init_frogger	,ROT90	,	"Konami", "Frogger" )
+	public static GameDriver driver_frogseg1	   = new GameDriver("1981"	,"frogseg1"	,"frogger.java"	,rom_frogseg1,driver_frogger	,machine_driver_frogger	,input_ports_frogger	,init_frogger	,ROT90	,	"[Konami] (Sega license)", "Frogger (Sega set 1)" )
+	public static GameDriver driver_frogseg2	   = new GameDriver("1981"	,"frogseg2"	,"frogger.java"	,rom_frogseg2,driver_frogger	,machine_driver_frogger	,input_ports_frogger	,init_frogger	,ROT90	,	"[Konami] (Sega license)", "Frogger (Sega set 2)" )
+	public static GameDriver driver_froggrmc	   = new GameDriver("1981"	,"froggrmc"	,"frogger.java"	,rom_froggrmc,driver_frogger	,machine_driver_froggrmc	,input_ports_froggrmc	,init_froggers	,ROT90	,	"bootleg?", "Frogger (modified Moon Cresta hardware)" )
 }

@@ -553,8 +553,8 @@ public class digdug
 	
 	
 	
-	public static GameDriver driver_digdug	   = new GameDriver("1982"	,"digdug"	,"digdug.java"	,rom_digdug,null	,machine_driver_digdug	,input_ports_digdug	,null	,ROT90	,	Namco", "Dig Dug (set 1)" )
-	public static GameDriver driver_digdugb	   = new GameDriver("1982"	,"digdugb"	,"digdug.java"	,rom_digdugb,driver_digdug	,machine_driver_digdug	,input_ports_digdug	,null	,ROT90	,	Namco", "Dig Dug (set 2)" )
-	public static GameDriver driver_digdugat	   = new GameDriver("1982"	,"digdugat"	,"digdug.java"	,rom_digdugat,driver_digdug	,machine_driver_digdug	,input_ports_digdug	,null	,ROT90	,	[Namco] (Atari license)", "Dig Dug (Atari)" )
-	public static GameDriver driver_dzigzag	   = new GameDriver("1982"	,"dzigzag"	,"digdug.java"	,rom_dzigzag,driver_digdug	,machine_driver_digdug	,input_ports_digdug	,null	,ROT90	,	bootleg", "Zig Zag (Dig Dug hardware)" )
+	public static GameDriver driver_digdug	   = new GameDriver("1982"	,"digdug"	,"digdug.java"	,rom_digdug,null	,machine_driver_digdug	,input_ports_digdug	,null	,ROT90	,	"Namco", "Dig Dug (set 1)" )
+	public static GameDriver driver_digdugb	   = new GameDriver("1982"	,"digdugb"	,"digdug.java"	,rom_digdugb,driver_digdug	,machine_driver_digdug	,input_ports_digdug	,null	,ROT90	,	"Namco", "Dig Dug (set 2)" )
+	public static GameDriver driver_digdugat	   = new GameDriver("1982"	,"digdugat"	,"digdug.java"	,rom_digdugat,driver_digdug	,machine_driver_digdug	,input_ports_digdug	,null	,ROT90	,	"[Namco] (Atari license)", "Dig Dug (Atari)" )
+	public static GameDriver driver_dzigzag	   = new GameDriver("1982"	,"dzigzag"	,"digdug.java"	,rom_dzigzag,driver_digdug	,machine_driver_digdug	,input_ports_digdug	,null	,ROT90	,	"bootleg", "Zig Zag (Dig Dug hardware)" )
 }

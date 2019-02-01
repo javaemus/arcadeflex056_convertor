@@ -554,6 +554,6 @@ public class legionna
 	
 	
 	
-	public static GameDriver driver_legionna	   = new GameDriver("1992"	,"legionna"	,"legionna.java"	,rom_legionna,null	,machine_driver_legionna	,input_ports_legionna	,init_legionna	,ROT0	,	Tad (Fabtek license)", "Legionnaire (US)", GAME_UNEMULATED_PROTECTION )
+	public static GameDriver driver_legionna	   = new GameDriver("1992"	,"legionna"	,"legionna.java"	,rom_legionna,null	,machine_driver_legionna	,input_ports_legionna	,init_legionna	,ROT0	,	"Tad (Fabtek license)", "Legionnaire (US)", GAME_UNEMULATED_PROTECTION )
 	
 }

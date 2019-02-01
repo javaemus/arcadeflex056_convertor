@@ -400,5 +400,5 @@ public class magmax
 	ROM_END(); }}; 
 	
 	
-	public static GameDriver driver_magmax	   = new GameDriver("1985"	,"magmax"	,"magmax.java"	,rom_magmax,null	,machine_driver_magmax	,input_ports_magmax	,null	,ROT0	,	Nichibutsu", "Mag Max" )
+	public static GameDriver driver_magmax	   = new GameDriver("1985"	,"magmax"	,"magmax.java"	,rom_magmax,null	,machine_driver_magmax	,input_ports_magmax	,null	,ROT0	,	"Nichibutsu", "Mag Max" )
 }

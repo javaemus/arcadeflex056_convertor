@@ -400,7 +400,7 @@ public class quantum
 	 *
 	 *************************************/
 	
-	public static GameDriver driver_quantum	   = new GameDriver("1982"	,"quantum"	,"quantum.java"	,rom_quantum,null	,machine_driver_quantum	,input_ports_quantum	,null	,ROT270	,	Atari", "Quantum (rev 2)", GAME_WRONG_COLORS )
-	public static GameDriver driver_quantum1	   = new GameDriver("1982"	,"quantum1"	,"quantum.java"	,rom_quantum1,driver_quantum	,machine_driver_quantum	,input_ports_quantum	,null	,ROT270	,	Atari", "Quantum (rev 1)", GAME_WRONG_COLORS )
-	public static GameDriver driver_quantump	   = new GameDriver("1982"	,"quantump"	,"quantum.java"	,rom_quantump,driver_quantum	,machine_driver_quantum	,input_ports_quantum	,null	,ROT270	,	Atari", "Quantum (prototype)", GAME_WRONG_COLORS )
+	public static GameDriver driver_quantum	   = new GameDriver("1982"	,"quantum"	,"quantum.java"	,rom_quantum,null	,machine_driver_quantum	,input_ports_quantum	,null	,ROT270	,	"Atari", "Quantum (rev 2)", GAME_WRONG_COLORS )
+	public static GameDriver driver_quantum1	   = new GameDriver("1982"	,"quantum1"	,"quantum.java"	,rom_quantum1,driver_quantum	,machine_driver_quantum	,input_ports_quantum	,null	,ROT270	,	"Atari", "Quantum (rev 1)", GAME_WRONG_COLORS )
+	public static GameDriver driver_quantump	   = new GameDriver("1982"	,"quantump"	,"quantum.java"	,rom_quantump,driver_quantum	,machine_driver_quantum	,input_ports_quantum	,null	,ROT270	,	"Atari", "Quantum (prototype)", GAME_WRONG_COLORS )
 }

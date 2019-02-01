@@ -481,8 +481,8 @@ public class shootout
 			rom[A+diff] = (rom[A] & 0x9f) | ((rom[A] & 0x40) >> 1) | ((rom[A] & 0x20) << 1);
 	}
 	
-	public static GameDriver driver_shootout	   = new GameDriver("1985"	,"shootout"	,"shootout.java"	,rom_shootout,null	,machine_driver_shootout	,input_ports_shootout	,init_shootout	,ROT0	,	Data East USA", "Shoot Out (US)", GAME_NO_COCKTAIL )
-	public static GameDriver driver_shootouj	   = new GameDriver("1985"	,"shootouj"	,"shootout.java"	,rom_shootouj,driver_shootout	,machine_driver_shootouj	,input_ports_shootout	,null	,ROT0	,	Data East USA", "Shoot Out (Japan)", GAME_NO_COCKTAIL )
-	public static GameDriver driver_shootoub	   = new GameDriver("1985"	,"shootoub"	,"shootout.java"	,rom_shootoub,driver_shootout	,machine_driver_shootouj	,input_ports_shootout	,init_shootout	,ROT0	,	bootleg", "Shoot Out (Korean Bootleg)", GAME_NO_COCKTAIL )
+	public static GameDriver driver_shootout	   = new GameDriver("1985"	,"shootout"	,"shootout.java"	,rom_shootout,null	,machine_driver_shootout	,input_ports_shootout	,init_shootout	,ROT0	,	"Data East USA", "Shoot Out (US)", GAME_NO_COCKTAIL )
+	public static GameDriver driver_shootouj	   = new GameDriver("1985"	,"shootouj"	,"shootout.java"	,rom_shootouj,driver_shootout	,machine_driver_shootouj	,input_ports_shootout	,null	,ROT0	,	"Data East USA", "Shoot Out (Japan)", GAME_NO_COCKTAIL )
+	public static GameDriver driver_shootoub	   = new GameDriver("1985"	,"shootoub"	,"shootout.java"	,rom_shootoub,driver_shootout	,machine_driver_shootouj	,input_ports_shootout	,init_shootout	,ROT0	,	"bootleg", "Shoot Out (Korean Bootleg)", GAME_NO_COCKTAIL )
 	
 }

@@ -339,7 +339,7 @@ public class grobda
 	ROM_END(); }}; 
 	
 	
-	public static GameDriver driver_grobda	   = new GameDriver("1984"	,"grobda"	,"grobda.java"	,rom_grobda,null	,machine_driver_grobda	,input_ports_grobda	,null	,ROT90	,	Namco", "Grobda (New version)" )
-	public static GameDriver driver_grobda2	   = new GameDriver("1984"	,"grobda2"	,"grobda.java"	,rom_grobda2,driver_grobda	,machine_driver_grobda	,input_ports_grobda	,null	,ROT90	,	Namco", "Grobda (Old version set 1)" )
-	public static GameDriver driver_grobda3	   = new GameDriver("1984"	,"grobda3"	,"grobda.java"	,rom_grobda3,driver_grobda	,machine_driver_grobda	,input_ports_grobda	,null	,ROT90	,	Namco", "Grobda (Old version set 2)" )
+	public static GameDriver driver_grobda	   = new GameDriver("1984"	,"grobda"	,"grobda.java"	,rom_grobda,null	,machine_driver_grobda	,input_ports_grobda	,null	,ROT90	,	"Namco", "Grobda (New version)" )
+	public static GameDriver driver_grobda2	   = new GameDriver("1984"	,"grobda2"	,"grobda.java"	,rom_grobda2,driver_grobda	,machine_driver_grobda	,input_ports_grobda	,null	,ROT90	,	"Namco", "Grobda (Old version set 1)" )
+	public static GameDriver driver_grobda3	   = new GameDriver("1984"	,"grobda3"	,"grobda.java"	,rom_grobda3,driver_grobda	,machine_driver_grobda	,input_ports_grobda	,null	,ROT90	,	"Namco", "Grobda (Old version set 2)" )
 }

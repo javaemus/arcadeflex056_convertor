@@ -608,6 +608,6 @@ public class playmark
 	
 	
 	
-	public static GameDriver driver_bigtwin	   = new GameDriver("1995"	,"bigtwin"	,"playmark.java"	,rom_bigtwin,null	,machine_driver_bigtwin	,input_ports_bigtwin	,null	,ROT0	,	Playmark", "Big Twin", GAME_NO_COCKTAIL | GAME_NO_SOUND )
-	public static GameDriver driver_wbeachvl	   = new GameDriver("1995"	,"wbeachvl"	,"playmark.java"	,rom_wbeachvl,null	,machine_driver_wbeachvl	,input_ports_wbeachvl	,null	,ROT0	,	Playmark", "World Beach Volley", GAME_NO_COCKTAIL | GAME_NO_SOUND )
+	public static GameDriver driver_bigtwin	   = new GameDriver("1995"	,"bigtwin"	,"playmark.java"	,rom_bigtwin,null	,machine_driver_bigtwin	,input_ports_bigtwin	,null	,ROT0	,	"Playmark", "Big Twin", GAME_NO_COCKTAIL | GAME_NO_SOUND )
+	public static GameDriver driver_wbeachvl	   = new GameDriver("1995"	,"wbeachvl"	,"playmark.java"	,rom_wbeachvl,null	,machine_driver_wbeachvl	,input_ports_wbeachvl	,null	,ROT0	,	"Playmark", "World Beach Volley", GAME_NO_COCKTAIL | GAME_NO_SOUND )
 }

@@ -441,7 +441,7 @@ public class missile
 	
 	
 	
-	public static GameDriver driver_missile	   = new GameDriver("1980"	,"missile"	,"missile.java"	,rom_missile,null	,machine_driver_missile	,input_ports_missile	,null	,ROT0	,	Atari", "Missile Command (set 1)" )
-	public static GameDriver driver_missile2	   = new GameDriver("1980"	,"missile2"	,"missile.java"	,rom_missile2,driver_missile	,machine_driver_missile	,input_ports_missile	,null	,ROT0	,	Atari", "Missile Command (set 2)" )
-	public static GameDriver driver_suprmatk	   = new GameDriver("1981"	,"suprmatk"	,"missile.java"	,rom_suprmatk,driver_missile	,machine_driver_missile	,input_ports_suprmatk	,null	,ROT0	,	Atari + Gencomp", "Super Missile Attack" )
+	public static GameDriver driver_missile	   = new GameDriver("1980"	,"missile"	,"missile.java"	,rom_missile,null	,machine_driver_missile	,input_ports_missile	,null	,ROT0	,	"Atari", "Missile Command (set 1)" )
+	public static GameDriver driver_missile2	   = new GameDriver("1980"	,"missile2"	,"missile.java"	,rom_missile2,driver_missile	,machine_driver_missile	,input_ports_missile	,null	,ROT0	,	"Atari", "Missile Command (set 2)" )
+	public static GameDriver driver_suprmatk	   = new GameDriver("1981"	,"suprmatk"	,"missile.java"	,rom_suprmatk,driver_missile	,machine_driver_missile	,input_ports_suprmatk	,null	,ROT0	,	"Atari + Gencomp", "Super Missile Attack" )
 }

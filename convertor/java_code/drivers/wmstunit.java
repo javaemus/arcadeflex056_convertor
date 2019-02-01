@@ -1122,20 +1122,20 @@ public class wmstunit
 	 *
 	 *************************************/
 	
-	public static GameDriver driver_mk	   = new GameDriver("1992"	,"mk"	,"wmstunit.java"	,rom_mk,null	,machine_driver_tunit_adpcm	,input_ports_mk	,init_mk	,ROT0	,	Midway",   "Mortal Kombat (rev 5.0 T-Unit 03/19/93)" )
-	public static GameDriver driver_mkr4	   = new GameDriver("1992"	,"mkr4"	,"wmstunit.java"	,rom_mkr4,driver_mk	,machine_driver_tunit_adpcm	,input_ports_mk	,init_mk	,ROT0	,	Midway",   "Mortal Kombat (rev 4.0 T-Unit 02/11/93)" )
+	public static GameDriver driver_mk	   = new GameDriver("1992"	,"mk"	,"wmstunit.java"	,rom_mk,null	,machine_driver_tunit_adpcm	,input_ports_mk	,init_mk	,ROT0	,	"Midway",   "Mortal Kombat (rev 5.0 T-Unit 03/19/93)" )
+	public static GameDriver driver_mkr4	   = new GameDriver("1992"	,"mkr4"	,"wmstunit.java"	,rom_mkr4,driver_mk	,machine_driver_tunit_adpcm	,input_ports_mk	,init_mk	,ROT0	,	"Midway",   "Mortal Kombat (rev 4.0 T-Unit 02/11/93)" )
 	
-	public static GameDriver driver_mk2	   = new GameDriver("1993"	,"mk2"	,"wmstunit.java"	,rom_mk2,null	,machine_driver_tunit_dcs	,input_ports_mk2	,init_mk2	,ROT0	,	Midway",   "Mortal Kombat II (rev L3.1)" )
-	public static GameDriver driver_mk2r32	   = new GameDriver("1993"	,"mk2r32"	,"wmstunit.java"	,rom_mk2r32,driver_mk2	,machine_driver_tunit_dcs	,input_ports_mk2	,init_mk2	,ROT0	,	Midway",   "Mortal Kombat II (rev L3.2 (European))" )
-	public static GameDriver driver_mk2r14	   = new GameDriver("1993"	,"mk2r14"	,"wmstunit.java"	,rom_mk2r14,driver_mk2	,machine_driver_tunit_dcs	,input_ports_mk2	,init_mk2r14	,ROT0	,	Midway",   "Mortal Kombat II (rev L1.4)" )
-	public static GameDriver driver_mk2r42	   = new GameDriver("1993"	,"mk2r42"	,"wmstunit.java"	,rom_mk2r42,driver_mk2	,machine_driver_tunit_dcs	,input_ports_mk2	,init_mk2	,ROT0	,	hack",     "Mortal Kombat II (rev L4.2, hack)" )
-	public static GameDriver driver_mk2r91	   = new GameDriver("1993"	,"mk2r91"	,"wmstunit.java"	,rom_mk2r91,driver_mk2	,machine_driver_tunit_dcs	,input_ports_mk2	,init_mk2	,ROT0	,	hack",     "Mortal Kombat II (rev L9.1, hack)" )
-	public static GameDriver driver_mk2chal	   = new GameDriver("1993"	,"mk2chal"	,"wmstunit.java"	,rom_mk2chal,driver_mk2	,machine_driver_tunit_dcs	,input_ports_mk2	,init_mk2	,ROT0	,	hack",     "Mortal Kombat II Challenger (hack)" )
+	public static GameDriver driver_mk2	   = new GameDriver("1993"	,"mk2"	,"wmstunit.java"	,rom_mk2,null	,machine_driver_tunit_dcs	,input_ports_mk2	,init_mk2	,ROT0	,	"Midway",   "Mortal Kombat II (rev L3.1)" )
+	public static GameDriver driver_mk2r32	   = new GameDriver("1993"	,"mk2r32"	,"wmstunit.java"	,rom_mk2r32,driver_mk2	,machine_driver_tunit_dcs	,input_ports_mk2	,init_mk2	,ROT0	,	"Midway",   "Mortal Kombat II (rev L3.2 (European))" )
+	public static GameDriver driver_mk2r14	   = new GameDriver("1993"	,"mk2r14"	,"wmstunit.java"	,rom_mk2r14,driver_mk2	,machine_driver_tunit_dcs	,input_ports_mk2	,init_mk2r14	,ROT0	,	"Midway",   "Mortal Kombat II (rev L1.4)" )
+	public static GameDriver driver_mk2r42	   = new GameDriver("1993"	,"mk2r42"	,"wmstunit.java"	,rom_mk2r42,driver_mk2	,machine_driver_tunit_dcs	,input_ports_mk2	,init_mk2	,ROT0	,	"hack",     "Mortal Kombat II (rev L4.2, hack)" )
+	public static GameDriver driver_mk2r91	   = new GameDriver("1993"	,"mk2r91"	,"wmstunit.java"	,rom_mk2r91,driver_mk2	,machine_driver_tunit_dcs	,input_ports_mk2	,init_mk2	,ROT0	,	"hack",     "Mortal Kombat II (rev L9.1, hack)" )
+	public static GameDriver driver_mk2chal	   = new GameDriver("1993"	,"mk2chal"	,"wmstunit.java"	,rom_mk2chal,driver_mk2	,machine_driver_tunit_dcs	,input_ports_mk2	,init_mk2	,ROT0	,	"hack",     "Mortal Kombat II Challenger (hack)" )
 	
-	public static GameDriver driver_nbajam	   = new GameDriver("1993"	,"nbajam"	,"wmstunit.java"	,rom_nbajam,null	,machine_driver_tunit_adpcm	,input_ports_nbajam	,init_nbajam	,ROT0	,	Midway",   "NBA Jam (rev 3.01 04/07/93)" )
-	public static GameDriver driver_nbajamr2	   = new GameDriver("1993"	,"nbajamr2"	,"wmstunit.java"	,rom_nbajamr2,driver_nbajam	,machine_driver_tunit_adpcm	,input_ports_nbajam	,init_nbajam20	,ROT0	,	Midway",   "NBA Jam (rev 2.00 02/10/93)" )
-	public static GameDriver driver_nbajamte	   = new GameDriver("1994"	,"nbajamte"	,"wmstunit.java"	,rom_nbajamte,driver_nbajam	,machine_driver_tunit_adpcm	,input_ports_nbajam	,init_nbajamte	,ROT0	,	Midway",   "NBA Jam TE (rev 4.0 03/23/94)" )
-	public static GameDriver driver_nbajamt1	   = new GameDriver("1994"	,"nbajamt1"	,"wmstunit.java"	,rom_nbajamt1,driver_nbajam	,machine_driver_tunit_adpcm	,input_ports_nbajam	,init_nbajamte	,ROT0	,	Midway",   "NBA Jam TE (rev 1.0 01/17/94)" )
-	public static GameDriver driver_nbajamt2	   = new GameDriver("1994"	,"nbajamt2"	,"wmstunit.java"	,rom_nbajamt2,driver_nbajam	,machine_driver_tunit_adpcm	,input_ports_nbajam	,init_nbajamte	,ROT0	,	Midway",   "NBA Jam TE (rev 2.0 01/28/94)" )
-	public static GameDriver driver_nbajamt3	   = new GameDriver("1994"	,"nbajamt3"	,"wmstunit.java"	,rom_nbajamt3,driver_nbajam	,machine_driver_tunit_adpcm	,input_ports_nbajam	,init_nbajamte	,ROT0	,	Midway",   "NBA Jam TE (rev 3.0 03/04/94)" )
+	public static GameDriver driver_nbajam	   = new GameDriver("1993"	,"nbajam"	,"wmstunit.java"	,rom_nbajam,null	,machine_driver_tunit_adpcm	,input_ports_nbajam	,init_nbajam	,ROT0	,	"Midway",   "NBA Jam (rev 3.01 04/07/93)" )
+	public static GameDriver driver_nbajamr2	   = new GameDriver("1993"	,"nbajamr2"	,"wmstunit.java"	,rom_nbajamr2,driver_nbajam	,machine_driver_tunit_adpcm	,input_ports_nbajam	,init_nbajam20	,ROT0	,	"Midway",   "NBA Jam (rev 2.00 02/10/93)" )
+	public static GameDriver driver_nbajamte	   = new GameDriver("1994"	,"nbajamte"	,"wmstunit.java"	,rom_nbajamte,driver_nbajam	,machine_driver_tunit_adpcm	,input_ports_nbajam	,init_nbajamte	,ROT0	,	"Midway",   "NBA Jam TE (rev 4.0 03/23/94)" )
+	public static GameDriver driver_nbajamt1	   = new GameDriver("1994"	,"nbajamt1"	,"wmstunit.java"	,rom_nbajamt1,driver_nbajam	,machine_driver_tunit_adpcm	,input_ports_nbajam	,init_nbajamte	,ROT0	,	"Midway",   "NBA Jam TE (rev 1.0 01/17/94)" )
+	public static GameDriver driver_nbajamt2	   = new GameDriver("1994"	,"nbajamt2"	,"wmstunit.java"	,rom_nbajamt2,driver_nbajam	,machine_driver_tunit_adpcm	,input_ports_nbajam	,init_nbajamte	,ROT0	,	"Midway",   "NBA Jam TE (rev 2.0 01/28/94)" )
+	public static GameDriver driver_nbajamt3	   = new GameDriver("1994"	,"nbajamt3"	,"wmstunit.java"	,rom_nbajamt3,driver_nbajam	,machine_driver_tunit_adpcm	,input_ports_nbajam	,init_nbajamte	,ROT0	,	"Midway",   "NBA Jam TE (rev 3.0 03/04/94)" )
 }

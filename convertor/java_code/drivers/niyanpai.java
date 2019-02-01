@@ -610,5 +610,5 @@ public class niyanpai
 	ROM_END(); }}; 
 	
 	
-	public static GameDriver driver_niyanpai	   = new GameDriver("1996"	,"niyanpai"	,"niyanpai.java"	,rom_niyanpai,null	,machine_driver_niyanpai	,input_ports_niyanpai	,init_niyanpai	,ROT0	,	Nichibutsu", "Niyanpai (Japan)" )
+	public static GameDriver driver_niyanpai	   = new GameDriver("1996"	,"niyanpai"	,"niyanpai.java"	,rom_niyanpai,null	,machine_driver_niyanpai	,input_ports_niyanpai	,init_niyanpai	,ROT0	,	"Nichibutsu", "Niyanpai (Japan)" )
 }

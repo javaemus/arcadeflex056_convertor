@@ -516,7 +516,7 @@ public class berzerk
 	
 	
 	
-	public static GameDriver driver_berzerk	   = new GameDriver("1980"	,"berzerk"	,"berzerk.java"	,rom_berzerk,null	,machine_driver_berzerk	,input_ports_berzerk	,null	,ROT0	,	Stern", "Berzerk (set 1)" )
-	public static GameDriver driver_berzerk1	   = new GameDriver("1980"	,"berzerk1"	,"berzerk.java"	,rom_berzerk1,driver_berzerk	,machine_driver_berzerk	,input_ports_berzerk	,null	,ROT0	,	Stern", "Berzerk (set 2)" )
-	public static GameDriver driver_frenzy	   = new GameDriver("1982"	,"frenzy"	,"berzerk.java"	,rom_frenzy,null	,machine_driver_frenzy	,input_ports_frenzy	,null	,ROT0	,	Stern", "Frenzy" )
+	public static GameDriver driver_berzerk	   = new GameDriver("1980"	,"berzerk"	,"berzerk.java"	,rom_berzerk,null	,machine_driver_berzerk	,input_ports_berzerk	,null	,ROT0	,	"Stern", "Berzerk (set 1)" )
+	public static GameDriver driver_berzerk1	   = new GameDriver("1980"	,"berzerk1"	,"berzerk.java"	,rom_berzerk1,driver_berzerk	,machine_driver_berzerk	,input_ports_berzerk	,null	,ROT0	,	"Stern", "Berzerk (set 2)" )
+	public static GameDriver driver_frenzy	   = new GameDriver("1982"	,"frenzy"	,"berzerk.java"	,rom_frenzy,null	,machine_driver_frenzy	,input_ports_frenzy	,null	,ROT0	,	"Stern", "Frenzy" )
 }

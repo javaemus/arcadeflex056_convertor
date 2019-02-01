@@ -452,5 +452,5 @@ public class esd16
 	
 	***************************************************************************/
 	
-	public static GameDriver driver_multchmp	   = new GameDriver("1998"	,"multchmp"	,"esd16.java"	,rom_multchmp,null	,machine_driver_multchmp	,input_ports_multchmp	,null	,ROT0	,	ESD", "Multi Champ (Korea)" )
+	public static GameDriver driver_multchmp	   = new GameDriver("1998"	,"multchmp"	,"esd16.java"	,rom_multchmp,null	,machine_driver_multchmp	,input_ports_multchmp	,null	,ROT0	,	"ESD", "Multi Champ (Korea)" )
 }

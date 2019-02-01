@@ -576,7 +576,7 @@ public class xain
 	
 	
 	
-	public static GameDriver driver_xsleena	   = new GameDriver("1986"	,"xsleena"	,"xain.java"	,rom_xsleena,null	,machine_driver_xsleena	,input_ports_xsleena	,init_xsleena	,ROT0	,	Technos", "Xain'd Sleena" )
-	public static GameDriver driver_xsleenab	   = new GameDriver("1986"	,"xsleenab"	,"xain.java"	,rom_xsleenab,driver_xsleena	,machine_driver_xsleena	,input_ports_xsleena	,null	,ROT0	,	bootleg", "Xain'd Sleena (bootleg)" )
-	public static GameDriver driver_solarwar	   = new GameDriver("1986"	,"solarwar"	,"xain.java"	,rom_solarwar,driver_xsleena	,machine_driver_xsleena	,input_ports_xsleena	,init_solarwar	,ROT0	,	[Technos] Taito (Memetron license)", "Solar Warrior" )
+	public static GameDriver driver_xsleena	   = new GameDriver("1986"	,"xsleena"	,"xain.java"	,rom_xsleena,null	,machine_driver_xsleena	,input_ports_xsleena	,init_xsleena	,ROT0	,	"Technos", "Xain'd Sleena" )
+	public static GameDriver driver_xsleenab	   = new GameDriver("1986"	,"xsleenab"	,"xain.java"	,rom_xsleenab,driver_xsleena	,machine_driver_xsleena	,input_ports_xsleena	,null	,ROT0	,	"bootleg", "Xain'd Sleena (bootleg)" )
+	public static GameDriver driver_solarwar	   = new GameDriver("1986"	,"solarwar"	,"xain.java"	,rom_solarwar,driver_xsleena	,machine_driver_xsleena	,input_ports_xsleena	,init_solarwar	,ROT0	,	"[Technos] Taito (Memetron license)", "Solar Warrior" )
 }

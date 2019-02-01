@@ -650,8 +650,8 @@ public class trackfld
 	}
 	
 	
-	public static GameDriver driver_trackfld	   = new GameDriver("1983"	,"trackfld"	,"trackfld.java"	,rom_trackfld,null	,machine_driver_tracklfd	,input_ports_trackfld	,init_trackfld	,ROT0	,	Konami", "Track & Field" )
-	public static GameDriver driver_trackflc	   = new GameDriver("1983"	,"trackflc"	,"trackfld.java"	,rom_trackflc,driver_trackfld	,machine_driver_tracklfd	,input_ports_trackfld	,init_trackfld	,ROT0	,	Konami (Centuri license)", "Track & Field (Centuri)" )
-	public static GameDriver driver_hyprolym	   = new GameDriver("1983"	,"hyprolym"	,"trackfld.java"	,rom_hyprolym,driver_trackfld	,machine_driver_tracklfd	,input_ports_trackfld	,init_trackfld	,ROT0	,	Konami", "Hyper Olympic" )
-	public static GameDriver driver_hyprolyb	   = new GameDriver("1983"	,"hyprolyb"	,"trackfld.java"	,rom_hyprolyb,driver_trackfld	,machine_driver_hyprolyb	,input_ports_trackfld	,init_trackfld	,ROT0	,	bootleg", "Hyper Olympic (bootleg)" )
+	public static GameDriver driver_trackfld	   = new GameDriver("1983"	,"trackfld"	,"trackfld.java"	,rom_trackfld,null	,machine_driver_tracklfd	,input_ports_trackfld	,init_trackfld	,ROT0	,	"Konami", "Track & Field" )
+	public static GameDriver driver_trackflc	   = new GameDriver("1983"	,"trackflc"	,"trackfld.java"	,rom_trackflc,driver_trackfld	,machine_driver_tracklfd	,input_ports_trackfld	,init_trackfld	,ROT0	,	"Konami (Centuri license)", "Track & Field (Centuri)" )
+	public static GameDriver driver_hyprolym	   = new GameDriver("1983"	,"hyprolym"	,"trackfld.java"	,rom_hyprolym,driver_trackfld	,machine_driver_tracklfd	,input_ports_trackfld	,init_trackfld	,ROT0	,	"Konami", "Hyper Olympic" )
+	public static GameDriver driver_hyprolyb	   = new GameDriver("1983"	,"hyprolyb"	,"trackfld.java"	,rom_hyprolyb,driver_trackfld	,machine_driver_hyprolyb	,input_ports_trackfld	,init_trackfld	,ROT0	,	"bootleg", "Hyper Olympic (bootleg)" )
 }

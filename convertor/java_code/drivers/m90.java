@@ -920,14 +920,14 @@ public class m90
 	
 	
 	
-	public static GameDriver driver_hasamu	   = new GameDriver("1991"	,"hasamu"	,"m90.java"	,rom_hasamu,null	,machine_driver_m90	,input_ports_hasamu	,init_hasamu	,ROT0	,	Irem", "Hasamu (Japan)", GAME_NO_COCKTAIL )
-	public static GameDriver driver_bombrman	   = new GameDriver("1992"	,"bombrman"	,"m90.java"	,rom_bombrman,null	,machine_driver_bombrman	,input_ports_bombrman	,init_bombrman	,ROT0	,	Irem (licensed from Hudson Soft)", "Bomberman (Japan)", GAME_NO_COCKTAIL )
-	public static GameDriver driver_dynablsb	   = new GameDriver("1992"	,"dynablsb"	,"m90.java"	,rom_dynablsb,driver_bombrman	,machine_driver_bootleg	,input_ports_bombrman	,null	,ROT0	,	bootleg", "Dynablaster (bootleg)", GAME_NOT_WORKING | GAME_NO_COCKTAIL )
-	public static GameDriver driver_bbmanw	   = new GameDriver("1992"	,"bbmanw"	,"m90.java"	,rom_bbmanw,null	,machine_driver_bbmanw	,input_ports_bbmanw	,init_bbmanw	,ROT0	,	Irem", "Bomber Man World (World)", GAME_IMPERFECT_SOUND | GAME_NO_COCKTAIL )
-	public static GameDriver driver_bbmanwj	   = new GameDriver("1992"	,"bbmanwj"	,"m90.java"	,rom_bbmanwj,driver_bbmanw	,machine_driver_bombrman	,input_ports_bbmanw	,init_bbmanw	,ROT0	,	Irem", "Bomber Man World (Japan)", GAME_NO_COCKTAIL )
-	public static GameDriver driver_atompunk	   = new GameDriver("1992"	,"atompunk"	,"m90.java"	,rom_atompunk,driver_bbmanw	,machine_driver_bbmanw	,input_ports_bbmanw	,init_bbmanw	,ROT0	,	Irem America", "New Atomic Punk - Global Quest (US)", GAME_IMPERFECT_SOUND | GAME_NO_COCKTAIL )
-	public static GameDriver driver_quizf1	   = new GameDriver("1992"	,"quizf1"	,"m90.java"	,rom_quizf1,null	,machine_driver_m90	,input_ports_quizf1	,init_quizf1	,ROT0	,	Irem", "Quiz F-1 1,2finish", GAME_NOT_WORKING | GAME_NO_COCKTAIL )
-	public static GameDriver driver_riskchal	   = new GameDriver("1993"	,"riskchal"	,"m90.java"	,rom_riskchal,null	,machine_driver_m90	,input_ports_m97	,init_riskchal	,ROT0	,	Irem", "Risky Challenge", GAME_NOT_WORKING | GAME_NO_COCKTAIL )
-	public static GameDriver driver_gussun	   = new GameDriver("1993"	,"gussun"	,"m90.java"	,rom_gussun,driver_riskchal	,machine_driver_m90	,input_ports_m97	,init_riskchal	,ROT0	,	Irem", "Gussun Oyoyo (Japan)", GAME_NOT_WORKING | GAME_NO_COCKTAIL )
-	public static GameDriver driver_shisen2	   = new GameDriver("1993"	,"shisen2"	,"m90.java"	,rom_shisen2,null	,machine_driver_m90	,input_ports_m97	,init_shisen2	,ROT0	,	Tamtex", "Shisensho II", GAME_NOT_WORKING | GAME_NO_COCKTAIL )
+	public static GameDriver driver_hasamu	   = new GameDriver("1991"	,"hasamu"	,"m90.java"	,rom_hasamu,null	,machine_driver_m90	,input_ports_hasamu	,init_hasamu	,ROT0	,	"Irem", "Hasamu (Japan)", GAME_NO_COCKTAIL )
+	public static GameDriver driver_bombrman	   = new GameDriver("1992"	,"bombrman"	,"m90.java"	,rom_bombrman,null	,machine_driver_bombrman	,input_ports_bombrman	,init_bombrman	,ROT0	,	"Irem (licensed from Hudson Soft)", "Bomberman (Japan)", GAME_NO_COCKTAIL )
+	public static GameDriver driver_dynablsb	   = new GameDriver("1992"	,"dynablsb"	,"m90.java"	,rom_dynablsb,driver_bombrman	,machine_driver_bootleg	,input_ports_bombrman	,null	,ROT0	,	"bootleg", "Dynablaster (bootleg)", GAME_NOT_WORKING | GAME_NO_COCKTAIL )
+	public static GameDriver driver_bbmanw	   = new GameDriver("1992"	,"bbmanw"	,"m90.java"	,rom_bbmanw,null	,machine_driver_bbmanw	,input_ports_bbmanw	,init_bbmanw	,ROT0	,	"Irem", "Bomber Man World (World)", GAME_IMPERFECT_SOUND | GAME_NO_COCKTAIL )
+	public static GameDriver driver_bbmanwj	   = new GameDriver("1992"	,"bbmanwj"	,"m90.java"	,rom_bbmanwj,driver_bbmanw	,machine_driver_bombrman	,input_ports_bbmanw	,init_bbmanw	,ROT0	,	"Irem", "Bomber Man World (Japan)", GAME_NO_COCKTAIL )
+	public static GameDriver driver_atompunk	   = new GameDriver("1992"	,"atompunk"	,"m90.java"	,rom_atompunk,driver_bbmanw	,machine_driver_bbmanw	,input_ports_bbmanw	,init_bbmanw	,ROT0	,	"Irem America", "New Atomic Punk - Global Quest (US)", GAME_IMPERFECT_SOUND | GAME_NO_COCKTAIL )
+	public static GameDriver driver_quizf1	   = new GameDriver("1992"	,"quizf1"	,"m90.java"	,rom_quizf1,null	,machine_driver_m90	,input_ports_quizf1	,init_quizf1	,ROT0	,	"Irem", "Quiz F-1 1,2finish", GAME_NOT_WORKING | GAME_NO_COCKTAIL )
+	public static GameDriver driver_riskchal	   = new GameDriver("1993"	,"riskchal"	,"m90.java"	,rom_riskchal,null	,machine_driver_m90	,input_ports_m97	,init_riskchal	,ROT0	,	"Irem", "Risky Challenge", GAME_NOT_WORKING | GAME_NO_COCKTAIL )
+	public static GameDriver driver_gussun	   = new GameDriver("1993"	,"gussun"	,"m90.java"	,rom_gussun,driver_riskchal	,machine_driver_m90	,input_ports_m97	,init_riskchal	,ROT0	,	"Irem", "Gussun Oyoyo (Japan)", GAME_NOT_WORKING | GAME_NO_COCKTAIL )
+	public static GameDriver driver_shisen2	   = new GameDriver("1993"	,"shisen2"	,"m90.java"	,rom_shisen2,null	,machine_driver_m90	,input_ports_m97	,init_shisen2	,ROT0	,	"Tamtex", "Shisensho II", GAME_NOT_WORKING | GAME_NO_COCKTAIL )
 }

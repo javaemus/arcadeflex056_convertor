@@ -1397,9 +1397,9 @@ public class sharrier
 	
 	/***************************************************************************/
 	
-	public static GameDriver driver_hangon	   = new GameDriver("1985"	,"hangon"	,"sharrier.java"	,rom_hangon,null	,machine_driver_hangon	,input_ports_hangon	,init_hangon	,ROT0	,	Sega",    "Hang-On" )
-	public static GameDriver driver_sharrier	   = new GameDriver("1985"	,"sharrier"	,"sharrier.java"	,rom_sharrier,null	,machine_driver_sharrier	,input_ports_sharrier	,init_sharrier	,ROT0	,	Sega",    "Space Harrier" )
-	public static GameDriver driver_enduror	   = new GameDriver("1985"	,"enduror"	,"sharrier.java"	,rom_enduror,null	,machine_driver_enduror	,input_ports_enduror	,init_enduror	,ROT0	,	Sega",    "Enduro Racer", GAME_NOT_WORKING )
-	public static GameDriver driver_endurobl	   = new GameDriver("1985"	,"endurobl"	,"sharrier.java"	,rom_endurobl,driver_enduror	,machine_driver_enduror	,input_ports_enduror	,init_endurobl	,ROT0	,	bootleg", "Enduro Racer (bootleg set 1)" )
-	public static GameDriver driver_endurob2	   = new GameDriver("1985"	,"endurob2"	,"sharrier.java"	,rom_endurob2,driver_enduror	,machine_driver_endurob2	,input_ports_enduror	,init_endurob2	,ROT0	,	bootleg", "Enduro Racer (bootleg set 2)" )
+	public static GameDriver driver_hangon	   = new GameDriver("1985"	,"hangon"	,"sharrier.java"	,rom_hangon,null	,machine_driver_hangon	,input_ports_hangon	,init_hangon	,ROT0	,	"Sega",    "Hang-On" )
+	public static GameDriver driver_sharrier	   = new GameDriver("1985"	,"sharrier"	,"sharrier.java"	,rom_sharrier,null	,machine_driver_sharrier	,input_ports_sharrier	,init_sharrier	,ROT0	,	"Sega",    "Space Harrier" )
+	public static GameDriver driver_enduror	   = new GameDriver("1985"	,"enduror"	,"sharrier.java"	,rom_enduror,null	,machine_driver_enduror	,input_ports_enduror	,init_enduror	,ROT0	,	"Sega",    "Enduro Racer", GAME_NOT_WORKING )
+	public static GameDriver driver_endurobl	   = new GameDriver("1985"	,"endurobl"	,"sharrier.java"	,rom_endurobl,driver_enduror	,machine_driver_enduror	,input_ports_enduror	,init_endurobl	,ROT0	,	"bootleg", "Enduro Racer (bootleg set 1)" )
+	public static GameDriver driver_endurob2	   = new GameDriver("1985"	,"endurob2"	,"sharrier.java"	,rom_endurob2,driver_enduror	,machine_driver_endurob2	,input_ports_enduror	,init_endurob2	,ROT0	,	"bootleg", "Enduro Racer (bootleg set 2)" )
 }

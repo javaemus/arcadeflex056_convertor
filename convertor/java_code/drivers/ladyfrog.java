@@ -152,5 +152,5 @@ public class ladyfrog
 	
 	
 	
-	public static GameDriver driver_ladyfrog	   = new GameDriver("19??"	,"ladyfrog"	,"ladyfrog.java"	,rom_ladyfrog,null	,machine_driver_ladyfrog	,input_ports_ladyfrog	,null	,ROT0	,	Dynax? Comad?", "Dragon Punch? Lady Frog?" )
+	public static GameDriver driver_ladyfrog	   = new GameDriver("19??"	,"ladyfrog"	,"ladyfrog.java"	,rom_ladyfrog,null	,machine_driver_ladyfrog	,input_ports_ladyfrog	,null	,ROT0	,	"Dynax? Comad?", "Dragon Punch? Lady Frog?" )
 }

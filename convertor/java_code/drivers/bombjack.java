@@ -439,6 +439,6 @@ public class bombjack
 	}
 	
 	
-	public static GameDriver driver_bombjack	   = new GameDriver("1984"	,"bombjack"	,"bombjack.java"	,rom_bombjack,null	,machine_driver_bombjack	,input_ports_bombjack	,init_bombjack	,ROT90	,	Tehkan", "Bomb Jack (set 1)" )
-	public static GameDriver driver_bombjac2	   = new GameDriver("1984"	,"bombjac2"	,"bombjack.java"	,rom_bombjac2,driver_bombjack	,machine_driver_bombjack	,input_ports_bombjack	,init_bombjack	,ROT90	,	Tehkan", "Bomb Jack (set 2)" )
+	public static GameDriver driver_bombjack	   = new GameDriver("1984"	,"bombjack"	,"bombjack.java"	,rom_bombjack,null	,machine_driver_bombjack	,input_ports_bombjack	,init_bombjack	,ROT90	,	"Tehkan", "Bomb Jack (set 1)" )
+	public static GameDriver driver_bombjac2	   = new GameDriver("1984"	,"bombjac2"	,"bombjack.java"	,rom_bombjac2,driver_bombjack	,machine_driver_bombjack	,input_ports_bombjack	,init_bombjack	,ROT90	,	"Tehkan", "Bomb Jack (set 2)" )
 }

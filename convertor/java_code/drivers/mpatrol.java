@@ -477,6 +477,6 @@ public class mpatrol
 	
 	
 	
-	public static GameDriver driver_mpatrol	   = new GameDriver("1982"	,"mpatrol"	,"mpatrol.java"	,rom_mpatrol,null	,machine_driver_mpatrol	,input_ports_mpatrol	,null	,ROT0	,	Irem", "Moon Patrol" )
-	public static GameDriver driver_mpatrolw	   = new GameDriver("1982"	,"mpatrolw"	,"mpatrol.java"	,rom_mpatrolw,driver_mpatrol	,machine_driver_mpatrol	,input_ports_mpatrolw	,null	,ROT0	,	Irem (Williams license)", "Moon Patrol (Williams)" )
+	public static GameDriver driver_mpatrol	   = new GameDriver("1982"	,"mpatrol"	,"mpatrol.java"	,rom_mpatrol,null	,machine_driver_mpatrol	,input_ports_mpatrol	,null	,ROT0	,	"Irem", "Moon Patrol" )
+	public static GameDriver driver_mpatrolw	   = new GameDriver("1982"	,"mpatrolw"	,"mpatrol.java"	,rom_mpatrolw,driver_mpatrol	,machine_driver_mpatrol	,input_ports_mpatrolw	,null	,ROT0	,	"Irem (Williams license)", "Moon Patrol (Williams)" )
 }

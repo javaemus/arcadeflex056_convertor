@@ -632,7 +632,7 @@ public class gyruss
 	}
 	
 	
-	public static GameDriver driver_gyruss	   = new GameDriver("1983"	,"gyruss"	,"gyruss.java"	,rom_gyruss,null	,machine_driver_gyruss	,input_ports_gyruss	,init_gyruss	,ROT90	,	Konami", "Gyruss (Konami)" )
-	public static GameDriver driver_gyrussce	   = new GameDriver("1983"	,"gyrussce"	,"gyruss.java"	,rom_gyrussce,driver_gyruss	,machine_driver_gyruss	,input_ports_gyrussce	,init_gyruss	,ROT90	,	Konami (Centuri license)", "Gyruss (Centuri)" )
-	public static GameDriver driver_venus	   = new GameDriver("1983"	,"venus"	,"gyruss.java"	,rom_venus,driver_gyruss	,machine_driver_gyruss	,input_ports_gyrussce	,init_gyruss	,ROT90	,	bootleg", "Venus" )
+	public static GameDriver driver_gyruss	   = new GameDriver("1983"	,"gyruss"	,"gyruss.java"	,rom_gyruss,null	,machine_driver_gyruss	,input_ports_gyruss	,init_gyruss	,ROT90	,	"Konami", "Gyruss (Konami)" )
+	public static GameDriver driver_gyrussce	   = new GameDriver("1983"	,"gyrussce"	,"gyruss.java"	,rom_gyrussce,driver_gyruss	,machine_driver_gyruss	,input_ports_gyrussce	,init_gyruss	,ROT90	,	"Konami (Centuri license)", "Gyruss (Centuri)" )
+	public static GameDriver driver_venus	   = new GameDriver("1983"	,"venus"	,"gyruss.java"	,rom_venus,driver_gyruss	,machine_driver_gyruss	,input_ports_gyrussce	,init_gyruss	,ROT90	,	"bootleg", "Venus" )
 }

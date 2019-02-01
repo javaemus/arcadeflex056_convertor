@@ -567,7 +567,7 @@ public class crimfght
 	
 	
 	
-	public static GameDriver driver_crimfght	   = new GameDriver("1989"	,"crimfght"	,"crimfght.java"	,rom_crimfght,null	,machine_driver_crimfght	,input_ports_crimfght	,init_crimfght	,ROT0	,	Konami", "Crime Fighters (US 4 players)" )
-	public static GameDriver driver_crimfgt2	   = new GameDriver("1989"	,"crimfgt2"	,"crimfght.java"	,rom_crimfgt2,driver_crimfght	,machine_driver_crimfght	,input_ports_crimfgtj	,init_crimfght	,ROT0	,	Konami", "Crime Fighters (World 2 Players)" )
-	public static GameDriver driver_crimfgtj	   = new GameDriver("1989"	,"crimfgtj"	,"crimfght.java"	,rom_crimfgtj,driver_crimfght	,machine_driver_crimfght	,input_ports_crimfgtj	,init_crimfght	,ROT0	,	Konami", "Crime Fighters (Japan 2 Players)" )
+	public static GameDriver driver_crimfght	   = new GameDriver("1989"	,"crimfght"	,"crimfght.java"	,rom_crimfght,null	,machine_driver_crimfght	,input_ports_crimfght	,init_crimfght	,ROT0	,	"Konami", "Crime Fighters (US 4 players)" )
+	public static GameDriver driver_crimfgt2	   = new GameDriver("1989"	,"crimfgt2"	,"crimfght.java"	,rom_crimfgt2,driver_crimfght	,machine_driver_crimfght	,input_ports_crimfgtj	,init_crimfght	,ROT0	,	"Konami", "Crime Fighters (World 2 Players)" )
+	public static GameDriver driver_crimfgtj	   = new GameDriver("1989"	,"crimfgtj"	,"crimfght.java"	,rom_crimfgtj,driver_crimfght	,machine_driver_crimfght	,input_ports_crimfgtj	,init_crimfght	,ROT0	,	"Konami", "Crime Fighters (Japan 2 Players)" )
 }

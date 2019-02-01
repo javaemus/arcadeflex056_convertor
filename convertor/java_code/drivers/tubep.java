@@ -1053,6 +1053,6 @@ public class tubep
 	ROM_END(); }}; 
 	
 	/*     year  rom      parent  machine  inp   init */
-	public static GameDriver driver_tubep	   = new GameDriver("1984"	,"tubep"	,"tubep.java"	,rom_tubep,null	,machine_driver_tubep	,input_ports_tubep	,null	,ROT0	,	Nichibutsu + Fujitek", "Tube Panic", GAME_IMPERFECT_GRAPHICS )
-	public static GameDriver driver_rjammer	   = new GameDriver("1984"	,"rjammer"	,"tubep.java"	,rom_rjammer,null	,machine_driver_rjammer	,input_ports_rjammer	,null	,ROT0	,	Nichibutsu + Alice", "Roller Jammer", GAME_IMPERFECT_GRAPHICS )
+	public static GameDriver driver_tubep	   = new GameDriver("1984"	,"tubep"	,"tubep.java"	,rom_tubep,null	,machine_driver_tubep	,input_ports_tubep	,null	,ROT0	,	"Nichibutsu + Fujitek", "Tube Panic", GAME_IMPERFECT_GRAPHICS )
+	public static GameDriver driver_rjammer	   = new GameDriver("1984"	,"rjammer"	,"tubep.java"	,rom_rjammer,null	,machine_driver_rjammer	,input_ports_rjammer	,null	,ROT0	,	"Nichibutsu + Alice", "Roller Jammer", GAME_IMPERFECT_GRAPHICS )
 }

@@ -1283,10 +1283,10 @@ public class taito_x
 	}
 	
 	
-	public static GameDriver driver_superman	   = new GameDriver("1988"	,"superman"	,"taito_x.java"	,rom_superman,null	,machine_driver_superman	,input_ports_superman	,init_taitox	,ROT0	,	Taito Corporation", "Superman" )
-	public static GameDriver driver_twinhawk	   = new GameDriver("1989"	,"twinhawk"	,"taito_x.java"	,rom_twinhawk,null	,machine_driver_daisenpu	,input_ports_twinhawk	,init_taitox	,ROT270	,	Taito Corporation Japan", "Twin Hawk (World)" )
-	public static GameDriver driver_twinhwku	   = new GameDriver("1989"	,"twinhwku"	,"taito_x.java"	,rom_twinhwku,driver_twinhawk	,machine_driver_daisenpu	,input_ports_twinhwku	,init_taitox	,ROT270	,	Taito America Corporation", "Twin Hawk (US)" )
-	public static GameDriver driver_daisenpu	   = new GameDriver("1989"	,"daisenpu"	,"taito_x.java"	,rom_daisenpu,driver_twinhawk	,machine_driver_daisenpu	,input_ports_daisenpu	,init_taitox	,ROT270	,	Taito Corporation", "Daisenpu (Japan)" )
-	public static GameDriver driver_gigandes	   = new GameDriver("1989"	,"gigandes"	,"taito_x.java"	,rom_gigandes,null	,machine_driver_gigandes	,input_ports_gigandes	,init_taitox	,ROT0	,	East Technology", "Gigandes" )
-	public static GameDriver driver_ballbros	   = new GameDriver("1992"	,"ballbros"	,"taito_x.java"	,rom_ballbros,null	,machine_driver_ballbros	,input_ports_ballbros	,init_taitox	,ROT0	,	East Technology", "Balloon Brothers" )
+	public static GameDriver driver_superman	   = new GameDriver("1988"	,"superman"	,"taito_x.java"	,rom_superman,null	,machine_driver_superman	,input_ports_superman	,init_taitox	,ROT0	,	"Taito Corporation", "Superman" )
+	public static GameDriver driver_twinhawk	   = new GameDriver("1989"	,"twinhawk"	,"taito_x.java"	,rom_twinhawk,null	,machine_driver_daisenpu	,input_ports_twinhawk	,init_taitox	,ROT270	,	"Taito Corporation Japan", "Twin Hawk (World)" )
+	public static GameDriver driver_twinhwku	   = new GameDriver("1989"	,"twinhwku"	,"taito_x.java"	,rom_twinhwku,driver_twinhawk	,machine_driver_daisenpu	,input_ports_twinhwku	,init_taitox	,ROT270	,	"Taito America Corporation", "Twin Hawk (US)" )
+	public static GameDriver driver_daisenpu	   = new GameDriver("1989"	,"daisenpu"	,"taito_x.java"	,rom_daisenpu,driver_twinhawk	,machine_driver_daisenpu	,input_ports_daisenpu	,init_taitox	,ROT270	,	"Taito Corporation", "Daisenpu (Japan)" )
+	public static GameDriver driver_gigandes	   = new GameDriver("1989"	,"gigandes"	,"taito_x.java"	,rom_gigandes,null	,machine_driver_gigandes	,input_ports_gigandes	,init_taitox	,ROT0	,	"East Technology", "Gigandes" )
+	public static GameDriver driver_ballbros	   = new GameDriver("1992"	,"ballbros"	,"taito_x.java"	,rom_ballbros,null	,machine_driver_ballbros	,input_ports_ballbros	,init_taitox	,ROT0	,	"East Technology", "Balloon Brothers" )
 }
