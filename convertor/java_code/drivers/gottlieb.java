@@ -1404,16 +1404,16 @@ public class gottlieb
 	#define krull_samples_interface qbert_samples_interface		/* not used */
 	
 	
-	static struct AY8910interface ay8910_interface =
-	{
+	static AY8910interface ay8910_interface = new AY8910interface
+	(
 		2,	/* 2 chips */
 		2000000,	/* 2 MHz */
-		{ 25, 25 },
-		{ 0 },
-		{ 0 },
-		{ 0 },
-		{ 0 }
-	};
+		new int[] { 25, 25 },
+		new ReadHandlerPtr[] { 0 },
+		new ReadHandlerPtr[] { 0 },
+		new WriteHandlerPtr[] { 0 },
+		new WriteHandlerPtr[] { 0 }
+	);
 	
 	
 	

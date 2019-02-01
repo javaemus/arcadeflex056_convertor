@@ -234,16 +234,16 @@ public class rollrace
 		new GfxDecodeInfo( -1 ) /* end of array */
 	};
 	
-	static struct AY8910interface ra_ay8910_interface =
-	{
+	static AY8910interface ra_ay8910_interface = new AY8910interface
+	(
 		3,	  	/* 3 chips */
 		14318000/8,	/* 1.78975 MHz */
-		{ 10,10,10 },
-		{ 0 },
-		{ 0 },
-		{ 0 },
-		{ 0 }
-	};
+		new int[] { 10,10,10 },
+		new ReadHandlerPtr[] { 0 },
+		new ReadHandlerPtr[] { 0 },
+		new WriteHandlerPtr[] { 0 },
+		new WriteHandlerPtr[] { 0 }
+	);
 	
 	static struct MachineDriver machine_driver_rollrace =
 	{

@@ -410,16 +410,16 @@ public class buggychl
 	} };
 	
 	
-	static struct AY8910interface ay8910_interface =
-	{
+	static AY8910interface ay8910_interface = new AY8910interface
+	(
 		2,	/* 2 chips */
 		8000000/4,	/* 2 MHz */
-		{ 30, 30 },
-		{ 0 },
-		{ 0 },
-		{ portA_0_w, portA_1_w },
-		{ portB_0_w, portB_1_w }
-	};
+		new int[] { 30, 30 },
+		new ReadHandlerPtr[] { 0 },
+		new ReadHandlerPtr[] { 0 },
+		new WriteHandlerPtr[] { portA_0_w, portA_1_w },
+		new WriteHandlerPtr[] { portB_0_w, portB_1_w }
+	);
 	
 	
 	

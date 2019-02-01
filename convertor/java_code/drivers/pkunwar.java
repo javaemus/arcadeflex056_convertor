@@ -163,15 +163,15 @@ public class pkunwar
 	
 	
 	
-	static struct AY8910interface ay8910_interface = {
+	static AY8910interface ay8910_interface = new AY8910interface(
 		2,		/* 2 chips */
 		3072000/2, // lax 11/03/1999  (1250000 -> 1536000 ???)
-		{ 25, 25 },
-		{ input_port_0_r, input_port_2_r },
-		{ input_port_1_r, input_port_3_r },
-		{ 0, 0 },
-		{ 0, 0 }
-	};
+		new int[] { 25, 25 },
+		new ReadHandlerPtr[] { input_port_0_r, input_port_2_r },
+		new ReadHandlerPtr[] { input_port_1_r, input_port_3_r },
+		new WriteHandlerPtr[] { 0, 0 },
+		new WriteHandlerPtr[] { 0, 0 }
+	);
 	
 	
 	

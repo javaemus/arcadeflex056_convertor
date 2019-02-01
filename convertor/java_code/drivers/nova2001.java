@@ -195,17 +195,17 @@ public class nova2001
 	
 	
 	
-	static struct AY8910interface ay8910_interface =
-	{
+	static AY8910interface ay8910_interface = new AY8910interface
+	(
 		2,	/* 2 chips */
 		6000000/3,	/* 2 MHz */
-		{ 25, 25 },
-		{ 0, input_port_3_r },
-		{ 0, input_port_4_r },
-		{ nova2001_scroll_x_w }, /* writes are connected to pf scroll */
-		{ nova2001_scroll_y_w },
+		new int[] { 25, 25 },
+		new ReadHandlerPtr[] { 0, input_port_3_r },
+		new ReadHandlerPtr[] { 0, input_port_4_r },
+		new WriteHandlerPtr[] { nova2001_scroll_x_w }, /* writes are connected to pf scroll */
+		new WriteHandlerPtr[] { nova2001_scroll_y_w },
 		{ 0 }
-	};
+	);
 	
 	static MachineDriver machine_driver_nova2001 = new MachineDriver
 	(

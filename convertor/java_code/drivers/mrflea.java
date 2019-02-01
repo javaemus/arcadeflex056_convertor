@@ -61,15 +61,15 @@ public class mrflea
 	extern extern extern extern int mrflea_vh_start( void );
 	extern void mrflea_vh_screenrefresh( struct mame_bitmap *bitmap, int full_refresh );
 	
-	static struct AY8910interface ay8910_interface = {
+	static AY8910interface ay8910_interface = new AY8910interface(
 		3,	/* 3 chips */
 		2000000, /* 2 MHz? */
-		{ 25,25,25 }, /* volume */
-		{ 0 },
-		{ 0 },
-		{ 0 },
-		{ 0 }
-	};
+		new int[] { 25,25,25 }, /* volume */
+		new ReadHandlerPtr[] { 0 },
+		new ReadHandlerPtr[] { 0 },
+		new WriteHandlerPtr[] { 0 },
+		new WriteHandlerPtr[] { 0 }
+	);
 	
 	static GfxLayout tile_layout = new GfxLayout(
 		8,8,

@@ -498,27 +498,27 @@ public class centiped
 		{ 0 },
 	};
 	
-	static struct AY8910interface centipdb_ay8910_interface =
-	{
+	static AY8910interface centipdb_ay8910_interface = new AY8910interface
+	(
 		1,	/* 1 chips */
 		12096000/8,	/* 1.512 MHz */
-		{ 50 },
-		{ 0 },
-		{ 0 },
-		{ 0 },
-		{ 0 }
-	};
+		new int[] { 50 },
+		new ReadHandlerPtr[] { 0 },
+		new ReadHandlerPtr[] { 0 },
+		new WriteHandlerPtr[] { 0 },
+		new WriteHandlerPtr[] { 0 }
+	);
 	
-	static struct AY8910interface centipb2_ay8910_interface =
-	{
+	static AY8910interface centipb2_ay8910_interface = new AY8910interface
+	(
 		1,	/* 1 chips */
 		12096000/8,	/* 1.512 MHz */
-		{ 50 },
-		{ centipdb_rand_r },
-		{ 0 },
-		{ 0 },
-		{ 0 }
-	};
+		new int[] { 50 },
+		new ReadHandlerPtr[] { centipdb_rand_r },
+		new ReadHandlerPtr[] { 0 },
+		new WriteHandlerPtr[] { 0 },
+		new WriteHandlerPtr[] { 0 }
+	);
 	
 	
 	#define DRIVER(GAMENAME, SOUND_TYPE, SOUND_INTERFACE)							\

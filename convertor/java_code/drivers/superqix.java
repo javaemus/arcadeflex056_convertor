@@ -195,16 +195,16 @@ public class superqix
 	
 	
 	
-	static struct AY8910interface ay8910_interface =
-	{
+	static AY8910interface ay8910_interface = new AY8910interface
+	(
 		2,	/* 2 chips */
 		1500000,	/* 1.5 MHz??? */
-		{ 25, 25 },
-		{ input_port_0_r, input_port_3_r },		/* port Aread */
-		{ input_port_1_r, input_port_2_r },		/* port Bread */
-		{ 0 },	/* port Awrite */
-		{ 0 }	/* port Bwrite */
-	};
+		new int[] { 25, 25 },
+		new ReadHandlerPtr[] { input_port_0_r, input_port_3_r },		/* port Aread */
+		new ReadHandlerPtr[] { input_port_1_r, input_port_2_r },		/* port Bread */
+		new WriteHandlerPtr[] { 0 },	/* port Awrite */
+		new WriteHandlerPtr[] { 0 }	/* port Bwrite */
+	);
 	
 	int sqix_interrupt(void)
 	{

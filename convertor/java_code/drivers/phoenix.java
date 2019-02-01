@@ -533,16 +533,16 @@ public class phoenix
 		pleiads_sh_update
 	};
 	
-	static struct AY8910interface survival_ay8910_interface =
-	{
+	static AY8910interface survival_ay8910_interface = new AY8910interface
+	(
 		1,	/* 1 chip */
 		11000000/4,
-		{ 50 },
-		{ 0 },
-		{ survival_protection_r },
-		{ 0 },
-		{ 0 }
-	};
+		new int[] { 50 },
+		new ReadHandlerPtr[] { 0 },
+		new ReadHandlerPtr[] { survival_protection_r },
+		new WriteHandlerPtr[] { 0 },
+		new WriteHandlerPtr[] { 0 }
+	);
 	
 	
 	

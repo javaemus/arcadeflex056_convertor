@@ -423,16 +423,16 @@ public class cclimber
 	
 	
 	
-	static struct AY8910interface ay8910_interface =
-	{
+	static AY8910interface ay8910_interface = new AY8910interface
+	(
 		1,      /* 1 chip */
 		1536000,	/* 1.536 MHz */
-		{ 50 },
-		{ 0 },
-		{ 0 },
-		{ cclimber_sample_select_w },
-		{ 0 }
-	};
+		new int[] { 50 },
+		new ReadHandlerPtr[] { 0 },
+		new ReadHandlerPtr[] { 0 },
+		new WriteHandlerPtr[] { cclimber_sample_select_w },
+		new WriteHandlerPtr[] { 0 }
+	);
 	
 	static struct CustomSound_interface custom_interface =
 	{
@@ -1274,16 +1274,16 @@ public class cclimber
 	
 	
 	
-	static struct AY8910interface swimmer_ay8910_interface =
-	{
+	static AY8910interface swimmer_ay8910_interface = new AY8910interface
+	(
 		2,      /* 2 chips */
 		4000000/2,	/* 2 MHz */
-		{ 25, 25 },
-		{ 0 },
-		{ 0 },
-		{ 0 },
-		{ 0 }
-	};
+		new int[] { 25, 25 },
+		new ReadHandlerPtr[] { 0 },
+		new ReadHandlerPtr[] { 0 },
+		new WriteHandlerPtr[] { 0 },
+		new WriteHandlerPtr[] { 0 }
+	);
 	
 	
 	

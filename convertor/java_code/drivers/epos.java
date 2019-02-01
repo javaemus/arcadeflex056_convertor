@@ -178,16 +178,16 @@ public class epos
 	INPUT_PORTS_END(); }}; 
 	
 	
-	static struct AY8910interface ay8912_interface =
-	{
+	static AY8910interface ay8912_interface = new AY8910interface
+	(
 		1,	/* 1 chip */
 		11000000/4,	/* 2.75 MHz */
-		{ 50 },
-		{ 0 },
-		{ 0 },
-		{ 0 },
-		{ 0 }
-	};
+		new int[] { 50 },
+		new ReadHandlerPtr[] { 0 },
+		new ReadHandlerPtr[] { 0 },
+		new WriteHandlerPtr[] { 0 },
+		new WriteHandlerPtr[] { 0 }
+	);
 	
 	
 	static MachineDriver machine_driver_epos = new MachineDriver

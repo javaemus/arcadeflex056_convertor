@@ -234,16 +234,16 @@ public class mcr
 	
 	
 	/********* sound interfaces ***********/
-	struct AY8910interface ssio_ay8910_interface =
-	{
+	static AY8910interface ssio_ay8910_interface = new AY8910interface
+	(
 		2,			/* 2 chips */
 		2000000,	/* 2 MHz ?? */
-		{ MIXER(33,MIXER_PAN_LEFT), MIXER(33,MIXER_PAN_RIGHT) },	/* dotron clips with anything higher */
-		{ 0 },
-		{ 0 },
-		{ ssio_porta0_w, ssio_porta1_w },
-		{ ssio_portb0_w, ssio_portb1_w }
-	};
+		new int[] { MIXER(33,MIXER_PAN_LEFT), MIXER(33,MIXER_PAN_RIGHT) },	/* dotron clips with anything higher */
+		new ReadHandlerPtr[] { 0 },
+		new ReadHandlerPtr[] { 0 },
+		new WriteHandlerPtr[] { ssio_porta0_w, ssio_porta1_w },
+		new WriteHandlerPtr[] { ssio_portb0_w, ssio_portb1_w }
+	);
 	
 	
 	/********* memory interfaces ***********/

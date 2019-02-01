@@ -338,16 +338,16 @@ public class yamato
 	
 	
 	
-	static struct AY8910interface yamato_ay8910_interface =
-	{
+	static AY8910interface yamato_ay8910_interface = new AY8910interface
+	(
 		2,      /* 2 chips */
 		1536000,	/* 1.536 MHz??? */
-		{ 25, 25 },
-		{ 0 },
-		{ 0 },
-		{ 0 },
-		{ 0 }
-	};
+		new int[] { 25, 25 },
+		new ReadHandlerPtr[] { 0 },
+		new ReadHandlerPtr[] { 0 },
+		new WriteHandlerPtr[] { 0 },
+		new WriteHandlerPtr[] { 0 }
+	);
 	
 	
 	

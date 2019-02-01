@@ -215,16 +215,16 @@ public class aeroboto
 	
 	
 	
-	static struct AY8910interface ay8910_interface =
-	{
+	static AY8910interface ay8910_interface = new AY8910interface
+	(
 		2,      /* 2 chips */
 		1500000,        /* 1.5 MHz ? (hand tuned) */
-		{ 25, 25 },
-		{ soundlatch_r, 0 },	/* ? */
-		{ soundlatch2_r, 0 },	/* ? */
-		{ 0, 0 },
-		{ 0, 0 }
-	};
+		new int[] { 25, 25 },
+		new ReadHandlerPtr[] { soundlatch_r, 0 },	/* ? */
+		new ReadHandlerPtr[] { soundlatch2_r, 0 },	/* ? */
+		new WriteHandlerPtr[] { 0, 0 },
+		new WriteHandlerPtr[] { 0, 0 }
+	);
 	
 	static MachineDriver machine_driver_formatz = new MachineDriver
 	(

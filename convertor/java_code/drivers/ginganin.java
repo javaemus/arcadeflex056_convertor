@@ -360,16 +360,16 @@ public class ginganin
 	
 	
 	
-	static struct AY8910interface AY8910_interface =
-	{
+	static AY8910interface AY8910_interface = new AY8910interface
+	(
 		1,
 		3579545 / 2 ,	/* ? */
-		{ 10 },
-		{ 0 },
-		{ 0 },
-		{ 0 },
-		{ 0 }
-	};
+		new int[] { 10 },
+		new ReadHandlerPtr[] { 0 },
+		new ReadHandlerPtr[] { 0 },
+		new WriteHandlerPtr[] { 0 },
+		new WriteHandlerPtr[] { 0 }
+	);
 	
 	
 	/* The Y8950 is basically a YM3526 with ADPCM built in */

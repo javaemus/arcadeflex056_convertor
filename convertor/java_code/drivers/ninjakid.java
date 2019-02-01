@@ -180,12 +180,12 @@ public class ninjakid
 	 Machine Driver Structure(s)
 	*******************************************************************************/
 	
-	static struct AY8910interface ay8910_interface =
-	{
+	static AY8910interface ay8910_interface = new AY8910interface
+	(
 		2,	/* 2 chips */
 		6000000/2,	/* 3 MHz */
-		{ 50, 50 }
-	};
+		new int[] { 50, 50 }
+	);
 	
 	static MachineDriver machine_driver_ninjakid = new MachineDriver
 	(

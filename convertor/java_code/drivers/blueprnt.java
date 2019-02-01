@@ -323,16 +323,16 @@ public class blueprnt
 	
 	
 	
-	static struct AY8910interface ay8910_interface =
-	{
+	static AY8910interface ay8910_interface = new AY8910interface
+	(
 		2,	/* 2 chips */
 		10000000/8,	/* 1.25 MHz (4H) */
-		{ 25, 25 },
-		{            0, input_port_2_r },
-		{ soundlatch_r, input_port_3_r },
-		{ dipsw_w },
-		{ 0 }
-	};
+		new int[] { 25, 25 },
+		new ReadHandlerPtr[] {            0, input_port_2_r },
+		new ReadHandlerPtr[] { soundlatch_r, input_port_3_r },
+		new WriteHandlerPtr[] { dipsw_w },
+		new WriteHandlerPtr[] { 0 }
+	);
 	
 	
 	

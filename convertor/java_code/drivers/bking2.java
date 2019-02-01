@@ -299,16 +299,16 @@ public class bking2
 		if (data != 0x00) logerror("portB = %02x\n",data);
 	} };
 	
-	static struct AY8910interface ay8910_interface =
-	{
+	static AY8910interface ay8910_interface = new AY8910interface
+	(
 		2,      /* 2 chips */
 		2000000,	/* 2 MHz */
-		{ 25, 25 },
-		{ 0, 0 },
-		{ 0, 0 },
-		{ 0, DAC_0_signed_data_w },
-		{ 0, portb_w }
-	};
+		new int[] { 25, 25 },
+		new ReadHandlerPtr[] { 0, 0 },
+		new ReadHandlerPtr[] { 0, 0 },
+		new WriteHandlerPtr[] { 0, DAC_0_signed_data_w },
+		new WriteHandlerPtr[] { 0, portb_w }
+	);
 	
 	static struct DACinterface dac_interface =
 	{

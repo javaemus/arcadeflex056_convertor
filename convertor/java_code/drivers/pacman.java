@@ -1450,16 +1450,16 @@ public class pacman
 		new int[] { 75, 75 }
 	);
 	
-	static struct AY8910interface dremshpr_ay8910_interface =
-	{
+	static AY8910interface dremshpr_ay8910_interface = new AY8910interface
+	(
 		1,	/* 1 chip */
 		14318000/8,	/* 1.78975 MHz ??? */
-		{ 50 },
-		{ 0 },
-		{ 0 },
-		{ 0 },
-		{ 0 }
-	};
+		new int[] { 50 },
+		new ReadHandlerPtr[] { 0 },
+		new ReadHandlerPtr[] { 0 },
+		new WriteHandlerPtr[] { 0 },
+		new WriteHandlerPtr[] { 0 }
+	);
 	
 	
 	static MachineDriver machine_driver_pacman = new MachineDriver

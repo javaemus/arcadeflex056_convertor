@@ -132,16 +132,16 @@ public class aztarac
 	
 	
 	
-	static struct AY8910interface ay8910_interface =
-	{
+	static AY8910interface ay8910_interface = new AY8910interface
+	(
 		4,	/* 4 chips */
 		2000000,	/* 2 MHz */
-		{ 15, 15, 15, 15 },
-		{ 0, 0, 0, 0 },
-		{ 0, 0, 0, 0 },
-		{ 0, 0, 0, 0 },
-		{ 0, 0, 0, 0 }
-	};
+		new int[] { 15, 15, 15, 15 },
+		new ReadHandlerPtr[] { 0, 0, 0, 0 },
+		new ReadHandlerPtr[] { 0, 0, 0, 0 },
+		new WriteHandlerPtr[] { 0, 0, 0, 0 },
+		new WriteHandlerPtr[] { 0, 0, 0, 0 }
+	);
 	
 	static int aztarac_irq_callback (int irqline)
 	{

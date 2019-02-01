@@ -2026,27 +2026,27 @@ public class galaxian
 		galaxian_sh_update
 	};
 	
-	static struct AY8910interface jumpbug_ay8910_interface =
-	{
+	static AY8910interface jumpbug_ay8910_interface = new AY8910interface
+	(
 		1,	/* 1 chip */
 		1789750,	/* 1.78975 MHz? */
-		{ 50 },
-		{ 0 },
-		{ 0 },
-		{ 0 },
-		{ 0 }
-	};
+		new int[] { 50 },
+		new ReadHandlerPtr[] { 0 },
+		new ReadHandlerPtr[] { 0 },
+		new WriteHandlerPtr[] { 0 },
+		new WriteHandlerPtr[] { 0 }
+	);
 	
-	static struct AY8910interface checkmaj_ay8910_interface =
-	{
+	static AY8910interface checkmaj_ay8910_interface = new AY8910interface
+	(
 		1,	/* 1 chip */
 		1620000,	/* 1.62 MHz? (Used the same as Moon Cresta) */
-		{ 50 },
-		{ soundlatch_r },
-		{ 0 },
-		{ 0 },
-		{ 0 }
-	};
+		new int[] { 50 },
+		new ReadHandlerPtr[] { soundlatch_r },
+		new ReadHandlerPtr[] { 0 },
+		new WriteHandlerPtr[] { 0 },
+		new WriteHandlerPtr[] { 0 }
+	);
 	
 	static struct DACinterface kingball_dac_interface =
 	{

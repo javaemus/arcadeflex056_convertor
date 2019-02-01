@@ -202,16 +202,16 @@ public class timelimt
 	
 	/***************************************************************************/
 	
-	static struct AY8910interface ay8910_interface =
-	{
+	static AY8910interface ay8910_interface = new AY8910interface
+	(
 		2,	/* 2 chips */
 		18432000/12,
-		{ 25, 25 },
-		{ 0, soundlatch_r },
-		{ 0 },
-		{ 0 },
-		{ 0 }
-	};
+		new int[] { 25, 25 },
+		new ReadHandlerPtr[] { 0, soundlatch_r },
+		new ReadHandlerPtr[] { 0 },
+		new WriteHandlerPtr[] { 0 },
+		new WriteHandlerPtr[] { 0 }
+	);
 	
 	static int timelimt_irq( void ) {
 		if ( nmi_enabled )

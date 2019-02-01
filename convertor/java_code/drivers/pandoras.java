@@ -409,16 +409,16 @@ public class pandoras
 		return (cpu_gettotalcycles() / 512) & 0x0f;
 	} };
 	
-	static struct AY8910interface ay8910_interface =
-	{
+	static AY8910interface ay8910_interface = new AY8910interface
+	(
 		1,			/* 1 chip */
 		14318000/8,
-		{ 40 },
-		{ pandoras_portA_r },	// not used
-		{ pandoras_portB_r },
-		{ 0 },
-		{ 0 }
-	};
+		new int[] { 40 },
+		new ReadHandlerPtr[] { pandoras_portA_r },	// not used
+		new ReadHandlerPtr[] { pandoras_portB_r },
+		new WriteHandlerPtr[] { 0 },
+		new WriteHandlerPtr[] { 0 }
+	);
 	
 	static struct DACinterface dac_interface =
 	{

@@ -1473,16 +1473,16 @@ public class pstadium
 		{ 35 }
 	};
 	
-	static struct AY8910interface ay8910_interface =
-	{
+	static AY8910interface ay8910_interface = new AY8910interface
+	(
 		1,				/* 1 chip */
 		1250000,			/* 1.25 MHz ?? */
-		{ 35 },
-		{ input_port_0_r },		// DIPSW-A read
-		{ input_port_1_r },		// DIPSW-B read
-		{ 0 },
-		{ 0 }
-	};
+		new int[] { 35 },
+		new ReadHandlerPtr[] { input_port_0_r },		// DIPSW-A read
+		new ReadHandlerPtr[] { input_port_1_r },		// DIPSW-B read
+		new WriteHandlerPtr[] { 0 },
+		new WriteHandlerPtr[] { 0 }
+	);
 	
 	static struct DACinterface pstadium_dac_interface =
 	{

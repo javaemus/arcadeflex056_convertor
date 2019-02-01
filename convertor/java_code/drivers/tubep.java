@@ -833,16 +833,16 @@ public class tubep
 	};
 	
 	
-	static struct AY8910interface ay8910_interface =
-	{
+	static AY8910interface ay8910_interface = new AY8910interface
+	(
 		3,			/* 3 chips */
 		16000000/8,		/* 2 MHz ??? */
-		{ 25, 25, 25 },
-		{ 0, 0, 0 }, /*read port A*/
-		{ 0, 0, 0 }, /*read port B*/
-		{ ay8910_portA_0_w, ay8910_portA_1_w, ay8910_portA_2_w }, /*write port A*/
-		{ ay8910_portB_0_w, ay8910_portB_1_w, ay8910_portB_2_w }  /*write port B*/
-	};
+		new int[] { 25, 25, 25 },
+		new ReadHandlerPtr[] { 0, 0, 0 }, /*read port A*/
+		new ReadHandlerPtr[] { 0, 0, 0 }, /*read port B*/
+		new WriteHandlerPtr[] { ay8910_portA_0_w, ay8910_portA_1_w, ay8910_portA_2_w }, /*write port A*/
+		new WriteHandlerPtr[] { ay8910_portB_0_w, ay8910_portB_1_w, ay8910_portB_2_w }  /*write port B*/
+	);
 	
 	static MachineDriver machine_driver_tubep = new MachineDriver
 	(

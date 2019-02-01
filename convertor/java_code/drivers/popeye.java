@@ -363,16 +363,16 @@ public class popeye
 		return res;
 	} };
 	
-	static struct AY8910interface ay8910_interface =
-	{
+	static AY8910interface ay8910_interface = new AY8910interface
+	(
 		1,	/* 1 chip */
 		2000000,	/* 2 MHz */
-		{ 40 },
-		{ popeye_portA_r },
-		{ 0 },
-		{ 0 },
-		{ popeye_portB_w }
-	};
+		new int[] { 40 },
+		new ReadHandlerPtr[] { popeye_portA_r },
+		new ReadHandlerPtr[] { 0 },
+		new WriteHandlerPtr[] { 0 },
+		new WriteHandlerPtr[] { popeye_portB_w }
+	);
 	
 	
 	

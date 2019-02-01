@@ -363,16 +363,16 @@ public class arabian
 	 *
 	 *************************************/
 	
-	static struct AY8910interface ay8910_interface =
-	{
+	static AY8910interface ay8910_interface = new AY8910interface
+	(
 		1,
 		MAIN_OSC/4/2,	/* 1.5 MHz */
-		{ 50 },
-		{ 0 },
-		{ 0 },
-		{ ay8910_porta_w },
-		{ ay8910_portb_w }
-	};
+		new int[] { 50 },
+		new ReadHandlerPtr[] { 0 },
+		new ReadHandlerPtr[] { 0 },
+		new WriteHandlerPtr[] { ay8910_porta_w },
+		new WriteHandlerPtr[] { ay8910_portb_w }
+	);
 	
 	
 	

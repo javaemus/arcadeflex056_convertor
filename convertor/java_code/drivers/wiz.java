@@ -537,27 +537,27 @@ public class wiz
 	};
 	
 	
-	static struct AY8910interface wiz_ay8910_interface =
-	{
+	static AY8910interface wiz_ay8910_interface = new AY8910interface
+	(
 		3,      /* 3 chips */
 		18432000/12,	/* ? */
-		{ 10, 10, 10 },
-		{ 0 },
-		{ 0 },
-		{ 0 },
-		{ 0 }
-	};
+		new int[] { 10, 10, 10 },
+		new ReadHandlerPtr[] { 0 },
+		new ReadHandlerPtr[] { 0 },
+		new WriteHandlerPtr[] { 0 },
+		new WriteHandlerPtr[] { 0 }
+	);
 	
-	static struct AY8910interface stinger_ay8910_interface =
-	{
+	static AY8910interface stinger_ay8910_interface = new AY8910interface
+	(
 		2,      /* 2 chips */
 		18432000/12,	/* ? */
-		{ 25, 25 },
-		{ 0 },
-		{ 0 },
-		{ 0 },
-		{ 0 }
-	};
+		new int[] { 25, 25 },
+		new ReadHandlerPtr[] { 0 },
+		new ReadHandlerPtr[] { 0 },
+		new WriteHandlerPtr[] { 0 },
+		new WriteHandlerPtr[] { 0 }
+	);
 	
 	
 	#define MACHINE_DRIVER(NAME)									\

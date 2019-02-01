@@ -78,16 +78,16 @@ public class marvins
 		-1		/* memory region */
 	};
 	
-	static struct AY8910interface ay8910_interface =
-	{
+	static AY8910interface ay8910_interface = new AY8910interface
+	(
 		2, /* number of chips */
 		2000000, /* 2 MHz */
-		{ 35,35 },
-		{ 0 },
-		{ 0 },
-		{ 0 },
-		{ 0 }
-	};
+		new int[] { 35,35 },
+		new ReadHandlerPtr[] { 0 },
+		new ReadHandlerPtr[] { 0 },
+		new WriteHandlerPtr[] { 0 },
+		new WriteHandlerPtr[] { 0 }
+	);
 	
 	static void init_sound( int busy_bit ){
 		sound_cpu_busy_bit = busy_bit;

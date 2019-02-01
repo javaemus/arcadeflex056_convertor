@@ -82,15 +82,15 @@ public class shangkid
 		{ MIXER(50,50) }
 	};
 	
-	static struct AY8910interface ay8910_interface = {
+	static AY8910interface ay8910_interface = new AY8910interface(
 		1,	/* number of chips */
 		2000000, /* 2 MHz? */
-		{ 10 }, /* volume */
-		{ 0 },
-		{ 0 },
-		{ 0 },
-		{ 0 }
-	};
+		new int[] { 10 }, /* volume */
+		new ReadHandlerPtr[] { 0 },
+		new ReadHandlerPtr[] { 0 },
+		new WriteHandlerPtr[] { 0 },
+		new WriteHandlerPtr[] { 0 }
+	);
 	
 	/***************************************************************************************/
 	

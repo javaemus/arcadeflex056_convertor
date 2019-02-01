@@ -1019,38 +1019,38 @@ public class srmp2
 	
 	***************************************************************************/
 	
-	static struct AY8910interface srmp2_ay8910_interface =
-	{
+	static AY8910interface srmp2_ay8910_interface = new AY8910interface
+	(
 		1,
 		20000000/16,					/* 1.25 MHz */
-		{ 40 },
-		{ input_port_2_r },				/* Input A: DSW 2 */
-		{ input_port_1_r },				/* Input B: DSW 1 */
-		{ 0 },
-		{ 0 }
-	};
+		new int[] { 40 },
+		new ReadHandlerPtr[] { input_port_2_r },				/* Input A: DSW 2 */
+		new ReadHandlerPtr[] { input_port_1_r },				/* Input B: DSW 1 */
+		new WriteHandlerPtr[] { 0 },
+		new WriteHandlerPtr[] { 0 }
+	);
 	
-	static struct AY8910interface srmp3_ay8910_interface =
-	{
+	static AY8910interface srmp3_ay8910_interface = new AY8910interface
+	(
 		1,
 		16000000/16,					/* 1.00 MHz */
-		{ 20 },
-		{ input_port_2_r },				/* Input A: DSW 2 */
-		{ input_port_1_r },				/* Input B: DSW 1 */
-		{ 0 },
-		{ 0 }
-	};
+		new int[] { 20 },
+		new ReadHandlerPtr[] { input_port_2_r },				/* Input A: DSW 2 */
+		new ReadHandlerPtr[] { input_port_1_r },				/* Input B: DSW 1 */
+		new WriteHandlerPtr[] { 0 },
+		new WriteHandlerPtr[] { 0 }
+	);
 	
-	static struct AY8910interface mjyuugi_ay8910_interface =
-	{
+	static AY8910interface mjyuugi_ay8910_interface = new AY8910interface
+	(
 		1,
 		16000000/16,					/* 1.00 MHz */
-		{ 20 },
-		{ input_port_2_r },				/* Input A: DSW 2 */
-		{ input_port_1_r },				/* Input B: DSW 1 */
-		{ 0 },
-		{ 0 }
-	};
+		new int[] { 20 },
+		new ReadHandlerPtr[] { input_port_2_r },				/* Input A: DSW 2 */
+		new ReadHandlerPtr[] { input_port_1_r },				/* Input B: DSW 1 */
+		new WriteHandlerPtr[] { 0 },
+		new WriteHandlerPtr[] { 0 }
+	);
 	
 	
 	struct MSM5205interface srmp2_msm5205_interface =

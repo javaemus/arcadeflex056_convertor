@@ -437,19 +437,19 @@ public class gyruss
 	
 	
 	
-	static struct AY8910interface ay8910_interface =
-	{
+	static AY8910interface ay8910_interface = new AY8910interface
+	(
 		5,	/* 5 chips */
 		14318180/8,	/* 1.789772727 MHz */
-		{ MIXERG(10,MIXER_GAIN_4x,MIXER_PAN_RIGHT), MIXERG(10,MIXER_GAIN_4x,MIXER_PAN_LEFT),
+		new int[] { MIXERG(10,MIXER_GAIN_4x,MIXER_PAN_RIGHT), MIXERG(10,MIXER_GAIN_4x,MIXER_PAN_LEFT),
 				MIXERG(20,MIXER_GAIN_4x,MIXER_PAN_RIGHT), MIXERG(20,MIXER_GAIN_4x,MIXER_PAN_RIGHT), MIXERG(20,MIXER_GAIN_4x,MIXER_PAN_LEFT) },
 		/*  R       L   |   R       R       L */
 		/*   effects    |         music       */
-		{ 0, 0, gyruss_portA_r },
-		{ 0 },
-		{ 0 },
-		{ gyruss_filter0_w, gyruss_filter1_w }
-	};
+		new ReadHandlerPtr[] { 0, 0, gyruss_portA_r },
+		new ReadHandlerPtr[] { 0 },
+		new WriteHandlerPtr[] { 0 },
+		new WriteHandlerPtr[] { gyruss_filter0_w, gyruss_filter1_w }
+	);
 	
 	static struct DACinterface dac_interface =
 	{

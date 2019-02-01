@@ -1662,16 +1662,16 @@ public class suna8
 	
 	/* 1 x 24 MHz crystal */
 	
-	static struct AY8910interface hardhead_ay8910_interface =
-	{
+	static AY8910interface hardhead_ay8910_interface = new AY8910interface
+	(
 		1,
 		4000000,	/* ? */
-		{ 50 },
-		{ 0 },
-		{ 0 },
-		{ 0 },
-		{ 0 }
-	};
+		new int[] { 50 },
+		new ReadHandlerPtr[] { 0 },
+		new ReadHandlerPtr[] { 0 },
+		new WriteHandlerPtr[] { 0 },
+		new WriteHandlerPtr[] { 0 }
+	);
 	
 	static struct YM3812interface hardhead_ym3812_interface =
 	{
@@ -1793,16 +1793,16 @@ public class suna8
 	
 	/* 1 x 24 MHz crystal */
 	
-	static struct AY8910interface brickzn_ay8910_interface =
-	{
+	static AY8910interface brickzn_ay8910_interface = new AY8910interface
+	(
 		1,
 		4000000,	/* ? */
-		{ 33 },
-		{ 0 },
-		{ 0 },
-		{ 0 },
-		{ 0 }
-	};
+		new int[] { 33 },
+		new ReadHandlerPtr[] { 0 },
+		new ReadHandlerPtr[] { 0 },
+		new WriteHandlerPtr[] { 0 },
+		new WriteHandlerPtr[] { 0 }
+	);
 	
 	static struct YM3812interface brickzn_ym3812_interface =
 	{
@@ -1949,16 +1949,16 @@ public class suna8
 									Star Fighter
 	***************************************************************************/
 	
-	static struct AY8910interface starfigh_ay8910_interface =
-	{
+	static AY8910interface starfigh_ay8910_interface = new AY8910interface
+	(
 		1,
 		4000000,	/* ? */
-		{ 50 },
-		{ 0 },
-		{ 0 },
-		{ 0 },
-		{ 0 }
-	};
+		new int[] { 50 },
+		new ReadHandlerPtr[] { 0 },
+		new ReadHandlerPtr[] { 0 },
+		new WriteHandlerPtr[] { 0 },
+		new WriteHandlerPtr[] { 0 }
+	);
 	
 	static struct YM3812interface starfigh_ym3812_interface =
 	{

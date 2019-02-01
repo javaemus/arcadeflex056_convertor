@@ -59,16 +59,16 @@ public class tsamurai
 	extern int vsgongf_vh_start( void );
 	extern void vsgongf_vh_screenrefresh( struct mame_bitmap *bitmap, int fullrefresh );
 	
-	static struct AY8910interface ay8910_interface =
-	{
+	static AY8910interface ay8910_interface = new AY8910interface
+	(
 		1, /* number of chips */
 		2000000, /* 2 MHz */
-		{ 10 },
-		{ 0 },
-		{ 0 },
-		{ 0 },
-		{ 0 }
-	};
+		new int[] { 10 },
+		new ReadHandlerPtr[] { 0 },
+		new ReadHandlerPtr[] { 0 },
+		new WriteHandlerPtr[] { 0 },
+		new WriteHandlerPtr[] { 0 }
+	);
 	
 	static struct DACinterface dac_interface =
 	{

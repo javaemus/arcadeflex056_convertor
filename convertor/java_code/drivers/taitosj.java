@@ -1638,16 +1638,16 @@ public class taitosj
 	
 	
 	
-	static struct AY8910interface ay8910_interface =
-	{
+	static AY8910interface ay8910_interface = new AY8910interface
+	(
 		4,      /* 4 chips */
 		6000000/4,      /* 1.5 MHz */
-		{ 15, 15, 15, MIXERG(15,MIXER_GAIN_2x,MIXER_PAN_CENTER) },
-		{ input_port_6_r, 0, 0, 0 },            /* port Aread */
-		{ input_port_7_r, 0, 0, 0 },            /* port Bread */
-		{ 0, DAC_0_data_w, 0, 0 },                      /* port Awrite */
-		{ 0, 0, 0, taitosj_sndnmi_msk_w }       /* port Bwrite */
-	};
+		new int[] { 15, 15, 15, MIXERG(15,MIXER_GAIN_2x,MIXER_PAN_CENTER) },
+		new ReadHandlerPtr[] { input_port_6_r, 0, 0, 0 },            /* port Aread */
+		new ReadHandlerPtr[] { input_port_7_r, 0, 0, 0 },            /* port Bread */
+		new WriteHandlerPtr[] { 0, DAC_0_data_w, 0, 0 },                      /* port Awrite */
+		new WriteHandlerPtr[] { 0, 0, 0, taitosj_sndnmi_msk_w }       /* port Bwrite */
+	);
 	
 	static struct DACinterface dac_interface =
 	{

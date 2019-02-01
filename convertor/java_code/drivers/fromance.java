@@ -921,16 +921,16 @@ public class fromance
 	};
 	
 	
-	static struct AY8910interface ay8910_interface =
-	{
+	static AY8910interface ay8910_interface = new AY8910interface
+	(
 		1,						/* 1 chip */
 		12000000/6,				/* 1.5 MHz ? */
-		{ 15 },					/* volume */
-		{ 0 },					/* read port #0 */
-		{ 0 },					/* read port #1 */
-		{ 0 },					/* write port #0 */
-		{ 0 }					/* write port #1 */
-	};
+		new int[] { 15 },					/* volume */
+		new ReadHandlerPtr[] { 0 },					/* read port #0 */
+		new ReadHandlerPtr[] { 0 },					/* read port #1 */
+		new WriteHandlerPtr[] { 0 },					/* write port #0 */
+		new WriteHandlerPtr[] { 0 }					/* write port #1 */
+	);
 	
 	
 	static struct MSM5205interface msm5205_interface =

@@ -344,16 +344,16 @@ public class nyny
 	
 	
 	
-	static struct AY8910interface ay8910_interface =
-	{
+	static AY8910interface ay8910_interface = new AY8910interface
+	(
 		3,	/* 3 chips */
 		1000000,	/* 1 MHz */
-		{ 25, 25, 3 },
-		{ 0, input_port_2_r, 0 },
-		{ 0, input_port_3_r, 0 },
-		{ ay8910_porta_w, 0 },
-		{ ay8910_portb_w, 0 }
-	};
+		new int[] { 25, 25, 3 },
+		new ReadHandlerPtr[] { 0, input_port_2_r, 0 },
+		new ReadHandlerPtr[] { 0, input_port_3_r, 0 },
+		new WriteHandlerPtr[] { ay8910_porta_w, 0 },
+		new WriteHandlerPtr[] { ay8910_portb_w, 0 }
+	);
 	
 	static struct DACinterface dac_interface =
 	{

@@ -262,16 +262,16 @@ public class redalert
 		return interrupt();
 	}
 	
-	static struct AY8910interface ay8910_interface =
-	{
+	static AY8910interface ay8910_interface = new AY8910interface
+	(
 		1,			/* 1 chip */
 		2000000,	/* 2 MHz */
-		{ 50 },		/* Volume */
-		{ redalert_AY8910_A_r },		/* Port A Read */
-		{ 0 },		/* Port B Read */
-		{ 0 },		/* Port A Write */
-		{ redalert_AY8910_B_w }		/* Port B Write */
-	};
+		new int[] { 50 },		/* Volume */
+		new ReadHandlerPtr[] { redalert_AY8910_A_r },		/* Port A Read */
+		new ReadHandlerPtr[] { 0 },		/* Port B Read */
+		new WriteHandlerPtr[] { 0 },		/* Port A Write */
+		new WriteHandlerPtr[] { redalert_AY8910_B_w }		/* Port B Write */
+	);
 	
 	
 	

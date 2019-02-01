@@ -1071,16 +1071,16 @@ public class scramble
 	
 	
 	
-	static struct AY8910interface triplep_ay8910_interface =
-	{
+	static AY8910interface triplep_ay8910_interface = new AY8910interface
+	(
 		1,	/* 1 chip */
 		14318000/8,	/* 1.78975 MHz */
-		{ 50 },
-		{ 0 },
-		{ 0 },
-		{ 0 },
-		{ 0 }
-	};
+		new int[] { 50 },
+		new ReadHandlerPtr[] { 0 },
+		new ReadHandlerPtr[] { 0 },
+		new WriteHandlerPtr[] { 0 },
+		new WriteHandlerPtr[] { 0 }
+	);
 	
 	
 	#define hotshock_sound_readmem	scobra_sound_readmem

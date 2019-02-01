@@ -292,16 +292,16 @@ public class frogger
 	
 	
 	
-	struct AY8910interface frogger_ay8910_interface =
-	{
+	static AY8910interface frogger_ay8910_interface = new AY8910interface
+	(
 		1,	/* 1 chip */
 		14318000/8,	/* 1.78975 MHz */
-		{ MIXERG(80,MIXER_GAIN_2x,MIXER_PAN_CENTER) },
-		{ soundlatch_r },
-		{ frogger_portB_r },
-		{ 0 },
-		{ 0 }
-	};
+		new int[] { MIXERG(80,MIXER_GAIN_2x,MIXER_PAN_CENTER) },
+		new ReadHandlerPtr[] { soundlatch_r },
+		new ReadHandlerPtr[] { frogger_portB_r },
+		new WriteHandlerPtr[] { 0 },
+		new WriteHandlerPtr[] { 0 }
+	);
 	
 	
 	static MachineDriver machine_driver_frogger = new MachineDriver

@@ -43,6 +43,7 @@ public class convertMame {
     static final int NEWINPUT = 15;
     static final int MACHINEDRIVER = 16;
     static final int SN76496=17;
+    static final int AY8910=18;
 
     public static void Convert() {
         Convertor.inpos = 0;//position of pointer inside the buffers
@@ -411,6 +412,20 @@ public class convertMame {
                                 continue;
                             }
                         }
+                        else if (sUtil.getToken("AY8910interface")) {
+                            sUtil.skipSpace();
+                            Convertor.token[0] = sUtil.parseToken();
+                            sUtil.skipSpace();
+                            if (sUtil.parseChar() != '=') {
+                                Convertor.inpos = i;
+                            } else {
+                                sUtil.skipSpace();
+                                sUtil.putString("static AY8910interface " + Convertor.token[0] + " = new AY8910interface");
+                                type = AY8910;
+                                i3 = -1;
+                                continue;
+                            }
+                        }
                         Convertor.inpos = i;
                         break;
                     }
@@ -558,6 +573,40 @@ public class convertMame {
                             continue;
                         }
                     }
+                    if (type == AY8910) {
+                        i3++;
+                        insideagk[i3] = 0;
+                        if (i3 == 0) {
+                            Convertor.outbuf[(Convertor.outpos++)] = '(';
+                            Convertor.inpos += 1;
+                            continue;
+                        }
+                        if ((i3 == 1) && ((insideagk[0] == 1) || (insideagk[0] == 2))) {
+                            sUtil.putString("new int[] {");
+                            Convertor.inpos += 1;
+                            continue;
+                        }
+                        if ((i3 == 1) && ((insideagk[0] == 1) || (insideagk[0] == 3))) {
+                            sUtil.putString("new ReadHandlerPtr[] {");
+                            Convertor.inpos += 1;
+                            continue;
+                        }
+                        if ((i3 == 1) && ((insideagk[0] == 1) || (insideagk[0] == 4))) {
+                            sUtil.putString("new ReadHandlerPtr[] {");
+                            Convertor.inpos += 1;
+                            continue;
+                        }
+                        if ((i3 == 1) && ((insideagk[0] == 1) || (insideagk[0] == 5))) {
+                            sUtil.putString("new WriteHandlerPtr[] {");
+                            Convertor.inpos += 1;
+                            continue;
+                        }
+                        if ((i3 == 1) && ((insideagk[0] == 1) || (insideagk[0] == 6))) {
+                            sUtil.putString("new WriteHandlerPtr[] {");
+                            Convertor.inpos += 1;
+                            continue;
+                        }
+                    }
                     if (type == SN76496) {
                         i3++;
                         insideagk[i3] = 0;
@@ -639,6 +688,15 @@ public class convertMame {
                         } else if ((i3 == 0) && (insideagk[0] == 9)) {
                             Convertor.outbuf[(Convertor.outpos++)] = 41;
                             Convertor.inpos += 1;
+                            continue;
+                        }
+                    }
+                    if (type == AY8910) {
+                        i3--;
+                        if (i3 == -1) {
+                            Convertor.outbuf[(Convertor.outpos++)] = 41;
+                            Convertor.inpos += 1;
+                            type = -1;
                             continue;
                         }
                     }

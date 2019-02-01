@@ -2162,26 +2162,26 @@ public class kaneko16
 		{ 100, 100 }
 	};
 	
-	static struct AY8910interface ay8910_intf_2x1MHz_DSW =
-	{
+	static AY8910interface ay8910_intf_2x1MHz_DSW = new AY8910interface
+	(
 		2,
 		1000000,	/* ? */
-		{ MIXER(100,MIXER_PAN_LEFT), MIXER(100,MIXER_PAN_RIGHT) },
-		{ input_port_4_r, 0 },	/* input A: DSW 1 */
-		{ input_port_5_r, 0 },	/* input B: DSW 2 */
-		{ 0, 0 },
-		{ 0, 0 }
-	};
-	static struct AY8910interface ay8910_intf_2x2MHz_EEPROM =
-	{
+		new int[] { MIXER(100,MIXER_PAN_LEFT), MIXER(100,MIXER_PAN_RIGHT) },
+		new ReadHandlerPtr[] { input_port_4_r, 0 },	/* input A: DSW 1 */
+		new ReadHandlerPtr[] { input_port_5_r, 0 },	/* input B: DSW 2 */
+		new WriteHandlerPtr[] { 0, 0 },
+		new WriteHandlerPtr[] { 0, 0 }
+	);
+	static AY8910interface ay8910_intf_2x2MHz_EEPROM = new AY8910interface
+	(
 		2,
 		2000000,	/* ? */
-		{ MIXER(100,MIXER_PAN_LEFT), MIXER(100,MIXER_PAN_RIGHT) },
-		{ 0, kaneko16_eeprom_r },		/* inputs  A:  0,EEPROM bit read */
-		{ 0, 0 },						/* inputs  B */
-		{ 0, 0 },						/* outputs A */
+		new int[] { MIXER(100,MIXER_PAN_LEFT), MIXER(100,MIXER_PAN_RIGHT) },
+		new ReadHandlerPtr[] { 0, kaneko16_eeprom_r },		/* inputs  A:  0,EEPROM bit read */
+		new WriteHandlerPtr[] { 0, 0 },						/* inputs  B */
+		new WriteHandlerPtr[] { 0, 0 },						/* outputs A */
 		{ 0, kaneko16_eeprom_reset_w }	/* outputs B:  0,EEPROM reset */
-	};
+	);
 	
 	static struct YM2151interface ym2151_intf_blazeon =
 	{

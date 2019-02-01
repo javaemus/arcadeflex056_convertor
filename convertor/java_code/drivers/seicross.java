@@ -433,16 +433,16 @@ public class seicross
 	
 	
 	
-	static struct AY8910interface ay8910_interface =
-	{
+	static AY8910interface ay8910_interface = new AY8910interface
+	(
 		1,	/* 1 chip */
 		1536000,	/* 1.536 MHz ?? */
-		{ 25 },
-		{ 0 },
-		{ friskyt_portB_r },
-		{ 0 },
-		{ friskyt_portB_w }
-	};
+		new int[] { 25 },
+		new ReadHandlerPtr[] { 0 },
+		new ReadHandlerPtr[] { friskyt_portB_r },
+		new WriteHandlerPtr[] { 0 },
+		new WriteHandlerPtr[] { friskyt_portB_w }
+	);
 	
 	static struct DACinterface dac_interface =
 	{

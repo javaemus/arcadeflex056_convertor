@@ -291,16 +291,16 @@ public class magmax
 	};
 	
 	
-	static struct AY8910interface ay8910_interface =
-	{
+	static AY8910interface ay8910_interface = new AY8910interface
+	(
 		3,			/* 3 chips */
 		10000000/8,		/* 1.25 MHz */
-		{ 35, 35, 35 },
-		{ 0, 0, 0 }, /*read port A*/
-		{ 0, 0, 0 }, /*read port B*/
-		{ ay8910_portA_0_w, 0, 0 }, /*write port A*/
-		{ ay8910_portB_0_w, 0, 0 }  /*write port B*/
-	};
+		new int[] { 35, 35, 35 },
+		new ReadHandlerPtr[] { 0, 0, 0 }, /*read port A*/
+		new ReadHandlerPtr[] { 0, 0, 0 }, /*read port B*/
+		new WriteHandlerPtr[] { ay8910_portA_0_w, 0, 0 }, /*write port A*/
+		new WriteHandlerPtr[] { ay8910_portB_0_w, 0, 0 }  /*write port B*/
+	);
 	
 	
 	int magmax_interrupt(void)

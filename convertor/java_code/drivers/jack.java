@@ -367,16 +367,16 @@ public class jack
 	
 	
 	
-	static struct AY8910interface ay8910_interface =
-	{
+	static AY8910interface ay8910_interface = new AY8910interface
+	(
 		1,	/* 1 chip */
 		18000000/12,	/* 1.5 MHz */
-		{ 100 },
-		{ soundlatch_r },
-		{ timer_r },
-		{ 0 },
-		{ 0 }
-	};
+		new int[] { 100 },
+		new ReadHandlerPtr[] { soundlatch_r },
+		new ReadHandlerPtr[] { timer_r },
+		new WriteHandlerPtr[] { 0 },
+		new WriteHandlerPtr[] { 0 }
+	);
 	
 	
 	static MachineDriver machine_driver_jack = new MachineDriver

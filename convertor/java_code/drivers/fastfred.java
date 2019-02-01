@@ -440,27 +440,27 @@ public class fastfred
 	
 	#define CLOCK 18432000  /* The crystal is 18.432MHz */
 	
-	static struct AY8910interface fastfred_ay8910_interface =
-	{
+	static AY8910interface fastfred_ay8910_interface = new AY8910interface
+	(
 		2,             /* 2 chips */
 		CLOCK/12,       /* ? */
-		{ 25, 25 },
-		{ 0 },
-		{ 0 },
-		{ 0 },
-		{ 0 }
-	};
+		new int[] { 25, 25 },
+		new ReadHandlerPtr[] { 0 },
+		new ReadHandlerPtr[] { 0 },
+		new WriteHandlerPtr[] { 0 },
+		new WriteHandlerPtr[] { 0 }
+	);
 	
-	static struct AY8910interface jumpcoas_ay8910_interface =
-	{
+	static AY8910interface jumpcoas_ay8910_interface = new AY8910interface
+	(
 		1,             /* 1 chip */
 		CLOCK/12,       /* ? */
-		{ 25 },
-		{ 0 },
-		{ 0 },
-		{ 0 },
-		{ 0 }
-	};
+		new int[] { 25 },
+		new ReadHandlerPtr[] { 0 },
+		new ReadHandlerPtr[] { 0 },
+		new WriteHandlerPtr[] { 0 },
+		new WriteHandlerPtr[] { 0 }
+	);
 	
 	
 	static MachineDriver machine_driver_fastfred = new MachineDriver

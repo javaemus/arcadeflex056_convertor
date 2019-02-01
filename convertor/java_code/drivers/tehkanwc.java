@@ -628,16 +628,16 @@ public class tehkanwc
 	
 	
 	
-	static struct AY8910interface ay8910_interface =
-	{
+	static AY8910interface ay8910_interface = new AY8910interface
+	(
 		2,	/* 2 chips */
 		1536000, 	/* ??? */
-		{ 25, 25 },
-		{ 0, tehkanwc_portA_r },
-		{ 0, tehkanwc_portB_r },
-		{ tehkanwc_portA_w, 0 },
-		{ tehkanwc_portB_w, 0 }
-	};
+		new int[] { 25, 25 },
+		new ReadHandlerPtr[] { 0, tehkanwc_portA_r },
+		new ReadHandlerPtr[] { 0, tehkanwc_portB_r },
+		new WriteHandlerPtr[] { tehkanwc_portA_w, 0 },
+		new WriteHandlerPtr[] { tehkanwc_portB_w, 0 }
+	);
 	
 	static struct MSM5205interface msm5205_interface =
 	{

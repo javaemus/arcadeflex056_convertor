@@ -40,16 +40,16 @@ public class timeplt
 	MEMORY_END
 	
 	
-	struct AY8910interface timeplt_ay8910_interface =
-	{
+	static AY8910interface timeplt_ay8910_interface = new AY8910interface
+	(
 		2,				/* 2 chips */
 		14318180/8,		/* 1.789772727 MHz */
-		{ MIXERG(30,MIXER_GAIN_2x,MIXER_PAN_CENTER), MIXERG(30,MIXER_GAIN_2x,MIXER_PAN_CENTER) },
-		{ soundlatch_r },
-		{ timeplt_portB_r },
-		{ 0 },
-		{ 0 }
-	};
+		new int[] { MIXERG(30,MIXER_GAIN_2x,MIXER_PAN_CENTER), MIXERG(30,MIXER_GAIN_2x,MIXER_PAN_CENTER) },
+		new ReadHandlerPtr[] { soundlatch_r },
+		new ReadHandlerPtr[] { timeplt_portB_r },
+		new WriteHandlerPtr[] { 0 },
+		new WriteHandlerPtr[] { 0 }
+	);
 	
 	
 	/* The timer clock which feeds the upper 4 bits of    					*/

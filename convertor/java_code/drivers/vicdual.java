@@ -1114,16 +1114,16 @@ public class vicdual
 	MACHINEDRIVER( pulsar,   vicdual, 4ports, 1 )
 	
 	
-	static struct AY8910interface carnival_ay8910_interface =
-	{
+	static AY8910interface carnival_ay8910_interface = new AY8910interface
+	(
 		1,	/* 1 chips */
 		PSG_CLOCK_CARNIVAL,
-		{ 35 },
-		{ 0 },
-		{ 0 },
-		{ 0 },
-		{ 0 }
-	};
+		new int[] { 35 },
+		new ReadHandlerPtr[] { 0 },
+		new ReadHandlerPtr[] { 0 },
+		new WriteHandlerPtr[] { 0 },
+		new WriteHandlerPtr[] { 0 }
+	);
 	
 	/* don't know if any of the other games use the 8048 music board */
 	/* so, we won't burden those drivers with the extra music handling */

@@ -286,16 +286,16 @@ public class exerion
 	 * Sound interfaces
 	 *********************************************************************/
 	
-	static struct AY8910interface ay8910_interface =
-	{
+	static AY8910interface ay8910_interface = new AY8910interface
+	(
 		2,  /* 2 chips */
 		10000000/6, /* 1.666 MHz */
-		{ 30, 30 },
-		{ 0, exerion_porta_r },
-		{ 0 },
-		{ 0 },
-		{ 0, exerion_portb_w }
-	};
+		new int[] { 30, 30 },
+		new ReadHandlerPtr[] { 0, exerion_porta_r },
+		new ReadHandlerPtr[] { 0 },
+		new WriteHandlerPtr[] { 0 },
+		new WriteHandlerPtr[] { 0, exerion_portb_w }
+	);
 	
 	
 	

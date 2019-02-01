@@ -214,16 +214,16 @@ public class route16
 	INPUT_PORTS_END(); }}; 
 	
 	
-	static struct AY8910interface ay8910_interface =
-	{
+	static AY8910interface ay8910_interface = new AY8910interface
+	(
 		1,	/* 1 chip */
 		10000000/8,     /* 10MHz / 8 = 1.25MHz */
-		{ 50 },
-		{ 0 },
-		{ 0 },
-		{ stratvox_sn76477_w },  /* SN76477 commands (not used in Route 16?) */
-		{ 0 }
-	};
+		new int[] { 50 },
+		new ReadHandlerPtr[] { 0 },
+		new ReadHandlerPtr[] { 0 },
+		new WriteHandlerPtr[] { stratvox_sn76477_w },  /* SN76477 commands (not used in Route 16?) */
+		new WriteHandlerPtr[] { 0 }
+	);
 	
 	
 	static struct SN76477interface sn76477_interface =
