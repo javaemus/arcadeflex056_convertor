@@ -395,12 +395,12 @@ public class congo
 	
 	
 	
-	static struct SN76496interface sn76496_interface =
-	{
+	static SN76496interface sn76496_interface = new SN76496interface
+	(
 		2,	/* 2 chips */
-		{ 4000000, 4000000 },	/* 4 MHz??? */
-		{ 100, 100 }
-	};
+		new int[] { 4000000, 4000000 },	/* 4 MHz??? */
+		new int[] { 100, 100 }
+	);
 	
 	/* Samples for Congo Bongo, these are needed for now	*/
 	/* as I haven't gotten around to calculate a formula for the */

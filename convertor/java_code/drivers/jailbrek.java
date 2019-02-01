@@ -245,12 +245,12 @@ public class jailbrek
 	
 	
 	
-	static struct SN76496interface sn76496_interface =
-	{
+	static SN76496interface sn76496_interface = new SN76496interface
+	(
 		1,	/* 1 chip */
-		{ 1500000 },	/*  1.5 MHz ? (hand tuned) */
-		{ 100 }
-	};
+		new int[] { 1500000 },	/*  1.5 MHz ? (hand tuned) */
+		new int[] { 100 }
+	);
 	
 	static struct VLM5030interface vlm5030_interface =
 	{

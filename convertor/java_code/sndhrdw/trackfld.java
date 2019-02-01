@@ -19,12 +19,12 @@ public class trackfld
 	    0,         /* memory size    */
 	};
 	
-	struct SN76496interface konami_sn76496_interface =
-	{
+	static SN76496interface konami_sn76496_interface = new SN76496interface
+	(
 	    1,  /* 1 chip */
-	    { 14318180/8 }, /*  1.7897725 MHz */
-	    { 0x2064 }
-	};
+	    new int[] { 14318180/8 }, /*  1.7897725 MHz */
+	    new int[] { 0x2064 }
+	);
 	
 	struct DACinterface konami_dac_interface =
 	{

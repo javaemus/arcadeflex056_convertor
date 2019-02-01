@@ -554,12 +554,12 @@ public class senjyo
 	
 	
 	
-	static struct SN76496interface sn76496_interface =
-	{
+	static SN76496interface sn76496_interface = new SN76496interface
+	(
 		3,	/* 3 chips */
-		{ 2000000, 2000000, 2000000 },	/* 2 MHz? */
-		{ 50, 50, 50 }
-	};
+		new int[] { 2000000, 2000000, 2000000 },	/* 2 MHz? */
+		new int[] { 50, 50, 50 }
+	);
 	
 	static struct CustomSound_interface custom_interface =
 	{

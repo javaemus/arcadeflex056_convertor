@@ -238,12 +238,12 @@ public class exedexes
 		{ 0 }
 	};
 	
-	static struct SN76496interface sn76496_interface =
-	{
+	static SN76496interface sn76496_interface = new SN76496interface
+	(
 		2,	/* 2 chips */
-		{ 3000000, 3000000 },	/* 3 MHz????? */
-		{ 36, 36 }
-	};
+		new int[] { 3000000, 3000000 },	/* 3 MHz????? */
+		new int[] { 36, 36 }
+	);
 	
 	
 	

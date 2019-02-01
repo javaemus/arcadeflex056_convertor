@@ -634,12 +634,12 @@ public class docastle
 	
 	
 	
-	static struct SN76496interface sn76496_interface =
-	{
+	static SN76496interface sn76496_interface = new SN76496interface
+	(
 		4,	/* 4 chips */
-		{ 4000000, 4000000, 4000000, 4000000 },	/* 4 MHz? */
-		{ 25, 25, 25, 25 }
-	};
+		new int[] { 4000000, 4000000, 4000000, 4000000 },	/* 4 MHz? */
+		new int[] { 25, 25, 25, 25 }
+	);
 	
 	
 	

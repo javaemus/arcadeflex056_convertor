@@ -388,12 +388,12 @@ public class finalizr
 	
 	
 	
-	static struct SN76496interface sn76496_interface =
-	{
+	static SN76496interface sn76496_interface = new SN76496interface
+	(
 		1,	/* 1 chip */
-		{ 18432000/12 },	/* ?? */
-		{ 75 }
-	};
+		new int[] { 18432000/12 },	/* ?? */
+		new int[] { 75 }
+	);
 	
 	static struct DACinterface dac_interface =
 	{

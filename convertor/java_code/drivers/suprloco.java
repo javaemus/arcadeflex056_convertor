@@ -185,12 +185,12 @@ public class suprloco
 	};
 	
 	
-	static struct SN76496interface sn76496_interface =
-	{
+	static SN76496interface sn76496_interface = new SN76496interface
+	(
 		2,		/* 2 chips */
-		{ 4000000, 2000000 },	/* 8 MHz / 4 ?*/
-		{ 100, 100 }
-	};
+		new int[] { 4000000, 2000000 },	/* 8 MHz / 4 ?*/
+		new int[] { 100, 100 }
+	);
 	
 	
 	

@@ -280,12 +280,12 @@ public class spcforce
 	}
 	
 	
-	static struct SN76496interface sn76496_interface =
-	{
+	static SN76496interface sn76496_interface = new SN76496interface
+	(
 		3,		/* 3 chips */
-		{ 2000000, 2000000, 2000000 },	/* 8 MHz / 4 ?*/
-		{ 100, 100, 100 }
-	};
+		new int[] { 2000000, 2000000, 2000000 },	/* 8 MHz / 4 ?*/
+		new int[] { 100, 100, 100 }
+	);
 	
 	
 	static MachineDriver machine_driver_spcforce = new MachineDriver

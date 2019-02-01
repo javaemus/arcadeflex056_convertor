@@ -258,12 +258,12 @@ public class mikie
 	
 	
 	
-	static struct SN76496interface sn76496_interface =
-	{
+	static SN76496interface sn76496_interface = new SN76496interface
+	(
 		2,	/* 2 chips */
-		{ 1789750, 3579500 },	/* 1.78975 MHz ??? */
-		{ 60, 60 }
-	};
+		new int[] { 1789750, 3579500 },	/* 1.78975 MHz ??? */
+		new int[] { 60, 60 }
+	);
 	
 	
 	

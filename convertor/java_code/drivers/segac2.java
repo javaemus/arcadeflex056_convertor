@@ -1445,12 +1445,12 @@ public class segac2
 		{ ym3438_interrupt }			/* IRQ handler */
 	};
 	
-	static struct SN76496interface sn76489_intf =
-	{
+	static SN76496interface sn76489_intf = new SN76496interface
+	(
 		1,								/* One chip */
-		{ MASTER_CLOCK/15 },			/* Clock: 3.58 MHz */
-		{ 50 }							/* Volume */
-	};
+		new int[] { MASTER_CLOCK/15 },			/* Clock: 3.58 MHz */
+		new int[] { 50 }							/* Volume */
+	);
 	
 	
 	

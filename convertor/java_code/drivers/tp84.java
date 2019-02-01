@@ -364,12 +364,12 @@ public class tp84
 	
 	
 	
-	static struct SN76496interface sn76496_interface =
-	{
+	static SN76496interface sn76496_interface = new SN76496interface
+	(
 		3,	/* 3 chips */
-		{ 14318180/8, 14318180/8, 14318180/8 },
-		{ 75, 75, 75 }
-	};
+		new int[] { 14318180/8, 14318180/8, 14318180/8 },
+		new int[] { 75, 75, 75 }
+	);
 	
 	
 	

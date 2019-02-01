@@ -225,12 +225,12 @@ public class ikki
 	};
 	
 	
-	static struct SN76496interface sn76496_interface =
-	{
+	static SN76496interface sn76496_interface = new SN76496interface
+	(
 		2,	/* 2 chips */
-		{ 8000000/4, 8000000/2 },
-		{ 75, 75 }
-	};
+		new int[] { 8000000/4, 8000000/2 },
+		new int[] { 75, 75 }
+	);
 	
 	
 	static MachineDriver machine_driver_ikki = new MachineDriver

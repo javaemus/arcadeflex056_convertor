@@ -223,12 +223,12 @@ public class appoooh
 	
 	
 	
-	static struct SN76496interface sn76496_interface =
-	{
+	static SN76496interface sn76496_interface = new SN76496interface
+	(
 		3,	/* 3 chips */
-		{ 18432000/6, 18432000/6, 18432000/6 },	/* ??? */
-		{ 30, 30, 30 }
-	};
+		new int[] { 18432000/6, 18432000/6, 18432000/6 },	/* ??? */
+		new int[] { 30, 30, 30 }
+	);
 	
 	static struct MSM5205interface msm5205_interface =
 	{

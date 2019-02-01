@@ -599,12 +599,12 @@ public class lasso
 	}
 	
 	
-	static struct SN76496interface sn76496_interface =
-	{
+	static SN76496interface sn76496_interface = new SN76496interface
+	(
 		2,	/* 2 chips */
-		{ 2000000, 2000000 },	/* ? MHz */
-		{ 100, 100 }
-	};
+		new int[] { 2000000, 2000000 },	/* ? MHz */
+		new int[] { 100, 100 }
+	);
 	
 	static struct DACinterface dac_interface =
 	{

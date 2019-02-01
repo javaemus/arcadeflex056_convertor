@@ -196,12 +196,12 @@ public class pingpong
 	
 	
 	
-	static struct SN76496interface sn76496_interface =
-	{
+	static SN76496interface sn76496_interface = new SN76496interface
+	(
 		1,			/* 1 chip */
-		{ 18432000/8 },	/* 2.304 MHz */
-		{ 100 }
-	};
+		new int[] { 18432000/8 },	/* 2.304 MHz */
+		new int[] { 100 }
+	);
 	
 	
 	static MachineDriver machine_driver_pingpong = new MachineDriver

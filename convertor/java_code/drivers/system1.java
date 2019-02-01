@@ -1803,12 +1803,12 @@ public class system1
 	
 	
 	
-	static struct SN76496interface sn76496_interface =
-	{
+	static SN76496interface sn76496_interface = new SN76496interface
+	(
 		2,      /* 2 chips */
-		{ 2000000, 4000000 },   /* 8 MHz / 4 ?*/
-		{ 50, 50 }
-	};
+		new int[] { 2000000, 4000000 },   /* 8 MHz / 4 ?*/
+		new int[] { 50, 50 }
+	);
 	
 	
 	

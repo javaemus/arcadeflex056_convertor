@@ -738,12 +738,12 @@ public class segasyse
 	 custom cpu
 	*******************************************************************************/
 	
-	static struct SN76496interface sn76489_intf =
-	{
+	static SN76496interface sn76489_intf = new SN76496interface
+	(
 		2,		/* 2 chips */
-		{ 4000000, 4000000 },	/* 4 mhz? (guess) */
-		{ 50, 50 }
-	};
+		new int[] { 4000000, 4000000 },	/* 4 mhz? (guess) */
+		new int[] { 50, 50 }
+	);
 	
 	
 	static MachineDriver machine_driver_segae = new MachineDriver

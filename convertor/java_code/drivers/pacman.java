@@ -1443,12 +1443,12 @@ public class pacman
 		REGION_SOUND1	/* memory region */
 	};
 	
-	static struct SN76496interface sn76496_interface =
-	{
+	static SN76496interface sn76496_interface = new SN76496interface
+	(
 		2,
-		{ 1789750, 1789750 },	/* 1.78975 MHz ? */
-		{ 75, 75 }
-	};
+		new int[] { 1789750, 1789750 },	/* 1.78975 MHz ? */
+		new int[] { 75, 75 }
+	);
 	
 	static struct AY8910interface dremshpr_ay8910_interface =
 	{

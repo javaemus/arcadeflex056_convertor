@@ -42,6 +42,7 @@ public class convertMame {
     static final int GAMEDRIVER = 14;
     static final int NEWINPUT = 15;
     static final int MACHINEDRIVER = 16;
+    static final int SN76496=17;
 
     public static void Convert() {
         Convertor.inpos = 0;//position of pointer inside the buffers
@@ -396,6 +397,19 @@ public class convertMame {
                                     }
                                 }
                             }
+                        } else if (sUtil.getToken("SN76496interface")) {
+                            sUtil.skipSpace();
+                            Convertor.token[0] = sUtil.parseToken();
+                            sUtil.skipSpace();
+                            if (sUtil.parseChar() != '=') {
+                                Convertor.inpos = i;
+                            } else {
+                                sUtil.skipSpace();
+                                sUtil.putString("static SN76496interface " + Convertor.token[0] + " = new SN76496interface");
+                                type = SN76496;
+                                i3 = -1;
+                                continue;
+                            }
                         }
                         Convertor.inpos = i;
                         break;
@@ -544,6 +558,20 @@ public class convertMame {
                             continue;
                         }
                     }
+                    if (type == SN76496) {
+                        i3++;
+                        insideagk[i3] = 0;
+                        if (i3 == 0) {
+                            Convertor.outbuf[(Convertor.outpos++)] = '(';
+                            Convertor.inpos += 1;
+                            continue;
+                        }
+                        if ((i3 == 1) && ((insideagk[0] == 1) || (insideagk[0] == 2))) {
+                            sUtil.putString("new int[] {");
+                            Convertor.inpos += 1;
+                            continue;
+                        }
+                    }
 
                     if (type == PLOT_PIXEL || type == MARK_DIRTY || type == PLOT_BOX || type == READ_PIXEL || type == READ_HANDLER8 || type == WRITE_HANDLER8) {
                         i3++;
@@ -611,6 +639,15 @@ public class convertMame {
                         } else if ((i3 == 0) && (insideagk[0] == 9)) {
                             Convertor.outbuf[(Convertor.outpos++)] = 41;
                             Convertor.inpos += 1;
+                            continue;
+                        }
+                    }
+                    if (type == SN76496) {
+                        i3--;
+                        if (i3 == -1) {
+                            Convertor.outbuf[(Convertor.outpos++)] = 41;
+                            Convertor.inpos += 1;
+                            type = -1;
                             continue;
                         }
                     }
@@ -729,11 +766,11 @@ public class convertMame {
                     if (sUtil.getToken("0")) {
                         Convertor.inpos = i;
                         if (type == MACHINEDRIVER) {
-                            if ((i3 == 0) && ((insideagk[i3] == 3) || (insideagk[i3] == 5) || (insideagk[i3] == 6) || (insideagk[i3] == 10)  || (insideagk[i3] == 14) || (insideagk[i3] == 15))) {
+                            if ((i3 == 0) && ((insideagk[i3] == 3) || (insideagk[i3] == 5) || (insideagk[i3] == 6) || (insideagk[i3] == 10) || (insideagk[i3] == 14) || (insideagk[i3] == 15))) {
                                 sUtil.putString("null");
                                 Convertor.inpos += 1;
                                 continue;
-                            } else if ((i3 == 0) /*&& (type3==1)*/ && ((insideagk[i3] == 4) || (insideagk[i3] == 8) || (insideagk[i3] == 9) ||  (insideagk[i3] == 13) || (insideagk[i3] == 14) || (insideagk[i3] == 15) || (insideagk[i3] == 16))) {
+                            } else if ((i3 == 0) /*&& (type3==1)*/ && ((insideagk[i3] == 4) || (insideagk[i3] == 8) || (insideagk[i3] == 9) || (insideagk[i3] == 13) || (insideagk[i3] == 14) || (insideagk[i3] == 15) || (insideagk[i3] == 16))) {
                                 //case for single core cpus
                                 sUtil.putString("null");
                                 Convertor.inpos += 1;

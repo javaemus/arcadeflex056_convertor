@@ -651,12 +651,12 @@ public class qix
 	};
 	
 	
-	static struct SN76496interface sn76496_interface =
-	{
+	static SN76496interface sn76496_interface = new SN76496interface
+	(
 		2,
-		{ SLITHER_CLOCK_OSC/4/4, SLITHER_CLOCK_OSC/4/4 },
-		{ 50, 50 }
-	};
+		new int[] { SLITHER_CLOCK_OSC/4/4, SLITHER_CLOCK_OSC/4/4 },
+		new int[] { 50, 50 }
+	);
 	
 	
 	

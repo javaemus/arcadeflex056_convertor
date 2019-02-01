@@ -371,12 +371,12 @@ public class retofinv
 	
 	
 	
-	static struct SN76496interface sn76496_interface =
-	{
+	static SN76496interface sn76496_interface = new SN76496interface
+	(
 		2,		/* 2 chips */
-		{ 3072000, 3072000 },	/* ??? */
-		{ 80, 80 }
-	};
+		new int[] { 3072000, 3072000 },	/* ??? */
+		new int[] { 80, 80 }
+	);
 	
 	
 	

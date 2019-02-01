@@ -5,6 +5,7 @@
 -Added MachineDriver support
 -Improvented null's conversion in MachineDriver (still not accurate)
 -More improvement in  null's conversion in MachineDriver (still not accurate)
+-Added SN76496 interface support
 
 31/01/2019
 ==========

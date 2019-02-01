@@ -178,12 +178,12 @@ public class bankp
 	
 	
 	
-	static struct SN76496interface sn76496_interface =
-	{
+	static SN76496interface sn76496_interface = new SN76496interface
+	(
 		3,	/* 3 chips */
-		{ 3867120, 3867120, 3867120 },	/* ?? the main oscillator is 15.46848 MHz */
-		{ 100, 100, 100 }
-	};
+		new int[] { 3867120, 3867120, 3867120 },	/* ?? the main oscillator is 15.46848 MHz */
+		new int[] { 100, 100, 100 }
+	);
 	
 	
 	

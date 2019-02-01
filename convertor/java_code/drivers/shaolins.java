@@ -225,12 +225,12 @@ public class shaolins
 	
 	
 	
-	static struct SN76496interface sn76496_interface =
-	{
+	static SN76496interface sn76496_interface = new SN76496interface
+	(
 		2,	/* 2 chips */
-		{ 1536000, 3072000 },	/* 3.072 MHz???? */
-		{ 100, 100 }
-	};
+		new int[] { 1536000, 3072000 },	/* 3.072 MHz???? */
+		new int[] { 100, 100 }
+	);
 	
 	
 	

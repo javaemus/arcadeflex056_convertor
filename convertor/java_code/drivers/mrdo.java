@@ -180,12 +180,12 @@ public class mrdo
 	
 	
 	
-	static struct SN76496interface sn76496_interface =
-	{
+	static SN76496interface sn76496_interface = new SN76496interface
+	(
 		2,	/* 2 chips */
-		{ 4000000, 4000000 },	/* 4 MHz */
-		{ 50, 50 }
-	};
+		new int[] { 4000000, 4000000 },	/* 4 MHz */
+		new int[] { 50, 50 }
+	);
 	
 	
 	
