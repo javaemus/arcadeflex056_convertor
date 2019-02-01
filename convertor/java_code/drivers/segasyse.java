@@ -764,7 +764,7 @@ public class segasyse
 		/* video hardware */
 		256, 192, new rectangle( 0, 256-1, 0, 192-1 ),
 		null,
-		64, null,
+		64, 0,
 		NULL,
 	
 		VIDEO_TYPE_RASTER,

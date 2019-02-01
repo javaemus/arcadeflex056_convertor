@@ -560,7 +560,7 @@ public class rainbow
 		40*8, 32*8, new rectangle( 0*8, 40*8-1, 1*8, 31*8-1 ), /* is Y visible correct ? */
 		rainbow_gfxdecodeinfo,
 		8192, null,
-		null,
+		0,
 	
 		VIDEO_TYPE_RASTER,
 		null,
@@ -604,7 +604,7 @@ public class rainbow
 		40*8, 32*8, new rectangle( 0*8, 40*8-1, 1*8, 31*8-1 ), /* is Y visible correct ? */
 		jumping_gfxdecodeinfo,
 		8192, null,
-		null,
+		0,
 	
 		VIDEO_TYPE_RASTER,
 		null,

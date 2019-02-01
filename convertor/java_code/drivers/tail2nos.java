@@ -308,7 +308,7 @@ public class tail2nos
 		64*8, 32*8, new rectangle( 0*8, 40*8-1, 1*8, 31*8-1 ),
 		tail2nos_gfxdecodeinfo,
 		2048, null,
-		null,
+		0,
 	
 		VIDEO_TYPE_RASTER,
 		null,

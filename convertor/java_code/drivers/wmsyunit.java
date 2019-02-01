@@ -738,7 +738,7 @@ public class wmsyunit
 	
 		null,
 		8192, null,
-		null,
+		0,
 	
 		VIDEO_TYPE_RASTER,
 		wms_zunit_vh_eof,
@@ -784,7 +784,7 @@ public class wmsyunit
 	
 		null,
 		256, null,
-		null,
+		0,
 	
 		VIDEO_TYPE_RASTER,
 		wms_yunit_vh_eof,
@@ -823,7 +823,7 @@ public class wmsyunit
 	
 		null,
 		4096, null,
-		null,
+		0,
 	
 		VIDEO_TYPE_RASTER,
 		wms_yunit_vh_eof,
@@ -862,7 +862,7 @@ public class wmsyunit
 	
 		null,
 		4096, null,
-	    null,
+	    0,
 	
 	    VIDEO_TYPE_RASTER,
 		wms_yunit_vh_eof,

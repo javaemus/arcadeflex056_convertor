@@ -232,7 +232,7 @@ public class zerozone
 		48*8, 32*8, new rectangle( 1*8, 47*8-1, 2*8, 30*8-1 ),
 		gfxdecodeinfo,
 		256, null,
-		null,
+		0,
 	
 		VIDEO_TYPE_RASTER | VIDEO_SUPPORTS_DIRTY ,
 		null,

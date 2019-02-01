@@ -379,7 +379,7 @@ public class missile
 		256, 231, new rectangle( 0, 255, 0, 230 ),
 		null,
 		8, null,
-		null,
+		0,
 	
 		VIDEO_TYPE_RASTER | VIDEO_SUPPORTS_DIRTY,
 		null,

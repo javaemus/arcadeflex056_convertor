@@ -880,7 +880,7 @@ public class darius
 		108*8, 32*8, new rectangle( 0*8, 108*8-1, 1*8, 29*8-1 ),
 		darius_gfxdecodeinfo,
 		4096*2, null,
-		null,
+		0,
 	
 		VIDEO_TYPE_RASTER | VIDEO_DUAL_MONITOR | VIDEO_ASPECT_RATIO(12,3),
 		null,

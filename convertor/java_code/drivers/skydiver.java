@@ -347,7 +347,7 @@ public class skydiver
 		/* video hardware */
 		32*8, 32*8, new rectangle( 0*8, 32*8-1, 0*8, 29*8-1 ),
 		gfxdecodeinfo,
-		sizeof(palette) / sizeof(palette[null]) / 3, sizeof(colortable) / sizeof(colortable[null]),
+		sizeof(palette) / sizeof(palette[null]) / 3, sizeof(colortable) / sizeof(colortable[0]),
 		init_palette,
 	
 		VIDEO_TYPE_RASTER,

@@ -326,7 +326,7 @@ public class polyplay
 		/* video hardware */							\
 		64*8, 32*8, new rectangle( 0*8, 64*8-1, 0*8, 32*8-1 ),		\
 		gfxdecodeinfo,									\
-		10, null,											\
+		10, 0,											\
 		polyplay_init_palette,					        \
 														\
 		VIDEO_TYPE_RASTER|VIDEO_SUPPORTS_DIRTY,			\

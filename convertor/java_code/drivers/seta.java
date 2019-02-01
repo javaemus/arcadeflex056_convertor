@@ -4278,7 +4278,7 @@ public class seta
 		/* video hardware */
 		400, 256 -16, new rectangle( 16, 400-1, 0, 256-1 -16),
 		msgundam_gfxdecodeinfo,
-		512 * 3, null,	/* sprites, layer2, layer1 */
+		512 * 3, 0,	/* sprites, layer2, layer1 */
 		null,
 	
 		VIDEO_TYPE_RASTER,

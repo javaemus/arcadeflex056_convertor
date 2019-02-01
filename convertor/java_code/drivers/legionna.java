@@ -482,7 +482,7 @@ public class legionna
 	
 		legionna_gfxdecodeinfo,
 		128*16, null,
-		null,
+		0,
 		VIDEO_TYPE_RASTER | VIDEO_BUFFERS_SPRITERAM,
 		null,
 		legionna_vh_start,

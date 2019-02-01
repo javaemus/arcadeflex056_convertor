@@ -224,7 +224,7 @@ public class blockout
 		320, 256, new rectangle( 0, 319, 8, 247 ),
 		null,
 		513, null,
-		null,
+		0,
 	
 		VIDEO_TYPE_RASTER,
 		null,

@@ -2619,7 +2619,7 @@ public class balsente
 		256, 240, new rectangle( 0, 255, 0, 239 ),
 		null,
 		1024,null,
-		null,
+		0,
 	
 		VIDEO_TYPE_RASTER | VIDEO_UPDATE_BEFORE_VBLANK,
 		null,

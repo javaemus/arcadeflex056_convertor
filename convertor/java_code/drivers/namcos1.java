@@ -852,7 +852,7 @@ public class namcos1
 		36*8, 28*8, new rectangle( 0*8, 36*8-1, 0*8, 28*8-1 ),
 		gfxdecodeinfo,
 		128*16+6*256+6*256+1, null,	/* virtual palette */
-		null,
+		0,
 	
 		VIDEO_TYPE_RASTER | VIDEO_NEEDS_6BITS_PER_GUN,
 		null,
@@ -917,7 +917,7 @@ public class namcos1
 		36*8, 28*8, new rectangle( 0*8, 36*8-1, 0*8, 28*8-1 ),
 		gfxdecodeinfo,
 		128*16+6*256+6*256+1, null,	/* virtual palette */
-		null,
+		0,
 	
 		VIDEO_TYPE_RASTER | VIDEO_NEEDS_6BITS_PER_GUN,
 		null,
@@ -982,7 +982,7 @@ public class namcos1
 		36*8, 28*8, new rectangle( 0*8, 36*8-1, 0*8, 28*8-1 ),
 		gfxdecodeinfo,
 		128*16+6*256+6*256+1, null,	/* virtual palette */
-		null,
+		0,
 	
 		VIDEO_TYPE_RASTER | VIDEO_NEEDS_6BITS_PER_GUN,
 		null,

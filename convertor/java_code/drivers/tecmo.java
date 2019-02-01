@@ -612,7 +612,7 @@ public class tecmo
 		32*8, 32*8, new rectangle( 0*8, 32*8-1, 2*8, 30*8-1 ),					\
 		gfxdecodeinfo,												\
 		1024, null,													\
-		null,															\
+		0,															\
 																	\
 		VIDEO_TYPE_RASTER,					\
 		null,															\

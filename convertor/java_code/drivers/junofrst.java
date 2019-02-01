@@ -408,7 +408,7 @@ public class junofrst
 		null,					/* GfxDecodeInfo * */
 		16,                                  /* total colors */
 		null,                                      /* color table length */
-		null,			/* convert color prom routine */
+		0,			/* convert color prom routine */
 	
 		VIDEO_TYPE_RASTER,
 		null,						/* vh_init routine */

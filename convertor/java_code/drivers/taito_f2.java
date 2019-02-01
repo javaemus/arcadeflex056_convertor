@@ -4792,7 +4792,7 @@ public class taito_f2
 																						\
 		GFX##_gfxdecodeinfo,															\
 		MAXCOLS, null,																		\
-		null,																				\
+		0,																				\
 																						\
 		VIDEO_TYPE_RASTER,										\
 		taitof2_##EOF##_eof_callback,													\
@@ -4874,7 +4874,7 @@ public class taito_f2
 	
 		pivot_gfxdecodeinfo,
 		4096, null,
-		null,
+		0,
 	
 		VIDEO_TYPE_RASTER,
 		taitof2_no_buffer_eof_callback,
@@ -4918,7 +4918,7 @@ public class taito_f2
 	
 		pivot_gfxdecodeinfo,
 		4096, null,
-		null,
+		0,
 	
 		VIDEO_TYPE_RASTER,
 		taitof2_no_buffer_eof_callback,

@@ -303,7 +303,7 @@ public class sauro
 		/* video hardware */
 		32*8, 32*8, new rectangle( 1*8, 31*8-1, 2*8, 30*8-1 ),
 		gfxdecodeinfo,
-		1024, null,
+		1024, 0,
 		palette_RRRR_GGGG_BBBB_convert_prom,
 	
 		VIDEO_TYPE_RASTER,

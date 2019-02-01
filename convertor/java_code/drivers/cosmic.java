@@ -1274,7 +1274,7 @@ public class cosmic
 		/* video hardware */
 	  	32*8, 32*8, new rectangle( 0*8, 32*8-1, 4*8, 28*8-1 ),
 		null, 			/* no gfxdecodeinfo - bitmapped display */
-	    16,null,
+	    16,0,
 	    cosmicg_vh_convert_color_prom,
 	
 		VIDEO_TYPE_RASTER,

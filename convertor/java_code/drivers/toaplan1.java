@@ -1408,7 +1408,7 @@ public class toaplan1
 		320, 240, new rectangle( 0, 319, 0, 239 ),
 		rallybik_gfxdecodeinfo,
 		2048, null,
-		null,
+		0,
 	
 		VIDEO_TYPE_RASTER | VIDEO_UPDATE_BEFORE_VBLANK | VIDEO_BUFFERS_SPRITERAM,
 		rallybik_eof_callback,
@@ -1451,7 +1451,7 @@ public class toaplan1
 		320, 240, new rectangle( 0, 319, 0, 239 ),
 		gfxdecodeinfo,
 		2048, null,
-		null,
+		0,
 	
 		VIDEO_TYPE_RASTER | VIDEO_UPDATE_BEFORE_VBLANK,
 		toaplan1_eof_callback,
@@ -1494,7 +1494,7 @@ public class toaplan1
 		320, 256, new rectangle( 0, 319, 16, 255 ),
 		gfxdecodeinfo,
 		2048, null,
-		null,
+		0,
 	
 		VIDEO_TYPE_RASTER | VIDEO_UPDATE_BEFORE_VBLANK,
 		toaplan1_eof_callback,
@@ -1537,7 +1537,7 @@ public class toaplan1
 		320, 256, new rectangle( 0, 319, 16, 255 ),
 		gfxdecodeinfo,
 		2048, null,
-		null,
+		0,
 	
 		VIDEO_TYPE_RASTER | VIDEO_UPDATE_BEFORE_VBLANK,
 		toaplan1_eof_callback,
@@ -1586,7 +1586,7 @@ public class toaplan1
 		320, 256, new rectangle( 0, 319, 16, 255 ),
 		gfxdecodeinfo,
 		2048, null,
-		null,
+		0,
 	
 		VIDEO_TYPE_RASTER | VIDEO_UPDATE_BEFORE_VBLANK,
 		toaplan1_eof_callback,
@@ -1623,7 +1623,7 @@ public class toaplan1
 		320, 240, new rectangle( 0, 319, 0, 239 ),
 		gfxdecodeinfo,
 		2048, null,
-		null,
+		0,
 	
 		VIDEO_TYPE_RASTER | VIDEO_UPDATE_BEFORE_VBLANK,
 		samesame_eof_callback,
@@ -1666,7 +1666,7 @@ public class toaplan1
 		320, 240, new rectangle(0, 319, 0, 239 ),
 		outzone_gfxdecodeinfo,
 		2048, null,
-		null,
+		0,
 	
 		VIDEO_TYPE_RASTER | VIDEO_UPDATE_BEFORE_VBLANK,
 		toaplan1_eof_callback,
@@ -1703,7 +1703,7 @@ public class toaplan1
 		320, 240, new rectangle( 0, 319, 0, 239 ),
 		vm_gfxdecodeinfo,
 		2048, null,
-		null,
+		0,
 	
 		VIDEO_TYPE_RASTER | VIDEO_UPDATE_BEFORE_VBLANK,
 		toaplan1_eof_callback,

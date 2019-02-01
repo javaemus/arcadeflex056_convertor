@@ -248,7 +248,7 @@ public class dlair
 		/* video hardware */
 		32*8, 32*8, new rectangle( 0*8, 32*8-1, 0*8, 32*8-1 ),
 		gfxdecodeinfo,
-		8, null,
+		8, 0,
 		null,
 	
 		VIDEO_TYPE_RASTER,

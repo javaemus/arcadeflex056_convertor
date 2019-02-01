@@ -1357,7 +1357,7 @@ public class mcr3
 		684, 642, new rectangle( 0, 684-1, 0, 642-1 ),
 		gfxdecodeinfo,
 		64+32768, null,		/* The extra colors are for the backdrop */
-		null,
+		0,
 	
 		VIDEO_TYPE_RASTER | VIDEO_UPDATE_BEFORE_VBLANK,
 		null,

@@ -41,7 +41,7 @@ public class convertMame {
     static final int ROMDEF = 13;
     static final int GAMEDRIVER = 14;
     static final int NEWINPUT = 15;
-    static final int MACHINEDRIVER=16;
+    static final int MACHINEDRIVER = 16;
 
     public static void Convert() {
         Convertor.inpos = 0;//position of pointer inside the buffers
@@ -336,8 +336,7 @@ public class convertMame {
                                 Convertor.inpos += 1;
                                 continue;
                             }
-                        }
-                        else if (sUtil.getToken("const")) {
+                        } else if (sUtil.getToken("const")) {
                             sUtil.skipSpace();
                             if (sUtil.getToken("struct")) {
                                 sUtil.skipSpace();
@@ -359,8 +358,7 @@ public class convertMame {
                         }
                         Convertor.inpos = i;
                         break;
-                    } 
-                    else {
+                    } else {
                         sUtil.skipSpace();
                         if (sUtil.getToken("GfxLayout")) {
                             sUtil.skipSpace();
@@ -462,9 +460,7 @@ public class convertMame {
                             sUtil.putString("new rectangle(");
                             Convertor.inpos += 1;
                             continue;
-                        }
-                        else if ((i3 == 1) && (insideagk[0] == 9))
-                        {
+                        } else if ((i3 == 1) && (insideagk[0] == 9)) {
                             sUtil.putString("new rectangle(");
                             Convertor.inpos += 1;
                             continue;
@@ -612,9 +608,7 @@ public class convertMame {
                             Convertor.outbuf[(Convertor.outpos++)] = 41;
                             Convertor.inpos += 1;
                             continue;
-                        }
-                        else if ((i3 == 0) && (insideagk[0] == 9))
-                        {
+                        } else if ((i3 == 0) && (insideagk[0] == 9)) {
                             Convertor.outbuf[(Convertor.outpos++)] = 41;
                             Convertor.inpos += 1;
                             continue;
@@ -730,16 +724,16 @@ public class convertMame {
                     }
                     break;
                 }
-                                case '0':
+                case '0':
                     i = Convertor.inpos;
                     if (sUtil.getToken("0")) {
                         Convertor.inpos = i;
                         if (type == MACHINEDRIVER) {
-                            if ((i3 == 0) && ((insideagk[i3] == 3) || (insideagk[i3] == 5) || (insideagk[i3] == 6) ||  (insideagk[i3] == 10) || (insideagk[i3] == 12) || (insideagk[i3] == 14) || (insideagk[i3] == 15))) {
+                            if ((i3 == 0) && ((insideagk[i3] == 3) || (insideagk[i3] == 5) || (insideagk[i3] == 6) || (insideagk[i3] == 10)  || (insideagk[i3] == 14) || (insideagk[i3] == 15))) {
                                 sUtil.putString("null");
                                 Convertor.inpos += 1;
                                 continue;
-                            } else if ((i3 == 0) /*&& (type3==1)*/ && ((insideagk[i3] == 4) || (insideagk[i3] == 8) || (insideagk[i3] == 9) || (insideagk[i3] == 11)  || (insideagk[i3] == 13) || (insideagk[i3] == 14) || (insideagk[i3] == 15) || (insideagk[i3] == 16))) {
+                            } else if ((i3 == 0) /*&& (type3==1)*/ && ((insideagk[i3] == 4) || (insideagk[i3] == 8) || (insideagk[i3] == 9) || (insideagk[i3] == 11) || (insideagk[i3] == 13) || (insideagk[i3] == 14) || (insideagk[i3] == 15) || (insideagk[i3] == 16))) {
                                 //case for single core cpus
                                 sUtil.putString("null");
                                 Convertor.inpos += 1;

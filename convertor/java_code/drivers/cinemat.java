@@ -112,7 +112,7 @@ public class cinemat
 		/* video hardware */ 															\
 		400, 300, new rectangle( minx, maxx, miny, maxy ), 											\
 		null, 																				\
-		256 + 32768, null, 																\
+		256 + 32768, 0, 																\
 		cinemat_init_colors, 															\
 																						\
 		VIDEO_TYPE_VECTOR | VIDEO_SUPPORTS_DIRTY | VIDEO_RGB_DIRECT,					\
@@ -232,7 +232,7 @@ public class cinemat
 		/* video hardware */
 		400, 300, new rectangle( 0, 1024, 0, 768 ),
 		null,
-		256 + 32768, null,
+		256 + 32768, 0,
 	 	spacewar_init_colors,
 	
 		VIDEO_TYPE_VECTOR | VIDEO_SUPPORTS_DIRTY | VIDEO_RGB_DIRECT,
@@ -1118,7 +1118,7 @@ public class cinemat
 		/* video hardware */
 		400, 300, new rectangle( 0, 1024, 0, 800 ),
 		null,
-		256 + 32768, null,
+		256 + 32768, 0,
 	 	cinemat_init_colors,
 	
 		VIDEO_TYPE_VECTOR | VIDEO_SUPPORTS_DIRTY | VIDEO_RGB_DIRECT,

@@ -274,7 +274,7 @@ public class ccastles
 		null,
 		256, 232, new rectangle( 0, 255, 0, 231 ),
 		gfxdecodeinfo,
-		32, null,
+		32, 0,
 		null,
 	
 		VIDEO_TYPE_RASTER,

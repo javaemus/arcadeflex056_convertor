@@ -212,7 +212,7 @@ public class ninjakid
 		32*8, 32*8, new rectangle( 0*8, 32*8-1, 4*8, (32-4)*8-1 ),
 	    ninjakid_gfxdecodeinfo,
 	    768, null,
-		null,
+		0,
 	
 		VIDEO_TYPE_RASTER,
 	    null,

@@ -487,7 +487,7 @@ public class toki
 	
 		toki_gfxdecodeinfo,
 		1024, null,
-		null,
+		0,
 		VIDEO_TYPE_RASTER | VIDEO_BUFFERS_SPRITERAM,
 		toki_eof_callback,
 		toki_vh_start,
@@ -527,7 +527,7 @@ public class toki
 		32*8, 32*8, new rectangle( 0*8, 32*8-1, 0*8, 30*8-1 ),
 		tokib_gfxdecodeinfo,
 		1024, null,
-		null,
+		0,
 		VIDEO_TYPE_RASTER | VIDEO_BUFFERS_SPRITERAM,
 		toki_eof_callback,
 		toki_vh_start,

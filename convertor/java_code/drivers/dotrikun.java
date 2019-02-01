@@ -94,7 +94,7 @@ public class dotrikun
 		/* video hardware */
 		256, 256, new rectangle( 0, 256-1, 0, 192-1 ),
 		null,
-		2, null,
+		2, 0,
 		null,
 	
 		VIDEO_TYPE_RASTER | VIDEO_SUPPORTS_DIRTY ,

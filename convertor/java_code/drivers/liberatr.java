@@ -391,7 +391,7 @@ public class liberatr
 		/* video hardware */								\
 		256, 256, new rectangle( 8, 247, 13, 244 ),						\
 		null,      /* no gfxdecodeinfo - bitmapped display */	\
-		32, null,												\
+		32, 0,												\
 		null,													\
 															\
 		VIDEO_TYPE_RASTER,			\

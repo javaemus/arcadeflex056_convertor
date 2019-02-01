@@ -667,7 +667,7 @@ public class suna16
 		256, 256, new rectangle( 0, 256-1, 0+16, 256-16-1 ),
 		suna16_gfxdecodeinfo,
 		512+1, null,		/* 2 banks of 256 colors, plus one entry for background black */
-		null,
+		0,
 		VIDEO_TYPE_RASTER,
 		null,
 		suna16_vh_start,
@@ -738,7 +738,7 @@ public class suna16
 		256, 256, new rectangle( 0, 256-1, 0+16, 256-16-1 ),
 		suna16_gfxdecodeinfo,
 		512+1, null,		/* 2 banks of 256 colors, plus one entry for background black */
-		null,
+		0,
 		VIDEO_TYPE_RASTER,
 		null,
 		suna16_vh_start,

@@ -240,7 +240,7 @@ public class superqix
 		/* video hardware */
 		32*8, 32*8, new rectangle( 0*8, 32*8-1, 2*8, 30*8-1 ),
 		gfxdecodeinfo,
-		256, null,
+		256, 0,
 		null,
 	
 		VIDEO_TYPE_RASTER,

@@ -639,7 +639,7 @@ public class marineb
 		/* video hardware */
 		32*8, 32*8, new rectangle( 0*8, 32*8-1, 2*8, 30*8-1 ),
 		wanted_gfxdecodeinfo,
-		256, null,
+		256, 0,
 		espial_vh_convert_color_prom,
 	
 		VIDEO_TYPE_RASTER,

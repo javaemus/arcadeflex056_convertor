@@ -276,7 +276,7 @@ public class othldrby
 		/* video hardware */
 		64*8, 32*8, new rectangle( 12*8, (64-12)*8-1, 1*8, 31*8-1 ),
 		gfxdecodeinfo,
-		0x800, null,
+		0x800, 0,
 		null,
 	
 		VIDEO_TYPE_RASTER,

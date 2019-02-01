@@ -178,7 +178,7 @@ public class aztarac
 		/* video hardware */
 		400, 300, new rectangle( 0, 1024-1, 0, 768-1 ),
 		null,
-		32768, null,
+		32768, 0,
 		null,
 	
 		VIDEO_TYPE_VECTOR | VIDEO_SUPPORTS_DIRTY | VIDEO_RGB_DIRECT,

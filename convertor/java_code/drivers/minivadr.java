@@ -72,7 +72,7 @@ public class minivadr
 		/* video hardware */
 		256, 256, new rectangle( 0, 256-1, 16, 240-1 ),
 		null,
-		2, null,
+		2, 0,
 		minivadr_init_palette,
 	
 		VIDEO_TYPE_RASTER | VIDEO_SUPPORTS_DIRTY,

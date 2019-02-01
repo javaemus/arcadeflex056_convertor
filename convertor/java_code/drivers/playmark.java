@@ -490,7 +490,7 @@ public class playmark
 		/* video hardware */
 		64*8, 32*8, new rectangle( 0*8, 40*8-1, 2*8, 32*8-1 ),
 		gfxdecodeinfo,
-		1024, null,
+		1024, 0,
 		null,
 	
 		VIDEO_TYPE_RASTER,
@@ -527,7 +527,7 @@ public class playmark
 		/* video hardware */
 		64*8, 32*8, new rectangle( 0*8, 40*8-1, 2*8, 32*8-1 ),
 		wbeachvl_gfxdecodeinfo,
-		2048, null,
+		2048, 0,
 		null,
 	
 		VIDEO_TYPE_RASTER,

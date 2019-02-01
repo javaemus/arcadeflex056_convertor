@@ -547,7 +547,7 @@ public class bagman
 		/* video hardware */
 		32*8, 32*8, new rectangle( 0*8, 32*8-1, 2*8, 30*8-1 ),
 		gfxdecodeinfo,
-		64, null,
+		64, 0,
 		bagman_vh_convert_color_prom,
 	
 		VIDEO_TYPE_RASTER,
@@ -588,7 +588,7 @@ public class bagman
 		/* video hardware */
 		32*8, 32*8, new rectangle( 0*8, 32*8-1, 2*8, 30*8-1 ),
 		pickin_gfxdecodeinfo,
-		64, null,
+		64, 0,
 		bagman_vh_convert_color_prom,
 	
 		VIDEO_TYPE_RASTER,

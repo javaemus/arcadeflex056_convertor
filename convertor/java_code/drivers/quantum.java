@@ -319,7 +319,7 @@ public class quantum
 		/* video hardware */
 		400, 300, new rectangle( 0, 600, 0, 900 ),
 		null,
-		256, null,
+		256, 0,
 		avg_init_palette_multi,
 	
 		VIDEO_TYPE_VECTOR | VIDEO_SUPPORTS_DIRTY | VIDEO_RGB_DIRECT,

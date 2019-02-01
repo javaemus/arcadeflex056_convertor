@@ -283,7 +283,7 @@ public class _8080bw
 		/* video hardware */
 		32*8, 32*8, new rectangle( 0*8, 32*8-1, 0*8, 28*8-1 ),
 		null,      /* no gfxdecodeinfo - bitmapped display */
-		32768+2, null,		/* leave extra colors for the overlay */
+		32768+2, 0,		/* leave extra colors for the overlay */
 		init_palette,
 	
 		VIDEO_TYPE_RASTER | VIDEO_SUPPORTS_DIRTY ,
@@ -433,7 +433,7 @@ public class _8080bw
 		/* video hardware */
 		32*8, 32*8, new rectangle( 0*8, 32*8-1, 0*8, 28*8-1 ),
 		null,      /* no gfxdecodeinfo - bitmapped display */
-		8, null,
+		8, 0,
 		invadpt2_vh_convert_color_prom,
 	
 		VIDEO_TYPE_RASTER | VIDEO_SUPPORTS_DIRTY ,
@@ -682,7 +682,7 @@ public class _8080bw
 		/* video hardware */
 		32*8, 32*8, new rectangle( 0*8, 32*8-1, 0*8, 28*8-1 ),
 		null,      /* no gfxdecodeinfo - bitmapped display */
-		32768+2, null,		/* leave extra colors for the overlay */
+		32768+2, 0,		/* leave extra colors for the overlay */
 		init_palette,
 	
 		VIDEO_TYPE_RASTER | VIDEO_SUPPORTS_DIRTY ,
@@ -846,7 +846,7 @@ public class _8080bw
 		/* video hardware */
 		32*8, 32*8, new rectangle( 0*8, 32*8-1, 0*8, 28*8-1 ),
 		null,      /* no gfxdecodeinfo - bitmapped display */
-		32768+2, null,		/* leave extra colors for the overlay */
+		32768+2, 0,		/* leave extra colors for the overlay */
 		init_palette,
 	
 		VIDEO_TYPE_RASTER | VIDEO_SUPPORTS_DIRTY ,
@@ -887,7 +887,7 @@ public class _8080bw
 		/* video hardware */
 		32*8, 32*8, new rectangle( 0*8, 32*8-1, 0*8, 28*8-1 ),
 		null,      /* no gfxdecodeinfo - bitmapped display */
-		8, null,
+		8, 0,
 		invadpt2_vh_convert_color_prom,
 	
 		VIDEO_TYPE_RASTER | VIDEO_SUPPORTS_DIRTY ,
@@ -1268,7 +1268,7 @@ public class _8080bw
 		/* video hardware */
 		32*8, 32*8, new rectangle( 0*8, 32*8-1, 0*8, 28*8-1 ),
 		null,      /* no gfxdecodeinfo - bitmapped display */
-		8, null,
+		8, 0,
 		invadpt2_vh_convert_color_prom,
 	
 		VIDEO_TYPE_RASTER | VIDEO_SUPPORTS_DIRTY ,
@@ -1489,7 +1489,7 @@ public class _8080bw
 		/* video hardware */
 		32*8, 32*8, new rectangle( 0*8, 32*8-1, 0*8, 28*8-1 ),
 		null,      /* no gfxdecodeinfo - bitmapped display */
-		32768+2, null,		/* leave extra colors for the overlay */
+		32768+2, 0,		/* leave extra colors for the overlay */
 		init_palette,
 	
 		VIDEO_TYPE_RASTER | VIDEO_SUPPORTS_DIRTY ,
@@ -1958,7 +1958,7 @@ public class _8080bw
 		/* video hardware */
 		32*8, 32*8, new rectangle( 0*8, 32*8-1, 0*8, 28*8-1 ),
 		null,      /* no gfxdecodeinfo - bitmapped display */
-		8, null,
+		8, 0,
 		invadpt2_vh_convert_color_prom,
 	
 		VIDEO_TYPE_RASTER | VIDEO_SUPPORTS_DIRTY ,
@@ -2221,7 +2221,7 @@ public class _8080bw
 		/* video hardware */
 		32*8, 32*8, new rectangle( 0*8, 32*8-1, 0*8, 28*8-1 ),
 		null,      /* no gfxdecodeinfo - bitmapped display */
-		32768+2, null,		/* leave extra colors for the overlay */
+		32768+2, 0,		/* leave extra colors for the overlay */
 		init_palette,
 	
 		VIDEO_TYPE_RASTER | VIDEO_SUPPORTS_DIRTY ,
@@ -2303,7 +2303,7 @@ public class _8080bw
 		/* video hardware */
 		32*8, 32*8, new rectangle( 0*8, 32*8-1, 0*8, 28*8-1 ),
 		null,      /* no gfxdecodeinfo - bitmapped display */
-		8, null,
+		8, 0,
 		invadpt2_vh_convert_color_prom,
 	
 		VIDEO_TYPE_RASTER | VIDEO_SUPPORTS_DIRTY ,
@@ -2409,7 +2409,7 @@ public class _8080bw
 		/* video hardware */
 		32*8, 32*8, new rectangle( 0*8, 32*8-1, 0*8, 28*8-1 ),
 		null,      /* no gfxdecodeinfo - bitmapped display */
-		8, null,
+		8, 0,
 		helifire_vh_convert_color_prom,
 	
 		VIDEO_TYPE_RASTER | VIDEO_SUPPORTS_DIRTY ,
@@ -2533,7 +2533,7 @@ public class _8080bw
 		/* video hardware */
 		32*8, 32*8, new rectangle( 0*8, 32*8-1, 0*8, 28*8-1 ),
 		null,      /* no gfxdecodeinfo - bitmapped display */
-		8, null,
+		8, 0,
 		invadpt2_vh_convert_color_prom,
 	
 		VIDEO_TYPE_RASTER | VIDEO_SUPPORTS_DIRTY ,
@@ -2967,7 +2967,7 @@ public class _8080bw
 		/* video hardware */
 		32*8, 32*8, new rectangle( 0*8, 32*8-1, 0*8, 28*8-1 ),
 		null,      /* no gfxdecodeinfo - bitmapped display */
-		32768+2, null,		/* leave extra colors for the overlay */
+		32768+2, 0,		/* leave extra colors for the overlay */
 		init_palette,
 	
 		VIDEO_TYPE_RASTER | VIDEO_SUPPORTS_DIRTY ,
@@ -3033,7 +3033,7 @@ public class _8080bw
 		/* video hardware */
 		32*8, 32*8, new rectangle( 0*8, 32*8-1, 0*8, 28*8-1 ),
 		null,      /* no gfxdecodeinfo - bitmapped display */
-		32768+2, null,		/* leave extra colors for the overlay */
+		32768+2, 0,		/* leave extra colors for the overlay */
 		init_palette,
 	
 		VIDEO_TYPE_RASTER | VIDEO_SUPPORTS_DIRTY ,
@@ -3219,7 +3219,7 @@ public class _8080bw
 		/* video hardware */
 		32*8, 32*8, new rectangle( 0*8, 32*8-1, 0*8, 28*8-1 ),
 		null,      /* no gfxdecodeinfo - bitmapped display */
-		32768+2, null,		/* leave extra colors for the overlay */
+		32768+2, 0,		/* leave extra colors for the overlay */
 		init_palette,
 	
 		VIDEO_TYPE_RASTER | VIDEO_SUPPORTS_DIRTY ,
@@ -3607,7 +3607,7 @@ public class _8080bw
 		/* video hardware */
 		32*8, 32*8, new rectangle( 0*8, 32*8-1, 0*8, 28*8-1 ),
 		null,      /* no gfxdecodeinfo - bitmapped display */
-		8, null,
+		8, 0,
 		invadpt2_vh_convert_color_prom,
 	
 		VIDEO_TYPE_RASTER | VIDEO_SUPPORTS_DIRTY ,

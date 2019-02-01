@@ -393,7 +393,7 @@ public class ohmygod
 		64*8, 32*8, new rectangle( 12*8, (64-12)*8-1, 0*8, 30*8-1 ),
 		gfxdecodeinfo,
 		1024, null,
-		null,
+		0,
 	
 		VIDEO_TYPE_RASTER,
 		null,

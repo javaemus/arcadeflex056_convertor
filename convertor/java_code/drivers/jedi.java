@@ -613,7 +613,7 @@ public class jedi
 		gfxdecodeinfo,
 		1024+1,null,	/* no colortable, we do the lookups ourselves */
 					/* reserve color 1024 for black (disabled display) */
-		null,
+		0,
 	
 		VIDEO_TYPE_RASTER,
 		null,

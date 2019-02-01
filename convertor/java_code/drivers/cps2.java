@@ -716,7 +716,7 @@ public class cps2
 		/* video hardware */
 		64*8, 32*8, new rectangle( 8*8, (64-8)*8-1, 2*8, 30*8-1 ),
 		gfxdecodeinfo,
-		4096, null,
+		4096, 0,
 		null,
 	
 	//	VIDEO_TYPE_RASTER | VIDEO_NEEDS_6BITS_PER_GUN,

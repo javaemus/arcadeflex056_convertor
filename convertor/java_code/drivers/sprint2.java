@@ -319,7 +319,7 @@ public class sprint2
 		/* video hardware */
 		32*8, 32*8, new rectangle( 0*8, 32*8-1, 0*8, 32*8-1 ), /* it's actually 32x28, but we'll leave room for our gear indicator */
 		gfxdecodeinfo,
-		sizeof(palette) / sizeof(palette[null]) / 3, sizeof(colortable) / sizeof(colortable[null]),
+		sizeof(palette) / sizeof(palette[0]) / 3, sizeof(colortable) / sizeof(colortable[null]),
 		init_palette,
 	
 		VIDEO_TYPE_RASTER,
@@ -350,7 +350,7 @@ public class sprint2
 		/* video hardware */
 		32*8, 32*8, new rectangle( 0*8, 32*8-1, 0*8, 32*8-1 ), /* it's actually 32x28, but we'll leave room for our gear indicator */
 		gfxdecodeinfo,
-		sizeof(palette) / sizeof(palette[null]) / 3, sizeof(colortable) / sizeof(colortable[null]),
+		sizeof(palette) / sizeof(palette[0]) / 3, sizeof(colortable) / sizeof(colortable[null]),
 		init_palette,
 	
 		VIDEO_TYPE_RASTER,

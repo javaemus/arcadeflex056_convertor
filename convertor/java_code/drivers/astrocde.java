@@ -637,7 +637,7 @@ public class astrocde
 		/* video hardware */
 		320, 204, new rectangle( 0, 320-1, 0, 204-1 ),
 		null,	/* no gfxdecodeinfo - bitmapped display */
-		256, null,
+		256, 0,
 		astrocde_init_palette,
 	
 		VIDEO_TYPE_RASTER,
@@ -668,7 +668,7 @@ public class astrocde
 		/* video hardware */
 		320, 204, new rectangle( 0, 320-1, 0, 204-1 ),
 		null,	/* no gfxdecodeinfo - bitmapped display */
-		256, null,
+		256, 0,
 		astrocde_init_palette,
 	
 		VIDEO_TYPE_RASTER,
@@ -705,7 +705,7 @@ public class astrocde
 		/* video hardware */
 		320, 204, new rectangle( 0, 320-1, 0, 204-1 ),
 		null,	/* no gfxdecodeinfo - bitmapped display */
-		256, null,
+		256, 0,
 		astrocde_init_palette,
 	
 		VIDEO_TYPE_RASTER,
@@ -742,7 +742,7 @@ public class astrocde
 		/* video hardware */
 		320, 204, new rectangle( 0, 320-1, 0, 204-1 ),
 		null,	/* no gfxdecodeinfo - bitmapped display */
-		256, null,
+		256, 0,
 		astrocde_init_palette,
 	
 		VIDEO_TYPE_RASTER,
@@ -835,7 +835,7 @@ public class astrocde
 		/* video hardware */
 		320, 204, new rectangle( 0, 320-1, 0, 204-1 ),
 		null,	/* no gfxdecodeinfo - bitmapped display */
-		256, null,
+		256, 0,
 		astrocde_init_palette,
 	
 		VIDEO_TYPE_RASTER,
@@ -872,7 +872,7 @@ public class astrocde
 		/* video hardware */
 		320, 204, new rectangle( 0, 320-1, 0, 204-1 ),
 		null,	/* no gfxdecodeinfo - bitmapped display */
-		256, null,
+		256, 0,
 		astrocde_init_palette,
 	
 		VIDEO_TYPE_RASTER,

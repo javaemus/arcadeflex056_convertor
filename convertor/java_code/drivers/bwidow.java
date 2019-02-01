@@ -638,7 +638,7 @@ public class bwidow
 		/* video hardware */
 		400, 300, new rectangle( 0, 480, 0, 440 ),
 		null,
-		256, null,
+		256, 0,
 		avg_init_palette_multi,
 	
 		VIDEO_TYPE_VECTOR | VIDEO_SUPPORTS_DIRTY | VIDEO_RGB_DIRECT,
@@ -675,7 +675,7 @@ public class bwidow
 		/* video hardware */
 		400, 300, new rectangle( 0, 420, 0, 400 ),
 		null,
-		256, null,
+		256, 0,
 		avg_init_palette_multi,
 	
 		VIDEO_TYPE_VECTOR | VIDEO_SUPPORTS_DIRTY | VIDEO_RGB_DIRECT,
@@ -714,7 +714,7 @@ public class bwidow
 		/* video hardware */
 		400, 300, new rectangle( 0, 540, 0, 400 ),
 		null,
-		256, null,
+		256, 0,
 		avg_init_palette_multi,
 	
 		VIDEO_TYPE_VECTOR | VIDEO_SUPPORTS_DIRTY | VIDEO_RGB_DIRECT,

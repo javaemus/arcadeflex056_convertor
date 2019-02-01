@@ -1456,7 +1456,7 @@ public class cischeat
 		256, 256,_visible_area_, \
 	\
 		_shortname_##_gfxdecodeinfo, \
-		_colors_num_, null, \
+		_colors_num_, 0, \
 		null, \
 	\
 		VIDEO_TYPE_RASTER | VIDEO_UPDATE_AFTER_VBLANK | VIDEO_HAS_SHADOWS,       \

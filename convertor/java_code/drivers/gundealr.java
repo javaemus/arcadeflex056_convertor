@@ -507,7 +507,7 @@ public class gundealr
 		/* video hardware */
 		32*8, 32*8, new rectangle( 0*8, 32*8-1, 2*8, 30*8-1 ),
 		gfxdecodeinfo,
-		512, null,
+		512, 0,
 		null,
 	
 		VIDEO_TYPE_RASTER,

@@ -545,7 +545,7 @@ public class shangha3
 		/* video hardware */
 		24*16, 16*16, new rectangle( 0*16, 24*16-1, 1*16, 15*16-1 ),
 		gfxdecodeinfo,
-		2048, null,
+		2048, 0,
 		null,
 	
 		VIDEO_TYPE_RASTER,
@@ -593,7 +593,7 @@ public class shangha3
 		/* video hardware */
 		24*16, 16*16, new rectangle( 0*16, 24*16-1, 1*16, 15*16-1 ),
 		gfxdecodeinfo,
-		2048, null,
+		2048, 0,
 		null,
 	
 		VIDEO_TYPE_RASTER,
@@ -641,7 +641,7 @@ public class shangha3
 		/* video hardware */
 		24*16, 16*16, new rectangle( 0*16, 24*16-1, 1*16, 15*16-1 ),
 		gfxdecodeinfo,
-		2048, null,
+		2048, 0,
 		null,
 	
 		VIDEO_TYPE_RASTER,

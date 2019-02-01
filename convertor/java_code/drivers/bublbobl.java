@@ -739,7 +739,7 @@ public class bublbobl
 		32*8, 32*8,	new rectangle( 0, 32*8-1, 2*8, 30*8-1 ),
 		gfxdecodeinfo,
 		256, null,
-		null,
+		0,
 	
 		VIDEO_TYPE_RASTER,
 		null,
@@ -794,7 +794,7 @@ public class bublbobl
 		32*8, 32*8,	new rectangle( 0, 32*8-1, 2*8, 30*8-1 ),
 		gfxdecodeinfo,
 		256, null,
-		null,
+		0,
 	
 		VIDEO_TYPE_RASTER,
 		null,
@@ -850,7 +850,7 @@ public class bublbobl
 		32*8, 32*8,	new rectangle( 0, 32*8-1, 2*8, 30*8-1 ),
 		gfxdecodeinfo,
 		256, null,
-		null,
+		0,
 	
 		VIDEO_TYPE_RASTER,
 		null,

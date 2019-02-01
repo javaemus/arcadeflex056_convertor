@@ -513,7 +513,7 @@ public class m107
 	
 		firebarr_gfxdecodeinfo,
 		2048, null,
-		null,
+		0,
 	
 		VIDEO_TYPE_RASTER,
 		null,
@@ -561,7 +561,7 @@ public class m107
 	
 		gfxdecodeinfo,
 		2048, null,
-		null,
+		0,
 	
 		VIDEO_TYPE_RASTER,
 		null,

@@ -231,7 +231,7 @@ public class astrof
 		256, 256, new rectangle( 8, 256-1-8, 8, 256-1-8 ),									   \
 																				   \
 		null,	/* no gfxdecodeinfo - bitmapped display */							   \
-		NUMCOLORS, null,															   \
+		NUMCOLORS, 0,															   \
 		astrof_vh_convert_color_prom,											   \
 																				   \
 		VIDEO_TYPE_RASTER,														   \

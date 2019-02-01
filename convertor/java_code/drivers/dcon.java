@@ -241,7 +241,7 @@ public class dcon
 	
 		dcon_gfxdecodeinfo,
 		2048, null,
-		null,
+		0,
 	
 		VIDEO_TYPE_RASTER,
 		null,

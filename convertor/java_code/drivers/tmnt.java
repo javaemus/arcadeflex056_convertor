@@ -2438,7 +2438,7 @@ public class tmnt
 		64*8, 32*8, new rectangle( 14*8, (64-14)*8-1, 2*8, 30*8-1 ),
 		null,	/* gfx decoded by konamiic.c */
 		1024, null,
-		null,
+		0,
 	
 		VIDEO_TYPE_RASTER | VIDEO_HAS_SHADOWS,
 		null,
@@ -2485,7 +2485,7 @@ public class tmnt
 		64*8, 32*8, new rectangle( 13*8, (64-13)*8-1, 2*8, 30*8-1 ),
 		null,	/* gfx decoded by konamiic.c */
 		1024, null,
-		null,
+		0,
 	
 		VIDEO_TYPE_RASTER | VIDEO_HAS_SHADOWS,
 		null,
@@ -2546,7 +2546,7 @@ public class tmnt
 		64*8, 32*8, new rectangle( 14*8, (64-14)*8-1, 2*8, 30*8-1 ),
 		null,	/* gfx decoded by konamiic.c */
 		2048, null,
-		null,
+		0,
 	
 		VIDEO_TYPE_RASTER | VIDEO_HAS_SHADOWS,
 		null,
@@ -2593,7 +2593,7 @@ public class tmnt
 		64*8, 32*8, new rectangle( 14*8, (64-14)*8-1, 2*8, 30*8-1 ),
 		null,	/* gfx decoded by konamiic.c */
 		2048, null,
-		null,
+		0,
 	
 		VIDEO_TYPE_RASTER | VIDEO_HAS_SHADOWS,
 		null,
@@ -2641,7 +2641,7 @@ public class tmnt
 		64*8, 32*8, new rectangle( 14*8, (64-14)*8-1, 2*8, 30*8-1 ),
 		null,	/* gfx decoded by konamiic.c */
 		2048, null,
-		null,
+		0,
 	
 		VIDEO_TYPE_RASTER | VIDEO_HAS_SHADOWS,
 		null,
@@ -2709,7 +2709,7 @@ public class tmnt
 		64*8, 32*8, new rectangle( 14*8, (64-14)*8-1, 2*8, 30*8-1 ),
 		glfgreat_gfxdecodeinfo,	/* gfx decoded by konamiic.c */
 		2048, null,
-		null,
+		0,
 	
 		VIDEO_TYPE_RASTER | VIDEO_HAS_SHADOWS,
 		null,
@@ -2757,7 +2757,7 @@ public class tmnt
 		64*8, 32*8, new rectangle( 13*8, (64-13)*8-1, 2*8, 30*8-1 ),
 		null,	/* gfx decoded by konamiic.c */
 		2048, null,
-		null,
+		0,
 	
 		VIDEO_TYPE_RASTER | VIDEO_HAS_SHADOWS,
 		null,
@@ -2807,7 +2807,7 @@ public class tmnt
 		64*8, 32*8, new rectangle( 14*8, (64-14)*8-1, 2*8, 30*8-1 ),
 		null,	/* gfx decoded by konamiic.c */
 		2048, null,
-		null,
+		0,
 	
 		VIDEO_TYPE_RASTER | VIDEO_HAS_SHADOWS,
 		null,
@@ -2857,7 +2857,7 @@ public class tmnt
 		64*8, 32*8, new rectangle( 14*8, (64-14)*8-1, 2*8, 30*8-1 ),
 		null,	/* gfx decoded by konamiic.c */
 		2048, null,
-		null,
+		0,
 	
 		VIDEO_TYPE_RASTER | VIDEO_HAS_SHADOWS,
 		null,
@@ -2923,7 +2923,7 @@ public class tmnt
 		64*8, 32*8, new rectangle( 14*8, (64-14)*8-1, 2*8, 30*8-1 ),
 		glfgreat_gfxdecodeinfo,	/* gfx decoded by konamiic.c */
 		2048, null,
-		null,
+		0,
 	
 		VIDEO_TYPE_RASTER | VIDEO_HAS_SHADOWS,
 		null,

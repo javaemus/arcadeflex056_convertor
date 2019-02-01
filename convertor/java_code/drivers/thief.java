@@ -489,7 +489,7 @@ public class thief
 		32*8, 32*8, new rectangle( 0*8, 32*8-1, 0*8, 24*8-1 ),
 		null,      /* no gfxdecodeinfo - bitmapped display */
 		16, null,
-		null,
+		0,
 	
 		VIDEO_TYPE_RASTER,
 		null,
@@ -529,7 +529,7 @@ public class thief
 		/* video hardware */
 		32*8, 32*8, new rectangle( 0*8, 32*8-1, 0*8, 32*8-1 ),
 		null,
-		16, null,
+		16, 0,
 		null,
 	
 		VIDEO_TYPE_RASTER,
@@ -570,7 +570,7 @@ public class thief
 		/* video hardware */
 		32*8, 32*8, new rectangle( 0*8, 32*8-1, 0*8, 32*8-1 ),
 		null,
-		16, null,
+		16, 0,
 		null,
 	
 		VIDEO_TYPE_RASTER,

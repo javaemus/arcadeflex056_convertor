@@ -305,7 +305,7 @@ public class srumbler
 	
 		gfxdecodeinfo,
 		512, null,
-		null,
+		0,
 	
 		VIDEO_TYPE_RASTER | VIDEO_BUFFERS_SPRITERAM,
 		srumbler_eof_callback,

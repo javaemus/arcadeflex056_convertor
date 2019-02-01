@@ -449,7 +449,7 @@ public class overdriv
 		64*8, 32*8, new rectangle( 13*8, (64-13)*8-1, 0*8, 32*8-1 ),
 		gfxdecodeinfo,	/* gfx decoded by konamiic.c */
 		2048, null,
-		null,
+		0,
 	
 		VIDEO_TYPE_RASTER | VIDEO_HAS_SHADOWS,
 		null,
