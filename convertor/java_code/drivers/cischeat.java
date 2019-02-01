@@ -786,11 +786,11 @@ public class cischeat
 	   f1gpstar */
 	
 	#define BUTTONS_STATUS \
-		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_BUTTON1 ) \
-		PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_BUTTON2 ) \
-		PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_BUTTON3 ) \
-		PORT_BIT( 0x08, IP_ACTIVE_HIGH, IPT_BUTTON4 ) \
-		PORT_BIT( 0x10, IP_ACTIVE_HIGH, IPT_BUTTON5 )
+		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_BUTTON1 );\
+		PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_BUTTON2 );\
+		PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_BUTTON3 );\
+		PORT_BIT( 0x08, IP_ACTIVE_HIGH, IPT_BUTTON4 );\
+		PORT_BIT( 0x10, IP_ACTIVE_HIGH, IPT_BUTTON5 );
 	
 	/**************************************************************************
 									Big Run
@@ -800,117 +800,117 @@ public class cischeat
 	//					[1] Coins		[2] Controls	[3] Unknown
 	//					[4]	DSW 1 & 2	[5] DSW 3		[6] Driving Wheel
 	
-	INPUT_PORTS_START( bigrun )
+	static InputPortPtr input_ports_bigrun = new InputPortPtr(){ public void handler() { 
 		PORT_START	// IN0 - Fake input port - Buttons status
 		BUTTONS_STATUS
 	
 		PORT_START	// IN1 - Coins - $80000.w
-		PORT_BIT(  0x01, IP_ACTIVE_LOW, IPT_COIN1    )
-		PORT_BIT(  0x02, IP_ACTIVE_LOW, IPT_COIN2    )
-		PORT_BIT(  0x04, IP_ACTIVE_LOW, IPT_SERVICE1 )
-		PORT_BITX( 0x08, IP_ACTIVE_LOW, IPT_SERVICE, DEF_STR( Service_Mode ), KEYCODE_F2, IP_JOY_NONE ) 	// called "Test"
-		PORT_BIT(  0x10, IP_ACTIVE_LOW, IPT_START1   )
-		PORT_BIT(  0x20, IP_ACTIVE_LOW, IPT_START2   )
-		PORT_BIT(  0x40, IP_ACTIVE_LOW, IPT_UNKNOWN  )
-		PORT_BIT(  0x80, IP_ACTIVE_LOW, IPT_UNKNOWN  )
+		PORT_BIT(  0x01, IP_ACTIVE_LOW, IPT_COIN1    );
+		PORT_BIT(  0x02, IP_ACTIVE_LOW, IPT_COIN2    );
+		PORT_BIT(  0x04, IP_ACTIVE_LOW, IPT_SERVICE1 );
+		PORT_BITX( 0x08, IP_ACTIVE_LOW, IPT_SERVICE, DEF_STR( "Service_Mode") ); KEYCODE_F2, IP_JOY_NONE ) 	// called "Test"
+		PORT_BIT(  0x10, IP_ACTIVE_LOW, IPT_START1   );
+		PORT_BIT(  0x20, IP_ACTIVE_LOW, IPT_START2   );
+		PORT_BIT(  0x40, IP_ACTIVE_LOW, IPT_UNKNOWN  );
+		PORT_BIT(  0x80, IP_ACTIVE_LOW, IPT_UNKNOWN  );
 	
 		PORT_START	// IN2 - Controls - $80002.w
-		PORT_BIT(  0x01, IP_ACTIVE_LOW, IPT_BUTTON2 )	// Brake
-	//	PORT_BIT(  0x02, IP_ACTIVE_LOW, IPT_BUTTON4 )	// Shift - We handle it using buttons 3&4
-		PORT_BIT(  0x04, IP_ACTIVE_LOW, IPT_UNKNOWN )
-		PORT_BIT(  0x08, IP_ACTIVE_LOW, IPT_UNKNOWN )
-		PORT_BIT(  0x10, IP_ACTIVE_LOW, IPT_UNKNOWN )
-		PORT_BIT(  0x20, IP_ACTIVE_LOW, IPT_UNKNOWN )
-		PORT_BIT(  0x40, IP_ACTIVE_LOW, IPT_UNKNOWN )
-		PORT_BIT(  0x80, IP_ACTIVE_LOW, IPT_BUTTON5 )	// Horn
+		PORT_BIT(  0x01, IP_ACTIVE_LOW, IPT_BUTTON2 );// Brake
+	//	PORT_BIT(  0x02, IP_ACTIVE_LOW, IPT_BUTTON4 );// Shift - We handle it using buttons 3&4
+		PORT_BIT(  0x04, IP_ACTIVE_LOW, IPT_UNKNOWN );
+		PORT_BIT(  0x08, IP_ACTIVE_LOW, IPT_UNKNOWN );
+		PORT_BIT(  0x10, IP_ACTIVE_LOW, IPT_UNKNOWN );
+		PORT_BIT(  0x20, IP_ACTIVE_LOW, IPT_UNKNOWN );
+		PORT_BIT(  0x40, IP_ACTIVE_LOW, IPT_UNKNOWN );
+		PORT_BIT(  0x80, IP_ACTIVE_LOW, IPT_BUTTON5 );// Horn
 	
 		PORT_START	// IN3 - Motor Control? - $80004.w
-		PORT_DIPNAME( 0x01, 0x01, "Up Limit SW"  	)	// Limit the Cockpit movements?
-		PORT_DIPSETTING(    0x01, DEF_STR( Off ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( On )  )
-		PORT_DIPNAME( 0x02, 0x02, "Down Limit SW"	)
-		PORT_DIPSETTING(    0x02, DEF_STR( Off ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( On )  )
-		PORT_BIT(  0x04, IP_ACTIVE_LOW, IPT_UNKNOWN )
-		PORT_BIT(  0x08, IP_ACTIVE_LOW, IPT_UNKNOWN )
-	//	PORT_DIPNAME( 0x10, 0x10, "Right Limit SW"	)
-	//	PORT_DIPSETTING(    0x10, DEF_STR( Off ) )
-	//	PORT_DIPSETTING(    0x00, DEF_STR( On )  )
-	//	PORT_DIPNAME( 0x20, 0x20, "Left Limit SW"	)
-	//	PORT_DIPSETTING(    0x20, DEF_STR( Off ) )
-	//	PORT_DIPSETTING(    0x00, DEF_STR( On )  )
-		PORT_BIT(  0x10, IP_ACTIVE_LOW, IPT_UNKNOWN )
-		PORT_BIT(  0x20, IP_ACTIVE_LOW, IPT_UNKNOWN )
-		PORT_BIT(  0x40, IP_ACTIVE_LOW, IPT_UNKNOWN )
-		PORT_BIT(  0x80, IP_ACTIVE_LOW, IPT_UNKNOWN )
+		PORT_DIPNAME( 0x01, 0x01, "Up Limit SW"  	);// Limit the Cockpit movements?
+		PORT_DIPSETTING(    0x01, DEF_STR( "Off") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "On") ); )
+		PORT_DIPNAME( 0x02, 0x02, "Down Limit SW"	);
+		PORT_DIPSETTING(    0x02, DEF_STR( "Off") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "On") ); )
+		PORT_BIT(  0x04, IP_ACTIVE_LOW, IPT_UNKNOWN );
+		PORT_BIT(  0x08, IP_ACTIVE_LOW, IPT_UNKNOWN );
+	//	PORT_DIPNAME( 0x10, 0x10, "Right Limit SW"	);
+	//	PORT_DIPSETTING(    0x10, DEF_STR( "Off") );
+	//	PORT_DIPSETTING(    0x00, DEF_STR( "On") ); )
+	//	PORT_DIPNAME( 0x20, 0x20, "Left Limit SW"	);
+	//	PORT_DIPSETTING(    0x20, DEF_STR( "Off") );
+	//	PORT_DIPSETTING(    0x00, DEF_STR( "On") ); )
+		PORT_BIT(  0x10, IP_ACTIVE_LOW, IPT_UNKNOWN );
+		PORT_BIT(  0x20, IP_ACTIVE_LOW, IPT_UNKNOWN );
+		PORT_BIT(  0x40, IP_ACTIVE_LOW, IPT_UNKNOWN );
+		PORT_BIT(  0x80, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
 		PORT_START	// IN4 - DSW 2 & 3 - $80006.w
 		// DSW 3
-		PORT_DIPNAME( 0x0003, 0x0003, "Unknown 3-0&1*" )
-		PORT_DIPSETTING(      0x0003, "3" )
-		PORT_DIPSETTING(      0x0002, "2" )
-		PORT_DIPSETTING(      0x0001, "1" )
-		PORT_DIPSETTING(      0x0000, "0" )
-		PORT_DIPNAME( 0x0004, 0x0004, "Allow Continue" )
-		PORT_DIPSETTING(      0x0004, DEF_STR( No )  )
-		PORT_DIPSETTING(      0x0000, DEF_STR( Yes ) )
-		PORT_DIPNAME( 0x0008, 0x0008, "Unknown 3-3" )
-		PORT_DIPSETTING(      0x0008, DEF_STR( Off ) )
-		PORT_DIPSETTING(      0x0000, DEF_STR( On )  )
-		PORT_DIPNAME( 0x0010, 0x0010, "Move Cabinet" )
-		PORT_DIPSETTING(      0x0000, DEF_STR( No )  )
-		PORT_DIPSETTING(      0x0010, DEF_STR( Yes ) )
-		PORT_DIPNAME( 0x0060, 0x0060, DEF_STR( Difficulty ) )
-		PORT_DIPSETTING(      0x0000, "Easy" )
-		PORT_DIPSETTING(      0x0060, "Normal" )
-		PORT_DIPSETTING(      0x0020, "Hard" )
-		PORT_DIPSETTING(      0x0040, "Hardest" )
-		PORT_DIPNAME( 0x0080, 0x0080, "Automatic Game Start" )
-		PORT_DIPSETTING(      0x0000, DEF_STR( No ) )
-		PORT_DIPSETTING(      0x0080, "After 15 Seconds" )
+		PORT_DIPNAME( 0x0003, 0x0003, "Unknown 3-0&1*" );
+		PORT_DIPSETTING(      0x0003, "3" );
+		PORT_DIPSETTING(      0x0002, "2" );
+		PORT_DIPSETTING(      0x0001, "1" );
+		PORT_DIPSETTING(      0x0000, "0" );
+		PORT_DIPNAME( 0x0004, 0x0004, "Allow Continue" );
+		PORT_DIPSETTING(      0x0004, DEF_STR( "No") ); )
+		PORT_DIPSETTING(      0x0000, DEF_STR( "Yes") );
+		PORT_DIPNAME( 0x0008, 0x0008, "Unknown 3-3" );
+		PORT_DIPSETTING(      0x0008, DEF_STR( "Off") );
+		PORT_DIPSETTING(      0x0000, DEF_STR( "On") ); )
+		PORT_DIPNAME( 0x0010, 0x0010, "Move Cabinet" );
+		PORT_DIPSETTING(      0x0000, DEF_STR( "No") ); )
+		PORT_DIPSETTING(      0x0010, DEF_STR( "Yes") );
+		PORT_DIPNAME( 0x0060, 0x0060, DEF_STR( "Difficulty") );
+		PORT_DIPSETTING(      0x0000, "Easy" );
+		PORT_DIPSETTING(      0x0060, "Normal" );
+		PORT_DIPSETTING(      0x0020, "Hard" );
+		PORT_DIPSETTING(      0x0040, "Hardest" );
+		PORT_DIPNAME( 0x0080, 0x0080, "Automatic Game Start" );
+		PORT_DIPSETTING(      0x0000, DEF_STR( "No") );
+		PORT_DIPSETTING(      0x0080, "After 15 Seconds" );
 	
 		// DSW 2
-		PORT_DIPNAME( 0x0100, 0x0100, DEF_STR( Free_Play ) )
-		PORT_DIPSETTING(      0x0100, DEF_STR( Off ) )
-		PORT_DIPSETTING(      0x0000, DEF_STR( On )  )
-		PORT_DIPNAME( 0x0200, 0x0200, DEF_STR( Demo_Sounds ) )
-		PORT_DIPSETTING(      0x0000, DEF_STR( Off ) )
-		PORT_DIPSETTING(      0x0200, DEF_STR( On )  )
-		PORT_DIPNAME( 0x1c00, 0x1c00, DEF_STR( Coin_B ) )
-		PORT_DIPSETTING(      0x1000, DEF_STR( 4C_1C ) )
-		PORT_DIPSETTING(      0x0800, DEF_STR( 3C_1C ) )
-		PORT_DIPSETTING(      0x1800, DEF_STR( 2C_1C ) )
-		PORT_DIPSETTING(      0x1c00, DEF_STR( 1C_1C ) )
-		PORT_DIPSETTING(      0x0c00, DEF_STR( 1C_2C ) )
-		PORT_DIPSETTING(      0x1400, DEF_STR( 1C_3C ) )
-		PORT_DIPSETTING(      0x0400, DEF_STR( 1C_4C ) )
-		PORT_DIPSETTING(      0x0000, DEF_STR( Free_Play ) )
-		PORT_DIPNAME( 0xe000, 0xe000, DEF_STR( Coin_A ) )
-		PORT_DIPSETTING(      0x8000, DEF_STR( 4C_1C ) )
-		PORT_DIPSETTING(      0x4000, DEF_STR( 3C_1C ) )
-		PORT_DIPSETTING(      0xc000, DEF_STR( 2C_1C ) )
-		PORT_DIPSETTING(      0xe000, DEF_STR( 1C_1C ) )
-		PORT_DIPSETTING(      0x6000, DEF_STR( 1C_2C ) )
-		PORT_DIPSETTING(      0xa000, DEF_STR( 1C_3C ) )
-		PORT_DIPSETTING(      0x2000, DEF_STR( 1C_4C ) )
-		PORT_DIPSETTING(      0x0000, DEF_STR( Free_Play ) )
+		PORT_DIPNAME( 0x0100, 0x0100, DEF_STR( "Free_Play") );
+		PORT_DIPSETTING(      0x0100, DEF_STR( "Off") );
+		PORT_DIPSETTING(      0x0000, DEF_STR( "On") ); )
+		PORT_DIPNAME( 0x0200, 0x0200, DEF_STR( "Demo_Sounds") );
+		PORT_DIPSETTING(      0x0000, DEF_STR( "Off") );
+		PORT_DIPSETTING(      0x0200, DEF_STR( "On") ); )
+		PORT_DIPNAME( 0x1c00, 0x1c00, DEF_STR( "Coin_B") );
+		PORT_DIPSETTING(      0x1000, DEF_STR( "4C_1C") );
+		PORT_DIPSETTING(      0x0800, DEF_STR( "3C_1C") );
+		PORT_DIPSETTING(      0x1800, DEF_STR( "2C_1C") );
+		PORT_DIPSETTING(      0x1c00, DEF_STR( "1C_1C") );
+		PORT_DIPSETTING(      0x0c00, DEF_STR( "1C_2C") );
+		PORT_DIPSETTING(      0x1400, DEF_STR( "1C_3C") );
+		PORT_DIPSETTING(      0x0400, DEF_STR( "1C_4C") );
+		PORT_DIPSETTING(      0x0000, DEF_STR( "Free_Play") );
+		PORT_DIPNAME( 0xe000, 0xe000, DEF_STR( "Coin_A") );
+		PORT_DIPSETTING(      0x8000, DEF_STR( "4C_1C") );
+		PORT_DIPSETTING(      0x4000, DEF_STR( "3C_1C") );
+		PORT_DIPSETTING(      0xc000, DEF_STR( "2C_1C") );
+		PORT_DIPSETTING(      0xe000, DEF_STR( "1C_1C") );
+		PORT_DIPSETTING(      0x6000, DEF_STR( "1C_2C") );
+		PORT_DIPSETTING(      0xa000, DEF_STR( "1C_3C") );
+		PORT_DIPSETTING(      0x2000, DEF_STR( "1C_4C") );
+		PORT_DIPSETTING(      0x0000, DEF_STR( "Free_Play") );
 	
 		PORT_START	// IN5 - DSW 3 (4 bits, Cabinet Linking) - $82200.w
-		PORT_BIT(  0x01, IP_ACTIVE_LOW, IPT_UNKNOWN )
-		PORT_DIPNAME( 0x06, 0x00, "Unit ID"             )
-		PORT_DIPSETTING(    0x00, "1 (Blue-White Car)"  )
-		PORT_DIPSETTING(    0x02, "2 (Green-White Car)" )
-		PORT_DIPSETTING(    0x04, "3 (Red-White Car)"   )
-		PORT_DIPSETTING(    0x06, "4 (Yellow Car)"      )
-		PORT_BIT(  0x08, IP_ACTIVE_LOW, IPT_UNKNOWN )
-		PORT_BIT(  0x10, IP_ACTIVE_LOW, IPT_UNKNOWN )
-		PORT_BIT(  0x20, IP_ACTIVE_LOW, IPT_UNKNOWN )
-		PORT_BIT(  0x40, IP_ACTIVE_LOW, IPT_UNKNOWN )
-		PORT_BIT(  0x80, IP_ACTIVE_LOW, IPT_UNKNOWN )
+		PORT_BIT(  0x01, IP_ACTIVE_LOW, IPT_UNKNOWN );
+		PORT_DIPNAME( 0x06, 0x00, "Unit ID"             );
+		PORT_DIPSETTING(    0x00, "1 (Blue-White Car);  )
+		PORT_DIPSETTING(    0x02, "2 (Green-White Car); )
+		PORT_DIPSETTING(    0x04, "3 (Red-White Car);   )
+		PORT_DIPSETTING(    0x06, "4 (Yellow Car);      )
+		PORT_BIT(  0x08, IP_ACTIVE_LOW, IPT_UNKNOWN );
+		PORT_BIT(  0x10, IP_ACTIVE_LOW, IPT_UNKNOWN );
+		PORT_BIT(  0x20, IP_ACTIVE_LOW, IPT_UNKNOWN );
+		PORT_BIT(  0x40, IP_ACTIVE_LOW, IPT_UNKNOWN );
+		PORT_BIT(  0x80, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
 		PORT_START	// IN6 - Driving Wheel - $80010.w(0)
-		PORT_ANALOG( 0xff, 0x80, IPT_AD_STICK_X | IPF_CENTER, 30, 30, 0, 0xff)
-	INPUT_PORTS_END
+		PORT_ANALOG( 0xff, 0x80, IPT_AD_STICK_X | IPF_CENTER, 30, 30, 0, 0xff);
+	INPUT_PORTS_END(); }}; 
 	
 	
 	/**************************************************************************
@@ -921,96 +921,96 @@ public class cischeat
 	//					[1] Coins		[2] Controls	[3] Unknown
 	//					[4]	DSW 1 & 2	[5] DSW 3		[6] Driving Wheel
 	
-	INPUT_PORTS_START( cischeat )
+	static InputPortPtr input_ports_cischeat = new InputPortPtr(){ public void handler() { 
 		PORT_START	// IN0 - Fake input port - Buttons status
 		BUTTONS_STATUS
 	
 		PORT_START	// IN1 - Coins - $80000.w
-		PORT_BIT(  0x01, IP_ACTIVE_LOW, IPT_COIN1    )
-		PORT_BIT(  0x02, IP_ACTIVE_LOW, IPT_COIN2    )
-		PORT_BIT(  0x04, IP_ACTIVE_LOW, IPT_SERVICE1 )
-		PORT_BITX( 0x08, IP_ACTIVE_LOW, IPT_SERVICE, DEF_STR( Service_Mode ), KEYCODE_F2, IP_JOY_NONE ) 	// called "Test"
-		PORT_BIT(  0x10, IP_ACTIVE_LOW, IPT_START1   )
-		PORT_BIT(  0x20, IP_ACTIVE_LOW, IPT_START2   )
-		PORT_BIT(  0x40, IP_ACTIVE_LOW, IPT_UNKNOWN  )
-		PORT_BIT(  0x80, IP_ACTIVE_LOW, IPT_UNKNOWN  )
+		PORT_BIT(  0x01, IP_ACTIVE_LOW, IPT_COIN1    );
+		PORT_BIT(  0x02, IP_ACTIVE_LOW, IPT_COIN2    );
+		PORT_BIT(  0x04, IP_ACTIVE_LOW, IPT_SERVICE1 );
+		PORT_BITX( 0x08, IP_ACTIVE_LOW, IPT_SERVICE, DEF_STR( "Service_Mode") ); KEYCODE_F2, IP_JOY_NONE ) 	// called "Test"
+		PORT_BIT(  0x10, IP_ACTIVE_LOW, IPT_START1   );
+		PORT_BIT(  0x20, IP_ACTIVE_LOW, IPT_START2   );
+		PORT_BIT(  0x40, IP_ACTIVE_LOW, IPT_UNKNOWN  );
+		PORT_BIT(  0x80, IP_ACTIVE_LOW, IPT_UNKNOWN  );
 	
 		PORT_START	// IN2 - Controls - $80002.w
-		PORT_BIT(  0x01, IP_ACTIVE_LOW, IPT_BUTTON2 )	// Brake
-	//	PORT_BIT(  0x02, IP_ACTIVE_LOW, IPT_BUTTON4 )	// Shift - We handle it using buttons 3&4
-		PORT_BIT(  0x04, IP_ACTIVE_LOW, IPT_UNKNOWN )
-		PORT_BIT(  0x08, IP_ACTIVE_LOW, IPT_UNKNOWN )
-		PORT_BIT(  0x10, IP_ACTIVE_LOW, IPT_BUTTON1 )	// Accel
-		PORT_BIT(  0x20, IP_ACTIVE_LOW, IPT_UNKNOWN )
-		PORT_BIT(  0x40, IP_ACTIVE_LOW, IPT_UNKNOWN )
-		PORT_BIT(  0x80, IP_ACTIVE_LOW, IPT_BUTTON5 )	// Horn
+		PORT_BIT(  0x01, IP_ACTIVE_LOW, IPT_BUTTON2 );// Brake
+	//	PORT_BIT(  0x02, IP_ACTIVE_LOW, IPT_BUTTON4 );// Shift - We handle it using buttons 3&4
+		PORT_BIT(  0x04, IP_ACTIVE_LOW, IPT_UNKNOWN );
+		PORT_BIT(  0x08, IP_ACTIVE_LOW, IPT_UNKNOWN );
+		PORT_BIT(  0x10, IP_ACTIVE_LOW, IPT_BUTTON1 );// Accel
+		PORT_BIT(  0x20, IP_ACTIVE_LOW, IPT_UNKNOWN );
+		PORT_BIT(  0x40, IP_ACTIVE_LOW, IPT_UNKNOWN );
+		PORT_BIT(  0x80, IP_ACTIVE_LOW, IPT_BUTTON5 );// Horn
 	
 		PORT_START	// IN3 - Motor Control? - $80004.w
-		PORT_DIPNAME( 0x01, 0x01, "Up Limit SW"  	)	// Limit the Cockpit movements?
-		PORT_DIPSETTING(    0x01, DEF_STR( Off ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( On )  )
-		PORT_DIPNAME( 0x02, 0x02, "Down Limit SW"	)
-		PORT_DIPSETTING(    0x02, DEF_STR( Off ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( On )  )
-		PORT_BIT(  0x04, IP_ACTIVE_LOW, IPT_UNKNOWN )
-		PORT_BIT(  0x08, IP_ACTIVE_LOW, IPT_UNKNOWN )
-		PORT_DIPNAME( 0x10, 0x10, "Right Limit SW"	)
-		PORT_DIPSETTING(    0x10, DEF_STR( Off ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( On )  )
-		PORT_DIPNAME( 0x20, 0x20, "Left Limit SW"	)
-		PORT_DIPSETTING(    0x20, DEF_STR( Off ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( On )  )
-		PORT_BIT(  0x40, IP_ACTIVE_LOW, IPT_UNKNOWN )
-		PORT_BIT(  0x80, IP_ACTIVE_LOW, IPT_UNKNOWN )
+		PORT_DIPNAME( 0x01, 0x01, "Up Limit SW"  	);// Limit the Cockpit movements?
+		PORT_DIPSETTING(    0x01, DEF_STR( "Off") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "On") ); )
+		PORT_DIPNAME( 0x02, 0x02, "Down Limit SW"	);
+		PORT_DIPSETTING(    0x02, DEF_STR( "Off") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "On") ); )
+		PORT_BIT(  0x04, IP_ACTIVE_LOW, IPT_UNKNOWN );
+		PORT_BIT(  0x08, IP_ACTIVE_LOW, IPT_UNKNOWN );
+		PORT_DIPNAME( 0x10, 0x10, "Right Limit SW"	);
+		PORT_DIPSETTING(    0x10, DEF_STR( "Off") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "On") ); )
+		PORT_DIPNAME( 0x20, 0x20, "Left Limit SW"	);
+		PORT_DIPSETTING(    0x20, DEF_STR( "Off") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "On") ); )
+		PORT_BIT(  0x40, IP_ACTIVE_LOW, IPT_UNKNOWN );
+		PORT_BIT(  0x80, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
 		PORT_START	// IN4 - DSW 1 & 2 - $80006.w -> !f000a.w(hi byte) !f0008.w(low byte)
 		COINAGE_6BITS_2
-		PORT_DIPNAME( 0x0040, 0x0040, DEF_STR( Unknown ) )	// unused?
-		PORT_DIPSETTING(      0x0040, DEF_STR( Off ) )
-		PORT_DIPSETTING(      0x0000, DEF_STR( On )  )
-		PORT_DIPNAME( 0x0080, 0x0080, DEF_STR( Unknown ) )	// unused?
-		PORT_DIPSETTING(      0x0080, DEF_STR( Off ) )
-		PORT_DIPSETTING(      0x0000, DEF_STR( On )  )
+		PORT_DIPNAME( 0x0040, 0x0040, DEF_STR( "Unknown") );	// unused?
+		PORT_DIPSETTING(      0x0040, DEF_STR( "Off") );
+		PORT_DIPSETTING(      0x0000, DEF_STR( "On") ); )
+		PORT_DIPNAME( 0x0080, 0x0080, DEF_STR( "Unknown") );	// unused?
+		PORT_DIPSETTING(      0x0080, DEF_STR( "Off") );
+		PORT_DIPSETTING(      0x0000, DEF_STR( "On") ); )
 		// DSW 2
-		PORT_DIPNAME( 0x0300, 0x0300, "Unit ID"			)		// -> !f0020 (ID of this unit, when linked)
-		PORT_DIPSETTING(      0x0300, "0 (Red Car)"    )
-		PORT_DIPSETTING(      0x0200, "1 (Blue Car)"   )
-		PORT_DIPSETTING(      0x0100, "2 (Yellow Car)" )
-		PORT_DIPSETTING(      0x0000, "3 (Green Car)"  )
-		PORT_DIPNAME( 0x0c00, 0x0c00, DEF_STR( Difficulty ) )	// -> !f0026
-		PORT_DIPSETTING(      0x0000, "Easy"    )
-		PORT_DIPSETTING(      0x0c00, "Normal"  )
-		PORT_DIPSETTING(      0x0800, "Hard"    )
-		PORT_DIPSETTING(      0x0400, "Hardest" )
-		PORT_BITX(    0x1000, 0x1000, IPT_DIPSWITCH_NAME | IPF_CHEAT, "Infinite Time", IP_KEY_NONE, IP_JOY_NONE ) // -> !f0028
-		PORT_DIPSETTING(      0x1000, DEF_STR( Off ) )
-		PORT_DIPSETTING(      0x0000, DEF_STR( On )  )
-		PORT_DIPNAME( 0x2000, 0x2000, DEF_STR( Demo_Sounds ) )
-		PORT_DIPSETTING(      0x0000, DEF_STR( Off ) )
-		PORT_DIPSETTING(      0x2000, DEF_STR( On )  )
-		PORT_DIPNAME( 0x4000, 0x4000, "Country" )
-		PORT_DIPSETTING(      0x4000, "Japan" )
-		PORT_DIPSETTING(      0x0000, "USA"   )
-		PORT_DIPNAME( 0x8000, 0x8000, "Allow Continue" )		// -> !f00c0
-		PORT_DIPSETTING(      0x8000, DEF_STR( Off ) )
-		PORT_DIPSETTING(      0x0000, DEF_STR( On )  )
+		PORT_DIPNAME( 0x0300, 0x0300, "Unit ID"			);	// -> !f0020 (ID of this unit, when linked)
+		PORT_DIPSETTING(      0x0300, "0 (Red Car);    )
+		PORT_DIPSETTING(      0x0200, "1 (Blue Car);   )
+		PORT_DIPSETTING(      0x0100, "2 (Yellow Car); )
+		PORT_DIPSETTING(      0x0000, "3 (Green Car);  )
+		PORT_DIPNAME( 0x0c00, 0x0c00, DEF_STR( "Difficulty") );	// -> !f0026
+		PORT_DIPSETTING(      0x0000, "Easy"    );
+		PORT_DIPSETTING(      0x0c00, "Normal"  );
+		PORT_DIPSETTING(      0x0800, "Hard"    );
+		PORT_DIPSETTING(      0x0400, "Hardest" );
+		PORT_BITX(    0x1000, 0x1000, IPT_DIPSWITCH_NAME | IPF_CHEAT, "Infinite Time", IP_KEY_NONE, IP_JOY_NONE );// -> !f0028
+		PORT_DIPSETTING(      0x1000, DEF_STR( "Off") );
+		PORT_DIPSETTING(      0x0000, DEF_STR( "On") ); )
+		PORT_DIPNAME( 0x2000, 0x2000, DEF_STR( "Demo_Sounds") );
+		PORT_DIPSETTING(      0x0000, DEF_STR( "Off") );
+		PORT_DIPSETTING(      0x2000, DEF_STR( "On") ); )
+		PORT_DIPNAME( 0x4000, 0x4000, "Country" );
+		PORT_DIPSETTING(      0x4000, "Japan" );
+		PORT_DIPSETTING(      0x0000, "USA"   );
+		PORT_DIPNAME( 0x8000, 0x8000, "Allow Continue" );	// -> !f00c0
+		PORT_DIPSETTING(      0x8000, DEF_STR( "Off") );
+		PORT_DIPSETTING(      0x0000, DEF_STR( "On") ); )
 	
 		PORT_START	// IN5 - DSW 3 (4 bits, Cabinet Linking) - $82200.w
-		PORT_BIT(  0x01, IP_ACTIVE_LOW, IPT_UNKNOWN )
-		PORT_DIPNAME( 0x06, 0x06, "Unit ID (2)" )	// -> f0020 (like DSW2 !!)
-		PORT_DIPSETTING(    0x06, "Use other"      )
-		PORT_DIPSETTING(    0x00, "0 (Red Car)"    )
-		PORT_DIPSETTING(    0x02, "1 (Blue Car)"   )
-		PORT_DIPSETTING(    0x04, "2 (Yellow Car)" )
-		PORT_BIT(  0x08, IP_ACTIVE_LOW, IPT_UNKNOWN )
-		PORT_BIT(  0x10, IP_ACTIVE_LOW, IPT_UNKNOWN )
-		PORT_BIT(  0x20, IP_ACTIVE_LOW, IPT_UNKNOWN )
-		PORT_BIT(  0x40, IP_ACTIVE_LOW, IPT_UNKNOWN )
-		PORT_BIT(  0x80, IP_ACTIVE_LOW, IPT_UNKNOWN )
+		PORT_BIT(  0x01, IP_ACTIVE_LOW, IPT_UNKNOWN );
+		PORT_DIPNAME( 0x06, 0x06, "Unit ID (2); )	// -> f0020 (like DSW2 !!)
+		PORT_DIPSETTING(    0x06, "Use other"      );
+		PORT_DIPSETTING(    0x00, "0 (Red Car);    )
+		PORT_DIPSETTING(    0x02, "1 (Blue Car);   )
+		PORT_DIPSETTING(    0x04, "2 (Yellow Car); )
+		PORT_BIT(  0x08, IP_ACTIVE_LOW, IPT_UNKNOWN );
+		PORT_BIT(  0x10, IP_ACTIVE_LOW, IPT_UNKNOWN );
+		PORT_BIT(  0x20, IP_ACTIVE_LOW, IPT_UNKNOWN );
+		PORT_BIT(  0x40, IP_ACTIVE_LOW, IPT_UNKNOWN );
+		PORT_BIT(  0x80, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
 		PORT_START	// IN6 - Driving Wheel - $80010.w(0)
-		PORT_ANALOG( 0xff, 0x80, IPT_AD_STICK_X | IPF_CENTER, 30, 30, 0, 0xff)
-	INPUT_PORTS_END
+		PORT_ANALOG( 0xff, 0x80, IPT_AD_STICK_X | IPF_CENTER, 30, 30, 0, 0xff);
+	INPUT_PORTS_END(); }}; 
 	
 	
 	/**************************************************************************
@@ -1022,7 +1022,7 @@ public class cischeat
 	//					[4]	DSW 3			[5] Driving Wheel
 	//					[6]	Coinage JP&USA	[7] Coinage UK&FR
 	
-	INPUT_PORTS_START( f1gpstar )
+	static InputPortPtr input_ports_f1gpstar = new InputPortPtr(){ public void handler() { 
 		PORT_START	// IN0 - Fake input port - Buttons status
 		BUTTONS_STATUS
 	
@@ -1035,63 +1035,63 @@ public class cischeat
 	
 		PORT_START	// IN1 - DSW 1 & 2 - $80000.w	-> !f9012
 		// DSW 1 ( Coinage - it changes with Country: we use IN6 & IN7 )
-		PORT_DIPNAME( 0x0040, 0x0040, "Free Play (UK FR)" )
-		PORT_DIPSETTING(      0x0040, DEF_STR( Off ) )
-		PORT_DIPSETTING(      0x0000, DEF_STR( On )  )
-		PORT_DIPNAME( 0x0080, 0x0080, DEF_STR( Unknown ) )	// unused?
-		PORT_DIPSETTING(      0x0080, DEF_STR( Off ) )
-		PORT_DIPSETTING(      0x0000, DEF_STR( On )  )
+		PORT_DIPNAME( 0x0040, 0x0040, "Free Play (UK FR); )
+		PORT_DIPSETTING(      0x0040, DEF_STR( "Off") );
+		PORT_DIPSETTING(      0x0000, DEF_STR( "On") ); )
+		PORT_DIPNAME( 0x0080, 0x0080, DEF_STR( "Unknown") );	// unused?
+		PORT_DIPSETTING(      0x0080, DEF_STR( "Off") );
+		PORT_DIPSETTING(      0x0000, DEF_STR( "On") ); )
 		// DSW 2
-		PORT_DIPNAME( 0x0300, 0x0300, "Country"  )	// -> !f901e
-		PORT_DIPSETTING(      0x0300, "Japan"   )
-		PORT_DIPSETTING(      0x0200, "USA"     )
-		PORT_DIPSETTING(      0x0100, "UK"      )
-		PORT_DIPSETTING(      0x0000, "France"  )
-		PORT_DIPNAME( 0x0c00, 0x0c00, DEF_STR( Difficulty ) )	// -> !f9026
-		PORT_DIPSETTING(      0x0000, "Easy"      )	// 58 <- Initial Time (seconds, Germany)
-		PORT_DIPSETTING(      0x0c00, "Normal"    )	// 51
-		PORT_DIPSETTING(      0x0800, "Hard"      )	// 48
-		PORT_DIPSETTING(      0x0400, "Very Hard" )	// 46
-		PORT_BITX(    0x1000, 0x1000, IPT_DIPSWITCH_NAME | IPF_CHEAT, "Infinite Time", IP_KEY_NONE, IP_JOY_NONE )
-		PORT_DIPSETTING(      0x1000, DEF_STR( Off ) )
-		PORT_DIPSETTING(      0x0000, DEF_STR( On )  )
-		PORT_DIPNAME( 0x2000, 0x2000, DEF_STR( Demo_Sounds ) )
-		PORT_DIPSETTING(      0x0000, DEF_STR( Off ) )
-		PORT_DIPSETTING(      0x2000, DEF_STR( On )  )
-		PORT_DIPNAME( 0x4000, 0x4000, "Choose Race (US UK FR)"  )	// -> f0020
-		PORT_DIPSETTING(      0x0000, DEF_STR( Off ) )
-		PORT_DIPSETTING(      0x4000, DEF_STR( On )  )
-		PORT_DIPNAME( 0x8000, 0x8000, "Vibrations" )
-		PORT_DIPSETTING(      0x8000, "High?" )
-		PORT_DIPSETTING(      0x0000, "Low?"  )
+		PORT_DIPNAME( 0x0300, 0x0300, "Country"  );// -> !f901e
+		PORT_DIPSETTING(      0x0300, "Japan"   );
+		PORT_DIPSETTING(      0x0200, "USA"     );
+		PORT_DIPSETTING(      0x0100, "UK"      );
+		PORT_DIPSETTING(      0x0000, "France"  );
+		PORT_DIPNAME( 0x0c00, 0x0c00, DEF_STR( "Difficulty") );	// -> !f9026
+		PORT_DIPSETTING(      0x0000, "Easy"      );// 58 <- Initial Time (seconds, Germany)
+		PORT_DIPSETTING(      0x0c00, "Normal"    );// 51
+		PORT_DIPSETTING(      0x0800, "Hard"      );// 48
+		PORT_DIPSETTING(      0x0400, "Very Hard" );// 46
+		PORT_BITX(    0x1000, 0x1000, IPT_DIPSWITCH_NAME | IPF_CHEAT, "Infinite Time", IP_KEY_NONE, IP_JOY_NONE );
+		PORT_DIPSETTING(      0x1000, DEF_STR( "Off") );
+		PORT_DIPSETTING(      0x0000, DEF_STR( "On") ); )
+		PORT_DIPNAME( 0x2000, 0x2000, DEF_STR( "Demo_Sounds") );
+		PORT_DIPSETTING(      0x0000, DEF_STR( "Off") );
+		PORT_DIPSETTING(      0x2000, DEF_STR( "On") ); )
+		PORT_DIPNAME( 0x4000, 0x4000, "Choose Race (US UK FR);  )	// -> f0020
+		PORT_DIPSETTING(      0x0000, DEF_STR( "Off") );
+		PORT_DIPSETTING(      0x4000, DEF_STR( "On") ); )
+		PORT_DIPNAME( 0x8000, 0x8000, "Vibrations" );
+		PORT_DIPSETTING(      0x8000, "High?" );
+		PORT_DIPSETTING(      0x0000, "Low?"  );
 	
 		PORT_START	// IN2 - Controls - $80004.w -> !f9016
-		PORT_BIT(  0x0001, IP_ACTIVE_LOW, IPT_COIN1    )
-		PORT_BIT(  0x0002, IP_ACTIVE_LOW, IPT_COIN2    )
-		PORT_BIT(  0x0004, IP_ACTIVE_LOW, IPT_SERVICE1 )
-		PORT_BITX( 0x0008, IP_ACTIVE_LOW, IPT_SERVICE, DEF_STR( Service_Mode ), KEYCODE_F2, IP_JOY_NONE ) // -> f0100 (called "Test")
-		PORT_BIT(  0x0010, IP_ACTIVE_LOW, IPT_START1   )
-	//	PORT_BIT(  0x0020, IP_ACTIVE_LOW, IPT_BUTTON4  ) // Shift -> !f900e - We handle it with 2 buttons
-		PORT_BIT(  0x0040, IP_ACTIVE_LOW, IPT_BUTTON2  ) // Brake -> !f9010
-		PORT_BIT(  0x0080, IP_ACTIVE_LOW, IPT_START2   ) // "Race Together"
+		PORT_BIT(  0x0001, IP_ACTIVE_LOW, IPT_COIN1    );
+		PORT_BIT(  0x0002, IP_ACTIVE_LOW, IPT_COIN2    );
+		PORT_BIT(  0x0004, IP_ACTIVE_LOW, IPT_SERVICE1 );
+		PORT_BITX( 0x0008, IP_ACTIVE_LOW, IPT_SERVICE, DEF_STR( "Service_Mode") ); KEYCODE_F2, IP_JOY_NONE ) // -> f0100 (called "Test")
+		PORT_BIT(  0x0010, IP_ACTIVE_LOW, IPT_START1   );
+	//	PORT_BIT(  0x0020, IP_ACTIVE_LOW, IPT_BUTTON4  );// Shift -> !f900e - We handle it with 2 buttons
+		PORT_BIT(  0x0040, IP_ACTIVE_LOW, IPT_BUTTON2  );// Brake -> !f9010
+		PORT_BIT(  0x0080, IP_ACTIVE_LOW, IPT_START2   );// "Race Together"
 	
 		PORT_START	// IN3 - ? Read at boot only - $80006.w
-		PORT_BIT(  0x0001, IP_ACTIVE_LOW, IPT_UNKNOWN )
-		PORT_BIT(  0x0002, IP_ACTIVE_LOW, IPT_UNKNOWN )
-		PORT_BIT(  0x0004, IP_ACTIVE_LOW, IPT_UNKNOWN )
-		PORT_BIT(  0x0008, IP_ACTIVE_LOW, IPT_UNKNOWN )
-		PORT_BIT(  0x0010, IP_ACTIVE_LOW, IPT_UNKNOWN )
-		PORT_BIT(  0x0020, IP_ACTIVE_LOW, IPT_UNKNOWN )
-		PORT_BIT(  0x0040, IP_ACTIVE_LOW, IPT_UNKNOWN )
-		PORT_BIT(  0x0080, IP_ACTIVE_LOW, IPT_UNKNOWN )
-		PORT_BIT(  0x0100, IP_ACTIVE_LOW, IPT_UNKNOWN )
-		PORT_BIT(  0x0200, IP_ACTIVE_LOW, IPT_UNKNOWN )
-		PORT_BIT(  0x0400, IP_ACTIVE_LOW, IPT_UNKNOWN )
-		PORT_BIT(  0x0800, IP_ACTIVE_LOW, IPT_UNKNOWN )
-		PORT_BIT(  0x1000, IP_ACTIVE_LOW, IPT_UNKNOWN )
-		PORT_BIT(  0x2000, IP_ACTIVE_LOW, IPT_UNKNOWN )
-		PORT_BIT(  0x4000, IP_ACTIVE_LOW, IPT_UNKNOWN )
-		PORT_BIT(  0x8000, IP_ACTIVE_LOW, IPT_UNKNOWN )
+		PORT_BIT(  0x0001, IP_ACTIVE_LOW, IPT_UNKNOWN );
+		PORT_BIT(  0x0002, IP_ACTIVE_LOW, IPT_UNKNOWN );
+		PORT_BIT(  0x0004, IP_ACTIVE_LOW, IPT_UNKNOWN );
+		PORT_BIT(  0x0008, IP_ACTIVE_LOW, IPT_UNKNOWN );
+		PORT_BIT(  0x0010, IP_ACTIVE_LOW, IPT_UNKNOWN );
+		PORT_BIT(  0x0020, IP_ACTIVE_LOW, IPT_UNKNOWN );
+		PORT_BIT(  0x0040, IP_ACTIVE_LOW, IPT_UNKNOWN );
+		PORT_BIT(  0x0080, IP_ACTIVE_LOW, IPT_UNKNOWN );
+		PORT_BIT(  0x0100, IP_ACTIVE_LOW, IPT_UNKNOWN );
+		PORT_BIT(  0x0200, IP_ACTIVE_LOW, IPT_UNKNOWN );
+		PORT_BIT(  0x0400, IP_ACTIVE_LOW, IPT_UNKNOWN );
+		PORT_BIT(  0x0800, IP_ACTIVE_LOW, IPT_UNKNOWN );
+		PORT_BIT(  0x1000, IP_ACTIVE_LOW, IPT_UNKNOWN );
+		PORT_BIT(  0x2000, IP_ACTIVE_LOW, IPT_UNKNOWN );
+		PORT_BIT(  0x4000, IP_ACTIVE_LOW, IPT_UNKNOWN );
+		PORT_BIT(  0x8000, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
 	/*	DSW3-2&1 (Country: JP)	Effect
 		OFF-OFF					Red-White Car
@@ -1100,141 +1100,141 @@ public class cischeat
 		ON- ON					Blue Car, "equipped with communication link"	*/
 	
 		PORT_START	// IN4 - DSW 3 (4 bits, Cabinet Linking) - $8000c.w -> !f9014
-		PORT_DIPNAME( 0x01, 0x01, "This Unit Is" )
-		PORT_DIPSETTING(    0x01, "Slave" )
-		PORT_DIPSETTING(    0x00, "Master" )
-		PORT_DIPNAME( 0x06, 0x06, "Unit ID" )			// -> !f901c
-		PORT_DIPSETTING(    0x06, "0 (Red-White Car)" )
-		PORT_DIPSETTING(    0x04, "1 (Red Car)" )
-		PORT_DIPSETTING(    0x02, "2 (Blue-White Car)" )
-		PORT_DIPSETTING(    0x00, "3 (Blue Car)" )
-		PORT_BIT(  0x08, IP_ACTIVE_LOW, IPT_UNKNOWN )	// Redundant: Invert Unit ID
-		PORT_BIT(  0x10, IP_ACTIVE_LOW, IPT_UNKNOWN )
-		PORT_BIT(  0x20, IP_ACTIVE_LOW, IPT_UNKNOWN )
-		PORT_BIT(  0x40, IP_ACTIVE_LOW, IPT_UNKNOWN )
-		PORT_BIT(  0x80, IP_ACTIVE_LOW, IPT_UNKNOWN )
+		PORT_DIPNAME( 0x01, 0x01, "This Unit Is" );
+		PORT_DIPSETTING(    0x01, "Slave" );
+		PORT_DIPSETTING(    0x00, "Master" );
+		PORT_DIPNAME( 0x06, 0x06, "Unit ID" );		// -> !f901c
+		PORT_DIPSETTING(    0x06, "0 (Red-White Car); )
+		PORT_DIPSETTING(    0x04, "1 (Red Car); )
+		PORT_DIPSETTING(    0x02, "2 (Blue-White Car); )
+		PORT_DIPSETTING(    0x00, "3 (Blue Car); )
+		PORT_BIT(  0x08, IP_ACTIVE_LOW, IPT_UNKNOWN );// Redundant: Invert Unit ID
+		PORT_BIT(  0x10, IP_ACTIVE_LOW, IPT_UNKNOWN );
+		PORT_BIT(  0x20, IP_ACTIVE_LOW, IPT_UNKNOWN );
+		PORT_BIT(  0x40, IP_ACTIVE_LOW, IPT_UNKNOWN );
+		PORT_BIT(  0x80, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
 					// 		 Accelerator   - $80010.b ->  !f9004.w
 		PORT_START	// IN5 - Driving Wheel - $80011.b ->  !f9008.w
-		PORT_ANALOG( 0xff, 0x80, IPT_AD_STICK_X | IPF_CENTER, 30, 30, 0, 0xff)
+		PORT_ANALOG( 0xff, 0x80, IPT_AD_STICK_X | IPF_CENTER, 30, 30, 0, 0xff);
 	
 		PORT_START	// IN6 - Coinage Japan & USA (it changes with Country)
-		PORT_DIPNAME( 0x0007, 0x0007, "Coin A (JP US)" )
-		PORT_DIPSETTING(      0x0001, DEF_STR( 4C_1C ) )
-		PORT_DIPSETTING(      0x0002, DEF_STR( 3C_1C ) )
-		PORT_DIPSETTING(      0x0003, DEF_STR( 2C_1C ) )
-		PORT_DIPSETTING(      0x0007, DEF_STR( 1C_1C ) )
-		PORT_DIPSETTING(      0x0006, DEF_STR( 1C_2C ) )
-		PORT_DIPSETTING(      0x0005, DEF_STR( 1C_3C ) )
-		PORT_DIPSETTING(      0x0004, DEF_STR( 1C_4C ) )
-		PORT_DIPSETTING(      0x0000, DEF_STR( Free_Play ) )
-		PORT_DIPNAME( 0x0038, 0x0038, "Coin B (JP US)" )
-		PORT_DIPSETTING(      0x0008, DEF_STR( 4C_1C ) )
-		PORT_DIPSETTING(      0x0010, DEF_STR( 3C_1C ) )
-		PORT_DIPSETTING(      0x0018, DEF_STR( 2C_1C ) )
-		PORT_DIPSETTING(      0x0038, DEF_STR( 1C_1C ) )
-		PORT_DIPSETTING(      0x0030, DEF_STR( 1C_2C ) )
-		PORT_DIPSETTING(      0x0028, DEF_STR( 1C_3C ) )
-		PORT_DIPSETTING(      0x0020, DEF_STR( 1C_4C ) )
+		PORT_DIPNAME( 0x0007, 0x0007, "Coin A (JP US); )
+		PORT_DIPSETTING(      0x0001, DEF_STR( "4C_1C") );
+		PORT_DIPSETTING(      0x0002, DEF_STR( "3C_1C") );
+		PORT_DIPSETTING(      0x0003, DEF_STR( "2C_1C") );
+		PORT_DIPSETTING(      0x0007, DEF_STR( "1C_1C") );
+		PORT_DIPSETTING(      0x0006, DEF_STR( "1C_2C") );
+		PORT_DIPSETTING(      0x0005, DEF_STR( "1C_3C") );
+		PORT_DIPSETTING(      0x0004, DEF_STR( "1C_4C") );
+		PORT_DIPSETTING(      0x0000, DEF_STR( "Free_Play") );
+		PORT_DIPNAME( 0x0038, 0x0038, "Coin B (JP US); )
+		PORT_DIPSETTING(      0x0008, DEF_STR( "4C_1C") );
+		PORT_DIPSETTING(      0x0010, DEF_STR( "3C_1C") );
+		PORT_DIPSETTING(      0x0018, DEF_STR( "2C_1C") );
+		PORT_DIPSETTING(      0x0038, DEF_STR( "1C_1C") );
+		PORT_DIPSETTING(      0x0030, DEF_STR( "1C_2C") );
+		PORT_DIPSETTING(      0x0028, DEF_STR( "1C_3C") );
+		PORT_DIPSETTING(      0x0020, DEF_STR( "1C_4C") );
 	
 		PORT_START	// IN7 - Coinage UK & France (it changes with Country)
-		PORT_DIPNAME( 0x0007, 0x0007, "Coin A (UK FR)" )
-		PORT_DIPSETTING(      0x0007, DEF_STR( 1C_1C ) )
-		PORT_DIPSETTING(      0x0000, DEF_STR( 2C_3C ) )
-		PORT_DIPSETTING(      0x0006, DEF_STR( 1C_2C ) )
-		PORT_DIPSETTING(      0x0005, DEF_STR( 1C_3C ) )
-		PORT_DIPSETTING(      0x0004, DEF_STR( 1C_4C ) )
-		PORT_DIPSETTING(      0x0003, DEF_STR( 1C_5C ) )
-		PORT_DIPSETTING(      0x0002, DEF_STR( 1C_6C ) )
-		PORT_DIPSETTING(      0x0001, DEF_STR( 1C_7C ) )
-		PORT_DIPNAME( 0x0038, 0x0038, "Coin B (UK FR)" )
-		PORT_DIPSETTING(      0x0000, DEF_STR( 5C_1C ) )
-		PORT_DIPSETTING(      0x0008, DEF_STR( 4C_1C ) )
-		PORT_DIPSETTING(      0x0010, DEF_STR( 3C_1C ) )
-		PORT_DIPSETTING(      0x0018, DEF_STR( 2C_1C ) )
-		PORT_DIPSETTING(      0x0038, DEF_STR( 1C_1C ) )
-		PORT_DIPSETTING(      0x0030, DEF_STR( 1C_2C ) )
-		PORT_DIPSETTING(      0x0028, DEF_STR( 1C_3C ) )
-		PORT_DIPSETTING(      0x0020, DEF_STR( 1C_4C ) )
-	INPUT_PORTS_END
+		PORT_DIPNAME( 0x0007, 0x0007, "Coin A (UK FR); )
+		PORT_DIPSETTING(      0x0007, DEF_STR( "1C_1C") );
+		PORT_DIPSETTING(      0x0000, DEF_STR( "2C_3C") );
+		PORT_DIPSETTING(      0x0006, DEF_STR( "1C_2C") );
+		PORT_DIPSETTING(      0x0005, DEF_STR( "1C_3C") );
+		PORT_DIPSETTING(      0x0004, DEF_STR( "1C_4C") );
+		PORT_DIPSETTING(      0x0003, DEF_STR( "1C_5C") );
+		PORT_DIPSETTING(      0x0002, DEF_STR( "1C_6C") );
+		PORT_DIPSETTING(      0x0001, DEF_STR( "1C_7C") );
+		PORT_DIPNAME( 0x0038, 0x0038, "Coin B (UK FR); )
+		PORT_DIPSETTING(      0x0000, DEF_STR( "5C_1C") );
+		PORT_DIPSETTING(      0x0008, DEF_STR( "4C_1C") );
+		PORT_DIPSETTING(      0x0010, DEF_STR( "3C_1C") );
+		PORT_DIPSETTING(      0x0018, DEF_STR( "2C_1C") );
+		PORT_DIPSETTING(      0x0038, DEF_STR( "1C_1C") );
+		PORT_DIPSETTING(      0x0030, DEF_STR( "1C_2C") );
+		PORT_DIPSETTING(      0x0028, DEF_STR( "1C_3C") );
+		PORT_DIPSETTING(      0x0020, DEF_STR( "1C_4C") );
+	INPUT_PORTS_END(); }}; 
 	
 	
 	/**************************************************************************
 									Scud Hammer
 	**************************************************************************/
 	
-	INPUT_PORTS_START( scudhamm )
+	static InputPortPtr input_ports_scudhamm = new InputPortPtr(){ public void handler() { 
 		PORT_START	// IN0 - Buttons
-		PORT_BIT_IMPULSE( 0x0001, IP_ACTIVE_LOW, IPT_COIN1, 1 )
-		PORT_BIT(  0x0002, IP_ACTIVE_LOW, IPT_UNKNOWN  ) // GAME OVER if pressed on the selection screen
-		PORT_BIT(  0x0004, IP_ACTIVE_LOW, IPT_SERVICE1 )
-		PORT_BITX( 0x0008, IP_ACTIVE_LOW, IPT_SERVICE, DEF_STR( Service_Mode ), KEYCODE_F2, IP_JOY_NONE ) 	// called "Test"
-		PORT_BIT(  0x0010, IP_ACTIVE_LOW, IPT_START1   )
-		PORT_BIT(  0x0020, IP_ACTIVE_LOW, IPT_BUTTON4  ) // Select
-		PORT_BIT(  0x0040, IP_ACTIVE_LOW, IPT_UNKNOWN  )
-		PORT_BIT(  0x0080, IP_ACTIVE_LOW, IPT_UNKNOWN  )
+		PORT_BIT_IMPULSE( 0x0001, IP_ACTIVE_LOW, IPT_COIN1, 1 );
+		PORT_BIT(  0x0002, IP_ACTIVE_LOW, IPT_UNKNOWN  );// GAME OVER if pressed on the selection screen
+		PORT_BIT(  0x0004, IP_ACTIVE_LOW, IPT_SERVICE1 );
+		PORT_BITX( 0x0008, IP_ACTIVE_LOW, IPT_SERVICE, DEF_STR( "Service_Mode") ); KEYCODE_F2, IP_JOY_NONE ) 	// called "Test"
+		PORT_BIT(  0x0010, IP_ACTIVE_LOW, IPT_START1   );
+		PORT_BIT(  0x0020, IP_ACTIVE_LOW, IPT_BUTTON4  );// Select
+		PORT_BIT(  0x0040, IP_ACTIVE_LOW, IPT_UNKNOWN  );
+		PORT_BIT(  0x0080, IP_ACTIVE_LOW, IPT_UNKNOWN  );
 	
-		PORT_BIT(  0x0100, IP_ACTIVE_HIGH, IPT_BUTTON1 ) // Gu
-		PORT_BIT(  0x0200, IP_ACTIVE_HIGH, IPT_BUTTON2 ) // Choki
-		PORT_BIT(  0x0400, IP_ACTIVE_HIGH, IPT_BUTTON3 ) // Pa
-		PORT_BIT(  0x0800, IP_ACTIVE_LOW,  IPT_UNKNOWN )
-		PORT_BIT(  0x1000, IP_ACTIVE_LOW,  IPT_UNKNOWN )
-		PORT_BIT(  0x2000, IP_ACTIVE_LOW,  IPT_UNKNOWN )
-		PORT_BIT(  0x4000, IP_ACTIVE_HIGH, IPT_TILT    )
-		PORT_BIT(  0x8000, IP_ACTIVE_LOW,  IPT_UNKNOWN )
+		PORT_BIT(  0x0100, IP_ACTIVE_HIGH, IPT_BUTTON1 );// Gu
+		PORT_BIT(  0x0200, IP_ACTIVE_HIGH, IPT_BUTTON2 );// Choki
+		PORT_BIT(  0x0400, IP_ACTIVE_HIGH, IPT_BUTTON3 );// Pa
+		PORT_BIT(  0x0800, IP_ACTIVE_LOW,  IPT_UNKNOWN );
+		PORT_BIT(  0x1000, IP_ACTIVE_LOW,  IPT_UNKNOWN );
+		PORT_BIT(  0x2000, IP_ACTIVE_LOW,  IPT_UNKNOWN );
+		PORT_BIT(  0x4000, IP_ACTIVE_HIGH, IPT_TILT    );
+		PORT_BIT(  0x8000, IP_ACTIVE_LOW,  IPT_UNKNOWN );
 	
 		PORT_START	// IN1 - A/D
-		PORT_ANALOG( 0x00ff, 0x0000, IPT_PADDLE | IPF_CENTER, 1, 0, 0x0000, 0x00ff )
+		PORT_ANALOG( 0x00ff, 0x0000, IPT_PADDLE | IPF_CENTER, 1, 0, 0x0000, 0x00ff );
 	
 		PORT_START	// IN2 - DSW
-		PORT_DIPNAME( 0x0003, 0x0003, DEF_STR( Difficulty ) )
-		PORT_DIPSETTING(      0x0000, "Easy" )
-		PORT_DIPSETTING(      0x0003, "Normal" )
-		PORT_DIPSETTING(      0x0002, "Hard" )
-		PORT_DIPSETTING(      0x0001, "Hardest" )
-		PORT_DIPNAME( 0x000c, 0x000c, "Time To Hit" )
-		PORT_DIPSETTING(      0x000c, "2 s" )
-		PORT_DIPSETTING(      0x0008, "3 s" )
-		PORT_DIPSETTING(      0x0004, "4 s" )
-		PORT_DIPSETTING(      0x0000, "5 s" )
-		PORT_DIPNAME( 0x0010, 0x0010, DEF_STR( Demo_Sounds ) )
-		PORT_DIPSETTING(      0x0000, DEF_STR( Off ) )
-		PORT_DIPSETTING(      0x0010, DEF_STR( On ) )
-		PORT_DIPNAME( 0x0020, 0x0020, DEF_STR( Lives ) )
-		PORT_DIPSETTING(      0x0020, "3" )
-		PORT_DIPSETTING(      0x0000, "5" )
-		PORT_DIPNAME( 0x0040, 0x0040, "Unknown 1-6" )
-		PORT_DIPSETTING(      0x0040, DEF_STR( Off ) )
-		PORT_DIPSETTING(      0x0000, DEF_STR( On ) )
-		PORT_DIPNAME( 0x0080, 0x0080, "Unknown 1-7" )
-		PORT_DIPSETTING(      0x0080, DEF_STR( Off ) )
-		PORT_DIPSETTING(      0x0000, DEF_STR( On ) )
+		PORT_DIPNAME( 0x0003, 0x0003, DEF_STR( "Difficulty") );
+		PORT_DIPSETTING(      0x0000, "Easy" );
+		PORT_DIPSETTING(      0x0003, "Normal" );
+		PORT_DIPSETTING(      0x0002, "Hard" );
+		PORT_DIPSETTING(      0x0001, "Hardest" );
+		PORT_DIPNAME( 0x000c, 0x000c, "Time To Hit" );
+		PORT_DIPSETTING(      0x000c, "2 s" );
+		PORT_DIPSETTING(      0x0008, "3 s" );
+		PORT_DIPSETTING(      0x0004, "4 s" );
+		PORT_DIPSETTING(      0x0000, "5 s" );
+		PORT_DIPNAME( 0x0010, 0x0010, DEF_STR( "Demo_Sounds") );
+		PORT_DIPSETTING(      0x0000, DEF_STR( "Off") );
+		PORT_DIPSETTING(      0x0010, DEF_STR( "On") );
+		PORT_DIPNAME( 0x0020, 0x0020, DEF_STR( "Lives") );
+		PORT_DIPSETTING(      0x0020, "3" );
+		PORT_DIPSETTING(      0x0000, "5" );
+		PORT_DIPNAME( 0x0040, 0x0040, "Unknown 1-6" );
+		PORT_DIPSETTING(      0x0040, DEF_STR( "Off") );
+		PORT_DIPSETTING(      0x0000, DEF_STR( "On") );
+		PORT_DIPNAME( 0x0080, 0x0080, "Unknown 1-7" );
+		PORT_DIPSETTING(      0x0080, DEF_STR( "Off") );
+		PORT_DIPSETTING(      0x0000, DEF_STR( "On") );
 	
-		PORT_DIPNAME( 0x0700, 0x0700, DEF_STR( Coinage ) )
-		PORT_DIPSETTING(      0x0100, DEF_STR( 4C_1C ) )
-		PORT_DIPSETTING(      0x0200, DEF_STR( 3C_1C ) )
-		PORT_DIPSETTING(      0x0300, DEF_STR( 2C_1C ) )
-		PORT_DIPSETTING(      0x0700, DEF_STR( 1C_1C ) )
-		PORT_DIPSETTING(      0x0600, DEF_STR( 1C_2C ) )
-		PORT_DIPSETTING(      0x0500, DEF_STR( 1C_3C ) )
-		PORT_DIPSETTING(      0x0400, DEF_STR( 1C_4C ) )
-		PORT_DIPSETTING(      0x0000, DEF_STR( Free_Play ) )
-		PORT_DIPNAME( 0x0800, 0x0800, "Unknown 2-3" )
-		PORT_DIPSETTING(      0x0800, DEF_STR( Off ) )
-		PORT_DIPSETTING(      0x0000, DEF_STR( On ) )
-		PORT_DIPNAME( 0x1000, 0x1000, "Unknown 2-4" )
-		PORT_DIPSETTING(      0x1000, DEF_STR( Off ) )
-		PORT_DIPSETTING(      0x0000, DEF_STR( On ) )
-		PORT_DIPNAME( 0x2000, 0x2000, "Unknown 2-5" )
-		PORT_DIPSETTING(      0x2000, DEF_STR( Off ) )
-		PORT_DIPSETTING(      0x0000, DEF_STR( On ) )
-		PORT_DIPNAME( 0x4000, 0x4000, "Unknown 2-6" )
-		PORT_DIPSETTING(      0x4000, DEF_STR( Off ) )
-		PORT_DIPSETTING(      0x0000, DEF_STR( On ) )
-		PORT_DIPNAME( 0x8000, 0x8000, "Unknown 2-7" )
-		PORT_DIPSETTING(      0x8000, DEF_STR( Off ) )
-		PORT_DIPSETTING(      0x0000, DEF_STR( On ) )
-	INPUT_PORTS_END
+		PORT_DIPNAME( 0x0700, 0x0700, DEF_STR( "Coinage") );
+		PORT_DIPSETTING(      0x0100, DEF_STR( "4C_1C") );
+		PORT_DIPSETTING(      0x0200, DEF_STR( "3C_1C") );
+		PORT_DIPSETTING(      0x0300, DEF_STR( "2C_1C") );
+		PORT_DIPSETTING(      0x0700, DEF_STR( "1C_1C") );
+		PORT_DIPSETTING(      0x0600, DEF_STR( "1C_2C") );
+		PORT_DIPSETTING(      0x0500, DEF_STR( "1C_3C") );
+		PORT_DIPSETTING(      0x0400, DEF_STR( "1C_4C") );
+		PORT_DIPSETTING(      0x0000, DEF_STR( "Free_Play") );
+		PORT_DIPNAME( 0x0800, 0x0800, "Unknown 2-3" );
+		PORT_DIPSETTING(      0x0800, DEF_STR( "Off") );
+		PORT_DIPSETTING(      0x0000, DEF_STR( "On") );
+		PORT_DIPNAME( 0x1000, 0x1000, "Unknown 2-4" );
+		PORT_DIPSETTING(      0x1000, DEF_STR( "Off") );
+		PORT_DIPSETTING(      0x0000, DEF_STR( "On") );
+		PORT_DIPNAME( 0x2000, 0x2000, "Unknown 2-5" );
+		PORT_DIPSETTING(      0x2000, DEF_STR( "Off") );
+		PORT_DIPSETTING(      0x0000, DEF_STR( "On") );
+		PORT_DIPNAME( 0x4000, 0x4000, "Unknown 2-6" );
+		PORT_DIPSETTING(      0x4000, DEF_STR( "Off") );
+		PORT_DIPSETTING(      0x0000, DEF_STR( "On") );
+		PORT_DIPNAME( 0x8000, 0x8000, "Unknown 2-7" );
+		PORT_DIPSETTING(      0x8000, DEF_STR( "Off") );
+		PORT_DIPSETTING(      0x0000, DEF_STR( "On") );
+	INPUT_PORTS_END(); }}; 
 	
 	
 	

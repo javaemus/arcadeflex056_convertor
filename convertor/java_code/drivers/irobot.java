@@ -156,91 +156,91 @@ public class irobot
 	
 	
 	
-	INPUT_PORTS_START( irobot )
+	static InputPortPtr input_ports_irobot = new InputPortPtr(){ public void handler() { 
 		PORT_START	/* IN0 */
-	    PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_UNKNOWN )
-	    PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_UNKNOWN )
-	    PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_UNKNOWN )
-	    PORT_BIT( 0x08, IP_ACTIVE_LOW, IPT_UNKNOWN )
-	    PORT_SERVICE( 0x10, IP_ACTIVE_LOW )
-	    PORT_BIT( 0x20, IP_ACTIVE_LOW, IPT_COIN3 )
-	    PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_COIN1 )
-	    PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_COIN2 )
+	    PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_UNKNOWN );
+	    PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_UNKNOWN );
+	    PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_UNKNOWN );
+	    PORT_BIT( 0x08, IP_ACTIVE_LOW, IPT_UNKNOWN );
+	    PORT_SERVICE( 0x10, IP_ACTIVE_LOW );
+	    PORT_BIT( 0x20, IP_ACTIVE_LOW, IPT_COIN3 );
+	    PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_COIN1 );
+	    PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_COIN2 );
 	
 		PORT_START	/* IN1 */
-	    PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_UNKNOWN )
-	    PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_UNKNOWN )
-	    PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_UNKNOWN )
-	    PORT_BIT( 0x08, IP_ACTIVE_LOW, IPT_UNKNOWN )
-	    PORT_BIT( 0x10, IP_ACTIVE_LOW, IPT_BUTTON1 )
-	    PORT_BIT( 0x20, IP_ACTIVE_LOW, IPT_BUTTON2 )
-	    PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_START2 )
-	    PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_START1 )
+	    PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_UNKNOWN );
+	    PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_UNKNOWN );
+	    PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_UNKNOWN );
+	    PORT_BIT( 0x08, IP_ACTIVE_LOW, IPT_UNKNOWN );
+	    PORT_BIT( 0x10, IP_ACTIVE_LOW, IPT_BUTTON1 );
+	    PORT_BIT( 0x20, IP_ACTIVE_LOW, IPT_BUTTON2 );
+	    PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_START2 );
+	    PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_START1 );
 	
 		PORT_START	/* IN2 */
-	    PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_UNKNOWN )
-	    PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_UNKNOWN )
-	    PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_UNKNOWN )
-	    PORT_BIT( 0x08, IP_ACTIVE_LOW, IPT_UNKNOWN )
-	    PORT_BIT( 0x10, IP_ACTIVE_LOW, IPT_UNKNOWN )
-	    PORT_BIT( 0x20, IP_ACTIVE_HIGH, IPT_UNKNOWN ) /* MB DONE */
-	    PORT_BIT( 0x40, IP_ACTIVE_HIGH, IPT_UNKNOWN ) /* EXT DONE */
-	    PORT_BIT( 0x80, IP_ACTIVE_HIGH, IPT_VBLANK )
+	    PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_UNKNOWN );
+	    PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_UNKNOWN );
+	    PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_UNKNOWN );
+	    PORT_BIT( 0x08, IP_ACTIVE_LOW, IPT_UNKNOWN );
+	    PORT_BIT( 0x10, IP_ACTIVE_LOW, IPT_UNKNOWN );
+	    PORT_BIT( 0x20, IP_ACTIVE_HIGH, IPT_UNKNOWN );/* MB DONE */
+	    PORT_BIT( 0x40, IP_ACTIVE_HIGH, IPT_UNKNOWN );/* EXT DONE */
+	    PORT_BIT( 0x80, IP_ACTIVE_HIGH, IPT_VBLANK );
 	
 		PORT_START /* DSW1 */
-		PORT_DIPNAME(    0x03, 0x00, "Coins Per Credit" )
-		PORT_DIPSETTING( 0x00, "1 Coin 1 Credit" )
-		PORT_DIPSETTING( 0x01, "2 Coins 1 Credit" )
-		PORT_DIPSETTING( 0x02, "3 Coins 1 Credit" )
-		PORT_DIPSETTING( 0x03, "4 Coins 1 Credit" )
-		PORT_DIPNAME(    0x0c, 0x00, "Right Coin" )
-		PORT_DIPSETTING( 0x00, "1 Coin for 1 Coin Unit" )
-		PORT_DIPSETTING( 0x04, "1 Coin for 4 Coin Units" )
-		PORT_DIPSETTING( 0x08, "1 Coin for 5 Coin Units" )
-		PORT_DIPSETTING( 0x0c, "1 Coin for 6 Coin Units" )
-		PORT_DIPNAME(    0x10, 0x00, "Left Coin" )
-		PORT_DIPSETTING( 0x00, "1 Coin for 1 Coin Unit" )
-		PORT_DIPSETTING( 0x10, "1 Coin for 2 Coin Units" )
-		PORT_DIPNAME(    0xe0, 0x00, "Bonus Adder" )
-		PORT_DIPSETTING( 0x00, "None" )
-		PORT_DIPSETTING( 0x20, "1 Credit for 2 Coin Units" )
-		PORT_DIPSETTING( 0xa0, "1 Credit for 3 Coin Units" )
-		PORT_DIPSETTING( 0x40, "1 Credit for 4 Coin Units" )
-		PORT_DIPSETTING( 0x80, "1 Credit for 5 Coin Units" )
-		PORT_DIPSETTING( 0x60, "2 Credits for 4 Coin Units" )
-		PORT_DIPSETTING( 0xe0, DEF_STR( Free_Play ) )
+		PORT_DIPNAME(    0x03, 0x00, "Coins Per Credit" );
+		PORT_DIPSETTING( 0x00, "1 Coin 1 Credit" );
+		PORT_DIPSETTING( 0x01, "2 Coins 1 Credit" );
+		PORT_DIPSETTING( 0x02, "3 Coins 1 Credit" );
+		PORT_DIPSETTING( 0x03, "4 Coins 1 Credit" );
+		PORT_DIPNAME(    0x0c, 0x00, "Right Coin" );
+		PORT_DIPSETTING( 0x00, "1 Coin for 1 Coin Unit" );
+		PORT_DIPSETTING( 0x04, "1 Coin for 4 Coin Units" );
+		PORT_DIPSETTING( 0x08, "1 Coin for 5 Coin Units" );
+		PORT_DIPSETTING( 0x0c, "1 Coin for 6 Coin Units" );
+		PORT_DIPNAME(    0x10, 0x00, "Left Coin" );
+		PORT_DIPSETTING( 0x00, "1 Coin for 1 Coin Unit" );
+		PORT_DIPSETTING( 0x10, "1 Coin for 2 Coin Units" );
+		PORT_DIPNAME(    0xe0, 0x00, "Bonus Adder" );
+		PORT_DIPSETTING( 0x00, "None" );
+		PORT_DIPSETTING( 0x20, "1 Credit for 2 Coin Units" );
+		PORT_DIPSETTING( 0xa0, "1 Credit for 3 Coin Units" );
+		PORT_DIPSETTING( 0x40, "1 Credit for 4 Coin Units" );
+		PORT_DIPSETTING( 0x80, "1 Credit for 5 Coin Units" );
+		PORT_DIPSETTING( 0x60, "2 Credits for 4 Coin Units" );
+		PORT_DIPSETTING( 0xe0, DEF_STR( "Free_Play") );
 	
 		PORT_START /* DSW2 */
-		PORT_DIPNAME(    0x01, 0x01, "Language" )
-		PORT_DIPSETTING( 0x01, "English" )
-		PORT_DIPSETTING( 0x00, "German" )
-		PORT_DIPNAME(    0x02, 0x02, "Min Game Time" )
-		PORT_DIPSETTING( 0x00, "90 Sec" )
-		PORT_DIPSETTING( 0x02, "3 Lives" )
-		PORT_DIPNAME(    0x0c, 0x0c, DEF_STR( Bonus_Life ) )
-		PORT_DIPSETTING( 0x08, "None" )
-		PORT_DIPSETTING( 0x0c, "20000" )
-		PORT_DIPSETTING( 0x00, "30000" )
-		PORT_DIPSETTING( 0x04, "50000" )
-		PORT_DIPNAME(    0x30, 0x30, DEF_STR( Lives ) )
-		PORT_DIPSETTING( 0x20, "2" )
-		PORT_DIPSETTING( 0x30, "3" )
-		PORT_DIPSETTING( 0x00, "4" )
-		PORT_DIPSETTING( 0x10, "5" )
-		PORT_DIPNAME(    0x40, 0x40, DEF_STR( Difficulty ) )
-		PORT_DIPSETTING( 0x00, "Easy" )
-		PORT_DIPSETTING( 0x40, "Medium" )
-		PORT_DIPNAME(    0x80, 0x80, "Demo Mode" )
-		PORT_DIPSETTING( 0x80, DEF_STR( Off ) )
-		PORT_DIPSETTING( 0x00, DEF_STR( On ) )
+		PORT_DIPNAME(    0x01, 0x01, "Language" );
+		PORT_DIPSETTING( 0x01, "English" );
+		PORT_DIPSETTING( 0x00, "German" );
+		PORT_DIPNAME(    0x02, 0x02, "Min Game Time" );
+		PORT_DIPSETTING( 0x00, "90 Sec" );
+		PORT_DIPSETTING( 0x02, "3 Lives" );
+		PORT_DIPNAME(    0x0c, 0x0c, DEF_STR( "Bonus_Life") );
+		PORT_DIPSETTING( 0x08, "None" );
+		PORT_DIPSETTING( 0x0c, "20000" );
+		PORT_DIPSETTING( 0x00, "30000" );
+		PORT_DIPSETTING( 0x04, "50000" );
+		PORT_DIPNAME(    0x30, 0x30, DEF_STR( "Lives") );
+		PORT_DIPSETTING( 0x20, "2" );
+		PORT_DIPSETTING( 0x30, "3" );
+		PORT_DIPSETTING( 0x00, "4" );
+		PORT_DIPSETTING( 0x10, "5" );
+		PORT_DIPNAME(    0x40, 0x40, DEF_STR( "Difficulty") );
+		PORT_DIPSETTING( 0x00, "Easy" );
+		PORT_DIPSETTING( 0x40, "Medium" );
+		PORT_DIPNAME(    0x80, 0x80, "Demo Mode" );
+		PORT_DIPSETTING( 0x80, DEF_STR( "Off") );
+		PORT_DIPSETTING( 0x00, DEF_STR( "On") );
 	
 		PORT_START	/* IN4 */
-		PORT_ANALOG( 0xff, 0x80, IPT_AD_STICK_Y | IPF_CENTER, 70, 50, 95, 159 )
+		PORT_ANALOG( 0xff, 0x80, IPT_AD_STICK_Y | IPF_CENTER, 70, 50, 95, 159 );
 	
 		PORT_START	/* IN5 */
-		PORT_ANALOG( 0xff, 0x80, IPT_AD_STICK_X | IPF_REVERSE | IPF_CENTER, 50, 50, 95, 159 )
+		PORT_ANALOG( 0xff, 0x80, IPT_AD_STICK_X | IPF_REVERSE | IPF_CENTER, 50, 50, 95, 159 );
 	
-	INPUT_PORTS_END
+	INPUT_PORTS_END(); }}; 
 	
 	
 	static GfxLayout charlayout = new GfxLayout

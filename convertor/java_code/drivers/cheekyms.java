@@ -63,39 +63,39 @@ public class cheekyms
 	}
 	
 	
-	INPUT_PORTS_START( cheekyms )
+	static InputPortPtr input_ports_cheekyms = new InputPortPtr(){ public void handler() { 
 		PORT_START      /* IN0 */
-		PORT_DIPNAME( 0x03, 0x01, DEF_STR( Lives ) )
-		PORT_DIPSETTING(    0x00, "2" )
-		PORT_DIPSETTING(    0x01, "3" )
-		PORT_DIPSETTING(    0x02, "4" )
-		PORT_DIPSETTING(    0x03, "5" )
-		PORT_DIPNAME( 0x0c, 0x04, DEF_STR( Coinage ) )
-		PORT_DIPSETTING(    0x08, DEF_STR( 2C_1C ) )
-		PORT_DIPSETTING(    0x04, DEF_STR( 1C_1C ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( 1C_2C ) )
-	//PORT_DIPSETTING(    0x0c, DEF_STR( 1C_1C ) )
-		PORT_DIPNAME( 0x10, 0x10, DEF_STR( Cabinet ) )
-		PORT_DIPSETTING(    0x10, DEF_STR( Upright ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( Cocktail ) )
-		PORT_DIPNAME( 0x20, 0x20, DEF_STR( Demo_Sounds ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( Off ) )
-		PORT_DIPSETTING(    0x20, DEF_STR( On ) )
-		PORT_DIPNAME( 0xc0, 0x40, DEF_STR( Bonus_Life ) )
-		PORT_DIPSETTING(    0x40, "3000" )
-		PORT_DIPSETTING(    0x80, "4500" )
-		PORT_DIPSETTING(    0xc0, "6000" )
-		PORT_DIPSETTING(    0x00, "None" )
+		PORT_DIPNAME( 0x03, 0x01, DEF_STR( "Lives") );
+		PORT_DIPSETTING(    0x00, "2" );
+		PORT_DIPSETTING(    0x01, "3" );
+		PORT_DIPSETTING(    0x02, "4" );
+		PORT_DIPSETTING(    0x03, "5" );
+		PORT_DIPNAME( 0x0c, 0x04, DEF_STR( "Coinage") );
+		PORT_DIPSETTING(    0x08, DEF_STR( "2C_1C") );
+		PORT_DIPSETTING(    0x04, DEF_STR( "1C_1C") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "1C_2C") );
+	//PORT_DIPSETTING(    0x0c, DEF_STR( "1C_1C") );
+		PORT_DIPNAME( 0x10, 0x10, DEF_STR( "Cabinet") );
+		PORT_DIPSETTING(    0x10, DEF_STR( "Upright") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "Cocktail") );
+		PORT_DIPNAME( 0x20, 0x20, DEF_STR( "Demo_Sounds") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "Off") );
+		PORT_DIPSETTING(    0x20, DEF_STR( "On") );
+		PORT_DIPNAME( 0xc0, 0x40, DEF_STR( "Bonus_Life") );
+		PORT_DIPSETTING(    0x40, "3000" );
+		PORT_DIPSETTING(    0x80, "4500" );
+		PORT_DIPSETTING(    0xc0, "6000" );
+		PORT_DIPSETTING(    0x00, "None" );
 	
 		PORT_START      /* IN1 */
-		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_START1 )
-		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_START2 )
-		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_COCKTAIL )
-		PORT_BIT( 0x08, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_COCKTAIL )
-		PORT_BIT( 0x10, IP_ACTIVE_LOW, IPT_BUTTON1 | IPF_COCKTAIL )
-		PORT_BIT( 0x20, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT )
-		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT )
-		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_BUTTON1 )
+		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_START1 );
+		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_START2 );
+		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_COCKTAIL );
+		PORT_BIT( 0x08, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_COCKTAIL );
+		PORT_BIT( 0x10, IP_ACTIVE_LOW, IPT_BUTTON1 | IPF_COCKTAIL );
+		PORT_BIT( 0x20, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT );
+		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT );
+		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_BUTTON1 );
 	
 		PORT_START	/* FAKE */
 		/* The coin slots are not memory mapped. Coin  causes a NMI, */
@@ -103,8 +103,8 @@ public class cheekyms
 		/* handler to be notified of coin insertions. We use IMPULSE to */
 		/* trigger exactly one interrupt, without having to check when the */
 		/* user releases the key. */
-		PORT_BIT_IMPULSE( 0x01, IP_ACTIVE_HIGH, IPT_COIN1, 1 )
-	INPUT_PORTS_END
+		PORT_BIT_IMPULSE( 0x01, IP_ACTIVE_HIGH, IPT_COIN1, 1 );
+	INPUT_PORTS_END(); }}; 
 	
 	
 	

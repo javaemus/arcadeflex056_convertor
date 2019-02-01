@@ -230,87 +230,87 @@ public class spiders
 	
 	
 	
-	INPUT_PORTS_START( spiders )
+	static InputPortPtr input_ports_spiders = new InputPortPtr(){ public void handler() { 
 	    PORT_START      /* IN0 */
-	    PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_COIN1 )
-		PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_SERVICE1 )	/* PIA0 PA1 */
-		PORT_BITX(0x04, IP_ACTIVE_HIGH, IPT_SERVICE, DEF_STR( Service_Mode ), KEYCODE_F2, IP_JOY_NONE )	/* PIA0 PA2 */
-	    PORT_BIT( 0x08, IP_ACTIVE_HIGH, IPT_BUTTON1 )
-	    PORT_BIT( 0x20, IP_ACTIVE_HIGH, IPT_START1 )
-	    PORT_BIT( 0x40, IP_ACTIVE_HIGH, IPT_START2 )
-	    PORT_BIT( 0x90, IP_ACTIVE_HIGH, IPT_UNUSED )
+	    PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_COIN1 );
+		PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_SERVICE1 );/* PIA0 PA1 */
+		PORT_BITX(0x04, IP_ACTIVE_HIGH, IPT_SERVICE, DEF_STR( "Service_Mode") ); KEYCODE_F2, IP_JOY_NONE )	/* PIA0 PA2 */
+	    PORT_BIT( 0x08, IP_ACTIVE_HIGH, IPT_BUTTON1 );
+	    PORT_BIT( 0x20, IP_ACTIVE_HIGH, IPT_START1 );
+	    PORT_BIT( 0x40, IP_ACTIVE_HIGH, IPT_START2 );
+	    PORT_BIT( 0x90, IP_ACTIVE_HIGH, IPT_UNUSED );
 	
 	    PORT_START      /* IN1 */
-	    PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_JOYSTICK_LEFT | IPF_2WAY )
-	    PORT_BIT( 0x08, IP_ACTIVE_HIGH, IPT_JOYSTICK_RIGHT | IPF_2WAY )
-	    PORT_BIT( 0xF3, IP_ACTIVE_HIGH, IPT_UNUSED )
+	    PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_JOYSTICK_LEFT | IPF_2WAY );
+	    PORT_BIT( 0x08, IP_ACTIVE_HIGH, IPT_JOYSTICK_RIGHT | IPF_2WAY );
+	    PORT_BIT( 0xF3, IP_ACTIVE_HIGH, IPT_UNUSED );
 	
 	    PORT_START  /* DSW1 */
-	    PORT_DIPNAME( 0x07, 0x07, DEF_STR( Coinage ) )
-	    PORT_DIPSETTING(    0x01, DEF_STR( 2C_1C ) )
-	    PORT_DIPSETTING(    0x07, DEF_STR( 1C_1C ) )
-	    PORT_DIPSETTING(    0x06, DEF_STR( 4C_5C ) )
-	    PORT_DIPSETTING(    0x04, DEF_STR( 1C_2C ) )
-	    PORT_DIPSETTING(    0x02, DEF_STR( 1C_3C ) )
-	    PORT_DIPSETTING(    0x00, DEF_STR( Free_Play ) )
-	    PORT_BIT(0xf8, IP_ACTIVE_LOW,IPT_UNUSED)
+	    PORT_DIPNAME( 0x07, 0x07, DEF_STR( "Coinage") );
+	    PORT_DIPSETTING(    0x01, DEF_STR( "2C_1C") );
+	    PORT_DIPSETTING(    0x07, DEF_STR( "1C_1C") );
+	    PORT_DIPSETTING(    0x06, DEF_STR( "4C_5C") );
+	    PORT_DIPSETTING(    0x04, DEF_STR( "1C_2C") );
+	    PORT_DIPSETTING(    0x02, DEF_STR( "1C_3C") );
+	    PORT_DIPSETTING(    0x00, DEF_STR( "Free_Play") );
+	    PORT_BIT(0xf8, IP_ACTIVE_LOW,IPT_UNUSED);
 	
 	    PORT_START  /* DSW2 */
-	    PORT_DIPNAME( 0x03, 0x03, "Play mode" )
-	    PORT_DIPSETTING(    0x00, "A A'" )
-	    PORT_DIPSETTING(    0x01, "A B'" )
-	    PORT_DIPSETTING(    0x02, "B A'" )
-	    PORT_DIPSETTING(    0x03, "B B'" )
-	    PORT_DIPNAME( 0x0c, 0x0c, "Spiders to complete belt" )
-	    PORT_DIPSETTING(    0x00, "14" )
-	    PORT_DIPSETTING(    0x04, "20" )
-	    PORT_DIPSETTING(    0x08, "26" )
-	    PORT_DIPSETTING(    0x0c, "16" )
-	    PORT_DIPNAME( 0x10, 0x10, "Spare Guns" )
-	    PORT_DIPSETTING(    0x00, "4" )
-	    PORT_DIPSETTING(    0x10, "3" )
-	    PORT_DIPNAME( 0x60, 0x60, "Score for bonus gun" )
-	    PORT_DIPSETTING(    0x00, "NONE" )
-	    PORT_DIPSETTING(    0x20, "20K" )
-	    PORT_DIPSETTING(    0x40, "25K" )
-	    PORT_DIPSETTING(    0x60, "15K" )
-	    PORT_DIPNAME( 0x80, 0x00, "Giant Spiders" )
-	    PORT_DIPSETTING(    0x00, "First screen" )
-	    PORT_DIPSETTING(    0x80, "Every screen" )
+	    PORT_DIPNAME( 0x03, 0x03, "Play mode" );
+	    PORT_DIPSETTING(    0x00, "A A'" );
+	    PORT_DIPSETTING(    0x01, "A B'" );
+	    PORT_DIPSETTING(    0x02, "B A'" );
+	    PORT_DIPSETTING(    0x03, "B B'" );
+	    PORT_DIPNAME( 0x0c, 0x0c, "Spiders to complete belt" );
+	    PORT_DIPSETTING(    0x00, "14" );
+	    PORT_DIPSETTING(    0x04, "20" );
+	    PORT_DIPSETTING(    0x08, "26" );
+	    PORT_DIPSETTING(    0x0c, "16" );
+	    PORT_DIPNAME( 0x10, 0x10, "Spare Guns" );
+	    PORT_DIPSETTING(    0x00, "4" );
+	    PORT_DIPSETTING(    0x10, "3" );
+	    PORT_DIPNAME( 0x60, 0x60, "Score for bonus gun" );
+	    PORT_DIPSETTING(    0x00, "NONE" );
+	    PORT_DIPSETTING(    0x20, "20K" );
+	    PORT_DIPSETTING(    0x40, "25K" );
+	    PORT_DIPSETTING(    0x60, "15K" );
+	    PORT_DIPNAME( 0x80, 0x00, "Giant Spiders" );
+	    PORT_DIPSETTING(    0x00, "First screen" );
+	    PORT_DIPSETTING(    0x80, "Every screen" );
 	
 	    PORT_START  /* DSW3 */
-	    PORT_DIPNAME( 0x01, 0x00, DEF_STR( Flip_Screen ) )
-	    PORT_DIPSETTING(    0x00, DEF_STR( Off ) )
-	    PORT_DIPSETTING(    0x01, DEF_STR( On ) )
-	    PORT_DIPNAME( 0x02, 0x02, DEF_STR( Cabinet ) )
-	    PORT_DIPSETTING(    0x02, DEF_STR( Upright ) )
-	    PORT_DIPSETTING(    0x00, DEF_STR( Cocktail ) )
-	    PORT_DIPNAME( 0x1c, 0x00, "Vertical Adjust" )
-	    PORT_DIPSETTING(    0x00, "0" )
-	    PORT_DIPSETTING(    0x04, "1" )
-	    PORT_DIPSETTING(    0x08, "2" )
-	    PORT_DIPSETTING(    0x0c, "3" )
-	    PORT_DIPSETTING(    0x10, "4" )
-	    PORT_DIPSETTING(    0x14, "5" )
-	    PORT_DIPSETTING(    0x18, "6" )
-	    PORT_DIPSETTING(    0x1c, "7" )
-	    PORT_DIPNAME( 0xe0, 0x00, "Horizontal Adjust" )
-	    PORT_DIPSETTING(    0x00, "0" )
-	    PORT_DIPSETTING(    0x20, "1" )
-	    PORT_DIPSETTING(    0x40, "2" )
-	    PORT_DIPSETTING(    0x60, "3" )
-	    PORT_DIPSETTING(    0x80, "4" )
-	    PORT_DIPSETTING(    0xa0, "5" )
-	    PORT_DIPSETTING(    0xc0, "6" )
-	    PORT_DIPSETTING(    0xe0, "7" )
+	    PORT_DIPNAME( 0x01, 0x00, DEF_STR( "Flip_Screen") );
+	    PORT_DIPSETTING(    0x00, DEF_STR( "Off") );
+	    PORT_DIPSETTING(    0x01, DEF_STR( "On") );
+	    PORT_DIPNAME( 0x02, 0x02, DEF_STR( "Cabinet") );
+	    PORT_DIPSETTING(    0x02, DEF_STR( "Upright") );
+	    PORT_DIPSETTING(    0x00, DEF_STR( "Cocktail") );
+	    PORT_DIPNAME( 0x1c, 0x00, "Vertical Adjust" );
+	    PORT_DIPSETTING(    0x00, "0" );
+	    PORT_DIPSETTING(    0x04, "1" );
+	    PORT_DIPSETTING(    0x08, "2" );
+	    PORT_DIPSETTING(    0x0c, "3" );
+	    PORT_DIPSETTING(    0x10, "4" );
+	    PORT_DIPSETTING(    0x14, "5" );
+	    PORT_DIPSETTING(    0x18, "6" );
+	    PORT_DIPSETTING(    0x1c, "7" );
+	    PORT_DIPNAME( 0xe0, 0x00, "Horizontal Adjust" );
+	    PORT_DIPSETTING(    0x00, "0" );
+	    PORT_DIPSETTING(    0x20, "1" );
+	    PORT_DIPSETTING(    0x40, "2" );
+	    PORT_DIPSETTING(    0x60, "3" );
+	    PORT_DIPSETTING(    0x80, "4" );
+	    PORT_DIPSETTING(    0xa0, "5" );
+	    PORT_DIPSETTING(    0xc0, "6" );
+	    PORT_DIPSETTING(    0xe0, "7" );
 	
 	    PORT_START      /* Connected to PIA1 CA1 input */
-	    PORT_BIT( 0xFF, IP_ACTIVE_HIGH, IPT_VBLANK )
+	    PORT_BIT( 0xFF, IP_ACTIVE_HIGH, IPT_VBLANK );
 	
 	    PORT_START      /* Connected to PIA0 CB1 input */
-	    PORT_BITX(0xff, 0xff, IP_ACTIVE_LOW, "PS1 (Crosshatch)", KEYCODE_F2, IP_JOY_NONE )
+	    PORT_BITX(0xff, 0xff, IP_ACTIVE_LOW, "PS1 (Crosshatch);, KEYCODE_F2, IP_JOY_NONE )
 	
-	INPUT_PORTS_END
+	INPUT_PORTS_END(); }}; 
 	
 	
 	

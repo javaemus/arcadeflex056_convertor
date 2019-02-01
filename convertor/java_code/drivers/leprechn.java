@@ -178,83 +178,83 @@ public class leprechn
 		new Memory_WriteAddress(MEMPORT_MARKER, 0)
 	};
 	
-	INPUT_PORTS_START( leprechn )
+	static InputPortPtr input_ports_leprechn = new InputPortPtr(){ public void handler() { 
 	    // All of these ports are read indirectly through 2800/2801
 	    PORT_START      /* Input Port 0 */
-	    PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_TILT ) // This is called "Slam" in the game
-	    PORT_BITX(0x08, IP_ACTIVE_LOW, IPT_SERVICE, DEF_STR( Service_Mode ), KEYCODE_F2, IP_JOY_NONE )
-	    PORT_BITX(0x10, IP_ACTIVE_LOW, 0, "Advance", KEYCODE_F1, IP_JOY_NONE )
-	    PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_COIN2 )
-	    PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_COIN1 )
-	    PORT_BIT( 0x23, IP_ACTIVE_LOW, IPT_UNUSED )
+	    PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_TILT );// This is called "Slam" in the game
+	    PORT_BITX(0x08, IP_ACTIVE_LOW, IPT_SERVICE, DEF_STR( "Service_Mode") ); KEYCODE_F2, IP_JOY_NONE )
+	    PORT_BITX(0x10, IP_ACTIVE_LOW, 0, "Advance", KEYCODE_F1, IP_JOY_NONE );
+	    PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_COIN2 );
+	    PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_COIN1 );
+	    PORT_BIT( 0x23, IP_ACTIVE_LOW, IPT_UNUSED );
 	
 	    PORT_START      /* Input Port 1 */
-	    PORT_BIT( 0x0f, IP_ACTIVE_LOW, IPT_UNUSED )
-	    PORT_BIT( 0x10, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_8WAY | IPF_COCKTAIL )
-	    PORT_BIT( 0x20, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN  | IPF_8WAY | IPF_COCKTAIL )
-	    PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_8WAY | IPF_COCKTAIL )
-	    PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_JOYSTICK_UP    | IPF_8WAY | IPF_COCKTAIL )
+	    PORT_BIT( 0x0f, IP_ACTIVE_LOW, IPT_UNUSED );
+	    PORT_BIT( 0x10, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_8WAY | IPF_COCKTAIL );
+	    PORT_BIT( 0x20, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN  | IPF_8WAY | IPF_COCKTAIL );
+	    PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_8WAY | IPF_COCKTAIL );
+	    PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_JOYSTICK_UP    | IPF_8WAY | IPF_COCKTAIL );
 	
 	    PORT_START      /* Input Port 2 */
-	    PORT_BIT( 0x5f, IP_ACTIVE_LOW, IPT_UNUSED )
-	    PORT_BIT( 0x20, IP_ACTIVE_LOW, IPT_START2 )
-	    PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_START1 )
+	    PORT_BIT( 0x5f, IP_ACTIVE_LOW, IPT_UNUSED );
+	    PORT_BIT( 0x20, IP_ACTIVE_LOW, IPT_START2 );
+	    PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_START1 );
 	
 	    PORT_START      /* Input Port 3 */
-	    PORT_BIT( 0x0f, IP_ACTIVE_LOW, IPT_UNUSED )
-	    PORT_BIT( 0x10, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_8WAY )
-	    PORT_BIT( 0x20, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN  | IPF_8WAY )
-	    PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_8WAY )
-	    PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_JOYSTICK_UP    | IPF_8WAY )
+	    PORT_BIT( 0x0f, IP_ACTIVE_LOW, IPT_UNUSED );
+	    PORT_BIT( 0x10, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_8WAY );
+	    PORT_BIT( 0x20, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN  | IPF_8WAY );
+	    PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_8WAY );
+	    PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_JOYSTICK_UP    | IPF_8WAY );
 	
 	    PORT_START      /* DSW #1 */
-	    PORT_DIPNAME( 0x09, 0x09, DEF_STR( Coin_B ) )
-	    PORT_DIPSETTING(    0x09, DEF_STR( 1C_1C ) )
-	    PORT_DIPSETTING(    0x01, DEF_STR( 1C_5C ) )
-	    PORT_DIPSETTING(    0x08, DEF_STR( 1C_6C ) )
-	    PORT_DIPSETTING(    0x00, DEF_STR( 1C_7C ) )
-	    PORT_DIPNAME( 0x22, 0x22, "Max Credits" )
-	    PORT_DIPSETTING(    0x22, "10" )
-	    PORT_DIPSETTING(    0x20, "20" )
-	    PORT_DIPSETTING(    0x02, "30" )
-	    PORT_DIPSETTING(    0x00, "40" )
-	    PORT_DIPNAME( 0x04, 0x04, DEF_STR( Cabinet ) )
-	    PORT_DIPSETTING(    0x04, DEF_STR( Upright ) )
-	    PORT_DIPSETTING(    0x00, DEF_STR( Cocktail ) )
-	    PORT_DIPNAME( 0x10, 0x10, DEF_STR( Free_Play ) )
-	    PORT_DIPSETTING(    0x10, DEF_STR( Off ) )
-	    PORT_DIPSETTING(    0x00, DEF_STR( On ) )
-	    PORT_DIPNAME( 0xc0, 0xc0, DEF_STR( Coin_A ) )
-	    PORT_DIPSETTING(    0xc0, DEF_STR( 1C_1C ) )
-	    PORT_DIPSETTING(    0x40, DEF_STR( 1C_2C ) )
-	    PORT_DIPSETTING(    0x80, DEF_STR( 1C_3C ) )
-	    PORT_DIPSETTING(    0x00, DEF_STR( 1C_4C ) )
+	    PORT_DIPNAME( 0x09, 0x09, DEF_STR( "Coin_B") );
+	    PORT_DIPSETTING(    0x09, DEF_STR( "1C_1C") );
+	    PORT_DIPSETTING(    0x01, DEF_STR( "1C_5C") );
+	    PORT_DIPSETTING(    0x08, DEF_STR( "1C_6C") );
+	    PORT_DIPSETTING(    0x00, DEF_STR( "1C_7C") );
+	    PORT_DIPNAME( 0x22, 0x22, "Max Credits" );
+	    PORT_DIPSETTING(    0x22, "10" );
+	    PORT_DIPSETTING(    0x20, "20" );
+	    PORT_DIPSETTING(    0x02, "30" );
+	    PORT_DIPSETTING(    0x00, "40" );
+	    PORT_DIPNAME( 0x04, 0x04, DEF_STR( "Cabinet") );
+	    PORT_DIPSETTING(    0x04, DEF_STR( "Upright") );
+	    PORT_DIPSETTING(    0x00, DEF_STR( "Cocktail") );
+	    PORT_DIPNAME( 0x10, 0x10, DEF_STR( "Free_Play") );
+	    PORT_DIPSETTING(    0x10, DEF_STR( "Off") );
+	    PORT_DIPSETTING(    0x00, DEF_STR( "On") );
+	    PORT_DIPNAME( 0xc0, 0xc0, DEF_STR( "Coin_A") );
+	    PORT_DIPSETTING(    0xc0, DEF_STR( "1C_1C") );
+	    PORT_DIPSETTING(    0x40, DEF_STR( "1C_2C") );
+	    PORT_DIPSETTING(    0x80, DEF_STR( "1C_3C") );
+	    PORT_DIPSETTING(    0x00, DEF_STR( "1C_4C") );
 	
 	    PORT_START      /* DSW #2 */
-	    PORT_DIPNAME( 0x01, 0x00, DEF_STR( Demo_Sounds ) )
-	    PORT_DIPSETTING(    0x01, DEF_STR( Off ) )
-	    PORT_DIPSETTING(    0x00, DEF_STR( On ) )
-	    PORT_DIPNAME( 0x08, 0x08, DEF_STR( Lives ) )
-	    PORT_DIPSETTING(    0x08, "3" )
-	    PORT_DIPSETTING(    0x00, "4" )
-	    PORT_DIPNAME( 0xc0, 0x40, DEF_STR( Bonus_Life ) )
-	    PORT_DIPSETTING(    0x40, "30000" )
-	    PORT_DIPSETTING(    0x80, "60000" )
-	    PORT_DIPSETTING(    0x00, "90000" )
-	    PORT_DIPSETTING(    0xc0, "None" )
-	    PORT_DIPNAME( 0x02, 0x02, DEF_STR( Unknown ) )
-	    PORT_DIPSETTING(    0x02, DEF_STR( Off ) )
-	    PORT_DIPSETTING(    0x00, DEF_STR( On ) )
-	    PORT_DIPNAME( 0x04, 0x04, DEF_STR( Unknown ) )
-	    PORT_DIPSETTING(    0x04, DEF_STR( Off ) )
-	    PORT_DIPSETTING(    0x00, DEF_STR( On ) )
-	    PORT_DIPNAME( 0x10, 0x10, DEF_STR( Unknown ) )
-	    PORT_DIPSETTING(    0x10, DEF_STR( Off ) )
-	    PORT_DIPSETTING(    0x00, DEF_STR( On ) )
-	    PORT_DIPNAME( 0x20, 0x20, DEF_STR( Unknown ) )
-	    PORT_DIPSETTING(    0x20, DEF_STR( Off ) )
-	    PORT_DIPSETTING(    0x00, DEF_STR( On ) )
-	INPUT_PORTS_END
+	    PORT_DIPNAME( 0x01, 0x00, DEF_STR( "Demo_Sounds") );
+	    PORT_DIPSETTING(    0x01, DEF_STR( "Off") );
+	    PORT_DIPSETTING(    0x00, DEF_STR( "On") );
+	    PORT_DIPNAME( 0x08, 0x08, DEF_STR( "Lives") );
+	    PORT_DIPSETTING(    0x08, "3" );
+	    PORT_DIPSETTING(    0x00, "4" );
+	    PORT_DIPNAME( 0xc0, 0x40, DEF_STR( "Bonus_Life") );
+	    PORT_DIPSETTING(    0x40, "30000" );
+	    PORT_DIPSETTING(    0x80, "60000" );
+	    PORT_DIPSETTING(    0x00, "90000" );
+	    PORT_DIPSETTING(    0xc0, "None" );
+	    PORT_DIPNAME( 0x02, 0x02, DEF_STR( "Unknown") );
+	    PORT_DIPSETTING(    0x02, DEF_STR( "Off") );
+	    PORT_DIPSETTING(    0x00, DEF_STR( "On") );
+	    PORT_DIPNAME( 0x04, 0x04, DEF_STR( "Unknown") );
+	    PORT_DIPSETTING(    0x04, DEF_STR( "Off") );
+	    PORT_DIPSETTING(    0x00, DEF_STR( "On") );
+	    PORT_DIPNAME( 0x10, 0x10, DEF_STR( "Unknown") );
+	    PORT_DIPSETTING(    0x10, DEF_STR( "Off") );
+	    PORT_DIPSETTING(    0x00, DEF_STR( "On") );
+	    PORT_DIPNAME( 0x20, 0x20, DEF_STR( "Unknown") );
+	    PORT_DIPSETTING(    0x20, DEF_STR( "Off") );
+	    PORT_DIPSETTING(    0x00, DEF_STR( "On") );
+	INPUT_PORTS_END(); }}; 
 	
 	
 	

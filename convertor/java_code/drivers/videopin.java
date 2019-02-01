@@ -69,50 +69,50 @@ public class videopin
 	
 	
 	
-	INPUT_PORTS_START( videopin )
+	static InputPortPtr input_ports_videopin = new InputPortPtr(){ public void handler() { 
 		PORT_START		/* IN0 */
-		PORT_BIT ( 0x01, IP_ACTIVE_LOW, IPT_COIN2 )   /* Right coin 1 */
-		PORT_BIT ( 0x02, IP_ACTIVE_LOW, IPT_COIN1 )   /* Left coin 2 */
-		PORT_BIT ( 0x04, IP_ACTIVE_LOW, IPT_BUTTON1 ) /* Right flipper */
-		PORT_BIT ( 0x08, IP_ACTIVE_LOW, IPT_BUTTON2 ) /* Left flipper */
-		PORT_BIT ( 0x10, IP_ACTIVE_LOW, IPT_START1 )  /* No start2 button */
-		PORT_BIT ( 0x20, IP_ACTIVE_LOW, IPT_UNKNOWN ) /* What the hell is Slam switch ??? */
-		PORT_SERVICE( 0x40, IP_ACTIVE_LOW )
+		PORT_BIT ( 0x01, IP_ACTIVE_LOW, IPT_COIN2 );  /* Right coin 1 */
+		PORT_BIT ( 0x02, IP_ACTIVE_LOW, IPT_COIN1 );  /* Left coin 2 */
+		PORT_BIT ( 0x04, IP_ACTIVE_LOW, IPT_BUTTON1 );/* Right flipper */
+		PORT_BIT ( 0x08, IP_ACTIVE_LOW, IPT_BUTTON2 );/* Left flipper */
+		PORT_BIT ( 0x10, IP_ACTIVE_LOW, IPT_START1 ); /* No start2 button */
+		PORT_BIT ( 0x20, IP_ACTIVE_LOW, IPT_UNKNOWN );/* What the hell is Slam switch ??? */
+		PORT_SERVICE( 0x40, IP_ACTIVE_LOW );
 	
 		PORT_START		/* IN1/DSW */
-		PORT_DIPNAME( 0xC0, 0x80, "Coin Mode" )
-		PORT_DIPSETTING(	0xC0, DEF_STR( 2C_1C ) )
-		PORT_DIPSETTING(	0x80, DEF_STR( 1C_1C ) )
-		PORT_DIPSETTING(	0x40, DEF_STR( 1C_2C ) )
-		PORT_DIPSETTING(	0x00, DEF_STR( Free_Play ) )
-		PORT_DIPNAME( 0x30, 0x00, "Language" )
-		PORT_DIPSETTING(	0x00, "English" )
-		PORT_DIPSETTING(	0x10, "German" )
-		PORT_DIPSETTING(	0x20, "French" )
-		PORT_DIPSETTING(	0x30, "Spanish" )
-		PORT_DIPNAME( 0x08, 0x08, "Balls" )
-		PORT_DIPSETTING(	0x00, "5" )
-		PORT_DIPSETTING(	0x08, "3" )
-		PORT_DIPNAME( 0x04, 0x00, "Replay" )
-		PORT_DIPSETTING(	0x00, "Special 1 Replay" )
-		PORT_DIPSETTING(	0x04, "80000 Points" )
-		PORT_DIPNAME( 0x01, 0x01, "Replay Points" )
-		PORT_DIPSETTING(	0x00, "3b 180000/5b 300000" )
-		PORT_DIPSETTING(	0x01, "3b 210000/5b 350000" )
-		PORT_DIPNAME( 0x02, 0x00, "Extra Ball" )
-		PORT_DIPSETTING(	0x00, "Extra Ball" )
-		PORT_DIPSETTING(	0x02, "50000 Points" )
+		PORT_DIPNAME( 0xC0, 0x80, "Coin Mode" );
+		PORT_DIPSETTING(	0xC0, DEF_STR( "2C_1C") );
+		PORT_DIPSETTING(	0x80, DEF_STR( "1C_1C") );
+		PORT_DIPSETTING(	0x40, DEF_STR( "1C_2C") );
+		PORT_DIPSETTING(	0x00, DEF_STR( "Free_Play") );
+		PORT_DIPNAME( 0x30, 0x00, "Language" );
+		PORT_DIPSETTING(	0x00, "English" );
+		PORT_DIPSETTING(	0x10, "German" );
+		PORT_DIPSETTING(	0x20, "French" );
+		PORT_DIPSETTING(	0x30, "Spanish" );
+		PORT_DIPNAME( 0x08, 0x08, "Balls" );
+		PORT_DIPSETTING(	0x00, "5" );
+		PORT_DIPSETTING(	0x08, "3" );
+		PORT_DIPNAME( 0x04, 0x00, "Replay" );
+		PORT_DIPSETTING(	0x00, "Special 1 Replay" );
+		PORT_DIPSETTING(	0x04, "80000 Points" );
+		PORT_DIPNAME( 0x01, 0x01, "Replay Points" );
+		PORT_DIPSETTING(	0x00, "3b 180000/5b 300000" );
+		PORT_DIPSETTING(	0x01, "3b 210000/5b 350000" );
+		PORT_DIPNAME( 0x02, 0x00, "Extra Ball" );
+		PORT_DIPSETTING(	0x00, "Extra Ball" );
+		PORT_DIPSETTING(	0x02, "50000 Points" );
 	
 		PORT_START		/* IN2 VBLANK, NUDGE, PLUNGER1, PLUNGER2 */
-		PORT_BIT ( 0x01, IP_ACTIVE_HIGH, IPT_SPECIAL ) /* PLUNGER1 */
-		PORT_BIT ( 0x02, IP_ACTIVE_HIGH, IPT_SPECIAL ) /* PLUNGER2 */
+		PORT_BIT ( 0x01, IP_ACTIVE_HIGH, IPT_SPECIAL );/* PLUNGER1 */
+		PORT_BIT ( 0x02, IP_ACTIVE_HIGH, IPT_SPECIAL );/* PLUNGER2 */
 												  /* Ball shooter force = PLUNGER2 - PLUNGER1 */
-		PORT_BIT ( 0x40, IP_ACTIVE_HIGH, IPT_BUTTON3 ) /* NUDGE */
-		PORT_BIT ( 0x80, IP_ACTIVE_HIGH, IPT_VBLANK ) /* VBLANK */
+		PORT_BIT ( 0x40, IP_ACTIVE_HIGH, IPT_BUTTON3 );/* NUDGE */
+		PORT_BIT ( 0x80, IP_ACTIVE_HIGH, IPT_VBLANK );/* VBLANK */
 	
 		PORT_START		/* FAKE to read the plunger button */
-		PORT_BIT ( 0x01, IP_ACTIVE_HIGH, IPT_BUTTON4 ) /* PLUNGER1 */
-	INPUT_PORTS_END
+		PORT_BIT ( 0x01, IP_ACTIVE_HIGH, IPT_BUTTON4 );/* PLUNGER1 */
+	INPUT_PORTS_END(); }}; 
 	
 	
 	static GfxLayout videopin_charlayout = new GfxLayout

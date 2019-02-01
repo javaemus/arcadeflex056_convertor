@@ -40,6 +40,7 @@ public class convertMame {
     static final int GFXDECODE = 12;
     static final int ROMDEF = 13;
     static final int GAMEDRIVER = 14;
+    static final int NEWINPUT = 15;
 
     public static void Convert() {
         Convertor.inpos = 0;//position of pointer inside the buffers
@@ -509,25 +510,57 @@ public class convertMame {
                 }
                 case 'P': {
                     i = Convertor.inpos;
-                    if (!sUtil.getToken("PORT_END")) {
-                        Convertor.inpos = i;
-                        break;
+                    if (sUtil.getToken("PORT_END")) {
+                        if (type == PORT_READ8) {
+                            sUtil.putString("\tnew IO_ReadPort(MEMPORT_MARKER, 0)\n\t};");
+                            type = -1;
+                            Convertor.inpos += 1;
+                            continue;
+                        }
+                        if (type == PORT_WRITE8) {
+                            sUtil.putString("\tnew IO_WritePort(MEMPORT_MARKER, 0)\n\t};");
+                            type = -1;
+                            Convertor.inpos += 1;
+                            continue;
+                        }
+                        if (sUtil.getToken("PORT_START")) {
+                            sUtil.putString((new StringBuilder()).append("PORT_START(); ").toString());
+                            continue;
+                        }
                     }
-                    if (type == PORT_READ8) {
-                        sUtil.putString("\tnew IO_ReadPort(MEMPORT_MARKER, 0)\n\t};");
-                        type = -1;
-                        Convertor.inpos += 1;
-                        continue;
-                    }
-                    if (type == PORT_WRITE8) {
-                        sUtil.putString("\tnew IO_WritePort(MEMPORT_MARKER, 0)\n\t};");
-                        type = -1;
-                        Convertor.inpos += 1;
-                        continue;
+                    if (sUtil.getToken("PORT_DIPNAME") || sUtil.getToken("PORT_BIT") || sUtil.getToken("PORT_DIPSETTING") || sUtil.getToken("PORT_BITX") || sUtil.getToken("PORT_SERVICE") || sUtil.getToken("PORT_BIT_IMPULSE") || sUtil.getToken("PORT_ANALOG") || sUtil.getToken("PORT_ANALOGX")) {
+                        i8++;
+                        type2 = NEWINPUT;
+                        sUtil.skipSpace();
+                        if (sUtil.parseChar() == '(') {
+                            Convertor.inpos = i;
+                        }
                     }
                     Convertor.inpos = i;
                     break;
                 }
+                case 'I':
+                    int j = Convertor.inpos;
+                    if (sUtil.getToken("INPUT_PORTS_START")) {
+                        if (sUtil.parseChar() != '(') {
+                            Convertor.inpos = j;
+                            break;
+                        }
+                        sUtil.skipSpace();
+                        Convertor.token[0] = sUtil.parseToken();
+                        sUtil.skipSpace();
+                        if (sUtil.parseChar() != ')') {
+                            Convertor.inpos = j;
+                            break;
+                        }
+                        sUtil.putString((new StringBuilder()).append("static InputPortPtr input_ports_").append(Convertor.token[0]).append(" = new InputPortPtr(){ public void handler() { ").toString());
+                    }
+                    if (sUtil.getToken("INPUT_PORTS_END")) {
+                        sUtil.putString((new StringBuilder()).append("INPUT_PORTS_END(); }}; ").toString());
+                        continue;
+                    }
+
+                    break;
                 case '&': {
                     if (type == MEMORY_READ8 || type == MEMORY_WRITE8 || type == PORT_READ8 || type == PORT_WRITE8 || type == GFXDECODE) {
                         Convertor.inpos += 1;
@@ -634,8 +667,33 @@ public class convertMame {
                         type2 = -1;
                         continue;
                     }
+                    if (type2 == NEWINPUT) {
+                        i8--;
+                        Convertor.outbuf[(Convertor.outpos++)] = ')';
+                        Convertor.outbuf[(Convertor.outpos++)] = ';';
+                        Convertor.inpos += 2;
+                        if (sUtil.getChar() == ')') {
+                            Convertor.inpos += 1;
+                        }
+                        type2 = -1;
+                        continue;
+                    }
                 }
                 break;
+                case 'D':
+                    if (type2 == NEWINPUT) {
+                        i = Convertor.inpos;
+                        if (sUtil.getToken("DEF_STR(")) {
+                            sUtil.skipSpace();
+                            Convertor.token[0] = sUtil.parseToken();
+                            sUtil.putString((new StringBuilder()).append("DEF_STR( \"").append(Convertor.token[0]).append("\")").toString());
+                            i3 = -1;
+
+                            continue;
+                        }
+
+                    }
+                    break;
                 case 'G': {
                     i = Convertor.inpos;
                     if (sUtil.getToken("GAME") || sUtil.getToken("GAMEX")) {
@@ -702,6 +760,7 @@ public class convertMame {
                     }
                 }
                 break;
+
             }
             Convertor.outbuf[Convertor.outpos++] = Convertor.inbuf[Convertor.inpos++];//grapse to inputbuffer sto output
         } while (true);

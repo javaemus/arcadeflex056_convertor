@@ -142,75 +142,75 @@ public class stactics
 		new Memory_WriteAddress(MEMPORT_MARKER, 0)
 	};
 	
-	INPUT_PORTS_START( stactics )
+	static InputPortPtr input_ports_stactics = new InputPortPtr(){ public void handler() { 
 	
 	    PORT_START  /* 	IN0 */
-	    /*PORT_BIT (0x80, IP_ACTIVE_HIGH, IPT_UNUSED ) Motor status. see stactics_port_0_r */
-	    PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_BUTTON2 )
-	    PORT_BIT( 0x20, IP_ACTIVE_LOW, IPT_START1 )
-	    PORT_BIT( 0x10, IP_ACTIVE_LOW, IPT_BUTTON3 )
-	    PORT_BIT (0x08, IP_ACTIVE_LOW, IPT_BUTTON4 )
-	    PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_BUTTON5 )
-	    PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_BUTTON6 )
-	    PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_BUTTON7 )
+	    /*PORT_BIT (0x80, IP_ACTIVE_HIGH, IPT_UNUSED );Motor status. see stactics_port_0_r */
+	    PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_BUTTON2 );
+	    PORT_BIT( 0x20, IP_ACTIVE_LOW, IPT_START1 );
+	    PORT_BIT( 0x10, IP_ACTIVE_LOW, IPT_BUTTON3 );
+	    PORT_BIT (0x08, IP_ACTIVE_LOW, IPT_BUTTON4 );
+	    PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_BUTTON5 );
+	    PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_BUTTON6 );
+	    PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_BUTTON7 );
 	
 	    PORT_START  /* IN1 */
-	    PORT_DIPNAME( 0x07, 0x07, DEF_STR( Coin_B ) )
-	    PORT_DIPSETTING(    0x01, DEF_STR( 4C_1C ) )
-	    PORT_DIPSETTING(    0x05, DEF_STR( 2C_1C ) )
-	    PORT_DIPSETTING(    0x07, DEF_STR( 1C_1C ) )
-	    PORT_DIPSETTING(    0x06, DEF_STR( 1C_2C ) )
-	    PORT_DIPSETTING(    0x04, DEF_STR( 1C_3C ) )
-	    PORT_DIPSETTING(    0x02, DEF_STR( 1C_4C ) )
-	    PORT_DIPSETTING(    0x00, DEF_STR( 1C_5C ) )
-	    PORT_DIPSETTING(    0x03, DEF_STR( 1C_6C ) )
-	    PORT_DIPNAME( 0x38, 0x38, DEF_STR( Coin_A ) )
-	    PORT_DIPSETTING(    0x08, DEF_STR( 4C_1C ) )
-	    PORT_DIPSETTING(    0x28, DEF_STR( 2C_1C ) )
-	    PORT_DIPSETTING(    0x38, DEF_STR( 1C_1C ) )
-	    PORT_DIPSETTING(    0x30, DEF_STR( 1C_2C ) )
-	    PORT_DIPSETTING(    0x20, DEF_STR( 1C_3C ) )
-	    PORT_DIPSETTING(    0x10, DEF_STR( 1C_4C ) )
-	    PORT_DIPSETTING(    0x00, DEF_STR( 1C_5C ) )
-	    PORT_DIPSETTING(    0x18, DEF_STR( 1C_6C ) )
-	    PORT_DIPNAME( 0x40, 0x00, "High Score Initial Entry" )
-	    PORT_DIPSETTING(    0x40, DEF_STR( Off ) )
-	    PORT_DIPSETTING(    0x00, DEF_STR( On ) )
-	    PORT_DIPNAME( 0x80, 0x00, DEF_STR( Demo_Sounds ) )
-	    PORT_DIPSETTING(    0x80, DEF_STR( Off ) )
-	    PORT_DIPSETTING(    0x00, DEF_STR( On ) )
+	    PORT_DIPNAME( 0x07, 0x07, DEF_STR( "Coin_B") );
+	    PORT_DIPSETTING(    0x01, DEF_STR( "4C_1C") );
+	    PORT_DIPSETTING(    0x05, DEF_STR( "2C_1C") );
+	    PORT_DIPSETTING(    0x07, DEF_STR( "1C_1C") );
+	    PORT_DIPSETTING(    0x06, DEF_STR( "1C_2C") );
+	    PORT_DIPSETTING(    0x04, DEF_STR( "1C_3C") );
+	    PORT_DIPSETTING(    0x02, DEF_STR( "1C_4C") );
+	    PORT_DIPSETTING(    0x00, DEF_STR( "1C_5C") );
+	    PORT_DIPSETTING(    0x03, DEF_STR( "1C_6C") );
+	    PORT_DIPNAME( 0x38, 0x38, DEF_STR( "Coin_A") );
+	    PORT_DIPSETTING(    0x08, DEF_STR( "4C_1C") );
+	    PORT_DIPSETTING(    0x28, DEF_STR( "2C_1C") );
+	    PORT_DIPSETTING(    0x38, DEF_STR( "1C_1C") );
+	    PORT_DIPSETTING(    0x30, DEF_STR( "1C_2C") );
+	    PORT_DIPSETTING(    0x20, DEF_STR( "1C_3C") );
+	    PORT_DIPSETTING(    0x10, DEF_STR( "1C_4C") );
+	    PORT_DIPSETTING(    0x00, DEF_STR( "1C_5C") );
+	    PORT_DIPSETTING(    0x18, DEF_STR( "1C_6C") );
+	    PORT_DIPNAME( 0x40, 0x00, "High Score Initial Entry" );
+	    PORT_DIPSETTING(    0x40, DEF_STR( "Off") );
+	    PORT_DIPSETTING(    0x00, DEF_STR( "On") );
+	    PORT_DIPNAME( 0x80, 0x00, DEF_STR( "Demo_Sounds") );
+	    PORT_DIPSETTING(    0x80, DEF_STR( "Off") );
+	    PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 	
 	    PORT_START  /* IN2 */
 	    /* This is accessed by stactics_port_2_r() */
-	    /*PORT_BIT (0x0f, IP_ACTIVE_HIGH, IPT_UNUSED ) Random number generator */
-	    PORT_BIT( 0x10, IP_ACTIVE_LOW, IPT_COIN1 )
-	    PORT_BIT( 0x20, IP_ACTIVE_LOW, IPT_COIN2 )
-	    PORT_DIPNAME( 0x40, 0x40, DEF_STR( Free_Play ) )
-	    PORT_DIPSETTING( 0x40, DEF_STR( Off ) )
-	    PORT_DIPSETTING( 0x00, DEF_STR( On ) )
-		PORT_SERVICE( 0x80, IP_ACTIVE_LOW )
+	    /*PORT_BIT (0x0f, IP_ACTIVE_HIGH, IPT_UNUSED );Random number generator */
+	    PORT_BIT( 0x10, IP_ACTIVE_LOW, IPT_COIN1 );
+	    PORT_BIT( 0x20, IP_ACTIVE_LOW, IPT_COIN2 );
+	    PORT_DIPNAME( 0x40, 0x40, DEF_STR( "Free_Play") );
+	    PORT_DIPSETTING( 0x40, DEF_STR( "Off") );
+	    PORT_DIPSETTING( 0x00, DEF_STR( "On") );
+		PORT_SERVICE( 0x80, IP_ACTIVE_LOW );
 	
 	    PORT_START  /* IN3 */
 	    /* This is accessed by stactics_port_3_r() */
-	    PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_BUTTON1 )
-	    /* PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_UNUSED ) */
-	    PORT_DIPNAME( 0x04, 0x04, "Number of Barriers" )
-	    PORT_DIPSETTING(    0x04, "4" )
-	    PORT_DIPSETTING(    0x00, "6" )
-	    PORT_DIPNAME( 0x08, 0x08, "Bonus Barriers" )
-	    PORT_DIPSETTING(    0x08, "1" )
-	    PORT_DIPSETTING(    0x00, "2" )
-	    PORT_DIPNAME( 0x10, 0x00, "Extended Play" )
-	    PORT_DIPSETTING(    0x10, DEF_STR( Off ) )
-	    PORT_DIPSETTING(    0x00, DEF_STR( On ) )
-	    PORT_BIT( 0x20, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT | IPF_8WAY )
-	    PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_8WAY )
-	    /* PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNUSED ) */
+	    PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_BUTTON1 );
+	    /* PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_UNUSED );*/
+	    PORT_DIPNAME( 0x04, 0x04, "Number of Barriers" );
+	    PORT_DIPSETTING(    0x04, "4" );
+	    PORT_DIPSETTING(    0x00, "6" );
+	    PORT_DIPNAME( 0x08, 0x08, "Bonus Barriers" );
+	    PORT_DIPSETTING(    0x08, "1" );
+	    PORT_DIPSETTING(    0x00, "2" );
+	    PORT_DIPNAME( 0x10, 0x00, "Extended Play" );
+	    PORT_DIPSETTING(    0x10, DEF_STR( "Off") );
+	    PORT_DIPSETTING(    0x00, DEF_STR( "On") );
+	    PORT_BIT( 0x20, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT | IPF_8WAY );
+	    PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_8WAY );
+	    /* PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNUSED );*/
 	
 		PORT_START	/* FAKE */
-	    PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICK_UP | IPF_8WAY )
-	    PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN | IPF_8WAY )
-	INPUT_PORTS_END
+	    PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICK_UP | IPF_8WAY );
+	    PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN | IPF_8WAY );
+	INPUT_PORTS_END(); }}; 
 	
 	/* For the character graphics */
 	

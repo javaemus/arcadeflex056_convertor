@@ -242,7 +242,7 @@ public class m107
 	
 	/******************************************************************************/
 	
-	INPUT_PORTS_START( firebarr )
+	static InputPortPtr input_ports_firebarr = new InputPortPtr(){ public void handler() { 
 		IREM_JOYSTICK_1_2(1)
 		IREM_JOYSTICK_1_2(2)
 		PORT_UNUSED
@@ -251,56 +251,56 @@ public class m107
 		IREM_SYSTEM_DIPSWITCH
 	
 		PORT_START
-		PORT_DIPNAME( 0x03, 0x03, DEF_STR( Lives ) )
-		PORT_DIPSETTING(    0x00, "2" )
-		PORT_DIPSETTING(    0x03, "3" )
-		PORT_DIPSETTING(    0x02, "4" )
-		PORT_DIPSETTING(    0x01, "5" )
-		PORT_DIPNAME( 0x04, 0x04, DEF_STR( Unknown ) )
-		PORT_DIPSETTING(    0x04, DEF_STR( Off ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( On ) )
-		PORT_DIPNAME( 0x08, 0x08, DEF_STR( Unknown ) )
-		PORT_DIPSETTING(    0x08, DEF_STR( Off ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( On ) )
-		PORT_DIPNAME( 0x10, 0x10, DEF_STR( Unknown ) )
-		PORT_DIPSETTING(    0x10, DEF_STR( Off ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( On ) )
-		PORT_DIPNAME( 0x20, 0x20, DEF_STR( Unknown ) )
-		PORT_DIPSETTING(    0x20, DEF_STR( Off ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( On ) )
-		PORT_DIPNAME( 0x40, 0x40, DEF_STR( Unknown ) )
-		PORT_DIPSETTING(    0x40, DEF_STR( Off ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( On ) )
-		PORT_SERVICE( 0x80, IP_ACTIVE_LOW )
+		PORT_DIPNAME( 0x03, 0x03, DEF_STR( "Lives") );
+		PORT_DIPSETTING(    0x00, "2" );
+		PORT_DIPSETTING(    0x03, "3" );
+		PORT_DIPSETTING(    0x02, "4" );
+		PORT_DIPSETTING(    0x01, "5" );
+		PORT_DIPNAME( 0x04, 0x04, DEF_STR( "Unknown") );
+		PORT_DIPSETTING(    0x04, DEF_STR( "Off") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
+		PORT_DIPNAME( 0x08, 0x08, DEF_STR( "Unknown") );
+		PORT_DIPSETTING(    0x08, DEF_STR( "Off") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
+		PORT_DIPNAME( 0x10, 0x10, DEF_STR( "Unknown") );
+		PORT_DIPSETTING(    0x10, DEF_STR( "Off") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
+		PORT_DIPNAME( 0x20, 0x20, DEF_STR( "Unknown") );
+		PORT_DIPSETTING(    0x20, DEF_STR( "Off") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
+		PORT_DIPNAME( 0x40, 0x40, DEF_STR( "Unknown") );
+		PORT_DIPSETTING(    0x40, DEF_STR( "Off") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
+		PORT_SERVICE( 0x80, IP_ACTIVE_LOW );
 	
 		PORT_START
-		PORT_DIPNAME( 0x01, 0x01, DEF_STR( Unknown ) )
-		PORT_DIPSETTING(    0x01, DEF_STR( Off ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( On ) )
-		PORT_DIPNAME( 0x02, 0x02, DEF_STR( Unknown ) )
-		PORT_DIPSETTING(    0x02, DEF_STR( Off ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( On ) )
-		PORT_DIPNAME( 0x04, 0x04, DEF_STR( Unknown ) )
-		PORT_DIPSETTING(    0x04, DEF_STR( Off ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( On ) )
-		PORT_DIPNAME( 0x08, 0x08, DEF_STR( Unknown ) )
-		PORT_DIPSETTING(    0x08, DEF_STR( Off ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( On ) )
-		PORT_DIPNAME( 0x10, 0x00, "Continuous Play" )
-		PORT_DIPSETTING(    0x10, DEF_STR( Off ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( On ) )
-		PORT_DIPNAME( 0x20, 0x20, DEF_STR( Unknown ) )
-		PORT_DIPSETTING(    0x20, DEF_STR( Off ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( On ) )
-		PORT_DIPNAME( 0x40, 0x40, DEF_STR( Unknown ) )
-		PORT_DIPSETTING(    0x40, DEF_STR( Off ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( On ) )
-		PORT_DIPNAME( 0x80, 0x80, DEF_STR( Unknown ) )
-		PORT_DIPSETTING(    0x80, DEF_STR( Off ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( On ) )
-	INPUT_PORTS_END
+		PORT_DIPNAME( 0x01, 0x01, DEF_STR( "Unknown") );
+		PORT_DIPSETTING(    0x01, DEF_STR( "Off") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
+		PORT_DIPNAME( 0x02, 0x02, DEF_STR( "Unknown") );
+		PORT_DIPSETTING(    0x02, DEF_STR( "Off") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
+		PORT_DIPNAME( 0x04, 0x04, DEF_STR( "Unknown") );
+		PORT_DIPSETTING(    0x04, DEF_STR( "Off") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
+		PORT_DIPNAME( 0x08, 0x08, DEF_STR( "Unknown") );
+		PORT_DIPSETTING(    0x08, DEF_STR( "Off") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
+		PORT_DIPNAME( 0x10, 0x00, "Continuous Play" );
+		PORT_DIPSETTING(    0x10, DEF_STR( "Off") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
+		PORT_DIPNAME( 0x20, 0x20, DEF_STR( "Unknown") );
+		PORT_DIPSETTING(    0x20, DEF_STR( "Off") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
+		PORT_DIPNAME( 0x40, 0x40, DEF_STR( "Unknown") );
+		PORT_DIPSETTING(    0x40, DEF_STR( "Off") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
+		PORT_DIPNAME( 0x80, 0x80, DEF_STR( "Unknown") );
+		PORT_DIPSETTING(    0x80, DEF_STR( "Off") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
+	INPUT_PORTS_END(); }}; 
 	
-	INPUT_PORTS_START( dsoccr94 )
+	static InputPortPtr input_ports_dsoccr94 = new InputPortPtr(){ public void handler() { 
 		IREM_JOYSTICK_1_2(1)
 		IREM_JOYSTICK_1_2(2)
 		IREM_JOYSTICK_3_4(3)
@@ -309,54 +309,54 @@ public class m107
 		IREM_SYSTEM_DIPSWITCH_4PLAYERS
 	
 		PORT_START
-		PORT_DIPNAME( 0x03, 0x03, "Time" )
-		PORT_DIPSETTING(    0x00, "1:30" )
-		PORT_DIPSETTING(    0x03, "2:00" )
-		PORT_DIPSETTING(    0x02, "2:30" )
-		PORT_DIPSETTING(    0x01, "3:00" )
-		PORT_DIPNAME( 0x04, 0x04, DEF_STR( Unknown ) )
-		PORT_DIPSETTING(    0x04, DEF_STR( Off ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( On ) )
-		PORT_DIPNAME( 0x08, 0x08, DEF_STR( Unknown ) )
-		PORT_DIPSETTING(    0x08, DEF_STR( Off ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( On ) )
-		PORT_DIPNAME( 0x10, 0x10, DEF_STR( Unknown ) )
-		PORT_DIPSETTING(    0x10, DEF_STR( Off ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( On ) )
-		PORT_DIPNAME( 0x20, 0x20, "Starting Button" )
-		PORT_DIPSETTING(    0x00, "Button 1" )
-		PORT_DIPSETTING(    0x20, "Start Button" )
-		PORT_DIPNAME( 0x40, 0x00, DEF_STR( Demo_Sounds ) )
-		PORT_DIPSETTING(    0x40, DEF_STR( Off ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( On ) )
-		PORT_SERVICE( 0x80, IP_ACTIVE_LOW )
+		PORT_DIPNAME( 0x03, 0x03, "Time" );
+		PORT_DIPSETTING(    0x00, "1:30" );
+		PORT_DIPSETTING(    0x03, "2:00" );
+		PORT_DIPSETTING(    0x02, "2:30" );
+		PORT_DIPSETTING(    0x01, "3:00" );
+		PORT_DIPNAME( 0x04, 0x04, DEF_STR( "Unknown") );
+		PORT_DIPSETTING(    0x04, DEF_STR( "Off") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
+		PORT_DIPNAME( 0x08, 0x08, DEF_STR( "Unknown") );
+		PORT_DIPSETTING(    0x08, DEF_STR( "Off") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
+		PORT_DIPNAME( 0x10, 0x10, DEF_STR( "Unknown") );
+		PORT_DIPSETTING(    0x10, DEF_STR( "Off") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
+		PORT_DIPNAME( 0x20, 0x20, "Starting Button" );
+		PORT_DIPSETTING(    0x00, "Button 1" );
+		PORT_DIPSETTING(    0x20, "Start Button" );
+		PORT_DIPNAME( 0x40, 0x00, DEF_STR( "Demo_Sounds") );
+		PORT_DIPSETTING(    0x40, DEF_STR( "Off") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
+		PORT_SERVICE( 0x80, IP_ACTIVE_LOW );
 	
 		PORT_START
-		PORT_DIPNAME( 0x01, 0x01, DEF_STR( Unknown ) )
-		PORT_DIPSETTING(    0x01, DEF_STR( Off ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( On ) )
-		PORT_DIPNAME( 0x02, 0x02, DEF_STR( Unknown ) )
-		PORT_DIPSETTING(    0x02, DEF_STR( Off ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( On ) )
-		PORT_DIPNAME( 0x04, 0x04, DEF_STR( Unknown ) )
-		PORT_DIPSETTING(    0x04, DEF_STR( Off ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( On ) )
-		PORT_DIPNAME( 0x08, 0x08, DEF_STR( Unknown ) )
-		PORT_DIPSETTING(    0x08, DEF_STR( Off ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( On ) )
-		PORT_DIPNAME( 0x10, 0x10, DEF_STR( Unknown ) )
-		PORT_DIPSETTING(    0x10, DEF_STR( Off ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( On ) )
-		PORT_DIPNAME( 0x20, 0x20, DEF_STR( Unknown ) )
-		PORT_DIPSETTING(    0x20, DEF_STR( Off ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( On ) )
-		PORT_DIPNAME( 0x40, 0x40, DEF_STR( Unknown ) )
-		PORT_DIPSETTING(    0x40, DEF_STR( Off ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( On ) )
-		PORT_DIPNAME( 0x80, 0x80, DEF_STR( Unknown ) )
-		PORT_DIPSETTING(    0x80, DEF_STR( Off ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( On ) )
-	INPUT_PORTS_END
+		PORT_DIPNAME( 0x01, 0x01, DEF_STR( "Unknown") );
+		PORT_DIPSETTING(    0x01, DEF_STR( "Off") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
+		PORT_DIPNAME( 0x02, 0x02, DEF_STR( "Unknown") );
+		PORT_DIPSETTING(    0x02, DEF_STR( "Off") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
+		PORT_DIPNAME( 0x04, 0x04, DEF_STR( "Unknown") );
+		PORT_DIPSETTING(    0x04, DEF_STR( "Off") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
+		PORT_DIPNAME( 0x08, 0x08, DEF_STR( "Unknown") );
+		PORT_DIPSETTING(    0x08, DEF_STR( "Off") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
+		PORT_DIPNAME( 0x10, 0x10, DEF_STR( "Unknown") );
+		PORT_DIPSETTING(    0x10, DEF_STR( "Off") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
+		PORT_DIPNAME( 0x20, 0x20, DEF_STR( "Unknown") );
+		PORT_DIPSETTING(    0x20, DEF_STR( "Off") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
+		PORT_DIPNAME( 0x40, 0x40, DEF_STR( "Unknown") );
+		PORT_DIPSETTING(    0x40, DEF_STR( "Off") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
+		PORT_DIPNAME( 0x80, 0x80, DEF_STR( "Unknown") );
+		PORT_DIPSETTING(    0x80, DEF_STR( "Off") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
+	INPUT_PORTS_END(); }}; 
 	
 	/***************************************************************************/
 	

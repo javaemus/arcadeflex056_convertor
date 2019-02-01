@@ -188,32 +188,32 @@ public class ccastles
 		new Memory_WriteAddress(MEMPORT_MARKER, 0)
 	};
 	
-	INPUT_PORTS_START( ccastles )
+	static InputPortPtr input_ports_ccastles = new InputPortPtr(){ public void handler() { 
 		PORT_START	/* IN0 */
-		PORT_BIT ( 0x01, IP_ACTIVE_LOW, IPT_COIN2 )
-		PORT_BIT ( 0x02, IP_ACTIVE_LOW, IPT_COIN1 )
-		PORT_BIT ( 0x04, IP_ACTIVE_LOW, IPT_COIN3 )
-		PORT_BIT ( 0x08, IP_ACTIVE_LOW, IPT_TILT )
-		PORT_SERVICE( 0x10, IP_ACTIVE_LOW )
-		PORT_BIT ( 0x20, IP_ACTIVE_HIGH, IPT_VBLANK )
-		PORT_BIT ( 0x40, IP_ACTIVE_LOW, IPT_BUTTON1 )				/* 1p Jump, non-cocktail start1 */
-		PORT_BIT ( 0x80, IP_ACTIVE_LOW, IPT_BUTTON1 | IPF_PLAYER2 ) /* 2p Jump, non-cocktail start2 */
+		PORT_BIT ( 0x01, IP_ACTIVE_LOW, IPT_COIN2 );
+		PORT_BIT ( 0x02, IP_ACTIVE_LOW, IPT_COIN1 );
+		PORT_BIT ( 0x04, IP_ACTIVE_LOW, IPT_COIN3 );
+		PORT_BIT ( 0x08, IP_ACTIVE_LOW, IPT_TILT );
+		PORT_SERVICE( 0x10, IP_ACTIVE_LOW );
+		PORT_BIT ( 0x20, IP_ACTIVE_HIGH, IPT_VBLANK );
+		PORT_BIT ( 0x40, IP_ACTIVE_LOW, IPT_BUTTON1 );			/* 1p Jump, non-cocktail start1 */
+		PORT_BIT ( 0x80, IP_ACTIVE_LOW, IPT_BUTTON1 | IPF_PLAYER2 );/* 2p Jump, non-cocktail start2 */
 	
 		PORT_START	/* IN1 */
-		PORT_BIT ( 0x07, IP_ACTIVE_LOW, IPT_UNKNOWN )
-		PORT_BIT ( 0x08, IP_ACTIVE_LOW, IPT_START1 )				/* cocktail only */
-		PORT_BIT ( 0x10, IP_ACTIVE_LOW, IPT_START2 )				/* cocktail only */
-		PORT_DIPNAME(0x20, 0x00, DEF_STR( Cabinet ) )
-		PORT_DIPSETTING (   0x00, DEF_STR( Upright ) )
-		PORT_DIPSETTING (   0x20, DEF_STR( Cocktail ) )
-		PORT_BIT ( 0xc0, IP_ACTIVE_HIGH, IPT_UNKNOWN )
+		PORT_BIT ( 0x07, IP_ACTIVE_LOW, IPT_UNKNOWN );
+		PORT_BIT ( 0x08, IP_ACTIVE_LOW, IPT_START1 );			/* cocktail only */
+		PORT_BIT ( 0x10, IP_ACTIVE_LOW, IPT_START2 );			/* cocktail only */
+		PORT_DIPNAME(0x20, 0x00, DEF_STR( "Cabinet") );
+		PORT_DIPSETTING (   0x00, DEF_STR( "Upright") );
+		PORT_DIPSETTING (   0x20, DEF_STR( "Cocktail") );
+		PORT_BIT ( 0xc0, IP_ACTIVE_HIGH, IPT_UNKNOWN );
 	
 		PORT_START	/* IN2 */
-		PORT_ANALOG( 0xff, 0x7f, IPT_TRACKBALL_Y | IPF_REVERSE, 10, 30, 0, 0 )
+		PORT_ANALOG( 0xff, 0x7f, IPT_TRACKBALL_Y | IPF_REVERSE, 10, 30, 0, 0 );
 	
 		PORT_START	/* IN3 */
-		PORT_ANALOG( 0xff, 0x7f, IPT_TRACKBALL_X, 10, 30, 0, 0 )
-	INPUT_PORTS_END
+		PORT_ANALOG( 0xff, 0x7f, IPT_TRACKBALL_X, 10, 30, 0, 0 );
+	INPUT_PORTS_END(); }}; 
 	
 	static GfxLayout ccastles_spritelayout = new GfxLayout
 	(

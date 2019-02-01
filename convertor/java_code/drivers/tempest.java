@@ -244,99 +244,99 @@ public class tempest
 		new Memory_WriteAddress(MEMPORT_MARKER, 0)
 	};
 	
-	INPUT_PORTS_START( tempest )
+	static InputPortPtr input_ports_tempest = new InputPortPtr(){ public void handler() { 
 		PORT_START	/* IN0 */
-		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_COIN3 )
-		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_COIN2 )
-		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_COIN1 )
-		PORT_BIT( 0x08, IP_ACTIVE_LOW, IPT_TILT )
-		PORT_SERVICE( 0x10, IP_ACTIVE_LOW )
-		PORT_BITX( 0x20, IP_ACTIVE_LOW, IPT_SERVICE, "Diagnostic Step", KEYCODE_F1, IP_JOY_NONE )
+		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_COIN3 );
+		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_COIN2 );
+		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_COIN1 );
+		PORT_BIT( 0x08, IP_ACTIVE_LOW, IPT_TILT );
+		PORT_SERVICE( 0x10, IP_ACTIVE_LOW );
+		PORT_BITX( 0x20, IP_ACTIVE_LOW, IPT_SERVICE, "Diagnostic Step", KEYCODE_F1, IP_JOY_NONE );
 		/* bit 6 is the VG HALT bit. We set it to "low" */
 		/* per default (busy vector processor). */
 	 	/* handled by tempest_IN0_r() */
-		PORT_BIT( 0x40, IP_ACTIVE_HIGH, IPT_UNKNOWN )
+		PORT_BIT( 0x40, IP_ACTIVE_HIGH, IPT_UNKNOWN );
 		/* bit 7 is tied to a 3kHz (?) clock */
 	 	/* handled by tempest_IN0_r() */
-		PORT_BIT( 0x80, IP_ACTIVE_HIGH, IPT_UNKNOWN )
+		PORT_BIT( 0x80, IP_ACTIVE_HIGH, IPT_UNKNOWN );
 	
 		PORT_START	/* IN1/DSW0 */
 		/* This is the Tempest spinner input. It only uses 4 bits. */
-		PORT_ANALOG( 0x0f, 0x00, IPT_DIAL, 25, 20, 0, 0)
+		PORT_ANALOG( 0x0f, 0x00, IPT_DIAL, 25, 20, 0, 0);
 		/* The next one is reponsible for cocktail mode.
 		 * According to the documentation, this is not a switch, although
 		 * it may have been planned to put it on the Math Box PCB, D/E2 )
 		 */
-		PORT_DIPNAME( 0x10, 0x10, DEF_STR( Cabinet ) )
-		PORT_DIPSETTING(    0x10, DEF_STR( Upright ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( Cocktail ) )
-		PORT_BIT( 0x20, IP_ACTIVE_LOW, IPT_UNKNOWN )
-		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNKNOWN )
-		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNKNOWN )
+		PORT_DIPNAME( 0x10, 0x10, DEF_STR( "Cabinet") );
+		PORT_DIPSETTING(    0x10, DEF_STR( "Upright") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "Cocktail") );
+		PORT_BIT( 0x20, IP_ACTIVE_LOW, IPT_UNKNOWN );
+		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNKNOWN );
+		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
 		PORT_START	/* IN2 */
-		PORT_DIPNAME(  0x03, 0x03, DEF_STR( Difficulty ) )
-		PORT_DIPSETTING(     0x02, "Easy" )
-		PORT_DIPSETTING(     0x03, "Medium1" )
-		PORT_DIPSETTING(     0x00, "Medium2" )
-		PORT_DIPSETTING(     0x01, "Hard" )
-		PORT_DIPNAME(  0x04, 0x04, "Rating" )
-		PORT_DIPSETTING(     0x04, "1, 3, 5, 7, 9" )
-		PORT_DIPSETTING(     0x00, "tied to high score" )
-		PORT_BIT(0x08, IP_ACTIVE_LOW, IPT_BUTTON2 )
-		PORT_BIT(0x10, IP_ACTIVE_LOW, IPT_BUTTON1 )
-		PORT_BIT(0x20, IP_ACTIVE_LOW, IPT_START1 )
-		PORT_BIT(0x40, IP_ACTIVE_LOW, IPT_START2 )
-		PORT_BIT(0x80, IP_ACTIVE_LOW, IPT_UNKNOWN )
+		PORT_DIPNAME(  0x03, 0x03, DEF_STR( "Difficulty") );
+		PORT_DIPSETTING(     0x02, "Easy" );
+		PORT_DIPSETTING(     0x03, "Medium1" );
+		PORT_DIPSETTING(     0x00, "Medium2" );
+		PORT_DIPSETTING(     0x01, "Hard" );
+		PORT_DIPNAME(  0x04, 0x04, "Rating" );
+		PORT_DIPSETTING(     0x04, "1, 3, 5, 7, 9" );
+		PORT_DIPSETTING(     0x00, "tied to high score" );
+		PORT_BIT(0x08, IP_ACTIVE_LOW, IPT_BUTTON2 );
+		PORT_BIT(0x10, IP_ACTIVE_LOW, IPT_BUTTON1 );
+		PORT_BIT(0x20, IP_ACTIVE_LOW, IPT_START1 );
+		PORT_BIT(0x40, IP_ACTIVE_LOW, IPT_START2 );
+		PORT_BIT(0x80, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
 		PORT_START	/* DSW1 - (N13 on analog vector generator PCB */
-		PORT_DIPNAME( 0x03, 0x00, DEF_STR( Coinage ) )
-		PORT_DIPSETTING(    0x01, DEF_STR( 2C_1C ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( 1C_1C ) )
-		PORT_DIPSETTING(    0x03, DEF_STR( 1C_2C ) )
-		PORT_DIPSETTING(    0x02, DEF_STR( Free_Play ) )
-		PORT_DIPNAME( 0x0c, 0x00, "Right Coin" )
-		PORT_DIPSETTING(    0x00, "*1" )
-		PORT_DIPSETTING(    0x04, "*4" )
-		PORT_DIPSETTING(    0x08, "*5" )
-		PORT_DIPSETTING(    0x0c, "*6" )
-		PORT_DIPNAME( 0x10, 0x00, "Left Coin" )
-		PORT_DIPSETTING(    0x00, "*1" )
-		PORT_DIPSETTING(    0x10, "*2" )
-		PORT_DIPNAME( 0xe0, 0x00, "Bonus Coins" )
-		PORT_DIPSETTING(    0x00, "None" )
-		PORT_DIPSETTING(    0x80, "1 each 5" )
-		PORT_DIPSETTING(    0x40, "1 each 4 (+Demo)" )
-		PORT_DIPSETTING(    0xa0, "1 each 3" )
-		PORT_DIPSETTING(    0x60, "2 each 4 (+Demo)" )
-		PORT_DIPSETTING(    0x20, "1 each 2" )
-		PORT_DIPSETTING(    0xc0, "Freeze Mode" )
-		PORT_DIPSETTING(    0xe0, "Freeze Mode" )
+		PORT_DIPNAME( 0x03, 0x00, DEF_STR( "Coinage") );
+		PORT_DIPSETTING(    0x01, DEF_STR( "2C_1C") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "1C_1C") );
+		PORT_DIPSETTING(    0x03, DEF_STR( "1C_2C") );
+		PORT_DIPSETTING(    0x02, DEF_STR( "Free_Play") );
+		PORT_DIPNAME( 0x0c, 0x00, "Right Coin" );
+		PORT_DIPSETTING(    0x00, "*1" );
+		PORT_DIPSETTING(    0x04, "*4" );
+		PORT_DIPSETTING(    0x08, "*5" );
+		PORT_DIPSETTING(    0x0c, "*6" );
+		PORT_DIPNAME( 0x10, 0x00, "Left Coin" );
+		PORT_DIPSETTING(    0x00, "*1" );
+		PORT_DIPSETTING(    0x10, "*2" );
+		PORT_DIPNAME( 0xe0, 0x00, "Bonus Coins" );
+		PORT_DIPSETTING(    0x00, "None" );
+		PORT_DIPSETTING(    0x80, "1 each 5" );
+		PORT_DIPSETTING(    0x40, "1 each 4 (+Demo); )
+		PORT_DIPSETTING(    0xa0, "1 each 3" );
+		PORT_DIPSETTING(    0x60, "2 each 4 (+Demo); )
+		PORT_DIPSETTING(    0x20, "1 each 2" );
+		PORT_DIPSETTING(    0xc0, "Freeze Mode" );
+		PORT_DIPSETTING(    0xe0, "Freeze Mode" );
 	
 		PORT_START	/* DSW2 - (L12 on analog vector generator PCB */
-		PORT_DIPNAME( 0x01, 0x00, "Minimum" )
-		PORT_DIPSETTING(    0x00, "1 Credit" )
-		PORT_DIPSETTING(    0x01, "2 Credit" )
-		PORT_DIPNAME( 0x06, 0x00, "Language" )
-		PORT_DIPSETTING(    0x00, "English" )
-		PORT_DIPSETTING(    0x02, "French" )
-		PORT_DIPSETTING(    0x04, "German" )
-		PORT_DIPSETTING(    0x06, "Spanish" )
-		PORT_DIPNAME( 0x38, 0x00, DEF_STR( Bonus_Life ) )
-		PORT_DIPSETTING(    0x08, "10000" )
-		PORT_DIPSETTING(    0x00, "20000" )
-		PORT_DIPSETTING(    0x10, "30000" )
-		PORT_DIPSETTING(    0x18, "40000" )
-		PORT_DIPSETTING(    0x20, "50000" )
-		PORT_DIPSETTING(    0x28, "60000" )
-		PORT_DIPSETTING(    0x30, "70000" )
-		PORT_DIPSETTING(    0x38, "None" )
-		PORT_DIPNAME( 0xc0, 0x00, DEF_STR( Lives ) )
-		PORT_DIPSETTING(    0xc0, "2" )
-		PORT_DIPSETTING(    0x00, "3" )
-		PORT_DIPSETTING(    0x40, "4" )
-		PORT_DIPSETTING(    0x80, "5" )
-	INPUT_PORTS_END
+		PORT_DIPNAME( 0x01, 0x00, "Minimum" );
+		PORT_DIPSETTING(    0x00, "1 Credit" );
+		PORT_DIPSETTING(    0x01, "2 Credit" );
+		PORT_DIPNAME( 0x06, 0x00, "Language" );
+		PORT_DIPSETTING(    0x00, "English" );
+		PORT_DIPSETTING(    0x02, "French" );
+		PORT_DIPSETTING(    0x04, "German" );
+		PORT_DIPSETTING(    0x06, "Spanish" );
+		PORT_DIPNAME( 0x38, 0x00, DEF_STR( "Bonus_Life") );
+		PORT_DIPSETTING(    0x08, "10000" );
+		PORT_DIPSETTING(    0x00, "20000" );
+		PORT_DIPSETTING(    0x10, "30000" );
+		PORT_DIPSETTING(    0x18, "40000" );
+		PORT_DIPSETTING(    0x20, "50000" );
+		PORT_DIPSETTING(    0x28, "60000" );
+		PORT_DIPSETTING(    0x30, "70000" );
+		PORT_DIPSETTING(    0x38, "None" );
+		PORT_DIPNAME( 0xc0, 0x00, DEF_STR( "Lives") );
+		PORT_DIPSETTING(    0xc0, "2" );
+		PORT_DIPSETTING(    0x00, "3" );
+		PORT_DIPSETTING(    0x40, "4" );
+		PORT_DIPSETTING(    0x80, "5" );
+	INPUT_PORTS_END(); }}; 
 	
 	
 	public static ReadHandlerPtr input_port_1_bit_r  = new ReadHandlerPtr() { public int handler(int offset) { return (readinputport(1) & (1 << offset)) ? 0 : 228; } };

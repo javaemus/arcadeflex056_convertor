@@ -188,11 +188,11 @@ public class inptportH
 	#define IP_JOY_NONE CODE_NONE
 	
 	/* start of table */
-	#define INPUT_PORTS_START(name) \
+	#define static InputPortPtr input_ports_name = new InputPortPtr(){ public void handler() {  \
 		static const struct InputPortTiny input_ports_##name[] = {
 	
 	/* end of table */
-	#define INPUT_PORTS_END \
+	#define INPUT_PORTS_END(); }};  \
 		{ 0, 0, IPT_END, 0  } \
 		};
 	/* start of a new input port */
@@ -202,13 +202,13 @@ public class inptportH
 	/* input bit definition */
 	#define PORT_BIT_NAME(mask,default,type,name) \
 		{ mask, default, type, name },
-	#define PORT_BIT(mask,default,type) \
+	#define PORT_BIT(mask,default,type);\
 		PORT_BIT_NAME(mask, default, type, IP_NAME_DEFAULT)
 	
 	/* impulse input bit definition */
 	#define PORT_BIT_IMPULSE_NAME(mask,default,type,duration,name) \
 		PORT_BIT_NAME(mask, default, type | IPF_IMPULSE | ((duration & 0xff) << 8), name)
-	#define PORT_BIT_IMPULSE(mask,default,type,duration) \
+	#define PORT_BIT_IMPULSE(mask,default,type,duration);\
 		PORT_BIT_IMPULSE_NAME(mask, default, type, duration, IP_NAME_DEFAULT)
 	
 	/* key/joy code specification */
@@ -216,33 +216,33 @@ public class inptportH
 		{ key, joy, IPT_EXTENSION, 0 },
 	
 	/* input bit definition with extended fields */
-	#define PORT_BITX(mask,default,type,name,key,joy) \
+	#define PORT_BITX(mask,default,type,name,key,joy);\
 		PORT_BIT_NAME(mask, default, type, name) \
 		PORT_CODE(key,joy)
 	
 	/* analog input */
-	#define PORT_ANALOG(mask,default,type,sensitivity,delta,min,max) \
-		PORT_BIT(mask, default, type) \
+	#define PORT_ANALOG(mask,default,type,sensitivity,delta,min,max);\
+		PORT_BIT(mask, default, type);\
 		{ min, max, IPT_EXTENSION | IPF_SENSITIVITY(sensitivity) | IPF_DELTA(delta), IP_NAME_DEFAULT },
 	
-	#define PORT_ANALOGX(mask,default,type,sensitivity,delta,min,max,keydec,keyinc,joydec,joyinc) \
-		PORT_BIT(mask, default, type) \
+	#define PORT_ANALOGX(mask,default,type,sensitivity,delta,min,max,keydec,keyinc,joydec,joyinc);\
+		PORT_BIT(mask, default, type);\
 		{ min, max, IPT_EXTENSION | IPF_SENSITIVITY(sensitivity) | IPF_DELTA(delta), IP_NAME_DEFAULT }, \
 		PORT_CODE(keydec,joydec) \
 		PORT_CODE(keyinc,joyinc)
 	
 	/* dip switch definition */
-	#define PORT_DIPNAME(mask,default,name) \
+	#define PORT_DIPNAME(mask,default,name);\
 		PORT_BIT_NAME(mask, default, IPT_DIPSWITCH_NAME, name)
 	
-	#define PORT_DIPSETTING(default,name) \
+	#define PORT_DIPSETTING(default,name);\
 		PORT_BIT_NAME(0, default, IPT_DIPSWITCH_SETTING, name)
 	
 	
-	#define PORT_SERVICE(mask,default)	\
-		PORT_BITX(    mask, mask & default, IPT_DIPSWITCH_NAME | IPF_TOGGLE, DEF_STR( Service_Mode ), KEYCODE_F2, IP_JOY_NONE )	\
-		PORT_DIPSETTING(    mask & default, DEF_STR( Off ) )	\
-		PORT_DIPSETTING(    mask &~default, DEF_STR( On ) )
+	#define PORT_SERVICE(mask,default);\
+		PORT_BITX(    mask, mask & default, IPT_DIPSWITCH_NAME | IPF_TOGGLE, DEF_STR( "Service_Mode") ); KEYCODE_F2, IP_JOY_NONE )	\
+		PORT_DIPSETTING(    mask & default, DEF_STR( "Off") );	\
+		PORT_DIPSETTING(    mask &~default, DEF_STR( "On") );
 	
 	#define MAX_DEFSTR_LEN 20
 	extern char ipdn_defaultstrings[][MAX_DEFSTR_LEN];

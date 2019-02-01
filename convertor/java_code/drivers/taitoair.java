@@ -327,87 +327,87 @@ public class taitoair
 	************************************************************/
 	
 	#define TAITO_COINAGE_JAPAN_8 \
-		PORT_DIPNAME( 0x30, 0x30, DEF_STR( Coin_A ) ) \
-		PORT_DIPSETTING(    0x10, DEF_STR( 2C_1C ) ) \
-		PORT_DIPSETTING(    0x30, DEF_STR( 1C_1C ) ) \
-		PORT_DIPSETTING(    0x00, DEF_STR( 2C_3C ) ) \
-		PORT_DIPSETTING(    0x20, DEF_STR( 1C_2C ) ) \
-		PORT_DIPNAME( 0xc0, 0xc0, DEF_STR( Coin_B ) ) \
-		PORT_DIPSETTING(    0x40, DEF_STR( 2C_1C ) ) \
-		PORT_DIPSETTING(    0xc0, DEF_STR( 1C_1C ) ) \
-		PORT_DIPSETTING(    0x00, DEF_STR( 2C_3C ) ) \
-		PORT_DIPSETTING(    0x80, DEF_STR( 1C_2C ) )
+		PORT_DIPNAME( 0x30, 0x30, DEF_STR( "Coin_A") ); \
+		PORT_DIPSETTING(    0x10, DEF_STR( "2C_1C") ); \
+		PORT_DIPSETTING(    0x30, DEF_STR( "1C_1C") ); \
+		PORT_DIPSETTING(    0x00, DEF_STR( "2C_3C") ); \
+		PORT_DIPSETTING(    0x20, DEF_STR( "1C_2C") ); \
+		PORT_DIPNAME( 0xc0, 0xc0, DEF_STR( "Coin_B") ); \
+		PORT_DIPSETTING(    0x40, DEF_STR( "2C_1C") ); \
+		PORT_DIPSETTING(    0xc0, DEF_STR( "1C_1C") ); \
+		PORT_DIPSETTING(    0x00, DEF_STR( "2C_3C") ); \
+		PORT_DIPSETTING(    0x80, DEF_STR( "1C_2C") );
 	
 	#define TAITO_COINAGE_US_8 \
-		PORT_DIPNAME( 0x30, 0x30, DEF_STR( Coinage ) ) \
-		PORT_DIPSETTING(    0x00, DEF_STR( 4C_1C ) ) \
-		PORT_DIPSETTING(    0x10, DEF_STR( 3C_1C ) ) \
-		PORT_DIPSETTING(    0x20, DEF_STR( 2C_1C ) ) \
-		PORT_DIPSETTING(    0x30, DEF_STR( 1C_1C ) ) \
-		PORT_DIPNAME( 0xc0, 0xc0, "Price to Continue" ) \
-		PORT_DIPSETTING(    0x00, DEF_STR( 3C_1C ) ) \
-		PORT_DIPSETTING(    0x40, DEF_STR( 2C_1C ) ) \
-		PORT_DIPSETTING(    0x80, DEF_STR( 1C_1C ) ) \
-		PORT_DIPSETTING(    0xc0, "Same as Start" )
+		PORT_DIPNAME( 0x30, 0x30, DEF_STR( "Coinage") ); \
+		PORT_DIPSETTING(    0x00, DEF_STR( "4C_1C") ); \
+		PORT_DIPSETTING(    0x10, DEF_STR( "3C_1C") ); \
+		PORT_DIPSETTING(    0x20, DEF_STR( "2C_1C") ); \
+		PORT_DIPSETTING(    0x30, DEF_STR( "1C_1C") ); \
+		PORT_DIPNAME( 0xc0, 0xc0, "Price to Continue" );\
+		PORT_DIPSETTING(    0x00, DEF_STR( "3C_1C") ); \
+		PORT_DIPSETTING(    0x40, DEF_STR( "2C_1C") ); \
+		PORT_DIPSETTING(    0x80, DEF_STR( "1C_1C") ); \
+		PORT_DIPSETTING(    0xc0, "Same as Start" );
 	
 	#define TAITO_DIFFICULTY_8 \
-		PORT_DIPNAME( 0x03, 0x03, DEF_STR( Difficulty ) ) \
-		PORT_DIPSETTING(    0x02, "Easy" ) \
-		PORT_DIPSETTING(    0x03, "Medium" ) \
-		PORT_DIPSETTING(    0x01, "Hard" ) \
-		PORT_DIPSETTING(    0x00, "Hardest" )
+		PORT_DIPNAME( 0x03, 0x03, DEF_STR( "Difficulty") ); \
+		PORT_DIPSETTING(    0x02, "Easy" );\
+		PORT_DIPSETTING(    0x03, "Medium" );\
+		PORT_DIPSETTING(    0x01, "Hard" );\
+		PORT_DIPSETTING(    0x00, "Hardest" );
 	
-	INPUT_PORTS_START( topland )
+	static InputPortPtr input_ports_topland = new InputPortPtr(){ public void handler() { 
 		PORT_START  /* DSWA */
-		PORT_DIPNAME( 0x03, 0x03, DEF_STR( Cabinet ) )
-		PORT_DIPSETTING(    0x00, "Mechanized (alt)?" )
-		PORT_DIPSETTING(    0x01, "Standard (alt) ?" )
-		PORT_DIPSETTING(    0x02, "Mechanized" )
-		PORT_DIPSETTING(    0x03, "Standard" )
-		PORT_SERVICE( 0x04, IP_ACTIVE_LOW )
-		PORT_DIPNAME( 0x08, 0x08, DEF_STR( Demo_Sounds ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( Off ) )
-		PORT_DIPSETTING(    0x08, DEF_STR( On ) )
+		PORT_DIPNAME( 0x03, 0x03, DEF_STR( "Cabinet") );
+		PORT_DIPSETTING(    0x00, "Mechanized (alt);" )
+		PORT_DIPSETTING(    0x01, "Standard (alt);?" )
+		PORT_DIPSETTING(    0x02, "Mechanized" );
+		PORT_DIPSETTING(    0x03, "Standard" );
+		PORT_SERVICE( 0x04, IP_ACTIVE_LOW );
+		PORT_DIPNAME( 0x08, 0x08, DEF_STR( "Demo_Sounds") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "Off") );
+		PORT_DIPSETTING(    0x08, DEF_STR( "On") );
 		TAITO_COINAGE_JAPAN_8
 	
 		PORT_START  /* DSWB, all bogus !!! */
 		TAITO_DIFFICULTY_8
-		PORT_DIPNAME( 0x0c, 0x0c, DEF_STR( Bonus_Life ) )
-		PORT_DIPSETTING(    0x08, "1000k only" )
-		PORT_DIPSETTING(    0x0c, "1500k only" )
-		PORT_DIPSETTING(    0x04, "2000k only" )
-		PORT_DIPSETTING(    0x00, "None" )
-		PORT_DIPNAME( 0x30, 0x30, DEF_STR( Lives ) )
-		PORT_DIPSETTING(    0x00, "2" )
-		PORT_DIPSETTING(    0x30, "3" )
-		PORT_DIPSETTING(    0x20, "4" )
-		PORT_DIPSETTING(    0x10, "5" )
-		PORT_DIPNAME( 0x40, 0x40, DEF_STR( Unused ) )
-		PORT_DIPSETTING(    0x40, DEF_STR( Off ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( On ) )
-		PORT_DIPNAME( 0x80, 0x80, DEF_STR( Unused ) )
-		PORT_DIPSETTING(    0x80, DEF_STR( Off ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( On ) )
+		PORT_DIPNAME( 0x0c, 0x0c, DEF_STR( "Bonus_Life") );
+		PORT_DIPSETTING(    0x08, "1000k only" );
+		PORT_DIPSETTING(    0x0c, "1500k only" );
+		PORT_DIPSETTING(    0x04, "2000k only" );
+		PORT_DIPSETTING(    0x00, "None" );
+		PORT_DIPNAME( 0x30, 0x30, DEF_STR( "Lives") );
+		PORT_DIPSETTING(    0x00, "2" );
+		PORT_DIPSETTING(    0x30, "3" );
+		PORT_DIPSETTING(    0x20, "4" );
+		PORT_DIPSETTING(    0x10, "5" );
+		PORT_DIPNAME( 0x40, 0x40, DEF_STR( "Unused") );
+		PORT_DIPSETTING(    0x40, DEF_STR( "Off") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
+		PORT_DIPNAME( 0x80, 0x80, DEF_STR( "Unused") );
+		PORT_DIPSETTING(    0x80, DEF_STR( "Off") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 	
 		PORT_START	/* IN0 */
-		PORT_BIT( 0x01, IP_ACTIVE_LOW,  IPT_UNKNOWN )
-		PORT_BIT( 0x02, IP_ACTIVE_LOW,  IPT_UNKNOWN )
-		PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_COIN1 )
-		PORT_BIT( 0x08, IP_ACTIVE_HIGH, IPT_COIN2 )
-		PORT_BIT( 0x10, IP_ACTIVE_LOW,  IPT_SERVICE1 )
-		PORT_BIT( 0x20, IP_ACTIVE_LOW,  IPT_TILT )
-		PORT_BIT( 0x40, IP_ACTIVE_LOW,  IPT_START1 )
-		PORT_BIT( 0x80, IP_ACTIVE_LOW,  IPT_BUTTON3 | IPF_PLAYER1 )	/* "door" (!) */
+		PORT_BIT( 0x01, IP_ACTIVE_LOW,  IPT_UNKNOWN );
+		PORT_BIT( 0x02, IP_ACTIVE_LOW,  IPT_UNKNOWN );
+		PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_COIN1 );
+		PORT_BIT( 0x08, IP_ACTIVE_HIGH, IPT_COIN2 );
+		PORT_BIT( 0x10, IP_ACTIVE_LOW,  IPT_SERVICE1 );
+		PORT_BIT( 0x20, IP_ACTIVE_LOW,  IPT_TILT );
+		PORT_BIT( 0x40, IP_ACTIVE_LOW,  IPT_START1 );
+		PORT_BIT( 0x80, IP_ACTIVE_LOW,  IPT_BUTTON3 | IPF_PLAYER1 );/* "door" (!) */
 	
 		PORT_START	/* IN1 */
-		PORT_BIT( 0x01, IP_ACTIVE_LOW,  IPT_BUTTON1 | IPF_PLAYER1 )	/* slot down */
-		PORT_BIT( 0x02, IP_ACTIVE_LOW,  IPT_BUTTON2 | IPF_PLAYER1 )	/* slot up */
-		PORT_BIT( 0x04, IP_ACTIVE_LOW,  IPT_JOYSTICK_LEFT  | IPF_8WAY | IPF_PLAYER1 )	/* handle */
-		PORT_BIT( 0x08, IP_ACTIVE_LOW,  IPT_JOYSTICK_RIGHT | IPF_8WAY | IPF_PLAYER1 )
-		PORT_BIT( 0x10, IP_ACTIVE_LOW,  IPT_JOYSTICK_DOWN  | IPF_8WAY | IPF_PLAYER1 )
-		PORT_BIT( 0x20, IP_ACTIVE_LOW,  IPT_JOYSTICK_UP    | IPF_8WAY | IPF_PLAYER1 )
-		PORT_BIT( 0x40, IP_ACTIVE_HIGH, IPT_BUTTON4 | IPF_PLAYER1 )	/* freeze ??? */
-		PORT_BIT( 0x80, IP_ACTIVE_LOW,  IPT_UNKNOWN )
+		PORT_BIT( 0x01, IP_ACTIVE_LOW,  IPT_BUTTON1 | IPF_PLAYER1 );/* slot down */
+		PORT_BIT( 0x02, IP_ACTIVE_LOW,  IPT_BUTTON2 | IPF_PLAYER1 );/* slot up */
+		PORT_BIT( 0x04, IP_ACTIVE_LOW,  IPT_JOYSTICK_LEFT  | IPF_8WAY | IPF_PLAYER1 );/* handle */
+		PORT_BIT( 0x08, IP_ACTIVE_LOW,  IPT_JOYSTICK_RIGHT | IPF_8WAY | IPF_PLAYER1 );
+		PORT_BIT( 0x10, IP_ACTIVE_LOW,  IPT_JOYSTICK_DOWN  | IPF_8WAY | IPF_PLAYER1 );
+		PORT_BIT( 0x20, IP_ACTIVE_LOW,  IPT_JOYSTICK_UP    | IPF_8WAY | IPF_PLAYER1 );
+		PORT_BIT( 0x40, IP_ACTIVE_HIGH, IPT_BUTTON4 | IPF_PLAYER1 );/* freeze ??? */
+		PORT_BIT( 0x80, IP_ACTIVE_LOW,  IPT_UNKNOWN );
 	
 		/* The range of these sticks reflects the range test mode displays.
 		   Eventually we want standard 0-0xff input range and a scale-up later
@@ -415,66 +415,66 @@ public class taitoair
 		   to make keyboard control feasible! */
 	
 		PORT_START  /* Stick 1 (4) */
-		PORT_ANALOG( 0xffff, 0x0000, IPT_AD_STICK_X | IPF_PLAYER1, 30, 40, 0xf800, 0x7ff )
+		PORT_ANALOG( 0xffff, 0x0000, IPT_AD_STICK_X | IPF_PLAYER1, 30, 40, 0xf800, 0x7ff );
 	
 		PORT_START  /* Stick 2 (5) */
-		PORT_ANALOG( 0xffff, 0x0000, IPT_AD_STICK_Y | IPF_PLAYER1, 30, 40, 0xf800, 0x7ff )
+		PORT_ANALOG( 0xffff, 0x0000, IPT_AD_STICK_Y | IPF_PLAYER1, 30, 40, 0xf800, 0x7ff );
 	
 		PORT_START  /* Stick 3 (6) */
-		PORT_ANALOG( 0xffff, 0x0000, IPT_AD_STICK_Y | IPF_PLAYER2, 30, 40, 0xf800, 0x7ff )
-	INPUT_PORTS_END
+		PORT_ANALOG( 0xffff, 0x0000, IPT_AD_STICK_Y | IPF_PLAYER2, 30, 40, 0xf800, 0x7ff );
+	INPUT_PORTS_END(); }}; 
 	
-	INPUT_PORTS_START( ainferno )
+	static InputPortPtr input_ports_ainferno = new InputPortPtr(){ public void handler() { 
 		PORT_START  /* DSWA */
-		PORT_DIPNAME( 0x03, 0x03, DEF_STR( Cabinet ) )
-		PORT_DIPSETTING(    0x00, "Mechanized (alt)?" )
-		PORT_DIPSETTING(    0x01, "Special Sensors" )	// on its test mode screen
-		PORT_DIPSETTING(    0x02, "Mechanized" )
-		PORT_DIPSETTING(    0x03, "Standard" )
-		PORT_SERVICE( 0x04, IP_ACTIVE_LOW )
-		PORT_DIPNAME( 0x08, 0x08, DEF_STR( Demo_Sounds ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( Off ) )
-		PORT_DIPSETTING(    0x08, DEF_STR( On ) )
+		PORT_DIPNAME( 0x03, 0x03, DEF_STR( "Cabinet") );
+		PORT_DIPSETTING(    0x00, "Mechanized (alt);" )
+		PORT_DIPSETTING(    0x01, "Special Sensors" );// on its test mode screen
+		PORT_DIPSETTING(    0x02, "Mechanized" );
+		PORT_DIPSETTING(    0x03, "Standard" );
+		PORT_SERVICE( 0x04, IP_ACTIVE_LOW );
+		PORT_DIPNAME( 0x08, 0x08, DEF_STR( "Demo_Sounds") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "Off") );
+		PORT_DIPSETTING(    0x08, DEF_STR( "On") );
 		TAITO_COINAGE_US_8
 	
 		PORT_START  /* DSWB, all bogus !!! */
 		TAITO_DIFFICULTY_8
-		PORT_DIPNAME( 0x0c, 0x0c, DEF_STR( Bonus_Life ) )
-		PORT_DIPSETTING(    0x08, "1000k only" )
-		PORT_DIPSETTING(    0x0c, "1500k only" )
-		PORT_DIPSETTING(    0x04, "2000k only" )
-		PORT_DIPSETTING(    0x00, "None" )
-		PORT_DIPNAME( 0x30, 0x30, DEF_STR( Lives ) )
-		PORT_DIPSETTING(    0x00, "2" )
-		PORT_DIPSETTING(    0x30, "3" )
-		PORT_DIPSETTING(    0x20, "4" )
-		PORT_DIPSETTING(    0x10, "5" )
-		PORT_DIPNAME( 0x40, 0x40, DEF_STR( Unused ) )
-		PORT_DIPSETTING(    0x40, DEF_STR( Off ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( On ) )
-		PORT_DIPNAME( 0x80, 0x80, DEF_STR( Unused ) )
-		PORT_DIPSETTING(    0x80, DEF_STR( Off ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( On ) )
+		PORT_DIPNAME( 0x0c, 0x0c, DEF_STR( "Bonus_Life") );
+		PORT_DIPSETTING(    0x08, "1000k only" );
+		PORT_DIPSETTING(    0x0c, "1500k only" );
+		PORT_DIPSETTING(    0x04, "2000k only" );
+		PORT_DIPSETTING(    0x00, "None" );
+		PORT_DIPNAME( 0x30, 0x30, DEF_STR( "Lives") );
+		PORT_DIPSETTING(    0x00, "2" );
+		PORT_DIPSETTING(    0x30, "3" );
+		PORT_DIPSETTING(    0x20, "4" );
+		PORT_DIPSETTING(    0x10, "5" );
+		PORT_DIPNAME( 0x40, 0x40, DEF_STR( "Unused") );
+		PORT_DIPSETTING(    0x40, DEF_STR( "Off") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
+		PORT_DIPNAME( 0x80, 0x80, DEF_STR( "Unused") );
+		PORT_DIPSETTING(    0x80, DEF_STR( "Off") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 	
 		PORT_START	/* IN0 */
-		PORT_BIT( 0x01, IP_ACTIVE_LOW,  IPT_UNKNOWN )
-		PORT_BIT( 0x02, IP_ACTIVE_LOW,  IPT_UNKNOWN )
-		PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_COIN1 )
-		PORT_BIT( 0x08, IP_ACTIVE_HIGH, IPT_COIN2 )
-		PORT_BIT( 0x10, IP_ACTIVE_LOW,  IPT_SERVICE1 )
-		PORT_BIT( 0x20, IP_ACTIVE_LOW,  IPT_TILT )
-		PORT_BIT( 0x40, IP_ACTIVE_LOW,  IPT_START1 )
-		PORT_BIT( 0x80, IP_ACTIVE_LOW,  IPT_START2 )
+		PORT_BIT( 0x01, IP_ACTIVE_LOW,  IPT_UNKNOWN );
+		PORT_BIT( 0x02, IP_ACTIVE_LOW,  IPT_UNKNOWN );
+		PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_COIN1 );
+		PORT_BIT( 0x08, IP_ACTIVE_HIGH, IPT_COIN2 );
+		PORT_BIT( 0x10, IP_ACTIVE_LOW,  IPT_SERVICE1 );
+		PORT_BIT( 0x20, IP_ACTIVE_LOW,  IPT_TILT );
+		PORT_BIT( 0x40, IP_ACTIVE_LOW,  IPT_START1 );
+		PORT_BIT( 0x80, IP_ACTIVE_LOW,  IPT_START2 );
 	
 		PORT_START	/* IN1 */
-		PORT_BIT( 0x01, IP_ACTIVE_LOW,  IPT_BUTTON1 | IPF_PLAYER1 )	/* lever */
-		PORT_BIT( 0x02, IP_ACTIVE_LOW,  IPT_BUTTON2 | IPF_PLAYER1 )	/* handle x */
-		PORT_BIT( 0x04, IP_ACTIVE_LOW,  IPT_BUTTON3 | IPF_PLAYER1 )	/* handle y */
-		PORT_BIT( 0x08, IP_ACTIVE_LOW,  IPT_BUTTON4 | IPF_PLAYER1 )	/* fire */
-		PORT_BIT( 0x10, IP_ACTIVE_LOW,  IPT_BUTTON5 | IPF_PLAYER1 )	/* pedal r */
-		PORT_BIT( 0x20, IP_ACTIVE_LOW,  IPT_BUTTON6 | IPF_PLAYER1 )	/* pedal l */
-		PORT_BIT( 0x40, IP_ACTIVE_HIGH, IPT_BUTTON7 | IPF_PLAYER1 )	/* freeze (code at $7d6 hangs) */
-		PORT_BIT( 0x80, IP_ACTIVE_LOW,  IPT_UNKNOWN )
+		PORT_BIT( 0x01, IP_ACTIVE_LOW,  IPT_BUTTON1 | IPF_PLAYER1 );/* lever */
+		PORT_BIT( 0x02, IP_ACTIVE_LOW,  IPT_BUTTON2 | IPF_PLAYER1 );/* handle x */
+		PORT_BIT( 0x04, IP_ACTIVE_LOW,  IPT_BUTTON3 | IPF_PLAYER1 );/* handle y */
+		PORT_BIT( 0x08, IP_ACTIVE_LOW,  IPT_BUTTON4 | IPF_PLAYER1 );/* fire */
+		PORT_BIT( 0x10, IP_ACTIVE_LOW,  IPT_BUTTON5 | IPF_PLAYER1 );/* pedal r */
+		PORT_BIT( 0x20, IP_ACTIVE_LOW,  IPT_BUTTON6 | IPF_PLAYER1 );/* pedal l */
+		PORT_BIT( 0x40, IP_ACTIVE_HIGH, IPT_BUTTON7 | IPF_PLAYER1 );/* freeze (code at $7d6 hangs) */
+		PORT_BIT( 0x80, IP_ACTIVE_LOW,  IPT_UNKNOWN );
 	
 		/* The range of these sticks reflects the range test mode displays.
 		   Eventually we want standard 0-0xff input range and a scale-up later
@@ -482,14 +482,14 @@ public class taitoair
 		   to make keyboard control feasible! */
 	
 		PORT_START  /* Stick 1 (4) */
-		PORT_ANALOG( 0xffff, 0x0000, IPT_AD_STICK_X | IPF_PLAYER1, 30, 40, 0xf800, 0x7ff )
+		PORT_ANALOG( 0xffff, 0x0000, IPT_AD_STICK_X | IPF_PLAYER1, 30, 40, 0xf800, 0x7ff );
 	
 		PORT_START  /* Stick 2 (5) */
-		PORT_ANALOG( 0xffff, 0x0000, IPT_AD_STICK_Y | IPF_PLAYER1, 30, 40, 0xf800, 0x7ff )
+		PORT_ANALOG( 0xffff, 0x0000, IPT_AD_STICK_Y | IPF_PLAYER1, 30, 40, 0xf800, 0x7ff );
 	
 		PORT_START  /* Stick 3 (6) */
-		PORT_ANALOG( 0xffff, 0x0000, IPT_AD_STICK_Y | IPF_PLAYER2, 30, 40, 0xf800, 0x7ff )
-	INPUT_PORTS_END
+		PORT_ANALOG( 0xffff, 0x0000, IPT_AD_STICK_Y | IPF_PLAYER2, 30, 40, 0xf800, 0x7ff );
+	INPUT_PORTS_END(); }}; 
 	
 	
 	/************************************************************

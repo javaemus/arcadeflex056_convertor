@@ -223,49 +223,49 @@ public class quantum
 	 *
 	 *************************************/
 	
-	INPUT_PORTS_START( quantum )
+	static InputPortPtr input_ports_quantum = new InputPortPtr(){ public void handler() { 
 		PORT_START		/* IN0 */
 		/* YHALT here MUST BE ALWAYS 0  */
-		PORT_BIT( 0x01, IP_ACTIVE_HIGH,IPT_SPECIAL )	/* vg YHALT */
-		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_COIN3 )
-		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_START1 )
-		PORT_BIT( 0x08, IP_ACTIVE_LOW, IPT_START2 )
-		PORT_BIT( 0x10, IP_ACTIVE_LOW, IPT_COIN2 )
-		PORT_BIT( 0x20, IP_ACTIVE_LOW, IPT_COIN1 )
-		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNKNOWN )
-		PORT_SERVICE( 0x80, IP_ACTIVE_LOW )
+		PORT_BIT( 0x01, IP_ACTIVE_HIGH,IPT_SPECIAL );/* vg YHALT */
+		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_COIN3 );
+		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_START1 );
+		PORT_BIT( 0x08, IP_ACTIVE_LOW, IPT_START2 );
+		PORT_BIT( 0x10, IP_ACTIVE_LOW, IPT_COIN2 );
+		PORT_BIT( 0x20, IP_ACTIVE_LOW, IPT_COIN1 );
+		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNKNOWN );
+		PORT_SERVICE( 0x80, IP_ACTIVE_LOW );
 	
 	/* first POKEY is SW2, second is SW1 -- more confusion! */
 		PORT_START 		/* DSW0 */
-		PORT_DIPNAME( 0xc0, 0x00, DEF_STR( Coinage ) )
-		PORT_DIPSETTING(    0x80, DEF_STR( 2C_1C ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( 1C_1C ) )
-		PORT_DIPSETTING(    0xc0, DEF_STR( 1C_2C ) )
-		PORT_DIPSETTING(    0x40, DEF_STR( Free_Play ) )
-		PORT_DIPNAME( 0x30, 0x00, "Right Coin" )
-		PORT_DIPSETTING(    0x00, "*1" )
-		PORT_DIPSETTING(    0x20, "*4" )
-		PORT_DIPSETTING(    0x10, "*5" )
-		PORT_DIPSETTING(    0x30, "*6" )
-		PORT_DIPNAME( 0x08, 0x00, "Left Coin" )
-		PORT_DIPSETTING(    0x00, "*1" )
-		PORT_DIPSETTING(    0x08, "*2" )
-		PORT_DIPNAME( 0x07, 0x00, "Bonus Coins" )
-		PORT_DIPSETTING(    0x00, "None" )
-		PORT_DIPSETTING(    0x01, "1 each 5" )
-		PORT_DIPSETTING(    0x02, "1 each 4" )
-		PORT_DIPSETTING(    0x05, "1 each 3" )
-		PORT_DIPSETTING(    0x06, "2 each 4" )
+		PORT_DIPNAME( 0xc0, 0x00, DEF_STR( "Coinage") );
+		PORT_DIPSETTING(    0x80, DEF_STR( "2C_1C") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "1C_1C") );
+		PORT_DIPSETTING(    0xc0, DEF_STR( "1C_2C") );
+		PORT_DIPSETTING(    0x40, DEF_STR( "Free_Play") );
+		PORT_DIPNAME( 0x30, 0x00, "Right Coin" );
+		PORT_DIPSETTING(    0x00, "*1" );
+		PORT_DIPSETTING(    0x20, "*4" );
+		PORT_DIPSETTING(    0x10, "*5" );
+		PORT_DIPSETTING(    0x30, "*6" );
+		PORT_DIPNAME( 0x08, 0x00, "Left Coin" );
+		PORT_DIPSETTING(    0x00, "*1" );
+		PORT_DIPSETTING(    0x08, "*2" );
+		PORT_DIPNAME( 0x07, 0x00, "Bonus Coins" );
+		PORT_DIPSETTING(    0x00, "None" );
+		PORT_DIPSETTING(    0x01, "1 each 5" );
+		PORT_DIPSETTING(    0x02, "1 each 4" );
+		PORT_DIPSETTING(    0x05, "1 each 3" );
+		PORT_DIPSETTING(    0x06, "2 each 4" );
 	
 		PORT_START		/* DSW1 */
-		PORT_BIT( 0xff, IP_ACTIVE_HIGH, IPT_UNKNOWN )
+		PORT_BIT( 0xff, IP_ACTIVE_HIGH, IPT_UNKNOWN );
 	
 		PORT_START      /* IN2 */
-		PORT_ANALOG( 0x0f, 0, IPT_TRACKBALL_Y | IPF_REVERSE, 10, 10, 0,0)
+		PORT_ANALOG( 0x0f, 0, IPT_TRACKBALL_Y | IPF_REVERSE, 10, 10, 0,0);
 	
 		PORT_START      /* IN3 */
-		PORT_ANALOG( 0x0f, 0, IPT_TRACKBALL_X, 10, 10, 0, 0 )
-	INPUT_PORTS_END
+		PORT_ANALOG( 0x0f, 0, IPT_TRACKBALL_X, 10, 10, 0, 0 );
+	INPUT_PORTS_END(); }}; 
 	
 	
 	

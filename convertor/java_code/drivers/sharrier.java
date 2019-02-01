@@ -1282,118 +1282,118 @@ public class sharrier
 	
 	/***************************************************************************/
 	
-	INPUT_PORTS_START( hangon )
+	static InputPortPtr input_ports_hangon = new InputPortPtr(){ public void handler() { 
 		PORT_START	/* Steering */
-			PORT_ANALOG( 0xff, 0x7f, IPT_AD_STICK_X | IPF_REVERSE | IPF_CENTER , 100, 3, 0x48, 0xb7 )
+			PORT_ANALOG( 0xff, 0x7f, IPT_AD_STICK_X | IPF_REVERSE | IPF_CENTER , 100, 3, 0x48, 0xb7 );
 		PORT_START	/* Accel / Decel */
-			PORT_ANALOG( 0xff, 0x1, IPT_AD_STICK_Y | IPF_CENTER | IPF_REVERSE, 100, 16, 0, 0xa2 )
+			PORT_ANALOG( 0xff, 0x1, IPT_AD_STICK_Y | IPF_CENTER | IPF_REVERSE, 100, 16, 0, 0xa2 );
 		SYS16_SERVICE
 		SYS16_COINAGE
 		PORT_START	/* DSW1 */
-			PORT_DIPNAME( 0x01, 0x00, DEF_STR( Demo_Sounds ) )
-			PORT_DIPSETTING(    0x01, DEF_STR( Off ) )
-			PORT_DIPSETTING(    0x00, DEF_STR( On ) )
-			PORT_DIPNAME( 0x06, 0x06, DEF_STR( Difficulty ) )
-			PORT_DIPSETTING(    0x04, "Easy" )
-			PORT_DIPSETTING(    0x06, "Normal" )
-			PORT_DIPSETTING(    0x02, "Hard" )
-			PORT_DIPSETTING(    0x00, "Hardest" )
-			PORT_DIPNAME( 0x18, 0x18, "Time Adj." )
-			PORT_DIPSETTING(    0x18, "Normal" )
-			PORT_DIPSETTING(    0x10, "Medium" )
-			PORT_DIPSETTING(    0x08, "Hard" )
-			PORT_DIPSETTING(    0x00, "Hardest" )
-			PORT_DIPNAME( 0x20, 0x20, "Play Music" )
-			PORT_DIPSETTING(    0x00, DEF_STR( Off ) )
-			PORT_DIPSETTING(    0x20, DEF_STR( On ) )
+			PORT_DIPNAME( 0x01, 0x00, DEF_STR( "Demo_Sounds") );
+			PORT_DIPSETTING(    0x01, DEF_STR( "Off") );
+			PORT_DIPSETTING(    0x00, DEF_STR( "On") );
+			PORT_DIPNAME( 0x06, 0x06, DEF_STR( "Difficulty") );
+			PORT_DIPSETTING(    0x04, "Easy" );
+			PORT_DIPSETTING(    0x06, "Normal" );
+			PORT_DIPSETTING(    0x02, "Hard" );
+			PORT_DIPSETTING(    0x00, "Hardest" );
+			PORT_DIPNAME( 0x18, 0x18, "Time Adj." );
+			PORT_DIPSETTING(    0x18, "Normal" );
+			PORT_DIPSETTING(    0x10, "Medium" );
+			PORT_DIPSETTING(    0x08, "Hard" );
+			PORT_DIPSETTING(    0x00, "Hardest" );
+			PORT_DIPNAME( 0x20, 0x20, "Play Music" );
+			PORT_DIPSETTING(    0x00, DEF_STR( "Off") );
+			PORT_DIPSETTING(    0x20, DEF_STR( "On") );
 		PORT_START	/* Brake */
-			PORT_ANALOG( 0xff, 0x1, IPT_AD_STICK_Y | IPF_PLAYER2 | IPF_CENTER | IPF_REVERSE, 100, 16, 0, 0xa2 )
-	INPUT_PORTS_END
+			PORT_ANALOG( 0xff, 0x1, IPT_AD_STICK_Y | IPF_PLAYER2 | IPF_CENTER | IPF_REVERSE, 100, 16, 0, 0xa2 );
+	INPUT_PORTS_END(); }}; 
 	
-	INPUT_PORTS_START( enduror )
+	static InputPortPtr input_ports_enduror = new InputPortPtr(){ public void handler() { 
 		PORT_START	/* handle right left */
-			PORT_ANALOG( 0xff, 0x7f, IPT_AD_STICK_X | IPF_REVERSE | IPF_CENTER, 100, 4, 0x0, 0xff )
+			PORT_ANALOG( 0xff, 0x7f, IPT_AD_STICK_X | IPF_REVERSE | IPF_CENTER, 100, 4, 0x0, 0xff );
 		PORT_START	/* Fake Buttons */
-			PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_BUTTON1 )	// accel
-			PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_BUTTON2 )	// brake
-			PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_JOYSTICK_DOWN )	// wheelie
+			PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_BUTTON1 );// accel
+			PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_BUTTON2 );// brake
+			PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_JOYSTICK_DOWN );// wheelie
 		PORT_START
-			PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_COIN1 )
-			PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_COIN2 )
-			PORT_BITX(0x04, IP_ACTIVE_LOW, IPT_SERVICE, DEF_STR( Service_Mode ), KEYCODE_F2, IP_JOY_NONE )
-			PORT_BIT( 0x08, IP_ACTIVE_LOW, IPT_SERVICE1 )
-			PORT_BIT( 0x10, IP_ACTIVE_LOW, IPT_UNKNOWN )
-			PORT_BIT( 0x20, IP_ACTIVE_LOW, IPT_UNKNOWN )
-			PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_START1 )
-			PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNKNOWN )
+			PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_COIN1 );
+			PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_COIN2 );
+			PORT_BITX(0x04, IP_ACTIVE_LOW, IPT_SERVICE, DEF_STR( "Service_Mode") ); KEYCODE_F2, IP_JOY_NONE )
+			PORT_BIT( 0x08, IP_ACTIVE_LOW, IPT_SERVICE1 );
+			PORT_BIT( 0x10, IP_ACTIVE_LOW, IPT_UNKNOWN );
+			PORT_BIT( 0x20, IP_ACTIVE_LOW, IPT_UNKNOWN );
+			PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_START1 );
+			PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		SYS16_COINAGE
 		PORT_START	/* DSW1 */
-			PORT_DIPNAME( 0x01, 0x00, DEF_STR( Cabinet ) )
-			PORT_DIPSETTING(    0x00, DEF_STR( Upright ) )
-			PORT_DIPSETTING(    0x01, "Moving" )
-			PORT_DIPNAME( 0x06, 0x06, DEF_STR( Difficulty ) )
-			PORT_DIPSETTING(    0x04, "Easy" )
-			PORT_DIPSETTING(    0x06, "Normal" )
-			PORT_DIPSETTING(    0x02, "Hard" )
-			PORT_DIPSETTING(    0x00, "Hardest" )
-			PORT_DIPNAME( 0x18, 0x18, "Time Adjust" )
-			PORT_DIPSETTING(    0x10, "Easy" )
-			PORT_DIPSETTING(    0x18, "Normal" )
-			PORT_DIPSETTING(    0x08, "Hard" )
-			PORT_DIPSETTING(    0x00, "Hardest" )
-			PORT_DIPNAME( 0x60, 0x60, "Time Control" )
-			PORT_DIPSETTING(    0x40, "Easy" )
-			PORT_DIPSETTING(    0x60, "Normal" )
-			PORT_DIPSETTING(    0x20, "Hard" )
-			PORT_DIPSETTING(    0x00, "Hardest" )
-			PORT_DIPNAME( 0x80, 0x00, DEF_STR( Demo_Sounds ) )
-			PORT_DIPSETTING(    0x80, DEF_STR( Off ) )
-			PORT_DIPSETTING(    0x00, DEF_STR( On ) )
+			PORT_DIPNAME( 0x01, 0x00, DEF_STR( "Cabinet") );
+			PORT_DIPSETTING(    0x00, DEF_STR( "Upright") );
+			PORT_DIPSETTING(    0x01, "Moving" );
+			PORT_DIPNAME( 0x06, 0x06, DEF_STR( "Difficulty") );
+			PORT_DIPSETTING(    0x04, "Easy" );
+			PORT_DIPSETTING(    0x06, "Normal" );
+			PORT_DIPSETTING(    0x02, "Hard" );
+			PORT_DIPSETTING(    0x00, "Hardest" );
+			PORT_DIPNAME( 0x18, 0x18, "Time Adjust" );
+			PORT_DIPSETTING(    0x10, "Easy" );
+			PORT_DIPSETTING(    0x18, "Normal" );
+			PORT_DIPSETTING(    0x08, "Hard" );
+			PORT_DIPSETTING(    0x00, "Hardest" );
+			PORT_DIPNAME( 0x60, 0x60, "Time Control" );
+			PORT_DIPSETTING(    0x40, "Easy" );
+			PORT_DIPSETTING(    0x60, "Normal" );
+			PORT_DIPSETTING(    0x20, "Hard" );
+			PORT_DIPSETTING(    0x00, "Hardest" );
+			PORT_DIPNAME( 0x80, 0x00, DEF_STR( "Demo_Sounds") );
+			PORT_DIPSETTING(    0x80, DEF_STR( "Off") );
+			PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 		//PORT_START	/* Y */
-		//PORT_ANALOG( 0xff, 0x0, IPT_AD_STICK_Y | IPF_CENTER , 100, 8, 0x0, 0xff )
-	INPUT_PORTS_END
+		//PORT_ANALOG( 0xff, 0x0, IPT_AD_STICK_Y | IPF_CENTER , 100, 8, 0x0, 0xff );
+	INPUT_PORTS_END(); }}; 
 	
-	INPUT_PORTS_START( sharrier )
+	static InputPortPtr input_ports_sharrier = new InputPortPtr(){ public void handler() { 
 		SYS16_JOY1
 		SYS16_JOY2
 		PORT_START
-			PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_COIN1 )
-			PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_COIN2 )
-			PORT_BITX(0x04, IP_ACTIVE_LOW, IPT_SERVICE, DEF_STR( Service_Mode ), KEYCODE_F2, IP_JOY_NONE )
-			PORT_BIT( 0x08, IP_ACTIVE_LOW, IPT_SERVICE1 )
-			PORT_BIT( 0x10, IP_ACTIVE_LOW, IPT_START1 )
-			PORT_BIT( 0x20, IP_ACTIVE_LOW, IPT_BUTTON1 )
-			PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNKNOWN )
-			PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNKNOWN )
+			PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_COIN1 );
+			PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_COIN2 );
+			PORT_BITX(0x04, IP_ACTIVE_LOW, IPT_SERVICE, DEF_STR( "Service_Mode") ); KEYCODE_F2, IP_JOY_NONE )
+			PORT_BIT( 0x08, IP_ACTIVE_LOW, IPT_SERVICE1 );
+			PORT_BIT( 0x10, IP_ACTIVE_LOW, IPT_START1 );
+			PORT_BIT( 0x20, IP_ACTIVE_LOW, IPT_BUTTON1 );
+			PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNKNOWN );
+			PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNKNOWN );
 		SYS16_COINAGE
 		PORT_START	/* DSW1 */
-			PORT_DIPNAME( 0x01, 0x00, DEF_STR( Cabinet ) )
-			PORT_DIPSETTING(    0x00, DEF_STR( Upright ) )
-			PORT_DIPSETTING(    0x01, "Moving" )
-			PORT_DIPNAME( 0x02, 0x00, DEF_STR( Demo_Sounds ) )
-			PORT_DIPSETTING(    0x02, DEF_STR( Off ) )
-			PORT_DIPSETTING(    0x00, DEF_STR( On ) )
-			PORT_DIPNAME( 0x0c, 0x0c, DEF_STR( Lives ) )
-			PORT_DIPSETTING(    0x08, "2" )
-			PORT_DIPSETTING(    0x0c, "3" )
-			PORT_DIPSETTING(    0x04, "4" )
-			PORT_DIPSETTING(    0x00, "5" )
-			PORT_DIPNAME( 0x10, 0x10, "Add Player Score" )
-			PORT_DIPSETTING(    0x10, "5000000" )
-			PORT_DIPSETTING(    0x00, "7000000" )
-			PORT_DIPNAME( 0x20, 0x20, "Trial Time" )
-			PORT_DIPSETTING(    0x20, DEF_STR( Off ) )
-			PORT_DIPSETTING(    0x00, DEF_STR( On ) )
-			PORT_DIPNAME( 0xc0, 0xc0, DEF_STR( Difficulty ) )
-			PORT_DIPSETTING(    0x80, "Easy" )
-			PORT_DIPSETTING(    0xc0, "Normal" )
-			PORT_DIPSETTING(    0x40, "Hard" )
-			PORT_DIPSETTING(    0x00, "Hardest" )
+			PORT_DIPNAME( 0x01, 0x00, DEF_STR( "Cabinet") );
+			PORT_DIPSETTING(    0x00, DEF_STR( "Upright") );
+			PORT_DIPSETTING(    0x01, "Moving" );
+			PORT_DIPNAME( 0x02, 0x00, DEF_STR( "Demo_Sounds") );
+			PORT_DIPSETTING(    0x02, DEF_STR( "Off") );
+			PORT_DIPSETTING(    0x00, DEF_STR( "On") );
+			PORT_DIPNAME( 0x0c, 0x0c, DEF_STR( "Lives") );
+			PORT_DIPSETTING(    0x08, "2" );
+			PORT_DIPSETTING(    0x0c, "3" );
+			PORT_DIPSETTING(    0x04, "4" );
+			PORT_DIPSETTING(    0x00, "5" );
+			PORT_DIPNAME( 0x10, 0x10, "Add Player Score" );
+			PORT_DIPSETTING(    0x10, "5000000" );
+			PORT_DIPSETTING(    0x00, "7000000" );
+			PORT_DIPNAME( 0x20, 0x20, "Trial Time" );
+			PORT_DIPSETTING(    0x20, DEF_STR( "Off") );
+			PORT_DIPSETTING(    0x00, DEF_STR( "On") );
+			PORT_DIPNAME( 0xc0, 0xc0, DEF_STR( "Difficulty") );
+			PORT_DIPSETTING(    0x80, "Easy" );
+			PORT_DIPSETTING(    0xc0, "Normal" );
+			PORT_DIPSETTING(    0x40, "Hard" );
+			PORT_DIPSETTING(    0x00, "Hardest" );
 		PORT_START	/* X */
-			PORT_ANALOG( 0xff, 0x7f, IPT_AD_STICK_X |  IPF_REVERSE, 100, 4, 0x20, 0xdf )
+			PORT_ANALOG( 0xff, 0x7f, IPT_AD_STICK_X |  IPF_REVERSE, 100, 4, 0x20, 0xdf );
 		PORT_START	/* Y */
-			PORT_ANALOG( 0xff, 0x7f, IPT_AD_STICK_Y |  IPF_REVERSE, 100, 4, 0x60, 0x9f )
-	INPUT_PORTS_END
+			PORT_ANALOG( 0xff, 0x7f, IPT_AD_STICK_Y |  IPF_REVERSE, 100, 4, 0x60, 0x9f );
+	INPUT_PORTS_END(); }}; 
 	
 	/***************************************************************************/
 	

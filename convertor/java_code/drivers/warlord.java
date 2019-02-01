@@ -135,77 +135,77 @@ public class warlord
 	};
 	
 	
-	INPUT_PORTS_START( warlord )
+	static InputPortPtr input_ports_warlord = new InputPortPtr(){ public void handler() { 
 		PORT_START	/* IN0 */
-		PORT_BIT ( 0x0f, IP_ACTIVE_HIGH, IPT_UNUSED )
-		PORT_DIPNAME(0x10, 0x00, "Diag Step" )  /* Not referenced */
-		PORT_DIPSETTING (	0x00, DEF_STR( Off ) )
-		PORT_DIPSETTING (	0x10, DEF_STR( On ) )
-		PORT_SERVICE( 0x20, IP_ACTIVE_LOW )
-		PORT_BIT ( 0x40, IP_ACTIVE_HIGH, IPT_VBLANK )
-		PORT_DIPNAME(0x80, 0x00, DEF_STR( Cabinet ) )
-		PORT_DIPSETTING (	0x80, "Upright (no overlay)" )
-		PORT_DIPSETTING (	0x00, "Cocktail (overlay)" )
+		PORT_BIT ( 0x0f, IP_ACTIVE_HIGH, IPT_UNUSED );
+		PORT_DIPNAME(0x10, 0x00, "Diag Step" ); /* Not referenced */
+		PORT_DIPSETTING (	0x00, DEF_STR( "Off") );
+		PORT_DIPSETTING (	0x10, DEF_STR( "On") );
+		PORT_SERVICE( 0x20, IP_ACTIVE_LOW );
+		PORT_BIT ( 0x40, IP_ACTIVE_HIGH, IPT_VBLANK );
+		PORT_DIPNAME(0x80, 0x00, DEF_STR( "Cabinet") );
+		PORT_DIPSETTING (	0x80, "Upright (no overlay); )
+		PORT_DIPSETTING (	0x00, "Cocktail (overlay); )
 	
 		PORT_START	/* IN1 */
-		PORT_BIT ( 0x01, IP_ACTIVE_LOW, IPT_BUTTON1 | IPF_PLAYER1 )
-		PORT_BIT ( 0x02, IP_ACTIVE_LOW, IPT_BUTTON1 | IPF_PLAYER2 )
-		PORT_BIT ( 0x04, IP_ACTIVE_LOW, IPT_BUTTON1 | IPF_PLAYER3 )
-		PORT_BIT ( 0x08, IP_ACTIVE_LOW, IPT_BUTTON1 | IPF_PLAYER4 )
-		PORT_BIT ( 0x10, IP_ACTIVE_LOW, IPT_TILT )
-		PORT_BIT ( 0x20, IP_ACTIVE_LOW, IPT_COIN1 )
-		PORT_BIT ( 0x40, IP_ACTIVE_LOW, IPT_COIN2 )
-		PORT_BIT ( 0x80, IP_ACTIVE_LOW, IPT_COIN3 )
+		PORT_BIT ( 0x01, IP_ACTIVE_LOW, IPT_BUTTON1 | IPF_PLAYER1 );
+		PORT_BIT ( 0x02, IP_ACTIVE_LOW, IPT_BUTTON1 | IPF_PLAYER2 );
+		PORT_BIT ( 0x04, IP_ACTIVE_LOW, IPT_BUTTON1 | IPF_PLAYER3 );
+		PORT_BIT ( 0x08, IP_ACTIVE_LOW, IPT_BUTTON1 | IPF_PLAYER4 );
+		PORT_BIT ( 0x10, IP_ACTIVE_LOW, IPT_TILT );
+		PORT_BIT ( 0x20, IP_ACTIVE_LOW, IPT_COIN1 );
+		PORT_BIT ( 0x40, IP_ACTIVE_LOW, IPT_COIN2 );
+		PORT_BIT ( 0x80, IP_ACTIVE_LOW, IPT_COIN3 );
 	
 		PORT_START	/* IN2 */
-		PORT_DIPNAME(0x03, 0x00, "Language" )
-		PORT_DIPSETTING (	0x00, "English" )
-		PORT_DIPSETTING (	0x01, "French" )
-		PORT_DIPSETTING (	0x02, "Spanish" )
-		PORT_DIPSETTING (	0x03, "German" )
-		PORT_DIPNAME(0x04, 0x00, "Music" )
-		PORT_DIPSETTING (	0x00, "End of game" )
-		PORT_DIPSETTING (	0x04, "High score only" )
-		PORT_BIT ( 0xc8, IP_ACTIVE_HIGH, IPT_UNUSED )
-		PORT_DIPNAME(0x30, 0x00, "Credits" )
-		PORT_DIPSETTING (	0x00, "1p/2p = 1 credit" )
-		PORT_DIPSETTING (	0x10, "1p = 1, 2p = 2" )
-		PORT_DIPSETTING (	0x20, "1p/2p = 2 credits" )
+		PORT_DIPNAME(0x03, 0x00, "Language" );
+		PORT_DIPSETTING (	0x00, "English" );
+		PORT_DIPSETTING (	0x01, "French" );
+		PORT_DIPSETTING (	0x02, "Spanish" );
+		PORT_DIPSETTING (	0x03, "German" );
+		PORT_DIPNAME(0x04, 0x00, "Music" );
+		PORT_DIPSETTING (	0x00, "End of game" );
+		PORT_DIPSETTING (	0x04, "High score only" );
+		PORT_BIT ( 0xc8, IP_ACTIVE_HIGH, IPT_UNUSED );
+		PORT_DIPNAME(0x30, 0x00, "Credits" );
+		PORT_DIPSETTING (	0x00, "1p/2p = 1 credit" );
+		PORT_DIPSETTING (	0x10, "1p = 1, 2p = 2" );
+		PORT_DIPSETTING (	0x20, "1p/2p = 2 credits" );
 	
 		PORT_START	/* IN3 */
-		PORT_DIPNAME(0x03, 0x02, DEF_STR( Coinage ) )
-		PORT_DIPSETTING (	0x03, DEF_STR( 2C_1C ) )
-		PORT_DIPSETTING (	0x02, DEF_STR( 1C_1C ) )
-		PORT_DIPSETTING (	0x01, DEF_STR( 1C_2C ) )
-		PORT_DIPSETTING (	0x00, DEF_STR( Free_Play ) )
-		PORT_DIPNAME(0x0c, 0x00, "Right Coin" )
-		PORT_DIPSETTING (	0x00, "*1" )
-		PORT_DIPSETTING (	0x04, "*4" )
-		PORT_DIPSETTING (	0x08, "*5" )
-		PORT_DIPSETTING (	0x0c, "*6" )
-		PORT_DIPNAME(0x10, 0x00, "Left Coin" )
-		PORT_DIPSETTING (	0x00, "*1" )
-		PORT_DIPSETTING (	0x10, "*2" )
-		PORT_DIPNAME(0xe0, 0x00, "Bonus Coins" )
-		PORT_DIPSETTING (	0x00, "None" )
-		PORT_DIPSETTING (	0x20, "3 credits/2 coins" )
-		PORT_DIPSETTING (	0x40, "5 credits/4 coins" )
-		PORT_DIPSETTING (	0x60, "6 credits/4 coins" )
-		PORT_DIPSETTING (	0x80, "6 credits/5 coins" )
+		PORT_DIPNAME(0x03, 0x02, DEF_STR( "Coinage") );
+		PORT_DIPSETTING (	0x03, DEF_STR( "2C_1C") );
+		PORT_DIPSETTING (	0x02, DEF_STR( "1C_1C") );
+		PORT_DIPSETTING (	0x01, DEF_STR( "1C_2C") );
+		PORT_DIPSETTING (	0x00, DEF_STR( "Free_Play") );
+		PORT_DIPNAME(0x0c, 0x00, "Right Coin" );
+		PORT_DIPSETTING (	0x00, "*1" );
+		PORT_DIPSETTING (	0x04, "*4" );
+		PORT_DIPSETTING (	0x08, "*5" );
+		PORT_DIPSETTING (	0x0c, "*6" );
+		PORT_DIPNAME(0x10, 0x00, "Left Coin" );
+		PORT_DIPSETTING (	0x00, "*1" );
+		PORT_DIPSETTING (	0x10, "*2" );
+		PORT_DIPNAME(0xe0, 0x00, "Bonus Coins" );
+		PORT_DIPSETTING (	0x00, "None" );
+		PORT_DIPSETTING (	0x20, "3 credits/2 coins" );
+		PORT_DIPSETTING (	0x40, "5 credits/4 coins" );
+		PORT_DIPSETTING (	0x60, "6 credits/4 coins" );
+		PORT_DIPSETTING (	0x80, "6 credits/5 coins" );
 	
 		/* IN4-7 fake to control player paddles */
 		PORT_START
-		PORT_ANALOG( 0xff, 0x80, IPT_PADDLE | IPF_PLAYER1, 50, 10, 0x1d, 0xcb )
+		PORT_ANALOG( 0xff, 0x80, IPT_PADDLE | IPF_PLAYER1, 50, 10, 0x1d, 0xcb );
 	
 		PORT_START
-		PORT_ANALOG( 0xff, 0x80, IPT_PADDLE | IPF_PLAYER2, 50, 10, 0x1d, 0xcb )
+		PORT_ANALOG( 0xff, 0x80, IPT_PADDLE | IPF_PLAYER2, 50, 10, 0x1d, 0xcb );
 	
 		PORT_START
-		PORT_ANALOG( 0xff, 0x80, IPT_PADDLE | IPF_PLAYER3, 50, 10, 0x1d, 0xcb )
+		PORT_ANALOG( 0xff, 0x80, IPT_PADDLE | IPF_PLAYER3, 50, 10, 0x1d, 0xcb );
 	
 		PORT_START
-		PORT_ANALOG( 0xff, 0x80, IPT_PADDLE | IPF_PLAYER4, 50, 10, 0x1d, 0xcb )
-	INPUT_PORTS_END
+		PORT_ANALOG( 0xff, 0x80, IPT_PADDLE | IPF_PLAYER4, 50, 10, 0x1d, 0xcb );
+	INPUT_PORTS_END(); }}; 
 	
 	
 	static GfxLayout charlayout = new GfxLayout

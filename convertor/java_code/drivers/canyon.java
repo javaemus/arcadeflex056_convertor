@@ -108,43 +108,43 @@ public class canyon
 		new Memory_WriteAddress(MEMPORT_MARKER, 0)
 	};
 	
-	INPUT_PORTS_START( canyon )
+	static InputPortPtr input_ports_canyon = new InputPortPtr(){ public void handler() { 
 		PORT_START      /* DSW - fake port, gets mapped to Canyon Bomber ports */
-		PORT_DIPNAME( 0x03, 0x00, "Language" )
-		PORT_DIPSETTING(    0x00, "English" )
-		PORT_DIPSETTING(    0x01, "Spanish" )
-		PORT_DIPSETTING(    0x02, "French" )
-		PORT_DIPSETTING(    0x03, "German" )
-		PORT_DIPNAME( 0x30, 0x00, "Misses Per Play" )
-		PORT_DIPSETTING(    0x00, "Three" )
-		PORT_DIPSETTING(    0x10, "Four" )
-		PORT_DIPSETTING(    0x20, "Five" )
-		PORT_DIPSETTING(    0x30, "Six" )
-		PORT_DIPNAME( 0xC0, 0x80, "Game Cost" )
-		PORT_DIPSETTING(    0x80, "1 coin/player" )
-		PORT_DIPSETTING(    0xC0, "2 coins/player" )
-		PORT_DIPSETTING(    0x40, "2 players/coin" )
-		PORT_DIPSETTING(    0x00, DEF_STR( Free_Play ) )
+		PORT_DIPNAME( 0x03, 0x00, "Language" );
+		PORT_DIPSETTING(    0x00, "English" );
+		PORT_DIPSETTING(    0x01, "Spanish" );
+		PORT_DIPSETTING(    0x02, "French" );
+		PORT_DIPSETTING(    0x03, "German" );
+		PORT_DIPNAME( 0x30, 0x00, "Misses Per Play" );
+		PORT_DIPSETTING(    0x00, "Three" );
+		PORT_DIPSETTING(    0x10, "Four" );
+		PORT_DIPSETTING(    0x20, "Five" );
+		PORT_DIPSETTING(    0x30, "Six" );
+		PORT_DIPNAME( 0xC0, 0x80, "Game Cost" );
+		PORT_DIPSETTING(    0x80, "1 coin/player" );
+		PORT_DIPSETTING(    0xC0, "2 coins/player" );
+		PORT_DIPSETTING(    0x40, "2 players/coin" );
+		PORT_DIPSETTING(    0x00, DEF_STR( "Free_Play") );
 	
 		PORT_START      /* IN1 - fake port, gets mapped */
-		PORT_BIT(0x01, IP_ACTIVE_HIGH, IPT_BUTTON1 )
-		PORT_BIT(0xFE, IP_ACTIVE_HIGH, IPT_UNKNOWN )
+		PORT_BIT(0x01, IP_ACTIVE_HIGH, IPT_BUTTON1 );
+		PORT_BIT(0xFE, IP_ACTIVE_HIGH, IPT_UNKNOWN );
 	
 		PORT_START      /* IN2 - fake port, gets mapped */
-		PORT_BIT(0x01, IP_ACTIVE_HIGH, IPT_BUTTON1 | IPF_PLAYER2 )
-		PORT_BIT(0xFE, IP_ACTIVE_HIGH, IPT_UNKNOWN )
+		PORT_BIT(0x01, IP_ACTIVE_HIGH, IPT_BUTTON1 | IPF_PLAYER2 );
+		PORT_BIT(0xFE, IP_ACTIVE_HIGH, IPT_UNKNOWN );
 	
 		PORT_START      /* IN3 - fake port, gets mapped */
-		PORT_BIT ( 0x01, IP_ACTIVE_HIGH, IPT_COIN1 )
-		PORT_BIT ( 0x02, IP_ACTIVE_HIGH, IPT_COIN2 )
-		PORT_BIT ( 0x04, IP_ACTIVE_HIGH, IPT_START1 )
-		PORT_BIT ( 0x08, IP_ACTIVE_HIGH, IPT_START2 )
-		PORT_SERVICE( 0x10, IP_ACTIVE_HIGH )
-		PORT_BIT ( 0x20, IP_ACTIVE_HIGH, IPT_VBLANK )
-		PORT_BIT ( 0x40, IP_ACTIVE_HIGH, IPT_UNKNOWN )
-		PORT_BIT ( 0x80, IP_ACTIVE_HIGH, IPT_TILT ) /* SLAM */
+		PORT_BIT ( 0x01, IP_ACTIVE_HIGH, IPT_COIN1 );
+		PORT_BIT ( 0x02, IP_ACTIVE_HIGH, IPT_COIN2 );
+		PORT_BIT ( 0x04, IP_ACTIVE_HIGH, IPT_START1 );
+		PORT_BIT ( 0x08, IP_ACTIVE_HIGH, IPT_START2 );
+		PORT_SERVICE( 0x10, IP_ACTIVE_HIGH );
+		PORT_BIT ( 0x20, IP_ACTIVE_HIGH, IPT_VBLANK );
+		PORT_BIT ( 0x40, IP_ACTIVE_HIGH, IPT_UNKNOWN );
+		PORT_BIT ( 0x80, IP_ACTIVE_HIGH, IPT_TILT );/* SLAM */
 	
-	INPUT_PORTS_END
+	INPUT_PORTS_END(); }}; 
 	
 	
 	

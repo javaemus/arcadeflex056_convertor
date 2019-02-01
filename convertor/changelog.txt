@@ -1,3 +1,7 @@
+01/02/2019
+==========
+-Input ports support
+
 31/01/2019
 ==========
 -Improved WRITEHANDLER for 8bit writes

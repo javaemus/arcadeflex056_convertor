@@ -200,75 +200,75 @@ public class turbo
 	 * Input port definitions
 	 *********************************************************************/
 	
-	INPUT_PORTS_START( turbo )
+	static InputPortPtr input_ports_turbo = new InputPortPtr(){ public void handler() { 
 		PORT_START		/* IN0 */
-		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_BUTTON2 )				/* ACCEL B */
-		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_BUTTON1 )				/* ACCEL A */
-		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_BUTTON3 | IPF_TOGGLE )	/* SHIFT */
-		PORT_BIT( 0x08, IP_ACTIVE_LOW, IPT_START1 )
-		PORT_SERVICE( 0x10, IP_ACTIVE_LOW )
-		PORT_BIT( 0x20, IP_ACTIVE_LOW, IPT_COIN4 )					/* SERVICE */
-		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_COIN2 )
-		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_COIN1 )
+		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_BUTTON2 );			/* ACCEL B */
+		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_BUTTON1 );			/* ACCEL A */
+		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_BUTTON3 | IPF_TOGGLE );/* SHIFT */
+		PORT_BIT( 0x08, IP_ACTIVE_LOW, IPT_START1 );
+		PORT_SERVICE( 0x10, IP_ACTIVE_LOW );
+		PORT_BIT( 0x20, IP_ACTIVE_LOW, IPT_COIN4 );				/* SERVICE */
+		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_COIN2 );
+		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_COIN1 );
 	
 		PORT_START	/* DSW 1 */
-		PORT_DIPNAME( 0x03, 0x03, "Car On Extended Play" )
-		PORT_DIPSETTING( 0x03, "1" )
-		PORT_DIPSETTING( 0x02, "2" )
-		PORT_DIPSETTING( 0x01, "3" )
-		PORT_DIPSETTING( 0x00, "4" )
-		PORT_DIPNAME( 0x04, 0x04, "Game Time" )
-		PORT_DIPSETTING( 0x00, "Fixed (55 sec)")
-		PORT_DIPSETTING( 0x04, "Adjustable" )
-		PORT_DIPNAME( 0x08, 0x00, DEF_STR( Difficulty ) )
-		PORT_DIPSETTING( 0x00, "Easy")
-		PORT_DIPSETTING( 0x08, "Hard")
-		PORT_DIPNAME( 0x10, 0x00, "Game Mode" )
-		PORT_DIPSETTING( 0x10, "No Collisions (cheat)")
-		PORT_DIPSETTING( 0x00, "Normal")
-		PORT_DIPNAME( 0x20, 0x00, "Initial Entry" )
-		PORT_DIPSETTING( 0x20, DEF_STR( Off ))
-		PORT_DIPSETTING( 0x00, DEF_STR( On ))
-		PORT_BIT( 0xc0, 0xc0, IPT_UNUSED )
+		PORT_DIPNAME( 0x03, 0x03, "Car On Extended Play" );
+		PORT_DIPSETTING( 0x03, "1" );
+		PORT_DIPSETTING( 0x02, "2" );
+		PORT_DIPSETTING( 0x01, "3" );
+		PORT_DIPSETTING( 0x00, "4" );
+		PORT_DIPNAME( 0x04, 0x04, "Game Time" );
+		PORT_DIPSETTING( 0x00, "Fixed (55 sec);
+		PORT_DIPSETTING( 0x04, "Adjustable" );
+		PORT_DIPNAME( 0x08, 0x00, DEF_STR( "Difficulty") );
+		PORT_DIPSETTING( 0x00, "Easy");
+		PORT_DIPSETTING( 0x08, "Hard");
+		PORT_DIPNAME( 0x10, 0x00, "Game Mode" );
+		PORT_DIPSETTING( 0x10, "No Collisions (cheat);
+		PORT_DIPSETTING( 0x00, "Normal");
+		PORT_DIPNAME( 0x20, 0x00, "Initial Entry" );
+		PORT_DIPSETTING( 0x20, DEF_STR( "Off") );
+		PORT_DIPSETTING( 0x00, DEF_STR( "On") );
+		PORT_BIT( 0xc0, 0xc0, IPT_UNUSED );
 	
 		PORT_START	/* DSW 2 */
-		PORT_DIPNAME( 0x03, 0x03, "Game Time" )
-		PORT_DIPSETTING( 0x00, "60 seconds" )
-		PORT_DIPSETTING( 0x01, "70 seconds" )
-		PORT_DIPSETTING( 0x02, "80 seconds" )
-		PORT_DIPSETTING( 0x03, "90 seconds" )
-		PORT_DIPNAME( 0x1c, 0x1c, DEF_STR( Coin_B ))
-		PORT_DIPSETTING(	0x18, DEF_STR( 4C_1C ))
-		PORT_DIPSETTING(	0x14, DEF_STR( 3C_1C ))
-		PORT_DIPSETTING(	0x10, DEF_STR( 2C_1C ))
-	/*	PORT_DIPSETTING(	0x00, DEF_STR( 1C_1C ))*/
-		PORT_DIPSETTING(	0x1c, DEF_STR( 1C_1C ))
-		PORT_DIPSETTING(	0x04, DEF_STR( 1C_2C ))
-		PORT_DIPSETTING(	0x08, DEF_STR( 1C_3C ))
-		PORT_DIPSETTING(	0x0c, DEF_STR( 1C_6C ))
-		PORT_DIPNAME( 0xe0, 0xe0, DEF_STR( Coin_A ))
-		PORT_DIPSETTING(	0xc0, DEF_STR( 4C_1C ))
-		PORT_DIPSETTING(	0xa0, DEF_STR( 3C_1C ))
-		PORT_DIPSETTING(	0x80, DEF_STR( 2C_1C ))
-	/*	PORT_DIPSETTING(	0x00, DEF_STR( 1C_1C ))*/
-		PORT_DIPSETTING(	0xe0, DEF_STR( 1C_1C ))
-		PORT_DIPSETTING(	0x20, DEF_STR( 1C_2C ))
-		PORT_DIPSETTING(	0x40, DEF_STR( 1C_3C ))
-		PORT_DIPSETTING(	0x60, DEF_STR( 1C_6C ))
+		PORT_DIPNAME( 0x03, 0x03, "Game Time" );
+		PORT_DIPSETTING( 0x00, "60 seconds" );
+		PORT_DIPSETTING( 0x01, "70 seconds" );
+		PORT_DIPSETTING( 0x02, "80 seconds" );
+		PORT_DIPSETTING( 0x03, "90 seconds" );
+		PORT_DIPNAME( 0x1c, 0x1c, DEF_STR( "Coin_B") );
+		PORT_DIPSETTING(	0x18, DEF_STR( "4C_1C") );
+		PORT_DIPSETTING(	0x14, DEF_STR( "3C_1C") );
+		PORT_DIPSETTING(	0x10, DEF_STR( "2C_1C") );
+	/*	PORT_DIPSETTING(	0x00, DEF_STR( "1C_1C") );*/
+		PORT_DIPSETTING(	0x1c, DEF_STR( "1C_1C") );
+		PORT_DIPSETTING(	0x04, DEF_STR( "1C_2C") );
+		PORT_DIPSETTING(	0x08, DEF_STR( "1C_3C") );
+		PORT_DIPSETTING(	0x0c, DEF_STR( "1C_6C") );
+		PORT_DIPNAME( 0xe0, 0xe0, DEF_STR( "Coin_A") );
+		PORT_DIPSETTING(	0xc0, DEF_STR( "4C_1C") );
+		PORT_DIPSETTING(	0xa0, DEF_STR( "3C_1C") );
+		PORT_DIPSETTING(	0x80, DEF_STR( "2C_1C") );
+	/*	PORT_DIPSETTING(	0x00, DEF_STR( "1C_1C") );*/
+		PORT_DIPSETTING(	0xe0, DEF_STR( "1C_1C") );
+		PORT_DIPSETTING(	0x20, DEF_STR( "1C_2C") );
+		PORT_DIPSETTING(	0x40, DEF_STR( "1C_3C") );
+		PORT_DIPSETTING(	0x60, DEF_STR( "1C_6C") );
 	
 		PORT_START	/* DSW 3 */
-		PORT_BIT( 0x0f, 0x00, IPT_UNUSED )		/* Merged with collision bits */
-		PORT_BIT( 0x30, 0x00, IPT_UNUSED )
-		PORT_DIPNAME( 0x40, 0x40, "Tachometer" )
-		PORT_DIPSETTING(	0x40, "Analog (Meter)")
-		PORT_DIPSETTING(	0x00, "Digital (led)")
-		PORT_DIPNAME( 0x80, 0x80, "Sound System" )
-		PORT_DIPSETTING(	0x80, DEF_STR( Upright ) )
-		PORT_DIPSETTING(	0x00, "Cockpit")
+		PORT_BIT( 0x0f, 0x00, IPT_UNUSED );	/* Merged with collision bits */
+		PORT_BIT( 0x30, 0x00, IPT_UNUSED );
+		PORT_DIPNAME( 0x40, 0x40, "Tachometer" );
+		PORT_DIPSETTING(	0x40, "Analog (Meter);
+		PORT_DIPSETTING(	0x00, "Digital (led);
+		PORT_DIPNAME( 0x80, 0x80, "Sound System" );
+		PORT_DIPSETTING(	0x80, DEF_STR( "Upright") );
+		PORT_DIPSETTING(	0x00, "Cockpit");
 	
 		PORT_START		/* IN0 */
-		PORT_ANALOG( 0xff, 0, IPT_DIAL | IPF_CENTER, 10, 30, 0, 0 )
-	INPUT_PORTS_END
+		PORT_ANALOG( 0xff, 0, IPT_DIAL | IPF_CENTER, 10, 30, 0, 0 );
+	INPUT_PORTS_END(); }}; 
 	
 	
 	/*********************************************************************

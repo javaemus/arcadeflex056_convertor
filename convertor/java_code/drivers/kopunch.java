@@ -125,9 +125,9 @@ public class kopunch
 	
 	
 	
-	INPUT_PORTS_START( kopunch )
+	static InputPortPtr input_ports_kopunch = new InputPortPtr(){ public void handler() { 
 		PORT_START	/* IN0 */
-	INPUT_PORTS_END
+	INPUT_PORTS_END(); }}; 
 	
 	
 	

@@ -65,9 +65,9 @@ public class ladyfrog
 	
 	
 	
-	INPUT_PORTS_START( ladyfrog )
+	static InputPortPtr input_ports_ladyfrog = new InputPortPtr(){ public void handler() { 
 		PORT_START
-	INPUT_PORTS_END
+	INPUT_PORTS_END(); }}; 
 	
 	
 	

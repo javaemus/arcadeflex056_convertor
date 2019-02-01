@@ -501,143 +501,143 @@ public class m62
 	#define IN0_PORT \
 	/* Start 1 & 2 also restarts and freezes the game with stop mode on \
 	   and are used in test mode to enter and esc the various tests */ \
-		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_START1 ) \
-		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_START2 ) \
+		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_START1 );\
+		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_START2 );\
 		/* service coin must be active for 19 frames to be consistently recognized */ \
-		PORT_BIT_IMPULSE( 0x04, IP_ACTIVE_LOW, IPT_SERVICE1, 19 ) \
-		PORT_BIT( 0x08, IP_ACTIVE_LOW, IPT_COIN1 ) \
-		PORT_BIT( 0xf0, IP_ACTIVE_LOW, IPT_UNUSED )
+		PORT_BIT_IMPULSE( 0x04, IP_ACTIVE_LOW, IPT_SERVICE1, 19 );\
+		PORT_BIT( 0x08, IP_ACTIVE_LOW, IPT_COIN1 );\
+		PORT_BIT( 0xf0, IP_ACTIVE_LOW, IPT_UNUSED );
 	
 	#define IN1_PORT \
-		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_8WAY ) \
-		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_8WAY ) \
-		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN  | IPF_8WAY ) \
-		PORT_BIT( 0x08, IP_ACTIVE_LOW, IPT_JOYSTICK_UP    | IPF_8WAY ) \
-		PORT_BIT( 0x10, IP_ACTIVE_LOW, IPT_UNKNOWN ) /* probably unused */ \
-		PORT_BIT( 0x20, IP_ACTIVE_LOW, IPT_BUTTON2 ) \
-		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNKNOWN ) /* probably unused */ \
-		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_BUTTON1 )
+		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_8WAY );\
+		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_8WAY );\
+		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN  | IPF_8WAY );\
+		PORT_BIT( 0x08, IP_ACTIVE_LOW, IPT_JOYSTICK_UP    | IPF_8WAY );\
+		PORT_BIT( 0x10, IP_ACTIVE_LOW, IPT_UNKNOWN );/* probably unused */ \
+		PORT_BIT( 0x20, IP_ACTIVE_LOW, IPT_BUTTON2 );\
+		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNKNOWN );/* probably unused */ \
+		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_BUTTON1 );
 	
 	#define IN2_PORT \
-		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_8WAY | IPF_COCKTAIL ) \
-		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_8WAY | IPF_COCKTAIL ) \
-		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN  | IPF_8WAY | IPF_COCKTAIL ) \
-		PORT_BIT( 0x08, IP_ACTIVE_LOW, IPT_JOYSTICK_UP    | IPF_8WAY | IPF_COCKTAIL ) \
-		PORT_BIT( 0x10, IP_ACTIVE_LOW, IPT_COIN2 ) \
-		PORT_BIT( 0x20, IP_ACTIVE_LOW, IPT_BUTTON2 | IPF_COCKTAIL ) \
-		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNKNOWN ) /* probably unused */ \
-		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_BUTTON1 | IPF_COCKTAIL )
+		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_8WAY | IPF_COCKTAIL );\
+		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_8WAY | IPF_COCKTAIL );\
+		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN  | IPF_8WAY | IPF_COCKTAIL );\
+		PORT_BIT( 0x08, IP_ACTIVE_LOW, IPT_JOYSTICK_UP    | IPF_8WAY | IPF_COCKTAIL );\
+		PORT_BIT( 0x10, IP_ACTIVE_LOW, IPT_COIN2 );\
+		PORT_BIT( 0x20, IP_ACTIVE_LOW, IPT_BUTTON2 | IPF_COCKTAIL );\
+		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNKNOWN );/* probably unused */ \
+		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_BUTTON1 | IPF_COCKTAIL );
 	
 	#define	COINAGE_DSW \
 		/* TODO: support the different settings which happen in Coin Mode 2 */ \
-		PORT_DIPNAME( 0xf0, 0xf0, DEF_STR( Coinage ) ) /* mapped on coin mode 1 */ \
-		PORT_DIPSETTING(    0x90, DEF_STR( 7C_1C ) ) \
-		PORT_DIPSETTING(    0xa0, DEF_STR( 6C_1C ) ) \
-		PORT_DIPSETTING(    0xb0, DEF_STR( 5C_1C ) ) \
-		PORT_DIPSETTING(    0xc0, DEF_STR( 4C_1C ) ) \
-		PORT_DIPSETTING(    0xd0, DEF_STR( 3C_1C ) ) \
-		PORT_DIPSETTING(    0xe0, DEF_STR( 2C_1C ) ) \
-		PORT_DIPSETTING(    0xf0, DEF_STR( 1C_1C ) ) \
-		PORT_DIPSETTING(    0x70, DEF_STR( 1C_2C ) ) \
-		PORT_DIPSETTING(    0x60, DEF_STR( 1C_3C ) ) \
-		PORT_DIPSETTING(    0x50, DEF_STR( 1C_4C ) ) \
-		PORT_DIPSETTING(    0x40, DEF_STR( 1C_5C ) ) \
-		PORT_DIPSETTING(    0x30, DEF_STR( 1C_6C ) ) \
-		PORT_DIPSETTING(    0x20, DEF_STR( 1C_7C ) ) \
-		PORT_DIPSETTING(    0x10, DEF_STR( 1C_8C ) ) \
-		PORT_DIPSETTING(    0x00, DEF_STR( Free_Play ) ) \
+		PORT_DIPNAME( 0xf0, 0xf0, DEF_STR( "Coinage") ); /* mapped on coin mode 1 */ \
+		PORT_DIPSETTING(    0x90, DEF_STR( "7C_1C") ); \
+		PORT_DIPSETTING(    0xa0, DEF_STR( "6C_1C") ); \
+		PORT_DIPSETTING(    0xb0, DEF_STR( "5C_1C") ); \
+		PORT_DIPSETTING(    0xc0, DEF_STR( "4C_1C") ); \
+		PORT_DIPSETTING(    0xd0, DEF_STR( "3C_1C") ); \
+		PORT_DIPSETTING(    0xe0, DEF_STR( "2C_1C") ); \
+		PORT_DIPSETTING(    0xf0, DEF_STR( "1C_1C") ); \
+		PORT_DIPSETTING(    0x70, DEF_STR( "1C_2C") ); \
+		PORT_DIPSETTING(    0x60, DEF_STR( "1C_3C") ); \
+		PORT_DIPSETTING(    0x50, DEF_STR( "1C_4C") ); \
+		PORT_DIPSETTING(    0x40, DEF_STR( "1C_5C") ); \
+		PORT_DIPSETTING(    0x30, DEF_STR( "1C_6C") ); \
+		PORT_DIPSETTING(    0x20, DEF_STR( "1C_7C") ); \
+		PORT_DIPSETTING(    0x10, DEF_STR( "1C_8C") ); \
+		PORT_DIPSETTING(    0x00, DEF_STR( "Free_Play") ); \
 		/* setting 0x80 give 1 Coin/1 Credit */
 	
 	
 	#define	COINAGE2_DSW \
 		/* TODO: support the different settings which happen in Coin Mode 2 */ \
-		PORT_DIPNAME( 0xf0, 0xf0, DEF_STR( Coinage ) ) /* mapped on coin mode 1 */ \
-		PORT_DIPSETTING(    0xa0, DEF_STR( 6C_1C ) ) \
-		PORT_DIPSETTING(    0xb0, DEF_STR( 5C_1C ) ) \
-		PORT_DIPSETTING(    0xc0, DEF_STR( 4C_1C ) ) \
-		PORT_DIPSETTING(    0xd0, DEF_STR( 3C_1C ) ) \
-		PORT_DIPSETTING(    0x10, DEF_STR( 8C_3C ) ) \
-		PORT_DIPSETTING(    0xe0, DEF_STR( 2C_1C ) ) \
-		PORT_DIPSETTING(    0x20, DEF_STR( 5C_3C ) ) \
-		PORT_DIPSETTING(    0x30, DEF_STR( 3C_2C ) ) \
-		PORT_DIPSETTING(    0xf0, DEF_STR( 1C_1C ) ) \
-		PORT_DIPSETTING(    0x40, DEF_STR( 2C_3C ) ) \
-		PORT_DIPSETTING(    0x90, DEF_STR( 1C_2C ) ) \
-		PORT_DIPSETTING(    0x80, DEF_STR( 1C_3C ) ) \
-		PORT_DIPSETTING(    0x70, DEF_STR( 1C_4C ) ) \
-		PORT_DIPSETTING(    0x60, DEF_STR( 1C_5C ) ) \
-		PORT_DIPSETTING(    0x50, DEF_STR( 1C_6C ) ) \
-		PORT_DIPSETTING(    0x00, DEF_STR( Free_Play ) ) \
+		PORT_DIPNAME( 0xf0, 0xf0, DEF_STR( "Coinage") ); /* mapped on coin mode 1 */ \
+		PORT_DIPSETTING(    0xa0, DEF_STR( "6C_1C") ); \
+		PORT_DIPSETTING(    0xb0, DEF_STR( "5C_1C") ); \
+		PORT_DIPSETTING(    0xc0, DEF_STR( "4C_1C") ); \
+		PORT_DIPSETTING(    0xd0, DEF_STR( "3C_1C") ); \
+		PORT_DIPSETTING(    0x10, DEF_STR( "8C_3C") ); \
+		PORT_DIPSETTING(    0xe0, DEF_STR( "2C_1C") ); \
+		PORT_DIPSETTING(    0x20, DEF_STR( "5C_3C") ); \
+		PORT_DIPSETTING(    0x30, DEF_STR( "3C_2C") ); \
+		PORT_DIPSETTING(    0xf0, DEF_STR( "1C_1C") ); \
+		PORT_DIPSETTING(    0x40, DEF_STR( "2C_3C") ); \
+		PORT_DIPSETTING(    0x90, DEF_STR( "1C_2C") ); \
+		PORT_DIPSETTING(    0x80, DEF_STR( "1C_3C") ); \
+		PORT_DIPSETTING(    0x70, DEF_STR( "1C_4C") ); \
+		PORT_DIPSETTING(    0x60, DEF_STR( "1C_5C") ); \
+		PORT_DIPSETTING(    0x50, DEF_STR( "1C_6C") ); \
+		PORT_DIPSETTING(    0x00, DEF_STR( "Free_Play") ); \
 	
 	
-	INPUT_PORTS_START( kungfum )
+	static InputPortPtr input_ports_kungfum = new InputPortPtr(){ public void handler() { 
 		PORT_START	/* IN0 */
 		IN0_PORT
 	
 		PORT_START	/* IN1 */
-		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_4WAY )
-		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_4WAY )
-		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN  | IPF_4WAY )
-		PORT_BIT( 0x08, IP_ACTIVE_LOW, IPT_JOYSTICK_UP    | IPF_4WAY )
-		PORT_BIT( 0x10, IP_ACTIVE_LOW, IPT_UNKNOWN ) /* probably unused */
-		PORT_BIT( 0x20, IP_ACTIVE_LOW, IPT_BUTTON2 )
-		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNKNOWN ) /* probably unused */
-		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_BUTTON1 )
+		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_4WAY );
+		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_4WAY );
+		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN  | IPF_4WAY );
+		PORT_BIT( 0x08, IP_ACTIVE_LOW, IPT_JOYSTICK_UP    | IPF_4WAY );
+		PORT_BIT( 0x10, IP_ACTIVE_LOW, IPT_UNKNOWN );/* probably unused */
+		PORT_BIT( 0x20, IP_ACTIVE_LOW, IPT_BUTTON2 );
+		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNKNOWN );/* probably unused */
+		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_BUTTON1 );
 	
 		PORT_START	/* IN2 */
-		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_4WAY | IPF_COCKTAIL )
-		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_4WAY | IPF_COCKTAIL )
-		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN  | IPF_4WAY | IPF_COCKTAIL )
-		PORT_BIT( 0x08, IP_ACTIVE_LOW, IPT_JOYSTICK_UP    | IPF_4WAY | IPF_COCKTAIL )
-		PORT_BIT( 0x10, IP_ACTIVE_LOW, IPT_COIN2 )
-		PORT_BIT( 0x20, IP_ACTIVE_LOW, IPT_BUTTON2 | IPF_COCKTAIL )
-		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNKNOWN ) /* probably unused */
-		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_BUTTON1 | IPF_COCKTAIL )
+		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_4WAY | IPF_COCKTAIL );
+		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_4WAY | IPF_COCKTAIL );
+		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN  | IPF_4WAY | IPF_COCKTAIL );
+		PORT_BIT( 0x08, IP_ACTIVE_LOW, IPT_JOYSTICK_UP    | IPF_4WAY | IPF_COCKTAIL );
+		PORT_BIT( 0x10, IP_ACTIVE_LOW, IPT_COIN2 );
+		PORT_BIT( 0x20, IP_ACTIVE_LOW, IPT_BUTTON2 | IPF_COCKTAIL );
+		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNKNOWN );/* probably unused */
+		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_BUTTON1 | IPF_COCKTAIL );
 	
 		PORT_START	/* DSW1 */
-		PORT_DIPNAME( 0x01, 0x01, DEF_STR( Difficulty ) )
-		PORT_DIPSETTING(    0x01, "Easy" )
-		PORT_DIPSETTING(    0x00, "Hard" )
-		PORT_DIPNAME( 0x02, 0x02, "Energy Loss" )
-		PORT_DIPSETTING(    0x02, "Slow" )
-		PORT_DIPSETTING(    0x00, "Fast" )
-		PORT_DIPNAME( 0x0c, 0x0c, DEF_STR( Lives ) )
-		PORT_DIPSETTING(    0x08, "2" )
-		PORT_DIPSETTING(    0x0c, "3" )
-		PORT_DIPSETTING(    0x04, "4" )
-		PORT_DIPSETTING(    0x00, "5" )
+		PORT_DIPNAME( 0x01, 0x01, DEF_STR( "Difficulty") );
+		PORT_DIPSETTING(    0x01, "Easy" );
+		PORT_DIPSETTING(    0x00, "Hard" );
+		PORT_DIPNAME( 0x02, 0x02, "Energy Loss" );
+		PORT_DIPSETTING(    0x02, "Slow" );
+		PORT_DIPSETTING(    0x00, "Fast" );
+		PORT_DIPNAME( 0x0c, 0x0c, DEF_STR( "Lives") );
+		PORT_DIPSETTING(    0x08, "2" );
+		PORT_DIPSETTING(    0x0c, "3" );
+		PORT_DIPSETTING(    0x04, "4" );
+		PORT_DIPSETTING(    0x00, "5" );
 		COINAGE_DSW
 	
 		PORT_START	/* DSW2 */
-		PORT_DIPNAME( 0x01, 0x01, DEF_STR( Flip_Screen ) )
-		PORT_DIPSETTING(    0x01, DEF_STR( Off ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( On ) )
-		PORT_DIPNAME( 0x02, 0x00, DEF_STR( Cabinet ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( Upright ) )
-		PORT_DIPSETTING(    0x02, DEF_STR( Cocktail ) )
+		PORT_DIPNAME( 0x01, 0x01, DEF_STR( "Flip_Screen") );
+		PORT_DIPSETTING(    0x01, DEF_STR( "Off") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
+		PORT_DIPNAME( 0x02, 0x00, DEF_STR( "Cabinet") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "Upright") );
+		PORT_DIPSETTING(    0x02, DEF_STR( "Cocktail") );
 	/* This activates a different coin mode. Look at the dip switch setting schematic */
-		PORT_DIPNAME( 0x04, 0x04, "Coin Mode" )
-		PORT_DIPSETTING(    0x04, "Mode 1" )
-		PORT_DIPSETTING(    0x00, "Mode 2" )
+		PORT_DIPNAME( 0x04, 0x04, "Coin Mode" );
+		PORT_DIPSETTING(    0x04, "Mode 1" );
+		PORT_DIPSETTING(    0x00, "Mode 2" );
 		/* In slowmo mode, press 2 to slow game speed */
-		PORT_BITX   ( 0x08, 0x08, IPT_DIPSWITCH_NAME | IPF_CHEAT, "Slow Motion Mode", IP_KEY_NONE, IP_JOY_NONE )
-		PORT_DIPSETTING(    0x08, DEF_STR( Off ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( On ) )
+		PORT_BITX   ( 0x08, 0x08, IPT_DIPSWITCH_NAME | IPF_CHEAT, "Slow Motion Mode", IP_KEY_NONE, IP_JOY_NONE );
+		PORT_DIPSETTING(    0x08, DEF_STR( "Off") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 		/* In freeze mode, press 2 to stop and 1 to restart */
-		PORT_BITX   ( 0x10, 0x10, IPT_DIPSWITCH_NAME | IPF_CHEAT, "Freeze", IP_KEY_NONE, IP_JOY_NONE )
-		PORT_DIPSETTING(    0x10, DEF_STR( Off ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( On ) )
+		PORT_BITX   ( 0x10, 0x10, IPT_DIPSWITCH_NAME | IPF_CHEAT, "Freeze", IP_KEY_NONE, IP_JOY_NONE );
+		PORT_DIPSETTING(    0x10, DEF_STR( "Off") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 		/* In level selection mode, press 1 to select and 2 to restart */
-		PORT_BITX   ( 0x20, 0x20, IPT_DIPSWITCH_NAME | IPF_CHEAT, "Level Selection Mode", IP_KEY_NONE, IP_JOY_NONE )
-		PORT_DIPSETTING(    0x20, DEF_STR( Off ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( On ) )
-		PORT_BITX(    0x40, 0x40, IPT_DIPSWITCH_NAME | IPF_CHEAT, "Invulnerability", IP_KEY_NONE, IP_JOY_NONE )
-		PORT_DIPSETTING(    0x40, DEF_STR( Off ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( On ) )
-		PORT_SERVICE( 0x80, IP_ACTIVE_LOW )
-	INPUT_PORTS_END
+		PORT_BITX   ( 0x20, 0x20, IPT_DIPSWITCH_NAME | IPF_CHEAT, "Level Selection Mode", IP_KEY_NONE, IP_JOY_NONE );
+		PORT_DIPSETTING(    0x20, DEF_STR( "Off") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
+		PORT_BITX(    0x40, 0x40, IPT_DIPSWITCH_NAME | IPF_CHEAT, "Invulnerability", IP_KEY_NONE, IP_JOY_NONE );
+		PORT_DIPSETTING(    0x40, DEF_STR( "Off") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
+		PORT_SERVICE( 0x80, IP_ACTIVE_LOW );
+	INPUT_PORTS_END(); }}; 
 	
-	INPUT_PORTS_START( battroad )
+	static InputPortPtr input_ports_battroad = new InputPortPtr(){ public void handler() { 
 		PORT_START	/* IN0 */
 		IN0_PORT
 	
@@ -648,47 +648,47 @@ public class m62
 		IN2_PORT
 	
 		PORT_START	/* DSW1 */
-		PORT_DIPNAME( 0x03, 0x03, "Fuel Decrease" )
-		PORT_DIPSETTING(    0x03, "Slow" )
-		PORT_DIPSETTING(    0x02, "Medium" )
-		PORT_DIPSETTING(    0x01, "Fast" )
-		PORT_DIPSETTING(    0x00, "Fastest" )
-		PORT_DIPNAME( 0x04, 0x04, DEF_STR( Difficulty ) )
-		PORT_DIPSETTING(    0x04, "Easy" )
-		PORT_DIPSETTING(    0x00, "Hard" )
-		PORT_DIPNAME( 0x08, 0x08, DEF_STR( Unknown ) )
-		PORT_DIPSETTING(    0x08, DEF_STR( Off ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( On ) )
+		PORT_DIPNAME( 0x03, 0x03, "Fuel Decrease" );
+		PORT_DIPSETTING(    0x03, "Slow" );
+		PORT_DIPSETTING(    0x02, "Medium" );
+		PORT_DIPSETTING(    0x01, "Fast" );
+		PORT_DIPSETTING(    0x00, "Fastest" );
+		PORT_DIPNAME( 0x04, 0x04, DEF_STR( "Difficulty") );
+		PORT_DIPSETTING(    0x04, "Easy" );
+		PORT_DIPSETTING(    0x00, "Hard" );
+		PORT_DIPNAME( 0x08, 0x08, DEF_STR( "Unknown") );
+		PORT_DIPSETTING(    0x08, DEF_STR( "Off") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 		COINAGE_DSW
 	
 		PORT_START	/* DSW2 */
-		PORT_DIPNAME( 0x01, 0x01, DEF_STR( Flip_Screen ) )
-		PORT_DIPSETTING(    0x01, DEF_STR( Off ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( On ) )
-		PORT_DIPNAME( 0x02, 0x00, DEF_STR( Cabinet ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( Upright ) )
-		PORT_DIPSETTING(    0x02, DEF_STR( Cocktail ) )
+		PORT_DIPNAME( 0x01, 0x01, DEF_STR( "Flip_Screen") );
+		PORT_DIPSETTING(    0x01, DEF_STR( "Off") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
+		PORT_DIPNAME( 0x02, 0x00, DEF_STR( "Cabinet") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "Upright") );
+		PORT_DIPSETTING(    0x02, DEF_STR( "Cocktail") );
 	/* This activates a different coin mode. Look at the dip switch setting schematic */
-		PORT_DIPNAME( 0x04, 0x04, "Coin Mode" )
-		PORT_DIPSETTING(    0x04, "Mode 1" )
-		PORT_DIPSETTING(    0x00, "Mode 2" )
-		PORT_DIPNAME( 0x08, 0x00, DEF_STR( Unknown ) )
-		PORT_DIPSETTING(    0x08, DEF_STR( Off ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( On ) )
+		PORT_DIPNAME( 0x04, 0x04, "Coin Mode" );
+		PORT_DIPSETTING(    0x04, "Mode 1" );
+		PORT_DIPSETTING(    0x00, "Mode 2" );
+		PORT_DIPNAME( 0x08, 0x00, DEF_STR( "Unknown") );
+		PORT_DIPSETTING(    0x08, DEF_STR( "Off") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 		/* In stop mode, press 2 to stop and 1 to restart */
-		PORT_BITX   ( 0x10, 0x10, IPT_DIPSWITCH_NAME | IPF_CHEAT, "Stop Mode", IP_KEY_NONE, IP_JOY_NONE )
-		PORT_DIPSETTING(    0x10, DEF_STR( Off ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( On ) )
-		PORT_DIPNAME( 0x20, 0x20, DEF_STR( Unknown ) )
-		PORT_DIPSETTING(    0x20, DEF_STR( Off ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( On ) )
-		PORT_BITX(    0x40, 0x40, IPT_DIPSWITCH_NAME | IPF_CHEAT, "Invulnerability", IP_KEY_NONE, IP_JOY_NONE )
-		PORT_DIPSETTING(    0x40, DEF_STR( Off ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( On ) )
-		PORT_SERVICE( 0x80, IP_ACTIVE_LOW )
-	INPUT_PORTS_END
+		PORT_BITX   ( 0x10, 0x10, IPT_DIPSWITCH_NAME | IPF_CHEAT, "Stop Mode", IP_KEY_NONE, IP_JOY_NONE );
+		PORT_DIPSETTING(    0x10, DEF_STR( "Off") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
+		PORT_DIPNAME( 0x20, 0x20, DEF_STR( "Unknown") );
+		PORT_DIPSETTING(    0x20, DEF_STR( "Off") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
+		PORT_BITX(    0x40, 0x40, IPT_DIPSWITCH_NAME | IPF_CHEAT, "Invulnerability", IP_KEY_NONE, IP_JOY_NONE );
+		PORT_DIPSETTING(    0x40, DEF_STR( "Off") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
+		PORT_SERVICE( 0x80, IP_ACTIVE_LOW );
+	INPUT_PORTS_END(); }}; 
 	
-	INPUT_PORTS_START( ldrun )
+	static InputPortPtr input_ports_ldrun = new InputPortPtr(){ public void handler() { 
 		PORT_START	/* IN0 */
 		IN0_PORT
 	
@@ -699,47 +699,47 @@ public class m62
 		IN2_PORT
 	
 		PORT_START	/* DSW1 */
-		PORT_DIPNAME( 0x03, 0x03, "Timer" )
-		PORT_DIPSETTING(    0x03, "Slow" )
-		PORT_DIPSETTING(    0x02, "Medium" )
-		PORT_DIPSETTING(    0x01, "Fast" )
-		PORT_DIPSETTING(    0x00, "Fastest" )
-		PORT_DIPNAME( 0x0c, 0x0c, DEF_STR( Lives ) )
-		PORT_DIPSETTING(    0x08, "2" )
-		PORT_DIPSETTING(    0x0c, "3" )
-		PORT_DIPSETTING(    0x04, "4" )
-		PORT_DIPSETTING(    0x00, "5" )
+		PORT_DIPNAME( 0x03, 0x03, "Timer" );
+		PORT_DIPSETTING(    0x03, "Slow" );
+		PORT_DIPSETTING(    0x02, "Medium" );
+		PORT_DIPSETTING(    0x01, "Fast" );
+		PORT_DIPSETTING(    0x00, "Fastest" );
+		PORT_DIPNAME( 0x0c, 0x0c, DEF_STR( "Lives") );
+		PORT_DIPSETTING(    0x08, "2" );
+		PORT_DIPSETTING(    0x0c, "3" );
+		PORT_DIPSETTING(    0x04, "4" );
+		PORT_DIPSETTING(    0x00, "5" );
 		COINAGE_DSW
 	
 		PORT_START	/* DSW2 */
-		PORT_DIPNAME( 0x01, 0x01, DEF_STR( Flip_Screen ) )
-		PORT_DIPSETTING(    0x01, DEF_STR( Off ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( On ) )
-		PORT_DIPNAME( 0x02, 0x00, DEF_STR( Cabinet ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( Upright ) )
-		PORT_DIPSETTING(    0x02, DEF_STR( Cocktail ) )
+		PORT_DIPNAME( 0x01, 0x01, DEF_STR( "Flip_Screen") );
+		PORT_DIPSETTING(    0x01, DEF_STR( "Off") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
+		PORT_DIPNAME( 0x02, 0x00, DEF_STR( "Cabinet") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "Upright") );
+		PORT_DIPSETTING(    0x02, DEF_STR( "Cocktail") );
 	/* This activates a different coin mode. Look at the dip switch setting schematic */
-		PORT_DIPNAME( 0x04, 0x04, "Coin Mode" )
-		PORT_DIPSETTING(    0x04, "Mode 1" )
-		PORT_DIPSETTING(    0x00, "Mode 2" )
-		PORT_DIPNAME( 0x08, 0x08, DEF_STR( Unknown ) )
-		PORT_DIPSETTING(    0x08, DEF_STR( Off ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( On ) )
+		PORT_DIPNAME( 0x04, 0x04, "Coin Mode" );
+		PORT_DIPSETTING(    0x04, "Mode 1" );
+		PORT_DIPSETTING(    0x00, "Mode 2" );
+		PORT_DIPNAME( 0x08, 0x08, DEF_STR( "Unknown") );
+		PORT_DIPSETTING(    0x08, DEF_STR( "Off") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 		/* In stop mode, press 2 to stop and 1 to restart */
-		PORT_BITX   ( 0x10, 0x10, IPT_DIPSWITCH_NAME | IPF_CHEAT, "Stop Mode", IP_KEY_NONE, IP_JOY_NONE )
-		PORT_DIPSETTING(    0x10, DEF_STR( Off ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( On ) )
+		PORT_BITX   ( 0x10, 0x10, IPT_DIPSWITCH_NAME | IPF_CHEAT, "Stop Mode", IP_KEY_NONE, IP_JOY_NONE );
+		PORT_DIPSETTING(    0x10, DEF_STR( "Off") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 		/* In level selection mode, press 1 to select and 2 to restart */
-		PORT_BITX   ( 0x20, 0x20, IPT_DIPSWITCH_NAME | IPF_CHEAT, "Level Selection Mode", IP_KEY_NONE, IP_JOY_NONE )
-		PORT_DIPSETTING(    0x20, DEF_STR( Off ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( On ) )
-		PORT_BITX(    0x40, 0x40, IPT_DIPSWITCH_NAME | IPF_CHEAT, "Invulnerability", IP_KEY_NONE, IP_JOY_NONE )
-		PORT_DIPSETTING(    0x40, DEF_STR( Off ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( On ) )
-		PORT_SERVICE( 0x80, IP_ACTIVE_LOW )
-	INPUT_PORTS_END
+		PORT_BITX   ( 0x20, 0x20, IPT_DIPSWITCH_NAME | IPF_CHEAT, "Level Selection Mode", IP_KEY_NONE, IP_JOY_NONE );
+		PORT_DIPSETTING(    0x20, DEF_STR( "Off") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
+		PORT_BITX(    0x40, 0x40, IPT_DIPSWITCH_NAME | IPF_CHEAT, "Invulnerability", IP_KEY_NONE, IP_JOY_NONE );
+		PORT_DIPSETTING(    0x40, DEF_STR( "Off") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
+		PORT_SERVICE( 0x80, IP_ACTIVE_LOW );
+	INPUT_PORTS_END(); }}; 
 	
-	INPUT_PORTS_START( ldrun2 )
+	static InputPortPtr input_ports_ldrun2 = new InputPortPtr(){ public void handler() { 
 		PORT_START	/* IN0 */
 		IN0_PORT
 	
@@ -750,48 +750,48 @@ public class m62
 		IN2_PORT
 	
 		PORT_START	/* DSW1 */
-		PORT_DIPNAME( 0x01, 0x01, "Timer" )
-		PORT_DIPSETTING(    0x01, "Slow" )
-		PORT_DIPSETTING(    0x00, "Fast" )
-		PORT_DIPNAME( 0x02, 0x02, "Game Speed" )
-		PORT_DIPSETTING(    0x00, "Low" )
-		PORT_DIPSETTING(    0x02, "High" )
-		PORT_DIPNAME( 0x0c, 0x0c, DEF_STR( Lives ) )
-		PORT_DIPSETTING(    0x08, "2" )
-		PORT_DIPSETTING(    0x0c, "3" )
-		PORT_DIPSETTING(    0x04, "4" )
-		PORT_DIPSETTING(    0x00, "5" )
+		PORT_DIPNAME( 0x01, 0x01, "Timer" );
+		PORT_DIPSETTING(    0x01, "Slow" );
+		PORT_DIPSETTING(    0x00, "Fast" );
+		PORT_DIPNAME( 0x02, 0x02, "Game Speed" );
+		PORT_DIPSETTING(    0x00, "Low" );
+		PORT_DIPSETTING(    0x02, "High" );
+		PORT_DIPNAME( 0x0c, 0x0c, DEF_STR( "Lives") );
+		PORT_DIPSETTING(    0x08, "2" );
+		PORT_DIPSETTING(    0x0c, "3" );
+		PORT_DIPSETTING(    0x04, "4" );
+		PORT_DIPSETTING(    0x00, "5" );
 		COINAGE_DSW
 	
 		PORT_START	/* DSW2 */
-		PORT_DIPNAME( 0x01, 0x01, DEF_STR( Flip_Screen ) )
-		PORT_DIPSETTING(    0x01, DEF_STR( Off ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( On ) )
-		PORT_DIPNAME( 0x02, 0x00, DEF_STR( Cabinet ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( Upright ) )
-		PORT_DIPSETTING(    0x02, DEF_STR( Cocktail ) )
+		PORT_DIPNAME( 0x01, 0x01, DEF_STR( "Flip_Screen") );
+		PORT_DIPSETTING(    0x01, DEF_STR( "Off") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
+		PORT_DIPNAME( 0x02, 0x00, DEF_STR( "Cabinet") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "Upright") );
+		PORT_DIPSETTING(    0x02, DEF_STR( "Cocktail") );
 	/* This activates a different coin mode. Look at the dip switch setting schematic */
-		PORT_DIPNAME( 0x04, 0x04, "Coin Mode" )
-		PORT_DIPSETTING(    0x04, "Mode 1" )
-		PORT_DIPSETTING(    0x00, "Mode 2" )
-		PORT_DIPNAME( 0x08, 0x08, DEF_STR( Unknown ) )
-		PORT_DIPSETTING(    0x08, DEF_STR( Off ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( On ) )
+		PORT_DIPNAME( 0x04, 0x04, "Coin Mode" );
+		PORT_DIPSETTING(    0x04, "Mode 1" );
+		PORT_DIPSETTING(    0x00, "Mode 2" );
+		PORT_DIPNAME( 0x08, 0x08, DEF_STR( "Unknown") );
+		PORT_DIPSETTING(    0x08, DEF_STR( "Off") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 		/* In freeze mode, press 2 to stop and 1 to restart */
-		PORT_BITX   ( 0x10, 0x10, IPT_DIPSWITCH_NAME | IPF_CHEAT, "Freeze", IP_KEY_NONE, IP_JOY_NONE )
-		PORT_DIPSETTING(    0x10, DEF_STR( Off ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( On ) )
+		PORT_BITX   ( 0x10, 0x10, IPT_DIPSWITCH_NAME | IPF_CHEAT, "Freeze", IP_KEY_NONE, IP_JOY_NONE );
+		PORT_DIPSETTING(    0x10, DEF_STR( "Off") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 		/* In level selection mode, press 1 to select and 2 to restart */
-		PORT_BITX   ( 0x20, 0x20, IPT_DIPSWITCH_NAME | IPF_CHEAT, "Level Selection Mode", IP_KEY_NONE, IP_JOY_NONE )
-		PORT_DIPSETTING(    0x20, DEF_STR( Off ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( On ) )
-		PORT_BITX(    0x40, 0x40, IPT_DIPSWITCH_NAME | IPF_CHEAT, "Invulnerability", IP_KEY_NONE, IP_JOY_NONE )
-		PORT_DIPSETTING(    0x40, DEF_STR( Off ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( On ) )
-		PORT_SERVICE( 0x80, IP_ACTIVE_LOW )
-	INPUT_PORTS_END
+		PORT_BITX   ( 0x20, 0x20, IPT_DIPSWITCH_NAME | IPF_CHEAT, "Level Selection Mode", IP_KEY_NONE, IP_JOY_NONE );
+		PORT_DIPSETTING(    0x20, DEF_STR( "Off") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
+		PORT_BITX(    0x40, 0x40, IPT_DIPSWITCH_NAME | IPF_CHEAT, "Invulnerability", IP_KEY_NONE, IP_JOY_NONE );
+		PORT_DIPSETTING(    0x40, DEF_STR( "Off") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
+		PORT_SERVICE( 0x80, IP_ACTIVE_LOW );
+	INPUT_PORTS_END(); }}; 
 	
-	INPUT_PORTS_START( ldrun3 )
+	static InputPortPtr input_ports_ldrun3 = new InputPortPtr(){ public void handler() { 
 		PORT_START	/* IN0 */
 		IN0_PORT
 	
@@ -802,48 +802,48 @@ public class m62
 		IN2_PORT
 	
 		PORT_START	/* DSW1 */
-		PORT_DIPNAME( 0x01, 0x01, "Timer" )
-		PORT_DIPSETTING(    0x01, "Slow" )
-		PORT_DIPSETTING(    0x00, "Fast" )
-		PORT_DIPNAME( 0x02, 0x02, "Game Speed" )
-		PORT_DIPSETTING(    0x00, "Low" )
-		PORT_DIPSETTING(    0x02, "High" )
-		PORT_DIPNAME( 0x0c, 0x0c, DEF_STR( Lives ) )
-		PORT_DIPSETTING(    0x08, "2" )
-		PORT_DIPSETTING(    0x0c, "3" )
-		PORT_DIPSETTING(    0x04, "4" )
-		PORT_DIPSETTING(    0x00, "5" )
+		PORT_DIPNAME( 0x01, 0x01, "Timer" );
+		PORT_DIPSETTING(    0x01, "Slow" );
+		PORT_DIPSETTING(    0x00, "Fast" );
+		PORT_DIPNAME( 0x02, 0x02, "Game Speed" );
+		PORT_DIPSETTING(    0x00, "Low" );
+		PORT_DIPSETTING(    0x02, "High" );
+		PORT_DIPNAME( 0x0c, 0x0c, DEF_STR( "Lives") );
+		PORT_DIPSETTING(    0x08, "2" );
+		PORT_DIPSETTING(    0x0c, "3" );
+		PORT_DIPSETTING(    0x04, "4" );
+		PORT_DIPSETTING(    0x00, "5" );
 		COINAGE_DSW
 	
 		PORT_START	/* DSW2 */
-		PORT_DIPNAME( 0x01, 0x01, DEF_STR( Flip_Screen ) )
-		PORT_DIPSETTING(    0x01, DEF_STR( Off ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( On ) )
-		PORT_DIPNAME( 0x02, 0x00, DEF_STR( Cabinet ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( Upright ) )
-		PORT_DIPSETTING(    0x02, DEF_STR( Cocktail ) )
+		PORT_DIPNAME( 0x01, 0x01, DEF_STR( "Flip_Screen") );
+		PORT_DIPSETTING(    0x01, DEF_STR( "Off") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
+		PORT_DIPNAME( 0x02, 0x00, DEF_STR( "Cabinet") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "Upright") );
+		PORT_DIPSETTING(    0x02, DEF_STR( "Cocktail") );
 	/* This activates a different coin mode. Look at the dip switch setting schematic */
-		PORT_DIPNAME( 0x04, 0x04, "Coin Mode" )
-		PORT_DIPSETTING(    0x04, "Mode 1" )
-		PORT_DIPSETTING(    0x00, "Mode 2" )
-		PORT_DIPNAME( 0x08, 0x08, DEF_STR( Unknown ) )
-		PORT_DIPSETTING(    0x08, DEF_STR( Off ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( On ) )
+		PORT_DIPNAME( 0x04, 0x04, "Coin Mode" );
+		PORT_DIPSETTING(    0x04, "Mode 1" );
+		PORT_DIPSETTING(    0x00, "Mode 2" );
+		PORT_DIPNAME( 0x08, 0x08, DEF_STR( "Unknown") );
+		PORT_DIPSETTING(    0x08, DEF_STR( "Off") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 		/* In stop mode, press 2 to stop and 1 to restart */
-		PORT_BITX   ( 0x10, 0x10, IPT_DIPSWITCH_NAME | IPF_CHEAT, "Stop Mode", IP_KEY_NONE, IP_JOY_NONE )
-		PORT_DIPSETTING(    0x10, DEF_STR( Off ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( On ) )
+		PORT_BITX   ( 0x10, 0x10, IPT_DIPSWITCH_NAME | IPF_CHEAT, "Stop Mode", IP_KEY_NONE, IP_JOY_NONE );
+		PORT_DIPSETTING(    0x10, DEF_STR( "Off") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 		/* In level selection mode, press 1 to select and 2 to restart */
-		PORT_BITX   ( 0x20, 0x20, IPT_DIPSWITCH_NAME | IPF_CHEAT, "Level Selection Mode", IP_KEY_NONE, IP_JOY_NONE )
-		PORT_DIPSETTING(    0x20, DEF_STR( Off ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( On ) )
-		PORT_BITX(    0x40, 0x40, IPT_DIPSWITCH_NAME | IPF_CHEAT, "Invulnerability", IP_KEY_NONE, IP_JOY_NONE )
-		PORT_DIPSETTING(    0x40, DEF_STR( Off ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( On ) )
-		PORT_SERVICE( 0x80, IP_ACTIVE_LOW )
-	INPUT_PORTS_END
+		PORT_BITX   ( 0x20, 0x20, IPT_DIPSWITCH_NAME | IPF_CHEAT, "Level Selection Mode", IP_KEY_NONE, IP_JOY_NONE );
+		PORT_DIPSETTING(    0x20, DEF_STR( "Off") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
+		PORT_BITX(    0x40, 0x40, IPT_DIPSWITCH_NAME | IPF_CHEAT, "Invulnerability", IP_KEY_NONE, IP_JOY_NONE );
+		PORT_DIPSETTING(    0x40, DEF_STR( "Off") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
+		PORT_SERVICE( 0x80, IP_ACTIVE_LOW );
+	INPUT_PORTS_END(); }}; 
 	
-	INPUT_PORTS_START( ldrun4 )
+	static InputPortPtr input_ports_ldrun4 = new InputPortPtr(){ public void handler() { 
 		PORT_START	/* IN0 */
 		IN0_PORT
 	
@@ -854,49 +854,49 @@ public class m62
 		IN2_PORT
 	
 		PORT_START	/* DSW1 */
-		PORT_DIPNAME( 0x01, 0x01, "Timer" )
-		PORT_DIPSETTING(    0x01, "Slow" )
-		PORT_DIPSETTING(    0x00, "Fast" )
-		PORT_DIPNAME( 0x02, 0x02, "2 Players Game" )
-		PORT_DIPSETTING(    0x00, "1 Credit" )
-		PORT_DIPSETTING(    0x02, "2 Credits" )
-		PORT_DIPNAME( 0x0c, 0x0c, "1 Player Lives" )
-		PORT_DIPSETTING(    0x08, "2" )
-		PORT_DIPSETTING(    0x0c, "3" )
-		PORT_DIPSETTING(    0x04, "4" )
-		PORT_DIPSETTING(    0x00, "5" )
+		PORT_DIPNAME( 0x01, 0x01, "Timer" );
+		PORT_DIPSETTING(    0x01, "Slow" );
+		PORT_DIPSETTING(    0x00, "Fast" );
+		PORT_DIPNAME( 0x02, 0x02, "2 Players Game" );
+		PORT_DIPSETTING(    0x00, "1 Credit" );
+		PORT_DIPSETTING(    0x02, "2 Credits" );
+		PORT_DIPNAME( 0x0c, 0x0c, "1 Player Lives" );
+		PORT_DIPSETTING(    0x08, "2" );
+		PORT_DIPSETTING(    0x0c, "3" );
+		PORT_DIPSETTING(    0x04, "4" );
+		PORT_DIPSETTING(    0x00, "5" );
 		COINAGE_DSW
 	
 		PORT_START	/* DSW2 */
-		PORT_DIPNAME( 0x01, 0x01, DEF_STR( Flip_Screen ) )
-		PORT_DIPSETTING(    0x01, DEF_STR( Off ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( On ) )
-		PORT_DIPNAME( 0x02, 0x02, "2 Players Lives" )
-		PORT_DIPSETTING(    0x02, "5" )
-		PORT_DIPSETTING(    0x00, "6" )
+		PORT_DIPNAME( 0x01, 0x01, DEF_STR( "Flip_Screen") );
+		PORT_DIPSETTING(    0x01, DEF_STR( "Off") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
+		PORT_DIPNAME( 0x02, 0x02, "2 Players Lives" );
+		PORT_DIPSETTING(    0x02, "5" );
+		PORT_DIPSETTING(    0x00, "6" );
 	/* This activates a different coin mode. Look at the dip switch setting schematic */
-		PORT_DIPNAME( 0x04, 0x04, "Coin Mode" )
-		PORT_DIPSETTING(    0x04, "Mode 1" )
-		PORT_DIPSETTING(    0x00, "Mode 2" )
-		PORT_DIPNAME( 0x08, 0x08, DEF_STR( Unknown ) )
-		PORT_DIPSETTING(    0x08, DEF_STR( Off ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( On ) )
-		PORT_DIPNAME( 0x10, 0x10, "Allow 2 Players Game" )
-		PORT_DIPSETTING(    0x00, DEF_STR( No ) )
-		PORT_DIPSETTING(    0x10, DEF_STR( Yes ) )
+		PORT_DIPNAME( 0x04, 0x04, "Coin Mode" );
+		PORT_DIPSETTING(    0x04, "Mode 1" );
+		PORT_DIPSETTING(    0x00, "Mode 2" );
+		PORT_DIPNAME( 0x08, 0x08, DEF_STR( "Unknown") );
+		PORT_DIPSETTING(    0x08, DEF_STR( "Off") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
+		PORT_DIPNAME( 0x10, 0x10, "Allow 2 Players Game" );
+		PORT_DIPSETTING(    0x00, DEF_STR( "No") );
+		PORT_DIPSETTING(    0x10, DEF_STR( "Yes") );
 		/* In level selection mode, press 1 to select and 2 to restart */
-		PORT_BITX   ( 0x20, 0x20, IPT_DIPSWITCH_NAME | IPF_CHEAT, "Level Selection Mode", IP_KEY_NONE, IP_JOY_NONE )
-		PORT_DIPSETTING(    0x20, DEF_STR( Off ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( On ) )
-		PORT_BITX(    0x40, 0x40, IPT_DIPSWITCH_NAME | IPF_CHEAT, "Invulnerability", IP_KEY_NONE, IP_JOY_NONE )
-		PORT_DIPSETTING(    0x40, DEF_STR( Off ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( On ) )
-		PORT_BITX(    0x80, 0x80, IPT_DIPSWITCH_NAME | IPF_TOGGLE, "Service Mode (must set 2P game to No)", KEYCODE_F2, IP_JOY_NONE )
-		PORT_DIPSETTING(    0x80, DEF_STR( Off ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( On ) )
-	INPUT_PORTS_END
+		PORT_BITX   ( 0x20, 0x20, IPT_DIPSWITCH_NAME | IPF_CHEAT, "Level Selection Mode", IP_KEY_NONE, IP_JOY_NONE );
+		PORT_DIPSETTING(    0x20, DEF_STR( "Off") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
+		PORT_BITX(    0x40, 0x40, IPT_DIPSWITCH_NAME | IPF_CHEAT, "Invulnerability", IP_KEY_NONE, IP_JOY_NONE );
+		PORT_DIPSETTING(    0x40, DEF_STR( "Off") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
+		PORT_BITX(    0x80, 0x80, IPT_DIPSWITCH_NAME | IPF_TOGGLE, "Service Mode (must set 2P game to No);, KEYCODE_F2, IP_JOY_NONE )
+		PORT_DIPSETTING(    0x80, DEF_STR( "Off") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
+	INPUT_PORTS_END(); }}; 
 	
-	INPUT_PORTS_START( lotlot )
+	static InputPortPtr input_ports_lotlot = new InputPortPtr(){ public void handler() { 
 		PORT_START	/* IN0 */
 		IN0_PORT
 	
@@ -907,46 +907,46 @@ public class m62
 		IN2_PORT
 	
 		PORT_START	/* DSW1 */
-		PORT_DIPNAME( 0x03, 0x03, "Speed" )
-		PORT_DIPSETTING(    0x03, "Very Slow" )
-		PORT_DIPSETTING(    0x02, "Slow" )
-		PORT_DIPSETTING(    0x01, "Fast" )
-		PORT_DIPSETTING(    0x00, "Very Fast" )
-		PORT_DIPNAME( 0x0c, 0x0c, DEF_STR( Lives ) )
-		PORT_DIPSETTING(    0x08, "1" )
-		PORT_DIPSETTING(    0x04, "2" )
-		PORT_DIPSETTING(    0x0c, "3" )
-		PORT_DIPSETTING(    0x00, "4" )
+		PORT_DIPNAME( 0x03, 0x03, "Speed" );
+		PORT_DIPSETTING(    0x03, "Very Slow" );
+		PORT_DIPSETTING(    0x02, "Slow" );
+		PORT_DIPSETTING(    0x01, "Fast" );
+		PORT_DIPSETTING(    0x00, "Very Fast" );
+		PORT_DIPNAME( 0x0c, 0x0c, DEF_STR( "Lives") );
+		PORT_DIPSETTING(    0x08, "1" );
+		PORT_DIPSETTING(    0x04, "2" );
+		PORT_DIPSETTING(    0x0c, "3" );
+		PORT_DIPSETTING(    0x00, "4" );
 		COINAGE2_DSW
 	
 		PORT_START	/* DSW2 */
-		PORT_DIPNAME( 0x01, 0x01, DEF_STR( Flip_Screen ) )
-		PORT_DIPSETTING(    0x01, DEF_STR( Off ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( On ) )
-		PORT_DIPNAME( 0x02, 0x00, DEF_STR( Cabinet ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( Upright ) )
-		PORT_DIPSETTING(    0x02, DEF_STR( Cocktail ) )
+		PORT_DIPNAME( 0x01, 0x01, DEF_STR( "Flip_Screen") );
+		PORT_DIPSETTING(    0x01, DEF_STR( "Off") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
+		PORT_DIPNAME( 0x02, 0x00, DEF_STR( "Cabinet") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "Upright") );
+		PORT_DIPSETTING(    0x02, DEF_STR( "Cocktail") );
 	/* This activates a different coin mode. Look at the dip switch setting schematic */
-		PORT_DIPNAME( 0x04, 0x04, "Coin Mode" )
-		PORT_DIPSETTING(    0x04, "Mode 1" )
-		PORT_DIPSETTING(    0x00, "Mode 2" )
-		PORT_DIPNAME( 0x08, 0x00, DEF_STR( Demo_Sounds ) )
-		PORT_DIPSETTING(    0x08, DEF_STR( Off ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( On ) )
+		PORT_DIPNAME( 0x04, 0x04, "Coin Mode" );
+		PORT_DIPSETTING(    0x04, "Mode 1" );
+		PORT_DIPSETTING(    0x00, "Mode 2" );
+		PORT_DIPNAME( 0x08, 0x00, DEF_STR( "Demo_Sounds") );
+		PORT_DIPSETTING(    0x08, DEF_STR( "Off") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 		/* In freeze mode, press 2 to stop and 1 to restart */
-		PORT_BITX   ( 0x10, 0x10, IPT_DIPSWITCH_NAME | IPF_CHEAT, "Freeze", IP_KEY_NONE, IP_JOY_NONE )
-		PORT_DIPSETTING(    0x10, DEF_STR( Off ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( On ) )
-		PORT_DIPNAME( 0x20, 0x20, DEF_STR( Unknown ) )
-		PORT_DIPSETTING(    0x20, DEF_STR( Off ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( On ) )
-		PORT_BITX(    0x40, 0x40, IPT_DIPSWITCH_NAME | IPF_CHEAT, "Invulnerability", IP_KEY_NONE, IP_JOY_NONE )
-		PORT_DIPSETTING(    0x40, DEF_STR( Off ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( On ) )
-		PORT_SERVICE( 0x80, IP_ACTIVE_LOW )
-	INPUT_PORTS_END
+		PORT_BITX   ( 0x10, 0x10, IPT_DIPSWITCH_NAME | IPF_CHEAT, "Freeze", IP_KEY_NONE, IP_JOY_NONE );
+		PORT_DIPSETTING(    0x10, DEF_STR( "Off") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
+		PORT_DIPNAME( 0x20, 0x20, DEF_STR( "Unknown") );
+		PORT_DIPSETTING(    0x20, DEF_STR( "Off") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
+		PORT_BITX(    0x40, 0x40, IPT_DIPSWITCH_NAME | IPF_CHEAT, "Invulnerability", IP_KEY_NONE, IP_JOY_NONE );
+		PORT_DIPSETTING(    0x40, DEF_STR( "Off") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
+		PORT_SERVICE( 0x80, IP_ACTIVE_LOW );
+	INPUT_PORTS_END(); }}; 
 	
-	INPUT_PORTS_START( kidniki )
+	static InputPortPtr input_ports_kidniki = new InputPortPtr(){ public void handler() { 
 		PORT_START
 		IN0_PORT
 	
@@ -957,46 +957,46 @@ public class m62
 		IN2_PORT
 	
 		PORT_START	/* DSW1 */
-		PORT_DIPNAME( 0x03, 0x03, DEF_STR( Lives ) )
-		PORT_DIPSETTING(    0x02, "2" )
-		PORT_DIPSETTING(    0x03, "3" )
-		PORT_DIPSETTING(    0x01, "4" )
-		PORT_DIPSETTING(    0x00, "5" )
-		PORT_DIPNAME( 0x04, 0x04, DEF_STR( Difficulty ) )
-		PORT_DIPSETTING(    0x04, "Normal" )
-		PORT_DIPSETTING(    0x00, "Hard" )
-		PORT_DIPNAME( 0x08, 0x08, DEF_STR( Bonus_Life ) )
-		PORT_DIPSETTING(    0x08, "50000" )
-		PORT_DIPSETTING(    0x00, "80000" )
+		PORT_DIPNAME( 0x03, 0x03, DEF_STR( "Lives") );
+		PORT_DIPSETTING(    0x02, "2" );
+		PORT_DIPSETTING(    0x03, "3" );
+		PORT_DIPSETTING(    0x01, "4" );
+		PORT_DIPSETTING(    0x00, "5" );
+		PORT_DIPNAME( 0x04, 0x04, DEF_STR( "Difficulty") );
+		PORT_DIPSETTING(    0x04, "Normal" );
+		PORT_DIPSETTING(    0x00, "Hard" );
+		PORT_DIPNAME( 0x08, 0x08, DEF_STR( "Bonus_Life") );
+		PORT_DIPSETTING(    0x08, "50000" );
+		PORT_DIPSETTING(    0x00, "80000" );
 		COINAGE2_DSW
 	
 		PORT_START	/* DSW2 */
-		PORT_DIPNAME( 0x01, 0x01, DEF_STR( Flip_Screen ) )
-		PORT_DIPSETTING(    0x01, DEF_STR( Off ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( On ) )
-		PORT_DIPNAME( 0x02, 0x00, DEF_STR( Cabinet ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( Upright ) )
-		PORT_DIPSETTING(    0x02, DEF_STR( Cocktail ) )
-		PORT_DIPNAME( 0x04, 0x04, "Coin Mode" )
-		PORT_DIPSETTING(    0x04, "Mode 1" )
-		PORT_DIPSETTING(    0x00, "Mode 2" )
-		PORT_DIPNAME( 0x08, 0x08, "Game Repeats" )
-		PORT_DIPSETTING(    0x08, DEF_STR( No ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( Yes ) )
-		PORT_DIPNAME( 0x10, 0x10, "Allow Continue" )
-		PORT_DIPSETTING(    0x00, DEF_STR( No ) )
-		PORT_DIPSETTING(    0x10, DEF_STR( Yes ) )
+		PORT_DIPNAME( 0x01, 0x01, DEF_STR( "Flip_Screen") );
+		PORT_DIPSETTING(    0x01, DEF_STR( "Off") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
+		PORT_DIPNAME( 0x02, 0x00, DEF_STR( "Cabinet") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "Upright") );
+		PORT_DIPSETTING(    0x02, DEF_STR( "Cocktail") );
+		PORT_DIPNAME( 0x04, 0x04, "Coin Mode" );
+		PORT_DIPSETTING(    0x04, "Mode 1" );
+		PORT_DIPSETTING(    0x00, "Mode 2" );
+		PORT_DIPNAME( 0x08, 0x08, "Game Repeats" );
+		PORT_DIPSETTING(    0x08, DEF_STR( "No") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "Yes") );
+		PORT_DIPNAME( 0x10, 0x10, "Allow Continue" );
+		PORT_DIPSETTING(    0x00, DEF_STR( "No") );
+		PORT_DIPSETTING(    0x10, DEF_STR( "Yes") );
 		/* In freeze mode, press 2 to stop and 1 to restart */
-		PORT_BITX   ( 0x20, 0x20, IPT_DIPSWITCH_NAME | IPF_CHEAT, "Freeze", IP_KEY_NONE, IP_JOY_NONE )
-		PORT_DIPSETTING(    0x20, DEF_STR( Off ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( On ) )
-		PORT_BITX(    0x40, 0x40, IPT_DIPSWITCH_NAME | IPF_CHEAT, "Invulnerability", IP_KEY_NONE, IP_JOY_NONE )
-		PORT_DIPSETTING(    0x40, DEF_STR( Off ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( On ) )
-		PORT_SERVICE( 0x80, IP_ACTIVE_LOW )
-	INPUT_PORTS_END
+		PORT_BITX   ( 0x20, 0x20, IPT_DIPSWITCH_NAME | IPF_CHEAT, "Freeze", IP_KEY_NONE, IP_JOY_NONE );
+		PORT_DIPSETTING(    0x20, DEF_STR( "Off") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
+		PORT_BITX(    0x40, 0x40, IPT_DIPSWITCH_NAME | IPF_CHEAT, "Invulnerability", IP_KEY_NONE, IP_JOY_NONE );
+		PORT_DIPSETTING(    0x40, DEF_STR( "Off") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
+		PORT_SERVICE( 0x80, IP_ACTIVE_LOW );
+	INPUT_PORTS_END(); }}; 
 	
-	INPUT_PORTS_START( spelunkr )
+	static InputPortPtr input_ports_spelunkr = new InputPortPtr(){ public void handler() { 
 		PORT_START	/* IN0 */
 		IN0_PORT
 	
@@ -1007,47 +1007,47 @@ public class m62
 		IN2_PORT
 	
 		PORT_START	/* DSW1 */
-		PORT_DIPNAME( 0x03, 0x03, "Energy Decrease" )
-		PORT_DIPSETTING(    0x03, "Slow" )
-		PORT_DIPSETTING(    0x02, "Medium" )
-		PORT_DIPSETTING(    0x01, "Fast" )
-		PORT_DIPSETTING(    0x00, "Fastest" )
-		PORT_DIPNAME( 0x0c, 0x0c, DEF_STR( Lives ) )
-		PORT_DIPSETTING(    0x08, "2" )
-		PORT_DIPSETTING(    0x0c, "3" )
-		PORT_DIPSETTING(    0x04, "4" )
-		PORT_DIPSETTING(    0x00, "5" )
+		PORT_DIPNAME( 0x03, 0x03, "Energy Decrease" );
+		PORT_DIPSETTING(    0x03, "Slow" );
+		PORT_DIPSETTING(    0x02, "Medium" );
+		PORT_DIPSETTING(    0x01, "Fast" );
+		PORT_DIPSETTING(    0x00, "Fastest" );
+		PORT_DIPNAME( 0x0c, 0x0c, DEF_STR( "Lives") );
+		PORT_DIPSETTING(    0x08, "2" );
+		PORT_DIPSETTING(    0x0c, "3" );
+		PORT_DIPSETTING(    0x04, "4" );
+		PORT_DIPSETTING(    0x00, "5" );
 		COINAGE2_DSW
 	
 		PORT_START	/* DSW2 */
-		PORT_DIPNAME( 0x01, 0x01, DEF_STR( Flip_Screen ) )
-		PORT_DIPSETTING(    0x01, DEF_STR( Off ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( On ) )
-		PORT_DIPNAME( 0x02, 0x00, DEF_STR( Cabinet ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( Upright ) )
-		PORT_DIPSETTING(    0x02, DEF_STR( Cocktail ) )
+		PORT_DIPNAME( 0x01, 0x01, DEF_STR( "Flip_Screen") );
+		PORT_DIPSETTING(    0x01, DEF_STR( "Off") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
+		PORT_DIPNAME( 0x02, 0x00, DEF_STR( "Cabinet") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "Upright") );
+		PORT_DIPSETTING(    0x02, DEF_STR( "Cocktail") );
 	/* This activates a different coin mode. Look at the dip switch setting schematic */
-		PORT_DIPNAME( 0x04, 0x04, "Coin Mode" )
-		PORT_DIPSETTING(    0x04, "Mode 1" )
-		PORT_DIPSETTING(    0x00, "Mode 2" )
-		PORT_DIPNAME( 0x08, 0x00, "Allow Continue" )
-		PORT_DIPSETTING(    0x08, DEF_STR( No ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( Yes ) )
+		PORT_DIPNAME( 0x04, 0x04, "Coin Mode" );
+		PORT_DIPSETTING(    0x04, "Mode 1" );
+		PORT_DIPSETTING(    0x00, "Mode 2" );
+		PORT_DIPNAME( 0x08, 0x00, "Allow Continue" );
+		PORT_DIPSETTING(    0x08, DEF_STR( "No") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "Yes") );
 		/* In teleport mode, keep 1 pressed and press up or down to move the character */
-		PORT_BITX   ( 0x10, 0x10, IPT_DIPSWITCH_NAME | IPF_CHEAT, "Teleport", IP_KEY_NONE, IP_JOY_NONE )
-		PORT_DIPSETTING(    0x10, DEF_STR( Off ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( On ) )
+		PORT_BITX   ( 0x10, 0x10, IPT_DIPSWITCH_NAME | IPF_CHEAT, "Teleport", IP_KEY_NONE, IP_JOY_NONE );
+		PORT_DIPSETTING(    0x10, DEF_STR( "Off") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 		/* In freeze mode, press 2 to stop and 1 to restart */
-		PORT_BITX   ( 0x20, 0x20, IPT_DIPSWITCH_NAME | IPF_CHEAT, "Freeze", IP_KEY_NONE, IP_JOY_NONE )
-		PORT_DIPSETTING(    0x20, DEF_STR( Off ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( On ) )
-		PORT_BITX(    0x40, 0x40, IPT_DIPSWITCH_NAME | IPF_CHEAT, "Invulnerability", IP_KEY_NONE, IP_JOY_NONE )
-		PORT_DIPSETTING(    0x40, DEF_STR( Off ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( On ) )
-		PORT_SERVICE( 0x80, IP_ACTIVE_LOW )
-	INPUT_PORTS_END
+		PORT_BITX   ( 0x20, 0x20, IPT_DIPSWITCH_NAME | IPF_CHEAT, "Freeze", IP_KEY_NONE, IP_JOY_NONE );
+		PORT_DIPSETTING(    0x20, DEF_STR( "Off") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
+		PORT_BITX(    0x40, 0x40, IPT_DIPSWITCH_NAME | IPF_CHEAT, "Invulnerability", IP_KEY_NONE, IP_JOY_NONE );
+		PORT_DIPSETTING(    0x40, DEF_STR( "Off") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
+		PORT_SERVICE( 0x80, IP_ACTIVE_LOW );
+	INPUT_PORTS_END(); }}; 
 	
-	INPUT_PORTS_START( spelunk2 )
+	static InputPortPtr input_ports_spelunk2 = new InputPortPtr(){ public void handler() { 
 		PORT_START	/* IN0 */
 		IN0_PORT
 	
@@ -1058,46 +1058,46 @@ public class m62
 		IN2_PORT
 	
 		PORT_START	/* DSW1 */
-		PORT_DIPNAME( 0x03, 0x03, "Energy Decrease" )
-		PORT_DIPSETTING(    0x03, "Slow" )
-		PORT_DIPSETTING(    0x02, "Medium" )
-		PORT_DIPSETTING(    0x01, "Fast" )
-		PORT_DIPSETTING(    0x00, "Fastest" )
-		PORT_DIPNAME( 0x0c, 0x0c, DEF_STR( Lives ) )
-		PORT_DIPSETTING(    0x08, "2" )
-		PORT_DIPSETTING(    0x0c, "3" )
-		PORT_DIPSETTING(    0x04, "4" )
-		PORT_DIPSETTING(    0x00, "5" )
+		PORT_DIPNAME( 0x03, 0x03, "Energy Decrease" );
+		PORT_DIPSETTING(    0x03, "Slow" );
+		PORT_DIPSETTING(    0x02, "Medium" );
+		PORT_DIPSETTING(    0x01, "Fast" );
+		PORT_DIPSETTING(    0x00, "Fastest" );
+		PORT_DIPNAME( 0x0c, 0x0c, DEF_STR( "Lives") );
+		PORT_DIPSETTING(    0x08, "2" );
+		PORT_DIPSETTING(    0x0c, "3" );
+		PORT_DIPSETTING(    0x04, "4" );
+		PORT_DIPSETTING(    0x00, "5" );
 		COINAGE2_DSW
 	
 		PORT_START	/* DSW2 */
-		PORT_DIPNAME( 0x01, 0x01, DEF_STR( Flip_Screen ) )
-		PORT_DIPSETTING(    0x01, DEF_STR( Off ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( On ) )
-		PORT_DIPNAME( 0x02, 0x00, DEF_STR( Cabinet ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( Upright ) )
-		PORT_DIPSETTING(    0x02, DEF_STR( Cocktail ) )
+		PORT_DIPNAME( 0x01, 0x01, DEF_STR( "Flip_Screen") );
+		PORT_DIPSETTING(    0x01, DEF_STR( "Off") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
+		PORT_DIPNAME( 0x02, 0x00, DEF_STR( "Cabinet") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "Upright") );
+		PORT_DIPSETTING(    0x02, DEF_STR( "Cocktail") );
 	/* This activates a different coin mode. Look at the dip switch setting schematic */
-		PORT_DIPNAME( 0x04, 0x04, "Coin Mode" )
-		PORT_DIPSETTING(    0x04, "Mode 1" )
-		PORT_DIPSETTING(    0x00, "Mode 2" )
-		PORT_DIPNAME( 0x08, 0x08, "Allow Continue" )
-		PORT_DIPSETTING(    0x00, DEF_STR( No ) )
-		PORT_DIPSETTING(    0x08, DEF_STR( Yes ) )
-		PORT_DIPNAME( 0x10, 0x10, DEF_STR( Unknown ) )
-		PORT_DIPSETTING(    0x10, DEF_STR( Off ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( On ) )
+		PORT_DIPNAME( 0x04, 0x04, "Coin Mode" );
+		PORT_DIPSETTING(    0x04, "Mode 1" );
+		PORT_DIPSETTING(    0x00, "Mode 2" );
+		PORT_DIPNAME( 0x08, 0x08, "Allow Continue" );
+		PORT_DIPSETTING(    0x00, DEF_STR( "No") );
+		PORT_DIPSETTING(    0x08, DEF_STR( "Yes") );
+		PORT_DIPNAME( 0x10, 0x10, DEF_STR( "Unknown") );
+		PORT_DIPSETTING(    0x10, DEF_STR( "Off") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 		/* In freeze mode, press 2 to stop and 1 to restart */
-		PORT_BITX   ( 0x20, 0x20, IPT_DIPSWITCH_NAME | IPF_CHEAT, "Freeze", IP_KEY_NONE, IP_JOY_NONE )
-		PORT_DIPSETTING(    0x20, DEF_STR( Off ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( On ) )
-		PORT_BITX(    0x40, 0x40, IPT_DIPSWITCH_NAME | IPF_CHEAT, "Invulnerability", IP_KEY_NONE, IP_JOY_NONE )
-		PORT_DIPSETTING(    0x40, DEF_STR( Off ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( On ) )
-		PORT_SERVICE( 0x80, IP_ACTIVE_LOW )
-	INPUT_PORTS_END
+		PORT_BITX   ( 0x20, 0x20, IPT_DIPSWITCH_NAME | IPF_CHEAT, "Freeze", IP_KEY_NONE, IP_JOY_NONE );
+		PORT_DIPSETTING(    0x20, DEF_STR( "Off") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
+		PORT_BITX(    0x40, 0x40, IPT_DIPSWITCH_NAME | IPF_CHEAT, "Invulnerability", IP_KEY_NONE, IP_JOY_NONE );
+		PORT_DIPSETTING(    0x40, DEF_STR( "Off") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
+		PORT_SERVICE( 0x80, IP_ACTIVE_LOW );
+	INPUT_PORTS_END(); }}; 
 	
-	INPUT_PORTS_START( youjyudn )
+	static InputPortPtr input_ports_youjyudn = new InputPortPtr(){ public void handler() { 
 		PORT_START	/* IN0 */
 		IN0_PORT
 	
@@ -1108,45 +1108,45 @@ public class m62
 		IN2_PORT
 	
 		PORT_START	/* DSW1 */
-		PORT_DIPNAME( 0x03, 0x03, DEF_STR( Lives ) )
-		PORT_DIPSETTING(    0x02, "2" )
-		PORT_DIPSETTING(    0x03, "3" )
-		PORT_DIPSETTING(    0x01, "4" )
-		PORT_DIPSETTING(    0x00, "5" )
-		PORT_DIPNAME( 0x04, 0x04, DEF_STR( Unknown ) )
-		PORT_DIPSETTING(    0x04, DEF_STR( Off ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( On ) )
-		PORT_DIPNAME( 0x08, 0x08, DEF_STR( Unknown ) )
-		PORT_DIPSETTING(    0x08, DEF_STR( Off ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( On ) )
+		PORT_DIPNAME( 0x03, 0x03, DEF_STR( "Lives") );
+		PORT_DIPSETTING(    0x02, "2" );
+		PORT_DIPSETTING(    0x03, "3" );
+		PORT_DIPSETTING(    0x01, "4" );
+		PORT_DIPSETTING(    0x00, "5" );
+		PORT_DIPNAME( 0x04, 0x04, DEF_STR( "Unknown") );
+		PORT_DIPSETTING(    0x04, DEF_STR( "Off") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
+		PORT_DIPNAME( 0x08, 0x08, DEF_STR( "Unknown") );
+		PORT_DIPSETTING(    0x08, DEF_STR( "Off") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 		COINAGE2_DSW
 	
 		PORT_START	/* DSW2 */
-		PORT_DIPNAME( 0x01, 0x01, DEF_STR( Flip_Screen ) )
-		PORT_DIPSETTING(    0x01, DEF_STR( Off ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( On ) )
-		PORT_DIPNAME( 0x02, 0x00, DEF_STR( Cabinet ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( Upright ) )
-		PORT_DIPSETTING(    0x02, DEF_STR( Cocktail ) )
+		PORT_DIPNAME( 0x01, 0x01, DEF_STR( "Flip_Screen") );
+		PORT_DIPSETTING(    0x01, DEF_STR( "Off") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
+		PORT_DIPNAME( 0x02, 0x00, DEF_STR( "Cabinet") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "Upright") );
+		PORT_DIPSETTING(    0x02, DEF_STR( "Cocktail") );
 	/* This activates a different coin mode. Look at the dip switch setting schematic */
-		PORT_DIPNAME( 0x04, 0x04, "Coin Mode" )
-		PORT_DIPSETTING(    0x04, "Mode 1" )
-		PORT_DIPSETTING(    0x00, "Mode 2" )
-		PORT_DIPNAME( 0x08, 0x08, DEF_STR( Bonus_Life ) )
-		PORT_DIPSETTING(    0x08, "20000 60000" )
-		PORT_DIPSETTING(    0x00, "40000 80000" )
-		PORT_DIPNAME( 0x10, 0x10, DEF_STR( Demo_Sounds ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( Off ) )
-		PORT_DIPSETTING(    0x10, DEF_STR( On ) )
+		PORT_DIPNAME( 0x04, 0x04, "Coin Mode" );
+		PORT_DIPSETTING(    0x04, "Mode 1" );
+		PORT_DIPSETTING(    0x00, "Mode 2" );
+		PORT_DIPNAME( 0x08, 0x08, DEF_STR( "Bonus_Life") );
+		PORT_DIPSETTING(    0x08, "20000 60000" );
+		PORT_DIPSETTING(    0x00, "40000 80000" );
+		PORT_DIPNAME( 0x10, 0x10, DEF_STR( "Demo_Sounds") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "Off") );
+		PORT_DIPSETTING(    0x10, DEF_STR( "On") );
 		/* In freeze mode, press 2 to stop and 1 to restart */
-		PORT_BITX   ( 0x20, 0x20, IPT_DIPSWITCH_NAME | IPF_CHEAT, "Freeze", IP_KEY_NONE, IP_JOY_NONE )
-		PORT_DIPSETTING(    0x20, DEF_STR( Off ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( On ) )
-		PORT_BITX(    0x40, 0x40, IPT_DIPSWITCH_NAME | IPF_CHEAT, "Invulnerability", IP_KEY_NONE, IP_JOY_NONE )
-		PORT_DIPSETTING(    0x40, DEF_STR( Off ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( On ) )
-		PORT_SERVICE( 0x80, IP_ACTIVE_LOW )
-	INPUT_PORTS_END
+		PORT_BITX   ( 0x20, 0x20, IPT_DIPSWITCH_NAME | IPF_CHEAT, "Freeze", IP_KEY_NONE, IP_JOY_NONE );
+		PORT_DIPSETTING(    0x20, DEF_STR( "Off") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
+		PORT_BITX(    0x40, 0x40, IPT_DIPSWITCH_NAME | IPF_CHEAT, "Invulnerability", IP_KEY_NONE, IP_JOY_NONE );
+		PORT_DIPSETTING(    0x40, DEF_STR( "Off") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
+		PORT_SERVICE( 0x80, IP_ACTIVE_LOW );
+	INPUT_PORTS_END(); }}; 
 	
 	
 	#define TILELAYOUT(NUM) static GfxLayout tilelayout_##NUM = new GfxLayout\

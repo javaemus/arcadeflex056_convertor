@@ -800,82 +800,82 @@ public class segac2
 	******************************************************************************/
 	
 	#define COINS \
-	    PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_COIN1 ) \
-	    PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_COIN2 ) \
-	    PORT_BITX(0x04, IP_ACTIVE_LOW, IPT_SERVICE, DEF_STR( Service_Mode ), KEYCODE_F2, IP_JOY_NONE ) \
-	    PORT_BIT( 0x08, IP_ACTIVE_LOW, IPT_SERVICE1 ) \
-	    PORT_BIT( 0x10, IP_ACTIVE_LOW, IPT_START1 ) \
-	    PORT_BIT( 0x20, IP_ACTIVE_LOW, IPT_START2 )
+	    PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_COIN1 );\
+	    PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_COIN2 );\
+	    PORT_BITX(0x04, IP_ACTIVE_LOW, IPT_SERVICE, DEF_STR( "Service_Mode") ); KEYCODE_F2, IP_JOY_NONE ) \
+	    PORT_BIT( 0x08, IP_ACTIVE_LOW, IPT_SERVICE1 );\
+	    PORT_BIT( 0x10, IP_ACTIVE_LOW, IPT_START1 );\
+	    PORT_BIT( 0x20, IP_ACTIVE_LOW, IPT_START2 );
 	
 	#define JOYSTICK_1 \
-	    PORT_BIT( 0x10, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN ) \
-	    PORT_BIT( 0x20, IP_ACTIVE_LOW, IPT_JOYSTICK_UP ) \
-	    PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT ) \
-	    PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT )
+	    PORT_BIT( 0x10, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN );\
+	    PORT_BIT( 0x20, IP_ACTIVE_LOW, IPT_JOYSTICK_UP );\
+	    PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT );\
+	    PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT );
 	
 	#define JOYSTICK_2 \
-	    PORT_BIT( 0x10, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN | IPF_PLAYER2 ) \
-	    PORT_BIT( 0x20, IP_ACTIVE_LOW, IPT_JOYSTICK_UP | IPF_PLAYER2 ) \
-	    PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_PLAYER2 ) \
-	    PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT | IPF_PLAYER2 )
+	    PORT_BIT( 0x10, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN | IPF_PLAYER2 );\
+	    PORT_BIT( 0x20, IP_ACTIVE_LOW, IPT_JOYSTICK_UP | IPF_PLAYER2 );\
+	    PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_PLAYER2 );\
+	    PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT | IPF_PLAYER2 );
 	
 	#define COIN_A \
-	    PORT_DIPNAME( 0x0f, 0x0f, DEF_STR( Coin_A ) ) \
-	    PORT_DIPSETTING(    0x07, DEF_STR( 4C_1C ) ) \
-	    PORT_DIPSETTING(    0x08, DEF_STR( 3C_1C ) ) \
-	    PORT_DIPSETTING(    0x09, DEF_STR( 2C_1C ) ) \
-	    PORT_DIPSETTING(    0x05, "2 Coins/1 Credit 5/3 6/4" ) \
-	    PORT_DIPSETTING(    0x04, "2 Coins/1 Credit, 4/3" ) \
-	    PORT_DIPSETTING(    0x0f, DEF_STR( 1C_1C ) ) \
-	    PORT_DIPSETTING(    0x03, "1 Coin/1 Credit, 5/6" ) \
-	    PORT_DIPSETTING(    0x02, "1 Coin/1 Credit, 4/5" ) \
-	    PORT_DIPSETTING(    0x01, "1 Coin/1 Credit, 2/3" ) \
-	    PORT_DIPSETTING(    0x06, DEF_STR( 2C_3C ) ) \
-	    PORT_DIPSETTING(    0x0e, DEF_STR( 1C_2C ) ) \
-	    PORT_DIPSETTING(    0x0d, DEF_STR( 1C_3C ) ) \
-	    PORT_DIPSETTING(    0x0c, DEF_STR( 1C_4C ) ) \
-	    PORT_DIPSETTING(    0x0b, DEF_STR( 1C_5C ) ) \
-	    PORT_DIPSETTING(    0x0a, DEF_STR( 1C_6C ) ) \
-	    PORT_DIPSETTING(    0x00, "1 Coin/1 Credit (Freeplay if Coin B also)" )
+	    PORT_DIPNAME( 0x0f, 0x0f, DEF_STR( "Coin_A") ); \
+	    PORT_DIPSETTING(    0x07, DEF_STR( "4C_1C") ); \
+	    PORT_DIPSETTING(    0x08, DEF_STR( "3C_1C") ); \
+	    PORT_DIPSETTING(    0x09, DEF_STR( "2C_1C") ); \
+	    PORT_DIPSETTING(    0x05, "2 Coins/1 Credit 5/3 6/4" );\
+	    PORT_DIPSETTING(    0x04, "2 Coins/1 Credit, 4/3" );\
+	    PORT_DIPSETTING(    0x0f, DEF_STR( "1C_1C") ); \
+	    PORT_DIPSETTING(    0x03, "1 Coin/1 Credit, 5/6" );\
+	    PORT_DIPSETTING(    0x02, "1 Coin/1 Credit, 4/5" );\
+	    PORT_DIPSETTING(    0x01, "1 Coin/1 Credit, 2/3" );\
+	    PORT_DIPSETTING(    0x06, DEF_STR( "2C_3C") ); \
+	    PORT_DIPSETTING(    0x0e, DEF_STR( "1C_2C") ); \
+	    PORT_DIPSETTING(    0x0d, DEF_STR( "1C_3C") ); \
+	    PORT_DIPSETTING(    0x0c, DEF_STR( "1C_4C") ); \
+	    PORT_DIPSETTING(    0x0b, DEF_STR( "1C_5C") ); \
+	    PORT_DIPSETTING(    0x0a, DEF_STR( "1C_6C") ); \
+	    PORT_DIPSETTING(    0x00, "1 Coin/1 Credit (Freeplay if Coin B also); )
 	
 	#define COIN_B \
-	    PORT_DIPNAME( 0xf0, 0xf0, DEF_STR( Coin_B ) ) \
-	    PORT_DIPSETTING(    0x70, DEF_STR( 4C_1C ) ) \
-	    PORT_DIPSETTING(    0x80, DEF_STR( 3C_1C ) ) \
-	    PORT_DIPSETTING(    0x90, DEF_STR( 2C_1C ) ) \
-	    PORT_DIPSETTING(    0x50, "2 Coins/1 Credit 5/3 6/4" ) \
-	    PORT_DIPSETTING(    0x40, "2 Coins/1 Credit, 4/3" ) \
-	    PORT_DIPSETTING(    0xf0, DEF_STR( 1C_1C ) ) \
-	    PORT_DIPSETTING(    0x30, "1 Coin/1 Credit, 5/6" ) \
-	    PORT_DIPSETTING(    0x20, "1 Coin/1 Credit, 4/5" ) \
-	    PORT_DIPSETTING(    0x10, "1 Coin/1 Credit, 2/3" ) \
-	    PORT_DIPSETTING(    0x60, DEF_STR( 2C_3C ) ) \
-	    PORT_DIPSETTING(    0xe0, DEF_STR( 1C_2C ) ) \
-	    PORT_DIPSETTING(    0xd0, DEF_STR( 1C_3C ) ) \
-	    PORT_DIPSETTING(    0xc0, DEF_STR( 1C_4C ) ) \
-	    PORT_DIPSETTING(    0xb0, DEF_STR( 1C_5C ) ) \
-	    PORT_DIPSETTING(    0xa0, DEF_STR( 1C_6C ) ) \
-		PORT_DIPSETTING(    0x00, "1 Coin/1 Credit (Freeplay if Coin A also)" )
+	    PORT_DIPNAME( 0xf0, 0xf0, DEF_STR( "Coin_B") ); \
+	    PORT_DIPSETTING(    0x70, DEF_STR( "4C_1C") ); \
+	    PORT_DIPSETTING(    0x80, DEF_STR( "3C_1C") ); \
+	    PORT_DIPSETTING(    0x90, DEF_STR( "2C_1C") ); \
+	    PORT_DIPSETTING(    0x50, "2 Coins/1 Credit 5/3 6/4" );\
+	    PORT_DIPSETTING(    0x40, "2 Coins/1 Credit, 4/3" );\
+	    PORT_DIPSETTING(    0xf0, DEF_STR( "1C_1C") ); \
+	    PORT_DIPSETTING(    0x30, "1 Coin/1 Credit, 5/6" );\
+	    PORT_DIPSETTING(    0x20, "1 Coin/1 Credit, 4/5" );\
+	    PORT_DIPSETTING(    0x10, "1 Coin/1 Credit, 2/3" );\
+	    PORT_DIPSETTING(    0x60, DEF_STR( "2C_3C") ); \
+	    PORT_DIPSETTING(    0xe0, DEF_STR( "1C_2C") ); \
+	    PORT_DIPSETTING(    0xd0, DEF_STR( "1C_3C") ); \
+	    PORT_DIPSETTING(    0xc0, DEF_STR( "1C_4C") ); \
+	    PORT_DIPSETTING(    0xb0, DEF_STR( "1C_5C") ); \
+	    PORT_DIPSETTING(    0xa0, DEF_STR( "1C_6C") ); \
+		PORT_DIPSETTING(    0x00, "1 Coin/1 Credit (Freeplay if Coin A also); )
 	
 	
-	INPUT_PORTS_START( columns ) /* Columns Input Ports */
+	static InputPortPtr input_ports_columns = new InputPortPtr(){ public void handler() {  /* Columns Input Ports */
 	    PORT_START
 	    COINS
-	    PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNKNOWN )
-	    PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNKNOWN )
+	    PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNKNOWN );
+	    PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
 		PORT_START		/* Player 1 Controls */
-	    PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_BUTTON1 )     // Button 'Rotate'
-	    PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_UNUSED  )     // Button 2 Unused
-	    PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_UNUSED  )     // Button 3 Unused
-		PORT_BIT( 0x08, IP_ACTIVE_LOW, IPT_UNKNOWN )
+	    PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_BUTTON1 );    // Button 'Rotate'
+	    PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_UNUSED  );    // Button 2 Unused
+	    PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_UNUSED  );    // Button 3 Unused
+		PORT_BIT( 0x08, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	    JOYSTICK_1
 	
 		PORT_START		/* Player 2 Controls */
-	    PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_BUTTON1 | IPF_PLAYER2 )    // Button 'Rotate'
-	    PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_UNUSED                )    // Button 2 Unused
-	    PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_UNUSED                )    // Button 3 Unused
-		PORT_BIT( 0x08, IP_ACTIVE_LOW, IPT_UNKNOWN )
+	    PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_BUTTON1 | IPF_PLAYER2 );   // Button 'Rotate'
+	    PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_UNUSED                );   // Button 2 Unused
+	    PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_UNUSED                );   // Button 3 Unused
+		PORT_BIT( 0x08, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	    JOYSTICK_2
 	
 		PORT_START		/* Coinage */
@@ -883,52 +883,52 @@ public class segac2
 	    COIN_B
 	
 		PORT_START		 /* Game Options */
-		PORT_DIPNAME( 0x01, 0x01, DEF_STR( Unknown ) )							// Game Options..
-		PORT_DIPSETTING(    0x01, DEF_STR( Off ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( On ) )
-	    PORT_DIPNAME( 0x02, 0x00, DEF_STR( Demo_Sounds ) )
-		PORT_DIPSETTING(    0x02, DEF_STR( Off ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( On ) )
-		PORT_DIPNAME( 0x04, 0x04, DEF_STR( Unknown ) )
-		PORT_DIPSETTING(    0x04, DEF_STR( Off ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( On ) )
-		PORT_DIPNAME( 0x08, 0x08, DEF_STR( Unknown ) )
-		PORT_DIPSETTING(    0x08, DEF_STR( Off ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( On ) )
+		PORT_DIPNAME( 0x01, 0x01, DEF_STR( "Unknown") );							// Game Options..
+		PORT_DIPSETTING(    0x01, DEF_STR( "Off") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
+	    PORT_DIPNAME( 0x02, 0x00, DEF_STR( "Demo_Sounds") );
+		PORT_DIPSETTING(    0x02, DEF_STR( "Off") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
+		PORT_DIPNAME( 0x04, 0x04, DEF_STR( "Unknown") );
+		PORT_DIPSETTING(    0x04, DEF_STR( "Off") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
+		PORT_DIPNAME( 0x08, 0x08, DEF_STR( "Unknown") );
+		PORT_DIPSETTING(    0x08, DEF_STR( "Off") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 	    /* The first level increase (from 0 to 1) is allways after destroying
 	       35 jewels. Then, the leve gets 1 level more every : */
-	    PORT_DIPNAME( 0x30, 0x30, DEF_STR( Difficulty ) )
-	    PORT_DIPSETTING(    0x00, "Easy" )     // 50 jewels
-	    PORT_DIPSETTING(    0x10, "Medium" )   // 40 jewels
-	    PORT_DIPSETTING(    0x30, "Hard" )     // 35 jewels
-	    PORT_DIPSETTING(    0x20, "Hardest" )  // 25 jewels
-		PORT_DIPNAME( 0x40, 0x40, DEF_STR( Unknown ) )
-		PORT_DIPSETTING(    0x40, DEF_STR( Off ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( On ) )
-		PORT_DIPNAME( 0x80, 0x80, DEF_STR( Unknown ) )
-		PORT_DIPSETTING(    0x80, DEF_STR( Off ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( On ) )
-	INPUT_PORTS_END
+	    PORT_DIPNAME( 0x30, 0x30, DEF_STR( "Difficulty") );
+	    PORT_DIPSETTING(    0x00, "Easy" );    // 50 jewels
+	    PORT_DIPSETTING(    0x10, "Medium" );  // 40 jewels
+	    PORT_DIPSETTING(    0x30, "Hard" );    // 35 jewels
+	    PORT_DIPSETTING(    0x20, "Hardest" ); // 25 jewels
+		PORT_DIPNAME( 0x40, 0x40, DEF_STR( "Unknown") );
+		PORT_DIPSETTING(    0x40, DEF_STR( "Off") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
+		PORT_DIPNAME( 0x80, 0x80, DEF_STR( "Unknown") );
+		PORT_DIPSETTING(    0x80, DEF_STR( "Off") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
+	INPUT_PORTS_END(); }}; 
 	
 	
-	INPUT_PORTS_START( columns2 ) /* Columns 2 Input Ports */
+	static InputPortPtr input_ports_columns2 = new InputPortPtr(){ public void handler() {  /* Columns 2 Input Ports */
 	    PORT_START
 	    COINS
-	    PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNKNOWN )
-	    PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNKNOWN )
+	    PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNKNOWN );
+	    PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
 		PORT_START		/* Player 1 Controls */
-	    PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_BUTTON1 )     // Button 'Rotate'
-	    PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_UNUSED  )     // Button 2 Unused == Button 1
-	    PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_UNUSED  )     // Button 3 Unused == Button 1
-		PORT_BIT( 0x08, IP_ACTIVE_LOW, IPT_UNKNOWN )
+	    PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_BUTTON1 );    // Button 'Rotate'
+	    PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_UNUSED  );    // Button 2 Unused == Button 1
+	    PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_UNUSED  );    // Button 3 Unused == Button 1
+		PORT_BIT( 0x08, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	    JOYSTICK_1
 	
 		PORT_START		/* Player 2 Controls */
-	    PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_BUTTON1 | IPF_PLAYER2 )     // Button 'Rotate'
-	    PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_UNUSED                )     // Button 2 Unused == Button 1
-	    PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_UNUSED                )     // Button 3 Unused == Button 1
-		PORT_BIT( 0x08, IP_ACTIVE_LOW, IPT_UNKNOWN )
+	    PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_BUTTON1 | IPF_PLAYER2 );    // Button 'Rotate'
+	    PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_UNUSED                );    // Button 2 Unused == Button 1
+	    PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_UNUSED                );    // Button 3 Unused == Button 1
+		PORT_BIT( 0x08, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	    JOYSTICK_2
 	
 		PORT_START		/* Coinage */
@@ -936,49 +936,49 @@ public class segac2
 	    COIN_B
 	
 		PORT_START		 /* Game Options */
-		PORT_DIPNAME( 0x01, 0x01, DEF_STR( Cabinet ) )
-		PORT_DIPSETTING(    0x01, DEF_STR( Upright ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( Cocktail ) )
-	    PORT_DIPNAME( 0x02, 0x00, DEF_STR( Demo_Sounds ) )
-		PORT_DIPSETTING(    0x02, DEF_STR( Off ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( On ) )
-		PORT_DIPNAME( 0x0c, 0x0c, "VS. Mode Credits/Match" )
-		PORT_DIPSETTING(    0x0c, "1" )
-		PORT_DIPSETTING(    0x08, "2" )
-		PORT_DIPSETTING(    0x04, "3" )
-		PORT_DIPSETTING(    0x00, "4" )
-		PORT_DIPNAME( 0x30, 0x30, "Flash Mode Difficulty" )
-		PORT_DIPSETTING(    0x20, "Easy" )
-	    PORT_DIPSETTING(    0x30, "Medium" )
-		PORT_DIPSETTING(    0x10, "Hard" )
-		PORT_DIPSETTING(    0x00, "Hardest" )
-	    PORT_DIPNAME( 0x40, 0x40, DEF_STR( Unused ) )
-	    PORT_DIPSETTING(    0x40, DEF_STR( Off ) )
-	    PORT_DIPSETTING(    0x00, DEF_STR( On ) )
-	    PORT_DIPNAME( 0x80, 0x80, DEF_STR( Unused ) )
-	    PORT_DIPSETTING(    0x80, DEF_STR( Off ) )
-	    PORT_DIPSETTING(    0x00, DEF_STR( On ) )
-	INPUT_PORTS_END
+		PORT_DIPNAME( 0x01, 0x01, DEF_STR( "Cabinet") );
+		PORT_DIPSETTING(    0x01, DEF_STR( "Upright") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "Cocktail") );
+	    PORT_DIPNAME( 0x02, 0x00, DEF_STR( "Demo_Sounds") );
+		PORT_DIPSETTING(    0x02, DEF_STR( "Off") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
+		PORT_DIPNAME( 0x0c, 0x0c, "VS. Mode Credits/Match" );
+		PORT_DIPSETTING(    0x0c, "1" );
+		PORT_DIPSETTING(    0x08, "2" );
+		PORT_DIPSETTING(    0x04, "3" );
+		PORT_DIPSETTING(    0x00, "4" );
+		PORT_DIPNAME( 0x30, 0x30, "Flash Mode Difficulty" );
+		PORT_DIPSETTING(    0x20, "Easy" );
+	    PORT_DIPSETTING(    0x30, "Medium" );
+		PORT_DIPSETTING(    0x10, "Hard" );
+		PORT_DIPSETTING(    0x00, "Hardest" );
+	    PORT_DIPNAME( 0x40, 0x40, DEF_STR( "Unused") );
+	    PORT_DIPSETTING(    0x40, DEF_STR( "Off") );
+	    PORT_DIPSETTING(    0x00, DEF_STR( "On") );
+	    PORT_DIPNAME( 0x80, 0x80, DEF_STR( "Unused") );
+	    PORT_DIPSETTING(    0x80, DEF_STR( "Off") );
+	    PORT_DIPSETTING(    0x00, DEF_STR( "On") );
+	INPUT_PORTS_END(); }}; 
 	
 	
-	INPUT_PORTS_START( borench ) /* Borench Input Ports */
+	static InputPortPtr input_ports_borench = new InputPortPtr(){ public void handler() {  /* Borench Input Ports */
 		PORT_START		/* Coins, Start, Service etc, Same for All */
 	    COINS
-		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNKNOWN )
-		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNKNOWN )
+		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNKNOWN );
+		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
 		PORT_START		/* Player 1 Controls */
-	    PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_BUTTON1 )      // Button 'Set'
-	    PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_BUTTON2 )      // Button 'Turbo'
-	    PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_UNUSED  )      // Button 3 Unused
-		PORT_BIT( 0x08, IP_ACTIVE_LOW, IPT_UNKNOWN )
+	    PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_BUTTON1 );     // Button 'Set'
+	    PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_BUTTON2 );     // Button 'Turbo'
+	    PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_UNUSED  );     // Button 3 Unused
+		PORT_BIT( 0x08, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	    JOYSTICK_1
 	
 		PORT_START		/* Player 2 Controls */
-	    PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_BUTTON1 | IPF_PLAYER2 )       // Button 'Set'
-	    PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_BUTTON2 | IPF_PLAYER2 )       // Button 'Turbo'
-	    PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_UNUSED                )       // Button 3 Unused
-		PORT_BIT( 0x08, IP_ACTIVE_LOW, IPT_UNKNOWN )
+	    PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_BUTTON1 | IPF_PLAYER2 );      // Button 'Set'
+	    PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_BUTTON2 | IPF_PLAYER2 );      // Button 'Turbo'
+	    PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_UNUSED                );      // Button 3 Unused
+		PORT_BIT( 0x08, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	    JOYSTICK_2
 	
 		PORT_START		/* Coinage */
@@ -986,48 +986,48 @@ public class segac2
 	    COIN_B
 	
 		PORT_START		 /* Game Options */
-		PORT_DIPNAME( 0x01, 0x01, "Credits to Start" )
-		PORT_DIPSETTING(    0x01, "1" )
-		PORT_DIPSETTING(    0x00, "2" )
-	    PORT_DIPNAME( 0x02, 0x00, DEF_STR( Demo_Sounds ) )
-		PORT_DIPSETTING(    0x02, DEF_STR( Off ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( On ) )
-	    PORT_DIPNAME( 0x0c, 0x0c, "Lives 1P Mode" )
-		PORT_DIPSETTING(    0x00, "1" )
-		PORT_DIPSETTING(    0x0c, "2" )
-		PORT_DIPSETTING(    0x08, "3" )
-		PORT_DIPSETTING(    0x04, "4" )
-	    PORT_DIPNAME( 0x30, 0x30, "Lives 2P Mode" )
-		PORT_DIPSETTING(    0x00, "2" )
-		PORT_DIPSETTING(    0x30, "3" )
-		PORT_DIPSETTING(    0x20, "4" )
-		PORT_DIPSETTING(    0x10, "5" )
-		PORT_DIPNAME( 0xc0, 0xc0, DEF_STR( Difficulty ) )
-		PORT_DIPSETTING(    0x80, "Easy" )
-	    PORT_DIPSETTING(    0xc0, "Medium" )
-		PORT_DIPSETTING(    0x40, "Hard" )
-		PORT_DIPSETTING(    0x00, "Hardest" )
-	INPUT_PORTS_END
+		PORT_DIPNAME( 0x01, 0x01, "Credits to Start" );
+		PORT_DIPSETTING(    0x01, "1" );
+		PORT_DIPSETTING(    0x00, "2" );
+	    PORT_DIPNAME( 0x02, 0x00, DEF_STR( "Demo_Sounds") );
+		PORT_DIPSETTING(    0x02, DEF_STR( "Off") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
+	    PORT_DIPNAME( 0x0c, 0x0c, "Lives 1P Mode" );
+		PORT_DIPSETTING(    0x00, "1" );
+		PORT_DIPSETTING(    0x0c, "2" );
+		PORT_DIPSETTING(    0x08, "3" );
+		PORT_DIPSETTING(    0x04, "4" );
+	    PORT_DIPNAME( 0x30, 0x30, "Lives 2P Mode" );
+		PORT_DIPSETTING(    0x00, "2" );
+		PORT_DIPSETTING(    0x30, "3" );
+		PORT_DIPSETTING(    0x20, "4" );
+		PORT_DIPSETTING(    0x10, "5" );
+		PORT_DIPNAME( 0xc0, 0xc0, DEF_STR( "Difficulty") );
+		PORT_DIPSETTING(    0x80, "Easy" );
+	    PORT_DIPSETTING(    0xc0, "Medium" );
+		PORT_DIPSETTING(    0x40, "Hard" );
+		PORT_DIPSETTING(    0x00, "Hardest" );
+	INPUT_PORTS_END(); }}; 
 	
 	
-	INPUT_PORTS_START( tfrceac ) /* ThunderForce AC Input Ports */
+	static InputPortPtr input_ports_tfrceac = new InputPortPtr(){ public void handler() {  /* ThunderForce AC Input Ports */
 		PORT_START		/* Coins, Start, Service etc, Same for All */
 	    COINS
-		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNKNOWN )
-		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNKNOWN )
+		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNKNOWN );
+		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
 		PORT_START		/* Player 1 Controls */
-	    PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_BUTTON2 )      // Button Speed Change
-	    PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_BUTTON1 )      // Button Shot
-	    PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_BUTTON3 )      // Button Weapon Select
-		PORT_BIT( 0x08, IP_ACTIVE_LOW, IPT_UNKNOWN )
+	    PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_BUTTON2 );     // Button Speed Change
+	    PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_BUTTON1 );     // Button Shot
+	    PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_BUTTON3 );     // Button Weapon Select
+		PORT_BIT( 0x08, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	    JOYSTICK_1
 	
 		PORT_START		/* Player 2 Controls */
-	    PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_BUTTON2 | IPF_PLAYER2 )      // Button Speed Change
-	    PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_BUTTON1 | IPF_PLAYER2 )      // Button Shot
-	    PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_BUTTON3 | IPF_PLAYER2 )      // Button Weapon Select
-		PORT_BIT( 0x08, IP_ACTIVE_LOW, IPT_UNKNOWN )
+	    PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_BUTTON2 | IPF_PLAYER2 );     // Button Speed Change
+	    PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_BUTTON1 | IPF_PLAYER2 );     // Button Shot
+	    PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_BUTTON3 | IPF_PLAYER2 );     // Button Weapon Select
+		PORT_BIT( 0x08, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	    JOYSTICK_2
 	
 		PORT_START		/* Coinage */
@@ -1035,48 +1035,48 @@ public class segac2
 	    COIN_B
 	
 		PORT_START		 /* Game Options */
-		PORT_DIPNAME( 0x01, 0x01, "Credits to Start" )
-		PORT_DIPSETTING(    0x01, "1" )
-		PORT_DIPSETTING(    0x00, "2" )
-	    PORT_DIPNAME( 0x02, 0x00, DEF_STR( Demo_Sounds ) )
-		PORT_DIPSETTING(    0x02, DEF_STR( Off ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( On ) )
-	    PORT_DIPNAME( 0x0c, 0x0c, DEF_STR( Lives ) )
-		PORT_DIPSETTING(    0x00, "2" )
-		PORT_DIPSETTING(    0x0c, "3" )
-		PORT_DIPSETTING(    0x08, "4" )
-		PORT_DIPSETTING(    0x04, "5" )
-		PORT_DIPNAME( 0x30, 0x30,  DEF_STR( Bonus_Life ) )
-	    PORT_DIPSETTING(    0x10, "10k, 70k, 150k" )
-	    PORT_DIPSETTING(    0x30, "20k, 100k, 200k" )
-	    PORT_DIPSETTING(    0x20, "40k, 150k, 300k" )
-	    PORT_DIPSETTING(    0x00, "None" )
-		PORT_DIPNAME( 0xc0, 0xc0, DEF_STR( Difficulty ) )
-		PORT_DIPSETTING(    0x80, "Easy" )
-	    PORT_DIPSETTING(    0xc0, "Medium" )
-		PORT_DIPSETTING(    0x40, "Hard" )
-		PORT_DIPSETTING(    0x00, "Hardest" )
-	INPUT_PORTS_END
+		PORT_DIPNAME( 0x01, 0x01, "Credits to Start" );
+		PORT_DIPSETTING(    0x01, "1" );
+		PORT_DIPSETTING(    0x00, "2" );
+	    PORT_DIPNAME( 0x02, 0x00, DEF_STR( "Demo_Sounds") );
+		PORT_DIPSETTING(    0x02, DEF_STR( "Off") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
+	    PORT_DIPNAME( 0x0c, 0x0c, DEF_STR( "Lives") );
+		PORT_DIPSETTING(    0x00, "2" );
+		PORT_DIPSETTING(    0x0c, "3" );
+		PORT_DIPSETTING(    0x08, "4" );
+		PORT_DIPSETTING(    0x04, "5" );
+		PORT_DIPNAME( 0x30, 0x30,  DEF_STR( "Bonus_Life") );
+	    PORT_DIPSETTING(    0x10, "10k, 70k, 150k" );
+	    PORT_DIPSETTING(    0x30, "20k, 100k, 200k" );
+	    PORT_DIPSETTING(    0x20, "40k, 150k, 300k" );
+	    PORT_DIPSETTING(    0x00, "None" );
+		PORT_DIPNAME( 0xc0, 0xc0, DEF_STR( "Difficulty") );
+		PORT_DIPSETTING(    0x80, "Easy" );
+	    PORT_DIPSETTING(    0xc0, "Medium" );
+		PORT_DIPSETTING(    0x40, "Hard" );
+		PORT_DIPSETTING(    0x00, "Hardest" );
+	INPUT_PORTS_END(); }}; 
 	
 	
-	INPUT_PORTS_START( puyopuyo ) /* PuyoPuyo Input Ports */
+	static InputPortPtr input_ports_puyopuyo = new InputPortPtr(){ public void handler() {  /* PuyoPuyo Input Ports */
 		PORT_START		/* Coins, Start, Service etc, Same for All */
 	    COINS
-		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNKNOWN )
-		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNKNOWN )
+		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNKNOWN );
+		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
 		PORT_START		/* Player 1 Controls */
-	    PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_BUTTON1 )        // Button 'Rotate'
-	    PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_UNUSED  )        // Button 2 Unused == Button 1
-	    PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_UNUSED  )
-	    PORT_BIT( 0x08, IP_ACTIVE_LOW, IPT_UNKNOWN )
+	    PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_BUTTON1 );       // Button 'Rotate'
+	    PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_UNUSED  );       // Button 2 Unused == Button 1
+	    PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_UNUSED  );
+	    PORT_BIT( 0x08, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	    JOYSTICK_1
 	
 		PORT_START		/* Player 2 Controls */
-	    PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_BUTTON1 | IPF_PLAYER2 )      // Button 'Rotate'
-	    PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_UNUSED                )      // Button 2 Unused == Button 1
-	    PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_UNUSED                )      // Button 3 Unused == Button 1
-		PORT_BIT( 0x08, IP_ACTIVE_LOW, IPT_UNKNOWN )
+	    PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_BUTTON1 | IPF_PLAYER2 );     // Button 'Rotate'
+	    PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_UNUSED                );     // Button 2 Unused == Button 1
+	    PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_UNUSED                );     // Button 3 Unused == Button 1
+		PORT_BIT( 0x08, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	    JOYSTICK_2
 	
 		PORT_START		/* Coinage */
@@ -1084,50 +1084,50 @@ public class segac2
 	    COIN_B
 	
 		PORT_START		 /* Game Options */
-	    PORT_DIPNAME( 0x01, 0x01, DEF_STR( Unused ) )
-	    PORT_DIPSETTING(    0x01, DEF_STR( Off ) )
-	    PORT_DIPSETTING(    0x00, DEF_STR( On ) )
-	    PORT_DIPNAME( 0x02, 0x00, DEF_STR( Demo_Sounds ) )
-		PORT_DIPSETTING(    0x02, DEF_STR( Off ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( On ) )
-		PORT_DIPNAME( 0x04, 0x04, "VS. Mode Credits/Match" )
-		PORT_DIPSETTING(    0x04, "1" )
-		PORT_DIPSETTING(    0x00, "3" )
-		PORT_DIPNAME( 0x18, 0x18, "1P Mode Difficulty" )
-		PORT_DIPSETTING(    0x10, "Easy" )
-	    PORT_DIPSETTING(    0x18, "Medium" )
-		PORT_DIPSETTING(    0x08, "Hard" )
-		PORT_DIPSETTING(    0x00, "Hardest" )
-	    PORT_DIPNAME( 0x20, 0x20, DEF_STR( Unused ) )
-	    PORT_DIPSETTING(    0x20, DEF_STR( Off ) )
-	    PORT_DIPSETTING(    0x00, DEF_STR( On ) )
-	    PORT_DIPNAME( 0x40, 0x40, DEF_STR( Unused ) )
-	    PORT_DIPSETTING(    0x40, DEF_STR( Off ) )
-	    PORT_DIPSETTING(    0x00, DEF_STR( On ) )
-		PORT_DIPNAME( 0x80, 0x80, "Moving Seat" )
-		PORT_DIPSETTING(    0x80, "No Use" )
-		PORT_DIPSETTING(    0x00, "In Use" )
-	INPUT_PORTS_END
+	    PORT_DIPNAME( 0x01, 0x01, DEF_STR( "Unused") );
+	    PORT_DIPSETTING(    0x01, DEF_STR( "Off") );
+	    PORT_DIPSETTING(    0x00, DEF_STR( "On") );
+	    PORT_DIPNAME( 0x02, 0x00, DEF_STR( "Demo_Sounds") );
+		PORT_DIPSETTING(    0x02, DEF_STR( "Off") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
+		PORT_DIPNAME( 0x04, 0x04, "VS. Mode Credits/Match" );
+		PORT_DIPSETTING(    0x04, "1" );
+		PORT_DIPSETTING(    0x00, "3" );
+		PORT_DIPNAME( 0x18, 0x18, "1P Mode Difficulty" );
+		PORT_DIPSETTING(    0x10, "Easy" );
+	    PORT_DIPSETTING(    0x18, "Medium" );
+		PORT_DIPSETTING(    0x08, "Hard" );
+		PORT_DIPSETTING(    0x00, "Hardest" );
+	    PORT_DIPNAME( 0x20, 0x20, DEF_STR( "Unused") );
+	    PORT_DIPSETTING(    0x20, DEF_STR( "Off") );
+	    PORT_DIPSETTING(    0x00, DEF_STR( "On") );
+	    PORT_DIPNAME( 0x40, 0x40, DEF_STR( "Unused") );
+	    PORT_DIPSETTING(    0x40, DEF_STR( "Off") );
+	    PORT_DIPSETTING(    0x00, DEF_STR( "On") );
+		PORT_DIPNAME( 0x80, 0x80, "Moving Seat" );
+		PORT_DIPSETTING(    0x80, "No Use" );
+		PORT_DIPSETTING(    0x00, "In Use" );
+	INPUT_PORTS_END(); }}; 
 	
 	
-	INPUT_PORTS_START( stkclmns ) /* Stack Columns Input Ports */
+	static InputPortPtr input_ports_stkclmns = new InputPortPtr(){ public void handler() {  /* Stack Columns Input Ports */
 		PORT_START		/* Coins, Start, Service etc, Same for All */
 	    COINS
-		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNKNOWN )
-		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNKNOWN )
+		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNKNOWN );
+		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
 		PORT_START		/* Player 1 Controls */
-	    PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_BUTTON1 )      // Button 'Rotate'
-	    PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_BUTTON2 )      // Button 'Attack'
-	    PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_UNUSED  )      // Button 3 Unused
-		PORT_BIT( 0x08, IP_ACTIVE_LOW, IPT_UNKNOWN )
+	    PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_BUTTON1 );     // Button 'Rotate'
+	    PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_BUTTON2 );     // Button 'Attack'
+	    PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_UNUSED  );     // Button 3 Unused
+		PORT_BIT( 0x08, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	    JOYSTICK_1
 	
 		PORT_START		/* Player 2 Controls */
-	    PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_BUTTON1 | IPF_PLAYER2 )      // Button 'Rotate'
-	    PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_BUTTON2 | IPF_PLAYER2 )      // Button 'Attack'
-	    PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_UNUSED                )      // Button 3 Unused
-		PORT_BIT( 0x08, IP_ACTIVE_LOW, IPT_UNKNOWN )
+	    PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_BUTTON1 | IPF_PLAYER2 );     // Button 'Rotate'
+	    PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_BUTTON2 | IPF_PLAYER2 );     // Button 'Attack'
+	    PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_UNUSED                );     // Button 3 Unused
+		PORT_BIT( 0x08, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	    JOYSTICK_2
 	
 		PORT_START		/* Coinage */
@@ -1135,53 +1135,53 @@ public class segac2
 	    COIN_B
 	
 		PORT_START		 /* Game Options */
-	    PORT_DIPNAME( 0x01, 0x01, DEF_STR( Unused ) )
-	    PORT_DIPSETTING(    0x01, DEF_STR( Off ) )
-	    PORT_DIPSETTING(    0x00, DEF_STR( On ) )
-		PORT_DIPNAME( 0x03, 0x03, DEF_STR( Difficulty ) )
-		PORT_DIPSETTING(    0x02, "Easy" )
-	    PORT_DIPSETTING(    0x03, "Medium" )
-		PORT_DIPSETTING(    0x01, "Hard" )
-		PORT_DIPSETTING(    0x00, "Hardest" )
-	    PORT_DIPNAME( 0x04, 0x00, DEF_STR( Demo_Sounds ) )
-		PORT_DIPSETTING(    0x04, DEF_STR( Off ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( On ) )
-		PORT_DIPNAME( 0x08, 0x08, "Match Mode Price" )
-		PORT_DIPSETTING(    0x08, "1" )
-		PORT_DIPSETTING(    0x00, "2" )
-	    PORT_DIPNAME( 0x10, 0x10, DEF_STR( Unused ) )
-	    PORT_DIPSETTING(    0x10, DEF_STR( Off ) )
-	    PORT_DIPSETTING(    0x00, DEF_STR( On ) )
-	    PORT_DIPNAME( 0x20, 0x20, DEF_STR( Unused ) )
-	    PORT_DIPSETTING(    0x20, DEF_STR( Off ) )
-	    PORT_DIPSETTING(    0x00, DEF_STR( On ) )
-	    PORT_DIPNAME( 0x40, 0x40, DEF_STR( Unused ) )
-	    PORT_DIPSETTING(    0x40, DEF_STR( Off ) )
-	    PORT_DIPSETTING(    0x00, DEF_STR( On ) )
-	    PORT_DIPNAME( 0x80, 0x80, DEF_STR( Unused ) )
-	    PORT_DIPSETTING(    0x80, DEF_STR( Off ) )
-	    PORT_DIPSETTING(    0x00, DEF_STR( On ) )
-	INPUT_PORTS_END
+	    PORT_DIPNAME( 0x01, 0x01, DEF_STR( "Unused") );
+	    PORT_DIPSETTING(    0x01, DEF_STR( "Off") );
+	    PORT_DIPSETTING(    0x00, DEF_STR( "On") );
+		PORT_DIPNAME( 0x03, 0x03, DEF_STR( "Difficulty") );
+		PORT_DIPSETTING(    0x02, "Easy" );
+	    PORT_DIPSETTING(    0x03, "Medium" );
+		PORT_DIPSETTING(    0x01, "Hard" );
+		PORT_DIPSETTING(    0x00, "Hardest" );
+	    PORT_DIPNAME( 0x04, 0x00, DEF_STR( "Demo_Sounds") );
+		PORT_DIPSETTING(    0x04, DEF_STR( "Off") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
+		PORT_DIPNAME( 0x08, 0x08, "Match Mode Price" );
+		PORT_DIPSETTING(    0x08, "1" );
+		PORT_DIPSETTING(    0x00, "2" );
+	    PORT_DIPNAME( 0x10, 0x10, DEF_STR( "Unused") );
+	    PORT_DIPSETTING(    0x10, DEF_STR( "Off") );
+	    PORT_DIPSETTING(    0x00, DEF_STR( "On") );
+	    PORT_DIPNAME( 0x20, 0x20, DEF_STR( "Unused") );
+	    PORT_DIPSETTING(    0x20, DEF_STR( "Off") );
+	    PORT_DIPSETTING(    0x00, DEF_STR( "On") );
+	    PORT_DIPNAME( 0x40, 0x40, DEF_STR( "Unused") );
+	    PORT_DIPSETTING(    0x40, DEF_STR( "Off") );
+	    PORT_DIPSETTING(    0x00, DEF_STR( "On") );
+	    PORT_DIPNAME( 0x80, 0x80, DEF_STR( "Unused") );
+	    PORT_DIPSETTING(    0x80, DEF_STR( "Off") );
+	    PORT_DIPSETTING(    0x00, DEF_STR( "On") );
+	INPUT_PORTS_END(); }}; 
 	
 	
-	INPUT_PORTS_START( potopoto ) /* PotoPoto Input Ports */
+	static InputPortPtr input_ports_potopoto = new InputPortPtr(){ public void handler() {  /* PotoPoto Input Ports */
 		PORT_START		/* Coins, Start, Service etc, Same for All */
 	    COINS
-		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNKNOWN )
-		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNKNOWN )
+		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNKNOWN );
+		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
 		PORT_START		/* Player 1 Controls */
-	    PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_BUTTON1 )     // Button 'Bomb'
-	    PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_UNUSED  )     // Button 2 Unused == Button 1
-	    PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_UNUSED  )     // Button 3 Unused == Button 1
-		PORT_BIT( 0x08, IP_ACTIVE_LOW, IPT_UNKNOWN )
+	    PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_BUTTON1 );    // Button 'Bomb'
+	    PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_UNUSED  );    // Button 2 Unused == Button 1
+	    PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_UNUSED  );    // Button 3 Unused == Button 1
+		PORT_BIT( 0x08, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	    JOYSTICK_1
 	
 		PORT_START		/* Player 2 Controls */
-	    PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_BUTTON1 | IPF_PLAYER2 )    // Button 'Bomb'
-	    PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_UNUSED                )    // Button 2 Unused == Button 1
-	    PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_UNUSED                )    // Button 3 Unused == Button 1
-		PORT_BIT( 0x08, IP_ACTIVE_LOW, IPT_UNKNOWN )
+	    PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_BUTTON1 | IPF_PLAYER2 );   // Button 'Bomb'
+	    PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_UNUSED                );   // Button 2 Unused == Button 1
+	    PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_UNUSED                );   // Button 3 Unused == Button 1
+		PORT_BIT( 0x08, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	    JOYSTICK_2
 	
 		PORT_START		/* Coinage */
@@ -1189,50 +1189,50 @@ public class segac2
 	    COIN_B
 	
 		PORT_START		 /* Game Options */
-		PORT_DIPNAME( 0x01, 0x01, "Credits to Start" )
-		PORT_DIPSETTING(    0x01, "1" )
-		PORT_DIPSETTING(    0x00, "2" )
-	    PORT_DIPNAME( 0x02, 0x00, DEF_STR( Demo_Sounds ) )
-		PORT_DIPSETTING(    0x02, DEF_STR( Off ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( On ) )
-		PORT_DIPNAME( 0x04, 0x04, "Coin Chute Type" )
-		PORT_DIPSETTING(    0x04, "Common" )
-		PORT_DIPSETTING(    0x00, "Individual" )
-		PORT_DIPNAME( 0x08, 0x08, "Credits to Continue" )
-		PORT_DIPSETTING(    0x08, "1" )
-		PORT_DIPSETTING(    0x00, "2" )
-		PORT_DIPNAME( 0x10, 0x10, "Buy-In" )
-		PORT_DIPSETTING(    0x10, DEF_STR( No ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( Yes ) )
-		PORT_DIPNAME( 0x60, 0x60, DEF_STR( Difficulty ) )
-		PORT_DIPSETTING(    0x40, "Easy" )
-	    PORT_DIPSETTING(    0x60, "Medium" )
-		PORT_DIPSETTING(    0x20, "Hard" )
-		PORT_DIPSETTING(    0x00, "Hardest" )
-		PORT_DIPNAME( 0x80, 0x80, "Moving Seat" )
-		PORT_DIPSETTING(    0x80, "No Use" )
-		PORT_DIPSETTING(    0x00, "In Use" )
-	INPUT_PORTS_END
+		PORT_DIPNAME( 0x01, 0x01, "Credits to Start" );
+		PORT_DIPSETTING(    0x01, "1" );
+		PORT_DIPSETTING(    0x00, "2" );
+	    PORT_DIPNAME( 0x02, 0x00, DEF_STR( "Demo_Sounds") );
+		PORT_DIPSETTING(    0x02, DEF_STR( "Off") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
+		PORT_DIPNAME( 0x04, 0x04, "Coin Chute Type" );
+		PORT_DIPSETTING(    0x04, "Common" );
+		PORT_DIPSETTING(    0x00, "Individual" );
+		PORT_DIPNAME( 0x08, 0x08, "Credits to Continue" );
+		PORT_DIPSETTING(    0x08, "1" );
+		PORT_DIPSETTING(    0x00, "2" );
+		PORT_DIPNAME( 0x10, 0x10, "Buy-In" );
+		PORT_DIPSETTING(    0x10, DEF_STR( "No") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "Yes") );
+		PORT_DIPNAME( 0x60, 0x60, DEF_STR( "Difficulty") );
+		PORT_DIPSETTING(    0x40, "Easy" );
+	    PORT_DIPSETTING(    0x60, "Medium" );
+		PORT_DIPSETTING(    0x20, "Hard" );
+		PORT_DIPSETTING(    0x00, "Hardest" );
+		PORT_DIPNAME( 0x80, 0x80, "Moving Seat" );
+		PORT_DIPSETTING(    0x80, "No Use" );
+		PORT_DIPSETTING(    0x00, "In Use" );
+	INPUT_PORTS_END(); }}; 
 	
 	
-	INPUT_PORTS_START( zunkyou ) /* ZunkYou Input Ports */
+	static InputPortPtr input_ports_zunkyou = new InputPortPtr(){ public void handler() {  /* ZunkYou Input Ports */
 		PORT_START		/* Coins, Start, Service etc, Same for All */
 	    COINS
-		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNKNOWN )
-		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNKNOWN )
+		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNKNOWN );
+		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
 		PORT_START		/* Player 1 Controls */
-	    PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_BUTTON1 )       // Button 'Shot'
-	    PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_BUTTON2 )       // Button 'Bomb'
-	    PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_UNUSED  )       // Button 3 Unused
-		PORT_BIT( 0x08, IP_ACTIVE_LOW, IPT_UNKNOWN )
+	    PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_BUTTON1 );      // Button 'Shot'
+	    PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_BUTTON2 );      // Button 'Bomb'
+	    PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_UNUSED  );      // Button 3 Unused
+		PORT_BIT( 0x08, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	    JOYSTICK_1
 	
 		PORT_START		/* Player 2 Controls */
-	    PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_BUTTON1 | IPF_PLAYER2 )      // Button 'Shot'
-	    PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_BUTTON2 | IPF_PLAYER2 )      // Button 'Bomb'
-	    PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_UNUSED                )      // Button 3 Unused
-		PORT_BIT( 0x08, IP_ACTIVE_LOW, IPT_UNKNOWN )
+	    PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_BUTTON1 | IPF_PLAYER2 );     // Button 'Shot'
+	    PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_BUTTON2 | IPF_PLAYER2 );     // Button 'Bomb'
+	    PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_UNUSED                );     // Button 3 Unused
+		PORT_BIT( 0x08, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	    JOYSTICK_2
 	
 		PORT_START		/* Coinage */
@@ -1240,50 +1240,50 @@ public class segac2
 	    COIN_B
 	
 		PORT_START		 /* Game Options */
-		PORT_DIPNAME( 0x01, 0x01, "Game Difficulty 1" )
-	    PORT_DIPSETTING(    0x01, "Medium" )
-		PORT_DIPSETTING(    0x00, "Hard" )
-		PORT_DIPNAME( 0x02, 0x02, "Game Difficulty 2" )
-	    PORT_DIPSETTING(    0x02, "Medium" )
-		PORT_DIPSETTING(    0x00, "Hard" )
-	    PORT_DIPNAME( 0x0c, 0x0c, DEF_STR( Lives ) )
-		PORT_DIPSETTING(    0x08, "1" )
-		PORT_DIPSETTING(    0x04, "2" )
-		PORT_DIPSETTING(    0x0c, "3" )
-		PORT_DIPSETTING(    0x00, "5" )
-	    PORT_DIPNAME( 0x10, 0x00, DEF_STR( Demo_Sounds ) )
-		PORT_DIPSETTING(    0x10, DEF_STR( Off ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( On ) )
-	    PORT_DIPNAME( 0x20, 0x20, DEF_STR( Unused ) )
-	    PORT_DIPSETTING(    0x20, DEF_STR( Off ) )
-	    PORT_DIPSETTING(    0x00, DEF_STR( On ) )
-	    PORT_DIPNAME( 0x40, 0x40, DEF_STR( Unused ) )
-	    PORT_DIPSETTING(    0x40, DEF_STR( Off ) )
-	    PORT_DIPSETTING(    0x00, DEF_STR( On ) )
-	    PORT_DIPNAME( 0x80, 0x80, DEF_STR( Unused ) )
-	    PORT_DIPSETTING(    0x80, DEF_STR( Off ) )
-	    PORT_DIPSETTING(    0x00, DEF_STR( On ) )
-	INPUT_PORTS_END
+		PORT_DIPNAME( 0x01, 0x01, "Game Difficulty 1" );
+	    PORT_DIPSETTING(    0x01, "Medium" );
+		PORT_DIPSETTING(    0x00, "Hard" );
+		PORT_DIPNAME( 0x02, 0x02, "Game Difficulty 2" );
+	    PORT_DIPSETTING(    0x02, "Medium" );
+		PORT_DIPSETTING(    0x00, "Hard" );
+	    PORT_DIPNAME( 0x0c, 0x0c, DEF_STR( "Lives") );
+		PORT_DIPSETTING(    0x08, "1" );
+		PORT_DIPSETTING(    0x04, "2" );
+		PORT_DIPSETTING(    0x0c, "3" );
+		PORT_DIPSETTING(    0x00, "5" );
+	    PORT_DIPNAME( 0x10, 0x00, DEF_STR( "Demo_Sounds") );
+		PORT_DIPSETTING(    0x10, DEF_STR( "Off") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
+	    PORT_DIPNAME( 0x20, 0x20, DEF_STR( "Unused") );
+	    PORT_DIPSETTING(    0x20, DEF_STR( "Off") );
+	    PORT_DIPSETTING(    0x00, DEF_STR( "On") );
+	    PORT_DIPNAME( 0x40, 0x40, DEF_STR( "Unused") );
+	    PORT_DIPSETTING(    0x40, DEF_STR( "Off") );
+	    PORT_DIPSETTING(    0x00, DEF_STR( "On") );
+	    PORT_DIPNAME( 0x80, 0x80, DEF_STR( "Unused") );
+	    PORT_DIPSETTING(    0x80, DEF_STR( "Off") );
+	    PORT_DIPSETTING(    0x00, DEF_STR( "On") );
+	INPUT_PORTS_END(); }}; 
 	
 	
-	INPUT_PORTS_START( ichidant ) /*  Ichidant-R and Tant-R Input Ports */
+	static InputPortPtr input_ports_ichidant = new InputPortPtr(){ public void handler() {  /*  Ichidant-R and Tant-R Input Ports */
 		PORT_START		/* Coins, Start, Service etc, Same for All */
 	    COINS
-		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNKNOWN )
-		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNKNOWN )
+		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNKNOWN );
+		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
 		PORT_START		/* Player 1 Controls */
-	    PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_BUTTON1 )      // Button 'Rotate'
-	    PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_UNUSED  )      // Button 2 Unused == Button 1
-	    PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_UNUSED  )      // Button 3 Unused == Button 1
-		PORT_BIT( 0x08, IP_ACTIVE_LOW, IPT_UNKNOWN )
+	    PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_BUTTON1 );     // Button 'Rotate'
+	    PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_UNUSED  );     // Button 2 Unused == Button 1
+	    PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_UNUSED  );     // Button 3 Unused == Button 1
+		PORT_BIT( 0x08, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	    JOYSTICK_1
 	
 		PORT_START		/* Player 2 Controls */
-	    PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_BUTTON1 | IPF_PLAYER2 )    // Button 'Rotate'
-	    PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_UNUSED                )    // Button 2 Unused == Button 1
-	    PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_UNUSED                )    // Button 3 Unused == Button 1
-		PORT_BIT( 0x08, IP_ACTIVE_LOW, IPT_UNKNOWN )
+	    PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_BUTTON1 | IPF_PLAYER2 );   // Button 'Rotate'
+	    PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_UNUSED                );   // Button 2 Unused == Button 1
+	    PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_UNUSED                );   // Button 3 Unused == Button 1
+		PORT_BIT( 0x08, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	    JOYSTICK_2
 	
 		PORT_START		/* Coinage */
@@ -1291,50 +1291,50 @@ public class segac2
 	    COIN_B
 	
 		PORT_START		 /* Game Options */
-	    PORT_DIPNAME( 0x01, 0x00, DEF_STR( Demo_Sounds ) )
-	    PORT_DIPSETTING(    0x01, DEF_STR( Off ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( On ) )
-	    PORT_DIPNAME( 0x06, 0x06, DEF_STR( Difficulty ) )
-	    PORT_DIPSETTING(    0x04, "Easy" )
-	    PORT_DIPSETTING(    0x06, "Medium" )
-	    PORT_DIPSETTING(    0x02, "Hard" )
-		PORT_DIPSETTING(    0x00, "Hardest" )
-	    PORT_DIPNAME( 0x08, 0x08, DEF_STR( Unused ) )
-	    PORT_DIPSETTING(    0x08, DEF_STR( Off ) )
-	    PORT_DIPSETTING(    0x00, DEF_STR( On ) )
-	    PORT_DIPNAME( 0x10, 0x10, DEF_STR( Unused ) )
-	    PORT_DIPSETTING(    0x10, DEF_STR( Off ) )
-	    PORT_DIPSETTING(    0x00, DEF_STR( On ) )
-	    PORT_DIPNAME( 0x20, 0x20, DEF_STR( Unused ) )
-	    PORT_DIPSETTING(    0x20, DEF_STR( Off ) )
-	    PORT_DIPSETTING(    0x00, DEF_STR( On ) )
-	    PORT_DIPNAME( 0x40, 0x40, DEF_STR( Unused ) )
-	    PORT_DIPSETTING(    0x40, DEF_STR( Off ) )
-	    PORT_DIPSETTING(    0x00, DEF_STR( On ) )
-	    PORT_DIPNAME( 0x80, 0x80, DEF_STR( Unused ) )
-	    PORT_DIPSETTING(    0x80, DEF_STR( Off ) )
-	    PORT_DIPSETTING(    0x00, DEF_STR( On ) )
-	INPUT_PORTS_END
+	    PORT_DIPNAME( 0x01, 0x00, DEF_STR( "Demo_Sounds") );
+	    PORT_DIPSETTING(    0x01, DEF_STR( "Off") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
+	    PORT_DIPNAME( 0x06, 0x06, DEF_STR( "Difficulty") );
+	    PORT_DIPSETTING(    0x04, "Easy" );
+	    PORT_DIPSETTING(    0x06, "Medium" );
+	    PORT_DIPSETTING(    0x02, "Hard" );
+		PORT_DIPSETTING(    0x00, "Hardest" );
+	    PORT_DIPNAME( 0x08, 0x08, DEF_STR( "Unused") );
+	    PORT_DIPSETTING(    0x08, DEF_STR( "Off") );
+	    PORT_DIPSETTING(    0x00, DEF_STR( "On") );
+	    PORT_DIPNAME( 0x10, 0x10, DEF_STR( "Unused") );
+	    PORT_DIPSETTING(    0x10, DEF_STR( "Off") );
+	    PORT_DIPSETTING(    0x00, DEF_STR( "On") );
+	    PORT_DIPNAME( 0x20, 0x20, DEF_STR( "Unused") );
+	    PORT_DIPSETTING(    0x20, DEF_STR( "Off") );
+	    PORT_DIPSETTING(    0x00, DEF_STR( "On") );
+	    PORT_DIPNAME( 0x40, 0x40, DEF_STR( "Unused") );
+	    PORT_DIPSETTING(    0x40, DEF_STR( "Off") );
+	    PORT_DIPSETTING(    0x00, DEF_STR( "On") );
+	    PORT_DIPNAME( 0x80, 0x80, DEF_STR( "Unused") );
+	    PORT_DIPSETTING(    0x80, DEF_STR( "Off") );
+	    PORT_DIPSETTING(    0x00, DEF_STR( "On") );
+	INPUT_PORTS_END(); }}; 
 	
 	
-	INPUT_PORTS_START( bloxeedc ) /*  Bloxeed Input Ports */
+	static InputPortPtr input_ports_bloxeedc = new InputPortPtr(){ public void handler() {  /*  Bloxeed Input Ports */
 		PORT_START		/* Coins, Start, Service etc, Same for All */
 	    COINS
-		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNKNOWN )
-		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNKNOWN )
+		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNKNOWN );
+		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
 		PORT_START		/* Player 1 Controls */
-	    PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_BUTTON1 )      // Button 'Rotate'
-	    PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_UNUSED  )      // Button 2 Unused == Button 1
-	    PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_UNUSED  )      // Button 3 Unused == Button 1
-		PORT_BIT( 0x08, IP_ACTIVE_LOW, IPT_UNKNOWN )
+	    PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_BUTTON1 );     // Button 'Rotate'
+	    PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_UNUSED  );     // Button 2 Unused == Button 1
+	    PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_UNUSED  );     // Button 3 Unused == Button 1
+		PORT_BIT( 0x08, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	    JOYSTICK_1
 	
 		PORT_START		/* Player 2 Controls */
-	    PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_BUTTON1 | IPF_PLAYER2 )     // Button 'Rotate'
-	    PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_UNUSED                )     // Button 2 Unused == Button 1
-	    PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_UNUSED                )     // Button 3 Unused == Button 1
-		PORT_BIT( 0x08, IP_ACTIVE_LOW, IPT_UNKNOWN )
+	    PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_BUTTON1 | IPF_PLAYER2 );    // Button 'Rotate'
+	    PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_UNUSED                );    // Button 2 Unused == Button 1
+	    PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_UNUSED                );    // Button 3 Unused == Button 1
+		PORT_BIT( 0x08, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	    JOYSTICK_2
 	
 		PORT_START		/* Coinage */
@@ -1342,51 +1342,51 @@ public class segac2
 	    COIN_B
 	
 		PORT_START		 /* Game Options */
-	    PORT_DIPNAME( 0x01, 0x01, "VS Mode Price" )
-	    PORT_DIPSETTING(    0x00, "Same as Ordinary" )
-	    PORT_DIPSETTING(    0x01, "Double as Ordinary" )
-	    PORT_DIPNAME( 0x02, 0x02, "Credits to Start" )
-	    PORT_DIPSETTING(    0x02, "1" )
-		PORT_DIPSETTING(    0x00, "2" )
-	    PORT_DIPNAME( 0x04, 0x04, DEF_STR( Unknown ) )
-	    PORT_DIPSETTING(    0x04, DEF_STR( Off ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( On ) )
-	    PORT_DIPNAME( 0x08, 0x00, DEF_STR( Demo_Sounds ) )
-	    PORT_DIPSETTING(    0x08, DEF_STR( Off ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( On ) )
-	    PORT_DIPNAME( 0x10, 0x10, DEF_STR( Unknown ) )
-	    PORT_DIPSETTING(    0x10, DEF_STR( Off ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( On ) )
-	    PORT_DIPNAME( 0x20, 0x20, DEF_STR( Unknown ) )
-	    PORT_DIPSETTING(    0x20, DEF_STR( Off ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( On ) )
-	    PORT_DIPNAME( 0x40, 0x40, DEF_STR( Unknown ) )
-	    PORT_DIPSETTING(    0x40, DEF_STR( Off ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( On ) )
-	    PORT_DIPNAME( 0x80, 0x80, DEF_STR( Unknown ) )
-	    PORT_DIPSETTING(    0x80, DEF_STR( Off ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( On ) )
-	INPUT_PORTS_END
+	    PORT_DIPNAME( 0x01, 0x01, "VS Mode Price" );
+	    PORT_DIPSETTING(    0x00, "Same as Ordinary" );
+	    PORT_DIPSETTING(    0x01, "Double as Ordinary" );
+	    PORT_DIPNAME( 0x02, 0x02, "Credits to Start" );
+	    PORT_DIPSETTING(    0x02, "1" );
+		PORT_DIPSETTING(    0x00, "2" );
+	    PORT_DIPNAME( 0x04, 0x04, DEF_STR( "Unknown") );
+	    PORT_DIPSETTING(    0x04, DEF_STR( "Off") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
+	    PORT_DIPNAME( 0x08, 0x00, DEF_STR( "Demo_Sounds") );
+	    PORT_DIPSETTING(    0x08, DEF_STR( "Off") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
+	    PORT_DIPNAME( 0x10, 0x10, DEF_STR( "Unknown") );
+	    PORT_DIPSETTING(    0x10, DEF_STR( "Off") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
+	    PORT_DIPNAME( 0x20, 0x20, DEF_STR( "Unknown") );
+	    PORT_DIPSETTING(    0x20, DEF_STR( "Off") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
+	    PORT_DIPNAME( 0x40, 0x40, DEF_STR( "Unknown") );
+	    PORT_DIPSETTING(    0x40, DEF_STR( "Off") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
+	    PORT_DIPNAME( 0x80, 0x80, DEF_STR( "Unknown") );
+	    PORT_DIPSETTING(    0x80, DEF_STR( "Off") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
+	INPUT_PORTS_END(); }}; 
 	
 	
-	INPUT_PORTS_START( puyopuy2 ) /*  Puyo Puyo 2 Input Ports */
+	static InputPortPtr input_ports_puyopuy2 = new InputPortPtr(){ public void handler() {  /*  Puyo Puyo 2 Input Ports */
 		PORT_START		/* Coins, Start, Service etc, Same for All */
 	    COINS
-		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNKNOWN )
-		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNKNOWN )
+		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_UNKNOWN );
+		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
 		PORT_START		/* Player 1 Controls */
-	    PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_BUTTON1 )   // Rotate clockwise
-	    PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_BUTTON2 )   // Rotate anti-clockwise. Can be inverted using the dips
-	    PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_UNUSED  )   // Button 3 Unused  _NOT_ Rannyu which is Start 1
-		PORT_BIT( 0x08, IP_ACTIVE_LOW, IPT_UNKNOWN )
+	    PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_BUTTON1 );  // Rotate clockwise
+	    PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_BUTTON2 );  // Rotate anti-clockwise. Can be inverted using the dips
+	    PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_UNUSED  );  // Button 3 Unused  _NOT_ Rannyu which is Start 1
+		PORT_BIT( 0x08, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	    JOYSTICK_1
 	
 		PORT_START		/* Player 2 Controls */
-	    PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_BUTTON1 | IPF_PLAYER2 )
-	    PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_BUTTON2 | IPF_PLAYER2 )
-	    PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_UNUSED  )
-		PORT_BIT( 0x08, IP_ACTIVE_LOW, IPT_UNKNOWN )
+	    PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_BUTTON1 | IPF_PLAYER2 );
+	    PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_BUTTON2 | IPF_PLAYER2 );
+	    PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_UNUSED  );
+		PORT_BIT( 0x08, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	    JOYSTICK_2
 	
 		PORT_START		/* Coinage */
@@ -1394,29 +1394,29 @@ public class segac2
 	    COIN_B
 	
 		PORT_START		 /* Game Options */
-	    PORT_DIPNAME( 0x01, 0x01, "Rannyu Off Button" )
-	    PORT_DIPSETTING(    0x01, "Use" )
-	    PORT_DIPSETTING(    0x00, "No Use" )
-	    PORT_DIPNAME( 0x02, 0x00, DEF_STR( Demo_Sounds ) )
-	    PORT_DIPSETTING(    0x02, DEF_STR( Off ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( On ) )
-	    PORT_DIPNAME( 0x04, 0x04, "Turn Direction" )
-	    PORT_DIPSETTING(    0x04, "1:Right  2:Left" )
-	    PORT_DIPSETTING(    0x00, "1:Left  2:Right")
-	    PORT_DIPNAME( 0x18, 0x18, DEF_STR( Difficulty ) )
-	    PORT_DIPSETTING(    0x10, "Easy" )
-	    PORT_DIPSETTING(    0x18, "Medium" )
-	    PORT_DIPSETTING(    0x08, "Hard" )
-		PORT_DIPSETTING(    0x00, "Hardest" )
-	    PORT_DIPNAME( 0x60, 0x60, "VS Mode Match/1 Play" )
-	    PORT_DIPSETTING(    0x60, "1" )
-	    PORT_DIPSETTING(    0x40, "2" )
-	    PORT_DIPSETTING(    0x20, "3" )
-	    PORT_DIPSETTING(    0x00, "4" )
-	    PORT_DIPNAME( 0x80, 0x80, "Battle Start credit" )
-	    PORT_DIPSETTING(    0x00, "1" )
-	    PORT_DIPSETTING(    0x80, "2" )
-	INPUT_PORTS_END
+	    PORT_DIPNAME( 0x01, 0x01, "Rannyu Off Button" );
+	    PORT_DIPSETTING(    0x01, "Use" );
+	    PORT_DIPSETTING(    0x00, "No Use" );
+	    PORT_DIPNAME( 0x02, 0x00, DEF_STR( "Demo_Sounds") );
+	    PORT_DIPSETTING(    0x02, DEF_STR( "Off") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
+	    PORT_DIPNAME( 0x04, 0x04, "Turn Direction" );
+	    PORT_DIPSETTING(    0x04, "1:Right  2:Left" );
+	    PORT_DIPSETTING(    0x00, "1:Left  2:Right");
+	    PORT_DIPNAME( 0x18, 0x18, DEF_STR( "Difficulty") );
+	    PORT_DIPSETTING(    0x10, "Easy" );
+	    PORT_DIPSETTING(    0x18, "Medium" );
+	    PORT_DIPSETTING(    0x08, "Hard" );
+		PORT_DIPSETTING(    0x00, "Hardest" );
+	    PORT_DIPNAME( 0x60, 0x60, "VS Mode Match/1 Play" );
+	    PORT_DIPSETTING(    0x60, "1" );
+	    PORT_DIPSETTING(    0x40, "2" );
+	    PORT_DIPSETTING(    0x20, "3" );
+	    PORT_DIPSETTING(    0x00, "4" );
+	    PORT_DIPNAME( 0x80, 0x80, "Battle Start credit" );
+	    PORT_DIPSETTING(    0x00, "1" );
+	    PORT_DIPSETTING(    0x80, "2" );
+	INPUT_PORTS_END(); }}; 
 	
 	
 	

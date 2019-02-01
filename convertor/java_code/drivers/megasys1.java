@@ -964,7 +964,7 @@ public class megasys1
 	
 	
 	
-	INPUT_PORTS_START( 64street )
+	static InputPortPtr input_ports_64street = new InputPortPtr(){ public void handler() { 
 		COINS
 	//	fire	jump
 		JOY_2BUTTONS(IPF_PLAYER1)
@@ -975,28 +975,28 @@ public class megasys1
 		COINAGE_8BITS
 	
 		PORT_START
-		PORT_DIPNAME( 0x01, 0x01, DEF_STR( Flip_Screen ) )
-		PORT_DIPSETTING(    0x01, DEF_STR( Off ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( On ) )
-		PORT_DIPNAME( 0x02, 0x00, DEF_STR( Demo_Sounds ) )
-		PORT_DIPSETTING(    0x02, DEF_STR( Off ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( On ) )
-		PORT_DIPNAME( 0x04, 0x04, "Allow Continue" )
-		PORT_DIPSETTING(    0x00, DEF_STR( Off ) )
-		PORT_DIPSETTING(    0x04, DEF_STR( On ) )
-		PORT_DIPNAME( 0x18, 0x18, DEF_STR( Difficulty ) )
-		PORT_DIPSETTING(    0x10, "Easy" )
-		PORT_DIPSETTING(    0x18, "Normal" )
-		PORT_DIPSETTING(    0x08, "Hard" )
-		PORT_DIPSETTING(    0x00, "Hardest" )
-		PORT_DIPNAME( 0x60, 0x20, DEF_STR( Lives ) )
-		PORT_DIPSETTING(    0x40, "1" )
-		PORT_DIPSETTING(    0x60, "2" )
-		PORT_DIPSETTING(    0x20, "3" )
-		PORT_DIPSETTING(    0x00, "5" )
-		PORT_SERVICE( 0x80, IP_ACTIVE_LOW )
+		PORT_DIPNAME( 0x01, 0x01, DEF_STR( "Flip_Screen") );
+		PORT_DIPSETTING(    0x01, DEF_STR( "Off") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
+		PORT_DIPNAME( 0x02, 0x00, DEF_STR( "Demo_Sounds") );
+		PORT_DIPSETTING(    0x02, DEF_STR( "Off") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
+		PORT_DIPNAME( 0x04, 0x04, "Allow Continue" );
+		PORT_DIPSETTING(    0x00, DEF_STR( "Off") );
+		PORT_DIPSETTING(    0x04, DEF_STR( "On") );
+		PORT_DIPNAME( 0x18, 0x18, DEF_STR( "Difficulty") );
+		PORT_DIPSETTING(    0x10, "Easy" );
+		PORT_DIPSETTING(    0x18, "Normal" );
+		PORT_DIPSETTING(    0x08, "Hard" );
+		PORT_DIPSETTING(    0x00, "Hardest" );
+		PORT_DIPNAME( 0x60, 0x20, DEF_STR( "Lives") );
+		PORT_DIPSETTING(    0x40, "1" );
+		PORT_DIPSETTING(    0x60, "2" );
+		PORT_DIPSETTING(    0x20, "3" );
+		PORT_DIPSETTING(    0x00, "5" );
+		PORT_SERVICE( 0x80, IP_ACTIVE_LOW );
 	
-	INPUT_PORTS_END
+	INPUT_PORTS_END(); }}; 
 	
 	
 	/***************************************************************************
@@ -1097,7 +1097,7 @@ public class megasys1
 	ROM_END(); }}; 
 	
 	
-	INPUT_PORTS_START( astyanax )
+	static InputPortPtr input_ports_astyanax = new InputPortPtr(){ public void handler() { 
 		COINS						/* IN0 0x80001.b */
 	//	fire	jump	magic
 		JOY_3BUTTONS(IPF_PLAYER1)	/* IN1 0x80003.b */
@@ -1105,57 +1105,57 @@ public class megasys1
 		JOY_3BUTTONS(IPF_PLAYER2)	/* IN3 0x80005.b */
 	
 		PORT_START			/* IN4 0x80006.b */
-		PORT_DIPNAME( 0x07, 0x07, DEF_STR( Coin_A ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( 4C_1C ) )
-		PORT_DIPSETTING(    0x04, DEF_STR( 3C_1C ) )
-		PORT_DIPSETTING(    0x02, DEF_STR( 2C_1C ) )
-		PORT_DIPSETTING(    0x07, DEF_STR( 1C_1C ) )
-	//	PORT_DIPSETTING(    0x03, DEF_STR( 1C_1C ) )	// 1_2 shown in test mode
-	//	PORT_DIPSETTING(    0x05, DEF_STR( 1C_1C ) )	// 1_3
-	//	PORT_DIPSETTING(    0x01, DEF_STR( 1C_1C ) )	// 1_4
-	//	PORT_DIPSETTING(    0x06, DEF_STR( 1C_1C ) )	// 1_5
-		PORT_DIPNAME( 0x38, 0x38, DEF_STR( Coin_B ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( 4C_1C ) )
-		PORT_DIPSETTING(    0x20, DEF_STR( 3C_1C ) )
-		PORT_DIPSETTING(    0x10, DEF_STR( 2C_1C ) )
-		PORT_DIPSETTING(    0x38, DEF_STR( 1C_1C ) )
-	//	PORT_DIPSETTING(    0x18, DEF_STR( 1C_1C ) )	// 1_2 shown in test mode
-	//	PORT_DIPSETTING(    0x28, DEF_STR( 1C_1C ) )	// 1_3
-	//	PORT_DIPSETTING(    0x08, DEF_STR( 1C_1C ) )	// 1_4
-	//	PORT_DIPSETTING(    0x30, DEF_STR( 1C_1C ) )	// 1_5
-		PORT_DIPNAME( 0x40, 0x00, DEF_STR( Demo_Sounds ) )
-		PORT_DIPSETTING(    0x40, DEF_STR( Off ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( On ) )
-		PORT_DIPNAME( 0x80, 0x80, DEF_STR( Unknown ) )	// according to manual
-		PORT_DIPSETTING(    0x80, DEF_STR( Off ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( On ) )
+		PORT_DIPNAME( 0x07, 0x07, DEF_STR( "Coin_A") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "4C_1C") );
+		PORT_DIPSETTING(    0x04, DEF_STR( "3C_1C") );
+		PORT_DIPSETTING(    0x02, DEF_STR( "2C_1C") );
+		PORT_DIPSETTING(    0x07, DEF_STR( "1C_1C") );
+	//	PORT_DIPSETTING(    0x03, DEF_STR( "1C_1C") );	// 1_2 shown in test mode
+	//	PORT_DIPSETTING(    0x05, DEF_STR( "1C_1C") );	// 1_3
+	//	PORT_DIPSETTING(    0x01, DEF_STR( "1C_1C") );	// 1_4
+	//	PORT_DIPSETTING(    0x06, DEF_STR( "1C_1C") );	// 1_5
+		PORT_DIPNAME( 0x38, 0x38, DEF_STR( "Coin_B") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "4C_1C") );
+		PORT_DIPSETTING(    0x20, DEF_STR( "3C_1C") );
+		PORT_DIPSETTING(    0x10, DEF_STR( "2C_1C") );
+		PORT_DIPSETTING(    0x38, DEF_STR( "1C_1C") );
+	//	PORT_DIPSETTING(    0x18, DEF_STR( "1C_1C") );	// 1_2 shown in test mode
+	//	PORT_DIPSETTING(    0x28, DEF_STR( "1C_1C") );	// 1_3
+	//	PORT_DIPSETTING(    0x08, DEF_STR( "1C_1C") );	// 1_4
+	//	PORT_DIPSETTING(    0x30, DEF_STR( "1C_1C") );	// 1_5
+		PORT_DIPNAME( 0x40, 0x00, DEF_STR( "Demo_Sounds") );
+		PORT_DIPSETTING(    0x40, DEF_STR( "Off") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
+		PORT_DIPNAME( 0x80, 0x80, DEF_STR( "Unknown") );	// according to manual
+		PORT_DIPSETTING(    0x80, DEF_STR( "Off") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 	
 		PORT_START			/* IN5 0x80007.b */
-		PORT_DIPNAME( 0x01, 0x01, DEF_STR( Unknown ) ) // according to manual
-		PORT_DIPSETTING(    0x01, DEF_STR( Off ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( On ) )
-		PORT_DIPNAME( 0x02, 0x02, DEF_STR( Unknown ) ) // according to manual
-		PORT_DIPSETTING(    0x02, DEF_STR( Off ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( On ) )
-		PORT_DIPNAME( 0x04, 0x04, DEF_STR( Bonus_Life ) )
-		PORT_DIPSETTING(    0x04, "30k 70k 110k then every 30k" )
-		PORT_DIPSETTING(    0x00, "50k 100k then every 40k" )
-		PORT_DIPNAME( 0x18, 0x18, DEF_STR( Lives ) )
-		PORT_DIPSETTING(    0x08, "2" )
-		PORT_DIPSETTING(    0x18, "3" )
-		PORT_DIPSETTING(    0x10, "4" )
-		PORT_DIPSETTING(    0x00, "5" )
-		PORT_DIPNAME( 0x20, 0x20, DEF_STR( Difficulty ) )
-		PORT_DIPSETTING(    0x20, "Normal" )
-		PORT_DIPSETTING(    0x00, "Hard" )
-		PORT_DIPNAME( 0x40, 0x40, "Swap 1P/2P Controls" )
-		PORT_DIPSETTING(    0x40, DEF_STR( Off ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( On ) )
-		PORT_DIPNAME( 0x80, 0x80, DEF_STR( Flip_Screen ) )
-		PORT_DIPSETTING(    0x80, DEF_STR( Off ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( On ) )
+		PORT_DIPNAME( 0x01, 0x01, DEF_STR( "Unknown") ); // according to manual
+		PORT_DIPSETTING(    0x01, DEF_STR( "Off") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
+		PORT_DIPNAME( 0x02, 0x02, DEF_STR( "Unknown") ); // according to manual
+		PORT_DIPSETTING(    0x02, DEF_STR( "Off") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
+		PORT_DIPNAME( 0x04, 0x04, DEF_STR( "Bonus_Life") );
+		PORT_DIPSETTING(    0x04, "30k 70k 110k then every 30k" );
+		PORT_DIPSETTING(    0x00, "50k 100k then every 40k" );
+		PORT_DIPNAME( 0x18, 0x18, DEF_STR( "Lives") );
+		PORT_DIPSETTING(    0x08, "2" );
+		PORT_DIPSETTING(    0x18, "3" );
+		PORT_DIPSETTING(    0x10, "4" );
+		PORT_DIPSETTING(    0x00, "5" );
+		PORT_DIPNAME( 0x20, 0x20, DEF_STR( "Difficulty") );
+		PORT_DIPSETTING(    0x20, "Normal" );
+		PORT_DIPSETTING(    0x00, "Hard" );
+		PORT_DIPNAME( 0x40, 0x40, "Swap 1P/2P Controls" );
+		PORT_DIPSETTING(    0x40, DEF_STR( "Off") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
+		PORT_DIPNAME( 0x80, 0x80, DEF_STR( "Flip_Screen") );
+		PORT_DIPSETTING(    0x80, DEF_STR( "Off") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 	
-	INPUT_PORTS_END
+	INPUT_PORTS_END(); }}; 
 	
 	
 	
@@ -1255,7 +1255,7 @@ public class megasys1
 	ROM_END(); }}; 
 	
 	
-	INPUT_PORTS_START( avspirit )
+	static InputPortPtr input_ports_avspirit = new InputPortPtr(){ public void handler() { 
 		COINS
 		JOY_2BUTTONS(IPF_PLAYER1)
 		RESERVE
@@ -1265,28 +1265,28 @@ public class megasys1
 		COINAGE_8BITS
 	
 		PORT_START
-		PORT_DIPNAME( 0x01, 0x01, DEF_STR( Flip_Screen ) )
-		PORT_DIPSETTING(    0x01, DEF_STR( Off ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( On ) )
-		PORT_DIPNAME( 0x02, 0x00, DEF_STR( Demo_Sounds ) )
-		PORT_DIPSETTING(    0x02, DEF_STR( Off ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( On ) )
-		PORT_DIPNAME( 0x04, 0x04, "Allow Continue" )
-		PORT_DIPSETTING(    0x00, DEF_STR( Off ) )
-		PORT_DIPSETTING(    0x04, DEF_STR( On ) )
-		PORT_DIPNAME( 0x18, 0x18, DEF_STR( Difficulty ) )
-		PORT_DIPSETTING(    0x08, "Easy" )
-		PORT_DIPSETTING(    0x18, "Normal" )
-		PORT_DIPSETTING(    0x10, "Hard" )
-		PORT_DIPSETTING(    0x00, "Hardest" )
-		PORT_DIPNAME( 0x20, 0x20, DEF_STR( Cabinet ) )
-		PORT_DIPSETTING(    0x20, DEF_STR( Upright ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( Cocktail ) )
-		PORT_DIPNAME( 0x40, 0x40, DEF_STR( Unknown ) )
-		PORT_DIPSETTING(    0x40, DEF_STR( Off ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( On ) )
-		PORT_SERVICE( 0x80, IP_ACTIVE_LOW )
-	INPUT_PORTS_END
+		PORT_DIPNAME( 0x01, 0x01, DEF_STR( "Flip_Screen") );
+		PORT_DIPSETTING(    0x01, DEF_STR( "Off") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
+		PORT_DIPNAME( 0x02, 0x00, DEF_STR( "Demo_Sounds") );
+		PORT_DIPSETTING(    0x02, DEF_STR( "Off") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
+		PORT_DIPNAME( 0x04, 0x04, "Allow Continue" );
+		PORT_DIPSETTING(    0x00, DEF_STR( "Off") );
+		PORT_DIPSETTING(    0x04, DEF_STR( "On") );
+		PORT_DIPNAME( 0x18, 0x18, DEF_STR( "Difficulty") );
+		PORT_DIPSETTING(    0x08, "Easy" );
+		PORT_DIPSETTING(    0x18, "Normal" );
+		PORT_DIPSETTING(    0x10, "Hard" );
+		PORT_DIPSETTING(    0x00, "Hardest" );
+		PORT_DIPNAME( 0x20, 0x20, DEF_STR( "Cabinet") );
+		PORT_DIPSETTING(    0x20, DEF_STR( "Upright") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "Cocktail") );
+		PORT_DIPNAME( 0x40, 0x40, DEF_STR( "Unknown") );
+		PORT_DIPSETTING(    0x40, DEF_STR( "Off") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
+		PORT_SERVICE( 0x80, IP_ACTIVE_LOW );
+	INPUT_PORTS_END(); }}; 
 	
 	
 	
@@ -1338,7 +1338,7 @@ public class megasys1
 	ROM_END(); }}; 
 	
 	
-	INPUT_PORTS_START( bigstrik )
+	static InputPortPtr input_ports_bigstrik = new InputPortPtr(){ public void handler() { 
 		COINS
 	//	pass	shoot	feint
 		JOY_3BUTTONS(IPF_PLAYER1)
@@ -1346,64 +1346,64 @@ public class megasys1
 		JOY_3BUTTONS(IPF_PLAYER2)
 	
 		PORT_START			/* IN4 */
-		PORT_DIPNAME( 0x0f, 0x0f, DEF_STR( Coin_A ) )
-		PORT_DIPSETTING(    0x07, DEF_STR( 4C_1C ) )
-		PORT_DIPSETTING(    0x08, DEF_STR( 3C_1C ) )
-		PORT_DIPSETTING(    0x09, DEF_STR( 2C_1C ) )
-		PORT_DIPSETTING(    0x0f, DEF_STR( 1C_1C ) )
-		PORT_DIPSETTING(    0x05, DEF_STR( 2C_3C ) )
-	//	PORT_DIPSETTING(    0x04, DEF_STR( 2C_3C ) )
-	//	PORT_DIPSETTING(    0x03, DEF_STR( 2C_3C ) )
-	//	PORT_DIPSETTING(    0x02, DEF_STR( 2C_3C ) )
-	//	PORT_DIPSETTING(    0x01, DEF_STR( 2C_3C ) )
-	//	PORT_DIPSETTING(    0x06, DEF_STR( 2C_3C ) )
-		PORT_DIPSETTING(    0x0e, DEF_STR( 1C_2C ) )
-		PORT_DIPSETTING(    0x0d, DEF_STR( 1C_3C ) )
-		PORT_DIPSETTING(    0x0c, DEF_STR( 1C_4C ) )
-		PORT_DIPSETTING(    0x0b, DEF_STR( 1C_5C ) )
-		PORT_DIPSETTING(    0x0a, DEF_STR( 1C_6C ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( Free_Play ) )
-		PORT_DIPNAME( 0xf0, 0xf0, DEF_STR( Coin_B ) )
-		PORT_DIPSETTING(    0x70, DEF_STR( 4C_1C ) )
-		PORT_DIPSETTING(    0x80, DEF_STR( 3C_1C ) )
-		PORT_DIPSETTING(    0x90, DEF_STR( 2C_1C ) )
-		PORT_DIPSETTING(    0xf0, DEF_STR( 1C_1C ) )
-		PORT_DIPSETTING(    0x50, DEF_STR( 2C_3C ) )
-	//	PORT_DIPSETTING(    0x40, DEF_STR( 2C_3C ) )
-	//	PORT_DIPSETTING(    0x30, DEF_STR( 2C_3C ) )
-	//	PORT_DIPSETTING(    0x20, DEF_STR( 2C_3C ) )
-	//	PORT_DIPSETTING(    0x10, DEF_STR( 2C_3C ) )
-	//	PORT_DIPSETTING(    0x60, DEF_STR( 2C_3C ) )
-		PORT_DIPSETTING(    0xe0, DEF_STR( 1C_2C ) )
-		PORT_DIPSETTING(    0xd0, DEF_STR( 1C_3C ) )
-		PORT_DIPSETTING(    0xc0, DEF_STR( 1C_4C ) )
-		PORT_DIPSETTING(    0xb0, DEF_STR( 1C_5C ) )
-		PORT_DIPSETTING(    0xa0, DEF_STR( 1C_6C ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( Free_Play ) )
+		PORT_DIPNAME( 0x0f, 0x0f, DEF_STR( "Coin_A") );
+		PORT_DIPSETTING(    0x07, DEF_STR( "4C_1C") );
+		PORT_DIPSETTING(    0x08, DEF_STR( "3C_1C") );
+		PORT_DIPSETTING(    0x09, DEF_STR( "2C_1C") );
+		PORT_DIPSETTING(    0x0f, DEF_STR( "1C_1C") );
+		PORT_DIPSETTING(    0x05, DEF_STR( "2C_3C") );
+	//	PORT_DIPSETTING(    0x04, DEF_STR( "2C_3C") );
+	//	PORT_DIPSETTING(    0x03, DEF_STR( "2C_3C") );
+	//	PORT_DIPSETTING(    0x02, DEF_STR( "2C_3C") );
+	//	PORT_DIPSETTING(    0x01, DEF_STR( "2C_3C") );
+	//	PORT_DIPSETTING(    0x06, DEF_STR( "2C_3C") );
+		PORT_DIPSETTING(    0x0e, DEF_STR( "1C_2C") );
+		PORT_DIPSETTING(    0x0d, DEF_STR( "1C_3C") );
+		PORT_DIPSETTING(    0x0c, DEF_STR( "1C_4C") );
+		PORT_DIPSETTING(    0x0b, DEF_STR( "1C_5C") );
+		PORT_DIPSETTING(    0x0a, DEF_STR( "1C_6C") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "Free_Play") );
+		PORT_DIPNAME( 0xf0, 0xf0, DEF_STR( "Coin_B") );
+		PORT_DIPSETTING(    0x70, DEF_STR( "4C_1C") );
+		PORT_DIPSETTING(    0x80, DEF_STR( "3C_1C") );
+		PORT_DIPSETTING(    0x90, DEF_STR( "2C_1C") );
+		PORT_DIPSETTING(    0xf0, DEF_STR( "1C_1C") );
+		PORT_DIPSETTING(    0x50, DEF_STR( "2C_3C") );
+	//	PORT_DIPSETTING(    0x40, DEF_STR( "2C_3C") );
+	//	PORT_DIPSETTING(    0x30, DEF_STR( "2C_3C") );
+	//	PORT_DIPSETTING(    0x20, DEF_STR( "2C_3C") );
+	//	PORT_DIPSETTING(    0x10, DEF_STR( "2C_3C") );
+	//	PORT_DIPSETTING(    0x60, DEF_STR( "2C_3C") );
+		PORT_DIPSETTING(    0xe0, DEF_STR( "1C_2C") );
+		PORT_DIPSETTING(    0xd0, DEF_STR( "1C_3C") );
+		PORT_DIPSETTING(    0xc0, DEF_STR( "1C_4C") );
+		PORT_DIPSETTING(    0xb0, DEF_STR( "1C_5C") );
+		PORT_DIPSETTING(    0xa0, DEF_STR( "1C_6C") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "Free_Play") );
 	
 		PORT_START			/* IN5 */
-		PORT_DIPNAME( 0x01, 0x01, DEF_STR( Flip_Screen ) )
-		PORT_DIPSETTING(    0x01, DEF_STR( Off ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( On ) )
-		PORT_DIPNAME( 0x06, 0x06, DEF_STR( Difficulty ) )
-		PORT_DIPSETTING(    0x02, "Easy"    )
-		PORT_DIPSETTING(    0x06, "Normal"  )
-		PORT_DIPSETTING(    0x04, "Hard"    )
-		PORT_DIPSETTING(    0x00, "Hardest" )
-		PORT_DIPNAME( 0x18, 0x18, "Time" )
-		PORT_DIPSETTING(    0x00, "Very Short" )
-		PORT_DIPSETTING(    0x10, "Short" )
-		PORT_DIPSETTING(    0x18, "Normal" )
-		PORT_DIPSETTING(    0x08, "Long" )
-		PORT_DIPNAME( 0x20, 0x20, DEF_STR( Demo_Sounds ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( Off ) )
-		PORT_DIPSETTING(    0x20, DEF_STR( On ) )
-		PORT_DIPNAME( 0x40, 0x40, "1 Credit 2 Play" )
-		PORT_DIPSETTING(    0x40, DEF_STR( Off ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( On ) )
-		PORT_SERVICE( 0x80, IP_ACTIVE_LOW )
+		PORT_DIPNAME( 0x01, 0x01, DEF_STR( "Flip_Screen") );
+		PORT_DIPSETTING(    0x01, DEF_STR( "Off") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
+		PORT_DIPNAME( 0x06, 0x06, DEF_STR( "Difficulty") );
+		PORT_DIPSETTING(    0x02, "Easy"    );
+		PORT_DIPSETTING(    0x06, "Normal"  );
+		PORT_DIPSETTING(    0x04, "Hard"    );
+		PORT_DIPSETTING(    0x00, "Hardest" );
+		PORT_DIPNAME( 0x18, 0x18, "Time" );
+		PORT_DIPSETTING(    0x00, "Very Short" );
+		PORT_DIPSETTING(    0x10, "Short" );
+		PORT_DIPSETTING(    0x18, "Normal" );
+		PORT_DIPSETTING(    0x08, "Long" );
+		PORT_DIPNAME( 0x20, 0x20, DEF_STR( "Demo_Sounds") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "Off") );
+		PORT_DIPSETTING(    0x20, DEF_STR( "On") );
+		PORT_DIPNAME( 0x40, 0x40, "1 Credit 2 Play" );
+		PORT_DIPSETTING(    0x40, DEF_STR( "Off") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
+		PORT_SERVICE( 0x80, IP_ACTIVE_LOW );
 	
-	INPUT_PORTS_END
+	INPUT_PORTS_END(); }}; 
 	
 	
 	/***************************************************************************
@@ -1450,7 +1450,7 @@ public class megasys1
 		ROM_LOAD( "prom",         0x0000, 0x0200, 0x00000000 );
 	ROM_END(); }}; 
 	
-	INPUT_PORTS_START( chimerab )
+	static InputPortPtr input_ports_chimerab = new InputPortPtr(){ public void handler() { 
 	
 		COINS
 	//	fire	jump	unused?(shown in service mode, but not in instructions)
@@ -1459,31 +1459,31 @@ public class megasys1
 		JOY_2BUTTONS(IPF_PLAYER2)
 	
 		PORT_START			/* DSW A */
-		PORT_DIPNAME( 0x01, 0x01, DEF_STR( Flip_Screen ) )
-		PORT_DIPSETTING(    0x01, DEF_STR( Off ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( On ) )
-		PORT_DIPNAME( 0x02, 0x00, DEF_STR( Demo_Sounds ) )
-		PORT_DIPSETTING(    0x02, DEF_STR( Off ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( On ) )
-		PORT_DIPNAME( 0x04, 0x04, "Allow Continue" )
-		PORT_DIPSETTING(    0x00, DEF_STR( Off ) )
-		PORT_DIPSETTING(    0x04, DEF_STR( On ) )
-		PORT_DIPNAME( 0x18, 0x18, DEF_STR( Difficulty ) )
-		PORT_DIPSETTING(    0x10, "Easy" )
-		PORT_DIPSETTING(    0x18, "Normal" )
-		PORT_DIPSETTING(    0x08, "Hard" )
-		PORT_DIPSETTING(    0x00, "Hardest" )
-		PORT_DIPNAME( 0x60, 0x20, DEF_STR( Lives ) )
-		PORT_DIPSETTING(    0x40, "1" )
-		PORT_DIPSETTING(    0x60, "2" )
-		PORT_DIPSETTING(    0x20, "3" )
-		PORT_DIPSETTING(    0x00, "4" )
-		PORT_SERVICE( 0x80, IP_ACTIVE_LOW )
+		PORT_DIPNAME( 0x01, 0x01, DEF_STR( "Flip_Screen") );
+		PORT_DIPSETTING(    0x01, DEF_STR( "Off") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
+		PORT_DIPNAME( 0x02, 0x00, DEF_STR( "Demo_Sounds") );
+		PORT_DIPSETTING(    0x02, DEF_STR( "Off") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
+		PORT_DIPNAME( 0x04, 0x04, "Allow Continue" );
+		PORT_DIPSETTING(    0x00, DEF_STR( "Off") );
+		PORT_DIPSETTING(    0x04, DEF_STR( "On") );
+		PORT_DIPNAME( 0x18, 0x18, DEF_STR( "Difficulty") );
+		PORT_DIPSETTING(    0x10, "Easy" );
+		PORT_DIPSETTING(    0x18, "Normal" );
+		PORT_DIPSETTING(    0x08, "Hard" );
+		PORT_DIPSETTING(    0x00, "Hardest" );
+		PORT_DIPNAME( 0x60, 0x20, DEF_STR( "Lives") );
+		PORT_DIPSETTING(    0x40, "1" );
+		PORT_DIPSETTING(    0x60, "2" );
+		PORT_DIPSETTING(    0x20, "3" );
+		PORT_DIPSETTING(    0x00, "4" );
+		PORT_SERVICE( 0x80, IP_ACTIVE_LOW );
 	
 		PORT_START			/* DSW B */
 		COINAGE_8BITS
 	
-	INPUT_PORTS_END
+	INPUT_PORTS_END(); }}; 
 	
 	
 	
@@ -1549,7 +1549,7 @@ public class megasys1
 		ROM_LOAD( "pr-91028.12",  0x0000, 0x0200, 0xcfe90082 );
 	ROM_END(); }}; 
 	
-	INPUT_PORTS_START( cybattlr )
+	static InputPortPtr input_ports_cybattlr = new InputPortPtr(){ public void handler() { 
 	
 		COINS
 	//	fire	sword
@@ -1558,56 +1558,56 @@ public class megasys1
 		JOY_2BUTTONS(IPF_PLAYER2)
 	
 		PORT_START			/* IN - DSW 1 - 1fd2d9.b, !1fd009.b */
-		PORT_DIPNAME( 0x07, 0x07, DEF_STR( Coin_A ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( 4C_1C ) )
-		PORT_DIPSETTING(    0x01, DEF_STR( 3C_1C ) )
-		PORT_DIPSETTING(    0x03, DEF_STR( 2C_1C ) )
-		PORT_DIPSETTING(    0x07, DEF_STR( 1C_1C ) )
-		PORT_DIPSETTING(    0x02, DEF_STR( 2C_3C ) )
-		PORT_DIPSETTING(    0x06, DEF_STR( 1C_2C ) )
-		PORT_DIPSETTING(    0x05, DEF_STR( 1C_3C ) )
-		PORT_DIPSETTING(    0x04, DEF_STR( 1C_4C ) )
-		PORT_DIPNAME( 0x38, 0x38, DEF_STR( Coin_B ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( 4C_1C ) )
-		PORT_DIPSETTING(    0x08, DEF_STR( 3C_1C ) )
-		PORT_DIPSETTING(    0x18, DEF_STR( 2C_1C ) )
-		PORT_DIPSETTING(    0x38, DEF_STR( 1C_1C ) )
-		PORT_DIPSETTING(    0x10, DEF_STR( 2C_3C ) )
-		PORT_DIPSETTING(    0x30, DEF_STR( 1C_2C ) )
-		PORT_DIPSETTING(    0x28, DEF_STR( 1C_3C ) )
-		PORT_DIPSETTING(    0x20, DEF_STR( 1C_4C ) )
-		PORT_DIPNAME( 0x40, 0x40, DEF_STR( Free_Play ) )
-		PORT_DIPSETTING(    0x40, DEF_STR( Off ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( On ) )
-		PORT_SERVICE( 0x80, IP_ACTIVE_LOW )
+		PORT_DIPNAME( 0x07, 0x07, DEF_STR( "Coin_A") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "4C_1C") );
+		PORT_DIPSETTING(    0x01, DEF_STR( "3C_1C") );
+		PORT_DIPSETTING(    0x03, DEF_STR( "2C_1C") );
+		PORT_DIPSETTING(    0x07, DEF_STR( "1C_1C") );
+		PORT_DIPSETTING(    0x02, DEF_STR( "2C_3C") );
+		PORT_DIPSETTING(    0x06, DEF_STR( "1C_2C") );
+		PORT_DIPSETTING(    0x05, DEF_STR( "1C_3C") );
+		PORT_DIPSETTING(    0x04, DEF_STR( "1C_4C") );
+		PORT_DIPNAME( 0x38, 0x38, DEF_STR( "Coin_B") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "4C_1C") );
+		PORT_DIPSETTING(    0x08, DEF_STR( "3C_1C") );
+		PORT_DIPSETTING(    0x18, DEF_STR( "2C_1C") );
+		PORT_DIPSETTING(    0x38, DEF_STR( "1C_1C") );
+		PORT_DIPSETTING(    0x10, DEF_STR( "2C_3C") );
+		PORT_DIPSETTING(    0x30, DEF_STR( "1C_2C") );
+		PORT_DIPSETTING(    0x28, DEF_STR( "1C_3C") );
+		PORT_DIPSETTING(    0x20, DEF_STR( "1C_4C") );
+		PORT_DIPNAME( 0x40, 0x40, DEF_STR( "Free_Play") );
+		PORT_DIPSETTING(    0x40, DEF_STR( "Off") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
+		PORT_SERVICE( 0x80, IP_ACTIVE_LOW );
 	
 		PORT_START			/* IN - DSW 2 - 1fd2d7.b, !1fd007.b */
-		PORT_DIPNAME( 0x01, 0x01, "Unknown 2-0" )
-		PORT_DIPSETTING(    0x01, DEF_STR( Off ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( On ) )
-		PORT_DIPNAME( 0x02, 0x02, "Unknown 2-1" )
-		PORT_DIPSETTING(    0x02, DEF_STR( Off ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( On ) )
-		PORT_DIPNAME( 0x04, 0x04, "Unknown 2-2" )	// 1 bit
-		PORT_DIPSETTING(    0x04, DEF_STR( Off ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( On ) )
-		PORT_DIPNAME( 0x08, 0x08, "Allow Continue" )
-		PORT_DIPSETTING(    0x00, DEF_STR( Off ) )
-		PORT_DIPSETTING(    0x08, DEF_STR( On ) )
-		PORT_DIPNAME( 0x10, 0x10, "Unknown 2-4" )
-		PORT_DIPSETTING(    0x10, DEF_STR( Off ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( On ) )
-		PORT_DIPNAME( 0x20, 0x20, DEF_STR( Demo_Sounds ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( Off ) )
-		PORT_DIPSETTING(    0x20, DEF_STR( On ) )
-		PORT_DIPNAME( 0x40, 0x40, "Unknown 2-6" )	// 1 bit
-		PORT_DIPSETTING(    0x40, DEF_STR( Off ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( On ) )
-		PORT_DIPNAME( 0x80, 0x80, DEF_STR( Flip_Screen ) )
-		PORT_DIPSETTING(    0x80, DEF_STR( Off ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( On ) )
+		PORT_DIPNAME( 0x01, 0x01, "Unknown 2-0" );
+		PORT_DIPSETTING(    0x01, DEF_STR( "Off") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
+		PORT_DIPNAME( 0x02, 0x02, "Unknown 2-1" );
+		PORT_DIPSETTING(    0x02, DEF_STR( "Off") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
+		PORT_DIPNAME( 0x04, 0x04, "Unknown 2-2" );// 1 bit
+		PORT_DIPSETTING(    0x04, DEF_STR( "Off") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
+		PORT_DIPNAME( 0x08, 0x08, "Allow Continue" );
+		PORT_DIPSETTING(    0x00, DEF_STR( "Off") );
+		PORT_DIPSETTING(    0x08, DEF_STR( "On") );
+		PORT_DIPNAME( 0x10, 0x10, "Unknown 2-4" );
+		PORT_DIPSETTING(    0x10, DEF_STR( "Off") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
+		PORT_DIPNAME( 0x20, 0x20, DEF_STR( "Demo_Sounds") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "Off") );
+		PORT_DIPSETTING(    0x20, DEF_STR( "On") );
+		PORT_DIPNAME( 0x40, 0x40, "Unknown 2-6" );// 1 bit
+		PORT_DIPSETTING(    0x40, DEF_STR( "Off") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
+		PORT_DIPNAME( 0x80, 0x80, DEF_STR( "Flip_Screen") );
+		PORT_DIPSETTING(    0x80, DEF_STR( "Off") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 	
-	INPUT_PORTS_END
+	INPUT_PORTS_END(); }}; 
 	
 	
 	
@@ -1662,7 +1662,7 @@ public class megasys1
 		ROM_LOAD( "prom.14m",    0x0000, 0x0200, 0x1d877538 );
 	ROM_END(); }}; 
 	
-	INPUT_PORTS_START( edf )
+	static InputPortPtr input_ports_edf = new InputPortPtr(){ public void handler() { 
 		COINS
 	//	fire	unfold_weapons
 		JOY_2BUTTONS(IPF_PLAYER1)
@@ -1671,37 +1671,37 @@ public class megasys1
 	
 		PORT_START			/* IN4 */
 		COINAGE_6BITS
-		PORT_DIPNAME( 0x40, 0x40, DEF_STR( Demo_Sounds ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( Off ) )
-		PORT_DIPSETTING(    0x40, DEF_STR( On ) )
-		PORT_SERVICE( 0x80, IP_ACTIVE_LOW )
+		PORT_DIPNAME( 0x40, 0x40, DEF_STR( "Demo_Sounds") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "Off") );
+		PORT_DIPSETTING(    0x40, DEF_STR( "On") );
+		PORT_SERVICE( 0x80, IP_ACTIVE_LOW );
 	
 		PORT_START			/* IN5 0x66007.b */
-		PORT_DIPNAME( 0x07, 0x07, "DSW-B bits 2-0" )
-		PORT_DIPSETTING(    0x00, "0" )
-		PORT_DIPSETTING(    0x01, "1" )
-		PORT_DIPSETTING(    0x02, "2" )
-		PORT_DIPSETTING(    0x03, "3" )
-		PORT_DIPSETTING(    0x04, "4" )
-		PORT_DIPSETTING(    0x05, "5" )
-		PORT_DIPSETTING(    0x06, "6" )
-		PORT_DIPSETTING(    0x07, "7" )
-		PORT_DIPNAME( 0x08, 0x08, DEF_STR( Lives ) )
-		PORT_DIPSETTING(    0x08, "3" )
-		PORT_DIPSETTING(    0x00, "4" )
-		PORT_DIPNAME( 0x30, 0x30, DEF_STR( Difficulty ) )
-		PORT_DIPSETTING(    0x00, "0" )
-		PORT_DIPSETTING(    0x30, "1" )
-		PORT_DIPSETTING(    0x10, "2" )
-		PORT_DIPSETTING(    0x20, "3" )
-		PORT_DIPNAME( 0x40, 0x40, "DSW-B bit 6" )
-		PORT_DIPSETTING(    0x40, DEF_STR( Off ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( On ) )
-		PORT_DIPNAME( 0x80, 0x80, DEF_STR( Flip_Screen ) )
-		PORT_DIPSETTING(    0x80, DEF_STR( Off ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( On ) )
+		PORT_DIPNAME( 0x07, 0x07, "DSW-B bits 2-0" );
+		PORT_DIPSETTING(    0x00, "0" );
+		PORT_DIPSETTING(    0x01, "1" );
+		PORT_DIPSETTING(    0x02, "2" );
+		PORT_DIPSETTING(    0x03, "3" );
+		PORT_DIPSETTING(    0x04, "4" );
+		PORT_DIPSETTING(    0x05, "5" );
+		PORT_DIPSETTING(    0x06, "6" );
+		PORT_DIPSETTING(    0x07, "7" );
+		PORT_DIPNAME( 0x08, 0x08, DEF_STR( "Lives") );
+		PORT_DIPSETTING(    0x08, "3" );
+		PORT_DIPSETTING(    0x00, "4" );
+		PORT_DIPNAME( 0x30, 0x30, DEF_STR( "Difficulty") );
+		PORT_DIPSETTING(    0x00, "0" );
+		PORT_DIPSETTING(    0x30, "1" );
+		PORT_DIPSETTING(    0x10, "2" );
+		PORT_DIPSETTING(    0x20, "3" );
+		PORT_DIPNAME( 0x40, 0x40, "DSW-B bit 6" );
+		PORT_DIPSETTING(    0x40, DEF_STR( "Off") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
+		PORT_DIPNAME( 0x80, 0x80, DEF_STR( "Flip_Screen") );
+		PORT_DIPSETTING(    0x80, DEF_STR( "Off") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 	
-	INPUT_PORTS_END
+	INPUT_PORTS_END(); }}; 
 	
 	
 	
@@ -1752,7 +1752,7 @@ public class megasys1
 	ROM_END(); }}; 
 	
 	
-	INPUT_PORTS_START( hachoo )
+	static InputPortPtr input_ports_hachoo = new InputPortPtr(){ public void handler() { 
 		COINS						/* IN0 0x80001.b */
 	//	fire	jump
 		JOY_2BUTTONS(IPF_PLAYER1)	/* IN1 0x80003.b */
@@ -1761,39 +1761,39 @@ public class megasys1
 	
 		PORT_START			/* IN4 0x80006.b */
 		COINAGE_6BITS
-		PORT_DIPNAME( 0x40, 0x40, DEF_STR( Demo_Sounds ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( Off ) )
-		PORT_DIPSETTING(    0x40, DEF_STR( On ) )
-		PORT_DIPNAME( 0x80, 0x80, "Unknown 1-0" )	// unused?
-		PORT_DIPSETTING(    0x80, DEF_STR( Off ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( On ) )
+		PORT_DIPNAME( 0x40, 0x40, DEF_STR( "Demo_Sounds") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "Off") );
+		PORT_DIPSETTING(    0x40, DEF_STR( "On") );
+		PORT_DIPNAME( 0x80, 0x80, "Unknown 1-0" );// unused?
+		PORT_DIPSETTING(    0x80, DEF_STR( "Off") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 	
 		PORT_START			/* IN5 0x80007.b */
-		PORT_DIPNAME( 0x01, 0x01, "Unknown 2-0" )	// unused?
-		PORT_DIPSETTING(    0x01, DEF_STR( Off ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( On ) )
-		PORT_DIPNAME( 0x02, 0x02, "Unknown 2-1" )	// unused?
-		PORT_DIPSETTING(    0x02, DEF_STR( Off ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( On ) )
-		PORT_DIPNAME( 0x04, 0x04, "Unknown 2-2" )	// unused?
-		PORT_DIPSETTING(    0x04, DEF_STR( Off ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( On ) )
-		PORT_DIPNAME( 0x08, 0x08, "Unknown 2-3" )	// unused?
-		PORT_DIPSETTING(    0x08, DEF_STR( Off ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( On ) )
-		PORT_DIPNAME( 0x30, 0x30, "?Difficulty?" )	// 4 & 5
-		PORT_DIPSETTING(    0x30, "3" )
-		PORT_DIPSETTING(    0x20, "2" )
-		PORT_DIPSETTING(    0x10, "1" )
-		PORT_DIPSETTING(    0x00, "0" )
-		PORT_DIPNAME( 0x40, 0x40, "Unknown 2-6" )	// unused?
-		PORT_DIPSETTING(    0x40, DEF_STR( Off ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( On ) )
-		PORT_DIPNAME( 0x80, 0x80, DEF_STR( Flip_Screen ) )
-		PORT_DIPSETTING(    0x80, DEF_STR( Off ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( On ) )
+		PORT_DIPNAME( 0x01, 0x01, "Unknown 2-0" );// unused?
+		PORT_DIPSETTING(    0x01, DEF_STR( "Off") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
+		PORT_DIPNAME( 0x02, 0x02, "Unknown 2-1" );// unused?
+		PORT_DIPSETTING(    0x02, DEF_STR( "Off") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
+		PORT_DIPNAME( 0x04, 0x04, "Unknown 2-2" );// unused?
+		PORT_DIPSETTING(    0x04, DEF_STR( "Off") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
+		PORT_DIPNAME( 0x08, 0x08, "Unknown 2-3" );// unused?
+		PORT_DIPSETTING(    0x08, DEF_STR( "Off") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
+		PORT_DIPNAME( 0x30, 0x30, "?Difficulty?" );// 4 & 5
+		PORT_DIPSETTING(    0x30, "3" );
+		PORT_DIPSETTING(    0x20, "2" );
+		PORT_DIPSETTING(    0x10, "1" );
+		PORT_DIPSETTING(    0x00, "0" );
+		PORT_DIPNAME( 0x40, 0x40, "Unknown 2-6" );// unused?
+		PORT_DIPSETTING(    0x40, DEF_STR( "Off") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
+		PORT_DIPNAME( 0x80, 0x80, DEF_STR( "Flip_Screen") );
+		PORT_DIPSETTING(    0x80, DEF_STR( "Off") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 	
-	INPUT_PORTS_END
+	INPUT_PORTS_END(); }}; 
 	
 	
 	
@@ -1847,7 +1847,7 @@ public class megasys1
 	ROM_END(); }}; 
 	
 	
-	INPUT_PORTS_START( iganinju )
+	static InputPortPtr input_ports_iganinju = new InputPortPtr(){ public void handler() { 
 	
 		COINS						/* IN0 0x80001.b */
 	//	fire	jump
@@ -1857,38 +1857,38 @@ public class megasys1
 	
 		PORT_START 			/* IN4 0x80006.b */
 		COINAGE_6BITS
-		PORT_DIPNAME( 0x40, 0x00, DEF_STR( Demo_Sounds ) )
-		PORT_DIPSETTING(    0x40, DEF_STR( Off ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( On ) )
-		PORT_BITX(    0x80, 0x80, IPT_DIPSWITCH_NAME | IPF_CHEAT, "Freeze Screen", IP_KEY_NONE, IP_JOY_NONE )
-		PORT_DIPSETTING(    0x80, DEF_STR( Off ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( On ) )
+		PORT_DIPNAME( 0x40, 0x00, DEF_STR( "Demo_Sounds") );
+		PORT_DIPSETTING(    0x40, DEF_STR( "Off") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
+		PORT_BITX(    0x80, 0x80, IPT_DIPSWITCH_NAME | IPF_CHEAT, "Freeze Screen", IP_KEY_NONE, IP_JOY_NONE );
+		PORT_DIPSETTING(    0x80, DEF_STR( "Off") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 	
 		PORT_START			/* IN5 - 0x80007.b */
-		PORT_DIPNAME( 0x03, 0x03, DEF_STR( Lives ) )
-		PORT_DIPSETTING(    0x03, "2" )
-		PORT_DIPSETTING(    0x01, "3" )
-		PORT_DIPSETTING(    0x02, "4" )
-		PORT_BITX( 0,       0x00, IPT_DIPSWITCH_SETTING | IPF_CHEAT, "Inifinite", IP_KEY_NONE, IP_JOY_NONE )
-		PORT_DIPNAME( 0x04, 0x04, DEF_STR( Bonus_Life ) )
-		PORT_DIPSETTING(    0x04, "50k" )
-		PORT_DIPSETTING(    0x00, "200k" )
-		PORT_DIPNAME( 0x08, 0x08, "Allow Continue" )
-		PORT_DIPSETTING(    0x00, DEF_STR( Off ) )
-		PORT_DIPSETTING(    0x08, DEF_STR( On ) )
-		PORT_DIPNAME( 0x30, 0x30, "?Difficulty?" )
-		PORT_DIPSETTING(    0x30, "3" )
-		PORT_DIPSETTING(    0x20, "2" )
-		PORT_DIPSETTING(    0x10, "1" )
-		PORT_DIPSETTING(    0x00, "0" )
-		PORT_DIPNAME( 0x40, 0x00, DEF_STR( Cabinet ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( Upright ) )
-		PORT_DIPSETTING(    0x40, DEF_STR( Cocktail ) )
-		PORT_DIPNAME( 0x80, 0x80, DEF_STR( Flip_Screen ) )
-		PORT_DIPSETTING(    0x80, DEF_STR( Off ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( On ) )
+		PORT_DIPNAME( 0x03, 0x03, DEF_STR( "Lives") );
+		PORT_DIPSETTING(    0x03, "2" );
+		PORT_DIPSETTING(    0x01, "3" );
+		PORT_DIPSETTING(    0x02, "4" );
+		PORT_BITX( 0,       0x00, IPT_DIPSWITCH_SETTING | IPF_CHEAT, "Inifinite", IP_KEY_NONE, IP_JOY_NONE );
+		PORT_DIPNAME( 0x04, 0x04, DEF_STR( "Bonus_Life") );
+		PORT_DIPSETTING(    0x04, "50k" );
+		PORT_DIPSETTING(    0x00, "200k" );
+		PORT_DIPNAME( 0x08, 0x08, "Allow Continue" );
+		PORT_DIPSETTING(    0x00, DEF_STR( "Off") );
+		PORT_DIPSETTING(    0x08, DEF_STR( "On") );
+		PORT_DIPNAME( 0x30, 0x30, "?Difficulty?" );
+		PORT_DIPSETTING(    0x30, "3" );
+		PORT_DIPSETTING(    0x20, "2" );
+		PORT_DIPSETTING(    0x10, "1" );
+		PORT_DIPSETTING(    0x00, "0" );
+		PORT_DIPNAME( 0x40, 0x00, DEF_STR( "Cabinet") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "Upright") );
+		PORT_DIPSETTING(    0x40, DEF_STR( "Cocktail") );
+		PORT_DIPNAME( 0x80, 0x80, DEF_STR( "Flip_Screen") );
+		PORT_DIPSETTING(    0x80, DEF_STR( "Off") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 	
-	INPUT_PORTS_END
+	INPUT_PORTS_END(); }}; 
 	
 	
 	
@@ -1949,7 +1949,7 @@ public class megasys1
 	ROM_END(); }}; 
 	
 	
-	INPUT_PORTS_START( jitsupro )
+	static InputPortPtr input_ports_jitsupro = new InputPortPtr(){ public void handler() { 
 	
 		COINS						/* IN0 0x80001.b */
 		//	shoot	change view		change bat
@@ -1959,45 +1959,45 @@ public class megasys1
 	
 		PORT_START			/* IN4 0x80006.b */
 		COINAGE_6BITS
-		PORT_DIPNAME( 0x40, 0x00, DEF_STR( Demo_Sounds ) )
-		PORT_DIPSETTING(    0x40, DEF_STR( Off ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( On ) )
-		PORT_DIPNAME( 0x80, 0x80, "Unknown 1-7" )
-		PORT_DIPSETTING(    0x80, DEF_STR( Off ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( On ) )
+		PORT_DIPNAME( 0x40, 0x00, DEF_STR( "Demo_Sounds") );
+		PORT_DIPSETTING(    0x40, DEF_STR( "Off") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
+		PORT_DIPNAME( 0x80, 0x80, "Unknown 1-7" );
+		PORT_DIPSETTING(    0x80, DEF_STR( "Off") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 	
 		PORT_START			/* IN5 0x80007.b */
-		PORT_DIPNAME( 0x01, 0x01, "Unknown 2-0*" )
-		PORT_DIPSETTING(    0x01, DEF_STR( Off ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( On ) )
-		PORT_DIPNAME( 0x02, 0x02, "Unknown 2-1*" )
-		PORT_DIPSETTING(    0x02, DEF_STR( Off ) )	// $200-140
-		PORT_DIPSETTING(    0x00, DEF_STR( On ) )	// $400-140
-		PORT_DIPNAME( 0x3c, 0x3c, "Unknown 2-2345*" )
-		PORT_DIPSETTING(    0x3c, "0"  )
-		PORT_DIPSETTING(    0x38, "1"  )
-		PORT_DIPSETTING(    0x34, "2"  )
-		PORT_DIPSETTING(    0x30, "3"  )
-		PORT_DIPSETTING(    0x2c, "4"  )
-		PORT_DIPSETTING(    0x28, "5"  )
-		PORT_DIPSETTING(    0x24, "6"  )
-		PORT_DIPSETTING(    0x20, "7"  )
-		PORT_DIPSETTING(    0x1c, "8"  )
-		PORT_DIPSETTING(    0x18, "9"  )
-		PORT_DIPSETTING(    0x14, "10" )
-		PORT_DIPSETTING(    0x10, "11" )
-		PORT_DIPSETTING(    0x0c, "12" )
-		PORT_DIPSETTING(    0x08, "13" )
-		PORT_DIPSETTING(    0x04, "14" )
-		PORT_DIPSETTING(    0x00, "15" )
-		PORT_DIPNAME( 0x40, 0x40, "Unknown 2-6*" )
-		PORT_DIPSETTING(    0x40, DEF_STR( Off ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( On ) )
-		PORT_DIPNAME( 0x80, 0x80, DEF_STR( Flip_Screen ) )
-		PORT_DIPSETTING(    0x80, DEF_STR( Off ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( On ) )
+		PORT_DIPNAME( 0x01, 0x01, "Unknown 2-0*" );
+		PORT_DIPSETTING(    0x01, DEF_STR( "Off") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
+		PORT_DIPNAME( 0x02, 0x02, "Unknown 2-1*" );
+		PORT_DIPSETTING(    0x02, DEF_STR( "Off") );	// $200-140
+		PORT_DIPSETTING(    0x00, DEF_STR( "On") );	// $400-140
+		PORT_DIPNAME( 0x3c, 0x3c, "Unknown 2-2345*" );
+		PORT_DIPSETTING(    0x3c, "0"  );
+		PORT_DIPSETTING(    0x38, "1"  );
+		PORT_DIPSETTING(    0x34, "2"  );
+		PORT_DIPSETTING(    0x30, "3"  );
+		PORT_DIPSETTING(    0x2c, "4"  );
+		PORT_DIPSETTING(    0x28, "5"  );
+		PORT_DIPSETTING(    0x24, "6"  );
+		PORT_DIPSETTING(    0x20, "7"  );
+		PORT_DIPSETTING(    0x1c, "8"  );
+		PORT_DIPSETTING(    0x18, "9"  );
+		PORT_DIPSETTING(    0x14, "10" );
+		PORT_DIPSETTING(    0x10, "11" );
+		PORT_DIPSETTING(    0x0c, "12" );
+		PORT_DIPSETTING(    0x08, "13" );
+		PORT_DIPSETTING(    0x04, "14" );
+		PORT_DIPSETTING(    0x00, "15" );
+		PORT_DIPNAME( 0x40, 0x40, "Unknown 2-6*" );
+		PORT_DIPSETTING(    0x40, DEF_STR( "Off") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
+		PORT_DIPNAME( 0x80, 0x80, DEF_STR( "Flip_Screen") );
+		PORT_DIPSETTING(    0x80, DEF_STR( "Off") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 	
-	INPUT_PORTS_END
+	INPUT_PORTS_END(); }}; 
 	
 	
 	
@@ -2065,7 +2065,7 @@ public class megasys1
 		ROM_LOAD( "prom",    0x0000, 0x0200, 0x00000000 );
 	ROM_END(); }}; 
 	
-	INPUT_PORTS_START( kickoff )
+	static InputPortPtr input_ports_kickoff = new InputPortPtr(){ public void handler() { 
 		COINS						/* IN0 0x80001.b ->  !f0008/a.w  */
 	//	shoot	pass
 		JOY_2BUTTONS(IPF_PLAYER1)	/* IN1 0x80003.b ->  !f000c/e.w  */
@@ -2073,56 +2073,56 @@ public class megasys1
 		JOY_2BUTTONS(IPF_PLAYER2)	/* IN3 0x80005.b /               */
 	
 		PORT_START			/* IN4 0x80006.b */
-		PORT_DIPNAME( 0x07, 0x07, DEF_STR( Coin_A ) )
-		PORT_DIPSETTING(    0x01, DEF_STR( 4C_1C ) )
-		PORT_DIPSETTING(    0x02, DEF_STR( 3C_1C ) )
-		PORT_DIPSETTING(    0x03, DEF_STR( 2C_1C ) )
-		PORT_DIPSETTING(    0x07, DEF_STR( 1C_1C ) )
-		PORT_DIPSETTING(    0x06, DEF_STR( 1C_2C ) )
-		PORT_DIPSETTING(    0x05, DEF_STR( 1C_3C ) )
-		PORT_DIPSETTING(    0x04, DEF_STR( 1C_4C ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( Free_Play ) )
-		PORT_DIPNAME( 0x08, 0x08, "Unknown 1-3" )	// unused?
-		PORT_DIPSETTING(    0x08, DEF_STR( Off ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( On ) )
-		PORT_DIPNAME( 0x10, 0x10, "Unknown 1-4" )	// unused?
-		PORT_DIPSETTING(    0x10, DEF_STR( Off ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( On ) )
-		PORT_BITX(    0x20, 0x20, IPT_DIPSWITCH_NAME | IPF_CHEAT, "Freeze Screen", IP_KEY_NONE, IP_JOY_NONE )
-		PORT_DIPSETTING(    0x20, DEF_STR( Off ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( On ) )
-		PORT_DIPNAME( 0x40, 0x00, DEF_STR( Demo_Sounds ) )
-		PORT_DIPSETTING(    0x40, DEF_STR( Off ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( On ) )
-		PORT_DIPNAME( 0x80, 0x80, "Text" )
-		PORT_DIPSETTING(    0x80, "Japanese" )
-		PORT_DIPSETTING(    0x00, "English" )	// show "Japan Only" warning
+		PORT_DIPNAME( 0x07, 0x07, DEF_STR( "Coin_A") );
+		PORT_DIPSETTING(    0x01, DEF_STR( "4C_1C") );
+		PORT_DIPSETTING(    0x02, DEF_STR( "3C_1C") );
+		PORT_DIPSETTING(    0x03, DEF_STR( "2C_1C") );
+		PORT_DIPSETTING(    0x07, DEF_STR( "1C_1C") );
+		PORT_DIPSETTING(    0x06, DEF_STR( "1C_2C") );
+		PORT_DIPSETTING(    0x05, DEF_STR( "1C_3C") );
+		PORT_DIPSETTING(    0x04, DEF_STR( "1C_4C") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "Free_Play") );
+		PORT_DIPNAME( 0x08, 0x08, "Unknown 1-3" );// unused?
+		PORT_DIPSETTING(    0x08, DEF_STR( "Off") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
+		PORT_DIPNAME( 0x10, 0x10, "Unknown 1-4" );// unused?
+		PORT_DIPSETTING(    0x10, DEF_STR( "Off") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
+		PORT_BITX(    0x20, 0x20, IPT_DIPSWITCH_NAME | IPF_CHEAT, "Freeze Screen", IP_KEY_NONE, IP_JOY_NONE );
+		PORT_DIPSETTING(    0x20, DEF_STR( "Off") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
+		PORT_DIPNAME( 0x40, 0x00, DEF_STR( "Demo_Sounds") );
+		PORT_DIPSETTING(    0x40, DEF_STR( "Off") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
+		PORT_DIPNAME( 0x80, 0x80, "Text" );
+		PORT_DIPSETTING(    0x80, "Japanese" );
+		PORT_DIPSETTING(    0x00, "English" );// show "Japan Only" warning
 	
 		PORT_START			/* IN5 0x80007.b */
-		PORT_DIPNAME( 0x03, 0x03, "Time" )	// -> !f0082.w
-		PORT_DIPSETTING(    0x03, "3'" )
-		PORT_DIPSETTING(    0x02, "4'" )
-		PORT_DIPSETTING(    0x01, "5'" )
-		PORT_DIPSETTING(    0x00, "6'" )
-		PORT_DIPNAME( 0x04, 0x04, "Unknown 2-2" )	// unused?
-		PORT_DIPSETTING(    0x04, DEF_STR( Off ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( On ) )
-		PORT_DIPNAME( 0x08, 0x08, "Unknown 2-3" )	// unused?
-		PORT_DIPSETTING(    0x08, DEF_STR( Off ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( On ) )
-		PORT_DIPNAME( 0x30, 0x30, "?Difficulty?" )	// -> !f0084.w
-		PORT_DIPSETTING(    0x30, "0" )
-		PORT_DIPSETTING(    0x20, "1" )
-		PORT_DIPSETTING(    0x10, "2" )
-		PORT_DIPSETTING(    0x00, "3" )
-		PORT_DIPNAME( 0x40, 0x00, "Controls" )
-		PORT_DIPSETTING(    0x40, DEF_STR( Unknown ) )
-		PORT_DIPSETTING(    0x00, "Joystick" )
-		PORT_DIPNAME( 0x80, 0x80, DEF_STR( Flip_Screen ) )
-		PORT_DIPSETTING(    0x80, DEF_STR( Off ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( On ) )
+		PORT_DIPNAME( 0x03, 0x03, "Time" );// -> !f0082.w
+		PORT_DIPSETTING(    0x03, "3'" );
+		PORT_DIPSETTING(    0x02, "4'" );
+		PORT_DIPSETTING(    0x01, "5'" );
+		PORT_DIPSETTING(    0x00, "6'" );
+		PORT_DIPNAME( 0x04, 0x04, "Unknown 2-2" );// unused?
+		PORT_DIPSETTING(    0x04, DEF_STR( "Off") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
+		PORT_DIPNAME( 0x08, 0x08, "Unknown 2-3" );// unused?
+		PORT_DIPSETTING(    0x08, DEF_STR( "Off") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
+		PORT_DIPNAME( 0x30, 0x30, "?Difficulty?" );// -> !f0084.w
+		PORT_DIPSETTING(    0x30, "0" );
+		PORT_DIPSETTING(    0x20, "1" );
+		PORT_DIPSETTING(    0x10, "2" );
+		PORT_DIPSETTING(    0x00, "3" );
+		PORT_DIPNAME( 0x40, 0x00, "Controls" );
+		PORT_DIPSETTING(    0x40, DEF_STR( "Unknown") );
+		PORT_DIPSETTING(    0x00, "Joystick" );
+		PORT_DIPNAME( 0x80, 0x80, DEF_STR( "Flip_Screen") );
+		PORT_DIPSETTING(    0x80, DEF_STR( "Off") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 	
-	INPUT_PORTS_END
+	INPUT_PORTS_END(); }}; 
 	
 	
 	/***************************************************************************
@@ -2175,7 +2175,7 @@ public class megasys1
 		ROM_LOAD( "makaiden.10", 0x0100, 0x0100, 0xe6709c51 );
 	ROM_END(); }}; 
 	
-	INPUT_PORTS_START( lomakai )
+	static InputPortPtr input_ports_lomakai = new InputPortPtr(){ public void handler() { 
 		COINS						/* IN0 0x80001.b */
 	//	fire	jump
 		JOY_2BUTTONS(IPF_PLAYER1)	/* IN1 0x80003.b */
@@ -2184,38 +2184,38 @@ public class megasys1
 	
 		PORT_START			/* IN4 0x80006.b */
 		COINAGE_6BITS_2
-		PORT_DIPNAME( 0x40, 0x00, DEF_STR( Demo_Sounds ) )
-		PORT_DIPSETTING(    0x40, DEF_STR( Off ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( On ) )
-		PORT_BITX(    0x80, 0x80, IPT_DIPSWITCH_NAME | IPF_CHEAT, "Invulnerability", IP_KEY_NONE, IP_JOY_NONE )
-		PORT_DIPSETTING(    0x80, DEF_STR( Off ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( On ) )
+		PORT_DIPNAME( 0x40, 0x00, DEF_STR( "Demo_Sounds") );
+		PORT_DIPSETTING(    0x40, DEF_STR( "Off") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
+		PORT_BITX(    0x80, 0x80, IPT_DIPSWITCH_NAME | IPF_CHEAT, "Invulnerability", IP_KEY_NONE, IP_JOY_NONE );
+		PORT_DIPSETTING(    0x80, DEF_STR( "Off") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 	
 		PORT_START			/* IN5 0x80007.b */
-		PORT_DIPNAME( 0x03, 0x03, DEF_STR( Lives ) )
-		PORT_DIPSETTING(    0x00, "2" )
-		PORT_DIPSETTING(    0x03, "3" )
-		PORT_DIPSETTING(    0x02, "4" )
-		PORT_DIPSETTING(    0x01, "5" )
-		PORT_DIPNAME( 0x04, 0x04, DEF_STR( Unknown ) )
-		PORT_DIPSETTING(    0x04, DEF_STR( Off ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( On ) )
-		PORT_DIPNAME( 0x08, 0x08, DEF_STR( Unknown ) )
-		PORT_DIPSETTING(    0x08, DEF_STR( Off ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( On ) )
-		PORT_DIPNAME( 0x30, 0x30, "?Difficulty?" )
-		PORT_DIPSETTING(    0x00, "Easy" )
-		PORT_DIPSETTING(    0x30, "Normal" )
-		PORT_DIPSETTING(    0x20, "Hard" )
-		PORT_DIPSETTING(    0x10, "Hardest" )
-		PORT_DIPNAME( 0x40, 0x00, DEF_STR( Cabinet ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( Upright ) )
-		PORT_DIPSETTING(    0x40, DEF_STR( Cocktail ) )
-		PORT_DIPNAME( 0x80, 0x80, DEF_STR( Flip_Screen ) )
-		PORT_DIPSETTING(    0x80, DEF_STR( Off ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( On ) )
+		PORT_DIPNAME( 0x03, 0x03, DEF_STR( "Lives") );
+		PORT_DIPSETTING(    0x00, "2" );
+		PORT_DIPSETTING(    0x03, "3" );
+		PORT_DIPSETTING(    0x02, "4" );
+		PORT_DIPSETTING(    0x01, "5" );
+		PORT_DIPNAME( 0x04, 0x04, DEF_STR( "Unknown") );
+		PORT_DIPSETTING(    0x04, DEF_STR( "Off") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
+		PORT_DIPNAME( 0x08, 0x08, DEF_STR( "Unknown") );
+		PORT_DIPSETTING(    0x08, DEF_STR( "Off") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
+		PORT_DIPNAME( 0x30, 0x30, "?Difficulty?" );
+		PORT_DIPSETTING(    0x00, "Easy" );
+		PORT_DIPSETTING(    0x30, "Normal" );
+		PORT_DIPSETTING(    0x20, "Hard" );
+		PORT_DIPSETTING(    0x10, "Hardest" );
+		PORT_DIPNAME( 0x40, 0x00, DEF_STR( "Cabinet") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "Upright") );
+		PORT_DIPSETTING(    0x40, DEF_STR( "Cocktail") );
+		PORT_DIPNAME( 0x80, 0x80, DEF_STR( "Flip_Screen") );
+		PORT_DIPSETTING(    0x80, DEF_STR( "Off") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 	
-	INPUT_PORTS_END
+	INPUT_PORTS_END(); }}; 
 	
 	
 	/***************************************************************************
@@ -2354,7 +2354,7 @@ public class megasys1
 		ROM_LOAD( "prom.14m",    0x0000, 0x0200, 0x1d877538 );
 	ROM_END(); }}; 
 	
-	INPUT_PORTS_START( p47 )
+	static InputPortPtr input_ports_p47 = new InputPortPtr(){ public void handler() { 
 	
 		COINS						/* IN0 0x80001.b */
 	//	fire	bomb
@@ -2364,38 +2364,38 @@ public class megasys1
 	
 		PORT_START			/* IN4 0x80006.b */
 		COINAGE_6BITS_2
-		PORT_DIPNAME( 0x40, 0x40, DEF_STR( Demo_Sounds ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( Off ) )
-		PORT_DIPSETTING(    0x40, DEF_STR( On ) )
-		PORT_BITX(    0x80, 0x80, IPT_DIPSWITCH_NAME | IPF_CHEAT, "Invulnerability", IP_KEY_NONE, IP_JOY_NONE )
-		PORT_DIPSETTING(    0x80, DEF_STR( Off ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( On ) )
+		PORT_DIPNAME( 0x40, 0x40, DEF_STR( "Demo_Sounds") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "Off") );
+		PORT_DIPSETTING(    0x40, DEF_STR( "On") );
+		PORT_BITX(    0x80, 0x80, IPT_DIPSWITCH_NAME | IPF_CHEAT, "Invulnerability", IP_KEY_NONE, IP_JOY_NONE );
+		PORT_DIPSETTING(    0x80, DEF_STR( "Off") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 	
 		PORT_START			/* IN5 0x80007.b */
-		PORT_DIPNAME( 0x03, 0x03, DEF_STR( Lives ) )
-		PORT_DIPSETTING(    0x02, "2" )
-		PORT_DIPSETTING(    0x03, "3" )
-		PORT_DIPSETTING(    0x01, "4" )
-		PORT_DIPSETTING(    0x00, "5" )
-		PORT_DIPNAME( 0x04, 0x04, DEF_STR( Unknown ) )
-		PORT_DIPSETTING(    0x04, DEF_STR( Off ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( On ) )
-		PORT_DIPNAME( 0x08, 0x08, DEF_STR( Unknown ) )
-		PORT_DIPSETTING(    0x08, DEF_STR( Off ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( On ) )
-		PORT_DIPNAME( 0x30, 0x30, DEF_STR( Difficulty ) )
-		PORT_DIPSETTING(    0x00, "Easy" )
-		PORT_DIPSETTING(    0x30, "Normal" )
-		PORT_DIPSETTING(    0x20, "Hard" )
-		PORT_DIPSETTING(    0x10, "Hardest" )
-		PORT_DIPNAME( 0x40, 0x40, DEF_STR( Unknown ) )
-		PORT_DIPSETTING(    0x40, DEF_STR( Off ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( On ) )
-		PORT_DIPNAME( 0x80, 0x80, DEF_STR( Flip_Screen ) )
-		PORT_DIPSETTING(    0x80, DEF_STR( Off ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( On ) )
+		PORT_DIPNAME( 0x03, 0x03, DEF_STR( "Lives") );
+		PORT_DIPSETTING(    0x02, "2" );
+		PORT_DIPSETTING(    0x03, "3" );
+		PORT_DIPSETTING(    0x01, "4" );
+		PORT_DIPSETTING(    0x00, "5" );
+		PORT_DIPNAME( 0x04, 0x04, DEF_STR( "Unknown") );
+		PORT_DIPSETTING(    0x04, DEF_STR( "Off") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
+		PORT_DIPNAME( 0x08, 0x08, DEF_STR( "Unknown") );
+		PORT_DIPSETTING(    0x08, DEF_STR( "Off") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
+		PORT_DIPNAME( 0x30, 0x30, DEF_STR( "Difficulty") );
+		PORT_DIPSETTING(    0x00, "Easy" );
+		PORT_DIPSETTING(    0x30, "Normal" );
+		PORT_DIPSETTING(    0x20, "Hard" );
+		PORT_DIPSETTING(    0x10, "Hardest" );
+		PORT_DIPNAME( 0x40, 0x40, DEF_STR( "Unknown") );
+		PORT_DIPSETTING(    0x40, DEF_STR( "Off") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
+		PORT_DIPNAME( 0x80, 0x80, DEF_STR( "Flip_Screen") );
+		PORT_DIPSETTING(    0x80, DEF_STR( "Off") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 	
-	INPUT_PORTS_END
+	INPUT_PORTS_END(); }}; 
 	
 	
 	
@@ -2509,28 +2509,28 @@ public class megasys1
 		ROM_LOAD( "priority.69",    0x000000, 0x200, 0xb40bff56 );
 	ROM_END(); }}; 
 	
-	INPUT_PORTS_START( peekaboo )
+	static InputPortPtr input_ports_peekaboo = new InputPortPtr(){ public void handler() { 
 	
 		PORT_START		/* IN0 - COINS + P1&P2 Buttons - .b */
-		PORT_BIT(  0x0001, IP_ACTIVE_LOW, IPT_COIN3 )		// called "service"
-		PORT_BIT(  0x0002, IP_ACTIVE_LOW, IPT_COIN4 )		// called "test"
-		PORT_BIT(  0x0004, IP_ACTIVE_LOW, IPT_COIN1 )
-		PORT_BIT(  0x0008, IP_ACTIVE_LOW, IPT_COIN2 )
-		PORT_BIT(  0x0010, IP_ACTIVE_LOW, IPT_START1 )
-		PORT_BIT(  0x0020, IP_ACTIVE_LOW, IPT_START2 )
-		PORT_BIT(  0x0040, IP_ACTIVE_LOW, IPT_UNKNOWN )
-		PORT_BIT(  0x0080, IP_ACTIVE_LOW, IPT_UNKNOWN )
-		PORT_BIT(  0x0100, IP_ACTIVE_LOW, IPT_BUTTON1 )
-		PORT_BIT(  0x0200, IP_ACTIVE_LOW, IPT_BUTTON2 )
-		PORT_BIT(  0x0400, IP_ACTIVE_LOW, IPT_BUTTON1 | IPF_PLAYER2 )
-		PORT_BIT(  0x0800, IP_ACTIVE_LOW, IPT_BUTTON2 | IPF_PLAYER2 )
-		PORT_BIT(  0x1000, IP_ACTIVE_LOW, IPT_BUTTON3 )		// called "stage clear"
-		PORT_BIT(  0x2000, IP_ACTIVE_LOW, IPT_BUTTON4 )		// called "option"
-		PORT_BIT(  0x4000, IP_ACTIVE_LOW, IPT_UNKNOWN )
-		PORT_BIT(  0x8000, IP_ACTIVE_LOW, IPT_UNKNOWN )
+		PORT_BIT(  0x0001, IP_ACTIVE_LOW, IPT_COIN3 );	// called "service"
+		PORT_BIT(  0x0002, IP_ACTIVE_LOW, IPT_COIN4 );	// called "test"
+		PORT_BIT(  0x0004, IP_ACTIVE_LOW, IPT_COIN1 );
+		PORT_BIT(  0x0008, IP_ACTIVE_LOW, IPT_COIN2 );
+		PORT_BIT(  0x0010, IP_ACTIVE_LOW, IPT_START1 );
+		PORT_BIT(  0x0020, IP_ACTIVE_LOW, IPT_START2 );
+		PORT_BIT(  0x0040, IP_ACTIVE_LOW, IPT_UNKNOWN );
+		PORT_BIT(  0x0080, IP_ACTIVE_LOW, IPT_UNKNOWN );
+		PORT_BIT(  0x0100, IP_ACTIVE_LOW, IPT_BUTTON1 );
+		PORT_BIT(  0x0200, IP_ACTIVE_LOW, IPT_BUTTON2 );
+		PORT_BIT(  0x0400, IP_ACTIVE_LOW, IPT_BUTTON1 | IPF_PLAYER2 );
+		PORT_BIT(  0x0800, IP_ACTIVE_LOW, IPT_BUTTON2 | IPF_PLAYER2 );
+		PORT_BIT(  0x1000, IP_ACTIVE_LOW, IPT_BUTTON3 );	// called "stage clear"
+		PORT_BIT(  0x2000, IP_ACTIVE_LOW, IPT_BUTTON4 );	// called "option"
+		PORT_BIT(  0x4000, IP_ACTIVE_LOW, IPT_UNKNOWN );
+		PORT_BIT(  0x8000, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
 	#define PEEKABOO_PADDLE(_FLAG_)	\
-		PORT_ANALOG( 0x00ff, 0x0080, IPT_PADDLE | _FLAG_, 50, 10, 0x0018, 0x00e0 )
+		PORT_ANALOG( 0x00ff, 0x0080, IPT_PADDLE | _FLAG_, 50, 10, 0x0018, 0x00e0 );
 	
 		PORT_START      	/* IN1 - paddle p1 */
 		PEEKABOO_PADDLE(IPF_PLAYER1)
@@ -2541,36 +2541,36 @@ public class megasys1
 	
 		PORT_START			/* IN4 - DSW 1 - 1f003a.b<-e0000.b */
 		COINAGE_6BITS_2
-		PORT_DIPNAME( 0x40, 0x40, DEF_STR( Demo_Sounds ) )		// 1f0354<-
-		PORT_DIPSETTING(    0x00, DEF_STR( Off ) )
-		PORT_DIPSETTING(    0x40, DEF_STR( On ) )
-		PORT_DIPNAME( 0x80, 0x80, DEF_STR( Flip_Screen ) )		// 1f0022/6e<-!
-		PORT_DIPSETTING(    0x80, DEF_STR( Off ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( On ) )
+		PORT_DIPNAME( 0x40, 0x40, DEF_STR( "Demo_Sounds") );		// 1f0354<-
+		PORT_DIPSETTING(    0x00, DEF_STR( "Off") );
+		PORT_DIPSETTING(    0x40, DEF_STR( "On") );
+		PORT_DIPNAME( 0x80, 0x80, DEF_STR( "Flip_Screen") );		// 1f0022/6e<-!
+		PORT_DIPSETTING(    0x80, DEF_STR( "Off") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 	
 		PORT_START			/* IN5 - DSW 2 - 1f003b.b<-e0001.b */
-		PORT_DIPNAME( 0x03, 0x03, "Unknown 2-0&1" )				// 1f0358<-!
-		PORT_DIPSETTING(    0x03, "3" )
-		PORT_DIPSETTING(    0x02, "2" )
-		PORT_DIPSETTING(    0x01, "1" )
-		PORT_DIPSETTING(    0x00, "0" )
-		PORT_SERVICE( 0x04, IP_ACTIVE_LOW )
-		PORT_DIPNAME( 0x08, 0x08, "Movement?" )					// 1f0392<-!
-		PORT_DIPSETTING(    0x08, "Paddles" )
-		PORT_DIPSETTING(    0x00, "Buttons" )
-		PORT_DIPNAME( 0x30, 0x30, "Nudity" )					// 1f0356<-!
-		PORT_DIPSETTING(    0x30, "Female and Male (Full)" )
-		PORT_DIPSETTING(    0x20, "Female (Full)" )
-		PORT_DIPSETTING(    0x10, "Female (Partial)" )
-		PORT_DIPSETTING(    0x00, "None" )
-		PORT_DIPNAME( 0x40, 0x40, DEF_STR( Cabinet ) )			// 1f006a<-!
-		PORT_DIPSETTING(    0x40, DEF_STR( Upright ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( Cocktail ) )
-		PORT_DIPNAME( 0x80, 0x80, "(controls?)Unknown 2-7" )	// 1f0074<-!
-		PORT_DIPSETTING(    0x80, DEF_STR( Off ) )	// num of controls?
-		PORT_DIPSETTING(    0x00, DEF_STR( On ) )
+		PORT_DIPNAME( 0x03, 0x03, "Unknown 2-0&1" );			// 1f0358<-!
+		PORT_DIPSETTING(    0x03, "3" );
+		PORT_DIPSETTING(    0x02, "2" );
+		PORT_DIPSETTING(    0x01, "1" );
+		PORT_DIPSETTING(    0x00, "0" );
+		PORT_SERVICE( 0x04, IP_ACTIVE_LOW );
+		PORT_DIPNAME( 0x08, 0x08, "Movement?" );				// 1f0392<-!
+		PORT_DIPSETTING(    0x08, "Paddles" );
+		PORT_DIPSETTING(    0x00, "Buttons" );
+		PORT_DIPNAME( 0x30, 0x30, "Nudity" );				// 1f0356<-!
+		PORT_DIPSETTING(    0x30, "Female and Male (Full); )
+		PORT_DIPSETTING(    0x20, "Female (Full); )
+		PORT_DIPSETTING(    0x10, "Female (Partial); )
+		PORT_DIPSETTING(    0x00, "None" );
+		PORT_DIPNAME( 0x40, 0x40, DEF_STR( "Cabinet") );			// 1f006a<-!
+		PORT_DIPSETTING(    0x40, DEF_STR( "Upright") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "Cocktail") );
+		PORT_DIPNAME( 0x80, 0x80, "(controls?);nknown 2-7" )	// 1f0074<-!
+		PORT_DIPSETTING(    0x80, DEF_STR( "Off") );	// num of controls?
+		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 	
-	INPUT_PORTS_END
+	INPUT_PORTS_END(); }}; 
 	
 	
 	
@@ -2665,7 +2665,7 @@ public class megasys1
 		ROM_LOAD( "prom.14m",     0x0000, 0x0200, 0x1d877538 );
 	ROM_END(); }}; 
 	
-	INPUT_PORTS_START( plusalph )
+	static InputPortPtr input_ports_plusalph = new InputPortPtr(){ public void handler() { 
 		COINS						/* IN0 0x80001.b */
 	//	fire	bomb
 		JOY_2BUTTONS(IPF_PLAYER1)	/* IN1 0x80003.b */
@@ -2674,38 +2674,38 @@ public class megasys1
 	
 		PORT_START			/* IN4 0x80006.b */
 		COINAGE_6BITS
-		PORT_DIPNAME( 0x40, 0x40, DEF_STR( Demo_Sounds ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( Off ) )
-		PORT_DIPSETTING(    0x40, DEF_STR( On ) )
-		PORT_BITX(    0x80, 0x80, IPT_DIPSWITCH_NAME | IPF_CHEAT, "Freeze Screen", IP_KEY_NONE, IP_JOY_NONE )
-		PORT_DIPSETTING(    0x80, DEF_STR( Off ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( On ) )
+		PORT_DIPNAME( 0x40, 0x40, DEF_STR( "Demo_Sounds") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "Off") );
+		PORT_DIPSETTING(    0x40, DEF_STR( "On") );
+		PORT_BITX(    0x80, 0x80, IPT_DIPSWITCH_NAME | IPF_CHEAT, "Freeze Screen", IP_KEY_NONE, IP_JOY_NONE );
+		PORT_DIPSETTING(    0x80, DEF_STR( "Off") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 	
 		PORT_START			/* IN5 0x80007.b */
-		PORT_DIPNAME( 0x03, 0x03, DEF_STR( Lives ) )
-		PORT_DIPSETTING(    0x03, "3" )
-		PORT_DIPSETTING(    0x02, "4" )
-		PORT_DIPSETTING(    0x01, "5" )
-		PORT_BITX( 0,       0x00, IPT_DIPSWITCH_SETTING | IPF_CHEAT, "Inifinite", IP_KEY_NONE, IP_JOY_NONE )
-		PORT_DIPNAME( 0x04, 0x04, "Bombs" )
-		PORT_DIPSETTING(    0x00, "2" )
-		PORT_DIPSETTING(    0x04, "3" )
-		PORT_DIPNAME( 0x08, 0x08, DEF_STR( Bonus_Life ) )
-		PORT_DIPSETTING(    0x08, "70k and every 130k")
-		PORT_DIPSETTING(    0x00, "100k and every 200k")
-		PORT_DIPNAME( 0x30, 0x30, "?Difficulty?" )
-		PORT_DIPSETTING(    0x30, "3" )	// 1
-		PORT_DIPSETTING(    0x20, "2" )	// 3
-		PORT_DIPSETTING(    0x10, "1" )	// 2
-		PORT_DIPSETTING(    0x00, "0" )	// 0
-		PORT_DIPNAME( 0x40, 0x00, DEF_STR( Cabinet ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( Upright ) )
-		PORT_DIPSETTING(    0x40, DEF_STR( Cocktail ) )
-		PORT_DIPNAME( 0x80, 0x80, DEF_STR( Flip_Screen ) )
-		PORT_DIPSETTING(    0x80, DEF_STR( Off ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( On ) )
+		PORT_DIPNAME( 0x03, 0x03, DEF_STR( "Lives") );
+		PORT_DIPSETTING(    0x03, "3" );
+		PORT_DIPSETTING(    0x02, "4" );
+		PORT_DIPSETTING(    0x01, "5" );
+		PORT_BITX( 0,       0x00, IPT_DIPSWITCH_SETTING | IPF_CHEAT, "Inifinite", IP_KEY_NONE, IP_JOY_NONE );
+		PORT_DIPNAME( 0x04, 0x04, "Bombs" );
+		PORT_DIPSETTING(    0x00, "2" );
+		PORT_DIPSETTING(    0x04, "3" );
+		PORT_DIPNAME( 0x08, 0x08, DEF_STR( "Bonus_Life") );
+		PORT_DIPSETTING(    0x08, "70k and every 130k");
+		PORT_DIPSETTING(    0x00, "100k and every 200k");
+		PORT_DIPNAME( 0x30, 0x30, "?Difficulty?" );
+		PORT_DIPSETTING(    0x30, "3" );// 1
+		PORT_DIPSETTING(    0x20, "2" );// 3
+		PORT_DIPSETTING(    0x10, "1" );// 2
+		PORT_DIPSETTING(    0x00, "0" );// 0
+		PORT_DIPNAME( 0x40, 0x00, DEF_STR( "Cabinet") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "Upright") );
+		PORT_DIPSETTING(    0x40, DEF_STR( "Cocktail") );
+		PORT_DIPNAME( 0x80, 0x80, DEF_STR( "Flip_Screen") );
+		PORT_DIPSETTING(    0x80, DEF_STR( "Off") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 	
-	INPUT_PORTS_END
+	INPUT_PORTS_END(); }}; 
 	
 	
 	/***************************************************************************
@@ -2841,7 +2841,7 @@ public class megasys1
 	ROM_END(); }}; 
 	
 	
-	INPUT_PORTS_START( rodland )
+	static InputPortPtr input_ports_rodland = new InputPortPtr(){ public void handler() { 
 	
 		COINS						/* IN0 0x80001.b */
 	//	fire	ladder
@@ -2851,36 +2851,36 @@ public class megasys1
 	
 		PORT_START			/* IN4 0x80006.b */
 		COINAGE_6BITS
-		PORT_DIPNAME( 0x40, 0x00, DEF_STR( Demo_Sounds ) )
-		PORT_DIPSETTING(    0x40, DEF_STR( Off ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( On ) )
-		PORT_SERVICE( 0x80, IP_ACTIVE_LOW )
+		PORT_DIPNAME( 0x40, 0x00, DEF_STR( "Demo_Sounds") );
+		PORT_DIPSETTING(    0x40, DEF_STR( "Off") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
+		PORT_SERVICE( 0x80, IP_ACTIVE_LOW );
 	
 		PORT_START			/* IN5 0x80007.b */
-		PORT_DIPNAME( 0x01, 0x01, DEF_STR( Unknown ) ) /* according to manual */
-		PORT_DIPSETTING(    0x01, DEF_STR( Off ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( On ) )
-		PORT_DIPNAME( 0x02, 0x02, DEF_STR( Unknown ) ) /* according to manual */
-		PORT_DIPSETTING(    0x02, DEF_STR( Off ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( On ) )
-		PORT_DIPNAME( 0x0c, 0x0c, DEF_STR( Lives ) )
-		PORT_DIPSETTING(    0x04, "2" )
-		PORT_DIPSETTING(    0x0c, "3" )
-		PORT_DIPSETTING(    0x08, "4" )
-		PORT_BITX( 0,       0x00, IPT_DIPSWITCH_SETTING | IPF_CHEAT, "Inifinite", IP_KEY_NONE, IP_JOY_NONE )
-		PORT_DIPNAME( 0x10, 0x10, "Default episode" )
-		PORT_DIPSETTING(    0x10, "1" )
-		PORT_DIPSETTING(    0x00, "2" )
-		PORT_DIPNAME( 0x60, 0x60, DEF_STR( Difficulty ) )
-		PORT_DIPSETTING(    0x20, "Easy?" )
-		PORT_DIPSETTING(    0x60, "Normal" )
-		PORT_DIPSETTING(    0x40, "Hard?" )
-		PORT_DIPSETTING(    0x00, "Hardest?" )
-		PORT_DIPNAME( 0x80, 0x80, DEF_STR( Flip_Screen ) )
-		PORT_DIPSETTING(    0x80, DEF_STR( Off ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( On ) )
+		PORT_DIPNAME( 0x01, 0x01, DEF_STR( "Unknown") ); /* according to manual */
+		PORT_DIPSETTING(    0x01, DEF_STR( "Off") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
+		PORT_DIPNAME( 0x02, 0x02, DEF_STR( "Unknown") ); /* according to manual */
+		PORT_DIPSETTING(    0x02, DEF_STR( "Off") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
+		PORT_DIPNAME( 0x0c, 0x0c, DEF_STR( "Lives") );
+		PORT_DIPSETTING(    0x04, "2" );
+		PORT_DIPSETTING(    0x0c, "3" );
+		PORT_DIPSETTING(    0x08, "4" );
+		PORT_BITX( 0,       0x00, IPT_DIPSWITCH_SETTING | IPF_CHEAT, "Inifinite", IP_KEY_NONE, IP_JOY_NONE );
+		PORT_DIPNAME( 0x10, 0x10, "Default episode" );
+		PORT_DIPSETTING(    0x10, "1" );
+		PORT_DIPSETTING(    0x00, "2" );
+		PORT_DIPNAME( 0x60, 0x60, DEF_STR( "Difficulty") );
+		PORT_DIPSETTING(    0x20, "Easy?" );
+		PORT_DIPSETTING(    0x60, "Normal" );
+		PORT_DIPSETTING(    0x40, "Hard?" );
+		PORT_DIPSETTING(    0x00, "Hardest?" );
+		PORT_DIPNAME( 0x80, 0x80, DEF_STR( "Flip_Screen") );
+		PORT_DIPSETTING(    0x80, DEF_STR( "Off") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 	
-	INPUT_PORTS_END
+	INPUT_PORTS_END(); }}; 
 	
 	
 	/***************************************************************************
@@ -2935,7 +2935,7 @@ public class megasys1
 		ROM_LOAD( "prom.14m",    0x0000, 0x0200, 0x1d877538 );
 	ROM_END(); }}; 
 	
-	INPUT_PORTS_START( stdragon )
+	static InputPortPtr input_ports_stdragon = new InputPortPtr(){ public void handler() { 
 		COINS						/* IN0 0x80001.b */
 	//	fire	fire
 		JOY_2BUTTONS(IPF_PLAYER1)	/* IN1 0x80003.b */
@@ -2944,38 +2944,38 @@ public class megasys1
 	
 		PORT_START			/* IN4 0x80006.b */
 		COINAGE_6BITS_2
-		PORT_DIPNAME( 0x40, 0x40, DEF_STR( Demo_Sounds ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( Off ) )
-		PORT_DIPSETTING(    0x40, DEF_STR( On ) )
-		PORT_DIPNAME( 0x80, 0x80, "Unknown 1-7" )	// used?
-		PORT_DIPSETTING(    0x80, DEF_STR( Off ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( On ) )
+		PORT_DIPNAME( 0x40, 0x40, DEF_STR( "Demo_Sounds") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "Off") );
+		PORT_DIPSETTING(    0x40, DEF_STR( "On") );
+		PORT_DIPNAME( 0x80, 0x80, "Unknown 1-7" );// used?
+		PORT_DIPSETTING(    0x80, DEF_STR( "Off") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 	
 		PORT_START			/* IN5 0x80007.b */
-		PORT_DIPNAME( 0x03, 0x03, DEF_STR( Lives ) )
-		PORT_DIPSETTING(    0x02, "2" )
-		PORT_DIPSETTING(    0x03, "3" )
-		PORT_DIPSETTING(    0x01, "4" )
-		PORT_DIPSETTING(    0x00, "5" )
-		PORT_DIPNAME( 0x04, 0x04, "Unknown 2-2" )	// unused?
-		PORT_DIPSETTING(    0x04, DEF_STR( Off ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( On ) )
-		PORT_DIPNAME( 0x08, 0x08, "Unknown 2-3" )	// unused?
-		PORT_DIPSETTING(    0x08, DEF_STR( Off ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( On ) )
-		PORT_DIPNAME( 0x30, 0x30, "?Difficulty?" )
-		PORT_DIPSETTING(    0x30, "3" )
-		PORT_DIPSETTING(    0x20, "2" )
-		PORT_DIPSETTING(    0x10, "1" )
-		PORT_DIPSETTING(    0x00, "0" )
-		PORT_DIPNAME( 0x40, 0x00, DEF_STR( Cabinet ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( Upright ) )
-		PORT_DIPSETTING(    0x40, DEF_STR( Cocktail ) )
-		PORT_DIPNAME( 0x80, 0x80, DEF_STR( Flip_Screen ) )
-		PORT_DIPSETTING(    0x80, DEF_STR( Off ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( On ) )
+		PORT_DIPNAME( 0x03, 0x03, DEF_STR( "Lives") );
+		PORT_DIPSETTING(    0x02, "2" );
+		PORT_DIPSETTING(    0x03, "3" );
+		PORT_DIPSETTING(    0x01, "4" );
+		PORT_DIPSETTING(    0x00, "5" );
+		PORT_DIPNAME( 0x04, 0x04, "Unknown 2-2" );// unused?
+		PORT_DIPSETTING(    0x04, DEF_STR( "Off") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
+		PORT_DIPNAME( 0x08, 0x08, "Unknown 2-3" );// unused?
+		PORT_DIPSETTING(    0x08, DEF_STR( "Off") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
+		PORT_DIPNAME( 0x30, 0x30, "?Difficulty?" );
+		PORT_DIPSETTING(    0x30, "3" );
+		PORT_DIPSETTING(    0x20, "2" );
+		PORT_DIPSETTING(    0x10, "1" );
+		PORT_DIPSETTING(    0x00, "0" );
+		PORT_DIPNAME( 0x40, 0x00, DEF_STR( "Cabinet") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "Upright") );
+		PORT_DIPSETTING(    0x40, DEF_STR( "Cocktail") );
+		PORT_DIPNAME( 0x80, 0x80, DEF_STR( "Flip_Screen") );
+		PORT_DIPSETTING(    0x80, DEF_STR( "Off") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 	
-	INPUT_PORTS_END
+	INPUT_PORTS_END(); }}; 
 	
 	
 	/***************************************************************************
@@ -3024,7 +3024,7 @@ public class megasys1
 		ROM_LOAD( "soldam.m14",   0x0000, 0x0200, 0x8914e72d );
 	ROM_END(); }}; 
 	
-	INPUT_PORTS_START( soldamj )
+	static InputPortPtr input_ports_soldamj = new InputPortPtr(){ public void handler() { 
 		COINS						/* IN0 0x80001.b */
 		//	turn	turn	(3rd button is shown in service mode, but seems unused)
 		JOY_2BUTTONS(IPF_PLAYER1)	/* IN1 0x80003.b */
@@ -3033,36 +3033,36 @@ public class megasys1
 	
 		PORT_START			/* IN4 0x80006.b */
 		COINAGE_6BITS_2
-		PORT_DIPNAME( 0x40, 0x40, DEF_STR( Demo_Sounds ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( Off ) )
-		PORT_DIPSETTING(    0x40, DEF_STR( On )  )
-		PORT_SERVICE( 0x80, IP_ACTIVE_LOW )
+		PORT_DIPNAME( 0x40, 0x40, DEF_STR( "Demo_Sounds") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "Off") );
+		PORT_DIPSETTING(    0x40, DEF_STR( "On") ); )
+		PORT_SERVICE( 0x80, IP_ACTIVE_LOW );
 	
 		PORT_START			/* IN5 0x80007.b */
-		PORT_DIPNAME( 0x03, 0x03, DEF_STR( Difficulty ) )
-		PORT_DIPSETTING(    0x00, "Easy"   )
-		PORT_DIPSETTING(    0x03, "Normal" )
-		PORT_DIPSETTING(    0x02, "Hard"   )
-		PORT_DIPSETTING(    0x01, "Hadest" )
-		PORT_DIPNAME( 0x0c, 0x0c, "Games To Play (Vs)" )
-		PORT_DIPSETTING(    0x00, "1" )
-		PORT_DIPSETTING(    0x0c, "2" )
-		PORT_DIPSETTING(    0x08, "3" )
-		PORT_DIPSETTING(    0x04, "4" )
-		PORT_DIPNAME( 0x10, 0x10, "Allow Continue" )
-		PORT_DIPSETTING(    0x00, DEF_STR( Off ) )
-		PORT_DIPSETTING(    0x10, DEF_STR( On )  )
-		PORT_DIPNAME( 0x20, 0x20, "Credits To Start (Vs)" )
-		PORT_DIPSETTING(    0x20, "1" )
-		PORT_DIPSETTING(    0x00, "2" )
-		PORT_DIPNAME( 0x40, 0x40, "Credits To Continue (Vs)" )
-		PORT_DIPSETTING(    0x40, "1" )
-		PORT_DIPSETTING(    0x00, "2" )
-		PORT_DIPNAME( 0x80, 0x80, DEF_STR( Flip_Screen ) )
-		PORT_DIPSETTING(    0x80, DEF_STR( Off ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( On )  )
+		PORT_DIPNAME( 0x03, 0x03, DEF_STR( "Difficulty") );
+		PORT_DIPSETTING(    0x00, "Easy"   );
+		PORT_DIPSETTING(    0x03, "Normal" );
+		PORT_DIPSETTING(    0x02, "Hard"   );
+		PORT_DIPSETTING(    0x01, "Hadest" );
+		PORT_DIPNAME( 0x0c, 0x0c, "Games To Play (Vs); )
+		PORT_DIPSETTING(    0x00, "1" );
+		PORT_DIPSETTING(    0x0c, "2" );
+		PORT_DIPSETTING(    0x08, "3" );
+		PORT_DIPSETTING(    0x04, "4" );
+		PORT_DIPNAME( 0x10, 0x10, "Allow Continue" );
+		PORT_DIPSETTING(    0x00, DEF_STR( "Off") );
+		PORT_DIPSETTING(    0x10, DEF_STR( "On") ); )
+		PORT_DIPNAME( 0x20, 0x20, "Credits To Start (Vs); )
+		PORT_DIPSETTING(    0x20, "1" );
+		PORT_DIPSETTING(    0x00, "2" );
+		PORT_DIPNAME( 0x40, 0x40, "Credits To Continue (Vs); )
+		PORT_DIPSETTING(    0x40, "1" );
+		PORT_DIPSETTING(    0x00, "2" );
+		PORT_DIPNAME( 0x80, 0x80, DEF_STR( "Flip_Screen") );
+		PORT_DIPSETTING(    0x80, DEF_STR( "Off") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "On") ); )
 	
-	INPUT_PORTS_END
+	INPUT_PORTS_END(); }}; 
 	
 	READ16_HANDLER( soldamj_spriteram16_r )
 	{
@@ -3159,7 +3159,7 @@ public class megasys1
 		ROM_LOAD( "prom",    0x0000, 0x0200, 0x00000000 );
 	ROM_END(); }}; 
 	
-	INPUT_PORTS_START( tshingen )
+	static InputPortPtr input_ports_tshingen = new InputPortPtr(){ public void handler() { 
 		COINS						/* IN0 0x80001.b */
 		// sword_left	sword_right		jump
 		JOY_3BUTTONS(IPF_PLAYER1)	/* IN1 0x80003.b */
@@ -3168,37 +3168,37 @@ public class megasys1
 	
 		PORT_START			/* IN4 0x80006.b */
 		COINAGE_6BITS
-		PORT_DIPNAME( 0x40, 0x40, DEF_STR( Demo_Sounds ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( Off ) )
-		PORT_DIPSETTING(    0x40, DEF_STR( On )  )
-		PORT_DIPNAME( 0x80, 0x80, DEF_STR( Unknown ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( Off ) )
-		PORT_DIPSETTING(    0x80, DEF_STR( On )  )
+		PORT_DIPNAME( 0x40, 0x40, DEF_STR( "Demo_Sounds") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "Off") );
+		PORT_DIPSETTING(    0x40, DEF_STR( "On") ); )
+		PORT_DIPNAME( 0x80, 0x80, DEF_STR( "Unknown") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "Off") );
+		PORT_DIPSETTING(    0x80, DEF_STR( "On") ); )
 	
 		PORT_START			/* IN5 0x80007.b */
-		PORT_DIPNAME( 0x03, 0x01, DEF_STR( Lives ) )
-		PORT_DIPSETTING(    0x03, "2" )
-		PORT_DIPSETTING(    0x01, "3" )
-		PORT_DIPSETTING(    0x02, "4" )
-		PORT_BITX( 0,       0x00, IPT_DIPSWITCH_SETTING | IPF_CHEAT, "Inifinite", IP_KEY_NONE, IP_JOY_NONE )
-		PORT_DIPNAME( 0x0c, 0x0c, DEF_STR( Bonus_Life ) )
-		PORT_DIPSETTING(    0x0c, "20k" )
-		PORT_DIPSETTING(    0x04, "30k" )
-		PORT_DIPSETTING(    0x08, "40k" )
-		PORT_DIPSETTING(    0x00, "50k" )
-		PORT_DIPNAME( 0x30, 0x10, DEF_STR( Difficulty ) ) // damage when hit
-		PORT_DIPSETTING(    0x30, "Easy"    ) // 0
-		PORT_DIPSETTING(    0x10, "Normal"  ) // 1
-		PORT_DIPSETTING(    0x20, "Hard"    ) // 2
-		PORT_DIPSETTING(    0x00, "Hardest" ) // 3
-		PORT_DIPNAME( 0x40, 0x40, "Allow Continue" )
-		PORT_DIPSETTING(    0x00, DEF_STR( Off ) )
-		PORT_DIPSETTING(    0x40, DEF_STR( On )  )
-		PORT_DIPNAME( 0x80, 0x80, DEF_STR( Flip_Screen ) )
-		PORT_DIPSETTING(    0x80, DEF_STR( Off ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( On )  )
+		PORT_DIPNAME( 0x03, 0x01, DEF_STR( "Lives") );
+		PORT_DIPSETTING(    0x03, "2" );
+		PORT_DIPSETTING(    0x01, "3" );
+		PORT_DIPSETTING(    0x02, "4" );
+		PORT_BITX( 0,       0x00, IPT_DIPSWITCH_SETTING | IPF_CHEAT, "Inifinite", IP_KEY_NONE, IP_JOY_NONE );
+		PORT_DIPNAME( 0x0c, 0x0c, DEF_STR( "Bonus_Life") );
+		PORT_DIPSETTING(    0x0c, "20k" );
+		PORT_DIPSETTING(    0x04, "30k" );
+		PORT_DIPSETTING(    0x08, "40k" );
+		PORT_DIPSETTING(    0x00, "50k" );
+		PORT_DIPNAME( 0x30, 0x10, DEF_STR( "Difficulty") ); // damage when hit
+		PORT_DIPSETTING(    0x30, "Easy"    );// 0
+		PORT_DIPSETTING(    0x10, "Normal"  );// 1
+		PORT_DIPSETTING(    0x20, "Hard"    );// 2
+		PORT_DIPSETTING(    0x00, "Hardest" );// 3
+		PORT_DIPNAME( 0x40, 0x40, "Allow Continue" );
+		PORT_DIPSETTING(    0x00, DEF_STR( "Off") );
+		PORT_DIPSETTING(    0x40, DEF_STR( "On") ); )
+		PORT_DIPNAME( 0x80, 0x80, DEF_STR( "Flip_Screen") );
+		PORT_DIPSETTING(    0x80, DEF_STR( "Off") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "On") ); )
 	
-	INPUT_PORTS_END
+	INPUT_PORTS_END(); }}; 
 	
 	
 	

@@ -139,154 +139,154 @@ public class arkanoid
 	};
 	
 	
-	INPUT_PORTS_START( arkanoid )
+	static InputPortPtr input_ports_arkanoid = new InputPortPtr(){ public void handler() { 
 		PORT_START	/* IN0 */
-		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_START1 )
-		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_START2 )
-		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_SERVICE1 )
-		PORT_BIT( 0x08, IP_ACTIVE_LOW, IPT_TILT )
-		PORT_BIT( 0x10, IP_ACTIVE_HIGH, IPT_COIN1 )
-		PORT_BIT( 0x20, IP_ACTIVE_HIGH, IPT_COIN2 )
-		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_SPECIAL )	/* input from the 68705, some bootlegs need it to be 1 */
-		PORT_BIT( 0x80, IP_ACTIVE_HIGH, IPT_SPECIAL )	/* input from the 68705 */
+		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_START1 );
+		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_START2 );
+		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_SERVICE1 );
+		PORT_BIT( 0x08, IP_ACTIVE_LOW, IPT_TILT );
+		PORT_BIT( 0x10, IP_ACTIVE_HIGH, IPT_COIN1 );
+		PORT_BIT( 0x20, IP_ACTIVE_HIGH, IPT_COIN2 );
+		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_SPECIAL );/* input from the 68705, some bootlegs need it to be 1 */
+		PORT_BIT( 0x80, IP_ACTIVE_HIGH, IPT_SPECIAL );/* input from the 68705 */
 	
 		PORT_START	/* IN1 */
-		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_BUTTON1 )
-		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_UNKNOWN )
-		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_BUTTON1 | IPF_COCKTAIL )
-		PORT_BIT( 0xf8, IP_ACTIVE_LOW, IPT_UNKNOWN )
+		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_BUTTON1 );
+		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_UNKNOWN );
+		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_BUTTON1 | IPF_COCKTAIL );
+		PORT_BIT( 0xf8, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
 		PORT_START      /* IN2 - spinner Player 1 */
-		PORT_ANALOG( 0xff, 0x00, IPT_DIAL, 30, 15, 0, 0)
+		PORT_ANALOG( 0xff, 0x00, IPT_DIAL, 30, 15, 0, 0);
 	
 		PORT_START      /* IN3 - spinner Player 2  */
-		PORT_ANALOG( 0xff, 0x00, IPT_DIAL | IPF_COCKTAIL, 30, 15, 0, 0)
+		PORT_ANALOG( 0xff, 0x00, IPT_DIAL | IPF_COCKTAIL, 30, 15, 0, 0);
 	
 		PORT_START	/* DSW1 */
-		PORT_DIPNAME( 0x01, 0x00, "Allow Continue" )
-		PORT_DIPSETTING(    0x01, DEF_STR( No ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( Yes ) )
-		PORT_DIPNAME( 0x02, 0x02, DEF_STR( Flip_Screen ) )
-		PORT_DIPSETTING(    0x02, DEF_STR( Off ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( On ) )
-		PORT_SERVICE( 0x04, IP_ACTIVE_LOW )
-		PORT_DIPNAME( 0x08, 0x08, DEF_STR( Difficulty ) )
-		PORT_DIPSETTING(    0x08, "Easy" )
-		PORT_DIPSETTING(    0x00, "Hard" )
-		PORT_DIPNAME( 0x10, 0x10, DEF_STR( Bonus_Life ) )
-		PORT_DIPSETTING(    0x10, "20K, 60K and every 60K" )
-		PORT_DIPSETTING(    0x00, "20K only" )
-		PORT_DIPNAME( 0x20, 0x20, DEF_STR( Lives ) )
-		PORT_DIPSETTING(    0x20, "3" )
-		PORT_DIPSETTING(    0x00, "5" )
-		PORT_DIPNAME( 0xc0, 0xc0, DEF_STR( Coinage ) )
-		PORT_DIPSETTING(    0x40, DEF_STR( 2C_1C ) )
-		PORT_DIPSETTING(    0xc0, DEF_STR( 1C_1C ) )
-		PORT_DIPSETTING(    0x80, DEF_STR( 1C_2C ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( 1C_6C ) )
-	INPUT_PORTS_END
+		PORT_DIPNAME( 0x01, 0x00, "Allow Continue" );
+		PORT_DIPSETTING(    0x01, DEF_STR( "No") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "Yes") );
+		PORT_DIPNAME( 0x02, 0x02, DEF_STR( "Flip_Screen") );
+		PORT_DIPSETTING(    0x02, DEF_STR( "Off") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
+		PORT_SERVICE( 0x04, IP_ACTIVE_LOW );
+		PORT_DIPNAME( 0x08, 0x08, DEF_STR( "Difficulty") );
+		PORT_DIPSETTING(    0x08, "Easy" );
+		PORT_DIPSETTING(    0x00, "Hard" );
+		PORT_DIPNAME( 0x10, 0x10, DEF_STR( "Bonus_Life") );
+		PORT_DIPSETTING(    0x10, "20K, 60K and every 60K" );
+		PORT_DIPSETTING(    0x00, "20K only" );
+		PORT_DIPNAME( 0x20, 0x20, DEF_STR( "Lives") );
+		PORT_DIPSETTING(    0x20, "3" );
+		PORT_DIPSETTING(    0x00, "5" );
+		PORT_DIPNAME( 0xc0, 0xc0, DEF_STR( "Coinage") );
+		PORT_DIPSETTING(    0x40, DEF_STR( "2C_1C") );
+		PORT_DIPSETTING(    0xc0, DEF_STR( "1C_1C") );
+		PORT_DIPSETTING(    0x80, DEF_STR( "1C_2C") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "1C_6C") );
+	INPUT_PORTS_END(); }}; 
 	
 	/* These are the input ports of the real Japanese ROM set                        */
 	/* 'Block' uses the these ones as well.	The Tayto bootleg is different			 */
 	/*  in coinage and # of lives.                    								 */
 	
-	INPUT_PORTS_START( arknoidj )
+	static InputPortPtr input_ports_arknoidj = new InputPortPtr(){ public void handler() { 
 		PORT_START	/* IN0 */
-		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_START1 )
-		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_START2 )
-		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_SERVICE1 )
-		PORT_BIT( 0x08, IP_ACTIVE_LOW, IPT_TILT )
-		PORT_BIT( 0x10, IP_ACTIVE_HIGH, IPT_COIN1 )
-		PORT_BIT( 0x20, IP_ACTIVE_HIGH, IPT_COIN2 )
-		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_SPECIAL )	/* input from the 68705, some bootlegs need it to be 1 */
-		PORT_BIT( 0x80, IP_ACTIVE_HIGH, IPT_SPECIAL )	/* input from the 68705 */
+		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_START1 );
+		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_START2 );
+		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_SERVICE1 );
+		PORT_BIT( 0x08, IP_ACTIVE_LOW, IPT_TILT );
+		PORT_BIT( 0x10, IP_ACTIVE_HIGH, IPT_COIN1 );
+		PORT_BIT( 0x20, IP_ACTIVE_HIGH, IPT_COIN2 );
+		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_SPECIAL );/* input from the 68705, some bootlegs need it to be 1 */
+		PORT_BIT( 0x80, IP_ACTIVE_HIGH, IPT_SPECIAL );/* input from the 68705 */
 	
 		PORT_START	/* IN1 */
-		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_BUTTON1 )
-		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_UNKNOWN )
-		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_BUTTON1 | IPF_COCKTAIL )
-		PORT_BIT( 0xf8, IP_ACTIVE_LOW, IPT_UNKNOWN )
+		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_BUTTON1 );
+		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_UNKNOWN );
+		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_BUTTON1 | IPF_COCKTAIL );
+		PORT_BIT( 0xf8, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
 		PORT_START      /* IN2 - spinner (multiplexed for player 1 and 2) */
-		PORT_ANALOG( 0xff, 0x00, IPT_DIAL, 30, 15, 0, 0)
+		PORT_ANALOG( 0xff, 0x00, IPT_DIAL, 30, 15, 0, 0);
 	
 		PORT_START      /* IN3 - spinner Player 2  */
-		PORT_ANALOG( 0xff, 0x00, IPT_DIAL | IPF_COCKTAIL, 30, 15, 0, 0)
+		PORT_ANALOG( 0xff, 0x00, IPT_DIAL | IPF_COCKTAIL, 30, 15, 0, 0);
 	
 		PORT_START	/* DSW1 */
-		PORT_DIPNAME( 0x01, 0x00, "Allow Continue" )
-		PORT_DIPSETTING(    0x01, DEF_STR( No ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( Yes ) )
-		PORT_DIPNAME( 0x02, 0x02, DEF_STR( Flip_Screen ) )
-		PORT_DIPSETTING(    0x02, DEF_STR( Off ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( On ) )
-		PORT_SERVICE( 0x04, IP_ACTIVE_LOW )
-		PORT_DIPNAME( 0x08, 0x08, DEF_STR( Difficulty ) )
-		PORT_DIPSETTING(    0x08, "Easy" )
-		PORT_DIPSETTING(    0x00, "Hard" )
-		PORT_DIPNAME( 0x10, 0x10, DEF_STR( Bonus_Life ) )
-		PORT_DIPSETTING(    0x10, "20K, 60K and every 60K" )
-		PORT_DIPSETTING(    0x00, "20K only" )
-		PORT_DIPNAME( 0x20, 0x20, DEF_STR( Lives ) )
-		PORT_DIPSETTING(    0x20, "3" )
-		PORT_DIPSETTING(    0x00, "5" )
-		PORT_DIPNAME( 0x40, 0x40, DEF_STR( Coinage ) )
-		PORT_DIPSETTING(    0x40, DEF_STR( 1C_1C ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( 1C_2C ) )
-		PORT_DIPNAME( 0x80, 0x00, DEF_STR( Cabinet ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( Upright ) )
-		PORT_DIPSETTING(    0x80, DEF_STR( Cocktail ) )
-	INPUT_PORTS_END
+		PORT_DIPNAME( 0x01, 0x00, "Allow Continue" );
+		PORT_DIPSETTING(    0x01, DEF_STR( "No") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "Yes") );
+		PORT_DIPNAME( 0x02, 0x02, DEF_STR( "Flip_Screen") );
+		PORT_DIPSETTING(    0x02, DEF_STR( "Off") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
+		PORT_SERVICE( 0x04, IP_ACTIVE_LOW );
+		PORT_DIPNAME( 0x08, 0x08, DEF_STR( "Difficulty") );
+		PORT_DIPSETTING(    0x08, "Easy" );
+		PORT_DIPSETTING(    0x00, "Hard" );
+		PORT_DIPNAME( 0x10, 0x10, DEF_STR( "Bonus_Life") );
+		PORT_DIPSETTING(    0x10, "20K, 60K and every 60K" );
+		PORT_DIPSETTING(    0x00, "20K only" );
+		PORT_DIPNAME( 0x20, 0x20, DEF_STR( "Lives") );
+		PORT_DIPSETTING(    0x20, "3" );
+		PORT_DIPSETTING(    0x00, "5" );
+		PORT_DIPNAME( 0x40, 0x40, DEF_STR( "Coinage") );
+		PORT_DIPSETTING(    0x40, DEF_STR( "1C_1C") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "1C_2C") );
+		PORT_DIPNAME( 0x80, 0x00, DEF_STR( "Cabinet") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "Upright") );
+		PORT_DIPSETTING(    0x80, DEF_STR( "Cocktail") );
+	INPUT_PORTS_END(); }}; 
 	
 	/* Is the same as arkanoij, but the Coinage,
 	  Lives and Bonus_Life dips are different */
-	INPUT_PORTS_START( arkatayt )
+	static InputPortPtr input_ports_arkatayt = new InputPortPtr(){ public void handler() { 
 		PORT_START	/* IN0 */
-		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_START1 )
-		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_START2 )
-		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_SERVICE1 )
-		PORT_BIT( 0x08, IP_ACTIVE_LOW, IPT_TILT )
-		PORT_BIT( 0x10, IP_ACTIVE_HIGH, IPT_COIN1 )
-		PORT_BIT( 0x20, IP_ACTIVE_HIGH, IPT_COIN2 )
-		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_SPECIAL )	/* input from the 68705, some bootlegs need it to be 1 */
-		PORT_BIT( 0x80, IP_ACTIVE_HIGH, IPT_SPECIAL )	/* input from the 68705 */
+		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_START1 );
+		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_START2 );
+		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_SERVICE1 );
+		PORT_BIT( 0x08, IP_ACTIVE_LOW, IPT_TILT );
+		PORT_BIT( 0x10, IP_ACTIVE_HIGH, IPT_COIN1 );
+		PORT_BIT( 0x20, IP_ACTIVE_HIGH, IPT_COIN2 );
+		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_SPECIAL );/* input from the 68705, some bootlegs need it to be 1 */
+		PORT_BIT( 0x80, IP_ACTIVE_HIGH, IPT_SPECIAL );/* input from the 68705 */
 	
 		PORT_START	/* IN1 */
-		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_BUTTON1 )
-		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_UNKNOWN )
-		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_BUTTON1 | IPF_COCKTAIL )
-		PORT_BIT( 0xf8, IP_ACTIVE_LOW, IPT_UNKNOWN )
+		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_BUTTON1 );
+		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_UNKNOWN );
+		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_BUTTON1 | IPF_COCKTAIL );
+		PORT_BIT( 0xf8, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
 		PORT_START      /* IN2 - spinner (multiplexed for player 1 and 2) */
-		PORT_ANALOG( 0xff, 0x00, IPT_DIAL, 30, 15, 0, 0)
+		PORT_ANALOG( 0xff, 0x00, IPT_DIAL, 30, 15, 0, 0);
 	
 		PORT_START      /* IN3 - spinner Player 2  */
-		PORT_ANALOG( 0xff, 0x00, IPT_DIAL | IPF_COCKTAIL, 30, 15, 0, 0)
+		PORT_ANALOG( 0xff, 0x00, IPT_DIAL | IPF_COCKTAIL, 30, 15, 0, 0);
 	
 		PORT_START	/* DSW1 */
-		PORT_DIPNAME( 0x01, 0x00, "Allow Continue" )
-		PORT_DIPSETTING(    0x01, DEF_STR( No ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( Yes ) )
-		PORT_DIPNAME( 0x02, 0x02, DEF_STR( Flip_Screen ) )
-		PORT_DIPSETTING(    0x02, DEF_STR( Off ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( On ) )
-		PORT_SERVICE( 0x04, IP_ACTIVE_LOW )
-		PORT_DIPNAME( 0x08, 0x08, DEF_STR( Difficulty ) )
-		PORT_DIPSETTING(    0x08, "Easy" )
-		PORT_DIPSETTING(    0x00, "Hard" )
-		PORT_DIPNAME( 0x10, 0x10, DEF_STR( Bonus_Life ) )
-		PORT_DIPSETTING(    0x10, "60K, 100K and every 60K" )
-		PORT_DIPSETTING(    0x00, "60K only" )
-		PORT_DIPNAME( 0x20, 0x00, DEF_STR( Lives ) )
-		PORT_DIPSETTING(    0x20, "2" )
-		PORT_DIPSETTING(    0x00, "3" )
-		PORT_DIPNAME( 0x40, 0x40, DEF_STR( Coinage ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( 2C_1C ) )
-		PORT_DIPSETTING(    0x40, DEF_STR( 1C_1C ) )
-		PORT_DIPNAME( 0x80, 0x00, DEF_STR( Cabinet ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( Upright ) )
-		PORT_DIPSETTING(    0x80, DEF_STR( Cocktail ) )
-	INPUT_PORTS_END
+		PORT_DIPNAME( 0x01, 0x00, "Allow Continue" );
+		PORT_DIPSETTING(    0x01, DEF_STR( "No") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "Yes") );
+		PORT_DIPNAME( 0x02, 0x02, DEF_STR( "Flip_Screen") );
+		PORT_DIPSETTING(    0x02, DEF_STR( "Off") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
+		PORT_SERVICE( 0x04, IP_ACTIVE_LOW );
+		PORT_DIPNAME( 0x08, 0x08, DEF_STR( "Difficulty") );
+		PORT_DIPSETTING(    0x08, "Easy" );
+		PORT_DIPSETTING(    0x00, "Hard" );
+		PORT_DIPNAME( 0x10, 0x10, DEF_STR( "Bonus_Life") );
+		PORT_DIPSETTING(    0x10, "60K, 100K and every 60K" );
+		PORT_DIPSETTING(    0x00, "60K only" );
+		PORT_DIPNAME( 0x20, 0x00, DEF_STR( "Lives") );
+		PORT_DIPSETTING(    0x20, "2" );
+		PORT_DIPSETTING(    0x00, "3" );
+		PORT_DIPNAME( 0x40, 0x40, DEF_STR( "Coinage") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "2C_1C") );
+		PORT_DIPSETTING(    0x40, DEF_STR( "1C_1C") );
+		PORT_DIPNAME( 0x80, 0x00, DEF_STR( "Cabinet") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "Upright") );
+		PORT_DIPSETTING(    0x80, DEF_STR( "Cocktail") );
+	INPUT_PORTS_END(); }}; 
 	
 	
 	static GfxLayout charlayout = new GfxLayout

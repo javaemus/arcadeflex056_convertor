@@ -189,142 +189,142 @@ public class m90
 	/*****************************************************************************/
 	
 	
-	INPUT_PORTS_START( hasamu )
+	static InputPortPtr input_ports_hasamu = new InputPortPtr(){ public void handler() { 
 		IREM_JOYSTICK_1_2(1)
 		IREM_JOYSTICK_1_2(2)
 		IREM_COINS
 	
 		PORT_START	/* Dip switch bank 1 */
-		PORT_DIPNAME( 0x01, 0x01, DEF_STR( Unknown ) )
-		PORT_DIPSETTING(    0x01, DEF_STR( Off ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( On ) )
-		PORT_DIPNAME( 0x02, 0x02, DEF_STR( Unknown ) )
-		PORT_DIPSETTING(    0x02, DEF_STR( Off ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( On ) )
-		PORT_DIPNAME( 0x04, 0x04, DEF_STR( Unknown ) )
-		PORT_DIPSETTING(    0x04, DEF_STR( Off ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( On ) )
-		PORT_DIPNAME( 0x08, 0x08, DEF_STR( Unknown ) )
-		PORT_DIPSETTING(    0x08, DEF_STR( Off ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( On ) )
-		PORT_DIPNAME( 0x10, 0x10, DEF_STR( Unknown ) )
-		PORT_DIPSETTING(    0x10, DEF_STR( Off ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( On ) )
-		PORT_DIPNAME( 0x20, 0x20, "Allow Continue" )
-		PORT_DIPSETTING(    0x00, DEF_STR( No ) )
-		PORT_DIPSETTING(    0x20, DEF_STR( Yes ) )
-		PORT_DIPNAME( 0x40, 0x00, DEF_STR( Demo_Sounds ) )
-		PORT_DIPSETTING(    0x40, DEF_STR( Off ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( On ) )
-		PORT_SERVICE( 0x80, IP_ACTIVE_LOW )
+		PORT_DIPNAME( 0x01, 0x01, DEF_STR( "Unknown") );
+		PORT_DIPSETTING(    0x01, DEF_STR( "Off") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
+		PORT_DIPNAME( 0x02, 0x02, DEF_STR( "Unknown") );
+		PORT_DIPSETTING(    0x02, DEF_STR( "Off") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
+		PORT_DIPNAME( 0x04, 0x04, DEF_STR( "Unknown") );
+		PORT_DIPSETTING(    0x04, DEF_STR( "Off") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
+		PORT_DIPNAME( 0x08, 0x08, DEF_STR( "Unknown") );
+		PORT_DIPSETTING(    0x08, DEF_STR( "Off") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
+		PORT_DIPNAME( 0x10, 0x10, DEF_STR( "Unknown") );
+		PORT_DIPSETTING(    0x10, DEF_STR( "Off") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
+		PORT_DIPNAME( 0x20, 0x20, "Allow Continue" );
+		PORT_DIPSETTING(    0x00, DEF_STR( "No") );
+		PORT_DIPSETTING(    0x20, DEF_STR( "Yes") );
+		PORT_DIPNAME( 0x40, 0x00, DEF_STR( "Demo_Sounds") );
+		PORT_DIPSETTING(    0x40, DEF_STR( "Off") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
+		PORT_SERVICE( 0x80, IP_ACTIVE_LOW );
 	
 		PORT_START	/* Dip switch bank 2 */
-		PORT_DIPNAME( 0x01, 0x01, DEF_STR( Flip_Screen ) )
-		PORT_DIPSETTING(    0x01, DEF_STR( Off ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( On ) )
-		PORT_DIPNAME( 0x02, 0x02, DEF_STR( Unknown ) )
-		PORT_DIPSETTING(    0x02, DEF_STR( Off ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( On ) )
-		PORT_DIPNAME( 0x04, 0x04, DEF_STR( Unknown ) )
-		PORT_DIPSETTING(    0x04, DEF_STR( Off ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( On ) )
-		PORT_DIPNAME( 0x08, 0x08, "Coin Mode" )
-		PORT_DIPSETTING(    0x08, "1" )
-		PORT_DIPSETTING(    0x00, "2" )
+		PORT_DIPNAME( 0x01, 0x01, DEF_STR( "Flip_Screen") );
+		PORT_DIPSETTING(    0x01, DEF_STR( "Off") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
+		PORT_DIPNAME( 0x02, 0x02, DEF_STR( "Unknown") );
+		PORT_DIPSETTING(    0x02, DEF_STR( "Off") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
+		PORT_DIPNAME( 0x04, 0x04, DEF_STR( "Unknown") );
+		PORT_DIPSETTING(    0x04, DEF_STR( "Off") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
+		PORT_DIPNAME( 0x08, 0x08, "Coin Mode" );
+		PORT_DIPSETTING(    0x08, "1" );
+		PORT_DIPSETTING(    0x00, "2" );
 		/* Coin Mode 1 */
 		IREM_COIN_MODE_1_NEW
 		/* Coin Mode 2, not supported yet */
 	//	IREM_COIN_MODE_2
-	INPUT_PORTS_END
+	INPUT_PORTS_END(); }}; 
 	
-	INPUT_PORTS_START( bombrman )
+	static InputPortPtr input_ports_bombrman = new InputPortPtr(){ public void handler() { 
 		IREM_JOYSTICK_1_2(1)
 		IREM_JOYSTICK_1_2(2)
 		IREM_COINS
 	
 		PORT_START	/* Dip switch bank 1 */
-		PORT_DIPNAME( 0x03, 0x03, DEF_STR( Lives ) )
-		PORT_DIPSETTING(    0x02, "2" )
-		PORT_DIPSETTING(    0x03, "3" )
-		PORT_DIPSETTING(    0x01, "4" )
-		PORT_DIPSETTING(    0x00, "5" )
-		PORT_DIPNAME( 0x04, 0x04, DEF_STR( Unknown ) ) /* Probably difficulty */
-		PORT_DIPSETTING(    0x04, DEF_STR( Off ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( On ) )
-		PORT_DIPNAME( 0x08, 0x08, DEF_STR( Unknown ) )
-		PORT_DIPSETTING(    0x08, DEF_STR( Off ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( On ) )
-		PORT_DIPNAME( 0x10, 0x10, DEF_STR( Unknown ) )
-		PORT_DIPSETTING(    0x10, DEF_STR( Off ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( On ) )
-		PORT_DIPNAME( 0x20, 0x20, "Allow Continue" )
-		PORT_DIPSETTING(    0x00, DEF_STR( No ) )
-		PORT_DIPSETTING(    0x20, DEF_STR( Yes ) )
-		PORT_DIPNAME( 0x40, 0x00, DEF_STR( Demo_Sounds ) )
-		PORT_DIPSETTING(    0x40, DEF_STR( Off ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( On ) )
-		PORT_SERVICE( 0x80, IP_ACTIVE_LOW )
+		PORT_DIPNAME( 0x03, 0x03, DEF_STR( "Lives") );
+		PORT_DIPSETTING(    0x02, "2" );
+		PORT_DIPSETTING(    0x03, "3" );
+		PORT_DIPSETTING(    0x01, "4" );
+		PORT_DIPSETTING(    0x00, "5" );
+		PORT_DIPNAME( 0x04, 0x04, DEF_STR( "Unknown") ); /* Probably difficulty */
+		PORT_DIPSETTING(    0x04, DEF_STR( "Off") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
+		PORT_DIPNAME( 0x08, 0x08, DEF_STR( "Unknown") );
+		PORT_DIPSETTING(    0x08, DEF_STR( "Off") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
+		PORT_DIPNAME( 0x10, 0x10, DEF_STR( "Unknown") );
+		PORT_DIPSETTING(    0x10, DEF_STR( "Off") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
+		PORT_DIPNAME( 0x20, 0x20, "Allow Continue" );
+		PORT_DIPSETTING(    0x00, DEF_STR( "No") );
+		PORT_DIPSETTING(    0x20, DEF_STR( "Yes") );
+		PORT_DIPNAME( 0x40, 0x00, DEF_STR( "Demo_Sounds") );
+		PORT_DIPSETTING(    0x40, DEF_STR( "Off") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
+		PORT_SERVICE( 0x80, IP_ACTIVE_LOW );
 	
 		PORT_START	/* Dip switch bank 2 */
-		PORT_DIPNAME( 0x01, 0x01, DEF_STR( Flip_Screen ) )
-		PORT_DIPSETTING(    0x01, DEF_STR( Off ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( On ) )
-		PORT_DIPNAME( 0x02, 0x02, DEF_STR( Unknown ) )
-		PORT_DIPSETTING(    0x02, DEF_STR( Off ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( On ) )
-		PORT_DIPNAME( 0x04, 0x04, DEF_STR( Unknown ) )
-		PORT_DIPSETTING(    0x04, DEF_STR( Off ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( On ) )
-		PORT_DIPNAME( 0x08, 0x08, "Coin Mode" )
-		PORT_DIPSETTING(    0x08, "1" )
-		PORT_DIPSETTING(    0x00, "2" )
+		PORT_DIPNAME( 0x01, 0x01, DEF_STR( "Flip_Screen") );
+		PORT_DIPSETTING(    0x01, DEF_STR( "Off") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
+		PORT_DIPNAME( 0x02, 0x02, DEF_STR( "Unknown") );
+		PORT_DIPSETTING(    0x02, DEF_STR( "Off") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
+		PORT_DIPNAME( 0x04, 0x04, DEF_STR( "Unknown") );
+		PORT_DIPSETTING(    0x04, DEF_STR( "Off") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
+		PORT_DIPNAME( 0x08, 0x08, "Coin Mode" );
+		PORT_DIPSETTING(    0x08, "1" );
+		PORT_DIPSETTING(    0x00, "2" );
 		/* Coin Mode 1 */
 		IREM_COIN_MODE_1_NEW
 		/* Coin Mode 2, not supported yet */
 	//	IREM_COIN_MODE_2
-	INPUT_PORTS_END
+	INPUT_PORTS_END(); }}; 
 	
-	INPUT_PORTS_START( bbmanw )
+	static InputPortPtr input_ports_bbmanw = new InputPortPtr(){ public void handler() { 
 		IREM_JOYSTICK_1_2(1)
 		IREM_JOYSTICK_1_2(2)
 		IREM_COINS
 	
 		PORT_START	/* Dip switch bank 1 */
-		PORT_DIPNAME( 0x03, 0x03, DEF_STR( Lives ) )
-		PORT_DIPSETTING(    0x02, "2" )
-		PORT_DIPSETTING(    0x03, "3" )
-		PORT_DIPSETTING(    0x01, "4" )
-		PORT_DIPSETTING(    0x00, "5" )
-		PORT_DIPNAME( 0x04, 0x04, DEF_STR( Unknown ) ) /* Probably difficulty */
-		PORT_DIPSETTING(    0x04, DEF_STR( Off ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( On ) )
-		PORT_DIPNAME( 0x08, 0x08, DEF_STR( Unknown ) )
-		PORT_DIPSETTING(    0x08, DEF_STR( Off ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( On ) )
-		PORT_DIPNAME( 0x10, 0x10, DEF_STR( Unknown ) )
-		PORT_DIPSETTING(    0x10, DEF_STR( Off ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( On ) )
-		PORT_DIPNAME( 0x20, 0x20, DEF_STR( Unknown ) )
-		PORT_DIPSETTING(    0x20, DEF_STR( Off ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( On ) )
-		PORT_DIPNAME( 0x40, 0x00, DEF_STR( Demo_Sounds ) )
-		PORT_DIPSETTING(    0x40, DEF_STR( Off ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( On ) )
-		PORT_SERVICE( 0x80, IP_ACTIVE_LOW )
+		PORT_DIPNAME( 0x03, 0x03, DEF_STR( "Lives") );
+		PORT_DIPSETTING(    0x02, "2" );
+		PORT_DIPSETTING(    0x03, "3" );
+		PORT_DIPSETTING(    0x01, "4" );
+		PORT_DIPSETTING(    0x00, "5" );
+		PORT_DIPNAME( 0x04, 0x04, DEF_STR( "Unknown") ); /* Probably difficulty */
+		PORT_DIPSETTING(    0x04, DEF_STR( "Off") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
+		PORT_DIPNAME( 0x08, 0x08, DEF_STR( "Unknown") );
+		PORT_DIPSETTING(    0x08, DEF_STR( "Off") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
+		PORT_DIPNAME( 0x10, 0x10, DEF_STR( "Unknown") );
+		PORT_DIPSETTING(    0x10, DEF_STR( "Off") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
+		PORT_DIPNAME( 0x20, 0x20, DEF_STR( "Unknown") );
+		PORT_DIPSETTING(    0x20, DEF_STR( "Off") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
+		PORT_DIPNAME( 0x40, 0x00, DEF_STR( "Demo_Sounds") );
+		PORT_DIPSETTING(    0x40, DEF_STR( "Off") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
+		PORT_SERVICE( 0x80, IP_ACTIVE_LOW );
 	
 		PORT_START	/* Dip switch bank 2 */
-		PORT_DIPNAME( 0x01, 0x01, DEF_STR( Flip_Screen ) )
-		PORT_DIPSETTING(    0x01, DEF_STR( Off ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( On ) )
-		PORT_DIPNAME( 0x02, 0x02, DEF_STR( Cabinet ) )
-		PORT_DIPSETTING(    0x00, "2 Players" )
-		PORT_DIPSETTING(    0x02, "4 Players" )
-		PORT_DIPNAME( 0x04, 0x04, "Coin Slots" )
-		PORT_DIPSETTING(    0x04, "Common" )
-		PORT_DIPSETTING(    0x00, "Separate" )
-		PORT_DIPNAME( 0x08, 0x08, "Coin Mode" )
-		PORT_DIPSETTING(    0x08, "1" )
-		PORT_DIPSETTING(    0x00, "2" )
+		PORT_DIPNAME( 0x01, 0x01, DEF_STR( "Flip_Screen") );
+		PORT_DIPSETTING(    0x01, DEF_STR( "Off") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
+		PORT_DIPNAME( 0x02, 0x02, DEF_STR( "Cabinet") );
+		PORT_DIPSETTING(    0x00, "2 Players" );
+		PORT_DIPSETTING(    0x02, "4 Players" );
+		PORT_DIPNAME( 0x04, 0x04, "Coin Slots" );
+		PORT_DIPSETTING(    0x04, "Common" );
+		PORT_DIPSETTING(    0x00, "Separate" );
+		PORT_DIPNAME( 0x08, 0x08, "Coin Mode" );
+		PORT_DIPSETTING(    0x08, "1" );
+		PORT_DIPSETTING(    0x00, "2" );
 		/* Coin Mode 1 */
 		IREM_COIN_MODE_1_NEW
 		/* Coin Mode 2, not supported yet */
@@ -332,101 +332,101 @@ public class m90
 	
 		IREM_JOYSTICK_3_4(3)
 		IREM_JOYSTICK_3_4(4)
-	INPUT_PORTS_END
+	INPUT_PORTS_END(); }}; 
 	
-	INPUT_PORTS_START( quizf1 )
+	static InputPortPtr input_ports_quizf1 = new InputPortPtr(){ public void handler() { 
 		IREM_JOYSTICK_1_2(1)
 		IREM_JOYSTICK_1_2(2)
 		IREM_COINS
 	
 		PORT_START	/* Dip switch bank 1 */
-		PORT_DIPNAME( 0x03, 0x03, DEF_STR( Lives ) )
-		PORT_DIPSETTING(    0x02, "2" )
-		PORT_DIPSETTING(    0x03, "3" )
-		PORT_DIPSETTING(    0x01, "4" )
-		PORT_DIPSETTING(    0x00, "5" )
-		PORT_DIPNAME( 0x04, 0x04, DEF_STR( Unknown ) ) /* Probably difficulty */
-		PORT_DIPSETTING(    0x04, DEF_STR( Off ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( On ) )
-		PORT_DIPNAME( 0x08, 0x08, DEF_STR( Unknown ) )
-		PORT_DIPSETTING(    0x08, DEF_STR( Off ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( On ) )
-		PORT_DIPNAME( 0x10, 0x10, DEF_STR( Unknown ) )
-		PORT_DIPSETTING(    0x10, DEF_STR( Off ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( On ) )
-		PORT_DIPNAME( 0x20, 0x00, DEF_STR( Unknown ) )	/* input related (joystick/buttons select?) */
-		PORT_DIPSETTING(    0x20, DEF_STR( Off ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( On ) )
-		PORT_DIPNAME( 0x40, 0x00, DEF_STR( Demo_Sounds ) )
-		PORT_DIPSETTING(    0x40, DEF_STR( Off ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( On ) )
-		PORT_SERVICE( 0x80, IP_ACTIVE_LOW )
+		PORT_DIPNAME( 0x03, 0x03, DEF_STR( "Lives") );
+		PORT_DIPSETTING(    0x02, "2" );
+		PORT_DIPSETTING(    0x03, "3" );
+		PORT_DIPSETTING(    0x01, "4" );
+		PORT_DIPSETTING(    0x00, "5" );
+		PORT_DIPNAME( 0x04, 0x04, DEF_STR( "Unknown") ); /* Probably difficulty */
+		PORT_DIPSETTING(    0x04, DEF_STR( "Off") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
+		PORT_DIPNAME( 0x08, 0x08, DEF_STR( "Unknown") );
+		PORT_DIPSETTING(    0x08, DEF_STR( "Off") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
+		PORT_DIPNAME( 0x10, 0x10, DEF_STR( "Unknown") );
+		PORT_DIPSETTING(    0x10, DEF_STR( "Off") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
+		PORT_DIPNAME( 0x20, 0x00, DEF_STR( "Unknown") );	/* input related (joystick/buttons select?) */
+		PORT_DIPSETTING(    0x20, DEF_STR( "Off") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
+		PORT_DIPNAME( 0x40, 0x00, DEF_STR( "Demo_Sounds") );
+		PORT_DIPSETTING(    0x40, DEF_STR( "Off") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
+		PORT_SERVICE( 0x80, IP_ACTIVE_LOW );
 	
 		PORT_START	/* Dip switch bank 2 */
-		PORT_DIPNAME( 0x01, 0x01, DEF_STR( Flip_Screen ) )
-		PORT_DIPSETTING(    0x01, DEF_STR( Off ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( On ) )
-		PORT_DIPNAME( 0x02, 0x02, DEF_STR( Unknown ) )
-		PORT_DIPSETTING(    0x02, DEF_STR( Off ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( On ) )
-		PORT_DIPNAME( 0x04, 0x04, DEF_STR( Unknown ) )
-		PORT_DIPSETTING(    0x04, DEF_STR( Off ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( On ) )
-		PORT_DIPNAME( 0x08, 0x08, "Coin Mode" )
-		PORT_DIPSETTING(    0x08, "1" )
-		PORT_DIPSETTING(    0x00, "2" )
+		PORT_DIPNAME( 0x01, 0x01, DEF_STR( "Flip_Screen") );
+		PORT_DIPSETTING(    0x01, DEF_STR( "Off") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
+		PORT_DIPNAME( 0x02, 0x02, DEF_STR( "Unknown") );
+		PORT_DIPSETTING(    0x02, DEF_STR( "Off") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
+		PORT_DIPNAME( 0x04, 0x04, DEF_STR( "Unknown") );
+		PORT_DIPSETTING(    0x04, DEF_STR( "Off") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
+		PORT_DIPNAME( 0x08, 0x08, "Coin Mode" );
+		PORT_DIPSETTING(    0x08, "1" );
+		PORT_DIPSETTING(    0x00, "2" );
 		/* Coin Mode 1 */
 		IREM_COIN_MODE_1_NEW
 		/* Coin Mode 2, not supported yet */
 	//	IREM_COIN_MODE_2
-	INPUT_PORTS_END
+	INPUT_PORTS_END(); }}; 
 	
-	INPUT_PORTS_START( m97 )
+	static InputPortPtr input_ports_m97 = new InputPortPtr(){ public void handler() { 
 		IREM_JOYSTICK_1_2(1)
 		IREM_JOYSTICK_1_2(2)
 		IREM_COINS
 	
 		PORT_START	/* Dip switch bank 1 */
-		PORT_DIPNAME( 0x03, 0x03, DEF_STR( Lives ) )
-		PORT_DIPSETTING(    0x02, "2" )
-		PORT_DIPSETTING(    0x03, "3" )
-		PORT_DIPSETTING(    0x01, "4" )
-		PORT_DIPSETTING(    0x00, "5" )
-		PORT_DIPNAME( 0x04, 0x04, DEF_STR( Unknown ) ) /* Probably difficulty */
-		PORT_DIPSETTING(    0x04, DEF_STR( Off ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( On ) )
-		PORT_DIPNAME( 0x08, 0x08, DEF_STR( Unknown ) )
-		PORT_DIPSETTING(    0x08, DEF_STR( Off ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( On ) )
-		PORT_DIPNAME( 0x10, 0x10, DEF_STR( Unknown ) )
-		PORT_DIPSETTING(    0x10, DEF_STR( Off ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( On ) )
-		PORT_DIPNAME( 0x20, 0x20, DEF_STR( Unknown ) )
-		PORT_DIPSETTING(    0x20, DEF_STR( Off ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( On ) )
-		PORT_DIPNAME( 0x40, 0x00, DEF_STR( Demo_Sounds ) )
-		PORT_DIPSETTING(    0x40, DEF_STR( Off ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( On ) )
-		PORT_SERVICE( 0x80, IP_ACTIVE_LOW )
+		PORT_DIPNAME( 0x03, 0x03, DEF_STR( "Lives") );
+		PORT_DIPSETTING(    0x02, "2" );
+		PORT_DIPSETTING(    0x03, "3" );
+		PORT_DIPSETTING(    0x01, "4" );
+		PORT_DIPSETTING(    0x00, "5" );
+		PORT_DIPNAME( 0x04, 0x04, DEF_STR( "Unknown") ); /* Probably difficulty */
+		PORT_DIPSETTING(    0x04, DEF_STR( "Off") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
+		PORT_DIPNAME( 0x08, 0x08, DEF_STR( "Unknown") );
+		PORT_DIPSETTING(    0x08, DEF_STR( "Off") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
+		PORT_DIPNAME( 0x10, 0x10, DEF_STR( "Unknown") );
+		PORT_DIPSETTING(    0x10, DEF_STR( "Off") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
+		PORT_DIPNAME( 0x20, 0x20, DEF_STR( "Unknown") );
+		PORT_DIPSETTING(    0x20, DEF_STR( "Off") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
+		PORT_DIPNAME( 0x40, 0x00, DEF_STR( "Demo_Sounds") );
+		PORT_DIPSETTING(    0x40, DEF_STR( "Off") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
+		PORT_SERVICE( 0x80, IP_ACTIVE_LOW );
 	
 		PORT_START	/* Dip switch bank 2 */
-		PORT_DIPNAME( 0x01, 0x01, DEF_STR( Flip_Screen ) )
-		PORT_DIPSETTING(    0x01, DEF_STR( Off ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( On ) )
-		PORT_DIPNAME( 0x02, 0x02, DEF_STR( Unknown ) )
-		PORT_DIPSETTING(    0x02, DEF_STR( Off ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( On ) )
-		PORT_DIPNAME( 0x04, 0x04, DEF_STR( Unknown ) )
-		PORT_DIPSETTING(    0x04, DEF_STR( Off ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( On ) )
-		PORT_DIPNAME( 0x08, 0x08, "Coin Mode" )
-		PORT_DIPSETTING(    0x08, "1" )
-		PORT_DIPSETTING(    0x00, "2" )
+		PORT_DIPNAME( 0x01, 0x01, DEF_STR( "Flip_Screen") );
+		PORT_DIPSETTING(    0x01, DEF_STR( "Off") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
+		PORT_DIPNAME( 0x02, 0x02, DEF_STR( "Unknown") );
+		PORT_DIPSETTING(    0x02, DEF_STR( "Off") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
+		PORT_DIPNAME( 0x04, 0x04, DEF_STR( "Unknown") );
+		PORT_DIPSETTING(    0x04, DEF_STR( "Off") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
+		PORT_DIPNAME( 0x08, 0x08, "Coin Mode" );
+		PORT_DIPSETTING(    0x08, "1" );
+		PORT_DIPSETTING(    0x00, "2" );
 		/* Coin Mode 1 */
 		IREM_COIN_MODE_1_NEW
 		/* Coin Mode 2, not supported yet */
 	//	IREM_COIN_MODE_2
-	INPUT_PORTS_END
+	INPUT_PORTS_END(); }}; 
 	
 	/*****************************************************************************/
 	

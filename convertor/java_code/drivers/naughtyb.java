@@ -179,39 +179,39 @@ public class naughtyb
 		else return ignore_interrupt();
 	}
 	
-	INPUT_PORTS_START( naughtyb )
+	static InputPortPtr input_ports_naughtyb = new InputPortPtr(){ public void handler() { 
 		PORT_START	/* IN0 */
-		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_START1 )
-		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_START2 )
-		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_UNKNOWN )
-		PORT_BIT( 0x08, IP_ACTIVE_LOW, IPT_BUTTON1 )
-		PORT_BIT( 0x10, IP_ACTIVE_LOW, IPT_JOYSTICK_UP | IPF_4WAY )
-		PORT_BIT( 0x20, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN | IPF_4WAY )
-		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_4WAY )
-		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT | IPF_4WAY )
+		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_START1 );
+		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_START2 );
+		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_UNKNOWN );
+		PORT_BIT( 0x08, IP_ACTIVE_LOW, IPT_BUTTON1 );
+		PORT_BIT( 0x10, IP_ACTIVE_LOW, IPT_JOYSTICK_UP | IPF_4WAY );
+		PORT_BIT( 0x20, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN | IPF_4WAY );
+		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_4WAY );
+		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT | IPF_4WAY );
 	
 		PORT_START	/* DSW0 & VBLANK */
-		PORT_DIPNAME( 0x03, 0x01, DEF_STR( Lives ) )
-		PORT_DIPSETTING(	0x00, "2" )
-		PORT_DIPSETTING(	0x01, "3" )
-		PORT_DIPSETTING(	0x02, "4" )
-		PORT_DIPSETTING(	0x03, "5" )
-		PORT_DIPNAME( 0x0c, 0x04, DEF_STR( Bonus_Life ) )
-		PORT_DIPSETTING(	0x00, "10000" )
-		PORT_DIPSETTING(	0x04, "30000" )
-		PORT_DIPSETTING(	0x08, "50000" )
-		PORT_DIPSETTING(	0x0c, "70000" )
-		PORT_DIPNAME( 0x30, 0x10, DEF_STR( Coinage ) )
-		PORT_DIPSETTING(	0x00, DEF_STR( 2C_1C ) )
-		PORT_DIPSETTING(	0x10, DEF_STR( 1C_1C ) )
-		PORT_DIPSETTING(	0x20, DEF_STR( 1C_2C ) )
-		PORT_DIPSETTING(	0x30, DEF_STR( 1C_3C ) )
-		PORT_DIPNAME( 0x40, 0x00, DEF_STR( Difficulty ) )
-		PORT_DIPSETTING(	0x00, "Easy" )
-		PORT_DIPSETTING(	0x40, "Hard" )
+		PORT_DIPNAME( 0x03, 0x01, DEF_STR( "Lives") );
+		PORT_DIPSETTING(	0x00, "2" );
+		PORT_DIPSETTING(	0x01, "3" );
+		PORT_DIPSETTING(	0x02, "4" );
+		PORT_DIPSETTING(	0x03, "5" );
+		PORT_DIPNAME( 0x0c, 0x04, DEF_STR( "Bonus_Life") );
+		PORT_DIPSETTING(	0x00, "10000" );
+		PORT_DIPSETTING(	0x04, "30000" );
+		PORT_DIPSETTING(	0x08, "50000" );
+		PORT_DIPSETTING(	0x0c, "70000" );
+		PORT_DIPNAME( 0x30, 0x10, DEF_STR( "Coinage") );
+		PORT_DIPSETTING(	0x00, DEF_STR( "2C_1C") );
+		PORT_DIPSETTING(	0x10, DEF_STR( "1C_1C") );
+		PORT_DIPSETTING(	0x20, DEF_STR( "1C_2C") );
+		PORT_DIPSETTING(	0x30, DEF_STR( "1C_3C") );
+		PORT_DIPNAME( 0x40, 0x00, DEF_STR( "Difficulty") );
+		PORT_DIPSETTING(	0x00, "Easy" );
+		PORT_DIPSETTING(	0x40, "Hard" );
 		/* This is a bit of a mystery. Bit 0x80 is read as the vblank, but
 		   it apparently also controls cocktail/table mode. */
-		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_VBLANK )
+		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_VBLANK );
 	
 		PORT_START	/* FAKE */
 		/* The coin slots are not memory mapped. */
@@ -219,8 +219,8 @@ public class naughtyb
 		/* handler to be notified of coin insertions. We use IMPULSE to */
 		/* trigger exactly one interrupt, without having to check when the */
 		/* user releases the key. */
-			PORT_BIT_IMPULSE( 0x01, IP_ACTIVE_HIGH, IPT_COIN1, 1 )
-	INPUT_PORTS_END
+			PORT_BIT_IMPULSE( 0x01, IP_ACTIVE_HIGH, IPT_COIN1, 1 );
+	INPUT_PORTS_END(); }}; 
 	
 	
 	

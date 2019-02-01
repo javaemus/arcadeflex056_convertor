@@ -278,146 +278,146 @@ public class mhavoc
 		new Memory_WriteAddress(MEMPORT_MARKER, 0)
 	};
 	
-	INPUT_PORTS_START( mhavoc )
+	static InputPortPtr input_ports_mhavoc = new InputPortPtr(){ public void handler() { 
 		PORT_START	/* IN0 - alpha (player_1 = 0) */
-		PORT_BIT ( 0x0f, IP_ACTIVE_HIGH, IPT_UNKNOWN )
-		/* PORT_BIT ( 0x10, IP_ACTIVE_LOW, IPT_SERVICE, "Diag Step", KEYCODE_T, IP_JOY_NONE ) */
-		PORT_BIT ( 0x10, IP_ACTIVE_LOW, IPT_UNKNOWN )
-		PORT_BITX( 0x20, IP_ACTIVE_LOW, IPT_SERVICE, "Diag Step/Coin C", KEYCODE_F1, IP_JOY_NONE )
-		PORT_BIT ( 0x40, IP_ACTIVE_LOW, IPT_COIN1 )	/* Left Coin Switch  */
-		PORT_BIT ( 0x80, IP_ACTIVE_LOW, IPT_COIN2 )	/* Right Coin */
+		PORT_BIT ( 0x0f, IP_ACTIVE_HIGH, IPT_UNKNOWN );
+		/* PORT_BIT ( 0x10, IP_ACTIVE_LOW, IPT_SERVICE, "Diag Step", KEYCODE_T, IP_JOY_NONE );*/
+		PORT_BIT ( 0x10, IP_ACTIVE_LOW, IPT_UNKNOWN );
+		PORT_BITX( 0x20, IP_ACTIVE_LOW, IPT_SERVICE, "Diag Step/Coin C", KEYCODE_F1, IP_JOY_NONE );
+		PORT_BIT ( 0x40, IP_ACTIVE_LOW, IPT_COIN1 );/* Left Coin Switch  */
+		PORT_BIT ( 0x80, IP_ACTIVE_LOW, IPT_COIN2 );/* Right Coin */
 	
 		PORT_START	/* IN1 - gamma */
-		PORT_BIT ( 0x0f, IP_ACTIVE_LOW, IPT_UNKNOWN )
-		PORT_BIT ( 0x10, IP_ACTIVE_LOW, IPT_BUTTON2 | IPF_PLAYER2 )
-		PORT_BIT ( 0x20, IP_ACTIVE_LOW, IPT_BUTTON1 | IPF_PLAYER2 )
-		PORT_BIT ( 0x40, IP_ACTIVE_LOW, IPT_BUTTON2 )
-		PORT_BIT ( 0x80, IP_ACTIVE_LOW, IPT_BUTTON1 )
+		PORT_BIT ( 0x0f, IP_ACTIVE_LOW, IPT_UNKNOWN );
+		PORT_BIT ( 0x10, IP_ACTIVE_LOW, IPT_BUTTON2 | IPF_PLAYER2 );
+		PORT_BIT ( 0x20, IP_ACTIVE_LOW, IPT_BUTTON1 | IPF_PLAYER2 );
+		PORT_BIT ( 0x40, IP_ACTIVE_LOW, IPT_BUTTON2 );
+		PORT_BIT ( 0x80, IP_ACTIVE_LOW, IPT_BUTTON1 );
 	
 		PORT_START	/* IN2 - gamma */
-		PORT_ANALOG( 0xff, 0x00, IPT_DIAL | IPF_REVERSE, 100, 40, 0, 0 )
+		PORT_ANALOG( 0xff, 0x00, IPT_DIAL | IPF_REVERSE, 100, 40, 0, 0 );
 	
 		PORT_START /* DIP Switch at position 13/14S */
-		PORT_DIPNAME( 0x01, 0x00, "Adaptive Difficulty" )
-		PORT_DIPSETTING(    0x01, DEF_STR( Off ))
-		PORT_DIPSETTING(    0x00, DEF_STR( On ))
-		PORT_DIPNAME( 0x02, 0x00, DEF_STR( Demo_Sounds ) )
-		PORT_DIPSETTING(    0x02, DEF_STR( Off ))
-		PORT_DIPSETTING(    0x00, DEF_STR( On ))
-		PORT_DIPNAME( 0x0c, 0x00, DEF_STR( Bonus_Life ) )
-		PORT_DIPSETTING(    0x0c, "50000")
-		PORT_DIPSETTING(    0x00, "100000")
-		PORT_DIPSETTING(    0x04, "200000")
-		PORT_DIPSETTING(    0x08, "None")
-		PORT_DIPNAME( 0x30, 0x00, DEF_STR( Difficulty ) )
-		PORT_DIPSETTING(    0x10, "Easy")
-		PORT_DIPSETTING(    0x00, "Medium")
-		PORT_DIPSETTING(    0x30, "Hard")
-		PORT_DIPSETTING(    0x20, "Demo")
-		PORT_DIPNAME( 0xc0, 0x00, DEF_STR( Lives ) )
-		PORT_DIPSETTING(    0x00, "3 (2 in Free Play)")
-		PORT_DIPSETTING(    0xc0, "4 (3 in Free Play)")
-		PORT_DIPSETTING(    0x80, "5 (4 in Free Play)")
-		PORT_DIPSETTING(    0x40, "6 (5 in Free Play)")
+		PORT_DIPNAME( 0x01, 0x00, "Adaptive Difficulty" );
+		PORT_DIPSETTING(    0x01, DEF_STR( "Off") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
+		PORT_DIPNAME( 0x02, 0x00, DEF_STR( "Demo_Sounds") );
+		PORT_DIPSETTING(    0x02, DEF_STR( "Off") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
+		PORT_DIPNAME( 0x0c, 0x00, DEF_STR( "Bonus_Life") );
+		PORT_DIPSETTING(    0x0c, "50000");
+		PORT_DIPSETTING(    0x00, "100000");
+		PORT_DIPSETTING(    0x04, "200000");
+		PORT_DIPSETTING(    0x08, "None");
+		PORT_DIPNAME( 0x30, 0x00, DEF_STR( "Difficulty") );
+		PORT_DIPSETTING(    0x10, "Easy");
+		PORT_DIPSETTING(    0x00, "Medium");
+		PORT_DIPSETTING(    0x30, "Hard");
+		PORT_DIPSETTING(    0x20, "Demo");
+		PORT_DIPNAME( 0xc0, 0x00, DEF_STR( "Lives") );
+		PORT_DIPSETTING(    0x00, "3 (2 in Free Play);
+		PORT_DIPSETTING(    0xc0, "4 (3 in Free Play);
+		PORT_DIPSETTING(    0x80, "5 (4 in Free Play);
+		PORT_DIPSETTING(    0x40, "6 (5 in Free Play);
 	
 		PORT_START /* DIP Switch at position 8S */
-		PORT_DIPNAME( 0x03, 0x03, DEF_STR( Coinage ) )
-		PORT_DIPSETTING(    0x02, DEF_STR( 2C_1C ) )
-		PORT_DIPSETTING(    0x03, DEF_STR( 1C_1C ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( 1C_2C ) )
-		PORT_DIPSETTING(    0x01, DEF_STR( Free_Play ) )
-		PORT_DIPNAME( 0x0c, 0x0c, "Right Coin Mechanism" )
-		PORT_DIPSETTING(    0x0c, "x1" )
-		PORT_DIPSETTING(    0x08, "x4" )
-		PORT_DIPSETTING(    0x04, "x5" )
-		PORT_DIPSETTING(    0x00, "x6" )
-		PORT_DIPNAME( 0x10, 0x10, "Left Coin Mechanism" )
-		PORT_DIPSETTING(    0x10, "x1" )
-		PORT_DIPSETTING(    0x00, "x2" )
-		PORT_DIPNAME( 0xe0, 0xe0, "Bonus Credits" )
-		PORT_DIPSETTING(    0x80, "2 each 4" )
-		PORT_DIPSETTING(    0x40, "1 each 3" )
-		PORT_DIPSETTING(    0xa0, "1 each 4" )
-		PORT_DIPSETTING(    0x60, "1 each 5" )
-		PORT_DIPSETTING(    0xe0, "None" )
+		PORT_DIPNAME( 0x03, 0x03, DEF_STR( "Coinage") );
+		PORT_DIPSETTING(    0x02, DEF_STR( "2C_1C") );
+		PORT_DIPSETTING(    0x03, DEF_STR( "1C_1C") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "1C_2C") );
+		PORT_DIPSETTING(    0x01, DEF_STR( "Free_Play") );
+		PORT_DIPNAME( 0x0c, 0x0c, "Right Coin Mechanism" );
+		PORT_DIPSETTING(    0x0c, "x1" );
+		PORT_DIPSETTING(    0x08, "x4" );
+		PORT_DIPSETTING(    0x04, "x5" );
+		PORT_DIPSETTING(    0x00, "x6" );
+		PORT_DIPNAME( 0x10, 0x10, "Left Coin Mechanism" );
+		PORT_DIPSETTING(    0x10, "x1" );
+		PORT_DIPSETTING(    0x00, "x2" );
+		PORT_DIPNAME( 0xe0, 0xe0, "Bonus Credits" );
+		PORT_DIPSETTING(    0x80, "2 each 4" );
+		PORT_DIPSETTING(    0x40, "1 each 3" );
+		PORT_DIPSETTING(    0xa0, "1 each 4" );
+		PORT_DIPSETTING(    0x60, "1 each 5" );
+		PORT_DIPSETTING(    0xe0, "None" );
 	
 		PORT_START	/* IN5 - dummy for player_1 = 1 on alpha */
-		PORT_BIT ( 0x3f, IP_ACTIVE_HIGH, IPT_UNUSED )
-		PORT_DIPNAME( 0x40, 0x40, "Credit to start" )
-		PORT_DIPSETTING(    0x40, "1" )
-		PORT_DIPSETTING(    0x00, "2" )
-		PORT_SERVICE( 0x80, IP_ACTIVE_LOW )
-	INPUT_PORTS_END
+		PORT_BIT ( 0x3f, IP_ACTIVE_HIGH, IPT_UNUSED );
+		PORT_DIPNAME( 0x40, 0x40, "Credit to start" );
+		PORT_DIPSETTING(    0x40, "1" );
+		PORT_DIPSETTING(    0x00, "2" );
+		PORT_SERVICE( 0x80, IP_ACTIVE_LOW );
+	INPUT_PORTS_END(); }}; 
 	
-	INPUT_PORTS_START( mhavocp )
+	static InputPortPtr input_ports_mhavocp = new InputPortPtr(){ public void handler() { 
 		PORT_START	/* IN0 - alpha (player_1 = 0) */
-		PORT_BIT ( 0x0f, IP_ACTIVE_HIGH, IPT_UNKNOWN )
-		/* PORT_BIT ( 0x10, IP_ACTIVE_LOW, IPT_SERVICE, "Diag Step", KEYCODE_T, IP_JOY_NONE ) */
-		PORT_BIT ( 0x10, IP_ACTIVE_LOW, IPT_UNKNOWN )
-		PORT_BITX( 0x20, IP_ACTIVE_LOW, IPT_SERVICE, "Diag Step/Coin C", KEYCODE_F1, IP_JOY_NONE )
-		PORT_BIT ( 0x40, IP_ACTIVE_LOW, IPT_COIN1 )	/* Left Coin Switch  */
-		PORT_BIT ( 0x80, IP_ACTIVE_LOW, IPT_COIN2 )	/* Right Coin */
+		PORT_BIT ( 0x0f, IP_ACTIVE_HIGH, IPT_UNKNOWN );
+		/* PORT_BIT ( 0x10, IP_ACTIVE_LOW, IPT_SERVICE, "Diag Step", KEYCODE_T, IP_JOY_NONE );*/
+		PORT_BIT ( 0x10, IP_ACTIVE_LOW, IPT_UNKNOWN );
+		PORT_BITX( 0x20, IP_ACTIVE_LOW, IPT_SERVICE, "Diag Step/Coin C", KEYCODE_F1, IP_JOY_NONE );
+		PORT_BIT ( 0x40, IP_ACTIVE_LOW, IPT_COIN1 );/* Left Coin Switch  */
+		PORT_BIT ( 0x80, IP_ACTIVE_LOW, IPT_COIN2 );/* Right Coin */
 	
 		PORT_START	/* IN1 - gamma */
-		PORT_BIT ( 0x0f, IP_ACTIVE_LOW, IPT_UNKNOWN )
-		PORT_BIT ( 0x10, IP_ACTIVE_LOW, IPT_BUTTON2 | IPF_PLAYER2 )
-		PORT_BIT ( 0x20, IP_ACTIVE_LOW, IPT_BUTTON1 | IPF_PLAYER2 )
-		PORT_BIT ( 0x40, IP_ACTIVE_LOW, IPT_BUTTON2 )
-		PORT_BIT ( 0x80, IP_ACTIVE_LOW, IPT_BUTTON1 )
+		PORT_BIT ( 0x0f, IP_ACTIVE_LOW, IPT_UNKNOWN );
+		PORT_BIT ( 0x10, IP_ACTIVE_LOW, IPT_BUTTON2 | IPF_PLAYER2 );
+		PORT_BIT ( 0x20, IP_ACTIVE_LOW, IPT_BUTTON1 | IPF_PLAYER2 );
+		PORT_BIT ( 0x40, IP_ACTIVE_LOW, IPT_BUTTON2 );
+		PORT_BIT ( 0x80, IP_ACTIVE_LOW, IPT_BUTTON1 );
 	
 		PORT_START	/* IN2 - gamma */
-		PORT_ANALOG( 0xff, 0x00, IPT_DIAL | IPF_REVERSE, 100, 40, 0, 0 )
+		PORT_ANALOG( 0xff, 0x00, IPT_DIAL | IPF_REVERSE, 100, 40, 0, 0 );
 	
 		PORT_START /* DIP Switch at position 13/14S */
-		PORT_DIPNAME( 0x03, 0x00, DEF_STR( Lives ) )
-		PORT_DIPSETTING(    0x00, "1" )
-		PORT_DIPSETTING(    0x01, "2" )
-		PORT_DIPSETTING(    0x02, "3" )
-		PORT_DIPSETTING(    0x03, "4" )
-		PORT_DIPNAME( 0x0c, 0x00, DEF_STR( Bonus_Life ) )
-		PORT_DIPSETTING(    0x0c, "50000")
-		PORT_DIPSETTING(    0x00, "100000")
-		PORT_DIPSETTING(    0x04, "200000")
-		PORT_DIPSETTING(    0x08, "None")
-		PORT_DIPNAME( 0x30, 0x00, DEF_STR( Difficulty ) )
-		PORT_DIPSETTING(    0x10, "Easy")
-		PORT_DIPSETTING(    0x00, "Medium")
-		PORT_DIPSETTING(    0x30, "Hard")
-		PORT_DIPSETTING(    0x20, "Demo")
-		PORT_DIPNAME( 0xc0, 0x00, DEF_STR( Lives ) )
-		PORT_DIPSETTING(    0x00, "3 (2 in Free Play)")
-		PORT_DIPSETTING(    0xc0, "4 (3 in Free Play)")
-		PORT_DIPSETTING(    0x80, "5 (4 in Free Play)")
-		PORT_DIPSETTING(    0x40, "6 (5 in Free Play)")
+		PORT_DIPNAME( 0x03, 0x00, DEF_STR( "Lives") );
+		PORT_DIPSETTING(    0x00, "1" );
+		PORT_DIPSETTING(    0x01, "2" );
+		PORT_DIPSETTING(    0x02, "3" );
+		PORT_DIPSETTING(    0x03, "4" );
+		PORT_DIPNAME( 0x0c, 0x00, DEF_STR( "Bonus_Life") );
+		PORT_DIPSETTING(    0x0c, "50000");
+		PORT_DIPSETTING(    0x00, "100000");
+		PORT_DIPSETTING(    0x04, "200000");
+		PORT_DIPSETTING(    0x08, "None");
+		PORT_DIPNAME( 0x30, 0x00, DEF_STR( "Difficulty") );
+		PORT_DIPSETTING(    0x10, "Easy");
+		PORT_DIPSETTING(    0x00, "Medium");
+		PORT_DIPSETTING(    0x30, "Hard");
+		PORT_DIPSETTING(    0x20, "Demo");
+		PORT_DIPNAME( 0xc0, 0x00, DEF_STR( "Lives") );
+		PORT_DIPSETTING(    0x00, "3 (2 in Free Play);
+		PORT_DIPSETTING(    0xc0, "4 (3 in Free Play);
+		PORT_DIPSETTING(    0x80, "5 (4 in Free Play);
+		PORT_DIPSETTING(    0x40, "6 (5 in Free Play);
 	
 		PORT_START /* DIP Switch at position 8S */
-		PORT_DIPNAME( 0x03, 0x03, DEF_STR( Coinage ) )
-		PORT_DIPSETTING(    0x02, DEF_STR( 2C_1C ) )
-		PORT_DIPSETTING(    0x03, DEF_STR( 1C_1C ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( 1C_2C ) )
-		PORT_DIPSETTING(    0x01, DEF_STR( Free_Play ) )
-		PORT_DIPNAME( 0x0c, 0x0c, "Right Coin Mechanism" )
-		PORT_DIPSETTING(    0x0c, "x1" )
-		PORT_DIPSETTING(    0x08, "x4" )
-		PORT_DIPSETTING(    0x04, "x5" )
-		PORT_DIPSETTING(    0x00, "x6" )
-		PORT_DIPNAME( 0x10, 0x10, "Left Coin Mechanism" )
-		PORT_DIPSETTING(    0x10, "x1" )
-		PORT_DIPSETTING(    0x00, "x2" )
-		PORT_DIPNAME( 0xe0, 0xe0, "Bonus Credits" )
-		PORT_DIPSETTING(    0x80, "2 each 4" )
-		PORT_DIPSETTING(    0x40, "1 each 3" )
-		PORT_DIPSETTING(    0xa0, "1 each 4" )
-		PORT_DIPSETTING(    0x60, "1 each 5" )
-		PORT_DIPSETTING(    0xe0, "None" )
+		PORT_DIPNAME( 0x03, 0x03, DEF_STR( "Coinage") );
+		PORT_DIPSETTING(    0x02, DEF_STR( "2C_1C") );
+		PORT_DIPSETTING(    0x03, DEF_STR( "1C_1C") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "1C_2C") );
+		PORT_DIPSETTING(    0x01, DEF_STR( "Free_Play") );
+		PORT_DIPNAME( 0x0c, 0x0c, "Right Coin Mechanism" );
+		PORT_DIPSETTING(    0x0c, "x1" );
+		PORT_DIPSETTING(    0x08, "x4" );
+		PORT_DIPSETTING(    0x04, "x5" );
+		PORT_DIPSETTING(    0x00, "x6" );
+		PORT_DIPNAME( 0x10, 0x10, "Left Coin Mechanism" );
+		PORT_DIPSETTING(    0x10, "x1" );
+		PORT_DIPSETTING(    0x00, "x2" );
+		PORT_DIPNAME( 0xe0, 0xe0, "Bonus Credits" );
+		PORT_DIPSETTING(    0x80, "2 each 4" );
+		PORT_DIPSETTING(    0x40, "1 each 3" );
+		PORT_DIPSETTING(    0xa0, "1 each 4" );
+		PORT_DIPSETTING(    0x60, "1 each 5" );
+		PORT_DIPSETTING(    0xe0, "None" );
 	
 		PORT_START	/* IN5 - dummy for player_1 = 1 on alpha */
-		PORT_BIT ( 0x3f, IP_ACTIVE_HIGH, IPT_UNUSED )
-		PORT_DIPNAME( 0x40, 0x40, "Credit to start" )
-		PORT_DIPSETTING(    0x40, "1" )
-		PORT_DIPSETTING(    0x00, "2" )
-		PORT_SERVICE( 0x80, IP_ACTIVE_LOW )
-	INPUT_PORTS_END
+		PORT_BIT ( 0x3f, IP_ACTIVE_HIGH, IPT_UNUSED );
+		PORT_DIPNAME( 0x40, 0x40, "Credit to start" );
+		PORT_DIPSETTING(    0x40, "1" );
+		PORT_DIPSETTING(    0x00, "2" );
+		PORT_SERVICE( 0x80, IP_ACTIVE_LOW );
+	INPUT_PORTS_END(); }}; 
 	
 	
 	

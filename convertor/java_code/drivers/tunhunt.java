@@ -589,61 +589,61 @@ public class tunhunt
 		new Memory_WriteAddress(MEMPORT_MARKER, 0)
 	};
 	
-	INPUT_PORTS_START( tunhunt )
+	static InputPortPtr input_ports_tunhunt = new InputPortPtr(){ public void handler() { 
 		PORT_START
-		PORT_BIT ( 0x01, IP_ACTIVE_HIGH, IPT_TILT )
-		PORT_BIT ( 0x02, IP_ACTIVE_HIGH, IPT_BUTTON1 )
-		PORT_DIPNAME( 0x04, 0x00, DEF_STR( Service_Mode ) )
-		PORT_DIPSETTING (	0x00, DEF_STR( Off ) )
-		PORT_DIPSETTING (	0x04, DEF_STR( On ) )
-		PORT_BIT ( 0x08, IP_ACTIVE_HIGH, IPT_COIN1 )
-		PORT_BIT ( 0x10, IP_ACTIVE_HIGH, IPT_COIN2 )
-		PORT_BIT ( 0x20, IP_ACTIVE_HIGH, IPT_BUTTON2 )
-		PORT_BIT ( 0x40, IP_ACTIVE_HIGH, IPT_START1 )
-		PORT_BIT ( 0x80, IP_ACTIVE_LOW, IPT_VBLANK )
+		PORT_BIT ( 0x01, IP_ACTIVE_HIGH, IPT_TILT );
+		PORT_BIT ( 0x02, IP_ACTIVE_HIGH, IPT_BUTTON1 );
+		PORT_DIPNAME( 0x04, 0x00, DEF_STR( "Service_Mode") );
+		PORT_DIPSETTING (	0x00, DEF_STR( "Off") );
+		PORT_DIPSETTING (	0x04, DEF_STR( "On") );
+		PORT_BIT ( 0x08, IP_ACTIVE_HIGH, IPT_COIN1 );
+		PORT_BIT ( 0x10, IP_ACTIVE_HIGH, IPT_COIN2 );
+		PORT_BIT ( 0x20, IP_ACTIVE_HIGH, IPT_BUTTON2 );
+		PORT_BIT ( 0x40, IP_ACTIVE_HIGH, IPT_START1 );
+		PORT_BIT ( 0x80, IP_ACTIVE_LOW, IPT_VBLANK );
 	
 		PORT_START
-		PORT_ANALOG( 0xff, 0x00, IPT_AD_STICK_Y, 100, 4, 0x00, 0xff )
+		PORT_ANALOG( 0xff, 0x00, IPT_AD_STICK_Y, 100, 4, 0x00, 0xff );
 	
 		PORT_START
-		PORT_ANALOG( 0xff, 0x00, IPT_AD_STICK_X | IPF_REVERSE, 100, 4, 0x00, 0xff )
+		PORT_ANALOG( 0xff, 0x00, IPT_AD_STICK_X | IPF_REVERSE, 100, 4, 0x00, 0xff );
 	
 		PORT_START /* dip switches */
-		PORT_DIPNAME (0x0003, 0x0002, DEF_STR( Coinage ) )
-		PORT_DIPSETTING (     0x0003, DEF_STR( 2C_1C ) )
-		PORT_DIPSETTING (     0x0002, DEF_STR( 1C_1C ) )
-		PORT_DIPSETTING (     0x0001, DEF_STR( 1C_2C ) )
-		PORT_DIPSETTING (     0x0000, DEF_STR( Free_Play ) )
-		PORT_DIPNAME (0x000c, 0x0000, DEF_STR( Coin_B ) )
-		PORT_DIPSETTING (     0x0000, "*1" )
-		PORT_DIPSETTING (     0x0004, "*4" )
-		PORT_DIPSETTING (     0x0008, "*5" )
-		PORT_DIPSETTING (     0x000c, "*6" )
-		PORT_DIPNAME (0x0010, 0x0000, DEF_STR( Coin_A ) )
-		PORT_DIPSETTING (     0x0000, "*1" )
-		PORT_DIPSETTING (     0x0010, "*2" )
-		PORT_DIPNAME (0x0060, 0x0000, "Bonus Credits" )
-		PORT_DIPSETTING (     0x0000, "None" )
-		PORT_DIPSETTING (     0x0060, "5 credits, 1 bonus" )
-		PORT_DIPSETTING (     0x0040, "4 credits, 1 bonus" )
-		PORT_DIPSETTING (     0x0020, "2 credits, 1 bonus" )
-		PORT_DIPNAME (0x0880, 0x0000, "Language" )
-		PORT_DIPSETTING (     0x0000, "English" )
-		PORT_DIPSETTING (     0x0080, "German" )
-		PORT_DIPSETTING (     0x0800, "French" )
-		PORT_DIPSETTING (     0x0880, "Spanish" )
-		PORT_DIPNAME (0x0100, 0x0000, DEF_STR( Unknown ) )
-		PORT_DIPSETTING (     0x0000, DEF_STR( Off ) )
-		PORT_DIPSETTING (     0x0100, DEF_STR( On ) )
-		PORT_DIPNAME (0x0600, 0x0200, DEF_STR( Lives ) )
-		PORT_DIPSETTING (     0x0000, "2" )
-		PORT_DIPSETTING (     0x0200, "3" )
-		PORT_DIPSETTING (     0x0400, "4" )
-		PORT_DIPSETTING (     0x0600, "5" )
-		PORT_DIPNAME (0x1000, 0x1000, DEF_STR( Bonus_Life ) )
-		PORT_DIPSETTING (     0x1000, "30000" )
-		PORT_DIPSETTING (     0x0000, "None" )
-	INPUT_PORTS_END
+		PORT_DIPNAME (0x0003, 0x0002, DEF_STR( "Coinage") );
+		PORT_DIPSETTING (     0x0003, DEF_STR( "2C_1C") );
+		PORT_DIPSETTING (     0x0002, DEF_STR( "1C_1C") );
+		PORT_DIPSETTING (     0x0001, DEF_STR( "1C_2C") );
+		PORT_DIPSETTING (     0x0000, DEF_STR( "Free_Play") );
+		PORT_DIPNAME (0x000c, 0x0000, DEF_STR( "Coin_B") );
+		PORT_DIPSETTING (     0x0000, "*1" );
+		PORT_DIPSETTING (     0x0004, "*4" );
+		PORT_DIPSETTING (     0x0008, "*5" );
+		PORT_DIPSETTING (     0x000c, "*6" );
+		PORT_DIPNAME (0x0010, 0x0000, DEF_STR( "Coin_A") );
+		PORT_DIPSETTING (     0x0000, "*1" );
+		PORT_DIPSETTING (     0x0010, "*2" );
+		PORT_DIPNAME (0x0060, 0x0000, "Bonus Credits" );
+		PORT_DIPSETTING (     0x0000, "None" );
+		PORT_DIPSETTING (     0x0060, "5 credits, 1 bonus" );
+		PORT_DIPSETTING (     0x0040, "4 credits, 1 bonus" );
+		PORT_DIPSETTING (     0x0020, "2 credits, 1 bonus" );
+		PORT_DIPNAME (0x0880, 0x0000, "Language" );
+		PORT_DIPSETTING (     0x0000, "English" );
+		PORT_DIPSETTING (     0x0080, "German" );
+		PORT_DIPSETTING (     0x0800, "French" );
+		PORT_DIPSETTING (     0x0880, "Spanish" );
+		PORT_DIPNAME (0x0100, 0x0000, DEF_STR( "Unknown") );
+		PORT_DIPSETTING (     0x0000, DEF_STR( "Off") );
+		PORT_DIPSETTING (     0x0100, DEF_STR( "On") );
+		PORT_DIPNAME (0x0600, 0x0200, DEF_STR( "Lives") );
+		PORT_DIPSETTING (     0x0000, "2" );
+		PORT_DIPSETTING (     0x0200, "3" );
+		PORT_DIPSETTING (     0x0400, "4" );
+		PORT_DIPSETTING (     0x0600, "5" );
+		PORT_DIPNAME (0x1000, 0x1000, DEF_STR( "Bonus_Life") );
+		PORT_DIPSETTING (     0x1000, "30000" );
+		PORT_DIPSETTING (     0x0000, "None" );
+	INPUT_PORTS_END(); }}; 
 	
 	static struct POKEYinterface pokey_interface =
 	{

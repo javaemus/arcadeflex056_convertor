@@ -54,56 +54,56 @@ public class subs
 		new Memory_WriteAddress(MEMPORT_MARKER, 0)
 	};
 	
-	INPUT_PORTS_START( subs )
+	static InputPortPtr input_ports_subs = new InputPortPtr(){ public void handler() { 
 		PORT_START /* OPTIONS */
-		PORT_DIPNAME( 0x01, 0x00, DEF_STR( Demo_Sounds ) )
-		PORT_DIPSETTING(    0x01, DEF_STR( Off ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( On ) )
-		PORT_DIPNAME( 0x02, 0x00, "Credit/Time" )
-		PORT_DIPSETTING(    0x00, "Each Coin Buys Time" )
-		PORT_DIPSETTING(    0x02, "Fixed Time" )
-		PORT_DIPNAME( 0x0c, 0x00, "Game Language" )
-		PORT_DIPSETTING(    0x00, "English" )
-		PORT_DIPSETTING(    0x04, "Spanish" )
-		PORT_DIPSETTING(    0x08, "French" )
-		PORT_DIPSETTING(    0x0c, "German" )
-		PORT_DIPNAME( 0x10, 0x00, DEF_STR( Free_Play ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( Off ) )
-		PORT_DIPSETTING(    0x10, DEF_STR( On ) )
-		PORT_DIPNAME( 0xe0, 0x40, "Game Length" )
-		PORT_DIPSETTING(    0x00, "0:30 Minutes" )
-		PORT_DIPSETTING(    0x20, "1:00 Minutes" )
-		PORT_DIPSETTING(    0x40, "1:30 Minutes" )
-		PORT_DIPSETTING(    0x60, "2:00 Minutes" )
-		PORT_DIPSETTING(    0x80, "2:30 Minutes" )
-		PORT_DIPSETTING(    0xa0, "3:00 Minutes" )
-		PORT_DIPSETTING(    0xc0, "3:30 Minutes" )
-		PORT_DIPSETTING(    0xe0, "4:00 Minutes" )
+		PORT_DIPNAME( 0x01, 0x00, DEF_STR( "Demo_Sounds") );
+		PORT_DIPSETTING(    0x01, DEF_STR( "Off") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
+		PORT_DIPNAME( 0x02, 0x00, "Credit/Time" );
+		PORT_DIPSETTING(    0x00, "Each Coin Buys Time" );
+		PORT_DIPSETTING(    0x02, "Fixed Time" );
+		PORT_DIPNAME( 0x0c, 0x00, "Game Language" );
+		PORT_DIPSETTING(    0x00, "English" );
+		PORT_DIPSETTING(    0x04, "Spanish" );
+		PORT_DIPSETTING(    0x08, "French" );
+		PORT_DIPSETTING(    0x0c, "German" );
+		PORT_DIPNAME( 0x10, 0x00, DEF_STR( "Free_Play") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "Off") );
+		PORT_DIPSETTING(    0x10, DEF_STR( "On") );
+		PORT_DIPNAME( 0xe0, 0x40, "Game Length" );
+		PORT_DIPSETTING(    0x00, "0:30 Minutes" );
+		PORT_DIPSETTING(    0x20, "1:00 Minutes" );
+		PORT_DIPSETTING(    0x40, "1:30 Minutes" );
+		PORT_DIPSETTING(    0x60, "2:00 Minutes" );
+		PORT_DIPSETTING(    0x80, "2:30 Minutes" );
+		PORT_DIPSETTING(    0xa0, "3:00 Minutes" );
+		PORT_DIPSETTING(    0xc0, "3:30 Minutes" );
+		PORT_DIPSETTING(    0xe0, "4:00 Minutes" );
 	
 	PORT_START /* IN1 */
-		PORT_BIT ( 0x01, IP_ACTIVE_LOW, IPT_UNKNOWN ) /* Diag Step */
-		PORT_BIT ( 0x02, IP_ACTIVE_LOW, IPT_UNKNOWN ) /* Diag Hold */
-		PORT_BIT ( 0x04, IP_ACTIVE_LOW, IPT_TILT )    /* Slam */
-		PORT_BIT ( 0x08, IP_ACTIVE_LOW, IPT_UNUSED )  /* Spare */
-		PORT_BIT ( 0xf0, IP_ACTIVE_HIGH, IPT_UNUSED ) /* Filled in with steering information */
+		PORT_BIT ( 0x01, IP_ACTIVE_LOW, IPT_UNKNOWN );/* Diag Step */
+		PORT_BIT ( 0x02, IP_ACTIVE_LOW, IPT_UNKNOWN );/* Diag Hold */
+		PORT_BIT ( 0x04, IP_ACTIVE_LOW, IPT_TILT );   /* Slam */
+		PORT_BIT ( 0x08, IP_ACTIVE_LOW, IPT_UNUSED ); /* Spare */
+		PORT_BIT ( 0xf0, IP_ACTIVE_HIGH, IPT_UNUSED );/* Filled in with steering information */
 	
 		PORT_START /* IN2 */
-		PORT_BIT ( 0x01, IP_ACTIVE_HIGH, IPT_COIN1 )
-		PORT_BIT ( 0x02, IP_ACTIVE_LOW, IPT_START1 )
-		PORT_BIT ( 0x04, IP_ACTIVE_HIGH, IPT_COIN2 )
-		PORT_BIT ( 0x08, IP_ACTIVE_LOW, IPT_START2 )
-		PORT_BIT ( 0x10, IP_ACTIVE_LOW, IPT_VBLANK )
-		PORT_BIT ( 0x20, IP_ACTIVE_LOW, IPT_BUTTON1 )
-		PORT_BITX( 0x40, IP_ACTIVE_LOW, IPT_SERVICE | IPF_TOGGLE, "Self Test", KEYCODE_F2, IP_JOY_NONE )
-		PORT_BIT ( 0x80, IP_ACTIVE_LOW, IPT_BUTTON2 )
+		PORT_BIT ( 0x01, IP_ACTIVE_HIGH, IPT_COIN1 );
+		PORT_BIT ( 0x02, IP_ACTIVE_LOW, IPT_START1 );
+		PORT_BIT ( 0x04, IP_ACTIVE_HIGH, IPT_COIN2 );
+		PORT_BIT ( 0x08, IP_ACTIVE_LOW, IPT_START2 );
+		PORT_BIT ( 0x10, IP_ACTIVE_LOW, IPT_VBLANK );
+		PORT_BIT ( 0x20, IP_ACTIVE_LOW, IPT_BUTTON1 );
+		PORT_BITX( 0x40, IP_ACTIVE_LOW, IPT_SERVICE | IPF_TOGGLE, "Self Test", KEYCODE_F2, IP_JOY_NONE );
+		PORT_BIT ( 0x80, IP_ACTIVE_LOW, IPT_BUTTON2 );
 	
 	PORT_START      /* IN3 */
-		PORT_ANALOG( 0xff, 0x00, IPT_DIAL, 100, 10, 0, 0 )
+		PORT_ANALOG( 0xff, 0x00, IPT_DIAL, 100, 10, 0, 0 );
 	
 	PORT_START      /* IN4 */
-		PORT_ANALOG( 0xff, 0x00, IPT_DIAL | IPF_PLAYER2, 100, 10, 0, 0 )
+		PORT_ANALOG( 0xff, 0x00, IPT_DIAL | IPF_PLAYER2, 100, 10, 0, 0 );
 	
-	INPUT_PORTS_END
+	INPUT_PORTS_END(); }}; 
 	
 	
 	static unsigned char palette[] =

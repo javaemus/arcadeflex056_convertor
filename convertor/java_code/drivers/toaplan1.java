@@ -530,778 +530,778 @@ public class toaplan1
 	
 	#define  TOAPLAN1_PLAYER_INPUT( player, button3 )										\
 		PORT_START																	\
-		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_JOYSTICK_UP    | IPF_8WAY | player )	\
-		PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_JOYSTICK_DOWN  | IPF_8WAY | player )	\
-		PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_JOYSTICK_LEFT  | IPF_8WAY | player )	\
-		PORT_BIT( 0x08, IP_ACTIVE_HIGH, IPT_JOYSTICK_RIGHT | IPF_8WAY | player )	\
-		PORT_BIT( 0x10, IP_ACTIVE_HIGH, IPT_BUTTON1 | player )						\
-		PORT_BIT( 0x20, IP_ACTIVE_HIGH, IPT_BUTTON2 | player )						\
-		PORT_BIT( 0x40, IP_ACTIVE_HIGH, button3 | player )									\
-		PORT_BIT( 0x80, IP_ACTIVE_HIGH, IPT_UNKNOWN )
+		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_JOYSTICK_UP    | IPF_8WAY | player );\
+		PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_JOYSTICK_DOWN  | IPF_8WAY | player );\
+		PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_JOYSTICK_LEFT  | IPF_8WAY | player );\
+		PORT_BIT( 0x08, IP_ACTIVE_HIGH, IPT_JOYSTICK_RIGHT | IPF_8WAY | player );\
+		PORT_BIT( 0x10, IP_ACTIVE_HIGH, IPT_BUTTON1 | player );					\
+		PORT_BIT( 0x20, IP_ACTIVE_HIGH, IPT_BUTTON2 | player );					\
+		PORT_BIT( 0x40, IP_ACTIVE_HIGH, button3 | player );								\
+		PORT_BIT( 0x80, IP_ACTIVE_HIGH, IPT_UNKNOWN );
 	
 	#define  TOAPLAN1_SYSTEM_INPUTS						\
 		PORT_START										\
-		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_COIN3 ) 	\
-		PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_TILT )		\
-		PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_UNKNOWN )	\
-		PORT_BIT( 0x08, IP_ACTIVE_HIGH, IPT_COIN1 )		\
-		PORT_BIT( 0x10, IP_ACTIVE_HIGH, IPT_COIN2 )		\
-		PORT_BIT( 0x20, IP_ACTIVE_HIGH, IPT_START1 )	\
-		PORT_BIT( 0x40, IP_ACTIVE_HIGH, IPT_START2 )	\
-		PORT_BIT( 0x80, IP_ACTIVE_HIGH, IPT_UNKNOWN )
+		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_COIN3 );	\
+		PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_TILT );	\
+		PORT_BIT( 0x04, IP_ACTIVE_HIGH, IPT_UNKNOWN );\
+		PORT_BIT( 0x08, IP_ACTIVE_HIGH, IPT_COIN1 );	\
+		PORT_BIT( 0x10, IP_ACTIVE_HIGH, IPT_COIN2 );	\
+		PORT_BIT( 0x20, IP_ACTIVE_HIGH, IPT_START1 );\
+		PORT_BIT( 0x40, IP_ACTIVE_HIGH, IPT_START2 );\
+		PORT_BIT( 0x80, IP_ACTIVE_HIGH, IPT_UNKNOWN );
 	
 	
 	
-	INPUT_PORTS_START( rallybik )
+	static InputPortPtr input_ports_rallybik = new InputPortPtr(){ public void handler() { 
 		PORT_START		/* VBlank */
-		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_VBLANK )
-		PORT_BIT( 0xfe, IP_ACTIVE_HIGH, IPT_UNKNOWN )
+		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_VBLANK );
+		PORT_BIT( 0xfe, IP_ACTIVE_HIGH, IPT_UNKNOWN );
 	
 		TOAPLAN1_PLAYER_INPUT( IPF_PLAYER1, IPT_UNKNOWN )
 	
 		TOAPLAN1_PLAYER_INPUT( IPF_COCKTAIL, IPT_UNKNOWN )
 	
 		PORT_START		/* DSW A */
-		PORT_DIPNAME( 0x01, 0x01, DEF_STR( Cabinet ) )
-		PORT_DIPSETTING(    0x01, DEF_STR( Upright ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( Cocktail ) )
-		PORT_DIPNAME( 0x02, 0x00, DEF_STR( Flip_Screen ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( Off ) )
-		PORT_DIPSETTING(    0x02, DEF_STR( On ) )
-		PORT_SERVICE( 0x04, IP_ACTIVE_HIGH )
-		PORT_DIPNAME( 0x08, 0x00, DEF_STR( Demo_Sounds ) )
-		PORT_DIPSETTING(    0x08, DEF_STR( Off ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( On ) )
-		PORT_DIPNAME( 0x30, 0x00, DEF_STR( Coin_A ) )
-		PORT_DIPSETTING(    0x20, DEF_STR( 2C_1C ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( 1C_1C ) )
-		PORT_DIPSETTING(    0x30, DEF_STR( 2C_3C ) )
-		PORT_DIPSETTING(    0x10, DEF_STR( 1C_2C ) )
-		PORT_DIPNAME( 0xc0, 0x00, DEF_STR( Coin_B ) )
-		PORT_DIPSETTING(    0x80, DEF_STR( 2C_1C ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( 1C_1C ) )
-		PORT_DIPSETTING(    0xc0, DEF_STR( 2C_3C ) )
-		PORT_DIPSETTING(    0x40, DEF_STR( 1C_2C ) )
+		PORT_DIPNAME( 0x01, 0x01, DEF_STR( "Cabinet") );
+		PORT_DIPSETTING(    0x01, DEF_STR( "Upright") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "Cocktail") );
+		PORT_DIPNAME( 0x02, 0x00, DEF_STR( "Flip_Screen") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "Off") );
+		PORT_DIPSETTING(    0x02, DEF_STR( "On") );
+		PORT_SERVICE( 0x04, IP_ACTIVE_HIGH );
+		PORT_DIPNAME( 0x08, 0x00, DEF_STR( "Demo_Sounds") );
+		PORT_DIPSETTING(    0x08, DEF_STR( "Off") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
+		PORT_DIPNAME( 0x30, 0x00, DEF_STR( "Coin_A") );
+		PORT_DIPSETTING(    0x20, DEF_STR( "2C_1C") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "1C_1C") );
+		PORT_DIPSETTING(    0x30, DEF_STR( "2C_3C") );
+		PORT_DIPSETTING(    0x10, DEF_STR( "1C_2C") );
+		PORT_DIPNAME( 0xc0, 0x00, DEF_STR( "Coin_B") );
+		PORT_DIPSETTING(    0x80, DEF_STR( "2C_1C") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "1C_1C") );
+		PORT_DIPSETTING(    0xc0, DEF_STR( "2C_3C") );
+		PORT_DIPSETTING(    0x40, DEF_STR( "1C_2C") );
 	
 		PORT_START		/* DSW B */
-		PORT_DIPNAME( 0x03, 0x00, DEF_STR( Difficulty ) )
-		PORT_DIPSETTING(    0x01, "Easy" )
-		PORT_DIPSETTING(    0x00, "Medium" )
-		PORT_DIPSETTING(    0x02, "Hard" )
-		PORT_DIPSETTING(    0x03, "Hardest" )
-		PORT_DIPNAME( 0x04, 0x00, DEF_STR( Unknown ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( Off ) )
-		PORT_DIPSETTING(    0x04, DEF_STR( On ) )
-		PORT_DIPNAME( 0x08, 0x00, DEF_STR( Unknown ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( Off ) )
-		PORT_DIPSETTING(    0x08, DEF_STR( On ) )
-		PORT_DIPNAME( 0x30, 0x20, "Territory/Copyright" )
-		PORT_DIPSETTING(    0x20, "World/Taito Corp Japan" )
-		PORT_DIPSETTING(    0x10, "USA/Taito America" )
-		PORT_DIPSETTING(    0x00, "Japan/Taito Corp" )
-		PORT_DIPSETTING(    0x30, "USA/Taito America (Romstar)" )
-		PORT_DIPNAME( 0x40, 0x00, "Dip Switch Display" )
-		PORT_DIPSETTING(    0x00, DEF_STR( Off ) )
-		PORT_DIPSETTING(    0x40, DEF_STR( On ) )
-		PORT_DIPNAME( 0x80, 0x00, "Allow Continue" )
-		PORT_DIPSETTING(    0x80, DEF_STR( No ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( Yes ) )
+		PORT_DIPNAME( 0x03, 0x00, DEF_STR( "Difficulty") );
+		PORT_DIPSETTING(    0x01, "Easy" );
+		PORT_DIPSETTING(    0x00, "Medium" );
+		PORT_DIPSETTING(    0x02, "Hard" );
+		PORT_DIPSETTING(    0x03, "Hardest" );
+		PORT_DIPNAME( 0x04, 0x00, DEF_STR( "Unknown") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "Off") );
+		PORT_DIPSETTING(    0x04, DEF_STR( "On") );
+		PORT_DIPNAME( 0x08, 0x00, DEF_STR( "Unknown") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "Off") );
+		PORT_DIPSETTING(    0x08, DEF_STR( "On") );
+		PORT_DIPNAME( 0x30, 0x20, "Territory/Copyright" );
+		PORT_DIPSETTING(    0x20, "World/Taito Corp Japan" );
+		PORT_DIPSETTING(    0x10, "USA/Taito America" );
+		PORT_DIPSETTING(    0x00, "Japan/Taito Corp" );
+		PORT_DIPSETTING(    0x30, "USA/Taito America (Romstar); )
+		PORT_DIPNAME( 0x40, 0x00, "Dip Switch Display" );
+		PORT_DIPSETTING(    0x00, DEF_STR( "Off") );
+		PORT_DIPSETTING(    0x40, DEF_STR( "On") );
+		PORT_DIPNAME( 0x80, 0x00, "Allow Continue" );
+		PORT_DIPSETTING(    0x80, DEF_STR( "No") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "Yes") );
 	
 		TOAPLAN1_SYSTEM_INPUTS
 	
-	INPUT_PORTS_END
+	INPUT_PORTS_END(); }}; 
 	
-	INPUT_PORTS_START( truxton )
+	static InputPortPtr input_ports_truxton = new InputPortPtr(){ public void handler() { 
 		PORT_START		/* VBlank */
-		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_VBLANK )
-		PORT_BIT( 0xfe, IP_ACTIVE_HIGH, IPT_UNKNOWN )
+		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_VBLANK );
+		PORT_BIT( 0xfe, IP_ACTIVE_HIGH, IPT_UNKNOWN );
 	
 		TOAPLAN1_PLAYER_INPUT( IPF_PLAYER1, IPT_UNKNOWN )
 	
 		TOAPLAN1_PLAYER_INPUT( IPF_COCKTAIL, IPT_UNKNOWN )
 	
 		PORT_START		/* DSW A */
-		PORT_DIPNAME( 0x01, 0x01, DEF_STR( Cabinet ) )
-		PORT_DIPSETTING(    0x01, DEF_STR( Upright ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( Cocktail ) )
-		PORT_DIPNAME( 0x02, 0x00, DEF_STR( Flip_Screen ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( Off ) )
-		PORT_DIPSETTING(    0x02, DEF_STR( On ) )
-		PORT_SERVICE( 0x04, IP_ACTIVE_HIGH )
-		PORT_DIPNAME( 0x08, 0x00, DEF_STR( Demo_Sounds ) )
-		PORT_DIPSETTING(    0x08, DEF_STR( Off ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( On ) )
+		PORT_DIPNAME( 0x01, 0x01, DEF_STR( "Cabinet") );
+		PORT_DIPSETTING(    0x01, DEF_STR( "Upright") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "Cocktail") );
+		PORT_DIPNAME( 0x02, 0x00, DEF_STR( "Flip_Screen") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "Off") );
+		PORT_DIPSETTING(    0x02, DEF_STR( "On") );
+		PORT_SERVICE( 0x04, IP_ACTIVE_HIGH );
+		PORT_DIPNAME( 0x08, 0x00, DEF_STR( "Demo_Sounds") );
+		PORT_DIPSETTING(    0x08, DEF_STR( "Off") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 	/* credits per coin options change, depending on the territory setting */
-		PORT_DIPNAME( 0x30, 0x00, DEF_STR( Coin_A ) )
-		PORT_DIPSETTING(    0x20, DEF_STR( 2C_1C ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( 1C_1C ) )
-		PORT_DIPSETTING(    0x30, DEF_STR( 2C_3C ) )
-		PORT_DIPSETTING(    0x10, DEF_STR( 1C_2C ) )
-		PORT_DIPNAME( 0xc0, 0x00, DEF_STR( Coin_B ) )
-		PORT_DIPSETTING(    0x80, DEF_STR( 2C_1C ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( 1C_1C ) )
-		PORT_DIPSETTING(    0xc0, DEF_STR( 2C_3C ) )
-		PORT_DIPSETTING(    0x40, DEF_STR( 1C_2C ) )
+		PORT_DIPNAME( 0x30, 0x00, DEF_STR( "Coin_A") );
+		PORT_DIPSETTING(    0x20, DEF_STR( "2C_1C") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "1C_1C") );
+		PORT_DIPSETTING(    0x30, DEF_STR( "2C_3C") );
+		PORT_DIPSETTING(    0x10, DEF_STR( "1C_2C") );
+		PORT_DIPNAME( 0xc0, 0x00, DEF_STR( "Coin_B") );
+		PORT_DIPSETTING(    0x80, DEF_STR( "2C_1C") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "1C_1C") );
+		PORT_DIPSETTING(    0xc0, DEF_STR( "2C_3C") );
+		PORT_DIPSETTING(    0x40, DEF_STR( "1C_2C") );
 	/* The following are coin settings for Japan
-		PORT_DIPNAME( 0x30, 0x00, DEF_STR( Coin_A ) )
-		PORT_DIPSETTING(    0x30, DEF_STR( 4C_1C ) )
-		PORT_DIPSETTING(    0x20, DEF_STR( 3C_1C ) )
-		PORT_DIPSETTING(    0x10, DEF_STR( 2C_1C ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( 1C_1C ) )
-		PORT_DIPNAME( 0xc0, 0x00, DEF_STR( Coin_B ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( 1C_2C ) )
-		PORT_DIPSETTING(    0x40, DEF_STR( 1C_3C ) )
-		PORT_DIPSETTING(    0x80, DEF_STR( 1C_4C ) )
-		PORT_DIPSETTING(    0xc0, DEF_STR( 1C_6C ) )
+		PORT_DIPNAME( 0x30, 0x00, DEF_STR( "Coin_A") );
+		PORT_DIPSETTING(    0x30, DEF_STR( "4C_1C") );
+		PORT_DIPSETTING(    0x20, DEF_STR( "3C_1C") );
+		PORT_DIPSETTING(    0x10, DEF_STR( "2C_1C") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "1C_1C") );
+		PORT_DIPNAME( 0xc0, 0x00, DEF_STR( "Coin_B") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "1C_2C") );
+		PORT_DIPSETTING(    0x40, DEF_STR( "1C_3C") );
+		PORT_DIPSETTING(    0x80, DEF_STR( "1C_4C") );
+		PORT_DIPSETTING(    0xc0, DEF_STR( "1C_6C") );
 	*/
 	
 		PORT_START		/* DSW B */
-		PORT_DIPNAME( 0x03, 0x00, DEF_STR( Difficulty ) )
-		PORT_DIPSETTING(    0x01, "Easy" )
-		PORT_DIPSETTING(    0x00, "Medium" )
-		PORT_DIPSETTING(    0x02, "Hard" )
-		PORT_DIPSETTING(    0x03, "Hardest" )
-		PORT_DIPNAME( 0x0c, 0x00, DEF_STR( Bonus_Life ) )
-		PORT_DIPSETTING(    0x04, "50K, every 150K" )
-		PORT_DIPSETTING(    0x00, "70K, every 200K" )
-		PORT_DIPSETTING(    0x08, "100K only" )
-		PORT_DIPSETTING(    0x0c, "None" )
-		PORT_DIPNAME( 0x30, 0x00, DEF_STR( Lives ) )
-		PORT_DIPSETTING(    0x30, "2" )
-		PORT_DIPSETTING(    0x00, "3" )
-		PORT_DIPSETTING(    0x20, "4" )
-		PORT_DIPSETTING(    0x10, "5" )
-		PORT_DIPNAME( 0x40, 0x00, "Show Dip Switches" )
-		PORT_DIPSETTING(    0x00, DEF_STR( Off ) )
-		PORT_DIPSETTING(    0x40, DEF_STR( On ) )
-		PORT_DIPNAME( 0x80, 0x00, "Allow Continue" )
-		PORT_DIPSETTING(    0x80, DEF_STR( No ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( Yes ) )
+		PORT_DIPNAME( 0x03, 0x00, DEF_STR( "Difficulty") );
+		PORT_DIPSETTING(    0x01, "Easy" );
+		PORT_DIPSETTING(    0x00, "Medium" );
+		PORT_DIPSETTING(    0x02, "Hard" );
+		PORT_DIPSETTING(    0x03, "Hardest" );
+		PORT_DIPNAME( 0x0c, 0x00, DEF_STR( "Bonus_Life") );
+		PORT_DIPSETTING(    0x04, "50K, every 150K" );
+		PORT_DIPSETTING(    0x00, "70K, every 200K" );
+		PORT_DIPSETTING(    0x08, "100K only" );
+		PORT_DIPSETTING(    0x0c, "None" );
+		PORT_DIPNAME( 0x30, 0x00, DEF_STR( "Lives") );
+		PORT_DIPSETTING(    0x30, "2" );
+		PORT_DIPSETTING(    0x00, "3" );
+		PORT_DIPSETTING(    0x20, "4" );
+		PORT_DIPSETTING(    0x10, "5" );
+		PORT_DIPNAME( 0x40, 0x00, "Show Dip Switches" );
+		PORT_DIPSETTING(    0x00, DEF_STR( "Off") );
+		PORT_DIPSETTING(    0x40, DEF_STR( "On") );
+		PORT_DIPNAME( 0x80, 0x00, "Allow Continue" );
+		PORT_DIPSETTING(    0x80, DEF_STR( "No") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "Yes") );
 	
 		TOAPLAN1_SYSTEM_INPUTS
 	
 		PORT_START		/* Territory Jumper Block */
-		PORT_DIPNAME( 0x07, 0x02, "Territory/Copyright" )
-		PORT_DIPSETTING(    0x02, "World/Taito Corp" )
-		PORT_DIPSETTING(    0x06, "World/Taito America" )
-		PORT_DIPSETTING(    0x04, "US/Taito America" )
-		PORT_DIPSETTING(    0x01, "US/Romstar" )
-		PORT_DIPSETTING(    0x00, "Japan/Taito Corp" )
-	//	PORT_DIPSETTING(    0x05, "Same as 0x04" )
-	//	PORT_DIPSETTING(    0x03, "Same as 0x02" )
-	//	PORT_DIPSETTING(    0x07, "Same as 0x06" )
-		PORT_DIPNAME( 0x08, 0x00, DEF_STR( Unused ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( Off ) )
-		PORT_DIPSETTING(    0x08, DEF_STR( On ) )
-		PORT_BIT( 0xf0, IP_ACTIVE_HIGH, IPT_UNKNOWN )
-	INPUT_PORTS_END
+		PORT_DIPNAME( 0x07, 0x02, "Territory/Copyright" );
+		PORT_DIPSETTING(    0x02, "World/Taito Corp" );
+		PORT_DIPSETTING(    0x06, "World/Taito America" );
+		PORT_DIPSETTING(    0x04, "US/Taito America" );
+		PORT_DIPSETTING(    0x01, "US/Romstar" );
+		PORT_DIPSETTING(    0x00, "Japan/Taito Corp" );
+	//	PORT_DIPSETTING(    0x05, "Same as 0x04" );
+	//	PORT_DIPSETTING(    0x03, "Same as 0x02" );
+	//	PORT_DIPSETTING(    0x07, "Same as 0x06" );
+		PORT_DIPNAME( 0x08, 0x00, DEF_STR( "Unused") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "Off") );
+		PORT_DIPSETTING(    0x08, DEF_STR( "On") );
+		PORT_BIT( 0xf0, IP_ACTIVE_HIGH, IPT_UNKNOWN );
+	INPUT_PORTS_END(); }}; 
 	
-	INPUT_PORTS_START( hellfire )
+	static InputPortPtr input_ports_hellfire = new InputPortPtr(){ public void handler() { 
 		PORT_START		/* VBlank */
-		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_VBLANK )
-		PORT_BIT( 0xfe, IP_ACTIVE_HIGH, IPT_UNKNOWN )
+		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_VBLANK );
+		PORT_BIT( 0xfe, IP_ACTIVE_HIGH, IPT_UNKNOWN );
 	
 		TOAPLAN1_PLAYER_INPUT( IPF_PLAYER1, IPT_UNKNOWN )
 	
 		TOAPLAN1_PLAYER_INPUT( IPF_PLAYER2, IPT_UNKNOWN )
 	
 		PORT_START		/* DSW A */
-		PORT_DIPNAME( 0x01, 0x00, DEF_STR( Unused ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( Off ) )
-		PORT_DIPSETTING(    0x01, DEF_STR( On ) )
-		PORT_DIPNAME( 0x02, 0x00, DEF_STR( Flip_Screen ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( Off ) )
-		PORT_DIPSETTING(    0x02, DEF_STR( On ) )
-		PORT_SERVICE( 0x04, IP_ACTIVE_HIGH )
-		PORT_DIPNAME( 0x08, 0x00, DEF_STR( Demo_Sounds ) )
-		PORT_DIPSETTING(    0x08, DEF_STR( Off ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( On ) )
-		PORT_DIPNAME( 0x30, 0x00, DEF_STR( Coin_A ) )
-		PORT_DIPSETTING(    0x30, DEF_STR( 4C_1C ) )
-		PORT_DIPSETTING(    0x20, DEF_STR( 3C_1C ) )
-		PORT_DIPSETTING(    0x10, DEF_STR( 2C_1C ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( 1C_1C ) )
-		PORT_DIPNAME( 0xc0, 0x00, DEF_STR( Coin_B ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( 1C_2C ) )
-		PORT_DIPSETTING(    0x40, DEF_STR( 1C_3C ) )
-		PORT_DIPSETTING(    0x80, DEF_STR( 1C_4C ) )
-		PORT_DIPSETTING(    0xc0, DEF_STR( 1C_6C ) )
+		PORT_DIPNAME( 0x01, 0x00, DEF_STR( "Unused") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "Off") );
+		PORT_DIPSETTING(    0x01, DEF_STR( "On") );
+		PORT_DIPNAME( 0x02, 0x00, DEF_STR( "Flip_Screen") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "Off") );
+		PORT_DIPSETTING(    0x02, DEF_STR( "On") );
+		PORT_SERVICE( 0x04, IP_ACTIVE_HIGH );
+		PORT_DIPNAME( 0x08, 0x00, DEF_STR( "Demo_Sounds") );
+		PORT_DIPSETTING(    0x08, DEF_STR( "Off") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
+		PORT_DIPNAME( 0x30, 0x00, DEF_STR( "Coin_A") );
+		PORT_DIPSETTING(    0x30, DEF_STR( "4C_1C") );
+		PORT_DIPSETTING(    0x20, DEF_STR( "3C_1C") );
+		PORT_DIPSETTING(    0x10, DEF_STR( "2C_1C") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "1C_1C") );
+		PORT_DIPNAME( 0xc0, 0x00, DEF_STR( "Coin_B") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "1C_2C") );
+		PORT_DIPSETTING(    0x40, DEF_STR( "1C_3C") );
+		PORT_DIPSETTING(    0x80, DEF_STR( "1C_4C") );
+		PORT_DIPSETTING(    0xc0, DEF_STR( "1C_6C") );
 	
 		PORT_START		/* DSWB */
-		PORT_DIPNAME( 0x03, 0x00, DEF_STR( Difficulty ) )
-		PORT_DIPSETTING(    0x01, "Easy" )
-		PORT_DIPSETTING(    0x00, "Medium" )
-		PORT_DIPSETTING(    0x02, "Hard" )
-		PORT_DIPSETTING(    0x03, "Hardest" )
-		PORT_DIPNAME( 0x0c, 0x00, DEF_STR( Bonus_Life ) )
-	    PORT_DIPSETTING(    0x00, "70K, every 200K" )
-	    PORT_DIPSETTING(    0x04, "100K, every 250K" )
-		PORT_DIPSETTING(    0x08, "100K" )
-		PORT_DIPSETTING(    0x0c, "200K" )
-		PORT_DIPNAME( 0x30, 0x00, DEF_STR( Lives ) )
-		PORT_DIPSETTING(    0x30, "2" )
-		PORT_DIPSETTING(    0x00, "3" )
-		PORT_DIPSETTING(    0x20, "4" )
-		PORT_DIPSETTING(    0x10, "5" )
-		PORT_BITX(    0x40, 0x00, IPT_DIPSWITCH_NAME | IPF_CHEAT, "Invulnerability", IP_KEY_NONE, IP_JOY_NONE )
-		PORT_DIPSETTING(    0x00, DEF_STR( Off ) )
-		PORT_DIPSETTING(    0x40, DEF_STR( On ) )
-		PORT_DIPNAME( 0x80, 0x00, DEF_STR( Unused ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( Off ) )
-		PORT_DIPSETTING(    0x80, DEF_STR( On ) )
+		PORT_DIPNAME( 0x03, 0x00, DEF_STR( "Difficulty") );
+		PORT_DIPSETTING(    0x01, "Easy" );
+		PORT_DIPSETTING(    0x00, "Medium" );
+		PORT_DIPSETTING(    0x02, "Hard" );
+		PORT_DIPSETTING(    0x03, "Hardest" );
+		PORT_DIPNAME( 0x0c, 0x00, DEF_STR( "Bonus_Life") );
+	    PORT_DIPSETTING(    0x00, "70K, every 200K" );
+	    PORT_DIPSETTING(    0x04, "100K, every 250K" );
+		PORT_DIPSETTING(    0x08, "100K" );
+		PORT_DIPSETTING(    0x0c, "200K" );
+		PORT_DIPNAME( 0x30, 0x00, DEF_STR( "Lives") );
+		PORT_DIPSETTING(    0x30, "2" );
+		PORT_DIPSETTING(    0x00, "3" );
+		PORT_DIPSETTING(    0x20, "4" );
+		PORT_DIPSETTING(    0x10, "5" );
+		PORT_BITX(    0x40, 0x00, IPT_DIPSWITCH_NAME | IPF_CHEAT, "Invulnerability", IP_KEY_NONE, IP_JOY_NONE );
+		PORT_DIPSETTING(    0x00, DEF_STR( "Off") );
+		PORT_DIPSETTING(    0x40, DEF_STR( "On") );
+		PORT_DIPNAME( 0x80, 0x00, DEF_STR( "Unused") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "Off") );
+		PORT_DIPSETTING(    0x80, DEF_STR( "On") );
 	
 		TOAPLAN1_SYSTEM_INPUTS
 	
 		PORT_START		/* Territory Jumper block */
-		PORT_DIPNAME( 0x03, 0x02, "Territory" )
-		PORT_DIPSETTING(    0x02, "Europe" )
-	//	PORT_DIPSETTING(    0x03, "Europe" )
-		PORT_DIPSETTING(    0x01, "US" )
-		PORT_DIPSETTING(    0x00, "Japan" )
-		PORT_DIPNAME( 0x04, 0x00, DEF_STR( Unused ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( Off ) )
-		PORT_DIPSETTING(    0x04, DEF_STR( On ) )
-		PORT_DIPNAME( 0x08, 0x00, DEF_STR( Unused ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( Off ) )
-		PORT_DIPSETTING(    0x08, DEF_STR( On ) )
-		PORT_BIT( 0xf0, IP_ACTIVE_HIGH, IPT_UNKNOWN )
-	INPUT_PORTS_END
+		PORT_DIPNAME( 0x03, 0x02, "Territory" );
+		PORT_DIPSETTING(    0x02, "Europe" );
+	//	PORT_DIPSETTING(    0x03, "Europe" );
+		PORT_DIPSETTING(    0x01, "US" );
+		PORT_DIPSETTING(    0x00, "Japan" );
+		PORT_DIPNAME( 0x04, 0x00, DEF_STR( "Unused") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "Off") );
+		PORT_DIPSETTING(    0x04, DEF_STR( "On") );
+		PORT_DIPNAME( 0x08, 0x00, DEF_STR( "Unused") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "Off") );
+		PORT_DIPSETTING(    0x08, DEF_STR( "On") );
+		PORT_BIT( 0xf0, IP_ACTIVE_HIGH, IPT_UNKNOWN );
+	INPUT_PORTS_END(); }}; 
 	
-	INPUT_PORTS_START( zerowing )
+	static InputPortPtr input_ports_zerowing = new InputPortPtr(){ public void handler() { 
 		PORT_START		/* VBlank */
-		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_VBLANK )
-		PORT_BIT( 0xfe, IP_ACTIVE_HIGH, IPT_UNKNOWN )
+		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_VBLANK );
+		PORT_BIT( 0xfe, IP_ACTIVE_HIGH, IPT_UNKNOWN );
 	
 		TOAPLAN1_PLAYER_INPUT( IPF_PLAYER1, IPT_UNKNOWN )
 	
 		TOAPLAN1_PLAYER_INPUT( IPF_COCKTAIL, IPT_UNKNOWN )
 	
 		PORT_START		/* DSW A */
-		PORT_DIPNAME( 0x01, 0x01, DEF_STR( Cabinet ) )
-		PORT_DIPSETTING(    0x01, DEF_STR( Upright ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( Cocktail ) )
-		PORT_DIPNAME( 0x02, 0x00, DEF_STR( Flip_Screen ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( Off ) )
-		PORT_DIPSETTING(    0x02, DEF_STR( On ) )
-		PORT_SERVICE( 0x04, IP_ACTIVE_HIGH )
-		PORT_DIPNAME( 0x08, 0x00, DEF_STR( Demo_Sounds ) )
-		PORT_DIPSETTING(    0x08, DEF_STR( Off ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( On ) )
-		PORT_DIPNAME( 0x30, 0x00, DEF_STR( Coin_A ) )
-		PORT_DIPSETTING(    0x30, DEF_STR( 4C_1C ) )
-		PORT_DIPSETTING(    0x20, DEF_STR( 3C_1C ) )
-		PORT_DIPSETTING(    0x10, DEF_STR( 2C_1C ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( 1C_1C ) )
-		PORT_DIPNAME( 0xc0, 0x00, DEF_STR( Coin_B ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( 1C_2C ) )
-		PORT_DIPSETTING(    0x40, DEF_STR( 1C_3C ) )
-		PORT_DIPSETTING(    0x80, DEF_STR( 1C_4C ) )
-		PORT_DIPSETTING(    0xc0, DEF_STR( 1C_6C ) )
+		PORT_DIPNAME( 0x01, 0x01, DEF_STR( "Cabinet") );
+		PORT_DIPSETTING(    0x01, DEF_STR( "Upright") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "Cocktail") );
+		PORT_DIPNAME( 0x02, 0x00, DEF_STR( "Flip_Screen") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "Off") );
+		PORT_DIPSETTING(    0x02, DEF_STR( "On") );
+		PORT_SERVICE( 0x04, IP_ACTIVE_HIGH );
+		PORT_DIPNAME( 0x08, 0x00, DEF_STR( "Demo_Sounds") );
+		PORT_DIPSETTING(    0x08, DEF_STR( "Off") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
+		PORT_DIPNAME( 0x30, 0x00, DEF_STR( "Coin_A") );
+		PORT_DIPSETTING(    0x30, DEF_STR( "4C_1C") );
+		PORT_DIPSETTING(    0x20, DEF_STR( "3C_1C") );
+		PORT_DIPSETTING(    0x10, DEF_STR( "2C_1C") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "1C_1C") );
+		PORT_DIPNAME( 0xc0, 0x00, DEF_STR( "Coin_B") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "1C_2C") );
+		PORT_DIPSETTING(    0x40, DEF_STR( "1C_3C") );
+		PORT_DIPSETTING(    0x80, DEF_STR( "1C_4C") );
+		PORT_DIPSETTING(    0xc0, DEF_STR( "1C_6C") );
 	
 		PORT_START		/* DSW B */
-		PORT_DIPNAME( 0x03, 0x00, DEF_STR( Difficulty ) )
-		PORT_DIPSETTING(    0x01, "Easy" )
-		PORT_DIPSETTING(    0x00, "Medium" )
-		PORT_DIPSETTING(    0x02, "Hard" )
-		PORT_DIPSETTING(    0x03, "Hardest" )
-		PORT_DIPNAME( 0x0c, 0x00, DEF_STR( Bonus_Life ) )
-	    PORT_DIPSETTING(    0x00, "200K, every 500K" )
-	    PORT_DIPSETTING(    0x04, "500K, every 1M" )
-		PORT_DIPSETTING(    0x08, "500K" )
-		PORT_DIPSETTING(    0x0c, "None" )
-		PORT_DIPNAME( 0x30, 0x00, DEF_STR( Lives ) )
-		PORT_DIPSETTING(    0x30, "2" )
-		PORT_DIPSETTING(    0x00, "3" )
-		PORT_DIPSETTING(    0x20, "4" )
-		PORT_DIPSETTING(    0x10, "5" )
-		PORT_BITX(    0x40, 0x00, IPT_DIPSWITCH_NAME | IPF_CHEAT, "Invulnerability", IP_KEY_NONE, IP_JOY_NONE )
-		PORT_DIPSETTING(    0x00, DEF_STR( Off ) )
-		PORT_DIPSETTING(    0x40, DEF_STR( On ) )
-		PORT_DIPNAME( 0x80, 0x00, "Allow Continue" )
-		PORT_DIPSETTING(    0x80, DEF_STR( No ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( Yes ) )
+		PORT_DIPNAME( 0x03, 0x00, DEF_STR( "Difficulty") );
+		PORT_DIPSETTING(    0x01, "Easy" );
+		PORT_DIPSETTING(    0x00, "Medium" );
+		PORT_DIPSETTING(    0x02, "Hard" );
+		PORT_DIPSETTING(    0x03, "Hardest" );
+		PORT_DIPNAME( 0x0c, 0x00, DEF_STR( "Bonus_Life") );
+	    PORT_DIPSETTING(    0x00, "200K, every 500K" );
+	    PORT_DIPSETTING(    0x04, "500K, every 1M" );
+		PORT_DIPSETTING(    0x08, "500K" );
+		PORT_DIPSETTING(    0x0c, "None" );
+		PORT_DIPNAME( 0x30, 0x00, DEF_STR( "Lives") );
+		PORT_DIPSETTING(    0x30, "2" );
+		PORT_DIPSETTING(    0x00, "3" );
+		PORT_DIPSETTING(    0x20, "4" );
+		PORT_DIPSETTING(    0x10, "5" );
+		PORT_BITX(    0x40, 0x00, IPT_DIPSWITCH_NAME | IPF_CHEAT, "Invulnerability", IP_KEY_NONE, IP_JOY_NONE );
+		PORT_DIPSETTING(    0x00, DEF_STR( "Off") );
+		PORT_DIPSETTING(    0x40, DEF_STR( "On") );
+		PORT_DIPNAME( 0x80, 0x00, "Allow Continue" );
+		PORT_DIPSETTING(    0x80, DEF_STR( "No") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "Yes") );
 	
 		TOAPLAN1_SYSTEM_INPUTS
 	
 		PORT_START		/* Territory Jumper block */
-		PORT_DIPNAME( 0x03, 0x02, "Territory" )
-		PORT_DIPSETTING(    0x02, "Europe" )
-	//	PORT_DIPSETTING(    0x03, "Europe" )
-		PORT_DIPSETTING(    0x01, "US" )
-		PORT_DIPSETTING(    0x00, "Japan" )
-		PORT_DIPNAME( 0x04, 0x00, DEF_STR( Unused ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( Off ) )
-		PORT_DIPSETTING(    0x04, DEF_STR( On ) )
-		PORT_DIPNAME( 0x08, 0x00, DEF_STR( Unused ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( Off ) )
-		PORT_DIPSETTING(    0x08, DEF_STR( On ) )
-		PORT_BIT( 0xf0, IP_ACTIVE_HIGH, IPT_UNKNOWN )
-	INPUT_PORTS_END
+		PORT_DIPNAME( 0x03, 0x02, "Territory" );
+		PORT_DIPSETTING(    0x02, "Europe" );
+	//	PORT_DIPSETTING(    0x03, "Europe" );
+		PORT_DIPSETTING(    0x01, "US" );
+		PORT_DIPSETTING(    0x00, "Japan" );
+		PORT_DIPNAME( 0x04, 0x00, DEF_STR( "Unused") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "Off") );
+		PORT_DIPSETTING(    0x04, DEF_STR( "On") );
+		PORT_DIPNAME( 0x08, 0x00, DEF_STR( "Unused") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "Off") );
+		PORT_DIPSETTING(    0x08, DEF_STR( "On") );
+		PORT_BIT( 0xf0, IP_ACTIVE_HIGH, IPT_UNKNOWN );
+	INPUT_PORTS_END(); }}; 
 	
-	INPUT_PORTS_START( demonwld )
+	static InputPortPtr input_ports_demonwld = new InputPortPtr(){ public void handler() { 
 		PORT_START		/* VBlank */
-		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_VBLANK )
-		PORT_BIT( 0xfe, IP_ACTIVE_HIGH, IPT_UNKNOWN )
+		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_VBLANK );
+		PORT_BIT( 0xfe, IP_ACTIVE_HIGH, IPT_UNKNOWN );
 	
 		TOAPLAN1_PLAYER_INPUT( IPF_PLAYER1, IPT_BUTTON3 )
 	
 		TOAPLAN1_PLAYER_INPUT( IPF_PLAYER2, IPT_BUTTON3 )
 	
 		PORT_START		/* DSW A */
-		PORT_DIPNAME( 0x01, 0x00, DEF_STR( Unused ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( Off ) )
-		PORT_DIPSETTING(    0x01, DEF_STR( On ) )
-		PORT_DIPNAME( 0x02, 0x00, DEF_STR( Flip_Screen ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( Off ) )
-		PORT_DIPSETTING(    0x02, DEF_STR( On ) )
-		PORT_SERVICE( 0x04, IP_ACTIVE_HIGH )
-		PORT_DIPNAME( 0x08, 0x00, DEF_STR( Demo_Sounds ) )
-		PORT_DIPSETTING(    0x08, DEF_STR( Off ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( On ) )
-		PORT_DIPNAME( 0x30, 0x00, DEF_STR( Coin_A ) )
-		PORT_DIPSETTING(    0x30, DEF_STR( 4C_1C ) )
-		PORT_DIPSETTING(    0x20, DEF_STR( 3C_1C ) )
-		PORT_DIPSETTING(    0x10, DEF_STR( 2C_1C ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( 1C_1C ) )
-		PORT_DIPNAME( 0xc0, 0x00, DEF_STR( Coin_B ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( 1C_2C ) )
-		PORT_DIPSETTING(    0x40, DEF_STR( 1C_3C ) )
-		PORT_DIPSETTING(    0x80, DEF_STR( 1C_4C ) )
-		PORT_DIPSETTING(    0xc0, DEF_STR( 1C_6C ) )
+		PORT_DIPNAME( 0x01, 0x00, DEF_STR( "Unused") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "Off") );
+		PORT_DIPSETTING(    0x01, DEF_STR( "On") );
+		PORT_DIPNAME( 0x02, 0x00, DEF_STR( "Flip_Screen") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "Off") );
+		PORT_DIPSETTING(    0x02, DEF_STR( "On") );
+		PORT_SERVICE( 0x04, IP_ACTIVE_HIGH );
+		PORT_DIPNAME( 0x08, 0x00, DEF_STR( "Demo_Sounds") );
+		PORT_DIPSETTING(    0x08, DEF_STR( "Off") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
+		PORT_DIPNAME( 0x30, 0x00, DEF_STR( "Coin_A") );
+		PORT_DIPSETTING(    0x30, DEF_STR( "4C_1C") );
+		PORT_DIPSETTING(    0x20, DEF_STR( "3C_1C") );
+		PORT_DIPSETTING(    0x10, DEF_STR( "2C_1C") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "1C_1C") );
+		PORT_DIPNAME( 0xc0, 0x00, DEF_STR( "Coin_B") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "1C_2C") );
+		PORT_DIPSETTING(    0x40, DEF_STR( "1C_3C") );
+		PORT_DIPSETTING(    0x80, DEF_STR( "1C_4C") );
+		PORT_DIPSETTING(    0xc0, DEF_STR( "1C_6C") );
 	
 		PORT_START		/* DSW B */
-		PORT_DIPNAME( 0x03, 0x00, DEF_STR( Difficulty ) )
-		PORT_DIPSETTING(    0x01, "Easy" )
-		PORT_DIPSETTING(    0x00, "Medium" )
-		PORT_DIPSETTING(    0x02, "Hard" )
-		PORT_DIPSETTING(    0x03, "Hardest" )
-		PORT_DIPNAME( 0x0c, 0x00, DEF_STR( Bonus_Life ) )
-		PORT_DIPSETTING(    0x00, "30K, every 100K" )
-	    PORT_DIPSETTING(    0x04, "50K and 100K" )
-		PORT_DIPSETTING(    0x08, "100K only" )
-		PORT_DIPSETTING(    0x0c, "None" )
-		PORT_DIPNAME( 0x30, 0x00, DEF_STR( Lives ) )
-		PORT_DIPSETTING(    0x30, "1" )
-		PORT_DIPSETTING(    0x20, "2" )
-		PORT_DIPSETTING(    0x00, "3" )
-		PORT_DIPSETTING(    0x10, "5" )
-		PORT_BITX(    0x40, 0x00, IPT_DIPSWITCH_NAME | IPF_CHEAT, "Invulnerability", IP_KEY_NONE, IP_JOY_NONE )
-		PORT_DIPSETTING(    0x00, DEF_STR( Off ) )
-		PORT_DIPSETTING(    0x40, DEF_STR( On ) )
-		PORT_DIPNAME( 0x80, 0x00, DEF_STR( Unused ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( Off ) )
-		PORT_DIPSETTING(    0x80, DEF_STR( On ) )
+		PORT_DIPNAME( 0x03, 0x00, DEF_STR( "Difficulty") );
+		PORT_DIPSETTING(    0x01, "Easy" );
+		PORT_DIPSETTING(    0x00, "Medium" );
+		PORT_DIPSETTING(    0x02, "Hard" );
+		PORT_DIPSETTING(    0x03, "Hardest" );
+		PORT_DIPNAME( 0x0c, 0x00, DEF_STR( "Bonus_Life") );
+		PORT_DIPSETTING(    0x00, "30K, every 100K" );
+	    PORT_DIPSETTING(    0x04, "50K and 100K" );
+		PORT_DIPSETTING(    0x08, "100K only" );
+		PORT_DIPSETTING(    0x0c, "None" );
+		PORT_DIPNAME( 0x30, 0x00, DEF_STR( "Lives") );
+		PORT_DIPSETTING(    0x30, "1" );
+		PORT_DIPSETTING(    0x20, "2" );
+		PORT_DIPSETTING(    0x00, "3" );
+		PORT_DIPSETTING(    0x10, "5" );
+		PORT_BITX(    0x40, 0x00, IPT_DIPSWITCH_NAME | IPF_CHEAT, "Invulnerability", IP_KEY_NONE, IP_JOY_NONE );
+		PORT_DIPSETTING(    0x00, DEF_STR( "Off") );
+		PORT_DIPSETTING(    0x40, DEF_STR( "On") );
+		PORT_DIPNAME( 0x80, 0x00, DEF_STR( "Unused") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "Off") );
+		PORT_DIPSETTING(    0x80, DEF_STR( "On") );
 	
 		TOAPLAN1_SYSTEM_INPUTS
 	
 		PORT_START		/* Territory Jumper Block */
-		PORT_DIPNAME( 0x03, 0x02, "Territory/Copyright" )
-		PORT_DIPSETTING(    0x02, "World/Taito Japan" )
-		PORT_DIPSETTING(    0x03, "US/Toaplan" )
-		PORT_DIPSETTING(    0x01, "US/Taito America" )
-		PORT_DIPSETTING(    0x00, "Japan/Taito Corp" )
-		PORT_DIPNAME( 0x04, 0x00, DEF_STR( Unknown ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( Off ) )
-		PORT_DIPSETTING(    0x04, DEF_STR( On ) )
-		PORT_DIPNAME( 0x08, 0x00, DEF_STR( Unknown ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( Off ) )
-		PORT_DIPSETTING(    0x08, DEF_STR( On ) )
-		PORT_BIT( 0xf0, IP_ACTIVE_HIGH, IPT_UNKNOWN )
-	INPUT_PORTS_END
+		PORT_DIPNAME( 0x03, 0x02, "Territory/Copyright" );
+		PORT_DIPSETTING(    0x02, "World/Taito Japan" );
+		PORT_DIPSETTING(    0x03, "US/Toaplan" );
+		PORT_DIPSETTING(    0x01, "US/Taito America" );
+		PORT_DIPSETTING(    0x00, "Japan/Taito Corp" );
+		PORT_DIPNAME( 0x04, 0x00, DEF_STR( "Unknown") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "Off") );
+		PORT_DIPSETTING(    0x04, DEF_STR( "On") );
+		PORT_DIPNAME( 0x08, 0x00, DEF_STR( "Unknown") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "Off") );
+		PORT_DIPSETTING(    0x08, DEF_STR( "On") );
+		PORT_BIT( 0xf0, IP_ACTIVE_HIGH, IPT_UNKNOWN );
+	INPUT_PORTS_END(); }}; 
 	
-	INPUT_PORTS_START( samesame )
+	static InputPortPtr input_ports_samesame = new InputPortPtr(){ public void handler() { 
 		PORT_START		/* VBlank */
-		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_VBLANK )
-		PORT_BIT( 0xfe, IP_ACTIVE_HIGH, IPT_UNKNOWN )
+		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_VBLANK );
+		PORT_BIT( 0xfe, IP_ACTIVE_HIGH, IPT_UNKNOWN );
 	
 		TOAPLAN1_PLAYER_INPUT( IPF_PLAYER1, IPT_UNKNOWN )
 	
 		TOAPLAN1_PLAYER_INPUT( IPF_COCKTAIL, IPT_UNKNOWN )
 	
 		PORT_START		/* DSW A */
-		PORT_DIPNAME( 0x01, 0x01, DEF_STR( Cabinet ) )
-		PORT_DIPSETTING(    0x01, DEF_STR( Upright ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( Cocktail ) )
-		PORT_DIPNAME( 0x02, 0x00, DEF_STR( Flip_Screen ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( Off ) )
-		PORT_DIPSETTING(    0x02, DEF_STR( On ) )
-		PORT_SERVICE( 0x04, IP_ACTIVE_HIGH )
-		PORT_DIPNAME( 0x08, 0x00, DEF_STR( Demo_Sounds ) )
-		PORT_DIPSETTING(    0x08, DEF_STR( Off ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( On ) )
-		PORT_DIPNAME( 0x10, 0x00, DEF_STR( Unknown ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( Off ) )
-		PORT_DIPSETTING(    0x10, DEF_STR( On ) )
-		PORT_DIPNAME( 0x20, 0x00, DEF_STR( Unknown ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( Off ) )
-		PORT_DIPSETTING(    0x20, DEF_STR( On ) )
-		PORT_DIPNAME( 0x40, 0x00, DEF_STR( Unknown ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( Off ) )
-		PORT_DIPSETTING(    0x40, DEF_STR( On ) )
-		PORT_DIPNAME( 0x80, 0x00, DEF_STR( Unknown ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( Off ) )
-		PORT_DIPSETTING(    0x80, DEF_STR( On ) )
+		PORT_DIPNAME( 0x01, 0x01, DEF_STR( "Cabinet") );
+		PORT_DIPSETTING(    0x01, DEF_STR( "Upright") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "Cocktail") );
+		PORT_DIPNAME( 0x02, 0x00, DEF_STR( "Flip_Screen") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "Off") );
+		PORT_DIPSETTING(    0x02, DEF_STR( "On") );
+		PORT_SERVICE( 0x04, IP_ACTIVE_HIGH );
+		PORT_DIPNAME( 0x08, 0x00, DEF_STR( "Demo_Sounds") );
+		PORT_DIPSETTING(    0x08, DEF_STR( "Off") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
+		PORT_DIPNAME( 0x10, 0x00, DEF_STR( "Unknown") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "Off") );
+		PORT_DIPSETTING(    0x10, DEF_STR( "On") );
+		PORT_DIPNAME( 0x20, 0x00, DEF_STR( "Unknown") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "Off") );
+		PORT_DIPSETTING(    0x20, DEF_STR( "On") );
+		PORT_DIPNAME( 0x40, 0x00, DEF_STR( "Unknown") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "Off") );
+		PORT_DIPSETTING(    0x40, DEF_STR( "On") );
+		PORT_DIPNAME( 0x80, 0x00, DEF_STR( "Unknown") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "Off") );
+		PORT_DIPSETTING(    0x80, DEF_STR( "On") );
 	/* settings listed in service mode, but not actually used ???
-		PORT_DIPNAME( 0x30, 0x00, DEF_STR( Coin_A ) )
-		PORT_DIPSETTING(    0x20, DEF_STR( 2C_1C ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( 1C_1C ) )
-		PORT_DIPSETTING(    0x30, DEF_STR( 2C_3C ) )
-		PORT_DIPSETTING(    0x10, DEF_STR( 1C_2C ) )
-		PORT_DIPNAME( 0xc0, 0x00, DEF_STR( Coin_B ) )
-		PORT_DIPSETTING(    0x80, DEF_STR( 2C_1C ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( 1C_1C ) )
-		PORT_DIPSETTING(    0xc0, DEF_STR( 2C_3C ) )
-		PORT_DIPSETTING(    0x40, DEF_STR( 1C_2C ) )
+		PORT_DIPNAME( 0x30, 0x00, DEF_STR( "Coin_A") );
+		PORT_DIPSETTING(    0x20, DEF_STR( "2C_1C") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "1C_1C") );
+		PORT_DIPSETTING(    0x30, DEF_STR( "2C_3C") );
+		PORT_DIPSETTING(    0x10, DEF_STR( "1C_2C") );
+		PORT_DIPNAME( 0xc0, 0x00, DEF_STR( "Coin_B") );
+		PORT_DIPSETTING(    0x80, DEF_STR( "2C_1C") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "1C_1C") );
+		PORT_DIPSETTING(    0xc0, DEF_STR( "2C_3C") );
+		PORT_DIPSETTING(    0x40, DEF_STR( "1C_2C") );
 	*/
 	
 		PORT_START		/* DSW B */
-		PORT_DIPNAME( 0x03, 0x00, DEF_STR( Difficulty ) )
-		PORT_DIPSETTING(    0x01, "Easy" )
-		PORT_DIPSETTING(    0x00, "Medium" )
-		PORT_DIPSETTING(    0x02, "Hard" )
-		PORT_DIPSETTING(    0x03, "Hardest" )
-		PORT_DIPNAME( 0x0c, 0x00, DEF_STR( Bonus_Life ) )
-		PORT_DIPSETTING(    0x04, "50K, every 150K" )
-		PORT_DIPSETTING(    0x00, "70K, every 200K" )
-		PORT_DIPSETTING(    0x08, "100K" )
-		PORT_DIPSETTING(    0x0c, "None" )
-		PORT_DIPNAME( 0x30, 0x00, DEF_STR( Lives ) )
-		PORT_DIPSETTING(    0x30, "2" )
-		PORT_DIPSETTING(    0x00, "3" )
-		PORT_DIPSETTING(    0x20, "4" )
-		PORT_DIPSETTING(    0x10, "5" )
-		PORT_BITX(    0x40, 0x00, IPT_DIPSWITCH_NAME | IPF_CHEAT, "Invulnerability", IP_KEY_NONE, IP_JOY_NONE )
-		PORT_DIPSETTING(    0x00, DEF_STR( Off ) )
-		PORT_DIPSETTING(    0x40, DEF_STR( On ) )
-		PORT_DIPNAME( 0x80, 0x00, "Allow Continue" )
-		PORT_DIPSETTING(    0x80, DEF_STR( No ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( Yes ) )
+		PORT_DIPNAME( 0x03, 0x00, DEF_STR( "Difficulty") );
+		PORT_DIPSETTING(    0x01, "Easy" );
+		PORT_DIPSETTING(    0x00, "Medium" );
+		PORT_DIPSETTING(    0x02, "Hard" );
+		PORT_DIPSETTING(    0x03, "Hardest" );
+		PORT_DIPNAME( 0x0c, 0x00, DEF_STR( "Bonus_Life") );
+		PORT_DIPSETTING(    0x04, "50K, every 150K" );
+		PORT_DIPSETTING(    0x00, "70K, every 200K" );
+		PORT_DIPSETTING(    0x08, "100K" );
+		PORT_DIPSETTING(    0x0c, "None" );
+		PORT_DIPNAME( 0x30, 0x00, DEF_STR( "Lives") );
+		PORT_DIPSETTING(    0x30, "2" );
+		PORT_DIPSETTING(    0x00, "3" );
+		PORT_DIPSETTING(    0x20, "4" );
+		PORT_DIPSETTING(    0x10, "5" );
+		PORT_BITX(    0x40, 0x00, IPT_DIPSWITCH_NAME | IPF_CHEAT, "Invulnerability", IP_KEY_NONE, IP_JOY_NONE );
+		PORT_DIPSETTING(    0x00, DEF_STR( "Off") );
+		PORT_DIPSETTING(    0x40, DEF_STR( "On") );
+		PORT_DIPNAME( 0x80, 0x00, "Allow Continue" );
+		PORT_DIPSETTING(    0x80, DEF_STR( "No") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "Yes") );
 	
 		TOAPLAN1_SYSTEM_INPUTS
 	
 		PORT_START		/* Territory Jumper Block */
-		PORT_DIPNAME( 0x01, 0x00, DEF_STR( Unknown ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( Off ) )
-		PORT_DIPSETTING(    0x01, DEF_STR( On ) )
-		PORT_DIPNAME( 0x02, 0x00, DEF_STR( Unknown ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( Off ) )
-		PORT_DIPSETTING(    0x02, DEF_STR( On ) )
-		PORT_DIPNAME( 0x04, 0x00, DEF_STR( Unknown ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( Off ) )
-		PORT_DIPSETTING(    0x04, DEF_STR( On ) )
-		PORT_DIPNAME( 0x08, 0x00, DEF_STR( Unknown ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( Off ) )
-		PORT_DIPSETTING(    0x08, DEF_STR( On ) )
-		PORT_BIT( 0xf0, IP_ACTIVE_HIGH, IPT_UNKNOWN )
-	INPUT_PORTS_END
+		PORT_DIPNAME( 0x01, 0x00, DEF_STR( "Unknown") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "Off") );
+		PORT_DIPSETTING(    0x01, DEF_STR( "On") );
+		PORT_DIPNAME( 0x02, 0x00, DEF_STR( "Unknown") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "Off") );
+		PORT_DIPSETTING(    0x02, DEF_STR( "On") );
+		PORT_DIPNAME( 0x04, 0x00, DEF_STR( "Unknown") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "Off") );
+		PORT_DIPSETTING(    0x04, DEF_STR( "On") );
+		PORT_DIPNAME( 0x08, 0x00, DEF_STR( "Unknown") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "Off") );
+		PORT_DIPSETTING(    0x08, DEF_STR( "On") );
+		PORT_BIT( 0xf0, IP_ACTIVE_HIGH, IPT_UNKNOWN );
+	INPUT_PORTS_END(); }}; 
 	
-	INPUT_PORTS_START( fireshrk )
+	static InputPortPtr input_ports_fireshrk = new InputPortPtr(){ public void handler() { 
 		PORT_START		/* VBlank */
-		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_VBLANK )
-		PORT_BIT( 0xfe, IP_ACTIVE_HIGH, IPT_UNKNOWN )
+		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_VBLANK );
+		PORT_BIT( 0xfe, IP_ACTIVE_HIGH, IPT_UNKNOWN );
 	
 		TOAPLAN1_PLAYER_INPUT( IPF_PLAYER1, IPT_UNKNOWN )
 	
 		TOAPLAN1_PLAYER_INPUT( IPF_PLAYER2, IPT_UNKNOWN )
 	
 		PORT_START		/* DSW A */
-		PORT_DIPNAME( 0x01, 0x00, DEF_STR( Unused ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( Off ) )
-		PORT_DIPSETTING(    0x01, DEF_STR( On ) )
-		PORT_DIPNAME( 0x02, 0x00, DEF_STR( Flip_Screen ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( Off ) )
-		PORT_DIPSETTING(    0x02, DEF_STR( On ) )
-		PORT_SERVICE( 0x04, IP_ACTIVE_HIGH )
-		PORT_DIPNAME( 0x08, 0x00, DEF_STR( Demo_Sounds ) )
-		PORT_DIPSETTING(    0x08, DEF_STR( Off ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( On ) )
-		PORT_DIPNAME( 0x30, 0x00, DEF_STR( Coin_A ) )
-		PORT_DIPSETTING(    0x30, DEF_STR( 4C_1C ) )
-		PORT_DIPSETTING(    0x20, DEF_STR( 3C_1C ) )
-		PORT_DIPSETTING(    0x10, DEF_STR( 2C_1C ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( 1C_1C ) )
-		PORT_DIPNAME( 0xc0, 0x00, DEF_STR( Coin_B ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( 1C_2C ) )
-		PORT_DIPSETTING(    0x40, DEF_STR( 1C_3C ) )
-		PORT_DIPSETTING(    0x80, DEF_STR( 1C_4C ) )
-		PORT_DIPSETTING(    0xc0, DEF_STR( 1C_6C ) )
+		PORT_DIPNAME( 0x01, 0x00, DEF_STR( "Unused") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "Off") );
+		PORT_DIPSETTING(    0x01, DEF_STR( "On") );
+		PORT_DIPNAME( 0x02, 0x00, DEF_STR( "Flip_Screen") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "Off") );
+		PORT_DIPSETTING(    0x02, DEF_STR( "On") );
+		PORT_SERVICE( 0x04, IP_ACTIVE_HIGH );
+		PORT_DIPNAME( 0x08, 0x00, DEF_STR( "Demo_Sounds") );
+		PORT_DIPSETTING(    0x08, DEF_STR( "Off") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
+		PORT_DIPNAME( 0x30, 0x00, DEF_STR( "Coin_A") );
+		PORT_DIPSETTING(    0x30, DEF_STR( "4C_1C") );
+		PORT_DIPSETTING(    0x20, DEF_STR( "3C_1C") );
+		PORT_DIPSETTING(    0x10, DEF_STR( "2C_1C") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "1C_1C") );
+		PORT_DIPNAME( 0xc0, 0x00, DEF_STR( "Coin_B") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "1C_2C") );
+		PORT_DIPSETTING(    0x40, DEF_STR( "1C_3C") );
+		PORT_DIPSETTING(    0x80, DEF_STR( "1C_4C") );
+		PORT_DIPSETTING(    0xc0, DEF_STR( "1C_6C") );
 	
 		PORT_START		/* DSW B */
-		PORT_DIPNAME( 0x03, 0x00, DEF_STR( Difficulty ) )
-		PORT_DIPSETTING(    0x01, "Easy" )
-		PORT_DIPSETTING(    0x00, "Medium" )
-		PORT_DIPSETTING(    0x02, "Hard" )
-		PORT_DIPSETTING(    0x03, "Hardest" )
-		PORT_DIPNAME( 0x0c, 0x00, DEF_STR( Bonus_Life ) )
-		PORT_DIPSETTING(    0x04, "50K, every 150K" )
-		PORT_DIPSETTING(    0x00, "70K, every 200K" )
-		PORT_DIPSETTING(    0x08, "100K" )
-		PORT_DIPSETTING(    0x0c, "None" )
-		PORT_DIPNAME( 0x30, 0x00, DEF_STR( Lives ) )
-		PORT_DIPSETTING(    0x30, "2" )
-		PORT_DIPSETTING(    0x00, "3" )
-		PORT_DIPSETTING(    0x20, "4" )
-		PORT_DIPSETTING(    0x10, "5" )
-		PORT_BITX(    0x40, 0x00, IPT_DIPSWITCH_NAME | IPF_CHEAT, "Invulnerability", IP_KEY_NONE, IP_JOY_NONE )
-		PORT_DIPSETTING(    0x00, DEF_STR( Off ) )
-		PORT_DIPSETTING(    0x40, DEF_STR( On ) )
-		PORT_DIPNAME( 0x80,	0x00, DEF_STR( Unused ) )
-		PORT_DIPSETTING(	0x00, DEF_STR( Off ) )
-		PORT_DIPSETTING(	0x80, DEF_STR( On ) )
+		PORT_DIPNAME( 0x03, 0x00, DEF_STR( "Difficulty") );
+		PORT_DIPSETTING(    0x01, "Easy" );
+		PORT_DIPSETTING(    0x00, "Medium" );
+		PORT_DIPSETTING(    0x02, "Hard" );
+		PORT_DIPSETTING(    0x03, "Hardest" );
+		PORT_DIPNAME( 0x0c, 0x00, DEF_STR( "Bonus_Life") );
+		PORT_DIPSETTING(    0x04, "50K, every 150K" );
+		PORT_DIPSETTING(    0x00, "70K, every 200K" );
+		PORT_DIPSETTING(    0x08, "100K" );
+		PORT_DIPSETTING(    0x0c, "None" );
+		PORT_DIPNAME( 0x30, 0x00, DEF_STR( "Lives") );
+		PORT_DIPSETTING(    0x30, "2" );
+		PORT_DIPSETTING(    0x00, "3" );
+		PORT_DIPSETTING(    0x20, "4" );
+		PORT_DIPSETTING(    0x10, "5" );
+		PORT_BITX(    0x40, 0x00, IPT_DIPSWITCH_NAME | IPF_CHEAT, "Invulnerability", IP_KEY_NONE, IP_JOY_NONE );
+		PORT_DIPSETTING(    0x00, DEF_STR( "Off") );
+		PORT_DIPSETTING(    0x40, DEF_STR( "On") );
+		PORT_DIPNAME( 0x80,	0x00, DEF_STR( "Unused") );
+		PORT_DIPSETTING(	0x00, DEF_STR( "Off") );
+		PORT_DIPSETTING(	0x80, DEF_STR( "On") );
 	
 		TOAPLAN1_SYSTEM_INPUTS
 	
 		PORT_START		/* Territory Jumper Block */
-		PORT_DIPNAME( 0x01, 0x00, DEF_STR( Unknown ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( Off ) )
-		PORT_DIPSETTING(    0x01, DEF_STR( On ) )
-		PORT_DIPNAME( 0x06, 0x02, "Territory" )
-		PORT_DIPSETTING(    0x02, "Europe" )
-		PORT_DIPSETTING(    0x04, "USA" )
-		PORT_DIPSETTING(    0x00, "USA (Romstar)" )
-		PORT_DIPNAME( 0x08, 0x00, DEF_STR( Unknown ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( Off ) )
-		PORT_DIPSETTING(    0x08, DEF_STR( On ) )
-		PORT_BIT( 0xf0, IP_ACTIVE_HIGH, IPT_UNKNOWN )
-	INPUT_PORTS_END
+		PORT_DIPNAME( 0x01, 0x00, DEF_STR( "Unknown") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "Off") );
+		PORT_DIPSETTING(    0x01, DEF_STR( "On") );
+		PORT_DIPNAME( 0x06, 0x02, "Territory" );
+		PORT_DIPSETTING(    0x02, "Europe" );
+		PORT_DIPSETTING(    0x04, "USA" );
+		PORT_DIPSETTING(    0x00, "USA (Romstar); )
+		PORT_DIPNAME( 0x08, 0x00, DEF_STR( "Unknown") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "Off") );
+		PORT_DIPSETTING(    0x08, DEF_STR( "On") );
+		PORT_BIT( 0xf0, IP_ACTIVE_HIGH, IPT_UNKNOWN );
+	INPUT_PORTS_END(); }}; 
 	
-	INPUT_PORTS_START( outzone )
+	static InputPortPtr input_ports_outzone = new InputPortPtr(){ public void handler() { 
 		PORT_START		/* VBlank */
-		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_VBLANK )
-		PORT_BIT( 0xfe, IP_ACTIVE_HIGH, IPT_UNKNOWN )
+		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_VBLANK );
+		PORT_BIT( 0xfe, IP_ACTIVE_HIGH, IPT_UNKNOWN );
 	
 		TOAPLAN1_PLAYER_INPUT( IPF_PLAYER1, IPT_BUTTON3 )
 	
 		TOAPLAN1_PLAYER_INPUT( IPF_PLAYER2, IPT_BUTTON3 )
 	
 		PORT_START		/* DSW A */
-		PORT_DIPNAME( 0x01, 0x00, DEF_STR( Unused ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( Off ) )
-		PORT_DIPSETTING(    0x01, DEF_STR( On ) )
-		PORT_DIPNAME( 0x02, 0x00, DEF_STR( Flip_Screen ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( Off ) )
-		PORT_DIPSETTING(    0x02, DEF_STR( On ) )
-		PORT_SERVICE( 0x04, IP_ACTIVE_HIGH )
-		PORT_DIPNAME( 0x08, 0x00, DEF_STR( Demo_Sounds ) )
-		PORT_DIPSETTING(    0x08, DEF_STR( Off ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( On ) )
-		PORT_DIPNAME( 0x30, 0x00, DEF_STR( Coin_A ) )
-		PORT_DIPSETTING(    0x30, DEF_STR( 4C_1C ) )
-		PORT_DIPSETTING(    0x20, DEF_STR( 3C_1C ) )
-		PORT_DIPSETTING(    0x10, DEF_STR( 2C_1C ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( 1C_1C ) )
-		PORT_DIPNAME( 0xc0, 0x00, DEF_STR( Coin_B ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( 1C_2C ) )
-		PORT_DIPSETTING(    0x40, DEF_STR( 1C_3C ) )
-		PORT_DIPSETTING(    0x80, DEF_STR( 1C_4C ) )
-		PORT_DIPSETTING(    0xc0, DEF_STR( 1C_6C ) )
+		PORT_DIPNAME( 0x01, 0x00, DEF_STR( "Unused") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "Off") );
+		PORT_DIPSETTING(    0x01, DEF_STR( "On") );
+		PORT_DIPNAME( 0x02, 0x00, DEF_STR( "Flip_Screen") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "Off") );
+		PORT_DIPSETTING(    0x02, DEF_STR( "On") );
+		PORT_SERVICE( 0x04, IP_ACTIVE_HIGH );
+		PORT_DIPNAME( 0x08, 0x00, DEF_STR( "Demo_Sounds") );
+		PORT_DIPSETTING(    0x08, DEF_STR( "Off") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
+		PORT_DIPNAME( 0x30, 0x00, DEF_STR( "Coin_A") );
+		PORT_DIPSETTING(    0x30, DEF_STR( "4C_1C") );
+		PORT_DIPSETTING(    0x20, DEF_STR( "3C_1C") );
+		PORT_DIPSETTING(    0x10, DEF_STR( "2C_1C") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "1C_1C") );
+		PORT_DIPNAME( 0xc0, 0x00, DEF_STR( "Coin_B") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "1C_2C") );
+		PORT_DIPSETTING(    0x40, DEF_STR( "1C_3C") );
+		PORT_DIPSETTING(    0x80, DEF_STR( "1C_4C") );
+		PORT_DIPSETTING(    0xc0, DEF_STR( "1C_6C") );
 	
 		PORT_START		/* DSW B */
-		PORT_DIPNAME( 0x03, 0x00, DEF_STR( Difficulty ) )
-		PORT_DIPSETTING(    0x01, "Easy" )
-		PORT_DIPSETTING(    0x00, "Medium" )
-		PORT_DIPSETTING(    0x02, "Hard" )
-		PORT_DIPSETTING(    0x03, "Hardest" )
-		PORT_DIPNAME( 0x0c, 0x00, DEF_STR( Bonus_Life ) )
-		PORT_DIPSETTING(    0x00, "Every 300K" )
-		PORT_DIPSETTING(    0x04, "200K and 500K" )
-		PORT_DIPSETTING(    0x08, "300K only" )
-		PORT_DIPSETTING(    0x0c, "None" )
-		PORT_DIPNAME( 0x30, 0x00, DEF_STR( Lives ) )
-		PORT_DIPSETTING(    0x30, "1" )
-		PORT_DIPSETTING(    0x20, "2" )
-		PORT_DIPSETTING(    0x00, "3" )
-		PORT_DIPSETTING(    0x10, "5" )
-		PORT_BITX( 0x40,    0x00, IPT_DIPSWITCH_NAME | IPF_CHEAT, "Invulnerability", 0 ,0 )
-		PORT_DIPSETTING(    0x00, DEF_STR( Off ) )
-		PORT_DIPSETTING(    0x40, DEF_STR( On ) )
-		PORT_DIPNAME( 0x80, 0x00, DEF_STR( Unused ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( Off ) )
-		PORT_DIPSETTING(    0x80, DEF_STR( On ) )
+		PORT_DIPNAME( 0x03, 0x00, DEF_STR( "Difficulty") );
+		PORT_DIPSETTING(    0x01, "Easy" );
+		PORT_DIPSETTING(    0x00, "Medium" );
+		PORT_DIPSETTING(    0x02, "Hard" );
+		PORT_DIPSETTING(    0x03, "Hardest" );
+		PORT_DIPNAME( 0x0c, 0x00, DEF_STR( "Bonus_Life") );
+		PORT_DIPSETTING(    0x00, "Every 300K" );
+		PORT_DIPSETTING(    0x04, "200K and 500K" );
+		PORT_DIPSETTING(    0x08, "300K only" );
+		PORT_DIPSETTING(    0x0c, "None" );
+		PORT_DIPNAME( 0x30, 0x00, DEF_STR( "Lives") );
+		PORT_DIPSETTING(    0x30, "1" );
+		PORT_DIPSETTING(    0x20, "2" );
+		PORT_DIPSETTING(    0x00, "3" );
+		PORT_DIPSETTING(    0x10, "5" );
+		PORT_BITX( 0x40,    0x00, IPT_DIPSWITCH_NAME | IPF_CHEAT, "Invulnerability", 0 ,0 );
+		PORT_DIPSETTING(    0x00, DEF_STR( "Off") );
+		PORT_DIPSETTING(    0x40, DEF_STR( "On") );
+		PORT_DIPNAME( 0x80, 0x00, DEF_STR( "Unused") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "Off") );
+		PORT_DIPSETTING(    0x80, DEF_STR( "On") );
 	
 		TOAPLAN1_SYSTEM_INPUTS
 	
 		PORT_START		/* Territory Jumper Block */
-		PORT_DIPNAME( 0x07, 0x02, "Territory" )
-		PORT_DIPSETTING(    0x02, "Europe" )
-		PORT_DIPSETTING(    0x01, "US" )
-		PORT_DIPSETTING(    0x00, "Japan" )
-		PORT_DIPSETTING(    0x03, "Hong Kong" )
-		PORT_DIPSETTING(    0x04, "Korea" )
-		PORT_DIPSETTING(    0x05, "Taiwan" )
-		PORT_DIPNAME( 0x08, 0x00, DEF_STR( Unknown ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( Off ) )
-		PORT_DIPSETTING(    0x08, DEF_STR( On ) )
-		PORT_BIT( 0xf0, IP_ACTIVE_HIGH, IPT_UNKNOWN )
-	INPUT_PORTS_END
+		PORT_DIPNAME( 0x07, 0x02, "Territory" );
+		PORT_DIPSETTING(    0x02, "Europe" );
+		PORT_DIPSETTING(    0x01, "US" );
+		PORT_DIPSETTING(    0x00, "Japan" );
+		PORT_DIPSETTING(    0x03, "Hong Kong" );
+		PORT_DIPSETTING(    0x04, "Korea" );
+		PORT_DIPSETTING(    0x05, "Taiwan" );
+		PORT_DIPNAME( 0x08, 0x00, DEF_STR( "Unknown") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "Off") );
+		PORT_DIPSETTING(    0x08, DEF_STR( "On") );
+		PORT_BIT( 0xf0, IP_ACTIVE_HIGH, IPT_UNKNOWN );
+	INPUT_PORTS_END(); }}; 
 	
-	INPUT_PORTS_START( vimana )
+	static InputPortPtr input_ports_vimana = new InputPortPtr(){ public void handler() { 
 		PORT_START		/* VBlank */
-		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_VBLANK )
-		PORT_BIT( 0xfe, IP_ACTIVE_HIGH, IPT_UNKNOWN )
+		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_VBLANK );
+		PORT_BIT( 0xfe, IP_ACTIVE_HIGH, IPT_UNKNOWN );
 	
 		TOAPLAN1_PLAYER_INPUT( IPF_PLAYER1, IPT_BUTTON3 )
 	
 		TOAPLAN1_PLAYER_INPUT( IPF_PLAYER2, IPT_BUTTON3 )
 	
 		PORT_START		/* DSW A */
-		PORT_DIPNAME( 0x01, 0x00, DEF_STR( Unused ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( Off ) )
-		PORT_DIPSETTING(    0x01, DEF_STR( On ) )
-		PORT_DIPNAME( 0x02, 0x00, DEF_STR( Flip_Screen ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( Off ) )
-		PORT_DIPSETTING(    0x02, DEF_STR( On ) )
-		PORT_SERVICE( 0x04, IP_ACTIVE_HIGH )
-		PORT_DIPNAME( 0x08, 0x00, DEF_STR( Demo_Sounds ) )
-		PORT_DIPSETTING(    0x08, DEF_STR( Off ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( On ) )
-		PORT_DIPNAME( 0x30, 0x00, DEF_STR( Coin_A ) )
-		PORT_DIPSETTING(    0x30, DEF_STR( 4C_1C ) )
-		PORT_DIPSETTING(    0x20, DEF_STR( 3C_1C ) )
-		PORT_DIPSETTING(    0x10, DEF_STR( 2C_1C ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( 1C_1C ) )
-		PORT_DIPNAME( 0xc0, 0x00, DEF_STR( Coin_B ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( 1C_2C ) )
-		PORT_DIPSETTING(    0x40, DEF_STR( 1C_3C ) )
-		PORT_DIPSETTING(    0x80, DEF_STR( 1C_4C ) )
-		PORT_DIPSETTING(    0xc0, DEF_STR( 1C_6C ) )
+		PORT_DIPNAME( 0x01, 0x00, DEF_STR( "Unused") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "Off") );
+		PORT_DIPSETTING(    0x01, DEF_STR( "On") );
+		PORT_DIPNAME( 0x02, 0x00, DEF_STR( "Flip_Screen") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "Off") );
+		PORT_DIPSETTING(    0x02, DEF_STR( "On") );
+		PORT_SERVICE( 0x04, IP_ACTIVE_HIGH );
+		PORT_DIPNAME( 0x08, 0x00, DEF_STR( "Demo_Sounds") );
+		PORT_DIPSETTING(    0x08, DEF_STR( "Off") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
+		PORT_DIPNAME( 0x30, 0x00, DEF_STR( "Coin_A") );
+		PORT_DIPSETTING(    0x30, DEF_STR( "4C_1C") );
+		PORT_DIPSETTING(    0x20, DEF_STR( "3C_1C") );
+		PORT_DIPSETTING(    0x10, DEF_STR( "2C_1C") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "1C_1C") );
+		PORT_DIPNAME( 0xc0, 0x00, DEF_STR( "Coin_B") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "1C_2C") );
+		PORT_DIPSETTING(    0x40, DEF_STR( "1C_3C") );
+		PORT_DIPSETTING(    0x80, DEF_STR( "1C_4C") );
+		PORT_DIPSETTING(    0xc0, DEF_STR( "1C_6C") );
 	
 		PORT_START		/* DSW B */
-		PORT_DIPNAME( 0x03, 0x00, DEF_STR( Difficulty ) )
-		PORT_DIPSETTING(    0x01, "Easy" )
-		PORT_DIPSETTING(    0x00, "Medium" )
-		PORT_DIPSETTING(    0x02, "Hard" )
-		PORT_DIPSETTING(    0x03, "Hardest" )
-		PORT_DIPNAME( 0x0c, 0x00, DEF_STR( Bonus_Life ) )
-		PORT_DIPSETTING(    0x00, "70K and 200K" )
-		PORT_DIPSETTING(    0x04, "100K and 250K" )
-		PORT_DIPSETTING(    0x08, "100K" )
-		PORT_DIPSETTING(    0x0c, "200K" )
-		PORT_DIPNAME( 0x30, 0x00, DEF_STR( Lives ) )
-		PORT_DIPSETTING(    0x30, "2" )
-		PORT_DIPSETTING(    0x00, "3" )
-		PORT_DIPSETTING(    0x20, "4" )
-		PORT_DIPSETTING(    0x10, "5" )
-		PORT_BITX(    0x40, 0x00, IPT_DIPSWITCH_NAME | IPF_CHEAT, "Invulnerability", IP_KEY_NONE, IP_JOY_NONE )
-		PORT_DIPSETTING(    0x00, DEF_STR( Off ) )
-		PORT_DIPSETTING(    0x40, DEF_STR( On ) )
-		PORT_DIPNAME( 0x80, 0x00, "Allow Continue" )
-		PORT_DIPSETTING(    0x80, DEF_STR( No ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( Yes ) )
+		PORT_DIPNAME( 0x03, 0x00, DEF_STR( "Difficulty") );
+		PORT_DIPSETTING(    0x01, "Easy" );
+		PORT_DIPSETTING(    0x00, "Medium" );
+		PORT_DIPSETTING(    0x02, "Hard" );
+		PORT_DIPSETTING(    0x03, "Hardest" );
+		PORT_DIPNAME( 0x0c, 0x00, DEF_STR( "Bonus_Life") );
+		PORT_DIPSETTING(    0x00, "70K and 200K" );
+		PORT_DIPSETTING(    0x04, "100K and 250K" );
+		PORT_DIPSETTING(    0x08, "100K" );
+		PORT_DIPSETTING(    0x0c, "200K" );
+		PORT_DIPNAME( 0x30, 0x00, DEF_STR( "Lives") );
+		PORT_DIPSETTING(    0x30, "2" );
+		PORT_DIPSETTING(    0x00, "3" );
+		PORT_DIPSETTING(    0x20, "4" );
+		PORT_DIPSETTING(    0x10, "5" );
+		PORT_BITX(    0x40, 0x00, IPT_DIPSWITCH_NAME | IPF_CHEAT, "Invulnerability", IP_KEY_NONE, IP_JOY_NONE );
+		PORT_DIPSETTING(    0x00, DEF_STR( "Off") );
+		PORT_DIPSETTING(    0x40, DEF_STR( "On") );
+		PORT_DIPNAME( 0x80, 0x00, "Allow Continue" );
+		PORT_DIPSETTING(    0x80, DEF_STR( "No") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "Yes") );
 	
 		TOAPLAN1_SYSTEM_INPUTS
 	
 		PORT_START		/* Territory Jumper Block */
-		PORT_DIPNAME( 0x0f, 0x02, "Territory" )
-		PORT_DIPSETTING(    0x02, "Europe" )
-		PORT_DIPSETTING(    0x01, "US" )
-		PORT_DIPSETTING(    0x00, "Japan" )
-		PORT_DIPSETTING(    0x03, "Hong Kong" )
-		PORT_DIPSETTING(    0x04, "Korea" )
-		PORT_DIPSETTING(    0x05, "Taiwan" )
-	//	PORT_DIPSETTING(    0x06, "Taiwan" )
-	//	PORT_DIPSETTING(    0x07, "US" )
-	//	PORT_DIPSETTING(    0x08, "Hong Kong" )
-	//	PORT_DIPSETTING(    0x09, DEF_STR( Unused ) )
-	//	PORT_DIPSETTING(    0x0a, DEF_STR( Unused ) )
-	//	PORT_DIPSETTING(    0x0b, DEF_STR( Unused ) )
-	//	PORT_DIPSETTING(    0x0c, DEF_STR( Unused ) )
-	//	PORT_DIPSETTING(    0x0d, DEF_STR( Unused ) )
-	//	PORT_DIPSETTING(    0x0e, DEF_STR( Unused ) )
-	//	PORT_DIPSETTING(    0x0f, "Japan" )
-		PORT_BIT( 0xf0, IP_ACTIVE_HIGH, IPT_UNKNOWN )
-	INPUT_PORTS_END
+		PORT_DIPNAME( 0x0f, 0x02, "Territory" );
+		PORT_DIPSETTING(    0x02, "Europe" );
+		PORT_DIPSETTING(    0x01, "US" );
+		PORT_DIPSETTING(    0x00, "Japan" );
+		PORT_DIPSETTING(    0x03, "Hong Kong" );
+		PORT_DIPSETTING(    0x04, "Korea" );
+		PORT_DIPSETTING(    0x05, "Taiwan" );
+	//	PORT_DIPSETTING(    0x06, "Taiwan" );
+	//	PORT_DIPSETTING(    0x07, "US" );
+	//	PORT_DIPSETTING(    0x08, "Hong Kong" );
+	//	PORT_DIPSETTING(    0x09, DEF_STR( "Unused") );
+	//	PORT_DIPSETTING(    0x0a, DEF_STR( "Unused") );
+	//	PORT_DIPSETTING(    0x0b, DEF_STR( "Unused") );
+	//	PORT_DIPSETTING(    0x0c, DEF_STR( "Unused") );
+	//	PORT_DIPSETTING(    0x0d, DEF_STR( "Unused") );
+	//	PORT_DIPSETTING(    0x0e, DEF_STR( "Unused") );
+	//	PORT_DIPSETTING(    0x0f, "Japan" );
+		PORT_BIT( 0xf0, IP_ACTIVE_HIGH, IPT_UNKNOWN );
+	INPUT_PORTS_END(); }}; 
 	
-	INPUT_PORTS_START( vimanan )
+	static InputPortPtr input_ports_vimanan = new InputPortPtr(){ public void handler() { 
 		PORT_START		/* VBlank */
-		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_VBLANK )
-		PORT_BIT( 0xfe, IP_ACTIVE_HIGH, IPT_UNKNOWN )
+		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_VBLANK );
+		PORT_BIT( 0xfe, IP_ACTIVE_HIGH, IPT_UNKNOWN );
 	
 		TOAPLAN1_PLAYER_INPUT( IPF_PLAYER1, IPT_BUTTON3 )
 	
 		TOAPLAN1_PLAYER_INPUT( IPF_PLAYER2, IPT_BUTTON3 )
 	
 		PORT_START		/* DSW A */
-		PORT_DIPNAME( 0x01, 0x00, DEF_STR( Unused ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( Off ) )
-		PORT_DIPSETTING(    0x01, DEF_STR( On ) )
-		PORT_DIPNAME( 0x02, 0x00, DEF_STR( Flip_Screen ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( Off ) )
-		PORT_DIPSETTING(    0x02, DEF_STR( On ) )
-		PORT_SERVICE( 0x04, IP_ACTIVE_HIGH )
-		PORT_DIPNAME( 0x08, 0x00, DEF_STR( Demo_Sounds ) )
-		PORT_DIPSETTING(    0x08, DEF_STR( Off ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( On ) )
-		PORT_DIPNAME( 0x10, 0x00, DEF_STR( Unused ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( Off ) )
-		PORT_DIPSETTING(    0x10, DEF_STR( On ) )
-		PORT_DIPNAME( 0x20, 0x00, DEF_STR( Unused ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( Off ) )
-		PORT_DIPSETTING(    0x20, DEF_STR( On ) )
-		PORT_DIPNAME( 0x40, 0x00, DEF_STR( Unused ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( Off ) )
-		PORT_DIPSETTING(    0x40, DEF_STR( On ) )
-		PORT_DIPNAME( 0x80, 0x00, DEF_STR( Unused ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( Off ) )
-		PORT_DIPSETTING(    0x80, DEF_STR( On ) )
+		PORT_DIPNAME( 0x01, 0x00, DEF_STR( "Unused") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "Off") );
+		PORT_DIPSETTING(    0x01, DEF_STR( "On") );
+		PORT_DIPNAME( 0x02, 0x00, DEF_STR( "Flip_Screen") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "Off") );
+		PORT_DIPSETTING(    0x02, DEF_STR( "On") );
+		PORT_SERVICE( 0x04, IP_ACTIVE_HIGH );
+		PORT_DIPNAME( 0x08, 0x00, DEF_STR( "Demo_Sounds") );
+		PORT_DIPSETTING(    0x08, DEF_STR( "Off") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
+		PORT_DIPNAME( 0x10, 0x00, DEF_STR( "Unused") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "Off") );
+		PORT_DIPSETTING(    0x10, DEF_STR( "On") );
+		PORT_DIPNAME( 0x20, 0x00, DEF_STR( "Unused") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "Off") );
+		PORT_DIPSETTING(    0x20, DEF_STR( "On") );
+		PORT_DIPNAME( 0x40, 0x00, DEF_STR( "Unused") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "Off") );
+		PORT_DIPSETTING(    0x40, DEF_STR( "On") );
+		PORT_DIPNAME( 0x80, 0x00, DEF_STR( "Unused") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "Off") );
+		PORT_DIPSETTING(    0x80, DEF_STR( "On") );
 	/* settings for other territories (non Nova license)
-		PORT_DIPNAME( 0x30, 0x00, DEF_STR( Coin_A ) )
-		PORT_DIPSETTING(    0x30, DEF_STR( 4C_1C ) )
-		PORT_DIPSETTING(    0x20, DEF_STR( 3C_1C ) )
-		PORT_DIPSETTING(    0x10, DEF_STR( 2C_1C ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( 1C_1C ) )
-		PORT_DIPNAME( 0xc0, 0x00, DEF_STR( Coin_B ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( 1C_2C ) )
-		PORT_DIPSETTING(    0x40, DEF_STR( 1C_3C ) )
-		PORT_DIPSETTING(    0x80, DEF_STR( 1C_4C ) )
-		PORT_DIPSETTING(    0xc0, DEF_STR( 1C_6C ) )
+		PORT_DIPNAME( 0x30, 0x00, DEF_STR( "Coin_A") );
+		PORT_DIPSETTING(    0x30, DEF_STR( "4C_1C") );
+		PORT_DIPSETTING(    0x20, DEF_STR( "3C_1C") );
+		PORT_DIPSETTING(    0x10, DEF_STR( "2C_1C") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "1C_1C") );
+		PORT_DIPNAME( 0xc0, 0x00, DEF_STR( "Coin_B") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "1C_2C") );
+		PORT_DIPSETTING(    0x40, DEF_STR( "1C_3C") );
+		PORT_DIPSETTING(    0x80, DEF_STR( "1C_4C") );
+		PORT_DIPSETTING(    0xc0, DEF_STR( "1C_6C") );
 	*/
 	
 		PORT_START		/* DSW B */
-		PORT_DIPNAME( 0x03, 0x00, DEF_STR( Difficulty ) )
-		PORT_DIPSETTING(    0x01, "Easy" )
-		PORT_DIPSETTING(    0x00, "Medium" )
-		PORT_DIPSETTING(    0x02, "Hard" )
-		PORT_DIPSETTING(    0x03, "Hardest" )
-		PORT_DIPNAME( 0x0c, 0x00, DEF_STR( Bonus_Life ) )
-		PORT_DIPSETTING(    0x00, "70K and 200K" )
-		PORT_DIPSETTING(    0x04, "100K and 250K" )
-		PORT_DIPSETTING(    0x08, "100K" )
-		PORT_DIPSETTING(    0x0c, "200K" )
-		PORT_DIPNAME( 0x30, 0x00, DEF_STR( Lives ) )
-		PORT_DIPSETTING(    0x30, "2" )
-		PORT_DIPSETTING(    0x00, "3" )
-		PORT_DIPSETTING(    0x20, "4" )
-		PORT_DIPSETTING(    0x10, "5" )
-		PORT_BITX(    0x40, 0x00, IPT_DIPSWITCH_NAME | IPF_CHEAT, "Invulnerability", IP_KEY_NONE, IP_JOY_NONE )
-		PORT_DIPSETTING(    0x00, DEF_STR( Off ) )
-		PORT_DIPSETTING(    0x40, DEF_STR( On ) )
-		PORT_DIPNAME( 0x80, 0x00, "Allow Continue" )
-		PORT_DIPSETTING(    0x80, DEF_STR( No ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( Yes ) )
+		PORT_DIPNAME( 0x03, 0x00, DEF_STR( "Difficulty") );
+		PORT_DIPSETTING(    0x01, "Easy" );
+		PORT_DIPSETTING(    0x00, "Medium" );
+		PORT_DIPSETTING(    0x02, "Hard" );
+		PORT_DIPSETTING(    0x03, "Hardest" );
+		PORT_DIPNAME( 0x0c, 0x00, DEF_STR( "Bonus_Life") );
+		PORT_DIPSETTING(    0x00, "70K and 200K" );
+		PORT_DIPSETTING(    0x04, "100K and 250K" );
+		PORT_DIPSETTING(    0x08, "100K" );
+		PORT_DIPSETTING(    0x0c, "200K" );
+		PORT_DIPNAME( 0x30, 0x00, DEF_STR( "Lives") );
+		PORT_DIPSETTING(    0x30, "2" );
+		PORT_DIPSETTING(    0x00, "3" );
+		PORT_DIPSETTING(    0x20, "4" );
+		PORT_DIPSETTING(    0x10, "5" );
+		PORT_BITX(    0x40, 0x00, IPT_DIPSWITCH_NAME | IPF_CHEAT, "Invulnerability", IP_KEY_NONE, IP_JOY_NONE );
+		PORT_DIPSETTING(    0x00, DEF_STR( "Off") );
+		PORT_DIPSETTING(    0x40, DEF_STR( "On") );
+		PORT_DIPNAME( 0x80, 0x00, "Allow Continue" );
+		PORT_DIPSETTING(    0x80, DEF_STR( "No") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "Yes") );
 	
 		TOAPLAN1_SYSTEM_INPUTS
 	
 		PORT_START		/* Territory Jumper Block */
-		PORT_DIPNAME( 0x0f, 0x02, "Territory" )
-		PORT_DIPSETTING(    0x02, "Europe" )
-		PORT_DIPSETTING(    0x01, "US" )
-		PORT_DIPSETTING(    0x00, "Japan" )
-		PORT_DIPSETTING(    0x03, "Hong Kong" )
-		PORT_DIPSETTING(    0x04, "Korea" )
-		PORT_DIPSETTING(    0x05, "Taiwan" )
-	//	PORT_DIPSETTING(    0x06, "Taiwan" )
-	//	PORT_DIPSETTING(    0x07, "US" )
-	//	PORT_DIPSETTING(    0x08, "Hong Kong" )
-	//	PORT_DIPSETTING(    0x09, DEF_STR( Unused ) )
-	//	PORT_DIPSETTING(    0x0a, DEF_STR( Unused ) )
-	//	PORT_DIPSETTING(    0x0b, DEF_STR( Unused ) )
-	//	PORT_DIPSETTING(    0x0c, DEF_STR( Unused ) )
-	//	PORT_DIPSETTING(    0x0d, DEF_STR( Unused ) )
-	//	PORT_DIPSETTING(    0x0e, DEF_STR( Unused ) )
-	//	PORT_DIPSETTING(    0x0f, "Japan" )
-		PORT_BIT( 0xf0, IP_ACTIVE_HIGH, IPT_UNKNOWN )
-	INPUT_PORTS_END
+		PORT_DIPNAME( 0x0f, 0x02, "Territory" );
+		PORT_DIPSETTING(    0x02, "Europe" );
+		PORT_DIPSETTING(    0x01, "US" );
+		PORT_DIPSETTING(    0x00, "Japan" );
+		PORT_DIPSETTING(    0x03, "Hong Kong" );
+		PORT_DIPSETTING(    0x04, "Korea" );
+		PORT_DIPSETTING(    0x05, "Taiwan" );
+	//	PORT_DIPSETTING(    0x06, "Taiwan" );
+	//	PORT_DIPSETTING(    0x07, "US" );
+	//	PORT_DIPSETTING(    0x08, "Hong Kong" );
+	//	PORT_DIPSETTING(    0x09, DEF_STR( "Unused") );
+	//	PORT_DIPSETTING(    0x0a, DEF_STR( "Unused") );
+	//	PORT_DIPSETTING(    0x0b, DEF_STR( "Unused") );
+	//	PORT_DIPSETTING(    0x0c, DEF_STR( "Unused") );
+	//	PORT_DIPSETTING(    0x0d, DEF_STR( "Unused") );
+	//	PORT_DIPSETTING(    0x0e, DEF_STR( "Unused") );
+	//	PORT_DIPSETTING(    0x0f, "Japan" );
+		PORT_BIT( 0xf0, IP_ACTIVE_HIGH, IPT_UNKNOWN );
+	INPUT_PORTS_END(); }}; 
 	
 	
 	static GfxLayout tilelayout = new GfxLayout

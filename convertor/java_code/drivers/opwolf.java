@@ -307,89 +307,89 @@ public class opwolf
 	***********************************************************/
 	
 	#define TAITO_COINAGE_WORLD_8 \
-		PORT_DIPNAME( 0x30, 0x30, DEF_STR( Coin_A ) ) \
-		PORT_DIPSETTING(    0x00, DEF_STR( 4C_1C ) ) \
-		PORT_DIPSETTING(    0x10, DEF_STR( 3C_1C ) ) \
-		PORT_DIPSETTING(    0x20, DEF_STR( 2C_1C ) ) \
-		PORT_DIPSETTING(    0x30, DEF_STR( 1C_1C ) ) \
-		PORT_DIPNAME( 0xc0, 0xc0, DEF_STR( Coin_B ) ) \
-		PORT_DIPSETTING(    0xc0, DEF_STR( 1C_2C ) ) \
-		PORT_DIPSETTING(    0x80, DEF_STR( 1C_3C ) ) \
-		PORT_DIPSETTING(    0x40, DEF_STR( 1C_4C ) ) \
-		PORT_DIPSETTING(    0x00, DEF_STR( 1C_6C ) )
+		PORT_DIPNAME( 0x30, 0x30, DEF_STR( "Coin_A") ); \
+		PORT_DIPSETTING(    0x00, DEF_STR( "4C_1C") ); \
+		PORT_DIPSETTING(    0x10, DEF_STR( "3C_1C") ); \
+		PORT_DIPSETTING(    0x20, DEF_STR( "2C_1C") ); \
+		PORT_DIPSETTING(    0x30, DEF_STR( "1C_1C") ); \
+		PORT_DIPNAME( 0xc0, 0xc0, DEF_STR( "Coin_B") ); \
+		PORT_DIPSETTING(    0xc0, DEF_STR( "1C_2C") ); \
+		PORT_DIPSETTING(    0x80, DEF_STR( "1C_3C") ); \
+		PORT_DIPSETTING(    0x40, DEF_STR( "1C_4C") ); \
+		PORT_DIPSETTING(    0x00, DEF_STR( "1C_6C") );
 	
 	#define TAITO_DIFFICULTY_8 \
-		PORT_DIPNAME( 0x03, 0x03, DEF_STR( Difficulty ) ) \
-		PORT_DIPSETTING(    0x02, "Easy" ) \
-		PORT_DIPSETTING(    0x03, "Medium" ) \
-		PORT_DIPSETTING(    0x01, "Hard" ) \
-		PORT_DIPSETTING(    0x00, "Hardest" )
+		PORT_DIPNAME( 0x03, 0x03, DEF_STR( "Difficulty") ); \
+		PORT_DIPSETTING(    0x02, "Easy" );\
+		PORT_DIPSETTING(    0x03, "Medium" );\
+		PORT_DIPSETTING(    0x01, "Hard" );\
+		PORT_DIPSETTING(    0x00, "Hardest" );
 	
-	INPUT_PORTS_START( opwolf )
+	static InputPortPtr input_ports_opwolf = new InputPortPtr(){ public void handler() { 
 		PORT_START	/* IN0 */
-		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_COIN1 )
-		PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_COIN2 )
-		PORT_BIT( 0x04, IP_ACTIVE_LOW,  IPT_UNKNOWN )
-		PORT_BIT( 0x08, IP_ACTIVE_LOW,  IPT_UNKNOWN )
-		PORT_BIT( 0x10, IP_ACTIVE_LOW,  IPT_UNKNOWN )
-		PORT_BIT( 0x20, IP_ACTIVE_LOW,  IPT_UNKNOWN )
-		PORT_BIT( 0x40, IP_ACTIVE_LOW,  IPT_UNKNOWN )
-		PORT_BIT( 0x80, IP_ACTIVE_LOW,  IPT_UNKNOWN )
+		PORT_BIT( 0x01, IP_ACTIVE_HIGH, IPT_COIN1 );
+		PORT_BIT( 0x02, IP_ACTIVE_HIGH, IPT_COIN2 );
+		PORT_BIT( 0x04, IP_ACTIVE_LOW,  IPT_UNKNOWN );
+		PORT_BIT( 0x08, IP_ACTIVE_LOW,  IPT_UNKNOWN );
+		PORT_BIT( 0x10, IP_ACTIVE_LOW,  IPT_UNKNOWN );
+		PORT_BIT( 0x20, IP_ACTIVE_LOW,  IPT_UNKNOWN );
+		PORT_BIT( 0x40, IP_ACTIVE_LOW,  IPT_UNKNOWN );
+		PORT_BIT( 0x80, IP_ACTIVE_LOW,  IPT_UNKNOWN );
 	
 		PORT_START	/* IN1 */
-		PORT_BIT( 0x01, IP_ACTIVE_LOW,  IPT_BUTTON1 )
-		PORT_BIT( 0x02, IP_ACTIVE_LOW,  IPT_BUTTON2 )
-		PORT_BIT( 0x04, IP_ACTIVE_LOW,  IPT_SERVICE1 )
-		PORT_BIT( 0x08, IP_ACTIVE_LOW,  IPT_TILT )
-		PORT_BIT( 0x10, IP_ACTIVE_LOW,  IPT_START1 )
-		PORT_BIT( 0x20, IP_ACTIVE_LOW,  IPT_UNKNOWN )
-		PORT_BIT( 0x40, IP_ACTIVE_LOW,  IPT_UNKNOWN )
-		PORT_BIT( 0x80, IP_ACTIVE_LOW,  IPT_UNKNOWN )
+		PORT_BIT( 0x01, IP_ACTIVE_LOW,  IPT_BUTTON1 );
+		PORT_BIT( 0x02, IP_ACTIVE_LOW,  IPT_BUTTON2 );
+		PORT_BIT( 0x04, IP_ACTIVE_LOW,  IPT_SERVICE1 );
+		PORT_BIT( 0x08, IP_ACTIVE_LOW,  IPT_TILT );
+		PORT_BIT( 0x10, IP_ACTIVE_LOW,  IPT_START1 );
+		PORT_BIT( 0x20, IP_ACTIVE_LOW,  IPT_UNKNOWN );
+		PORT_BIT( 0x40, IP_ACTIVE_LOW,  IPT_UNKNOWN );
+		PORT_BIT( 0x80, IP_ACTIVE_LOW,  IPT_UNKNOWN );
 	
 		PORT_START /* DSW A */
-		PORT_DIPNAME( 0x01, 0x01, "NY Conversion of Upright" )
-		PORT_DIPSETTING(    0x01, DEF_STR( Off ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( On ) )
-		PORT_DIPNAME( 0x02, 0x00, "Allow Continue" )
-		PORT_DIPSETTING(    0x02, DEF_STR( No ))
-		PORT_DIPSETTING(    0x00, DEF_STR( Yes ))
-		PORT_SERVICE( 0x04, IP_ACTIVE_LOW )
-		PORT_DIPNAME( 0x08, 0x08, DEF_STR( Demo_Sounds ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( Off ) )
-		PORT_DIPSETTING(    0x08, DEF_STR( On ) )
+		PORT_DIPNAME( 0x01, 0x01, "NY Conversion of Upright" );
+		PORT_DIPSETTING(    0x01, DEF_STR( "Off") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
+		PORT_DIPNAME( 0x02, 0x00, "Allow Continue" );
+		PORT_DIPSETTING(    0x02, DEF_STR( "No") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "Yes") );
+		PORT_SERVICE( 0x04, IP_ACTIVE_LOW );
+		PORT_DIPNAME( 0x08, 0x08, DEF_STR( "Demo_Sounds") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "Off") );
+		PORT_DIPSETTING(    0x08, DEF_STR( "On") );
 		TAITO_COINAGE_WORLD_8
 	
 		PORT_START /* DSW B */
 		TAITO_DIFFICULTY_8
-		PORT_DIPNAME( 0x0c, 0x0c, "Ammo Magazines at Start" )
-		PORT_DIPSETTING(    0x00, "4" )
-		PORT_DIPSETTING(    0x04, "5" )
-		PORT_DIPSETTING(    0x0c, "6" )
-		PORT_DIPSETTING(    0x08, "7" )
-		PORT_DIPNAME( 0x10, 0x10, DEF_STR( Unused ) )	// Manual says all 3 unused
-		PORT_DIPSETTING(    0x10, DEF_STR( Off ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( On ) )
-		PORT_DIPNAME( 0x20, 0x20, DEF_STR( Unused ) )
-		PORT_DIPSETTING(    0x20, DEF_STR( Off ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( On ) )
-		PORT_DIPNAME( 0x40, 0x40, DEF_STR( Unused ) )
-		PORT_DIPSETTING(    0x40, DEF_STR( Off ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( On ) )
-		PORT_DIPNAME( 0x80, 0x00, "Language" )
-		PORT_DIPSETTING(    0x80, "Japanese" )
-		PORT_DIPSETTING(    0x00, "English" )
+		PORT_DIPNAME( 0x0c, 0x0c, "Ammo Magazines at Start" );
+		PORT_DIPSETTING(    0x00, "4" );
+		PORT_DIPSETTING(    0x04, "5" );
+		PORT_DIPSETTING(    0x0c, "6" );
+		PORT_DIPSETTING(    0x08, "7" );
+		PORT_DIPNAME( 0x10, 0x10, DEF_STR( "Unused") );	// Manual says all 3 unused
+		PORT_DIPSETTING(    0x10, DEF_STR( "Off") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
+		PORT_DIPNAME( 0x20, 0x20, DEF_STR( "Unused") );
+		PORT_DIPSETTING(    0x20, DEF_STR( "Off") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
+		PORT_DIPNAME( 0x40, 0x40, DEF_STR( "Unused") );
+		PORT_DIPSETTING(    0x40, DEF_STR( "Off") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
+		PORT_DIPNAME( 0x80, 0x00, "Language" );
+		PORT_DIPSETTING(    0x80, "Japanese" );
+		PORT_DIPSETTING(    0x00, "English" );
 	
 		PORT_START	/* Fake DSW */
-		PORT_BITX(    0x01, 0x01, IPT_DIPSWITCH_NAME | IPF_TOGGLE, "Show gun target", KEYCODE_F1, IP_JOY_NONE )
-		PORT_DIPSETTING(    0x00, DEF_STR( Off ) )
-		PORT_DIPSETTING(    0x01, DEF_STR( On ) )
+		PORT_BITX(    0x01, 0x01, IPT_DIPSWITCH_NAME | IPF_TOGGLE, "Show gun target", KEYCODE_F1, IP_JOY_NONE );
+		PORT_DIPSETTING(    0x00, DEF_STR( "Off") );
+		PORT_DIPSETTING(    0x01, DEF_STR( "On") );
 	
 		PORT_START	/* P1X (span allows you to shoot enemies behind status bar) */
-		PORT_ANALOG( 0xff, 0x80, IPT_AD_STICK_X | IPF_PLAYER1, 25, 15, 0x00, 0xff)
+		PORT_ANALOG( 0xff, 0x80, IPT_AD_STICK_X | IPF_PLAYER1, 25, 15, 0x00, 0xff);
 	
 		PORT_START	/* P1Y (span allows you to be slightly offscreen) */
-		PORT_ANALOG( 0xff, 0x80, IPT_AD_STICK_Y | IPF_PLAYER1, 25, 15, 0x00, 0xff)
-	INPUT_PORTS_END
+		PORT_ANALOG( 0xff, 0x80, IPT_AD_STICK_Y | IPF_PLAYER1, 25, 15, 0x00, 0xff);
+	INPUT_PORTS_END(); }}; 
 	
 	
 	/**************************************************************

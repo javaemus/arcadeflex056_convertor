@@ -168,108 +168,108 @@ public class cadash
 	***********************************************************/
 	
 	#define TAITO_COINAGE_JAPAN_8 \
-		PORT_DIPNAME( 0x30, 0x30, DEF_STR( Coin_A ) ) \
-		PORT_DIPSETTING(    0x10, DEF_STR( 2C_1C ) ) \
-		PORT_DIPSETTING(    0x30, DEF_STR( 1C_1C ) ) \
-		PORT_DIPSETTING(    0x00, DEF_STR( 2C_3C ) ) \
-		PORT_DIPSETTING(    0x20, DEF_STR( 1C_2C ) ) \
-		PORT_DIPNAME( 0xc0, 0xc0, DEF_STR( Coin_B ) ) \
-		PORT_DIPSETTING(    0x40, DEF_STR( 2C_1C ) ) \
-		PORT_DIPSETTING(    0xc0, DEF_STR( 1C_1C ) ) \
-		PORT_DIPSETTING(    0x00, DEF_STR( 2C_3C ) ) \
-		PORT_DIPSETTING(    0x80, DEF_STR( 1C_2C ) )
+		PORT_DIPNAME( 0x30, 0x30, DEF_STR( "Coin_A") ); \
+		PORT_DIPSETTING(    0x10, DEF_STR( "2C_1C") ); \
+		PORT_DIPSETTING(    0x30, DEF_STR( "1C_1C") ); \
+		PORT_DIPSETTING(    0x00, DEF_STR( "2C_3C") ); \
+		PORT_DIPSETTING(    0x20, DEF_STR( "1C_2C") ); \
+		PORT_DIPNAME( 0xc0, 0xc0, DEF_STR( "Coin_B") ); \
+		PORT_DIPSETTING(    0x40, DEF_STR( "2C_1C") ); \
+		PORT_DIPSETTING(    0xc0, DEF_STR( "1C_1C") ); \
+		PORT_DIPSETTING(    0x00, DEF_STR( "2C_3C") ); \
+		PORT_DIPSETTING(    0x80, DEF_STR( "1C_2C") );
 	
 	#define TAITO_COINAGE_WORLD_8 \
-		PORT_DIPNAME( 0x30, 0x30, DEF_STR( Coin_A ) ) \
-		PORT_DIPSETTING(    0x00, DEF_STR( 4C_1C ) ) \
-		PORT_DIPSETTING(    0x10, DEF_STR( 3C_1C ) ) \
-		PORT_DIPSETTING(    0x20, DEF_STR( 2C_1C ) ) \
-		PORT_DIPSETTING(    0x30, DEF_STR( 1C_1C ) ) \
-		PORT_DIPNAME( 0xc0, 0xc0, DEF_STR( Coin_B ) ) \
-		PORT_DIPSETTING(    0xc0, DEF_STR( 1C_2C ) ) \
-		PORT_DIPSETTING(    0x80, DEF_STR( 1C_3C ) ) \
-		PORT_DIPSETTING(    0x40, DEF_STR( 1C_4C ) ) \
-		PORT_DIPSETTING(    0x00, DEF_STR( 1C_6C ) )
+		PORT_DIPNAME( 0x30, 0x30, DEF_STR( "Coin_A") ); \
+		PORT_DIPSETTING(    0x00, DEF_STR( "4C_1C") ); \
+		PORT_DIPSETTING(    0x10, DEF_STR( "3C_1C") ); \
+		PORT_DIPSETTING(    0x20, DEF_STR( "2C_1C") ); \
+		PORT_DIPSETTING(    0x30, DEF_STR( "1C_1C") ); \
+		PORT_DIPNAME( 0xc0, 0xc0, DEF_STR( "Coin_B") ); \
+		PORT_DIPSETTING(    0xc0, DEF_STR( "1C_2C") ); \
+		PORT_DIPSETTING(    0x80, DEF_STR( "1C_3C") ); \
+		PORT_DIPSETTING(    0x40, DEF_STR( "1C_4C") ); \
+		PORT_DIPSETTING(    0x00, DEF_STR( "1C_6C") );
 	
 	#define TAITO_COINAGE_US_8 \
-		PORT_DIPNAME( 0x30, 0x30, DEF_STR( Coinage ) ) \
-		PORT_DIPSETTING(    0x00, DEF_STR( 4C_1C ) ) \
-		PORT_DIPSETTING(    0x10, DEF_STR( 3C_1C ) ) \
-		PORT_DIPSETTING(    0x20, DEF_STR( 2C_1C ) ) \
-		PORT_DIPSETTING(    0x30, DEF_STR( 1C_1C ) ) \
-		PORT_DIPNAME( 0xc0, 0xc0, "Price to Continue" ) \
-		PORT_DIPSETTING(    0x00, DEF_STR( 3C_1C ) ) \
-		PORT_DIPSETTING(    0x40, DEF_STR( 2C_1C ) ) \
-		PORT_DIPSETTING(    0x80, DEF_STR( 1C_1C ) ) \
-		PORT_DIPSETTING(    0xc0, "Same as Start" )
+		PORT_DIPNAME( 0x30, 0x30, DEF_STR( "Coinage") ); \
+		PORT_DIPSETTING(    0x00, DEF_STR( "4C_1C") ); \
+		PORT_DIPSETTING(    0x10, DEF_STR( "3C_1C") ); \
+		PORT_DIPSETTING(    0x20, DEF_STR( "2C_1C") ); \
+		PORT_DIPSETTING(    0x30, DEF_STR( "1C_1C") ); \
+		PORT_DIPNAME( 0xc0, 0xc0, "Price to Continue" );\
+		PORT_DIPSETTING(    0x00, DEF_STR( "3C_1C") ); \
+		PORT_DIPSETTING(    0x40, DEF_STR( "2C_1C") ); \
+		PORT_DIPSETTING(    0x80, DEF_STR( "1C_1C") ); \
+		PORT_DIPSETTING(    0xc0, "Same as Start" );
 	
 	#define TAITO_DIFFICULTY_8 \
-		PORT_DIPNAME( 0x03, 0x03, DEF_STR( Difficulty ) ) \
-		PORT_DIPSETTING(    0x02, "Easy" ) \
-		PORT_DIPSETTING(    0x03, "Medium" ) \
-		PORT_DIPSETTING(    0x01, "Hard" ) \
-		PORT_DIPSETTING(    0x00, "Hardest" )
+		PORT_DIPNAME( 0x03, 0x03, DEF_STR( "Difficulty") ); \
+		PORT_DIPSETTING(    0x02, "Easy" );\
+		PORT_DIPSETTING(    0x03, "Medium" );\
+		PORT_DIPSETTING(    0x01, "Hard" );\
+		PORT_DIPSETTING(    0x00, "Hardest" );
 	
 	#define ASUKA_PLAYERS_INPUT( player ) \
 		PORT_START \
-		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_UNKNOWN ) \
-		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_UNKNOWN ) \
-		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_BUTTON2 | player ) \
-		PORT_BIT( 0x08, IP_ACTIVE_LOW, IPT_BUTTON1 | player ) \
-		PORT_BIT( 0x10, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_8WAY | player ) \
-		PORT_BIT( 0x20, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_8WAY | player ) \
-		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN  | IPF_8WAY | player ) \
-		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_JOYSTICK_UP    | IPF_8WAY | player )
+		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_UNKNOWN );\
+		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_UNKNOWN );\
+		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_BUTTON2 | player );\
+		PORT_BIT( 0x08, IP_ACTIVE_LOW, IPT_BUTTON1 | player );\
+		PORT_BIT( 0x10, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_8WAY | player );\
+		PORT_BIT( 0x20, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT  | IPF_8WAY | player );\
+		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_JOYSTICK_DOWN  | IPF_8WAY | player );\
+		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_JOYSTICK_UP    | IPF_8WAY | player );
 	
 	#define ASUKA_SYSTEM_INPUT \
 		PORT_START \
-		PORT_BIT( 0x01, IP_ACTIVE_LOW,  IPT_COIN1 ) \
-		PORT_BIT( 0x02, IP_ACTIVE_LOW,  IPT_COIN2 ) \
-		PORT_BIT( 0x04, IP_ACTIVE_LOW,  IPT_START2 ) \
-		PORT_BIT( 0x08, IP_ACTIVE_LOW,  IPT_START1 ) \
-		PORT_BIT( 0x10, IP_ACTIVE_LOW,  IPT_SERVICE1 ) \
-		PORT_BIT( 0x20, IP_ACTIVE_LOW,  IPT_TILT ) \
-		PORT_BIT( 0x40, IP_ACTIVE_LOW,  IPT_UNKNOWN ) \
-		PORT_BIT( 0x80, IP_ACTIVE_LOW,  IPT_UNKNOWN )
+		PORT_BIT( 0x01, IP_ACTIVE_LOW,  IPT_COIN1 );\
+		PORT_BIT( 0x02, IP_ACTIVE_LOW,  IPT_COIN2 );\
+		PORT_BIT( 0x04, IP_ACTIVE_LOW,  IPT_START2 );\
+		PORT_BIT( 0x08, IP_ACTIVE_LOW,  IPT_START1 );\
+		PORT_BIT( 0x10, IP_ACTIVE_LOW,  IPT_SERVICE1 );\
+		PORT_BIT( 0x20, IP_ACTIVE_LOW,  IPT_TILT );\
+		PORT_BIT( 0x40, IP_ACTIVE_LOW,  IPT_UNKNOWN );\
+		PORT_BIT( 0x80, IP_ACTIVE_LOW,  IPT_UNKNOWN );
 	
 	
-	INPUT_PORTS_START( cadash )
+	static InputPortPtr input_ports_cadash = new InputPortPtr(){ public void handler() { 
 		PORT_START	/* DSWA */
-		PORT_DIPNAME( 0x01, 0x01, DEF_STR( Unused ) )	// Manual says leave it off
-		PORT_DIPSETTING(    0x01, DEF_STR( Off ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( On ) )
-		PORT_DIPNAME( 0x02, 0x02, DEF_STR( Flip_Screen ) )
-		PORT_DIPSETTING(    0x02, DEF_STR( Off ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( On ) )
-		PORT_SERVICE( 0x04, IP_ACTIVE_LOW )
-		PORT_DIPNAME( 0x08, 0x08, DEF_STR( Demo_Sounds ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( Off ) )
-		PORT_DIPSETTING(    0x08, DEF_STR( On ) )
+		PORT_DIPNAME( 0x01, 0x01, DEF_STR( "Unused") );	// Manual says leave it off
+		PORT_DIPSETTING(    0x01, DEF_STR( "Off") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
+		PORT_DIPNAME( 0x02, 0x02, DEF_STR( "Flip_Screen") );
+		PORT_DIPSETTING(    0x02, DEF_STR( "Off") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
+		PORT_SERVICE( 0x04, IP_ACTIVE_LOW );
+		PORT_DIPNAME( 0x08, 0x08, DEF_STR( "Demo_Sounds") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "Off") );
+		PORT_DIPSETTING(    0x08, DEF_STR( "On") );
 		TAITO_COINAGE_WORLD_8
 	
 		PORT_START	/* DSWB */
 		TAITO_DIFFICULTY_8
-		PORT_DIPNAME( 0x0c, 0x0c, "Starting Time" )
-		PORT_DIPSETTING(    0x00, "5:00" )
-		PORT_DIPSETTING(    0x04, "6:00" )
-		PORT_DIPSETTING(    0x0c, "7:00" )
-		PORT_DIPSETTING(    0x08, "8:00" )
+		PORT_DIPNAME( 0x0c, 0x0c, "Starting Time" );
+		PORT_DIPSETTING(    0x00, "5:00" );
+		PORT_DIPSETTING(    0x04, "6:00" );
+		PORT_DIPSETTING(    0x0c, "7:00" );
+		PORT_DIPSETTING(    0x08, "8:00" );
 		/* Round cleared   Added time	*/
 		/*       1            8:00	*/
 		/*       2           10:00	*/
 		/*       3            8:00	*/
 		/*       4            7:00	*/
 		/*       5            9:00	*/
-		PORT_DIPNAME( 0x30, 0x30, "Added Time (after round clear)" )
-		PORT_DIPSETTING(    0x00, "Default - 2:00" )
-		PORT_DIPSETTING(    0x10, "Default - 1:00" )
-		PORT_DIPSETTING(    0x30, "Default" )
-		PORT_DIPSETTING(    0x20, "Default + 1:00" )
-		PORT_DIPNAME( 0xc0, 0xc0, "Communication Mode" )
-		PORT_DIPSETTING(    0xc0, "Stand alone" )
-		PORT_DIPSETTING(    0x80, "Master" )
-		PORT_DIPSETTING(    0x00, "Slave" )
-	//	PORT_DIPSETTING(    0x40, "Stand alone" )
+		PORT_DIPNAME( 0x30, 0x30, "Added Time (after round clear); )
+		PORT_DIPSETTING(    0x00, "Default - 2:00" );
+		PORT_DIPSETTING(    0x10, "Default - 1:00" );
+		PORT_DIPSETTING(    0x30, "Default" );
+		PORT_DIPSETTING(    0x20, "Default + 1:00" );
+		PORT_DIPNAME( 0xc0, 0xc0, "Communication Mode" );
+		PORT_DIPSETTING(    0xc0, "Stand alone" );
+		PORT_DIPSETTING(    0x80, "Master" );
+		PORT_DIPSETTING(    0x00, "Slave" );
+	//	PORT_DIPSETTING(    0x40, "Stand alone" );
 	
 		/* IN0 */
 		ASUKA_PLAYERS_INPUT( IPF_PLAYER1 )
@@ -279,39 +279,39 @@ public class cadash
 	
 		/* IN2 */
 		ASUKA_SYSTEM_INPUT
-	INPUT_PORTS_END
+	INPUT_PORTS_END(); }}; 
 	
-	INPUT_PORTS_START( cadashj )
+	static InputPortPtr input_ports_cadashj = new InputPortPtr(){ public void handler() { 
 		PORT_START	/* DSWA */
-		PORT_DIPNAME( 0x01, 0x01, DEF_STR( Unused ) )	// Manual says leave it off
-		PORT_DIPSETTING(    0x01, DEF_STR( Off ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( On ) )
-		PORT_DIPNAME( 0x02, 0x02, DEF_STR( Flip_Screen ) )
-		PORT_DIPSETTING(    0x02, DEF_STR( Off ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( On ) )
-		PORT_SERVICE( 0x04, IP_ACTIVE_LOW )
-		PORT_DIPNAME( 0x08, 0x08, DEF_STR( Demo_Sounds ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( Off ) )
-		PORT_DIPSETTING(    0x08, DEF_STR( On ) )
+		PORT_DIPNAME( 0x01, 0x01, DEF_STR( "Unused") );	// Manual says leave it off
+		PORT_DIPSETTING(    0x01, DEF_STR( "Off") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
+		PORT_DIPNAME( 0x02, 0x02, DEF_STR( "Flip_Screen") );
+		PORT_DIPSETTING(    0x02, DEF_STR( "Off") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
+		PORT_SERVICE( 0x04, IP_ACTIVE_LOW );
+		PORT_DIPNAME( 0x08, 0x08, DEF_STR( "Demo_Sounds") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "Off") );
+		PORT_DIPSETTING(    0x08, DEF_STR( "On") );
 		TAITO_COINAGE_JAPAN_8
 	
 		PORT_START	/* DSWB */
 		TAITO_DIFFICULTY_8
-		PORT_DIPNAME( 0x0c, 0x0c, "Starting Time" )
-		PORT_DIPSETTING(    0x00, "5:00" )
-		PORT_DIPSETTING(    0x04, "6:00" )
-		PORT_DIPSETTING(    0x0c, "7:00" )
-		PORT_DIPSETTING(    0x08, "8:00" )
-		PORT_DIPNAME( 0x30, 0x30, "Added Time (after round clear)" )
-		PORT_DIPSETTING(    0x00, "Default - 2:00" )
-		PORT_DIPSETTING(    0x10, "Default - 1:00" )
-		PORT_DIPSETTING(    0x30, "Default" )
-		PORT_DIPSETTING(    0x20, "Default + 1:00" )
-		PORT_DIPNAME( 0xc0, 0xc0, "Communication Mode" )
-		PORT_DIPSETTING(    0xc0, "Stand alone" )
-		PORT_DIPSETTING(    0x80, "Master" )
-		PORT_DIPSETTING(    0x00, "Slave" )
-	//	PORT_DIPSETTING(    0x40, "Stand alone" )
+		PORT_DIPNAME( 0x0c, 0x0c, "Starting Time" );
+		PORT_DIPSETTING(    0x00, "5:00" );
+		PORT_DIPSETTING(    0x04, "6:00" );
+		PORT_DIPSETTING(    0x0c, "7:00" );
+		PORT_DIPSETTING(    0x08, "8:00" );
+		PORT_DIPNAME( 0x30, 0x30, "Added Time (after round clear); )
+		PORT_DIPSETTING(    0x00, "Default - 2:00" );
+		PORT_DIPSETTING(    0x10, "Default - 1:00" );
+		PORT_DIPSETTING(    0x30, "Default" );
+		PORT_DIPSETTING(    0x20, "Default + 1:00" );
+		PORT_DIPNAME( 0xc0, 0xc0, "Communication Mode" );
+		PORT_DIPSETTING(    0xc0, "Stand alone" );
+		PORT_DIPSETTING(    0x80, "Master" );
+		PORT_DIPSETTING(    0x00, "Slave" );
+	//	PORT_DIPSETTING(    0x40, "Stand alone" );
 	
 		/* IN0 */
 		ASUKA_PLAYERS_INPUT( IPF_PLAYER1 )
@@ -321,39 +321,39 @@ public class cadash
 	
 		/* IN2 */
 		ASUKA_SYSTEM_INPUT
-	INPUT_PORTS_END
+	INPUT_PORTS_END(); }}; 
 	
-	INPUT_PORTS_START( cadashu )
+	static InputPortPtr input_ports_cadashu = new InputPortPtr(){ public void handler() { 
 		PORT_START	/* DSWA */
-		PORT_DIPNAME( 0x01, 0x01, DEF_STR( Unused ) )	// Manual says leave it off
-		PORT_DIPSETTING(    0x01, DEF_STR( Off ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( On ) )
-		PORT_DIPNAME( 0x02, 0x02, DEF_STR( Flip_Screen ) )
-		PORT_DIPSETTING(    0x02, DEF_STR( Off ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( On ) )
-		PORT_SERVICE( 0x04, IP_ACTIVE_LOW )
-		PORT_DIPNAME( 0x08, 0x08, DEF_STR( Demo_Sounds ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( Off ) )
-		PORT_DIPSETTING(    0x08, DEF_STR( On ) )
+		PORT_DIPNAME( 0x01, 0x01, DEF_STR( "Unused") );	// Manual says leave it off
+		PORT_DIPSETTING(    0x01, DEF_STR( "Off") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
+		PORT_DIPNAME( 0x02, 0x02, DEF_STR( "Flip_Screen") );
+		PORT_DIPSETTING(    0x02, DEF_STR( "Off") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
+		PORT_SERVICE( 0x04, IP_ACTIVE_LOW );
+		PORT_DIPNAME( 0x08, 0x08, DEF_STR( "Demo_Sounds") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "Off") );
+		PORT_DIPSETTING(    0x08, DEF_STR( "On") );
 		TAITO_COINAGE_US_8
 	
 		PORT_START	/* DSWB */
 		TAITO_DIFFICULTY_8
-		PORT_DIPNAME( 0x0c, 0x0c, "Starting Time" )
-		PORT_DIPSETTING(    0x00, "5:00" )
-		PORT_DIPSETTING(    0x04, "6:00" )
-		PORT_DIPSETTING(    0x0c, "7:00" )
-		PORT_DIPSETTING(    0x08, "8:00" )
-		PORT_DIPNAME( 0x30, 0x30, "Added Time (after round clear)" )
-		PORT_DIPSETTING(    0x00, "Default - 2:00" )
-		PORT_DIPSETTING(    0x10, "Default - 1:00" )
-		PORT_DIPSETTING(    0x30, "Default" )
-		PORT_DIPSETTING(    0x20, "Default + 1:00" )
-		PORT_DIPNAME( 0xc0, 0xc0, "Communication Mode" )
-		PORT_DIPSETTING(    0xc0, "Stand alone" )
-		PORT_DIPSETTING(    0x80, "Master" )
-		PORT_DIPSETTING(    0x00, "Slave" )
-	//	PORT_DIPSETTING(    0x40, "Stand alone" )
+		PORT_DIPNAME( 0x0c, 0x0c, "Starting Time" );
+		PORT_DIPSETTING(    0x00, "5:00" );
+		PORT_DIPSETTING(    0x04, "6:00" );
+		PORT_DIPSETTING(    0x0c, "7:00" );
+		PORT_DIPSETTING(    0x08, "8:00" );
+		PORT_DIPNAME( 0x30, 0x30, "Added Time (after round clear); )
+		PORT_DIPSETTING(    0x00, "Default - 2:00" );
+		PORT_DIPSETTING(    0x10, "Default - 1:00" );
+		PORT_DIPSETTING(    0x30, "Default" );
+		PORT_DIPSETTING(    0x20, "Default + 1:00" );
+		PORT_DIPNAME( 0xc0, 0xc0, "Communication Mode" );
+		PORT_DIPSETTING(    0xc0, "Stand alone" );
+		PORT_DIPSETTING(    0x80, "Master" );
+		PORT_DIPSETTING(    0x00, "Slave" );
+	//	PORT_DIPSETTING(    0x40, "Stand alone" );
 	
 		/* IN0 */
 		ASUKA_PLAYERS_INPUT( IPF_PLAYER1 )
@@ -363,7 +363,7 @@ public class cadash
 	
 		/* IN2 */
 		ASUKA_SYSTEM_INPUT
-	INPUT_PORTS_END
+	INPUT_PORTS_END(); }}; 
 	
 	
 	/**************************************************************

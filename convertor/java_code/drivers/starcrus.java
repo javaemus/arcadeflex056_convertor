@@ -69,44 +69,44 @@ public class starcrus
 	
 	
 	
-	INPUT_PORTS_START( starcrus )
+	static InputPortPtr input_ports_starcrus = new InputPortPtr(){ public void handler() { 
 			PORT_START	/* player 1 */
-			PORT_BIT (0x01, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT | IPF_2WAY ) /* ccw */
-			PORT_BIT (0x02, IP_ACTIVE_LOW, IPT_BUTTON2 ) /* engine */
-			PORT_BIT (0x04, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_2WAY ) /* cw */
-	        PORT_BIT (0x08, IP_ACTIVE_LOW, IPT_UNKNOWN )
-	        PORT_BIT (0x10, IP_ACTIVE_LOW, IPT_BUTTON3 ) /* torpedo */
-	        PORT_BIT (0x20, IP_ACTIVE_LOW, IPT_UNKNOWN )
-	        PORT_BIT (0x40, IP_ACTIVE_LOW, IPT_BUTTON1 ) /* phaser */
-	        PORT_BIT (0x80, IP_ACTIVE_LOW, IPT_UNKNOWN )
+			PORT_BIT (0x01, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT | IPF_2WAY );/* ccw */
+			PORT_BIT (0x02, IP_ACTIVE_LOW, IPT_BUTTON2 );/* engine */
+			PORT_BIT (0x04, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_2WAY );/* cw */
+	        PORT_BIT (0x08, IP_ACTIVE_LOW, IPT_UNKNOWN );
+	        PORT_BIT (0x10, IP_ACTIVE_LOW, IPT_BUTTON3 );/* torpedo */
+	        PORT_BIT (0x20, IP_ACTIVE_LOW, IPT_UNKNOWN );
+	        PORT_BIT (0x40, IP_ACTIVE_LOW, IPT_BUTTON1 );/* phaser */
+	        PORT_BIT (0x80, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
 	        PORT_START  /* player 2 */
-	        PORT_BIT (0x01, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT | IPF_2WAY | IPF_PLAYER2 ) /* ccw */
-	        PORT_BIT (0x02, IP_ACTIVE_LOW, IPT_BUTTON2 | IPF_PLAYER2 ) /* engine */
-	        PORT_BIT (0x04, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_2WAY | IPF_PLAYER2 ) /* cw */
-	        PORT_BIT (0x08, IP_ACTIVE_LOW, IPT_UNKNOWN )
-	        PORT_BIT (0x10, IP_ACTIVE_LOW, IPT_BUTTON3 | IPF_PLAYER2 ) /* torpedo */
-	        PORT_BIT (0x20, IP_ACTIVE_LOW, IPT_UNKNOWN )
-	        PORT_BIT (0x40, IP_ACTIVE_LOW, IPT_BUTTON1 | IPF_PLAYER2 ) /* phaser */
-	        PORT_BIT (0x80, IP_ACTIVE_LOW, IPT_UNKNOWN )
+	        PORT_BIT (0x01, IP_ACTIVE_LOW, IPT_JOYSTICK_LEFT | IPF_2WAY | IPF_PLAYER2 );/* ccw */
+	        PORT_BIT (0x02, IP_ACTIVE_LOW, IPT_BUTTON2 | IPF_PLAYER2 );/* engine */
+	        PORT_BIT (0x04, IP_ACTIVE_LOW, IPT_JOYSTICK_RIGHT | IPF_2WAY | IPF_PLAYER2 );/* cw */
+	        PORT_BIT (0x08, IP_ACTIVE_LOW, IPT_UNKNOWN );
+	        PORT_BIT (0x10, IP_ACTIVE_LOW, IPT_BUTTON3 | IPF_PLAYER2 );/* torpedo */
+	        PORT_BIT (0x20, IP_ACTIVE_LOW, IPT_UNKNOWN );
+	        PORT_BIT (0x40, IP_ACTIVE_LOW, IPT_BUTTON1 | IPF_PLAYER2 );/* phaser */
+	        PORT_BIT (0x80, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
 			PORT_START
-	        PORT_DIPNAME ( 0x03, 0x02, "Game Time" )
-	        PORT_DIPSETTING ( 0x03, "60 secs" )
-	        PORT_DIPSETTING ( 0x02, "90 secs" )
-	        PORT_DIPSETTING ( 0x01, "120 secs" )
-	        PORT_DIPSETTING ( 0x00, "150 secs" )
-	        PORT_DIPNAME ( 0x04, 0x00, DEF_STR( Coinage ))
-	        PORT_DIPSETTING ( 0x04, DEF_STR( 2C_1C ))
-	        PORT_DIPSETTING ( 0x00, DEF_STR( 1C_1C ))
-	        PORT_BIT (0x08, IP_ACTIVE_LOW, IPT_COIN2 )
-	        PORT_BIT (0x10, IP_ACTIVE_LOW, IPT_COIN1 )
-	        PORT_DIPNAME ( 0x20, 0x20, "Mode" )
-	        PORT_DIPSETTING ( 0x20, "Standard" )
-	        PORT_DIPSETTING ( 0x00, "Alternate" )
-	        PORT_BIT (0x40, IP_ACTIVE_LOW, IPT_UNKNOWN )
-	        PORT_BIT (0x80, IP_ACTIVE_LOW, IPT_UNKNOWN )
-	INPUT_PORTS_END
+	        PORT_DIPNAME ( 0x03, 0x02, "Game Time" );
+	        PORT_DIPSETTING ( 0x03, "60 secs" );
+	        PORT_DIPSETTING ( 0x02, "90 secs" );
+	        PORT_DIPSETTING ( 0x01, "120 secs" );
+	        PORT_DIPSETTING ( 0x00, "150 secs" );
+	        PORT_DIPNAME ( 0x04, 0x00, DEF_STR( "Coinage") );
+	        PORT_DIPSETTING ( 0x04, DEF_STR( "2C_1C") );
+	        PORT_DIPSETTING ( 0x00, DEF_STR( "1C_1C") );
+	        PORT_BIT (0x08, IP_ACTIVE_LOW, IPT_COIN2 );
+	        PORT_BIT (0x10, IP_ACTIVE_LOW, IPT_COIN1 );
+	        PORT_DIPNAME ( 0x20, 0x20, "Mode" );
+	        PORT_DIPSETTING ( 0x20, "Standard" );
+	        PORT_DIPSETTING ( 0x00, "Alternate" );
+	        PORT_BIT (0x40, IP_ACTIVE_LOW, IPT_UNKNOWN );
+	        PORT_BIT (0x80, IP_ACTIVE_LOW, IPT_UNKNOWN );
+	INPUT_PORTS_END(); }}; 
 	
 	
 	

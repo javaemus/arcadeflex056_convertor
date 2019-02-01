@@ -655,417 +655,417 @@ public class exidy440
 	 *************************************/
 	
 	#define COINAGE \
-		PORT_DIPNAME( 0x0f, 0x0f, DEF_STR( Coinage ) ) \
-		PORT_DIPSETTING(    0x03, DEF_STR( 4C_1C ) ) \
-		PORT_DIPSETTING(    0x07, DEF_STR( 3C_1C ) ) \
-		PORT_DIPSETTING(    0x02, DEF_STR( 4C_2C ) ) \
-		PORT_DIPSETTING(    0x0b, DEF_STR( 2C_1C ) ) \
-		PORT_DIPSETTING(    0x06, DEF_STR( 3C_2C ) ) \
-		PORT_DIPSETTING(    0x01, DEF_STR( 4C_3C ) ) \
-		PORT_DIPSETTING(    0x00, DEF_STR( 4C_4C ) ) \
-		PORT_DIPSETTING(    0x05, DEF_STR( 3C_3C ) ) \
-		PORT_DIPSETTING(    0x0a, DEF_STR( 2C_2C ) ) \
-		PORT_DIPSETTING(    0x0f, DEF_STR( 1C_1C ) ) \
-		PORT_DIPSETTING(    0x04, DEF_STR( 3C_4C ) ) \
-		PORT_DIPSETTING(    0x09, DEF_STR( 2C_3C ) ) \
-		PORT_DIPSETTING(    0x08, DEF_STR( 2C_4C ) ) \
-		PORT_DIPSETTING(    0x0e, DEF_STR( 1C_2C ) ) \
-		PORT_DIPSETTING(    0x0d, DEF_STR( 1C_3C ) ) \
-		PORT_DIPSETTING(    0x0c, DEF_STR( 1C_4C ) )
+		PORT_DIPNAME( 0x0f, 0x0f, DEF_STR( "Coinage") ); \
+		PORT_DIPSETTING(    0x03, DEF_STR( "4C_1C") ); \
+		PORT_DIPSETTING(    0x07, DEF_STR( "3C_1C") ); \
+		PORT_DIPSETTING(    0x02, DEF_STR( "4C_2C") ); \
+		PORT_DIPSETTING(    0x0b, DEF_STR( "2C_1C") ); \
+		PORT_DIPSETTING(    0x06, DEF_STR( "3C_2C") ); \
+		PORT_DIPSETTING(    0x01, DEF_STR( "4C_3C") ); \
+		PORT_DIPSETTING(    0x00, DEF_STR( "4C_4C") ); \
+		PORT_DIPSETTING(    0x05, DEF_STR( "3C_3C") ); \
+		PORT_DIPSETTING(    0x0a, DEF_STR( "2C_2C") ); \
+		PORT_DIPSETTING(    0x0f, DEF_STR( "1C_1C") ); \
+		PORT_DIPSETTING(    0x04, DEF_STR( "3C_4C") ); \
+		PORT_DIPSETTING(    0x09, DEF_STR( "2C_3C") ); \
+		PORT_DIPSETTING(    0x08, DEF_STR( "2C_4C") ); \
+		PORT_DIPSETTING(    0x0e, DEF_STR( "1C_2C") ); \
+		PORT_DIPSETTING(    0x0d, DEF_STR( "1C_3C") ); \
+		PORT_DIPSETTING(    0x0c, DEF_STR( "1C_4C") );
 	
 	
-	INPUT_PORTS_START( crossbow )
+	static InputPortPtr input_ports_crossbow = new InputPortPtr(){ public void handler() { 
 		PORT_START				/* player inputs and logic board dips */
-		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_UNKNOWN )
-		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_BUTTON1 )
-		PORT_DIPNAME( 0x0c, 0x0c, DEF_STR( Lives ) )
-		PORT_DIPSETTING(    0x08, "2" )
-		PORT_DIPSETTING(    0x0c, "3" )
-		PORT_DIPSETTING(    0x04, "4" )
-		PORT_DIPSETTING(    0x00, "5" )
-		PORT_DIPNAME( 0x30, 0x30, DEF_STR( Difficulty ) )
-		PORT_DIPSETTING(    0x00, "Easy" )
-		PORT_DIPSETTING(    0x30, "Normal" )
-		PORT_DIPSETTING(    0x20, "Hard" )
-		PORT_DIPSETTING(    0x10, "Hardest" )
-		PORT_BIT( 0xc0, IP_ACTIVE_LOW, IPT_UNKNOWN )
+		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_UNKNOWN );
+		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_BUTTON1 );
+		PORT_DIPNAME( 0x0c, 0x0c, DEF_STR( "Lives") );
+		PORT_DIPSETTING(    0x08, "2" );
+		PORT_DIPSETTING(    0x0c, "3" );
+		PORT_DIPSETTING(    0x04, "4" );
+		PORT_DIPSETTING(    0x00, "5" );
+		PORT_DIPNAME( 0x30, 0x30, DEF_STR( "Difficulty") );
+		PORT_DIPSETTING(    0x00, "Easy" );
+		PORT_DIPSETTING(    0x30, "Normal" );
+		PORT_DIPSETTING(    0x20, "Hard" );
+		PORT_DIPSETTING(    0x10, "Hardest" );
+		PORT_BIT( 0xc0, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
 		PORT_START 				/* audio board dips */
 		COINAGE
-		PORT_BIT( 0x70, IP_ACTIVE_LOW, IPT_UNKNOWN )
-		PORT_DIPNAME( 0x80, 0x80, DEF_STR( Free_Play ) )
-		PORT_DIPSETTING(    0x80, DEF_STR( Off ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( On ) )
+		PORT_BIT( 0x70, IP_ACTIVE_LOW, IPT_UNKNOWN );
+		PORT_DIPNAME( 0x80, 0x80, DEF_STR( "Free_Play") );
+		PORT_DIPSETTING(    0x80, DEF_STR( "Off") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 	
 		PORT_START				/* start button */
-		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_START1 )
-		PORT_BIT( 0xfe, IP_ACTIVE_LOW, IPT_UNKNOWN )
+		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_START1 );
+		PORT_BIT( 0xfe, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
 		PORT_START				/* coin counters */
-		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_COIN1 )
-		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_COIN2 )
-		PORT_BIT( 0xfc, IP_ACTIVE_LOW, IPT_UNKNOWN )
+		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_COIN1 );
+		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_COIN2 );
+		PORT_BIT( 0xfc, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
 		PORT_START				/* fake analog X */
-		PORT_ANALOG( 0xff, 0x80, IPT_AD_STICK_X, 50, 10, 0, 255 )
+		PORT_ANALOG( 0xff, 0x80, IPT_AD_STICK_X, 50, 10, 0, 255 );
 	
 		PORT_START				/* fake analog Y */
-		PORT_ANALOG( 0xff, 0x80, IPT_AD_STICK_Y, 70, 10, 0, 255 )
-	INPUT_PORTS_END
+		PORT_ANALOG( 0xff, 0x80, IPT_AD_STICK_Y, 70, 10, 0, 255 );
+	INPUT_PORTS_END(); }}; 
 	
 	
-	INPUT_PORTS_START( cheyenne )
+	static InputPortPtr input_ports_cheyenne = new InputPortPtr(){ public void handler() { 
 		PORT_START				/* player inputs and logic board dips */
-		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_UNKNOWN )
-		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_BUTTON1 )
-		PORT_DIPNAME( 0x0c, 0x0c, DEF_STR( Lives ) )
-		PORT_DIPSETTING(    0x08, "2" )
-		PORT_DIPSETTING(    0x0c, "3" )
-		PORT_DIPSETTING(    0x04, "4" )
-		PORT_DIPSETTING(    0x00, "5" )
-		PORT_DIPNAME( 0x30, 0x30, DEF_STR( Difficulty ) )
-		PORT_DIPSETTING(    0x00, "Easy" )
-		PORT_DIPSETTING(    0x30, "Normal" )
-		PORT_DIPSETTING(    0x20, "Hard" )
-		PORT_DIPSETTING(    0x10, "Hardest" )
-		PORT_BIT( 0xc0, IP_ACTIVE_LOW, IPT_UNKNOWN )
+		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_UNKNOWN );
+		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_BUTTON1 );
+		PORT_DIPNAME( 0x0c, 0x0c, DEF_STR( "Lives") );
+		PORT_DIPSETTING(    0x08, "2" );
+		PORT_DIPSETTING(    0x0c, "3" );
+		PORT_DIPSETTING(    0x04, "4" );
+		PORT_DIPSETTING(    0x00, "5" );
+		PORT_DIPNAME( 0x30, 0x30, DEF_STR( "Difficulty") );
+		PORT_DIPSETTING(    0x00, "Easy" );
+		PORT_DIPSETTING(    0x30, "Normal" );
+		PORT_DIPSETTING(    0x20, "Hard" );
+		PORT_DIPSETTING(    0x10, "Hardest" );
+		PORT_BIT( 0xc0, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
 		PORT_START 				/* audio board dips */
 		COINAGE
-		PORT_BIT( 0x70, IP_ACTIVE_LOW, IPT_UNKNOWN )
-		PORT_DIPNAME( 0x80, 0x80, DEF_STR( Free_Play ) )
-		PORT_DIPSETTING(    0x80, DEF_STR( Off ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( On ) )
+		PORT_BIT( 0x70, IP_ACTIVE_LOW, IPT_UNKNOWN );
+		PORT_DIPNAME( 0x80, 0x80, DEF_STR( "Free_Play") );
+		PORT_DIPSETTING(    0x80, DEF_STR( "Off") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 	
 		PORT_START				/* start button */
-		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_START1 )
-		PORT_BIT( 0xfe, IP_ACTIVE_LOW, IPT_UNKNOWN )
+		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_START1 );
+		PORT_BIT( 0xfe, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
 		PORT_START				/* coin counters */
-		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_COIN1 )
-		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_COIN2 )
-		PORT_BIT( 0xfc, IP_ACTIVE_LOW, IPT_UNKNOWN )
+		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_COIN1 );
+		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_COIN2 );
+		PORT_BIT( 0xfc, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
 		PORT_START				/* fake analog X */
-		PORT_ANALOG( 0xff, 0x80, IPT_AD_STICK_X, 50, 10, 0, 255 )
+		PORT_ANALOG( 0xff, 0x80, IPT_AD_STICK_X, 50, 10, 0, 255 );
 	
 		PORT_START				/* fake analog Y */
-		PORT_ANALOG( 0xff, 0x80, IPT_AD_STICK_Y, 70, 10, 0, 255 )
-	INPUT_PORTS_END
+		PORT_ANALOG( 0xff, 0x80, IPT_AD_STICK_Y, 70, 10, 0, 255 );
+	INPUT_PORTS_END(); }}; 
 	
 	
-	INPUT_PORTS_START( combat )
+	static InputPortPtr input_ports_combat = new InputPortPtr(){ public void handler() { 
 		PORT_START				/* player inputs and logic board dips */
-		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_UNKNOWN )
-		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_BUTTON1 )
-		PORT_DIPNAME( 0x0c, 0x0c, DEF_STR( Lives ) )
-		PORT_DIPSETTING(    0x08, "2" )
-		PORT_DIPSETTING(    0x0c, "3" )
-		PORT_DIPSETTING(    0x04, "4" )
-		PORT_DIPSETTING(    0x00, "5" )
-		PORT_DIPNAME( 0x30, 0x30, DEF_STR( Difficulty ) )
-		PORT_DIPSETTING(    0x00, "Easy" )
-		PORT_DIPSETTING(    0x30, "Normal" )
-		PORT_DIPSETTING(    0x20, "Hard" )
-		PORT_DIPSETTING(    0x10, "Hardest" )
-		PORT_BIT( 0xc0, IP_ACTIVE_LOW, IPT_UNKNOWN )
+		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_UNKNOWN );
+		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_BUTTON1 );
+		PORT_DIPNAME( 0x0c, 0x0c, DEF_STR( "Lives") );
+		PORT_DIPSETTING(    0x08, "2" );
+		PORT_DIPSETTING(    0x0c, "3" );
+		PORT_DIPSETTING(    0x04, "4" );
+		PORT_DIPSETTING(    0x00, "5" );
+		PORT_DIPNAME( 0x30, 0x30, DEF_STR( "Difficulty") );
+		PORT_DIPSETTING(    0x00, "Easy" );
+		PORT_DIPSETTING(    0x30, "Normal" );
+		PORT_DIPSETTING(    0x20, "Hard" );
+		PORT_DIPSETTING(    0x10, "Hardest" );
+		PORT_BIT( 0xc0, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
 		PORT_START 				/* audio board dips */
 		COINAGE
-		PORT_BIT( 0x70, IP_ACTIVE_LOW, IPT_UNKNOWN )
-		PORT_DIPNAME( 0x80, 0x80, DEF_STR( Free_Play ) )
-		PORT_DIPSETTING(    0x80, DEF_STR( Off ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( On ) )
+		PORT_BIT( 0x70, IP_ACTIVE_LOW, IPT_UNKNOWN );
+		PORT_DIPNAME( 0x80, 0x80, DEF_STR( "Free_Play") );
+		PORT_DIPSETTING(    0x80, DEF_STR( "Off") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 	
 		PORT_START				/* start button */
-		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_START1 )
-		PORT_BIT( 0xfe, IP_ACTIVE_LOW, IPT_UNKNOWN )
+		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_START1 );
+		PORT_BIT( 0xfe, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
 		PORT_START				/* coin counters */
-		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_COIN1 )
-		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_COIN2 )
-		PORT_BIT( 0xfc, IP_ACTIVE_LOW, IPT_UNKNOWN )
+		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_COIN1 );
+		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_COIN2 );
+		PORT_BIT( 0xfc, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
 		PORT_START				/* fake analog X */
-		PORT_ANALOG( 0xff, 0x80, IPT_AD_STICK_X, 50, 10, 0, 255 )
+		PORT_ANALOG( 0xff, 0x80, IPT_AD_STICK_X, 50, 10, 0, 255 );
 	
 		PORT_START				/* fake analog Y */
-		PORT_ANALOG( 0xff, 0x80, IPT_AD_STICK_Y, 70, 10, 0, 255 )
-	INPUT_PORTS_END
+		PORT_ANALOG( 0xff, 0x80, IPT_AD_STICK_Y, 70, 10, 0, 255 );
+	INPUT_PORTS_END(); }}; 
 	
 	
-	INPUT_PORTS_START( cracksht )
+	static InputPortPtr input_ports_cracksht = new InputPortPtr(){ public void handler() { 
 		PORT_START				/* player inputs and logic board dips */
-		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_UNKNOWN )
-		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_BUTTON1 )
-		PORT_DIPNAME( 0x0c, 0x0c, "Seconds" )
-		PORT_DIPSETTING(    0x08, "20" )
-		PORT_DIPSETTING(    0x0c, "30" )
-		PORT_DIPSETTING(    0x04, "40" )
-		PORT_DIPSETTING(    0x00, "50" )
-		PORT_DIPNAME( 0x30, 0x30, DEF_STR( Difficulty ) )
-		PORT_DIPSETTING(    0x00, "Easy" )
-		PORT_DIPSETTING(    0x30, "Normal" )
-		PORT_DIPSETTING(    0x20, "Hard" )
-		PORT_DIPSETTING(    0x10, "Hardest" )
-		PORT_BIT( 0xc0, IP_ACTIVE_LOW, IPT_UNKNOWN )
+		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_UNKNOWN );
+		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_BUTTON1 );
+		PORT_DIPNAME( 0x0c, 0x0c, "Seconds" );
+		PORT_DIPSETTING(    0x08, "20" );
+		PORT_DIPSETTING(    0x0c, "30" );
+		PORT_DIPSETTING(    0x04, "40" );
+		PORT_DIPSETTING(    0x00, "50" );
+		PORT_DIPNAME( 0x30, 0x30, DEF_STR( "Difficulty") );
+		PORT_DIPSETTING(    0x00, "Easy" );
+		PORT_DIPSETTING(    0x30, "Normal" );
+		PORT_DIPSETTING(    0x20, "Hard" );
+		PORT_DIPSETTING(    0x10, "Hardest" );
+		PORT_BIT( 0xc0, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
 		PORT_START 				/* audio board dips */
 		COINAGE
-		PORT_BIT( 0x70, IP_ACTIVE_LOW, IPT_UNKNOWN )
-		PORT_DIPNAME( 0x80, 0x80, DEF_STR( Unknown ) )
-		PORT_DIPSETTING(    0x80, DEF_STR( Off ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( On ) )
+		PORT_BIT( 0x70, IP_ACTIVE_LOW, IPT_UNKNOWN );
+		PORT_DIPNAME( 0x80, 0x80, DEF_STR( "Unknown") );
+		PORT_DIPSETTING(    0x80, DEF_STR( "Off") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 	
 		PORT_START				/* start button */
-		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_START1 )
-		PORT_BIT( 0xfe, IP_ACTIVE_LOW, IPT_UNKNOWN )
+		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_START1 );
+		PORT_BIT( 0xfe, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
 		PORT_START				/* coin counters */
-		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_COIN1 )
-		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_COIN2 )
-		PORT_BIT( 0xfc, IP_ACTIVE_LOW, IPT_UNKNOWN )
+		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_COIN1 );
+		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_COIN2 );
+		PORT_BIT( 0xfc, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
 		PORT_START				/* fake analog X */
-		PORT_ANALOG( 0xff, 0x80, IPT_AD_STICK_X, 50, 10, 0, 255 )
+		PORT_ANALOG( 0xff, 0x80, IPT_AD_STICK_X, 50, 10, 0, 255 );
 	
 		PORT_START				/* fake analog Y */
-		PORT_ANALOG( 0xff, 0x80, IPT_AD_STICK_Y, 70, 10, 0, 255 )
-	INPUT_PORTS_END
+		PORT_ANALOG( 0xff, 0x80, IPT_AD_STICK_Y, 70, 10, 0, 255 );
+	INPUT_PORTS_END(); }}; 
 	
 	
-	INPUT_PORTS_START( claypign )
+	static InputPortPtr input_ports_claypign = new InputPortPtr(){ public void handler() { 
 		PORT_START				/* player inputs and logic board dips */
-		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_UNKNOWN )
-		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_BUTTON1 )
-		PORT_BIT( 0x0c, IP_ACTIVE_LOW, IPT_UNKNOWN )
-		PORT_DIPNAME( 0x30, 0x30, DEF_STR( Difficulty ) )
-		PORT_DIPSETTING(    0x00, "Easy" )
-		PORT_DIPSETTING(    0x30, "Normal" )
-		PORT_DIPSETTING(    0x20, "Hard" )
-		PORT_DIPSETTING(    0x10, "Hardest" )
-		PORT_BIT( 0xc0, IP_ACTIVE_LOW, IPT_UNKNOWN )
+		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_UNKNOWN );
+		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_BUTTON1 );
+		PORT_BIT( 0x0c, IP_ACTIVE_LOW, IPT_UNKNOWN );
+		PORT_DIPNAME( 0x30, 0x30, DEF_STR( "Difficulty") );
+		PORT_DIPSETTING(    0x00, "Easy" );
+		PORT_DIPSETTING(    0x30, "Normal" );
+		PORT_DIPSETTING(    0x20, "Hard" );
+		PORT_DIPSETTING(    0x10, "Hardest" );
+		PORT_BIT( 0xc0, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
 		PORT_START 				/* audio board dips */
 		COINAGE
-		PORT_BIT( 0x70, IP_ACTIVE_LOW, IPT_UNKNOWN )
-		PORT_DIPNAME( 0x80, 0x80, DEF_STR( Unknown ) )
-		PORT_DIPSETTING(    0x80, DEF_STR( Off ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( On ) )
+		PORT_BIT( 0x70, IP_ACTIVE_LOW, IPT_UNKNOWN );
+		PORT_DIPNAME( 0x80, 0x80, DEF_STR( "Unknown") );
+		PORT_DIPSETTING(    0x80, DEF_STR( "Off") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 	
 		PORT_START				/* start button */
-		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_START1 )
-		PORT_BIT( 0xfe, IP_ACTIVE_LOW, IPT_UNKNOWN )
+		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_START1 );
+		PORT_BIT( 0xfe, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
 		PORT_START				/* coin counters */
-		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_COIN1 )
-		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_COIN2 )
-		PORT_BIT( 0xfc, IP_ACTIVE_LOW, IPT_UNKNOWN )
+		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_COIN1 );
+		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_COIN2 );
+		PORT_BIT( 0xfc, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
 		PORT_START				/* fake analog X */
-		PORT_ANALOG( 0xff, 0x80, IPT_AD_STICK_X, 50, 10, 0, 255 )
+		PORT_ANALOG( 0xff, 0x80, IPT_AD_STICK_X, 50, 10, 0, 255 );
 	
 		PORT_START				/* fake analog Y */
-		PORT_ANALOG( 0xff, 0x80, IPT_AD_STICK_Y, 70, 10, 0, 255 )
-	INPUT_PORTS_END
+		PORT_ANALOG( 0xff, 0x80, IPT_AD_STICK_Y, 70, 10, 0, 255 );
+	INPUT_PORTS_END(); }}; 
 	
 	
-	INPUT_PORTS_START( chiller )
+	static InputPortPtr input_ports_chiller = new InputPortPtr(){ public void handler() { 
 		PORT_START				/* player inputs and logic board dips */
-		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_UNKNOWN )
-		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_BUTTON1 )
-		PORT_DIPNAME( 0x0c, 0x0c, "Seconds" )
-		PORT_DIPSETTING(    0x08, "30" )
-		PORT_DIPSETTING(    0x0c, "45" )
-		PORT_DIPSETTING(    0x04, "60" )
-		PORT_DIPSETTING(    0x00, "70" )
-		PORT_DIPNAME( 0x30, 0x30, DEF_STR( Difficulty ) )
-		PORT_DIPSETTING(    0x00, "Easy" )
-		PORT_DIPSETTING(    0x30, "Normal" )
-		PORT_DIPSETTING(    0x20, "Hard" )
-		PORT_DIPSETTING(    0x10, "Hardest" )
-		PORT_BIT( 0xc0, IP_ACTIVE_LOW, IPT_UNKNOWN )
+		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_UNKNOWN );
+		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_BUTTON1 );
+		PORT_DIPNAME( 0x0c, 0x0c, "Seconds" );
+		PORT_DIPSETTING(    0x08, "30" );
+		PORT_DIPSETTING(    0x0c, "45" );
+		PORT_DIPSETTING(    0x04, "60" );
+		PORT_DIPSETTING(    0x00, "70" );
+		PORT_DIPNAME( 0x30, 0x30, DEF_STR( "Difficulty") );
+		PORT_DIPSETTING(    0x00, "Easy" );
+		PORT_DIPSETTING(    0x30, "Normal" );
+		PORT_DIPSETTING(    0x20, "Hard" );
+		PORT_DIPSETTING(    0x10, "Hardest" );
+		PORT_BIT( 0xc0, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
 		PORT_START 				/* audio board dips */
 		COINAGE
-		PORT_BIT( 0xf0, IP_ACTIVE_LOW, IPT_UNKNOWN )
+		PORT_BIT( 0xf0, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
 		PORT_START				/* start button */
-		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_START1 )
-		PORT_BIT( 0xfe, IP_ACTIVE_LOW, IPT_UNKNOWN )
+		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_START1 );
+		PORT_BIT( 0xfe, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
 		PORT_START				/* coin counters */
-		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_COIN1 )
-		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_COIN2 )
-		PORT_BIT( 0xfc, IP_ACTIVE_LOW, IPT_UNKNOWN )
+		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_COIN1 );
+		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_COIN2 );
+		PORT_BIT( 0xfc, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
 		PORT_START				/* fake analog X */
-		PORT_ANALOG( 0xff, 0x80, IPT_AD_STICK_X, 50, 10, 0, 255 )
+		PORT_ANALOG( 0xff, 0x80, IPT_AD_STICK_X, 50, 10, 0, 255 );
 	
 		PORT_START				/* fake analog Y */
-		PORT_ANALOG( 0xff, 0x80, IPT_AD_STICK_Y, 70, 10, 0, 255 )
-	INPUT_PORTS_END
+		PORT_ANALOG( 0xff, 0x80, IPT_AD_STICK_Y, 70, 10, 0, 255 );
+	INPUT_PORTS_END(); }}; 
 	
 	
-	INPUT_PORTS_START( topsecex )
+	static InputPortPtr input_ports_topsecex = new InputPortPtr(){ public void handler() { 
 		PORT_START				/* player inputs and logic board dips */
-		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_UNKNOWN )
-		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_UNKNOWN )
-		PORT_DIPNAME( 0x0c, 0x0c, DEF_STR( Lives ) )
-		PORT_DIPSETTING(    0x08, "3" )
-		PORT_DIPSETTING(    0x0c, "4" )
-		PORT_DIPSETTING(    0x04, "5" )
-		PORT_DIPSETTING(    0x00, "6" )
-		PORT_DIPNAME( 0x30, 0x30, DEF_STR( Difficulty ) )
-		PORT_DIPSETTING(    0x00, "Easy" )
-		PORT_DIPSETTING(    0x30, "Normal" )
-		PORT_DIPSETTING(    0x20, "Hard" )
-		PORT_DIPSETTING(    0x10, "Hardest" )
-		PORT_BIT( 0xc0, IP_ACTIVE_LOW, IPT_UNKNOWN )
+		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_UNKNOWN );
+		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_UNKNOWN );
+		PORT_DIPNAME( 0x0c, 0x0c, DEF_STR( "Lives") );
+		PORT_DIPSETTING(    0x08, "3" );
+		PORT_DIPSETTING(    0x0c, "4" );
+		PORT_DIPSETTING(    0x04, "5" );
+		PORT_DIPSETTING(    0x00, "6" );
+		PORT_DIPNAME( 0x30, 0x30, DEF_STR( "Difficulty") );
+		PORT_DIPSETTING(    0x00, "Easy" );
+		PORT_DIPSETTING(    0x30, "Normal" );
+		PORT_DIPSETTING(    0x20, "Hard" );
+		PORT_DIPSETTING(    0x10, "Hardest" );
+		PORT_BIT( 0xc0, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
 		PORT_START 				/* audio board dips */
 		COINAGE
-		PORT_BIT( 0xf0, IP_ACTIVE_LOW, IPT_UNKNOWN )
+		PORT_BIT( 0xf0, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
 		PORT_START				/* start button */
-		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_BUTTON2 )
-		PORT_BIT( 0xfe, IP_ACTIVE_LOW, IPT_UNKNOWN )
+		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_BUTTON2 );
+		PORT_BIT( 0xfe, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
 		PORT_START				/* coin counters */
-		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_COIN1 )
-		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_COIN2 )
-		PORT_BIT( 0xfc, IP_ACTIVE_LOW, IPT_UNKNOWN )
+		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_COIN1 );
+		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_COIN2 );
+		PORT_BIT( 0xfc, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
 		PORT_START				/* fake analog X */
-		PORT_ANALOG( 0xff, 0x00, IPT_TRACKBALL_X | IPF_REVERSE, 50, 10, -127, 127 )
+		PORT_ANALOG( 0xff, 0x00, IPT_TRACKBALL_X | IPF_REVERSE, 50, 10, -127, 127 );
 	
 		PORT_START				/* fake analog Y */
-		PORT_BIT(  0xff, IP_ACTIVE_LOW, IPT_BUTTON1 )
+		PORT_BIT(  0xff, IP_ACTIVE_LOW, IPT_BUTTON1 );
 	
 		PORT_START				/* start button */
-		PORT_BITX( 0x01, IP_ACTIVE_LOW, IPT_BUTTON3, "Fireball", IP_KEY_DEFAULT, IP_JOY_DEFAULT )
-		PORT_BITX( 0x02, IP_ACTIVE_LOW, IPT_BUTTON4, "Laser", IP_KEY_DEFAULT, IP_JOY_DEFAULT )
-		PORT_BITX( 0x04, IP_ACTIVE_LOW, IPT_BUTTON5, "Missile", IP_KEY_DEFAULT, IP_JOY_DEFAULT )
-		PORT_BITX( 0x08, IP_ACTIVE_LOW, IPT_BUTTON6, "Oil", IP_KEY_DEFAULT, IP_JOY_DEFAULT )
-		PORT_BITX( 0x10, IP_ACTIVE_LOW, IPT_BUTTON7, "Turbo", IP_KEY_DEFAULT, IP_JOY_DEFAULT )
-		PORT_BITX( 0x20, IP_ACTIVE_LOW, IPT_BUTTON8, "Shield", IP_KEY_DEFAULT, IP_JOY_DEFAULT )
-		PORT_BIT(  0x40, IP_ACTIVE_LOW, IPT_UNKNOWN )
-		PORT_BITX( 0x80, IP_ACTIVE_LOW, IPT_START1, "Top Secret", IP_KEY_DEFAULT, IP_JOY_DEFAULT )
-	INPUT_PORTS_END
+		PORT_BITX( 0x01, IP_ACTIVE_LOW, IPT_BUTTON3, "Fireball", IP_KEY_DEFAULT, IP_JOY_DEFAULT );
+		PORT_BITX( 0x02, IP_ACTIVE_LOW, IPT_BUTTON4, "Laser", IP_KEY_DEFAULT, IP_JOY_DEFAULT );
+		PORT_BITX( 0x04, IP_ACTIVE_LOW, IPT_BUTTON5, "Missile", IP_KEY_DEFAULT, IP_JOY_DEFAULT );
+		PORT_BITX( 0x08, IP_ACTIVE_LOW, IPT_BUTTON6, "Oil", IP_KEY_DEFAULT, IP_JOY_DEFAULT );
+		PORT_BITX( 0x10, IP_ACTIVE_LOW, IPT_BUTTON7, "Turbo", IP_KEY_DEFAULT, IP_JOY_DEFAULT );
+		PORT_BITX( 0x20, IP_ACTIVE_LOW, IPT_BUTTON8, "Shield", IP_KEY_DEFAULT, IP_JOY_DEFAULT );
+		PORT_BIT(  0x40, IP_ACTIVE_LOW, IPT_UNKNOWN );
+		PORT_BITX( 0x80, IP_ACTIVE_LOW, IPT_START1, "Top Secret", IP_KEY_DEFAULT, IP_JOY_DEFAULT );
+	INPUT_PORTS_END(); }}; 
 	
 	
-	INPUT_PORTS_START( hitnmiss )
+	static InputPortPtr input_ports_hitnmiss = new InputPortPtr(){ public void handler() { 
 		PORT_START				/* player inputs and logic board dips */
-		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_UNKNOWN )
-		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_BUTTON1 )
-		PORT_DIPNAME( 0x0c, 0x0c, "Seconds" )
-		PORT_DIPSETTING(    0x08, "20" )
-		PORT_DIPSETTING(    0x0c, "30" )
-		PORT_DIPSETTING(    0x04, "40" )
-		PORT_DIPSETTING(    0x00, "50" )
-		PORT_DIPNAME( 0x30, 0x30, DEF_STR( Difficulty ) )
-		PORT_DIPSETTING(    0x00, "Easy" )
-		PORT_DIPSETTING(    0x30, "Normal" )
-		PORT_DIPSETTING(    0x20, "Hard" )
-		PORT_DIPSETTING(    0x10, "Hardest" )
-		PORT_BIT( 0xc0, IP_ACTIVE_LOW, IPT_UNKNOWN )
+		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_UNKNOWN );
+		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_BUTTON1 );
+		PORT_DIPNAME( 0x0c, 0x0c, "Seconds" );
+		PORT_DIPSETTING(    0x08, "20" );
+		PORT_DIPSETTING(    0x0c, "30" );
+		PORT_DIPSETTING(    0x04, "40" );
+		PORT_DIPSETTING(    0x00, "50" );
+		PORT_DIPNAME( 0x30, 0x30, DEF_STR( "Difficulty") );
+		PORT_DIPSETTING(    0x00, "Easy" );
+		PORT_DIPSETTING(    0x30, "Normal" );
+		PORT_DIPSETTING(    0x20, "Hard" );
+		PORT_DIPSETTING(    0x10, "Hardest" );
+		PORT_BIT( 0xc0, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
 		PORT_START 				/* audio board dips */
 		COINAGE
-		PORT_BIT( 0x70, IP_ACTIVE_LOW, IPT_UNKNOWN )
-		PORT_DIPNAME( 0x80, 0x80, DEF_STR( Free_Play ) )
-		PORT_DIPSETTING(    0x80, DEF_STR( Off ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( On ) )
+		PORT_BIT( 0x70, IP_ACTIVE_LOW, IPT_UNKNOWN );
+		PORT_DIPNAME( 0x80, 0x80, DEF_STR( "Free_Play") );
+		PORT_DIPSETTING(    0x80, DEF_STR( "Off") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
 	
 		PORT_START				/* start button */
-		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_START1 )
-		PORT_BIT( 0xfe, IP_ACTIVE_LOW, IPT_UNKNOWN )
+		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_START1 );
+		PORT_BIT( 0xfe, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
 		PORT_START				/* coin counters */
-		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_COIN1 )
-		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_COIN2 )
-		PORT_BIT( 0xfc, IP_ACTIVE_LOW, IPT_UNKNOWN )
+		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_COIN1 );
+		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_COIN2 );
+		PORT_BIT( 0xfc, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
 		PORT_START				/* fake analog X */
-		PORT_ANALOG( 0xff, 0x80, IPT_AD_STICK_X, 50, 10, 0, 255 )
+		PORT_ANALOG( 0xff, 0x80, IPT_AD_STICK_X, 50, 10, 0, 255 );
 	
 		PORT_START				/* fake analog Y */
-		PORT_ANALOG( 0xff, 0x80, IPT_AD_STICK_Y, 70, 10, 0, 255 )
-	INPUT_PORTS_END
+		PORT_ANALOG( 0xff, 0x80, IPT_AD_STICK_Y, 70, 10, 0, 255 );
+	INPUT_PORTS_END(); }}; 
 	
 	
-	INPUT_PORTS_START( whodunit )
+	static InputPortPtr input_ports_whodunit = new InputPortPtr(){ public void handler() { 
 		PORT_START				/* player inputs and logic board dips */
-		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_UNKNOWN )
-		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_BUTTON1 )
-		PORT_DIPNAME( 0x0c, 0x0c, DEF_STR( Lives ) )
-		PORT_DIPSETTING(    0x08, "2" )
-		PORT_DIPSETTING(    0x0c, "3" )
-		PORT_DIPSETTING(    0x04, "4" )
-		PORT_DIPSETTING(    0x00, "5" )
-		PORT_DIPNAME( 0x30, 0x30, DEF_STR( Difficulty ) )
-		PORT_DIPSETTING(    0x00, "Easy" )
-		PORT_DIPSETTING(    0x30, "Normal" )
-		PORT_DIPSETTING(    0x20, "Hard" )
-		PORT_DIPSETTING(    0x10, "Hardest" )
-		PORT_BIT( 0xc0, IP_ACTIVE_LOW, IPT_UNKNOWN )
+		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_UNKNOWN );
+		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_BUTTON1 );
+		PORT_DIPNAME( 0x0c, 0x0c, DEF_STR( "Lives") );
+		PORT_DIPSETTING(    0x08, "2" );
+		PORT_DIPSETTING(    0x0c, "3" );
+		PORT_DIPSETTING(    0x04, "4" );
+		PORT_DIPSETTING(    0x00, "5" );
+		PORT_DIPNAME( 0x30, 0x30, DEF_STR( "Difficulty") );
+		PORT_DIPSETTING(    0x00, "Easy" );
+		PORT_DIPSETTING(    0x30, "Normal" );
+		PORT_DIPSETTING(    0x20, "Hard" );
+		PORT_DIPSETTING(    0x10, "Hardest" );
+		PORT_BIT( 0xc0, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
 		PORT_START 				/* audio board dips */
 		COINAGE
-		PORT_BIT( 0xf0, IP_ACTIVE_LOW, IPT_UNKNOWN )
+		PORT_BIT( 0xf0, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
 		PORT_START				/* start button */
-		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_START1 )
-		PORT_BIT( 0xfe, IP_ACTIVE_LOW, IPT_UNKNOWN )
+		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_START1 );
+		PORT_BIT( 0xfe, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
 		PORT_START				/* coin counters */
-		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_COIN1 )
-		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_COIN2 )
-		PORT_BIT( 0xfc, IP_ACTIVE_LOW, IPT_UNKNOWN )
+		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_COIN1 );
+		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_COIN2 );
+		PORT_BIT( 0xfc, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
 		PORT_START				/* fake analog X */
-		PORT_ANALOG( 0xff, 0x80, IPT_AD_STICK_X, 50, 10, 0, 255 )
+		PORT_ANALOG( 0xff, 0x80, IPT_AD_STICK_X, 50, 10, 0, 255 );
 	
 		PORT_START				/* fake analog Y */
-		PORT_ANALOG( 0xff, 0x80, IPT_AD_STICK_Y, 70, 10, 0, 255 )
-	INPUT_PORTS_END
+		PORT_ANALOG( 0xff, 0x80, IPT_AD_STICK_Y, 70, 10, 0, 255 );
+	INPUT_PORTS_END(); }}; 
 	
 	
-	INPUT_PORTS_START( showdown )
+	static InputPortPtr input_ports_showdown = new InputPortPtr(){ public void handler() { 
 		PORT_START				/* player inputs and logic board dips */
-		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_UNKNOWN )
-		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_BUTTON1 )
-		PORT_DIPNAME( 0x0c, 0x0c, "Hands" )
-		PORT_DIPSETTING(    0x08, "1" )
-		PORT_DIPSETTING(    0x0c, "2" )
-		PORT_DIPSETTING(    0x04, "3" )
-		PORT_DIPSETTING(    0x00, "4" )
-		PORT_DIPNAME( 0x30, 0x30, DEF_STR( Difficulty ) )
-		PORT_DIPSETTING(    0x00, "Easy" )
-		PORT_DIPSETTING(    0x30, "Normal" )
-		PORT_DIPSETTING(    0x20, "Hard" )
-		PORT_DIPSETTING(    0x10, "Hardest" )
-		PORT_BIT( 0xc0, IP_ACTIVE_LOW, IPT_UNKNOWN )
+		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_UNKNOWN );
+		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_BUTTON1 );
+		PORT_DIPNAME( 0x0c, 0x0c, "Hands" );
+		PORT_DIPSETTING(    0x08, "1" );
+		PORT_DIPSETTING(    0x0c, "2" );
+		PORT_DIPSETTING(    0x04, "3" );
+		PORT_DIPSETTING(    0x00, "4" );
+		PORT_DIPNAME( 0x30, 0x30, DEF_STR( "Difficulty") );
+		PORT_DIPSETTING(    0x00, "Easy" );
+		PORT_DIPSETTING(    0x30, "Normal" );
+		PORT_DIPSETTING(    0x20, "Hard" );
+		PORT_DIPSETTING(    0x10, "Hardest" );
+		PORT_BIT( 0xc0, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
 		PORT_START 				/* audio board dips */
 		COINAGE
-		PORT_BIT( 0xf0, IP_ACTIVE_LOW, IPT_UNKNOWN )
+		PORT_BIT( 0xf0, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
 		PORT_START				/* start button */
-		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_START1 )
-		PORT_BIT( 0xfe, IP_ACTIVE_LOW, IPT_UNKNOWN )
+		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_START1 );
+		PORT_BIT( 0xfe, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
 		PORT_START				/* coin counters */
-		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_COIN1 )
-		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_COIN2 )
-		PORT_BIT( 0xfc, IP_ACTIVE_LOW, IPT_UNKNOWN )
+		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_COIN1 );
+		PORT_BIT( 0x02, IP_ACTIVE_LOW, IPT_COIN2 );
+		PORT_BIT( 0xfc, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	
 		PORT_START				/* fake analog X */
-		PORT_ANALOG( 0xff, 0x80, IPT_AD_STICK_X, 50, 10, 0, 255 )
+		PORT_ANALOG( 0xff, 0x80, IPT_AD_STICK_X, 50, 10, 0, 255 );
 	
 		PORT_START				/* fake analog Y */
-		PORT_ANALOG( 0xff, 0x80, IPT_AD_STICK_Y, 70, 10, 0, 255 )
-	INPUT_PORTS_END
+		PORT_ANALOG( 0xff, 0x80, IPT_AD_STICK_Y, 70, 10, 0, 255 );
+	INPUT_PORTS_END(); }}; 
 	
 	
 	

@@ -306,182 +306,182 @@ public class aburner
 		COMBINE_DATA( &sys16_extraram2[offset] );
 	}
 	
-	INPUT_PORTS_START( aburner )
+	static InputPortPtr input_ports_aburner = new InputPortPtr(){ public void handler() { 
 		PORT_START /* player 1 */
-		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_BUTTON3 ) /* unknown */
-		PORT_BITX(0x02, IP_ACTIVE_LOW, IPT_SERVICE, DEF_STR( Service_Mode ), KEYCODE_F2, IP_JOY_NONE )
-		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_COIN3 ) /* service */
-		PORT_BIT( 0x08, IP_ACTIVE_LOW, IPT_START1 )
-		PORT_BIT( 0x10, IP_ACTIVE_LOW, IPT_BUTTON1 ) /* vulcan */
-		PORT_BIT( 0x20, IP_ACTIVE_LOW, IPT_BUTTON2 ) /* missle */
-		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_COIN1 )
-		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_COIN2 )
+		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_BUTTON3 );/* unknown */
+		PORT_BITX(0x02, IP_ACTIVE_LOW, IPT_SERVICE, DEF_STR( "Service_Mode") ); KEYCODE_F2, IP_JOY_NONE )
+		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_COIN3 );/* service */
+		PORT_BIT( 0x08, IP_ACTIVE_LOW, IPT_START1 );
+		PORT_BIT( 0x10, IP_ACTIVE_LOW, IPT_BUTTON1 );/* vulcan */
+		PORT_BIT( 0x20, IP_ACTIVE_LOW, IPT_BUTTON2 );/* missle */
+		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_COIN1 );
+		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_COIN2 );
 	
 		SYS16_COINAGE /* DSWA */ /* wrong! */
 	
 		PORT_START /* DSWB */
-		PORT_DIPNAME( 0x03, 0x01, "Cabinet Type" )
-		PORT_DIPSETTING(    0x01, "Upright 1" )
-		PORT_DIPSETTING(    0x00, "N/A" )
-		PORT_DIPSETTING(    0x02, "Moving Standard" )
-		PORT_DIPSETTING(    0x03, "Moving Deluxe" )
-		PORT_DIPNAME( 0x04, 0x04, DEF_STR( Demo_Sounds ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( Off ) )
-		PORT_DIPSETTING(    0x04, DEF_STR( On ) )
-		PORT_DIPNAME( 0x08, 0x08, DEF_STR( Unknown ) )
-		PORT_DIPSETTING(    0x08, DEF_STR( Off ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( On ) )
-		PORT_DIPNAME( 0x10, 0x00, "Ship Increase" )
-		PORT_DIPSETTING(    0x10, DEF_STR( No ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( Yes ) )
-		PORT_DIPNAME( 0x20, 0x00, "Allow Continue" )
-		PORT_DIPSETTING(    0x20, DEF_STR( No ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( Yes ) )
-		PORT_DIPNAME( 0xc0, 0xc0, DEF_STR( Difficulty ) )
-		PORT_DIPSETTING(    0x80, "Easy" )
-		PORT_DIPSETTING(    0xc0, "Normal" )
-		PORT_DIPSETTING(    0x40, "Hard" )
-		PORT_DIPSETTING(    0x00, "Hardest" )
+		PORT_DIPNAME( 0x03, 0x01, "Cabinet Type" );
+		PORT_DIPSETTING(    0x01, "Upright 1" );
+		PORT_DIPSETTING(    0x00, "N/A" );
+		PORT_DIPSETTING(    0x02, "Moving Standard" );
+		PORT_DIPSETTING(    0x03, "Moving Deluxe" );
+		PORT_DIPNAME( 0x04, 0x04, DEF_STR( "Demo_Sounds") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "Off") );
+		PORT_DIPSETTING(    0x04, DEF_STR( "On") );
+		PORT_DIPNAME( 0x08, 0x08, DEF_STR( "Unknown") );
+		PORT_DIPSETTING(    0x08, DEF_STR( "Off") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
+		PORT_DIPNAME( 0x10, 0x00, "Ship Increase" );
+		PORT_DIPSETTING(    0x10, DEF_STR( "No") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "Yes") );
+		PORT_DIPNAME( 0x20, 0x00, "Allow Continue" );
+		PORT_DIPSETTING(    0x20, DEF_STR( "No") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "Yes") );
+		PORT_DIPNAME( 0xc0, 0xc0, DEF_STR( "Difficulty") );
+		PORT_DIPSETTING(    0x80, "Easy" );
+		PORT_DIPSETTING(    0xc0, "Normal" );
+		PORT_DIPSETTING(    0x40, "Hard" );
+		PORT_DIPSETTING(    0x00, "Hardest" );
 	
 		PORT_START
-		PORT_ANALOG( 0xff, 0x7f, IPT_AD_STICK_X | IPF_CENTER, 100, 4, 0x00, 0xff )
+		PORT_ANALOG( 0xff, 0x7f, IPT_AD_STICK_X | IPF_CENTER, 100, 4, 0x00, 0xff );
 	
 		PORT_START
-		PORT_ANALOG( 0xff, 0x7f, IPT_AD_STICK_Y | IPF_CENTER | IPF_REVERSE, 100, 4, 0x00, 0xff )
+		PORT_ANALOG( 0xff, 0x7f, IPT_AD_STICK_Y | IPF_CENTER | IPF_REVERSE, 100, 4, 0x00, 0xff );
 	
 		PORT_START /* throttle (hack - mapped as player2 stick) */
-		PORT_ANALOG( 0xff, 0x80, IPT_AD_STICK_Y | IPF_CENTER | IPF_PLAYER2, 100, 79, 0x00, 0xff )
-	INPUT_PORTS_END
+		PORT_ANALOG( 0xff, 0x80, IPT_AD_STICK_Y | IPF_CENTER | IPF_PLAYER2, 100, 79, 0x00, 0xff );
+	INPUT_PORTS_END(); }}; 
 	
-	INPUT_PORTS_START( aburner2 )
+	static InputPortPtr input_ports_aburner2 = new InputPortPtr(){ public void handler() { 
 		PORT_START /* player 1 */
-		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_BUTTON3 ) /* unknown */
-		PORT_BITX(0x02, IP_ACTIVE_LOW, IPT_SERVICE, DEF_STR( Service_Mode ), KEYCODE_F2, IP_JOY_NONE )
-		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_COIN3 ) /* service */
-		PORT_BIT( 0x08, IP_ACTIVE_LOW, IPT_START1 )
-		PORT_BIT( 0x10, IP_ACTIVE_LOW, IPT_BUTTON1 ) /* vulcan */
-		PORT_BIT( 0x20, IP_ACTIVE_LOW, IPT_BUTTON2 ) /* missle */
-		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_COIN1 )
-		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_COIN2 )
+		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_BUTTON3 );/* unknown */
+		PORT_BITX(0x02, IP_ACTIVE_LOW, IPT_SERVICE, DEF_STR( "Service_Mode") ); KEYCODE_F2, IP_JOY_NONE )
+		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_COIN3 );/* service */
+		PORT_BIT( 0x08, IP_ACTIVE_LOW, IPT_START1 );
+		PORT_BIT( 0x10, IP_ACTIVE_LOW, IPT_BUTTON1 );/* vulcan */
+		PORT_BIT( 0x20, IP_ACTIVE_LOW, IPT_BUTTON2 );/* missle */
+		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_COIN1 );
+		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_COIN2 );
 	
 		PORT_START /* DSWA */
-		PORT_DIPNAME( 0x0f, 0x0f, DEF_STR( Coin_A ) )
-		PORT_DIPSETTING(    0x0a, DEF_STR( 7C_1C ) )
-		PORT_DIPSETTING(    0x0b, DEF_STR( 6C_1C ) )
-		PORT_DIPSETTING(    0x0c, DEF_STR( 5C_1C ) )
-		PORT_DIPSETTING(    0x07, DEF_STR( 4C_1C ) )
-		PORT_DIPSETTING(    0x08, DEF_STR( 3C_1C ) )
-		PORT_DIPSETTING(    0x09, DEF_STR( 2C_1C ) )
-		PORT_DIPSETTING(    0x05, "6 Coins 4 Credits" ) //DEF_STR( 6C_4C ) )
-		PORT_DIPSETTING(    0x04, DEF_STR( 4C_3C ) )
-		PORT_DIPSETTING(    0x0f, DEF_STR( 1C_1C ) )
-		PORT_DIPSETTING(    0x02, DEF_STR( 4C_5C ) )
-		PORT_DIPSETTING(    0x03, "5 Coins 6 Credits" ) //DEF_STR( 5C_6C ) )
-		//PORT_DIPSETTING(    0x01, DEF_STR( 2C_3C ) )
-		PORT_DIPSETTING(    0x06, DEF_STR( 2C_3C ) )
-		PORT_DIPSETTING(    0x0e, DEF_STR( 1C_2C ) )
-		PORT_DIPSETTING(    0x0d, DEF_STR( 1C_3C ) )
-		PORT_DIPSETTING(    0x00, "Free Play (if Coin B too) or 1/1" )
+		PORT_DIPNAME( 0x0f, 0x0f, DEF_STR( "Coin_A") );
+		PORT_DIPSETTING(    0x0a, DEF_STR( "7C_1C") );
+		PORT_DIPSETTING(    0x0b, DEF_STR( "6C_1C") );
+		PORT_DIPSETTING(    0x0c, DEF_STR( "5C_1C") );
+		PORT_DIPSETTING(    0x07, DEF_STR( "4C_1C") );
+		PORT_DIPSETTING(    0x08, DEF_STR( "3C_1C") );
+		PORT_DIPSETTING(    0x09, DEF_STR( "2C_1C") );
+		PORT_DIPSETTING(    0x05, "6 Coins 4 Credits" );//DEF_STR( 6C_4C ) )
+		PORT_DIPSETTING(    0x04, DEF_STR( "4C_3C") );
+		PORT_DIPSETTING(    0x0f, DEF_STR( "1C_1C") );
+		PORT_DIPSETTING(    0x02, DEF_STR( "4C_5C") );
+		PORT_DIPSETTING(    0x03, "5 Coins 6 Credits" );//DEF_STR( 5C_6C ) )
+		//PORT_DIPSETTING(    0x01, DEF_STR( "2C_3C") );
+		PORT_DIPSETTING(    0x06, DEF_STR( "2C_3C") );
+		PORT_DIPSETTING(    0x0e, DEF_STR( "1C_2C") );
+		PORT_DIPSETTING(    0x0d, DEF_STR( "1C_3C") );
+		PORT_DIPSETTING(    0x00, "Free Play (if Coin B too);or 1/1" )
 	
-		PORT_DIPNAME( 0xf0, 0xf0, DEF_STR( Coin_B ) )
-		PORT_DIPSETTING(    0xa0, DEF_STR( 7C_1C ) )
-		PORT_DIPSETTING(    0xb0, DEF_STR( 6C_1C ) )
-		PORT_DIPSETTING(    0xc0, DEF_STR( 5C_1C ) )
-		PORT_DIPSETTING(    0x70, DEF_STR( 4C_1C ) )
-		PORT_DIPSETTING(    0x80, DEF_STR( 3C_1C ) )
-		PORT_DIPSETTING(    0x90, DEF_STR( 2C_1C ) )
-		PORT_DIPSETTING(    0x50, "6 Coins 4 Credits" ) //DEF_STR( 6C_4C ) )
-		PORT_DIPSETTING(    0x40, DEF_STR( 4C_3C ) ) // 1.33
-		PORT_DIPSETTING(    0xf0, DEF_STR( 1C_1C ) ) // 1
-		PORT_DIPSETTING(    0x20, DEF_STR( 4C_5C ) ) // .8
-		PORT_DIPSETTING(    0x30, "5 Coins 6 Credits" ) // 8.3 DEF_STR( 5C_6C ) )
-		//PORT_DIPSETTING(    0x10, DEF_STR( 2C_3C ) ) // .66
-		PORT_DIPSETTING(    0x60, DEF_STR( 2C_3C ) ) // .66
-		PORT_DIPSETTING(    0xe0, DEF_STR( 1C_2C ) ) // .5
-		PORT_DIPSETTING(    0xd0, DEF_STR( 1C_3C ) ) // .33
-		PORT_DIPSETTING(    0x00, "Free Play (if Coin A too) or 1/1" )
+		PORT_DIPNAME( 0xf0, 0xf0, DEF_STR( "Coin_B") );
+		PORT_DIPSETTING(    0xa0, DEF_STR( "7C_1C") );
+		PORT_DIPSETTING(    0xb0, DEF_STR( "6C_1C") );
+		PORT_DIPSETTING(    0xc0, DEF_STR( "5C_1C") );
+		PORT_DIPSETTING(    0x70, DEF_STR( "4C_1C") );
+		PORT_DIPSETTING(    0x80, DEF_STR( "3C_1C") );
+		PORT_DIPSETTING(    0x90, DEF_STR( "2C_1C") );
+		PORT_DIPSETTING(    0x50, "6 Coins 4 Credits" );//DEF_STR( 6C_4C ) )
+		PORT_DIPSETTING(    0x40, DEF_STR( "4C_3C") ); // 1.33
+		PORT_DIPSETTING(    0xf0, DEF_STR( "1C_1C") ); // 1
+		PORT_DIPSETTING(    0x20, DEF_STR( "4C_5C") ); // .8
+		PORT_DIPSETTING(    0x30, "5 Coins 6 Credits" );// 8.3 DEF_STR( 5C_6C ) )
+		//PORT_DIPSETTING(    0x10, DEF_STR( "2C_3C") ); // .66
+		PORT_DIPSETTING(    0x60, DEF_STR( "2C_3C") ); // .66
+		PORT_DIPSETTING(    0xe0, DEF_STR( "1C_2C") ); // .5
+		PORT_DIPSETTING(    0xd0, DEF_STR( "1C_3C") ); // .33
+		PORT_DIPSETTING(    0x00, "Free Play (if Coin A too);or 1/1" )
 		/* note that Free Play doesn't seem to work! */
 	
 		PORT_START /* DSWB */
-		PORT_DIPNAME( 0x03, 0x01, "Cabinet Type" )
-		PORT_DIPSETTING(    0x01, "Upright 1" )
-		PORT_DIPSETTING(    0x00, "Upright 2" )
-		PORT_DIPSETTING(    0x02, "Moving Standard" )
-		PORT_DIPSETTING(    0x03, "Moving Deluxe" )
-		PORT_DIPNAME( 0x04, 0x04, "Throttle Lever" )
-		PORT_DIPSETTING(    0x00, DEF_STR( No ) )
-		PORT_DIPSETTING(    0x04, DEF_STR( Yes ) )
-		PORT_DIPNAME( 0x08, 0x08, DEF_STR( Lives ) )
-		PORT_DIPSETTING(    0x08, "3" )
-		PORT_DIPSETTING(    0x00, "4" )
-		PORT_DIPNAME( 0x10, 0x00, "Ship Increase" )
-		PORT_DIPSETTING(    0x10, DEF_STR( No ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( Yes ) )
-		PORT_DIPNAME( 0x20, 0x00, "Allow Continue" )
-		PORT_DIPSETTING(    0x20, DEF_STR( No ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( Yes ) )
-		PORT_DIPNAME( 0xc0, 0xc0, DEF_STR( Difficulty ) )
-		PORT_DIPSETTING(    0x80, "Easy" )
-		PORT_DIPSETTING(    0xc0, "Normal" )
-		PORT_DIPSETTING(    0x40, "Hard" )
-		PORT_DIPSETTING(    0x00, "Hardest" )
+		PORT_DIPNAME( 0x03, 0x01, "Cabinet Type" );
+		PORT_DIPSETTING(    0x01, "Upright 1" );
+		PORT_DIPSETTING(    0x00, "Upright 2" );
+		PORT_DIPSETTING(    0x02, "Moving Standard" );
+		PORT_DIPSETTING(    0x03, "Moving Deluxe" );
+		PORT_DIPNAME( 0x04, 0x04, "Throttle Lever" );
+		PORT_DIPSETTING(    0x00, DEF_STR( "No") );
+		PORT_DIPSETTING(    0x04, DEF_STR( "Yes") );
+		PORT_DIPNAME( 0x08, 0x08, DEF_STR( "Lives") );
+		PORT_DIPSETTING(    0x08, "3" );
+		PORT_DIPSETTING(    0x00, "4" );
+		PORT_DIPNAME( 0x10, 0x00, "Ship Increase" );
+		PORT_DIPSETTING(    0x10, DEF_STR( "No") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "Yes") );
+		PORT_DIPNAME( 0x20, 0x00, "Allow Continue" );
+		PORT_DIPSETTING(    0x20, DEF_STR( "No") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "Yes") );
+		PORT_DIPNAME( 0xc0, 0xc0, DEF_STR( "Difficulty") );
+		PORT_DIPSETTING(    0x80, "Easy" );
+		PORT_DIPSETTING(    0xc0, "Normal" );
+		PORT_DIPSETTING(    0x40, "Hard" );
+		PORT_DIPSETTING(    0x00, "Hardest" );
 	
 		PORT_START
-		PORT_ANALOG( 0xff, 0x7f, IPT_AD_STICK_X | IPF_CENTER, 100, 4, 0x00, 0xff )
+		PORT_ANALOG( 0xff, 0x7f, IPT_AD_STICK_X | IPF_CENTER, 100, 4, 0x00, 0xff );
 	
 		PORT_START
-		PORT_ANALOG( 0xff, 0x7f, IPT_AD_STICK_Y | IPF_CENTER | IPF_REVERSE, 100, 4, 0x00, 0xff )
+		PORT_ANALOG( 0xff, 0x7f, IPT_AD_STICK_Y | IPF_CENTER | IPF_REVERSE, 100, 4, 0x00, 0xff );
 	
 		PORT_START /* throttle (hack - mapped as player2 stick) */
-		PORT_ANALOG( 0xff, 0x80, IPT_AD_STICK_Y | IPF_CENTER | IPF_PLAYER2, 100, 79, 0x00, 0xff )
-	INPUT_PORTS_END
+		PORT_ANALOG( 0xff, 0x80, IPT_AD_STICK_Y | IPF_CENTER | IPF_PLAYER2, 100, 79, 0x00, 0xff );
+	INPUT_PORTS_END(); }}; 
 	
-	INPUT_PORTS_START( thndrbld )
+	static InputPortPtr input_ports_thndrbld = new InputPortPtr(){ public void handler() { 
 		PORT_START /* player 1 */
-		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_BUTTON3 ) /* unknown */
-		PORT_BITX(0x02, IP_ACTIVE_LOW, IPT_SERVICE, DEF_STR( Service_Mode ), KEYCODE_F2, IP_JOY_NONE )
-		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_COIN3 ) /* service */
-		PORT_BIT( 0x08, IP_ACTIVE_LOW, IPT_START1 )
-		PORT_BIT( 0x10, IP_ACTIVE_LOW, IPT_BUTTON1 ) /* gun */
-		PORT_BIT( 0x20, IP_ACTIVE_LOW, IPT_BUTTON2 ) /* missle */
-		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_COIN1 )
-		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_COIN2 )
+		PORT_BIT( 0x01, IP_ACTIVE_LOW, IPT_BUTTON3 );/* unknown */
+		PORT_BITX(0x02, IP_ACTIVE_LOW, IPT_SERVICE, DEF_STR( "Service_Mode") ); KEYCODE_F2, IP_JOY_NONE )
+		PORT_BIT( 0x04, IP_ACTIVE_LOW, IPT_COIN3 );/* service */
+		PORT_BIT( 0x08, IP_ACTIVE_LOW, IPT_START1 );
+		PORT_BIT( 0x10, IP_ACTIVE_LOW, IPT_BUTTON1 );/* gun */
+		PORT_BIT( 0x20, IP_ACTIVE_LOW, IPT_BUTTON2 );/* missle */
+		PORT_BIT( 0x40, IP_ACTIVE_LOW, IPT_COIN1 );
+		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_COIN2 );
 	
 		SYS16_COINAGE /* DSWA */ /* wrong! */
 	
 		PORT_START /* DSWB */
-		PORT_DIPNAME( 0x01, 0x01, "Cabinet Type" )
-		PORT_DIPSETTING(    0x00, DEF_STR( Upright ) )
-		PORT_DIPSETTING(    0x01, "Deluxe" )
-		PORT_DIPNAME( 0x02, 0x00, DEF_STR( Demo_Sounds ) )
-		PORT_DIPSETTING(    0x02, DEF_STR( Off ) )
-		PORT_DIPSETTING(    0x00, DEF_STR( On ) )
-		PORT_DIPNAME( 0x04, 0x04, "Time" )
-		PORT_DIPSETTING(    0x00, "0 Seconds" )
-		PORT_DIPSETTING(    0x04, "30 Seconds" )
-		PORT_DIPNAME( 0x18, 0x18, DEF_STR( Lives ) )
-		PORT_DIPSETTING(    0x08, "2" )
-		PORT_DIPSETTING(    0x18, "3" )
-		PORT_DIPSETTING(    0x10, "4" )
-		PORT_DIPSETTING(    0x00, "5" )
-		PORT_DIPNAME( 0x20, 0x00, "Allow Continue" )
-		PORT_DIPSETTING(    0x00, DEF_STR( No ) )
-		PORT_DIPSETTING(    0x20, DEF_STR( Yes ) )
-		PORT_DIPNAME( 0xc0, 0xc0, DEF_STR( Difficulty ) )
-		PORT_DIPSETTING(    0x40, "Easy" )
-		PORT_DIPSETTING(    0xc0, "Normal" )
-		PORT_DIPSETTING(    0x80, "Hard" )
-		PORT_DIPSETTING(    0x00, "Hardest" )
+		PORT_DIPNAME( 0x01, 0x01, "Cabinet Type" );
+		PORT_DIPSETTING(    0x00, DEF_STR( "Upright") );
+		PORT_DIPSETTING(    0x01, "Deluxe" );
+		PORT_DIPNAME( 0x02, 0x00, DEF_STR( "Demo_Sounds") );
+		PORT_DIPSETTING(    0x02, DEF_STR( "Off") );
+		PORT_DIPSETTING(    0x00, DEF_STR( "On") );
+		PORT_DIPNAME( 0x04, 0x04, "Time" );
+		PORT_DIPSETTING(    0x00, "0 Seconds" );
+		PORT_DIPSETTING(    0x04, "30 Seconds" );
+		PORT_DIPNAME( 0x18, 0x18, DEF_STR( "Lives") );
+		PORT_DIPSETTING(    0x08, "2" );
+		PORT_DIPSETTING(    0x18, "3" );
+		PORT_DIPSETTING(    0x10, "4" );
+		PORT_DIPSETTING(    0x00, "5" );
+		PORT_DIPNAME( 0x20, 0x00, "Allow Continue" );
+		PORT_DIPSETTING(    0x00, DEF_STR( "No") );
+		PORT_DIPSETTING(    0x20, DEF_STR( "Yes") );
+		PORT_DIPNAME( 0xc0, 0xc0, DEF_STR( "Difficulty") );
+		PORT_DIPSETTING(    0x40, "Easy" );
+		PORT_DIPSETTING(    0xc0, "Normal" );
+		PORT_DIPSETTING(    0x80, "Hard" );
+		PORT_DIPSETTING(    0x00, "Hardest" );
 	
 		PORT_START
-		PORT_ANALOG( 0xff, 0x7f, IPT_AD_STICK_X | IPF_CENTER | IPF_REVERSE, 100, 4, 0x00, 0xff )
+		PORT_ANALOG( 0xff, 0x7f, IPT_AD_STICK_X | IPF_CENTER | IPF_REVERSE, 100, 4, 0x00, 0xff );
 	
 		PORT_START /* throttle (hack - mapped as player2 stick) */
-		PORT_ANALOG( 0xff, 0x80, IPT_AD_STICK_Y | IPF_CENTER | IPF_PLAYER2, 100, 79, 0x00, 0xff )
+		PORT_ANALOG( 0xff, 0x80, IPT_AD_STICK_Y | IPF_CENTER | IPF_PLAYER2, 100, 79, 0x00, 0xff );
 	
 		PORT_START
-		PORT_ANALOG( 0xff, 0x7f, IPT_AD_STICK_Y | IPF_CENTER, 100, 4, 0x00, 0xff )
-	INPUT_PORTS_END
+		PORT_ANALOG( 0xff, 0x7f, IPT_AD_STICK_Y | IPF_CENTER, 100, 4, 0x00, 0xff );
+	INPUT_PORTS_END(); }}; 
 	
 	/*****************************************************************************/
 	/* aburner hardware motor/moving cockpit abstraction */
