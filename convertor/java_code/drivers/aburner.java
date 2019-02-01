@@ -878,54 +878,54 @@ public class aburner
 		return 4; /* Interrupt vector 4, used by VBlank */
 	}
 	
-	static const struct MachineDriver machine_driver_aburner =
-	{
-		{
-			{
+	static MachineDriver machine_driver_aburner = new MachineDriver
+	(
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_M68000,
 				12000000,
-				aburner_readmem,aburner_writemem,0,0,
+				aburner_readmem,aburner_writemem,null,null,
 				aburner_interrupt,7
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_Z80 | CPU_AUDIO_CPU,
 				4096000, /* ? */
 				aburner_sound_readmem, aburner_sound_writemem,
 				aburner_sound_readport, aburner_sound_writeport,
 				ignore_interrupt,1
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_M68000,
 				12000000, /* ? */
-				aburner_readmem2,aburner_writemem2,0,0,
+				aburner_readmem2,aburner_writemem2,null,null,
 				aburner_interrupt2,1
-			},
+			),
 		},
 		60, DEFAULT_60HZ_VBLANK_DURATION,
 		100,
 		aburner_init_machine,
-		40*8, 28*8, { 0*8, 40*8-1, 0*8, 28*8-1 },
+		40*8, 28*8, new rectangle( 0*8, 40*8-1, 0*8, 28*8-1 ),
 		sys16_gfxdecodeinfo,
-		0x2010, 0,
-		0,
+		0x2010, null,
+		null,
 	
 		VIDEO_TYPE_RASTER,
-		0,
+		null,
 		sys16_aburner_vh_start,
 		sys16_aburner_vh_stop,
 		sys16_aburner_vh_screenrefresh,
 		SOUND_SUPPORTS_STEREO,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_YM2151,
-				&sys16_ym2151_interface
-			},
-			{
+				sys16_ym2151_interface
+			),
+			new MachineSound(
 				SOUND_SEGAPCM,
-				&sys16_segapcm_interface_15k_512,
-			}
+				sys16_segapcm_interface_15k_512,
+			)
 		}
-	};
+	);
 	
 	/*          rom       parent    machine   inp       init */
 	public static GameDriver driver_aburner	   = new GameDriver("1987"	,"aburner"	,"aburner.java"	,rom_aburner,driver_aburner2	,machine_driver_aburner	,input_ports_aburner	,init_aburner	,ROT0	,	"Sega", "After Burner (Japan)" )

@@ -341,47 +341,47 @@ public class bionicc
 	};
 	
 	
-	static const struct MachineDriver machine_driver_bionicc =
-	{
+	static MachineDriver machine_driver_bionicc = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_M68000,
 				10000000, /* ?? MHz ? */
-				readmem,writemem,0,0,
+				readmem,writemem,null,null,
 				bionicc_interrupt,8
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_Z80 | CPU_AUDIO_CPU,
 				4000000,  /* 4 MHz ??? TODO: find real FRQ */
-				sound_readmem,sound_writemem,0,0,
+				sound_readmem,sound_writemem,null,null,
 				nmi_interrupt,4	/* ??? */
-			}
+			)
 		},
 		60, DEFAULT_REAL_60HZ_VBLANK_DURATION,
 		1,
-		0,
+		null,
 	
 		/* video hardware */
-		32*8, 32*8, { 0*8, 32*8-1, 2*8, 30*8-1 },
+		32*8, 32*8, new rectangle( 0*8, 32*8-1, 2*8, 30*8-1 ),
 		gfxdecodeinfo_bionicc,
-		1024, 0,
-		0,
+		1024, null,
+		null,
 	
 		VIDEO_TYPE_RASTER | VIDEO_NEEDS_6BITS_PER_GUN | VIDEO_BUFFERS_SPRITERAM,
 		bionicc_eof_callback,
 		bionicc_vh_start,
-		0,
+		null,
 		bionicc_vh_screenrefresh,
 	
 		0,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_YM2151,
-				&ym2151_interface
-			},
+				ym2151_interface
+			),
 		}
-	};
+	);
 	
 	
 	

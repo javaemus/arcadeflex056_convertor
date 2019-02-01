@@ -611,17 +611,17 @@ public class mcr2
 	 *
 	 *************************************/
 	
-	static const struct MachineDriver machine_driver_mcr2 =
-	{
+	static MachineDriver machine_driver_mcr2 = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_Z80,
 				2500000,	/* 2.5 MHz */
 				readmem,writemem,readport,writeport,
 				mcr_interrupt,2,
 				0,0,mcr_daisy_chain
-			},
+			),
 			SOUND_CPU_SSIO
 		},
 		30, DEFAULT_REAL_30HZ_VBLANK_DURATION,
@@ -629,37 +629,37 @@ public class mcr2
 		mcr_init_machine,
 	
 		/* video hardware */
-		32*16, 30*16, { 0*16, 32*16-1, 0*16, 30*16-1 },
+		32*16, 30*16, new rectangle( 0*16, 32*16-1, 0*16, 30*16-1 ),
 		gfxdecodeinfo,
-		64, 0,
-		0,
+		64, null,
+		null,
 	
 		VIDEO_TYPE_RASTER | VIDEO_UPDATE_BEFORE_VBLANK,
-		0,
+		null,
 		mcr12_vh_start,
 		mcr12_vh_stop,
 		mcr2_vh_screenrefresh,
 	
 		/* sound hardware */
 		SOUND_SUPPORTS_STEREO,0,0,0,
-		{
+		new MachineSound[] {
 			SOUND_SSIO
 		},
 		mcr2_nvram_handler
-	};
+	);
 	
 	
-	static const struct MachineDriver machine_driver_journey =
-	{
+	static MachineDriver machine_driver_journey = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_Z80,
 				7500000,	/* Looks like it runs at 7.5 MHz rather than 5 or 2.5 */
 				readmem,writemem,readport,writeport,
 				mcr_interrupt,2,
 				0,0,mcr_daisy_chain
-			},
+			),
 			SOUND_CPU_SSIO
 		},
 		30, DEFAULT_REAL_30HZ_VBLANK_DURATION,
@@ -667,24 +667,24 @@ public class mcr2
 		mcr_init_machine,
 	
 		/* video hardware */
-		32*16, 30*16, { 0*16, 32*16-1, 0*16, 30*16-1 },
+		32*16, 30*16, new rectangle( 0*16, 32*16-1, 0*16, 30*16-1 ),
 		gfxdecodeinfo,
-		64, 0,
-		0,
+		64, null,
+		null,
 	
 		VIDEO_TYPE_RASTER | VIDEO_UPDATE_BEFORE_VBLANK,
-		0,
+		null,
 		generic_vh_start,
 		generic_vh_stop,
 		journey_vh_screenrefresh,
 	
 		/* sound hardware */
 		SOUND_SUPPORTS_STEREO,0,0,0,
-		{
+		new MachineSound[] {
 			SOUND_SSIO
 		},
 		mcr2_nvram_handler
-	};
+	);
 	
 	
 	

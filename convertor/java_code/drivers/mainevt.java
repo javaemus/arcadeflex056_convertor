@@ -637,99 +637,99 @@ public class mainevt
 		{ 0 }
 	};
 	
-	static const struct MachineDriver machine_driver_mainevt =
-	{
+	static MachineDriver machine_driver_mainevt = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-	 		{
+		new MachineCPU[] {
+	 		new MachineCPU(
 				CPU_HD6309,
 				3000000,	/* ?? */
-				readmem,writemem,0,0,
+				readmem,writemem,null,null,
 				mainevt_interrupt,1
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_Z80 | CPU_AUDIO_CPU,
 				3579545,	/* 3.579545 MHz */
-				sound_readmem,sound_writemem,0,0,
+				sound_readmem,sound_writemem,null,null,
 				nmi_interrupt,8	/* ??? */
-			}
+			)
 		},
 		60, DEFAULT_60HZ_VBLANK_DURATION,	/* frames per second, vblank duration */
 		1,	/* 1 CPU slice per frame - interleaving is forced when a sound command is written */
-		0,
+		null,
 	
 		/* video hardware */
-		64*8, 32*8, { 14*8, (64-14)*8-1, 2*8, 30*8-1 },
-		0,	/* gfx decoded by konamiic.c */
-		256, 0,
-		0,
+		64*8, 32*8, new rectangle( 14*8, (64-14)*8-1, 2*8, 30*8-1 ),
+		null,	/* gfx decoded by konamiic.c */
+		256, null,
+		null,
 	
 		VIDEO_TYPE_RASTER | VIDEO_HAS_SHADOWS,
-		0,
+		null,
 		mainevt_vh_start,
 		mainevt_vh_stop,
 		mainevt_vh_screenrefresh,
 	
 		/* sound hardware */
 		0,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_K007232,
-				&k007232_interface,
-			},
-			{
+				k007232_interface,
+			),
+			new MachineSound(
 				SOUND_UPD7759,
-				&upd7759_interface
-			}
+				upd7759_interface
+			)
 		}
-	};
+	);
 	
-	static const struct MachineDriver machine_driver_devstors =
-	{
+	static MachineDriver machine_driver_devstors = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-	 		{
+		new MachineCPU[] {
+	 		new MachineCPU(
 				CPU_HD6309,
 				3000000,	/* ?? */
-				dv_readmem,dv_writemem,0,0,
+				dv_readmem,dv_writemem,null,null,
 				dv_interrupt,1
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_Z80 | CPU_AUDIO_CPU,
 				3579545,	/* 3.579545 MHz */
-				dv_sound_readmem,dv_sound_writemem,0,0,
+				dv_sound_readmem,dv_sound_writemem,null,null,
 				interrupt,4
-			}
+			)
 		},
 		60, DEFAULT_60HZ_VBLANK_DURATION,	/* frames per second, vblank duration */
 		1,	/* 1 CPU slice per frame - interleaving is forced when a sound command is written */
-		0,
+		null,
 	
 		/* video hardware */
-		64*8, 32*8, { 13*8, (64-13)*8-1, 2*8, 30*8-1 },
-		0,	/* gfx decoded by konamiic.c */
-		256, 0,
-		0,
+		64*8, 32*8, new rectangle( 13*8, (64-13)*8-1, 2*8, 30*8-1 ),
+		null,	/* gfx decoded by konamiic.c */
+		256, null,
+		null,
 	
 		VIDEO_TYPE_RASTER | VIDEO_HAS_SHADOWS,
-		0,
+		null,
 		dv_vh_start,
 		mainevt_vh_stop,
 		dv_vh_screenrefresh,
 	
 		/* sound hardware */
 		0,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_YM2151,
-				&ym2151_interface
-			},
-			{
+				ym2151_interface
+			),
+			new MachineSound(
 				SOUND_K007232,
-				&k007232_interface,
-			}
+				k007232_interface,
+			)
 		}
-	};
+	);
 	
 	
 	

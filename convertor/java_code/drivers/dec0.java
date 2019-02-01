@@ -899,433 +899,433 @@ public class dec0
 	
 	/******************************************************************************/
 	
-	static const struct MachineDriver machine_driver_hbarrel =
-	{
+	static MachineDriver machine_driver_hbarrel = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_M68000,
 				10000000,
-				dec0_readmem,dec0_writemem,0,0,
+				dec0_readmem,dec0_writemem,null,null,
 				m68_level6_irq,1 /* VBL, level 5 interrupts from i8751 */
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_M6502 | CPU_AUDIO_CPU,
 				1500000,
-				dec0_s_readmem,dec0_s_writemem,0,0,
+				dec0_s_readmem,dec0_s_writemem,null,null,
 				ignore_interrupt,0
-			}
+			)
 		},
 		57.41, 529, /* 57.41 Hz, 529us Vblank */
 		1,	/* 1 CPU slice per frame - interleaving is forced when a sound command is written */
-		0,
+		null,
 	
 		/* video hardware */
-	 	32*8, 32*8, { 0*8, 32*8-1, 1*8, 31*8-1 },
+	 	32*8, 32*8, new rectangle( 0*8, 32*8-1, 1*8, 31*8-1 ),
 	
 		gfxdecodeinfo,
-		1024, 0,
-		0,
+		1024, null,
+		null,
 	
 		VIDEO_TYPE_RASTER | VIDEO_NEEDS_6BITS_PER_GUN,
-		0,
+		null,
 		dec0_vh_start,
 		dec0_vh_stop,
 		hbarrel_vh_screenrefresh,
 	
 		/* sound hardware */
 		0,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_YM2203,
-				&ym2203_interface
-			},
-			{
+				ym2203_interface
+			),
+			new MachineSound(
 				SOUND_YM3812,
-				&ym3812_interface
-			},
-			{
+				ym3812_interface
+			),
+			new MachineSound(
 				SOUND_OKIM6295,
-				&okim6295_interface
-			}
+				okim6295_interface
+			)
 		}
-	};
+	);
 	
-	static const struct MachineDriver machine_driver_baddudes =
-	{
+	static MachineDriver machine_driver_baddudes = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_M68000,
 				10000000,
-				dec0_readmem,dec0_writemem,0,0,
+				dec0_readmem,dec0_writemem,null,null,
 				m68_level6_irq,1 /* VBL, level 5 interrupts from i8751 */
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_M6502 | CPU_AUDIO_CPU,
 				1500000,
-				dec0_s_readmem,dec0_s_writemem,0,0,
+				dec0_s_readmem,dec0_s_writemem,null,null,
 				ignore_interrupt,0
-			}
+			)
 		},
 		57.41, 529, /* 57.41 Hz, 529us Vblank */
 		1,	/* 1 CPU slice per frame - interleaving is forced when a sound command is written */
-		0,
+		null,
 	
 		/* video hardware */
-	 	32*8, 32*8, { 0*8, 32*8-1, 1*8, 31*8-1 },
+	 	32*8, 32*8, new rectangle( 0*8, 32*8-1, 1*8, 31*8-1 ),
 	
 		gfxdecodeinfo,
-		1024, 0,
-		0,
+		1024, null,
+		null,
 	
 		VIDEO_TYPE_RASTER | VIDEO_NEEDS_6BITS_PER_GUN,
-		0,
+		null,
 		dec0_vh_start,
 		dec0_vh_stop,
 		baddudes_vh_screenrefresh,
 	
 		/* sound hardware */
 		0,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_YM2203,
-				&ym2203_interface
-			},
-			{
+				ym2203_interface
+			),
+			new MachineSound(
 				SOUND_YM3812,
-				&ym3812_interface
-			},
-			{
+				ym3812_interface
+			),
+			new MachineSound(
 				SOUND_OKIM6295,
-				&okim6295_interface
-			}
+				okim6295_interface
+			)
 		}
-	};
+	);
 	
-	static const struct MachineDriver machine_driver_birdtry =
-	{
+	static MachineDriver machine_driver_birdtry = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_M68000,
 				10000000,
-				dec0_readmem,dec0_writemem,0,0,
+				dec0_readmem,dec0_writemem,null,null,
 				m68_level6_irq,1 /* VBL, level 5 interrupts from i8751 */
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_M6502 | CPU_AUDIO_CPU,
 				1500000,
-				dec0_s_readmem,dec0_s_writemem,0,0,
+				dec0_s_readmem,dec0_s_writemem,null,null,
 				ignore_interrupt,0
-			}
+			)
 		},
 		57.41, 529, /* 57.41 Hz, 529us Vblank */
 		1,	/* 1 CPU slice per frame - interleaving is forced when a sound command is written */
-		0,
+		null,
 	
 		/* video hardware */
-	 	32*8, 32*8, { 0*8, 32*8-1, 1*8, 31*8-1 },
+	 	32*8, 32*8, new rectangle( 0*8, 32*8-1, 1*8, 31*8-1 ),
 	
 		gfxdecodeinfo,
-		1024, 0,
-		0,
+		1024, null,
+		null,
 	
 		VIDEO_TYPE_RASTER | VIDEO_NEEDS_6BITS_PER_GUN,
-		0,
+		null,
 		dec0_vh_start,
 		dec0_vh_stop,
 		birdtry_vh_screenrefresh,
 	
 		/* sound hardware */
 		0,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_YM2203,
-				&ym2203_interface
-			},
-			{
+				ym2203_interface
+			),
+			new MachineSound(
 				SOUND_YM3812,
-				&ym3812_interface
-			},
-			{
+				ym3812_interface
+			),
+			new MachineSound(
 				SOUND_OKIM6295,
-				&okim6295_interface
-			}
+				okim6295_interface
+			)
 		}
-	};
+	);
 	
-	static const struct MachineDriver machine_driver_robocop =
-	{
+	static MachineDriver machine_driver_robocop = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_M68000,
 				10000000,
-				dec0_readmem,dec0_writemem,0,0,
+				dec0_readmem,dec0_writemem,null,null,
 				m68_level6_irq,1 /* VBL */
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_M6502 | CPU_AUDIO_CPU,
 				1500000,
-				dec0_s_readmem,dec0_s_writemem,0,0,
+				dec0_s_readmem,dec0_s_writemem,null,null,
 				ignore_interrupt,0
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_H6280,
 				21477200/16, /* 21.4772MHz clock */
-				robocop_sub_readmem,robocop_sub_writemem,0,0,
+				robocop_sub_readmem,robocop_sub_writemem,null,null,
 				ignore_interrupt,0
-			},
+			),
 		},
 		57.41, 529, /* 57.41 Hz, 529us Vblank */
-		50,	/* Interleave between HuC6280 & 68000 */
-		0,
+		50,	/* Interleave between HuC6280  68000 */
+		null,
 	
 		/* video hardware */
-		32*8, 32*8, { 0*8, 32*8-1, 1*8, 31*8-1 },
+		32*8, 32*8, new rectangle( 0*8, 32*8-1, 1*8, 31*8-1 ),
 	
 		gfxdecodeinfo,
-		1024, 0,
-		0,
+		1024, null,
+		null,
 	
 		VIDEO_TYPE_RASTER | VIDEO_NEEDS_6BITS_PER_GUN,
-		0,
+		null,
 		dec0_vh_start,
 		dec0_vh_stop,
 		robocop_vh_screenrefresh,
 	
 		/* sound hardware */
 		0,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_YM2203,
-				&ym2203_interface
-			},
-			{
+				ym2203_interface
+			),
+			new MachineSound(
 				SOUND_YM3812,
-				&ym3812_interface
-			},
-			{
+				ym3812_interface
+			),
+			new MachineSound(
 				SOUND_OKIM6295,
-				&okim6295_interface
-			}
+				okim6295_interface
+			)
 		}
-	};
+	);
 	
-	static const struct MachineDriver machine_driver_robocopb =
-	{
+	static MachineDriver machine_driver_robocopb = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_M68000,
 				10000000,
-				dec0_readmem,dec0_writemem,0,0,
+				dec0_readmem,dec0_writemem,null,null,
 				m68_level6_irq,1 /* VBL */
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_M6502 | CPU_AUDIO_CPU,
 				1500000,
-				dec0_s_readmem,dec0_s_writemem,0,0,
+				dec0_s_readmem,dec0_s_writemem,null,null,
 				ignore_interrupt,0
-			}
+			)
 		},
 		57.41, 529, /* 57.41 Hz, 529us Vblank */
 		1,	/* 1 CPU slice per frame - interleaving is forced when a sound command is written */
-		0,
+		null,
 	
 		/* video hardware */
-		32*8, 32*8, { 0*8, 32*8-1, 1*8, 31*8-1 },
+		32*8, 32*8, new rectangle( 0*8, 32*8-1, 1*8, 31*8-1 ),
 	
 		gfxdecodeinfo,
-		1024, 0,
-		0,
+		1024, null,
+		null,
 	
 		VIDEO_TYPE_RASTER | VIDEO_NEEDS_6BITS_PER_GUN,
-		0,
+		null,
 		dec0_vh_start,
 		dec0_vh_stop,
 		robocop_vh_screenrefresh,
 	
 		/* sound hardware */
 		0,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_YM2203,
-				&ym2203_interface
-			},
-			{
+				ym2203_interface
+			),
+			new MachineSound(
 				SOUND_YM3812,
-				&ym3812_interface
-			},
-			{
+				ym3812_interface
+			),
+			new MachineSound(
 				SOUND_OKIM6295,
-				&okim6295_interface
-			}
+				okim6295_interface
+			)
 		}
-	};
+	);
 	
-	static const struct MachineDriver machine_driver_hippodrm =
-	{
+	static MachineDriver machine_driver_hippodrm = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_M68000,
 				10000000,
-				dec0_readmem,dec0_writemem,0,0,
+				dec0_readmem,dec0_writemem,null,null,
 				m68_level6_irq,1 /* VBL */
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_M6502 | CPU_AUDIO_CPU,
 				1500000,
-				dec0_s_readmem,dec0_s_writemem,0,0,
+				dec0_s_readmem,dec0_s_writemem,null,null,
 				ignore_interrupt,0
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_H6280,
 				21477200/16, /* 21.4772MHz clock */
-				hippodrm_sub_readmem,hippodrm_sub_writemem,0,0,
+				hippodrm_sub_readmem,hippodrm_sub_writemem,null,null,
 				ignore_interrupt,0
-			}
+			)
 		},
 		57.41, 529, /* 57.41 Hz, 529us Vblank */
-		5,	/* Interleave between H6280 & 68000 */
-		0,
+		5,	/* Interleave between H6280  68000 */
+		null,
 	
 		/* video hardware */
-	  	32*8, 32*8, { 0*8, 32*8-1, 1*8, 31*8-1 },
+	  	32*8, 32*8, new rectangle( 0*8, 32*8-1, 1*8, 31*8-1 ),
 	
 		gfxdecodeinfo,
-		1024, 0,
-		0,
+		1024, null,
+		null,
 	
 		VIDEO_TYPE_RASTER | VIDEO_NEEDS_6BITS_PER_GUN,
-		0,
+		null,
 		dec0_vh_start,
 		dec0_vh_stop,
 		hippodrm_vh_screenrefresh,
 	
 		/* sound hardware */
 		0,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_YM2203,
-				&ym2203_interface
-			},
-			{
+				ym2203_interface
+			),
+			new MachineSound(
 				SOUND_YM3812,
-				&ym3812_interface
-			},
-			{
+				ym3812_interface
+			),
+			new MachineSound(
 				SOUND_OKIM6295,
-				&okim6295_interface
-			}
+				okim6295_interface
+			)
 		}
-	};
+	);
 	
-	static const struct MachineDriver machine_driver_slyspy =
-	{
+	static MachineDriver machine_driver_slyspy = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_M68000,
 				12000000,
-				slyspy_readmem,slyspy_writemem,0,0,
+				slyspy_readmem,slyspy_writemem,null,null,
 				m68_level6_irq,1 /* VBL */
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_H6280 | CPU_AUDIO_CPU,
 				3000000,
-				slyspy_s_readmem,slyspy_s_writemem,0,0,
+				slyspy_s_readmem,slyspy_s_writemem,null,null,
 				ignore_interrupt,0
-			}
+			)
 		},
 		57.41, 529, /* 57.41 Hz, 529us Vblank */
 		1,	/* 1 CPU slice per frame - interleaving is forced when a sound command is written */
-		0,
+		null,
 	
 		/* video hardware */
-	 	32*8, 32*8, { 0*8, 32*8-1, 1*8, 31*8-1 },
+	 	32*8, 32*8, new rectangle( 0*8, 32*8-1, 1*8, 31*8-1 ),
 	
 		gfxdecodeinfo,
-		1024, 0,
-		0,
+		1024, null,
+		null,
 	
 		VIDEO_TYPE_RASTER,
-		0,
+		null,
 		dec0_nodma_vh_start,
 		dec0_nodma_vh_stop,
 		slyspy_vh_screenrefresh,
 	
 		/* sound hardware */
 		0,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_YM2203,
-				&ym2203_interface
-			},
-			{
+				ym2203_interface
+			),
+			new MachineSound(
 				SOUND_YM3812,
-				&ym3812b_interface
-			},
-			{
+				ym3812b_interface
+			),
+			new MachineSound(
 				SOUND_OKIM6295,
-				&okim6295_interface
-			}
+				okim6295_interface
+			)
 		}
-	};
+	);
 	
-	static const struct MachineDriver machine_driver_midres =
-	{
+	static MachineDriver machine_driver_midres = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_M68000,
 				12000000,
-				midres_readmem,midres_writemem,0,0,
+				midres_readmem,midres_writemem,null,null,
 				m68_level6_irq,1 /* VBL */
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_H6280 | CPU_AUDIO_CPU,
 				3000000,
-				midres_s_readmem,midres_s_writemem,0,0,
+				midres_s_readmem,midres_s_writemem,null,null,
 				ignore_interrupt,0
-			}
+			)
 		},
 		57.41, 529, /* 57.41 Hz, 529us Vblank */
 		1,	/* 1 CPU slice per frame - interleaving is forced when a sound command is written */
-		0,
+		null,
 	
 		/* video hardware */
-		32*8, 32*8, { 0*8, 32*8-1, 1*8, 31*8-1 },
+		32*8, 32*8, new rectangle( 0*8, 32*8-1, 1*8, 31*8-1 ),
 	
 		midres_gfxdecodeinfo,
-		1024, 0,
-		0,
+		1024, null,
+		null,
 	
 		VIDEO_TYPE_RASTER,
-		0,
+		null,
 		dec0_nodma_vh_start,
 		dec0_nodma_vh_stop,
 		midres_vh_screenrefresh,
 	
 		/* sound hardware */
 		0,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_YM2203,
-				&ym2203_interface
-			},
-			{
+				ym2203_interface
+			),
+			new MachineSound(
 				SOUND_YM3812,
-				&ym3812b_interface
-			},
-			{
+				ym3812b_interface
+			),
+			new MachineSound(
 				SOUND_OKIM6295,
-				&okim6295_interface
-			}
+				okim6295_interface
+			)
 		}
-	};
+	);
 	
 	/******************************************************************************/
 	

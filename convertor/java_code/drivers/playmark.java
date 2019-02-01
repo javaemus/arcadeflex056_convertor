@@ -472,81 +472,81 @@ public class playmark
 	
 	
 	
-	static const struct MachineDriver machine_driver_bigtwin =
-	{
+	static MachineDriver machine_driver_bigtwin = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_M68000,
 				12000000,	/* 12 MHz? */
-				bigtwin_readmem,bigtwin_writemem,0,0,
+				bigtwin_readmem,bigtwin_writemem,null,null,
 				m68_level2_irq,1
-			}
+			)
 		},
 		60, DEFAULT_60HZ_VBLANK_DURATION,	/* frames per second, vblank duration */
 		1,	/* single CPU, no need for interleaving */
-		0,
+		null,
 	
 		/* video hardware */
-		64*8, 32*8, { 0*8, 40*8-1, 2*8, 32*8-1 },
+		64*8, 32*8, new rectangle( 0*8, 40*8-1, 2*8, 32*8-1 ),
 		gfxdecodeinfo,
-		1024, 0,
-		0,
+		1024, null,
+		null,
 	
 		VIDEO_TYPE_RASTER,
-		0,
+		null,
 		bigtwin_vh_start,
 		bigtwin_vh_stop,
 		bigtwin_vh_screenrefresh,
 	
 		/* sound hardware */
 		0,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_OKIM6295,
-				&okim6295_interface
-			}
+				okim6295_interface
+			)
 		}
-	};
+	);
 	
-	static const struct MachineDriver machine_driver_wbeachvl =
-	{
+	static MachineDriver machine_driver_wbeachvl = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_M68000,
 				12000000,	/* 12 MHz? */
-				wbeachvl_readmem,wbeachvl_writemem,0,0,
+				wbeachvl_readmem,wbeachvl_writemem,null,null,
 				m68_level2_irq,1
-			}
+			)
 		},
 		60, DEFAULT_REAL_60HZ_VBLANK_DURATION,	/* frames per second, vblank duration */
 		1,	/* single CPU, no need for interleaving */
-		0,
+		null,
 	
 		/* video hardware */
-		64*8, 32*8, { 0*8, 40*8-1, 2*8, 32*8-1 },
+		64*8, 32*8, new rectangle( 0*8, 40*8-1, 2*8, 32*8-1 ),
 		wbeachvl_gfxdecodeinfo,
-		2048, 0,
-		0,
+		2048, null,
+		null,
 	
 		VIDEO_TYPE_RASTER,
-		0,
+		null,
 		wbeachvl_vh_start,
 		0,
 		wbeachvl_vh_screenrefresh,
 	
 		/* sound hardware */
 		0,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_OKIM6295,
-				&okim6295_interface
-			}
+				okim6295_interface
+			)
 		},
 	
 		wbeachvl_nvram_handler
-	};
+	);
 	
 	
 	/***************************************************************************

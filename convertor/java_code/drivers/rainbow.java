@@ -535,92 +535,92 @@ public class rainbow
 				     MACHINE DRIVERS
 	***********************************************************/
 	
-	static const struct MachineDriver machine_driver_rainbow =
-	{
+	static MachineDriver machine_driver_rainbow = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_M68000,
 				8000000,	/* 8 MHz */
-				rainbow_readmem,rainbow_writemem,0,0,
+				rainbow_readmem,rainbow_writemem,null,null,
 				rainbow_interrupt,1
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_Z80,
 				4000000,	/* 4 MHz */
-				rainbow_s_readmem,rainbow_s_writemem,0,0,
+				rainbow_s_readmem,rainbow_s_writemem,null,null,
 				ignore_interrupt,1
-			}
+			)
 		},
 		60, DEFAULT_60HZ_VBLANK_DURATION,	/* frames per second, vblank duration */
 		10,	/* 10 CPU slices per frame - enough for the sound CPU to read all commands */
-		0,
+		null,
 	
 		/* video hardware */
-		40*8, 32*8, { 0*8, 40*8-1, 1*8, 31*8-1 }, /* is Y visible correct ? */
+		40*8, 32*8, new rectangle( 0*8, 40*8-1, 1*8, 31*8-1 ), /* is Y visible correct ? */
 		rainbow_gfxdecodeinfo,
-		8192, 0,
-		0,
+		8192, null,
+		null,
 	
 		VIDEO_TYPE_RASTER,
-		0,
+		null,
 		rainbow_vh_start,
 		rastan_vh_stop,
 		rainbow_vh_screenrefresh,
 	
 		/* sound hardware */
 		0,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 	  			SOUND_YM2151,
-				&ym2151_interface
-			},
+				ym2151_interface
+			),
 		}
-	};
+	);
 	
 	
-	static const struct MachineDriver machine_driver_jumping =
-	{
+	static MachineDriver machine_driver_jumping = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_M68000,
 				8000000,	/* 8 MHz */
-				jumping_readmem,jumping_writemem,0,0,
+				jumping_readmem,jumping_writemem,null,null,
 				rainbow_interrupt,1
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_Z80,
 				4000000,	/* 4 MHz */
-				jumping_sound_readmem,jumping_sound_writemem,0,0,
+				jumping_sound_readmem,jumping_sound_writemem,null,null,
 				ignore_interrupt,1
-			}
+			)
 		},
 		60, DEFAULT_60HZ_VBLANK_DURATION,	/* frames per second, vblank duration */
 		10,	/* 10 CPU slices per frame - enough ? */
-		0,
+		null,
 	
 		/* video hardware */
-		40*8, 32*8, { 0*8, 40*8-1, 1*8, 31*8-1 }, /* is Y visible correct ? */
+		40*8, 32*8, new rectangle( 0*8, 40*8-1, 1*8, 31*8-1 ), /* is Y visible correct ? */
 		jumping_gfxdecodeinfo,
-		8192, 0,
-		0,
+		8192, null,
+		null,
 	
 		VIDEO_TYPE_RASTER,
-		0,
+		null,
 		jumping_vh_start,
 		rastan_vh_stop,
 		jumping_vh_screenrefresh,
 	
 		/* sound hardware */
 		0,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_YM2203,
-				&ym2203_interface
-			}
+				ym2203_interface
+			)
 		}
-	};
+	);
 	
 	
 	/***************************************************************************

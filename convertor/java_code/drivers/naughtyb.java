@@ -277,29 +277,29 @@ public class naughtyb
 	
 	
 	
-	static const struct MachineDriver machine_driver_naughtyb =
-	{
+	static MachineDriver machine_driver_naughtyb = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_Z80,
 				1500000,	/* 3 MHz ? */
-				readmem,writemem,0,0,
+				readmem,writemem,null,null,
 				naughtyb_interrupt,1
-			}
+			)
 		},
 		60, DEFAULT_REAL_60HZ_VBLANK_DURATION,	/* frames per second, vblank duration */
 		1,	/* single CPU, no need for interleaving */
-		0,
+		null,
 	
 		/* video hardware */
-		36*8, 28*8, { 0*8, 36*8-1, 0*8, 28*8-1 },
+		36*8, 28*8, new rectangle( 0*8, 36*8-1, 0*8, 28*8-1 ),
 		gfxdecodeinfo,
 		256,32*4+32*4,
 		naughtyb_vh_convert_color_prom,
 	
 		VIDEO_TYPE_RASTER,
-		0,
+		null,
 		naughtyb_vh_start,
 		naughtyb_vh_stop,
 		naughtyb_vh_screenrefresh,
@@ -307,42 +307,42 @@ public class naughtyb
 		/* sound hardware */
 		/* uses the TMS3615NS for sound */
 		0,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_TMS36XX,
-				&tms3615_interface
-			},
-			{
+				tms3615_interface
+			),
+			new MachineSound(
 				SOUND_CUSTOM,
-				&naughtyb_custom_interface
-			}
+				naughtyb_custom_interface
+			)
 		}
-	};
+	);
 	
 	/* Exactly the same but for the writemem handler */
-	static const struct MachineDriver machine_driver_popflame =
-	{
+	static MachineDriver machine_driver_popflame = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_Z80,
 				1500000,	/* 3 MHz ? */
-				readmem,popflame_writemem,0,0,
+				readmem,popflame_writemem,null,null,
 				naughtyb_interrupt,1
-			}
+			)
 		},
 		60, DEFAULT_REAL_60HZ_VBLANK_DURATION,	/* frames per second, vblank duration */
 		1,	/* single CPU, no need for interleaving */
-		0,
+		null,
 	
 		/* video hardware */
-		36*8, 28*8, { 0*8, 36*8-1, 0*8, 28*8-1 },
+		36*8, 28*8, new rectangle( 0*8, 36*8-1, 0*8, 28*8-1 ),
 		gfxdecodeinfo,
 		256,32*4+32*4,
 		naughtyb_vh_convert_color_prom,
 	
 		VIDEO_TYPE_RASTER,
-		0,
+		null,
 		naughtyb_vh_start,
 		naughtyb_vh_stop,
 		naughtyb_vh_screenrefresh,
@@ -350,17 +350,17 @@ public class naughtyb
 		/* sound hardware */
 		/* uses the TMS3615NS for sound */
 		0,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_TMS36XX,
-				&tms3615_interface
-			},
-			{
+				tms3615_interface
+			),
+			new MachineSound(
 				SOUND_CUSTOM,
-				&popflame_custom_interface
-			}
+				popflame_custom_interface
+			)
 		}
-	};
+	);
 	
 	
 	

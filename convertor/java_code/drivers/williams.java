@@ -1316,22 +1316,22 @@ public class williams
 	 *
 	 *************************************/
 	
-	static const struct MachineDriver machine_driver_defender =
-	{
+	static MachineDriver machine_driver_defender = new MachineDriver
+	(
 		/* basic machine hardware  */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_M6809,
 				1000000,
-				defender_readmem,defender_writemem,0,0,
+				defender_readmem,defender_writemem,null,null,
 				ignore_interrupt,1
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_M6808 | CPU_AUDIO_CPU,
 				3579000/4,
-				sound_readmem,sound_writemem,0,0,
+				sound_readmem,sound_writemem,null,null,
 				ignore_interrupt,1
-			}
+			)
 		},
 		60, DEFAULT_60HZ_VBLANK_DURATION,
 		1,
@@ -1339,46 +1339,46 @@ public class williams
 	
 		/* video hardware */
 		304, 256,
-		{ 6, 298-1, 7, 247-1 },
-		0,
-		16, 0,
-		0,
+		new rectangle( 6, 298-1, 7, 247-1 ),
+		null,
+		16, null,
+		null,
 	
 		VIDEO_TYPE_RASTER | VIDEO_SUPPORTS_DIRTY,
-		0,
+		null,
 		williams_vh_start,
 		williams_vh_stop,
 		williams_vh_screenrefresh,
 	
 		/* sound hardware */
 		0,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_DAC,
-				&dac_interface
-			}
+				dac_interface
+			)
 		},
 	
 		nvram_handler
-	};
+	);
 	
 	
-	static const struct MachineDriver machine_driver_williams =
-	{
+	static MachineDriver machine_driver_williams = new MachineDriver
+	(
 		/* basic machine hardware  */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_M6809,
 				1000000,
-				williams_readmem,williams_writemem,0,0,
+				williams_readmem,williams_writemem,null,null,
 				ignore_interrupt,1
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_M6808 | CPU_AUDIO_CPU,
 				3579000/4,
-				sound_readmem,sound_writemem,0,0,
+				sound_readmem,sound_writemem,null,null,
 				ignore_interrupt,1
-			}
+			)
 		},
 		60, DEFAULT_60HZ_VBLANK_DURATION,
 		1,
@@ -1386,46 +1386,46 @@ public class williams
 	
 		/* video hardware */
 		304, 256,
-		{ 6, 298-1, 7, 247-1 },
-		0,
-		16, 0,
-		0,
+		new rectangle( 6, 298-1, 7, 247-1 ),
+		null,
+		16, null,
+		null,
 	
 		VIDEO_TYPE_RASTER | VIDEO_SUPPORTS_DIRTY,
-		0,
+		null,
 		williams_vh_start,
 		williams_vh_stop,
 		williams_vh_screenrefresh,
 	
 		/* sound hardware */
 		0,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_DAC,
-				&dac_interface
-			}
+				dac_interface
+			)
 		},
 	
 		nvram_handler
-	};
+	);
 	
 	
-	static const struct MachineDriver machine_driver_sinistar =
-	{
+	static MachineDriver machine_driver_sinistar = new MachineDriver
+	(
 		/* basic machine hardware  */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_M6809,
 				1000000,
-				williams_readmem,williams_writemem,0,0,
+				williams_readmem,williams_writemem,null,null,
 				ignore_interrupt,1
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_M6808 | CPU_AUDIO_CPU,
 				3579000/4,
-				sound_readmem,sound_writemem,0,0,
+				sound_readmem,sound_writemem,null,null,
 				ignore_interrupt,1
-			}
+			)
 		},
 		60, DEFAULT_60HZ_VBLANK_DURATION,
 		1,
@@ -1433,50 +1433,50 @@ public class williams
 	
 		/* video hardware */
 		304, 256,
-		{ 6, 298-1, 7, 247-1 },
-		0,
-		16, 0,
-		0,
+		new rectangle( 6, 298-1, 7, 247-1 ),
+		null,
+		16, null,
+		null,
 	
 		VIDEO_TYPE_RASTER | VIDEO_SUPPORTS_DIRTY,
-		0,
+		null,
 		williams_vh_start,
 		williams_vh_stop,
 		williams_vh_screenrefresh,
 	
 		/* sound hardware */
 		0,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_DAC,
-				&dac_interface
-			},
-			{
+				dac_interface
+			),
+			new MachineSound(
 				SOUND_HC55516,
-				&sinistar_cvsd_interface
-			}
+				sinistar_cvsd_interface
+			)
 		},
 	
 		nvram_handler
-	};
+	);
 	
 	
-	static const struct MachineDriver machine_driver_blaster =
-	{
+	static MachineDriver machine_driver_blaster = new MachineDriver
+	(
 		/* basic machine hardware  */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_M6809,
 				1000000,
-				blaster_readmem,blaster_writemem,0,0,
+				blaster_readmem,blaster_writemem,null,null,
 				ignore_interrupt,1
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_M6808 | CPU_AUDIO_CPU,
 				3579000/4,
-				sound_readmem,sound_writemem,0,0,
+				sound_readmem,sound_writemem,null,null,
 				ignore_interrupt,1
-			}
+			)
 		},
 		60, DEFAULT_60HZ_VBLANK_DURATION,
 		1,
@@ -1484,46 +1484,46 @@ public class williams
 	
 		/* video hardware */
 		304, 256,
-		{ 6, 298-1, 7, 247-1 },
-		0,
-		16+240, 0,
-		0,
+		new rectangle( 6, 298-1, 7, 247-1 ),
+		null,
+		16+240, null,
+		null,
 	
 		VIDEO_TYPE_RASTER,
-		0,
+		null,
 		blaster_vh_start,
 		williams_vh_stop,
 		williams_vh_screenrefresh,
 	
 		/* sound hardware */
 		0,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_DAC,
-				&dac_interface
-			}
+				dac_interface
+			)
 		},
 	
 		nvram_handler
-	};
+	);
 	
 	
-	static const struct MachineDriver machine_driver_williams2 =
-	{
+	static MachineDriver machine_driver_williams2 = new MachineDriver
+	(
 		/* basic machine hardware  */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_M6809,
 				1000000,
-				williams2_readmem,williams2_writemem,0,0,
+				williams2_readmem,williams2_writemem,null,null,
 				ignore_interrupt,1
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_M6808 | CPU_AUDIO_CPU,
 				3579000/4,
-				williams2_sound_readmem,williams2_sound_writemem,0,0,
+				williams2_sound_readmem,williams2_sound_writemem,null,null,
 				ignore_interrupt,1
-			}
+			)
 		},
 		60, DEFAULT_60HZ_VBLANK_DURATION,
 		1,
@@ -1531,46 +1531,46 @@ public class williams
 	
 		/* video hardware */
 		288, 256,
-		{ 4, 288-1, 8, 248-1 },
+		new rectangle( 4, 288-1, 8, 248-1 ),
 		williams2_gfxdecodeinfo,
-		16+8*16, 0,
-		0,
+		16+8*16, null,
+		null,
 	
 		VIDEO_TYPE_RASTER,
-		0,
+		null,
 		williams2_vh_start,
 		williams2_vh_stop,
 		williams2_vh_screenrefresh,
 	
 		/* sound hardware */
 		0,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_DAC,
-				&dac_interface
-			}
+				dac_interface
+			)
 		},
 	
 		nvram_handler
-	};
+	);
 	
 	
-	static const struct MachineDriver machine_driver_joust2 =
-	{
+	static MachineDriver machine_driver_joust2 = new MachineDriver
+	(
 		/* basic machine hardware  */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_M6809,
 				1000000,
-				williams2_readmem,williams2_writemem,0,0,
+				williams2_readmem,williams2_writemem,null,null,
 				ignore_interrupt,1
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_M6808 | CPU_AUDIO_CPU,
 				3579000/4,
-				williams2_sound_readmem,williams2_sound_writemem,0,0,
+				williams2_sound_readmem,williams2_sound_writemem,null,null,
 				ignore_interrupt,1
-			},
+			),
 			SOUND_CPU_WILLIAMS_CVSD
 		},
 		60, DEFAULT_60HZ_VBLANK_DURATION,
@@ -1579,25 +1579,25 @@ public class williams
 	
 		/* video hardware */
 		288, 256,
-		{ 4, 288-1, 8, 248-1 },
+		new rectangle( 4, 288-1, 8, 248-1 ),
 		williams2_gfxdecodeinfo,
-		16+8*16, 0,
-		0,
+		16+8*16, null,
+		null,
 	
 		VIDEO_TYPE_RASTER,
-		0,
+		null,
 		williams2_vh_start,
 		williams2_vh_stop,
 		williams2_vh_screenrefresh,
 	
 		/* sound hardware */
 		0,0,0,0,
-		{
+		new MachineSound[] {
 			SOUND_WILLIAMS_CVSD
 		},
 	
 		nvram_handler
-	};
+	);
 	
 	
 	

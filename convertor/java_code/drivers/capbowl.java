@@ -352,54 +352,54 @@ public class capbowl
 	
 	#define MACHINEDRIVER(NAME, VISIBLE_Y)						\
 																\
-	static const struct MachineDriver machine_driver_##NAME =	\
-	{															\
+	static MachineDriver machine_driver_##NAME = new MachineDriver\
+	(															\
 		/* basic machine hardware */   							\
-		{														\
-			{													\
+		new MachineCPU[] {														\
+			new MachineCPU(													\
 				CPU_M6809,										\
 				2000000,										\
-				NAME##_readmem,writemem,0,0,					\
+				NAME##_readmem,writemem,null,null,					\
 				capbowl_interrupt,1,							\
-			},													\
-			{													\
+			),													\
+			new MachineCPU(													\
 				CPU_M6809 | CPU_AUDIO_CPU,						\
 				2000000,										\
-				sound_readmem,sound_writemem,0,0,				\
+				sound_readmem,sound_writemem,null,null,				\
 				ignore_interrupt,1								\
-			}													\
+			)													\
 		},														\
 		57, 5000,												\
 		1,														\
 		capbowl_init_machine,									\
 																\
 		/* video hardware */									\
-		360, 256, { 0, 359, 0, VISIBLE_Y },						\
-		0,														\
-		4096, 0,												\
-		0,														\
+		360, 256, new rectangle( 0, 359, 0, VISIBLE_Y ),						\
+		null,														\
+		4096, null,												\
+		null,														\
 																\
 		VIDEO_TYPE_RASTER,				\
-		0,														\
+		null,														\
 		capbowl_vh_start,										\
 		capbowl_vh_stop,										\
 		capbowl_vh_screenrefresh,								\
 																\
 		/* sound hardware */									\
 		0,0,0,0,												\
-		{														\
-			{													\
+		new MachineSound[] {														\
+			new MachineSound(													\
 				SOUND_YM2203,									\
-				&ym2203_interface								\
-			},													\
-			{													\
+				ym2203_interface								\
+			),													\
+			new MachineSound(													\
 				SOUND_DAC,										\
-				&dac_interface									\
-			}													\
+				dac_interface									\
+			)													\
 		},														\
 																\
 		nvram_handler											\
-	};
+	);
 	
 	
 	MACHINEDRIVER(capbowl,  244)

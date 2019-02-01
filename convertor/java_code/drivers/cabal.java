@@ -557,95 +557,95 @@ public class cabal
 	
 	
 	
-	static const struct MachineDriver machine_driver_cabal =
-	{
-		{
-			{
+	static MachineDriver machine_driver_cabal = new MachineDriver
+	(
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_M68000,
 				12000000, /* 12 MHz */
-				readmem_cpu,writemem_cpu,0,0,
+				readmem_cpu,writemem_cpu,null,null,
 				m68_level1_irq,1
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_Z80 | CPU_AUDIO_CPU,
 				4000000,	/* 4 MHz */
-				readmem_sound,writemem_sound,0,0,
+				readmem_sound,writemem_sound,null,null,
 				ignore_interrupt,0
-			},
+			),
 		},
 		60, DEFAULT_REAL_60HZ_VBLANK_DURATION,
 		1, /* CPU slices per frame */
 		seibu_sound_init_1, /* init machine */
 	
 		/* video hardware */
-		256, 256, { 0*8, 32*8-1, 2*8, 30*8-1 },
+		256, 256, new rectangle( 0*8, 32*8-1, 2*8, 30*8-1 ),
 	
 		cabal_gfxdecodeinfo,
-		1024, 0,
-		0,
+		1024, null,
+		null,
 	
 		VIDEO_TYPE_RASTER,
-		0,
+		null,
 		cabal_vh_start,
-		0,
+		null,
 		cabal_vh_screenrefresh,
 	
 		/* sound hardware */
 		SOUND_SUPPORTS_STEREO,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_YM2151,//_ALT,
-				&ym2151_interface
-			}
+				ym2151_interface
+			)
 		}
-	};
+	);
 	
-	static const struct MachineDriver machine_driver_cabalbl =
-	{
-		{
-			{
+	static MachineDriver machine_driver_cabalbl = new MachineDriver
+	(
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_M68000,
 				12000000, /* 12 MHz */
-				cabalbl_readmem_cpu,cabalbl_writemem_cpu,0,0,
+				cabalbl_readmem_cpu,cabalbl_writemem_cpu,null,null,
 				m68_level1_irq,1
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_Z80 | CPU_AUDIO_CPU,
 				4000000,	/* 4 MHz */
-				cabalbl_readmem_sound,cabalbl_writemem_sound,0,0,
+				cabalbl_readmem_sound,cabalbl_writemem_sound,null,null,
 				ignore_interrupt,0
-			},
+			),
 		},
 		60, DEFAULT_REAL_60HZ_VBLANK_DURATION,
 		10, /* CPU slices per frame */
 		cabalbl_init_machine, /* init machine */
 	
 		/* video hardware */
-		256, 256, { 0*8, 32*8-1, 2*8, 30*8-1 },
+		256, 256, new rectangle( 0*8, 32*8-1, 2*8, 30*8-1 ),
 	
 		cabal_gfxdecodeinfo,
-		1024, 0,
-		0,
+		1024, null,
+		null,
 	
 		VIDEO_TYPE_RASTER,
-		0,
+		null,
 		cabal_vh_start,
-		0,
+		null,
 		cabal_vh_screenrefresh,
 	
 		/* sound hardware */
 		SOUND_SUPPORTS_STEREO,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_YM2151,//_ALT,
-				&cabalbl_ym2151_interface
-			},
-			{
+				cabalbl_ym2151_interface
+			),
+			new MachineSound(
 				SOUND_ADPCM,
-				&adpcm_interface
-			}
+				adpcm_interface
+			)
 		}
-	};
+	);
 	
 	
 	

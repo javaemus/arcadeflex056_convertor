@@ -475,16 +475,16 @@ public class beathead
 	 *
 	 *************************************/
 	
-	static const struct MachineDriver machine_driver_beathead =
-	{
+	static MachineDriver machine_driver_beathead = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_ASAP,			/* verified */
 				ATARI_CLOCK_14MHz,
-				readmem,writemem,0,0,
+				readmem,writemem,null,null,
 				ignore_interrupt,1
-			},
+			),
 			JSA_III_CPU
 		},
 		60, (int)(((262. - 240.) / 262.) * 1000000. / 60.),
@@ -492,13 +492,13 @@ public class beathead
 		init_machine,
 	
 		/* video hardware */
-		42*8, 30*8, { 0*8, 42*8-1, 0*8, 30*8-1 },
-		0,
-		0x8000, 0,
-		0,
+		42*8, 30*8, new rectangle( 0*8, 42*8-1, 0*8, 30*8-1 ),
+		null,
+		0x8000, null,
+		null,
 	
 		VIDEO_TYPE_RASTER  | VIDEO_NEEDS_6BITS_PER_GUN | VIDEO_UPDATE_BEFORE_VBLANK,
-		0,
+		null,
 		beathead_vh_start,
 		beathead_vh_stop,
 		beathead_vh_screenrefresh,
@@ -506,7 +506,7 @@ public class beathead
 		/* sound hardware */
 		JSA_III_MONO(REGION_SOUND1),
 		nvram_handler
-	};
+	);
 	
 	
 	

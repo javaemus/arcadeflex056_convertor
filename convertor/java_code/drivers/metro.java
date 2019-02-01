@@ -3018,90 +3018,90 @@ public class metro
 	
 	***************************************************************************/
 	
-	static const struct MachineDriver machine_driver_balcube =
-	{
-		{
-			{
+	static MachineDriver machine_driver_balcube = new MachineDriver
+	(
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_M68000,
 				16000000,
-				balcube_readmem, balcube_writemem,0,0,
+				balcube_readmem, balcube_writemem,null,null,
 				metro_interrupt, 10	/* ? */
-			},
+			),
 		},
 		60,DEFAULT_60HZ_VBLANK_DURATION,
 		1,
 		metro_init_machine,
 	
 		/* video hardware */
-		320, 224, { 0, 320-1, 0, 224-1 },
+		320, 224, new rectangle( 0, 320-1, 0, 224-1 ),
 		gfxdecodeinfo_14220,
-		8192, 0,
-		0,
+		8192, null,
+		null,
 		VIDEO_TYPE_RASTER,
-		0,
+		null,
 		metro_vh_start_14220,
 		metro_vh_stop,
 		metro_vh_screenrefresh,
 	
 		/* sound hardware */
 		SOUND_SUPPORTS_STEREO,0,0,0,
-		{
-			{ 0 },	/* YMF278B (unemulated) + YRW801-M (Standard Samples ROM) */
+		new MachineSound[] {
+			new MachineSound( 0 ),	/* YMF278B (unemulated) + YRW801-M (Standard Samples ROM) */
 		},
-	};
+	);
 	
 	
-	static const struct MachineDriver machine_driver_bangball =
-	{
-		{
-			{
+	static MachineDriver machine_driver_bangball = new MachineDriver
+	(
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_M68000,
 				16000000,
-				bangball_readmem, bangball_writemem,0,0,
+				bangball_readmem, bangball_writemem,null,null,
 				bangball_interrupt, 1
-			},
+			),
 		},
 		60,DEFAULT_60HZ_VBLANK_DURATION,
 		1,
 		metro_init_machine,
 	
 		/* video hardware */
-		320, 224, { 0, 320-1, 0, 224-1 },
+		320, 224, new rectangle( 0, 320-1, 0, 224-1 ),
 		gfxdecodeinfo_14220,
-		8192, 0,
-		0,
+		8192, null,
+		null,
 		VIDEO_TYPE_RASTER,
-		0,
+		null,
 		metro_vh_start_14220,
 		metro_vh_stop,
 		metro_vh_screenrefresh,
 	
 		/* sound hardware */
 		SOUND_SUPPORTS_STEREO,0,0,0,
-		{
-			{ 0 },	/* YMF278B (unemulated) + YRW801-M (Standard Samples ROM) */
+		new MachineSound[] {
+			new MachineSound( 0 ),	/* YMF278B (unemulated) + YRW801-M (Standard Samples ROM) */
 		},
-	};
+	);
 	
 	
-	static const struct MachineDriver machine_driver_daitorid =
-	{
-		{
-			{
+	static MachineDriver machine_driver_daitorid = new MachineDriver
+	(
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_M68000,
 				16000000,
-				daitorid_readmem, daitorid_writemem,0,0,
+				daitorid_readmem, daitorid_writemem,null,null,
 				metro_interrupt, 10	/* ? */
-			},
+			),
 	#ifdef TEST_SOUND
-			{
+			new MachineCPU(
 				CPU_UPD7810,
 				12000000,
 				upd7810_readmem, upd7810_writemem, upd7810_readport, upd7810_writeport,
 				ignore_interrupt, 0,
 				0, 0,
 				(void *)metro_io_callback
-	        }
+	        )
 	#endif
 		},
 		60,DEFAULT_60HZ_VBLANK_DURATION,
@@ -3109,12 +3109,12 @@ public class metro
 		metro_init_machine,
 	
 		/* video hardware */
-		320, 224, { 0, 320-1, 0, 224-1 },
+		320, 224, new rectangle( 0, 320-1, 0, 224-1 ),
 		gfxdecodeinfo_14220,
-		8192, 0,
-		0,
+		8192, null,
+		null,
 		VIDEO_TYPE_RASTER,
-		0,
+		null,
 		metro_vh_start_14220,
 		metro_vh_stop,
 		metro_vh_screenrefresh,
@@ -3122,23 +3122,23 @@ public class metro
 		/* sound hardware */
 		SOUND_SUPPORTS_STEREO,0,0,0,
 	#ifdef TEST_SOUND
-		{
-	        {   SOUND_YM2151,   &daitorid_ym2151_interface      },
-			{	SOUND_OKIM6295, &okim6295_interface	}
+		new MachineSound[] {
+	        new MachineSound(   SOUND_YM2151,   daitorid_ym2151_interface      ),
+			new MachineSound(	SOUND_OKIM6295, okim6295_interface	)
 		},
 	#endif
-	};
+	);
 	
 	
-	static const struct MachineDriver machine_driver_dharma =
-	{
-		{
-			{
+	static MachineDriver machine_driver_dharma = new MachineDriver
+	(
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_M68000,
 				12000000,
-				dharma_readmem, dharma_writemem,0,0,
+				dharma_readmem, dharma_writemem,null,null,
 				metro_interrupt, 10	/* ? */
-			},
+			),
 	
 			/* Sound CPU is unemulated */
 		},
@@ -3147,34 +3147,34 @@ public class metro
 		metro_init_machine,
 	
 		/* video hardware */
-		320, 224, { 0, 320-1, 0, 224-1 },
+		320, 224, new rectangle( 0, 320-1, 0, 224-1 ),
 		gfxdecodeinfo_14100,
-		8192, 0,
-		0,
+		8192, null,
+		null,
 		VIDEO_TYPE_RASTER,
-		0,
+		null,
 		metro_vh_start_14100,
 		metro_vh_stop,
 		metro_vh_screenrefresh,
 	
 		/* sound hardware */
 		SOUND_SUPPORTS_STEREO,0,0,0,
-		{
-			{ 0 },	// M6295
+		new MachineSound[] {
+			new MachineSound( 0 ),	// M6295
 		},
-	};
+	);
 	
 	
-	static const struct MachineDriver machine_driver_karatour =
-	{
-		{
-			{
+	static MachineDriver machine_driver_karatour = new MachineDriver
+	(
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_M68000,
 				12000000,
-				karatour_readmem, karatour_writemem,0,0,
+				karatour_readmem, karatour_writemem,null,null,
 	//			metro_interrupt, 10	/* ? */
 				karatour_interrupt, 10	/* ? */
-			},
+			),
 	
 			/* Sound CPU is unemulated */
 		},
@@ -3183,33 +3183,33 @@ public class metro
 		metro_init_machine,
 	
 		/* video hardware */
-		320, 240, { 0, 320-1, 0, 240-1 },
+		320, 240, new rectangle( 0, 320-1, 0, 240-1 ),
 		gfxdecodeinfo_14100,
-		8192, 0,
-		0,
+		8192, null,
+		null,
 		VIDEO_TYPE_RASTER,
-		0,
+		null,
 		metro_vh_start_14100,
 		metro_vh_stop,
 		metro_vh_screenrefresh,
 	
 		/* sound hardware */
 		SOUND_SUPPORTS_STEREO,0,0,0,
-		{
-			{ 0 },	// M6295, YM2413
+		new MachineSound[] {
+			new MachineSound( 0 ),	// M6295, YM2413
 		},
-	};
+	);
 	
 	
-	static const struct MachineDriver machine_driver_lastfort =
-	{
-		{
-			{
+	static MachineDriver machine_driver_lastfort = new MachineDriver
+	(
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_M68000,
 				12000000,
-				lastfort_readmem, lastfort_writemem,0,0,
+				lastfort_readmem, lastfort_writemem,null,null,
 				metro_interrupt, 10	/* ? */
-			},
+			),
 	
 			/* Sound CPU is unemulated */
 		},
@@ -3218,55 +3218,55 @@ public class metro
 		metro_init_machine,
 	
 		/* video hardware */
-		360, 224, { 0, 360-1, 0, 224-1 },
+		360, 224, new rectangle( 0, 360-1, 0, 224-1 ),
 		gfxdecodeinfo_14100,
-		8192, 0,
-		0,
+		8192, null,
+		null,
 		VIDEO_TYPE_RASTER,
-		0,
+		null,
 		metro_vh_start_14100,
 		metro_vh_stop,
 		metro_vh_screenrefresh,
 	
 		/* sound hardware */
 		SOUND_SUPPORTS_STEREO,0,0,0,
-		{
-			{ 0 },	// M6295, YM2413
+		new MachineSound[] {
+			new MachineSound( 0 ),	// M6295, YM2413
 		},
-	};
+	);
 	
-	static const struct MachineDriver machine_driver_dokyusei =
-	{
-		{
-			{
+	static MachineDriver machine_driver_dokyusei = new MachineDriver
+	(
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_M68000,
 				16000000,
-				dokyusei_readmem, dokyusei_writemem,0,0,
+				dokyusei_readmem, dokyusei_writemem,null,null,
 				dokyusei_interrupt, 2	/* ? */
-			},
+			),
 		},
 		60,DEFAULT_60HZ_VBLANK_DURATION,
 		1,
 		metro_init_machine,
 	
 		/* video hardware */
-		320, 256-32, { 0, 320-1, 0, 256-32-1 },
+		320, 256-32, new rectangle( 0, 320-1, 0, 256-32-1 ),
 		gfxdecodeinfo_14300,
-		8192, 0,
-		0,
+		8192, null,
+		null,
 		VIDEO_TYPE_RASTER,
-		0,
+		null,
 		metro_vh_start_14300,
 		metro_vh_stop,
 		metro_vh_screenrefresh,
 	
 		/* sound hardware */
 		SOUND_SUPPORTS_STEREO,0,0,0,
-		{
-			{	SOUND_OKIM6295,	&okim6295_intf_8kHz	},
-			{	SOUND_YM2413,	&ym2413_intf_8MHz	},
+		new MachineSound[] {
+			new MachineSound(	SOUND_OKIM6295,	okim6295_intf_8kHz	),
+			new MachineSound(	SOUND_YM2413,	ym2413_intf_8MHz	),
 		}
-	};
+	);
 	
 	void dokyusp_nvram_handler(void *file,int read_or_write)
 	{
@@ -3282,122 +3282,122 @@ public class metro
 		}
 	}
 	
-	static const struct MachineDriver machine_driver_dokyusp =
-	{
-		{
-			{
+	static MachineDriver machine_driver_dokyusp = new MachineDriver
+	(
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_M68000,
 				16000000,
-				dokyusp_readmem, dokyusp_writemem,0,0,
+				dokyusp_readmem, dokyusp_writemem,null,null,
 				gakusai_interrupt, 1
-			},
+			),
 		},
 		60,DEFAULT_60HZ_VBLANK_DURATION,
 		1,
 		metro_init_machine,
 	
 		/* video hardware */
-		384, 256-32, { 0, 384-1, 0, 256-32-1 },
+		384, 256-32, new rectangle( 0, 384-1, 0, 256-32-1 ),
 		gfxdecodeinfo_14300,
-		8192, 0,
-		0,
+		8192, null,
+		null,
 		VIDEO_TYPE_RASTER,
-		0,
+		null,
 		metro_vh_start_14300,
 		metro_vh_stop,
 		metro_vh_screenrefresh,
 	
 		/* sound hardware */
 		SOUND_SUPPORTS_STEREO,0,0,0,
-		{
-			{	SOUND_OKIM6295,	&okim6295_intf_16kHz	},
-			{	SOUND_YM2413,	&ym2413_intf_8MHz		},
+		new MachineSound[] {
+			new MachineSound(	SOUND_OKIM6295,	okim6295_intf_16kHz	),
+			new MachineSound(	SOUND_YM2413,	ym2413_intf_8MHz		),
 		},
 	
 		dokyusp_nvram_handler
-	};
+	);
 	
-	static const struct MachineDriver machine_driver_gakusai =
-	{
-		{
-			{
+	static MachineDriver machine_driver_gakusai = new MachineDriver
+	(
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_M68000,
 				16000000,
-				gakusai_readmem, gakusai_writemem,0,0,
+				gakusai_readmem, gakusai_writemem,null,null,
 				gakusai_interrupt, 1
-			},
+			),
 		},
 		60,DEFAULT_60HZ_VBLANK_DURATION,
 		1,
 		metro_init_machine,
 	
 		/* video hardware */
-		320, 240, { 0, 320-1, 0, 240-1 },
+		320, 240, new rectangle( 0, 320-1, 0, 240-1 ),
 		gfxdecodeinfo_14300,
-		8192, 0,
-		0,
+		8192, null,
+		null,
 		VIDEO_TYPE_RASTER,
-		0,
+		null,
 		metro_vh_start_14300,
 		metro_vh_stop,
 		metro_vh_screenrefresh,
 	
 		/* sound hardware */
 		SOUND_SUPPORTS_STEREO,0,0,0,
-		{
-			{	SOUND_OKIM6295,	&okim6295_intf_16kHz	},
-			{	SOUND_YM2413,	&ym2413_intf_8MHz		},
+		new MachineSound[] {
+			new MachineSound(	SOUND_OKIM6295,	okim6295_intf_16kHz	),
+			new MachineSound(	SOUND_YM2413,	ym2413_intf_8MHz		),
 		},
 	
 		nvram_handler_93C46
-	};
+	);
 	
 	
-	static const struct MachineDriver machine_driver_gakusai2 =
-	{
-		{
-			{
+	static MachineDriver machine_driver_gakusai2 = new MachineDriver
+	(
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_M68000,
 				16000000,
-				gakusai2_readmem, gakusai2_writemem,0,0,
+				gakusai2_readmem, gakusai2_writemem,null,null,
 				gakusai_interrupt, 1
-			},
+			),
 		},
 		60,DEFAULT_60HZ_VBLANK_DURATION,
 		1,
 		metro_init_machine,
 	
 		/* video hardware */
-		320, 240, { 0, 320-1, 0, 240-1 },
+		320, 240, new rectangle( 0, 320-1, 0, 240-1 ),
 		gfxdecodeinfo_14300,
-		8192, 0,
-		0,
+		8192, null,
+		null,
 		VIDEO_TYPE_RASTER,
-		0,
+		null,
 		metro_vh_start_14300,
 		metro_vh_stop,
 		metro_vh_screenrefresh,
 	
 		/* sound hardware */
 		SOUND_SUPPORTS_STEREO,0,0,0,
-		{
-			{	SOUND_OKIM6295,	&okim6295_intf_16kHz	},
-			{	SOUND_YM2413,	&ym2413_intf_8MHz		},
+		new MachineSound[] {
+			new MachineSound(	SOUND_OKIM6295,	okim6295_intf_16kHz	),
+			new MachineSound(	SOUND_YM2413,	ym2413_intf_8MHz		),
 		},
 	
 		nvram_handler_93C46
-	};
+	);
 	
 	
-	static const struct MachineDriver machine_driver_pangpoms =
-	{
-		{
-			{
+	static MachineDriver machine_driver_pangpoms = new MachineDriver
+	(
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_M68000,
 				12000000,
-				pangpoms_readmem, pangpoms_writemem,0,0,
+				pangpoms_readmem, pangpoms_writemem,null,null,
 				metro_interrupt, 10	/* ? */
-			},
+			),
 	
 			/* Sound CPU is unemulated */
 		},
@@ -3406,33 +3406,33 @@ public class metro
 		metro_init_machine,
 	
 		/* video hardware */
-		360, 224, { 0, 360-1, 0, 224-1 },
+		360, 224, new rectangle( 0, 360-1, 0, 224-1 ),
 		gfxdecodeinfo_14100,
-		8192, 0,
-		0,
+		8192, null,
+		null,
 		VIDEO_TYPE_RASTER,
-		0,
+		null,
 		metro_vh_start_14100,
 		metro_vh_stop,
 		metro_vh_screenrefresh,
 	
 		/* sound hardware */
 		SOUND_SUPPORTS_STEREO,0,0,0,
-		{
-			{ 0 },	// M6295, YM2413
+		new MachineSound[] {
+			new MachineSound( 0 ),	// M6295, YM2413
 		},
-	};
+	);
 	
 	
-	static const struct MachineDriver machine_driver_poitto =
-	{
-		{
-			{
+	static MachineDriver machine_driver_poitto = new MachineDriver
+	(
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_M68000,
 				12000000,
-				poitto_readmem, poitto_writemem,0,0,
+				poitto_readmem, poitto_writemem,null,null,
 				metro_interrupt, 10	/* ? */
-			},
+			),
 	
 			/* Sound CPU is unemulated */
 		},
@@ -3441,33 +3441,33 @@ public class metro
 		metro_init_machine,
 	
 		/* video hardware */
-		360, 224, { 0, 360-1, 0, 224-1 },
+		360, 224, new rectangle( 0, 360-1, 0, 224-1 ),
 		gfxdecodeinfo_14100,
-		8192, 0,
-		0,
+		8192, null,
+		null,
 		VIDEO_TYPE_RASTER,
-		0,
+		null,
 		metro_vh_start_14100,
 		metro_vh_stop,
 		metro_vh_screenrefresh,
 	
 		/* sound hardware */
 		SOUND_SUPPORTS_STEREO,0,0,0,
-		{
-			{ 0 },	// M6295, YM2413
+		new MachineSound[] {
+			new MachineSound( 0 ),	// M6295, YM2413
 		},
-	};
+	);
 	
 	
-	static const struct MachineDriver machine_driver_pururun =
-	{
-		{
-			{
+	static MachineDriver machine_driver_pururun = new MachineDriver
+	(
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_M68000,
 				12000000,
-				pururun_readmem, pururun_writemem,0,0,
+				pururun_readmem, pururun_writemem,null,null,
 				metro_interrupt, 10	/* ? */
-			},
+			),
 	
 			/* Sound CPU is unemulated */
 		},
@@ -3476,33 +3476,33 @@ public class metro
 		metro_init_machine,
 	
 		/* video hardware */
-		320, 224, { 0, 320-1, 0, 224-1 },
+		320, 224, new rectangle( 0, 320-1, 0, 224-1 ),
 		gfxdecodeinfo_14100,
-		8192, 0,
-		0,
+		8192, null,
+		null,
 		VIDEO_TYPE_RASTER,
-		0,
+		null,
 		metro_vh_start_14100,
 		metro_vh_stop,
 		metro_vh_screenrefresh,
 	
 		/* sound hardware */
 		SOUND_SUPPORTS_STEREO,0,0,0,
-		{
-			{ 0 },	// M6295, YM2151, Y3012
+		new MachineSound[] {
+			new MachineSound( 0 ),	// M6295, YM2151, Y3012
 		},
-	};
+	);
 	
 	
-	static const struct MachineDriver machine_driver_skyalert =
-	{
-		{
-			{
+	static MachineDriver machine_driver_skyalert = new MachineDriver
+	(
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_M68000,
 				12000000,
-				skyalert_readmem, skyalert_writemem,0,0,
+				skyalert_readmem, skyalert_writemem,null,null,
 				metro_interrupt, 10	/* ? */
-			},
+			),
 	
 			/* Sound CPU is unemulated */
 		},
@@ -3511,33 +3511,33 @@ public class metro
 		metro_init_machine,
 	
 		/* video hardware */
-		360, 224, { 0, 360-1, 0, 224-1 },
+		360, 224, new rectangle( 0, 360-1, 0, 224-1 ),
 		gfxdecodeinfo_14100,
-		8192, 0,
-		0,
+		8192, null,
+		null,
 		VIDEO_TYPE_RASTER,
-		0,
+		null,
 		metro_vh_start_14100,
 		metro_vh_stop,
 		metro_vh_screenrefresh,
 	
 		/* sound hardware */
 		SOUND_SUPPORTS_STEREO,0,0,0,
-		{
-			{ 0 },	// M6295, YM2413
+		new MachineSound[] {
+			new MachineSound( 0 ),	// M6295, YM2413
 		},
-	};
+	);
 	
 	
-	static const struct MachineDriver machine_driver_toride2g =
-	{
-		{
-			{
+	static MachineDriver machine_driver_toride2g = new MachineDriver
+	(
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_M68000,
 				12000000,
-				toride2g_readmem, toride2g_writemem,0,0,
+				toride2g_readmem, toride2g_writemem,null,null,
 				metro_interrupt, 10	/* ? */
-			},
+			),
 	
 			/* Sound CPU is unemulated */
 		},
@@ -3546,75 +3546,75 @@ public class metro
 		metro_init_machine,
 	
 		/* video hardware */
-		320, 224, { 0, 320-1, 0, 224-1 },
+		320, 224, new rectangle( 0, 320-1, 0, 224-1 ),
 		gfxdecodeinfo_14100,
-		8192, 0,
-		0,
+		8192, null,
+		null,
 		VIDEO_TYPE_RASTER,
-		0,
+		null,
 		metro_vh_start_14100,
 		metro_vh_stop,
 		metro_vh_screenrefresh,
 	
 		/* sound hardware */
 		SOUND_SUPPORTS_STEREO,0,0,0,
-		{
-			{ 0 },	// M6295, YM2413
+		new MachineSound[] {
+			new MachineSound( 0 ),	// M6295, YM2413
 		},
-	};
+	);
 	
 	
-	static const struct MachineDriver machine_driver_mouja =
-	{
-		{
-			{
+	static MachineDriver machine_driver_mouja = new MachineDriver
+	(
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_M68000,
 				12000000,	/* ??? */
-				mouja_readmem, mouja_writemem,0,0,
+				mouja_readmem, mouja_writemem,null,null,
 				mouja_interrupt, 2	/* ? */
-			},
+			),
 		},
 		60,DEFAULT_60HZ_VBLANK_DURATION,
 		1,
 		metro_init_machine,
 	
 		/* video hardware */
-		512, 256, { 0, 320-1, 0, 224-1 },
+		512, 256, new rectangle( 0, 320-1, 0, 224-1 ),
 		gfxdecodeinfo_14300,
-		8192, 0,
-		0,
+		8192, null,
+		null,
 		VIDEO_TYPE_RASTER,
-		0,
+		null,
 		metro_vh_start_14300,
 		metro_vh_stop,
 		metro_vh_screenrefresh,
 	
 		/* sound hardware */
 		SOUND_SUPPORTS_STEREO,0,0,0,
-		{
-			{	SOUND_OKIM6295,	&okim6295_intf_12kHz	},
-			{	SOUND_YM2413,	&ym2413_intf_8MHz		},
+		new MachineSound[] {
+			new MachineSound(	SOUND_OKIM6295,	okim6295_intf_12kHz	),
+			new MachineSound(	SOUND_YM2413,	ym2413_intf_8MHz		),
 		},
-	};
+	);
 	
 	
-	static const struct MachineDriver machine_driver_blzntrnd =
-	{
-		{
-			{
+	static MachineDriver machine_driver_blzntrnd = new MachineDriver
+	(
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_M68000,
 				16000000,
-				blzntrnd_readmem, blzntrnd_writemem,0,0,
+				blzntrnd_readmem, blzntrnd_writemem,null,null,
 	//			metro_interrupt, 10	/* ? */
 				karatour_interrupt, 10	/* ? */
-			},
+			),
 	#if 0
-			{
+			new MachineCPU(
 				CPU_Z80 | CPU_AUDIO_CPU,
 				16000000/2,
-				sound_readmem,sound_writemem,0,0,
+				sound_readmem,sound_writemem,null,null,
 				ignore_interrupt,1
-			}
+			)
 	#endif
 		},
 		60,DEFAULT_60HZ_VBLANK_DURATION,
@@ -3622,22 +3622,22 @@ public class metro
 		metro_init_machine,
 	
 		/* video hardware */
-		320, 224, { 8, 320-8-1, 0, 224-1 },
+		320, 224, new rectangle( 8, 320-8-1, 0, 224-1 ),
 		gfxdecodeinfo_blzntrnd,
-		8192, 0,
-		0,
+		8192, null,
+		null,
 		VIDEO_TYPE_RASTER,
-		0,
+		null,
 		blzntrnd_vh_start,
 		metro_vh_stop,
 		metro_vh_screenrefresh,
 	
 		/* sound hardware */
 		SOUND_SUPPORTS_STEREO,0,0,0,
-		{
-			{ 0 },	/* YMF286K (unemulated) + YRW801-M? (Standard Samples ROM) */
+		new MachineSound[] {
+			new MachineSound( 0 ),	/* YMF286K (unemulated) + YRW801-M? (Standard Samples ROM) */
 		},
-	};
+	);
 	
 	
 	

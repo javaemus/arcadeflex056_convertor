@@ -260,47 +260,47 @@ public class jailbrek
 		0,          /* memory size of speech rom */
 	};
 	
-	static const struct MachineDriver machine_driver_jailbrek =
-	{
+	static MachineDriver machine_driver_jailbrek = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 			    CPU_M6809,
 			    3000000,        /* 3 MHz ??? */
-			    readmem,writemem,0,0,
+			    readmem,writemem,null,null,
 			    jb_interrupt,1,
 			    jb_interrupt_nmi, 500 /* ? */
-			}
+			)
 		},
 		60, DEFAULT_60HZ_VBLANK_DURATION,  /* frames per second, vblank duration */
 		1, /* 1 CPU slice per frame - interleaving is forced when a sound command is written */
-		0,
+		null,
 	
 		/* video hardware */
-		32*8, 32*8, { 1*8, 31*8-1, 2*8, 30*8-1 },
+		32*8, 32*8, new rectangle( 1*8, 31*8-1, 2*8, 30*8-1 ),
 		gfxdecodeinfo,
 		32,512,
 		jailbrek_vh_convert_color_prom,
 	
 		VIDEO_TYPE_RASTER,
-		0,
+		null,
 		jailbrek_vh_start,
 		generic_vh_stop,
 		jailbrek_vh_screenrefresh,
 	
 		/* sound hardware */
 		0,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_SN76496,
-				&sn76496_interface
-			},
-			{
+				sn76496_interface
+			),
+			new MachineSound(
 				SOUND_VLM5030,
-				&vlm5030_interface
-			}
+				vlm5030_interface
+			)
 		}
-	};
+	);
 	
 	
 	/***************************************************************************

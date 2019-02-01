@@ -395,32 +395,32 @@ public class victory
 	 *
 	 *************************************/
 	
-	static const struct MachineDriver machine_driver_victory =
-	{
+	static MachineDriver machine_driver_victory = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_Z80,
 				4000000,
 				main_readmem,main_writemem,main_readport,main_writeport,
 				victory_vblank_interrupt,1
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_M6502 | CPU_AUDIO_CPU,
 				3579545/4,
-				sound_readmem,sound_writemem,0,0,
+				sound_readmem,sound_writemem,null,null,
 				ignore_interrupt,0
-			}
+			)
 		},
 		60, DEFAULT_REAL_60HZ_VBLANK_DURATION,
 		1,
-		0,
+		null,
 	
 		/* video hardware */
-		256, 256, { 0, 255, 0, 255 },
-		0,
-		64, 0,
-		0,
+		256, 256, new rectangle( 0, 255, 0, 255 ),
+		null,
+		64, null,
+		null,
 	
 		VIDEO_TYPE_RASTER | VIDEO_UPDATE_BEFORE_VBLANK,
 		victory_vh_eof,
@@ -430,13 +430,13 @@ public class victory
 	
 		/* sound hardware */
 		0,0,0,0,
-		{
-			{ SOUND_CUSTOM,  &custom_interface },
-			{ SOUND_TMS5220, &tms5220_interface },
+		new MachineSound[] {
+			new MachineSound( SOUND_CUSTOM,  custom_interface ),
+			new MachineSound( SOUND_TMS5220, tms5220_interface ),
 		},
 	
 		nvram_handler
-	};
+	);
 	
 	
 	

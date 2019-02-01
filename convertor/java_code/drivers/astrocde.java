@@ -619,277 +619,277 @@ public class astrocde
 	
 	
 	
-	static const struct MachineDriver machine_driver_seawolf2 =
-	{
+	static MachineDriver machine_driver_seawolf2 = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_Z80,
 				1789773,	/* 1.789 MHz */
 				seawolf2_readmem,seawolf2_writemem,readport,seawolf2_writeport,
 				wow_interrupt,256
-			}
+			)
 		},
 		60, DEFAULT_60HZ_VBLANK_DURATION,	/* frames per second, vblank duration */
 		1,	/* single CPU, no need for interleaving */
-		0,
+		null,
 	
 		/* video hardware */
-		320, 204, { 0, 320-1, 0, 204-1 },
-		0,	/* no gfxdecodeinfo - bitmapped display */
-		256, 0,
+		320, 204, new rectangle( 0, 320-1, 0, 204-1 ),
+		null,	/* no gfxdecodeinfo - bitmapped display */
+		256, null,
 		astrocde_init_palette,
 	
 		VIDEO_TYPE_RASTER,
-		0,
+		null,
 		astrocde_vh_start,
 		astrocde_vh_stop,
 		seawolf2_vh_screenrefresh,
 	
 		/* sound hardware */
 		0,0,0,0,
-	};
+	);
 	
-	static const struct MachineDriver machine_driver_spacezap =
-	{
+	static MachineDriver machine_driver_spacezap = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_Z80,
 				1789773,	/* 1.789 MHz */
 				readmem,writemem,readport,writeport,
 				wow_interrupt,256
-			}
+			)
 		},
 		60, DEFAULT_60HZ_VBLANK_DURATION,	/* frames per second, vblank duration */
 		1,	/* single CPU, no need for interleaving */
-		0,
+		null,
 	
 		/* video hardware */
-		320, 204, { 0, 320-1, 0, 204-1 },
-		0,	/* no gfxdecodeinfo - bitmapped display */
-		256, 0,
+		320, 204, new rectangle( 0, 320-1, 0, 204-1 ),
+		null,	/* no gfxdecodeinfo - bitmapped display */
+		256, null,
 		astrocde_init_palette,
 	
 		VIDEO_TYPE_RASTER,
-		0,
+		null,
 		astrocde_vh_start,
 		astrocde_vh_stop,
 		astrocde_vh_screenrefresh,
 	
 		/* sound hardware */
 		0,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_ASTROCADE,
-				&astrocade_2chip_interface
-			}
+				astrocade_2chip_interface
+			)
 		}
-	};
+	);
 	
-	static const struct MachineDriver machine_driver_ebases =
-	{
+	static MachineDriver machine_driver_ebases = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_Z80,
 				1789773,	/* 1.789 MHz */
 				readmem,writemem,readport,writeport,
 				wow_interrupt,256
-			}
+			)
 		},
 		60, DEFAULT_60HZ_VBLANK_DURATION,	/* frames per second, vblank duration */
 		1,	/* single CPU, no need for interleaving */
-		0,
+		null,
 	
 		/* video hardware */
-		320, 204, { 0, 320-1, 0, 204-1 },
-		0,	/* no gfxdecodeinfo - bitmapped display */
-		256, 0,
+		320, 204, new rectangle( 0, 320-1, 0, 204-1 ),
+		null,	/* no gfxdecodeinfo - bitmapped display */
+		256, null,
 		astrocde_init_palette,
 	
 		VIDEO_TYPE_RASTER,
-		0,
+		null,
 		astrocde_vh_start,
 		astrocde_vh_stop,
 		astrocde_vh_screenrefresh,
 	
 		/* sound hardware */
 		0,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_ASTROCADE,
-				&astrocade_1chip_interface
-			}
+				astrocade_1chip_interface
+			)
 		}
-	};
+	);
 	
-	static const struct MachineDriver machine_driver_wow =
-	{
+	static MachineDriver machine_driver_wow = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_Z80,
 				1789773,	/* 1.789 MHz */
 				readmem,writemem,readport,writeport,
 				wow_interrupt,256
-			}
+			)
 		},
 		60, DEFAULT_60HZ_VBLANK_DURATION,	/* frames per second, vblank duration */
 		1,	/* single CPU, no need for interleaving */
-		0,
+		null,
 	
 		/* video hardware */
-		320, 204, { 0, 320-1, 0, 204-1 },
-		0,	/* no gfxdecodeinfo - bitmapped display */
-		256, 0,
+		320, 204, new rectangle( 0, 320-1, 0, 204-1 ),
+		null,	/* no gfxdecodeinfo - bitmapped display */
+		256, null,
 		astrocde_init_palette,
 	
 		VIDEO_TYPE_RASTER,
-		0,
+		null,
 		astrocde_stars_vh_start,
 		astrocde_vh_stop,
 		astrocde_vh_screenrefresh,
 	
 		/* sound hardware */
 		0,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_ASTROCADE,
-				&astrocade_2chip_interface
-			},
-			{
+				astrocade_2chip_interface
+			),
+			new MachineSound(
 				SOUND_SAMPLES,
-				&wow_samples_interface
-			},
-			{
+				wow_samples_interface
+			),
+			new MachineSound(
 				SOUND_CUSTOM,	/* actually plays the samples */
-				&wow_custom_interface
-			}
+				wow_custom_interface
+			)
 	 	}
-	};
+	);
 	
-	static const struct MachineDriver machine_driver_gorf =
-	{
+	static MachineDriver machine_driver_gorf = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_Z80,
 				1789773,	/* 1.789 MHz */
 				readmem,writemem,readport,writeport,
 				gorf_interrupt,256
-			}
+			)
 		},
 		60, DEFAULT_60HZ_VBLANK_DURATION,	/* frames per second, vblank duration */
 		1,	/* single CPU, no need for interleaving */
-		0,
+		null,
 	
 		/* video hardware */
 		/* it may look like the right hand side of the screen needs clipping, but */
 		/* this isn't the case: cocktail mode would be clipped on the wrong side */
 	
 		320, 204, { 0, 320-1, 0, 204-1 },
-		0,	/* no gfxdecodeinfo - bitmapped display */
-		256, 0,
+		null,	/* no gfxdecodeinfo - bitmapped display */
+		256, null,
 		astrocde_init_palette,
 	
 		VIDEO_TYPE_RASTER,
-		0,
+		null,
 		astrocde_stars_vh_start,
 		astrocde_vh_stop,
 		astrocde_vh_screenrefresh,
 	
 		/* sound hardware */
 		0,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_ASTROCADE,
-				&astrocade_2chip_interface
-			},
-			{
+				astrocade_2chip_interface
+			),
+			new MachineSound(
 				SOUND_SAMPLES,
-				&gorf_samples_interface
-			},
-			{
+				gorf_samples_interface
+			),
+			new MachineSound(
 				SOUND_CUSTOM,	/* actually plays the samples */
-				&gorf_custom_interface
-			}
+				gorf_custom_interface
+			)
 		}
-	};
+	);
 	
-	static const struct MachineDriver machine_driver_robby =
-	{
+	static MachineDriver machine_driver_robby = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_Z80,
 				1789773,	/* 1.789 MHz */
 				robby_readmem,robby_writemem,readport,writeport,
 				wow_interrupt,256
-			}
+			)
 		},
 		60, DEFAULT_60HZ_VBLANK_DURATION,	/* frames per second, vblank duration */
 		1,	/* single CPU, no need for interleaving */
-		0,
+		null,
 	
 		/* video hardware */
-		320, 204, { 0, 320-1, 0, 204-1 },
-		0,	/* no gfxdecodeinfo - bitmapped display */
-		256, 0,
+		320, 204, new rectangle( 0, 320-1, 0, 204-1 ),
+		null,	/* no gfxdecodeinfo - bitmapped display */
+		256, null,
 		astrocde_init_palette,
 	
 		VIDEO_TYPE_RASTER,
-		0,
+		null,
 		astrocde_vh_start,
 		astrocde_vh_stop,
 		astrocde_vh_screenrefresh,
 	
 		/* sound hardware */
 		0,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_ASTROCADE,
-				&astrocade_2chip_interface
-			}
+				astrocade_2chip_interface
+			)
 		}
-	};
+	);
 	
-	static const struct MachineDriver machine_driver_profpac =
-	{
+	static MachineDriver machine_driver_profpac = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_Z80,
 				1789773,	/* 1.789 MHz */
 				profpac_readmem,profpac_writemem,readport,writeport,
 				wow_interrupt,256
-			}
+			)
 		},
 		60, DEFAULT_60HZ_VBLANK_DURATION,	/* frames per second, vblank duration */
 		1,	/* single CPU, no need for interleaving */
-		0,
+		null,
 	
 		/* video hardware */
-		320, 204, { 0, 320-1, 0, 204-1 },
-		0,	/* no gfxdecodeinfo - bitmapped display */
-		256, 0,
+		320, 204, new rectangle( 0, 320-1, 0, 204-1 ),
+		null,	/* no gfxdecodeinfo - bitmapped display */
+		256, null,
 		astrocde_init_palette,
 	
 		VIDEO_TYPE_RASTER,
-		0,
+		null,
 		astrocde_vh_start,
 		astrocde_vh_stop,
 		astrocde_vh_screenrefresh,
 	
 		/* sound hardware */
 		0,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_ASTROCADE,
-				&astrocade_2chip_interface
-			}
+				astrocade_2chip_interface
+			)
 		}
-	};
+	);
 	
 	
 	

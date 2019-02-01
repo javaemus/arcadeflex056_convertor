@@ -1057,52 +1057,52 @@ public class outrun
 	
 	
 	#define MACHINE_DRIVER_OUTRUN( GAMENAME,INITMACHINE) \
-	static const struct MachineDriver GAMENAME = \
-	{ \
-		{ \
-			{ \
+	static MachineDriver GAMENAME = new MachineDriver\
+	( \
+		new MachineCPU[] { \
+			new MachineCPU( \
 				CPU_M68000, \
 				12000000, \
-				outrun_readmem,outrun_writemem,0,0, \
+				outrun_readmem,outrun_writemem,null,null, \
 				or_interrupt,2 \
-			}, \
-			{ \
+			), \
+			new MachineCPU( \
 				CPU_Z80 | CPU_AUDIO_CPU, \
 				4096000, \
 				outrun_sound_readmem,outrun_sound_writemem,sound_readport,sound_writeport, \
 				ignore_interrupt,1 \
-			}, \
-			{ \
+			), \
+			new MachineCPU( \
 				CPU_M68000, \
 				12000000, \
-				outrun_readmem2,outrun_writemem2,0,0, \
+				outrun_readmem2,outrun_writemem2,null,null, \
 				sys16_interrupt,2 \
-			}, \
+			), \
 		}, \
 		60, 100 /*DEFAULT_60HZ_VBLANK_DURATION*/, \
 		4, /* needed to sync processors */ \
 		INITMACHINE, \
-		40*8, 28*8, { 0*8, 40*8-1, 0*8, 28*8-1 }, \
+		40*8, 28*8, new rectangle( 0*8, 40*8-1, 0*8, 28*8-1 ), \
 		sys16_gfxdecodeinfo, \
-		4096*ShadowColorsMultiplier, 0, \
-		0, \
+		4096*ShadowColorsMultiplier, null, \
+		null, \
 		VIDEO_TYPE_RASTER | VIDEO_UPDATE_AFTER_VBLANK, \
-		0, \
+		null, \
 		sys16_outrun_vh_start, \
 		sys16_vh_stop, \
 		sys16_outrun_vh_screenrefresh, \
 		SOUND_SUPPORTS_STEREO,0,0,0, \
-		{ \
-			{ \
+		new MachineSound[] { \
+			new MachineSound( \
 				SOUND_YM2151, \
-				&sys16_ym2151_interface \
-			}, \
-			{ \
+				sys16_ym2151_interface \
+			), \
+			new MachineSound( \
 				SOUND_SEGAPCM, \
-				&sys16_segapcm_interface_15k, \
-			} \
+				sys16_segapcm_interface_15k, \
+			) \
 		} \
-	};
+	);
 	
 	MACHINE_DRIVER_OUTRUN(machine_driver_outrun,outrun_init_machine)
 	MACHINE_DRIVER_OUTRUN(machine_driver_outruna,outruna_init_machine)
@@ -1303,52 +1303,52 @@ public class outrun
 	INPUT_PORTS_END(); }}; 
 	
 	/***************************************************************************/
-	static const struct MachineDriver machine_driver_shangon =
-	{
-		{
-			{
+	static MachineDriver machine_driver_shangon = new MachineDriver
+	(
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_M68000,
 				10000000,
-				shangon_readmem,shangon_writemem,0,0,
+				shangon_readmem,shangon_writemem,null,null,
 				sys16_interrupt,1
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_Z80 | CPU_AUDIO_CPU,
 				4096000,
 				shangon_sound_readmem,shangon_sound_writemem,sound_readport,sound_writeport,
 				ignore_interrupt,1
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_M68000,
 				10000000,
-				shangon_readmem2,shangon_writemem2,0,0,
+				shangon_readmem2,shangon_writemem2,null,null,
 				sys16_interrupt,1
-			},
+			),
 		},
 		60, DEFAULT_60HZ_VBLANK_DURATION,
 		1,
 		shangon_init_machine,
-		40*8, 28*8, { 0*8, 40*8-1, 0*8, 28*8-1 },
+		40*8, 28*8, new rectangle( 0*8, 40*8-1, 0*8, 28*8-1 ),
 		sys16_gfxdecodeinfo,
-		2048*ShadowColorsMultiplier, 0,
-		0,
+		2048*ShadowColorsMultiplier, null,
+		null,
 		VIDEO_TYPE_RASTER,
-		0,
+		null,
 		sys16_hangon_vh_start,
 		sys16_vh_stop,
 		sys16_hangon_vh_screenrefresh,
 		SOUND_SUPPORTS_STEREO,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_YM2151,
-				&sys16_ym2151_interface
-			},
-			{
+				sys16_ym2151_interface
+			),
+			new MachineSound(
 				SOUND_SEGAPCM,
-				&sys16_segapcm_interface_15k_512,
-			}
+				sys16_segapcm_interface_15k_512,
+			)
 		}
-	};
+	);
 	
 	public static GameDriver driver_shangon	   = new GameDriver("1992"	,"shangon"	,"outrun.java"	,rom_shangon,null	,machine_driver_shangon	,input_ports_shangon	,init_shangon	,ROT0	,	"Sega",    "Super Hang-On", GAME_NOT_WORKING )
 	public static GameDriver driver_shangonb	   = new GameDriver("1992"	,"shangonb"	,"outrun.java"	,rom_shangonb,driver_shangon	,machine_driver_shangon	,input_ports_shangon	,init_shangonb	,ROT0	,	"bootleg", "Super Hang-On (bootleg)" )

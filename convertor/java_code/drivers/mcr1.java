@@ -365,17 +365,17 @@ public class mcr1
 	 *
 	 *************************************/
 	
-	static const struct MachineDriver machine_driver_mcr1 =
-	{
+	static MachineDriver machine_driver_mcr1 = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_Z80,
 				MAIN_OSC/8,		/* 2.5 MHz */
 				readmem,writemem,readport,writeport,
 				mcr_interrupt,2,
 				0,0,mcr_daisy_chain
-			},
+			),
 			SOUND_CPU_SSIO
 		},
 		30, DEFAULT_REAL_30HZ_VBLANK_DURATION,
@@ -383,24 +383,24 @@ public class mcr1
 		mcr_init_machine,
 	
 		/* video hardware */
-		32*16, 30*16, { 0*16, 32*16-1, 0*16, 30*16-1 },
+		32*16, 30*16, new rectangle( 0*16, 32*16-1, 0*16, 30*16-1 ),
 		gfxdecodeinfo,
-		32, 0,
-		0,
+		32, null,
+		null,
 	
 		VIDEO_TYPE_RASTER | VIDEO_UPDATE_BEFORE_VBLANK,
-		0,
+		null,
 		mcr12_vh_start,
 		mcr12_vh_stop,
 		mcr1_vh_screenrefresh,
 	
 		/* sound hardware */
 		SOUND_SUPPORTS_STEREO,0,0,0,
-		{
+		new MachineSound[] {
 			SOUND_SSIO
 		},
 		mcr1_nvram_handler
-	};
+	);
 	
 	
 	

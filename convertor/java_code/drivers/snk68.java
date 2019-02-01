@@ -806,201 +806,201 @@ public class snk68
 	
 	/******************************************************************************/
 	
-	static const struct MachineDriver machine_driver_ikari3 =
-	{
+	static MachineDriver machine_driver_ikari3 = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_M68000,
 				10000000,	/* Accurate */
-				searchar_readmem,searchar_writemem,0,0,
+				searchar_readmem,searchar_writemem,null,null,
 				m68_level1_irq,1
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_Z80 | CPU_AUDIO_CPU,
 				4000000,	/* Accurate */
 				sound_readmem,sound_writemem,
 				sound_readport,sound_writeport,
 				ignore_interrupt,0
-			}
+			)
 		},
 		60, DEFAULT_60HZ_VBLANK_DURATION,
 		1,
-		0,
+		null,
 	
 		/* video hardware */
-		32*8, 32*8, { 0*8, 32*8-1, 2*8, 30*8-1 },
+		32*8, 32*8, new rectangle( 0*8, 32*8-1, 2*8, 30*8-1 ),
 	
 		ikari3_gfxdecodeinfo,
-		2048, 0,
-		0,
+		2048, null,
+		null,
 	
 		VIDEO_TYPE_RASTER,
-		0,
+		null,
 		ikari3_vh_start,
-		0,
+		null,
 		searchar_vh_screenrefresh,
 	
 		/* sound hardware */
 		0,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_YM3812,
-				&ym3812_interface
-			},
-			{
+				ym3812_interface
+			),
+			new MachineSound(
 				SOUND_UPD7759,
-				&upd7759_interface
-			}
+				upd7759_interface
+			)
 		}
-	};
+	);
 	
-	static const struct MachineDriver machine_driver_pow =
-	{
+	static MachineDriver machine_driver_pow = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_M68000,
 				10000000,	/* Accurate */
-				pow_readmem,pow_writemem,0,0,
+				pow_readmem,pow_writemem,null,null,
 				m68_level1_irq,1
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_Z80 | CPU_AUDIO_CPU,
 				4000000,	/* Accurate */
 				sound_readmem,sound_writemem,
 				sound_readport,sound_writeport,
 				ignore_interrupt,0
-			}
+			)
 		},
 		60, DEFAULT_60HZ_VBLANK_DURATION,
 		1,
-		0,
+		null,
 	
 		/* video hardware */
-		32*8, 32*8, { 0*8, 32*8-1, 2*8, 30*8-1 },
+		32*8, 32*8, new rectangle( 0*8, 32*8-1, 2*8, 30*8-1 ),
 	
 		pow_gfxdecodeinfo,
-		2048, 0,
-		0,
+		2048, null,
+		null,
 	
 		VIDEO_TYPE_RASTER,
-		0,
+		null,
 		pow_vh_start,
-		0,
+		null,
 		pow_vh_screenrefresh,
 	
 		/* sound hardware */
 		0,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_YM3812,
-				&ym3812_interface
-			},
-			{
+				ym3812_interface
+			),
+			new MachineSound(
 				SOUND_UPD7759,
-				&upd7759_interface
-			}
+				upd7759_interface
+			)
 		}
-	};
+	);
 	
-	static const struct MachineDriver machine_driver_searchar =
-	{
+	static MachineDriver machine_driver_searchar = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_M68000,
 				12000000,
-				searchar_readmem,searchar_writemem,0,0,
+				searchar_readmem,searchar_writemem,null,null,
 				m68_level1_irq,1
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_Z80 | CPU_AUDIO_CPU,
 				4000000,
 				sound_readmem,sound_writemem,
 				sound_readport,sound_writeport,
 				ignore_interrupt,0
-			}
+			)
 		},
 		60, DEFAULT_60HZ_VBLANK_DURATION,
 		1,
-		0,
+		null,
 	
 		/* video hardware */
-		32*8, 32*8, { 0*8, 32*8-1, 2*8, 30*8-1 },
+		32*8, 32*8, new rectangle( 0*8, 32*8-1, 2*8, 30*8-1 ),
 	
 		searchar_gfxdecodeinfo,
-		2048, 0,
-		0,
+		2048, null,
+		null,
 	
 		VIDEO_TYPE_RASTER,
-		0,
+		null,
 		searchar_vh_start,
-		0,
+		null,
 		searchar_vh_screenrefresh,
 	
 		/* sound hardware */
 		0,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_YM3812,
-				&ym3812_interface
-			},
-			{
+				ym3812_interface
+			),
+			new MachineSound(
 				SOUND_UPD7759,
-				&upd7759_interface
-			}
+				upd7759_interface
+			)
 		}
-	};
+	);
 	
-	static const struct MachineDriver machine_driver_streetsm =
-	{
+	static MachineDriver machine_driver_streetsm = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_M68000,
 				10000000,	/* Accurate */
-				pow_readmem,pow_writemem,0,0,
+				pow_readmem,pow_writemem,null,null,
 				m68_level1_irq,1
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_Z80 | CPU_AUDIO_CPU,
 				4000000,	/* Accurate */
 				sound_readmem,sound_writemem,
 				sound_readport,sound_writeport,
 				ignore_interrupt,0
-			}
+			)
 		},
 		60, DEFAULT_60HZ_VBLANK_DURATION,
 		1,
-		0,
+		null,
 	
 		/* video hardware */
-		32*8, 32*8, { 0*8, 32*8-1, 2*8, 30*8-1 },
+		32*8, 32*8, new rectangle( 0*8, 32*8-1, 2*8, 30*8-1 ),
 	
 		searchar_gfxdecodeinfo,
-		2048, 0,
-		0,
+		2048, null,
+		null,
 	
 		VIDEO_TYPE_RASTER,
-		0,
+		null,
 		pow_vh_start,
-		0,
+		null,
 		searchar_vh_screenrefresh,
 	
 		/* sound hardware */
 		0,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_YM3812,
-				&ym3812_interface
-			},
-			{
+				ym3812_interface
+			),
+			new MachineSound(
 				SOUND_UPD7759,
-				&upd7759_interface
-			}
+				upd7759_interface
+			)
 		}
-	};
+	);
 	
 	/******************************************************************************/
 	

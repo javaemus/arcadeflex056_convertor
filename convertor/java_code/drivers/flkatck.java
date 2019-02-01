@@ -293,50 +293,50 @@ public class flkatck
 	};
 	
 	
-	static const struct MachineDriver machine_driver_flkatck =
-	{
-		{
-			{
+	static MachineDriver machine_driver_flkatck = new MachineDriver
+	(
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_HD6309, /* HD63C09EP */
 				3000000,	/* 24/8 MHz*/
-				flkatck_readmem,flkatck_writemem,0,0,
+				flkatck_readmem,flkatck_writemem,null,null,
 				flkatck_interrupt,1
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_Z80,	/* NEC D780C-1 */
 				3579545,	/* 3.579545 MHz */
-				flkatck_readmem_sound, flkatck_writemem_sound,0,0,
+				flkatck_readmem_sound, flkatck_writemem_sound,null,null,
 				ignore_interrupt,0	/* IRQs triggered by the 6309 */
-			}
+			)
 		},
 		60, DEFAULT_60HZ_VBLANK_DURATION,
 		10,
 		flkatck_init_machine,
 	
 		/* video hardware */
-		37*8, 32*8, { 0*8, 35*8-1, 2*8, 30*8-1 },
+		37*8, 32*8, new rectangle( 0*8, 35*8-1, 2*8, 30*8-1 ),
 		gfxdecodeinfo,
-		512, 0,
-		0,
+		512, null,
+		null,
 		VIDEO_TYPE_RASTER,
-		0,
+		null,
 		flkatck_vh_start,
-		0,
+		null,
 		flkatck_vh_screenrefresh,
 	
 		/* sound hardware */
 		SOUND_SUPPORTS_STEREO,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_YM2151,
-				&ym2151_interface
-			},
-			{
+				ym2151_interface
+			),
+			new MachineSound(
 				SOUND_K007232,
-				&k007232_interface
-			}
+				k007232_interface
+			)
 		}
-	};
+	);
 	
 	
 	

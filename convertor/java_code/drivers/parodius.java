@@ -330,53 +330,53 @@ public class parodius
 	
 	
 	
-	static const struct MachineDriver machine_driver_parodius =
-	{
+	static MachineDriver machine_driver_parodius = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_KONAMI,		/* 053248 */
 				3000000,		/* ? */
-				parodius_readmem,parodius_writemem,0,0,
+				parodius_readmem,parodius_writemem,null,null,
 	            parodius_interrupt,1
-	        },
-			{
+	        ),
+			new MachineCPU(
 				CPU_Z80 | CPU_AUDIO_CPU,
 				3579545,
-				parodius_readmem_sound, parodius_writemem_sound,0,0,
+				parodius_readmem_sound, parodius_writemem_sound,null,null,
 				ignore_interrupt,0	/* IRQs are triggered by the main CPU */
 									/* NMIs are triggered by the 053260 */
-			}
+			)
 		},
 		60, DEFAULT_60HZ_VBLANK_DURATION,	/* frames per second, vblank duration */
 		1,	/* 1 CPU slice per frame - interleaving is forced when a sound command is written */
 		parodius_init_machine,
 	
 		/* video hardware */
-		64*8, 32*8, { 14*8, (64-14)*8-1, 2*8, 30*8-1 },
-		0,	/* gfx decoded by konamiic.c */
-		2048, 0,
-		0,
+		64*8, 32*8, new rectangle( 14*8, (64-14)*8-1, 2*8, 30*8-1 ),
+		null,	/* gfx decoded by konamiic.c */
+		2048, null,
+		null,
 	
 		VIDEO_TYPE_RASTER | VIDEO_HAS_SHADOWS,
-		0,
+		null,
 		parodius_vh_start,
 		parodius_vh_stop,
 		parodius_vh_screenrefresh,
 	
 		/* sound hardware */
 		SOUND_SUPPORTS_STEREO,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_YM2151,
-				&ym2151_interface
-			},
-			{
+				ym2151_interface
+			),
+			new MachineSound(
 				SOUND_K053260,
-				&k053260_interface
-			}
+				k053260_interface
+			)
 		}
-	};
+	);
 	
 	/***************************************************************************
 	

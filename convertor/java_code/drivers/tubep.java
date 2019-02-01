@@ -844,28 +844,28 @@ public class tubep
 		{ ay8910_portB_0_w, ay8910_portB_1_w, ay8910_portB_2_w }  /*write port B*/
 	};
 	
-	static const struct MachineDriver machine_driver_tubep =
-	{
-		{
-			{
+	static MachineDriver machine_driver_tubep = new MachineDriver
+	(
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_Z80,
 				16000000/8,	/* 2 MHz ???*/
 				tubep_readmem, tubep_writemem, tubep_readport, tubep_writeport,
 				interrupt, 1
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_Z80,
 				16000000/8,	/* 2 MHz ??? */
-				tubep_g_readmem, tubep_g_writemem, 0, 0,
+				tubep_g_readmem, tubep_g_writemem, null, null,
 				interrupt, 1
-			},
+			),
 	#if 1
-			{
+			new MachineCPU(
 				CPU_Z80 | CPU_AUDIO_CPU,
 				16000000/8,	/* 2 MHz ???*/
 				tubep_sound_readmem, tubep_sound_writemem, tubep_sound_readport, tubep_sound_writeport,
 				ignore_interrupt, 1
-			},
+			),
 	#endif
 		},
 		60, DEFAULT_60HZ_VBLANK_DURATION,
@@ -873,50 +873,50 @@ public class tubep
 		init_machine,
 	
 		/* video hardware */
-		32*8, 32*8, { 0*8, 32*8-1, 2*8, 30*8-1 },
+		32*8, 32*8, new rectangle( 0*8, 32*8-1, 2*8, 30*8-1 ),
 		gfxdecodeinfo,
 		64, 2*16 + 16*2,
 		tubep_vh_convert_color_prom,
 	
 		VIDEO_TYPE_RASTER,
-		0,
+		null,
 		tubep_vh_start,
 		tubep_vh_stop,
 		tubep_vh_screenrefresh,
 	
 		/* sound hardware */
 		0, 0, 0, 0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_AY8910,
-				&ay8910_interface
-			}
+				ay8910_interface
+			)
 		}
-	};
+	);
 	
 	
-	static const struct MachineDriver machine_driver_rjammer =
-	{
-		{
-			{
+	static MachineDriver machine_driver_rjammer = new MachineDriver
+	(
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_Z80,
 				16000000/8,	/* 2 MHz ???*/
 				rjammer_readmem, rjammer_writemem, tubep_readport, rjammer_writeport,
 				interrupt, 1
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_Z80,
 				16000000/8,	/* 2 MHz ??? */
-				rjammer_g_readmem, rjammer_g_writemem, 0, 0,
+				rjammer_g_readmem, rjammer_g_writemem, null, null,
 				interrupt, 1
-			},
+			),
 	#if 1
-			{
+			new MachineCPU(
 				CPU_Z80 | CPU_AUDIO_CPU,
 				16000000/8,	/* 2 MHz ???*/
 				tubep_sound_readmem, tubep_sound_writemem, rjammer_sound_readport, rjammer_sound_writeport,
 				ignore_interrupt, 1
-			},
+			),
 	#endif
 		},
 		60, DEFAULT_60HZ_VBLANK_DURATION,
@@ -924,26 +924,26 @@ public class tubep
 		init_machine_rjammer,
 	
 		/* video hardware */
-		32*8, 32*8, { 0*8, 32*8-1, 2*8, 30*8-1 },
+		32*8, 32*8, new rectangle( 0*8, 32*8-1, 2*8, 30*8-1 ),
 		gfxdecodeinfo,
 		64, 2*16 + 16*2,
 		tubep_vh_convert_color_prom,
 	
 		VIDEO_TYPE_RASTER,
-		0,
+		null,
 		tubep_vh_start,
 		tubep_vh_stop,
 		tubep_vh_screenrefresh,
 	
 		/* sound hardware */
 		0, 0, 0, 0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_AY8910,
-				&ay8910_interface
-			}
+				ay8910_interface
+			)
 		}
-	};
+	);
 	
 	
 	

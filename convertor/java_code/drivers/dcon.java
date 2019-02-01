@@ -218,43 +218,43 @@ public class dcon
 	/* Parameters: YM3812 frequency, Oki frequency, Oki memory region */
 	SEIBU_SOUND_SYSTEM_YM3812_HARDWARE(4000000,8000,REGION_SOUND1);
 	
-	static const struct MachineDriver machine_driver_dcon =
-	{
+	static MachineDriver machine_driver_dcon = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_M68000,
 				10000000,
-				readmem,writemem,0,0,
+				readmem,writemem,null,null,
 				m68_level4_irq,1
-			},
-			{
+			),
+			new MachineCPU(
 				SEIBU_SOUND_SYSTEM_CPU(4000000)
-			}
+			)
 		},
 		60, DEFAULT_REAL_60HZ_VBLANK_DURATION,	/* frames per second, vblank duration */
 		1,	/* CPU interleave  */
 		seibu_sound_init_1,
 	
 		/* video hardware */
-		40*8, 32*8, { 0*8, 40*8-1, 0*8, 28*8-1 },
+		40*8, 32*8, new rectangle( 0*8, 40*8-1, 0*8, 28*8-1 ),
 	
 		dcon_gfxdecodeinfo,
-		2048, 0,
-		0,
+		2048, null,
+		null,
 	
 		VIDEO_TYPE_RASTER,
-		0,
+		null,
 		dcon_vh_start,
-		0,
+		null,
 		dcon_vh_screenrefresh,
 	
 		/* sound hardware */
 		0,0,0,0,
-		{
+		new MachineSound[] {
 			SEIBU_SOUND_SYSTEM_YM3812_INTERFACE
 		}
-	};
+	);
 	
 	/***************************************************************************/
 	

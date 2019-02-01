@@ -640,96 +640,96 @@ public class combatsc
 	
 	
 	/* combat school (original) */
-	static const struct MachineDriver machine_driver_combasc =
-	{
-		{
-			{
+	static MachineDriver machine_driver_combasc = new MachineDriver
+	(
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_HD6309,
 				3000000,	/* 3 MHz? */
-				combasc_readmem,combasc_writemem,0,0,
+				combasc_readmem,combasc_writemem,null,null,
 				interrupt,1
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_Z80 | CPU_AUDIO_CPU,
 				1500000,	/* 1.5 MHz? */
-				combasc_readmem_sound,combasc_writemem_sound,0,0,
+				combasc_readmem_sound,combasc_writemem_sound,null,null,
 				ignore_interrupt,1 	/* IRQs are caused by the main CPU */
-			}
+			)
 		},
 		60, DEFAULT_REAL_60HZ_VBLANK_DURATION,
 		10, /* CPU slices */
 		combasc_init_machine,
 	
 		/* video hardware */
-		32*8, 32*8, { 0*8, 32*8-1, 2*8, 30*8-1 },
+		32*8, 32*8, new rectangle( 0*8, 32*8-1, 2*8, 30*8-1 ),
 		combasc_gfxdecodeinfo,
 		128,8*16*16,
 		combasc_convert_color_prom,
 		VIDEO_TYPE_RASTER,
-		0,
+		null,
 		combasc_vh_start,
 		combasc_vh_stop,
 		combasc_vh_screenrefresh,
 	
 		/* sound hardware */
 		0,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_YM2203,
-				&ym2203_interface
-			},
-			{
+				ym2203_interface
+			),
+			new MachineSound(
 				SOUND_UPD7759,
-				&upd7759_interface
-			}
+				upd7759_interface
+			)
 		}
-	};
+	);
 	
 	/* combat school (bootleg on different hardware) */
-	static const struct MachineDriver machine_driver_combascb =
-	{
-		{
-			{
+	static MachineDriver machine_driver_combascb = new MachineDriver
+	(
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_HD6309,
 				3000000,	/* 3 MHz? */
-				combascb_readmem,combascb_writemem,0,0,
+				combascb_readmem,combascb_writemem,null,null,
 				interrupt,1
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_Z80 | CPU_AUDIO_CPU,
 				1500000,
-				combasc_readmem_sound,combasc_writemem_sound,0,0, /* FAKE */
+				combasc_readmem_sound,combasc_writemem_sound,null,null, /* FAKE */
 				ignore_interrupt,0 	/* IRQs are caused by the main CPU */
-			},
+			),
 		},
 		60, DEFAULT_REAL_60HZ_VBLANK_DURATION,
 		10, /* CPU slices */
 		combasc_init_machine,
 	
 		/* video hardware */
-		32*8, 32*8, { 0*8, 32*8-1, 2*8, 30*8-1 },
+		32*8, 32*8, new rectangle( 0*8, 32*8-1, 2*8, 30*8-1 ),
 		combascb_gfxdecodeinfo,
 		128,8*16*16,
 		combascb_convert_color_prom,
 		VIDEO_TYPE_RASTER,
-		0,
+		null,
 		combascb_vh_start,
 		combasc_vh_stop,
 		combascb_vh_screenrefresh,
 	
 		/* We are using the original sound subsystem */
 		0,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_YM2203,
-				&ym2203_interface
-			},
-			{
+				ym2203_interface
+			),
+			new MachineSound(
 				SOUND_UPD7759,
-				&upd7759_interface
-			}
+				upd7759_interface
+			)
 		}
-	};
+	);
 	
 	
 	

@@ -359,32 +359,32 @@ public class xexex
 		{ ym_set_mixing }
 	};
 	
-	static const struct MachineDriver machine_driver_xexex =
-	{
-		{
-			{
+	static MachineDriver machine_driver_xexex = new MachineDriver
+	(
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_M68000,
 				16000000,	/* 16 MHz ? (xtal is 32MHz) */
-				readmem, writemem, 0, 0,
+				readmem, writemem, null, null,
 				xexex_interrupt, 3	/* ??? */
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_Z80 | CPU_AUDIO_CPU,
 				5000000,	/* 5 MHz in Amuse (xtal is 32MHz/19.432MHz) */
-				sound_readmem, sound_writemem, 0, 0,
+				sound_readmem, sound_writemem, null, null,
 				ignore_interrupt, 0
-			},
+			),
 		},
 		60, DEFAULT_60HZ_VBLANK_DURATION,	/* frames per second, vblank duration */
 		1,	/* 1 CPU slice per frame - interleaving is forced when a sound command is written */
-		0,
+		null,
 	
 		/* video hardware */
-		64*8, 32*8, { 8*8, (64-8)*8-1, 0*8, 32*8-1 },
+		64*8, 32*8, new rectangle( 8*8, (64-8)*8-1, 0*8, 32*8-1 ),
 		//	64*8, 64*8, { 0*8, (64-0)*8-1, 0*8, 64*8-1 },
-		0,	/* gfx decoded by konamiic.c */
-		2048, 0,
-		0,
+		null,	/* gfx decoded by konamiic.c */
+		2048, null,
+		null,
 	
 		VIDEO_TYPE_RASTER | VIDEO_NEEDS_6BITS_PER_GUN | VIDEO_RGB_DIRECT,
 		0,
@@ -394,19 +394,19 @@ public class xexex
 	
 		/* sound hardware */
 		SOUND_SUPPORTS_STEREO,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_YM2151,
-				&ym2151_interface
-			},
-			{
+				ym2151_interface
+			),
+			new MachineSound(
 				SOUND_K054539,
-				&k054539_interface
-			}
+				k054539_interface
+			)
 		},
 	
 		nvram_handler
-	};
+	);
 	
 	
 	static RomLoadPtr rom_xexex = new RomLoadPtr(){ public void handler(){ 

@@ -492,50 +492,50 @@ public class badlands
 	 *
 	 *************************************/
 	
-	static const struct MachineDriver machine_driver_badlands =
-	{
+	static MachineDriver machine_driver_badlands = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_M68000,		/* verified */
 				ATARI_CLOCK_14MHz/2,
-				main_readmem,main_writemem,0,0,
+				main_readmem,main_writemem,null,null,
 				vblank_int,1
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_M6502,
 				ATARI_CLOCK_14MHz/8,
-				audio_readmem,audio_writemem,0,0,
+				audio_readmem,audio_writemem,null,null,
 				ignore_interrupt,1
-			}
+			)
 		},
 		60, DEFAULT_REAL_60HZ_VBLANK_DURATION,
 		1,
 		init_machine,
 	
 		/* video hardware */
-		42*8, 30*8, { 0*8, 42*8-1, 0*8, 30*8-1 },
+		42*8, 30*8, new rectangle( 0*8, 42*8-1, 0*8, 30*8-1 ),
 		gfxdecodeinfo,
-		256, 0,
-		0,
+		256, null,
+		null,
 	
 		VIDEO_TYPE_RASTER | VIDEO_NEEDS_6BITS_PER_GUN | VIDEO_UPDATE_BEFORE_VBLANK,
-		0,
+		null,
 		badlands_vh_start,
 		badlands_vh_stop,
 		badlands_vh_screenrefresh,
 	
 		/* sound hardware */
 		0,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_YM2151,
-				&ym2151_interface
-			}
+				ym2151_interface
+			)
 		},
 	
 		atarigen_nvram_handler
-	};
+	);
 	
 	
 	

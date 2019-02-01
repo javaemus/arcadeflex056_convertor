@@ -617,189 +617,189 @@ public class armedf
 	
 	
 	
-	static const struct MachineDriver machine_driver_terraf =
-	{
-		{
-			{
+	static MachineDriver machine_driver_terraf = new MachineDriver
+	(
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_M68000,
 				8000000, /* 8 MHz?? */
-				terraf_readmem,terraf_writemem,0,0,
+				terraf_readmem,terraf_writemem,null,null,
 				armedf_interrupt,1
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_Z80 | CPU_AUDIO_CPU,
 				3072000,	/* 3.072 MHz???? */
 				soundreadmem,soundwritemem,readport,writeport,
 				interrupt,128
-			},
+			),
 		},
 		57, DEFAULT_REAL_60HZ_VBLANK_DURATION,
 		1,
-		0,
+		null,
 	
 		/* video hardware */
-		64*8, 32*8, { 12*8, (64-12)*8-1, 1*8, 31*8-1 },
+		64*8, 32*8, new rectangle( 12*8, (64-12)*8-1, 1*8, 31*8-1 ),
 		gfxdecodeinfo,
-		2048, 0,
-		0,
+		2048, null,
+		null,
 	
 		VIDEO_TYPE_RASTER | VIDEO_BUFFERS_SPRITERAM,
 		armedf_eof_callback,
 		terraf_vh_start,
-		0,
+		null,
 		armedf_vh_screenrefresh,
 	
 		/* sound hardware */
 		0,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 			   SOUND_YM3812,
-			   &ym3812_interface
-			},
-			{
+			   ym3812_interface
+			),
+			new MachineSound(
 				SOUND_DAC,
-				&dac_interface
-			}
+				dac_interface
+			)
 		}
-	};
+	);
 	
-	static const struct MachineDriver machine_driver_kodure =
-	{
-		{
-			{
+	static MachineDriver machine_driver_kodure = new MachineDriver
+	(
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_M68000,
 				8000000, /* 8 MHz?? */
-				kodure_readmem, kodure_writemem, 0, 0,
+				kodure_readmem, kodure_writemem, null, null,
 				armedf_interrupt, 1
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_Z80 | CPU_AUDIO_CPU,
 				3072000,	/* 3.072 MHz???? */
 				soundreadmem, soundwritemem, readport, writeport,
 				interrupt, 128
-			},
+			),
 		},
 		60, DEFAULT_REAL_60HZ_VBLANK_DURATION,
 		1,
-		0,
+		null,
 	
 		/* video hardware */
-		64*8, 32*8, { 14*8, (64-14)*8-1, 2*8, 30*8-1 },
+		64*8, 32*8, new rectangle( 14*8, (64-14)*8-1, 2*8, 30*8-1 ),
 		gfxdecodeinfo,
-		2048, 0,
-		0,
+		2048, null,
+		null,
 	
 		VIDEO_TYPE_RASTER | VIDEO_BUFFERS_SPRITERAM,
 		armedf_eof_callback,
 		kodure_vh_start,
-		0,
+		null,
 		armedf_vh_screenrefresh,
 	
 		/* sound hardware */
 		0,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_YM3812,
-				&ym3812_interface
-			},
-			{
+				ym3812_interface
+			),
+			new MachineSound(
 				SOUND_DAC,
-				&dac_interface
-			}
+				dac_interface
+			)
 		}
-	};
+	);
 	
-	static const struct MachineDriver machine_driver_armedf =
-	{
-		{
-			{
+	static MachineDriver machine_driver_armedf = new MachineDriver
+	(
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_M68000,
 				8000000, /* 8 MHz?? */
-				armedf_readmem,armedf_writemem,0,0,
+				armedf_readmem,armedf_writemem,null,null,
 				armedf_interrupt,1
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_Z80 | CPU_AUDIO_CPU,
 				3072000,	/* 3.072 MHz???? */
 				soundreadmem,soundwritemem,readport,writeport,
 				interrupt,128
-			},
+			),
 		},
 		57, DEFAULT_REAL_60HZ_VBLANK_DURATION,
 		1,
-		0,
+		null,
 	
 		/* video hardware */
-		64*8, 32*8, { 12*8, (64-12)*8-1, 1*8, 31*8-1 },
+		64*8, 32*8, new rectangle( 12*8, (64-12)*8-1, 1*8, 31*8-1 ),
 		gfxdecodeinfo,
-		2048, 0,
-		0,
+		2048, null,
+		null,
 	
 		VIDEO_TYPE_RASTER | VIDEO_BUFFERS_SPRITERAM,
 		armedf_eof_callback,
 		armedf_vh_start,
-		0,
+		null,
 		armedf_vh_screenrefresh,
 	
 		/* sound hardware */
 		0,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 			   SOUND_YM3812,
-			   &ym3812_interface
-			},
-			{
+			   ym3812_interface
+			),
+			new MachineSound(
 				SOUND_DAC,
-				&dac_interface
-			}
+				dac_interface
+			)
 		}
-	};
+	);
 	
-	static const struct MachineDriver machine_driver_cclimbr2 =
-	{
-		{
-			{
+	static MachineDriver machine_driver_cclimbr2 = new MachineDriver
+	(
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_M68000,
 				8000000, /* 8 MHz?? */
-				cclimbr2_readmem,cclimbr2_writemem,0,0,
+				cclimbr2_readmem,cclimbr2_writemem,null,null,
 				cclimbr2_interrupt,1
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_Z80 | CPU_AUDIO_CPU,
 				3072000,	/* 3.072 MHz???? */
 				cclimbr2_soundreadmem,cclimbr2_soundwritemem,readport,writeport,
 				interrupt,128
-			},
+			),
 		},
 		60, DEFAULT_REAL_60HZ_VBLANK_DURATION,
 		1,
-		0,
+		null,
 	
 		/* video hardware */
-		64*8, 32*8, { 14*8, (64-14)*8-1, 2*8, 30*8-1 },
+		64*8, 32*8, new rectangle( 14*8, (64-14)*8-1, 2*8, 30*8-1 ),
 		gfxdecodeinfo,
-		2048, 0,
-		0,
+		2048, null,
+		null,
 	
 		VIDEO_TYPE_RASTER | VIDEO_BUFFERS_SPRITERAM,
 		armedf_eof_callback,
 		cclimbr2_vh_start,
-		0,
+		null,
 		armedf_vh_screenrefresh,
 	
 		/* sound hardware */
 		0,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 			   SOUND_YM3812,
-			   &ym3812_interface
-			},
-			{
+			   ym3812_interface
+			),
+			new MachineSound(
 				SOUND_DAC,
-				&cclimbr2_dac_interface
-			}
+				cclimbr2_dac_interface
+			)
 		}
-	};
+	);
 	
 	
 	

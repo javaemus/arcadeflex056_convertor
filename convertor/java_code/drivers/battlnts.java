@@ -350,48 +350,48 @@ public class battlnts
 		{ 0, 0 },
 	};
 	
-	static const struct MachineDriver machine_driver_battlnts =
-	{
+	static MachineDriver machine_driver_battlnts = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_HD6309,
 				3000000,		/* ? */
-				battlnts_readmem,battlnts_writemem,0,0,
+				battlnts_readmem,battlnts_writemem,null,null,
 				battlnts_interrupt,1
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_Z80 | CPU_AUDIO_CPU,
 				3579545,		/* ? */
-				battlnts_readmem_sound, battlnts_writemem_sound,0,0,
+				battlnts_readmem_sound, battlnts_writemem_sound,null,null,
 				ignore_interrupt,0	/* interrupts are triggered by the main CPU */
-			}
+			)
 		},
 		60, DEFAULT_60HZ_VBLANK_DURATION,	/* frames per second, vblank duration */
 		1,	/* 1 CPU slice per frame - interleaving is forced when a sound command is written */
-		0,
+		null,
 	
 		/* video hardware */
-		32*8, 32*8, { 0*8, 32*8-1, 2*8, 30*8-1 },
+		32*8, 32*8, new rectangle( 0*8, 32*8-1, 2*8, 30*8-1 ),
 		gfxdecodeinfo,
-		128, 0,
-		0,
+		128, null,
+		null,
 	
 		VIDEO_TYPE_RASTER,
-		0,
+		null,
 		battlnts_vh_start,
 		battlnts_vh_stop,
 		battlnts_vh_screenrefresh,
 	
 		/* sound hardware */
 		0,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_YM3812,
-				&ym3812_interface
-			}
+				ym3812_interface
+			)
 		}
-	};
+	);
 	
 	
 	/***************************************************************************

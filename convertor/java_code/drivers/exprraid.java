@@ -332,53 +332,53 @@ public class exprraid
 		return ignore_interrupt();
 	}
 	
-	static const struct MachineDriver machine_driver_exprraid =
-	{
+	static MachineDriver machine_driver_exprraid = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_M6502,
 				4000000,        /* 4 MHz ??? */
-				readmem,writemem,0,0,
+				readmem,writemem,null,null,
 				exprraid_interrupt, 1
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_M6809,
 				2000000,        /* 2 MHz ??? */
-				sub_readmem,sub_writemem,0,0,
+				sub_readmem,sub_writemem,null,null,
 				ignore_interrupt,0	/* NMIs are caused by the main CPU */
 									/* IRQs are caused by the YM3526 */
-			}
+			)
 		},
 		60, DEFAULT_REAL_60HZ_VBLANK_DURATION,  /* frames per second, vblank duration */
 		1, /* 1 CPU slice per frame - interleaving is forced when a sound command is written */
-		0,
+		null,
 	
 		/* video hardware */
-		32*8, 32*8, { 1*8, 31*8-1, 1*8, 31*8-1 },
+		32*8, 32*8, new rectangle( 1*8, 31*8-1, 1*8, 31*8-1 ),
 		gfxdecodeinfo,
-		256, 0,
+		256, null,
 		palette_RRRR_GGGG_BBBB_convert_prom,
 	
 		VIDEO_TYPE_RASTER,
-		0,
+		null,
 		generic_vh_start,
 		generic_vh_stop,
 		exprraid_vh_screenrefresh,
 	
 		/* sound hardware */
 		0,0,0,0,
-		{
-		    {
+		new MachineSound[] {
+		    new MachineSound(
 		        SOUND_YM2203,
-		        &ym2203_interface
-		    },
-		    {
+		        ym2203_interface
+		    ),
+		    new MachineSound(
 		        SOUND_YM3526,
-		        &ym3526_interface
-		    }
+		        ym3526_interface
+		    )
 		}
-	};
+	);
 	
 	
 	

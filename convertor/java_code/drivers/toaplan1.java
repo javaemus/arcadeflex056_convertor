@@ -1383,32 +1383,32 @@ public class toaplan1
 	
 	
 	
-	static const struct MachineDriver machine_driver_rallybik =
-	{
+	static MachineDriver machine_driver_rallybik = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_M68000,
 				10000000,
-				rallybik_readmem,rallybik_writemem,0,0,
+				rallybik_readmem,rallybik_writemem,null,null,
 				toaplan1_interrupt,1
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_Z80,
 				28000000/8,		/* 3.5MHz (28MHz Oscillator) */
 				sound_readmem,sound_writemem,truxton_sound_readport,rallybik_sound_writeport,
 				ignore_interrupt,0
-			}
+			)
 		},
 		60, DEFAULT_REAL_60HZ_VBLANK_DURATION,	/* frames per second, vblank duration */
 		10,
 		toaplan1_init_machine,
 	
 		/* video hardware */
-		320, 240, { 0, 319, 0, 239 },
+		320, 240, new rectangle( 0, 319, 0, 239 ),
 		rallybik_gfxdecodeinfo,
-		2048, 0,
-		0,
+		2048, null,
+		null,
 	
 		VIDEO_TYPE_RASTER | VIDEO_UPDATE_BEFORE_VBLANK | VIDEO_BUFFERS_SPRITERAM,
 		rallybik_eof_callback,
@@ -1418,40 +1418,40 @@ public class toaplan1
 	
 		/* sound hardware */
 		0,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_YM3812,
-				&ym3812_interface
-			},
+				ym3812_interface
+			),
 		}
-	};
+	);
 	
-	static const struct MachineDriver machine_driver_truxton =
-	{
+	static MachineDriver machine_driver_truxton = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_M68000,
 				10000000,
-				truxton_readmem,truxton_writemem,0,0,
+				truxton_readmem,truxton_writemem,null,null,
 				toaplan1_interrupt,1
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_Z80,
 				28000000/8,		/* 3.5MHz (28MHz Oscillator) */
 				sound_readmem,sound_writemem,truxton_sound_readport,truxton_sound_writeport,
 				ignore_interrupt,0
-			}
+			)
 		},
 		60, DEFAULT_REAL_60HZ_VBLANK_DURATION,	/* frames per second, vblank duration */
 		10,
 		toaplan1_init_machine,
 	
 		/* video hardware */
-		320, 240, { 0, 319, 0, 239 },
+		320, 240, new rectangle( 0, 319, 0, 239 ),
 		gfxdecodeinfo,
-		2048, 0,
-		0,
+		2048, null,
+		null,
 	
 		VIDEO_TYPE_RASTER | VIDEO_UPDATE_BEFORE_VBLANK,
 		toaplan1_eof_callback,
@@ -1461,40 +1461,40 @@ public class toaplan1
 	
 		/* sound hardware */
 		0,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_YM3812,
-				&ym3812_interface
-			},
+				ym3812_interface
+			),
 		}
-	};
+	);
 	
-	static const struct MachineDriver machine_driver_hellfire =
-	{
+	static MachineDriver machine_driver_hellfire = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_M68000,
 				10000000,
-				hellfire_readmem,hellfire_writemem,0,0,
+				hellfire_readmem,hellfire_writemem,null,null,
 				toaplan1_interrupt,1
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_Z80,
 				28000000/8,		/* 3.5MHz (28MHz Oscillator) */
 				sound_readmem,sound_writemem,hellfire_sound_readport,hellfire_sound_writeport,
 				ignore_interrupt,0
-			}
+			)
 		},
 		60, DEFAULT_REAL_60HZ_VBLANK_DURATION,	/* frames per second, vblank duration */
 		10,
 		toaplan1_init_machine,
 	
 		/* video hardware */
-		320, 256, { 0, 319, 16, 255 },
+		320, 256, new rectangle( 0, 319, 16, 255 ),
 		gfxdecodeinfo,
-		2048, 0,
-		0,
+		2048, null,
+		null,
 	
 		VIDEO_TYPE_RASTER | VIDEO_UPDATE_BEFORE_VBLANK,
 		toaplan1_eof_callback,
@@ -1504,40 +1504,40 @@ public class toaplan1
 	
 		/* sound hardware */
 		0,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_YM3812,
-				&ym3812_interface
-			},
+				ym3812_interface
+			),
 		}
-	};
+	);
 	
-	static const struct MachineDriver machine_driver_zerowing =
-	{
+	static MachineDriver machine_driver_zerowing = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_M68000,
 				10000000,
-				zerowing_readmem,zerowing_writemem,0,0,
+				zerowing_readmem,zerowing_writemem,null,null,
 				toaplan1_interrupt,1
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_Z80,
 				28000000/8,		/* 3.5MHz (28MHz Oscillator) */
 				sound_readmem,sound_writemem,zerowing_sound_readport,zerowing_sound_writeport,
 				ignore_interrupt,0
-			}
+			)
 		},
 		60, DEFAULT_REAL_60HZ_VBLANK_DURATION,	/* frames per second, vblank duration */
 		10,
 		toaplan1_init_machine,
 	
 		/* video hardware */
-		320, 256, { 0, 319, 16, 255 },
+		320, 256, new rectangle( 0, 319, 16, 255 ),
 		gfxdecodeinfo,
-		2048, 0,
-		0,
+		2048, null,
+		null,
 	
 		VIDEO_TYPE_RASTER | VIDEO_UPDATE_BEFORE_VBLANK,
 		toaplan1_eof_callback,
@@ -1547,46 +1547,46 @@ public class toaplan1
 	
 		/* sound hardware */
 		0,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_YM3812,
-				&ym3812_interface
-			},
+				ym3812_interface
+			),
 		}
-	};
+	);
 	
-	static const struct MachineDriver machine_driver_demonwld =
-	{
+	static MachineDriver machine_driver_demonwld = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_M68000,
 				10000000,
-				demonwld_readmem,demonwld_writemem,0,0,
+				demonwld_readmem,demonwld_writemem,null,null,
 				toaplan1_interrupt,1
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_Z80,
 				28000000/8,		/* 3.5MHz (28MHz Oscillator) */
 				sound_readmem,sound_writemem,demonwld_sound_readport,demonwld_sound_writeport,
 				ignore_interrupt,0
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_TMS320C10,
 				28000000/8,		/* 3.5 MHz */
 				DSP_readmem,DSP_writemem,DSP_readport,DSP_writeport,
 				ignore_interrupt,0	/* IRQs are caused by 68000 */
-			}
+			)
 		},
 		60, DEFAULT_REAL_60HZ_VBLANK_DURATION,	/* frames per second, vblank duration */
 		10,
 		toaplan1_init_machine,
 	
 		/* video hardware */
-		320, 256, { 0, 319, 16, 255 },
+		320, 256, new rectangle( 0, 319, 16, 255 ),
 		gfxdecodeinfo,
-		2048, 0,
-		0,
+		2048, null,
+		null,
 	
 		VIDEO_TYPE_RASTER | VIDEO_UPDATE_BEFORE_VBLANK,
 		toaplan1_eof_callback,
@@ -1596,34 +1596,34 @@ public class toaplan1
 	
 		/* sound hardware */
 		0,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_YM3812,
-				&ym3812_interface
-			},
+				ym3812_interface
+			),
 		}
-	};
+	);
 	
-	static const struct MachineDriver machine_driver_samesame =
-	{
+	static MachineDriver machine_driver_samesame = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_M68000,
 				10000000,
-				samesame_readmem,samesame_writemem,0,0,
+				samesame_readmem,samesame_writemem,null,null,
 				toaplan1_interrupt,1
-			}
+			)
 		},
 		60, DEFAULT_REAL_60HZ_VBLANK_DURATION,	/* frames per second, vblank duration */
 		1,
 		toaplan1_init_machine,
 	
 		/* video hardware */
-		320, 240, { 0, 319, 0, 239 },
+		320, 240, new rectangle( 0, 319, 0, 239 ),
 		gfxdecodeinfo,
-		2048, 0,
-		0,
+		2048, null,
+		null,
 	
 		VIDEO_TYPE_RASTER | VIDEO_UPDATE_BEFORE_VBLANK,
 		samesame_eof_callback,
@@ -1633,40 +1633,40 @@ public class toaplan1
 	
 		/* sound hardware */
 		0,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_YM3812,
-				&ym3812_interface
-			},
+				ym3812_interface
+			),
 		}
-	};
+	);
 	
-	static const struct MachineDriver machine_driver_outzone =
-	{
+	static MachineDriver machine_driver_outzone = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_M68000,
 				10000000,
-				outzone_readmem,outzone_writemem,0,0,
+				outzone_readmem,outzone_writemem,null,null,
 				toaplan1_interrupt,1
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_Z80,
 				28000000/8,		/* 3.5MHz (28MHz Oscillator) */
 				sound_readmem,sound_writemem,outzone_sound_readport,outzone_sound_writeport,
 				ignore_interrupt,0
-			}
+			)
 		},
 		60, DEFAULT_REAL_60HZ_VBLANK_DURATION,	/* frames per second, vblank duration */
 		10,
 		toaplan1_init_machine,
 	
 		/* video hardware */
-		320, 240, {0, 319, 0, 239 },
+		320, 240, new rectangle(0, 319, 0, 239 ),
 		outzone_gfxdecodeinfo,
-		2048, 0,
-		0,
+		2048, null,
+		null,
 	
 		VIDEO_TYPE_RASTER | VIDEO_UPDATE_BEFORE_VBLANK,
 		toaplan1_eof_callback,
@@ -1676,34 +1676,34 @@ public class toaplan1
 	
 		/* sound hardware */
 		0,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_YM3812,
-				&ym3812_interface
-			},
+				ym3812_interface
+			),
 		}
-	};
+	);
 	
-	static const struct MachineDriver machine_driver_vimana =
-	{
+	static MachineDriver machine_driver_vimana = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_M68000,
 				10000000,
-				vimana_readmem,vimana_writemem,0,0,
+				vimana_readmem,vimana_writemem,null,null,
 				toaplan1_interrupt,1
-			}
+			)
 		},
 		60, DEFAULT_REAL_60HZ_VBLANK_DURATION,	/* frames per second, vblank duration */
 		1,
 		toaplan1_init_machine,
 	
 		/* video hardware */
-		320, 240, { 0, 319, 0, 239 },
+		320, 240, new rectangle( 0, 319, 0, 239 ),
 		vm_gfxdecodeinfo,
-		2048, 0,
-		0,
+		2048, null,
+		null,
 	
 		VIDEO_TYPE_RASTER | VIDEO_UPDATE_BEFORE_VBLANK,
 		toaplan1_eof_callback,
@@ -1713,13 +1713,13 @@ public class toaplan1
 	
 		/* sound hardware */
 		0,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_YM3812,
-				&ym3812_interface
-			},
+				ym3812_interface
+			),
 		}
-	};
+	);
 	
 	
 	

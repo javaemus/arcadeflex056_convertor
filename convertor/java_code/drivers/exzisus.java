@@ -365,60 +365,60 @@ public class exzisus
 		new GfxDecodeInfo( -1 ) /* end of array */
 	};
 	
-	static const struct MachineDriver machine_driver_exzisus =
-	{
+	static MachineDriver machine_driver_exzisus = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_Z80,
 				6000000,			/* 6 MHz ??? */
-				cpua_readmem, cpua_writemem, 0, 0,
+				cpua_readmem, cpua_writemem, null, null,
 				interrupt, 1
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_Z80,
 				4000000,			/* 4 MHz ??? */
-				sound_readmem, sound_writemem, 0, 0,
+				sound_readmem, sound_writemem, null, null,
 				ignore_interrupt, 1
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_Z80,
 				6000000,			/* 6 MHz ??? */
-				cpub_readmem, cpub_writemem, 0, 0,
+				cpub_readmem, cpub_writemem, null, null,
 				interrupt, 1
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_Z80,
 				6000000,			/* 6 MHz ??? */
-				cpuc_readmem, cpuc_writemem, 0, 0,
+				cpuc_readmem, cpuc_writemem, null, null,
 				interrupt, 1
-			}
+			)
 		},
 		60, DEFAULT_60HZ_VBLANK_DURATION,	/* frames per second, vblank duration */
 		10,	/* 10 CPU slices per frame - enough for the sound CPU to read all commands */
-		0,
+		null,
 	
 		/* video hardware */
-		32*8, 32*8, { 0*8, 32*8-1, 2*8, 30*8-1 },
+		32*8, 32*8, new rectangle( 0*8, 32*8-1, 2*8, 30*8-1 ),
 		exzisus_gfxdecodeinfo,
-		1024, 0,
+		1024, null,
 		palette_RRRR_GGGG_BBBB_convert_prom,
 	
 		VIDEO_TYPE_RASTER,
-		0,
-		0,
-		0,
+		null,
+		null,
+		null,
 		exzisus_vh_screenrefresh,
 	
 		/* sound hardware */
 		0,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_YM2151,
-				&ym2151_interface
-			}
+				ym2151_interface
+			)
 		}
-	};
+	);
 	
 	
 	/***************************************************************************

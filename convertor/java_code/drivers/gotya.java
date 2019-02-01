@@ -195,42 +195,42 @@ public class gotya
 	};
 	
 	
-	static const struct MachineDriver machine_driver_gotya =
-	{
+	static MachineDriver machine_driver_gotya = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_Z80,
 				18432000/6,	/* 3.072 MHz ??? */
-				readmem,writemem,0,0,
+				readmem,writemem,null,null,
 				interrupt,1
-			}
+			)
 		},
 		60, DEFAULT_REAL_60HZ_VBLANK_DURATION,
 		1,
-		0,
+		null,
 	
 		/* video hardware */
-		36*8, 32*8, { 0, 36*8-1, 2*8, 30*8-1 },
+		36*8, 32*8, new rectangle( 0, 36*8-1, 2*8, 30*8-1 ),
 		gfxdecodeinfo,
 		8, 16*4,
 		gotya_vh_convert_color_prom,
 	
 		VIDEO_TYPE_RASTER,
-		0,
+		null,
 		gotya_vh_start,
 		generic_vh_stop,
 		gotya_vh_screenrefresh,
 	
 		/* sound hardware */
 		0,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_SAMPLES,
-				&samples_interface
-			}
+				samples_interface
+			)
 		}
-	};
+	);
 	
 	/***************************************************************************
 	

@@ -338,46 +338,46 @@ public class xxmissio
 		{ 0,xxmissio_scroll_y_w }
 	};
 	
-	static const struct MachineDriver machine_driver_xxmissio =
-	{
-		{
-			{
+	static MachineDriver machine_driver_xxmissio = new MachineDriver
+	(
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_Z80,
 				12000000/4,	/* 3.0MHz */
-				readmem1,writemem1,0,0,
+				readmem1,writemem1,null,null,
 				xxmissio_interrupt_m,1
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_Z80,
 				12000000/4,	/* 3.0MHz */
-				readmem2,writemem2,0,0,
+				readmem2,writemem2,null,null,
 				xxmissio_interrupt_s,2
-			}
+			)
 		},
 		60, DEFAULT_REAL_60HZ_VBLANK_DURATION,
 		100,
-		0,
+		null,
 	
-		64*8, 32*8, { 0*8, 64*8-1, 4*8, 28*8-1 },
+		64*8, 32*8, new rectangle( 0*8, 64*8-1, 4*8, 28*8-1 ),
 	
 		gfxdecodeinfo,
-		768, 0,
-		0,
+		768, null,
+		null,
 	
 		VIDEO_TYPE_RASTER | VIDEO_PIXEL_ASPECT_RATIO_1_2,
-		0,
+		null,
 		generic_vh_start,
 		generic_vh_stop,
 		xxmissio_vh_screenrefresh,
 	
 		0,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_YM2203,
-				&ym2203_interface
-			}
+				ym2203_interface
+			)
 		}
-	};
+	);
 	
 	/****************************************************************************/
 	

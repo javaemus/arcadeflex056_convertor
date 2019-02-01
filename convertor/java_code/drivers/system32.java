@@ -203,31 +203,31 @@ public class system32
 		fillbitmap(bitmap, 0, 0);
 	}
 	
-	static const struct MachineDriver machine_driver_ga2 =
-	{
-		{
-			{
+	static MachineDriver machine_driver_ga2 = new MachineDriver
+	(
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_V60,
 				8000000, // Reality is 16Mhz
-				ga2_readmem, ga2_writemem, 0, 0,
+				ga2_readmem, ga2_writemem, null, null,
 				system32_interrupt, 2
-			},
+			),
 		},
 		60, 100 /*DEFAULT_60HZ_VBLANK_DURATION*/,
 		1,
 		system32_init_machine,
-		40*8, 28*8, { 0*8, 40*8-1, 0*8, 28*8-1 },
-		0,
-		16384, 0,
-		0,
+		40*8, 28*8, new rectangle( 0*8, 40*8-1, 0*8, 28*8-1 ),
+		null,
+		16384, null,
+		null,
 		VIDEO_TYPE_RASTER | VIDEO_UPDATE_AFTER_VBLANK,
-		0,
+		null,
 		system32_vh_start,
 		system32_vh_stop,
 		system32_vh_screenrefresh,
-		0,0,0,0,{},
+		0,0,0,0,new MachineSound[] {},
 		nvram_handler
-	};
+	);
 	
 	public static GameDriver driver_ga2	   = new GameDriver("1992"	,"ga2"	,"system32.java"	,rom_ga2,null	,machine_driver_ga2	,input_ports_ga2	,null	,ROT0	,	"Sega", "Golden Axe 2" )
 }

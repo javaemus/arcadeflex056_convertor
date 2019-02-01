@@ -199,52 +199,52 @@ public class blockout
 	
 	
 	
-	static const struct MachineDriver machine_driver_blockout =
-	{
+	static MachineDriver machine_driver_blockout = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_M68000,
 				8760000,       /* MRH - 8.76 makes gfx/adpcm samples sync better */
-				readmem,writemem,0,0,
+				readmem,writemem,null,null,
 				blockout_interrupt,2
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_Z80 | CPU_AUDIO_CPU,
 				3579545,	/* 3.579545 MHz (?) */
-				sound_readmem,sound_writemem,0,0,
+				sound_readmem,sound_writemem,null,null,
 				ignore_interrupt,1	/* NMIs are triggered by the main CPU, IRQs by the YM2151 */
-			}
+			)
 		},
 		60, DEFAULT_60HZ_VBLANK_DURATION,	/* frames per second, vblank duration */
 		1,	/* 1 CPU slice per frame - interleaving is forced when a sound command is written */
-		0,
+		null,
 	
 		/* video hardware */
-		320, 256, { 0, 319, 8, 247 },
-		0,
-		513, 0,
-		0,
+		320, 256, new rectangle( 0, 319, 8, 247 ),
+		null,
+		513, null,
+		null,
 	
 		VIDEO_TYPE_RASTER,
-		0,
+		null,
 		blockout_vh_start,
 		blockout_vh_stop,
 		blockout_vh_screenrefresh,
 	
 		/* sound hardware */
 		SOUND_SUPPORTS_STEREO,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_YM2151,
-				&ym2151_interface
-			},
-			{
+				ym2151_interface
+			),
+			new MachineSound(
 				SOUND_OKIM6295,
-				&okim6295_interface
-			}
+				okim6295_interface
+			)
 		}
-	};
+	);
 	
 	
 	

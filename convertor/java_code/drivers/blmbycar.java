@@ -285,37 +285,37 @@ public class blmbycar
 		{ 100 }
 	};
 	
-	static const struct MachineDriver machine_driver_blmbycar =
-	{
-		{
-			{
+	static MachineDriver machine_driver_blmbycar = new MachineDriver
+	(
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_M68000,
 				10000000,	/* ? */
-				blmbycar_readmem, blmbycar_writemem,0,0,
+				blmbycar_readmem, blmbycar_writemem,null,null,
 				m68_level1_irq, 1
-			},
+			),
 		},
 		60, DEFAULT_60HZ_VBLANK_DURATION,
 		1,
-		0,
+		null,
 	
 		/* video hardware */
-		0x180, 0x100, { 0, 0x180-1, 0, 0x100-1 },
+		0x180, 0x100, new rectangle( 0, 0x180-1, 0, 0x100-1 ),
 		blmbycar_gfxdecodeinfo,
-		0x300, 0,
-		0,
+		0x300, null,
+		null,
 		VIDEO_TYPE_RASTER,
-		0,
+		null,
 		blmbycar_vh_start,
-		0,
+		null,
 		blmbycar_vh_screenrefresh,
 	
 		/* sound hardware */
 		SOUND_SUPPORTS_STEREO,0,0,0,
-		{
-			{	SOUND_OKIM6295,	&blmbycar_okim6295_interface	}
+		new MachineSound[] {
+			new MachineSound(	SOUND_OKIM6295,	blmbycar_okim6295_interface	)
 		}
-	};
+	);
 	
 	
 	

@@ -290,97 +290,97 @@ public class terracre
 	};
 	
 	
-	static const struct MachineDriver machine_driver_ym3526 =
-	{
-		{
-			{
+	static MachineDriver machine_driver_ym3526 = new MachineDriver
+	(
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_M68000,
 				8000000, /* 8 MHz?? */
-				readmem,writemem,0,0,
+				readmem,writemem,null,null,
 				m68_level1_irq,1
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_Z80 | CPU_AUDIO_CPU,
 				4000000,	/* 4 MHz???? */
 				sound_readmem,sound_writemem,sound_readport,sound_writeport_3526,
 				interrupt,128	/* ??? */
-			},
+			),
 		},
 		60, DEFAULT_60HZ_VBLANK_DURATION,	/* frames per second, vblank duration */
 		1,	/* 1 CPU slice per frame - interleaving is forced when a sound command is written */
-		0,
+		null,
 	
 		/* video hardware */
-		32*8, 32*8, { 0*8, 32*8-1, 2*8, 30*8-1 },
+		32*8, 32*8, new rectangle( 0*8, 32*8-1, 2*8, 30*8-1 ),
 		gfxdecodeinfo,
 		256, 1*16+16*16+16*256,
 		terrac_vh_convert_color_prom,
 	
 		VIDEO_TYPE_RASTER,
-		0,
+		null,
 		terrac_vh_start,
 		terrac_vh_stop,
 		terracre_vh_screenrefresh,
 	
 		/* sound hardware */
 		0,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 			   SOUND_YM3526,
-			   &ym3526_interface
-			},
-			{
+			   ym3526_interface
+			),
+			new MachineSound(
 				SOUND_DAC,
-				&dac_interface
-			}
+				dac_interface
+			)
 		}
-	};
+	);
 	
-	static const struct MachineDriver machine_driver_ym2203 =
-	{
-		{
-			{
+	static MachineDriver machine_driver_ym2203 = new MachineDriver
+	(
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_M68000,
 				8000000, /* 8 MHz?? */
-				readmem,writemem,0,0,
+				readmem,writemem,null,null,
 				m68_level1_irq,1
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_Z80 | CPU_AUDIO_CPU,
 				4000000,	/* 4 MHz???? */
 				sound_readmem,sound_writemem,sound_readport,sound_writeport_2203,
 				interrupt,128	/* ??? */
-			},
+			),
 		},
 		60, DEFAULT_60HZ_VBLANK_DURATION,	/* frames per second, vblank duration */
 		1,	/* 1 CPU slice per frame - interleaving is forced when a sound command is written */
-		0,
+		null,
 	
 		/* video hardware */
-		32*8, 32*8, { 0*8, 32*8-1, 2*8, 30*8-1 },
+		32*8, 32*8, new rectangle( 0*8, 32*8-1, 2*8, 30*8-1 ),
 		gfxdecodeinfo,
 		256, 1*16+16*16+16*256,
 		terrac_vh_convert_color_prom,
 	
 		VIDEO_TYPE_RASTER,
-		0,
+		null,
 		terrac_vh_start,
 		terrac_vh_stop,
 		terracre_vh_screenrefresh,
 	
 		/* sound hardware */
 		0,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 			   SOUND_YM2203,
-			   &ym2203_interface
-			},
-			{
+			   ym2203_interface
+			),
+			new MachineSound(
 				SOUND_DAC,
-				&dac_interface
-			}
+				dac_interface
+			)
 		}
-	};
+	);
 	
 	
 	

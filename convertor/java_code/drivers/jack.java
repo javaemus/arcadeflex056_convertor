@@ -379,48 +379,48 @@ public class jack
 	};
 	
 	
-	static const struct MachineDriver machine_driver_jack =
-	{
+	static MachineDriver machine_driver_jack = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_Z80,
 				18000000/6,	/* 3 MHz */
-				readmem,writemem,0,0,
+				readmem,writemem,null,null,
 				interrupt,1
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_Z80 | CPU_AUDIO_CPU,
 				18000000/12,	/* 1.5 MHz */
 				sound_readmem,sound_writemem,sound_readport,sound_writeport,
 				ignore_interrupt,0	/* IRQs are caused by the main CPU */
-			}
+			)
 		},
 		60, DEFAULT_60HZ_VBLANK_DURATION,	/* frames per second, vblank duration */
 		1,	/* 1 CPU slice per frame - interleaving is forced when a sound command is written */
-		0,
+		null,
 	
 		/* video hardware */
-		32*8, 32*8, { 0*8, 32*8-1, 2*8, 30*8-1 },
+		32*8, 32*8, new rectangle( 0*8, 32*8-1, 2*8, 30*8-1 ),
 		gfxdecodeinfo,
-		32, 0,
-		0,
+		32, null,
+		null,
 	
 		VIDEO_TYPE_RASTER,
-		0,
+		null,
 		generic_vh_start,
 		generic_vh_stop,
 		jack_vh_screenrefresh,
 	
 		/* sound hardware */
 		0,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_AY8910,
-				&ay8910_interface
-			}
+				ay8910_interface
+			)
 		}
-	};
+	);
 	
 	
 	/***************************************************************************

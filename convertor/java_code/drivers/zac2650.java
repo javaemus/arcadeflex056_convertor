@@ -221,34 +221,34 @@ public class zac2650
 		new GfxDecodeInfo( -1 ) /* end of array */
 	};
 	
-	static const struct MachineDriver machine_driver_tinvader =
-	{
-		{
-			{
+	static MachineDriver machine_driver_tinvader = new MachineDriver
+	(
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_S2650,
 				3800000,
 				readmem,writemem,readport,0,
 				ignore_interrupt,1,
-			}
+			)
 		},
 		55, 1041,
 		1, /* CPU slices */
-		0, /* init machine */
+		null, /* init machine */
 	
 		/* video hardware */
-		30*8, 32*8, { 0, 239, 0, 255 },
+		30*8, 32*8, new rectangle( 0, 239, 0, 255 ),
 		tinvader_gfxdecodeinfo,
 		8,8,
 		init_palette,
 		VIDEO_TYPE_RASTER,
-		0,
+		null,
 		tinvader_vh_start,
 		tinvader_vh_stop,
 	    tinvader_vh_screenrefresh,
 	
 		/* sound hardware */
 		0,0,0,0,
-	};
+	);
 	
 	public static WriteHandlerPtr tinvader_sound_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{

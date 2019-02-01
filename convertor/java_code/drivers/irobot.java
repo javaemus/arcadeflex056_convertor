@@ -279,44 +279,44 @@ public class irobot
 	};
 	
 	
-	static const struct MachineDriver machine_driver_irobot =
-	{
+	static MachineDriver machine_driver_irobot = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 	            CPU_M6809,
 	            1500000,    /* 1.5 MHz */
-				readmem,writemem,0,0,
+				readmem,writemem,null,null,
 	            ignore_interrupt,0		/* interrupt handled by scanline callbacks */
-	         },
+	         ),
 		},
 		60, DEFAULT_REAL_60HZ_VBLANK_DURATION,	/* frames per second, vblank duration */
 	    1,
 	    irobot_init_machine,
 	
 		/* video hardware */
-		32*8, 32*8, { 0*8, 32*8-1, 0*8, 29*8-1 },
+		32*8, 32*8, new rectangle( 0*8, 32*8-1, 0*8, 29*8-1 ),
 		gfxdecodeinfo,
 	    64 + 32,64 + 32, /* 64 for polygons, 32 for text */
 	    irobot_vh_convert_color_prom,
 	
 	    VIDEO_TYPE_RASTER,
-		0,
+		null,
 	    irobot_vh_start,
 	    irobot_vh_stop,
 	    irobot_vh_screenrefresh,
 	
 		/* sound hardware */
 		0,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_POKEY,
-				&pokey_interface
-			}
+				pokey_interface
+			)
 		},
 	
 		nvram_handler
-	};
+	);
 	
 	
 	

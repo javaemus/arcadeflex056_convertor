@@ -4766,33 +4766,33 @@ public class taito_f2
 	#define init_machine_0 0
 	
 	#define MACHINE_DRIVER(NAME,INIT,MAXCOLS,GFX,VHSTART,VHREFRESH,EOF)							\
-	static const struct MachineDriver machine_driver_##NAME =									\
-	{																					\
+	static MachineDriver machine_driver_##NAME = new MachineDriver\
+	(																					\
 		/* basic machine hardware */													\
-		{																				\
-			{																			\
+		new MachineCPU[] {																				\
+			new MachineCPU(																			\
 				CPU_M68000,																\
 				24000000/2,	/* 12 MHz */												\
-				NAME##_readmem, NAME##_writemem,0,0,									\
+				NAME##_readmem, NAME##_writemem,null,null,									\
 				taitof2_interrupt,1														\
-			},																			\
-			{																			\
+			),																			\
+			new MachineCPU(																			\
 				CPU_Z80 | CPU_AUDIO_CPU,												\
 				16000000/4,	/* 4 MHz */													\
-				sound_readmem, sound_writemem,0,0,										\
+				sound_readmem, sound_writemem,null,null,										\
 				ignore_interrupt,0	/* IRQs are triggered by the YM2610 */				\
-			}																			\
+			)																			\
 		},																				\
 		60, DEFAULT_60HZ_VBLANK_DURATION,	/* frames per second, vblank duration */	\
 		1,																				\
 		init_machine_##INIT,															\
 																						\
 		/* video hardware */															\
-		40*8, 32*8, { 0*8, 40*8-1, 2*8, 30*8-1 },										\
+		40*8, 32*8, new rectangle( 0*8, 40*8-1, 2*8, 30*8-1 ),										\
 																						\
 		GFX##_gfxdecodeinfo,															\
-		MAXCOLS, 0,																		\
-		0,																				\
+		MAXCOLS, null,																		\
+		null,																				\
 																						\
 		VIDEO_TYPE_RASTER,										\
 		taitof2_##EOF##_eof_callback,													\
@@ -4802,13 +4802,13 @@ public class taito_f2
 																						\
 		/* sound hardware */															\
 		SOUND_SUPPORTS_STEREO,0,0,0,													\
-		{																				\
-			{																			\
+		new MachineSound[] {																				\
+			new MachineSound(																			\
 				SOUND_YM2610,															\
-				&ym2610_interface														\
-			}																			\
+				ym2610_interface														\
+			)																			\
 		}																				\
-	};
+	);
 	
 	#define hthero_readmem		footchmp_readmem
 	#define hthero_writemem		footchmp_writemem
@@ -4848,33 +4848,33 @@ public class taito_f2
 	MACHINE_DRIVER( driftout, 0,       4096,	pivot,    driftout, taitof2_pri_roz, no_buffer )
 	
 	
-	static const struct MachineDriver machine_driver_camltrua =
-	{
+	static MachineDriver machine_driver_camltrua = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_M68000,
 				24000000/2,	/* 12 MHz */
-				cameltry_readmem, cameltry_writemem,0,0,
+				cameltry_readmem, cameltry_writemem,null,null,
 				taitof2_interrupt,1
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_Z80 | CPU_AUDIO_CPU,
 				16000000/4,	/* 4 MHz ??? */
-				camltrua_sound_readmem, camltrua_sound_writemem,0,0,
+				camltrua_sound_readmem, camltrua_sound_writemem,null,null,
 				ignore_interrupt,1	/* IRQs are triggered by the main CPU */
-			}
+			)
 		},
 		60, DEFAULT_60HZ_VBLANK_DURATION,	/* frames per second, vblank duration */
 		1,
-		0,
+		null,
 	
 		/* video hardware */
-		40*8, 32*8, { 0*8, 40*8-1, 2*8, 30*8-1 },
+		40*8, 32*8, new rectangle( 0*8, 40*8-1, 2*8, 30*8-1 ),
 	
 		pivot_gfxdecodeinfo,
-		4096, 0,
-		0,
+		4096, null,
+		null,
 	
 		VIDEO_TYPE_RASTER,
 		taitof2_no_buffer_eof_callback,
@@ -4884,41 +4884,41 @@ public class taito_f2
 	
 		/* sound hardware */
 		0,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_YM2203,
-				&ym2203_interface
-			}
+				ym2203_interface
+			)
 		}
-	};
+	);
 	
-	static const struct MachineDriver machine_driver_driveout =									\
-	{
+	static MachineDriver machine_driver_driveout = new MachineDriver\
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_M68000,
 				24000000/2,	/* 12 MHz */
-				driveout_readmem, driveout_writemem,0,0,
+				driveout_readmem, driveout_writemem,null,null,
 				taitof2_interrupt,1
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_Z80 | CPU_AUDIO_CPU,
 				16000000/4,	/* 4 MHz */
-				driveout_sound_readmem, driveout_sound_writemem,0,0,
+				driveout_sound_readmem, driveout_sound_writemem,null,null,
 				ignore_interrupt,0	/* IRQs are triggered by the main CPU */
-			}
+			)
 		},
 		60, DEFAULT_60HZ_VBLANK_DURATION,	/* frames per second, vblank duration */
 		1,
-		0,
+		null,
 	
 		/* video hardware */
-		40*8, 32*8, { 0*8, 40*8-1, 2*8, 30*8-1 },
+		40*8, 32*8, new rectangle( 0*8, 40*8-1, 2*8, 30*8-1 ),
 	
 		pivot_gfxdecodeinfo,
-		4096, 0,
-		0,
+		4096, null,
+		null,
 	
 		VIDEO_TYPE_RASTER,
 		taitof2_no_buffer_eof_callback,
@@ -4928,13 +4928,13 @@ public class taito_f2
 	
 		/* sound hardware */
 		SOUND_SUPPORTS_STEREO   /* does it ? */,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_OKIM6295,
-				&okim6295_interface
-			}
+				okim6295_interface
+			)
 		}
-	};
+	);
 	
 	
 	/***************************************************************************

@@ -655,53 +655,53 @@ public class renegade
 	
 	
 	
-	static const struct MachineDriver machine_driver_renegade =
-	{
-		{
-			{
+	static MachineDriver machine_driver_renegade = new MachineDriver
+	(
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_M6502,
 				1500000,	/* 1.5 MHz? */
-				main_readmem,main_writemem,0,0,
+				main_readmem,main_writemem,null,null,
 				renegade_interrupt,2
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_M6809 | CPU_AUDIO_CPU,
 				1500000,	/* ? */
-				sound_readmem,sound_writemem,0,0,
+				sound_readmem,sound_writemem,null,null,
 				ignore_interrupt,0, /* FIRQs are caused by the YM3526 */
 									/* IRQs are caused by the main CPU */
-			}
+			)
 		},
 		60,
 	
 		DEFAULT_REAL_60HZ_VBLANK_DURATION*2,
 	
 		1, /* cpu slices */
-		0, /* init machine */
+		null, /* init machine */
 	
-		32*8, 32*8, { 1*8, 31*8-1, 0, 30*8-1 },
+		32*8, 32*8, new rectangle( 1*8, 31*8-1, 0, 30*8-1 ),
 		gfxdecodeinfo,
-		256, 0,
-		0,
+		256, null,
+		null,
 	
 		VIDEO_TYPE_RASTER,
-		0,
-		renegade_vh_start,0,
+		null,
+		renegade_vh_start,null,
 		renegade_vh_screenrefresh,
 	
 		/* sound hardware */
 		0,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_YM3526,
-				&ym3526_interface
-			},
-			{
+				ym3526_interface
+			),
+			new MachineSound(
 				SOUND_ADPCM,
-				&adpcm_interface
-			}
+				adpcm_interface
+			)
 		}
-	};
+	);
 	
 	
 	

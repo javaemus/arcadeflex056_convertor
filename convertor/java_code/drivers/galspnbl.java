@@ -336,53 +336,53 @@ public class galspnbl
 	
 	
 	
-	static const struct MachineDriver machine_driver_hotpinbl =
-	{
+	static MachineDriver machine_driver_hotpinbl = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_M68000,
 				10000000,	/* 10 MHz ??? */
-				readmem,writemem,0,0,
+				readmem,writemem,null,null,
 				m68_level3_irq,1	/* also has vector for 6, but it does nothing */
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_Z80 | CPU_AUDIO_CPU,
 				4000000,	/* 4 MHz ??? */
-				sound_readmem,sound_writemem,0,0,
+				sound_readmem,sound_writemem,null,null,
 				ignore_interrupt,1	/* IRQ is caused by the YM3812 */
 									/* NMI is caused by the main CPU */
-			}
+			)
 		},
 		60, DEFAULT_60HZ_VBLANK_DURATION,	/* frames per second, vblank duration */
 		1,	/* 1 CPU slice per frame - interleaving is forced when a sound command is written */
-		0,
+		null,
 	
 		/* video hardware */
-		512, 256, { 0, 512-1, 16, 240-1 },
+		512, 256, new rectangle( 0, 512-1, 16, 240-1 ),
 		gfxdecodeinfo,
 		1024 + 32768, 1024,
 		galspnbl_init_palette,
 	
 		VIDEO_TYPE_RASTER | VIDEO_PIXEL_ASPECT_RATIO_1_2,
-		0,
+		null,
 		generic_bitmapped_vh_start,
 		generic_bitmapped_vh_stop,
 		galspnbl_vh_screenrefresh,
 	
 		/* sound hardware */
 		0,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_YM3812,
-				&ym3812_interface
-			},
-			{
+				ym3812_interface
+			),
+			new MachineSound(
 				SOUND_OKIM6295,
-				&okim6295_interface
-			}
+				okim6295_interface
+			)
 		}
-	};
+	);
 	
 	
 	

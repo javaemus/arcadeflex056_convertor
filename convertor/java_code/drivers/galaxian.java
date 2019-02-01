@@ -2057,23 +2057,23 @@ public class galaxian
 	
 	#define MACHINE_DRIVER(NAME, MEM, INT, GFX, VHSTART)							\
 																					\
-	static const struct MachineDriver machine_driver_##NAME =						\
-	{																				\
+	static MachineDriver machine_driver_##NAME = new MachineDriver\
+	(																				\
 		/* basic machine hardware */												\
-		{																			\
-			{																		\
+		new MachineCPU[] {																			\
+			new MachineCPU(																		\
 				CPU_Z80,															\
 				18432000/6,	/* 3.072 MHz */											\
-				MEM##_readmem,MEM##_writemem,0,0,									\
+				MEM##_readmem,MEM##_writemem,null,null,									\
 				INT,1																\
-			}																		\
+			)																		\
 		},																			\
 		16000.0/132/2, 2500,	/* frames per second, vblank duration */			\
 		1,	/* single CPU, no need for interleaving */								\
-		0,																			\
+		null,																			\
 																					\
 		/* video hardware */														\
-		32*8, 32*8, { 0*8, 32*8-1, 2*8, 30*8-1 },									\
+		32*8, 32*8, new rectangle( 0*8, 32*8-1, 2*8, 30*8-1 ),									\
 		GFX##_gfxdecodeinfo,														\
 		32+2+64,8*4,	/* 32 for the characters, 2 for the bullets, 64 for the stars */	\
 		galaxian_vh_convert_color_prom,												\
@@ -2086,13 +2086,13 @@ public class galaxian
 																					\
 		/* sound hardware */														\
 		0,0,0,0,																	\
-		{																			\
-			{																		\
+		new MachineSound[] {																			\
+			new MachineSound(																		\
 				SOUND_CUSTOM,														\
-				&custom_interface													\
-			}																		\
+				custom_interface													\
+			)																		\
 		}																			\
-	};
+	);
 	
 	/*			   NAME      MEM  	   INTERRUPT  	  GFXDECODE VH_START */
 	MACHINE_DRIVER(galaxian, galaxian, nmi_interrupt, galaxian, galaxian)
@@ -2106,23 +2106,23 @@ public class galaxian
 	MACHINE_DRIVER(moonqsr,  mooncrst, nmi_interrupt, galaxian, moonqsr)
 	
 	
-	static const struct MachineDriver machine_driver_scramblb =
-	{
+	static MachineDriver machine_driver_scramblb = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_Z80,
 				18432000/6,	/* 3.072 MHz */
-				scramblb_readmem,scramblb_writemem,0,0,
+				scramblb_readmem,scramblb_writemem,null,null,
 				nmi_interrupt,1
-			}
+			)
 		},
 		16000.0/132/2, 2500,	/* frames per second, vblank duration */
 		1,	/* single CPU, no need for interleaving */
-		0,
+		null,
 	
 		/* video hardware */
-		32*8, 32*8, { 0*8, 32*8-1, 2*8, 30*8-1 },
+		32*8, 32*8, new rectangle( 0*8, 32*8-1, 2*8, 30*8-1 ),
 		galaxian_gfxdecodeinfo,
 		32+2+64+1,8*4,	/* 32 for the characters, 2 for the bullets, 64 for the stars, 1 for background */
 		scramble_vh_convert_color_prom,
@@ -2135,31 +2135,31 @@ public class galaxian
 	
 		/* sound hardware */
 		0,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_CUSTOM,
-				&custom_interface
-			}
+				custom_interface
+			)
 		}
-	};
+	);
 	
-	static const struct MachineDriver machine_driver_zigzag =
-	{
+	static MachineDriver machine_driver_zigzag = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_Z80,
 				18432000/6,	/* 3.072 MHz */
-				zigzag_readmem,zigzag_writemem,0,0,
+				zigzag_readmem,zigzag_writemem,null,null,
 				nmi_interrupt,1
-			}
+			)
 		},
 		16000.0/132/2, 2500,	/* frames per second, vblank duration */
 		1,	/* single CPU, no need for interleaving */
-		0,
+		null,
 	
 		/* video hardware */
-		32*8, 32*8, { 0*8, 32*8-1, 2*8, 30*8-1 },
+		32*8, 32*8, new rectangle( 0*8, 32*8-1, 2*8, 30*8-1 ),
 		pacmanbl_gfxdecodeinfo,
 		32+2+64,8*4,	/* 32 for the characters, 2 for the bullets, 64 for the stars */
 		galaxian_vh_convert_color_prom,
@@ -2172,31 +2172,31 @@ public class galaxian
 	
 		/* sound hardware */
 		0,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_AY8910,
-				&jumpbug_ay8910_interface
-			}
+				jumpbug_ay8910_interface
+			)
 		}
-	};
+	);
 	
-	static const struct MachineDriver machine_driver_jumpbug =
-	{
+	static MachineDriver machine_driver_jumpbug = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_Z80,
 				3072000,	/* 3.072 MHz */
-				jumpbug_readmem,jumpbug_writemem,0,0,
+				jumpbug_readmem,jumpbug_writemem,null,null,
 				nmi_interrupt,1
-			}
+			)
 		},
 		16000.0/132/2, 2500,	/* frames per second, vblank duration */
 		1,	/* single CPU, no need for interleaving */
-		0,
+		null,
 	
 		/* video hardware */
-		32*8, 32*8, { 0*8, 32*8-1, 2*8, 30*8-1 },
+		32*8, 32*8, new rectangle( 0*8, 32*8-1, 2*8, 30*8-1 ),
 		galaxian_gfxdecodeinfo,
 		32+2+64,8*4,	/* 32 for the characters, 2 for the bullets, 64 for the stars */
 		galaxian_vh_convert_color_prom,
@@ -2209,153 +2209,153 @@ public class galaxian
 	
 		/* sound hardware */
 		0,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_AY8910,
-				&jumpbug_ay8910_interface
-			}
+				jumpbug_ay8910_interface
+			)
 		}
-	};
+	);
 	
-	static const struct MachineDriver machine_driver_checkman =
-	{
+	static MachineDriver machine_driver_checkman = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_Z80,
 				18432000/6,	/* 3.072 MHz */
-				mooncrst_readmem,checkman_writemem,0,checkman_writeport,
+				mooncrst_readmem,checkman_writemem,null,checkman_writeport,
 				nmi_interrupt,1
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_Z80 | CPU_AUDIO_CPU,
 				1620000,	/* 1.62 MHz */
 				checkman_sound_readmem,checkman_sound_writemem,
 				checkman_sound_readport,checkman_sound_writeport,
 				interrupt,1	/* NMIs are triggered by the main CPU */
-			}
+			)
 		},
 		16000.0/132/2, 2500,	/* frames per second, vblank duration */
 		1,	/* 1 CPU slice per frame - interleaving is forced when a sound command is written */
-		0,
+		null,
 	
 		/* video hardware */
-		32*8, 32*8, { 0*8, 32*8-1, 2*8, 30*8-1 },
+		32*8, 32*8, new rectangle( 0*8, 32*8-1, 2*8, 30*8-1 ),
 		galaxian_gfxdecodeinfo,
 		32+2+64,8*4,	/* 32 for the characters, 2 for the bullets, 64 for the stars */
 		galaxian_vh_convert_color_prom,
 	
 		VIDEO_TYPE_RASTER,
-		0,
+		null,
 		mooncrst_vh_start,
 		0,
 		galaxian_vh_screenrefresh,
 	
 		/* sound hardware */
 		0,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_CUSTOM,
-				&custom_interface
-			},
-			{
+				custom_interface
+			),
+			new MachineSound(
 				SOUND_AY8910,
-				&jumpbug_ay8910_interface
-			}
+				jumpbug_ay8910_interface
+			)
 		}
-	};
+	);
 	
-	static const struct MachineDriver machine_driver_checkmaj =
-	{
+	static MachineDriver machine_driver_checkmaj = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_Z80,
 				18432000/6,	/* 3.072 MHz */
-				galaxian_readmem,checkmaj_writemem,0,0,
+				galaxian_readmem,checkmaj_writemem,null,null,
 				nmi_interrupt,1
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_Z80 | CPU_AUDIO_CPU,
 				1620000,	/* 1.62 MHz? (used the same as Moon Cresta) */
-				checkmaj_sound_readmem,checkmaj_sound_writemem,0,0,
+				checkmaj_sound_readmem,checkmaj_sound_writemem,null,null,
 				interrupt,32	/* NMIs are triggered by the main CPU */
-			}
+			)
 		},
 		16000.0/132/2, 2500,	/* frames per second, vblank duration */
 		1,	/* 1 CPU slice per frame - interleaving is forced when a sound command is written */
-		0,
+		null,
 	
 		/* video hardware */
-		32*8, 32*8, { 0*8, 32*8-1, 2*8, 30*8-1 },
+		32*8, 32*8, new rectangle( 0*8, 32*8-1, 2*8, 30*8-1 ),
 		galaxian_gfxdecodeinfo,
 		32+2+64,8*4,	/* 32 for the characters, 2 for the bullets, 64 for the stars */
 		galaxian_vh_convert_color_prom,
 	
 		VIDEO_TYPE_RASTER,
-		0,
+		null,
 		galaxian_vh_start,
 		0,
 		galaxian_vh_screenrefresh,
 	
 		/* sound hardware */
 		0,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_AY8910,
-				&checkmaj_ay8910_interface
-			}
+				checkmaj_ay8910_interface
+			)
 		}
-	};
+	);
 	
 	
-	static const struct MachineDriver machine_driver_kingball =
-	{
+	static MachineDriver machine_driver_kingball = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_Z80,
 				18432000/6,	/* 3.072 MHz */
-				mooncrst_readmem,kingball_writemem,0,0,
+				mooncrst_readmem,kingball_writemem,null,null,
 				nmi_interrupt,1
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_Z80 | CPU_AUDIO_CPU,
 				5000000/2,	/* 2.5 MHz */
 				kingball_sound_readmem,kingball_sound_writemem,
 				kingball_sound_readport,kingball_sound_writeport,
 				ignore_interrupt,1
-			}
+			)
 		},
 		16000.0/132/2, 2500,	/* frames per second, vblank duration */
 		1,	/* 1 CPU slice per frame - interleaving is forced when a sound command is written */
-		0,
+		null,
 	
 		/* video hardware */
-		32*8, 32*8, { 0*8, 32*8-1, 2*8, 30*8-1 },
+		32*8, 32*8, new rectangle( 0*8, 32*8-1, 2*8, 30*8-1 ),
 		galaxian_gfxdecodeinfo,
 		32+2+64,8*4,	/* 32 for the characters, 2 for the bullets, 64 for the stars */
 		galaxian_vh_convert_color_prom,
 	
 		VIDEO_TYPE_RASTER,
-		0,
+		null,
 		galaxian_vh_start,
 		0,
 		galaxian_vh_screenrefresh,
 	
 		/* sound hardware */
 		0,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_CUSTOM,
-				&custom_interface
-			},
-			{
+				custom_interface
+			),
+			new MachineSound(
 				SOUND_DAC,
-				&kingball_dac_interface
-			}
+				kingball_dac_interface
+			)
 		}
-	};
+	);
 	
 	
 	/***************************************************************************

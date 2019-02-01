@@ -473,24 +473,24 @@ public class omegrace
 	
 	
 	
-	static const struct MachineDriver machine_driver_omegrace =
-	{
+	static MachineDriver machine_driver_omegrace = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_Z80,
 				3000000,	/* 3.0 MHz */
 				readmem,writemem,readport,writeport,
-				0,0, /* no vblank interrupt */
+				null,null, /* no vblank interrupt */
 				interrupt, 250 /* 250 Hz */
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_Z80 | CPU_AUDIO_CPU,
 				1500000,	/* 1.5 MHz */
 				sound_readmem,sound_writemem,sound_readport,sound_writeport,
-				0, 0, /* no vblank interrupt */
+				null, null, /* no vblank interrupt */
 				nmi_interrupt, 250 /* 250 Hz */
-			}
+			)
 		},
 		40, 0,	/* frames per second, vblank duration (vector game, so no vblank) */
 		1, /* the soundcpu is synchronized by the new timer code */
@@ -498,28 +498,28 @@ public class omegrace
 		omegrace_init_machine,
 	
 		/* video hardware */
-		400, 300, { 0, 1020, -10, 1010 },
-		0,
-		256, 0,
+		400, 300, new rectangle( 0, 1020, -10, 1010 ),
+		null,
+		256, null,
 		avg_init_palette_white,
 	
 		VIDEO_TYPE_VECTOR | VIDEO_SUPPORTS_DIRTY | VIDEO_RGB_DIRECT,
-		0,
+		null,
 		dvg_start,
 		dvg_stop,
 		vector_vh_screenrefresh,
 	
 		/* sound hardware */
 		0,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_AY8910,
-				&ay8910_interface
-			}
+				ay8910_interface
+			)
 		},
 	
 		nvram_handler
-	};
+	);
 	
 	
 	/***************************************************************************

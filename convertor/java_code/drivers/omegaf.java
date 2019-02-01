@@ -658,87 +658,87 @@ public class omegaf
 		{ 0 }
 	};
 	
-	static const struct MachineDriver machine_driver_omegaf =
-	{
-		{
-			{
+	static MachineDriver machine_driver_omegaf = new MachineDriver
+	(
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_Z80,
 				12000000/2,		/* 12000000/2 ??? */
-				omegaf_readmem, omegaf_writemem, 0, 0,	/* very sensitive to these settings */
+				omegaf_readmem, omegaf_writemem, null, null,	/* very sensitive to these settings */
 				omegaf_interrupt, 1
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_Z80 | CPU_AUDIO_CPU,
 				4000000,		/* 12000000/3 ??? */
 				sound_readmem,  sound_writemem,
 				sound_readport, sound_writeport,
 				interrupt, 2
-			},
+			),
 		},
 		60, DEFAULT_60HZ_VBLANK_DURATION,	/* frames per second, vblank duration */
 		10,									/* number of slices per frame */
-		0,
+		null,
 	
-		128*16, 32*16, { 0*8, 32*8-1, 4*8, 28*8-1 },
+		128*16, 32*16, new rectangle( 0*8, 32*8-1, 4*8, 28*8-1 ),
 		omegaf_gfxdecodeinfo,
-		1024, 0,
-		0,
+		1024, null,
+		null,
 	
 		VIDEO_TYPE_RASTER,
-		0,
+		null,
 		omegaf_vh_start,
 		omegaf_vh_stop,
 		omegaf_vh_screenrefresh,
 	
 		0,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_YM2203,
-				&ym2203_interface
-			}
+				ym2203_interface
+			)
 		}
-	};
+	);
 	
-	static const struct MachineDriver machine_driver_robokid =
-	{
-		{
-			{
+	static MachineDriver machine_driver_robokid = new MachineDriver
+	(
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_Z80,
 				12000000/2,		/* 12000000/2 ??? */
-				robokid_readmem, robokid_writemem, 0, 0,	/* very sensitive to these settings */
+				robokid_readmem, robokid_writemem, null, null,	/* very sensitive to these settings */
 				omegaf_interrupt, 1
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_Z80 | CPU_AUDIO_CPU,
 				4000000,		/* 12000000/3 ??? */
 				sound_readmem,  sound_writemem,
 				sound_readport, sound_writeport,
 				interrupt, 2
-			},
+			),
 		},
 		60, DEFAULT_60HZ_VBLANK_DURATION,	/* frames per second, vblank duration */
 		10,									/* number of slices per frame */
-		0,
+		null,
 	
-		32*16, 32*16, { 0*8, 32*8-1, 4*8, 28*8-1 },
+		32*16, 32*16, new rectangle( 0*8, 32*8-1, 4*8, 28*8-1 ),
 		robokid_gfxdecodeinfo,
-		1024, 0,
-		0,
+		1024, null,
+		null,
 	
 		VIDEO_TYPE_RASTER,
-		0,
+		null,
 		robokid_vh_start,
 		omegaf_vh_stop,
 		omegaf_vh_screenrefresh,
 	
 		0,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_YM2203,
-				&ym2203_interface
-			}
+				ym2203_interface
+			)
 		}
-	};
+	);
 	
 	
 	/**************************************************************************

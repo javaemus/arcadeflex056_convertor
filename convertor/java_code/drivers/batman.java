@@ -239,16 +239,16 @@ public class batman
 	 *
 	 *************************************/
 	
-	static const struct MachineDriver machine_driver_batman =
-	{
+	static MachineDriver machine_driver_batman = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_M68000,
 				ATARI_CLOCK_14MHz,
-				main_readmem,main_writemem,0,0,
+				main_readmem,main_writemem,null,null,
 				ignore_interrupt,1
-			},
+			),
 			JSA_III_CPU
 		},
 		60, DEFAULT_REAL_60HZ_VBLANK_DURATION,
@@ -256,13 +256,13 @@ public class batman
 		init_machine,
 	
 		/* video hardware */
-		42*8, 30*8, { 0*8, 42*8-1, 0*8, 30*8-1 },
+		42*8, 30*8, new rectangle( 0*8, 42*8-1, 0*8, 30*8-1 ),
 		gfxdecodeinfo,
-		2048, 2048,	/* can't make colortable_len = 0 because of 0xffff transparency kludge */
-		0,
+		2048, 2048,	/* can't make colortable_len = null because of 0xffff transparency kludge */
+		null,
 	
 		VIDEO_TYPE_RASTER | VIDEO_NEEDS_6BITS_PER_GUN | VIDEO_UPDATE_BEFORE_VBLANK,
-		0,
+		null,
 		batman_vh_start,
 		batman_vh_stop,
 		batman_vh_screenrefresh,
@@ -271,7 +271,7 @@ public class batman
 		JSA_III_MONO(REGION_SOUND1),
 	
 		atarigen_nvram_handler
-	};
+	);
 	
 	
 	

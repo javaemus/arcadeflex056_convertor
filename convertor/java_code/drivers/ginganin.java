@@ -386,51 +386,51 @@ public class ginganin
 		{ 0 }	/* I/O write */
 	};
 	
-	static const struct MachineDriver machine_driver_ginganin =
-	{
-		{
-			{
+	static MachineDriver machine_driver_ginganin = new MachineDriver
+	(
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_M68000,
 				6000000,	/* ? */
-				readmem,writemem,0,0,
+				readmem,writemem,null,null,
 				ginganin_interrupt, 1
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_M6809 | CPU_AUDIO_CPU,
 				1000000,	/* ? */ /* Takahiro Nogi. 1999/09/27 (3579545 -> 1000000) */
-				sound_readmem,sound_writemem,0,0,
+				sound_readmem,sound_writemem,null,null,
 				ginganin_sound_interrupt, 60	/* Takahiro Nogi. 1999/09/27 (1 -> 60) */
-			},
+			),
 		},
 		60,DEFAULT_60HZ_VBLANK_DURATION,
 		1,
-		0,
+		null,
 	
 		/* video hardware */
-		256, 256, { 0, 255, 0 + 16 , 255 - 16 },
+		256, 256, new rectangle( 0, 255, 0 + 16 , 255 - 16 ),
 		gfxdecodeinfo,
-		1024, 0,
-		0,
+		1024, null,
+		null,
 	
 		VIDEO_TYPE_RASTER,
-		0,
+		null,
 		ginganin_vh_start,
-		0,
+		null,
 		ginganin_vh_screenrefresh,
 	
 		/* sound hardware */
 		0,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_AY8910,
-				&AY8910_interface
-			},
-			{
+				AY8910_interface
+			),
+			new MachineSound(
 				SOUND_Y8950,
-				&y8950_interface
-			}
+				y8950_interface
+			)
 		}
-	};
+	);
 	
 	
 	

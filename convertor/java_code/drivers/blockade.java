@@ -487,153 +487,153 @@ public class blockade
 	
 	
 	
-	static const struct MachineDriver machine_driver_blockade =
-	{
+	static MachineDriver machine_driver_blockade = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_8080,
 				2079000,
 				readmem,writemem,readport,writeport,
 				blockade_interrupt,1
-			},
+			),
 		},
 			60, DEFAULT_REAL_60HZ_VBLANK_DURATION,
 			1,
-		0,
+		null,
 	
 		/* video hardware */
-		32*8, 28*8, { 0*8, 32*8-1, 0*8, 28*8-1 },
+		32*8, 28*8, new rectangle( 0*8, 32*8-1, 0*8, 28*8-1 ),
 		gfxdecodeinfo,
 		2, 2,
 		init_palette_gr,
 	
 		VIDEO_TYPE_RASTER|VIDEO_SUPPORTS_DIRTY,
-		0,
+		null,
 		generic_vh_start,
 		generic_vh_stop,
 		blockade_vh_screenrefresh,
 	
 		/* sound hardware */
 		0,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_SAMPLES,
-				&samples_interface
-			}
+				samples_interface
+			)
 		}
-	};
+	);
 	
-	static const struct MachineDriver machine_driver_comotion =
-	{
+	static MachineDriver machine_driver_comotion = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_8080,
 				2079000,
 				readmem,writemem,readport,writeport,
 				blockade_interrupt,1
-			},
+			),
 		},
 			60, DEFAULT_REAL_60HZ_VBLANK_DURATION,
 			1,
-		0,
+		null,
 	
 		/* video hardware */
-		32*8, 28*8, { 0*8, 32*8-1, 0*8, 28*8-1 },
+		32*8, 28*8, new rectangle( 0*8, 32*8-1, 0*8, 28*8-1 ),
 		gfxdecodeinfo,
 		2, 2,
 		init_palette_bw,
 	
 		VIDEO_TYPE_RASTER|VIDEO_SUPPORTS_DIRTY,
-		0,
+		null,
 		generic_vh_start,
 		generic_vh_stop,
 		blockade_vh_screenrefresh,
 	
 		/* sound hardware */
 		0,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_SAMPLES,
-				&samples_interface
-			}
+				samples_interface
+			)
 		}
-	};
+	);
 	
-	static const struct MachineDriver machine_driver_blasto =
-	{
+	static MachineDriver machine_driver_blasto = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_8080,
 				2079000,
 				readmem,writemem,readport,writeport,
 				blockade_interrupt,1
-			},
+			),
 		},
 			60, DEFAULT_REAL_60HZ_VBLANK_DURATION,
 			1,
-		0,
+		null,
 	
 		/* video hardware */
-		32*8, 28*8, { 0*8, 32*8-1, 0*8, 28*8-1 },
+		32*8, 28*8, new rectangle( 0*8, 32*8-1, 0*8, 28*8-1 ),
 		blasto_gfxdecodeinfo,
 		2, 2,
 		init_palette_bw,
 	
 		VIDEO_TYPE_RASTER|VIDEO_SUPPORTS_DIRTY,
-		0,
+		null,
 		generic_vh_start,
 		generic_vh_stop,
 		blockade_vh_screenrefresh,
 	
 		/* sound hardware */
 		0,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_SAMPLES,
-				&samples_interface
-			}
+				samples_interface
+			)
 		}
-	};
+	);
 	
-	static const struct MachineDriver machine_driver_hustle =
-	{
+	static MachineDriver machine_driver_hustle = new MachineDriver
+	(
 	    /* basic machine hardware */
-	    {
-	        {
+	    new MachineCPU[] {
+	        new MachineCPU(
 	            CPU_8080,
 	            2079000,
 	            readmem,writemem,readport,writeport,
 	            blockade_interrupt,1
-	        },
+	        ),
 	    },
 	        60, DEFAULT_REAL_60HZ_VBLANK_DURATION,
 	        1,
-	    0,
+	    null,
 	
 	    /* video hardware */
-	    32*8, 28*8, { 0*8, 32*8-1, 0*8, 28*8-1 },
+	    32*8, 28*8, new rectangle( 0*8, 32*8-1, 0*8, 28*8-1 ),
 	    blasto_gfxdecodeinfo,
 		2, 2,
 		init_palette_gr,
 	
 	    VIDEO_TYPE_RASTER|VIDEO_SUPPORTS_DIRTY,
-	    0,
+	    null,
 	    generic_vh_start,
 	    generic_vh_stop,
 	    blockade_vh_screenrefresh,
 	
 	    /* sound hardware */
 	    0,0,0,0,
-	    {
-	        {
+	    new MachineSound[] {
+	        new MachineSound(
 	            SOUND_SAMPLES,
-	            &samples_interface
-	        }
+	            samples_interface
+	        )
 	    }
-	};
+	);
 	
 	/***************************************************************************
 	

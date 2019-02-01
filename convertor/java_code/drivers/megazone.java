@@ -356,58 +356,58 @@ public class megazone
 	
 	
 	
-	static const struct MachineDriver machine_driver_megazone =
-	{
+	static MachineDriver machine_driver_megazone = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_M6809,
 				2048000,        /* 2 MHz */
-				readmem,writemem,0,0,
+				readmem,writemem,null,null,
 				interrupt,1
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_Z80,
 				18432000/6,     /* Z80 Clock is derived from the H1 signal */
 				sound_readmem,sound_writemem,sound_readport,sound_writeport,
 				interrupt,1
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_I8039 | CPU_AUDIO_CPU,
 				14318000/2/15,	/* 1/2 14MHz crystal */
 				i8039_readmem,i8039_writemem,i8039_readport,i8039_writeport,
 				ignore_interrupt,1
-			}
+			)
 		},
 		60, DEFAULT_60HZ_VBLANK_DURATION,       /* frames per second, vblank duration */
 		15,      /* 1 CPU slice per frame - interleaving is forced when a sound command is written */
-		0,
+		null,
 	
 		/* video hardware */
-		36*8, 32*8, { 0*8, 36*8-1, 2*8, 30*8-1 },
+		36*8, 32*8, new rectangle( 0*8, 36*8-1, 2*8, 30*8-1 ),
 		gfxdecodeinfo,
 		32,16*16+16*16,
 		megazone_vh_convert_color_prom,
 	
 		VIDEO_TYPE_RASTER,
-		0,
+		null,
 		megazone_vh_start,
 		megazone_vh_stop,
 		megazone_vh_screenrefresh,
 	
 		/* sound hardware */
 		0,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_AY8910,
-				&ay8910_interface
-			},
-			{
+				ay8910_interface
+			),
+			new MachineSound(
 				SOUND_DAC,
-				&dac_interface
-			}
+				dac_interface
+			)
 		}
-	};
+	);
 	
 	
 	

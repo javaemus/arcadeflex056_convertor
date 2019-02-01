@@ -257,43 +257,43 @@ public class ccastles
 	
 	
 	
-	static const struct MachineDriver machine_driver_ccastles =
-	{
+	static MachineDriver machine_driver_ccastles = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_M6502,
 				1500000,	/* 1.5 MHz */
-				readmem,writemem,0,0,
+				readmem,writemem,null,null,
 				interrupt,4
-			}
+			)
 		},
 		60, DEFAULT_REAL_60HZ_VBLANK_DURATION,	/* frames per second, vblank duration */
 		1,	/* single CPU, no need for interleaving */
 	
-		0,
-		256, 232, { 0, 255, 0, 231 },
+		null,
+		256, 232, new rectangle( 0, 255, 0, 231 ),
 		gfxdecodeinfo,
-		32, 0,
-		0,
+		32, null,
+		null,
 	
 		VIDEO_TYPE_RASTER,
-		0,
+		null,
 		ccastles_vh_start,
 		ccastles_vh_stop,
 		ccastles_vh_screenrefresh,
 	
 		/* sound hardware */
 		0,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_POKEY,
-				&pokey_interface
-			}
+				pokey_interface
+			)
 		},
 	
 		nvram_handler
-	};
+	);
 	
 	
 	

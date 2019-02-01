@@ -209,16 +209,16 @@ public class xybots
 	 *
 	 *************************************/
 	
-	static const struct MachineDriver machine_driver_xybots =
-	{
+	static MachineDriver machine_driver_xybots = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_M68000,		/* verified */
 				ATARI_CLOCK_14MHz/2,
-				main_readmem,main_writemem,0,0,
+				main_readmem,main_writemem,null,null,
 				atarigen_video_int_gen,1
-			},
+			),
 			JSA_I_CPU
 		},
 		60, DEFAULT_REAL_60HZ_VBLANK_DURATION,
@@ -226,13 +226,13 @@ public class xybots
 		init_machine,
 	
 		/* video hardware */
-		42*8, 30*8, { 0*8, 42*8-1, 0*8, 30*8-1 },
+		42*8, 30*8, new rectangle( 0*8, 42*8-1, 0*8, 30*8-1 ),
 		gfxdecodeinfo,
-		1024, 0,
-		0,
+		1024, null,
+		null,
 	
 		VIDEO_TYPE_RASTER | VIDEO_NEEDS_6BITS_PER_GUN | VIDEO_UPDATE_BEFORE_VBLANK,
-		0,
+		null,
 		xybots_vh_start,
 		xybots_vh_stop,
 		xybots_vh_screenrefresh,
@@ -241,7 +241,7 @@ public class xybots
 		JSA_I_STEREO_SWAPPED,
 	
 		atarigen_nvram_handler
-	};
+	);
 	
 	
 	

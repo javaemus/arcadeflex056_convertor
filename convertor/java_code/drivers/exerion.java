@@ -303,48 +303,48 @@ public class exerion
 	 * Machine driver
 	 *********************************************************************/
 	
-	static const struct MachineDriver machine_driver_exerion =
-	{
+	static MachineDriver machine_driver_exerion = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_Z80,
 				10000000/3, /* 3.333 MHz */
-				readmem,writemem,0,0,
+				readmem,writemem,null,null,
 				exerion_interrupt,1
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_Z80,
 				10000000/3, /* 3.333 MHz */
-				cpu2_readmem,cpu2_writemem,0,0,
+				cpu2_readmem,cpu2_writemem,null,null,
 				ignore_interrupt,0
-			}
+			)
 		},
 		60, 0,  /* frames per second, vblank duration */
 		1,  /* 1 CPU slice per frame - interleaving is forced when a sound command is written */
-		0,
+		null,
 	
 		/* video hardware */
-		64*8, 32*8, { 12*8, 52*8-1, 2*8, 30*8-1 },
+		64*8, 32*8, new rectangle( 12*8, 52*8-1, 2*8, 30*8-1 ),
 		gfxdecodeinfo,
 		32,256*3,
 		exerion_vh_convert_color_prom,
 	
 		VIDEO_TYPE_RASTER,
-		0,
+		null,
 		exerion_vh_start,
 		exerion_vh_stop,
 		exerion_vh_screenrefresh,
 	
 		/* sound hardware */
 		0,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_AY8910,
-				&ay8910_interface
-			}
+				ay8910_interface
+			)
 		}
-	};
+	);
 	
 	
 	

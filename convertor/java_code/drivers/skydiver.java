@@ -329,29 +329,29 @@ public class skydiver
 	}
 	
 	
-	static const struct MachineDriver machine_driver_skydiver =
-	{
+	static MachineDriver machine_driver_skydiver = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_M6800,
 				3000000/4,	   /* ???? */
-				readmem,writemem,0,0,
+				readmem,writemem,null,null,
 				skydiver_interrupt,8
-			}
+			)
 		},
 		60, DEFAULT_REAL_60HZ_VBLANK_DURATION,	/* frames per second, vblank duration */
 		1,	/* single CPU, no need for interleaving */
-		0,
+		null,
 	
 		/* video hardware */
-		32*8, 32*8, { 0*8, 32*8-1, 0*8, 29*8-1 },
+		32*8, 32*8, new rectangle( 0*8, 32*8-1, 0*8, 29*8-1 ),
 		gfxdecodeinfo,
-		sizeof(palette) / sizeof(palette[0]) / 3, sizeof(colortable) / sizeof(colortable[0]),
+		sizeof(palette) / sizeof(palette[null]) / 3, sizeof(colortable) / sizeof(colortable[null]),
 		init_palette,
 	
 		VIDEO_TYPE_RASTER,
-		0,
+		null,
 		generic_vh_start,
 		generic_vh_stop,
 		skydiver_vh_screenrefresh,
@@ -359,7 +359,7 @@ public class skydiver
 		/* sound hardware */
 		0,0,0,0
 	
-	};
+	);
 	
 	
 	

@@ -487,101 +487,101 @@ public class m107
 		return ignore_interrupt();
 	}
 	
-	static const struct MachineDriver machine_driver_firebarr =
-	{
+	static MachineDriver machine_driver_firebarr = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_V33,	/* NEC V33 */
 				28000000,	/* 28MHz clock */
 				readmem,writemem,readport,writeport,
 				m107_raster_interrupt,256 /* 8 prelines, 240 visible lines, 8 for vblank? */
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_V30 | CPU_AUDIO_CPU,
 				14318000,	/* 14.318 MHz */
-				sound_readmem,sound_writemem,0,0,
+				sound_readmem,sound_writemem,null,null,
 				ignore_interrupt,0
-			}
+			)
 		},
 		60, DEFAULT_60HZ_VBLANK_DURATION,	/* frames per second, vblank duration */
 		1,	/* 1 CPU slice per frame - interleaving is forced when a sound command is written */
-		0,
+		null,
 	
 		/* video hardware */
-		512, 512, { 80, 511-112, 128+8, 511-128-8 }, /* 320 x 240 */
+		512, 512, new rectangle( 80, 511-112, 128+8, 511-128-8 ), /* 320 x 240 */
 	
 		firebarr_gfxdecodeinfo,
-		2048, 0,
-		0,
+		2048, null,
+		null,
 	
 		VIDEO_TYPE_RASTER,
-		0,
+		null,
 		m107_vh_start,
 		m107_vh_stop,
 		m107_vh_screenrefresh,
 	
 		/* sound hardware */
 		SOUND_SUPPORTS_STEREO,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_YM2151,
-				&ym2151_interface
-			},
-			{
+				ym2151_interface
+			),
+			new MachineSound(
 				SOUND_IREMGA20,
-				&iremGA20_interface
-			}
+				iremGA20_interface
+			)
 		}
-	};
+	);
 	
-	static const struct MachineDriver machine_driver_dsoccr94 =
-	{
+	static MachineDriver machine_driver_dsoccr94 = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_V33,	/* NEC V33 */
 				20000000,	/* Could be 28MHz clock? */
 				readmem,writemem,readport,writeport,
 				m107_interrupt,1
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_V30 | CPU_AUDIO_CPU,
 				14318000,	/* 14.318 MHz */
-				sound_readmem,sound_writemem,0,0,
+				sound_readmem,sound_writemem,null,null,
 				ignore_interrupt,0
-			}
+			)
 		},
 		60, DEFAULT_60HZ_VBLANK_DURATION,	/* frames per second, vblank duration */
 		1,	/* 1 CPU slice per frame - interleaving is forced when a sound command is written */
-		0,
+		null,
 	
 		/* video hardware */
-		512, 512, { 80, 511-112, 128+8, 511-128-8 }, /* 320 x 240 */
+		512, 512, new rectangle( 80, 511-112, 128+8, 511-128-8 ), /* 320 x 240 */
 	
 		gfxdecodeinfo,
-		2048, 0,
-		0,
+		2048, null,
+		null,
 	
 		VIDEO_TYPE_RASTER,
-		0,
+		null,
 		m107_vh_start,
 		m107_vh_stop,
 		m107_vh_screenrefresh,
 	
 		/* sound hardware */
 		SOUND_SUPPORTS_STEREO,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_YM2151,
-				&ym2151_interface
-			},
-			{
+				ym2151_interface
+			),
+			new MachineSound(
 				SOUND_IREMGA20,
-				&iremGA20_interface
-			}
+				iremGA20_interface
+			)
 		}
-	};
+	);
 	
 	/***************************************************************************/
 	

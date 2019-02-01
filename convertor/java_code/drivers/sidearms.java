@@ -533,99 +533,99 @@ public class sidearms
 	
 	
 	
-	static const struct MachineDriver machine_driver_sidearms =
-	{
+	static MachineDriver machine_driver_sidearms = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_Z80,
 				4000000,        /* 4 MHz (?) */
-				readmem,writemem,0,0,
+				readmem,writemem,null,null,
 				interrupt,1
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_Z80 | CPU_AUDIO_CPU,
 				4000000,        /* 4 MHz (?) */
-				sound_readmem,sound_writemem,0,0,
+				sound_readmem,sound_writemem,null,null,
 				ignore_interrupt,0      /* IRQs are triggered by the YM2203 */
-			},
+			),
 	#ifdef THIRD_CPU
-			{
+			new MachineCPU(
 				CPU_Z80,
 				4000000,        /* 4 MHz (?) */
-				readmem2,writemem2,0,0,
+				readmem2,writemem2,null,null,
 				nmi_interrupt,1
-			}
+			)
 	#endif
 		},
 		60, DEFAULT_REAL_60HZ_VBLANK_DURATION,  /* frames per second, vblank duration */
 		1,      /* 1 CPU slice per frame - interleaving is forced when a sound command is written */
-		0,
+		null,
 	
 		/* video hardware */
-		64*8, 32*8, { 8*8, (64-8)*8-1, 2*8, 30*8-1 },
+		64*8, 32*8, new rectangle( 8*8, (64-8)*8-1, 2*8, 30*8-1 ),
 		gfxdecodeinfo,
-		1024, 0,
-		0,
+		1024, null,
+		null,
 	
 		VIDEO_TYPE_RASTER,
-		0,
+		null,
 		sidearms_vh_start,
 		sidearms_vh_stop,
 		sidearms_vh_screenrefresh,
 	
 		/* sound hardware */
 		0,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_YM2203,
-				&ym2203_interface
-			}
+				ym2203_interface
+			)
 		}
-	};
+	);
 	
-	static const struct MachineDriver machine_driver_turtship =
-	{
+	static MachineDriver machine_driver_turtship = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_Z80,
 				4000000,        /* 4 MHz (?) */
-				turtship_readmem,turtship_writemem,0,0,
+				turtship_readmem,turtship_writemem,null,null,
 				interrupt,1
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_Z80 | CPU_AUDIO_CPU,
 				4000000,        /* 4 MHz (?) */
-				sound_readmem,sound_writemem,0,0,
+				sound_readmem,sound_writemem,null,null,
 				ignore_interrupt,0      /* IRQs are triggered by the YM2203 */
-			},
+			),
 		},
 		60, DEFAULT_REAL_60HZ_VBLANK_DURATION,  /* frames per second, vblank duration */
 		1,      /* 1 CPU slice per frame - interleaving is forced when a sound command is written */
-		0,
+		null,
 	
 		/* video hardware */
-		64*8, 32*8, { 8*8, (64-8)*8-1, 2*8, 30*8-1 },
+		64*8, 32*8, new rectangle( 8*8, (64-8)*8-1, 2*8, 30*8-1 ),
 		turtship_gfxdecodeinfo,
-		1024, 0,
-		0,
+		1024, null,
+		null,
 	
 		VIDEO_TYPE_RASTER,
-		0,
+		null,
 		sidearms_vh_start,
 		sidearms_vh_stop,
 		sidearms_vh_screenrefresh,
 	
 		/* sound hardware */
 		0,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_YM2203,
-				&ym2203_interface
-			}
+				ym2203_interface
+			)
 		}
-	};
+	);
 	
 	
 	static RomLoadPtr rom_sidearms = new RomLoadPtr(){ public void handler(){ 

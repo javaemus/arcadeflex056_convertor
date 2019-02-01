@@ -948,16 +948,16 @@ public class mcr68
 	
 	=================================================================*/
 	
-	static const struct MachineDriver machine_driver_zwackery =
-	{
+	static MachineDriver machine_driver_zwackery = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_M68000,
 				7652400,	/* 8 MHz */
-				zwackery_readmem,zwackery_writemem,0,0,
+				zwackery_readmem,zwackery_writemem,null,null,
 				mcr68_interrupt,1
-			},
+			),
 			SOUND_CPU_CHIP_SQUEAK_DELUXE
 		},
 		30, DEFAULT_REAL_30HZ_VBLANK_DURATION,
@@ -965,37 +965,37 @@ public class mcr68
 		zwackery_init_machine,
 	
 		/* video hardware */
-		32*16, 30*16, { 0, 32*16-1, 0, 30*16-1 },
+		32*16, 30*16, new rectangle( 0, 32*16-1, 0, 30*16-1 ),
 		zwackery_gfxdecodeinfo,
-		4096, 0,
+		4096, null,
 		zwackery_convert_color_prom,
 	
 		VIDEO_TYPE_RASTER,
-		0,
+		null,
 		generic_vh_start,
 		generic_vh_stop,
 		zwackery_vh_screenrefresh,
 	
 		/* sound hardware */
 		SOUND_SUPPORTS_STEREO,0,0,0,
-		{
+		new MachineSound[] {
 			SOUND_CHIP_SQUEAK_DELUXE
 		},
 		0
-	};
+	);
 	
 	
 	#define MACHINE_DRIVER_MCR68(NAME, MEMMAP, SOUND) 		\
-	static const struct MachineDriver machine_driver_##NAME =		\
-	{														\
+	static MachineDriver machine_driver_##NAME = new MachineDriver\
+	(														\
 		/* basic machine hardware */						\
-		{													\
-			{												\
+		new MachineCPU[] {													\
+			new MachineCPU(												\
 				CPU_M68000,									\
 				7723800,	/* 8 MHz */						\
-				MEMMAP##_readmem,MEMMAP##_writemem,0,0,		\
+				MEMMAP##_readmem,MEMMAP##_writemem,null,null,		\
 				mcr68_interrupt,1							\
-			},												\
+			),												\
 			SOUND_CPU_##SOUND								\
 		},													\
 		30, DEFAULT_REAL_30HZ_VBLANK_DURATION,				\
@@ -1003,24 +1003,24 @@ public class mcr68
 		mcr68_init_machine,									\
 															\
 		/* video hardware */								\
-		32*16, 30*16, { 0, 32*16-1, 0, 30*16-1 },			\
+		32*16, 30*16, new rectangle( 0, 32*16-1, 0, 30*16-1 ),			\
 		gfxdecodeinfo,										\
-		64, 0,												\
-		0,													\
+		64, null,												\
+		null,													\
 															\
 		VIDEO_TYPE_RASTER,									\
-		0,													\
+		null,													\
 		generic_vh_start,									\
 		generic_vh_stop,									\
 		mcr68_vh_screenrefresh,								\
 															\
 		/* sound hardware */								\
 		SOUND_SUPPORTS_STEREO,0,0,0,						\
-		{													\
+		new MachineSound[] {													\
 			SOUND_##SOUND									\
 		},													\
 		0													\
-	};
+	);
 	
 	MACHINE_DRIVER_MCR68(xenophob, mcr68,    SOUNDS_GOOD)
 	MACHINE_DRIVER_MCR68(spyhunt2, mcr68,    TURBO_CHIP_SQUEAK_PLUS_SOUNDS_GOOD)

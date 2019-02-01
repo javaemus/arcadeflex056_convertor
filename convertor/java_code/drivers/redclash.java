@@ -287,65 +287,65 @@ public class redclash
 	
 	
 	
-	static const struct MachineDriver machine_driver_zerohour =
-	{
-		{
-			{
+	static MachineDriver machine_driver_zerohour = new MachineDriver
+	(
+		new MachineCPU[] {
+			new MachineCPU(
 			  CPU_Z80,
 			  4000000,  /* 4 MHz */
-			  zero_readmem,zero_writemem,0,0,
+			  zero_readmem,zero_writemem,null,null,
 			  redclash_interrupt,1
-			}
+			)
 		},
 		60, DEFAULT_REAL_60HZ_VBLANK_DURATION,  /* frames per second, vblank duration */
 		1,  /* single CPU, no need for interleaving */
-		0,
+		null,
 	
 		/* video hardware */
-		32*8, 32*8, { 1*8, 31*8-1, 4*8, 28*8-1 },
+		32*8, 32*8, new rectangle( 1*8, 31*8-1, 4*8, 28*8-1 ),
 		gfxdecodeinfo,
 		32,4*24,
 		redclash_vh_convert_color_prom,
 	
 		VIDEO_TYPE_RASTER,
-		0,
-		0,
+		null,
+		null,
 		0,
 		redclash_vh_screenrefresh,
 	
 		/* sound hardware */
 		0,0,0,0,
-	};
+	);
 	
-	static const struct MachineDriver machine_driver_redclash =
-	{
-		{
-			{
+	static MachineDriver machine_driver_redclash = new MachineDriver
+	(
+		new MachineCPU[] {
+			new MachineCPU(
 			  CPU_Z80,
 			  4000000,  /* 4 MHz */
-			  readmem,writemem,0,0,
+			  readmem,writemem,null,null,
 			  redclash_interrupt,1
-			}
+			)
 		},
 		60, DEFAULT_REAL_60HZ_VBLANK_DURATION,  /* frames per second, vblank duration */
 		1,  /* single CPU, no need for interleaving */
-		0,
+		null,
 	
 		/* video hardware */
-		32*8, 32*8, { 1*8, 31*8-1, 4*8, 28*8-1 },
+		32*8, 32*8, new rectangle( 1*8, 31*8-1, 4*8, 28*8-1 ),
 		gfxdecodeinfo,
 		32,4*24,
 		redclash_vh_convert_color_prom,
 	
 		VIDEO_TYPE_RASTER,
-		0,
-		0,
+		null,
+		null,
 		0,
 		redclash_vh_screenrefresh,
 	
 		/* sound hardware */
 		0,0,0,0,
-	};
+	);
 	
 	/***************************************************************************
 	

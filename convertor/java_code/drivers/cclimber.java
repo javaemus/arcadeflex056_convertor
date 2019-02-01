@@ -443,46 +443,46 @@ public class cclimber
 	
 	
 	
-	static const struct MachineDriver machine_driver_cclimber =
-	{
+	static MachineDriver machine_driver_cclimber = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_Z80,
 				3072000,	/* 3.072 MHz */
 				readmem,writemem,readport,writeport,
 				nmi_interrupt,1
-			}
+			)
 		},
 		60, DEFAULT_60HZ_VBLANK_DURATION,       /* frames per second, vblank duration */
 		1,      /* single CPU, no need for interleaving */
 		cclimber_init_machine,
 	
 		/* video hardware */
-		32*8, 32*8, { 0*8, 32*8-1, 2*8, 30*8-1 },
+		32*8, 32*8, new rectangle( 0*8, 32*8-1, 2*8, 30*8-1 ),
 		gfxdecodeinfo,
 		96,16*4+8*4,
 		cclimber_vh_convert_color_prom,
 	
 		VIDEO_TYPE_RASTER,
-		0,
+		null,
 		generic_vh_start,
 		generic_vh_stop,
 		cclimber_vh_screenrefresh,
 	
 		/* sound hardware */
 		0,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_AY8910,
-				&ay8910_interface
-			},
-			{
+				ay8910_interface
+			),
+			new MachineSound(
 				SOUND_CUSTOM,
-				&custom_interface
-			}
+				custom_interface
+			)
 		}
-	};
+	);
 	
 	
 	
@@ -1287,49 +1287,49 @@ public class cclimber
 	
 	
 	
-	static const struct MachineDriver machine_driver_swimmer =
-	{
+	static MachineDriver machine_driver_swimmer = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_Z80,
 				3072000,	/* 3.072 MHz */
-				swimmer_readmem,swimmer_writemem,0,0,
+				swimmer_readmem,swimmer_writemem,null,null,
 				nmi_interrupt,1
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_Z80 | CPU_AUDIO_CPU,
 				4000000/2,	/* 2 MHz */
-				sound_readmem,sound_writemem,0,sound_writeport,
-				0,0,
+				sound_readmem,sound_writemem,null,sound_writeport,
+				0,null,
 				nmi_interrupt,4000000/16384 /* IRQs are triggered by the main CPU */
-			}
+			)
 		},
 		60, DEFAULT_60HZ_VBLANK_DURATION,       /* frames per second, vblank duration */
 		1,      /* 1 CPU slice per frame - interleaving is forced when a sound command is written */
-		0,
+		null,
 	
 		/* video hardware */
-		32*8, 32*8, { 0*8, 32*8-1, 2*8, 30*8-1 },
+		32*8, 32*8, new rectangle( 0*8, 32*8-1, 2*8, 30*8-1 ),
 		swimmer_gfxdecodeinfo,
 		256+32+2,64*8+4*8,
 		swimmer_vh_convert_color_prom,
 	
 		VIDEO_TYPE_RASTER,
-		0,
+		null,
 		generic_vh_start,
 		generic_vh_stop,
 		swimmer_vh_screenrefresh,
 	
 		/* sound hardware */
 		0,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_AY8910,
-				&swimmer_ay8910_interface
-			}
+				swimmer_ay8910_interface
+			)
 		}
-	};
+	);
 	
 	
 	

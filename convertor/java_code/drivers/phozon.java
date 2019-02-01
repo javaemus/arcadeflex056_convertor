@@ -259,54 +259,54 @@ public class phozon
 		REGION_SOUND1	/* memory region */
 	};
 	
-	static const struct MachineDriver machine_driver_phozon =
-	{
+	static MachineDriver machine_driver_phozon = new MachineDriver
+	(
 		/* basic machine hardware  */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_M6809,			/* MAIN CPU */
 				1536000,			/* same as Gaplus? */
-				readmem_cpu1,writemem_cpu1,0,0,
+				readmem_cpu1,writemem_cpu1,null,null,
 				interrupt,1
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_M6809,			/* SUB CPU */
 				1536000,			/* same as Gaplus? */
-				readmem_cpu2,writemem_cpu2,0,0,
+				readmem_cpu2,writemem_cpu2,null,null,
 				interrupt,1
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_M6809,			/* SOUND CPU */
 				1536000,			/* same as Gaplus? */
-				readmem_cpu3,writemem_cpu3,0,0,
+				readmem_cpu3,writemem_cpu3,null,null,
 				interrupt,1
-			},
+			),
 		},
 		60.606060, DEFAULT_60HZ_VBLANK_DURATION,	/* frames per second, vblank duration */
 		100,	/* a high value to ensure proper synchronization of the CPUs */
 		phozon_init_machine,	/* init machine routine */
 	
 		/* video hardware */
-		36*8, 28*8, { 0*8, 36*8-1, 0*8, 28*8-1 },
+		36*8, 28*8, new rectangle( 0*8, 36*8-1, 0*8, 28*8-1 ),
 		gfxdecodeinfo,
 		256,
 		64*4+64*8,
 		phozon_vh_convert_color_prom,
 		VIDEO_TYPE_RASTER,
-		0,
+		null,
 		phozon_vh_start,
 		phozon_vh_stop,
 		phozon_vh_screenrefresh,
 	
 		/* sound hardware */
 		0,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_NAMCO,
-				&namco_interface
-			}
+				namco_interface
+			)
 		}
-	};
+	);
 	
 	
 	

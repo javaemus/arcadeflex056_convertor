@@ -258,26 +258,26 @@ public class othldrby
 	};
 	
 	
-	static const struct MachineDriver machine_driver_othldrby =
-	{
+	static MachineDriver machine_driver_othldrby = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_M68000,
 				16000000,
-				readmem,writemem,0,0,
+				readmem,writemem,null,null,
 				m68_level4_irq,1
-			}
+			)
 		},
 		60, DEFAULT_60HZ_VBLANK_DURATION,	/* frames per second, vblank duration */
 		1,	/* single CPU, no need for interleaving */
-		0,
+		null,
 	
 		/* video hardware */
-		64*8, 32*8, { 12*8, (64-12)*8-1, 1*8, 31*8-1 },
+		64*8, 32*8, new rectangle( 12*8, (64-12)*8-1, 1*8, 31*8-1 ),
 		gfxdecodeinfo,
-		0x800, 0,
-		0,
+		0x800, null,
+		null,
 	
 		VIDEO_TYPE_RASTER,
 		othldrby_eof_callback,
@@ -287,13 +287,13 @@ public class othldrby
 	
 		/* sound hardware */
 		0,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_OKIM6295,
-				&okim6295_interface
-			}
+				okim6295_interface
+			)
 		}
-	};
+	);
 	
 	
 	

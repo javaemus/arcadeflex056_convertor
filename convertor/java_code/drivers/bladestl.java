@@ -458,52 +458,52 @@ public class bladestl
 		{ 0 }
 	};
 	
-	static const struct MachineDriver machine_driver_bladestl =
-	{
+	static MachineDriver machine_driver_bladestl = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_HD6309,
 				3000000,		/* 24MHz/8 (?) */
-				bladestl_readmem,bladestl_writemem,0,0,
+				bladestl_readmem,bladestl_writemem,null,null,
 	            bladestl_interrupt,2 /* (1 IRQ + 1 NMI) */
-	        },
-			{
+	        ),
+			new MachineCPU(
 				CPU_M6809 | CPU_AUDIO_CPU,
 				2000000,		/* ? */
-				bladestl_readmem_sound, bladestl_writemem_sound,0,0,
+				bladestl_readmem_sound, bladestl_writemem_sound,null,null,
 				ignore_interrupt,0	/* interrupts are triggered by the main CPU */
-			}
+			)
 		},
 		60, DEFAULT_60HZ_VBLANK_DURATION,
 		10,
-		0,
+		null,
 	
 		/* video hardware */
-		32*8, 32*8, { 0*8, 32*8-1, 2*8, 30*8-1 },
+		32*8, 32*8, new rectangle( 0*8, 32*8-1, 2*8, 30*8-1 ),
 		gfxdecodeinfo,
 		48, 48 + 16*16,
 		bladestl_vh_convert_color_prom,
 	
 		VIDEO_TYPE_RASTER,
-		0,
+		null,
 		bladestl_vh_start,
 		bladestl_vh_stop,
 		bladestl_vh_screenrefresh,
 	
 		/* sound hardware */
 		0,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_YM2203,
-				&ym2203_interface
-			},
-			{
+				ym2203_interface
+			),
+			new MachineSound(
 				SOUND_UPD7759,
-				&upd7759_interface
-			}
+				upd7759_interface
+			)
 		}
-	};
+	);
 	
 	/***************************************************************************
 	

@@ -190,48 +190,48 @@ public class ttmahjng
 	};
 	
 	
-	static const struct MachineDriver machine_driver_ttmahjng =
-	{
+	static MachineDriver machine_driver_ttmahjng = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_Z80 | CPU_16BIT_PORT,
 				2500000,	/* 10MHz / 4 = 2.5MHz */
-				cpu1_readmem, cpu1_writemem, 0, 0,
+				cpu1_readmem, cpu1_writemem, null, null,
 				interrupt, 1
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_Z80,
 				2500000,	/* 10MHz / 4 = 2.5MHz */
-				cpu2_readmem, cpu2_writemem, 0, 0,
+				cpu2_readmem, cpu2_writemem, null, null,
 				ignore_interrupt, 0
-			}
+			)
 		},
 		57, DEFAULT_REAL_60HZ_VBLANK_DURATION,       /* frames per second, vblank duration */
 		1,
-		0,
+		null,
 	
 		/* video hardware */
-		256, 256, { 0, 256-1, 0, 256-1 },
-		0,
-		8, 0,
+		256, 256, new rectangle( 0, 256-1, 0, 256-1 ),
+		null,
+		8, null,
 		ttmahjng_vh_convert_color_prom,
 	
 		VIDEO_TYPE_RASTER | VIDEO_SUPPORTS_DIRTY ,
-		0,
+		null,
 		ttmahjng_vh_start,
 		ttmahjng_vh_stop,
 		ttmahjng_vh_screenrefresh,
 	
 		/* sound hardware */
 		0, 0, 0, 0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_AY8910,
-				&ay8910_interface
-			}
+				ay8910_interface
+			)
 		}
-	};
+	);
 	
 	/***************************************************************************
 	

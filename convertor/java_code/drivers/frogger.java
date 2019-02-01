@@ -304,29 +304,29 @@ public class frogger
 	};
 	
 	
-	static const struct MachineDriver machine_driver_frogger =
-	{
+	static MachineDriver machine_driver_frogger = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_Z80,
 				18432000/6, /* 3.072 MHz */
-				readmem,writemem,0,0,
+				readmem,writemem,null,null,
 				nmi_interrupt,1
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_Z80 | CPU_AUDIO_CPU,
 				14318000/8, /* 1.78975 MHz */
 				frogger_sound_readmem,frogger_sound_writemem,frogger_sound_readport,frogger_sound_writeport,
 				ignore_interrupt,1	/* interrupts are triggered by the main CPU */
-			}
+			)
 		},
 		16000.0/132/2, 2500,	/* frames per second, vblank duration */
 		1,	/* 1 CPU slice per frame - interleaving is forced when a sound command is written */
 		scramble_init_machine,
 	
 		/* video hardware */
-		32*8, 32*8, { 0*8, 32*8-1, 2*8, 30*8-1 },
+		32*8, 32*8, new rectangle( 0*8, 32*8-1, 2*8, 30*8-1 ),
 		galaxian_gfxdecodeinfo,
 		32+64+2+1,8*4,	/* 32 for characters, 64 for stars, 2 for bullets, 1 for background */	\
 		frogger_vh_convert_color_prom,
@@ -339,37 +339,37 @@ public class frogger
 	
 		/* sound hardware */
 		0,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_AY8910,
-				&frogger_ay8910_interface
-			}
+				frogger_ay8910_interface
+			)
 		}
-	};
+	);
 	
-	static const struct MachineDriver machine_driver_froggrmc =
-	{
+	static MachineDriver machine_driver_froggrmc = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_Z80,
 				18432000/6, /* 3.072 MHz */
-				froggrmc_readmem,froggrmc_writemem,0,0,
+				froggrmc_readmem,froggrmc_writemem,null,null,
 				nmi_interrupt,1
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_Z80 | CPU_AUDIO_CPU,
 				14318000/8, /* 1.78975 MHz */
 				frogger_sound_readmem,frogger_sound_writemem,frogger_sound_readport,frogger_sound_writeport,
 				ignore_interrupt,1	/* interrupts are triggered by the main CPU */
-			}
+			)
 		},
 		16000.0/132/2, 2500,	/* frames per second, vblank duration */
 		1,	/* 1 CPU slice per frame - interleaving is forced when a sound command is written */
 		scramble_init_machine,
 	
 		/* video hardware */
-		32*8, 32*8, { 0*8, 32*8-1, 2*8, 30*8-1 },
+		32*8, 32*8, new rectangle( 0*8, 32*8-1, 2*8, 30*8-1 ),
 		galaxian_gfxdecodeinfo,
 		32+64+2+1,8*4,	/* 32 for characters, 64 for stars, 2 for bullets, 1 for background */	\
 		frogger_vh_convert_color_prom,
@@ -382,13 +382,13 @@ public class frogger
 	
 		/* sound hardware */
 		0,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_AY8910,
-				&frogger_ay8910_interface
-			}
+				frogger_ay8910_interface
+			)
 		}
-	};
+	);
 	
 	
 	

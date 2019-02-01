@@ -226,36 +226,36 @@ public class safarir
 	
 	
 	
-	static const struct MachineDriver machine_driver_safarir =
-	{
+	static MachineDriver machine_driver_safarir = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_8080,
 				3072000,	/* 3 MHz ? */								\
-				readmem,writemem,0,0,
+				readmem,writemem,null,null,
 				ignore_interrupt,1
-			}
+			)
 		},
 		60, DEFAULT_REAL_60HZ_VBLANK_DURATION,
 		1,      /* single CPU, no need for interleaving */
-		0,	/* init machine */
+		null,	/* init machine */
 	
 		/* video hardware */
-		32*8, 32*8, { 0*8, 30*8-1, 0*8, 28*8-1 },
+		32*8, 32*8, new rectangle( 0*8, 30*8-1, 0*8, 28*8-1 ),
 		gfxdecodeinfo,
 		3,2*2,
 		init_palette,
 	
 		VIDEO_TYPE_RASTER,
-		0,
-		0,
-		0,
+		null,
+		null,
+		null,
 		safarir_vh_screenrefresh,
 	
 		/* sound hardware */
 		0,0,0,0
-	};
+	);
 	
 	/***************************************************************************
 	

@@ -363,53 +363,53 @@ public class matmania
 	
 	
 	
-	static const struct MachineDriver machine_driver_matmania =
-	{
+	static MachineDriver machine_driver_matmania = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_M6502,
 				1500000,	/* 1.5 MHz ???? */
-				matmania_readmem,matmania_writemem,0,0,
+				matmania_readmem,matmania_writemem,null,null,
 				interrupt,1
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_M6502 | CPU_AUDIO_CPU,
 				1200000,	/* 1.2 MHz ???? */
-				sound_readmem,sound_writemem,0,0,
+				sound_readmem,sound_writemem,null,null,
 				nmi_interrupt,15	/* ???? */
 									/* IRQs are caused by the main CPU */
-			},
+			),
 		},
 		60, DEFAULT_REAL_60HZ_VBLANK_DURATION,	/* frames per second, vblank duration */
 		10,	/* enough time for the audio CPU to get all commands */
-		0,
+		null,
 	
 		/* video hardware */
-		32*8, 32*8, { 0*8, 32*8-1, 1*8, 31*8-1 },
+		32*8, 32*8, new rectangle( 0*8, 32*8-1, 1*8, 31*8-1 ),
 		matmania_gfxdecodeinfo,
 		64+16, 64+16,
 		matmania_vh_convert_color_prom,
 	
 		VIDEO_TYPE_RASTER,
-		0,
+		null,
 		matmania_vh_start,
 		matmania_vh_stop,
 		matmania_vh_screenrefresh,
 	
 		/* sound hardware */
 		0,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_AY8910,
-				&ay8910_interface
-			},
-			{
+				ay8910_interface
+			),
+			new MachineSound(
 				SOUND_DAC,
-				&dac_interface
-			}
+				dac_interface
+			)
 		}
-	};
+	);
 	
 	
 	
@@ -429,59 +429,59 @@ public class matmania
 	};
 	
 	
-	static const struct MachineDriver machine_driver_maniach =
-	{
+	static MachineDriver machine_driver_maniach = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_M6502,
 				1500000,	/* 1.5 MHz ???? */
-				maniach_readmem,maniach_writemem,0,0,
+				maniach_readmem,maniach_writemem,null,null,
 				interrupt,1
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_M6809 | CPU_AUDIO_CPU,
 				1500000,	/* 1.5 MHz ???? */
-				maniach_sound_readmem,maniach_sound_writemem,0,0,
+				maniach_sound_readmem,maniach_sound_writemem,null,null,
 				ignore_interrupt,0,	/* FIRQs are caused by the YM3526 */
 									/* IRQs are caused by the main CPU */
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_M68705,
 				500000,	/* .5 MHz (don't know really how fast, but it doesn't need to even be this fast) */
-				mcu_readmem,mcu_writemem,0,0,
+				mcu_readmem,mcu_writemem,0,null,
 				ignore_interrupt,1
-			}
+			)
 		},
 		60, DEFAULT_REAL_60HZ_VBLANK_DURATION,	/* frames per second, vblank duration */
 		100,	/* 100 CPU slice per frame - high interleaving to sync main and mcu */
-		0,
+		null,
 	
 		/* video hardware */
-		32*8, 32*8, { 0*8, 32*8-1, 1*8, 31*8-1 },
+		32*8, 32*8, new rectangle( 0*8, 32*8-1, 1*8, 31*8-1 ),
 		maniach_gfxdecodeinfo,
 		64+16, 64+16,
 		matmania_vh_convert_color_prom,
 	
 		VIDEO_TYPE_RASTER,
-		0,
+		null,
 		matmania_vh_start,
 		matmania_vh_stop,
 		maniach_vh_screenrefresh,
 	
 		/* sound hardware */
 		0,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_YM3526,
-				&ym3526_interface
-			},
-			{
+				ym3526_interface
+			),
+			new MachineSound(
 				SOUND_DAC,
-				&dac_interface
-			}
+				dac_interface
+			)
 		}
-	};
+	);
 	
 	/***************************************************************************
 	

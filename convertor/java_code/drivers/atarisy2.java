@@ -1199,147 +1199,147 @@ public class atarisy2
 		0x36ff			/* initial mode word has DAL15,14,11,8 pulled low */
 	};
 	
-	static const struct MachineDriver machine_driver_paperboy =
-	{
+	static MachineDriver machine_driver_paperboy = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_T11,
 				ATARI_CLOCK_20MHz/2,
-				main_readmem,main_writemem,0,0,
+				main_readmem,main_writemem,null,null,
 				vblank_interrupt,1,
-				0,0,
-				&t11_data
-			},
-			{
+				null,null,
+				t11_data
+			),
+			new MachineCPU(
 				CPU_M6502,
 				ATARI_CLOCK_14MHz/8,
-				sound_readmem,sound_writemem,0,0,
-				0,0,
+				sound_readmem,sound_writemem,null,null,
+				null,null,
 				atarigen_6502_irq_gen,(UINT32)(1000000000.0/((double)ATARI_CLOCK_20MHz/2/16/16/16/10))
-			},
+			),
 		},
 		60, DEFAULT_REAL_60HZ_VBLANK_DURATION,
 		1,
 		init_machine,
 	
 		/* video hardware */
-		64*8, 48*8, { 0*8, 64*8-1, 0*8, 48*8-1 },
+		64*8, 48*8, new rectangle( 0*8, 64*8-1, 0*8, 48*8-1 ),
 		gfxdecodeinfo,
-		256, 0,
-		0,
+		256, null,
+		null,
 	
 		VIDEO_TYPE_RASTER | VIDEO_NEEDS_6BITS_PER_GUN | VIDEO_UPDATE_BEFORE_VBLANK,
-		0,
+		null,
 		atarisys2_vh_start,
 		atarisys2_vh_stop,
 		atarisys2_vh_screenrefresh,
 	
 		/* sound hardware */
 		SOUND_SUPPORTS_STEREO,0,0,0,
-		{
-			{ SOUND_YM2151,  &ym2151_interface  },
-			{ SOUND_POKEY,   &pokey_interface   },
-			{ SOUND_TMS5220, &tms5220_interface }
+		new MachineSound[] {
+			new MachineSound( SOUND_YM2151,  ym2151_interface  ),
+			new MachineSound( SOUND_POKEY,   pokey_interface   ),
+			new MachineSound( SOUND_TMS5220, tms5220_interface )
 		},
 	
 		atarigen_nvram_handler
-	};
+	);
 	
 	
-	static const struct MachineDriver machine_driver_a720 =
-	{
+	static MachineDriver machine_driver_a720 = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_T11,
 				ATARI_CLOCK_20MHz/2,
-				main_readmem,main_writemem,0,0,
+				main_readmem,main_writemem,null,null,
 				vblank_interrupt,1,
-				0,0,
-				&t11_data
-			},
-			{
+				null,null,
+				t11_data
+			),
+			new MachineCPU(
 				CPU_M6502,
 				2200000,	/* artifically high to prevent deadlock at startup ATARI_CLOCK_14MHz/8,*/
-				sound_readmem,sound_writemem,0,0,
-				0,0,
+				sound_readmem,sound_writemem,0,null,
+				null,null,
 				atarigen_6502_irq_gen,(UINT32)(1000000000.0/((double)ATARI_CLOCK_20MHz/2/16/16/16/10))
-			},
+			),
 		},
 		60, DEFAULT_REAL_60HZ_VBLANK_DURATION,
 		1,
 		init_machine,
 	
 		/* video hardware */
-		64*8, 48*8, { 0*8, 64*8-1, 0*8, 48*8-1 },
+		64*8, 48*8, new rectangle( 0*8, 64*8-1, 0*8, 48*8-1 ),
 		gfxdecodeinfo,
-		256, 0,
-		0,
+		256, null,
+		null,
 	
 		VIDEO_TYPE_RASTER | VIDEO_UPDATE_BEFORE_VBLANK,
-		0,
+		null,
 		atarisys2_vh_start,
 		atarisys2_vh_stop,
 		atarisys2_vh_screenrefresh,
 	
 		/* sound hardware */
 		SOUND_SUPPORTS_STEREO,0,0,0,
-		{
-			{ SOUND_YM2151,  &ym2151_interface  },
-			{ SOUND_POKEY,   &pokey_interface   },
-			{ SOUND_TMS5220, &tms5220_interface }
+		new MachineSound[] {
+			new MachineSound( SOUND_YM2151,  ym2151_interface  ),
+			new MachineSound( SOUND_POKEY,   pokey_interface   ),
+			new MachineSound( SOUND_TMS5220, tms5220_interface )
 		},
 	
 		atarigen_nvram_handler
-	};
+	);
 	
 	
-	static const struct MachineDriver machine_driver_sprint =
-	{
+	static MachineDriver machine_driver_sprint = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_T11,
 				ATARI_CLOCK_20MHz/2,
-				main_readmem,main_writemem,0,0,
+				main_readmem,main_writemem,null,null,
 				vblank_interrupt,1,
-				0,0,
-				&t11_data
-			},
-			{
+				null,null,
+				t11_data
+			),
+			new MachineCPU(
 				CPU_M6502,
 				ATARI_CLOCK_14MHz/8,
-				sound_readmem,sound_writemem,0,0,
-				0,0,
+				sound_readmem,sound_writemem,null,null,
+				null,null,
 				atarigen_6502_irq_gen,(UINT32)(1000000000.0/((double)ATARI_CLOCK_20MHz/2/16/16/16/10))
-			},
+			),
 		},
 		60, DEFAULT_REAL_60HZ_VBLANK_DURATION,
 		1,
 		init_machine,
 	
 		/* video hardware */
-		64*8, 48*8, { 0*8, 64*8-1, 0*8, 48*8-1 },
+		64*8, 48*8, new rectangle( 0*8, 64*8-1, 0*8, 48*8-1 ),
 		gfxdecodeinfo,
-		256, 0,
-		0,
+		256, null,
+		null,
 	
 		VIDEO_TYPE_RASTER | VIDEO_NEEDS_6BITS_PER_GUN | VIDEO_UPDATE_BEFORE_VBLANK,
-		0,
+		null,
 		atarisys2_vh_start,
 		atarisys2_vh_stop,
 		atarisys2_vh_screenrefresh,
 	
 		/* sound hardware */
 		SOUND_SUPPORTS_STEREO,0,0,0,
-		{
-			{ SOUND_YM2151,  &ym2151_interface  },
-			{ SOUND_POKEY,   &pokey_interface   }
+		new MachineSound[] {
+			new MachineSound( SOUND_YM2151,  ym2151_interface  ),
+			new MachineSound( SOUND_POKEY,   pokey_interface   )
 		},
 	
 		atarigen_nvram_handler
-	};
+	);
 	
 	
 	

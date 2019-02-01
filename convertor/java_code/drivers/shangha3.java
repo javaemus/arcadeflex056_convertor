@@ -527,142 +527,142 @@ public class shangha3
 	
 	
 	
-	static const struct MachineDriver machine_driver_shangha3 =
-	{
+	static MachineDriver machine_driver_shangha3 = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_M68000,
 				16000000,	/* 16 MHz ??? */
-				shangha3_readmem,shangha3_writemem,0,0,
+				shangha3_readmem,shangha3_writemem,null,null,
 				m68_level4_irq,1
-			}
+			)
 		},
 		60, DEFAULT_REAL_60HZ_VBLANK_DURATION,	/* frames per second, vblank duration */
 		1,	/* single CPU, no need for interleaving */
-		0,
+		null,
 	
 		/* video hardware */
-		24*16, 16*16, { 0*16, 24*16-1, 1*16, 15*16-1 },
+		24*16, 16*16, new rectangle( 0*16, 24*16-1, 1*16, 15*16-1 ),
 		gfxdecodeinfo,
-		2048, 0,
-		0,
+		2048, null,
+		null,
 	
 		VIDEO_TYPE_RASTER,
-		0,
+		null,
 		shangha3_vh_start,
 		shangha3_vh_stop,
 		shangha3_vh_screenrefresh,
 	
 		/* sound hardware */
 		0,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_AY8910,
-				&ay8910_interface
-			},
-			{
+				ay8910_interface
+			),
+			new MachineSound(
 				SOUND_OKIM6295,
-				&okim6295_interface
-			}
+				okim6295_interface
+			)
 		}
-	};
+	);
 	
-	static const struct MachineDriver machine_driver_heberpop =
-	{
+	static MachineDriver machine_driver_heberpop = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_M68000,
 				16000000,	/* 16 MHz ??? */
-				heberpop_readmem,heberpop_writemem,0,0,
+				heberpop_readmem,heberpop_writemem,null,null,
 				m68_level4_irq,1
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_Z80,
 				6000000,	/* 6 MHz ??? */
 				heberpop_sound_readmem,heberpop_sound_writemem,heberpop_sound_readport,heberpop_sound_writeport,
 				ignore_interrupt,0	/* IRQ triggered by main CPU */
 									/* NMI triggered by YM3438 */
-			}
+			)
 		},
 		60, DEFAULT_REAL_60HZ_VBLANK_DURATION,	/* frames per second, vblank duration */
 		1,	/* single CPU, no need for interleaving */
-		0,
+		null,
 	
 		/* video hardware */
-		24*16, 16*16, { 0*16, 24*16-1, 1*16, 15*16-1 },
+		24*16, 16*16, new rectangle( 0*16, 24*16-1, 1*16, 15*16-1 ),
 		gfxdecodeinfo,
-		2048, 0,
-		0,
+		2048, null,
+		null,
 	
 		VIDEO_TYPE_RASTER,
-		0,
+		null,
 		shangha3_vh_start,
 		shangha3_vh_stop,
 		shangha3_vh_screenrefresh,
 	
 		/* sound hardware */
 		0,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_YM3438,
-				&ym3438_interface
-			},
-			{
+				ym3438_interface
+			),
+			new MachineSound(
 				SOUND_OKIM6295,
-				&okim6295_interface
-			}
+				okim6295_interface
+			)
 		}
-	};
+	);
 	
-	static const struct MachineDriver machine_driver_blocken =
-	{
+	static MachineDriver machine_driver_blocken = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_M68000,
 				16000000,	/* 16 MHz ??? */
-				blocken_readmem,blocken_writemem,0,0,
+				blocken_readmem,blocken_writemem,null,null,
 				m68_level4_irq,1
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_Z80,
 				6000000,	/* 6 MHz ??? */
 				heberpop_sound_readmem,heberpop_sound_writemem,heberpop_sound_readport,heberpop_sound_writeport,
 				ignore_interrupt,0	/* IRQ triggered by main CPU */
 									/* NMI triggered by YM3438 */
-			}
+			)
 		},
 		60, DEFAULT_REAL_60HZ_VBLANK_DURATION,	/* frames per second, vblank duration */
 		1,	/* single CPU, no need for interleaving */
-		0,
+		null,
 	
 		/* video hardware */
-		24*16, 16*16, { 0*16, 24*16-1, 1*16, 15*16-1 },
+		24*16, 16*16, new rectangle( 0*16, 24*16-1, 1*16, 15*16-1 ),
 		gfxdecodeinfo,
-		2048, 0,
-		0,
+		2048, null,
+		null,
 	
 		VIDEO_TYPE_RASTER,
-		0,
+		null,
 		shangha3_vh_start,
 		shangha3_vh_stop,
 		shangha3_vh_screenrefresh,
 	
 		/* sound hardware */
 		0,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_YM3438,
-				&ym3438_interface
-			},
-			{
+				ym3438_interface
+			),
+			new MachineSound(
 				SOUND_OKIM6295,
-				&okim6295_interface
-			}
+				okim6295_interface
+			)
 		}
-	};
+	);
 	
 	
 	

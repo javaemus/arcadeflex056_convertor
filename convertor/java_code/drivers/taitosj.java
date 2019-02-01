@@ -1657,118 +1657,118 @@ public class taitosj
 	
 	
 	
-	static const struct MachineDriver machine_driver_nomcu =
-	{
+	static MachineDriver machine_driver_nomcu = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_Z80,
 				8000000/2,      /* 4 MHz */
-				readmem,writemem,0,0,
+				readmem,writemem,null,null,
 				interrupt,1
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_Z80 | CPU_AUDIO_CPU,
 				6000000/2,      /* 3 MHz */
-				sound_readmem,sound_writemem,0,0,
+				sound_readmem,sound_writemem,null,null,
 				/* interrupts: */
 				/* - no interrupts synced with vblank */
 				/* - NMI triggered by the main CPU */
 				/* - periodic IRQ, with frequency 6000000/(4*16*16*10*16) = 36.621 Hz, */
 				/*   that is a period of 27306666.6666 ns */
-				0,0,
+				null,null,
 				interrupt,27306667
-			}
+			)
 		},
 		60, DEFAULT_REAL_60HZ_VBLANK_DURATION,  /* frames per second, vblank duration */
 		1,      /* 1 CPU slice per frame - interleaving is forced when a sound command is written */
 		taitosj_init_machine,
 	
 		/* video hardware */
-		32*8, 32*8, { 0*8, 32*8-1, 2*8, 30*8-1 },
+		32*8, 32*8, new rectangle( 0*8, 32*8-1, 2*8, 30*8-1 ),
 		gfxdecodeinfo,
 		64, 16*8,
 		taitosj_vh_convert_color_prom,
 	
 		VIDEO_TYPE_RASTER,
-		0,
+		null,
 		taitosj_vh_start,
 		taitosj_vh_stop,
 		taitosj_vh_screenrefresh,
 	
 		/* sound hardware */
 		0,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_AY8910,
-				&ay8910_interface
-			},
-			{
+				ay8910_interface
+			),
+			new MachineSound(
 				SOUND_DAC,
-				&dac_interface
-			}
+				dac_interface
+			)
 		}
-	};
+	);
 	
 	/* same as above, but with additional 68705 MCU */
-	static const struct MachineDriver machine_driver_mcu =
-	{
+	static MachineDriver machine_driver_mcu = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_Z80,
 				8000000/2,      /* 4 MHz */
-				mcu_readmem,mcu_writemem,0,0,
+				mcu_readmem,mcu_writemem,null,null,
 				interrupt,1
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_Z80 | CPU_AUDIO_CPU,
 				6000000/2,      /* 3 MHz */
-				sound_readmem,sound_writemem,0,0,
+				sound_readmem,sound_writemem,null,null,
 				/* interrupts: */
 				/* - no interrupts synced with vblank */
 				/* - NMI triggered by the main CPU */
 				/* - periodic IRQ, with frequency 6000000/(4*16*16*10*16) = 36.621 Hz, */
 				/*   that is a period of 27306666.6666 ns */
-				0,0,
+				null,null,
 				interrupt,27306667
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_M68705,
 				3000000/2,      /* xtal is 3MHz, I think it's divided by 2 internally */
-				m68705_readmem,m68705_writemem,0,0,
+				m68705_readmem,m68705_writemem,0,null,
 				ignore_interrupt,0      /* IRQs are caused by the main CPU */
-			}
+			)
 		},
 		60, DEFAULT_REAL_60HZ_VBLANK_DURATION,  /* frames per second, vblank duration */
 		1,      /* 1 CPU slice per frame - interleaving is forced when necessary */
 		taitosj_init_machine,
 	
 		/* video hardware */
-		32*8, 32*8, { 0*8, 32*8-1, 2*8, 30*8-1 },
+		32*8, 32*8, new rectangle( 0*8, 32*8-1, 2*8, 30*8-1 ),
 		gfxdecodeinfo,
 		64, 16*8,
 		taitosj_vh_convert_color_prom,
 	
 		VIDEO_TYPE_RASTER,
-		0,
+		null,
 		taitosj_vh_start,
 		taitosj_vh_stop,
 		taitosj_vh_screenrefresh,
 	
 		/* sound hardware */
 		0,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_AY8910,
-				&ay8910_interface
-			},
-			{
+				ay8910_interface
+			),
+			new MachineSound(
 				SOUND_DAC,
-				&dac_interface
-			}
+				dac_interface
+			)
 		}
-	};
+	);
 	
 	
 	

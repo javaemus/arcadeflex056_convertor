@@ -357,48 +357,48 @@ public class olibochu
 			return 0xd7;	/* RST 10h */
 	}
 	
-	static const struct MachineDriver machine_driver_olibochu =
-	{
+	static MachineDriver machine_driver_olibochu = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_Z80,
 				4000000,	/* 4 MHz ?? */
-				readmem,writemem,0,0,
+				readmem,writemem,null,null,
 				olibochu_interrupt,2
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_Z80 | CPU_AUDIO_CPU,
 				4000000,	/* 4 MHz ?? */
-				sound_readmem,sound_writemem,0,0,
+				sound_readmem,sound_writemem,null,null,
 				interrupt,1
-			}
+			)
 		},
 		60, DEFAULT_60HZ_VBLANK_DURATION,	/* frames per second, vblank duration */
 		1,	/* 1 CPU slice per frame - interleaving is forced when a sound command is written */
-		0,
+		null,
 	
 		/* video hardware */
-		32*8, 32*8, { 0*8, 32*8-1, 1*8, 31*8-1 },
+		32*8, 32*8, new rectangle( 0*8, 32*8-1, 1*8, 31*8-1 ),
 		gfxdecodeinfo,
 		32, 512,
 		olibochu_vh_convert_color_prom,
 	
 		VIDEO_TYPE_RASTER,
-		0,
-		0,
-		0,
+		null,
+		null,
+		null,
 		olibochu_vh_screenrefresh,
 	
 		/* sound hardware */
 		0,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_AY8910,
-				&ay8910_interface
-			}
+				ay8910_interface
+			)
 		}
-	};
+	);
 	
 	
 	

@@ -843,64 +843,64 @@ public class darius
 				     MACHINE DRIVERS
 	***********************************************************/
 	
-	static const struct MachineDriver machine_driver_darius =
-	{
+	static MachineDriver machine_driver_darius = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_M68000,
 				16000000/2,	/* 8 MHz ? */
-				darius_readmem,darius_writemem,0,0,
+				darius_readmem,darius_writemem,null,null,
 				darius_interrupt,1
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_Z80 | CPU_AUDIO_CPU,
 				8000000/2,	/* 4 MHz ? */
-				darius_sound_readmem,darius_sound_writemem,0,0,
+				darius_sound_readmem,darius_sound_writemem,null,null,
 				ignore_interrupt,1
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_M68000,
 				16000000/2,	/* 8 MHz ? */
-				darius_cpub_readmem,darius_cpub_writemem,0,0,
+				darius_cpub_readmem,darius_cpub_writemem,null,null,
 				darius_cpub_interrupt, 1
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_Z80 | CPU_AUDIO_CPU,	/* ADPCM player using MSM5205 */
 				8000000/2,	/* 4 MHz ? */
 				darius_sound2_readmem,darius_sound2_writemem, darius_sound2_readport, darius_sound2_writeport,
 				ignore_interrupt,1
-			}
+			)
 		},
 		60, DEFAULT_60HZ_VBLANK_DURATION,	/* frames per second, vblank duration */
 		10,	/* 10 CPU slices per frame ? */
 		init_darius_machine,
 	
 		/* video hardware */
-		108*8, 32*8, { 0*8, 108*8-1, 1*8, 29*8-1 },
+		108*8, 32*8, new rectangle( 0*8, 108*8-1, 1*8, 29*8-1 ),
 		darius_gfxdecodeinfo,
-		4096*2, 0,
-		0,
+		4096*2, null,
+		null,
 	
 		VIDEO_TYPE_RASTER | VIDEO_DUAL_MONITOR | VIDEO_ASPECT_RATIO(12,3),
-		0,
+		null,
 		darius_vh_start,
 		darius_vh_stop,
 		darius_vh_screenrefresh,
 	
 		/* sound hardware */
 		SOUND_SUPPORTS_STEREO,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_YM2203,
-				&ym2203_interface
-			},
-			{
+				ym2203_interface
+			),
+			new MachineSound(
 				SOUND_MSM5205,
-				&msm5205_interface
-			}
+				msm5205_interface
+			)
 		}
-	};
+	);
 	
 	
 	/***************************************************************************

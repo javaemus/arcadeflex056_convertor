@@ -300,57 +300,57 @@ public class hcastle
 		45,			/* Volume */
 	};
 	
-	static const struct MachineDriver machine_driver_hcastle =
-	{
+	static MachineDriver machine_driver_hcastle = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-	 		{
+		new MachineCPU[] {
+	 		new MachineCPU(
 				CPU_KONAMI,
 				3000000,	/* Derived from 24 MHz clock */
-				readmem,writemem,0,0,
+				readmem,writemem,null,null,
 				interrupt,1
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_Z80 | CPU_AUDIO_CPU,
 				3579545,
-				sound_readmem,sound_writemem,0,0,
+				sound_readmem,sound_writemem,null,null,
 				ignore_interrupt,0
-			}
+			)
 		},
 		59, DEFAULT_60HZ_VBLANK_DURATION,	/* frames per second verified by comparison with real board */
 		1,	/* 1 CPU slice per frame - interleaving is forced when a sound command is written */
-		0,
+		null,
 	
 		/* video hardware */
-		32*8, 32*8, { 0*8, 32*8-1, 2*8, 30*8-1 },
+		32*8, 32*8, new rectangle( 0*8, 32*8-1, 2*8, 30*8-1 ),
 	
 		gfxdecodeinfo,
 		128, 2*8*16*16,
 		hcastle_vh_convert_color_prom,
 	
 		VIDEO_TYPE_RASTER | VIDEO_BUFFERS_SPRITERAM,
-		0,
+		null,
 		hcastle_vh_start,
-		0,
+		null,
 		hcastle_vh_screenrefresh,
 	
 		/* sound hardware */
 		0,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_K007232,
-				&k007232_interface,
-			},
-			{
+				k007232_interface,
+			),
+			new MachineSound(
 				SOUND_YM3812,
-				&ym3812_interface
-			},
-			{
+				ym3812_interface
+			),
+			new MachineSound(
 				SOUND_K051649,
-				&k051649_interface,
-			}
+				k051649_interface,
+			)
 		}
-	};
+	);
 	
 	/***************************************************************************/
 	

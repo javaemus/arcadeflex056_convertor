@@ -255,42 +255,42 @@ public class funkybee
 	};
 	
 	
-	static const struct MachineDriver machine_driver_funkybee =
-	{
+	static MachineDriver machine_driver_funkybee = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_Z80,
 				3072000,	/* 3.072 MHz */
 				readmem,writemem,readport,writeport,
 				interrupt,1
-			}
+			)
 		},
 		60, DEFAULT_REAL_60HZ_VBLANK_DURATION,	/* frames per second, vblank duration */
 		1,	/* single CPU game */
-		0,
+		null,
 	
 		/* video hardware */
-		32*8, 32*8, { 12, 32*8-1-12, 0*8, 28*8-1 },
+		32*8, 32*8, new rectangle( 12, 32*8-1-12, 0*8, 28*8-1 ),
 		gfxdecodeinfo,
 		32,32,
 		funkybee_vh_convert_color_prom,
 	
 		VIDEO_TYPE_RASTER,
-		0,
+		null,
 		generic_vh_start,
 		generic_vh_stop,
 		funkybee_vh_screenrefresh,
 	
 		/* sound hardware */
 		0,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_AY8910,
-				&ay8910_interface
-			}
+				ay8910_interface
+			)
 		}
-	};
+	);
 	
 	
 	/***************************************************************************

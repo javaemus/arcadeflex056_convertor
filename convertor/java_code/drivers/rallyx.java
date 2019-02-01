@@ -314,46 +314,46 @@ public class rallyx
 	
 	
 	
-	static const struct MachineDriver machine_driver_rallyx =
-	{
+	static MachineDriver machine_driver_rallyx = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_Z80,
 				3072000,	/* 3.072 MHz ? */
-				readmem,writemem,0,writeport,
+				readmem,writemem,null,writeport,
 				interrupt,1
-			}
+			)
 		},
 		60.606060, DEFAULT_60HZ_VBLANK_DURATION,	/* frames per second, vblank duration */
 		1,	/* single CPU, no need for interleaving */
-		0,
+		null,
 	
 		/* video hardware */
-		36*8, 28*8, { 0*8, 36*8-1, 0*8, 28*8-1 },
+		36*8, 28*8, new rectangle( 0*8, 36*8-1, 0*8, 28*8-1 ),
 		gfxdecodeinfo,
 		32,64*4+4,
 		rallyx_vh_convert_color_prom,
 	
 		VIDEO_TYPE_RASTER,
-		0,
+		null,
 		rallyx_vh_start,
 		rallyx_vh_stop,
 		rallyx_vh_screenrefresh,
 	
 		/* sound hardware */
 		0,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_NAMCO,
-				&namco_interface
-			},
-			{
+				namco_interface
+			),
+			new MachineSound(
 				SOUND_SAMPLES,
-				&samples_interface
-			}
+				samples_interface
+			)
 		}
-	};
+	);
 	
 	
 	

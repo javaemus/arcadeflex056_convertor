@@ -364,46 +364,46 @@ public class mnight
 	};
 	
 	
-	static const struct MachineDriver machine_driver_mnight =
-	{
-		{
-			{
+	static MachineDriver machine_driver_mnight = new MachineDriver
+	(
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_Z80,
 				6000000,		/* 12000000/2 ??? */
-				readmem,writemem,0,0,	/* very sensitive to these settings */
+				readmem,writemem,null,null,	/* very sensitive to these settings */
 				mnight_interrupt,1
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_Z80 | CPU_AUDIO_CPU,
 				4000000,		/* 12000000/3 ??? */
 				snd_readmem,snd_writemem,
-				0,snd_writeport,
+				null,snd_writeport,
 				interrupt,2
-			},
+			),
 		},
 		60, 10000,			/* frames per second, vblank duration */
 		10,				/* single CPU, no need for interleaving */
 		mnight_init_machine,
 	
-		32*8, 32*8, { 0*8, 32*8-1, 4*8, 28*8-1},
+		32*8, 32*8, new rectangle( 0*8, 32*8-1, 4*8, 28*8-1),
 		gfxdecodeinfo,
-		768, 0,
-		0,
+		768, null,
+		null,
 	
 		VIDEO_TYPE_RASTER,
-		0,
+		null,
 		mnight_vh_start,
 		mnight_vh_stop,
 		mnight_vh_screenrefresh,
 	
 		0,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_YM2203,
-				&ym2203_interface
-			}
+				ym2203_interface
+			)
 		}
-	};
+	);
 	
 	
 	static RomLoadPtr rom_mnight = new RomLoadPtr(){ public void handler(){ 

@@ -510,47 +510,47 @@ public class bzone
 	};
 	
 	
-	static const struct MachineDriver machine_driver_bzone =
-	{
+	static MachineDriver machine_driver_bzone = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_M6502,
 				1500000,	/* 1.5 MHz */
-				bzone_readmem,bzone_writemem,0,0,
+				bzone_readmem,bzone_writemem,null,null,
 				bzone_interrupt,6 /* 4.1ms */
-			}
+			)
 		},
 		40, 0,	/* frames per second, vblank duration (vector game, so no vblank) */
 		1,
-		0,
+		null,
 	
 		/* video hardware */
-		400, 300, { 0, 580, 0, 400 },
-		0,
-		256+32768, 0,
+		400, 300, new rectangle( 0, 580, 0, 400 ),
+		null,
+		256+32768, null,
 		avg_init_palette_bzone,
 	
 		VIDEO_TYPE_VECTOR | VIDEO_SUPPORTS_DIRTY | VIDEO_RGB_DIRECT,
-		0,
+		null,
 		avg_start_bzone,
 		avg_stop,
 		vector_vh_screenrefresh,
 	
 		/* sound hardware */
 		0,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_POKEY,
-				&bzone_pokey_interface
-			},
-			{
+				bzone_pokey_interface
+			),
+			new MachineSound(
 				SOUND_CUSTOM,
-				&bzone_custom_interface
-			}
+				bzone_custom_interface
+			)
 		}
 	
-	};
+	);
 	
 	
 	static struct POKEYinterface redbaron_pokey_interface =
@@ -579,48 +579,48 @@ public class bzone
 		redbaron_sh_update
 	};
 	
-	static const struct MachineDriver machine_driver_redbaron =
-	{
+	static MachineDriver machine_driver_redbaron = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_M6502,
 				1500000,	/* 1.5 MHz */
-				redbaron_readmem,redbaron_writemem,0,0,
+				redbaron_readmem,redbaron_writemem,null,null,
 				bzone_interrupt,4 /* 5.4ms */
-			}
+			)
 		},
 		45, 0,	/* frames per second, vblank duration (vector game, so no vblank) */
 		1,
-		0,
+		null,
 	
 		/* video hardware */
-		400, 300, { 0, 520, 0, 400 },
-		0,
-		256, 0,
+		400, 300, new rectangle( 0, 520, 0, 400 ),
+		null,
+		256, null,
 		avg_init_palette_aqua,
 	
 		VIDEO_TYPE_VECTOR | VIDEO_SUPPORTS_DIRTY | VIDEO_RGB_DIRECT,
-		0,
+		null,
 		avg_start_redbaron,
 		avg_stop,
 		vector_vh_screenrefresh,
 	
 		/* sound hardware */
 		0,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_POKEY,
-				&redbaron_pokey_interface
-			},
-			{
+				redbaron_pokey_interface
+			),
+			new MachineSound(
 				SOUND_CUSTOM,
-				&redbaron_custom_interface
-			}
+				redbaron_custom_interface
+			)
 		},
 	
 		atari_vg_earom_handler
-	};
+	);
 	
 	
 	/***************************************************************************

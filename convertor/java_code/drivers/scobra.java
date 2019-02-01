@@ -1151,29 +1151,29 @@ public class scobra
 	};
 	
 	
-	static const struct MachineDriver machine_driver_type1 =
-	{
+	static MachineDriver machine_driver_type1 = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_Z80,
 				18432000/6,	/* 3.072 MHz */
-				type1_readmem,type1_writemem,0,0,
+				type1_readmem,type1_writemem,null,null,
 				nmi_interrupt,1
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_Z80 | CPU_AUDIO_CPU,
 				14318000/8,	/* 1.78975 MHz */
 				scobra_sound_readmem,scobra_sound_writemem,scobra_sound_readport,scobra_sound_writeport,
 				ignore_interrupt,1	/* interrupts are triggered by the main CPU */
-			}
+			)
 		},
 		16000.0/132/2, 2500,	/* frames per second, vblank duration */
 		1,	/* 1 CPU slice per frame - interleaving is forced when a sound command is written */
 		scramble_init_machine,
 	
 		/* video hardware */
-		32*8, 32*8, { 0*8, 32*8-1, 2*8, 30*8-1 },
+		32*8, 32*8, new rectangle( 0*8, 32*8-1, 2*8, 30*8-1 ),
 		galaxian_gfxdecodeinfo,
 		32+64+2+1,8*4,	/* 32 for characters, 64 for stars, 2 for bullets, 1 for background */	\
 		scramble_vh_convert_color_prom,
@@ -1186,127 +1186,127 @@ public class scobra
 	
 		/* sound hardware */
 		0,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_AY8910,
-				&scobra_ay8910_interface
-			}
+				scobra_ay8910_interface
+			)
 		}
-	};
+	);
 	
 	/* same as regular type 1, the only difference that it has long bullets */
-	static const struct MachineDriver machine_driver_armorcar =
-	{
+	static MachineDriver machine_driver_armorcar = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_Z80,
 				18432000/6,	/* 3.072 MHz */
-				type1_readmem,type1_writemem,0,0,
+				type1_readmem,type1_writemem,null,null,
 				nmi_interrupt,1
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_Z80 | CPU_AUDIO_CPU,
 				14318000/8,	/* 1.78975 MHz */
 				scobra_sound_readmem,scobra_sound_writemem,scobra_sound_readport,scobra_sound_writeport,
 				ignore_interrupt,1	/* interrupts are triggered by the main CPU */
-			}
+			)
 		},
 		16000.0/132/2, 2500,	/* frames per second, vblank duration */
 		1,	/* 1 CPU slice per frame - interleaving is forced when a sound command is written */
 		scramble_init_machine,
 	
 		/* video hardware */
-		32*8, 32*8, { 0*8, 32*8-1, 2*8, 30*8-1 },
+		32*8, 32*8, new rectangle( 0*8, 32*8-1, 2*8, 30*8-1 ),
 		galaxian_gfxdecodeinfo,
 		32+64+2,8*4,	/* 32 for characters, 64 for stars, 2 for bullets */
 		galaxian_vh_convert_color_prom,
 	
 		VIDEO_TYPE_RASTER,
-		0,
+		null,
 		theend_vh_start,
 		0,
 		galaxian_vh_screenrefresh,
 	
 		/* sound hardware */
 		0,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_AY8910,
-				&scobra_ay8910_interface
-			}
+				scobra_ay8910_interface
+			)
 		}
-	};
+	);
 	
 	/* same as regular type 1, the only difference is that the bullets are less yellow */
-	static const struct MachineDriver machine_driver_moonwar =
-	{
+	static MachineDriver machine_driver_moonwar = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_Z80,
 				18432000/6,	/* 3.072 MHz */
-				type1_readmem,type1_writemem,0,0,
+				type1_readmem,type1_writemem,null,null,
 				nmi_interrupt,1
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_Z80 | CPU_AUDIO_CPU,
 				14318000/8,	/* 1.78975 MHz */
 				scobra_sound_readmem,scobra_sound_writemem,scobra_sound_readport,scobra_sound_writeport,
 				ignore_interrupt,1	/* interrupts are triggered by the main CPU */
-			}
+			)
 		},
 		16000.0/132/2, 2500,	/* frames per second, vblank duration */
 		1,	/* 1 CPU slice per frame - interleaving is forced when a sound command is written */
 		scramble_init_machine,
 	
 		/* video hardware */
-		32*8, 32*8, { 0*8, 32*8-1, 2*8, 30*8-1 },
+		32*8, 32*8, new rectangle( 0*8, 32*8-1, 2*8, 30*8-1 ),
 		galaxian_gfxdecodeinfo,
 		32+64+2,8*4,	/* 32 for characters, 64 for stars, 2 for bullets */
 		moonwar_vh_convert_color_prom,
 	
 		VIDEO_TYPE_RASTER,
-		0,
+		null,
 		scramble_vh_start,
 		0,
 		galaxian_vh_screenrefresh,
 	
 		/* sound hardware */
 		0,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_AY8910,
-				&scobra_ay8910_interface
-			}
+				scobra_ay8910_interface
+			)
 		}
-	};
+	);
 	
 	/* Rescue, Minefield and Strategy X have extra colors, and custom video initialise */
 	/* routines to set up the graduated color backgound they use */
-	static const struct MachineDriver machine_driver_rescue =
-	{
+	static MachineDriver machine_driver_rescue = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_Z80,
 				18432000/6,	/* 3.072 MHz */
-				type1_readmem,type1_writemem,0,0,
+				type1_readmem,type1_writemem,null,null,
 				nmi_interrupt,1
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_Z80 | CPU_AUDIO_CPU,
 				14318000/8,	/* 1.78975 MHz */
 				scobra_sound_readmem,scobra_sound_writemem,scobra_sound_readport,scobra_sound_writeport,
 				ignore_interrupt,1	/* interrupts are triggered by the main CPU */
-			}
+			)
 		},
 		16000.0/132/2, 2500,	/* frames per second, vblank duration */
 		1,	/* 1 CPU slice per frame - interleaving is forced when a sound command is written */
 		scramble_init_machine,
 	
 		/* video hardware */
-		32*8, 32*8, { 0*8, 32*8-1, 2*8, 30*8-1 },
+		32*8, 32*8, new rectangle( 0*8, 32*8-1, 2*8, 30*8-1 ),
 		galaxian_gfxdecodeinfo,
 		32+64+2+128,8*4,	/* 32 for characters, 64 for stars, 2 for bullets, 128 for background */
 		rescue_vh_convert_color_prom,
@@ -1319,37 +1319,37 @@ public class scobra
 	
 		/* sound hardware */
 		0,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_AY8910,
-				&scobra_ay8910_interface
-			}
+				scobra_ay8910_interface
+			)
 		}
-	};
+	);
 	
-	static const struct MachineDriver machine_driver_minefld =
-	{
+	static MachineDriver machine_driver_minefld = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_Z80,
 				18432000/6,	/* 3.072 MHz */
-				type1_readmem,type1_writemem,0,0,
+				type1_readmem,type1_writemem,null,null,
 				nmi_interrupt,1
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_Z80 | CPU_AUDIO_CPU,
 				14318000/8,	/* 1.78975 MHz */
 				scobra_sound_readmem,scobra_sound_writemem,scobra_sound_readport,scobra_sound_writeport,
 				ignore_interrupt,1	/* interrupts are triggered by the main CPU */
-			}
+			)
 		},
 		16000.0/132/2, 2500,	/* frames per second, vblank duration */
 		1,	/* 1 CPU slice per frame - interleaving is forced when a sound command is written */
 		scramble_init_machine,
 	
 		/* video hardware */
-		32*8, 32*8, { 0*8, 32*8-1, 2*8, 30*8-1 },
+		32*8, 32*8, new rectangle( 0*8, 32*8-1, 2*8, 30*8-1 ),
 		galaxian_gfxdecodeinfo,
 		32+64+2+256,8*4,	/* 32 for characters, 64 for stars, 2 for bullets, 256 for background */
 		minefld_vh_convert_color_prom,
@@ -1362,37 +1362,37 @@ public class scobra
 	
 		/* sound hardware */
 		0,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_AY8910,
-				&scobra_ay8910_interface
-			}
+				scobra_ay8910_interface
+			)
 		}
-	};
+	);
 	
-	static const struct MachineDriver machine_driver_stratgyx =
-	{
+	static MachineDriver machine_driver_stratgyx = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_Z80,
 				18432000/6,	/* 3.072 MHz */
-				type2_readmem,type2_writemem,0,0,
+				type2_readmem,type2_writemem,null,null,
 				nmi_interrupt,1
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_Z80 | CPU_AUDIO_CPU,
 				14318000/8,	/* 1.78975 MHz */
 				scobra_sound_readmem,scobra_sound_writemem,scobra_sound_readport,scobra_sound_writeport,
 				ignore_interrupt,1	/* interrupts are triggered by the main CPU */
-			}
+			)
 		},
 		16000.0/132/2, 2500,	/* frames per second, vblank duration */
 		1,	/* 1 CPU slice per frame - interleaving is forced when a sound command is written */
 		scramble_init_machine,
 	
 		/* video hardware */
-		32*8, 32*8, { 0*8, 32*8-1, 2*8, 30*8-1 },
+		32*8, 32*8, new rectangle( 0*8, 32*8-1, 2*8, 30*8-1 ),
 		galaxian_gfxdecodeinfo,
 		32+64+2+8,8*4,	/* 32 for characters, 64 for stars, 2 for bullets, 8 for background */
 		stratgyx_vh_convert_color_prom,
@@ -1405,37 +1405,37 @@ public class scobra
 	
 		/* sound hardware */
 		0,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_AY8910,
-				&scobra_ay8910_interface
-			}
+				scobra_ay8910_interface
+			)
 		}
-	};
+	);
 	
-	static const struct MachineDriver machine_driver_type2 =
-	{
+	static MachineDriver machine_driver_type2 = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_Z80,
 				18432000/6,	/* 3.072 MHz */
-				type2_readmem,type2_writemem,0,0,
+				type2_readmem,type2_writemem,null,null,
 				nmi_interrupt,1
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_Z80 | CPU_AUDIO_CPU,
 				14318000/8,	/* 1.78975 MHz */
 				scobra_sound_readmem,scobra_sound_writemem,scobra_sound_readport,scobra_sound_writeport,
 				ignore_interrupt,1	/* interrupts are triggered by the main CPU */
-			}
+			)
 		},
 		16000.0/132/2, 2500,	/* frames per second, vblank duration */
 		1,	/* 1 CPU slice per frame - interleaving is forced when a sound command is written */
 		scramble_init_machine,
 	
 		/* video hardware */
-		32*8, 32*8, { 0*8, 32*8-1, 2*8, 30*8-1 },
+		32*8, 32*8, new rectangle( 0*8, 32*8-1, 2*8, 30*8-1 ),
 		galaxian_gfxdecodeinfo,
 		32+64+2+1,8*4,	/* 32 for characters, 64 for stars, 2 for bullets, 1 for background */
 		scramble_vh_convert_color_prom,
@@ -1448,168 +1448,168 @@ public class scobra
 	
 		/* sound hardware */
 		0,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_AY8910,
-				&scobra_ay8910_interface
-			}
+				scobra_ay8910_interface
+			)
 		}
-	};
+	);
 	
-	static const struct MachineDriver machine_driver_darkplnt =
-	{
+	static MachineDriver machine_driver_darkplnt = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_Z80,
 				18432000/6,	/* 3.072 MHz */
-				type2_readmem,type2_writemem,0,0,
+				type2_readmem,type2_writemem,null,null,
 				nmi_interrupt,1
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_Z80 | CPU_AUDIO_CPU,
 				14318000/8,	/* 1.78975 MHz */
 				scobra_sound_readmem,scobra_sound_writemem,scobra_sound_readport,scobra_sound_writeport,
 				ignore_interrupt,1	/* interrupts are triggered by the main CPU */
-			}
+			)
 		},
 		16000.0/132/2, 2500,	/* frames per second, vblank duration */
 		1,	/* 1 CPU slice per frame - interleaving is forced when a sound command is written */
 		scramble_init_machine,
 	
 		/* video hardware */
-		32*8, 32*8, { 0*8, 32*8-1, 2*8, 30*8-1 },
+		32*8, 32*8, new rectangle( 0*8, 32*8-1, 2*8, 30*8-1 ),
 		galaxian_gfxdecodeinfo,
 		32+2,8*4+128*1, /* 32 for characters, 2 for bullets */
 		darkplnt_vh_convert_color_prom,
 	
 		VIDEO_TYPE_RASTER,
-		0,
+		null,
 		darkplnt_vh_start,
 		0,
 		galaxian_vh_screenrefresh,
 	
 		/* sound hardware */
 		0,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_AY8910,
-				&scobra_ay8910_interface
-			}
+				scobra_ay8910_interface
+			)
 		}
-	};
+	);
 	
-	static const struct MachineDriver machine_driver_hustler =
-	{
+	static MachineDriver machine_driver_hustler = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_Z80,
 				18432000/6,	/* 3.072 MHz */
-				hustler_readmem,hustler_writemem,0,0,
+				hustler_readmem,hustler_writemem,null,null,
 				nmi_interrupt,1
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_Z80 | CPU_AUDIO_CPU,
 				14318000/8,	/* 1.78975 MHz */
 				frogger_sound_readmem,frogger_sound_writemem,frogger_sound_readport,frogger_sound_writeport,
 				ignore_interrupt,1	/* interrupts are triggered by the main CPU */
-			}
+			)
 		},
 		16000.0/132/2, 2500,	/* frames per second, vblank duration */
 		1,	/* 1 CPU slice per frame - interleaving is forced when a sound command is written */
 		scramble_init_machine,
 	
 		/* video hardware */
-		32*8, 32*8, { 0*8, 32*8-1, 2*8, 30*8-1 },
+		32*8, 32*8, new rectangle( 0*8, 32*8-1, 2*8, 30*8-1 ),
 		galaxian_gfxdecodeinfo,
 		32+64+2,8*4,	/* 32 for characters, 64 for stars, 2 for bullets */
 		galaxian_vh_convert_color_prom,
 	
 		VIDEO_TYPE_RASTER,
-		0,
+		null,
 		scramble_vh_start,
 		0,
 		galaxian_vh_screenrefresh,
 	
 		/* sound hardware */
 		0,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_AY8910,
-				&frogger_ay8910_interface
-			}
+				frogger_ay8910_interface
+			)
 		}
-	};
+	);
 	
-	static const struct MachineDriver machine_driver_hustlerb =
-	{
+	static MachineDriver machine_driver_hustlerb = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_Z80,
 				18432000/6,	/* 3.072 MHz */
-				hustlerb_readmem,hustlerb_writemem,0,0,
+				hustlerb_readmem,hustlerb_writemem,null,null,
 				nmi_interrupt,1
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_Z80 | CPU_AUDIO_CPU,
 				14318000/8,	/* 1.78975 MHz */
 				scobra_sound_readmem,hustlerb_sound_writemem,hustlerb_sound_readport,hustlerb_sound_writeport,
 				ignore_interrupt,1	/* interrupts are triggered by the main CPU */
-			}
+			)
 		},
 		16000.0/132/2, 2500,	/* frames per second, vblank duration */
 		1,	/* 1 CPU slice per frame - interleaving is forced when a sound command is written */
 		scramble_init_machine,
 	
 		/* video hardware */
-		32*8, 32*8, { 0*8, 32*8-1, 2*8, 30*8-1 },
+		32*8, 32*8, new rectangle( 0*8, 32*8-1, 2*8, 30*8-1 ),
 		galaxian_gfxdecodeinfo,
 		32+64+2,8*4,	/* 32 for characters, 64 for stars, 2 for bullets */
 		galaxian_vh_convert_color_prom,
 	
 		VIDEO_TYPE_RASTER,
-		0,
+		null,
 		scramble_vh_start,
 		0,
 		galaxian_vh_screenrefresh,
 	
 		/* sound hardware */
 		0,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_AY8910,
-				&frogger_ay8910_interface
-			}
+				frogger_ay8910_interface
+			)
 		}
-	};
+	);
 	
 	/* same as the others, but no sprite flipping, but instead, the bits are used
 	   as extra sprite code bits, giving 256 sprite images */
-	static const struct MachineDriver machine_driver_calipso =
-	{
+	static MachineDriver machine_driver_calipso = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_Z80,
 				18432000/6,	/* 3.072 MHz */
-				type1_readmem,type1_writemem,0,0,
+				type1_readmem,type1_writemem,null,null,
 				nmi_interrupt,1
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_Z80 | CPU_AUDIO_CPU,
 				14318000/8,	/* 1.78975 MHz */
 				scobra_sound_readmem,scobra_sound_writemem,scobra_sound_readport,scobra_sound_writeport,
 				ignore_interrupt,1	/* interrupts are triggered by the main CPU */
-			}
+			)
 		},
 		16000.0/132/2, 2500,	/* frames per second, vblank duration */
 		1,	/* 1 CPU slice per frame - interleaving is forced when a sound command is written */
 		scramble_init_machine,
 	
 		/* video hardware */
-		32*8, 32*8, { 0*8, 32*8-1, 2*8, 30*8-1 },
+		32*8, 32*8, new rectangle( 0*8, 32*8-1, 2*8, 30*8-1 ),
 		galaxian_gfxdecodeinfo,
 		32+64+2+1,8*4,	/* 32 for characters, 64 for stars, 2 for bullets, 1 for background */
 		scramble_vh_convert_color_prom,
@@ -1622,13 +1622,13 @@ public class scobra
 	
 		/* sound hardware */
 		0,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_AY8910,
-				&scobra_ay8910_interface
-			}
+				scobra_ay8910_interface
+			)
 		}
-	};
+	);
 	
 	/***************************************************************************
 	

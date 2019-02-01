@@ -1357,350 +1357,350 @@ public class alpha68k
 	/******************************************************************************/
 	
 	
-	static const struct MachineDriver machine_driver_kouyakyu =
-	{
-		{
-	 		{
+	static MachineDriver machine_driver_kouyakyu = new MachineDriver
+	(
+		new MachineCPU[] {
+	 		new MachineCPU(
 				CPU_M68000,
 				6000000, /* 12MHz/2? */
-				kouyakyu_readmem,kouyakyu_writemem,0,0,
+				kouyakyu_readmem,kouyakyu_writemem,null,null,
 				kyros_interrupt,2
-			},
+			),
 	#if 0
-			{
+			new MachineCPU(
 				CPU_Z80 | CPU_AUDIO_CPU,
 				3579545, /* ? */
 				sound_readmem,sound_writemem,sound_readport,sound_writeport,
 				interrupt,1
-			}
+			)
 	#endif
 		},
 		60, DEFAULT_60HZ_VBLANK_DURATION,
 		1,	/* 1 CPU slice per frame - interleaving is forced when a sound command is written */
-		0,
+		null,
 	
 		/* video hardware */
-	  	32*8, 32*8, { 0*8, 32*8-1, 2*8, 30*8-1 },
+	  	32*8, 32*8, new rectangle( 0*8, 32*8-1, 2*8, 30*8-1 ),
 	 // 	64*8, 64*8, { 0*8, 64*8-1, 2*8, 64*8-1 },
 	
 		kouyakyu_gfxdecodeinfo,
-		256, 0,
-		0,
+		256, null,
+		null,
 	
 		VIDEO_TYPE_RASTER,
-		0,
+		null,
 		kouyakyu_vh_start,
 		0,
 		kouyakyu_vh_screenrefresh,
 	
 		/* sound hardware */
 		0,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_YM2203,
-				&ym2203_interface
-			}
+				ym2203_interface
+			)
 		}
-	};
+	);
 	
-	static const struct MachineDriver machine_driver_kyros =
-	{
+	static MachineDriver machine_driver_kyros = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-	 		{
+		new MachineCPU[] {
+	 		new MachineCPU(
 				CPU_M68000,
 				6000000, /* 24MHz/4? */
-				kyros_readmem,kyros_writemem,0,0,
+				kyros_readmem,kyros_writemem,null,null,
 				kyros_interrupt,2
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_Z80 | CPU_AUDIO_CPU,
 				3579545, /* ? */
-				kyros_sound_readmem,kyros_sound_writemem,0,kyros_sound_writeport,
+				kyros_sound_readmem,kyros_sound_writemem,null,kyros_sound_writeport,
 				nmi_interrupt,8
-			}
+			)
 		},
 		60, DEFAULT_60HZ_VBLANK_DURATION,
 		1,	/* 1 CPU slice per frame - interleaving is forced when a sound command is written */
-		0,
+		null,
 	
 		/* video hardware */
-	  	32*8, 32*8, { 0*8, 32*8-1, 2*8, 30*8-1 },
+	  	32*8, 32*8, new rectangle( 0*8, 32*8-1, 2*8, 30*8-1 ),
 	
 		kyros_gfxdecodeinfo,
 		256, 256,
 		kyros_vh_convert_color_prom,
 	
 		VIDEO_TYPE_RASTER,
-		0,
-		0,
-		0,
+		null,
+		null,
+		null,
 		kyros_vh_screenrefresh,
 	
 		/* sound hardware */
 		0,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_YM2203,
-				&ym2203_interface
-			},
-			{
+				ym2203_interface
+			),
+			new MachineSound(
 				SOUND_AY8910,
-				&ay8910_interface
-			}
+				ay8910_interface
+			)
 		}
-	};
+	);
 	
-	static const struct MachineDriver machine_driver_sstingry =
-	{
+	static MachineDriver machine_driver_sstingry = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-	 		{
+		new MachineCPU[] {
+	 		new MachineCPU(
 				CPU_M68000,
 				6000000, /* 24MHz/4? */
-				kyros_readmem,kyros_writemem,0,0,
+				kyros_readmem,kyros_writemem,null,null,
 				kyros_interrupt,2
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_Z80 | CPU_AUDIO_CPU,
 				3579545, /* ? */
-				sstingry_sound_readmem,sstingry_sound_writemem,0,kyros_sound_writeport,
+				sstingry_sound_readmem,sstingry_sound_writemem,null,kyros_sound_writeport,
 				nmi_interrupt,32
-			}
+			)
 		},
 		60, DEFAULT_60HZ_VBLANK_DURATION,
 		1,	/* 1 CPU slice per frame - interleaving is forced when a sound command is written */
-		0,
+		null,
 	
 		/* video hardware */
-	  	32*8, 32*8, { 0*8, 32*8-1, 2*8, 30*8-1 },
+	  	32*8, 32*8, new rectangle( 0*8, 32*8-1, 2*8, 30*8-1 ),
 	
 		sstingry_gfxdecodeinfo,
-		256, 0,
+		256, null,
 		palette_RRRR_GGGG_BBBB_convert_prom,
 	
 		VIDEO_TYPE_RASTER,
-		0,
-		0,
-		0,
+		null,
+		null,
+		null,
 		sstingry_vh_screenrefresh,
 	
 		/* sound hardware */
 		0,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_YM2203,
-				&ym2203_interface
-			},
-			{
+				ym2203_interface
+			),
+			new MachineSound(
 				SOUND_AY8910,
-				&ay8910_interface
-			}
+				ay8910_interface
+			)
 		}
-	};
+	);
 	
-	static const struct MachineDriver machine_driver_alpha68k_I =
-	{
+	static MachineDriver machine_driver_alpha68k_I = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-	 		{
+		new MachineCPU[] {
+	 		new MachineCPU(
 				CPU_M68000,
 				6000000, /* 24MHz/4? */
-				alpha68k_I_readmem,alpha68k_I_writemem,0,0,
+				alpha68k_I_readmem,alpha68k_I_writemem,null,null,
 				m68_level1_irq,1 /* VBL */
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_Z80 | CPU_AUDIO_CPU,
 				3579545, /* ? */
 				sound_readmem,sound_writemem,sound_readport,sound_writeport,
 				interrupt,1
-			}
+			)
 		},
 		60, DEFAULT_60HZ_VBLANK_DURATION,
 		1,	/* 1 CPU slice per frame - interleaving is forced when a sound command is written */
-		0,
+		null,
 	
 		/* video hardware */
-	  	32*8, 32*8, { 0*8, 32*8-1, 2*8, 30*8-1 },
+	  	32*8, 32*8, new rectangle( 0*8, 32*8-1, 2*8, 30*8-1 ),
 	
 		paddle_gfxdecodeinfo,
-		256, 0,
+		256, null,
 		palette_RRRR_GGGG_BBBB_convert_prom,
 	
 		VIDEO_TYPE_RASTER,
-		0,
-		0,
-		0,
+		null,
+		null,
+		null,
 		alpha68k_I_vh_screenrefresh,
 	
 		/* sound hardware */
 		0,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_YM2203,
-				&ym2203_interface
-			}
+				ym2203_interface
+			)
 		}
-	};
+	);
 	
-	static const struct MachineDriver machine_driver_alpha68k_II =
-	{
+	static MachineDriver machine_driver_alpha68k_II = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_M68000,
 				8000000, /* Correct */
-				alpha68k_II_readmem,alpha68k_II_writemem,0,0,
+				alpha68k_II_readmem,alpha68k_II_writemem,null,null,
 				m68_level3_irq,1 /* VBL */
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_Z80 | CPU_AUDIO_CPU,
 				//3579545, /* Correct?? */
 				3579545*2, /* Unlikely but needed to stop nested NMI's */
 				sound_readmem,sound_writemem,sound_readport,sound_writeport,
 				nmi_interrupt,116
-			}
+			)
 		},
 		60, DEFAULT_60HZ_VBLANK_DURATION,
 		1,	/* 1 CPU slice per frame - interleaving is forced when a sound command is written */
-		0,
+		null,
 	
 		/* video hardware */
-	  	32*8, 32*8, { 0*8, 32*8-1, 2*8, 30*8-1 },
+	  	32*8, 32*8, new rectangle( 0*8, 32*8-1, 2*8, 30*8-1 ),
 	
 		alpha68k_II_gfxdecodeinfo,
-		2048, 0,
-		0,
+		2048, null,
+		null,
 	
 		VIDEO_TYPE_RASTER,
-		0,
+		null,
 		alpha68k_vh_start,
-		0,
+		null,
 		alpha68k_II_vh_screenrefresh,
 	
 		/* sound hardware */
 		0,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_YM2203,
-				&ym2203_interface
-			},
-			{
+				ym2203_interface
+			),
+			new MachineSound(
 				SOUND_YM2413,
-				&ym2413_interface
-			},
-			{
+				ym2413_interface
+			),
+			new MachineSound(
 				SOUND_DAC,
-				&dac_interface
-			}
+				dac_interface
+			)
 		}
-	};
+	);
 	
-	static const struct MachineDriver machine_driver_alpha68k_V =
-	{
+	static MachineDriver machine_driver_alpha68k_V = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-	 		{
+		new MachineCPU[] {
+	 		new MachineCPU(
 				CPU_M68000,
 				10000000, /* ? */
-				alpha68k_V_readmem,alpha68k_V_writemem,0,0,
+				alpha68k_V_readmem,alpha68k_V_writemem,null,null,
 				m68_level3_irq,1 /* VBL */
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_Z80 | CPU_AUDIO_CPU,
 	//			3579545,
 				3579545*2, /* Unlikely but needed to stop nested NMI's */
 				sound_readmem,sound_writemem,sound_readport,sound_writeport,
 				nmi_interrupt,148
-			}
+			)
 		},
 		60, DEFAULT_60HZ_VBLANK_DURATION,
 		1,	/* 1 CPU slice per frame - interleaving is forced when a sound command is written */
-		0,
+		null,
 	
 		/* video hardware */
-	  	32*8, 32*8, { 0*8, 32*8-1, 2*8, 30*8-1 },
+	  	32*8, 32*8, new rectangle( 0*8, 32*8-1, 2*8, 30*8-1 ),
 	
 		alpha68k_V_gfxdecodeinfo,
-		4096, 0,
-		0,
+		4096, null,
+		null,
 	
 		VIDEO_TYPE_RASTER,
-		0,
+		null,
 		alpha68k_vh_start,
-		0,
+		null,
 		alpha68k_V_vh_screenrefresh,
 	
 		/* sound hardware */
 		0,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_YM2203,
-				&ym2203_interface
-			},
-			{
+				ym2203_interface
+			),
+			new MachineSound(
 				SOUND_YM2413,
-				&ym2413_interface
-			},
-			{
+				ym2413_interface
+			),
+			new MachineSound(
 				SOUND_DAC,
-				&dac_interface
-			}
+				dac_interface
+			)
 		}
-	};
+	);
 	
-	static const struct MachineDriver machine_driver_alpha68k_V_sb =
-	{
+	static MachineDriver machine_driver_alpha68k_V_sb = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-	 		{
+		new MachineCPU[] {
+	 		new MachineCPU(
 				CPU_M68000,
 				10000000, /* ? */
-				alpha68k_V_readmem,alpha68k_V_writemem,0,0,
+				alpha68k_V_readmem,alpha68k_V_writemem,null,null,
 				m68_level3_irq,1 /* VBL */
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_Z80 | CPU_AUDIO_CPU,
 	//			3579545,
 				3579545*2, /* Unlikely but needed to stop nested NMI's */
 				sound_readmem,sound_writemem,sound_readport,sound_writeport,
 				nmi_interrupt,112
-			}
+			)
 		},
 		60, DEFAULT_60HZ_VBLANK_DURATION,
 		1,	/* 1 CPU slice per frame - interleaving is forced when a sound command is written */
-		0,
+		null,
 	
 		/* video hardware */
-	  	32*8, 32*8, { 0*8, 32*8-1, 2*8, 30*8-1 },
+	  	32*8, 32*8, new rectangle( 0*8, 32*8-1, 2*8, 30*8-1 ),
 	
 		alpha68k_V_gfxdecodeinfo,
-		4096, 0,
-		0,
+		4096, null,
+		null,
 	
 		VIDEO_TYPE_RASTER,
-		0,
+		null,
 		alpha68k_vh_start,
-		0,
+		null,
 		alpha68k_V_sb_vh_screenrefresh,
 	
 		/* sound hardware */
 		0,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_YM2203,
-				&ym2203_interface
-			},
-			{
+				ym2203_interface
+			),
+			new MachineSound(
 				SOUND_YM2413,
-				&ym2413_interface
-			},
-			{
+				ym2413_interface
+			),
+			new MachineSound(
 				SOUND_DAC,
-				&dac_interface
-			}
+				dac_interface
+			)
 		}
-	};
+	);
 	
 	/******************************************************************************/
 	

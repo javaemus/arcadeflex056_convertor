@@ -270,48 +270,48 @@ public class speedbal
 	
 	
 	
-	static const struct MachineDriver machine_driver_speedbal =
-	{
+	static MachineDriver machine_driver_speedbal = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_Z80,
 				4000000,	/* 4 MHz ??? */
 				readmem,writemem,readport,0,
 				interrupt,1
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_Z80,
 				2660000,	/* 2.66 MHz ???  Maybe yes */
 				sound_readmem,sound_writemem,sound_readport,sound_writeport,
 				interrupt,8
-			}
+			)
 		},
 		60, DEFAULT_REAL_60HZ_VBLANK_DURATION,  /* frames per second, vblank duration */
 		1,    /* 1 CPU slices per frame */
-		0,
+		null,
 	
 		/* video hardware */
-		32*8, 32*8, { 0*8, 32*8-1, 2*8, 30*8-1 },
+		32*8, 32*8, new rectangle( 0*8, 32*8-1, 2*8, 30*8-1 ),
 		gfxdecodeinfo,
-		768, 0,
-		0,
+		768, null,
+		null,
 	
 		VIDEO_TYPE_RASTER,
-		0,
+		null,
 		speedbal_vh_start,
 		speedbal_vh_stop,
 		speedbal_vh_screenrefresh,
 	
 		/* sound hardware */
 		0,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_YM3812,
-				&ym3812_interface
-			}
+				ym3812_interface
+			)
 		}
-	};
+	);
 	
 	
 	

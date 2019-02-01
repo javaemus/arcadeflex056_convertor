@@ -1055,134 +1055,134 @@ public class neogeo
 	
 	/******************************************************************************/
 	
-	static const struct MachineDriver machine_driver_neogeo =
-	{
-		{
-			{
+	static MachineDriver machine_driver_neogeo = new MachineDriver
+	(
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_M68000,
 				12000000,
-				neogeo_readmem,neogeo_writemem,0,0,
+				neogeo_readmem,neogeo_writemem,null,null,
 				neogeo_interrupt,RASTER_LINES
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_Z80 | CPU_AUDIO_CPU | CPU_16BIT_PORT,
 				6000000,
 				sound_readmem,sound_writemem,neo_readio,neo_writeio,
 				ignore_interrupt,0
-			}
+			)
 		},
 		60, DEFAULT_60HZ_VBLANK_DURATION,
 		1,
 		neogeo_init_machine,
-		40*8, 32*8, { 1*8, 39*8-1, 2*8, 30*8-1 },
+		40*8, 32*8, new rectangle( 1*8, 39*8-1, 2*8, 30*8-1 ),
 		neogeo_mvs_gfxdecodeinfo,
-		4096, 0,
-		0,
+		4096, null,
+		null,
 	
 		/* please don't put VIDEO_SUPPRTS_16BIT in all games. It is stupid, because */
 		/* most games don't need it. Only put it in games that use more than 256 colors */
 		/* at the same time (and let the MAME team know about it) */
 		VIDEO_TYPE_RASTER,
-		0,
+		null,
 		neogeo_mvs_vh_start,
 		neogeo_vh_stop,
 		neogeo_vh_screenrefresh,
 	
 		/* sound hardware */
 		SOUND_SUPPORTS_STEREO,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_YM2610,
-				&neogeo_ym2610_interface,
-			},
+				neogeo_ym2610_interface,
+			),
 		},
 	
 		neogeo_nvram_handler
-	};
+	);
 	
-	static const struct MachineDriver machine_driver_raster =
-	{
-		{
-			{
+	static MachineDriver machine_driver_raster = new MachineDriver
+	(
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_M68000,
 				12000000,
-				neogeo_readmem,neogeo_writemem,0,0,
+				neogeo_readmem,neogeo_writemem,null,null,
 				neogeo_raster_interrupt,RASTER_LINES
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_Z80 | CPU_AUDIO_CPU | CPU_16BIT_PORT,
 				6000000,
 				sound_readmem,sound_writemem,neo_readio,neo_writeio,
 				ignore_interrupt,0
-			}
+			)
 		},
 		60, DEFAULT_60HZ_VBLANK_DURATION,
 		1,
 		neogeo_init_machine,
-		40*8, 32*8, { 1*8, 39*8-1, FIRST_VISIBLE_LINE, LAST_VISIBLE_LINE },
+		40*8, 32*8, new rectangle( 1*8, 39*8-1, FIRST_VISIBLE_LINE, LAST_VISIBLE_LINE ),
 		neogeo_mvs_gfxdecodeinfo,
-		4096, 0,
-		0,
+		4096, null,
+		null,
 	
 		VIDEO_TYPE_RASTER | VIDEO_RGB_DIRECT,
-		0,
+		null,
 		neogeo_mvs_vh_start,
 		neogeo_vh_stop,
 		neogeo_vh_raster_screenrefresh,
 	
 		/* sound hardware */
 		SOUND_SUPPORTS_STEREO,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_YM2610,
-				&neogeo_ym2610_interface,
-			},
+				neogeo_ym2610_interface,
+			),
 		},
 	
 		neogeo_nvram_handler
-	};
+	);
 	
-	static const struct MachineDriver machine_driver_raster_busy =
-	{
-		{
-			{
+	static MachineDriver machine_driver_raster_busy = new MachineDriver
+	(
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_M68000,
 				12000000,
-				neogeo_readmem,neogeo_writemem,0,0,
+				neogeo_readmem,neogeo_writemem,null,null,
 				neogeo_raster_interrupt_busy,RASTER_LINES
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_Z80 | CPU_AUDIO_CPU | CPU_16BIT_PORT,
 				6000000,
 				sound_readmem,sound_writemem,neo_readio,neo_writeio,
 				ignore_interrupt,0
-			}
+			)
 		},
 		60, DEFAULT_60HZ_VBLANK_DURATION,
 		1,
 		neogeo_init_machine,
-		40*8, 32*8, { 1*8, 39*8-1, FIRST_VISIBLE_LINE, LAST_VISIBLE_LINE },
+		40*8, 32*8, new rectangle( 1*8, 39*8-1, FIRST_VISIBLE_LINE, LAST_VISIBLE_LINE ),
 		neogeo_mvs_gfxdecodeinfo,
-		4096, 0,
-		0,
+		4096, null,
+		null,
 	
 		VIDEO_TYPE_RASTER | VIDEO_RGB_DIRECT,
-		0,
+		null,
 		neogeo_mvs_vh_start,
 		neogeo_vh_stop,
 		neogeo_vh_raster_screenrefresh,
 	
 		/* sound hardware */
 		SOUND_SUPPORTS_STEREO,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_YM2610,
-				&neogeo_ym2610_interface,
-			},
+				neogeo_ym2610_interface,
+			),
 		},
 	
 		neogeo_nvram_handler
-	};
+	);
 	
 	/******************************************************************************/
 	

@@ -246,42 +246,42 @@ public class surpratk
 	
 	
 	
-	static const struct MachineDriver machine_driver_surpratk =
-	{
+	static MachineDriver machine_driver_surpratk = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_KONAMI,		/* 053248 */
 				3000000,		/* ? */
-				surpratk_readmem,surpratk_writemem,0,0,
+				surpratk_readmem,surpratk_writemem,null,null,
 	            surpratk_interrupt,1
-			}
+			)
 		},
 		60, DEFAULT_60HZ_VBLANK_DURATION,	/* frames per second, vblank duration */
 		1,	/* 1 CPU slice per frame - interleaving is forced when a sound command is written */
 		surpratk_init_machine,
 	
 		/* video hardware */
-		64*8, 32*8, { 14*8, (64-14)*8-1, 2*8, 30*8-1 },
-		0,	/* gfx decoded by konamiic.c */
-		2048, 0,
-		0,
+		64*8, 32*8, new rectangle( 14*8, (64-14)*8-1, 2*8, 30*8-1 ),
+		null,	/* gfx decoded by konamiic.c */
+		2048, null,
+		null,
 	
 		VIDEO_TYPE_RASTER | VIDEO_HAS_SHADOWS,
-		0,
+		null,
 		surpratk_vh_start,
 		surpratk_vh_stop,
 		surpratk_vh_screenrefresh,
 	
 		/* sound hardware */
 		SOUND_SUPPORTS_STEREO,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_YM2151,
-				&ym2151_interface
-			}
+				ym2151_interface
+			)
 		}
-	};
+	);
 	
 	/***************************************************************************
 	

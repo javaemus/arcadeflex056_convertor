@@ -429,48 +429,48 @@ public class berzerk
 	
 	#define DRIVER(GAMENAME,NVRAM)											\
 																			\
-	static const struct MachineDriver machine_driver_##GAMENAME =					\
-	{																		\
+	static MachineDriver machine_driver_##GAMENAME = new MachineDriver\
+	(																		\
 		/* basic machine hardware */										\
-		{																	\
-			{																\
+		new MachineCPU[] {																	\
+			new MachineCPU(																\
 				CPU_Z80,													\
 				2500000,        /* 2.5 MHz */								\
 				GAMENAME##_readmem,GAMENAME##_writemem,readport,writeport,	\
 				berzerk_interrupt,8											\
-			},																\
+			),																\
 		},																	\
 		60, DEFAULT_60HZ_VBLANK_DURATION,	/* frames per second, vblank duration */	\
 		1,	/* single CPU, no need for interleaving */						\
 		GAMENAME##_init_machine,											\
 																			\
 		/* video hardware */												\
-		256, 256, { 0, 256-1, 32, 256-1 },									\
-		0,																	\
-		sizeof(palette) / sizeof(palette[0]) / 3, 0,						\
+		256, 256, new rectangle( 0, 256-1, 32, 256-1 ),									\
+		null,																	\
+		sizeof(palette) / sizeof(palette[null]) / 3, null,						\
 		init_palette,														\
 																			\
 		VIDEO_TYPE_RASTER | VIDEO_SUPPORTS_DIRTY,							\
-		0,																	\
-		0,																	\
+		null,																	\
+		null,																	\
 		0,																	\
 		berzerk_vh_screenrefresh,											\
 																			\
 		/* sound hardware */												\
 		0,0,0,0,															\
-		{																	\
-			{																\
+		new MachineSound[] {																	\
+			new MachineSound(																\
 				SOUND_SAMPLES,												\
-				&berzerk_samples_interface									\
-			},																\
-			{																\
+				berzerk_samples_interface									\
+			),																\
+			new MachineSound(																\
 				SOUND_CUSTOM,	/* actually plays the samples */			\
-				&custom_interface											\
-			}																\
+				custom_interface											\
+			)																\
 		},																	\
 																			\
 		NVRAM																\
-	};
+	);
 	
 	
 	DRIVER(berzerk,berzerk_nvram_handler)

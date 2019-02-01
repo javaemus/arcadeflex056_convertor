@@ -314,36 +314,36 @@ public class starfire
 	 *
 	 *************************************/
 	
-	static const struct MachineDriver machine_driver_starfire =
-	{
+	static MachineDriver machine_driver_starfire = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_Z80,
 	            2500000,
-				readmem,writemem,0,0,
+				readmem,writemem,null,null,
 	            nmi_interrupt,1
-			}
+			)
 		},
 		57, DEFAULT_60HZ_VBLANK_DURATION,
 		1,
 	    init_machine,
 	
 		/* video hardware */
-	    256, 256, { 0, 256-1, 32, 256-1 },
-	    0,
-	    64, 0,
-		0,
+	    256, 256, new rectangle( 0, 256-1, 32, 256-1 ),
+	    null,
+	    64, null,
+		null,
 	
 		VIDEO_TYPE_RASTER,
-		0,
+		null,
 	    starfire_vh_start,
 	    starfire_vh_stop,
 	    starfire_vh_screenrefresh,
 	
 		/* sound hardware */
 	    0,0,0,0
-	};
+	);
 	
 	
 	

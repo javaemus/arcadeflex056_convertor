@@ -861,170 +861,170 @@ public class sf1
 		{ 100, 100 }
 	};
 	
-	static const struct MachineDriver machine_driver_sf1 =
-	{
-		{
-			{
+	static MachineDriver machine_driver_sf1 = new MachineDriver
+	(
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_M68000,
 				8000000,	/* 8 MHz ? (xtal is 16MHz) */
-				readmem,writemem,0,0,
+				readmem,writemem,null,null,
 				m68_level1_irq,1
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_Z80 | CPU_AUDIO_CPU,
 				3579545,	/* ? xtal is 3.579545MHz */
-				sound_readmem,sound_writemem,0,0,
+				sound_readmem,sound_writemem,null,null,
 				ignore_interrupt,0	/* IRQs are caused by the YM2151 */
 									/* NMIs are caused by the main CPU */
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_Z80 | CPU_AUDIO_CPU,
 				3579545,	/* ? xtal is 3.579545MHz */
 				sound2_readmem, sound2_writemem,
 				sound2_readport, sound2_writeport,
-				0,0,
+				null,null,
 				interrupt,8000
-			}
+			)
 		},
 		60, DEFAULT_60HZ_VBLANK_DURATION,	/* frames per second, vblank duration */
 		1,	/* 1 CPU slice per frame - interleaving is forced when a sound command is written */
-		0,
+		null,
 	
 		/* video hardware */
-		64*8, 32*8, { 8*8, (64-8)*8-1, 2*8, 30*8-1 },
+		64*8, 32*8, new rectangle( 8*8, (64-8)*8-1, 2*8, 30*8-1 ),
 		gfxdecodeinfo,
-		1024, 0,
-		0,
+		1024, null,
+		null,
 	
 		VIDEO_TYPE_RASTER,
-		0,
+		null,
 		sf1_vh_start,
-		0,
+		null,
 		sf1_vh_screenrefresh,
 	
 		/* sound hardware */
 		SOUND_SUPPORTS_STEREO,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_YM2151,
-				&ym2151_interface
-			},
-			{
+				ym2151_interface
+			),
+			new MachineSound(
 				SOUND_MSM5205,
-				&msm5205_interface
-			}
+				msm5205_interface
+			)
 		}
-	};
+	);
 	
-	static const struct MachineDriver machine_driver_sf1us =
-	{
-		{
-			{
+	static MachineDriver machine_driver_sf1us = new MachineDriver
+	(
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_M68000,
 				8000000,	/* 8 MHz ? (xtal is 16MHz) */
-				readmemus,writemem,0,0,
+				readmemus,writemem,null,null,
 				m68_level1_irq,1
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_Z80 | CPU_AUDIO_CPU,
 				3579545,	/* ? xtal is 3.579545MHz */
-				sound_readmem,sound_writemem,0,0,
+				sound_readmem,sound_writemem,null,null,
 				ignore_interrupt,0	/* IRQs are caused by the YM2151 */
 									/* NMIs are caused by the main CPU */
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_Z80 | CPU_AUDIO_CPU,
 				3579545,	/* ? xtal is 3.579545MHz */
 				sound2_readmem, sound2_writemem,
 				sound2_readport, sound2_writeport,
-				0,0,
+				null,null,
 				interrupt,8000
-			}
+			)
 		},
 		60, DEFAULT_60HZ_VBLANK_DURATION,	/* frames per second, vblank duration */
 		1,	/* 1 CPU slice per frame - interleaving is forced when a sound command is written */
-		0,
+		null,
 	
 		/* video hardware */
-		64*8, 32*8, { 8*8, (64-8)*8-1, 2*8, 30*8-1 },
+		64*8, 32*8, new rectangle( 8*8, (64-8)*8-1, 2*8, 30*8-1 ),
 		gfxdecodeinfo,
-		1024, 0,
-		0,
+		1024, null,
+		null,
 	
 		VIDEO_TYPE_RASTER,
-		0,
+		null,
 		sf1_vh_start,
-		0,
+		null,
 		sf1_vh_screenrefresh,
 	
 		/* sound hardware */
 		SOUND_SUPPORTS_STEREO,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_YM2151,
-				&ym2151_interface
-			},
-			{
+				ym2151_interface
+			),
+			new MachineSound(
 				SOUND_MSM5205,
-				&msm5205_interface
-			}
+				msm5205_interface
+			)
 		}
-	};
+	);
 	
-	static const struct MachineDriver machine_driver_sf1jp =
-	{
-		{
-			{
+	static MachineDriver machine_driver_sf1jp = new MachineDriver
+	(
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_M68000,
 				8000000,	/* 8 MHz ? (xtal is 16MHz) */
-				readmemjp,writemem,0,0,
+				readmemjp,writemem,null,null,
 				m68_level1_irq,1
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_Z80 | CPU_AUDIO_CPU,
 				3579545,	/* ? xtal is 3.579545MHz */
-				sound_readmem,sound_writemem,0,0,
+				sound_readmem,sound_writemem,null,null,
 				ignore_interrupt,0	/* IRQs are caused by the YM2151 */
 									/* NMIs are caused by the main CPU */
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_Z80 | CPU_AUDIO_CPU,
 				3579545,	/* ? xtal is 3.579545MHz */
 				sound2_readmem, sound2_writemem,
 				sound2_readport, sound2_writeport,
-				0,0,
+				null,null,
 				interrupt,8000
-			}
+			)
 		},
 		60, DEFAULT_60HZ_VBLANK_DURATION,	/* frames per second, vblank duration */
 		1,	/* 1 CPU slice per frame - interleaving is forced when a sound command is written */
-		0,
+		null,
 	
 		/* video hardware */
-		64*8, 32*8, { 8*8, (64-8)*8-1, 2*8, 30*8-1 },
+		64*8, 32*8, new rectangle( 8*8, (64-8)*8-1, 2*8, 30*8-1 ),
 		gfxdecodeinfo,
-		1024, 0,
-		0,
+		1024, null,
+		null,
 	
 		VIDEO_TYPE_RASTER,
-		0,
+		null,
 		sf1_vh_start,
-		0,
+		null,
 		sf1_vh_screenrefresh,
 	
 		/* sound hardware */
 		SOUND_SUPPORTS_STEREO,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_YM2151,
-				&ym2151_interface
-			},
-			{
+				ym2151_interface
+			),
+			new MachineSound(
 				SOUND_MSM5205,
-				&msm5205_interface
-			}
+				msm5205_interface
+			)
 		}
-	};
+	);
 	
 	
 	static RomLoadPtr rom_sf1 = new RomLoadPtr(){ public void handler(){ 

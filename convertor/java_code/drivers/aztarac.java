@@ -153,50 +153,50 @@ public class aztarac
 		cpu_set_irq_callback(0, aztarac_irq_callback);
 	}
 	
-	static const struct MachineDriver machine_driver_aztarac =
-	{
+	static MachineDriver machine_driver_aztarac = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_M68000,
 				8000000, /* 8 MHz */
-				readmem, writemem,0,0,
+				readmem, writemem,null,null,
 	            aztarac_vg_interrupt, 1
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_Z80 | CPU_AUDIO_CPU,
 				2000000,	/* 2 MHz */
-				sound_readmem,sound_writemem, 0, 0,
-				0,0,
+				sound_readmem,sound_writemem, null, null,
+				null,null,
 	            aztarac_snd_timed_irq, 100
-			}
+			)
 		},
 		40, 0,	/* frames per second, vblank duration (vector game, so no vblank) */
 		1,
 		aztarac_init_machine,
 	
 		/* video hardware */
-		400, 300, { 0, 1024-1, 0, 768-1 },
-		0,
-		32768, 0,
-		0,
+		400, 300, new rectangle( 0, 1024-1, 0, 768-1 ),
+		null,
+		32768, null,
+		null,
 	
 		VIDEO_TYPE_VECTOR | VIDEO_SUPPORTS_DIRTY | VIDEO_RGB_DIRECT,
-		0,
+		null,
 		aztarac_vh_start,
 		vector_vh_stop,
 		vector_vh_screenrefresh,
 	
 		/* sound hardware */
 		0,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_AY8910,
-				&ay8910_interface
-			}
+				ay8910_interface
+			)
 	    },
 		nvram_handler
-	};
+	);
 	
 	/***************************************************************************
 	

@@ -643,103 +643,103 @@ public class docastle
 	
 	
 	
-	static const struct MachineDriver machine_driver_docastle =
-	{
+	static MachineDriver machine_driver_docastle = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_Z80,
 				4000000,	/* 4 MHz */
-				docastle_readmem,docastle_writemem,0,0,
+				docastle_readmem,docastle_writemem,null,null,
 				interrupt,1
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_Z80,
 				4000000,	/* 4 MHz */
-				docastle_readmem2,docastle_writemem2,0,0,
+				docastle_readmem2,docastle_writemem2,null,null,
 				interrupt,8
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_Z80,
 				4000000,	/* 4 MHz */
-				docastle_readmem3,docastle_writemem3,0,0,
+				docastle_readmem3,docastle_writemem3,null,null,
 				ignore_interrupt,0	/* ? */
-			}
+			)
 		},
 		60, DEFAULT_60HZ_VBLANK_DURATION,	/* frames per second, vblank duration */
 		1,	/* 1 CPU slice per frame - interleaving is forced when communication takes place */
-		0,
+		null,
 	
 		/* video hardware */
-		32*8, 32*8, { 1*8, 31*8-1, 4*8, 28*8-1 },
+		32*8, 32*8, new rectangle( 1*8, 31*8-1, 4*8, 28*8-1 ),
 		gfxdecodeinfo,
 		258, 64*16+2*32*16,
 		docastle_vh_convert_color_prom,
 	
 		VIDEO_TYPE_RASTER,
-		0,
+		null,
 		docastle_vh_start,
 		docastle_vh_stop,
 		docastle_vh_screenrefresh,
 	
 		/* sound hardware */
 		0,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_SN76496,
-				&sn76496_interface
-			}
+				sn76496_interface
+			)
 		}
-	};
+	);
 	
-	static const struct MachineDriver machine_driver_dorunrun =
-	{
+	static MachineDriver machine_driver_dorunrun = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_Z80,
 				4000000,	/* 4 MHz */
-				dorunrun_readmem,dorunrun_writemem,0,0,
+				dorunrun_readmem,dorunrun_writemem,null,null,
 				interrupt,1
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_Z80,
 				4000000,	/* 4 MHz */
-				dorunrun_readmem2,dorunrun_writemem2,0,0,
+				dorunrun_readmem2,dorunrun_writemem2,null,null,
 				interrupt,8
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_Z80,
 				4000000,	/* 4 MHz */
-				docastle_readmem3,docastle_writemem3,0,0,
+				docastle_readmem3,docastle_writemem3,null,null,
 				ignore_interrupt,0	/* ? */
-			}
+			)
 		},
 		60, DEFAULT_60HZ_VBLANK_DURATION,	/* frames per second, vblank duration */
 		1,	/* 1 CPU slice per frame - interleaving is forced when communication takes place */
-		0,
+		null,
 	
 		/* video hardware */
-		32*8, 32*8, { 1*8, 31*8-1, 4*8, 28*8-1 },
+		32*8, 32*8, new rectangle( 1*8, 31*8-1, 4*8, 28*8-1 ),
 		gfxdecodeinfo,
 		258, 64*16+2*32*16,
 		dorunrun_vh_convert_color_prom,
 	
 		VIDEO_TYPE_RASTER,
-		0,
+		null,
 		docastle_vh_start,
 		docastle_vh_stop,
 		docastle_vh_screenrefresh,
 	
 		/* sound hardware */
 		0,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_SN76496,
-				&sn76496_interface
-			}
+				sn76496_interface
+			)
 		}
-	};
+	);
 	
 	
 	

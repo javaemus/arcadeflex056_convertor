@@ -1067,42 +1067,42 @@ public class vicdual
 	
 	
 	#define MACHINEDRIVER(NAME, MEM, PORT, SAMPLES)		\
-	static const struct MachineDriver machine_driver_##NAME =	\
-	{													\
+	static MachineDriver machine_driver_##NAME = new MachineDriver\
+	(													\
 		/* basic machine hardware */					\
-		{												\
-			{											\
+		new MachineCPU[] {												\
+			new MachineCPU(											\
 				CPU_Z80,								\
 				15468480/8,								\
 				MEM##_readmem,MEM##_writemem,readport_##PORT,writeport,	\
 				ignore_interrupt,1						\
-			}											\
+			)											\
 		},												\
 		60, 5000,	/* frames per second, vblank duration */	\
 		1,	/* single CPU, no need for interleaving */	\
-		0,												\
+		null,												\
 														\
 		/* video hardware */							\
-		32*8, 32*8, { 0*8, 32*8-1, 0*8, 28*8-1 },		\
+		32*8, 32*8, new rectangle( 0*8, 32*8-1, 0*8, 28*8-1 ),		\
 		gfxdecodeinfo,									\
-		64, 0,											\
+		64, null,											\
 		vicdual_vh_convert_color_prom,					\
 														\
 		VIDEO_TYPE_RASTER|VIDEO_SUPPORTS_DIRTY,			\
-		0,												\
+		null,												\
 		generic_vh_start,								\
 		generic_vh_stop,								\
 		vicdual_vh_screenrefresh,						\
 														\
 		/* sound hardware */							\
 		0,0,0,0,										\
-		{												\
-			{											\
+		new MachineSound[] {												\
+			new MachineSound(											\
 				SAMPLES * SOUND_SAMPLES,				\
-				&samples_interface_##NAME				\
-			}											\
+				samples_interface_##NAME				\
+			)											\
 		}												\
-	};
+	);
 	
 	MACHINEDRIVER( 2ports,   vicdual, 2ports, 0 )
 	MACHINEDRIVER( 3ports,   vicdual, 3ports, 0 )
@@ -1127,52 +1127,52 @@ public class vicdual
 	
 	/* don't know if any of the other games use the 8048 music board */
 	/* so, we won't burden those drivers with the extra music handling */
-	static const struct MachineDriver machine_driver_carnival =
-	{
+	static MachineDriver machine_driver_carnival = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_Z80,
 				15468480/8,
 				vicdual_readmem,vicdual_writemem,readport_4ports,writeport,
 				ignore_interrupt,1
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_I8039 | CPU_AUDIO_CPU,
 				( ( 3579545 / 5 ) / 3 ),
 				i8039_readmem,i8039_writemem,i8039_readport,i8039_writeport,
 				ignore_interrupt,1
-			}
+			)
 		},
 		60, 5000,	/* frames per second, vblank duration */
 		10,
-		0,
+		null,
 	
 		/* video hardware */
-		32*8, 32*8, { 0*8, 32*8-1, 0*8, 28*8-1 },
+		32*8, 32*8, new rectangle( 0*8, 32*8-1, 0*8, 28*8-1 ),
 		gfxdecodeinfo,
-		64, 0,
+		64, null,
 		vicdual_vh_convert_color_prom,
 	
 		VIDEO_TYPE_RASTER|VIDEO_SUPPORTS_DIRTY,
-		0,
+		null,
 		generic_vh_start,
 		generic_vh_stop,
 		vicdual_vh_screenrefresh,
 	
 		/* sound hardware */
 		0,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_AY8910,
-				&carnival_ay8910_interface
-			},
-			{
+				carnival_ay8910_interface
+			),
+			new MachineSound(
 				SOUND_SAMPLES,
-				&samples_interface_carnival
-			}
+				samples_interface_carnival
+			)
 		}
-	};
+	);
 	
 	
 	

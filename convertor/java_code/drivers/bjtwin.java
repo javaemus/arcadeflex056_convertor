@@ -2212,27 +2212,27 @@ public class bjtwin
 	}
 	
 	
-	static const struct MachineDriver machine_driver_urashima =
-	{
+	static MachineDriver machine_driver_urashima = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_M68000,
 				10000000, /* 10 MHz ? */
-				urashima_readmem,urashima_writemem,0,0,
+				urashima_readmem,urashima_writemem,null,null,
 				ignore_interrupt,1,//m68_level4_irq,1,
 	//			m68_level1_irq,112	/* ???????? */
-			}
+			)
 		},
 		60, DEFAULT_REAL_60HZ_VBLANK_DURATION,
 		1,
-		0,
+		null,
 	
 		/* video hardware */
-		256, 256, { 0*8, 32*8-1, 2*8, 30*8-1 },
+		256, 256, new rectangle( 0*8, 32*8-1, 2*8, 30*8-1 ),
 		macross_gfxdecodeinfo,
-		1024, 0,
-		0,
+		1024, null,
+		null,
 	
 		VIDEO_TYPE_RASTER,
 		nmk_eof_callback,
@@ -2241,35 +2241,35 @@ public class bjtwin
 		macross_vh_screenrefresh,
 	
 		0,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_OKIM6295,
-				&okim6295_interface
-			}
+				okim6295_interface
+			)
 		}
-	};
+	);
 	
-	static const struct MachineDriver machine_driver_vandyke =
-	{
+	static MachineDriver machine_driver_vandyke = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_M68000,
 				10000000, /* 10 MHz ? */
-				vandyke_readmem,vandyke_writemem,0,0,
+				vandyke_readmem,vandyke_writemem,null,null,
 				nmk_interrupt,2,
 				m68_level1_irq,112	/* ???????? */
-			}
+			)
 		},
 		60, DEFAULT_REAL_60HZ_VBLANK_DURATION,
 		1,
-		0,
+		null,
 	
 		/* video hardware */
-		256, 256, { 0*8, 32*8-1, 2*8, 30*8-1 },
+		256, 256, new rectangle( 0*8, 32*8-1, 2*8, 30*8-1 ),
 		macross_gfxdecodeinfo,
-		1024, 0,
-		0,
+		1024, null,
+		null,
 	
 		VIDEO_TYPE_RASTER,
 		nmk_eof_callback,
@@ -2278,42 +2278,42 @@ public class bjtwin
 		macross_vh_screenrefresh,
 	
 		0,0,0,0,
-		{
+		new MachineSound[] {
 			/* there's also a YM2203 */
-			{
+			new MachineSound(
 				SOUND_OKIM6295,
-				&okim6295_interface
-			}
+				okim6295_interface
+			)
 		}
-	};
+	);
 	
-	static const struct MachineDriver machine_driver_tharrier =
-	{
+	static MachineDriver machine_driver_tharrier = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_M68000,
 				10000000, /* 10 MHz */
-				tharrier_readmem,tharrier_writemem,0,0,
+				tharrier_readmem,tharrier_writemem,null,null,
 				nmk_interrupt,2,
 				m68_level1_irq,112	/* ???????? */
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_Z80 | CPU_AUDIO_CPU,
 				4000000, /* 4 MHz */
 				tharrier_sound_readmem,tharrier_sound_writemem,tharrier_sound_readport,tharrier_sound_writeport,
 				ignore_interrupt,1
-			}
+			)
 		},
 		60, DEFAULT_REAL_60HZ_VBLANK_DURATION,
 		1,
 		mustang_init_sound,
 	
 		/* video hardware */
-		256, 256, { 0*8, 32*8-1, 2*8, 30*8-1 },
+		256, 256, new rectangle( 0*8, 32*8-1, 2*8, 30*8-1 ),
 		tharrier_gfxdecodeinfo,
-		512, 0,
-		0,
+		512, null,
+		null,
 	
 		VIDEO_TYPE_RASTER,
 		nmk_eof_callback,
@@ -2322,45 +2322,45 @@ public class bjtwin
 		macross_vh_screenrefresh,
 	
 		0,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_YM2203,
-				&ym2203_interface
-			},
-			{
+				ym2203_interface
+			),
+			new MachineSound(
 				SOUND_OKIM6295,
-				&okim6295_interface_single
-			}
+				okim6295_interface_single
+			)
 		}
-	};
+	);
 	
-	static const struct MachineDriver machine_driver_mustang =
-	{
+	static MachineDriver machine_driver_mustang = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_M68000,
 				10000000, /* 10 MHz ? */
-				mustang_readmem,mustang_writemem,0,0,
+				mustang_readmem,mustang_writemem,null,null,
 				nmk_interrupt,2,
 				m68_level1_irq,112	/* ???????? */
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_Z80 | CPU_AUDIO_CPU,  /* the Z80 is only on the bootleg, change later */
 				4000000, /* 4 MHz ? */
-				mustang_sound_readmem,mustang_sound_writemem,0,0,
+				mustang_sound_readmem,mustang_sound_writemem,0,null,
 				ignore_interrupt,1
-			}
+			)
 		},
 		60, DEFAULT_REAL_60HZ_VBLANK_DURATION,
 		1,
 		mustang_init_sound,
 	
 		/* video hardware */
-		256, 256, { 0*8, 32*8-1, 2*8, 30*8-1 },
+		256, 256, new rectangle( 0*8, 32*8-1, 2*8, 30*8-1 ),
 		macross_gfxdecodeinfo,
-		1024, 0,
-		0,
+		1024, null,
+		null,
 	
 		VIDEO_TYPE_RASTER,
 		nmk_eof_callback,
@@ -2369,39 +2369,39 @@ public class bjtwin
 		macross_vh_screenrefresh,
 	
 		0,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_YM3812,
-				&ym3812_interface
-			},
-			{
+				ym3812_interface
+			),
+			new MachineSound(
 				SOUND_OKIM6295,
-				&okim6295_interface_single
-			}
+				okim6295_interface_single
+			)
 		}
-	};
+	);
 	
-	static const struct MachineDriver machine_driver_acrobatm =
-	{
+	static MachineDriver machine_driver_acrobatm = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_M68000,
 				10000000, /* 10 MHz ? */
-				acrobatm_readmem,acrobatm_writemem,0,0,
+				acrobatm_readmem,acrobatm_writemem,null,null,
 				nmk_interrupt,2,
 				m68_level1_irq,112	/* ???????? */
-			}
+			)
 		},
 		60, DEFAULT_REAL_60HZ_VBLANK_DURATION,
 		1,
-		0,
+		null,
 	
 		/* video hardware */
-		256, 256, { 0*8, 32*8-1, 2*8, 30*8-1 },
+		256, 256, new rectangle( 0*8, 32*8-1, 2*8, 30*8-1 ),
 		macross_gfxdecodeinfo,
-		1024, 0,
-		0,
+		1024, null,
+		null,
 	
 		VIDEO_TYPE_RASTER,
 		nmk_eof_callback,
@@ -2410,36 +2410,36 @@ public class bjtwin
 		macross_vh_screenrefresh,
 	
 		0,0,0,0,
-		{
+		new MachineSound[] {
 			/* there's also a YM2203? */
-			{
+			new MachineSound(
 				SOUND_OKIM6295,
-				&okim6295_interface
-			}
+				okim6295_interface
+			)
 		}
-	};
+	);
 	
-	static const struct MachineDriver machine_driver_bioship =
-	{
+	static MachineDriver machine_driver_bioship = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_M68000,
 				16000000, /* 16 MHz ? */
-				bioship_readmem,bioship_writemem,0,0,
+				bioship_readmem,bioship_writemem,null,null,
 				nmk_interrupt,2,
 				m68_level1_irq,112	/* ???????? */
-			}
+			)
 		},
 		60, DEFAULT_REAL_60HZ_VBLANK_DURATION,
 		1,
-		0,
+		null,
 	
 		/* video hardware */
-		256, 256, { 0*8, 32*8-1, 2*8, 30*8-1 },
+		256, 256, new rectangle( 0*8, 32*8-1, 2*8, 30*8-1 ),
 		bioship_gfxdecodeinfo,
-		1024, 0,
-		0,
+		1024, null,
+		null,
 	
 		VIDEO_TYPE_RASTER,
 		nmk_eof_callback,
@@ -2448,36 +2448,36 @@ public class bjtwin
 		bioship_vh_screenrefresh,
 	
 		0,0,0,0,
-		{
+		new MachineSound[] {
 			/* there's also a YM2203 */
-			{
+			new MachineSound(
 				SOUND_OKIM6295,
-				&okim6295_interface
-			}
+				okim6295_interface
+			)
 		}
-	};
+	);
 	
-	static const struct MachineDriver machine_driver_tdragon =
-	{
+	static MachineDriver machine_driver_tdragon = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_M68000,
 				10000000,
-				tdragon_readmem,tdragon_writemem,0,0,
+				tdragon_readmem,tdragon_writemem,null,null,
 				m68_level4_irq,1,
 				m68_level1_irq,112	/* ?? drives music */
-			}
+			)
 		},
 		60, DEFAULT_REAL_60HZ_VBLANK_DURATION,
 		1,
-		0,
+		null,
 	
 		/* video hardware */
-		256, 256, { 0*8, 32*8-1, 2*8, 30*8-1 },
+		256, 256, new rectangle( 0*8, 32*8-1, 2*8, 30*8-1 ),
 		macross_gfxdecodeinfo,
-		1024, 0,
-		0,
+		1024, null,
+		null,
 	
 		VIDEO_TYPE_RASTER,
 		nmk_eof_callback,
@@ -2486,35 +2486,35 @@ public class bjtwin
 		macross_vh_screenrefresh,
 	
 		0,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_OKIM6295,
-				&okim6295_interface
-			}
+				okim6295_interface
+			)
 		}
-	};
+	);
 	
-	static const struct MachineDriver machine_driver_strahl =
-	{
+	static MachineDriver machine_driver_strahl = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_M68000,
 				12000000, /* 12 MHz ? */
-				strahl_readmem,strahl_writemem,0,0,
+				strahl_readmem,strahl_writemem,null,null,
 				nmk_interrupt,2,
 				m68_level1_irq,112	/* ???????? */
-			}
+			)
 		},
 		60, DEFAULT_REAL_60HZ_VBLANK_DURATION,
 		1,
-		0,
+		null,
 	
 		/* video hardware */
-		256, 256, { 0*8, 32*8-1, 2*8, 30*8-1 },
+		256, 256, new rectangle( 0*8, 32*8-1, 2*8, 30*8-1 ),
 		strahl_gfxdecodeinfo,
-		1024, 0,
-		0,
+		1024, null,
+		null,
 	
 		VIDEO_TYPE_RASTER,
 		nmk_eof_callback,
@@ -2523,36 +2523,36 @@ public class bjtwin
 		strahl_vh_screenrefresh,
 	
 		0,0,0,0,
-		{
+		new MachineSound[] {
 			/* there's also a YM2203 */
-			{
+			new MachineSound(
 				SOUND_OKIM6295,
-				&okim6295_interface
-			}
+				okim6295_interface
+			)
 		}
-	};
+	);
 	
-	static const struct MachineDriver machine_driver_hachamf =
-	{
+	static MachineDriver machine_driver_hachamf = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_M68000,
 				10000000, /* 10 MHz ? */
-				hachamf_readmem,hachamf_writemem,0,0,
+				hachamf_readmem,hachamf_writemem,null,null,
 				m68_level4_irq,1,
 				m68_level1_irq,112	/* ???????? */
-			}
+			)
 		},
 		60, DEFAULT_REAL_60HZ_VBLANK_DURATION,
 		1,
-		0,
+		null,
 	
 		/* video hardware */
-		256, 256, { 0*8, 32*8-1, 2*8, 30*8-1 },
+		256, 256, new rectangle( 0*8, 32*8-1, 2*8, 30*8-1 ),
 		macross_gfxdecodeinfo,
-		1024, 0,
-		0,
+		1024, null,
+		null,
 	
 		VIDEO_TYPE_RASTER,
 		nmk_eof_callback,
@@ -2561,36 +2561,36 @@ public class bjtwin
 		macross_vh_screenrefresh,
 	
 		0,0,0,0,
-		{
+		new MachineSound[] {
 			/* there's also a YM2203 */
-			{
+			new MachineSound(
 				SOUND_OKIM6295,
-				&okim6295_interface
-			}
+				okim6295_interface
+			)
 		}
-	};
+	);
 	
-	static const struct MachineDriver machine_driver_macross =
-	{
+	static MachineDriver machine_driver_macross = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_M68000,
 				10000000, /* 10 MHz ? */
-				macross_readmem,macross_writemem,0,0,
+				macross_readmem,macross_writemem,null,null,
 				m68_level4_irq,1,
 				m68_level1_irq,112	/* ???????? */
-			}
+			)
 		},
 		60, DEFAULT_REAL_60HZ_VBLANK_DURATION,
 		1,
-		0,
+		null,
 	
 		/* video hardware */
-		256, 256, { 0*8, 32*8-1, 2*8, 30*8-1 },
+		256, 256, new rectangle( 0*8, 32*8-1, 2*8, 30*8-1 ),
 		macross_gfxdecodeinfo,
-		1024, 0,
-		0,
+		1024, null,
+		null,
 	
 		VIDEO_TYPE_RASTER,
 		nmk_eof_callback,
@@ -2599,36 +2599,36 @@ public class bjtwin
 		macross_vh_screenrefresh,
 	
 		0,0,0,0,
-		{
+		new MachineSound[] {
 			/* there's also a YM2203 */
-			{
+			new MachineSound(
 				SOUND_OKIM6295,
-				&okim6295_interface
-			}
+				okim6295_interface
+			)
 		}
-	};
+	);
 	
-	static const struct MachineDriver machine_driver_gunnail =
-	{
+	static MachineDriver machine_driver_gunnail = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_M68000,
 				10000000, /* 10 MHz? */
-				gunnail_readmem,gunnail_writemem,0,0,
+				gunnail_readmem,gunnail_writemem,null,null,
 				m68_level4_irq,1,
 				m68_level1_irq,112
-			}
+			)
 		},
 		60, DEFAULT_REAL_60HZ_VBLANK_DURATION,
 		1,
-		0,
+		null,
 	
 		/* video hardware */
-		512, 256, { 0*8, 48*8-1, 2*8, 30*8-1 },
+		512, 256, new rectangle( 0*8, 48*8-1, 2*8, 30*8-1 ),
 		macross_gfxdecodeinfo,
-		1024, 0,
-		0,
+		1024, null,
+		null,
 	
 		VIDEO_TYPE_RASTER,
 		nmk_eof_callback,
@@ -2637,41 +2637,41 @@ public class bjtwin
 		gunnail_vh_screenrefresh,
 	
 		0,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_OKIM6295,
-				&okim6295_interface
-			}
+				okim6295_interface
+			)
 		}
-	};
+	);
 	
-	static const struct MachineDriver machine_driver_macross2 =
-	{
+	static MachineDriver machine_driver_macross2 = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_M68000,
 				10000000, /* 10 MHz ? */
-				macross2_readmem,macross2_writemem,0,0,
+				macross2_readmem,macross2_writemem,null,null,
 				m68_level4_irq,1,
 				m68_level1_irq,112	/* ???????? */
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_Z80 | CPU_AUDIO_CPU,
 				4000000, /* 4 MHz ? */
 				macross2_sound_readmem,macross2_sound_writemem,macross2_sound_readport,macross2_sound_writeport,
 				ignore_interrupt,1
-			}
+			)
 		},
 		60, DEFAULT_REAL_60HZ_VBLANK_DURATION,
 		1,
-		0,
+		null,
 	
 		/* video hardware */
-		512, 256, { 0*8, 48*8-1, 2*8, 30*8-1 },
+		512, 256, new rectangle( 0*8, 48*8-1, 2*8, 30*8-1 ),
 		macross2_gfxdecodeinfo,
-		1024, 0,
-		0,
+		1024, null,
+		null,
 	
 		VIDEO_TYPE_RASTER,
 		nmk_eof_callback,
@@ -2680,39 +2680,39 @@ public class bjtwin
 		macross_vh_screenrefresh,
 	
 		0,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_YM2203,
-				&ym2203_interface
-			},
-			{
+				ym2203_interface
+			),
+			new MachineSound(
 				SOUND_OKIM6295,
-				&okim6295_interface
-			}
+				okim6295_interface
+			)
 		}
-	};
+	);
 	
-	static const struct MachineDriver machine_driver_bjtwin =
-	{
+	static MachineDriver machine_driver_bjtwin = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_M68000,
 				10000000, /* 10 MHz? It's a P12, but xtals are 10MHz and 16MHz */
-				bjtwin_readmem,bjtwin_writemem,0,0,
+				bjtwin_readmem,bjtwin_writemem,0,null,
 				m68_level4_irq,1,
 				m68_level1_irq,112	/* ?? drives music */
-			}
+			)
 		},
 		60, DEFAULT_REAL_60HZ_VBLANK_DURATION,
 		1,
-		0,
+		null,
 	
 		/* video hardware */
-		512, 256, { 0*8, 48*8-1, 2*8, 30*8-1 },
+		512, 256, new rectangle( 0*8, 48*8-1, 2*8, 30*8-1 ),
 		bjtwin_gfxdecodeinfo,
-		1024, 0,
-		0,
+		1024, null,
+		null,
 	
 		VIDEO_TYPE_RASTER,
 		nmk_eof_callback,
@@ -2721,13 +2721,13 @@ public class bjtwin
 		bjtwin_vh_screenrefresh,
 	
 		0,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_OKIM6295,
-				&okim6295_interface
-			}
+				okim6295_interface
+			)
 		}
-	};
+	);
 	
 	
 	

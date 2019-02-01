@@ -259,89 +259,89 @@ public class clshroad
 	
 	
 	
-	static const struct MachineDriver machine_driver_firebatl =
-	{
-		{
-			{
+	static MachineDriver machine_driver_firebatl = new MachineDriver
+	(
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_Z80,
 				3000000,	/* ? */
-				clshroad_readmem, clshroad_writemem,	0, 0,
+				clshroad_readmem, clshroad_writemem,	null, null,
 				interrupt, 1	/* IRQ, no NMI */
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_Z80 | CPU_AUDIO_CPU,
 				3000000,	/* ? */
-				clshroad_sound_readmem, clshroad_sound_writemem,	0, 0,
+				clshroad_sound_readmem, clshroad_sound_writemem,	null, null,
 				interrupt, 1	/* IRQ, no NMI */
-			}
+			)
 		},
 		60,DEFAULT_60HZ_VBLANK_DURATION,
 		1,
 		clshroad_init_machine,
 	
 		/* video hardware */
-		0x120, 0x100, { 0, 0x120-1, 0x0+16, 0x100-16-1 },
+		0x120, 0x100, new rectangle( 0, 0x120-1, 0x0+16, 0x100-16-1 ),
 		firebatl_gfxdecodeinfo,
 		512, 512+64*4,
 		firebatl_vh_convert_color_prom,
 	
 		VIDEO_TYPE_RASTER,
-		0,
+		null,
 		firebatl_vh_start,
-		0,
+		null,
 		clshroad_vh_screenrefresh,
 	
 		/* sound hardware */
 		0,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_CUSTOM,
-				&custom_interface
-			}
+				custom_interface
+			)
 		}
-	};
+	);
 	
-	static const struct MachineDriver machine_driver_clshroad =
-	{
-		{
-			{
+	static MachineDriver machine_driver_clshroad = new MachineDriver
+	(
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_Z80,
 				3000000,	/* ? */
-				clshroad_readmem, clshroad_writemem,	0, 0,
+				clshroad_readmem, clshroad_writemem,	null, null,
 				interrupt, 1	/* IRQ, no NMI */
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_Z80 | CPU_AUDIO_CPU,
 				3000000,	/* ? */
-				clshroad_sound_readmem, clshroad_sound_writemem,	0, 0,
+				clshroad_sound_readmem, clshroad_sound_writemem,	null, null,
 				interrupt, 1	/* IRQ, no NMI */
-			}
+			)
 		},
 		60,DEFAULT_60HZ_VBLANK_DURATION,
 		1,
 		clshroad_init_machine,
 	
 		/* video hardware */
-		0x120, 0x100, { 0, 0x120-1, 0x0+16, 0x100-16-1 },
+		0x120, 0x100, new rectangle( 0, 0x120-1, 0x0+16, 0x100-16-1 ),
 		clshroad_gfxdecodeinfo,
-		256, 0,
-		0,
+		256, null,
+		null,
 	
 		VIDEO_TYPE_RASTER,
-		0,
+		null,
 		clshroad_vh_start,
-		0,
+		null,
 		clshroad_vh_screenrefresh,
 	
 		/* sound hardware */
 		0,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_CUSTOM,
-				&custom_interface
-			}
+				custom_interface
+			)
 		}
-	};
+	);
 	
 	
 	

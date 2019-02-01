@@ -226,48 +226,48 @@ public class aeroboto
 		{ 0, 0 }
 	};
 	
-	static const struct MachineDriver machine_driver_formatz =
-	{
+	static MachineDriver machine_driver_formatz = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_M6809,
 				1250000,        /* 1.25 MHz ? */
-				readmem,writemem,0,0,
+				readmem,writemem,null,null,
 				interrupt,1
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_M6809 | CPU_AUDIO_CPU,
 				1250000,        /* 1.25 MHz ? */
-				readmem_sound,writemem_sound,0,0,
+				readmem_sound,writemem_sound,null,null,
 				interrupt,1
-			}
+			)
 		},
 		60, DEFAULT_REAL_60HZ_VBLANK_DURATION,
 		1,	/* 1 CPU slice per frame - interleaving is forced when a sound command is written */
-		0,	/* init machine */
+		null,	/* init machine */
 	
 		/* video hardware */
-		32*8, 32*8, { 0*8, 32*8-1, 2*8, 30*8-1 },
+		32*8, 32*8, new rectangle( 0*8, 32*8-1, 2*8, 30*8-1 ),
 		gfxdecodeinfo,
-		256, 0,
-		0,
+		256, null,
+		null,
 	
 		VIDEO_TYPE_RASTER,
-		0,
+		null,
 		generic_vh_start,
 		generic_vh_stop,
 		aeroboto_vh_screenrefresh,
 	
 		/* sound hardware */
 		0,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_AY8910,
-				&ay8910_interface
-			}
+				ay8910_interface
+			)
 		}
-	};
+	);
 	
 	/***************************************************************************
 	

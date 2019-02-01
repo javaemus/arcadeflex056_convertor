@@ -90,42 +90,42 @@ public class ladyfrog
 	
 	
 	
-	static const struct MachineDriver machine_driver_ladyfrog =
-	{
+	static MachineDriver machine_driver_ladyfrog = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_M68000,
 				10000000,	/* 10 MHz??? */
-				readmem,writemem,0,0,
+				readmem,writemem,null,null,
 				m68_level6_irq,1
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_Z80 | CPU_AUDIO_CPU,
 				4000000,	/* 4 MHz??? */
 				sound_readmem,sound_writemem,sound_readport,sound_writeport,
 				ignore_interrupt,1	/* interrupt mode 0 + NMI */
-			}
+			)
 		},
 		60, DEFAULT_60HZ_VBLANK_DURATION,	/* frames per second, vblank duration */
 		1,	/* 1 CPU slice per frame - interleaving is forced when a sound command is written */				\
-		0,
+		null,
 	
 		/* video hardware */
-		256, 256, { 0, 256-1, 0, 256-1 },
+		256, 256, new rectangle( 0, 256-1, 0, 256-1 ),
 		gfxdecodeinfo,
-		1024, 0,
-		0,
+		1024, null,
+		null,
 	
 		VIDEO_TYPE_RASTER,
-		0,
-		0,
-		0,
+		null,
+		null,
+		null,
 		ladyfrog_vh_screenrefresh,
 	
 		/* sound hardware */
 		0,0,0,0,
-	};
+	);
 	
 	
 	

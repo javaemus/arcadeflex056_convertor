@@ -249,29 +249,29 @@ public class stactics
 	    new GfxDecodeInfo( -1 )
 	};
 	
-	static const struct MachineDriver machine_driver_stactics =
-	{
+	static MachineDriver machine_driver_stactics = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 	            CPU_8080,
 	            1933560,
-				readmem,writemem,0,0,
+				readmem,writemem,null,null,
 	            stactics_interrupt,1
-			},
+			),
 		},
 	    60, DEFAULT_60HZ_VBLANK_DURATION,
 	    1,
-		0,
+		null,
 	
 		/* video hardware */
-	    32*8, 32*8, { 0*8, 32*8-1, 0*8, 32*8-1 },
+	    32*8, 32*8, new rectangle( 0*8, 32*8-1, 0*8, 32*8-1 ),
 	    gfxdecodeinfo,
 	    16, 16*4*4*2,
 	    stactics_vh_convert_color_prom,
 	
 		VIDEO_TYPE_RASTER,
-		0,
+		null,
 	
 	    stactics_vh_start,
 	    stactics_vh_stop,
@@ -279,7 +279,7 @@ public class stactics
 	
 		/* sound hardware */
 	    0,0,0,0
-	};
+	);
 	
 	
 	

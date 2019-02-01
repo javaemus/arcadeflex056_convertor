@@ -252,43 +252,43 @@ public class bogeyman
 	
 	/******************************************************************************/
 	
-	static const struct MachineDriver machine_driver_bogeyman =
-	{
+	static MachineDriver machine_driver_bogeyman = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-	 		{
+		new MachineCPU[] {
+	 		new MachineCPU(
 				CPU_M6502,
 				2000000, /* 12 MHz clock on board */
-				bogeyman_readmem,bogeyman_writemem,0,0,
+				bogeyman_readmem,bogeyman_writemem,null,null,
 				interrupt,16 /* Controls sound */
-			}
+			)
 		},
 		60, DEFAULT_REAL_60HZ_VBLANK_DURATION,	/* frames per second, vblank duration */
 		1,	/* 1 CPU slice per frame - interleaving is forced when a sound command is written */
-		0,	/* init machine */
+		null,	/* init machine */
 	
 		/* video hardware */
-		32*8, 32*8, { 0*8, 32*8-1, 1*8, 31*8-1 },
+		32*8, 32*8, new rectangle( 0*8, 32*8-1, 1*8, 31*8-1 ),
 	
 		gfxdecodeinfo,
 		16+256, 16+256,
 		bogeyman_vh_convert_color_prom,
 	
 		VIDEO_TYPE_RASTER | VIDEO_UPDATE_BEFORE_VBLANK ,
-		0,
+		null,
 		bogeyman_vh_start,
 		bogeyman_vh_stop,
 		bogeyman_vh_screenrefresh,
 	
 		/* sound hardware */
 		0,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_AY8910,
-				&ay8910_interface
-			}
+				ay8910_interface
+			)
 		}
-	};
+	);
 	
 	/******************************************************************************/
 	

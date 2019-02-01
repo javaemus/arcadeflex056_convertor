@@ -263,46 +263,46 @@ public class momoko
 		{ 0 }
 	};
 	
-	static const struct MachineDriver machine_driver_momoko =
-	{
-		{
-			{
+	static MachineDriver machine_driver_momoko = new MachineDriver
+	(
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_Z80,
 				5000000,	/* 5.0MHz */
-				readmem,writemem,0,0,
+				readmem,writemem,null,null,
 				interrupt,1
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_Z80 | CPU_AUDIO_CPU,
 				2500000,	/* 2.5MHz */
-				readmem_sound,writemem_sound,0,0,
+				readmem_sound,writemem_sound,null,null,
 				ignore_interrupt,0
-			},
+			),
 		},
 		60, DEFAULT_REAL_60HZ_VBLANK_DURATION,
 		1,
-		0,
+		null,
 	
-		32*8, 32*8, { 1*8, 31*8-1, 2*8, 29*8-1 },
+		32*8, 32*8, new rectangle( 1*8, 31*8-1, 2*8, 29*8-1 ),
 	
 		gfxdecodeinfo,
-		512, 0,
-		0,
+		512, null,
+		null,
 	
 		VIDEO_TYPE_RASTER,
-		0,
+		null,
 		generic_vh_start,
 		generic_vh_stop,
 		momoko_vh_screenrefresh,
 	
 		0,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_YM2203,
-				&ym2203_interface
-			}
+				ym2203_interface
+			)
 		}
-	};
+	);
 	
 	/****************************************************************************/
 	

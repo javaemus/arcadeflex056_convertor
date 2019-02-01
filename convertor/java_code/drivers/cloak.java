@@ -319,51 +319,51 @@ public class cloak
 	
 	
 	
-	static const struct MachineDriver machine_driver_cloak =
-	{
+	static MachineDriver machine_driver_cloak = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_M6502,
 				1000000,	/* 1 MHz ???? */
-				readmem,writemem,0,0,
+				readmem,writemem,null,null,
 				interrupt,4
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_M6502,
 	            1250000,        /* 1 MHz ???? */
-				readmem2,writemem2,0,0,
+				readmem2,writemem2,null,null,
 				interrupt,2
-			}
+			)
 		},
 		60, DEFAULT_REAL_60HZ_VBLANK_DURATION,	/* frames per second, vblank duration */
 		5,
-		0,
+		null,
 	
 		/* video hardware */
-		32*8, 32*8, { 0*8, 32*8-1, 3*8, 32*8-1 },
+		32*8, 32*8, new rectangle( 0*8, 32*8-1, 3*8, 32*8-1 ),
 		gfxdecodeinfo,
-		64, 0,
-		0,
+		64, null,
+		null,
 	
 	
 		VIDEO_TYPE_RASTER,
-		0,
+		null,
 		cloak_vh_start,
 		cloak_vh_stop,
 		cloak_vh_screenrefresh,
 	
 		/* sound hardware */
 		0,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_POKEY,
-				&pokey_interface
-			}
+				pokey_interface
+			)
 		},
 	
 		nvram_handler
-	};
+	);
 	
 	
 	

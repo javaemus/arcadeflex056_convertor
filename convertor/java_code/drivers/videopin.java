@@ -175,27 +175,27 @@ public class videopin
 	*/
 	
 	
-	static const struct MachineDriver machine_driver_videopin =
-	{
+	static MachineDriver machine_driver_videopin = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_M6502,
 				/*12096000/8, */
 				750000, 	   /* 12000000/16 = 12MHz/16 = 750 KHz not sure about the frequency ??? */
-				videopin_readmem,videopin_writemem,0,0,
+				videopin_readmem,videopin_writemem,0,null,
 				videopin_interrupt,8
-			}
+			)
 		},
 		60, DEFAULT_REAL_60HZ_VBLANK_DURATION,	/* frames per second, vblank duration */
 		1,	/* single CPU, no need for interleaving */
-		0,
+		null,
 	
 		/* video hardware */
-		45*8, 39*8, { 0*8, 45*8-1, 0*8, 39*8-1 }, /* 360x312 */
+		45*8, 39*8, new rectangle( 0*8, 45*8-1, 0*8, 39*8-1 ), /* 360x312 */
 		/*48*8, 32*8, { 0*8, 48*8-1, 0*8, 32*8-1 },    384x256    */
 		videopin_gfxdecodeinfo,
-		256+32768, 2, /* Game is black & white, extra 254 colors for the backdrop */
+		256+32768, 2, /* Game is black  white, extra 254 colors for the backdrop */
 		init_palette,
 	
 		VIDEO_TYPE_RASTER,
@@ -209,11 +209,11 @@ public class videopin
 		{
 			{
 				/*SOUND_DAC, */
-				/*&dac_interface */
+				/*dac_interface */
 				0,0 /* No sound yet */
 			}
 		}
-	};
+	);
 	
 	
 	

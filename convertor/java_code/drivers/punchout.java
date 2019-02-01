@@ -816,54 +816,54 @@ public class punchout
 	
 	
 	#define MACHINE_DRIVER(NAME,GFX,COLORTABLE)											\
-	static const struct MachineDriver machine_driver_##NAME =									\
-	{																					\
+	static MachineDriver machine_driver_##NAME = new MachineDriver\
+	(																					\
 		/* basic machine hardware */													\
-		{																				\
-			{																			\
+		new MachineCPU[] {																				\
+			new MachineCPU(																			\
 				CPU_Z80,																\
 				8000000/2,	/* 4 MHz */													\
 				readmem,writemem,readport,writeport,									\
 				nmi_interrupt,1															\
-			},																			\
-			{																			\
+			),																			\
+			new MachineCPU(																			\
 				CPU_N2A03 | CPU_AUDIO_CPU,												\
 				N2A03_DEFAULTCLOCK,														\
-				sound_readmem,sound_writemem,0,0,										\
+				sound_readmem,sound_writemem,null,null,										\
 				nmi_interrupt,1															\
-			}																			\
+			)																			\
 		},																				\
 		60, DEFAULT_60HZ_VBLANK_DURATION,	/* frames per second, vblank duration */	\
 		1,	/* 1 CPU slice per frame - interleaving is forced when a sound command is written */	\
-		0,																				\
+		null,																				\
 																						\
 		/* video hardware */															\
-		32*8, 28*8*2, { 0*8, 32*8-1, 0*8, 28*8*2-1 },									\
+		32*8, 28*8*2, new rectangle( 0*8, 32*8-1, 0*8, 28*8*2-1 ),									\
 		GFX##_gfxdecodeinfo,															\
 		1024+1, COLORTABLE,																\
 		GFX##_vh_convert_color_prom,													\
 																						\
 		VIDEO_TYPE_RASTER | VIDEO_DUAL_MONITOR | VIDEO_ASPECT_RATIO(4,6),				\
-		0,																				\
+		null,																				\
 		GFX##_vh_start,																	\
 		punchout_vh_stop,																\
 		GFX##_vh_screenrefresh,															\
 																						\
 		/* sound hardware */															\
 		0,0,0,0,																		\
-		{																				\
-			{																			\
+		new MachineSound[] {																				\
+			new MachineSound(																			\
 				SOUND_NES,																\
-				&nes_interface															\
-			},																			\
-			{																			\
+				nes_interface															\
+			),																			\
+			new MachineSound(																			\
 				SOUND_VLM5030,															\
-				&vlm5030_interface														\
-			}																			\
+				vlm5030_interface														\
+			)																			\
 		},																				\
 																						\
 		nvram_handler																	\
-	};
+	);
 	
 	
 	MACHINE_DRIVER( punchout, punchout, 128*4+128*4+64*8+128*4 )

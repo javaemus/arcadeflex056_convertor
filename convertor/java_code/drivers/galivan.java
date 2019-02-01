@@ -580,101 +580,101 @@ public class galivan
 	};
 	
 	
-	static const struct MachineDriver machine_driver_galivan =
-	{
+	static MachineDriver machine_driver_galivan = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_Z80,
 				12000000/2,		/* 6 MHz? */
 				readmem,writemem,readport,writeport,
 				interrupt,1
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_Z80 | CPU_AUDIO_CPU,
 				8000000/2,		/* 4 MHz? */
 				sound_readmem,sound_writemem,sound_readport,sound_writeport,
 				ignore_interrupt,0,
 				interrupt,7250  /* timed interrupt, ?? Hz */
-			},
+			),
 		},
 		60,DEFAULT_60HZ_VBLANK_DURATION,
 		1,
 		galivan_init_machine,
 	
 		/* video hardware */
-		32*8, 32*8, { 0*8, 32*8-1, 2*8, 30*8-1 },
+		32*8, 32*8, new rectangle( 0*8, 32*8-1, 2*8, 30*8-1 ),
 		gfxdecodeinfo,
 		256, 8*16+16*16+256*16,
 		galivan_vh_convert_color_prom,
 	
 		VIDEO_TYPE_RASTER,
-		0,
+		null,
 		galivan_vh_start,
-		0,
+		null,
 		galivan_vh_screenrefresh,
 	
 		/* sound hardware */
 		0,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_YM3526,
-				&YM3526_interface
-			},
-			{
+				YM3526_interface
+			),
+			new MachineSound(
 				SOUND_DAC,
-				&dac_interface
-			}
+				dac_interface
+			)
 		}
-	};
+	);
 	
-	static const struct MachineDriver machine_driver_ninjemak =
-	{
+	static MachineDriver machine_driver_ninjemak = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_Z80,
 				12000000/2,		/* 6 MHz? */
 				readmem,ninjemak_writemem,ninjemak_readport,ninjemak_writeport,
 				interrupt,1
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_Z80 | CPU_AUDIO_CPU,
 				8000000/2,		/* 4 MHz? */
 				sound_readmem,sound_writemem,sound_readport,sound_writeport,
 				ignore_interrupt,0,
 				interrupt,7250	/* timed interrupt, ?? Hz */
-			},
+			),
 		},
 		60,DEFAULT_60HZ_VBLANK_DURATION,
 		1,
 		galivan_init_machine,
 	
 		/* video hardware */
-		32*8, 32*8, { 1*8, 31*8-1, 2*8, 30*8-1 },
+		32*8, 32*8, new rectangle( 1*8, 31*8-1, 2*8, 30*8-1 ),
 		ninjemak_gfxdecodeinfo,
 		256, 8*16+16*16+256*16,
 		galivan_vh_convert_color_prom,
 	
 		VIDEO_TYPE_RASTER,
-		0,
+		null,
 		ninjemak_vh_start,
-		0,
+		null,
 		ninjemak_vh_screenrefresh,
 	
 		/* sound hardware */
 		0,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_YM3526,
-				&YM3526_interface
-			},
-			{
+				YM3526_interface
+			),
+			new MachineSound(
 				SOUND_DAC,
-				&dac_interface
-			}
+				dac_interface
+			)
 		}
-	};
+	);
 	
 	
 	

@@ -285,91 +285,91 @@ public class raiden
 		buffer_spriteram_w(0,0); /* Could be a memory location instead */
 	}
 	
-	static const struct MachineDriver machine_driver_raiden =
-	{
+	static MachineDriver machine_driver_raiden = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_V30, /* NEC V30 CPU */
 				20000000, /* 20MHz */
-				readmem,writemem,0,0,
+				readmem,writemem,null,null,
 				raiden_interrupt,1
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_V30, /* NEC V30 CPU */
 				20000000, /* 20MHz */
-				sub_readmem,sub_writemem,0,0,
+				sub_readmem,sub_writemem,null,null,
 				raiden_interrupt,1
-			},
-			{
+			),
+			new MachineCPU(
 				SEIBU_SOUND_SYSTEM_CPU(14318180/4)
-			}
+			)
 		},
 		60, DEFAULT_REAL_60HZ_VBLANK_DURATION,	/* frames per second, vblank duration */
 		200,	/* CPU interleave  */
 		seibu_sound_init_2,
 	
 		/* video hardware */
-		32*8, 32*8, { 0*8, 32*8-1, 2*8, 30*8-1 },
+		32*8, 32*8, new rectangle( 0*8, 32*8-1, 2*8, 30*8-1 ),
 		raiden_gfxdecodeinfo,
-		2048, 0,
-		0,
+		2048, null,
+		null,
 	
 		VIDEO_TYPE_RASTER | VIDEO_BUFFERS_SPRITERAM,
 		raiden_eof_callback,
 		raiden_vh_start,
-		0,
+		null,
 		raiden_vh_screenrefresh,
 	
 		/* sound hardware */
 		0,0,0,0,
-		{
+		new MachineSound[] {
 			SEIBU_SOUND_SYSTEM_YM3812_INTERFACE
 		}
-	};
+	);
 	
-	static const struct MachineDriver machine_driver_raidena =
-	{
+	static MachineDriver machine_driver_raidena = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_V30, /* NEC V30 CPU */
 				20000000, /* 20MHz */
-				alt_readmem,alt_writemem,0,0,
+				alt_readmem,alt_writemem,null,null,
 				raiden_interrupt,1
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_V30, /* NEC V30 CPU */
 				20000000, /* 20MHz */
-				sub_readmem,sub_writemem,0,0,
+				sub_readmem,sub_writemem,null,null,
 				raiden_interrupt,1
-			},
-			{
+			),
+			new MachineCPU(
 				SEIBU_SOUND_SYSTEM_CPU(14318180/4)
-			}
+			)
 		},
 		60, DEFAULT_REAL_60HZ_VBLANK_DURATION,	/* frames per second, vblank duration */
 		120,	/* CPU interleave  */
 		seibu_sound_init_2,
 	
 		/* video hardware */
-		32*8, 32*8, { 0*8, 32*8-1, 2*8, 30*8-1 },
+		32*8, 32*8, new rectangle( 0*8, 32*8-1, 2*8, 30*8-1 ),
 		raiden_gfxdecodeinfo,
-		2048, 0,
-		0,
+		2048, null,
+		null,
 	
 		VIDEO_TYPE_RASTER | VIDEO_BUFFERS_SPRITERAM,
 		raiden_eof_callback,
 		raidena_vh_start,
-		0,
+		null,
 		raiden_vh_screenrefresh,
 	
 		/* sound hardware */
 		0,0,0,0,
-		{
+		new MachineSound[] {
 			SEIBU_SOUND_SYSTEM_YM3812_INTERFACE
 		}
-	};
+	);
 	
 	/***************************************************************************/
 	

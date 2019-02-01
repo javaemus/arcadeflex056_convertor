@@ -208,79 +208,79 @@ public class scregg
 	};
 	
 	
-	static const struct MachineDriver machine_driver_dommy =
-	{
+	static MachineDriver machine_driver_dommy = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_M6502,
 				1500000,
-				dommy_readmem,dommy_writemem,0,0,
+				dommy_readmem,dommy_writemem,null,null,
 				interrupt,16
-			}
+			)
 		},
 		57, 3072,        /* frames per second, vblank duration taken from Burger Time */
 		1,      /* single CPU, no need from interleaving  */
-		0,
+		null,
 	
 		/* video hardware */
-		32*8, 32*8, { 0*8, 31*8-1, 1*8, 31*8-1 },
+		32*8, 32*8, new rectangle( 0*8, 31*8-1, 1*8, 31*8-1 ),
 		gfxdecodeinfo,
 		8, 8,
 		btime_vh_convert_color_prom,
 	
 		VIDEO_TYPE_RASTER,
-		0,
+		null,
 		btime_vh_start,
 		generic_vh_stop,
 		eggs_vh_screenrefresh,
 	
 		/* sound hardware */
 		0,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_AY8910,
-				&ay8910_interface
-			}
+				ay8910_interface
+			)
 		}
-	};
+	);
 	
-	static const struct MachineDriver machine_driver_scregg =
-	{
+	static MachineDriver machine_driver_scregg = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_M6502,
 				1500000,
-				eggs_readmem,eggs_writemem,0,0,
+				eggs_readmem,eggs_writemem,null,null,
 				interrupt,16
-			}
+			)
 		},
 		57, 3072,        /* frames per second, vblank duration taken from Burger Time */
 		1,      /* single CPU, no need from interleaving  */
-		0,
+		null,
 	
 		/* video hardware */
-		32*8, 32*8, { 1*8, 31*8-1, 1*8, 31*8-1 },
+		32*8, 32*8, new rectangle( 1*8, 31*8-1, 1*8, 31*8-1 ),
 		gfxdecodeinfo,
 		8, 8,
 		btime_vh_convert_color_prom,
 	
 		VIDEO_TYPE_RASTER,
-		0,
+		null,
 		btime_vh_start,
 		generic_vh_stop,
 		eggs_vh_screenrefresh,
 	
 		/* sound hardware */
 		0,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_AY8910,
-				&ay8910_interface
-			}
+				ay8910_interface
+			)
 		}
-	};
+	);
 	
 	static RomLoadPtr rom_dommy = new RomLoadPtr(){ public void handler(){ 
 		ROM_REGION( 0x10000, REGION_CPU1, 0 );    /* 64k for code */

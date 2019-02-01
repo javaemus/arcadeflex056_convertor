@@ -239,44 +239,44 @@ public class cloud9
 	};
 	
 	
-	static const struct MachineDriver machine_driver_cloud9 =
-	{
+	static MachineDriver machine_driver_cloud9 = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_M6502,
 				12096000/8, /* 1.512 MHz?? */
-				readmem,writemem,0,0,
+				readmem,writemem,null,null,
 				interrupt,4
-			}
+			)
 		},
 		60, 1460,	/* frames per second, vblank duration??? */
 		1,	/* single CPU, no need for interleaving */
-		0,
+		null,
 	
 		/* video hardware */
-		32*8, 32*8, { 0*8, 32*8-1, 2*8, 32*8-1 },
+		32*8, 32*8, new rectangle( 0*8, 32*8-1, 2*8, 32*8-1 ),
 		gfxdecodeinfo,
-		64, 0,
-		0,
+		64, null,
+		null,
 	
 		VIDEO_TYPE_RASTER,
-		0,
+		null,
 		generic_bitmapped_vh_start,
 		generic_bitmapped_vh_stop,
 		cloud9_vh_screenrefresh,
 	
 		/* sound hardware */
 		0,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_POKEY,
-				&pokey_interface
-			}
+				pokey_interface
+			)
 		},
 	
 		nvram_handler
-	};
+	);
 	
 	
 	/***************************************************************************

@@ -628,49 +628,49 @@ public class thepit
 	
 	
 	#define MACHINE_DRIVER(GAMENAME, CONVERT)		            \
-	static const struct MachineDriver machine_driver_##GAMENAME =		\
-	{									  			            \
+	static MachineDriver machine_driver_##GAMENAME = new MachineDriver\
+	(									  			            \
 		/* basic machine hardware */							\
-		{														\
-			{													\
+		new MachineCPU[] {														\
+			new MachineCPU(													\
 				CPU_Z80,										\
 				18432000/6,     /* 3.072 MHz */					\
-				GAMENAME##_readmem,GAMENAME##_writemem,0,0,		\
+				GAMENAME##_readmem,GAMENAME##_writemem,null,null,		\
 				nmi_interrupt,1									\
-			},													\
-			{													\
+			),													\
+			new MachineCPU(													\
 				CPU_Z80 | CPU_AUDIO_CPU,						\
 				10000000/4,     /* 2.5 MHz */					\
 				sound_readmem,sound_writemem,					\
 				sound_readport,sound_writeport,					\
 				interrupt,1										\
-			}													\
+			)													\
 		},														\
 		60, DEFAULT_60HZ_VBLANK_DURATION,       /* frames per second, vblank duration */ \
 		1,	/* 1 CPU slice per frame - interleaving is forced when a sound command is written */ \
-		0,														\
+		null,														\
 																\
 		/* video hardware */									\
-		32*8, 32*8, { 0*8, 32*8-1, 2*8, 30*8-1 },				\
+		32*8, 32*8, new rectangle( 0*8, 32*8-1, 2*8, 30*8-1 ),				\
 		GAMENAME##_gfxdecodeinfo,								\
 		32+8, 32,												\
 		CONVERT##_vh_convert_color_prom,						\
 																\
 		VIDEO_TYPE_RASTER,										\
-		0,														\
+		null,														\
 		generic_vh_start,										\
 		generic_vh_stop,										\
 		thepit_vh_screenrefresh,								\
 																\
 		/* sound hardware */									\
 		0,0,0,0,												\
-		{														\
-			{													\
+		new MachineSound[] {														\
+			new MachineSound(													\
 				SOUND_AY8910,									\
-				&ay8910_interface								\
-			}													\
+				ay8910_interface								\
+			)													\
 		}														\
-	};
+	);
 	
 	
 	#define suprmous_readmem   intrepid_readmem

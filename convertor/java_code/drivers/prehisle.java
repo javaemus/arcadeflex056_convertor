@@ -251,54 +251,54 @@ public class prehisle
 	
 	/******************************************************************************/
 	
-	static const struct MachineDriver machine_driver_prehisle =
-	{
+	static MachineDriver machine_driver_prehisle = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_M68000,
 				12000000,
-				prehisle_readmem,prehisle_writemem,0,0,
+				prehisle_readmem,prehisle_writemem,null,null,
 				m68_level4_irq,1
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_Z80 | CPU_AUDIO_CPU,
 				4000000,
 				prehisle_sound_readmem,prehisle_sound_writemem,
 				prehisle_sound_readport,prehisle_sound_writeport,
 				ignore_interrupt,0
-			}
+			)
 		},
 		60, DEFAULT_REAL_60HZ_VBLANK_DURATION,
 		1,
-		0,
+		null,
 	
 		/* video hardware */
-		32*8, 32*8, { 0*8, 32*8-1, 2*8, 30*8-1 },
+		32*8, 32*8, new rectangle( 0*8, 32*8-1, 2*8, 30*8-1 ),
 	
 		gfxdecodeinfo,
-		1024, 0,
-		0,
+		1024, null,
+		null,
 	
 		VIDEO_TYPE_RASTER,
-		0,
+		null,
 		prehisle_vh_start,
 		prehisle_vh_stop,
 		prehisle_vh_screenrefresh,
 	
 		/* sound hardware */
 		0,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_YM3812,
-				&ym3812_interface
-			},
-			{
+				ym3812_interface
+			),
+			new MachineSound(
 				SOUND_UPD7759,
-				&upd7759_interface
-			}
+				upd7759_interface
+			)
 		}
-	};
+	);
 	
 	/******************************************************************************/
 	

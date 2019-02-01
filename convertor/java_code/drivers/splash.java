@@ -237,51 +237,51 @@ public class splash
 	};
 	
 	
-	static const struct MachineDriver machine_driver_splash =
-	{
-		{
-			{
+	static MachineDriver machine_driver_splash = new MachineDriver
+	(
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_M68000,
 				24000000/2,			/* 12 MHz */
-				splash_readmem,splash_writemem,0,0,
+				splash_readmem,splash_writemem,null,null,
 				m68_level6_irq,1
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_Z80 | CPU_AUDIO_CPU,
 				30000000/8,			/* 3.75 MHz? */
-				splash_readmem_sound, splash_writemem_sound,0,0,
+				splash_readmem_sound, splash_writemem_sound,null,null,
 				nmi_interrupt,64	/* needed for the msm5205 to play the samples */
-			}
+			)
 		},
 		60,DEFAULT_REAL_60HZ_VBLANK_DURATION,
 		1,
-		0,
+		null,
 	
 		/* video hardware */
-		64*8, 64*8, { 2*8, 49*8-1, 2*8, 32*8-1 },
+		64*8, 64*8, new rectangle( 2*8, 49*8-1, 2*8, 32*8-1 ),
 		gfxdecodeinfo,
-		2048, 0,
-		0,
+		2048, null,
+		null,
 	
 		VIDEO_TYPE_RASTER,
-		0,
+		null,
 		splash_vh_start,
-		0,
+		null,
 		splash_vh_screenrefresh,
 	
 		/* sound hardware */
 		0,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_YM3812,
-				&splash_ym3812_interface
-			},
-			{
+				splash_ym3812_interface
+			),
+			new MachineSound(
 				SOUND_MSM5205,
-				&splash_msm5205_interface
-		    }
+				splash_msm5205_interface
+		    )
 		}
-	};
+	);
 	
 	
 	static RomLoadPtr rom_splash = new RomLoadPtr(){ public void handler(){ 

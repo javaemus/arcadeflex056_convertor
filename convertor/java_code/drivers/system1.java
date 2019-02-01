@@ -1812,270 +1812,270 @@ public class system1
 	
 	
 	
-	static const struct MachineDriver machine_driver_system1 =
-	{
+	static MachineDriver machine_driver_system1 = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_Z80,
-	//			4000000,    /* My Hero has 2 OSCs 8 & 20 MHz (Cabbe Info) */
+	//			4000000,    /* My Hero has 2 OSCs 8  20 MHz (Cabbe Info) */
 				3600000,	/* should be 4 MHz but that value makes the Pitfall II title screen disappear */
 				readmem,writemem,readport,writeport,
 				interrupt,1
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_Z80 | CPU_AUDIO_CPU,
 				4000000,
-				sound_readmem,sound_writemem,0,0,
+				sound_readmem,sound_writemem,null,null,
 				interrupt,4		 /* NMIs are caused by the main CPU */
-			},
+			),
 		},
 		60, DEFAULT_60HZ_VBLANK_DURATION,   /* frames per second, vblank duration */
 		1,        		  /* single CPU, no need for interleaving */
 		system1_init_machine,
 	
 		/* video hardware */
-		256, 256, { 0*8, 32*8-1, 0*8, 28*8-1 },
+		256, 256, new rectangle( 0*8, 32*8-1, 0*8, 28*8-1 ),
 		gfxdecodeinfo,
 		1536, 1536,
 		system1_vh_convert_color_prom,
 	
 		VIDEO_TYPE_RASTER,
-		0,
+		null,
 		system1_vh_start,
 		system1_vh_stop,
 		system1_vh_screenrefresh,
 	
 		/* sound hardware */
 		0,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_SN76496,
-				&sn76496_interface
-			}
+				sn76496_interface
+			)
 		}
-	};
+	);
 	
 	
 	/* driver with reduced visible area for scrolling games */
-	static const struct MachineDriver machine_driver_small =
-	{
+	static MachineDriver machine_driver_small = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_Z80,
-				4000000,    /* My Hero has 2 OSCs 8 & 20 MHz (Cabbe Info) */
+				4000000,    /* My Hero has 2 OSCs 8  20 MHz (Cabbe Info) */
 				readmem,writemem,readport,writeport,
 				interrupt,1
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_Z80 | CPU_AUDIO_CPU,
 				4000000,
-				sound_readmem,sound_writemem,0,0,
+				sound_readmem,sound_writemem,null,null,
 				interrupt,4		 /* NMIs are caused by the main CPU */
-			},
+			),
 		},
 		60, DEFAULT_60HZ_VBLANK_DURATION,   /* frames per second, vblank duration */
 		1,        		  /* single CPU, no need for interleaving */
 		system1_init_machine,
 	
 		/* video hardware */
-		256, 256, { 0*8+8, 32*8-1-8, 0*8, 28*8-1 },
+		256, 256, new rectangle( 0*8+8, 32*8-1-8, 0*8, 28*8-1 ),
 		gfxdecodeinfo,
 		1536, 1536,
 		system1_vh_convert_color_prom,
 	
 		VIDEO_TYPE_RASTER,
-		0,
+		null,
 		system1_vh_start,
 		system1_vh_stop,
 		system1_vh_screenrefresh,
 	
 		/* sound hardware */
 		0,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_SN76496,
-				&sn76496_interface
-			}
+				sn76496_interface
+			)
 		}
-	};
+	);
 	
 	
-	static const struct MachineDriver machine_driver_hvymetal =
-	{
+	static MachineDriver machine_driver_hvymetal = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_Z80,
 				4000000,        	/* 4 MHz ? */
 				brain_readmem,writemem,wbml_readport,hvymetal_writeport,
 				interrupt,1
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_Z80 | CPU_AUDIO_CPU,
 				4000000,        	/* 4 MHz ? */
-				sound_readmem,sound_writemem,0,0,
+				sound_readmem,sound_writemem,null,null,
 				interrupt,4		 /* NMIs are caused by the main CPU */
-			},
+			),
 		},
 		60, DEFAULT_60HZ_VBLANK_DURATION,           /* frames per second, vblank duration */
 		1,        		  /* single CPU, no need for interleaving */
 		system1_init_machine,
 	
 		/* video hardware */
-		256, 256, { 0*8, 32*8-1, 0*8, 28*8-1 },
+		256, 256, new rectangle( 0*8, 32*8-1, 0*8, 28*8-1 ),
 		gfxdecodeinfo,
 		1536, 1536,
 		system1_vh_convert_color_prom,
 	
 		VIDEO_TYPE_RASTER,
-		0,
+		null,
 		system1_vh_start,
 		system1_vh_stop,
 		system1_vh_screenrefresh,
 	
 		/* sound hardware */
 		0,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_SN76496,
-				&sn76496_interface
-			}
+				sn76496_interface
+			)
 		}
-	};
+	);
 	
 	
-	static const struct MachineDriver machine_driver_chplft =
-	{
+	static MachineDriver machine_driver_chplft = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_Z80,
 				4000000,        	/* 4 MHz ? */
 				brain_readmem,chplft_writemem,wbml_readport,chplft_writeport,
 				interrupt,1
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_Z80 | CPU_AUDIO_CPU,
 				4000000,        	/* 4 MHz ? */
-				sound_readmem,sound_writemem,0,0,
+				sound_readmem,sound_writemem,null,null,
 				interrupt,4		 /* NMIs are caused by the main CPU */
-			},
+			),
 		},
 		60, DEFAULT_60HZ_VBLANK_DURATION,           /* frames per second, vblank duration */
 		1,        		  /* single CPU, no need for interleaving */
 		system1_init_machine,
 	
 		/* video hardware */
-		256, 256, { 0*8, 32*8-1, 0*8, 28*8-1 },
+		256, 256, new rectangle( 0*8, 32*8-1, 0*8, 28*8-1 ),
 		gfxdecodeinfo,
 		1536, 1536,
 		system1_vh_convert_color_prom,
 	
 		VIDEO_TYPE_RASTER,
-		0,
+		null,
 		system1_vh_start,
 		system1_vh_stop,
 		choplifter_vh_screenrefresh,
 	
 		/* sound hardware */
 		0,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_SN76496,
-				&sn76496_interface
-			}
+				sn76496_interface
+			)
 		}
-	};
+	);
 	
 	
-	static const struct MachineDriver machine_driver_brain =
-	{
+	static MachineDriver machine_driver_brain = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_Z80,
-				4000000,    /* My Hero has 2 OSCs 8 & 20 MHz (Cabbe Info) */
+				4000000,    /* My Hero has 2 OSCs 8  20 MHz (Cabbe Info) */
 				brain_readmem,writemem,readport,brain_writeport,
 				interrupt,1
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_Z80 | CPU_AUDIO_CPU,
 				4000000,
-				sound_readmem,sound_writemem,0,0,
+				sound_readmem,sound_writemem,null,null,
 				interrupt,4		 /* NMIs are caused by the main CPU */
-			},
+			),
 		},
 		60, DEFAULT_60HZ_VBLANK_DURATION,   /* frames per second, vblank duration */
 		1,        		  /* single CPU, no need for interleaving */
 		system1_init_machine,
 	
 		/* video hardware */
-		256, 256, { 0*8, 32*8-1, 0*8, 28*8-1 },
+		256, 256, new rectangle( 0*8, 32*8-1, 0*8, 28*8-1 ),
 		gfxdecodeinfo,
 		1536, 1536,
 		system1_vh_convert_color_prom,
 	
 		VIDEO_TYPE_RASTER,
-		0,
+		null,
 		system1_vh_start,
 		system1_vh_stop,
 		system1_vh_screenrefresh,
 	
 		/* sound hardware */
 		0,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_SN76496,
-				&sn76496_interface
-			}
+				sn76496_interface
+			)
 		}
-	};
+	);
 	
 	
-	static const struct MachineDriver machine_driver_wbml =
-	{
+	static MachineDriver machine_driver_wbml = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_Z80,
 				4000000,        	/* 4 MHz ? */
 				wbml_readmem,wbml_writemem,wbml_readport,wbml_writeport,
 				interrupt,1
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_Z80 | CPU_AUDIO_CPU,
 				4000000,        	/* 4 MHz ? */
-				sound_readmem,sound_writemem,0,0,
+				sound_readmem,sound_writemem,null,null,
 				interrupt,4		 /* NMIs are caused by the main CPU */
-			},
+			),
 		},
 		60, DEFAULT_60HZ_VBLANK_DURATION,   /* frames per second, vblank duration */
 		1,        		  /* single CPU, no need for interleaving */
 		wbml_init_machine,
 	
 		/* video hardware */
-		256, 256, { 0*8, 32*8-1, 0*8, 28*8-1 },
+		256, 256, new rectangle( 0*8, 32*8-1, 0*8, 28*8-1 ),
 		gfxdecodeinfo,
 		1536, 1536,
 		system1_vh_convert_color_prom,
 	
 		VIDEO_TYPE_RASTER,
-		0,
+		null,
 		system1_vh_start,
 		system1_vh_stop,
 		wbml_vh_screenrefresh,
 	
 		/* sound hardware */
 		0,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_SN76496,
-				&sn76496_interface
-			}
+				sn76496_interface
+			)
 		}
-	};
+	);
 	
 	
 	

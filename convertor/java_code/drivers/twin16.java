@@ -1092,171 +1092,171 @@ public class twin16
 	
 	
 	#define MACHINE_DRIVER(NAME,NVRAM)				\
-	static const struct MachineDriver machine_driver_##NAME =	\
-	{	\
-		{	\
-			{	\
+	static MachineDriver machine_driver_##NAME = new MachineDriver\
+	(	\
+		new MachineCPU[] {	\
+			new MachineCPU(	\
 				CPU_Z80 | CPU_AUDIO_CPU,	\
 				3579545,	\
-				readmem_sound,writemem_sound,0,0,	\
+				readmem_sound,writemem_sound,null,null,	\
 				ignore_interrupt,1	\
-			},	\
-			{	\
+			),	\
+			new MachineCPU(	\
 				CPU_M68000,	\
 				10000000,	\
-				readmem_sub,writemem_sub,0,0,	\
+				readmem_sub,writemem_sub,null,null,	\
 				CPUB_interrupt,1	\
-			},	\
-			{	\
+			),	\
+			new MachineCPU(	\
 				CPU_M68000,	\
 				10000000,	\
-				readmem,writemem,0,0,	\
+				readmem,writemem,null,null,	\
 				CPUA_interrupt,1	\
-			},	\
+			),	\
 		},	\
 		60, DEFAULT_REAL_60HZ_VBLANK_DURATION,	\
 		100, /* CPU slices */	\
-		0, /* init machine */	\
+		null, /* init machine */	\
 		\
 		/* video hardware */	\
-		320, 256, { 0, 319, 0+16, 255-16 },	\
+		320, 256, new rectangle( 0, 319, 0+16, 255-16 ),	\
 		gfxdecodeinfo,	\
-		0x400, 0,	\
-		0,	\
+		0x400, null,	\
+		null,	\
 		\
 		VIDEO_TYPE_RASTER,	\
-		0,	\
+		null,	\
 		twin16_vh_start,	\
 		twin16_vh_stop,	\
 		twin16_vh_screenrefresh,	\
 		\
 		/* sound hardware */	\
 		SOUND_SUPPORTS_STEREO,0,0,0,	\
-		{	\
-			{	\
+		new MachineSound[] {	\
+			new MachineSound(	\
 				SOUND_YM2151,	\
-				&ym2151_interface	\
-			},	\
-			{	\
+				ym2151_interface	\
+			),	\
+			new MachineSound(	\
 				SOUND_K007232,	\
-				&k007232_interface,	\
-			},	\
-			{	\
+				k007232_interface,	\
+			),	\
+			new MachineSound(	\
 				SOUND_UPD7759,	\
-				&upd7759_interface	\
-			}	\
+				upd7759_interface	\
+			)	\
 		},	\
 		NVRAM	\
-	};
+	);
 	
 	MACHINE_DRIVER(twin16,0)
 	MACHINE_DRIVER(cuebrick,cuebrick_nvram_handler)
 	
-	static const struct MachineDriver machine_driver_heavysync =
-	{
-		{
-			{
+	static MachineDriver machine_driver_heavysync = new MachineDriver
+	(
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_Z80 | CPU_AUDIO_CPU,
 				3579545,
-				readmem_sound,writemem_sound,0,0,
+				readmem_sound,writemem_sound,null,null,
 				ignore_interrupt,1
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_M68000,
 				10000000,
-				readmem_sub,writemem_sub,0,0,
+				readmem_sub,writemem_sub,null,null,
 				CPUB_interrupt,1
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_M68000,
 				10000000,
-				readmem,writemem,0,0,
+				readmem,writemem,null,null,
 				CPUA_interrupt,1
-			},
+			),
 		},
 		60, DEFAULT_REAL_60HZ_VBLANK_DURATION,
 		1000, /* CPU slices */
-		0, /* init machine */
+		null, /* init machine */
 	
 		/* video hardware */
-		320, 256, { 0, 319, 0+16, 255-16 },
+		320, 256, new rectangle( 0, 319, 0+16, 255-16 ),
 		gfxdecodeinfo,
-		0x400, 0,
-		0,
+		0x400, null,
+		null,
 	
 		VIDEO_TYPE_RASTER,
-		0,
+		null,
 		twin16_vh_start,
 		twin16_vh_stop,
 		twin16_vh_screenrefresh,
 	
 		/* sound hardware */
 		SOUND_SUPPORTS_STEREO,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_YM2151,
-				&ym2151_interface
-			},
-			{
+				ym2151_interface
+			),
+			new MachineSound(
 				SOUND_K007232,
-				&k007232_interface,
-			},
-			{
+				k007232_interface,
+			),
+			new MachineSound(
 				SOUND_UPD7759,
-				&upd7759_interface
-			}
+				upd7759_interface
+			)
 		}
-	};
+	);
 	
-	static const struct MachineDriver machine_driver_fround =
-	{
-		{
-			{
+	static MachineDriver machine_driver_fround = new MachineDriver
+	(
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_Z80 | CPU_AUDIO_CPU,
 				3579545,
-				readmem_sound,writemem_sound,0,0,
+				readmem_sound,writemem_sound,null,null,
 				ignore_interrupt,1
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_M68000,
 				10000000,
-				fround_readmem,fround_writemem,0,0,
+				fround_readmem,fround_writemem,null,null,
 				CPUA_interrupt,1
-			},
+			),
 		},
 		60, DEFAULT_REAL_60HZ_VBLANK_DURATION,
 		100, /* CPU slices */
-		0, /* init machine */
+		null, /* init machine */
 	
 		/* video hardware */
-		320, 256, { 0, 319, 0+16, 255-16 },
+		320, 256, new rectangle( 0, 319, 0+16, 255-16 ),
 		gfxdecodeinfo,
-		0x400, 0,
-		0,
+		0x400, null,
+		null,
 	
 		VIDEO_TYPE_RASTER,
-		0,
+		null,
 		twin16_vh_start,
 		twin16_vh_stop,
 		twin16_vh_screenrefresh,
 	
 		/* sound hardware */
 		SOUND_SUPPORTS_STEREO,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_YM2151,
-				&ym2151_interface
-			},
-			{
+				ym2151_interface
+			),
+			new MachineSound(
 				SOUND_K007232,
-				&k007232_interface,
-			},
-			{
+				k007232_interface,
+			),
+			new MachineSound(
 				SOUND_UPD7759,
-				&upd7759_interface
-			}
+				upd7759_interface
+			)
 		}
-	};
+	);
 	
 	/******************************************************************************************/
 	

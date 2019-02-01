@@ -692,38 +692,38 @@ public class twincobr
 	};
 	
 	
-	static const struct MachineDriver machine_driver_twincobr =
-	{
+	static MachineDriver machine_driver_twincobr = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_M68000,
 				28000000/4,			/* 7.0 MHz - Main board Crystal is 28MHz */
-				readmem,writemem,0,0,
+				readmem,writemem,null,null,
 				twincobr_interrupt,1
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_Z80,
 				28000000/8,			/* 3.5 MHz */
 				sound_readmem,sound_writemem,sound_readport,sound_writeport,
 				ignore_interrupt,0	/* IRQs are caused by the YM3812 */
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_TMS320C10,
 				28000000/8,			/* 3.5 MHz */
 				DSP_readmem,DSP_writemem,DSP_readport,DSP_writeport,
 				ignore_interrupt,0	/* IRQs are caused by 68000 */
-			},
+			),
 		},
 		56, DEFAULT_REAL_60HZ_VBLANK_DURATION,  /* frames per second, vblank duration */
 		100,									/* 100 CPU slices per frame */
 		fsharkbt_reset_8741_mcu,		/* Reset fshark bootleg 8741 MCU data */
 	
 		/* video hardware */
-		64*8, 32*8, { 0*8, 40*8-1, 0*8, 30*8-1 },
+		64*8, 32*8, new rectangle( 0*8, 40*8-1, 0*8, 30*8-1 ),
 		gfxdecodeinfo,
-		1792, 0,
-		0,
+		1792, null,
+		null,
 	
 		VIDEO_TYPE_RASTER | VIDEO_UPDATE_BEFORE_VBLANK | VIDEO_BUFFERS_SPRITERAM,
 		toaplan0_eof_callback,
@@ -733,13 +733,13 @@ public class twincobr
 	
 		/* sound hardware */
 		0,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_YM3812,
-				&ym3812_interface
-			},
+				ym3812_interface
+			),
 		},
-	};
+	);
 	
 	
 	

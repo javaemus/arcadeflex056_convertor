@@ -345,93 +345,93 @@ public class deniam
 	
 	
 	
-	static const struct MachineDriver machine_driver_deniam16b =
-	{
+	static MachineDriver machine_driver_deniam16b = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_M68000,
 				25000000/2,	/* ??? */
-				deniam16b_readmem,deniam16b_writemem,0,0,
+				deniam16b_readmem,deniam16b_writemem,null,null,
 				m68_level4_irq,1
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_Z80,
 				25000000/4,	/* (makes logicpro music tempo correct) */
 				sound_readmem,sound_writemem,sound_readport,sound_writeport,
 				ignore_interrupt,1	/* NMI is caused by the main cpu */
-			}
+			)
 		},
 		60, DEFAULT_60HZ_VBLANK_DURATION,	/* frames per second, vblank duration */
 		1,	/* 1 CPU slice per frame - interleaving is forced when a sound command is written */
 		deniam_init_machine,
 	
 		/* video hardware */
-		512, 256, { 24*8, 64*8-1, 0*8, 28*8-1 },
+		512, 256, new rectangle( 24*8, 64*8-1, 0*8, 28*8-1 ),
 		gfxdecodeinfo,
-		2048, 0,
-		0,
+		2048, null,
+		null,
 	
 		VIDEO_TYPE_RASTER,
-		0,
+		null,
 		deniam_vh_start,
-		0,
+		null,
 		deniam_vh_screenrefresh,
 	
 		/* sound hardware */
 		0,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_YM3812,
-				&ym3812_interface
-			},
-			{
+				ym3812_interface
+			),
+			new MachineSound(
 				SOUND_OKIM6295,
-				&okim6295_interface
-			}
+				okim6295_interface
+			)
 		}
-	};
+	);
 	
-	static const struct MachineDriver machine_driver_deniam16c =
-	{
+	static MachineDriver machine_driver_deniam16c = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_M68000,
 				25000000/2,	/* ??? */
-				deniam16c_readmem,deniam16c_writemem,0,0,
+				deniam16c_readmem,deniam16c_writemem,null,null,
 				m68_level4_irq,1
-			}
+			)
 		},
 		60, DEFAULT_60HZ_VBLANK_DURATION,	/* frames per second, vblank duration */
 		1,	/* single CPU, no need for interleaving */
 		deniam_init_machine,
 	
 		/* video hardware */
-		512, 256, { 24*8, 64*8-1, 0*8, 28*8-1 },
+		512, 256, new rectangle( 24*8, 64*8-1, 0*8, 28*8-1 ),
 		gfxdecodeinfo,
-		2048, 0,
-		0,
+		2048, null,
+		null,
 	
 		VIDEO_TYPE_RASTER,
-		0,
+		null,
 		deniam_vh_start,
 		0,
 		deniam_vh_screenrefresh,
 	
 		/* sound hardware */
 		0,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_YM3812,
-				&ym3812_interface
-			},
-			{
+				ym3812_interface
+			),
+			new MachineSound(
 				SOUND_OKIM6295,
-				&okim6295_interface
-			}
+				okim6295_interface
+			)
 		}
-	};
+	);
 	
 	
 	

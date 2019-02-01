@@ -447,103 +447,103 @@ public class meadows
 	
 	
 	
-	static const struct MachineDriver machine_driver_deadeye =
-	{
+	static MachineDriver machine_driver_deadeye = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_S2650,
 				625000, 	/* 5MHz / 8 = 625 kHz */
-				readmem,writemem,0,0,
+				readmem,writemem,null,null,
 				meadows_interrupt,1 	/* one interrupt per frame!? */
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_S2650 | CPU_AUDIO_CPU,
 				625000, 	/* 5MHz / 8 = 625 kHz */
 				sound_readmem,sound_writemem,
-				0,0,
-				0,0,
+				null,null,
+				null,null,
 				sound_interrupt,38	/* 5000000/131072 interrupts per frame */
-	        }
+	        )
 	    },
 		60, DEFAULT_REAL_60HZ_VBLANK_DURATION,	/* frames per second, vblank duration */
 		10, 									/* dual CPU; interleave them */
-		0,
+		null,
 	
 		/* video hardware */
-		32*8, 30*8, { 0*8, 32*8-1, 2*8, 30*8-1 },
+		32*8, 30*8, new rectangle( 0*8, 32*8-1, 2*8, 30*8-1 ),
 		gfxdecodeinfo,
 		ARTWORK_COLORS,ARTWORK_COLORS,		/* Leave extra colors for the overlay */
 		init_palette,
 	
 		VIDEO_TYPE_RASTER | VIDEO_SUPPORTS_DIRTY ,
-	    0,
+	    null,
 		deadeye_vh_start,
 		generic_vh_stop,
 		meadows_vh_screenrefresh,
 	
 		/* sound hardware */
 		0,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_DAC,
-				&dac_interface
-			},
-			{
+				dac_interface
+			),
+			new MachineSound(
 				SOUND_CUSTOM,
-				&custom_interface
-			}
+				custom_interface
+			)
 	    }
-	};
+	);
 	
-	static const struct MachineDriver machine_driver_gypsyjug =
-	{
+	static MachineDriver machine_driver_gypsyjug = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_S2650,
 				625000, 	/* 5MHz / 8 = 625 kHz */
-				readmem,writemem,0,0,
+				readmem,writemem,null,null,
 				meadows_interrupt,1 	/* one interrupt per frame!? */
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_S2650 | CPU_AUDIO_CPU,
 				625000, 	/* 5MHz / 8 = 625 kHz */
 				sound_readmem,sound_writemem,
-				0,0,
-				0,0,
+				null,null,
+				null,null,
 				sound_interrupt,38	/* 5000000/131072 interrupts per frame */
-			}
+			)
 		},
 		60, DEFAULT_REAL_60HZ_VBLANK_DURATION,	/* frames per second, vblank duration */
 		10, 									/* dual CPU; interleave them */
-		0,
+		null,
 	
 		/* video hardware */
-		32*8, 30*8, { 0*8, 32*8-1, 2*8, 30*8-1 },
+		32*8, 30*8, new rectangle( 0*8, 32*8-1, 2*8, 30*8-1 ),
 		gfxdecodeinfo,
 		ARTWORK_COLORS,ARTWORK_COLORS,		/* Leave extra colors for the overlay */
 		init_palette,
 	
 		VIDEO_TYPE_RASTER | VIDEO_SUPPORTS_DIRTY ,
-	    0,
+	    null,
 		gypsyjug_vh_start,
 		generic_vh_stop,
 		meadows_vh_screenrefresh,
 	
 		/* sound hardware */
 		0,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_DAC,
-				&dac_interface
-			},
-			{
+				dac_interface
+			),
+			new MachineSound(
 				SOUND_CUSTOM,
-				&custom_interface
-			}
+				custom_interface
+			)
 		}
-	};
+	);
 	
 	/***************************************************************************
 	

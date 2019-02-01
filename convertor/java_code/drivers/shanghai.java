@@ -1023,81 +1023,81 @@ public class shanghai
 	
 	
 	
-	static const struct MachineDriver machine_driver_shanghai =
-	{
+	static MachineDriver machine_driver_shanghai = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_V30,
 				16000000/2,	/* ? */
 				readmem,writemem,readport,writeport,
 				shanghai_interrupt,1,
 				0,0
-			}
+			)
 		},
 		30, DEFAULT_60HZ_VBLANK_DURATION,	/* frames per second, vblank duration */
 		1,	/* single CPU, no need for interleaving */
-		0,
+		null,
 	
 		/* video hardware */
-		384, 280, { 0, 384-1, 0, 280-1 },
-		0,
-		256,0,
+		384, 280, new rectangle( 0, 384-1, 0, 280-1 ),
+		null,
+		256,null,
 		shanghai_vh_convert_color_prom,
 	
 		VIDEO_TYPE_RASTER,
-		0,
+		null,
 		shanghai_vh_start,
 		shanghai_vh_stop,
 		shanghai_vh_screenrefresh,
 	
 		/* sound hardware */
 		0,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_YM2203,
-				&ym2203_interface
-			}
+				ym2203_interface
+			)
 		}
-	};
+	);
 	
-	static const struct MachineDriver machine_driver_shangha2 =
-	{
+	static MachineDriver machine_driver_shangha2 = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_V30,
 				16000000/2,	/* ? */
 				shangha2_readmem,shangha2_writemem,shangha2_readport,shangha2_writeport,
 				shanghai_interrupt,1,
 				0,0
-			}
+			)
 		},
 		30, DEFAULT_60HZ_VBLANK_DURATION,	/* frames per second, vblank duration */
 		1,	/* single CPU, no need for interleaving */
-		0,
+		null,
 	
 		/* video hardware */
-		384, 280, { 0, 384-1, 0, 280-1 },
-		0,
-		256,0,
-		0,
+		384, 280, new rectangle( 0, 384-1, 0, 280-1 ),
+		null,
+		256,null,
+		null,
 	
 		VIDEO_TYPE_RASTER,
-		0,
+		null,
 		shanghai_vh_start,
 		shanghai_vh_stop,
 		shanghai_vh_screenrefresh,
 	
 		/* sound hardware */
 		0,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_YM2203,
-				&ym2203_interface
-			}
+				ym2203_interface
+			)
 		}
-	};
+	);
 	
 	
 	

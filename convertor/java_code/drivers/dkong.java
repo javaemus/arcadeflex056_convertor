@@ -937,237 +937,237 @@ public class dkong
 		dkongjr_sample_names
 	};
 	
-	static const struct MachineDriver machine_driver_radarscp =
-	{
+	static MachineDriver machine_driver_radarscp = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_Z80,
 				3072000,	/* 3.072 MHz (?) */
-				readmem,radarscp_writemem,0,0,
+				readmem,radarscp_writemem,null,null,
 				nmi_interrupt,1
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_I8035 | CPU_AUDIO_CPU,
 				6000000/15,	/* 6MHz crystal */
 				readmem_sound,writemem_sound,readport_sound,writeport_sound,
 				ignore_interrupt,1
-			}
+			)
 		},
 		60, DEFAULT_60HZ_VBLANK_DURATION,	/* frames per second, vblank duration */
 		1,	/* 1 CPU slice per frame - interleaving is forced when a sound command is written */
-		0,
+		null,
 	
 		/* video hardware */
-		32*8, 32*8, { 0*8, 32*8-1, 2*8, 30*8-1 },
+		32*8, 32*8, new rectangle( 0*8, 32*8-1, 2*8, 30*8-1 ),
 		dkong_gfxdecodeinfo,
 		256+2, 64*4,	/* two extra colors for stars and radar grid */
 		dkong_vh_convert_color_prom,
 	
 		VIDEO_TYPE_RASTER,
-		0,
+		null,
 		dkong_vh_start,
 		generic_vh_stop,
 		radarscp_vh_screenrefresh,
 	
 		/* sound hardware */
 		0,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_DAC,
-				&dkong_dac_interface
-			},
-			{
+				dkong_dac_interface
+			),
+			new MachineSound(
 				SOUND_SAMPLES,
-				&dkong_samples_interface
-			}
+				dkong_samples_interface
+			)
 		}
-	};
+	);
 	
-	static const struct MachineDriver machine_driver_dkong =
-	{
+	static MachineDriver machine_driver_dkong = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_Z80,
 				3072000,	/* 3.072 MHz (?) */
-				readmem,dkong_writemem,0,0,
+				readmem,dkong_writemem,null,null,
 				nmi_interrupt,1
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_I8035 | CPU_AUDIO_CPU,
 				6000000/15,	/* 6MHz crystal */
 				readmem_sound,writemem_sound,readport_sound,writeport_sound,
 				ignore_interrupt,1
-			}
+			)
 		},
 		60, DEFAULT_60HZ_VBLANK_DURATION,	/* frames per second, vblank duration */
 		1,	/* 1 CPU slice per frame - interleaving is forced when a sound command is written */
-		0,
+		null,
 	
 		/* video hardware */
-		32*8, 32*8, { 0*8, 32*8-1, 2*8, 30*8-1 },
+		32*8, 32*8, new rectangle( 0*8, 32*8-1, 2*8, 30*8-1 ),
 		dkong_gfxdecodeinfo,
 		256, 64*4,
 		dkong_vh_convert_color_prom,
 	
 		VIDEO_TYPE_RASTER,
-		0,
+		null,
 		dkong_vh_start,
 		generic_vh_stop,
 		dkong_vh_screenrefresh,
 	
 		/* sound hardware */
 		0,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_DAC,
-				&dkong_dac_interface
-			},
-			{
+				dkong_dac_interface
+			),
+			new MachineSound(
 				SOUND_SAMPLES,
-				&dkong_samples_interface
-			}
+				dkong_samples_interface
+			)
 		}
-	};
+	);
 	
 	static int hunchbkd_interrupt(void)
 	{
 		return 0x03;	/* hunchbkd S2650 interrupt vector */
 	}
 	
-	static const struct MachineDriver machine_driver_hunchbkd =
-	{
+	static MachineDriver machine_driver_hunchbkd = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_S2650,
 				3072000,
 				hunchbkd_readmem,hunchbkd_writemem,hunchbkd_readport,hunchbkd_writeport,
 				hunchbkd_interrupt,1
-			},
-	        {
+			),
+	        new MachineCPU(
 				CPU_I8035 | CPU_AUDIO_CPU,
 				6000000/15,	/* 6MHz crystal */
 				readmem_sound,writemem_sound,readport_hunchbkd_sound,writeport_sound,
 				ignore_interrupt,1
-			}
+			)
 	    },
 		60, DEFAULT_REAL_60HZ_VBLANK_DURATION,	/* frames per second, vblank duration */
 		1,	/* 1 CPU slice per frame - interleaving is forced when a sound command is written */
-		0,
+		null,
 	
 		/* video hardware */
-		32*8, 32*8, { 0*8, 32*8-1, 2*8, 30*8-1 },
+		32*8, 32*8, new rectangle( 0*8, 32*8-1, 2*8, 30*8-1 ),
 		dkong_gfxdecodeinfo,
 		256, 64*4,
 		dkong_vh_convert_color_prom,
 	
 		VIDEO_TYPE_RASTER,
-		0,
+		null,
 		dkong_vh_start,
 		generic_vh_stop,
 		dkong_vh_screenrefresh,
 	
 		/* sound hardware */
 		0,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_DAC,
-				&dkong_dac_interface
-			}
+				dkong_dac_interface
+			)
 		}
-	};
+	);
 	
-	static const struct MachineDriver machine_driver_herbiedk =
-	{
+	static MachineDriver machine_driver_herbiedk = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_S2650,
 				3072000,
 				hunchbkd_readmem,hunchbkd_writemem,herbiedk_readport,hunchbkd_writeport,
 				ignore_interrupt,1
-			},
-	        {
+			),
+	        new MachineCPU(
 				CPU_I8035 | CPU_AUDIO_CPU,
 				6000000/15,	/* 6MHz crystal */
 				readmem_sound,writemem_sound,readport_hunchbkd_sound,writeport_sound,
 				ignore_interrupt,1
-			}
+			)
 	    },
 		60, 1000,
 		1,	/* 1 CPU slice per frame - interleaving is forced when a sound command is written */
-		0,
+		null,
 	
 		/* video hardware */
-		32*8, 32*8, { 0*8, 32*8-1, 2*8, 30*8-1 },
+		32*8, 32*8, new rectangle( 0*8, 32*8-1, 2*8, 30*8-1 ),
 		dkong_gfxdecodeinfo,
 		256, 64*4,
 		dkong_vh_convert_color_prom,
 	
 		VIDEO_TYPE_RASTER,
-		0,
+		null,
 		dkong_vh_start,
 		generic_vh_stop,
 		dkong_vh_screenrefresh,
 	
 		/* sound hardware */
 		0,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_DAC,
-				&dkong_dac_interface
-			}
+				dkong_dac_interface
+			)
 		}
-	};
+	);
 	
-	static const struct MachineDriver machine_driver_dkongjr =
-	{
+	static MachineDriver machine_driver_dkongjr = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_Z80,
 				3072000,	/* 3.072 MHz (?) */
-				readmem,dkongjr_writemem,0,0,
+				readmem,dkongjr_writemem,null,null,
 				nmi_interrupt,1
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_I8035 | CPU_AUDIO_CPU,
 				6000000/15,	/* 6MHz crystal */
 				readmem_sound,writemem_sound,readport_sound,writeport_sound,
 				ignore_interrupt,1
-			}
+			)
 		},
 		60, DEFAULT_60HZ_VBLANK_DURATION,	/* frames per second, vblank duration */
 		1,	/* 1 CPU slice per frame - interleaving is forced when a sound command is written */
-		0,
+		null,
 	
 		/* video hardware */
-		32*8, 32*8, { 0*8, 32*8-1, 2*8, 30*8-1 },
+		32*8, 32*8, new rectangle( 0*8, 32*8-1, 2*8, 30*8-1 ),
 		dkongjr_gfxdecodeinfo,
 		256, 64*4,
 		dkong_vh_convert_color_prom,
 	
 		VIDEO_TYPE_RASTER,
-		0,
+		null,
 		dkong_vh_start,
 		generic_vh_stop,
 		dkong_vh_screenrefresh,
 	
 		/* sound hardware */
 		0,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_DAC,
-				&dkong_dac_interface
-			},
-			{
+				dkong_dac_interface
+			),
+			new MachineSound(
 				SOUND_SAMPLES,
-				&dkongjr_samples_interface
-			}
+				dkongjr_samples_interface
+			)
 		}
-	};
+	);
 	
 	
 	
@@ -1179,54 +1179,54 @@ public class dkong
 	};
 	
 	
-	static const struct MachineDriver machine_driver_dkong3 =
-	{
+	static MachineDriver machine_driver_dkong3 = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_Z80,
 				8000000/2,	/* 4 MHz */
-				dkong3_readmem,dkong3_writemem,0,dkong3_writeport,
+				dkong3_readmem,dkong3_writemem,null,dkong3_writeport,
 				nmi_interrupt,1
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_N2A03 | CPU_AUDIO_CPU,
 				N2A03_DEFAULTCLOCK,
-				dkong3_sound1_readmem,dkong3_sound1_writemem,0,0,
+				dkong3_sound1_readmem,dkong3_sound1_writemem,null,null,
 				nmi_interrupt,1
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_N2A03 | CPU_AUDIO_CPU,
 				N2A03_DEFAULTCLOCK,
-				dkong3_sound2_readmem,dkong3_sound2_writemem,0,0,
+				dkong3_sound2_readmem,dkong3_sound2_writemem,null,null,
 				nmi_interrupt,1
-			}
+			)
 		},
 		60, DEFAULT_60HZ_VBLANK_DURATION,	/* frames per second, vblank duration */
 		1,	/* 1 CPU slice per frame - interleaving is forced when a sound command is written */
-		0,
+		null,
 	
 		/* video hardware */
-		32*8, 32*8, { 0*8, 32*8-1, 2*8, 30*8-1 },
+		32*8, 32*8, new rectangle( 0*8, 32*8-1, 2*8, 30*8-1 ),
 		dkong3_gfxdecodeinfo,
 		256, 64*4,
 		dkong3_vh_convert_color_prom,
 	
 		VIDEO_TYPE_RASTER,
-		0,
+		null,
 		dkong_vh_start,
 		generic_vh_stop,
 		dkong_vh_screenrefresh,
 	
 		/* sound hardware */
 		0,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_NES,
-				&nes_interface
-			}
+				nes_interface
+			)
 		}
-	};
+	);
 	
 	
 	

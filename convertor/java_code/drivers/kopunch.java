@@ -162,36 +162,36 @@ public class kopunch
 	
 	
 	
-	static const struct MachineDriver machine_driver_kopunch =
-	{
+	static MachineDriver machine_driver_kopunch = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_Z80,
 				3072000,	/* 3.072 MHz ? */
-				readmem,writemem,0,0,
+				readmem,writemem,null,null,
 				kopunch_interrupt,1
-			}
+			)
 		},
 		60, DEFAULT_60HZ_VBLANK_DURATION,	/* frames per second, vblank duration */
 		1,	/* 1 CPU slice per frame - interleaving is forced when a sound command is written */
-		0,
+		null,
 	
 		/* video hardware */
-		32*8, 32*8, { 0*8, 32*8-1, 0*8, 32*8-1 },
+		32*8, 32*8, new rectangle( 0*8, 32*8-1, 0*8, 32*8-1 ),
 		gfxdecodeinfo,
 		8,8,
 		kopunch_vh_convert_color_prom,
 	
 		VIDEO_TYPE_RASTER,
-		0,
+		null,
 		generic_vh_start,
 		generic_vh_stop,
 		kopunch_vh_screenrefresh,
 	
 		/* sound hardware */
 		0,0,0,0,
-	};
+	);
 	
 	
 	

@@ -2065,474 +2065,474 @@ public class dec8
 	
 	/******************************************************************************/
 	
-	static const struct MachineDriver machine_driver_cobracom =
-	{
+	static MachineDriver machine_driver_cobracom = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-	 		{
+		new MachineCPU[] {
+	 		new MachineCPU(
 				CPU_M6809,
 				2000000,
-				cobra_readmem,cobra_writemem,0,0,
+				cobra_readmem,cobra_writemem,null,null,
 				nmi_interrupt,1
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_M6502 | CPU_AUDIO_CPU,
 				1500000,
-				dec8_s_readmem,dec8_s_writemem,0,0,
+				dec8_s_readmem,dec8_s_writemem,null,null,
 				ignore_interrupt,0	/* IRQs are caused by the YM3812 */
 									/* NMIs are caused by the main CPU */
-			}
+			)
 		},
 		58, 529, /* 58Hz, 529ms Vblank duration */
 		1,
-		0,	/* init machine */
+		null,	/* init machine */
 	
 		/* video hardware */
-		32*8, 32*8, { 0*8, 32*8-1, 1*8, 31*8-1 },
+		32*8, 32*8, new rectangle( 0*8, 32*8-1, 1*8, 31*8-1 ),
 	
 		cobracom_gfxdecodeinfo,
-		256, 0,
-		0,
+		256, null,
+		null,
 	
 		VIDEO_TYPE_RASTER | VIDEO_BUFFERS_SPRITERAM,
-		0,
+		null,
 		cobracom_vh_start,
-		0,
+		null,
 		cobracom_vh_screenrefresh,
 	
 		/* sound hardware */
 		0,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_YM2203,
-				&ym2203_interface
-			},
-			{
+				ym2203_interface
+			),
+			new MachineSound(
 				SOUND_YM3812,
-				&ym3812_interface
-			}
+				ym3812_interface
+			)
 		}
-	};
+	);
 	
-	static const struct MachineDriver machine_driver_ghostb =
-	{
+	static MachineDriver machine_driver_ghostb = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_HD6309,
 				3000000,
-				ghostb_readmem,ghostb_writemem,0,0,
+				ghostb_readmem,ghostb_writemem,null,null,
 				ghostb_interrupt,1
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_M6502 | CPU_AUDIO_CPU,
 				1500000,
-				dec8_s_readmem,dec8_s_writemem,0,0,
+				dec8_s_readmem,dec8_s_writemem,null,null,
 				ignore_interrupt,0	/* IRQs are caused by the YM3812 */
 									/* NMIs are caused by the main CPU */
-			}
+			)
 		},
 		58, 2500, /* 58Hz, 529ms Vblank duration */
 		1,	/* 1 CPU slice per frame - interleaving is forced when a sound command is written */
-		0,	/* init machine */
+		null,	/* init machine */
 	
 		/* video hardware */
-	  	32*8, 32*8, { 0*8, 32*8-1, 1*8, 31*8-1 },
+	  	32*8, 32*8, new rectangle( 0*8, 32*8-1, 1*8, 31*8-1 ),
 	
 		ghostb_gfxdecodeinfo,
-		1024, 0,
+		1024, null,
 		ghostb_vh_convert_color_prom,
 	
 		VIDEO_TYPE_RASTER | VIDEO_BUFFERS_SPRITERAM,
 		dec8_eof_callback,
 		ghostb_vh_start,
-		0,
+		null,
 		ghostb_vh_screenrefresh,
 	
 		/* sound hardware */
 		0,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_YM2203,
-				&ym2203_interface
-			},
-			{
+				ym2203_interface
+			),
+			new MachineSound(
 				SOUND_YM3812,
-				&ym3812_interface
-			}
+				ym3812_interface
+			)
 		}
-	};
+	);
 	
-	static const struct MachineDriver machine_driver_srdarwin =
-	{
+	static MachineDriver machine_driver_srdarwin = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_M6809,  /* MC68A09EP */
 				2000000,
-				srdarwin_readmem,srdarwin_writemem,0,0,
+				srdarwin_readmem,srdarwin_writemem,null,null,
 				nmi_interrupt,1
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_M6502 | CPU_AUDIO_CPU,
 				1500000,
-				dec8_s_readmem,dec8_s_writemem,0,0,
+				dec8_s_readmem,dec8_s_writemem,null,null,
 				ignore_interrupt,0	/* IRQs are caused by the YM3812 */
 									/* NMIs are caused by the main CPU */
-			}
+			)
 		},
 		58, 529, /* 58Hz, 529ms Vblank duration */
 		1,	/* 1 CPU slice per frame - interleaving is forced when a sound command is written */
-		0,	/* init machine */
+		null,	/* init machine */
 	
 		/* video hardware */
-	  	32*8, 32*8, { 0*8, 32*8-1, 1*8, 31*8-1 },
+	  	32*8, 32*8, new rectangle( 0*8, 32*8-1, 1*8, 31*8-1 ),
 	
 		srdarwin_gfxdecodeinfo,
-		144, 0,
-		0,
+		144, null,
+		null,
 	
 		VIDEO_TYPE_RASTER | VIDEO_BUFFERS_SPRITERAM,
-		0,
+		null,
 		srdarwin_vh_start,
-		0,
+		null,
 		srdarwin_vh_screenrefresh,
 	
 		/* sound hardware */
 		0,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_YM2203,
-				&ym2203_interface
-			},
-			{
+				ym2203_interface
+			),
+			new MachineSound(
 				SOUND_YM3812,
-				&ym3812_interface
-			}
+				ym3812_interface
+			)
 		}
-	};
+	);
 	
-	static const struct MachineDriver machine_driver_gondo =
-	{
+	static MachineDriver machine_driver_gondo = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-	 		{
+		new MachineCPU[] {
+	 		new MachineCPU(
 				CPU_HD6309, /* HD63C09EP */
 				3000000,
-				gondo_readmem,gondo_writemem,0,0,
+				gondo_readmem,gondo_writemem,null,null,
 				gondo_interrupt,1
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_M6502 | CPU_AUDIO_CPU,
 				1500000,
-				dec8_s_readmem,dec8_s_writemem,0,0,
+				dec8_s_readmem,dec8_s_writemem,null,null,
 				ignore_interrupt,0	/* IRQs are caused by the YM3526 */
 									/* NMIs are caused by the main CPU */
-			}
+			)
 		},
 		58, 529, /* 58Hz, 529ms Vblank duration */
 		1,	/* 1 CPU slice per frame - interleaving is forced when a sound command is written */
-		0,	/* init machine */
+		null,	/* init machine */
 	
 		/* video hardware */
-		32*8, 32*8, { 0*8, 32*8-1, 1*8, 31*8-1 },
+		32*8, 32*8, new rectangle( 0*8, 32*8-1, 1*8, 31*8-1 ),
 	
 		gondo_gfxdecodeinfo,
-		1024, 0,
-		0,
+		1024, null,
+		null,
 	
 		VIDEO_TYPE_RASTER | VIDEO_BUFFERS_SPRITERAM,
 		dec8_eof_callback,
 		gondo_vh_start,
-		0,
+		null,
 		gondo_vh_screenrefresh,
 	
 		/* sound hardware */
 		0,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_YM2203,
-				&ym2203_interface
-			},
-			{
+				ym2203_interface
+			),
+			new MachineSound(
 				SOUND_YM3526,
-				&ym3526_interface
-			}
+				ym3526_interface
+			)
 		}
-	};
+	);
 	
-	static const struct MachineDriver machine_driver_oscar =
-	{
+	static MachineDriver machine_driver_oscar = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-		  	{
+		new MachineCPU[] {
+		  	new MachineCPU(
 				CPU_HD6309,
 				2000000,
-				oscar_readmem,oscar_writemem,0,0,
+				oscar_readmem,oscar_writemem,null,null,
 				oscar_interrupt,1
-			},
-		 	{
+			),
+		 	new MachineCPU(
 				CPU_HD6309,
 				2000000,
-				oscar_sub_readmem,oscar_sub_writemem,0,0,
+				oscar_sub_readmem,oscar_sub_writemem,null,null,
 				ignore_interrupt,0
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_M6502 | CPU_AUDIO_CPU,
 				1500000,
-				dec8_s_readmem,dec8_s_writemem,0,0,
+				dec8_s_readmem,dec8_s_writemem,null,null,
 				ignore_interrupt,0	/* IRQs are caused by the YM3526 */
 									/* NMIs are caused by the main CPU */
-			}
+			)
 		},
 		58, 2500, /* 58Hz, 529ms Vblank duration */
 		40, /* 40 CPU slices per frame */
-		0,	/* init machine */
+		null,	/* init machine */
 	
 		/* video hardware */
-	  	32*8, 32*8, { 0*8, 32*8-1, 1*8, 31*8-1 },
+	  	32*8, 32*8, new rectangle( 0*8, 32*8-1, 1*8, 31*8-1 ),
 	
 		oscar_gfxdecodeinfo,
-		512, 0,
-		0,
+		512, null,
+		null,
 	
 		VIDEO_TYPE_RASTER | VIDEO_BUFFERS_SPRITERAM,
-		0,
+		null,
 		oscar_vh_start,
-		0,
+		null,
 		oscar_vh_screenrefresh,
 	
 		/* sound hardware */
 		0,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_YM2203,
-				&ym2203_interface
-			},
-			{
+				ym2203_interface
+			),
+			new MachineSound(
 				SOUND_YM3526,
-				&oscar_ym3526_interface
-			}
+				oscar_ym3526_interface
+			)
 		}
-	};
+	);
 	
-	static const struct MachineDriver machine_driver_lastmiss =
-	{
+	static MachineDriver machine_driver_lastmiss = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-	  		{
+		new MachineCPU[] {
+	  		new MachineCPU(
 				CPU_M6809,
 				2000000,
-				lastmiss_readmem,lastmiss_writemem,0,0,
+				lastmiss_readmem,lastmiss_writemem,null,null,
 				ignore_interrupt,0
-			},
-	     	{
+			),
+	     	new MachineCPU(
 				CPU_M6809,
 				2000000,
-				lastmiss_sub_readmem,lastmiss_sub_writemem,0,0,
+				lastmiss_sub_readmem,lastmiss_sub_writemem,null,null,
 				ignore_interrupt,0
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_M6502 | CPU_AUDIO_CPU,
 				1500000,
-				ym3526_s_readmem,ym3526_s_writemem,0,0,
+				ym3526_s_readmem,ym3526_s_writemem,null,null,
 				ignore_interrupt,0	/* IRQs are caused by the YM3526 */
 									/* NMIs are caused by the main CPU */
-			}
+			)
 		},
 		58, 2500, /* 58Hz, 529ms Vblank duration */
 		200,
-		0,	/* init machine */
+		null,	/* init machine */
 	
 		/* video hardware */
-	  	32*8, 32*8, { 0*8, 32*8-1, 1*8, 31*8-1 },
+	  	32*8, 32*8, new rectangle( 0*8, 32*8-1, 1*8, 31*8-1 ),
 	
 		shackled_gfxdecodeinfo,
-		1024, 0,
-		0,
+		1024, null,
+		null,
 	
 		VIDEO_TYPE_RASTER | VIDEO_BUFFERS_SPRITERAM,
-		0,
+		null,
 		lastmiss_vh_start,
-		0,
+		null,
 		lastmiss_vh_screenrefresh,
 	
 		/* sound hardware */
 		0,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_YM2203,
-				&ym2203_interface
-			},
-			{
+				ym2203_interface
+			),
+			new MachineSound(
 				SOUND_YM3526,
-				&oscar_ym3526_interface
-			}
+				oscar_ym3526_interface
+			)
 		}
-	};
+	);
 	
-	static const struct MachineDriver machine_driver_shackled =
-	{
+	static MachineDriver machine_driver_shackled = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-	  		{
+		new MachineCPU[] {
+	  		new MachineCPU(
 				CPU_M6809,
 				2000000,
-				shackled_readmem,shackled_writemem,0,0,
+				shackled_readmem,shackled_writemem,null,null,
 			   	ignore_interrupt,0
-			},
-	     	{
+			),
+	     	new MachineCPU(
 				CPU_M6809,
 				2000000,
-				shackled_sub_readmem,shackled_sub_writemem,0,0,
+				shackled_sub_readmem,shackled_sub_writemem,null,null,
 				ignore_interrupt,0
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_M6502 | CPU_AUDIO_CPU,
 				1500000,
-				ym3526_s_readmem,ym3526_s_writemem,0,0,
+				ym3526_s_readmem,ym3526_s_writemem,null,null,
 				ignore_interrupt,0	/* IRQs are caused by the YM3526 */
 									/* NMIs are caused by the main CPU */
-			}
+			)
 		},
 		58, 2500, /* 58Hz, 529ms Vblank duration */
 		80,
-		0,	/* init machine */
+		null,	/* init machine */
 	
 		/* video hardware */
-		32*8, 32*8, { 0*8, 32*8-1, 1*8, 31*8-1 },
+		32*8, 32*8, new rectangle( 0*8, 32*8-1, 1*8, 31*8-1 ),
 	
 		shackled_gfxdecodeinfo,
-		1024, 0,
-		0,
+		1024, null,
+		null,
 	
 		VIDEO_TYPE_RASTER | VIDEO_BUFFERS_SPRITERAM,
-		0,
+		null,
 		shackled_vh_start,
-		0,
+		null,
 		shackled_vh_screenrefresh,
 	
 		/* sound hardware */
 		0,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_YM2203,
-				&ym2203_interface
-			},
-			{
+				ym2203_interface
+			),
+			new MachineSound(
 				SOUND_YM3526,
-				&oscar_ym3526_interface
-			}
+				oscar_ym3526_interface
+			)
 		}
-	};
+	);
 	
-	static const struct MachineDriver machine_driver_csilver =
-	{
+	static MachineDriver machine_driver_csilver = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-	  		{
+		new MachineCPU[] {
+	  		new MachineCPU(
 				CPU_M6809,
 				2000000,
-				csilver_readmem,csilver_writemem,0,0,
+				csilver_readmem,csilver_writemem,null,null,
 			   	ignore_interrupt,0
-			},
-	     	{
+			),
+	     	new MachineCPU(
 				CPU_M6809,
 				2000000,
-				csilver_sub_readmem,csilver_sub_writemem,0,0,
+				csilver_sub_readmem,csilver_sub_writemem,null,null,
 				nmi_interrupt,1
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_M6502 | CPU_AUDIO_CPU,
 				1500000,
-				csilver_s_readmem,csilver_s_writemem,0,0,
+				csilver_s_readmem,csilver_s_writemem,null,null,
 				ignore_interrupt,0	/* IRQs are caused by the MSM5205 */
 									/* NMIs are caused by the main CPU */
-			}
+			)
 		},
 		58, 529, /* 58Hz, 529ms Vblank duration */
 		100,
-		0,	/* init machine */
+		null,	/* init machine */
 	
 		/* video hardware */
-		32*8, 32*8, { 0*8, 32*8-1, 1*8, 31*8-1 },
+		32*8, 32*8, new rectangle( 0*8, 32*8-1, 1*8, 31*8-1 ),
 	
 		shackled_gfxdecodeinfo,
-		1024, 0,
-		0,
+		1024, null,
+		null,
 	
 		VIDEO_TYPE_RASTER | VIDEO_BUFFERS_SPRITERAM,
-		0,
+		null,
 		lastmiss_vh_start,
-		0,
+		null,
 		lastmiss_vh_screenrefresh,
 	
 		/* sound hardware */
 		0,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_YM2203,
-				&ym2203_interface
-			},
-			{
+				ym2203_interface
+			),
+			new MachineSound(
 				SOUND_YM3526,
-				&oscar_ym3526_interface
-			},
-			{
+				oscar_ym3526_interface
+			),
+			new MachineSound(
 				SOUND_MSM5205,
-				&msm5205_interface
-		    }
+				msm5205_interface
+		    )
 		}
-	};
+	);
 	
-	static const struct MachineDriver machine_driver_garyoret =
-	{
+	static MachineDriver machine_driver_garyoret = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-	 		{
+		new MachineCPU[] {
+	 		new MachineCPU(
 				CPU_HD6309, /* HD63C09EP */
 				3000000,
-				garyoret_readmem,garyoret_writemem,0,0,
+				garyoret_readmem,garyoret_writemem,null,null,
 				gondo_interrupt,1
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_M6502 | CPU_AUDIO_CPU,
 				1500000,
-				dec8_s_readmem,dec8_s_writemem,0,0,
+				dec8_s_readmem,dec8_s_writemem,null,null,
 				ignore_interrupt,0	/* IRQs are caused by the YM3526 */
 									/* NMIs are caused by the main CPU */
-			}
+			)
 		},
 		58, 529, /* 58Hz, 529ms Vblank duration */
 		1,	/* 1 CPU slice per frame - interleaving is forced when a sound command is written */
-		0,	/* init machine */
+		null,	/* init machine */
 	
 		/* video hardware */
-		32*8, 32*8, { 0*8, 32*8-1, 1*8, 31*8-1 },
+		32*8, 32*8, new rectangle( 0*8, 32*8-1, 1*8, 31*8-1 ),
 	
 		gondo_gfxdecodeinfo,
-		1024, 0,
-		0,
+		1024, null,
+		null,
 	
 		VIDEO_TYPE_RASTER | VIDEO_BUFFERS_SPRITERAM,
 		dec8_eof_callback,
 		garyoret_vh_start,
-		0,
+		null,
 		garyoret_vh_screenrefresh,
 	
 		/* sound hardware */
 		0,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_YM2203,
-				&ym2203_interface
-			},
-			{
+				ym2203_interface
+			),
+			new MachineSound(
 				SOUND_YM3526,
-				&ym3526_interface
-			}
+				ym3526_interface
+			)
 		}
-	};
+	);
 	
 	/******************************************************************************/
 	

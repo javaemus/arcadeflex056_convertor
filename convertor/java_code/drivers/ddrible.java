@@ -350,59 +350,59 @@ public class ddrible
 		0x10000,    /* memory size 64Kbyte * 2 bank */
 	};
 	
-	static const struct MachineDriver machine_driver_ddribble =
-	{
+	static MachineDriver machine_driver_ddribble = new MachineDriver
+	(
 		/* basic machine hardware  */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_M6809,			/* CPU #0 */
 				1536000,			/* 18432000/12 MHz? */
-				readmem_cpu0,writemem_cpu0,0,0,
+				readmem_cpu0,writemem_cpu0,null,null,
 				ddrible_interrupt_0,1
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_M6809,			/* CPU #1 */
 				1536000,			/* 18432000/12 MHz? */
-				readmem_cpu1,writemem_cpu1,0,0,
+				readmem_cpu1,writemem_cpu1,null,null,
 				ddrible_interrupt_1,1
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_M6809,			/* SOUND CPU */
 				1536000,			/* 18432000/12 MHz? */
-				readmem_cpu2,writemem_cpu2,0,0,
+				readmem_cpu2,writemem_cpu2,null,null,
 				ignore_interrupt,1
-			},
+			),
 		},
 		60, DEFAULT_60HZ_VBLANK_DURATION,
 		100,	/* we need heavy synch */
-		0,
+		null,
 	
 		/* video hardware */
-		32*8, 32*8, { 0*8, 32*8-1, 2*8, 30*8-1 },
+		32*8, 32*8, new rectangle( 0*8, 32*8-1, 2*8, 30*8-1 ),
 		/*64*8, 32*8, { 0*8, 64*8-1, 2*8, 30*8-1 }, */
 		gfxdecodeinfo,
 		64, 64 + 256,
 		ddrible_vh_convert_color_prom,
 	
 		VIDEO_TYPE_RASTER,
-		0,
+		null,
 		ddrible_vh_start,
 		0,
 		ddrible_vh_screenrefresh,
 	
 		/* sound hardware */
 		0,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_YM2203,
-				&ym2203_interface
-			},
-			{
+				ym2203_interface
+			),
+			new MachineSound(
 				SOUND_VLM5030,
-				&vlm5030_interface
-			}
+				vlm5030_interface
+			)
 		}
-	};
+	);
 	
 	
 	static RomLoadPtr rom_ddribble = new RomLoadPtr(){ public void handler(){ 

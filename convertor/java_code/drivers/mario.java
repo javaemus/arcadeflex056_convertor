@@ -414,96 +414,96 @@ public class mario
 	};
 	
 	
-	static const struct MachineDriver machine_driver_mario =
-	{
+	static MachineDriver machine_driver_mario = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_Z80,
 				3072000,	/* 3.072 MHz (?) */
-				readmem,writemem,0,mario_writeport,
+				readmem,writemem,null,mario_writeport,
 				nmi_interrupt,1
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_I8039 | CPU_AUDIO_CPU,
 				730000,         /* 730 kHz */
 				readmem_sound,writemem_sound,readport_sound,writeport_sound,
 				ignore_interrupt,1
-			}
+			)
 		},
 		60, DEFAULT_60HZ_VBLANK_DURATION,	/* frames per second, vblank duration */
 		1,	/* 1 CPU slice per frame - interleaving is forced when a sound command is written */
-		0,
+		null,
 	
 		/* video hardware */
-		32*8, 32*8, { 0*8, 32*8-1, 2*8, 30*8-1 },
+		32*8, 32*8, new rectangle( 0*8, 32*8-1, 2*8, 30*8-1 ),
 		gfxdecodeinfo,
 		256,16*4+32*8,
 		mario_vh_convert_color_prom,
 	
 		VIDEO_TYPE_RASTER,
-		0,
+		null,
 		generic_vh_start,
 		generic_vh_stop,
 		mario_vh_screenrefresh,
 	
 		/* sound hardware */
 		0,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_DAC,
-				&dac_interface
-			},
-			{
+				dac_interface
+			),
+			new MachineSound(
 				SOUND_SAMPLES,
-				&samples_interface
-			}
+				samples_interface
+			)
 		}
-	};
+	);
 	
-	static const struct MachineDriver machine_driver_masao =
-	{
+	static MachineDriver machine_driver_masao = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_Z80,
 				4000000,        /* 4.000 MHz (?) */
-				readmem,masao_writemem,0,0,
+				readmem,masao_writemem,null,null,
 				nmi_interrupt,1
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_Z80 | CPU_AUDIO_CPU,
 				24576000/16,	/* ???? */
-				masao_sound_readmem,masao_sound_writemem,0,0,
+				masao_sound_readmem,masao_sound_writemem,null,null,
 				ignore_interrupt,1
-			}
+			)
 	
 			},
 		60, DEFAULT_60HZ_VBLANK_DURATION,	/* frames per second, vblank duration */
 		1,	/* 1 CPU slice per frame - interleaving is forced when a sound command is written */
-		0,
+		null,
 	
 		/* video hardware */
-		32*8, 32*8, { 0*8, 32*8-1, 2*8, 30*8-1 },
+		32*8, 32*8, new rectangle( 0*8, 32*8-1, 2*8, 30*8-1 ),
 		gfxdecodeinfo,
 		256,16*4+32*8,
 		mario_vh_convert_color_prom,
 	
 		VIDEO_TYPE_RASTER,
-		0,
+		null,
 		generic_vh_start,
 		generic_vh_stop,
 		mario_vh_screenrefresh,
 	
 		/* sound hardware */
 		0,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_AY8910,
-				&ay8910_interface
-			}
+				ay8910_interface
+			)
 		}
-	};
+	);
 	
 	
 	

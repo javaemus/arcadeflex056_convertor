@@ -376,59 +376,59 @@ public class junofrst
 	};
 	
 	
-	static const struct MachineDriver machine_driver_junofrst =
-	{
+	static MachineDriver machine_driver_junofrst = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_M6809,
 				1500000,			/* 1.5 MHz ??? */
-				readmem,writemem,0,0,
+				readmem,writemem,null,null,
 				interrupt,1
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_Z80 | CPU_AUDIO_CPU,
 				14318000/8,	/* 1.78975 MHz */
-				sound_readmem,sound_writemem,0,0,
+				sound_readmem,sound_writemem,null,null,
 				ignore_interrupt,1	/* interrupts are triggered by the main CPU */
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_I8039 | CPU_AUDIO_CPU,
 				8000000/15,	/* 8MHz crystal */
 				i8039_readmem,i8039_writemem,i8039_readport,i8039_writeport,
 				ignore_interrupt,1
-			}
+			)
 		},
 		30, DEFAULT_30HZ_VBLANK_DURATION,	/* frames per second, vblank duration */
 		1,	/* 1 CPU slice per frame - interleaving is forced when a sound command is written */
-		0,				/* init machine routine */
+		null,				/* init machine routine */
 	
 		/* video hardware */
-		32*8, 32*8, { 0*8, 32*8-1, 2*8, 30*8-1 },	/* not sure about the visible area */
-		0,					/* GfxDecodeInfo * */
+		32*8, 32*8, new rectangle( 0*8, 32*8-1, 2*8, 30*8-1 ),	/* not sure about the visible area */
+		null,					/* GfxDecodeInfo * */
 		16,                                  /* total colors */
-		0,                                      /* color table length */
-		0,			/* convert color prom routine */
+		null,                                      /* color table length */
+		null,			/* convert color prom routine */
 	
 		VIDEO_TYPE_RASTER,
-		0,						/* vh_init routine */
+		null,						/* vh_init routine */
 		generic_vh_start,					/* vh_start routine */
 		generic_vh_stop,					/* vh_stop routine */
 		tutankhm_vh_screenrefresh,				/* vh_update routine */
 	
 		/* sound hardware */
 		0,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_AY8910,
-				&ay8910_interface
-			},
-			{
+				ay8910_interface
+			),
+			new MachineSound(
 				SOUND_DAC,
-				&dac_interface
-			}
+				dac_interface
+			)
 		}
-	};
+	);
 	
 	
 	static RomLoadPtr rom_junofrst = new RomLoadPtr(){ public void handler(){ 

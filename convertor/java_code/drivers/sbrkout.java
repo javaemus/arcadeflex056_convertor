@@ -213,42 +213,42 @@ public class sbrkout
 	
 	
 	
-	static const struct MachineDriver machine_driver_sbrkout =
-	{
+	static MachineDriver machine_driver_sbrkout = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_M6502,
 				375000, 	   /* 375 KHz? Should be 750KHz? */
-				readmem,writemem,0,0,
+				readmem,writemem,null,null,
 				sbrkout_interrupt,1
-			}
+			)
 		},
 		60, DEFAULT_REAL_60HZ_VBLANK_DURATION,	/* frames per second, vblank duration */
 		1,	/* single CPU, no need for interleaving */
-		0,
+		null,
 	
 		/* video hardware */
-		32*8, 28*8, { 0*8, 32*8-1, 0*8, 28*8-1 },
+		32*8, 28*8, new rectangle( 0*8, 32*8-1, 0*8, 28*8-1 ),
 		gfxdecodeinfo,
 		ARTWORK_COLORS,ARTWORK_COLORS,		/* Declare extra colors for the overlay */
 		init_palette,
 	
 		VIDEO_TYPE_RASTER,
-		0,
+		null,
 		sbrkout_vh_start,
 		generic_vh_stop,
 		sbrkout_vh_screenrefresh,
 	
 		/* sound hardware */
 		0,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_DAC,
-				&dac_interface
-			}
+				dac_interface
+			)
 		}
-	};
+	);
 	
 	
 	

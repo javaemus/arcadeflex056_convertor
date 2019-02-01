@@ -265,46 +265,46 @@ public class _8080bw
 	INPUT_PORTS_END(); }}; 
 	
 	
-	static const struct MachineDriver machine_driver_invaders =
-	{
+	static MachineDriver machine_driver_invaders = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_8080,
 				2000000,        /* 2 MHz? */
 				invaders_readmem,invaders_writemem,invaders_readport,writeport_2_4,
 				invaders_interrupt,2    /* two interrupts per frame */
-			}
+			)
 		},
 		60, DEFAULT_60HZ_VBLANK_DURATION,       /* frames per second, vblank duration */
 		1,      /* single CPU, no need for interleaving */
 		init_machine_invaders,
 	
 		/* video hardware */
-		32*8, 32*8, { 0*8, 32*8-1, 0*8, 28*8-1 },
-		0,      /* no gfxdecodeinfo - bitmapped display */
-		32768+2, 0,		/* leave extra colors for the overlay */
+		32*8, 32*8, new rectangle( 0*8, 32*8-1, 0*8, 28*8-1 ),
+		null,      /* no gfxdecodeinfo - bitmapped display */
+		32768+2, null,		/* leave extra colors for the overlay */
 		init_palette,
 	
 		VIDEO_TYPE_RASTER | VIDEO_SUPPORTS_DIRTY ,
-		0,
+		null,
 		invaders_vh_start,
 		invaders_vh_stop,
 		invaders_vh_screenrefresh,
 	
 		/* sound hardware */
 		0, 0, 0, 0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_SAMPLES,
-				&invaders_samples_interface
-			},
-			{
+				invaders_samples_interface
+			),
+			new MachineSound(
 				SOUND_SN76477,
-				&invaders_sn76477_interface
-			}
+				invaders_sn76477_interface
+			)
 		}
-	};
+	);
 	
 	
 	/*******************************************************/
@@ -415,46 +415,46 @@ public class _8080bw
 	
 	/* same as regular invaders, but with a color board added */
 	
-	static const struct MachineDriver machine_driver_invadpt2 =
-	{
+	static MachineDriver machine_driver_invadpt2 = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_8080,
 				2000000,        /* 2 MHz? */
 				invaders_readmem,invaders_writemem,invaders_readport,writeport_2_4,
 				invaders_interrupt,2    /* two interrupts per frame */
-			}
+			)
 		},
 		60, DEFAULT_60HZ_VBLANK_DURATION,       /* frames per second, vblank duration */
 		1,      /* single CPU, no need for interleaving */
 		init_machine_invaders,
 	
 		/* video hardware */
-		32*8, 32*8, { 0*8, 32*8-1, 0*8, 28*8-1 },
-		0,      /* no gfxdecodeinfo - bitmapped display */
-		8, 0,
+		32*8, 32*8, new rectangle( 0*8, 32*8-1, 0*8, 28*8-1 ),
+		null,      /* no gfxdecodeinfo - bitmapped display */
+		8, null,
 		invadpt2_vh_convert_color_prom,
 	
 		VIDEO_TYPE_RASTER | VIDEO_SUPPORTS_DIRTY ,
-		0,
+		null,
 		invaders_vh_start,
 		invaders_vh_stop,
 		invaders_vh_screenrefresh,
 	
 		/* sound hardware */
 		0, 0, 0, 0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_SAMPLES,
-				&invaders_samples_interface
-			},
-			{
+				invaders_samples_interface
+			),
+			new MachineSound(
 				SOUND_SN76477,
-				&invaders_sn76477_interface
-			}
+				invaders_sn76477_interface
+			)
 		}
-	};
+	);
 	
 	
 	/*******************************************************/
@@ -664,46 +664,46 @@ public class _8080bw
 	INPUT_PORTS_END(); }}; 
 	
 	
-	static const struct MachineDriver machine_driver_invad2ct =
-	{
+	static MachineDriver machine_driver_invad2ct = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_8080,
 				1996800,        /* 19.968MHz / 10 */
 				invaders_readmem,invaders_writemem,invaders_readport,writeport_2_4,
 				invaders_interrupt,2    /* two interrupts per frame */
-			}
+			)
 		},
 		60, DEFAULT_60HZ_VBLANK_DURATION,       /* frames per second, vblank duration */
 		1,      /* single CPU, no need for interleaving */
 		init_machine_invad2ct,
 	
 		/* video hardware */
-		32*8, 32*8, { 0*8, 32*8-1, 0*8, 28*8-1 },
-		0,      /* no gfxdecodeinfo - bitmapped display */
-		32768+2, 0,		/* leave extra colors for the overlay */
+		32*8, 32*8, new rectangle( 0*8, 32*8-1, 0*8, 28*8-1 ),
+		null,      /* no gfxdecodeinfo - bitmapped display */
+		32768+2, null,		/* leave extra colors for the overlay */
 		init_palette,
 	
 		VIDEO_TYPE_RASTER | VIDEO_SUPPORTS_DIRTY ,
-		0,
+		null,
 		invaders_vh_start,
 		invaders_vh_stop,
 		invaders_vh_screenrefresh,
 	
 		/* sound hardware */
 		0, 0, 0, 0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_SAMPLES,
-				&invad2ct_samples_interface
-			},
-			{
+				invad2ct_samples_interface
+			),
+			new MachineSound(
 				SOUND_SN76477,
-				&invad2ct_sn76477_interface
-			}
+				invad2ct_sn76477_interface
+			)
 		}
-	};
+	);
 	
 	
 	/*******************************************************/
@@ -828,87 +828,87 @@ public class _8080bw
 		PORT_BITX(0,  0x02, IPT_DIPSWITCH_SETTING | IPF_CHEAT, "Fast", IP_KEY_NONE, IP_JOY_NONE );
 	INPUT_PORTS_END(); }}; 
 	
-	static const struct MachineDriver machine_driver_sstrangr =
-	{
+	static MachineDriver machine_driver_sstrangr = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_8080,
 				2000000,        /* 2 MHz? */
 				invaders_readmem,invaders_writemem,sstrngr2_readport,sstrngr2_writeport,
 				interrupt,2    /* two interrupts per frame */
-			}
+			)
 		},
 		60, DEFAULT_REAL_60HZ_VBLANK_DURATION,       /* frames per second, vblank duration */
 		1,      /* single CPU, no need for interleaving */
 		init_machine_sstrngr2,
 	
 		/* video hardware */
-		32*8, 32*8, { 0*8, 32*8-1, 0*8, 28*8-1 },
-		0,      /* no gfxdecodeinfo - bitmapped display */
-		32768+2, 0,		/* leave extra colors for the overlay */
+		32*8, 32*8, new rectangle( 0*8, 32*8-1, 0*8, 28*8-1 ),
+		null,      /* no gfxdecodeinfo - bitmapped display */
+		32768+2, null,		/* leave extra colors for the overlay */
 		init_palette,
 	
 		VIDEO_TYPE_RASTER | VIDEO_SUPPORTS_DIRTY ,
-		0,
+		null,
 		invaders_vh_start,
 		invaders_vh_stop,
 		invaders_vh_screenrefresh,
 	
 		/* sound hardware */
 		0, 0, 0, 0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_SAMPLES,
-				&invaders_samples_interface
-			},
-			{
+				invaders_samples_interface
+			),
+			new MachineSound(
 				SOUND_SN76477,
-				&invaders_sn76477_interface
-			}
+				invaders_sn76477_interface
+			)
 		}
-	};
+	);
 	
-	static const struct MachineDriver machine_driver_sstrngr2 =
-	{
+	static MachineDriver machine_driver_sstrngr2 = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_8080,
 				2000000,        /* 2 MHz? */
 				invaders_readmem,invaders_writemem,sstrngr2_readport,sstrngr2_writeport,
 				interrupt,2    /* two interrupts per frame */
-			}
+			)
 		},
 		60, DEFAULT_REAL_60HZ_VBLANK_DURATION,       /* frames per second, vblank duration */
 		1,      /* single CPU, no need for interleaving */
 		init_machine_sstrngr2,
 	
 		/* video hardware */
-		32*8, 32*8, { 0*8, 32*8-1, 0*8, 28*8-1 },
-		0,      /* no gfxdecodeinfo - bitmapped display */
-		8, 0,
+		32*8, 32*8, new rectangle( 0*8, 32*8-1, 0*8, 28*8-1 ),
+		null,      /* no gfxdecodeinfo - bitmapped display */
+		8, null,
 		invadpt2_vh_convert_color_prom,
 	
 		VIDEO_TYPE_RASTER | VIDEO_SUPPORTS_DIRTY ,
-		0,
+		null,
 		invaders_vh_start,
 		invaders_vh_stop,
 		invaders_vh_screenrefresh,
 	
 		/* sound hardware */
 		0, 0, 0, 0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_SAMPLES,
-				&invaders_samples_interface
-			},
-			{
+				invaders_samples_interface
+			),
+			new MachineSound(
 				SOUND_SN76477,
-				&invaders_sn76477_interface
-			}
+				invaders_sn76477_interface
+			)
 		}
-	};
+	);
 	
 	
 	/*******************************************************/
@@ -1250,36 +1250,36 @@ public class _8080bw
 	INPUT_PORTS_END(); }}; 
 	
 	
-	static const struct MachineDriver machine_driver_rollingc =
-	{
+	static MachineDriver machine_driver_rollingc = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_8080,
 				2000000,        /* 2 MHz? */
 				rollingc_readmem,rollingc_writemem,invaders_readport,writeport_2_4,
 				invaders_interrupt,2    /* two interrupts per frame */
-			}
+			)
 		},
 		60, DEFAULT_60HZ_VBLANK_DURATION,       /* frames per second, vblank duration */
 		1,      /* single CPU, no need for interleaving */
-		0,
+		null,
 	
 		/* video hardware */
-		32*8, 32*8, { 0*8, 32*8-1, 0*8, 28*8-1 },
-		0,      /* no gfxdecodeinfo - bitmapped display */
-		8, 0,
+		32*8, 32*8, new rectangle( 0*8, 32*8-1, 0*8, 28*8-1 ),
+		null,      /* no gfxdecodeinfo - bitmapped display */
+		8, null,
 		invadpt2_vh_convert_color_prom,
 	
 		VIDEO_TYPE_RASTER | VIDEO_SUPPORTS_DIRTY ,
-		0,
+		null,
 		invaders_vh_start,
 		invaders_vh_stop,
 		invaders_vh_screenrefresh,
 	
 		/* sound hardware */
 		0, 0, 0, 0
-	};
+	);
 	
 	
 	
@@ -1464,53 +1464,53 @@ public class _8080bw
 	INPUT_PORTS_END(); }}; 
 	
 	
-	static const struct MachineDriver machine_driver_sheriff =
-	{
+	static MachineDriver machine_driver_sheriff = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_8080,
 				20160000/8,        /* 2.52 MHz */
 				sheriff_readmem,sheriff_writemem,sheriff_readport,writeport_2_3,
 				invaders_interrupt,2    /* two interrupts per frame */
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_I8035 | CPU_AUDIO_CPU,
 				6000000/15,	/* ??? */
 				sheriff_sound_readmem,sheriff_sound_writemem,
 				sheriff_sound_readport,sheriff_sound_writeport,
 				ignore_interrupt,1
-			}
+			)
 		},
 		60, DEFAULT_60HZ_VBLANK_DURATION,       /* frames per second, vblank duration */
 		1,      /* single CPU, no need for interleaving */
 		init_machine_sheriff,
 	
 		/* video hardware */
-		32*8, 32*8, { 0*8, 32*8-1, 0*8, 28*8-1 },
-		0,      /* no gfxdecodeinfo - bitmapped display */
-		32768+2, 0,		/* leave extra colors for the overlay */
+		32*8, 32*8, new rectangle( 0*8, 32*8-1, 0*8, 28*8-1 ),
+		null,      /* no gfxdecodeinfo - bitmapped display */
+		32768+2, null,		/* leave extra colors for the overlay */
 		init_palette,
 	
 		VIDEO_TYPE_RASTER | VIDEO_SUPPORTS_DIRTY ,
-		0,
+		null,
 		invaders_vh_start,
 		invaders_vh_stop,
 		invaders_vh_screenrefresh,
 	
 		/* sound hardware */
 		0, 0, 0, 0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_DAC,
-				&sheriff_dac_interface
-			},
-			{
+				sheriff_dac_interface
+			),
+			new MachineSound(
 				SOUND_SN76477,
-				&sheriff_sn76477_interface
-			}
+				sheriff_sn76477_interface
+			)
 		}
-	};
+	);
 	
 	
 	/*******************************************************/
@@ -1562,36 +1562,36 @@ public class _8080bw
 		PORT_DIPSETTING(    0xc0, "90" );
 	INPUT_PORTS_END(); }}; 
 	
-	static const struct MachineDriver machine_driver_spcenctr =
-	{
+	static MachineDriver machine_driver_spcenctr = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_8080,
 				2000000,        /* 2 MHz? */
 				invaders_readmem,invaders_writemem,spcenctr_readport,0,
 				invaders_interrupt,2    /* two interrupts per frame */
-			}
+			)
 		},
 		60, DEFAULT_60HZ_VBLANK_DURATION,
 		1,      /* single CPU, no need for interleaving */
-		0,
+		null,
 	
 		/* video hardware */
-		32*8, 32*8, { 0*8, 32*8-1, 0*8, 28*8-1 },
-		0,      /* no gfxdecodeinfo - bitmapped display */
-		32768+2, 0,		/* leave extra colors for the overlay */
+		32*8, 32*8, new rectangle( 0*8, 32*8-1, 0*8, 28*8-1 ),
+		null,      /* no gfxdecodeinfo - bitmapped display */
+		32768+2, null,		/* leave extra colors for the overlay */
 		init_palette,
 	
 		VIDEO_TYPE_RASTER | VIDEO_SUPPORTS_DIRTY ,
-		0,
+		null,
 		invaders_vh_start,
 		invaders_vh_stop,
 	    invaders_vh_screenrefresh,
 	
 		/* sound hardware */
 		0, 0, 0, 0
-	};
+	);
 	
 	
 	/*******************************************************/
@@ -1672,36 +1672,36 @@ public class _8080bw
 		PORT_ANALOGX( 0xff, 0x00, IPT_PADDLE, 50, 10, 1, 255, KEYCODE_Z, KEYCODE_A, IP_JOY_NONE, IP_JOY_NONE );
 	INPUT_PORTS_END(); }}; 
 	
-	static const struct MachineDriver machine_driver_gunfight =
-	{
+	static MachineDriver machine_driver_gunfight = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_8080,
 				2000000,        /* 2 MHz? */
 				invaders_readmem,invaders_writemem,gunfight_readport,writeport_2_4,
 				invaders_interrupt,2    /* two interrupts per frame */
-			}
+			)
 		},
 		60, DEFAULT_60HZ_VBLANK_DURATION,
 		1,      /* single CPU, no need for interleaving */
 		init_machine_gunfight,
 	
 		/* video hardware */
-		32*8, 32*8, { 0*8, 32*8-1, 0*8, 28*8-1 },
-		0,      /* no gfxdecodeinfo - bitmapped display */
-		32768+2, 0,		/* leave extra colors for the overlay */
+		32*8, 32*8, new rectangle( 0*8, 32*8-1, 0*8, 28*8-1 ),
+		null,      /* no gfxdecodeinfo - bitmapped display */
+		32768+2, null,		/* leave extra colors for the overlay */
 		init_palette,
 	
 		VIDEO_TYPE_RASTER | VIDEO_SUPPORTS_DIRTY ,
-		0,
+		null,
 		invaders_vh_start,
 		invaders_vh_stop,
 	    invaders_vh_screenrefresh,
 	
 		/* sound hardware */
 		0, 0, 0, 0
-	};
+	);
 	
 	
 	/*******************************************************/
@@ -1748,36 +1748,36 @@ public class _8080bw
 		PORT_BIT( 0x80, IP_ACTIVE_LOW, IPT_UNKNOWN );
 	INPUT_PORTS_END(); }}; 
 	
-	static const struct MachineDriver machine_driver_m4 =
-	{
+	static MachineDriver machine_driver_m4 = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_8080,
 				2000000,        /* 2 MHz? */
 				invaders_readmem,invaders_writemem,gunfight_readport,writeport_1_2,
 				invaders_interrupt,2    /* two interrupts per frame */
-			}
+			)
 		},
 		60, DEFAULT_60HZ_VBLANK_DURATION,
 		1,      /* single CPU, no need for interleaving */
-		0,
+		null,
 	
 		/* video hardware */
-		32*8, 32*8, { 0*8, 32*8-1, 0*8, 28*8-1 },
-		0,      /* no gfxdecodeinfo - bitmapped display */
-		32768+2, 0,		/* leave extra colors for the overlay */
+		32*8, 32*8, new rectangle( 0*8, 32*8-1, 0*8, 28*8-1 ),
+		null,      /* no gfxdecodeinfo - bitmapped display */
+		32768+2, null,		/* leave extra colors for the overlay */
 		init_palette,
 	
 		VIDEO_TYPE_RASTER | VIDEO_SUPPORTS_DIRTY ,
-		0,
+		null,
 		invaders_vh_start,
 		invaders_vh_stop,
 	    invaders_vh_screenrefresh,
 	
 		/* sound hardware */
 		0, 0, 0, 0
-	};
+	);
 	
 	
 	/*******************************************************/
@@ -1826,42 +1826,42 @@ public class _8080bw
 	INPUT_PORTS_END(); }}; 
 	
 	
-	static const struct MachineDriver machine_driver_boothill =
-	{
+	static MachineDriver machine_driver_boothill = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_8080,
 				2000000,        /* 2 MHz? */
 				invaders_readmem,invaders_writemem,gunfight_readport,writeport_1_2,
 				invaders_interrupt,2    /* two interrupts per frame */
-			}
+			)
 		},
 		60, DEFAULT_60HZ_VBLANK_DURATION,
 		1,      /* single CPU, no need for interleaving */
 		init_machine_boothill,
 	
 		/* video hardware */
-		32*8, 32*8, { 0*8, 32*8-1, 0*8, 28*8-1 },
-		0,      /* no gfxdecodeinfo - bitmapped display */
-		32768+2, 0,		/* leave extra colors for the overlay */
+		32*8, 32*8, new rectangle( 0*8, 32*8-1, 0*8, 28*8-1 ),
+		null,      /* no gfxdecodeinfo - bitmapped display */
+		32768+2, null,		/* leave extra colors for the overlay */
 		init_palette,
 	
 		VIDEO_TYPE_RASTER | VIDEO_SUPPORTS_DIRTY ,
-		0,
+		null,
 		invaders_vh_start,
 		invaders_vh_stop,
 		invaders_vh_screenrefresh,
 	
 		/* sound hardware */
 		0, 0, 0, 0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_SAMPLES,
-				&boothill_samples_interface
-			}
+				boothill_samples_interface
+			)
 		}
-	};
+	);
 	
 	
 	/*******************************************************/
@@ -1940,50 +1940,50 @@ public class _8080bw
 	INPUT_PORTS_END(); }}; 
 	
 	
-	static const struct MachineDriver machine_driver_schaser =
-	{
+	static MachineDriver machine_driver_schaser = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_8080,
 				1996800,        /* 19.968MHz / 10 */
 				schaser_readmem,schaser_writemem,invaders_readport,writeport_2_4,
 				invaders_interrupt,2    /* two interrupts per frame */
-			}
+			)
 		},
 		60, DEFAULT_60HZ_VBLANK_DURATION,       /* frames per second, vblank duration */
 		1,      /* single CPU, no need for interleaving */
 		init_machine_schaser,
 	
 		/* video hardware */
-		32*8, 32*8, { 0*8, 32*8-1, 0*8, 28*8-1 },
-		0,      /* no gfxdecodeinfo - bitmapped display */
-		8, 0,
+		32*8, 32*8, new rectangle( 0*8, 32*8-1, 0*8, 28*8-1 ),
+		null,      /* no gfxdecodeinfo - bitmapped display */
+		8, null,
 		invadpt2_vh_convert_color_prom,
 	
 		VIDEO_TYPE_RASTER | VIDEO_SUPPORTS_DIRTY ,
-		0,
+		null,
 		invaders_vh_start,
 		invaders_vh_stop,
 		invaders_vh_screenrefresh,
 	
 		/* sound hardware */
 		0, 0, 0, 0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_SN76477,
-				&schaser_sn76477_interface
-			},
-			{
+				schaser_sn76477_interface
+			),
+			new MachineSound(
 				SOUND_DAC,
-				&schaser_dac_interface
-			},
-			{
+				schaser_dac_interface
+			),
+			new MachineSound(
 				SOUND_CUSTOM,
-				&schaser_custom_interface
-			}
+				schaser_custom_interface
+			)
 		}
-	};
+	);
 	
 	
 	/*******************************************************/
@@ -2083,36 +2083,36 @@ public class _8080bw
 		PORT_SERVICE( 0x80, IP_ACTIVE_HIGH );
 	INPUT_PORTS_END(); }}; 
 	
-	static const struct MachineDriver machine_driver_clowns =
-	{
+	static MachineDriver machine_driver_clowns = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_8080,
 				2000000,        /* 2 MHz? */
 				invaders_readmem,invaders_writemem,invaders_readport,writeport_1_2,
 				invaders_interrupt,2    /* two interrupts per frame */
-			}
+			)
 		},
 		60, DEFAULT_60HZ_VBLANK_DURATION,
 		1,      /* single CPU, no need for interleaving */
-		0,
+		null,
 	
 		/* video hardware */
-		32*8, 32*8, { 0*8, 32*8-1, 0*8, 28*8-1 },
-		0,      /* no gfxdecodeinfo - bitmapped display */
-		32768+2, 0,		/* leave extra colors for the overlay */
+		32*8, 32*8, new rectangle( 0*8, 32*8-1, 0*8, 28*8-1 ),
+		null,      /* no gfxdecodeinfo - bitmapped display */
+		32768+2, null,		/* leave extra colors for the overlay */
 		init_palette,
 	
 		VIDEO_TYPE_RASTER | VIDEO_SUPPORTS_DIRTY ,
-		0,
+		null,
 		invaders_vh_start,
 		invaders_vh_stop,
 	    invaders_vh_screenrefresh,
 	
 		/* sound hardware */
 		0, 0, 0, 0
-	};
+	);
 	
 	
 	/*******************************************************/
@@ -2203,36 +2203,36 @@ public class _8080bw
 		PORT_DIPSETTING(    0xc0, "Spanish" );
 	INPUT_PORTS_END(); }}; 
 	
-	static const struct MachineDriver machine_driver_280zzzap =
-	{
+	static MachineDriver machine_driver_280zzzap = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_8080,
 				2000000,        /* 2 MHz? */
 				invaders_readmem,invaders_writemem,invaders_readport,writeport_4_3,
 				invaders_interrupt,2    /* two interrupts per frame */
-			}
+			)
 		},
 		60, DEFAULT_60HZ_VBLANK_DURATION,       /* frames per second, vblank duration */
 		1,      /* single CPU, no need for interleaving */
-		0,
+		null,
 	
 		/* video hardware */
-		32*8, 32*8, { 0*8, 32*8-1, 0*8, 28*8-1 },
-		0,      /* no gfxdecodeinfo - bitmapped display */
-		32768+2, 0,		/* leave extra colors for the overlay */
+		32*8, 32*8, new rectangle( 0*8, 32*8-1, 0*8, 28*8-1 ),
+		null,      /* no gfxdecodeinfo - bitmapped display */
+		32768+2, null,		/* leave extra colors for the overlay */
 		init_palette,
 	
 		VIDEO_TYPE_RASTER | VIDEO_SUPPORTS_DIRTY ,
-		0,
+		null,
 		invaders_vh_start,
 		invaders_vh_stop,
 		invaders_vh_screenrefresh,
 	
 		/* sound hardware */
 		0, 0, 0, 0
-	};
+	);
 	
 	
 	/*******************************************************/
@@ -2285,36 +2285,36 @@ public class _8080bw
 	INPUT_PORTS_END(); }}; 
 	
 	
-	static const struct MachineDriver machine_driver_lupin3 =
-	{
+	static MachineDriver machine_driver_lupin3 = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_8080,
 				2000000,        /* 2 MHz? */
 				schaser_readmem,schaser_writemem,invaders_readport,writeport_2_4,
 				invaders_interrupt,2    /* two interrupts per frame */
-			}
+			)
 		},
 		60, DEFAULT_60HZ_VBLANK_DURATION,       /* frames per second, vblank duration */
 		1,      /* single CPU, no need for interleaving */
-		0,
+		null,
 	
 		/* video hardware */
-		32*8, 32*8, { 0*8, 32*8-1, 0*8, 28*8-1 },
-		0,      /* no gfxdecodeinfo - bitmapped display */
-		8, 0,
+		32*8, 32*8, new rectangle( 0*8, 32*8-1, 0*8, 28*8-1 ),
+		null,      /* no gfxdecodeinfo - bitmapped display */
+		8, null,
 		invadpt2_vh_convert_color_prom,
 	
 		VIDEO_TYPE_RASTER | VIDEO_SUPPORTS_DIRTY ,
-		0,
+		null,
 		invaders_vh_start,
 		invaders_vh_stop,
 		invaders_vh_screenrefresh,
 	
 		/* sound hardware */
 		0, 0, 0, 0
-	};
+	);
 	
 	
 	/*******************************************************/
@@ -2391,36 +2391,36 @@ public class _8080bw
 	INPUT_PORTS_END(); }}; 
 	
 	
-	static const struct MachineDriver machine_driver_helifire =
-	{
+	static MachineDriver machine_driver_helifire = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_8080,
 				20160000/8,        /* 2.52 MHz */
 				helifire_readmem,helifire_writemem,sheriff_readport,writeport_2_3,
 				invaders_interrupt,2    /* two interrupts per frame */
-			}
+			)
 		},
 		60, DEFAULT_60HZ_VBLANK_DURATION,       /* frames per second, vblank duration */
 		1,      /* single CPU, no need for interleaving */
 		init_machine_helifire,
 	
 		/* video hardware */
-		32*8, 32*8, { 0*8, 32*8-1, 0*8, 28*8-1 },
-		0,      /* no gfxdecodeinfo - bitmapped display */
-		8, 0,
+		32*8, 32*8, new rectangle( 0*8, 32*8-1, 0*8, 28*8-1 ),
+		null,      /* no gfxdecodeinfo - bitmapped display */
+		8, null,
 		helifire_vh_convert_color_prom,
 	
 		VIDEO_TYPE_RASTER | VIDEO_SUPPORTS_DIRTY ,
-		0,
+		null,
 		invaders_vh_start,
 		invaders_vh_stop,
 		invaders_vh_screenrefresh,
 	
 		/* sound hardware */
 		0, 0, 0, 0
-	};
+	);
 	
 	
 	/*******************************************************/
@@ -2515,36 +2515,36 @@ public class _8080bw
 	INPUT_PORTS_END(); }}; 
 	
 	
-	static const struct MachineDriver machine_driver_polaris =
-	{
+	static MachineDriver machine_driver_polaris = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_8080,
 				1996800,        /* 19.968MHz / 10 */
 				schaser_readmem,schaser_writemem,invaders_readport,writeport_0_3,
 				polaris_interrupt,2    /* two interrupts per frame */
-			}
+			)
 		},
 		60, DEFAULT_60HZ_VBLANK_DURATION,       /* frames per second, vblank duration */
 		1,      /* single CPU, no need for interleaving */
 		init_machine_polaris,
 	
 		/* video hardware */
-		32*8, 32*8, { 0*8, 32*8-1, 0*8, 28*8-1 },
-		0,      /* no gfxdecodeinfo - bitmapped display */
-		8, 0,
+		32*8, 32*8, new rectangle( 0*8, 32*8-1, 0*8, 28*8-1 ),
+		null,      /* no gfxdecodeinfo - bitmapped display */
+		8, null,
 		invadpt2_vh_convert_color_prom,
 	
 		VIDEO_TYPE_RASTER | VIDEO_SUPPORTS_DIRTY ,
-		0,
+		null,
 		invaders_vh_start,
 		invaders_vh_stop,
 		invaders_vh_screenrefresh,
 	
 		/* sound hardware */
 		0,0,0,0
-	};
+	);
 	
 	
 	/*******************************************************/
@@ -2729,36 +2729,36 @@ public class _8080bw
 		PORT_ANALOG( 0xff, 0, IPT_TRACKBALL_X, 10, 10, 0, 0);
 	INPUT_PORTS_END(); }}; 
 	
-	static const struct MachineDriver machine_driver_bowler =
-	{
+	static MachineDriver machine_driver_bowler = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_8080,
 				2000000,        /* 2 MHz */
 				invaders_readmem,invaders_writemem,bowler_readport,writeport_1_2,
 				invaders_interrupt,2    /* two interrupts per frame */
-			}
+			)
 		},
 		60, DEFAULT_60HZ_VBLANK_DURATION,
 		1,      /* single CPU, no need for interleaving */
-		0,
+		null,
 	
 		/* video hardware */
-		32*8, 32*8, { 0*8, 32*8-1, 0*8, 28*8-1 },
-		0,      /* no gfxdecodeinfo - bitmapped display */
-		32768+2, 0,		/* leave extra colors for the overlay */
+		32*8, 32*8, new rectangle( 0*8, 32*8-1, 0*8, 28*8-1 ),
+		null,      /* no gfxdecodeinfo - bitmapped display */
+		32768+2, null,		/* leave extra colors for the overlay */
 		init_palette,
 	
 		VIDEO_TYPE_RASTER | VIDEO_SUPPORTS_DIRTY ,
-		0,
+		null,
 		invaders_vh_start,
 		invaders_vh_stop,
 	    invaders_vh_screenrefresh,
 	
 		/* sound hardware */
 		0, 0, 0, 0,
-	};
+	);
 	
 	
 	/*******************************************************/
@@ -2816,36 +2816,36 @@ public class _8080bw
 		PORT_ANALOG( 0xff, 0, IPT_TRACKBALL_X | IPF_REVERSE, 10, 10, 0, 0);
 	INPUT_PORTS_END(); }}; 
 	
-	static const struct MachineDriver machine_driver_shuffle =
-	{
+	static MachineDriver machine_driver_shuffle = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_8080,
 				2000000,        /* 2 MHz */
 				invaders_readmem,invaders_writemem,shuffle_readport,writeport_1_2,
 				invaders_interrupt,2    /* two interrupts per frame */
-			}
+			)
 		},
 		60, DEFAULT_60HZ_VBLANK_DURATION,
 		1,      /* single CPU, no need for interleaving */
-		0,
+		null,
 	
 		/* video hardware */
-		32*8, 32*8, { 0*8, 32*8-1, 0*8, 28*8-1 },
-		0,      /* no gfxdecodeinfo - bitmapped display */
-		32768+2, 0,		/* leave extra colors for the overlay */
+		32*8, 32*8, new rectangle( 0*8, 32*8-1, 0*8, 28*8-1 ),
+		null,      /* no gfxdecodeinfo - bitmapped display */
+		32768+2, null,		/* leave extra colors for the overlay */
 		init_palette,
 	
 		VIDEO_TYPE_RASTER | VIDEO_SUPPORTS_DIRTY ,
-		0,
+		null,
 		invaders_vh_start,
 		invaders_vh_stop,
 	    invaders_vh_screenrefresh,
 	
 		/* sound hardware */
 		0, 0, 0, 0,
-	};
+	);
 	
 	
 	/*******************************************************/
@@ -2893,36 +2893,36 @@ public class _8080bw
 		PORT_DIPSETTING(    0xe0, "Test Mode" );
 	INPUT_PORTS_END(); }}; 
 	
-	static const struct MachineDriver machine_driver_seawolf =
-	{
+	static MachineDriver machine_driver_seawolf = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_8080,
 				2000000,        /* 2 MHz? */
 				invaders_readmem,invaders_writemem,seawolf_readport,writeport_4_3,
 				invaders_interrupt,2    /* two interrupts per frame */
-			}
+			)
 		},
 		60, DEFAULT_60HZ_VBLANK_DURATION,
 		1,      /* single CPU, no need for interleaving */
 		init_machine_seawolf,
 	
 		/* video hardware */
-		32*8, 32*8, { 0*8, 32*8-1, 0*8, 28*8-1 },
-		0,      /* no gfxdecodeinfo - bitmapped display */
-		32768+2, 0,		/* leave extra colors for the overlay */
+		32*8, 32*8, new rectangle( 0*8, 32*8-1, 0*8, 28*8-1 ),
+		null,      /* no gfxdecodeinfo - bitmapped display */
+		32768+2, null,		/* leave extra colors for the overlay */
 		init_palette,
 	
 		VIDEO_TYPE_RASTER | VIDEO_SUPPORTS_DIRTY ,
-		0,
+		null,
 		invaders_vh_start,
 		invaders_vh_stop,
 	    invaders_vh_screenrefresh,
 	
 		/* sound hardware */
 		0, 0, 0, 0
-	};
+	);
 	
 	
 	/*******************************************************/
@@ -2949,36 +2949,36 @@ public class _8080bw
 		PORT_SERVICE( 0x80, IP_ACTIVE_LOW );
 	INPUT_PORTS_END(); }}; 
 	
-	static const struct MachineDriver machine_driver_blueshrk =
-	{
+	static MachineDriver machine_driver_blueshrk = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_8080,
 				2000000,
 				invaders_readmem,invaders_writemem,seawolf_readport,writeport_1_2,
 				invaders_interrupt,2    /* two interrupts per frame */
-			}
+			)
 		},
 		60, DEFAULT_60HZ_VBLANK_DURATION,       /* frames per second, vblank duration */
 		1,      /* single CPU, no need for interleaving */
-		0,
+		null,
 	
 		/* video hardware */
-		32*8, 32*8, { 0*8, 32*8-1, 0*8, 28*8-1 },
-		0,      /* no gfxdecodeinfo - bitmapped display */
-		32768+2, 0,		/* leave extra colors for the overlay */
+		32*8, 32*8, new rectangle( 0*8, 32*8-1, 0*8, 28*8-1 ),
+		null,      /* no gfxdecodeinfo - bitmapped display */
+		32768+2, null,		/* leave extra colors for the overlay */
 		init_palette,
 	
 		VIDEO_TYPE_RASTER | VIDEO_SUPPORTS_DIRTY ,
-		0,
+		null,
 		invaders_vh_start,
 		invaders_vh_stop,
 		invaders_vh_screenrefresh,
 	
 		/* sound hardware */
 		0, 0, 0, 0,
-	};
+	);
 	
 	
 	/*******************************************************/
@@ -3015,36 +3015,36 @@ public class _8080bw
 	INPUT_PORTS_END(); }}; 
 	
 	
-	static const struct MachineDriver machine_driver_desertgu =
-	{
+	static MachineDriver machine_driver_desertgu = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_8080,
 				2000000,
 				invaders_readmem,invaders_writemem,seawolf_readport,writeport_1_2,
 				invaders_interrupt,2    /* two interrupts per frame */
-			}
+			)
 		},
 		60, DEFAULT_60HZ_VBLANK_DURATION,       /* frames per second, vblank duration */
 		1,      /* single CPU, no need for interleaving */
 		init_machine_desertgu,
 	
 		/* video hardware */
-		32*8, 32*8, { 0*8, 32*8-1, 0*8, 28*8-1 },
-		0,      /* no gfxdecodeinfo - bitmapped display */
-		32768+2, 0,		/* leave extra colors for the overlay */
+		32*8, 32*8, new rectangle( 0*8, 32*8-1, 0*8, 28*8-1 ),
+		null,      /* no gfxdecodeinfo - bitmapped display */
+		32768+2, null,		/* leave extra colors for the overlay */
 		init_palette,
 	
 		VIDEO_TYPE_RASTER | VIDEO_SUPPORTS_DIRTY ,
-		0,
+		null,
 		invaders_vh_start,
 		invaders_vh_stop,
 		invaders_vh_screenrefresh,
 	
 		/* sound hardware */
 		0, 0, 0, 0,
-	};
+	);
 	
 	
 	/*******************************************************/
@@ -3201,36 +3201,36 @@ public class _8080bw
 		PORT_SERVICE( 0x80, IP_ACTIVE_HIGH );
 	INPUT_PORTS_END(); }}; 
 	
-	static const struct MachineDriver machine_driver_tornbase =
-	{
+	static MachineDriver machine_driver_tornbase = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_8080,
 				2000000,        /* 2 MHz? */
 				invaders_readmem,invaders_writemem,invaders_readport,writeport_2_4,
 				invaders_interrupt,2    /* two interrupts per frame */
-			}
+			)
 		},
 		60, DEFAULT_60HZ_VBLANK_DURATION,       /* frames per second, vblank duration */
 		1,      /* single CPU, no need for interleaving */
-		0,
+		null,
 	
 		/* video hardware */
-		32*8, 32*8, { 0*8, 32*8-1, 0*8, 28*8-1 },
-		0,      /* no gfxdecodeinfo - bitmapped display */
-		32768+2, 0,		/* leave extra colors for the overlay */
+		32*8, 32*8, new rectangle( 0*8, 32*8-1, 0*8, 28*8-1 ),
+		null,      /* no gfxdecodeinfo - bitmapped display */
+		32768+2, null,		/* leave extra colors for the overlay */
 		init_palette,
 	
 		VIDEO_TYPE_RASTER | VIDEO_SUPPORTS_DIRTY ,
-		0,
+		null,
 		invaders_vh_start,
 		invaders_vh_stop,
 		invaders_vh_screenrefresh,
 	
 		/* sound hardware */
 		0, 0, 0, 0
-	};
+	);
 	
 	
 	/*******************************************************/
@@ -3303,36 +3303,36 @@ public class _8080bw
 		PORT_BIT( 0x80, IP_ACTIVE_HIGH, IPT_COIN1 );
 	INPUT_PORTS_END(); }}; 
 	
-	static const struct MachineDriver machine_driver_checkmat =
-	{
+	static MachineDriver machine_driver_checkmat = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_8080,
 				2000000,        /* 2 MHz? */
 				invaders_readmem,invaders_writemem,checkmat_readport,0,
 				invaders_interrupt,2    /* two interrupts per frame */
-			}
+			)
 		},
 		60, DEFAULT_60HZ_VBLANK_DURATION,
 		1,      /* single CPU, no need for interleaving */
-		0,
+		null,
 	
 		/* video hardware */
-		32*8, 32*8, { 0*8, 32*8-1, 0*8, 28*8-1 },
-		0,      /* no gfxdecodeinfo - bitmapped display */
-		32768+2, 0,		/* leave extra colors for the overlay */
+		32*8, 32*8, new rectangle( 0*8, 32*8-1, 0*8, 28*8-1 ),
+		null,      /* no gfxdecodeinfo - bitmapped display */
+		32768+2, null,		/* leave extra colors for the overlay */
 		init_palette,
 	
 		VIDEO_TYPE_RASTER | VIDEO_SUPPORTS_DIRTY ,
-		0,
+		null,
 		invaders_vh_start,
 		invaders_vh_stop,
 	    invaders_vh_screenrefresh,
 	
 		/* sound hardware */
 		0, 0, 0, 0
-	};
+	);
 	
 	
 	/*******************************************************/
@@ -3589,36 +3589,36 @@ public class _8080bw
 	INPUT_PORTS_END(); }}; 
 	
 	
-	static const struct MachineDriver machine_driver_ballbomb =
-	{
+	static MachineDriver machine_driver_ballbomb = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_8080,
 				2000000,        /* 2 MHz? */
 				invaders_readmem,invaders_writemem,invaders_readport,writeport_2_4,
 				invaders_interrupt,2    /* two interrupts per frame */
-			}
+			)
 		},
 		60, DEFAULT_60HZ_VBLANK_DURATION,       /* frames per second, vblank duration */
 		1,      /* single CPU, no need for interleaving */
 		init_machine_ballbomb,
 	
 		/* video hardware */
-		32*8, 32*8, { 0*8, 32*8-1, 0*8, 28*8-1 },
-		0,      /* no gfxdecodeinfo - bitmapped display */
-		8, 0,
+		32*8, 32*8, new rectangle( 0*8, 32*8-1, 0*8, 28*8-1 ),
+		null,      /* no gfxdecodeinfo - bitmapped display */
+		8, null,
 		invadpt2_vh_convert_color_prom,
 	
 		VIDEO_TYPE_RASTER | VIDEO_SUPPORTS_DIRTY ,
-		0,
+		null,
 		invaders_vh_start,
 		invaders_vh_stop,
 		invaders_vh_screenrefresh,
 	
 		/* sound hardware */
 		0, 0, 0, 0
-	};
+	);
 	
 	
 	static InputPortPtr input_ports_spceking = new InputPortPtr(){ public void handler() { 

@@ -351,48 +351,48 @@ public class yamato
 	
 	
 	
-	static const struct MachineDriver machine_driver_yamato =
-	{
+	static MachineDriver machine_driver_yamato = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_Z80,
 				3072000,	/* 3.072 MHz ? */
-				yamato_readmem,yamato_writemem,0,yamato_writeport,
+				yamato_readmem,yamato_writemem,null,yamato_writeport,
 				nmi_interrupt,1
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_Z80 | CPU_AUDIO_CPU,
 				3072000,	/* 3.072 MHz ? */
 				yamato_sound_readmem,yamato_sound_writemem,yamato_sound_readport,yamato_sound_writeport,
 				ignore_interrupt,0
-			}
+			)
 		},
 		60, DEFAULT_60HZ_VBLANK_DURATION,	/* frames per second, vblank duration */
 		1,	/* 1 CPU slice per frame - interleaving is forced when a sound command is written */
-		0,
+		null,
 	
 		/* video hardware */
-		32*8, 32*8, { 0*8, 32*8-1, 2*8, 30*8-1 },
+		32*8, 32*8, new rectangle( 0*8, 32*8-1, 2*8, 30*8-1 ),
 		gfxdecodeinfo,
 		96,16*4+8*4,
 		yamato_vh_convert_color_prom,
 	
 		VIDEO_TYPE_RASTER,
-		0,
+		null,
 		cclimber_vh_start,
 		cclimber_vh_stop,
 		cclimber_vh_screenrefresh,
 	
 		/* sound hardware */
 		0,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_AY8910,
-				&yamato_ay8910_interface
-			}
+				yamato_ay8910_interface
+			)
 		}
-	};
+	);
 	
 	
 	

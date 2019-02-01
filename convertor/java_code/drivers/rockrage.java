@@ -274,52 +274,52 @@ public class rockrage
 		0,
 	};
 	
-	static const struct MachineDriver machine_driver_rockrage =
-	{
+	static MachineDriver machine_driver_rockrage = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_HD6309,
 				3000000,		/* 24MHz/8 (?) */
-				rockrage_readmem,rockrage_writemem,0,0,
+				rockrage_readmem,rockrage_writemem,null,null,
 	            rockrage_interrupt,1
-	        },
-			{
+	        ),
+			new MachineCPU(
 				CPU_M6809 | CPU_AUDIO_CPU,
 				2000000,		/* 24MHz/12 (?) */
-				rockrage_readmem_sound, rockrage_writemem_sound,0,0,
+				rockrage_readmem_sound, rockrage_writemem_sound,null,null,
 				ignore_interrupt,0	/* interrupts are triggered by the main CPU */
-			}
+			)
 		},
 		60, DEFAULT_60HZ_VBLANK_DURATION,	/* frames per second, vblank duration */
 		1,	/* 1 CPU slice per frame - interleaving is forced when a sound command is written */
-		0,
+		null,
 	
 		/* video hardware */
-		32*8, 32*8, { 0*8, 32*8-1, 2*8, 30*8-1 },
+		32*8, 32*8, new rectangle( 0*8, 32*8-1, 2*8, 30*8-1 ),
 		gfxdecodeinfo,
 		64, 64 + 2*16*16,
 		rockrage_vh_convert_color_prom,
 	
 		VIDEO_TYPE_RASTER,
-		0,
+		null,
 		rockrage_vh_start,
 		rockrage_vh_stop,
 		rockrage_vh_screenrefresh,
 	
 		/* sound hardware */
 		0,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_YM2151,
-				&ym2151_interface
-			},
-			{
+				ym2151_interface
+			),
+			new MachineSound(
 				SOUND_VLM5030,
-				&vlm5030_interface
-			}
+				vlm5030_interface
+			)
 		}
-	};
+	);
 	
 	
 	/***************************************************************************

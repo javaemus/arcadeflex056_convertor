@@ -426,64 +426,64 @@ public class pandoras
 		{ 25 }
 	};
 	
-	static const struct MachineDriver machine_driver_pandoras =
-	{
+	static MachineDriver machine_driver_pandoras = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_M6809,		/* CPU A */
 				18432000/6,		/* ??? */
-				pandoras_readmem_a,pandoras_writemem_a,0,0,
+				pandoras_readmem_a,pandoras_writemem_a,null,null,
 	            pandoras_interrupt_a,1,
-	        },
-			{
+	        ),
+			new MachineCPU(
 				CPU_M6809,		/* CPU B */
 				18432000/6,		/* ??? */
-				pandoras_readmem_b,pandoras_writemem_b,0,0,
+				pandoras_readmem_b,pandoras_writemem_b,null,null,
 	            pandoras_interrupt_b,1,
-	        },
-			{
+	        ),
+			new MachineCPU(
 				CPU_Z80 | CPU_AUDIO_CPU,
 				14318000/8,
-				pandoras_readmem_snd,pandoras_writemem_snd,0,0,
+				pandoras_readmem_snd,pandoras_writemem_snd,null,null,
 				ignore_interrupt,1
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_I8039 | CPU_AUDIO_CPU,
 				14318000/2/15,
 				i8039_readmem,i8039_writemem,i8039_readport,i8039_writeport,
 				ignore_interrupt,1
-			},
+			),
 		},
 		60, DEFAULT_60HZ_VBLANK_DURATION,	/* frames per second, vblank duration */
 		50,	/* slices per frame */
 		pandoras_init_machine,
 	
 		/* video hardware */
-		32*8, 32*8, { 0*8, 32*8-1, 2*8, 30*8-1 },
+		32*8, 32*8, new rectangle( 0*8, 32*8-1, 2*8, 30*8-1 ),
 		gfxdecodeinfo,
 		32, 16*16+16*16,
 		pandoras_vh_convert_color_prom,
 	
 		VIDEO_TYPE_RASTER,
-		0,
+		null,
 		pandoras_vh_start,
-		0,
+		null,
 		pandoras_vh_screenrefresh,
 	
 		/* sound hardware */
 		0,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_AY8910,
-				&ay8910_interface
-			},
-			{
+				ay8910_interface
+			),
+			new MachineSound(
 				SOUND_DAC,
-				&dac_interface
-			}
+				dac_interface
+			)
 		}
-	};
+	);
 	
 	
 	/***************************************************************************

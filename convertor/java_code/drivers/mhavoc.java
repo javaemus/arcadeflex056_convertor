@@ -441,25 +441,25 @@ public class mhavoc
 	
 	
 	
-	static const struct MachineDriver machine_driver_mhavoc =
-	{
+	static MachineDriver machine_driver_mhavoc = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_M6502,
 				2500000,	/* 2.5 MHz */
-				readmem,writemem,0,0,
+				readmem,writemem,null,null,
 				interrupt,8 /* 2.4576 milliseconds period */
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_M6502,
 				1250000,	/* 1.25 MHz */
-				gamma_readmem,gamma_writemem,0,0,
-				0, 0, /* no vblank interrupt */
-	#if 0		/* HJB has it's own timer in machine/mhavoc now */
+				gamma_readmem,gamma_writemem,null,null,
+				null, null, /* no vblank interrupt */
+	#if null		/* HJB has it's own timer in machine/mhavoc now */
 				interrupt, 305 /* 3.2768 milliseconds period? */
 	#endif
-			}
+			)
 		},
 		50, 0,	/* frames per second, vblank duration (vector game, so no vblank) */
 				/* fps should be 30, but MH draws "empty" frames */
@@ -468,27 +468,27 @@ public class mhavoc
 	
 		/* video hardware */
 		400, 300, { 0, 300, 0, 260 },
-		0,
-		256, 0,
+		null,
+		256, null,
 		avg_init_palette_multi,
 	
 		VIDEO_TYPE_VECTOR | VIDEO_SUPPORTS_DIRTY | VIDEO_RGB_DIRECT,
-		0,
+		null,
 		avg_start_mhavoc,
 		avg_stop,
 		vector_vh_screenrefresh,
 	
 		/* sound hardware */
 		0,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_POKEY,
-				&pokey_interface
-			}
+				pokey_interface
+			)
 		},
 	
 		nvram_handler
-	};
+	);
 	
 	
 	/*

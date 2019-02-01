@@ -307,43 +307,43 @@ public class polyplay
 	/* the machine driver */
 	
 	#define MACHINEDRIVER(NAME, MEM, PORT)				\
-	static const struct MachineDriver machine_driver_##NAME =	\
-	{													\
+	static MachineDriver machine_driver_##NAME = new MachineDriver\
+	(													\
 		/* basic machine hardware */					\
-		{												\
-			{											\
+		new MachineCPU[] {												\
+			new MachineCPU(											\
 				CPU_Z80,								\
 				9830400/4,								\
 				MEM##_readmem,MEM##_writemem,           \
 				readport_##PORT,writeport_polyplay,	    \
 				ignore_interrupt, 1					\
-			}											\
+			)											\
 		},												\
 		50, 0,	/* frames per second, vblank duration */ \
-		0,	/* single CPU, no need for interleaving */	\
+		null,	/* single CPU, no need for interleaving */	\
 		polyplay_reset,									\
 														\
 		/* video hardware */							\
-		64*8, 32*8, { 0*8, 64*8-1, 0*8, 32*8-1 },		\
+		64*8, 32*8, new rectangle( 0*8, 64*8-1, 0*8, 32*8-1 ),		\
 		gfxdecodeinfo,									\
-		10, 0,											\
+		10, null,											\
 		polyplay_init_palette,					        \
 														\
 		VIDEO_TYPE_RASTER|VIDEO_SUPPORTS_DIRTY,			\
-		0,												\
+		null,												\
 		generic_vh_start,								\
 		generic_vh_stop,								\
 		polyplay_vh_screenrefresh,						\
 														\
 		/* sound hardware */							\
 		0,0,0,0,										\
-		{							                    \
-			{						                    \
+		new MachineSound[] {							                    \
+			new MachineSound(						                    \
 				SOUND_CUSTOM,		                    \
-				&custom_interface	                    \
-			}						                    \
+				custom_interface	                    \
+			)						                    \
 		}							                    \
-	};
+	);
 	
 	MACHINEDRIVER( polyplay, polyplay, polyplay )
 	

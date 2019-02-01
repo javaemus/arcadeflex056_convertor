@@ -625,86 +625,86 @@ public class pipedrm
 	 *
 	 *************************************/
 	
-	static const struct MachineDriver machine_driver_pipedrm =
-	{
+	static MachineDriver machine_driver_pipedrm = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_Z80,
 				12000000/2,
 				readmem,writemem,readport,writeport,
 				interrupt,1
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_Z80 | CPU_AUDIO_CPU,
 				14318000/4,
 				sound_readmem,sound_writemem,sound_readport,sound_writeport,
 				ignore_interrupt,0
-			}
+			)
 		},
 		60, DEFAULT_REAL_60HZ_VBLANK_DURATION,
 		1,
 		init_machine,
 	
 		/* video hardware */
-	  	44*8, 30*8, { 0*8, 44*8-1, 0*8, 30*8-1 },
+	  	44*8, 30*8, new rectangle( 0*8, 44*8-1, 0*8, 30*8-1 ),
 		gfxdecodeinfo,
-		2048, 0,
-		0,
+		2048, null,
+		null,
 	
 		VIDEO_TYPE_RASTER,
-		0,
+		null,
 		fromance_vh_start,
 		fromance_vh_stop,
 		pipedrm_vh_screenrefresh,
 	
 		/* sound hardware */
 		0,0,0,0,
-		{
-			{ SOUND_YM2610, &ym2610_interface }
+		new MachineSound[] {
+			new MachineSound( SOUND_YM2610, ym2610_interface )
 		}
-	};
+	);
 	
 	
-	static const struct MachineDriver machine_driver_hatris =
-	{
+	static MachineDriver machine_driver_hatris = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_Z80,
 				12000000/2,
 				readmem,writemem,readport,writeport,
 				interrupt,1
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_Z80 | CPU_AUDIO_CPU,
 				14318000/4,
 				sound_readmem,sound_writemem,hatris_sound_readport,hatris_sound_writeport,
 				ignore_interrupt,0
-			}
+			)
 		},
 		60, DEFAULT_REAL_60HZ_VBLANK_DURATION,
 		1,
 		init_machine,
 	
 		/* video hardware */
-	  	44*8, 30*8, { 0*8, 44*8-1, 0*8, 30*8-1 },
+	  	44*8, 30*8, new rectangle( 0*8, 44*8-1, 0*8, 30*8-1 ),
 		gfxdecodeinfo_hatris,
-		2048, 0,
-		0,
+		2048, null,
+		null,
 	
 		VIDEO_TYPE_RASTER,
-		0,
+		null,
 		fromance_vh_start,
 		fromance_vh_stop,
 		fromance_vh_screenrefresh,
 	
 		/* sound hardware */
 		0,0,0,0,
-		{
-			{ SOUND_YM2608, &ym2608_interface }
+		new MachineSound[] {
+			new MachineSound( SOUND_YM2608, ym2608_interface )
 		}
-	};
+	);
 	
 	
 	

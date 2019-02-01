@@ -410,47 +410,47 @@ public class namcos21
 		50
 	};
 	
-	static const struct MachineDriver machine_driver_poly =
-	{
-		{
-			{
+	static MachineDriver machine_driver_poly = new MachineDriver
+	(
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_M68000, /* Master */
 				12288000,
-				readmem_master_default,writemem_master_default,0,0,
+				readmem_master_default,writemem_master_default,null,null,
 				namcos2_68k_master_vblank,1
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_M68000, /* Slave */
 				12288000,
-				readmem_slave_default,writemem_slave_default,0,0,
+				readmem_slave_default,writemem_slave_default,null,null,
 				namcos2_68k_slave_vblank,1
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_M6809, /* Sound */
 				3072000,
-				readmem_sound,writemem_sound,0,0,
+				readmem_sound,writemem_sound,null,null,
 				interrupt,2,
 				namcos2_sound_interrupt,120
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_HD63705, /* IO */
 				2048000,
-				readmem_mcu,writemem_mcu,0,0,
+				readmem_mcu,writemem_mcu,null,null,
 				namcos2_mcu_interrupt,1,
-				0,0
-			}
+				null,null
+			)
 		},
 		60, DEFAULT_REAL_60HZ_VBLANK_DURATION,
 		100, /* 100 CPU slices per frame */
 		namcos2_init_machine,
 	
 		/* video hardware */
-		62*8, 60*8, { 0*8, 62*8-1, 0*8, 60*8-1 },
+		62*8, 60*8, new rectangle( 0*8, 62*8-1, 0*8, 60*8-1 ),
 		gfxdecodeinfo,
 		NAMCOS21_NUM_COLORS,NAMCOS21_NUM_COLORS,
-		0,
+		null,
 		VIDEO_TYPE_RASTER | VIDEO_NEEDS_6BITS_PER_GUN,
-		0,
+		null,
 		namcos21_vh_start,
 		namcos21_vh_stop,
 		namcos21_vh_update_default,
@@ -458,18 +458,18 @@ public class namcos21
 		/* sound hardware */
 		SOUND_SUPPORTS_STEREO,0,0,0,
 		/* Sound struct here */
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_C140,
-				&C140_interface
-			},
-			{
+				C140_interface
+			),
+			new MachineSound(
 				SOUND_YM2151,
-				&ym2151_interface
-			}
+				ym2151_interface
+			)
 		},
 		namcos2_nvram_handler
-	};
+	);
 	
 	static RomLoadPtr rom_aircombu = new RomLoadPtr(){ public void handler(){ 
 		ROM_REGION( 0x100000, REGION_CPU1, 0 );/* Master */

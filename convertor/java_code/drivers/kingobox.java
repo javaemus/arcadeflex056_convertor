@@ -591,127 +591,127 @@ public class kingobox
 		return ignore_interrupt();
 	}
 	
-	static const struct MachineDriver machine_driver_kingofb =
-	{
+	static MachineDriver machine_driver_kingofb = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_Z80,
 				4000000,        /* 4.0 MHz */
-				main_readmem, main_writemem,0,0,
+				main_readmem, main_writemem,null,null,
 				kingobox_interrupt,1
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_Z80,
 				4000000,        /* 4.0 MHz */
-				video_readmem, video_writemem,0,0,
+				video_readmem, video_writemem,null,null,
 				kingobox_interrupt,1
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_Z80,
 				4000000,        /* 4.0 MHz */
-				sprite_readmem, sprite_writemem,0,0,
+				sprite_readmem, sprite_writemem,null,null,
 				kingobox_interrupt,1
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_Z80 | CPU_AUDIO_CPU,
 				4000000,        /* 4.0 MHz */
 				sound_readmem, sound_writemem,sound_readport,sound_writeport,
 				ignore_interrupt, 0,
 				nmi_interrupt, 6000	/* Hz */
-			}
+			)
 		},
 		60, DEFAULT_REAL_60HZ_VBLANK_DURATION,  /* frames per second, vblank duration */
 		100, /* We really need heavy synching among the processors */
-		0,
+		null,
 	
 		/* video hardware */
-		32*8, 32*8, { 0*8, 32*8-1, 2*8, 30*8-1 },
+		32*8, 32*8, new rectangle( 0*8, 32*8-1, 2*8, 30*8-1 ),
 		gfxdecodeinfo,
 		256+8, 256+8*2,
 		kingobox_vh_convert_color_prom,
 	
 		VIDEO_TYPE_RASTER,
-		0,
+		null,
 		generic_vh_start,
 		generic_vh_stop,
 		kingobox_vh_screenrefresh,
 	
 		/* sound hardware */
 		0,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_AY8910,
-				&ay8910_interface
-			},
-			{
+				ay8910_interface
+			),
+			new MachineSound(
 				SOUND_DAC,
-				&dac_interface
-			}
+				dac_interface
+			)
 		}
-	};
+	);
 	
 	
 	/* Ring King */
-	static const struct MachineDriver machine_driver_ringking =
-	{
+	static MachineDriver machine_driver_ringking = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_Z80,
 				4000000,        /* 4.0 MHz */
-				rk_main_readmem, rk_main_writemem,0,0,
+				rk_main_readmem, rk_main_writemem,null,null,
 				kingobox_interrupt,1
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_Z80,
 				4000000,        /* 4.0 MHz */
-				rk_video_readmem, rk_video_writemem,0,0,
+				rk_video_readmem, rk_video_writemem,null,null,
 				kingobox_interrupt,1
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_Z80,
 				4000000,        /* 4.0 MHz */
-				rk_sprite_readmem, rk_sprite_writemem,0,0,
+				rk_sprite_readmem, rk_sprite_writemem,null,null,
 				kingobox_interrupt,1
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_Z80 | CPU_AUDIO_CPU,
 				4000000,        /* 4.0 MHz */
 				sound_readmem, sound_writemem,rk_sound_readport,rk_sound_writeport,
 				ignore_interrupt, 0,
 				nmi_interrupt, 6000	/* Hz */
-			}
+			)
 		},
 		60, DEFAULT_REAL_60HZ_VBLANK_DURATION,  /* frames per second, vblank duration */
 		100, /* We really need heavy synching among the processors */
-		0,
+		null,
 	
 		/* video hardware */
-		32*8, 32*8, { 0*8, 32*8-1, 2*8, 30*8-1 },
+		32*8, 32*8, new rectangle( 0*8, 32*8-1, 2*8, 30*8-1 ),
 		rk_gfxdecodeinfo,
 		256+8, 256+8*2,
 		ringking_vh_convert_color_prom,
 	
 		VIDEO_TYPE_RASTER,
-		0,
+		null,
 		generic_vh_start,
 		generic_vh_stop,
 		ringking_vh_screenrefresh,
 	
 		/* sound hardware */
 		0,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_AY8910,
-				&ay8910_interface
-			},
-			{
+				ay8910_interface
+			),
+			new MachineSound(
 				SOUND_DAC,
-				&dac_interface
-			}
+				dac_interface
+			)
 		}
-	};
+	);
 	
 	
 	/***************************************************************************

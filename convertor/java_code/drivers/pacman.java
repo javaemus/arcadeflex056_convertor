@@ -1462,79 +1462,79 @@ public class pacman
 	};
 	
 	
-	static const struct MachineDriver machine_driver_pacman =
-	{
+	static MachineDriver machine_driver_pacman = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_Z80,
 				18432000/6,	/* 3.072 MHz */
-				readmem,writemem,0,writeport,
+				readmem,writemem,null,writeport,
 				pacman_interrupt,1
-			}
+			)
 		},
 		60.606060, 2500,	/* frames per second, vblank duration */
 		1,	/* single CPU, no need for interleaving */
 		pacman_init_machine,
 	
 		/* video hardware */
-		36*8, 28*8, { 0*8, 36*8-1, 0*8, 28*8-1 },
+		36*8, 28*8, new rectangle( 0*8, 36*8-1, 0*8, 28*8-1 ),
 		gfxdecodeinfo,
 		16, 4*32,
 		pacman_vh_convert_color_prom,
 	
 		VIDEO_TYPE_RASTER,
-		0,
+		null,
 		pacman_vh_start,
 		generic_vh_stop,
 		pengo_vh_screenrefresh,
 	
 		/* sound hardware */
 		0,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_NAMCO,
-				&namco_interface
-			}
+				namco_interface
+			)
 		}
-	};
+	);
 	
-	static const struct MachineDriver machine_driver_mspacman =
-	{
+	static MachineDriver machine_driver_mspacman = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_Z80,
 				18432000/6,	/* 3.072 MHz */
-				mspacman_readmem,mspacman_writemem,0,writeport,
+				mspacman_readmem,mspacman_writemem,null,writeport,
 				mspacman_interrupt,1
-			}
+			)
 		},
 		60.606060, 2500,	/* frames per second, vblank duration */
 		1,	/* single CPU, no need for interleaving */
 		mspacman_init_machine,
 	
 		/* video hardware */
-		36*8, 28*8, { 0*8, 36*8-1, 0*8, 28*8-1 },
+		36*8, 28*8, new rectangle( 0*8, 36*8-1, 0*8, 28*8-1 ),
 		gfxdecodeinfo,
 		16, 4*32,
 		pacman_vh_convert_color_prom,
 	
 		VIDEO_TYPE_RASTER,
-		0,
+		null,
 		pacman_vh_start,
 		generic_vh_stop,
 		pengo_vh_screenrefresh,
 	
 		/* sound hardware */
 		0,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_NAMCO,
-				&namco_interface
-			}
+				namco_interface
+			)
 		}
-	};
+	);
 	
 	static struct MachineDriver machine_driver_mschamp =
 	{
@@ -1573,153 +1573,153 @@ public class pacman
 		}
 	};
 	
-	static const struct MachineDriver machine_driver_theglobp =
-	{
+	static MachineDriver machine_driver_theglobp = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_Z80,
 				18432000/6,	/* 3.072 MHz */
 				theglobp_readmem,writemem,theglobp_readport,writeport,
 				pacman_interrupt,1
-			}
+			)
 		},
 		60.606060, 2500,	/* frames per second, vblank duration */
 		1,	/* single CPU, no need for interleaving */
 		theglobp_init_machine,
 	
 		/* video hardware */
-		36*8, 28*8, { 0*8, 36*8-1, 0*8, 28*8-1 },
+		36*8, 28*8, new rectangle( 0*8, 36*8-1, 0*8, 28*8-1 ),
 		gfxdecodeinfo,
 		16, 4*32,
 		pacman_vh_convert_color_prom,
 	
 		VIDEO_TYPE_RASTER,
-		0,
+		null,
 		pacman_vh_start,
 		generic_vh_stop,
 		pengo_vh_screenrefresh,
 	
 		/* sound hardware */
 		0,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_NAMCO,
-				&namco_interface
-			}
+				namco_interface
+			)
 		}
-	};
+	);
 	
-	static const struct MachineDriver machine_driver_vanvan =
-	{
+	static MachineDriver machine_driver_vanvan = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_Z80,
 				18432000/6,	/* 3.072 MHz */
-				readmem,writemem,0,vanvan_writeport,
+				readmem,writemem,null,vanvan_writeport,
 				nmi_interrupt,1
-			}
+			)
 		},
 		60.606060, 2500,	/* frames per second, vblank duration */
 		1,	/* single CPU, no need for interleaving */
-		0,
+		null,
 	
 		/* video hardware */
-		36*8, 28*8, { 0*8, 36*8-1, 0*8, 28*8-1 },
+		36*8, 28*8, new rectangle( 0*8, 36*8-1, 0*8, 28*8-1 ),
 		gfxdecodeinfo,
 		16, 4*32,
 		pacman_vh_convert_color_prom,
 	
 		VIDEO_TYPE_RASTER,
-		0,
+		null,
 		pacman_vh_start,
 		generic_vh_stop,
 		pengo_vh_screenrefresh,
 	
 		/* sound hardware */
 		0,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_SN76496,
-				&sn76496_interface
-			}
+				sn76496_interface
+			)
 		}
-	};
+	);
 	
-	static const struct MachineDriver machine_driver_dremshpr =
-	{
+	static MachineDriver machine_driver_dremshpr = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_Z80,
 				18432000/6,	/* 3.072 MHz */
-				readmem,writemem,0,dremshpr_writeport,
+				readmem,writemem,null,dremshpr_writeport,
 				nmi_interrupt,1
-			}
+			)
 		},
 		60.606060, 2500,	/* frames per second, vblank duration */
 		1,	/* single CPU, no need for interleaving */
-		0,
+		null,
 	
 		/* video hardware */
-		36*8, 28*8, { 0*8, 36*8-1, 0*8, 28*8-1 },
+		36*8, 28*8, new rectangle( 0*8, 36*8-1, 0*8, 28*8-1 ),
 		gfxdecodeinfo,
 		16, 4*32,
 		pacman_vh_convert_color_prom,
 	
 		VIDEO_TYPE_RASTER,
-		0,
+		null,
 		pacman_vh_start,
 		generic_vh_stop,
 		pengo_vh_screenrefresh,
 	
 		/* sound hardware */
 		0,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_AY8910,
-				&dremshpr_ay8910_interface
-			}
+				dremshpr_ay8910_interface
+			)
 		}
-	};
+	);
 	
-	static const struct MachineDriver machine_driver_alibaba =
-	{
+	static MachineDriver machine_driver_alibaba = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_Z80,
 				18432000/6,	/* 3.072 MHz */
-				alibaba_readmem,alibaba_writemem,0,0,
+				alibaba_readmem,alibaba_writemem,null,null,
 				interrupt,1
-			}
+			)
 		},
 		60.606060, 2500,	/* frames per second, vblank duration */
 		1,	/* single CPU, no need for interleaving */
-		0,
+		null,
 	
 		/* video hardware */
-		36*8, 28*8, { 0*8, 36*8-1, 0*8, 28*8-1 },
+		36*8, 28*8, new rectangle( 0*8, 36*8-1, 0*8, 28*8-1 ),
 		gfxdecodeinfo,
 		16, 4*32,
 		pacman_vh_convert_color_prom,
 	
 		VIDEO_TYPE_RASTER,
-		0,
+		null,
 		pacman_vh_start,
 		generic_vh_stop,
 		pengo_vh_screenrefresh,
 	
 		/* sound hardware */
 		0,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_NAMCO,
-				&namco_interface
-			}
+				namco_interface
+			)
 		}
-	};
+	);
 	
 	/***************************************************************************
 	

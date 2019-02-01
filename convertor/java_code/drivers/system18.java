@@ -664,46 +664,46 @@ public class system18
 	/*****************************************************************************/
 	
 	#define MACHINE_DRIVER_18( GAMENAME,READMEM,WRITEMEM,INITMACHINE) \
-	static const struct MachineDriver GAMENAME = \
-	{ \
-		{ \
-			{ \
+	static MachineDriver GAMENAME = new MachineDriver\
+	( \
+		new MachineCPU[] { \
+			new MachineCPU( \
 				CPU_M68000, \
 				10000000, \
-				READMEM,WRITEMEM,0,0, \
+				READMEM,WRITEMEM,null,null, \
 				sys18_interrupt,1 \
-			}, \
-			{ \
+			), \
+			new MachineCPU( \
 				CPU_Z80 | CPU_AUDIO_CPU, \
 				4096000*2, /* overclocked to fix sound, but wrong! */ \
 				sound_readmem_18,sound_writemem_18,sound_readport_18,sound_writeport_18, \
 				ignore_interrupt,1 \
-			}, \
+			), \
 		}, \
 		60, DEFAULT_60HZ_VBLANK_DURATION, \
 		1, \
 		INITMACHINE, \
-		40*8, 28*8, { 0*8, 40*8-1, 0*8, 28*8-1 }, \
+		40*8, 28*8, new rectangle( 0*8, 40*8-1, 0*8, 28*8-1 ), \
 		sys16_gfxdecodeinfo, \
-		2048*ShadowColorsMultiplier, 0, \
-		0, \
+		2048*ShadowColorsMultiplier, null, \
+		null, \
 		VIDEO_TYPE_RASTER, \
-		0, \
+		null, \
 		sys18_vh_start, \
 		sys16_vh_stop, \
 		sys18_vh_screenrefresh, \
 		SOUND_SUPPORTS_STEREO,0,0,0, \
-		{ \
-			{ \
+		new MachineSound[] { \
+			new MachineSound( \
 				SOUND_YM3438, \
-				&sys18_ym3438_interface \
-			}, \
-			{ \
+				sys18_ym3438_interface \
+			), \
+			new MachineSound( \
 				SOUND_RF5C68, \
-				&sys18_rf5c68_interface, \
-			} \
+				sys18_rf5c68_interface, \
+			) \
 		} \
-	};
+	);
 	
 	MACHINE_DRIVER_18( machine_driver_astorm, \
 		astorm_readmem,astorm_writemem,astorm_init_machine )

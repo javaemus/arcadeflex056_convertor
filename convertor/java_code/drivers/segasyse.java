@@ -746,40 +746,40 @@ public class segasyse
 	};
 	
 	
-	static const struct MachineDriver machine_driver_segae =
-	{
+	static MachineDriver machine_driver_segae = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_Z80,
 				10738600/2, /* correct for hangonjr, and astroflash/transformer at least  */
 				segae_readmem, segae_writemem, segae_readport, segae_writeport,
 				segae_interrupt, 262
-			}
+			)
 		},
 		60, DEFAULT_60HZ_VBLANK_DURATION,	/* frames per second, vblank duration */
 		1,					/* single CPU, no need for interleaving */
-		0,
+		null,
 	
 		/* video hardware */
-		256, 192, { 0, 256-1, 0, 192-1 },
-		0,
-		64, 0,
+		256, 192, new rectangle( 0, 256-1, 0, 192-1 ),
+		null,
+		64, null,
 		NULL,
 	
 		VIDEO_TYPE_RASTER,
-		0,
+		null,
 		segae_vh_start,
 		segae_vh_stop,
 		segae_vh_screenrefresh,
 	
 		/* sound hardware */
 		0, 0, 0, 0,
-		{
-			{ SOUND_SN76496, &sn76489_intf }
+		new MachineSound[] {
+			new MachineSound( SOUND_SN76496, sn76489_intf )
 		},
 		0
-	};
+	);
 	
 	/*******************************************************************************
 	 General Init

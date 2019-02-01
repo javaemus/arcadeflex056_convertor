@@ -438,89 +438,89 @@ public class ironhors
 	};
 	
 	
-	static const struct MachineDriver machine_driver_ironhors =
-	{
-		{
-			{
+	static MachineDriver machine_driver_ironhors = new MachineDriver
+	(
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_M6809,
 				18432000/6,        /* 3.072 MHz??? mod by Shingo Suzuki 1999/10/15 */
-				ironhors_readmem,ironhors_writemem,0,0,
+				ironhors_readmem,ironhors_writemem,null,null,
 				ironhors_interrupt,8
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_Z80 | CPU_AUDIO_CPU,
 				18432000/6,        /* 3.072 MHz */
 				ironhors_sound_readmem,ironhors_sound_writemem,ironhors_sound_readport,ironhors_sound_writeport,
 				ignore_interrupt,1	/* interrupts are triggered by the main CPU */
-			}
+			)
 		},
 		30, DEFAULT_30HZ_VBLANK_DURATION,	/* frames per second, vblank duration */
 		1,	/* 1 CPU slice per frame - interleaving is forced when a sound command is written */
-		0,
+		null,
 	
 		/* video hardware */
-		32*8, 32*8, { 1*8, 31*8-1, 2*8, 30*8-1 },
+		32*8, 32*8, new rectangle( 1*8, 31*8-1, 2*8, 30*8-1 ),
 		ironhors_gfxdecodeinfo,
 		256,16*8*16+16*8*16,
 		ironhors_vh_convert_color_prom,
 	
 		VIDEO_TYPE_RASTER,
-		0,
+		null,
 		generic_vh_start,
 		generic_vh_stop,
 		ironhors_vh_screenrefresh,
 	
 		/* sound hardware */
 		0,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_YM2203,
-				&ym2203_interface
-			}
+				ym2203_interface
+			)
 		}
-	};
+	);
 	
-	static const struct MachineDriver machine_driver_farwest =
-	{
-		{
-			{
+	static MachineDriver machine_driver_farwest = new MachineDriver
+	(
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_M6809,
 				18432000/6,        /* 3.072 MHz??? mod by Shingo Suzuki 1999/10/15 */
-				ironhors_readmem,ironhors_writemem,0,0,
+				ironhors_readmem,ironhors_writemem,null,null,
 				ironhors_interrupt,8
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_Z80 | CPU_AUDIO_CPU,
 				18432000/6,        /* 3.072 MHz */
-				farwest_sound_readmem,farwest_sound_writemem,0,0,
+				farwest_sound_readmem,farwest_sound_writemem,null,null,
 				ignore_interrupt,1	/* interrupts are triggered by the main CPU */
-			}
+			)
 		},
 		30, DEFAULT_30HZ_VBLANK_DURATION,	/* frames per second, vblank duration */
 		1,	/* 1 CPU slice per frame - interleaving is forced when a sound command is written */
-		0,
+		null,
 	
 		/* video hardware */
-		32*8, 32*8, { 1*8, 31*8-1, 2*8, 30*8-1 },
+		32*8, 32*8, new rectangle( 1*8, 31*8-1, 2*8, 30*8-1 ),
 		farwest_gfxdecodeinfo,
 		256,16*8*16+16*8*16,
 		ironhors_vh_convert_color_prom,
 	
 		VIDEO_TYPE_RASTER,
-		0,
+		null,
 		generic_vh_start,
 		generic_vh_stop,
 		ironhors_vh_screenrefresh,
 	
 		/* sound hardware */
 		0,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_YM2203,
-				&ym2203_interface
-			}
+				ym2203_interface
+			)
 		}
-	};
+	);
 	
 	
 	

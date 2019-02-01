@@ -333,52 +333,52 @@ public class rastan
 	
 	
 	
-	static const struct MachineDriver machine_driver_rastan =
-	{
+	static MachineDriver machine_driver_rastan = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_M68000,
 				8000000,	/* 8 MHz */
-				rastan_readmem,rastan_writemem,0,0,
+				rastan_readmem,rastan_writemem,null,null,
 				rastan_interrupt,1
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_Z80,
 				4000000,	/* 4 MHz */
-				rastan_s_readmem,rastan_s_writemem,0,0,
+				rastan_s_readmem,rastan_s_writemem,null,null,
 				ignore_interrupt,1
-			}
+			)
 		},
 		60, DEFAULT_60HZ_VBLANK_DURATION,	/* frames per second, vblank duration */
 		10,	/* 10 CPU slices per frame - enough for the sound CPU to read all commands */
-		0,
+		null,
 	
 		/* video hardware */
-		40*8, 32*8, { 0*8, 40*8-1, 1*8, 31*8-1 },
+		40*8, 32*8, new rectangle( 0*8, 40*8-1, 1*8, 31*8-1 ),
 		gfxdecodeinfo,
-		8192, 0,
-		0,
+		8192, null,
+		null,
 	
 		VIDEO_TYPE_RASTER,
-		0,
+		null,
 		rastan_vh_start,
 		rastan_vh_stop,
 		rastan_vh_screenrefresh,
 	
 		/* sound hardware */
 		0,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_YM2151,
-				&ym2151_interface
-			},
-			{
+				ym2151_interface
+			),
+			new MachineSound(
 				SOUND_ADPCM,
-				&adpcm_interface
-			}
+				adpcm_interface
+			)
 		}
-	};
+	);
 	
 	
 	

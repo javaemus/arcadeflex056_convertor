@@ -361,103 +361,103 @@ public class tecmo16
 	
 	/******************************************************************************/
 	
-	static const struct MachineDriver machine_driver_fstarfrc =
-	{
+	static MachineDriver machine_driver_fstarfrc = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_M68000,
 				24000000/2,			/* 12MHz */
-				fstarfrc_readmem,fstarfrc_writemem,0,0,
+				fstarfrc_readmem,fstarfrc_writemem,null,null,
 				m68_level5_irq,1
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_Z80 | CPU_AUDIO_CPU,
 				8000000/2,			/* 4MHz */
-				sound_readmem,sound_writemem,0,0,
+				sound_readmem,sound_writemem,null,null,
 				ignore_interrupt,0	/* IRQs are triggered by the YM2151 */
 									/* NMIs are triggered by the main CPU */
-			}
+			)
 		},
 	
 		60, DEFAULT_60HZ_VBLANK_DURATION,
 		10,
-		0,
+		null,
 	
 		/* video hardware */
-		32*8, 32*8, { 0*8, 32*8-1, 2*8, 30*8-1 },
+		32*8, 32*8, new rectangle( 0*8, 32*8-1, 2*8, 30*8-1 ),
 		gfxdecodeinfo,
-		1024, 0,
-		0,
+		1024, null,
+		null,
 	
 		VIDEO_TYPE_RASTER,
-		0,
+		null,
 		fstarfrc_vh_start,
-		0,
+		null,
 		tecmo16_vh_screenrefresh,
 	
 		/* sound hardware */
 		SOUND_SUPPORTS_STEREO,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_YM2151,
-				&ym2151_interface
-			},
-			{
+				ym2151_interface
+			),
+			new MachineSound(
 				SOUND_OKIM6295,
-				&okim6295_interface
-			}
+				okim6295_interface
+			)
 		}
-	};
+	);
 	
-	static const struct MachineDriver machine_driver_ginkun =
-	{
+	static MachineDriver machine_driver_ginkun = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_M68000,
 				24000000/2,			/* 12MHz */
-				ginkun_readmem,ginkun_writemem,0,0,
+				ginkun_readmem,ginkun_writemem,null,null,
 				m68_level5_irq,1
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_Z80 | CPU_AUDIO_CPU,
 				8000000/2,			/* 4MHz */
-				sound_readmem,sound_writemem,0,0,
+				sound_readmem,sound_writemem,null,null,
 				ignore_interrupt,0	/* IRQs are triggered by the YM2151 */
 									/* NMIs are triggered by the main CPU */
-			}
+			)
 		},
 	
 		60, DEFAULT_60HZ_VBLANK_DURATION,
 		10,
-		0,
+		null,
 	
 		/* video hardware */
-		32*8, 32*8, { 0*8, 32*8-1, 2*8, 30*8-1 },
+		32*8, 32*8, new rectangle( 0*8, 32*8-1, 2*8, 30*8-1 ),
 		gfxdecodeinfo,
-		1024, 0,
-		0,
+		1024, null,
+		null,
 	
 		VIDEO_TYPE_RASTER,
-		0,
+		null,
 		ginkun_vh_start,
-		0,
+		null,
 		tecmo16_vh_screenrefresh,
 	
 		/* sound hardware */
 		SOUND_SUPPORTS_STEREO,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_YM2151,
-				&ym2151_interface
-			},
-			{
+				ym2151_interface
+			),
+			new MachineSound(
 				SOUND_OKIM6295,
-				&okim6295_interface
-			}
+				okim6295_interface
+			)
 		}
-	};
+	);
 	
 	/******************************************************************************/
 	

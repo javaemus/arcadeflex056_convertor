@@ -318,91 +318,91 @@ public class tumblep
 		{ sound_irq }
 	};
 	
-	static const struct MachineDriver machine_driver_tumblepop =
-	{
+	static MachineDriver machine_driver_tumblepop = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-		 	{
+		new MachineCPU[] {
+		 	new MachineCPU(
 				CPU_M68000,
 				14000000,
-				tumblepop_readmem,tumblepop_writemem,0,0,
+				tumblepop_readmem,tumblepop_writemem,null,null,
 				m68_level6_irq,1
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_H6280 | CPU_AUDIO_CPU, /* Custom chip 45 */
 				32220000/8, /* Audio section crystal is 32.220 MHz */
-				sound_readmem,sound_writemem,0,0,
+				sound_readmem,sound_writemem,null,null,
 				ignore_interrupt,0
-			}
+			)
 		},
 		58, 529,
 		1,
-		0,
+		null,
 	
 		/* video hardware */
-		40*8, 32*8, { 0*8, 40*8-1, 1*8, 31*8-1 },
+		40*8, 32*8, new rectangle( 0*8, 40*8-1, 1*8, 31*8-1 ),
 	
 		gfxdecodeinfo,
-		1024, 0,
-		0,
+		1024, null,
+		null,
 	
 		VIDEO_TYPE_RASTER,
-		0,
+		null,
 		tumblep_vh_start,
-		0,
+		null,
 		tumblep_vh_screenrefresh,
 	
 		/* sound hardware */
 		SOUND_SUPPORTS_STEREO,0,0,0,
-	  	{
-			{
+	  	new MachineSound[] {
+			new MachineSound(
 				SOUND_YM2151,
-				&ym2151_interface
-			},
-			{
+				ym2151_interface
+			),
+			new MachineSound(
 				SOUND_OKIM6295,
-				&okim6295_interface
-			}
+				okim6295_interface
+			)
 		}
-	};
+	);
 	
-	static const struct MachineDriver machine_driver_tumblepb =
-	{
+	static MachineDriver machine_driver_tumblepb = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-		 	{
+		new MachineCPU[] {
+		 	new MachineCPU(
 				CPU_M68000,
 				14000000,
-				tumblepopb_readmem,tumblepopb_writemem,0,0,
+				tumblepopb_readmem,tumblepopb_writemem,null,null,
 				m68_level6_irq,1
-			},
+			),
 		},
 		58, 529,
 		1,
-		0,
+		null,
 	
 		/* video hardware */
-		40*8, 32*8, { 0*8, 40*8-1, 1*8, 31*8-1 },
+		40*8, 32*8, new rectangle( 0*8, 40*8-1, 1*8, 31*8-1 ),
 	
 		gfxdecodeinfo,
-		1024, 0,
-		0,
+		1024, null,
+		null,
 	
 		VIDEO_TYPE_RASTER,
-		0,
+		null,
 		tumblep_vh_start,
-		0,
+		null,
 		tumblepb_vh_screenrefresh,
 	
 		/* sound hardware */
 		0,0,0,0,
-	  	{
-			{
+	  	new MachineSound[] {
+			new MachineSound(
 				SOUND_OKIM6295,
-				&okim6295_interface2
-			}
+				okim6295_interface2
+			)
 		}
-	};
+	);
 	
 	/******************************************************************************/
 	

@@ -283,97 +283,97 @@ public class lastduel
 		else return 6; /* Controls */
 	}
 	
-	static const struct MachineDriver machine_driver_lastduel =
-	{
+	static MachineDriver machine_driver_lastduel = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_M68000,
 				10000000, /* Could be 8 MHz */
-				lastduel_readmem, lastduel_writemem, 0,0,
+				lastduel_readmem, lastduel_writemem, null,null,
 				lastduel_interrupt,3	/* 1 for vbl, 2 for control reads?? */
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_Z80 | CPU_AUDIO_CPU,
 				3579545, /* Accurate */
-				sound_readmem,sound_writemem,0,0,
+				sound_readmem,sound_writemem,null,null,
 				ignore_interrupt,0	/* IRQs are caused by the YM2203 */
-			}
+			)
 		},
 		60, DEFAULT_60HZ_VBLANK_DURATION,
 		1,
-		0,
+		null,
 	
 		/* video hardware */
-		64*8, 32*8, { 8*8, (64-8)*8-1, 1*8, 31*8-1 },
+		64*8, 32*8, new rectangle( 8*8, (64-8)*8-1, 1*8, 31*8-1 ),
 	
 		lastduel_gfxdecodeinfo,
-		1024, 0,
-		0,
+		1024, null,
+		null,
 	
 		VIDEO_TYPE_RASTER | VIDEO_NEEDS_6BITS_PER_GUN | VIDEO_UPDATE_BEFORE_VBLANK | VIDEO_BUFFERS_SPRITERAM,
 		lastduel_eof_callback,
 		lastduel_vh_start,
-		0,
+		null,
 		lastduel_vh_screenrefresh,
 	
 		/* sound hardware */
 		0,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_YM2203,
-				&ym2203_interface
-			}
+				ym2203_interface
+			)
 		}
-	};
+	);
 	
-	static const struct MachineDriver machine_driver_madgear =
-	{
+	static MachineDriver machine_driver_madgear = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_M68000,
 				10000000, /* Accurate */
-				madgear_readmem, madgear_writemem, 0,0,
+				madgear_readmem, madgear_writemem, null,null,
 				madgear_interrupt,3	/* 1 for vbl, 2 for control reads?? */
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_Z80 | CPU_AUDIO_CPU,
 				3579545, /* Accurate */
-				mg_sound_readmem,mg_sound_writemem,0,0,
+				mg_sound_readmem,mg_sound_writemem,null,null,
 				ignore_interrupt,0	/* IRQs are caused by the YM2203 */
-			}
+			)
 		},
 		60, DEFAULT_60HZ_VBLANK_DURATION,
 		1,
-		0,
+		null,
 	
 		/* video hardware */
-		64*8, 32*8, { 8*8, (64-8)*8-1, 1*8, 31*8-1 },
+		64*8, 32*8, new rectangle( 8*8, (64-8)*8-1, 1*8, 31*8-1 ),
 	
 		madgear_gfxdecodeinfo,
-		1024, 0,
-		0,
+		1024, null,
+		null,
 	
 		VIDEO_TYPE_RASTER | VIDEO_NEEDS_6BITS_PER_GUN | VIDEO_UPDATE_BEFORE_VBLANK | VIDEO_BUFFERS_SPRITERAM,
 		lastduel_eof_callback,
 		madgear_vh_start,
-		0,
+		null,
 		lastduel_vh_screenrefresh,
 	
 		/* sound hardware */
 		0,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_YM2203,
-				&ym2203_interface
-			},
-			{
+				ym2203_interface
+			),
+			new MachineSound(
 				SOUND_OKIM6295,
-				&okim6295_interface
-			}
+				okim6295_interface
+			)
 		}
-	};
+	);
 	
 	/******************************************************************************/
 	

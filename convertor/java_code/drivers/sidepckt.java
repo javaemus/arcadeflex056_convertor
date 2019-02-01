@@ -315,101 +315,101 @@ public class sidepckt
 	
 	
 	
-	static const struct MachineDriver machine_driver_sidepckt =
-	{
+	static MachineDriver machine_driver_sidepckt = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_M6809,
 				2000000,        /* 2 MHz */
-				readmem,writemem,0,0,
+				readmem,writemem,null,null,
 				nmi_interrupt,1
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_M6502 | CPU_AUDIO_CPU,
 				1500000,        /* 1.5 MHz */
-				sound_readmem,sound_writemem,0,0,
+				sound_readmem,sound_writemem,null,null,
 				ignore_interrupt,0	/* IRQs are triggered by the YM3526 */
 									/* NMIs are triggered by the main cpu */
-			}
+			)
 		},
 		58, DEFAULT_REAL_60HZ_VBLANK_DURATION,  /* VERIFY:  May be 55 or 56 */
 		1, /* 1 CPU slice per frame - interleaving is forced when a sound command is written */
-		0,
+		null,
 	
 		/* video hardware */
-		32*8, 32*8, { 0*8, 32*8-1, 2*8, 30*8-1 },
+		32*8, 32*8, new rectangle( 0*8, 32*8-1, 2*8, 30*8-1 ),
 		gfxdecodeinfo,
-		256, 0,
+		256, null,
 		sidepckt_vh_convert_color_prom,
 	
 		VIDEO_TYPE_RASTER,
-		0,
+		null,
 		sidepckt_vh_start,
 		generic_vh_stop,
 		sidepckt_vh_screenrefresh,
 	
 		/* sound hardware */
 		0,0,0,0,
-		{
-		    {
+		new MachineSound[] {
+		    new MachineSound(
 		        SOUND_YM2203,
-		        &ym2203_interface
-		    },
-		    {
+		        ym2203_interface
+		    ),
+		    new MachineSound(
 		        SOUND_YM3526,
-		        &ym3526_interface
-		    }
+		        ym3526_interface
+		    )
 		}
-	};
+	);
 	
-	static const struct MachineDriver machine_driver_sidepctj =
-	{
+	static MachineDriver machine_driver_sidepctj = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_M6809,
 				2000000,        /* 2 MHz */
-				readmem,j_writemem,0,0,
+				readmem,j_writemem,null,null,
 				nmi_interrupt,1
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_M6502 | CPU_AUDIO_CPU,
 				1500000,        /* 1.5 MHz */
-				sound_readmem,sound_writemem,0,0,
+				sound_readmem,sound_writemem,null,null,
 				ignore_interrupt,0	/* IRQs are triggered by the YM3526 */
 									/* NMIs are triggered by the main cpu */
-			}
+			)
 		},
 		58, DEFAULT_REAL_60HZ_VBLANK_DURATION,  /* VERIFY:  May be 55 or 56 */
 		1, /* 1 CPU slice per frame - interleaving is forced when a sound command is written */
-		0,
+		null,
 	
 		/* video hardware */
-		32*8, 32*8, { 0*8, 32*8-1, 2*8, 30*8-1 },
+		32*8, 32*8, new rectangle( 0*8, 32*8-1, 2*8, 30*8-1 ),
 		gfxdecodeinfo,
-		256, 0,
+		256, null,
 		sidepckt_vh_convert_color_prom,
 	
 		VIDEO_TYPE_RASTER,
-		0,
+		null,
 		sidepckt_vh_start,
 		generic_vh_stop,
 		sidepckt_vh_screenrefresh,
 	
 		/* sound hardware */
 		0,0,0,0,
-		{
-		    {
+		new MachineSound[] {
+		    new MachineSound(
 		        SOUND_YM2203,
-		        &ym2203_interface
-		    },
-		    {
+		        ym2203_interface
+		    ),
+		    new MachineSound(
 		        SOUND_YM3526,
-		        &ym3526_interface
-		    }
+		        ym3526_interface
+		    )
 		}
-	};
+	);
 	
 	/***************************************************************************
 	

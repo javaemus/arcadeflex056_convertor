@@ -299,154 +299,154 @@ public class circus
 		{ 255, 255 }
 	};
 	
-	static const struct MachineDriver machine_driver_circus =
-	{
+	static MachineDriver machine_driver_circus = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_M6502,
 				11289000/16,	/* 705.562kHz */
-				readmem,writemem,0,0,
+				readmem,writemem,null,null,
 				interrupt,1
-			}
+			)
 		},
 		57, 3500,	/* frames per second, vblank duration (complete guess) */
 		1,      /* single CPU, no need for interleaving */
-		0,
+		null,
 	
 		/* video hardware */
-		32*8, 32*8, { 0*8, 31*8-1, 0*8, 32*8-1 },
+		32*8, 32*8, new rectangle( 0*8, 31*8-1, 0*8, 32*8-1 ),
 		gfxdecodeinfo,
 		ARTWORK_COLORS,ARTWORK_COLORS,		/* Leave extra colors for the overlay */
 		init_palette,
 	
 		VIDEO_TYPE_RASTER | VIDEO_SUPPORTS_DIRTY ,
-		0,
+		null,
 		circus_vh_start,
 		generic_vh_stop,
 		circus_vh_screenrefresh,
 	
 		/* sound hardware */
 		0,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_DAC,
-				&dac_interface
-			}
+				dac_interface
+			)
 		}
-	};
+	);
 	
 	
-	static const struct MachineDriver machine_driver_robotbwl =
-	{
+	static MachineDriver machine_driver_robotbwl = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_M6502,
 				11289000/16,	/* 705.562kHz */
-				readmem,writemem,0,0,
+				readmem,writemem,null,null,
 				interrupt,1
-			}
+			)
 		},
 		57, 3500,	/* frames per second, vblank duration (complete guess) */
 		1,      /* single CPU, no need for interleaving */
-		0,
+		null,
 	
 		/* video hardware */
-		32*8, 32*8, { 0*8, 31*8-1, 0*8, 32*8-1 },
+		32*8, 32*8, new rectangle( 0*8, 31*8-1, 0*8, 32*8-1 ),
 		robotbowl_gfxdecodeinfo,
 		2, 2,
 		init_palette,
 	
 		VIDEO_TYPE_RASTER | VIDEO_SUPPORTS_DIRTY,
-		0,
+		null,
 		generic_vh_start,
 		generic_vh_stop,
 		robotbowl_vh_screenrefresh,
 	
 		/* sound hardware */
 		0,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_DAC,
-				&dac_interface
-			}
+				dac_interface
+			)
 		}
-	};
+	);
 	
-	static const struct MachineDriver machine_driver_crash =
-	{
+	static MachineDriver machine_driver_crash = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_M6502,
 				11289000/16,	/* 705.562kHz */
-				readmem,writemem,0,0,
+				readmem,writemem,null,null,
 				interrupt,2
-			}
+			)
 		},
 		57, 3500,	/* frames per second, vblank duration (complete guess) */
 		1,      /* single CPU, no need for interleaving */
-		0,
+		null,
 	
 		/* video hardware */
-		32*8, 32*8, { 0*8, 31*8-1, 0*8, 32*8-1 },
+		32*8, 32*8, new rectangle( 0*8, 31*8-1, 0*8, 32*8-1 ),
 		gfxdecodeinfo,
 		2, 2,
 		init_palette,
 	
 		VIDEO_TYPE_RASTER | VIDEO_SUPPORTS_DIRTY,
-		0,
+		null,
 		generic_vh_start,
 		generic_vh_stop,
 		crash_vh_screenrefresh,
 	
 		/* sound hardware */
 		0,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_DAC,
-				&dac_interface
-			}
+				dac_interface
+			)
 		}
-	};
+	);
 	
-	static const struct MachineDriver machine_driver_ripcord =
-	{
+	static MachineDriver machine_driver_ripcord = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_M6502,
 				705562,        /* 11.289MHz / 16 */
-				readmem,writemem,0,0,
+				readmem,writemem,null,null,
 				ripcord_interrupt,1
-			}
+			)
 		},
 		57, 3500,	/* frames per second, vblank duration (complete guess) */
 		1,      /* single CPU, no need for interleaving */
-		0,
+		null,
 	
 		/* video hardware */
-		32*8, 32*8, { 0*8, 31*8-1, 0*8, 32*8-1 },
+		32*8, 32*8, new rectangle( 0*8, 31*8-1, 0*8, 32*8-1 ),
 		gfxdecodeinfo,
 		2, 2,
 		init_palette,
 	
 		VIDEO_TYPE_RASTER | VIDEO_SUPPORTS_DIRTY,
-		0,
+		null,
 		generic_vh_start,
 		generic_vh_stop,
 		crash_vh_screenrefresh,
 	
 		/* sound hardware */
 		0,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_DAC,
-				&dac_interface
-			}
+				dac_interface
+			)
 		}
-	};
+	);
 	
 	
 	

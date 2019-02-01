@@ -376,79 +376,79 @@ public class popeye
 	
 	
 	
-	static const struct MachineDriver machine_driver_popeye =
-	{
+	static MachineDriver machine_driver_popeye = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_Z80,
 				4000000,	/* 4 MHz */
 				readmem,writemem,readport,writeport,
 				nmi_interrupt,2
-			}
+			)
 		},
 		30, DEFAULT_30HZ_VBLANK_DURATION,	/* frames per second, vblank duration */
 		1,	/* single CPU, no need for interleaving */
-		0,
+		null,
 	
 		/* video hardware */
-		32*16, 32*16, { 0*16, 32*16-1, 2*16, 30*16-1 },
+		32*16, 32*16, new rectangle( 0*16, 32*16-1, 2*16, 30*16-1 ),
 		gfxdecodeinfo,
 		16+16+256, 16*2+64*4,
 		popeye_vh_convert_color_prom,
 	
 		VIDEO_TYPE_RASTER,
-		0,
+		null,
 		popeye_vh_start,
 		popeye_vh_stop,
 		popeye_vh_screenrefresh,
 	
 		/* sound hardware */
 		0,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_AY8910,
-				&ay8910_interface
-			}
+				ay8910_interface
+			)
 		}
-	};
+	);
 	
-	static const struct MachineDriver machine_driver_popeyebl =
-	{
+	static MachineDriver machine_driver_popeyebl = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_Z80,
 				4000000,	/* 4 MHz */
 				popeyebl_readmem,popeyebl_writemem,readport,writeport,
 				nmi_interrupt,2
-			}
+			)
 		},
 		30, DEFAULT_30HZ_VBLANK_DURATION,	/* frames per second, vblank duration */
 		1,	/* single CPU, no need for interleaving */
-		0,
+		null,
 	
 		/* video hardware */
-		32*16, 32*16, { 0*16, 32*16-1, 2*16, 30*16-1 },
+		32*16, 32*16, new rectangle( 0*16, 32*16-1, 2*16, 30*16-1 ),
 		gfxdecodeinfo,
 		16+16+256, 16*2+64*4,
 		popeyebl_vh_convert_color_prom,
 	
 		VIDEO_TYPE_RASTER,
-		0,
+		null,
 		popeye_vh_start,
 		popeye_vh_stop,
 		popeye_vh_screenrefresh,
 	
 		/* sound hardware */
 		0,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_AY8910,
-				&ay8910_interface
-			}
+				ay8910_interface
+			)
 		}
-	};
+	);
 	
 	
 	

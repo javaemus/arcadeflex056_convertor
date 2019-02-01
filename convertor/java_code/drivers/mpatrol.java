@@ -361,42 +361,42 @@ public class mpatrol
 	
 	
 	
-	static const struct MachineDriver machine_driver_mpatrol =
-	{
+	static MachineDriver machine_driver_mpatrol = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_Z80,
 				3072000,        /* 3.072 MHz ? */
-				readmem,writemem,0,writeport,
+				readmem,writemem,null,writeport,
 				interrupt,1
-			},
+			),
 			IREM_AUDIO_CPU
 		},
 		57, 1790,	/* accurate frequency, measured on a real board, is 56.75Hz. */
 					/* the Lode Runner manual (similar but different hardware) */
 					/* talks about 55Hz and 1790ms vblank duration. */
 		1,	/* 1 CPU slice per frame - interleaving is forced when a sound command is written */
-		0,
+		null,
 	
 		/* video hardware */
-		32*8, 32*8, { 1*8, 31*8-1, 1*8, 32*8-1 },
+		32*8, 32*8, new rectangle( 1*8, 31*8-1, 1*8, 32*8-1 ),
 		gfxdecodeinfo,
 		128+32+32,64*4+16*4+3*4,
 		mpatrol_vh_convert_color_prom,
 	
 		VIDEO_TYPE_RASTER,
-		0,
+		null,
 		mpatrol_vh_start,
 		mpatrol_vh_stop,
 		mpatrol_vh_screenrefresh,
 	
 		/* sound hardware */
 		0,0,0,0,
-		{
+		new MachineSound[] {
 			IREM_AUDIO
 		}
-	};
+	);
 	
 	
 	

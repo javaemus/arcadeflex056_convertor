@@ -301,60 +301,60 @@ public class sprint2
 	}
 	
 	
-	static const struct MachineDriver machine_driver_sprint2 =
-	{
+	static MachineDriver machine_driver_sprint2 = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_M6502,
 				333333,        /* 0.3 MHz ???? */
-				readmem,writemem,0,0,
+				readmem,writemem,null,null,
 				interrupt,1
-			}
+			)
 		},
 		60, DEFAULT_REAL_60HZ_VBLANK_DURATION,	/* frames per second, vblank duration */
 		1,	/* single CPU, no need for interleaving */
-		0,
+		null,
 	
 		/* video hardware */
-		32*8, 32*8, { 0*8, 32*8-1, 0*8, 32*8-1 }, /* it's actually 32x28, but we'll leave room for our gear indicator */
+		32*8, 32*8, new rectangle( 0*8, 32*8-1, 0*8, 32*8-1 ), /* it's actually 32x28, but we'll leave room for our gear indicator */
 		gfxdecodeinfo,
-		sizeof(palette) / sizeof(palette[0]) / 3, sizeof(colortable) / sizeof(colortable[0]),
+		sizeof(palette) / sizeof(palette[null]) / 3, sizeof(colortable) / sizeof(colortable[null]),
 		init_palette,
 	
 		VIDEO_TYPE_RASTER,
-		0,
+		null,
 		sprint2_vh_start,
 		sprint2_vh_stop,
 		sprint2_vh_screenrefresh,
 	
 		/* sound hardware */
 		0,0,0,0
-	};
+	);
 	
-	static const struct MachineDriver machine_driver_sprint1 =
-	{
+	static MachineDriver machine_driver_sprint1 = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_M6502,
 				333333,        /* 0.3 MHz ???? */
-				sprint1_readmem,writemem,0,0,
+				sprint1_readmem,writemem,null,null,
 				interrupt,1
-			}
+			)
 		},
 		60, DEFAULT_REAL_60HZ_VBLANK_DURATION,	/* frames per second, vblank duration */
 		1,	/* single CPU, no need for interleaving */
-		0,
+		null,
 	
 		/* video hardware */
-		32*8, 32*8, { 0*8, 32*8-1, 0*8, 32*8-1 }, /* it's actually 32x28, but we'll leave room for our gear indicator */
+		32*8, 32*8, new rectangle( 0*8, 32*8-1, 0*8, 32*8-1 ), /* it's actually 32x28, but we'll leave room for our gear indicator */
 		gfxdecodeinfo,
-		sizeof(palette) / sizeof(palette[0]) / 3, sizeof(colortable) / sizeof(colortable[0]),
+		sizeof(palette) / sizeof(palette[null]) / 3, sizeof(colortable) / sizeof(colortable[null]),
 		init_palette,
 	
 		VIDEO_TYPE_RASTER,
-		0,
+		null,
 		sprint2_vh_start,
 		sprint2_vh_stop,
 		sprint1_vh_screenrefresh,
@@ -362,7 +362,7 @@ public class sprint2
 		/* sound hardware */
 		0,0,0,0
 	
-	};
+	);
 	
 	
 	

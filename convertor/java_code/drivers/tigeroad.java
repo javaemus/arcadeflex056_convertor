@@ -573,103 +573,103 @@ public class tigeroad
 	};
 	
 	
-	static const struct MachineDriver machine_driver_tigeroad =
-	{
-		{
-			{
+	static MachineDriver machine_driver_tigeroad = new MachineDriver
+	(
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_M68000,
 				6000000, /* ? Main clock is 24MHz */
-				readmem,writemem,0,0,
+				readmem,writemem,null,null,
 				tigeroad_interrupt,1
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_Z80 | CPU_AUDIO_CPU,
 				4000000,    /* 4 MHz ??? */
-				sound_readmem,sound_writemem,0,sound_writeport,
-				ignore_interrupt,0  /* NMIs are triggered by the main CPU */
+				sound_readmem,sound_writemem,null,sound_writeport,
+				ignore_interrupt,null  /* NMIs are triggered by the main CPU */
 									/* IRQs are triggered by the YM2203 */
-			}
+			)
 		},
 		60, DEFAULT_60HZ_VBLANK_DURATION,	/* frames per second, vblank duration */
 		1,  /* CPU slices per frame */
-		0,
+		null,
 	
 		/* video hardware */
-		32*8, 32*8, { 0*8, 32*8-1, 2*8, 30*8-1 },
+		32*8, 32*8, new rectangle( 0*8, 32*8-1, 2*8, 30*8-1 ),
 		gfxdecodeinfo,
-		576, 0,
-		0,
+		576, null,
+		null,
 	
 		VIDEO_TYPE_RASTER | VIDEO_BUFFERS_SPRITERAM,
 		tigeroad_eof_callback,
-		0,
-		0,
+		null,
+		null,
 		tigeroad_vh_screenrefresh,
 	
 		/* sound hardware */
 		0,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_YM2203,
-				&ym2203_interface
-			}
+				ym2203_interface
+			)
 		}
-	};
+	);
 	
 	/* same as above but with additional Z80 for samples playback */
-	static const struct MachineDriver machine_driver_toramich =
-	{
-		{
-			{
+	static MachineDriver machine_driver_toramich = new MachineDriver
+	(
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_M68000,
 				6000000, /* ? Main clock is 24MHz */
-				readmem,writemem,0,0,
+				readmem,writemem,null,null,
 				tigeroad_interrupt,1
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_Z80 | CPU_AUDIO_CPU,
 				4000000,    /* 4 MHz ??? */
-				sound_readmem,sound_writemem,0,sound_writeport,
-				ignore_interrupt,0  /* NMIs are triggered by the main CPU */
+				sound_readmem,sound_writemem,null,sound_writeport,
+				ignore_interrupt,null  /* NMIs are triggered by the main CPU */
 									/* IRQs are triggered by the YM2203 */
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_Z80 | CPU_AUDIO_CPU,
 				3579545,	/* ? */
 				sample_readmem,sample_writemem,sample_readport,sample_writeport,
-				0,0,
+				null,null,
 				interrupt,4000	/* ? */
-			}
+			)
 		},
 		60, DEFAULT_60HZ_VBLANK_DURATION,	/* frames per second, vblank duration */
 		1,  /* CPU slices per frame */
-		0,
+		null,
 	
 		/* video hardware */
-		32*8, 32*8, { 0*8, 32*8-1, 2*8, 30*8-1 },
+		32*8, 32*8, new rectangle( 0*8, 32*8-1, 2*8, 30*8-1 ),
 		gfxdecodeinfo,
-		576, 0,
-		0,
+		576, null,
+		null,
 	
 		VIDEO_TYPE_RASTER | VIDEO_BUFFERS_SPRITERAM,
 		tigeroad_eof_callback,
-		0,
-		0,
+		null,
+		null,
 		tigeroad_vh_screenrefresh,
 	
 		/* sound hardware */
 		0,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_YM2203,
-				&ym2203_interface
-			},
-			{
+				ym2203_interface
+			),
+			new MachineSound(
 				SOUND_MSM5205,
-				&msm5205_interface
-			}
+				msm5205_interface
+			)
 		}
-	};
+	);
 	
 	
 	

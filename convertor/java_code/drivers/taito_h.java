@@ -596,131 +596,131 @@ public class taito_h
 	};
 	
 	
-	static const struct MachineDriver machine_driver_syvalion =
-	{
-		{
-			{
+	static MachineDriver machine_driver_syvalion = new MachineDriver
+	(
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_M68000,
 				24000000 / 2,		/* 12 MHz */
-				syvalion_readmem, syvalion_writemem, 0, 0,
+				syvalion_readmem, syvalion_writemem, null, null,
 				m68_level2_irq, 1
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_Z80,
 				8000000 / 2,		/* 4 MHz ??? */
-				sound_readmem, sound_writemem, 0, 0,
+				sound_readmem, sound_writemem, null, null,
 				ignore_interrupt, 0
-			},
+			),
 		},
 		60, DEFAULT_60HZ_VBLANK_DURATION,
 		10,
-		0,
+		null,
 	
 		/* video hardware */
-		64*16, 64*16, { 0*16, 32*16-1, 3*16, 28*16-1 },
+		64*16, 64*16, new rectangle( 0*16, 32*16-1, 3*16, 28*16-1 ),
 		syvalion_gfxdecodeinfo,
-		33*16, 0,
-		0,
+		33*16, null,
+		null,
 	
 		VIDEO_TYPE_RASTER,
-		0,
+		null,
 		syvalion_vh_start,
 		syvalion_vh_stop,
 		syvalion_vh_screenrefresh,
 	
 		/* sound hardware */
 		0,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_YM2610,
-				&syvalion_ym2610_interface
-			},
+				syvalion_ym2610_interface
+			),
 		}
-	};
+	);
 	
-	static const struct MachineDriver machine_driver_recordbr =
-	{
-		{
-			{
+	static MachineDriver machine_driver_recordbr = new MachineDriver
+	(
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_M68000,
 				24000000 / 2,		/* 12 MHz */
-				recordbr_readmem, recordbr_writemem, 0, 0,
+				recordbr_readmem, recordbr_writemem, null, null,
 				m68_level2_irq, 1
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_Z80,
 				8000000 / 2,		/* 4 MHz ??? */
-				sound_readmem, sound_writemem, 0, 0,
+				sound_readmem, sound_writemem, null, null,
 				ignore_interrupt, 0
-			},
+			),
 		},
 		60, DEFAULT_60HZ_VBLANK_DURATION,
 		10,
-		0,
+		null,
 	
 		/* video hardware */
-		64*16, 64*16, { 1*16, 21*16-1, 2*16, 17*16-1 },
+		64*16, 64*16, new rectangle( 1*16, 21*16-1, 2*16, 17*16-1 ),
 		recordbr_gfxdecodeinfo,
-		32*16, 0,
-		0,
+		32*16, null,
+		null,
 	
 		VIDEO_TYPE_RASTER,
-		0,
+		null,
 		recordbr_vh_start,
 		syvalion_vh_stop,
 		recordbr_vh_screenrefresh,
 	
 		/* sound hardware */
 		0,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_YM2610,
-				&syvalion_ym2610_interface
-			},
+				syvalion_ym2610_interface
+			),
 		}
-	};
+	);
 	
-	static const struct MachineDriver machine_driver_dleague =
-	{
-		{
-			{
+	static MachineDriver machine_driver_dleague = new MachineDriver
+	(
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_M68000,
 				24000000 / 2,		/* 12 MHz */
-				dleague_readmem, dleague_writemem, 0, 0,
+				dleague_readmem, dleague_writemem, null, null,
 				m68_level1_irq, 1
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_Z80,
 				8000000 / 2,		/* 4 MHz ??? */
-				sound_readmem, sound_writemem, 0, 0,
+				sound_readmem, sound_writemem, null, null,
 				ignore_interrupt, 0
-			},
+			),
 		},
 		60, DEFAULT_60HZ_VBLANK_DURATION,
 		10,
-		0,
+		null,
 	
 		/* video hardware */
-		64*16, 64*16, { 1*16, 21*16-1, 2*16, 17*16-1 },
+		64*16, 64*16, new rectangle( 1*16, 21*16-1, 2*16, 17*16-1 ),
 		dleague_gfxdecodeinfo,
-		33*16, 0,
-		0,
+		33*16, null,
+		null,
 	
 		VIDEO_TYPE_RASTER,
-		0,
+		null,
 		dleague_vh_start,
 		syvalion_vh_stop,
 		dleague_vh_screenrefresh,
 	
 		/* sound hardware */
 		0,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_YM2610,
-				&dleague_ym2610_interface
-			},
+				dleague_ym2610_interface
+			),
 		}
-	};
+	);
 	
 	
 	/***************************************************************************

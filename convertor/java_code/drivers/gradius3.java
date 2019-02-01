@@ -393,60 +393,60 @@ public class gradius3
 	
 	
 	
-	static const struct MachineDriver machine_driver_gradius3 =
-	{
+	static MachineDriver machine_driver_gradius3 = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_M68000,
 				10000000,	/* 10 MHz */
-				gradius3_readmem,gradius3_writemem,0,0,
+				gradius3_readmem,gradius3_writemem,null,null,
 				cpuA_interrupt,1
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_M68000,
 				10000000,	/* 10 MHz */
-				gradius3_readmem2,gradius3_writemem2,0,0,
+				gradius3_readmem2,gradius3_writemem2,null,null,
 				cpuB_interrupt,2	/* has three interrupt vectors, 1 2 and 4 */
 									/* 4 is triggered by cpu A, the others are unknown but */
 									/* required for the game to run. */
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_Z80 | CPU_AUDIO_CPU,
 				3579545,	/* 3.579545 MHz */
-				gradius3_s_readmem,gradius3_s_writemem,0,0,
+				gradius3_s_readmem,gradius3_s_writemem,null,null,
 				ignore_interrupt,0	/* IRQs are triggered by the main CPU */
-			}
+			)
 		},
 		60, DEFAULT_60HZ_VBLANK_DURATION,	/* frames per second, vblank duration */
 		100, /* CPU slices */
 		gradius3_init,
 	
 		/* video hardware */
-		64*8, 32*8, { 12*8, (64-14)*8-1, 2*8, 30*8-1 },	/* asymmetrical! */
-		0,	/* gfx decoded by konamiic.c */
-		2048, 0,
-		0,
+		64*8, 32*8, new rectangle( 12*8, (64-14)*8-1, 2*8, 30*8-1 ),	/* asymmetrical! */
+		null,	/* gfx decoded by konamiic.c */
+		2048, null,
+		null,
 	
 		VIDEO_TYPE_RASTER | VIDEO_HAS_SHADOWS,
-		0,
+		null,
 		gradius3_vh_start,
 		gradius3_vh_stop,
 		gradius3_vh_screenrefresh,
 	
 		/* sound hardware */
 		SOUND_SUPPORTS_STEREO,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_YM2151,
-				&ym2151_interface
-			},
-			{
+				ym2151_interface
+			),
+			new MachineSound(
 				SOUND_K007232,
-				&k007232_interface,
-			}
+				k007232_interface,
+			)
 		}
-	};
+	);
 	
 	
 	

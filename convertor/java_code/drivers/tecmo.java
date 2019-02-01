@@ -586,53 +586,53 @@ public class tecmo
 	
 	
 	#define MACHINE_DRIVER(NAME,CPU1_CLOCK,SOUND)					\
-	static const struct MachineDriver machine_driver_##NAME =				\
-	{																\
+	static MachineDriver machine_driver_##NAME = new MachineDriver\
+	(																\
 		/* basic machine hardware */								\
-		{															\
-			{														\
+		new MachineCPU[] {															\
+			new MachineCPU(														\
 				CPU_Z80,											\
 				CPU1_CLOCK,											\
-				readmem,NAME##_writemem,0,0,						\
+				readmem,NAME##_writemem,null,null,						\
 				interrupt,1											\
-			},														\
-			{														\
+			),														\
+			new MachineCPU(														\
 				CPU_Z80 | CPU_AUDIO_CPU,							\
 				4000000,	/* 4 MHz */								\
-				SOUND##_sound_readmem,SOUND##_sound_writemem,0,0,	\
+				SOUND##_sound_readmem,SOUND##_sound_writemem,null,null,	\
 				ignore_interrupt,0	/* IRQs triggered by YM3526 */	\
 									/* NMIs triggered by main CPU */\
-			}														\
+			)														\
 		},															\
 		60, DEFAULT_60HZ_VBLANK_DURATION,	/* frames per second, vblank duration */	\
 		1,	/* 1 CPU slice per frame - interleaving is forced when a sound command is written */	\
-		0,															\
+		null,															\
 																	\
 		/* video hardware */										\
-		32*8, 32*8, { 0*8, 32*8-1, 2*8, 30*8-1 },					\
+		32*8, 32*8, new rectangle( 0*8, 32*8-1, 2*8, 30*8-1 ),					\
 		gfxdecodeinfo,												\
-		1024, 0,													\
-		0,															\
+		1024, null,													\
+		null,															\
 																	\
 		VIDEO_TYPE_RASTER,					\
-		0,															\
+		null,															\
 		tecmo_vh_start,												\
-		0,															\
+		null,															\
 		tecmo_vh_screenrefresh,										\
 																	\
 		/* sound hardware */										\
 		0,0,0,0,													\
-		{															\
-			{														\
+		new MachineSound[] {															\
+			new MachineSound(														\
 				SOUND_YM3812,										\
-				&ym3812_interface									\
-			},														\
-			{														\
+				ym3812_interface									\
+			),														\
+			new MachineSound(														\
 				SOUND_MSM5205,										\
-				&msm5205_interface									\
-			},														\
+				msm5205_interface									\
+			),														\
 		}															\
-	};
+	);
 	
 	MACHINE_DRIVER( rygar,    4000000,         rygar )
 	MACHINE_DRIVER( gemini,   6000000 /* ? */, tecmo )

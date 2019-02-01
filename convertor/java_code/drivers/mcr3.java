@@ -1308,10 +1308,10 @@ public class mcr3
 	
 	
 	/* General MCR3 system */
-	static const struct MachineDriver machine_driver_mcr3 =
-	{
+	static MachineDriver machine_driver_mcr3 = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
+		new MachineCPU[] {
 			MAIN_CPU,
 			SOUND_CPU_SSIO
 		},
@@ -1320,31 +1320,31 @@ public class mcr3
 		mcr_init_machine,
 	
 		/* video hardware */
-		32*16, 30*16, { 0*16, 32*16-1, 0*16, 30*16-1 },
+		32*16, 30*16, new rectangle( 0*16, 32*16-1, 0*16, 30*16-1 ),
 		gfxdecodeinfo,
-		64, 0,
-		0,
+		64, null,
+		null,
 	
 		VIDEO_TYPE_RASTER | VIDEO_UPDATE_BEFORE_VBLANK,
-		0,
+		null,
 		generic_vh_start,
 		generic_vh_stop,
 		mcr3_vh_screenrefresh,
 	
 		/* sound hardware */
 		SOUND_SUPPORTS_STEREO,0,0,0,
-		{
+		new MachineSound[] {
 			SOUND_SSIO
 		},
 		mcr3_nvram_handler
-	};
+	);
 	
 	
 	/* Discs of Tron = General MCR3 with Squawk & Talk, and backdrop support */
-	static const struct MachineDriver machine_driver_dotron =
-	{
+	static MachineDriver machine_driver_dotron = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
+		new MachineCPU[] {
 			MAIN_CPU,
 			SOUND_CPU_SSIO,
 			SOUND_CPU_SQUAWK_N_TALK
@@ -1354,32 +1354,32 @@ public class mcr3
 		mcr_init_machine,
 	
 		/* video hardware */
-		684, 642, { 0, 684-1, 0, 642-1 },
+		684, 642, new rectangle( 0, 684-1, 0, 642-1 ),
 		gfxdecodeinfo,
-		64+32768, 0,		/* The extra colors are for the backdrop */
-		0,
+		64+32768, null,		/* The extra colors are for the backdrop */
+		null,
 	
 		VIDEO_TYPE_RASTER | VIDEO_UPDATE_BEFORE_VBLANK,
-		0,
+		null,
 		dotron_vh_start,
 		dotron_vh_stop,
 		dotron_vh_screenrefresh,
 	
 		/* sound hardware */
 		SOUND_SUPPORTS_STEREO,0,0,0,
-		{
+		new MachineSound[] {
 			SOUND_SSIO,
 			SOUND_SQUAWK_N_TALK,
 		},
 		mcr3_nvram_handler
-	};
+	);
 	
 	
 	/* Destruction Derby = General MCR3 with Turbo Chip Squeak instead of SSIO */
-	static const struct MachineDriver machine_driver_demoderb =
-	{
+	static MachineDriver machine_driver_demoderb = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
+		new MachineCPU[] {
 			MAIN_CPU,
 			SOUND_CPU_TURBO_CHIP_SQUEAK
 		},
@@ -1388,32 +1388,32 @@ public class mcr3
 		mcr_init_machine,
 	
 		/* video hardware */
-		32*16, 30*16, { 0*16, 32*16-1, 0*16, 30*16-1 },
+		32*16, 30*16, new rectangle( 0*16, 32*16-1, 0*16, 30*16-1 ),
 		gfxdecodeinfo,
-		64, 0,
-		0,
+		64, null,
+		null,
 	
 		VIDEO_TYPE_RASTER | VIDEO_UPDATE_BEFORE_VBLANK,
-		0,
+		null,
 		generic_vh_start,
 		generic_vh_stop,
 		mcr3_vh_screenrefresh,
 	
 		/* sound hardware */
 		SOUND_SUPPORTS_STEREO,0,0,0,
-		{
+		new MachineSound[] {
 			SOUND_TURBO_CHIP_SQUEAK
 		},
 		mcr3_nvram_handler
-	};
+	);
 	
 	
 	/* Sarge/Demolition Derby Mono/Max RPM = MCR monoboardmonoboard = MCR3 with no SSIO */
 	/* in this case, Turbo Chip Squeak is used for sound */
-	static const struct MachineDriver machine_driver_mono_tcs =
-	{
+	static MachineDriver machine_driver_mono_tcs = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
+		new MachineCPU[] {
 			MONO_CPU,
 			SOUND_CPU_TURBO_CHIP_SQUEAK
 		},
@@ -1422,31 +1422,31 @@ public class mcr3
 		mcr_init_machine,
 	
 		/* video hardware */
-		32*16, 30*16, { 0*16, 32*16-1, 0*16, 30*16-1 },
+		32*16, 30*16, new rectangle( 0*16, 32*16-1, 0*16, 30*16-1 ),
 		gfxdecodeinfo,
-		64, 0,
-		0,
+		64, null,
+		null,
 	
 		VIDEO_TYPE_RASTER | VIDEO_UPDATE_BEFORE_VBLANK,
-		0,
+		null,
 		generic_vh_start,
 		generic_vh_stop,
 		mcrmono_vh_screenrefresh,
 	
 		/* sound hardware */
 		SOUND_SUPPORTS_STEREO,0,0,0,
-		{
+		new MachineSound[] {
 			SOUND_TURBO_CHIP_SQUEAK
 		},
 		0
-	};
+	);
 	
 	
 	/* Rampage/Power Drive/Star Guards = MCR monoboard with Sounds Good */
-	static const struct MachineDriver machine_driver_mono_sg =
-	{
+	static MachineDriver machine_driver_mono_sg = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
+		new MachineCPU[] {
 			MONO_CPU,
 			SOUND_CPU_SOUNDS_GOOD
 		},
@@ -1455,31 +1455,31 @@ public class mcr3
 		mcr_init_machine,
 	
 		/* video hardware */
-		32*16, 30*16, { 0*16, 32*16-1, 0*16, 30*16-1 },
+		32*16, 30*16, new rectangle( 0*16, 32*16-1, 0*16, 30*16-1 ),
 		gfxdecodeinfo,
-		64, 0,
-		0,
+		64, null,
+		null,
 	
 		VIDEO_TYPE_RASTER | VIDEO_UPDATE_BEFORE_VBLANK,
-		0,
+		null,
 		generic_vh_start,
 		generic_vh_stop,
 		mcrmono_vh_screenrefresh,
 	
 		/* sound hardware */
 		SOUND_SUPPORTS_STEREO,0,0,0,
-		{
+		new MachineSound[] {
 			SOUND_SOUNDS_GOOD
 		},
 		0
-	};
+	);
 	
 	
 	/* Spy Hunter = MCR3 with altered memory map, scrolling, special lamps, and a chip squeak deluxe */
-	static const struct MachineDriver machine_driver_spyhunt =
-	{
+	static MachineDriver machine_driver_spyhunt = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
+		new MachineCPU[] {
 			SPYHUNT_CPU,
 			SOUND_CPU_SSIO,
 			SOUND_CPU_CHIP_SQUEAK_DELUXE
@@ -1489,32 +1489,32 @@ public class mcr3
 		mcr_init_machine,
 	
 		/* video hardware */
-		31*16, 30*16, { 0, 31*16-1, 0, 30*16-1 },
+		31*16, 30*16, new rectangle( 0, 31*16-1, 0, 30*16-1 ),
 		spyhunt_gfxdecodeinfo,
-		64+4, 0,
+		64+4, null,
 		spyhunt_vh_convert_color_prom,
 	
 		VIDEO_TYPE_RASTER | VIDEO_UPDATE_BEFORE_VBLANK | VIDEO_ASPECT_RATIO(62,45),
-		0,
+		null,
 		spyhunt_vh_start,
 		spyhunt_vh_stop,
 		spyhunt_vh_screenrefresh,
 	
 		/* sound hardware */
 		SOUND_SUPPORTS_STEREO,0,0,0,
-		{
+		new MachineSound[] {
 			SOUND_SSIO,
 			SOUND_CHIP_SQUEAK_DELUXE
 		},
 		spyhunt_nvram_handler
-	};
+	);
 	
 	
 	/* Crater Raider = Spy Hunter with no Chip Squeak Deluxe */
-	static const struct MachineDriver machine_driver_crater =
-	{
+	static MachineDriver machine_driver_crater = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
+		new MachineCPU[] {
 			SPYHUNT_CPU,
 			SOUND_CPU_SSIO
 		},
@@ -1523,31 +1523,31 @@ public class mcr3
 		mcr_init_machine,
 	
 		/* video hardware */
-		30*16, 30*16, { 0, 30*16-1, 0, 30*16-1 },
+		30*16, 30*16, new rectangle( 0, 30*16-1, 0, 30*16-1 ),
 		spyhunt_gfxdecodeinfo,
-		64+4, 0,
+		64+4, null,
 		spyhunt_vh_convert_color_prom,
 	
 		VIDEO_TYPE_RASTER | VIDEO_UPDATE_BEFORE_VBLANK,
-		0,
+		null,
 		spyhunt_vh_start,
 		spyhunt_vh_stop,
 		spyhunt_vh_screenrefresh,
 	
 		/* sound hardware */
 		SOUND_SUPPORTS_STEREO,0,0,0,
-		{
+		new MachineSound[] {
 			SOUND_SSIO
 		},
 		spyhunt_nvram_handler
-	};
+	);
 	
 	
 	/* Turbo Tag = Spy Hunter with no SSIO */
-	static const struct MachineDriver machine_driver_turbotag =
-	{
+	static MachineDriver machine_driver_turbotag = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
+		new MachineCPU[] {
 			SPYHUNT_CPU,
 			SOUND_CPU_CHIP_SQUEAK_DELUXE
 		},
@@ -1556,24 +1556,24 @@ public class mcr3
 		mcr_init_machine,
 	
 		/* video hardware */
-		30*16, 30*16, { 0, 30*16-1, 0, 30*16-1 },
+		30*16, 30*16, new rectangle( 0, 30*16-1, 0, 30*16-1 ),
 		spyhunt_gfxdecodeinfo,
-		64+4, 0,
+		64+4, null,
 		spyhunt_vh_convert_color_prom,
 	
 		VIDEO_TYPE_RASTER | VIDEO_UPDATE_BEFORE_VBLANK,
-		0,
+		null,
 		spyhunt_vh_start,
 		spyhunt_vh_stop,
 		spyhunt_vh_screenrefresh,
 	
 		/* sound hardware */
 		SOUND_SUPPORTS_STEREO,0,0,0,
-		{
+		new MachineSound[] {
 			SOUND_CHIP_SQUEAK_DELUXE
 		},
 		spyhunt_nvram_handler
-	};
+	);
 	
 	
 	

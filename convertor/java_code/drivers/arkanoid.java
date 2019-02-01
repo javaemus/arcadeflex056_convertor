@@ -324,85 +324,85 @@ public class arkanoid
 	
 	
 	
-	static const struct MachineDriver machine_driver_arkanoid =
-	{
+	static MachineDriver machine_driver_arkanoid = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_Z80,
 				6000000,	/* 6 MHz ?? */
-				readmem,writemem,0,0,
+				readmem,writemem,null,null,
 				interrupt,1
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_M68705,
 				500000,	/* .5 MHz (don't know really how fast, but it doesn't need to even be this fast) */
-				mcu_readmem,mcu_writemem,0,0,
+				mcu_readmem,mcu_writemem,0,null,
 				ignore_interrupt,1
-			},
+			),
 		},
 		60, DEFAULT_60HZ_VBLANK_DURATION,	/* frames per second, vblank duration */
 		100, /* 100 CPU slices per second to synchronize between the MCU and the main CPU */
 		arkanoid_init_machine,
 	
 		/* video hardware */
-		32*8, 32*8, { 0*8, 32*8-1, 2*8, 30*8-1 },
+		32*8, 32*8, new rectangle( 0*8, 32*8-1, 2*8, 30*8-1 ),
 		gfxdecodeinfo,
-		512, 0,
+		512, null,
 		palette_RRRR_GGGG_BBBB_convert_prom,
 	
 		VIDEO_TYPE_RASTER,
-		0,
+		null,
 		generic_vh_start,
 		generic_vh_stop,
 		arkanoid_vh_screenrefresh,
 	
 		/* sound hardware */
 		0,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_AY8910,
-				&ay8910_interface
-			}
+				ay8910_interface
+			)
 		}
-	};
+	);
 	
-	static const struct MachineDriver machine_driver_bootleg =
-	{
+	static MachineDriver machine_driver_bootleg = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_Z80,
 				6000000,	/* 6 MHz ?? */
-				boot_readmem,boot_writemem,0,0,
+				boot_readmem,boot_writemem,null,null,
 				interrupt,1
-			},
+			),
 		},
 		60, DEFAULT_60HZ_VBLANK_DURATION,	/* frames per second, vblank duration */
 		1,
-		0,
+		null,
 	
 		/* video hardware */
-		32*8, 32*8, { 0*8, 32*8-1, 2*8, 30*8-1 },
+		32*8, 32*8, new rectangle( 0*8, 32*8-1, 2*8, 30*8-1 ),
 		gfxdecodeinfo,
-		512, 0,
+		512, null,
 		palette_RRRR_GGGG_BBBB_convert_prom,
 	
 		VIDEO_TYPE_RASTER,
-		0,
+		null,
 		generic_vh_start,
 		generic_vh_stop,
 		arkanoid_vh_screenrefresh,
 	
 		/* sound hardware */
 		0,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_AY8910,
-				&ay8910_interface
-			}
+				ay8910_interface
+			)
 		}
-	};
+	);
 	
 	
 	

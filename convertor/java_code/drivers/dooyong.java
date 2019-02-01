@@ -925,228 +925,228 @@ public class dooyong
 	
 	
 	
-	static const struct MachineDriver machine_driver_lastday =
-	{
+	static MachineDriver machine_driver_lastday = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_Z80,
 				8000000,	/* ??? */
-				lastday_readmem,lastday_writemem,0,0,
+				lastday_readmem,lastday_writemem,null,null,
 				interrupt,1
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_Z80 | CPU_AUDIO_CPU,
 				4000000,	/* ??? */
-				lastday_sound_readmem,lastday_sound_writemem,0,0,
+				lastday_sound_readmem,lastday_sound_writemem,null,null,
 				ignore_interrupt,0	/* IRQs are caused by the YM2203 */
-			}
+			)
 		},
 		60, DEFAULT_60HZ_VBLANK_DURATION,	/* frames per second, vblank duration */
 		1,	/* 1 CPU slice per frame - interleaving is forced when a sound command is written */
-		0,
+		null,
 	
 		/* video hardware */
-		64*8, 32*8, { 8*8, (64-8)*8-1, 1*8, 31*8-1 },
+		64*8, 32*8, new rectangle( 8*8, (64-8)*8-1, 1*8, 31*8-1 ),
 		lastday_gfxdecodeinfo,
-		1024, 0,
-		0,
+		1024, null,
+		null,
 	
 		VIDEO_TYPE_RASTER | VIDEO_BUFFERS_SPRITERAM,
 		dooyong_eof_callback,
-		0,
-		0,
+		null,
+		null,
 		lastday_vh_screenrefresh,
 	
 		/* sound hardware */
 		0,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_YM2203,
-				&ym2203_interface
-			}
+				ym2203_interface
+			)
 		}
-	};
+	);
 	
-	static const struct MachineDriver machine_driver_gulfstrm =
-	{
+	static MachineDriver machine_driver_gulfstrm = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_Z80,
 				8000000,	/* ??? */
-				pollux_readmem,pollux_writemem,0,0,
+				pollux_readmem,pollux_writemem,null,null,
 				interrupt,1
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_Z80 | CPU_AUDIO_CPU,
 				4000000,	/* ??? */
-				lastday_sound_readmem,lastday_sound_writemem,0,0,
+				lastday_sound_readmem,lastday_sound_writemem,null,null,
 				ignore_interrupt,0	/* IRQs are caused by the YM2203 */
-			}
+			)
 		},
 		60, DEFAULT_REAL_60HZ_VBLANK_DURATION,	/* frames per second, vblank duration */
 		1,	/* 1 CPU slice per frame - interleaving is forced when a sound command is written */
-		0,
+		null,
 	
 		/* video hardware */
-		64*8, 32*8, { 8*8, (64-8)*8-1, 1*8, 31*8-1 },
+		64*8, 32*8, new rectangle( 8*8, (64-8)*8-1, 1*8, 31*8-1 ),
 		lastday_gfxdecodeinfo,
-		1024, 0,
-		0,
+		1024, null,
+		null,
 	
 		VIDEO_TYPE_RASTER | VIDEO_BUFFERS_SPRITERAM,
 		dooyong_eof_callback,
-		0,
-		0,
+		null,
+		null,
 		gulfstrm_vh_screenrefresh,
 	
 		/* sound hardware */
 		0,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_YM2203,
-				&ym2203_interface
-			}
+				ym2203_interface
+			)
 		}
-	};
+	);
 	
-	static const struct MachineDriver machine_driver_pollux =
-	{
+	static MachineDriver machine_driver_pollux = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_Z80,
 				8000000,	/* ??? */
-				pollux_readmem,pollux_writemem,0,0,
+				pollux_readmem,pollux_writemem,null,null,
 				interrupt,1
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_Z80 | CPU_AUDIO_CPU,
 				4000000,	/* ??? */
-				pollux_sound_readmem,pollux_sound_writemem,0,0,
+				pollux_sound_readmem,pollux_sound_writemem,null,null,
 				ignore_interrupt,0	/* IRQs are caused by the YM2203 */
-			}
+			)
 		},
 		60, DEFAULT_60HZ_VBLANK_DURATION,	/* frames per second, vblank duration */
 		1,	/* 1 CPU slice per frame - interleaving is forced when a sound command is written */
-		0,
+		null,
 	
 		/* video hardware */
-		64*8, 32*8, { 8*8, (64-8)*8-1, 1*8, 31*8-1 },
+		64*8, 32*8, new rectangle( 8*8, (64-8)*8-1, 1*8, 31*8-1 ),
 		lastday_gfxdecodeinfo,
-		1024, 0,
-		0,
+		1024, null,
+		null,
 	
 		VIDEO_TYPE_RASTER | VIDEO_BUFFERS_SPRITERAM,
 		dooyong_eof_callback,
-		0,
-		0,
+		null,
+		null,
 		pollux_vh_screenrefresh,
 	
 		/* sound hardware */
 		0,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_YM2203,
-				&ym2203_interface
-			}
+				ym2203_interface
+			)
 		}
-	};
+	);
 	
-	static const struct MachineDriver machine_driver_bluehawk =
-	{
+	static MachineDriver machine_driver_bluehawk = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_Z80,
 				8000000,	/* ??? */
-				bluehawk_readmem,bluehawk_writemem,0,0,
+				bluehawk_readmem,bluehawk_writemem,null,null,
 				interrupt,1
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_Z80 | CPU_AUDIO_CPU,
 				4000000,	/* ??? */
-				bluehawk_sound_readmem,bluehawk_sound_writemem,0,0,
+				bluehawk_sound_readmem,bluehawk_sound_writemem,null,null,
 				ignore_interrupt,0	/* IRQs are caused by the YM2151 */
-			}
+			)
 		},
 		60, DEFAULT_60HZ_VBLANK_DURATION,	/* frames per second, vblank duration */
 		1,	/* 1 CPU slice per frame - interleaving is forced when a sound command is written */
-		0,
+		null,
 	
 		/* video hardware */
-		64*8, 32*8, { 8*8, (64-8)*8-1, 1*8, 31*8-1 },
+		64*8, 32*8, new rectangle( 8*8, (64-8)*8-1, 1*8, 31*8-1 ),
 		bluehawk_gfxdecodeinfo,
-		1024, 0,
-		0,
+		1024, null,
+		null,
 	
 		VIDEO_TYPE_RASTER | VIDEO_BUFFERS_SPRITERAM,
 		dooyong_eof_callback,
-		0,
-		0,
+		null,
+		null,
 		bluehawk_vh_screenrefresh,
 	
 		/* sound hardware */
 		0,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_YM2151,
-				&bluehawk_ym2151_interface
-			},
-			{
+				bluehawk_ym2151_interface
+			),
+			new MachineSound(
 				SOUND_OKIM6295,
-				&okim6295_interface
-			}
+				okim6295_interface
+			)
 		}
-	};
+	);
 	
-	static const struct MachineDriver machine_driver_primella =
-	{
+	static MachineDriver machine_driver_primella = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_Z80,
 				8000000,	/* ??? */
-				primella_readmem,primella_writemem,0,0,
+				primella_readmem,primella_writemem,null,null,
 				interrupt,1
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_Z80 | CPU_AUDIO_CPU,
 				4000000,	/* ??? */
-				bluehawk_sound_readmem,bluehawk_sound_writemem,0,0,
+				bluehawk_sound_readmem,bluehawk_sound_writemem,null,null,
 				ignore_interrupt,0	/* IRQs are caused by the YM2151 */
-			}
+			)
 		},
 		60, DEFAULT_60HZ_VBLANK_DURATION,	/* frames per second, vblank duration */
 		1,	/* 1 CPU slice per frame - interleaving is forced when a sound command is written */
-		0,
+		null,
 	
 		/* video hardware */
-		64*8, 32*8, { 8*8, (64-8)*8-1, 0*8, 32*8-1 },
+		64*8, 32*8, new rectangle( 8*8, (64-8)*8-1, 0*8, 32*8-1 ),
 		primella_gfxdecodeinfo,
-		1024, 0,
-		0,
+		1024, null,
+		null,
 	
 		VIDEO_TYPE_RASTER | VIDEO_BUFFERS_SPRITERAM,
 		dooyong_eof_callback,
-		0,
-		0,
+		null,
+		null,
 		primella_vh_screenrefresh,
 	
 		/* sound hardware */
 		0,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_YM2151,
-				&primella_ym2151_interface
-			},
-			{
+				primella_ym2151_interface
+			),
+			new MachineSound(
 				SOUND_OKIM6295,
-				&okim6295_interface
-			}
+				okim6295_interface
+			)
 		}
-	};
+	);
 	
 	static int rshark_interrupt(void)
 	{
@@ -1154,52 +1154,52 @@ public class dooyong
 		else return 6;
 	}
 	
-	static const struct MachineDriver machine_driver_rshark =
-	{
+	static MachineDriver machine_driver_rshark = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_M68000,
 				10000000,	/* ??? */
-				rshark_readmem,rshark_writemem,0,0,
+				rshark_readmem,rshark_writemem,null,null,
 				rshark_interrupt,2	/* 5 and 6 */
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_Z80 | CPU_AUDIO_CPU,
 				4000000,	/* ??? */
-				bluehawk_sound_readmem,bluehawk_sound_writemem,0,0,
+				bluehawk_sound_readmem,bluehawk_sound_writemem,null,null,
 				ignore_interrupt,0	/* IRQs are caused by the YM2151 */
-			}
+			)
 		},
 		60, DEFAULT_60HZ_VBLANK_DURATION,	/* frames per second, vblank duration */
 		1,	/* 1 CPU slice per frame - interleaving is forced when a sound command is written */
-		0,
+		null,
 	
 		/* video hardware */
-		64*8, 32*8, { 8*8, (64-8)*8-1, 1*8, 31*8-1 },
+		64*8, 32*8, new rectangle( 8*8, (64-8)*8-1, 1*8, 31*8-1 ),
 		rshark_gfxdecodeinfo,
-		2048, 0,
-		0,
+		2048, null,
+		null,
 	
 		VIDEO_TYPE_RASTER | VIDEO_BUFFERS_SPRITERAM,
 		rshark_eof_callback,
-		0,
-		0,
+		null,
+		null,
 		rshark_vh_screenrefresh,
 	
 		/* sound hardware */
 		0,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_YM2151,
-				&primella_ym2151_interface
-			},
-			{
+				primella_ym2151_interface
+			),
+			new MachineSound(
 				SOUND_OKIM6295,
-				&okim6295_interface
-			}
+				okim6295_interface
+			)
 		}
-	};
+	);
 	
 	
 	

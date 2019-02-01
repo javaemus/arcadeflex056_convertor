@@ -464,89 +464,89 @@ public class toki
 	};
 	
 	
-	static const struct MachineDriver machine_driver_toki =
-	{
+	static MachineDriver machine_driver_toki = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_M68000,
 				20000000/2, 	/* Accurate?  There is a 20MHz near the cpu, but a 12MHz elsewhere */
-				toki_readmem,toki_writemem,0,0,
+				toki_readmem,toki_writemem,0,null,
 				m68_level1_irq,1 /* VBL */
-			},
-			{
+			),
+			new MachineCPU(
 				SEIBU_SOUND_SYSTEM_CPU(14318180/4)
-			},
+			),
 		},
 		60, DEFAULT_60HZ_VBLANK_DURATION,	/* frames per second, vblank duration */
 		1,	/* 1 CPU slice per frame - interleaving is forced when a sound command is written */
 		seibu_sound_init_1, /* init machine */
 	
 		/* video hardware */
-		32*8, 32*8, { 0*8, 32*8-1, 0*8, 30*8-1 },
+		32*8, 32*8, new rectangle( 0*8, 32*8-1, 0*8, 30*8-1 ),
 	
 		toki_gfxdecodeinfo,
-		1024, 0,
-		0,
+		1024, null,
+		null,
 		VIDEO_TYPE_RASTER | VIDEO_BUFFERS_SPRITERAM,
 		toki_eof_callback,
 		toki_vh_start,
-		0,
+		null,
 		toki_vh_screenrefresh,
 	
 		/* sound hardware */
 		0,0,0,0,
-		{
+		new MachineSound[] {
 			SEIBU_SOUND_SYSTEM_YM3812_INTERFACE
 		}
-	};
+	);
 	
-	static const struct MachineDriver machine_driver_tokib =
-	{
+	static MachineDriver machine_driver_tokib = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_M68000,
 				12000000,	/* 10MHz causes bad slowdowns with monkey machine rd1 */
-				tokib_readmem,tokib_writemem,0,0,
+				tokib_readmem,tokib_writemem,null,null,
 				m68_level6_irq,1 /* VBL (could be level1, same vector) */
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_Z80 | CPU_AUDIO_CPU,
 				4000000,	/* 4 MHz (?) */
 				tokib_sound_readmem,tokib_sound_writemem,
-				0,0,
+				null,null,
 				ignore_interrupt,0	/* IRQs are caused by the main CPU?? */
 									/* NMIs are caused by the ADPCM chip */
-			},
+			),
 		},
 		60, DEFAULT_60HZ_VBLANK_DURATION,	/* frames per second, vblank duration */
 		1,	/* 1 CPU slice per frame - interleaving is forced when a sound command is written */
-		0,
+		null,
 		/* video hardware */
-		32*8, 32*8, { 0*8, 32*8-1, 0*8, 30*8-1 },
+		32*8, 32*8, new rectangle( 0*8, 32*8-1, 0*8, 30*8-1 ),
 		tokib_gfxdecodeinfo,
-		1024, 0,
-		0,
+		1024, null,
+		null,
 		VIDEO_TYPE_RASTER | VIDEO_BUFFERS_SPRITERAM,
 		toki_eof_callback,
 		toki_vh_start,
-		0,
+		null,
 		tokib_vh_screenrefresh,
 	
 		/* sound hardware */
 		0,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_YM3812,
-				&ym3812_tokib_interface
-			},
-			{
+				ym3812_tokib_interface
+			),
+			new MachineSound(
 				SOUND_MSM5205,
-				&msm5205_interface
-			}
+				msm5205_interface
+			)
 		}
-	};
+	);
 	
 	
 	

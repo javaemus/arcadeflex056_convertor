@@ -1090,31 +1090,31 @@ public class scramble
 	
 	
 	#define DRIVER_2CPU(NAME, GFXDECODE, MAINMEM, SOUND, VHSTART, BACKCOLOR, COLORPROM)	\
-	static const struct MachineDriver machine_driver_##NAME =		\
-	{																\
+	static MachineDriver machine_driver_##NAME = new MachineDriver\
+	(																\
 		/* basic machine hardware */								\
-		{															\
-			{														\
+		new MachineCPU[] {															\
+			new MachineCPU(														\
 				CPU_Z80,											\
 				18432000/6,	/* 3.072 MHz */							\
-				MAINMEM##_readmem,MAINMEM##_writemem,0,0,			\
+				MAINMEM##_readmem,MAINMEM##_writemem,null,null,			\
 				nmi_interrupt,1										\
-			},														\
-			{														\
+			),														\
+			new MachineCPU(														\
 				CPU_Z80 | CPU_AUDIO_CPU,							\
 				14318000/8,	/* 1.78975 MHz */						\
 				SOUND##_sound_readmem,SOUND##_sound_writemem,SOUND##_sound_readport,SOUND##_sound_writeport,	\
 				ignore_interrupt,1	/* interrupts are triggered by the main CPU */								\
-			}														\
+			)														\
 		},															\
 		16000.0/132/2, 2500,	/* frames per second, vblank duration */	\
 		1,	/* 1 CPU slice per frame - interleaving is forced when a sound command is written */				\
 		scramble_init_machine,										\
 																	\
 		/* video hardware */										\
-		32*8, 32*8, { 0*8, 32*8-1, 2*8, 30*8-1 },					\
+		32*8, 32*8, new rectangle( 0*8, 32*8-1, 2*8, 30*8-1 ),					\
 		GFXDECODE##_gfxdecodeinfo,									\
-		32+64+2+BACKCOLOR,8*4,	/* 32 for characters, 64 for stars, 2 for bullets, 0/1 for background */	\
+		32+64+2+BACKCOLOR,8*4,	/* 32 for characters, 64 for stars, 2 for bullets, null/1 for background */	\
 		COLORPROM##_vh_convert_color_prom,							\
 																	\
 		VIDEO_TYPE_RASTER,											\
@@ -1125,13 +1125,13 @@ public class scramble
 																	\
 		/* sound hardware */										\
 		0,0,0,0,													\
-		{															\
-			{														\
+		new MachineSound[] {															\
+			new MachineSound(														\
 				SOUND_AY8910,										\
-				&SOUND##_ay8910_interface							\
-			}														\
+				SOUND##_ay8910_interface							\
+			)														\
 		}															\
-	}
+	)
 	
 	/*			NAME      GFXDECODE  MAINMEM   SOUND     VHSTART   BACKCOLOR, CONV_COLORPROM */
 	DRIVER_2CPU(scramble, galaxian,  scramble, scobra,   scramble, 1,         scramble);
@@ -1145,23 +1145,23 @@ public class scramble
 	DRIVER_2CPU(cavelon,  galaxian,  scramble, scobra,   ckongs,   0,         galaxian);
 	
 	/* Triple Punch and Mariner are different - only one CPU, one 8910 */
-	static const struct MachineDriver machine_driver_triplep =
-	{
+	static MachineDriver machine_driver_triplep = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_Z80,
 				18432000/6,	/* 3.072 MHz */
 				scramble_readmem,scramble_writemem,triplep_readport,triplep_writeport,
 				nmi_interrupt,1
-			}
+			)
 		},
 		16000.0/132/2, 2500,	/* frames per second, vblank duration */
 		1,	/* single CPU, no need for interleaving */
 		scramble_init_machine,
 	
 		/* video hardware */
-		32*8, 32*8, { 0*8, 32*8-1, 2*8, 30*8-1 },
+		32*8, 32*8, new rectangle( 0*8, 32*8-1, 2*8, 30*8-1 ),
 		galaxian_gfxdecodeinfo,
 		32+64+2,8*4,	/* 32 for characters, 64 for stars, 2 for bullets */
 		galaxian_vh_convert_color_prom,
@@ -1174,31 +1174,31 @@ public class scramble
 	
 		/* sound hardware */
 		0,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_AY8910,
-				&triplep_ay8910_interface
-			}
+				triplep_ay8910_interface
+			)
 		}
-	};
+	);
 	
-	static const struct MachineDriver machine_driver_mariner =
-	{
+	static MachineDriver machine_driver_mariner = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_Z80,
 				18432000/6,	/* 3.072 MHz */
 				scramble_readmem,scramble_writemem,triplep_readport,triplep_writeport,
 				nmi_interrupt,1
-			}
+			)
 		},
 		16000.0/132/2, 2500,	/* frames per second, vblank duration */
 		1,	/* single CPU, no need for interleaving */
 		scramble_init_machine,
 	
 		/* video hardware */
-		32*8, 32*8, { 0*8, 32*8-1, 2*8, 30*8-1 },
+		32*8, 32*8, new rectangle( 0*8, 32*8-1, 2*8, 30*8-1 ),
 		galaxian_gfxdecodeinfo,
 		32+64+2+16,8*4,	/* 32 for characters, 64 for stars, 2 for bullets, 16 for background */
 		mariner_vh_convert_color_prom,
@@ -1211,61 +1211,61 @@ public class scramble
 	
 		/* sound hardware */
 		0,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_AY8910,
-				&triplep_ay8910_interface
-			}
+				triplep_ay8910_interface
+			)
 		}
-	};
+	);
 	
 	/**********************************************************/
 	/* hunchbks is *very* different, as it uses an S2650 CPU */
 	/*  epoxied in a plastic case labelled Century Playpack   */
 	/**********************************************************/
 	
-	static const struct MachineDriver machine_driver_hunchbks =
-	{
+	static MachineDriver machine_driver_hunchbks = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_S2650,
 				18432000/6,
 				hunchbks_readmem,hunchbks_writemem,hunchbks_readport,0,
 				hunchbks_vh_interrupt,1
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_Z80 | CPU_AUDIO_CPU,
 				14318000/8,	/* 1.78975 MHz */
 				scobra_sound_readmem,scobra_sound_writemem,scobra_sound_readport,scobra_sound_writeport,
 				ignore_interrupt,1
-			}
+			)
 		},
 		16000.0/132/2, 2500,	/* frames per second, vblank duration */
 		1,
 		scramble_init_machine,
 	
 		/* video hardware */
-		32*8, 32*8, { 0*8, 32*8-1, 2*8, 30*8-1 },
+		32*8, 32*8, new rectangle( 0*8, 32*8-1, 2*8, 30*8-1 ),
 		galaxian_gfxdecodeinfo,
 		32+64+2,8*4,	/* 32 for characters, 64 for stars, 2 for bullets */
 		galaxian_vh_convert_color_prom,
 	
 		VIDEO_TYPE_RASTER,
-		0,
+		null,
 		scramble_vh_start,
 		0,
 		galaxian_vh_screenrefresh,
 	
 		/* sound hardware */
 		0,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_AY8910,
-				&scobra_ay8910_interface
-			}
+				scobra_ay8910_interface
+			)
 		}
-	};
+	);
 	
 	/***************************************************************************
 	

@@ -374,42 +374,42 @@ public class ohmygod
 	
 	
 	
-	static const struct MachineDriver machine_driver_ohmygod =
-	{
+	static MachineDriver machine_driver_ohmygod = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_M68000,
 				12000000,
-				readmem,writemem,0,0,
+				readmem,writemem,null,null,
 				m68_level1_irq,1
-			}
+			)
 		},
 		60, DEFAULT_60HZ_VBLANK_DURATION,	/* frames per second, vblank duration */
 		1,
 		ohmygod_init_machine,
 	
 		/* video hardware */
-		64*8, 32*8, { 12*8, (64-12)*8-1, 0*8, 30*8-1 },
+		64*8, 32*8, new rectangle( 12*8, (64-12)*8-1, 0*8, 30*8-1 ),
 		gfxdecodeinfo,
-		1024, 0,
-		0,
+		1024, null,
+		null,
 	
 		VIDEO_TYPE_RASTER,
-		0,
+		null,
 		ohmygod_vh_start,
-		0,
+		null,
 		ohmygod_vh_screenrefresh,
 	
 		/* sound hardware */
 		0,0,0,0,
-	  	{
-			{
+	  	new MachineSound[] {
+			new MachineSound(
 				SOUND_OKIM6295,
-				&okim6295_interface
-			}
+				okim6295_interface
+			)
 		}
-	};
+	);
 	
 	
 	/***************************************************************************

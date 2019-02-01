@@ -469,39 +469,39 @@ public class tetrisp2
 		return ignore_interrupt();
 	}
 	
-	static const struct MachineDriver machine_driver_tetrisp2 =
-	{
-		{
-			{
+	static MachineDriver machine_driver_tetrisp2 = new MachineDriver
+	(
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_M68000,
 				12000000,
-				tetrisp2_readmem, tetrisp2_writemem,0,0,
+				tetrisp2_readmem, tetrisp2_writemem,null,null,
 				tetrisp2_interrupt, 3
-			},
+			),
 		},
 		60,DEFAULT_60HZ_VBLANK_DURATION,
 		1,
-		0,
+		null,
 	
 		/* video hardware */
-		0x140, 0xe0, { 0, 0x140-1, 0, 0xe0-1 },
+		0x140, 0xe0, new rectangle( 0, 0x140-1, 0, 0xe0-1 ),
 		tetrisp2_gfxdecodeinfo,
-		0x8000, 0,
-		0,
+		0x8000, null,
+		null,
 		VIDEO_TYPE_RASTER,
-		0,
+		null,
 		tetrisp2_vh_start,
-		0,
+		null,
 		tetrisp2_vh_screenrefresh,
 	
 		/* sound hardware */
 		SOUND_SUPPORTS_STEREO,0,0,0,
-		{
-			{ SOUND_YMZ280B, &ymz280b_intf }
+		new MachineSound[] {
+			new MachineSound( SOUND_YMZ280B, ymz280b_intf )
 		},
 	
 		tetrisp2_nvram_handler
-	};
+	);
 	
 	
 	

@@ -157,36 +157,36 @@ public class subs
 		new GfxDecodeInfo( -1 ) /* end of array */
 	};
 	
-	static const struct MachineDriver machine_driver_subs =
-	{
+	static MachineDriver machine_driver_subs = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_M6502,
 				12096000/16, 	   /* clock input is the "4H" signal */
-				readmem,writemem,0,0,
+				readmem,writemem,null,null,
 				subs_interrupt,4	/* NMI interrupt on the 32V signal if not in self-TEST */
-			}
+			)
 		},
 		57, DEFAULT_REAL_60HZ_VBLANK_DURATION,	/* frames per second, vblank duration */
 		1,	/* single CPU, no need for interleaving */
 		subs_init_machine,
 	
 		/* video hardware */
-		64*8, 32*8, { 0*8, 64*8-1, 0*8, 28*8-1 },
+		64*8, 32*8, new rectangle( 0*8, 64*8-1, 0*8, 28*8-1 ),
 		gfxdecodeinfo,
-		sizeof(palette) / sizeof(palette[0]) / 3, sizeof(colortable) / sizeof(colortable[0]),
+		sizeof(palette) / sizeof(palette[null]) / 3, sizeof(colortable) / sizeof(colortable[null]),
 		init_palette,
 	
 		VIDEO_TYPE_RASTER | VIDEO_DUAL_MONITOR | VIDEO_ASPECT_RATIO(8,3),
-		0,
+		null,
 		generic_vh_start,
 		generic_vh_stop,
 		subs_vh_screenrefresh,
 	
 		/* sound hardware */
 		0,0,0,0,
-	};
+	);
 	
 	
 	/***************************************************************************

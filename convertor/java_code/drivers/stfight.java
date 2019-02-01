@@ -500,55 +500,55 @@ public class stfight
 		{ 50 }
 	};
 	
-	static const struct MachineDriver machine_driver_stfight =
-	{
+	static MachineDriver machine_driver_stfight = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_Z80,
 				3000000,	/* 3 MHz */
-				readmem_cpu1, writemem_cpu1, 0, 0,
+				readmem_cpu1, writemem_cpu1, null, null,
 				stfight_vb_interrupt, 1,
 	            stfight_interrupt_1, 30
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_Z80 | CPU_AUDIO_CPU,
 				3000000,	/* 3 MHz */
-				readmem_cpu2, writemem_cpu2, 0, 0,
-				0, 0,
+				readmem_cpu2, writemem_cpu2, null, null,
+				null, null,
 	            stfight_interrupt_2, 120
-			}
+			)
 		},
 		60, DEFAULT_60HZ_VBLANK_DURATION,	/* frames per second, vblank duration */
 		10,
 		stfight_init_machine,
 	
 		/* video hardware */
-		32*8, 32*8, { 0*8, 32*8-1, 2*8, 30*8-1 },
+		32*8, 32*8, new rectangle( 0*8, 32*8-1, 2*8, 30*8-1 ),
 		gfxdecodeinfo,
 		256+1, 16*4+16*16+16*16+16*16,
 		stfight_vh_convert_color_prom,
 	
 		VIDEO_TYPE_RASTER,
-		0,
+		null,
 	
 		stfight_vh_start,
-		0,
+		null,
 		stfight_vh_screenrefresh,
 	
 		/* sound hardware */
 		0,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_YM2203,
-				&ym2203_interface
-			},
-			{
+				ym2203_interface
+			),
+			new MachineSound(
 				SOUND_MSM5205,
-				&msm5205_interface
-			}
+				msm5205_interface
+			)
 		}
-	};
+	);
 	
 	
 	/***************************************************************************

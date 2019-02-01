@@ -199,68 +199,68 @@ public class skychut
 	};
 	
 	
-	static const struct MachineDriver machine_driver_skychut =
-	{
+	static MachineDriver machine_driver_skychut = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_M6502,
 				20000000/8,
-				skychut_readmem,skychut_writemem,0,0,
+				skychut_readmem,skychut_writemem,null,null,
 				skychut_interrupt,1
-			}
+			)
 		},
 		60, DEFAULT_60HZ_VBLANK_DURATION,       /* frames per second, vblank duration */
 		1,      /* single CPU, no need for interleaving */
-		0,
+		null,
 	
 		/* video hardware */
-		32*8, 32*8, { 0*8, 32*8-1, 2*8, 30*8-1 },
+		32*8, 32*8, new rectangle( 0*8, 32*8-1, 2*8, 30*8-1 ),
 		gfxdecodeinfo,
-		sizeof(palette) / sizeof(palette[0]) / 3, sizeof(colortable) / sizeof(colortable[0]),
+		sizeof(palette) / sizeof(palette[null]) / 3, sizeof(colortable) / sizeof(colortable[null]),
 		init_palette,
 	
 		VIDEO_TYPE_RASTER|VIDEO_SUPPORTS_DIRTY,
-		0,
+		null,
 		generic_vh_start,
 		generic_vh_stop,
 	    skychut_vh_screenrefresh,
 	
 		/* sound hardware */
 		0,0,0,0,
-	};
+	);
 	
-	static const struct MachineDriver machine_driver_greenberet =
-	{
+	static MachineDriver machine_driver_greenberet = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_M6502,
 				20000000/8,
-				greenberet_readmem,greenberet_writemem,0,0,
+				greenberet_readmem,greenberet_writemem,null,null,
 				skychut_interrupt,1
-			}
+			)
 		},
 		60, DEFAULT_60HZ_VBLANK_DURATION,       /* frames per second, vblank duration */
 		1,      /* single CPU, no need for interleaving */
-		0,
+		null,
 	
 		/* video hardware */
-		32*8, 32*8, { 0*8, 32*8-1, 2*8, 30*8-1 },
-		0,
-		sizeof(spacebeam_palette) / sizeof(spacebeam_palette[0]) / 3,
-		0,
+		32*8, 32*8, new rectangle( 0*8, 32*8-1, 2*8, 30*8-1 ),
+		null,
+		sizeof(spacebeam_palette) / sizeof(spacebeam_palette[null]) / 3,
+		null,
 		init_greenber_palette,
 	
 		VIDEO_TYPE_RASTER|VIDEO_SUPPORTS_DIRTY,
-		0,
+		null,
 		generic_vh_start,
 		generic_vh_stop,
 	    iremm15_vh_screenrefresh,
 	
 		/* sound hardware */
 		0,0,0,0,
-	};
+	);
 	
 	
 	

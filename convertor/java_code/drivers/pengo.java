@@ -234,11 +234,11 @@ public class pengo
 	
 	
 	
-	static const struct MachineDriver machine_driver_pengo =
-	{
+	static MachineDriver machine_driver_pengo = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_Z80,
 	/*			18432000/6,	* 3.072 MHz */
 				3020000,	/* The correct speed is 3.072 MHz, but 3.020 gives a more */
@@ -247,33 +247,33 @@ public class pengo
 							/* for the second time: 3'39") */
 				readmem,writemem,0,0,
 				interrupt,1
-			}
+			)
 		},
 		60.606060, 2500,	/* frames per second, vblank duration */
 		1,	/* single CPU, no need for interleaving */
-		0,
+		null,
 	
 		/* video hardware */
-		36*8, 28*8, { 0*8, 36*8-1, 0*8, 28*8-1 },
+		36*8, 28*8, new rectangle( 0*8, 36*8-1, 0*8, 28*8-1 ),
 		gfxdecodeinfo,
 		32,4*64,
 		pengo_vh_convert_color_prom,
 	
 		VIDEO_TYPE_RASTER,
-		0,
+		null,
 		pengo_vh_start,
 		generic_vh_stop,
 		pengo_vh_screenrefresh,
 	
 		/* sound hardware */
 		0,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_NAMCO,
-				&namco_interface
-			}
+				namco_interface
+			)
 		}
-	};
+	);
 	
 	
 	

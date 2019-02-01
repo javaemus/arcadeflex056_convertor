@@ -261,48 +261,48 @@ public class contra
 	
 	
 	
-	static const struct MachineDriver machine_driver_contra =
-	{
-		{
-			{
+	static MachineDriver machine_driver_contra = new MachineDriver
+	(
+		new MachineCPU[] {
+			new MachineCPU(
 	 			CPU_M6809,
 				1500000,
-				readmem,writemem,0,0,
+				readmem,writemem,null,null,
 				interrupt,1
-			},
-			{
+			),
+			new MachineCPU(
 	 			CPU_M6809 | CPU_AUDIO_CPU,
 				2000000,
-				readmem_sound,writemem_sound,0,0,
+				readmem_sound,writemem_sound,null,null,
 				ignore_interrupt,0	/* IRQs are caused by the main CPU */
-			},
+			),
 		},
 		60,DEFAULT_REAL_60HZ_VBLANK_DURATION,
 		10,	/* 10 CPU slices per frame - enough for the sound CPU to read all commands */
-		0,
+		null,
 	
 		/* video hardware */
 	
-		37*8, 32*8, { 0*8, 35*8-1, 2*8, 30*8-1 },
+		37*8, 32*8, new rectangle( 0*8, 35*8-1, 2*8, 30*8-1 ),
 		gfxdecodeinfo,
 		128, 2*8*16*16,
 		contra_vh_convert_color_prom,
 	
 		VIDEO_TYPE_RASTER,
-		0,
+		null,
 		contra_vh_start,
 		contra_vh_stop,
 		contra_vh_screenrefresh,
 	
 		/* sound hardware */
 		SOUND_SUPPORTS_STEREO,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_YM2151,
-				&ym2151_interface
-			}
+				ym2151_interface
+			)
 		}
-	};
+	);
 	
 	
 	

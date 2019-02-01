@@ -299,16 +299,16 @@ public class vindictr
 	 *
 	 *************************************/
 	
-	static const struct MachineDriver machine_driver_vindictr =
-	{
+	static MachineDriver machine_driver_vindictr = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_M68010,		/* verified */
 				ATARI_CLOCK_14MHz/2,
-				main_readmem,main_writemem,0,0,
+				main_readmem,main_writemem,null,null,
 				ignore_interrupt,1
-			},
+			),
 			JSA_I_CPU
 		},
 		60, DEFAULT_REAL_60HZ_VBLANK_DURATION,
@@ -316,13 +316,13 @@ public class vindictr
 		init_machine,
 	
 		/* video hardware */
-		42*8, 30*8, { 0*8, 42*8-1, 0*8, 30*8-1 },
+		42*8, 30*8, new rectangle( 0*8, 42*8-1, 0*8, 30*8-1 ),
 		gfxdecodeinfo,
-		2048, 0,
-		0,
+		2048, null,
+		null,
 	
 		VIDEO_TYPE_RASTER | VIDEO_NEEDS_6BITS_PER_GUN | VIDEO_UPDATE_BEFORE_VBLANK,
-		0,
+		null,
 		vindictr_vh_start,
 		vindictr_vh_stop,
 		vindictr_vh_screenrefresh,
@@ -331,7 +331,7 @@ public class vindictr
 		JSA_I_STEREO_WITH_POKEY,
 	
 		atarigen_nvram_handler
-	};
+	);
 	
 	
 	

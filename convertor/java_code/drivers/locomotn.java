@@ -404,48 +404,48 @@ public class locomotn
 	
 	#define MACHINE_DRIVER(GAMENAME)   \
 																		\
-	static const struct MachineDriver machine_driver_##GAMENAME =             \
-	{                                                                   \
+	static MachineDriver machine_driver_##GAMENAME = new MachineDriver\
+	(                                                                   \
 		/* basic machine hardware */                                    \
-		{                                                               \
-			{                                                           \
+		new MachineCPU[] {                                                               \
+			new MachineCPU(                                                           \
 				CPU_Z80,                                                \
 				18432000/6,	/* 3.072 MHz */                             \
-				readmem,GAMENAME##_writemem,0,0,                        \
+				readmem,GAMENAME##_writemem,null,null,                        \
 				nmi_interrupt,1                                         \
-			},                                                          \
-			{                                                           \
+			),                                                          \
+			new MachineCPU(                                                           \
 				CPU_Z80 | CPU_AUDIO_CPU,                                \
 				14318180/8,	/* 1.789772727 MHz */						\
-				timeplt_sound_readmem,timeplt_sound_writemem,0,0,       \
+				timeplt_sound_readmem,timeplt_sound_writemem,null,null,       \
 				ignore_interrupt,1	/* interrupts are triggered by the main CPU */ \
-			}                                                           \
+			)                                                           \
 		},                                                              \
 		60, DEFAULT_60HZ_VBLANK_DURATION,	/* frames per second, vblank duration */ \
 		1,	/* 1 CPU slice per frame - interleaving is forced when a sound command is written */ \
-		0,                                                              \
+		null,                                                              \
 	                                                                    \
 		/* video hardware */                                            \
-		36*8, 28*8, { 0*8, 36*8-1, 0*8, 28*8-1 },                       \
+		36*8, 28*8, new rectangle( 0*8, 36*8-1, 0*8, 28*8-1 ),                       \
 		gfxdecodeinfo,                                                  \
 		32,64*4+4,                                                      \
 		locomotn_vh_convert_color_prom,                                 \
 	                                                                    \
 		VIDEO_TYPE_RASTER,                                              \
-		0,                                                              \
+		null,                                                              \
 		rallyx_vh_start,                                                \
 		rallyx_vh_stop,                                                 \
 		GAMENAME##_vh_screenrefresh,                                    \
 	                                                                    \
 		/* sound hardware */                                            \
 		0,0,0,0,                                                        \
-		{                                                               \
-			{                                                           \
+		new MachineSound[] {                                                               \
+			new MachineSound(                                                           \
 				SOUND_AY8910,                                           \
-				&timeplt_ay8910_interface                               \
-			}                                                           \
+				timeplt_ay8910_interface                               \
+			)                                                           \
 		}                                                               \
-	};
+	);
 	
 	#define locomotn_writemem writemem
 	#define commsega_writemem writemem

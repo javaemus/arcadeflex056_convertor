@@ -534,89 +534,89 @@ public class ninjakd2
 	};
 	
 	
-	static const struct MachineDriver machine_driver_ninjakd2 =
-	{
-		{
-			{
+	static MachineDriver machine_driver_ninjakd2 = new MachineDriver
+	(
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_Z80,
 				6000000,		/* 12000000/2 ??? */
-				readmem,writemem,0,0,	/* very sensitive to these settings */
+				readmem,writemem,null,null,	/* very sensitive to these settings */
 				ninjakd2_interrupt,1
-			}
+			)
 		},
 		60, 10000,			/* frames per second, vblank duration */
 		10,				/* single CPU, no need for interleaving */
-		0,
+		null,
 		32*8, 32*8,
-		{ 0*8, 32*8-1, 4*8, 28*8-1 },
+		new rectangle( 0*8, 32*8-1, 4*8, 28*8-1 ),
 		gfxdecodeinfo,
-		768, 0,
-		0,
+		768, null,
+		null,
 	
 		VIDEO_TYPE_RASTER,
-		0,
+		null,
 		ninjakd2_vh_start,
 		ninjakd2_vh_stop,
 		ninjakd2_vh_screenrefresh,
 	
 		/* sound hardware */
 		0,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_YM2203,
-				&ym2203_interface
-			}
+				ym2203_interface
+			)
 		}
-	};
+	);
 	
-	static const struct MachineDriver machine_driver_ninjak2a =
-	{
-		{
-			{
+	static MachineDriver machine_driver_ninjak2a = new MachineDriver
+	(
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_Z80,
 				6000000,		/* 12000000/2 ??? */
-				readmem,writemem,0,0,	/* very sensitive to these settings */
+				readmem,writemem,null,null,	/* very sensitive to these settings */
 				ninjakd2_interrupt,1
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_Z80 | CPU_AUDIO_CPU,
 				4000000,		/* 12000000/3 ??? */
-				snd_readmem,snd_writemem,0,snd_writeport,
-				ignore_interrupt,0,
-			}
+				snd_readmem,snd_writemem,null,snd_writeport,
+				ignore_interrupt,null,
+			)
 		},
 		60, 10000,	/* frames per second, vblank duration */
 		10,
-		0,
+		null,
 		32*8, 32*8,
-		{ 0*8, 32*8-1, 4*8, 28*8-1 },
+		new rectangle( 0*8, 32*8-1, 4*8, 28*8-1 ),
 		gfxdecodeinfo,
-		768, 0,
-		0,
+		768, null,
+		null,
 	
 		VIDEO_TYPE_RASTER,
-		0,
+		null,
 		ninjakd2_vh_start,
 		ninjakd2_vh_stop,
 		ninjakd2_vh_screenrefresh,
 	
 		/* sound hardware */
 		0,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_YM2203,
-				&ym2203_interface
-			},
-			{
+				ym2203_interface
+			),
+			new MachineSound(
 				SOUND_SAMPLES,
-				&samples_interface
-			},
-			{
+				samples_interface
+			),
+			new MachineSound(
 				SOUND_CUSTOM,	/* actually initializes the samples */
-				&custom_interface
-			}
+				custom_interface
+			)
 		}
-	};
+	);
 	
 	
 	

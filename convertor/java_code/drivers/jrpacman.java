@@ -295,42 +295,42 @@ public class jrpacman
 	
 	
 	
-	static const struct MachineDriver machine_driver_jrpacman =
-	{
+	static MachineDriver machine_driver_jrpacman = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_Z80,
 				18432000/6,	/* 3.072 MHz */
-				readmem,writemem,0,writeport,
+				readmem,writemem,null,writeport,
 				jrpacman_interrupt,1
-			}
+			)
 		},
 		60.606060, 2500,	/* frames per second, vblank duration */
 		1,	/* single CPU, no need for interleaving */
 		jrpacman_init_machine,
 	
 		/* video hardware */
-		36*8, 28*8, { 0*8, 36*8-1, 0*8, 28*8-1 },
+		36*8, 28*8, new rectangle( 0*8, 36*8-1, 0*8, 28*8-1 ),
 		gfxdecodeinfo,
 		32,128*4,
 		jrpacman_vh_convert_color_prom,
 	
 		VIDEO_TYPE_RASTER,
-		0,
+		null,
 		jrpacman_vh_start,
 		jrpacman_vh_stop,
 		jrpacman_vh_screenrefresh,
 	
 		/* sound hardware */
 		0,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_NAMCO,
-				&namco_interface
-			}
+				namco_interface
+			)
 		}
-	};
+	);
 	
 	
 	

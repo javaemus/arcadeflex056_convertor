@@ -3483,32 +3483,32 @@ public class cps1
 	********************************************************************/
 	
 	#define MACHINE_DRIVER(DRVNAME,CPU_FRQ,OKI_FREQ,NVRAM)						\
-	static const struct MachineDriver machine_driver_##DRVNAME =				\
-	{																			\
+	static MachineDriver machine_driver_##DRVNAME = new MachineDriver\
+	(																			\
 		/* basic machine hardware */											\
-		{																		\
-			{																	\
+		new MachineCPU[] {																		\
+			new MachineCPU(																	\
 				CPU_M68000,														\
 				CPU_FRQ,														\
-				cps1_readmem,cps1_writemem,0,0,									\
+				cps1_readmem,cps1_writemem,null,null,									\
 				cps1_interrupt, 1												\
-			},																	\
-			{																	\
+			),																	\
+			new MachineCPU(																	\
 				CPU_Z80 | CPU_AUDIO_CPU,										\
 				4000000,  /* 4 MHz ??? TODO: find real FRQ */					\
-				sound_readmem,sound_writemem,0,0,								\
+				sound_readmem,sound_writemem,null,null,								\
 				ignore_interrupt,0												\
-			}																	\
+			)																	\
 		},																		\
 		60, DEFAULT_60HZ_VBLANK_DURATION,										\
 		1,																		\
-		0,																		\
+		null,																		\
 																				\
 		/* video hardware */													\
-		64*8, 32*8, { 8*8, (64-8)*8-1, 2*8, 30*8-1 },							\
+		64*8, 32*8, new rectangle( 8*8, (64-8)*8-1, 2*8, 30*8-1 ),							\
 		gfxdecodeinfo,															\
-		4096, 0,																\
-		0,																		\
+		4096, null,																\
+		null,																		\
 																				\
 		VIDEO_TYPE_RASTER | VIDEO_NEEDS_6BITS_PER_GUN,	\
 		cps1_eof_callback,														\
@@ -3518,38 +3518,38 @@ public class cps1
 																				\
 		/* sound hardware */													\
 		0,0,0,0,																\
-		{ { SOUND_YM2151,  &ym2151_interface },									\
-		  { SOUND_OKIM6295,  &okim6295_interface_##OKI_FREQ }					\
+		new MachineSound[] { new MachineSound( SOUND_YM2151,  ym2151_interface ),									\
+		  new MachineSound( SOUND_OKIM6295,  okim6295_interface_##OKI_FREQ )					\
 		},																		\
 		NVRAM																	\
-	};
+	);
 	
-	static const struct MachineDriver machine_driver_qsound =
-	{
-		{
-			{
+	static MachineDriver machine_driver_qsound = new MachineDriver
+	(
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_M68000,
 				10000000,	/* ??? */
-				cps1_readmem,cps1_writemem,0,0,
+				cps1_readmem,cps1_writemem,null,null,
 				cps1_qsound_interrupt, 1  /* ??? interrupts per frame */
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_Z80,	/* can't use CPU_AUDIO_CPU, slammast requires the Z80 for protection */
 				6000000,  /* 6 MHz ??? TODO: find real FRQ */
-				qsound_readmem,qsound_writemem,0,0,
-				0,0,
+				qsound_readmem,qsound_writemem,0,null,
+				null,null,
 				interrupt,250	/* ?? */
-			}
+			)
 		},
 		60, DEFAULT_60HZ_VBLANK_DURATION,
 		1,
-		0,
+		null,
 	
 		/* video hardware */
-		64*8, 32*8, { 8*8, (64-8)*8-1, 2*8, 30*8-1 },
+		64*8, 32*8, new rectangle( 8*8, (64-8)*8-1, 2*8, 30*8-1 ),
 		gfxdecodeinfo,
-		4096, 0,
-		0,
+		4096, null,
+		null,
 	
 		VIDEO_TYPE_RASTER | VIDEO_NEEDS_6BITS_PER_GUN,
 		cps1_eof_callback,
@@ -3559,15 +3559,15 @@ public class cps1
 	
 		/* sound hardware */
 		SOUND_SUPPORTS_STEREO,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_QSOUND,
-				&qsound_interface
-			}
+				qsound_interface
+			)
 		},
 	
 		qsound_nvram_handler
-	};
+	);
 	
 	
 	MACHINE_DRIVER( forgottn, 10000000, 6061, 0 )

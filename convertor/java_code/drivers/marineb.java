@@ -576,41 +576,41 @@ public class marineb
 	#define wanted_vh_screenrefresh  springer_vh_screenrefresh
 	
 	#define DRIVER(NAME, INITMACHINE, SNDHRDW, INTERRUPT)				\
-	static const struct MachineDriver machine_driver_##NAME =					\
-	{																	\
+	static MachineDriver machine_driver_##NAME = new MachineDriver\
+	(																	\
 		/* basic machine hardware */									\
-		{																\
-			{															\
+		new MachineCPU[] {																\
+			new MachineCPU(															\
 				CPU_Z80,												\
 				3072000,	/* 3.072 MHz */								\
-				readmem,writemem,0,SNDHRDW##_writeport,					\
+				readmem,writemem,null,SNDHRDW##_writeport,					\
 				INTERRUPT,1	 	                                        \
-			}															\
+			)															\
 		},																\
 		60, 5000,	/* frames per second, vblank duration */			\
 		1,	/* single CPU game */										\
 		INITMACHINE##_init_machine,										\
 																		\
 		/* video hardware */											\
-		32*8, 32*8, { 0*8, 32*8-1, 2*8, 30*8-1 },						\
+		32*8, 32*8, new rectangle( 0*8, 32*8-1, 2*8, 30*8-1 ),						\
 		NAME##_gfxdecodeinfo,											\
-		256, 0,															\
+		256, null,															\
 		espial_vh_convert_color_prom,									\
 		VIDEO_TYPE_RASTER,												\
-		0,																\
+		null,																\
 		generic_vh_start,												\
 		generic_vh_stop,												\
 		NAME##_vh_screenrefresh,										\
 																		\
 		/* sound hardware */											\
 		0,0,0,0,														\
-		{																\
-			{															\
+		new MachineSound[] {																\
+			new MachineSound(															\
 				SOUND_AY8910,											\
-				&SNDHRDW##_ay8910_interface								\
-			}															\
+				SNDHRDW##_ay8910_interface								\
+			)															\
 		}																\
-	}
+	)
 	
 	
 	/*     NAME      INITMACH  SNDHRDW	INTERRUPT */
@@ -621,42 +621,42 @@ public class marineb
 	DRIVER(wanted,   marineb,  wanted,  interrupt    );
 	DRIVER(hopprobo, marineb,  marineb, nmi_interrupt);
 	
-	static const struct MachineDriver machine_driver_bcruzm12 =
-	{
+	static MachineDriver machine_driver_bcruzm12 = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_Z80,
 				3072000,	/* 3.072 MHz  */
-				readmem,writemem,0,wanted_writeport,
+				readmem,writemem,null,wanted_writeport,
 				interrupt,1
-			}
+			)
 		},
 		60, 5000,	/* frames per second, vblank duration */
 		1,	/* single CPU, no need for interleaving */
 		springer_init_machine,
 	
 		/* video hardware */
-		32*8, 32*8, { 0*8, 32*8-1, 2*8, 30*8-1 },
+		32*8, 32*8, new rectangle( 0*8, 32*8-1, 2*8, 30*8-1 ),
 		wanted_gfxdecodeinfo,
-		256, 0,
+		256, null,
 		espial_vh_convert_color_prom,
 	
 		VIDEO_TYPE_RASTER,
-		0,
+		null,
 		generic_vh_start,
 		generic_vh_stop,
 		wanted_vh_screenrefresh,
 	
 		/* sound hardware */
 		0,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_AY8910,
-				&wanted_ay8910_interface
-			},
+				wanted_ay8910_interface
+			),
 		}
-	};
+	);
 	
 	/***************************************************************************
 	

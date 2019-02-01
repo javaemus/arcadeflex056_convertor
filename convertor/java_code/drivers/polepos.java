@@ -450,64 +450,64 @@ public class polepos
 	 * Machine driver
 	 *********************************************************************/
 	
-	static const struct MachineDriver machine_driver_polepos =
-	{
+	static MachineDriver machine_driver_polepos = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_Z80,
 				3125000,	/* 3.125 MHz */
 				z80_readmem,z80_writemem,z80_readport,z80_writeport,
 				ignore_interrupt,1
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_Z8000,
 				3125000,	/* 3.125 MHz */
-				z8002_readmem,z8002_writemem,0,0,
+				z8002_readmem,z8002_writemem,null,null,
 				polepos_z8002_1_interrupt,1
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_Z8000,
 				3125000,	/* 3.125 MHz */
-				z8002_readmem,z8002_writemem,0,0,
+				z8002_readmem,z8002_writemem,null,null,
 				polepos_z8002_2_interrupt,1
-			}
+			)
 		},
 		60.606060, DEFAULT_REAL_60HZ_VBLANK_DURATION,	 /* frames per second, vblank duration */
 		100,	/* some interleaving */
 		polepos_init_machine,
 	
 		/* video hardware */
-		32*8, 32*8, { 0*8, 32*8-1, 2*8, 30*8-1 },
+		32*8, 32*8, new rectangle( 0*8, 32*8-1, 2*8, 30*8-1 ),
 		gfxdecodeinfo,
 		128,0x1400,
 		polepos_vh_convert_color_prom,
 	
 		VIDEO_TYPE_RASTER,
-		0,
+		null,
 		polepos_vh_start,
 		polepos_vh_stop,
 		polepos_vh_screenrefresh,
 	
 		/* sound hardware */
 		SOUND_SUPPORTS_STEREO, 0, 0, 0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_NAMCO,
-				&namco_interface
-			},
-			{
+				namco_interface
+			),
+			new MachineSound(
 				SOUND_CUSTOM,
-				&custom_interface
-			},
-			{
+				custom_interface
+			),
+			new MachineSound(
 				SOUND_SAMPLES,
-				&samples_interface
-			}
+				samples_interface
+			)
 		},
 	
 		nvram_handler
-	};
+	);
 	
 	
 	/*********************************************************************

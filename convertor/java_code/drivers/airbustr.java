@@ -718,27 +718,27 @@ public class airbustr
 	};
 	
 	
-	static const struct MachineDriver machine_driver_airbustr =
-	{
-		{
-			{
+	static MachineDriver machine_driver_airbustr = new MachineDriver
+	(
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_Z80,
 				6000000,	/* ?? */
-				readmem,writemem,0,writeport,
+				readmem,writemem,null,writeport,
 				airbustr_interrupt, 2	/* nmi caused by sub cpu?, ? */
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_Z80,
 				6000000,	/* ?? */
 				readmem2,writemem2,readport2,writeport2,
 				airbustr_interrupt2, 2	/* nmi caused by main cpu, ? */
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_Z80,	/* Sound CPU, reads DSWs. Hence it can't be disabled */
 				6000000,	/* ?? */
 				sound_readmem,sound_writemem,sound_readport,sound_writeport,
 				interrupt,1	/* nmi are caused by sub cpu writing a sound command */
-			},
+			),
 		},
 		60,DEFAULT_60HZ_VBLANK_DURATION,
 		100,	/* Palette RAM is filled by sub cpu with data supplied by main cpu */
@@ -746,30 +746,30 @@ public class airbustr
 		airbustr_init_machine,
 	
 		/* video hardware */
-		256, 256, { 0, 256-1, 0+16, 256-16-1 },
+		256, 256, new rectangle( 0, 256-1, 0+16, 256-16-1 ),
 		gfxdecodeinfo,
-		768, 0,
-		0,
+		768, null,
+		null,
 	
 		VIDEO_TYPE_RASTER,
-		0,
+		null,
 		airbustr_vh_start,
-		0,
+		null,
 		airbustr_vh_screenrefresh,
 	
 		/* sound hardware */
 		0,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_YM2203,
-				&ym2203_interface
-			},
-			{
+				ym2203_interface
+			),
+			new MachineSound(
 				SOUND_OKIM6295,
-				&okim6295_interface
-			}
+				okim6295_interface
+			)
 		}
-	};
+	);
 	
 	
 	

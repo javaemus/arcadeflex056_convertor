@@ -571,146 +571,146 @@ public class ddragon3
 	
 	/**************************************************************************/
 	
-	static const struct MachineDriver machine_driver_ddragon3 =
-	{
-		{
-			{
+	static MachineDriver machine_driver_ddragon3 = new MachineDriver
+	(
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_M68000,
 				12000000, /* Guess */
-				readmem,writemem,0,0,
+				readmem,writemem,null,null,
 				ddragon3_cpu_interrupt,2
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_Z80 | CPU_AUDIO_CPU,
 				3579545,	/* Guess */
-				readmem_sound,writemem_sound,0,0,
+				readmem_sound,writemem_sound,null,null,
 				ignore_interrupt,0
-			},
+			),
 		},
 		60, DEFAULT_60HZ_VBLANK_DURATION,
 		1,	/* CPU slices per frame */
-		0, /* init machine */
+		null, /* init machine */
 	
 		/* video hardware */
-		320, 240, { 0, 319, 8, 239 },
+		320, 240, new rectangle( 0, 319, 8, 239 ),
 	
 		ddragon3_gfxdecodeinfo,
-		768, 0,
-		0,
+		768, null,
+		null,
 	
 		VIDEO_TYPE_RASTER,
-		0,
+		null,
 		ddragon3_vh_start,
-		0,
+		null,
 		ddragon3_vh_screenrefresh,
 	
 		/* sound hardware */
 		SOUND_SUPPORTS_STEREO,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_YM2151,
-				&ym2151_interface
-			},
-			{
+				ym2151_interface
+			),
+			new MachineSound(
 				SOUND_OKIM6295,
-				&okim6295_interface
-			}
+				okim6295_interface
+			)
 		}
-	};
+	);
 	
-	static const struct MachineDriver machine_driver_ddrago3b =
-	{
-		{
-			{
+	static MachineDriver machine_driver_ddrago3b = new MachineDriver
+	(
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_M68000,
 				12000000, /* Guess */
-				dd3b_readmem,dd3b_writemem,0,0,
+				dd3b_readmem,dd3b_writemem,null,null,
 				ddragon3_cpu_interrupt,2
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_Z80 | CPU_AUDIO_CPU,
 				3579545,	/* Guess */
-				readmem_sound,writemem_sound,0,0,
+				readmem_sound,writemem_sound,null,null,
 				ignore_interrupt,0
-			},
+			),
 		},
 		60, DEFAULT_60HZ_VBLANK_DURATION,
 		1,	/* CPU slices per frame */
-		0, /* init machine */
+		null, /* init machine */
 	
 		/* video hardware */
-		320, 240, { 0, 319, 8, 239 },
+		320, 240, new rectangle( 0, 319, 8, 239 ),
 	
 		ddragon3_gfxdecodeinfo,
-		768, 0,
-		0,
+		768, null,
+		null,
 	
 		VIDEO_TYPE_RASTER,
-		0,
+		null,
 		ddragon3_vh_start,
-		0,
+		null,
 		ddragon3_vh_screenrefresh,
 	
 		/* sound hardware */
 		SOUND_SUPPORTS_STEREO,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_YM2151,
-				&ym2151_interface
-			},
-			{
+				ym2151_interface
+			),
+			new MachineSound(
 				SOUND_OKIM6295,
-				&okim6295_interface
-			}
+				okim6295_interface
+			)
 		}
-	};
+	);
 	
-	static const struct MachineDriver machine_driver_ctribe =
-	{
-		{
-			{
+	static MachineDriver machine_driver_ctribe = new MachineDriver
+	(
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_M68000,
 				12000000, /* Guess */
-				ctribe_readmem,ctribe_writemem,0,0,
+				ctribe_readmem,ctribe_writemem,null,null,
 				ddragon3_cpu_interrupt,2
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_Z80 | CPU_AUDIO_CPU,
 				3579545,	/* Guess */
-				ctribe_readmem_sound,ctribe_writemem_sound,0,0,
+				ctribe_readmem_sound,ctribe_writemem_sound,null,null,
 				ignore_interrupt,0
-			},
+			),
 		},
 		60, DEFAULT_REAL_60HZ_VBLANK_DURATION,
 		1,	/* CPU slices per frame */
-		0, /* init machine */
+		null, /* init machine */
 	
 		/* video hardware */
-		320, 240, { 0, 319, 8, 239 },
+		320, 240, new rectangle( 0, 319, 8, 239 ),
 	
 		ddragon3_gfxdecodeinfo,
-		768, 0,
-		0,
+		768, null,
+		null,
 	
 		VIDEO_TYPE_RASTER,
-		0,
+		null,
 		ddragon3_vh_start,
-		0,
+		null,
 		ctribe_vh_screenrefresh,
 	
 		/* sound hardware */
 		SOUND_SUPPORTS_STEREO,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_YM2151,
-				&ym2151_interface
-			},
-			{
+				ym2151_interface
+			),
+			new MachineSound(
 				SOUND_OKIM6295,
-				&okim6295_interface
-			}
+				okim6295_interface
+			)
 		}
-	};
+	);
 	
 	/**************************************************************************/
 	

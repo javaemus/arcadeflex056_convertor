@@ -212,29 +212,29 @@ public class canyon
 	}
 	
 	
-	static const struct MachineDriver machine_driver_canyon =
-	{
+	static MachineDriver machine_driver_canyon = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_M6502,
 	            750000,        /* 0.3 MHz ???? */
-				readmem,writemem,0,0,
+				readmem,writemem,null,null,
 	            nmi_interrupt,1
-			}
+			)
 		},
 		60, DEFAULT_REAL_60HZ_VBLANK_DURATION,	/* frames per second, vblank duration */
 		1,	/* single CPU, no need for interleaving */
-		0,
+		null,
 	
 		/* video hardware */
-	    32*8, 30*8, { 0*8, 32*8-1, 0*8, 30*8-1 },
+	    32*8, 30*8, new rectangle( 0*8, 32*8-1, 0*8, 30*8-1 ),
 		gfxdecodeinfo,
-		sizeof(palette) / sizeof(palette[0]) / 3, sizeof(colortable) / sizeof(colortable[0]),
+		sizeof(palette) / sizeof(palette[null]) / 3, sizeof(colortable) / sizeof(colortable[null]),
 		init_palette,
 	
 	    VIDEO_TYPE_RASTER,
-		0,
+		null,
 	    generic_vh_start,
 	    generic_vh_stop,
 	    canyon_vh_screenrefresh,
@@ -242,7 +242,7 @@ public class canyon
 		/* sound hardware */
 		0,0,0,0
 	
-	};
+	);
 	
 	
 	/***************************************************************************

@@ -256,36 +256,36 @@ public class dynduke
 		buffer_spriteram_w(0,0); /* Could be a memory location instead */
 	}
 	
-	static const struct MachineDriver machine_driver_dynduke =
-	{
+	static MachineDriver machine_driver_dynduke = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_V30, /* NEC V30-8 CPU */
 				16000000, /* Guess */
-				readmem,writemem,0,0,
+				readmem,writemem,null,null,
 				dynduke_interrupt,1
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_V30, /* NEC V30-8 CPU */
 				16000000, /* Guess */
-				sub_readmem,sub_writemem,0,0,
+				sub_readmem,sub_writemem,null,null,
 				dynduke_interrupt,1
-			},
-			{
+			),
+			new MachineCPU(
 				SEIBU_SOUND_SYSTEM_CPU(14318180/4)
-			}
+			)
 		},
 		60, DEFAULT_REAL_60HZ_VBLANK_DURATION,	/* frames per second, vblank duration */
 		60,	/* CPU interleave  */
 		seibu_sound_init_2,
 	
 		/* video hardware */
-		32*8, 32*8, { 0*8, 32*8-1, 2*8, 30*8-1 },
+		32*8, 32*8, new rectangle( 0*8, 32*8-1, 2*8, 30*8-1 ),
 	
 		dynduke_gfxdecodeinfo,
-		2048+1024, 0,	/* 2048 real palette, 1024 for transparency kludge */
-		0,
+		2048+1024, null,	/* 2048 real palette, 1024 for transparency kludge */
+		null,
 	
 		VIDEO_TYPE_RASTER | VIDEO_BUFFERS_SPRITERAM,
 		dynduke_eof_callback,
@@ -295,10 +295,10 @@ public class dynduke
 	
 		/* sound hardware */
 		0,0,0,0,
-		{
+		new MachineSound[] {
 			SEIBU_SOUND_SYSTEM_YM3812_INTERFACE
 		}
-	};
+	);
 	
 	/***************************************************************************/
 	

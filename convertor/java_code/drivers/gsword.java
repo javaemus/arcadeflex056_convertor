@@ -607,110 +607,110 @@ public class gsword
 	
 	
 	
-	static const struct MachineDriver machine_driver_josvolly =
-	{
+	static MachineDriver machine_driver_josvolly = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_Z80,
 				3000000,
 				gsword_readmem,gsword_writemem,readport,writeport,
 				interrupt,1
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_Z80 | CPU_AUDIO_CPU,
 				3000000,
 				josvolly_sound_readmem,josvolly_sound_writemem,josvolly_sound_readport,josvolly_sound_writeport,
 				ignore_interrupt,0
-			}
+			)
 		},
 		60, DEFAULT_REAL_60HZ_VBLANK_DURATION,	/* frames per second, vblank duration */
 		1,
 		machine_init,
 	
 		/* video hardware */
-		32*8, 32*8,{ 0*8, 32*8-1, 2*8, 30*8-1 },
+		32*8, 32*8,new rectangle( 0*8, 32*8-1, 2*8, 30*8-1 ),
 	
 		gfxdecodeinfo,
 		256, 64*4+64*4,
 		josvolly_vh_convert_color_prom,
 		VIDEO_TYPE_RASTER,
-		0,
+		null,
 		gsword_vh_start,
 		gsword_vh_stop,
 		gsword_vh_screenrefresh,
 	
 		/* sound hardware */
 		0,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_AY8910,
-				&ay8910_interface
-			},
-			{
+				ay8910_interface
+			),
+			new MachineSound(
 				SOUND_MSM5205,
-				&msm5205_interface
-			}
+				msm5205_interface
+			)
 		}
 	
-	};
+	);
 	
-	static const struct MachineDriver machine_driver_gsword =
-	{
+	static MachineDriver machine_driver_gsword = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_Z80,
 				3000000,
 				gsword_readmem,gsword_writemem,
 				readport,writeport,
 				interrupt,1
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_Z80,
 				3000000,
 				readmem_cpu2,writemem_cpu2,
 				readport_cpu2,writeport_cpu2,
 				gsword_snd_interrupt,4
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_Z80 | CPU_AUDIO_CPU,
 				3000000,
 				readmem_cpu3,writemem_cpu3,
-				0,0,
+				null,null,
 				ignore_interrupt,0
-			}
+			)
 		},
 		60, DEFAULT_REAL_60HZ_VBLANK_DURATION,	/* frames per second, vblank duration */
 		200,                                 /* Allow time for 2nd cpu to interleave*/
 		machine_init,
 	
 		/* video hardware */
-		32*8, 32*8,{ 0*8, 32*8-1, 2*8, 30*8-1 },
+		32*8, 32*8,new rectangle( 0*8, 32*8-1, 2*8, 30*8-1 ),
 	
 		gfxdecodeinfo,
 		256, 64*4+64*4,
 		gsword_vh_convert_color_prom,
 		VIDEO_TYPE_RASTER,
-		0,
+		null,
 		gsword_vh_start,
 		gsword_vh_stop,
 		gsword_vh_screenrefresh,
 	
 		/* sound hardware */
 		0,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_AY8910,
-				&ay8910_interface
-			},
-			{
+				ay8910_interface
+			),
+			new MachineSound(
 				SOUND_MSM5205,
-				&msm5205_interface
-			}
+				msm5205_interface
+			)
 		}
 	
-	};
+	);
 	
 	/***************************************************************************
 	

@@ -186,43 +186,43 @@ public class starcrus
 	};
 	
 	
-	static const struct MachineDriver machine_driver_starcrus =
-	{
+	static MachineDriver machine_driver_starcrus = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_8080,
 				9750000/9,  /* 8224 chip is a divide by 9 */
 				readmem,writemem,readport,writeport,
 				interrupt,1
-			}
+			)
 		},
 		57, DEFAULT_REAL_60HZ_VBLANK_DURATION,	/* frames per second, vblank duration */
 		1,	/* single CPU, no need for interleaving */
-		0,
+		null,
 	
 		/* video hardware */
-	    32*8, 32*8, { 0*8, 32*8-1, 0*8, 32*8-1 },
+	    32*8, 32*8, new rectangle( 0*8, 32*8-1, 0*8, 32*8-1 ),
 		gfxdecodeinfo,
-		sizeof(palette) / sizeof(palette[0]) / 3, sizeof(colortable) / sizeof(colortable[0]),
+		sizeof(palette) / sizeof(palette[null]) / 3, sizeof(colortable) / sizeof(colortable[null]),
 		init_palette,
 	
 		VIDEO_TYPE_RASTER,
-		0,
+		null,
 		starcrus_vh_start,
 		starcrus_vh_stop,
 		starcrus_vh_screenrefresh,
 	
 	    /* sound hardware */
 	    0,0,0,0,
-	    {
-	        {
+	    new MachineSound[] {
+	        new MachineSound(
 	            SOUND_SAMPLES,
-	            &samples_interface
-	        }
+	            samples_interface
+	        )
 	    }
 	
-	};
+	);
 	
 	/***************************************************************************
 	

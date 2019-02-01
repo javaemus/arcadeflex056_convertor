@@ -439,91 +439,91 @@ public class baraduke
 	};
 	
 	
-	static const struct MachineDriver machine_driver_baraduke =
-	{
+	static MachineDriver machine_driver_baraduke = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_M6809,
 				49152000/32,	/* ??? */
-				baraduke_readmem,baraduke_writemem,0,0,
+				baraduke_readmem,baraduke_writemem,null,null,
 				interrupt,1
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_HD63701,	/* or compatible 6808 with extra instructions */
 				49152000/32,	/* ??? */
 				mcu_readmem,mcu_writemem,mcu_readport,mcu_writeport,
 				interrupt,1
-			}
+			)
 		},
 		60.606060,DEFAULT_REAL_60HZ_VBLANK_DURATION,
 		100,		/* we need heavy synch */
-		0,
+		null,
 	
 		/* video hardware */
-		36*8, 28*8, { 0*8, 36*8-1, 0*8, 28*8-1 },
+		36*8, 28*8, new rectangle( 0*8, 36*8-1, 0*8, 28*8-1 ),
 		gfxdecodeinfo,
 		2048,2048*4,
 		baraduke_vh_convert_color_prom,
 	
 		VIDEO_TYPE_RASTER,	/* palette is static but doesn't fit in 256 colors */
-		0,
+		null,
 		baraduke_vh_start,
-		0,
+		null,
 		baraduke_vh_screenrefresh,
 	
 		/* sound hardware */
 		0,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_NAMCO,
-				&namco_interface
-			}
+				namco_interface
+			)
 		}
-	};
+	);
 	
-	static const struct MachineDriver machine_driver_metrocrs =
-	{
+	static MachineDriver machine_driver_metrocrs = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_M6809,
 				49152000/32,	/* ??? */
-				baraduke_readmem,baraduke_writemem,0,0,
+				baraduke_readmem,baraduke_writemem,null,null,
 				interrupt,1
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_HD63701,	/* or compatible 6808 with extra instructions */
 				49152000/32,	/* ??? */
 				mcu_readmem,mcu_writemem,mcu_readport,mcu_writeport,
 				interrupt,1
-			}
+			)
 		},
 		60.606060,DEFAULT_REAL_60HZ_VBLANK_DURATION,
 		100,		/* we need heavy synch */
-		0,
+		null,
 	
 		/* video hardware */
-		36*8, 28*8, { 0*8, 36*8-1, 0*8, 28*8-1 },
+		36*8, 28*8, new rectangle( 0*8, 36*8-1, 0*8, 28*8-1 ),
 		gfxdecodeinfo,
 		2048,2048*4,
 		baraduke_vh_convert_color_prom,
 	
 		VIDEO_TYPE_RASTER,
-		0,
+		null,
 		baraduke_vh_start,
-		0,
+		null,
 		metrocrs_vh_screenrefresh,
 	
 		/* sound hardware */
 		0,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_NAMCO,
-				&namco_interface
-			}
+				namco_interface
+			)
 		}
-	};
+	);
 	
 	static RomLoadPtr rom_baraduke = new RomLoadPtr(){ public void handler(){ 
 		ROM_REGION( 0x10000, REGION_CPU1, 0 );/* 6809 code */

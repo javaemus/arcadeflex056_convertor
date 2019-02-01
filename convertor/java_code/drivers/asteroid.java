@@ -581,78 +581,78 @@ public class asteroid
 	 *		osd_fwrite(f,&RAM[0x0023],3*10+3*11);
 	 */
 	
-	static const struct MachineDriver machine_driver_asteroid =
-	{
+	static MachineDriver machine_driver_asteroid = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_M6502,
 				1500000,	/* 1.5 MHz */
-				asteroid_readmem,asteroid_writemem,0,0,
+				asteroid_readmem,asteroid_writemem,null,null,
 				asteroid_interrupt,4	/* 250 Hz */
-			}
+			)
 		},
 		60, 0,	/* frames per second, vblank duration (vector game, so no vblank) */
 		1,
 		asteroid_init_machine,
 	
 		/* video hardware */
-		400, 300, { 0, 1040, 70, 950 },
-		0,
-		256+32768, 0,
+		400, 300, new rectangle( 0, 1040, 70, 950 ),
+		null,
+		256+32768, null,
 		avg_init_palette_white,
 	
 		VIDEO_TYPE_VECTOR | VIDEO_SUPPORTS_DIRTY | VIDEO_RGB_DIRECT,
-		0,
+		null,
 		dvg_start,
 		dvg_stop,
 		vector_vh_screenrefresh,
 	
 		/* sound hardware */
 		0,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_DISCRETE,
-				&asteroid_sound_interface
-			}
+				asteroid_sound_interface
+			)
 		}
-	};
+	);
 	
-	static const struct MachineDriver machine_driver_asteroib =
-	{
+	static MachineDriver machine_driver_asteroib = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_M6502,
 				1500000,	/* 1.5 MHz */
-				asteroib_readmem,asteroid_writemem,0,0,
+				asteroib_readmem,asteroid_writemem,null,null,
 				asteroid_interrupt,4	/* 250 Hz */
-			}
+			)
 		},
 		60, 0,	/* frames per second, vblank duration (vector game, so no vblank) */
 		1,
 		asteroid_init_machine,
 	
 		/* video hardware */
-		400, 300, { 0, 1040, 70, 950 },
-		0,
-		256+32768, 0,
+		400, 300, new rectangle( 0, 1040, 70, 950 ),
+		null,
+		256+32768, null,
 		avg_init_palette_white,
 	
 		VIDEO_TYPE_VECTOR | VIDEO_SUPPORTS_DIRTY | VIDEO_RGB_DIRECT,
-		0,
+		null,
 		dvg_start,
 		dvg_stop,	vector_vh_screenrefresh,
 	
 		/* sound hardware */
 		0,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_DISCRETE,
-				&asteroid_sound_interface
-			}
+				asteroid_sound_interface
+			)
 		}
-	};
+	);
 	
 	
 	
@@ -674,86 +674,86 @@ public class asteroid
 		{ input_port_3_r }
 	};
 	
-	static const struct MachineDriver machine_driver_astdelux =
-	{
+	static MachineDriver machine_driver_astdelux = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_M6502,
 				1500000,	/* 1.5 MHz */
-				astdelux_readmem,astdelux_writemem,0,0,
+				astdelux_readmem,astdelux_writemem,null,null,
 				asteroid_interrupt,4	/* 250 Hz */
-			}
+			)
 		},
 		60, 0,	/* frames per second, vblank duration (vector game, so no vblank) */
 		1,
-		0,
+		null,
 	
 		/* video hardware */
-		400, 300, { 0, 1040, 70, 950 },
-		0,
-		256+32768, 0,
+		400, 300, new rectangle( 0, 1040, 70, 950 ),
+		null,
+		256+32768, null,
 		avg_init_palette_astdelux,
 	
 		VIDEO_TYPE_VECTOR | VIDEO_SUPPORTS_DIRTY | VIDEO_RGB_DIRECT,
-		0,
+		null,
 		dvg_start,
 		dvg_stop,
 		vector_vh_screenrefresh,
 	
 		/* sound hardware */
 		0,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_POKEY,
-				&pokey_interface
-			},
-			{
+				pokey_interface
+			),
+			new MachineSound(
 				SOUND_DISCRETE,
-				&astdelux_sound_interface
-			}
+				astdelux_sound_interface
+			)
 		},
 	
 		atari_vg_earom_handler
-	};
+	);
 	
 	
-	static const struct MachineDriver machine_driver_llander =
-	{
+	static MachineDriver machine_driver_llander = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_M6502,
 				1500000,			/* 1.5 MHz */
-				llander_readmem, llander_writemem,0,0,
+				llander_readmem, llander_writemem,null,null,
 				llander_interrupt,6 /* 250 Hz */
-			}
+			)
 		},
 		40, 0,	/* frames per second, vblank duration (vector game, so no vblank) */
 		1,
-		0,
+		null,
 	
 		/* video hardware */
-		400, 300, { 0, 1050, 0, 900 },
-		0,
-		256+32768, 0,
+		400, 300, new rectangle( 0, 1050, 0, 900 ),
+		null,
+		256+32768, null,
 		llander_init_colors,
 	
 		VIDEO_TYPE_VECTOR | VIDEO_SUPPORTS_DIRTY | VIDEO_RGB_DIRECT,
-		0,
+		null,
 		llander_start,
 		llander_stop,
 		llander_screenrefresh,
 	
 		/* sound hardware */
 		0,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_DISCRETE,
-				&llander_sound_interface
-			}
+				llander_sound_interface
+			)
 		}
-	};
+	);
 	
 	/***************************************************************************
 	

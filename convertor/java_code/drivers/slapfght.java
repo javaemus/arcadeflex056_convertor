@@ -825,141 +825,141 @@ public class slapfght
 		}
 	};
 	
-	static const struct MachineDriver machine_driver_tigerh =
-	{
+	static MachineDriver machine_driver_tigerh = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_Z80,
 				6000000,
 				tigerh_readmem,writemem,readport,tigerh_writeport,
 				interrupt,1
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_Z80,
 				6000000,
-				sound_readmem,sound_writemem,0,0,
+				sound_readmem,sound_writemem,null,null,
 				nmi_interrupt,6,    /* ??? */
-			}
+			)
 		},
 		60, DEFAULT_REAL_60HZ_VBLANK_DURATION,
 		10,		/* 10 CPU slices per frame - enough for the sound CPU to read all commands */
 		slapfight_init_machine,
 	
 		/* video hardware */
-		64*8, 32*8, { 1*8, 36*8-1, 2*8, 32*8-1 },
+		64*8, 32*8, new rectangle( 1*8, 36*8-1, 2*8, 32*8-1 ),
 		gfxdecodeinfo,
-		256, 0,
+		256, null,
 		palette_RRRR_GGGG_BBBB_convert_prom,
 	
 		VIDEO_TYPE_RASTER | VIDEO_BUFFERS_SPRITERAM,
 		eof_callback,
 		slapfight_vh_start,
-		0,
+		null,
 		slapfight_vh_screenrefresh,
 	
 		/* sound hardware */
 		0,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_AY8910,
-				&ay8910_interface
-			}
+				ay8910_interface
+			)
 		}
-	};
+	);
 	
-	static const struct MachineDriver machine_driver_slapfigh =
-	{
+	static MachineDriver machine_driver_slapfigh = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_Z80,
 				6000000,
 				readmem,writemem,readport,writeport,
 				interrupt,1
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_Z80,
 				6000000,
-				sound_readmem,sound_writemem,0,0,
+				sound_readmem,sound_writemem,null,null,
 					getstar_interrupt/*nmi_interrupt*/, 3,    /* p'tit Seb 980926 this way it sound much better ! */
-				0,0                  /* I think music is not so far from correct speed */
+				null,null                  /* I think music is not so far from correct speed */
 	/*			ignore_interrupt, 0,
 				slapfight_sound_interrupt, 27306667 */
-			}
+			)
 		},
 		60, DEFAULT_REAL_60HZ_VBLANK_DURATION,
 		10,		/* 10 CPU slices per frame - enough for the sound CPU to read all commands */
 		slapfight_init_machine,
 	
 		/* video hardware */
-		64*8, 32*8, { 1*8, 36*8-1, 2*8, 32*8-1 },
+		64*8, 32*8, new rectangle( 1*8, 36*8-1, 2*8, 32*8-1 ),
 		gfxdecodeinfo,
-		256, 0,
+		256, null,
 		palette_RRRR_GGGG_BBBB_convert_prom,
 	
 		VIDEO_TYPE_RASTER | VIDEO_BUFFERS_SPRITERAM,
 		eof_callback,
 		slapfight_vh_start,
-		0,
+		null,
 		slapfight_vh_screenrefresh,
 	
 		/* sound hardware */
 		0,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_AY8910,
-				&ay8910_interface
-			}
+				ay8910_interface
+			)
 		}
-	};
+	);
 	
 	/* identical to slapfigh_ but writemem has different scroll registers */
-	static const struct MachineDriver machine_driver_slapbtuk =
-	{
+	static MachineDriver machine_driver_slapbtuk = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_Z80,
 				6000000,
 				readmem,slapbtuk_writemem,readport,writeport,
 				interrupt,1
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_Z80,
 				6000000,
-				sound_readmem,sound_writemem,0,0,
+				sound_readmem,sound_writemem,null,null,
 				getstar_interrupt/*nmi_interrupt*/, 3,    /* p'tit Seb 980926 this way it sound much better ! */
-				0,0                  /* I think music is not so far from correct speed */
+				null,null                  /* I think music is not so far from correct speed */
 	/*			ignore_interrupt, 0,
 				slapfight_sound_interrupt, 27306667 */
-			}
+			)
 		},
 		60, DEFAULT_REAL_60HZ_VBLANK_DURATION,
 		10,		/* 10 CPU slices per frame - enough for the sound CPU to read all commands */
 		slapfight_init_machine,
 	
 		/* video hardware */
-		64*8, 32*8, { 1*8, 36*8-1, 2*8, 32*8-1 },
+		64*8, 32*8, new rectangle( 1*8, 36*8-1, 2*8, 32*8-1 ),
 		gfxdecodeinfo,
-		256, 0,
+		256, null,
 		palette_RRRR_GGGG_BBBB_convert_prom,
 	
 		VIDEO_TYPE_RASTER | VIDEO_BUFFERS_SPRITERAM,
 		eof_callback,
 		slapfight_vh_start,
-		0,
+		null,
 		slapfight_vh_screenrefresh,
 	
 		/* sound hardware */
 		0,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_AY8910,
-				&ay8910_interface
-			}
+				ay8910_interface
+			)
 		}
-	};
+	);
 	
 	
 	

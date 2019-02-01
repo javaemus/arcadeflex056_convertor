@@ -325,46 +325,46 @@ public class esd16
 		{ 80 }
 	};
 	
-	static const struct MachineDriver machine_driver_multchmp =
-	{
-		{
-			{
+	static MachineDriver machine_driver_multchmp = new MachineDriver
+	(
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_M68000,
 				16000000,
-				multchmp_readmem, multchmp_writemem,0,0,
+				multchmp_readmem, multchmp_writemem,null,null,
 				m68_level6_irq, 1
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_Z80 | CPU_AUDIO_CPU,
 				4000000,	/* ? */
 				multchmp_sound_readmem,  multchmp_sound_writemem,
 				multchmp_sound_readport, multchmp_sound_writeport,
 				nmi_interrupt, 32	/* IRQ By Main CPU */
-			},
+			),
 		},
 		60,DEFAULT_60HZ_VBLANK_DURATION,
 		1,
-		0,
+		null,
 	
 		/* video hardware */
-		0x140, 0x100, { 0, 0x140-1, 0+8, 0x100-8-1 },
+		0x140, 0x100, new rectangle( 0, 0x140-1, 0+8, 0x100-8-1 ),
 		esd16_gfxdecodeinfo,
-		768, 0,
-		0,
+		768, null,
+		null,
 	
 		VIDEO_TYPE_RASTER,
-		0,
+		null,
 		esd16_vh_start,
-		0,
+		null,
 		esd16_vh_screenrefresh,
 	
 		/* sound hardware */
 		0,0,0,0,
-		{
-			{ SOUND_YM3812,   &esd16_ym3812_intf },
-			{ SOUND_OKIM6295, &esd16_m6295_intf  }
+		new MachineSound[] {
+			new MachineSound( SOUND_YM3812,   esd16_ym3812_intf ),
+			new MachineSound( SOUND_OKIM6295, esd16_m6295_intf  )
 		},
-	};
+	);
 	
 	
 	/***************************************************************************

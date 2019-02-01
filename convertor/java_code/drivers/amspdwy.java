@@ -270,46 +270,46 @@ public class amspdwy
 	};
 	
 	
-	static const struct MachineDriver machine_driver_amspdwy =
-	{
-		{
-			{
+	static MachineDriver machine_driver_amspdwy = new MachineDriver
+	(
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_Z80 | CPU_16BIT_PORT,
 				3000000,	/* ? */
 				amspdwy_readmem,  amspdwy_writemem,
 				amspdwy_readport, 0,
 				interrupt, 1	/* IRQ: 60Hz, NMI: retn */
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_Z80,	/* Can't be disabled: the YM2151 timers must work */
 				3000000,	/* ? */
 				amspdwy_sound_readmem, amspdwy_sound_writemem,
-				0, 0,
+				null, null,
 				ignore_interrupt, 1		/* IRQ: YM2151, NMI: main CPU */
-			}
+			)
 		},
 		60,DEFAULT_60HZ_VBLANK_DURATION,
 		1,
-		0,
+		null,
 	
 		/* video hardware */
-		256, 256, { 0, 256-1, 0+16, 256-16-1 },
+		256, 256, new rectangle( 0, 256-1, 0+16, 256-16-1 ),
 		amspdwy_gfxdecodeinfo,
-		32, 0,
-		0,
+		32, null,
+		null,
 	
 		VIDEO_TYPE_RASTER,
-		0,
+		null,
 		amspdwy_vh_start,
-		0,
+		null,
 		amspdwy_vh_screenrefresh,
 	
 		/* sound hardware */
 		SOUND_SUPPORTS_STEREO,0,0,0,
-		{
-			{	SOUND_YM2151,	&amspdwy_ym2151_interface	}
+		new MachineSound[] {
+			new MachineSound(	SOUND_YM2151,	amspdwy_ym2151_interface	)
 		}
-	};
+	);
 	
 	
 	

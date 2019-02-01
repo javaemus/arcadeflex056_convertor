@@ -633,53 +633,53 @@ public class rpunch
 	 *
 	 *************************************/
 	
-	static const struct MachineDriver machine_driver_rpunch =
-	{
+	static MachineDriver machine_driver_rpunch = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_M68000,
 				MASTER_CLOCK/2,
-				readmem,writemem,0,0,
+				readmem,writemem,null,null,
 				ignore_interrupt,1
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_Z80,
 				MASTER_CLOCK/4,
-				readmem_sound,writemem_sound,0,0,
+				readmem_sound,writemem_sound,null,null,
 				ignore_interrupt,1
-			}
+			)
 		},
 		60, DEFAULT_REAL_60HZ_VBLANK_DURATION,
 		1,
 		init_machine,
 	
 		/* video hardware */
-		304, 224, { 8, 303-8, 0, 223-8 },
+		304, 224, new rectangle( 8, 303-8, 0, 223-8 ),
 		gfxdecodeinfo,
-		1024, 0,
-		0,
+		1024, null,
+		null,
 	
 		VIDEO_TYPE_RASTER,
-		0,
+		null,
 		rpunch_vh_start,
 		rpunch_vh_stop,
 		rpunch_vh_screenrefresh,
 	
 		/* sound hardware */
 		0,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_YM2151,
-				&ym2151_interface
-			},
-			{
+				ym2151_interface
+			),
+			new MachineSound(
 				SOUND_UPD7759,
-				&upd7759_interface
-			}
+				upd7759_interface
+			)
 		},
 		0
-	};
+	);
 	
 	
 	

@@ -620,120 +620,120 @@ public class bwidow
 	
 	
 	
-	static const struct MachineDriver machine_driver_bwidow =
-	{
+	static MachineDriver machine_driver_bwidow = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_M6502,
 				1500000,	/* 1.5 MHz */
-				bwidow_readmem,bwidow_writemem,0,0,
+				bwidow_readmem,bwidow_writemem,null,null,
 				interrupt,4	/* 4.1ms */
-			}
+			)
 		},
 		60, 0,	/* frames per second, vblank duration (vector game, so no vblank) */
 		1,
-		0,
+		null,
 	
 		/* video hardware */
-		400, 300, { 0, 480, 0, 440 },
-		0,
-		256, 0,
+		400, 300, new rectangle( 0, 480, 0, 440 ),
+		null,
+		256, null,
 		avg_init_palette_multi,
 	
 		VIDEO_TYPE_VECTOR | VIDEO_SUPPORTS_DIRTY | VIDEO_RGB_DIRECT,
-		0,
+		null,
 		avg_start,
 		avg_stop,
 		vector_vh_screenrefresh,
 	
 		/* sound hardware */
 		0,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_POKEY,
-				&pokey_interface
-			}
+				pokey_interface
+			)
 		}
-	};
+	);
 	
-	static const struct MachineDriver machine_driver_gravitar =
-	{
+	static MachineDriver machine_driver_gravitar = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_M6502,
 				1500000,	/* 1.5 MHz */
-				bwidow_readmem,bwidow_writemem,0,0,
+				bwidow_readmem,bwidow_writemem,null,null,
 				interrupt,4 /* 4.1ms */
-			}
+			)
 		},
 		60, 0,	/* frames per second, vblank duration (vector game, so no vblank) */
 		1,
-		0,
+		null,
 	
 		/* video hardware */
-		400, 300, { 0, 420, 0, 400 },
-		0,
-		256, 0,
+		400, 300, new rectangle( 0, 420, 0, 400 ),
+		null,
+		256, null,
 		avg_init_palette_multi,
 	
 		VIDEO_TYPE_VECTOR | VIDEO_SUPPORTS_DIRTY | VIDEO_RGB_DIRECT,
-		0,
+		null,
 		avg_start,
 		avg_stop,
 		vector_vh_screenrefresh,
 	
 		/* sound hardware */
 		0,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_POKEY,
-				&pokey_interface
-			}
+				pokey_interface
+			)
 		},
 	
 		atari_vg_earom_handler
-	};
+	);
 	
-	static const struct MachineDriver machine_driver_spacduel =
-	{
+	static MachineDriver machine_driver_spacduel = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_M6502,
 				1500000,	/* 1.5 MHz */
-				spacduel_readmem,spacduel_writemem,0,0,
+				spacduel_readmem,spacduel_writemem,null,null,
 				interrupt,4 /* 5.4ms */
-			}
+			)
 		},
 		45, 0,	/* frames per second, vblank duration (vector game, so no vblank) */
 		1,
-		0,
+		null,
 	
 		/* video hardware */
-		400, 300, { 0, 540, 0, 400 },
-		0,
-		256, 0,
+		400, 300, new rectangle( 0, 540, 0, 400 ),
+		null,
+		256, null,
 		avg_init_palette_multi,
 	
 		VIDEO_TYPE_VECTOR | VIDEO_SUPPORTS_DIRTY | VIDEO_RGB_DIRECT,
-		0,
+		null,
 		avg_start,
 		avg_stop,
 		vector_vh_screenrefresh,
 	
 		/* sound hardware */
 		0,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_POKEY,
-				&pokey_interface
-			}
+				pokey_interface
+			)
 		},
 	
 		atari_vg_earom_handler
-	};
+	);
 	
 	
 	

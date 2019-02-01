@@ -688,36 +688,36 @@ public class cps2
 		CPS2_Read16, CPS2_Read32
 	};
 	
-	static const struct MachineDriver machine_driver_cps2 =
-	{
+	static MachineDriver machine_driver_cps2 = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_M68000,
 				11800000,
-				cps2_readmem,cps2_writemem,0,0,
+				cps2_readmem,cps2_writemem,null,null,
 				cps2_interrupt, 1,	// 262  /* ??? interrupts per frame */
-				0,0,
-				&cps2_encryption
-			},
-			{
+				null,null,
+				cps2_encryption
+			),
+			new MachineCPU(
 				CPU_Z80,
 				8000000,
-				qsound_readmem,qsound_writemem,0,0,
-				0,0,
+				qsound_readmem,qsound_writemem,null,null,
+				null,null,
 				interrupt,250	/* ?? */
-			}
+			)
 		},
 	//	59.633333, DEFAULT_60HZ_VBLANK_DURATION,
 		59.633333, 400,		//ks
 		1,
-		0,
+		null,
 	
 		/* video hardware */
-		64*8, 32*8, { 8*8, (64-8)*8-1, 2*8, 30*8-1 },
+		64*8, 32*8, new rectangle( 8*8, (64-8)*8-1, 2*8, 30*8-1 ),
 		gfxdecodeinfo,
-		4096, 0,
-		0,
+		4096, null,
+		null,
 	
 	//	VIDEO_TYPE_RASTER | VIDEO_NEEDS_6BITS_PER_GUN,
 		VIDEO_TYPE_RASTER | VIDEO_NEEDS_6BITS_PER_GUN | VIDEO_UPDATE_AFTER_VBLANK,		//ks
@@ -728,14 +728,14 @@ public class cps2
 	
 		/* sound hardware */
 		SOUND_SUPPORTS_STEREO,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_QSOUND,
-				&qsound_interface
-			}
+				qsound_interface
+			)
 		},
 		cps2_nvram_handler
-	};
+	);
 	
 	
 	

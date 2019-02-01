@@ -238,46 +238,46 @@ public class hexion
 			return interrupt();
 	}
 	
-	static const struct MachineDriver machine_driver_hexion =
-	{
+	static MachineDriver machine_driver_hexion = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_Z80,
 				24000000/4,	/* Z80B 6 MHz */
-				readmem,writemem,0,0,
+				readmem,writemem,null,null,
 				hexion_interrupt,3	/* both IRQ and NMI are used */
-			}
+			)
 		},
 		60, DEFAULT_60HZ_VBLANK_DURATION,	/* frames per second, vblank duration */
 		1,
-		0,
+		null,
 	
 		/* video hardware */
-		64*8, 32*8, { 0*8, 64*8-1, 0*8, 32*8-1 },
+		64*8, 32*8, new rectangle( 0*8, 64*8-1, 0*8, 32*8-1 ),
 		gfxdecodeinfo,
-		256, 0,
+		256, null,
 		palette_RRRR_GGGG_BBBB_convert_prom,
 	
 		VIDEO_TYPE_RASTER | VIDEO_PIXEL_ASPECT_RATIO_1_2,
-		0,
+		null,
 		hexion_vh_start,
-		0,
+		null,
 		hexion_vh_screenrefresh,
 	
 		/* sound hardware */
 		0,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_OKIM6295,
-				&okim6295_interface
-			},
-			{
+				okim6295_interface
+			),
+			new MachineSound(
 				SOUND_K051649,
-				&k051649_interface,
-			}
+				k051649_interface,
+			)
 		}
-	};
+	);
 	
 	
 	

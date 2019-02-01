@@ -974,119 +974,119 @@ public class mitchell
 	
 	
 	
-	static const struct MachineDriver machine_driver_mgakuen =
-	{
-		{
-			{
+	static MachineDriver machine_driver_mgakuen = new MachineDriver
+	(
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_Z80,
 				6000000,	/* ??? */
 				mgakuen_readmem,mgakuen_writemem,readport,writeport,
 				interrupt,2	/* ??? one extra irq seems to be needed for music (see input5_r) */
-			},
+			),
 		},
 		60, DEFAULT_60HZ_VBLANK_DURATION,	/* frames per second, vblank duration */
 		1,
-		0,
+		null,
 	
-		64*8, 32*8, { 8*8, (64-8)*8-1, 1*8, 31*8-1 },
+		64*8, 32*8, new rectangle( 8*8, (64-8)*8-1, 1*8, 31*8-1 ),
 		mgakuen_gfxdecodeinfo,
-		1024, 0,	/* less colors than the others */
-		0,
+		1024, null,	/* less colors than the others */
+		null,
 		VIDEO_TYPE_RASTER,
-		0,
+		null,
 		pang_vh_start,
 		pang_vh_stop,
 		pang_vh_screenrefresh,
 		0,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_OKIM6295,
-				&okim6295_interface
-			},
-			{
+				okim6295_interface
+			),
+			new MachineSound(
 				SOUND_YM2413,
-				&ym2413_interface
-			},
+				ym2413_interface
+			),
 		}
 	
 		/* no EEPROM */
-	};
+	);
 	
-	static const struct MachineDriver machine_driver_pang =
-	{
-		{
-			{
+	static MachineDriver machine_driver_pang = new MachineDriver
+	(
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_Z80,
 				8000000,	/* Super Pang says 8MHZ ORIGINAL BOARD */
 				readmem,writemem,readport,writeport,
 				interrupt,2	/* ??? one extra irq seems to be needed for music (see input5_r) */
-			},
+			),
 		},
 		60, DEFAULT_60HZ_VBLANK_DURATION,	/* frames per second, vblank duration */
 		1,
-		0,
+		null,
 	
-		64*8, 32*8, { 8*8, (64-8)*8-1, 1*8, 31*8-1 },
+		64*8, 32*8, new rectangle( 8*8, (64-8)*8-1, 1*8, 31*8-1 ),
 		gfxdecodeinfo,
-		2048, 0,
-		0,
+		2048, null,
+		null,
 		VIDEO_TYPE_RASTER,
-		0,
+		null,
 		pang_vh_start,
 		pang_vh_stop,
 		pang_vh_screenrefresh,
 		0,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_OKIM6295,
-				&okim6295_interface
-			},
-			{
+				okim6295_interface
+			),
+			new MachineSound(
 				SOUND_YM2413,
-				&ym2413_interface
-			},
+				ym2413_interface
+			),
 		},
 	
 		nvram_handler
-	};
+	);
 	
-	static const struct MachineDriver machine_driver_marukin =
-	{
-		{
-			{
+	static MachineDriver machine_driver_marukin = new MachineDriver
+	(
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_Z80,
 				8000000,	/* Super Pang says 8MHZ ORIGINAL BOARD */
 				readmem,writemem,readport,writeport,
 				interrupt,2	/* ??? one extra irq seems to be needed for music (see input5_r) */
-			},
+			),
 		},
 		60, DEFAULT_60HZ_VBLANK_DURATION,	/* frames per second, vblank duration */
 		1,
-		0,
+		null,
 	
-		64*8, 32*8, { 8*8, (64-8)*8-1, 1*8, 31*8-1 },
+		64*8, 32*8, new rectangle( 8*8, (64-8)*8-1, 1*8, 31*8-1 ),
 		marukin_gfxdecodeinfo,
-		2048, 0,
-		0,
+		2048, null,
+		null,
 		VIDEO_TYPE_RASTER,
-		0,
+		null,
 		pang_vh_start,
 		pang_vh_stop,
 		pang_vh_screenrefresh,
 		0,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_OKIM6295,
-				&okim6295_interface
-			},
-			{
+				okim6295_interface
+			),
+			new MachineSound(
 				SOUND_YM2413,
-				&ym2413_interface
-			},
+				ym2413_interface
+			),
 		},
 	
 		nvram_handler
-	};
+	);
 	
 	
 	

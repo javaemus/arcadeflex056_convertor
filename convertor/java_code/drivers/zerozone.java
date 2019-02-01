@@ -208,47 +208,47 @@ public class zerozone
 		{ 100 }
 	};
 	
-	static const struct MachineDriver machine_driver_zerozone =
-	{
-		{
-			{
+	static MachineDriver machine_driver_zerozone = new MachineDriver
+	(
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_M68000,
 				10000000,	/* 10 MHz */
-				readmem,writemem,0,0,
+				readmem,writemem,null,null,
 				m68_level1_irq,1
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_Z80 | CPU_AUDIO_CPU,
 				1000000,	/* 1 MHz ??? */
-				sound_readmem, sound_writemem,0,0,
+				sound_readmem, sound_writemem,null,null,
 				ignore_interrupt,0	/* IRQs are triggered by the main cpu */
-			}
+			)
 		},
 		60, DEFAULT_60HZ_VBLANK_DURATION,	/* frames per second, vblank duration */
 		10,
-		0,
+		null,
 	
 		/* video hardware */
-		48*8, 32*8, { 1*8, 47*8-1, 2*8, 30*8-1 },
+		48*8, 32*8, new rectangle( 1*8, 47*8-1, 2*8, 30*8-1 ),
 		gfxdecodeinfo,
-		256, 0,
-		0,
+		256, null,
+		null,
 	
 		VIDEO_TYPE_RASTER | VIDEO_SUPPORTS_DIRTY ,
-		0,
+		null,
 		zerozone_vh_start,
 		zerozone_vh_stop,
 		zerozone_vh_screenrefresh,
 	
 		/* sound hardware */
 		0,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_OKIM6295,
-				&okim6295_interface
-			}
+				okim6295_interface
+			)
 		}
-	};
+	);
 	
 	
 	

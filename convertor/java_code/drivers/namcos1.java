@@ -815,200 +815,200 @@ public class namcos1
 		{ 100 	}	/* mixing level */
 	};
 	
-	static const struct MachineDriver machine_driver_ns1 =
-	{
+	static MachineDriver machine_driver_ns1 = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_M6809,
 				49152000/32,	/* Not sure if divided by 32 or 24 */
-				main_readmem,main_writemem,0,0,
+				main_readmem,main_writemem,null,null,
 				interrupt,1,
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_M6809,
 				49152000/32,	/* Not sure if divided by 32 or 24 */
-				sub_readmem,sub_writemem,0,0,
+				sub_readmem,sub_writemem,null,null,
 				interrupt,1,
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_M6809,
 				49152000/32,	/* Not sure if divided by 32 or 24 */
-				sound_readmem,sound_writemem,0,0,
+				sound_readmem,sound_writemem,null,null,
 				interrupt,1
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_HD63701,	/* or compatible 6808 with extra instructions */
 				49152000/8/4,
 				mcu_readmem,mcu_writemem,mcu_readport,mcu_writeport,
 				interrupt,1
-			}
+			)
 		},
 		60.606060, DEFAULT_REAL_60HZ_VBLANK_DURATION,	/* frames per second, vblank duration */
-		0, /* CPU slice timer is made by machine_init */
+		null, /* CPU slice timer is made by machine_init */
 		init_namcos1,
 	
 		/* video hardware */
-		36*8, 28*8, { 0*8, 36*8-1, 0*8, 28*8-1 },
+		36*8, 28*8, new rectangle( 0*8, 36*8-1, 0*8, 28*8-1 ),
 		gfxdecodeinfo,
-		128*16+6*256+6*256+1, 0,	/* virtual palette */
-		0,
+		128*16+6*256+6*256+1, null,	/* virtual palette */
+		null,
 	
 		VIDEO_TYPE_RASTER | VIDEO_NEEDS_6BITS_PER_GUN,
-		0,
+		null,
 		namcos1_vh_start,
 		namcos1_vh_stop,
 		namcos1_vh_screenrefresh,
 	
 		/* sound hardware */
 		SOUND_SUPPORTS_STEREO,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_YM2151,
-				&ym2151_interface
-			},
-			{
+				ym2151_interface
+			),
+			new MachineSound(
 				SOUND_NAMCO,
-				&namco_interface
-			},
-			{
+				namco_interface
+			),
+			new MachineSound(
 				SOUND_DAC,
-				&dac_interface
-			}
+				dac_interface
+			)
 		},
 	
 		nvram_handler
-	};
+	);
 	
-	static const struct MachineDriver machine_driver_quester =
-	{
+	static MachineDriver machine_driver_quester = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_M6809,
 				49152000/32,	/* Not sure if divided by 32 or 24 */
-				main_readmem,main_writemem,0,0,
+				main_readmem,main_writemem,null,null,
 				interrupt,1,
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_M6809,
 				49152000/32,	/* Not sure if divided by 32 or 24 */
-				sub_readmem,sub_writemem,0,0,
+				sub_readmem,sub_writemem,null,null,
 				interrupt,1,
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_M6809,
 				49152000/32,	/* Not sure if divided by 32 or 24 */
-				sound_readmem,sound_writemem,0,0,
+				sound_readmem,sound_writemem,null,null,
 				interrupt,1
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_HD63701,	/* or compatible 6808 with extra instructions */
 				49152000/8/4,
 				quester_mcu_readmem,mcu_writemem,mcu_readport,mcu_writeport,
 				interrupt,1
-			}
+			)
 		},
 		60.606060, DEFAULT_REAL_60HZ_VBLANK_DURATION,	/* frames per second, vblank duration */
-		0, /* CPU slice timer is made by machine_init */
+		null, /* CPU slice timer is made by machine_init */
 		init_namcos1,
 	
 		/* video hardware */
-		36*8, 28*8, { 0*8, 36*8-1, 0*8, 28*8-1 },
+		36*8, 28*8, new rectangle( 0*8, 36*8-1, 0*8, 28*8-1 ),
 		gfxdecodeinfo,
-		128*16+6*256+6*256+1, 0,	/* virtual palette */
-		0,
+		128*16+6*256+6*256+1, null,	/* virtual palette */
+		null,
 	
 		VIDEO_TYPE_RASTER | VIDEO_NEEDS_6BITS_PER_GUN,
-		0,
+		null,
 		namcos1_vh_start,
 		namcos1_vh_stop,
 		namcos1_vh_screenrefresh,
 	
 		/* sound hardware */
 		SOUND_SUPPORTS_STEREO,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_YM2151,
-				&ym2151_interface
-			},
-			{
+				ym2151_interface
+			),
+			new MachineSound(
 				SOUND_NAMCO,
-				&namco_interface
-			},
-			{
+				namco_interface
+			),
+			new MachineSound(
 				SOUND_DAC,
-				&dac_interface
-			}
+				dac_interface
+			)
 		},
 	
 		nvram_handler
-	};
+	);
 	
-	static const struct MachineDriver machine_driver_faceoff =
-	{
+	static MachineDriver machine_driver_faceoff = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_M6809,
 				49152000/32,	/* Not sure if divided by 32 or 24 */
-				main_readmem,main_writemem,0,0,
+				main_readmem,main_writemem,null,null,
 				interrupt,1,
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_M6809,
 				49152000/32,	/* Not sure if divided by 32 or 24 */
-				sub_readmem,sub_writemem,0,0,
+				sub_readmem,sub_writemem,null,null,
 				interrupt,1,
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_M6809,
 				49152000/32,	/* Not sure if divided by 32 or 24 */
-				sound_readmem,sound_writemem,0,0,
+				sound_readmem,sound_writemem,null,null,
 				interrupt,1
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_HD63701,	/* or compatible 6808 with extra instructions */
 				49152000/8/4,
 				faceoff_mcu_readmem,mcu_writemem,mcu_readport,mcu_writeport,
 				interrupt,1
-			}
+			)
 		},
 		60.606060, DEFAULT_REAL_60HZ_VBLANK_DURATION,	/* frames per second, vblank duration */
-		0, /* CPU slice timer is made by machine_init */
+		null, /* CPU slice timer is made by machine_init */
 		init_namcos1,
 	
 		/* video hardware */
-		36*8, 28*8, { 0*8, 36*8-1, 0*8, 28*8-1 },
+		36*8, 28*8, new rectangle( 0*8, 36*8-1, 0*8, 28*8-1 ),
 		gfxdecodeinfo,
-		128*16+6*256+6*256+1, 0,	/* virtual palette */
-		0,
+		128*16+6*256+6*256+1, null,	/* virtual palette */
+		null,
 	
 		VIDEO_TYPE_RASTER | VIDEO_NEEDS_6BITS_PER_GUN,
-		0,
+		null,
 		namcos1_vh_start,
 		namcos1_vh_stop,
 		namcos1_vh_screenrefresh,
 	
 		/* sound hardware */
 		SOUND_SUPPORTS_STEREO,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_YM2151,
-				&ym2151_interface
-			},
-			{
+				ym2151_interface
+			),
+			new MachineSound(
 				SOUND_NAMCO,
-				&namco_interface
-			},
-			{
+				namco_interface
+			),
+			new MachineSound(
 				SOUND_DAC,
-				&dac_interface
-			}
+				dac_interface
+			)
 		},
 	
 		nvram_handler
-	};
+	);
 	
 	
 	/***********************************************************************

@@ -250,42 +250,42 @@ public class warlord
 	
 	
 	
-	static const struct MachineDriver machine_driver_warlord =
-	{
+	static MachineDriver machine_driver_warlord = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_M6502,
 				12096000/16, /* 756 kHz */
-				readmem,writemem,0,0,
+				readmem,writemem,null,null,
 				interrupt,4
-			}
+			)
 		},
 		60, DEFAULT_REAL_60HZ_VBLANK_DURATION,	/* frames per second, vblank duration */
 		1,
-		0,
+		null,
 	
 		/* video hardware */
-		32*8, 32*8, { 0*8, 32*8-1, 0*8, 30*8-1 },
+		32*8, 32*8, new rectangle( 0*8, 32*8-1, 0*8, 30*8-1 ),
 		gfxdecodeinfo,
 		128, 8*4+8*4,
 		warlord_vh_convert_color_prom,
 	
 		VIDEO_TYPE_RASTER,
-		0,
+		null,
 		generic_vh_start,
 		generic_vh_stop,
 		warlord_vh_screenrefresh,
 	
 		/* sound hardware */
 		0,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_POKEY,
-				&pokey_interface
-			}
+				pokey_interface
+			)
 		}
-	};
+	);
 	
 	
 	

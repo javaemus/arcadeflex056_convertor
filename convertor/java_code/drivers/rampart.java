@@ -387,48 +387,48 @@ public class rampart
 	 *
 	 *************************************/
 	
-	static const struct MachineDriver machine_driver_rampart =
-	{
+	static MachineDriver machine_driver_rampart = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_M68000,		/* verified */
 				ATARI_CLOCK_14MHz/2,
-				main_readmem,main_writemem,0,0,
+				main_readmem,main_writemem,null,null,
 				atarigen_video_int_gen,1
-			}
+			)
 		},
 		60, DEFAULT_REAL_60HZ_VBLANK_DURATION,
 		1,
 		init_machine,
 	
 		/* video hardware */
-		43*8, 30*8, { 0*8+4, 43*8-1-4, 0*8, 30*8-1 },
+		43*8, 30*8, new rectangle( 0*8+4, 43*8-1-4, 0*8, 30*8-1 ),
 		gfxdecodeinfo,
-		512, 0,
-		0,
+		512, null,
+		null,
 	
 		VIDEO_TYPE_RASTER | VIDEO_NEEDS_6BITS_PER_GUN | VIDEO_UPDATE_BEFORE_VBLANK,
-		0,
+		null,
 		rampart_vh_start,
 		rampart_vh_stop,
 		rampart_vh_screenrefresh,
 	
 		/* sound hardware */
 		0,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_OKIM6295,
-				&okim6295_interface
-			},
-			{
+				okim6295_interface
+			),
+			new MachineSound(
 				SOUND_YM2413,
-				&ym2413_interface
-			}
+				ym2413_interface
+			)
 		},
 	
 		atarigen_nvram_handler
-	};
+	);
 	
 	
 	

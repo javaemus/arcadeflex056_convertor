@@ -2206,39 +2206,39 @@ public class kaneko16
 		6-7]	rte
 	*/
 	
-	static const struct MachineDriver machine_driver_berlwall =
-	{
-		{
-			{
+	static MachineDriver machine_driver_berlwall = new MachineDriver
+	(
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_M68000,
 				12000000,	/* MC68000P12 */
-				berlwall_readmem,berlwall_writemem,0,0,
+				berlwall_readmem,berlwall_writemem,null,null,
 				kaneko16_interrupt, KANEKO16_INTERRUPTS_NUM
-			}
+			)
 		},
 		60, DEFAULT_REAL_60HZ_VBLANK_DURATION,
 		1,
 		berlwall_init_machine,
 	
 		/* video hardware */
-		256, 256, { 0, 256-1, 16, 240-1},
+		256, 256, new rectangle( 0, 256-1, 16, 240-1),
 		kaneko16_gfx_1x4bit_1x4bit,
-		2048 + 32768, 0,	/* 32768 static colors for the bg */
+		2048 + 32768, null,	/* 32768 static colors for the bg */
 		berlwall_init_palette,
 	
 		VIDEO_TYPE_RASTER | VIDEO_UPDATE_AFTER_VBLANK,	// mangled sprites otherwise
-		0,
+		null,
 		berlwall_vh_start,
 		berlwall_vh_stop,
 		kaneko16_vh_screenrefresh,
 	
 		/* sound hardware */
 		SOUND_SUPPORTS_STEREO,0,0,0,
-		{
-			{	SOUND_AY8910,	&ay8910_intf_2x1MHz_DSW	},
-			{	SOUND_OKIM6295,	&okim6295_intf_12kHz	}
+		new MachineSound[] {
+			new MachineSound(	SOUND_AY8910,	ay8910_intf_2x1MHz_DSW	),
+			new MachineSound(	SOUND_OKIM6295,	okim6295_intf_12kHz	)
 		}
-	};
+	);
 	
 	
 	/***************************************************************************
@@ -2351,79 +2351,79 @@ public class kaneko16
 		VIDEO_UPDATE_AFTER_VBLANK fixes the mangled/wrong colored sprites
 	*/
 	
-	static const struct MachineDriver machine_driver_gtmr =
-	{
-		{
-			{
+	static MachineDriver machine_driver_gtmr = new MachineDriver
+	(
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_M68000,
 				16000000,	/* ? Most likely a 68000-HC16 */
-				gtmr_readmem,gtmr_writemem,0,0,
+				gtmr_readmem,gtmr_writemem,null,null,
 				kaneko16_interrupt, KANEKO16_INTERRUPTS_NUM
-			}
+			)
 		},
 		60, DEFAULT_REAL_60HZ_VBLANK_DURATION,
 		1,
 		gtmr_init_machine,
 	
 		/* video hardware */
-		320, 240, { 0, 320-1, 0, 240-1 },
+		320, 240, new rectangle( 0, 320-1, 0, 240-1 ),
 		kaneko16_gfx_1x8bit_2x4bit,
-		32768, 0,
-		0,
+		32768, null,
+		null,
 	
 		VIDEO_TYPE_RASTER | VIDEO_UPDATE_AFTER_VBLANK,
-		0,
+		null,
 		kaneko16_vh_start_2xVIEW2,
 		kaneko16_vh_stop,
 		kaneko16_vh_screenrefresh,
 	
 		/* sound hardware */
 		0,0,0,0,
-		{
-			{	SOUND_OKIM6295,	&okim6295_intf_2x12kHz	}
+		new MachineSound[] {
+			new MachineSound(	SOUND_OKIM6295,	okim6295_intf_2x12kHz	)
 		}
-	};
+	);
 	
 	
 	/***************************************************************************
 									Magical Crystal
 	***************************************************************************/
 	
-	static const struct MachineDriver machine_driver_mgcrystl =
-	{
-		{
-			{
+	static MachineDriver machine_driver_mgcrystl = new MachineDriver
+	(
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_M68000,
 				12000000,
-				mgcrystl_readmem,mgcrystl_writemem,0,0,
+				mgcrystl_readmem,mgcrystl_writemem,null,null,
 				kaneko16_interrupt, KANEKO16_INTERRUPTS_NUM
-			}
+			)
 		},
 		60, DEFAULT_REAL_60HZ_VBLANK_DURATION,
 		1,
 		mgcrystl_init_machine,
 	
 		/* video hardware */
-		256, 256, { 0, 256-1, 0+16, 256-16-1},
+		256, 256, new rectangle( 0, 256-1, 0+16, 256-16-1),
 		kaneko16_gfx_1x4bit_2x4bit,
-		2048, 0,
-		0,
+		2048, null,
+		null,
 	
 		VIDEO_TYPE_RASTER | VIDEO_UPDATE_AFTER_VBLANK,
-		0,
+		null,
 		kaneko16_vh_start_2xVIEW2,
 		kaneko16_vh_stop,
 		kaneko16_vh_screenrefresh,
 	
 		/* sound hardware */
 		0,0,0,0,
-		{
-			{	SOUND_AY8910,	&ay8910_intf_2x2MHz_EEPROM	},
-			{	SOUND_OKIM6295,	&okim6295_intf_18kHz		}
+		new MachineSound[] {
+			new MachineSound(	SOUND_AY8910,	ay8910_intf_2x2MHz_EEPROM	),
+			new MachineSound(	SOUND_OKIM6295,	okim6295_intf_18kHz		)
 		},
 	
 		nvram_handler_93C46
-	};
+	);
 	
 	
 	/***************************************************************************
@@ -2450,32 +2450,32 @@ public class kaneko16
 	};
 	
 	
-	static const struct MachineDriver machine_driver_sandscrp =
-	{
-		{
-			{
+	static MachineDriver machine_driver_sandscrp = new MachineDriver
+	(
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_M68000,	/* TMP68HC000N-12 */
 				12000000,
-				sandscrp_readmem, sandscrp_writemem,0,0,
+				sandscrp_readmem, sandscrp_writemem,null,null,
 				sandscrp_interrupt, 1
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_Z80,	/* Z8400AB1, Reads the DSWs: it can't be disabled */
 				4000000,
 				sandscrp_sound_readmem,  sandscrp_sound_writemem,
 				sandscrp_sound_readport, sandscrp_sound_writeport,
 				ignore_interrupt, 1	/* IRQ by YM2203, NMI by Main CPU */
-			}
+			)
 		},
 		60, DEFAULT_REAL_60HZ_VBLANK_DURATION,	// eof callback
 		1,
 		sandscrp_init_machine,
 	
 		/* video hardware */
-		256, 256, { 0, 256-1, 0+16, 256-16-1 },
+		256, 256, new rectangle( 0, 256-1, 0+16, 256-16-1 ),
 		sandscrp_gfxdecodeinfo,
-		2048, 0,
-		0,
+		2048, null,
+		null,
 	
 		VIDEO_TYPE_RASTER,
 		sandscrp_eof_callback,
@@ -2485,11 +2485,11 @@ public class kaneko16
 	
 		/* sound hardware */
 		SOUND_SUPPORTS_STEREO,0,0,0,
-		{
-			{	SOUND_OKIM6295,	&okim6295_intf_15kHz	},
-			{	SOUND_YM2203,	&ym2203_intf_sandscrp	},
+		new MachineSound[] {
+			new MachineSound(	SOUND_OKIM6295,	okim6295_intf_15kHz	),
+			new MachineSound(	SOUND_YM2203,	ym2203_intf_sandscrp	),
 		}
-	};
+	);
 	
 	
 	/***************************************************************************
@@ -2520,38 +2520,38 @@ public class kaneko16
 		}
 	}
 	
-	static const struct MachineDriver machine_driver_shogwarr =
-	{
-		{
-			{
+	static MachineDriver machine_driver_shogwarr = new MachineDriver
+	(
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_M68000,
 				12000000,
-				shogwarr_readmem,shogwarr_writemem,0,0,
+				shogwarr_readmem,shogwarr_writemem,null,null,
 				shogwarr_interrupt, SHOGWARR_INTERRUPTS_NUM
-			}
+			)
 		},
 		60,DEFAULT_60HZ_VBLANK_DURATION,
 		1,
 		shogwarr_init_machine,
 	
 		/* video hardware */
-		320, 240, { 0, 320-1, 0, 240-1 },
+		320, 240, new rectangle( 0, 320-1, 0, 240-1 ),
 		kaneko16_gfx_1x4bit_1x4bit,
-		2048, 0,
-		0,
+		2048, null,
+		null,
 	
 		VIDEO_TYPE_RASTER,
-		0,
+		null,
 		kaneko16_vh_start_1xVIEW2,
 		kaneko16_vh_stop,
 		kaneko16_vh_screenrefresh,
 	
 		/* sound hardware */
 		0,0,0,0,
-		{
-			{	SOUND_OKIM6295,	&okim6295_intf_2x12kHz	}
+		new MachineSound[] {
+			new MachineSound(	SOUND_OKIM6295,	okim6295_intf_2x12kHz	)
 		}
-	};
+	);
 	
 	
 	/***************************************************************************

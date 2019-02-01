@@ -147,36 +147,36 @@ public class m79amb
 			rom[i] = ~rom[i];
 	}
 	
-	static const struct MachineDriver machine_driver_m79amb =
-	{
+	static MachineDriver machine_driver_m79amb = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_8080,
 				1996800,
-				readmem,writemem,0,0,
+				readmem,writemem,null,null,
 				M79_interrupt, 1
-			}
+			)
 		},
 		60, DEFAULT_REAL_60HZ_VBLANK_DURATION,  /* frames per second, vblank duration */
 		1,      /* single CPU, no need for interleaving */
-		0,
+		null,
 	
 		/* video hardware */
-		32*8, 28*8, { 0*8, 32*8-1, 0*8, 28*8-1 },
-		0,      /* no gfxdecodeinfo - bitmapped display */
-		sizeof(palette) / sizeof(palette[0]) / 3, 0,
+		32*8, 28*8, new rectangle( 0*8, 32*8-1, 0*8, 28*8-1 ),
+		null,      /* no gfxdecodeinfo - bitmapped display */
+		sizeof(palette) / sizeof(palette[null]) / 3, null,
 		init_palette,
 	
 		VIDEO_TYPE_RASTER|VIDEO_SUPPORTS_DIRTY,
-		0,
+		null,
 		generic_bitmapped_vh_start,
 		generic_bitmapped_vh_stop,
 		generic_bitmapped_vh_screenrefresh,
 	
 		/* sound hardware */
 		0,0,0,0
-	};
+	);
 	
 	
 	

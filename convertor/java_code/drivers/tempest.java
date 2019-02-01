@@ -362,44 +362,44 @@ public class tempest
 	
 	
 	
-	static const struct MachineDriver machine_driver_tempest =
-	{
+	static MachineDriver machine_driver_tempest = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_M6502,
 				12096000/8,	/* 1.512 MHz */
-				readmem,writemem,0,0,
+				readmem,writemem,null,null,
 				interrupt,4 /* 4.1ms */
-			}
+			)
 		},
 		60, 0,	/* frames per second, vblank duration (vector game, so no vblank) */
 		1,
-		0,
+		null,
 	
 		/* video hardware */
-		400, 300, { 0, 550, 0, 580 },
-		0,
-		256, 0,
+		400, 300, new rectangle( 0, 550, 0, 580 ),
+		null,
+		256, null,
 		avg_init_palette_multi,
 	
 		VIDEO_TYPE_VECTOR | VIDEO_SUPPORTS_DIRTY | VIDEO_RGB_DIRECT,
-		0,
+		null,
 		avg_start_tempest,
 		avg_stop,
 		vector_vh_screenrefresh,
 	
 		/* sound hardware */
 		0,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_POKEY,
-				&pokey_interface
-			}
+				pokey_interface
+			)
 		},
 	
 		atari_vg_earom_handler
-	};
+	);
 	
 	
 	/***************************************************************************

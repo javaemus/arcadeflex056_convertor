@@ -423,42 +423,42 @@ public class ladybug
 	
 	
 	
-	static const struct MachineDriver machine_driver_ladybug =
-	{
+	static MachineDriver machine_driver_ladybug = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_Z80,
 				4000000,	/* 4 MHz */
-				readmem,writemem,0,0,
+				readmem,writemem,null,null,
 				ladybug_interrupt,1
-			}
+			)
 		},
 		60, DEFAULT_REAL_60HZ_VBLANK_DURATION,	/* frames per second, vblank duration */
 		1,	/* single CPU, no need for interleaving */
-		0,
+		null,
 	
 		/* video hardware */
-		32*8, 32*8, { 1*8, 31*8-1, 4*8, 28*8-1 },
+		32*8, 32*8, new rectangle( 1*8, 31*8-1, 4*8, 28*8-1 ),
 		gfxdecodeinfo,
 		32,4*24,
 		ladybug_vh_convert_color_prom,
 	
 		VIDEO_TYPE_RASTER,
-		0,
+		null,
 		generic_vh_start,
 		generic_vh_stop,
 		ladybug_vh_screenrefresh,
 	
 		/* sound hardware */
 		0,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_SN76496,
-				&sn76496_interface
-			}
+				sn76496_interface
+			)
 		}
-	};
+	);
 	
 	
 	

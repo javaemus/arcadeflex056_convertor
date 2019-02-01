@@ -1636,419 +1636,419 @@ public class cave
 									Dangun Feveron
 	***************************************************************************/
 	
-	static const struct MachineDriver machine_driver_dfeveron =
-	{
-		{
-			{
+	static MachineDriver machine_driver_dfeveron = new MachineDriver
+	(
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_M68000,
 				16000000,
-				dfeveron_readmem, dfeveron_writemem,0,0,
+				dfeveron_readmem, dfeveron_writemem,null,null,
 				cave_interrupt, 1
-			},
+			),
 		},
 		15625/271.5,DEFAULT_60HZ_VBLANK_DURATION,				//ks
 		1,
 		cave_init_machine,
 	
 		/* video hardware */
-		320, 240, { 0, 320-1, 0, 240-1 },
+		320, 240, new rectangle( 0, 320-1, 0, 240-1 ),
 		dfeveron_gfxdecodeinfo,
 		0x800, 0x8000,	/* $8000 palette entries for consistency with the other games */
 		dfeveron_vh_init_palette,
 		VIDEO_TYPE_RASTER,
-		0,
+		null,
 		cave_vh_start_16_16_0,
 		cave_vh_stop,
 		cave_vh_screenrefresh,
 	
 		/* sound hardware */
 		SOUND_SUPPORTS_STEREO,0,0,0,
-		{
-			{ SOUND_YMZ280B, &ymz280b_intf }
+		new MachineSound[] {
+			new MachineSound( SOUND_YMZ280B, ymz280b_intf )
 		},
 	
 		cave_nvram_handler
-	};
+	);
 	
 	
 	/***************************************************************************
 									Dodonpachi
 	***************************************************************************/
 	
-	static const struct MachineDriver machine_driver_ddonpach =
-	{
-		{
-			{
+	static MachineDriver machine_driver_ddonpach = new MachineDriver
+	(
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_M68000,
 				16000000,
-				ddonpach_readmem, ddonpach_writemem,0,0,
+				ddonpach_readmem, ddonpach_writemem,null,null,
 				cave_interrupt, 1
-			},
+			),
 		},
 		15625/271.5,DEFAULT_60HZ_VBLANK_DURATION,				//ks
 		1,
 		cave_init_machine,
 	
 		/* video hardware */
-		320, 240, { 0, 320-1, 0, 240-1 },
+		320, 240, new rectangle( 0, 320-1, 0, 240-1 ),
 		ddonpach_gfxdecodeinfo,
-		0x8000, 0x8000 + 0x40*16,	// $400 extra entries for layers 1&2
+		0x8000, 0x8000 + 0x40*16,	// $400 extra entries for layers 12
 		ddonpach_vh_init_palette,
 		VIDEO_TYPE_RASTER,
-		0,
+		null,
 		cave_vh_start_16_16_8,
 		cave_vh_stop,
 		cave_vh_screenrefresh,
 	
 		/* sound hardware */
 		SOUND_SUPPORTS_STEREO,0,0,0,
-		{
-			{ SOUND_YMZ280B, &ymz280b_intf }
+		new MachineSound[] {
+			new MachineSound( SOUND_YMZ280B, ymz280b_intf )
 		},
 	
 		cave_nvram_handler
-	};
+	);
 	
 	
 	/***************************************************************************
 										Donpachi
 	***************************************************************************/
 	
-	static const struct MachineDriver machine_driver_donpachi =
-	{
-		{
-			{
+	static MachineDriver machine_driver_donpachi = new MachineDriver
+	(
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_M68000,
 				16000000,
-				donpachi_readmem, donpachi_writemem,0,0,
+				donpachi_readmem, donpachi_writemem,null,null,
 				cave_interrupt, 1
-			},
+			),
 		},
 		15625/271.5,DEFAULT_60HZ_VBLANK_DURATION,				//ks
 		1,
 		cave_init_machine,
 	
 		/* video hardware */
-		320, 240, { 0, 320-1, 0, 240-1 },
+		320, 240, new rectangle( 0, 320-1, 0, 240-1 ),
 		donpachi_gfxdecodeinfo,
 		0x800, 0x8000,	/* $8000 palette entries for consistency with the other games */
 		dfeveron_vh_init_palette,
 		VIDEO_TYPE_RASTER,
-		0,
+		null,
 		cave_vh_start_16_16_8,
 		cave_vh_stop,
 		cave_vh_screenrefresh,
 	
 		/* sound hardware */
 		SOUND_SUPPORTS_STEREO,0,0,0,
-		{
-			{	SOUND_OKIM6295,	&okim6295_intf_8kHz_16kHz	}
+		new MachineSound[] {
+			new MachineSound(	SOUND_OKIM6295,	okim6295_intf_8kHz_16kHz	)
 		},
 	
 		cave_nvram_handler
-	};
+	);
 	
 	
 	/***************************************************************************
 									Esprade
 	***************************************************************************/
 	
-	static const struct MachineDriver machine_driver_esprade =
-	{
-		{
-			{
+	static MachineDriver machine_driver_esprade = new MachineDriver
+	(
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_M68000,
 				16000000,
-				esprade_readmem, esprade_writemem,0,0,
+				esprade_readmem, esprade_writemem,null,null,
 				cave_interrupt, 1
-			},
+			),
 		},
 		15625/271.5,DEFAULT_60HZ_VBLANK_DURATION,				//ks
 		1,
 		cave_init_machine,
 	
 		/* video hardware */
-		320, 240, { 0, 320-1, 0, 240-1 },
+		320, 240, new rectangle( 0, 320-1, 0, 240-1 ),
 		esprade_gfxdecodeinfo,
-		0x8000, 0,
-		0,
+		0x8000, null,
+		null,
 		VIDEO_TYPE_RASTER,
-		0,
+		null,
 		cave_vh_start_16_16_16,
 		cave_vh_stop,
 		cave_vh_screenrefresh,
 	
 		/* sound hardware */
 		SOUND_SUPPORTS_STEREO,0,0,0,
-		{
-			{ SOUND_YMZ280B, &ymz280b_intf }
+		new MachineSound[] {
+			new MachineSound( SOUND_YMZ280B, ymz280b_intf )
 		},
 	
 		cave_nvram_handler
-	};
+	);
 	
 	
 	/***************************************************************************
 										Guwange
 	***************************************************************************/
 	
-	static const struct MachineDriver machine_driver_guwange =
-	{
-		{
-			{
+	static MachineDriver machine_driver_guwange = new MachineDriver
+	(
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_M68000,
 				16000000,
-				guwange_readmem, guwange_writemem,0,0,
+				guwange_readmem, guwange_writemem,null,null,
 				cave_interrupt, 1
-			},
+			),
 		},
 		15625/271.5,DEFAULT_60HZ_VBLANK_DURATION,				//ks
 		1,
 		cave_init_machine,
 	
 		/* video hardware */
-		320, 240, { 0, 320-1, 0, 240-1 },
+		320, 240, new rectangle( 0, 320-1, 0, 240-1 ),
 		esprade_gfxdecodeinfo,
-		0x8000, 0,
-		0,
+		0x8000, null,
+		null,
 		VIDEO_TYPE_RASTER,
-		0,
+		null,
 		cave_vh_start_16_16_16,
 		cave_vh_stop,
 		cave_vh_screenrefresh,
 	
 		/* sound hardware */
 		SOUND_SUPPORTS_STEREO,0,0,0,
-		{
-			{ SOUND_YMZ280B, &ymz280b_intf }
+		new MachineSound[] {
+			new MachineSound( SOUND_YMZ280B, ymz280b_intf )
 		},
 	
 		cave_nvram_handler
-	};
+	);
 	
 	
 	/***************************************************************************
 									Hotdog Storm
 	***************************************************************************/
 	
-	static const struct MachineDriver machine_driver_hotdogst =
-	{
-		{
-			{
+	static MachineDriver machine_driver_hotdogst = new MachineDriver
+	(
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_M68000,
 				16000000,
-				hotdogst_readmem, hotdogst_writemem,0,0,
+				hotdogst_readmem, hotdogst_writemem,null,null,
 				cave_interrupt, 1
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_Z80 | CPU_AUDIO_CPU,
 				4000000,	/* ? */
 				hotdogst_sound_readmem,hotdogst_sound_writemem,hotdogst_sound_readport,hotdogst_sound_writeport,
 				ignore_interrupt,0	/* NMI triggered by main CPU, IRQ triggered by YM2203 */
-			}
+			)
 		},
 		15625/271.5,DEFAULT_60HZ_VBLANK_DURATION,				//ks
 		1,
 		cave_init_machine,
 	
 		/* video hardware */
-		384, 240, { 0, 384-1, 0, 240-1 },
+		384, 240, new rectangle( 0, 384-1, 0, 240-1 ),
 		hotdogst_gfxdecodeinfo,
 		0x800, 0x8000,	/* $8000 palette entries for consistency with the other games */
 		dfeveron_vh_init_palette,
 		VIDEO_TYPE_RASTER,
-		0,
+		null,
 		cave_vh_start_16_16_16,
 		cave_vh_stop,
 		cave_vh_screenrefresh,
 	
 		/* sound hardware */
 		SOUND_SUPPORTS_STEREO,0,0,0,
-		{
-			{	SOUND_YM2203,	&ym2203_intf_4MHz		},
-			{	SOUND_OKIM6295,	&okim6295_intf_8kHz		}
+		new MachineSound[] {
+			new MachineSound(	SOUND_YM2203,	ym2203_intf_4MHz		),
+			new MachineSound(	SOUND_OKIM6295,	okim6295_intf_8kHz		)
 		},
 	
 		cave_nvram_handler
-	};
+	);
 	
 	
 	/***************************************************************************
 									Mazinger Z
 	***************************************************************************/
 	
-	static const struct MachineDriver machine_driver_mazinger =
-	{
-		{
-			{
+	static MachineDriver machine_driver_mazinger = new MachineDriver
+	(
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_M68000,
 				16000000,
-				mazinger_readmem, mazinger_writemem,0,0,
+				mazinger_readmem, mazinger_writemem,null,null,
 				mazinger_interrupt, 1
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_Z80 /*| CPU_AUDIO_CPU*/,	// Bidirectional communication
 				4000000,	/* ? */
 				mazinger_sound_readmem,mazinger_sound_writemem,mazinger_sound_readport,mazinger_sound_writeport,
 				ignore_interrupt,0	/* NMI triggered by main CPU, IRQ triggered by YM2203 */
-			}
+			)
 		},
 		15625/271.5,DEFAULT_60HZ_VBLANK_DURATION,				//ks
 		1,
 		cave_init_machine_watchdog,
 	
 		/* video hardware */
-		384, 240, { 0, 384-1, 0, 240-1 },
+		384, 240, new rectangle( 0, 384-1, 0, 240-1 ),
 		mazinger_gfxdecodeinfo,
 		0x4000, 0x8000,	/* $8000 palette entries for consistency with the other games */
 		mazinger_vh_init_palette,
 		VIDEO_TYPE_RASTER,
-		0,
+		null,
 		cave_vh_start_8_8_0,
 		cave_vh_stop,
 		cave_vh_screenrefresh,
 	
 		/* sound hardware */
 		SOUND_SUPPORTS_STEREO,0,0,0,
-		{
-			{	SOUND_YM2203,	&ym2203_intf_4MHz		},
-			{	SOUND_OKIM6295,	&okim6295_intf_8kHz		}
+		new MachineSound[] {
+			new MachineSound(	SOUND_YM2203,	ym2203_intf_4MHz		),
+			new MachineSound(	SOUND_OKIM6295,	okim6295_intf_8kHz		)
 		},
 	
 		cave_nvram_handler
-	};
+	);
 	
 	
 	/***************************************************************************
 									Metamoqester
 	***************************************************************************/
 	
-	static const struct MachineDriver machine_driver_metmqstr =
-	{
-		{
-			{
+	static MachineDriver machine_driver_metmqstr = new MachineDriver
+	(
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_M68000,
 				32000000 / 2,
-				metmqstr_readmem, metmqstr_writemem,0,0,
+				metmqstr_readmem, metmqstr_writemem,null,null,
 				metmqstr_interrupt, 2
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_Z80 | CPU_AUDIO_CPU,
 				32000000 / 4,
 				metmqstr_sound_readmem,  metmqstr_sound_writemem,
 				metmqstr_sound_readport, metmqstr_sound_writeport,
 				ignore_interrupt, 0	/* NMI triggered by main CPU, IRQ triggered by YM2151 */
-			}
+			)
 		},
 		15625/271.5,DEFAULT_60HZ_VBLANK_DURATION,				//ks
 		1,
 		cave_init_machine_watchdog,	/* start with the watchdog armed */
 	
 		/* video hardware */
-		0x200, 240, { 0x7d, 0x7d + 0x180-1, 0, 240-1 },
+		0x200, 240, new rectangle( 0x7d, 0x7d + 0x180-1, 0, 240-1 ),
 		metmqstr_gfxdecodeinfo,
 		0x800, 0x8000,	/* $8000 palette entries for consistency with the other games */
 		dfeveron_vh_init_palette,
 		VIDEO_TYPE_RASTER,
-		0,
+		null,
 		cave_vh_start_16_16_16,
 		cave_vh_stop,
 		cave_vh_screenrefresh,
 	
 		/* sound hardware */
 		SOUND_SUPPORTS_STEREO,0,0,0,
-		{
-			{	SOUND_YM2151,	&ym2151_intf_4MHz		},	// 32/8 ?
-			{	SOUND_OKIM6295,	&metmqstr_okim6295_intf	}
+		new MachineSound[] {
+			new MachineSound(	SOUND_YM2151,	ym2151_intf_4MHz		),	// 32/8 ?
+			new MachineSound(	SOUND_OKIM6295,	metmqstr_okim6295_intf	)
 		},
 	
 		cave_nvram_handler
-	};
+	);
 	
 	
 	/***************************************************************************
 									Sailor Moon
 	***************************************************************************/
 	
-	static const struct MachineDriver machine_driver_sailormn =
-	{
-		{
-			{
+	static MachineDriver machine_driver_sailormn = new MachineDriver
+	(
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_M68000,
 				16000000,
-				sailormn_readmem, sailormn_writemem,0,0,
+				sailormn_readmem, sailormn_writemem,null,null,
 				cave_interrupt, 1
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_Z80 /*| CPU_AUDIO_CPU*/,	// Bidirectional Communication
 				8000000,
 				sailormn_sound_readmem,sailormn_sound_writemem,sailormn_sound_readport,sailormn_sound_writeport,
 				ignore_interrupt,0	/* NMI triggered by main CPU, IRQ triggered by YM2151 */
-			}
+			)
 		},
 		15625/271.5,DEFAULT_60HZ_VBLANK_DURATION,				//ks
 		10,
 		cave_init_machine,
 	
 		/* video hardware */
-		320, 240, { 0, 320-1, 0, 240-1 },
+		320, 240, new rectangle( 0, 320-1, 0, 240-1 ),
 		sailormn_gfxdecodeinfo,
 		0x2000, 0x8000,	/* $8000 palette entries for consistency with the other games */
 		dfeveron_vh_init_palette,	// 4 bit sprites
 		VIDEO_TYPE_RASTER,
-		0,
+		null,
 		sailormn_vh_start_16_16_8,	/* Layer 2 has a banked ROM and a peculiar layout */
 		cave_vh_stop,
 		cave_vh_screenrefresh,
 	
 		/* sound hardware */
 		SOUND_SUPPORTS_STEREO,0,0,0,
-		{
-			{	SOUND_YM2151,	&ym2151_intf_4MHz			},
-			{	SOUND_OKIM6295,	&okim6295_intf_16kHz_16kHz	}
+		new MachineSound[] {
+			new MachineSound(	SOUND_YM2151,	ym2151_intf_4MHz			),
+			new MachineSound(	SOUND_OKIM6295,	okim6295_intf_16kHz_16kHz	)
 		},
 	
 		cave_nvram_handler
-	};
+	);
 	
 	
 	/***************************************************************************
 									Uo Poko
 	***************************************************************************/
 	
-	static const struct MachineDriver machine_driver_uopoko =
-	{
-		{
-			{
+	static MachineDriver machine_driver_uopoko = new MachineDriver
+	(
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_M68000,
 				16000000,
-				uopoko_readmem, uopoko_writemem,0,0,
+				uopoko_readmem, uopoko_writemem,null,null,
 				cave_interrupt, 1
-			},
+			),
 		},
 		15625/271.5,DEFAULT_60HZ_VBLANK_DURATION,				//ks
 		1,
-		0,
+		null,
 	
 		/* video hardware */
-		320, 240, { 0, 320-1, 0, 240-1 },
+		320, 240, new rectangle( 0, 320-1, 0, 240-1 ),
 		uopoko_gfxdecodeinfo,
-		0x8000, 0,
-		0,
+		0x8000, null,
+		null,
 		VIDEO_TYPE_RASTER,
-		0,
+		null,
 		cave_vh_start_16_0_0,
 		cave_vh_stop,
 		cave_vh_screenrefresh,
 	
 		/* sound hardware */
 		SOUND_SUPPORTS_STEREO,0,0,0,
-		{
-			{ SOUND_YMZ280B, &ymz280b_intf }
+		new MachineSound[] {
+			new MachineSound( SOUND_YMZ280B, ymz280b_intf )
 		},
 	
 		cave_nvram_handler
-	};
+	);
 	
 	
 	/***************************************************************************

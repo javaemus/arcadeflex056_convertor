@@ -679,63 +679,63 @@ public class zaccaria
 	
 	
 	
-	static const struct MachineDriver machine_driver_zaccaria =
-	{
+	static MachineDriver machine_driver_zaccaria = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_Z80,
 				18432000/6,	/* 3.072 MHz */
-				readmem,writemem,0,0,
+				readmem,writemem,null,null,
 				nmi_interrupt,1
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_M6802 | CPU_AUDIO_CPU,
 				3580000/4,	/* 895 kHz */
-				sound_readmem1,sound_writemem1,0,0,
+				sound_readmem1,sound_writemem1,null,null,
 				ignore_interrupt,0,	/* IRQ and NMI triggered by the PIA */
 				zaccaria_cb1_toggle,3580000/4096
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_M6802 | CPU_AUDIO_CPU,
 				3580000/4,	/* 895 kHz */
-				sound_readmem2,sound_writemem2,0,0,
+				sound_readmem2,sound_writemem2,null,null,
 				ignore_interrupt,0	/* IRQ triggered by the main CPU */
-			}
+			)
 		},
 		60, DEFAULT_60HZ_VBLANK_DURATION,   /* frames per second, vblank duration */
 		1,  /* 1 CPU slice per frame - interleaving is forced when a sound command is written */
 		zaccaria_init_machine,
 	
 		/* video hardware */
-		32*8, 32*8, { 0*8, 32*8-1, 2*8, 30*8-1 },
+		32*8, 32*8, new rectangle( 0*8, 32*8-1, 2*8, 30*8-1 ),
 		gfxdecodeinfo,
 		512, 32*8+32*8,
 		zaccaria_vh_convert_color_prom,
 	
 		VIDEO_TYPE_RASTER,
-		0,
+		null,
 		zaccaria_vh_start,
-		0,
+		null,
 		zaccaria_vh_screenrefresh,
 	
 		/* sound hardware */
 		0,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_AY8910,
-				&ay8910_interface
-			},
-			{
+				ay8910_interface
+			),
+			new MachineSound(
 				SOUND_DAC,
-				&dac_interface
-			},
-			{
+				dac_interface
+			),
+			new MachineSound(
 				SOUND_TMS5220,
-				&tms5220_interface
-			}
+				tms5220_interface
+			)
 		}
-	};
+	);
 	
 	
 	

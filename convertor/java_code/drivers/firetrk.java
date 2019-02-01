@@ -708,40 +708,40 @@ public class firetrk
 		}
 	}
 	
-	static const struct MachineDriver machine_driver_firetruck =
-	{
-		{
-			{
+	static MachineDriver machine_driver_firetruck = new MachineDriver
+	(
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_M6808,
 				1000000,
 					/* 1MHz during normal operation */
 					/* 750Khz during self-test sequence */
-				firetruck_readmem,firetruck_writemem,0,0,
+				firetruck_readmem,firetruck_writemem,null,null,
 				firetruck_interrupt,2
-			},
+			),
 		},
 		60, DEFAULT_REAL_60HZ_VBLANK_DURATION,
 		1,	/* 1 CPU slice per frame */
-		0,
+		null,
 		/* video hardware */
-		32*8, 32*8, { 0*8, 32*8-1, 2*8, 30*8-1 },
+		32*8, 32*8, new rectangle( 0*8, 32*8-1, 2*8, 30*8-1 ),
 		firetruck_gfxdecodeinfo,
 		sizeof(palette)/3,sizeof(colortable)/2,
 		init_palette,
 		VIDEO_TYPE_RASTER,
-		0,
+		null,
 		firetruck_vh_init,
 		firetruck_vh_stop,
 		firetruck_vh_screenrefresh,
 		/* sound hardware */
 		0,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_DISCRETE,
-				&firetruck_sound_interface
-			}
+				firetruck_sound_interface
+			)
 		}
-	};
+	);
 	
 	void init_firetruck( void )
 	{

@@ -664,101 +664,101 @@ public class hal21
 	
 	/**************************************************************************/
 	
-	static const struct MachineDriver machine_driver_aso =
-	{
-		{
-			{
+	static MachineDriver machine_driver_aso = new MachineDriver
+	(
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_Z80,
 				4000000, /* ? */
-				aso_readmem_cpuA,aso_writemem_cpuA,0,0,
+				aso_readmem_cpuA,aso_writemem_cpuA,null,null,
 				interrupt,1
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_Z80,
 				4000000, /* ? */
-				aso_readmem_cpuB,aso_writemem_cpuB,0,0,
+				aso_readmem_cpuB,aso_writemem_cpuB,null,null,
 				interrupt,1
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_Z80 | CPU_AUDIO_CPU,
 				4000000,	/* 4 MHz (?) */
-				aso_readmem_sound,aso_writemem_sound,0,0,
+				aso_readmem_sound,aso_writemem_sound,null,null,
 				interrupt,1
-			},
+			),
 		},
 		60, DEFAULT_REAL_60HZ_VBLANK_DURATION,
 		100,	/* CPU slices per frame */
-		0, /* init machine */
+		null, /* init machine */
 	
 		/* video hardware */
-		36*8, 28*8, { 0*8, 36*8-1, 1*8, 28*8-1 },
+		36*8, 28*8, new rectangle( 0*8, 36*8-1, 1*8, 28*8-1 ),
 	
 		aso_gfxdecodeinfo,
-		1024, 0,
+		1024, null,
 		aso_vh_convert_color_prom,
 	
 		VIDEO_TYPE_RASTER,
-		0,
+		null,
 		aso_vh_start,
 		aso_vh_stop,
 		aso_vh_screenrefresh,
 	
 		/* sound hardware */
 		0,0,0,0,
-		{
-		    {
+		new MachineSound[] {
+		    new MachineSound(
 		       SOUND_YM3526,
-		       &ym3526_interface
-		    }
+		       ym3526_interface
+		    )
 		}
-	};
+	);
 	
-	static const struct MachineDriver machine_driver_hal21 = {
-		{
-			{
+	static MachineDriver machine_driver_hal21 = new MachineDriver(
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_Z80,
 				3360000,	/* 3.336 MHz? */
-				hal21_readmem_CPUA,hal21_writemem_CPUA,0,0,
+				hal21_readmem_CPUA,hal21_writemem_CPUA,null,null,
 				interrupt,1
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_Z80,
 				3360000,	/* 3.336 MHz? */
-				hal21_readmem_CPUB,hal21_writemem_CPUB,0,0,
+				hal21_readmem_CPUB,hal21_writemem_CPUB,null,null,
 				interrupt,1
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_Z80 | CPU_AUDIO_CPU,
 				4000000,	/* 4 MHz (?) */
-				hal21_readmem_sound,hal21_writemem_sound,0,0,
+				hal21_readmem_sound,hal21_writemem_sound,null,null,
 				interrupt,1
-			},
+			),
 		},
 		60, DEFAULT_REAL_60HZ_VBLANK_DURATION,
 		100,	/* CPU slices per frame */
-		0, /* init_machine */
+		null, /* init_machine */
 	
 		/* video hardware */
-		36*8, 28*8, { 0*8, 36*8-1, 1*8, 28*8-1 },
+		36*8, 28*8, new rectangle( 0*8, 36*8-1, 1*8, 28*8-1 ),
 		aso_gfxdecodeinfo,
-		1024, 0,
+		1024, null,
 		aso_vh_convert_color_prom,
 	
 		VIDEO_TYPE_RASTER,
-		0,
+		null,
 		hal21_vh_start,
 		aso_vh_stop,
 		aso_vh_screenrefresh,
 	
 		/* sound hardware */
 		0,0,0,0,
-		{
-		    {
+		new MachineSound[] {
+		    new MachineSound(
 		       SOUND_AY8910,
-		       &ay8910_interface
-		    }
+		       ay8910_interface
+		    )
 		}
-	};
+	);
 	
 	/**************************************************************************/
 	

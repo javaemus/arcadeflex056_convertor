@@ -236,51 +236,51 @@ public class gaelco
 	};
 	
 	
-	static const struct MachineDriver machine_driver_bigkarnk =
-	{
-		{
-			{
+	static MachineDriver machine_driver_bigkarnk = new MachineDriver
+	(
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_M68000,					/* MC68000P10 */
 				10000000,					/* 10 MHz */
-				bigkarnk_readmem,bigkarnk_writemem,0,0,
+				bigkarnk_readmem,bigkarnk_writemem,null,null,
 				m68_level6_irq,1
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_M6809 | CPU_AUDIO_CPU,	/* 68B09 */
 				8867000/4,					/* 2.21675 MHz? */
-				bigkarnk_readmem_snd,bigkarnk_writemem_snd,0,0,
+				bigkarnk_readmem_snd,bigkarnk_writemem_snd,null,null,
 				ignore_interrupt,1
-			}
+			)
 		},
 		60,DEFAULT_REAL_60HZ_VBLANK_DURATION,
 		10,
-		0,
+		null,
 	
 		/* video hardware */
-		32*16, 32*16, { 0, 320-1, 16, 256-1 },
+		32*16, 32*16, new rectangle( 0, 320-1, 16, 256-1 ),
 		gfxdecodeinfo_0x100000,
-		1024, 0,
-		0,
+		1024, null,
+		null,
 	
 		VIDEO_TYPE_RASTER,
-		0,
+		null,
 		bigkarnk_vh_start,
 		gaelco_vh_stop,
 		bigkarnk_vh_screenrefresh,
 	
 		/* sound hardware */
 		0,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_YM3812,
-				&bigkarnk_ym3812_interface
-			},
-			{
+				bigkarnk_ym3812_interface
+			),
+			new MachineSound(
 				SOUND_OKIM6295,
-				&bigkarnk_okim6295_interface
-			}
+				bigkarnk_okim6295_interface
+			)
 		}
-	};
+	);
 	
 	
 	static RomLoadPtr rom_bigkarnk = new RomLoadPtr(){ public void handler(){ 
@@ -505,41 +505,41 @@ public class gaelco
 		{ 100 }				/* volume */
 	};
 	
-	static const struct MachineDriver machine_driver_maniacsq =
-	{
-		{
-			{
+	static MachineDriver machine_driver_maniacsq = new MachineDriver
+	(
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_M68000,
 				24000000/2,			/* 12 MHz */
-				maniacsq_readmem,maniacsq_writemem,0,0,
+				maniacsq_readmem,maniacsq_writemem,null,null,
 				m68_level6_irq,1
-			}
+			)
 		},
 		60,DEFAULT_REAL_60HZ_VBLANK_DURATION,
 		1,
-		0,
+		null,
 	
 		/* video hardware */
-		32*16, 32*16, { 0, 320-1, 16, 256-1 },
+		32*16, 32*16, new rectangle( 0, 320-1, 16, 256-1 ),
 		gfxdecodeinfo_0x100000,
-		1024, 0,
-		0,
+		1024, null,
+		null,
 	
 		VIDEO_TYPE_RASTER,
-		0,
+		null,
 		maniacsq_vh_start,
 		gaelco_vh_stop,
 		maniacsq_vh_screenrefresh,
 	
 		/* sound hardware */
 		0,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_OKIM6295,
-				&maniacsq_okim6295_interface
-			}
+				maniacsq_okim6295_interface
+			)
 		}
-	};
+	);
 	
 	
 	static RomLoadPtr rom_maniacsq = new RomLoadPtr(){ public void handler(){ 

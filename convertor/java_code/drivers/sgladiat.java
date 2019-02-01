@@ -262,54 +262,54 @@ public class sgladiat
 		new IO_ReadPort(MEMPORT_MARKER, 0)
 	};
 	
-	static const struct MachineDriver machine_driver_sgladiat =
-	{
-		{
-			{
+	static MachineDriver machine_driver_sgladiat = new MachineDriver
+	(
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_Z80,
 				4000000,
-				sgladiat_readmem_cpuA,sgladiat_writemem_cpuA,0,0,
+				sgladiat_readmem_cpuA,sgladiat_writemem_cpuA,null,null,
 				interrupt,1
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_Z80,
 				4000000,	/* 4 MHz (?) */
-				sgladiat_readmem_cpuB,sgladiat_writemem_cpuB,0,0,
+				sgladiat_readmem_cpuB,sgladiat_writemem_cpuB,null,null,
 				interrupt,1
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_Z80,/* | CPU_AUDIO_CPU, */
 				4000000,	/* 4 MHz (?) */
-				sgladiat_readmem_sound,sgladiat_writemem_sound,sgladiat_readport,0,
+				sgladiat_readmem_sound,sgladiat_writemem_sound,sgladiat_readport,null,
 				interrupt,2
-			},
+			),
 		},
 		60, DEFAULT_REAL_60HZ_VBLANK_DURATION,
 		100,	/* CPU slices per frame */
-		0, /* init machine */
+		null, /* init machine */
 	
 		/* video hardware */
-		36*8, 28*8, { 0*8+16, 36*8-1-16, 1*8, 28*8-1 },
+		36*8, 28*8, new rectangle( 0*8+16, 36*8-1-16, 1*8, 28*8-1 ),
 	
 		tnk3_gfxdecodeinfo,
-		1024, 0,
+		1024, null,
 		aso_vh_convert_color_prom,
 	
 		VIDEO_TYPE_RASTER,
-		0,
+		null,
 		sgladiat_vh_start,
 		snk_vh_stop,
 		sgladiat_vh_screenrefresh,
 	
 		/* sound hardware */
 		0,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_AY8910,
-				&ay8910_interface
-			}
+				ay8910_interface
+			)
 		}
-	};
+	);
 	
 	static RomLoadPtr rom_sgladiat = new RomLoadPtr(){ public void handler(){ 
 		ROM_REGION( 0x10000, REGION_CPU1, 0 );/* 64k for cpuA code */

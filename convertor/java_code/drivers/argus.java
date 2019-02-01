@@ -814,137 +814,137 @@ public class argus
 		new GfxDecodeInfo( -1 ) /* end of array */
 	};
 	
-	static const struct MachineDriver machine_driver_argus =
-	{
+	static MachineDriver machine_driver_argus = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_Z80,
 				5000000,			/* 4 MHz */
-				argus_readmem, argus_writemem, 0, 0,
+				argus_readmem, argus_writemem, null, null,
 				argus_interrupt, 2
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_Z80 | CPU_AUDIO_CPU,
 				5000000,			/* 4 MHz */
 				sound_readmem_a,  sound_writemem_a,
 				sound_readport_1, sound_writeport_1,
 				ignore_interrupt, 0
-			}
+			)
 		},
 		54, DEFAULT_60HZ_VBLANK_DURATION,	/* This value is refered to psychic5 driver */
 		10,
-		0,
+		null,
 	
 		/* video hardware */
-		32*16, 32*16, { 0*8, 32*8-1, 2*8, 30*8-1 },
+		32*16, 32*16, new rectangle( 0*8, 32*8-1, 2*8, 30*8-1 ),
 		argus_gfxdecodeinfo,
-		896, 0,
-		0,
+		896, null,
+		null,
 	
 		VIDEO_TYPE_RASTER,
-		0,
+		null,
 		argus_vh_start,
 		argus_vh_stop,
 		argus_vh_screenrefresh,
 	
 		/* sound hardware */
 		0,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_YM2203,
-				&argus_ym2203_interface
-			}
+				argus_ym2203_interface
+			)
 		}
-	};
+	);
 	
-	static const struct MachineDriver machine_driver_valtric =
-	{
+	static MachineDriver machine_driver_valtric = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_Z80,
 				5000000,			/* 5 MHz */
-				valtric_readmem, valtric_writemem, 0, 0,
+				valtric_readmem, valtric_writemem, null, null,
 				argus_interrupt, 2
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_Z80 | CPU_AUDIO_CPU,
 				5000000,			/* 5 MHz */
 				sound_readmem_a,  sound_writemem_a,
 				sound_readport_2, sound_writeport_2,
 				ignore_interrupt, 0
-			}
+			)
 		},
 		54, DEFAULT_60HZ_VBLANK_DURATION,	/* This value is refered to psychic5 driver */
 		10,
-		0,
+		null,
 	
 		/* video hardware */
-		32*16, 32*16, { 0*8, 32*8-1, 2*8, 30*8-1 },
+		32*16, 32*16, new rectangle( 0*8, 32*8-1, 2*8, 30*8-1 ),
 		valtric_gfxdecodeinfo,
-		768, 0,
-		0,
+		768, null,
+		null,
 	
 		VIDEO_TYPE_RASTER,
-		0,
+		null,
 		valtric_vh_start,
-		0,
+		null,
 		valtric_vh_screenrefresh,
 	
 		/* sound hardware */
 		0,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_YM2203,
-				&valtric_ym2203_interface
-			}
+				valtric_ym2203_interface
+			)
 		}
-	};
+	);
 	
-	static const struct MachineDriver machine_driver_butasan =
-	{
+	static MachineDriver machine_driver_butasan = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_Z80,
 				5000000,			/* 5 MHz */
-				butasan_readmem, butasan_writemem, 0, 0,
+				butasan_readmem, butasan_writemem, null, null,
 				argus_interrupt, 2
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_Z80 | CPU_AUDIO_CPU,
 				5000000,			/* 5 MHz */
 				sound_readmem_b,  sound_writemem_b,
 				sound_readport_2, sound_writeport_2,
 				ignore_interrupt, 0
-			}
+			)
 		},
 		54, DEFAULT_60HZ_VBLANK_DURATION,	/* This value is refered to psychic5 driver */
 		10,
-		0,
+		null,
 	
 		/* video hardware */
-		32*16, 32*16, { 0*8, 32*8-1, 1*8, 31*8-1 },
+		32*16, 32*16, new rectangle( 0*8, 32*8-1, 1*8, 31*8-1 ),
 		butasan_gfxdecodeinfo,
-		768, 0,
-		0,
+		768, null,
+		null,
 	
 		VIDEO_TYPE_RASTER,
-		0,
+		null,
 		butasan_vh_start,
 		butasan_vh_stop,
 		butasan_vh_screenrefresh,
 	
 		/* sound hardware */
 		0,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_YM2203,
-				&butasan_ym2203_interface
-			}
+				butasan_ym2203_interface
+			)
 		}
-	};
+	);
 	
 	
 	/***************************************************************************

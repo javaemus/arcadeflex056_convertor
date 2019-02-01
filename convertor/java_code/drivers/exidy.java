@@ -846,23 +846,23 @@ public class exidy
 	 *
 	 *************************************/
 	
-	static const struct MachineDriver machine_driver_targ =
-	{
+	static MachineDriver machine_driver_targ = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_M6502,
 				11289000/16,
-				main_readmem,main_writemem,0,0,
+				main_readmem,main_writemem,null,null,
 				exidy_vblank_interrupt,1
-			},
+			),
 		},
 		57, DEFAULT_REAL_60HZ_VBLANK_DURATION,
 		1,
-		0,
+		null,
 	
 		/* video hardware */
-		32*8, 32*8, { 0*8, 31*8-1, 0*8, 32*8-1 },
+		32*8, 32*8, new rectangle( 0*8, 31*8-1, 0*8, 32*8-1 ),
 		gfxdecodeinfo_1bpp,
 		PALETTE_LEN, COLORTABLE_LEN,
 		exidy_vh_init_palette,
@@ -875,43 +875,43 @@ public class exidy
 	
 		/* sound hardware */
 		0,0,0,0,
-		{
-			{ SOUND_CUSTOM,  &targ_custom_interface },
-			{ SOUND_SAMPLES, &targ_samples_interface },
-			{ SOUND_DAC,     &targ_DAC_interface }
+		new MachineSound[] {
+			new MachineSound( SOUND_CUSTOM,  targ_custom_interface ),
+			new MachineSound( SOUND_SAMPLES, targ_samples_interface ),
+			new MachineSound( SOUND_DAC,     targ_DAC_interface )
 		}
-	};
+	);
 	
 	
-	static const struct MachineDriver machine_driver_mtrap =
-	{
+	static MachineDriver machine_driver_mtrap = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_M6502,
 				11289000/16,
-				main_readmem,main_writemem,0,0,
+				main_readmem,main_writemem,null,null,
 				exidy_vblank_interrupt,1
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_M6502 | CPU_AUDIO_CPU,
 				3579545/4,
-				sound_readmem,sound_writemem,0,0,
+				sound_readmem,sound_writemem,null,null,
 		    	ignore_interrupt,0
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_Z80 | CPU_AUDIO_CPU,
 				3579545/2,
 				cvsd_readmem,cvsd_writemem,cvsd_ioread,cvsd_iowrite,
 				ignore_interrupt,0
-			}
+			)
 		},
 		57, DEFAULT_REAL_60HZ_VBLANK_DURATION,
 	    32,
-		0,
+		null,
 	
 		/* video hardware */
-		32*8, 32*8, { 0*8, 31*8-1, 0*8, 32*8-1 },
+		32*8, 32*8, new rectangle( 0*8, 31*8-1, 0*8, 32*8-1 ),
 		gfxdecodeinfo_1bpp,
 		PALETTE_LEN, COLORTABLE_LEN,
 		exidy_vh_init_palette,
@@ -924,36 +924,36 @@ public class exidy
 	
 		/* sound hardware */
 		0,0,0,0,
-		{
-			{ SOUND_HC55516, &cvsd_interface },
-			{ SOUND_CUSTOM,  &exidy_custom_interface }
+		new MachineSound[] {
+			new MachineSound( SOUND_HC55516, cvsd_interface ),
+			new MachineSound( SOUND_CUSTOM,  exidy_custom_interface )
 		}
-	};
+	);
 	
 	
-	static const struct MachineDriver machine_driver_venture =
-	{
+	static MachineDriver machine_driver_venture = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_M6502,
 				11289000/16,
-				main_readmem,main_writemem,0,0,
+				main_readmem,main_writemem,null,null,
 				exidy_vblank_interrupt,1
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_M6502 | CPU_AUDIO_CPU,
 				3579545/4,
-				sound_readmem,sound_writemem,0,0,
+				sound_readmem,sound_writemem,null,null,
 				ignore_interrupt,0
-			}
+			)
 		},
 		57, DEFAULT_REAL_60HZ_VBLANK_DURATION,
 		10,
-		0,
+		null,
 	
 		/* video hardware */
-		32*8, 32*8, { 0*8, 31*8-1, 0*8, 32*8-1 },
+		32*8, 32*8, new rectangle( 0*8, 31*8-1, 0*8, 32*8-1 ),
 		gfxdecodeinfo_1bpp,
 		PALETTE_LEN, COLORTABLE_LEN,
 		exidy_vh_init_palette,
@@ -966,35 +966,35 @@ public class exidy
 	
 		/* sound hardware */
 		0,0,0,0,
-		{
-			{ SOUND_CUSTOM,  &exidy_custom_interface }
+		new MachineSound[] {
+			new MachineSound( SOUND_CUSTOM,  exidy_custom_interface )
 		}
-	};
+	);
 	
 	
-	static const struct MachineDriver machine_driver_pepper2 =
-	{
+	static MachineDriver machine_driver_pepper2 = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_M6502,
 				11289000/16,
-				main_readmem,main_writemem,0,0,
+				main_readmem,main_writemem,null,null,
 				exidy_vblank_interrupt,1
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_M6502 | CPU_AUDIO_CPU,
 				3579545/4,
-				sound_readmem,sound_writemem,0,0,
+				sound_readmem,sound_writemem,null,null,
 				ignore_interrupt,0
-			}
+			)
 		},
 		57, DEFAULT_REAL_60HZ_VBLANK_DURATION,
 		10,
-		0,
+		null,
 	
 		/* video hardware */
-		32*8, 32*8, { 0*8, 31*8-1, 0*8, 32*8-1 },
+		32*8, 32*8, new rectangle( 0*8, 31*8-1, 0*8, 32*8-1 ),
 		gfxdecodeinfo_2bpp,
 		PALETTE_LEN, COLORTABLE_LEN,
 		exidy_vh_init_palette,
@@ -1007,36 +1007,36 @@ public class exidy
 	
 		/* sound hardware */
 		0,0,0,0,
-		{
-			{ SOUND_CUSTOM, &exidy_custom_interface }
+		new MachineSound[] {
+			new MachineSound( SOUND_CUSTOM, exidy_custom_interface )
 		}
 	
-	};
+	);
 	
 	
-	static const struct MachineDriver machine_driver_fax =
-	{
+	static MachineDriver machine_driver_fax = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_M6502,
 				11289000/16,
-				fax_readmem,fax_writemem,0,0,
+				fax_readmem,fax_writemem,null,null,
 				exidy_vblank_interrupt,1
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_M6502 | CPU_AUDIO_CPU,
 				3579545/4,
-				sound_readmem,sound_writemem,0,0,
+				sound_readmem,sound_writemem,null,null,
 				ignore_interrupt,0
-			}
+			)
 		},
 		57, DEFAULT_REAL_60HZ_VBLANK_DURATION,
 		10,
-		0,
+		null,
 	
 		/* video hardware */
-		32*8, 32*8, { 0*8, 31*8-1, 0*8, 32*8-1 },
+		32*8, 32*8, new rectangle( 0*8, 31*8-1, 0*8, 32*8-1 ),
 		gfxdecodeinfo_2bpp,
 		PALETTE_LEN, COLORTABLE_LEN,
 		exidy_vh_init_palette,
@@ -1049,10 +1049,10 @@ public class exidy
 	
 		/* sound hardware */
 		0,0,0,0,
-		{
-			{ SOUND_CUSTOM, &exidy_custom_interface }
+		new MachineSound[] {
+			new MachineSound( SOUND_CUSTOM, exidy_custom_interface )
 		}
-	};
+	);
 	
 	
 	

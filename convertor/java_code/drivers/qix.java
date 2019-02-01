@@ -666,218 +666,218 @@ public class qix
 	 *
 	 *************************************/
 	
-	static const struct MachineDriver machine_driver_qix =
-	{
+	static MachineDriver machine_driver_qix = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_M6809,
 				MAIN_CLOCK_OSC/4/4,		/* 1.25 MHz */
-				readmem_data,writemem_data,0,0,
+				readmem_data,writemem_data,null,null,
 				qix_vblank_start,1
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_M6809,
 				MAIN_CLOCK_OSC/4/4,		/* 1.25 MHz */
-				readmem_video,writemem_video,0,0,
+				readmem_video,writemem_video,null,null,
 				ignore_interrupt,0
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_M6802 | CPU_AUDIO_CPU,
 				SOUND_CLOCK_OSC/2/4,	/* 0.92 MHz */
-				readmem_sound,writemem_sound,0,0,
+				readmem_sound,writemem_sound,null,null,
 				ignore_interrupt,0
-			}
+			)
 		},
 		60, DEFAULT_REAL_60HZ_VBLANK_DURATION,
 		1,	/* synchronization done by scanline timing */
 		qix_init_machine,
 	
 		/* video hardware */
-		256, 256, { 0, 255, 8, 247 },
-		0,
-		1024, 0,
-		0,
+		256, 256, new rectangle( 0, 255, 8, 247 ),
+		null,
+		1024, null,
+		null,
 	
 		VIDEO_TYPE_RASTER,
-		0,
+		null,
 		qix_vh_start,
 		qix_vh_stop,
 		qix_vh_screenrefresh,
 	
 		/* sound hardware */
 		0,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_DAC,
-				&dac_interface
-			}
+				dac_interface
+			)
 		},
 	
 		nvram_handler
-	};
+	);
 	
 	
-	static const struct MachineDriver machine_driver_mcu =
-	{
+	static MachineDriver machine_driver_mcu = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_M6809,
 				MAIN_CLOCK_OSC/4/4,		/* 1.25 MHz */
-				readmem_data,writemem_data,0,0,
+				readmem_data,writemem_data,null,null,
 				qix_vblank_start,1
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_M6809,
 				MAIN_CLOCK_OSC/4/4,		/* 1.25 MHz */
-				readmem_video,writemem_video,0,0,
+				readmem_video,writemem_video,null,null,
 				ignore_interrupt,0
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_M6802 | CPU_AUDIO_CPU,
 				SOUND_CLOCK_OSC/2/4,	/* 0.92 MHz */
-				readmem_sound,writemem_sound,0,0,
+				readmem_sound,writemem_sound,null,null,
 				ignore_interrupt,0
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_M68705,
 				COIN_CLOCK_OSC/4,		/* 1.00 MHz */
-				mcu_readmem,mcu_writemem,0,0,
+				mcu_readmem,mcu_writemem,null,null,
 				ignore_interrupt,0
-			}
+			)
 		},
 		60, DEFAULT_REAL_60HZ_VBLANK_DURATION,
 		1,	/* synchronization done by scanline timing */
 		qixmcu_init_machine,
 	
 		/* video hardware */
-		256, 256, { 0, 255, 8, 247 },
-		0,
-		1024, 0,
-		0,
+		256, 256, new rectangle( 0, 255, 8, 247 ),
+		null,
+		1024, null,
+		null,
 	
 		VIDEO_TYPE_RASTER,
-		0,
+		null,
 		qix_vh_start,
 		qix_vh_stop,
 		qix_vh_screenrefresh,
 	
 		/* sound hardware */
 		0,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_DAC,
-				&dac_interface
-			}
+				dac_interface
+			)
 		},
 	
 		nvram_handler
-	};
+	);
 	
 	
-	static const struct MachineDriver machine_driver_zookeep =
-	{
+	static MachineDriver machine_driver_zookeep = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_M6809,
 				MAIN_CLOCK_OSC/4/4,		/* 1.25 MHz */
-				zoo_readmem_data,zoo_writemem_data,0,0,
+				zoo_readmem_data,zoo_writemem_data,null,null,
 				qix_vblank_start,1
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_M6809,
 				MAIN_CLOCK_OSC/4/4,		/* 1.25 MHz */
-				zoo_readmem_video,zoo_writemem_video,0,0,
+				zoo_readmem_video,zoo_writemem_video,null,null,
 				ignore_interrupt,0
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_M6802 | CPU_AUDIO_CPU,
 				SOUND_CLOCK_OSC/2/4,	/* 0.92 MHz */
-				readmem_sound,writemem_sound,0,0,
+				readmem_sound,writemem_sound,null,null,
 				ignore_interrupt,0
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_M68705,
 				COIN_CLOCK_OSC/4,		/* 1.00 MHz */
-				mcu_readmem,mcu_writemem,0,0,
+				mcu_readmem,mcu_writemem,null,null,
 				ignore_interrupt,0
-			}
+			)
 		},
 		60, DEFAULT_REAL_60HZ_VBLANK_DURATION,
 		1,	/* synchronization done by scanline timing */
 		qixmcu_init_machine,
 	
 		/* video hardware */
-		256, 256, { 0, 255, 8, 247 },
-		0,
-		1024, 0,
-		0,
+		256, 256, new rectangle( 0, 255, 8, 247 ),
+		null,
+		1024, null,
+		null,
 	
 		VIDEO_TYPE_RASTER,
-		0,
+		null,
 		qix_vh_start,
 		qix_vh_stop,
 		qix_vh_screenrefresh,
 	
 		/* sound hardware */
 		0,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_DAC,
-				&dac_interface
-			}
+				dac_interface
+			)
 		},
 	
 		nvram_handler
-	};
+	);
 	
 	
-	static const struct MachineDriver machine_driver_slither =
-	{
+	static MachineDriver machine_driver_slither = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_M6809,
 				SLITHER_CLOCK_OSC/4/4,	/* 1.34 MHz */
-				readmem_data,writemem_data,0,0,
+				readmem_data,writemem_data,null,null,
 				qix_vblank_start,1
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_M6809,
 				SLITHER_CLOCK_OSC/4/4,	/* 1.34 MHz */
-				readmem_video,writemem_video,0,0,
+				readmem_video,writemem_video,null,null,
 				ignore_interrupt,0
-			}
+			)
 		},
 		60, DEFAULT_REAL_60HZ_VBLANK_DURATION,
 		1,	/* synchronization done by scanline timing */
 		slither_init_machine,
 	
 		/* video hardware */
-		256, 256, { 0, 255, 0, 255 },
-		0,
-		1024, 0,
-		0,
+		256, 256, new rectangle( 0, 255, 0, 255 ),
+		null,
+		1024, null,
+		null,
 	
 		VIDEO_TYPE_RASTER,
-		0,
+		null,
 		qix_vh_start,
 		qix_vh_stop,
 		qix_vh_screenrefresh,
 	
 		/* sound hardware */
 		0,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_SN76496,
-				&sn76496_interface
-			}
+				sn76496_interface
+			)
 		},
 	
 		nvram_handler
-	};
+	);
 	
 	
 	

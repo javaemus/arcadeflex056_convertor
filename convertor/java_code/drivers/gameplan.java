@@ -529,47 +529,47 @@ public class gameplan
 	};
 	
 	
-	static const struct MachineDriver machine_driver_gameplan =
-	{
+	static MachineDriver machine_driver_gameplan = new MachineDriver
+	(
 	    /* basic machine hardware */
-	    {							/* MachineCPU */
-			{
+	    new MachineCPU[] {							/* MachineCPU */
+			new MachineCPU(
 				CPU_M6502,
 				3579000 / 4,		/* 3.579 / 4 MHz */
-				readmem, writemem, 0, 0,
+				readmem, writemem, null, null,
 				gameplan_interrupt,1 /* 1 interrupt per frame */
-			},
-			{
+			),
+			new MachineCPU(
 	            CPU_M6502 | CPU_AUDIO_CPU,
 				3579000 / 4,		/* 3.579 / 4 MHz */
-				readmem_snd,writemem_snd,0,0,
+				readmem_snd,writemem_snd,null,null,
 				gameplan_interrupt,1
-			},
+			),
 		},
 		57, DEFAULT_60HZ_VBLANK_DURATION,	/* frames per second, vblank duration */
 		1,							/* CPU slices per frame */
-	    0,							/* init_machine */
+	    null,							/* init_machine */
 	
 	    /* video hardware */
 	    32*8, 32*8,					/* screen_width, height */
-	    { 0, 32*8-1, 0, 32*8-1 },		/* visible_area */
-	    0,
-		sizeof(palette) / sizeof(palette[0]) / 3, 0,
+	    new rectangle( 0, 32*8-1, 0, 32*8-1 ),		/* visible_area */
+	    null,
+		sizeof(palette) / sizeof(palette[null]) / 3, null,
 		init_palette,
 	
-		VIDEO_TYPE_RASTER, 0,
+		VIDEO_TYPE_RASTER, null,
 		gameplan_vh_start,
 		generic_bitmapped_vh_stop,
 		generic_bitmapped_vh_screenrefresh,
 	
 		0, 0, 0, 0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_AY8910,
-				&ay8910_interface
-			}
+				ay8910_interface
+			)
 		}
-	};
+	);
 	
 	/***************************************************************************
 	

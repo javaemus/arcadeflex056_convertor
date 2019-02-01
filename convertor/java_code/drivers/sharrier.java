@@ -325,53 +325,53 @@ public class sharrier
 	
 	/***************************************************************************/
 	
-	static const struct MachineDriver machine_driver_hangon =
-	{
-		{
-			{
+	static MachineDriver machine_driver_hangon = new MachineDriver
+	(
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_M68000,
 				10000000,
-				hangon_readmem,hangon_writemem,0,0,
+				hangon_readmem,hangon_writemem,null,null,
 				sys16_interrupt,1
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_Z80 | CPU_AUDIO_CPU,
 				4096000,
 				hangon_sound_readmem,hangon_sound_writemem,hangon_sound_readport,hangon_sound_writeport,
 	//			ignore_interrupt,1
 				interrupt,4
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_M68000,
 				10000000,
-				hangon_readmem2,hangon_writemem2,0,0,
+				hangon_readmem2,hangon_writemem2,null,null,
 				sys16_interrupt,1
-			},
+			),
 		},
 		60, DEFAULT_60HZ_VBLANK_DURATION,
 		1,
 		hangon_init_machine,
-		40*8, 28*8, { 0*8, 40*8-1, 0*8, 28*8-1 },
+		40*8, 28*8, new rectangle( 0*8, 40*8-1, 0*8, 28*8-1 ),
 		sys16_gfxdecodeinfo,
-		2048*ShadowColorsMultiplier, 0,
-		0,
+		2048*ShadowColorsMultiplier, null,
+		null,
 		VIDEO_TYPE_RASTER,
-		0,
+		null,
 		sys16_hangon_vh_start,
 		sys16_vh_stop,
 		sys16_hangon_vh_screenrefresh,
 		SOUND_SUPPORTS_STEREO,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_YM2203,
-				&sys16_ym2203_interface
-			},
-			{			// wrong sound chip??
+				sys16_ym2203_interface
+			),
+			new MachineSound(			// wrong sound chip??
 				SOUND_SEGAPCM,
-				&sys16_segapcm_interface_32k,
-			}
+				sys16_segapcm_interface_32k,
+			)
 		}
-	};
+	);
 	
 	
 	
@@ -535,53 +535,53 @@ public class sharrier
 	}
 	/***************************************************************************/
 	
-	static const struct MachineDriver machine_driver_sharrier =
-	{
-		{
-			{
+	static MachineDriver machine_driver_sharrier = new MachineDriver
+	(
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_M68000,
 				10000000,
-				harrier_readmem,harrier_writemem,0,0,
+				harrier_readmem,harrier_writemem,null,null,
 				sys16_interrupt,1
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_Z80 | CPU_AUDIO_CPU,
 				4096000,
 				harrier_sound_readmem,harrier_sound_writemem,harrier_sound_readport,harrier_sound_writeport,
 	//			ignore_interrupt,1
 				interrupt,4
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_M68000,
 				10000000,
-				harrier_readmem2,harrier_writemem2,0,0,
+				harrier_readmem2,harrier_writemem2,null,null,
 				sys16_interrupt,1
-			},
+			),
 		},
 		60, DEFAULT_60HZ_VBLANK_DURATION,
 		1,
 		harrier_init_machine,
-		40*8, 28*8, { 0*8, 40*8-1, 0*8, 28*8-1 },
+		40*8, 28*8, new rectangle( 0*8, 40*8-1, 0*8, 28*8-1 ),
 		sys16_gfxdecodeinfo,
-		2048*ShadowColorsMultiplier, 0,
-		0,
+		2048*ShadowColorsMultiplier, null,
+		null,
 		VIDEO_TYPE_RASTER,
-		0,
+		null,
 		sys16_hangon_vh_start,
 		sys16_vh_stop,
 		sys16_hangon_vh_screenrefresh,
 		SOUND_SUPPORTS_STEREO,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_YM2203,
-				&sys16_ym2203_interface
-			},
-			{
+				sys16_ym2203_interface
+			),
+			new MachineSound(
 				SOUND_SEGAPCM,
-				&sys16_segapcm_interface_32k,
-			}
+				sys16_segapcm_interface_32k,
+			)
 		}
-	};
+	);
 	
 	/***************************************************************************/
 	
@@ -878,99 +878,99 @@ public class sharrier
 	
 	/***************************************************************************/
 	
-	static const struct MachineDriver machine_driver_enduror =
-	{
-		{
-			{
+	static MachineDriver machine_driver_enduror = new MachineDriver
+	(
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_M68000,
 				10000000,
-				enduror_readmem,enduror_writemem,0,0,
+				enduror_readmem,enduror_writemem,null,null,
 				sys16_interrupt,1
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_Z80 | CPU_AUDIO_CPU,
 				4096000,
 				enduror_sound_readmem,enduror_sound_writemem,enduror_sound_readport,enduror_sound_writeport,
 				interrupt,4
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_M68000,
 				10000000,
-				enduror_readmem2,enduror_writemem2,0,0,
+				enduror_readmem2,enduror_writemem2,null,null,
 				sys16_interrupt,1
-			},
+			),
 		},
 		60, DEFAULT_60HZ_VBLANK_DURATION,
 		1,
 		enduror_init_machine,
-		40*8, 28*8, { 0*8, 40*8-1, 0*8, 28*8-1 },
+		40*8, 28*8, new rectangle( 0*8, 40*8-1, 0*8, 28*8-1 ),
 		sys16_gfxdecodeinfo,
-		2048*ShadowColorsMultiplier, 0,
-		0,
+		2048*ShadowColorsMultiplier, null,
+		null,
 		VIDEO_TYPE_RASTER,
-		0,
+		null,
 		sys16_hangon_vh_start,
 		sys16_vh_stop,
 		sys16_hangon_vh_screenrefresh,
 		SOUND_SUPPORTS_STEREO,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_YM2203,
-				&sys16_ym2203_interface
-			},
-			{
+				sys16_ym2203_interface
+			),
+			new MachineSound(
 				SOUND_SEGAPCM,
-				&sys16_segapcm_interface_32k,
-			}
+				sys16_segapcm_interface_32k,
+			)
 		}
-	};
+	);
 	
-	static const struct MachineDriver machine_driver_endurob2 =
-	{
-		{
-			{
+	static MachineDriver machine_driver_endurob2 = new MachineDriver
+	(
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_M68000,
 				10000000,
-				enduror_readmem,enduror_writemem,0,0,
+				enduror_readmem,enduror_writemem,null,null,
 				sys16_interrupt,1
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_Z80 | CPU_AUDIO_CPU,
 				4096000,
 				enduror_b2_sound_readmem,enduror_b2_sound_writemem,enduror_b2_sound_readport,enduror_b2_sound_writeport,
 				ignore_interrupt,1
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_M68000,
 				10000000,
-				enduror_readmem2,enduror_writemem2,0,0,
+				enduror_readmem2,enduror_writemem2,null,null,
 				sys16_interrupt,1
-			},
+			),
 		},
 		60, DEFAULT_60HZ_VBLANK_DURATION,
 		2,
 		enduror_init_machine,
-		40*8, 28*8, { 0*8, 40*8-1, 0*8, 28*8-1 },
+		40*8, 28*8, new rectangle( 0*8, 40*8-1, 0*8, 28*8-1 ),
 		sys16_gfxdecodeinfo,
-		2048*ShadowColorsMultiplier, 0,
-		0,
+		2048*ShadowColorsMultiplier, null,
+		null,
 		VIDEO_TYPE_RASTER,
-		0,
+		null,
 		sys16_hangon_vh_start,
 		sys16_vh_stop,
 		sys16_hangon_vh_screenrefresh,
 		SOUND_SUPPORTS_STEREO,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_YM2203,
-				&sys16_3xym2203_interface
-			},
-			{
+				sys16_3xym2203_interface
+			),
+			new MachineSound(
 				SOUND_SEGAPCM,
-				&sys16_segapcm_interface_15k,
-			}
+				sys16_segapcm_interface_15k,
+			)
 		}
-	};
+	);
 	
 	/*****************************************************************************/
 	

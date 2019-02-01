@@ -297,52 +297,52 @@ public class leprechn
 	};
 	
 	
-	static const struct MachineDriver machine_driver_leprechn =
-	{
+	static MachineDriver machine_driver_leprechn = new MachineDriver
+	(
 	    /* basic machine hardware */
-	    {
+	    new MachineCPU[] {
 	        // A good test to verify that the relative CPU speeds of the main
 	        // and sound are correct, is when you finish a level, the sound
 	        // should stop before the display switches to the name of the
 	        // next level
-	        {
+	        new MachineCPU(
 	            CPU_M6502,
 	            1250000,    /* 1.25 MHz ??? */
-	            readmem,writemem,0,0,
+	            readmem,writemem,null,null,
 	            interrupt,1
-	        },
-	        {
+	        ),
+	        new MachineCPU(
 	            CPU_M6502 | CPU_AUDIO_CPU,
 	            1500000,    /* 1.5 MHz ??? */
-	            sound_readmem,sound_writemem,0,0,
+	            sound_readmem,sound_writemem,null,null,
 	            ignore_interrupt,1      /* interrupts are triggered by the main CPU */
-	        }
+	        )
 	    },
 	    57, DEFAULT_60HZ_VBLANK_DURATION,       /* frames per second, vblank duration */
 	    1,      /* 1 CPU slice per frame - interleaving is forced when a sound command is written */
-	    0,
+	    null,
 	
 	    /* video hardware */
-	    256, 256, { 0, 256-1, 0, 256-1 },
-	    0,
-	    sizeof(palette) / sizeof(palette[0]) / 3, 0,
+	    256, 256, new rectangle( 0, 256-1, 0, 256-1 ),
+	    null,
+	    sizeof(palette) / sizeof(palette[null]) / 3, null,
 	    init_palette,
 	
 	    VIDEO_TYPE_RASTER | VIDEO_SUPPORTS_DIRTY,
-	    0,
+	    null,
 	    leprechn_vh_start,
 	    leprechn_vh_stop,
 	    leprechn_vh_screenrefresh,
 	
 	    /* sound hardware */
 	    0,0,0,0,
-	    {
-	        {
+	    new MachineSound[] {
+	        new MachineSound(
 	            SOUND_AY8910,
-	            &ay8910_interface
-	        }
+	            ay8910_interface
+	        )
 	    }
-	};
+	);
 	
 	
 	/***************************************************************************

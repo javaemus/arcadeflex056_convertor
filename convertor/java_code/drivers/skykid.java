@@ -461,48 +461,48 @@ public class skykid
 		0					/* stereo */
 	};
 	
-	static const struct MachineDriver machine_driver_skykid =
-	{
+	static MachineDriver machine_driver_skykid = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_M6809,
 				49152000/32,	/* ??? */
-				skykid_readmem,skykid_writemem,0,0,
+				skykid_readmem,skykid_writemem,null,null,
 				skykid_interrupt,1
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_HD63701,	/* or compatible 6808 with extra instructions */
 				49152000/32,	/* ??? */
 				mcu_readmem,mcu_writemem,mcu_readport,mcu_writeport,
 				interrupt,1
-			}
+			)
 		},
 		60.606060,DEFAULT_REAL_60HZ_VBLANK_DURATION,
 		100,	/* we need heavy synch */
-		0,
+		null,
 	
 		/* video hardware */
-		36*8, 28*8, { 0*8, 36*8-1, 0*8, 28*8-1 },
+		36*8, 28*8, new rectangle( 0*8, 36*8-1, 0*8, 28*8-1 ),
 		gfxdecodeinfo,
 		256, 64*4+128*4+64*8,
 		skykid_vh_convert_color_prom,
 	
 		VIDEO_TYPE_RASTER,
-		0,
+		null,
 		skykid_vh_start,
-		0,
+		null,
 		skykid_vh_screenrefresh,
 	
 		/* sound hardware */
 		0,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_NAMCO,
-				&namco_interface
-			}
+				namco_interface
+			)
 		}
-	};
+	);
 	
 	
 	static RomLoadPtr rom_skykid = new RomLoadPtr(){ public void handler(){ 

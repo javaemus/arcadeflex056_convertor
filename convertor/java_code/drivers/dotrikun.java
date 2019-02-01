@@ -76,36 +76,36 @@ public class dotrikun
 	INPUT_PORTS_END(); }}; 
 	
 	
-	static const struct MachineDriver machine_driver_dotrikun =
-	{
+	static MachineDriver machine_driver_dotrikun = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_Z80,
 				4000000,		 /* 4 MHz */
 				readmem, writemem, readport, writeport,
 				interrupt, 1
-			}
+			)
 		},
 		60, DEFAULT_60HZ_VBLANK_DURATION,	/* frames per second, vblank duration */
 		1,					/* single CPU, no need for interleaving */
-		0,
+		null,
 	
 		/* video hardware */
-		256, 256, { 0, 256-1, 0, 192-1 },
-		0,
-		2, 0,
-		0,
+		256, 256, new rectangle( 0, 256-1, 0, 192-1 ),
+		null,
+		2, null,
+		null,
 	
 		VIDEO_TYPE_RASTER | VIDEO_SUPPORTS_DIRTY ,
-		0,
-		0,
+		null,
+		null,
 		0,
 		dotrikun_vh_screenrefresh,
 	
 		/* sound hardware */
 		0, 0, 0, 0
-	};
+	);
 	
 	
 	/***************************************************************************

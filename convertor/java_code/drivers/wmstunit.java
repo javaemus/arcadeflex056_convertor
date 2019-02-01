@@ -472,17 +472,17 @@ public class wmstunit
 	 *
 	 *************************************/
 	
-	static const struct MachineDriver machine_driver_tunit_adpcm =
-	{
+	static MachineDriver machine_driver_tunit_adpcm = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_TMS34010,
 				50000000/TMS34010_CLOCK_DIVIDER,	/* 50 MHz */
-				readmem,writemem,0,0,
+				readmem,writemem,null,null,
 				ignore_interrupt,0,
-				0,0,&cpu_config
-			},
+				null,null,cpu_config
+			),
 			SOUND_CPU_WILLIAMS_ADPCM
 		},
 		MKLA5_FPS, MKLA5_VBLANK_DURATION,	/* frames per second, vblank duration */
@@ -490,37 +490,37 @@ public class wmstunit
 		wms_tunit_init_machine,
 	
 		/* video hardware */
-		512, 288, { 56, 450, 0, 253 },
+		512, 288, new rectangle( 56, 450, 0, 253 ),
 	
-		0,
-		32768, 0,
-		0,
+		null,
+		32768, null,
+		null,
 	
 		VIDEO_TYPE_RASTER,
-		0,
+		null,
 		wms_tunit_vh_start,
 		wms_tunit_vh_stop,
 		wms_tunit_vh_screenrefresh,
 	
 		/* sound hardware */
 		SOUND_SUPPORTS_STEREO,0,0,0,
-		{
+		new MachineSound[] {
 			SOUND_WILLIAMS_ADPCM(REGION_SOUND1)
 		},
 		nvram_handler
-	};
+	);
 	
-	static const struct MachineDriver machine_driver_tunit_dcs =
-	{
+	static MachineDriver machine_driver_tunit_dcs = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_TMS34010,
 				50000000/TMS34010_CLOCK_DIVIDER,	/* 50 MHz */
-				readmem,writemem,0,0,
+				readmem,writemem,null,null,
 				ignore_interrupt,0,
-				0,0,&cpu_config
-			},
+				null,null,cpu_config
+			),
 			SOUND_CPU_WILLIAMS_DCS
 		},
 		MKLA5_FPS, MKLA5_VBLANK_DURATION,	/* frames per second, vblank duration */
@@ -528,25 +528,25 @@ public class wmstunit
 		wms_tunit_init_machine,
 	
 		/* video hardware */
-		512, 288, { 56, 450, 0, 253 },
+		512, 288, new rectangle( 56, 450, 0, 253 ),
 	
-		0,
-		32768, 0,
-		0,
+		null,
+		32768, null,
+		null,
 	
 		VIDEO_TYPE_RASTER,
-		0,
+		null,
 		wms_tunit_vh_start,
 		wms_tunit_vh_stop,
 		wms_tunit_vh_screenrefresh,
 	
 		/* sound hardware */
 		0,0,0,0,
-		{
+		new MachineSound[] {
 			SOUND_WILLIAMS_DCS
 		},
 		nvram_handler
-	};
+	);
 	
 	
 	

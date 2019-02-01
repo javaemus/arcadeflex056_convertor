@@ -340,22 +340,22 @@ public class vastar
 	
 	
 	
-	static const struct MachineDriver machine_driver_vastar =
-	{
+	static MachineDriver machine_driver_vastar = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_Z80,
 				3072000,	/* 3.072 MHz ???? */
-				readmem,writemem,0,writeport,
+				readmem,writemem,null,writeport,
 				nmi_interrupt,1
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_Z80,
 				3072000,	/* 3.072 MHz ???? */
 				cpu2_readmem,cpu2_writemem,cpu2_readport,cpu2_writeport,
 				interrupt,4	/* ??? */
-			}
+			)
 		},
 		60, DEFAULT_60HZ_VBLANK_DURATION,	/* frames per second, vblank duration */
 		10,	/* 10 CPU slices per frame - seems enough to ensure proper */
@@ -363,26 +363,26 @@ public class vastar
 		vastar_init_machine,
 	
 		/* video hardware */
-		32*8, 32*8, { 0*8, 32*8-1, 2*8, 30*8-1 },
+		32*8, 32*8, new rectangle( 0*8, 32*8-1, 2*8, 30*8-1 ),
 		gfxdecodeinfo,
-		256, 0,
+		256, null,
 		palette_RRRR_GGGG_BBBB_convert_prom,
 	
 		VIDEO_TYPE_RASTER,
-		0,
+		null,
 		vastar_vh_start,
-		0,
+		null,
 		vastar_vh_screenrefresh,
 	
 		/* sound hardware */
 		0,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_AY8910,
-				&ay8910_interface
-			}
+				ay8910_interface
+			)
 		}
-	};
+	);
 	
 	
 	

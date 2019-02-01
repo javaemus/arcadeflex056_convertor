@@ -1144,52 +1144,52 @@ public class segar
 		astrob_speech_sh_update
 	};
 	
-	static const struct MachineDriver machine_driver_astrob =
-	{
+	static MachineDriver machine_driver_astrob = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_Z80,
 				3867120,    /* 3.86712 MHz ??? */
 				readmem,writemem,readport,astrob_writeport,
 				segar_interrupt,1
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_I8035 | CPU_AUDIO_CPU,
 				3120000/15,    /* 3.12MHz crystal ??? */
-				speech_readmem,speech_writemem,0,0,
+				speech_readmem,speech_writemem,null,null,
 				ignore_interrupt,1
-			}
+			)
 		},
 		60, DEFAULT_60HZ_VBLANK_DURATION,       /* frames per second, vblank duration */
 		1,
-		0,
+		null,
 	
 		/* video hardware */
-		32*8, 32*8, { 0*8, 32*8-1, 0*8, 28*8-1 },
+		32*8, 32*8, new rectangle( 0*8, 32*8-1, 0*8, 28*8-1 ),
 		gfxdecodeinfo,
 		16*4+1,16*4+1,      // 16 2-bit colors + 1 transparent black
 		segar_init_colors,
 	
 		VIDEO_TYPE_RASTER,
-		0,
+		null,
 		segar_vh_start,
 		generic_vh_stop,
 		segar_vh_screenrefresh,
 	
 		/* sound hardware */
 		0,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_CUSTOM,
-				&astrob_custom_interface
-			},
-			{
+				astrob_custom_interface
+			),
+			new MachineSound(
 				SOUND_SAMPLES,
-				&astrob_samples_interface
-			}
+				astrob_samples_interface
+			)
 		}
-	};
+	);
 	
 	static struct Samplesinterface spaceod_samples_interface =
 	{
@@ -1198,42 +1198,42 @@ public class segar
 		spaceod_sample_names
 	};
 	
-	static const struct MachineDriver machine_driver_spaceod =
-	{
+	static MachineDriver machine_driver_spaceod = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_Z80,
 				3867120,    /* 3.86712 MHz ??? */
 				readmem,writemem,readport,spaceod_writeport,
 				segar_interrupt,1
-			}
+			)
 		},
 		60, DEFAULT_60HZ_VBLANK_DURATION,       /* frames per second, vblank duration */
 		1,
-		0,
+		null,
 	
 		/* video hardware */
-		32*8, 32*8, { 0*8, 32*8-1, 0*8, 28*8-1 },
+		32*8, 32*8, new rectangle( 0*8, 32*8-1, 0*8, 28*8-1 ),
 		spaceod_gfxdecodeinfo,
 		16*4*2+1,16*4*2+1,          // 16 2-bit colors for foreground, 1 6-bit color for background
 		segar_init_colors,
 	
 		VIDEO_TYPE_RASTER,
-		0,
+		null,
 		spaceod_vh_start,
 		spaceod_vh_stop,
 		spaceod_vh_screenrefresh,
 	
 		/* sound hardware */
 		0,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_SAMPLES,
-				&spaceod_samples_interface
-			}
+				spaceod_samples_interface
+			)
 		}
-	};
+	);
 	
 	static struct Samplesinterface samples_interface_005 =
 	{
@@ -1242,42 +1242,42 @@ public class segar
 		s005_sample_names
 	};
 	
-	static const struct MachineDriver machine_driver_005 =
-	{
+	static MachineDriver machine_driver_005 = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_Z80,
 				3867120,    /* 3.86712 MHz ??? */
 				readmem,writemem,readport,writeport_005,
 				segar_interrupt,1
-			}
+			)
 		},
 		60, DEFAULT_60HZ_VBLANK_DURATION,       /* frames per second, vblank duration */
 		1,
-		0,
+		null,
 	
 		/* video hardware */
-		32*8, 32*8, { 0*8, 32*8-1, 0*8, 28*8-1 },
+		32*8, 32*8, new rectangle( 0*8, 32*8-1, 0*8, 28*8-1 ),
 		gfxdecodeinfo,
 		16*4+1,16*4+1,      // 16 2-bit colors for foreground and background
 		segar_init_colors,
 	
 		VIDEO_TYPE_RASTER,
-		0,
+		null,
 		segar_vh_start,
 		generic_vh_stop,
 		segar_vh_screenrefresh,
 	
 		/* sound hardware */
 		0,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_SAMPLES,
-				&samples_interface_005
-			}
+				samples_interface_005
+			)
 		}
-	};
+	);
 	
 	static struct Samplesinterface monsterb_samples_interface =
 	{
@@ -1301,87 +1301,87 @@ public class segar
 		{ {0.5,0.5,0.5,0.5,0.5,0.5} }  /* decay times of voices */
 	};
 	
-	static const struct MachineDriver machine_driver_monsterb =
-	{
+	static MachineDriver machine_driver_monsterb = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_Z80,
 				3867120,    /* 3.86712 MHz ??? */
 				readmem,writemem,readport,monsterb_writeport,
 				segar_interrupt,1
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_N7751 | CPU_AUDIO_CPU,
 				6000000/15,    /* 6MHz crystal */
 				monsterb_7751_readmem,monsterb_7751_writemem,monsterb_7751_readport,monsterb_7751_writeport,
 				ignore_interrupt,1
-			}
+			)
 		},
 		60, DEFAULT_60HZ_VBLANK_DURATION,       /* frames per second, vblank duration */
 		1,
-		0,
+		null,
 	
 		/* video hardware */
-		32*8, 32*8, { 0*8, 32*8-1, 0*8, 28*8-1 },
+		32*8, 32*8, new rectangle( 0*8, 32*8-1, 0*8, 28*8-1 ),
 		monsterb_gfxdecodeinfo,
 		16*4*2+1,16*4*2+1,          // 16 2-bit colors for foreground and background
 		segar_init_colors,
 	
 		VIDEO_TYPE_RASTER,
-		0,
+		null,
 		monsterb_vh_start,
 		generic_vh_stop,
 		monsterb_vh_screenrefresh,
 	
 		/* sound hardware */
 		0,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_TMS36XX,
-				&monsterb_tms3617_interface
-			},
-			{
+				monsterb_tms3617_interface
+			),
+			new MachineSound(
 				SOUND_SAMPLES,
-				&monsterb_samples_interface
-			},
-			{
+				monsterb_samples_interface
+			),
+			new MachineSound(
 				SOUND_DAC,
-				&monsterb_dac_interface
-			}
+				monsterb_dac_interface
+			)
 		}
-	};
+	);
 	
-	static const struct MachineDriver machine_driver_pignewt =
-	{
+	static MachineDriver machine_driver_pignewt = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_Z80,
 				3867120,    /* 3.86712 MHz ??? */
 				readmem,writemem,readport,pignewt_writeport,
 				segar_interrupt,1
-			}
+			)
 		},
 		60, DEFAULT_60HZ_VBLANK_DURATION,       /* frames per second, vblank duration */
 		1,
-		0,
+		null,
 	
 		/* video hardware */
-		32*8, 32*8, { 0*8, 32*8-1, 0*8, 28*8-1 },
+		32*8, 32*8, new rectangle( 0*8, 32*8-1, 0*8, 28*8-1 ),
 		monsterb_gfxdecodeinfo,
 		16*4*2+1,16*4*2+1,          // 16 2-bit colors for foreground and background
 		segar_init_colors,
 	
 		VIDEO_TYPE_RASTER,
-		0,
+		null,
 		monsterb_vh_start,
 		generic_vh_stop,
 		sindbadm_vh_screenrefresh,
 	
 		/* sound hardware */
 		0,0,0,0
-	};
+	);
 	
 	
 	static struct SN76496interface sn76496_interface =
@@ -1391,48 +1391,48 @@ public class segar
 		{ 100, 100 }
 	};
 	
-	static const struct MachineDriver machine_driver_sindbadm =
-	{
+	static MachineDriver machine_driver_sindbadm = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_Z80,
 				3072000,    /* 3.072 MHz ? */
 				sindbadm_readmem,sindbadm_writemem,readport,sindbadm_writeport,
 				segar_interrupt,1
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_Z80 | CPU_AUDIO_CPU,
 				4000000,    /* 4 MHz ? - see system1.c */
-				sindbadm_sound_readmem,sindbadm_sound_writemem,0,0,
+				sindbadm_sound_readmem,sindbadm_sound_writemem,null,null,
 				interrupt,4		     /* NMIs are caused by the main CPU */
-			}
+			)
 		},
 		60, DEFAULT_60HZ_VBLANK_DURATION,       /* frames per second, vblank duration */
 		1,      /* 1 CPU slice per frame - interleaving is forced when a sound command is written */
-		0,
+		null,
 	
 		/* video hardware */
-		32*8, 32*8, { 0*8, 32*8-1, 0*8, 28*8-1 },
+		32*8, 32*8, new rectangle( 0*8, 32*8-1, 0*8, 28*8-1 ),
 		monsterb_gfxdecodeinfo,
 		16*4*2+1,16*4*2+1,          // 16 2-bit colors for foreground and background
 		segar_init_colors,
 	
 		VIDEO_TYPE_RASTER,
-		0,
+		null,
 		monsterb_vh_start,
 		generic_vh_stop,
 		sindbadm_vh_screenrefresh,
 	
 		/* sound hardware */
 		0,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_SN76496,
-				&sn76496_interface
-			}
+				sn76496_interface
+			)
 		}
-	};
+	);
 	
 	
 	

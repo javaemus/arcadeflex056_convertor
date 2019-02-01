@@ -194,49 +194,49 @@ public class suprloco
 	
 	
 	
-	static const struct MachineDriver machine_driver_suprloco =
-	{
+	static MachineDriver machine_driver_suprloco = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_Z80,
 				4000000,	/* 4 MHz (?) */
-				readmem,writemem,0,0,
+				readmem,writemem,null,null,
 				interrupt,1
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_Z80 | CPU_AUDIO_CPU,
 				4000000,
-				sound_readmem,sound_writemem,0,0,
+				sound_readmem,sound_writemem,null,null,
 				interrupt,4			/* NMIs are caused by the main CPU */
-			},
+			),
 		},
 		60, 5000,           /* frames per second, vblank duration */
 		1,					/* single CPU, no need for interleaving */
-		0,
+		null,
 	
 		/* video hardware */
 		32*8, 32*8,				/* screen_width, screen_height */
 		{ 1*8, 31*8-1, 0*8, 28*8-1 },			/* struct rectangle visible_area */
 		gfxdecodeinfo,				/* GfxDecodeInfo */
-		512+256, 0,
+		512+256, null,
 		suprloco_vh_convert_color_prom,		/* convert color prom routine */
 	
 		VIDEO_TYPE_RASTER,
-		0,							/* vh_init routine */
+		null,							/* vh_init routine */
 		suprloco_vh_start,			/* vh_start routine */
 		0,			/* vh_stop routine */
 		suprloco_vh_screenrefresh,	/* vh_update routine */
 	
 		/* sound hardware */
 		0,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_SN76496,
-				&sn76496_interface
-			}
+				sn76496_interface
+			)
 		}
-	};
+	);
 	
 	
 	/***************************************************************************

@@ -518,113 +518,113 @@ public class bloodbro
 	/* Parameters: YM3812 frequency, Oki frequency, Oki memory region */
 	SEIBU_SOUND_SYSTEM_YM3812_HARDWARE(14318180/4,8000,REGION_SOUND1);
 	
-	static const struct MachineDriver machine_driver_bloodbro =
-	{
-		{
-			{
+	static MachineDriver machine_driver_bloodbro = new MachineDriver
+	(
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_M68000,
 				10000000, /* 10 MHz */
-				readmem_cpu,writemem_cpu,0,0,
+				readmem_cpu,writemem_cpu,null,null,
 				m68_level4_irq,1
-			},
-			{
+			),
+			new MachineCPU(
 				SEIBU_SOUND_SYSTEM_CPU(14318180/4)
-			},
+			),
 		},
 		60, DEFAULT_REAL_60HZ_VBLANK_DURATION,
 		1,	/* CPU slices per frame */
 		seibu_sound_init_1, /* init machine */
 	
 		/* video hardware */
-		32*8, 32*8, { 0*8, 32*8-1, 2*8, 30*8-1 },
+		32*8, 32*8, new rectangle( 0*8, 32*8-1, 2*8, 30*8-1 ),
 		bloodbro_gfxdecodeinfo,
-		2048, 0,
-		0,
+		2048, null,
+		null,
 	
 		VIDEO_TYPE_RASTER,
-		0,
+		null,
 		bloodbro_vh_start,
-		0,
+		null,
 		bloodbro_vh_screenrefresh,
 	
 		/* sound hardware */
 		0,0,0,0,
-		{
+		new MachineSound[] {
 			SEIBU_SOUND_SYSTEM_YM3812_INTERFACE
 		}
-	};
+	);
 	
-	static const struct MachineDriver machine_driver_skysmash =
-	{
-		{
-			{
+	static MachineDriver machine_driver_skysmash = new MachineDriver
+	(
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_M68000,
 				10000000, /* 10 MHz */
-				readmem_cpu,writemem_cpu,0,0,
+				readmem_cpu,writemem_cpu,null,null,
 				m68_level2_irq,1
-			},
-			{
+			),
+			new MachineCPU(
 				SEIBU_SOUND_SYSTEM_CPU(14318180/4)
-			},
+			),
 		},
 		60, DEFAULT_REAL_60HZ_VBLANK_DURATION,
 		1,	/* CPU slices per frame */
 		seibu_sound_init_1, /* init machine */
 	
 		/* video hardware */
-		32*8, 32*8, { 0*8, 32*8-1, 2*8, 30*8-1 },
+		32*8, 32*8, new rectangle( 0*8, 32*8-1, 2*8, 30*8-1 ),
 		bloodbro_gfxdecodeinfo,
-		2048,0,
-		0,
+		2048,null,
+		null,
 	
 		VIDEO_TYPE_RASTER,
-		0,
+		null,
 		bloodbro_vh_start,
-		0,
+		null,
 		skysmash_vh_screenrefresh,
 	
 		/* sound hardware */
 		0,0,0,0,
-		{
+		new MachineSound[] {
 			SEIBU_SOUND_SYSTEM_YM3812_INTERFACE
 		}
-	};
+	);
 	
-	static const struct MachineDriver machine_driver_weststry =
-	{
-		{
-			{
+	static MachineDriver machine_driver_weststry = new MachineDriver
+	(
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_M68000,
 				10000000, /* 10 MHz */
-				weststry_readmem_cpu,weststry_writemem_cpu,0,0,
+				weststry_readmem_cpu,weststry_writemem_cpu,null,null,
 				m68_level6_irq,1
-			},
-			{
+			),
+			new MachineCPU(
 				SEIBU_SOUND_SYSTEM_CPU(14318180/4)
-			},
+			),
 		},
 		60, DEFAULT_REAL_60HZ_VBLANK_DURATION,
 		1,	/* CPU slices per frame */
 		seibu_sound_init_1, /* init machine */
 	
 		/* video hardware */
-		256, 256, { 0, 255, 16, 239 },
+		256, 256, new rectangle( 0, 255, 16, 239 ),
 		weststry_gfxdecodeinfo,
-		1024, 0,
-		0,
+		1024, null,
+		null,
 	
 		VIDEO_TYPE_RASTER,
-		0,
+		null,
 		bloodbro_vh_start,
-		0,
+		null,
 		weststry_vh_screenrefresh,
 	
 		/* sound hardware */
 		0,0,0,0,
-		{
+		new MachineSound[] {
 			SEIBU_SOUND_SYSTEM_YM3812_INTERFACE
 		}
-	};
+	);
 	
 	
 	

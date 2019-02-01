@@ -355,103 +355,103 @@ public class lkage
 	
 	
 	
-	static const struct MachineDriver machine_driver_lkage =
-	{
-		{
-			{
+	static MachineDriver machine_driver_lkage = new MachineDriver
+	(
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_Z80 | CPU_16BIT_PORT,
 				6000000,	/* ??? */
 				readmem,writemem,readport,0,
 				interrupt,1
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_Z80 | CPU_AUDIO_CPU,
 				6000000,	/* ??? */
-				readmem_sound,writemem_sound,0,0,
+				readmem_sound,writemem_sound,null,null,
 				ignore_interrupt,0	/* NMIs are triggered by the main CPU */
 									/* IRQs are triggered by the YM2203 */
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_M68705,
 				4000000/2,	/* ??? */
-				m68705_readmem,m68705_writemem,0,0,
+				m68705_readmem,m68705_writemem,null,null,
 				ignore_interrupt,0
-			}
+			)
 		},
 		60,DEFAULT_REAL_60HZ_VBLANK_DURATION,
 		1, /* CPU slices */
-		0, /* init machine */
+		null, /* init machine */
 	
 		/* video hardware */
-		32*8, 32*8, { 0*8, 32*8-1, 2*8, 30*8-1 },
+		32*8, 32*8, new rectangle( 0*8, 32*8-1, 2*8, 30*8-1 ),
 		gfxdecodeinfo,
-		176, 0,
+		176, null,
 			/*
 				there are actually 1024 colors in paletteram, however, we use a 100% correct
 				reduced "virtual palette" to achieve some optimizations in the video driver.
 			*/
-		0,
+		null,
 		VIDEO_TYPE_RASTER,
-		0,
+		null,
 		lkage_vh_start,
 		0,
 		lkage_vh_screenrefresh,
 	
 		/* sound hardware */
 		0,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_YM2203,
-				&ym2203_interface
-			}
+				ym2203_interface
+			)
 		}
-	};
+	);
 	
-	static const struct MachineDriver machine_driver_lkageb =
-	{
-		{
-			{
+	static MachineDriver machine_driver_lkageb = new MachineDriver
+	(
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_Z80 | CPU_16BIT_PORT,
 				6000000,	/* ??? */
 				readmem,writemem,readport,0,
 				interrupt,1
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_Z80 | CPU_AUDIO_CPU,
 				6000000,	/* ??? */
-				readmem_sound,writemem_sound,0,0,
+				readmem_sound,writemem_sound,null,null,
 				ignore_interrupt,0	/* NMIs are triggered by the main CPU */
 									/* IRQs are triggered by the YM2203 */
-			}
+			)
 		},
 		60,DEFAULT_REAL_60HZ_VBLANK_DURATION,
 		1, /* CPU slices */
-		0, /* init machine */
+		null, /* init machine */
 	
 		/* video hardware */
-		32*8, 32*8, { 0*8, 32*8-1, 2*8, 30*8-1 },
+		32*8, 32*8, new rectangle( 0*8, 32*8-1, 2*8, 30*8-1 ),
 		gfxdecodeinfo,
-		176, 0,
+		176, null,
 			/*
 				there are actually 1024 colors in paletteram, however, we use a 100% correct
 				reduced "virtual palette" to achieve some optimizations in the video driver.
 			*/
-		0,
+		null,
 		VIDEO_TYPE_RASTER,
-		0,
+		null,
 		lkage_vh_start,
 		0,
 		lkage_vh_screenrefresh,
 	
 		/* sound hardware */
 		0,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_YM2203,
-				&ym2203_interface
-			}
+				ym2203_interface
+			)
 		}
-	};
+	);
 	
 	
 	

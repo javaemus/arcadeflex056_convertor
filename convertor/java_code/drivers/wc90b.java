@@ -379,56 +379,56 @@ public class wc90b
 		{ irqhandler }
 	};
 	
-	static const struct MachineDriver machine_driver_wc90b =
-	{
+	static MachineDriver machine_driver_wc90b = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_Z80,
 				6000000,	/* 6.0 MHz ??? */
-				wc90b_readmem1, wc90b_writemem1,0,0,
+				wc90b_readmem1, wc90b_writemem1,null,null,
 				interrupt,1
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_Z80,
 				6000000,	/* 6.0 MHz ??? */
-				wc90b_readmem2, wc90b_writemem2,0,0,
+				wc90b_readmem2, wc90b_writemem2,null,null,
 				interrupt,1
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_Z80 | CPU_AUDIO_CPU,
 				4000000,	/* 4 MHz ???? */
-				sound_readmem,sound_writemem,0,0,
+				sound_readmem,sound_writemem,null,null,
 				ignore_interrupt,0	/* NMIs are triggered by the YM2203 */
 									/* IRQs are triggered by the main CPU */
-			}
+			)
 	
 		},
 		60, DEFAULT_60HZ_VBLANK_DURATION,	/* frames per second, vblank duration */
 		1,	/* 1 CPU slice per frame - interleaving is forced when a sound command is written */
-		0,
+		null,
 	
 		/* video hardware */
-		32*8, 32*8, { 0*8, 32*8-1, 2*8, 30*8-1 },
+		32*8, 32*8, new rectangle( 0*8, 32*8-1, 2*8, 30*8-1 ),
 		gfxdecodeinfo,
-		1024, 0,
-		0,
+		1024, null,
+		null,
 	
 		VIDEO_TYPE_RASTER,
-		0,
+		null,
 		wc90b_vh_start,
-		0,
+		null,
 		wc90b_vh_screenrefresh,
 	
 		/* sound hardware */
 		0,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_YM2203,
-				&ym2203_interface
-			}
+				ym2203_interface
+			)
 		}
-	};
+	);
 	
 	static RomLoadPtr rom_wc90b = new RomLoadPtr(){ public void handler(){ 
 		ROM_REGION( 0x20000, REGION_CPU1, 0 );/* 128k for code */

@@ -1423,109 +1423,109 @@ public class tnzs
 	};
 	
 	
-	static const struct MachineDriver machine_driver_arknoid2 =
-	{
+	static MachineDriver machine_driver_arknoid2 = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_Z80,
 				8000000,	/* ?? Hz (only crystal is 12MHz) */
 							/* 8MHz is wrong, but extrmatn doesn't work properly at 6MHz */
-				readmem,writemem,0,0,
+				readmem,writemem,0,null,
 				tnzs_interrupt,1
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_Z80,
 				6000000,	/* ?? Hz */
-				sub_readmem,sub_writemem,0,0,
+				sub_readmem,sub_writemem,null,null,
 				interrupt,1
-			},
+			),
 		},
 		60, DEFAULT_60HZ_VBLANK_DURATION,		/* video frequency (Hz), duration */
 		100,							/* cpu slices */
 		tnzs_init_machine,
 	
 		/* video hardware */
-		32*8, 32*8, { 0*8, 32*8-1, 2*8, 30*8-1 },
+		32*8, 32*8, new rectangle( 0*8, 32*8-1, 2*8, 30*8-1 ),
 		arknoid2_gfxdecodeinfo,
-		512, 0,
+		512, null,
 		arknoid2_vh_convert_color_prom,
 	
 		VIDEO_TYPE_RASTER,
-		0,
-		0,
-		0,
+		null,
+		null,
+		null,
 		tnzs_vh_screenrefresh,
 	
 		/* sound hardware */
 		0,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_YM2203,
-				&ym2203_interface
-			}
+				ym2203_interface
+			)
 		}
-	};
+	);
 	
-	static const struct MachineDriver machine_driver_drtoppel =
-	{
+	static MachineDriver machine_driver_drtoppel = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_Z80,
 				12000000/2,		/* 6.0 MHz ??? - Main board Crystal is 12MHz */
-				readmem,writemem,0,0,
+				readmem,writemem,null,null,
 				tnzs_interrupt,1
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_Z80,
 				12000000/2,		/* 6.0 MHz ??? - Main board Crystal is 12MHz */
-				sub_readmem,sub_writemem,0,0,
+				sub_readmem,sub_writemem,null,null,
 				interrupt,1
-			},
+			),
 		},
 		60, DEFAULT_60HZ_VBLANK_DURATION,		/* video frequency (Hz), duration */
 		100,							/* cpu slices */
 		tnzs_init_machine,
 	
 		/* video hardware */
-		32*8, 32*8, { 0*8, 32*8-1, 2*8, 30*8-1 },
+		32*8, 32*8, new rectangle( 0*8, 32*8-1, 2*8, 30*8-1 ),
 		tnzs_gfxdecodeinfo,
-		512, 0,
+		512, null,
 		arknoid2_vh_convert_color_prom,
 	
 		VIDEO_TYPE_RASTER,
-		0,
-		0,
-		0,
+		null,
+		null,
+		null,
 		tnzs_vh_screenrefresh,
 	
 		/* sound hardware */
 		0,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_YM2203,
-				&ym2203_interface
-			}
+				ym2203_interface
+			)
 		}
-	};
+	);
 	
-	static const struct MachineDriver machine_driver_tnzs =
-	{
+	static MachineDriver machine_driver_tnzs = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_Z80,
 				12000000/2,		/* 6.0 MHz ??? - Main board Crystal is 12MHz */
-				readmem,writemem,0,0,
+				readmem,writemem,null,null,
 				tnzs_interrupt,1
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_Z80,
 				12000000/2,		/* 6.0 MHz ??? - Main board Crystal is 12MHz */
-				sub_readmem,sub_writemem,0,0,
+				sub_readmem,sub_writemem,null,null,
 				interrupt,1
-			}
+			)
 		},
 		60, DEFAULT_60HZ_VBLANK_DURATION,	/* frames per second, vblank duration */
 		200,	/* 100 CPU slices per frame - an high value to ensure proper */
@@ -1533,49 +1533,49 @@ public class tnzs
 		tnzs_init_machine,
 	
 		/* video hardware */
-		32*8, 32*8, { 0*8, 32*8-1, 2*8, 30*8-1 },
+		32*8, 32*8, new rectangle( 0*8, 32*8-1, 2*8, 30*8-1 ),
 		tnzs_gfxdecodeinfo,
-		512, 0,
-		0,
+		512, null,
+		null,
 	
 		VIDEO_TYPE_RASTER,
-		0,
-		0,
-		0,
+		null,
+		null,
+		null,
 		tnzs_vh_screenrefresh,
 	
 		/* sound hardware */
 		0,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_YM2203,
-				&ym2203_interface
-			}
+				ym2203_interface
+			)
 		}
-	};
+	);
 	
-	static const struct MachineDriver machine_driver_tnzsb =
-	{
+	static MachineDriver machine_driver_tnzsb = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_Z80,
 				6000000,		/* 6 MHz(?) */
-				readmem,writemem,0,0,
+				readmem,writemem,null,null,
 				tnzs_interrupt,1
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_Z80,
 				6000000,		/* 6 MHz(?) */
-				tnzsb_readmem1,tnzsb_writemem1,0,0,
+				tnzsb_readmem1,tnzsb_writemem1,null,null,
 				interrupt,1
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_Z80,
 				4000000,		/* 4 MHz??? */
 				tnzsb_readmem2,tnzsb_writemem2,tnzsb_readport,tnzsb_writeport,
 				ignore_interrupt,1
-			}
+			)
 		},
 		60, DEFAULT_60HZ_VBLANK_DURATION,	/* frames per second, vblank duration */
 		200,	/* 100 CPU slices per frame - an high value to ensure proper */
@@ -1583,43 +1583,43 @@ public class tnzs
 		tnzs_init_machine,
 	
 		/* video hardware */
-		32*8, 32*8, { 0*8, 32*8-1, 2*8, 30*8-1 },
+		32*8, 32*8, new rectangle( 0*8, 32*8-1, 2*8, 30*8-1 ),
 		tnzs_gfxdecodeinfo,
-		512, 0,
-		0,
+		512, null,
+		null,
 	
 		VIDEO_TYPE_RASTER,
-		0,
-		0,
-		0,
+		null,
+		null,
+		null,
 		tnzs_vh_screenrefresh,
 	
 		/* sound hardware */
 		0,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_YM2203,
-				&ym2203b_interface
-			}
+				ym2203b_interface
+			)
 		}
-	};
+	);
 	
-	static const struct MachineDriver machine_driver_insectx =
-	{
+	static MachineDriver machine_driver_insectx = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_Z80,
 				6000000,	/* 6 MHz(?) */
-				readmem,writemem,0,0,
+				readmem,writemem,null,null,
 				tnzs_interrupt,1
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_Z80,
 				6000000,	/* 6 MHz(?) */
-				sub_readmem,sub_writemem,0,0,
+				sub_readmem,sub_writemem,null,null,
 				interrupt,1
-			}
+			)
 		},
 		60, DEFAULT_60HZ_VBLANK_DURATION,	/* frames per second, vblank duration */
 		200,	/* 100 CPU slices per frame - an high value to ensure proper */
@@ -1627,42 +1627,42 @@ public class tnzs
 		tnzs_init_machine,
 	
 		/* video hardware */
-		32*8, 32*8, { 0*8, 32*8-1, 2*8, 30*8-1 },
+		32*8, 32*8, new rectangle( 0*8, 32*8-1, 2*8, 30*8-1 ),
 		insectx_gfxdecodeinfo,
-		512, 0,
-		0,
+		512, null,
+		null,
 	
 		VIDEO_TYPE_RASTER,
-		0,
-		0,
-		0,
+		null,
+		null,
+		null,
 		tnzs_vh_screenrefresh,
 	
 		/* sound hardware */
 		0,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_YM2203,
-				&ym2203_interface
-			}
+				ym2203_interface
+			)
 		}
-	};
+	);
 	
-	static const struct MachineDriver machine_driver_kageki =
-	{
-		{
-			{
+	static MachineDriver machine_driver_kageki = new MachineDriver
+	(
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_Z80,
 				6000000,		/* 12000000/2 ??? */
-				readmem, writemem, 0, 0,
+				readmem, writemem, null, null,
 				tnzs_interrupt, 1
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_Z80,
 				4000000,		/* 12000000/3 ??? */
-				kageki_sub_readmem, kageki_sub_writemem, 0, 0,
+				kageki_sub_readmem, kageki_sub_writemem, null, null,
 				interrupt, 1
-			}
+			)
 		},
 		60, DEFAULT_60HZ_VBLANK_DURATION,	/* frames per second, vblank duration */
 		200,	/* 200 CPU slices per frame - an high value to ensure proper */
@@ -1670,34 +1670,34 @@ public class tnzs
 		tnzs_init_machine,
 	
 		/* video hardware */
-		32*8, 32*8, { 0*8, 32*8-1, 2*8, 30*8-1 },
+		32*8, 32*8, new rectangle( 0*8, 32*8-1, 2*8, 30*8-1 ),
 		tnzs_gfxdecodeinfo,
-		512, 0,
-		0,
+		512, null,
+		null,
 	
 		VIDEO_TYPE_RASTER,
-		0,
-		0,
-		0,
+		null,
+		null,
+		null,
 		tnzs_vh_screenrefresh,
 	
 		/* sound hardware */
 		0, 0, 0, 0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_YM2203,
-				&kageki_ym2203_interface
-			},
-			{
+				kageki_ym2203_interface
+			),
+			new MachineSound(
 				SOUND_SAMPLES,
-				&samples_interface
-			},
-			{
+				samples_interface
+			),
+			new MachineSound(
 				SOUND_CUSTOM,
-				&custom_interface
-			}
+				custom_interface
+			)
 		}
-	};
+	);
 	
 	
 	

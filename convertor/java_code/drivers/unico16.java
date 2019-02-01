@@ -453,38 +453,38 @@ public class unico16
 									Burglar X
 	***************************************************************************/
 	
-	static const struct MachineDriver machine_driver_burglarx =
-	{
-		{
-			{
+	static MachineDriver machine_driver_burglarx = new MachineDriver
+	(
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_M68000,
 				16000000,
-				readmem_burglarx, writemem_burglarx,0,0,
+				readmem_burglarx, writemem_burglarx,null,null,
 				m68_level2_irq, 1
-			}
+			)
 		},
 		60,DEFAULT_60HZ_VBLANK_DURATION,
 		1,
 		init_machine_unico16,
 	
 		/* video hardware */
-		0x180, 0xe0, { 0, 0x180-1, 0, 0xe0-1 },
+		0x180, 0xe0, new rectangle( 0, 0x180-1, 0, 0xe0-1 ),
 		unico16_gfxdecodeinfo,
-		8192, 0,
-		0,
+		8192, null,
+		null,
 		VIDEO_TYPE_RASTER,
-		0,
+		null,
 		unico16_vh_start,
-		0,
+		null,
 		unico16_vh_screenrefresh,
 	
 		/* sound hardware */
 		SOUND_SUPPORTS_STEREO,0,0,0,
-		{
-			{	SOUND_YM3812,	&unico16_ym3812_intf	},
-			{	SOUND_OKIM6295, &unico16_m6295_intf		}
+		new MachineSound[] {
+			new MachineSound(	SOUND_YM3812,	unico16_ym3812_intf	),
+			new MachineSound(	SOUND_OKIM6295, unico16_m6295_intf		)
 		},
-	};
+	);
 	
 	
 	
@@ -498,38 +498,38 @@ public class unico16
 		unico16_has_lightgun = 1;
 	}
 	
-	static const struct MachineDriver machine_driver_zeropnt =
-	{
-		{
-			{
+	static MachineDriver machine_driver_zeropnt = new MachineDriver
+	(
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_M68000,
 				16000000,
-				readmem_zeropnt, writemem_zeropnt,0,0,
+				readmem_zeropnt, writemem_zeropnt,null,null,
 				m68_level2_irq, 1
-			}
+			)
 		},
 		60,DEFAULT_60HZ_VBLANK_DURATION,
 		1,
 		init_machine_zeropt,
 	
 		/* video hardware */
-		0x180, 0xe0, { 0, 0x180-1, 0, 0xe0-1 },
+		0x180, 0xe0, new rectangle( 0, 0x180-1, 0, 0xe0-1 ),
 		unico16_gfxdecodeinfo,
-		8192, 0,
-		0,
+		8192, null,
+		null,
 		VIDEO_TYPE_RASTER,
-		0,
+		null,
 		unico16_vh_start,
-		0,
+		null,
 		unico16_vh_screenrefresh,
 	
 		/* sound hardware */
 		SOUND_SUPPORTS_STEREO,0,0,0,
-		{
-			{	SOUND_YM3812,	&unico16_ym3812_intf	},
-			{	SOUND_OKIM6295, &unico16_m6295_intf		}
+		new MachineSound[] {
+			new MachineSound(	SOUND_YM3812,	unico16_ym3812_intf	),
+			new MachineSound(	SOUND_OKIM6295, unico16_m6295_intf		)
 		},
-	};
+	);
 	
 	
 	

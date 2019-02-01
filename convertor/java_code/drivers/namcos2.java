@@ -1114,37 +1114,37 @@ public class namcos2
 	/*															 */
 	/*************************************************************/
 	
-	static const struct MachineDriver machine_driver_default =
-	{
-		{
-			{
+	static MachineDriver machine_driver_default = new MachineDriver
+	(
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_M68000,
 				12288000,
-				readmem_master_default,writemem_master_default,0,0,
+				readmem_master_default,writemem_master_default,null,null,
 				namcos2_68k_master_vblank,1,
-				0,0
-			},
-			{
+				null,null
+			),
+			new MachineCPU(
 				CPU_M68000,
 				12288000,
-				readmem_slave_default,writemem_slave_default,0,0,
+				readmem_slave_default,writemem_slave_default,null,null,
 				namcos2_68k_slave_vblank,1,
-				0,0
-			},
-			{
+				null,null
+			),
+			new MachineCPU(
 				CPU_M6809, // Sound handling
 				3072000,
-				readmem_sound,writemem_sound,0,0,
+				readmem_sound,writemem_sound,null,null,
 				interrupt,2,
 				namcos2_sound_interrupt,120
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_HD63705, // I/O handling
 				2048000,
-				readmem_mcu,writemem_mcu,0,0,
+				readmem_mcu,writemem_mcu,null,null,
 				namcos2_mcu_interrupt,1,
-				0,0
-			}
+				null,null
+			)
 		},
 		60,
 		DEFAULT_REAL_60HZ_VBLANK_DURATION,
@@ -1152,67 +1152,67 @@ public class namcos2
 		namcos2_init_machine,
 	
 		/* video hardware */
-		36*8, 28*8, { 0*8, 36*8-1, 0*8, 28*8-1 },
+		36*8, 28*8, new rectangle( 0*8, 36*8-1, 0*8, 28*8-1 ),
 		gfxdecodeinfo,
-		VIRTUAL_PALETTE_BANKS*256, 0,	/* virtual palette (physical palette has 8192 colors) */
-		0,
+		VIRTUAL_PALETTE_BANKS*256, null,	/* virtual palette (physical palette has 8192 colors) */
+		null,
 		VIDEO_TYPE_RASTER | VIDEO_NEEDS_6BITS_PER_GUN,
 	
-		0,
+		null,
 		namcos2_vh_start,
-		0,
+		null,
 		namcos2_vh_update_default,
 	
 		/* sound hardware */
 		SOUND_SUPPORTS_STEREO,0,0,0,
 		/* Sound struct here */
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_C140,
-				&C140_interface
-			},
-			{
+				C140_interface
+			),
+			new MachineSound(
 				SOUND_YM2151,
-				&ym2151_interface
-			}
+				ym2151_interface
+			)
 		},
 	
 		/* NV RAM Support */
 		namcos2_nvram_handler
-	};
+	);
 	
 	
-	static const struct MachineDriver machine_driver_driving =
-	{
-		{
-			{
+	static MachineDriver machine_driver_driving = new MachineDriver
+	(
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_M68000,
 				12288000,
-				readmem_master_finallap,writemem_master_finallap,0,0,
+				readmem_master_finallap,writemem_master_finallap,null,null,
 				namcos2_68k_master_vblank,1,
-				0,0
-			},
-			{
+				null,null
+			),
+			new MachineCPU(
 				CPU_M68000,
 				12288000,
-				readmem_slave_finallap,writemem_slave_finallap,0,0,
+				readmem_slave_finallap,writemem_slave_finallap,null,null,
 				namcos2_68k_slave_vblank,1,
-				0,0
-			},
-			{
+				null,null
+			),
+			new MachineCPU(
 				CPU_M6809, // Sound handling
 				3072000,
-				readmem_sound,writemem_sound,0,0,
+				readmem_sound,writemem_sound,null,null,
 				interrupt,2,
 				namcos2_sound_interrupt,120
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_HD63705, // I/O handling
 				2048000,
-				readmem_mcu,writemem_mcu,0,0,
+				readmem_mcu,writemem_mcu,null,null,
 				namcos2_mcu_interrupt,1,
-				0,0
-			}
+				null,null
+			)
 		},
 		60,
 		DEFAULT_REAL_60HZ_VBLANK_DURATION,
@@ -1220,67 +1220,67 @@ public class namcos2
 		namcos2_init_machine,
 	
 		/* video hardware */
-		36*8, 28*8, { 0*8, 36*8-1, 0*8, 28*8-1 },
+		36*8, 28*8, new rectangle( 0*8, 36*8-1, 0*8, 28*8-1 ),
 		gfxdecodeinfo,
-		VIRTUAL_PALETTE_BANKS*256, 0,	/* virtual palette (physical palette has 8192 colors) */
-		0,
+		VIRTUAL_PALETTE_BANKS*256, null,	/* virtual palette (physical palette has 8192 colors) */
+		null,
 		VIDEO_TYPE_RASTER | VIDEO_NEEDS_6BITS_PER_GUN,
 	
-		0,
+		null,
 		namcos2_vh_start,
-		0,
+		null,
 		namcos2_vh_update_finallap,
 	
 		/* sound hardware */
 		SOUND_SUPPORTS_STEREO,0,0,0,
 		/* Sound struct here */
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_C140,
-				&C140_interface
-			},
-			{
+				C140_interface
+			),
+			new MachineSound(
 				SOUND_YM2151,
-				&ym2151_interface
-			}
+				ym2151_interface
+			)
 		},
 	
 		/* NV RAM Support */
 		namcos2_nvram_handler
-	};
+	);
 	
 	
-	static const struct MachineDriver machine_driver_metlhawk =
-	{
-		{
-			{
+	static MachineDriver machine_driver_metlhawk = new MachineDriver
+	(
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_M68000,
 				12288000,
-				readmem_master_metlhawk,writemem_master_metlhawk,0,0,
+				readmem_master_metlhawk,writemem_master_metlhawk,null,null,
 				namcos2_68k_master_vblank,1,
-				0,0
-			},
-			{
+				null,null
+			),
+			new MachineCPU(
 				CPU_M68000,
 				12288000,
-				readmem_slave_metlhawk,writemem_slave_metlhawk,0,0,
+				readmem_slave_metlhawk,writemem_slave_metlhawk,null,null,
 				namcos2_68k_slave_vblank,1,
-				0,0
-			},
-			{
+				null,null
+			),
+			new MachineCPU(
 				CPU_M6809, // Sound handling
 				3072000,
-				readmem_sound,writemem_sound,0,0,
+				readmem_sound,writemem_sound,null,null,
 				interrupt,2,
 				namcos2_sound_interrupt,120
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_HD63705, // I/O handling
 				2048000,
-				readmem_mcu,writemem_mcu,0,0,
+				readmem_mcu,writemem_mcu,null,null,
 				namcos2_mcu_interrupt,1,
-				0,0
-			}
+				null,null
+			)
 		},
 		60,
 		DEFAULT_REAL_60HZ_VBLANK_DURATION,
@@ -1288,34 +1288,34 @@ public class namcos2
 		namcos2_init_machine,
 	
 		/* video hardware */
-		36*8, 28*8, { 0*8, 36*8-1, 0*8, 28*8-1 },
+		36*8, 28*8, new rectangle( 0*8, 36*8-1, 0*8, 28*8-1 ),
 		gfxdecodeinfo,
-		VIRTUAL_PALETTE_BANKS*256, 0,	/* virtual palette (physical palette has 8192 colors) */
-		0,
+		VIRTUAL_PALETTE_BANKS*256, null,	/* virtual palette (physical palette has 8192 colors) */
+		null,
 		VIDEO_TYPE_RASTER | VIDEO_NEEDS_6BITS_PER_GUN,
 	
-		0,
+		null,
 		namcos2_vh_start,
-		0,
+		null,
 		namcos2_vh_update_default,
 	
 		/* sound hardware */
 		SOUND_SUPPORTS_STEREO,0,0,0,
 		/* Sound struct here */
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_C140,
-				&C140_interface
-			},
-			{
+				C140_interface
+			),
+			new MachineSound(
 				SOUND_YM2151,
-				&ym2151_interface
-			}
+				ym2151_interface
+			)
 		},
 	
 		/* NV RAM Support */
 		namcos2_nvram_handler
-	};
+	);
 	
 	
 	

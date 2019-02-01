@@ -225,43 +225,43 @@ public class zn
 		qsound_banksw_w( 0, 0 );
 	}
 	
-	static const struct MachineDriver machine_driver_znqs =
-	{
+	static MachineDriver machine_driver_znqs = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_PSXCPU,
 				33000000, /* 33MHz ?? */
-				znqs_readmem, znqs_writemem, 0, 0,
+				znqs_readmem, znqs_writemem, null, null,
 				ignore_interrupt, 1  /* ??? interrupts per frame */
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_Z80 | CPU_AUDIO_CPU,
 				8000000,  /* 8MHz ?? */
 				qsound_readmem, qsound_writemem, qsound_readport, 0,
 				qsound_interrupt, 4 /* 4 interrupts per frame ?? */
-			}
+			)
 		},
 		60, 0,
 		1,
 		znqs_init_machine,
 	
 		/* video hardware */
-		0x30*8+32*2, 0x1c*8+32*3, { 32, 32+0x30*8-1, 32+16, 32+16+0x1c*8-1 },
+		0x30*8+32*2, 0x1c*8+32*3, new rectangle( 32, 32+0x30*8-1, 32+16, 32+16+0x1c*8-1 ),
 		znqs_gfxdecodeinfo,
-		4096, 0,
-		0,
+		4096, null,
+		null,
 	
 		VIDEO_TYPE_RASTER,
-		0,
+		null,
 		znqs_vh_start,
 		znqs_vh_stop,
 		znqs_vh_screenrefresh,
 	
 		/* sound hardware */
 		SOUND_SUPPORTS_STEREO,0,0,0,
-		{ { SOUND_QSOUND, &qsound_interface } }
-	};
+		new MachineSound[] { new MachineSound( SOUND_QSOUND, qsound_interface ) }
+	);
 	
 	static InputPortPtr input_ports_zn = new InputPortPtr(){ public void handler() { 
 		PORT_START		/* IN0 */
@@ -849,36 +849,36 @@ public class zn
 		m_p_bridge_timer = NULL;
 	}
 	
-	static const struct MachineDriver machine_driver_zn =
-	{
+	static MachineDriver machine_driver_zn = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_PSXCPU,
 				33868800, /* 33MHz ?? */
-				zn_readmem, zn_writemem, 0, 0,
+				zn_readmem, zn_writemem, null, null,
 				ignore_interrupt,1 /* ??? interrupts per frame */
-			},
+			),
 		},
 		60, 0,
 		1,
 		zn_init_machine,
 	
 		/* video hardware */
-		256, 240, { 0, 255, 0, 239 },
-		0,
-		65536, 0,
+		256, 240, new rectangle( 0, 255, 0, 239 ),
+		null,
+		65536, null,
 		zn_init_palette,
 	
 		VIDEO_TYPE_RASTER,
-		0,
+		null,
 		zn_vh_start,
 		zn_vh_stop,
 		zn_vh_screenrefresh,
 	
 		/* sound hardware */
 		SOUND_SUPPORTS_STEREO,0,0,0,
-	};
+	);
 	
 	static RomLoadPtr rom_doapp = new RomLoadPtr(){ public void handler(){ 
 		ROM_REGION( 0x200400, REGION_CPU1, 0 );

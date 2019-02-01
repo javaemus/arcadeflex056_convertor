@@ -356,54 +356,54 @@ public class mexico86
 	
 	
 	#define MACHINEDRIVER(NAME) 														\
-	static const struct MachineDriver machine_driver_##NAME = 							\
-	{																					\
-		{																				\
-			{																			\
+	static MachineDriver machine_driver_##NAME = new MachineDriver\
+	(																					\
+		new MachineCPU[] {																				\
+			new MachineCPU(																			\
 				CPU_Z80,																\
 				6000000,		/* 6 MHz??? */											\
-				readmem,writemem,0,0,													\
+				readmem,writemem,null,null,													\
 				ignore_interrupt,0	/* IRQs are triggered by the 68705 */				\
-			},																			\
-			{																			\
+			),																			\
+			new MachineCPU(																			\
 				CPU_Z80,																\
 				6000000,		/* 6 MHz??? */											\
-				sound_readmem,sound_writemem,0,0,										\
+				sound_readmem,sound_writemem,null,null,										\
 				interrupt,1																\
-			},																			\
-			{																			\
+			),																			\
+			new MachineCPU(																			\
 				CPU_M68705,																\
 				4000000/2,	/* xtal is 4MHz (????) I think it's divided by 2 internally */	\
-				m68705_readmem,m68705_writemem,0,0,										\
+				m68705_readmem,m68705_writemem,null,null,										\
 				mexico86_m68705_interrupt,2												\
-			}																			\
+			)																			\
 		},																				\
 		60, DEFAULT_60HZ_VBLANK_DURATION,  /* frames per second, vblank duration */		\
 		100,	/* 100 CPU slices per frame - an high value to ensure proper */			\
 				/* synchronization of the CPUs */										\
-		0,																				\
+		null,																				\
 																						\
 		/* video hardware */															\
-		32*8, 32*8, { 0*8, 32*8-1, 2*8, 30*8-1 },										\
+		32*8, 32*8, new rectangle( 0*8, 32*8-1, 2*8, 30*8-1 ),										\
 		gfxdecodeinfo,																	\
-		256, 0,																			\
+		256, null,																			\
 		palette_RRRR_GGGG_BBBB_convert_prom,											\
 																						\
 		VIDEO_TYPE_RASTER,																\
-		0,																				\
-		0,																				\
-		0,																				\
+		null,																				\
+		null,																				\
+		null,																				\
 		NAME##_vh_screenrefresh,														\
 																						\
 		/* sound hardware */															\
 		0,0,0,0,																		\
-		{																				\
-			{																			\
+		new MachineSound[] {																				\
+			new MachineSound(																			\
 				SOUND_YM2203,															\
-				&ym2203_interface														\
-			}																			\
+				ym2203_interface														\
+			)																			\
 		}																				\
-	};
+	);
 	
 	
 	MACHINEDRIVER( mexico86 )

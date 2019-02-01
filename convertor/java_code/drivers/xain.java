@@ -331,59 +331,59 @@ public class xain
 	
 	
 	
-	static const struct MachineDriver machine_driver_xsleena =
-	{
-		{
-			{
+	static MachineDriver machine_driver_xsleena = new MachineDriver
+	(
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_M6809,
 				2000000,	/* 2 MHz ??? */
-				readmem,writemem,0,0,
+				readmem,writemem,null,null,
 				xainA_interrupt,4	/* wrong, this is just a hack */
 									/* IRQs are caused by CPU B */
 									/* FIRQs are caused by ? */
 									/* NMIs are caused by... vblank it seems, but it checks */
 									/* the vblank bit before RTI, and there are other places in */
 									/* the code that check that bit, so it would cause lockups */
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_M6809,
 				2000000,	/* 2 MHz ??? */
-				readmemB,writememB,0,0,
+				readmemB,writememB,null,null,
 				ignore_interrupt,0	/* IRQs are caused by CPU A */
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_M6809 | CPU_AUDIO_CPU,
 				2000000,	/* 2 MHz ??? */
-				sound_readmem,sound_writemem,0,0,
+				sound_readmem,sound_writemem,null,null,
 				ignore_interrupt,0	/* IRQs are caused by CPU A */
 									/* FIRQs are caused by the YM2203 */
-			},
+			),
 		},
 		60, DEFAULT_REAL_60HZ_VBLANK_DURATION,
 		100,	/* 100 CPU slice per frame */
-		0,
+		null,
 	
 		/* video hardware */
-		32*8, 32*8, { 0*8, 32*8-1, 2*8, 30*8-1 },
+		32*8, 32*8, new rectangle( 0*8, 32*8-1, 2*8, 30*8-1 ),
 		gfxdecodeinfo,
-		512, 0,
-		0,
+		512, null,
+		null,
 	
 		VIDEO_TYPE_RASTER,
-		0,
+		null,
 		xain_vh_start,
-		0,
+		null,
 		xain_vh_screenrefresh,
 	
 		/* sound hardware */
 		0,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_YM2203,
-				&ym2203_interface
-			}
+				ym2203_interface
+			)
 		}
-	};
+	);
 	
 	
 	

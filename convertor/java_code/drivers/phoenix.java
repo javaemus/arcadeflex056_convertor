@@ -595,42 +595,42 @@ public class phoenix
 	
 	/* Same as Phoenix, but uses an AY8910 and an extra visible line (column) */
 	
-	static const struct MachineDriver machine_driver_survival =
-	{
+	static MachineDriver machine_driver_survival = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_8085A,
 				11000000/4,	/* 2.75 MHz */
-				survival_readmem,survival_writemem,0,0,
+				survival_readmem,survival_writemem,null,null,
 				ignore_interrupt,1
-			}
+			)
 		},
 		60, DEFAULT_REAL_60HZ_VBLANK_DURATION,  /* frames per second, vblank duration */
 		1,	/* single CPU, no need for interleaving */
-		0,
+		null,
 	
 		/* video hardware */
-		32*8, 32*8, { 0*8, 32*8-1, 0*8, 26*8-1 },
+		32*8, 32*8, new rectangle( 0*8, 32*8-1, 0*8, 26*8-1 ),
 		phoenix_gfxdecodeinfo,
 		256,16*4+16*4,
 		phoenix_vh_convert_color_prom,
 	
 		VIDEO_TYPE_RASTER,
-		0,
+		null,
 		phoenix_vh_start,
 		phoenix_vh_stop,
 		phoenix_vh_screenrefresh,
 	
 		/* sound hardware */
 		0,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_AY8910,
-				&survival_ay8910_interface
-			}
+				survival_ay8910_interface
+			)
 		}
-	};
+	);
 	
 	
 	/***************************************************************************

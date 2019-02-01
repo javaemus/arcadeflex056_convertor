@@ -648,58 +648,58 @@ public class tehkanwc
 		{ 25 }
 	};
 	
-	static const struct MachineDriver machine_driver_tehkanwc =
-	{
+	static MachineDriver machine_driver_tehkanwc = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_Z80,
 				4608000,	/* 18.432000 / 4 */
-				readmem,writemem,0,0,
+				readmem,writemem,null,null,
 				interrupt,1
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_Z80,
 				4608000,	/* 18.432000 / 4 */
-				readmem_sub,writemem_sub,0,0,
+				readmem_sub,writemem_sub,null,null,
 				interrupt,1
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_Z80,	/* communication is bidirectional, can't mark it as AUDIO_CPU */
 				4608000,	/* 18.432000 / 4 */
 				readmem_sound,writemem_sound,sound_readport,sound_writeport,
 				interrupt,1
-			}
+			)
 		},
 		60, DEFAULT_REAL_60HZ_VBLANK_DURATION,	/* frames per second, vblank duration */
 		10,	/* 10 CPU slices per frame - seems enough to keep the CPUs in sync */
-		0,
+		null,
 	
 		/* video hardware */
-		32*8, 32*8, { 0*8, 32*8-1, 2*8, 30*8-1 },
+		32*8, 32*8, new rectangle( 0*8, 32*8-1, 2*8, 30*8-1 ),
 		gfxdecodeinfo,
-		768, 0,
-		0,
+		768, null,
+		null,
 	
 		VIDEO_TYPE_RASTER,
-		0,
+		null,
 		tehkanwc_vh_start,
 		tehkanwc_vh_stop,
 		tehkanwc_vh_screenrefresh,
 	
 		/* sound hardware */
 		0,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_AY8910,
-				&ay8910_interface
-			},
-			{
+				ay8910_interface
+			),
+			new MachineSound(
 				SOUND_MSM5205,
-	            &msm5205_interface
-			}
+	            msm5205_interface
+			)
 		}
-	};
+	);
 	
 	
 	

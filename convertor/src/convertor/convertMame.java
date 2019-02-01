@@ -41,6 +41,7 @@ public class convertMame {
     static final int ROMDEF = 13;
     static final int GAMEDRIVER = 14;
     static final int NEWINPUT = 15;
+    static final int MACHINEDRIVER=16;
 
     public static void Convert() {
         Convertor.inpos = 0;//position of pointer inside the buffers
@@ -336,9 +337,30 @@ public class convertMame {
                                 continue;
                             }
                         }
+                        else if (sUtil.getToken("const")) {
+                            sUtil.skipSpace();
+                            if (sUtil.getToken("struct")) {
+                                sUtil.skipSpace();
+                                if (sUtil.getToken("MachineDriver")) {
+                                    sUtil.skipSpace();
+                                    Convertor.token[0] = sUtil.parseToken();
+                                    sUtil.skipSpace();
+                                    if (sUtil.parseChar() != '=') {
+                                        Convertor.inpos = i;
+                                    } else {
+                                        sUtil.skipSpace();
+                                        sUtil.putString("static MachineDriver " + Convertor.token[0] + " = new MachineDriver");
+                                        type = MACHINEDRIVER;
+                                        i3 = -1;
+                                        continue;
+                                    }
+                                }
+                            }
+                        }
                         Convertor.inpos = i;
                         break;
-                    } else {
+                    } 
+                    else {
                         sUtil.skipSpace();
                         if (sUtil.getToken("GfxLayout")) {
                             sUtil.skipSpace();
@@ -418,6 +440,91 @@ public class convertMame {
                             continue;
                         }
                     }
+                    if (type == MACHINEDRIVER) {
+                        i3++;
+                        insideagk[i3] = 0;
+                        if (i3 == 0) {
+                            Convertor.outbuf[(Convertor.outpos++)] = 40;
+                            Convertor.inpos += 1;
+                            continue;
+                        }
+                        if ((i3 == 1) && (insideagk[0] == 0)) {
+                            sUtil.putString("new MachineCPU[] {");
+                            Convertor.inpos += 1;
+                            continue;
+                        }
+                        if ((i3 == 1) && (insideagk[0] == 7)) {
+                            sUtil.putString("new rectangle(");
+                            Convertor.inpos += 1;
+                            continue;
+                        } else if ((i3 == 1) && (insideagk[0] == 8))//case of 1 CPU
+                        {
+                            sUtil.putString("new rectangle(");
+                            Convertor.inpos += 1;
+                            continue;
+                        }
+                        else if ((i3 == 1) && (insideagk[0] == 9))
+                        {
+                            sUtil.putString("new rectangle(");
+                            Convertor.inpos += 1;
+                            continue;
+                        }
+                        if ((i3 == 1) && (insideagk[0] == 21)) {
+                            sUtil.putString("new MachineSound[] {");
+                            Convertor.inpos += 1;
+                            continue;
+                        } else if ((i3 == 1) && (insideagk[0] == 22)) {
+                            sUtil.putString("new MachineSound[] {");
+                            Convertor.inpos += 1;
+                            continue;
+                        } else if ((i3 == 1) && (insideagk[0] == 23)) {
+                            sUtil.putString("new MachineSound[] {");
+                            Convertor.inpos += 1;
+                            continue;
+                        } else if ((i3 == 1) && (insideagk[0] == 24)) {
+                            sUtil.putString("new MachineSound[] {");
+                            Convertor.inpos += 1;
+                            continue;
+                        } else if ((i3 == 1) && (insideagk[0] == 25)) {
+                            sUtil.putString("new MachineSound[] {");
+                            Convertor.inpos += 1;
+                            continue;
+                        } else if ((i3 == 1) && (insideagk[0] == 26)) {
+                            sUtil.putString("new MachineSound[] {");
+                            Convertor.inpos += 1;
+                            continue;
+                        }
+                        if ((i3 == 2) && (insideagk[0] == 0)) {
+                            sUtil.putString("new MachineCPU(");
+                            Convertor.inpos += 1;
+                            continue;
+                        }
+                        if ((i3 == 2) && (insideagk[0] == 21)) {
+                            sUtil.putString("new MachineSound(");
+                            Convertor.inpos += 1;
+                            continue;
+                        } else if ((i3 == 2) && (insideagk[0] == 22)) {
+                            sUtil.putString("new MachineSound(");
+                            Convertor.inpos += 1;
+                            continue;
+                        } else if ((i3 == 2) && (insideagk[0] == 23)) {
+                            sUtil.putString("new MachineSound(");
+                            Convertor.inpos += 1;
+                            continue;
+                        } else if ((i3 == 2) && (insideagk[0] == 24)) {
+                            sUtil.putString("new MachineSound(");
+                            Convertor.inpos += 1;
+                            continue;
+                        } else if ((i3 == 2) && (insideagk[0] == 25)) {
+                            sUtil.putString("new MachineSound(");
+                            Convertor.inpos += 1;
+                            continue;
+                        } else if ((i3 == 2) && (insideagk[0] == 26)) {
+                            sUtil.putString("new MachineSound(");
+                            Convertor.inpos += 1;
+                            continue;
+                        }
+                    }
                     if (type == GFXLAYOUT) {
                         i3++;
                         insideagk[i3] = 0;
@@ -454,6 +561,61 @@ public class convertMame {
                             type = -1;
                         } else if (i3 == 1) {
                             Convertor.outbuf[(Convertor.outpos++)] = ')';
+                            Convertor.inpos += 1;
+                            continue;
+                        }
+                    }
+                    if (type == MACHINEDRIVER) {
+                        i3--;
+                        if (i3 == -1) {
+                            Convertor.outbuf[(Convertor.outpos++)] = 41;
+                            Convertor.inpos += 1;
+                            type = -1;
+                            continue;
+                        }
+                        if ((i3 == 1) && (insideagk[0] == 0)) {
+                            Convertor.outbuf[(Convertor.outpos++)] = 41;
+                            Convertor.inpos += 1;
+                            continue;
+                        }
+                        if ((i3 == 1) && (insideagk[0] == 21)) {
+                            Convertor.outbuf[(Convertor.outpos++)] = 41;
+                            Convertor.inpos += 1;
+                            continue;
+                        } else if ((i3 == 1) && (insideagk[0] == 22)) {
+                            Convertor.outbuf[(Convertor.outpos++)] = 41;
+                            Convertor.inpos += 1;
+                            continue;
+                        } else if ((i3 == 1) && (insideagk[0] == 23)) {
+                            Convertor.outbuf[(Convertor.outpos++)] = 41;
+                            Convertor.inpos += 1;
+                            continue;
+                        } else if ((i3 == 1) && (insideagk[0] == 24)) {
+                            Convertor.outbuf[(Convertor.outpos++)] = 41;
+                            Convertor.inpos += 1;
+                            continue;
+                        } else if ((i3 == 1) && (insideagk[0] == 25)) {
+                            Convertor.outbuf[(Convertor.outpos++)] = 41;
+                            Convertor.inpos += 1;
+                            continue;
+                        } else if ((i3 == 1) && (insideagk[0] == 26)) {
+                            Convertor.outbuf[(Convertor.outpos++)] = 41;
+                            Convertor.inpos += 1;
+                            continue;
+                        }
+                        if ((i3 == 0) && (insideagk[0] == 7)) {
+                            Convertor.outbuf[(Convertor.outpos++)] = 41;
+                            Convertor.inpos += 1;
+                            continue;
+                        } else if ((i3 == 0) && (insideagk[0] == 8))//for rectangle defination in single cpu only
+                        {
+                            Convertor.outbuf[(Convertor.outpos++)] = 41;
+                            Convertor.inpos += 1;
+                            continue;
+                        }
+                        else if ((i3 == 0) && (insideagk[0] == 9))
+                        {
+                            Convertor.outbuf[(Convertor.outpos++)] = 41;
                             Convertor.inpos += 1;
                             continue;
                         }
@@ -562,12 +724,34 @@ public class convertMame {
 
                     break;
                 case '&': {
-                    if (type == MEMORY_READ8 || type == MEMORY_WRITE8 || type == PORT_READ8 || type == PORT_WRITE8 || type == GFXDECODE) {
+                    if (type == MEMORY_READ8 || type == MEMORY_WRITE8 || type == PORT_READ8 || type == PORT_WRITE8 || type == GFXDECODE || type == MACHINEDRIVER) {
                         Convertor.inpos += 1;
                         continue;
                     }
                     break;
                 }
+                                case '0':
+                    i = Convertor.inpos;
+                    if (sUtil.getToken("0")) {
+                        Convertor.inpos = i;
+                        if (type == MACHINEDRIVER) {
+                            if ((i3 == 0) && ((insideagk[i3] == 3) || (insideagk[i3] == 5) || (insideagk[i3] == 6) ||  (insideagk[i3] == 10) || (insideagk[i3] == 12) || (insideagk[i3] == 14) || (insideagk[i3] == 15))) {
+                                sUtil.putString("null");
+                                Convertor.inpos += 1;
+                                continue;
+                            } else if ((i3 == 0) /*&& (type3==1)*/ && ((insideagk[i3] == 4) || (insideagk[i3] == 8) || (insideagk[i3] == 9) || (insideagk[i3] == 11)  || (insideagk[i3] == 13) || (insideagk[i3] == 14) || (insideagk[i3] == 15) || (insideagk[i3] == 16))) {
+                                //case for single core cpus
+                                sUtil.putString("null");
+                                Convertor.inpos += 1;
+                                continue;
+                            }
+                            if ((i3 == 2) && (insideagk[0] == 0) && ((insideagk[i3] == 4) || (insideagk[i3] == 6))) {
+                                sUtil.putString("null");
+                                Convertor.inpos += 1;
+                            }
+                        }
+                    }
+                    break;
                 case ',':
                     if ((type != -1)) {
                         if (i3 != -1) {

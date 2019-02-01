@@ -465,70 +465,70 @@ public class exterm
 	 *
 	 *************************************/
 	
-	static const struct MachineDriver machine_driver_exterm =
-	{
+	static MachineDriver machine_driver_exterm = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_TMS34010,
 				40000000/TMS34010_CLOCK_DIVIDER,
-	            master_readmem,master_writemem,0,0,
+	            master_readmem,master_writemem,null,null,
 	            ignore_interrupt,0,
-	            0,0,&master_config
-			},
-			{
+	            null,null,master_config
+			),
+			new MachineCPU(
 				CPU_TMS34010,
 				40000000/TMS34010_CLOCK_DIVIDER,
-	            slave_readmem,slave_writemem,0,0,
+	            slave_readmem,slave_writemem,null,null,
 	            ignore_interrupt,0,
-	            0,0,&slave_config
-			},
-			{
+	            null,null,slave_config
+			),
+			new MachineCPU(
 				CPU_M6502 | CPU_AUDIO_CPU,
 				2000000,
-				sound_dac_readmem,sound_dac_writemem,0,0,
+				sound_dac_readmem,sound_dac_writemem,null,null,
 				ignore_interrupt,0
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_M6502 | CPU_AUDIO_CPU,
 				2000000,
-				sound_ym2151_readmem,sound_ym2151_writemem,0,0,
+				sound_ym2151_readmem,sound_ym2151_writemem,null,null,
 				ignore_interrupt,0
-			}
+			)
 		},
 		60, DEFAULT_60HZ_VBLANK_DURATION,	/* frames per second, vblank duration */
 		1,
-		0,
+		null,
 	
 		/* video hardware, the reason for 263 is that the VCOUNT register is
 		   supposed to go from 0 to the value in VEND-1, which is 263 */
 	    256, 263, { 0, 255, 0, 238 },
 	
-		0,
-		4096+32768,0,
+		null,
+		4096+32768,null,
 	    exterm_init_palette,
 	
 	    VIDEO_TYPE_RASTER,
-		0,
+		null,
 		exterm_vh_start,
 		exterm_vh_stop,
 		exterm_vh_screenrefresh,
 	
 		/* sound hardware */
 		SOUND_SUPPORTS_STEREO,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_DAC,
-				&dac_interface
-			},
-			{
+				dac_interface
+			),
+			new MachineSound(
 				SOUND_YM2151,
-				&ym2151_interface
-			}
+				ym2151_interface
+			)
 		},
 	
 		nvram_handler
-	};
+	);
 	
 	
 	

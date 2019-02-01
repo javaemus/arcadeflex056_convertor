@@ -974,49 +974,49 @@ public class taito_x
 	
 	/**************************************************************************/
 	
-	static const struct MachineDriver machine_driver_superman =
-	{
+	static MachineDriver machine_driver_superman = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_M68000,
 				8000000,	/* 8 MHz? */
-				superman_readmem,superman_writemem,0,0,
+				superman_readmem,superman_writemem,null,null,
 				m68_level6_irq,1
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_Z80,
 				4000000,	/* 4 MHz ??? */
-				sound_readmem, sound_writemem,0,0,
+				sound_readmem, sound_writemem,null,null,
 				ignore_interrupt,0	/* IRQs are triggered by the YM2610 */
-			}
+			)
 		},
 		60, DEFAULT_60HZ_VBLANK_DURATION,	/* frames per second, vblank duration */
 		1,
 		cchip1_init_machine,
 	
 		/* video hardware */
-		52*8, 32*8, { 2*8, 50*8-1, 2*8, 32*8-1 },
+		52*8, 32*8, new rectangle( 2*8, 50*8-1, 2*8, 32*8-1 ),
 	
 		superman_gfxdecodeinfo,
-		2048, 0,
-		0,
+		2048, null,
+		null,
 	
 		VIDEO_TYPE_RASTER,
-		0,
+		null,
 		superman_vh_start,
 		superman_vh_stop,
 		superman_vh_screenrefresh,
 	
 		/* sound hardware */
 		SOUND_SUPPORTS_STEREO,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_YM2610,
-				&ym2610_interface
-			}
+				ym2610_interface
+			)
 		}
-	};
+	);
 	
 	static struct MachineDriver machine_driver_daisenpu =
 	{

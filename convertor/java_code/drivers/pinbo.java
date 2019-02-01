@@ -376,49 +376,49 @@ public class pinbo
 	
 	
 	
-	static const struct MachineDriver machine_driver_pinbo =
-	{
+	static MachineDriver machine_driver_pinbo = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_M6502,
 				3072000,	/* ??? */
-				readmem,writemem,0,0,
+				readmem,writemem,null,null,
 				pinbo_interrupt,2,	/* IRQ = vblank, NMI = coin */
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_Z80,
 				3000000,	/* ??? */
 				sound_readmem, sound_writemem,
 				sound_readport,sound_writeport,
 				ignore_interrupt,0	/* triggered by main cpu */
-			},
+			),
 		},
 		60, DEFAULT_REAL_60HZ_VBLANK_DURATION,
 		1,
-		0,
+		null,
 	
 		/* video hardware */
-		32*8, 32*8, { 0*8, 32*8-1, 2*8, 30*8-1 },
+		32*8, 32*8, new rectangle( 0*8, 32*8-1, 2*8, 30*8-1 ),
 		gfxdecodeinfo,
-		256, 0,
+		256, null,
 		palette_RRRR_GGGG_BBBB_convert_prom,
 	
 		VIDEO_TYPE_RASTER,
-		0,
+		null,
 		generic_vh_start,
 		generic_vh_stop,
 		pinbo_vh_screenrefresh,
 	
 		/* sound hardware */
 		0,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_AY8910,
-				&ay8910_interface
-			}
+				ay8910_interface
+			)
 		}
-	};
+	);
 	
 	
 	

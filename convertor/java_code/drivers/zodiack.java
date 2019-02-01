@@ -503,48 +503,48 @@ public class zodiack
 	
 	
 	#define MACHINE_DRIVER(GAMENAME)							\
-	static const struct MachineDriver machine_driver_##GAMENAME =		\
-	{															\
+	static MachineDriver machine_driver_##GAMENAME = new MachineDriver\
+	(															\
 		/* basic machine hardware */							\
-		{														\
-			{													\
+		new MachineCPU[] {														\
+			new MachineCPU(													\
 				CPU_Z80,										\
 				4000000,        /* 4.00 MHz??? */				\
-				readmem,writemem,0,0,							\
+				readmem,writemem,null,null,							\
 				zodiac_master_interrupt,2						\
-			},													\
-			{													\
+			),													\
+			new MachineCPU(													\
 				CPU_Z80,										\
 				14318000/8,	/* 1.78975 MHz??? */				\
-				sound_readmem,sound_writemem,0,sound_writeport,	\
+				sound_readmem,sound_writemem,null,sound_writeport,	\
 				nmi_interrupt,8	/* IRQs are triggered by the main CPU */	\
-			}													\
+			)													\
 		},														\
 		60, DEFAULT_REAL_60HZ_VBLANK_DURATION,  /* frames per second, vblank duration */			\
 		1,	/* 1 CPU slice per frame - interleaving is forced when a sound command is written */	\
 		GAMENAME##_init_machine,								\
 																\
 		/* video hardware */									\
-		32*8, 32*8, { 0*8, 32*8-1, 2*8, 30*8-1 },				\
+		32*8, 32*8, new rectangle( 0*8, 32*8-1, 2*8, 30*8-1 ),				\
 		gfxdecodeinfo,											\
 		49, 4*8+2*8+2*1,										\
 		zodiack_vh_convert_color_prom,							\
 																\
 		VIDEO_TYPE_RASTER,										\
-		0,														\
+		null,														\
 		generic_vh_start,										\
 		generic_vh_stop,										\
 		zodiack_vh_screenrefresh,								\
 																\
 		/* sound hardware */									\
 		0,0,0,0,												\
-		{														\
-			{													\
+		new MachineSound[] {														\
+			new MachineSound(													\
 				SOUND_AY8910,									\
-				&ay8910_interface								\
-			}													\
+				ay8910_interface								\
+			)													\
 		}														\
-	};
+	);
 	
 	MACHINE_DRIVER(zodiack)
 	MACHINE_DRIVER(percuss)

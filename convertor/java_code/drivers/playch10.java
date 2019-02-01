@@ -651,53 +651,53 @@ public class playch10
 	
 	
 	#define PC10_MACHINE_DRIVER( name, nvram )								\
-	static const struct MachineDriver machine_driver_##name =						\
-	{																		\
+	static MachineDriver machine_driver_##name = new MachineDriver\
+	(																		\
 		/* basic machine hardware */										\
-		{																	\
-			{																\
+		new MachineCPU[] {																	\
+			new MachineCPU(																\
 				CPU_Z80,													\
 				8000000 / 2,        /* 8 MHz / 2 */							\
 				readmem,writemem,readport,writeport,						\
 				playch10_interrupt, 1										\
-			},																\
-			{																\
+			),																\
+			new MachineCPU(																\
 				CPU_N2A03,													\
 				N2A03_DEFAULTCLOCK,											\
-				cart_readmem, cart_writemem, 0, 0,							\
+				cart_readmem, cart_writemem, null, null,							\
 				ignore_interrupt, 0											\
-			}																\
+			)																\
 		},																	\
 		60, ( ( ( 1.0 / 60.0 ) * 1000000.0 ) / 262 ) * ( 262 - 239 ),  /* fps, vblank duration */	\
 		1,	/* cpus dont talk to each other */								\
 		pc10_init_machine,													\
 																			\
 		/* video hardware */												\
-		32*8, 30*8*2, { 0*8, 32*8-1, 0*8, 30*8*2-1 },						\
+		32*8, 30*8*2, new rectangle( 0*8, 32*8-1, 0*8, 30*8*2-1 ),						\
 		gfxdecodeinfo,														\
 		256+4*16, 256+4*8,													\
 		playch10_vh_convert_color_prom,										\
 																			\
 		VIDEO_TYPE_RASTER | VIDEO_DUAL_MONITOR | VIDEO_ASPECT_RATIO(4,6),	\
-		0,																	\
+		null,																	\
 		playch10_vh_start,													\
 		playch10_vh_stop,													\
 		playch10_vh_screenrefresh,											\
 																			\
 		/* sound hardware */												\
 		0,0,0,0,															\
-		{																	\
-			{																\
+		new MachineSound[] {																	\
+			new MachineSound(																\
 				SOUND_NES,													\
-				&nes_interface												\
-			},																\
-			{																\
+				nes_interface												\
+			),																\
+			new MachineSound(																\
 				SOUND_DAC,													\
-				&nes_dac_interface											\
-			}																\
+				nes_dac_interface											\
+			)																\
 		},																	\
 		nvram																\
-	};
+	);
 	
 	PC10_MACHINE_DRIVER( playch10, NULL )
 	PC10_MACHINE_DRIVER( playchnv, nvram_handler )

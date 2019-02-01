@@ -187,48 +187,48 @@ public class ninjakid
 		{ 50, 50 }
 	};
 	
-	static const struct MachineDriver machine_driver_ninjakid =
-	{
-	    {
-	    	{
+	static MachineDriver machine_driver_ninjakid = new MachineDriver
+	(
+	    new MachineCPU[] {
+	    	new MachineCPU(
 				CPU_Z80,
 				3000000, /* 3.00MHz */
-				ninjakid_primary_readmem,ninjakid_primary_writemem,0,0,
+				ninjakid_primary_readmem,ninjakid_primary_writemem,null,null,
 				interrupt,1
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_Z80,
 				3000000, /* 3.00MHz */
-				ninjakid_secondary_readmem,ninjakid_secondary_writemem,0,0,
+				ninjakid_secondary_readmem,ninjakid_secondary_writemem,null,null,
 				interrupt,4 /* ? */
-			}
+			)
 	
 	    },
 		60, DEFAULT_REAL_60HZ_VBLANK_DURATION,	/* frames per second, vblank duration */
 		100,	/* 100 CPU slices per frame */
-	    0,
+	    null,
 	
 	    /* video hardware */
-		32*8, 32*8, { 0*8, 32*8-1, 4*8, (32-4)*8-1 },
+		32*8, 32*8, new rectangle( 0*8, 32*8-1, 4*8, (32-4)*8-1 ),
 	    ninjakid_gfxdecodeinfo,
-	    768, 0,
-		0,
+	    768, null,
+		null,
 	
 		VIDEO_TYPE_RASTER,
-	    0,
+	    null,
 		ninjakid_vh_start,
-		0,
+		null,
 		ninjakid_vh_screenrefresh,
 	
 		/* sound hardware */
 		0,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_AY8910,
-				&ay8910_interface
-			}
+				ay8910_interface
+			)
 		}
-	};
+	);
 	
 	/*******************************************************************************
 	 Rom Definitions

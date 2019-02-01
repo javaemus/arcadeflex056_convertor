@@ -379,48 +379,48 @@ public class jackal
 	};
 	
 	
-	static const struct MachineDriver machine_driver_jackal =
-	{
+	static MachineDriver machine_driver_jackal = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_M6809,
 				2000000,	/* 2 MHz???? */
-				jackal_readmem,jackal_writemem,0,0,
+				jackal_readmem,jackal_writemem,null,null,
 				jackal_interrupt,1
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_M6809,
 				2000000,	/* 2 MHz???? */
-				jackal_sound_readmem,jackal_sound_writemem,0,0,
+				jackal_sound_readmem,jackal_sound_writemem,null,null,
 				ignore_interrupt,1
-			}
+			)
 		},
 		60, DEFAULT_60HZ_VBLANK_DURATION,	/* frames per second, vblank duration */
 		10,	/* 10 CPU slices per frame - seems enough to keep the CPUs in sync */
 		jackal_init_machine,
 	
 		/* video hardware */
-		32*8, 32*8, { 1*8, 31*8-1, 2*8, 30*8-1 },
+		32*8, 32*8, new rectangle( 1*8, 31*8-1, 2*8, 30*8-1 ),
 		jackal_gfxdecodeinfo,
 		512, 256*16+16*16+16*16,
 		jackal_vh_convert_color_prom,
 	
 		VIDEO_TYPE_RASTER,
-		0,
+		null,
 		jackal_vh_start,
 		jackal_vh_stop,
 		jackal_vh_screenrefresh,
 	
 		/* sound hardware */
 		SOUND_SUPPORTS_STEREO,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_YM2151,
-				&ym2151_interface
-			}
+				ym2151_interface
+			)
 		}
-	};
+	);
 	
 	
 	

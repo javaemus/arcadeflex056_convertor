@@ -353,41 +353,41 @@ public class atetris
 	 *
 	 *************************************/
 	
-	static const struct MachineDriver machine_driver_atetris =
-	{
+	static MachineDriver machine_driver_atetris = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_M6502,
 				ATARI_CLOCK_14MHz/8,
-				readmem,writemem,0,0,
+				readmem,writemem,null,null,
 				ignore_interrupt,0
-			}
+			)
 		},
 		60, DEFAULT_REAL_60HZ_VBLANK_DURATION,
 		1,
 		init_machine,
 	
 		/* video hardware */
-		42*8, 30*8, { 0*8, 42*8-1, 0*8, 30*8-1 },
+		42*8, 30*8, new rectangle( 0*8, 42*8-1, 0*8, 30*8-1 ),
 		gfxdecodeinfo,
-		256, 0,
-		0,
+		256, null,
+		null,
 	
 		VIDEO_TYPE_RASTER | VIDEO_SUPPORTS_DIRTY,
-		0,
+		null,
 		atetris_vh_start,
-		0,
+		null,
 		atetris_vh_screenrefresh,
 	
 		/* sound hardware */
 		0,0,0,0,
-		{
-			{ SOUND_POKEY, &pokey_interface }
+		new MachineSound[] {
+			new MachineSound( SOUND_POKEY, pokey_interface )
 		},
 	
 		nvram_handler
-	};
+	);
 	
 	
 	

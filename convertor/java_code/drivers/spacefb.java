@@ -375,50 +375,50 @@ public class spacefb
 		{ 100 }
 	};
 	
-	static const struct MachineDriver machine_driver_spacefb =
-	{
+	static MachineDriver machine_driver_spacefb = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-	        {
+		new MachineCPU[] {
+	        new MachineCPU(
 	            CPU_Z80,
 	            4000000,    /* 4 MHz? */
 	            readmem,writemem,readport,writeport,
 	            spacefb_interrupt,2 /* two int's per frame */
-	        },
-			{
+	        ),
+			new MachineCPU(
 	            CPU_I8035 | CPU_AUDIO_CPU,
 	            6000000/15,
 				readmem_sound,writemem_sound,readport_sound,writeport_sound,
 	            ignore_interrupt,0
-	        }
+	        )
 		},
 		60, DEFAULT_60HZ_VBLANK_DURATION,	/* frames per second, vblank duration */
 	    3,
-		0,
+		null,
 	
 		/* video hardware */
 		/* there is no real character graphics, only 8*8 and 4*4 sprites */
-	  	264, 256, { 0, 263, 16, 247 },
+	  	264, 256, new rectangle( 0, 263, 16, 247 ),
 		gfxdecodeinfo,
 	
 		32,32,
 		spacefb_vh_convert_color_prom,
 	
 		VIDEO_TYPE_RASTER,
-		0,
+		null,
 		generic_vh_start,
 		generic_vh_stop,
 		spacefb_vh_screenrefresh,
 	
 		/* sound hardware */
 		0,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_DAC,
-	            &dac_interface
-	        }
+	            dac_interface
+	        )
 		}
-	};
+	);
 	
 	
 	

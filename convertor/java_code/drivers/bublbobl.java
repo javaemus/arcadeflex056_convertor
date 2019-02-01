@@ -699,174 +699,174 @@ public class bublbobl
 	
 	
 	
-	static const struct MachineDriver machine_driver_bublbobl =
-	{
+	static MachineDriver machine_driver_bublbobl = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_Z80,
 				MAIN_XTAL/4,	/* 6 MHz */
-				bublbobl_readmem,bublbobl_writemem,0,0,
+				bublbobl_readmem,bublbobl_writemem,null,null,
 				ignore_interrupt,0	/* IRQs are triggered by the 68705 */
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_Z80,
 				MAIN_XTAL/4,	/* 6 MHz */
-				bublbobl_readmem2,bublbobl_writemem2,0,0,
+				bublbobl_readmem2,bublbobl_writemem2,null,null,
 				interrupt,1
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_Z80 | CPU_AUDIO_CPU,
 				MAIN_XTAL/8,	/* 3 MHz */
-				sound_readmem,sound_writemem,0,0,
+				sound_readmem,sound_writemem,null,null,
 				ignore_interrupt,0	/* NMIs are triggered by the main CPU */
 									/* IRQs are triggered by the YM2203 */
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_M68705,
 				4000000/2,	/* xtal is 4MHz, I think it's divided by 2 internally */
-				m68705_readmem,m68705_writemem,0,0,
+				m68705_readmem,m68705_writemem,0,null,
 				bublbobl_m68705_interrupt,2	/* ??? should come from the same */
 						/* clock which latches the INT pin on the second Z80 */
-			}
+			)
 		},
 		60, DEFAULT_60HZ_VBLANK_DURATION,	/* frames per second, vblank duration */
 		100,	/* 100 CPU slices per frame - an high value to ensure proper */
 				/* synchronization of the CPUs */
-		0,		/* init_machine() */
+		null,		/* init_machine() */
 	
 		/* video hardware */
-		32*8, 32*8,	{ 0, 32*8-1, 2*8, 30*8-1 },
+		32*8, 32*8,	new rectangle( 0, 32*8-1, 2*8, 30*8-1 ),
 		gfxdecodeinfo,
-		256, 0,
-		0,
+		256, null,
+		null,
 	
 		VIDEO_TYPE_RASTER,
-		0,
-		0,
-		0,
+		null,
+		null,
+		null,
 		bublbobl_vh_screenrefresh,
 	
 		/* sound hardware */
 		0,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_YM2203,
-				&ym2203_interface
-			},
-			{
+				ym2203_interface
+			),
+			new MachineSound(
 				SOUND_YM3526,
-				&ym3526_interface
-			}
+				ym3526_interface
+			)
 		}
-	};
+	);
 	
-	static const struct MachineDriver machine_driver_boblbobl =
-	{
+	static MachineDriver machine_driver_boblbobl = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_Z80,
 				MAIN_XTAL/4,	/* 6 MHz */
-				boblbobl_readmem,boblbobl_writemem,0,0,
+				boblbobl_readmem,boblbobl_writemem,null,null,
 				interrupt,1	/* interrupt mode 1, unlike Bubble Bobble */
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_Z80,
 				MAIN_XTAL/4,	/* 6 MHz */
-				bublbobl_readmem2,bublbobl_writemem2,0,0,
+				bublbobl_readmem2,bublbobl_writemem2,null,null,
 				interrupt,1
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_Z80 | CPU_AUDIO_CPU,
 				MAIN_XTAL/8,	/* 3 MHz */
-				sound_readmem,sound_writemem,0,0,
+				sound_readmem,sound_writemem,null,null,
 				ignore_interrupt,0	/* NMIs are triggered by the main CPU */
 									/* IRQs are triggered by the YM2203 */
-			}
+			)
 		},
 		60, DEFAULT_60HZ_VBLANK_DURATION,	/* frames per second, vblank duration */
 		100,	/* 100 CPU slices per frame - an high value to ensure proper */
 				/* synchronization of the CPUs */
-		0,		/* init_machine() */
+		null,		/* init_machine() */
 	
 		/* video hardware */
-		32*8, 32*8,	{ 0, 32*8-1, 2*8, 30*8-1 },
+		32*8, 32*8,	new rectangle( 0, 32*8-1, 2*8, 30*8-1 ),
 		gfxdecodeinfo,
-		256, 0,
-		0,
+		256, null,
+		null,
 	
 		VIDEO_TYPE_RASTER,
-		0,
-		0,
-		0,
+		null,
+		null,
+		null,
 		bublbobl_vh_screenrefresh,
 	
 		/* sound hardware */
 		0,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_YM2203,
-				&ym2203_interface
-			},
-			{
+				ym2203_interface
+			),
+			new MachineSound(
 				SOUND_YM3526,
-				&ym3526_interface
-			}
+				ym3526_interface
+			)
 		}
-	};
+	);
 	
-	static const struct MachineDriver machine_driver_tokio =
-	{
+	static MachineDriver machine_driver_tokio = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_Z80,
 				MAIN_XTAL/4,	/* 6 MHz */
-				tokio_readmem,tokio_writemem,0,0,
+				tokio_readmem,tokio_writemem,null,null,
 				interrupt,1
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_Z80,
 				MAIN_XTAL/4,	/* 6 MHz */
-				tokio_readmem2,tokio_writemem2,0,0,
+				tokio_readmem2,tokio_writemem2,null,null,
 				interrupt,1
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_Z80 | CPU_AUDIO_CPU,
 				MAIN_XTAL/8,	/* 3 MHz */
-				tokio_sound_readmem,tokio_sound_writemem,0,0,
+				tokio_sound_readmem,tokio_sound_writemem,null,null,
 				ignore_interrupt,0
 							/* NMIs are triggered by the main CPU */
 							/* IRQs are triggered by the YM2203 */
-			}
+			)
 		},
 		60, DEFAULT_60HZ_VBLANK_DURATION, /* frames/second, vblank duration */
 		100,	/* 100 CPU slices per frame - an high value to ensure proper */
 				/* synchronization of the CPUs */
-		0,	/* init_machine() */
+		null,	/* init_machine() */
 	
 		/* video hardware */
-		32*8, 32*8,	{ 0, 32*8-1, 2*8, 30*8-1 },
+		32*8, 32*8,	new rectangle( 0, 32*8-1, 2*8, 30*8-1 ),
 		gfxdecodeinfo,
-		256, 0,
-		0,
+		256, null,
+		null,
 	
 		VIDEO_TYPE_RASTER,
-		0,
-		0,
-		0,
+		null,
+		null,
+		null,
 		bublbobl_vh_screenrefresh,
 	
 		/* sound hardware */
 		0,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_YM2203,
-				&tokio_ym2203_interface
-			}
+				tokio_ym2203_interface
+			)
 		}
-	};
+	);
 	
 	
 	/***************************************************************************

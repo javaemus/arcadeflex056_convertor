@@ -372,16 +372,16 @@ public class atarig1
 	 *
 	 *************************************/
 	
-	static const struct MachineDriver machine_driver_atarig1 =
-	{
+	static MachineDriver machine_driver_atarig1 = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_M68000,		/* verified */
 				ATARI_CLOCK_14MHz,
-				main_readmem,main_writemem,0,0,
+				main_readmem,main_writemem,null,null,
 				atarigen_video_int_gen,1
-			},
+			),
 			JSA_II_CPU
 		},
 		60, DEFAULT_REAL_60HZ_VBLANK_DURATION,
@@ -389,13 +389,13 @@ public class atarig1
 		init_machine,
 	
 		/* video hardware */
-		42*8, 30*8, { 0*8, 42*8-1, 0*8, 30*8-1 },
+		42*8, 30*8, new rectangle( 0*8, 42*8-1, 0*8, 30*8-1 ),
 		gfxdecodeinfo,
-		1280, 0,
-		0,
+		1280, null,
+		null,
 	
 		VIDEO_TYPE_RASTER | VIDEO_NEEDS_6BITS_PER_GUN | VIDEO_UPDATE_BEFORE_VBLANK,
-		0,
+		null,
 		atarig1_vh_start,
 		atarig1_vh_stop,
 		atarig1_vh_screenrefresh,
@@ -404,7 +404,7 @@ public class atarig1
 		JSA_II_MONO(REGION_SOUND1),
 	
 		atarigen_nvram_handler
-	};
+	);
 	
 	
 	

@@ -1333,48 +1333,48 @@ public class btime
 	
 	#define MACHINE_DRIVER(GAMENAME, CLOCK, MAIN_IRQ, SOUND_IRQ, GFX, COLOR)   \
 																		\
-	static const struct MachineDriver machine_driver_##GAMENAME =             \
-	{                                                                   \
+	static MachineDriver machine_driver_##GAMENAME = new MachineDriver\
+	(                                                                   \
 		/* basic machine hardware */                                	\
-		{		                                                        \
-			{	  	                                                    \
+		new MachineCPU[] {		                                                        \
+			new MachineCPU(	  	                                                    \
 				CPU_M6502,                                  			\
 				CLOCK,													\
-				GAMENAME##_readmem,GAMENAME##_writemem,0,0, 			\
+				GAMENAME##_readmem,GAMENAME##_writemem,null,null, 			\
 				MAIN_IRQ,1                                  			\
-			},		                                                    \
-			{		                                                    \
+			),		                                                    \
+			new MachineCPU(		                                                    \
 				CPU_M6502 | CPU_AUDIO_CPU,                  			\
 				500000, /* 500 kHz */                       			\
-				GAMENAME##_sound_readmem,GAMENAME##_sound_writemem,0,0, \
+				GAMENAME##_sound_readmem,GAMENAME##_sound_writemem,null,null, \
 				SOUND_IRQ,16   /* IRQs are triggered by the main CPU */ \
-			}                                                   		\
+			)                                                   		\
 		},                                                          	\
 		57, 3072,        /* frames per second, vblank duration */   	\
 		1,      /* 1 CPU slice per frame - interleaving is forced when a sound command is written */ \
 		GAMENAME##_init_machine,		                               	\
 																		\
 		/* video hardware */                                        	\
-		32*8, 32*8, { 1*8, 31*8-1, 1*8, 31*8-1 },                   	\
+		32*8, 32*8, new rectangle( 1*8, 31*8-1, 1*8, 31*8-1 ),                   	\
 		GFX,                                                        	\
-		COLOR, 0,	                                                	\
+		COLOR, null,	                                                	\
 		GAMENAME##_vh_convert_color_prom,                           	\
 																		\
 		VIDEO_TYPE_RASTER,      						             	\
-		0,                                                          	\
+		null,                                                          	\
 		GAMENAME##_vh_start,                                        	\
 		GAMENAME##_vh_stop,                                         	\
 		GAMENAME##_vh_screenrefresh,                                   	\
 																		\
 		/* sound hardware */                                        	\
 		0,0,0,0,                                                    	\
-		{                                                           	\
-			{                                                   		\
+		new MachineSound[] {                                                           	\
+			new MachineSound(                                                   		\
 				SOUND_AY8910,                               			\
-				&ay8910_interface                           			\
-			}                                                   		\
+				ay8910_interface                           			\
+			)                                                   		\
 		}                                                           	\
-	}
+	)
 	
 	
 	/*              NAME      CLOCK    MAIN_IRQ             SOUND_IRQ            GFX_DECODE              COLOR */

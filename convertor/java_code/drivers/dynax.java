@@ -641,38 +641,38 @@ public class dynax
 		{ sprtmtch_sound_callback },	/* IRQ handler */
 	};
 	
-	static const struct MachineDriver machine_driver_sprtmtch =
-	{
-		{
-			{
+	static MachineDriver machine_driver_sprtmtch = new MachineDriver
+	(
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_Z80,
 				22000000 / 6,	/* ? */
 				sprtmtch_readmem,  sprtmtch_writemem,
 				sprtmtch_readport, sprtmtch_writeport,
 				sprtmtch_vblank_interrupt, 1	/* IM 0 needs an opcode on the data bus */
-			},
+			),
 		},
 		60, DEFAULT_60HZ_VBLANK_DURATION,
 		1,
-		0,
+		null,
 	
 		/* video hardware */
-		256, 256, { 0, 256-1, 0+8, 256-1-8 },
-		0,	// no tiles
-		512, 0,
+		256, 256, new rectangle( 0, 256-1, 0+8, 256-1-8 ),
+		null,	// no tiles
+		512, null,
 		sprtmtch_vh_convert_color_prom,			// static palette
 		VIDEO_TYPE_RASTER | VIDEO_RGB_DIRECT,	// needs alpha blending
-		0,
+		null,
 		sprtmtch_vh_start,
 		sprtmtch_vh_stop,
 		sprtmtch_vh_screenrefresh,
 	
 		/* sound hardware */
 		SOUND_SUPPORTS_STEREO,0,0,0,
-		{
-			{	SOUND_YM2203,	&ym2203_intf	},
+		new MachineSound[] {
+			new MachineSound(	SOUND_YM2203,	ym2203_intf	),
 		}
-	};
+	);
 	
 	
 	/***************************************************************************
@@ -694,77 +694,77 @@ public class dynax
 		{ 100 }
 	};
 	
-	static const struct MachineDriver machine_driver_ddenlovr =
-	{
-		{
-			{
+	static MachineDriver machine_driver_ddenlovr = new MachineDriver
+	(
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_M68000,
 				24000000 / 2,
-				ddenlovr_readmem, ddenlovr_writemem,0,0,
+				ddenlovr_readmem, ddenlovr_writemem,null,null,
 				m68_level1_irq, 1
-			},
+			),
 		},
 		60, DEFAULT_60HZ_VBLANK_DURATION,
 		1,
-		0,
+		null,
 	
 		/* video hardware */
-		320, 256, { 0, 320-1, 0, 256-1 },
-		0,		// no tiles
+		320, 256, new rectangle( 0, 320-1, 0, 256-1 ),
+		null,		// no tiles
 		0x800, 0x800,
-		0,
+		null,
 		VIDEO_TYPE_RASTER,
-		0,
+		null,
 		dynax_vh_start,
-		0,
+		null,
 		dynax_vh_screenrefresh,
 	
 		/* sound hardware */
 		SOUND_SUPPORTS_STEREO,0,0,0,
-		{
-			{	SOUND_YM2413,	&ym2413_intf	},
-			{	SOUND_OKIM6295,	&okim6295_intf	},
+		new MachineSound[] {
+			new MachineSound(	SOUND_YM2413,	ym2413_intf	),
+			new MachineSound(	SOUND_OKIM6295,	okim6295_intf	),
 		}
-	};
+	);
 	
 	
 	/***************************************************************************
 									Rong Rong
 	***************************************************************************/
 	
-	static const struct MachineDriver machine_driver_rongrong =
-	{
-		{
-			{
+	static MachineDriver machine_driver_rongrong = new MachineDriver
+	(
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_Z80,
 				4000000,	/* ? */
 				rongrong_readmem,  rongrong_writemem,
 				rongrong_readport, rongrong_writeport,
 				interrupt, 1
-			},
+			),
 		},
 		60, DEFAULT_60HZ_VBLANK_DURATION,
 		1,
-		0,
+		null,
 	
 		/* video hardware */
-		256, 256, { 0, 256-1, 0, 256-1 },
-		0,		// no tiles
+		256, 256, new rectangle( 0, 256-1, 0, 256-1 ),
+		null,		// no tiles
 		0x800, 0x800,
-		0,
+		null,
 		VIDEO_TYPE_RASTER,
-		0,
+		null,
 		dynax_vh_start,
-		0,
+		null,
 		dynax_vh_screenrefresh,
 	
 		/* sound hardware */
 		SOUND_SUPPORTS_STEREO,0,0,0,
-		{
-			{	SOUND_YM2413,	&ym2413_intf	},
-			{	SOUND_OKIM6295,	&okim6295_intf	},
+		new MachineSound[] {
+			new MachineSound(	SOUND_YM2413,	ym2413_intf	),
+			new MachineSound(	SOUND_OKIM6295,	okim6295_intf	),
 		}
-	};
+	);
 	
 	
 	/***************************************************************************

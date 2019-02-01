@@ -412,54 +412,54 @@ public class vendetta
 			return ignore_interrupt();
 	}
 	
-	static const struct MachineDriver machine_driver_vendetta =
-	{
+	static MachineDriver machine_driver_vendetta = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_KONAMI,
 				3000000,		/* ? */
-				readmem,writemem,0,0,
+				readmem,writemem,null,null,
 				vendetta_irq,1
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_Z80 | CPU_AUDIO_CPU,
 				3579545,
-				readmem_sound, writemem_sound,0,0,
+				readmem_sound, writemem_sound,null,null,
 				ignore_interrupt,0	/* interrupts are triggered by the main CPU */
-			}
+			)
 		},
 		60, DEFAULT_REAL_60HZ_VBLANK_DURATION,	/* frames per second, vblank duration */
 		1,	/* 1 CPU slice per frame - interleaving is forced when a sound command is written */
 		vendetta_init_machine,
 	
 		/* video hardware */
-		64*8, 32*8, { 13*8, (64-13)*8-1, 2*8, 30*8-1 },
-		0,	/* gfx decoded by konamiic.c */
-		2048, 0,
-		0,
+		64*8, 32*8, new rectangle( 13*8, (64-13)*8-1, 2*8, 30*8-1 ),
+		null,	/* gfx decoded by konamiic.c */
+		2048, null,
+		null,
 	
 		VIDEO_TYPE_RASTER | VIDEO_HAS_SHADOWS,
-		0,
+		null,
 		vendetta_vh_start,
 		vendetta_vh_stop,
 		vendetta_vh_screenrefresh,
 	
 		/* sound hardware */
 		SOUND_SUPPORTS_STEREO,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_YM2151,
-				&ym2151_interface
-			},
-			{
+				ym2151_interface
+			),
+			new MachineSound(
 				SOUND_K053260,
-				&k053260_interface
-			}
+				k053260_interface
+			)
 		},
 	
 		nvram_handler
-	};
+	);
 	
 	/***************************************************************************
 	

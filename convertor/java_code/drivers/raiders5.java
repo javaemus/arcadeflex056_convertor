@@ -259,47 +259,47 @@ public class raiders5
 		{ 0, 0 },
 	};
 	
-	static const struct MachineDriver machine_driver_raiders5 =
-	{
-		{
-			{
+	static MachineDriver machine_driver_raiders5 = new MachineDriver
+	(
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_Z80,
 				12000000/4,	/* 3.0MHz? */
 				readmem1,writemem1,readport1,0,
 				interrupt,1
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_Z80,
 				12000000/4,	/* 3.0MHz? */
-				readmem2,writemem2,0,0,
+				readmem2,writemem2,null,null,
 				interrupt,4
 	
-			}
+			)
 		},
 		60, DEFAULT_REAL_60HZ_VBLANK_DURATION,
 		400,
-		0,
+		null,
 	
-		32*8, 32*8, { 0*8, 32*8-1, 4*8, 28*8-1 },
+		32*8, 32*8, new rectangle( 0*8, 32*8-1, 4*8, 28*8-1 ),
 	
 		gfxdecodeinfo,
-		768, 0,
-		0,
+		768, null,
+		null,
 	
 		VIDEO_TYPE_RASTER,
-		0,
+		null,
 		generic_vh_start,
 		generic_vh_stop,
 		raiders5_vh_screenrefresh,
 	
 		0,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_AY8910,
-				&ay8910_interface
-			}
+				ay8910_interface
+			)
 		}
-	};
+	);
 	
 	/****************************************************************************/
 	

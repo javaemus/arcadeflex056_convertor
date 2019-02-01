@@ -216,16 +216,16 @@ public class blstroid
 	 *
 	 *************************************/
 	
-	static const struct MachineDriver machine_driver_blstroid =
-	{
+	static MachineDriver machine_driver_blstroid = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_M68000,		/* verified */
 				ATARI_CLOCK_14MHz/2,
-				main_readmem,main_writemem,0,0,
+				main_readmem,main_writemem,null,null,
 				atarigen_video_int_gen,1
-			},
+			),
 			JSA_I_CPU
 		},
 		60, DEFAULT_REAL_60HZ_VBLANK_DURATION,
@@ -233,14 +233,14 @@ public class blstroid
 		init_machine,
 	
 		/* video hardware */
-		40*16, 30*8, { 0*8, 40*16-1, 0*8, 30*8-1 },
+		40*16, 30*8, new rectangle( 0*8, 40*16-1, 0*8, 30*8-1 ),
 		gfxdecodeinfo,
-		512, 0,
-		0,
+		512, null,
+		null,
 	
 		VIDEO_TYPE_RASTER | VIDEO_UPDATE_BEFORE_VBLANK |
 				VIDEO_PIXEL_ASPECT_RATIO_1_2,
-		0,
+		null,
 		blstroid_vh_start,
 		blstroid_vh_stop,
 		blstroid_vh_screenrefresh,
@@ -249,7 +249,7 @@ public class blstroid
 		JSA_I_STEREO,
 	
 		atarigen_nvram_handler
-	};
+	);
 	
 	
 	

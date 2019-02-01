@@ -420,53 +420,53 @@ public class wwfwfest
 	 Machine Driver(s)
 	*******************************************************************************/
 	
-	static const struct MachineDriver machine_driver_wwfwfest =
-	{
+	static MachineDriver machine_driver_wwfwfest = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
+		new MachineCPU[] {
 	
-			{
+			new MachineCPU(
 				CPU_M68000,
 				12000000,	/* 24 crystal, 12 rated chip */
-				readmem,writemem,0,0,
+				readmem,writemem,0,null,
 				wwfwfest_interrupt,2
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_Z80 | CPU_AUDIO_CPU,
 				3579545,
-				readmem_sound,writemem_sound,0,0,
+				readmem_sound,writemem_sound,null,null,
 				ignore_interrupt,0
-			},
+			),
 		},
 		60, DEFAULT_REAL_60HZ_VBLANK_DURATION,
 		1,
-		0,
+		null,
 	
 		/* video hardware */
-		320, 256, { 0, 319, 1*8, 31*8-1 },
+		320, 256, new rectangle( 0, 319, 1*8, 31*8-1 ),
 		gfxdecodeinfo,
-		8192, 0,
-		0,
+		8192, null,
+		null,
 	
 		VIDEO_TYPE_RASTER | VIDEO_BUFFERS_SPRITERAM,
 		wwfwfest_eof_callback,
 		wwfwfest_vh_start,
-		0,
+		null,
 		wwfwfest_vh_screenrefresh,
 	
 		/* sound hardware */
 		0,0,0,0, /* Mono */
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_YM2151,
-				&ym2151_interface
-			},
-			{
+				ym2151_interface
+			),
+			new MachineSound(
 				SOUND_OKIM6295,
-				&okim6295_interface
-			}
+				okim6295_interface
+			)
 		}
-	};
+	);
 	
 	/*******************************************************************************
 	 Rom Loaders / Game Drivers

@@ -605,22 +605,22 @@ public class mappy
 	
 	
 	/* the machine driver: 2 6809s running at 1MHz */
-	static const struct MachineDriver machine_driver_mappy =
-	{
+	static MachineDriver machine_driver_mappy = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_M6809,
 				1100000,                        /* 1.1 MHz */
-				mappy_readmem_cpu1,writemem_cpu1,0,0,
+				mappy_readmem_cpu1,writemem_cpu1,null,null,
 				mappy_interrupt_1,1
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_M6809,
 				1100000,                        /* 1.1 MHz */
-				mappy_readmem_cpu2,writemem_cpu2,0,0,
+				mappy_readmem_cpu2,writemem_cpu2,null,null,
 				mappy_interrupt_2,1
-			}
+			)
 		},
 		60.606060, DEFAULT_60HZ_VBLANK_DURATION,	/* frames per second, vblank duration */
 		100,    /* 100 CPU slices per frame - an high value to ensure proper */
@@ -628,43 +628,43 @@ public class mappy
 		mappy_init_machine,
 	
 		/* video hardware */
-		36*8, 28*8, { 0*8, 36*8-1, 0*8, 28*8-1 },
+		36*8, 28*8, new rectangle( 0*8, 36*8-1, 0*8, 28*8-1 ),
 		mappy_gfxdecodeinfo,
 		32,64*4+16*16,
 		mappy_vh_convert_color_prom,
 	
 		VIDEO_TYPE_RASTER,
-		0,
+		null,
 		mappy_vh_start,
 		mappy_vh_stop,
 		mappy_vh_screenrefresh,
 	
 		/* sound hardware */
 		0,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_NAMCO,
-				&namco_interface
-			}
+				namco_interface
+			)
 		}
-	};
+	);
 	
-	static const struct MachineDriver machine_driver_digdug2 =
-	{
+	static MachineDriver machine_driver_digdug2 = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_M6809,
 				1600000,                        /* 1.6 MHz */
-				digdug2_readmem_cpu1,writemem_cpu1,0,0,
+				digdug2_readmem_cpu1,writemem_cpu1,null,null,
 				mappy_interrupt_1,1
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_M6809,
 				1600000,                        /* 1.6 MHz */
-				digdug2_readmem_cpu2,writemem_cpu2,0,0,
+				digdug2_readmem_cpu2,writemem_cpu2,null,null,
 				mappy_interrupt_2,1
-			}
+			)
 		},
 		60.606060, DEFAULT_60HZ_VBLANK_DURATION,	/* frames per second, vblank duration */
 		100,    /* 100 CPU slices per frame - an high value to ensure proper */
@@ -672,43 +672,43 @@ public class mappy
 		mappy_init_machine,
 	
 		/* video hardware */
-		36*8, 28*8, { 0*8, 36*8-1, 0*8, 28*8-1 },
+		36*8, 28*8, new rectangle( 0*8, 36*8-1, 0*8, 28*8-1 ),
 		digdug2_gfxdecodeinfo,
 		32,64*4+16*16,
 		mappy_vh_convert_color_prom,
 	
 		VIDEO_TYPE_RASTER,
-		0,
+		null,
 		mappy_vh_start,
 		mappy_vh_stop,
 		mappy_vh_screenrefresh,
 	
 		/* sound hardware */
 		0,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_NAMCO,
-				&namco_interface
-			}
+				namco_interface
+			)
 		}
-	};
+	);
 	
-	static const struct MachineDriver machine_driver_motos =
-	{
+	static MachineDriver machine_driver_motos = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_M6809,
 				1600000,                        /* 1.6 MHz */
-				motos_readmem_cpu1,writemem_cpu1,0,0,
+				motos_readmem_cpu1,writemem_cpu1,null,null,
 				mappy_interrupt_1,1
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_M6809,
 				1600000,                        /* 1.6 MHz */
-				motos_readmem_cpu2,writemem_cpu2,0,0,
+				motos_readmem_cpu2,writemem_cpu2,null,null,
 				mappy_interrupt_2,1
-			}
+			)
 		},
 		60.606060, DEFAULT_60HZ_VBLANK_DURATION,	/* frames per second, vblank duration */
 		100,    /* 100 CPU slices per frame - an high value to ensure proper */
@@ -716,43 +716,43 @@ public class mappy
 		motos_init_machine,
 	
 		/* video hardware */
-		36*8, 28*8, { 0*8, 36*8-1, 0*8, 28*8-1 },
+		36*8, 28*8, new rectangle( 0*8, 36*8-1, 0*8, 28*8-1 ),
 		digdug2_gfxdecodeinfo,
 		32,64*4+16*16,
 		mappy_vh_convert_color_prom,
 	
 		VIDEO_TYPE_RASTER,
-		0,
+		null,
 		motos_vh_start,
 		mappy_vh_stop,
 		mappy_vh_screenrefresh,
 	
 		/* sound hardware */
 		0,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_NAMCO,
-				&namco_interface
-			}
+				namco_interface
+			)
 		}
-	};
+	);
 	
-	static const struct MachineDriver machine_driver_todruaga =
-	{
+	static MachineDriver machine_driver_todruaga = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_M6809,
 				1600000,                        /* 1.6 MHz */
-				todruaga_readmem_cpu1,writemem_cpu1,0,0,
+				todruaga_readmem_cpu1,writemem_cpu1,null,null,
 				mappy_interrupt_1,1
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_M6809,
 				1600000,                        /* 1.6 MHz */
-				todruaga_readmem_cpu2,writemem_cpu2,0,0,
+				todruaga_readmem_cpu2,writemem_cpu2,null,null,
 				mappy_interrupt_2,1
-			}
+			)
 		},
 		60.606060, DEFAULT_60HZ_VBLANK_DURATION,	/* frames per second, vblank duration */
 		100,    /* 100 CPU slices per frame - an high value to ensure proper */
@@ -760,26 +760,26 @@ public class mappy
 		mappy_init_machine,
 	
 		/* video hardware */
-		36*8, 28*8, { 0*8, 36*8-1, 0*8, 28*8-1 },
+		36*8, 28*8, new rectangle( 0*8, 36*8-1, 0*8, 28*8-1 ),
 		todruaga_gfxdecodeinfo,
 		32,64*4+64*16,
 		mappy_vh_convert_color_prom,
 	
 		VIDEO_TYPE_RASTER,
-		0,
+		null,
 		todruaga_vh_start,
 		mappy_vh_stop,
 		mappy_vh_screenrefresh,
 	
 		/* sound hardware */
 		0,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_NAMCO,
-				&namco_interface
-			}
+				namco_interface
+			)
 		}
-	};
+	);
 	
 	
 	

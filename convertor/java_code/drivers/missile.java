@@ -360,42 +360,42 @@ public class missile
 	
 	
 	
-	static const struct MachineDriver machine_driver_missile =
-	{
+	static MachineDriver machine_driver_missile = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_M6502,
 				1000000,	/* 1 MHz ???? */
-				readmem,writemem,0,0,
+				readmem,writemem,null,null,
 				interrupt, 4  /* EEA was 1 */
-			}
+			)
 		},
 		60, DEFAULT_REAL_60HZ_VBLANK_DURATION,	/* frames per second, vblank duration */
 		10,
 		missile_init_machine,
 	
 		/* video hardware */
-		256, 231, { 0, 255, 0, 230 },
-		0,
-		8, 0,
-		0,
+		256, 231, new rectangle( 0, 255, 0, 230 ),
+		null,
+		8, null,
+		null,
 	
 		VIDEO_TYPE_RASTER | VIDEO_SUPPORTS_DIRTY,
-		0,
+		null,
 		missile_vh_start,
 		missile_vh_stop,
 		missile_vh_screenrefresh,
 	
 		/* sound hardware */
 		0,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_POKEY,
-				&pokey_interface
-			}
+				pokey_interface
+			)
 		}
-	};
+	);
 	
 	
 	

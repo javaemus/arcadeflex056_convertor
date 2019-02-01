@@ -1176,83 +1176,83 @@ public class cosmic
 	};
 	
 	
-	static const struct MachineDriver machine_driver_panic =
-	{
+	static MachineDriver machine_driver_panic = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_Z80,
 				2000000,	/* 2 MHz? */
-				panic_readmem,panic_writemem,0,0,
+				panic_readmem,panic_writemem,null,null,
 				panic_interrupt,2
-			}
+			)
 		},
 		60, DEFAULT_60HZ_VBLANK_DURATION,	/* frames per second, vblank duration */
 		1,	/* single CPU, no need for interleaving */
-		0,
+		null,
 	
 		/* video hardware */
-	  	32*8, 32*8, { 0*8, 32*8-1, 4*8, 28*8-1 },
+	  	32*8, 32*8, new rectangle( 0*8, 32*8-1, 4*8, 28*8-1 ),
 		panic_gfxdecodeinfo,
 		16, 8*4,
 		panic_vh_convert_color_prom,
 	
 		VIDEO_TYPE_RASTER,
-		0,
+		null,
 		generic_bitmapped_vh_start,
 		generic_bitmapped_vh_stop,
 		panic_vh_screenrefresh,
 	
 		/* sound hardware */
 		0,0,0,0,
-	    {
-			{
+	    new MachineSound[] {
+			new MachineSound(
 				SOUND_SAMPLES,
-				&panic_samples_interface
-			},
-			{
+				panic_samples_interface
+			),
+			new MachineSound(
 				SOUND_DAC,
-				&dac_interface
-			}
+				dac_interface
+			)
 	    }
-	};
+	);
 	
-	static const struct MachineDriver machine_driver_cosmica =
-	{
+	static MachineDriver machine_driver_cosmica = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_Z80,
 				1081600,
-				cosmica_readmem,cosmica_writemem,0,0,
+				cosmica_readmem,cosmica_writemem,null,null,
 				cosmica_interrupt,32
-			}
+			)
 		},
 		60, 2500,	/* frames per second, vblank duration */
 		1,	/* single CPU, no need for interleaving */
-		0,
+		null,
 	
 		/* video hardware */
-	  	32*8, 32*8, { 0*8, 32*8-1, 4*8, 28*8-1 },
+	  	32*8, 32*8, new rectangle( 0*8, 32*8-1, 4*8, 28*8-1 ),
 		cosmica_gfxdecodeinfo,
 		8, 16*4,
 		cosmica_vh_convert_color_prom,
 	
 		VIDEO_TYPE_RASTER,
-		0,
+		null,
 		generic_bitmapped_vh_start,
 		generic_bitmapped_vh_stop,
 		cosmica_vh_screenrefresh,
 	
 		/* sound hardware */
 		0,0,0,0
-	};
+	);
 	
-	static const struct MachineDriver machine_driver_cosmicg =
-	{
+	static MachineDriver machine_driver_cosmicg = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 	#if COSMICG_USES_TMS9980
 				CPU_TMS9980,
 	#else
@@ -1265,110 +1265,110 @@ public class cosmic
 				cosmicg_readmem,cosmicg_writemem,
 				cosmicg_readport,cosmicg_writeport,
 				cosmicg_interrupt,16
-			}
+			)
 		},
 		60, 0,		/* frames per second, vblank duration */
 		1,			/* single CPU, no need for interleaving */
-		0,
+		null,
 	
 		/* video hardware */
-	  	32*8, 32*8, { 0*8, 32*8-1, 4*8, 28*8-1 },
-		0, 			/* no gfxdecodeinfo - bitmapped display */
-	    16,0,
+	  	32*8, 32*8, new rectangle( 0*8, 32*8-1, 4*8, 28*8-1 ),
+		null, 			/* no gfxdecodeinfo - bitmapped display */
+	    16,null,
 	    cosmicg_vh_convert_color_prom,
 	
 		VIDEO_TYPE_RASTER,
-		0,
+		null,
 		generic_bitmapped_vh_start,
 		generic_bitmapped_vh_stop,
 		cosmicg_vh_screenrefresh,
 	
 		/* sound hardware */
 		0,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_SAMPLES,
-				&cosmicg_samples_interface
-			},
-			{
+				cosmicg_samples_interface
+			),
+			new MachineSound(
 				SOUND_DAC,
-				&dac_interface
-			}
+				dac_interface
+			)
 		}
-	};
+	);
 	
-	static const struct MachineDriver machine_driver_magspot2 =
-	{
+	static MachineDriver machine_driver_magspot2 = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_Z80,
 				18432000/6,	/* 3.072 MHz ???? */
-				magspot2_readmem,magspot2_writemem,0,0,
+				magspot2_readmem,magspot2_writemem,null,null,
 				magspot2_interrupt,1
-			},
+			),
 		},
 		60, DEFAULT_REAL_60HZ_VBLANK_DURATION,	/* frames per second, vblank duration */
 		1,	/* 1 CPU slice per frame - interleaving is forced when a sound command is written */
-		0,
+		null,
 	
 		/* video hardware */
-	  	32*8, 32*8, { 0*8, 32*8-1, 4*8, 28*8-1 },
+	  	32*8, 32*8, new rectangle( 0*8, 32*8-1, 4*8, 28*8-1 ),
 		magspot2_gfxdecodeinfo,
 		16, 8*4,
 		magspot2_vh_convert_color_prom,
 	
 		VIDEO_TYPE_RASTER,
-		0,
+		null,
 		generic_bitmapped_vh_start,
 		generic_bitmapped_vh_stop,
 		magspot2_vh_screenrefresh,
 	
 		/* sound hardware */
 		0,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_DAC,
-				&dac_interface
-			}
+				dac_interface
+			)
 		}
-	};
+	);
 	
-	static const struct MachineDriver machine_driver_nomnlnd =
-	{
+	static MachineDriver machine_driver_nomnlnd = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_Z80,
 				18432000/6,	/* 3.072 MHz ???? */
-				nomnlnd_readmem,nomnlnd_writemem,0,0,
+				nomnlnd_readmem,nomnlnd_writemem,null,null,
 				magspot2_interrupt,1
-			},
+			),
 		},
 		60, DEFAULT_REAL_60HZ_VBLANK_DURATION,	/* frames per second, vblank duration */
 		1,	/* 1 CPU slice per frame */
-		0,
+		null,
 	
 		/* video hardware */
-	  	32*8, 32*8, { 0*8, 32*8-1, 4*8, 28*8-1 },
+	  	32*8, 32*8, new rectangle( 0*8, 32*8-1, 4*8, 28*8-1 ),
 		nomnlnd_gfxdecodeinfo,
 		16, 16*4,
 		magspot2_vh_convert_color_prom,
 		VIDEO_TYPE_RASTER,
-		0,
+		null,
 		generic_bitmapped_vh_start,
 		generic_bitmapped_vh_stop,
 		nomnlnd_vh_screenrefresh,
 	
 		/* sound hardware */
 		0,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_DAC,
-				&dac_interface
-			}
+				dac_interface
+			)
 		}
-	};
+	);
 	
 	
 	static void init_cosmicg(void)

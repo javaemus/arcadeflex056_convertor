@@ -577,41 +577,41 @@ public class wardner
 	};
 	
 	
-	static const struct MachineDriver machine_driver_wardner =
-	{
+	static MachineDriver machine_driver_wardner = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_Z80,
 				24000000/4,			/* 6 MHz ??? - Real board crystal is 24MHz */
 				readmem,writemem,
 				readport, writeport,
 				wardner_interrupt, 1
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_Z80,
 				24000000/7,			/* 3.43 MHz ??? */
 				sound_readmem, sound_writemem,
 				sound_readport, sound_writeport,
 				ignore_interrupt, 0	/* IRQs are caused by the YM3812 */
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_TMS320C10,
 				24000000/7,			/* 3.43 MHz ??? */
 				DSP_readmem, DSP_writemem,
 				DSP_readport, DSP_writeport,
 				ignore_interrupt, 0	/* IRQs are caused by Z80(0) */
-			}
+			)
 		},
 		56, DEFAULT_REAL_60HZ_VBLANK_DURATION,  /* frames per second, vblank duration */
 		100,									/* 100 CPU slices per frame */
 		wardner_reset,
 	
 		/* video hardware */
-		64*8, 32*8, { 0*8, 40*8-1, 0*8, 30*8-1 },
+		64*8, 32*8, new rectangle( 0*8, 40*8-1, 0*8, 30*8-1 ),
 		gfxdecodeinfo,
-		1792, 0,
-		0,
+		1792, null,
+		null,
 	
 		VIDEO_TYPE_RASTER | VIDEO_UPDATE_BEFORE_VBLANK | VIDEO_BUFFERS_SPRITERAM,
 		toaplan0_eof_callback,
@@ -621,13 +621,13 @@ public class wardner
 	
 		/* sound hardware */
 		0,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_YM3812,
-				&ym3812_interface
-			}
+				ym3812_interface
+			)
 		}
-	};
+	);
 	
 	
 	

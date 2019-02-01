@@ -317,53 +317,53 @@ public class _88games
 	
 	
 	
-	static const struct MachineDriver machine_driver_88games =
-	{
-		{
-			{
+	static MachineDriver machine_driver_88games = new MachineDriver
+	(
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_KONAMI,
 				3000000, /* ? */
-				readmem,writemem,0,0,
+				readmem,writemem,null,null,
 				k88games_interrupt,1
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_Z80 | CPU_AUDIO_CPU,
 				3579545,
-				sound_readmem, sound_writemem,0,0,
+				sound_readmem, sound_writemem,null,null,
 				ignore_interrupt,0	/* interrupts are triggered by the main CPU */
-			}
+			)
 		},
 		60, DEFAULT_60HZ_VBLANK_DURATION,	/* frames per second, vblank duration */
 		1,	/* 1 CPU slice per frame - interleaving is forced when a sound command is written */
 		k88games_init_machine,
 	
 		/* video hardware */
-		64*8, 32*8, { 13*8, (64-13)*8-1, 2*8, 30*8-1 },
-		0,	/* gfx decoded by konamiic.c */
-		2048, 0,
-		0,
+		64*8, 32*8, new rectangle( 13*8, (64-13)*8-1, 2*8, 30*8-1 ),
+		null,	/* gfx decoded by konamiic.c */
+		2048, null,
+		null,
 	
 		VIDEO_TYPE_RASTER | VIDEO_HAS_SHADOWS,
-		0,
+		null,
 		k88games_vh_start,
 		k88games_vh_stop,
 		k88games_vh_screenrefresh,
 	
 		/* sound hardware */
 		0,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_YM2151,
-				&ym2151_interface
-			},
-			{
+				ym2151_interface
+			),
+			new MachineSound(
 				SOUND_UPD7759,
-				&upd7759_interface
-			}
+				upd7759_interface
+			)
 		},
 	
 		nvram_handler
-	};
+	);
 	
 	
 	

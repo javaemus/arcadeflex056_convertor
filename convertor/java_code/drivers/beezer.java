@@ -105,48 +105,48 @@ public class beezer
 		{ 100 }
 	};
 	
-	static const struct MachineDriver machine_driver_beezer =
-	{
+	static MachineDriver machine_driver_beezer = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_M6809,
 				1000000,        /* 1 MHz */
-				readmem,writemem,0,0,
+				readmem,writemem,null,null,
 				beezer_interrupt,128
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_M6809,
 				1000000,        /* 1 MHz */
-				readmem_sound,writemem_sound,0,0,
-				0,0
-			}
+				readmem_sound,writemem_sound,null,null,
+				null,null
+			)
 		},
 		60, DEFAULT_REAL_60HZ_VBLANK_DURATION,
 		1,	/* 1 CPU slice per frame */
-		0,	/* init machine */
+		null,	/* init machine */
 	
 		/* video hardware */
-		256, 384, { 0, 256-1, 16, 303 },
-		0,
-		16, 0,
-		0,
+		256, 384, new rectangle( 0, 256-1, 16, 303 ),
+		null,
+		16, null,
+		null,
 	
 		VIDEO_TYPE_RASTER,
-		0,
-		0,
-		0,
+		null,
+		null,
+		null,
 		beezer_vh_screenrefresh,
 	
 		/* sound hardware */
 		0,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_DAC,
-				&dac_interface
-			}
+				dac_interface
+			)
 		}
-	};
+	);
 	
 	/***************************************************************************
 	

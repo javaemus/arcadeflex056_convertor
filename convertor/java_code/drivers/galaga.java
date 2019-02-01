@@ -389,58 +389,58 @@ public class galaga
 	};
 	
 	
-	static const struct MachineDriver machine_driver_galaga =
-	{
+	static MachineDriver machine_driver_galaga = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_Z80,
 				3125000,        /* 3.125 MHz */
-				readmem_cpu1,writemem_cpu1,0,0,
+				readmem_cpu1,writemem_cpu1,null,null,
 				galaga_interrupt_1,1
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_Z80,
 				3125000,        /* 3.125 MHz */
-				readmem_cpu2,writemem_cpu2,0,0,
+				readmem_cpu2,writemem_cpu2,null,null,
 				galaga_interrupt_2,1
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_Z80,
 				3125000,        /* 3.125 MHz */
-				readmem_cpu3,writemem_cpu3,0,0,
+				readmem_cpu3,writemem_cpu3,null,null,
 				galaga_interrupt_3,2
-			}
+			)
 		},
 		60.606060, DEFAULT_60HZ_VBLANK_DURATION,	/* frames per second, vblank duration */
 		99,	/* 99 CPU slices per frame - with 100, galagab2 hangs on coin insertion */
 		galaga_init_machine,
 	
 		/* video hardware */
-		36*8, 28*8, { 0*8, 36*8-1, 0*8, 28*8-1 },
+		36*8, 28*8, new rectangle( 0*8, 36*8-1, 0*8, 28*8-1 ),
 		gfxdecodeinfo,
 		32+64,64*4,     /* 32 for the characters, 64 for the stars */
 		galaga_vh_convert_color_prom,
 	
 		VIDEO_TYPE_RASTER,
-		0,
+		null,
 		galaga_vh_start,
 		generic_vh_stop,
 		galaga_vh_screenrefresh,
 	
 		/* sound hardware */
 		0,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_NAMCO,
-				&namco_interface
-			},
-			{
+				namco_interface
+			),
+			new MachineSound(
 				SOUND_SAMPLES,
-				&samples_interface
-			}
+				samples_interface
+			)
 		}
-	};
+	);
 	
 	
 	

@@ -279,47 +279,47 @@ public class skyfox
 		{ 0, 0 }
 	};
 	
-	static const struct MachineDriver machine_driver_skyfox =
-	{
-		{
-			{
+	static MachineDriver machine_driver_skyfox = new MachineDriver
+	(
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_Z80,
 				4000000,
-				skyfox_readmem,skyfox_writemem,0,0,
+				skyfox_readmem,skyfox_writemem,null,null,
 				skyfox_interrupt, 1		/* NMI caused by coin insertion */
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_Z80 | CPU_AUDIO_CPU,
 				1748000,
-				skyfox_sound_readmem,skyfox_sound_writemem,0,0,
+				skyfox_sound_readmem,skyfox_sound_writemem,null,null,
 				ignore_interrupt, 1		/* No interrupts */
-			}
+			)
 		},
 		60,DEFAULT_REAL_60HZ_VBLANK_DURATION,	// we're using IPT_VBLANK
 		1,
-		0,
+		null,
 	
 		/* video hardware */
-		512, 256, { 0+0x60, 320-1+0x60, 0+16, 256-1-16 },	// from $30*2 to $CC*2+8
+		512, 256, new rectangle( 0+0x60, 320-1+0x60, 0+16, 256-1-16 ),	// from $30*2 to $CC*2+8
 		skyfox_gfxdecodeinfo,
-		256+256, 0,		/* 256 static colors (+256 for the background??) */
+		256+256, null,		/* 256 static colors (+256 for the background??) */
 		skyfox_vh_convert_color_prom,
 	
 		VIDEO_TYPE_RASTER,
-		0,
-		0,
-		0,
+		null,
+		null,
+		null,
 		skyfox_vh_screenrefresh,
 	
 		/* sound hardware */
 		0,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_YM2203,
-				&skyfox_ym2203_interface
-			}
+				skyfox_ym2203_interface
+			)
 		}
-	};
+	);
 	
 	
 	

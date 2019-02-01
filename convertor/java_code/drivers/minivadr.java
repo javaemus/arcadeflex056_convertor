@@ -54,36 +54,36 @@ public class minivadr
 	INPUT_PORTS_END(); }}; 
 	
 	
-	static const struct MachineDriver machine_driver_minivadr =
-	{
+	static MachineDriver machine_driver_minivadr = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_Z80,
 				24000000 / 6,		 /* 4 MHz ? */
-				readmem, writemem, 0, 0,
+				readmem, writemem, null, null,
 				interrupt, 1
-			}
+			)
 		},
 		60, DEFAULT_60HZ_VBLANK_DURATION,	/* frames per second, vblank duration */
 		1,					/* single CPU, no need for interleaving */
-		0,
+		null,
 	
 		/* video hardware */
-		256, 256, { 0, 256-1, 16, 240-1 },
-		0,
-		2, 0,
+		256, 256, new rectangle( 0, 256-1, 16, 240-1 ),
+		null,
+		2, null,
 		minivadr_init_palette,
 	
 		VIDEO_TYPE_RASTER | VIDEO_SUPPORTS_DIRTY,
-		0,
-		0,
+		null,
+		null,
 		0,
 		minivadr_vh_screenrefresh,
 	
 		/* sound hardware */
 		0, 0, 0, 0
-	};
+	);
 	
 	
 	/***************************************************************************

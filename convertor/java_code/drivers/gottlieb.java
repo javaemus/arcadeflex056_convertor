@@ -1430,113 +1430,113 @@ public class gottlieb
 	********************************************************************/
 	
 	#define MACHINE_DRIVER_SOUND_1(GAMENAME,READMEM,WRITEMEM,GFX,NVRAM,SAMPLES)	\
-	static const struct MachineDriver machine_driver_##GAMENAME =             \
-	{                                                                   \
+	static MachineDriver machine_driver_##GAMENAME = new MachineDriver\
+	(                                                                   \
 		/* basic machine hardware */                                	\
-		{		                                                        \
-			{	  	                                                    \
+		new MachineCPU[] {		                                                        \
+			new MachineCPU(	  	                                                    \
 				CPU_I86,												\
 				5000000,        /* 5 MHz */								\
-				READMEM,WRITEMEM,0,0,									\
+				READMEM,WRITEMEM,null,null,									\
 				gottlieb_interrupt,1									\
-			},		                                                    \
-			{		                                                    \
+			),		                                                    \
+			new MachineCPU(		                                                    \
 				CPU_M6502 | CPU_AUDIO_CPU ,								\
 				3579545/4,	/* the board can be set to /2 as well */	\
-				gottlieb_sound_readmem,gottlieb_sound_writemem,0,0,		\
+				gottlieb_sound_readmem,gottlieb_sound_writemem,null,null,		\
 				ignore_interrupt,1	/* IRQs are triggered by the main CPU */		\
 									/* NMIs are triggered by the Votrax SC-01 */	\
-			}                                                   		\
+			)                                                   		\
 		},                                                          	\
 		61, 1018,	/* frames per second, vblank duration */			\
 		1,	/* 1 CPU slice per frame - interleaving is forced when a sound command is written */ \
 		init_machine,			                                    	\
 																		\
 		/* video hardware */                                        	\
-		32*8, 32*8, { 0*8, 32*8-1, 0*8, 30*8-1 },						\
+		32*8, 32*8, new rectangle( 0*8, 32*8-1, 0*8, 30*8-1 ),						\
 		GFX,                                                        	\
-		16, 0,		                                                	\
-		0,									                           	\
+		16, null,		                                                	\
+		null,									                           	\
 																		\
 		VIDEO_TYPE_RASTER,												\
-		0,                                                          	\
+		null,                                                          	\
 		gottlieb_vh_start,												\
 		gottlieb_vh_stop,												\
 		gottlieb_vh_screenrefresh,										\
 																		\
 		/* sound hardware */                                        	\
 		0,0,0,0,                                                    	\
-		{                                                           	\
-			{                                                   		\
+		new MachineSound[] {                                                           	\
+			new MachineSound(                                                   		\
 				SOUND_DAC,												\
-				&dac1_interface											\
-			},															\
-			{															\
+				dac1_interface											\
+			),															\
+			new MachineSound(															\
 				SAMPLES * SOUND_SAMPLES,	/* for Votrax simulation */	\
-				&GAMENAME##_samples_interface							\
-			}                                                   		\
+				GAMENAME##_samples_interface							\
+			)                                                   		\
 		},                                                           	\
 																		\
 		NVRAM															\
-	}
+	)
 	
 	#define MACHINE_DRIVER_SOUND_2(GAMENAME,READMEM,WRITEMEM,GFX,NVRAM)	\
-	static const struct MachineDriver machine_driver_##GAMENAME =				\
-	{																	\
+	static MachineDriver machine_driver_##GAMENAME = new MachineDriver\
+	(																	\
 		/* basic machine hardware */									\
-		{																\
-			{															\
+		new MachineCPU[] {																\
+			new MachineCPU(															\
 				CPU_I86,												\
 				5000000,        /* 5 MHz */								\
-				READMEM,WRITEMEM,0,0,									\
+				READMEM,WRITEMEM,null,null,									\
 				gottlieb_interrupt,1									\
-			},															\
-			{															\
+			),															\
+			new MachineCPU(															\
 				CPU_M6502 | CPU_AUDIO_CPU ,								\
 				1000000,	/* 1 MHz */									\
-				stooges_sound_readmem,stooges_sound_writemem,0,0,		\
+				stooges_sound_readmem,stooges_sound_writemem,null,null,		\
 				ignore_interrupt,1	/* IRQs are triggered by the main CPU */			\
 									/* NMIs are triggered by the second sound CPU */	\
-			},															\
-			{															\
+			),															\
+			new MachineCPU(															\
 				CPU_M6502 | CPU_AUDIO_CPU ,								\
 				1000000,	/* 1 MHz */									\
-				stooges_sound2_readmem,stooges_sound2_writemem,0,0,		\
+				stooges_sound2_readmem,stooges_sound2_writemem,null,null,		\
 				ignore_interrupt,1	/* IRQs are triggered by the main CPU */			\
 									/* NMIs are triggered by a programmable timer */	\
-			}															\
+			)															\
 		},																\
 		61, 1018,	/* frames per second, vblank duration */			\
 		1,	/* 1 CPU slice per frame - interleaving is forced when a sound command is written */ \
 		init_machine,													\
 																		\
 		/* video hardware */											\
-		32*8, 32*8, { 0*8, 32*8-1, 0*8, 30*8-1 },						\
+		32*8, 32*8, new rectangle( 0*8, 32*8-1, 0*8, 30*8-1 ),						\
 		GFX,															\
-		16, 0,															\
-		0,																\
+		16, null,															\
+		null,																\
 																		\
 		VIDEO_TYPE_RASTER,												\
-		0,																\
+		null,																\
 		gottlieb_vh_start,												\
 		gottlieb_vh_stop,												\
 		gottlieb_vh_screenrefresh,										\
 																		\
 		/* sound hardware */											\
 		0,0,0,0,														\
-		{																\
-			{															\
+		new MachineSound[] {																\
+			new MachineSound(															\
 				SOUND_DAC,												\
-				&dac2_interface											\
-			},															\
-			{															\
+				dac2_interface											\
+			),															\
+			new MachineSound(															\
 				SOUND_AY8910,											\
-				&ay8910_interface										\
-			}															\
+				ay8910_interface										\
+			)															\
 		},																\
 																		\
 		NVRAM															\
-	}
+	)
 	
 	/* games using the revision 1 sound board */
 	MACHINE_DRIVER_SOUND_1(reactor,  reactor_readmem, reactor_writemem, charRAM_gfxdecodeinfo,0,            1);

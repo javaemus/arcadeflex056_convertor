@@ -187,42 +187,42 @@ public class bankp
 	
 	
 	
-	static const struct MachineDriver machine_driver_bankp =
-	{
+	static MachineDriver machine_driver_bankp = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_Z80,
 				3867120,	/* ?? the main oscillator is 15.46848 MHz */
 				readmem,writemem,readport,writeport,
 				nmi_interrupt,1
-			},
+			),
 		},
 		60, DEFAULT_60HZ_VBLANK_DURATION,	/* frames per second, vblank duration */
 		1,	/* single CPU, no need for interleaving */
-		0,
+		null,
 	
 		/* video hardware */
-		32*8, 32*8, { 3*8, 31*8-1, 2*8, 30*8-1 },
+		32*8, 32*8, new rectangle( 3*8, 31*8-1, 2*8, 30*8-1 ),
 		gfxdecodeinfo,
 		32, 32*4+16*8,
 		bankp_vh_convert_color_prom,
 	
 		VIDEO_TYPE_RASTER,
-		0,
+		null,
 		bankp_vh_start,
 		bankp_vh_stop,
 		bankp_vh_screenrefresh,
 	
 		/* sound hardware */
 		0,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_SN76496,
-				&sn76496_interface
-			}
+				sn76496_interface
+			)
 		}
-	};
+	);
 	
 	
 	

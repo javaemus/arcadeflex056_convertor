@@ -220,44 +220,44 @@ public class superqix
 			return ignore_interrupt();
 	}
 	
-	static const struct MachineDriver machine_driver_superqix =
-	{
+	static MachineDriver machine_driver_superqix = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_Z80 | CPU_16BIT_PORT,
 	//			10000000,	/* 10 MHz ? */
 				6000000,	/* 6 MHz ? */
 				readmem,writemem,readport,writeport,
 	//			nmi_interrupt,3	/* ??? */
 				sqix_interrupt,6	/* ??? */
-			}
+			)
 		},
 		60, DEFAULT_REAL_60HZ_VBLANK_DURATION,	/* frames per second, vblank duration */
 		1,	/* single CPU, no need for interleaving */
-		0,
+		null,
 	
 		/* video hardware */
-		32*8, 32*8, { 0*8, 32*8-1, 2*8, 30*8-1 },
+		32*8, 32*8, new rectangle( 0*8, 32*8-1, 2*8, 30*8-1 ),
 		gfxdecodeinfo,
-		256, 0,
-		0,
+		256, null,
+		null,
 	
 		VIDEO_TYPE_RASTER,
-		0,
+		null,
 		superqix_vh_start,
 		superqix_vh_stop,
 		superqix_vh_screenrefresh,
 	
 		/* sound hardware */
 		0,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_AY8910,
-				&ay8910_interface
-			}
+				ay8910_interface
+			)
 		}
-	};
+	);
 	
 	
 	

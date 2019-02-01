@@ -286,53 +286,53 @@ public class ultraman
 	
 	
 	
-	static const struct MachineDriver machine_driver_ultraman =
-	{
+	static MachineDriver machine_driver_ultraman = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_M68000,
 				24000000/2,		/* 12 MHz? */
-				ultraman_readmem,ultraman_writemem,0,0,
+				ultraman_readmem,ultraman_writemem,null,null,
 				m68_level4_irq,1
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_Z80  | CPU_AUDIO_CPU,
 				24000000/6,		/* 4 MHz? */
-				ultraman_readmem_sound, ultraman_writemem_sound,0,ultraman_writeport_sound,
+				ultraman_readmem_sound, ultraman_writemem_sound,null,ultraman_writeport_sound,
 				ignore_interrupt,1	/* NMI triggered by the m68000 */
-			}
+			)
 		},
 		60,DEFAULT_REAL_60HZ_VBLANK_DURATION,
 		10,
-		0,
+		null,
 	
 		/* video hardware */
-		64*8, 32*8, { 14*8, (64-14)*8-1, 2*8, 30*8-1 },
-		0,	/* decoded by KonamiIC */
-		8192, 0,
-		0,
+		64*8, 32*8, new rectangle( 14*8, (64-14)*8-1, 2*8, 30*8-1 ),
+		null,	/* decoded by KonamiIC */
+		8192, null,
+		null,
 	
 		VIDEO_TYPE_RASTER | VIDEO_HAS_SHADOWS,
-		0,
+		null,
 		ultraman_vh_start,
 		ultraman_vh_stop,
 		ultraman_vh_screenrefresh,
 	
 		/* sound hardware */
 		SOUND_SUPPORTS_STEREO,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_YM2151,
-				&ym2151_interface
-			},
-			{
+				ym2151_interface
+			),
+			new MachineSound(
 				SOUND_OKIM6295,
-				&okim6295_interface
-			}
+				okim6295_interface
+			)
 		}
 	
-	};
+	);
 	
 	
 	

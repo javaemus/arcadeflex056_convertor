@@ -1305,40 +1305,40 @@ public class m62
 	
 	#define MACHINE_DRIVER(GAMENAME,READPORT,WRITEPORT,CLOCK,PIXELS_PER_LINE,GFXDECODE,COLORS,CONVERTCOLOR) \
 	                                                                                             \
-	static const struct MachineDriver machine_driver_##GAMENAME =                                \
-	{                                                                                            \
+	static MachineDriver machine_driver_##GAMENAME = new MachineDriver\
+	(                                                                                            \
 		/* basic machine hardware */                                                             \
-		{                                                                                        \
-			{                                                                                    \
+		new MachineCPU[] {                                                                                        \
+			new MachineCPU(                                                                                    \
 				CPU_Z80,                                                                         \
 				CLOCK/6,                                                                         \
 				GAMENAME##_readmem,GAMENAME##_writemem,READPORT##_readport,WRITEPORT##_writeport, \
 				interrupt,1                                                                      \
-			},                                                                                   \
+			),                                                                                   \
 			IREM_AUDIO_CPU                                                                       \
 		},                                                                                       \
 		55, 1790, /* frames per second and vblank duration from the Lode Runner manual */        \
 		1,	/* 1 CPU slice per frame - interleaving is forced when a sound command is written */ \
-		0,                                                                                       \
+		null,                                                                                       \
 	                                                                                             \
 		/* video hardware */                                                                     \
-		64*8, 32*8, { (64*8-PIXELS_PER_LINE)/2, 64*8-(64*8-PIXELS_PER_LINE)/2-1, 0*8, 32*8-1 },  \
+		64*8, 32*8, new rectangle( (64*8-PIXELS_PER_LINE)/2, 64*8-(64*8-PIXELS_PER_LINE)/2-1, 0*8, 32*8-1 ),  \
 		GFXDECODE##_gfxdecodeinfo,                                                               \
-		COLORS, 0,                                                                               \
+		COLORS, null,                                                                               \
 		CONVERTCOLOR##_vh_convert_color_prom,                                                    \
 	                                                                                             \
 		VIDEO_TYPE_RASTER,                                                                       \
-		0,                                                                                       \
+		null,                                                                                       \
 		GAMENAME##_vh_start,                                                                     \
 		generic_vh_stop,                                                                         \
 		GAMENAME##_vh_screenrefresh,                                                             \
 	                                                                                             \
 		/* sound hardware */                                                                     \
 		0,0,0,0,                                                                                 \
-		{                                                                                        \
+		new MachineSound[] {                                                                                        \
 			IREM_AUDIO                                                                           \
 		}                                                                                        \
-	}
+	)
 	
 	#define kungfum_readmem ldrun_readmem
 	#define	kungfum_vh_start kidniki_vh_start

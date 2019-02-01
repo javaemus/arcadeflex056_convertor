@@ -1051,271 +1051,271 @@ public class aerofgt
 	
 	
 	
-	static const struct MachineDriver machine_driver_pspikes =
-	{
+	static MachineDriver machine_driver_pspikes = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_M68000,
 				20000000/2,	/* 10 MHz (?) */
-				pspikes_readmem,pspikes_writemem,0,0,
+				pspikes_readmem,pspikes_writemem,null,null,
 				m68_level1_irq,1	/* all irq vectors are the same */
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_Z80 | CPU_AUDIO_CPU,
 				8000000/2,	/* 4 MHz ??? */
 				sound_readmem,sound_writemem,turbofrc_sound_readport,turbofrc_sound_writeport,
 				ignore_interrupt,0	/* NMIs are triggered by the main CPU */
 									/* IRQs are triggered by the YM2610 */
-			}
+			)
 		},
 		60, DEFAULT_60HZ_VBLANK_DURATION,       /* frames per second, vblank duration */
 		1,	/* 1 CPU slice per frame - interleaving is forced when a sound command is written */
-		0,
+		null,
 	
 		/* video hardware */
-		64*8, 32*8, { 0*8+4, 44*8+4-1, 0*8, 30*8-1 },
+		64*8, 32*8, new rectangle( 0*8+4, 44*8+4-1, 0*8, 30*8-1 ),
 		pspikes_gfxdecodeinfo,
-		2048, 0,
-		0,
+		2048, null,
+		null,
 	
 		VIDEO_TYPE_RASTER,
-		0,
+		null,
 		pspikes_vh_start,
-		0,
+		null,
 		pspikes_vh_screenrefresh,
 	
 		/* sound hardware */
 		SOUND_SUPPORTS_STEREO,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_YM2610,
-				&ym2610_interface,
-			}
+				ym2610_interface,
+			)
 		}
-	};
+	);
 	
-	static const struct MachineDriver machine_driver_karatblz =
-	{
+	static MachineDriver machine_driver_karatblz = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_M68000,
 				20000000/2,	/* 10 MHz (?) */
-				karatblz_readmem,karatblz_writemem,0,0,
+				karatblz_readmem,karatblz_writemem,null,null,
 				m68_level1_irq,1
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_Z80 | CPU_AUDIO_CPU,
 				8000000/2,	/* 4 MHz ??? */
 				sound_readmem,sound_writemem,turbofrc_sound_readport,turbofrc_sound_writeport,
 				ignore_interrupt,0	/* NMIs are triggered by the main CPU */
 									/* IRQs are triggered by the YM2610 */
-			}
+			)
 		},
 		60, DEFAULT_60HZ_VBLANK_DURATION,       /* frames per second, vblank duration */
 		1,	/* 1 CPU slice per frame - interleaving is forced when a sound command is written */
-		0,
+		null,
 	
 		/* video hardware */
-		64*8, 32*8, { 1*8, 45*8-1, 0*8, 30*8-1 },
+		64*8, 32*8, new rectangle( 1*8, 45*8-1, 0*8, 30*8-1 ),
 		turbofrc_gfxdecodeinfo,
-		1024, 0,
-		0,
+		1024, null,
+		null,
 	
 		VIDEO_TYPE_RASTER,
-		0,
+		null,
 		karatblz_vh_start,
-		0,
+		null,
 		karatblz_vh_screenrefresh,
 	
 		/* sound hardware */
 		SOUND_SUPPORTS_STEREO,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_YM2610,
-				&ym2610_interface,
-			}
+				ym2610_interface,
+			)
 		}
-	};
+	);
 	
-	static const struct MachineDriver machine_driver_spinlbrk =
-	{
+	static MachineDriver machine_driver_spinlbrk = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_M68000,
 				20000000/2,	/* 10 MHz (?) */
-				spinlbrk_readmem,spinlbrk_writemem,0,0,
+				spinlbrk_readmem,spinlbrk_writemem,null,null,
 				m68_level1_irq,1	/* there are vectors for 3 and 4 too */
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_Z80 | CPU_AUDIO_CPU,
 				8000000/2,	/* 4 MHz ??? */
 				sound_readmem,sound_writemem,turbofrc_sound_readport,turbofrc_sound_writeport,
 				ignore_interrupt,0	/* NMIs are triggered by the main CPU */
 									/* IRQs are triggered by the YM2610 */
-			}
+			)
 		},
 		60, DEFAULT_60HZ_VBLANK_DURATION,       /* frames per second, vblank duration */
 		1,	/* 1 CPU slice per frame - interleaving is forced when a sound command is written */
-		0,
+		null,
 	
 		/* video hardware */
-		64*8, 32*8, { 1*8, 45*8-1, 0*8, 30*8-1 },
+		64*8, 32*8, new rectangle( 1*8, 45*8-1, 0*8, 30*8-1 ),
 		turbofrc_gfxdecodeinfo,
-		1024, 0,
-		0,
+		1024, null,
+		null,
 	
 		VIDEO_TYPE_RASTER,
-		0,
+		null,
 		spinlbrk_vh_start,
-		0,
+		null,
 		spinlbrk_vh_screenrefresh,
 	
 		/* sound hardware */
 		SOUND_SUPPORTS_STEREO,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_YM2610,
-				&ym2610_interface,
-			}
+				ym2610_interface,
+			)
 		}
-	};
+	);
 	
-	static const struct MachineDriver machine_driver_turbofrc =
-	{
+	static MachineDriver machine_driver_turbofrc = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_M68000,
 				20000000/2,	/* 10 MHz (?) */
-				turbofrc_readmem,turbofrc_writemem,0,0,
+				turbofrc_readmem,turbofrc_writemem,null,null,
 				m68_level1_irq,1	/* all irq vectors are the same */
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_Z80 | CPU_AUDIO_CPU,
 				8000000/2,	/* 4 MHz ??? */
 				sound_readmem,sound_writemem,turbofrc_sound_readport,turbofrc_sound_writeport,
 				ignore_interrupt,0	/* NMIs are triggered by the main CPU */
 									/* IRQs are triggered by the YM2610 */
-			}
+			)
 		},
 		60, DEFAULT_60HZ_VBLANK_DURATION,       /* frames per second, vblank duration */
 		1,	/* 1 CPU slice per frame - interleaving is forced when a sound command is written */
-		0,
+		null,
 	
 		/* video hardware */
-		64*8, 32*8, { 0*8, 44*8-1, 0*8, 30*8-1 },
+		64*8, 32*8, new rectangle( 0*8, 44*8-1, 0*8, 30*8-1 ),
 		turbofrc_gfxdecodeinfo,
-		1024, 0,
-		0,
+		1024, null,
+		null,
 	
 		VIDEO_TYPE_RASTER,
-		0,
+		null,
 		turbofrc_vh_start,
-		0,
+		null,
 		turbofrc_vh_screenrefresh,
 	
 		/* sound hardware */
 		SOUND_SUPPORTS_STEREO,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_YM2610,
-				&ym2610_interface,
-			}
+				ym2610_interface,
+			)
 		}
-	};
+	);
 	
-	static const struct MachineDriver machine_driver_aerofgtb =
-	{
+	static MachineDriver machine_driver_aerofgtb = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_M68000,
 				20000000/2,	/* 10 MHz (?) */
-				aerofgtb_readmem,aerofgtb_writemem,0,0,
+				aerofgtb_readmem,aerofgtb_writemem,null,null,
 				m68_level1_irq,1	/* all irq vectors are the same */
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_Z80 | CPU_AUDIO_CPU,
 				8000000/2,	/* 4 MHz ??? */
 				sound_readmem,sound_writemem,aerofgt_sound_readport,aerofgt_sound_writeport,
 				ignore_interrupt,0	/* NMIs are triggered by the main CPU */
 									/* IRQs are triggered by the YM2610 */
-			}
+			)
 		},
 		60, 500,	/* frames per second, vblank duration */
 					/* wrong but improves sprite-background synchronization */
 		1,	/* 1 CPU slice per frame - interleaving is forced when a sound command is written */
-		0,
+		null,
 	
 		/* video hardware */
-		64*8, 32*8, { 0*8+12, 40*8-1+12, 0*8, 28*8-1 },
+		64*8, 32*8, new rectangle( 0*8+12, 40*8-1+12, 0*8, 28*8-1 ),
 		aerofgtb_gfxdecodeinfo,
-		1024, 0,
-		0,
+		1024, null,
+		null,
 	
 		VIDEO_TYPE_RASTER,
-		0,
+		null,
 		turbofrc_vh_start,
-		0,
+		null,
 		turbofrc_vh_screenrefresh,
 	
 		/* sound hardware */
 		SOUND_SUPPORTS_STEREO,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_YM2610,
-				&ym2610_interface,
-			}
+				ym2610_interface,
+			)
 		}
-	};
+	);
 	
-	static const struct MachineDriver machine_driver_aerofgt =
-	{
+	static MachineDriver machine_driver_aerofgt = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_M68000,
 				20000000/2,	/* 10 MHz (?) */
-				aerofgt_readmem,aerofgt_writemem,0,0,
+				aerofgt_readmem,aerofgt_writemem,null,null,
 				m68_level1_irq,1	/* all irq vectors are the same */
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_Z80 | CPU_AUDIO_CPU,
 				8000000/2,	/* 4 MHz ??? */
 				sound_readmem,sound_writemem,aerofgt_sound_readport,aerofgt_sound_writeport,
 				ignore_interrupt,0	/* NMIs are triggered by the main CPU */
 									/* IRQs are triggered by the YM2610 */
-			}
+			)
 		},
 		60, 400,	/* frames per second, vblank duration */
 					/* wrong but improves sprite-background synchronization */
 		1,	/* 1 CPU slice per frame - interleaving is forced when a sound command is written */
-		0,
+		null,
 	
 		/* video hardware */
-		64*8, 32*8, { 0*8, 40*8-1, 0*8, 28*8-1 },
+		64*8, 32*8, new rectangle( 0*8, 40*8-1, 0*8, 28*8-1 ),
 		aerofgt_gfxdecodeinfo,
-		1024, 0,
-		0,
+		1024, null,
+		null,
 	
 		VIDEO_TYPE_RASTER,
-		0,
+		null,
 		turbofrc_vh_start,
-		0,
+		null,
 		aerofgt_vh_screenrefresh,
 	
 		/* sound hardware */
 		SOUND_SUPPORTS_STEREO,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_YM2610,
-				&ym2610_interface,
-			}
+				ym2610_interface,
+			)
 		}
-	};
+	);
 	
 	
 	

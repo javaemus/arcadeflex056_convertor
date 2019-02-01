@@ -358,101 +358,101 @@ public class exctsccr
 	
 	***************************************************************************/
 	
-	static const struct MachineDriver machine_driver_exctsccr =
-	{
+	static MachineDriver machine_driver_exctsccr = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_Z80,
 				4000000,	/* 4.0 MHz (?) */
-				readmem,writemem,0,0,
+				readmem,writemem,null,null,
 				interrupt,1
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_Z80,
 				4123456,	/* ??? with 4 MHz, nested NMIs might happen */
 				sound_readmem,sound_writemem,0,sound_writeport,
 				ignore_interrupt,0,
 				nmi_interrupt, 4000 /* 4 kHz, updates the dac */
-			},
+			),
 		},
 		60, DEFAULT_REAL_60HZ_VBLANK_DURATION, /* frames per second, vblank duration */
 		1,	/* 1 CPU slice per frame - interleaving is forced when a sound command is written */
-		0,
+		null,
 	
 		/* video hardware */
-		32*8, 32*8, { 0*8, 32*8-1, 2*8, 30*8-1 },
+		32*8, 32*8, new rectangle( 0*8, 32*8-1, 2*8, 30*8-1 ),
 		gfxdecodeinfo,
 		32, 64*8,
 		exctsccr_vh_convert_color_prom,
 	
 		VIDEO_TYPE_RASTER,
-		0,
+		null,
 		exctsccr_vh_start,
 		exctsccr_vh_stop,
 		exctsccr_vh_screenrefresh,
 	
 		/* sound hardware */
 		0, 0, 0, 0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_AY8910,
-				&ay8910_interface
-			},
-			{
+				ay8910_interface
+			),
+			new MachineSound(
 				SOUND_DAC,
-				&dac_interface
-			}
+				dac_interface
+			)
 		}
-	};
+	);
 	
 	/* Bootleg */
-	static const struct MachineDriver machine_driver_exctsccb =
-	{
+	static MachineDriver machine_driver_exctsccb = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_Z80,
 				4000000,	/* 4.0 MHz (?) */
-				bl_readmem,bl_writemem,0,0,
+				bl_readmem,bl_writemem,null,null,
 				interrupt,1
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_Z80,
 				3072000,	/* 3.072 MHz ? */
-				bl_sound_readmem,bl_sound_writemem,0,0,
+				bl_sound_readmem,bl_sound_writemem,null,null,
 				ignore_interrupt,0
-			},
+			),
 		},
 		60, DEFAULT_REAL_60HZ_VBLANK_DURATION, /* frames per second, vblank duration */
 		1,	/* 1 CPU slice per frame - interleaving is forced when a sound command is written */
-		0,
+		null,
 	
 		/* video hardware */
-		32*8, 32*8, { 0*8, 32*8-1, 2*8, 30*8-1 },
+		32*8, 32*8, new rectangle( 0*8, 32*8-1, 2*8, 30*8-1 ),
 		gfxdecodeinfo,
 		32, 64*8,
 		exctsccr_vh_convert_color_prom,
 	
 		VIDEO_TYPE_RASTER,
-		0,
+		null,
 		generic_vh_start,
 		exctsccr_vh_stop,
 		exctsccr_vh_screenrefresh,
 	
 		/* sound hardware */
 		0, 0, 0, 0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_AY8910,
-				&bl_ay8910_interface
-			},
-			{
+				bl_ay8910_interface
+			),
+			new MachineSound(
 				SOUND_DAC,
-				&bl_dac_interface
-			}
+				bl_dac_interface
+			)
 		}
-	};
+	);
 	
 	/***************************************************************************
 	

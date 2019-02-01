@@ -269,47 +269,47 @@ public class yiear
 	
 	
 	
-	static const struct MachineDriver machine_driver_yiear =
-	{
+	static MachineDriver machine_driver_yiear = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_M6809,
 				18432000/16,	/* ???? */
-				readmem, writemem, 0, 0,
+				readmem, writemem, null, null,
 				interrupt,1,	/* vblank */
 				yiear_nmi_interrupt,500	/* music tempo (correct frequency unknown) */
-			}
+			)
 		},
 		60, DEFAULT_60HZ_VBLANK_DURATION,	/* frames per second, vblank duration */
 		1,	/* single CPU, no need for interleaving */
-		0,
+		null,
 	
 		/* video hardware */
-		32*8, 32*8, { 0*8, 32*8-1, 2*8, 30*8-1 },
+		32*8, 32*8, new rectangle( 0*8, 32*8-1, 2*8, 30*8-1 ),
 		gfxdecodeinfo,
 		32, 32,
 		yiear_vh_convert_color_prom,
 	
 		VIDEO_TYPE_RASTER,
-		0,
+		null,
 		generic_vh_start,
 		generic_vh_stop,
 		yiear_vh_screenrefresh,
 	
 		/* sound hardware */
 		0,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_SN76496,
-				&sn76496_interface
-			},
-			{
+				sn76496_interface
+			),
+			new MachineSound(
 				SOUND_VLM5030,
-				&vlm5030_interface
-			}
+				vlm5030_interface
+			)
 		}
-	};
+	);
 	
 	
 	/***************************************************************************

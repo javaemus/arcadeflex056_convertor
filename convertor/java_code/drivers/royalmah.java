@@ -309,42 +309,42 @@ public class royalmah
 	};
 	
 	
-	static const struct MachineDriver machine_driver_royalmah =
-	{
+	static MachineDriver machine_driver_royalmah = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_Z80,
 				3000000,        /* 3.00 MHz ? */
 				readmem,writemem,readport,writeport,
 				interrupt,1
-			}
+			)
 		},
 		60, DEFAULT_REAL_60HZ_VBLANK_DURATION,
 		1,
-		0,
+		null,
 	
 		/* video hardware */
-		32*8, 32*8, { 0, 255, 0, 255 },
-		0,
-		16,0,
+		32*8, 32*8, new rectangle( 0, 255, 0, 255 ),
+		null,
+		16,null,
 		royalmah_vh_convert_color_prom,
 	
 		VIDEO_TYPE_RASTER,
-		0,
-		0,
-		0,
+		null,
+		null,
+		null,
 		royalmah_vh_screenrefresh,
 	
 		/* sound hardware */
 		0,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_AY8910,
-				&ay8910_interface
-			}
+				ay8910_interface
+			)
 		}
-	};
+	);
 	
 	/***************************************************************************
 	

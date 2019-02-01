@@ -279,41 +279,41 @@ public class powerins
 		{ 100 }
 	};
 	
-	static const struct MachineDriver machine_driver_powerins =
-	{
-		{
-			{
+	static MachineDriver machine_driver_powerins = new MachineDriver
+	(
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_M68000,
 				10000000,	/* ? (it affects the game's speed!) */
-				powerins_readmem, powerins_writemem,0,0,
+				powerins_readmem, powerins_writemem,null,null,
 				m68_level4_irq, 1
-			},
+			),
 		},
 		60, DEFAULT_60HZ_VBLANK_DURATION,
 		1,
 		powerins_init_machine,
 	
 		/* video hardware */
-		320, 256, { 0, 320-1, 0+16, 256-16-1 },
+		320, 256, new rectangle( 0, 320-1, 0+16, 256-16-1 ),
 		powerins_gfxdecodeinfo,
-		2048, 0,
-		0,
+		2048, null,
+		null,
 	
 		VIDEO_TYPE_RASTER,
-		0,
+		null,
 		powerins_vh_start,
-		0,
+		null,
 		powerins_vh_screenrefresh,
 	
 		/* sound hardware */
 		0,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_OKIM6295,
-				&powerins_okim6295_interface
-			}
+				powerins_okim6295_interface
+			)
 		}
-	};
+	);
 	
 	
 	

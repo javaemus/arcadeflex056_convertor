@@ -319,42 +319,42 @@ public class dday
 	};
 	
 	
-	static const struct MachineDriver machine_driver_dday =
-	{
+	static MachineDriver machine_driver_dday = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_Z80,
 				2000000,     /* 2 MHz ? */
-				readmem,writemem,0,0,
+				readmem,writemem,null,null,
 				ignore_interrupt,0
-			}
+			)
 		},
 		60, DEFAULT_REAL_60HZ_VBLANK_DURATION, /* frames per second, vblank duration */
 		1,      /* single CPU, no need for interleaving */
-		0,
+		null,
 	
 		/* video hardware */
-		32*8, 32*8, { 0*8, 32*8-1, 0*8, 28*8-1 },
+		32*8, 32*8, new rectangle( 0*8, 32*8-1, 0*8, 28*8-1 ),
 		gfxdecodeinfo,
 		256,256,//8*8+8*4+8*4,
 		dday_vh_convert_color_prom,
 	
 		VIDEO_TYPE_RASTER | VIDEO_HAS_SHADOWS,
-		0,
+		null,
 		dday_vh_start,
 		dday_vh_stop,
 		dday_vh_screenrefresh,
 	
 		/* sound hardware */
 		0,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_AY8910,
-				&ay8910_interface
-			}
+				ay8910_interface
+			)
 		}
-	};
+	);
 	
 	
 	

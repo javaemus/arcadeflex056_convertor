@@ -174,42 +174,42 @@ public class z80bw
 		PORT_BIT( 0xfe, IP_ACTIVE_HIGH, IPT_UNUSED );
 	INPUT_PORTS_END(); }}; 
 	
-	static const struct MachineDriver machine_driver_astinvad =
-	{
+	static MachineDriver machine_driver_astinvad = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_Z80,
 				2000000,        /* 2 MHz? */
 				astinvad_readmem,astinvad_writemem,astinvad_readport,astinvad_writeport,
 				interrupt,1    /* two interrupts per frame */
-			}
+			)
 		},
 		60, DEFAULT_60HZ_VBLANK_DURATION,       /* frames per second, vblank duration */
 		1,      /* single CPU, no need for interleaving */
-		0,
+		null,
 	
 		/* video hardware */
-		32*8, 32*8, { 0*8, 32*8-1, 0*8, 28*8-1 },
-		0,      /* no gfxdecodeinfo - bitmapped display */
-		8, 0,
+		32*8, 32*8, new rectangle( 0*8, 32*8-1, 0*8, 28*8-1 ),
+		null,      /* no gfxdecodeinfo - bitmapped display */
+		8, null,
 		invadpt2_vh_convert_color_prom,
 	
 		VIDEO_TYPE_RASTER | VIDEO_SUPPORTS_DIRTY ,
-		0,
+		null,
 		invaders_vh_start,
 		invaders_vh_stop,
 		invaders_vh_screenrefresh,
 	
 		/* sound hardware */
 		0, 0, 0, 0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_SAMPLES,
-				&astinvad_samples_interface
-			}
+				astinvad_samples_interface
+			)
 		}
-	};
+	);
 	
 	
 	
@@ -313,26 +313,26 @@ public class z80bw
 	INPUT_PORTS_END(); }}; 
 	
 	
-	static const struct MachineDriver machine_driver_spaceint =
-	{
+	static MachineDriver machine_driver_spaceint = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_Z80,
 				2000000,        /* 2 MHz? */
 				spaceint_readmem,spaceint_writemem,spaceint_readport,0,
 				spaceint_interrupt,1
-			}
+			)
 		},
 		60, DEFAULT_60HZ_VBLANK_DURATION,       /* frames per second, vblank duration */
 		1,      /* single CPU, no need for interleaving */
-		0,
+		null,
 	
 		/* video hardware */
-		//32*8, 32*8, { 0*8, 32*8-1, 0*8, 32*8-1 },
+		//32*8, 32*8, new rectangle( 0*8, 32*8-1, 0*8, 32*8-1 ),
 		32*8, 32*8, { 0*8, 32*8-1, 0*8, 32*8-1 },
-		0,      /* no gfxdecodeinfo - bitmapped display */
-		8, 0,
+		null,      /* no gfxdecodeinfo - bitmapped display */
+		8, null,
 		invadpt2_vh_convert_color_prom,
 	
 		VIDEO_TYPE_RASTER | VIDEO_SUPPORTS_DIRTY ,
@@ -343,13 +343,13 @@ public class z80bw
 	
 		/* sound hardware */
 		0, 0, 0, 0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_SAMPLES,
-				&astinvad_samples_interface
-			}
+				astinvad_samples_interface
+			)
 		}
-	};
+	);
 	
 	
 	

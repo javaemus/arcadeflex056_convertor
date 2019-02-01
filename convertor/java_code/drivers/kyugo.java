@@ -598,47 +598,47 @@ public class kyugo
 	***************************************************************************/
 	
 	#define Machine_Driver( name ) \
-	static const struct MachineDriver machine_driver_##name =											\
-	{																							\
-		{																						\
-			{																					\
+	static MachineDriver machine_driver_##name = new MachineDriver\
+	(																							\
+		new MachineCPU[] {																						\
+			new MachineCPU(																					\
 				CPU_Z80,																		\
 				18432000 / 4,	/* 18.432 MHz crystal */										\
-				name##_readmem,name##_writemem,0,name##_writeport,								\
+				name##_readmem,name##_writemem,null,name##_writeport,								\
 				nmi_interrupt,1																	\
-			},																					\
-			{																					\
+			),																					\
+			new MachineCPU(																					\
 				CPU_Z80,																		\
 				18432000 / 4,	/* 18.432 MHz crystal */										\
 				name##_sub_readmem,name##_sub_writemem,name##_sub_readport,name##_sub_writeport,\
 				interrupt,4																		\
-			}																					\
+			)																					\
 		},																						\
 		60, DEFAULT_REAL_60HZ_VBLANK_DURATION,	/* frames per second, vblank duration */		\
 		100,	/* cpu interleaving */															\
-		0,																						\
+		null,																						\
 																								\
 		/* video hardware */																	\
-		64*8, 32*8, { 0*8, 36*8-1, 2*8, 30*8-1 },												\
+		64*8, 32*8, new rectangle( 0*8, 36*8-1, 2*8, 30*8-1 ),												\
 		gfxdecodeinfo,																			\
-		256, 0,																					\
+		256, null,																					\
 		palette_RRRR_GGGG_BBBB_convert_prom,													\
 																								\
 		VIDEO_TYPE_RASTER,																		\
-		0,																						\
+		null,																						\
 		generic_vh_start,																		\
 		generic_vh_stop,																		\
 		kyugo_vh_screenrefresh,																	\
 																								\
 		/* sound hardware */																	\
 		0,0,0,0,																				\
-		{																						\
-			{																					\
+		new MachineSound[] {																						\
+			new MachineSound(																					\
 				SOUND_AY8910,																	\
-				&ay8910_interface																\
-			}																					\
+				ay8910_interface																\
+			)																					\
 		}																						\
-	};
+	);
 	
 	/* actual definitions */
 	Machine_Driver( gyrodine )

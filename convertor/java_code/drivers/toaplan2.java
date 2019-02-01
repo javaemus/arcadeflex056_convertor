@@ -3116,23 +3116,23 @@ public class toaplan2
 	};
 	
 	
-	static const struct MachineDriver machine_driver_tekipaki =
-	{
+	static MachineDriver machine_driver_tekipaki = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_M68000,
 				10000000,			/* 10MHz Oscillator */
-				tekipaki_readmem,tekipaki_writemem,0,0,
+				tekipaki_readmem,tekipaki_writemem,null,null,
 				toaplan2_interrupt,1
-			},
+			),
 	#if HD64x180
-			{
+			new MachineCPU(
 				CPU_Z180,			/* HD647180 CPU actually */
 				10000000,			/* 10MHz Oscillator */
-				hd647180_readmem,hd647180_writemem,0,0,
+				hd647180_readmem,hd647180_writemem,null,null,
 				ignore_interrupt,0
-			}
+			)
 	#endif
 		},
 		60, DEFAULT_REAL_60HZ_VBLANK_DURATION,	/* frames per second, vblank duration */
@@ -3140,10 +3140,10 @@ public class toaplan2
 		init_toaplan2,
 	
 		/* video hardware */
-		32*16, 32*16, { 0, 319, 0, 239 },
+		32*16, 32*16, new rectangle( 0, 319, 0, 239 ),
 		gfxdecodeinfo,
-		2048, 0,
-		0,
+		2048, null,
+		null,
 	
 		VIDEO_TYPE_RASTER | VIDEO_UPDATE_BEFORE_VBLANK, /* Sprites are buffered too */
 		toaplan2_0_eof_callback,
@@ -3153,31 +3153,31 @@ public class toaplan2
 	
 		/* sound hardware */
 		0,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_YM3812,
-				&ym3812_interface
-			},
+				ym3812_interface
+			),
 		}
-	};
+	);
 	
-	static const struct MachineDriver machine_driver_ghox =
-	{
+	static MachineDriver machine_driver_ghox = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_M68000,
 				10000000,			/* 10MHz Oscillator */
-				ghox_readmem,ghox_writemem,0,0,
+				ghox_readmem,ghox_writemem,null,null,
 				toaplan2_interrupt,1
-			},
+			),
 	#if HD64x180
-			{
+			new MachineCPU(
 				CPU_Z180,			/* HD647180 CPU actually */
 				10000000,			/* 10MHz Oscillator */
-				hd647180_readmem,hd647180_writemem,0,0,
+				hd647180_readmem,hd647180_writemem,null,null,
 				ignore_interrupt,0
-			}
+			)
 	#endif
 		},
 		60, DEFAULT_REAL_60HZ_VBLANK_DURATION,	/* frames per second, vblank duration */
@@ -3185,10 +3185,10 @@ public class toaplan2
 		init_toaplan2,
 	
 		/* video hardware */
-		32*16, 32*16, { 0, 319, 0, 239 },
+		32*16, 32*16, new rectangle( 0, 319, 0, 239 ),
 		gfxdecodeinfo,
-		2048, 0,
-		0,
+		2048, null,
+		null,
 	
 		VIDEO_TYPE_RASTER | VIDEO_UPDATE_BEFORE_VBLANK, /* Sprites are buffered too */
 		toaplan2_0_eof_callback,
@@ -3198,31 +3198,31 @@ public class toaplan2
 	
 		/* sound hardware */
 		SOUND_SUPPORTS_STEREO,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_YM2151,
-				&ym2151_interface
-			}
+				ym2151_interface
+			)
 		}
-	};
+	);
 	
-	static const struct MachineDriver machine_driver_dogyuun =
-	{
+	static MachineDriver machine_driver_dogyuun = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_M68000,
 				16000000,			/* 16MHz Oscillator */
-				dogyuun_readmem,dogyuun_writemem,0,0,
+				dogyuun_readmem,dogyuun_writemem,null,null,
 				toaplan2_interrupt,1
-			},
+			),
 	#if Zx80
-			{
+			new MachineCPU(
 				CPU_Z180,			/* Z?80 type Toaplan marked CPU ??? */
 				16000000,			/* 16MHz Oscillator */
 				Zx80_readmem,Zx80_writemem,Zx80_readport,0,
 				ignore_interrupt,0
-			}
+			)
 	#endif
 		},
 		60, DEFAULT_REAL_60HZ_VBLANK_DURATION,	/* frames per second, vblank duration */
@@ -3230,10 +3230,10 @@ public class toaplan2
 		init_toaplan3,
 	
 		/* video hardware */
-		32*16, 32*16, { 0, 319, 0, 239 },
+		32*16, 32*16, new rectangle( 0, 319, 0, 239 ),
 		gfxdecodeinfo_2,
-		2048, 0,
-		0,
+		2048, null,
+		null,
 	
 		VIDEO_TYPE_RASTER | VIDEO_UPDATE_BEFORE_VBLANK, /* Sprites are buffered too */
 		toaplan2_1_eof_callback,
@@ -3243,35 +3243,35 @@ public class toaplan2
 	
 		/* sound hardware */
 		SOUND_SUPPORTS_STEREO,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_YM2151,
-				&ym2151_interface
-			},
-			{
+				ym2151_interface
+			),
+			new MachineSound(
 				SOUND_OKIM6295,
-				&okim6295_interface
-			}
+				okim6295_interface
+			)
 		}
-	};
+	);
 	
-	static const struct MachineDriver machine_driver_kbash =
-	{
+	static MachineDriver machine_driver_kbash = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_M68000,
 				16000000,			/* 16MHz Oscillator */
-				kbash_readmem,kbash_writemem,0,0,
+				kbash_readmem,kbash_writemem,null,null,
 				toaplan2_interrupt,1
-			},
+			),
 	#if Zx80
-			{
+			new MachineCPU(
 				CPU_Z180,			/* Z?80 type Toaplan marked CPU ??? */
 				16000000,			/* 16MHz Oscillator */
 				Zx80_readmem,Zx80_writemem,Zx80_readport,0,
 				ignore_interrupt,0
-			}
+			)
 	#endif
 		},
 		60, DEFAULT_REAL_60HZ_VBLANK_DURATION,	/* frames per second, vblank duration */
@@ -3279,10 +3279,10 @@ public class toaplan2
 		init_toaplan2,
 	
 		/* video hardware */
-		32*16, 32*16, { 0, 319, 0, 239 },
+		32*16, 32*16, new rectangle( 0, 319, 0, 239 ),
 		gfxdecodeinfo,
-		2048, 0,
-		0,
+		2048, null,
+		null,
 	
 		VIDEO_TYPE_RASTER | VIDEO_UPDATE_BEFORE_VBLANK, /* Sprites are buffered too */
 		toaplan2_0_eof_callback,
@@ -3292,38 +3292,38 @@ public class toaplan2
 	
 		/* sound hardware */
 		SOUND_SUPPORTS_STEREO,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_YM2151,
-				&ym2151_interface
-			},
-			{
+				ym2151_interface
+			),
+			new MachineSound(
 				SOUND_OKIM6295,
-				&okim6295_interface
-			}
+				okim6295_interface
+			)
 		}
-	};
+	);
 	
-	static const struct MachineDriver machine_driver_truxton2 =
-	{
+	static MachineDriver machine_driver_truxton2 = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_M68000,
 				16000000,			/* 16MHz Oscillator */
-				truxton2_readmem,truxton2_writemem,0,0,
+				truxton2_readmem,truxton2_writemem,null,null,
 				truxton2_interrupt,1
-			}
+			)
 		},
 		60, DEFAULT_REAL_60HZ_VBLANK_DURATION,	/* frames per second, vblank duration */
 		1,
 		init_truxton2,
 	
 		/* video hardware */
-		32*16, 32*16, { 0, 319, 0, 239 },
+		32*16, 32*16, new rectangle( 0, 319, 0, 239 ),
 		truxton2_gfxdecodeinfo,
-		2048, 0,
-		0,
+		2048, null,
+		null,
 	
 		VIDEO_TYPE_RASTER | VIDEO_UPDATE_BEFORE_VBLANK, /* Sprites are buffered too */
 		toaplan2_0_eof_callback,
@@ -3333,44 +3333,44 @@ public class toaplan2
 	
 		/* sound hardware */
 		SOUND_SUPPORTS_STEREO,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_YM2151,
-				&ym2151_interface
-			},
-			{
+				ym2151_interface
+			),
+			new MachineSound(
 				SOUND_OKIM6295,
-				&okim6295_interface
-			}
+				okim6295_interface
+			)
 		}
-	};
+	);
 	
-	static const struct MachineDriver machine_driver_pipibibs =
-	{
+	static MachineDriver machine_driver_pipibibs = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_M68000,
 				10000000,			/* 10MHz Oscillator */
-				pipibibs_readmem,pipibibs_writemem,0,0,
+				pipibibs_readmem,pipibibs_writemem,null,null,
 				toaplan2_interrupt,1
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_Z80,
 				27000000/8,			/* ??? 3.37MHz , 27MHz Oscillator */
-				sound_readmem,sound_writemem,0,0,
+				sound_readmem,sound_writemem,0,null,
 				ignore_interrupt,0
-			}
+			)
 		},
 		60, DEFAULT_REAL_60HZ_VBLANK_DURATION,	/* frames per second, vblank duration */
 		10,
 		init_pipibibs,
 	
 		/* video hardware */
-		32*16, 32*16, { 0, 319, 0, 239 },
+		32*16, 32*16, new rectangle( 0, 319, 0, 239 ),
 		gfxdecodeinfo,
-		2048, 0,
-		0,
+		2048, null,
+		null,
 	
 		VIDEO_TYPE_RASTER | VIDEO_UPDATE_BEFORE_VBLANK, /* Sprites are buffered too */
 		toaplan2_0_eof_callback,
@@ -3380,40 +3380,40 @@ public class toaplan2
 	
 		/* sound hardware */
 		0,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_YM3812,
-				&ym3812_interface
-			},
+				ym3812_interface
+			),
 		}
-	};
+	);
 	
-	static const struct MachineDriver machine_driver_whoopee =
-	{
+	static MachineDriver machine_driver_whoopee = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_M68000,
 				10000000,			/* 10MHz Oscillator */
-				tekipaki_readmem,tekipaki_writemem,0,0,
+				tekipaki_readmem,tekipaki_writemem,null,null,
 				toaplan2_interrupt,1
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_Z80,			/* This should be a HD647180 */
 				27000000/8,			/* Change this to 10MHz when HD647180 gets dumped. 10MHz Oscillator */
-				sound_readmem,sound_writemem,0,0,
+				sound_readmem,sound_writemem,null,null,
 				ignore_interrupt,0
-			}
+			)
 		},
 		60, DEFAULT_REAL_60HZ_VBLANK_DURATION,	/* frames per second, vblank duration */
 		10,
 		init_pipibibs,
 	
 		/* video hardware */
-		32*16, 32*16, { 0, 319, 0, 239 },
+		32*16, 32*16, new rectangle( 0, 319, 0, 239 ),
 		gfxdecodeinfo,
-		2048, 0,
-		0,
+		2048, null,
+		null,
 	
 		VIDEO_TYPE_RASTER | VIDEO_UPDATE_BEFORE_VBLANK, /* Sprites are buffered too */
 		toaplan2_0_eof_callback,
@@ -3423,40 +3423,40 @@ public class toaplan2
 	
 		/* sound hardware */
 		0,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_YM3812,
-				&ym3812_interface
-			},
+				ym3812_interface
+			),
 		}
-	};
+	);
 	
-	static const struct MachineDriver machine_driver_pipibibi =
-	{
+	static MachineDriver machine_driver_pipibibi = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_M68000,
 				10000000,			/* 10MHz Oscillator */
-				pipibibi_readmem,pipibibi_writemem,0,0,
+				pipibibi_readmem,pipibibi_writemem,null,null,
 				toaplan2_interrupt,1
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_Z80,
 				27000000/8,			/* ??? 3.37MHz */
-				sound_readmem,sound_writemem,0,0,
+				sound_readmem,sound_writemem,null,null,
 				ignore_interrupt,0
-			}
+			)
 		},
 		60, DEFAULT_REAL_60HZ_VBLANK_DURATION,	/* frames per second, vblank duration */
 		10,
 		init_pipibibs,
 	
 		/* video hardware */
-		32*16, 32*16, { 0, 319, 0, 239 },
+		32*16, 32*16, new rectangle( 0, 319, 0, 239 ),
 		gfxdecodeinfo,
-		2048, 0,
-		0,
+		2048, null,
+		null,
 	
 		VIDEO_TYPE_RASTER | VIDEO_UPDATE_BEFORE_VBLANK, /* Sprites are buffered too */
 		toaplan2_0_eof_callback,
@@ -3466,31 +3466,31 @@ public class toaplan2
 	
 		/* sound hardware */
 		0,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_YM3812,
-				&ym3812_interface
-			},
+				ym3812_interface
+			),
 		}
-	};
+	);
 	
-	static const struct MachineDriver machine_driver_fixeight =
-	{
+	static MachineDriver machine_driver_fixeight = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_M68000,
 				16000000,			/* 16MHz Oscillator */
-				fixeight_readmem,fixeight_writemem,0,0,
+				fixeight_readmem,fixeight_writemem,null,null,
 				toaplan2_interrupt,1
-			},
+			),
 	#if Zx80
-			{
+			new MachineCPU(
 				CPU_Z180,			/* Z?80 type Toaplan marked CPU ??? */
 				16000000,			/* 16MHz Oscillator */
 				Zx80_readmem,Zx80_writemem,Zx80_readport,0,
 				ignore_interrupt,0
-			}
+			)
 	#endif
 		},
 		60, DEFAULT_REAL_60HZ_VBLANK_DURATION,	/* frames per second, vblank duration */
@@ -3498,10 +3498,10 @@ public class toaplan2
 		init_fixeight,
 	
 		/* video hardware */
-		32*16, 32*16, { 0, 319, 0, 239 },
+		32*16, 32*16, new rectangle( 0, 319, 0, 239 ),
 		truxton2_gfxdecodeinfo,
-		2048, 0,
-		0,
+		2048, null,
+		null,
 	
 		VIDEO_TYPE_RASTER | VIDEO_UPDATE_BEFORE_VBLANK, /* Sprites are buffered too */
 		toaplan2_0_eof_callback,
@@ -3511,36 +3511,36 @@ public class toaplan2
 	
 		/* sound hardware */
 		SOUND_SUPPORTS_STEREO,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_YM2151,
-				&ym2151_interface
-			},
-			{
+				ym2151_interface
+			),
+			new MachineSound(
 				SOUND_OKIM6295,
-				&okim6295_interface
-			}
+				okim6295_interface
+			)
 		}
 	///	fixeight_nvram_handler		/* See 37B6 code */
-	};
+	);
 	
-	static const struct MachineDriver machine_driver_vfive =
-	{
+	static MachineDriver machine_driver_vfive = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_M68000,
 				10000000,			/* 10MHz Oscillator */
-				vfive_readmem,vfive_writemem,0,0,
+				vfive_readmem,vfive_writemem,null,null,
 				toaplan2_interrupt,1
-			},
+			),
 	#if Zx80
-			{
+			new MachineCPU(
 				CPU_Z180,			/* Z?80 type Toaplan marked CPU ??? */
 				10000000,			/* 10MHz Oscillator */
 				Zx80_readmem,Zx80_writemem,Zx80_readport,0,
 				ignore_interrupt,0
-			}
+			)
 	#endif
 		},
 		60, DEFAULT_REAL_60HZ_VBLANK_DURATION,	/* frames per second, vblank duration */
@@ -3548,10 +3548,10 @@ public class toaplan2
 		init_toaplan3,
 	
 		/* video hardware */
-		32*16, 32*16, { 0, 319, 0, 239 },
+		32*16, 32*16, new rectangle( 0, 319, 0, 239 ),
 		gfxdecodeinfo,
-		2048, 0,
-		0,
+		2048, null,
+		null,
 	
 		VIDEO_TYPE_RASTER | VIDEO_UPDATE_BEFORE_VBLANK, /* Sprites are buffered too */
 		toaplan2_0_eof_callback,
@@ -3561,31 +3561,31 @@ public class toaplan2
 	
 		/* sound hardware */
 		SOUND_SUPPORTS_STEREO,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_YM2151,
-				&ym2151_interface
-			}
+				ym2151_interface
+			)
 		}
-	};
+	);
 	
-	static const struct MachineDriver machine_driver_batsugun =
-	{
+	static MachineDriver machine_driver_batsugun = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_M68000,
 				32000000/2,			/* 16MHz , 32MHz Oscillator */
-				batsugun_readmem,batsugun_writemem,0,0,
+				batsugun_readmem,batsugun_writemem,0,null,
 				toaplan2_interrupt,1
-			},
+			),
 	#if Zx80
-			{
+			new MachineCPU(
 				CPU_Z180,			/* Z?80 type Toaplan marked CPU ??? */
 				32000000/2,			/* 16MHz , 32MHz Oscillator */
-				Zx80_readmem,Zx80_writemem,Zx80_readport,0,
+				Zx80_readmem,Zx80_writemem,Zx80_readport,null,
 				ignore_interrupt,0
-			}
+			)
 	#endif
 		},
 		60, DEFAULT_REAL_60HZ_VBLANK_DURATION,	/* frames per second, vblank duration */
@@ -3593,10 +3593,10 @@ public class toaplan2
 		init_toaplan3,
 	
 		/* video hardware */
-		32*16, 32*16, { 0, 319, 0, 239 },
+		32*16, 32*16, new rectangle( 0, 319, 0, 239 ),
 		gfxdecodeinfo_2,
-		2048, 0,
-		0,
+		2048, null,
+		null,
 	
 		VIDEO_TYPE_RASTER | VIDEO_UPDATE_BEFORE_VBLANK, /* Sprites are buffered too */
 		toaplan2_1_eof_callback,
@@ -3606,38 +3606,38 @@ public class toaplan2
 	
 		/* sound hardware */
 		SOUND_SUPPORTS_STEREO,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_YM2151,
-				&ym2151_interface
-			},
-			{
+				ym2151_interface
+			),
+			new MachineSound(
 				SOUND_OKIM6295,
-				&okim6295_interface
-			}
+				okim6295_interface
+			)
 		}
-	};
+	);
 	
-	static const struct MachineDriver machine_driver_snowbro2 =
-	{
+	static MachineDriver machine_driver_snowbro2 = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_M68000,
 				16000000,
-				snowbro2_readmem,snowbro2_writemem,0,0,
+				snowbro2_readmem,snowbro2_writemem,null,null,
 				toaplan2_interrupt,1
-			},
+			),
 		},
 		60, DEFAULT_REAL_60HZ_VBLANK_DURATION,	/* frames per second, vblank duration */
 		1,
 		init_toaplan2,
 	
 		/* video hardware */
-		32*16, 32*16, { 0, 319, 0, 239 },
+		32*16, 32*16, new rectangle( 0, 319, 0, 239 ),
 		gfxdecodeinfo,
-		2048, 0,
-		0,
+		2048, null,
+		null,
 	
 		VIDEO_TYPE_RASTER | VIDEO_UPDATE_BEFORE_VBLANK, /* Sprites are buffered too */
 		toaplan2_0_eof_callback,
@@ -3647,44 +3647,44 @@ public class toaplan2
 	
 		/* sound hardware */
 		SOUND_SUPPORTS_STEREO,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_YM2151,
-				&ym2151_interface
-			},
-			{
+				ym2151_interface
+			),
+			new MachineSound(
 				SOUND_OKIM6295,
-				&okim6295_interface
-			}
+				okim6295_interface
+			)
 		}
-	};
+	);
 	
-	static const struct MachineDriver machine_driver_mahoudai =
-	{
+	static MachineDriver machine_driver_mahoudai = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_M68000,
 				32000000/2,			/* 16MHz , 32MHz Oscillator */
-				mahoudai_readmem,mahoudai_writemem,0,0,
+				mahoudai_readmem,mahoudai_writemem,0,null,
 				toaplan2_interrupt,1
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_Z80,
 				32000000/8,			/* 4MHz , 32MHz Oscillator */
-				raizing_sound_readmem,raizing_sound_writemem,0,0,
+				raizing_sound_readmem,raizing_sound_writemem,0,null,
 				ignore_interrupt,0
-			}
+			)
 		},
 		60, DEFAULT_REAL_60HZ_VBLANK_DURATION,	/* frames per second, vblank duration */
 		10,
-		0,
+		null,
 	
 		/* video hardware */
-		32*16, 32*16, { 0, 319, 0, 239 },
+		32*16, 32*16, new rectangle( 0, 319, 0, 239 ),
 		raizing_gfxdecodeinfo,
-		2048, 0,
-		0,
+		2048, null,
+		null,
 	
 		VIDEO_TYPE_RASTER | VIDEO_UPDATE_BEFORE_VBLANK, /* Sprites are buffered too */
 		toaplan2_0_eof_callback,
@@ -3694,44 +3694,44 @@ public class toaplan2
 	
 		/* sound hardware */
 		SOUND_SUPPORTS_STEREO,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_YM2151,
-				&ym2151_interface
-			},
-			{
+				ym2151_interface
+			),
+			new MachineSound(
 				SOUND_OKIM6295,
-				&raizing_okim6295_interface
-			}
+				raizing_okim6295_interface
+			)
 		}
-	};
+	);
 	
-	static const struct MachineDriver machine_driver_shippumd =
-	{
+	static MachineDriver machine_driver_shippumd = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_M68000,
 				32000000/2,			/* 16MHz , 32MHz Oscillator */
-				shippumd_readmem,shippumd_writemem,0,0,
+				shippumd_readmem,shippumd_writemem,0,null,
 				toaplan2_interrupt,1
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_Z80,
 				32000000/8,			/* 4MHz , 32MHz Oscillator */
-				raizing_sound_readmem,raizing_sound_writemem,0,0,
+				raizing_sound_readmem,raizing_sound_writemem,0,null,
 				ignore_interrupt,0
-			}
+			)
 		},
 		60, DEFAULT_REAL_60HZ_VBLANK_DURATION,	/* frames per second, vblank duration */
 		10,
-		0,
+		null,
 	
 		/* video hardware */
-		32*16, 32*16, { 0, 319, 0, 239 },
+		32*16, 32*16, new rectangle( 0, 319, 0, 239 ),
 		raizing_gfxdecodeinfo,
-		2048, 0,
-		0,
+		2048, null,
+		null,
 	
 		VIDEO_TYPE_RASTER | VIDEO_UPDATE_BEFORE_VBLANK, /* Sprites are buffered too */
 		toaplan2_0_eof_callback,
@@ -3741,44 +3741,44 @@ public class toaplan2
 	
 		/* sound hardware */
 		SOUND_SUPPORTS_STEREO,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_YM2151,
-				&ym2151_interface
-			},
-			{
+				ym2151_interface
+			),
+			new MachineSound(
 				SOUND_OKIM6295,
-				&raizing_okim6295_interface
-			}
+				raizing_okim6295_interface
+			)
 		}
-	};
+	);
 	
-	static const struct MachineDriver machine_driver_battleg =
-	{
+	static MachineDriver machine_driver_battleg = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_M68000,
 				32000000/2,			/* 16MHz , 32MHz Oscillator */
-				battleg_readmem,battleg_writemem,0,0,
+				battleg_readmem,battleg_writemem,0,null,
 				toaplan2_interrupt,1
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_Z80,
 				32000000/8,			/* 4MHz , 32MHz Oscillator */
-				battleg_sound_readmem,battleg_sound_writemem,0,0,
+				battleg_sound_readmem,battleg_sound_writemem,0,null,
 				ignore_interrupt,0
-			}
+			)
 		},
 		60, DEFAULT_REAL_60HZ_VBLANK_DURATION,	/* frames per second, vblank duration */
 		120,
 		init_battleg,
 	
 		/* video hardware */
-		32*16, 32*16, { 0, 319, 0, 239 },
+		32*16, 32*16, new rectangle( 0, 319, 0, 239 ),
 		raizing_gfxdecodeinfo,
-		2048, 0,
-		0,
+		2048, null,
+		null,
 	
 		VIDEO_TYPE_RASTER | VIDEO_UPDATE_BEFORE_VBLANK, /* Sprites are buffered too */
 		toaplan2_0_eof_callback,
@@ -3788,44 +3788,44 @@ public class toaplan2
 	
 		/* sound hardware */
 		SOUND_SUPPORTS_STEREO,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_YM2151,
-				&raizing_ym2151_interface
-			},
-			{
+				raizing_ym2151_interface
+			),
+			new MachineSound(
 				SOUND_OKIM6295,
-				&battleg_okim6295_interface
-			}
+				battleg_okim6295_interface
+			)
 		}
-	};
+	);
 	
-	static const struct MachineDriver machine_driver_batrider =
-	{
+	static MachineDriver machine_driver_batrider = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_M68000,
 				32000000/2,			/* 16MHz , 32MHz Oscillator */
-				batrider_readmem,batrider_writemem,0,0,
+				batrider_readmem,batrider_writemem,0,null,
 				truxton2_interrupt,1
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_Z80,
 				32000000/8,			/* 4MHz , 32MHz Oscillator */
 				batrider_sound_readmem,batrider_sound_writemem,batrider_sound_readport,batrider_sound_writeport,
 				batrider_sound_interrupt,1
-			}
+			)
 		},
 		60, DEFAULT_REAL_60HZ_VBLANK_DURATION,	/* frames per second, vblank duration */
 		100,
-		0,
+		null,
 	
 		/* video hardware */
-		32*16, 32*16, { 0, 319, 0, 239 },
+		32*16, 32*16, new rectangle( 0, 319, 0, 239 ),
 		batrider_gfxdecodeinfo,
-		2048, 0,
-		0,
+		2048, null,
+		null,
 	
 		VIDEO_TYPE_RASTER | VIDEO_UPDATE_BEFORE_VBLANK, /* Sprites are buffered too */
 		batrider_0_eof_callback,
@@ -3835,17 +3835,17 @@ public class toaplan2
 	
 		/* sound hardware */
 		SOUND_SUPPORTS_STEREO,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_YM2151,
-				&raizing_ym2151_interface
-			},
-			{
+				raizing_ym2151_interface
+			),
+			new MachineSound(
 				SOUND_OKIM6295,
-				&batrider_okim6295_interface
-			}
+				batrider_okim6295_interface
+			)
 		}
-	};
+	);
 	
 	
 	/***************************************************************************

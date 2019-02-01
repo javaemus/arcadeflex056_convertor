@@ -616,137 +616,137 @@ public class lasso
 									Chameleon
 	***************************************************************************/
 	
-	static const struct MachineDriver machine_driver_chameleo =
-	{
-		{
-			{
+	static MachineDriver machine_driver_chameleo = new MachineDriver
+	(
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_M6502,
 				2000000,	/* 2 MHz (?) */
-				chameleo_readmem, chameleo_writemem, 0,0,
+				chameleo_readmem, chameleo_writemem, null,null,
 				lasso_interrupt, 2,		/* IRQ = VBlank, NMI = Coin Insertion */
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_M6502 | CPU_AUDIO_CPU,
 				600000,		/* ?? (controls music tempo) */
-				chameleo_sound_readmem,chameleo_sound_writemem, 0,0,
+				chameleo_sound_readmem,chameleo_sound_writemem, null,null,
 				ignore_interrupt, 1,	/* IRQ by Main CPU, no NMI */
-			},
+			),
 		},
 		60, DEFAULT_REAL_60HZ_VBLANK_DURATION,
 		1, /* CPU slices */
-		0, /* init machine */
+		null, /* init machine */
 	
 		/* video hardware */
-		256, 256, { 0, 256-1, 0+16, 255-16-1 },
+		256, 256, new rectangle( 0, 256-1, 0+16, 255-16-1 ),
 		gfxdecodeinfo,
 		0x40,0x40,
 		lasso_vh_convert_color_prom,
 	
 		VIDEO_TYPE_RASTER,
-		0,
+		null,
 		lasso_vh_start,
-		0,
+		null,
 		chameleo_vh_screenrefresh,
 	
 		/* sound hardware */
 		0,0,0,0,
-		{
-			{	SOUND_SN76496,	&sn76496_interface	}
+		new MachineSound[] {
+			new MachineSound(	SOUND_SN76496,	sn76496_interface	)
 		}
-	};
+	);
 	
 	/***************************************************************************
 									Lasso
 	***************************************************************************/
 	
-	static const struct MachineDriver machine_driver_lasso =
-	{
-		{
-			{
+	static MachineDriver machine_driver_lasso = new MachineDriver
+	(
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_M6502,
 				2000000,	/* 2 MHz (?) */
-				lasso_readmem,lasso_writemem, 0,0,
+				lasso_readmem,lasso_writemem, null,null,
 				lasso_interrupt, 2,		/* IRQ = VBlank, NMI = Coin Insertion */
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_M6502,
 				2000000,	/* 2 MHz (?) */
-				lasso_coprocessor_readmem,lasso_coprocessor_writemem, 0,0,
+				lasso_coprocessor_readmem,lasso_coprocessor_writemem, null,null,
 				ignore_interrupt, 1,	/* No IRQ */
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_M6502 | CPU_AUDIO_CPU,
 				600000,		/* ?? (controls music tempo) */
-				lasso_sound_readmem,lasso_sound_writemem, 0,0,
+				lasso_sound_readmem,lasso_sound_writemem, null,null,
 				ignore_interrupt, 1,	/* IRQ by Main CPU, no NMI */
-			},
+			),
 		},
 		60, DEFAULT_REAL_60HZ_VBLANK_DURATION,
 		100, /* CPU slices */
-		0, /* init machine */
+		null, /* init machine */
 	
 		/* video hardware */
-		256, 256, { 0, 256-1, 0+16, 255-16-1 },
+		256, 256, new rectangle( 0, 256-1, 0+16, 255-16-1 ),
 		gfxdecodeinfo,
 		0x40,0x40,
 		lasso_vh_convert_color_prom,
 	
 		VIDEO_TYPE_RASTER,
-		0,
+		null,
 		lasso_vh_start,
-		0,
+		null,
 		lasso_vh_screenrefresh,
 	
 		/* sound hardware */
 		0,0,0,0,
-		{
-			{	SOUND_SN76496,	&sn76496_interface	}
+		new MachineSound[] {
+			new MachineSound(	SOUND_SN76496,	sn76496_interface	)
 		}
-	};
+	);
 	
 	/***************************************************************************
 								Wai Wai Jockey Gate-In!
 	***************************************************************************/
 	
-	static const struct MachineDriver machine_driver_wwjgtin =
-	{
-		{
-			{
+	static MachineDriver machine_driver_wwjgtin = new MachineDriver
+	(
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_M6502,
 				2000000,	/* 2 MHz (?) */
-				wwjgtin_readmem, wwjgtin_writemem, 0,0,
+				wwjgtin_readmem, wwjgtin_writemem, null,null,
 				lasso_interrupt, 2,		/* IRQ = VBlank, NMI = Coin Insertion */
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_M6502 | CPU_AUDIO_CPU,
 				600000,		/* ?? (controls music tempo) */
-				wwjgtin_sound_readmem,wwjgtin_sound_writemem, 0,0,
+				wwjgtin_sound_readmem,wwjgtin_sound_writemem, null,null,
 				ignore_interrupt, 1,	/* IRQ by Main CPU, no NMI */
-			},
+			),
 		},
 		60, DEFAULT_REAL_60HZ_VBLANK_DURATION,
 		1, /* CPU slices */
-		0, /* init machine */
+		null, /* init machine */
 	
 		/* video hardware */
-		256, 256, { 0+8, 256-1-8, 0+16, 256-1-16 },	// Smaller visible area?
+		256, 256, new rectangle( 0+8, 256-1-8, 0+16, 256-1-16 ),	// Smaller visible area?
 		gfxdecodeinfo_wwjgtin,	// Has 1 additional layer
 		0x40+1, 4*16 + 16*16,	// Reserve 1 color for black
 		wwjgtin_vh_convert_color_prom,
 	
 		VIDEO_TYPE_RASTER,
-		0,
+		null,
 		wwjgtin_vh_start,
-		0,
+		null,
 		wwjgtin_vh_screenrefresh,
 	
 		/* sound hardware */
 		0,0,0,0,
-		{
-			{	SOUND_SN76496,	&sn76496_interface	},
-			{	SOUND_DAC,		&dac_interface		}
+		new MachineSound[] {
+			new MachineSound(	SOUND_SN76496,	sn76496_interface	),
+			new MachineSound(	SOUND_DAC,		dac_interface		)
 		}
-	};
+	);
 	
 	
 	/***************************************************************************

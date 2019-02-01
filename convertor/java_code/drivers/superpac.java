@@ -373,48 +373,48 @@ public class superpac
 	 *
 	 *************************************/
 	
-	static const struct MachineDriver machine_driver_superpac =
-	{
+	static MachineDriver machine_driver_superpac = new MachineDriver
+	(
 		/* basic machine hardware  */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_M6809,
 				1100000,
-				readmem_cpu1,writemem_cpu1,0,0,
+				readmem_cpu1,writemem_cpu1,null,null,
 				interrupt,1
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_M6809,
 				1100000,
-				readmem_cpu2,writemem_cpu2,0,0,
+				readmem_cpu2,writemem_cpu2,null,null,
 				interrupt,1
-			}
+			)
 		},
 		60.606060, DEFAULT_60HZ_VBLANK_DURATION,
 		100,
 		superpac_init_machine,
 	
 		/* video hardware */
-		36*8, 28*8,	{ 0*8, 36*8-1, 0*8, 28*8-1 },
+		36*8, 28*8,	new rectangle( 0*8, 36*8-1, 0*8, 28*8-1 ),
 		gfxdecodeinfo,
 		32,	4*(64+64),
 		superpac_vh_convert_color_prom,
 	
 		VIDEO_TYPE_RASTER,
-		0,
+		null,
 		generic_vh_start,
 		generic_vh_stop,
 		superpac_vh_screenrefresh,
 	
 		/* sound hardware */
 		0,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_NAMCO,
-				&namco_interface
-			}
+				namco_interface
+			)
 		}
-	};
+	);
 	
 	
 	

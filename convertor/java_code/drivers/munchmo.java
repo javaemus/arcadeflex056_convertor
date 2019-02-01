@@ -292,47 +292,47 @@ public class munchmo
 		new GfxDecodeInfo( -1 )
 	};
 	
-	static const struct MachineDriver machine_driver_munchmo =
-	{
-		{
-			{
+	static MachineDriver machine_driver_munchmo = new MachineDriver
+	(
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_Z80,
 				3750000, /* ? */
-				readmem,writemem,0,0,
+				readmem,writemem,null,null,
 				mnchmobl_interrupt,2
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_Z80 | CPU_AUDIO_CPU,
 				3750000, /* ? */
-				readmem_sound,writemem_sound,0,0,
+				readmem_sound,writemem_sound,null,null,
 				nmi_interrupt,1
-			}
+			)
 		},
 		57, DEFAULT_REAL_60HZ_VBLANK_DURATION,	/* frames per second, vblank duration */
 		1,
-		0,
+		null,
 	
 		/* video hardware */
-		256+32+32, 256, { 0, 255+32+32,0, 255-16 },
+		256+32+32, 256, new rectangle( 0, 255+32+32,0, 255-16 ),
 		gfxdecodeinfo,
-		256, 0,
+		256, null,
 		mnchmobl_convert_color_prom,
 	
 		VIDEO_TYPE_RASTER,
-		0,
+		null,
 		mnchmobl_vh_start,
 		mnchmobl_vh_stop,
 		mnchmobl_vh_screenrefresh,
 	
 		/* sound hardware */
 		0,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_AY8910,
-				&ay8910_interface
-			}
+				ay8910_interface
+			)
 		}
-	};
+	);
 	
 	
 	static RomLoadPtr rom_joyfulr = new RomLoadPtr(){ public void handler(){ 

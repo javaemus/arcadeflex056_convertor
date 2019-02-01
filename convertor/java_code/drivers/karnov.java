@@ -694,101 +694,101 @@ public class karnov
 		memset(karnov_ram,0,0x4000/2); /* Chelnov likes ram clear on reset.. */
 	}
 	
-	static const struct MachineDriver machine_driver_karnov =
-	{
+	static MachineDriver machine_driver_karnov = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_M68000,
 				10000000,	/* 10 MHz */
-				karnov_readmem,karnov_writemem,0,0,
+				karnov_readmem,karnov_writemem,null,null,
 				karnov_interrupt,1
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_M6502 | CPU_AUDIO_CPU,
 				1500000,	/* Accurate */
-				karnov_s_readmem,karnov_s_writemem,0,0,
+				karnov_s_readmem,karnov_s_writemem,null,null,
 				ignore_interrupt,0	/* Interrupts from OPL chip */
-			}
+			)
 		},
 		60, DEFAULT_REAL_60HZ_VBLANK_DURATION,
 		1,	/* 1 CPU slice per frame - interleaving is forced when a sound command is written */
 		karnov_reset_init,
 	
 		/* video hardware */
-		32*8, 32*8, { 0*8, 32*8-1, 1*8, 31*8-1 },
+		32*8, 32*8, new rectangle( 0*8, 32*8-1, 1*8, 31*8-1 ),
 	
 		karnov_gfxdecodeinfo,
 		1024, 1024,
 		karnov_vh_convert_color_prom,
 	
 		VIDEO_TYPE_RASTER | VIDEO_BUFFERS_SPRITERAM,
-		0,
+		null,
 		karnov_vh_start,
 		karnov_vh_stop,
 		karnov_vh_screenrefresh,
 	
 		/* sound hardware */
 		0,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_YM2203,
-				&ym2203_interface
-			},
-			{
+				ym2203_interface
+			),
+			new MachineSound(
 				SOUND_YM3526,
-				&ym3526_interface
-			}
+				ym3526_interface
+			)
 		}
-	};
+	);
 	
-	static const struct MachineDriver machine_driver_wndrplnt =
-	{
+	static MachineDriver machine_driver_wndrplnt = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_M68000,
 				10000000,	/* 10 MHz */
-				karnov_readmem,karnov_writemem,0,0,
+				karnov_readmem,karnov_writemem,null,null,
 				karnov_interrupt,1
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_M6502 | CPU_AUDIO_CPU,
 				1500000,	/* Accurate */
-				karnov_s_readmem,karnov_s_writemem,0,0,
+				karnov_s_readmem,karnov_s_writemem,null,null,
 				ignore_interrupt,0	/* Interrupts from OPL chip */
-			}
+			)
 		},
 		60, DEFAULT_REAL_60HZ_VBLANK_DURATION,
 		1,	/* 1 CPU slice per frame - interleaving is forced when a sound command is written */
 		karnov_reset_init,
 	
 		/* video hardware */
-		32*8, 32*8, { 0*8, 32*8-1, 1*8, 31*8-1 },
+		32*8, 32*8, new rectangle( 0*8, 32*8-1, 1*8, 31*8-1 ),
 	
 		karnov_gfxdecodeinfo,
 		1024, 1024,
 		karnov_vh_convert_color_prom,
 	
 		VIDEO_TYPE_RASTER | VIDEO_BUFFERS_SPRITERAM,
-		0,
+		null,
 		wndrplnt_vh_start,
 		karnov_vh_stop,
 		karnov_vh_screenrefresh,
 	
 		/* sound hardware */
 		0,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_YM2203,
-				&ym2203_interface
-			},
-			{
+				ym2203_interface
+			),
+			new MachineSound(
 				SOUND_YM3526,
-				&ym3526_interface
-			}
+				ym3526_interface
+			)
 		}
-	};
+	);
 	
 	/******************************************************************************/
 	

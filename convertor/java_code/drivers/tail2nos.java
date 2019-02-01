@@ -282,49 +282,49 @@ public class tail2nos
 	
 	
 	
-	static const struct MachineDriver machine_driver_tail2nos =
-	{
+	static MachineDriver machine_driver_tail2nos = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_M68000,
 				20000000/2,	/* 10 MHz (?) */
-				readmem,writemem,0,0,
+				readmem,writemem,null,null,
 				m68_level6_irq,1
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_Z80 | CPU_AUDIO_CPU,
 				8000000/2,	/* 4 MHz ??? */
 				sound_readmem,sound_writemem,sound_readport,sound_writeport,
 				ignore_interrupt,0	/* NMIs are triggered by the main CPU */
 									/* IRQs are triggered by the YM2608 */
-			}
+			)
 		},
 		60, DEFAULT_60HZ_VBLANK_DURATION,       /* frames per second, vblank duration */
 		1,	/* 1 CPU slice per frame - interleaving is forced when a sound command is written */
 		tail2nos_init_machine,
 	
 		/* video hardware */
-		64*8, 32*8, { 0*8, 40*8-1, 1*8, 31*8-1 },
+		64*8, 32*8, new rectangle( 0*8, 40*8-1, 1*8, 31*8-1 ),
 		tail2nos_gfxdecodeinfo,
-		2048, 0,
-		0,
+		2048, null,
+		null,
 	
 		VIDEO_TYPE_RASTER,
-		0,
+		null,
 		tail2nos_vh_start,
 		tail2nos_vh_stop,
 		tail2nos_vh_screenrefresh,
 	
 		/* sound hardware */
 		SOUND_SUPPORTS_STEREO,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_YM2608,
-				&ym2608_interface,
-			}
+				ym2608_interface,
+			)
 		}
-	};
+	);
 	
 	
 	

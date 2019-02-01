@@ -190,42 +190,42 @@ public class epos
 	};
 	
 	
-	static const struct MachineDriver machine_driver_epos =
-	{
+	static MachineDriver machine_driver_epos = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_Z80,
 				11000000/4,		/* 2.75 MHz (see notes) */
 				readmem,writemem,readport,writeport,
 				interrupt,1
-			}
+			)
 		},
 		60, 2500,  /* frames per second, vblank duration */
 		1,
-		0,
+		null,
 	
 		/* video hardware */
-		272, 241, { 0, 271, 0, 235 },	/* an unusual resolution */
-		0,
-		32, 0,
+		272, 241, new rectangle( 0, 271, 0, 235 ),	/* an unusual resolution */
+		null,
+		32, null,
 		epos_vh_convert_color_prom,
 	
 		VIDEO_TYPE_RASTER,
-		0,
+		null,
 		generic_bitmapped_vh_start,
 		generic_bitmapped_vh_stop,
 		epos_vh_screenrefresh,
 	
 		/* sound hardware */
 		0,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_AY8910,
-				&ay8912_interface
-			}
+				ay8912_interface
+			)
 		}
-	};
+	);
 	
 	
 	/***************************************************************************

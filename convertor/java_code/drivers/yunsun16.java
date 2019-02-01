@@ -428,45 +428,45 @@ public class yunsun16
 		{ 80 }
 	};
 	
-	static const struct MachineDriver machine_driver_magicbub =
-	{
-		{
-			{
+	static MachineDriver machine_driver_magicbub = new MachineDriver
+	(
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_M68000,
 				16000000,
-				yunsun16_readmem, yunsun16_writemem,0,0,
+				yunsun16_readmem, yunsun16_writemem,null,null,
 				m68_level2_irq, 1
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_Z80 | CPU_AUDIO_CPU,
 				3000000,	/* ? */
 				yunsun16_sound_readmem,  yunsun16_sound_writemem,
 				yunsun16_sound_readport, yunsun16_sound_writeport,
 				ignore_interrupt, 1	/* IRQ by YM3812; NMI by main CPU */
-			},
+			),
 		},
 		60,DEFAULT_60HZ_VBLANK_DURATION,
 		1,
-		0,
+		null,
 	
 		/* video hardware */
-		0x180, 0xe0, { 0+0x20, 0x180-1-0x20, 0, 0xe0-1 },
+		0x180, 0xe0, new rectangle( 0+0x20, 0x180-1-0x20, 0, 0xe0-1 ),
 		yunsun16_gfxdecodeinfo,
-		8192, 0,
-		0,
+		8192, null,
+		null,
 		VIDEO_TYPE_RASTER,
-		0,
+		null,
 		yunsun16_vh_start,
-		0,
+		null,
 		yunsun16_vh_screenrefresh,
 	
 		/* sound hardware */
 		SOUND_SUPPORTS_STEREO,0,0,0,
-		{
-			{ SOUND_YM3812,   &magicbub_ym3812_intf   },
-			{ SOUND_OKIM6295, &magicbub_okim6295_intf }
+		new MachineSound[] {
+			new MachineSound( SOUND_YM3812,   magicbub_ym3812_intf   ),
+			new MachineSound( SOUND_OKIM6295, magicbub_okim6295_intf )
 		},
-	};
+	);
 	
 	
 	/***************************************************************************
@@ -481,37 +481,37 @@ public class yunsun16
 		{ 100 }
 	};
 	
-	static const struct MachineDriver machine_driver_shocking =
-	{
-		{
-			{
+	static MachineDriver machine_driver_shocking = new MachineDriver
+	(
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_M68000,
 				16000000,
-				yunsun16_readmem, yunsun16_writemem,0,0,
+				yunsun16_readmem, yunsun16_writemem,null,null,
 				m68_level2_irq, 1
-			},
+			),
 		},
 		60,DEFAULT_60HZ_VBLANK_DURATION,
 		1,
-		0,
+		null,
 	
 		/* video hardware */
-		0x180, 0xe0, { 0, 0x180-1-4, 0, 0xe0-1 },
+		0x180, 0xe0, new rectangle( 0, 0x180-1-4, 0, 0xe0-1 ),
 		yunsun16_gfxdecodeinfo,
-		8192, 0,
-		0,
+		8192, null,
+		null,
 		VIDEO_TYPE_RASTER,
-		0,
+		null,
 		yunsun16_vh_start,
-		0,
+		null,
 		yunsun16_vh_screenrefresh,
 	
 		/* sound hardware */
 		SOUND_SUPPORTS_STEREO,0,0,0,
-		{
-			{ SOUND_OKIM6295, &shocking_okim6295_intf }
+		new MachineSound[] {
+			new MachineSound( SOUND_OKIM6295, shocking_okim6295_intf )
 		},
-	};
+	);
 	
 	
 	

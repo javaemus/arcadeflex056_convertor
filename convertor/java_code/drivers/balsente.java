@@ -2594,47 +2594,47 @@ public class balsente
 	 *
 	 *************************************/
 	
-	static const struct MachineDriver machine_driver_balsente =
-	{
+	static MachineDriver machine_driver_balsente = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_M6809,
 				5000000/4,                     /* 5MHz/4 */
-				readmem_cpu1,writemem_cpu1,0,0,
+				readmem_cpu1,writemem_cpu1,null,null,
 				update_analog_inputs,1
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_Z80 | CPU_AUDIO_CPU,
 				4000000,                       /* 4MHz */
 				readmem_cpu2,writemem_cpu2,readport_cpu2,writeport_cpu2,
 				ignore_interrupt,1
-			}
+			)
 		},
 		60, DEFAULT_REAL_60HZ_VBLANK_DURATION,	/* frames per second, vblank duration */
 		10,
 		init_machine,
 	
 		/* video hardware */
-		256, 240, { 0, 255, 0, 239 },
-		0,
-		1024,0,
-		0,
+		256, 240, new rectangle( 0, 255, 0, 239 ),
+		null,
+		1024,null,
+		null,
 	
 		VIDEO_TYPE_RASTER | VIDEO_UPDATE_BEFORE_VBLANK,
-		0,
+		null,
 		balsente_vh_start,
 		balsente_vh_stop,
 		balsente_vh_screenrefresh,
 	
 		/* sound hardware */
 		0,0,0,0,
-		{
-			{ SOUND_CEM3394, &cem_interface }
+		new MachineSound[] {
+			new MachineSound( SOUND_CEM3394, cem_interface )
 		},
 	
 		nvram_handler
-	};
+	);
 	
 	
 	

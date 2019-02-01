@@ -777,17 +777,17 @@ public class sega
 		sega_sh_update
 	};
 	
-	static const struct MachineDriver machine_driver_spacfury =
-	{
+	static MachineDriver machine_driver_spacfury = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_Z80,
 				3867120,	/* 3.86712 MHz */
 				readmem, writemem, spacfury_readport, spacfury_writeport,
-				0, 0, /* no vblank interrupt */
+				null, null, /* no vblank interrupt */
 				sega_interrupt, 40 /* 40 Hz */
-			}
+			)
 		},
 		40, 0,	/* frames per second, vblank duration (vector game, so no vblank) */
 		1,	/* single CPU, no need for interleaving */
@@ -795,29 +795,29 @@ public class sega
 	
 		/* video hardware */
 		400, 300, { 512, 1536, 552, 1464 },
-		0,
-		256, 0,
-		0,
+		null,
+		256, null,
+		null,
 	
 		VIDEO_TYPE_VECTOR | VIDEO_SUPPORTS_DIRTY | VIDEO_RGB_DIRECT,
-		0,
+		null,
 		sega_vh_start,
 		sega_vh_stop,
 		sega_vh_screenrefresh,
 	
 		/* sound hardware */
 		0,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_SAMPLES,
-				&spacfury_samples_interface
-			},
-			{
+				spacfury_samples_interface
+			),
+			new MachineSound(
 				SOUND_CUSTOM,	/* actually plays the samples */
-				&sega_custom_interface
-			}
+				sega_custom_interface
+			)
 		}
-	};
+	);
 	
 	
 	
@@ -878,18 +878,18 @@ public class sega
 	
 	
 	
-	static const struct MachineDriver machine_driver_zektor =
-	{
+	static MachineDriver machine_driver_zektor = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_Z80,
 				3867120,	/* 3.86712 MHz */
 				readmem,writemem,zektor_readport,zektor_writeport,
 	
-				0, 0, /* no vblank interrupt */
+				null, null, /* no vblank interrupt */
 				sega_interrupt, 40 /* 40 Hz */
-			}
+			)
 		},
 		40, 0,	/* frames per second, vblank duration (vector game, so no vblank) */
 		1,	/* single CPU, no need for interleaving */
@@ -897,29 +897,29 @@ public class sega
 	
 		/* video hardware */
 		400, 300, { 512, 1536, 624, 1432 },
-		0,
-		256, 0,
-		0,
+		null,
+		256, null,
+		null,
 	
 		VIDEO_TYPE_VECTOR | VIDEO_SUPPORTS_DIRTY | VIDEO_RGB_DIRECT,
-		0,
+		null,
 		sega_vh_start,
 		sega_vh_stop,
 		sega_vh_screenrefresh,
 	
 		/* sound hardware */
 		0,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_SAMPLES,
-				&zektor_samples_interface
-			},
-			{
+				zektor_samples_interface
+			),
+			new MachineSound(
 				SOUND_CUSTOM,	/* actually plays the samples */
-				&sega_custom_interface
-			}
+				sega_custom_interface
+			)
 		}
-	};
+	);
 	
 	
 	
@@ -975,18 +975,18 @@ public class sega
 	
 	
 	
-	static const struct MachineDriver machine_driver_tacscan =
-	{
+	static MachineDriver machine_driver_tacscan = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_Z80,
 				3867120,	/* 3.86712 MHz */
 				readmem,writemem,zektor_readport,tacscan_writeport,
 	
-				0, 0, /* no vblank interrupt */
+				null, null, /* no vblank interrupt */
 				sega_interrupt, 40 /* 40 Hz */
-			}
+			)
 		},
 		40, 0,	/* frames per second, vblank duration (vector game, so no vblank) */
 		1,	/* single CPU, no need for interleaving */
@@ -994,29 +994,29 @@ public class sega
 	
 		/* video hardware */
 		400, 300, { 496, 1552, 592, 1456 },
-		0,
-		256, 0,
-		0,
+		null,
+		256, null,
+		null,
 	
 		VIDEO_TYPE_VECTOR | VIDEO_SUPPORTS_DIRTY | VIDEO_RGB_DIRECT,
-		0,
+		null,
 		sega_vh_start,
 		sega_vh_stop,
 		sega_vh_screenrefresh,
 	
 		/* sound hardware */
 		0,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_SAMPLES,
-				&tacscan_samples_interface
-			},
-			{
+				tacscan_samples_interface
+			),
+			new MachineSound(
 				SOUND_CUSTOM,	/* actually plays the samples */
-				&tacscan_custom_interface
-			}
+				tacscan_custom_interface
+			)
 		}
-	};
+	);
 	
 	/***************************************************************************
 	
@@ -1051,18 +1051,18 @@ public class sega
 	};
 	
 	
-	static const struct MachineDriver machine_driver_elim2 =
-	{
+	static MachineDriver machine_driver_elim2 = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_Z80,
 				3867120,	/* 3.86712 MHz */
 				readmem,writemem,elim2_readport,elim_writeport,
 	
-				0, 0, /* no vblank interrupt */
+				null, null, /* no vblank interrupt */
 				sega_interrupt, 40 /* 40 Hz */
-			}
+			)
 		},
 		40, 0,	/* frames per second, vblank duration (vector game, so no vblank) */
 		1,	/* single CPU, no need for interleaving */
@@ -1070,44 +1070,44 @@ public class sega
 	
 		/* video hardware */
 		400, 300, { 512, 1536, 600, 1440 },
-		0,
-		256, 0,
-		0,
+		null,
+		256, null,
+		null,
 	
 		VIDEO_TYPE_VECTOR | VIDEO_SUPPORTS_DIRTY | VIDEO_RGB_DIRECT,
-		0,
+		null,
 		sega_vh_start,
 		sega_vh_stop,
 		sega_vh_screenrefresh,
 	
 		/* sound hardware */
 		0,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_SAMPLES,
-				&elim2_samples_interface
-			},
-			{
+				elim2_samples_interface
+			),
+			new MachineSound(
 				SOUND_CUSTOM,	/* actually plays the samples */
-				&sega_custom_interface
-			}
+				sega_custom_interface
+			)
 		}
-	};
+	);
 	
 	
 	
-	static const struct MachineDriver machine_driver_elim4 =
-	{
+	static MachineDriver machine_driver_elim4 = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_Z80,
 				3867120,	/* 3.86712 MHz */
 				readmem,writemem,elim4_readport,elim_writeport,
 	
-				0, 0, /* no vblank interrupt */
+				null, null, /* no vblank interrupt */
 				sega_interrupt, 40 /* 40 Hz */
-			}
+			)
 		},
 		40, 0,	/* frames per second, vblank duration (vector game, so no vblank) */
 		1,	/* single CPU, no need for interleaving */
@@ -1115,29 +1115,29 @@ public class sega
 	
 		/* video hardware */
 		400, 300, { 512, 1536, 600, 1440 },
-		0,
-		256, 0,
-		0,
+		null,
+		256, null,
+		null,
 	
 		VIDEO_TYPE_VECTOR | VIDEO_SUPPORTS_DIRTY | VIDEO_RGB_DIRECT,
-		0,
+		null,
 		sega_vh_start,
 		sega_vh_stop,
 		sega_vh_screenrefresh,
 	
 		/* sound hardware */
 		0,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_SAMPLES,
-				&elim2_samples_interface
-			},
-			{
+				elim2_samples_interface
+			),
+			new MachineSound(
 				SOUND_CUSTOM,	/* actually plays the samples */
-				&sega_custom_interface
-			}
+				sega_custom_interface
+			)
 		}
-	};
+	);
 	
 	/***************************************************************************
 	
@@ -1211,18 +1211,18 @@ public class sega
 		startrek_sample_names
 	};
 	
-	static const struct MachineDriver machine_driver_startrek =
-	{
+	static MachineDriver machine_driver_startrek = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_Z80,
 				3867120,	/* 3.86712 MHz */
 				readmem,writemem,zektor_readport,startrek_writeport,
 	
-				0, 0, /* no vblank interrupt */
+				null, null, /* no vblank interrupt */
 				sega_interrupt, 40 /* 40 Hz */
-			}
+			)
 		},
 		40, 0,	/* frames per second, vblank duration (vector game, so no vblank) */
 		1,	/* single CPU, no need for interleaving */
@@ -1230,29 +1230,29 @@ public class sega
 	
 		/* video hardware */
 		400, 300, { 512, 1536, 616, 1464 },
-		0,
-		256, 0,
-		0,
+		null,
+		256, null,
+		null,
 	
 		VIDEO_TYPE_VECTOR | VIDEO_SUPPORTS_DIRTY | VIDEO_RGB_DIRECT,
-		0,
+		null,
 		sega_vh_start,
 		sega_vh_stop,
 		sega_vh_screenrefresh,
 	
 		/* sound hardware */
 		0,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_SAMPLES,
-				&startrek_samples_interface
-			},
-			{
+				startrek_samples_interface
+			),
+			new MachineSound(
 				SOUND_CUSTOM,	/* actually plays the samples */
-				&sega_custom_interface
-			}
+				sega_custom_interface
+			)
 		}
-	};
+	);
 	
 	
 	

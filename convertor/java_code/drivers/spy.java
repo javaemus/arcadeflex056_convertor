@@ -293,52 +293,52 @@ public class spy
 	
 	
 	
-	static const struct MachineDriver machine_driver_spy =
-	{
-		{
-			{
+	static MachineDriver machine_driver_spy = new MachineDriver
+	(
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_HD6309,
 				3000000, /* ? */
-				spy_readmem,spy_writemem,0,0,
+				spy_readmem,spy_writemem,null,null,
 				spy_interrupt,2
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_Z80 | CPU_AUDIO_CPU,
 				3579545,
-				spy_sound_readmem, spy_sound_writemem,0,0,
+				spy_sound_readmem, spy_sound_writemem,null,null,
 				ignore_interrupt,0	/* irq is triggered by the main CPU */
 									/* nmi by the sound chip */
-			}
+			)
 		},
 		60, DEFAULT_60HZ_VBLANK_DURATION,	/* frames per second, vblank duration */
 		1,	/* 1 CPU slice per frame - interleaving is forced when a sound command is written */
-		0,
+		null,
 	
 		/* video hardware */
-		64*8, 32*8, { 14*8, (64-14)*8-1, 2*8, 30*8-1 },
-		0,	/* gfx decoded by konamiic.c */
-		1024, 0,
-		0,
+		64*8, 32*8, new rectangle( 14*8, (64-14)*8-1, 2*8, 30*8-1 ),
+		null,	/* gfx decoded by konamiic.c */
+		1024, null,
+		null,
 	
 		VIDEO_TYPE_RASTER | VIDEO_HAS_SHADOWS,
-		0,
+		null,
 		spy_vh_start,
 		spy_vh_stop,
 		spy_vh_screenrefresh,
 	
 		/* sound hardware */
 		0,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_YM3812,
-				&ym3812_interface
-			},
-			{
+				ym3812_interface
+			),
+			new MachineSound(
 				SOUND_K007232,
-				&k007232_interface
-			}
+				k007232_interface
+			)
 		}
-	};
+	);
 	
 	
 	/***************************************************************************

@@ -501,162 +501,162 @@ public class ddragon
 	
 	
 	
-	static const struct MachineDriver machine_driver_ddragon =
-	{
+	static MachineDriver machine_driver_ddragon = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 	 			CPU_HD6309,
 				3579545,	/* 3.579545 MHz */
-				readmem,writemem,0,0,
+				readmem,writemem,null,null,
 				ddragon_interrupt,1
-			},
-			{
+			),
+			new MachineCPU(
 	 			CPU_HD63701,
 				2000000, /* 2 MHz ???*/
-				sub_readmem,sub_writemem,0,0,
+				sub_readmem,sub_writemem,null,null,
 				ignore_interrupt,0
-			},
-			{
+			),
+			new MachineCPU(
 	 			CPU_HD6309 | CPU_AUDIO_CPU,	/* ? */
 				3579545,	/* 3.579545 MHz */
-				sound_readmem,sound_writemem,0,0,
+				sound_readmem,sound_writemem,null,null,
 				ignore_interrupt,0 /* irq on command */
-			}
+			)
 		},
 		60, DEFAULT_REAL_60HZ_VBLANK_DURATION, /* frames per second, vblank duration */
 		100, /* heavy interleaving to sync up sprite<->main cpu's */
 		ddragon_init_machine,
 	
 		/* video hardware */
-		32*8, 32*8,{ 1*8, 31*8-1, 2*8, 30*8-1 },
+		32*8, 32*8,new rectangle( 1*8, 31*8-1, 2*8, 30*8-1 ),
 		gfxdecodeinfo,
-		384, 0,
-		0,
+		384, null,
+		null,
 		VIDEO_TYPE_RASTER,
-		0,
+		null,
 		ddragon_vh_start,
-		0,
+		null,
 		ddragon_vh_screenrefresh,
 	
 		/* sound hardware */
 		SOUND_SUPPORTS_STEREO,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_YM2151,
-				&ym2151_interface
-			},
-			{
+				ym2151_interface
+			),
+			new MachineSound(
 				SOUND_MSM5205,
-				&msm5205_interface
-			}
+				msm5205_interface
+			)
 		}
-	};
+	);
 	
-	static const struct MachineDriver machine_driver_ddragonb =
-	{
+	static MachineDriver machine_driver_ddragonb = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 	 			CPU_HD6309,
 				3579545,	/* 3.579545 MHz */
-				readmem,writemem,0,0,
+				readmem,writemem,null,null,
 				ddragon_interrupt,1
-			},
-			{
+			),
+			new MachineCPU(
 	 			CPU_HD6309,	/* ? */
 				12000000 / 3, /* 4 MHz */
-				sub_readmem,sub_writemem,0,0,
+				sub_readmem,sub_writemem,null,null,
 				ignore_interrupt,0
-			},
-			{
+			),
+			new MachineCPU(
 	 			CPU_HD6309 | CPU_AUDIO_CPU,	/* ? */
 				3579545,	/* 3.579545 MHz */
-				sound_readmem,sound_writemem,0,0,
+				sound_readmem,sound_writemem,null,null,
 				ignore_interrupt,0 /* irq on command */
-			}
+			)
 		},
 		60, DEFAULT_REAL_60HZ_VBLANK_DURATION, /* frames per second, vblank duration */
 		100, /* heavy interleaving to sync up sprite<->main cpu's */
 		ddragonb_init_machine,
 	
 		/* video hardware */
-		32*8, 32*8,{ 1*8, 31*8-1, 2*8, 30*8-1 },
+		32*8, 32*8,new rectangle( 1*8, 31*8-1, 2*8, 30*8-1 ),
 		gfxdecodeinfo,
-		384, 0,
-		0,
+		384, null,
+		null,
 		VIDEO_TYPE_RASTER,
-		0,
+		null,
 		ddragon_vh_start,
-		0,
+		null,
 		ddragon_vh_screenrefresh,
 	
 		/* sound hardware */
 		SOUND_SUPPORTS_STEREO,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_YM2151,
-				&ym2151_interface
-			},
-			{
+				ym2151_interface
+			),
+			new MachineSound(
 				SOUND_MSM5205,
-				&msm5205_interface
-			}
+				msm5205_interface
+			)
 		}
-	};
+	);
 	
-	static const struct MachineDriver machine_driver_ddragon2 =
-	{
+	static MachineDriver machine_driver_ddragon2 = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 	 			CPU_HD6309,
 				3579545,	/* 3.579545 MHz */
-				dd2_readmem,dd2_writemem,0,0,
+				dd2_readmem,dd2_writemem,null,null,
 				ddragon_interrupt,1
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_Z80,
 				12000000 / 3, /* 4 MHz */
-				dd2_sub_readmem,dd2_sub_writemem,0,0,
+				dd2_sub_readmem,dd2_sub_writemem,null,null,
 				ignore_interrupt,0
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_Z80 | CPU_AUDIO_CPU,
 				3579545,	/* 3.579545 MHz */
-				dd2_sound_readmem,dd2_sound_writemem,0,0,
+				dd2_sound_readmem,dd2_sound_writemem,null,null,
 				ignore_interrupt,0
-			}
+			)
 		},
 		60, DEFAULT_REAL_60HZ_VBLANK_DURATION, /* frames per second, vblank duration */
 		100, /* heavy interleaving to sync up sprite<->main cpu's */
 		ddragon2_init_machine,
 	
 		/* video hardware */
-		32*8, 32*8,{ 1*8, 31*8-1, 2*8, 30*8-1 },
+		32*8, 32*8,new rectangle( 1*8, 31*8-1, 2*8, 30*8-1 ),
 		gfxdecodeinfo,
-		384, 0,
-		0,
+		384, null,
+		null,
 	
 		VIDEO_TYPE_RASTER,
-		0,
+		null,
 		ddragon_vh_start,
-		0,
+		null,
 		ddragon_vh_screenrefresh,
 	
 		/* sound hardware */
 		SOUND_SUPPORTS_STEREO,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_YM2151,
-				&ym2151_interface
-			},
-			{
+				ym2151_interface
+			),
+			new MachineSound(
 				SOUND_OKIM6295,
-				&okim6295_interface
-			}
+				okim6295_interface
+			)
 		}
-	};
+	);
 	
 	
 	/***************************************************************************

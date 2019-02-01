@@ -547,47 +547,47 @@ public class taitoair
 					MACHINE DRIVERS
 	************************************************************/
 	
-	static const struct MachineDriver machine_driver_airsys =
-	{
-		{
-			{
+	static MachineDriver machine_driver_airsys = new MachineDriver
+	(
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_M68000,
 				24000000 / 2,		/* 12 MHz ??? */
-				airsys_readmem, airsys_writemem, 0, 0,
+				airsys_readmem, airsys_writemem, null, null,
 				m68_level5_irq, 1
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_Z80,
 				8000000 / 2,		/* 4 MHz ??? */
-				sound_readmem, sound_writemem, 0, 0,
+				sound_readmem, sound_writemem, null, null,
 				ignore_interrupt, 0
-			},
+			),
 		},
 		60, DEFAULT_60HZ_VBLANK_DURATION,
 		10,
-		0,
+		null,
 	
 		/* video hardware */
-		64*16, 64*16, { 0*16, 32*16-1, 3*16, 28*16-1 },
+		64*16, 64*16, new rectangle( 0*16, 32*16-1, 3*16, 28*16-1 ),
 		airsys_gfxdecodeinfo,
-		512*16, 0,
-		0,
+		512*16, null,
+		null,
 	
 		VIDEO_TYPE_RASTER,
-		0,
+		null,
 		recordbr_vh_start,
 		syvalion_vh_stop,
 		recordbr_vh_screenrefresh,
 	
 		/* sound hardware */
 		0,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_YM2610,
-				&airsys_ym2610_interface
-			},
+				airsys_ym2610_interface
+			),
 		}
-	};
+	);
 	
 	
 	/*************************************************************

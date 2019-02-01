@@ -314,36 +314,36 @@ public class spiders
 	
 	
 	
-	static const struct MachineDriver machine_driver_spiders =
-	{
+	static MachineDriver machine_driver_spiders = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_M6809,
 				2800000,
-				readmem,writemem,0,0,
+				readmem,writemem,null,null,
 				ignore_interrupt,0,      /* Vblank Int */
 				spiders_timed_irq , 25   /* Timed Int  */
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_M6802 | CPU_AUDIO_CPU,
 				3000000/4,
-				sound_readmem,sound_writemem,0,0,
+				sound_readmem,sound_writemem,null,null,
 				ignore_interrupt,0,
-			}
+			)
 		},
 		60, DEFAULT_REAL_60HZ_VBLANK_DURATION,
 		1,     /* CPU slices per frame */
 		spiders_init_machine,
 	
 		/* video hardware */
-		32*8, 28*8, { 0*8, 32*8-1, 0*8, 28*8-1 },       /* Visible area         */
-		0,
-		8, 0,
+		32*8, 28*8, new rectangle( 0*8, 32*8-1, 0*8, 28*8-1 ),       /* Visible area         */
+		null,
+		8, null,
 		nyny_init_palette,
 	
 		VIDEO_TYPE_RASTER | VIDEO_SUPPORTS_DIRTY,                  /* Video attributes     */
-		0,                                  /* Video initialisation */
+		null,                                  /* Video initialisation */
 		spiders_vh_start,                    /* Video start          */
 		spiders_vh_stop,                     /* Video stop           */
 		spiders_vh_screenrefresh,                   /* Video update         */
@@ -351,7 +351,7 @@ public class spiders
 		/* sound hardware */
 		0,0,0,0
 		/* Sound struct here */
-	};
+	);
 	
 	
 	

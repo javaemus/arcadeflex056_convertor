@@ -212,43 +212,43 @@ public class astrof
 	
 	
 	#define MACHINE_DRIVER(GAMENAME, NUMCOLORS) 								   \
-	static const struct MachineDriver machine_driver_##GAMENAME =				   \
-	{																			   \
+	static MachineDriver machine_driver_##GAMENAME = new MachineDriver\
+	(																			   \
 		/* basic machine hardware */											   \
-		{																		   \
-			{																	   \
+		new MachineCPU[] {																		   \
+			new MachineCPU(																	   \
 				CPU_M6502,														   \
 				10595000/16,	/* 0.66 MHz */									   \
-				readmem,GAMENAME##_writemem,0,0,								   \
+				readmem,GAMENAME##_writemem,null,null,								   \
 				astrof_interrupt,1												   \
-			}																	   \
+			)																	   \
 		},																		   \
 		60, 3400,	/* frames per second, vblank duration */					   \
 		1,	/* single CPU, no need for interleaving */							   \
-		0,																		   \
+		null,																		   \
 																				   \
 		/* video hardware */													   \
-		256, 256, { 8, 256-1-8, 8, 256-1-8 },									   \
+		256, 256, new rectangle( 8, 256-1-8, 8, 256-1-8 ),									   \
 																				   \
-		0,	/* no gfxdecodeinfo - bitmapped display */							   \
-		NUMCOLORS, 0,															   \
+		null,	/* no gfxdecodeinfo - bitmapped display */							   \
+		NUMCOLORS, null,															   \
 		astrof_vh_convert_color_prom,											   \
 																				   \
 		VIDEO_TYPE_RASTER,														   \
-		0,																		   \
+		null,																		   \
 		astrof_vh_start,														   \
 		astrof_vh_stop,															   \
 		astrof_vh_screenrefresh,												   \
 																				   \
 		/* sound hardware */													   \
 		0, 0, 0, 0,																   \
-		{						 												   \
-			{																	   \
+		new MachineSound[] {						 												   \
+			new MachineSound(																	   \
 				SOUND_SAMPLES,		 											   \
-				&GAMENAME##_samples_interface	 								   \
-			}																	   \
+				GAMENAME##_samples_interface	 								   \
+			)																	   \
 		}																		   \
-	};
+	);
 	
 	MACHINE_DRIVER(astrof,   16)
 	MACHINE_DRIVER(tomahawk, 32)

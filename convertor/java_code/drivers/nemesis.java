@@ -2022,22 +2022,22 @@ public class nemesis
 	
 	/******************************************************************************/
 	
-	static const struct MachineDriver machine_driver_nemesis =
-	{
+	static MachineDriver machine_driver_nemesis = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_M68000,
 				14318180/2,	/* From schematics, should be accurate */
-				readmem,writemem,0,0,
+				readmem,writemem,0,null,
 				nemesis_interrupt,1
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_Z80 | CPU_AUDIO_CPU,
 				14318180/4, /* From schematics, should be accurate */
-				sound_readmem,sound_writemem,0,0,
+				sound_readmem,sound_writemem,0,null,
 				ignore_interrupt,0	/* interrupts are triggered by the main CPU */
-			},
+			),
 		},
 	
 		60, DEFAULT_REAL_60HZ_VBLANK_DURATION,
@@ -2045,51 +2045,51 @@ public class nemesis
 		nemesis_init_machine,
 	
 		/* video hardware */
-		32*8, 32*8, { 0*8, 32*8-1, 2*8, 30*8-1 },
+		32*8, 32*8, new rectangle( 0*8, 32*8-1, 2*8, 30*8-1 ),
 		gfxdecodeinfo,
-		2048, 0,
-		0,
+		2048, null,
+		null,
 	
 		VIDEO_TYPE_RASTER,
-		0,
+		null,
 		nemesis_vh_start,
 		nemesis_vh_stop,
 		nemesis_vh_screenrefresh,
 	
 		/* sound hardware */
 		0,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_AY8910,
-				&ay8910_interface
-			},
-			{
+				ay8910_interface
+			),
+			new MachineSound(
 				SOUND_K005289,
-				&k005289_interface,
-			},
-			{
+				k005289_interface,
+			),
+			new MachineSound(
 				SOUND_VLM5030,
-				&gx400_vlm5030_interface
-			}
+				gx400_vlm5030_interface
+			)
 		}
-	};
+	);
 	
-	static const struct MachineDriver machine_driver_konamigt =
-	{
+	static MachineDriver machine_driver_konamigt = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_M68000,
 				7159090,     /* ??? */
-				konamigt_readmem,konamigt_writemem,0,0,
+				konamigt_readmem,konamigt_writemem,null,null,
 				konamigt_interrupt,2
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_Z80 | CPU_AUDIO_CPU,
 				14318180/4,        /* 3.579545 MHz */
-				sound_readmem,sound_writemem,0,0,
+				sound_readmem,sound_writemem,null,null,
 				ignore_interrupt,1	/* interrupts are triggered by the main CPU */
-			},
+			),
 		},
 	
 		60, DEFAULT_REAL_60HZ_VBLANK_DURATION,
@@ -2097,47 +2097,47 @@ public class nemesis
 		nemesis_init_machine,
 	
 		/* video hardware */
-		32*8, 32*8, { 0*8, 32*8-1, 2*8, 30*8-1 },
+		32*8, 32*8, new rectangle( 0*8, 32*8-1, 2*8, 30*8-1 ),
 		gfxdecodeinfo,
-		2048, 0,
-		0,
+		2048, null,
+		null,
 	
 		VIDEO_TYPE_RASTER,
-		0,
+		null,
 		nemesis_vh_start,
 		nemesis_vh_stop,
 		nemesis_vh_screenrefresh,
 	
 		/* sound hardware */
 		0,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_AY8910,
-				&ay8910_interface
-			},
-			{
+				ay8910_interface
+			),
+			new MachineSound(
 				SOUND_K005289,
-				&k005289_interface
-			}
+				k005289_interface
+			)
 		}
-	};
+	);
 	
-	static const struct MachineDriver machine_driver_salamand =
-	{
+	static MachineDriver machine_driver_salamand = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_M68000,
 				18432000/2,       /* 9.216MHz */
-				salamand_readmem,salamand_writemem,0,0,
+				salamand_readmem,salamand_writemem,null,null,
 				salamand_interrupt,1
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_Z80 | CPU_AUDIO_CPU,
 				14318180/4,        /* 3.579545 MHz */
-				sal_sound_readmem,sal_sound_writemem,0,0,
+				sal_sound_readmem,sal_sound_writemem,null,null,
 				ignore_interrupt,0
-			},
+			),
 		},
 	
 		60, DEFAULT_60HZ_VBLANK_DURATION,
@@ -2145,51 +2145,51 @@ public class nemesis
 		nemesis_init_machine,
 	
 		/* video hardware */
-		32*8, 32*8, { 0*8, 32*8-1, 2*8, 30*8-1 },
+		32*8, 32*8, new rectangle( 0*8, 32*8-1, 2*8, 30*8-1 ),
 		gfxdecodeinfo,
-		2048, 0,
-		0,
+		2048, null,
+		null,
 	
 		VIDEO_TYPE_RASTER | VIDEO_UPDATE_BEFORE_VBLANK,
-		0,
+		null,
 		nemesis_vh_start,
 		nemesis_vh_stop,
 		salamand_vh_screenrefresh,
 	
 		/* sound hardware */
 		SOUND_SUPPORTS_STEREO,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_VLM5030,
-				&vlm5030_interface
-			},
-			{
+				vlm5030_interface
+			),
+			new MachineSound(
 				SOUND_K007232,
-				&k007232_interface,
-			},
-			{
+				k007232_interface,
+			),
+			new MachineSound(
 				SOUND_YM2151,
-				&ym2151_interface
-			}
+				ym2151_interface
+			)
 		}
-	};
+	);
 	
-	static const struct MachineDriver machine_driver_blkpnthr =
-	{
+	static MachineDriver machine_driver_blkpnthr = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_M68000,
 				18432000/2,         /* 9.216 MHz? */
-				blkpnthr_readmem,blkpnthr_writemem,0,0,
+				blkpnthr_readmem,blkpnthr_writemem,null,null,
 				blkpnthr_interrupt,1
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_Z80 | CPU_AUDIO_CPU,
 				3579545,        /* 3.579545 MHz */
-				sal_sound_readmem,sal_sound_writemem,0,0,
+				sal_sound_readmem,sal_sound_writemem,null,null,
 				ignore_interrupt,0
-			},
+			),
 		},
 	
 		60, DEFAULT_60HZ_VBLANK_DURATION,
@@ -2197,47 +2197,47 @@ public class nemesis
 		nemesis_init_machine,
 	
 		/* video hardware */
-		32*8, 32*8, { 0*8, 32*8-1, 2*8, 30*8-1 },
+		32*8, 32*8, new rectangle( 0*8, 32*8-1, 2*8, 30*8-1 ),
 		gfxdecodeinfo,
-		2048, 0,
-		0,
+		2048, null,
+		null,
 	
 		VIDEO_TYPE_RASTER | VIDEO_UPDATE_BEFORE_VBLANK,
-		0,
+		null,
 		nemesis_vh_start,
 		nemesis_vh_stop,
 		salamand_vh_screenrefresh,
 	
 		/* sound hardware */
 		SOUND_SUPPORTS_STEREO,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_K007232,
-				&k007232_interface,
-			},
-			{
+				k007232_interface,
+			),
+			new MachineSound(
 				SOUND_YM2151,
-				&ym2151_interface
-			}
+				ym2151_interface
+			)
 		}
-	};
+	);
 	
-	static const struct MachineDriver machine_driver_citybomb =
-	{
+	static MachineDriver machine_driver_citybomb = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_M68000,
 				18432000/2,         /* 9.216 MHz? */
-				citybomb_readmem,citybomb_writemem,0,0,
+				citybomb_readmem,citybomb_writemem,null,null,
 				salamand_interrupt,1
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_Z80 | CPU_AUDIO_CPU,
 				3579545,        /* 3.579545 MHz */
-				city_sound_readmem,city_sound_writemem,0,0,
+				city_sound_readmem,city_sound_writemem,null,null,
 				ignore_interrupt,0
-			},
+			),
 		},
 	
 		60, DEFAULT_60HZ_VBLANK_DURATION,
@@ -2245,51 +2245,51 @@ public class nemesis
 		nemesis_init_machine,
 	
 		/* video hardware */
-		32*8, 32*8, { 0*8, 32*8-1, 2*8, 30*8-1 },
+		32*8, 32*8, new rectangle( 0*8, 32*8-1, 2*8, 30*8-1 ),
 		gfxdecodeinfo,
-		2048, 0,
-		0,
+		2048, null,
+		null,
 	
 		VIDEO_TYPE_RASTER | VIDEO_UPDATE_BEFORE_VBLANK,
-		0,
+		null,
 		nemesis_vh_start,
 		nemesis_vh_stop,
 		salamand_vh_screenrefresh,
 	
 		/* sound hardware */
 		SOUND_SUPPORTS_STEREO,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_K007232,
-				&k007232_interface,
-			},
-			{
+				k007232_interface,
+			),
+			new MachineSound(
 				SOUND_YM3812,
-				&ym3812_interface
-			},
-			{
+				ym3812_interface
+			),
+			new MachineSound(
 				SOUND_K051649,
-				&k051649_interface,
-			}
+				k051649_interface,
+			)
 		}
-	};
+	);
 	
-	static const struct MachineDriver machine_driver_nyanpani =
-	{
+	static MachineDriver machine_driver_nyanpani = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_M68000,
 				18432000/2,         /* 9.216 MHz? */
-				nyanpani_readmem,nyanpani_writemem,0,0,
+				nyanpani_readmem,nyanpani_writemem,null,null,
 				salamand_interrupt,1
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_Z80 | CPU_AUDIO_CPU,
 				3579545,        /* 3.579545 MHz */
-				city_sound_readmem,city_sound_writemem,0,0,
+				city_sound_readmem,city_sound_writemem,null,null,
 				ignore_interrupt,0
-			},
+			),
 		},
 	
 		60, DEFAULT_60HZ_VBLANK_DURATION,
@@ -2297,51 +2297,51 @@ public class nemesis
 		nemesis_init_machine,
 	
 		/* video hardware */
-		32*8, 32*8, { 0*8, 32*8-1, 2*8, 30*8-1 },
+		32*8, 32*8, new rectangle( 0*8, 32*8-1, 2*8, 30*8-1 ),
 		gfxdecodeinfo,
-		2048, 0,
-		0,
+		2048, null,
+		null,
 	
 		VIDEO_TYPE_RASTER | VIDEO_UPDATE_BEFORE_VBLANK,
-		0,
+		null,
 		nemesis_vh_start,
 		nemesis_vh_stop,
 		salamand_vh_screenrefresh,
 	
 		/* sound hardware */
 		SOUND_SUPPORTS_STEREO,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_K007232,
-				&k007232_interface,
-			},
-			{
+				k007232_interface,
+			),
+			new MachineSound(
 				SOUND_YM3812,
-				&ym3812_interface
-			},
-			{
+				ym3812_interface
+			),
+			new MachineSound(
 				SOUND_K051649,
-				&k051649_interface,
-			}
+				k051649_interface,
+			)
 		}
-	};
+	);
 	
-	static const struct MachineDriver machine_driver_gx400 =
-	{
+	static MachineDriver machine_driver_gx400 = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_M68000,
 				18432000/2,     /* 9.216MHz */
-				gx400_readmem,gx400_writemem,0,0,
+				gx400_readmem,gx400_writemem,null,null,
 				gx400_interrupt,3
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_Z80,// | CPU_AUDIO_CPU,
 				14318180/4,        /* 3.579545 MHz */
-				gx400_sound_readmem,gx400_sound_writemem,0,0,
+				gx400_sound_readmem,gx400_sound_writemem,0,null,
 				nmi_interrupt,1	/* interrupts are triggered by the main CPU */
-			},
+			),
 		},
 	
 		60, DEFAULT_REAL_60HZ_VBLANK_DURATION,
@@ -2349,51 +2349,51 @@ public class nemesis
 		nemesis_init_machine,
 	
 		/* video hardware */
-		32*8, 32*8, { 0*8, 32*8-1, 2*8, 30*8-1 },
+		32*8, 32*8, new rectangle( 0*8, 32*8-1, 2*8, 30*8-1 ),
 		gfxdecodeinfo,
-		2048, 0,
-		0,
+		2048, null,
+		null,
 	
 		VIDEO_TYPE_RASTER,
-		0,
+		null,
 		nemesis_vh_start,
 		nemesis_vh_stop,
 		nemesis_vh_screenrefresh,
 	
 		/* sound hardware */
 		0,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_AY8910,
-				&ay8910_interface
-			},
-			{
+				ay8910_interface
+			),
+			new MachineSound(
 				SOUND_K005289,
-				&k005289_interface,
-			},
-			{
+				k005289_interface,
+			),
+			new MachineSound(
 				SOUND_VLM5030,
-				&gx400_vlm5030_interface
-			}
+				gx400_vlm5030_interface
+			)
 		}
-	};
+	);
 	
-	static const struct MachineDriver machine_driver_twinbee_gx400 =
-	{
+	static MachineDriver machine_driver_twinbee_gx400 = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_M68000,
 				18432000/2,     /* 9.216MHz */
-				gx400_readmem,gx400_writemem,0,0,
+				gx400_readmem,gx400_writemem,null,null,
 				gx400_interrupt,3
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_Z80, // | CPU_AUDIO_CPU,
 				14318180/4,        /* 3.579545 MHz */
-				gx400_sound_readmem,gx400_sound_writemem,0,0,
+				gx400_sound_readmem,gx400_sound_writemem,0,null,
 				nmi_interrupt,1	/* interrupts are triggered by the main CPU */
-			},
+			),
 		},
 	
 		60, DEFAULT_REAL_60HZ_VBLANK_DURATION,
@@ -2401,51 +2401,51 @@ public class nemesis
 		nemesis_init_machine,
 	
 		/* video hardware */
-		32*8, 32*8, { 0*8, 32*8-1, 2*8, 30*8-1 },
+		32*8, 32*8, new rectangle( 0*8, 32*8-1, 2*8, 30*8-1 ),
 		gfxdecodeinfo,
-		2048, 0,
-		0,
+		2048, null,
+		null,
 	
 		VIDEO_TYPE_RASTER,
-		0,
+		null,
 		nemesis_vh_start,
 		nemesis_vh_stop,
 		twinbee_vh_screenrefresh,
 	
 		/* sound hardware */
 		0,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_AY8910,
-				&ay8910_interface
-			},
-			{
+				ay8910_interface
+			),
+			new MachineSound(
 				SOUND_K005289,
-				&k005289_interface,
-			},
-			{
+				k005289_interface,
+			),
+			new MachineSound(
 				SOUND_VLM5030,
-				&gx400_vlm5030_interface
-			}
+				gx400_vlm5030_interface
+			)
 		}
-	};
+	);
 	
-	static const struct MachineDriver machine_driver_rf2_gx400 =
-	{
+	static MachineDriver machine_driver_rf2_gx400 = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_M68000,
 				18432000/2,     /* 9.216MHz */
-				rf2_gx400_readmem,rf2_gx400_writemem,0,0,
+				rf2_gx400_readmem,rf2_gx400_writemem,null,null,
 				gx400_interrupt,3
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_Z80 | CPU_AUDIO_CPU,
 				14318180/4,        /* 3.579545 MHz */
-				gx400_sound_readmem,gx400_sound_writemem,0,0,
+				gx400_sound_readmem,gx400_sound_writemem,null,null,
 				nmi_interrupt,1	/* interrupts are triggered by the main CPU */
-			},
+			),
 		},
 	
 		60, DEFAULT_REAL_60HZ_VBLANK_DURATION,
@@ -2453,34 +2453,34 @@ public class nemesis
 		nemesis_init_machine,
 	
 		/* video hardware */
-		32*8, 32*8, { 0*8, 32*8-1, 2*8, 30*8-1 },
+		32*8, 32*8, new rectangle( 0*8, 32*8-1, 2*8, 30*8-1 ),
 		gfxdecodeinfo,
-		2048, 0,
-		0,
+		2048, null,
+		null,
 	
 		VIDEO_TYPE_RASTER,
-		0,
+		null,
 		nemesis_vh_start,
 		nemesis_vh_stop,
 		nemesis_vh_screenrefresh,
 	
 		/* sound hardware */
 		0,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_AY8910,
-				&ay8910_interface
-			},
-			{
+				ay8910_interface
+			),
+			new MachineSound(
 				SOUND_K005289,
-				&k005289_interface,
-			},
-			{
+				k005289_interface,
+			),
+			new MachineSound(
 				SOUND_VLM5030,
-				&gx400_vlm5030_interface
-			}
+				gx400_vlm5030_interface
+			)
 		}
-	};
+	);
 	
 	/***************************************************************************
 	

@@ -373,44 +373,44 @@ public class liberatr
 	
 	
 	#define MACHINE_DRIVER(NAME)							\
-	static const struct MachineDriver machine_driver_##NAME =		\
-	{														\
+	static MachineDriver machine_driver_##NAME = new MachineDriver\
+	(														\
 		/* basic machine hardware */						\
-		{													\
-			{												\
+		new MachineCPU[] {													\
+			new MachineCPU(												\
 				CPU_M6502,									\
 				1250000,		/* 1.25 MHz */				\
-				NAME##_readmem,NAME##_writemem,0,0,			\
+				NAME##_readmem,NAME##_writemem,null,null,			\
 				interrupt, 4								\
-			}												\
+			)												\
 		},													\
 		60, DEFAULT_REAL_60HZ_VBLANK_DURATION,       /* frames per second, vblank duration */	\
 		1,      /* single CPU, no need for interleaving */	\
-		0,													\
+		null,													\
 															\
 		/* video hardware */								\
-		256, 256, { 8, 247, 13, 244 },						\
-		0,      /* no gfxdecodeinfo - bitmapped display */	\
-		32, 0,												\
-		0,													\
+		256, 256, new rectangle( 8, 247, 13, 244 ),						\
+		null,      /* no gfxdecodeinfo - bitmapped display */	\
+		32, null,												\
+		null,													\
 															\
 		VIDEO_TYPE_RASTER,			\
-		0,													\
+		null,													\
 		liberatr_vh_start,									\
 		liberatr_vh_stop,									\
 		liberatr_vh_screenrefresh,							\
 															\
 		/* sound hardware */								\
 		0,0,0,0,											\
-		{													\
-			{												\
+		new MachineSound[] {													\
+			new MachineSound(												\
 				SOUND_POKEY,								\
-				&pokey_interface							\
-			}												\
+				pokey_interface							\
+			)												\
 		},													\
 															\
 		atari_vg_earom_handler								\
-	};
+	);
 	
 	MACHINE_DRIVER(liberatr)
 	MACHINE_DRIVER(liberat2)

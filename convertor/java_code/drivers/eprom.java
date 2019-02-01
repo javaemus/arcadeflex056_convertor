@@ -363,22 +363,22 @@ public class eprom
 	 *
 	 *************************************/
 	
-	static const struct MachineDriver machine_driver_eprom =
-	{
+	static MachineDriver machine_driver_eprom = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_M68000,
 				ATARI_CLOCK_14MHz/2,
-				main_readmem,main_writemem,0,0,
+				main_readmem,main_writemem,null,null,
 				atarigen_video_int_gen,1
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_M68000,
 				ATARI_CLOCK_14MHz/2,
-				extra_readmem,extra_writemem,0,0,
+				extra_readmem,extra_writemem,null,null,
 				ignore_interrupt,1
-			},
+			),
 			JSA_I_CPU
 		},
 		60, DEFAULT_REAL_60HZ_VBLANK_DURATION,
@@ -386,13 +386,13 @@ public class eprom
 		init_machine,
 	
 		/* video hardware */
-		42*8, 30*8, { 0*8, 42*8-1, 0*8, 30*8-1 },
+		42*8, 30*8, new rectangle( 0*8, 42*8-1, 0*8, 30*8-1 ),
 		gfxdecodeinfo,
-		2048, 0,
-		0,
+		2048, null,
+		null,
 	
 		VIDEO_TYPE_RASTER | VIDEO_NEEDS_6BITS_PER_GUN | VIDEO_UPDATE_BEFORE_VBLANK,
-		0,
+		null,
 		eprom_vh_start,
 		eprom_vh_stop,
 		eprom_vh_screenrefresh,
@@ -401,19 +401,19 @@ public class eprom
 		JSA_I_MONO_WITH_SPEECH,
 	
 		atarigen_nvram_handler
-	};
+	);
 	
 	
-	static const struct MachineDriver machine_driver_klaxp =
-	{
+	static MachineDriver machine_driver_klaxp = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_M68000,
 				ATARI_CLOCK_14MHz/2,
-				main_readmem,main_writemem,0,0,
+				main_readmem,main_writemem,null,null,
 				atarigen_video_int_gen,1
-			},
+			),
 			JSA_II_CPU
 		},
 		60, DEFAULT_REAL_60HZ_VBLANK_DURATION,
@@ -421,13 +421,13 @@ public class eprom
 		init_machine,
 	
 		/* video hardware */
-		42*8, 30*8, { 0*8, 42*8-1, 0*8, 30*8-1 },
+		42*8, 30*8, new rectangle( 0*8, 42*8-1, 0*8, 30*8-1 ),
 		gfxdecodeinfo,
-		2048, 0,
-		0,
+		2048, null,
+		null,
 	
 		VIDEO_TYPE_RASTER | VIDEO_NEEDS_6BITS_PER_GUN | VIDEO_UPDATE_BEFORE_VBLANK,
-		0,
+		null,
 		eprom_vh_start,
 		eprom_vh_stop,
 		eprom_vh_screenrefresh,
@@ -436,7 +436,7 @@ public class eprom
 		JSA_II_MONO(REGION_SOUND1),
 	
 		atarigen_nvram_handler
-	};
+	);
 	
 	
 	

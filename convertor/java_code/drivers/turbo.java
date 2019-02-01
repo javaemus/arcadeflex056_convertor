@@ -348,23 +348,23 @@ public class turbo
 	 * Machine driver
 	 *********************************************************************/
 	
-	static const struct MachineDriver machine_driver_turbo =
-	{
+	static MachineDriver machine_driver_turbo = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_Z80,
 				5000000,
-				readmem,writemem,0,0,
+				readmem,writemem,null,null,
 				interrupt,1
-			}
+			)
 		},
 		30, DEFAULT_REAL_30HZ_VBLANK_DURATION,
 		1,
 		turbo_init_machine,
 	
 		/* video hardware */
-		32*8, 35*8, { 1*8, 32*8-1, 0*8, 35*8-1 },
+		32*8, 35*8, new rectangle( 1*8, 32*8-1, 0*8, 35*8-1 ),
 		gfxdecodeinfo,
 		512+6,512+6,
 		turbo_vh_convert_color_prom,
@@ -377,13 +377,13 @@ public class turbo
 	
 		/* sound hardware */
 		0,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_SAMPLES,
-				&samples_interface
-			}
+				samples_interface
+			)
 		}
-	};
+	);
 	
 	
 	/*********************************************************************

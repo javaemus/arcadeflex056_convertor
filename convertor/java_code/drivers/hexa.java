@@ -142,43 +142,43 @@ public class hexa
 	
 	
 	
-	static const struct MachineDriver machine_driver_hexa =
-	{
+	static MachineDriver machine_driver_hexa = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_Z80,
 				4000000,		/* 4 MHz ??????? */
-				readmem,writemem,0,0,
+				readmem,writemem,null,null,
 				interrupt,1
-			}
+			)
 		},
 		60, DEFAULT_60HZ_VBLANK_DURATION,	/* frames per second, vblank duration */
 		1,					/* single CPU, no need for interleaving */
-		0,
+		null,
 	
 		/* video hardware */
-		32*8, 32*8, { 0*8, 32*8-1, 2*8, 30*8-1 },
+		32*8, 32*8, new rectangle( 0*8, 32*8-1, 2*8, 30*8-1 ),
 		gfxdecodeinfo,
-		256, 0,
+		256, null,
 		palette_RRRR_GGGG_BBBB_convert_prom,
 	
 	
 		VIDEO_TYPE_RASTER | VIDEO_SUPPORTS_DIRTY,
-		0,					/* vh_init routine */
+		null,					/* vh_init routine */
 		generic_vh_start,		/* vh_start routine */
 		generic_vh_stop,		/* vh_stop routine */
 		hexa_vh_screenrefresh,	/* vh_update routine */
 	
 		/* sound hardware */
 		0,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_AY8910,
-				&ay8910_interface
-			}
+				ay8910_interface
+			)
 		}
-	};
+	);
 	
 	
 	

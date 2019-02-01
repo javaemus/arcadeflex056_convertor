@@ -229,37 +229,37 @@ public class dlair
 	
 	
 	
-	static const struct MachineDriver machine_driver_dlair =
-	{
+	static MachineDriver machine_driver_dlair = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_Z80,
 				3072000,	/* 3.072 MHz ? */
 				readmem,writemem,readport,writeport,
-				0,0, /* interrupts are made by z80 daisy chain system */
-				0,0,daisy_chain
-			}
+				null,null, /* interrupts are made by z80 daisy chain system */
+				null,null,daisy_chain
+			)
 		},
 		60, DEFAULT_60HZ_VBLANK_DURATION,	/* frames per second, vblank duration */
 		1,	/* single CPU, no need for interleaving */
 		dlair_init_machine,
 	
 		/* video hardware */
-		32*8, 32*8, { 0*8, 32*8-1, 0*8, 32*8-1 },
+		32*8, 32*8, new rectangle( 0*8, 32*8-1, 0*8, 32*8-1 ),
 		gfxdecodeinfo,
-		8, 0,
-		0,
+		8, null,
+		null,
 	
 		VIDEO_TYPE_RASTER,
-		0,
+		null,
 		generic_vh_start,
 		generic_vh_stop,
 		dlair_vh_screenrefresh,
 	
 		/* sound hardware */
 		0,0,0,0,
-	};
+	);
 	
 	
 	

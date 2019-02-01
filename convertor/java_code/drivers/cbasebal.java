@@ -286,43 +286,43 @@ public class cbasebal
 	
 	
 	
-	static const struct MachineDriver machine_driver_cbasebal =
-	{
-		{
-			{
+	static MachineDriver machine_driver_cbasebal = new MachineDriver
+	(
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_Z80,
 				6000000,	/* ??? */
 				cbasebal_readmem,cbasebal_writemem,cbasebal_readport,cbasebal_writeport,
 				interrupt,1	/* ??? */
-			},
+			),
 		},
 		60, DEFAULT_REAL_60HZ_VBLANK_DURATION,	/* frames per second, vblank duration */
 		1,
-		0,
+		null,
 	
-		64*8, 32*8, { 8*8, (64-8)*8-1, 2*8, 30*8-1 },
+		64*8, 32*8, new rectangle( 8*8, (64-8)*8-1, 2*8, 30*8-1 ),
 		cbasebal_gfxdecodeinfo,
-		1024, 0,
-		0,
+		1024, null,
+		null,
 		VIDEO_TYPE_RASTER | VIDEO_UPDATE_BEFORE_VBLANK,
-		0,
+		null,
 		cbasebal_vh_start,
 		cbasebal_vh_stop,
 		cbasebal_vh_screenrefresh,
 		0,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_OKIM6295,
-				&okim6295_interface
-			},
-			{
+				okim6295_interface
+			),
+			new MachineSound(
 				SOUND_YM2413,
-				&ym2413_interface
-			},
+				ym2413_interface
+			),
 		},
 	
 		nvram_handler
-	};
+	);
 	
 	
 	

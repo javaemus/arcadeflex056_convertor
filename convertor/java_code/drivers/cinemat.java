@@ -94,42 +94,42 @@ public class cinemat
 	/* Note: the CPU speed is somewhat arbitrary as the cycle timings in
 	   the core are incomplete. */
 	#define CINEMA_MACHINE(driver, minx, miny, maxx, maxy, samples, sample_interface) 	\
-	static const struct MachineDriver machine_driver_##driver = 						\
-	{ 																					\
+	static MachineDriver machine_driver_##driver = new MachineDriver\
+	( 																					\
 		/* basic machine hardware */ 													\
-		{ 																				\
-			{ 																			\
+		new MachineCPU[] { 																				\
+			new MachineCPU( 																			\
 				CPU_CCPU,																\
 				5000000,																\
 				readmem,writemem,readport,writeport,									\
 				cinemat_clear_list, 1													\
-			} 																			\
+			) 																			\
 		}, 																				\
 		38, 0,	/* frames per second, vblank duration (vector game, so no vblank) */ 	\
 		1, 																				\
 		driver##_init_machine, 															\
 																						\
 		/* video hardware */ 															\
-		400, 300, { minx, maxx, miny, maxy }, 											\
-		0, 																				\
-		256 + 32768, 0, 																\
+		400, 300, new rectangle( minx, maxx, miny, maxy ), 											\
+		null, 																				\
+		256 + 32768, null, 																\
 		cinemat_init_colors, 															\
 																						\
 		VIDEO_TYPE_VECTOR | VIDEO_SUPPORTS_DIRTY | VIDEO_RGB_DIRECT,					\
-		0, 																				\
+		null, 																				\
 		cinemat_vh_start, 																\
 		cinemat_vh_stop, 																\
 		cinemat_vh_screenrefresh, 														\
 																						\
 		/* sound hardware */ 															\
 		0,0,0,0, 																		\
-		{ 																				\
-			{ 																			\
+		new MachineSound[] { 																				\
+			new MachineSound( 																			\
 				samples, 																\
 				sample_interface 														\
-			} 																			\
+			) 																			\
 		} 																				\
-	};
+	);
 	
 	
 	/* switch definitions are all mangled; for ease of use, I created these handy macros */
@@ -214,42 +214,42 @@ public class cinemat
 		cinemat_set_sound_handler (spacewar_sound_w);
 	}
 	
-	static const struct MachineDriver machine_driver_spacewar =
-	{
+	static MachineDriver machine_driver_spacewar = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_CCPU,
 				5000000,
 				readmem,writemem,readport,writeport,
 				cinemat_clear_list, 1
-			}
+			)
 		},
 		38, 0,	/* frames per second, vblank duration (vector game, so no vblank) */
 		1,
 		spacewar_init_machine,
 	
 		/* video hardware */
-		400, 300, { 0, 1024, 0, 768 },
-		0,
-		256 + 32768, 0,
+		400, 300, new rectangle( 0, 1024, 0, 768 ),
+		null,
+		256 + 32768, null,
 	 	spacewar_init_colors,
 	
 		VIDEO_TYPE_VECTOR | VIDEO_SUPPORTS_DIRTY | VIDEO_RGB_DIRECT,
-		0,
+		null,
 		spacewar_vh_start,
 		spacewar_vh_stop,
 		spacewar_vh_screenrefresh,
 	
 		/* sound hardware */
 		0,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_SAMPLES,
-				&spacewar_samples_interface
-			}
+				spacewar_samples_interface
+			)
 		}
-	};
+	);
 	
 	
 	/***************************************************************************
@@ -1093,49 +1093,49 @@ public class cinemat
 	
 	/* Note: the CPU speed is somewhat arbitrary as the cycle timings in
 	   the core are incomplete. */
-	static const struct MachineDriver machine_driver_demon =
-	{
+	static MachineDriver machine_driver_demon = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_CCPU,
 				5000000,
 				readmem,writemem,readport,writeport,
 				cinemat_clear_list, 1
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_Z80 | CPU_AUDIO_CPU,
 				3579545,	/* 3.579545 MHz */
-				demon_sound_readmem,demon_sound_writemem,0,demon_sound_writeport,
-				0,0,
-				0,0,&daisy_chain
-			}
+				demon_sound_readmem,demon_sound_writemem,null,demon_sound_writeport,
+				0,null,
+				null,null,daisy_chain
+			)
 		},
 		38, 0,	/* frames per second, vblank duration (vector game, so no vblank) */
 		1,
 		demon_init_machine,
 	
 		/* video hardware */
-		400, 300, { 0, 1024, 0, 800 },
-		0,
-		256 + 32768, 0,
+		400, 300, new rectangle( 0, 1024, 0, 800 ),
+		null,
+		256 + 32768, null,
 	 	cinemat_init_colors,
 	
 		VIDEO_TYPE_VECTOR | VIDEO_SUPPORTS_DIRTY | VIDEO_RGB_DIRECT,
-		0,
+		null,
 		cinemat_vh_start,
 		cinemat_vh_stop,
 		cinemat_vh_screenrefresh,
 	
 		/* sound hardware */
 		0,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_AY8910,
-				&demon_ay8910_interface
-			}
+				demon_ay8910_interface
+			)
 		}
-	};
+	);
 	
 	
 	

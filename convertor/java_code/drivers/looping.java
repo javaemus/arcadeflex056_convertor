@@ -342,53 +342,53 @@ public class looping
 		{ 30 }
 	};
 	
-	static const struct MachineDriver machine_driver_looping =
-	{
-		{
-			{
+	static MachineDriver machine_driver_looping = new MachineDriver
+	(
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_TMS9995,
 				3000000, /* ? */
-				looping_readmem,looping_writemem,0,looping_writeport,
+				looping_readmem,looping_writemem,null,looping_writeport,
 				looping_interrupt,1
-			},
-			{ /* sound */
+			),
+			new MachineCPU( /* sound */
 				CPU_TMS9980,
 				2000000, // ?
-				looping_io_readmem,looping_io_writemem,0,looping_io_writeport,
+				looping_io_readmem,looping_io_writemem,null,looping_io_writeport,
 				ignore_interrupt,1
-			}
+			)
 		},
 		60, 2500,	/* frames per second, vblank duration */
 		1,	/* 1 CPU slice per frame */
-		0,
+		null,
 		/* video hardware */
-		32*8, 32*8, { 0*8, 32*8-1, 2*8, 30*8-1 },
+		32*8, 32*8, new rectangle( 0*8, 32*8-1, 2*8, 30*8-1 ),
 		looping_gfxdecodeinfo,
 		32,32,
 		looping_vh_convert_color_prom,
 		VIDEO_TYPE_RASTER,
-		0,
+		null,
 		looping_vh_init,
-		0, /*looping_vh_stop*/
+		null, /*looping_vh_stop*/
 		looping_vh_screenrefresh,
 		/* sound hardware */
 		0,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_AY8910,
-				&ay8910_interface
-			},
-			{
+				ay8910_interface
+			),
+			new MachineSound(
 				SOUND_TMS5220,
-				&tms5220_interface
-			},
-			{
+				tms5220_interface
+			),
+			new MachineSound(
 				SOUND_DAC,
-	 			&dac_interface
-			}
+	 			dac_interface
+			)
 		}
 	
-	};
+	);
 	
 	static InputPortPtr input_ports_looping = new InputPortPtr(){ public void handler() { 
 		PORT_START

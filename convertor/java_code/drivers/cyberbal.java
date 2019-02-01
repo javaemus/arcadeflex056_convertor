@@ -567,81 +567,81 @@ public class cyberbal
 	 *
 	 *************************************/
 	
-	static const struct MachineDriver machine_driver_cyberbal =
-	{
+	static MachineDriver machine_driver_cyberbal = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_M68000,		/* verified */
 				ATARI_CLOCK_14MHz/2,
-				main_readmem,main_writemem,0,0,
+				main_readmem,main_writemem,null,null,
 				ignore_interrupt,1
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_M6502,
 				ATARI_CLOCK_14MHz/8,
-				sound_readmem,sound_writemem,0,0,
-				0,0,
+				sound_readmem,sound_writemem,null,null,
+				null,null,
 				atarigen_6502_irq_gen,(UINT32)(1000000000.0/((double)ATARI_CLOCK_14MHz/4/4/16/16/14))
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_M68000,		/* verified */
 				ATARI_CLOCK_14MHz/2,
-				extra_readmem,extra_writemem,0,0,
+				extra_readmem,extra_writemem,null,null,
 				atarigen_video_int_gen,1
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_M68000,		/* verified */
 				ATARI_CLOCK_14MHz/2,
-				sound_68k_readmem,sound_68k_writemem,0,0,
-				0,0,
+				sound_68k_readmem,sound_68k_writemem,null,null,
+				null,null,
 				cyberbal_sound_68k_irq_gen,10000
-			}
+			)
 		},
 		60, DEFAULT_REAL_60HZ_VBLANK_DURATION,
 		10,
 		init_machine,
 	
 		/* video hardware */
-		42*16, 30*8, { 0*16, 42*16-1, 0*8, 30*8-1 },
+		42*16, 30*8, new rectangle( 0*16, 42*16-1, 0*8, 30*8-1 ),
 		gfxdecodeinfo_interleaved,
-		4096, 0,
-		0,
+		4096, null,
+		null,
 	
 		VIDEO_TYPE_RASTER | VIDEO_NEEDS_6BITS_PER_GUN | VIDEO_UPDATE_BEFORE_VBLANK |
 				VIDEO_PIXEL_ASPECT_RATIO_1_2,
-		0,
+		null,
 		cyberbal_vh_start,
 		cyberbal_vh_stop,
 		cyberbal_vh_screenrefresh,
 	
 		/* sound hardware */
 		SOUND_SUPPORTS_STEREO,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_YM2151,
-				&ym2151_interface
-			},
-			{
+				ym2151_interface
+			),
+			new MachineSound(
 				SOUND_DAC,
-				&dac_interface
-			}
+				dac_interface
+			)
 		},
 	
 		atarigen_nvram_handler
-	};
+	);
 	
 	
-	static const struct MachineDriver machine_driver_cyberb2p =
-	{
+	static MachineDriver machine_driver_cyberb2p = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_M68000,		/* verified */
 				ATARI_CLOCK_14MHz/2,
-				cyberb2p_readmem,cyberb2p_writemem,0,0,
+				cyberb2p_readmem,cyberb2p_writemem,null,null,
 				atarigen_video_int_gen,1
-			},
+			),
 			JSA_II_CPU
 		},
 		60, DEFAULT_REAL_60HZ_VBLANK_DURATION,
@@ -649,14 +649,14 @@ public class cyberbal
 		cyberb2p_init_machine,
 	
 		/* video hardware */
-		42*16, 30*8, { 0*16, 42*16-1, 0*8, 30*8-1 },
+		42*16, 30*8, new rectangle( 0*16, 42*16-1, 0*8, 30*8-1 ),
 		gfxdecodeinfo,
-		2048, 0,
-		0,
+		2048, null,
+		null,
 	
 		VIDEO_TYPE_RASTER | VIDEO_UPDATE_BEFORE_VBLANK |
 				VIDEO_PIXEL_ASPECT_RATIO_1_2,
-		0,
+		null,
 		cyberb2p_vh_start,
 		cyberbal_vh_stop,
 		cyberbal_vh_screenrefresh,
@@ -665,7 +665,7 @@ public class cyberbal
 		JSA_II_MONO(REGION_SOUND1),
 	
 		atarigen_nvram_handler
-	};
+	);
 	
 	
 	

@@ -413,42 +413,42 @@ public class galpanic
 	
 	
 	#define MACHINEDRIVER(NAME,CLOCK,SCREENREFRESH)								\
-	static const struct MachineDriver machine_driver_##NAME =							\
-	{																			\
+	static MachineDriver machine_driver_##NAME = new MachineDriver\
+	(																			\
 		/* basic machine hardware */											\
-		{																		\
-			{																	\
+		new MachineCPU[] {																		\
+			new MachineCPU(																	\
 				CPU_M68000,														\
 				CLOCK,															\
-				NAME##_readmem,NAME##_writemem,0,0,								\
+				NAME##_readmem,NAME##_writemem,null,null,								\
 				galpanic_interrupt,2											\
-			}																	\
+			)																	\
 		},																		\
 		60, DEFAULT_60HZ_VBLANK_DURATION,	/* frames per second, vblank duration */	\
 		1,	/* single CPU, no need for interleaving */							\
-		0,																		\
+		null,																		\
 																				\
 		/* video hardware */													\
-		256, 256, { 0, 256-1, 0, 224-1 },										\
+		256, 256, new rectangle( 0, 256-1, 0, 224-1 ),										\
 		gfxdecodeinfo,															\
 		1024 + 32768, 1024,														\
 		galpanic_init_palette,													\
 																				\
 		VIDEO_TYPE_RASTER,								\
-		0,																		\
+		null,																		\
 		generic_bitmapped_vh_start,												\
 		generic_bitmapped_vh_stop,												\
 		SCREENREFRESH##_vh_screenrefresh,										\
 																				\
 		/* sound hardware */													\
 		0,0,0,0,																\
-		{																		\
-			{																	\
+		new MachineSound[] {																		\
+			new MachineSound(																	\
 				SOUND_OKIM6295,													\
-				&okim6295_interface												\
-			}																	\
+				okim6295_interface												\
+			)																	\
 		}																		\
-	};
+	);
 	
 	MACHINEDRIVER(galpanic, 8000000,galpanic)	/*  8 MHz ??? */
 	MACHINEDRIVER(comad,   10000000,comad)		/* 10 MHz ??? */

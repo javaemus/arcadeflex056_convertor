@@ -175,42 +175,42 @@ public class pkunwar
 	
 	
 	
-	static const struct MachineDriver machine_driver_pkunwar =
-	{
+	static MachineDriver machine_driver_pkunwar = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_Z80,
 				3072000,
-				readmem,writemem,0,writeport,
+				readmem,writemem,null,writeport,
 				interrupt,1
-			},
+			),
 		},
 		60, DEFAULT_REAL_60HZ_VBLANK_DURATION,
 		1,
-		0,
+		null,
 	
 		/* video hardware */
-		32*8, 32*8, { 0*8, 32*8-1, 4*8, 28*8-1 },
+		32*8, 32*8, new rectangle( 0*8, 32*8-1, 4*8, 28*8-1 ),
 		gfxdecodeinfo,
 		32,32*16,
 		nova2001_vh_convert_color_prom,
 	
 		VIDEO_TYPE_RASTER,
-		0,
+		null,
 		generic_vh_start,
 		generic_vh_stop,
 		pkunwar_vh_screenrefresh,
 	
 		/* sound hardware */
 		0,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_AY8910,
-				&ay8910_interface
-			}
+				ay8910_interface
+			)
 		}
-	};
+	);
 	
 	
 	

@@ -148,132 +148,132 @@ public class system16
 	}
 	
 	#define MACHINE_DRIVER( GAMENAME,READMEM,WRITEMEM,INITMACHINE) \
-	static const struct MachineDriver GAMENAME = \
-	{ \
-		{ \
-			{ \
+	static MachineDriver GAMENAME = new MachineDriver\
+	( \
+		new MachineCPU[] { \
+			new MachineCPU( \
 				CPU_M68000, \
 				10000000, \
-				READMEM,WRITEMEM,0,0, \
+				READMEM,WRITEMEM,null,null, \
 				sys16_interrupt,1 \
-			}, \
-			{ \
+			), \
+			new MachineCPU( \
 				CPU_Z80 | CPU_AUDIO_CPU, \
 				4096000, \
 				sound_readmem,sound_writemem,sound_readport,sound_writeport, \
 				ignore_interrupt,1 \
-			}, \
+			), \
 		}, \
 		60, DEFAULT_60HZ_VBLANK_DURATION, \
 		1, \
 		INITMACHINE, \
-		40*8, 28*8, { 0*8, 40*8-1, 0*8, 28*8-1 }, \
+		40*8, 28*8, new rectangle( 0*8, 40*8-1, 0*8, 28*8-1 ), \
 		sys16_gfxdecodeinfo, \
-		2048*ShadowColorsMultiplier, 0, \
-		0, \
+		2048*ShadowColorsMultiplier, null, \
+		null, \
 		VIDEO_TYPE_RASTER, \
-		0, \
+		null, \
 		sys16_vh_start, \
 		sys16_vh_stop, \
 		sys16_vh_screenrefresh, \
 		SOUND_SUPPORTS_STEREO,0,0,0, \
-		{ \
-			{ \
+		new MachineSound[] { \
+			new MachineSound( \
 				SOUND_YM2151, \
-				&sys16_ym2151_interface \
-			} \
+				sys16_ym2151_interface \
+			) \
 		} \
-	};
+	);
 	
 	#define MACHINE_DRIVER_7759( GAMENAME,READMEM,WRITEMEM,INITMACHINE, UPD7759INTF ) \
-	static const struct MachineDriver GAMENAME = \
-	{ \
-		{ \
-			{ \
+	static MachineDriver GAMENAME = new MachineDriver\
+	( \
+		new MachineCPU[] { \
+			new MachineCPU( \
 				CPU_M68000, \
 				10000000, \
-				READMEM,WRITEMEM,0,0, \
+				READMEM,WRITEMEM,null,null, \
 				sys16_interrupt,1 \
-			}, \
-			{ \
+			), \
+			new MachineCPU( \
 				CPU_Z80 | CPU_AUDIO_CPU, \
 				4096000, \
 				sound_readmem_7759,sound_writemem,sound_readport,sound_writeport_7759, \
 				ignore_interrupt,1 \
-			}, \
+			), \
 		}, \
 		60, DEFAULT_60HZ_VBLANK_DURATION, \
 		1, \
 		INITMACHINE, \
-		40*8, 28*8, { 0*8, 40*8-1, 0*8, 28*8-1 }, \
+		40*8, 28*8, new rectangle( 0*8, 40*8-1, 0*8, 28*8-1 ), \
 		sys16_gfxdecodeinfo, \
-		2048*ShadowColorsMultiplier, 0, \
-		0, \
+		2048*ShadowColorsMultiplier, null, \
+		null, \
 		VIDEO_TYPE_RASTER, \
-		0, \
+		null, \
 		sys16_vh_start, \
 		sys16_vh_stop, \
 		sys16_vh_screenrefresh, \
 		SOUND_SUPPORTS_STEREO,0,0,0, \
-		{ \
-			{ \
+		new MachineSound[] { \
+			new MachineSound( \
 				SOUND_YM2151, \
-				&sys16_ym2151_interface \
-			}, { \
+				sys16_ym2151_interface \
+			), new MachineSound( \
 				SOUND_UPD7759, \
-				&UPD7759INTF \
-			} \
+				UPD7759INTF \
+			) \
 		} \
-	};
+	);
 	
 	
 	#define MACHINE_DRIVER_7751( GAMENAME,READMEM,WRITEMEM,INITMACHINE ) \
-	static const struct MachineDriver GAMENAME = \
-	{ \
-		{ \
-			{ \
+	static MachineDriver GAMENAME = new MachineDriver\
+	( \
+		new MachineCPU[] { \
+			new MachineCPU( \
 				CPU_M68000, \
 				10000000, \
-				READMEM,WRITEMEM,0,0, \
+				READMEM,WRITEMEM,null,null, \
 				sys16_interrupt,1 \
-			}, \
-			{ \
+			), \
+			new MachineCPU( \
 				CPU_Z80 | CPU_AUDIO_CPU, \
 				4096000, \
 				sound_readmem_7751,sound_writemem,sound_readport_7751,sound_writeport_7751, \
 				ignore_interrupt,1 \
-			}, \
-			{ \
+			), \
+			new MachineCPU( \
 				CPU_N7751 | CPU_AUDIO_CPU, \
 				6000000/15,        /* 6MHz crystal */ \
 				readmem_7751,writemem_7751,readport_7751,writeport_7751, \
 				ignore_interrupt,1 \
-			} \
+			) \
 		}, \
 		60, DEFAULT_60HZ_VBLANK_DURATION, \
 		1, \
 		INITMACHINE, \
-		40*8, 28*8, { 0*8, 40*8-1, 0*8, 28*8-1 }, \
+		40*8, 28*8, new rectangle( 0*8, 40*8-1, 0*8, 28*8-1 ), \
 		sys16_gfxdecodeinfo, \
-		2048*ShadowColorsMultiplier, 0, \
-		0, \
+		2048*ShadowColorsMultiplier, null, \
+		null, \
 		VIDEO_TYPE_RASTER, \
-		0, \
+		null, \
 		sys16_vh_start, \
 		sys16_vh_stop, \
 		sys16_vh_screenrefresh, \
 		SOUND_SUPPORTS_STEREO,0,0,0, \
-		{ \
-			{ \
+		new MachineSound[] { \
+			new MachineSound( \
 				SOUND_YM2151, \
-				&sys16_ym2151_interface \
-			}, \
-			{ \
+				sys16_ym2151_interface \
+			), \
+			new MachineSound( \
 				SOUND_DAC, \
-				&sys16_7751_dac_interface \
-			} \
+				sys16_7751_dac_interface \
+			) \
 		} \
-	};
+	);
 	
 	/***************************************************************************/
 	
@@ -1247,36 +1247,36 @@ public class system16
 		else return 4;
 	}
 	
-	static const struct MachineDriver machine_driver_atomicp =
-	{
-		{
-			{
+	static MachineDriver machine_driver_atomicp = new MachineDriver
+	(
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_M68000,
 				10000000,
-				atomicp_readmem,atomicp_writemem,0,0,
+				atomicp_readmem,atomicp_writemem,null,null,
 				ap_interrupt,2
-			}
+			)
 		},
 		60, DEFAULT_60HZ_VBLANK_DURATION,
 		1,
 		atomicp_init_machine,
-		40*8, 28*8, { 0*8, 40*8-1, 0*8, 28*8-1 },
+		40*8, 28*8, new rectangle( 0*8, 40*8-1, 0*8, 28*8-1 ),
 		sys16_gfxdecodeinfo,
-		2048*ShadowColorsMultiplier, 0,
-		0,
+		2048*ShadowColorsMultiplier, null,
+		null,
 		VIDEO_TYPE_RASTER,
-		0,
+		null,
 		sys16_vh_start,
 		sys16_vh_stop,
 		sys16_vh_screenrefresh,
 		0,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_YM2413,
-				&sys16_ym2413_interface
-			}
+				sys16_ym2413_interface
+			)
 		}
-	};
+	);
 	
 	/***************************************************************************
 	

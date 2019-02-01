@@ -477,69 +477,69 @@ public class brkthru
 	
 	
 	
-	static const struct MachineDriver machine_driver_brkthru =
-	{
+	static MachineDriver machine_driver_brkthru = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_M6809,
 				1250000,        /* 1.25 MHz ? */
-				readmem,writemem,0,0,
+				readmem,writemem,null,null,
 				brkthru_interrupt,2
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_M6809 | CPU_AUDIO_CPU,
 				1250000,        /* 1.25 MHz ? */
-				sound_readmem,sound_writemem,0,0,
+				sound_readmem,sound_writemem,null,null,
 				ignore_interrupt,0	/* IRQs are caused by the YM3526 */
-			}
+			)
 		},
 		58, DEFAULT_REAL_60HZ_VBLANK_DURATION,	/* frames per second, vblank duration (not sure) */
 		1,	/* 1 CPU slice per frame - interleaving is forced when a sound command is written */
-		0,	/* init machine */
+		null,	/* init machine */
 	
 		/* video hardware */
-		32*8, 32*8, { 1*8, 31*8-1, 1*8, 31*8-1 },	/* not sure */
+		32*8, 32*8, new rectangle( 1*8, 31*8-1, 1*8, 31*8-1 ),	/* not sure */
 		gfxdecodeinfo,
-		256, 0,
+		256, null,
 		brkthru_vh_convert_color_prom,
 	
 		VIDEO_TYPE_RASTER,
-		0,
+		null,
 		brkthru_vh_start,
 		brkthru_vh_stop,
 		brkthru_vh_screenrefresh,
 	
 		/* sound hardware */
 		0,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_YM2203,
-				&ym2203_interface
-			},
-			{
+				ym2203_interface
+			),
+			new MachineSound(
 				SOUND_YM3526,
-				&ym3526_interface
-			}
+				ym3526_interface
+			)
 		}
-	};
+	);
 	
-	static const struct MachineDriver machine_driver_darwin =
-	{
+	static MachineDriver machine_driver_darwin = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_M6809,
 				1500000,        /* 1.25 MHz ? */
-				darwin_readmem,darwin_writemem,0,0,
+				darwin_readmem,darwin_writemem,null,null,
 				brkthru_interrupt,2
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_M6809 | CPU_AUDIO_CPU,
 				1500000,        /* 1.25 MHz ? */
-				sound_readmem,sound_writemem,0,0,
+				sound_readmem,sound_writemem,null,null,
 				ignore_interrupt,0	/* IRQs are caused by the YM3526 */
-			}
+			)
 		},
 		15625.0/272, DEFAULT_REAL_60HZ_VBLANK_DURATION,
 		/* frames per second, vblank duration
@@ -555,33 +555,33 @@ public class brkthru
 				      = 57.444855Hz
 		tuned by Shingo SUZUKI(VSyncMAME Project) 2000/10/19 */
 		1,	/* 1 CPU slice per frame - interleaving is forced when a sound command is written */
-		0,	/* init machine */
+		null,	/* init machine */
 	
 		/* video hardware */
-		32*8, 32*8, { 1*8, 31*8-1, 1*8, 31*8-1 },
+		32*8, 32*8, new rectangle( 1*8, 31*8-1, 1*8, 31*8-1 ),
 		gfxdecodeinfo,
-		256, 0,
+		256, null,
 		brkthru_vh_convert_color_prom,
 	
 		VIDEO_TYPE_RASTER,
-		0,
+		null,
 		brkthru_vh_start,
 		brkthru_vh_stop,
 		brkthru_vh_screenrefresh,
 	
 		/* sound hardware */
 		0,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_YM2203,
-				&ym2203_interface
-			},
-			{
+				ym2203_interface
+			),
+			new MachineSound(
 				SOUND_YM3526,
-				&ym3526_interface
-			}
+				ym3526_interface
+			)
 		}
-	};
+	);
 	
 	
 	/***************************************************************************

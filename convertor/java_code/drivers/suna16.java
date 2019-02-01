@@ -628,59 +628,59 @@ public class suna16
 		}
 	}
 	
-	static const struct MachineDriver machine_driver_bssoccer =
-	{
-		{
-			{
+	static MachineDriver machine_driver_bssoccer = new MachineDriver
+	(
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_M68000,
 				8000000,	/* ? */
-				bssoccer_readmem, bssoccer_writemem,0,0,
+				bssoccer_readmem, bssoccer_writemem,null,null,
 				bssoccer_interrupt, 2
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_Z80 | CPU_AUDIO_CPU,	/* Z80B */
 				3579545,	/* ? */
 				bssoccer_sound_readmem,  bssoccer_sound_writemem,
-				0,0,
+				null,null,
 				ignore_interrupt, 1 	/* No interrupts! */
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_Z80 | CPU_AUDIO_CPU,	/* Z80B */
 				5000000,	/* ? */
 				bssoccer_pcm_1_readmem,  bssoccer_pcm_1_writemem,
 				bssoccer_pcm_1_readport, bssoccer_pcm_1_writeport,
 				ignore_interrupt, 1 	/* No interrupts! */
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_Z80 | CPU_AUDIO_CPU,	/* Z80B */
 				5000000,	/* ? */
 				bssoccer_pcm_2_readmem,  bssoccer_pcm_2_writemem,
 				bssoccer_pcm_2_readport, bssoccer_pcm_2_writeport,
 				ignore_interrupt, 1 	/* No interrupts! */
-			}
+			)
 		},
 		60,DEFAULT_60HZ_VBLANK_DURATION,
 		100,
-		0,
+		null,
 	
 		/* video hardware */
-		256, 256, { 0, 256-1, 0+16, 256-16-1 },
+		256, 256, new rectangle( 0, 256-1, 0+16, 256-16-1 ),
 		suna16_gfxdecodeinfo,
-		512+1, 0,		/* 2 banks of 256 colors, plus one entry for background black */
-		0,
+		512+1, null,		/* 2 banks of 256 colors, plus one entry for background black */
+		null,
 		VIDEO_TYPE_RASTER,
-		0,
+		null,
 		suna16_vh_start,
 		suna16_vh_stop,
 		suna16_vh_screenrefresh,
 	
 		/* sound hardware */
 		SOUND_SUPPORTS_STEREO,0,0,0,
-		{
-			{	SOUND_YM2151,	&bssoccer_ym2151_interface	},
-			{	SOUND_DAC,		&bssoccer_dac_interface		},
+		new MachineSound[] {
+			new MachineSound(	SOUND_YM2151,	bssoccer_ym2151_interface	),
+			new MachineSound(	SOUND_DAC,		bssoccer_dac_interface		),
 		}
-	};
+	);
 	
 	
 	
@@ -703,55 +703,55 @@ public class suna16
 		{ MIXER(50,MIXER_PAN_LEFT), MIXER(50,MIXER_PAN_RIGHT) }
 	};
 	
-	static const struct MachineDriver machine_driver_uballoon =
-	{
-		{
-			{
+	static MachineDriver machine_driver_uballoon = new MachineDriver
+	(
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_M68000,
 				8000000,
-				uballoon_readmem, uballoon_writemem,0,0,
+				uballoon_readmem, uballoon_writemem,null,null,
 				m68_level1_irq, 1
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_Z80 | CPU_AUDIO_CPU,
 				3579545,	/* ? */
 				uballoon_sound_readmem,  uballoon_sound_writemem,
-				0,0,
+				null,null,
 				ignore_interrupt, 1 	/* No interrupts! */
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_Z80 | CPU_AUDIO_CPU,
 				5000000,	/* ? */
 				uballoon_pcm_1_readmem,  uballoon_pcm_1_writemem,
 				uballoon_pcm_1_readport, uballoon_pcm_1_writeport,
 				ignore_interrupt, 1 	/* No interrupts! */
-			},
+			),
 	
 			/* 2nd PCM Z80 missing */
 	
 		},
 		60,DEFAULT_60HZ_VBLANK_DURATION,
 		100,
-		0,
+		null,
 	
 		/* video hardware */
-		256, 256, { 0, 256-1, 0+16, 256-16-1 },
+		256, 256, new rectangle( 0, 256-1, 0+16, 256-16-1 ),
 		suna16_gfxdecodeinfo,
-		512+1, 0,		/* 2 banks of 256 colors, plus one entry for background black */
-		0,
+		512+1, null,		/* 2 banks of 256 colors, plus one entry for background black */
+		null,
 		VIDEO_TYPE_RASTER,
-		0,
+		null,
 		suna16_vh_start,
 		suna16_vh_stop,
 		suna16_vh_screenrefresh,
 	
 		/* sound hardware */
 		SOUND_SUPPORTS_STEREO,0,0,0,
-		{
-			{	SOUND_YM2151,	&uballoon_ym2151_interface	},
-			{	SOUND_DAC,		&uballoon_dac_interface		},
+		new MachineSound[] {
+			new MachineSound(	SOUND_YM2151,	uballoon_ym2151_interface	),
+			new MachineSound(	SOUND_DAC,		uballoon_dac_interface		),
 		}
-	};
+	);
 	
 	/***************************************************************************
 	

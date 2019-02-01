@@ -757,112 +757,112 @@ public class seta2
 									Puzzle De Bowling
 	***************************************************************************/
 	
-	static const struct MachineDriver machine_driver_pzlbowl =
-	{
-		{
-			{
+	static MachineDriver machine_driver_pzlbowl = new MachineDriver
+	(
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_M68000,			/* !! TMP68301 !! */
 				32530400 / 2,
-				pzlbowl_readmem, pzlbowl_writemem,0,0,
+				pzlbowl_readmem, pzlbowl_writemem,null,null,
 				seta2_interrupt, 1
-			}
+			)
 		},
 		60,DEFAULT_60HZ_VBLANK_DURATION,
 		1,
 		seta2_init_machine,
 	
 		/* video hardware */
-		0x180, 0x100, { 0, 0x180-1, 0, 0x100-16-1 },
+		0x180, 0x100, new rectangle( 0, 0x180-1, 0, 0x100-16-1 ),
 		seta2_gfxdecodeinfo,
 		0x8000, (0x8000/16)*16 + (0x8000/16)*256,
 		seta2_vh_init_palette,
 	
 		VIDEO_TYPE_RASTER,
-		0,
-		0,
-		0,
+		null,
+		null,
+		null,
 		seta2_vh_screenrefresh,
 	
 		/* sound hardware */
 		SOUND_SUPPORTS_STEREO,0,0,0,
-		{
-			{ SOUND_CUSTOM, &seta_sound_interface }
+		new MachineSound[] {
+			new MachineSound( SOUND_CUSTOM, seta_sound_interface )
 		}
-	};
+	);
 	
 	/***************************************************************************
 								Kosodate Quiz My Angel
 	***************************************************************************/
 	
-	static const struct MachineDriver machine_driver_myangel =
-	{
-		{
-			{
+	static MachineDriver machine_driver_myangel = new MachineDriver
+	(
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_M68000,			/* !! TMP68301 !! */
 				32530400 / 2,
-				myangel_readmem, myangel_writemem,0,0,
+				myangel_readmem, myangel_writemem,null,null,
 				seta2_interrupt, 1
-			}
+			)
 		},
 		60,DEFAULT_60HZ_VBLANK_DURATION,
 		1,
 		seta2_init_machine,
 	
 		/* video hardware */
-		0x180, 0x100, { 0, 0x180-8-1, 0+16, 0x100-1 },
+		0x180, 0x100, new rectangle( 0, 0x180-8-1, 0+16, 0x100-1 ),
 		seta2_gfxdecodeinfo,
 		0x8000, (0x8000/16)*16 + (0x8000/16)*256,
 		seta2_vh_init_palette,
 	
 		VIDEO_TYPE_RASTER,
-		0,
-		0,
-		0,
+		null,
+		null,
+		null,
 		seta2_vh_screenrefresh,
 	
 		/* sound hardware */
 		SOUND_SUPPORTS_STEREO,0,0,0,
-		{
-			{ SOUND_CUSTOM, &seta_sound_interface }
+		new MachineSound[] {
+			new MachineSound( SOUND_CUSTOM, seta_sound_interface )
 		}
-	};
+	);
 	
 	/***************************************************************************
 								Kosodate Quiz My Angel 2
 	***************************************************************************/
 	
-	static const struct MachineDriver machine_driver_myangel2 =
-	{
-		{
-			{
+	static MachineDriver machine_driver_myangel2 = new MachineDriver
+	(
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_M68000,			/* !! TMP68301 !! */
 				32530400 / 2,
-				myangel2_readmem, myangel2_writemem,0,0,
+				myangel2_readmem, myangel2_writemem,null,null,
 				seta2_interrupt, 1
-			}
+			)
 		},
 		60,DEFAULT_60HZ_VBLANK_DURATION,
 		1,
 		seta2_init_machine,
 	
 		/* video hardware */
-		0x180, 0x100, { 0, 0x180-8-1, 0+16, 0x100-1 },
+		0x180, 0x100, new rectangle( 0, 0x180-8-1, 0+16, 0x100-1 ),
 		seta2_gfxdecodeinfo,
 		0x8000, (0x8000/16)*16 + (0x8000/16)*256,
 		seta2_vh_init_palette,
 	
 		VIDEO_TYPE_RASTER,
-		0,
-		0,
-		0,
+		null,
+		null,
+		null,
 		seta2_vh_screenrefresh,
 	
 		/* sound hardware */
 		SOUND_SUPPORTS_STEREO,0,0,0,
-		{
-			{ SOUND_CUSTOM, &seta_sound_interface }
+		new MachineSound[] {
+			new MachineSound( SOUND_CUSTOM, seta_sound_interface )
 		}
-	};
+	);
 	
 	/***************************************************************************
 	

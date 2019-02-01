@@ -259,16 +259,16 @@ public class toobin
 	 *
 	 *************************************/
 	
-	static const struct MachineDriver machine_driver_toobin =
-	{
+	static MachineDriver machine_driver_toobin = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_M68010,		/* verified */
 				ATARI_CLOCK_32MHz/4,
-				main_readmem,main_writemem,0,0,
+				main_readmem,main_writemem,null,null,
 				ignore_interrupt,1
-			},
+			),
 			JSA_I_CPU
 		},
 		60, DEFAULT_REAL_60HZ_VBLANK_DURATION,
@@ -276,13 +276,13 @@ public class toobin
 		init_machine,
 	
 		/* video hardware */
-		64*8, 48*8, { 0*8, 64*8-1, 0*8, 48*8-1 },
+		64*8, 48*8, new rectangle( 0*8, 64*8-1, 0*8, 48*8-1 ),
 		gfxdecodeinfo,
-		1024, 0,
-		0,
+		1024, null,
+		null,
 	
 		VIDEO_TYPE_RASTER | VIDEO_UPDATE_BEFORE_VBLANK,
-		0,
+		null,
 		toobin_vh_start,
 		toobin_vh_stop,
 		toobin_vh_screenrefresh,
@@ -291,7 +291,7 @@ public class toobin
 		JSA_I_STEREO_WITH_POKEY,
 	
 		atarigen_nvram_handler
-	};
+	);
 	
 	
 	

@@ -154,53 +154,53 @@ public class cchasm
 		{ 0,0,0,-1} 		/* end mark */
 	};
 	
-	static const struct MachineDriver machine_driver_cchasm =
-	{
+	static MachineDriver machine_driver_cchasm = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_M68000,
 				8000000, /* 8 MHz (from schematics) */
-				readmem, writemem,0,0,
-				0,0
-			},
-			{
+				readmem, writemem,null,null,
+				null,null
+			),
+			new MachineCPU(
 				CPU_Z80,
 				3584229,	/* 3.58  MHz (from schematics) */
 				sound_readmem,sound_writemem,sound_readport,sound_writeport,
-				0,0,
-	            0,0,daisy_chain
-			}
+				null,null,
+	            null,null,daisy_chain
+			)
 		},
 		40, 0,	/* frames per second, vblank duration (vector game, so no vblank) */
 		1,
-		0,
+		null,
 	
 		/* video hardware */
-		400, 300, { 0, 1024-1, 0, 768-1 },
-		0,
-		256, 0,
-		0,
+		400, 300, new rectangle( 0, 1024-1, 0, 768-1 ),
+		null,
+		256, null,
+		null,
 	
 		VIDEO_TYPE_VECTOR | VIDEO_SUPPORTS_DIRTY | VIDEO_RGB_DIRECT,
-		0,
+		null,
 		cchasm_vh_start,
 		vector_vh_stop,
 		vector_vh_screenrefresh,
 	
 		/* sound hardware */
 		0,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_AY8910,
-				&ay8910_interface
-			},
-			{
+				ay8910_interface
+			),
+			new MachineSound(
 				SOUND_CUSTOM,
-				&custom_interface
-			}
+				custom_interface
+			)
 		}
-	};
+	);
 	
 	
 	

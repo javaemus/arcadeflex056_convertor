@@ -350,46 +350,46 @@ public class strnskil
 	};
 	
 	
-	static const struct MachineDriver machine_driver_strnskil =
-	{
-		{
-			{
+	static MachineDriver machine_driver_strnskil = new MachineDriver
+	(
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_Z80,
 				8000000/2, /* 4.000MHz */
-				strnskil_readmem1,strnskil_writemem1,0,0,
+				strnskil_readmem1,strnskil_writemem1,null,null,
 				interrupt,2
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_Z80,
 				8000000/2, /* 4.000MHz */
-				strnskil_readmem2,strnskil_writemem2,0,0,
+				strnskil_readmem2,strnskil_writemem2,null,null,
 				interrupt,2
-			},
+			),
 		},
 		60, DEFAULT_REAL_60HZ_VBLANK_DURATION,
 		100,
-		0,
+		null,
 	
-		32*8, 32*8, { 1*8, 31*8-1, 2*8, 30*8-1 },
+		32*8, 32*8, new rectangle( 1*8, 31*8-1, 2*8, 30*8-1 ),
 	
 		gfxdecodeinfo,
 		256,1024,
 		strnskil_vh_convert_color_prom,
 	
 		VIDEO_TYPE_RASTER,
-		0,
+		null,
 		generic_vh_start,
 		generic_vh_stop,
 		strnskil_vh_screenrefresh,
 	
 		0,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_SN76496,
-				&sn76496_interface
-			}
+				sn76496_interface
+			)
 		},
-	};
+	);
 	
 	/****************************************************************************/
 	

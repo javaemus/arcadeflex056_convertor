@@ -462,47 +462,47 @@ public class yunsung8
 	};
 	
 	
-	static const struct MachineDriver machine_driver_yunsung8 =
-	{
-		{
-			{
+	static MachineDriver machine_driver_yunsung8 = new MachineDriver
+	(
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_Z80,					/* Z80B */
 				8000000,					/* ? */
 				yunsung8_readmem,  yunsung8_writemem,
 				yunsung8_readport, yunsung8_writeport,
 				interrupt, 1	/* No nmi routine */
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_Z80 | CPU_AUDIO_CPU,	/* Z80A */
 				4000000,					/* ? */
 				yunsung8_sound_readmem, yunsung8_sound_writemem,
-				0,0,
+				null,null,
 				interrupt, 1	/* NMI caused by the MSM5205? */
-			}
+			)
 		},
 		60,DEFAULT_60HZ_VBLANK_DURATION,
 		1,
 		yunsung8_init_machine,
 	
 		/* video hardware */
-		512, 256, { 0+64, 512-64-1, 0+8, 256-8-1 },
+		512, 256, new rectangle( 0+64, 512-64-1, 0+8, 256-8-1 ),
 		yunsung8_gfxdecodeinfo,
-		2048, 0,
-		0,
+		2048, null,
+		null,
 	
 		VIDEO_TYPE_RASTER,
-		0,
+		null,
 		yunsung8_vh_start,
-		0,
+		null,
 		yunsung8_vh_screenrefresh,
 	
 		/* sound hardware */
 		SOUND_SUPPORTS_STEREO,0,0,0,
-		{
-			{ SOUND_YM3812,  &yunsung8_ym3812_interface  },
-			{ SOUND_MSM5205, &yunsung8_msm5205_interface }
+		new MachineSound[] {
+			new MachineSound( SOUND_YM3812,  yunsung8_ym3812_interface  ),
+			new MachineSound( SOUND_MSM5205, yunsung8_msm5205_interface )
 		}
-	};
+	);
 	
 	
 	/***************************************************************************

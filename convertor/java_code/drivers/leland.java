@@ -1759,34 +1759,34 @@ public class leland
 	 *
 	 *************************************/
 	
-	static const struct MachineDriver machine_driver_leland =
-	{
+	static MachineDriver machine_driver_leland = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_Z80,
 				6000000,
 				master_readmem,master_writemem,
 				master_readport,master_writeport,
 				master_interrupt,1
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_Z80,
 				6000000,
 				slave_small_readmem,slave_small_writemem,
 				slave_readport,slave_writeport,
 		    	ignore_interrupt,1
-			}
+			)
 		},
 		60, (1000000*16)/(256*60),
 		1,
 		init_machine,
 	
 		/* video hardware */
-		40*8, 30*8, { 0*8, 40*8-1, 0*8, 30*8-1 },
+		40*8, 30*8, new rectangle( 0*8, 40*8-1, 0*8, 30*8-1 ),
 		gfxdecodeinfo,
-		1024, 0,
-		0,
+		1024, null,
+		null,
 	
 		VIDEO_TYPE_RASTER,
 		leland_vh_eof,
@@ -1796,49 +1796,49 @@ public class leland
 	
 		/* sound hardware */
 		0,0,0,0,
-		{
-			{ SOUND_AY8910, &ay8910_interface },
-			{ SOUND_CUSTOM, &dac_custom_interface }
+		new MachineSound[] {
+			new MachineSound( SOUND_AY8910, ay8910_interface ),
+			new MachineSound( SOUND_CUSTOM, dac_custom_interface )
 		},
 		nvram_handler
-	};
+	);
 	
 	
-	static const struct MachineDriver machine_driver_redline =
-	{
+	static MachineDriver machine_driver_redline = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_Z80,
 				6000000,
 				master_readmem,master_writemem,
 				master_readport,master_writeport,
 				master_interrupt,1
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_Z80,
 				6000000,
 				slave_small_readmem,slave_small_writemem,
 				slave_readport,slave_writeport,
 		    	ignore_interrupt,1
-			},
-			{
+			),
+			new MachineCPU(
 		    	CPU_I186 | CPU_AUDIO_CPU,
 				16000000/2,
 				leland_i86_readmem,leland_i86_writemem,
 				leland_i86_readport,redline_i86_writeport,
 				ignore_interrupt,1
-			}
+			)
 		},
 		60, (1000000*16)/(256*60),
 		1,
 		init_machine,
 	
 		/* video hardware */
-		40*8, 30*8, { 0*8, 40*8-1, 0*8, 30*8-1 },
+		40*8, 30*8, new rectangle( 0*8, 40*8-1, 0*8, 30*8-1 ),
 		gfxdecodeinfo,
-		1024, 0,
-		0,
+		1024, null,
+		null,
 	
 		VIDEO_TYPE_RASTER,
 		leland_vh_eof,
@@ -1848,49 +1848,49 @@ public class leland
 	
 		/* sound hardware */
 		0,0,0,0,
-		{
-			{ SOUND_AY8910, &ay8910_interface },
-			{ SOUND_CUSTOM, &redline_custom_interface }
+		new MachineSound[] {
+			new MachineSound( SOUND_AY8910, ay8910_interface ),
+			new MachineSound( SOUND_CUSTOM, redline_custom_interface )
 		},
 		nvram_handler
-	};
+	);
 	
 	
-	static const struct MachineDriver machine_driver_quarterb =
-	{
+	static MachineDriver machine_driver_quarterb = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_Z80,
 				6000000,
 				master_readmem,master_writemem,
 				master_readport,master_writeport,
 				master_interrupt,1
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_Z80,
 				6000000,
 				slave_small_readmem,slave_small_writemem,
 				slave_readport,slave_writeport,
 		    	ignore_interrupt,1
-			},
-			{
+			),
+			new MachineCPU(
 		    	CPU_I186 | CPU_AUDIO_CPU,
 				16000000/2,
 				leland_i86_readmem,leland_i86_writemem,
 				leland_i86_readport,leland_i86_writeport,
 				ignore_interrupt,1
-			}
+			)
 		},
 		60, (1000000*16)/(256*60),
 		1,
 		init_machine,
 	
 		/* video hardware */
-		40*8, 30*8, { 0*8, 40*8-1, 0*8, 30*8-1 },
+		40*8, 30*8, new rectangle( 0*8, 40*8-1, 0*8, 30*8-1 ),
 		gfxdecodeinfo,
-		1024, 0,
-		0,
+		1024, null,
+		null,
 	
 		VIDEO_TYPE_RASTER,
 		leland_vh_eof,
@@ -1900,49 +1900,49 @@ public class leland
 	
 		/* sound hardware */
 		0,0,0,0,
-		{
-			{ SOUND_AY8910, &ay8910_interface },
-			{ SOUND_CUSTOM, &i186_custom_interface }
+		new MachineSound[] {
+			new MachineSound( SOUND_AY8910, ay8910_interface ),
+			new MachineSound( SOUND_CUSTOM, i186_custom_interface )
 		},
 		nvram_handler
-	};
+	);
 	
 	
-	static const struct MachineDriver machine_driver_lelandi =
-	{
+	static MachineDriver machine_driver_lelandi = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_Z80,
 				6000000,
 				master_readmem,master_writemem,
 				master_readport,master_writeport,
 				master_interrupt,1
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_Z80,
 				6000000,
 				slave_large_readmem,slave_large_writemem,
 				slave_readport,slave_writeport,
 		    	ignore_interrupt,1
-			},
-			{
+			),
+			new MachineCPU(
 		    	CPU_I186 | CPU_AUDIO_CPU,
 				16000000/2,
 				leland_i86_readmem,leland_i86_writemem,
 				leland_i86_readport,leland_i86_writeport,
 				ignore_interrupt,1
-			}
+			)
 		},
 		60, (1000000*16)/(256*60),
 		1,
 		init_machine,
 	
 		/* video hardware */
-		40*8, 30*8, { 0*8, 40*8-1, 0*8, 30*8-1 },
+		40*8, 30*8, new rectangle( 0*8, 40*8-1, 0*8, 30*8-1 ),
 		gfxdecodeinfo,
-		1024, 0,
-		0,
+		1024, null,
+		null,
 	
 		VIDEO_TYPE_RASTER,
 		leland_vh_eof,
@@ -1952,12 +1952,12 @@ public class leland
 	
 		/* sound hardware */
 		0,0,0,0,
-		{
-			{ SOUND_AY8910, &ay8910_interface },
-			{ SOUND_CUSTOM, &i186_custom_interface }
+		new MachineSound[] {
+			new MachineSound( SOUND_AY8910, ay8910_interface ),
+			new MachineSound( SOUND_CUSTOM, i186_custom_interface )
 		},
 		nvram_handler
-	};
+	);
 	
 	
 	

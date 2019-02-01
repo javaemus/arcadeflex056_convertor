@@ -570,52 +570,52 @@ public class senjyo
 	
 	
 	
-	static const struct MachineDriver machine_driver_senjyo =
-	{
-		{
-			{
+	static MachineDriver machine_driver_senjyo = new MachineDriver
+	(
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_Z80,
 				4000000,	/* 4 MHz? */
-				readmem,writemem,0,0,
+				readmem,writemem,null,null,
 				senjyo_interrupt,1
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_Z80 | CPU_AUDIO_CPU,
 				2000000,	/* 2 MHz? */
 				sound_readmem,sound_writemem,sound_readport,sound_writeport,
-				0,0, /* interrupts are made by z80 daisy chain system */
-				0,0,daisy_chain
-			}
+				null,null, /* interrupts are made by z80 daisy chain system */
+				null,null,daisy_chain
+			)
 		},
 		60, DEFAULT_60HZ_VBLANK_DURATION,	/* frames per second, vblank duration */
 		1,	/* 1 CPU slice per frame - interleaving is forced when a sound command is written */
 		senjyo_init_machine,
 	
 		/* video hardware */
-		32*8, 32*8, { 0*8, 32*8-1, 2*8, 30*8-1 },
+		32*8, 32*8, new rectangle( 0*8, 32*8-1, 2*8, 30*8-1 ),
 		gfxdecodeinfo,
-		400+2, 0,	/* 400 real palette + 2 for the radar */
-		0,
+		400+2, null,	/* 400 real palette + 2 for the radar */
+		null,
 	
 		VIDEO_TYPE_RASTER,
-		0,
+		null,
 		senjyo_vh_start,
 		senjyo_vh_stop,
 		senjyo_vh_screenrefresh,
 	
 		/* sound hardware */
 		0,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_SN76496,
-				&sn76496_interface
-			},
-			{
+				sn76496_interface
+			),
+			new MachineSound(
 				SOUND_CUSTOM,
-				&custom_interface
-			}
+				custom_interface
+			)
 		}
-	};
+	);
 	
 	
 	/***************************************************************************

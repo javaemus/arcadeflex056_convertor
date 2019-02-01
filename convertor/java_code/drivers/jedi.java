@@ -587,55 +587,55 @@ public class jedi
 	 *
 	 *************************************/
 	
-	static const struct MachineDriver machine_driver_jedi =
-	{
+	static MachineDriver machine_driver_jedi = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_M6502,
 				MAIN_CPU_OSC/2/2,		/* 2.5MHz */
-				readmem,writemem,0,0,
+				readmem,writemem,null,null,
 				ignore_interrupt,1
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_M6502,
 				SOUND_CPU_OSC/2/4,		/* 1.5MHz */
-				readmem2,writemem2,0,0,
+				readmem2,writemem2,null,null,
 				ignore_interrupt,1
-			}
+			)
 		},
 		60, DEFAULT_REAL_60HZ_VBLANK_DURATION,
 		4,
 		init_machine,
 	
 		/* video hardware */
-		37*8, 30*8, { 0*8, 37*8-1, 0*8, 30*8-1 },
+		37*8, 30*8, new rectangle( 0*8, 37*8-1, 0*8, 30*8-1 ),
 		gfxdecodeinfo,
-		1024+1,0,	/* no colortable, we do the lookups ourselves */
+		1024+1,null,	/* no colortable, we do the lookups ourselves */
 					/* reserve color 1024 for black (disabled display) */
-		0,
+		null,
 	
 		VIDEO_TYPE_RASTER,
-		0,
+		null,
 		jedi_vh_start,
 		jedi_vh_stop,
 		jedi_vh_screenrefresh,
 	
 		/* sound hardware */
 		SOUND_SUPPORTS_STEREO,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_POKEY,
-				&pokey_interface
-			},
-			{
+				pokey_interface
+			),
+			new MachineSound(
 				SOUND_TMS5220,
-				&tms5220_interface
-			}
+				tms5220_interface
+			)
 		},
 	
 		nvram_handler
-	};
+	);
 	
 	
 	

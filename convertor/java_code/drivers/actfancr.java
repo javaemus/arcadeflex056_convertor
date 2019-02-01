@@ -419,109 +419,109 @@ public class actfancr
 		return H6280_INT_IRQ1;
 	}
 	
-	static const struct MachineDriver machine_driver_actfancr =
-	{
+	static MachineDriver machine_driver_actfancr = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_H6280,
 				21477200/3, /* Should be accurate */
-				actfan_readmem,actfan_writemem,0,0,
+				actfan_readmem,actfan_writemem,null,null,
 				actfan_interrupt,1 /* VBL */
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_M6502 | CPU_AUDIO_CPU,
 				1500000, /* Should be accurate */
-				dec0_s_readmem,dec0_s_writemem,0,0,
+				dec0_s_readmem,dec0_s_writemem,null,null,
 				ignore_interrupt,0	/* Interrupts from OPL chip */
-			}
+			)
 		},
 		60, 529,
 		1,	/* 1 CPU slice per frame - interleaving is forced when a sound command is written*/
-		0,
+		null,
 	
 		/* video hardware */
-		32*8, 32*8, { 0*8, 32*8-1, 1*8, 31*8-1 },
+		32*8, 32*8, new rectangle( 0*8, 32*8-1, 1*8, 31*8-1 ),
 	
 		actfan_gfxdecodeinfo,
-		768, 0,
-		0,
+		768, null,
+		null,
 	
 		VIDEO_TYPE_RASTER | VIDEO_BUFFERS_SPRITERAM | VIDEO_UPDATE_AFTER_VBLANK,
-		0,
+		null,
 		actfancr_vh_start,
-		0,
+		null,
 		actfancr_vh_screenrefresh,
 	
 		/* sound hardware */
 		0,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_YM2203,
-				&ym2203_interface
-			},
-			{
+				ym2203_interface
+			),
+			new MachineSound(
 				SOUND_YM3812,
-				&ym3812_interface
-			},
-			{
+				ym3812_interface
+			),
+			new MachineSound(
 				SOUND_OKIM6295,
-				&okim6295_interface
-			}
+				okim6295_interface
+			)
 		}
-	};
+	);
 	
-	static const struct MachineDriver machine_driver_triothep =
-	{
+	static MachineDriver machine_driver_triothep = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_H6280,
 				21477200/3, /* Should be accurate */
-				triothep_readmem,triothep_writemem,0,0,
+				triothep_readmem,triothep_writemem,null,null,
 				actfan_interrupt,1 /* VBL */
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_M6502 | CPU_AUDIO_CPU,
 				1500000, /* Should be accurate */
-				dec0_s_readmem,dec0_s_writemem,0,0,
+				dec0_s_readmem,dec0_s_writemem,null,null,
 				ignore_interrupt,0	/* Interrupts from OPL chip */
-			}
+			)
 		},
 		60, 529,
 		1,	/* 1 CPU slice per frame - interleaving is forced when a sound command is written*/
-		0,
+		null,
 	
 		/* video hardware */
-		32*8, 32*8, { 0*8, 32*8-1, 1*8, 31*8-1 },
+		32*8, 32*8, new rectangle( 0*8, 32*8-1, 1*8, 31*8-1 ),
 	
 		triothep_gfxdecodeinfo,
-		768, 0,
-		0,
+		768, null,
+		null,
 	
 		VIDEO_TYPE_RASTER | VIDEO_BUFFERS_SPRITERAM | VIDEO_UPDATE_AFTER_VBLANK,
-		0,
+		null,
 		triothep_vh_start,
-		0,
+		null,
 		triothep_vh_screenrefresh,
 	
 		/* sound hardware */
 		0,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_YM2203,
-				&ym2203_interface
-			},
-			{
+				ym2203_interface
+			),
+			new MachineSound(
 				SOUND_YM3812,
-				&ym3812_interface
-			},
-			{
+				ym3812_interface
+			),
+			new MachineSound(
 				SOUND_OKIM6295,
-				&okim6295_interface
-			}
+				okim6295_interface
+			)
 		}
-	};
+	);
 	
 	/******************************************************************************/
 	

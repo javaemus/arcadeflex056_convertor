@@ -783,48 +783,48 @@ public class psikyo
 		{ YM3012_VOL(100,MIXER_PAN_LEFT,100,MIXER_PAN_RIGHT) }
 	};
 	
-	static const struct MachineDriver machine_driver_gunbird =
-	{
-		{
-			{
+	static MachineDriver machine_driver_gunbird = new MachineDriver
+	(
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_M68EC020,
 				16000000,
-				sngkace_readmem,sngkace_writemem,0,0,
+				sngkace_readmem,sngkace_writemem,null,null,
 				m68_level1_irq, 1
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_Z80 | CPU_AUDIO_CPU,	/* ! LZ8420M (Z80 core) ! */
 				4000000,	/* ? */
 				gunbird_sound_readmem,  gunbird_sound_writemem,
 				gunbird_sound_readport, gunbird_sound_writeport,
 				ignore_interrupt, 1		/* */
-			}
+			)
 		},
 		60,DEFAULT_REAL_60HZ_VBLANK_DURATION,	// we're using IPT_VBLANK
 		1,
-		0,
+		null,
 	
 		/* video hardware */
-		320, 256, { 0, 320-1, 0, 256-32-1 },
+		320, 256, new rectangle( 0, 320-1, 0, 256-32-1 ),
 		sngkace_gfxdecodeinfo,
-		0x1000, 0,
-		0,
+		0x1000, null,
+		null,
 	
 		VIDEO_TYPE_RASTER,
-		0,
+		null,
 		psikyo_vh_start,
-		0,
+		null,
 		psikyo_vh_screenrefresh,
 	
 		/* sound hardware */
 		SOUND_SUPPORTS_STEREO,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_YM2610,				/* ! YMF286-K ! */
-				&gunbird_ym2610_interface,
-			},
+				gunbird_ym2610_interface,
+			),
 		}
-	};
+	);
 	
 	
 	
@@ -850,48 +850,48 @@ public class psikyo
 		{ YM3012_VOL(100,MIXER_PAN_LEFT,100,MIXER_PAN_RIGHT) }
 	};
 	
-	static const struct MachineDriver machine_driver_sngkace =
-	{
-		{
-			{
+	static MachineDriver machine_driver_sngkace = new MachineDriver
+	(
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_M68EC020,
 				16000000,
-				sngkace_readmem,sngkace_writemem,0,0,
+				sngkace_readmem,sngkace_writemem,null,null,
 				m68_level1_irq, 1
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_Z80 | CPU_AUDIO_CPU,
 				4000000,	/* ? */
 				sngkace_sound_readmem,  sngkace_sound_writemem,
 				sngkace_sound_readport, sngkace_sound_writeport,
 				ignore_interrupt, 1		/* NMI caused by main CPU, IRQ by the YM2610 */
-			}
+			)
 		},
 		60,DEFAULT_REAL_60HZ_VBLANK_DURATION,	// we're using IPT_VBLANK
 		1,
-		0,
+		null,
 	
 		/* video hardware */
-		320, 256, { 0, 320-1, 0, 256-32-1 },
+		320, 256, new rectangle( 0, 320-1, 0, 256-32-1 ),
 		sngkace_gfxdecodeinfo,
-		0x1000, 0,
-		0,
+		0x1000, null,
+		null,
 	
 		VIDEO_TYPE_RASTER,
-		0,
+		null,
 		psikyo_vh_start,
-		0,
+		null,
 		psikyo_vh_screenrefresh,
 	
 		/* sound hardware */
 		SOUND_SUPPORTS_STEREO,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_YM2610,
-				&sngkace_ym2610_interface,
-			},
+				sngkace_ym2610_interface,
+			),
 		}
-	};
+	);
 	
 	
 	/***************************************************************************
@@ -914,51 +914,51 @@ public class psikyo
 		{ YM3012_VOL(100,MIXER_PAN_LEFT,100,MIXER_PAN_RIGHT) }
 	};
 	
-	static const struct MachineDriver machine_driver_s1945 =
-	{
-		{
-			{
+	static MachineDriver machine_driver_s1945 = new MachineDriver
+	(
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_M68EC020,
 				16000000,
-				sngkace_readmem,sngkace_writemem,0,0,
+				sngkace_readmem,sngkace_writemem,null,null,
 				m68_level1_irq, 1
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_Z80 | CPU_AUDIO_CPU,	/* ! LZ8420M (Z80 core) ! */
 				4000000,	/* ? */
 				gunbird_sound_readmem, gunbird_sound_writemem,
 				s1945_sound_readport,  s1945_sound_writeport,
 				ignore_interrupt, 1		/* */
-			}
+			)
 	
 			/* MCU should go here */
 	
 		},
 		60,DEFAULT_REAL_60HZ_VBLANK_DURATION,	// we're using IPT_VBLANK
 		1,
-		0,
+		null,
 	
 		/* video hardware */
-		320, 256, { 0, 320-1, 0, 256-32-1 },
+		320, 256, new rectangle( 0, 320-1, 0, 256-32-1 ),
 		sngkace_gfxdecodeinfo,
-		0x1000, 0,
-		0,
+		0x1000, null,
+		null,
 	
 		VIDEO_TYPE_RASTER,
-		0,
+		null,
 		psikyo_vh_start,
-		0,
+		null,
 		psikyo_vh_screenrefresh,
 	
 		/* sound hardware */
 		SOUND_SUPPORTS_STEREO,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_YM2610,				/* ! YMF286-K ! */
-				&s1945_ym2610_interface,
-			},
+				s1945_ym2610_interface,
+			),
 		}
-	};
+	);
 	
 	
 	

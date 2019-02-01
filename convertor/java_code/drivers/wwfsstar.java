@@ -352,54 +352,54 @@ public class wwfsstar
 	 Clock Speeds are currently Unknown
 	*******************************************************************************/
 	
-	static const struct MachineDriver machine_driver_wwfsstar =
-	{
+	static MachineDriver machine_driver_wwfsstar = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
+		new MachineCPU[] {
 	
-			{
+			new MachineCPU(
 				CPU_M68000,
 				12000000,	/* unknown */
-				readmem,writemem,0,0,
+				readmem,writemem,null,null,
 				wwfsstar_interrupt,262
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_Z80 | CPU_AUDIO_CPU,
 				3579545,	/* unknown */
-				readmem_sound, writemem_sound,0,0,
+				readmem_sound, writemem_sound,null,null,
 				ignore_interrupt,0
-			},
+			),
 	
 		},
 		60, DEFAULT_60HZ_VBLANK_DURATION,
 		1,
-		0,
+		null,
 	
 		/* video hardware */
-		32*8, 32*8, { 0*8, 32*8-1, 0*8, 32*8-1 },
+		32*8, 32*8, new rectangle( 0*8, 32*8-1, 0*8, 32*8-1 ),
 		gfxdecodeinfo,
-		384, 0,
-		0,
+		384, null,
+		null,
 	
 		VIDEO_TYPE_RASTER,
-		0,
+		null,
 		wwfsstar_vh_start,
-		0,
+		null,
 		wwfsstar_vh_screenrefresh,
 	
 		/* sound hardware */
 		SOUND_SUPPORTS_STEREO,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_YM2151,
-				&ym2151_interface
-			},
-			{
+				ym2151_interface
+			),
+			new MachineSound(
 				SOUND_OKIM6295,
-				&okim6295_interface
-			}
+				okim6295_interface
+			)
 		}
-	};
+	);
 	
 	/*******************************************************************************
 	 Rom Loaders / Game Drivers

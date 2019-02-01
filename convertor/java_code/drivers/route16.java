@@ -258,45 +258,45 @@ public class route16
 	
 	#define MACHINE_DRIVER(GAMENAME, AUDIO_INTERFACES)   		\
 																\
-	static const struct MachineDriver machine_driver_##GAMENAME =		\
-	{															\
+	static MachineDriver machine_driver_##GAMENAME = new MachineDriver\
+	(															\
 		/* basic machine hardware */							\
-		{														\
-			{													\
+		new MachineCPU[] {														\
+			new MachineCPU(													\
 				CPU_Z80 | CPU_16BIT_PORT,						\
 				2500000,	/* 10MHz / 4 = 2.5MHz */			\
-				cpu1_readmem,cpu1_writemem,0,cpu1_writeport,	\
+				cpu1_readmem,cpu1_writemem,null,cpu1_writeport,	\
 				interrupt,1										\
-			},													\
-			{													\
+			),													\
+			new MachineCPU(													\
 				CPU_Z80,										\
 				2500000,	/* 10MHz / 4 = 2.5MHz */			\
-				cpu2_readmem,cpu2_writemem,0,0,					\
+				cpu2_readmem,cpu2_writemem,null,null,					\
 				ignore_interrupt,0								\
-			}													\
+			)													\
 		},														\
 		57, DEFAULT_REAL_60HZ_VBLANK_DURATION,       /* frames per second, vblank duration */ \
 		1,														\
-		0,														\
+		null,														\
 																\
 		/* video hardware */									\
-		256, 256, { 0, 256-1, 0, 256-1 },						\
-		0,														\
-		8, 0,													\
+		256, 256, new rectangle( 0, 256-1, 0, 256-1 ),						\
+		null,														\
+		8, null,													\
 		route16_vh_convert_color_prom,							\
 																\
 		VIDEO_TYPE_RASTER | VIDEO_SUPPORTS_DIRTY , \
-		0,														\
+		null,														\
 		route16_vh_start,										\
 		route16_vh_stop,										\
 		route16_vh_screenrefresh,								\
 																\
 		/* sound hardware */									\
 		0,0,0,0,												\
-		{														\
+		new MachineSound[] {														\
 			AUDIO_INTERFACES									\
 		}														\
-	};
+	);
 	
 	#define ROUTE16_AUDIO_INTERFACE  \
 			{						 \

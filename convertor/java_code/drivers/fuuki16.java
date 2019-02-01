@@ -555,46 +555,46 @@ public class fuuki16
 		return ignore_interrupt();
 	}
 	
-	static const struct MachineDriver machine_driver_fuuki16 =
-	{
-		{
-			{
+	static MachineDriver machine_driver_fuuki16 = new MachineDriver
+	(
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_M68000,
 				16000000,
-				fuuki16_readmem, fuuki16_writemem,0,0,
+				fuuki16_readmem, fuuki16_writemem,null,null,
 				fuuki16_interrupt, INTERRUPTS_NUM
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_Z80 | CPU_AUDIO_CPU,
 				3000000,	/* ? */
 				fuuki16_sound_readmem,  fuuki16_sound_writemem,
 				fuuki16_sound_readport, fuuki16_sound_writeport,
 				ignore_interrupt, 1	/* IRQ by YM3812; NMI by main CPU */
-			},
+			),
 		},
 		60,DEFAULT_60HZ_VBLANK_DURATION,
 		1,
-		0,
+		null,
 	
 		/* video hardware */
-		320, 256, { 0, 320-1, 0, 256-16-1 },
+		320, 256, new rectangle( 0, 320-1, 0, 256-16-1 ),
 		fuuki16_gfxdecodeinfo,
 		0x400*4, 0x400*4 + 0x40*256,	/* For the 8 bit layer */
 		fuuki16_vh_init_palette,
 		VIDEO_TYPE_RASTER,
-		0,
+		null,
 		fuuki16_vh_start,
-		0,
+		null,
 		fuuki16_vh_screenrefresh,
 	
 		/* sound hardware */
 		SOUND_SUPPORTS_STEREO,0,0,0,
-		{
-			{ SOUND_YM2203,   &fuuki16_ym2203_intf },
-			{ SOUND_YM3812,   &fuuki16_ym3812_intf },
-			{ SOUND_OKIM6295, &fuuki16_m6295_intf  }
+		new MachineSound[] {
+			new MachineSound( SOUND_YM2203,   fuuki16_ym2203_intf ),
+			new MachineSound( SOUND_YM3812,   fuuki16_ym3812_intf ),
+			new MachineSound( SOUND_OKIM6295, fuuki16_m6295_intf  )
 		},
-	};
+	);
 	
 	
 	/***************************************************************************

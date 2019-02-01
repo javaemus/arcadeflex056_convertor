@@ -459,64 +459,64 @@ public class gyruss
 	
 	
 	
-	static const struct MachineDriver machine_driver_gyruss =
-	{
+	static MachineDriver machine_driver_gyruss = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_Z80,
 				3072000,	/* 3.072 MHz (?) */
-				readmem,writemem,0,0,
+				readmem,writemem,null,null,
 				nmi_interrupt,1
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_M6809,
 				2000000,        /* 2 MHz ??? */
-				m6809_readmem,m6809_writemem,0,0,
+				m6809_readmem,m6809_writemem,null,null,
 				gyruss_6809_interrupt,256
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_Z80 | CPU_AUDIO_CPU,
 				14318180/4,	/* 3.579545 MHz */
 				sound_readmem,sound_writemem,sound_readport,sound_writeport,
 				ignore_interrupt,1	/* interrupts are triggered by the main CPU */
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_I8039 | CPU_AUDIO_CPU,
 				8000000/15,	/* 8MHz crystal */
 				i8039_readmem,i8039_writemem,i8039_readport,i8039_writeport,
 				ignore_interrupt,1
-			}
+			)
 		},
 		60, DEFAULT_60HZ_VBLANK_DURATION,	/* frames per second, vblank duration */
 		1,	/* 1 CPU slice per frame - interleaving is forced by the 6809 interrupts anyway */
-		0,
+		null,
 	
 		/* video hardware */
-		32*8, 32*8, { 0*8, 32*8-1, 2*8, 30*8-1 },
+		32*8, 32*8, new rectangle( 0*8, 32*8-1, 2*8, 30*8-1 ),
 		gfxdecodeinfo,
 		32,16*4+16*16,
 		gyruss_vh_convert_color_prom,
 	
 		VIDEO_TYPE_RASTER,
-		0,
+		null,
 		gyruss_vh_start,
 		gyruss_vh_stop,
 		gyruss_vh_screenrefresh,
 	
 		/* sound hardware */
 		SOUND_SUPPORTS_STEREO,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_AY8910,
-				&ay8910_interface
-			},
-			{
+				ay8910_interface
+			),
+			new MachineSound(
 				SOUND_DAC,
-				&dac_interface
-			}
+				dac_interface
+			)
 		}
-	};
+	);
 	
 	
 	

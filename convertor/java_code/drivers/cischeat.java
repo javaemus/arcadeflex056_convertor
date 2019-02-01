@@ -1419,59 +1419,59 @@ public class cischeat
 		{ MIXER(100,MIXER_PAN_LEFT), MIXER(100,MIXER_PAN_RIGHT) } \
 	}; \
 	\
-	static const struct MachineDriver machine_driver_##_shortname_ = \
-	{ \
-		{ \
-			{ \
+	static MachineDriver machine_driver_##_shortname_ = new MachineDriver\
+	( \
+		new MachineCPU[] { \
+			new MachineCPU( \
 				CPU_M68000, \
 				_cpu_1_clock_, \
-				_shortname_##_readmem,_shortname_##_writemem,0,0, \
+				_shortname_##_readmem,_shortname_##_writemem,null,null, \
 				cischeat_interrupt, CISCHEAT_INTERRUPT_NUM \
-			}, \
-			{ \
+			), \
+			new MachineCPU( \
 				CPU_M68000, \
 				_cpu_2_clock_, \
-				_shortname_##_readmem2,_shortname_##_writemem2,0,0, \
+				_shortname_##_readmem2,_shortname_##_writemem2,null,null, \
 				cischeat_sub_interrupt, CISCHEAT_SUB_INTERRUPT_NUM \
-			}, \
-			{ \
+			), \
+			new MachineCPU( \
 				CPU_M68000, \
 				_cpu_3_clock_, \
-				_shortname_##_readmem3,_shortname_##_writemem3,0,0, \
+				_shortname_##_readmem3,_shortname_##_writemem3,null,null, \
 				cischeat_sub_interrupt, CISCHEAT_SUB_INTERRUPT_NUM \
-			}, \
-			{ \
+			), \
+			new MachineCPU( \
 				CPU_M68000 | CPU_AUDIO_CPU, \
 				_cpu_4_clock_, \
-				_shortname_##_sound_readmem,_shortname_##_sound_writemem,0,0, \
+				_shortname_##_sound_readmem,_shortname_##_sound_writemem,null,null, \
 				cischeat_sound_interrupt, CISCHEAT_SOUND_INTERRUPT_NUM \
-			}, \
+			), \
 		}, \
 		/*	60,DEFAULT_REAL_60HZ_VBLANK_DURATION,*/ \
 	30,DEFAULT_REAL_30HZ_VBLANK_DURATION, \
 	20, \
-		0, /* Init Machine */ \
+		null, /* Init Machine */ \
 	\
 		/* video hardware */ \
 		256, 256,_visible_area_, \
 	\
 		_shortname_##_gfxdecodeinfo, \
-		_colors_num_, 0, \
-		0, \
+		_colors_num_, null, \
+		null, \
 	\
 		VIDEO_TYPE_RASTER | VIDEO_UPDATE_AFTER_VBLANK | VIDEO_HAS_SHADOWS,       \
-		0, \
+		null, \
 		_shortname_##_vh_start, \
 		0, \
 		_shortname_##_vh_screenrefresh, \
 	\
 		/* sound hardware */ \
 		SOUND_SUPPORTS_STEREO,0,0,0, /* Stereo Output */\
-		{ \
-			{	SOUND_YM2151,	&_shortname_##_ym2151_intf		},\
-			{	SOUND_OKIM6295,	&_shortname_##_okim6295_intf	} \
+		new MachineSound[] { \
+			new MachineSound(	SOUND_YM2151,	_shortname_##_ym2151_intf		),\
+			new MachineSound(	SOUND_OKIM6295,	_shortname_##_okim6295_intf	) \
 		} \
-	};
+	);
 	
 	
 	#define BIGRUN_VISIBLE_AREA		{0, 256-1,	0+16, 256-16-1  }
@@ -1529,38 +1529,38 @@ public class cischeat
 	}
 	
 	
-	static const struct MachineDriver machine_driver_scudhamm =
-	{
-		{
-			{
+	static MachineDriver machine_driver_scudhamm = new MachineDriver
+	(
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_M68000,
 				12000000,
-				readmem_scudhamm,writemem_scudhamm,0,0,
+				readmem_scudhamm,writemem_scudhamm,null,null,
 				interrupt_scudhamm,INTERRUPT_NUM_SCUDHAMM
-			},
+			),
 		},
 		30, DEFAULT_REAL_30HZ_VBLANK_DURATION * 3 ,
 	
 		1,
-		0,
+		null,
 	
 		/* video hardware */
-		256, 256,{ 0, 256-1, 0 +16, 256-1 -16},
+		256, 256,new rectangle( 0, 256-1, 0 +16, 256-1 -16),
 		gfxdecodeinfo_scudhamm,
-		16*16+16*16+128*16, 0,
-		0,
+		16*16+16*16+128*16, null,
+		null,
 		VIDEO_TYPE_RASTER | VIDEO_UPDATE_AFTER_VBLANK | VIDEO_HAS_SHADOWS,
-		0,
+		null,
 		f1gpstar_vh_start,	// 16 color codes, shadows
-		0,
+		null,
 		scudhamm_vh_screenrefresh,
 	
 		/* sound hardware */
 		SOUND_SUPPORTS_STEREO,0,0,0,
-		{
-			{	SOUND_OKIM6295,	&scudhamm_okim6295_intf	}
+		new MachineSound[] {
+			new MachineSound(	SOUND_OKIM6295,	scudhamm_okim6295_intf	)
 		}
-	};
+	);
 	
 	
 	/***************************************************************************

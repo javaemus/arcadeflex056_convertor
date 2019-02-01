@@ -181,40 +181,40 @@ public class kncljoe
 	
 	
 	
-	static const struct MachineDriver machine_driver_kncljoe =
-	{
+	static MachineDriver machine_driver_kncljoe = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_Z80,
 				4000000, /* ? MHz */
-				readmem,writemem,0,0,
+				readmem,writemem,null,null,
 				interrupt,1
-			},
+			),
 			IREM_AUDIO_CPU
 		},
 		60, DEFAULT_60HZ_VBLANK_DURATION,  /* frames per second, vblank duration */
 		1,	/* 1 CPU slice per frame - interleaving is forced when a sound command is written */
-		0,
+		null,
 	
 		/* video hardware */
-		32*8, 32*8, { 1*8, 31*8-1, 0*8, 32*8-1 },
+		32*8, 32*8, new rectangle( 1*8, 31*8-1, 0*8, 32*8-1 ),
 		gfxdecodeinfo,
 		128+16, 16*8+16*8,
 		kncljoe_vh_convert_color_prom,
 	
 		VIDEO_TYPE_RASTER,
-		0,
+		null,
 		kncljoe_vh_start,
-		0,
+		null,
 		kncljoe_vh_screenrefresh,
 	
 		/* sound hardware */
 		0,0,0,0,
-		{
+		new MachineSound[] {
 			IREM_AUDIO
 		}
-	};
+	);
 	
 	
 	

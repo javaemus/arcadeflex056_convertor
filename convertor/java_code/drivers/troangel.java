@@ -175,33 +175,33 @@ public class troangel
 	
 	
 	
-	static const struct MachineDriver machine_driver_troangel =
-	{
+	static MachineDriver machine_driver_troangel = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_Z80,
 				3000000,	/* 3 MHz ??? */
 				troangel_readmem,troangel_writemem,
-				0,0,
+				null,null,
 				interrupt,1
-			},
+			),
 			IREM_AUDIO_CPU
 		},
 		57, 1790,	/* accurate frequency, measured on a Moon Patrol board, is 56.75Hz. */
 					/* the Lode Runner manual (similar but different hardware) */
 					/* talks about 55Hz and 1790ms vblank duration. */
 		1, /* cpu slices */
-		0, /* init machine */
+		null, /* init machine */
 	
 		/* video hardware */
-		32*8, 32*8, { 1*8, 31*8-1, 1*8, 31*8-1 },
+		32*8, 32*8, new rectangle( 1*8, 31*8-1, 1*8, 31*8-1 ),
 		troangel_gfxdecodeinfo,
 		32*8+16,32*8+32*8,
 		troangel_vh_convert_color_prom,
 	
 		VIDEO_TYPE_RASTER,
-		0,
+		null,
 		generic_vh_start,
 		generic_vh_stop,
 		troangel_vh_screenrefresh,
@@ -209,10 +209,10 @@ public class troangel
 	
 		/* sound hardware */
 		0,0,0,0,
-		{
+		new MachineSound[] {
 			IREM_AUDIO
 		}
-	};
+	);
 	
 	
 	

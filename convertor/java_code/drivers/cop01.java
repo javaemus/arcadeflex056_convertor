@@ -412,89 +412,89 @@ public class cop01
 	
 	
 	
-	static const struct MachineDriver machine_driver_cop01 =
-	{
-		{
-			{
+	static MachineDriver machine_driver_cop01 = new MachineDriver
+	(
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_Z80,
 				4000000,	/* ???? */
 				readmem,writemem,readport,writeport,
 				interrupt,1
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_Z80 | CPU_AUDIO_CPU,
 				3000000,	/* ???? */
 				sound_readmem,sound_writemem,sound_readport,sound_writeport,
 				ignore_interrupt,0	/* IRQs are caused by the main CPU */
-			},
+			),
 		},
 		60,DEFAULT_60HZ_VBLANK_DURATION,
 		1,	/* 1 CPU slice per frame - interleaving is forced when a sound command is written */
-		0, /* init machine */
+		null, /* init machine */
 	
 		/* video hardware */
-		32*8, 32*8, { 0*8, 32*8-1, 2*8, 30*8-1 },
+		32*8, 32*8, new rectangle( 0*8, 32*8-1, 2*8, 30*8-1 ),
 		gfxdecodeinfo,
 		256, 16+8*16+16*16,
 		cop01_vh_convert_color_prom,
 	
 		VIDEO_TYPE_RASTER,
-		0,
+		null,
 		cop01_vh_start,
-		0,
+		null,
 		cop01_vh_screenrefresh,
 	
 		/* sound hardware */
 		0,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_AY8910,
-				&ay8910_interface
-			}
+				ay8910_interface
+			)
 		}
-	};
+	);
 	
-	static const struct MachineDriver machine_driver_mightguy =
-	{
-		{
-			{
+	static MachineDriver machine_driver_mightguy = new MachineDriver
+	(
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_Z80,
 				4000000,	/* ???? */
 				readmem,writemem,readport,writeport,
 				interrupt,1
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_Z80 | CPU_AUDIO_CPU,
 				3000000,	/* ???? */
 				sound_readmem,sound_writemem,mightguy_sound_readport,mightguy_sound_writeport,
 				ignore_interrupt,0	/* IRQs are caused by the main CPU */
-			},
+			),
 		},
 		60,DEFAULT_60HZ_VBLANK_DURATION,
 		1,	/* 1 CPU slice per frame - interleaving is forced when a sound command is written */
-		0, /* init machine */
+		null, /* init machine */
 	
 		/* video hardware */
-		32*8, 32*8, { 0*8, 32*8-1, 2*8, 30*8-1 },
+		32*8, 32*8, new rectangle( 0*8, 32*8-1, 2*8, 30*8-1 ),
 		gfxdecodeinfo,
 		256, 16+8*16+16*16,
 		cop01_vh_convert_color_prom,
 	
 		VIDEO_TYPE_RASTER,
-		0,
+		null,
 		cop01_vh_start,
-		0,
+		null,
 		cop01_vh_screenrefresh,
 	
 		/* sound hardware */
 		0,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_YM3526,
-				&YM3526_interface
-			}
+				YM3526_interface
+			)
 		}
-	};
+	);
 	
 	
 	

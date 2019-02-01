@@ -382,39 +382,39 @@ public class arabian
 	 *
 	 *************************************/
 	
-	static const struct MachineDriver machine_driver_arabian =
-	{
+	static MachineDriver machine_driver_arabian = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_Z80 | CPU_16BIT_PORT,
 				MAIN_OSC/4,		/* 3 MHz */
-				readmem,writemem,0,writeport,
+				readmem,writemem,null,writeport,
 				generate_interrupt,1
-			}
+			)
 		},
 		60, DEFAULT_60HZ_VBLANK_DURATION,
 		1,
-		0,
+		null,
 	
 		/* video hardware */
-		256, 256, { 0, 255, 11, 244 },
-		0,
+		256, 256, new rectangle( 0, 255, 11, 244 ),
+		null,
 		64,256*32,
 		arabian_vh_convert_color_prom,
 	
 		VIDEO_TYPE_RASTER,
-		0,
+		null,
 		arabian_vh_start,
 		arabian_vh_stop,
 		arabian_vh_screenrefresh,
 	
 		/* sound hardware */
 		0,0,0,0,
-		{
-			{ SOUND_AY8910, &ay8910_interface }
+		new MachineSound[] {
+			new MachineSound( SOUND_AY8910, ay8910_interface )
 		}
-	};
+	);
 	
 	
 	

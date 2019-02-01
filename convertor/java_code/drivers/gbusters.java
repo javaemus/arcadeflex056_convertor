@@ -321,52 +321,52 @@ public class gbusters
 		{ 0 }
 	};
 	
-	static const struct MachineDriver machine_driver_gbusters =
-	{
+	static MachineDriver machine_driver_gbusters = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_KONAMI,		/* Konami custom 052526 */
 				3000000,		/* ? */
-				gbusters_readmem,gbusters_writemem,0,0,
+				gbusters_readmem,gbusters_writemem,null,null,
 	            gbusters_interrupt,1
-	        },
-			{
+	        ),
+			new MachineCPU(
 				CPU_Z80 | CPU_AUDIO_CPU,
 				3579545,		/* ? */
-				gbusters_readmem_sound, gbusters_writemem_sound,0,0,
+				gbusters_readmem_sound, gbusters_writemem_sound,null,null,
 				ignore_interrupt,0	/* interrupts are triggered by the main CPU */
-			}
+			)
 		},
 		60, DEFAULT_60HZ_VBLANK_DURATION,	/* frames per second, vblank duration */
 		1,	/* 1 CPU slice per frame - interleaving is forced when a sound command is written */
 		gbusters_init_machine,
 	
 		/* video hardware */
-		64*8, 32*8, { 14*8, (64-14)*8-1, 2*8, 30*8-1 },
-		0,	/* gfx decoded by konamiic.c */
-		1024, 0,
-		0,
+		64*8, 32*8, new rectangle( 14*8, (64-14)*8-1, 2*8, 30*8-1 ),
+		null,	/* gfx decoded by konamiic.c */
+		1024, null,
+		null,
 	
 		VIDEO_TYPE_RASTER | VIDEO_HAS_SHADOWS,
-		0,
+		null,
 		gbusters_vh_start,
 		gbusters_vh_stop,
 		gbusters_vh_screenrefresh,
 	
 		/* sound hardware */
 		0,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_YM2151,
-				&ym2151_interface
-			},
-			{
+				ym2151_interface
+			),
+			new MachineSound(
 				SOUND_K007232,
-				&k007232_interface
-			}
+				k007232_interface
+			)
 		}
-	};
+	);
 	
 	
 	/***************************************************************************

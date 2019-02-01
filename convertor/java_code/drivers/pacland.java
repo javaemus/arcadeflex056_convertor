@@ -314,49 +314,49 @@ public class pacland
 	};
 	
 	
-	static const struct MachineDriver machine_driver_pacland =
-	{
+	static MachineDriver machine_driver_pacland = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_M6809,
 				1500000,	/* 1.500 MHz (?) */
-				readmem,writemem,0,0,
+				readmem,writemem,null,null,
 				interrupt,1
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_HD63701,	/* or compatible 6808 with extra instructions */
 	//			6000000/4,		/* ??? */
 				6000000/3.9,		/* ??? */
 				mcu_readmem,mcu_writemem,mcu_readport,mcu_writeport,
 				interrupt,1
-			},
+			),
 		},
 		60.606060,DEFAULT_REAL_60HZ_VBLANK_DURATION,
 		100,	/* we need heavy synching between the MCU and the CPU */
-		0,
+		null,
 	
 		/* video hardware */
-		42*8, 32*8, { 3*8, 39*8-1, 2*8, 30*8-1 },
+		42*8, 32*8, new rectangle( 3*8, 39*8-1, 2*8, 30*8-1 ),
 		gfxdecodeinfo,
 		256,256*4+256*4+3*64*16,
 		pacland_vh_convert_color_prom,
 	
 		VIDEO_TYPE_RASTER | VIDEO_UPDATE_AFTER_VBLANK,
-		0,
+		null,
 		pacland_vh_start,
 		pacland_vh_stop,
 		pacland_vh_screenrefresh,
 	
 		/* sound hardware */
 		0,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_NAMCO,
-				&namco_interface
-			}
+				namco_interface
+			)
 		}
-	};
+	);
 	
 	
 	/***************************************************************************

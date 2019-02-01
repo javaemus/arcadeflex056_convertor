@@ -674,11 +674,11 @@ public class lazercmd
 		{ 100 }
 	};
 	
-	static const struct MachineDriver machine_driver_lazercmd =
-	{
+	static MachineDriver machine_driver_lazercmd = new MachineDriver
+	(
 	/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_S2650,
 				8064000/12/3,				/* 672 kHz? */
 	/*			Main Clock is 8MHz divided by 12
@@ -687,43 +687,43 @@ public class lazercmd
 				thus requiring an extra loading of approx 3-5 */
 				lazercmd_readmem, lazercmd_writemem, lazercmd_readport, lazercmd_writeport,
 				lazercmd_timer, 128 	/* 7680 Hz */
-			}
+			)
 		},
 		/* frames per second, vblank duration (arbitrary values!) */
 		60, DEFAULT_REAL_60HZ_VBLANK_DURATION,
 		1,			/* single CPU, no need for interleaving */
-		0,
+		null,
 	
 	/* video hardware */
 		HORZ_RES * HORZ_CHR, VERT_RES * VERT_CHR,
-		{0 * HORZ_CHR, HORZ_RES * HORZ_CHR - 1,
-		 0 * VERT_CHR, (VERT_RES - 1) * VERT_CHR - 1},
+		new rectangle(0 * HORZ_CHR, HORZ_RES * HORZ_CHR - 1,
+		 0 * VERT_CHR, (VERT_RES - 1) * VERT_CHR - 1),
 	
 		gfxdecodeinfo,
 		3+32768, 2*2,		/* extra color for the overlay */
 		init_palette,
 	
 		VIDEO_TYPE_RASTER | VIDEO_SUPPORTS_DIRTY ,
-		0,
+		null,
 		lazercmd_vh_start,
 		generic_vh_stop,
 		lazercmd_vh_screenrefresh,
 	
 	/* sound hardware */
 		0, 0, 0, 0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_DAC,
-				&lazercmd_DAC_interface
-			}
+				lazercmd_DAC_interface
+			)
 		}
-	};
+	);
 	
-	static const struct MachineDriver machine_driver_medlanes =
-	{
+	static MachineDriver machine_driver_medlanes = new MachineDriver
+	(
 	/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_S2650,
 				8064000/12/3,				/* 672 kHz? */
 	/*			Main Clock is 8MHz divided by 12
@@ -732,43 +732,43 @@ public class lazercmd
 				thus requiring an extra loading of approx 3-5 */
 				medlanes_readmem, medlanes_writemem, lazercmd_readport, lazercmd_writeport,
 				lazercmd_timer, 128 	/* 7680 Hz */
-			}
+			)
 		},
 		/* frames per second, vblank duration (arbitrary values!) */
 		60, DEFAULT_REAL_60HZ_VBLANK_DURATION,
 		1,			/* single CPU, no need for interleaving */
-		0,
+		null,
 	
 	/* video hardware */
 		HORZ_RES * HORZ_CHR, VERT_RES * VERT_CHR,
-		{0 * HORZ_CHR, HORZ_RES * HORZ_CHR - 1,
-		 0 * VERT_CHR, VERT_RES * VERT_CHR - 1},
+		new rectangle(0 * HORZ_CHR, HORZ_RES * HORZ_CHR - 1,
+		 0 * VERT_CHR, VERT_RES * VERT_CHR - 1),
 	
 		gfxdecodeinfo,
 		3+32768, 2*2,		/* extra color for the overlay */
 		init_palette,
 	
 		VIDEO_TYPE_RASTER | VIDEO_SUPPORTS_DIRTY ,
-		0,
+		null,
 		lazercmd_vh_start,
 		generic_vh_stop,
 		lazercmd_vh_screenrefresh,
 	
 	/* sound hardware */
 		0, 0, 0, 0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_DAC,
-				&lazercmd_DAC_interface
-			}
+				lazercmd_DAC_interface
+			)
 		}
-	};
+	);
 	
-	static const struct MachineDriver machine_driver_bbonk =
-	{
+	static MachineDriver machine_driver_bbonk = new MachineDriver
+	(
 	/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_S2650,
 				8064000/12/3,				/* 672 kHz? */
 	/*			Main Clock is 8MHz divided by 12
@@ -777,37 +777,37 @@ public class lazercmd
 				thus requiring an extra loading of approx 3-5 */
 				bbonk_readmem, bbonk_writemem, lazercmd_readport, lazercmd_writeport,
 				bbonk_timer, 128			/* 7680 Hz */
-			}
+			)
 		},
 		/* frames per second, vblank duration (arbitrary values!) */
 		60, DEFAULT_REAL_60HZ_VBLANK_DURATION,
 		1,			/* single CPU, no need for interleaving */
-		0,
+		null,
 	
 	/* video hardware */
 		HORZ_RES * HORZ_CHR, VERT_RES * VERT_CHR,
-		{0 * HORZ_CHR, HORZ_RES * HORZ_CHR - 1,
-		 0 * VERT_CHR, (VERT_RES - 1) * VERT_CHR - 1},
+		new rectangle(0 * HORZ_CHR, HORZ_RES * HORZ_CHR - 1,
+		 0 * VERT_CHR, (VERT_RES - 1) * VERT_CHR - 1),
 	
 		gfxdecodeinfo,
 		3+32768, 2*2,		/* extra color for the overlay */
 		init_palette,
 	
 		VIDEO_TYPE_RASTER | VIDEO_SUPPORTS_DIRTY ,
-		0,
+		null,
 		lazercmd_vh_start,
 		generic_vh_stop,
 		lazercmd_vh_screenrefresh,
 	
 	/* sound hardware */
 		0, 0, 0, 0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_DAC,
-				&lazercmd_DAC_interface
-			}
+				lazercmd_DAC_interface
+			)
 		}
-	};
+	);
 	
 	/***************************************************************************
 	

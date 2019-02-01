@@ -414,85 +414,85 @@ public class afega
 		}
 	}
 	
-	static const struct MachineDriver machine_driver_grdnstrm =
-	{
-		{
-			{
+	static MachineDriver machine_driver_grdnstrm = new MachineDriver
+	(
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_M68000,
 				10000000,
-				afega_readmem, afega_writemem,0,0,
+				afega_readmem, afega_writemem,null,null,
 				interrupt_afega, 2
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_Z80 | CPU_AUDIO_CPU,
 				3000000,	/* ? */
-				afega_sound_readmem, afega_sound_writemem,0,0,
+				afega_sound_readmem, afega_sound_writemem,null,null,
 				ignore_interrupt, 1	/* IRQ by YM2151, no NMI */
-			},
+			),
 		},
 		60,DEFAULT_60HZ_VBLANK_DURATION,
 		1,
-		0,
+		null,
 	
 		/* video hardware */
-		256, 256, { 0, 256-1, 0+16, 256-16-1 },
+		256, 256, new rectangle( 0, 256-1, 0+16, 256-16-1 ),
 		grdnstrm_gfxdecodeinfo,
 		768, 768 + 16*256,
 		grdnstrm_vh_init_palette,
 	
 		VIDEO_TYPE_RASTER,
-		0,
+		null,
 		afega_vh_start,
-		0,
+		null,
 		afega_vh_screenrefresh,
 	
 		/* sound hardware */
 		SOUND_SUPPORTS_STEREO,0,0,0,
-		{
-			{	SOUND_YM2151,	&afega_ym2151_intf	},
-			{	SOUND_OKIM6295,	&afega_m6295_intf	}
+		new MachineSound[] {
+			new MachineSound(	SOUND_YM2151,	afega_ym2151_intf	),
+			new MachineSound(	SOUND_OKIM6295,	afega_m6295_intf	)
 		},
-	};
+	);
 	
-	static const struct MachineDriver machine_driver_stagger1 =
-	{
-		{
-			{
+	static MachineDriver machine_driver_stagger1 = new MachineDriver
+	(
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_M68000,
 				10000000,
-				afega_readmem, afega_writemem,0,0,
+				afega_readmem, afega_writemem,null,null,
 				interrupt_afega, 2
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_Z80 | CPU_AUDIO_CPU,
 				3000000,	/* ? */
-				afega_sound_readmem, afega_sound_writemem,0,0,
+				afega_sound_readmem, afega_sound_writemem,null,null,
 				ignore_interrupt, 1	/* IRQ by YM2151, no NMI */
-			},
+			),
 		},
 		60,DEFAULT_60HZ_VBLANK_DURATION,
 		1,
-		0,
+		null,
 	
 		/* video hardware */
-		256, 256, { 0, 256-1, 0+16, 256-16-1 },
+		256, 256, new rectangle( 0, 256-1, 0+16, 256-16-1 ),
 		stagger1_gfxdecodeinfo,
-		768, 0,
-		0,
+		768, null,
+		null,
 	
 		VIDEO_TYPE_RASTER,
-		0,
+		null,
 		afega_vh_start,
-		0,
+		null,
 		afega_vh_screenrefresh,
 	
 		/* sound hardware */
 		SOUND_SUPPORTS_STEREO,0,0,0,
-		{
-			{	SOUND_YM2151,	&afega_ym2151_intf	},
-			{	SOUND_OKIM6295,	&afega_m6295_intf	}
+		new MachineSound[] {
+			new MachineSound(	SOUND_YM2151,	afega_ym2151_intf	),
+			new MachineSound(	SOUND_OKIM6295,	afega_m6295_intf	)
 		},
-	};
+	);
 	
 	
 	/***************************************************************************

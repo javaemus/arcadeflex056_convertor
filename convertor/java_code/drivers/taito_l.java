@@ -2119,225 +2119,225 @@ public class taito_l
 	
 	
 	#define MCH_TRIPLE(name) \
-	static const struct MachineDriver machine_driver_##name =		\
-	{															\
-		{														\
-			{													\
+	static MachineDriver machine_driver_##name = new MachineDriver\
+	(															\
+		new MachineCPU[] {														\
+			new MachineCPU(													\
 				CPU_Z80,										\
 				6000000,	/* ? xtal is 13.33056 */			\
-				name ## _readmem, name ## _writemem, 0, 0,		\
+				name ## _readmem, name ## _writemem, null, null,		\
 				vbl_interrupt,3									\
-			},													\
-			{													\
+			),													\
+			new MachineCPU(													\
 				CPU_Z80 | CPU_AUDIO_CPU,						\
 				4000000,	/* ? xtal is 13.33056 */			\
-				name ## _3_readmem, name ## _3_writemem, 0, 0,	\
+				name ## _3_readmem, name ## _3_writemem, null, null,	\
 				ignore_interrupt, 0								\
-			},													\
-			{													\
+			),													\
+			new MachineCPU(													\
 				CPU_Z80,										\
 				6000000,	/* ? xtal is 13.33056 */			\
-				name ## _2_readmem, name ## _2_writemem, 0, 0,	\
+				name ## _2_readmem, name ## _2_writemem, null, null,	\
 				interrupt, 1									\
-			}													\
+			)													\
 		},														\
 		60, DEFAULT_60HZ_VBLANK_DURATION,						\
 		100,													\
 		name ## _init,											\
 																\
-		40*8, 32*8, { 0*8, 40*8-1, 2*8, 30*8-1 },				\
+		40*8, 32*8, new rectangle( 0*8, 40*8-1, 2*8, 30*8-1 ),				\
 		gfxdecodeinfo2,											\
-		256, 0,													\
-		0,														\
+		256, null,													\
+		null,														\
 																\
 		VIDEO_TYPE_RASTER,										\
 		taitol_eof_callback,									\
 		taitol_vh_start,										\
-		0,														\
+		null,														\
 		taitol_vh_screenrefresh,								\
 																\
 		0,0,0,0,												\
-		{														\
-			{													\
+		new MachineSound[] {														\
+			new MachineSound(													\
 				SOUND_YM2203,									\
-				&ym2203_interface_triple						\
-			}													\
+				ym2203_interface_triple						\
+			)													\
 		}														\
-	};
+	);
 	
 	#define MCH_TRIPLE_ADPCM(name) \
-	static const struct MachineDriver machine_driver_##name =		\
-	{															\
-		{														\
-			{													\
+	static MachineDriver machine_driver_##name = new MachineDriver\
+	(															\
+		new MachineCPU[] {														\
+			new MachineCPU(													\
 				CPU_Z80,										\
 				6000000,	/* ? xtal is 13.33056 */			\
-				name ## _readmem, name ## _writemem, 0, 0,		\
+				name ## _readmem, name ## _writemem, null, null,		\
 				vbl_interrupt,3									\
-			},													\
-			{													\
+			),													\
+			new MachineCPU(													\
 				CPU_Z80 | CPU_AUDIO_CPU,						\
 				4000000,	/* ? xtal is 13.33056 */			\
-				name ## _3_readmem, name ## _3_writemem, 0, 0,	\
+				name ## _3_readmem, name ## _3_writemem, null, null,	\
 				ignore_interrupt, 0								\
-			},													\
-			{													\
+			),													\
+			new MachineCPU(													\
 				CPU_Z80,										\
 				6000000,	/* ? xtal is 13.33056 */			\
-				name ## _2_readmem, name ## _2_writemem, 0, 0,	\
+				name ## _2_readmem, name ## _2_writemem, null, null,	\
 				interrupt, 1									\
-			}													\
+			)													\
 		},														\
 		60, DEFAULT_60HZ_VBLANK_DURATION,						\
 		100,													\
 		name ## _init,											\
 																\
-		40*8, 32*8, { 0*8, 40*8-1, 2*8, 30*8-1 },				\
+		40*8, 32*8, new rectangle( 0*8, 40*8-1, 2*8, 30*8-1 ),				\
 		gfxdecodeinfo2,											\
-		256, 0,													\
-		0,														\
+		256, null,													\
+		null,														\
 																\
 		VIDEO_TYPE_RASTER,										\
 		taitol_eof_callback,									\
 		taitol_vh_start,										\
-		0,														\
+		null,														\
 		taitol_vh_screenrefresh,								\
 																\
 		0,0,0,0,												\
-		{														\
-			{													\
+		new MachineSound[] {														\
+			new MachineSound(													\
 				SOUND_YM2203,									\
-				&ym2203_interface_triple						\
-			},													\
-			{													\
+				ym2203_interface_triple						\
+			),													\
+			new MachineSound(													\
 				SOUND_ADPCM,									\
-				&adpcm_interface								\
-			}													\
+				adpcm_interface								\
+			)													\
 		}														\
-	};
+	);
 	
 	#define MCH_TRIPLE_2610(name) \
-	static const struct MachineDriver machine_driver_##name =		\
-	{															\
-		{														\
-			{													\
+	static MachineDriver machine_driver_##name = new MachineDriver\
+	(															\
+		new MachineCPU[] {														\
+			new MachineCPU(													\
 				CPU_Z80,										\
 				6000000,	/* ? xtal is 13.33056 */			\
-				name ## _readmem, name ## _writemem, 0, 0,		\
+				name ## _readmem, name ## _writemem, null, null,		\
 				vbl_interrupt,3									\
-			},													\
-			{													\
+			),													\
+			new MachineCPU(													\
 				CPU_Z80 | CPU_AUDIO_CPU,						\
 				4000000,	/* ? xtal is 13.33056 */			\
-				name ## _3_readmem, name ## _3_writemem, 0, 0,	\
+				name ## _3_readmem, name ## _3_writemem, null, null,	\
 				ignore_interrupt, 0								\
-			},													\
-			{													\
+			),													\
+			new MachineCPU(													\
 				CPU_Z80,										\
 				6000000,	/* ? xtal is 13.33056 */			\
-				name ## _2_readmem, name ## _2_writemem, 0, 0,	\
+				name ## _2_readmem, name ## _2_writemem, null, null,	\
 				interrupt, 1									\
-			}													\
+			)													\
 		},														\
 		60, DEFAULT_60HZ_VBLANK_DURATION,						\
 		100,													\
 		name ## _init,											\
 																\
-		40*8, 32*8, { 0*8, 40*8-1, 2*8, 30*8-1 },				\
+		40*8, 32*8, new rectangle( 0*8, 40*8-1, 2*8, 30*8-1 ),				\
 		gfxdecodeinfo2,											\
-		256, 0,													\
-		0,														\
+		256, null,													\
+		null,														\
 																\
 		VIDEO_TYPE_RASTER,										\
 		taitol_eof_callback,									\
 		taitol_vh_start,										\
-		0,														\
+		null,														\
 		taitol_vh_screenrefresh,								\
 																\
 		0,0,0,0,												\
-		{														\
-			{													\
+		new MachineSound[] {														\
+			new MachineSound(													\
 				SOUND_YM2610,									\
-				&ym2610_interface								\
-			}													\
+				ym2610_interface								\
+			)													\
 		}														\
-	};
+	);
 	
 	#define MCH_DOUBLE(name) \
-	static const struct MachineDriver machine_driver_##name =		\
-	{															\
-		{														\
-			{													\
+	static MachineDriver machine_driver_##name = new MachineDriver\
+	(															\
+		new MachineCPU[] {														\
+			new MachineCPU(													\
 				CPU_Z80,										\
 				6000000,	/* ? xtal is 13.33056 */			\
-				name ## _readmem, name ## _writemem, 0, 0,		\
+				name ## _readmem, name ## _writemem, null, null,		\
 				vbl_interrupt,3									\
-			},													\
-			{													\
+			),													\
+			new MachineCPU(													\
 				CPU_Z80,										\
 				6000000,	/* ? xtal is 13.33056 */			\
-				name ## _2_readmem, name ## _2_writemem, 0, 0,	\
+				name ## _2_readmem, name ## _2_writemem, null, null,	\
 				interrupt, 1									\
-			}													\
+			)													\
 		},														\
 		60, DEFAULT_60HZ_VBLANK_DURATION,						\
 		100,													\
 		name ## _init,											\
 																\
-		40*8, 32*8, { 0*8, 40*8-1, 2*8, 30*8-1 },				\
+		40*8, 32*8, new rectangle( 0*8, 40*8-1, 2*8, 30*8-1 ),				\
 		gfxdecodeinfo2,											\
-		256, 0,													\
-		0,														\
+		256, null,													\
+		null,														\
 																\
 		VIDEO_TYPE_RASTER,										\
 		taitol_eof_callback,									\
 		taitol_vh_start,										\
-		0,														\
+		null,														\
 		taitol_vh_screenrefresh,								\
 																\
 		0,0,0,0,												\
-		{														\
-			{													\
+		new MachineSound[] {														\
+			new MachineSound(													\
 				SOUND_YM2203,									\
-				&ym2203_interface_double						\
-			}													\
+				ym2203_interface_double						\
+			)													\
 		}														\
-	};
+	);
 	
 	#define MCH_SINGLE(name) \
-	static const struct MachineDriver machine_driver_##name =	\
-	{														\
-		{													\
-			{												\
+	static MachineDriver machine_driver_##name = new MachineDriver\
+	(														\
+		new MachineCPU[] {													\
+			new MachineCPU(												\
 				CPU_Z80,									\
 				6000000,	/* ? xtal is 13.33056 */		\
-				name ## _readmem, name ## _writemem, 0, 0,	\
+				name ## _readmem, name ## _writemem, null, null,	\
 				vbl_interrupt,3								\
-			}												\
+			)												\
 		},													\
 		60, DEFAULT_60HZ_VBLANK_DURATION,					\
 		1,													\
 		name ## _init,										\
 															\
-		40*8, 32*8, { 0*8, 40*8-1, 2*8, 30*8-1 },			\
+		40*8, 32*8, new rectangle( 0*8, 40*8-1, 2*8, 30*8-1 ),			\
 		gfxdecodeinfo1,										\
-		256, 0,												\
-		0,													\
+		256, null,												\
+		null,													\
 															\
 		VIDEO_TYPE_RASTER,									\
 		taitol_eof_callback,								\
 		taitol_vh_start,									\
-		0,													\
+		null,													\
 		taitol_vh_screenrefresh,							\
 															\
 		0,0,0,0,											\
-		{													\
-			{												\
+		new MachineSound[] {													\
+			new MachineSound(												\
 				SOUND_YM2203,								\
-				&ym2203_interface_single					\
-			}												\
+				ym2203_interface_single					\
+			)												\
 		}													\
-	};
+	);
 	
 	
 	MCH_TRIPLE_2610(raimais)

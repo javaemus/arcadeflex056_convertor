@@ -301,44 +301,44 @@ public class quantum
 	 *
 	 *************************************/
 	
-	static const struct MachineDriver machine_driver_quantum =
-	{
+	static MachineDriver machine_driver_quantum = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_M68000,
 				6000000,			/* 6MHz */
-				readmem,writemem,0,0,
+				readmem,writemem,null,null,
 				interrupt_gen,3		/* IRQ rate = 750kHz/4096 */
-			}
+			)
 		},
 		60, 0,	/* frames per second, vblank duration (vector game, so no vblank) */
 		1,
-		0,
+		null,
 	
 		/* video hardware */
-		400, 300, { 0, 600, 0, 900 },
-		0,
-		256, 0,
+		400, 300, new rectangle( 0, 600, 0, 900 ),
+		null,
+		256, null,
 		avg_init_palette_multi,
 	
 		VIDEO_TYPE_VECTOR | VIDEO_SUPPORTS_DIRTY | VIDEO_RGB_DIRECT,
-		0,
+		null,
 		avg_start_quantum,
 		avg_stop,
 		vector_vh_screenrefresh,
 	
 		/* sound hardware */
 		0,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_POKEY,
-				&pokey_interface
-			}
+				pokey_interface
+			)
 		},
 	
 		nvram_handler
-	};
+	);
 	
 	
 	

@@ -1090,50 +1090,50 @@ public class exidy440
 	 *
 	 *************************************/
 	
-	static const struct MachineDriver machine_driver_exidy440 =
-	{
+	static MachineDriver machine_driver_exidy440 = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_M6809,
 				12979200/8,                     /* 12MHz/8 */
-				readmem_cpu1,writemem_cpu1,0,0,
+				readmem_cpu1,writemem_cpu1,null,null,
 				main_interrupt,1
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_M6809 | CPU_AUDIO_CPU,
 				12979200/4/4,                   /* 12MHz/4 into XTAL, which is 4x clock */
-				readmem_cpu2,writemem_cpu2,0,0,
+				readmem_cpu2,writemem_cpu2,0,null,
 				exidy440_sound_interrupt,1
-			}
+			)
 		},
 		60, DEFAULT_REAL_60HZ_VBLANK_DURATION,	/* frames per second, vblank duration */
 		1,
 		init_machine,
 	
 		/* video hardware */
-		320, 240, { 0, 319, 0, 239 },
-		0,
-		256,0,
-		0,
+		320, 240, new rectangle( 0, 319, 0, 239 ),
+		null,
+		256,null,
+		null,
 	
 		VIDEO_TYPE_RASTER,
-		0,
+		null,
 		exidy440_vh_start,
 		exidy440_vh_stop,
 		exidy440_vh_screenrefresh,
 	
 		/* sound hardware */
 		SOUND_SUPPORTS_STEREO,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_CUSTOM,
-				&custom_interface
-			}
+				custom_interface
+			)
 		},
 	
 		nvram_handler
-	};
+	);
 	
 	
 	

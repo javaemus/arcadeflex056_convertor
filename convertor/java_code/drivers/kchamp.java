@@ -486,71 +486,71 @@ public class kchamp
 	};
 	
 	
-	static const struct MachineDriver machine_driver_kchampvs =
-	{
+	static MachineDriver machine_driver_kchampvs = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_Z80,
 				3000000,	/* 12MHz / 4 = 3.0 MHz */
 				readmem,writemem,readport,writeport,
 				kc_interrupt,1
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_Z80 | CPU_AUDIO_CPU,
 				3000000,	/* 12MHz / 4 = 3.0 MHz */
 				sound_readmem,sound_writemem,sound_readport,sound_writeport,
 				ignore_interrupt, 0
 				/* irq's triggered from main cpu */
 				/* nmi's from msm5205 */
-			}
+			)
 		},
 		60,DEFAULT_60HZ_VBLANK_DURATION,
 		1,	/* Interleaving forced by interrupts */
-		0,	/* init machine */
+		null,	/* init machine */
 	
 		/* video hardware */
-		32*8, 32*8, { 0, 32*8-1, 2*8, 30*8-1 },
+		32*8, 32*8, new rectangle( 0, 32*8-1, 2*8, 30*8-1 ),
 		gfxdecodeinfo,
 		256, /* number of colors */
 		256, /* color table length */
 		kchamp_vh_convert_color_prom,
 	
 		VIDEO_TYPE_RASTER,
-		0,
+		null,
 		kchampvs_vh_start,
 		generic_vh_stop,
 		kchamp_vh_screenrefresh,
 	
 		/* sound hardware */
 		0,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_AY8910,
-				&ay8910_interface
-			},
-			{
+				ay8910_interface
+			),
+			new MachineSound(
 				SOUND_MSM5205,
-				&msm_interface
-			}
+				msm_interface
+			)
 		}
-	};
+	);
 	
 	/********************
 	* 1 Player Version  *
 	********************/
 	
-	static const struct MachineDriver machine_driver_kchamp =
-	{
+	static MachineDriver machine_driver_kchamp = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_Z80,
 				3000000,	/* 12MHz / 4 = 3.0 MHz */
 				kc_readmem, kc_writemem, kc_readport, kc_writeport,
 				kc_interrupt,1
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_Z80 | CPU_AUDIO_CPU,
 				3000000,	/* 12MHz / 4 = 3.0 MHz */
 				kc_sound_readmem,kc_sound_writemem,kc_sound_readport,kc_sound_writeport,
@@ -558,38 +558,38 @@ public class kchamp
 				sound_int, 125 /* Hz */
 				/* irq's triggered from main cpu */
 				/* nmi's from 125 Hz clock */
-			}
+			)
 		},
 		60,DEFAULT_60HZ_VBLANK_DURATION,
 		1,	/* Interleaving forced by interrupts */
-		0,	/* init machine */
+		null,	/* init machine */
 	
 		/* video hardware */
-		32*8, 32*8, { 0, 32*8-1, 2*8, 30*8-1 },
+		32*8, 32*8, new rectangle( 0, 32*8-1, 2*8, 30*8-1 ),
 		gfxdecodeinfo,
 		256, /* number of colors */
 		256, /* color table length */
 		kchamp_vh_convert_color_prom,
 	
 		VIDEO_TYPE_RASTER,
-		0,
+		null,
 		kchamp1p_vh_start,
 		generic_vh_stop,
 		kchamp_vh_screenrefresh,
 	
 		/* sound hardware */
 		0,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_AY8910,
-				&ay8910_interface
-			},
-			{
+				ay8910_interface
+			),
+			new MachineSound(
 				SOUND_DAC,
-				&dac_interface
-			}
+				dac_interface
+			)
 		}
-	};
+	);
 	
 	
 	/***************************************************************************

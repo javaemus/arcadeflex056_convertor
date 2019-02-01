@@ -442,28 +442,28 @@ public class bosco
 	};
 	
 	
-	static const struct MachineDriver machine_driver_bosco =
-	{
+	static MachineDriver machine_driver_bosco = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_Z80,
 				3125000,	/* 3.125 MHz */
-				readmem_cpu1,writemem_cpu1,0,0,
+				readmem_cpu1,writemem_cpu1,null,null,
 				bosco_interrupt_1,1
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_Z80,
 				3125000,	/* 3.125 MHz */
-				readmem_cpu2,writemem_cpu2,0,0,
+				readmem_cpu2,writemem_cpu2,null,null,
 				bosco_interrupt_2,1
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_Z80,
 				3125000,	/* 3.125 MHz */
-				readmem_cpu3,writemem_cpu3,0,0,
+				readmem_cpu3,writemem_cpu3,null,null,
 				bosco_interrupt_3,2
-			}
+			)
 		},
 		60.606060, DEFAULT_60HZ_VBLANK_DURATION,	/* frames per second, vblank duration */
 		100,	/* 100 CPU slices per frame - an high value to ensure proper */
@@ -471,34 +471,34 @@ public class bosco
 		bosco_init_machine,
 	
 		/* video hardware */
-		36*8, 28*8, { 0*8, 36*8-1, 0*8, 28*8-1 },
+		36*8, 28*8, new rectangle( 0*8, 36*8-1, 0*8, 28*8-1 ),
 		gfxdecodeinfo,
 		32+64,64*4+64*4+4,	/* 32 for the characters, 64 for the stars */
 		bosco_vh_convert_color_prom,
 	
 		VIDEO_TYPE_RASTER,
-		0,
+		null,
 		bosco_vh_start,
 		bosco_vh_stop,
 		bosco_vh_screenrefresh,
 	
 		/* sound hardware */
 		0,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_NAMCO,
-				&namco_interface
-			},
-			{
+				namco_interface
+			),
+			new MachineSound(
 				SOUND_CUSTOM,
-				&custom_interface
-			},
-			{
+				custom_interface
+			),
+			new MachineSound(
 				SOUND_SAMPLES,
-				&samples_interface
-			}
+				samples_interface
+			)
 		}
-	};
+	);
 	
 	
 	

@@ -3773,25 +3773,25 @@ public class seta
 		seta_samples_bank = -1;	// set the samples bank to an out of range value at start-up
 	}
 	
-	static const struct MachineDriver machine_driver_blandia =
-	{
-		{
-			{
+	static MachineDriver machine_driver_blandia = new MachineDriver
+	(
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_M68000,
 				16000000,
-				wrofaero_readmem, wrofaero_writemem,0,0,
+				wrofaero_readmem, wrofaero_writemem,null,null,
 				seta_interrupt_2_and_4, SETA_INTERRUPTS_NUM
-			},
+			),
 		},
 		60,DEFAULT_60HZ_VBLANK_DURATION,
 		1,
 		blandia_init_machine,	// Bankswitched Samples
 	
 		/* video hardware */
-		400, 256 -16, { 16, 400-1, 0, 256-1 -16},
+		400, 256 -16, new rectangle( 16, 400-1, 0, 256-1 -16),
 		blandia_gfxdecodeinfo,
 		16*32+16*32+16*32, 16*32+64*32+64*32,	/* sprites, layer1, layer2 */
-		blandia_vh_init_palette,				/* layers 1&2 are 6 planes deep */
+		blandia_vh_init_palette,				/* layers 12 are 6 planes deep */
 	
 		VIDEO_TYPE_RASTER,
 		seta_buffer_sprites,	/* Blandia uses sprite buffering */
@@ -3801,10 +3801,10 @@ public class seta
 	
 		/* sound hardware */
 		SOUND_SUPPORTS_STEREO,0,0,0,
-		{
-			{ SOUND_CUSTOM, &seta_sound_interface }
+		new MachineSound[] {
+			new MachineSound( SOUND_CUSTOM, seta_sound_interface )
 		}
-	};
+	);
 	
 	
 	/***************************************************************************
@@ -3870,46 +3870,46 @@ public class seta
 	}
 	
 	
-	static const struct MachineDriver machine_driver_calibr50 =
-	{
-		{
-			{
+	static MachineDriver machine_driver_calibr50 = new MachineDriver
+	(
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_M68000,
 				8000000,
-				calibr50_readmem, calibr50_writemem,0,0,
+				calibr50_readmem, calibr50_writemem,null,null,
 				calibr50_interrupt, calibr50_INTERRUPTS_NUM
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_M65C02,
 				2000000,	/* ?? */
-				calibr50_sub_readmem, calibr50_sub_writemem,0,0,
+				calibr50_sub_readmem, calibr50_sub_writemem,null,null,
 				interrupt, 4	/* IRQ: 4/frame
 								   NMI: when the 68k writes the sound latch */
-			},
+			),
 		},
 		60,DEFAULT_60HZ_VBLANK_DURATION,
 		1,
-		0,
+		null,
 	
 		/* video hardware */
-		400, 256 -16, { 16, 400-1, 0, 256-1 -16},
+		400, 256 -16, new rectangle( 16, 400-1, 0, 256-1 -16),
 		downtown_gfxdecodeinfo,
-		512, 0,
-		0,
+		512, null,
+		null,
 	
 		VIDEO_TYPE_RASTER,
-		0,
+		null,
 	//	seta_vh_start_1_layer,
 		seta_vh_start_1_layer_offset_0x02,	// a little offset
-		0,
+		null,
 		seta_vh_screenrefresh,
 	
 		/* sound hardware */
 		SOUND_SUPPORTS_STEREO,0,0,0,
-		{
-			{ SOUND_CUSTOM, &seta_sound_interface }
+		new MachineSound[] {
+			new MachineSound( SOUND_CUSTOM, seta_sound_interface )
 		}
-	};
+	);
 	
 	
 	/***************************************************************************
@@ -3918,44 +3918,44 @@ public class seta
 	
 	/* downtown lev 3 = lev 2 + lev 1 ! */
 	
-	static const struct MachineDriver machine_driver_downtown =
-	{
-		{
-			{
+	static MachineDriver machine_driver_downtown = new MachineDriver
+	(
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_M68000,
 				8000000,
-				downtown_readmem, downtown_writemem,0,0,
+				downtown_readmem, downtown_writemem,null,null,
 				seta_interrupt_1_and_2, SETA_INTERRUPTS_NUM
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_M65C02,
 				1000000,	/* ?? */
-				downtown_sub_readmem, downtown_sub_writemem,0,0,
+				downtown_sub_readmem, downtown_sub_writemem,null,null,
 				seta_sub_interrupt, SETA_SUB_INTERRUPTS_NUM
-			},
+			),
 		},
 		60,DEFAULT_60HZ_VBLANK_DURATION,
 		1,
-		0,
+		null,
 	
 		/* video hardware */
-		400, 256 -16, { 16, 400-1, 0, 256-1 -16},
+		400, 256 -16, new rectangle( 16, 400-1, 0, 256-1 -16),
 		downtown_gfxdecodeinfo,
-		512, 0,
-		0,
+		512, null,
+		null,
 	
 		VIDEO_TYPE_RASTER,
-		0,
+		null,
 		seta_vh_start_1_layer,
-		0,
+		null,
 		seta_vh_screenrefresh,
 	
 		/* sound hardware */
 		SOUND_SUPPORTS_STEREO,0,0,0,
-		{
-			{ SOUND_CUSTOM, &seta_sound_interface }
+		new MachineSound[] {
+			new MachineSound( SOUND_CUSTOM, seta_sound_interface )
 		}
-	};
+	);
 	
 	
 	
@@ -3969,77 +3969,77 @@ public class seta
 		lev 2 drives the game
 	*/
 	
-	static const struct MachineDriver machine_driver_drgnunit =
-	{
-		{
-			{
+	static MachineDriver machine_driver_drgnunit = new MachineDriver
+	(
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_M68000,
 				8000000,
-				drgnunit_readmem, drgnunit_writemem,0,0,
+				drgnunit_readmem, drgnunit_writemem,null,null,
 				seta_interrupt_1_and_2, SETA_INTERRUPTS_NUM
-			},
+			),
 		},
 		60,DEFAULT_60HZ_VBLANK_DURATION,
 		1,
-		0,
+		null,
 	
 		/* video hardware */
-		400, 256 -16, { 16, 400-1, 0, 256-1 -16},
+		400, 256 -16, new rectangle( 16, 400-1, 0, 256-1 -16),
 		downtown_gfxdecodeinfo,
-		512, 0,
-		0,
+		512, null,
+		null,
 	
 		VIDEO_TYPE_RASTER,
 		seta_buffer_sprites,	/* qzkklogy uses sprite buffering */
 	//	seta_vh_start_1_layer,
 		seta_vh_start_1_layer_offset_0x02,	// a little offset
-		0,
+		null,
 		seta_vh_screenrefresh,
 	
 		/* sound hardware */
 		SOUND_SUPPORTS_STEREO,0,0,0,
-		{
-			{ SOUND_CUSTOM, &seta_sound_interface }
+		new MachineSound[] {
+			new MachineSound( SOUND_CUSTOM, seta_sound_interface )
 		}
-	};
+	);
 	
 	
 	/***************************************************************************
 									Eight Force
 	***************************************************************************/
 	
-	static const struct MachineDriver machine_driver_eightfrc =
-	{
-		{
-			{
+	static MachineDriver machine_driver_eightfrc = new MachineDriver
+	(
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_M68000,
 				16000000,
-				wrofaero_readmem, wrofaero_writemem,0,0,
+				wrofaero_readmem, wrofaero_writemem,null,null,
 				seta_interrupt_1_and_2, SETA_INTERRUPTS_NUM
-			},
+			),
 		},
 		60,DEFAULT_60HZ_VBLANK_DURATION,
 		1,
 		blandia_init_machine,	// Bankswitched Samples
 	
 		/* video hardware */
-		400, 256-16-8, { 16, 400-1, 0, 256-1 -16-16},
+		400, 256-16-8, new rectangle( 16, 400-1, 0, 256-1 -16-16),
 		msgundam_gfxdecodeinfo,
-		512 * 3, 0,	/* sprites, layer1, layer2 */
-		0,
+		512 * 3, null,	/* sprites, layer1, layer2 */
+		null,
 	
 		VIDEO_TYPE_RASTER,
-		0,
+		null,
 		seta_vh_start_2_layers,
 		0,
 		seta_vh_screenrefresh,
 	
 		/* sound hardware */
 		SOUND_SUPPORTS_STEREO,0,0,0,
-		{
-			{ SOUND_CUSTOM, &seta_sound_interface }
+		new MachineSound[] {
+			new MachineSound( SOUND_CUSTOM, seta_sound_interface )
 		}
-	};
+	);
 	
 	
 	/***************************************************************************
@@ -4051,38 +4051,38 @@ public class seta
 		lev 1 == lev 3 (writes to $500000, bit 4 -> 1 then 0)
 		lev 2 drives the game
 	*/
-	static const struct MachineDriver machine_driver_extdwnhl =
-	{
-		{
-			{
+	static MachineDriver machine_driver_extdwnhl = new MachineDriver
+	(
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_M68000,
 				16000000,
-				extdwnhl_readmem, extdwnhl_writemem,0,0,
+				extdwnhl_readmem, extdwnhl_writemem,null,null,
 				seta_interrupt_1_and_2, SETA_INTERRUPTS_NUM
-			},
+			),
 		},
 		60,DEFAULT_60HZ_VBLANK_DURATION,
 		1,
-		0,
+		null,
 	
 		/* video hardware */
-		400, 256-16, { 16, 320+16-1, 0, 256-16-1},
+		400, 256-16, new rectangle( 16, 320+16-1, 0, 256-16-1),
 		zingzip_gfxdecodeinfo,
 		16*32+16*32+16*32, 16*32+16*32+64*32,	/* sprites, layer2, layer1 */
 		zingzip_vh_init_palette,				/* layer 1 gfx is 6 planes deep */
 	
 		VIDEO_TYPE_RASTER,
-		0,
+		null,
 		seta_vh_start_2_layers_offset_0x02,
 		0,
 		seta_vh_screenrefresh,
 	
 		/* sound hardware */
 		SOUND_SUPPORTS_STEREO,0,0,0,
-		{
-			{ SOUND_CUSTOM, &seta_sound_interface }
+		new MachineSound[] {
+			new MachineSound( SOUND_CUSTOM, seta_sound_interface )
 		}
-	};
+	);
 	
 	
 	/***************************************************************************
@@ -4093,38 +4093,38 @@ public class seta
 		lev 2: Sound (generated by a timer mapped at $d00000-6 ?)
 		lev 4: VBlank
 	*/
-	static const struct MachineDriver machine_driver_gundhara =
-	{
-		{
-			{
+	static MachineDriver machine_driver_gundhara = new MachineDriver
+	(
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_M68000,
 				16000000,
-				wrofaero_readmem, wrofaero_writemem,0,0,
+				wrofaero_readmem, wrofaero_writemem,null,null,
 				seta_interrupt_2_and_4, SETA_INTERRUPTS_NUM
-			},
+			),
 		},
 		60,DEFAULT_60HZ_VBLANK_DURATION,
 		1,
-		0,
+		null,
 	
 		/* video hardware */
-		400, 256-16, { 16+8, 320+32+16+8+16-1, 0, 256-16-1},
+		400, 256-16, new rectangle( 16+8, 320+32+16+8+16-1, 0, 256-16-1),
 		jjsquawk_gfxdecodeinfo,
 		16*32+16*32+16*32, 16*32+64*32+64*32,	/* sprites, layer2, layer1 */
 		gundhara_vh_init_palette,				/* layers are 6 planes deep (but have only 4 palettes) */
 	
 		VIDEO_TYPE_RASTER,
-		0,
+		null,
 		seta_vh_start_2_layers,
 		0,
 		seta_vh_screenrefresh,
 	
 		/* sound hardware */
 		SOUND_SUPPORTS_STEREO,0,0,0,
-		{
-			{ SOUND_CUSTOM, &seta_sound_interface }
+		new MachineSound[] {
+			new MachineSound( SOUND_CUSTOM, seta_sound_interface )
 		}
-	};
+	);
 	
 	
 	/***************************************************************************
@@ -4135,38 +4135,38 @@ public class seta
 		lev 1 == lev 3 (writes to $500000, bit 4 -> 1 then 0)
 		lev 2 drives the game
 	*/
-	static const struct MachineDriver machine_driver_jjsquawk =
-	{
-		{
-			{
+	static MachineDriver machine_driver_jjsquawk = new MachineDriver
+	(
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_M68000,
 				16000000,
-				wrofaero_readmem, wrofaero_writemem,0,0,
+				wrofaero_readmem, wrofaero_writemem,null,null,
 				seta_interrupt_1_and_2, SETA_INTERRUPTS_NUM
-			},
+			),
 		},
 		60,DEFAULT_60HZ_VBLANK_DURATION,
 		1,
-		0,
+		null,
 	
 		/* video hardware */
-		400, 256 -16, { 16, 400-1, 0, 256-1 -16},
+		400, 256 -16, new rectangle( 16, 400-1, 0, 256-1 -16),
 		jjsquawk_gfxdecodeinfo,
 		16*32+16*32+16*32, 16*32+64*32+64*32,	/* sprites, layer2, layer1 */
 		jjsquawk_vh_init_palette,				/* layers are 6 planes deep */
 	
 		VIDEO_TYPE_RASTER,
-		0,
+		null,
 		seta_vh_start_2_layers,
 		0,
 		seta_vh_screenrefresh,
 	
 		/* sound hardware */
 		SOUND_SUPPORTS_STEREO,0,0,0,
-		{
-			{ SOUND_CUSTOM, &seta_sound_interface }
+		new MachineSound[] {
+			new MachineSound( SOUND_CUSTOM, seta_sound_interface )
 		}
-	};
+	);
 	
 	
 	/***************************************************************************
@@ -4213,44 +4213,44 @@ public class seta
 	
 	/* metafox lev 3 = lev 2 + lev 1 ! */
 	
-	static const struct MachineDriver machine_driver_metafox =
-	{
-		{
-			{
+	static MachineDriver machine_driver_metafox = new MachineDriver
+	(
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_M68000,
 				8000000,
-				downtown_readmem, downtown_writemem,0,0,
+				downtown_readmem, downtown_writemem,null,null,
 				m68_level3_irq, 1
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_M65C02,
 				1000000,	/* ?? */
-				metafox_sub_readmem, metafox_sub_writemem,0,0,
+				metafox_sub_readmem, metafox_sub_writemem,null,null,
 				seta_sub_interrupt, SETA_SUB_INTERRUPTS_NUM
-			},
+			),
 		},
 		60,DEFAULT_60HZ_VBLANK_DURATION,
 		1,
-		0,
+		null,
 	
 		/* video hardware */
-		400, 256 -16-8, { 16, 400-1, 0, 256-1 -16-16 +2},
+		400, 256 -16-8, new rectangle( 16, 400-1, 0, 256-1 -16-16 +2),
 		downtown_gfxdecodeinfo,
-		512, 0,
-		0,
+		512, null,
+		null,
 	
 		VIDEO_TYPE_RASTER,
-		0,
+		null,
 		seta_vh_start_1_layer,
-		0,
+		null,
 		seta_vh_screenrefresh,
 	
 		/* sound hardware */
 		SOUND_SUPPORTS_STEREO,0,0,0,
-		{
-			{ SOUND_CUSTOM, &seta_sound_interface }
+		new MachineSound[] {
+			new MachineSound( SOUND_CUSTOM, seta_sound_interface )
 		}
-	};
+	);
 	
 	
 	
@@ -4260,26 +4260,26 @@ public class seta
 	
 	/* msgundam lev 2 == lev 6 ! */
 	
-	static const struct MachineDriver machine_driver_msgundam =
-	{
-		{
-			{
+	static MachineDriver machine_driver_msgundam = new MachineDriver
+	(
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_M68000,
 				16000000,
-				msgundam_readmem, msgundam_writemem,0,0,
+				msgundam_readmem, msgundam_writemem,null,null,
 				seta_interrupt_2_and_4, SETA_INTERRUPTS_NUM
-			},
+			),
 		},
 	//	60,DEFAULT_60HZ_VBLANK_DURATION,
 		56.66,DEFAULT_60HZ_VBLANK_DURATION,	/* between 56 and 57 to match a real PCB's game speed */
 		1,
-		0,
+		null,
 	
 		/* video hardware */
-		400, 256 -16, { 16, 400-1, 0, 256-1 -16},
+		400, 256 -16, new rectangle( 16, 400-1, 0, 256-1 -16),
 		msgundam_gfxdecodeinfo,
-		512 * 3, 0,	/* sprites, layer2, layer1 */
-		0,
+		512 * 3, null,	/* sprites, layer2, layer1 */
+		null,
 	
 		VIDEO_TYPE_RASTER,
 		seta_buffer_sprites,	/* msgundam uses sprite buffering */
@@ -4289,10 +4289,10 @@ public class seta
 	
 		/* sound hardware */
 		SOUND_SUPPORTS_STEREO,0,0,0,
-		{
-			{ SOUND_CUSTOM, &seta_sound_interface }
+		new MachineSound[] {
+			new MachineSound( SOUND_CUSTOM, seta_sound_interface )
 		}
-	};
+	);
 	
 	
 	
@@ -4381,38 +4381,38 @@ public class seta
 	
 	/* pretty much like wrofaero, but ints are 1&2, not 2&4 */
 	
-	static const struct MachineDriver machine_driver_rezon =
-	{
-		{
-			{
+	static MachineDriver machine_driver_rezon = new MachineDriver
+	(
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_M68000,
 				16000000,
-				wrofaero_readmem, wrofaero_writemem,0,0,
+				wrofaero_readmem, wrofaero_writemem,null,null,
 				seta_interrupt_1_and_2, SETA_INTERRUPTS_NUM
-			},
+			),
 		},
 		60,DEFAULT_60HZ_VBLANK_DURATION,
 		1,
-		0,
+		null,
 	
 		/* video hardware */
-		400, 256 -16, { 16, 400-1, 0, 256-1 -16},
+		400, 256 -16, new rectangle( 16, 400-1, 0, 256-1 -16),
 		msgundam_gfxdecodeinfo,
-		512 * 3, 0,	/* sprites, layer1, layer2 */
-		0,
+		512 * 3, null,	/* sprites, layer1, layer2 */
+		null,
 	
 		VIDEO_TYPE_RASTER,
-		0,
+		null,
 		seta_vh_start_2_layers,
 		0,
 		seta_vh_screenrefresh,
 	
 		/* sound hardware */
 		SOUND_SUPPORTS_STEREO,0,0,0,
-		{
-			{ SOUND_CUSTOM, &seta_sound_interface }
+		new MachineSound[] {
+			new MachineSound( SOUND_CUSTOM, seta_sound_interface )
 		}
-	};
+	);
 	
 	
 	
@@ -4497,51 +4497,51 @@ public class seta
 		}
 	}
 	
-	static const struct MachineDriver machine_driver_tndrcade =
-	{
-		{
-			{
+	static MachineDriver machine_driver_tndrcade = new MachineDriver
+	(
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_M68000,
 				8000000,
-				tndrcade_readmem, tndrcade_writemem,0,0,
+				tndrcade_readmem, tndrcade_writemem,null,null,
 				m68_level2_irq, 1
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_M65C02,
 				2000000,	/* ?? */
-				tndrcade_sub_readmem, tndrcade_sub_writemem,0,0,
+				tndrcade_sub_readmem, tndrcade_sub_writemem,null,null,
 				tndrcade_sub_interrupt, TNDRCADE_SUB_INTERRUPTS_NUM
-			},
+			),
 		},
 		60,DEFAULT_60HZ_VBLANK_DURATION,
 		1,
-		0,
+		null,
 	
 		/* video hardware */
-		400, 256 -16-8, { 16, 400-1, 0+8, 256-1 -16-8},
+		400, 256 -16-8, new rectangle( 16, 400-1, 0+8, 256-1 -16-8),
 		tndrcade_gfxdecodeinfo,
-		512, 0,	/* sprites only */
-		0,
+		512, null,	/* sprites only */
+		null,
 	
 		VIDEO_TYPE_RASTER,
-		0,
+		null,
 		seta_vh_start_no_layers,
-		0,
+		null,
 		seta_vh_screenrefresh_no_layers, /* just draw the sprites */
 	
 		/* sound hardware */
 		SOUND_SUPPORTS_STEREO,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_YM2203,
-				&tndrcade_ym2203_interface
-			},
-			{
+				tndrcade_ym2203_interface
+			),
+			new MachineSound(
 				SOUND_YM3812,
-				&ym3812_interface
-			}
+				ym3812_interface
+			)
 		}
-	};
+	);
 	
 	
 	
@@ -4553,44 +4553,44 @@ public class seta
 	   the sub cpu reads the ip at different locations,
 	   the visible area seems different. */
 	
-	static const struct MachineDriver machine_driver_twineagl =
-	{
-		{
-			{
+	static MachineDriver machine_driver_twineagl = new MachineDriver
+	(
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_M68000,
 				8000000,
-				downtown_readmem, downtown_writemem,0,0,
+				downtown_readmem, downtown_writemem,null,null,
 				m68_level3_irq, 1
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_M65C02,
 				1000000,	/* ?? */
-				twineagl_sub_readmem, twineagl_sub_writemem,0,0,
+				twineagl_sub_readmem, twineagl_sub_writemem,null,null,
 				seta_sub_interrupt, SETA_SUB_INTERRUPTS_NUM
-			},
+			),
 		},
 		60,DEFAULT_60HZ_VBLANK_DURATION,
 		1,
-		0,
+		null,
 	
 		/* video hardware */
-		400, 256 -16, { 16, 400-1, 0, 256-1 -16 },
+		400, 256 -16, new rectangle( 16, 400-1, 0, 256-1 -16 ),
 		downtown_gfxdecodeinfo,
-		512, 0,
-		0,
+		512, null,
+		null,
 	
 		VIDEO_TYPE_RASTER,
-		0,
+		null,
 		seta_vh_start_1_layer,
-		0,
+		null,
 		seta_vh_screenrefresh,
 	
 		/* sound hardware */
 		SOUND_SUPPORTS_STEREO,0,0,0,
-		{
-			{ SOUND_CUSTOM, &seta_sound_interface }
+		new MachineSound[] {
+			new MachineSound( SOUND_CUSTOM, seta_sound_interface )
 		}
-	};
+	);
 	
 	
 	/***************************************************************************
@@ -4641,44 +4641,44 @@ public class seta
 		5 ints per frame
 	*/
 	
-	static const struct MachineDriver machine_driver_usclssic =
-	{
-		{
-			{
+	static MachineDriver machine_driver_usclssic = new MachineDriver
+	(
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_M68000,
 				8000000,
-				usclssic_readmem, usclssic_writemem,0,0,
+				usclssic_readmem, usclssic_writemem,null,null,
 				calibr50_interrupt, calibr50_INTERRUPTS_NUM
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_M65C02,
 				1000000,	/* ?? */
-				calibr50_sub_readmem, calibr50_sub_writemem,0,0,
+				calibr50_sub_readmem, calibr50_sub_writemem,null,null,
 				interrupt, 1	/* NMI caused by main cpu when writing to the sound latch */
-			},
+			),
 		},
 		60,DEFAULT_60HZ_VBLANK_DURATION,
 		1,
-		0,
+		null,
 	
 		/* video hardware */
-		400, 256 -16, { 16, 400-1, 0, 256-1 -16},
+		400, 256 -16, new rectangle( 16, 400-1, 0, 256-1 -16),
 		usclssic_gfxdecodeinfo,
 		16*32, 16*32 + 64*32,		/* sprites, layer */
 		usclssic_vh_init_palette,	/* layer is 6 planes deep */
 	
 		VIDEO_TYPE_RASTER,
-		0,
+		null,
 		seta_vh_start_1_layer,
-		0,
+		null,
 		seta_vh_screenrefresh,
 	
 		/* sound hardware */
 		SOUND_SUPPORTS_STEREO,0,0,0,
-		{
-			{ SOUND_CUSTOM, &seta_sound_interface }
+		new MachineSound[] {
+			new MachineSound( SOUND_CUSTOM, seta_sound_interface )
 		}
-	};
+	);
 	
 	
 	/***************************************************************************
@@ -4727,40 +4727,40 @@ public class seta
 	}
 	
 	
-	static const struct MachineDriver machine_driver_wrofaero =
-	{
-		{
-			{
+	static MachineDriver machine_driver_wrofaero = new MachineDriver
+	(
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_M68000,
 				16000000,
-				wrofaero_readmem, wrofaero_writemem,0,0,
+				wrofaero_readmem, wrofaero_writemem,null,null,
 				seta_interrupt_2_and_4, SETA_INTERRUPTS_NUM
 	//			wrofaero_interrupt,2
 	
-			},
+			),
 		},
 		60,DEFAULT_60HZ_VBLANK_DURATION,
 		1,
-		0,
+		null,
 	
 		/* video hardware */
-		400, 256 -16, { 16, 400-1, 0, 256-1 -16},
+		400, 256 -16, new rectangle( 16, 400-1, 0, 256-1 -16),
 		msgundam_gfxdecodeinfo,
-		512 * 3, 0,	/* sprites, layer1, layer2 */
-		0,
+		512 * 3, null,	/* sprites, layer1, layer2 */
+		null,
 	
 		VIDEO_TYPE_RASTER,
-		0,
+		null,
 		seta_vh_start_2_layers,
 		0,
 		seta_vh_screenrefresh,
 	
 		/* sound hardware */
 		SOUND_SUPPORTS_STEREO,0,0,0,
-		{
-			{ SOUND_CUSTOM, &seta_sound_interface }
+		new MachineSound[] {
+			new MachineSound( SOUND_CUSTOM, seta_sound_interface )
 		}
-	};
+	);
 	
 	
 	
@@ -4774,38 +4774,38 @@ public class seta
 	   at int 1 is necessary: it plays the background music.
 	*/
 	
-	static const struct MachineDriver machine_driver_zingzip =
-	{
-		{
-			{
+	static MachineDriver machine_driver_zingzip = new MachineDriver
+	(
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_M68000,
 				16000000,
-				wrofaero_readmem, wrofaero_writemem,0,0,
+				wrofaero_readmem, wrofaero_writemem,null,null,
 				m68_level3_irq, 1
-			},
+			),
 		},
 		60,DEFAULT_60HZ_VBLANK_DURATION,
 		1,
-		0,
+		null,
 	
 		/* video hardware */
-		400, 256 -16, { 16, 400-1, 0, 256-1 -16},
+		400, 256 -16, new rectangle( 16, 400-1, 0, 256-1 -16),
 		zingzip_gfxdecodeinfo,
 		16*32+16*32+16*32, 16*32+16*32+64*32,	/* sprites, layer2, layer1 */
 		zingzip_vh_init_palette,				/* layer 1 gfx is 6 planes deep */
 	
 		VIDEO_TYPE_RASTER,
-		0,
+		null,
 		seta_vh_start_2_layers,
 		0,
 		seta_vh_screenrefresh,
 	
 		/* sound hardware */
 		SOUND_SUPPORTS_STEREO,0,0,0,
-		{
-			{ SOUND_CUSTOM, &seta_sound_interface }
+		new MachineSound[] {
+			new MachineSound( SOUND_CUSTOM, seta_sound_interface )
 		}
-	};
+	);
 	
 	
 	

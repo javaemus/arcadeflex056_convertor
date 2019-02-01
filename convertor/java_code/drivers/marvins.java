@@ -612,107 +612,107 @@ public class marvins
 	**
 	***************************************************************************/
 	
-	static const struct MachineDriver machine_driver_marvins = {
-		{
-			{
+	static MachineDriver machine_driver_marvins = new MachineDriver(
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_Z80,
 				3360000,	/* 3.336 MHz */
-				readmem_CPUA,writemem_CPUA,0,0,
+				readmem_CPUA,writemem_CPUA,null,null,
 				interrupt,1
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_Z80,
 				3360000,	/* 3.336 MHz */
-				marvins_readmem_CPUB,marvins_writemem_CPUB,0,0,
+				marvins_readmem_CPUB,marvins_writemem_CPUB,null,null,
 				interrupt,1
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_Z80 | CPU_AUDIO_CPU,
 				4000000,	/* 4.0 MHz */
-				readmem_sound,writemem_sound,0,0,
+				readmem_sound,writemem_sound,null,null,
 				nmi_interrupt,4 /* seems to be correct */
-			},
+			),
 		},
 		60.606060, DEFAULT_REAL_60HZ_VBLANK_DURATION,
 		100, /* CPU slices per frame */
-		0, /* init_machine */
+		null, /* init_machine */
 	
 		/* video hardware */
-		256+32, 224, { 0, 255+32,0, 223 },
+		256+32, 224, new rectangle( 0, 255+32,0, 223 ),
 		marvins_gfxdecodeinfo,
-		(16+2)*16, 0,
-		0,
+		(16+2)*16, null,
+		null,
 	
 		VIDEO_TYPE_RASTER,
-		0,
+		null,
 		marvins_vh_start,
-		0,
+		null,
 		marvins_vh_screenrefresh,
 	
 		/* sound hardware */
 		0,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_AY8910,
-				&ay8910_interface
-			},
-			{
+				ay8910_interface
+			),
+			new MachineSound(
 				SOUND_NAMCO,
-				&snkwave_interface
-			}
+				snkwave_interface
+			)
 		}
-	};
+	);
 	
-	static const struct MachineDriver machine_driver_madcrash = {
-		{
-			{
+	static MachineDriver machine_driver_madcrash = new MachineDriver(
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_Z80,
 				3360000,	/* 3.336 MHz */
-				readmem_CPUA,writemem_CPUA,0,0,
+				readmem_CPUA,writemem_CPUA,null,null,
 				interrupt,1
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_Z80,
 				3360000,	/* 3.336 MHz */
-				madcrash_readmem_CPUB,madcrash_writemem_CPUB,0,0,
+				madcrash_readmem_CPUB,madcrash_writemem_CPUB,null,null,
 				interrupt,1
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_Z80 | CPU_AUDIO_CPU,
 				4000000,	/* 4.0 MHz */
-				readmem_sound,writemem_sound,0,0,
+				readmem_sound,writemem_sound,null,null,
 				nmi_interrupt,4 /* wrong? */
-			},
+			),
 		},
 		60.606060, DEFAULT_REAL_60HZ_VBLANK_DURATION,
 		100,	/* CPU slices per frame */
-		0, /* init_machine */
+		null, /* init_machine */
 	
 		/* video hardware */
-		256+32, 224, { 0, 255+32,0, 223 },
+		256+32, 224, new rectangle( 0, 255+32,0, 223 ),
 		marvins_gfxdecodeinfo,
-		(16+2)*16, 0,
-		0,
+		(16+2)*16, null,
+		null,
 	
 		VIDEO_TYPE_RASTER,
-		0,
+		null,
 		marvins_vh_start,
-		0,
+		null,
 		madcrash_vh_screenrefresh,
 	
 		/* sound hardware */
 		0,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_AY8910,
-				&ay8910_interface
-			},
-			{
+				ay8910_interface
+			),
+			new MachineSound(
 				SOUND_NAMCO,
-				&snkwave_interface
-			}
+				snkwave_interface
+			)
 		}
-	};
+	);
 	
 	/***************************************************************************
 	**

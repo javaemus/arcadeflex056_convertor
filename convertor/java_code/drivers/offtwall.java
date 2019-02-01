@@ -414,16 +414,16 @@ public class offtwall
 	 *
 	 *************************************/
 	
-	static const struct MachineDriver machine_driver_offtwall =
-	{
+	static MachineDriver machine_driver_offtwall = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_M68000,
 				ATARI_CLOCK_14MHz/2,
-				main_readmem,main_writemem,0,0,
+				main_readmem,main_writemem,null,null,
 				ignore_interrupt,1
-			},
+			),
 			JSA_III_CPU
 		},
 		60, DEFAULT_REAL_60HZ_VBLANK_DURATION,
@@ -431,13 +431,13 @@ public class offtwall
 		init_machine,
 	
 		/* video hardware */
-		42*8, 30*8, { 0*8, 42*8-1, 0*8, 30*8-1 },
+		42*8, 30*8, new rectangle( 0*8, 42*8-1, 0*8, 30*8-1 ),
 		gfxdecodeinfo,
-		2048, 0,
-		0,
+		2048, null,
+		null,
 	
 		VIDEO_TYPE_RASTER | VIDEO_NEEDS_6BITS_PER_GUN | VIDEO_UPDATE_BEFORE_VBLANK,
-		0,
+		null,
 		offtwall_vh_start,
 		offtwall_vh_stop,
 		offtwall_vh_screenrefresh,
@@ -446,7 +446,7 @@ public class offtwall
 		JSA_III_MONO_NO_SPEECH,
 	
 		atarigen_nvram_handler
-	};
+	);
 	
 	
 	

@@ -284,56 +284,56 @@ public class ajax
 	
 	
 	
-	static const struct MachineDriver machine_driver_ajax =
-	{
-		{
-			{
+	static MachineDriver machine_driver_ajax = new MachineDriver
+	(
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_KONAMI,	/* Konami Custom 052001 */
 				3000000,	/* 12/4 MHz*/
-				ajax_readmem,ajax_writemem,0,0,
+				ajax_readmem,ajax_writemem,null,null,
 				ajax_interrupt,1	/* IRQs triggered by the 051960 */
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_M6809,	/* 6809E */
 				3000000,	/* ? */
-				ajax_readmem_2, ajax_writemem_2,0,0,
+				ajax_readmem_2, ajax_writemem_2,null,null,
 				ignore_interrupt,1	/* FIRQs triggered by the 052001 */
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_Z80,	/* Z80A */
 				3579545,	/* 3.58 MHz */
-				ajax_readmem_sound, ajax_writemem_sound,0,0,
+				ajax_readmem_sound, ajax_writemem_sound,null,null,
 				ignore_interrupt,0	/* IRQs triggered by the 052001 */
-			}
+			)
 		},
 		60, DEFAULT_60HZ_VBLANK_DURATION,
 		10,
 		ajax_init_machine,
 	
 		/* video hardware */
-		64*8, 32*8, { 14*8, (64-14)*8-1, 2*8, 30*8-1 },
-		0,	/* gfx decoded by konamiic.c */
-		2048, 0,
-		0,
+		64*8, 32*8, new rectangle( 14*8, (64-14)*8-1, 2*8, 30*8-1 ),
+		null,	/* gfx decoded by konamiic.c */
+		2048, null,
+		null,
 		VIDEO_TYPE_RASTER | VIDEO_HAS_SHADOWS,
-		0,
+		null,
 		ajax_vh_start,
 		ajax_vh_stop,
 		ajax_vh_screenrefresh,
 	
 		/* sound hardware */
 		SOUND_SUPPORTS_STEREO,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_YM2151,
-				&ym2151_interface
-			},
-			{
+				ym2151_interface
+			),
+			new MachineSound(
 				SOUND_K007232,
-				&k007232_interface
-			}
+				k007232_interface
+			)
 		}
-	};
+	);
 	
 	
 	

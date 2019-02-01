@@ -323,44 +323,44 @@ public class milliped
 	
 	
 	
-	static const struct MachineDriver machine_driver_milliped =
-	{
+	static MachineDriver machine_driver_milliped = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_M6502,
 				1500000,	/* 1.5 MHz ???? */
-				readmem,writemem,0,0,
+				readmem,writemem,null,null,
 				interrupt,4
-			}
+			)
 		},
 		60, DEFAULT_REAL_60HZ_VBLANK_DURATION,	/* frames per second, vblank duration */
 		10,
-		0,
+		null,
 	
 		/* video hardware */
-		32*8, 32*8, { 0*8, 32*8-1, 0*8, 30*8-1 },
+		32*8, 32*8, new rectangle( 0*8, 32*8-1, 0*8, 30*8-1 ),
 		gfxdecodeinfo,
 		32, 4*4+4*4*4*4*4,
 		milliped_init_palette,
 	
 		VIDEO_TYPE_RASTER|VIDEO_SUPPORTS_DIRTY,
-		0,
+		null,
 		generic_vh_start,
 		generic_vh_stop,
 		milliped_vh_screenrefresh,
 	
 		/* sound hardware */
 		0,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_POKEY,
-				&pokey_interface
-			}
+				pokey_interface
+			)
 		},
 	
 		atari_vg_earom_handler
-	};
+	);
 	
 	
 	

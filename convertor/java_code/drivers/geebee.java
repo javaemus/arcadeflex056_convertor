@@ -448,156 +448,156 @@ public class geebee
 		geebee_sh_update
 	};
 	
-	static const struct MachineDriver machine_driver_geebee =
-	{
+	static MachineDriver machine_driver_geebee = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_8080,
 				18432000/9, 		/* 18.432 MHz / 9 */
 				readmem,writemem,readport,writeport,
 				geebee_interrupt,1	/* one interrupt per frame */
-			}
+			)
 		},
 		60, DEFAULT_REAL_60HZ_VBLANK_DURATION,	/* frames per second, vblank duration */
 		1,      /* single CPU, no need for interleaving */
-		0,
+		null,
 	
 		/* video hardware */
-		34*8, 32*8, { 0*8, 34*8-1, 2*8, 30*8-1 },
+		34*8, 32*8, new rectangle( 0*8, 34*8-1, 2*8, 30*8-1 ),
 		gfxdecodeinfo_1k,  /* gfxdecodeinfo */
 		3+32768, 4*2,		/* extra colors for the overlay */
 	    geebee_init_palette,
 	
 		VIDEO_TYPE_RASTER,
-		0,
+		null,
 		geebee_vh_start,
 		generic_vh_stop,
 		geebee_vh_screenrefresh,
 	
 		/* sound hardware */
 		0, 0, 0, 0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_CUSTOM,
-				&custom_interface
-			}
+				custom_interface
+			)
 	    }
-	};
+	);
 	
 	
-	static const struct MachineDriver machine_driver_navalone =
-	{
+	static MachineDriver machine_driver_navalone = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_8080,
 				18432000/9, 		/* 18.432 MHz / 9 */
 				readmem_navalone,writemem,readport_navalone,writeport,
 				geebee_interrupt,1	/* one interrupt per frame */
-			}
+			)
 		},
 		60, DEFAULT_REAL_60HZ_VBLANK_DURATION,	/* frames per second, vblank duration */
 		1,      /* single CPU, no need for interleaving */
-		0,
+		null,
 	
 		/* video hardware */
-		34*8, 32*8, { 0*8, 34*8-1, 2*8, 30*8-1 },
+		34*8, 32*8, new rectangle( 0*8, 34*8-1, 2*8, 30*8-1 ),
 		gfxdecodeinfo_2k,  /* gfxdecodeinfo */
 		3+32768, 4*2,		/* extra colors for the overlay */
 	    navalone_init_palette,
 	
 		VIDEO_TYPE_RASTER,
-		0,
+		null,
 		navalone_vh_start,
 		generic_vh_stop,
 		geebee_vh_screenrefresh,
 	
 		/* sound hardware */
 		0, 0, 0, 0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_CUSTOM,
-				&custom_interface
-			}
+				custom_interface
+			)
 	    }
-	};
+	);
 	
 	
 	
-	static const struct MachineDriver machine_driver_kaitei =
-	{
+	static MachineDriver machine_driver_kaitei = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_8080,
 				18432000/9, 		/* 18.432 MHz / 9 */
 				readmem_navalone,writemem,readport_navalone,writeport,
 				kaitei_interrupt,1	/* one interrupt per frame */
-			}
+			)
 		},
 		60, DEFAULT_REAL_60HZ_VBLANK_DURATION,	/* frames per second, vblank duration */
 		1,      /* single CPU, no need for interleaving */
-		0,
+		null,
 	
 		/* video hardware */
-		34*8, 32*8, { 0*8, 34*8-1, 2*8, 30*8-1 },
+		34*8, 32*8, new rectangle( 0*8, 34*8-1, 2*8, 30*8-1 ),
 		gfxdecodeinfo_2k,  /* gfxdecodeinfo */
 		3+32768, 4*2,		/* extra colors for the overlay */
 		navalone_init_palette,
 	
 		VIDEO_TYPE_RASTER,
-		0,
+		null,
 		kaitei_vh_start,
 		generic_vh_stop,
 		geebee_vh_screenrefresh,
 	
 		/* sound hardware */
 		0, 0, 0, 0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_CUSTOM,
-				&custom_interface
-			}
+				custom_interface
+			)
 	    }
-	};
+	);
 	
-	static const struct MachineDriver machine_driver_sos =
-	{
+	static MachineDriver machine_driver_sos = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_8080,
 				18432000/9, 		/* 18.432 MHz / 9 */
 				readmem_navalone,writemem,readport_navalone,writeport,
 				geebee_interrupt,1	/* one interrupt per frame */
-			}
+			)
 		},
 		60, DEFAULT_REAL_60HZ_VBLANK_DURATION,	/* frames per second, vblank duration */
 		1,      /* single CPU, no need for interleaving */
-		0,
+		null,
 	
 		/* video hardware */
-		34*8, 32*8, { 0*8, 34*8-1, 2*8, 30*8-1 },
+		34*8, 32*8, new rectangle( 0*8, 34*8-1, 2*8, 30*8-1 ),
 		gfxdecodeinfo_2k,  /* gfxdecodeinfo */
 		3+32768, 4*2,		/* extra colors for the overlay */
 		navalone_init_palette,
 	
 		VIDEO_TYPE_RASTER,
-		0,
+		null,
 		sos_vh_start,
 		generic_vh_stop,
 		geebee_vh_screenrefresh,
 	
 		/* sound hardware */
 		0, 0, 0, 0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_CUSTOM,
-				&custom_interface
-			}
+				custom_interface
+			)
 	    }
-	};
+	);
 	
 	
 	

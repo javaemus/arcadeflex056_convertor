@@ -459,42 +459,42 @@ public class legionna
 	
 	/*****************************************************************************/
 	
-	static const struct MachineDriver machine_driver_legionna =
-	{
+	static MachineDriver machine_driver_legionna = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_M68000,
 				20000000/2, 	/* ??? */
-				legionna_readmem,legionna_writemem,0,0,
+				legionna_readmem,legionna_writemem,null,null,
 				m68_level4_irq,1 /* VBL */
-			},
-			{
+			),
+			new MachineCPU(
 				SEIBU_SOUND_SYSTEM_CPU(14318180/4)
-			},
+			),
 		},
 		60, DEFAULT_60HZ_VBLANK_DURATION,	/* frames per second, vblank duration */
 		1,	/* 1 CPU slice per frame - interleaving is forced when a sound command is written */
 		seibu_sound_init_1, /* init machine */
 	
 		/* video hardware */
-		32*8, 32*8, { 0*8, 32*8-1, 0*8, 30*8-1 },	// maybe topy is 2*8 ??
+		32*8, 32*8, new rectangle( 0*8, 32*8-1, 0*8, 30*8-1 ),	// maybe topy is 2*8 ??
 	
 		legionna_gfxdecodeinfo,
-		128*16, 0,
-		0,
+		128*16, null,
+		null,
 		VIDEO_TYPE_RASTER | VIDEO_BUFFERS_SPRITERAM,
-		0,
+		null,
 		legionna_vh_start,
-		0,
+		null,
 		legionna_vh_screenrefresh,
 	
 		/* sound hardware */
 		0,0,0,0,
-		{
+		new MachineSound[] {
 			SEIBU_SOUND_SYSTEM_YM3812_INTERFACE
 		}
-	};
+	);
 	
 	
 	/***************************************************************************

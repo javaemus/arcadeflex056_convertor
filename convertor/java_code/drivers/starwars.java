@@ -460,48 +460,48 @@ public class starwars
 	 *
 	 *************************************/
 	
-	static const struct MachineDriver machine_driver_starwars =
-	{
+	static MachineDriver machine_driver_starwars = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_M6809,
 				1500000,
-				main_readmem,main_writemem,0,0,
+				main_readmem,main_writemem,null,null,
 				generate_irq,6 /* 183Hz ? */
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_M6809 | CPU_AUDIO_CPU,
 				1500000,
-				sound_readmem,sound_writemem,0,0,
+				sound_readmem,sound_writemem,null,null,
 				ignore_interrupt,0
-			}
+			)
 		},
 		30, 0,
 		1,
 		init_machine,
 	
 		/* video hardware */
-		400, 300, { 0, 250, 0, 280 },
-		0,
-		256, 0,
+		400, 300, new rectangle( 0, 250, 0, 280 ),
+		null,
+		256, null,
 		avg_init_palette_swars,
 	
 		VIDEO_TYPE_VECTOR | VIDEO_SUPPORTS_DIRTY | VIDEO_RGB_DIRECT,
-		0,
+		null,
 		avg_start_starwars,
 		avg_stop,
 		vector_vh_screenrefresh,
 	
 		/* sound hardware */
 		0,0,0,0,
-		{
-			{ SOUND_POKEY, &pokey_interface },
-			{ SOUND_TMS5220, &tms5220_interface }
+		new MachineSound[] {
+			new MachineSound( SOUND_POKEY, pokey_interface ),
+			new MachineSound( SOUND_TMS5220, tms5220_interface )
 		},
 	
 		nvram_handler
-	};
+	);
 	
 	
 	

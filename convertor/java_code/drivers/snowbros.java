@@ -240,91 +240,91 @@ public class snowbros
 	
 	
 	
-	static const struct MachineDriver machine_driver_snowbros =
-	{
+	static MachineDriver machine_driver_snowbros = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_M68000,
 				8000000,	/* 8 MHz ????? */
-				readmem,writemem,0,0,
+				readmem,writemem,null,null,
 				snowbros_interrupt,3
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_Z80 | CPU_AUDIO_CPU,
 				3600000,	/* 3.6 MHz ??? */
 				sound_readmem,sound_writemem,sound_readport,sound_writeport,
 				ignore_interrupt,0	/* IRQs are caused by the YM3812 */
-			}
+			)
 		},
 		60, DEFAULT_60HZ_VBLANK_DURATION,	/* frames per second, vblank duration */
 		1,	/* 1 CPU slice per frame - interleaving is forced when a sound command is written */
-		0,
+		null,
 	
 		/* video hardware */
-		32*8, 32*8, { 0*8, 32*8-1, 2*8, 30*8-1 },
+		32*8, 32*8, new rectangle( 0*8, 32*8-1, 2*8, 30*8-1 ),
 		gfxdecodeinfo,
-		256, 0,
-		0,
+		256, null,
+		null,
 	
 		VIDEO_TYPE_RASTER,
-		0,
-		0,
-		0,
+		null,
+		null,
+		null,
 		snowbros_vh_screenrefresh,
 	
 		/* sound hardware */
 		0,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_YM3812,
-				&ym3812_interface
-			},
+				ym3812_interface
+			),
 		}
-	};
+	);
 	
-	static const struct MachineDriver machine_driver_wintbob =
-	{
+	static MachineDriver machine_driver_wintbob = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_M68000,
 				10000000,	/* 10MHz .. Needed to compensate for less capable gfx hardware? otherwise game runs too slow */
-				readmem,writemem,0,0,
+				readmem,writemem,null,null,
 				snowbros_interrupt,3
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_Z80 | CPU_AUDIO_CPU,
 				3600000,	/* 3.6 MHz ??? */
 				sound_readmem,sound_writemem,sound_readport,sound_writeport,
 				ignore_interrupt,0	/* IRQs are caused by the YM3812 */
-			}
+			)
 		},
 		60, DEFAULT_60HZ_VBLANK_DURATION,	/* frames per second, vblank duration */
 		1,	/* 1 CPU slice per frame - interleaving is forced when a sound command is written */
-		0,
+		null,
 	
 		/* video hardware */
-		32*8, 32*8, { 0*8, 32*8-1, 2*8, 30*8-1 },
+		32*8, 32*8, new rectangle( 0*8, 32*8-1, 2*8, 30*8-1 ),
 		gfxdecodeinfo_wb,
-		256, 0,
-		0,
+		256, null,
+		null,
 	
 		VIDEO_TYPE_RASTER,
-		0,
-		0,
-		0,
+		null,
+		null,
+		null,
 		wintbob_vh_screenrefresh,
 	
 		/* sound hardware */
 		0,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_YM3812,
-				&ym3812_interface
-			},
+				ym3812_interface
+			),
 		}
-	};
+	);
 	
 	/***************************************************************************
 	

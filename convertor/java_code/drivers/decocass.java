@@ -441,55 +441,55 @@ public class decocass
 	}
 	
 	#define MACHINE_DRIVER_DECOCASS(GAMENAME)	\
-	static const struct MachineDriver machine_driver_##GAMENAME = \
-	{ \
+	static MachineDriver machine_driver_##GAMENAME = new MachineDriver\
+	( \
 		/* basic machine hardware */ \
-		{ \
-			{ \
+		new MachineCPU[] { \
+			new MachineCPU( \
 				CPU_M6502, \
 				750000, \
-				decocass_readmem,decocass_writemem,0,0, \
+				decocass_readmem,decocass_writemem,null,null, \
 				ignore_interrupt,0, \
-			}, \
-			{  \
+			), \
+			new MachineCPU(  \
 				CPU_M6502, \
 				500000, /* 500 kHz */ \
-				decocass_sound_readmem,decocass_sound_writemem,0,0, \
+				decocass_sound_readmem,decocass_sound_writemem,null,null, \
 				ignore_interrupt,0, \
-			}, \
-			{ \
+			), \
+			new MachineCPU( \
 				CPU_I8X41, \
 				500000, /* 500 kHz ( I doubt it is 400kHz Al! )*/ \
 				decocass_mcu_readmem,decocass_mcu_writemem, \
 				decocass_mcu_readport,decocass_mcu_writeport, \
 				ignore_interrupt,0, \
-			}, \
+			), \
 		}, \
 		57, 3072,		/* frames per second, vblank duration */ \
 		7,				/* interleave CPUs */ \
 		GAMENAME##_init_machine, \
 	\
 		/* video hardware */ \
-		32*8, 32*8, { 1*8, 31*8-1, 1*8, 31*8-1 }, \
+		32*8, 32*8, new rectangle( 1*8, 31*8-1, 1*8, 31*8-1 ), \
 		decocass_gfxdecodeinfo, \
 		32,32+2*8+2*4, \
 		decocass_init_palette, \
 	\
 		VIDEO_TYPE_RASTER, \
-		0, \
+		null, \
 		decocass_vh_start, \
 		decocass_vh_stop, \
 		decocass_vh_screenrefresh, \
 	\
 		/* sound hardware */ \
 		0,0,0,0, \
-		{ \
-			{ \
+		new MachineSound[] { \
+			new MachineSound( \
 				SOUND_AY8910, \
-				&ay8910_interface \
-			} \
+				ay8910_interface \
+			) \
 		}, \
-	}
+	)
 	
 	MACHINE_DRIVER_DECOCASS( decocass );	/* parent driver */
 	MACHINE_DRIVER_DECOCASS( ctsttape );

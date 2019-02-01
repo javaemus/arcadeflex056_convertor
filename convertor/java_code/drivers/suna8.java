@@ -1682,47 +1682,47 @@ public class suna8
 	};
 	
 	
-	static const struct MachineDriver machine_driver_hardhead =
-	{
-		{
-			{
+	static MachineDriver machine_driver_hardhead = new MachineDriver
+	(
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_Z80,
 				4000000,					/* ? */
 				hardhead_readmem, hardhead_writemem,
 				hardhead_readport,hardhead_writeport,
 				interrupt, 1	/* No NMI */
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_Z80 | CPU_AUDIO_CPU,
 				4000000,					/* ? */
 				hardhead_sound_readmem, hardhead_sound_writemem,
 				hardhead_sound_readport,hardhead_sound_writeport,
 				interrupt, 4	/* No NMI */
-			}
+			)
 		},
 		60,DEFAULT_60HZ_VBLANK_DURATION,
 		1,
-		0,
+		null,
 	
 		/* video hardware */
-		256, 256, { 0, 256-1, 0+16, 256-16-1 },
+		256, 256, new rectangle( 0, 256-1, 0+16, 256-16-1 ),
 		suna8_gfxdecodeinfo,
-		256, 0,
-		0,
+		256, null,
+		null,
 	
 		VIDEO_TYPE_RASTER,
-		0,
+		null,
 		suna8_vh_start_textdim12,
-		0,
+		null,
 		suna8_vh_screenrefresh,
 	
 		/* sound hardware */
 		SOUND_SUPPORTS_STEREO,0,0,0,
-		{
-			{	SOUND_YM3812,	&hardhead_ym3812_interface	},
-			{	SOUND_AY8910,	&hardhead_ay8910_interface	}
+		new MachineSound[] {
+			new MachineSound(	SOUND_YM3812,	hardhead_ym3812_interface	),
+			new MachineSound(	SOUND_AY8910,	hardhead_ay8910_interface	)
 		}
-	};
+	);
 	
 	
 	
@@ -1745,46 +1745,46 @@ public class suna8
 		{ 0,0 }		/* IRQ handler  */
 	};
 	
-	static const struct MachineDriver machine_driver_rranger =
-	{
-		{
-			{
+	static MachineDriver machine_driver_rranger = new MachineDriver
+	(
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_Z80,
 				4000000,					/* ? */
 				rranger_readmem,  rranger_writemem,
 				rranger_readport, rranger_writeport,
-				interrupt, 1	/* IRQ & NMI ! */
-			},
-			{
+				interrupt, 1	/* IRQ  NMI ! */
+			),
+			new MachineCPU(
 				CPU_Z80 | CPU_AUDIO_CPU,
 				4000000,					/* ? */
 				rranger_sound_readmem,  rranger_sound_writemem,
 				rranger_sound_readport, rranger_sound_writeport,
 				interrupt, 4	/* NMI = retn */
-			}
+			)
 		},
 		60,DEFAULT_60HZ_VBLANK_DURATION,
 		1,
-		0,
+		null,
 	
 		/* video hardware */
-		256, 256, { 0, 256-1, 0+16, 256-16-1 },
+		256, 256, new rectangle( 0, 256-1, 0+16, 256-16-1 ),
 		suna8_gfxdecodeinfo,
-		256, 0,
-		0,
+		256, null,
+		null,
 	
 		VIDEO_TYPE_RASTER,
-		0,
+		null,
 		suna8_vh_start_textdim8,
-		0,
+		null,
 		suna8_vh_screenrefresh,
 	
 		/* sound hardware */
 		SOUND_SUPPORTS_STEREO,0,0,0,
-		{
-			{	SOUND_YM2203,	&rranger_ym2203_interface	},
+		new MachineSound[] {
+			new MachineSound(	SOUND_YM2203,	rranger_ym2203_interface	),
 		}
-	};
+	);
 	
 	
 	/***************************************************************************
@@ -1825,56 +1825,56 @@ public class suna8
 		else					return Z80_IRQ_INT;
 	}
 	
-	static const struct MachineDriver machine_driver_brickzn =
-	{
-		{
-			{
+	static MachineDriver machine_driver_brickzn = new MachineDriver
+	(
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_Z80,
 				4000000,					/* ? */
 				brickzn_readmem, brickzn_writemem,
 				brickzn_readport,brickzn_writeport,
 	//			brickzn_interrupt, 2
 	interrupt, 1	// nmi breaks ramtest but is needed!
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_Z80 | CPU_AUDIO_CPU,
 				4000000,					/* ? */
 				brickzn_sound_readmem, brickzn_sound_writemem,
 				brickzn_sound_readport,brickzn_sound_writeport,
 				ignore_interrupt, 1	/* IRQ by YM3812; No NMI */
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_Z80 | CPU_AUDIO_CPU,
 				4000000,					/* ? */
 				brickzn_pcm_readmem, brickzn_pcm_writemem,
 				brickzn_pcm_readport,brickzn_pcm_writeport,
 				ignore_interrupt, 1	/* No interrupts */
-			}
+			)
 		},
 		60,DEFAULT_60HZ_VBLANK_DURATION,
 		1,
-		0,
+		null,
 	
 		/* video hardware */
-		256, 256, { 0, 256-1, 0+16, 256-16-1 },
+		256, 256, new rectangle( 0, 256-1, 0+16, 256-16-1 ),
 		suna8_gfxdecodeinfo,
-		512, 0,
-		0,
+		512, null,
+		null,
 	
 		VIDEO_TYPE_RASTER,
-		0,
+		null,
 		suna8_vh_start_textdim0,
-		0,
+		null,
 		suna8_vh_screenrefresh,
 	
 		/* sound hardware */
 		SOUND_SUPPORTS_STEREO,0,0,0,
-		{
-			{	SOUND_YM3812,	&brickzn_ym3812_interface	},
-			{	SOUND_AY8910,	&brickzn_ay8910_interface	},
-			{	SOUND_DAC,		&brickzn_dac_interface		},
+		new MachineSound[] {
+			new MachineSound(	SOUND_YM3812,	brickzn_ym3812_interface	),
+			new MachineSound(	SOUND_AY8910,	brickzn_ay8910_interface	),
+			new MachineSound(	SOUND_DAC,		brickzn_dac_interface		),
 		}
-	};
+	);
 	
 	
 	/***************************************************************************
@@ -1891,58 +1891,58 @@ public class suna8
 		else					return Z80_IRQ_INT;
 	}
 	
-	static const struct MachineDriver machine_driver_hardhea2 =
-	{
-		{
-			{
+	static MachineDriver machine_driver_hardhea2 = new MachineDriver
+	(
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_Z80,	/* SUNA T568009 */
 				4000000,					/* ? */
 				hardhea2_readmem, hardhea2_writemem,
 				hardhea2_readport,hardhea2_writeport,
-				hardhea2_interrupt, 2	/* IRQ & NMI */
-			},
+				hardhea2_interrupt, 2	/* IRQ  NMI */
+			),
 	
 			/* The sound section is identical to that of brickzn */
 	
-			{
+			new MachineCPU(
 				CPU_Z80 | CPU_AUDIO_CPU,
 				4000000,					/* ? */
 				brickzn_sound_readmem, brickzn_sound_writemem,
 				brickzn_sound_readport,brickzn_sound_writeport,
 				ignore_interrupt, 1	/* IRQ by YM3812; No NMI */
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_Z80 | CPU_AUDIO_CPU,
 				4000000,					/* ? */
 				brickzn_pcm_readmem, brickzn_pcm_writemem,
 				brickzn_pcm_readport,brickzn_pcm_writeport,
 				ignore_interrupt, 1	/* No interrupts */
-			}
+			)
 		},
 		60,DEFAULT_60HZ_VBLANK_DURATION,
 		1,
-		0,
+		null,
 	
 		/* video hardware */
-		256, 256, { 0, 256-1, 0+16, 256-16-1 },
+		256, 256, new rectangle( 0, 256-1, 0+16, 256-16-1 ),
 		suna8_gfxdecodeinfo,
-		256, 0,
-		0,
+		256, null,
+		null,
 	
 		VIDEO_TYPE_RASTER,
-		0,
+		null,
 		suna8_vh_start_textdim0,
-		0,
+		null,
 		suna8_vh_screenrefresh,
 	
 		/* sound hardware */
 		SOUND_SUPPORTS_STEREO,0,0,0,
-		{
-			{	SOUND_YM3812,	&brickzn_ym3812_interface	},
-			{	SOUND_AY8910,	&brickzn_ay8910_interface	},
-			{	SOUND_DAC,		&brickzn_dac_interface		},
+		new MachineSound[] {
+			new MachineSound(	SOUND_YM3812,	brickzn_ym3812_interface	),
+			new MachineSound(	SOUND_AY8910,	brickzn_ay8910_interface	),
+			new MachineSound(	SOUND_DAC,		brickzn_dac_interface		),
 		}
-	};
+	);
 	
 	
 	/***************************************************************************
@@ -1968,50 +1968,50 @@ public class suna8
 		{  0 },
 	};
 	
-	static const struct MachineDriver machine_driver_starfigh =
-	{
-		{
-			{
+	static MachineDriver machine_driver_starfigh = new MachineDriver
+	(
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_Z80,
 				4000000,					/* ? */
 				starfigh_readmem, starfigh_writemem,
 				starfigh_readport,starfigh_writeport,
-				brickzn_interrupt, 2	/* IRQ & NMI */
-			},
+				brickzn_interrupt, 2	/* IRQ  NMI */
+			),
 	
 			/* The sound section is identical to that of hardhead */
 	
-			{
+			new MachineCPU(
 				CPU_Z80 | CPU_AUDIO_CPU,
 				4000000,					/* ? */
 				hardhead_sound_readmem, hardhead_sound_writemem,
 				hardhead_sound_readport,hardhead_sound_writeport,
 				interrupt, 4	/* No NMI */
-			}
+			)
 		},
 		60,DEFAULT_60HZ_VBLANK_DURATION,
 		1,
-		0,
+		null,
 	
 		/* video hardware */
-		256, 256, { 0, 256-1, 0+16, 256-16-1 },
+		256, 256, new rectangle( 0, 256-1, 0+16, 256-16-1 ),
 		suna8_gfxdecodeinfo,
-		256, 0,
-		0,
+		256, null,
+		null,
 	
 		VIDEO_TYPE_RASTER,
-		0,
+		null,
 		suna8_vh_start_textdim0,
-		0,
+		null,
 		suna8_vh_screenrefresh,
 	
 		/* sound hardware */
 		SOUND_SUPPORTS_STEREO,0,0,0,
-		{
-			{	SOUND_YM3812,	&starfigh_ym3812_interface	},
-			{	SOUND_AY8910,	&starfigh_ay8910_interface	}
+		new MachineSound[] {
+			new MachineSound(	SOUND_YM3812,	starfigh_ym3812_interface	),
+			new MachineSound(	SOUND_AY8910,	starfigh_ay8910_interface	)
 		}
-	};
+	);
 	
 	
 	/***************************************************************************

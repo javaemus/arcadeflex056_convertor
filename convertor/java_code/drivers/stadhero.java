@@ -307,57 +307,57 @@ public class stadhero
 	
 	/******************************************************************************/
 	
-	static const struct MachineDriver machine_driver_stadhero =
-	{
+	static MachineDriver machine_driver_stadhero = new MachineDriver
+	(
 		/* basic machine hardware */
-		{
-			{
+		new MachineCPU[] {
+			new MachineCPU(
 				CPU_M68000,
 				10000000,
-				stadhero_readmem,stadhero_writemem,0,0,
+				stadhero_readmem,stadhero_writemem,null,null,
 				m68_level5_irq,1 /* VBL */
-			},
-			{
+			),
+			new MachineCPU(
 				CPU_M6502 | CPU_AUDIO_CPU,
 				1500000,
-				stadhero_s_readmem,stadhero_s_writemem,0,0,
+				stadhero_s_readmem,stadhero_s_writemem,null,null,
 				ignore_interrupt,0
-			}
+			)
 		},
 		58, 529,
 		1,	/* 1 CPU slice per frame - interleaving is forced when a sound command is written */
-		0,
+		null,
 	
 		/* video hardware */
-		32*8, 32*8, { 0*8, 32*8-1, 1*8, 31*8-1 },
+		32*8, 32*8, new rectangle( 0*8, 32*8-1, 1*8, 31*8-1 ),
 	
 		gfxdecodeinfo,
-		1024, 0,
-		0,
+		1024, null,
+		null,
 	
 		VIDEO_TYPE_RASTER,
-		0,
+		null,
 		stadhero_vh_start,
-		0,
+		null,
 		stadhero_vh_screenrefresh,
 	
 		/* sound hardware */
 		0,0,0,0,
-		{
-			{
+		new MachineSound[] {
+			new MachineSound(
 				SOUND_YM2203,
-				&ym2203_interface
-			},
-			{
+				ym2203_interface
+			),
+			new MachineSound(
 				SOUND_YM3812,
-				&ym3812_interface
-			},
-			{
+				ym3812_interface
+			),
+			new MachineSound(
 				SOUND_OKIM6295,
-				&okim6295_interface
-			}
+				okim6295_interface
+			)
 		}
-	};
+	);
 	
 	/******************************************************************************/
 	
