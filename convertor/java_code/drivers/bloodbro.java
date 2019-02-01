@@ -539,7 +539,7 @@ public class bloodbro
 		32*8, 32*8, new rectangle( 0*8, 32*8-1, 2*8, 30*8-1 ),
 		bloodbro_gfxdecodeinfo,
 		2048, null,
-		null,
+		0,
 	
 		VIDEO_TYPE_RASTER,
 		null,
@@ -575,7 +575,7 @@ public class bloodbro
 		32*8, 32*8, new rectangle( 0*8, 32*8-1, 2*8, 30*8-1 ),
 		bloodbro_gfxdecodeinfo,
 		2048,null,
-		null,
+		0,
 	
 		VIDEO_TYPE_RASTER,
 		null,
@@ -611,7 +611,7 @@ public class bloodbro
 		256, 256, new rectangle( 0, 255, 16, 239 ),
 		weststry_gfxdecodeinfo,
 		1024, null,
-		null,
+		0,
 	
 		VIDEO_TYPE_RASTER,
 		null,

@@ -282,7 +282,7 @@ public class route16
 		/* video hardware */									\
 		256, 256, new rectangle( 0, 256-1, 0, 256-1 ),						\
 		null,														\
-		8, null,													\
+		8, 0,													\
 		route16_vh_convert_color_prom,							\
 																\
 		VIDEO_TYPE_RASTER | VIDEO_SUPPORTS_DIRTY , \

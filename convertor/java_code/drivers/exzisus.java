@@ -401,7 +401,7 @@ public class exzisus
 		/* video hardware */
 		32*8, 32*8, new rectangle( 0*8, 32*8-1, 2*8, 30*8-1 ),
 		exzisus_gfxdecodeinfo,
-		1024, null,
+		1024, 0,
 		palette_RRRR_GGGG_BBBB_convert_prom,
 	
 		VIDEO_TYPE_RASTER,

@@ -315,7 +315,7 @@ public class munchmo
 		/* video hardware */
 		256+32+32, 256, new rectangle( 0, 255+32+32,0, 255-16 ),
 		gfxdecodeinfo,
-		256, null,
+		256, 0,
 		mnchmobl_convert_color_prom,
 	
 		VIDEO_TYPE_RASTER,

@@ -430,7 +430,7 @@ public class supbtime
 	
 		gfxdecodeinfo,
 		1024, null,
-		null,
+		0,
 	
 		VIDEO_TYPE_RASTER | VIDEO_UPDATE_BEFORE_VBLANK,
 		null,
@@ -478,7 +478,7 @@ public class supbtime
 	
 		gfxdecodeinfo,
 		1024, null,
-		null,
+		0,
 	
 		VIDEO_TYPE_RASTER | VIDEO_UPDATE_BEFORE_VBLANK,
 		null,

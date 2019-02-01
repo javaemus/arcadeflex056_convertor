@@ -789,7 +789,7 @@ public class astrocde
 		/* this isn't the case: cocktail mode would be clipped on the wrong side */
 	
 		320, 204, { 0, 320-1, 0, 204-1 },
-		null,	/* no gfxdecodeinfo - bitmapped display */
+		0,	/* no gfxdecodeinfo - bitmapped display */
 		256, null,
 		astrocde_init_palette,
 	

@@ -1357,7 +1357,7 @@ public class btime
 		/* video hardware */                                        	\
 		32*8, 32*8, new rectangle( 1*8, 31*8-1, 1*8, 31*8-1 ),                   	\
 		GFX,                                                        	\
-		COLOR, null,	                                                	\
+		COLOR, 0,	                                                	\
 		GAMENAME##_vh_convert_color_prom,                           	\
 																		\
 		VIDEO_TYPE_RASTER,      						             	\

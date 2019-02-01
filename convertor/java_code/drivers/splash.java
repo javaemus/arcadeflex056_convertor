@@ -261,7 +261,7 @@ public class splash
 		64*8, 64*8, new rectangle( 2*8, 49*8-1, 2*8, 32*8-1 ),
 		gfxdecodeinfo,
 		2048, null,
-		null,
+		0,
 	
 		VIDEO_TYPE_RASTER,
 		null,

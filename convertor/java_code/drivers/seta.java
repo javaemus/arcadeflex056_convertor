@@ -3895,7 +3895,7 @@ public class seta
 		400, 256 -16, new rectangle( 16, 400-1, 0, 256-1 -16),
 		downtown_gfxdecodeinfo,
 		512, null,
-		null,
+		0,
 	
 		VIDEO_TYPE_RASTER,
 		null,
@@ -3942,7 +3942,7 @@ public class seta
 		400, 256 -16, new rectangle( 16, 400-1, 0, 256-1 -16),
 		downtown_gfxdecodeinfo,
 		512, null,
-		null,
+		0,
 	
 		VIDEO_TYPE_RASTER,
 		null,
@@ -3987,7 +3987,7 @@ public class seta
 		400, 256 -16, new rectangle( 16, 400-1, 0, 256-1 -16),
 		downtown_gfxdecodeinfo,
 		512, null,
-		null,
+		0,
 	
 		VIDEO_TYPE_RASTER,
 		seta_buffer_sprites,	/* qzkklogy uses sprite buffering */
@@ -4237,7 +4237,7 @@ public class seta
 		400, 256 -16-8, new rectangle( 16, 400-1, 0, 256-1 -16-16 +2),
 		downtown_gfxdecodeinfo,
 		512, null,
-		null,
+		0,
 	
 		VIDEO_TYPE_RASTER,
 		null,
@@ -4521,7 +4521,7 @@ public class seta
 		400, 256 -16-8, new rectangle( 16, 400-1, 0+8, 256-1 -16-8),
 		tndrcade_gfxdecodeinfo,
 		512, null,	/* sprites only */
-		null,
+		0,
 	
 		VIDEO_TYPE_RASTER,
 		null,
@@ -4577,7 +4577,7 @@ public class seta
 		400, 256 -16, new rectangle( 16, 400-1, 0, 256-1 -16 ),
 		downtown_gfxdecodeinfo,
 		512, null,
-		null,
+		0,
 	
 		VIDEO_TYPE_RASTER,
 		null,

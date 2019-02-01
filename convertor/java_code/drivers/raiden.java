@@ -312,7 +312,7 @@ public class raiden
 		/* video hardware */
 		32*8, 32*8, new rectangle( 0*8, 32*8-1, 2*8, 30*8-1 ),
 		raiden_gfxdecodeinfo,
-		2048, null,
+		2048, 0,
 		0,
 	
 		VIDEO_TYPE_RASTER | VIDEO_BUFFERS_SPRITERAM,
@@ -355,7 +355,7 @@ public class raiden
 		/* video hardware */
 		32*8, 32*8, new rectangle( 0*8, 32*8-1, 2*8, 30*8-1 ),
 		raiden_gfxdecodeinfo,
-		2048, null,
+		2048, 0,
 		0,
 	
 		VIDEO_TYPE_RASTER | VIDEO_BUFFERS_SPRITERAM,

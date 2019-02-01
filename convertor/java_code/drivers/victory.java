@@ -420,7 +420,7 @@ public class victory
 		256, 256, new rectangle( 0, 255, 0, 255 ),
 		null,
 		64, null,
-		null,
+		0,
 	
 		VIDEO_TYPE_RASTER | VIDEO_UPDATE_BEFORE_VBLANK,
 		victory_vh_eof,

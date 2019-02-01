@@ -468,7 +468,7 @@ public class mhavoc
 	
 		/* video hardware */
 		400, 300, { 0, 300, 0, 260 },
-		null,
+		0,
 		256, null,
 		avg_init_palette_multi,
 	

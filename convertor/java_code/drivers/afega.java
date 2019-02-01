@@ -478,7 +478,7 @@ public class afega
 		256, 256, new rectangle( 0, 256-1, 0+16, 256-16-1 ),
 		stagger1_gfxdecodeinfo,
 		768, null,
-		null,
+		0,
 	
 		VIDEO_TYPE_RASTER,
 		null,

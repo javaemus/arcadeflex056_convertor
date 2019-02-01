@@ -357,7 +357,7 @@ public class rastan
 		/* video hardware */
 		40*8, 32*8, new rectangle( 0*8, 40*8-1, 1*8, 31*8-1 ),
 		gfxdecodeinfo,
-		8192, null,
+		8192, 0,
 		0,
 	
 		VIDEO_TYPE_RASTER,

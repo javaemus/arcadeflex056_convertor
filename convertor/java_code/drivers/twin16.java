@@ -1122,7 +1122,7 @@ public class twin16
 		320, 256, new rectangle( 0, 319, 0+16, 255-16 ),	\
 		gfxdecodeinfo,	\
 		0x400, null,	\
-		null,	\
+		0,	\
 		\
 		VIDEO_TYPE_RASTER,	\
 		null,	\
@@ -1182,7 +1182,7 @@ public class twin16
 		320, 256, new rectangle( 0, 319, 0+16, 255-16 ),
 		gfxdecodeinfo,
 		0x400, null,
-		null,
+		0,
 	
 		VIDEO_TYPE_RASTER,
 		null,
@@ -1232,7 +1232,7 @@ public class twin16
 		320, 256, new rectangle( 0, 319, 0+16, 255-16 ),
 		gfxdecodeinfo,
 		0x400, null,
-		null,
+		0,
 	
 		VIDEO_TYPE_RASTER,
 		null,

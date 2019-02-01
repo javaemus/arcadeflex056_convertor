@@ -1114,7 +1114,7 @@ public class exidy440
 		/* video hardware */
 		320, 240, new rectangle( 0, 319, 0, 239 ),
 		null,
-		256,null,
+		256,0,
 		0,
 	
 		VIDEO_TYPE_RASTER,

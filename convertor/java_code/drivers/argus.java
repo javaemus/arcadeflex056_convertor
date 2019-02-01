@@ -840,7 +840,7 @@ public class argus
 		32*16, 32*16, new rectangle( 0*8, 32*8-1, 2*8, 30*8-1 ),
 		argus_gfxdecodeinfo,
 		896, null,
-		null,
+		0,
 	
 		VIDEO_TYPE_RASTER,
 		null,
@@ -884,7 +884,7 @@ public class argus
 		32*16, 32*16, new rectangle( 0*8, 32*8-1, 2*8, 30*8-1 ),
 		valtric_gfxdecodeinfo,
 		768, null,
-		null,
+		0,
 	
 		VIDEO_TYPE_RASTER,
 		null,
@@ -928,7 +928,7 @@ public class argus
 		32*16, 32*16, new rectangle( 0*8, 32*8-1, 1*8, 31*8-1 ),
 		butasan_gfxdecodeinfo,
 		768, null,
-		null,
+		0,
 	
 		VIDEO_TYPE_RASTER,
 		null,

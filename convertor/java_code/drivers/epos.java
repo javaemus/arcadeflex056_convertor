@@ -208,7 +208,7 @@ public class epos
 		/* video hardware */
 		272, 241, new rectangle( 0, 271, 0, 235 ),	/* an unusual resolution */
 		null,
-		32, null,
+		32, 0,
 		epos_vh_convert_color_prom,
 	
 		VIDEO_TYPE_RASTER,

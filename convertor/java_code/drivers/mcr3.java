@@ -1323,7 +1323,7 @@ public class mcr3
 		32*16, 30*16, new rectangle( 0*16, 32*16-1, 0*16, 30*16-1 ),
 		gfxdecodeinfo,
 		64, null,
-		null,
+		0,
 	
 		VIDEO_TYPE_RASTER | VIDEO_UPDATE_BEFORE_VBLANK,
 		null,
@@ -1356,7 +1356,7 @@ public class mcr3
 		/* video hardware */
 		684, 642, new rectangle( 0, 684-1, 0, 642-1 ),
 		gfxdecodeinfo,
-		64+32768, null,		/* The extra colors are for the backdrop */
+		64+32768, 0,		/* The extra colors are for the backdrop */
 		0,
 	
 		VIDEO_TYPE_RASTER | VIDEO_UPDATE_BEFORE_VBLANK,
@@ -1391,7 +1391,7 @@ public class mcr3
 		32*16, 30*16, new rectangle( 0*16, 32*16-1, 0*16, 30*16-1 ),
 		gfxdecodeinfo,
 		64, null,
-		null,
+		0,
 	
 		VIDEO_TYPE_RASTER | VIDEO_UPDATE_BEFORE_VBLANK,
 		null,
@@ -1425,7 +1425,7 @@ public class mcr3
 		32*16, 30*16, new rectangle( 0*16, 32*16-1, 0*16, 30*16-1 ),
 		gfxdecodeinfo,
 		64, null,
-		null,
+		0,
 	
 		VIDEO_TYPE_RASTER | VIDEO_UPDATE_BEFORE_VBLANK,
 		null,
@@ -1458,7 +1458,7 @@ public class mcr3
 		32*16, 30*16, new rectangle( 0*16, 32*16-1, 0*16, 30*16-1 ),
 		gfxdecodeinfo,
 		64, null,
-		null,
+		0,
 	
 		VIDEO_TYPE_RASTER | VIDEO_UPDATE_BEFORE_VBLANK,
 		null,

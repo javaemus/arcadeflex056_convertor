@@ -114,7 +114,7 @@ public class ladyfrog
 		/* video hardware */
 		256, 256, new rectangle( 0, 256-1, 0, 256-1 ),
 		gfxdecodeinfo,
-		1024, null,
+		1024, 0,
 		0,
 	
 		VIDEO_TYPE_RASTER,

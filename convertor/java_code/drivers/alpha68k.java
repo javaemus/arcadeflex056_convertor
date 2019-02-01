@@ -1570,7 +1570,7 @@ public class alpha68k
 	
 		alpha68k_II_gfxdecodeinfo,
 		2048, null,
-		null,
+		0,
 	
 		VIDEO_TYPE_RASTER,
 		null,
@@ -1623,7 +1623,7 @@ public class alpha68k
 	
 		alpha68k_V_gfxdecodeinfo,
 		4096, null,
-		null,
+		0,
 	
 		VIDEO_TYPE_RASTER,
 		null,
@@ -1676,7 +1676,7 @@ public class alpha68k
 	
 		alpha68k_V_gfxdecodeinfo,
 		4096, null,
-		null,
+		0,
 	
 		VIDEO_TYPE_RASTER,
 		null,

@@ -493,7 +493,7 @@ public class wmstunit
 		512, 288, new rectangle( 56, 450, 0, 253 ),
 	
 		null,
-		32768, null,
+		32768, 0,
 		0,
 	
 		VIDEO_TYPE_RASTER,
@@ -531,7 +531,7 @@ public class wmstunit
 		512, 288, new rectangle( 56, 450, 0, 253 ),
 	
 		null,
-		32768, null,
+		32768, 0,
 		0,
 	
 		VIDEO_TYPE_RASTER,

@@ -565,7 +565,7 @@ public class sidearms
 		/* video hardware */
 		64*8, 32*8, new rectangle( 8*8, (64-8)*8-1, 2*8, 30*8-1 ),
 		gfxdecodeinfo,
-		1024, null,
+		1024, 0,
 		0,
 	
 		VIDEO_TYPE_RASTER,
@@ -608,7 +608,7 @@ public class sidearms
 		/* video hardware */
 		64*8, 32*8, new rectangle( 8*8, (64-8)*8-1, 2*8, 30*8-1 ),
 		turtship_gfxdecodeinfo,
-		1024, null,
+		1024, 0,
 		0,
 	
 		VIDEO_TYPE_RASTER,

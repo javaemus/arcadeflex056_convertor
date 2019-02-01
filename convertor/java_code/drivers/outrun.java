@@ -1085,7 +1085,7 @@ public class outrun
 		40*8, 28*8, new rectangle( 0*8, 40*8-1, 0*8, 28*8-1 ), \
 		sys16_gfxdecodeinfo, \
 		4096*ShadowColorsMultiplier, null, \
-		null, \
+		0, \
 		VIDEO_TYPE_RASTER | VIDEO_UPDATE_AFTER_VBLANK, \
 		null, \
 		sys16_outrun_vh_start, \
@@ -1331,7 +1331,7 @@ public class outrun
 		40*8, 28*8, new rectangle( 0*8, 40*8-1, 0*8, 28*8-1 ),
 		sys16_gfxdecodeinfo,
 		2048*ShadowColorsMultiplier, null,
-		null,
+		0,
 		VIDEO_TYPE_RASTER,
 		null,
 		sys16_hangon_vh_start,

@@ -219,7 +219,7 @@ public class system32
 		40*8, 28*8, new rectangle( 0*8, 40*8-1, 0*8, 28*8-1 ),
 		null,
 		16384, null,
-		null,
+		0,
 		VIDEO_TYPE_RASTER | VIDEO_UPDATE_AFTER_VBLANK,
 		null,
 		system32_vh_start,

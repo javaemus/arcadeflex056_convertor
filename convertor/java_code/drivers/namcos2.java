@@ -1155,7 +1155,7 @@ public class namcos2
 		36*8, 28*8, new rectangle( 0*8, 36*8-1, 0*8, 28*8-1 ),
 		gfxdecodeinfo,
 		VIRTUAL_PALETTE_BANKS*256, null,	/* virtual palette (physical palette has 8192 colors) */
-		null,
+		0,
 		VIDEO_TYPE_RASTER | VIDEO_NEEDS_6BITS_PER_GUN,
 	
 		null,
@@ -1223,7 +1223,7 @@ public class namcos2
 		36*8, 28*8, new rectangle( 0*8, 36*8-1, 0*8, 28*8-1 ),
 		gfxdecodeinfo,
 		VIRTUAL_PALETTE_BANKS*256, null,	/* virtual palette (physical palette has 8192 colors) */
-		null,
+		0,
 		VIDEO_TYPE_RASTER | VIDEO_NEEDS_6BITS_PER_GUN,
 	
 		null,
@@ -1291,7 +1291,7 @@ public class namcos2
 		36*8, 28*8, new rectangle( 0*8, 36*8-1, 0*8, 28*8-1 ),
 		gfxdecodeinfo,
 		VIRTUAL_PALETTE_BANKS*256, null,	/* virtual palette (physical palette has 8192 colors) */
-		null,
+		0,
 		VIDEO_TYPE_RASTER | VIDEO_NEEDS_6BITS_PER_GUN,
 	
 		null,

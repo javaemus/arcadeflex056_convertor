@@ -372,7 +372,7 @@ public class atetris
 		42*8, 30*8, new rectangle( 0*8, 42*8-1, 0*8, 30*8-1 ),
 		gfxdecodeinfo,
 		256, null,
-		null,
+		0,
 	
 		VIDEO_TYPE_RASTER | VIDEO_SUPPORTS_DIRTY,
 		null,

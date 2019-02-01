@@ -1077,7 +1077,7 @@ public class neogeo
 		40*8, 32*8, new rectangle( 1*8, 39*8-1, 2*8, 30*8-1 ),
 		neogeo_mvs_gfxdecodeinfo,
 		4096, null,
-		null,
+		0,
 	
 		/* please don't put VIDEO_SUPPRTS_16BIT in all games. It is stupid, because */
 		/* most games don't need it. Only put it in games that use more than 256 colors */
@@ -1122,7 +1122,7 @@ public class neogeo
 		40*8, 32*8, new rectangle( 1*8, 39*8-1, FIRST_VISIBLE_LINE, LAST_VISIBLE_LINE ),
 		neogeo_mvs_gfxdecodeinfo,
 		4096, null,
-		null,
+		0,
 	
 		VIDEO_TYPE_RASTER | VIDEO_RGB_DIRECT,
 		null,
@@ -1164,7 +1164,7 @@ public class neogeo
 		40*8, 32*8, new rectangle( 1*8, 39*8-1, FIRST_VISIBLE_LINE, LAST_VISIBLE_LINE ),
 		neogeo_mvs_gfxdecodeinfo,
 		4096, null,
-		null,
+		0,
 	
 		VIDEO_TYPE_RASTER | VIDEO_RGB_DIRECT,
 		null,

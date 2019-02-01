@@ -737,7 +737,7 @@ public class wmsyunit
 	    512, 432, new rectangle( 0, 511, 27, 427 ),
 	
 		null,
-		8192, null,
+		8192, 0,
 		0,
 	
 		VIDEO_TYPE_RASTER,
@@ -783,7 +783,7 @@ public class wmsyunit
 		512, 288, new rectangle( 0, 399, 20, 274 ),
 	
 		null,
-		256, null,
+		256, 0,
 		0,
 	
 		VIDEO_TYPE_RASTER,
@@ -822,7 +822,7 @@ public class wmsyunit
 		512, 288, new rectangle( 0, 399, 20, 274 ),
 	
 		null,
-		4096, null,
+		4096, 0,
 		0,
 	
 		VIDEO_TYPE_RASTER,
@@ -861,7 +861,7 @@ public class wmsyunit
 		512, 304, new rectangle( 0, 399, 27, 282 ),
 	
 		null,
-		4096, null,
+		4096, 0,
 	    0,
 	
 	    VIDEO_TYPE_RASTER,

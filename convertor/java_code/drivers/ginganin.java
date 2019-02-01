@@ -410,7 +410,7 @@ public class ginganin
 		256, 256, new rectangle( 0, 255, 0 + 16 , 255 - 16 ),
 		gfxdecodeinfo,
 		1024, null,
-		null,
+		0,
 	
 		VIDEO_TYPE_RASTER,
 		null,

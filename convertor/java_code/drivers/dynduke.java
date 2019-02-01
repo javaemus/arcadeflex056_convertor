@@ -284,7 +284,7 @@ public class dynduke
 		32*8, 32*8, new rectangle( 0*8, 32*8-1, 2*8, 30*8-1 ),
 	
 		dynduke_gfxdecodeinfo,
-		2048+1024, null,	/* 2048 real palette, 1024 for transparency kludge */
+		2048+1024, 0,	/* 2048 real palette, 1024 for transparency kludge */
 		null,
 	
 		VIDEO_TYPE_RASTER | VIDEO_BUFFERS_SPRITERAM,

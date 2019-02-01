@@ -4791,7 +4791,7 @@ public class taito_f2
 		40*8, 32*8, new rectangle( 0*8, 40*8-1, 2*8, 30*8-1 ),										\
 																						\
 		GFX##_gfxdecodeinfo,															\
-		MAXCOLS, null,																		\
+		MAXCOLS, 0,																		\
 		0,																				\
 																						\
 		VIDEO_TYPE_RASTER,										\
@@ -4873,7 +4873,7 @@ public class taito_f2
 		40*8, 32*8, new rectangle( 0*8, 40*8-1, 2*8, 30*8-1 ),
 	
 		pivot_gfxdecodeinfo,
-		4096, null,
+		4096, 0,
 		0,
 	
 		VIDEO_TYPE_RASTER,
@@ -4917,7 +4917,7 @@ public class taito_f2
 		40*8, 32*8, new rectangle( 0*8, 40*8-1, 2*8, 30*8-1 ),
 	
 		pivot_gfxdecodeinfo,
-		4096, null,
+		4096, 0,
 		0,
 	
 		VIDEO_TYPE_RASTER,

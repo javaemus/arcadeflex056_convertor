@@ -344,7 +344,7 @@ public class tumblep
 	
 		gfxdecodeinfo,
 		1024, null,
-		null,
+		0,
 	
 		VIDEO_TYPE_RASTER,
 		null,
@@ -386,7 +386,7 @@ public class tumblep
 	
 		gfxdecodeinfo,
 		1024, null,
-		null,
+		0,
 	
 		VIDEO_TYPE_RASTER,
 		null,

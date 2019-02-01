@@ -333,7 +333,7 @@ public class stadhero
 	
 		gfxdecodeinfo,
 		1024, null,
-		null,
+		0,
 	
 		VIDEO_TYPE_RASTER,
 		null,

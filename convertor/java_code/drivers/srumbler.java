@@ -304,7 +304,7 @@ public class srumbler
 		64*8, 32*8, new rectangle( 10*8, (64-10)*8-1, 1*8, 31*8-1 ),
 	
 		gfxdecodeinfo,
-		512, null,
+		512, 0,
 		0,
 	
 		VIDEO_TYPE_RASTER | VIDEO_BUFFERS_SPRITERAM,

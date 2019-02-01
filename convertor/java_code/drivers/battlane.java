@@ -327,7 +327,7 @@ public class battlane
 		/* video hardware */
 		32*8, 32*8, new rectangle( 1*8, 31*8-1, 1*8, 31*8-1 ),       /* not sure */
 		gfxdecodeinfo,
-		64, null,
+		64, 0,
 		NULL,
 	
 		VIDEO_TYPE_RASTER,

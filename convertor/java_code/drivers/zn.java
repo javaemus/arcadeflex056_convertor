@@ -250,7 +250,7 @@ public class zn
 		0x30*8+32*2, 0x1c*8+32*3, new rectangle( 32, 32+0x30*8-1, 32+16, 32+16+0x1c*8-1 ),
 		znqs_gfxdecodeinfo,
 		4096, null,
-		null,
+		0,
 	
 		VIDEO_TYPE_RASTER,
 		null,

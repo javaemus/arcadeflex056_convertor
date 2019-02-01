@@ -240,7 +240,7 @@ public class dcon
 		40*8, 32*8, new rectangle( 0*8, 40*8-1, 0*8, 28*8-1 ),
 	
 		dcon_gfxdecodeinfo,
-		2048, null,
+		2048, 0,
 		0,
 	
 		VIDEO_TYPE_RASTER,

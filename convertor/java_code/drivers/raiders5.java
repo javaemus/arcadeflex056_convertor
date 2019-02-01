@@ -284,7 +284,7 @@ public class raiders5
 	
 		gfxdecodeinfo,
 		768, null,
-		null,
+		0,
 	
 		VIDEO_TYPE_RASTER,
 		null,

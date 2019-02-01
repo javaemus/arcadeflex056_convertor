@@ -365,8 +365,8 @@ public class relief
 		/* video hardware */
 		42*8, 30*8, new rectangle( 0*8, 42*8-1, 0*8, 30*8-1 ),
 		gfxdecodeinfo,
-		2048, 2048,	/* can't make colortable_len = null because of 0xffff transparency kludge */
-		null,
+		2048, 2048,	/* can't make colortable_len = 0 because of 0xffff transparency kludge */
+		0,
 	
 		VIDEO_TYPE_RASTER | VIDEO_NEEDS_6BITS_PER_GUN | VIDEO_UPDATE_BEFORE_VBLANK,
 		null,

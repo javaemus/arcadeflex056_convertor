@@ -2232,7 +2232,7 @@ public class bjtwin
 		256, 256, new rectangle( 0*8, 32*8-1, 2*8, 30*8-1 ),
 		macross_gfxdecodeinfo,
 		1024, null,
-		null,
+		0,
 	
 		VIDEO_TYPE_RASTER,
 		nmk_eof_callback,
@@ -2269,7 +2269,7 @@ public class bjtwin
 		256, 256, new rectangle( 0*8, 32*8-1, 2*8, 30*8-1 ),
 		macross_gfxdecodeinfo,
 		1024, null,
-		null,
+		0,
 	
 		VIDEO_TYPE_RASTER,
 		nmk_eof_callback,
@@ -2313,7 +2313,7 @@ public class bjtwin
 		256, 256, new rectangle( 0*8, 32*8-1, 2*8, 30*8-1 ),
 		tharrier_gfxdecodeinfo,
 		512, null,
-		null,
+		0,
 	
 		VIDEO_TYPE_RASTER,
 		nmk_eof_callback,
@@ -2360,7 +2360,7 @@ public class bjtwin
 		256, 256, new rectangle( 0*8, 32*8-1, 2*8, 30*8-1 ),
 		macross_gfxdecodeinfo,
 		1024, null,
-		null,
+		0,
 	
 		VIDEO_TYPE_RASTER,
 		nmk_eof_callback,
@@ -2401,7 +2401,7 @@ public class bjtwin
 		256, 256, new rectangle( 0*8, 32*8-1, 2*8, 30*8-1 ),
 		macross_gfxdecodeinfo,
 		1024, null,
-		null,
+		0,
 	
 		VIDEO_TYPE_RASTER,
 		nmk_eof_callback,
@@ -2439,7 +2439,7 @@ public class bjtwin
 		256, 256, new rectangle( 0*8, 32*8-1, 2*8, 30*8-1 ),
 		bioship_gfxdecodeinfo,
 		1024, null,
-		null,
+		0,
 	
 		VIDEO_TYPE_RASTER,
 		nmk_eof_callback,
@@ -2477,7 +2477,7 @@ public class bjtwin
 		256, 256, new rectangle( 0*8, 32*8-1, 2*8, 30*8-1 ),
 		macross_gfxdecodeinfo,
 		1024, null,
-		null,
+		0,
 	
 		VIDEO_TYPE_RASTER,
 		nmk_eof_callback,
@@ -2514,7 +2514,7 @@ public class bjtwin
 		256, 256, new rectangle( 0*8, 32*8-1, 2*8, 30*8-1 ),
 		strahl_gfxdecodeinfo,
 		1024, null,
-		null,
+		0,
 	
 		VIDEO_TYPE_RASTER,
 		nmk_eof_callback,
@@ -2552,7 +2552,7 @@ public class bjtwin
 		256, 256, new rectangle( 0*8, 32*8-1, 2*8, 30*8-1 ),
 		macross_gfxdecodeinfo,
 		1024, null,
-		null,
+		0,
 	
 		VIDEO_TYPE_RASTER,
 		nmk_eof_callback,
@@ -2590,7 +2590,7 @@ public class bjtwin
 		256, 256, new rectangle( 0*8, 32*8-1, 2*8, 30*8-1 ),
 		macross_gfxdecodeinfo,
 		1024, null,
-		null,
+		0,
 	
 		VIDEO_TYPE_RASTER,
 		nmk_eof_callback,
@@ -2628,7 +2628,7 @@ public class bjtwin
 		512, 256, new rectangle( 0*8, 48*8-1, 2*8, 30*8-1 ),
 		macross_gfxdecodeinfo,
 		1024, null,
-		null,
+		0,
 	
 		VIDEO_TYPE_RASTER,
 		nmk_eof_callback,
@@ -2671,7 +2671,7 @@ public class bjtwin
 		512, 256, new rectangle( 0*8, 48*8-1, 2*8, 30*8-1 ),
 		macross2_gfxdecodeinfo,
 		1024, null,
-		null,
+		0,
 	
 		VIDEO_TYPE_RASTER,
 		nmk_eof_callback,
@@ -2712,7 +2712,7 @@ public class bjtwin
 		512, 256, new rectangle( 0*8, 48*8-1, 2*8, 30*8-1 ),
 		bjtwin_gfxdecodeinfo,
 		1024, null,
-		null,
+		0,
 	
 		VIDEO_TYPE_RASTER,
 		nmk_eof_callback,

@@ -446,7 +446,7 @@ public class wwfwfest
 		320, 256, new rectangle( 0, 319, 1*8, 31*8-1 ),
 		gfxdecodeinfo,
 		8192, null,
-		null,
+		0,
 	
 		VIDEO_TYPE_RASTER | VIDEO_BUFFERS_SPRITERAM,
 		wwfwfest_eof_callback,

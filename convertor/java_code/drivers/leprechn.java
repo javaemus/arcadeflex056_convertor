@@ -325,7 +325,7 @@ public class leprechn
 	    /* video hardware */
 	    256, 256, new rectangle( 0, 256-1, 0, 256-1 ),
 	    null,
-	    sizeof(palette) / sizeof(palette[null]) / 3, null,
+	    sizeof(palette) / sizeof(palette[null]) / 3, 0,
 	    init_palette,
 	
 	    VIDEO_TYPE_RASTER | VIDEO_SUPPORTS_DIRTY,

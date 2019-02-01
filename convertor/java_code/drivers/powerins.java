@@ -297,7 +297,7 @@ public class powerins
 		320, 256, new rectangle( 0, 320-1, 0+16, 256-16-1 ),
 		powerins_gfxdecodeinfo,
 		2048, null,
-		null,
+		0,
 	
 		VIDEO_TYPE_RASTER,
 		null,

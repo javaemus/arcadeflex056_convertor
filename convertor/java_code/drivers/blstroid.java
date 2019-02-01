@@ -236,7 +236,7 @@ public class blstroid
 		40*16, 30*8, new rectangle( 0*8, 40*16-1, 0*8, 30*8-1 ),
 		gfxdecodeinfo,
 		512, null,
-		null,
+		0,
 	
 		VIDEO_TYPE_RASTER | VIDEO_UPDATE_BEFORE_VBLANK |
 				VIDEO_PIXEL_ASPECT_RATIO_1_2,

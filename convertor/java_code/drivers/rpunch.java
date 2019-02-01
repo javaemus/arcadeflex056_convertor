@@ -658,7 +658,7 @@ public class rpunch
 		304, 224, new rectangle( 8, 303-8, 0, 223-8 ),
 		gfxdecodeinfo,
 		1024, null,
-		null,
+		0,
 	
 		VIDEO_TYPE_RASTER,
 		null,

@@ -325,7 +325,7 @@ public class clshroad
 		0x120, 0x100, new rectangle( 0, 0x120-1, 0x0+16, 0x100-16-1 ),
 		clshroad_gfxdecodeinfo,
 		256, null,
-		null,
+		0,
 	
 		VIDEO_TYPE_RASTER,
 		null,

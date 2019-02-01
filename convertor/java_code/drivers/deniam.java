@@ -369,7 +369,7 @@ public class deniam
 		/* video hardware */
 		512, 256, new rectangle( 24*8, 64*8-1, 0*8, 28*8-1 ),
 		gfxdecodeinfo,
-		2048, null,
+		2048, 0,
 		0,
 	
 		VIDEO_TYPE_RASTER,

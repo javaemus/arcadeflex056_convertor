@@ -372,7 +372,7 @@ public class tutankhm
 		/* video hardware */
 		32*8, 32*8, new rectangle( 0*8, 32*8-1, 2*8, 30*8-1 ),	/* not sure about the visible area */
 		null,					/* GfxDecodeInfo * */
-		16, null,
+		16, 0,
 		0,
 	
 		VIDEO_TYPE_RASTER,

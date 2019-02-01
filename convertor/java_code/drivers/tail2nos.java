@@ -307,7 +307,7 @@ public class tail2nos
 		/* video hardware */
 		64*8, 32*8, new rectangle( 0*8, 40*8-1, 1*8, 31*8-1 ),
 		tail2nos_gfxdecodeinfo,
-		2048, null,
+		2048, 0,
 		0,
 	
 		VIDEO_TYPE_RASTER,

@@ -2369,7 +2369,7 @@ public class kaneko16
 		320, 240, new rectangle( 0, 320-1, 0, 240-1 ),
 		kaneko16_gfx_1x8bit_2x4bit,
 		32768, null,
-		null,
+		0,
 	
 		VIDEO_TYPE_RASTER | VIDEO_UPDATE_AFTER_VBLANK,
 		null,
@@ -2407,7 +2407,7 @@ public class kaneko16
 		256, 256, new rectangle( 0, 256-1, 0+16, 256-16-1),
 		kaneko16_gfx_1x4bit_2x4bit,
 		2048, null,
-		null,
+		0,
 	
 		VIDEO_TYPE_RASTER | VIDEO_UPDATE_AFTER_VBLANK,
 		null,
@@ -2475,7 +2475,7 @@ public class kaneko16
 		256, 256, new rectangle( 0, 256-1, 0+16, 256-16-1 ),
 		sandscrp_gfxdecodeinfo,
 		2048, null,
-		null,
+		0,
 	
 		VIDEO_TYPE_RASTER,
 		sandscrp_eof_callback,
@@ -2538,7 +2538,7 @@ public class kaneko16
 		320, 240, new rectangle( 0, 320-1, 0, 240-1 ),
 		kaneko16_gfx_1x4bit_1x4bit,
 		2048, null,
-		null,
+		0,
 	
 		VIDEO_TYPE_RASTER,
 		null,

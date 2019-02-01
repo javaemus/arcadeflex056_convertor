@@ -2071,7 +2071,7 @@ public class m72
 		/* video hardware */
 		512, 512, new rectangle( 8*8, (64-8)*8-1, 16*8, (64-16)*8-1 ),
 		m72_gfxdecodeinfo,
-		512, null,
+		512, 0,
 		0,
 	
 		VIDEO_TYPE_RASTER,
@@ -2115,7 +2115,7 @@ public class m72
 		/* video hardware */
 		512, 512, new rectangle( 8*8, (64-8)*8-1, 16*8, (64-16)*8-1 ),
 		m72_gfxdecodeinfo,
-		512, null,
+		512, 0,
 		0,
 	
 		VIDEO_TYPE_RASTER,
@@ -2163,7 +2163,7 @@ public class m72
 		/* video hardware */
 		512, 512, new rectangle( 8*8, (64-8)*8-1, 16*8, (64-16)*8-1 ),
 		m72_gfxdecodeinfo,
-		512, null,
+		512, 0,
 		0,
 	
 		VIDEO_TYPE_RASTER,
@@ -2211,7 +2211,7 @@ public class m72
 		/* video hardware */
 		512, 512, new rectangle( 8*8, (64-8)*8-1, 16*8, (64-16)*8-1 ),
 		m72_gfxdecodeinfo,
-		512, null,
+		512, 0,
 		0,
 	
 		VIDEO_TYPE_RASTER,
@@ -2259,7 +2259,7 @@ public class m72
 		/* video hardware */
 		512, 512, new rectangle( 8*8, (64-8)*8-1, 16*8, (64-16)*8-1 ),
 		m72_gfxdecodeinfo,
-		512, null,
+		512, 0,
 		0,
 	
 		VIDEO_TYPE_RASTER,
@@ -2307,7 +2307,7 @@ public class m72
 		/* video hardware */
 		512, 512, new rectangle( 8*8, (64-8)*8-1, 16*8, (64-16)*8-1 ),
 		rtype2_gfxdecodeinfo,
-		512, null,
+		512, 0,
 		0,
 	
 		VIDEO_TYPE_RASTER,
@@ -2355,7 +2355,7 @@ public class m72
 		/* video hardware */
 		512, 512, new rectangle( 8*8, (64-8)*8-1, 16*8, (64-16)*8-1 ),
 		majtitle_gfxdecodeinfo,
-		512, null,
+		512, 0,
 		0,
 	
 		VIDEO_TYPE_RASTER,
@@ -2403,7 +2403,7 @@ public class m72
 		/* video hardware */
 		512, 512, new rectangle( 8*8, (64-8)*8-1, 16*8, (64-16)*8-1 ),
 		rtype2_gfxdecodeinfo,
-		512, null,
+		512, 0,
 		0,
 	
 		VIDEO_TYPE_RASTER,
@@ -2451,7 +2451,7 @@ public class m72
 		/* video hardware */
 		512, 512, new rectangle( 8*8, (64-8)*8-1, 16*8, (64-16)*8-1 ),
 		rtype2_gfxdecodeinfo,
-		512, null,
+		512, 0,
 		0,
 	
 		VIDEO_TYPE_RASTER,
@@ -2499,7 +2499,7 @@ public class m72
 		/* video hardware */
 		512, 512, new rectangle( 8*8, (64-8)*8-1, 16*8, (64-16)*8-1 ),
 		rtype2_gfxdecodeinfo,
-		512, null,
+		512, 0,
 		0,
 	
 		VIDEO_TYPE_RASTER,
@@ -2547,7 +2547,7 @@ public class m72
 		/* video hardware */
 		512, 512, new rectangle( 8*8, (64-8)*8-1, 16*8, (64-16)*8-1 ),
 		rtype2_gfxdecodeinfo,
-		512, null,
+		512, 0,
 		0,
 	
 		VIDEO_TYPE_RASTER,

@@ -317,7 +317,7 @@ public class flkatck
 		37*8, 32*8, new rectangle( 0*8, 35*8-1, 2*8, 30*8-1 ),
 		gfxdecodeinfo,
 		512, null,
-		null,
+		0,
 		VIDEO_TYPE_RASTER,
 		null,
 		flkatck_vh_start,

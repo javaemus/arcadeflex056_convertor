@@ -257,7 +257,7 @@ public class citycon
 		/* video hardware */
 		32*8, 32*8, new rectangle( 1*8, 31*8-1, 2*8, 30*8-1 ),
 		gfxdecodeinfo,
-		640+1024, null,	/* 640 real palette + 1024 virtual palette */
+		640+1024, 0,	/* 640 real palette + 1024 virtual palette */
 		0,
 	
 		VIDEO_TYPE_RASTER,

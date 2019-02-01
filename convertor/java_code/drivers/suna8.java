@@ -1708,7 +1708,7 @@ public class suna8
 		256, 256, new rectangle( 0, 256-1, 0+16, 256-16-1 ),
 		suna8_gfxdecodeinfo,
 		256, null,
-		null,
+		0,
 	
 		VIDEO_TYPE_RASTER,
 		null,
@@ -1771,7 +1771,7 @@ public class suna8
 		256, 256, new rectangle( 0, 256-1, 0+16, 256-16-1 ),
 		suna8_gfxdecodeinfo,
 		256, null,
-		null,
+		0,
 	
 		VIDEO_TYPE_RASTER,
 		null,
@@ -1859,7 +1859,7 @@ public class suna8
 		256, 256, new rectangle( 0, 256-1, 0+16, 256-16-1 ),
 		suna8_gfxdecodeinfo,
 		512, null,
-		null,
+		0,
 	
 		VIDEO_TYPE_RASTER,
 		null,
@@ -1927,7 +1927,7 @@ public class suna8
 		256, 256, new rectangle( 0, 256-1, 0+16, 256-16-1 ),
 		suna8_gfxdecodeinfo,
 		256, null,
-		null,
+		0,
 	
 		VIDEO_TYPE_RASTER,
 		null,
@@ -1997,7 +1997,7 @@ public class suna8
 		256, 256, new rectangle( 0, 256-1, 0+16, 256-16-1 ),
 		suna8_gfxdecodeinfo,
 		256, null,
-		null,
+		0,
 	
 		VIDEO_TYPE_RASTER,
 		null,

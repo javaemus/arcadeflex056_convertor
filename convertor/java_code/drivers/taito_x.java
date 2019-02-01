@@ -999,7 +999,7 @@ public class taito_x
 		52*8, 32*8, new rectangle( 2*8, 50*8-1, 2*8, 32*8-1 ),
 	
 		superman_gfxdecodeinfo,
-		2048, null,
+		2048, 0,
 		0,
 	
 		VIDEO_TYPE_RASTER,

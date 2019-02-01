@@ -501,7 +501,7 @@ public class brkthru
 		/* video hardware */
 		32*8, 32*8, new rectangle( 1*8, 31*8-1, 1*8, 31*8-1 ),	/* not sure */
 		gfxdecodeinfo,
-		256, null,
+		256, 0,
 		brkthru_vh_convert_color_prom,
 	
 		VIDEO_TYPE_RASTER,
@@ -560,7 +560,7 @@ public class brkthru
 		/* video hardware */
 		32*8, 32*8, new rectangle( 1*8, 31*8-1, 1*8, 31*8-1 ),
 		gfxdecodeinfo,
-		256, null,
+		256, 0,
 		brkthru_vh_convert_color_prom,
 	
 		VIDEO_TYPE_RASTER,

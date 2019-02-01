@@ -477,7 +477,7 @@ public class seicross
 		/* video hardware */																\
 		32*8, 32*8, new rectangle( 0*8, 32*8-1, 2*8, 30*8-1 ),											\
 		gfxdecodeinfo,																		\
-		64, null,																				\
+		64, 0,																				\
 		seicross_vh_convert_color_prom,														\
 																							\
 		VIDEO_TYPE_RASTER,																	\

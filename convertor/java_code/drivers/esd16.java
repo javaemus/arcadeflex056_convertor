@@ -350,7 +350,7 @@ public class esd16
 		0x140, 0x100, new rectangle( 0, 0x140-1, 0+8, 0x100-8-1 ),
 		esd16_gfxdecodeinfo,
 		768, null,
-		null,
+		0,
 	
 		VIDEO_TYPE_RASTER,
 		null,

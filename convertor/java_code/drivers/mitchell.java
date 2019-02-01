@@ -990,7 +990,7 @@ public class mitchell
 	
 		64*8, 32*8, new rectangle( 8*8, (64-8)*8-1, 1*8, 31*8-1 ),
 		mgakuen_gfxdecodeinfo,
-		1024, null,	/* less colors than the others */
+		1024, 0,	/* less colors than the others */
 		0,
 		VIDEO_TYPE_RASTER,
 		null,
@@ -1028,7 +1028,7 @@ public class mitchell
 	
 		64*8, 32*8, new rectangle( 8*8, (64-8)*8-1, 1*8, 31*8-1 ),
 		gfxdecodeinfo,
-		2048, null,
+		2048, 0,
 		0,
 		VIDEO_TYPE_RASTER,
 		null,
@@ -1066,7 +1066,7 @@ public class mitchell
 	
 		64*8, 32*8, new rectangle( 8*8, (64-8)*8-1, 1*8, 31*8-1 ),
 		marukin_gfxdecodeinfo,
-		2048, null,
+		2048, 0,
 		0,
 		VIDEO_TYPE_RASTER,
 		null,

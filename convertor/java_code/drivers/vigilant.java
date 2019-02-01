@@ -457,7 +457,7 @@ public class vigilant
 		/* video hardware */
 		64*8, 32*8, new rectangle( 16*8, (64-16)*8-1, 0*8, 32*8-1 ),
 		vigilant_gfxdecodeinfo,
-		512+32, null,	/* 512 real palette, 32 virtual palette */
+		512+32, 0,	/* 512 real palette, 32 virtual palette */
 		null, /* no color prom */
 	
 		VIDEO_TYPE_RASTER,
@@ -505,7 +505,7 @@ public class vigilant
 		/* video hardware */
 		64*8, 32*8, new rectangle( 8*8, (64-8)*8-1, 0*8, 32*8-1 ),
 		kikcubic_gfxdecodeinfo,
-		256, null,
+		256, 0,
 		0,
 	
 		VIDEO_TYPE_RASTER,

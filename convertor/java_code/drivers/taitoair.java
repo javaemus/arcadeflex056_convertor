@@ -571,7 +571,7 @@ public class taitoair
 		64*16, 64*16, new rectangle( 0*16, 32*16-1, 3*16, 28*16-1 ),
 		airsys_gfxdecodeinfo,
 		512*16, null,
-		null,
+		0,
 	
 		VIDEO_TYPE_RASTER,
 		null,

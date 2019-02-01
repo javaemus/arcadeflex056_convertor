@@ -1448,7 +1448,7 @@ public class tnzs
 		/* video hardware */
 		32*8, 32*8, new rectangle( 0*8, 32*8-1, 2*8, 30*8-1 ),
 		arknoid2_gfxdecodeinfo,
-		512, null,
+		512, 0,
 		arknoid2_vh_convert_color_prom,
 	
 		VIDEO_TYPE_RASTER,
@@ -1491,7 +1491,7 @@ public class tnzs
 		/* video hardware */
 		32*8, 32*8, new rectangle( 0*8, 32*8-1, 2*8, 30*8-1 ),
 		tnzs_gfxdecodeinfo,
-		512, null,
+		512, 0,
 		arknoid2_vh_convert_color_prom,
 	
 		VIDEO_TYPE_RASTER,
@@ -1535,7 +1535,7 @@ public class tnzs
 		/* video hardware */
 		32*8, 32*8, new rectangle( 0*8, 32*8-1, 2*8, 30*8-1 ),
 		tnzs_gfxdecodeinfo,
-		512, null,
+		512, 0,
 		0,
 	
 		VIDEO_TYPE_RASTER,
@@ -1585,7 +1585,7 @@ public class tnzs
 		/* video hardware */
 		32*8, 32*8, new rectangle( 0*8, 32*8-1, 2*8, 30*8-1 ),
 		tnzs_gfxdecodeinfo,
-		512, null,
+		512, 0,
 		0,
 	
 		VIDEO_TYPE_RASTER,
@@ -1629,7 +1629,7 @@ public class tnzs
 		/* video hardware */
 		32*8, 32*8, new rectangle( 0*8, 32*8-1, 2*8, 30*8-1 ),
 		insectx_gfxdecodeinfo,
-		512, null,
+		512, 0,
 		0,
 	
 		VIDEO_TYPE_RASTER,
@@ -1672,7 +1672,7 @@ public class tnzs
 		/* video hardware */
 		32*8, 32*8, new rectangle( 0*8, 32*8-1, 2*8, 30*8-1 ),
 		tnzs_gfxdecodeinfo,
-		512, null,
+		512, 0,
 		0,
 	
 		VIDEO_TYPE_RASTER,

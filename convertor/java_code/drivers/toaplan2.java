@@ -3142,7 +3142,7 @@ public class toaplan2
 		/* video hardware */
 		32*16, 32*16, new rectangle( 0, 319, 0, 239 ),
 		gfxdecodeinfo,
-		2048, null,
+		2048, 0,
 		0,
 	
 		VIDEO_TYPE_RASTER | VIDEO_UPDATE_BEFORE_VBLANK, /* Sprites are buffered too */
@@ -3187,7 +3187,7 @@ public class toaplan2
 		/* video hardware */
 		32*16, 32*16, new rectangle( 0, 319, 0, 239 ),
 		gfxdecodeinfo,
-		2048, null,
+		2048, 0,
 		0,
 	
 		VIDEO_TYPE_RASTER | VIDEO_UPDATE_BEFORE_VBLANK, /* Sprites are buffered too */
@@ -3232,7 +3232,7 @@ public class toaplan2
 		/* video hardware */
 		32*16, 32*16, new rectangle( 0, 319, 0, 239 ),
 		gfxdecodeinfo_2,
-		2048, null,
+		2048, 0,
 		0,
 	
 		VIDEO_TYPE_RASTER | VIDEO_UPDATE_BEFORE_VBLANK, /* Sprites are buffered too */
@@ -3281,7 +3281,7 @@ public class toaplan2
 		/* video hardware */
 		32*16, 32*16, new rectangle( 0, 319, 0, 239 ),
 		gfxdecodeinfo,
-		2048, null,
+		2048, 0,
 		0,
 	
 		VIDEO_TYPE_RASTER | VIDEO_UPDATE_BEFORE_VBLANK, /* Sprites are buffered too */
@@ -3322,7 +3322,7 @@ public class toaplan2
 		/* video hardware */
 		32*16, 32*16, new rectangle( 0, 319, 0, 239 ),
 		truxton2_gfxdecodeinfo,
-		2048, null,
+		2048, 0,
 		0,
 	
 		VIDEO_TYPE_RASTER | VIDEO_UPDATE_BEFORE_VBLANK, /* Sprites are buffered too */
@@ -3369,7 +3369,7 @@ public class toaplan2
 		/* video hardware */
 		32*16, 32*16, new rectangle( 0, 319, 0, 239 ),
 		gfxdecodeinfo,
-		2048, null,
+		2048, 0,
 		0,
 	
 		VIDEO_TYPE_RASTER | VIDEO_UPDATE_BEFORE_VBLANK, /* Sprites are buffered too */
@@ -3412,7 +3412,7 @@ public class toaplan2
 		/* video hardware */
 		32*16, 32*16, new rectangle( 0, 319, 0, 239 ),
 		gfxdecodeinfo,
-		2048, null,
+		2048, 0,
 		0,
 	
 		VIDEO_TYPE_RASTER | VIDEO_UPDATE_BEFORE_VBLANK, /* Sprites are buffered too */
@@ -3455,7 +3455,7 @@ public class toaplan2
 		/* video hardware */
 		32*16, 32*16, new rectangle( 0, 319, 0, 239 ),
 		gfxdecodeinfo,
-		2048, null,
+		2048, 0,
 		0,
 	
 		VIDEO_TYPE_RASTER | VIDEO_UPDATE_BEFORE_VBLANK, /* Sprites are buffered too */
@@ -3500,7 +3500,7 @@ public class toaplan2
 		/* video hardware */
 		32*16, 32*16, new rectangle( 0, 319, 0, 239 ),
 		truxton2_gfxdecodeinfo,
-		2048, null,
+		2048, 0,
 		0,
 	
 		VIDEO_TYPE_RASTER | VIDEO_UPDATE_BEFORE_VBLANK, /* Sprites are buffered too */
@@ -3550,7 +3550,7 @@ public class toaplan2
 		/* video hardware */
 		32*16, 32*16, new rectangle( 0, 319, 0, 239 ),
 		gfxdecodeinfo,
-		2048, null,
+		2048, 0,
 		0,
 	
 		VIDEO_TYPE_RASTER | VIDEO_UPDATE_BEFORE_VBLANK, /* Sprites are buffered too */
@@ -3595,7 +3595,7 @@ public class toaplan2
 		/* video hardware */
 		32*16, 32*16, new rectangle( 0, 319, 0, 239 ),
 		gfxdecodeinfo_2,
-		2048, null,
+		2048, 0,
 		0,
 	
 		VIDEO_TYPE_RASTER | VIDEO_UPDATE_BEFORE_VBLANK, /* Sprites are buffered too */
@@ -3636,7 +3636,7 @@ public class toaplan2
 		/* video hardware */
 		32*16, 32*16, new rectangle( 0, 319, 0, 239 ),
 		gfxdecodeinfo,
-		2048, null,
+		2048, 0,
 		0,
 	
 		VIDEO_TYPE_RASTER | VIDEO_UPDATE_BEFORE_VBLANK, /* Sprites are buffered too */
@@ -3683,7 +3683,7 @@ public class toaplan2
 		/* video hardware */
 		32*16, 32*16, new rectangle( 0, 319, 0, 239 ),
 		raizing_gfxdecodeinfo,
-		2048, null,
+		2048, 0,
 		0,
 	
 		VIDEO_TYPE_RASTER | VIDEO_UPDATE_BEFORE_VBLANK, /* Sprites are buffered too */
@@ -3730,7 +3730,7 @@ public class toaplan2
 		/* video hardware */
 		32*16, 32*16, new rectangle( 0, 319, 0, 239 ),
 		raizing_gfxdecodeinfo,
-		2048, null,
+		2048, 0,
 		0,
 	
 		VIDEO_TYPE_RASTER | VIDEO_UPDATE_BEFORE_VBLANK, /* Sprites are buffered too */
@@ -3777,7 +3777,7 @@ public class toaplan2
 		/* video hardware */
 		32*16, 32*16, new rectangle( 0, 319, 0, 239 ),
 		raizing_gfxdecodeinfo,
-		2048, null,
+		2048, 0,
 		0,
 	
 		VIDEO_TYPE_RASTER | VIDEO_UPDATE_BEFORE_VBLANK, /* Sprites are buffered too */
@@ -3824,7 +3824,7 @@ public class toaplan2
 		/* video hardware */
 		32*16, 32*16, new rectangle( 0, 319, 0, 239 ),
 		batrider_gfxdecodeinfo,
-		2048, null,
+		2048, 0,
 		0,
 	
 		VIDEO_TYPE_RASTER | VIDEO_UPDATE_BEFORE_VBLANK, /* Sprites are buffered too */

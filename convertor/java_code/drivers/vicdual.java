@@ -1151,7 +1151,7 @@ public class vicdual
 		/* video hardware */
 		32*8, 32*8, new rectangle( 0*8, 32*8-1, 0*8, 28*8-1 ),
 		gfxdecodeinfo,
-		64, null,
+		64, 0,
 		vicdual_vh_convert_color_prom,
 	
 		VIDEO_TYPE_RASTER|VIDEO_SUPPORTS_DIRTY,

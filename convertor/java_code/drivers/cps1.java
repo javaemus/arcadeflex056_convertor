@@ -3508,7 +3508,7 @@ public class cps1
 		64*8, 32*8, new rectangle( 8*8, (64-8)*8-1, 2*8, 30*8-1 ),							\
 		gfxdecodeinfo,															\
 		4096, null,																\
-		null,																		\
+		0,																		\
 																				\
 		VIDEO_TYPE_RASTER | VIDEO_NEEDS_6BITS_PER_GUN,	\
 		cps1_eof_callback,														\
@@ -3549,7 +3549,7 @@ public class cps1
 		64*8, 32*8, new rectangle( 8*8, (64-8)*8-1, 2*8, 30*8-1 ),
 		gfxdecodeinfo,
 		4096, null,
-		null,
+		0,
 	
 		VIDEO_TYPE_RASTER | VIDEO_NEEDS_6BITS_PER_GUN,
 		cps1_eof_callback,

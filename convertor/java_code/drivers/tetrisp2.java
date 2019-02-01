@@ -487,7 +487,7 @@ public class tetrisp2
 		0x140, 0xe0, new rectangle( 0, 0x140-1, 0, 0xe0-1 ),
 		tetrisp2_gfxdecodeinfo,
 		0x8000, null,
-		null,
+		0,
 		VIDEO_TYPE_RASTER,
 		null,
 		tetrisp2_vh_start,

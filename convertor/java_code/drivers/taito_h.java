@@ -620,7 +620,7 @@ public class taito_h
 		64*16, 64*16, new rectangle( 0*16, 32*16-1, 3*16, 28*16-1 ),
 		syvalion_gfxdecodeinfo,
 		33*16, null,
-		null,
+		0,
 	
 		VIDEO_TYPE_RASTER,
 		null,
@@ -662,7 +662,7 @@ public class taito_h
 		64*16, 64*16, new rectangle( 1*16, 21*16-1, 2*16, 17*16-1 ),
 		recordbr_gfxdecodeinfo,
 		32*16, null,
-		null,
+		0,
 	
 		VIDEO_TYPE_RASTER,
 		null,
@@ -704,7 +704,7 @@ public class taito_h
 		64*16, 64*16, new rectangle( 1*16, 21*16-1, 2*16, 17*16-1 ),
 		dleague_gfxdecodeinfo,
 		33*16, null,
-		null,
+		0,
 	
 		VIDEO_TYPE_RASTER,
 		null,

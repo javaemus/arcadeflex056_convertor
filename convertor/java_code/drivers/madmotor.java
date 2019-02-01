@@ -337,7 +337,7 @@ public class madmotor
 		32*8, 32*8, new rectangle( 0*8, 32*8-1, 1*8, 31*8-1 ),
 	
 		gfxdecodeinfo,
-		1024, null,
+		1024, 0,
 		0,
 	
 		VIDEO_TYPE_RASTER | VIDEO_UPDATE_BEFORE_VBLANK,

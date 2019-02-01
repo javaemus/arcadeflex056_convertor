@@ -377,7 +377,7 @@ public class capbowl
 		360, 256, new rectangle( 0, 359, 0, VISIBLE_Y ),						\
 		null,														\
 		4096, null,												\
-		null,														\
+		0,														\
 																\
 		VIDEO_TYPE_RASTER,				\
 		null,														\

@@ -407,7 +407,7 @@ public class junofrst
 		32*8, 32*8, new rectangle( 0*8, 32*8-1, 2*8, 30*8-1 ),	/* not sure about the visible area */
 		null,					/* GfxDecodeInfo * */
 		16,                                  /* total colors */
-		null,                                      /* color table length */
+		0,                                      /* color table length */
 		0,			/* convert color prom routine */
 	
 		VIDEO_TYPE_RASTER,

@@ -591,7 +591,7 @@ public class ninjakd2
 		32*8, 32*8,
 		new rectangle( 0*8, 32*8-1, 4*8, 28*8-1 ),
 		gfxdecodeinfo,
-		768, null,
+		768, 0,
 		0,
 	
 		VIDEO_TYPE_RASTER,

@@ -554,7 +554,7 @@ public class gameplan
 	    32*8, 32*8,					/* screen_width, height */
 	    new rectangle( 0, 32*8-1, 0, 32*8-1 ),		/* visible_area */
 	    null,
-		sizeof(palette) / sizeof(palette[null]) / 3, 0,
+		sizeof(palette) / sizeof(palette[0]) / 3, 0,
 		init_palette,
 	
 		VIDEO_TYPE_RASTER, null,

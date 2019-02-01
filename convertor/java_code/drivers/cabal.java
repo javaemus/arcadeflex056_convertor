@@ -582,7 +582,7 @@ public class cabal
 	
 		cabal_gfxdecodeinfo,
 		1024, null,
-		null,
+		0,
 	
 		VIDEO_TYPE_RASTER,
 		null,
@@ -625,7 +625,7 @@ public class cabal
 	
 		cabal_gfxdecodeinfo,
 		1024, null,
-		null,
+		0,
 	
 		VIDEO_TYPE_RASTER,
 		null,

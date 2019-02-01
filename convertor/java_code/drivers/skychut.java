@@ -217,7 +217,7 @@ public class skychut
 		/* video hardware */
 		32*8, 32*8, new rectangle( 0*8, 32*8-1, 2*8, 30*8-1 ),
 		gfxdecodeinfo,
-		sizeof(palette) / sizeof(palette[null]) / 3, sizeof(colortable) / sizeof(colortable[0]),
+		sizeof(palette) / sizeof(palette[0]) / 3, sizeof(colortable) / sizeof(colortable[0]),
 		init_palette,
 	
 		VIDEO_TYPE_RASTER|VIDEO_SUPPORTS_DIRTY,
@@ -248,7 +248,7 @@ public class skychut
 		/* video hardware */
 		32*8, 32*8, new rectangle( 0*8, 32*8-1, 2*8, 30*8-1 ),
 		null,
-		sizeof(spacebeam_palette) / sizeof(spacebeam_palette[null]) / 3,
+		sizeof(spacebeam_palette) / sizeof(spacebeam_palette[0]) / 3,
 		0,
 		init_greenber_palette,
 	

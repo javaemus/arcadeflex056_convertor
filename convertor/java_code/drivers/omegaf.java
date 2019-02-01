@@ -681,7 +681,7 @@ public class omegaf
 	
 		128*16, 32*16, new rectangle( 0*8, 32*8-1, 4*8, 28*8-1 ),
 		omegaf_gfxdecodeinfo,
-		1024, null,
+		1024, 0,
 		0,
 	
 		VIDEO_TYPE_RASTER,
@@ -722,7 +722,7 @@ public class omegaf
 	
 		32*16, 32*16, new rectangle( 0*8, 32*8-1, 4*8, 28*8-1 ),
 		robokid_gfxdecodeinfo,
-		1024, null,
+		1024, 0,
 		0,
 	
 		VIDEO_TYPE_RASTER,

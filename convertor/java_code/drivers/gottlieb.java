@@ -1455,7 +1455,7 @@ public class gottlieb
 		/* video hardware */                                        	\
 		32*8, 32*8, new rectangle( 0*8, 32*8-1, 0*8, 30*8-1 ),						\
 		GFX,                                                        	\
-		16, null,		                                                	\
+		16, 0,		                                                	\
 		0,									                           	\
 																		\
 		VIDEO_TYPE_RASTER,												\
@@ -1513,7 +1513,7 @@ public class gottlieb
 		/* video hardware */											\
 		32*8, 32*8, new rectangle( 0*8, 32*8-1, 0*8, 30*8-1 ),						\
 		GFX,															\
-		16, null,															\
+		16, 0,															\
 		0,																\
 																		\
 		VIDEO_TYPE_RASTER,												\

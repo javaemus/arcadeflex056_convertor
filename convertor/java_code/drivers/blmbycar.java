@@ -303,7 +303,7 @@ public class blmbycar
 		0x180, 0x100, new rectangle( 0, 0x180-1, 0, 0x100-1 ),
 		blmbycar_gfxdecodeinfo,
 		0x300, null,
-		null,
+		0,
 		VIDEO_TYPE_RASTER,
 		null,
 		blmbycar_vh_start,

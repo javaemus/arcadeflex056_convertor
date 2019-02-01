@@ -1296,7 +1296,7 @@ public class wecleman
 	
 		wecleman_gfxdecodeinfo,
 		2048, null,
-		null,
+		0,
 	
 		VIDEO_TYPE_RASTER,
 		null,
@@ -1364,7 +1364,7 @@ public class wecleman
 	
 		hotchase_gfxdecodeinfo,
 		2048, null,
-		null,
+		0,
 	
 		VIDEO_TYPE_RASTER,
 		null,

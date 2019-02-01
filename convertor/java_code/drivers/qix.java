@@ -697,7 +697,7 @@ public class qix
 		256, 256, new rectangle( 0, 255, 8, 247 ),
 		null,
 		1024, null,
-		null,
+		0,
 	
 		VIDEO_TYPE_RASTER,
 		null,
@@ -755,7 +755,7 @@ public class qix
 		256, 256, new rectangle( 0, 255, 8, 247 ),
 		null,
 		1024, null,
-		null,
+		0,
 	
 		VIDEO_TYPE_RASTER,
 		null,
@@ -813,7 +813,7 @@ public class qix
 		256, 256, new rectangle( 0, 255, 8, 247 ),
 		null,
 		1024, null,
-		null,
+		0,
 	
 		VIDEO_TYPE_RASTER,
 		null,
@@ -859,7 +859,7 @@ public class qix
 		256, 256, new rectangle( 0, 255, 0, 255 ),
 		null,
 		1024, null,
-		null,
+		0,
 	
 		VIDEO_TYPE_RASTER,
 		null,

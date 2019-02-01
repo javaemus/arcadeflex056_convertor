@@ -678,7 +678,7 @@ public class tehkanwc
 		/* video hardware */
 		32*8, 32*8, new rectangle( 0*8, 32*8-1, 2*8, 30*8-1 ),
 		gfxdecodeinfo,
-		768, null,
+		768, 0,
 		0,
 	
 		VIDEO_TYPE_RASTER,

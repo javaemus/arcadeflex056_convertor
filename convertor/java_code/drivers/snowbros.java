@@ -264,7 +264,7 @@ public class snowbros
 		/* video hardware */
 		32*8, 32*8, new rectangle( 0*8, 32*8-1, 2*8, 30*8-1 ),
 		gfxdecodeinfo,
-		256, null,
+		256, 0,
 		0,
 	
 		VIDEO_TYPE_RASTER,
@@ -307,7 +307,7 @@ public class snowbros
 		/* video hardware */
 		32*8, 32*8, new rectangle( 0*8, 32*8-1, 2*8, 30*8-1 ),
 		gfxdecodeinfo_wb,
-		256, null,
+		256, 0,
 		0,
 	
 		VIDEO_TYPE_RASTER,

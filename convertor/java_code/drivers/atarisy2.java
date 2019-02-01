@@ -1227,7 +1227,7 @@ public class atarisy2
 		64*8, 48*8, new rectangle( 0*8, 64*8-1, 0*8, 48*8-1 ),
 		gfxdecodeinfo,
 		256, null,
-		null,
+		0,
 	
 		VIDEO_TYPE_RASTER | VIDEO_NEEDS_6BITS_PER_GUN | VIDEO_UPDATE_BEFORE_VBLANK,
 		null,
@@ -1275,7 +1275,7 @@ public class atarisy2
 		64*8, 48*8, new rectangle( 0*8, 64*8-1, 0*8, 48*8-1 ),
 		gfxdecodeinfo,
 		256, null,
-		null,
+		0,
 	
 		VIDEO_TYPE_RASTER | VIDEO_UPDATE_BEFORE_VBLANK,
 		null,
@@ -1323,7 +1323,7 @@ public class atarisy2
 		64*8, 48*8, new rectangle( 0*8, 64*8-1, 0*8, 48*8-1 ),
 		gfxdecodeinfo,
 		256, null,
-		null,
+		0,
 	
 		VIDEO_TYPE_RASTER | VIDEO_NEEDS_6BITS_PER_GUN | VIDEO_UPDATE_BEFORE_VBLANK,
 		null,

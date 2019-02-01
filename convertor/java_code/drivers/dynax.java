@@ -712,7 +712,7 @@ public class dynax
 		320, 256, new rectangle( 0, 320-1, 0, 256-1 ),
 		null,		// no tiles
 		0x800, 0x800,
-		null,
+		0,
 		VIDEO_TYPE_RASTER,
 		null,
 		dynax_vh_start,
@@ -751,7 +751,7 @@ public class dynax
 		256, 256, new rectangle( 0, 256-1, 0, 256-1 ),
 		null,		// no tiles
 		0x800, 0x800,
-		null,
+		0,
 		VIDEO_TYPE_RASTER,
 		null,
 		dynax_vh_start,

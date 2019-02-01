@@ -362,7 +362,7 @@ public class xxmissio
 	
 		gfxdecodeinfo,
 		768, null,
-		null,
+		0,
 	
 		VIDEO_TYPE_RASTER | VIDEO_PIXEL_ASPECT_RATIO_1_2,
 		null,

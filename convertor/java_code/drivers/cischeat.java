@@ -1548,7 +1548,7 @@ public class cischeat
 		256, 256,new rectangle( 0, 256-1, 0 +16, 256-1 -16),
 		gfxdecodeinfo_scudhamm,
 		16*16+16*16+128*16, null,
-		null,
+		0,
 		VIDEO_TYPE_RASTER | VIDEO_UPDATE_AFTER_VBLANK | VIDEO_HAS_SHADOWS,
 		null,
 		f1gpstar_vh_start,	// 16 color codes, shadows

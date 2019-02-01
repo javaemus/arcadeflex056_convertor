@@ -808,7 +808,7 @@ public class psikyo
 		320, 256, new rectangle( 0, 320-1, 0, 256-32-1 ),
 		sngkace_gfxdecodeinfo,
 		0x1000, null,
-		null,
+		0,
 	
 		VIDEO_TYPE_RASTER,
 		null,
@@ -875,7 +875,7 @@ public class psikyo
 		320, 256, new rectangle( 0, 320-1, 0, 256-32-1 ),
 		sngkace_gfxdecodeinfo,
 		0x1000, null,
-		null,
+		0,
 	
 		VIDEO_TYPE_RASTER,
 		null,
@@ -942,7 +942,7 @@ public class psikyo
 		320, 256, new rectangle( 0, 320-1, 0, 256-32-1 ),
 		sngkace_gfxdecodeinfo,
 		0x1000, null,
-		null,
+		0,
 	
 		VIDEO_TYPE_RASTER,
 		null,

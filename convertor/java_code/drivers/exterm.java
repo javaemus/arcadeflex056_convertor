@@ -504,7 +504,7 @@ public class exterm
 		   supposed to go from 0 to the value in VEND-1, which is 263 */
 	    256, 263, { 0, 255, 0, 238 },
 	
-		null,
+		0,
 		4096+32768,null,
 	    exterm_init_palette,
 	

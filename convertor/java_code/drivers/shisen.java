@@ -282,7 +282,7 @@ public class shisen
 		/* video hardware */
 		64*8, 32*8, new rectangle( 0*8, 64*8-1, 0*8, 32*8-1 ),
 		gfxdecodeinfo,
-		256, null,
+		256, 0,
 		0,
 	
 		VIDEO_TYPE_RASTER|VIDEO_SUPPORTS_DIRTY|VIDEO_PIXEL_ASPECT_RATIO_1_2,

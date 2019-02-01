@@ -294,7 +294,7 @@ public class pcktgal
 		/* video hardware */
 		32*8, 32*8, new rectangle( 0*8, 32*8-1, 2*8, 30*8-1 ),
 		gfxdecodeinfo,
-		512, null,
+		512, 0,
 		pcktgal_vh_convert_color_prom,
 	
 		VIDEO_TYPE_RASTER,
@@ -347,7 +347,7 @@ public class pcktgal
 		/* video hardware */
 		32*8, 32*8, new rectangle( 0*8, 32*8-1, 2*8, 30*8-1 ),
 		bootleg_gfxdecodeinfo,
-		512, null,
+		512, 0,
 		pcktgal_vh_convert_color_prom,
 	
 		VIDEO_TYPE_RASTER,

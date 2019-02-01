@@ -666,7 +666,7 @@ public class thunderx
 		/* video hardware */
 		64*8, 32*8, new rectangle( 14*8, (64-14)*8-1, 2*8, 30*8-1 ),
 		null, /* gfx decoded by konamiic.c */
-		1024, null,
+		1024, 0,
 		0,
 	
 		VIDEO_TYPE_RASTER | VIDEO_HAS_SHADOWS,
@@ -712,7 +712,7 @@ public class thunderx
 		/* video hardware */
 		64*8, 32*8, new rectangle( 14*8, (64-14)*8-1, 2*8, 30*8-1 ),
 		null, /* gfx decoded by konamiic.c */
-		1024, null,
+		1024, 0,
 		0,
 	
 		VIDEO_TYPE_RASTER | VIDEO_HAS_SHADOWS,

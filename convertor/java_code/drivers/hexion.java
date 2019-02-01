@@ -256,7 +256,7 @@ public class hexion
 		/* video hardware */
 		64*8, 32*8, new rectangle( 0*8, 64*8-1, 0*8, 32*8-1 ),
 		gfxdecodeinfo,
-		256, null,
+		256, 0,
 		palette_RRRR_GGGG_BBBB_convert_prom,
 	
 		VIDEO_TYPE_RASTER | VIDEO_PIXEL_ASPECT_RATIO_1_2,

@@ -512,7 +512,7 @@ public class m107
 		512, 512, new rectangle( 80, 511-112, 128+8, 511-128-8 ), /* 320 x 240 */
 	
 		firebarr_gfxdecodeinfo,
-		2048, null,
+		2048, 0,
 		0,
 	
 		VIDEO_TYPE_RASTER,
@@ -560,7 +560,7 @@ public class m107
 		512, 512, new rectangle( 80, 511-112, 128+8, 511-128-8 ), /* 320 x 240 */
 	
 		gfxdecodeinfo,
-		2048, null,
+		2048, 0,
 		0,
 	
 		VIDEO_TYPE_RASTER,

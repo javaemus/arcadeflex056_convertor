@@ -488,7 +488,7 @@ public class yunsung8
 		512, 256, new rectangle( 0+64, 512-64-1, 0+8, 256-8-1 ),
 		yunsung8_gfxdecodeinfo,
 		2048, null,
-		null,
+		0,
 	
 		VIDEO_TYPE_RASTER,
 		null,

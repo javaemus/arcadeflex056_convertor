@@ -2148,7 +2148,7 @@ public class taito_l
 		40*8, 32*8, new rectangle( 0*8, 40*8-1, 2*8, 30*8-1 ),				\
 		gfxdecodeinfo2,											\
 		256, null,													\
-		null,														\
+		0,														\
 																\
 		VIDEO_TYPE_RASTER,										\
 		taitol_eof_callback,									\
@@ -2195,7 +2195,7 @@ public class taito_l
 		40*8, 32*8, new rectangle( 0*8, 40*8-1, 2*8, 30*8-1 ),				\
 		gfxdecodeinfo2,											\
 		256, null,													\
-		null,														\
+		0,														\
 																\
 		VIDEO_TYPE_RASTER,										\
 		taitol_eof_callback,									\
@@ -2246,7 +2246,7 @@ public class taito_l
 		40*8, 32*8, new rectangle( 0*8, 40*8-1, 2*8, 30*8-1 ),				\
 		gfxdecodeinfo2,											\
 		256, null,													\
-		null,														\
+		0,														\
 																\
 		VIDEO_TYPE_RASTER,										\
 		taitol_eof_callback,									\
@@ -2287,7 +2287,7 @@ public class taito_l
 		40*8, 32*8, new rectangle( 0*8, 40*8-1, 2*8, 30*8-1 ),				\
 		gfxdecodeinfo2,											\
 		256, null,													\
-		null,														\
+		0,														\
 																\
 		VIDEO_TYPE_RASTER,										\
 		taitol_eof_callback,									\
@@ -2322,7 +2322,7 @@ public class taito_l
 		40*8, 32*8, new rectangle( 0*8, 40*8-1, 2*8, 30*8-1 ),			\
 		gfxdecodeinfo1,										\
 		256, null,												\
-		null,													\
+		0,													\
 															\
 		VIDEO_TYPE_RASTER,									\
 		taitol_eof_callback,								\
