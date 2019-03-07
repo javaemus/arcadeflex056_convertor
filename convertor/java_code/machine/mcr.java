@@ -305,7 +305,7 @@ public class mcr
 	 *
 	 *************************************/
 	
-	int mcr_interrupt(void)
+	public static InterruptPtr mcr_interrupt = new InterruptPtr() { public int handler() 
 	{
 		/* CTC line 2 is connected to VBLANK, which is once every 1/2 frame */
 		/* for the 30Hz interlaced display */
@@ -321,10 +321,10 @@ public class mcr
 		}
 	
 		return ignore_interrupt();
-	}
+	} };
 	
 	
-	int mcr68_interrupt(void)
+	public static InterruptPtr mcr68_interrupt = new InterruptPtr() { public int handler() 
 	{
 		/* update the 6840 VBLANK clock */
 		if (!m6840_state[0].timer)
@@ -338,7 +338,7 @@ public class mcr
 		timer_set(TIME_IN_HZ(30) - mcr68_timing_factor, 0, v493_callback);
 	
 		return ignore_interrupt();
-	}
+	} };
 	
 	
 	

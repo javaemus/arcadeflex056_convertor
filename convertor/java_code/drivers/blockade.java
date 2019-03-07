@@ -112,7 +112,7 @@ public class blockade
 	/* Need to check for a coin on the interrupt, */
 	/* This will reset the cpu                    */
 	
-	int blockade_interrupt(void)
+	public static InterruptPtr blockade_interrupt = new InterruptPtr() { public int handler() 
 	{
 		timer_suspendcpu(0, 0, SUSPEND_ANY_REASON);
 	
@@ -123,7 +123,7 @@ public class blockade
 		}
 	
 		return ignore_interrupt();
-	}
+	} };
 	
 	public static ReadHandlerPtr blockade_input_port_0_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{

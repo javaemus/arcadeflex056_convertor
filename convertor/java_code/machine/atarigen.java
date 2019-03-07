@@ -530,12 +530,12 @@ public class atarigen
 		sound processor.
 	---------------------------------------------------------------*/
 	
-	int atarigen_6502_irq_gen(void)
+	public static InterruptPtr atarigen_6502_irq_gen = new InterruptPtr() { public int handler() 
 	{
 		timed_int = 1;
 		update_6502_irq();
 		return ignore_interrupt();
-	}
+	} };
 	
 	
 	/*---------------------------------------------------------------

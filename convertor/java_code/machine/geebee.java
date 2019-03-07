@@ -33,17 +33,17 @@ public class geebee
 	extern int geebee_cnt;
 	#endif
 	
-	int geebee_interrupt(void)
+	public static InterruptPtr geebee_interrupt = new InterruptPtr() { public int handler() 
 	{
 		cpu_set_irq_line(0, 0, PULSE_LINE);
 	    return ignore_interrupt();
-	}
+	} };
 	
-	int kaitei_interrupt(void)
+	public static InterruptPtr kaitei_interrupt = new InterruptPtr() { public int handler() 
 	{
 		cpu_set_irq_line(0, 0, HOLD_LINE);
 	    return ignore_interrupt();
-	}
+	} };
 	
 	public static ReadHandlerPtr geebee_in_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{

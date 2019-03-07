@@ -95,14 +95,14 @@ public class kopunch
 	}
 	
 	
-	int kopunch_interrupt(void)
+	public static InterruptPtr kopunch_interrupt = new InterruptPtr() { public int handler() 
 	{
 		if (keyboard_pressed(KEYCODE_Q)) return 0xef;	/* RST 28h */
 		if (keyboard_pressed(KEYCODE_W)) return 0xf7;	/* RST 30h */
 		if (keyboard_pressed(KEYCODE_E)) return 0xff;	/* RST 38h */
 	
 		return ignore_interrupt();
-	}
+	} };
 	
 	
 	public static Memory_ReadAddress readmem[]={

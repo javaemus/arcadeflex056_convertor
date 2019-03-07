@@ -103,7 +103,7 @@ public class spdodgeb
 	
 	static int lastscroll;
 	
-	int spdodgeb_interrupt(void)
+	public static InterruptPtr spdodgeb_interrupt = new InterruptPtr() { public int handler() 
 	{
 		int line = 33 - cpu_getiloops();
 	
@@ -116,7 +116,7 @@ public class spdodgeb
 			return M6502_INT_NMI;
 		else 	/* skip 31 32 33 to allow vblank to finish */
 			return ignore_interrupt();
-	}
+	} };
 	
 	public static WriteHandlerPtr spdodgeb_scrollx_lo_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{

@@ -100,7 +100,7 @@ public class spiders
 	
 	***************************************************************************/
 	
-	int spiders_timed_irq(void)
+	public static InterruptPtr spiders_timed_irq = new InterruptPtr() { public int handler() 
 	{
 		/* Update CA1 on PIA1 - copy of PA0 (COIN1?) */
 		pia_0_ca1_w(0 , input_port_0_r(0)&0x01);
@@ -114,7 +114,7 @@ public class spiders
 		/* Update CB2 on PIA1 - NOT CONNECTED */
 	
 		return ignore_interrupt();
-	}
+	} };
 	
 	
 	/***************************************************************************

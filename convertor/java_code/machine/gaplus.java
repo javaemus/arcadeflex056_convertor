@@ -69,28 +69,28 @@ public class gaplus
 	    int_enable_3 = 0;
 	} };
 	
-	int gaplus_interrupt_1( void ) {
+	public static InterruptPtr gaplus_interrupt_1 = new InterruptPtr() { public int handler()  {
 	
 		gaplus_starfield_update(); /* update starfields */
 	
 		return interrupt();
-	}
+	} };
 	
-	int gaplus_interrupt_2( void )
+	public static InterruptPtr gaplus_interrupt_2 = new InterruptPtr() { public int handler() 
 	{
 	    if (int_enable_2)
 	        return interrupt();
 	    else
 	        return ignore_interrupt();
-	}
+	} };
 	
-	int gaplus_interrupt_3( void )
+	public static InterruptPtr gaplus_interrupt_3 = new InterruptPtr() { public int handler() 
 	{
 	    if (int_enable_3)
 	        return interrupt();
 	    else
 	        return ignore_interrupt();
-	}
+	} };
 	
 	public static WriteHandlerPtr gaplus_reset_2_3_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{

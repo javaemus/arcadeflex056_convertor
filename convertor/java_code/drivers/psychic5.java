@@ -344,13 +344,13 @@ public class psychic5
 		}
 	} };
 	
-	int psychic5_interrupt(void)
+	public static InterruptPtr psychic5_interrupt = new InterruptPtr() { public int handler() 
 	{
 		if (cpu_getiloops() == 0)
 		   return 0xd7;		/* RST 10h */
 		else
 	   	   return 0xcf;		/* RST 08h */
-	}
+	} };
 	
 	
 	public static Memory_ReadAddress readmem[]={

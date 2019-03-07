@@ -53,7 +53,7 @@ public class aztarac
 	    sound_status &= ~0x10;
 	} };
 	
-	int aztarac_snd_timed_irq (void)
+	public static InterruptPtr aztarac_snd_timed_irq = new InterruptPtr() { public int handler() 
 	{
 	    sound_status ^= 0x10;
 	
@@ -61,7 +61,7 @@ public class aztarac
 	        return interrupt();
 	    else
 	        return ignore_interrupt();
-	}
+	} };
 	
 	
 }

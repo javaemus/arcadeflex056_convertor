@@ -184,7 +184,7 @@ public class gberet
 	} };
 	
 	
-	int gberet_interrupt(void)
+	public static InterruptPtr gberet_interrupt = new InterruptPtr() { public int handler() 
 	{
 		if (cpu_getiloops() == 0) return interrupt();
 		else if (cpu_getiloops() % 2)
@@ -193,7 +193,7 @@ public class gberet
 		}
 	
 		return ignore_interrupt();
-	}
+	} };
 	
 	
 	

@@ -324,13 +324,13 @@ public class ginganin
 	
 	
 	
-	int ginganin_interrupt(void)
+	public static InterruptPtr ginganin_interrupt = new InterruptPtr() { public int handler() 
 	{
 		return 1;	/* ? (vectors 1-7 cointain the same address) */
-	}
+	} };
 	
 	/* Modified by Takahiro Nogi. 1999/09/27 */
-	int ginganin_sound_interrupt(void)
+	public static InterruptPtr ginganin_sound_interrupt = new InterruptPtr() { public int handler() 
 	{
 		/* MC6840 Emulation by Takahiro Nogi. 1999/09/27
 		(This routine hasn't been completed yet.) */
@@ -355,7 +355,7 @@ public class ginganin
 		}
 	
 		return ignore_interrupt();
-	}
+	} };
 	
 	
 	

@@ -168,13 +168,13 @@ public class victory
 	}
 	
 	
-	int victory_vblank_interrupt(void)
+	public static InterruptPtr victory_vblank_interrupt = new InterruptPtr() { public int handler() 
 	{
 		vblank_irq = 1;
 		victory_update_irq();
 		logerror("------------- VBLANK ----------------\n");
 		return ignore_interrupt();
-	}
+	} };
 	
 	
 	

@@ -122,14 +122,14 @@ public class toaplan1
 	
 	
 	
-	int toaplan1_interrupt(void)
+	public static InterruptPtr toaplan1_interrupt = new InterruptPtr() { public int handler() 
 	{
 		if (toaplan1_int_enable)
 		{
 			return MC68000_IRQ_4;
 		}
 		return ignore_interrupt();
-	}
+	} };
 	
 	WRITE16_HANDLER( toaplan1_int_enable_w )
 	{

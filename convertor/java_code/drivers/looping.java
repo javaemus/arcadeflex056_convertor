@@ -190,12 +190,12 @@ public class looping
 		}
 	} };
 	
-	int looping_interrupt( void )
+	public static InterruptPtr looping_interrupt = new InterruptPtr() { public int handler() 
 	{
 		cpu_irq_line_vector_w(0, 0, 4);
 		cpu_set_irq_line(0, 0, ASSERT_LINE);
 		return ignore_interrupt();
-	}
+	} };
 	
 	/****** sound *******/
 	

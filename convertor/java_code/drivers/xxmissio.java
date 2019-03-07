@@ -91,17 +91,17 @@ public class xxmissio
 		}
 	}
 	
-	int xxmissio_interrupt_m(void)
+	public static InterruptPtr xxmissio_interrupt_m = new InterruptPtr() { public int handler() 
 	{
 		xxmissio_status &= ~0x20;
 		return interrupt();
-	}
+	} };
 	
-	int xxmissio_interrupt_s(void)
+	public static InterruptPtr xxmissio_interrupt_s = new InterruptPtr() { public int handler() 
 	{
 		xxmissio_status &= ~0x10;
 		return interrupt();
-	}
+	} };
 	
 	/****************************************************************************/
 	

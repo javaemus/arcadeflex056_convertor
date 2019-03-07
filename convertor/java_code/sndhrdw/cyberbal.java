@@ -116,7 +116,7 @@ public class cyberbal
 	}
 	
 	
-	int cyberbal_sound_68k_irq_gen(void)
+	public static InterruptPtr cyberbal_sound_68k_irq_gen = new InterruptPtr() { public int handler() 
 	{
 		if (fast_68k_int == 0)
 		{
@@ -124,7 +124,7 @@ public class cyberbal
 			update_sound_68k_interrupts();
 		}
 		return 0;
-	}
+	} };
 	
 	
 	WRITE16_HANDLER( cyberbal_io_68k_irq_ack_w )

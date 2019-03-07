@@ -65,12 +65,12 @@ public class dynax
 		sprtmtch_update_irq();
 	} };
 	
-	int sprtmtch_vblank_interrupt(void)
+	public static InterruptPtr sprtmtch_vblank_interrupt = new InterruptPtr() { public int handler() 
 	{
 		dynax_vblank_irq = 1;
 		sprtmtch_update_irq();
 		return ignore_interrupt();
-	}
+	} };
 	
 	void sprtmtch_sound_callback(int state)
 	{

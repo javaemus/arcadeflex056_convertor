@@ -63,7 +63,7 @@ public class nb1413m3
 		nb1413m3_nmi_clock = ((data & 0xf0) >> 4);
 	}
 	
-	int nb1413m3_interrupt(void)
+	public static InterruptPtr nb1413m3_interrupt = new InterruptPtr() { public int handler() 
 	{
 		switch (nb1413m3_type)
 		{
@@ -110,7 +110,7 @@ public class nb1413m3
 				}
 				break;
 		}
-	}
+	} };
 	
 	void nb1413m3_nvram_handler(void *file, int read_or_write)
 	{

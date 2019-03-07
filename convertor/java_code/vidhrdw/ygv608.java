@@ -57,7 +57,7 @@ public class ygv608
 	#endif
 	
 	/* interrupt generated every 1ms second */
-	int ygv608_timed_interrupt( void )
+	public static InterruptPtr ygv608_timed_interrupt = new InterruptPtr() { public int handler() 
 	{
 	/*
 	    this is not quite generic, because we trigger a 68k interrupt
@@ -87,7 +87,7 @@ public class ygv608
 		}
 	
 		return( 0 );
-	}
+	} };
 	
 	
 	static UINT32 get_tile_offset( UINT32 col, UINT32 row,

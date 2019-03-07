@@ -36,19 +36,19 @@ public class ddrible
 		cpu_setbank(1,&RAM[bankaddress]);
 	} };
 	
-	int ddrible_interrupt_0( void )
+	public static InterruptPtr ddrible_interrupt_0 = new InterruptPtr() { public int handler() 
 	{
 		if (ddrible_int_enable_0)
 			return M6809_INT_FIRQ;
 		return ignore_interrupt();
-	}
+	} };
 	
-	int ddrible_interrupt_1( void )
+	public static InterruptPtr ddrible_interrupt_1 = new InterruptPtr() { public int handler() 
 	{
 		if (ddrible_int_enable_1)
 			return M6809_INT_FIRQ;
 		return ignore_interrupt();
-	}
+	} };
 	
 	public static WriteHandlerPtr int_0_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{

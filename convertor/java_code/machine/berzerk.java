@@ -90,7 +90,7 @@ public class berzerk
 	      return 0x40;
 	} };
 	
-	int berzerk_interrupt(void)
+	public static InterruptPtr berzerk_interrupt = new InterruptPtr() { public int handler() 
 	{
 		int_count++;
 	
@@ -126,6 +126,6 @@ public class berzerk
 			}
 			return nmi_enabled ? Z80_NMI_INT : ignore_interrupt();
 		}
-	}
+	} };
 	
 }

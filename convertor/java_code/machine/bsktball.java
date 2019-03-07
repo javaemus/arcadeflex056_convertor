@@ -31,7 +31,7 @@ public class bsktball
 	bsktball_interrupt
 	***************************************************************************/
 	/* NMI every 32V, IRQ every VBLANK */
-	int bsktball_interrupt(void)
+	public static InterruptPtr bsktball_interrupt = new InterruptPtr() { public int handler() 
 	{
 		static int i256V=0;
 	
@@ -44,7 +44,7 @@ public class bsktball
 			return nmi_interrupt();
 		else
 			return ignore_interrupt();
-	}
+	} };
 	
 	/***************************************************************************
 	bsktball_ld_w

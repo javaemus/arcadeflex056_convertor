@@ -109,21 +109,21 @@ public class polepos
 		LOG(("Z8K#%d cpu%d_nvi_enable_w $%02x\n", cpu_getactivecpu(), which, data));
 	}
 	
-	int polepos_z8002_1_interrupt(void)
+	public static InterruptPtr polepos_z8002_1_interrupt = new InterruptPtr() { public int handler() 
 	{
 		if (z8002_1_nvi_enabled)
 			cpu_set_irq_line(1, 0, ASSERT_LINE);
 	
 		return ignore_interrupt();
-	}
+	} };
 	
-	int polepos_z8002_2_interrupt(void)
+	public static InterruptPtr polepos_z8002_2_interrupt = new InterruptPtr() { public int handler() 
 	{
 		if (z8002_2_nvi_enabled)
 			cpu_set_irq_line(2, 0, ASSERT_LINE);
 	
 		return ignore_interrupt();
-	}
+	} };
 	
 	public static WriteHandlerPtr polepos_z8002_enable_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{

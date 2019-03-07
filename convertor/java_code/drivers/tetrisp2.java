@@ -457,7 +457,7 @@ public class tetrisp2
 		{ 0 }	// irq
 	};
 	
-	int tetrisp2_interrupt(void)
+	public static InterruptPtr tetrisp2_interrupt = new InterruptPtr() { public int handler() 
 	{
 		switch ( cpu_getiloops() )
 		{
@@ -466,7 +466,7 @@ public class tetrisp2
 			case 2:	return 1;
 		}
 		return ignore_interrupt();
-	}
+	} };
 	
 	static MachineDriver machine_driver_tetrisp2 = new MachineDriver
 	(

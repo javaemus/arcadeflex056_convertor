@@ -282,11 +282,11 @@ public class digdug
 	
 	
 	
-	int digdug_interrupt_1(void)
+	public static InterruptPtr digdug_interrupt_1 = new InterruptPtr() { public int handler() 
 	{
 		if (interrupt_enable_1) return interrupt();
 		else return ignore_interrupt();
-	}
+	} };
 	
 	
 	
@@ -297,11 +297,11 @@ public class digdug
 	
 	
 	
-	int digdug_interrupt_2(void)
+	public static InterruptPtr digdug_interrupt_2 = new InterruptPtr() { public int handler() 
 	{
 		if (interrupt_enable_2) return interrupt();
 		else return ignore_interrupt();
-	}
+	} };
 	
 	
 	
@@ -312,9 +312,9 @@ public class digdug
 	
 	
 	
-	int digdug_interrupt_3(void)
+	public static InterruptPtr digdug_interrupt_3 = new InterruptPtr() { public int handler() 
 	{
 		if (interrupt_enable_3) return nmi_interrupt();
 		else return ignore_interrupt();
-	}
+	} };
 }

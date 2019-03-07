@@ -180,7 +180,7 @@ public class astrocde
 		NextScanInt = data;
 	} };
 	
-	int wow_interrupt(void)
+	public static InterruptPtr wow_interrupt = new InterruptPtr() { public int handler() 
 	{
 		int res,i,next;
 	
@@ -204,13 +204,13 @@ public class astrocde
 			res = interrupt();
 	
 		return res;
-	}
+	} };
 	
 	/****************************************************************************
 	 * Gorf - Interrupt routine and Timer hack
 	 ****************************************************************************/
 	
-	int gorf_interrupt(void)
+	public static InterruptPtr gorf_interrupt = new InterruptPtr() { public int handler() 
 	{
 		int res;
 	
@@ -229,7 +229,7 @@ public class astrocde
 		cpu_set_irq_line(0,0,CLEAR_LINE);
 	
 		return res;
-	}
+	} };
 	
 	/* ======================================================================= */
 	

@@ -484,7 +484,7 @@ public class cvs
 	    bitmap_free(scrolled_background);
 	}
 	
-	int cvs_interrupt(void)
+	public static InterruptPtr cvs_interrupt = new InterruptPtr() { public int handler() 
 	{
 		stars_scroll++;
 	
@@ -492,7 +492,7 @@ public class cvs
 		cpu_set_irq_line(0,0,PULSE_LINE);
 	
 		return ignore_interrupt();
-	}
+	} };
 	
 	INLINE void plot_star(struct mame_bitmap *bitmap, int x, int y)
 	{

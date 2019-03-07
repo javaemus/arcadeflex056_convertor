@@ -123,13 +123,13 @@ public class skychut
 	};
 	
 	
-	int skychut_interrupt(void)
+	public static InterruptPtr skychut_interrupt = new InterruptPtr() { public int handler() 
 	{
 		if (readinputport(2) & 1)	/* Left Coin */
 	            return nmi_interrupt();
 	        else
 	            return interrupt();
-	}
+	} };
 	
 	static InputPortPtr input_ports_skychut = new InputPortPtr(){ public void handler() { 
 		PORT_START(); 

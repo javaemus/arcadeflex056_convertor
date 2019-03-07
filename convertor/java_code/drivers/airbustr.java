@@ -230,14 +230,14 @@ public class airbustr
 	/*	Runs in IM 2	fd-fe	address of int: 0x38
 						ff-100	address of int: 0x16	*/
 	
-	int airbustr_interrupt(void)
+	public static InterruptPtr airbustr_interrupt = new InterruptPtr() { public int handler() 
 	{
 	static int addr = 0xff;
 	
 		addr ^= 0x02;
 	
 		return addr;
-	}
+	} };
 	
 	
 	public static ReadHandlerPtr sharedram_r  = new ReadHandlerPtr() { public int handler(int offset)	{ return sharedram[offset]; } };
@@ -350,14 +350,14 @@ public class airbustr
 	/*	Runs in IM 2	fd-fe	address of int: 0x36e	(same as 0x38)
 						ff-100	address of int: 0x4b0	(only writes to port 38h)	*/
 	
-	int airbustr_interrupt2(void)
+	public static InterruptPtr airbustr_interrupt2 = new InterruptPtr() { public int handler() 
 	{
 	static int addr = 0xfd;
 	
 		addr ^= 0x02;
 	
 		return addr;
-	}
+	} };
 	
 	
 	public static WriteHandlerPtr bankswitch2_w = new WriteHandlerPtr() {public void handler(int offset, int data)

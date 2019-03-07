@@ -575,7 +575,7 @@ public class lasso
 	
 	/* IRQ = VBlank, NMI = Coin Insertion */
 	
-	int lasso_interrupt( void )
+	public static InterruptPtr lasso_interrupt = new InterruptPtr() { public int handler() 
 	{
 		static int old;
 		int new;
@@ -596,7 +596,7 @@ public class lasso
 	
 		old = new;
 		return ignore_interrupt();
-	}
+	} };
 	
 	
 	static SN76496interface sn76496_interface = new SN76496interface

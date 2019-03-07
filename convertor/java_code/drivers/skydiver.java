@@ -148,13 +148,13 @@ public class skydiver
 		skydiver_nmion = offset;
 	} };
 	
-	int skydiver_interrupt(void)
+	public static InterruptPtr skydiver_interrupt = new InterruptPtr() { public int handler() 
 	{
 		if (skydiver_nmion)
 			return nmi_interrupt();
 		else
 		   	return ignore_interrupt();
-	}
+	} };
 	
 	public static Memory_ReadAddress readmem[]={
 		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),

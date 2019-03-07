@@ -40,7 +40,7 @@ public class m72
 		m72_init_sound();
 	}
 	
-	int m72_interrupt(void)
+	public static InterruptPtr m72_interrupt = new InterruptPtr() { public int handler() 
 	{
 		int line = 255 - cpu_getiloops();
 	
@@ -64,7 +64,7 @@ public class m72
 			 */
 			return irqbase+2;
 		}
-	}
+	} };
 	
 	
 	

@@ -129,7 +129,7 @@ public class bublbobl
 	 The following is ENTIRELY GUESSWORK!!!
 	
 	***************************************************************************/
-	int bublbobl_m68705_interrupt(void)
+	public static InterruptPtr bublbobl_m68705_interrupt = new InterruptPtr() { public int handler() 
 	{
 		/* I don't know how to handle the interrupt line so I just toggle it every time. */
 		if (cpu_getiloops() & 1)
@@ -138,7 +138,7 @@ public class bublbobl
 			cpu_set_irq_line(3,0,ASSERT_LINE);
 	
 	    return ignore_interrupt();
-	}
+	} };
 	
 	
 	

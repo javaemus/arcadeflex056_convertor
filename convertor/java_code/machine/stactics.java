@@ -55,7 +55,7 @@ public class stactics
 	    return stactics_horiz_pos+0x80;
 	} };
 	
-	int stactics_interrupt(void)
+	public static InterruptPtr stactics_interrupt = new InterruptPtr() { public int handler() 
 	{
 	    /* Run the monitor motors */
 	
@@ -90,7 +90,7 @@ public class stactics
 	    }
 	
 	    return interrupt();
-	}
+	} };
 	
 	public static WriteHandlerPtr stactics_coin_lockout_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{

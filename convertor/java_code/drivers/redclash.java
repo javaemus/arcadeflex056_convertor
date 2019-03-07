@@ -45,7 +45,7 @@ public class redclash
 	  Interrupts are still used, but they are related to coin
 	  slots. Left slot generates an IRQ, Right slot a NMI.
 	*/
-	int redclash_interrupt(void)
+	public static InterruptPtr redclash_interrupt = new InterruptPtr() { public int handler() 
 	{
 		if (readinputport(4) & 1)	/* Left Coin */
 			cpu_set_irq_line(0,0,ASSERT_LINE);
@@ -53,7 +53,7 @@ public class redclash
 			cpu_set_nmi_line(0,PULSE_LINE);
 	
 		return ignore_interrupt();
-	}
+	} };
 	
 	public static WriteHandlerPtr irqack_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{

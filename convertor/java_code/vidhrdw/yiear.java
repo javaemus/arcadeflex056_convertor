@@ -85,11 +85,11 @@ public class yiear
 	} };
 	
 	
-	int yiear_nmi_interrupt(void)
+	public static InterruptPtr yiear_nmi_interrupt = new InterruptPtr() { public int handler() 
 	{
 		/* can't use nmi_interrupt() because interrupt_enable_w() effects it */
 		return nmi_enable ? M6809_INT_NMI : ignore_interrupt();
-	}
+	} };
 	
 	
 	/***************************************************************************

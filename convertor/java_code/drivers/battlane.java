@@ -137,7 +137,7 @@ public class battlane
 		new Memory_WriteAddress(MEMPORT_MARKER, 0)
 	};
 	
-	int battlane_cpu1_interrupt(void)
+	public static InterruptPtr battlane_cpu1_interrupt = new InterruptPtr() { public int handler() 
 	{
 	#ifdef MAME_DEBUG
 		if (keyboard_pressed_memory(KEYCODE_F))
@@ -163,7 +163,7 @@ public class battlane
 		}
 		else
 			return ignore_interrupt();
-	}
+	} };
 	
 	
 	

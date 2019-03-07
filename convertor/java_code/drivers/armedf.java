@@ -591,13 +591,13 @@ public class armedf
 		{ 255 }         /* (not supported) */
 	};
 	
-	int armedf_interrupt(void){
+	public static InterruptPtr armedf_interrupt = new InterruptPtr() { public int handler() {
 		return (1);
-	}
+	} };
 	
-	int cclimbr2_interrupt(void){
+	public static InterruptPtr cclimbr2_interrupt = new InterruptPtr() { public int handler() {
 		return (2);
-	}
+	} };
 	
 	static struct DACinterface dac_interface =
 	{

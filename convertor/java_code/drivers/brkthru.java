@@ -171,7 +171,7 @@ public class brkthru
 	
 	
 	
-	int brkthru_interrupt(void)
+	public static InterruptPtr brkthru_interrupt = new InterruptPtr() { public int handler() 
 	{
 		if (cpu_getiloops() == 0)
 		{
@@ -184,7 +184,7 @@ public class brkthru
 		}
 	
 		return ignore_interrupt();
-	}
+	} };
 	
 	static InputPortPtr input_ports_brkthru = new InputPortPtr(){ public void handler() { 
 		PORT_START(); 	/* IN0 */

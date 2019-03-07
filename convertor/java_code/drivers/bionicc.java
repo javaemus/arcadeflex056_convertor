@@ -121,11 +121,11 @@ public class bionicc
 	
 	********************************************************************/
 	
-	int bionicc_interrupt(void)
+	public static InterruptPtr bionicc_interrupt = new InterruptPtr() { public int handler() 
 	{
 		if (cpu_getiloops() == 0) return 2;
 		else return 4;
-	}
+	} };
 	static MEMORY_READ16_START( readmem )
 		{ 0x000000, 0x03ffff, MRA16_ROM },                /* 68000 ROM */
 		{ 0xfe0000, 0xfe07ff, MRA16_RAM },                /* RAM? */

@@ -433,10 +433,10 @@ public class namcos2
 	/*	Sound sub-system										  */
 	/**************************************************************/
 	
-	int namcos2_sound_interrupt(void)
+	public static InterruptPtr namcos2_sound_interrupt = new InterruptPtr() { public int handler() 
 	{
 		return M6809_INT_FIRQ;
-	}
+	} };
 	
 	
 	public static WriteHandlerPtr namcos2_sound_bankselect_w = new WriteHandlerPtr() {public void handler(int offset, int data)
@@ -454,10 +454,10 @@ public class namcos2
 	/*															  */
 	/**************************************************************/
 	
-	int namcos2_mcu_interrupt(void)
+	public static InterruptPtr namcos2_mcu_interrupt = new InterruptPtr() { public int handler() 
 	{
 		return HD63705_INT_IRQ;
-	}
+	} };
 	
 	static int namcos2_mcu_analog_ctrl=0;
 	static int namcos2_mcu_analog_data=0xaa;

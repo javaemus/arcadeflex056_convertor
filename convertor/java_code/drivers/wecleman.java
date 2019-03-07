@@ -1327,8 +1327,8 @@ public class wecleman
 	
 	
 	void hotchase_init_machine(void)		{						}
-	int  hotchase_interrupt( void )			{return 4;				}
-	int  hotchase_sound_interrupt(void)		{return M6809_INT_FIRQ;	}
+	public static InterruptPtr hotchase_interrupt = new InterruptPtr() { public int handler() 			{return 4;				} };
+	public static InterruptPtr hotchase_sound_interrupt = new InterruptPtr() { public int handler() 		{return M6809_INT_FIRQ;	} };
 	
 	static MachineDriver machine_driver_hotchase = new MachineDriver
 	(

@@ -212,7 +212,7 @@ public class seta2
 		}
 	}
 	
-	int seta2_interrupt(void)
+	public static InterruptPtr seta2_interrupt = new InterruptPtr() { public int handler() 
 	{
 		switch ( cpu_getiloops() )
 		{
@@ -223,7 +223,7 @@ public class seta2
 				break;
 		}
 		return ignore_interrupt();
-	}
+	} };
 	
 	/***************************************************************************
 	

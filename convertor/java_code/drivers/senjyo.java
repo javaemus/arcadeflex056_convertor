@@ -117,12 +117,12 @@ public class senjyo
 		int_delay_kludge = 10;
 	}
 	
-	int senjyo_interrupt(void)
+	public static InterruptPtr senjyo_interrupt = new InterruptPtr() { public int handler() 
 	{
 		if (int_delay_kludge == 0) return interrupt();
 		else int_delay_kludge--;
 		return ignore_interrupt();
-	}
+	} };
 	
 	public static WriteHandlerPtr flip_screen_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{

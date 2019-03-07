@@ -171,12 +171,12 @@ public class naughtyb
 	
 	***************************************************************************/
 	
-	int naughtyb_interrupt(void)
+	public static InterruptPtr naughtyb_interrupt = new InterruptPtr() { public int handler() 
 	{
 		if (readinputport(2) & 1)
 			return nmi_interrupt();
 		else return ignore_interrupt();
-	}
+	} };
 	
 	static InputPortPtr input_ports_naughtyb = new InputPortPtr(){ public void handler() { 
 		PORT_START(); 	/* IN0 */

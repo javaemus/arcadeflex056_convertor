@@ -312,7 +312,7 @@ public class _8080bw
 	}
 	
 	
-	int polaris_interrupt(void)
+	public static InterruptPtr polaris_interrupt = new InterruptPtr() { public int handler() 
 	{
 		static int cloud_speed;
 	
@@ -333,7 +333,7 @@ public class _8080bw
 		}
 	
 		return invaders_interrupt();
-	}
+	} };
 	
 	
 	static void plot_pixel_8080 (int x, int y, int col)

@@ -16,23 +16,23 @@ package machine;
 public class asteroid
 {
 	
-	int asteroid_interrupt (void)
+	public static InterruptPtr asteroid_interrupt = new InterruptPtr() { public int handler() 
 	{
 		/* Turn off interrupts if self-test is enabled */
 		if (readinputport(0) & 0x80)
 			return ignore_interrupt();
 		else
 			return nmi_interrupt();
-	}
+	} };
 	
-	int llander_interrupt (void)
+	public static InterruptPtr llander_interrupt = new InterruptPtr() { public int handler() 
 	{
 		/* Turn off interrupts if self-test is enabled */
 		if (readinputport(0) & 0x02)
 			return nmi_interrupt();
 		else
 			return ignore_interrupt();
-	}
+	} };
 	
 	public static ReadHandlerPtr asteroid_IN0_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{

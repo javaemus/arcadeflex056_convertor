@@ -88,10 +88,10 @@ public class aztarac
 	    }
 	}
 	
-	int aztarac_vg_interrupt(void)
+	public static InterruptPtr aztarac_vg_interrupt = new InterruptPtr() { public int handler() 
 	{
 	    return 4;
-	}
+	} };
 	
 	int aztarac_vh_start (void)
 	{

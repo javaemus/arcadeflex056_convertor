@@ -146,6 +146,27 @@ public class convertMame {
                         sUtil.skipLine();
                         continue;
                     }
+                    sUtil.skipSpace();
+                    if (sUtil.getToken("void"))//an to soma tis function einai (void)
+                    {
+                        sUtil.skipSpace();
+                        if (sUtil.parseChar() != ')') {
+                            Convertor.inpos = i;
+                            break;
+                        }
+                        if (Convertor.token[0].contains("_interrupt")) {
+                            sUtil.putString((new StringBuilder()).append("public static InterruptPtr ").append(Convertor.token[0]).append(" = new InterruptPtr() { public int handler() ").toString());
+                            type = MACHINE_INTERRUPT;
+                            i3 = -1;
+                            continue;
+                        } else if (Convertor.token[0].contains("_irq")) {
+                            sUtil.putString((new StringBuilder()).append("public static InterruptPtr ").append(Convertor.token[0]).append(" = new InterruptPtr() { public int handler() ").toString());
+                            type = MACHINE_INTERRUPT;
+                            i3 = -1;
+                            continue;
+                        }
+
+                    }
                     Convertor.inpos = i;
                     break;
                 }

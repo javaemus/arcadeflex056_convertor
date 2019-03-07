@@ -78,11 +78,11 @@ public class cadash
 		cpu_cause_interrupt(0,5);
 	}
 	
-	int cadash_interrupt(void)
+	public static InterruptPtr cadash_interrupt = new InterruptPtr() { public int handler() 
 	{
 		timer_set(TIME_IN_CYCLES(500,0),0, cadash_interrupt5);
 		return 4;  /* interrupt vector 4 */
-	}
+	} };
 	
 	
 	/************************************************

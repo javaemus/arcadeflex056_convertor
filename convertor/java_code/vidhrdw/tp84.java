@@ -364,7 +364,7 @@ public class tp84
 	}
 	
 	
-	int tp84_6809_interrupt(void)
+	public static InterruptPtr tp84_6809_interrupt = new InterruptPtr() { public int handler() 
 	{
 		scanline = 255 - cpu_getiloops();
 	
@@ -374,5 +374,5 @@ public class tp84
 			return interrupt();
 		else
 			return ignore_interrupt();
-	}
+	} };
 }

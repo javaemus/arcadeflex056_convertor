@@ -201,7 +201,7 @@ public class metro
 	}
 	
 	
-	int metro_interrupt(void)
+	public static InterruptPtr metro_interrupt = new InterruptPtr() { public int handler() 
 	{
 		switch ( cpu_getiloops() )
 		{
@@ -216,16 +216,16 @@ public class metro
 				break;
 		}
 		return ignore_interrupt();
-	}
+	} };
 	
 	/* Lev 1. Lev 2 seems sound related */
-	int bangball_interrupt(void)
+	public static InterruptPtr bangball_interrupt = new InterruptPtr() { public int handler() 
 	{
 		requested_int[0] = 1;	// set scroll regs if a flag is set
 		requested_int[4] = 1;	// clear that flag
 		update_irq_state();
 		return ignore_interrupt();
-	}
+	} };
 	
 	
 	static void vblank_end_callback(int param)
@@ -234,7 +234,7 @@ public class metro
 	}
 	
 	/* lev 2-7 (lev 1 seems sound related) */
-	int karatour_interrupt(void)
+	public static InterruptPtr karatour_interrupt = new InterruptPtr() { public int handler() 
 	{
 		switch ( cpu_getiloops() )
 		{
@@ -251,9 +251,9 @@ public class metro
 				break;
 		}
 		return ignore_interrupt();
-	}
+	} };
 	
-	int mouja_interrupt(void)
+	public static InterruptPtr mouja_interrupt = new InterruptPtr() { public int handler() 
 	{
 		switch ( cpu_getiloops() )
 		{
@@ -268,9 +268,9 @@ public class metro
 				break;
 		}
 		return ignore_interrupt();
-	}
+	} };
 	
-	int gakusai_interrupt(void)
+	public static InterruptPtr gakusai_interrupt = new InterruptPtr() { public int handler() 
 	{
 		switch ( cpu_getiloops() )
 		{
@@ -280,9 +280,9 @@ public class metro
 				break;
 		}
 		return ignore_interrupt();
-	}
+	} };
 	
-	int dokyusei_interrupt(void)
+	public static InterruptPtr dokyusei_interrupt = new InterruptPtr() { public int handler() 
 	{
 		switch ( cpu_getiloops() )
 		{
@@ -296,7 +296,7 @@ public class metro
 				break;
 		}
 		return ignore_interrupt();
-	}
+	} };
 	
 	/***************************************************************************
 	

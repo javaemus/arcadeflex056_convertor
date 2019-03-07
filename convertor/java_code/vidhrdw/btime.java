@@ -363,13 +363,13 @@ public class btime
 	} };
 	
 	
-	int lnc_sound_interrupt(void)
+	public static InterruptPtr lnc_sound_interrupt = new InterruptPtr() { public int handler() 
 	{
 	    if (lnc_sound_interrupt_enabled)
 	        return nmi_interrupt();
 	    else
 	        return ignore_interrupt();
-	}
+	} };
 	
 	
 	/***************************************************************************

@@ -248,7 +248,7 @@ public class gyruss
 	}
 	
 	
-	int gyruss_6809_interrupt(void)
+	public static InterruptPtr gyruss_6809_interrupt = new InterruptPtr() { public int handler() 
 	{
 		scanline = 255 - cpu_getiloops();
 	
@@ -258,5 +258,5 @@ public class gyruss
 			return interrupt();
 		else
 			return ignore_interrupt();
-	}
+	} };
 }

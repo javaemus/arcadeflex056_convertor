@@ -60,13 +60,13 @@ public class jackal
 		flip_screen_set(data & 0x08);
 	} };
 	
-	int jackal_interrupt(void)
+	public static InterruptPtr jackal_interrupt = new InterruptPtr() { public int handler() 
 	{
 		if (irq_enable)
 			return interrupt();
 		else
 			return ignore_interrupt();
-	}
+	} };
 	
 	
 	

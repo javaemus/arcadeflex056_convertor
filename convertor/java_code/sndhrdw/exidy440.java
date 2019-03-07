@@ -424,11 +424,11 @@ public class exidy440
 	 *
 	 *************************************/
 	
-	int exidy440_sound_interrupt(void)
+	public static InterruptPtr exidy440_sound_interrupt = new InterruptPtr() { public int handler() 
 	{
 		cpu_set_irq_line(1, 0, ASSERT_LINE);
 		return ignore_interrupt();
-	}
+	} };
 	
 	
 	public static WriteHandlerPtr exidy440_sound_interrupt_clear_w = new WriteHandlerPtr() {public void handler(int offset, int data)

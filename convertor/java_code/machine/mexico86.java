@@ -19,7 +19,7 @@ public class mexico86
 	
 	***************************************************************************/
 	
-	int mexico86_m68705_interrupt(void)
+	public static InterruptPtr mexico86_m68705_interrupt = new InterruptPtr() { public int handler() 
 	{
 		/* I don't know how to handle the interrupt line so I just toggle it every time. */
 		if (cpu_getiloops() & 1)
@@ -28,7 +28,7 @@ public class mexico86
 			cpu_set_irq_line(2,0,ASSERT_LINE);
 	
 	    return ignore_interrupt();
-	}
+	} };
 	
 	
 	

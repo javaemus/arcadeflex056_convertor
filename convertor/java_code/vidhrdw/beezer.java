@@ -10,7 +10,7 @@ public class beezer
 	UINT8 *beezer_ram;
 	static int scanline=0;
 	
-	int beezer_interrupt (void)
+	public static InterruptPtr beezer_interrupt = new InterruptPtr() { public int handler() 
 	{
 		scanline = (scanline + 1) % 0x80;
 		via_0_ca2_w (0, scanline & 0x10);
@@ -19,7 +19,7 @@ public class beezer
 		else
 			cpu_set_irq_line(0, M6809_FIRQ_LINE, CLEAR_LINE);
 		return ignore_interrupt();
-	}
+	} };
 	
 	void beezer_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
 	{

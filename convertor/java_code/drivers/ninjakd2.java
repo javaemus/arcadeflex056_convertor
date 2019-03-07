@@ -278,10 +278,10 @@ public class ninjakd2
 	}
 	
 	
-	int ninjakd2_interrupt(void)
+	public static InterruptPtr ninjakd2_interrupt = new InterruptPtr() { public int handler() 
 	{
 		return 0x00d7;	/* RST 10h */
-	}
+	} };
 	
 	public static ReadHandlerPtr ninjakd2_bankselect_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{

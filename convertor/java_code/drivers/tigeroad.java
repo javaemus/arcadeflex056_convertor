@@ -171,10 +171,10 @@ public class tigeroad
 		MSM5205_vclk_w(offset,0);
 	} };
 	
-	int tigeroad_interrupt(void)
+	public static InterruptPtr tigeroad_interrupt = new InterruptPtr() { public int handler() 
 	{
 		return 2;
-	}
+	} };
 	
 	
 	/***************************************************************************/

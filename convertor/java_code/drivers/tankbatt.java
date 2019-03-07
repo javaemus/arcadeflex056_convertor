@@ -180,12 +180,12 @@ public class tankbatt
 		new Memory_WriteAddress(MEMPORT_MARKER, 0)
 	};
 	
-	int tankbatt_interrupt (void)
+	public static InterruptPtr tankbatt_interrupt = new InterruptPtr() { public int handler() 
 	{
 		if ((readinputport (0) & 0x60) == 0) return interrupt ();
 		if (tankbatt_nmi_enable) return nmi_interrupt ();
 		else return ignore_interrupt ();
-	}
+	} };
 	
 	static InputPortPtr input_ports_tankbatt = new InputPortPtr(){ public void handler() { 
 		PORT_START(); 	/* IN0 */

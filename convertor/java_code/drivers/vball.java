@@ -407,7 +407,7 @@ public class vball
 		{ 40 }				/* volume */
 	};
 	
-	int vball_interrupt(void)
+	public static InterruptPtr vball_interrupt = new InterruptPtr() { public int handler() 
 	{
 		int line = 33 - cpu_getiloops();
 	
@@ -420,7 +420,7 @@ public class vball
 			return M6502_INT_NMI;
 		else 	/* skip 31 32 33 to allow vblank to finish */
 			return ignore_interrupt();
-	}
+	} };
 	
 	
 	static struct MachineDriver machine_driver_vball =

@@ -205,7 +205,7 @@ public class superqix
 		new WriteHandlerPtr[] { 0 }	/* port Bwrite */
 	);
 	
-	int sqix_interrupt(void)
+	public static InterruptPtr sqix_interrupt = new InterruptPtr() { public int handler() 
 	{
 		static int loop=0;
 	
@@ -217,7 +217,7 @@ public class superqix
 		}
 		else
 			return ignore_interrupt();
-	}
+	} };
 	
 	static MachineDriver machine_driver_superqix = new MachineDriver
 	(

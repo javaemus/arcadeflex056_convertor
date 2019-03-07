@@ -48,19 +48,19 @@ public class grobda
 	    int_enable_2 = offset;
 	} };
 	
-	int grobda_interrupt_1( void ) {
+	public static InterruptPtr grobda_interrupt_1 = new InterruptPtr() { public int handler()  {
 		if (int_enable_1)
 	        return interrupt();
 	    else
 	        return ignore_interrupt();
-	}
+	} };
 	
-	int grobda_interrupt_2( void ){
+	public static InterruptPtr grobda_interrupt_2 = new InterruptPtr() { public int handler() {
 	    if (int_enable_2)
 	        return interrupt();
 	    else
 	        return ignore_interrupt();
-	}
+	} };
 	
 	public static WriteHandlerPtr grobda_cpu2_enable_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{

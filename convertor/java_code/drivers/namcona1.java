@@ -741,7 +741,7 @@ public class namcona1
 		{ 0xfff000, 0xffffff, MWA16_RAM, &spriteram16 },
 	MEMORY_END
 	
-	int namcona1_interrupt( void )
+	public static InterruptPtr namcona1_interrupt = new InterruptPtr() { public int handler() 
 	{
 		if( enable_interrupts )
 		{
@@ -751,7 +751,7 @@ public class namcona1
 			if( (enable&(1<<level))==0 ) return level+1;
 		}
 		return ignore_interrupt();
-	}
+	} };
 	
 	static struct MachineDriver machine_driver_namcona1 = {
 		{

@@ -43,7 +43,7 @@ public class cps2
 	extern size_t cps2_output_size;
 	extern 
 	
-	int cps2_interrupt(void)
+	public static InterruptPtr cps2_interrupt = new InterruptPtr() { public int handler() 
 	{
 		/* 2 is vblank, 4 is some sort of scanline interrupt, 6 is both at the same time. */
 	
@@ -58,7 +58,7 @@ public class cps2
 		}
 	
 		return ignore_interrupt();
-	}
+	} };
 	
 	
 	

@@ -366,7 +366,7 @@ public class gottlieb
 		}
 	} };
 	
-	int gottlieb_interrupt(void)
+	public static InterruptPtr gottlieb_interrupt = new InterruptPtr() { public int handler() 
 	{
 		if (access_time > 0) {
 			access_time--;
@@ -391,7 +391,7 @@ public class gottlieb
 			}
 		}
 		return nmi_interrupt();
-	}
+	} };
 	
 	
 	static unsigned char *nvram;

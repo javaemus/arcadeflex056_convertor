@@ -1673,11 +1673,11 @@ public class galaxian
 	}
 	
 	
-	int hunchbks_vh_interrupt(void)
+	public static InterruptPtr hunchbks_vh_interrupt = new InterruptPtr() { public int handler() 
 	{
 		cpu_irq_line_vector_w(0,0,0x03);
 		cpu_set_irq_line(0,0,PULSE_LINE);
 	
 		return ignore_interrupt();
-	}
+	} };
 }

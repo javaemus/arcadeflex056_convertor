@@ -537,7 +537,7 @@ public class fuuki16
 	
 	*/
 	#define INTERRUPTS_NUM	(256)
-	int fuuki16_interrupt(void)
+	public static InterruptPtr fuuki16_interrupt = new InterruptPtr() { public int handler() 
 	{
 		if ( cpu_getiloops() == 2 )
 			cpu_set_irq_line(0, 1, PULSE_LINE);
@@ -552,7 +552,7 @@ public class fuuki16
 			cpu_set_irq_line(0, 5, PULSE_LINE);	// Raster Line IRQ
 	
 		return ignore_interrupt();
-	}
+	} };
 	
 	static MachineDriver machine_driver_fuuki16 = new MachineDriver
 	(

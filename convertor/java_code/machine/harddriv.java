@@ -245,12 +245,12 @@ public class harddriv
 	}
 	
 	
-	int hd68k_irq_gen(void)
+	public static InterruptPtr hd68k_irq_gen = new InterruptPtr() { public int handler() 
 	{
 		irq_state = 1;
 		atarigen_update_interrupts();
 		return ignore_interrupt();
-	}
+	} };
 	
 	
 	WRITE16_HANDLER( hd68k_irq_ack_w )

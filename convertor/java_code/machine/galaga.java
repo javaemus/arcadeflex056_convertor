@@ -225,13 +225,13 @@ public class galaga
 	
 	
 	
-	int galaga_interrupt_1(void)
+	public static InterruptPtr galaga_interrupt_1 = new InterruptPtr() { public int handler() 
 	{
 		galaga_vh_interrupt();	/* update the background stars position */
 	
 		if (interrupt_enable_1) return interrupt();
 		else return ignore_interrupt();
-	}
+	} };
 	
 	
 	
@@ -242,11 +242,11 @@ public class galaga
 	
 	
 	
-	int galaga_interrupt_2(void)
+	public static InterruptPtr galaga_interrupt_2 = new InterruptPtr() { public int handler() 
 	{
 		if (interrupt_enable_2) return interrupt();
 		else return ignore_interrupt();
-	}
+	} };
 	
 	
 	
@@ -257,9 +257,9 @@ public class galaga
 	
 	
 	
-	int galaga_interrupt_3(void)
+	public static InterruptPtr galaga_interrupt_3 = new InterruptPtr() { public int handler() 
 	{
 		if (interrupt_enable_3) return nmi_interrupt();
 		else return ignore_interrupt();
-	}
+	} };
 }

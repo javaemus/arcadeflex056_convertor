@@ -66,13 +66,13 @@ public class sega
 		}
 	} };
 	
-	int sega_interrupt (void)
+	public static InterruptPtr sega_interrupt = new InterruptPtr() { public int handler() 
 	{
 		if (input_port_5_r(0) & 0x01)
 			return nmi_interrupt();
 		else
 			return interrupt();
-	}
+	} };
 	
 	public static WriteHandlerPtr sega_mult1_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{

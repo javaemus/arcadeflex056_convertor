@@ -1366,7 +1366,7 @@ public class cischeat
 	
 	/* CPU # 1 */
 	#define CISCHEAT_INTERRUPT_NUM	3
-	int cischeat_interrupt(void)
+	public static InterruptPtr cischeat_interrupt = new InterruptPtr() { public int handler() 
 	{
 		if (cpu_getiloops()==0)	return 4; /* Once */
 		else
@@ -1374,22 +1374,22 @@ public class cischeat
 			if (cpu_getiloops()%2)	return 2;
 			else 					return 1;
 		}
-	}
+	} };
 	
 	
 	/* CPU # 2 & 3 */
 	#define CISCHEAT_SUB_INTERRUPT_NUM	1
-	int cischeat_sub_interrupt(void)
+	public static InterruptPtr cischeat_sub_interrupt = new InterruptPtr() { public int handler() 
 	{
 		return 4;
-	}
+	} };
 	
 	/* CPU # 4 */
 	#define CISCHEAT_SOUND_INTERRUPT_NUM	16
-	int cischeat_sound_interrupt(void)
+	public static InterruptPtr cischeat_sound_interrupt = new InterruptPtr() { public int handler() 
 	{
 		return 4;
-	}
+	} };
 	
 	#define STD_FM_CLOCK	3000000
 	#define STD_OKI_CLOCK	  12000

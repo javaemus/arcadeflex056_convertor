@@ -3854,7 +3854,7 @@ public class seta
 		5 ints per frame */
 	
 	#define calibr50_INTERRUPTS_NUM (4+1)
-	int calibr50_interrupt(void)
+	public static InterruptPtr calibr50_interrupt = new InterruptPtr() { public int handler() 
 	{
 		switch (cpu_getiloops())
 		{
@@ -3867,7 +3867,7 @@ public class seta
 	
 			default:	return ignore_interrupt();
 		}
-	}
+	} };
 	
 	
 	static MachineDriver machine_driver_calibr50 = new MachineDriver

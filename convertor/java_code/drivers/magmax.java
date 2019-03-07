@@ -302,10 +302,10 @@ public class magmax
 	);
 	
 	
-	int magmax_interrupt(void)
+	public static InterruptPtr magmax_interrupt = new InterruptPtr() { public int handler() 
 	{
 		return MC68000_IRQ_1;
-	}
+	} };
 	
 	static MachineDriver machine_driver_magmax = new MachineDriver
 	(

@@ -333,7 +333,7 @@ public class exidy440
 	}
 	
 	
-	int exidy440_vblank_interrupt(void)
+	public static InterruptPtr exidy440_vblank_interrupt = new InterruptPtr() { public int handler() 
 	{
 		/* set the FIRQ line on a VBLANK */
 		exidy440_firq_vblank = 1;
@@ -344,7 +344,7 @@ public class exidy440
 			timer_set(TIME_IN_USEC(Machine->drv->vblank_duration - 50), 0, exidy440_update_callback);
 	
 		return ignore_interrupt();
-	}
+	} };
 	
 	
 	

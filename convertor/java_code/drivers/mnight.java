@@ -36,10 +36,10 @@ public class mnight
 		main_cpu_num = 0;
 	}
 	
-	int mnight_interrupt(void)
+	public static InterruptPtr mnight_interrupt = new InterruptPtr() { public int handler() 
 	{
 		return 0x00d7;	/* RST 10h */
-	}
+	} };
 	
 	public static ReadHandlerPtr mnight_bankselect_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{

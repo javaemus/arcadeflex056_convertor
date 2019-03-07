@@ -22,7 +22,7 @@ public class videopin
 	
 	static int plunger_counter = -1;
 	
-	int videopin_interrupt(void)
+	public static InterruptPtr videopin_interrupt = new InterruptPtr() { public int handler() 
 	{
 		static int prev,counter;
 		int curr;
@@ -59,7 +59,7 @@ public class videopin
 		}
 	
 		return interrupt();
-	}
+	} };
 	
 	public static WriteHandlerPtr videopin_out1_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{

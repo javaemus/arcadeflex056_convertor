@@ -103,7 +103,7 @@ public class avalnche
 	  fastest timer needed so that we can turn off sound on the "off" time.
 	***************************************************************************/
 	
-	int avalnche_interrupt(void)
+	public static InterruptPtr avalnche_interrupt = new InterruptPtr() { public int handler() 
 	{
 		static int time_8V  = 0;
 		static int time_16V = 0;
@@ -147,6 +147,6 @@ public class avalnche
 			return nmi_interrupt();
 		else
 			return ignore_interrupt();
-	}
+	} };
 	
 }

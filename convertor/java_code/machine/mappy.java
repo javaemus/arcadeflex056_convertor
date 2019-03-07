@@ -563,11 +563,11 @@ public class mappy
 	
 	
 	
-	int mappy_interrupt_1(void)
+	public static InterruptPtr mappy_interrupt_1 = new InterruptPtr() { public int handler() 
 	{
 		if (interrupt_enable_1) return interrupt();
 		else return ignore_interrupt();
-	}
+	} };
 	
 	
 	
@@ -578,11 +578,11 @@ public class mappy
 	
 	
 	
-	int mappy_interrupt_2(void)
+	public static InterruptPtr mappy_interrupt_2 = new InterruptPtr() { public int handler() 
 	{
 		if (interrupt_enable_2) return interrupt();
 		else return ignore_interrupt();
-	}
+	} };
 	
 	
 	public static WriteHandlerPtr mappy_cpu_enable_w = new WriteHandlerPtr() {public void handler(int offset, int data)

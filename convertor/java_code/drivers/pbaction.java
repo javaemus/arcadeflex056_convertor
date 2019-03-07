@@ -272,10 +272,10 @@ public class pbaction
 	);
 	
 	
-	int pbaction_interrupt(void)
+	public static InterruptPtr pbaction_interrupt = new InterruptPtr() { public int handler() 
 	{
 		return  0x02;	/* the CPU is in Interrupt Mode 2 */
-	}
+	} };
 	
 	
 	static MachineDriver machine_driver_pbaction = new MachineDriver

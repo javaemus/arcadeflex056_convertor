@@ -163,13 +163,13 @@ public class slapfght
 	
 	
 	/* Generate interrups only if they have been enabled */
-	int getstar_interrupt(void)
+	public static InterruptPtr getstar_interrupt = new InterruptPtr() { public int handler() 
 	{
 		if (getstar_sh_intenabled)
 			return nmi_interrupt();
 		else
 			return ignore_interrupt();
-	}
+	} };
 	
 	public static WriteHandlerPtr getstar_port_04_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{

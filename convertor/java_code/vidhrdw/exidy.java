@@ -208,7 +208,7 @@ public class exidy
 	}
 	
 	
-	int exidy_vblank_interrupt(void)
+	public static InterruptPtr exidy_vblank_interrupt = new InterruptPtr() { public int handler() 
 	{
 		/* latch the current condition */
 		latch_condition(0);
@@ -217,7 +217,7 @@ public class exidy
 		/* set the IRQ line */
 		cpu_set_irq_line(0, 0, ASSERT_LINE);
 		return ignore_interrupt();
-	}
+	} };
 	
 	
 	public static ReadHandlerPtr exidy_interrupt_r  = new ReadHandlerPtr() { public int handler(int offset)

@@ -196,7 +196,7 @@ public class meadows
 	/* Interrupt for the main cpu                                */
 	/*                                                           */
 	/*************************************************************/
-	int     meadows_interrupt(void)
+	public static InterruptPtr meadows_interrupt = new InterruptPtr() { public int handler() 
 	{
 	static  int sense_state = 0;
 	static	int coin1_state = 0;
@@ -215,7 +215,7 @@ public class meadows
 		}
 		coin1_state = 0;
 		return ignore_interrupt();
-	}
+	} };
 	
 	/*************************************************************/
 	/*                                                           */

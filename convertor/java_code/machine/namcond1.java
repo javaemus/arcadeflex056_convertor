@@ -51,10 +51,10 @@ public class namcond1
 	    coin_count[2] = coin_count[3] = 0;
 	}
 	
-	int namcond1_vb_interrupt( void )
+	public static InterruptPtr namcond1_vb_interrupt = new InterruptPtr() { public int handler() 
 	{
 	    return( m68_level1_irq() );
-	}
+	} };
 	
 	// instance of the shared ram pointer
 	data16_t *namcond1_shared_ram;

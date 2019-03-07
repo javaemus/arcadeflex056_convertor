@@ -448,7 +448,7 @@ public class battlera
 	
 	/******************************************************************************/
 	
-	int battlera_interrupt(void)
+	public static InterruptPtr battlera_interrupt = new InterruptPtr() { public int handler() 
 	{
 		static int last_line=0;
 	
@@ -476,5 +476,5 @@ public class battlera
 		}
 	
 		return ignore_interrupt();
-	}
+	} };
 }

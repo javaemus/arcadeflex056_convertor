@@ -62,7 +62,7 @@ public class _8080bw
 	} };
 	
 	
-	int invaders_interrupt(void)
+	public static InterruptPtr invaders_interrupt = new InterruptPtr() { public int handler() 
 	{
 		static int count;
 	
@@ -72,7 +72,7 @@ public class _8080bw
 			return 0x00cf;  /* RST 08h */
 		else
 			return 0x00d7;  /* RST 10h */
-	}
+	} };
 	
 	/****************************************************************************
 		Extra / Different functions for Boot Hill                (MJC 300198)

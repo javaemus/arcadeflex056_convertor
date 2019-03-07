@@ -1243,7 +1243,7 @@ public class cpuexec
 	}
 	
 	
-	int nmi_interrupt(void)
+	public static InterruptPtr nmi_interrupt = new InterruptPtr() { public int handler() 
 	{
 		VERIFY_ACTIVECPU(INTERRUPT_NONE, nmi_interrupt);
 	
@@ -1251,14 +1251,14 @@ public class cpuexec
 		if (interrupt_enable[activecpu])
 			cpu_set_nmi_line(activecpu, PULSE_LINE);
 		return INTERRUPT_NONE;
-	}
+	} };
 	
 	
-	int ignore_interrupt(void)
+	public static InterruptPtr ignore_interrupt = new InterruptPtr() { public int handler() 
 	{
 		VERIFY_ACTIVECPU(INTERRUPT_NONE, ignore_interrupt);
 		return INTERRUPT_NONE;
-	}
+	} };
 	
 	
 	#if (HAS_M68000 || HAS_M68010 || HAS_M68020 || HAS_M68EC020)
@@ -1274,13 +1274,13 @@ public class cpuexec
 		return INTERRUPT_NONE;
 	}
 	
-	int m68_level1_irq(void) { return m68_irq(1); }
-	int m68_level2_irq(void) { return m68_irq(2); }
-	int m68_level3_irq(void) { return m68_irq(3); }
-	int m68_level4_irq(void) { return m68_irq(4); }
-	int m68_level5_irq(void) { return m68_irq(5); }
-	int m68_level6_irq(void) { return m68_irq(6); }
-	int m68_level7_irq(void) { return m68_irq(7); }
+	public static InterruptPtr m68_level1_irq = new InterruptPtr() { public int handler()  { return m68_irq(1); } };
+	public static InterruptPtr m68_level2_irq = new InterruptPtr() { public int handler()  { return m68_irq(2); } };
+	public static InterruptPtr m68_level3_irq = new InterruptPtr() { public int handler()  { return m68_irq(3); } };
+	public static InterruptPtr m68_level4_irq = new InterruptPtr() { public int handler()  { return m68_irq(4); } };
+	public static InterruptPtr m68_level5_irq = new InterruptPtr() { public int handler()  { return m68_irq(5); } };
+	public static InterruptPtr m68_level6_irq = new InterruptPtr() { public int handler()  { return m68_irq(6); } };
+	public static InterruptPtr m68_level7_irq = new InterruptPtr() { public int handler()  { return m68_irq(7); } };
 	
 	#endif
 	

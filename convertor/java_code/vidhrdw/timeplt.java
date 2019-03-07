@@ -243,7 +243,7 @@ public class timeplt
 	}
 	
 	
-	int timeplt_interrupt(void)
+	public static InterruptPtr timeplt_interrupt = new InterruptPtr() { public int handler() 
 	{
 		scanline = 255 - cpu_getiloops();
 	
@@ -254,5 +254,5 @@ public class timeplt
 			return nmi_interrupt();
 		else
 			return ignore_interrupt();
-	}
+	} };
 }

@@ -218,11 +218,11 @@ public class ajax
 		firq_enable = 1;
 	}
 	
-	int ajax_interrupt( void )
+	public static InterruptPtr ajax_interrupt = new InterruptPtr() { public int handler() 
 	{
 		if (K051960_is_IRQ_enabled())
 			return KONAMI_INT_IRQ;
 		else
 			return ignore_interrupt();
-	}
+	} };
 }

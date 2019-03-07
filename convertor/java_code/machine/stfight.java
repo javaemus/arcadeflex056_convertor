@@ -101,34 +101,34 @@ public class stfight
 		cpu_setbank( 1, &ROM2[data<<14] );
 	} };
 	
-	int stfight_vb_interrupt( void )
+	public static InterruptPtr stfight_vb_interrupt = new InterruptPtr() { public int handler() 
 	{
 	    // Do a RST10
 	    interrupt_vector_w( 0, 0xd7 );
 	
 		return( interrupt() );
-	}
+	} };
 	
 	/*
 	 *      CPU 1 timed interrupt - 30Hz???
 	 */
 	
-	int stfight_interrupt_1( void )
+	public static InterruptPtr stfight_interrupt_1 = new InterruptPtr() { public int handler() 
 	{
 	    // Do a RST08
 	    interrupt_vector_w( 0, 0xcf );
 	
 		return( interrupt() );
-	}
+	} };
 	
 	/*
 	 *      CPU 2 timed interrupt - 120Hz
 	 */
 	
-	int stfight_interrupt_2( void )
+	public static InterruptPtr stfight_interrupt_2 = new InterruptPtr() { public int handler() 
 	{
 		return( interrupt() );
-	}
+	} };
 	
 	/*
 	 *      Hardware handlers

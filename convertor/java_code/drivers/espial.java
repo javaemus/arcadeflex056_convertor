@@ -89,10 +89,10 @@ public class espial
 	} };
 	
 	
-	int zodiac_master_interrupt(void)
+	public static InterruptPtr zodiac_master_interrupt = new InterruptPtr() { public int handler() 
 	{
 		return (cpu_getiloops() == 0) ? nmi_interrupt() : interrupt();
-	}
+	} };
 	
 	
 	public static WriteHandlerPtr zodiac_master_soundlatch_w = new WriteHandlerPtr() {public void handler(int offset, int data)

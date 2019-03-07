@@ -1816,11 +1816,11 @@ public class suna8
 			MIXER(17,MIXER_PAN_LEFT), MIXER(17,MIXER_PAN_RIGHT)	}
 	};
 	
-	int brickzn_interrupt(void)
+	public static InterruptPtr brickzn_interrupt = new InterruptPtr() { public int handler() 
 	{
 		if (cpu_getiloops())	return Z80_NMI_INT;
 		else					return Z80_IRQ_INT;
-	}
+	} };
 	
 	static MachineDriver machine_driver_brickzn = new MachineDriver
 	(
@@ -1880,13 +1880,13 @@ public class suna8
 	
 	/* 1 x 24 MHz crystal */
 	
-	int hardhea2_interrupt(void)
+	public static InterruptPtr hardhea2_interrupt = new InterruptPtr() { public int handler() 
 	{
 		if (cpu_getiloops())
 			if (suna8_nmi_enable)	return Z80_NMI_INT;
 			else					return ignore_interrupt();
 		else					return Z80_IRQ_INT;
-	}
+	} };
 	
 	static MachineDriver machine_driver_hardhea2 = new MachineDriver
 	(

@@ -24,7 +24,7 @@ public class shaolins
 	void shaolins_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	
 	
-	int shaolins_interrupt(void)
+	public static InterruptPtr shaolins_interrupt = new InterruptPtr() { public int handler() 
 	{
 		if (cpu_getiloops() == 0) return interrupt();
 		else if (cpu_getiloops() % 2)
@@ -33,7 +33,7 @@ public class shaolins
 		}
 	
 		return ignore_interrupt();
-	}
+	} };
 	
 	
 	

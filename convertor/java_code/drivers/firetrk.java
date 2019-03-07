@@ -687,7 +687,7 @@ public class firetrk
 		new Memory_WriteAddress(MEMPORT_MARKER, 0)
 	};
 	
-	int firetruck_interrupt( void )
+	public static InterruptPtr firetruck_interrupt = new InterruptPtr() { public int handler() 
 	{
 		if( cpu_getiloops()==0 )
 		{
@@ -706,7 +706,7 @@ public class firetrk
 		{
 			return interrupt(); /* IRQ */
 		}
-	}
+	} };
 	
 	static MachineDriver machine_driver_firetruck = new MachineDriver
 	(

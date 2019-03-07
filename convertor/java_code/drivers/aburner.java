@@ -869,10 +869,10 @@ public class aburner
 		sys16_interleave_sprite_data( 0x200000 );
 	}
 	
-	int aburner_interrupt( void ){
+	public static InterruptPtr aburner_interrupt = new InterruptPtr() { public int handler() {
 		if( cpu_getiloops()!=0 ) return 2; /* (?) updates sound and inputs */
 		return 4; /* vblank */
-	}
+	} };
 	
 	public static InterruptPtr aburner_interrupt2 = new InterruptPtr() { public int handler() {
 		return 4; /* Interrupt vector 4, used by VBlank */

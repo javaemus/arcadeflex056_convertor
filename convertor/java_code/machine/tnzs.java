@@ -617,7 +617,7 @@ public class tnzs
 		}
 	} };
 	
-	int tnzs_interrupt(void)
+	public static InterruptPtr tnzs_interrupt = new InterruptPtr() { public int handler() 
 	{
 		int coin;
 	
@@ -647,7 +647,7 @@ public class tnzs
 		}
 	
 		return 0;
-	}
+	} };
 	
 	void tnzs_init_machine (void)
 	{

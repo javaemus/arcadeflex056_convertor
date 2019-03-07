@@ -148,10 +148,10 @@ public class gameplan
 		new Memory_WriteAddress(MEMPORT_MARKER, 0)
 	};
 	
-	int gameplan_interrupt(void)
+	public static InterruptPtr gameplan_interrupt = new InterruptPtr() { public int handler() 
 	{
 		return 1;
-	}
+	} };
 	
 	static InputPortPtr input_ports_kaos = new InputPortPtr(){ public void handler() { 
 		PORT_START();       /* IN0 - from "TEST NO.7 - status locator - coin-door" */

@@ -617,7 +617,7 @@ public class suna16
 			MIXER(40,MIXER_PAN_LEFT), MIXER(40,MIXER_PAN_RIGHT)	}
 	};
 	
-	int bssoccer_interrupt(void)
+	public static InterruptPtr bssoccer_interrupt = new InterruptPtr() { public int handler() 
 	{
 		switch (cpu_getiloops())
 		{
@@ -625,7 +625,7 @@ public class suna16
 			case 1: 	return 2;
 			default:	return ignore_interrupt();
 		}
-	}
+	} };
 	
 	static MachineDriver machine_driver_bssoccer = new MachineDriver
 	(

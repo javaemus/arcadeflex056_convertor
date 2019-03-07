@@ -86,29 +86,29 @@ public class toypop
 		interrupt_enable_68k = 0;
 	}
 	
-	int toypop_main_interrupt(void)
+	public static InterruptPtr toypop_main_interrupt = new InterruptPtr() { public int handler() 
 	{
 		if (interrupt_enable_mainCPU)
 			return interrupt();
 		else
 			return ignore_interrupt();
-	}
+	} };
 	
-	int toypop_sound_interrupt(void)
+	public static InterruptPtr toypop_sound_interrupt = new InterruptPtr() { public int handler() 
 	{
 		if (interrupt_enable_sound)
 			return interrupt();
 		else
 			return ignore_interrupt();
-	}
+	} };
 	
-	int toypop_m68000_interrupt(void)
+	public static InterruptPtr toypop_m68000_interrupt = new InterruptPtr() { public int handler() 
 	{
 		if (interrupt_enable_68k)
 			return MC68000_IRQ_6;
 		else
 			return ignore_interrupt();
-	}
+	} };
 	
 	public static ReadHandlerPtr toypop_customio_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{

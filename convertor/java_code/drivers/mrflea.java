@@ -173,10 +173,10 @@ public class mrflea
 		return mrflea_status^0x01;
 	} };
 	
-	int mrflea_io_interrupt( void ){
+	public static InterruptPtr mrflea_io_interrupt = new InterruptPtr() { public int handler() {
 		if( cpu_getiloops()==0 || (mrflea_status&0x08) ) return interrupt();
 		return ignore_interrupt();
-	}
+	} };
 	
 	public static ReadHandlerPtr mrflea_interrupt_type_r  = new ReadHandlerPtr() { public int handler(int offset){
 	/* there are two interrupt types:

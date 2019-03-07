@@ -112,7 +112,7 @@ public class centiped
 		powerup_counter = 10;
 	}
 	
-	int centiped_interrupt(void)
+	public static InterruptPtr centiped_interrupt = new InterruptPtr() { public int handler() 
 	{
 		int offset;
 		int slice = 3 - cpu_getiloops();
@@ -133,7 +133,7 @@ public class centiped
 			powerup_counter--;
 			return ignore_interrupt();
 		}
-	}
+	} };
 	
 	
 	
