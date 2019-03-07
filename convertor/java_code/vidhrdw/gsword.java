@@ -127,7 +127,7 @@ public class gsword
 	}
 	
 	
-	int gsword_vh_start(void)
+	public static VhStartPtr gsword_vh_start = new VhStartPtr() { public int handler() 
 	{
 		if ((dirtybuffer = malloc(gs_videoram_size)) == 0) return 1;
 		if ((bitmap_bg = bitmap_alloc(Machine->drv->screen_width,2*Machine->drv->screen_height)) == 0)
@@ -137,7 +137,7 @@ public class gsword
 		}
 		memset(dirtybuffer,1,gs_videoram_size);
 		return 0;
-	}
+	} };
 	
 	void gsword_vh_stop(void)
 	{

@@ -183,7 +183,7 @@ public class wwfsstar
 	*******************************************************************************/
 	
 	
-	int wwfsstar_vh_start(void)
+	public static VhStartPtr wwfsstar_vh_start = new VhStartPtr() { public int handler() 
 	{
 		fg0_tilemap = tilemap_create(get_fg0_tile_info,tilemap_scan_rows,TILEMAP_TRANSPARENT, 8, 8,32,32);
 		tilemap_set_transparent_pen(fg0_tilemap,0);
@@ -195,7 +195,7 @@ public class wwfsstar
 			return 1;
 	
 		return 0;
-	}
+	} };
 	
 	void wwfsstar_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
 	{

@@ -101,7 +101,7 @@ public class gaelco
 		}
 	}
 	
-	int bigkarnk_vh_start(void)
+	public static VhStartPtr bigkarnk_vh_start = new VhStartPtr() { public int handler() 
 	{
 		int i;
 	
@@ -123,9 +123,9 @@ public class gaelco
 		}
 	
 		return 0;
-	}
+	} };
 	
-	int maniacsq_vh_start(void)
+	public static VhStartPtr maniacsq_vh_start = new VhStartPtr() { public int handler() 
 	{
 		int i;
 	
@@ -147,7 +147,7 @@ public class gaelco
 		}
 	
 		return 0;
-	}
+	} };
 	
 	
 	/***************************************************************************

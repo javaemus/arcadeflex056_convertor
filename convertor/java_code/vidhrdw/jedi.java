@@ -38,7 +38,7 @@ public class jedi
 	 *
 	 *************************************/
 	
-	int jedi_vh_start(void)
+	public static VhStartPtr jedi_vh_start = new VhStartPtr() { public int handler() 
 	{
 		/* allocate dirty buffer for the foreground characters */
 		fgdirty = dirtybuffer = malloc(videoram_size);
@@ -101,7 +101,7 @@ public class jedi
 		/* reserve color 1024 for black (disabled display) */
 		palette_set_color(1024, 0, 0, 0);
 		return 0;
-	}
+	} };
 	
 	
 	

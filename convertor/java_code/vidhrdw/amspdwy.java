@@ -89,14 +89,14 @@ public class amspdwy
 	}
 	
 	
-	int amspdwy_vh_start(void)
+	public static VhStartPtr amspdwy_vh_start = new VhStartPtr() { public int handler() 
 	{
 		tilemap	=	tilemap_create(	get_tile_info,	tilemap_scan_cols_back,
 									TILEMAP_OPAQUE,	8,8,	0x20, 0x20 );
 	
 		if (tilemap)	return 0;
 		else			return 1;
-	}
+	} };
 	
 	
 	

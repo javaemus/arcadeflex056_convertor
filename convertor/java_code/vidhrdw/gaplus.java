@@ -256,7 +256,7 @@ public class gaplus
 	
 	extern unsigned char *gaplus_sharedram;
 	
-	int gaplus_vh_start( void ) {
+	public static VhStartPtr gaplus_vh_start = new VhStartPtr() { public int handler()  {
 	
 		/* set up spriteram area */
 		spriteram_size = 0x80;
@@ -267,7 +267,7 @@ public class gaplus
 		starfield_init();
 	
 		return generic_vh_start();
-	}
+	} };
 	
 	void gaplus_vh_stop( void ) {
 	

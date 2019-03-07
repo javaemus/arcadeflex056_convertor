@@ -126,7 +126,7 @@ public class kaneko16
 	KANEKO16_LAYER(2)
 	KANEKO16_LAYER(3)
 	
-	int kaneko16_vh_start_sprites(void)
+	public static VhStartPtr kaneko16_vh_start_sprites = new VhStartPtr() { public int handler() 
 	{
 		/* 0x400 sprites max */
 		spritelist.first_sprite = (struct tempsprite *)malloc(0x400 * sizeof(spritelist.first_sprite[0]));
@@ -135,9 +135,9 @@ public class kaneko16
 			return 1;
 	
 		return 0;
-	}
+	} };
 	
-	int kaneko16_vh_start_1xVIEW2(void)
+	public static VhStartPtr kaneko16_vh_start_1xVIEW2 = new VhStartPtr() { public int handler() 
 	{
 		if (	kaneko16_vh_start_sprites()	)
 			return 1;
@@ -185,9 +185,9 @@ public class kaneko16
 	
 			return 0;
 		}
-	}
+	} };
 	
-	int kaneko16_vh_start_2xVIEW2(void)
+	public static VhStartPtr kaneko16_vh_start_2xVIEW2 = new VhStartPtr() { public int handler() 
 	{
 		if (	kaneko16_vh_start_1xVIEW2()	)
 			return 1;
@@ -230,9 +230,9 @@ public class kaneko16
 	
 			return 0;
 		}
-	}
+	} };
 	
-	int sandscrp_vh_start_1xVIEW2(void)
+	public static VhStartPtr sandscrp_vh_start_1xVIEW2 = new VhStartPtr() { public int handler() 
 	{
 		if (	kaneko16_vh_start_1xVIEW2()	)
 			return 1;
@@ -240,7 +240,7 @@ public class kaneko16
 		tilemap_set_scrolldy( kaneko16_tmap_0, 0, 256 - 1 );
 		tilemap_set_scrolldy( kaneko16_tmap_1, 0, 256 - 1 );
 		return 0;
-	}
+	} };
 	
 	
 	void kaneko16_vh_stop(void)
@@ -276,7 +276,7 @@ public class kaneko16
 		}
 	}
 	
-	int berlwall_vh_start(void)
+	public static VhStartPtr berlwall_vh_start = new VhStartPtr() { public int handler() 
 	{
 		int sx, x,y;
 		unsigned char *RAM	=	memory_region(REGION_GFX3);
@@ -323,7 +323,7 @@ public class kaneko16
 		  }
 	
 		return kaneko16_vh_start_1xVIEW2();
-	}
+	} };
 	
 	void berlwall_vh_stop(void)
 	{

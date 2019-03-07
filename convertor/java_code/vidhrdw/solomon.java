@@ -28,7 +28,7 @@ public class solomon
 	  Start the video hardware emulation.
 	
 	***************************************************************************/
-	int solomon_vh_start(void)
+	public static VhStartPtr solomon_vh_start = new VhStartPtr() { public int handler() 
 	{
 		if (generic_vh_start() != 0)
 			return 1;
@@ -51,7 +51,7 @@ public class solomon
 		state_save_register_func_postload (solomon_dirty_all);
 	
 		return 0;
-	}
+	} };
 	
 	
 	

@@ -44,7 +44,7 @@ public class gbusters
 	
 	***************************************************************************/
 	
-	int gbusters_vh_start(void)
+	public static VhStartPtr gbusters_vh_start = new VhStartPtr() { public int handler() 
 	{
 		layer_colorbase[0] = 48;
 		layer_colorbase[1] = 0;
@@ -60,7 +60,7 @@ public class gbusters
 		}
 	
 		return 0;
-	}
+	} };
 	
 	void gbusters_vh_stop(void)
 	{

@@ -78,7 +78,7 @@ public class shangha3
 	
 	
 	
-	int shangha3_vh_start(void)
+	public static VhStartPtr shangha3_vh_start = new VhStartPtr() { public int handler() 
 	{
 		if ((rawbitmap = bitmap_alloc(Machine->drv->screen_width,Machine->drv->screen_height)) == 0)
 			return 1;
@@ -97,7 +97,7 @@ public class shangha3
 		}
 	
 		return 0;
-	}
+	} };
 	
 	void shangha3_vh_stop(void)
 	{

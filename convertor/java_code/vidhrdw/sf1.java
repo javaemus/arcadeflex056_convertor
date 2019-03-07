@@ -65,7 +65,7 @@ public class sf1
 	
 	***************************************************************************/
 	
-	int sf1_vh_start(void)
+	public static VhStartPtr sf1_vh_start = new VhStartPtr() { public int handler() 
 	{
 		bg_tilemap = tilemap_create(get_bg_tile_info,tilemap_scan_cols,TILEMAP_OPAQUE,     16,16,2048,16);
 		fg_tilemap = tilemap_create(get_fg_tile_info,tilemap_scan_cols,TILEMAP_TRANSPARENT,16,16,2048,16);
@@ -78,7 +78,7 @@ public class sf1
 		tilemap_set_transparent_pen(tx_tilemap,3);
 	
 		return 0;
-	}
+	} };
 	
 	
 	

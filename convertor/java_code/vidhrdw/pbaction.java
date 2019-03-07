@@ -29,7 +29,7 @@ public class pbaction
 	  Start the video hardware emulation.
 	
 	***************************************************************************/
-	int pbaction_vh_start(void)
+	public static VhStartPtr pbaction_vh_start = new VhStartPtr() { public int handler() 
 	{
 		if (generic_vh_start() != 0)
 			return 1;
@@ -49,7 +49,7 @@ public class pbaction
 		}
 	
 		return 0;
-	}
+	} };
 	
 	
 	/***************************************************************************

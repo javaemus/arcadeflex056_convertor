@@ -36,15 +36,15 @@ public class asuka
 		return 0;
 	}
 	
-	int asuka_vh_start (void)
+	public static VhStartPtr asuka_vh_start = new VhStartPtr() { public int handler() 
 	{
 		return (asuka_core_vh_start(0));
-	}
+	} };
 	
-	int galmedes_vh_start (void)
+	public static VhStartPtr galmedes_vh_start = new VhStartPtr() { public int handler() 
 	{
 		return (asuka_core_vh_start(1));
-	}
+	} };
 	
 	void asuka_vh_stop (void)
 	{

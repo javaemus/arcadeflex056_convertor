@@ -496,7 +496,7 @@ public class taito_f3
 		}
 	}
 	
-	int f3_vh_start(void)
+	public static VhStartPtr f3_vh_start = new VhStartPtr() { public int handler() 
 	{
 		struct F3config *pCFG=&f3_config_table[0];
 		int tile;
@@ -589,7 +589,7 @@ public class taito_f3
 	#endif
 	
 		return 0;
-	}
+	} };
 	
 	/******************************************************************************/
 	

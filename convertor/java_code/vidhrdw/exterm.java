@@ -83,10 +83,10 @@ public class exterm
 	 *
 	 *************************************/
 	
-	int exterm_vh_start(void)
+	public static VhStartPtr exterm_vh_start = new VhStartPtr() { public int handler() 
 	{
 		return 0;
-	}
+	} };
 	
 	void exterm_vh_stop(void)
 	{

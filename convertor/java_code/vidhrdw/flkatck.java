@@ -75,7 +75,7 @@ public class flkatck
 	
 	***************************************************************************/
 	
-	int flkatck_vh_start(void)
+	public static VhStartPtr flkatck_vh_start = new VhStartPtr() { public int handler() 
 	{
 		k007121_tilemap[0] = tilemap_create(get_tile_info_A,tilemap_scan_rows,TILEMAP_OPAQUE,8,8,32,32);
 		k007121_tilemap[1] = tilemap_create(get_tile_info_B,tilemap_scan_rows,TILEMAP_OPAQUE,8,8,32,32);
@@ -94,7 +94,7 @@ public class flkatck
 	
 			return 0;
 		}
-	}
+	} };
 	
 	
 	/***************************************************************************

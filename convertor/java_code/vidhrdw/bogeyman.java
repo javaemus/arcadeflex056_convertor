@@ -45,14 +45,14 @@ public class bogeyman
 		}
 	}
 	
-	int bogeyman_vh_start(void)
+	public static VhStartPtr bogeyman_vh_start = new VhStartPtr() { public int handler() 
 	{
 		dirtybuffer = malloc(videoram_size);
 		memset(dirtybuffer,1,videoram_size);
 		tmpbitmap = bitmap_alloc(256,256);
 	
 		return 0;
-	}
+	} };
 	
 	void bogeyman_vh_stop(void)
 	{

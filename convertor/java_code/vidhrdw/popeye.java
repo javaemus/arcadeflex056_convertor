@@ -158,13 +158,13 @@ public class popeye
 	  Start the video hardware emulation.
 	
 	***************************************************************************/
-	int popeye_vh_start(void)
+	public static VhStartPtr popeye_vh_start = new VhStartPtr() { public int handler() 
 	{
 		if ((tmpbitmap2 = bitmap_alloc(512,512)) == 0)
 			return 1;
 	
 		return 0;
-	}
+	} };
 	
 	void popeye_vh_stop(void)
 	{

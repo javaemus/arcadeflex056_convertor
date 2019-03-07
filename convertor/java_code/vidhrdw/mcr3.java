@@ -280,7 +280,7 @@ public class mcr3
 	 *
 	 *************************************/
 	
-	int spyhunt_vh_start(void)
+	public static VhStartPtr spyhunt_vh_start = new VhStartPtr() { public int handler() 
 	{
 		/* allocate our own dirty buffer */
 		dirtybuffer = malloc(videoram_size);
@@ -300,7 +300,7 @@ public class mcr3
 		spyhunt_scrollx = spyhunt_scrolly = 0;
 	
 		return 0;
-	}
+	} };
 	
 	
 	
@@ -422,14 +422,14 @@ public class mcr3
 	 *
 	 *************************************/
 	
-	int dotron_vh_start(void)
+	public static VhStartPtr dotron_vh_start = new VhStartPtr() { public int handler() 
 	{
 		/* do generic initialization to start */
 		if (generic_vh_start())
 			return 1;
 	
 		return dotron_artwork_start();
-	}
+	} };
 	
 	/*************************************
 	 *

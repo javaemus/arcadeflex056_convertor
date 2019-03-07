@@ -66,7 +66,7 @@ public class gradius3
 	
 	***************************************************************************/
 	
-	int gradius3_vh_start(void)
+	public static VhStartPtr gradius3_vh_start = new VhStartPtr() { public int handler() 
 	{
 		int i;
 		static GfxLayout spritelayout = new GfxLayout

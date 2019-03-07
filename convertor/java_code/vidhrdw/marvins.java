@@ -179,7 +179,7 @@ public class marvins
 	**
 	***************************************************************************/
 	
-	int marvins_vh_start( void )
+	public static VhStartPtr marvins_vh_start = new VhStartPtr() { public int handler() 
 	{
 		flipscreen = -1; old_bg_color = old_fg_color = -1;
 	
@@ -225,7 +225,7 @@ public class marvins
 	
 			return 0;
 		}
-	}
+	} };
 	
 	/***************************************************************************
 	**

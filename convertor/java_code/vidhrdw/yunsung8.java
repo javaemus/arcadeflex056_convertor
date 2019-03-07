@@ -175,7 +175,7 @@ public class yunsung8
 	
 	***************************************************************************/
 	
-	int yunsung8_vh_start(void)
+	public static VhStartPtr yunsung8_vh_start = new VhStartPtr() { public int handler() 
 	{
 		tilemap_0 = tilemap_create(	get_tile_info_0, tilemap_scan_rows,
 									TILEMAP_OPAQUE, 8,8, DIM_NX_0, DIM_NY_0 );
@@ -189,7 +189,7 @@ public class yunsung8
 			return 0;
 		}
 		else return 1;
-	}
+	} };
 	
 	
 	

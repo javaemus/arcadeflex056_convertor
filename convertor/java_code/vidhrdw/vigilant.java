@@ -45,7 +45,7 @@ public class vigilant
 	static struct mame_bitmap *bg_bitmap;
 	
 	
-	int vigilant_vh_start(void)
+	public static VhStartPtr vigilant_vh_start = new VhStartPtr() { public int handler() 
 	{
 		generic_vh_start();
 	
@@ -56,7 +56,7 @@ public class vigilant
 		}
 	
 		return 0;
-	}
+	} };
 	
 	void vigilant_vh_stop(void)
 	{

@@ -132,7 +132,7 @@ public class senjyo
 		bgbitmap = 0;
 	}
 	
-	int senjyo_vh_start(void)
+	public static VhStartPtr senjyo_vh_start = new VhStartPtr() { public int handler() 
 	{
 		bgbitmap = bitmap_alloc(256,256);
 		if (bgbitmap == 0)
@@ -169,7 +169,7 @@ public class senjyo
 		schedule_full_refresh();
 	
 		return 0;
-	}
+	} };
 	
 	
 	

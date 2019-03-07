@@ -84,7 +84,7 @@ public class tubep
 	}
 	
 	
-	int tubep_vh_start(void)
+	public static VhStartPtr tubep_vh_start = new VhStartPtr() { public int handler() 
 	{
 		if ((dirtybuff = malloc(0x800/2)) == 0)
 			return 1;
@@ -98,7 +98,7 @@ public class tubep
 		}
 	
 		return 0;
-	}
+	} };
 	
 	void tubep_vh_stop(void)
 	{

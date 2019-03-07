@@ -90,7 +90,7 @@ public class ccastles
 	  Start the video hardware emulation.
 	
 	***************************************************************************/
-	int ccastles_vh_start(void)
+	public static VhStartPtr ccastles_vh_start = new VhStartPtr() { public int handler() 
 	{
 		if ((tmpbitmap = bitmap_alloc(Machine->drv->screen_width,Machine->drv->screen_height)) == 0)
 			return 1;
@@ -109,7 +109,7 @@ public class ccastles
 		}
 	
 		return 0;
-	}
+	} };
 	
 	
 	

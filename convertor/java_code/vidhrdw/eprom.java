@@ -21,7 +21,7 @@ public class eprom
 	 *
 	 *************************************/
 	
-	int eprom_vh_start(void)
+	public static VhStartPtr eprom_vh_start = new VhStartPtr() { public int handler() 
 	{
 		static const struct ataripf_desc pfdesc =
 		{
@@ -113,7 +113,7 @@ public class eprom
 		ataripf_free();
 	cant_create_pf:
 		return 1;
-	}
+	} };
 	
 	
 	

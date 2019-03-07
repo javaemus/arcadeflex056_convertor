@@ -45,6 +45,7 @@ public class convertMame {
     static final int SN76496 = 17;
     static final int AY8910 = 18;
     static final int MACHINE_INTERRUPT = 19;
+    static final int VH_START=20;
 
     public static void Convert() {
         Convertor.inpos = 0;//position of pointer inside the buffers
@@ -162,6 +163,11 @@ public class convertMame {
                         } else if (Convertor.token[0].contains("_irq")) {
                             sUtil.putString((new StringBuilder()).append("public static InterruptPtr ").append(Convertor.token[0]).append(" = new InterruptPtr() { public int handler() ").toString());
                             type = MACHINE_INTERRUPT;
+                            i3 = -1;
+                            continue;
+                        } else if (Convertor.token[0].contains("vh_start")) {
+                            sUtil.putString((new StringBuilder()).append("public static VhStartPtr ").append(Convertor.token[0]).append(" = new VhStartPtr() { public int handler() ").toString());
+                            type = VH_START;
                             i3 = -1;
                             continue;
                         }
@@ -694,7 +700,7 @@ public class convertMame {
                         }
                     }
 
-                    if (type == PLOT_PIXEL || type == MARK_DIRTY || type == PLOT_BOX || type == READ_PIXEL || type == READ_HANDLER8 || type == WRITE_HANDLER8 || type == MACHINE_INTERRUPT) {
+                    if (type == PLOT_PIXEL || type == MARK_DIRTY || type == PLOT_BOX || type == READ_PIXEL || type == READ_HANDLER8 || type == WRITE_HANDLER8 || type == MACHINE_INTERRUPT || type == VH_START) {
                         i3++;
                     }
                 }
@@ -791,7 +797,7 @@ public class convertMame {
                             continue;
                         }
                     }
-                    if (type == PLOT_PIXEL || type == MARK_DIRTY || type == PLOT_BOX || type == READ_PIXEL || type == READ_HANDLER8 || type == WRITE_HANDLER8 || type == MACHINE_INTERRUPT) {
+                    if (type == PLOT_PIXEL || type == MARK_DIRTY || type == PLOT_BOX || type == READ_PIXEL || type == READ_HANDLER8 || type == WRITE_HANDLER8 || type == MACHINE_INTERRUPT || type == VH_START) {
                         i3--;
                         if (i3 == -1) {
                             sUtil.putString("} };");

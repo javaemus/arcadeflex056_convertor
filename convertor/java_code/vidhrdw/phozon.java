@@ -70,7 +70,7 @@ public class phozon
 			COLOR(2,i) = (*(color_prom++) & 0x0f) + 0x10;
 	}
 	
-	int phozon_vh_start( void ) {
+	public static VhStartPtr phozon_vh_start = new VhStartPtr() { public int handler()  {
 		/* set up spriteram area */
 		spriteram_size = 0x80;
 		spriteram = &phozon_spriteram[0x780];
@@ -78,7 +78,7 @@ public class phozon
 		spriteram_3 = &phozon_spriteram[0x780+0x800+0x800];
 	
 		return generic_vh_start();
-	}
+	} };
 	
 	void phozon_vh_stop( void ) {
 	

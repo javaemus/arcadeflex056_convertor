@@ -218,7 +218,7 @@ public class xexex
 	 	{{ 53-64, 16 }, {53-64, 16}, {53-64-2, 16}, {53-64-4, 16}}
 	};
 	
-	int xexex_vh_start(void)
+	public static VhStartPtr xexex_vh_start = new VhStartPtr() { public int handler() 
 	{
 		cur_alpha = 0;
 		cur_alpha_level = 0x1f;
@@ -241,7 +241,7 @@ public class xexex
 		// cur_alpha is saved as part of "control2" in the main driver
 		state_save_register_int ("video", 0, "alpha", &cur_alpha_level);
 		return 0;
-	}
+	} };
 	
 	void xexex_vh_stop(void)
 	{

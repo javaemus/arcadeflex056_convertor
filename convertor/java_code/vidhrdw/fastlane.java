@@ -86,7 +86,7 @@ public class fastlane
 	
 	***************************************************************************/
 	
-	int fastlane_vh_start(void)
+	public static VhStartPtr fastlane_vh_start = new VhStartPtr() { public int handler() 
 	{
 		layer0 = tilemap_create(get_tile_info0,tilemap_scan_rows,TILEMAP_OPAQUE,8,8,32,32);
 		layer1 = tilemap_create(get_tile_info1,tilemap_scan_rows,TILEMAP_OPAQUE,8,8,32,32);
@@ -107,7 +107,7 @@ public class fastlane
 	
 			return 0;
 		}
-	}
+	} };
 	
 	/***************************************************************************
 	

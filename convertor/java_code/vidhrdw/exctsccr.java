@@ -27,11 +27,11 @@ public class exctsccr
 		cpu_cause_interrupt( 1, 0xff );
 	}
 	
-	int exctsccr_vh_start( void ) {
+	public static VhStartPtr exctsccr_vh_start = new VhStartPtr() { public int handler()  {
 		exctsccr_fm_timer = timer_pulse( TIME_IN_HZ( 75.0 ), 0, exctsccr_fm_callback ); /* updates fm */
 	
 		return generic_vh_start();
-	}
+	} };
 	
 	void exctsccr_vh_stop( void ) {
 		if ( exctsccr_fm_timer ) {

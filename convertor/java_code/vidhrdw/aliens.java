@@ -57,7 +57,7 @@ public class aliens
 	
 	***************************************************************************/
 	
-	int aliens_vh_start( void )
+	public static VhStartPtr aliens_vh_start = new VhStartPtr() { public int handler() 
 	{
 		paletteram = malloc(0x400);
 		if (paletteram == 0) return 1;
@@ -79,7 +79,7 @@ public class aliens
 		}
 	
 		return 0;
-	}
+	} };
 	
 	void aliens_vh_stop( void )
 	{

@@ -61,7 +61,7 @@ public class balsente
 	 *
 	 *************************************/
 	
-	int balsente_vh_start(void)
+	public static VhStartPtr balsente_vh_start = new VhStartPtr() { public int handler() 
 	{
 		/* reset the system */
 		palettebank_vis = 0;
@@ -100,7 +100,7 @@ public class balsente
 		sprite_data = memory_region(REGION_GFX1);
 	
 		return 0;
-	}
+	} };
 	
 	
 	

@@ -234,7 +234,7 @@ public class wwfwfest
 	 Draw Order / Priority seems to affect where the scroll values are used also.
 	*******************************************************************************/
 	
-	int wwfwfest_vh_start(void)
+	public static VhStartPtr wwfwfest_vh_start = new VhStartPtr() { public int handler() 
 	{
 		fg0_tilemap = tilemap_create(get_fg0_tile_info,tilemap_scan_rows,TILEMAP_TRANSPARENT, 8, 8,64,32);
 		bg1_tilemap = tilemap_create(get_bg1_tile_info,tilemap_scan_rows,TILEMAP_TRANSPARENT, 16, 16,32,32);
@@ -248,7 +248,7 @@ public class wwfwfest
 		tilemap_set_transparent_pen(bg0_tilemap,0);
 	
 		return 0;
-	}
+	} };
 	
 	void wwfwfest_vh_screenrefresh(struct mame_bitmap *bitmap, int full_refresh)
 	{

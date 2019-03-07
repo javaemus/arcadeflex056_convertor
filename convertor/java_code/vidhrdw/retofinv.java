@@ -95,7 +95,7 @@ public class retofinv
 	}
 	
 	
-	int retofinv_vh_start(void)
+	public static VhStartPtr retofinv_vh_start = new VhStartPtr() { public int handler() 
 	{
 		if ((bg_dirtybuffer = malloc(retofinv_videoram_size)) == 0)
 		{
@@ -109,7 +109,7 @@ public class retofinv
 		memset(bg_dirtybuffer,1,retofinv_videoram_size);
 		bg_bank = 0;
 		return 0;
-	}
+	} };
 	
 	void retofinv_vh_stop(void)
 	{

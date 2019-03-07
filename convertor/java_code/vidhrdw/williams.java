@@ -197,7 +197,7 @@ public class williams
 	 *
 	 *************************************/
 	
-	int williams_vh_start(void)
+	public static VhStartPtr williams_vh_start = new VhStartPtr() { public int handler() 
 	{
 		/* allocate space for video RAM and dirty scanlines */
 		williams_videoram = malloc(2 * VIDEORAM_SIZE + 256);
@@ -221,7 +221,7 @@ public class williams
 		sinistar_clip = 0xffff;
 	
 		return 0;
-	}
+	} };
 	
 	
 	void williams_vh_stop(void)
@@ -325,7 +325,7 @@ public class williams
 	 *
 	 *************************************/
 	
-	int williams2_vh_start(void)
+	public static VhStartPtr williams2_vh_start = new VhStartPtr() { public int handler() 
 	{
 		/* standard initialization */
 		if (williams_vh_start())
@@ -350,7 +350,7 @@ public class williams
 		williams2_bg_color = 0;
 	
 		return 0;
-	}
+	} };
 	
 	
 	void williams2_vh_stop(void)
@@ -561,7 +561,7 @@ public class williams
 	 *
 	 *************************************/
 	
-	int blaster_vh_start(void)
+	public static VhStartPtr blaster_vh_start = new VhStartPtr() { public int handler() 
 	{
 		int i, j;
 	
@@ -580,7 +580,7 @@ public class williams
 			}
 	
 		return 0;
-	}
+	} };
 	
 	
 	

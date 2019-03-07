@@ -714,10 +714,10 @@ public class shanghai
 		}
 	}
 	
-	int shanghai_vh_start(void)
+	public static VhStartPtr shanghai_vh_start = new VhStartPtr() { public int handler() 
 	{
 		return HD63484_start();
-	}
+	} };
 	
 	void shanghai_vh_stop(void)
 	{

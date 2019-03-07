@@ -94,7 +94,7 @@ public class pacland
 	
 	
 	
-	int pacland_vh_start( void )
+	public static VhStartPtr pacland_vh_start = new VhStartPtr() { public int handler() 
 	{
 		if ( ( dirtybuffer = malloc( videoram_size ) ) == 0)
 			return 1;
@@ -124,7 +124,7 @@ public class pacland
 		palette_bank = -1;
 	
 		return 0;
-	}
+	} };
 	
 	void pacland_vh_stop(void)
 	{

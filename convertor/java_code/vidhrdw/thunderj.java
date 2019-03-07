@@ -41,7 +41,7 @@ public class thunderj
 	 *
 	 *************************************/
 	
-	int thunderj_vh_start(void)
+	public static VhStartPtr thunderj_vh_start = new VhStartPtr() { public int handler() 
 	{
 		static const struct ataripf_desc pf0desc =
 		{
@@ -196,7 +196,7 @@ public class thunderj
 		free(start_end);
 	cant_allocate_startend:
 		return 1;
-	}
+	} };
 	
 	
 	

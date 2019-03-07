@@ -129,7 +129,7 @@ public class bosco
 		}
 	}
 	
-	int bosco_vh_start(void)
+	public static VhStartPtr bosco_vh_start = new VhStartPtr() { public int handler() 
 	{
 		int generator;
 		int x,y;
@@ -194,7 +194,7 @@ public class bosco
 		displacement = 1;
 	
 		return 0;
-	}
+	} };
 	
 	
 	/***************************************************************************

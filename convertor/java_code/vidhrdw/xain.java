@@ -69,7 +69,7 @@ public class xain
 	
 	***************************************************************************/
 	
-	int xain_vh_start(void)
+	public static VhStartPtr xain_vh_start = new VhStartPtr() { public int handler() 
 	{
 		bgram0_tilemap = tilemap_create(get_bgram0_tile_info,back_scan,    TILEMAP_OPAQUE,     16,16,32,32);
 		bgram1_tilemap = tilemap_create(get_bgram1_tile_info,back_scan,    TILEMAP_TRANSPARENT,16,16,32,32);
@@ -82,7 +82,7 @@ public class xain
 		tilemap_set_transparent_pen(char_tilemap,0);
 	
 		return 0;
-	}
+	} };
 	
 	
 	

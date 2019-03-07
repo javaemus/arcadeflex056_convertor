@@ -128,15 +128,15 @@ public class warriorb
 		return 0;
 	}
 	
-	int darius2d_vh_start (void)
+	public static VhStartPtr darius2d_vh_start = new VhStartPtr() { public int handler() 
 	{
 		return (warriorb_core_vh_start(4,0));
-	}
+	} };
 	
-	int warriorb_vh_start (void)
+	public static VhStartPtr warriorb_vh_start = new VhStartPtr() { public int handler() 
 	{
 		return (warriorb_core_vh_start(4,1));
-	}
+	} };
 	
 	void warriorb_vh_stop (void)
 	{

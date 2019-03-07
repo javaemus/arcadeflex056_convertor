@@ -189,10 +189,10 @@ public class system32
 		ROM_LOAD( "mpr14943", 0x200000, 0x100000, 0x24d40333 );
 	ROM_END(); }}; 
 	
-	int system32_vh_start(void)
+	public static VhStartPtr system32_vh_start = new VhStartPtr() { public int handler() 
 	{
 		return 0;
-	}
+	} };
 	
 	void system32_vh_stop(void)
 	{

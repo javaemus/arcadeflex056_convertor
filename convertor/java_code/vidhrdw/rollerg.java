@@ -52,7 +52,7 @@ public class rollerg
 	
 	***************************************************************************/
 	
-	int rollerg_vh_start(void)
+	public static VhStartPtr rollerg_vh_start = new VhStartPtr() { public int handler() 
 	{
 		bg_colorbase = 16;
 		sprite_colorbase = 16;
@@ -68,7 +68,7 @@ public class rollerg
 	
 		K051316_set_offset(0, 22, 1);
 		return 0;
-	}
+	} };
 	
 	void rollerg_vh_stop(void)
 	{

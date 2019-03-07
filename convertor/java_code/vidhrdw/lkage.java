@@ -85,7 +85,7 @@ public class lkage
 				0)
 	}
 	
-	int lkage_vh_start(void)
+	public static VhStartPtr lkage_vh_start = new VhStartPtr() { public int handler() 
 	{
 		bg_tile_bank = fg_tile_bank = 0;
 	
@@ -104,7 +104,7 @@ public class lkage
 		tilemap_set_scrolldx(bg_tilemap,-13,19);
 	
 		return 0;
-	}
+	} };
 	
 	static void draw_sprites( struct mame_bitmap *bitmap, int priority )
 	{

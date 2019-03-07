@@ -92,7 +92,7 @@ public class lwings
 	
 	***************************************************************************/
 	
-	int lwings_vh_start(void)
+	public static VhStartPtr lwings_vh_start = new VhStartPtr() { public int handler() 
 	{
 		fg_tilemap  = tilemap_create(get_fg_tile_info,        tilemap_scan_rows,TILEMAP_TRANSPARENT, 8, 8,32,32);
 		bg1_tilemap = tilemap_create(lwings_get_bg1_tile_info,tilemap_scan_cols,TILEMAP_OPAQUE,     16,16,32,32);
@@ -103,9 +103,9 @@ public class lwings
 		tilemap_set_transparent_pen(fg_tilemap,3);
 	
 		return 0;
-	}
+	} };
 	
-	int trojan_vh_start(void)
+	public static VhStartPtr trojan_vh_start = new VhStartPtr() { public int handler() 
 	{
 		fg_tilemap  = tilemap_create(get_fg_tile_info,        tilemap_scan_rows,    TILEMAP_TRANSPARENT,8, 8,32,32);
 		bg1_tilemap = tilemap_create(trojan_get_bg1_tile_info,tilemap_scan_cols,    TILEMAP_SPLIT,     16,16,32,32);
@@ -121,14 +121,14 @@ public class lwings
 			return 0;
 		}
 		return 1; /* error */
-	}
+	} };
 	
-	int avengers_vh_start( void )
+	public static VhStartPtr avengers_vh_start = new VhStartPtr() { public int handler() 
 	{
 		int result = trojan_vh_start();
 		bAvengersHardware = 1;
 		return result;
-	}
+	} };
 	
 	/***************************************************************************
 	

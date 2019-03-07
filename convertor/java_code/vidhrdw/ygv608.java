@@ -398,7 +398,7 @@ public class ygv608
 		}
 	}
 	
-	int ygv608_vh_start(void)
+	public static VhStartPtr ygv608_vh_start = new VhStartPtr() { public int handler() 
 	{
 		memset( &ygv608, 0, sizeof(ygv608) );
 	
@@ -407,7 +407,7 @@ public class ygv608
 		ygv608.tilemap_resize = 1;
 	
 		return 0;
-	}
+	} };
 	
 	void ygv608_vh_stop(void)
 	{

@@ -701,7 +701,7 @@ public class astrocde
 		star = 0;
 	}
 	
-	int astrocde_vh_start(void)
+	public static VhStartPtr astrocde_vh_start = new VhStartPtr() { public int handler() 
 	{
 		rng = malloc(RNG_PERIOD * sizeof(rng[0]));
 		star = malloc(SCREEN_WIDTH * MAX_LINES * sizeof(star[0]));
@@ -713,9 +713,9 @@ public class astrocde
 		CurrentScan = 0;
 	
 		return 0;
-	}
+	} };
 	
-	int astrocde_stars_vh_start(void)
+	public static VhStartPtr astrocde_stars_vh_start = new VhStartPtr() { public int handler() 
 	{
 		int res;
 	
@@ -725,7 +725,7 @@ public class astrocde
 		init_star_field();
 	
 		return res;
-	}
+	} };
 	
 	
 	

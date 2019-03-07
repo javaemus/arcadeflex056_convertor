@@ -45,14 +45,14 @@ public class capbowl
 	 *
 	 *************************************/
 	
-	int capbowl_vh_start(void)
+	public static VhStartPtr capbowl_vh_start = new VhStartPtr() { public int handler() 
 	{
 		/* initialize TMS34061 emulation */
 	    if (tms34061_start(&tms34061intf))
 			return 1;
 	
 		return 0;
-	}
+	} };
 	
 	
 	

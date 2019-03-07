@@ -116,7 +116,7 @@ public class kncljoe
 	
 	***************************************************************************/
 	
-	int kncljoe_vh_start( void )
+	public static VhStartPtr kncljoe_vh_start = new VhStartPtr() { public int handler() 
 	{
 		bg_tilemap = tilemap_create(get_bg_tile_info,tilemap_scan_rows,TILEMAP_OPAQUE,8,8,64,32);
 	
@@ -125,7 +125,7 @@ public class kncljoe
 	
 		tilemap_set_scroll_rows(bg_tilemap,4);
 		return 0;
-	}
+	} };
 	
 	
 	

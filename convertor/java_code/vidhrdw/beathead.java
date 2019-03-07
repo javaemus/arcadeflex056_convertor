@@ -51,13 +51,13 @@ public class beathead
 	 *
 	 *************************************/
 	
-	int beathead_vh_start(void)
+	public static VhStartPtr beathead_vh_start = new VhStartPtr() { public int handler() 
 	{
 		hsyncram = malloc(0x800);
 		if (hsyncram == 0)
 			return 1;
 		return 0;
-	}
+	} };
 	
 	
 	void beathead_vh_stop(void)

@@ -153,7 +153,7 @@ public class polepos
 	
 	***************************************************************************/
 	
-	int polepos_vh_start(void)
+	public static VhStartPtr polepos_vh_start = new VhStartPtr() { public int handler() 
 	{
 		/* allocate view bitmap */
 		view_bitmap = bitmap_alloc(64*8, 16*8);
@@ -169,7 +169,7 @@ public class polepos
 		}
 	
 		return 0;
-	}
+	} };
 	
 	void polepos_vh_stop(void)
 	{

@@ -168,7 +168,7 @@ public class stadhero
 				0)
 	}
 	
-	int stadhero_vh_start (void)
+	public static VhStartPtr stadhero_vh_start = new VhStartPtr() { public int handler() 
 	{
 		pf1_tilemap =     tilemap_create(get_pf1_tile_info,tilemap_scan_rows,TILEMAP_TRANSPARENT, 8, 8,32,32);
 		pf2_tilemap =     tilemap_create(get_pf2_tile_info,stadhero_scan,TILEMAP_OPAQUE,     16,16,64,64);
@@ -179,7 +179,7 @@ public class stadhero
 		tilemap_set_transparent_pen(pf1_tilemap,0);
 	
 		return 0;
-	}
+	} };
 	
 	/******************************************************************************/
 }

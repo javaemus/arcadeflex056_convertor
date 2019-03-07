@@ -78,7 +78,7 @@ public class taito_l
 	
 	***************************************************************************/
 	
-	int taitol_vh_start(void)
+	public static VhStartPtr taitol_vh_start = new VhStartPtr() { public int handler() 
 	{
 		int i;
 	
@@ -104,7 +104,7 @@ public class taito_l
 		tilemap_set_scrolldx(bg19_tilemap,38,-21);
 	
 		return 0;
-	}
+	} };
 	
 	
 	

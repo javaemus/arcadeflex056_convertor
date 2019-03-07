@@ -380,12 +380,12 @@ public class dynax
 	
 	***************************************************************************/
 	
-	int dynax_vh_start(void)
+	public static VhStartPtr dynax_vh_start = new VhStartPtr() { public int handler() 
 	{
 		return 0;
-	}
+	} };
 	
-	int sprtmtch_vh_start(void)
+	public static VhStartPtr sprtmtch_vh_start = new VhStartPtr() { public int handler() 
 	{
 		if (!(dynax_pixmap[0][0] = malloc(256*256)))	return 1;
 		if (!(dynax_pixmap[0][1] = malloc(256*256)))	return 1;
@@ -394,7 +394,7 @@ public class dynax
 		if (!(dynax_pixmap[2][0] = malloc(256*256)))	return 1;
 		if (!(dynax_pixmap[2][1] = malloc(256*256)))	return 1;
 		return 0;
-	}
+	} };
 	
 	void dynax_vh_stop(void)
 	{

@@ -61,7 +61,7 @@ public class fromance
 	 *
 	 *************************************/
 	
-	int fromance_vh_start(void)
+	public static VhStartPtr fromance_vh_start = new VhStartPtr() { public int handler() 
 	{
 		/* allocate tilemaps */
 		bg_tilemap = tilemap_create(get_bg_tile_info, tilemap_scan_rows, TILEMAP_OPAQUE,      8,4, 64,64);
@@ -87,7 +87,7 @@ public class fromance
 		/* reset the timer */
 		crtc_timer = NULL;
 		return 0;
-	}
+	} };
 	
 	
 	

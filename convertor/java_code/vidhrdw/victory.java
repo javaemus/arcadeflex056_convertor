@@ -70,7 +70,7 @@ public class victory
 	 *
 	 *************************************/
 	
-	int victory_vh_start(void)
+	public static VhStartPtr victory_vh_start = new VhStartPtr() { public int handler() 
 	{
 		/* allocate bitmapram */
 		rram = malloc(0x4000);
@@ -108,7 +108,7 @@ public class victory
 		memset(&micro, 0, sizeof(micro));
 	
 		return 0;
-	}
+	} };
 	
 	
 	

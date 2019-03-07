@@ -31,12 +31,12 @@ public class copsnrob
 	unsigned char *copsnrob_truckram;
 	
 	
-	int copsnrob_vh_start(void)
+	public static VhStartPtr copsnrob_vh_start = new VhStartPtr() { public int handler() 
 	{
 		overlay_create(copsnrob_overlay, 2);
 	
 	    return 0;
-	}
+	} };
 	
 	
 	/***************************************************************************

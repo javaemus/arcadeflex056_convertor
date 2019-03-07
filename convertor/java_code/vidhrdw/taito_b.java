@@ -194,7 +194,7 @@ public class taito_b
 		framebuffer[0] = framebuffer[1] = pixel_bitmap = 0;
 	}
 	
-	static int taitob_vh_start_core(void)
+	static public static VhStartPtr taitob_vh_start_core = new VhStartPtr() { public int handler() 
 	{
 		framebuffer[0] = bitmap_alloc(512,256);
 		framebuffer[1] = bitmap_alloc(512,256);
@@ -214,9 +214,9 @@ public class taito_b
 		tilemap_set_transparent_pen(tx_tilemap,0);
 	
 		return 0;
-	}
+	} };
 	
-	int taitob_vh_start_color_order0(void)
+	public static VhStartPtr taitob_vh_start_color_order0 = new VhStartPtr() { public int handler() 
 	{
 		/*graphics are shared, only that they use different palette*/
 		/*this is the basic layout used in: Nastar, Ashura Blaster, Hit the Ice, Rambo3, Tetris*/
@@ -233,9 +233,9 @@ public class taito_b
 		b_colors_per_layer = 0x40;
 	
 		return taitob_vh_start_core();
-	}
+	} };
 	
-	int taitob_vh_start_color_order1(void)
+	public static VhStartPtr taitob_vh_start_color_order1 = new VhStartPtr() { public int handler() 
 	{
 		/*and this is the reversed layout used in: Crime City, Puzzle Bobble*/
 		b_bg_color_base = 0x00;
@@ -246,9 +246,9 @@ public class taito_b
 		b_colors_per_layer = 0x40;
 	
 		return taitob_vh_start_core();
-	}
+	} };
 	
-	int taitob_vh_start_color_order2(void)
+	public static VhStartPtr taitob_vh_start_color_order2 = new VhStartPtr() { public int handler() 
 	{
 		/*this is used in: rambo3a, masterw, silentd, selfeena, ryujin */
 		b_bg_color_base = 0x30;
@@ -259,10 +259,10 @@ public class taito_b
 		b_colors_per_layer = 0x10;
 	
 		return taitob_vh_start_core();
-	}
+	} };
 	
 	
-	int hitice_vh_start (void)
+	public static VhStartPtr hitice_vh_start = new VhStartPtr() { public int handler() 
 	{
 		if (taitob_vh_start_color_order0())
 			return 1;
@@ -278,7 +278,7 @@ public class taito_b
 		pixel_init = 1;
 	
 		return 0;
-	}
+	} };
 	
 	
 	

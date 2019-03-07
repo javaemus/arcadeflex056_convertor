@@ -152,15 +152,15 @@ public class pengo
 	  Start the video hardware emulation.
 	
 	***************************************************************************/
-	int pengo_vh_start(void)
+	public static VhStartPtr pengo_vh_start = new VhStartPtr() { public int handler() 
 	{
 		gfx_bank = 0;
 		xoffsethack = 0;
 	
 	    return generic_vh_start();
-	}
+	} };
 	
-	int pacman_vh_start(void)
+	public static VhStartPtr pacman_vh_start = new VhStartPtr() { public int handler() 
 	{
 		gfx_bank = 0;
 		/* In the Pac Man based games (NOT Pengo) the first two sprites must be offset */
@@ -168,7 +168,7 @@ public class pengo
 		xoffsethack = 1;
 	
 		return generic_vh_start();
-	}
+	} };
 	
 	
 	

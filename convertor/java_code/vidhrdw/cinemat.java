@@ -162,19 +162,19 @@ public class cinemat
 	
 	***************************************************************************/
 	
-	int cinemat_vh_start (void)
+	public static VhStartPtr cinemat_vh_start = new VhStartPtr() { public int handler() 
 	{
 		vector_set_shift (VEC_SHIFT);
 		cinemat_screenh = Machine->visible_area.max_y - Machine->visible_area.min_y;
 		return vector_vh_start();
-	}
+	} };
 	
-	int spacewar_vh_start (void)
+	public static VhStartPtr spacewar_vh_start = new VhStartPtr() { public int handler() 
 	{
 		vector_set_shift (VEC_SHIFT);
 		cinemat_screenh = Machine->visible_area.max_y - Machine->visible_area.min_y;
 		return vector_vh_start();
-	}
+	} };
 	
 	
 	void cinemat_vh_stop (void)

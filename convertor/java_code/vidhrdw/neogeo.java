@@ -139,7 +139,7 @@ public class neogeo
 	}
 	
 	
-	int neogeo_mvs_vh_start(void)
+	public static VhStartPtr neogeo_mvs_vh_start = new VhStartPtr() { public int handler() 
 	{
 		no_of_tiles=Machine->gfx[2]->total_elements;
 		if (no_of_tiles>0x10000) high_tile=1; else high_tile=0;
@@ -181,7 +181,7 @@ public class neogeo
 		palette_swap_pending = 0;
 	
 		return 0;
-	}
+	} };
 	
 	/******************************************************************************/
 	

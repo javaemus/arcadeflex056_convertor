@@ -99,7 +99,7 @@ public class ddragon3
 	}
 	
 	/* start & stop */
-	int ddragon3_vh_start(void)
+	public static VhStartPtr ddragon3_vh_start = new VhStartPtr() { public int handler() 
 	{
 		ddragon3_bg_tilebase = 0;
 		old_ddragon3_bg_tilebase = -1;
@@ -112,7 +112,7 @@ public class ddragon3
 	
 		tilemap_set_transparent_pen(foreground,0);
 		return 0;
-	}
+	} };
 	
 	/*
 	 * Sprite Format

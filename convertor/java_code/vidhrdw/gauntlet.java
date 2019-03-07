@@ -42,7 +42,7 @@ public class gauntlet
 	 *
 	 *************************************/
 	
-	int gauntlet_vh_start(void)
+	public static VhStartPtr gauntlet_vh_start = new VhStartPtr() { public int handler() 
 	{
 		static const struct ataripf_desc pfdesc =
 		{
@@ -155,7 +155,7 @@ public class gauntlet
 		ataripf_free();
 	cant_create_pf:
 		return 1;
-	}
+	} };
 	
 	
 	

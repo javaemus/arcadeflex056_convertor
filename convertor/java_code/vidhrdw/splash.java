@@ -125,7 +125,7 @@ public class splash
 	
 	***************************************************************************/
 	
-	int splash_vh_start(void)
+	public static VhStartPtr splash_vh_start = new VhStartPtr() { public int handler() 
 	{
 		screen[0] = tilemap_create(get_tile_info_splash_screen0,tilemap_scan_rows,TILEMAP_TRANSPARENT, 8, 8,64,32);
 		screen[1] = tilemap_create(get_tile_info_splash_screen1,tilemap_scan_rows,TILEMAP_TRANSPARENT,16,16,32,32);
@@ -140,7 +140,7 @@ public class splash
 		tilemap_set_scrollx(screen[0], 0, 4);
 	
 		return 0;
-	}
+	} };
 	
 	/***************************************************************************
 	

@@ -47,7 +47,7 @@ public class battlnts
 	
 	***************************************************************************/
 	
-	int battlnts_vh_start(void)
+	public static VhStartPtr battlnts_vh_start = new VhStartPtr() { public int handler() 
 	{
 		layer_colorbase[0] = 0;
 		layer_colorbase[1] = 0;
@@ -66,7 +66,7 @@ public class battlnts
 		}
 	
 		return 0;
-	}
+	} };
 	
 	void battlnts_vh_stop(void)
 	{

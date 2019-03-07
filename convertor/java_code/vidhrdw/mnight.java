@@ -28,7 +28,7 @@ public class mnight
 	static int       bg_enable = 1;
 	static int       sp_overdraw = 0;
 	
-	int mnight_vh_start(void)
+	public static VhStartPtr mnight_vh_start = new VhStartPtr() { public int handler() 
 	{
 		if ((bg_dirtybuffer = malloc(1024)) == 0)
 		{
@@ -48,7 +48,7 @@ public class mnight
 		memset(bg_dirtybuffer,1,1024);
 	
 		return 0;
-	}
+	} };
 	
 	void mnight_vh_stop(void)
 	{

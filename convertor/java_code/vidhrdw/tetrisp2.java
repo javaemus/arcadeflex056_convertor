@@ -157,7 +157,7 @@ public class tetrisp2
 	}
 	
 	
-	int tetrisp2_vh_start(void)
+	public static VhStartPtr tetrisp2_vh_start = new VhStartPtr() { public int handler() 
 	{
 		tilemap_0 = tilemap_create(	get_tile_info_0,tilemap_scan_rows,
 									TILEMAP_TRANSPARENT,
@@ -175,7 +175,7 @@ public class tetrisp2
 		tilemap_set_scrolldx(tilemap_0, 4, 4);
 	
 		return 0;
-	}
+	} };
 	
 	
 	

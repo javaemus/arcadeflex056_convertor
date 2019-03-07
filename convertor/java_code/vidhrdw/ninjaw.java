@@ -159,7 +159,7 @@ public class ninjaw
 	}
 	
 	
-	static int ninjaw_core_vh_start (void)
+	static public static VhStartPtr ninjaw_core_vh_start = new VhStartPtr() { public int handler() 
 	{
 		int chips;
 	
@@ -206,13 +206,13 @@ public class ninjaw
 		TC0100SCN_set_chip_colbanks(0x0,0x100,0x200);
 	
 		return 0;
-	}
+	} };
 	
-	int ninjaw_vh_start (void)
+	public static VhStartPtr ninjaw_vh_start = new VhStartPtr() { public int handler() 
 	{
 		taito_hide_pixels = 22;
 		return (ninjaw_core_vh_start());
-	}
+	} };
 	
 	void ninjaw_vh_stop (void)
 	{

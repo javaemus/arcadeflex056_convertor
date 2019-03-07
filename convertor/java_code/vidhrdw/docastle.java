@@ -161,7 +161,7 @@ public class docastle
 	  Start the video hardware emulation.
 	
 	***************************************************************************/
-	int docastle_vh_start(void)
+	public static VhStartPtr docastle_vh_start = new VhStartPtr() { public int handler() 
 	{
 		if (generic_vh_start() != 0)
 			return 1;
@@ -173,7 +173,7 @@ public class docastle
 		}
 	
 		return 0;
-	}
+	} };
 	
 	
 	

@@ -340,7 +340,7 @@ public class namcos1
 	}
 	
 	
-	int namcos1_vh_start( void )
+	public static VhStartPtr namcos1_vh_start = new VhStartPtr() { public int handler() 
 	{
 		int i;
 	
@@ -424,7 +424,7 @@ public class namcos1
 		}
 	
 		return 0;
-	}
+	} };
 	
 	void namcos1_vh_stop( void )
 	{

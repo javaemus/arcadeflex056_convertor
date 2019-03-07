@@ -31,7 +31,7 @@ public class mole
 		}
 	}
 	
-	int moleattack_vh_start( void ){
+	public static VhStartPtr moleattack_vh_start = new VhStartPtr() { public int handler() {
 		tile_data = (UINT16 *)malloc( NUM_TILES*sizeof(UINT16) );
 		if( tile_data ){
 			dirtybuffer = malloc( NUM_TILES );
@@ -42,7 +42,7 @@ public class mole
 			free( tile_data );
 		}
 		return 1; /* error */
-	}
+	} };
 	
 	void moleattack_vh_stop( void ){
 		free( dirtybuffer );

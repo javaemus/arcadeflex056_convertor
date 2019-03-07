@@ -191,7 +191,7 @@ public class videopin
 	}
 	
 	
-	int videopin_vh_start(void)
+	public static VhStartPtr videopin_vh_start = new VhStartPtr() { public int handler() 
 	{
 		if (generic_vh_start()!=0)
 			return 1;
@@ -202,7 +202,7 @@ public class videopin
 		}
 	
 		return 0;
-	}
+	} };
 	
 	
 	void videopin_vh_stop(void)

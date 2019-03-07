@@ -55,7 +55,7 @@ public class mitchell
 	
 	***************************************************************************/
 	
-	int pang_vh_start(void)
+	public static VhStartPtr pang_vh_start = new VhStartPtr() { public int handler() 
 	{
 		pang_objram=NULL;
 		paletteram=NULL;
@@ -91,7 +91,7 @@ public class mitchell
 		memset(paletteram, 0, 2*Machine->drv->total_colors);
 	
 		return 0;
-	}
+	} };
 	
 	void pang_vh_stop(void)
 	{

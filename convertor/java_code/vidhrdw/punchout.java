@@ -233,7 +233,7 @@ public class punchout
 	  Start the video hardware emulation.
 	
 	***************************************************************************/
-	int punchout_vh_start(void)
+	public static VhStartPtr punchout_vh_start = new VhStartPtr() { public int handler() 
 	{
 		if ((dirtybuffer = malloc(videoram_size)) == 0)
 			return 1;
@@ -294,9 +294,9 @@ public class punchout
 		}
 	
 		return 0;
-	}
+	} };
 	
-	int armwrest_vh_start(void)
+	public static VhStartPtr armwrest_vh_start = new VhStartPtr() { public int handler() 
 	{
 		if ((dirtybuffer = malloc(videoram_size)) == 0)
 			return 1;
@@ -357,7 +357,7 @@ public class punchout
 		}
 	
 		return 0;
-	}
+	} };
 	
 	
 	

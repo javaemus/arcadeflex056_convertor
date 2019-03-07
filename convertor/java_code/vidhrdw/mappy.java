@@ -75,7 +75,7 @@ public class mappy
 	}
 	
 	
-	static int common_vh_start(void)
+	static public static VhStartPtr common_vh_start = new VhStartPtr() { public int handler() 
 	{
 		if ((dirtybuffer = malloc(videoram_size)) == 0)
 			return 1;
@@ -88,25 +88,25 @@ public class mappy
 		}
 	
 		return 0;
-	}
+	} };
 	
-	int mappy_vh_start(void)
+	public static VhStartPtr mappy_vh_start = new VhStartPtr() { public int handler() 
 	{
 		special_display = 0;
 		return common_vh_start();
-	}
+	} };
 	
-	int motos_vh_start(void)
+	public static VhStartPtr motos_vh_start = new VhStartPtr() { public int handler() 
 	{
 		special_display = 1;
 		return common_vh_start();
-	}
+	} };
 	
-	int todruaga_vh_start(void)
+	public static VhStartPtr todruaga_vh_start = new VhStartPtr() { public int handler() 
 	{
 		special_display = 2;
 		return common_vh_start();
-	}
+	} };
 	
 	
 	

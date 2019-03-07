@@ -91,9 +91,9 @@ public class mrflea
 		}
 	}
 	
-	int mrflea_vh_start( void ){
+	public static VhStartPtr mrflea_vh_start = new VhStartPtr() { public int handler() {
 		return 0;
-	}
+	} };
 	
 	void mrflea_vh_screenrefresh( struct mame_bitmap *bitmap, int full_refresh )
 	{

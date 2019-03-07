@@ -270,13 +270,13 @@ public class cclimber
 	  Start the video hardware emulation.
 	
 	***************************************************************************/
-	int cclimber_vh_start(void)
+	public static VhStartPtr cclimber_vh_start = new VhStartPtr() { public int handler() 
 	{
 		if (generic_vh_start() != 0)
 			return 1;
 	
 		return 0;
-	}
+	} };
 	
 	
 	

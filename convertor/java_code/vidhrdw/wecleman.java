@@ -880,7 +880,7 @@ public class wecleman
 							[ Video Hardware Start ]
 	------------------------------------------------------------------------*/
 	
-	int wecleman_vh_start(void)
+	public static VhStartPtr wecleman_vh_start = new VhStartPtr() { public int handler() 
 	{
 	
 	/*
@@ -941,7 +941,7 @@ public class wecleman
 			return 0;
 		}
 		else return 1;
-	}
+	} };
 	
 	void wecleman_vh_stop(void)
 	{
@@ -992,7 +992,7 @@ public class wecleman
 							[ Video Hardware Start ]
 	------------------------------------------------------------------------*/
 	
-	int hotchase_vh_start(void)
+	public static VhStartPtr hotchase_vh_start = new VhStartPtr() { public int handler() 
 	{
 	/*
 	 Sprite banking - each bank is 0x20000 bytes (we support 0x40 bank codes)
@@ -1030,7 +1030,7 @@ public class wecleman
 			return 0;
 		}
 		else return 1;
-	}
+	} };
 	
 	void hotchase_vh_stop(void)
 	{

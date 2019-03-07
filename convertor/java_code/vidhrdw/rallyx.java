@@ -169,7 +169,7 @@ public class rallyx
 	  Start the video hardware emulation.
 	
 	***************************************************************************/
-	int rallyx_vh_start(void)
+	public static VhStartPtr rallyx_vh_start = new VhStartPtr() { public int handler() 
 	{
 		if (generic_vh_start() != 0)
 			return 1;
@@ -186,7 +186,7 @@ public class rallyx
 		}
 	
 		return 0;
-	}
+	} };
 	
 	
 	

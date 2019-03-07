@@ -260,7 +260,7 @@ public class magmax
 		tmpbitmap = 0;
 	}
 	
-	int magmax_vh_start(void)
+	public static VhStartPtr magmax_vh_start = new VhStartPtr() { public int handler() 
 	{
 		int i,v;
 		unsigned char * prom14D = memory_region(REGION_USER2);
@@ -284,7 +284,7 @@ public class magmax
 		set_custom_blit();
 	
 		return 0;
-	}
+	} };
 	
 	
 	

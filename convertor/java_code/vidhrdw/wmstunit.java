@@ -108,7 +108,7 @@ public class wmstunit
 	 *
 	 *************************************/
 	
-	int wms_tunit_vh_start(void)
+	public static VhStartPtr wms_tunit_vh_start = new VhStartPtr() { public int handler() 
 	{
 		int i;
 	
@@ -136,25 +136,25 @@ public class wmstunit
 	
 		wms_using_34020 = 0;
 		return 0;
-	}
+	} };
 	
 	
-	int wms_wolfu_vh_start(void)
+	public static VhStartPtr wms_wolfu_vh_start = new VhStartPtr() { public int handler() 
 	{
 		int result = wms_tunit_vh_start();
 		wms_gfx_rom_large = 1;
 		return result;
-	}
+	} };
 	
 	
-	int wms_revx_vh_start(void)
+	public static VhStartPtr wms_revx_vh_start = new VhStartPtr() { public int handler() 
 	{
 		int result = wms_tunit_vh_start();
 		wms_gfx_rom_large = 1;
 		wms_using_34020 = 1;
 		videobank_select = 1;
 		return result;
-	}
+	} };
 	
 	
 	

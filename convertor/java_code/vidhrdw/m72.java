@@ -165,7 +165,7 @@ public class m72
 	
 	***************************************************************************/
 	
-	int m72_vh_start(void)
+	public static VhStartPtr m72_vh_start = new VhStartPtr() { public int handler() 
 	{
 		bg_tilemap = tilemap_create(m72_get_bg_tile_info,tilemap_scan_rows,TILEMAP_SPLIT,8,8,64,64);
 		fg_tilemap = tilemap_create(m72_get_fg_tile_info,tilemap_scan_rows,TILEMAP_SPLIT,8,8,64,64);
@@ -188,9 +188,9 @@ public class m72
 		xadjust = 0;
 	
 		return 0;
-	}
+	} };
 	
-	int rtype2_vh_start(void)
+	public static VhStartPtr rtype2_vh_start = new VhStartPtr() { public int handler() 
 	{
 		bg_tilemap = tilemap_create(rtype2_get_bg_tile_info,tilemap_scan_rows,TILEMAP_SPLIT,8,8,64,64);
 		fg_tilemap = tilemap_create(rtype2_get_fg_tile_info,tilemap_scan_rows,TILEMAP_SPLIT,8,8,64,64);
@@ -213,20 +213,20 @@ public class m72
 		xadjust = -4;
 	
 		return 0;
-	}
+	} };
 	
-	int poundfor_vh_start(void)
+	public static VhStartPtr poundfor_vh_start = new VhStartPtr() { public int handler() 
 	{
 		int res = rtype2_vh_start();
 	
 		xadjust = -6;
 	
 		return res;
-	}
+	} };
 	
 	
 	/* Major Title has a larger background RAM, and rowscroll */
-	int majtitle_vh_start(void)
+	public static VhStartPtr majtitle_vh_start = new VhStartPtr() { public int handler() 
 	{
 	// The tilemap can be 256x64, but seems to be used at 128x64 (scroll wraparound).
 	// The layout ramains 256x64, the right half is just not displayed.
@@ -252,9 +252,9 @@ public class m72
 		xadjust = -4;
 	
 		return 0;
-	}
+	} };
 	
-	int hharry_vh_start(void)
+	public static VhStartPtr hharry_vh_start = new VhStartPtr() { public int handler() 
 	{
 		bg_tilemap = tilemap_create(hharry_get_bg_tile_info,tilemap_scan_rows,TILEMAP_SPLIT,8,8,64,64);
 		fg_tilemap = tilemap_create(hharry_get_fg_tile_info,tilemap_scan_rows,TILEMAP_SPLIT,8,8,64,64);
@@ -277,7 +277,7 @@ public class m72
 		xadjust = -4;
 	
 		return 0;
-	}
+	} };
 	
 	void m72_vh_stop(void)
 	{

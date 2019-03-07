@@ -196,7 +196,7 @@ public class galivan
 	
 	***************************************************************************/
 	
-	int galivan_vh_start(void)
+	public static VhStartPtr galivan_vh_start = new VhStartPtr() { public int handler() 
 	{
 		bg_tilemap = tilemap_create(get_bg_tile_info,tilemap_scan_rows,TILEMAP_OPAQUE,   16,16,128,128);
 		tx_tilemap = tilemap_create(get_tx_tile_info,tilemap_scan_cols,TILEMAP_TRANSPARENT,8,8,32,32);
@@ -207,9 +207,9 @@ public class galivan
 		tilemap_set_transparent_pen(tx_tilemap,15);
 	
 		return 0;
-	}
+	} };
 	
-	int ninjemak_vh_start(void)
+	public static VhStartPtr ninjemak_vh_start = new VhStartPtr() { public int handler() 
 	{
 		bg_tilemap = tilemap_create(ninjemak_get_bg_tile_info,tilemap_scan_cols,TILEMAP_OPAQUE,   16,16,512,32);
 		tx_tilemap = tilemap_create(ninjemak_get_tx_tile_info,tilemap_scan_cols,TILEMAP_TRANSPARENT,8,8,32,32);
@@ -220,7 +220,7 @@ public class galivan
 		tilemap_set_transparent_pen(tx_tilemap,15);
 	
 		return 0;
-	}
+	} };
 	
 	
 	

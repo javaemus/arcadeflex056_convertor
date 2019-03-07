@@ -77,7 +77,7 @@ public class vastar
 	
 	***************************************************************************/
 	
-	int vastar_vh_start(void)
+	public static VhStartPtr vastar_vh_start = new VhStartPtr() { public int handler() 
 	{
 		fg_tilemap  = tilemap_create(get_fg_tile_info, tilemap_scan_rows,TILEMAP_TRANSPARENT,8,8,32,32);
 		bg1_tilemap = tilemap_create(get_bg1_tile_info,tilemap_scan_rows,TILEMAP_TRANSPARENT,8,8,32,32);
@@ -94,7 +94,7 @@ public class vastar
 		tilemap_set_scroll_cols(bg2_tilemap, 32);
 	
 		return 0;
-	}
+	} };
 	
 	
 	/***************************************************************************

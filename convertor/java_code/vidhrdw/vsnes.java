@@ -49,15 +49,15 @@ public class vsnes
 		{ ppu_irq, ppu_irq }					/* irq */
 	};
 	
-	int vsnes_vh_start( void )
+	public static VhStartPtr vsnes_vh_start = new VhStartPtr() { public int handler() 
 	{
 		return ppu2c03b_init( &ppu_interface );
-	}
+	} };
 	
-	int vsdual_vh_start( void )
+	public static VhStartPtr vsdual_vh_start = new VhStartPtr() { public int handler() 
 	{
 		return ppu2c03b_init( &ppu_dual_interface );
-	}
+	} };
 	
 	void vsnes_vh_stop( void )
 	{

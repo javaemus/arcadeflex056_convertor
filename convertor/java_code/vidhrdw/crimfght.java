@@ -65,7 +65,7 @@ public class crimfght
 		K051960_vh_stop();
 	}
 	
-	int crimfght_vh_start( void )
+	public static VhStartPtr crimfght_vh_start = new VhStartPtr() { public int handler() 
 	{
 		paletteram = malloc(0x400);
 		if (paletteram == 0) return 1;
@@ -87,7 +87,7 @@ public class crimfght
 		}
 	
 		return 0;
-	}
+	} };
 	
 	
 	

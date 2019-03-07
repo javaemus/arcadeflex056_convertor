@@ -243,7 +243,7 @@ public class karnov
 		if (bitmap_f) bitmap_free (bitmap_f);
 	}
 	
-	int karnov_vh_start (void)
+	public static VhStartPtr karnov_vh_start = new VhStartPtr() { public int handler() 
 	{
 		/* Allocate bitmaps */
 		if ((bitmap_f = bitmap_alloc(512,512)) == 0) {
@@ -260,9 +260,9 @@ public class karnov
 		tilemap_set_transparent_pen(fix_tilemap,0);
 	
 		return 0;
-	}
+	} };
 	
-	int wndrplnt_vh_start (void)
+	public static VhStartPtr wndrplnt_vh_start = new VhStartPtr() { public int handler() 
 	{
 		/* Allocate bitmaps */
 		if ((bitmap_f = bitmap_alloc(512,512)) == 0) {
@@ -279,7 +279,7 @@ public class karnov
 		tilemap_set_transparent_pen(fix_tilemap,0);
 	
 		return 0;
-	}
+	} };
 	
 	/******************************************************************************/
 }

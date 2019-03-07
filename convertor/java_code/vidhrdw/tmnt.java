@@ -153,7 +153,7 @@ public class tmnt
 	
 	***************************************************************************/
 	
-	int mia_vh_start(void)
+	public static VhStartPtr mia_vh_start = new VhStartPtr() { public int handler() 
 	{
 		layer_colorbase[0] = 0;
 		layer_colorbase[1] = 32;
@@ -167,9 +167,9 @@ public class tmnt
 			return 1;
 		}
 		return 0;
-	}
+	} };
 	
-	int tmnt_vh_start(void)
+	public static VhStartPtr tmnt_vh_start = new VhStartPtr() { public int handler() 
 	{
 		layer_colorbase[0] = 0;
 		layer_colorbase[1] = 32;
@@ -183,9 +183,9 @@ public class tmnt
 			return 1;
 		}
 		return 0;
-	}
+	} };
 	
-	int punkshot_vh_start(void)
+	public static VhStartPtr punkshot_vh_start = new VhStartPtr() { public int handler() 
 	{
 		if (K052109_vh_start(REGION_GFX1,NORMAL_PLANE_ORDER,tmnt_tile_callback))
 			return 1;
@@ -195,9 +195,9 @@ public class tmnt
 			return 1;
 		}
 		return 0;
-	}
+	} };
 	
-	int lgtnfght_vh_start(void)	/* also tmnt2, ssriders */
+	public static VhStartPtr lgtnfght_vh_start = new VhStartPtr() { public int handler() 	/* also tmnt2, ssriders */
 	{
 		if (K052109_vh_start(REGION_GFX1,NORMAL_PLANE_ORDER,tmnt_tile_callback))
 			return 1;
@@ -207,9 +207,9 @@ public class tmnt
 			return 1;
 		}
 		return 0;
-	}
+	} };
 	
-	int detatwin_vh_start(void)
+	public static VhStartPtr detatwin_vh_start = new VhStartPtr() { public int handler() 
 	{
 		if (K052109_vh_start(REGION_GFX1,NORMAL_PLANE_ORDER,detatwin_tile_callback))
 			return 1;
@@ -219,9 +219,9 @@ public class tmnt
 			return 1;
 		}
 		return 0;
-	}
+	} };
 	
-	int glfgreat_vh_start(void)
+	public static VhStartPtr glfgreat_vh_start = new VhStartPtr() { public int handler() 
 	{
 		if (K052109_vh_start(REGION_GFX1,NORMAL_PLANE_ORDER,tmnt_tile_callback))
 			return 1;
@@ -231,9 +231,9 @@ public class tmnt
 			return 1;
 		}
 		return 0;
-	}
+	} };
 	
-	int thndrx2_vh_start(void)
+	public static VhStartPtr thndrx2_vh_start = new VhStartPtr() { public int handler() 
 	{
 		if (K052109_vh_start(REGION_GFX1,NORMAL_PLANE_ORDER,tmnt_tile_callback))
 			return 1;
@@ -243,9 +243,9 @@ public class tmnt
 			return 1;
 		}
 		return 0;
-	}
+	} };
 	
-	int prmrsocr_vh_start(void)
+	public static VhStartPtr prmrsocr_vh_start = new VhStartPtr() { public int handler() 
 	{
 		if (K052109_vh_start(REGION_GFX1,NORMAL_PLANE_ORDER,tmnt_tile_callback))
 			return 1;
@@ -255,7 +255,7 @@ public class tmnt
 			return 1;
 		}
 		return 0;
-	}
+	} };
 	
 	void punkshot_vh_stop(void)
 	{

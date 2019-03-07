@@ -85,7 +85,7 @@ public class digdug
 	  Start the video hardware emulation.
 	
 	***************************************************************************/
-	int digdug_vh_start(void)
+	public static VhStartPtr digdug_vh_start = new VhStartPtr() { public int handler() 
 	{
 		if (generic_vh_start() != 0)
 			return 1;
@@ -94,7 +94,7 @@ public class digdug
 		pflastcolor = -1;
 	
 		return 0;
-	}
+	} };
 	
 	
 	/***************************************************************************

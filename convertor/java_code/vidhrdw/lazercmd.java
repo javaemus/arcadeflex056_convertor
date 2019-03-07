@@ -99,7 +99,7 @@ public class lazercmd
 	}
 	
 	
-	int lazercmd_vh_start(void)
+	public static VhStartPtr lazercmd_vh_start = new VhStartPtr() { public int handler() 
 	{
 		if( generic_vh_start() )
 			return 1;
@@ -112,7 +112,7 @@ public class lazercmd
 		}
 	
 		return 0;
-	}
+	} };
 	
 	
 	void lazercmd_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)

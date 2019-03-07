@@ -52,7 +52,7 @@ public class xmen
 	
 	***************************************************************************/
 	
-	int xmen_vh_start(void)
+	public static VhStartPtr xmen_vh_start = new VhStartPtr() { public int handler() 
 	{
 		K053251_vh_start();
 	
@@ -64,7 +64,7 @@ public class xmen
 			return 1;
 		}
 		return 0;
-	}
+	} };
 	
 	void xmen_vh_stop(void)
 	{

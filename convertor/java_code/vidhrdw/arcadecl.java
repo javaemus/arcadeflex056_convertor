@@ -47,7 +47,7 @@ public class arcadecl
 	 *
 	 *************************************/
 	
-	int arcadecl_vh_start(void)
+	public static VhStartPtr arcadecl_vh_start = new VhStartPtr() { public int handler() 
 	{
 		static const struct atarimo_desc modesc =
 		{
@@ -104,7 +104,7 @@ public class arcadecl
 		rampart_bitmap_free();
 	cant_create_pf:
 		return 1;
-	}
+	} };
 	
 	
 	

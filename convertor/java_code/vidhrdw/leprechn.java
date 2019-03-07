@@ -137,7 +137,7 @@ public class leprechn
 	  Start the video hardware emulation.
 	
 	***************************************************************************/
-	int leprechn_vh_start(void)
+	public static VhStartPtr leprechn_vh_start = new VhStartPtr() { public int handler() 
 	{
 	    screen_width = Machine->drv->screen_width;
 	
@@ -149,7 +149,7 @@ public class leprechn
 	    pending = 0;
 	
 	    return 0;
-	}
+	} };
 	
 	/***************************************************************************
 	

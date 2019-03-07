@@ -136,7 +136,7 @@ public class blmbycar
 	
 	***************************************************************************/
 	
-	int blmbycar_vh_start(void)
+	public static VhStartPtr blmbycar_vh_start = new VhStartPtr() { public int handler() 
 	{
 		tilemap_0 = tilemap_create(	get_tile_info_0, tilemap_scan_rows,
 									TILEMAP_OPAQUE, 16,16, DIM_NX, DIM_NY );
@@ -157,7 +157,7 @@ public class blmbycar
 			return 0;
 		}
 		else return 1;
-	}
+	} };
 	
 	
 	/***************************************************************************

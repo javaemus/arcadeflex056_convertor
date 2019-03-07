@@ -72,7 +72,7 @@ public class finalizr
 		}
 	}
 	
-	int finalizr_vh_start(void)
+	public static VhStartPtr finalizr_vh_start = new VhStartPtr() { public int handler() 
 	{
 		dirtybuffer = 0;
 		tmpbitmap = 0;
@@ -88,7 +88,7 @@ public class finalizr
 		}
 	
 		return 0;
-	}
+	} };
 	
 	void finalizr_vh_stop(void)
 	{

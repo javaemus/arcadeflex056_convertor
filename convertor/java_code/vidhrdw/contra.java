@@ -140,7 +140,7 @@ public class contra
 	
 	***************************************************************************/
 	
-	int contra_vh_start(void)
+	public static VhStartPtr contra_vh_start = new VhStartPtr() { public int handler() 
 	{
 		bg_tilemap = tilemap_create(get_bg_tile_info,tilemap_scan_rows,TILEMAP_OPAQUE,     8,8,32,32);
 		fg_tilemap = tilemap_create(get_fg_tile_info,tilemap_scan_rows,TILEMAP_TRANSPARENT,8,8,32,32);
@@ -166,7 +166,7 @@ public class contra
 	
 			return 0;
 		}
-	}
+	} };
 	
 	void contra_vh_stop(void)
 	{

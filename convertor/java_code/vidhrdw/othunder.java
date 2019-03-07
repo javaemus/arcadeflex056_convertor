@@ -51,7 +51,7 @@ public class othunder
 	}
 	
 	
-	static int othunder_core_vh_start (void)
+	static public static VhStartPtr othunder_core_vh_start = new VhStartPtr() { public int handler() 
 	{
 		/* Up to $800/8 big sprites, requires 0x100 * sizeof(*spritelist)
 		   Multiply this by 32 to give room for the number of small sprites,
@@ -75,16 +75,16 @@ public class othunder
 			}
 	
 		return 0;
-	}
+	} };
 	
-	int othunder_vh_start (void)
+	public static VhStartPtr othunder_vh_start = new VhStartPtr() { public int handler() 
 	{
 		/* There is a problem here. 4 is correct for text layer/sprite
 		   alignment, but the bg layers [or one of them] are wrong */
 	
 		taito_hide_pixels = 4;
 		return (othunder_core_vh_start());
-	}
+	} };
 	
 	void othunder_vh_stop (void)
 	{

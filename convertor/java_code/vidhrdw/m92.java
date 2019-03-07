@@ -409,7 +409,7 @@ public class m92
 	
 	/*****************************************************************************/
 	
-	int m92_vh_start(void)
+	public static VhStartPtr m92_vh_start = new VhStartPtr() { public int handler() 
 	{
 		if (RYPELEO_SPEEDUP) {
 			pf1_hlayer = tilemap_create(
@@ -497,7 +497,7 @@ public class m92
 		memset(buffered_spriteram,0,0x800);
 	
 		return 0;
-	}
+	} };
 	
 	void m92_vh_stop(void)
 	{

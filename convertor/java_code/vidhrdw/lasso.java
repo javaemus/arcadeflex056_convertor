@@ -203,7 +203,7 @@ public class lasso
 	
 	***************************************************************************/
 	
-	int lasso_vh_start( void )
+	public static VhStartPtr lasso_vh_start = new VhStartPtr() { public int handler() 
 	{
 		background = tilemap_create(	get_bg_tile_info, tilemap_scan_rows,
 										TILEMAP_OPAQUE,		8,8,	32,32);
@@ -212,9 +212,9 @@ public class lasso
 			return 1;
 	
 		return 0;
-	}
+	} };
 	
-	int wwjgtin_vh_start( void )
+	public static VhStartPtr wwjgtin_vh_start = new VhStartPtr() { public int handler() 
 	{
 		background = tilemap_create(	get_bg_tile_info, tilemap_scan_rows,
 										TILEMAP_TRANSPARENT,	8,8,	32,32);
@@ -227,7 +227,7 @@ public class lasso
 	
 		tilemap_set_transparent_pen(background,0);
 		return 0;
-	}
+	} };
 	
 	
 	

@@ -287,14 +287,14 @@ public class pastelgl
 	
 	
 	******************************************************************************/
-	int pastelgl_vh_start(void)
+	public static VhStartPtr pastelgl_vh_start = new VhStartPtr() { public int handler() 
 	{
 		if ((pastelgl_tmpbitmap = bitmap_alloc(Machine->drv->screen_width, Machine->drv->screen_height)) == 0) return 1;
 		if ((pastelgl_videoram = malloc(Machine->drv->screen_width * Machine->drv->screen_height * sizeof(char))) == 0) return 1;
 		if ((pastelgl_paltbl = malloc(0x10 * sizeof(char))) == 0) return 1;
 		memset(pastelgl_videoram, 0x00, (Machine->drv->screen_width * Machine->drv->screen_height * sizeof(char)));
 		return 0;
-	}
+	} };
 	
 	void pastelgl_vh_stop(void)
 	{

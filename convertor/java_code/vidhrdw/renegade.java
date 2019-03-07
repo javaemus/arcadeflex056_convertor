@@ -77,7 +77,7 @@ public class renegade
 				0)
 	}
 	
-	int renegade_vh_start( void )
+	public static VhStartPtr renegade_vh_start = new VhStartPtr() { public int handler() 
 	{
 		bg_tilemap = tilemap_create(get_bg_tilemap_info,tilemap_scan_rows,TILEMAP_OPAQUE,   16,16,64,16);
 		fg_tilemap = tilemap_create(get_fg_tilemap_info,tilemap_scan_rows,TILEMAP_TRANSPARENT,8,8,32,32);
@@ -91,7 +91,7 @@ public class renegade
 		tilemap_set_scrolldy( fg_tilemap, 0, 16 );
 		tilemap_set_scrolldy( bg_tilemap, 0, 16 );
 		return 0;
-	}
+	} };
 	
 	static void draw_sprites( struct mame_bitmap *bitmap )
 	{

@@ -189,9 +189,9 @@ public class suna8
 		return 0;
 	}
 	
-	int suna8_vh_start_textdim0(void)	{ return suna8_vh_start_common(0);  }
-	int suna8_vh_start_textdim8(void)	{ return suna8_vh_start_common(8);  }
-	int suna8_vh_start_textdim12(void)	{ return suna8_vh_start_common(12); }
+	public static VhStartPtr suna8_vh_start_textdim0 = new VhStartPtr() { public int handler() 	{ return suna8_vh_start_common(0);  } };
+	public static VhStartPtr suna8_vh_start_textdim8 = new VhStartPtr() { public int handler() 	{ return suna8_vh_start_common(8);  } };
+	public static VhStartPtr suna8_vh_start_textdim12 = new VhStartPtr() { public int handler() 	{ return suna8_vh_start_common(12); } };
 	
 	/***************************************************************************
 	

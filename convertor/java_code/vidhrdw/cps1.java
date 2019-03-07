@@ -1031,7 +1031,7 @@ public class cps1
 		}
 	}
 	
-	int cps_vh_start(void)
+	public static VhStartPtr cps_vh_start = new VhStartPtr() { public int handler() 
 	{
 		int i;
 	
@@ -1117,22 +1117,22 @@ public class cps1
 		palette_basecolor[5] = 5*32;	/* stars2 */
 	
 		return 0;
-	}
+	} };
 	
-	int cps1_vh_start(void)
+	public static VhStartPtr cps1_vh_start = new VhStartPtr() { public int handler() 
 	{
 	    cps_version=1;
 	    return cps_vh_start();
-	}
+	} };
 	
-	int cps2_vh_start(void)
+	public static VhStartPtr cps2_vh_start = new VhStartPtr() { public int handler() 
 	{
 	    if (cps_version != 99)
 	    {
 	        cps_version=2;
 	    }
 	    return cps_vh_start();
-	}
+	} };
 	
 	/***************************************************************************
 	

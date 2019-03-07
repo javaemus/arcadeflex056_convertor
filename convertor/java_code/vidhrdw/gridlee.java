@@ -82,7 +82,7 @@ public class gridlee
 	 *
 	 *************************************/
 	
-	int gridlee_vh_start(void)
+	public static VhStartPtr gridlee_vh_start = new VhStartPtr() { public int handler() 
 	{
 		/* allocate a local copy of video RAM */
 		local_videoram = malloc(256 * 256);
@@ -117,7 +117,7 @@ public class gridlee
 		palettebank_vis = -1;
 	
 		return 0;
-	}
+	} };
 	
 	
 	

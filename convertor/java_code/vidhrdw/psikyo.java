@@ -118,7 +118,7 @@ public class psikyo
 	
 	
 	
-	int psikyo_vh_start(void)
+	public static VhStartPtr psikyo_vh_start = new VhStartPtr() { public int handler() 
 	{
 		tilemap_0	=	tilemap_create(	get_tile_info_0,
 										tilemap_scan_rows,
@@ -144,7 +144,7 @@ public class psikyo
 			return 0;
 		}
 		else return 1;
-	}
+	} };
 	
 	
 	

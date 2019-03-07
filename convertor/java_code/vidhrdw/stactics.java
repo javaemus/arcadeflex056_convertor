@@ -232,7 +232,7 @@ public class stactics
 	
 	***************************************************************************/
 	
-	int stactics_vh_start(void)
+	public static VhStartPtr stactics_vh_start = new VhStartPtr() { public int handler() 
 	{
 	    int i,j;
 	    const unsigned char *firebeam_data;
@@ -334,7 +334,7 @@ public class stactics
 	    *stactics_motor_on = 0;
 	
 	    return 0;
-	}
+	} };
 	
 	
 	/***************************************************************************

@@ -306,14 +306,14 @@ public class cave
 		return 0;
 	}
 	
-	int cave_vh_start_16_16_16(void)	{	return cave_vh_start(16,16,16);	}
-	int cave_vh_start_16_16_8(void)		{	return cave_vh_start(16,16, 8);	}
-	int cave_vh_start_16_16_0(void)		{	return cave_vh_start(16,16, 0);	}
-	int cave_vh_start_16_0_0(void)		{	return cave_vh_start(16, 0, 0);	}
-	int cave_vh_start_8_8_0(void)		{	return cave_vh_start( 8, 8, 0);	}
+	public static VhStartPtr cave_vh_start_16_16_16 = new VhStartPtr() { public int handler() 	{	return cave_vh_start(16,16,16);	} };
+	public static VhStartPtr cave_vh_start_16_16_8 = new VhStartPtr() { public int handler() 		{	return cave_vh_start(16,16, 8);	} };
+	public static VhStartPtr cave_vh_start_16_16_0 = new VhStartPtr() { public int handler() 		{	return cave_vh_start(16,16, 0);	} };
+	public static VhStartPtr cave_vh_start_16_0_0 = new VhStartPtr() { public int handler() 		{	return cave_vh_start(16, 0, 0);	} };
+	public static VhStartPtr cave_vh_start_8_8_0 = new VhStartPtr() { public int handler() 		{	return cave_vh_start( 8, 8, 0);	} };
 	
 	
-	int sailormn_vh_start_16_16_8(void)
+	public static VhStartPtr sailormn_vh_start_16_16_8 = new VhStartPtr() { public int handler() 
 	{
 		if (cave_vh_start(16,16,0))
 			return 1;
@@ -328,7 +328,7 @@ public class cave
 	
 		tiledim_2 = 8;
 		return 0;
-	}
+	} };
 	
 	
 	void cave_vh_stop(void)

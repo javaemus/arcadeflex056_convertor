@@ -25,7 +25,7 @@ public class hal21
 	
 	static int scrollx_base; /* this is the only difference in video hardware found so far */
 	
-	static int common_vh_start( void ){
+	static public static VhStartPtr common_vh_start = new VhStartPtr() { public int handler() {
 		dirtybuffer = malloc( 64*64 );
 		if( dirtybuffer ){
 			tmpbitmap = bitmap_alloc( 512, 512 );
@@ -36,17 +36,17 @@ public class hal21
 			free( dirtybuffer );
 		}
 		return 1;
-	}
+	} };
 	
-	int aso_vh_start( void ){
+	public static VhStartPtr aso_vh_start = new VhStartPtr() { public int handler() {
 		scrollx_base = -16;
 		return common_vh_start();
-	}
+	} };
 	
-	int hal21_vh_start( void ){
+	public static VhStartPtr hal21_vh_start = new VhStartPtr() { public int handler() {
 		scrollx_base = 240;
 		return common_vh_start();
-	}
+	} };
 	
 	void aso_vh_stop( void ){
 		bitmap_free( tmpbitmap );

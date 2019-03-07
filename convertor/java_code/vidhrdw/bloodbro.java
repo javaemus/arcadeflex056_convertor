@@ -64,7 +64,7 @@ public class bloodbro
 	
 	***************************************************************************/
 	
-	int bloodbro_vh_start(void)
+	public static VhStartPtr bloodbro_vh_start = new VhStartPtr() { public int handler() 
 	{
 		bg_tilemap = tilemap_create(get_bg_tile_info,tilemap_scan_rows,TILEMAP_OPAQUE,     16,16,32,16);
 		fg_tilemap = tilemap_create(get_fg_tile_info,tilemap_scan_rows,TILEMAP_TRANSPARENT,16,16,32,16);
@@ -77,7 +77,7 @@ public class bloodbro
 		tilemap_set_transparent_pen(tx_tilemap,15);
 	
 		return 0;
-	}
+	} };
 	
 	
 	

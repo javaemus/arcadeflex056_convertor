@@ -128,7 +128,7 @@ public class cchasm
 		}
 	}
 	
-	int cchasm_vh_start (void)
+	public static VhStartPtr cchasm_vh_start = new VhStartPtr() { public int handler() 
 	{
 		int xmin, xmax, ymin, ymax;
 	
@@ -142,5 +142,5 @@ public class cchasm
 	
 		vector_set_shift (VEC_SHIFT);
 		return vector_vh_start();
-	}
+	} };
 }

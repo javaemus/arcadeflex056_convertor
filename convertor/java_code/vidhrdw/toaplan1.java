@@ -110,7 +110,7 @@ public class toaplan1
 	int	toaplan_dbg_layer[4] = {1,1,1,1};
 	#endif
 	
-	int rallybik_vh_start(void)
+	public static VhStartPtr rallybik_vh_start = new VhStartPtr() { public int handler() 
 	{
 		int i;
 	
@@ -169,7 +169,7 @@ public class toaplan1
 		spriteram_offs = tileram_offs = 0;
 	
 		return 0;
-	}
+	} };
 	
 	void rallybik_vh_stop(void)
 	{
@@ -188,7 +188,7 @@ public class toaplan1
 		free(toaplan1_tileram16);
 	}
 	
-	int toaplan1_vh_start(void)
+	public static VhStartPtr toaplan1_vh_start = new VhStartPtr() { public int handler() 
 	{
 		tmpbitmap1 = bitmap_alloc(Machine->drv->screen_width,Machine->drv->screen_height);
 		tmpbitmap2 = bitmap_alloc(Machine->drv->screen_width,Machine->drv->screen_height);
@@ -219,7 +219,7 @@ public class toaplan1
 	
 		/* Also include all allocated stuff in Rally Bike startup */
 		return rallybik_vh_start();
-	}
+	} };
 	
 	void toaplan1_vh_stop(void)
 	{

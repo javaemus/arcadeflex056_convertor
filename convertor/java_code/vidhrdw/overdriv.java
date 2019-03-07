@@ -55,7 +55,7 @@ public class overdriv
 	
 	***************************************************************************/
 	
-	int overdriv_vh_start(void)
+	public static VhStartPtr overdriv_vh_start = new VhStartPtr() { public int handler() 
 	{
 		K053251_vh_start();
 	
@@ -81,7 +81,7 @@ public class overdriv
 		K051316_set_offset(1,15,0);
 	
 		return 0;
-	}
+	} };
 	
 	void overdriv_vh_stop(void)
 	{

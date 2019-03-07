@@ -159,7 +159,7 @@ public class stfight
 	
 	***************************************************************************/
 	
-	int stfight_vh_start(void)
+	public static VhStartPtr stfight_vh_start = new VhStartPtr() { public int handler() 
 	{
 		bg_tilemap = tilemap_create(get_bg_tile_info,bg_scan,TILEMAP_OPAQUE,     16,16,128,256);
 		fg_tilemap = tilemap_create(get_fg_tile_info,fg_scan,TILEMAP_TRANSPARENT,16,16,128,256);
@@ -173,7 +173,7 @@ public class stfight
 		tilemap_set_transparent_pen(tx_tilemap,256);
 	
 		return 0;
-	}
+	} };
 	
 	
 	

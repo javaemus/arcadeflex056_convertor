@@ -150,7 +150,7 @@ public class zac2650
 		return Checksum;
 	}
 	
-	int tinvader_vh_start(void)
+	public static VhStartPtr tinvader_vh_start = new VhStartPtr() { public int handler() 
 	{
 	// 	overlay_create(tinv2650_overlay, 1, 8);
 	
@@ -164,7 +164,7 @@ public class zac2650
 		}
 	
 		return 0;
-	}
+	} };
 	
 	void tinvader_vh_stop(void)
 	{

@@ -91,7 +91,7 @@ public class harddriv
 	 *
 	 *************************************/
 	
-	int harddriv_vh_start(void)
+	public static VhStartPtr harddriv_vh_start = new VhStartPtr() { public int handler() 
 	{
 		UINT32 *destmask, mask;
 		int i;
@@ -161,7 +161,7 @@ public class harddriv
 		vram_mask = hdgsp_vram_size - 1;
 	
 		return 0;
-	}
+	} };
 	
 	
 	void harddriv_vh_stop(void)

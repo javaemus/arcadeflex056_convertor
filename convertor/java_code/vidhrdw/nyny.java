@@ -40,7 +40,7 @@ public class nyny
 	
 	***************************************************************************/
 	
-	int nyny_vh_start(void)
+	public static VhStartPtr nyny_vh_start = new VhStartPtr() { public int handler() 
 	{
 		if ((tmpbitmap1 = bitmap_alloc(Machine->drv->screen_width,Machine->drv->screen_height)) == 0)
 		{
@@ -56,7 +56,7 @@ public class nyny
 		nyny_colourram = malloc(0x4000);
 	
 		return 0;
-	}
+	} };
 	
 	/***************************************************************************
 	  Stop the video hardware emulation.

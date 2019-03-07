@@ -118,7 +118,7 @@ public class system1
 	
 	
 	
-	int system1_vh_start(void)
+	public static VhStartPtr system1_vh_start = new VhStartPtr() { public int handler() 
 	{
 		if ((sprite_onscreen_map = malloc(256*256)) == 0)
 			return 1;
@@ -146,7 +146,7 @@ public class system1
 		}
 	
 		return 0;
-	}
+	} };
 	
 	void system1_vh_stop(void)
 	{

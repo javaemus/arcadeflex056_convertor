@@ -875,7 +875,7 @@ public class system16
 	#endif
 	}
 	
-	int sys16_vh_start( void ){
+	public static VhStartPtr sys16_vh_start = new VhStartPtr() { public int handler() {
 		static int bank_default[16] = {
 			0x0,0x1,0x2,0x3,
 			0x4,0x5,0x6,0x7,
@@ -1004,9 +1004,9 @@ public class system16
 			return 0;
 		}
 		return 1;
-	}
+	} };
 	
-	int sys16_hangon_vh_start( void ){
+	public static VhStartPtr sys16_hangon_vh_start = new VhStartPtr() { public int handler() {
 		int ret;
 		sys16_bg1_trans=1;
 		ret = sys16_vh_start();
@@ -1021,9 +1021,9 @@ public class system16
 		sys16_bg_priority_value=0x1800;
 		sys16_fg_priority_value=0x2000;
 		return 0;
-	}
+	} };
 	
-	int sys18_vh_start( void ){
+	public static VhStartPtr sys18_vh_start = new VhStartPtr() { public int handler() {
 		sys16_bg1_trans=1;
 	
 		background2 = tilemap_create(
@@ -1068,7 +1068,7 @@ public class system16
 			}
 		}
 		return 1;
-	}
+	} };
 	
 	/***************************************************************************/
 	
@@ -1991,7 +1991,7 @@ public class system16
 	}
 	
 	
-	int sys16_outrun_vh_start( void ){
+	public static VhStartPtr sys16_outrun_vh_start = new VhStartPtr() { public int handler() {
 		int ret;
 		sys16_bg1_trans=1;
 		ret = sys16_vh_start();
@@ -2006,7 +2006,7 @@ public class system16
 		sys16_bg_priority_value=0x1800;
 		sys16_fg_priority_value=0x2000;
 		return 0;
-	}
+	} };
 	
 	void sys16_outrun_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh){
 		if( sys16_refreshenable ){
@@ -2075,7 +2075,7 @@ public class system16
 		return result;
 	}
 	
-	int sys16_aburner_vh_start( void ){
+	public static VhStartPtr sys16_aburner_vh_start = new VhStartPtr() { public int handler() {
 		int ret;
 	
 		aburner_backdrop = aburner_unpack_backdrop( memory_region(REGION_GFX3) );
@@ -2112,7 +2112,7 @@ public class system16
 			return 0;
 		}
 		return 1;
-	}
+	} };
 	
 	void sys16_aburner_vh_stop( void ){
 		free( aburner_backdrop );

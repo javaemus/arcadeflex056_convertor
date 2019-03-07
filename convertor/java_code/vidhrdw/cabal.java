@@ -47,7 +47,7 @@ public class cabal
 	}
 	
 	
-	int cabal_vh_start( void )
+	public static VhStartPtr cabal_vh_start = new VhStartPtr() { public int handler() 
 	{
 		background_layer = tilemap_create(get_back_tile_info,tilemap_scan_rows,TILEMAP_TRANSPARENT,16,16,16,16);
 		text_layer       = tilemap_create(get_text_tile_info,tilemap_scan_rows,TILEMAP_TRANSPARENT,  8,8,32,32);
@@ -58,7 +58,7 @@ public class cabal
 		tilemap_set_transparent_pen(background_layer,15);
 	
 		return 0;
-	}
+	} };
 	
 	
 	/**************************************************************************/

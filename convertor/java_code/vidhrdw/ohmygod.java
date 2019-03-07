@@ -40,7 +40,7 @@ public class ohmygod
 	
 	***************************************************************************/
 	
-	int ohmygod_vh_start(void)
+	public static VhStartPtr ohmygod_vh_start = new VhStartPtr() { public int handler() 
 	{
 		bg_tilemap = tilemap_create(get_tile_info,tilemap_scan_rows,TILEMAP_OPAQUE,8,8,64,64);
 	
@@ -48,7 +48,7 @@ public class ohmygod
 			return 1;
 	
 		return 0;
-	}
+	} };
 	
 	
 	

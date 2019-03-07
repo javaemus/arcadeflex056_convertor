@@ -59,7 +59,7 @@ public class starcrus
 	public static WriteHandlerPtr starcrus_p2_x_w = new WriteHandlerPtr() {public void handler(int offset, int data) { p2_x = data^0xff; } };
 	public static WriteHandlerPtr starcrus_p2_y_w = new WriteHandlerPtr() {public void handler(int offset, int data) { p2_y = data^0xff; } };
 	
-	int starcrus_vh_start(void)
+	public static VhStartPtr starcrus_vh_start = new VhStartPtr() { public int handler() 
 	{
 		if ((ship1_vid = bitmap_alloc(16,16)) == 0)
 		{
@@ -88,7 +88,7 @@ public class starcrus
 		}
 	
 		return 0;
-	}
+	} };
 	
 	void starcrus_vh_stop(void)
 	{

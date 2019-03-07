@@ -32,7 +32,7 @@ public class gijoe
 	 	{{-76-112, 0 }, {-76-112, 0}, {-76-112, 0}, {-76-112, 0}}
 	};
 	
-	int gijoe_vh_start(void)
+	public static VhStartPtr gijoe_vh_start = new VhStartPtr() { public int handler() 
 	{
 		K054157_vh_start(REGION_GFX1, 0, scrolld, NORMAL_PLANE_ORDER, gijoe_tile_callback);
 		if (K053247_vh_start(REGION_GFX2, 48, 23, NORMAL_PLANE_ORDER, gijoe_sprite_callback))
@@ -41,7 +41,7 @@ public class gijoe
 			return 1;
 		}
 		return 0;
-	}
+	} };
 	
 	void gijoe_vh_stop(void)
 	{

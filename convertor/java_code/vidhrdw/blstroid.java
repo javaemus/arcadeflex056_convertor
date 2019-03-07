@@ -31,7 +31,7 @@ public class blstroid
 	 *
 	 *************************************/
 	
-	int blstroid_vh_start(void)
+	public static VhStartPtr blstroid_vh_start = new VhStartPtr() { public int handler() 
 	{
 		static const struct ataripf_desc pfdesc =
 		{
@@ -102,7 +102,7 @@ public class blstroid
 		ataripf_free();
 	cant_create_pf:
 		return 1;
-	}
+	} };
 	
 	
 	

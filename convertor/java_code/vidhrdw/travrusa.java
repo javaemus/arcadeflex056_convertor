@@ -149,7 +149,7 @@ public class travrusa
 	
 	***************************************************************************/
 	
-	int travrusa_vh_start(void)
+	public static VhStartPtr travrusa_vh_start = new VhStartPtr() { public int handler() 
 	{
 		bg_tilemap = tilemap_create(get_tile_info,tilemap_scan_rows,TILEMAP_SPLIT,8,8,64,32);
 	
@@ -162,7 +162,7 @@ public class travrusa
 		tilemap_set_scroll_rows(bg_tilemap,32);
 	
 		return 0;
-	}
+	} };
 	
 	
 	

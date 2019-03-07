@@ -142,7 +142,7 @@ public class grchamp
 		return offset;
 	}
 	
-	int grchamp_vh_start( void )
+	public static VhStartPtr grchamp_vh_start = new VhStartPtr() { public int handler() 
 	{
 		headlight_bitmap = bitmap_alloc( 64,128 );
 		if( headlight_bitmap ){
@@ -162,7 +162,7 @@ public class grchamp
 			bitmap_free( headlight_bitmap );
 		}
 		return 1;
-	}
+	} };
 	
 	void grchamp_vh_stop( void )
 	{

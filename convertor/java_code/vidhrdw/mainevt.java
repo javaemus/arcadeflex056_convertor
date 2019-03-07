@@ -73,7 +73,7 @@ public class mainevt
 	
 	/*****************************************************************************/
 	
-	int mainevt_vh_start(void)
+	public static VhStartPtr mainevt_vh_start = new VhStartPtr() { public int handler() 
 	{
 		layer_colorbase[0] = 0;
 		layer_colorbase[1] = 8;
@@ -89,9 +89,9 @@ public class mainevt
 		}
 	
 		return 0;
-	}
+	} };
 	
-	int dv_vh_start(void)
+	public static VhStartPtr dv_vh_start = new VhStartPtr() { public int handler() 
 	{
 		layer_colorbase[0] = 0;
 		layer_colorbase[1] = 0;
@@ -107,7 +107,7 @@ public class mainevt
 		}
 	
 		return 0;
-	}
+	} };
 	
 	void mainevt_vh_stop(void)
 	{

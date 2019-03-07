@@ -61,7 +61,7 @@ public class tsamurai
 	
 	***************************************************************************/
 	
-	int tsamurai_vh_start(void)
+	public static VhStartPtr tsamurai_vh_start = new VhStartPtr() { public int handler() 
 	{
 		background = tilemap_create(get_bg_tile_info,tilemap_scan_rows,TILEMAP_TRANSPARENT,8,8,32,32);
 		foreground = tilemap_create(get_fg_tile_info,tilemap_scan_rows,TILEMAP_TRANSPARENT,8,8,32,32);
@@ -73,7 +73,7 @@ public class tsamurai
 		tilemap_set_transparent_pen(foreground,0);
 	
 		return 0;
-	}
+	} };
 	
 	
 	/***************************************************************************
@@ -252,12 +252,12 @@ public class tsamurai
 				0)
 	}
 	
-	int vsgongf_vh_start(void)
+	public static VhStartPtr vsgongf_vh_start = new VhStartPtr() { public int handler() 
 	{
 		foreground = tilemap_create(get_vsgongf_tile_info,tilemap_scan_rows,TILEMAP_OPAQUE,8,8,32,32);
 		if (foreground == 0) return 1;
 		return 0;
-	}
+	} };
 	
 	void vsgongf_vh_screenrefresh( struct mame_bitmap *bitmap, int fullrefresh )
 	{

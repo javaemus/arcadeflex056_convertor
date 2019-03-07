@@ -57,7 +57,7 @@ public class gng
 	
 	***************************************************************************/
 	
-	int gng_vh_start(void)
+	public static VhStartPtr gng_vh_start = new VhStartPtr() { public int handler() 
 	{
 		fg_tilemap = tilemap_create(get_fg_tile_info,tilemap_scan_rows,TILEMAP_TRANSPARENT,8,8,32,32);
 		bg_tilemap = tilemap_create(get_bg_tile_info,tilemap_scan_cols,TILEMAP_SPLIT,    16,16,32,32);
@@ -71,7 +71,7 @@ public class gng
 		tilemap_set_transmask(bg_tilemap,1,0x41,0xbe); /* split type 1 has pens 0 and 6 transparent in front half */
 	
 		return 0;
-	}
+	} };
 	
 	
 	/***************************************************************************

@@ -221,7 +221,7 @@ public class m107
 	
 	/*****************************************************************************/
 	
-	int m107_vh_start(void)
+	public static VhStartPtr m107_vh_start = new VhStartPtr() { public int handler() 
 	{
 		pf1_layer = tilemap_create(
 			get_pf1_tile_info,tilemap_scan_rows,
@@ -268,7 +268,7 @@ public class m107
 		m107_sprite_list=0;
 	
 		return 0;
-	}
+	} };
 	
 	void m107_vh_stop(void)
 	{

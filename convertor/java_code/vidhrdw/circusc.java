@@ -111,7 +111,7 @@ public class circusc
 	
 	***************************************************************************/
 	
-	int circusc_vh_start(void)
+	public static VhStartPtr circusc_vh_start = new VhStartPtr() { public int handler() 
 	{
 		bg_tilemap = tilemap_create(get_tile_info,tilemap_scan_rows,TILEMAP_OPAQUE,8,8,32,32);
 	
@@ -121,7 +121,7 @@ public class circusc
 		tilemap_set_scroll_cols(bg_tilemap,32);
 	
 		return 0;
-	}
+	} };
 	
 	
 	

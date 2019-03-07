@@ -87,7 +87,7 @@ public class snk
 	
 	}
 	
-	int snk_vh_start( void ){
+	public static VhStartPtr snk_vh_start = new VhStartPtr() { public int handler() {
 		dirtybuffer = malloc( MAX_VRAM_SIZE );
 		if( dirtybuffer ){
 			tmpbitmap = bitmap_alloc( 512, 512 );
@@ -99,7 +99,7 @@ public class snk
 			free( dirtybuffer );
 		}
 		return 1;
-	}
+	} };
 	
 	void snk_vh_stop( void ){
 		bitmap_free( tmpbitmap );
@@ -261,7 +261,7 @@ public class snk
 	
 	/************************************************************************************/
 	
-	int sgladiat_vh_start( void ){
+	public static VhStartPtr sgladiat_vh_start = new VhStartPtr() { public int handler() {
 		dirtybuffer = malloc( MAX_VRAM_SIZE );
 		if( dirtybuffer ){
 			tmpbitmap = bitmap_alloc( 512, 256 );
@@ -273,7 +273,7 @@ public class snk
 			free( dirtybuffer );
 		}
 		return 1;
-	}
+	} };
 	
 	static void sgladiat_draw_background( struct mame_bitmap *bitmap, int scrollx, int scrolly )
 	{

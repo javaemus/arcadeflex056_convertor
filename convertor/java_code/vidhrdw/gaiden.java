@@ -64,7 +64,7 @@ public class gaiden
 	
 	***************************************************************************/
 	
-	int gaiden_vh_start(void)
+	public static VhStartPtr gaiden_vh_start = new VhStartPtr() { public int handler() 
 	{
 		background = tilemap_create(get_bg_tile_info,tilemap_scan_rows,TILEMAP_TRANSPARENT,16,16,64,32);
 		foreground = tilemap_create(get_fg_tile_info,tilemap_scan_rows,TILEMAP_TRANSPARENT,16,16,64,32);
@@ -77,7 +77,7 @@ public class gaiden
 		tilemap_set_transparent_pen(foreground,0);
 		tilemap_set_transparent_pen(text_layer,0);
 		return 0;
-	}
+	} };
 	
 	
 	

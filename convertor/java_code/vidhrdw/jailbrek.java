@@ -50,7 +50,7 @@ public class jailbrek
 			COLOR(1,i) = *color_prom++;
 	}
 	
-	int jailbrek_vh_start( void )
+	public static VhStartPtr jailbrek_vh_start = new VhStartPtr() { public int handler() 
 	{
 		if ( ( dirtybuffer = malloc( videoram_size ) ) == 0 )
 			return 1;
@@ -62,7 +62,7 @@ public class jailbrek
 		}
 	
 		return 0;
-	}
+	} };
 	
 	void jailbrek_vh_stop( void )
 	{

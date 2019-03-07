@@ -44,7 +44,7 @@ public class atarisy2
 	 *
 	 *************************************/
 	
-	int atarisys2_vh_start(void)
+	public static VhStartPtr atarisys2_vh_start = new VhStartPtr() { public int handler() 
 	{
 		static const struct ataripf_desc pfdesc =
 		{
@@ -165,7 +165,7 @@ public class atarisy2
 		free(vram);
 	cant_allocate_ram:
 		return 1;
-	}
+	} };
 	
 	
 	

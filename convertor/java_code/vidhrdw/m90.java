@@ -60,7 +60,7 @@ public class m90
 	static void get_pf2w_tile_info(int tile_index) { get_tile_info(tile_index,1,2); }
 	
 	
-	int m90_vh_start(void)
+	public static VhStartPtr m90_vh_start = new VhStartPtr() { public int handler() 
 	{
 		pf1_layer =      tilemap_create(get_pf1_tile_info, tilemap_scan_rows,TILEMAP_TRANSPARENT,8,8,64,64);
 		pf1_wide_layer = tilemap_create(get_pf1w_tile_info,tilemap_scan_rows,TILEMAP_TRANSPARENT,8,8,128,64);
@@ -74,7 +74,7 @@ public class m90
 		tilemap_set_transparent_pen(pf1_wide_layer,0);
 	
 		return 0;
-	}
+	} };
 	
 	static void m90_drawsprites(struct mame_bitmap *bitmap)
 	{

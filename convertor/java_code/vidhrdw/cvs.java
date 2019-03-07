@@ -369,7 +369,7 @@ public class cvs
 	    }
 	} };
 	
-	int cvs_vh_start(void)
+	public static VhStartPtr cvs_vh_start = new VhStartPtr() { public int handler() 
 	{
 		int generator = 0;
 	    int x,y;
@@ -471,7 +471,7 @@ public class cvs
 		}
 	
 		return 0;
-	}
+	} };
 	
 	void cvs_vh_stop(void)
 	{

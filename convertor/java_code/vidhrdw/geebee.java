@@ -88,7 +88,7 @@ public class geebee
 		END
 	};
 	
-	int geebee_vh_start(void)
+	public static VhStartPtr geebee_vh_start = new VhStartPtr() { public int handler() 
 	{
 		if( generic_vh_start() )
 			return 1;
@@ -101,9 +101,9 @@ public class geebee
 		}
 	
 		return 0;
-	}
+	} };
 	
-	int navalone_vh_start(void)
+	public static VhStartPtr navalone_vh_start = new VhStartPtr() { public int handler() 
 	{
 		if( generic_vh_start() )
 			return 1;
@@ -111,9 +111,9 @@ public class geebee
 	    /* overlay? */
 	
 		return 0;
-	}
+	} };
 	
-	int sos_vh_start(void)
+	public static VhStartPtr sos_vh_start = new VhStartPtr() { public int handler() 
 	{
 		if( generic_vh_start() )
 			return 1;
@@ -121,9 +121,9 @@ public class geebee
 	    /* overlay? */
 	
 		return 0;
-	}
+	} };
 	
-	int kaitei_vh_start(void)
+	public static VhStartPtr kaitei_vh_start = new VhStartPtr() { public int handler() 
 	{
 		if( generic_vh_start() )
 		return 1;
@@ -131,7 +131,7 @@ public class geebee
 	    /* overlay? */
 	
 		return 0;
-	}
+	} };
 	
 	/* Initialise the palette */
 	void geebee_init_palette(unsigned char *sys_palette, unsigned short *sys_colortable, const unsigned char *color_prom)

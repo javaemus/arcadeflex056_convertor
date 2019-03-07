@@ -85,7 +85,7 @@ public class gladiatr
 	} };
 	
 	
-	int gladiatr_vh_start(void){
+	public static VhStartPtr gladiatr_vh_start = new VhStartPtr() { public int handler() {
 		sprite_bank = 2;
 	
 		dirtybuffer = malloc(64*32);
@@ -98,7 +98,7 @@ public class gladiatr
 			free( dirtybuffer );
 		}
 		return 1; /* error */
-	}
+	} };
 	
 	void gladiatr_vh_stop(void);
 	void gladiatr_vh_stop(void){

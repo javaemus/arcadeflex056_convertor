@@ -54,11 +54,11 @@ public class shangkid
 			(memory_region( REGION_PROMS )[0x800+color*4]==2)?1:0;
 	}
 	
-	int shangkid_vh_start( void )
+	public static VhStartPtr shangkid_vh_start = new VhStartPtr() { public int handler() 
 	{
 		background = tilemap_create(get_bg_tile_info,tilemap_scan_rows,TILEMAP_TRANSPARENT,8,8,64,32);
 		return background?0:1;
-	}
+	} };
 	
 	void shangkid_vh_stop( void )
 	{

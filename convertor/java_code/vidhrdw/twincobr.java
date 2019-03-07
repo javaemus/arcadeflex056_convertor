@@ -55,7 +55,7 @@ public class twincobr
 	
 	/************************* Wardner variables *******************************/
 	
-	int toaplan0_vh_start(void)
+	public static VhStartPtr toaplan0_vh_start = new VhStartPtr() { public int handler() 
 	{
 		/* the video RAM is accessed via ports, it's not memory mapped */
 		videoram_size = 0x800;
@@ -100,7 +100,7 @@ public class twincobr
 		}
 	
 		return 0;
-	}
+	} };
 	
 	void toaplan0_vh_stop(void)
 	{

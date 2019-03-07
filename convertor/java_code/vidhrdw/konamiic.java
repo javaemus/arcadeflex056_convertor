@@ -4025,12 +4025,12 @@ public class konamiic
 		K053251_palette_index[4] = 16 * ((K053251_ram[10] >> 3) & 0x07);
 	}
 	
-	int K053251_vh_start(void)
+	public static VhStartPtr K053251_vh_start = new VhStartPtr() { public int handler() 
 	{
 		state_save_register_UINT8("K053251", 0, "registers", K053251_ram, 16);
 		state_save_register_func_postload(K053251_reset_indexes);
 		return 0;
-	}
+	} };
 	
 	public static WriteHandlerPtr K053251_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{

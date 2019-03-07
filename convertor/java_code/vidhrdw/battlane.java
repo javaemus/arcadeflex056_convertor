@@ -167,7 +167,7 @@ public class battlane
 	  Start the video hardware emulation.
 	
 	***************************************************************************/
-	int battlane_vh_start(void)
+	public static VhStartPtr battlane_vh_start = new VhStartPtr() { public int handler() 
 	{
 		screen_bitmap = bitmap_alloc(0x20*8, 0x20*8);
 		if (screen_bitmap == 0)
@@ -192,7 +192,7 @@ public class battlane
 	
 	
 		return 0;
-	}
+	} };
 	
 	
 	

@@ -36,7 +36,7 @@ public class undrfire
 		TC0480SCP_vh_stop();
 	}
 	
-	int undrfire_vh_start (void)
+	public static VhStartPtr undrfire_vh_start = new VhStartPtr() { public int handler() 
 	{
 		int i;
 	
@@ -59,7 +59,7 @@ public class undrfire
 		for (i=0; i<16384; i++) /* Fix later - some weird colours in places */
 			palette_set_color(i,0,0,0);
 		return 0;
-	}
+	} };
 	
 	/***************************************************************
 				SPRITE DRAW ROUTINES

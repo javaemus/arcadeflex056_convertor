@@ -37,7 +37,7 @@ public class sbrkout
 	/***************************************************************************
 	***************************************************************************/
 	
-	int sbrkout_vh_start(void)
+	public static VhStartPtr sbrkout_vh_start = new VhStartPtr() { public int handler() 
 	{
 		int start_pen = 2;	/* leave space for black and white */
 	
@@ -47,7 +47,7 @@ public class sbrkout
 		overlay_create(sbrkout_ol, start_pen);
 	
 		return 0;
-	}
+	} };
 	
 	/***************************************************************************
 	

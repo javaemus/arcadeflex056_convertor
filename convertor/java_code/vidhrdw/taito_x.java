@@ -23,17 +23,17 @@ public class taito_x
 	static UINT16 tilemask;
 	
 	
-	int superman_vh_start (void)
+	public static VhStartPtr superman_vh_start = new VhStartPtr() { public int handler() 
 	{
 		tilemask = 0x3fff;
 		return 0;
-	}
+	} };
 	
-	int ballbros_vh_start (void)
+	public static VhStartPtr ballbros_vh_start = new VhStartPtr() { public int handler() 
 	{
 		tilemask = 0x0fff;
 		return 0;
-	}
+	} };
 	
 	void superman_vh_stop (void)
 	{

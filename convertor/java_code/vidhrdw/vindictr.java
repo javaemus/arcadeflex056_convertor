@@ -21,7 +21,7 @@ public class vindictr
 	 *
 	 *************************************/
 	
-	int vindictr_vh_start(void)
+	public static VhStartPtr vindictr_vh_start = new VhStartPtr() { public int handler() 
 	{
 		static const struct ataripf_desc pfdesc =
 		{
@@ -124,7 +124,7 @@ public class vindictr
 		ataripf_free();
 	cant_create_pf:
 		return 1;
-	}
+	} };
 	
 	
 	

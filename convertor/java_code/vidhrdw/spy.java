@@ -47,7 +47,7 @@ public class spy
 	
 	***************************************************************************/
 	
-	int spy_vh_start(void)
+	public static VhStartPtr spy_vh_start = new VhStartPtr() { public int handler() 
 	{
 		layer_colorbase[0] = 48;
 		layer_colorbase[1] = 0;
@@ -64,7 +64,7 @@ public class spy
 		}
 	
 		return 0;
-	}
+	} };
 	
 	void spy_vh_stop(void)
 	{

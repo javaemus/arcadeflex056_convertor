@@ -83,7 +83,7 @@ public class brkthru
 	  Start the video hardware emulation.
 	
 	***************************************************************************/
-	int brkthru_vh_start(void)
+	public static VhStartPtr brkthru_vh_start = new VhStartPtr() { public int handler() 
 	{
 		if ((dirtybuffer = malloc(videoram_size)) == 0)
 		{
@@ -100,7 +100,7 @@ public class brkthru
 		}
 	
 		return 0;
-	}
+	} };
 	
 	
 	

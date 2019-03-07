@@ -78,7 +78,7 @@ public class munchmo
 		free( dirtybuffer );
 	}
 	
-	int mnchmobl_vh_start( void )
+	public static VhStartPtr mnchmobl_vh_start = new VhStartPtr() { public int handler() 
 	{
 		dirtybuffer = malloc(0x100);
 		tmpbitmap = bitmap_alloc(512,512);
@@ -89,7 +89,7 @@ public class munchmo
 		}
 		mnchmobl_vh_stop();
 		return 1;
-	}
+	} };
 	
 	public static ReadHandlerPtr mnchmobl_videoram_r  = new ReadHandlerPtr() { public int handler(int offset)
 	{

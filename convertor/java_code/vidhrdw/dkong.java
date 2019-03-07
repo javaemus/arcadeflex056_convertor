@@ -148,13 +148,13 @@ public class dkong
 	
 	
 	
-	int dkong_vh_start(void)
+	public static VhStartPtr dkong_vh_start = new VhStartPtr() { public int handler() 
 	{
 		gfx_bank = 0;
 		palette_bank = 0;
 	
 		return generic_vh_start();
-	}
+	} };
 	
 	
 	

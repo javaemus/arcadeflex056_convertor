@@ -372,7 +372,7 @@ public class pstadium
 	
 	
 	******************************************************************************/
-	int pstadium_vh_start(void)
+	public static VhStartPtr pstadium_vh_start = new VhStartPtr() { public int handler() 
 	{
 		if ((pstadium_tmpbitmap = bitmap_alloc(Machine->drv->screen_width, Machine->drv->screen_height)) == 0) return 1;
 		if ((pstadium_videoram = malloc(Machine->drv->screen_width * Machine->drv->screen_height * sizeof(char))) == 0) return 1;
@@ -380,7 +380,7 @@ public class pstadium
 		if ((pstadium_paltbl = malloc(0x800 * sizeof(char))) == 0) return 1;
 		memset(pstadium_videoram, 0x00, (Machine->drv->screen_width * Machine->drv->screen_height * sizeof(char)));
 		return 0;
-	}
+	} };
 	
 	void pstadium_vh_stop(void)
 	{

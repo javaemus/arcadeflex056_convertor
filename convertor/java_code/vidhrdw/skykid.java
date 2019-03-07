@@ -100,7 +100,7 @@ public class skykid
 	
 	***************************************************************************/
 	
-	int skykid_vh_start(void)
+	public static VhStartPtr skykid_vh_start = new VhStartPtr() { public int handler() 
 	{
 		background = tilemap_create(get_tile_info_bg,tilemap_scan_rows,TILEMAP_OPAQUE,8,8,64,32);
 	
@@ -117,7 +117,7 @@ public class skykid
 	
 			return 0;
 		}
-	}
+	} };
 	
 	/***************************************************************************
 	

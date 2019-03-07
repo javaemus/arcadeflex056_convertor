@@ -62,7 +62,7 @@ public class ultraman
 	
 	***************************************************************************/
 	
-	int ultraman_vh_start(void)
+	public static VhStartPtr ultraman_vh_start = new VhStartPtr() { public int handler() 
 	{
 		sprite_colorbase = 192;
 		zoom_colorbase[0] = 0;
@@ -100,7 +100,7 @@ public class ultraman
 		K051316_set_offset(2, 8, 0);
 	
 		return 0;
-	}
+	} };
 	
 	void ultraman_vh_stop(void)
 	{

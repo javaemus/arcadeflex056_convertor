@@ -36,7 +36,7 @@ public class zerozone
 		video_dirty = NULL;
 	}
 	
-	int zerozone_vh_start(void)
+	public static VhStartPtr zerozone_vh_start = new VhStartPtr() { public int handler() 
 	{
 		video_dirty = malloc(videoram_size/2);
 	
@@ -49,7 +49,7 @@ public class zerozone
 		memset(video_dirty,1,videoram_size/2);
 	
 		return 0;
-	}
+	} };
 	
 	void zerozone_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh)
 	{

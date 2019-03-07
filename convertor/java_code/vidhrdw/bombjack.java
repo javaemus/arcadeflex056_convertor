@@ -46,13 +46,13 @@ public class bombjack
 		memset(dirtybuffer,1,videoram_size);
 	}
 	
-	int bombjack_vh_start(void)
+	public static VhStartPtr bombjack_vh_start = new VhStartPtr() { public int handler() 
 	{
 		state_save_register_int ("video", 0, "background_image", &background_image);
 		state_save_register_int ("video", 0, "flipscreen",       &flipscreen);
 		state_save_register_func_postload (dirty_all);
 		return generic_vh_start();
-	}
+	} };
 	
 	/***************************************************************************
 	

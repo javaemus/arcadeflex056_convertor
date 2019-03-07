@@ -88,7 +88,7 @@ public class tecmo
 	
 	***************************************************************************/
 	
-	int tecmo_vh_start(void)
+	public static VhStartPtr tecmo_vh_start = new VhStartPtr() { public int handler() 
 	{
 		if (tecmo_video_type == 2)	/* gemini */
 		{
@@ -113,7 +113,7 @@ public class tecmo
 		tilemap_set_scrolldx(fg_tilemap,-48,256+48);
 	
 		return 0;
-	}
+	} };
 	
 	
 	

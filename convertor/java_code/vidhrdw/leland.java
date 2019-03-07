@@ -79,7 +79,7 @@ public class leland
 	 *
 	 *************************************/
 	
-	int leland_vh_start(void)
+	public static VhStartPtr leland_vh_start = new VhStartPtr() { public int handler() 
 	{
 		void leland_vh_stop(void);
 	
@@ -102,10 +102,10 @@ public class leland
 		memset(scroll_pos, 0, sizeof(scroll_pos));
 	
 		return 0;
-	}
+	} };
 	
 	
-	int ataxx_vh_start(void)
+	public static VhStartPtr ataxx_vh_start = new VhStartPtr() { public int handler() 
 	{
 		void ataxx_vh_stop(void);
 	
@@ -126,7 +126,7 @@ public class leland
 		/* reset QRAM */
 		memset(ataxx_qram, 0, QRAM_SIZE);
 		return 0;
-	}
+	} };
 	
 	
 	

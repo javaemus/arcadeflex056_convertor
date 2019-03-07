@@ -29,7 +29,7 @@ public class sidearms
 	
 	***************************************************************************/
 	
-	int sidearms_vh_start(void)
+	public static VhStartPtr sidearms_vh_start = new VhStartPtr() { public int handler() 
 	{
 		if (generic_vh_start() != 0)
 			return 1;
@@ -42,7 +42,7 @@ public class sidearms
 		}
 	
 		return 0;
-	}
+	} };
 	
 	
 	

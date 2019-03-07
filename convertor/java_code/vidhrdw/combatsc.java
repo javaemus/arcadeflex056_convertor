@@ -227,7 +227,7 @@ public class combatsc
 	
 	***************************************************************************/
 	
-	int combasc_vh_start(void)
+	public static VhStartPtr combasc_vh_start = new VhStartPtr() { public int handler() 
 	{
 		combasc_vreg = -1;
 	
@@ -252,9 +252,9 @@ public class combatsc
 		}
 	
 		return 1;
-	}
+	} };
 	
-	int combascb_vh_start(void)
+	public static VhStartPtr combascb_vh_start = new VhStartPtr() { public int handler() 
 	{
 		combasc_vreg = -1;
 	
@@ -280,7 +280,7 @@ public class combatsc
 		}
 	
 		return 1;
-	}
+	} };
 	
 	void combasc_vh_stop(void)
 	{

@@ -267,7 +267,7 @@ public class psychic5
 	} };
 	
 	
-	int psychic5_vh_start(void)
+	public static VhStartPtr psychic5_vh_start = new VhStartPtr() { public int handler() 
 	{
 		if ((ps5_background_videoram = malloc(0x1000)) == 0)
 		{
@@ -325,7 +325,7 @@ public class psychic5
 		memset(ps5_palette_ram,0,0xc00);
 		memset(ps5_foreground_videoram,0,0x1000);
 	        return 0;
-	}
+	} };
 	
 	void psychic5_vh_stop(void)
 	{

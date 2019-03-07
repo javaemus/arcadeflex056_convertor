@@ -340,7 +340,7 @@ public class liberatr
 	  Start the video hardware emulation.
 	
 	***************************************************************************/
-	int liberatr_vh_start(void)
+	public static VhStartPtr liberatr_vh_start = new VhStartPtr() { public int handler() 
 	{
 	    liberatr_videoram = 0;
 	    liberatr_planet_segs[0] = 0;
@@ -373,7 +373,7 @@ public class liberatr
 		}
 	
 		return 0;
-	}
+	} };
 	
 	/***************************************************************************
 	

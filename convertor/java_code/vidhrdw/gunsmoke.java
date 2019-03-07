@@ -98,7 +98,7 @@ public class gunsmoke
 	
 	
 	
-	int gunsmoke_vh_start(void)
+	public static VhStartPtr gunsmoke_vh_start = new VhStartPtr() { public int handler() 
 	{
 		if ((bgbitmap = bitmap_alloc(9*32,9*32)) == 0)
 			return 1;
@@ -112,7 +112,7 @@ public class gunsmoke
 		memset (bgmap, 0xff, sizeof (bgmap));
 	
 		return 0;
-	}
+	} };
 	
 	
 	void gunsmoke_vh_stop(void)

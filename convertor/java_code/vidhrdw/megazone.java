@@ -98,7 +98,7 @@ public class megazone
 		}
 	} };
 	
-	int megazone_vh_start(void)
+	public static VhStartPtr megazone_vh_start = new VhStartPtr() { public int handler() 
 	{
 		dirtybuffer = 0;
 		tmpbitmap = 0;
@@ -114,7 +114,7 @@ public class megazone
 		}
 	
 		return 0;
-	}
+	} };
 	
 	void megazone_vh_stop(void)
 	{

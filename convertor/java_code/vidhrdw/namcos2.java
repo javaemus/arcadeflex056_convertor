@@ -68,7 +68,7 @@ public class namcos2
 	
 	***************************************************************************/
 	
-	int namcos2_vh_start(void)
+	public static VhStartPtr namcos2_vh_start = new VhStartPtr() { public int handler() 
 	{
 		int i;
 	
@@ -150,7 +150,7 @@ public class namcos2
 		}
 	
 		return 0;
-	}
+	} };
 	
 	
 	

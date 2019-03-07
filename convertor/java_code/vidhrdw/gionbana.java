@@ -397,7 +397,7 @@ public class gionbana
 	
 	
 	******************************************************************************/
-	int gionbana_vh_start(void)
+	public static VhStartPtr gionbana_vh_start = new VhStartPtr() { public int handler() 
 	{
 		if ((gionbana_tmpbitmap0 = bitmap_alloc(Machine->drv->screen_width, Machine->drv->screen_height)) == 0) return 1;
 		if ((gionbana_tmpbitmap1 = bitmap_alloc(Machine->drv->screen_width, Machine->drv->screen_height)) == 0) return 1;
@@ -409,7 +409,7 @@ public class gionbana
 		memset(gionbana_videoram1, 0x00, (Machine->drv->screen_width * Machine->drv->screen_height * sizeof(char)));
 		gfxdraw_mode = 1;
 		return 0;
-	}
+	} };
 	
 	void gionbana_vh_stop(void)
 	{
@@ -427,7 +427,7 @@ public class gionbana
 		gionbana_tmpbitmap0 = 0;
 	}
 	
-	int hanamomo_vh_start(void)
+	public static VhStartPtr hanamomo_vh_start = new VhStartPtr() { public int handler() 
 	{
 		if ((gionbana_tmpbitmap0 = bitmap_alloc(Machine->drv->screen_width, Machine->drv->screen_height)) == 0) return 1;
 		if ((gionbana_videoram0 = malloc(Machine->drv->screen_width * Machine->drv->screen_height * sizeof(char))) == 0) return 1;
@@ -436,7 +436,7 @@ public class gionbana
 		memset(gionbana_videoram0, 0x00, (Machine->drv->screen_width * Machine->drv->screen_height * sizeof(char)));
 		gfxdraw_mode = 0;
 		return 0;
-	}
+	} };
 	
 	void hanamomo_vh_stop(void)
 	{

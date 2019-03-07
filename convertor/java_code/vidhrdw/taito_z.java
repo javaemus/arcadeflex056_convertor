@@ -33,7 +33,7 @@ public class taito_z
 		COMBINE_DATA(&TC0150ROD_ram[offset]);
 	}
 	
-	int TC0150ROD_vh_start(void)
+	public static VhStartPtr TC0150ROD_vh_start = new VhStartPtr() { public int handler() 
 	{
 		TC0150ROD_ram = malloc(TC0150ROD_RAM_SIZE);
 	
@@ -41,7 +41,7 @@ public class taito_z
 	
 		state_save_register_UINT16("TC0150ROD", 0, "memory", TC0150ROD_ram, TC0150ROD_RAM_SIZE/2);
 		return 0;
-	}
+	} };
 	
 	void TC0150ROD_vh_stop(void)
 	{
@@ -943,15 +943,15 @@ public class taito_z
 		return 0;
 	}
 	
-	int taitoz_vh_start (void)
+	public static VhStartPtr taitoz_vh_start = new VhStartPtr() { public int handler() 
 	{
 		return (taitoz_core_vh_start(0));
-	}
+	} };
 	
-	int spacegun_vh_start (void)
+	public static VhStartPtr spacegun_vh_start = new VhStartPtr() { public int handler() 
 	{
 		return (taitoz_core_vh_start(4));
-	}
+	} };
 	
 	void taitoz_vh_stop (void)
 	{

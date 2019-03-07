@@ -18,12 +18,12 @@ public class flstory
 	static int char_bank,palette_bank;
 	
 	
-	int flstory_vh_start(void)
+	public static VhStartPtr flstory_vh_start = new VhStartPtr() { public int handler() 
 	{
 		paletteram = malloc(0x200);
 		paletteram_2 = malloc(0x200);
 		return generic_vh_start();
-	}
+	} };
 	
 	void flstory_vh_stop(void)
 	{

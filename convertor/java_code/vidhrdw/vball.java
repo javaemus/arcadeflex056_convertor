@@ -25,7 +25,7 @@ public class vball
 	int vb_bgprombank=0xff;
 	int vb_spprombank=0xff;
 	
-	int vb_vh_start( void )
+	public static VhStartPtr vb_vh_start = new VhStartPtr() { public int handler() 
 	{
 		dirtybuffer = malloc( 0x800 );
 		if( dirtybuffer )
@@ -40,7 +40,7 @@ public class vball
 		}
 	
 		return 1;
-	}
+	} };
 	
 	
 	

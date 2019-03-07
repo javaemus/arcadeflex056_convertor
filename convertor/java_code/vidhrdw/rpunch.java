@@ -100,7 +100,7 @@ public class rpunch
 	}
 	
 	
-	int rpunch_vh_start(void)
+	public static VhStartPtr rpunch_vh_start = new VhStartPtr() { public int handler() 
 	{
 		int i;
 	
@@ -130,7 +130,7 @@ public class rpunch
 		/* reset the timer */
 		crtc_timer = NULL;
 		return 0;
-	}
+	} };
 	
 	
 	

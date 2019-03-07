@@ -102,7 +102,7 @@ public class fuuki16
 		memset(palette, 0, 3 * Machine->drv->total_colors);
 	}
 	
-	int fuuki16_vh_start(void)
+	public static VhStartPtr fuuki16_vh_start = new VhStartPtr() { public int handler() 
 	{
 		tilemap_0 = tilemap_create(	get_tile_info_0, tilemap_scan_rows,
 									TILEMAP_TRANSPARENT, 16,16, 0x40,0x20);
@@ -125,7 +125,7 @@ public class fuuki16
 		tilemap_set_transparent_pen(tilemap_2,0x0f);
 		tilemap_set_transparent_pen(tilemap_3,0x0f);
 		return 0;
-	}
+	} };
 	
 	
 	/***************************************************************************

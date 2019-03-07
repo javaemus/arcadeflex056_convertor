@@ -130,7 +130,7 @@ public class timeplt
 		sprite_mux_buffer_2 = NULL;
 	}
 	
-	int timeplt_vh_start(void)
+	public static VhStartPtr timeplt_vh_start = new VhStartPtr() { public int handler() 
 	{
 		bg_tilemap = tilemap_create(get_tile_info,tilemap_scan_rows,TILEMAP_OPAQUE,8,8,32,32);
 	
@@ -144,7 +144,7 @@ public class timeplt
 		}
 	
 		return 0;
-	}
+	} };
 	
 	
 	

@@ -74,7 +74,7 @@ public class gotya
 	} };
 	
 	
-	int gotya_vh_start(void)
+	public static VhStartPtr gotya_vh_start = new VhStartPtr() { public int handler() 
 	{
 		if ((dirtybuffer = malloc(videoram_size)) == 0)
 		{
@@ -90,7 +90,7 @@ public class gotya
 		}
 	
 		return 0;
-	}
+	} };
 	
 	
 	static void draw_status_row(struct mame_bitmap *bitmap, int sx, int col)

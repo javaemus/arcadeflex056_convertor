@@ -66,7 +66,7 @@ public class kangaroo
 	
 	***************************************************************************/
 	
-	int kangaroo_vh_start(void)
+	public static VhStartPtr kangaroo_vh_start = new VhStartPtr() { public int handler() 
 	{
 		if ((tmpbitmap = bitmap_alloc(Machine->drv->screen_width,Machine->drv->screen_height)) == 0)
 			return 1;
@@ -84,7 +84,7 @@ public class kangaroo
 		}
 	
 		return 0;
-	}
+	} };
 	
 	
 	

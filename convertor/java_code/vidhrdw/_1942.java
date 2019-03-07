@@ -136,7 +136,7 @@ public class _1942
 	  Start the video hardware emulation.
 	
 	***************************************************************************/
-	int c1942_vh_start(void)
+	public static VhStartPtr c1942_vh_start = new VhStartPtr() { public int handler() 
 	{
 		fg_tilemap = tilemap_create(get_fg_tile_info,tilemap_scan_rows,TILEMAP_TRANSPARENT, 8, 8,32,32);
 		bg_tilemap = tilemap_create(get_bg_tile_info,tilemap_scan_cols,TILEMAP_OPAQUE,     16,16,32,16);
@@ -147,7 +147,7 @@ public class _1942
 		tilemap_set_transparent_pen(fg_tilemap,0);
 	
 		return 0;
-	}
+	} };
 	
 	
 	/***************************************************************************

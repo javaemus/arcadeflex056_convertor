@@ -33,7 +33,7 @@ public class starfire
 	 *
 	 *************************************/
 	
-	int starfire_vh_start(void)
+	public static VhStartPtr starfire_vh_start = new VhStartPtr() { public int handler() 
 	{
 		/* make a temporary bitmap */
 		tmpbitmap = bitmap_alloc(Machine->drv->screen_width, Machine->drv->screen_height);
@@ -54,7 +54,7 @@ public class starfire
 		memset(scanline_dirty, 1, 256);
 	
 		return 0;
-	}
+	} };
 	
 	
 	

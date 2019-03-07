@@ -87,7 +87,7 @@ public class ssozumo
 	} };
 	
 	
-	int ssozumo_vh_start(void)
+	public static VhStartPtr ssozumo_vh_start = new VhStartPtr() { public int handler() 
 	{
 		if ((dirtybuffer = malloc(videoram_size)) == 0)
 		{
@@ -102,7 +102,7 @@ public class ssozumo
 		}
 	
 		return 0;
-	}
+	} };
 	
 	
 	void ssozumo_vh_stop(void)

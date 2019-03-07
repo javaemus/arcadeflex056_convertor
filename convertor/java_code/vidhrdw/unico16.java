@@ -128,7 +128,7 @@ public class unico16
 	
 	static int sprites_scrolldx, sprites_scrolldy;
 	
-	int unico16_vh_start(void)
+	public static VhStartPtr unico16_vh_start = new VhStartPtr() { public int handler() 
 	{
 		tilemap_0 = tilemap_create(	get_tile_info_0,tilemap_scan_rows,
 									TILEMAP_TRANSPARENT,	16,16,	0x40, 0x40);
@@ -155,7 +155,7 @@ public class unico16
 		tilemap_set_transparent_pen(tilemap_1,0x00);
 		tilemap_set_transparent_pen(tilemap_2,0x00);
 		return 0;
-	}
+	} };
 	
 	
 	

@@ -116,7 +116,7 @@ public class mystston
 	
 	***************************************************************************/
 	
-	int mystston_vh_start(void)
+	public static VhStartPtr mystston_vh_start = new VhStartPtr() { public int handler() 
 	{
 		fg_tilemap = tilemap_create(get_fg_tile_info,get_memory_offset,TILEMAP_TRANSPARENT, 8, 8,32,32);
 		bg_tilemap = tilemap_create(get_bg_tile_info,get_memory_offset,TILEMAP_OPAQUE,     16,16,16,32);
@@ -127,7 +127,7 @@ public class mystston
 		tilemap_set_transparent_pen(fg_tilemap,0);
 	
 		return 0;
-	}
+	} };
 	
 	
 	/***************************************************************************

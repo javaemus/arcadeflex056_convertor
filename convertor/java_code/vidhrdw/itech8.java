@@ -114,7 +114,7 @@ public class itech8
 	 *
 	 *************************************/
 	
-	int itech8_vh_start(void)
+	public static VhStartPtr itech8_vh_start = new VhStartPtr() { public int handler() 
 	{
 		/* initialize TMS34061 emulation */
 	    if (tms34061_start(&tms34061intf))
@@ -133,14 +133,14 @@ public class itech8
 		grom_size = memory_region_length(REGION_GFX1);
 	
 		return 0;
-	}
+	} };
 	
-	int slikshot_vh_start(void)
+	public static VhStartPtr slikshot_vh_start = new VhStartPtr() { public int handler() 
 	{
 		int result = itech8_vh_start();
 		slikshot = 1;
 		return result;
-	}
+	} };
 	
 	
 	

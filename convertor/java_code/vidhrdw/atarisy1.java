@@ -93,7 +93,7 @@ public class atarisy1
 	 *
 	 *************************************/
 	
-	int atarisys1_vh_start(void)
+	public static VhStartPtr atarisys1_vh_start = new VhStartPtr() { public int handler() 
 	{
 		static const struct ataripf_desc pfdesc =
 		{
@@ -250,7 +250,7 @@ public class atarisy1
 		bitmap_free(trans_bitmap_pf);
 	cant_alloc_bitmap_pf:
 		return 1;
-	}
+	} };
 	
 	
 	

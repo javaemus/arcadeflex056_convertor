@@ -156,7 +156,7 @@ public class exidy
 	 *
 	 *************************************/
 	
-	int exidy_vh_start(void)
+	public static VhStartPtr exidy_vh_start = new VhStartPtr() { public int handler() 
 	{
 	    if (generic_vh_start())
 	        return 1;
@@ -176,7 +176,7 @@ public class exidy
 	        return 1;
 	    }
 	    return 0;
-	}
+	} };
 	
 	
 	

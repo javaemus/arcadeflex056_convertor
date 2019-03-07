@@ -63,7 +63,7 @@ public class tecmo16
 	
 	/******************************************************************************/
 	
-	int fstarfrc_vh_start(void)
+	public static VhStartPtr fstarfrc_vh_start = new VhStartPtr() { public int handler() 
 	{
 		fg_tilemap = tilemap_create(fg_get_tile_info,tilemap_scan_rows,TILEMAP_TRANSPARENT,16,16,32,32);
 		bg_tilemap = tilemap_create(bg_get_tile_info,tilemap_scan_rows,TILEMAP_TRANSPARENT,16,16,32,32);
@@ -79,9 +79,9 @@ public class tecmo16
 		tilemap_set_scrolly(tx_tilemap,0,-16);
 	
 		return 0;
-	}
+	} };
 	
-	int ginkun_vh_start(void)
+	public static VhStartPtr ginkun_vh_start = new VhStartPtr() { public int handler() 
 	{
 		fg_tilemap = tilemap_create(fg_get_tile_info,tilemap_scan_rows,TILEMAP_TRANSPARENT,16,16,64,32);
 		bg_tilemap = tilemap_create(bg_get_tile_info,tilemap_scan_rows,TILEMAP_TRANSPARENT,16,16,64,32);
@@ -95,7 +95,7 @@ public class tecmo16
 		tilemap_set_transparent_pen(tx_tilemap,0);
 	
 		return 0;
-	}
+	} };
 	
 	/******************************************************************************/
 	

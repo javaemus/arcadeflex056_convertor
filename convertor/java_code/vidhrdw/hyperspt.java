@@ -89,7 +89,7 @@ public class hyperspt
 	  Start the video hardware emulation.
 	
 	***************************************************************************/
-	int hyperspt_vh_start(void)
+	public static VhStartPtr hyperspt_vh_start = new VhStartPtr() { public int handler() 
 	{
 		if ((dirtybuffer = malloc(videoram_size)) == 0)
 			return 1;
@@ -103,7 +103,7 @@ public class hyperspt
 		}
 	
 		return 0;
-	}
+	} };
 	
 	
 	

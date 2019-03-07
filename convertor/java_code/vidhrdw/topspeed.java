@@ -12,7 +12,7 @@ public class topspeed
 	
 	/****************************************************************************/
 	
-	int topspeed_vh_start (void)
+	public static VhStartPtr topspeed_vh_start = new VhStartPtr() { public int handler() 
 	{
 		/* (chips, gfxnum, x_offs, y_offs, y_invert, opaque, dblwidth) */
 		if (PC080SN_vh_start(2,1,0,8,0,0,0))
@@ -21,7 +21,7 @@ public class topspeed
 		}
 	
 		return 0;
-	}
+	} };
 	
 	void topspeed_vh_stop(void)
 	{

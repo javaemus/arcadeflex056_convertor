@@ -115,7 +115,7 @@ public class exerion
 	 *
 	 *************************************/
 	
-	int exerion_vh_start (void)
+	public static VhStartPtr exerion_vh_start = new VhStartPtr() { public int handler() 
 	{
 		UINT16 *dst;
 		UINT8 *src;
@@ -194,7 +194,7 @@ public class exerion
 		}
 	
 		return generic_vh_start();
-	}
+	} };
 	
 	
 	/*************************************

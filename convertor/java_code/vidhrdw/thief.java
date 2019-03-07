@@ -128,7 +128,7 @@ public class thief
 		free( thief_coprocessor.image_ram );
 	}
 	
-	int thief_vh_start( void ){
+	public static VhStartPtr thief_vh_start = new VhStartPtr() { public int handler() {
 		memset( &thief_coprocessor, 0x00, sizeof(thief_coprocessor) );
 	
 		thief_page0	= bitmap_alloc( 256,256 );
@@ -149,7 +149,7 @@ public class thief
 		}
 		thief_vh_stop();
 		return 1;
-	}
+	} };
 	
 	void thief_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh){
 		unsigned int offs;

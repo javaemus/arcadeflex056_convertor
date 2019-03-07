@@ -34,7 +34,7 @@ public class circus
 	/***************************************************************************
 	***************************************************************************/
 	
-	int circus_vh_start(void)
+	public static VhStartPtr circus_vh_start = new VhStartPtr() { public int handler() 
 	{
 		int start_pen = 2;
 	
@@ -44,7 +44,7 @@ public class circus
 		overlay_create(circus_ol, start_pen);
 	
 		return 0;
-	}
+	} };
 	
 	/***************************************************************************
 	***************************************************************************/

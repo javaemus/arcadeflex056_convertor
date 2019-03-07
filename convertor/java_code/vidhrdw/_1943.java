@@ -116,7 +116,7 @@ public class _1943
 	
 	
 	
-	int c1943_vh_start(void)
+	public static VhStartPtr c1943_vh_start = new VhStartPtr() { public int handler() 
 	{
 		if ((sc2bitmap = bitmap_alloc(9*32,8*32)) == 0)
 			return 1;
@@ -138,7 +138,7 @@ public class _1943
 		memset (sc1map, 0xff, sizeof (sc1map));
 	
 		return 0;
-	}
+	} };
 	
 	
 	void c1943_vh_stop(void)

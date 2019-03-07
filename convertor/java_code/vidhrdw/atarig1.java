@@ -43,7 +43,7 @@ public class atarig1
 	 *
 	 *************************************/
 	
-	int atarig1_vh_start(void)
+	public static VhStartPtr atarig1_vh_start = new VhStartPtr() { public int handler() 
 	{
 		static const struct ataripf_desc pfdesc =
 		{
@@ -146,7 +146,7 @@ public class atarig1
 		ataripf_free();
 	cant_create_pf:
 		return 1;
-	}
+	} };
 	
 	
 	

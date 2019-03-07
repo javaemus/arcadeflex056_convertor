@@ -30,19 +30,19 @@ public class kchamp
 	  Video hardware start.
 	***************************************************************************/
 	
-	int kchampvs_vh_start(void) {
+	public static VhStartPtr kchampvs_vh_start = new VhStartPtr() { public int handler()  {
 	
 		kchamp_drawsprites = kchamp_vs_drawsprites;
 	
 		return generic_vh_start();
-	}
+	} };
 	
-	int kchamp1p_vh_start(void) {
+	public static VhStartPtr kchamp1p_vh_start = new VhStartPtr() { public int handler()  {
 	
 		kchamp_drawsprites = kchamp_1p_drawsprites;
 	
 		return generic_vh_start();
-	}
+	} };
 	
 	/***************************************************************************
 	  Convert color prom.

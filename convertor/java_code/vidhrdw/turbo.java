@@ -120,7 +120,7 @@ public class turbo
 	
 	***************************************************************************/
 	
-	int turbo_vh_start(void)
+	public static VhStartPtr turbo_vh_start = new VhStartPtr() { public int handler() 
 	{
 		int i, j, sprite_length, sprite_bank_size, back_length;
 		UINT32 sprite_expand[16];
@@ -227,7 +227,7 @@ public class turbo
 	
 		/* return success */
 		return 0;
-	}
+	} };
 	
 	
 	void turbo_vh_stop(void)

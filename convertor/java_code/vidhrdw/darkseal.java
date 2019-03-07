@@ -278,7 +278,7 @@ public class darkseal
 	
 	/******************************************************************************/
 	
-	int darkseal_vh_start(void)
+	public static VhStartPtr darkseal_vh_start = new VhStartPtr() { public int handler() 
 	{
 		pf1_tilemap = tilemap_create(get_fg_tile_info, tilemap_scan_rows,TILEMAP_TRANSPARENT, 8, 8,64,64);
 		pf2_tilemap = tilemap_create(get_bg_tile_info2,darkseal_scan,    TILEMAP_TRANSPARENT,16,16,64,64);
@@ -291,7 +291,7 @@ public class darkseal
 		tilemap_set_transparent_pen(pf2_tilemap,0);
 	
 		return 0;
-	}
+	} };
 	
 	/******************************************************************************/
 	

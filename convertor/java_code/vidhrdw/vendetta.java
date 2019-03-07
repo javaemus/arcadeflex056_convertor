@@ -52,7 +52,7 @@ public class vendetta
 	
 	***************************************************************************/
 	
-	int vendetta_vh_start(void)
+	public static VhStartPtr vendetta_vh_start = new VhStartPtr() { public int handler() 
 	{
 		if (K052109_vh_start(REGION_GFX1,NORMAL_PLANE_ORDER,tile_callback))
 			return 1;
@@ -62,7 +62,7 @@ public class vendetta
 			return 1;
 		}
 		return 0;
-	}
+	} };
 	
 	void vendetta_vh_stop(void)
 	{

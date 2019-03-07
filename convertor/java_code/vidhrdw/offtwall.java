@@ -21,7 +21,7 @@ public class offtwall
 	 *
 	 *************************************/
 	
-	int offtwall_vh_start(void)
+	public static VhStartPtr offtwall_vh_start = new VhStartPtr() { public int handler() 
 	{
 		static const struct ataripf_desc pfdesc =
 		{
@@ -92,7 +92,7 @@ public class offtwall
 		ataripf_free();
 	cant_create_pf:
 		return 1;
-	}
+	} };
 	
 	
 	

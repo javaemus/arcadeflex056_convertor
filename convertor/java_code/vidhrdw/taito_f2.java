@@ -304,75 +304,75 @@ public class taito_f2
 	/*    ( spritetype, hide, hideflip, xoffs, yoffs, flipx, flipy, textflipx, textflipy) */
 	/**************************************************************************************/
 	
-	int taitof2_default_vh_start (void)
+	public static VhStartPtr taitof2_default_vh_start = new VhStartPtr() { public int handler() 
 	{
 		return (taitof2_core_vh_start(0,0,0,0,0,0,0,0,0));
-	}
+	} };
 	
-	int taitof2_megab_vh_start (void)   /* Megab, Liquidk */
+	public static VhStartPtr taitof2_megab_vh_start = new VhStartPtr() { public int handler()    /* Megab, Liquidk */
 	{
 		return (taitof2_core_vh_start(0,3,3,0,0,0,0,0,0));
-	}
+	} };
 	
-	int taitof2_quiz_vh_start (void)   /* Quiz Crayons, Quiz Jinsei */
+	public static VhStartPtr taitof2_quiz_vh_start = new VhStartPtr() { public int handler()    /* Quiz Crayons, Quiz Jinsei */
 	{
 		return (taitof2_core_vh_start(3,3,3,0,0,0,0,0,0));
-	}
+	} };
 	
-	int taitof2_finalb_vh_start (void)
+	public static VhStartPtr taitof2_finalb_vh_start = new VhStartPtr() { public int handler() 
 	{
 		return (taitof2_core_vh_start(0,1,1,0,0,0,0,0,0));
-	}
+	} };
 	
-	int taitof2_ssi_vh_start (void)
+	public static VhStartPtr taitof2_ssi_vh_start = new VhStartPtr() { public int handler() 
 	{
 		return (taitof2_core_vh_start(0,3,3,0,0,0,0,0,0));
-	}
+	} };
 	
-	int taitof2_growl_vh_start (void)
+	public static VhStartPtr taitof2_growl_vh_start = new VhStartPtr() { public int handler() 
 	{
 		return (taitof2_core_vh_start(0,3,3,0,0,0,0,0,0));
-	}
+	} };
 	
-	int taitof2_ninjak_vh_start (void)
+	public static VhStartPtr taitof2_ninjak_vh_start = new VhStartPtr() { public int handler() 
 	{
 		return (taitof2_core_vh_start(0,0,0,0,0,0,0,1,2));
-	}
+	} };
 	
-	int taitof2_qzchikyu_vh_start (void)
+	public static VhStartPtr taitof2_qzchikyu_vh_start = new VhStartPtr() { public int handler() 
 	{
 		return (taitof2_core_vh_start(0,0,4,0,0,-4,0,-11,0));
-	}
+	} };
 	
-	int taitof2_solfigtr_vh_start (void)
+	public static VhStartPtr taitof2_solfigtr_vh_start = new VhStartPtr() { public int handler() 
 	{
 		return (taitof2_core_vh_start(0,3,-3,0,0,6,0,6,0));
-	}
+	} };
 	
-	int taitof2_koshien_vh_start (void)
+	public static VhStartPtr taitof2_koshien_vh_start = new VhStartPtr() { public int handler() 
 	{
 		return (taitof2_core_vh_start(0,1,-1,0,0,2,0,0,0));
-	}
+	} };
 	
-	int taitof2_gunfront_vh_start (void)
+	public static VhStartPtr taitof2_gunfront_vh_start = new VhStartPtr() { public int handler() 
 	{
 		return (taitof2_core_vh_start(0,3,3,0,0,0,0,0,0));
-	}
+	} };
 	
-	int taitof2_thundfox_vh_start (void)
+	public static VhStartPtr taitof2_thundfox_vh_start = new VhStartPtr() { public int handler() 
 	{
 		return (taitof2_core_vh_start(0,3,-3,0,0,5,0,4,1));
-	}
+	} };
 	
-	int taitof2_mjnquest_vh_start (void)
+	public static VhStartPtr taitof2_mjnquest_vh_start = new VhStartPtr() { public int handler() 
 	{
 		int failed = (taitof2_core_vh_start(0,0,0,0,0,0,0,0,0));	/* non-zero = failure */
 		if (failed == 0)  TC0100SCN_set_bg_tilemask(0x7fff);
 	
 		return failed;
-	}
+	} };
 	
-	int taitof2_footchmp_vh_start (void)
+	public static VhStartPtr taitof2_footchmp_vh_start = new VhStartPtr() { public int handler() 
 	{
 		int failed;
 		f2_tilemap_xoffs = 0x1d;
@@ -383,9 +383,9 @@ public class taito_f2
 	
 		f2_game = FOOTCHMP;
 		return failed;
-	}
+	} };
 	
-	int taitof2_hthero_vh_start (void)
+	public static VhStartPtr taitof2_hthero_vh_start = new VhStartPtr() { public int handler() 
 	{
 		int failed;
 		f2_tilemap_xoffs = 0x33;
@@ -396,70 +396,70 @@ public class taito_f2
 	
 		f2_game = FOOTCHMP;
 		return failed;
-	}
+	} };
 	
-	int taitof2_deadconx_vh_start (void)
+	public static VhStartPtr taitof2_deadconx_vh_start = new VhStartPtr() { public int handler() 
 	{
 		f2_tilemap_xoffs = 0x1e;
 		f2_tilemap_yoffs = 0x08;
 		f2_text_xoffs = -1;
 		f2_tilemap_col_base = 0;
 		return (taitof2_core_vh_start(0,3,3,0,0,0,0,0,0));
-	}
+	} };
 	
-	int taitof2_deadconj_vh_start (void)
+	public static VhStartPtr taitof2_deadconj_vh_start = new VhStartPtr() { public int handler() 
 	{
 		f2_tilemap_xoffs = 0x34;
 		f2_tilemap_yoffs = - 0x05;
 		f2_text_xoffs = -1;
 		f2_tilemap_col_base = 0;
 		return (taitof2_core_vh_start(0,3,3,0,0,0,0,0,0));
-	}
+	} };
 	
-	int taitof2_metalb_vh_start (void)
+	public static VhStartPtr taitof2_metalb_vh_start = new VhStartPtr() { public int handler() 
 	{
 		f2_tilemap_xoffs = 0x32;
 		f2_tilemap_yoffs = - 0x04;
 		f2_text_xoffs = 1;	/* not the usual -1 */
 		f2_tilemap_col_base = 256;   /* separate palette area for tilemaps */
 		return (taitof2_core_vh_start(0,3,3,0,0,0,0,0,0));
-	}
+	} };
 	
-	int taitof2_yuyugogo_vh_start (void)
+	public static VhStartPtr taitof2_yuyugogo_vh_start = new VhStartPtr() { public int handler() 
 	{
 		return (taitof2_core_vh_start(1,3,3,0,0,0,0,0,0));
-	}
+	} };
 	
-	int taitof2_yesnoj_vh_start (void)
+	public static VhStartPtr taitof2_yesnoj_vh_start = new VhStartPtr() { public int handler() 
 	{
 		return (taitof2_core_vh_start(0,3,3,0,0,0,0,0,0));
-	}
+	} };
 	
-	int taitof2_dinorex_vh_start (void)
+	public static VhStartPtr taitof2_dinorex_vh_start = new VhStartPtr() { public int handler() 
 	{
 		return (taitof2_core_vh_start(3,3,3,0,0,0,0,0,0));
-	}
+	} };
 	
-	int taitof2_dondokod_vh_start (void)	/* dondokod, cameltry */
+	public static VhStartPtr taitof2_dondokod_vh_start = new VhStartPtr() { public int handler() 	/* dondokod, cameltry */
 	{
 		f2_pivot_xdisp = -16;
 		f2_pivot_ydisp = 0;
 		return (taitof2_core_vh_start(0,3,3,0,0,0,0,0,0));
-	}
+	} };
 	
-	int taitof2_pulirula_vh_start (void)
+	public static VhStartPtr taitof2_pulirula_vh_start = new VhStartPtr() { public int handler() 
 	{
 		f2_pivot_xdisp = -10;	/* alignment seems correct (see level 2, falling */
 		f2_pivot_ydisp = 16;	/* block of ice after armour man) */
 		return (taitof2_core_vh_start(2,3,3,0,0,0,0,0,0));
-	}
+	} };
 	
-	int taitof2_driftout_vh_start (void)
+	public static VhStartPtr taitof2_driftout_vh_start = new VhStartPtr() { public int handler() 
 	{
 		f2_pivot_xdisp = -16;
 		f2_pivot_ydisp = 16;
 		return (taitof2_core_vh_start(0,3,3,0,0,0,0,0,0));
-	}
+	} };
 	
 	void taitof2_vh_stop (void)
 	{

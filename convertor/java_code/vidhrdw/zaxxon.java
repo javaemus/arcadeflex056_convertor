@@ -156,7 +156,7 @@ public class zaxxon
 	}
 	
 	
-	int zaxxon_vh_start(void)
+	public static VhStartPtr zaxxon_vh_start = new VhStartPtr() { public int handler() 
 	{
 		struct mame_bitmap *prebitmap;
 		int width, height;
@@ -216,9 +216,9 @@ public class zaxxon
 			bitmap_free(prebitmap);
 	
 		return 0;
-	}
+	} };
 	
-	int razmataz_vh_start(void)
+	public static VhStartPtr razmataz_vh_start = new VhStartPtr() { public int handler() 
 	{
 		int offs;
 	
@@ -265,7 +265,7 @@ public class zaxxon
 		}
 	
 		return 0;
-	}
+	} };
 	
 	
 	

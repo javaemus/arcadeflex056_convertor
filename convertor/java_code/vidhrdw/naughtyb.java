@@ -136,7 +136,7 @@ public class naughtyb
 	  Start the video hardware emulation.
 	
 	***************************************************************************/
-	int naughtyb_vh_start(void)
+	public static VhStartPtr naughtyb_vh_start = new VhStartPtr() { public int handler() 
 	{
 		videoreg = palreg = bankreg = 0;
 	
@@ -152,7 +152,7 @@ public class naughtyb
 		}
 	
 		return 0;
-	}
+	} };
 	
 	
 	

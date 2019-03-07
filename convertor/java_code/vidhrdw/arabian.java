@@ -166,7 +166,7 @@ public class arabian
 	 *
 	 *************************************/
 	
-	int arabian_vh_start(void)
+	public static VhStartPtr arabian_vh_start = new VhStartPtr() { public int handler() 
 	{
 		UINT8 *gfxbase = memory_region(REGION_GFX1);
 		int offs;
@@ -229,7 +229,7 @@ public class arabian
 		}
 	
 		return 0;
-	}
+	} };
 	
 	
 	

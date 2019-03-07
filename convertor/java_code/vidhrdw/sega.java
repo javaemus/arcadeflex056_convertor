@@ -119,7 +119,7 @@ public class sega
 	  Start the video hardware emulation.
 	
 	***************************************************************************/
-	int sega_vh_start (void)
+	public static VhStartPtr sega_vh_start = new VhStartPtr() { public int handler() 
 	{
 		int i;
 	
@@ -168,7 +168,7 @@ public class sega
 		}
 	
 		return vector_vh_start();
-	}
+	} };
 	
 	/***************************************************************************
 	

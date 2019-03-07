@@ -561,20 +561,20 @@ public class toaplan2
 		return error_level;
 	}
 	
-	int toaplan2_0_vh_start(void)
+	public static VhStartPtr toaplan2_0_vh_start = new VhStartPtr() { public int handler() 
 	{
 		return toaplan2_vh_start(0);
-	}
+	} };
 	
-	int toaplan2_1_vh_start(void)
+	public static VhStartPtr toaplan2_1_vh_start = new VhStartPtr() { public int handler() 
 	{
 		int error_level = 0;
 		error_level |= toaplan2_vh_start(0);
 		error_level |= toaplan2_vh_start(1);
 		return error_level;
-	}
+	} };
 	
-	int truxton2_0_vh_start(void)
+	public static VhStartPtr truxton2_0_vh_start = new VhStartPtr() { public int handler() 
 	{
 		if (toaplan2_vram_alloc(0))
 		{
@@ -585,9 +585,9 @@ public class toaplan2
 			return 1;
 		}
 		return 0;
-	}
+	} };
 	
-	int batrider_0_vh_start(void)
+	public static VhStartPtr batrider_0_vh_start = new VhStartPtr() { public int handler() 
 	{
 		if ((raizing_tx_gfxram16 = (data16_t *)malloc(RAIZING_TX_GFXRAM_SIZE)) == 0)
 		{
@@ -605,7 +605,7 @@ public class toaplan2
 			return 1;
 		}
 		return 0;
-	}
+	} };
 	
 	
 	/***************************************************************************

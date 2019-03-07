@@ -110,7 +110,7 @@ public class tunhunt
 		}
 	} };
 	
-	int tunhunt_vh_start( void )
+	public static VhStartPtr tunhunt_vh_start = new VhStartPtr() { public int handler() 
 	{
 		/*
 		Motion Object RAM contains 64 lines of run-length encoded data.
@@ -126,7 +126,7 @@ public class tunhunt
 		}
 		free( dirtybuffer );
 		return -1;
-	}
+	} };
 	
 	void tunhunt_vh_stop( void )
 	{

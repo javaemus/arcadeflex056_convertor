@@ -119,7 +119,7 @@ public class legionna
 		SET_TILE_INFO(0,tile,color,0)
 	}
 	
-	int legionna_vh_start(void)
+	public static VhStartPtr legionna_vh_start = new VhStartPtr() { public int handler() 
 	{
 		background_layer = tilemap_create(get_back_tile_info,tilemap_scan_rows,TILEMAP_TRANSPARENT,16,16,32,32);
 		foreground_layer = tilemap_create(get_fore_tile_info,tilemap_scan_rows,TILEMAP_TRANSPARENT,16,16,32,32);
@@ -139,7 +139,7 @@ public class legionna
 		tilemap_set_transparent_pen(text_layer,15);
 	
 		return 0;
-	}
+	} };
 	
 	void legionna_vh_stop(void)
 	{

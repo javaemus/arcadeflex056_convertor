@@ -423,7 +423,7 @@ public class galaxian
 	
 	***************************************************************************/
 	
-	int galaxian_plain_vh_start(void)
+	public static VhStartPtr galaxian_plain_vh_start = new VhStartPtr() { public int handler() 
 	{
 		extern struct GameDriver driver_newsin7;
 	
@@ -462,9 +462,9 @@ public class galaxian
 	
 	
 		return 0;
-	}
+	} };
 	
-	int galaxian_vh_start(void)
+	public static VhStartPtr galaxian_vh_start = new VhStartPtr() { public int handler() 
 	{
 		int ret = galaxian_plain_vh_start();
 	
@@ -473,9 +473,9 @@ public class galaxian
 		draw_bullets = galaxian_draw_bullets;
 	
 		return ret;
-	}
+	} };
 	
-	int mooncrst_vh_start(void)
+	public static VhStartPtr mooncrst_vh_start = new VhStartPtr() { public int handler() 
 	{
 		int ret = galaxian_vh_start();
 	
@@ -483,9 +483,9 @@ public class galaxian
 		modify_spritecode = mooncrst_modify_spritecode;
 	
 		return ret;
-	}
+	} };
 	
-	int moonqsr_vh_start(void)
+	public static VhStartPtr moonqsr_vh_start = new VhStartPtr() { public int handler() 
 	{
 		int ret = galaxian_vh_start();
 	
@@ -493,9 +493,9 @@ public class galaxian
 		modify_spritecode = moonqsr_modify_spritecode;
 	
 		return ret;
-	}
+	} };
 	
-	int pisces_vh_start(void)
+	public static VhStartPtr pisces_vh_start = new VhStartPtr() { public int handler() 
 	{
 		int ret = galaxian_vh_start();
 	
@@ -503,18 +503,18 @@ public class galaxian
 		modify_spritecode = pisces_modify_spritecode;
 	
 		return ret;
-	}
+	} };
 	
-	int gteikob2_vh_start(void)
+	public static VhStartPtr gteikob2_vh_start = new VhStartPtr() { public int handler() 
 	{
 		int ret = pisces_vh_start();
 	
 		draw_bullets = gteikob2_draw_bullets;
 	
 		return ret;
-	}
+	} };
 	
-	int batman2_vh_start(void)
+	public static VhStartPtr batman2_vh_start = new VhStartPtr() { public int handler() 
 	{
 		int ret = galaxian_vh_start();
 	
@@ -522,9 +522,9 @@ public class galaxian
 		modify_spritecode = batman2_modify_spritecode;
 	
 		return ret;
-	}
+	} };
 	
-	int scramble_vh_start(void)
+	public static VhStartPtr scramble_vh_start = new VhStartPtr() { public int handler() 
 	{
 		int ret = galaxian_plain_vh_start();
 	
@@ -535,36 +535,36 @@ public class galaxian
 		draw_background = scramble_draw_background;
 	
 		return ret;
-	}
+	} };
 	
-	int turtles_vh_start(void)
+	public static VhStartPtr turtles_vh_start = new VhStartPtr() { public int handler() 
 	{
 		int ret = galaxian_plain_vh_start();
 	
 		draw_background = turtles_draw_background;
 	
 		return ret;
-	}
+	} };
 	
-	int theend_vh_start(void)
+	public static VhStartPtr theend_vh_start = new VhStartPtr() { public int handler() 
 	{
 		int ret = galaxian_vh_start();
 	
 		draw_bullets = theend_draw_bullets;
 	
 		return ret;
-	}
+	} };
 	
-	int darkplnt_vh_start(void)
+	public static VhStartPtr darkplnt_vh_start = new VhStartPtr() { public int handler() 
 	{
 		int ret = galaxian_plain_vh_start();
 	
 		draw_bullets = darkplnt_draw_bullets;
 	
 		return ret;
-	}
+	} };
 	
-	int rescue_vh_start(void)
+	public static VhStartPtr rescue_vh_start = new VhStartPtr() { public int handler() 
 	{
 		int ret = scramble_vh_start();
 	
@@ -573,9 +573,9 @@ public class galaxian
 		draw_background = rescue_draw_background;
 	
 		return ret;
-	}
+	} };
 	
-	int minefld_vh_start(void)
+	public static VhStartPtr minefld_vh_start = new VhStartPtr() { public int handler() 
 	{
 		int ret = scramble_vh_start();
 	
@@ -584,27 +584,27 @@ public class galaxian
 		draw_background = minefld_draw_background;
 	
 		return ret;
-	}
+	} };
 	
-	int stratgyx_vh_start(void)
+	public static VhStartPtr stratgyx_vh_start = new VhStartPtr() { public int handler() 
 	{
 		int ret = galaxian_plain_vh_start();
 	
 		draw_background = stratgyx_draw_background;
 	
 		return ret;
-	}
+	} };
 	
-	int ckongs_vh_start(void)
+	public static VhStartPtr ckongs_vh_start = new VhStartPtr() { public int handler() 
 	{
 		int ret = scramble_vh_start();
 	
 		modify_spritecode = ckongs_modify_spritecode;
 	
 		return ret;
-	}
+	} };
 	
-	int calipso_vh_start(void)
+	public static VhStartPtr calipso_vh_start = new VhStartPtr() { public int handler() 
 	{
 		int ret = galaxian_plain_vh_start();
 	
@@ -615,9 +615,9 @@ public class galaxian
 		modify_spritecode = calipso_modify_spritecode;
 	
 		return ret;
-	}
+	} };
 	
-	int mariner_vh_start(void)
+	public static VhStartPtr mariner_vh_start = new VhStartPtr() { public int handler() 
 	{
 		int ret = galaxian_plain_vh_start();
 	
@@ -630,18 +630,18 @@ public class galaxian
 		modify_charcode = mariner_modify_charcode;
 	
 		return ret;
-	}
+	} };
 	
-	int froggers_vh_start(void)
+	public static VhStartPtr froggers_vh_start = new VhStartPtr() { public int handler() 
 	{
 		int ret = galaxian_plain_vh_start();
 	
 		draw_background = frogger_draw_background;
 	
 		return ret;
-	}
+	} };
 	
-	int frogger_vh_start(void)
+	public static VhStartPtr frogger_vh_start = new VhStartPtr() { public int handler() 
 	{
 		int ret = froggers_vh_start();
 	
@@ -649,18 +649,18 @@ public class galaxian
 		modify_ypos = frogger_modify_ypos;
 	
 		return ret;
-	}
+	} };
 	
-	int froggrmc_vh_start(void)
+	public static VhStartPtr froggrmc_vh_start = new VhStartPtr() { public int handler() 
 	{
 		int ret = froggers_vh_start();
 	
 		modify_color = frogger_modify_color;
 	
 		return ret;
-	}
+	} };
 	
-	int jumpbug_vh_start(void)
+	public static VhStartPtr jumpbug_vh_start = new VhStartPtr() { public int handler() 
 	{
 		int ret = scramble_vh_start();
 	
@@ -670,7 +670,7 @@ public class galaxian
 		modify_spritecode = jumpbug_modify_spritecode;
 	
 		return ret;
-	}
+	} };
 	
 	
 	public static WriteHandlerPtr galaxian_videoram_w = new WriteHandlerPtr() {public void handler(int offset, int data)

@@ -85,7 +85,7 @@ public class taito_h
 	  Initialize and destroy video hardware emulation
 	***************************************************************************/
 	
-	int syvalion_vh_start(void)
+	public static VhStartPtr syvalion_vh_start = new VhStartPtr() { public int handler() 
 	{
 		if ( TC0080VCO_vh_start(0,1,1,1,-2))
 		{
@@ -93,9 +93,9 @@ public class taito_h
 		}
 	
 		return 0;
-	}
+	} };
 	
-	int recordbr_vh_start(void)
+	public static VhStartPtr recordbr_vh_start = new VhStartPtr() { public int handler() 
 	{
 		if ( TC0080VCO_vh_start(0,0,1,1,-2))
 		{
@@ -103,9 +103,9 @@ public class taito_h
 		}
 	
 		return 0;
-	}
+	} };
 	
-	int dleague_vh_start(void)
+	public static VhStartPtr dleague_vh_start = new VhStartPtr() { public int handler() 
 	{
 		if ( TC0080VCO_vh_start(0,0,1,1,-2))
 		{
@@ -113,7 +113,7 @@ public class taito_h
 		}
 	
 		return 0;
-	}
+	} };
 	
 	void syvalion_vh_stop(void)
 	{

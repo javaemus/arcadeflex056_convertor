@@ -376,7 +376,7 @@ public class fromanc2
 	
 	
 	******************************************************************************/
-	int fromanc2_vh_start(void)
+	public static VhStartPtr fromanc2_vh_start = new VhStartPtr() { public int handler() 
 	{
 		fromanc2_videoram[0][0] = malloc(0x2000*2);
 		fromanc2_videoram[0][1] = malloc(0x2000*2);
@@ -463,7 +463,7 @@ public class fromanc2
 		memset(fromanc2_dirty[1][3], 1, 0x2000*2);
 	
 		return 0;
-	}
+	} };
 	
 	void fromanc2_vh_stop(void)
 	{
@@ -529,7 +529,7 @@ public class fromanc2
 		fromanc2_videoram[0][0] = 0;
 	}
 	
-	int fromancr_vh_start(void)
+	public static VhStartPtr fromancr_vh_start = new VhStartPtr() { public int handler() 
 	{
 		fromanc2_videoram[0][0] = malloc(0x2000);
 		fromanc2_videoram[0][1] = malloc(0x2000);
@@ -600,7 +600,7 @@ public class fromanc2
 		memset(fromanc2_dirty[1][2], 1, 0x2000);
 	
 		return 0;
-	}
+	} };
 	
 	void fromancr_vh_stop(void)
 	{

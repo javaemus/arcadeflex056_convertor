@@ -70,7 +70,7 @@ public class rockrage
 	
 	***************************************************************************/
 	
-	int rockrage_vh_start(void)
+	public static VhStartPtr rockrage_vh_start = new VhStartPtr() { public int handler() 
 	{
 		layer_colorbase[0] = 0x00;
 		layer_colorbase[1] = 0x10;
@@ -87,7 +87,7 @@ public class rockrage
 		}
 	
 		return 0;
-	}
+	} };
 	
 	void rockrage_vh_stop(void)
 	{

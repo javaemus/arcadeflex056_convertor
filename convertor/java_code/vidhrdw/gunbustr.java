@@ -30,7 +30,7 @@ public class gunbustr
 		TC0480SCP_vh_stop();
 	}
 	
-	int gunbustr_vh_start (void)
+	public static VhStartPtr gunbustr_vh_start = new VhStartPtr() { public int handler() 
 	{
 		spritelist = malloc(0x4000 * sizeof(*spritelist));
 		if (spritelist == 0)
@@ -40,7 +40,7 @@ public class gunbustr
 			return 1;
 	
 		return 0;
-	}
+	} };
 	
 	/************************************************************
 				SPRITE DRAW ROUTINES

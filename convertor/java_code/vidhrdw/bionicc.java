@@ -96,7 +96,7 @@ public class bionicc
 	
 	***************************************************************************/
 	
-	int bionicc_vh_start(void)
+	public static VhStartPtr bionicc_vh_start = new VhStartPtr() { public int handler() 
 	{
 		tx_tilemap = tilemap_create(get_tx_tile_info,tilemap_scan_rows,TILEMAP_TRANSPARENT,  8,8,32,32);
 		fg_tilemap = tilemap_create(get_fg_tile_info,tilemap_scan_rows,TILEMAP_SPLIT,      16,16,64,64);
@@ -111,7 +111,7 @@ public class bionicc
 		tilemap_set_transparent_pen(bg_tilemap,15);
 	
 		return 0;
-	}
+	} };
 	
 	
 	

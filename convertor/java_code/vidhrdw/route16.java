@@ -82,7 +82,7 @@ public class route16
 	  Start the video hardware emulation.
 	
 	***************************************************************************/
-	int route16_vh_start(void)
+	public static VhStartPtr route16_vh_start = new VhStartPtr() { public int handler() 
 	{
 		if ((tmpbitmap1 = bitmap_alloc(Machine->drv->screen_width,Machine->drv->screen_height)) == 0)
 		{
@@ -106,7 +106,7 @@ public class route16
 		video_remap_2 = 1;
 	
 		return 0;
-	}
+	} };
 	
 	/***************************************************************************
 	

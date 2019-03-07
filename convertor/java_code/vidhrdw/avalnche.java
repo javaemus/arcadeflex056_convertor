@@ -22,7 +22,7 @@ public class avalnche
 	};
 	
 	
-	int avalnche_vh_start(void)
+	public static VhStartPtr avalnche_vh_start = new VhStartPtr() { public int handler() 
 	{
 		int start_pen = 2;	/* leave space for black and white */
 	
@@ -32,7 +32,7 @@ public class avalnche
 		overlay_create(avalnche_ol, start_pen);
 	
 		return 0;
-	}
+	} };
 	
 	public static WriteHandlerPtr avalnche_videoram_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{

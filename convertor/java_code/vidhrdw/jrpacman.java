@@ -87,7 +87,7 @@ public class jrpacman
 	  Start the video hardware emulation.
 	
 	***************************************************************************/
-	int jrpacman_vh_start(void)
+	public static VhStartPtr jrpacman_vh_start = new VhStartPtr() { public int handler() 
 	{
 		if ((dirtybuffer = malloc(videoram_size)) == 0)
 			return 1;
@@ -101,7 +101,7 @@ public class jrpacman
 		}
 	
 		return 0;
-	}
+	} };
 	
 	
 	

@@ -435,7 +435,7 @@ public class metro
 				empty_tiles[16*16*code + i] = code ^ 0x0f;
 	}
 	
-	int metro_vh_start_14100(void)
+	public static VhStartPtr metro_vh_start_14100 = new VhStartPtr() { public int handler() 
 	{
 		support_8bpp = 0;
 		support_16x16 = 0;
@@ -463,9 +463,9 @@ public class metro
 		tilemap_set_transparent_pen(tilemap[2],0);
 	
 		return 0;
-	}
+	} };
 	
-	int metro_vh_start_14220(void)
+	public static VhStartPtr metro_vh_start_14220 = new VhStartPtr() { public int handler() 
 	{
 		support_8bpp = 1;
 		support_16x16 = 0;
@@ -497,9 +497,9 @@ public class metro
 		tilemap_set_scrolldx(tilemap[2], -2, 2);
 	
 		return 0;
-	}
+	} };
 	
-	int metro_vh_start_14300(void)
+	public static VhStartPtr metro_vh_start_14300 = new VhStartPtr() { public int handler() 
 	{
 		support_8bpp = 1;
 		support_16x16 = 1;
@@ -532,9 +532,9 @@ public class metro
 		tilemap_set_transparent_pen(tilemap_16x16[2],0);
 	
 		return 0;
-	}
+	} };
 	
-	int  blzntrnd_vh_start(void)
+	public static VhStartPtr blzntrnd_vh_start = new VhStartPtr() { public int handler() 
 	{
 		if (metro_vh_start_14220())
 			return 1;
@@ -552,7 +552,7 @@ public class metro
 		tilemap_set_scrolldx(tilemap[2], 8, -8);
 	
 		return 0;
-	}
+	} };
 	
 	
 	/***************************************************************************

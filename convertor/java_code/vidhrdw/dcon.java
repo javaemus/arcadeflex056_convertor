@@ -130,7 +130,7 @@ public class dcon
 				0)
 	}
 	
-	int dcon_vh_start(void)
+	public static VhStartPtr dcon_vh_start = new VhStartPtr() { public int handler() 
 	{
 		background_layer = tilemap_create(get_back_tile_info,tilemap_scan_rows,TILEMAP_OPAQUE,     16,16,32,32);
 		foreground_layer = tilemap_create(get_fore_tile_info,tilemap_scan_rows,TILEMAP_TRANSPARENT,16,16,32,32);
@@ -145,7 +145,7 @@ public class dcon
 		tilemap_set_transparent_pen(text_layer,15);
 	
 		return 0;
-	}
+	} };
 	
 	static void draw_sprites(struct mame_bitmap *bitmap,int pri)
 	{

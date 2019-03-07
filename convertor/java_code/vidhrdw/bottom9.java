@@ -62,7 +62,7 @@ public class bottom9
 	
 	***************************************************************************/
 	
-	int bottom9_vh_start(void)
+	public static VhStartPtr bottom9_vh_start = new VhStartPtr() { public int handler() 
 	{
 		layer_colorbase[0] = 0;	/* not used */
 		layer_colorbase[1] = 0;
@@ -86,7 +86,7 @@ public class bottom9
 		}
 	
 		return 0;
-	}
+	} };
 	
 	void bottom9_vh_stop(void)
 	{

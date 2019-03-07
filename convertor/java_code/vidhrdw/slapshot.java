@@ -62,7 +62,7 @@ public class slapshot
 	
 	
 	
-	int slapshot_core_vh_start (void)
+	public static VhStartPtr slapshot_core_vh_start = new VhStartPtr() { public int handler() 
 	{
 		int i;
 	
@@ -107,14 +107,14 @@ public class slapshot
 		state_save_register_UINT16("main8", 0, "memory", spriteram_buffered, spriteram_size/2);
 	
 		return 0;
-	}
+	} };
 	
-	int slapshot_vh_start (void)
+	public static VhStartPtr slapshot_vh_start = new VhStartPtr() { public int handler() 
 	{
 		taito_hide_pixels = 3;
 		taito_sprite_type = 2;
 		return (slapshot_core_vh_start());
-	}
+	} };
 	
 	void slapshot_vh_stop (void)
 	{

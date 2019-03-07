@@ -95,7 +95,7 @@ public class gyruss
 		generic_vh_stop();
 	}
 	
-	int gyruss_vh_start(void)
+	public static VhStartPtr gyruss_vh_start = new VhStartPtr() { public int handler() 
 	{
 		sprite_mux_buffer = malloc(256 * spriteram_size);
 	
@@ -106,7 +106,7 @@ public class gyruss
 		}
 	
 		return generic_vh_start();
-	}
+	} };
 	
 	
 	

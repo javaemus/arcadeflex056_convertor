@@ -21,7 +21,7 @@ public class badlands
 	 *
 	 *************************************/
 	
-	int badlands_vh_start(void)
+	public static VhStartPtr badlands_vh_start = new VhStartPtr() { public int handler() 
 	{
 		static const struct ataripf_desc pfdesc =
 		{
@@ -107,7 +107,7 @@ public class badlands
 		ataripf_free();
 	cant_create_pf:
 		return 1;
-	}
+	} };
 	
 	
 	

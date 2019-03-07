@@ -59,7 +59,7 @@ public class chqflag
 	
 	***************************************************************************/
 	
-	int chqflag_vh_start( void )
+	public static VhStartPtr chqflag_vh_start = new VhStartPtr() { public int handler() 
 	{
 		sprite_colorbase = 0;
 		zoom_colorbase[0] = 0x10;
@@ -87,7 +87,7 @@ public class chqflag
 		K051316_wraparound_enable(1,1);
 	
 		return 0;
-	}
+	} };
 	
 	void chqflag_vh_stop( void )
 	{

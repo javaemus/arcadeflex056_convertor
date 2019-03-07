@@ -165,7 +165,7 @@ public class phoenix
 	
 	***************************************************************************/
 	
-	int phoenix_vh_start(void)
+	public static VhStartPtr phoenix_vh_start = new VhStartPtr() { public int handler() 
 	{
 		if ((videoram_pg1 = malloc(0x1000)) == 0)
 			return 1;
@@ -186,7 +186,7 @@ public class phoenix
 		tilemap_set_transparent_pen(fg_tilemap,0);
 	
 		return 0;
-	}
+	} };
 	
 	
 	/***************************************************************************

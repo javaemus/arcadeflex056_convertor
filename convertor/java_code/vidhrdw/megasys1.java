@@ -254,7 +254,7 @@ public class megasys1
 	extern struct GameDriver driver_soldamj;
 	
 	
-	int megasys1_vh_start(void)
+	public static VhStartPtr megasys1_vh_start = new VhStartPtr() { public int handler() 
 	{
 		int i;
 	
@@ -303,7 +303,7 @@ public class megasys1
 			hardware_type_z = 1;
 	
 	 	return 0;
-	}
+	} };
 	
 	/***************************************************************************
 	

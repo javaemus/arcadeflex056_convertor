@@ -54,7 +54,7 @@ public class thunderx
 	
 	***************************************************************************/
 	
-	int scontra_vh_start(void)
+	public static VhStartPtr scontra_vh_start = new VhStartPtr() { public int handler() 
 	{
 		layer_colorbase[0] = 48;
 		layer_colorbase[1] = 0;
@@ -70,7 +70,7 @@ public class thunderx
 		}
 	
 		return 0;
-	}
+	} };
 	
 	void scontra_vh_stop(void)
 	{

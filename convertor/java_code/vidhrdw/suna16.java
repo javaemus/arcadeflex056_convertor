@@ -87,12 +87,12 @@ public class suna16
 	
 	***************************************************************************/
 	
-	int suna16_vh_start(void)
+	public static VhStartPtr suna16_vh_start = new VhStartPtr() { public int handler() 
 	{
 		paletteram16_2 = malloc( 0x100 * sizeof(data16_t) );
 		if (paletteram16_2 != NULL)	return 0;
 		else						return 1;
-	}
+	} };
 	
 	void suna16_vh_stop(void)
 	{

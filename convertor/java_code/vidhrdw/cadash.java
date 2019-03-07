@@ -54,7 +54,7 @@ public class cadash
 	}
 	
 	
-	int cadash_core_vh_start (void)
+	public static VhStartPtr cadash_core_vh_start = new VhStartPtr() { public int handler() 
 	{
 		spritelist = malloc(0x100 * sizeof(*spritelist));
 		if (spritelist == 0)
@@ -74,13 +74,13 @@ public class cadash
 			}
 	
 		return 0;
-	}
+	} };
 	
-	int cadash_vh_start (void)
+	public static VhStartPtr cadash_vh_start = new VhStartPtr() { public int handler() 
 	{
 		taito_hide_pixels = 0;
 		return (cadash_core_vh_start());
-	}
+	} };
 	
 	void cadash_vh_stop (void)
 	{

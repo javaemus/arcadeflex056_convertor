@@ -120,7 +120,7 @@ public class segac2
 	
 	******************************************************************************/
 	
-	int segac2_vh_start(void)
+	public static VhStartPtr segac2_vh_start = new VhStartPtr() { public int handler() 
 	{
 		static const UINT8 vdp_init[24] =
 		{
@@ -204,7 +204,7 @@ public class segac2
 	
 		return 0;
 	
-	}
+	} };
 	
 	
 	void segac2_vh_stop(void)

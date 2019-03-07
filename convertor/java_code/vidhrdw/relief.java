@@ -21,7 +21,7 @@ public class relief
 	 *
 	 *************************************/
 	
-	int relief_vh_start(void)
+	public static VhStartPtr relief_vh_start = new VhStartPtr() { public int handler() 
 	{
 		static const struct ataripf_desc pf0desc =
 		{
@@ -119,7 +119,7 @@ public class relief
 		ataripf_free();
 	cant_create_pf0:
 		return 1;
-	}
+	} };
 	
 	
 	

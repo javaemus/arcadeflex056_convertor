@@ -205,7 +205,7 @@ public class powerins
 	
 	***************************************************************************/
 	
-	int powerins_vh_start(void)
+	public static VhStartPtr powerins_vh_start = new VhStartPtr() { public int handler() 
 	{
 		tilemap_0 = tilemap_create(	get_tile_info_0,
 									powerins_get_memory_offset_0,
@@ -232,7 +232,7 @@ public class powerins
 			return 0;
 		}
 		else return 1;
-	}
+	} };
 	
 	
 	

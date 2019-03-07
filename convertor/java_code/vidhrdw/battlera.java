@@ -39,7 +39,7 @@ public class battlera
 		bitmap_free (front_bitmap);
 	}
 	
-	int battlera_vh_start (void)
+	public static VhStartPtr battlera_vh_start = new VhStartPtr() { public int handler() 
 	{
 		HuC6270_vram=malloc(0x20000);
 		tile_dirty=malloc(0x1000);
@@ -63,7 +63,7 @@ public class battlera
 		irq_enable=rcr_enable=sb_enable=bb_enable=0;
 	
 		return 0;
-	}
+	} };
 	
 	/******************************************************************************/
 	

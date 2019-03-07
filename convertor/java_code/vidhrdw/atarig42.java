@@ -149,16 +149,16 @@ public class atarig42
 	}
 	
 	
-	int atarig42_vh_start(void)
+	public static VhStartPtr atarig42_vh_start = new VhStartPtr() { public int handler() 
 	{
 		return common_vh_start(0);
-	}
+	} };
 	
 	
-	int atarigt_vh_start(void)
+	public static VhStartPtr atarigt_vh_start = new VhStartPtr() { public int handler() 
 	{
 		return common_vh_start(1);
-	}
+	} };
 	
 	
 	

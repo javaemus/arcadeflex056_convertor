@@ -152,7 +152,7 @@ public class prehisle
 	
 	/******************************************************************************/
 	
-	int prehisle_vh_start (void)
+	public static VhStartPtr prehisle_vh_start = new VhStartPtr() { public int handler() 
 	{
 		pf1_bitmap = bitmap_alloc(256+16,512);
 	
@@ -160,7 +160,7 @@ public class prehisle
 			return 1;
 	
 		return 0;
-	}
+	} };
 	
 	void prehisle_vh_stop (void)
 	{

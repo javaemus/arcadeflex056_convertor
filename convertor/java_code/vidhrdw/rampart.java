@@ -47,7 +47,7 @@ public class rampart
 	 *
 	 *************************************/
 	
-	int rampart_vh_start(void)
+	public static VhStartPtr rampart_vh_start = new VhStartPtr() { public int handler() 
 	{
 		static const struct atarimo_desc modesc =
 		{
@@ -102,7 +102,7 @@ public class rampart
 		rampart_bitmap_free();
 	cant_create_pf:
 		return 1;
-	}
+	} };
 	
 	
 	

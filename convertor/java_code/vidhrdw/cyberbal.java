@@ -238,7 +238,7 @@ public class cyberbal
 	}
 	
 	
-	int cyberbal_vh_start(void)
+	public static VhStartPtr cyberbal_vh_start = new VhStartPtr() { public int handler() 
 	{
 		int result = cyberbal_vh_start_common(2);
 		if (result == 0)
@@ -248,10 +248,10 @@ public class cyberbal
 			atarimo_set_xscroll(1, 4, 0);
 		}
 		return result;
-	}
+	} };
 	
 	
-	int cyberb2p_vh_start(void)
+	public static VhStartPtr cyberb2p_vh_start = new VhStartPtr() { public int handler() 
 	{
 		int result = cyberbal_vh_start_common(1);
 		if (result == 0)
@@ -260,7 +260,7 @@ public class cyberbal
 			atarimo_set_xscroll(0, 5, 0);
 		}
 		return result;
-	}
+	} };
 	
 	
 	

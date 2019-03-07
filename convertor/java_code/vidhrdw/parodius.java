@@ -48,7 +48,7 @@ public class parodius
 	
 	***************************************************************************/
 	
-	int parodius_vh_start( void )
+	public static VhStartPtr parodius_vh_start = new VhStartPtr() { public int handler() 
 	{
 		if (K052109_vh_start(REGION_GFX1,NORMAL_PLANE_ORDER,tile_callback))
 		{
@@ -61,7 +61,7 @@ public class parodius
 		}
 	
 		return 0;
-	}
+	} };
 	
 	void parodius_vh_stop( void )
 	{

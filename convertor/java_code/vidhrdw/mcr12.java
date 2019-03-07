@@ -39,7 +39,7 @@ public class mcr12
 	 *
 	 *************************************/
 	
-	int mcr12_vh_start(void)
+	public static VhStartPtr mcr12_vh_start = new VhStartPtr() { public int handler() 
 	{
 		const struct GfxElement *gfx = Machine->gfx[1];
 	
@@ -83,7 +83,7 @@ public class mcr12
 			return 1;
 		}
 		return 0;
-	}
+	} };
 	
 	
 	void mcr12_vh_stop(void)

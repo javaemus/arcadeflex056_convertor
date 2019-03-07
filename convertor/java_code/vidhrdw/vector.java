@@ -196,7 +196,7 @@ public class vector
 	 * Initializes vector game video emulation
 	 */
 	
-	int vector_vh_start (void)
+	public static VhStartPtr vector_vh_start = new VhStartPtr() { public int handler() 
 	{
 		int i;
 	
@@ -261,7 +261,7 @@ public class vector
 		vector_set_gamma (gamma_correction);
 	
 		return 0;
-	}
+	} };
 	
 	
 	

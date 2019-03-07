@@ -355,7 +355,7 @@ public class hyhoo
 	
 	
 	******************************************************************************/
-	int hyhoo_vh_start(void)
+	public static VhStartPtr hyhoo_vh_start = new VhStartPtr() { public int handler() 
 	{
 		if ((hyhoo_tmpbitmap = bitmap_alloc(Machine->drv->screen_width, Machine->drv->screen_height)) == 0) return 1;
 		if ((hyhoo_videoram = malloc(Machine->drv->screen_width * Machine->drv->screen_height * sizeof(short))) == 0) return 1;
@@ -363,7 +363,7 @@ public class hyhoo
 		if ((hyhoo_palette = malloc(0x10 * sizeof(char))) == 0) return 1;
 		memset(hyhoo_videoram, 0x0000, (Machine->drv->screen_width * Machine->drv->screen_height * sizeof(short)));
 		return 0;
-	}
+	} };
 	
 	void hyhoo_vh_stop(void)
 	{

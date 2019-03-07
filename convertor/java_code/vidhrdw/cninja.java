@@ -155,7 +155,7 @@ public class cninja
 	
 	/******************************************************************************/
 	
-	static int common_vh_start(void)
+	static public static VhStartPtr common_vh_start = new VhStartPtr() { public int handler() 
 	{
 		pf2_tilemap = tilemap_create(get_pf2_tile_info,back_scan,TILEMAP_OPAQUE,16,16,64,32);
 		pf3_tilemap = tilemap_create(get_pf3_tile_info,back_scan,TILEMAP_TRANSPARENT,16,16,64,32);
@@ -171,23 +171,23 @@ public class cninja
 		tilemap_set_transmask(pf4_tilemap,0,0x00ff,0xff01);
 	
 		return 0;
-	}
+	} };
 	
-	int cninja_vh_start(void)
+	public static VhStartPtr cninja_vh_start = new VhStartPtr() { public int handler() 
 	{
 		if (common_vh_start()) return 1;
 		bootleg=0;
 		return 0;
-	}
+	} };
 	
-	int stoneage_vh_start(void)
+	public static VhStartPtr stoneage_vh_start = new VhStartPtr() { public int handler() 
 	{
 		if (common_vh_start()) return 1;
 		bootleg=1; /* The bootleg has broken scroll registers */
 		return 0;
-	}
+	} };
 	
-	int edrandy_vh_start(void)
+	public static VhStartPtr edrandy_vh_start = new VhStartPtr() { public int handler() 
 	{
 		pf2_tilemap = tilemap_create(get_pf2_tile_info,back_scan,TILEMAP_OPAQUE,16,16,64,32);
 		pf3_tilemap = tilemap_create(get_pf3_tile_info,back_scan,TILEMAP_TRANSPARENT,16,16,64,32);
@@ -203,9 +203,9 @@ public class cninja
 		bootleg=0;
 	
 		return 0;
-	}
+	} };
 	
-	int robocop2_vh_start(void)
+	public static VhStartPtr robocop2_vh_start = new VhStartPtr() { public int handler() 
 	{
 		pf2_tilemap = tilemap_create(get_pf2_tile_info,back_scan,TILEMAP_OPAQUE,16,16,64,32);
 		pf3_tilemap = tilemap_create(get_pf3_tile_info,back_scan,TILEMAP_TRANSPARENT,16,16,64,32);
@@ -221,7 +221,7 @@ public class cninja
 		bootleg=0;
 	
 		return 0;
-	}
+	} };
 	
 	/******************************************************************************/
 	

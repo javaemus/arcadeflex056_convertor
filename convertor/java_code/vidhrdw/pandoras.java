@@ -94,7 +94,7 @@ public class pandoras
 	
 	***************************************************************************/
 	
-	int pandoras_vh_start(void)
+	public static VhStartPtr pandoras_vh_start = new VhStartPtr() { public int handler() 
 	{
 		layer0 = tilemap_create(get_tile_info0,tilemap_scan_rows,TILEMAP_OPAQUE,8,8,32,32);
 	
@@ -102,7 +102,7 @@ public class pandoras
 			return 1;
 	
 		return 0;
-	}
+	} };
 	
 	/***************************************************************************
 	

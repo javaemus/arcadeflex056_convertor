@@ -95,7 +95,7 @@ public class wmsyunit
 	 *
 	 *************************************/
 	
-	static int vh_start_common(void)
+	static public static VhStartPtr vh_start_common = new VhStartPtr() { public int handler() 
 	{
 		/* allocate memory */
 		wms_cmos_ram = malloc(0x2000 * 4);
@@ -129,9 +129,9 @@ public class wmsyunit
 		memset(&dma_state, 0, sizeof(dma_state));
 	
 		return 0;
-	}
+	} };
 	
-	int wms_yunit_4bit_vh_start(void)
+	public static VhStartPtr wms_yunit_4bit_vh_start = new VhStartPtr() { public int handler() 
 	{
 		int result = vh_start_common();
 		int i;
@@ -146,9 +146,9 @@ public class wmsyunit
 		palette_mask = 0x00ff;
 	
 		return 0;
-	}
+	} };
 	
-	int wms_yunit_6bit_vh_start(void)
+	public static VhStartPtr wms_yunit_6bit_vh_start = new VhStartPtr() { public int handler() 
 	{
 		int result = vh_start_common();
 		int i;
@@ -163,9 +163,9 @@ public class wmsyunit
 		palette_mask = 0x0fff;
 	
 		return 0;
-	}
+	} };
 	
-	int wms_zunit_vh_start(void)
+	public static VhStartPtr wms_zunit_vh_start = new VhStartPtr() { public int handler() 
 	{
 		int result = vh_start_common();
 		int i;
@@ -180,7 +180,7 @@ public class wmsyunit
 		palette_mask = 0x1fff;
 	
 		return 0;
-	}
+	} };
 	
 	
 	

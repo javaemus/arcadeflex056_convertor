@@ -285,7 +285,7 @@ public class seta
 	
 	
 	/* 2 layers */
-	int seta_vh_start_2_layers(void)
+	public static VhStartPtr seta_vh_start_2_layers = new VhStartPtr() { public int handler() 
 	{
 		/* Each layer consists of 2 tilemaps: only one can be displayed
 		   at any given time */
@@ -338,11 +338,11 @@ public class seta
 			return 0;
 		}
 		else return 1;
-	}
+	} };
 	
 	
 	/* 1 layer */
-	int seta_vh_start_1_layer(void)
+	public static VhStartPtr seta_vh_start_1_layer = new VhStartPtr() { public int handler() 
 	{
 		/* Each layer consists of 2 tilemaps: only one can be displayed
 		   at any given time */
@@ -380,20 +380,20 @@ public class seta
 			return 0;
 		}
 		else return 1;
-	}
+	} };
 	
 	
 	/* NO layers, only sprites */
-	int seta_vh_start_no_layers(void)
+	public static VhStartPtr seta_vh_start_no_layers = new VhStartPtr() { public int handler() 
 	{
 		tilemap_0 = 0;
 		tilemap_1 = 0;
 		tilemap_2 = 0;
 		tilemap_3 = 0;
 		return 0;
-	}
+	} };
 	
-	int seta_vh_start_2_layers_offset_0x02(void)
+	public static VhStartPtr seta_vh_start_2_layers_offset_0x02 = new VhStartPtr() { public int handler() 
 	{
 		if (seta_vh_start_2_layers())
 			return 1;
@@ -408,17 +408,17 @@ public class seta
 		tilemap_set_scrolldy(tilemap_2, 0x00, 0x00);
 		tilemap_set_scrolldy(tilemap_3, 0x00, 0x00);
 		return 0;
-	}
+	} };
 	
-	int oisipuzl_vh_start_2_layers(void)
+	public static VhStartPtr oisipuzl_vh_start_2_layers = new VhStartPtr() { public int handler() 
 	{
 		if (seta_vh_start_2_layers_offset_0x02())
 			return 1;
 		tilemaps_flip = 1;
 		return 0;
-	}
+	} };
 	
-	int seta_vh_start_1_layer_offset_0x02(void)
+	public static VhStartPtr seta_vh_start_1_layer_offset_0x02 = new VhStartPtr() { public int handler() 
 	{
 		if (seta_vh_start_1_layer())	return 1;
 	
@@ -429,7 +429,7 @@ public class seta
 		tilemap_set_scrolldy(tilemap_1, 0x00, 0x00);
 	
 		return 0;
-	}
+	} };
 	
 	
 	/***************************************************************************

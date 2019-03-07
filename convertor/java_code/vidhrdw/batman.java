@@ -21,7 +21,7 @@ public class batman
 	 *
 	 *************************************/
 	
-	int batman_vh_start(void)
+	public static VhStartPtr batman_vh_start = new VhStartPtr() { public int handler() 
 	{
 		static const struct ataripf_desc pf0desc =
 		{
@@ -169,7 +169,7 @@ public class batman
 		ataripf_free();
 	cant_create_pf0:
 		return 1;
-	}
+	} };
 	
 	
 	

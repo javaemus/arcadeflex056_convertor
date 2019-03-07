@@ -69,7 +69,7 @@ public class sidepckt
 	
 	***************************************************************************/
 	
-	int sidepckt_vh_start(void)
+	public static VhStartPtr sidepckt_vh_start = new VhStartPtr() { public int handler() 
 	{
 		bg_tilemap = tilemap_create(get_tile_info,tilemap_scan_rows,TILEMAP_SPLIT,8,8,32,32);
 	
@@ -82,7 +82,7 @@ public class sidepckt
 		tilemap_set_flip(ALL_TILEMAPS,TILEMAP_FLIPX);
 	
 		return 0;
-	}
+	} };
 	
 	
 	

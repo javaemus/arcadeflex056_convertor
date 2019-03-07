@@ -48,7 +48,7 @@ public class surpratk
 	
 	***************************************************************************/
 	
-	int surpratk_vh_start( void )
+	public static VhStartPtr surpratk_vh_start = new VhStartPtr() { public int handler() 
 	{
 		if (K052109_vh_start(REGION_GFX1,NORMAL_PLANE_ORDER,tile_callback))
 		{
@@ -61,7 +61,7 @@ public class surpratk
 		}
 	
 		return 0;
-	}
+	} };
 	
 	void surpratk_vh_stop( void )
 	{

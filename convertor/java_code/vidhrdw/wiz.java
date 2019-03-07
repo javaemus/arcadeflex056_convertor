@@ -42,7 +42,7 @@ public class wiz
 	static int palette_bank;
 	
 	
-	int wiz_vh_start(void)
+	public static VhStartPtr wiz_vh_start = new VhStartPtr() { public int handler() 
 	{
 		if (generic_vh_start())
 			return 1;
@@ -54,7 +54,7 @@ public class wiz
 		state_save_register_int  ("wiz", 0, "bgpen",       &bgpen);
 	
 		return 0;
-	}
+	} };
 	
 	/***************************************************************************
 	

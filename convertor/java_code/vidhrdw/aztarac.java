@@ -93,7 +93,7 @@ public class aztarac
 	    return 4;
 	} };
 	
-	int aztarac_vh_start (void)
+	public static VhStartPtr aztarac_vh_start = new VhStartPtr() { public int handler() 
 	{
 	    int xmin, xmax, ymin, ymax;
 	
@@ -108,5 +108,5 @@ public class aztarac
 	
 		vector_set_shift (VEC_SHIFT);
 		return vector_vh_start();
-	}
+	} };
 }

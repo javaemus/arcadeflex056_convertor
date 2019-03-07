@@ -53,7 +53,7 @@ public class asterix
 	 	{{-73-112, 0 }, {-73-112, 0}, {-73-112, 0}, {-73-112, 0}}
 	};
 	
-	int asterix_vh_start(void)
+	public static VhStartPtr asterix_vh_start = new VhStartPtr() { public int handler() 
 	{
 		K054157_vh_start(REGION_GFX1, 0, scrolld, NORMAL_PLANE_ORDER, asterix_tile_callback);
 		if (K053245_vh_start(REGION_GFX2,NORMAL_PLANE_ORDER, asterix_sprite_callback))
@@ -62,7 +62,7 @@ public class asterix
 			return 1;
 		}
 		return 0;
-	}
+	} };
 	
 	void asterix_vh_stop(void)
 	{

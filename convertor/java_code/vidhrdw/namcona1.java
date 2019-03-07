@@ -212,7 +212,7 @@ public class namcona1
 		}
 	}
 	
-	int namcona1_vh_start( void )
+	public static VhStartPtr namcona1_vh_start = new VhStartPtr() { public int handler() 
 	{
 		int i;
 		static void (*get_info[4])(int tile_index) =
@@ -254,7 +254,7 @@ public class namcona1
 	
 		namcona1_vh_stop();
 		return -1; /* error */
-	}
+	} };
 	
 	void namcona1_vh_stop( void )
 	{

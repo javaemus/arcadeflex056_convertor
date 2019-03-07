@@ -54,7 +54,7 @@ public class darius
 	
 	/***************************************************************************/
 	
-	int darius_vh_start (void)
+	public static VhStartPtr darius_vh_start = new VhStartPtr() { public int handler() 
 	{
 		fg_tilemap = tilemap_create(darius_fg_get_tile_info[0],tilemap_scan_rows,TILEMAP_TRANSPARENT,8,8,128,64);
 		if (fg_tilemap == 0)
@@ -78,7 +78,7 @@ public class darius
 		state_save_register_func_postload(dirty_fg_tilemap);
 	
 		return 0;
-	}
+	} };
 	
 	void darius_vh_stop(void)
 	{

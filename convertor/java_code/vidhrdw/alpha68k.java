@@ -77,7 +77,7 @@ public class alpha68k
 		tilemap_mark_tile_dirty(fix_tilemap,offset/2);
 	}
 	
-	int alpha68k_vh_start(void)
+	public static VhStartPtr alpha68k_vh_start = new VhStartPtr() { public int handler() 
 	{
 		fix_tilemap = tilemap_create(get_tile_info,tilemap_scan_cols,TILEMAP_TRANSPARENT,8,8,32,32);
 	
@@ -87,7 +87,7 @@ public class alpha68k
 		tilemap_set_transparent_pen(fix_tilemap,0);
 	
 		return 0;
-	}
+	} };
 	
 	/******************************************************************************/
 	
@@ -523,7 +523,7 @@ public class alpha68k
 		tilemap_mark_tile_dirty( fix_tilemap, offset/2 );
 	}
 	
-	int kouyakyu_vh_start(void)
+	public static VhStartPtr kouyakyu_vh_start = new VhStartPtr() { public int handler() 
 	{
 		fix_tilemap = tilemap_create(get_kouyakyu_info,tilemap_scan_cols,TILEMAP_TRANSPARENT,8,8,32,32);
 	
@@ -533,7 +533,7 @@ public class alpha68k
 		tilemap_set_transparent_pen(fix_tilemap,0);
 	
 		return 0;
-	}
+	} };
 	
 	void kouyakyu_vh_screenrefresh(struct mame_bitmap *bitmap, int full_refresh)
 	{

@@ -65,7 +65,7 @@ public class timelimt
 	***************************************************************************/
 	
 	
-	int timelimt_vh_start( void )
+	public static VhStartPtr timelimt_vh_start = new VhStartPtr() { public int handler() 
 	{
 		dirtybuffer = 0;
 		tmpbitmap = 0;
@@ -82,7 +82,7 @@ public class timelimt
 		}
 	
 		return 0;
-	}
+	} };
 	
 	/***************************************************************************/
 	

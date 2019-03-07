@@ -2824,11 +2824,11 @@ public class taitoic
 	
 	UINT8 TC0360PRI_regs[16];
 	
-	int TC0360PRI_vh_start(void)
+	public static VhStartPtr TC0360PRI_vh_start = new VhStartPtr() { public int handler() 
 	{
 		state_save_register_UINT8("TC0360PRI", 0, "registers", TC0360PRI_regs, 16);
 		return 0;
-	}
+	} };
 	
 	public static WriteHandlerPtr TC0360PRI_w = new WriteHandlerPtr() {public void handler(int offset, int data)
 	{
@@ -4073,7 +4073,7 @@ public class taitoic
 	}
 	
 	
-	int TC0110PCR_vh_start(void)
+	public static VhStartPtr TC0110PCR_vh_start = new VhStartPtr() { public int handler() 
 	{
 		TC0110PCR_ram[0] = malloc(TC0110PCR_RAM_SIZE * sizeof(*TC0110PCR_ram[0]));
 	
@@ -4086,9 +4086,9 @@ public class taitoic
 		TC0110PCR_type = 0;	/* default, xBBBBBGGGGGRRRRR */
 	
 		return 0;
-	}
+	} };
 	
-	int TC0110PCR_1_vh_start(void)
+	public static VhStartPtr TC0110PCR_1_vh_start = new VhStartPtr() { public int handler() 
 	{
 		TC0110PCR_ram[1] = malloc(TC0110PCR_RAM_SIZE * sizeof(*TC0110PCR_ram[1]));
 	
@@ -4099,9 +4099,9 @@ public class taitoic
 		state_save_register_func_postload(TC0110PCR_restore_cols_1);
 	
 		return 0;
-	}
+	} };
 	
-	int TC0110PCR_2_vh_start(void)
+	public static VhStartPtr TC0110PCR_2_vh_start = new VhStartPtr() { public int handler() 
 	{
 		TC0110PCR_ram[2] = malloc(TC0110PCR_RAM_SIZE * sizeof(*TC0110PCR_ram[2]));
 	
@@ -4112,7 +4112,7 @@ public class taitoic
 		state_save_register_func_postload(TC0110PCR_restore_cols_2);
 	
 		return 0;
-	}
+	} };
 	
 	void TC0110PCR_vh_stop(void)
 	{

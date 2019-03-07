@@ -58,23 +58,23 @@ public class meadows
 	/*************************************************************/
 	/* video handler start                                       */
 	/*************************************************************/
-	int deadeye_vh_start(void)
+	public static VhStartPtr deadeye_vh_start = new VhStartPtr() { public int handler() 
 	{
 		if( generic_vh_start() ) return 1;
 	
 		overlay_create(deadeye_artwork, 2);
 	
 	    return 0;
-	}
+	} };
 	
-	int gypsyjug_vh_start(void)
+	public static VhStartPtr gypsyjug_vh_start = new VhStartPtr() { public int handler() 
 	{
 		if( generic_vh_start() ) return 1;
 	
 		overlay_create(gypsyjug_artwork, 2);
 	
 	    return 0;
-	}
+	} };
 	
 	
 	/*************************************************************/

@@ -164,7 +164,7 @@ public class cloak
 	  Start the video hardware emulation.
 	
 	***************************************************************************/
-	int cloak_vh_start(void)
+	public static VhStartPtr cloak_vh_start = new VhStartPtr() { public int handler() 
 	{
 		if ((tmpbitmap = bitmap_alloc(Machine->drv->screen_width,Machine->drv->screen_height)) == 0)
 			return 1;
@@ -201,7 +201,7 @@ public class cloak
 		}
 	
 		return 0;
-	}
+	} };
 	
 	/***************************************************************************
 	

@@ -97,7 +97,7 @@ public class gottlieb
 	
 	***************************************************************************/
 	
-	int gottlieb_vh_start(void)
+	public static VhStartPtr gottlieb_vh_start = new VhStartPtr() { public int handler() 
 	{
 		if (generic_vh_start() != 0)
 			return 1;
@@ -113,7 +113,7 @@ public class gottlieb
 		memset(dirtycharacter,0,MAX_CHARS);
 	
 		return 0;
-	}
+	} };
 	
 	/***************************************************************************
 	

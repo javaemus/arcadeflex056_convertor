@@ -218,12 +218,12 @@ public class m62
 	
 	
 	
-	int ldrun_vh_start(void)
+	public static VhStartPtr ldrun_vh_start = new VhStartPtr() { public int handler() 
 	{
 		irem_background_hscroll = 0;
 		irem_background_vscroll = 0;
 		return generic_vh_start();
-	}
+	} };
 	
 	
 	static int irem_vh_start( int width, int height )
@@ -244,20 +244,20 @@ public class m62
 		return 0;
 	}
 	
-	int kidniki_vh_start(void)
+	public static VhStartPtr kidniki_vh_start = new VhStartPtr() { public int handler() 
 	{
 		return irem_vh_start(512,256);
-	}
+	} };
 	
-	int spelunkr_vh_start(void)
+	public static VhStartPtr spelunkr_vh_start = new VhStartPtr() { public int handler() 
 	{
 		return irem_vh_start(512,512);
-	}
+	} };
 	
-	int youjyudn_vh_start(void)
+	public static VhStartPtr youjyudn_vh_start = new VhStartPtr() { public int handler() 
 	{
 		return irem_vh_start(512,256);
-	}
+	} };
 	
 	
 	

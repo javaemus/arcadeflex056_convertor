@@ -28,7 +28,7 @@ public class tehkanwc
 	static unsigned char led0,led1;
 	
 	
-	int tehkanwc_vh_start(void)
+	public static VhStartPtr tehkanwc_vh_start = new VhStartPtr() { public int handler() 
 	{
 		if (generic_vh_start())
 			return 1;
@@ -48,7 +48,7 @@ public class tehkanwc
 		memset(dirtybuffer1,1,tehkanwc_videoram1_size);
 	
 		return 0;
-	}
+	} };
 	
 	void tehkanwc_vh_stop(void)
 	{

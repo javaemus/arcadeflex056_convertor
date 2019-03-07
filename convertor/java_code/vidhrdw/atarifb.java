@@ -68,7 +68,7 @@ public class atarifb
 	/***************************************************************************
 	***************************************************************************/
 	
-	int atarifb_vh_start(void)
+	public static VhStartPtr atarifb_vh_start = new VhStartPtr() { public int handler() 
 	{
 		if (generic_vh_start()!=0)
 			return 1;
@@ -86,7 +86,7 @@ public class atarifb
 		memset(dirtybuffer, 1, videoram_size);
 	
 		return 0;
-	}
+	} };
 	
 	/***************************************************************************
 	***************************************************************************/

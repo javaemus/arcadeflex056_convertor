@@ -53,7 +53,7 @@ public class bladestl
 	
 	***************************************************************************/
 	
-	int bladestl_vh_start(void)
+	public static VhStartPtr bladestl_vh_start = new VhStartPtr() { public int handler() 
 	{
 		layer_colorbase[0] = 0;
 		layer_colorbase[1] = 1;
@@ -70,7 +70,7 @@ public class bladestl
 		}
 	
 		return 0;
-	}
+	} };
 	
 	void bladestl_vh_stop(void)
 	{

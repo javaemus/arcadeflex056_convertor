@@ -61,7 +61,7 @@ public class exidy440
 	 *
 	 *************************************/
 	
-	int exidy440_vh_start(void)
+	public static VhStartPtr exidy440_vh_start = new VhStartPtr() { public int handler() 
 	{
 		/* reset the system */
 		firq_enable = 0;
@@ -120,7 +120,7 @@ public class exidy440
 		timer_set(TIME_NOW, 0, scanline_callback);
 	
 		return 0;
-	}
+	} };
 	
 	
 	

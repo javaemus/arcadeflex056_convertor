@@ -89,7 +89,7 @@ public class armedf
 	
 	***************************************************************************/
 	
-	int terraf_vh_start(void)
+	public static VhStartPtr terraf_vh_start = new VhStartPtr() { public int handler() 
 	{
 		scroll_type = 0;
 		sprite_offy = 128;
@@ -107,9 +107,9 @@ public class armedf
 		tilemap_set_scrollx(tx_tilemap,0,-128);
 	
 		return 0;
-	}
+	} };
 	
-	int cclimbr2_vh_start(void)
+	public static VhStartPtr cclimbr2_vh_start = new VhStartPtr() { public int handler() 
 	{
 		scroll_type = 2;
 		sprite_offy = 0;
@@ -127,9 +127,9 @@ public class armedf
 		tilemap_set_scrollx(tx_tilemap,0,-128);
 	
 		return 0;
-	}
+	} };
 	
-	int kodure_vh_start(void)
+	public static VhStartPtr kodure_vh_start = new VhStartPtr() { public int handler() 
 	{
 		scroll_type = 2;
 		sprite_offy = 128;
@@ -147,9 +147,9 @@ public class armedf
 		tilemap_set_scrollx(tx_tilemap,0,-128);
 	
 		return 0;
-	}
+	} };
 	
-	int armedf_vh_start(void)
+	public static VhStartPtr armedf_vh_start = new VhStartPtr() { public int handler() 
 	{
 		scroll_type = 1;
 		sprite_offy = 128;
@@ -165,7 +165,7 @@ public class armedf
 		tilemap_set_transparent_pen(tx_tilemap,0xf);
 	
 		return 0;
-	}
+	} };
 	
 	
 	

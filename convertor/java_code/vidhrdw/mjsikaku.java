@@ -1130,7 +1130,7 @@ public class mjsikaku
 	
 	
 	******************************************************************************/
-	int mjsikaku_vh_start(void)
+	public static VhStartPtr mjsikaku_vh_start = new VhStartPtr() { public int handler() 
 	{
 		if ((mjsikaku_tmpbitmap = bitmap_alloc(Machine->drv->screen_width, Machine->drv->screen_height)) == 0) return 1;
 		if ((mjsikaku_videoram = malloc(Machine->drv->screen_width * Machine->drv->screen_height * sizeof(short))) == 0) return 1;
@@ -1140,9 +1140,9 @@ public class mjsikaku
 		memset(mjsikaku_videoworkram, 0x0000, (Machine->drv->screen_width * Machine->drv->screen_height * sizeof(short)));
 		mjsikaku_gfxmode = 0;
 		return 0;
-	}
+	} };
 	
-	int secolove_vh_start(void)
+	public static VhStartPtr secolove_vh_start = new VhStartPtr() { public int handler() 
 	{
 		if ((mjsikaku_tmpbitmap = bitmap_alloc(Machine->drv->screen_width, Machine->drv->screen_height)) == 0) return 1;
 		if ((mjsikaku_videoram = malloc(Machine->drv->screen_width * Machine->drv->screen_height * sizeof(short))) == 0) return 1;
@@ -1152,9 +1152,9 @@ public class mjsikaku
 		memset(mjsikaku_videoworkram, 0x0000, (Machine->drv->screen_width * Machine->drv->screen_height * sizeof(short)));
 		mjsikaku_gfxmode = 1;
 		return 0;
-	}
+	} };
 	
-	int bijokkoy_vh_start(void)
+	public static VhStartPtr bijokkoy_vh_start = new VhStartPtr() { public int handler() 
 	{
 		if ((mjsikaku_tmpbitmap = bitmap_alloc(Machine->drv->screen_width, Machine->drv->screen_height)) == 0) return 1;
 		if ((mjsikaku_videoram = malloc(Machine->drv->screen_width * Machine->drv->screen_height * sizeof(short))) == 0) return 1;
@@ -1164,9 +1164,9 @@ public class mjsikaku
 		memset(mjsikaku_videoworkram, 0x0000, (Machine->drv->screen_width * Machine->drv->screen_height * sizeof(short)));
 		mjsikaku_gfxmode = 4;
 		return 0;
-	}
+	} };
 	
-	int seiha_vh_start(void)
+	public static VhStartPtr seiha_vh_start = new VhStartPtr() { public int handler() 
 	{
 		if ((mjsikaku_tmpbitmap = bitmap_alloc(Machine->drv->screen_width, Machine->drv->screen_height)) == 0) return 1;
 		if ((mjsikaku_videoram = malloc(Machine->drv->screen_width * Machine->drv->screen_height * sizeof(short))) == 0) return 1;
@@ -1176,9 +1176,9 @@ public class mjsikaku
 		memset(mjsikaku_videoworkram, 0x0000, (Machine->drv->screen_width * Machine->drv->screen_height * sizeof(short)));
 		mjsikaku_gfxmode = 2;
 		return 0;
-	}
+	} };
 	
-	int crystal2_vh_start(void)
+	public static VhStartPtr crystal2_vh_start = new VhStartPtr() { public int handler() 
 	{
 		if ((mjsikaku_tmpbitmap = bitmap_alloc(Machine->drv->screen_width, Machine->drv->screen_height)) == 0) return 1;
 		if ((mjsikaku_videoram = malloc(Machine->drv->screen_width * Machine->drv->screen_height * sizeof(short))) == 0) return 1;
@@ -1188,7 +1188,7 @@ public class mjsikaku
 		memset(mjsikaku_videoworkram, 0x0000, (Machine->drv->screen_width * Machine->drv->screen_height * sizeof(short)));
 		mjsikaku_gfxmode = 3;
 		return 0;
-	}
+	} };
 	
 	void mjsikaku_vh_stop(void)
 	{

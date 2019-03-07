@@ -28,7 +28,7 @@ public class volfied
 	          INITIALISATION AND CLEAN-UP
 	******************************************************/
 	
-	int volfied_vh_start (void)
+	public static VhStartPtr volfied_vh_start = new VhStartPtr() { public int handler() 
 	{
 		pixel_layer = bitmap_alloc(Machine->drv->screen_width, Machine->drv->screen_height);
 		if (pixel_layer == NULL)
@@ -51,7 +51,7 @@ public class volfied
 		state_save_register_func_postload (mark_all_dirty);
 	
 		return 0;
-	}
+	} };
 	
 	void volfied_vh_stop (void)
 	{

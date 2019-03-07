@@ -66,14 +66,14 @@ public class playch10
 		{ ppu_irq }				/* irq */
 	};
 	
-	int playch10_vh_start( void )
+	public static VhStartPtr playch10_vh_start = new VhStartPtr() { public int handler() 
 	{
 		if ( ppu2c03b_init( &ppu_interface ) )
 			return 1;
 	
 		/* the bios uses the generic stuff */
 		return generic_vh_start();
-	}
+	} };
 	
 	void playch10_vh_stop( void )
 	{

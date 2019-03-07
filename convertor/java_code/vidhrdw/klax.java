@@ -21,7 +21,7 @@ public class klax
 	 *
 	 *************************************/
 	
-	int klax_vh_start(void)
+	public static VhStartPtr klax_vh_start = new VhStartPtr() { public int handler() 
 	{
 		static const struct ataripf_desc pfdesc =
 		{
@@ -91,7 +91,7 @@ public class klax
 		ataripf_free();
 	cant_create_pf:
 		return 1;
-	}
+	} };
 	
 	
 	

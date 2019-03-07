@@ -150,7 +150,7 @@ public class afega
 	
 	***************************************************************************/
 	
-	int afega_vh_start(void)
+	public static VhStartPtr afega_vh_start = new VhStartPtr() { public int handler() 
 	{
 		tilemap_0 = tilemap_create(	get_tile_info_0, afega_tilemap_scan_pages,
 									TILEMAP_OPAQUE,
@@ -168,7 +168,7 @@ public class afega
 		tilemap_set_transparent_pen(tilemap_0,0x0);
 		tilemap_set_transparent_pen(tilemap_1,0xf);
 		return 0;
-	}
+	} };
 	
 	
 	/***************************************************************************

@@ -92,7 +92,7 @@ public class bjtwin
 		if (background_bitmap) bitmap_free(background_bitmap);
 	}
 	
-	int bioship_vh_start(void)
+	public static VhStartPtr bioship_vh_start = new VhStartPtr() { public int handler() 
 	{
 		bg_tilemap = tilemap_create(macross_get_bg_tile_info,bg_scan,TILEMAP_TRANSPARENT,16,16,256,32);
 		tx_tilemap = tilemap_create(macross_get_tx_tile_info,tilemap_scan_cols,TILEMAP_TRANSPARENT,8,8,32,32);
@@ -114,9 +114,9 @@ public class bjtwin
 		videoshift =  0;	/* 256x224 screen, no shift */
 	
 		return 0;
-	}
+	} };
 	
-	int strahl_vh_start(void)
+	public static VhStartPtr strahl_vh_start = new VhStartPtr() { public int handler() 
 	{
 		bg_tilemap = tilemap_create(macross_get_bg_tile_info,bg_scan,TILEMAP_OPAQUE,16,16,256,32);
 		fg_tilemap = tilemap_create(strahl_get_fg_tile_info, bg_scan,TILEMAP_TRANSPARENT,16,16,256,32);
@@ -136,9 +136,9 @@ public class bjtwin
 		videoshift =  0;	/* 256x224 screen, no shift */
 		background_bitmap = NULL;
 		return 0;
-	}
+	} };
 	
-	int macross_vh_start(void)
+	public static VhStartPtr macross_vh_start = new VhStartPtr() { public int handler() 
 	{
 		bg_tilemap = tilemap_create(macross_get_bg_tile_info,bg_scan,TILEMAP_OPAQUE,16,16,256,32);
 		tx_tilemap = tilemap_create(macross_get_tx_tile_info,tilemap_scan_cols,TILEMAP_TRANSPARENT,8,8,32,32);
@@ -157,9 +157,9 @@ public class bjtwin
 		background_bitmap = NULL;
 	
 		return 0;
-	}
+	} };
 	
-	int gunnail_vh_start(void)
+	public static VhStartPtr gunnail_vh_start = new VhStartPtr() { public int handler() 
 	{
 		bg_tilemap = tilemap_create(macross_get_bg_tile_info,bg_scan,TILEMAP_OPAQUE,16,16,256,32);
 		tx_tilemap = tilemap_create(macross_get_tx_tile_info,tilemap_scan_cols,TILEMAP_TRANSPARENT,8,8,64,32);
@@ -180,9 +180,9 @@ public class bjtwin
 		background_bitmap = NULL;
 	
 		return 0;
-	}
+	} };
 	
-	int macross2_vh_start(void)
+	public static VhStartPtr macross2_vh_start = new VhStartPtr() { public int handler() 
 	{
 		bg_tilemap = tilemap_create(macross_get_bg_tile_info,bg_scan,TILEMAP_OPAQUE,16,16,256,128);
 		tx_tilemap = tilemap_create(macross_get_tx_tile_info,tilemap_scan_cols,TILEMAP_TRANSPARENT,8,8,64,32);
@@ -201,9 +201,9 @@ public class bjtwin
 							/* from the other side of the tilemap (!) */
 		background_bitmap = NULL;
 		return 0;
-	}
+	} };
 	
-	int bjtwin_vh_start(void)
+	public static VhStartPtr bjtwin_vh_start = new VhStartPtr() { public int handler() 
 	{
 		bg_tilemap = tilemap_create(bjtwin_get_bg_tile_info,tilemap_scan_cols,TILEMAP_OPAQUE,8,8,64,32);
 		spriteram_old = malloc(spriteram_size);
@@ -219,7 +219,7 @@ public class bjtwin
 							/* from the other side of the tilemap (!) */
 		background_bitmap = NULL;
 		return 0;
-	}
+	} };
 	
 	
 	

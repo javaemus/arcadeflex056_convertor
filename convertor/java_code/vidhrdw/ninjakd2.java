@@ -28,7 +28,7 @@ public class ninjakd2
 	static int 		 bg_enable = 1;
 	static int 		 sp_overdraw = 0;
 	
-	int ninjakd2_vh_start(void)
+	public static VhStartPtr ninjakd2_vh_start = new VhStartPtr() { public int handler() 
 	{
 		if ((bg_dirtybuffer = malloc(1024)) == 0)
 		{
@@ -48,7 +48,7 @@ public class ninjakd2
 		memset(bg_dirtybuffer,1,1024);
 	
 		return 0;
-	}
+	} };
 	
 	void ninjakd2_vh_stop(void)
 	{

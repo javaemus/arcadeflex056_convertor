@@ -687,7 +687,7 @@ public class sailorws
 	
 	
 	******************************************************************************/
-	int sailorws_vh_start(void)
+	public static VhStartPtr sailorws_vh_start = new VhStartPtr() { public int handler() 
 	{
 		if ((sailorws_tmpbitmap0 = bitmap_alloc(Machine->drv->screen_width, Machine->drv->screen_height)) == 0) return 1;
 		if ((sailorws_tmpbitmap1 = bitmap_alloc(Machine->drv->screen_width, Machine->drv->screen_height)) == 0) return 1;
@@ -703,7 +703,7 @@ public class sailorws
 	#endif
 		gfxdraw_mode = 1;
 		return 0;
-	}
+	} };
 	
 	void sailorws_vh_stop(void)
 	{
@@ -723,7 +723,7 @@ public class sailorws
 		sailorws_tmpbitmap0 = 0;
 	}
 	
-	int mjkoiura_vh_start(void)
+	public static VhStartPtr mjkoiura_vh_start = new VhStartPtr() { public int handler() 
 	{
 		if ((sailorws_tmpbitmap0 = bitmap_alloc(Machine->drv->screen_width, Machine->drv->screen_height)) == 0) return 1;
 		if ((sailorws_videoram0 = malloc(Machine->drv->screen_width * Machine->drv->screen_height * sizeof(short))) == 0) return 1;
@@ -735,7 +735,7 @@ public class sailorws
 	#endif
 		gfxdraw_mode = 0;
 		return 0;
-	}
+	} };
 	
 	void mjkoiura_vh_stop(void)
 	{
@@ -749,7 +749,7 @@ public class sailorws
 		sailorws_tmpbitmap0 = 0;
 	}
 	
-	int mscoutm_vh_start(void)
+	public static VhStartPtr mscoutm_vh_start = new VhStartPtr() { public int handler() 
 	{
 		if ((sailorws_tmpbitmap0 = bitmap_alloc(Machine->drv->screen_width, Machine->drv->screen_height)) == 0) return 1;
 		if ((sailorws_tmpbitmap1 = bitmap_alloc(Machine->drv->screen_width, Machine->drv->screen_height)) == 0) return 1;
@@ -766,7 +766,7 @@ public class sailorws
 		memset(sailorws_videoworkram1, 0x0000, (Machine->drv->screen_width * Machine->drv->screen_height * sizeof(short)));
 		gfxdraw_mode = 2;
 		return 0;
-	}
+	} };
 	
 	void mscoutm_vh_stop(void)
 	{

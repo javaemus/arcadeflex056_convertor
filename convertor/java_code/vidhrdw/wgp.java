@@ -129,15 +129,15 @@ public class wgp
 		return 0;
 	}
 	
-	int wgp_vh_start (void)
+	public static VhStartPtr wgp_vh_start = new VhStartPtr() { public int handler() 
 	{
 		return (wgp_core_vh_start(0,0,32,16));
-	}
+	} };
 	
-	int wgp2_vh_start (void)
+	public static VhStartPtr wgp2_vh_start = new VhStartPtr() { public int handler() 
 	{
 		return (wgp_core_vh_start(4,2,32,16));
-	}
+	} };
 	
 	void wgp_vh_stop (void)
 	{

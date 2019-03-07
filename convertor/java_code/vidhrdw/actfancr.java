@@ -75,7 +75,7 @@ public class actfancr
 		state_save_register_UINT8("video", 0, "control_2", actfancr_control_2, 0x20);
 	}
 	
-	int actfancr_vh_start (void)
+	public static VhStartPtr actfancr_vh_start = new VhStartPtr() { public int handler() 
 	{
 		pf1_tilemap = tilemap_create(get_tile_info,actfancr_scan,TILEMAP_OPAQUE,16,16,256,16);
 		pf1_alt_tilemap = tilemap_create(get_tile_info,actfancr_scan2,TILEMAP_OPAQUE,16,16,128,32);
@@ -86,9 +86,9 @@ public class actfancr
 		register_savestate();
 	
 		return 0;
-	}
+	} };
 	
-	int triothep_vh_start (void)
+	public static VhStartPtr triothep_vh_start = new VhStartPtr() { public int handler() 
 	{
 		pf1_tilemap = tilemap_create(get_trio_tile_info,triothep_scan,TILEMAP_OPAQUE,16,16,32,32);
 	
@@ -100,7 +100,7 @@ public class actfancr
 		register_savestate();
 	
 		return 0;
-	}
+	} };
 	
 	/******************************************************************************/
 	

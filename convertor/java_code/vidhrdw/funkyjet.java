@@ -141,7 +141,7 @@ public class funkyjet
 		SET_TILE_INFO(0,tile,color,0)
 	}
 	
-	int funkyjet_vh_start(void)
+	public static VhStartPtr funkyjet_vh_start = new VhStartPtr() { public int handler() 
 	{
 		pf1_tilemap = tilemap_create(get_fg_tile_info,tilemap_scan_rows,TILEMAP_TRANSPARENT, 8, 8,64,64);
 		pf2_tilemap = tilemap_create(get_bg_tile_info,funkyjet_scan,    TILEMAP_OPAQUE,     16,16,64,32);
@@ -153,7 +153,7 @@ public class funkyjet
 		tilemap_set_transparent_pen(pf2_tilemap,0);
 	
 		return 0;
-	}
+	} };
 	
 	/******************************************************************************/
 	

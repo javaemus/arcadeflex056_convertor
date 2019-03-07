@@ -235,7 +235,7 @@ public class nemesis
 	}
 	
 	/* claim a palette dirty array */
-	int nemesis_vh_start(void)
+	public static VhStartPtr nemesis_vh_start = new VhStartPtr() { public int handler() 
 	{
 	#ifdef LSB_FIRST
 		nemesis_lsbify_gfx();
@@ -319,7 +319,7 @@ public class nemesis
 		memset(nemesis_characterram,0,nemesis_characterram_size);
 	
 		return 0;
-	}
+	} };
 	
 	static void draw_sprites(struct mame_bitmap *bitmap)
 	{

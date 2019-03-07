@@ -23,7 +23,7 @@ public class missile
 	  Start the video hardware emulation.
 	
 	***************************************************************************/
-	int missile_vh_start(void)
+	public static VhStartPtr missile_vh_start = new VhStartPtr() { public int handler() 
 	{
 	
 		/* force video ram to be $0000-$FFFF even though only $1900-$FFFF is used */
@@ -32,7 +32,7 @@ public class missile
 	
 		memset (missile_videoram, 0, 256 * 256);
 		return 0;
-	}
+	} };
 	
 	
 	

@@ -99,7 +99,7 @@ public class aerofgt
 	
 	***************************************************************************/
 	
-	int pspikes_vh_start(void)
+	public static VhStartPtr pspikes_vh_start = new VhStartPtr() { public int handler() 
 	{
 		bg1_tilemap = tilemap_create(get_pspikes_tile_info,tilemap_scan_rows,TILEMAP_OPAQUE,8,8,64,32);
 		/* no bg2 in this game */
@@ -110,9 +110,9 @@ public class aerofgt
 		sprite_gfx = 1;
 	
 		return 0;
-	}
+	} };
 	
-	int karatblz_vh_start(void)
+	public static VhStartPtr karatblz_vh_start = new VhStartPtr() { public int handler() 
 	{
 		bg1_tilemap = tilemap_create(karatblz_bg1_tile_info,tilemap_scan_rows,TILEMAP_OPAQUE,     8,8,64,64);
 		bg2_tilemap = tilemap_create(karatblz_bg2_tile_info,tilemap_scan_rows,TILEMAP_TRANSPARENT,8,8,64,64);
@@ -127,9 +127,9 @@ public class aerofgt
 		sprite_gfx = 2;
 	
 		return 0;
-	}
+	} };
 	
-	int spinlbrk_vh_start(void)
+	public static VhStartPtr spinlbrk_vh_start = new VhStartPtr() { public int handler() 
 	{
 		int i;
 	
@@ -159,9 +159,9 @@ public class aerofgt
 			aerofgt_spriteram1[i] = i;
 	
 		return 0;
-	}
+	} };
 	
-	int turbofrc_vh_start(void)
+	public static VhStartPtr turbofrc_vh_start = new VhStartPtr() { public int handler() 
 	{
 		bg1_tilemap = tilemap_create(get_bg1_tile_info,tilemap_scan_rows,TILEMAP_OPAQUE,     8,8,64,64);
 		bg2_tilemap = tilemap_create(get_bg2_tile_info,tilemap_scan_rows,TILEMAP_TRANSPARENT,8,8,64,64);
@@ -176,7 +176,7 @@ public class aerofgt
 		sprite_gfx = 2;
 	
 		return 0;
-	}
+	} };
 	
 	
 	

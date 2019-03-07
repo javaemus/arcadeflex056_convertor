@@ -60,7 +60,7 @@ public class _88games
 	
 	***************************************************************************/
 	
-	int k88games_vh_start(void)
+	public static VhStartPtr k88games_vh_start = new VhStartPtr() { public int handler() 
 	{
 		layer_colorbase[0] = 64;
 		layer_colorbase[1] = 0;
@@ -84,7 +84,7 @@ public class _88games
 		}
 	
 		return 0;
-	}
+	} };
 	
 	void k88games_vh_stop(void)
 	{

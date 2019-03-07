@@ -73,7 +73,7 @@ public class othldrby
 		buf_spriteram2 = NULL;
 	}
 	
-	int othldrby_vh_start(void)
+	public static VhStartPtr othldrby_vh_start = new VhStartPtr() { public int handler() 
 	{
 		tilemap[0] = tilemap_create(get_tile_info0,tilemap_scan_rows,TILEMAP_TRANSPARENT,16,16,32,32);
 		tilemap[1] = tilemap_create(get_tile_info1,tilemap_scan_rows,TILEMAP_TRANSPARENT,16,16,32,32);
@@ -95,7 +95,7 @@ public class othldrby
 		tilemap_set_transparent_pen(tilemap[2],0);
 	
 		return 0;
-	}
+	} };
 	
 	
 	

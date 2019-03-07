@@ -117,7 +117,7 @@ public class yunsun16
 	
 	static int sprites_scrolldx, sprites_scrolldy;
 	
-	int yunsun16_vh_start(void)
+	public static VhStartPtr yunsun16_vh_start = new VhStartPtr() { public int handler() 
 	{
 		tilemap_0 = tilemap_create(	get_tile_info_0,yunsun16_tilemap_scan_pages,
 									TILEMAP_TRANSPARENT,
@@ -142,7 +142,7 @@ public class yunsun16
 		tilemap_set_transparent_pen(tilemap_0,0xff);
 		tilemap_set_transparent_pen(tilemap_1,0xff);
 		return 0;
-	}
+	} };
 	
 	
 	/***************************************************************************

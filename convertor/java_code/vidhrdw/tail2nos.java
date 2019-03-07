@@ -56,7 +56,7 @@ public class tail2nos
 	
 	***************************************************************************/
 	
-	int tail2nos_vh_start(void)
+	public static VhStartPtr tail2nos_vh_start = new VhStartPtr() { public int handler() 
 	{
 		bg_tilemap = tilemap_create(get_tile_info,tilemap_scan_rows,TILEMAP_TRANSPARENT,8,8,64,32);
 	
@@ -80,7 +80,7 @@ public class tail2nos
 		zoomdata = (data16_t *)memory_region(REGION_GFX3);
 	
 		return 0;
-	}
+	} };
 	
 	void tail2nos_vh_stop(void)
 	{

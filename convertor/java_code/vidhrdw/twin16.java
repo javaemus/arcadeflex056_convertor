@@ -40,9 +40,9 @@ public class twin16
 		TWIN16_TILE_FLIPY		= 0x20	/* confirmed? Vulcan Venture */
 	};
 	
-	int twin16_vh_start( void ){
+	public static VhStartPtr twin16_vh_start = new VhStartPtr() { public int handler() {
 		return 0;
-	}
+	} };
 	
 	void twin16_vh_stop( void ){
 	}

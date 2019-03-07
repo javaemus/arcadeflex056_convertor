@@ -48,10 +48,10 @@ public class zn
 		}
 	} };
 	
-	static int znqs_vh_start( void )
+	static public static VhStartPtr znqs_vh_start = new VhStartPtr() { public int handler() 
 	{
 		return 0;
-	}
+	} };
 	
 	static void znqs_vh_stop( void )
 	{
@@ -584,7 +584,7 @@ public class zn
 		}
 	}
 	
-	static int zn_vh_start( void )
+	static public static VhStartPtr zn_vh_start = new VhStartPtr() { public int handler() 
 	{
 		m_p_vram = malloc( VRAM_SIZE );
 		if( m_p_vram == NULL )
@@ -593,7 +593,7 @@ public class zn
 			return 1;
 		}
 		return 0;
-	}
+	} };
 	
 	void zn_init_palette(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom)
 	{

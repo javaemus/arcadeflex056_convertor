@@ -58,7 +58,7 @@ public class cbasebal
 		cbasebal_scrollram = 0;
 	}
 	
-	int cbasebal_vh_start(void)
+	public static VhStartPtr cbasebal_vh_start = new VhStartPtr() { public int handler() 
 	{
 		cbasebal_textram = malloc(0x1000);
 		cbasebal_scrollram = malloc(0x1000);
@@ -80,7 +80,7 @@ public class cbasebal
 	#define GFX_ELEM_COLORS(gfxn) Machine->gfx[gfxn]->color_granularity
 	
 		return 0;
-	}
+	} };
 	
 	
 	

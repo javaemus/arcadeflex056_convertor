@@ -432,7 +432,7 @@ public class namcos21
 		} /* next object */
 	} /* draw_polygons */
 	
-	int namcos21_vh_start( void )
+	public static VhStartPtr namcos21_vh_start = new VhStartPtr() { public int handler() 
 	{
 	/*
 		int i;
@@ -446,7 +446,7 @@ public class namcos21
 		}
 	*/
 		return 0;
-	}
+	} };
 	
 	void namcos21_vh_stop( void )
 	{

@@ -48,7 +48,7 @@ public class ttmahjng
 	  Start the video hardware emulation.
 	
 	***************************************************************************/
-	int ttmahjng_vh_start(void)
+	public static VhStartPtr ttmahjng_vh_start = new VhStartPtr() { public int handler() 
 	{
 		if ((tmpbitmap1 = bitmap_alloc(Machine->drv->screen_width,Machine->drv->screen_height)) == 0)
 		{
@@ -70,7 +70,7 @@ public class ttmahjng
 		video_remap_2 = 1;
 	
 		return 0;
-	}
+	} };
 	
 	/***************************************************************************
 	

@@ -291,7 +291,7 @@ public class omegaf
 		return 0;
 	}
 	
-	int omegaf_vh_start(void)
+	public static VhStartPtr omegaf_vh_start = new VhStartPtr() { public int handler() 
 	{
 		scrollx_mask = 0x07ff;
 		bank_mask = 7;
@@ -314,9 +314,9 @@ public class omegaf
 		tilemap_set_transparent_pen( bg2_tilemap, 15 );
 	
 		return 0;
-	}
+	} };
 	
-	int robokid_vh_start(void)
+	public static VhStartPtr robokid_vh_start = new VhStartPtr() { public int handler() 
 	{
 		scrollx_mask = 0x01ff;
 		bank_mask = 1;
@@ -339,7 +339,7 @@ public class omegaf
 		tilemap_set_transparent_pen( bg2_tilemap, 15 );
 	
 		return 0;
-	}
+	} };
 	
 	void omegaf_vh_stop(void)
 	{

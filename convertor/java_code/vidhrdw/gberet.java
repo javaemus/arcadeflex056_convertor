@@ -111,7 +111,7 @@ public class gberet
 	
 	***************************************************************************/
 	
-	int gberet_vh_start(void)
+	public static VhStartPtr gberet_vh_start = new VhStartPtr() { public int handler() 
 	{
 		bg_tilemap = tilemap_create(get_tile_info,tilemap_scan_rows,TILEMAP_TRANSPARENT_COLOR,8,8,64,32);
 	
@@ -122,7 +122,7 @@ public class gberet
 		tilemap_set_scroll_rows(bg_tilemap,32);
 	
 		return 0;
-	}
+	} };
 	
 	
 	

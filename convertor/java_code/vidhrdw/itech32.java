@@ -198,7 +198,7 @@ public class itech32
 	 *
 	 *************************************/
 	
-	int itech32_vh_start(void)
+	public static VhStartPtr itech32_vh_start = new VhStartPtr() { public int handler() 
 	{
 		int i;
 	
@@ -235,7 +235,7 @@ public class itech32
 		scanline_timer = 0;
 	
 		return 0;
-	}
+	} };
 	
 	
 	

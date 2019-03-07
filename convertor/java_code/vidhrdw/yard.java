@@ -171,7 +171,7 @@ public class yard
 	  Start the video hardware emulation.
 	
 	***************************************************************************/
-	int yard_vh_start(void)
+	public static VhStartPtr yard_vh_start = new VhStartPtr() { public int handler() 
 	{
 		if ((dirtybuffer = malloc(videoram_size)) == 0)
 			return 1;
@@ -191,7 +191,7 @@ public class yard
 		}
 	
 		return 0;
-	}
+	} };
 	
 	
 	

@@ -42,7 +42,7 @@ public class blockhl
 	
 	***************************************************************************/
 	
-	int blockhl_vh_start(void)
+	public static VhStartPtr blockhl_vh_start = new VhStartPtr() { public int handler() 
 	{
 		layer_colorbase[0] = 0;
 		layer_colorbase[1] = 16;
@@ -58,7 +58,7 @@ public class blockhl
 		}
 	
 		return 0;
-	}
+	} };
 	
 	void blockhl_vh_stop(void)
 	{

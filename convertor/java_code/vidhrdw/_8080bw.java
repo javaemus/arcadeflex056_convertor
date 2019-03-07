@@ -239,7 +239,7 @@ public class _8080bw
 	/*	artwork_type = FILE_BACKDROP; */
 	}
 	
-	int invaders_vh_start(void)
+	public static VhStartPtr invaders_vh_start = new VhStartPtr() { public int handler() 
 	{
 		/* create overlay if one of was specified in init_X */
 		if (artwork_type != NO_ARTWORK)
@@ -283,7 +283,7 @@ public class _8080bw
 		schedule_full_refresh();
 	
 		return 0;
-	}
+	} };
 	
 	
 	void invaders_vh_stop(void)

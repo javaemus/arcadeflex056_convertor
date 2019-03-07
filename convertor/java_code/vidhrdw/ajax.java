@@ -74,7 +74,7 @@ public class ajax
 	
 	***************************************************************************/
 	
-	int ajax_vh_start( void )
+	public static VhStartPtr ajax_vh_start = new VhStartPtr() { public int handler() 
 	{
 		layer_colorbase[0] = 64;
 		layer_colorbase[1] = 0;
@@ -96,7 +96,7 @@ public class ajax
 		}
 	
 		return 0;
-	}
+	} };
 	
 	void ajax_vh_stop( void )
 	{

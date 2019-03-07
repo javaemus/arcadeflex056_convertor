@@ -892,7 +892,7 @@ public class dec0
 		free(dec0_spriteram);
 	}
 	
-	int dec0_nodma_vh_start (void)
+	public static VhStartPtr dec0_nodma_vh_start = new VhStartPtr() { public int handler() 
 	{
 		pf1_tilemap_0 = tilemap_create(get_pf1_tile_info,tile_shape0_8x8_scan,TILEMAP_TRANSPARENT, 8, 8,128, 32);
 		pf1_tilemap_1 = tilemap_create(get_pf1_tile_info,tile_shape1_8x8_scan,TILEMAP_TRANSPARENT, 8, 8, 64, 64);
@@ -934,15 +934,15 @@ public class dec0
 		dec0_spriteram=spriteram16;
 	
 		return 0;
-	}
+	} };
 	
-	int dec0_vh_start (void)
+	public static VhStartPtr dec0_vh_start = new VhStartPtr() { public int handler() 
 	{
 		dec0_nodma_vh_start();
 		dec0_spriteram=malloc(0x800);
 	
 		return 0;
-	}
+	} };
 	
 	/******************************************************************************/
 }

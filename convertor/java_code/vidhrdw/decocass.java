@@ -596,7 +596,7 @@ public class decocass
 		}
 	}
 	
-	int decocass_vh_start (void)
+	public static VhStartPtr decocass_vh_start = new VhStartPtr() { public int handler() 
 	{
 		struct rectangle clip;
 	
@@ -642,7 +642,7 @@ public class decocass
 		state_save_register_int("decocass", 0, "center_v_shift", &center_v_shift);
 	
 		return 0;
-	}
+	} };
 	
 	void decocass_vh_stop (void)
 	{

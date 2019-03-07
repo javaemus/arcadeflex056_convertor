@@ -113,7 +113,7 @@ public class esd16
 	
 	***************************************************************************/
 	
-	int esd16_vh_start(void)
+	public static VhStartPtr esd16_vh_start = new VhStartPtr() { public int handler() 
 	{
 		tilemap_0 = tilemap_create(	get_tile_info_0, tilemap_scan_rows,
 									TILEMAP_OPAQUE,			8,8,	0x80,0x40);
@@ -131,7 +131,7 @@ public class esd16
 		tilemap_set_transparent_pen(tilemap_1,0x00);
 	
 		return 0;
-	}
+	} };
 	
 	
 	/***************************************************************************
