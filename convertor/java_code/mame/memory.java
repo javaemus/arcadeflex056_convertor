@@ -191,18 +191,11 @@ public class memory
 	static void set_static_handler(int idx,
 			read8_handler r8handler, read16_handler r16handler, read32_handler r32handler,
 			write8_handler w8handler, write16_handler w16handler, write32_handler w32handler);
-	static int init_cpudata(void);
-	static int init_memport(int cpunum, struct memport_data *data, int abits, int dbits, int ismemory);
-	static int verify_memory(void);
-	static int verify_ports(void);
-	static int allocate_memory(void);
-	static int populate_memory(void);
-	static int populate_ports(void);
-	static void register_banks(void);
+	static static int init_memport(int cpunum, struct memport_data *data, int abits, int dbits, int ismemory);
+	static static static static static static void register_banks(void);
 	static int mem_address_bits_of_cpu(int cpunum);
 	static int port_address_bits_of_cpu(int cpunum);
-	static int init_static(void);
-	
+	static 
 	#ifdef MEM_DUMP
 	static void mem_dump(void);
 	#endif

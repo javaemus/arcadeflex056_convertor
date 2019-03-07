@@ -92,7 +92,6 @@ public class senjyo
 	void init_starfore(void);
 	void init_senjyo(void);
 	
-	int senjyo_vh_start(void);
 	void senjyo_vh_stop(void);
 	void senjyo_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	

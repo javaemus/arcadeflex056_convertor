@@ -72,7 +72,6 @@ public class _1942
 	extern unsigned char *c1942_bgvideoram;
 	
 	
-	int c1942_vh_start(void);
 	void c1942_vh_convert_color_prom(unsigned char *obsolete,unsigned short *colortable,const unsigned char *color_prom);
 	void c1942_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	

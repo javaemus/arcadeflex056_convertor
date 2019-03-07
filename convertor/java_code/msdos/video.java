@@ -49,7 +49,6 @@ public class video
 	void center_mode(Register *pReg);
 	
 	/* in msdos/sound.c */
-	int msdos_update_audio(void);
 	
 	/* in msdos/input.c */
 	void poll_joysticks(void);

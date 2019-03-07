@@ -193,8 +193,6 @@ public class taito_x
 	
 	
 	void superman_vh_screenrefresh (struct mame_bitmap *bitmap, int full_refresh);
-	int superman_vh_start (void);
-	int ballbros_vh_start (void);
 	void superman_vh_stop (void);
 	
 	extern size_t supes_videoram_size;

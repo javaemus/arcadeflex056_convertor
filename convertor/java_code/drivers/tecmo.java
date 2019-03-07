@@ -60,7 +60,6 @@ public class tecmo
 	extern unsigned char *tecmo_txvideoram,*tecmo_fgvideoram,*tecmo_bgvideoram;
 	
 	
-	int tecmo_vh_start(void);
 	void tecmo_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	
 	

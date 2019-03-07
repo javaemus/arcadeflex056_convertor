@@ -67,7 +67,6 @@ public class opwolf
 	WRITE16_HANDLER( rainbow_spritectrl_w );
 	WRITE16_HANDLER( rastan_spriteflip_w );
 	
-	int  opwolf_vh_start(void);
 	void opwolf_eof_callback(void);
 	void opwolf_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	void rastan_vh_stop(void);

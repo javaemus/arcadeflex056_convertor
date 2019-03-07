@@ -45,8 +45,6 @@ package drivers;
 public class raiden
 {
 	
-	int raiden_vh_start(void);
-	int raidena_vh_start(void);
 	void raiden_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	
 	static unsigned char *raiden_shared_ram;

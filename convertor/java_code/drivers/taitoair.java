@@ -174,7 +174,6 @@ public class taitoair
 	
 	static data16_t *taitoh_68000_mainram;
 	
-	int		recordbr_vh_start(void);
 	void 		syvalion_vh_stop (void);
 	void		recordbr_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	

@@ -73,10 +73,6 @@ public class aerofgt
 	WRITE16_HANDLER( aerofgt_bg2scrollx_w );
 	WRITE16_HANDLER( aerofgt_bg2scrolly_w );
 	WRITE16_HANDLER( pspikes_palette_bank_w );
-	int pspikes_vh_start(void);
-	int karatblz_vh_start(void);
-	int spinlbrk_vh_start(void);
-	int turbofrc_vh_start(void);
 	void pspikes_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	void karatblz_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	void spinlbrk_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);

@@ -16,7 +16,6 @@ void tms5110_sh_stop(void);
 void tms5110_sh_update(void);
 
 
-int tms5110_ready_r(void);
 
 void tms5110_reset(void);
 void tms5110_set_frequency(int frequency);

@@ -18,7 +18,6 @@ void K007342_vh_stop(void);
 void K007342_tilemap_update(void);
 void K007342_tilemap_set_enable(int layer, int enable);
 void K007342_tilemap_draw(struct mame_bitmap *bitmap,int num,int flags,UINT32 priority);
-int K007342_is_INT_enabled(void);
 
 
 int K007420_vh_start(int gfxnum, void (*callback)(int *code,int *color));
@@ -64,7 +63,6 @@ WRITE16_HANDLER( K052109_lsb_w );
 void K052109_set_RMRD_line(int state);
 void K052109_tilemap_update(void);
 void K052109_tilemap_draw(struct mame_bitmap *bitmap,int num,int flags,UINT32 priority);
-int K052109_is_IRQ_enabled(void);
 
 
 /*
@@ -88,8 +86,6 @@ WRITE16_HANDLER( K051960_word_w );
 READ16_HANDLER( K051937_word_r );
 WRITE16_HANDLER( K051937_word_w );
 void K051960_sprites_draw(struct mame_bitmap *bitmap,int min_priority,int max_priority);
-int K051960_is_IRQ_enabled(void);
-int K051960_is_NMI_enabled(void);
 
 /* special handling for the chips sharing address space */
 
@@ -117,7 +113,6 @@ void K053247_sprites_draw(struct mame_bitmap *bitmap);
 READ16_HANDLER( K053246_word_r );
 WRITE16_HANDLER( K053246_word_w );
 void K053246_set_OBJCHA_line(int state);
-int K053246_is_IRQ_enabled(void);
 
 
 /*
@@ -155,7 +150,6 @@ WRITE16_HANDLER( K053251_msb_w );
 enum { K053251_CI0=0,K053251_CI1,K053251_CI2,K053251_CI3,K053251_CI4 };
 int K053251_get_priority(int ci);
 int K053251_get_palette_index(int ci);
-int K053251_vh_start(void);
 
 
 WRITE16_HANDLER( K054000_lsb_w );
@@ -177,6 +171,5 @@ void K054157_tilemap_update(void);
 void K054157_tilemap_draw(struct mame_bitmap *bitmap, int num, int flags, UINT32 priority);
 void K054157_tilemap_draw_alpha(struct mame_bitmap *bitmap, int num, int flags, int alpha);
 void K054157_mark_plane_dirty(int num);
-int K054157_is_IRQ_enabled(void);
 int K054157_get_lookup(int bits);
 void K054157_set_tile_bank(int bank);	/* Asterix */

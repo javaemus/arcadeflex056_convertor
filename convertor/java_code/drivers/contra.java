@@ -30,7 +30,6 @@ public class contra
 	
 	
 	void contra_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
-	int contra_vh_start(void);
 	void contra_vh_stop(void);
 	
 	

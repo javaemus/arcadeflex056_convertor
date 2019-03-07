@@ -39,7 +39,6 @@ public class gen15khzH
 	
 	/* generic VGA functions */
 	int	readCRTC(int nIndex);
-	int	getVtEndDisplay(void);
 	
 	/* tweak values */
 	extern unsigned char tw640x480arc_h;
@@ -59,7 +58,6 @@ public class gen15khzH
 	int getSVGA15KHzdriver(SVGA15KHZDRIVER **driver15KHz);
 	
 	/* our 'generic' SVGA 15.75KHz functions */
-	int genericsvga(void);
 	int widthgeneric15KHz(int width);
 	int setgeneric15KHz(int vdouble, int width, int height);
 	void resetgeneric15KHz(void);

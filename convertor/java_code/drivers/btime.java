@@ -66,8 +66,6 @@ public class btime
 	
 	void lnc_init_machine (void);
 	
-	int  btime_vh_start (void);
-	int  bnj_vh_start (void);
 	
 	void bnj_vh_stop (void);
 	
@@ -81,7 +79,6 @@ public class btime
 	
 	
 	
-	int lnc_sound_interrupt(void);
 	
 	
 	

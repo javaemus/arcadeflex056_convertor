@@ -91,7 +91,6 @@ public class cpuexecH
 	 *************************************/
 	
 	/* Prepare CPUs for execution */
-	int cpu_init(void);
 	
 	/* Run CPUs until the user quits */
 	void cpu_run(void);
@@ -164,16 +163,12 @@ public class cpuexecH
 	 *************************************/
 	
 	/* Returns the number of cycles run so far this timeslice */
-	int cycles_currently_ran(void);
 	
 	/* Returns the number of cycles left to run in this timeslice */
-	int cycles_left_to_run(void);
 	
 	/* Returns the number of CPU cycles which take place in one video frame */
-	int cpu_gettotalcycles(void);
 	
 	/* Returns the number of CPU cycles before the next interrupt handler call */
-	int cpu_geticount(void);
 	
 	/* Scales a given value by the ratio of fcount / fperiod */
 	int cpu_scalebyfcount(int value);
@@ -187,7 +182,6 @@ public class cpuexecH
 	 *************************************/
 	
 	/* Returns the current scanline number */
-	int cpu_getscanline(void);
 	
 	/* Returns the amount of time until a given scanline */
 	double cpu_getscanlinetime(int scanline);
@@ -196,13 +190,10 @@ public class cpuexecH
 	double cpu_getscanlineperiod(void);
 	
 	/* Returns the current horizontal beam position in pixels */
-	int cpu_gethorzbeampos(void);
 	
 	/* Returns the current VBLANK state */
-	int cpu_getvblank(void);
 	
 	/* Returns the number of the video frame we are currently playing */
-	int cpu_getcurrentframe(void);
 	
 	
 	
@@ -244,17 +235,7 @@ public class cpuexecH
 	
 	void cpu_cause_interrupt(int cpu,int type);
 	void cpu_interrupt_enable(int cpu,int enabled);
-	int interrupt(void);
-	int nmi_interrupt(void);
-	int ignore_interrupt(void);
 	#if (HAS_M68000 || HAS_M68010 || HAS_M68020 || HAS_M68EC020)
-	int m68_level1_irq(void);
-	int m68_level2_irq(void);
-	int m68_level3_irq(void);
-	int m68_level4_irq(void);
-	int m68_level5_irq(void);
-	int m68_level6_irq(void);
-	int m68_level7_irq(void);
 	#endif
 	
 	/* defines for backward compatibility */
@@ -337,7 +318,6 @@ public class cpuexecH
 	   handlers to synchronize their operation. If you call this from outside
 	   an interrupt handler, add 1 to the result, i.e. if it returns 0, it means
 	   that the interrupt handler will be called once. */
-	int cpu_getiloops(void);
 	
 	
 	

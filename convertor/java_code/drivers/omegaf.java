@@ -64,8 +64,6 @@ public class omegaf
 	extern unsigned char *omegaf_bg2_scroll_y;
 	
 	
-	int omegaf_vh_start(void);
-	int robokid_vh_start(void);
 	void omegaf_vh_stop(void);
 	void omegaf_vh_screenrefresh(struct mame_bitmap *bitmap, int full_refresh);
 	

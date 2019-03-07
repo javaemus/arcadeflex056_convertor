@@ -19,7 +19,6 @@ public class zac2650
 	
 	extern unsigned char *s2636ram;
 	
-	int  tinvader_vh_start(void);
 	void tinvader_vh_stop(void);
 	void tinvader_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	
@@ -289,7 +288,6 @@ public class zac2650
 	 *
 	 */
 	
-	int  invaders_vh_start(void);
 	void invaders_vh_stop(void);
 	void invaders_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	

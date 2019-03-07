@@ -1,7 +1,5 @@
 /* Video emulation definitions */
-int  dec0_vh_start(void);
 void dec0_vh_stop(void);
-int  dec0_nodma_vh_start(void);
 void dec0_nodma_vh_stop(void);
 void hbarrel_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 void baddudes_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);

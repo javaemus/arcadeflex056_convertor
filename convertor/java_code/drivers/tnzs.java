@@ -195,7 +195,6 @@ public class tnzs
 	void init_insectx(void);
 	void init_kageki(void);
 	void tnzs_init_machine(void);
-	int tnzs_interrupt (void);
 	
 	
 	/* prototypes for functions in ../vidhrdw/tnzs.c */

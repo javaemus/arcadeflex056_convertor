@@ -46,7 +46,6 @@ public class mpatrol
 	
 	
 	
-	int mpatrol_vh_start(void);
 	void mpatrol_vh_stop(void);
 	void mpatrol_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom);
 	void mpatrol_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);

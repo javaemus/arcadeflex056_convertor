@@ -164,15 +164,6 @@ public class galaxian
 	
 	void galaxian_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom);
 	void scramble_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom);
-	int galaxian_plain_vh_start(void);
-	int galaxian_vh_start(void);
-	int mooncrst_vh_start(void);
-	int  moonqsr_vh_start(void);
-	int   pisces_vh_start(void);
-	int gteikob2_vh_start(void);
-	int  batman2_vh_start(void);
-	int scramble_vh_start(void);
-	int  jumpbug_vh_start(void);
 	void galaxian_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	
 	int  galaxian_sh_start(const struct MachineSound *msound);

@@ -101,7 +101,6 @@ public class wiz
 	extern unsigned char *wiz_attributesram2;
 	extern unsigned char *wiz_sprite_bank;
 	
-	int  wiz_vh_start(void);
 	void wiz_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom);
 	void wiz_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	void stinger_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);

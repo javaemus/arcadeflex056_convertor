@@ -41,9 +41,7 @@ package drivers;
 public class z80bw
 {
 	
-	int  astinvad_interrupt(void);
 	
-	int invaders_vh_start(void);
 	void invaders_vh_stop(void);
 	
 	void invadpt2_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom);

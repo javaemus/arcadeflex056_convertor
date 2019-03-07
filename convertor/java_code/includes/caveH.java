@@ -27,13 +27,7 @@ void ddonpach_vh_init_palette(unsigned char *palette, unsigned short *colortable
 void dfeveron_vh_init_palette(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom);
 void mazinger_vh_init_palette(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom);
 
-int cave_vh_start_16_16_16(void);
-int cave_vh_start_16_16_8(void);
-int cave_vh_start_16_16_0(void);
-int cave_vh_start_16_0_0(void);
-int cave_vh_start_8_8_0(void);
 
-int sailormn_vh_start_16_16_8(void);
 
 void cave_vh_stop(void);
 

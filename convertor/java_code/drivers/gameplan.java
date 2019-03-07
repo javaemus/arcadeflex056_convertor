@@ -19,7 +19,6 @@ package drivers;
 public class gameplan
 {
 	
-	int gameplan_vh_start(void);
 	
 	static int gameplan_current_port;
 	

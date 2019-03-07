@@ -53,8 +53,6 @@ extern UINT8 *dynax_bitmap[3][2];
 
 
 
-int  dynax_vh_start(void);
-int  sprtmtch_vh_start(void);
 
 void dynax_vh_stop(void);
 void sprtmtch_vh_stop(void);

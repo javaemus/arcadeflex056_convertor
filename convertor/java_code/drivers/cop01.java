@@ -62,7 +62,6 @@ public class cop01
 	extern data8_t *cop01_bgvideoram,*cop01_fgvideoram;
 	
 	void cop01_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom);
-	int cop01_vh_start(void);
 	void cop01_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	
 	

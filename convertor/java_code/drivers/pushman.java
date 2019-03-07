@@ -28,7 +28,6 @@ public class pushman
 	void pushman_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	WRITE16_HANDLER( pushman_scroll_w );
 	WRITE16_HANDLER( pushman_videoram_w );
-	int pushman_vh_start(void);
 	
 	static UINT8 shared_ram[8];
 	static UINT16 latch,new_latch=0;

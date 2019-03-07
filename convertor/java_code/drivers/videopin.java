@@ -25,15 +25,13 @@ public class videopin
 {
 	
 	/* vidhrdw/videopin.c */
-	extern int videopin_vh_start(void);
-	extern void videopin_vh_stop(void);
+	extern extern void videopin_vh_stop(void);
 	extern void videopin_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	extern struct artwork_info *videopin_backdrop;
 	
 	
 	/* machine/videopin.c */
-	extern int videopin_interrupt(void);
-	
+	extern 
 	
 	
 	

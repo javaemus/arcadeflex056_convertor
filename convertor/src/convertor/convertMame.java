@@ -105,11 +105,11 @@ public class convertMame {
                     continue;
                 }
                 case 'i': {
-                    int l1 = inpos;
+                    i = Convertor.inpos;
                     if (getToken("if")) {
                         skipSpace();
                         if (parseChar() != '(') {
-                            inpos = l1;
+                            inpos = i;
                             break;
                         }
                         skipSpace();
@@ -119,18 +119,35 @@ public class convertMame {
                             token[0] = parseToken();
                             skipSpace();
                             if (parseChar() != ')') {
-                                inpos = l1;
+                                inpos = i;
                                 break;
                             }
                             sUtil.putString((new StringBuilder()).append("if (").append(token[0]).append(" == 0)").toString());
+                            continue;
                         } else {
-                            inpos = l1;
+                            inpos = i;
                             break;
                         }
-                    } else {
-                        break;
                     }
-                    continue;
+                    if (sUtil.getToken("int")) {
+                        sUtil.skipSpace();
+                        Convertor.token[0] = sUtil.parseToken();
+                        sUtil.skipSpace();
+                        if (sUtil.parseChar() != '(') {
+                            Convertor.inpos = i;
+                            break;
+                        }
+                    }
+                    if (sUtil.getToken("void);")) {
+                        sUtil.skipLine();
+                        continue;
+                    }
+                    if (sUtil.getToken(" void );")) {
+                        sUtil.skipLine();
+                        continue;
+                    }
+                    Convertor.inpos = i;
+                    break;
                 }
                 case 'e': {
                     int j1 = inpos;
@@ -656,7 +673,7 @@ public class convertMame {
                         }
                     }
 
-                    if (type == PLOT_PIXEL || type == MARK_DIRTY || type == PLOT_BOX || type == READ_PIXEL || type == READ_HANDLER8 || type == WRITE_HANDLER8 ||  type == MACHINE_INTERRUPT) {
+                    if (type == PLOT_PIXEL || type == MARK_DIRTY || type == PLOT_BOX || type == READ_PIXEL || type == READ_HANDLER8 || type == WRITE_HANDLER8 || type == MACHINE_INTERRUPT) {
                         i3++;
                     }
                 }
@@ -753,7 +770,7 @@ public class convertMame {
                             continue;
                         }
                     }
-                    if (type == PLOT_PIXEL || type == MARK_DIRTY || type == PLOT_BOX || type == READ_PIXEL || type == READ_HANDLER8 || type == WRITE_HANDLER8 ||  type == MACHINE_INTERRUPT) {
+                    if (type == PLOT_PIXEL || type == MARK_DIRTY || type == PLOT_BOX || type == READ_PIXEL || type == READ_HANDLER8 || type == WRITE_HANDLER8 || type == MACHINE_INTERRUPT) {
                         i3--;
                         if (i3 == -1) {
                             sUtil.putString("} };");

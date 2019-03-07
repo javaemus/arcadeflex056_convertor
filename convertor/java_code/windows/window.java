@@ -33,8 +33,7 @@ public class window
 	
 	// from input.c
 	extern void win_pause_input(int pause);
-	extern int win_is_mouse_captured(void);
-	extern UINT8 win_trying_to_quit;
+	extern extern UINT8 win_trying_to_quit;
 	
 	
 	
@@ -172,8 +171,7 @@ public class window
 	
 	static void dib_draw_window(HDC dc, struct mame_bitmap *bitmap, int update);
 	
-	static int create_debug_window(void);
-	static void draw_debug_contents(HDC dc, struct mame_bitmap *bitmap);
+	static static void draw_debug_contents(HDC dc, struct mame_bitmap *bitmap);
 	static LRESULT CALLBACK debug_window_proc(HWND wnd, UINT message, WPARAM wparam, LPARAM lparam);
 	
 	

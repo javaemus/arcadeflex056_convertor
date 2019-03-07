@@ -77,14 +77,10 @@ public class galaga
 	
 	
 	extern unsigned char *galaga_sharedram;
-	int galaga_interrupt_1(void);
-	int galaga_interrupt_2(void);
-	int galaga_interrupt_3(void);
 	void galaga_init_machine(void);
 	
 	
 	extern unsigned char *galaga_starcontrol;
-	int galaga_vh_start(void);
 	void galaga_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	void galaga_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom);
 	

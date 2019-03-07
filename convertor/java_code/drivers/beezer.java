@@ -17,7 +17,6 @@ public class beezer
 	
 	/* from vidhrdw/beezer.c */
 	extern UINT8 *beezer_ram;
-	int beezer_interrupt (void);
 	void beezer_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	
 	/* from machine/beezer.c */

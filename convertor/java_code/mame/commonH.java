@@ -330,7 +330,6 @@ void coin_lockout_w(int num,int on);
 void coin_lockout_global_w(int on);  /* Locks out all coin inputs */
 
 
-int readroms(void);
 void printromlist(const struct RomModule *romp,const char *name);
 
 /* helper function that reads samples from disk - this can be used by other */

@@ -113,8 +113,6 @@ public class combatsc
 	/* from vidhrdw/combasc.c */
 	void combasc_convert_color_prom( unsigned char *palette, unsigned short *colortable, const unsigned char *color_prom );
 	void combascb_convert_color_prom( unsigned char *palette, unsigned short *colortable, const unsigned char *color_prom );
-	int combasc_vh_start( void );
-	int combascb_vh_start( void );
 	void combasc_vh_stop( void );
 	
 	void combasc_init_machine( void );

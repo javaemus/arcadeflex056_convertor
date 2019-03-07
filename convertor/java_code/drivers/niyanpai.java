@@ -37,7 +37,6 @@ public class niyanpai
 	
 	
 	void niyanpai_vh_screenrefresh(struct mame_bitmap *bitmap, int full_refresh);
-	int niyanpai_vh_start(void);
 	void niyanpai_vh_stop(void);
 	
 	READ16_HANDLER( niyanpai_palette_r );

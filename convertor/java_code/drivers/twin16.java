@@ -55,8 +55,7 @@ public class twin16
 	WRITE16_HANDLER( fround_gfx_bank_w );
 	WRITE16_HANDLER( twin16_video_register_w );
 	
-	extern int twin16_vh_start( void );
-	extern void twin16_vh_stop( void );
+	extern extern void twin16_vh_stop( void );
 	extern void twin16_vh_screenrefresh( struct mame_bitmap *bitmap, int fullrefresh );
 	
 	extern void twin16_spriteram_process( void );

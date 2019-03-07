@@ -722,8 +722,7 @@ public class cheat
 	static INT32	EditCheatMenu(struct mame_bitmap * bitmap, INT32 selected, UINT8 cheatnum);
 	static INT32	CommentMenu(struct mame_bitmap * bitmap, INT32 selected, int cheat_index);
 	static INT32	UserSelectValueMenu(struct mame_bitmap * bitmap, int selection, int cheat_num);
-	static int		FindFreeWatch(void);
-	static void		reset_table(struct ExtMemory * table);
+	static static void		reset_table(struct ExtMemory * table);
 	static void		AddResultToListByIdx(int idx);
 	static void		AddCheatToList(offs_t address, UINT8 data, int cpu);
 	static void		SetupDefaultMemoryAreas(int cpu);

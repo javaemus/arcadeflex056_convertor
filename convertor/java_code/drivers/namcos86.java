@@ -34,7 +34,6 @@ public class namcos86
 	/*******************************************************************/
 	
 	void namcos86_vh_convert_color_prom(unsigned char *palette,unsigned short *colortable,const unsigned char *color_prom);
-	int namcos86_vh_start(void);
 	void namcos86_vh_screenrefresh(struct mame_bitmap *bitmap,int fullrefresh);
 	
 	

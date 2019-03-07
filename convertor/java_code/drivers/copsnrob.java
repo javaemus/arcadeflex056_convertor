@@ -56,7 +56,6 @@ public class copsnrob
 	extern unsigned char *copsnrob_trucky;
 	extern unsigned char *copsnrob_truckram;
 	
-	int copsnrob_vh_start(void);
 	void copsnrob_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	
 	public static Memory_ReadAddress readmem[]={

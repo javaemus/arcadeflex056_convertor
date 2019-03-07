@@ -100,8 +100,7 @@ public class cloak
 	
 	static unsigned char *enable_nvRAM;
 	static unsigned char *cloak_sharedram;
-	extern int  cloak_vh_start(void);
-	extern void cloak_vh_stop(void);
+	extern extern void cloak_vh_stop(void);
 	extern void cloak_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	
 	

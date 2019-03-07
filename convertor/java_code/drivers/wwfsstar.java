@@ -64,7 +64,6 @@ public class wwfsstar
 	WRITE16_HANDLER ( wwfsstar_scrollwrite );
 	
 	/* in (vidhrdw/wwfsstar.c) */
-	int wwfsstar_vh_start(void);
 	void wwfsstar_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	
 	READ16_HANDLER( input_port_2_word_r_cust );

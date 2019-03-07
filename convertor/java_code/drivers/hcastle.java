@@ -17,7 +17,6 @@ public class hcastle
 	
 	void hcastle_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom);
 	void hcastle_vh_screenrefresh (struct mame_bitmap *bitmap,int full_refresh);
-	int hcastle_vh_start (void);
 	
 	extern data8_t *hcastle_pf1_videoram,*hcastle_pf2_videoram;
 	

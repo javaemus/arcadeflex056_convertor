@@ -188,8 +188,6 @@ public class itech8
 	extern UINT8 *itech8_grom_bank;
 	extern UINT8 *itech8_display_page;
 	
-	int itech8_vh_start(void);
-	int slikshot_vh_start(void);
 	void itech8_vh_stop(void);
 	void itech8_vh_screenrefresh(struct mame_bitmap *bitmap, int full_refresh);
 	

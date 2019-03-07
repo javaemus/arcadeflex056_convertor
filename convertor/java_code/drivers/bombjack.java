@@ -78,7 +78,6 @@ public class bombjack
 	
 	
 	void bombjack_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
-	int bombjack_vh_start(void);
 	
 	
 	

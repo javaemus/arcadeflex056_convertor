@@ -17,7 +17,6 @@ package drivers;
 public class mnight
 {
 	
-	int  mnight_vh_start(void);
 	void mnight_vh_stop(void);
 	void mnight_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	

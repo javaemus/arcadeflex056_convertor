@@ -97,9 +97,7 @@ public class gionbana
 	
 	
 	void gionbana_vh_screenrefresh(struct mame_bitmap *bitmap, int full_refresh);
-	int gionbana_vh_start(void);
 	void gionbana_vh_stop(void);
-	int hanamomo_vh_start(void);
 	void hanamomo_vh_stop(void);
 	
 	void gionbana_radrx_w(int data);

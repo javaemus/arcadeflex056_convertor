@@ -289,7 +289,6 @@ public class sndintrfH
 	};
 	
 	
-	int sound_start(void);
 	void sound_stop(void);
 	void sound_update(void);
 	void sound_reset(void);

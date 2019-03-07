@@ -150,7 +150,6 @@ public class turbo
 	/* from vidhrdw */
 	extern UINT8 *turbo_sprite_position;
 	
-	int turbo_vh_start(void);
 	void turbo_vh_stop(void);
 	void turbo_vh_convert_color_prom(UINT8 *palette, UINT16 *colortable, const UINT8 *color_prom);
 	void turbo_vh_eof(void);

@@ -171,10 +171,6 @@ public class toaplan2
 	void toaplan2_0_eof_callback(void);
 	void toaplan2_1_eof_callback(void);
 	void batrider_0_eof_callback(void);
-	int  toaplan2_0_vh_start(void);
-	int  toaplan2_1_vh_start(void);
-	int  truxton2_0_vh_start(void);
-	int  batrider_0_vh_start(void);
 	void toaplan2_0_vh_stop(void);
 	void toaplan2_1_vh_stop(void);
 	void toaplan2_0_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);

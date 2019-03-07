@@ -52,11 +52,9 @@ public class stactics
 {
 	
 	/* Defined in machine/stactics.c */
-	int stactics_interrupt(void);
 	extern unsigned char *stactics_motor_on;
 	
 	/* Defined in vidhrdw/stactics.c */
-	int stactics_vh_start(void);
 	void stactics_vh_stop(void);
 	void stactics_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	extern unsigned char *stactics_scroll_ram;

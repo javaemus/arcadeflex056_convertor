@@ -17,16 +17,13 @@ public class aztarac
 {
 	
 	/* from vidhrdw/aztarac.c */
-	int aztarac_vh_start (void);
 	WRITE16_HANDLER( aztarac_ubr_w );
-	int aztarac_vg_interrupt(void);
 	
 	extern data16_t *aztarac_vectorram;
 	
 	/* from sndhrdw/aztarac.c */
 	READ16_HANDLER( aztarac_sound_r );
 	WRITE16_HANDLER( aztarac_sound_w );
-	int aztarac_snd_timed_irq (void);
 	
 	static data16_t *nvram;
 	

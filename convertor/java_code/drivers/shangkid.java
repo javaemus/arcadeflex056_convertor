@@ -60,8 +60,7 @@ public class shangkid
 {
 	
 	/* from vidhrdw/shangkid.c */
-	extern int shangkid_vh_start( void );
-	extern void shangkid_vh_stop( void );
+	extern extern void shangkid_vh_stop( void );
 	extern void shangkid_screenrefresh( struct mame_bitmap *bitmap, int fullfresh );
 	extern extern UINT8 *shangkid_videoreg;
 	extern int shangkid_gfx_type;

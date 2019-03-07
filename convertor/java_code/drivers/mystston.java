@@ -26,7 +26,6 @@ public class mystston
 	extern unsigned char *mystston_bgvideoram;
 	extern unsigned char *mystston_scroll;
 	
-	int mystston_vh_start(void);
 	void mystston_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom);
 	void mystston_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	

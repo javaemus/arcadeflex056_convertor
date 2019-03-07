@@ -2,6 +2,7 @@
 ==========
 -Fixed PORT_START macro
 -Added intteruptPtr support
+-Skip forward reference functions
 
 01/02/2019
 ==========

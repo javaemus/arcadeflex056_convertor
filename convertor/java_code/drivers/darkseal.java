@@ -19,7 +19,6 @@ package drivers;
 public class darkseal
 {
 	
-	int  darkseal_vh_start(void);
 	void darkseal_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	
 	WRITE16_HANDLER( darkseal_pf1_data_w );

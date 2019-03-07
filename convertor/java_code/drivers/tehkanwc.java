@@ -31,7 +31,6 @@ public class tehkanwc
 	extern size_t tehkanwc_videoram1_size;
 	
 	/* from vidhrdw */
-	int tehkanwc_vh_start(void);
 	void tehkanwc_vh_stop(void);
 	void tehkanwc_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	

@@ -39,9 +39,7 @@ public class mame
 	static int auto_malloc_tag = 0;
 	
 	
-	int init_machine(void);
 	void shutdown_machine(void);
-	int run_machine(void);
 	
 	/* in usrintrf.c */
 	void switch_ui_orientation(void);

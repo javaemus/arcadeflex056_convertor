@@ -80,7 +80,6 @@ public class chinagat
 	/**************** Video stuff ******************/
 	
 	
-	int  chinagat_vh_start(void);
 	void ddragon_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	
 	extern int technos_video_hw;

@@ -329,8 +329,6 @@ typedef struct _ygv608 {
 } YGV608, *pYGV608;
 
 
-int ygv608_timed_interrupt( void );
-int  ygv608_vh_start( void );
 void ygv608_vh_stop( void );
 void ygv608_vh_update( struct mame_bitmap *bitmap, int full_refresh );
 

@@ -149,7 +149,6 @@ public class missile
 	
 	void missile_init_machine(void);
 	
-	int  missile_vh_start(void);
 	void missile_vh_stop(void);
 	void missile_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	

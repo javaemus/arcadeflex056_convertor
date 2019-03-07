@@ -77,7 +77,6 @@ public class exterm
 	
 	/* Functions in vidhrdw/exterm.c */
 	void exterm_init_palette(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom);
-	int  exterm_vh_start(void);
 	void exterm_vh_stop (void);
 	
 	void exterm_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);

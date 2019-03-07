@@ -18,7 +18,6 @@ public class solomon
 	extern unsigned char *solomon_bgvideoram;
 	extern unsigned char *solomon_bgcolorram;
 	
-	int  solomon_vh_start(void);
 	void solomon_vh_stop(void);
 	void solomon_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	

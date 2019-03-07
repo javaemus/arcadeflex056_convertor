@@ -18,7 +18,6 @@ public class spy
 {
 	
 	
-	int spy_vh_start(void);
 	void spy_vh_stop(void);
 	void spy_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	

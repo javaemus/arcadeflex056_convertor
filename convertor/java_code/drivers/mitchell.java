@@ -47,7 +47,6 @@ public class mitchell
 	void block_decode(void);
 	
 	
-	int  pang_vh_start(void);
 	void pang_vh_stop(void);
 	void pang_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	

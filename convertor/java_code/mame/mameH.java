@@ -125,7 +125,6 @@ public class mameH
 	extern struct RunningMachine *Machine;
 	
 	int run_game (int game);
-	int updatescreen(void);
 	void draw_screen(void);
 	
 	/* automatically-freeing memory */
@@ -139,7 +138,6 @@ public class mameH
 	
 	void update_video_and_audio(void);
 	/* osd_fopen() must use this to know if high score files can be used */
-	int mame_highscore_enabled(void);
 	void set_led_status(int num,int on);
 	
 	#endif

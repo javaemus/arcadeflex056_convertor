@@ -113,8 +113,6 @@ public class meadows
 	/* Externals                                                 */
 	/*                                                           */
 	/*************************************************************/
-	int deadeye_vh_start(void);
-	int gypsyjug_vh_start(void);
 	void meadows_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	
 	int meadows_sh_start(const struct MachineSound *msound);

@@ -185,7 +185,6 @@ extern int megasys1_8x8_scroll_2_factor, megasys1_16x16_scroll_2_factor;
 
 
 /* Functions */
-int  megasys1_vh_start(void);
 
 WRITE16_HANDLER( megasys1_scrollram_0_w );
 WRITE16_HANDLER( megasys1_scrollram_1_w );

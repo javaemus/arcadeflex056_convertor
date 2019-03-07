@@ -45,10 +45,8 @@ public class segac2
 		Function Prototypes
 	******************************************************************************/
 	
-	static int  vdp_data_r(void);
-	static void vdp_data_w(int data);
-	static int  vdp_control_r(void);
-	static void vdp_control_w(int data);
+	static static void vdp_data_w(int data);
+	static static void vdp_control_w(int data);
 	static void vdp_register_w(int data);
 	static void vdp_control_dma(int data);
 	static void vdp_dma_68k(void);

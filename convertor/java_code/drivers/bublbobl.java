@@ -150,7 +150,6 @@ public class bublbobl
 	
 	/* machine/bublbobl.c */
 	extern unsigned char *bublbobl_sharedram1,*bublbobl_sharedram2;
-	int bublbobl_m68705_interrupt(void);
 	
 	
 	

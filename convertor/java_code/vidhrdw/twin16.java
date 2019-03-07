@@ -26,8 +26,7 @@ public class twin16
 	extern data16_t *twin16_sprite_gfx_ram;
 	extern data16_t *twin16_tile_gfx_ram;
 	extern void twin16_gfx_decode( void );
-	extern int twin16_spriteram_process_enable( void );
-	
+	extern 
 	static int need_process_spriteram;
 	static data16_t gfx_bank;
 	static data16_t scrollx[3], scrolly[3];

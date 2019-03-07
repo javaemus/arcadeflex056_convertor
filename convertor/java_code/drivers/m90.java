@@ -38,7 +38,6 @@ public class m90
 	
 	void m90_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	void m90_bootleg_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
-	int m90_vh_start(void);
 	
 	/***************************************************************************/
 	

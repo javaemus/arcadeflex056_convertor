@@ -158,9 +158,7 @@ public class blit
 	extern void asmblit_footer_mmx(void);
 	extern void asmblit_footer_mmx_dirty(void);
 	
-	extern int asmblit_has_mmx(void);
-	extern int asmblit_has_xmm(void);
-	
+	extern extern 
 	
 	//============================================================
 	//	GLOBAL VARIABLES

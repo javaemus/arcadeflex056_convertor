@@ -18,8 +18,6 @@ public class msdos
 	#endif
 	
 	
-	int  msdos_init_seal (void);
-	int  msdos_init_sound(void);
 	void msdos_init_input(void);
 	void msdos_shutdown_sound(void);
 	void msdos_shutdown_input(void);

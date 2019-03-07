@@ -205,8 +205,7 @@ public class airbustr
 	extern unsigned char *airbustr_bgram, *airbustr_fgram;
 	
 	/* Functions defined in vidhrdw */
-	extern int  airbustr_vh_start(void);
-	extern void airbustr_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
+	extern extern void airbustr_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	
 	/* Debug stuff (bound to go away sometime) */
 	int u1, u2, u3, u4;

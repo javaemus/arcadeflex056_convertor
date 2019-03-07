@@ -25,7 +25,6 @@ public class gunsmoke
 	
 	void gunsmoke_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom);
 	void gunsmoke_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
-	int gunsmoke_vh_start(void);
 	void gunsmoke_vh_stop(void);
 	
 	

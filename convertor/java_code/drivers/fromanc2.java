@@ -84,10 +84,8 @@ public class fromanc2
 	
 	
 	void fromanc2_vh_screenrefresh(struct mame_bitmap *bitmap, int full_refresh);
-	int fromanc2_vh_start(void);
 	void fromanc2_vh_stop(void);
 	void fromancr_vh_screenrefresh(struct mame_bitmap *bitmap, int full_refresh);
-	int fromancr_vh_start(void);
 	void fromancr_vh_stop(void);
 	
 	READ16_HANDLER( fromanc2_paletteram_0_r );

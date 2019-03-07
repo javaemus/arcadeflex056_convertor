@@ -33,7 +33,6 @@ public class popeye
 	void popeye_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom);
 	void popeyebl_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom);
 	void popeye_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
-	int  popeye_vh_start(void);
 	void popeye_vh_stop(void);
 	
 	

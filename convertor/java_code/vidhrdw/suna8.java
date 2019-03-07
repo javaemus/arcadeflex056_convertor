@@ -77,7 +77,6 @@ public class suna8
 	/* Functions defined in vidhrdw: */
 	
 	
-	int  suna8_vh_start(void);
 	void suna8_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	
 	

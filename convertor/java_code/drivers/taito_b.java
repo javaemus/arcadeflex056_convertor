@@ -109,10 +109,6 @@ public class taito_b
 	extern data16_t *taitob_pixelram;
 	
 	
-	int  taitob_vh_start_color_order0(void);
-	int  taitob_vh_start_color_order1(void);
-	int  taitob_vh_start_color_order2(void);
-	int  hitice_vh_start(void);
 	void taitob_vh_stop(void);
 	void taitob_eof_callback(void);
 	

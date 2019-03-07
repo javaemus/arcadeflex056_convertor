@@ -76,9 +76,7 @@ extern "C" {
 
 typedef UINT32 pen_t;
 
-int palette_start(void);
 void palette_stop(void);
-int palette_init(void);
 
 void palette_set_color(int color,UINT8 r,UINT8 g,UINT8 b);
 void palette_get_color(int color,UINT8 *r,UINT8 *g,UINT8 *b);

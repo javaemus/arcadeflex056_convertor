@@ -33,7 +33,6 @@ public class system1H
 	extern size_t system1_backgroundram_size;
 	
 	
-	int  system1_vh_start(void);
 	void system1_vh_stop(void);
 	void system1_define_background_memory(int Mode);
 	

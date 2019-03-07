@@ -28,8 +28,7 @@ public class ddragon3
 	void ctribe_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	WRITE16_HANDLER( ddragon3_scroll16_w );
 	
-	extern int ddragon3_vh_start(void);
-	
+	extern 
 	extern data16_t *ddragon3_bg_videoram16;
 	WRITE16_HANDLER( ddragon3_bg_videoram16_w );
 	READ16_HANDLER( ddragon3_bg_videoram16_r );

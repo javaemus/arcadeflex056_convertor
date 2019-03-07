@@ -310,7 +310,6 @@ public class inptportH
 	#define MAX_INPUT_PORTS 20
 	
 	
-	int load_input_port_settings(void);
 	void save_input_port_settings(void);
 	
 	const char *input_port_name(const struct InputPort *in);

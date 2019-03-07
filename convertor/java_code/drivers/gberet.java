@@ -74,11 +74,9 @@ public class gberet
 	extern unsigned char *gberet_spritebank;
 	extern unsigned char *gberet_scrollram;
 	void gberet_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom);
-	int gberet_vh_start(void);
 	void gberet_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	void gberetb_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	
-	int gberet_interrupt(void);
 	
 	
 	public static WriteHandlerPtr gberet_coincounter_w = new WriteHandlerPtr() {public void handler(int offset, int data)

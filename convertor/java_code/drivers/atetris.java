@@ -60,7 +60,6 @@ public class atetris
 	#define ATARI_CLOCK_14MHz	14318180
 	
 	
-	int atetris_vh_start(void);
 	void atetris_vh_screenrefresh(struct mame_bitmap *bitmap, int full_refresh);
 	
 	

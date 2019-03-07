@@ -59,7 +59,6 @@ public class gundealr
 	extern unsigned char *gundealr_bg_videoram,*gundealr_fg_videoram;
 	
 	void gundealr_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
-	int gundealr_vh_start(void);
 	
 	
 	static int input_ports_hack;

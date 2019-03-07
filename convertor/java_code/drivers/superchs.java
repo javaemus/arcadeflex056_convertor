@@ -42,7 +42,6 @@ package drivers;
 public class superchs
 {
 	
-	int superchs_vh_start (void);
 	void superchs_vh_stop (void);
 	void superchs_vh_screenrefresh  (struct mame_bitmap *bitmap,int full_refresh);
 	

@@ -21,7 +21,6 @@ public class ddragon
 	extern int ddragon_scrollx_hi, ddragon_scrolly_hi;
 	extern unsigned char *ddragon_scrollx_lo;
 	extern unsigned char *ddragon_scrolly_lo;
-	int ddragon_vh_start(void);
 	void ddragon_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	extern unsigned char *ddragon_spriteram;
 	extern int technos_video_hw;

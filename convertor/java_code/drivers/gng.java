@@ -30,7 +30,6 @@ public class gng
 	
 	extern unsigned char *gng_fgvideoram;
 	extern unsigned char *gng_bgvideoram;
-	int gng_vh_start(void);
 	void gng_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	void gng_eof_callback(void);
 	

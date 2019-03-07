@@ -39,7 +39,6 @@ public class skullxbo
 	WRITE16_HANDLER( skullxbo_vscroll_w );
 	WRITE16_HANDLER( skullxbo_mobmsb_w );
 	
-	int skullxbo_vh_start(void);
 	void skullxbo_vh_stop(void);
 	void skullxbo_vh_screenrefresh(struct mame_bitmap *bitmap, int full_refresh);
 	

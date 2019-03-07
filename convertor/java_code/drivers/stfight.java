@@ -241,14 +241,10 @@ public class stfight
 	void init_empcity(void);
 	void init_stfight(void);
 	void stfight_init_machine(void);
-	int  stfight_vb_interrupt( void );
-	int  stfight_interrupt_1( void );
-	int  stfight_interrupt_2( void );
 	void stfight_adpcm_int( int data );
 	
 	// vidhrdw
 	void stfight_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom);
-	int  stfight_vh_start( void );
 	void stfight_vh_screenrefresh( struct mame_bitmap *bitmap, int full_refresh );
 	
 	// vidhrdw

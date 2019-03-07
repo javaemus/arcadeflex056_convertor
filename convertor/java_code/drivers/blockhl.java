@@ -34,7 +34,6 @@ public class blockhl
 	
 	
 	void blockhl_vh_stop( void );
-	int blockhl_vh_start( void );
 	void blockhl_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	
 	static int palette_selected;

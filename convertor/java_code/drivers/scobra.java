@@ -142,13 +142,6 @@ public class scobra
 	
 	void scramble_init_machine(void);
 	
-	int  scramble_vh_start(void);
-	int  theend_vh_start(void);
-	int  darkplnt_vh_start(void);
-	int  rescue_vh_start  (void);
-	int  minefld_vh_start (void);
-	int  calipso_vh_start (void);
-	int  stratgyx_vh_start(void);
 	
 	void galaxian_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	READ_HANDLER ( galaxian_videoram_r );

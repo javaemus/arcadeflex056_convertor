@@ -46,7 +46,6 @@ public class taito_f3
 	
 	#define TRY_ALPHA 0
 	
-	int  f3_vh_start(void);
 	void f3_vh_stop(void);
 	void f3_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	void f3_eof_callback(void);

@@ -27,7 +27,6 @@ public class blktiger
 	
 	
 	
-	int blktiger_vh_start(void);
 	void blktiger_vh_stop(void);
 	void blktiger_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	void blktiger_eof_callback(void);

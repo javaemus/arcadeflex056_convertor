@@ -208,15 +208,11 @@ public class xevious
 	
 	
 	extern unsigned char *xevious_sharedram;
-	int  xevious_interrupt_1(void);
-	int  xevious_interrupt_2(void);
-	int  xevious_interrupt_3(void);
 	void xevious_init_machine(void);
 	
 	
 	extern unsigned char *xevious_fg_videoram,*xevious_fg_colorram;
 	extern unsigned char *xevious_bg_videoram,*xevious_bg_colorram;
-	int  xevious_vh_start( void );
 	void xevious_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom);
 	void xevious_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	

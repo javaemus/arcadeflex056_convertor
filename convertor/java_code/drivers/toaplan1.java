@@ -44,7 +44,6 @@ public class toaplan1
 	
 	
 	/**************** Machine stuff ******************/
-	int  toaplan1_interrupt(void);
 	WRITE16_HANDLER( toaplan1_int_enable_w );
 	READ16_HANDLER( toaplan1_shared_r );
 	WRITE16_HANDLER( toaplan1_shared_w );
@@ -93,9 +92,7 @@ public class toaplan1
 	void toaplan1_eof_callback(void);
 	void rallybik_eof_callback(void);
 	void samesame_eof_callback(void);
-	int  toaplan1_vh_start(void);
 	void toaplan1_vh_stop(void);
-	int  rallybik_vh_start(void);
 	void rallybik_vh_stop(void);
 	void toaplan1_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	void zerowing_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);

@@ -147,8 +147,7 @@ public class atarirle
 		STATIC FUNCTION DECLARATIONS
 	##########################################################################*/
 	
-	static int build_rle_tables(void);
-	static int count_objects(const data16_t *base, int length);
+	static static int count_objects(const data16_t *base, int length);
 	static void prescan_rle(const struct atarirle_data *mo, int which);
 	static void draw_rle(struct atarirle_data *mo, struct mame_bitmap *bitmap, int code, int color, int hflip, int vflip,
 			int x, int y, int xscale, int yscale, const struct rectangle *clip);

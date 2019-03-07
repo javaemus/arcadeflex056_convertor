@@ -230,7 +230,6 @@ package drivers;
 public class ninjakd2
 {
 	
-	int  ninjakd2_vh_start(void);
 	void ninjakd2_vh_stop(void);
 	void ninjakd2_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	

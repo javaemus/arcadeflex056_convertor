@@ -20,7 +20,6 @@ public class berzerk
 	
 	void berzerk_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	
-	int  berzerk_interrupt(void);
 	
 	
 	int  berzerk_sh_start(const struct MachineSound *msound);

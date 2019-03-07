@@ -27,7 +27,6 @@ public class kncljoe
 	
 	
 	/* from vidhrdw */
-	int kncljoe_vh_start(void);
 	void kncljoe_vh_convert_color_prom(unsigned char *palette,unsigned short *colortable,const unsigned char *color_prom);
 	void kncljoe_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	WRITE_HANDLER(kncljoe_videoram_w);

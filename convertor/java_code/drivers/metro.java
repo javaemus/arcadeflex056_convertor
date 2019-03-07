@@ -98,10 +98,6 @@ public class metro
 	WRITE16_HANDLER( metro_vram_2_w );
 	
 	
-	int  metro_vh_start_14100(void);
-	int  metro_vh_start_14220(void);
-	int  metro_vh_start_14300(void);
-	int  blzntrnd_vh_start(void);
 	void metro_vh_stop(void);
 	
 	void metro_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);

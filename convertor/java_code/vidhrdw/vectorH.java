@@ -47,7 +47,6 @@ public class vectorH
 	extern unsigned char *vectorram;
 	extern size_t vectorram_size;
 	
-	int  vector_vh_start (void);
 	void vector_vh_stop (void);
 	void vector_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	void vector_clear_list (void);

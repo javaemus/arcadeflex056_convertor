@@ -71,7 +71,6 @@ public class leprechn
 {
 	
 	
-	int  leprechn_vh_start(void);
 	void leprechn_vh_stop(void);
 	void leprechn_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	

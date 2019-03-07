@@ -133,8 +133,7 @@ public class namcos1
 	
 	/* from vidhrdw */
 	extern void namcos1_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
-	extern int namcos1_vh_start(void);
-	extern void namcos1_vh_stop(void);
+	extern extern void namcos1_vh_stop(void);
 	
 	/* from machine */
 	

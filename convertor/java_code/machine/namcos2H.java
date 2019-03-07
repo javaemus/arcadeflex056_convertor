@@ -75,7 +75,6 @@ extern int namcos2_gametype;
 
 /*********************************************/
 
-int  namcos2_vh_start(void);
 void namcos2_vh_update_default(struct mame_bitmap *bitmap, int full_refresh);
 void namcos2_vh_update_finallap(struct mame_bitmap *bitmap, int full_refresh);
 
@@ -177,12 +176,10 @@ extern data16_t namcos2_68k_slave_C148[];
 
 WRITE16_HANDLER( namcos2_68k_master_C148_w );
 READ16_HANDLER( namcos2_68k_master_C148_r );
-int  namcos2_68k_master_vblank( void );
 void namcos2_68k_master_posirq( int moog );
 
 WRITE16_HANDLER( namcos2_68k_slave_C148_w );
 READ16_HANDLER( namcos2_68k_slave_C148_r );
-int  namcos2_68k_slave_vblank(void);
 void namcos2_68k_slave_posirq( int moog );
 
 
@@ -248,14 +245,12 @@ READ16_HANDLER( namcos2_68k_road_ctrl_r );
 /* Sound CPU support handlers - 6809						  */
 /**************************************************************/
 
-int  namcos2_sound_interrupt(void);
 
 
 /**************************************************************/
 /* MCU Specific support handlers - HD63705					  */
 /**************************************************************/
 
-int  namcos2_mcu_interrupt(void);
 
 
 

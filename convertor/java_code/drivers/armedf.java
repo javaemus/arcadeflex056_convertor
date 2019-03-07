@@ -30,10 +30,6 @@ public class armedf
 	
 	void armedf_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	void armedf_eof_callback(void);
-	int terraf_vh_start(void);
-	int armedf_vh_start(void);
-	int kodure_vh_start(void);
-	int cclimbr2_vh_start(void);
 	
 	WRITE16_HANDLER( armedf_bg_videoram_w );
 	WRITE16_HANDLER( armedf_fg_videoram_w );

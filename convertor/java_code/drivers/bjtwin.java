@@ -129,12 +129,6 @@ public class bjtwin
 	WRITE16_HANDLER( mustang_scroll_w );
 	WRITE16_HANDLER( vandyke_scroll_w );
 	
-	int macross_vh_start(void);
-	int gunnail_vh_start(void);
-	int macross2_vh_start(void);
-	int bjtwin_vh_start(void);
-	int bioship_vh_start(void);
-	int strahl_vh_start(void);
 	void nmk_vh_stop(void);
 	void bioship_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	void strahl_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);

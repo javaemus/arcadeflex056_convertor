@@ -38,7 +38,6 @@ public class amidar
 	
 	void scramble_init_machine(void);
 	
-	int turtles_vh_start(void);
 	
 	READ_HANDLER(amidar_ppi8255_0_r);
 	READ_HANDLER(amidar_ppi8255_1_r);

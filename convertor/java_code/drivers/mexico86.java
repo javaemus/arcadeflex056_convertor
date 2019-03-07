@@ -28,7 +28,6 @@ public class mexico86
 	
 	/* in machine/mexico86.c */
 	extern unsigned char *mexico86_protection_ram;
-	int mexico86_m68705_interrupt(void);
 	
 	/* in vidhrdw/mexico86.c */
 	extern unsigned char *mexico86_videoram,*mexico86_objectram;

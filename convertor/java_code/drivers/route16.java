@@ -65,7 +65,6 @@ public class route16
 	void init_route16b(void);
 	void init_stratvox(void);
 	void route16_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom);
-	int  route16_vh_start(void);
 	void route16_vh_stop(void);
 	void route16_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	

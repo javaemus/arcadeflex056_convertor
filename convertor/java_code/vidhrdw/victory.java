@@ -61,13 +61,7 @@ public class victory
 	/* function prototypes */
 	void victory_vh_stop(void);
 	
-	static int command2(void);
-	static int command3(void);
-	static int command4(void);
-	static int command5(void);
-	static int command6(void);
-	static int command7(void);
-	
+	static static static static static static 
 	
 	
 	/*************************************

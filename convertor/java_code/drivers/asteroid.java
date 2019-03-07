@@ -143,8 +143,6 @@ public class asteroid
 {
 	
 	void asteroid_init_machine(void);
-	int asteroid_interrupt(void);
-	int llander_interrupt(void);
 	
 	
 	extern struct discrete_sound_block *asteroid_sound_interface;
@@ -154,7 +152,6 @@ public class asteroid
 	
 	
 	void llander_init_colors (unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom);
-	int llander_start(void);
 	void llander_stop(void);
 	void llander_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	

@@ -4,10 +4,6 @@ extern data16_t *cninja_pf3_rowscroll,*cninja_pf4_rowscroll;
 extern data16_t *cninja_pf1_data,*cninja_pf2_data;
 extern data16_t *cninja_pf3_data,*cninja_pf4_data;
 
-int  cninja_vh_start(void);
-int  edrandy_vh_start(void);
-int  robocop2_vh_start(void);
-int  stoneage_vh_start(void);
 void cninja_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 void edrandy_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 void robocop2_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);

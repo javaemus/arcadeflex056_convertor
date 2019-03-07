@@ -117,7 +117,6 @@ public class leland
 	
 	
 	void leland_vh_eof(void);
-	int leland_vh_start(void);
 	void leland_vh_stop(void);
 	void leland_vh_screenrefresh(struct mame_bitmap *bitmap, int full_refresh);
 	

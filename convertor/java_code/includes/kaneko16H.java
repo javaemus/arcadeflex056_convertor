@@ -58,11 +58,6 @@ extern kaneko16_priority_t kaneko16_priority;
 
 /* Machine */
 
-int kaneko16_vh_start_sprites(void);
-int kaneko16_vh_start_1xVIEW2(void);
-int kaneko16_vh_start_2xVIEW2(void);
-int berlwall_vh_start(void);
-int sandscrp_vh_start_1xVIEW2(void);
 
 void kaneko16_vh_stop(void);
 void berlwall_vh_stop(void);

@@ -54,14 +54,6 @@ public class dec8
 	void lastmiss_vh_screenrefresh(struct mame_bitmap *bitmap, int full_refresh);
 	void shackled_vh_screenrefresh(struct mame_bitmap *bitmap, int full_refresh);
 	void oscar_vh_screenrefresh(struct mame_bitmap *bitmap, int full_refresh);
-	int cobracom_vh_start(void);
-	int oscar_vh_start(void);
-	int ghostb_vh_start(void);
-	int lastmiss_vh_start(void);
-	int shackled_vh_start(void);
-	int srdarwin_vh_start(void);
-	int gondo_vh_start(void);
-	int garyoret_vh_start(void);
 	
 	
 	/******************************************************************************/

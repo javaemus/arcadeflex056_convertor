@@ -252,7 +252,6 @@ public class exidy440
 	int exidy440_sh_start(const struct MachineSound *msound);
 	void exidy440_sh_stop(void);
 	void exidy440_sh_update(void);
-	int exidy440_sound_interrupt(void);
 	
 	
 	
@@ -264,11 +263,9 @@ public class exidy440
 	extern UINT8 exidy440_firq_beam;
 	extern UINT8 topsecex_yscroll;
 	
-	int exidy440_vh_start(void);
 	void exidy440_vh_stop(void);
 	void exidy440_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	void topsecex_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
-	int exidy440_vblank_interrupt(void);
 	
 	
 	

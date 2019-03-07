@@ -22,7 +22,6 @@ package drivers;
 public class cbuster
 {
 	
-	int  twocrude_vh_start(void);
 	void twocrude_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	
 	WRITE16_HANDLER( twocrude_pf1_data_w );

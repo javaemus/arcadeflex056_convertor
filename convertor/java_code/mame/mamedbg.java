@@ -261,10 +261,7 @@ public class mamedbg
 	static void trace_select( void );
 	static void trace_output( void );
 	
-	static int hit_brk_exec( void );
-	static int hit_brk_data( void );
-	static int hit_brk_regs( void );
-	
+	static static static 
 	static const char *name_rom( const char *type, int region, unsigned *base, unsigned start );
 	static const char *name_rdmem( unsigned base );
 	static const char *name_wrmem( unsigned base );
@@ -283,8 +280,7 @@ public class mamedbg
 	static void dump_mem_hex( int which, unsigned len_addr, unsigned len_data );
 	static void dump_mem( int which, int set_title );
 	
-	static int edit_cmds_info( void );
-	static int edit_cmds_parse( char *cmdline );
+	static static int edit_cmds_parse( char *cmdline );
 	static void edit_cmds_append( const char *src );
 	
 	static void edit_regs( void );

@@ -77,8 +77,6 @@ public class _8080bw
 	
 	/* in machine/8080bw.c */
 	
-	int  invaders_interrupt(void);
-	int  polaris_interrupt(void);
 	
 	
 	
@@ -111,7 +109,6 @@ public class _8080bw
 	
 	/* in vidhrdw/8080bw.c */
 	
-	int invaders_vh_start(void);
 	void invaders_vh_stop(void);
 	
 	void init_8080bw(void);

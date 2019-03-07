@@ -41,8 +41,7 @@ public class marvins
 	**
 	***************************************************************************/
 	
-	extern int marvins_vh_start( void );
-	extern void marvins_vh_screenrefresh( struct mame_bitmap *bitmap, int fullrefresh );
+	extern extern void marvins_vh_screenrefresh( struct mame_bitmap *bitmap, int fullrefresh );
 	extern void madcrash_vh_screenrefresh( struct mame_bitmap *bitmap, int fullrefresh );
 	
 	/***************************************************************************

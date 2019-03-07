@@ -93,11 +93,6 @@ public class mjsikaku
 	void seiha_init_palette(unsigned char *obsolete,unsigned short *colortable,const unsigned char *color_prom);
 	void crystal2_init_palette(unsigned char *obsolete,unsigned short *colortable,const unsigned char *color_prom);
 	void mjsikaku_vh_screenrefresh(struct mame_bitmap *bitmap, int full_refresh);
-	int mjsikaku_vh_start(void);
-	int secolove_vh_start(void);
-	int bijokkoy_vh_start(void);
-	int seiha_vh_start(void);
-	int crystal2_vh_start(void);
 	void mjsikaku_vh_stop(void);
 	
 	void mjsikaku_radrx_w(int data);

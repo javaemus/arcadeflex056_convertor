@@ -90,12 +90,6 @@ public class m72
 	void m72_init_machine(void);
 	void xmultipl_init_machine(void);
 	void kengo_init_machine(void);
-	int m72_interrupt(void);
-	int m72_vh_start(void);
-	int rtype2_vh_start(void);
-	int majtitle_vh_start(void);
-	int hharry_vh_start(void);
-	int poundfor_vh_start(void);
 	void m72_vh_stop(void);
 	void m72_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	void majtitle_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);

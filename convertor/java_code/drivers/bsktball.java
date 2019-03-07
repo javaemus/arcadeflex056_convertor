@@ -20,8 +20,7 @@ public class bsktball
 {
 	
 	/* machine/bsktball.c */
-	extern int bsktball_interrupt(void);
-	
+	extern 
 	/* vidhrdw/bsktball.c */
 	extern unsigned char *bsktball_motion;
 	extern void bsktball_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);

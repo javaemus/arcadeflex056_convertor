@@ -269,8 +269,6 @@ int m68k_execute(int num_cycles);
  * These are useful if the 68k accesses a memory-mapped port on another device
  * that requires immediate processing by another CPU.
  */
-int m68k_cycles_run(void);              /* Number of cycles run so far */
-int m68k_cycles_remaining(void);        /* Number of cycles left */
 void m68k_modify_timeslice(int cycles); /* Modify cycles left */
 void m68k_end_timeslice(void);          /* End timeslice now */
 
@@ -288,8 +286,7 @@ void m68k_pulse_halt(void);
 /* Context switching to allow multiple CPUs */
 
 /* Get the size of the cpu context in bytes */
-unsigned int m68k_context_size(void);
-
+unsigned 
 /* Get a cpu context */
 unsigned int m68k_get_context(void* dst);
 

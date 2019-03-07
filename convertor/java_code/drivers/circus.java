@@ -33,14 +33,12 @@ public class circus
 {
 	
 	
-	extern int circus_vh_start(void);
-	
+	extern 
 	extern void crash_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	extern void circus_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	extern void robotbowl_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	
-	extern int crash_interrupt(void);
-	
+	extern 
 	static int circus_interrupt;
 	
 	public static ReadHandlerPtr ripcord_IN2_r  = new ReadHandlerPtr() { public int handler(int offset)

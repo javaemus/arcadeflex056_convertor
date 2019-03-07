@@ -73,13 +73,10 @@ public class segar
 	extern unsigned char *segar_mem_bcolortable;
 	
 	void segar_init_colors(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom);
-	int  segar_vh_start(void);
 	void segar_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	
-	int  monsterb_vh_start(void);
 	void monsterb_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	
-	int  spaceod_vh_start(void);
 	void spaceod_vh_stop(void);
 	void spaceod_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	

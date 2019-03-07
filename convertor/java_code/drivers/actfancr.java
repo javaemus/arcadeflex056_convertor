@@ -26,8 +26,6 @@ public class actfancr
 	
 	void actfancr_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	void triothep_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
-	int actfancr_vh_start (void);
-	int triothep_vh_start (void);
 	
 	extern unsigned char *actfancr_pf1_data,*actfancr_pf2_data,*actfancr_pf1_rowscroll_data;
 	static unsigned char *actfancr_ram;

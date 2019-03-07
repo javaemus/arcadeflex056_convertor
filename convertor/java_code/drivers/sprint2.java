@@ -47,8 +47,7 @@ public class sprint2
 	/* vidhrdw/sprint2.c */
 	extern void sprint1_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	extern void sprint2_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
-	extern int sprint2_vh_start(void);
-	extern void sprint2_vh_stop(void);
+	extern extern void sprint2_vh_stop(void);
 	extern unsigned char *sprint2_vert_car_ram;
 	extern unsigned char *sprint2_horiz_ram;
 	

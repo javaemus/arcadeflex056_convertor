@@ -63,10 +63,6 @@ public class m62
 	void irem_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom);
 	void battroad_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom);
 	void spelunk2_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom);
-	int ldrun_vh_start( void );
-	int kidniki_vh_start( void );
-	int spelunkr_vh_start( void );
-	int youjyudn_vh_start( void );
 	void kungfum_vh_screenrefresh(struct mame_bitmap *bitmap,int fullrefresh);
 	void battroad_vh_screenrefresh(struct mame_bitmap *bitmap,int fullrefresh);
 	void ldrun_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);

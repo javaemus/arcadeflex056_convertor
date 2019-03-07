@@ -21,7 +21,6 @@ public class _88games
 	static int videobank;
 	
 	extern int k88games_priority;
-	int k88games_vh_start(void);
 	void k88games_vh_stop(void);
 	void k88games_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	

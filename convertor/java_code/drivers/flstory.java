@@ -18,7 +18,6 @@ package drivers;
 public class flstory
 {
 	
-	int flstory_vh_start(void);
 	void flstory_vh_stop(void);
 	void flstory_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	

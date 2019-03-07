@@ -24,8 +24,6 @@ public class grobda
 	/* custom IO chips functions */
 	
 	/* INT functions */
-	int grobda_interrupt_1(void);
-	int grobda_interrupt_2(void);
 	void grobda_init_machine(void);
 	
 	/* video functions */

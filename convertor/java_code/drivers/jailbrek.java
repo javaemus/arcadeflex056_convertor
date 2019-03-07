@@ -20,7 +20,6 @@ public class jailbrek
 	
 	/* from vidhrdw */
 	extern unsigned char *jailbrek_scroll_x;
-	int jailbrek_vh_start( void );
 	void jailbrek_vh_stop( void );
 	void jailbrek_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	void jailbrek_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom);

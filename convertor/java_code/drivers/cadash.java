@@ -62,10 +62,7 @@ public class cadash
 	WRITE16_HANDLER( cadash_spritectrl_w );
 	WRITE16_HANDLER( cadash_spriteflip_w );
 	
-	int cadash_interrupt(void);
-	int rastan_s_interrupt(void);
 	
-	int cadash_vh_start(void);
 	void cadash_vh_stop(void);
 	
 	

@@ -25,9 +25,6 @@ package drivers;
 public class snk68
 {
 	
-	int  pow_vh_start(void);
-	int  searchar_vh_start(void);
-	int  ikari3_vh_start(void);
 	void pow_vh_screenrefresh(struct mame_bitmap *bitmap, int full_refresh);
 	void searchar_vh_screenrefresh(struct mame_bitmap *bitmap, int full_refresh);
 	WRITE16_HANDLER( pow_paletteram16_word_w );

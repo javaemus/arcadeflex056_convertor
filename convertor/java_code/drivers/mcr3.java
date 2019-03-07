@@ -109,12 +109,10 @@ public class mcr3
 	void mcrmono_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	
 	void dotron_change_light(int light);
-	int dotron_vh_start(void);
 	void dotron_vh_stop(void);
 	void dotron_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	
 	void spyhunt_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom);
-	int spyhunt_vh_start(void);
 	void spyhunt_vh_stop(void);
 	void spyhunt_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	

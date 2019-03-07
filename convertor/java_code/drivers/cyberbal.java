@@ -55,8 +55,6 @@ public class cyberbal
 	WRITE16_HANDLER( cyberbal_paletteram_0_w );
 	WRITE16_HANDLER( cyberbal_paletteram_1_w );
 	
-	int cyberbal_vh_start(void);
-	int cyberb2p_vh_start(void);
 	void cyberbal_vh_stop(void);
 	void cyberbal_vh_screenrefresh(struct mame_bitmap *bitmap, int full_refresh);
 	
@@ -71,7 +69,6 @@ public class cyberbal
 	int cyberbal_samples_start(const struct MachineSound *msound);
 	void cyberbal_samples_stop(void);
 	
-	int cyberbal_sound_68k_irq_gen(void);
 	
 	
 	READ16_HANDLER( cyberbal_sound_68k_r );

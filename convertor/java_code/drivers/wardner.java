@@ -152,7 +152,6 @@ public class wardner
 	/******************** Video stuff **********************/
 	READ_HANDLER ( wardner_videoram_r );
 	
-	int  toaplan0_vh_start(void);
 	void toaplan0_vh_stop(void);
 	void toaplan0_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	void toaplan0_eof_callback(void);

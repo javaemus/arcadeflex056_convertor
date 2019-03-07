@@ -28,9 +28,7 @@ public class battlera
 {
 	
 	void battlera_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
-	int battlera_vh_start (void);
 	void battlera_vh_stop (void);
-	int battlera_interrupt(void);
 	
 	
 	

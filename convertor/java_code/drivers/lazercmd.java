@@ -238,7 +238,6 @@ public class lazercmd
 	   externals
 	
 	 *************************************************************/
-	int lazercmd_vh_start(void);
 	void lazercmd_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	void lazercmd_marker_dirty(int marker);
 	

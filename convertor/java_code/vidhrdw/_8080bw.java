@@ -15,7 +15,6 @@ package vidhrdw;
 public class _8080bw
 {
 	
-	int invaders_interrupt(void);
 	
 	static int use_tmpbitmap;
 	static int sight_xs;

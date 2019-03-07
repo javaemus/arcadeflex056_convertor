@@ -18,7 +18,6 @@ public class citycon
 	extern data8_t *citycon_linecolor;
 	
 	void citycon_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
-	int  citycon_vh_start(void);
 	void citycon_vh_stop(void);
 	
 	

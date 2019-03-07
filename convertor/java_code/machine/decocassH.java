@@ -48,8 +48,7 @@ extern
 /* from vidhrdw/decocass.c */
 extern extern extern extern extern extern extern extern extern extern extern 
 extern extern extern extern extern extern extern extern extern extern extern extern 
-extern int decocass_vh_start (void);
-extern void decocass_vh_stop (void);
+extern extern void decocass_vh_stop (void);
 extern void decocass_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 
 extern unsigned char *decocass_charram;

@@ -174,8 +174,6 @@ public class mhavoc
 {
 	
 	void mhavoc_init_machine(void);
-	int mhavoc_alpha_interrupt (void);
-	int mhavoc_gamma_interrupt (void);
 	
 	
 	

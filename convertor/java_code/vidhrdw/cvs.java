@@ -49,7 +49,6 @@ public class cvs
 	static int    scroll_reg = 0;
 	static int    stars_scroll=0;
 	
-	int  s2650_get_flag(void);
 	
 	unsigned char *dirty_character;
 	unsigned char *character_1_ram;

@@ -565,14 +565,11 @@ public class williams
 	
 	
 	
-	int williams_vh_start(void);
 	void williams_vh_stop(void);
 	void williams_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	void williams2_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	
-	int blaster_vh_start(void);
 	
-	int williams2_vh_start(void);
 	void williams2_vh_stop(void);
 	
 	

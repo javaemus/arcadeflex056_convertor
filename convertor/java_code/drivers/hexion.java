@@ -26,7 +26,6 @@ public class hexion
 {
 	
 	
-	int hexion_vh_start(void);
 	void hexion_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	
 	

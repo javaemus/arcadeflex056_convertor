@@ -101,8 +101,6 @@ public class frogger
 	void init_frogger(void);
 	void init_froggers(void);
 	
-	int frogger_vh_start(void);
-	int froggrmc_vh_start(void);
 	
 	void galaxian_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	

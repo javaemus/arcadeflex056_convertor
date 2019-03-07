@@ -46,7 +46,6 @@ public class bankp
 	extern unsigned char *bankp_videoram2;
 	extern unsigned char *bankp_colorram2;
 	void bankp_vh_convert_color_prom(unsigned char *obsolete,unsigned short *colortable,const unsigned char *color_prom);
-	int bankp_vh_start(void);
 	void bankp_vh_stop(void);
 	void bankp_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	

@@ -131,7 +131,6 @@ public class sega
 	extern void sega_security(int chip);
 	
 	
-	int sega_interrupt(void);
 	
 	/* Sound hardware prototypes */
 	int sega_sh_start (const struct MachineSound *msound);
@@ -143,7 +142,6 @@ public class sega
 	
 	
 	/* Video hardware prototypes */
-	int sega_vh_start (void);
 	void sega_vh_stop (void);
 	void sega_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	

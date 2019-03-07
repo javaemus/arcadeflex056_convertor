@@ -92,7 +92,6 @@ public class mcr2
 	static UINT8 wacko_mux_select;
 	
 	
-	int mcr12_vh_start(void);
 	void mcr12_vh_stop(void);
 	void mcr2_vh_screenrefresh(struct mame_bitmap *bitmap, int full_refresh);
 	

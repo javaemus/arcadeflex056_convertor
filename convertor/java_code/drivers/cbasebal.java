@@ -26,7 +26,6 @@ public class cbasebal
 	void pang_decode(void);
 	
 	
-	int cbasebal_vh_start(void);
 	void cbasebal_vh_stop(void);
 	void cbasebal_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	

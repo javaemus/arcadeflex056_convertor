@@ -27,13 +27,10 @@ public class cinemat
 	/* from vidhrdw/cinemat.c */
 	void cinemat_select_artwork (int monitor, int overlay_req, int backdrop_req, struct artwork_element *simple_overlay);
 	void cinemat_init_colors (unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom);
-	int cinemat_vh_start (void);
 	void cinemat_vh_stop (void);
 	void cinemat_vh_screenrefresh (struct mame_bitmap *bitmap, int full_refresh);
-	int cinemat_clear_list(void);
 	
 	void spacewar_init_colors (unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom);
-	int spacewar_vh_start (void);
 	void spacewar_vh_stop (void);
 	void spacewar_vh_screenrefresh (struct mame_bitmap *bitmap, int full_refresh);
 	

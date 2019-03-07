@@ -41,8 +41,7 @@ public class cps2
 	extern data16_t *cps2_objram1,*cps2_objram2;
 	extern data16_t *cps2_output;
 	extern size_t cps2_output_size;
-	extern int cps2_vh_start(void);
-	
+	extern 
 	
 	int cps2_interrupt(void)
 	{

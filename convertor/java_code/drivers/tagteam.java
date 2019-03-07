@@ -27,7 +27,6 @@ public class tagteam
 	void tagteam_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom);
 	
 	
-	int  tagteam_vh_start (void);
 	void tagteam_vh_stop (void);
 	void tagteam_vh_screenrefresh (struct mame_bitmap *bitmap, int full_refresh);
 	

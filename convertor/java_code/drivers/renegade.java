@@ -110,8 +110,7 @@ public class renegade
 {
 	
 	extern void renegade_vh_screenrefresh(struct mame_bitmap *bitmap, int fullrefresh);
-	extern int renegade_vh_start( void );
-	
+	extern 
 	extern unsigned char *renegade_textram;
 	
 	/********************************************************************************************/

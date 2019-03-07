@@ -193,7 +193,6 @@ public class segasyse
 	
 	/*- in (vidhrdw/segasyse.c) -*/
 	
-	int segae_vh_start(void);
 	void segae_vh_stop(void);
 	void segae_vh_screenrefresh(struct mame_bitmap *bitmap, int full_refresh);
 	

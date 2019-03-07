@@ -125,7 +125,6 @@ public class docastle
 	
 	void docastle_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom);
 	void dorunrun_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom);
-	int docastle_vh_start(void);
 	void docastle_vh_stop(void);
 	void docastle_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	

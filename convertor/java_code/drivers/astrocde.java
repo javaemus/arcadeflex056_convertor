@@ -79,14 +79,10 @@ public class astrocde
 	void astrocde_init_palette(unsigned char *game_palette, unsigned short *game_colortable,const unsigned char *color_prom);
 	void astrocde_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	
-	int  wow_interrupt(void);
 	
 	void seawolf2_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	
-	int  gorf_interrupt(void);
 	
-	int  astrocde_vh_start(void);
-	int  astrocde_stars_vh_start(void);
 	void astrocde_vh_stop(void);
 	
 	int  wow_sh_start(const struct MachineSound *msound);

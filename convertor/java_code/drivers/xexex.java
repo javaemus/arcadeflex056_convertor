@@ -33,7 +33,6 @@ public class xexex
 {
 	
 	
-	int xexex_vh_start(void);
 	void xexex_vh_stop(void);
 	void xexex_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	void xexex_set_alpha(int on);

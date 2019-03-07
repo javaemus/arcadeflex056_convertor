@@ -31,7 +31,6 @@ public class gradius3
 	
 	extern data16_t *gradius3_gfxram;
 	extern int gradius3_priority;
-	int gradius3_vh_start(void);
 	void gradius3_vh_stop(void);
 	READ16_HANDLER( gradius3_gfxrom_r );
 	READ16_HANDLER( gradius3_gfxram_r );

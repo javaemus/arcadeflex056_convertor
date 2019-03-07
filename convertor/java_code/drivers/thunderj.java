@@ -34,7 +34,6 @@ public class thunderj
 	 *
 	 *************************************/
 	
-	int thunderj_vh_start(void);
 	void thunderj_vh_stop(void);
 	void thunderj_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	

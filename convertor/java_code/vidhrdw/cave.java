@@ -110,8 +110,7 @@ public class cave
 	static void (*get_sprite_info)(void);
 	static void (*cave_sprite_draw)( int priority );
 	
-	static int sprite_init_cave(void);
-	static void sprite_draw_cave( int priority );
+	static static void sprite_draw_cave( int priority );
 	static void sprite_draw_cave_zbuf( int priority );
 	static void sprite_draw_donpachi( int priority );
 	static void sprite_draw_donpachi_zbuf( int priority );

@@ -20,8 +20,7 @@ public class subs
 	
 	/* machine/subs.c */
 	extern void subs_init_machine(void);
-	extern int subs_interrupt(void);
-	
+	extern 
 	public static Memory_ReadAddress readmem[]={
 		new Memory_ReadAddress(MEMPORT_MARKER, MEMPORT_DIRECTION_READ | MEMPORT_TYPE_MEM | MEMPORT_WIDTH_8),
 		new Memory_ReadAddress( 0x0000, 0x0007, subs_control_r ),

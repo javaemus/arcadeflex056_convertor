@@ -157,7 +157,6 @@ public class gottlieb
 	
 	
 	
-	int gottlieb_vh_start(void);
 	void gottlieb_vh_stop(void);
 	extern unsigned char *gottlieb_characterram;
 	void gottlieb_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);

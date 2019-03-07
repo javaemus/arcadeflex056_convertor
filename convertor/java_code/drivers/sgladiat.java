@@ -17,8 +17,7 @@ public class sgladiat
 	*/
 	
 	extern void aso_vh_convert_color_prom(unsigned char *obsolete,unsigned short *colortable,const unsigned char *color_prom);
-	extern int sgladiat_vh_start( void );
-	extern void sgladiat_vh_screenrefresh( struct mame_bitmap *bitmap, int full_refresh );
+	extern extern void sgladiat_vh_screenrefresh( struct mame_bitmap *bitmap, int full_refresh );
 	extern void snk_vh_stop( void );
 	
 	#define SNK_NMI_ENABLE	1

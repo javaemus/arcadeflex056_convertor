@@ -20,7 +20,6 @@ public class rastan
 	WRITE16_HANDLER( rastan_spritectrl_w );
 	WRITE16_HANDLER( rastan_spriteflip_w );
 	
-	int  rastan_vh_start(void);
 	void rastan_vh_stop(void);
 	void rastan_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	

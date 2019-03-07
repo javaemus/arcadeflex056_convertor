@@ -125,7 +125,6 @@
 #define CLOCK_STROBE	0x40
 
 /* our 4 driver functions */
-int detectati(void);
 int widthati15KHz(int width);
 int setati15KHz(int vdouble,int width,int height);
 void resetati15KHz(void);

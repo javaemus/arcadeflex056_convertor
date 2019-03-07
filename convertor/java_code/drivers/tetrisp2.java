@@ -57,7 +57,6 @@ public class tetrisp2
 	WRITE16_HANDLER( tetrisp2_vram_0_w );
 	WRITE16_HANDLER( tetrisp2_vram_1_w );
 	
-	int  tetrisp2_vh_start(void);
 	void tetrisp2_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	
 	

@@ -52,8 +52,7 @@ public class grchamp
 	
 	/* from vidhrdw */
 	extern void grchamp_convert_color_prom(	UINT8 *palette,	UINT16 *colortable,	const UINT8 *color_prom );
-	extern int grchamp_vh_start( void );
-	extern void grchamp_vh_stop( void );
+	extern extern void grchamp_vh_stop( void );
 	extern void grchamp_vh_screenrefresh( struct mame_bitmap *bitmap,int full_refresh );
 	extern extern UINT8 *grchamp_videoram;
 	extern UINT8 *grchamp_radar;

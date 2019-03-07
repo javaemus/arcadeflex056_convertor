@@ -23,7 +23,6 @@ public class finalizr
 	static unsigned char *finalizr_interrupt_enable;
 	
 	void finalizr_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom);
-	int finalizr_vh_start(void);
 	void finalizr_vh_stop(void);
 	void finalizr_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	

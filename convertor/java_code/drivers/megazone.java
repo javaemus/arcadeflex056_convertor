@@ -30,7 +30,6 @@ public class megazone
 	static int i8039_irqenable;
 	static int i8039_status;
 	
-	int megazone_vh_start(void);
 	void megazone_vh_stop(void);
 	
 	void megazone_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom);

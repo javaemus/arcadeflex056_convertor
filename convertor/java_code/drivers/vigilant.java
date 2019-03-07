@@ -17,7 +17,6 @@ public class vigilant
 {
 	
 	/* vidhrdw/vigilant.c */
-	int vigilant_vh_start(void);
 	void vigilant_vh_stop(void);
 	void vigilant_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	void kikcubic_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);

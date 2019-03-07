@@ -19,7 +19,6 @@ void VLM5030_sh_update (void);
 void VLM5030_set_rom(void *speech_rom);
 
 /* get BSY pin level */
-int VLM5030_BSY(void);
 /* latch contoll data */
 /* set RST pin level : reset / set table address A8-A15 */
 void VLM5030_RST (int pin );

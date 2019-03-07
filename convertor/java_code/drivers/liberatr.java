@@ -143,7 +143,6 @@ public class liberatr
 	/* in vidhrdw */
 	extern unsigned char *liberatr_bitmapram;
 	
-	int  liberatr_vh_start(void);
 	void liberatr_vh_stop(void);
 	void liberatr_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	public static WriteHandlerPtr liberatr_colorram_w = new WriteHandlerPtr() {public void handler(int offset, int data) ;

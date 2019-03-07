@@ -37,8 +37,7 @@ public class exctsccr
 	/* from vidhrdw */
 	extern void exctsccr_vh_screenrefresh(struct mame_bitmap *bitmap, int full_refresh);
 	extern void exctsccr_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom);
-	extern int exctsccr_vh_start( void );
-	extern void exctsccr_vh_stop( void );
+	extern extern void exctsccr_vh_stop( void );
 	
 	/* from machine */
 	extern unsigned char *exctsccr_mcu_ram;

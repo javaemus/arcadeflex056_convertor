@@ -24,8 +24,6 @@ public class baraduke
 	extern unsigned char *baraduke_textram, *spriteram, *baraduke_videoram;
 	
 	/* from vidhrdw/baraduke.c */
-	int baraduke_vh_start( void );
-	int metrocrs_vh_start( void );
 	void baraduke_vh_stop( void );
 	void baraduke_vh_screenrefresh( struct mame_bitmap *bitmap,int full_refresh );
 	void metrocrs_vh_screenrefresh( struct mame_bitmap *bitmap,int full_refresh );

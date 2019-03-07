@@ -68,7 +68,6 @@ public class wc90
 	extern data8_t *wc90_scroll1ylo, *wc90_scroll1yhi;
 	extern data8_t *wc90_scroll2ylo, *wc90_scroll2yhi;
 	
-	int wc90_vh_start( void );
 	void wc90_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	
 	

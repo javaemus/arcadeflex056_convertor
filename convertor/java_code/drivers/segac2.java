@@ -155,7 +155,6 @@ public class segac2
 	extern int			segac2_sp_palbase;
 	extern int			segac2_palbank;
 	
-	int		segac2_vh_start(void);
 	void	segac2_vh_stop(void);
 	void	segac2_vh_eof(void);
 	void	segac2_vh_screenrefresh(struct mame_bitmap *bitmap, int full_refresh);

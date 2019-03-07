@@ -203,8 +203,6 @@ public class slapfght
 	extern unsigned char *slapfight_scrollx_lo,*slapfight_scrollx_hi,*slapfight_scrolly;
 	void slapfight_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	void perfrman_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
-	int slapfight_vh_start (void);
-	int perfrman_vh_start (void);
 	
 	/* MACHINE */
 	
@@ -216,7 +214,6 @@ public class slapfght
 	
 	
 	
-	int getstar_interrupt(void);
 	
 	
 	/* Driver structure definition */

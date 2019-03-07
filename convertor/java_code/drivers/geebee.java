@@ -76,18 +76,12 @@ public class geebee
 {
 	
 	/* from machine/geebee.c */
-	extern int geebee_interrupt(void);
-	extern int kaitei_interrupt(void);
-	
+	extern extern 
 	/* from vidhrdw/geebee.c */
 	extern void geebee_init_palette(unsigned char *sys_palette, unsigned short *sys_colortable, const unsigned char *color_prom);
 	extern void navalone_init_palette(unsigned char *sys_palette, unsigned short *sys_colortable, const unsigned char *color_prom);
 	
-	extern int geebee_vh_start(void);
-	extern int navalone_vh_start(void);
-	extern int kaitei_vh_start(void);
-	extern int sos_vh_start(void);
-	extern void geebee_vh_screenrefresh(struct mame_bitmap *bitmap, int full_refresh);
+	extern extern extern extern extern void geebee_vh_screenrefresh(struct mame_bitmap *bitmap, int full_refresh);
 	
 	/* from sndhrdw/geebee.c */
 	extern int geebee_sh_start(const struct MachineSound *msound);

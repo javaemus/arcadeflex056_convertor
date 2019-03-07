@@ -83,6 +83,5 @@ int png_write_bitmap(void *fp, struct mame_bitmap *bitmap);
 int mng_capture_start(void *fp, struct mame_bitmap *bitmap);
 int mng_capture_frame(void *fp, struct mame_bitmap *bitmap);
 int mng_capture_stop(void *fp);
-int mng_capture_status(void);
 #endif
 

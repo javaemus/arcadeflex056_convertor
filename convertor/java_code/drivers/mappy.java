@@ -58,17 +58,12 @@ public class mappy
 	extern unsigned char *mappy_customio_1,*mappy_customio_2;
 	void mappy_init_machine(void);
 	void motos_init_machine(void);
-	int mappy_interrupt_1(void);
-	int mappy_interrupt_2(void);
 	
 	
 	
 	
 	
 	/* video driver data & functions */
-	int mappy_vh_start(void);
-	int motos_vh_start(void);
-	int todruaga_vh_start(void);
 	void mappy_vh_stop(void);
 	void mappy_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	void mappy_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom);

@@ -39,8 +39,6 @@ void williams_narc_data_w(int data);
 void williams_narc_reset_w(int state);
 
 void williams_dcs_init(int cpunum);
-int williams_dcs_data_r(void);
-int williams_dcs_control_r(void);
 void williams_dcs_data_w(int data);
 void williams_dcs_reset_w(int state);
 

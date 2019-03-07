@@ -81,7 +81,6 @@ enum
 /***************************************************************************/
 /* Single code functions */
 
-int code_init(void);
 void code_close(void);
 
 InputCode keyoscode_to_code(unsigned oscode);

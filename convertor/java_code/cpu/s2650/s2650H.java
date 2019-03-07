@@ -46,10 +46,8 @@ public class s2650H
 	extern unsigned s2650_dasm(char *buffer, unsigned pc);
 	
 	extern void s2650_set_flag(int state);
-	extern int s2650_get_flag(void);
-	extern void s2650_set_sense(int state);
-	extern int s2650_get_sense(void);
-	
+	extern extern void s2650_set_sense(int state);
+	extern 
 	#ifdef  MAME_DEBUG
 	extern int Dasm2650(char *buff, int PC);
 	#endif

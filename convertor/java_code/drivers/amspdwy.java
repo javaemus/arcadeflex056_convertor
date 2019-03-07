@@ -25,7 +25,6 @@ public class amspdwy
 	/* Variables & functions defined in vidhrdw: */
 	
 	
-	int  amspdwy_vh_start(void);
 	void amspdwy_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	
 	

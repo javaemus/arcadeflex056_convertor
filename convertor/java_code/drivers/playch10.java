@@ -309,8 +309,7 @@ public class playch10
 	#define N2A03_DEFAULTCLOCK (21477272.724 / 12)
 	
 	/* from vidhrdw */
-	extern int playch10_vh_start( void );
-	extern void playch10_vh_stop( void );
+	extern extern void playch10_vh_stop( void );
 	extern void playch10_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom);
 	extern void playch10_vh_screenrefresh( struct mame_bitmap *bitmap, int full_refresh );
 	

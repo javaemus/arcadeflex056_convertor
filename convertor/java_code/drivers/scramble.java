@@ -118,17 +118,10 @@ public class scramble
 	
 	void scramble_init_machine(void);
 	
-	int scramble_vh_start(void);
-	int theend_vh_start(void);
-	int mariner_vh_start(void);
-	int ckongs_vh_start(void);
-	int pisces_vh_start(void);
-	int froggers_vh_start(void);
 	
 	void galaxian_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	
 	
-	int hunchbks_vh_interrupt(void);
 	
 	
 	READ_HANDLER(mars_ppi8255_0_r);

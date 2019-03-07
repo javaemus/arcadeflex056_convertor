@@ -117,7 +117,6 @@ public class naughtyb
 	extern unsigned char *naughtyb_videoram2;
 	extern unsigned char *naughtyb_scrollreg;
 	
-	int naughtyb_vh_start(void);
 	void naughtyb_vh_stop(void);
 	void naughtyb_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom);
 	void naughtyb_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);

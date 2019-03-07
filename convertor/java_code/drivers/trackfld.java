@@ -34,7 +34,6 @@ public class trackfld
 	extern unsigned char *trackfld_scroll2;
 	void trackfld_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom);
 	void trackfld_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
-	int trackfld_vh_start(void);
 	void trackfld_vh_stop(void);
 	
 	void hyperspt_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);

@@ -57,7 +57,6 @@ public class gaelco
 								BIG KARNAK
 	  ============================================================================*/
 	
-	int bigkarnk_vh_start( void );
 	void bigkarnk_vh_screenrefresh( struct mame_bitmap *bitmap,int full_refresh );
 	
 	
@@ -310,7 +309,6 @@ public class gaelco
 						BIOMECHANICAL TOY & MANIAC SQUARE
 	  ============================================================================*/
 	
-	int maniacsq_vh_start( void );
 	void maniacsq_vh_screenrefresh( struct mame_bitmap *bitmap,int full_refresh );
 	
 	

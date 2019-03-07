@@ -30,7 +30,6 @@ package drivers;
 public class dynduke
 {
 	
-	int dynduke_vh_start(void);
 	void dynduke_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	
 	static unsigned char *dynduke_shared_ram;

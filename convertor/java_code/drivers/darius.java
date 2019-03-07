@@ -139,7 +139,6 @@ public class darius
 	
 	void init_darius_machine( void );
 	
-	int  darius_vh_start(void);
 	void darius_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	void darius_vh_stop(void);
 	

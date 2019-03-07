@@ -58,8 +58,7 @@ public class mrflea
 	static int mrflea_select2;
 	static int mrflea_select3;
 	
-	extern extern extern extern int mrflea_vh_start( void );
-	extern void mrflea_vh_screenrefresh( struct mame_bitmap *bitmap, int full_refresh );
+	extern extern extern extern extern void mrflea_vh_screenrefresh( struct mame_bitmap *bitmap, int full_refresh );
 	
 	static AY8910interface ay8910_interface = new AY8910interface(
 		3,	/* 3 chips */

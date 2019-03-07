@@ -29,7 +29,6 @@ public class sidearms
 	extern unsigned char *sidearms_bg_scrollx,*sidearms_bg_scrolly;
 	extern unsigned char *sidearms_bg2_scrollx,*sidearms_bg2_scrolly;
 	
-	int  sidearms_vh_start(void);
 	void sidearms_vh_stop(void);
 	void sidearms_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom);
 	void sidearms_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);

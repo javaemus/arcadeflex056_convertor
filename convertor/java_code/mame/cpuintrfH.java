@@ -423,7 +423,6 @@ public class cpuintrfH
 	 *************************************/
 	
 	/* reset the internal CPU tracking */
-	int cpuintrf_init(void);
 	
 	/* set up the interface for one CPU of a given type */
 	int	cpuintrf_init_cpu(int cpunum, int cputype);
@@ -449,7 +448,6 @@ public class cpuintrfH
 	void activecpu_adjust_icount(int delta);
 	
 	/* return the current icount */
-	int activecpu_get_icount(void);
 	
 	/* ensure banking is reset properly */
 	void activecpu_reset_banking(void);
@@ -488,10 +486,8 @@ public class cpuintrfH
 	const char *activecpu_dump_state(void);
 	
 	/* return the default IRQ line for the active CPU */
-	int activecpu_default_irq_line(void);
 	
 	/* return the default IRQ vector for the active CPU */
-	int activecpu_default_irq_vector(void);
 	
 	/* return the width of the address bus on the active CPU */
 	unsigned activecpu_address_bits(void);
@@ -500,7 +496,6 @@ public class cpuintrfH
 	unsigned activecpu_address_mask(void);
 	
 	/* return the shift value to convert from address to bytes on the active CPU */
-	int activecpu_address_shift(void);
 	
 	/* return the endianess of the active CPU */
 	unsigned activecpu_endianess(void);

@@ -26,7 +26,6 @@ public class osdependH
 	#endif
 	
 	
-	int osd_init(void);
 	void osd_exit(void);
 	
 	
@@ -123,7 +122,6 @@ public class osdependH
 	  the current one. At the end of osd_update_video_and_audio(), the code must
 	  already know exactly whether the next frame will be skipped or not.
 	*/
-	int osd_skip_this_frame(void);
 	
 	/*
 	  Update video and audio. game_bitmap contains the game display, while
@@ -146,7 +144,6 @@ public class osdependH
 	void osd_set_gamma(float _gamma);
 	float osd_get_gamma(void);
 	void osd_set_brightness(int brightness);
-	int osd_get_brightness(void);
 	
 	/*
 	  Save a screen shot of the game display. It is suggested to use the core
@@ -197,7 +194,6 @@ public class osdependH
 			volume /= 1.122018454;		//	= (10 ^ (1/20)) = 1dB
 	*/
 	void osd_set_mastervolume(int attenuation);
-	int osd_get_mastervolume(void);
 	
 	void osd_sound_enable(int enable);
 	
@@ -261,7 +257,6 @@ public class osdependH
 	
 	/* Joystick calibration routines BW 19981216 */
 	/* Do we need to calibrate the joystick at all? */
-	int osd_joystick_needs_calibration (void);
 	/* Preprocessing for joystick calibration. Returns 0 on success */
 	void osd_joystick_start_calibration (void);
 	/* Prepare the next calibration step. Return a description of this step. */
@@ -391,16 +386,9 @@ public class osdependH
 	
 	#ifdef MAME_NET
 	/* network */
-	int osd_net_init(void);
 	int osd_net_send(int player, unsigned char buf[], int *size);
 	int osd_net_recv(int player, unsigned char buf[], int *size);
-	int osd_net_sync(void);
-	int osd_net_input_sync(void);
-	int osd_net_exit(void);
-	int osd_net_add_player(void);
 	int osd_net_remove_player(int player);
-	int osd_net_game_init(void);
-	int osd_net_game_exit(void);
 	#endif /* MAME_NET */
 	
 	#ifdef MESS

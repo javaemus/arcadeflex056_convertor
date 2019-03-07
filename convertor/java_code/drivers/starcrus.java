@@ -19,8 +19,7 @@ public class starcrus
 {
 	
 	/* included from vidhrdw/starcrus.c */
-	extern int starcrus_vh_start(void);
-	extern void starcrus_vh_stop(void);
+	extern extern void starcrus_vh_stop(void);
 	extern void starcrus_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	extern int p1_sprite;
 	extern int p2_sprite;

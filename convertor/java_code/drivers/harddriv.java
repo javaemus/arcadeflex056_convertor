@@ -176,8 +176,6 @@ public class harddriv
 	extern data16_t *hddsk_zram;
 	
 	void harddriv_init_machine(void);
-	int hd68k_vblank_gen(void);
-	int hd68k_irq_gen(void);
 	void hdgsp_irq_gen(int state);
 	void hdmsp_irq_gen(int state);
 	
@@ -270,7 +268,6 @@ public class harddriv
 	extern data16_t *hdgsp_paletteram_hi;
 	extern size_t hdgsp_vram_size;
 	
-	int harddriv_vh_start(void);
 	void harddriv_vh_stop(void);
 	void harddriv_vh_eof(void);
 	void harddriv_vh_screenrefresh(struct mame_bitmap *bitmap, int full_refresh);

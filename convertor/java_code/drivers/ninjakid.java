@@ -30,8 +30,7 @@ public class ninjakid
 	
 	extern extern extern 
 	extern extern 
-	extern int ninjakid_vh_start( void );
-	extern void ninjakid_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
+	extern extern void ninjakid_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	extern 
 	extern 
 	/******************************************************************************/

@@ -26,10 +26,8 @@ public class avalnche
 {
 	
 	/* machine/avalnche.c */
-	int avalnche_interrupt(void);
 	
 	/* vidhrdw/avalnche.c */
-	int avalnche_vh_start(void);
 	void avalnche_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	
 	public static Memory_ReadAddress readmem[]={

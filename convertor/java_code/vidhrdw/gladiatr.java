@@ -85,7 +85,6 @@ public class gladiatr
 	} };
 	
 	
-	int gladiatr_vh_start(void);
 	int gladiatr_vh_start(void){
 		sprite_bank = 2;
 	

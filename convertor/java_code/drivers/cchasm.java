@@ -22,7 +22,6 @@ public class cchasm
 	/* from vidhrdw/cchasm.c */
 	WRITE16_HANDLER( cchasm_refresh_control_w );
 	void cchasm_init_colors (unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom);
-	int cchasm_vh_start (void);
 	void cchasm_vh_stop (void);
 	
 	extern data16_t *cchasm_ram;

@@ -57,7 +57,6 @@ public class gaiden
 	WRITE16_HANDLER( gaiden_bgscrollx_w );
 	WRITE16_HANDLER( gaiden_bgscrolly_w );
 	
-	int gaiden_vh_start(void);
 	void gaiden_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	
 	

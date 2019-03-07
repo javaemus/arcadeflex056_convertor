@@ -103,8 +103,7 @@ public class winmain
 	
 	int osd_init(void)
 	{
-		extern int win_init_input(void);
-		int result;
+		extern 	int result;
 	
 		result = win_init_window();
 		if (result == 0)

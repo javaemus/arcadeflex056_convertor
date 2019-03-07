@@ -17,8 +17,7 @@ public class namcona1
 	data16_t *namcona1_scroll;
 	data16_t *namcona1_workram;
 	
-	extern int cgang_hack( void );
-	
+	extern 
 	static char *dirtychar;
 	static char dirtygfx;
 	static data16_t *shaperam;

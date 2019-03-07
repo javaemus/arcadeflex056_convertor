@@ -89,7 +89,6 @@ public class windowH
 	//	PROTOTYPES
 	//============================================================
 	
-	int win_init_window(void);
 	int win_create_window(int width, int height, int depth, int attributes, int orientation);
 	void win_destroy_window(void);
 	void win_update_cursor_state(void);
@@ -109,7 +108,6 @@ public class windowH
 	void win_process_events(void);
 	void win_process_events_periodic(void);
 	void osd_set_leds(int state);
-	int osd_get_leds(void);
 	
 	UINT32 *win_prepare_palette(struct win_blit_params *params);
 	

@@ -76,12 +76,8 @@ public class bosco
 {
 	
 	extern unsigned char *bosco_sharedram;
-	int  bosco_interrupt_1(void);
-	int  bosco_interrupt_2(void);
-	int  bosco_interrupt_3(void);
 	void bosco_init_machine(void);
 	
-	int  bosco_vh_start(void);
 	void bosco_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	void bosco_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom);
 	
@@ -90,7 +86,6 @@ public class bosco
 	extern size_t bosco_radarram_size;
 	extern unsigned char *bosco_staronoff;
 	extern unsigned char *bosco_starblink;
-	int  bosco_vh_start(void);
 	void bosco_vh_stop(void);
 	void bosco_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	

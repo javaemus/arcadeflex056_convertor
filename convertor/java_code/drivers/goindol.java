@@ -13,7 +13,6 @@ package drivers;
 public class goindol
 {
 	
-	int  goindol_vh_start(void);
 	void goindol_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	
 	extern data8_t *goindol_fg_scrollx;

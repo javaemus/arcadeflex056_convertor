@@ -153,7 +153,6 @@ package drivers;
 public class ninjaw
 {
 	
-	int ninjaw_vh_start (void);
 	void ninjaw_vh_stop (void);
 	void ninjaw_vh_screenrefresh (struct mame_bitmap *bitmap,int full_refresh);
 	

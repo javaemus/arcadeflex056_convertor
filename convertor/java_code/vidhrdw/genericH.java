@@ -42,8 +42,6 @@ public class genericH
 	extern struct mame_bitmap *tmpbitmap;
 	
 	
-	int generic_vh_start(void);
-	int generic_bitmapped_vh_start(void);
 	void generic_vh_stop(void);
 	void generic_bitmapped_vh_stop(void);
 	void generic_bitmapped_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);

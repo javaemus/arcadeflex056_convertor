@@ -17,7 +17,6 @@ public class battlnts
 {
 	
 	/* from vidhrdw */
-	int battlnts_vh_start(void);
 	void battlnts_vh_stop(void);
 	void battlnts_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	

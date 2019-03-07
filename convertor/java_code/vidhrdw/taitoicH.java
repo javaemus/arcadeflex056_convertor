@@ -138,7 +138,6 @@ void TC0480SCP_tilemap_draw(struct mame_bitmap *bitmap,int layer,int flags,UINT3
 /* Returns the priority order of the bg tilemaps set in the internal
    register. The order in which the four layers should be drawn is
    returned in the lowest four nibbles  (msn = bottom layer; lsn = top) */
-int TC0480SCP_get_bg_priority(void);
 
 /* Undrfire needs to read this for a sprite/tile priority hack */
 extern int TC0480SCP_pri_reg;
@@ -146,9 +145,6 @@ extern int TC0480SCP_pri_reg;
 
 /***************************************************************************/
 
-int TC0110PCR_vh_start(void);
-int TC0110PCR_1_vh_start(void);	/* 2nd chip */
-int TC0110PCR_2_vh_start(void);	/* 3rd chip */
 void TC0110PCR_vh_stop(void);
 void TC0110PCR_1_vh_stop(void);	/* 2nd chip */
 void TC0110PCR_2_vh_stop(void);	/* 3rd chip */
@@ -162,7 +158,6 @@ WRITE16_HANDLER( TC0110PCR_step1_word_2_w );	/* 3rd chip */
 WRITE16_HANDLER( TC0110PCR_step1_rbswap_word_w );	/* swaps red and blue components */
 WRITE16_HANDLER( TC0110PCR_step1_4bpg_word_w );	/* only 4 bits per color gun */
 
-int TC0360PRI_vh_start(void);	/* must be called to ensure regs saved in state.c */
 WRITE16_HANDLER( TC0360PRI_halfword_w );
 WRITE16_HANDLER( TC0360PRI_halfword_swap_w );
 

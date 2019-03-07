@@ -33,8 +33,6 @@ public class mcrH
 	void mcr68_init_machine(void);
 	void zwackery_init_machine(void);
 	
-	int mcr_interrupt(void);
-	int mcr68_interrupt(void);
 	
 	
 	WRITE16_HANDLER( mcr68_6840_upper_w );

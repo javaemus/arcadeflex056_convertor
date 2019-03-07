@@ -27,13 +27,11 @@ public class sbrkout
 	
 	/* vidhrdw/sbrkout.c */
 	void sbrkout_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
-	int sbrkout_vh_start(void);
 	extern unsigned char *sbrkout_horiz_ram;
 	extern unsigned char *sbrkout_vert_ram;
 	
 	/* machine/sbrkout.c */
-	extern int sbrkout_interrupt(void);
-	
+	extern 
 	
 	/* sound hardware - temporary */
 	

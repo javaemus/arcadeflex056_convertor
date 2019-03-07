@@ -51,8 +51,6 @@ public class karnov
 	WRITE16_HANDLER( karnov_videoram_w );
 	void karnov_flipscreen_w(int data);
 	
-	int karnov_vh_start (void);
-	int wndrplnt_vh_start (void);
 	void karnov_vh_stop (void);
 	
 	enum { KARNOV=0, KARNOVJ, CHELNOV, CHELNOVJ, CHELNOVW, WNDRPLNT };

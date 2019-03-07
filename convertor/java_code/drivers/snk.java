@@ -71,8 +71,7 @@ public class snk
 	extern void snk_3bpp_shadow_vh_convert_color_prom(unsigned char *obsolete,unsigned short *colortable,const unsigned char *color_prom);
 	extern void snk_4bpp_shadow_vh_convert_color_prom(unsigned char *obsolete,unsigned short *colortable,const unsigned char *color_prom);
 	
-	extern int snk_vh_start( void );
-	extern void snk_vh_stop( void );
+	extern extern void snk_vh_stop( void );
 	
 	extern void tnk3_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	extern void ikari_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);

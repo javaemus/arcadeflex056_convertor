@@ -218,7 +218,6 @@ public class neogeo
 	void neogeo_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	void neogeo_vh_raster_partial_refresh(struct mame_bitmap *bitmap,int current_line);
 	void neogeo_vh_raster_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
-	int  neogeo_mvs_vh_start(void);
 	void neogeo_vh_stop(void);
 	WRITE16_HANDLER( neogeo_paletteram16_w );
 	READ16_HANDLER( neogeo_paletteram16_r );

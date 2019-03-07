@@ -26,12 +26,8 @@ public class gaplus
 	
 	/* custom IO chips functions */
 	
-	extern int gaplus_interrupt_1(void);
-	extern int gaplus_interrupt_2(void);
-	extern int gaplus_interrupt_3( void );
-	
-	extern int gaplus_vh_start( void );
-	extern void gaplus_vh_stop( void );
+	extern extern extern 
+	extern extern void gaplus_vh_stop( void );
 	extern void gaplus_vh_convert_color_prom(unsigned char *palette, unsigned short *colortable,const unsigned char *color_prom);
 	extern void gaplus_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	extern void gaplus_init_machine(void);

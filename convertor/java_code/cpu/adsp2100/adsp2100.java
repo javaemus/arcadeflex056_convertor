@@ -193,8 +193,7 @@ public class adsp2100
 	**	PRIVATE FUNCTION PROTOTYPES
 	**#################################################################################################*/
 	
-	static int create_tables(void);
-	static void check_irqs(void);
+	static static void check_irqs(void);
 	
 	
 	/*###################################################################################################

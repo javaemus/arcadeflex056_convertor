@@ -28,7 +28,6 @@ public class sf1
 	WRITE16_HANDLER( sf1_fg_scroll_w );
 	WRITE16_HANDLER( sf1_videoram_w );
 	WRITE16_HANDLER( sf1_gfxctrl_w );
-	int sf1_vh_start(void);
 	void sf1_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	
 	

@@ -319,7 +319,6 @@ public class psychic5
 {
 	
 	void psychic5_init_machine(void);
-	int  psychic5_vh_start(void);
 	void psychic5_vh_stop(void);
 	void psychic5_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	

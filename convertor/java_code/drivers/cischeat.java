@@ -178,9 +178,6 @@ public class cischeat
 	WRITE16_HANDLER( f1gpstar_vregs_w );
 	WRITE16_HANDLER( scudhamm_vregs_w );
 	
-	int bigrun_vh_start(void);
-	int cischeat_vh_start(void);
-	int f1gpstar_vh_start(void);
 	
 	void bigrun_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	void cischeat_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);

@@ -157,7 +157,6 @@ public class balsente
 	
 	
 	/* video driver data & functions */
-	int balsente_vh_start(void);
 	void balsente_vh_stop(void);
 	void balsente_vh_screenrefresh(struct mame_bitmap *bitmap, int full_refresh);
 	

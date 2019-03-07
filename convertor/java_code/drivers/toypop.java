@@ -22,9 +22,6 @@ public class toypop
 	
 	// machine\toypop.c
 	void toypop_init_machine(void);
-	int toypop_main_interrupt(void);
-	int toypop_sound_interrupt(void);
-	int toypop_m68000_interrupt(void);
 	WRITE16_HANDLER( toypop_m68000_interrupt_enable_w );
 	WRITE16_HANDLER( toypop_m68000_interrupt_disable_w );
 	extern unsigned char *toypop_sound_sharedram, *toypop_m68000_sharedram, *toypop_customio;

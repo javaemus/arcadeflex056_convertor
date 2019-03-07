@@ -200,8 +200,7 @@ enum {
 
 extern void nb1413m3_init_machine(void);
 extern void nb1413m3_nmi_clock_w(int data);
-extern int nb1413m3_interrupt(void);
-extern void nb1413m3_nvram_handler(void *file, int read_or_write);
+extern extern void nb1413m3_nvram_handler(void *file, int read_or_write);
 extern int nb1413m3_sndrom_r(int offset);
 extern void nb1413m3_sndrombank1_w(int data);
 extern void nb1413m3_sndrombank2_w(int data);
@@ -210,15 +209,7 @@ extern void nb1413m3_gfxrombank_w(int data);
 extern void nb1413m3_gfxradr_l_w(int data);
 extern void nb1413m3_gfxradr_h_w(int data);
 extern void nb1413m3_inputportsel_w(int data);
-extern int nb1413m3_inputport0_r(void);
-extern int nb1413m3_inputport1_r(void);
-extern int nb1413m3_inputport2_r(void);
-extern int nb1413m3_inputport3_r(void);
-extern int nb1413m3_dipsw1_r(void);
-extern int nb1413m3_dipsw2_r(void);
-extern int nb1413m3_dipsw3_l_r(void);
-extern int nb1413m3_dipsw3_h_r(void);
-extern void nb1413m3_outcoin_w(int data);
+extern extern extern extern extern extern extern extern extern void nb1413m3_outcoin_w(int data);
 extern void nb1413m3_vcrctrl_w(int data);
 
 extern int nb1413m3_type;

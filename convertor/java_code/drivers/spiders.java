@@ -174,14 +174,12 @@ public class spiders
 	/* VIDHRDW */
 	
 	void nyny_init_palette(unsigned char *obsolete,unsigned short *game_colortable,const unsigned char *color_prom);
-	int  spiders_vh_start(void);
 	void spiders_vh_stop(void);
 	void spiders_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	
 	/* MACHINE */
 	
 	void spiders_init_machine(void);
-	int spiders_timed_irq(void);
 	
 	
 	/* Driver structure definition */

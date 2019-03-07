@@ -37,7 +37,6 @@ public class m107
 	void m107_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	void dsoccr_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	void m107_vh_stop(void);
-	int m107_vh_start(void);
 	
 	/*****************************************************************************/
 	

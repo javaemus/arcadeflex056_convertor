@@ -31,7 +31,6 @@ package drivers;
 public class supbtime
 {
 	
-	int  supbtime_vh_start(void);
 	void supbtime_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	void chinatwn_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	

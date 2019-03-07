@@ -86,12 +86,8 @@ public class winddraw
 	//============================================================
 	
 	static double compute_mode_score(int width, int height, int depth, int refresh);
-	static int set_resolution(void);
-	static int create_surfaces(void);
-	static int create_blit_surface(void);
-	static void set_brightness(void);
-	static int create_clipper(void);
-	static void erase_surfaces(void);
+	static static static static void set_brightness(void);
+	static static void erase_surfaces(void);
 	static void release_surfaces(void);
 	static void compute_color_masks(const DDSURFACEDESC *desc);
 	static int render_to_blit(struct mame_bitmap *bitmap, int update);

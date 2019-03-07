@@ -89,9 +89,6 @@ public class taito_h
 	
 	static data16_t *taitoh_68000_mainram;
 	
-	int		syvalion_vh_start(void);
-	int		recordbr_vh_start(void);
-	int		dleague_vh_start(void);
 	void 		syvalion_vh_stop (void);
 	void 		syvalion_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
 	void		recordbr_vh_screenrefresh(struct mame_bitmap *bitmap,int full_refresh);
